@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2022.07.21).
+ * This file: Optional security extras module (last modified: 2022.10.01).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -99,30 +99,21 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         ), 'Query command injection'); // 2018.05.02
 
         $this->trigger(preg_match(
-            '/\$(?:globals|_(cookie|env|files|get|post|request|se(rver|ssion)))/',
+            '~\$(?:globals|_(?:cookie|env|files|get|post|request|se(?:rver|ssion)))|' .
+            '_contents|dotnet_load|execcgi|http_(?:cmd|sum)|move_uploaded_file|' .
+            'pa(?:rse_ini_file|ssthru)|rewrite(?:cond|rule)|symlink|tmp_name|u(?:nserializ|ploadedfil)e~',
             $QueryNoSpace
-        ), 'Query command injection'); // 2017.01.13
-
-        $this->trigger(preg_match('/http_(?:cmd|sum)/', $QueryNoSpace), 'Query command injection'); // 2017.01.02
-        $this->trigger(preg_match('/pa(?:rse_ini_file|ssthru)/', $QueryNoSpace), 'Query command injection'); // 2017.01.02
-        $this->trigger(preg_match('/rewrite(?:cond|rule)/', $QueryNoSpace), 'Query command injection'); // 2017.01.02
-        $this->trigger(preg_match('/u(?:nserializ|ploadedfil)e/', $QueryNoSpace), 'Query command injection'); // 2017.01.13
-        $this->trigger(strpos($QueryNoSpace, 'dotnet_load') !== false, 'Query command injection'); // 2016.12.31
-        $this->trigger(strpos($QueryNoSpace, 'execcgi') !== false, 'Query command injection'); // 2016.12.31
-        $this->trigger(strpos($QueryNoSpace, 'move_uploaded_file') !== false, 'Query command injection'); // 2016.12.31
-        $this->trigger(strpos($QueryNoSpace, 'symlink') !== false, 'Query command injection'); // 2016.12.31
-        $this->trigger(strpos($QueryNoSpace, 'tmp_name') !== false, 'Query command injection'); // 2016.12.31
-        $this->trigger(strpos($QueryNoSpace, '_contents') !== false, 'Query command injection'); // 2016.12.31
+        ), 'Query command injection'); // 2022.10.01
 
         $this->trigger(preg_match('/%(?:0[0-8bcef]|1)/i', $this->BlockInfo['Query']), 'Non-printable characters in query'); // 2016.12.31
 
-        $this->trigger(preg_match('/(?:amp(;|%3b)){2,}/', $QueryNoSpace), 'Nesting attack'); // 2016.12.31
-        $this->trigger(preg_match('/\?(?:&|cmd=)/', $QueryNoSpace), 'Nesting attack'); // 2017.02.25
+        $this->trigger(preg_match('/(?:amp(?:;|%3b)){3,}/', $QueryNoSpace), 'Nesting attack'); // 2016.12.31 mod 2022.10.01
 
         $this->trigger((
             strpos($this->BlockInfo['rURI'], '/ucp.php?mode=login') === false &&
+            strpos($this->BlockInfo['rURI'], 'Category=') === false &&
             preg_match('/%(?:(25){2,}|(25)+27)/', $this->BlockInfo['Query'])
-        ), 'Nesting attack'); // 2017.01.01
+        ), 'Nesting attack'); // 2017.01.01 mod 2022.10.01
 
         $this->trigger(preg_match(
             '/(?:<(\?|body|i?frame|object|script)|(body|i?frame|object|script)>)/',

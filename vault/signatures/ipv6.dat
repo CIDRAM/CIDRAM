@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2022.269.0
-# Last modified: 2022.09.27
+# Version: 2022.275.0
+# Last modified: 2022.10.03
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -171,8 +171,8 @@ Tag: Hostinger Int
 
 
 # ASN 12824 ("home.pl").
-# Stop Forum Spam (SFS) listings: 3.
-# Updated: 2019.01.06 / Checked: 2021.11.21
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2019.01.06 / Checked: 2022.10.03
 
 2a02:25a8::/29 Deny Cloud
 Origin: PL
@@ -2070,9 +2070,8 @@ Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: HZ Hosting Ltd
 
 
-# ASN 53264 ("Continuum Data Centers, LLC").
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2017.07.23 / Checked: 2021.11.29
+# ASN 53264 ("SBA Edge, LLC").
+# Updated: 2017.07.23 / Checked: 2022.10.03
 
 2607:ff50::/32 Deny Cloud
 Origin: US
@@ -2643,11 +2642,11 @@ Tag: Comvive Servidores
 
 
 # ASN 34971 ("Prometeus di Daniela Agro").
+# Brute-force and SSH attacks detected from here.
 # Stop Forum Spam (SFS) listings: 3.
-# Updated: 2018.03.14 / Checked: 2021.11.27
+# Updated: 2022.10.03
 
 2a00:dcc0::/32 Deny Cloud
-2a00:dcc7:d000::/38 Deny Cloud
 Origin: IT
 2a06:fdc0::/32 Deny Cloud
 Origin: US
@@ -5905,9 +5904,11 @@ Tag: Brandwatch
 
 # ASN 63018 ("Dedicated.com").
 # Server farm and infrastructure provider.
-# Stop Forum Spam (SFS) listings: 973.
-# Updated: 2021.12.06
+# Stop Forum Spam (SFS) listings: 193.
+# Updated: 2022.10.03
 
+2a11:840:33::/48 Deny Cloud
+Origin: CA
 2605:9f80::/32 Deny Cloud
 Origin: US
 Profile: Dedicated;Infrastructure/Transit;Tor endpoints here
@@ -6754,34 +6755,24 @@ Tag: Serverfield
 # Listing here due to reports from some users of spam events, brute-force
 # attempts, probing, etc. Example: abuseipdb.com/check/129.213.67.237
 # But, listing only the ASNs directly connected to current reports.
-# Stop Forum Spam (SFS) listings: 3,461.
-# Updated: 2021.12.06
+# Stop Forum Spam (SFS) listings: 14,441.
+# Updated: 2022.10.03
 
+2a09:a447:ac1e::/48 Run bypasses.php
+Origin: GB
 2600:2000:2100::/42 Run bypasses.php
-2603:c000::/36 Run bypasses.php
-2603:c000:1000::/37 Run bypasses.php
-2603:c000:1800::/40 Run bypasses.php
-2603:c000:1a00::/39 Run bypasses.php
-2603:c000:1c00::/39 Run bypasses.php
-2603:c000:1f00::/40 Run bypasses.php
-2603:c001::/35 Run bypasses.php
-2603:c001:2000::/36 Run bypasses.php
-2603:c001:3000::/39 Run bypasses.php
-2603:c001:3400::/38 Run bypasses.php
-2603:c001:3800::/38 Run bypasses.php
-2603:c001:3e00::/39 Run bypasses.php
-2603:c002::/36 Run bypasses.php
-2603:c002:1000::/37 Run bypasses.php
-2603:c002:1800::/40 Run bypasses.php
-2603:c002:1a00::/39 Run bypasses.php
-2603:c002:1c00::/39 Run bypasses.php
-2603:c002:1f00::/40 Run bypasses.php
-2603:c002:8000::/36 Run bypasses.php
-2603:c002:9000::/37 Run bypasses.php
-2603:c002:9800::/40 Run bypasses.php
-2603:c002:9a00::/39 Run bypasses.php
-2603:c002:9c00::/39 Run bypasses.php
-2603:c002:9f00::/40 Run bypasses.php
+2600:2000:2200::/42 Run bypasses.php
+2600:2000:2240::/43 Run bypasses.php
+2600:2003::/48 Run bypasses.php
+2602:fdaa:20::/48 Run bypasses.php
+2603:c000::/35 Run bypasses.php
+2603:c000:2000::/39 Run bypasses.php
+2603:c001::/34 Run bypasses.php
+2603:c001:4000::/38 Run bypasses.php
+2603:c002::/35 Run bypasses.php
+2603:c002:2000::/39 Run bypasses.php
+2603:c002:8000::/35 Run bypasses.php
+2603:c002:a000::/39 Run bypasses.php
 2603:c010::/36 Run bypasses.php
 2603:c010:2000::/36 Run bypasses.php
 2603:c010:4000::/36 Run bypasses.php
@@ -6807,11 +6798,15 @@ Tag: Serverfield
 2603:c012:c000::/36 Run bypasses.php
 2603:c012:e000::/36 Run bypasses.php
 2603:c013::/36 Run bypasses.php
+2603:c013:2000::/36 Run bypasses.php
 2603:c013:4000::/36 Run bypasses.php
 2603:c013:6000::/36 Run bypasses.php
 2603:c013:8000::/36 Run bypasses.php
 2603:c013:a000::/36 Run bypasses.php
+2603:c013:c000::/36 Run bypasses.php
 2603:c013:e000::/36 Run bypasses.php
+2603:c014::/36 Run bypasses.php
+2603:c014:2000::/36 Run bypasses.php
 2603:c020::/35 Run bypasses.php
 2603:c020:4000::/35 Run bypasses.php
 2603:c020:8000::/35 Run bypasses.php
@@ -6837,11 +6832,16 @@ Tag: Serverfield
 2603:c025:8000::/35 Run bypasses.php
 2603:c025:c000::/35 Run bypasses.php
 2603:c026::/35 Run bypasses.php
+2603:c026:4000::/35 Run bypasses.php
 2603:c026:8000::/35 Run bypasses.php
 2603:c026:c000::/35 Run bypasses.php
 2603:c027::/35 Run bypasses.php
 2603:c027:4000::/35 Run bypasses.php
+2603:c027:8000::/35 Run bypasses.php
 2603:c027:c000::/35 Run bypasses.php
+2603:c028::/35 Run bypasses.php
+2603:c028:4000::/35 Run bypasses.php
+2606:b400:8012::/48 Run bypasses.php
 Origin: US
 Profile: Commercial;Infrastructure/Transit;Tor endpoints here
 Tag: Oracle Corporation
@@ -7141,12 +7141,9 @@ Tag: Nominet UK
 # Owns IPs associated with a Spamhaus top 10 worst offender listing (Nov 2019).
 # Dedicated webhosting provider with spam records at SFS and elsewhere.
 # Subtract 44.0.0.0/9, 44.128.0.0/10 (clean).
-# Stop Forum Spam (SFS) listings: 95 (AS7489).
-# Updated: 2021.12.06
+# Stop Forum Spam (SFS) listings: 440 (AS7489).
+# Updated: 2022.10.03
 
-2a06:8e00::/48 Deny Cloud
-2a06:8ec0:3::/48 Deny Cloud
-Origin: AT
 2403:5680::/48 Deny Cloud
 2403:97c0::/48 Deny Cloud
 2403:97c0:10::/44 Deny Cloud
@@ -7164,8 +7161,8 @@ Origin: HK
 Origin: NL
 2c0f:f360::/34 Deny Cloud
 Origin: SC
-2402:e380:33c::/48 Deny Cloud
-2602:ffc5::/43 Deny Cloud
+2602:ffc5::/48 Deny Cloud
+2602:ffc5:10::/44 Deny Cloud
 2602:ffc5:20::/48 Deny Cloud
 2602:ffc5:30::/44 Deny Cloud
 2602:ffc5:40::/44 Deny Cloud
@@ -7183,6 +7180,7 @@ Origin: SC
 2a0b:b84::/31 Deny Cloud
 2a0b:b87:fff0::/44 Deny Cloud
 2a0b:7080:10::/44 Deny Cloud
+2a0b:7080:20::/44 Deny Cloud
 2a0d:77c7::/32 Deny Cloud
 Origin: US
 Profile: Dedicated;Tor endpoints here;Webhosting
@@ -8354,8 +8352,8 @@ Tag: SKB Enterprise B.V
 
 # ASN 30860 ("Virtual Systems LLC").
 # Server farm and a source of spam.
-# Stop Forum Spam (SFS) listings: 8,367.
-# Updated: 2021.12.06
+# Stop Forum Spam (SFS) listings: 4,053.
+# Updated: 2021.12.06 / Checked: 2022.10.03
 
 2a09:2dc0::/29 Deny Cloud
 Origin: UA
@@ -8973,9 +8971,8 @@ Tag: Skylon Solutions Limited
 
 
 # ASN 266827 ("BOHO BEACH CLUB S.A").
-# Webhost; Spam detected here.
-# Stop Forum Spam (SFS) listings: 683.
-# Updated: 2021.03.10 / Checked: 2021.11.03
+# Stop Forum Spam (SFS) listings: 1,493.
+# Updated: 2021.03.10 / Checked: 2022.10.03
 
 2803:d4a0::/32 Deny Cloud
 Origin: HN
@@ -9102,9 +9099,9 @@ Tag: IP Volume inc
 
 
 # ASN 203461 ("REGISTER S.P.A").
-# Webhosting company. Some odd traffic seen from here.
-# Stop Forum Spam (SFS) listings: 7.
-# Updated: 2021.03.18 / Checked: 2021.11.27
+# Webhosting company. Brute-force, XMLRPC/WordPress, and webapp attacks, port
+# scans, hacking, and spam detected from here.
+# Updated: 2021.03.18 / Checked: 2022.10.03
 
 2a01:8100:1::/48 Deny Cloud
 Origin: IT
@@ -9235,20 +9232,17 @@ Tag: FEELB SARL
 # ASN 137409 ("GSL Networks Pty LTD").
 # Australian data center and colo provider. Port scans, spam, and hacking
 # detected from here.
-# Stop Forum Spam (SFS) listings: 1,616.
-# Updated: 2021.12.06
+# Stop Forum Spam (SFS) listings: 2,116.
+# Updated: 2022.10.03
 
 2402:5ac0::/32 Deny Cloud
 2404:b9c0::/32 Deny Cloud
 Origin: AU
 2401:3cc0::/32 Deny Cloud
 Origin: HK
-2401:5ac0::/32 Deny Cloud
-2401:b9c0::/32 Deny Cloud
-Origin: JP
 2401:3bc0::/32 Deny Cloud
 Origin: NZ
-Profile: Infrastructure/Transit;Webhosting
+Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: GSL Networks Pty LTD
 
 
@@ -9277,16 +9271,16 @@ Tag: Brasil Site Informatica LTDA
 
 # ASN 51559 ("Server Internet Bilisim ve Bilgisayar Hizmetleri").
 # Webhosting provider and a source of unwanted traffic.
-# Stop Forum Spam (SFS) listings: 263.
-# Updated: 2021.12.06
+# Stop Forum Spam (SFS) listings: 502.
+# Updated: 2022.10.03
 
 2a03:2100::/43 Deny Cloud
 2a03:2100:20::/44 Deny Cloud
-2a05:9bc0::/44 Deny Cloud
-2a06:41c0::/46 Deny Cloud
-2a06:41c0:4::/48 Deny Cloud
-2a06:41c0:6::/47 Deny Cloud
-2a06:41c0:8::/45 Deny Cloud
+2a03:2100:32::/47 Deny Cloud
+2a03:2100:34::/46 Deny Cloud
+2a03:2100:38::/45 Deny Cloud
+2a03:2100:40::/48 Deny Cloud
+2a06:41c0::/48 Deny Cloud
 2a06:c400::/44 Deny Cloud
 2a0a:db00::/44 Deny Cloud
 2a0b:8100::/44 Deny Cloud

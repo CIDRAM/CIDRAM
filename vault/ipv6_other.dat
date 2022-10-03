@@ -1,8 +1,8 @@
 # IPv6 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_other.dat
 
-# Version: 2022.224.0
-# Last modified: 2022.08.13
+# Version: 2022.275.0
+# Last modified: 2022.10.03
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -54,8 +54,8 @@ Tag: Octopusnet VPN
 
 
 # ASN 208323 ("Foundation for Applied Privacy").
-# Stop Forum Spam (SFS) listings: 105,829.
-# Updated: 2019.10.02 / Checked: 2021.11.11
+# Stop Forum Spam (SFS) listings: 88,004.
+# Updated: 2019.10.02 / Checked: 2022.10.03
 
 2a03:e600:100::/48 Deny Proxy
 Origin: AT
@@ -66,8 +66,7 @@ Tag: Applied Privacy
 # ASNs 50495, 62874, 199438, 204646 ("Web2Objects LLC").
 # Provides anonymous proxy services. Spam, hacking, probing for
 # vulnerabilities, and other kinds of unwanted traffic detected from here.
-# Stop Forum Spam (SFS) listings: 5 (AS62874).
-# Updated: 2022.01.07
+# Updated: 2022.10.03
 
 2a00:f826:11::/48 Deny Proxy
 2a06:ef40::/32 Deny Proxy
@@ -75,15 +74,11 @@ Tag: Applied Privacy
 2a0c:4445::/48 Deny Proxy
 2a0d:2080::/29 Deny Proxy
 Origin: DE
-2a07:3400::/32 Deny Proxy
-2a07:3402::/32 Deny Proxy
-Origin: IN
 2602:ffb7:594::/48 Deny Proxy
 2602:ffb7:5a0::/46 Deny Proxy
 2602:ffb7:d00::/40 Deny Proxy
 2602:ffb7:f00::/40 Deny Proxy
-2602:ffd9:200::/40 Deny Proxy
-2602:ffd9:400::/40 Deny Proxy
+2602:ffd9::/36 Deny Proxy
 2a00:dd80:fb81::/48 Deny Proxy
 Origin: US
 Profile: Commercial;Tor endpoints here

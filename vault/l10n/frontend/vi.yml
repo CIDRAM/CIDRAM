@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2022.09.26).
+# This file: Vietnamese language data for the front-end (last modified: 2022.10.03).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -48,6 +48,7 @@ Extended Description PHPMailer: "Cần thiết để sử dụng bất kỳ ch�
 Extended Description Project Honeypot module: "Chặn các yêu cầu từ IP được liệt kê tại Project Honeypot."
 Extended Description Referrer spam module: "Chặn dựa trên spam giới thiệu thường không cung cấp bất kỳ lợi ích bảo mật có ý nghĩa nào, nhưng trong một số trường hợp, có thể hữu ích cho một số người dùng, để thu thập thêm thông tin về các yêu cầu và để có thể báo cáo nó.<br />Bằng cách cài đặt mô-đun này, các polyfill Symfony cho {{Links.Symfony.Intl/Idn}} cũng sẽ được cài đặt (bởi vì mô-đun này yêu cầu chức năng "Idn", và không phải tất cả các cài đặt PHP cung cấp nó theo mặc định). Có sẵn thông qua giấy phép <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
 Extended Description Stop Forum Spam module: "Bảo vệ các trang đăng ký và đăng nhập đối với các địa chỉ IP do SFS liệt kê."
+Extended Description Tor blocker module: "Cấm truy cập từ các nút thoát Tor thông qua tra cứu DNSEL (hỗ trợ cả IPv4 và IPv6)."
 Name AbuseIPDB module: "Mô-đun AbuseIPDB"
 Name BGPView module: "Mô-đun BGPView"
 Name Bad TLDs blocker module: "Mô-đun cho chặn các TLD xấu"
@@ -71,6 +72,7 @@ Name Optional security extras module: "Mô-đun tùy chọn cho bảo mật tín
 Name Project Honeypot module: "Mô-đun Project Honeypot"
 Name Referrer spam module: "Mô-đun spam giới thiệu"
 Name Stop Forum Spam module: "Mô-đun Stop Forum Spam"
+Name Tor blocker module: "Mô-đun cho chặn Tor"
 checkbox_delete_orphaned_values: "Xóa các giá trị mồ côi."
 checkbox_label_block_it: "Chặn nó."
 checkbox_label_block_negatives: "Chặn tiêu cực?"
@@ -623,12 +625,14 @@ response_delete_error: "Không thể xóa!"
 response_directory_deleted: "Thư mục xóa thành công!"
 response_directory_renamed: "Đổi tên thư mục thành công!"
 response_failed: "Thất bại"
+response_failed_to_access: "Không thể truy cập "%s"!"
 response_failed_to_install: "Cài đặt không thành công!"
 response_failed_to_update: "Cập nhật không thành công!"
 response_file_deleted: "Tập tin xóa thành công!"
 response_file_edited: "Tập tin sửa đổi thành công!"
 response_file_renamed: "Đổi tên tập tin thành công!"
 response_file_uploaded: "Tập tin tải lên thành công!"
+response_finished_reading_from: "Đã đọc xong từ "%s"."
 response_login_invalid_password: "Thất bại đăng nhập! Mật khẩu không hợp lệ!"
 response_login_invalid_username: "Thất bại đăng nhập! Tên người dùng không tồn tại!"
 response_login_password_field_empty: "Mật khẩu là trống!"

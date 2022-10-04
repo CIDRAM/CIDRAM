@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2022.09.26).
+# This file: Swedish language data for the front-end (last modified: 2022.10.03).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -48,6 +48,7 @@ Extended Description PHPMailer: "Krävs för att använda någon funktionalitet 
 Extended Description Project Honeypot module: "Blockerar förfrågningar från IP-adresser som listas på Project Honeypot."
 Extended Description Referrer spam module: "Blockering baserat på referensspam ger i allmänhet ingen meningsfull säkerhetsfördel, men i vissa fall kan det vara användbart för vissa användare, för att samla in mer information om förfrågningar och för att kunna rapportera det.<br />Genom att installera den här modulen installeras också Symfony polyfyllningar för {{Links.Symfony.Intl/Idn}} (eftersom den här modulen kräver Idn-funktionalitet, som inte alla PHP-installationer tillhandahåller som standard), tillgängliga via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>-licensen."
 Extended Description Stop Forum Spam module: "Skyddar registrerings och inloggningssidor mot IP-adresser som listas av SFS."
+Extended Description Tor blocker module: "Förbjuder åtkomst från Tor-utgångsnoder genom DNSEL-uppslagningar (stöder både IPv4 och IPv6)."
 Name AbuseIPDB module: "AbuseIPDB modul"
 Name BGPView module: "BGPView modul"
 Name Bad TLDs blocker module: "Dåliga toppdomäner blockeringsmodul"
@@ -71,6 +72,7 @@ Name Optional security extras module: "Valfri säkerhetstillbehörsmodul"
 Name Project Honeypot module: "Project Honeypot modul"
 Name Referrer spam module: "Referensspam-modul"
 Name Stop Forum Spam module: "Stop Forum Spam modul"
+Name Tor blocker module: "Tor blockeringsmodul"
 checkbox_delete_orphaned_values: "Ta bort föräldralösa värden."
 checkbox_label_block_it: "Blockera den."
 checkbox_label_block_negatives: "Blockera negativa?"
@@ -633,12 +635,14 @@ response_delete_error: "Misslyckades med att radera!"
 response_directory_deleted: "Katalog har raderats framgångsrikt!"
 response_directory_renamed: "Katalognamn har ändrats framgångsrikt!"
 response_failed: "Misslyckades"
+response_failed_to_access: "Det gick inte att komma åt "%s"!"
 response_failed_to_install: "Misslyckades med att installera!"
 response_failed_to_update: "Misslyckades med att uppdatera!"
 response_file_deleted: "Fil har raderats framgångsrikt!"
 response_file_edited: "Fil har ändrats framgångsrikt!"
 response_file_renamed: "Filnamn har ändrats framgångsrikt!"
 response_file_uploaded: "Fil har laddats upp framgångsrikt!"
+response_finished_reading_from: "Läsningen från "%s" är klar."
 response_login_invalid_password: "Inloggningsfel! Felaktigt lösenord!"
 response_login_invalid_username: "Inloggningsfel! Användarnamnet existerar inte!"
 response_login_password_field_empty: "Lösenord fältet tomt!"

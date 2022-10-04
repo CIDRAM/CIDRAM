@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2022.09.26).
+# This file: Latvian language data for the front-end (last modified: 2022.10.03).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -48,6 +48,7 @@ Extended Description PHPMailer: "Nepieciešams jebkuras funkcijas izmantošanai,
 Extended Description Project Honeypot module: "Bloķē pieprasījumus no IP, kas uzskaitīti vietnē Project Honeypot."
 Extended Description Referrer spam module: "Bloķēšana, pamatojoties uz novirzītāja surogātpastu, parasti nesniegs nozīmīgus drošības ieguvumus, taču dažos gadījumos tas varētu būt noderīgs dažiem lietotājiem, lai savāktu vairāk informācijas par pieprasījumiem un par iespēju par to ziņot.<br />Instalējot šo moduli, tiek instalēti arī Symfony polifilmi {{Links.Symfony.Intl/Idn}} (jo šim modulim ir nepieciešama Idn funkcionalitāte, ko ne visas PHP instalācijas nodrošina pēc noklusējuma), ir pieejami, izmantojot <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a> licenci."
 Extended Description Stop Forum Spam module: "Aizsargā reģistrācijas un ielogošanās lapas pret SFS uzskaitītajiem IP."
+Extended Description Tor blocker module: "Aizliedz piekļuvi no Tor izejas mezgliem, izmantojot DNSEL uzmeklēšanu (atbalsta gan IPv4 un IPv6)."
 Name AbuseIPDB module: "AbuseIPDB modulis"
 Name BGPView module: "BGPView modulis"
 Name Bad TLDs blocker module: "Sliktu TLD bloķētāja modulis"
@@ -71,6 +72,7 @@ Name Optional security extras module: "Neobligāts drošības ekstras modulis"
 Name Project Honeypot module: "Project Honeypot modulis"
 Name Referrer spam module: "Novirzītāja surogātpastu modulis"
 Name Stop Forum Spam module: "Stop Forum Spam modulis"
+Name Tor blocker module: "Tor bloķētāja modulis"
 checkbox_delete_orphaned_values: "Dzēst bezsaimnieka vērtības."
 checkbox_label_block_it: "Bloķējiet to."
 checkbox_label_block_negatives: "Vai bloķēt negatīvus?"
@@ -144,7 +146,7 @@ config_general_ipaddr: "Kur atrast savienojošo pieprasījumu IP adresi? (Noder�
 config_general_lang: "Norādiet CIDRAM noklusējuma valodu."
 config_general_lang_override: "Ja iespējams, lokalizēt saskaņā ar HTTP_ACCEPT_LANGUAGE? True (Patiess) = Jā [Noklusējuma]; False (Nepatiess) = Nē."
 config_general_numbers: "Kā jūs izvēlaties skaitļu parādīšanu? Atlasiet piemēru, kas jums šķiet vispareizākais."
-config_general_silent_mode: "Vai CIDRAM vajadzētu klusībā novirzīt bloķētus piekļuves mēģinājumus, nevis parādīt lapu "piekļuve liegta"? Ja tā, norādiet vietu, uz kuru novirzīt bloķētus piekļuves mēģinājumus. Ja nē, atstājiet šo mainīgo tukšu."
+config_general_silent_mode: "Vai CIDRAM vajadzētu klusībā novirzīt bloķētas piekļuves mēģinājumus, nevis parādīt lapu "piekļuve liegta"? Ja tā, norādiet vietu, uz kuru novirzīt bloķētas piekļuves mēģinājumus. Ja nē, atstājiet šo mainīgo tukšu."
 config_general_stages: "Kontroles mehānisms izpildes ķēdes posmiem (vai iespējots, vai tiek reģistrētas kļūdas, utt)."
 config_general_statistics: "Kontrolē, kuru statistikas informāciju izsekot."
 config_general_time_format: "CIDRAM izmantotais datuma/laika apzīmējuma formāts. Pēc pieprasījuma var tikt pievienotas papildu iespējas."
@@ -636,12 +638,14 @@ response_delete_error: "Direktorija izdzēšana neizdevās!"
 response_directory_deleted: "Direktorija izdzēšana izdevās!"
 response_directory_renamed: "Direktorija pārdēvēšana izdevās!"
 response_failed: "Neizdevās"
+response_failed_to_access: "Neizdevās piekļūt "%s"!"
 response_failed_to_install: "Instalēšanas neizdevās!"
 response_failed_to_update: "Atjaunināšanas neizdevās!"
 response_file_deleted: "Failu izdzēšana izdevās!"
 response_file_edited: "Failu modifikācija izdevās!"
 response_file_renamed: "Failu pārdēvēšana izdevās!"
 response_file_uploaded: "Failu augšupielāde izdevās!"
+response_finished_reading_from: "Pabeigts lasījums no "%s"."
 response_login_invalid_password: "Ielogošanās neizdevās! Nepareiza parole!"
 response_login_invalid_username: "Ielogošanās neizdevās! Lietotājvārds neeksistē!"
 response_login_password_field_empty: "Paroles lauks ir tukšs!"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2022.09.26).
+# This file: Portuguese language data for the front-end (last modified: 2022.10.03).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -48,6 +48,7 @@ Extended Description PHPMailer: "Necessário para usar qualquer funcionalidade q
 Extended Description Project Honeypot module: "Bloqueia solicitações de IPs listados no Project Honeypot."
 Extended Description Referrer spam module: "O bloqueio baseado em spam de referência geralmente não fornece nenhum benefício de segurança significativoBloqueio baseado em spam de referência geralmente não fornece nenhum benefício de segurança significativo, mas, em alguns casos, pode ser útil para alguns usuários, para reunir mais informações sobre solicitações e para relatá-las.<br />A instalação deste módulo também instala os polyfills do Symfony para {{Links.Symfony.Intl/Idn}} (porque este módulo requer a funcionalidade Idn, que nem todas as instalações PHP fornecem por padrão), disponível através da licença <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
 Extended Description Stop Forum Spam module: "Protege as páginas de registro e login contra IPs listados pelo SFS."
+Extended Description Tor blocker module: "Proíbe o acesso de nós de saída do Tor por meio de pesquisas DNSEL (suporta IPv4 e IPv6 ambas)."
 Name AbuseIPDB module: "Módulo AbuseIPDB"
 Name BGPView module: "Módulo BGPView"
 Name Bad TLDs blocker module: "Módulo bloqueador de TLDs perigosos"
@@ -71,6 +72,7 @@ Name Optional security extras module: "Módulo de extras de segurança opcional"
 Name Project Honeypot module: "Módulo Project Honeypot"
 Name Referrer spam module: "Módulo de spam de referência"
 Name Stop Forum Spam module: "Módulo Stop Forum Spam"
+Name Tor blocker module: "Módulo bloqueador do Tor"
 checkbox_delete_orphaned_values: "Deletar valores órfãos."
 checkbox_label_block_it: "Bloquear-o."
 checkbox_label_block_negatives: "Bloquear negativos?"
@@ -630,12 +632,14 @@ response_delete_error: "Falha ao deletar!"
 response_directory_deleted: "Diretório deletado com sucesso!"
 response_directory_renamed: "Diretório renomeado com sucesso!"
 response_failed: "Falhou"
+response_failed_to_access: "Falha ao acessar "%s"!"
 response_failed_to_install: "Instalação falhada!"
 response_failed_to_update: "Atualização falhada!"
 response_file_deleted: "Arquivo deletado com sucesso!"
 response_file_edited: "Arquivo modificado com sucesso!"
 response_file_renamed: "Arquivo renomeado com sucesso!"
 response_file_uploaded: "Arquivo carregado com sucesso!"
+response_finished_reading_from: "Leitura de "%s" é feita."
 response_login_invalid_password: "Falha no login! Senha inválida!"
 response_login_invalid_username: "Falha no login! Esse usuário não existe!"
 response_login_password_field_empty: "Entrada de senha vazio!"

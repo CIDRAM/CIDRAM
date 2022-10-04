@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2022.09.26).
+# This file: French language data for the front-end (last modified: 2022.10.03).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -48,6 +48,7 @@ Extended Description PHPMailer: "Requis pour l'utilisation de toute fonctionnali
 Extended Description Project Honeypot module: "Bloque les requêtes des adresses IP répertoriées dans Project Honeypot."
 Extended Description Referrer spam module: "Le blocage basé sur le spam référent ne procure généralement aucun avantage de sécurité significatif, mais dans certains cas, cela pourrait être utile à certains utilisateurs pour rassembler plus d'informations sur les requêtes et pour pouvoir les signaler.<br />L'installation de ce module installe également les polyfills Symfony pour {{Links.Symfony.Intl/Idn}} (car ce module nécessite la fonctionnalité Idn, que ne toutes pas les installations PHP fournissent par défaut), disponibles via la licence <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
 Extended Description Stop Forum Spam module: "Protège l'enregistrement et les pages de connexion contre les adresses IP répertoriées par SFS."
+Extended Description Tor blocker module: "Interdit l'accès à partir des nœuds de sortie Tor via les recherches DNSEL (le supporte IPv4 et IPv6)."
 Name AbuseIPDB module: "Module AbuseIPDB"
 Name BGPView module: "Module BGPView"
 Name Bad TLDs blocker module: "Module de blocage des mauvais TLDs"
@@ -71,6 +72,7 @@ Name Optional security extras module: "Module optionnel pour la sécurité suppl
 Name Project Honeypot module: "Module Project Honeypot"
 Name Referrer spam module: "Module spam référent"
 Name Stop Forum Spam module: "Module Stop Forum Spam"
+Name Tor blocker module: "Module de blocage Tor"
 checkbox_delete_orphaned_values: "Supprimer les valeurs orphelines."
 checkbox_label_block_it: "Bloquez le."
 checkbox_label_block_negatives: "Bloquer les négatifs\_?"
@@ -639,12 +641,14 @@ response_delete_error: "Échec du suppriment\_!"
 response_directory_deleted: "Répertoire supprimé avec succès\_!"
 response_directory_renamed: "Répertoire renommé avec succès\_!"
 response_failed: "Échoué"
+response_failed_to_access: "Impossible d'accéder à « %s » !"
 response_failed_to_install: "Échec de l'installation\_!"
 response_failed_to_update: "Échec de la mise à jour\_!"
 response_file_deleted: "Fichier supprimé avec succès\_!"
 response_file_edited: "Fichier modifié avec succès\_!"
 response_file_renamed: "Fichier renommé avec succès\_!"
 response_file_uploaded: "Fichier téléchargé avec succès\_!"
+response_finished_reading_from: "« %s » a fini d'être lu."
 response_login_invalid_password: "Erreur de connexion\_! Mot de passe incorrect\_!"
 response_login_invalid_username: "Erreur de connexion\_! Nom d'utilisateur n'existe pas\_!"
 response_login_password_field_empty: "Mot de passe entrée était vide\_!"

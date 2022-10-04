@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2022.09.26).
+# This file: Spanish language data for the front-end (last modified: 2022.10.03).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -48,6 +48,7 @@ Extended Description PHPMailer: "Requerido para usar cualquier funcionalidad que
 Extended Description Project Honeypot module: "Bloquea las solicitudes de los IP listados en Project Honeypot."
 Extended Description Referrer spam module: "El bloqueo basado en spam de referencia generalmente no proporcionará ningún beneficio de seguridad significativo, pero en algunos casos, podría ser útil para algunos usuarios, para recopilar más información sobre solicitudes y para poder reporta los.<br />La instalación de este módulo también instala los polyfills de Symfony para {{Links.Symfony.Intl/Idn}} (porque este módulo requiere la funcionalidad Idn, que no todas las instalaciones de PHP proporcionan de manera predeterminada), disponibles a través de la licencia <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
 Extended Description Stop Forum Spam module: "Protege las páginas de registro y de inicio de sesión de las IP listadas por SFS."
+Extended Description Tor blocker module: "Prohíbe el acceso desde los nodos de salida Tor a través de búsquedas DNSEL (ambos IPv4 e IPv6 soportados)."
 Name AbuseIPDB module: "Módulo AbuseIPDB"
 Name BGPView module: "Módulo BGPView"
 Name Bad TLDs blocker module: "Módulo bloqueador de TLDs malos"
@@ -71,6 +72,7 @@ Name Optional security extras module: "Extras de seguridad módulo opcional"
 Name Project Honeypot module: "Módulo Project Honeypot"
 Name Referrer spam module: "Módulo de spam de referencia"
 Name Stop Forum Spam module: "Módulo Stop Forum Spam"
+Name Tor blocker module: "Módulo bloqueador Tor"
 checkbox_delete_orphaned_values: "Eliminar valores huérfanos."
 checkbox_label_block_it: "Bloquearlo."
 checkbox_label_block_negatives: "¿Bloquear negativos?"
@@ -633,12 +635,14 @@ response_delete_error: "¡No se pudo eliminar!"
 response_directory_deleted: "¡Directorio eliminado con éxito!"
 response_directory_renamed: "¡El nombre del directorio cambiado con éxito!"
 response_failed: "Fallado"
+response_failed_to_access: "¡Falló el acceso a "%s"!"
 response_failed_to_install: "¡No se pudo instalar!"
 response_failed_to_update: "¡No se pudo actualizar!"
 response_file_deleted: "¡Archivo eliminado con éxito!"
 response_file_edited: "¡Archivo modificado con éxito!"
 response_file_renamed: "¡El nombre del archivo cambiado con éxito!"
 response_file_uploaded: "¡Archivo subido con éxito!"
+response_finished_reading_from: "Se ha leído "%s"."
 response_login_invalid_password: "¡Error al iniciar sesión – Contraseña invalida!"
 response_login_invalid_username: "¡Error al iniciar sesión – El usuario no existe!"
 response_login_password_field_empty: "¡La entrada de contraseña estaba vacío!"

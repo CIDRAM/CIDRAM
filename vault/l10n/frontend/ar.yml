@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2022.09.26).
+# This file: Arabic language data for the front-end (last modified: 2022.10.03).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -48,6 +48,7 @@ Extended Description PHPMailer: "مطلوب لاستخدام أي وظيفة ت�
 Extended Description Project Honeypot module: "بحظر الطلبات من عناوين IP المدرجة في Project Honeypot."
 Extended Description Referrer spam module: "لا يوفر الحظر بناءً على الإحالة غير المرغوب فيها عمومًا أي فائدة أمنية ذات مغزى، ولكن في بعض الحالات، قد يكون مفيدًا لبعض المستخدمين، ولجمع مزيد من المعلومات حول الطلبات، وللتمكن من الإبلاغ عنها.<br />يؤدي تثبيت هذه المكون النمطية أيضًا إلى تثبيت polyfill لـ Symfony لـ {{Links.Symfony.Intl/Idn}} (لأن هذه المكون تتطلب وظيفة Idn، والتي لا توفرها جميع عمليات تثبيت PHP بشكل افتراضي)، متاح عبر ترخيص <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
 Extended Description Stop Forum Spam module: "يحمي تسجيل صفحات ضد عناوين IP المدرجة من قبل SFS."
+Extended Description Tor blocker module: "يحظر الوصول من عقد خروج Tor من خلال عمليات بحث DNSEL (يدعم كلا من IPv4 و IPv6)."
 Name AbuseIPDB module: "AbuseIPDB المكون"
 Name BGPView module: "BGPView المكون"
 Name Bad TLDs blocker module: "المكون حجب TLD سيئة"
@@ -71,6 +72,7 @@ Name Optional security extras module: "المكون اشياء الأمن اخت
 Name Project Honeypot module: "Project Honeypot المكون"
 Name Referrer spam module: "المكون للإحالة البريد المزعج"
 Name Stop Forum Spam module: "Stop Forum Spam المكون"
+Name Tor blocker module: "المكون مانع Tor."
 checkbox_delete_orphaned_values: "حذف القيم المعزولة."
 checkbox_label_block_it: "منعه."
 checkbox_label_block_negatives: "حظر السلبيات؟"
@@ -623,12 +625,14 @@ response_delete_error: "فشلت في حذف!"
 response_directory_deleted: "تم حذف الدليل بنجاح!"
 response_directory_renamed: "تم اعادة تسمية الدليل بنجاح!"
 response_failed: "فشل"
+response_failed_to_access: "فشل في الوصول إلى "%s"!"
 response_failed_to_install: "فشل التثبيت!"
 response_failed_to_update: "فشل التحديث!"
 response_file_deleted: "ملف حذف بنجاح!"
 response_file_edited: "ملف تعديل بنجاح!"
 response_file_renamed: "ملف إعادة تسمية بنجاح!"
 response_file_uploaded: "ملف تحميلها بنجاح!"
+response_finished_reading_from: "تم الانتهاء من القراءة من "%s"."
 response_login_invalid_password: "فشل تسجيل الدخول! كلمة السر غير صالحة!"
 response_login_invalid_username: "فشل تسجيل الدخول! اسم المستخدم غير موجود!"
 response_login_password_field_empty: "كلمه السر حقل فارغ!"

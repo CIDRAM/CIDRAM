@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2022.09.26).
+# This file: Dutch language data for the front-end (last modified: 2022.10.03).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -48,6 +48,7 @@ Extended Description PHPMailer: "Vereist voor het gebruik van functionaliteit di
 Extended Description Project Honeypot module: "Blokkeert aanvragen van IP's die worden vermeld op Project Honeypot."
 Extended Description Referrer spam module: "Blokkering op basis van verwijzende spam levert over het algemeen geen betekenisvol beveiligingsvoordeel op, maar in sommige gevallen kan het nuttig zijn voor sommige gebruikers, voor het verzamelen van meer informatie over verzoeken en erover te rapporteren.<br />Door deze module te installeren, worden ook de Symfony-polyfills voor {{Links.Symfony.Intl/Idn}} geïnstalleerd (omdat deze module Idn-functionaliteit vereist, die niet alle PHP-installaties standaard bieden), beschikbaar via de <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a> licentie."
 Extended Description Stop Forum Spam module: "Beschermt registratie en login tegen IP's die door SFS worden vermeld."
+Extended Description Tor blocker module: "Verbiedt toegang vanaf Tor exit-knooppunten via DNSEL-lookups (ondersteunt zowel IPv4 en IPv6)."
 Name AbuseIPDB module: "AbuseIPDB module"
 Name BGPView module: "BGPView module"
 Name Bad TLDs blocker module: "Slechte TLD's blokkermodule"
@@ -71,6 +72,7 @@ Name Optional security extras module: "Optionele beveiliging extra module"
 Name Project Honeypot module: "Project Honeypot module"
 Name Referrer spam module: "Verwijzersspam module"
 Name Stop Forum Spam module: "Stop Forum Spam module"
+Name Tor blocker module: "Tor blokkermodule"
 checkbox_delete_orphaned_values: "Verweesde waarden verwijderen."
 checkbox_label_block_it: "Blokkeer het."
 checkbox_label_block_negatives: "Negatieven blokkeren?"
@@ -634,12 +636,14 @@ response_delete_error: "Mislukt om te verwijderen!"
 response_directory_deleted: "Bestandsmap succesvol verwijderd!"
 response_directory_renamed: "De naam van de bestandsmap met succes veranderd!"
 response_failed: "Mislukt"
+response_failed_to_access: "Toegang tot "%s" is mislukt!"
 response_failed_to_install: "Installatie mislukt!"
 response_failed_to_update: "Update mislukt!"
 response_file_deleted: "Bestand succesvol verwijderd!"
 response_file_edited: "Bestand succesvol gewijzigd!"
 response_file_renamed: "De naam van de bestand met succes veranderd!"
 response_file_uploaded: "Bestand succesvol uploadet!"
+response_finished_reading_from: "Klaar met lezen vanaf "%s"."
 response_login_invalid_password: "Inloggen mislukt! Ongeldig wachtwoord!"
 response_login_invalid_username: "Inloggen mislukt! Gebruikersnaam bestaat niet!"
 response_login_password_field_empty: "Wachtwoord veld leeg!"

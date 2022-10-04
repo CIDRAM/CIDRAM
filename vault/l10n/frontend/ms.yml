@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malay language data for the front-end (last modified: 2022.09.26).
+# This file: Malay language data for the front-end (last modified: 2022.10.03).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -48,6 +48,7 @@ Extended Description PHPMailer: "Diperlukan untuk menggunakan kefungsian apa-apa
 Extended Description Project Honeypot module: "Menyekat permintaan daripada IP yang disenaraikan oleh Project Honeypot."
 Extended Description Referrer spam module: "Menyekat berdasarkan spam perujuk pada umumnya tidak akan memberikan sebarang manfaat keselamatan yang bermakna, tetapi dalam beberapa kes, mungkin berguna untuk sesetengah pengguna, untuk mengumpulkan lebih banyak maklumat tentang permintaan, dan untuk dapat melaporkannya.<br />Memasang modul ini juga memasang polyfill Symfony untuk {{Links.Symfony.Intl/Idn}} (kerana modul ini memerlukan kefungsian Idn, yang tidak semua pemasangan PHP menyediakan secara lalai), tersedia melalui lesen <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
 Extended Description Stop Forum Spam module: "Melindungi halaman pendaftaran dan log masuk daripada IP yang disenaraikan oleh SFS."
+Extended Description Tor blocker module: "Melarang akses daripada nod keluar Tor melalui carian DNSEL (menyokong kedua-dua IPv4 dan IPv6)."
 Name AbuseIPDB module: "Modul AbuseIPDB"
 Name BGPView module: "Modul BGPView"
 Name Bad TLDs blocker module: "Modul penyekat TLD buruk"
@@ -71,6 +72,7 @@ Name Optional security extras module: "Modul tambahan keselamatan pilihan"
 Name Project Honeypot module: "Modul Project Honeypot"
 Name Referrer spam module: "Modul spam perujuk"
 Name Stop Forum Spam module: "Modul Stop Forum Spam"
+Name Tor blocker module: "Modul penyekat Tor"
 checkbox_delete_orphaned_values: "Padamkan nilai-nilai yang diyatimkan."
 checkbox_label_block_it: "Sekatnya."
 checkbox_label_block_negatives: "Sekat negatif?"
@@ -626,12 +628,14 @@ response_delete_error: "Gagal memadam!"
 response_directory_deleted: "Direktori berjaya dipadamkan!"
 response_directory_renamed: "Direktori berjaya dinamakan semula!"
 response_failed: "Gagal"
+response_failed_to_access: "Gagal mengakses "%s"!"
 response_failed_to_install: "Gagal memasang!"
 response_failed_to_update: "Gagal mengemas kini!"
 response_file_deleted: "Fail berjaya dipadamkan!"
 response_file_edited: "Fail berjaya diubah suai!"
 response_file_renamed: "Fail berjaya dinamakan semula!"
 response_file_uploaded: "Fail berjaya dimuat naik!"
+response_finished_reading_from: "Selesai membaca dari "%s"."
 response_login_invalid_password: "Kegagalan masuk! Kata laluan tidak sah!"
 response_login_invalid_username: "Kegagalan masuk! Nama pengguna tidak wujud!"
 response_login_password_field_empty: "Medan kata laluan kosong!"

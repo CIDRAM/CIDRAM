@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2022.09.26).
+# This file: Japanese language data for the front-end (last modified: 2022.10.03).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -48,6 +48,7 @@ Extended Description PHPMailer: "電子Ｅメールの送信を含む機能の�
 Extended Description Project Honeypot module: "Project HoneypotにリストされているＩＰからの要求をブロックします。"
 Extended Description Referrer spam module: "リファラー・スパムに基づくブロックは、通常、有意義なセキュリティ上の利点を提供しません、ただし、場合によっては、リクエストに関する詳細情報の収集、およびレポートの作成に役立つ可能性があります。<br />このモジュールをインストールすると、{{Links.Symfony.Intl/Idn}}のSymfonyポリフィルもインストールされます（このモジュールは「Idn」機能を必要とするためが、すべてのＰＨＰインストールがデフォルトで提供するわけではありません）。​<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">ＭＩＴ</a>ライセンスを通じて入手できます。"
 Extended Description Stop Forum Spam module: "ＳＦＳによってリストされたＩＰに対して登録ページとログインページを保護します。"
+Extended Description Tor blocker module: "ＤＮＳＥＬルックアップによるＴｏｒ出口ノードからのアクセスを禁止します（ＩＰｖ４とＩＰｖ６の両方をサポートします）。"
 Name AbuseIPDB module: "AbuseIPDB モジュール"
 Name BGPView module: "BGPView モジュール"
 Name Bad TLDs blocker module: "危険なホストＴＬＤブロッカー・モジュール"
@@ -71,6 +72,7 @@ Name Optional security extras module: "オプショナル・セキュリティ�
 Name Project Honeypot module: "Project Honeypot モジュール"
 Name Referrer spam module: "リファラー・スパム・モジュール"
 Name Stop Forum Spam module: "Stop Forum Spam モジュール"
+Name Tor blocker module: "Ｔｏｒブロッカー・モジュール"
 checkbox_delete_orphaned_values: "孤立した値を削除します。"
 checkbox_label_block_it: "それをブロックします。"
 checkbox_label_block_negatives: "陰性をブロックしますか？"
@@ -622,12 +624,14 @@ response_delete_error: "削除に失敗しました！"
 response_directory_deleted: "ディレクトリが正常に削除されました！"
 response_directory_renamed: "ディレクトリの名前が変更されました！"
 response_failed: "失敗しました"
+response_failed_to_access: "「%s」にアクセスできませんでした！"
 response_failed_to_install: "インストールに失敗しました！"
 response_failed_to_update: "アップデートに失敗しました！"
 response_file_deleted: "ファイルを削除が成功しました！"
 response_file_edited: "ファイルは正常に変更されました！"
 response_file_renamed: "ファイルの名前が変更されました！"
 response_file_uploaded: "ファイルは正常にアップロードされました！"
+response_finished_reading_from: "「%s」からの読み取りが完了しました。"
 response_login_invalid_password: "ログイン失敗！​無効なパスワード！"
 response_login_invalid_username: "ログイン失敗！​ユーザー名は存在しません！"
 response_login_password_field_empty: "パスワード入力は空です！"

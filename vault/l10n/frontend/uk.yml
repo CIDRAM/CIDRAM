@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Ukrainian language data for the front-end (last modified: 2022.09.26).
+# This file: Ukrainian language data for the front-end (last modified: 2022.10.03).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -48,6 +48,7 @@ Extended Description PHPMailer: "Необхідний для використа�
 Extended Description Project Honeypot module: "Блокує запити від IP-адрес, указаних у Project Honeypot."
 Extended Description Referrer spam module: "Блокування на основі спаму-реферера, як правило, не забезпечить жодних суттєвих переваг безпеки, але в деяких випадках може бути корисним для деяких користувачів, для збору додаткової інформації про запити та для того, щоб мати можливість повідомити про це.<br />Встановлення цього модуля також встановлює полізаповнення Symfony для {{Links.Symfony.Intl/Idn}} (тому що для цього модуля потрібна функція Idn, яку не всі інсталяції PHP надають за замовчуванням), доступний за ліцензією <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
 Extended Description Stop Forum Spam module: "Захищає сторінки реєстрації та входу від IP-адрес, указаних SFS."
+Extended Description Tor blocker module: "Забороняє доступ із вузлів виходу Tor через пошук DNSEL (підтримує IPv4 і IPv6 оба)."
 Name AbuseIPDB module: "Модуль AbuseIPDB"
 Name BGPView module: "Модуль BGPView"
 Name Bad TLDs blocker module: "Модуль блокування поганих TLD"
@@ -71,6 +72,7 @@ Name Optional security extras module: "Додатковий модуль зас�
 Name Project Honeypot module: "Модуль Project Honeypot"
 Name Referrer spam module: "Модуль реферального спаму"
 Name Stop Forum Spam module: "Модуль Stop Forum Spam"
+Name Tor blocker module: "Модуль блокувальника Tor"
 checkbox_delete_orphaned_values: "Видалити втрачені цінності."
 checkbox_label_block_it: "Заблокуйте його."
 checkbox_label_block_negatives: "Блокувати негативи?"
@@ -638,12 +640,14 @@ response_delete_error: "Помилка видалення!"
 response_directory_deleted: "Каталог успішно видалено!"
 response_directory_renamed: "Каталог успішно перейменовано!"
 response_failed: "Помилка"
+response_failed_to_access: "Не вдалося отримати доступ до «%s»!"
 response_failed_to_install: "Помилка встановлення!"
 response_failed_to_update: "Помилка оновлення!"
 response_file_deleted: "Файл успішно видалено!"
 response_file_edited: "Файл успішно змінено!"
 response_file_renamed: "Файл успішно перейменовано!"
 response_file_uploaded: "Файл успішно завантажено!"
+response_finished_reading_from: "Закінчив читати від «%s»."
 response_login_invalid_password: "Помилка входу! Невірний пароль!"
 response_login_invalid_username: "Помилка входу! Ім'я користувача не існує!"
 response_login_password_field_empty: "Поле пароля порожнє!"

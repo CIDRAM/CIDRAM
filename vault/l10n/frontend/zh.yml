@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2022.09.26).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2022.10.03).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -48,6 +48,7 @@ Extended Description PHPMailer: "使用涉及发送电子邮件的任何功能�
 Extended Description Project Honeypot module: "阻止来自Project Honeypot列出的IP的请求。"
 Extended Description Referrer spam module: "基于引荐来源垃圾邮件阻止通常不会提供任何有意义的安全利益，但在某些情况下，对某些用户可能有用，用于收集有关请求的更多信息，以及能够报告它。<br />通过安装此模块，还将安装用于{{Links.Symfony.Intl/Idn}}的Symfony polyfills（因为此模块需要Idn功能性，但并非所有PHP安装都默认提供该功能性）。​可以通过<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>许可获得。"
 Extended Description Stop Forum Spam module: "防止通过SFS列出的IP地址访问注册和登录页面。"
+Extended Description Tor blocker module: "禁止通过DNSEL查找从Tor出口节点进行访问（支持IPv4和IPv6）。"
 Name AbuseIPDB module: "AbuseIPDB 模块"
 Name BGPView module: "BGPView 模块"
 Name Bad TLDs blocker module: "坏TLD阻塞模块"
@@ -71,6 +72,7 @@ Name Optional security extras module: "可选安全附加模块"
 Name Project Honeypot module: "Project Honeypot 模块"
 Name Referrer spam module: "引荐来源垃圾邮件模块"
 Name Stop Forum Spam module: "Stop Forum Spam 模块"
+Name Tor blocker module: "Tor阻塞模块"
 checkbox_delete_orphaned_values: "删除孤立值。"
 checkbox_label_block_it: "阻止它。"
 checkbox_label_block_negatives: "阻止阴性？"
@@ -615,12 +617,14 @@ response_delete_error: "无法删除！"
 response_directory_deleted: "文件夹成功删除！"
 response_directory_renamed: "文件夹成功改名！"
 response_failed: "失败"
+response_failed_to_access: "无法访问“%s”！"
 response_failed_to_install: "无法安装！"
 response_failed_to_update: "无法更新！"
 response_file_deleted: "文件成功删除！"
 response_file_edited: "文件成功改性！"
 response_file_renamed: "文件成功改名！"
 response_file_uploaded: "文件成功上传！"
+response_finished_reading_from: "从“%s”读完。"
 response_login_invalid_password: "登录失败！​密码无效！"
 response_login_invalid_username: "登录失败！​用户名不存在！"
 response_login_password_field_empty: "密码输入是空的！"

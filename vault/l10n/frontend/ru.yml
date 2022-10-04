@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2022.09.26).
+# This file: Russian language data for the front-end (last modified: 2022.10.03).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -48,6 +48,7 @@ Extended Description PHPMailer: "Требуется для использова�
 Extended Description Project Honeypot module: "Блокирует запросы от IP-адресов, перечисленных в Project Honeypot."
 Extended Description Referrer spam module: "Блокировка, основанная на реферальный спам, как правило, не дает сколько-нибудь значимого преимущества безопасности, но в некоторых случаях может быть полезным для некоторых пользователей, для сбора дополнительной информации о запросах и для возможности сообщить об этом.<br />Установка этого модуля также устанавливает полифилы Symfony для {{Links.Symfony.Intl/Idn}} (потому что этот модуль требует функциональности Idn, которую не все установки PHP предоставляют по умолчанию), доступно через лицензию <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
 Extended Description Stop Forum Spam module: "Защищает страницы регистрации и входа в систему от IP-адресов, перечисленных в SFS."
+Extended Description Tor blocker module: "Запрещает доступ с выходных узлов Tor через поиск DNSEL (поддерживает IPv4 и IPv6 оба)."
 Name AbuseIPDB module: "Модуль AbuseIPDB"
 Name BGPView module: "Модуль BGPView"
 Name Bad TLDs blocker module: "Модуль блокатор для плохие ДВУ"
@@ -71,6 +72,7 @@ Name Optional security extras module: "Модуль необязательный
 Name Project Honeypot module: "Модуль Project Honeypot"
 Name Referrer spam module: "Модуль реферера спама"
 Name Stop Forum Spam module: "Модуль Stop Forum Spam"
+Name Tor blocker module: "Модуль блокатор Tor"
 checkbox_delete_orphaned_values: "Удалить потерянные значения."
 checkbox_label_block_it: "Заблокируйте это."
 checkbox_label_block_negatives: "Блокировать отрицательные?"
@@ -639,12 +641,14 @@ response_delete_error: "Не удалось удалить!"
 response_directory_deleted: "Каталог успешно удален!"
 response_directory_renamed: "Каталог успешно переименован!"
 response_failed: "Не удалось"
+response_failed_to_access: "Не удалось получить доступ к «%s»!"
 response_failed_to_install: "Не удалось установить!"
 response_failed_to_update: "Не удалось обновить!"
 response_file_deleted: "Файл успешно удален!"
 response_file_edited: "Файл успешно изменен!"
 response_file_renamed: "Файл успешно переименован!"
 response_file_uploaded: "Файл успешно загружен!"
+response_finished_reading_from: "Закончил читать с «%s»."
 response_login_invalid_password: "Войти провал! Неверный пароль!"
 response_login_invalid_username: "Войти провал! Имя пользователя не существует!"
 response_login_password_field_empty: "Пароль пусто!"

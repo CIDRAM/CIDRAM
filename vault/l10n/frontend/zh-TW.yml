@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2022.09.26).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2022.10.03).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -48,6 +48,7 @@ Extended Description PHPMailer: "使用涉及發送電子郵件的任何功能�
 Extended Description Project Honeypot module: "阻止來自Project Honeypot列出的IP的請求。"
 Extended Description Referrer spam module: "基於引薦來源垃圾郵件阻止通常不會提供任何有意義的安全利益，但在某些情況下，對某些用戶可能有用，用於收集有關請求的更多信息，以及能夠報告它。<br />通過安裝此模塊，還將安裝用於{{Links.Symfony.Intl/Idn}}的Symfony polyfills（因為此模塊需要Idn功能性，但並非所有PHP安裝都默認提供該功能性）。​可以通過<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>許可獲得。"
 Extended Description Stop Forum Spam module: "防止通過SFS列出的IP地址訪問註冊和登錄頁面。"
+Extended Description Tor blocker module: "禁止通過DNSEL查找從Tor出口節點進行訪問（支持IPv4和IPv6）。"
 Name AbuseIPDB module: "AbuseIPDB 模塊"
 Name BGPView module: "BGPView 模塊"
 Name Bad TLDs blocker module: "壞TLD阻塞模塊"
@@ -71,6 +72,7 @@ Name Optional security extras module: "可選安全附加模塊"
 Name Project Honeypot module: "Project Honeypot 模塊"
 Name Referrer spam module: "引薦來源垃圾郵件模塊"
 Name Stop Forum Spam module: "Stop Forum Spam 模塊"
+Name Tor blocker module: "Tor阻塞模塊"
 checkbox_delete_orphaned_values: "刪除孤立值。"
 checkbox_label_block_it: "阻止它。"
 checkbox_label_block_negatives: "阻止陰性？"
@@ -615,12 +617,14 @@ response_delete_error: "無法刪除！"
 response_directory_deleted: "文件夾成功刪除！"
 response_directory_renamed: "文件夾成功改名！"
 response_failed: "失敗"
+response_failed_to_access: "無法訪問『%s』！"
 response_failed_to_install: "無法安裝！"
 response_failed_to_update: "無法更新！"
 response_file_deleted: "文件成功刪除！"
 response_file_edited: "文件成功改性！"
 response_file_renamed: "文件成功改名！"
 response_file_uploaded: "文件成功上傳！"
+response_finished_reading_from: "從『%s』讀完。"
 response_login_invalid_password: "登錄失敗！​密碼無效！"
 response_login_invalid_username: "登錄失敗！​用戶名不存在！"
 response_login_password_field_empty: "密碼輸入是空的！"

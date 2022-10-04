@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2022.09.26).
+# This file: Polish language data for the front-end (last modified: 2022.10.03).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -48,6 +48,7 @@ Extended Description PHPMailer: "Wymagane do korzystania z dowolnej funkcji zwi�
 Extended Description Project Honeypot module: "Blokuje żądania z adresów IP wymienionych w Project Honeypot."
 Extended Description Referrer spam module: "Blokowanie na podstawie spamu odsyłającego zwykle nie zapewnia żadnych znaczących korzyści bezpieczeństwa, ale w niektórych przypadkach może być przydatne dla niektórych użytkowników, do gromadzenia dodatkowych informacji na temat żądań i możliwości ich zgłaszania.<br />Zainstalowanie tego modułu powoduje również zainstalowanie polifillów Symfony dla {{Links.Symfony.Intl/Idn}} (ponieważ ten moduł wymaga funkcjonalności Idn, której domyślnie nie zapewniają wszystkie instalacje PHP), dostępne za pośrednictwem licencji <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
 Extended Description Stop Forum Spam module: "Chroni strony rejestracji i logowania przed adresami IP wymienionymi przez SFS."
+Extended Description Tor blocker module: "Zabrania dostępu z węzłów wyjściowych Tora przez wyszukiwania DNSEL (obsługuje zarówno IPv4 i IPv6)."
 Name AbuseIPDB module: "Moduł AbuseIPDB"
 Name BGPView module: "Moduł BGPView"
 Name Bad TLDs blocker module: "Moduł do blokowania złych TLD"
@@ -71,6 +72,7 @@ Name Optional security extras module: "Opcjonalny moduł dodatków bezpieczeńst
 Name Project Honeypot module: "Moduł Project Honeypot"
 Name Referrer spam module: "Moduł spamu polecającego"
 Name Stop Forum Spam module: "Moduł Stop Forum Spam"
+Name Tor blocker module: "Moduł blokujący Tor"
 checkbox_delete_orphaned_values: "Usuń osierocone wartości."
 checkbox_label_block_it: "Zablokuj to."
 checkbox_label_block_negatives: "Blokować negatywy?"
@@ -638,12 +640,14 @@ response_delete_error: "Niepowodzenie usuwania!"
 response_directory_deleted: "Sukces usunięcie katalogu!"
 response_directory_renamed: "Sukces zmiany nazwy katalogu!"
 response_failed: "Niepowodzenie"
+response_failed_to_access: "Nie można uzyskać dostępu do „%s”!"
 response_failed_to_install: "Niepowodzenie instalacji!"
 response_failed_to_update: "Niepowodzenie aktualizacji!"
 response_file_deleted: "Sukces usunięcie pliku!"
 response_file_edited: "Sukces modyfikacji pliku!"
 response_file_renamed: "Sukces zmiany nazwy pliku!"
 response_file_uploaded: "Sukces przesłanie pliku!"
+response_finished_reading_from: "Zakończono czytanie od „%s”."
 response_login_invalid_password: "Logowanie nieudane! Nieprawidłowe hasło!"
 response_login_invalid_username: "Logowanie nieudane! Nazwa użytkownika nie istnieje!"
 response_login_password_field_empty: "Pole hasła puste!"

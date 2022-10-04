@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2022.09.26).
+# This file: Korean language data for the front-end (last modified: 2022.10.03).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -48,10 +48,11 @@ Extended Description PHPMailer: "이메일 전송과 관련된 기능 사용에 
 Extended Description Project Honeypot module: "Project Honeypot에 나열된 IP의 요청을 차단합니다."
 Extended Description Referrer spam module: "리퍼러 스팸에 기반한 차단은 일반적으로 의미 있는 보안 이점을 제공하지 않습니다, 그러나 어떤 경우에는, 요청에 대한 추가 정보를 수집하고 보고서를 생성하는 데 유용 할 수 있습니다.<br />이 모듈을 설치하면, {{Links.Symfony.Intl/Idn}}에 대한 Symfony 폴리 필도 설치됩니다 (이 모듈에는 Idn 기능이 필요하기 때문에 및, 모든 PHP 설치에서 기본적으로 제공하는 것은 아닙니다). <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>라이센스를 통해 사용 가능합니다."
 Extended Description Stop Forum Spam module: "SFS가 나열한 IP에 대한 등록 및 로그인 페이지를 보호합니다."
+Extended Description Tor blocker module: "DNSEL 조회를 통한 Tor 출구 노드의 액세스 금지 (IPv4 및 IPv6 모두 지원)."
 Name AbuseIPDB module: "AbuseIPDB 모듈"
 Name BGPView module: "BGPView 모듈"
-Name Bad TLDs blocker module: "위험한 TLD 차단 모듈"
-Name Bad hosts blocker module: "위험한 호스트 차단 모듈"
+Name Bad TLDs blocker module: "위험한 TLD 차단제 모듈"
+Name Bad hosts blocker module: "위험한 호스트 차단제 모듈"
 Name Bot user agents module: "봇 사용자 에이전트 모듈"
 Name BunnyCDN compatibility module: "BunnyCDN 호환성 모듈"
 Name Bypasses: "기본 서명 우회."
@@ -71,6 +72,7 @@ Name Optional security extras module: "선택적 보안 엑스트라 스 모듈"
 Name Project Honeypot module: "Project Honeypot 모듈"
 Name Referrer spam module: "리퍼러 스팸 모듈"
 Name Stop Forum Spam module: "Stop Forum Spam 모듈"
+Name Tor blocker module: "Tor 차단제 모듈"
 checkbox_delete_orphaned_values: "분리된 값을 삭제합니다."
 checkbox_label_block_it: "차단하세요."
 checkbox_label_block_negatives: "네거티브를 차단하시겠습니까?"
@@ -620,12 +622,14 @@ response_delete_error: "삭제에 실패했습니다!"
 response_directory_deleted: "디렉토리가 성공적으로 삭제되었습니다!"
 response_directory_renamed: "디렉토리의 이름이 변경되었습니다!"
 response_failed: "실패했습니다"
+response_failed_to_access: ""%s"에 액세스하지 못했습니다!"
 response_failed_to_install: "설치하지 못했습니다!"
 response_failed_to_update: "업데이트하지 못했습니다!"
 response_file_deleted: "파일 삭제가 성공했습니다!"
 response_file_edited: "파일이 성공적으로 변경되었습니다!"
 response_file_renamed: "파일 이름이 변경되었습니다!"
 response_file_uploaded: "파일이 성공적으로 업로드되었습니다!"
+response_finished_reading_from: ""%s"에서 읽기를 마쳤습니다."
 response_login_invalid_password: "로그인 실패! 잘못된 암호!"
 response_login_invalid_username: "로그인 실패! 사용자 이름은 존재하지 않습니다!"
 response_login_password_field_empty: "암호가 비어 있습니다!"

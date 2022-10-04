@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2022.09.26).
+# This file: Turkish language data for the front-end (last modified: 2022.10.03).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -48,6 +48,7 @@ Extended Description PHPMailer: "E-posta göndermeyi içeren herhangi bir işlev
 Extended Description Project Honeypot module: "Project Honeypot'de listelenen IP'lerden gelen istekleri engeller."
 Extended Description Referrer spam module: "Yönlendiren spam'e dayalı engelleme genellikle anlamlı bir güvenlik avantajı sağlamaz, ancak bazı durumlarda, bazı kullanıcılar için istekler hakkında daha fazla bilgi toplamak ve bunu rapor edebilmek için yararlı olabilir.<br />Bu modülün yüklenmesi, {{Links.Symfony.Intl/Idn}} için Symfony çoklu dolgularını da yükler (çünkü bu modül, tüm PHP kurulumlarının varsayılan olarak sağlamadığı Idn işlevselliği gerektirir), <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a> lisansı ile kullanılabilir."
 Extended Description Stop Forum Spam module: "SFS tarafından listelenen IP'lere karşı kayıt ve oturum açma sayfalarını korur."
+Extended Description Tor blocker module: "DNSEL aramaları aracılığıyla Tor çıkış düğümlerinden erişimi yasaklar (IPv4 ve IPv6'yı ikisi de destekleniyor)."
 Name AbuseIPDB module: "AbuseIPDB modülü"
 Name BGPView module: "BGPView modülü"
 Name Bad TLDs blocker module: "Kötü TLD engelleyici modülü"
@@ -71,6 +72,7 @@ Name Optional security extras module: "İsteğe bağlı güvenlik ekstrası mod�
 Name Project Honeypot module: "Project Honeypot modülü"
 Name Referrer spam module: "Yönlendiren spam modülü"
 Name Stop Forum Spam module: "Stop Forum Spam modülü"
+Name Tor blocker module: "Tor engelleyici modülü"
 checkbox_delete_orphaned_values: "Artık değerleri silin."
 checkbox_label_block_it: "Isteği engelle."
 checkbox_label_block_negatives: "Negatifleri engelle?"
@@ -627,12 +629,14 @@ response_delete_error: "Silinemedi!"
 response_directory_deleted: "Dizin başarıyla silindi!"
 response_directory_renamed: "Dizin başarıyla yeniden adlandırıldı!"
 response_failed: "Geçemedi"
+response_failed_to_access: ""%s" erişilemedi!"
 response_failed_to_install: "Yükleme başarısız!"
 response_failed_to_update: "Güncelleme başarısız!"
 response_file_deleted: "Dosya başarıyla silindi!"
 response_file_edited: "Dosya başarıyla değiştirildi!"
 response_file_renamed: "Dosya başarıyla yeniden adlandırıldı!"
 response_file_uploaded: "Dosya başarıyla yüklendi!"
+response_finished_reading_from: ""%s" den okumayı bitirdim."
 response_login_invalid_password: "Giriş başarısız! Geçersiz parola!"
 response_login_invalid_username: "Giriş başarısız! Kullanıcı adı yok!"
 response_login_password_field_empty: "Parola alanı boş!"

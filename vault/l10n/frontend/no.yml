@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2022.09.26).
+# This file: Norwegian language data for the front-end (last modified: 2022.10.03).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -48,6 +48,7 @@ Extended Description PHPMailer: "Kreves for bruk av funksjonalitet som innebære
 Extended Description Project Honeypot module: "Blokkerer forespørsler fra IPer oppført på Project Honeypot."
 Extended Description Referrer spam module: "Blokkering basert på referansesøppel vil vanligvis ikke gi noen meningsfull sikkerhetsgevinst, men i noen tilfeller kan det være nyttig for noen brukere, for å samle mer informasjon om forespørsler og for å kunne rapportere det.<br />Ved å installere denne modulen installeres også Symfony-polyfyllene for {{Links.Symfony.Intl/Idn}} (fordi denne modulen krever Idn-funksjonalitet, som ikke alle PHP-installasjoner leverer som standard), tilgjengelige via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a> lisensen."
 Extended Description Stop Forum Spam module: "Beskytter registrerings og innloggingssider mot IP-adresser oppført av SFS."
+Extended Description Tor blocker module: "Forbyr tilgang fra Tor-utgangsnoder gjennom DNSEL-oppslag (støtter både IPv4 og IPv6)."
 Name AbuseIPDB module: "AbuseIPDB modul"
 Name BGPView module: "BGPView modul"
 Name Bad TLDs blocker module: "Dårlig TLDs blokkeringsmodul"
@@ -71,6 +72,7 @@ Name Optional security extras module: "Valgfrie sikkerhetstilleggsmodul"
 Name Project Honeypot module: "Project Honeypot modul"
 Name Referrer spam module: "Henvisende spam modul"
 Name Stop Forum Spam module: "Stop Forum Spam modul"
+Name Tor blocker module: "Tor blokkeringsmodul"
 checkbox_delete_orphaned_values: "Slett foreldreløse verdier."
 checkbox_label_block_it: "Blokker det."
 checkbox_label_block_negatives: "Blokkere negative?"
@@ -631,12 +633,14 @@ response_delete_error: "Sletting mislyktes!"
 response_directory_deleted: "Filkatalog slettet!"
 response_directory_renamed: "Filkatalog omdøpt!"
 response_failed: "Mislyktes"
+response_failed_to_access: "Kunne ikke få tilgang til "%s"!"
 response_failed_to_install: "Installasjon mislyktes!"
 response_failed_to_update: "Oppdatering mislyktes!"
 response_file_deleted: "Fil slettet!"
 response_file_edited: "Fil modifisert!"
 response_file_renamed: "Fil omdøpt!"
 response_file_uploaded: "Fil opplastet!"
+response_finished_reading_from: "Ferdig med å lese fra "%s"."
 response_login_invalid_password: "Innlogging mislyktes! Ugyldig passord!"
 response_login_invalid_username: "Innlogging mislyktes! Brukernavnet eksisterer ikke!"
 response_login_password_field_empty: "Passord-felt tomt!"

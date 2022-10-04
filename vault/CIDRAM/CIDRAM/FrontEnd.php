@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2022.09.26).
+ * This file: The CIDRAM front-end (last modified: 2022.09.29).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -3880,32 +3880,32 @@ class FrontEnd extends Core
             /** Process the IP address entered for range calculation. */
             if (isset($_POST['address']) && strlen($_POST['address'])) {
                 $this->FE['address'] = $_POST['address'];
-                if (!$this->CIDRAM['CIDRs'] = $this->expandIpv4($_POST['address'])) {
-                    $this->CIDRAM['CIDRs'] = $this->expandIpv6($_POST['address']);
+                if (!$CIDRs = $this->expandIpv4($_POST['address'])) {
+                    $CIDRs = $this->expandIpv6($_POST['address']);
                 }
             } else {
                 $this->FE['address'] = '';
             }
 
             /** Process CIDRs. */
-            if (!empty($this->CIDRAM['CIDRs'])) {
-                $this->CIDRAM['Aggregator'] = new \CIDRAM\CIDRAM\Aggregator(1);
-                $this->CIDRAM['Factors'] = count($this->CIDRAM['CIDRs']);
-                array_walk($this->CIDRAM['CIDRs'], function ($CIDR, $Key): void {
+            if (!empty($CIDRs)) {
+                $Aggregator = new \CIDRAM\CIDRAM\Aggregator(1);
+                $Factors = count($CIDRs);
+                foreach ($CIDRs as $Key => $CIDR) {
                     $First = substr($CIDR, 0, strlen($CIDR) - strlen($Key + 1) - 1);
-                    if ($this->CIDRAM['Factors'] === 32) {
+                    if ($Factors === 32) {
                         $Last = $this->ipv4GetLast($First, $Key + 1);
-                    } elseif ($this->CIDRAM['Factors'] === 128) {
+                    } elseif ($Factors === 128) {
                         $Last = $this->ipv6GetLast($First, $Key + 1);
                     } else {
                         $Last = $this->L10N->getString('response_error');
                     }
                     $Netmask = $CIDR;
-                    $this->CIDRAM['Aggregator']->convertToNetmasks($Netmask);
+                    $Aggregator->convertToNetmasks($Netmask);
                     $Arr = ['CIDR' => $CIDR, 'Netmask' => $Netmask, 'ID' => preg_replace('~[^\dA-fa-f]~', '_', $CIDR), 'Range' => $First . ' – ' . $Last];
                     $this->FE['Ranges'] .= $this->parseVars($Arr, $this->FE['CalcRow']);
-                });
-                unset($this->CIDRAM['Aggregator']);
+                }
+                unset($Aggregator);
             }
 
             /** Parse output. */

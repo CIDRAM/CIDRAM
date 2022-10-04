@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CIDRAM CLI mode (last modified: 2022.09.15).
+ * This file: CIDRAM CLI mode (last modified: 2022.09.29).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -171,7 +171,7 @@ trait CLI
                     echo "There's nothing to write, sorry.\n\n";
                     continue;
                 }
-                if ($Chain) {
+                if ($Chain !== '') {
                     echo sprintf($this->L10N->getString('response_cli_bad_chain'), 'fwrite') . "\n\n";
                     continue;
                 }
@@ -204,7 +204,7 @@ trait CLI
 
             /** Read data from files. */
             if ($Cmd === 'fread') {
-                if (!$Chain) {
+                if ($Chain === '') {
                     echo "I'm not sure what to do with the file's data after reading it.\nPlease chain fread to something else so that I'll know what to do. Thanks.\n\n";
                     continue;
                 }
@@ -213,30 +213,29 @@ trait CLI
                     if (!is_file($ThisItemTry) || !is_readable($ThisItemTry)) {
                         $ThisItemTry = $ThisItem;
                         if (!is_file($ThisItemTry) || !is_readable($ThisItemTry)) {
-                            echo "Failed to read " . $ThisItem . "!\n";
+                            echo sprintf($this->L10N->getString('response_failed_to_access'), $ThisItem) . "\n";
                             continue;
                         }
                     }
                     $ThisItemSize = filesize($ThisItemTry);
                     $FileSize = $ThisItemSize;
                     $this->formatFileSize($FileSize);
-                    $ThisItemSize = $ThisItemSize ? ceil($ThisItemSize / 131072) : 0;
                     if ($ThisItemSize <= 0) {
-                        echo "Failed to read " . $ThisItem . "!\n";
+                        echo sprintf($this->L10N->getString('response_failed_to_access'), $ThisItem) . "\n";
                         continue;
                     }
-                    $ThisItemTry = fopen($ThisItemTry, 'rb');
-                    $ThisItemCycle = 0;
-                    while ($ThisItemCycle < $ThisItemSize) {
-                        $Chain .= fread($ThisItemTry, 131072);
-                        $ThisItemCycle++;
-                    }
+                    $Chain .= $this->readFile($ThisItemTry);
                     $MemoryUsage = memory_get_usage();
                     $this->formatFileSize($MemoryUsage);
-                    echo 'Finished reading from ' . $ThisItem . '. <' . $this->L10N->getString('field_file') . ': ' . $FileSize . '> <RAM: ' . $MemoryUsage . ">\n";
-                    fclose($ThisItemTry);
+                    echo sprintf(
+                        $this->L10N->getString('response_finished_reading_from') . " <%s: %s> <RAM: %s>\n",
+                        $ThisItem,
+                        $this->L10N->getString('field_file'),
+                        $FileSize,
+                        $MemoryUsage
+                    );
                 }
-                unset($ThisItemTry, $ThisItemSize, $FileSize, $ThisItemCycle, $MemoryUsage);
+                unset($ThisItemTry, $ThisItemSize, $FileSize, $MemoryUsage);
                 echo "\n";
                 continue;
             }
@@ -325,33 +324,33 @@ trait CLI
                     echo $this->L10N->getString('field_range') . "\n===\n";
                 }
                 foreach ($Data as $ThisItem) {
-                    if ($ThisItem = preg_replace('~[^\da-f:./]~i', '', $ThisItem)) {
-                        if (!$this->CIDRAM['CIDRs'] = $this->CIDRAM['ExpandIPv4']($ThisItem)) {
-                            $this->CIDRAM['CIDRs'] = $this->CIDRAM['ExpandIPv6']($ThisItem);
+                    if (($ThisItem = preg_replace('~[^\da-f:./]~i', '', $ThisItem)) !== '') {
+                        if (!$CIDRs = $this->expandIpv4($ThisItem)) {
+                            $CIDRs = $this->expandIpv6($ThisItem);
                         }
                     }
 
                     /** Process CIDRs. */
-                    if (!empty($this->CIDRAM['CIDRs'])) {
-                        $this->CIDRAM['Factors'] = count($this->CIDRAM['CIDRs']);
-                        array_walk($this->CIDRAM['CIDRs'], function ($CIDR, $Key) {
-                            if ($Chain) {
+                    if (!empty($CIDRs)) {
+                        $Factors = count($CIDRs);
+                        foreach ($CIDRs as $Key => $CIDR) {
+                            if ($Chain !== '') {
                                 $Chain .= $CIDR . "\n";
                             } else {
                                 $First = substr($CIDR, 0, strlen($CIDR) - strlen($Key + 1) - 1);
-                                if ($this->CIDRAM['Factors'] === 32) {
+                                if ($Factors === 32) {
                                     $Last = $this->ipv4GetLast($First, $Key + 1);
-                                } elseif ($this->CIDRAM['Factors'] === 128) {
+                                } elseif ($Factors === 128) {
                                     $Last = $this->ipv6GetLast($First, $Key + 1);
                                 } else {
                                     $Last = $this->L10N->getString('response_error');
                                 }
                                 echo $CIDR . ' (' . $First . ' – ' . $Last . ")\n";
                             }
-                        });
+                        }
                     }
                 }
-                unset($this->CIDRAM['CIDRs']);
+                unset($CIDRs);
                 if (!$Chain) {
                     echo "\n";
                 }

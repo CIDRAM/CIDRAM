@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2022.10.01).
+ * This file: Optional security extras module (last modified: 2022.10.06).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -84,10 +84,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
      */
     if ($this->CIDRAM['ExtrasHonoured']['query'] && !empty($this->BlockInfo['Query'])) {
         $Query = str_replace("\\", '/', strtolower(urldecode($this->BlockInfo['Query'])));
-
         $QueryNoSpace = preg_replace('/\s/', '', $Query);
-
-        $this->trigger(preg_match('/\((?:["\']{2})?\)/', $QueryNoSpace), 'Query command injection'); // 2016.12.31
 
         $this->trigger(preg_match(
             '/(?:_once|able|as(?:c|hes|sert)|c(?:hr|ode|ontents)|e(?:cho|regi|sc' .

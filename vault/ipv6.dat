@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2022.275.0
-# Last modified: 2022.10.03
+# Version: 2022.286.0
+# Last modified: 2022.10.14
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -1875,8 +1875,8 @@ Tag: Choopa, LLC
 # ASN 7162 ("UOL DIVEO S.A").
 # Repeated brute-force attempts and SSH hack attempts detected over the course
 # of numerous years.
-# Stop Forum Spam (SFS) listings: 61.
-# Updated: 2020.04.08 / Checked: 2021.12.06
+# Stop Forum Spam (SFS) listings: 5.
+# Updated: 2020.04.08 / Checked: 2022.10.14
 
 2804:49c:13::/48 Deny Cloud
 2804:49c:31::/48 Deny Cloud
@@ -1893,13 +1893,12 @@ Tag: UOL DIVEO S.A
 
 # ASNs 20093, 22384, 46562, 54856 ("Performive LLC").
 # Data center, server and cloud management platform, server farm.
-# Stop Forum Spam (SFS) listings: 478 (AS20093), 31,874 (AS46562).
-# Updated: 2021.12.06
+# Stop Forum Spam (SFS) listings: 905 (AS20093), 70,156 (AS46562).
+# Updated: 2022.10.14
 
 2407:c40:1::/48 Deny Cloud
 2407:c40:2::/48 Deny Cloud
 Origin: JP
-2602:fff6:5::/48 Deny Cloud
 2604:bc0:1::/48 Deny Cloud
 2604:bc0:5::/48 Deny Cloud
 2604:bc0:6::/47 Deny Cloud
@@ -1921,10 +1920,7 @@ Origin: JP
 2607:f7a0:8::/47 Deny Cloud
 2607:f7a0:b::/48 Deny Cloud
 2607:f7a0:c::/46 Deny Cloud
-2607:f7a0:10::/45 Deny Cloud
-2607:f7a0:18::/46 Deny Cloud
-2607:f7a0:1c::/47 Deny Cloud
-2607:f7a0:1e::/48 Deny Cloud
+2607:f7a0:10::/44 Deny Cloud
 2a0c:3ac0::/48 Deny Cloud
 Origin: US
 Profile: Infrastructure/Transit;Tor endpoints here;Webhosting
@@ -4957,11 +4953,13 @@ Tag: SPRINT
 
 # ASN 55286 ("B2 Net Solutions Inc").
 # Webhosting and dedicated servers. HUGE levels of spam from here.
-# Stop Forum Spam (SFS) listings: 131,439.
-# Updated: 2021.12.06
+# Stop Forum Spam (SFS) listings: 142,373.
+# Updated: 2022.10.14
 
 2607:4300::/47 Deny Cloud
 Origin: CA
+2a0e:f201::/32 Deny Cloud
+Origin: SC
 Profile: Dedicated;Tor endpoints here;Webhosting
 Tag: B2 Net Solutions
 
@@ -5164,8 +5162,8 @@ Tag: Zappie Host LLC
 
 
 # ASN 197540 ("netcup GmbH").
-# Stop Forum Spam (SFS) listings: 15,180.
-# Updated: 2021.12.06
+# Stop Forum Spam (SFS) listings: 41,243.
+# Updated: 2021.12.06 / Checked: 2022.10.14
 
 2a00:11c0:60::/48 Deny Cloud
 Origin: AT
@@ -5233,16 +5231,26 @@ Tag: TierPoint, LLC
 
 # ASNs 15626, 21100, 50979, 59729 ("ITL Company").
 # Lighting and crane infrastructure company. A source of forum/blog spam.
-# Stop Forum Spam (SFS) listings: 356 (AS15626), 292 (AS21100), 594 (AS50979), 518 (AS59729).
-# Updated: 2021.12.06
+# Stop Forum Spam (SFS) listings: 339 (AS15626), 289 (AS21100), 73 (AS50979), 345 (AS59729).
+# Updated: 2022.10.14
 
+2001:67c:2f4c::/48 Deny Cloud
+2001:67c:2f5c::/48 Deny Cloud
 2001:67c:2f6c::/48 Deny Cloud
-2a05:9407::/32 Deny Cloud
+2a0a:8c40::/32 Deny Cloud
 2a0a:8c46::/32 Deny Cloud
 Origin: BG
-2a02:27a8::/32 Deny Cloud
+2a0d:5a80::/29 Deny Cloud
+Origin: DE
+2a02:27a8::/30 Deny Cloud
+2a02:27ac::/31 Deny Cloud
+2a06:c6c0::/47 Deny Cloud
 2a0e:40c0:1::/48 Deny Cloud
+2a0e:40c0:2::/48 Deny Cloud
+2a0e:40c0:4::/48 Deny Cloud
 Origin: UA
+2a05:9407::/32 Deny Cloud
+Origin: US
 Profile: Commercial;Tor endpoints here
 Tag: ITL Company
 
@@ -5659,8 +5667,7 @@ Tag: ACTIVE 24
 
 # ASN 29278 ("Deninet KFT").
 # Hack attempts, SQLi, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 5,025.
-# Updated: 2017.10.29 / Checked: 2021.12.06
+# Updated: 2017.10.29 / Checked: 2022.10.14
 
 2a02:730::/32 Deny Cloud
 Origin: HU
@@ -5927,13 +5934,12 @@ Tag: Trader soft LLC
 
 
 # ASN 51395 ("Datasource AG").
-# Stop Forum Spam (SFS) listings: 40,452.
-# Updated: 2020.03.30 / Checked: 2021.12.06
+# Stop Forum Spam (SFS) listings: 4,515.
+# Updated: 2022.10.14
 
 2001:67c:2f0::/48 Deny Cloud
 2a00:bd80::/32 Deny Cloud
 2a05:6a00::/29 Deny Cloud
-2a05:ad00::/29 Deny Cloud
 2a0a:5dc0::/29 Deny Cloud
 2a0b:ee80::/29 Deny Cloud
 Origin: CH
@@ -9220,8 +9226,8 @@ Tag: EstNOC OY
 # ASN 207992 ("FEELB SARL").
 # Mobile app, infrastructure, I.T. firm. Brute-force and SSH attacks detected
 # from here.
-# Stop Forum Spam (SFS) listings: 2.
-# Updated: 2021.03.31 / Checked: 2021.12.06
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2021.03.31 / Checked: 2022.10.14
 
 2a04:ecc0::/29 Deny Cloud
 Origin: FR
@@ -9246,22 +9252,11 @@ Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: GSL Networks Pty LTD
 
 
-# ASNs 24549, 133380 ("Layerstack Limited").
-# Hong Kong infrastructure/webhosting/stack provider. WordPress hack attempts
-# and related hackbots detected from here.
-# Stop Forum Spam (SFS) listings: 272 (AS133380).
-# Updated: 2021.03.31 / Checked: 2021.12.06
-
-2401:1100::/32 Deny Cloud
-Origin: HK
-Profile: Dedicated;Infrastructure/Transit;Webhosting
-Tag: Layerstack Limited
-
-
 # ASN 53243 ("Brasil Site Informatica LTDA").
 # Brazilian commercial network. Regular WordPress hack attempts and brute-force
 # and SSH attacks detected from here.
-# Updated: 2021.03.31 / Checked: 2021.12.06
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2021.03.31 / Checked: 2022.10.14
 
 2804:11a4::/32 Deny Cloud
 Origin: BR

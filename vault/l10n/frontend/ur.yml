@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2022.10.03).
+# This file: Urdu language data for the front-end (last modified: 2022.10.24).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -49,15 +49,15 @@ Extended Description Project Honeypot module: "Project Honeypot میں درج IP
 Extended Description Referrer spam module: "ریفرر اسپام پر مبنی مسدودیت عام طور پر کوئی معنی خیز فائدہ نہیں فراہم کرے گی، لیکن کبھی کبھی درخواستوں کے بارے میں مزید معلومات اکٹھا کرنے اور اس کی اطلاع دینے کے قابل ہوسکتے ہیں.<br />اس ماڈیول کو انسٹال کرنے سے، {{Links.Symfony.Intl/Idn}} کے لئے Symfony polyfills بھی انسٹال ہوجائیں گے. اس کی وجہ یہ ہے کہ ماڈیول کو Idn فعالیت کی ضرورت ہوتی ہے، جو نہیں تمام PHP کی تنصیبات بطور ڈیفالٹ فراہم کرتی ہیں. <a dir="ltr" href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a> لائسنس کے ذریعے دستیاب ہے."
 Extended Description Stop Forum Spam module: "SFS سے گنا IP ایس کے خلاف رجسٹریشن اور لاگ ان صفحات کی حفاظت کرتا ہے."
 Extended Description Tor blocker module: "DNSEL تلاش کے ذریعے ٹور ایگزٹ نوڈس تک رسائی کو روکتا ہے (IPv4 اور IPv6 دونوں کو سپورٹ کرتا ہے)."
-Name AbuseIPDB module: "AbuseIPDB ماڈیول"
-Name BGPView module: "BGPView ماڈیول"
-Name Bad TLDs blocker module: "خراب TLD بلاکر ماڈیول"
-Name Bad hosts blocker module: "برا میزبانوں بلاکر ماڈیول"
-Name Bot user agents module: "بوٹ صارف ایجنٹ ماڈیول"
-Name BunnyCDN compatibility module: "BunnyCDN مطابقت ماڈیول"
+Name AbuseIPDB module: "AbuseIPDB ماڈیول."
+Name BGPView module: "BGPView ماڈیول."
+Name Bad TLDs blocker module: "خراب TLD بلاکر ماڈیول."
+Name Bad hosts blocker module: "برا میزبانوں بلاکر ماڈیول."
+Name Bot user agents module: "بوٹ صارف ایجنٹ ماڈیول."
+Name BunnyCDN compatibility module: "BunnyCDN مطابقت ماڈیول."
 Name Bypasses: "پہلے سے طے شدہ دستخطی بائ پاس."
-Name Cookie scanner module: "اختیاری کوکی سکینر ماڈیول"
-Name HTTP version checker module: "HTTP ورژن چیکر ماڈیول"
+Name Cookie scanner module: "اختیاری کوکی سکینر ماڈیول."
+Name HTTP version checker module: "HTTP ورژن چیکر ماڈیول."
 Name IPv4: "IPv4 (کلاوڈ اور میزبان خدمات)."
 Name IPv4-Bogons: "IPv4 (bogons)."
 Name IPv4-ISPs: "IPv4 (سروس فراہم کرنے والے سپیم بھیجنے کے لئے)."
@@ -68,11 +68,11 @@ Name IPv6-Bogons: "IPv6 (bogons)."
 Name IPv6-ISPs: "IPv6 (سروس فراہم کرنے والے سپیم بھیجنے کے لئے)."
 Name IPv6-Nonblocking: "IPv6 غیر مسدود دستخطیں."
 Name IPv6-Other: "IPv6 (پراکسی، وی پی این، وغیرہ)."
-Name Optional security extras module: "اختیاری سیکورٹی مع اضافہ جات ماڈیول"
-Name Project Honeypot module: "Project Honeypot ماڈیول"
-Name Referrer spam module: "حوالہ دینے والا اسپام ماڈیول"
-Name Stop Forum Spam module: "Stop Forum Spam ماڈیول"
-Name Tor blocker module: "ٹور بلاکر ماڈیول"
+Name Optional security extras module: "اختیاری سیکورٹی مع اضافہ جات ماڈیول."
+Name Project Honeypot module: "Project Honeypot ماڈیول."
+Name Referrer spam module: "حوالہ دینے والا اسپام ماڈیول."
+Name Stop Forum Spam module: "Stop Forum Spam ماڈیول."
+Name Tor blocker module: "ٹور بلاکر ماڈیول."
 checkbox_delete_orphaned_values: "یتیم اقدار کو حذف کریں."
 checkbox_label_block_it: "اسے بلاک کریں."
 checkbox_label_block_negatives: "منفی کو مسدود کریں؟"
@@ -468,6 +468,8 @@ label_check_aux: "معاون قوانین کے خلاف بھی ٹیسٹ کریں
 label_check_modules: "ماڈیولز کے خلاف بھی ٹیسٹ کریں."
 label_check_verification: "سرچ انجن اور سوشل میڈیا کی توثیق کے خلاف بھی ٹیسٹ کریں."
 label_checkbox: "چیک باکس"
+label_checksum_after: "چیکسم کے بعد"
+label_checksum_before: "اس سے پہلے چیکسم"
 label_cidram: "CIDRAM ورژن استعمال کیا:"
 label_clientinfo: "کلائنٹ کی معلومات:"
 label_default: "پہلے سے طے شدہ"
@@ -615,6 +617,7 @@ response_aux_updated: "اضافی قواعد کامیابی کے ساتھ اپ �
 response_checksum_error: "حیض کی خرابی! فائل کو مسترد کر دیا!"
 response_cli_bad_chain: "%s کمانڈ کو اس طرح سے جکڑا نہیں جا سکتا، افسوس."
 response_cli_bad_command: "میں نے اس حکم کو نہیں سمجھتے افسوس."
+response_cli_cant_write: "میں "%s" کو نہیں لکھ سکتا، معذرت."
 response_component_successfully_installed: "اجزاء کامیابی سے نصب."
 response_component_successfully_uninstalled: "اجزاء کامیابی سے ان انسٹال."
 response_component_successfully_updated: "اجزاء کامیابی سے اپ ڈیٹ."

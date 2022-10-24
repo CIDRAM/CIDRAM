@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CIDRAM CLI mode (last modified: 2022.09.29).
+ * This file: CIDRAM CLI mode (last modified: 2022.10.24).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -177,7 +177,7 @@ trait CLI
                 }
                 $WriteTo = substr($Cmd, 7);
                 if (is_dir($this->Vault . $WriteTo) || !is_writable($this->Vault)) {
-                    echo "I can't write to " . $WriteTo . ", sorry.\n\n";
+                    echo sprintf($this->L10N->getString('response_cli_cant_write'), $WriteTo) . "\n\n";
                     continue;
                 }
                 $Handle = fopen($this->Vault . $WriteTo, 'wb');
@@ -422,7 +422,7 @@ trait CLI
                 }
                 $WriteTo = substr($Cmd, 7);
                 if (is_dir($this->Vault . $WriteTo) || !is_writable($this->Vault)) {
-                    echo "I can't write to " . $WriteTo . ", sorry.\n\n";
+                    echo sprintf($this->L10N->getString('response_cli_cant_write'), $WriteTo) . "\n\n";
                     continue;
                 }
                 $Data = implode("\n", $Data);
@@ -540,7 +540,14 @@ trait CLI
                 echo "\rParse " . $this->NumberFormatter->format($Fixer['Parse']) . ' ... ' . $this->NumberFormatter->format(100, 2) . '% (' . $this->timeFormat(time(), $this->Configuration['general']['time_format']) . ') <RAM: ' . $Fixer['Memory'] . ">\n\n";
                 $Data = trim($Fixer['StrObject']->recompile()) . "\n";
                 $Fixer['After'] = hash('sha256', $Data) . ':' . strlen($Data);
-                echo 'Checksum before: ' . $Fixer['Before'] . "\nChecksum after: " . $Fixer['After'] . "\n\n";
+                echo sprintf(
+                    "%1\$s%3\$s%4\$s\n%2\$s%3\$s%5\$s\n\n",
+                    $this->L10N->getString('label_checksum_before'),
+                    $this->L10N->getString('label_checksum_after'),
+                    $this->L10N->getString('pair_separator'),
+                    $Fixer['Before'],
+                    $Fixer['After']
+                );
                 unset($Fixer);
                 if ($Chain) {
                     $Chain .= $Data;

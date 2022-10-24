@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2022.10.03).
+# This file: Arabic language data for the front-end (last modified: 2022.10.24).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -49,15 +49,15 @@ Extended Description Project Honeypot module: "بحظر الطلبات من عن
 Extended Description Referrer spam module: "لا يوفر الحظر بناءً على الإحالة غير المرغوب فيها عمومًا أي فائدة أمنية ذات مغزى، ولكن في بعض الحالات، قد يكون مفيدًا لبعض المستخدمين، ولجمع مزيد من المعلومات حول الطلبات، وللتمكن من الإبلاغ عنها.<br />يؤدي تثبيت هذه المكون النمطية أيضًا إلى تثبيت polyfill لـ Symfony لـ {{Links.Symfony.Intl/Idn}} (لأن هذه المكون تتطلب وظيفة Idn، والتي لا توفرها جميع عمليات تثبيت PHP بشكل افتراضي)، متاح عبر ترخيص <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
 Extended Description Stop Forum Spam module: "يحمي تسجيل صفحات ضد عناوين IP المدرجة من قبل SFS."
 Extended Description Tor blocker module: "يحظر الوصول من عقد خروج Tor من خلال عمليات بحث DNSEL (يدعم كلا من IPv4 و IPv6)."
-Name AbuseIPDB module: "AbuseIPDB المكون"
-Name BGPView module: "BGPView المكون"
-Name Bad TLDs blocker module: "المكون حجب TLD سيئة"
-Name Bad hosts blocker module: "سيئة المضيفين المكون مانع"
-Name Bot user agents module: "وحدة وكلاء مستخدم الروبوت"
-Name BunnyCDN compatibility module: "المكون التوافق BunnyCDN"
+Name AbuseIPDB module: "AbuseIPDB المكون."
+Name BGPView module: "BGPView المكون."
+Name Bad TLDs blocker module: "المكون حجب TLD سيئة."
+Name Bad hosts blocker module: "سيئة المضيفين المكون مانع."
+Name Bot user agents module: "وحدة وكلاء مستخدم الروبوت."
+Name BunnyCDN compatibility module: "المكون التوافق BunnyCDN."
 Name Bypasses: "يتجاوز توقيع قياسي."
-Name Cookie scanner module: "كوكي الماسح الضوئي"
-Name HTTP version checker module: "المكون مدقق إصدار HTTP"
+Name Cookie scanner module: "كوكي الماسح الضوئي."
+Name HTTP version checker module: "المكون مدقق إصدار HTTP."
 Name IPv4: "IPv4 (السحابة واستضافة الخدمات)."
 Name IPv4-Bogons: "IPv4 (bogons)."
 Name IPv4-ISPs: "IPv4 (مزودي خدمات الإنترنت الذين يرسلون رسائل غير مرغوب فيها)."
@@ -68,10 +68,10 @@ Name IPv6-Bogons: "IPv6 (bogons)."
 Name IPv6-ISPs: "IPv6 (مزودي خدمات الإنترنت الذين يرسلون رسائل غير مرغوب فيها)."
 Name IPv6-Nonblocking: "توقيعات IPv6 غير المحظورة."
 Name IPv6-Other: "IPv6 (خدمات بروكسي، VPN، الخ)."
-Name Optional security extras module: "المكون اشياء الأمن اختياري"
-Name Project Honeypot module: "Project Honeypot المكون"
-Name Referrer spam module: "المكون للإحالة البريد المزعج"
-Name Stop Forum Spam module: "Stop Forum Spam المكون"
+Name Optional security extras module: "المكون اشياء الأمن اختياري."
+Name Project Honeypot module: "Project Honeypot المكون."
+Name Referrer spam module: "المكون للإحالة البريد المزعج."
+Name Stop Forum Spam module: "Stop Forum Spam المكون."
 Name Tor blocker module: "المكون مانع Tor."
 checkbox_delete_orphaned_values: "حذف القيم المعزولة."
 checkbox_label_block_it: "منعه."
@@ -466,6 +466,8 @@ label_check_aux: "أيضا اختبار ضد و القواعد الإضافية.
 label_check_modules: "أيضا اختبار ضد وحدات."
 label_check_verification: "أيضا اختبار ضد التحقق من محرك البحث والوسائط الاجتماعية."
 label_checkbox: "خانة اختيار"
+label_checksum_after: "المجموع الاختباري بعد ذلك"
+label_checksum_before: "المجموع الاختباري مسبقًا"
 label_cidram: "النسخة CIDRAM المستخدمة:"
 label_clientinfo: "معلومات المستخدممعلومات المستخدم:"
 label_default: "الافتراضي"
@@ -613,6 +615,7 @@ response_aux_updated: "تم تحديث القواعد المساعدة بنجا�
 response_checksum_error: "خطأ أختباري! تم رفض الملف!"
 response_cli_bad_chain: "لا يمكن ربط الأمر %s بهذه الطريقة، آسف."
 response_cli_bad_command: "أنا لا أفهم هذا الأمر، آسف."
+response_cli_cant_write: "لا أستطيع الكتابة إلى "%s"، آسف."
 response_component_successfully_installed: "تم تثبيت المكون بنجاح"
 response_component_successfully_uninstalled: "تم الغاء تثبيت المكون بنجاح"
 response_component_successfully_updated: "تم تحديث المكون بنجاح"

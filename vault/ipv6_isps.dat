@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2022.275.0
-# Last modified: 2022.10.03
+# Version: 2022.294.0
+# Last modified: 2022.10.22
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -502,46 +502,47 @@ Profile: Commercial;Domestic ISP;Infrastructure/Transit;Multiplay;Tor endpoints 
 Tag: Cox Spam IPs
 
 
-# ASNs 10796, 11351, 11426, 11427, 12271, 20001, 20115, 33363 ("Charter Communications").
-# United States domestic ISP. Caught probing honeypots. Port scans and spam
-# also detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,309 (AS10796), 849 (AS11351),
-# 1,407 (AS11426), 1,371 (AS11427), 776 (AS12271), 1,755 (AS20001), 2,864 (AS20115).
-# Updated: 2022.03.14
+# ASNs 7843, 10796, 11351, 11426, 11427, 12271, 20001, 20115, 33363 ("Charter
+# Communications"). US domestic ISP. Honeypot probes, port scans, and spam
+# detected from here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 23 (AS7843), 1,234 (AS10796), 865 (AS11351),
+# 1,382 (AS11426), 1,183 (AS11427), 715 (AS12271), 1,368 (AS20001),
+# 3,065 (AS20115), 1,039 (AS33363).
+# Updated: 2022.10.22
 
-2600:6c52:6d00:c9f::/64 Deny Spam
-2600:6c54:7a00:256e::/64 Deny Spam
-2600:6c55:6a00:3882::/64 Deny Spam
-2600:6c56:567f:f238::/64 Deny Spam
-2600:6c58:757f:e519::/64 Deny Spam
-2600:6c5d:5900:b13b::/64 Deny Spam
-2600:6c5e:497e:f91e::/64 Deny Spam
-2603:6000:c307:9c18::/64 Deny Spam
-2603:6010:5820:14::/64 Deny Spam
-2603:6010:5e2e:9000::/64 Deny Spam
-2603:6010:9700:f400::/64 Deny Spam
-2603:6010:ab01:4700::/64 Deny Spam
-2603:6010:f206:b8e8::/64 Deny Spam
-2603:6011:4940:4b::/64 Deny Spam
-2603:6011:5441:f0d8::/64 Deny Spam
-2603:6080:1e08:bde::/64 Deny Spam
+2600:6c40:1900:2a3::/64 Deny Spam
+2600:6c40:4400:127e::/64 Deny Spam
+2600:6c42:6600:806::/64 Deny Spam
+2600:6c44:437f:6fd0::/64 Deny Spam
+2600:6c46:4100:1481::/64 Deny Spam
+2600:6c47:a100:95::/64 Deny Spam
+2600:6c58:607f:dd4c::/64 Deny Spam
+2600:6c5d:6200:c73::/64 Deny Spam
+2600:6c5e:5a7f:49f::/64 Deny Spam
+2600:6c60:577f:f8f0::/64 Deny Spam
+2603:6000:9702:f4a0::/64 Deny Spam
+2603:6010:2f02:f8bd::/64 Deny Spam
+2603:6011:7d00:afac::/64 Deny Spam
 2603:6080:5f06:f1d0::/64 Deny Spam
-2603:6080:b742:16b9::/64 Deny Spam
-2603:6081:403:c07d::/64 Deny Spam
-2603:7000:2600:34a7::/64 Deny Spam
-2603:7000:9a03:8699::/64 Deny Spam
-2603:7000:a200:6be1::/64 Deny Spam
-2603:7081:3701:5f00::/64 Deny Spam
-2603:7081:6d41:8000::/64 Deny Spam
-2603:8000:3502:109::/64 Deny Spam
-2603:8000:8001:b672::/64 Deny Spam
-2603:8000:bb01:813f::/64 Deny Spam
-2603:8001:1d43:2100::/64 Deny Spam
-2603:8001:7a01:a1e::/64 Deny Spam
-2603:8001:b803:ee76::/64 Deny Spam
-2603:800c:2b40:9f00::/64 Deny Spam
-2603:8080:d700:fb88::/64 Deny Spam
-2603:8081:3f01:130d::/64 Deny Spam
+2603:6080:820b:d400::/64 Deny Spam
+2603:6080:8c00:f096::/64 Deny Spam
+2603:6080:e904:494d::/64 Deny Spam
+2603:6081:1340:3f67::/64 Deny Spam
+2603:6081:2c02:7f4e::/64 Deny Spam
+2603:7000:b503:9c8d::/64 Deny Spam
+2603:7000:c801:9c5a::/64 Deny Spam
+2603:7081:1400:ffbe::/64 Deny Spam
+2603:8000:702:242d::/64 Deny Spam
+2603:8000:6201:97d1::/64 Deny Spam
+2603:8001:1602:b981::/64 Deny Spam
+2603:8080:f201:8c54::/64 Deny Spam
+2603:8081:8d03:9894::/64 Deny Spam
+2603:8090:608:ab66::/64 Deny Spam
+2603:9000:8300:33b9::/64 Deny Spam
+2603:9000:f07f:2f00::/64 Deny Spam
+2603:9001:3505:180c::/64 Deny Spam
+2603:9001:3608:888::/64 Deny Spam
+2603:9001:4d09:fad4::/64 Deny Spam
 Origin: US
 Profile: Domestic ISP;University
 Tag: Charter Communications
@@ -671,18 +672,20 @@ Tag: Liberty Global
 
 
 # ASN 1221 ("Telstra Corporation Ltd").
-# Australia's largest domestic ISP. Some brute-force attacks and spam detected
-# from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 790.
-# Updated: 2021.12.31
+# Australia's largest domestic ISP. Brute-force, SSH, and telnet attacks, port
+# scans, hacking, and spam detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 689.
+# Updated: 2022.10.22
 
-2001:8003:7c0c:6000::/64 Deny Spam
-2001:8003:907b:4800::/64 Deny Spam
-2001:8003:9150:da00::/64 Deny Spam
-2001:8003:e86c:ac01::/64 Deny Spam
-2001:8004:1300:ed53::/64 Deny Spam
+2001:8003:26d2:1600::/64 Deny Spam
+2001:8003:30bd:b400::/64 Deny Spam
+2001:8003:7464:8a01::/64 Deny Spam
+2001:8004:1281:e080::/64 Deny Spam
+2001:8004:12f3:6731::/64 Deny Spam
+2001:8004:1d60:5d14::/64 Deny Spam
 Origin: AU
-Profile: Domestic ISP
+Profile: Domestic ISP;Mobile ISP;Multiplay
 Tag: Telstra Corporation
 
 

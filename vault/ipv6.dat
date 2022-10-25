@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2022.292.0
-# Last modified: 2022.10.20
+# Version: 2022.297.0
+# Last modified: 2022.10.25
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -1253,14 +1253,11 @@ Tag: Psychz Networks
 
 # ASN 27176 ("DataWagon LLC").
 # A source of forum spam.
-# Stop Forum Spam (SFS) listings: 434.
-# Updated: 2021.04.11 / Checked: 2021.12.10
+# Stop Forum Spam (SFS) listings: 967.
+# Updated: 2022.10.25
 
 2a07:6c80::/29 Deny Cloud
 Origin: LT
-2a07:d9c0::/30 Deny Cloud
-2a0b:2a87::/32 Deny Cloud
-Origin: RU
 2605:aa80::/32 Deny Cloud
 Origin: US
 Profile: Tor endpoints here;Webhosting
@@ -5883,9 +5880,11 @@ Tag: POWER LINE (HK) CO
 
 
 # ASN 55720 ("Gigabit Hosting Sdn Bhd").
-# Stop Forum Spam (SFS) listings: 234.
-# Updated: 2020.11.09 / Checked: 2021.12.10
+# Stop Forum Spam (SFS) listings: 554.
+# Updated: 2022.10.25
 
+2a11:840:26::/48 Deny Cloud
+Origin: CA
 2402:90c0::/32 Deny Cloud
 Origin: HK
 2400:5680::/32 Deny Cloud
@@ -7383,6 +7382,17 @@ Profile: Dedicated;Webhosting
 Tag: Krystal Hosting Ltd
 
 
+# ASN 136052 ("PT Cloud Hosting Indonesia").
+# Dedicated webhosting provider and a significant source of spam.
+# Stop Forum Spam (SFS) listings: 328.
+# Updated: 2022.10.25
+
+2001:df7:7400::/48 Deny Cloud
+Origin: ID
+Profile: Dedicated;Tor endpoints here;Webhosting
+Tag: PT Cloud Hosting ID
+
+
 # ASNs 132925, 136171 ("Medha Hosting").
 # Suspected email harvester detected at this network.
 # Updated: 2022.07.03
@@ -8113,14 +8123,11 @@ Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: ANEXIA
 
 
-# ASN 204957 ("ITL-Bulgaria Ltd").
+# ASN 204957 ("GREEN FLOID LLC").
 # Dedicated server farm and a source of spam.
-# Stop Forum Spam (SFS) listings: 915.
-# Updated: 2021.12.10
+# Stop Forum Spam (SFS) listings: 741.
+# Updated: 2022.10.25
 
-2a05:9400::/30 Deny Cloud
-2a05:9404::/31 Deny Cloud
-2a05:9406::/32 Deny Cloud
 2a0a:8c41::/32 Deny Cloud
 2a0a:8c42::/31 Deny Cloud
 2a0a:8c44::/31 Deny Cloud
@@ -8128,6 +8135,11 @@ Origin: BG
 2a0e:40c0:3::/48 Deny Cloud
 2a11:6800:1::/48 Deny Cloud
 Origin: UA
+2a05:9400::/30 Deny Cloud
+2a05:9404::/31 Deny Cloud
+2a05:9406::/32 Deny Cloud
+2a12:6fc0::/31 Deny Cloud
+Origin: US
 Profile: Dedicated;Infrastructure/Transit;Tor endpoints here
 Tag: ITL-Bulgaria Ltd
 
@@ -8586,20 +8598,18 @@ Profile: Commercial
 Tag: Beijing Baidu Netcom
 
 
-# ASNs 47869, 211252, 213035, 399471, 400377 ("Des Capital B.V").
+# ASNs 47869, 138687, 211252, 213035, 399471, 400377 ("Des Capital B.V").
 # Webhosting and cloud lease network. Regular brute-force attacks and
-# port scanning encountered from this network. Caught by honeypots searching
-# for vulnerable login systems. Has been hitting my honeypots for a number of
-# years now on a daily basis.
-# Stop Forum Spam (SFS) listings: 18 (AS47869), 2,465 (AS211252), 935 (AS213035), 366 (AS399471).
-# Updated: 2022.08.01
+# port scans detected from here. Caught by honeypots searching for vulnerable
+# login systems. Has been hitting my honeypots daily for a number of years now.
+# Stop Forum Spam (SFS) listings: 18 (AS47869), 2,585 (AS211252),
+# 702 (AS213035), 4,793 (AS399471), 373 (AS400377).
+# Updated: 2022.10.22
 
 2803:8080::/32 Deny Cloud
 Origin: AR
 2001:678:730::/48 Deny Cloud
 Origin: BE
-2a07:3b80::/29 Deny Cloud
-Origin: GI
 2a00:dd0::/32 Deny Cloud
 2a10:1440::/29 Deny Cloud
 Origin: NL
@@ -8608,7 +8618,7 @@ Origin: NL
 Origin: SE
 2604:bc0:2::/48 Deny Cloud
 2604:bc0:8::/48 Deny Cloud
-2606:3f40::/47 Deny Cloud
+2606:3f40::/48 Deny Cloud
 2606:3f40:2::/48 Deny Cloud
 2606:ed00::/32 Deny Cloud
 2a07:5c0::/29 Deny Cloud

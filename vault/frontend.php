@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.09.26).
+ * This file: Front-end handler (last modified: 2022.10.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1636,14 +1636,32 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                     $CIDRAM['ThisDir']['DirLangKey'],
                     empty($CIDRAM['Config']['Config Defaults'][$CIDRAM['CatKey']][$CIDRAM['DirKey']]['default']) ? 'false' : 'true'
                 );
-            } elseif (in_array($CIDRAM['DirValue']['type'], ['float', 'int'], true)) {
+            } elseif ($CIDRAM['DirValue']['type'] === 'float' || $CIDRAM['DirValue']['type'] === 'int') {
+                $CIDRAM['ThisDir']['FieldAppend'] = '';
+                if (isset($CIDRAM['DirValue']['step'])) {
+                    $CIDRAM['ThisDir']['FieldAppend'] .= ' step="' . $CIDRAM['DirValue']['step'] . '"';
+                }
+                $CIDRAM['ThisDir']['FieldAppend'] .= $CIDRAM['ThisDir']['Trigger'];
+                if ($CIDRAM['DirValue']['type'] === 'int') {
+                    $CIDRAM['ThisDir']['FieldAppend'] .= ' inputmode="numeric"';
+                    if (isset($CIDRAM['DirValue']['pattern'])) {
+                        $CIDRAM['ThisDir']['FieldAppend'] .= ' pattern="' . $CIDRAM['DirValue']['pattern'] . '"';
+                    } else {
+                        $CIDRAM['ThisDir']['FieldAppend'] .= (!isset($CIDRAM['DirValue']['min']) || $CIDRAM['DirValue']['min'] < 0) ? ' pattern="^-?\d*$"' : ' pattern="^\d*$"';
+                    }
+                } elseif (isset($CIDRAM['DirValue']['pattern'])) {
+                    $CIDRAM['ThisDir']['FieldAppend'] .= ' pattern="' . $CIDRAM['DirValue']['pattern'] . '"';
+                }
+                foreach (['min', 'max'] as $CIDRAM['ThisDir']['ParamTry']) {
+                    if (isset($CIDRAM['DirValue'][$CIDRAM['ThisDir']['ParamTry']])) {
+                        $CIDRAM['ThisDir']['FieldAppend'] .= ' ' . $CIDRAM['ThisDir']['ParamTry'] . '="' . $CIDRAM['DirValue'][$CIDRAM['ThisDir']['ParamTry']] . '"';
+                    }
+                }
                 $CIDRAM['ThisDir']['FieldOut'] = sprintf(
-                    '<input type="number" name="%1$s" id="%1$s_field" value="%2$s"%3$s%4$s%5$s />',
+                    '<input type="number" name="%1$s" id="%1$s_field" value="%2$s"%3$s />',
                     $CIDRAM['ThisDir']['DirLangKey'],
                     $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']],
-                    (isset($CIDRAM['DirValue']['step']) ? ' step="' . $CIDRAM['DirValue']['step'] . '"' : ''),
-                    $CIDRAM['ThisDir']['Trigger'],
-                    ($CIDRAM['DirValue']['type'] === 'int' ? ' inputmode="numeric"' : '')
+                    $CIDRAM['ThisDir']['FieldAppend']
                 );
                 if (isset($CIDRAM['Config']['Config Defaults'][$CIDRAM['CatKey']][$CIDRAM['DirKey']]['default'])) {
                     $CIDRAM['ThisDir']['Reset'] .= sprintf(
@@ -1670,12 +1688,15 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                     );
                 }
             } else {
+                $CIDRAM['ThisDir']['FieldAppend'] = $CIDRAM['ThisDir']['autocomplete'] . $CIDRAM['ThisDir']['Trigger'];
+                if (isset($CIDRAM['DirValue']['pattern'])) {
+                    $CIDRAM['ThisDir']['FieldAppend'] .= ' pattern="' . $CIDRAM['DirValue']['pattern'] . '"';
+                }
                 $CIDRAM['ThisDir']['FieldOut'] = sprintf(
-                    '<input type="text" name="%1$s" id="%1$s_field" value="%2$s"%3$s%4$s />',
+                    '<input type="text" name="%1$s" id="%1$s_field" value="%2$s"%3$s />',
                     $CIDRAM['ThisDir']['DirLangKey'],
                     $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']],
-                    $CIDRAM['ThisDir']['autocomplete'],
-                    $CIDRAM['ThisDir']['Trigger']
+                    $CIDRAM['ThisDir']['FieldAppend']
                 );
                 if (isset($CIDRAM['Config']['Config Defaults'][$CIDRAM['CatKey']][$CIDRAM['DirKey']]['default'])) {
                     $CIDRAM['ThisDir']['Reset'] .= sprintf(

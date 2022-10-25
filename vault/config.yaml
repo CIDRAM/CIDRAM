@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2022.07.11).
+# This file: Configuration defaults file (last modified: 2022.10.25).
 ##/
 
 Config Defaults:
@@ -627,6 +627,8 @@ Config Defaults:
   port:
    type: "int"
    default: 587
+   min: 1
+   max: 65535
   smtp_secure:
    type: "string"
    default: "default"
@@ -672,9 +674,13 @@ Config Defaults:
   precision_ipv4:
    type: "int"
    default: 32
+   min: 1
+   max: 32
   precision_ipv6:
    type: "int"
    default: 128
+   min: 1
+   max: 128
   allowance_period:
    type: "float"
    step: "any"
@@ -716,12 +722,16 @@ Config Defaults:
   memcached_port:
    type: "int"
    default: 11211
+   min: 1
+   max: 65535
   redis_host:
    type: "string"
    default: "localhost"
   redis_port:
    type: "int"
    default: 6379
+   min: 1
+   max: 65535
   redis_timeout:
    type: "float"
    step: "any"

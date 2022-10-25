@@ -1,6 +1,6 @@
 CIDRAM Core:
  Name: "CIDRAM Core"
- Version: "3.0.0-DEV+22296000"
+ Version: "3.0.0-DEV+22297000"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Front-End: "Latest"
@@ -49,7 +49,7 @@ CIDRAM Core:
    Checksum: "b62c0cf1deeb97c7ee15638f0a4102292a6bab6f0b6b1ee3a1dec7fa485c2e05:1352"
   defaults.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/defaults.yml"
-   Checksum: "20de5695e0a443b9afd29729eeb43882b5c3dd1267038e14d6d150c2b1012d93:33219"
+   Checksum: "522553a468622b21abab127041b1be9b4a21c084db0c99a7b8d615931d0da043:33310"
   loader.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/loader.php"
    Checksum: "2024a633fae0edeff14119bd2308d9599a8651bd1fc877838e3901b72afffdc0:1312"
@@ -58,7 +58,7 @@ CIDRAM Core:
    Checksum: "deb8c82461eb04a30f83a536a485bac4a99a42b56d3309f3051018678a824be7:6833"
 CIDRAM Front-End:
  Name: "CIDRAM Front-End"
- Version: "3.0.0-DEV+22296000"
+ Version: "3.0.0-DEV+22297000"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "Latest"
@@ -250,7 +250,7 @@ CIDRAM Front-End:
    Checksum: "d5999ccbbe0c2abeb10d56452fb791adb0515466d3f3aa537486b7c79d7178d0:3495"
   CIDRAM/CIDRAM/FrontEnd.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/FrontEnd.php"
-   Checksum: "ffadba76d8b545e18343dbd4c9151427434eb57631ea9f40df7962dba4cea833:284130"
+   Checksum: "26ea326d5986a34f96c312e1b274d9afe51c8ec72a6986605796210f53d874c8:285527"
   CIDRAM/CIDRAM/FrontEndMethods.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/FrontEndMethods.php"
    Checksum: "31a54b27ac2e63f5dce3e503622c376f39180241b4f69799206e2a770c250335:49885"
@@ -828,11 +828,11 @@ l10n/frontend/zh:
 AbuseIPDB module:
  Name: "AbuseIPDB module"
  False Positive Risk: "Medium"
- Version: "2022.159.0"
+ Version: "2022.297.0"
  Files:
   imports/abuseipdb.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/imports/abuseipdb.yml"
-   Checksum: "d8ca83b0cd664eb5ab28a60328b78aa2d630e042161da28df47cc7a08c900742:1036"
+   Checksum: "0a57953b97564b695086f66e9aadbd543f8974fcb62738579e5f0d1d729b8c25:1102"
    Used with: "imports"
   modules/abuseipdb.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/abuseipdb.php"
@@ -916,11 +916,11 @@ Optional security extras module:
 Project Honeypot module:
  Name: "Project Honeypot module"
  False Positive Risk: "Medium"
- Version: "2022.156.0"
+ Version: "2022.297.0"
  Files:
   imports/projecthoneypot.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/imports/projecthoneypot.yml"
-   Checksum: "8057d93232d3c36a681a35ab5f2c0401b3050683f800c9b685cf7bdaf87e7b49:925"
+   Checksum: "0d3048788df4e2b630fcc4c5093e1bd33084549edb053d812ebd3b03ea948442:991"
    Used with: "imports"
   modules/projecthoneypot.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/projecthoneypot.php"

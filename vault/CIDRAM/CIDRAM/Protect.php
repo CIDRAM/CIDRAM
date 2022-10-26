@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2022.09.25).
+ * This file: Protect traits (last modified: 2022.10.26).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -292,7 +292,7 @@ trait Protect
             $this->Stage = 'Tracking';
 
             /** Set tracking expiry. */
-            $TrackTime = $this->Configuration['Options']['TrackTime'] ?? $this->Configuration['signatures']['default_tracktime'];
+            $TrackTime = $this->Configuration['Options']['TrackTime'] ?? $this->Configuration['signatures']['default_tracktime']->getAsSeconds();
 
             /** Number of infractions to append. */
             $TrackCount = $this->BlockInfo['Infractions'] - $AtRunTimeInfractions;
@@ -303,14 +303,14 @@ trait Protect
             /** Tracking options override. */
             if (!empty($this->CIDRAM['Tracking options override'])) {
                 if ($this->CIDRAM['Tracking options override'] === 'extended') {
-                    $TrackTime = floor($this->Configuration['signatures']['default_tracktime'] * 52.1428571428571);
+                    $TrackTime = floor($this->Configuration['signatures']['default_tracktime']->getAsSeconds() * 52.1428571428571);
                     $TrackCount *= 1000;
                     if ($this->CIDRAM['Banned'] && $TrackCount >= 2000) {
                         $TrackCount -= 1000;
                         $PreventAmplification = true;
                     }
                 } elseif ($this->CIDRAM['Tracking options override'] === 'default') {
-                    $TrackTime = $this->Configuration['signatures']['default_tracktime'];
+                    $TrackTime = $this->Configuration['signatures']['default_tracktime']->getAsSeconds();
                     $TrackCount = 1;
                 }
             }
@@ -385,7 +385,7 @@ trait Protect
                     $this->CIDRAM['RL_Capture'] = pack('l*', strlen($this->CIDRAM['RL_Capture'])) . $this->CIDRAM['RL_Capture'];
                     $this->rateLimitFetch();
                     if (strlen($this->CIDRAM['RL_Data']) > 4) {
-                        $this->CIDRAM['RL_Expired'] = $this->Now - ($this->Configuration['rate_limiting']['allowance_period'] * 3600);
+                        $this->CIDRAM['RL_Expired'] = $this->Now - $this->Configuration['rate_limiting']['allowance_period']->getAsSeconds();
                         $this->CIDRAM['RL_Oldest'] = unpack('l*', substr($this->CIDRAM['RL_Data'], 0, 4));
                         if ($this->CIDRAM['RL_Oldest'][1] < $this->CIDRAM['RL_Expired']) {
                             $this->rateLimitClean();
@@ -774,7 +774,7 @@ trait Protect
                         header('HTTP/1.0 429 ' . $this->CIDRAM['RL_Status']);
                         header('HTTP/1.1 429 ' . $this->CIDRAM['RL_Status']);
                         header('Status: 429 ' . $this->CIDRAM['RL_Status']);
-                        header('Retry-After: ' . floor($this->Configuration['rate_limiting']['allowance_period'] * 3600));
+                        header('Retry-After: ' . floor($this->Configuration['rate_limiting']['allowance_period']->getAsSeconds()));
                     } elseif ((
                         !empty($this->CIDRAM['Aux Status Code']) &&
                         ($this->CIDRAM['errCode'] = $this->CIDRAM['Aux Status Code']) > 400 &&

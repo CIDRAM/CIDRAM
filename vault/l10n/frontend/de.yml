@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2022.10.24).
+# This file: German language data for the front-end (last modified: 2022.10.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -198,7 +198,7 @@ config_projecthoneypot_max_age_in_days: "Beim Durchführen die Suchen, das maxim
 config_projecthoneypot_max_ts_for_captcha: "Die maximal zulässige Bedrohungsbewert für die Zustellung eines CAPTCHA (muss eine Zahl zwischen 1 und 100 sein). Standardeinstellung = 10."
 config_projecthoneypot_minimum_threat_score: "Die minimale Bedrohungsbewert, die erforderlich ist, damit CIDRAM eine IP-Adresse blockieren kann (muss eine Zahl zwischen 1 und 100 sein). Standardeinstellung = 10."
 config_rate_limiting: "Konfiguration für Ratenbegrenzung (nicht für den allgemeinen Gebrauch empfohlen)."
-config_rate_limiting_allowance_period: "Die Anzahl der Stunden, um die Nutzung zu überwachen. Standardeinstellung = 0."
+config_rate_limiting_allowance_period: "Die Dauer um die Nutzung zu überwachen. Standardeinstellung = 0°0′0″."
 config_rate_limiting_exceptions: "Ausnahmen (d.h., Anfragen die nicht ratenbegrenzt sein sollten). Nur relevant wenn die Ratenbegrenzung aktiviert ist."
 config_rate_limiting_max_bandwidth: "Die maximal zulässige Bandbreite innerhalb der Zulassungsperiode, bevor die Ratenbegrenzung für zukünftige Anforderungen aktiviert wird. Ein Wert von 0 deaktiviert diese Art der Ratenbegrenzung. Standardeinstellung = 0KB."
 config_rate_limiting_max_requests: "Die maximale Anzahl von Anforderungen, die innerhalb der Zulassungsperiode zulässig sind, bevor die Ratenbegrenzung für zukünftige Anforderungen aktiviert wird. Ein Wert von 0 deaktiviert diese Art der Ratenbegrenzung. Standardeinstellung = 0."
@@ -220,7 +220,7 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Konfiguration für das Stop Forum Spam Modul."
 config_sfs_offer_captcha: "Wenn Anfragen von diesem Modul blockiert werden, können CAPTCHAs bereitgestellt werden. Standardeinstellung = True. Hinweis: Überschreibt keine anderen Direktiven. Damit CAPTCHAs geliefert werden können, müssen alle Direktiven übereinstimmen, erforderliche Schlüssel konfiguriert sein, u.s.w. In dem Fall dass CAPTCHAs normalerweise zugelassen würden, die Einsetzung dieser Direktive auf „false“ bietet eine Möglichkeit für CAPTCHAs verhindert werden für den Anfragen die speziell von diesem Modul blockiert werden."
 config_signatures: "Konfiguration für Signaturen, Signaturdateien, Module, u.s.w."
-config_signatures_default_tracktime: "Wie viele Sekunden sollen IP-Adressen getrackt werden. Standardeinstellung = 604800 (1 Woche)."
+config_signatures_default_tracktime: "Wie viele Sekunden sollen IP-Adressen getrackt werden. Standardeinstellung = 7d0°0′0″ (1 Woche)."
 config_signatures_infraction_limit: "Maximale Anzahl von Verstöße, die eine IP zulassen darf, bevor sie durch IP-Tracking verbannt ist. Standardeinstellung = 10."
 config_signatures_shorthand: "Kontrollen für was mit einer Anfrage zu tun wenn es gibt eine positive Übereinstimmung mit einer Signatur die die angegebenen Kurzwörter verwendet."
 config_signatures_tracking_override: "Sollten Module erlaubt sein Tracking-Optionen zu überschreiben? True = Ja [Standardeinstellung]; False = Nein."

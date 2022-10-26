@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malay language data for the front-end (last modified: 2022.10.24).
+# This file: Malay language data for the front-end (last modified: 2022.10.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -198,7 +198,7 @@ config_projecthoneypot_max_age_in_days: "Umur maksimum dalam hari yang laporan a
 config_projecthoneypot_max_ts_for_captcha: "Skor ancaman maksimum yang dibenarkan untuk diberikan CAPTCHA (mestilah nombor antara 1 dan 100). Lalai = 10."
 config_projecthoneypot_minimum_threat_score: "Skor ancaman minimum yang diperlukan untuk CIDRAM menyekat alamat IP (mestilah nombor antara 1 dan 100). Lalai = 10."
 config_rate_limiting: "Konfigurasi untuk mengehadkan kadar (tidak disyorkan untuk kegunaan umum)."
-config_rate_limiting_allowance_period: "Jumlah jam untuk menjejaki penggunaan. Lalai = 0."
+config_rate_limiting_allowance_period: "Tempoh untuk menjejaki penggunaan. Lalai = 0°0′0″."
 config_rate_limiting_exceptions: "Pengecualian (iaitu, permintaan yang tidak sepatutnya dihadkan). Relevan hanya apabila pengehadan kadar diaktifkan."
 config_rate_limiting_max_bandwidth: "Jumlah maksimum lebar jalur yang dibenarkan dalam tempoh elaun sebelum kadar mengehadkan permintaan masa hadapan. Nilai 0 nyahaktifkan pengehadan kadar jenis ini. Lalai = 0KB."
 config_rate_limiting_max_requests: "Jumlah maksimum permintaan yang dibenarkan dalam tempoh elaun sebelum kadar mengehadkan permintaan masa hadapan. Nilai 0 nyahaktifkan pengehadan kadar jenis ini. Lalai = 0."
@@ -220,7 +220,7 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Konfigurasi untuk modul Stop Forum Spam."
 config_sfs_offer_captcha: "Apabila permintaan disekat oleh modul ini, CAPTCHA boleh disampaikan. Lalai = True. Nota: Tidak mengatasi arahan lain. Agar CAPTCHA boleh disampaikan, semua arahan mesti bersetuju, kunci yang diperlukan dikonfigurasikan, dsb. Sekiranya CAPTCHA biasanya dibenarkan untuk disampaikan, menetapkan arahan ini kepada false menyediakan cara untuk menghalang CAPTCHA disampaikan untuk permintaan yang disekat secara khusus oleh modul ini."
 config_signatures: "Konfigurasi untuk tandatangan, fail tandatangan, modul, dsb."
-config_signatures_default_tracktime: "Berapa saat alamat IP harus dijejaki. Lalai = 604800 (1 minggu)."
+config_signatures_default_tracktime: "Berapa saat alamat IP harus dijejaki. Lalai = 7d0°0′0″ (1 minggu)."
 config_signatures_infraction_limit: "Jumlah maksimum pelanggaran IP dibenarkan untuk ditanggung sebelum ia dilarang oleh penjejakan IP. Lalai = 10."
 config_signatures_shorthand: "Mengawal perkara yang perlu dilakukan dengan permintaan apabila terdapat padanan yang positif terhadap tandatangan yang menggunakan perkataan pendek yang diberikan."
 config_signatures_tracking_override: "Benarkan modul mengatasi pilihan penjejakan? True = Ya [Lalai]; False = Tidak."

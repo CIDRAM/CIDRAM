@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2022.10.25).
+# This file: Defaults file (last modified: 2022.10.26).
 ##/
 
 Config Defaults:
@@ -607,9 +607,8 @@ Config Defaults:
     RL:Profile
    hints: "hints_shorthand"
   default_tracktime:
-   type: "int"
-   default: 604800
-   preview: "seconds"
+   type: "duration"
+   default: "7d0°0′0″"
   infraction_limit:
    type: "int"
    default: 10
@@ -946,10 +945,8 @@ Config Defaults:
    min: 1
    max: 128
   allowance_period:
-   type: "float"
-   step: "any"
-   default: 0
-   preview: "hours"
+   type: "duration"
+   default: "0°0′0″"
   exceptions:
    type: "checkbox"
    default: ""

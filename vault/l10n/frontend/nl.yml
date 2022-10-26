@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2022.10.24).
+# This file: Dutch language data for the front-end (last modified: 2022.10.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -198,7 +198,7 @@ config_projecthoneypot_max_age_in_days: "De maximale leeftijd in dagen waarvoor 
 config_projecthoneypot_max_ts_for_captcha: "De maximale dreigingsscore die is toegestaan voor een CAPTCHA (moet een getal zijn tussen 1 en 100). Standaard = 10."
 config_projecthoneypot_minimum_threat_score: "De minimale dreigingsscore die vereist is om CIDRAM een IP-adres te blokkeren (moet een getal zijn tussen 1 en 100). Standaard = 10."
 config_rate_limiting: "Configuratie voor tarieflimiet (niet aanbevolen voor algemeen gebruik)."
-config_rate_limiting_allowance_period: "Het aantal uren om het gebruik te controleren. Standaard = 0."
+config_rate_limiting_allowance_period: "De duur om het gebruik bij te controleren. Standaard = 0°0′0″."
 config_rate_limiting_exceptions: "Excepties (d.w.z., verzoeken die moet niet worden beperkt). Alleen relevant wanneer tarieflimiet is ingeschakeld."
 config_rate_limiting_max_bandwidth: "De maximale hoeveelheid toegestane bandbreedte binnen de toeslagperiode voordat tarieflimiet voor toekomstige verzoeken wordt ingeschakeld. Een waarde van 0 schakelt dit type tarieflimiet uit. Standaard = 0KB."
 config_rate_limiting_max_requests: "Het maximale aantal toegestane verzoeken binnen de toeslagperiode voordat de tarieflimiet voor toekomstige verzoeken wordt ingeschakeld. Een waarde van 0 schakelt dit type tarieflimiet uit. Standaard = 0."
@@ -220,7 +220,7 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Configuratie voor de Stop Forum Spam module."
 config_sfs_offer_captcha: "Wanneer verzoeken door deze module worden geblokkeerd, CAPTCHA's kunnen worden geleverd. Standaard = True. Opmerking: Heeft geen voorrang op andere richtlijnen. Om CAPTCHA's te kunnen bedienen, moeten alle richtlijnen overeenkomen, de benodigde sleutels zijn geconfigureerd, enz. In het geval dat CAPTCHA's normaal zouden mogen worden geleverd, biedt het instellen van deze richtlijn op false een manier om te voorkomen dat CAPTCHA's worden geleverd voor verzoeken die specifiek door deze module worden geblokkeerd."
 config_signatures: "Configuratie voor signatures, signatuurbestanden, modules, enz."
-config_signatures_default_tracktime: "Hoeveel seconden IP-adressen moeten worden gevolgd. Standaard = 604800 (1 week)."
+config_signatures_default_tracktime: "Hoeveel seconden IP-adressen moeten worden gevolgd. Standaard = 7d0°0′0″ (1 week)."
 config_signatures_infraction_limit: "Maximum aantal overtredingen een IP mag worden gesteld voordat hij wordt verbannen door IP-tracking. Standaard = 10."
 config_signatures_shorthand: "Controles voor wat te doen met een verzoek wanneer er een positieve overeenkomst is met een signature die de gegeven stenowoorden gebruikt."
 config_signatures_tracking_override: "Moeten modules worden toegestaan om opties voor tracking te overschrijven? True = Ja [Standaard]; False = Nee."

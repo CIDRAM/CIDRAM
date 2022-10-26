@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2022.10.24).
+# This file: Japanese language data for the front-end (last modified: 2022.10.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -198,7 +198,7 @@ config_projecthoneypot_max_age_in_days: "ルックアップを実行するとき
 config_projecthoneypot_max_ts_for_captcha: "キャプチャを提供できる最大の脅威スコア（１から１００までの数値である必要があります）。​Default/デフォルルト = 10。"
 config_projecthoneypot_minimum_threat_score: "CIDRAMがＩＰアドレスをブロックするために必要な最小脅威スコア（１から１００までの数値である必要があります）。​Default/デフォルルト = 10。"
 config_rate_limiting: "レート制限の設定（一般的な使用には推奨されません）。"
-config_rate_limiting_allowance_period: "使用状況を監視する時間数。​Default/デフォルルト = 0。"
+config_rate_limiting_allowance_period: "使用状況を監視する期間。​Default/デフォルルト = 0°0′0″。"
 config_rate_limiting_exceptions: "例外（すなわち、レート制限されるべきではないリクエスト）。​レート制限が有効な場合にのみ効果があります。"
 config_rate_limiting_max_bandwidth: "将来の要求に対してレート制限を有効にする前の許容期間内に許容される最大帯域幅。​０の値は、このタイプのレート制限を無効にします。​Default/デフォルルト = 0KB。"
 config_rate_limiting_max_requests: "将来の要求に対してレート制限を有効にする前に、許容期間内に許可される要求の最大数。​０の値は、このタイプのレート制限を無効にします。​Default/デフォルルト = 0。"
@@ -220,7 +220,7 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Stop Forum Spam モジュールの設定。"
 config_sfs_offer_captcha: "このモジュールによってリクエストがブロックされた場合、CAPTCHAを提供できます。 Default（デフォルト設定） = True。 注：他のディレクティブをオーバーライドしません。 CAPTCHAを提供するには、すべてのディレクティブが同意し、必要なキーが構成されている必要があります。 CAPTCHAの提供が通常許可される場合、このディレクティブをfalseに設定すると、このモジュールによって特別にブロックされたリクエストに対してCAPTCHAが提供されないようにする方法が提供されます。"
 config_signatures: "シグネチャ、シグネチャ・ファイル、モジュール、などの設定。"
-config_signatures_default_tracktime: "ＩＰアドレスを追跡する必要がある秒数。​Default（デフォルト設定） = ６０４８００（１週間）。"
+config_signatures_default_tracktime: "ＩＰアドレスを追跡する必要がある秒数。​Default（デフォルト設定） = 「7d0°0′0″」 （１週間）。"
 config_signatures_infraction_limit: "ＩＰがＩＰトラッキングによって禁止される前に発生することが、​許される違反の最大数。​Default（デフォルト設定） = １０。"
 config_signatures_shorthand: "与えられた速記語を利用するシグネチャに対してポジティブ・マッチがある場合に、要求をどう処理するかを制御のためです。"
 config_signatures_tracking_override: "モジュールが追跡オプションをオーバーライドできるようにしますか？ True = はい（Default/デフォルルト）。 False = いいえ。"

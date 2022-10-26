@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2022.10.24).
+# This file: Russian language data for the front-end (last modified: 2022.10.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -198,7 +198,7 @@ config_projecthoneypot_max_age_in_days: "Максимальный возраст
 config_projecthoneypot_max_ts_for_captcha: "Максимальный оценка угрозы, разрешенный для обслуживания CAPTCHA (должно быть числом от 1 до 100). Стандарт = 10."
 config_projecthoneypot_minimum_threat_score: "Минимальная оценка угрозы, необходимая для того, чтобы CIDRAM заблокировала IP-адрес (должно быть числом от 1 до 100). Стандарт = 10."
 config_rate_limiting: "Конфигурация для ограничения скорости (не рекомендуется для общего пользования)."
-config_rate_limiting_allowance_period: "Количество часов для мониторинга использования. Стандарт = 0."
+config_rate_limiting_allowance_period: "Продолжительность мониторинга использования. Стандарт = 0°0′0″."
 config_rate_limiting_exceptions: "Исключения (т.е., запросы, которые не должны ограничиваться). Действует только при включенном ограничении скорости."
 config_rate_limiting_max_bandwidth: "Максимальный размер полосы пропускания, разрешенный в течение периода пособия, до включения ограничения скорости для будущих запросов. Значение 0 отключает этот тип ограничения скорости. Стандарт = 0KB."
 config_rate_limiting_max_requests: "Максимальное количество запросов, разрешенных в течение периода пособия, до включения ограничения скорости для будущих запросов. Значение 0 отключает этот тип ограничения скорости. Стандарт = 0."
@@ -220,7 +220,7 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Конфигурация модуля Stop Forum Spam."
 config_sfs_offer_captcha: "Когда запросы блокируются этим модулем, может использоваться CAPTCHA. Стандарт = True. Примечание: Другие директивы не переопределяются. Для выдачи CAPTCHA должны быть согласованы все директивы, предоставил необходимые ключи, и т.д. В случае, если CAPTCHA обычно разрешается выдавать, установка этой директивы в false обеспечивает способ предотвращения выдачи CAPTCHA для запросов, заблокированных конкретно этим модулем."
 config_signatures: "Конфигурация для сигнатурей, файлов сигнатурей, модулей и т.д."
-config_signatures_default_tracktime: "Сколько секунд IP-адреса должны отслеживаться. Стандарт = 604800 (1 неделя)."
+config_signatures_default_tracktime: "Сколько секунд IP-адреса должны отслеживаться. Стандарт = 7d0°0′0″ (1 неделя)."
 config_signatures_infraction_limit: "Максимальное число нарушений IP-разрешено брать на себя, прежде чем она запрещена отслеживание IP. Стандарт = 10."
 config_signatures_shorthand: "Управляет что делать с запросом, когда есть положительное совпадение с сигнатурю, в которой используются заданные сокращенные слова."
 config_signatures_tracking_override: "Разрешить модулям переопределять параметры отслеживания? True = Да [Стандарт]; False = Нет."

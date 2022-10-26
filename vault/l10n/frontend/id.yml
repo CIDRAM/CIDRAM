@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2022.10.24).
+# This file: Indonesian language data for the front-end (last modified: 2022.10.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -198,12 +198,12 @@ config_projecthoneypot_max_age_in_days: "Usia maksimum dalam hari dimana laporan
 config_projecthoneypot_max_ts_for_captcha: "Skor ancaman maksimum yang diizinkan untuk CAPTCHA disajikan (harus berupa angka diantara 1 dan 100). Default = 10."
 config_projecthoneypot_minimum_threat_score: "Skor ancaman minimum yang diperlukan agar CIDRAM memblokir alamat IP (harus berupa angka diantara 1 dan 100). Default = 10."
 config_rate_limiting: "Konfigurasi untuk pembatasan laju (tidak direkomendasikan untuk penggunaan umum)."
-config_rate_limiting_allowance_period: "Jumlah jam untuk memonitor penggunaan. Default = 0."
+config_rate_limiting_allowance_period: "Durasi untuk melacak penggunaan. Default = 0°0′0″."
 config_rate_limiting_exceptions: "Pengecualian (yaitu, permintaan yang seharusnya tidak dibatasi). Hanya relevan ketika pembatasan laju diaktifkan."
 config_rate_limiting_max_bandwidth: "Jumlah maksimum bandwidth yang diizinkan dalam periode tunjangan sebelum mengaktifkan pembatasan laju untuk permintaan di masa mendatang. Nilai 0 menonaktifkan jenis pembatasan laju ini. Default = 0KB."
 config_rate_limiting_max_requests: "Jumlah maksimum permintaan yang diizinkan dalam periode tunjangan sebelum mengaktifkan pembatasan laju untuk permintaan di masa mendatang. Nilai 0 menonaktifkan jenis pembatasan laju ini. Default = 0."
-config_rate_limiting_precision_ipv4: "Presisi yang akan digunakan saat memonitor penggunaan IPv4. Nilai mencerminkan ukuran blok CIDR. Atur ke 32 untuk presisi terbaik. Default = 32."
-config_rate_limiting_precision_ipv6: "Presisi yang akan digunakan saat memonitor penggunaan IPv6. Nilai mencerminkan ukuran blok CIDR. Atur ke 128 untuk presisi terbaik. Default = 128."
+config_rate_limiting_precision_ipv4: "Presisi yang akan digunakan saat melacak penggunaan IPv4. Nilai mencerminkan ukuran blok CIDR. Atur ke 32 untuk presisi terbaik. Default = 32."
+config_rate_limiting_precision_ipv6: "Presisi yang akan digunakan saat melacak penggunaan IPv6. Nilai mencerminkan ukuran blok CIDR. Atur ke 128 untuk presisi terbaik. Default = 128."
 config_recaptcha: "Konfigurasi untuk ReCaptcha (menyediakan cara bagi manusia untuk mendapatkan kembali akses ketika diblokir)."
 config_recaptcha_api: *CaptchaAPI
 config_recaptcha_expiry: *CaptchaExpiry
@@ -220,7 +220,7 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Konfigurasi untuk modul Stop Forum Spam."
 config_sfs_offer_captcha: "Ketika permintaan diblokir oleh modul ini, CAPTCHA dapat disajikan. Default = True. Catatan: Tidak mengesampingkan direktif lain. Agar CAPTCHA dapat disajikan, semua direktif harus setuju, kunci yang diperlukan harus dikonfigurasi, dll. Jika CAPTCHA biasanya diizinkan untuk disajikan, menyetel direktif ini ke false menyediakan cara untuk mencegah CAPTCHA disajikan untuk permintaan yang diblokir secara khusus oleh modul ini."
 config_signatures: "Konfigurasi untuk tanda tangan, file tanda tangan, modul, dll."
-config_signatures_default_tracktime: "Berapa detik alamat IP harus dilacak. Default = 604800 (1 seminggu)."
+config_signatures_default_tracktime: "Berapa detik alamat IP harus dilacak. Default = 7d0°0′0″ (1 seminggu)."
 config_signatures_infraction_limit: "Jumlah maksimum pelanggaran IP diperbolehkan untuk dikenakan sebelum dilarang oleh pelacakan IP. Default = 10."
 config_signatures_shorthand: "Kontrol untuk apa yang harus dilakukan dengan permintaan jika/ketika ada kecocokan yang positif dengan tanda tangan yang menggunakan kata-kata singkat yang diberikan."
 config_signatures_tracking_override: "Izinkan modul untuk mengganti opsi pelacakan? True = Ya [Default]; False = Tidak."

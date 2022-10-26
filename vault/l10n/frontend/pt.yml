@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2022.10.24).
+# This file: Portuguese language data for the front-end (last modified: 2022.10.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -198,7 +198,7 @@ config_projecthoneypot_max_age_in_days: "A idade máxima em dias para a qual os 
 config_projecthoneypot_max_ts_for_captcha: "A pontuação máxima de ameaça permitida para receber um CAPTCHA (deve ser um número entre 1 e 100). Padrão = 10."
 config_projecthoneypot_minimum_threat_score: "A pontuação mínima de ameaça necessária para que o CIDRAM bloqueie um endereço IP (deve ser um número entre 1 e 100). Padrão = 10."
 config_rate_limiting: "Configuração para limitação de taxa (não recomendado para uso geral)."
-config_rate_limiting_allowance_period: "O número de horas para monitorar o uso. Padrão = 0."
+config_rate_limiting_allowance_period: "A duração para monitorar o uso. Padrão = 0°0′0″."
 config_rate_limiting_exceptions: "Exceções (ou seja, solicitações que não devem ser limitadas à taxa). Relevante apenas quando a limitação de taxa está ativada."
 config_rate_limiting_max_bandwidth: "A quantidade máxima de largura de banda permitida dentro do período de tolerância antes de ativar a limitação de taxa para solicitações futuras. Um valor de 0 desativa esse tipo de limitação de taxa. Padrão = 0KB."
 config_rate_limiting_max_requests: "O número máximo de solicitações permitido dentro do período de tolerância antes de ativar a limitação de taxa para solicitações futuras. Um valor de 0 desativa esse tipo de limitação de taxa. Padrão = 0."
@@ -220,7 +220,7 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Configuração para o módulo Stop Forum Spam."
 config_sfs_offer_captcha: "Quando as solicitações são bloqueadas por este módulo, CAPTCHAs podem ser emitidos. Padrão = True. Nota: Não substitui outras diretivas. Para que os CAPTCHAs sejam emitidos, todas as diretivas devem estar de acordo, as chaves necessárias configuradas, etc. No caso de CAPTCHAs normalmente tenham permissão para serem emitidos, definir essa diretiva como false fornece uma maneira de impedir que os CAPTCHAs sejam emitidos para solicitações bloqueadas especificamente por este módulo."
 config_signatures: "Configuração para assinaturas, arquivos de assinatura, módulos, etc."
-config_signatures_default_tracktime: "Por quantos segundos os endereços IP devem ser rastreados. Padrão = 604800 (1 semana)."
+config_signatures_default_tracktime: "Por quantos segundos os endereços IP devem ser rastreados. Padrão = 7d0°0′0″ (1 semana)."
 config_signatures_infraction_limit: "Número máximo de infrações que um IP pode incorrer antes de ser banido por monitoração IP. Padrão = 10."
 config_signatures_shorthand: "Controla o que fazer com uma solicitação quando há uma correspondência positiva com uma assinatura que utiliza as palavras curtas fornecidas."
 config_signatures_tracking_override: "Permitir que os módulos substituem as opções de monitoração? True = Sim [Padrão]; False = Não."

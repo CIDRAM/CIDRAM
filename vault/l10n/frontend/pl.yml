@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2022.10.24).
+# This file: Polish language data for the front-end (last modified: 2022.10.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -198,7 +198,7 @@ config_projecthoneypot_max_age_in_days: "Maksymalny wiek w dniach, dla którego 
 config_projecthoneypot_max_ts_for_captcha: "Maksymalny wynik zagrożenia, na który można było podać CAPTCHA (musi być liczbą od 1 do 100). Domyślna = 10."
 config_projecthoneypot_minimum_threat_score: "Minimalny wynik zagrożenia wymagany do zablokowania adresu IP przez CIDRAM (musi być liczbą od 1 do 100). Domyślna = 10."
 config_rate_limiting: "Konfiguracja ograniczania (niezalecany do ogólnego użytku)."
-config_rate_limiting_allowance_period: "Liczba godzin śledzenia użycia. Domyślna = 0."
+config_rate_limiting_allowance_period: "Czas trwania śledzenia użycia. Domyślna = 0°0′0″."
 config_rate_limiting_exceptions: "Wyjątki (żądania, które nie powinny być ograniczone). Dotyczy tylko wtedy, gdy włączone jest ograniczenia."
 config_rate_limiting_max_bandwidth: "Maksymalna ilość przepustowości dozwolone w dozwolonym czasie przed stawką ograniczającą przyszłe żądania. Wartość 0 wyłącza ten typ ograniczenia. Domyślna = 0KB."
 config_rate_limiting_max_requests: "Maksymalna liczba żądań w dozwolonym czasie przed stawką ograniczającą przyszłe żądania. Wartość 0 wyłącza ten typ ograniczenia. Domyślna = 0."
@@ -220,7 +220,7 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Konfiguracja modułu Stop Forum Spam."
 config_sfs_offer_captcha: "Gdy żądania są blokowane przez ten moduł, mogą zostać wystawione kody CAPTCHA. Domyślna = True. Uwaga: Nie zastępuje innych dyrektyw. Aby można było wystawić CAPTCHA, wszystkie dyrektywy muszą być zgodne, konieczne skonfigurowane klucze, itp. W przypadku, gdyby normalnie zezwalano na wystawianie kodów CAPTCHA, ustawienie tej dyrektywy na wartość false umożliwia zapobieganie wystawianiu kodów CAPTCHA dla żądań zablokowanych specjalnie przez ten moduł."
 config_signatures: "Konfiguracja podpisów, plików podpisów, modułów, itp."
-config_signatures_default_tracktime: "Ile sekund mają być śledzone adresy IP. Domyślna = 604800 (1 tydzień)."
+config_signatures_default_tracktime: "Ile sekund mają być śledzone adresy IP. Domyślna = 7d0°0′0″ (1 tydzień)."
 config_signatures_infraction_limit: "Maksymalna liczba wykroczeń, które może ponieść IP, zanim zostanie zablokowane przez śledzenie IP. Domyślna = 10."
 config_signatures_shorthand: "Kontroluje, co zrobić z żądaniem, gdy istnieje pozytywne dopasowanie do podpisu, który wykorzystuje podane skrócone słowa."
 config_signatures_tracking_override: "Zezwalać modułom na zastępowanie opcji śledzenia? True (Prawdziwe) = Tak [Domyślna]; False (Fałszywy) = Nie."

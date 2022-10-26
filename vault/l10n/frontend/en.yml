@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2022.10.24).
+# This file: English language data for the front-end (last modified: 2022.10.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -198,7 +198,7 @@ config_projecthoneypot_max_age_in_days: "The maximum age in days for which repor
 config_projecthoneypot_max_ts_for_captcha: "The maximum threat score allowed for being served a CAPTCHA (must be a number between 1 and 100). Default = 10."
 config_projecthoneypot_minimum_threat_score: "The minimum threat score required in order for CIDRAM to block an IP address (must be a number between 1 and 100). Default = 10."
 config_rate_limiting: "Configuration for rate limiting (not recommended for general use)."
-config_rate_limiting_allowance_period: "The number of hours to track usage. Default = 0."
+config_rate_limiting_allowance_period: "The duration to track usage. Default = 0°0′0″."
 config_rate_limiting_exceptions: "Exceptions (i.e., requests which shouldn't be rate limited). Relevant only when rate limiting is enabled."
 config_rate_limiting_max_bandwidth: "The maximum amount of bandwidth allowed within the allowance period before rate limiting future requests. A value of 0 disables this type of rate limiting. Default = 0KB."
 config_rate_limiting_max_requests: "The maximum number of requests allowed within the allowance period before rate limiting future requests. A value of 0 disables this type of rate limiting. Default = 0."
@@ -220,7 +220,7 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Configuration for the Stop Forum Spam module."
 config_sfs_offer_captcha: "When requests are blocked by this module, CAPTCHAs may be served. Default = True. Note: Doesn't override other directives. For CAPTCHAs to be served, all directives must agree, necessary keys configured, etc. In the event that CAPTCHAs would normally be permitted to be served, setting this directive to false provides a way to prevent CAPTCHAs being served for requests blocked specifically by this module."
 config_signatures: "Configuration for signatures, signature files, modules, etc."
-config_signatures_default_tracktime: "How many seconds IP addresses should be tracked for. Default = 604800 (1 week)."
+config_signatures_default_tracktime: "How many seconds IP addresses should be tracked for. Default = 7d0°0′0″ (1 week)."
 config_signatures_infraction_limit: "Maximum number of infractions an IP is allowed to incur before it is banned by IP tracking. Default = 10."
 config_signatures_shorthand: "Controls for what to do with a request when there's a positive match against a signature which utilises the given shorthand words."
 config_signatures_tracking_override: "Allow modules to override tracking options? True = Yes [Default]; False = No."

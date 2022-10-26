@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2022.09.23).
+ * This file: The CIDRAM core (last modified: 2022.10.26).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -922,12 +922,14 @@ class Core
      */
     public function autoType(&$Var, string $Type = ''): void
     {
-        if (in_array($Type, ['string', 'timezone', 'checkbox', 'url', 'email'], true)) {
+        if (in_array($Type, ['checkbox', 'email', 'string', 'timezone', 'url'], true)) {
             $Var = (string)$Var;
-        } elseif ($Type === 'int') {
-            $Var = (int)$Var;
         } elseif ($Type === 'float') {
             $Var = (float)$Var;
+        } elseif ($Type === 'int') {
+            $Var = (int)$Var;
+        } elseif ($Type === 'duration') {
+            $Var = new \CIDRAM\CIDRAM\Duration($Var);
         } elseif ($Type === 'bool') {
             $Var = (strtolower($Var) !== 'false' && $Var);
         } elseif ($Type === 'kb') {
@@ -2462,7 +2464,7 @@ class Core
 
         /** Override if using a different preferred caching mechanism. */
         if ($this->Cache->Using && $this->Cache->Using !== 'FF') {
-            $this->Cache->setEntry('rl', $this->CIDRAM['RL_Data'] . $Data, $this->Configuration['rate_limiting']['allowance_period'] * 3600);
+            $this->Cache->setEntry('rl', $this->CIDRAM['RL_Data'] . $Data, $this->Configuration['rate_limiting']['allowance_period']->getAsSeconds());
             return;
         }
 
@@ -2506,7 +2508,7 @@ class Core
 
             /** Override if using a different preferred caching mechanism. */
             if ($this->Cache->Using && $this->Cache->Using !== 'FF') {
-                $this->Cache->setEntry('rl', $this->CIDRAM['RL_Data'], $this->Configuration['rate_limiting']['allowance_period'] * 3600);
+                $this->Cache->setEntry('rl', $this->CIDRAM['RL_Data'], $this->Configuration['rate_limiting']['allowance_period']->getAsSeconds());
                 return;
             }
 

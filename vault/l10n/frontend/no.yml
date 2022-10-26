@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2022.10.24).
+# This file: Norwegian language data for the front-end (last modified: 2022.10.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -198,7 +198,7 @@ config_projecthoneypot_max_age_in_days: "Maksimal alder i dager som rapporter vi
 config_projecthoneypot_max_ts_for_captcha: "Maksimal trusselpoengsum tillatt for å bli servert en CAPTCHA (må være et tall mellom 1 og 100). Standardverdi = 10."
 config_projecthoneypot_minimum_threat_score: "Minimum trusselpoengsum som kreves for at CIDRAM skal blokkere en IP-adresse (må være et tall mellom 1 og 100). Standardverdi = 10."
 config_rate_limiting: "Konfigurasjon for hastighetsbegrensning (anbefales ikke til generell bruk)."
-config_rate_limiting_allowance_period: "Antall timer for å spore bruken. Standardverdi = 0."
+config_rate_limiting_allowance_period: "Varigheten for å spore bruk. Standardverdi = 0°0′0″."
 config_rate_limiting_exceptions: "Unntak (dvs, forespørsler som ikke bør være hastighetsbegrenset). Relevant bare når hastighetsbegrensning er aktivert."
 config_rate_limiting_max_bandwidth: "Maksimal båndbredde tillatt innenfor tillatelsesperioden før hastighetsbegrensende fremtidige forespørsler. En verdi på 0 deaktiverer denne typen hastighetsbegrensende. Standardverdi = 0KB."
 config_rate_limiting_max_requests: "Maksimalt antall forespørsler tillatt innen tillatelsesperioden før hastighetsbegrensende fremtidige forespørsler. En verdi på 0 deaktiverer denne typen hastighetsbegrensende. Standardverdi = 0."
@@ -220,7 +220,7 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Konfigurasjon for Stop Forum Spam modulen."
 config_sfs_offer_captcha: "Når forespørsler blokkeres av denne modulen, CAPTCHA-er kan bli servert. Standardverdi = True. Merk: Overstyrer ikke andre direktiver. For at CAPTCHA-er skal kunne betjenes, må alle direktiver stemme overens, nødvendige nøkler konfigurert, osv. I tilfelle CAPTCHA-er normalt vil tillates å bli servert, gir det å sette dette direktivet til false en måte å forhindre at CAPTCHA-er blir servert for forespørsler som er blokkert spesifikt av denne modulen."
 config_signatures: "Konfigurasjon for signaturer, signaturfiler, moduler, etc."
-config_signatures_default_tracktime: "Hvor mange sekunder IP-adresser skal spores. Standardverdi = 604800 (1 uke)."
+config_signatures_default_tracktime: "Hvor mange sekunder IP-adresser skal spores. Standardverdi = 7d0°0′0″ (1 uke)."
 config_signatures_infraction_limit: "Maks antall infraksjoner som en IP har lov til å pådra seg før den er utestengt av IP-sporing. Standardverdi = 10."
 config_signatures_shorthand: "Kontrollerer hva bør gjøres med en forespørsel når det er en positiv match mot en signatur som bruker de gitte stenografiordene."
 config_signatures_tracking_override: "Tillate moduler å overstyre sporingsalternativene? True = Ja [Standardverdi]; False = Nei."

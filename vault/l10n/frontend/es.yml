@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2022.10.24).
+# This file: Spanish language data for the front-end (last modified: 2022.10.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -198,7 +198,7 @@ config_projecthoneypot_max_age_in_days: "La antigüedad máxima en días para la
 config_projecthoneypot_max_ts_for_captcha: "La puntuación de amenaza máxima permitida para recibir un CAPTCHA (debe ser un número entre 1 y 100). Predefinido = 10."
 config_projecthoneypot_minimum_threat_score: "La puntuación mínimo de amenaza requerido para que CIDRAM bloquee una dirección IP (debe ser un número entre 1 y 100). Predefinido = 10."
 config_rate_limiting: "Configuración para limitar la velocidad de acceso (no recomendado para uso general)."
-config_rate_limiting_allowance_period: "El número de horas para monitorear el uso. Predefinido = 0."
+config_rate_limiting_allowance_period: "La duración para monitorear el uso. Predefinido = 0°0′0″."
 config_rate_limiting_exceptions: "Excepciones (es decir, solicitudes que no deberían limitada). Relevante solo cuando la limitación de velocidad está habilitada."
 config_rate_limiting_max_bandwidth: "La cantidad máxima de ancho de banda permitida dentro del período de asignación antes de habilitar los límites de tarifas para solicitudes futuras. Un valor de 0 desactiva este tipo de limitación de la tarifa. Predefinido = 0KB."
 config_rate_limiting_max_requests: "El número máximo de solicitudes permitido dentro del período de asignación antes de habilitar los límites de tarifas para solicitudes futuras. Un valor de 0 desactiva este tipo de limitación de la tarifa. Predefinido = 0."
@@ -220,7 +220,7 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Configuración para el módulo Stop Forum Spam."
 config_sfs_offer_captcha: "Cuando las solicitudes están bloqueadas por este módulo, se pueden servir CAPTCHA. Predefinido = True. Nota: No reemplaza otras directivas. Para que se sirvan los CAPTCHA, todas las directivas deben estar de acuerdo, las claves necesarias configuradas, etc. En el caso de que normalmente se permite CAPTCHA, establecer esta directiva en false proporciona una forma de evitar que se entreguen CAPTCHA para solicitudes bloqueadas específicamente por este módulo."
 config_signatures: "Configuración para firmas, archivos de firma, módulos, etc."
-config_signatures_default_tracktime: "Durante cuántos segundos se deben seguir las direcciones IP. Predefinido = 604800 (1 semana)."
+config_signatures_default_tracktime: "Durante cuántos segundos se deben seguir las direcciones IP. Predefinido = 7d0°0′0″ (1 semana)."
 config_signatures_infraction_limit: "Número máximo de infracciones a las que un IP puede incurrir antes de ser prohibido por el rastreo IP. Predefinido = 10."
 config_signatures_shorthand: "Controla qué hacer con una solicitud cuando hay una coincidencia positiva con una firma que utiliza las palabras abreviadas dadas."
 config_signatures_tracking_override: "¿Permitir que los módulos reemplacen las opciones de seguimiento? True = Sí [Predefinido]; False = No."

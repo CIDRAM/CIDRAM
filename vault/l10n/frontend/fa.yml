@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Farsi language data for the front (last modified: 2022.10.24).
+# This file: Farsi language data for the front (last modified: 2022.10.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -198,7 +198,7 @@ config_projecthoneypot_max_age_in_days: "حداکثر سن در روز برای 
 config_projecthoneypot_max_ts_for_captcha: "حداکثر امتیاز تهدید مجاز برای ارائه یک CAPTCHA (باید عددی بین 1 تا 100 باشد). پیش فرض = 10."
 config_projecthoneypot_minimum_threat_score: "حداقل امتیاز تهدید مورد نیاز برای مسدود کردن یک آدرس IP توسط CIDRAM (باید عددی بین 1 تا 100 باشد). پیش فرض = 10."
 config_rate_limiting: "پیکربندی برای محدود کردن نرخ (برای استفاده عمومی توصیه نمی شود)."
-config_rate_limiting_allowance_period: "تعداد ساعات ردیابی استفاده. پیش فرض = 0."
+config_rate_limiting_allowance_period: "مدت زمان برای ردیابی استفاده. پیش فرض = 0°0′0″."
 config_rate_limiting_exceptions: "استثناها (به عنوان مثال، درخواست هایی که نباید محدود به نرخ باشند). فقط زمانی مرتبط است که محدودیت نرخ فعال باشد."
 config_rate_limiting_max_bandwidth: "حداکثر مقدار پهنای باند مجاز در دوره مجاز قبل از نرخ محدود کننده درخواست های آتی. مقدار 0 این نوع محدودیت نرخ را غیرفعال می کند. پیش فرض = 0KB."
 config_rate_limiting_max_requests: "حداکثر تعداد درخواست‌های مجاز در دوره کمک هزینه قبل از محدود کردن نرخ درخواست‌های آینده. مقدار 0 این نوع محدودیت نرخ را غیرفعال می کند. پیش فرض = 0."
@@ -220,7 +220,7 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "پیکربندی ماژول Stop Forum Spam."
 config_sfs_offer_captcha: "وقتی درخواست‌ها توسط این ماژول مسدود می‌شوند، CAPTCHA ممکن است ارائه شود. پیش فرض = True. توجه داشته باشید: جایگزین دستورالعمل های دیگر نمی شود. برای استفاده از CAPTCHA ها، باید همه دستورالعمل ها موافق باشند، کلیدهای لازم پیکربندی شوند و غیره. در صورتی که CAPTCHA ها به طور معمول مجاز به ارائه خدمات باشند، تنظیم این دستورالعمل روی false راهی برای جلوگیری از ارائه CAPTCHA برای درخواست هایی که به طور خاص توسط این ماژول مسدود شده اند، فراهم می کند."
 config_signatures: "پیکربندی برای امضاها، فایل های امضا، ماژول ها و غیره."
-config_signatures_default_tracktime: "آدرس های IP باید برای چند ثانیه ردیابی شوند؟ پیش فرض = 604800 (1 هفته)."
+config_signatures_default_tracktime: "آدرس های IP باید برای چند ثانیه ردیابی شوند؟ پیش فرض = 7d0°0′0″ (1 هفته)."
 config_signatures_infraction_limit: "حداکثر تعداد تخلفاتی که یک IP مجاز است قبل از اینکه توسط ردیابی IP ممنوع شود، انجام دهد. پیش فرض = 10."
 config_signatures_shorthand: "کنترل می‌کند در صورت تطابق مثبت با امضایی که از کلمات مختصر داده شده استفاده می‌کند، چه باید کرد."
 config_signatures_tracking_override: "به ماژول‌ها اجازه می‌دهید گزینه‌های ردیابی را جایگزین کنند؟ True = آره [پیش فرض]؛ False = نکن."

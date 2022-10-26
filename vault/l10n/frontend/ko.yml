@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2022.10.24).
+# This file: Korean language data for the front-end (last modified: 2022.10.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -198,7 +198,7 @@ config_projecthoneypot_max_age_in_days: "조회를 수행할 때 보고서가 �
 config_projecthoneypot_max_ts_for_captcha: "CAPTCHA를 제공하는 데 허용되는 최대 위협 점수입니다 (1에서 100 사이의 숫자여야 합니다). Default (기본 설정) = 10."
 config_projecthoneypot_minimum_threat_score: "CIDRAM이 IP 주소를 차단하는 데 필요한 최소 위협 점수입니다 (1에서 100 사이의 숫자여야 합니다). Default (기본 설정) = 10."
 config_rate_limiting: "속도 제한 설정 (일반적인 사용에는 권장되지 않습니다)."
-config_rate_limiting_allowance_period: "사용량을 모니터 할 시간입니다. Default (기본 설정) = 0."
+config_rate_limiting_allowance_period: "사용량을 모니터 할 기간입니다. Default (기본 설정) = 0°0′0″."
 config_rate_limiting_exceptions: "예외 (즉, 속도 제한이 없어야하는 요청). 속도 제한이 활성화 된 경우에만 해당됩니다."
 config_rate_limiting_max_bandwidth: "향후 요청에 대해 속도 제한을 사용하기 전에 허용 기간 내에 허용되는 최대 대역폭입니다. 0 값은 이러한 유형의 속도 제한을 비활성화합니다. Default (기본 설정) = 0KB."
 config_rate_limiting_max_requests: "향후 요청에 대해 속도 제한을 사용하도록 설정하기 전에 허용 기간 내에 허용되는 최대 요청 수입니다. 0 값은 이러한 유형의 속도 제한을 비활성화합니다. Default (기본 설정) = 0."
@@ -220,7 +220,7 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Stop Forum Spam 모듈에 대한 구성입니다."
 config_sfs_offer_captcha: "이 모듈에 의해 요청이 차단되면, 보안 문자가 제공될 수 있습니다. Default (기본값) = True. 참고\_: 다른 지시문을 무시하지 않습니다. CAPTCHA가 제공되려면, 모든 지시문이 동의해야 하고, 필요한 키가 구성되어야 합니다. CAPTCHA가 제공되도록 허용되는 경우, 이 지시문을 false로 설정하면 이 모듈에서 특별히 차단된 요청에 대해 CAPTCHA가 제공되지 않도록 방지할 수 있습니다."
 config_signatures: "서명, 서명 파일, 모듈, 등의 설정."
-config_signatures_default_tracktime: "IP 주소를 추적해야 하는 시간(초)입니다. Default (기본값) = 604800 (1 주)."
+config_signatures_default_tracktime: "IP 주소를 추적해야 하는 시간(초)입니다. Default (기본값) = 7d0°0′0″ (1 주)."
 config_signatures_infraction_limit: "IP가 IP 추적에 의해 금지되기 전에 발생하는 것이 허용된다 위반의 최대 수. Default (기본값) = 10."
 config_signatures_shorthand: "주어진 속기 단어를 사용하는 서명에 대해 긍정적인 일치가 있을 때 요청을 처리하는 방법을 제어합니다."
 config_signatures_tracking_override: "모듈이 추적 옵션을 재정의하도록 허용하시겠습니까? True = 예 (Default / 기본 설정); False = 아니오."

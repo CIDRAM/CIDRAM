@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2022.10.24).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2022.10.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -198,7 +198,7 @@ config_projecthoneypot_max_age_in_days: "执行查找时将考虑报告的最长
 config_projecthoneypot_max_ts_for_captcha: "为了提供CAPTCHA的目的最大威胁分数（必须是1到100之间的数字）。标准=10。"
 config_projecthoneypot_minimum_threat_score: "为了让CIDRAM阻止IP地址所需的最低威胁分数（必须是1到100之间的数字）。标准=10。"
 config_rate_limiting: "速率限制的配置（不建议一般使用）。"
-config_rate_limiting_allowance_period: "监视使用情况的小时数。​标准=0。"
+config_rate_limiting_allowance_period: "监视使用情况的持续时间。​标准=0°0′0″。"
 config_rate_limiting_exceptions: "例外（即，不应限制速率的请求）。​仅在启用速率限制时有效。"
 config_rate_limiting_max_bandwidth: "在为将来的请求启用速率限制之前的最大允许带宽量。​值为0将禁用此类速率限制。​标准=0KB。"
 config_rate_limiting_max_requests: "在为将来的请求启用速率限制之前允许的最大请求数。​值为0将禁用此类速率限制。​标准=0。"
@@ -220,7 +220,7 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Stop Forum Spam模块的配置。"
 config_sfs_offer_captcha: "当此模块阻止请求时，可能会提供验证码。​标准 = True。​注意：它不会覆盖其他指令。​要提供验证码，所有指令必须一致，必要的密钥必须配置，等等。​在通常允许提供验证码的情况下，将此指令设置为“false”可以防止为该模块专门阻止的请求提供验证码。"
 config_signatures: "签名，签名文件，模块，等的配置。"
-config_signatures_default_tracktime: "应该跟踪多少秒IP地址。​标准 = 604800 （1周）。"
+config_signatures_default_tracktime: "应该跟踪多少秒IP地址。​标准 = 7d0°0′0″ （1周）。"
 config_signatures_infraction_limit: "从IP最大允许违规数量之前它被禁止。​标准=10。"
 config_signatures_shorthand: "当与使用给定速记词的签名匹配时，控制如何处理请求。"
 config_signatures_tracking_override: "允许模块覆盖跟踪选项吗？​True（真）=允许【标准】；False（假）=不允许。"

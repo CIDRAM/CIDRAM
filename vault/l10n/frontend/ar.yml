@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2022.10.24).
+# This file: Arabic language data for the front-end (last modified: 2022.10.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -198,7 +198,7 @@ config_projecthoneypot_max_age_in_days: "الحد الأقصى للعمر بال
 config_projecthoneypot_max_ts_for_captcha: "الحد الأقصى لدرجة التهديد المسموح به لتلقي اختبار CAPTCHA (يجب أن يكون رقمًا بين 1 و 100). افتراضي = 10."
 config_projecthoneypot_minimum_threat_score: "الحد الأدنى لدرجة التهديد المطلوبة لكي يقوم CIDRAM بحظر عنوان IP (يجب أن يكون رقمًا بين 1 و 100). افتراضي = 10."
 config_rate_limiting: "التكوين للحد من معدل (غير مستحسن للاستخدام العام)."
-config_rate_limiting_allowance_period: "عدد الساعات لمراقبة الاستخدام. افتراضي = 0."
+config_rate_limiting_allowance_period: "المدة لمراقبة الاستخدام. افتراضي = 0°0′0″."
 config_rate_limiting_exceptions: "استثناءات (بمعنى آخر، الطلبات التي لا ينبغي أن تكون محدودة). له تأثير فقط عند تمكين الحد."
 config_rate_limiting_max_bandwidth: "أقصى قدر من عرض النطاق الترددي المسموح به خلال فترة السماح. عندما يتم تجاوزت، يتم تمكين حدود السعر للطلبات المستقبلية. تعمل القيمة 0 على تعطيل هذا النوع من تحديد السرعة. افتراضي = 0KB."
 config_rate_limiting_max_requests: "الحد الأقصى لعدد الطلبات المسموح بها خلال فترة السماح. عندما يتم تجاوزت، يتم تمكين حدود السعر للطلبات المستقبلية. تعمل القيمة 0 على تعطيل هذا النوع من تحديد السرعة. افتراضي = 0."
@@ -220,7 +220,7 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "التكوين للوحدة Stop Forum Spam."
 config_sfs_offer_captcha: "عندما يتم حظر الطلبات بواسطة هذه الوحدة، قد يتم تقديم كابتشا. افتراضي = True. ملاحظة: لا يتم تجاوز التوجيهات الأخرى. لكي يتم تقديم اختبارات كابتشا، يجب أن توافق جميع التوجيهات، ويتم تكوين المفاتيح الضرورية، وما إلى ذلك. في حالة السماح عادةً بتقديم اختبارات كابتشا، فإن تعيين هذا التوجيه على false يوفر طريقة لمنع تقديم كابتشا للطلبات المحظورة على وجه التحديد بواسطة هذه الوحدة."
 config_signatures: "التكوين للتوقيعات، ملفات التوقيع، الوحدات النمطية، إلخ."
-config_signatures_default_tracktime: "كم ثانية لتعقب تتبع عناوين IP. افتراضي = 604800 (1 أسبوع)."
+config_signatures_default_tracktime: "كم ثانية لتعقب تتبع عناوين IP. افتراضي = 7d0°0′0″ (1 أسبوع)."
 config_signatures_infraction_limit: "يسمح الحد الأقصى لعدد المخالفات IP يمكن أن تتكبد قبل أن يتم حظره من قبل تتبع IP. افتراضي = 10."
 config_signatures_shorthand: "ضوابط لما يجب فعله بالطلب عندما يكون هناك تطابق إيجابي مع توقيع يستخدم كلمات قصيرة المحددة."
 config_signatures_tracking_override: "هل تسمح للوحدات النمطية بتجاوز خيارات التتبع؟ صحيح/True = نعم [افتراضي]؛ زائفة/False = لا."

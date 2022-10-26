@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2022.10.24).
+# This file: Thai language data for the front-end (last modified: 2022.10.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -198,7 +198,7 @@ config_projecthoneypot_max_age_in_days: "อายุสูงสุดเป็
 config_projecthoneypot_max_ts_for_captcha: "คะแนนภัยคุกคามสูงสุดที่อนุญาตให้ใช้ CAPTCHA (ต้องเป็นตัวเลขระหว่าง 1 ถึง 100). ค่าเริ่มต้น = 10."
 config_projecthoneypot_minimum_threat_score: "คะแนนภัยคุกคามขั้นต่ำที่จำเป็นสำหรับ CIDRAM เพื่อบล็อกที่อยู่ IP (ต้องเป็นตัวเลขระหว่าง 1 ถึง 100). ค่าเริ่มต้น = 10."
 config_rate_limiting: "การกำหนดค่าสำหรับการ จำกัด อัตรา (ไม่แนะนำสำหรับการใช้งานทั่วไป)."
-config_rate_limiting_allowance_period: "จำนวนชั่วโมงในการติดตามการใช้งาน. ค่าเริ่มต้น = 0."
+config_rate_limiting_allowance_period: "ระยะเวลาในการติดตามการใช้งาน. ค่าเริ่มต้น = 0°0′0″."
 config_rate_limiting_exceptions: "ข้อยกเว้น (นั่นคือ คำขอที่ไม่ควรถูก จำกัด). มีความเกี่ยวข้องเฉพาะเมื่อเปิดใช้งานการ จำกัด อัตรา."
 config_rate_limiting_max_bandwidth: "จำนวนแบนด์วิดท์สูงสุดที่อนุญาตภายในระยะเวลาที่อนุญาตก่อนที่จะมีการ จำกัด อัตราค่าบริการในอนาคต. ค่า 0 จะปิดใช้งานการ จำกัด อัตราค่าบริการประเภทนี้. ค่าเริ่มต้น = 0KB."
 config_rate_limiting_max_requests: "จำนวนคำขอสูงสุดที่อนุญาตภายในระยะเวลาที่ได้รับอนุญาตก่อนที่อัตราการ จำกัด คำขอในอนาคต. ค่า 0 จะปิดใช้งานการ จำกัด อัตราค่าบริการประเภทนี้. ค่าเริ่มต้น = 0."
@@ -220,7 +220,7 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "การกำหนดค่าสำหรับโมดูล Stop Forum Spam."
 config_sfs_offer_captcha: "เมื่อคำขอถูกบล็อกโดยโมดูลนี้ อาจให้บริการ CAPTCHA. ค่าเริ่มต้น = True. หมายเหตุ: ไม่แทนที่คำสั่งอื่นๆ. เพื่อให้ใช้ CAPTCHA ได้ การกำหนดค่าทั้งหมดต้องยอมรับ กำหนดค่าคีย์ที่จำเป็น ฯลฯ. การตั้งค่าคำสั่งนี้เป็น false จะเป็นวิธีการป้องกันไม่ให้ CAPTCHA ถูกให้บริการสำหรับคำขอที่ถูกบล็อกโดยโมดูลนี้โดยเฉพาะ."
 config_signatures: "การกำหนดค่าสำหรับลายเซ็น, ไฟล์ลายเซ็น, โมดูล, ฯลฯ."
-config_signatures_default_tracktime: "ควรติดตามที่อยู่ IP กี่วินาที. ค่าเริ่มต้น = 604800 (1 สัปดาห์)."
+config_signatures_default_tracktime: "ควรติดตามที่อยู่ IP กี่วินาที. ค่าเริ่มต้น = 7d0°0′0″ (1 สัปดาห์)."
 config_signatures_infraction_limit: "จำนวนสูงสุดของการละเมิดที่ IP ได้รับอนุญาตให้เกิดขึ้นก่อนที่จะถูกห้ามโดยการติดตาม IP. ค่าเริ่มต้น = 10."
 config_signatures_shorthand: "ควบคุมว่าจะทำอย่างไรกับคำขอเมื่อมีการจับคู่เชิงบวกกับลายเซ็นซึ่งใช้คำชวเลขที่ระบุ."
 config_signatures_tracking_override: "อนุญาตให้โมดูลแทนที่ตัวเลือกการติดตามหรือไม่? True = หยุดใช้ [ค่าเริ่มต้น]; False = ไม่หยุดใช้."

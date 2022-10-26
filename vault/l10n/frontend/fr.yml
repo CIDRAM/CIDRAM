@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2022.10.24).
+# This file: French language data for the front-end (last modified: 2022.10.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -198,7 +198,7 @@ config_projecthoneypot_max_age_in_days: "L'âge maximal en jours pour lequel les
 config_projecthoneypot_max_ts_for_captcha: "Le score de menace maximum autorisé pour recevoir un CAPTCHA (doit être un nombre compris entre 1 et 100). Défaut = 10."
 config_projecthoneypot_minimum_threat_score: "Le score de menace minimum requis pour que CIDRAM bloque une adresse IP (doit être un nombre compris entre 1 et 100). Défaut = 10."
 config_rate_limiting: "Configuration pour la limitation de débit (non recommandé pour d'utilisation générale)."
-config_rate_limiting_allowance_period: "Le nombre d'heures pour surveiller l'utilisation. Défaut = 0."
+config_rate_limiting_allowance_period: "La durée pour surveiller l'utilisation Défaut = 0°0′0″."
 config_rate_limiting_exceptions: "Exceptions (c'est à dire, requêtes qui ne devraient pas être limitées). Pertinent uniquement lorsque la limitation de débit est activée."
 config_rate_limiting_max_bandwidth: "La quantité maximale de bande passante autorisée dans la période de tolérance avant de permettre la limitation de débit pour les requêtes futures. Une valeur de 0 désactive ce type de limitation de débit. Défaut = 0KB."
 config_rate_limiting_max_requests: "Le nombre maximal de requêtes autorisées dans la période de tolérance avant de permettre la limitation de débit pour les requêtes futures. Une valeur de 0 désactive ce type de limitation de débit. Défaut = 0."
@@ -220,7 +220,7 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Configuration du module Stop Forum Spam."
 config_sfs_offer_captcha: "Lorsque les requêtes sont bloquées par ce module, des CAPTCHA peuvent être servis. Défaut = True. Remarque\_: Ne remplace pas les autres directives. Pour que les CAPTCHA soient servis, toutes les directives doivent être d'accord, les clés nécessaires configurées, etc. Dans le cas où les CAPTCHA seraient normalement autorisés à être servis, définir cette directive sur false fournit un moyen d'empêcher les CAPTCHA d'être servis pour les requêtes bloquées spécifiquement par ce module."
 config_signatures: "Configuration pour les signatures, fichiers de signatures, modules, etc."
-config_signatures_default_tracktime: "Combien de secondes les adresses IP doivent être suivies. Défaut = 604800 (1 semaine)."
+config_signatures_default_tracktime: "Combien de secondes les adresses IP doivent être suivies. Défaut = 7d0°0′0″ (1 semaine)."
 config_signatures_infraction_limit: "Nombre maximal d'infractions qu'une IP est autorisée à engager avant d'être interdite par la surveillance des IPs. Défaut = 10."
 config_signatures_shorthand: "Contrôle ce qu'il faut faire avec une requête lorsqu'il y a une correspondance positive avec une signature qui utilise les mots abrégés donnés."
 config_signatures_tracking_override: "Autoriser les modules à remplacer les options de suivi\_? True = Oui [Défaut]\_; False = Non."

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2022.10.25).
+ * This file: The CIDRAM front-end (last modified: 2022.10.26).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1206,7 +1206,7 @@ class FrontEnd extends Core
                         $DirValue['autocomplete']
                     );
                     if (isset($_POST[$ThisDir['DirLangKey']])) {
-                        if (in_array($DirValue['type'], ['bool', 'float', 'int', 'kb', 'string', 'timezone', 'email', 'url'], true)) {
+                        if (in_array($DirValue['type'], ['email', 'string', 'timezone', 'url', 'float', 'int', 'duration', 'bool', 'kb'], true)) {
                             $this->autoType($_POST[$ThisDir['DirLangKey']], $DirValue['type']);
                         }
                         if (!isset($DirValue['choices']) || isset($DirValue['choices'][$_POST[$ThisDir['DirLangKey']]])) {
@@ -1358,6 +1358,52 @@ class FrontEnd extends Core
                                 $ThisDir['DirLangKey']
                             ) . '</script>';
                         }
+                    } elseif ($DirValue['type'] === 'duration') {
+                        $ThisDir['Preview'] = sprintf($DirValue['preview_default_fill'] ?? ' = <span id="%s_preview"></span>', $ThisDir['DirLangKey']);
+                        $ThisDir['Trigger'] = ' onchange="javascript:' . $ThisDir['DirLangKey'] . '_function();" onkeyup="javascript:' . $ThisDir['DirLangKey'] . '_function();"';
+                        $ThisDir['Preview'] .= sprintf(
+                            '<script type="text/javascript">function %1$s_function(){var t=%9$s?%9$s(\'%1' .
+                            '$s_field\').value:%10$s&&!%9$s?%10$s.%1$s_field.value:\'\',found=t.match(/^' .
+                            '\s*(?:(?<Weeks>\d+(?:\.\d+)?)\s*[Ww](?:[Ee]{2}[Kk][Ss]?)?)?\s*(?:(?<Days>\d+' .
+                            '(?:\.\d+)?)\s*[Dd](?:[Aa][Yy][Ss]?)?)?\s*(?:(?<Hours>\d+(?:\.\d+)?)\s*(?:\xB' .
+                            '0|°|[Hh](?:[Oo][Uu][Rr][Ss]?)?))?\s*(?:(?<Minutes>\d+(?:\.\d+)?)\s*(?:\'|′|[' .
+                            'Mm](?:[Ii][Nn][Uu]?[Tt]?[Ee]?[Ss]?)?))?\s*(?:(?<Seconds>\d+(?:\.\d+)?)\s*(?:' .
+                            '"|″|[Ss](?:[Ee][Cc][Oo]?[Nn]?[Dd]?[Ss]?)?))?\s*(?:(?<Milli>\d+(?:\.\d+)?)\s*' .
+                            'ms)?\s*(?:(?<Micro>\d+(?:\.\d+)?)\s*µs)?\s*(?:(?<Nano>\d+(?:\.\d+)?)\s*ns)?' .
+                            '\s*$|^\s*(?<Unspecified>\d+(?:\.\d+)?)?\s*$/);if (undefined===found||!found)' .
+                            'return;for(var limit=0,f=(void 0===found.groups.Seconds?0:Math.abs(found.gro' .
+                            'ups.Seconds))+(void 0===found.groups.Unspecified?0:Math.abs(found.groups.Uns' .
+                            'pecified))+(void 0===found.groups.Milli||Math.abs(found.groups.Milli)<1?0:Ma' .
+                            'th.abs(found.groups.Milli)/1e3)+(void 0===found.groups.Micro||Math.abs(found' .
+                            '.groups.Micro)<1?0:Math.abs(found.groups.Micro)/1e6),i=void 0===found.groups' .
+                            '.Minutes?0:Math.abs(found.groups.Minutes),d=void 0===found.groups.Hours?0:Ma' .
+                            'th.abs(found.groups.Hours),r=void 0===found.groups.Days?0:Math.abs(found.gro' .
+                            'ups.Days),l=void 0===found.groups.Weeks?0:Math.abs(found.groups.Weeks),fb=f,' .
+                            'ib=i,db=d,rb=r,lb=l,o=0,ob=o,n=0,nb=n;limit<10;limit++){var x;if(l-(x=Math.f' .
+                            'loor(l))>0&&(r+=7*(l-x),l=x),r-(x=Math.floor(r))>0&&(d+=24*(r-x),r=x),d-(x=M' .
+                            'ath.floor(d))>0&&(i+=60*(d-x),d=x),i-(x=Math.floor(i))>0&&(f+=60*(i-x),i=x),' .
+                            'f>=60)f-=60*(x=Math.floor(f/60)),i+=x;if(i>=60)i-=60*(x=Math.floor(i/60)),d+' .
+                            '=x;if(d>=24)d-=24*(x=Math.floor(d/24)),r+=x;if(r>=7)r-=7*(x=Math.floor(r/7))' .
+                            ',l+=x;if(l>=52)l-=52*(x=Math.floor(l/52)),n+=x;if(l>=4)l-=4*(x=Math.floor(l/' .
+                            '4)),o+=x;if(fb===f&&ib===i&&db===d&&rb===r&&lb===l&&ob===o&&nb===n)break;fb=' .
+                            'f,ib=i,db=d,rb=r,lb=l,ob=o,nb=n};f=Math.floor(f),i=Math.floor(i),d=Math.floo' .
+                            'r(d),r=Math.floor(r),l=Math.floor(l),o=Math.floor(o),n=Math.floor(n),a=nft(n' .
+                            '.toString())+\' %2$s – \'+nft(o.toString())+\' %3$s – \'+nft(l.toString())+' .
+                            '\' %4$s – \'+nft(r.toString())+\' %5$s – \'+nft(d.toString())+\' %6$s – \'+n' .
+                            'ft(i.toString())+\' %7$s – \'+nft(f.toString())+\' %8$s\';%9$s?%9$s(\'%1$s_p' .
+                            'review\').innerHTML=a:%10$s&&!%9$s?%10$s.%1$s_preview.innerHTML=a:\'\';}%1$s' .
+                            '_function();</script>',
+                            $ThisDir['DirLangKey'],
+                            $this->L10N->getString('previewer_years'),
+                            $this->L10N->getString('previewer_months'),
+                            $this->L10N->getString('previewer_weeks'),
+                            $this->L10N->getString('previewer_days'),
+                            $this->L10N->getString('previewer_hours'),
+                            $this->L10N->getString('previewer_minutes'),
+                            $this->L10N->getString('previewer_seconds'),
+                            'document.getElementById',
+                            'document.all'
+                        );
                     }
                     if ($DirValue['type'] === 'timezone') {
                         $DirValue['choices'] = ['SYSTEM' => $this->L10N->getString('field_system_timezone')];
@@ -1618,6 +1664,12 @@ class FrontEnd extends Core
                         $ThisDir['FieldAppend'] = $ThisDir['autocomplete'] . $ThisDir['Trigger'];
                         if (isset($DirValue['pattern'])) {
                             $ThisDir['FieldAppend'] .= ' pattern="' . $DirValue['pattern'] . '"';
+                        } elseif ($DirValue['type'] === 'duration') {
+                            $ThisDir['FieldAppend'] .= ' pattern="^(?:(\d+(?:\.\d+)?)\s*[Ww](?:[Ee]{2}[Kk][Ss]?)?)?\s*' .
+                            '(?:(\d+(?:\.\d+)?)\s*[Dd](?:[Aa][Yy][Ss]?)?)?\s*(?:(\d+(?:\.\d+)?)\s*(?:\xB0|°|[Hh](?:[Oo][Uu][Rr][Ss]?)?))?\s*' .
+                            '(?:(\d+(?:\.\d+)?)\s*(?:\'|′|[Mm](?:[Ii][Nn][Uu]?[Tt]?[Ee]?[Ss]?)?))?\s*' .
+                            '(?:(\d+(?:\.\d+)?)\s*(?:\x22|″|[Ss](?:[Ee][Cc][Oo]?[Nn]?[Dd]?[Ss]?)?))?\s*' .
+                            '(?:(\d+(?:\.\d+)?)\s*ms)?\s*(?:(\d+(?:\.\d+)?)\s*µs)?\s*(?:(\d+(?:\.\d+)?)\s*ns)?\s*$|^(\d+(?:\.\d+)?)?$"';
                         }
                         $ThisDir['FieldOut'] = sprintf(
                             '<input type="text" name="%1$s" id="%1$s_field" value="%2$s"%3$s />',
@@ -3693,8 +3745,8 @@ class FrontEnd extends Core
             /** Initialise variables. */
             $this->FE['TrackingData'] = '';
             $this->FE['TrackingCount'] = '';
-            $this->FE['NormalExpiry'] = $this->relativeTime($this->Now + $this->Configuration['signatures']['default_tracktime']);
-            $this->FE['ExtendedExpiry'] = $this->relativeTime($this->Now + floor($this->Configuration['signatures']['default_tracktime'] * 52.1428571428571));
+            $this->FE['NormalExpiry'] = $this->relativeTime($this->Now + $this->Configuration['signatures']['default_tracktime']->getAsSeconds());
+            $this->FE['ExtendedExpiry'] = $this->relativeTime($this->Now + floor($this->Configuration['signatures']['default_tracktime']->getAsSeconds() * 52.1428571428571));
             $this->FE['1HourLabel'] = $this->relativeTime($this->Now + 3600);
             $this->FE['1DayLabel'] = $this->relativeTime($this->Now + 86400);
             $this->FE['1WeekLabel'] = $this->relativeTime($this->Now + 604800);
@@ -3721,11 +3773,11 @@ class FrontEnd extends Core
                 }
                 if ($this->expandIpv4($_POST['addNewAddress'], true) || $this->expandIpv6($_POST['addNewAddress'], true)) {
                     if ($_POST['addNewExpiryMenu'] === 'Extended') {
-                        $TrackTime = floor($this->Configuration['signatures']['default_tracktime'] * 52.1428571428571);
+                        $TrackTime = floor($this->Configuration['signatures']['default_tracktime']->getAsSeconds() * 52.1428571428571);
                     } elseif ($_POST['addNewExpiryMenu'] === 'Other' && isset($_POST['addNewExpiryOther'])) {
                         $TrackTime = $_POST['addNewExpiryOther'];
                     } else {
-                        $TrackTime = $this->Configuration['signatures']['default_tracktime'];
+                        $TrackTime = $this->Configuration['signatures']['default_tracktime']->getAsSeconds();
                     }
                     $this->Cache->setEntry('Tracking-' . $_POST['addNewAddress'], $_POST['addNewInfractions'], $TrackTime);
                     $this->Cache->setEntry('Tracking-' . $_POST['addNewAddress'] . '-MinimumTime', $TrackTime, $TrackTime);

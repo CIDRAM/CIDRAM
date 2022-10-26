@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2022.10.24).
+# This file: Swedish language data for the front-end (last modified: 2022.10.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -198,7 +198,7 @@ config_projecthoneypot_max_age_in_days: "Den maximala åldern i dagar för vilke
 config_projecthoneypot_max_ts_for_captcha: "Den maximala hotpoäng som tillåts för att få en CAPTCHA (måste vara ett tal mellan 1 och 100). Standard = 10."
 config_projecthoneypot_minimum_threat_score: "Minsta hotpoäng som krävs för att CIDRAM ska blockera en IP-adress (måste vara ett tal mellan 1 och 100). Standard = 10."
 config_rate_limiting: "Konfiguration för hastighetsbegränsning (rekommenderas inte för allmänt bruk)."
-config_rate_limiting_allowance_period: "Antalet timmar att spåra användningen. Standard = 0."
+config_rate_limiting_allowance_period: "Varaktigheten för att spåra användning. Standard = 0°0′0″."
 config_rate_limiting_exceptions: "Undantagen (d.v.s., förfrågningar som inte bör vara begränsade). Relevant endast när hastighetsbegränsning är aktiverad."
 config_rate_limiting_max_bandwidth: "Den maximala bandbreddsmängden som tillåts inom tillåten-perioden före hastighetsbegränsar framtida förfrågningar. Ett värde av 0 avaktiverar denna typ av hastighetsbegränsande. Standard = 0KB."
 config_rate_limiting_max_requests: "Det maximala antalet förfrågningar som tillåts inom tillåten-perioden före hastighetsbegränsar framtida förfrågningar. Ett värde av 0 avaktiverar denna typ av hastighetsbegränsande. Standard = 0."
@@ -220,7 +220,7 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Konfiguration för modulen Stop Forum Spam."
 config_sfs_offer_captcha: "När förfrågningar blockeras av denna modul kan CAPTCHAer utfärdas. Standard = True. Obs: Åsidosätter inte andra direktiv. För att CAPTCHAer ska kunna utfärdas måste alla direktiv överensstämma, nödvändiga nycklar konfigurerade, etc. I händelse av att CAPTCHAer normalt skulle tillåtas att utfärdas, inställning av detta direktiv till false ger ett sätt att förhindra att CAPTCHAer utfärdas för förfrågningar som specifikt blockeras av denna modul."
 config_signatures: "Konfiguration för signaturer, signaturfiler, moduler, osv."
-config_signatures_default_tracktime: "Hur många sekunder IP-adresser ska spåras. Standard = 604800 (1 vecka)."
+config_signatures_default_tracktime: "Hur många sekunder IP-adresser ska spåras. Standard = 7d0°0′0″ (1 vecka)."
 config_signatures_infraction_limit: "Maximalt antal infraktions som en IP får medföra innan den är förbjuden av IP-spårning. Standard = 10."
 config_signatures_shorthand: "Kontrollerar vad som ska göras med en förfrågan när det finns en positiv matchning mot en signatur som använder de givna förkortningsorden."
 config_signatures_tracking_override: "Tillåt att moduler åsidosätter spårningsalternativ? True = Ja [Standard]; False = Nej."

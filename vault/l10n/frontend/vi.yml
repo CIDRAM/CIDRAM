@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2022.10.24).
+# This file: Vietnamese language data for the front-end (last modified: 2022.10.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -198,7 +198,7 @@ config_projecthoneypot_max_age_in_days: "Tuổi tối đa tính theo ngày mà c
 config_projecthoneypot_max_ts_for_captcha: "Điểm đe dọa tối đa được phép để được phân phát CAPTCHA (phải là một số từ 1 đến 100). Mặc định = 10."
 config_projecthoneypot_minimum_threat_score: "Điểm số mối đe dọa tối thiểu cần thiết để CIDRAM chặn một địa chỉ IP (phải là một số từ 1 đến 100). Mặc định = 10."
 config_rate_limiting: "Cấu hình cho giới hạn tốc độ (không khuyến khích sử dụng chung)."
-config_rate_limiting_allowance_period: "Số giờ để theo dõi việc sử dụng. Mặc định = 0."
+config_rate_limiting_allowance_period: "Thời lượng để theo dõi việc sử dụng. Mặc định = 0°0′0″."
 config_rate_limiting_exceptions: "Ngoại lệ (tức là, các yêu cầu không nên giới hạn). Chỉ có hiệu lực khi giới hạn tốc độ được kích hoạt."
 config_rate_limiting_max_bandwidth: "Số lượng băng thông tối đa được phép trong khoảng thời gian cho phép trước khi cho phép giới hạn tốc độ cho các yêu cầu trong tương lai. Giá trị 0 sẽ vô hiệu hóa loại giới hạn tốc độ này. Mặc định = 0KB."
 config_rate_limiting_max_requests: "Số lượng yêu cầu tối đa được phép trong khoảng thời gian cho phép trước khi cho phép giới hạn tốc độ cho các yêu cầu trong tương lai. Giá trị 0 sẽ vô hiệu hóa loại giới hạn tốc độ này. Mặc định = 0."
@@ -220,7 +220,7 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Cấu hình cho mô-đun Stop Forum Spam."
 config_sfs_offer_captcha: "Khi mô-đun này chặn các yêu cầu, CAPTCHA có thể được phân phát. Mặc định = True. Lưu ý: Sẽ không ghi đè các chỉ thị khác. Để CAPTCHA được phân phát, tất cả các chỉ thị phải đồng ý, các khóa cần thiết được định cấu hình, vv. Trong trường hợp thông thường CAPTCHA sẽ được phép phân phát, việc đặt chỉ thị này thành false sẽ cung cấp một cách để ngăn CAPTCHA được phân phát cho các yêu cầu bị chặn cụ thể bởi mô-đun này."
 config_signatures: "Cấu hình cho chữ ký, tập tin chữ ký, mô-đun, vv."
-config_signatures_default_tracktime: "Địa chỉ IP sẽ được giám sát trong bao nhiêu giây. Mặc định = 604800 (1 tuần)."
+config_signatures_default_tracktime: "Địa chỉ IP sẽ được giám sát trong bao nhiêu giây. Mặc định = 7d0°0′0″ (1 tuần)."
 config_signatures_infraction_limit: "Số lượng tối đa các vi phạm một IP được phép chịu trước khi nó bị cấm bởi các giám sát IP. Mặc định = 10."
 config_signatures_shorthand: "Kiểm soát những việc cần làm với một yêu cầu khi có sự trùng khớp tích cực với một chữ ký sử dụng các từ viết tắt đã cho."
 config_signatures_tracking_override: "Cho phép các mô-đun ghi đè các tùy chọn giám sát? True = Vâng [Mặc định]; False = Không."

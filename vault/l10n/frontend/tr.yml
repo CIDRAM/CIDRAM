@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2022.10.24).
+# This file: Turkish language data for the front-end (last modified: 2022.10.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -198,7 +198,7 @@ config_projecthoneypot_max_age_in_days: "Aramalar yapılırken raporların dikka
 config_projecthoneypot_max_ts_for_captcha: "Bir CAPTCHA için izin verilen maksimum tehdit puanı (1 ile 100 arasında bir sayı olmalıdır). Varsayılan = 10."
 config_projecthoneypot_minimum_threat_score: "CIDRAM'ın bir IP adresini engellemesi için gereken minimum tehdit puanı (1 ile 100 arasında bir sayı olmalıdır). Varsayılan = 10."
 config_rate_limiting: "Hız sınırlaması için yapılandırma (genel kullanım için önerilmez)."
-config_rate_limiting_allowance_period: "Kullanımı izlemek için saat sayısı. Varsayılan = 0."
+config_rate_limiting_allowance_period: "Kullanımı izlemek için süre. Varsayılan = 0°0′0″."
 config_rate_limiting_exceptions: "İstisnalar (yani oran sınırlı olmaması gereken istekler). Yalnızca sınırlaması etkin olduğunda geçerlidir."
 config_rate_limiting_max_bandwidth: "Gelecekteki talepleri sınırlayan orandan önce izin süresi içinde izin verilen maksimum bant genişliği miktarı. 0 değeri bu oran sınırlamasını devre dışı bırakır. Varsayılan = 0KB."
 config_rate_limiting_max_requests: "Gelecekteki istekleri sınırlayan orandan önce izin süresi içinde izin verilen maksimum istek sayısı. 0 değeri bu oran sınırlamasını devre dışı bırakır. Varsayılan = 0."
@@ -220,7 +220,7 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Stop Forum Spam modülü için yapılandırma."
 config_sfs_offer_captcha: "İstekler bu modül tarafından engellendiğinde, CAPTCHA'lar sunulabilir. Varsayılan = True. Not: Diğer yönergeleri geçersiz kılmaz. CAPTCHA'ların sunulması için tüm yönergeler kabul edilmeli, gerekli anahtarlar yapılandırılmalıdır, vb. Normalde CAPTCHA'ların sunulmasına izin verilmesi durumunda, bu yönergeyi false olarak ayarlamak, özellikle bu modül tarafından engellenen istekler için CAPTCHA'ların sunulmasını önlemenin bir yolunu sağlar."
 config_signatures: "İmzalar, imza dosyaları, modüller, vb. için yapılandırma."
-config_signatures_default_tracktime: "IP adreslerinin kaç saniye boyunca izlenmesi gerektiği. Varsayılan = 604800 (1 hafta)."
+config_signatures_default_tracktime: "IP adreslerinin kaç saniye boyunca izlenmesi gerektiği. Varsayılan = 7d0°0′0″ (1 hafta)."
 config_signatures_infraction_limit: "IP izlemesi tarafından yasaklanmadan önce bir IPnin uğrayacağı maksimum ihlal sayısı. Varsayılan = 10."
 config_signatures_shorthand: "Verilen kısa sözcükleri kullanan bir imzayla olumlu bir eşleşme olduğunda bir istekle ne yapılacağını kontrol eder."
 config_signatures_tracking_override: "Modüllerin izleme seçeneklerini geçersiz kılmasına izin verilsin mi? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."

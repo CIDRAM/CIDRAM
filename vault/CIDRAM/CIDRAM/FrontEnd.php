@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2022.10.26).
+ * This file: The CIDRAM front-end (last modified: 2022.10.28).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1245,33 +1245,9 @@ class FrontEnd extends Core
                         }
                     }
                     if (isset($DirValue['preview'])) {
-                        $ThisDir['Preview'] = ($DirValue['preview'] === 'allow_other') ? '' : sprintf(
-                            $DirValue['preview_default_fill'] ?? ' = <span id="%s_preview"></span>',
-                            $ThisDir['DirLangKey']
-                        );
+                        $ThisDir['Preview'] = ($DirValue['preview'] === 'allow_other') ? '' : sprintf(' = <span id="%s_preview"></span>', $ThisDir['DirLangKey']);
                         $ThisDir['Trigger'] = ' onchange="javascript:' . $ThisDir['DirLangKey'] . '_function();" onkeyup="javascript:' . $ThisDir['DirLangKey'] . '_function();"';
-                        if ($DirValue['preview'] === 'kb') {
-                            $ThisDir['Preview'] .= sprintf(
-                                '<script type="text/javascript">function %1$s_function(){var e=%7$s?%7$s(' .
-                                '\'%1$s_field\').value:%8$s&&!%7$s?%8$s.%1$s_field.value:\'\',z=e.replace' .
-                                '(/o$/i,\'b\').substr(-2).toLowerCase(),y=\'kb\'==z?1:\'mb\'==z?1024:\'gb' .
-                                '\'==z?1048576:\'tb\'==z?1073741824:\'b\'==e.substr(-1)?.0009765625:1,e=e' .
-                                '.replace(/[^0-9]*$/i,\'\'),e=isNaN(e)?0:e*y,t=0>e?\'0 %2$s\':1>e?nft((10' .
-                                '24*e).toFixed(0))+\' %2$s\':1024>e?nft((1*e).toFixed(2))+\' %3$s\':10485' .
-                                '76>e?nft((e/1024).toFixed(2))+\' %4$s\':1073741824>e?nft((e/1048576).toF' .
-                                'ixed(2))+\' %5$s\':nft((e/1073741824).toFixed(2))+\' %6$s\';%7$s?%7$s(\'' .
-                                '%1$s_preview\').innerHTML=t:%8$s&&!%7$s?%8$s.%1$s_preview.innerHTML=t:\'' .
-                                '\'};%1$s_function();</script>',
-                                $ThisDir['DirLangKey'],
-                                $this->L10N->getPlural(0, 'field_size_bytes'),
-                                $this->L10N->getString('field_size_KB'),
-                                $this->L10N->getString('field_size_MB'),
-                                $this->L10N->getString('field_size_GB'),
-                                $this->L10N->getString('field_size_TB'),
-                                'document.getElementById',
-                                'document.all'
-                            );
-                        } elseif ($DirValue['preview'] === 'seconds') {
+                        if ($DirValue['preview'] === 'seconds') {
                             $ThisDir['Preview'] .= sprintf(
                                 '<script type="text/javascript">function %1$s_function(){var t=%9$s?%9$s(' .
                                 '\'%1$s_field\').value:%10$s&&!%9$s?%10$s.%1$s_field.value:\'\',e=isNaN(t' .
@@ -1359,7 +1335,7 @@ class FrontEnd extends Core
                             ) . '</script>';
                         }
                     } elseif ($DirValue['type'] === 'duration') {
-                        $ThisDir['Preview'] = sprintf($DirValue['preview_default_fill'] ?? ' = <span id="%s_preview"></span>', $ThisDir['DirLangKey']);
+                        $ThisDir['Preview'] = sprintf(' = <span id="%s_preview"></span>', $ThisDir['DirLangKey']);
                         $ThisDir['Trigger'] = ' onchange="javascript:' . $ThisDir['DirLangKey'] . '_function();" onkeyup="javascript:' . $ThisDir['DirLangKey'] . '_function();"';
                         $ThisDir['Preview'] .= sprintf(
                             '<script type="text/javascript">function %1$s_function(){var t=%9$s?%9$s(\'%1' .
@@ -1401,6 +1377,35 @@ class FrontEnd extends Core
                             $this->L10N->getString('previewer_hours'),
                             $this->L10N->getString('previewer_minutes'),
                             $this->L10N->getString('previewer_seconds'),
+                            'document.getElementById',
+                            'document.all'
+                        );
+                    } elseif ($DirValue['type'] === 'kb') {
+                        $ThisDir['Preview'] = sprintf(' = <span id="%s_preview"></span>', $ThisDir['DirLangKey']);
+                        $ThisDir['Trigger'] = ' onchange="javascript:' . $ThisDir['DirLangKey'] . '_function();" onkeyup="javascript:' . $ThisDir['DirLangKey'] . '_function();"';
+                        $ThisDir['Preview'] .= sprintf(
+                            '<script type="text/javascript">function %1$s_function(){const bytesPerUnit={' .
+                            'B:1,K:1024,M:1048576,G:1073741824,T:1099511627776,P:1125899906842620},unitNa' .
+                            'mes=["%2$s","%3$s","%4$s","%5$s","%6$s","%7$s"];var e=%8$s?%8$s(\'%1$s_field' .
+                            '\').value:%9$s&&!%8$s?%9$s.%1$s_field.value:\'\';if((Unit=e.match(/(?<Unit>[' .
+                            'KkMmGgTtPpOoBb]|К|к|М|м|Г|г|Т|т|П|п|Ｋ|ｋ|Ｍ|ｍ|Ｇ|ｇ|Ｔ|ｔ|Ｐ|ｐ|Б|б|Ｂ|ｂ)(?:[OoBb]|Б|' .
+                            'б|Ｂ|ｂ)?$/))&&void 0!==Unit.groups.Unit)if((Unit=Unit.groups.Unit).match(/^(?' .
+                            ':[OoBb]|Б|б|Ｂ|ｂ)$/))var Unit=\'B\';else if(Unit.match(/^(?:[Mm]|М|м)$/))Unit' .
+                            '=\'M\';else if(Unit.match(/^(?:[Gg]|Г|г)$/))Unit=\'G\';else if(Unit.match(/^' .
+                            '(?:[Tt]|Т|т)$/))Unit=\'T\';else if(Unit.match(/^(?:[Pp]|П|п)$/))Unit=\'P\';e' .
+                            'lse Unit=\'K\';else Unit=\'K\';var e=parseFloat(e);if(isNaN(e))var fixed=0;e' .
+                            'lse{if(void 0!==bytesPerUnit[Unit])fixed=e*bytesPerUnit[Unit];else fixed=e;f' .
+                            'ixed=Math.floor(fixed)}for(var i=0,p=unitNames[i];fixed>=1024;){fixed=fixed/' .
+                            '1024;i++;p=unitNames[i];if(i>=5)break}t=nft(fixed.toFixed(i===0?0:2))+\' \'+' .
+                            'p;%8$s?%8$s(\'%1$s_preview\').innerHTML=t:%9$s&&!%8$s?%9$s.%1$s_preview.inne' .
+                            'rHTML=t:\'\';};%1$s_function();</script>',
+                            $ThisDir['DirLangKey'],
+                            $this->L10N->getPlural(0, 'field_size_bytes'),
+                            $this->L10N->getString('field_size_KB'),
+                            $this->L10N->getString('field_size_MB'),
+                            $this->L10N->getString('field_size_GB'),
+                            $this->L10N->getString('field_size_TB'),
+                            $this->L10N->getString('field_size_PB'),
                             'document.getElementById',
                             'document.all'
                         );
@@ -1670,6 +1675,8 @@ class FrontEnd extends Core
                             '(?:(\d+(?:\.\d+)?)\s*(?:\'|′|[Mm](?:[Ii][Nn][Uu]?[Tt]?[Ee]?[Ss]?)?))?\s*' .
                             '(?:(\d+(?:\.\d+)?)\s*(?:\x22|″|[Ss](?:[Ee][Cc][Oo]?[Nn]?[Dd]?[Ss]?)?))?\s*' .
                             '(?:(\d+(?:\.\d+)?)\s*ms)?\s*(?:(\d+(?:\.\d+)?)\s*µs)?\s*(?:(\d+(?:\.\d+)?)\s*ns)?\s*$|^(\d+(?:\.\d+)?)?$"';
+                        } elseif ($DirValue['type'] === 'kb') {
+                            $ThisDir['FieldAppend'] .= ' pattern="^\d+(\.\d+)?\s*(?:[KkMmGgTtPpOoBb]|К|к|М|м|Г|г|Т|т|П|п|Ｋ|ｋ|Ｍ|ｍ|Ｇ|ｇ|Ｔ|ｔ|Ｐ|ｐ|Б|б|Ｂ|ｂ)(?:[OoBb]|Б|б|Ｂ|ｂ)?$"';
                         }
                         $ThisDir['FieldOut'] = sprintf(
                             '<input type="text" name="%1$s" id="%1$s_field" value="%2$s"%3$s />',

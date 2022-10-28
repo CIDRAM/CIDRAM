@@ -1,10 +1,10 @@
 CIDRAM Core:
  Name: "CIDRAM Core"
- Version: "3.0.0-DEV+22297000"
+ Version: "3.0.0-DEV+22300000"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Front-End: "Latest"
-  Common Classes Package: "^2.9.1"
+  Common Classes Package: "^2.9.3-DEV+22298000"
   l10n/core/{lang}: ">=2022.142"
  Changelog: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/Changelog.md"
  When Update Succeeds:
@@ -25,7 +25,10 @@ CIDRAM Core:
    Checksum: "770bbefb0143d4022a57217ab77e8646cfa03073f6773141ac289641b112b12e:4863"
   CIDRAM/CIDRAM/Core.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Core.php"
-   Checksum: "6d432db66fb1d3df27b24aa602058dbd9127441d047db7a83b4e3aa2b3300c20:119118"
+   Checksum: "5fa1f36c44630f0e28b5e2453a5c1e4c435b359a1d236c44a3c20ca6182e77fe:119232"
+  CIDRAM/CIDRAM/Duration.php:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Duration.php"
+   Checksum: "235cdba1e82fca3a374a2dee690e9eb106f709e4a483924e6c867fc736bb001f:11633"
   CIDRAM/CIDRAM/Expand.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Expand.php"
    Checksum: "ef517c735b7121860c15bc3f40d15e5d3d8da075a69dcb510ed2772d2d546eee:5991"
@@ -34,7 +37,7 @@ CIDRAM Core:
    Checksum: "6e31c2e576cd9877d73ed5deb6c1cceffbeb472c7dbde1ea91168da504a76067:15374"
   CIDRAM/CIDRAM/Protect.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Protect.php"
-   Checksum: "29eded49c7862037ae1febfb06943df61b94a852e3382265652596cf10ceb16b:55234"
+   Checksum: "909b11435d498bb9596c87e2f53f4d9aa69692d3b6a0bfa023757ba473184085:55298"
   CIDRAM/CIDRAM/ReCaptcha.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/ReCaptcha.php"
    Checksum: "4d037c41a843ef289ab5fcadf3c550f1be745c4e66dba7314f8be67d61c837b6:14832"
@@ -49,7 +52,7 @@ CIDRAM Core:
    Checksum: "b62c0cf1deeb97c7ee15638f0a4102292a6bab6f0b6b1ee3a1dec7fa485c2e05:1352"
   defaults.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/defaults.yml"
-   Checksum: "522553a468622b21abab127041b1be9b4a21c084db0c99a7b8d615931d0da043:33310"
+   Checksum: "e84392962a78cf31c2b0e9950bdfbb83ec966d6279c7111b34261e9e240e1c63:33248"
   loader.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/loader.php"
    Checksum: "2024a633fae0edeff14119bd2308d9599a8651bd1fc877838e3901b72afffdc0:1312"
@@ -58,13 +61,13 @@ CIDRAM Core:
    Checksum: "deb8c82461eb04a30f83a536a485bac4a99a42b56d3309f3051018678a824be7:6833"
 CIDRAM Front-End:
  Name: "CIDRAM Front-End"
- Version: "3.0.0-DEV+22297000"
+ Version: "3.0.0-DEV+22300000"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "Latest"
-  Common Classes Package: "^2.9.1"
+  Common Classes Package: "^2.9.3-DEV+22298000"
   l10n/core/{lang}: ">=2022.142"
-  l10n/frontend/{lang}: ">=2022.296"
+  l10n/frontend/{lang}: ">=2022.298"
  Changelog: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/Changelog.md"
  Uninstallable: false
  Files:
@@ -250,7 +253,7 @@ CIDRAM Front-End:
    Checksum: "d5999ccbbe0c2abeb10d56452fb791adb0515466d3f3aa537486b7c79d7178d0:3495"
   CIDRAM/CIDRAM/FrontEnd.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/FrontEnd.php"
-   Checksum: "26ea326d5986a34f96c312e1b274d9afe51c8ec72a6986605796210f53d874c8:285527"
+   Checksum: "6d3eec9b65b261254324cb4dc6bc176a4584c82ddb86c33d79f12faea75fb981:291810"
   CIDRAM/CIDRAM/FrontEndMethods.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/FrontEndMethods.php"
    Checksum: "31a54b27ac2e63f5dce3e503622c376f39180241b4f69799206e2a770c250335:49885"
@@ -268,7 +271,7 @@ CIDRAM Front-End:
    Checksum: "ca2548df19f6c58b6ff019e8535c92a17bd04791c983af514019540803684f90:65456"
 Common Classes Package:
  Name: "Common Classes Package"
- Version: "2.9.2"
+ Version: "2.9.3-DEV+22298000"
  Dependencies:
   PHP: "^7.2|^8"
  Uninstallable: false
@@ -308,7 +311,7 @@ Common Classes Package:
    Checksum: "0ee810876f0725d3ab5b128778cfd9f527c6f0d2e908615d5ec36ce5a4133a35:8020"
   Maikuolan/Common/YAML.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/Maikuolan/Common/YAML.php"
-   Checksum: "ab7496b9b75e069c3cb411a658a9abd0be0223911c96f6e442342c9b9cf8b385:51281"
+   Checksum: "5844f04fbe0bb8ea7e07cbf1d084ceb9e80c617fcc59ce4741b86bd0c1b61413:51576"
 IPv4:
  Extended Description: >
   Default IPv4 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.

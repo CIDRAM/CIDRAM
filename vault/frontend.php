@@ -1669,7 +1669,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                     '<input type="number" name="%1$s" id="%1$s_field" value="%2$s"%3$s />',
                     $CIDRAM['ThisDir']['DirLangKey'],
                     $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']],
-                    $ThisDir['FieldAppend']
+                    $CIDRAM['ThisDir']['FieldAppend']
                 );
                 if (isset($CIDRAM['Config']['Config Defaults'][$CIDRAM['CatKey']][$CIDRAM['DirKey']]['default'])) {
                     $CIDRAM['ThisDir']['Reset'] .= sprintf(

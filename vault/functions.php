@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2022.09.22).
+ * This file: Functions file (last modified: 2022.10.28).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -1024,6 +1024,7 @@ $CIDRAM['DNS-Reverse-Forward'] = function ($Domains, string $Friendly, array $Op
     /** It's a fake; Block it. */
     $Reason = sprintf($CIDRAM['L10N']->getString('Short_Fake_UA'), $Friendly);
     $CIDRAM['Trigger'](true, $Reason);
+    $CIDRAM['AddProfileEntry']('Blocked Negative');
 
     /** Reporting. */
     $CIDRAM['Reporter']->report([19], ['Caught masquerading as ' . $Friendly . '.'], $CIDRAM['BlockInfo']['IPAddr']);
@@ -1131,6 +1132,7 @@ $CIDRAM['UA-X-Match'] = function ($Datapoints, $Expected, string $Friendly, arra
     /** Nothing matched. Block it. */
     $Reason = sprintf($CIDRAM['L10N']->getString('Short_Fake_UA'), $Friendly);
     $CIDRAM['Trigger'](true, $Reason);
+    $CIDRAM['AddProfileEntry']('Blocked Negative');
 
     /** Reporting. */
     $CIDRAM['Reporter']->report([19], ['Caught masquerading as ' . $Friendly . '.'], $CIDRAM['BlockInfo']['IPAddr']);

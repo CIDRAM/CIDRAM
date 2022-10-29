@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Duration value type (last modified: 2022.10.26).
+ * This file: Duration value type (last modified: 2022.10.29).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -71,7 +71,10 @@ class Duration
             '(?:(?<Milli>\d+(?:\.\d+)?)ms)?' .
             '(?:(?<Micro>\d+(?:\.\d+)?)µs)?' .
             '(?:(?<Nano>\d+(?:\.\d+)?)ns)?' .
-            '$|^(?<Unspecified>\d+(?:\.\d+)?)?$~', preg_replace('~[\s,]~', '', $Raw), $Parts)) {
+            '$|^(?<Unspecified>\d+(?:\.\d+)?)?$~',
+            preg_replace('~[\s,]~', '', $Raw),
+            $Parts
+        )) {
             return;
         }
         $this->Convention = $Convention;

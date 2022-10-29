@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CIDRAM CLI mode (last modified: 2022.10.24).
+ * This file: CIDRAM CLI mode (last modified: 2022.10.29).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -360,7 +360,7 @@ trait CLI
             /** Aggregate IPs/CIDRs. */
             if ($Cmd === 'aggregate' || substr($Cmd, 0, 10) === 'aggregate=') {
                 echo $this->L10N->getString('link_ip_aggregator') . "\n===\n";
-                $this->CIDRAM['Aggregator'] = new \CIDRAM\CIDRAM\Aggregator(substr($Cmd, 10) === 'netmasks' ? 1 : 0);
+                $this->CIDRAM['Aggregator'] = new Aggregator(substr($Cmd, 10) === 'netmasks' ? 1 : 0);
                 $this->CIDRAM['Aggregator']->Results = true;
                 $Data = implode("\n", $Data);
                 $Data = str_replace("\r", '', trim($Data));
@@ -436,7 +436,7 @@ trait CLI
                 echo $this->L10N->getString('link_fixer') . "\n===\n";
                 $Data = implode("\n", $Data);
                 $Fixer = [
-                    'Aggregator' => new \CIDRAM\CIDRAM\Aggregator(),
+                    'Aggregator' => new Aggregator(),
                     'Before' => hash('sha256', $Data) . ':' . strlen($Data),
                     'Timer' => 0,
                     'Parse' => 0,

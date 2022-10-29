@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2022.10.28).
+ * This file: The CIDRAM front-end (last modified: 2022.10.29).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -2574,7 +2574,7 @@ class FrontEnd extends Core
                 $Fixer = [
                     'Time' => microtime(true),
                     'Changes' => 0,
-                    'Aggregator' => new \CIDRAM\CIDRAM\Aggregator(),
+                    'Aggregator' => new Aggregator(),
                     'Before' => hash('sha256', $this->FE['FixerOutput']) . ':' . strlen($this->FE['FixerOutput'])
                 ];
                 $Fixer['Aggregator']->Results = true;
@@ -3244,7 +3244,7 @@ class FrontEnd extends Core
                 ];
 
                 /** We'll aggregate the latter set before intersecting it with the former. */
-                $this->CIDRAM['Aggregator'] = new \CIDRAM\CIDRAM\Aggregator();
+                $this->CIDRAM['Aggregator'] = new Aggregator();
                 if ($Intersection['B']) {
                     $Intersection['B'] = "\n" . $this->CIDRAM['Aggregator']->aggregate($Intersection['B']) . "\n";
                 }
@@ -3324,7 +3324,7 @@ class FrontEnd extends Core
                 /**
                  * We'll aggregate B prior to subtraction for better optimisation.
                  */
-                $this->CIDRAM['Aggregator'] = new \CIDRAM\CIDRAM\Aggregator();
+                $this->CIDRAM['Aggregator'] = new Aggregator();
                 if ($Subtraction['B']) {
                     $Subtraction['B'] = $this->CIDRAM['Aggregator']->aggregate($Subtraction['B']) . "\n";
                 }
@@ -3395,7 +3395,7 @@ class FrontEnd extends Core
             /** Data was submitted for aggregation. */
             if (!empty($_POST['input'])) {
                 $this->FE['input'] = str_replace("\r", '', trim($_POST['input']));
-                $this->CIDRAM['Aggregator'] = new \CIDRAM\CIDRAM\Aggregator($OutputFormat);
+                $this->CIDRAM['Aggregator'] = new Aggregator($OutputFormat);
                 $this->CIDRAM['Aggregator']->Results = true;
                 if ($Preserve) {
                     $StrObject = new \Maikuolan\Common\ComplexStringHandler(
@@ -3969,7 +3969,7 @@ class FrontEnd extends Core
 
             /** Process CIDRs. */
             if (!empty($CIDRs)) {
-                $Aggregator = new \CIDRAM\CIDRAM\Aggregator(1);
+                $Aggregator = new Aggregator(1);
                 $Factors = count($CIDRs);
                 foreach ($CIDRs as $Key => $CIDR) {
                     $First = substr($CIDR, 0, strlen($CIDR) - strlen($Key + 1) - 1);

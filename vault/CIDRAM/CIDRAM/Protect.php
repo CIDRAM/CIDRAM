@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2022.10.26).
+ * This file: Protect traits (last modified: 2022.10.29).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -190,7 +190,7 @@ trait Protect
         }
 
         /** Instantiate report orchestrator (used by some modules). */
-        $this->Reporter = new \CIDRAM\CIDRAM\Reporter();
+        $this->Reporter = new Reporter();
 
         /** Identify proxy connections (conjunctive reporting element). */
         if (strpos($this->BlockInfo['WhyReason'], $this->L10N->getString('Short_Proxy')) !== false) {
@@ -898,7 +898,7 @@ trait Protect
                     ($this->Configuration['recaptcha']['usemode'] >= 3 && $this->Configuration['recaptcha']['usemode'] <= 5)
                 ) {
                     /** Execute the ReCaptcha class. */
-                    $CaptchaDone = new \CIDRAM\CIDRAM\ReCaptcha($this->CIDRAM);
+                    $CaptchaDone = new ReCaptcha($this->CIDRAM);
 
                     $this->CIDRAM['StatusCodeForNonBlocked'] = $this->Configuration['recaptcha']['nonblocked_status_code'];
                 } elseif (
@@ -908,7 +908,7 @@ trait Protect
                     ($this->Configuration['hcaptcha']['usemode'] >= 3 && $this->Configuration['hcaptcha']['usemode'] <= 5)
                 ) {
                     /** Execute the HCaptcha class. */
-                    $CaptchaDone = new \CIDRAM\CIDRAM\HCaptcha($this->CIDRAM);
+                    $CaptchaDone = new HCaptcha($this->CIDRAM);
 
                     $this->CIDRAM['StatusCodeForNonBlocked'] = $this->Configuration['hcaptcha']['nonblocked_status_code'];
                 }

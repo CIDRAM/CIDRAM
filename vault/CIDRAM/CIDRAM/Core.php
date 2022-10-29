@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2022.10.26).
+ * This file: The CIDRAM core (last modified: 2022.10.29).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -929,7 +929,7 @@ class Core
         } elseif ($Type === 'int') {
             $Var = (int)$Var;
         } elseif ($Type === 'duration') {
-            $Var = new \CIDRAM\CIDRAM\Duration($Var);
+            $Var = new Duration($Var);
         } elseif ($Type === 'bool') {
             $Var = (strtolower($Var) !== 'false' && $Var);
         } elseif ($Type === 'kb') {
@@ -1315,6 +1315,7 @@ class Core
         if (isset($this->CIDRAM['VPermissions'][$Friendly . ':BlockNegatives'])) {
             $Reason = sprintf($this->L10N->getString('Short_Fake_UA'), $Friendly);
             $this->trigger(true, $Reason);
+            $this->addProfileEntry('Blocked Negative');
         }
 
         /** Reporting. */
@@ -2923,6 +2924,7 @@ class Core
         if (isset($this->CIDRAM['VPermissions'][$Friendly . ':BlockNegatives'])) {
             $Reason = sprintf($this->L10N->getString('Short_Fake_UA'), $Friendly);
             $this->trigger(true, $Reason);
+            $this->addProfileEntry('Blocked Negative');
         }
 
         /** Reporting. */

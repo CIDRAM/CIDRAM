@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2022.09.23).
+ * This file: General methods used by the front-end (last modified: 2022.10.29).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -966,7 +966,7 @@ trait FrontEndMethods
                         }
                     }
                 }
-                $Aggregator = new \CIDRAM\CIDRAM\Aggregator($Format);
+                $Aggregator = new Aggregator($Format);
                 return trim($Aggregator->aggregate($Intersect));
             }
         );
@@ -1017,7 +1017,7 @@ trait FrontEndMethods
                         $Minuend = str_replace("\n" . $Actual . "\n", "\n", $Minuend);
                     }
                 }
-                $Aggregator = new \CIDRAM\CIDRAM\Aggregator($Format);
+                $Aggregator = new Aggregator($Format);
                 return trim($Aggregator->aggregate($Minuend));
             }
         );

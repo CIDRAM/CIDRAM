@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2022.03.16).
+ * This file: Output generator (last modified: 2022.10.29).
  */
 
 /** Initialise cache. */
@@ -367,7 +367,10 @@ if ($CIDRAM['RL_Active'] && isset($CIDRAM['Factors']) && (!$CIDRAM['Config']['ra
 }
 
 /** This code block only executed if signatures were triggered. */
-if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
+if (
+    $CIDRAM['BlockInfo']['SignatureCount'] > 0 &&
+    (!isset($CIDRAM['Profile']) || !is_array($CIDRAM['Profile']) || !in_array('Blocked Negative', $CIDRAM['Profile'], true))
+) {
     $CIDRAM['Stage'] = 'CAPTCHA';
 
     if (

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2022.10.26).
+# This file: Japanese language data for the front-end (last modified: 2022.10.29).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -73,6 +73,8 @@ Name Project Honeypot module: "Project Honeypot モジュール。"
 Name Referrer spam module: "リファラー・スパム・モジュール。"
 Name Stop Forum Spam module: "Stop Forum Spam モジュール。"
 Name Tor blocker module: "Ｔｏｒブロッカー・モジュール。"
+checkbox_choice_negatives: "ブロックされた陰性"
+checkbox_choice_nonverified: "ブロックされた未確認"
 checkbox_delete_orphaned_values: "孤立した値を削除します。"
 checkbox_label_block_it: "それをブロックします。"
 checkbox_label_block_negatives: "陰性をブロックしますか？"
@@ -86,6 +88,8 @@ checkbox_label_stage_enable: "この段階を有効にしますか？"
 checkbox_label_stage_infractions: "この段階で発生した違反は、ＩＰトラッキングにカウントしますか？"
 checkbox_label_stage_log_errors: "この段階で発生したエラーをログに記録しますか？"
 checkbox_label_suppress: "ブロックされている場合、出力テンプレートを抑制します。"
+checkbox_label_suppress_hcaptcha: "HCaptchaを抑制して"
+checkbox_label_suppress_recaptcha: "ReCaptchaを抑制して"
 checkbox_label_untrack_positives: "陽性の追跡をやめますか？"
 checkbox_label_verify: "確認してみますか？"
 config_abuseipdb: "AbuseIPDBモジュールの設定。"
@@ -247,6 +251,7 @@ config_template_data_custom_header: "すべての「アクセス拒否」ペー�
 config_template_data_magnification: *MagnifDesc
 config_template_data_theme: "CIDRAMに使用するデフォルト・テーマ。"
 config_verification: "リクエストの発信元を確認するためコンフィギュレーション。"
+config_verification_adjust: "検証のコンテキストで他の機能を調整するためのコントロール。"
 config_verification_other: "可能な場合は、他の種類のリクエストを検証するためのコントロール。"
 config_verification_search_engines: "検索エンジンからのリクエストを検証するためのコントロール。"
 config_verification_social_media: "ソーシャル・メディア・プラットフォームからのリクエストを検証するためのコントロール。"

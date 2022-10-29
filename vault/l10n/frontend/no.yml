@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2022.10.26).
+# This file: Norwegian language data for the front-end (last modified: 2022.10.29).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -73,9 +73,11 @@ Name Project Honeypot module: "Project Honeypot modul."
 Name Referrer spam module: "Henvisende spam modul."
 Name Stop Forum Spam module: "Stop Forum Spam modul."
 Name Tor blocker module: "Tor blokkeringsmodul."
+checkbox_choice_negatives: "Blokkerte negativer"
+checkbox_choice_nonverified: "Blokkerte ikke-verifiserte"
 checkbox_delete_orphaned_values: "Slett foreldreløse verdier."
 checkbox_label_block_it: "Blokker det."
-checkbox_label_block_negatives: "Blokkere negative?"
+checkbox_label_block_negatives: "Blokkere negativer?"
 checkbox_label_block_nonverified: "Blokkere ikke-verifiserte forespørsler?"
 checkbox_label_fields_logs: "Skal dette feltet vises i loggoppføringer?"
 checkbox_label_fields_omit: "Utelate dette feltet når det er tomt?"
@@ -86,6 +88,8 @@ checkbox_label_stage_enable: "Aktivere dette stadiet?"
 checkbox_label_stage_infractions: "Telle infraksjoner generert i løpet av dette stadiet mot IP-sporing?"
 checkbox_label_stage_log_errors: "Logge noen feil generert i løpet av dette stadiet?"
 checkbox_label_suppress: "Når blokkert, undertrykk utdatamalen."
+checkbox_label_suppress_hcaptcha: "Undertrykk HCaptcha"
+checkbox_label_suppress_recaptcha: "Undertrykk ReCaptcha"
 checkbox_label_untrack_positives: "Slutte å spore etter positive?"
 checkbox_label_verify: "Prøv å bekrefte?"
 config_abuseipdb: "Konfigurasjon for AbuseIPDB-modulen."
@@ -247,6 +251,7 @@ config_template_data_custom_header: "Sett inn som HTML helt i begynnelsen av all
 config_template_data_magnification: *MagnifDesc
 config_template_data_theme: "Standard tema som skal brukes til CIDRAM."
 config_verification: "Konfigurasjon for å bekrefte hvor forespørsler kommer fra."
+config_verification_adjust: "Kontroller for å justere andre funksjoner i forbindelse med verifisering."
 config_verification_other: "Kontroller for å verifisere andre typer forespørsler der det er mulig."
 config_verification_search_engines: "Kontroller for å verifisere forespørsler fra søkemotorer."
 config_verification_social_media: "Kontroller for å verifisere forespørsler fra sosiale medieplattformer."

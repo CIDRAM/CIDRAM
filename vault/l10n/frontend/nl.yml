@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2022.10.26).
+# This file: Dutch language data for the front-end (last modified: 2022.10.29).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -73,6 +73,8 @@ Name Project Honeypot module: "Project Honeypot module."
 Name Referrer spam module: "Verwijzersspam module."
 Name Stop Forum Spam module: "Stop Forum Spam module."
 Name Tor blocker module: "Tor blokkermodule."
+checkbox_choice_negatives: "Geblokkeerde negatieven"
+checkbox_choice_nonverified: "Geblokkeerde niet-geverifieerde"
 checkbox_delete_orphaned_values: "Verweesde waarden verwijderen."
 checkbox_label_block_it: "Blokkeer het."
 checkbox_label_block_negatives: "Negatieven blokkeren?"
@@ -86,6 +88,8 @@ checkbox_label_stage_enable: "Inschakelen deze fase?"
 checkbox_label_stage_infractions: "Moeten overtredingen die gegenereerd door deze fase meetellen voor IP-tracking?"
 checkbox_label_stage_log_errors: "Moeten fouten die gegenereerd door deze fase worden geregistreerd?"
 checkbox_label_suppress: "Wanneer geblokkeerd, onderdrukken de uitvoersjabloon."
+checkbox_label_suppress_hcaptcha: "HCaptcha onderdrukken"
+checkbox_label_suppress_recaptcha: "ReCaptcha onderdrukken"
 checkbox_label_untrack_positives: "Tracking annuleren voor positieven?"
 checkbox_label_verify: "Proberen te verifiëren?"
 config_abuseipdb: "Configuratie voor de AbuseIPDB-module."
@@ -247,6 +251,7 @@ config_template_data_custom_header: "Ingevoegd als HTML aan het begin van alle "
 config_template_data_magnification: *MagnifDesc
 config_template_data_theme: "Standaard thema om te gebruiken voor CIDRAM."
 config_verification: "Configuratie om te verifiëren waar verzoeken vandaan komen."
+config_verification_adjust: "Controles om andere functionaliteit aan te passen in de context van verificatie."
 config_verification_other: "Controles voor het verifiëren van andere soorten verzoeken waar mogelijk."
 config_verification_search_engines: "Controles voor het verifiëren van verzoeken van zoekmachines."
 config_verification_social_media: "Controles voor het verifiëren van verzoeken van sociale media platforms."

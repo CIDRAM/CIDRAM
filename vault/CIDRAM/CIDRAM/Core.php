@@ -1226,6 +1226,7 @@ class Core
             if (isset($this->CIDRAM['VPermissions'][$Friendly . ':BlockNonVerified'])) {
                 $Reason = sprintf($this->L10N->getString('Short_Unverified_UA'), $Friendly);
                 $this->trigger(true, $Reason);
+                $this->addProfileEntry('Blocked Non-Verified');
             }
 
             return;
@@ -1281,6 +1282,7 @@ class Core
                 if (isset($this->CIDRAM['VPermissions'][$Friendly . ':BlockNonVerified'])) {
                     $Reason = sprintf($this->L10N->getString('Short_Unverified_UA'), $Friendly);
                     $this->trigger(true, $Reason);
+                    $this->addProfileEntry('Blocked Non-Verified');
                 }
 
                 return;
@@ -2975,6 +2977,7 @@ class Core
                 } elseif (isset($this->CIDRAM['VPermissions'][$Name . ':BlockNonVerified'])) {
                     $Reason = sprintf($this->L10N->getString('Short_Unverified_UA'), $Name);
                     $this->trigger(true, $Reason);
+                    $this->addProfileEntry('Blocked Non-Verified');
                 }
             }
         }

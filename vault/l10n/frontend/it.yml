@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2022.10.26).
+# This file: Italian language data for the front-end (last modified: 2022.10.29).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -73,6 +73,8 @@ Name Project Honeypot module: "Modulo Project Honeypot."
 Name Referrer spam module: "Modulo spam referrer."
 Name Stop Forum Spam module: "Modulo Stop Forum Spam."
 Name Tor blocker module: "Modulo bloccante di Tor."
+checkbox_choice_negatives: "I negativi che sono bloccati"
+checkbox_choice_nonverified: "I non verificati che sono bloccati"
 checkbox_delete_orphaned_values: "Elimina i valori orfani."
 checkbox_label_block_it: "Bloccalo."
 checkbox_label_block_negatives: "Blocca i negativi?"
@@ -86,6 +88,8 @@ checkbox_label_stage_enable: "Abilitare questa fase?"
 checkbox_label_stage_infractions: "Le infrazioni generati durante questa fase devono essere conteggiate ai fini del tracciamento IP?"
 checkbox_label_stage_log_errors: "Gli errori generati durante questa fase devono essere registrati?"
 checkbox_label_suppress: "Quando bloccato, sopprima il modello di output."
+checkbox_label_suppress_hcaptcha: "Sopprimi HCaptcha"
+checkbox_label_suppress_recaptcha: "Sopprimi ReCaptcha"
 checkbox_label_untrack_positives: "Annulla le tracciamento per i positivi?"
 checkbox_label_verify: "Prova a verificare?"
 config_abuseipdb: "Configurazione per il modulo AbuseIPDB."
@@ -247,6 +251,7 @@ config_template_data_custom_header: "Inserito come HTML all'inizio di tutte le p
 config_template_data_magnification: *MagnifDesc
 config_template_data_theme: "Tema predefinito da utilizzare per CIDRAM."
 config_verification: "Configurazione per verificare da dove provengono le richieste."
+config_verification_adjust: "Controlli per regolare altre funzionalità nel contesto della verifica."
 config_verification_other: "Controlli per la verifica di altri tipi di richieste ove possibile."
 config_verification_search_engines: "Controlli per la verifica delle richieste dai motori di ricerca."
 config_verification_social_media: "Controlli per la verifica delle richieste dalle piattaforme dei social media."

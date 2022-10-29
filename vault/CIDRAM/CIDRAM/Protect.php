@@ -60,6 +60,9 @@ trait Protect
         /** Reset request profiling. */
         $this->Profiles = [];
 
+        /** Initialise verification adjustments. */
+        $this->VAdjust = array_flip(explode("\n", $this->Configuration['verification']['adjust']));
+
         /** Initialise statistics if necessary. */
         if (isset($this->Stages['Statistics:Enable'])) {
             if ($this->Cache->getEntry('Statistics-Since') === false) {
@@ -438,7 +441,9 @@ trait Protect
                             $this->Configuration['recaptcha']['usemode'] === 5
                         ) && !empty($this->Configuration['recaptcha']['enabled'])
                     )
-                )
+                ) &&
+                (!$this->hasProfile(['Blocked Negative']) || !isset($this->VAdjust['Negatives:ReCaptcha'])) &&
+                (!$this->hasProfile(['Blocked Non-Verified']) || !isset($this->VAdjust['NonVerified:ReCaptcha']))
             ) {
                 /** Execute the ReCaptcha class. */
                 $CaptchaDone = new ReCaptcha($this);
@@ -456,7 +461,9 @@ trait Protect
                             $this->Configuration['hcaptcha']['usemode'] === 5
                         ) && !empty($this->Configuration['hcaptcha']['enabled'])
                     )
-                )
+                ) &&
+                (!$this->hasProfile(['Blocked Negative']) || !isset($this->VAdjust['Negatives:HCaptcha'])) &&
+                (!$this->hasProfile(['Blocked Non-Verified']) || !isset($this->VAdjust['NonVerified:HCaptcha']))
             ) {
                 /** Execute the HCaptcha class. */
                 $CaptchaDone = new HCaptcha($this);

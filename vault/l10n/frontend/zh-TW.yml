@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2022.10.26).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2022.10.29).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -73,6 +73,8 @@ Name Project Honeypot module: "Project Honeypot 模塊。"
 Name Referrer spam module: "引薦來源垃圾郵件模塊。"
 Name Stop Forum Spam module: "Stop Forum Spam 模塊。"
 Name Tor blocker module: "Tor阻塞模塊。"
+checkbox_choice_negatives: "被阻止的陰性"
+checkbox_choice_nonverified: "被阻止的未驗證"
 checkbox_delete_orphaned_values: "刪除孤立值。"
 checkbox_label_block_it: "阻止它。"
 checkbox_label_block_negatives: "阻止陰性？"
@@ -86,6 +88,8 @@ checkbox_label_stage_enable: "啟用此階段？"
 checkbox_label_stage_infractions: "將在此階段產生的違規計入IP跟踪？"
 checkbox_label_stage_log_errors: "記錄在此階段產生的任何錯誤？"
 checkbox_label_suppress: "被阻止時，禁止輸出模板。"
+checkbox_label_suppress_hcaptcha: "禁止HCaptcha"
+checkbox_label_suppress_recaptcha: "禁止ReCaptcha"
 checkbox_label_untrack_positives: "取消跟踪陽性？"
 checkbox_label_verify: "嘗試驗證？"
 config_abuseipdb: "AbuseIPDB模塊的配置。"
@@ -247,6 +251,7 @@ config_template_data_custom_header: "在所有『拒絕訪問』頁面的開頭�
 config_template_data_magnification: *MagnifDesc
 config_template_data_theme: "用於CIDRAM的默認主題。"
 config_verification: "請求來源驗證配置。"
+config_verification_adjust: "在驗證上下文中調整其他功能的控件。"
 config_verification_other: "用於在可能的情況下，驗證其他類型的請求的控件。"
 config_verification_search_engines: "用於驗證來自搜索引擎的請求的控件。"
 config_verification_social_media: "用於驗證來自社交媒體平台的請求的控件。"

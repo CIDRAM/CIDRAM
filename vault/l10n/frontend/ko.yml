@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2022.10.26).
+# This file: Korean language data for the front-end (last modified: 2022.10.29).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -73,6 +73,8 @@ Name Project Honeypot module: "Project Honeypot 모듈."
 Name Referrer spam module: "리퍼러 스팸 모듈."
 Name Stop Forum Spam module: "Stop Forum Spam 모듈."
 Name Tor blocker module: "Tor 차단제 모듈."
+checkbox_choice_negatives: "차단된 네거티브"
+checkbox_choice_nonverified: "차단된 검증되지 않은"
 checkbox_delete_orphaned_values: "분리된 값을 삭제합니다."
 checkbox_label_block_it: "차단하세요."
 checkbox_label_block_negatives: "네거티브를 차단하시겠습니까?"
@@ -86,6 +88,8 @@ checkbox_label_stage_enable: "이 단계를 활성화하시겠습니까?"
 checkbox_label_stage_infractions: "이 단계에서 생성된 위반은 IP 추적에 포함되어야 합니까?"
 checkbox_label_stage_log_errors: "이 단계에서 생성된 오류를 기록하시겠습니까?"
 checkbox_label_suppress: "차단되면, 출력 템플릿을 억제합니다."
+checkbox_label_suppress_hcaptcha: "HCaptcha 억제"
+checkbox_label_suppress_recaptcha: "ReCaptcha 억제"
 checkbox_label_untrack_positives: "포지티브를 추적 해제하시겠습니까?"
 checkbox_label_verify: "검증을 시도?"
 config_abuseipdb: "AbuseIPDB 모듈 구성."
@@ -247,6 +251,7 @@ config_template_data_custom_header: "모든 "액세스 거부" 페이지의 맨 
 config_template_data_magnification: *MagnifDesc
 config_template_data_theme: "CIDRAM에 사용할 기본 테마."
 config_verification: "요청의 출처를 확인하기 위한 구성."
+config_verification_adjust: "검증과 관련하여 다른 기능을 조정하는 컨트롤입니다."
 config_verification_other: "가능한 경우 다른 종류의 요청을 확인하기 위한 제어입니다."
 config_verification_search_engines: "검색 엔진의 요청을 확인하기 위한 컨트롤입니다."
 config_verification_social_media: "소셜 미디어 플랫폼의 요청을 확인하기 위한 컨트롤입니다."

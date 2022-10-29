@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Farsi language data for the front (last modified: 2022.10.26).
+# This file: Farsi language data for the front (last modified: 2022.10.29).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -73,6 +73,8 @@ Name Project Honeypot module: "ماژول Project Honeypot."
 Name Referrer spam module: "ماژول هرزنامه ارجاع دهنده."
 Name Stop Forum Spam module: "ماژول Stop Forum Spam."
 Name Tor blocker module: "ماژول مسدود کننده Tor."
+checkbox_choice_negatives: "نگاتیوهای مسدود شده"
+checkbox_choice_nonverified: "تأیید نشده مسدود شده"
 checkbox_delete_orphaned_values: "ارزش های یتیم را حذف کنید."
 checkbox_label_block_it: "آن را مسدود کنید."
 checkbox_label_block_negatives: "نگاتیوها را مسدود کنیم؟"
@@ -86,6 +88,8 @@ checkbox_label_stage_enable: "این مرحله فعال شود؟"
 checkbox_label_stage_infractions: "آیا تخلفات ایجاد شده در این مرحله باید در ردیابی IP لحاظ شود؟"
 checkbox_label_stage_log_errors: "آیا خطاهای ایجاد شده در این مرحله باید ثبت شوند؟"
 checkbox_label_suppress: "وقتی مسدود شد، الگوی خروجی را سرکوب کنید."
+checkbox_label_suppress_hcaptcha: "HCaptcha را سرکوب کنید"
+checkbox_label_suppress_recaptcha: "ReCaptcha را سرکوب کنید"
 checkbox_label_untrack_positives: "ردیابی موارد مثبت متوقف شود؟"
 checkbox_label_verify: "تلاش برای تأیید؟"
 config_abuseipdb: "پیکربندی ماژول AbuseIPDB."
@@ -247,9 +251,10 @@ config_template_data_custom_header: "به عنوان HTML در همان ابتد
 config_template_data_magnification: *MagnifDesc
 config_template_data_theme: "طرح زمینه پیش‌فرض برای استفاده برای CIDRAM."
 config_verification: "پیکربندی برای تأیید اینکه درخواست ها از کجا سرچشمه می گیرند."
-config_verification_other: "کنترل هایی برای تأیید انواع دیگر درخواست ها در صورت امکان."
+config_verification_adjust: "کنترل‌هایی برای سایر ویژگی ها را تنظیم کنید در رابطه با تأیید."
+config_verification_other: "کنترل‌هایی برای تأیید انواع دیگر درخواست ها در صورت امکان."
 config_verification_search_engines: "کنترل‌هایی برای تأیید درخواست‌های موتورهای جستجو."
-config_verification_social_media: "کنترل هایی برای تأیید درخواست ها از سیستم عامل های رسانه های اجتماعی."
+config_verification_social_media: "کنترل‌هایی برای تأیید درخواست ها از سیستم عامل های رسانه های اجتماعی."
 confirm_action: "آیا مطمئن هستید که می خواهید «%s» کنید؟"
 confirm_delete: "آیا مطمئن هستید که می خواهید «%s» را حذف کنید؟"
 field_2fa: "کد 2FA"

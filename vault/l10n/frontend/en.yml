@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2022.10.26).
+# This file: English language data for the front-end (last modified: 2022.10.29).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -73,6 +73,8 @@ Name Project Honeypot module: "Project Honeypot module."
 Name Referrer spam module: "Referrer spam module."
 Name Stop Forum Spam module: "Stop Forum Spam module."
 Name Tor blocker module: "Tor blocker module."
+checkbox_choice_negatives: "Blocked negatives"
+checkbox_choice_nonverified: "Blocked non-verified"
 checkbox_delete_orphaned_values: "Delete orphaned values."
 checkbox_label_block_it: "Block it."
 checkbox_label_block_negatives: "Block negatives?"
@@ -86,6 +88,8 @@ checkbox_label_stage_enable: "Enable this stage?"
 checkbox_label_stage_infractions: "Should infractions generated during this stage count towards IP tracking?"
 checkbox_label_stage_log_errors: "Log any errors generated during this stage?"
 checkbox_label_suppress: "When blocked, suppress output template."
+checkbox_label_suppress_hcaptcha: "Suppress HCaptcha"
+checkbox_label_suppress_recaptcha: "Suppress ReCaptcha"
 checkbox_label_untrack_positives: "Untrack positives?"
 checkbox_label_verify: "Attempt to verify?"
 config_abuseipdb: "Configuration for the AbuseIPDB module."
@@ -247,6 +251,7 @@ config_template_data_custom_header: "Inserted as HTML at the very beginning of a
 config_template_data_magnification: *MagnifDesc
 config_template_data_theme: "The default theme to use for CIDRAM."
 config_verification: "Configuration for verifying where requests originate from."
+config_verification_adjust: "Controls to adjust other features when in the context of verification."
 config_verification_other: "Controls for verifying other kinds of requests where possible."
 config_verification_search_engines: "Controls for verifying requests from search engines."
 config_verification_social_media: "Controls for verifying requests from social media platforms."

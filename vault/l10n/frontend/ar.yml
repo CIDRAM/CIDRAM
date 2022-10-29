@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2022.10.26).
+# This file: Arabic language data for the front-end (last modified: 2022.10.29).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -73,6 +73,8 @@ Name Project Honeypot module: "Project Honeypot المكون."
 Name Referrer spam module: "المكون للإحالة البريد المزعج."
 Name Stop Forum Spam module: "Stop Forum Spam المكون."
 Name Tor blocker module: "المكون مانع Tor."
+checkbox_choice_negatives: "السلبيات المحظورة"
+checkbox_choice_nonverified: "المحظور التي لم يتم التحقق"
 checkbox_delete_orphaned_values: "حذف القيم المعزولة."
 checkbox_label_block_it: "منعه."
 checkbox_label_block_negatives: "حظر السلبيات؟"
@@ -86,6 +88,8 @@ checkbox_label_stage_enable: "تمكين هذه المرحلة؟"
 checkbox_label_stage_infractions: "هل يجب احتساب المخالفات التي تم إنشاؤها خلال هذه المرحلة لتتبع IP؟"
 checkbox_label_stage_log_errors: "سجل أي أخطاء ولدت خلال هذه المرحلة؟"
 checkbox_label_suppress: "عند حظره، قم بإيقاف قالب الإخراج."
+checkbox_label_suppress_hcaptcha: "قمع HCaptcha"
+checkbox_label_suppress_recaptcha: "قمع ReCaptcha"
 checkbox_label_untrack_positives: "التوقف عن تتبع الإيجابيات؟"
 checkbox_label_verify: "محاولة التحقق؟"
 config_abuseipdb: "التكوين لوحدة AbuseIPDB."
@@ -247,6 +251,7 @@ config_template_data_custom_header: "تم إدراجها بتنسيق HTML في 
 config_template_data_magnification: *MagnifDesc
 config_template_data_theme: "الموضوع الافتراضي لاستخدام CIDRAM."
 config_verification: "التكوين للتحقق من مصدر الطلبات."
+config_verification_adjust: "آلية لضبط الميزات الأخرى عندما تكون في سياق التحقق."
 config_verification_other: "آلية الرقابة للتحقق من أنواع الطلبات الأخرى حيثما أمكن ذلك."
 config_verification_search_engines: "آلية الرقابة للتحقق من الطلبات الواردة من محركات البحث."
 config_verification_social_media: "آلية الرقابة للتحقق من الطلبات الواردة من منصات التواصل الاجتماعي."

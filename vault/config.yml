@@ -256,6 +256,11 @@ verification:
   Grapeshot:Verify
   Grapeshot:BlockNegatives
   Grapeshot:UntrackPositives
+ adjust: |
+  Negatives:ReCaptcha
+  Negatives:HCaptcha
+  NonVerified:ReCaptcha
+  NonVerified:HCaptcha
 recaptcha:
  usemode: 0
  lockip: false

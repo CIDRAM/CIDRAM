@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2022.10.26).
+# This file: Swedish language data for the front-end (last modified: 2022.10.29).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -73,6 +73,8 @@ Name Project Honeypot module: "Project Honeypot modul."
 Name Referrer spam module: "Referensspam-modul."
 Name Stop Forum Spam module: "Stop Forum Spam modul."
 Name Tor blocker module: "Tor blockeringsmodul."
+checkbox_choice_negatives: "Blockerade negativa"
+checkbox_choice_nonverified: "Blockerade icke-verifierade"
 checkbox_delete_orphaned_values: "Ta bort föräldralösa värden."
 checkbox_label_block_it: "Blockera den."
 checkbox_label_block_negatives: "Blockera negativa?"
@@ -86,6 +88,8 @@ checkbox_label_stage_enable: "Aktivera den här skedet?"
 checkbox_label_stage_infractions: "Räkna infraktions som genererats under detta skede mot IP-spårning?"
 checkbox_label_stage_log_errors: "Logga några fel som genererats under detta skede?"
 checkbox_label_suppress: "När blockerad, undertryck utmatningsmallen."
+checkbox_label_suppress_hcaptcha: "Undertryck HCaptcha"
+checkbox_label_suppress_recaptcha: "Undertryck ReCaptcha"
 checkbox_label_untrack_positives: "Sluta spåra efter positiva?"
 checkbox_label_verify: "Försök att verifiera?"
 config_abuseipdb: "Konfiguration för AbuseIPDB-modulen."
@@ -247,6 +251,7 @@ config_template_data_custom_header: "Infogas som HTML i början av alla "nekat t
 config_template_data_magnification: *MagnifDesc
 config_template_data_theme: "Standardtemat som ska användas för CIDRAM."
 config_verification: "Konfiguration för att verifiera var förfrågningar kommer ifrån."
+config_verification_adjust: "Kontroller för att justera andra funktioner i samband med verifiering."
 config_verification_other: "Kontroller för att verifiera andra typer av förfrågningar där det är möjligt."
 config_verification_search_engines: "Kontroller för att verifiera förfrågningar från sökmotorer."
 config_verification_social_media: "Kontroller för att verifiera förfrågningar från sociala medieplattformar."

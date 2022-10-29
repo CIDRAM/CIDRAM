@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2022.10.28).
+# This file: Defaults file (last modified: 2022.10.29).
 ##/
 
 Config Defaults:
@@ -739,6 +739,19 @@ Config Defaults:
     AmazonAdBot: "AmazonAdBot"
     Grapeshot: "Oracle Data Cloud Crawler"
    hints: "hints_verification"
+  adjust:
+   type: "checkbox"
+   default: |
+    Negatives:ReCaptcha
+    Negatives:HCaptcha
+    NonVerified:ReCaptcha
+    NonVerified:HCaptcha
+   labels:
+    ReCaptcha: "checkbox_label_suppress_recaptcha"
+    HCaptcha: "checkbox_label_suppress_hcaptcha"
+   choices:
+    Negatives: "checkbox_choice_negatives"
+    NonVerified: "checkbox_choice_nonverified"
  recaptcha:
   usemode:
    type: "int"

@@ -1725,6 +1725,11 @@ class FrontEnd extends Core
                         $ThisDir['FieldOut'] .= '</small>';
                     }
 
+                    /** Automatic duration hinting. */
+                    if ($DirValue['type'] === 'duration' && !isset($DirValue['hints'])) {
+                        $DirValue['hints'] = 'hints_duration';
+                    }
+
                     /** Provide hints, useful for users to better understand the directive at hand. */
                     if (!empty($DirValue['hints'])) {
                         $ThisDir['Hints'] = $this->arrayFromL10nToArray($DirValue['hints']);

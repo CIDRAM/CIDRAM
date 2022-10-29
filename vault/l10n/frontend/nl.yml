@@ -224,7 +224,7 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Configuratie voor de Stop Forum Spam module."
 config_sfs_offer_captcha: "Wanneer verzoeken door deze module worden geblokkeerd, CAPTCHA's kunnen worden geleverd. Standaard = True. Opmerking: Heeft geen voorrang op andere richtlijnen. Om CAPTCHA's te kunnen bedienen, moeten alle richtlijnen overeenkomen, de benodigde sleutels zijn geconfigureerd, enz. In het geval dat CAPTCHA's normaal zouden mogen worden geleverd, biedt het instellen van deze richtlijn op false een manier om te voorkomen dat CAPTCHA's worden geleverd voor verzoeken die specifiek door deze module worden geblokkeerd."
 config_signatures: "Configuratie voor signatures, signatuurbestanden, modules, enz."
-config_signatures_default_tracktime: "Hoeveel seconden IP-adressen moeten worden gevolgd. Standaard = 7d0°0′0″ (1 week)."
+config_signatures_default_tracktime: "De duur dat IP-adressen moeten worden gevolgd. Standaard = 7d0°0′0″ (1 week)."
 config_signatures_infraction_limit: "Maximum aantal overtredingen een IP mag worden gesteld voordat hij wordt verbannen door IP-tracking. Standaard = 10."
 config_signatures_shorthand: "Controles voor wat te doen met een verzoek wanneer er een positieve overeenkomst is met een signature die de gegeven stenowoorden gebruikt."
 config_signatures_tracking_override: "Moeten modules worden toegestaan om opties voor tracking te overschrijven? True = Ja [Standaard]; False = Nee."
@@ -335,6 +335,11 @@ header_login: "Inloggen om verder te gaan."
 hints_asnlookup: "** Vereist ASN-opzoekfunctionaliteit (b.v., via de BGPView-module)."
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.nl.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="nl">Wat kan ik gebruiken voor "default_dns"?</a></em>"
+hints_duration:
+ SI.: "Duration can be described using the "International System of Units". E.g., <strong>1d2h3min4s</strong> or <strong>1d 2h 3min 4s</strong> for one day, two hours, three minutes, four seconds, or <strong>5min</strong> for just five minutes."
+ Arctime.: "Duration can be described using arctime notation. E.g., <strong>1d2°3′4″</strong> for one day, two hours, three minutes, four seconds, or <strong>5″</strong> for just five seconds."
+ Plain English.: "Duration can be described by writing the units in plain English. E.g., <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> for one week, two days, three hours, four minutes, five seconds."
+ Constraints.: "Notation can be mixed, but units must always be described from largest to smallest, and can't be repeated. E.g., <strong>1 week 2 days 3′4″</strong> is <span class="txtGn">valid</span> and will be understood correctly, but <strong>3′4″ 1 week 2 days</strong> and <strong>3 hours 3h 3°</strong> are <span class="txtRd">invalid</span>. CIDRAM doesn't care whether you using spacing or not. Numbers must be plain and unformatted. For practicality, the largest supported unit is a week. When configuration is updated, CIDRAM normalises durations to arctime."
 hints_ipv6_on_32bit: "Opmerking: IPv6-opzoeken mogelijk werken niet correct op sommige 32-bits systemen."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.nl.md\#HOW_TO_USE_PDO" hreflang="nl">Wat is een "PDO DSN"? Hoe kan ik PDO gebruiken met CIDRAM?</a></em>"

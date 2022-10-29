@@ -224,7 +224,7 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Konfiguration für das Stop Forum Spam Modul."
 config_sfs_offer_captcha: "Wenn Anfragen von diesem Modul blockiert werden, können CAPTCHAs bereitgestellt werden. Standardeinstellung = True. Hinweis: Überschreibt keine anderen Direktiven. Damit CAPTCHAs geliefert werden können, müssen alle Direktiven übereinstimmen, erforderliche Schlüssel konfiguriert sein, u.s.w. In dem Fall dass CAPTCHAs normalerweise zugelassen würden, die Einsetzung dieser Direktive auf „false“ bietet eine Möglichkeit für CAPTCHAs verhindert werden für den Anfragen die speziell von diesem Modul blockiert werden."
 config_signatures: "Konfiguration für Signaturen, Signaturdateien, Module, u.s.w."
-config_signatures_default_tracktime: "Wie viele Sekunden sollen IP-Adressen getrackt werden. Standardeinstellung = 7d0°0′0″ (1 Woche)."
+config_signatures_default_tracktime: "Die Dauer für die IP-Adressen getrackt werden sollen. Standardeinstellung = 7d0°0′0″ (1 Woche)."
 config_signatures_infraction_limit: "Maximale Anzahl von Verstöße, die eine IP zulassen darf, bevor sie durch IP-Tracking verbannt ist. Standardeinstellung = 10."
 config_signatures_shorthand: "Kontrollen für was mit einer Anfrage zu tun wenn es gibt eine positive Übereinstimmung mit einer Signatur die die angegebenen Kurzwörter verwendet."
 config_signatures_tracking_override: "Sollten Module erlaubt sein Tracking-Optionen zu überschreiben? True = Ja [Standardeinstellung]; False = Nein."
@@ -335,6 +335,11 @@ header_login: "Bitte einloggen zum Fortfahren."
 hints_asnlookup: "** Erfordert ASN-Lookup-Funktionalität (z.B., über das BGPView-Modul)."
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.de.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="de">Was kann ich für „default_dns“ verwenden?</a></em>"
+hints_duration:
+ SI.: "Duration can be described using the "International System of Units". E.g., <strong>1d2h3min4s</strong> or <strong>1d 2h 3min 4s</strong> for one day, two hours, three minutes, four seconds, or <strong>5min</strong> for just five minutes."
+ Arctime.: "Duration can be described using arctime notation. E.g., <strong>1d2°3′4″</strong> for one day, two hours, three minutes, four seconds, or <strong>5″</strong> for just five seconds."
+ Plain English.: "Duration can be described by writing the units in plain English. E.g., <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> for one week, two days, three hours, four minutes, five seconds."
+ Constraints.: "Notation can be mixed, but units must always be described from largest to smallest, and can't be repeated. E.g., <strong>1 week 2 days 3′4″</strong> is <span class="txtGn">valid</span> and will be understood correctly, but <strong>3′4″ 1 week 2 days</strong> and <strong>3 hours 3h 3°</strong> are <span class="txtRd">invalid</span>. CIDRAM doesn't care whether you using spacing or not. Numbers must be plain and unformatted. For practicality, the largest supported unit is a week. When configuration is updated, CIDRAM normalises durations to arctime."
 hints_ipv6_on_32bit: "Hinweis: IPv6-Lookups funktionieren auf einigen 32-Bit-Systemen möglicherweise nicht richtig."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.de.md\#HOW_TO_USE_PDO" hreflang="de">Was ist ein „PDO DSN“? Wie kann ich PDO mit CIDRAM verwenden?</a></em>"

@@ -224,7 +224,7 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Stop Forum Spam 모듈에 대한 구성입니다."
 config_sfs_offer_captcha: "이 모듈에 의해 요청이 차단되면, 보안 문자가 제공될 수 있습니다. Default (기본값) = True. 참고\_: 다른 지시문을 무시하지 않습니다. CAPTCHA가 제공되려면, 모든 지시문이 동의해야 하고, 필요한 키가 구성되어야 합니다. CAPTCHA가 제공되도록 허용되는 경우, 이 지시문을 false로 설정하면 이 모듈에서 특별히 차단된 요청에 대해 CAPTCHA가 제공되지 않도록 방지할 수 있습니다."
 config_signatures: "서명, 서명 파일, 모듈, 등의 설정."
-config_signatures_default_tracktime: "IP 주소를 추적해야 하는 시간(초)입니다. Default (기본값) = 7d0°0′0″ (1 주)."
+config_signatures_default_tracktime: "IP 주소를 추적해야 하는 기간입니다. Default (기본값) = 7d0°0′0″ (1 주)."
 config_signatures_infraction_limit: "IP가 IP 추적에 의해 금지되기 전에 발생하는 것이 허용된다 위반의 최대 수. Default (기본값) = 10."
 config_signatures_shorthand: "주어진 속기 단어를 사용하는 서명에 대해 긍정적인 일치가 있을 때 요청을 처리하는 방법을 제어합니다."
 config_signatures_tracking_override: "모듈이 추적 옵션을 재정의하도록 허용하시겠습니까? True = 예 (Default / 기본 설정); False = 아니오."
@@ -333,6 +333,11 @@ header_login: "계속하려면 로그인하십시오."
 hints_asnlookup: "** ASN 조회 기능이 필요합니다 (예\_: BGPView 모듈을 통해)."
 hints_default_dns:
  자주하는 질문.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.ko.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="ko">"default_dns"에 사용할 수있는 항목은 무엇입니까?</a></em>"
+hints_duration:
+ SI.: "Duration can be described using the "International System of Units". E.g., <strong>1d2h3min4s</strong> or <strong>1d 2h 3min 4s</strong> for one day, two hours, three minutes, four seconds, or <strong>5min</strong> for just five minutes."
+ Arctime.: "Duration can be described using arctime notation. E.g., <strong>1d2°3′4″</strong> for one day, two hours, three minutes, four seconds, or <strong>5″</strong> for just five seconds."
+ Plain English.: "Duration can be described by writing the units in plain English. E.g., <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> for one week, two days, three hours, four minutes, five seconds."
+ Constraints.: "Notation can be mixed, but units must always be described from largest to smallest, and can't be repeated. E.g., <strong>1 week 2 days 3′4″</strong> is <span class="txtGn">valid</span> and will be understood correctly, but <strong>3′4″ 1 week 2 days</strong> and <strong>3 hours 3h 3°</strong> are <span class="txtRd">invalid</span>. CIDRAM doesn't care whether you using spacing or not. Numbers must be plain and unformatted. For practicality, the largest supported unit is a week. When configuration is updated, CIDRAM normalises durations to arctime."
 hints_ipv6_on_32bit: "참고\_: IPv6 조회는 일부 32비트 시스템에서 제대로 작동하지 않을 수 있습니다."
 hints_pdo_dsn:
  자주하는 질문.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.ko.md\#HOW_TO_USE_PDO" hreflang="ko">"PDO DSN"은 무엇입니까? CIDRAM과 함께 PDO를 사용하려면 어떻게해야합니까?</a></em>"

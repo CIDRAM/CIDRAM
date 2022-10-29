@@ -224,7 +224,7 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Stop Forum Spam モジュールの設定。"
 config_sfs_offer_captcha: "このモジュールによってリクエストがブロックされた場合、CAPTCHAを提供できます。 Default（デフォルト設定） = True。 注：他のディレクティブをオーバーライドしません。 CAPTCHAを提供するには、すべてのディレクティブが同意し、必要なキーが構成されている必要があります。 CAPTCHAの提供が通常許可される場合、このディレクティブをfalseに設定すると、このモジュールによって特別にブロックされたリクエストに対してCAPTCHAが提供されないようにする方法が提供されます。"
 config_signatures: "シグネチャ、シグネチャ・ファイル、モジュール、などの設定。"
-config_signatures_default_tracktime: "ＩＰアドレスを追跡する必要がある秒数。​Default（デフォルト設定） = 「7d0°0′0″」 （１週間）。"
+config_signatures_default_tracktime: "ＩＰアドレスを追跡する期間。​Default（デフォルト設定） = 「7d0°0′0″」 （１週間）。"
 config_signatures_infraction_limit: "ＩＰがＩＰトラッキングによって禁止される前に発生することが、​許される違反の最大数。​Default（デフォルト設定） = １０。"
 config_signatures_shorthand: "与えられた速記語を利用するシグネチャに対してポジティブ・マッチがある場合に、要求をどう処理するかを制御のためです。"
 config_signatures_tracking_override: "モジュールが追跡オプションをオーバーライドできるようにしますか？ True = はい（Default/デフォルルト）。 False = いいえ。"
@@ -333,6 +333,11 @@ header_login: "継続するには、​ログインしてください。"
 hints_asnlookup: "** ＡＳＮルックアップ機能が必要です（たとえば、BGPViewモジュールを介して）。"
 hints_default_dns:
  ＦＡＱ。: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.ja.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="ja">「default_dns」には何が使えますか？</a></em>"
+hints_duration:
+ SI.: "Duration can be described using the "International System of Units". E.g., <strong>1d2h3min4s</strong> or <strong>1d 2h 3min 4s</strong> for one day, two hours, three minutes, four seconds, or <strong>5min</strong> for just five minutes."
+ Arctime.: "Duration can be described using arctime notation. E.g., <strong>1d2°3′4″</strong> for one day, two hours, three minutes, four seconds, or <strong>5″</strong> for just five seconds."
+ Plain English.: "Duration can be described by writing the units in plain English. E.g., <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> for one week, two days, three hours, four minutes, five seconds."
+ Constraints.: "Notation can be mixed, but units must always be described from largest to smallest, and can't be repeated. E.g., <strong>1 week 2 days 3′4″</strong> is <span class="txtGn">valid</span> and will be understood correctly, but <strong>3′4″ 1 week 2 days</strong> and <strong>3 hours 3h 3°</strong> are <span class="txtRd">invalid</span>. CIDRAM doesn't care whether you using spacing or not. Numbers must be plain and unformatted. For practicality, the largest supported unit is a week. When configuration is updated, CIDRAM normalises durations to arctime."
 hints_ipv6_on_32bit: "注：一部の３２ビットシステムでは、ＩＰｖ６ルックアップが正しく機能しない場合があります。"
 hints_pdo_dsn:
  ＦＡＱ。: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.ja.md\#HOW_TO_USE_PDO" hreflang="ja">「PDO DSN」とは何ですか？​CIDRAMでPDOを使用するにはどうすればよいですか？</a></em>"

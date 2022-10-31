@@ -55,6 +55,7 @@
 - The `nonblocked_status_code` configuration directive wasn't displaying as intended at the front-end configuration page; Fixed.
 - Instead of "GMT", the "Last modified" header given for front-end assets specified "+0000", which some browsers don't understand properly; Fixed.
 - When using the front-end IP test page, hostnames sometimes weren't looked up properly under some conditions; Fixed (#313).
+- Reconstructed URIs didn't account for port number; Fixed.
 
 #### Other changes.
 - Improved IP address resolution strategy (#286).

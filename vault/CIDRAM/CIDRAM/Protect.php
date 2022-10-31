@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2022.10.29).
+ * This file: Protect traits (last modified: 2022.10.31).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -108,7 +108,15 @@ trait Protect
             (!empty($_SERVER['HTTP_X_FORWARDED_SSL']) && $_SERVER['HTTP_X_FORWARDED_SSL'] === 'on') ||
             (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
         ) ? 'https://' : 'http://';
+        if (isset($_SERVER['SERVER_PORT']) && is_scalar($_SERVER['SERVER_PORT'])) {
+            $Try = (int)$_SERVER['SERVER_PORT'];
+            $Try = ($Try > 0 && (
+                ($this->BlockInfo['rURI'] === 'http://' && $Try !== 80) ||
+                ($this->BlockInfo['rURI'] === 'https://' && $Try !== 443)
+            )) ? ':' . $Try : '';
+        }
         $this->BlockInfo['rURI'] .= $this->CIDRAM['HTTP_HOST'] ?: 'Unknown.Host';
+        $this->BlockInfo['rURI'] .= $Try;
         $this->BlockInfo['rURI'] .= $_SERVER['REQUEST_URI'] ?? '/';
 
         /** Initialise page output and block event log fields. */

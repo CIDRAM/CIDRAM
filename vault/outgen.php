@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2022.10.29).
+ * This file: Output generator (last modified: 2022.10.31).
  */
 
 /** Initialise cache. */
@@ -86,7 +86,16 @@ $CIDRAM['BlockInfo']['rURI'] = (
     (!empty($_SERVER['HTTP_X_FORWARDED_SSL']) && $_SERVER['HTTP_X_FORWARDED_SSL'] === 'on') ||
     (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
 ) ? 'https://' : 'http://';
+if (isset($_SERVER['SERVER_PORT']) && is_scalar($_SERVER['SERVER_PORT'])) {
+    $CIDRAM['Try'] = (int)$_SERVER['SERVER_PORT'];
+    $CIDRAM['Try'] = ($CIDRAM['Try'] > 0 && (
+        ($CIDRAM['BlockInfo']['rURI'] === 'http://' && $CIDRAM['Try'] !== 80) ||
+        ($CIDRAM['BlockInfo']['rURI'] === 'https://' && $CIDRAM['Try'] !== 443)
+    )) ? ':' . $CIDRAM['Try'] : '';
+}
 $CIDRAM['BlockInfo']['rURI'] .= $CIDRAM['HTTP_HOST'] ?: 'Unknown.Host';
+$CIDRAM['BlockInfo']['rURI'] .= $CIDRAM['Try'];
+unset($CIDRAM['Try']);
 $CIDRAM['BlockInfo']['rURI'] .= $_SERVER['REQUEST_URI'] ?? '/';
 
 /** Initialise page output and block event logfile fields. */

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2022.10.05).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2022.11.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -165,6 +165,7 @@ config_rate_limiting_max_bandwidth: "在为将来的请求启用速率限制之�
 config_rate_limiting_max_requests: "在为将来的请求启用速率限制之前允许的最大请求数。​值为0将禁用此类速率限制。​标准=0。"
 config_rate_limiting_precision_ipv4: "监视IPv4使用时的精度。​值镜像CIDR块大小。​设置为32以获得最佳精度。​标准=32。"
 config_rate_limiting_precision_ipv6: "监视IPv6使用时的精度。​值镜像CIDR块大小。​设置为128以获得最佳精度。​标准=128。"
+config_rate_limiting_segregate: "域名和主机的配额应该分开还是共享？ True = 配额将被分开。 False = 配额将被共享【标准】。"
 config_recaptcha: "ReCaptcha的配置（为人们提供了一种在受阻时重新获得访问权限的方法）。"
 config_recaptcha_api: *CaptchaAPI
 config_recaptcha_expiry: *CaptchaExpiry

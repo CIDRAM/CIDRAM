@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2022.10.05).
+# This file: Arabic language data for the front-end (last modified: 2022.11.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -163,6 +163,7 @@ config_rate_limiting_max_bandwidth: "أقصى قدر من عرض النطاق ا
 config_rate_limiting_max_requests: "الحد الأقصى لعدد الطلبات المسموح بها خلال فترة السماح. عندما يتم تجاوزت، يتم تمكين حدود السعر للطلبات المستقبلية. تعمل القيمة 0 على تعطيل هذا النوع من تحديد السرعة. افتراضي = 0."
 config_rate_limiting_precision_ipv4: "الدقة المستخدمة عند مراقبة استخدام IPv4. قيمة تعكس حجم كتلة CIDR. تعيين إلى 32 للحصول على أفضل دقة. افتراضي = 32."
 config_rate_limiting_precision_ipv6: "الدقة المستخدمة عند مراقبة استخدام IPv6. قيمة تعكس حجم كتلة CIDR. تعيين إلى 128 للحصول على أفضل دقة. افتراضي = 128."
+config_rate_limiting_segregate: "هل يجب فصل أو مشاركة الحصص الخاصة بالمجالات والمضيفين المختلفين؟ True = سيتم فصل الحصص. False = سيتم تقاسم الحصص [افتراضي]."
 config_recaptcha: "التكوين ل ReCaptcha (يوفر وسيلة للبشر لاستعادة الوصول عند حجبه)."
 config_recaptcha_api: *CaptchaAPI
 config_recaptcha_expiry: *CaptchaExpiry

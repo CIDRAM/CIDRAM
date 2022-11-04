@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2022.10.05).
+# This file: French language data for the front-end (last modified: 2022.11.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -165,6 +165,7 @@ config_rate_limiting_max_bandwidth: "La quantité maximale de bande passante aut
 config_rate_limiting_max_requests: "Le nombre maximal de requêtes autorisées dans la période de tolérance avant de permettre la limitation de débit pour les requêtes futures. Une valeur de 0 désactive ce type de limitation de débit. Défaut = 0."
 config_rate_limiting_precision_ipv4: "La précision à utiliser lors de la surveillance de l'utilisation d'IPv4. La valeur reflète la taille du bloc CIDR. Réglez sur 32 pour une meilleure précision. Défaut = 32."
 config_rate_limiting_precision_ipv6: "La précision à utiliser lors de la surveillance de l'utilisation d'IPv6. La valeur reflète la taille du bloc CIDR. Réglez sur 128 pour une meilleure précision. Défaut = 128."
+config_rate_limiting_segregate: "Les quotas pour différents domaines et hôtes doivent-ils être séparés ou partagés\_? True = Les quotas seront séparés. False = Les quotas seront partagés [Défaut]."
 config_recaptcha: "Configuration pour ReCaptcha (fournit un moyen pour les humains de retrouver l'accès lorsqu'ils sont bloqués)."
 config_recaptcha_api: *CaptchaAPI
 config_recaptcha_expiry: *CaptchaExpiry

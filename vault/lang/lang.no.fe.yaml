@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2022.10.05).
+# This file: Norwegian language data for the front-end (last modified: 2022.11.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -165,6 +165,7 @@ config_rate_limiting_max_bandwidth: "Maksimal båndbredde tillatt innenfor tilla
 config_rate_limiting_max_requests: "Maksimalt antall forespørsler tillatt innen tillatelsesperioden før hastighetsbegrensende fremtidige forespørsler. En verdi på 0 deaktiverer denne typen hastighetsbegrensende. Standardverdi = 0."
 config_rate_limiting_precision_ipv4: "Presisjonen som skal brukes til å spore IPv4-bruk. Verdi speiler CIDR-blokkstørrelse. Sett til 32 for best presisjon. Standardverdi = 32."
 config_rate_limiting_precision_ipv6: "Presisjonen som skal brukes til å spore IPv6-bruk. Verdi speiler CIDR-blokkstørrelse. Sett til 128 for best presisjon. Standardverdi = 128."
+config_rate_limiting_segregate: "Bør kvoter for forskjellige domener og verter adskilles eller deles? True = Kvoter vil bli adskilt. False = Kvoter vil bli delt [Standardverdi]."
 config_recaptcha: "Konfigurasjon for ReCaptcha (gir en måte for mennesker å gjenvinne tilgang når de blokkeres)."
 config_recaptcha_api: *CaptchaAPI
 config_recaptcha_expiry: *CaptchaExpiry

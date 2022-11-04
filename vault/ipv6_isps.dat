@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2022.302.0
-# Last modified: 2022.10.30
+# Version: 2022.307.0
+# Last modified: 2022.11.04
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -373,18 +373,12 @@ Tag: Foreningen
 # Romanian domestic ISP. Brute-force, DDoS, XMLRPC, and webapp attacks, port
 # scans, hacking, and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 10,298.
-# Updated: 2021.12.24
+# Stop Forum Spam (SFS) listings: 7,997.
+# Updated: 2022.11.04
 
-2a02:2f01:7111:a00::/64 Deny Spam
-2a02:2f02:a40c:1d00::/64 Deny Spam
-2a02:2f04:906:9900::/64 Deny Spam
-2a02:2f05:680e:bd00::/64 Deny Spam
-2a02:2f07:a400:e900::/64 Deny Spam
-2a02:2f08:670d:da00::/64 Deny Spam
-2a02:2f08:ea01:ff00::/64 Deny Spam
-2a02:2f09:380c:6100::/64 Deny Spam
-2a02:2f0e:5a09:3c00::/64 Deny Spam
+2a02:2f01:7014:1900::/64 Deny Spam
+2a02:2f01:791a:5500::/64 Deny Spam
+2a02:2f07:720a:2400::/64 Deny Spam
 Origin: RO
 Profile: Domestic ISP;Tor endpoints here
 Tag: RCS & RDS SA
@@ -562,16 +556,16 @@ Profile: Domestic ISP
 Tag: TOTAL PLAY TELECOMUNICACIONES
 
 
-# ASNs 24309, 131269 ("Atria Convergence Technologies Pvt. Ltd. Broadband
-# Internet Service Provider INDIA", "ACTFIBERNET Pvt Ltd").
+# ASNs 18209, 24309, 131269 ("Atria Convergence Technologies Pvt. Ltd.
+# Broadband Internet Service Provider INDIA", "ACTFIBERNET Pvt Ltd").
 # Indian domestic ISP. Brute-force, SSH, FTP, SQLi, and webapp attacks, port
 # scans, hacking, and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 2,362 (AS24309), 346 (AS131269).
-# Updated: 2021.12.24
+# Stop Forum Spam (SFS) listings: 412 (AS18209), 3,307 (AS24309), 412 (AS131269).
+# Updated: 2022.11.04
 
-2406:7400:71:6d39::/64 Deny Spam
-2406:7400:73:46c0::/64 Deny Spam
+2406:7400:56:4cb4::/64 Deny Spam
+2406:7400:56:d9ac::/64 Deny Spam
 Origin: IN
 Profile: Domestic ISP
 Tag: Atria Convergence
@@ -804,19 +798,6 @@ Profile: Domestic ISP;Mobile ISP;Multiplay
 Tag: T-Mobile USA, Inc
 
 
-# ASN 39351 ("31173 Services AB").
-# Webhosting, colo, and broadband provider from Sweden. Brute-force, SSH, and
-# webapp attacks, port scans, hacking, spam, and tor endpoints detected from
-# here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 9,037.
-# Updated: 2021.12.16
-
-2a03:1b20:1:f410::/64 Deny Spam
-Origin: SE
-Profile: Infrastructure/Transit;Multiplay;Tor endpoints here;Webhosting
-Tag: 31173 Services AB
-
-
 # ASNs 31593, 34187 ("LLC Renome-Service").
 # Ukrainian TV cable provider and a significant source of spam.
 # Stop Forum Spam (SFS) listings: 4,784 (AS31593), 45 (AS34187).
@@ -993,18 +974,6 @@ Profile: Infrastructure/Transit;Tor endpoints here;University
 Tag: DFN
 
 
-# ASN 3265 ("Xs4all Internet BV").
-# Dutch domestic ISP. Spam, SSH hack attempts, various unwanted traffic and tor
-# endpoints detected here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 219.
-# Updated: 2021.12.14
-
-2001:981:9971:1::/64 Deny Spam
-Origin: NL
-Profile: Domestic ISP;Tor endpoints here
-Tag: Xs4all Internet BV
-
-
 # ASN 5410 ("Bouygues Telecom SA").
 # French domestic ISP and mobile provider. Spam and hack attempts detected from
 # here. Listing just the affected ranges/addresses only.
@@ -1021,12 +990,10 @@ Tag: Bouygues Telecom SA
 # ASNs 60339, 206067 ("Hutchison 3G UK Limited").
 # UK mobile provider. Brute-force, SSH attacks, spam, and DNS poisoning
 # detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 55 (AS60339), 577 (AS206067).
-# Updated: 2022.01.07
+# Stop Forum Spam (SFS) listings: 599 (AS206067).
+# Updated: 2022.11.03
 
-2a04:4a43:44df:c969::/64 Deny Spam
-2a04:4a43:463f:f40b::/64 Deny Spam
-2a04:4a43:497f:e291::/64 Deny Spam
+2a04:4a43:524f:e3d6::/64 Deny Spam
 Origin: GB
 Profile: Mobile ISP
 Tag: Hutchison 3G UK Limited

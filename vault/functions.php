@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2022.10.28).
+ * This file: Functions file (last modified: 2022.11.05).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -2285,14 +2285,16 @@ $CIDRAM['AuxIntFromString'] = function (string $Value): int {
  * @return void
  */
 $CIDRAM['RL_Fetch'] = function () use (&$CIDRAM): void {
+    $SourceName = ($CIDRAM['Config']['rate_limiting']['segregate'] && $CIDRAM['HTTP_HOST'] !== '') ? 'rl-' . $CIDRAM['HTTP_HOST'] : 'rl';
+
     /** Override if using a different preferred caching mechanism. */
     if ($CIDRAM['Cache']->Using && $CIDRAM['Cache']->Using !== 'FF') {
-        $CIDRAM['RL_Data'] = $CIDRAM['Cache']->getEntry('rl');
+        $CIDRAM['RL_Data'] = $CIDRAM['Cache']->getEntry($SourceName);
         return;
     }
 
     /** Default process. */
-    $CIDRAM['RL_Data'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'rl.dat');
+    $CIDRAM['RL_Data'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $SourceName . '.dat');
 };
 
 /**
@@ -2303,18 +2305,19 @@ $CIDRAM['RL_Fetch'] = function () use (&$CIDRAM): void {
  * @return void
  */
 $CIDRAM['RL_WriteEvent'] = function (string $RL_Capture, int $RL_Size) use (&$CIDRAM): void {
+    $SourceName = ($CIDRAM['Config']['rate_limiting']['segregate'] && $CIDRAM['HTTP_HOST'] !== '') ? 'rl-' . $CIDRAM['HTTP_HOST'] : 'rl';
     $TimePacked = pack('l*', $CIDRAM['Now']);
     $SizePacked = pack('l*', $RL_Size);
     $Data = $TimePacked . $SizePacked . $RL_Capture;
 
     /** Override if using a different preferred caching mechanism. */
     if ($CIDRAM['Cache']->Using && $CIDRAM['Cache']->Using !== 'FF') {
-        $CIDRAM['Cache']->setEntry('rl', $CIDRAM['RL_Data'] . $Data, $CIDRAM['Config']['rate_limiting']['allowance_period'] * 3600);
+        $CIDRAM['Cache']->setEntry($SourceName, $CIDRAM['RL_Data'] . $Data, $CIDRAM['Config']['rate_limiting']['allowance_period'] * 3600);
         return;
     }
 
     /** Default process. */
-    $Handle = fopen($CIDRAM['Vault'] . 'rl.dat', 'ab');
+    $Handle = fopen($CIDRAM['Vault'] . $SourceName . '.dat', 'ab');
     fwrite($Handle, $Data);
     fclose($Handle);
 };
@@ -2346,18 +2349,19 @@ $CIDRAM['RL_Clean'] = function () use (&$CIDRAM): void {
         $Pos += 4 + $Block[1];
     }
     if ($Pos) {
+        $SourceName = ($CIDRAM['Config']['rate_limiting']['segregate'] && $CIDRAM['HTTP_HOST'] !== '') ? 'rl-' . $CIDRAM['HTTP_HOST'] : 'rl';
         if ($CIDRAM['RL_Data']) {
             $CIDRAM['RL_Data'] = substr($CIDRAM['RL_Data'], $Pos);
         }
 
         /** Override if using a different preferred caching mechanism. */
         if ($CIDRAM['Cache']->Using && $CIDRAM['Cache']->Using !== 'FF') {
-            $CIDRAM['Cache']->setEntry('rl', $CIDRAM['RL_Data'], $CIDRAM['Config']['rate_limiting']['allowance_period'] * 3600);
+            $CIDRAM['Cache']->setEntry($SourceName, $CIDRAM['RL_Data'], $CIDRAM['Config']['rate_limiting']['allowance_period'] * 3600);
             return;
         }
 
         /** Default process. */
-        $Handle = fopen($CIDRAM['Vault'] . 'rl.dat', 'wb');
+        $Handle = fopen($CIDRAM['Vault'] . $SourceName . '.dat', 'wb');
         fwrite($Handle, $CIDRAM['RL_Data']);
         fclose($Handle);
     }

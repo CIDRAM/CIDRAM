@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2022.10.05).
+# This file: Swedish language data for the front-end (last modified: 2022.11.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -165,6 +165,7 @@ config_rate_limiting_max_bandwidth: "Den maximala bandbreddsmängden som tillåt
 config_rate_limiting_max_requests: "Det maximala antalet förfrågningar som tillåts inom tillåten-perioden före hastighetsbegränsar framtida förfrågningar. Ett värde av 0 avaktiverar denna typ av hastighetsbegränsande. Standard = 0."
 config_rate_limiting_precision_ipv4: "Den precision som ska användas för att spåra IPv4-användning. Värdet speglar CIDR-blockstorleken. Ställ in till 32 för bästa precision. Standard = 32."
 config_rate_limiting_precision_ipv6: "Den precision som ska användas för att spåra IPv6-användning. Värdet speglar CIDR-blockstorleken. Ställ in till 128 för bästa precision. Standard = 128."
+config_rate_limiting_segregate: "Bör kvoter för olika domäner och värdar segregeras eller delas? True = Kvoter kommer att vara segregerade. False = Kvoter kommer att vara delas [Standard]."
 config_recaptcha: "Konfiguration för ReCaptcha (ger ett sätt för människor att återfå åtkomst när de blockeras)."
 config_recaptcha_api: *CaptchaAPI
 config_recaptcha_expiry: *CaptchaExpiry

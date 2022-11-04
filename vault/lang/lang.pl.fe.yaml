@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2022.10.05).
+# This file: Polish language data for the front-end (last modified: 2022.11.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -165,6 +165,7 @@ config_rate_limiting_max_bandwidth: "Maksymalna ilość przepustowości dozwolon
 config_rate_limiting_max_requests: "Maksymalna liczba żądań w dozwolonym czasie przed stawką ograniczającą przyszłe żądania. Wartość 0 wyłącza ten typ ograniczenia. Domyślna = 0."
 config_rate_limiting_precision_ipv4: "Precyzja wykorzystywana do śledzenia użycia IPv4. Wartość odzwierciedla rozmiar bloku CIDR. Ustaw na 32 dla najlepszej precyzji. Domyślna = 32."
 config_rate_limiting_precision_ipv6: "Precyzja wykorzystywana do śledzenia użycia IPv6. Wartość odzwierciedla rozmiar bloku CIDR. Ustaw na 128 dla najlepszej precyzji. Domyślna = 128."
+config_rate_limiting_segregate: "Czy kontyngenty dla różnych domen i hostów powinny być segregowane czy dzielone? True = Kontyngenty będą segregowane. False = Kontyngenty będą dzielone [Domyślna]."
 config_recaptcha: "Konfiguracja ReCaptcha (zapewnia ludziom możliwość odzyskania dostępu po zablokowaniu)."
 config_recaptcha_api: *CaptchaAPI
 config_recaptcha_expiry: *CaptchaExpiry

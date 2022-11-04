@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2022.10.05).
+# This file: Turkish language data for the front-end (last modified: 2022.11.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -165,6 +165,7 @@ config_rate_limiting_max_bandwidth: "Gelecekteki talepleri sınırlayan orandan 
 config_rate_limiting_max_requests: "Gelecekteki istekleri sınırlayan orandan önce izin süresi içinde izin verilen maksimum istek sayısı. 0 değeri bu oran sınırlamasını devre dışı bırakır. Varsayılan = 0."
 config_rate_limiting_precision_ipv4: "IPv4 kullanımını izlemek için hassaslık. Değer, CIDR blok boyutunu yansıtır. En iyi hassasiyet için 32'ye ayarlayın. Varsayılan = 32."
 config_rate_limiting_precision_ipv6: "IPv6 kullanımını izlemek için hassaslık. Değer, CIDR blok boyutunu yansıtır. En iyi hassasiyet için 128'e ayarlayın. Varsayılan = 128."
+config_rate_limiting_segregate: "Farklı alanlar ve ana bilgisayarlar için kotalar ayrılmalı mı yoksa paylaşılmalı mı? True = Kotalar ayrılacak. False = Kotalar paylaşılacak [Varsayılan]."
 config_recaptcha: "ReCaptcha için yapılandırma (engellendiğinde insanlara erişimi yeniden kazanmaları için bir yol sağlar)."
 config_recaptcha_api: *CaptchaAPI
 config_recaptcha_expiry: *CaptchaExpiry

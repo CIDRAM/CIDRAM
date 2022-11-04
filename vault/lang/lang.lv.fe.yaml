@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2022.10.05).
+# This file: Latvian language data for the front-end (last modified: 2022.11.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -165,6 +165,7 @@ config_rate_limiting_max_bandwidth: "Maksimālais pieļaujamais joslas platuma a
 config_rate_limiting_max_requests: "Maksimālais atļauto pieprasījumu skaits kvotu periodā pirms ierobežot pieprasījumus nākotnē. Vērtība 0 atspējo šāda veida ierobežošanu. Noklusējuma = 0."
 config_rate_limiting_precision_ipv4: "IPv4 lietošanas izsekošanas precizitāte. Vērtības spoguļi CIDR bloka izmērs. Iestatiet uz 32 vislabākajai precizitātei. Noklusējuma = 32."
 config_rate_limiting_precision_ipv6: "IPv6 lietošanas izsekošanas precizitāte. Vērtības spoguļi CIDR bloka izmērs. Iestatiet uz 128 vislabākajai precizitātei. Noklusējuma = 128."
+config_rate_limiting_segregate: "Vai kvotas dažādiem domēniem un resursdatoriem ir jānodala vai jādala? True = Kvotas tiks atdalīts. False = Kvotas tiks dalītas [Noklusējuma]."
 config_recaptcha: "ReCaptcha konfigurācija (nodrošina veidu, kā cilvēki var atgūt piekļuvi, kad tā ir bloķēta)."
 config_recaptcha_api: *CaptchaAPI
 config_recaptcha_expiry: *CaptchaExpiry

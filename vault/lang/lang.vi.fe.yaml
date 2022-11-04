@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2022.10.29).
+# This file: Vietnamese language data for the front-end (last modified: 2022.11.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -165,6 +165,7 @@ config_rate_limiting_max_bandwidth: "Số lượng băng thông tối đa đư�
 config_rate_limiting_max_requests: "Số lượng yêu cầu tối đa được phép trong khoảng thời gian cho phép trước khi cho phép giới hạn tốc độ cho các yêu cầu trong tương lai. Giá trị 0 sẽ vô hiệu hóa loại giới hạn tốc độ này. Mặc định = 0."
 config_rate_limiting_precision_ipv4: "Độ chính xác để sử dụng khi giám sát việc sử dụng IPv4. Giá trị phản ánh kích thước khối CIDR. Đặt thành 32 để có độ chính xác cao nhất. Mặc định = 32."
 config_rate_limiting_precision_ipv6: "Độ chính xác để sử dụng khi giám sát việc sử dụng IPv6. Giá trị phản ánh kích thước khối CIDR. Đặt thành 128 để có độ chính xác cao nhất. Mặc định = 128."
+config_rate_limiting_segregate: "Hạn ngạch cho miền và máy chủ lưu trữ nên được tách biệt hoặc chia sẻ? True = Hạn ngạch sẽ được tách biệt. False = Hạn ngạch sẽ được chia sẻ [Mặc định]."
 config_recaptcha: "Cấu hình cho ReCaptcha (cung cấp một cách để con người lấy lại quyền truy cập khi bị chặn)."
 config_recaptcha_api: *CaptchaAPI
 config_recaptcha_expiry: *CaptchaExpiry

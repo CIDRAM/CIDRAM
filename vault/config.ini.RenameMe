@@ -506,6 +506,10 @@ allowance_period=0
 ; when rate limiting is enabled.
 exceptions=''
 
+; Should quotas for different domains and hosts be segregated or shared? True =
+; Quotas will be segregated. False = Quotas will be shared [Default].
+segregate=false
+
 
 [supplementary_cache_options]
 ; Supplementary cache options.

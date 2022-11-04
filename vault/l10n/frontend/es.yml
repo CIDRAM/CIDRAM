@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2022.10.29).
+# This file: Spanish language data for the front-end (last modified: 2022.11.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -208,6 +208,7 @@ config_rate_limiting_max_bandwidth: "La cantidad máxima de ancho de banda permi
 config_rate_limiting_max_requests: "El número máximo de solicitudes permitido dentro del período de asignación antes de habilitar los límites de tarifas para solicitudes futuras. Un valor de 0 desactiva este tipo de limitación de la tarifa. Predefinido = 0."
 config_rate_limiting_precision_ipv4: "La precisión a utilizar cuando se monitorea el uso de IPv4. El valor refleja el tamaño del bloque CIDR. Establecer en 32 para la mejor precisión. Predefinido = 32."
 config_rate_limiting_precision_ipv6: "La precisión a utilizar cuando se monitorea el uso de IPv6. El valor refleja el tamaño del bloque CIDR. Establecer en 128 para la mejor precisión. Predefinido = 128."
+config_rate_limiting_segregate: "¿Deberían segregarse o compartirse las cuotas para diferentes dominios y hosts? True = Las cuotas serán segregadas. False = Las cuotas serán compartidas [Predefinido]."
 config_recaptcha: "Configuración para ReCaptcha (proporciona una forma para que los humanos recuperen el acceso cuando están bloqueados)."
 config_recaptcha_api: *CaptchaAPI
 config_recaptcha_expiry: *CaptchaExpiry
@@ -336,10 +337,10 @@ hints_asnlookup: "** Requiere la funcionalidad de búsqueda de ASN (por ejemplo,
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.es.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="es">¿Qué puedo usar para "default_dns"?</a></em>"
 hints_duration:
- SI.: "Duration can be described using the "International System of Units". E.g., <strong>1d2h3min4s</strong> or <strong>1d 2h 3min 4s</strong> for one day, two hours, three minutes, four seconds, or <strong>5min</strong> for just five minutes."
- Arctime.: "Duration can be described using arctime notation. E.g., <strong>1d2°3′4″</strong> for one day, two hours, three minutes, four seconds, or <strong>5″</strong> for just five seconds."
- Plain English.: "Duration can be described by writing the units in plain English. E.g., <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> for one week, two days, three hours, four minutes, five seconds."
- Constraints.: "Notation can be mixed, but units must always be described from largest to smallest, and can't be repeated. E.g., <strong>1 week 2 days 3′4″</strong> is <span class="txtGn">valid</span> and will be understood correctly, but <strong>3′4″ 1 week 2 days</strong> and <strong>3 hours 3h 3°</strong> are <span class="txtRd">invalid</span>. CIDRAM doesn't care whether you using spacing or not. Numbers must be plain and unformatted. For practicality, the largest supported unit is a week. When configuration is updated, CIDRAM normalises durations to arctime."
+ SI.: "La duración se puede describir usando el "Sistema Internacional de Unidades". Por ejemplo, <strong>1d2h3min4s</strong> o <strong>1d 2h 3min 4s</strong> para un día, dos horas, tres minutos, cuatro segundos, o <strong>5min</strong> para solo cinco minutos."
+ Tiempo de arco.: "La duración se puede describir utilizando la notación de tiempo de arco. Por ejemplo, <strong>1d2°3′4″</strong> para un día, dos horas, tres minutos, cuatro segundos, o <strong>5″</strong> para solo cinco segundos."
+ Inglés simple.: "La duración se puede describir escribiendo las unidades en Inglés simple. Por ejemplo, <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> para una semana, dos días, tres horas, cuatro minutos, cinco segundos."
+ Restricciones.: "La notación se puede mezclar, pero las unidades siempre se deben describir de mayor a menor, y no se pueden repetir. Por ejemplo, <strong>1 week 2 days 3′4″</strong> es <span class="txtGn">válido</span> y se entenderá correctamente, pero <strong>3′4″ 1 week 2 days</strong> y <strong>3 hours 3h 3°</strong> <span class="txtRd">no son válidos</span>. A CIDRAM no le importa si usa espaciado o no. Los números deben ser simples y sin formato. Por motivos prácticos, la unidad más grande admitida es una semana. Cuando se actualiza la configuración, CIDRAM normaliza las duraciones al tiempo de arco."
 hints_ipv6_on_32bit: "Nota: Es posible que las búsquedas de IPv6 no funcionen correctamente en algunos sistemas de 32 bits."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.es.md\#HOW_TO_USE_PDO" hreflang="es">¿Qué es un "PDO DSN"? Cómo puedo usar PDO con CIDRAM?</a></em>"

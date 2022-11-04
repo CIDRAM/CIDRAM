@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2022.10.29).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2022.11.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -208,6 +208,7 @@ config_rate_limiting_max_bandwidth: "在為將來的請求啟用速率限制之�
 config_rate_limiting_max_requests: "在為將來的請求啟用速率限制之前允許的最大請求數。​值為0將禁用此類速率限制。​標準=0。"
 config_rate_limiting_precision_ipv4: "監視IPv4使用時的精度。​值鏡像CIDR塊大小。​設置為32以獲得最佳精度。​標準=32。"
 config_rate_limiting_precision_ipv6: "監視IPv6使用時的精度。​值鏡像CIDR塊大小。​設置為128以獲得最佳精度。​標準=128。"
+config_rate_limiting_segregate: "域名和主機的配額應該分開還是共享？ True = 配額將被分開。 False = 配額將被共享【標準】。"
 config_recaptcha: "ReCaptcha的配置（為人們提供了一種在受阻時重新獲得訪問權限的方法）。"
 config_recaptcha_api: *CaptchaAPI
 config_recaptcha_expiry: *CaptchaExpiry
@@ -334,10 +335,10 @@ hints_asnlookup: "** 需要ASN查找功能（例如，通過BGPView模塊）。"
 hints_default_dns:
  常問問題。: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.zh-tw.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="zh-TW">在『default_dns』中我可以使用什麼？</a></em>"
 hints_duration:
- SI.: "Duration can be described using the "International System of Units". E.g., <strong>1d2h3min4s</strong> or <strong>1d 2h 3min 4s</strong> for one day, two hours, three minutes, four seconds, or <strong>5min</strong> for just five minutes."
- Arctime.: "Duration can be described using arctime notation. E.g., <strong>1d2°3′4″</strong> for one day, two hours, three minutes, four seconds, or <strong>5″</strong> for just five seconds."
- Plain English.: "Duration can be described by writing the units in plain English. E.g., <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> for one week, two days, three hours, four minutes, five seconds."
- Constraints.: "Notation can be mixed, but units must always be described from largest to smallest, and can't be repeated. E.g., <strong>1 week 2 days 3′4″</strong> is <span class="txtGn">valid</span> and will be understood correctly, but <strong>3′4″ 1 week 2 days</strong> and <strong>3 hours 3h 3°</strong> are <span class="txtRd">invalid</span>. CIDRAM doesn't care whether you using spacing or not. Numbers must be plain and unformatted. For practicality, the largest supported unit is a week. When configuration is updated, CIDRAM normalises durations to arctime."
+ SI。: "可以使用『國際單位制』來描述持續時間。 例如， <strong>1d2h3min4s</strong> 或 <strong>1d 2h 3min 4s</strong> 表示一天、兩小時、三分鐘、四秒。 <strong>5min</strong> 表示僅五分鐘。"
+ 弧時。: "持續時間可以使用弧時表示法來描述。 例如， <strong>1d2°3′4″</strong> 表示一天，兩小時，三分鐘，四秒。 <strong>5″</strong> 表示僅五秒。"
+ 簡單的英語。: "持續時間可以通過用簡單的英語書寫單位來描述。 例如， <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> 表示一周、兩天、三小時、四分鐘、五秒。"
+ 約束。: "表示法可以混合使用，但單位必須始終從大到小描述，並且不能重複。 例如， <strong>1 week 2 days 3′4″</strong> 是<span class="txtGn">有效的</span>並且會被正確理解，但 <strong>3′4″ 1 week 2 days</strong> 和 <strong>3 hours 3h 3°</strong> 是<span class="txtRd">無效的</span>。 CIDRAM 不關心是否使用間距。 數字必須是普通的和無格式的。 為實用起見，支持的最大單位是一周。 當配置更新時，CIDRAM 將持續時間標準化為弧時。"
 hints_ipv6_on_32bit: "注意：IPv6查找在某些32位系統上可能無法正常工作。"
 hints_pdo_dsn:
  常問問題。: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.zh-tw.md\#HOW_TO_USE_PDO" hreflang="zh-TW">『PDO DSN』是什麼？如何能PDO與CIDRAM一起使用？</a></em>"

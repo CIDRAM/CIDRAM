@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hebrew language data for the front-end (last modified: 2022.10.29).
+# This file: Hebrew language data for the front-end (last modified: 2022.11.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -208,6 +208,7 @@ config_rate_limiting_max_bandwidth: "הכמות המקסימלית של רוחב
 config_rate_limiting_max_requests: "המספר המרבי של בקשות המותר בתקופת הקצבה לפני הגבלת שיעור בקשות עתידיות. ערך 0 משבית סוג זה של הגבלת תעריפים. סטנדרטי = 0."
 config_rate_limiting_precision_ipv4: "הדיוק לשימוש למעקב אחר השימוש ב-IPv4. ערך משקף את גודל בלוק CIDR. הגדר ל-32 לדיוק הטוב ביותר. סטנדרטי = 32."
 config_rate_limiting_precision_ipv6: "הדיוק לשימוש למעקב אחר השימוש ב-IPv6. ערך משקף את גודל בלוק CIDR. הגדר ל-128 לדיוק הטוב ביותר. סטנדרטי = 128."
+config_rate_limiting_segregate: "האם יש להפריד או לחלוק מכסות עבור דומיינים ומארחים שונים? True = המכסות יופרדו. False = המכסות יחולקו [סטנדרטי]."
 config_recaptcha: "תצורה עבור ReCaptcha (מספק דרך לבני אדם לקבל חזרה גישה כשהם חסומים)."
 config_recaptcha_api: *CaptchaAPI
 config_recaptcha_expiry: *CaptchaExpiry
@@ -336,15 +337,15 @@ field_your_version: "הגרסה שלך"
 header_login: "אנא התחבר על מנת להמשיך."
 hints_asnlookup: "** דורש פונקציונליות חיפוש ASN (למשל, דרך מודול BGPView)."
 hints_default_dns:
- FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="en-AU">What can I use for "default_dns"?</a></em>"
+ שאלות נפוצות.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="en-AU">במה עלי להשתמש עבור "default_dns"?</a></em>"
 hints_duration:
- SI.: "Duration can be described using the "International System of Units". E.g., <strong>1d2h3min4s</strong> or <strong>1d 2h 3min 4s</strong> for one day, two hours, three minutes, four seconds, or <strong>5min</strong> for just five minutes."
- Arctime.: "Duration can be described using arctime notation. E.g., <strong>1d2°3′4″</strong> for one day, two hours, three minutes, four seconds, or <strong>5″</strong> for just five seconds."
- Plain English.: "Duration can be described by writing the units in plain English. E.g., <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> for one week, two days, three hours, four minutes, five seconds."
- Constraints.: "Notation can be mixed, but units must always be described from largest to smallest, and can't be repeated. E.g., <strong>1 week 2 days 3′4″</strong> is <span class="txtGn">valid</span> and will be understood correctly, but <strong>3′4″ 1 week 2 days</strong> and <strong>3 hours 3h 3°</strong> are <span class="txtRd">invalid</span>. CIDRAM doesn't care whether you using spacing or not. Numbers must be plain and unformatted. For practicality, the largest supported unit is a week. When configuration is updated, CIDRAM normalises durations to arctime."
-hints_ipv6_on_32bit: "הערה: IPv6 lookups mightn't work correctly on some 32-bit systems."
+ SI.: "ניתן לתאר את משך הזמן באמצעות "מערכת היחידות הבינלאומית". למשל., <strong dir="ltr">1d2h3min4s</strong> או <strong dir="ltr">1d 2h 3min 4s</strong> ליום אחד, שעתיים, שלוש דקות, ארבע שניות, או <strong dir="ltr">5min</strong> לחמש דקות בלבד."
+ זמן זוויתי.: "ניתן לתאר את משך הזמן באמצעות זמן זוויתי. למשל., <strong dir="ltr">1d2°3′4″</strong> ליום אחד, שעתיים, שלוש דקות, ארבע שניות, או <strong dir="ltr">5″</strong> לחמש שניות בלבד."
+ אנגלית פשוטה.: "ניתן לתאר את משך הזמן על ידי כתיבת היחידות באנגלית פשוטה. למשל., <strong dir="ltr">1 week 2 days 3 hours 4 minutes 5 seconds</strong> למשך שבוע, יומיים, שלוש שעות, ארבע דקות, חמש שניות."
+ אילוצים.: "ניתן לערבב סימון, אבל תמיד יש לתאר יחידות מהגדול לקטן ביותר, ולא ניתן לחזור עליהן. למשל., <strong dir="ltr">1 week 2 days 3′4″</strong> <span class="txtGn">תקף</span> ויובן כהלכה, אבל <strong dir="ltr">3′4″ 1 week 2 days</strong> ו-<strong dir="ltr">3 hours 3h 3°</strong> <span class="txtRd">לא חוקיים</span>. ל-CIDRAM לא אכפת אם אתה משתמש במרווחים או לא. מספרים חייבים להיות פשוטים וללא פורמט. היחידה הנתמכת הגדולה ביותר היא שבוע. כאשר התצורה מתעדכנת, CIDRAM מנרמל משכי זמן לזמן זוויתי."
+hints_ipv6_on_32bit: "הערה: ייתכן שחיפושי IPv6 לא יפעלו כהלכה בחלק ממערכות 32 סיביות."
 hints_pdo_dsn:
- FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#HOW_TO_USE_PDO" hreflang="en-AU">What is a "PDO DSN"? How can I use PDO with CIDRAM?</a></em>"
+ שאלות נפוצות.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#HOW_TO_USE_PDO" hreflang="en-AU">מהו "PDO DSN"? כיצד להשתמש ב-PDO עם CIDRAM?</a></em>"
 hints_shorthand:
  0.: "If your website needs access via LAN or localhost, don't block this. Otherwise though, you can block this."
  1.: "None of the standard signature files use this, but it's supported nonetheless in case it might be useful for some users."
@@ -352,16 +353,16 @@ hints_shorthand:
  3.: "Direct usage in signatures isn't supported, but it may be invoked by other means in particular circumstances."
  4.: "Refers to cases where shorthand words aren't used at all, or aren't recognised by CIDRAM."
  One per signature.: "A signature may invoke multiple profiles, but can use only one shorthand word. It's possible that multiple shorthand words may be suitable, but as only one can be used, we aim to always use only the most suitable."
- Priority.: "An option selected always takes priority over an option not selected. E.g., if multiple shorthand words are in play but only one of them is set as being blocked, the request will still be blocked."
+ Priority.: "An option selected always takes priority over an option not selected. למשל., if multiple shorthand words are in play but only one of them is set as being blocked, the request will still be blocked."
  Human endpoints and cloud services.: "Cloud service may refer to webhosting providers, server farms, data centers, or any number of other things. Human endpoint refers to the means by which a human accesses the internet, such as by way of an internet service provider. A network usually provides just one or the other, but may sometimes provide both. We aim to never identify potential human endpoints as cloud services. Therefore, a cloud service may be identified as something else if its range is shared by known human endpoints. Conversely, we aim to always identify cloud services, whose ranges are not shared by any known human endpoints, as cloud services. Therefore, a request identified explicitly as a cloud service probably doesn't share its range with any known human endpoints. Likewise, a request identified explicitly by attacks or spam probably does. However, the internet is always in flux, the purposes of networks changes over time, and ranges are always being bought or sold, so remain cognisant and vigilant in regards to false positives."
 hints_verification:
- "What are "positives" and "negatives"?": "When verifying the identity presented by a request, a successful outcome could be described as "positive" or "negative". In the case that the identity presented is confirmed to be the true identity, it would be described as "positive". In the case that the identity presented is confirmed to be falsified, it would be described as "negative". However, an unsuccessful outcome (e.g., verification fails, or the veracity of the identity presented isn't able to be determined) would not be described as "positive" or "negative". Instead, an unsuccessful outcome would be described simply as non-verified. When no attempt to verify the identity presented by a request is made, the request would likewise be described as non-verified. The terms make sense only in the context where the identity presented by a request is recognised, and therefore, where verification is possible. In cases where the identity presented doesn't match the options provided above, or where no identity is presented, the options provided above become irrelevant."
+ "What are "positives" and "negatives"?": "When verifying the identity presented by a request, a successful outcome could be described as "positive" or "negative". In the case that the identity presented is confirmed to be the true identity, it would be described as "positive". In the case that the identity presented is confirmed to be falsified, it would be described as "negative". However, an unsuccessful outcome (למשל., verification fails, or the veracity of the identity presented isn't able to be determined) would not be described as "positive" or "negative". Instead, an unsuccessful outcome would be described simply as non-verified. When no attempt to verify the identity presented by a request is made, the request would likewise be described as non-verified. The terms make sense only in the context where the identity presented by a request is recognised, and therefore, where verification is possible. In cases where the identity presented doesn't match the options provided above, or where no identity is presented, the options provided above become irrelevant."
  "What are "single-hit bypasses"?": "In some cases, a positive-verified request may still blocked as a result of the signature files, modules, or other conditions of the request, and bypasses may be necessary in order to avoid false positives. In the case where a bypass is intended to deal with exactly one infraction, no more and no less, such a bypass could be described as a "single-hit bypass"."
 info_cli_by_default_ips: |
  As standard, IPs are tested against all signature files, all modules, all auxiliary rules, as well as verification for search engines and social media. However, you can optionally disable, on a per-IP basis, checking against modules with --no-mod, checking against auxiliary rules with --no-aux, and checking against verification for search engines and social media with --no-ssv, like so:
 info_cli_cidram_cli_mod: "CIDRAM CLI mode."
 info_cli_ipv4_ipv6_are_: |
- IPv4/IPv6 are both supported. Multiline input is possible for all CLI mode operations (e.g., to test multiple IP addresses in a single operation) by using quotes, like so:
+ IPv4/IPv6 are both supported. Multiline input is possible for all CLI mode operations (למשל., to test multiple IP addresses in a single operation) by using quotes, like so:
 info_cli_or_depending_o: "Or, depending on whether you'd prefer to chain first-to-last, or last-to-first:"
 info_cli_or_to_aggregat: "Or, to aggregate them as netmasks:"
 info_cli_or_using_comma: "Or, using commas instead of multilines (does exactly the same thing):"
@@ -536,7 +537,7 @@ label_range_tools: "Range tools"
 label_remember: "Remember"
 label_requests_all: "Every request.\nMore stringent and thorough, but also more likely to result in limits and quotas being met much more quickly, potentially resulting in being locked out of the service when it's most needed. Also, although lookup results are always cached regardless, it could still nonetheless negatively impact website performance in some cases. May be necessary in some cases, but not generally recommended."
 label_requests_none: "None.\nIf you want to use the module for reporting purposes only, without looking anything up, use this."
-label_requests_sensitive_pages: "Requests for sensitive pages only (e.g., login pages, registration forms, etc).\nLess stringent and thorough, but more conservative in terms of quotas and limits, and less likely to negatively impact performance. The recommended strategy in most cases."
+label_requests_sensitive_pages: "Requests for sensitive pages only (למשל., login pages, registration forms, etc).\nLess stringent and thorough, but more conservative in terms of quotas and limits, and less likely to negatively impact performance. The recommended strategy in most cases."
 label_results: "Results (%s in – %s rejected – %s accepted – %s merged – %s out):"
 label_sanity_check: "Sanity check:"
 label_sapi: "SAPI used:"
@@ -807,7 +808,7 @@ tip_updates: "Hello, {username}.<br />The updates page allows you to install, un
 title_login: "Login"
 warning_default_password: "אזהרה: Using the standard password!"
 warning_dry_run_mode: "אזהרה: Operating in dry run mode! While in dry run mode, requests are still checked and logged as block events as per usual, but nothing is blocked."
-warning_file_php: "אזהרה: Some webhosting security solutions have been known to automatically ban IP addresses upon detecting PHP tags within requests (e.g., when attempting to modify PHP files through a browser). CIDRAM has no means of knowing whether your webhosting service uses such a security solution. In order to avoid such problems, not editing PHP files in such a way is recommended when possible."
+warning_file_php: "אזהרה: Some webhosting security solutions have been known to automatically ban IP addresses upon detecting PHP tags within requests (למשל., when attempting to modify PHP files through a browser). CIDRAM has no means of knowing whether your webhosting service uses such a security solution. In order to avoid such problems, not editing PHP files in such a way is recommended when possible."
 warning_file_overwritten: "אזהרה: The file you're currently editing belongs to the component, "%s". Any changes made to this file are very likely to be overwritten the next time that component is updated."
 warning_ip_tests_disabled: "אזהרה: IP tests are disabled! Signature files can't be utilised until this is resolved."
 warning_javascript_required: "אזהרה: Some front-end functionality requires JavaScript. To ensure that the entire front-end behaves as expected, enabling JavaScript is recommended."

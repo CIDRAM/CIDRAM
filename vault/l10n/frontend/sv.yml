@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2022.10.29).
+# This file: Swedish language data for the front-end (last modified: 2022.11.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -208,6 +208,7 @@ config_rate_limiting_max_bandwidth: "Den maximala bandbreddsmängden som tillåt
 config_rate_limiting_max_requests: "Det maximala antalet förfrågningar som tillåts inom tillåten-perioden före hastighetsbegränsar framtida förfrågningar. Ett värde av 0 avaktiverar denna typ av hastighetsbegränsande. Standard = 0."
 config_rate_limiting_precision_ipv4: "Den precision som ska användas för att spåra IPv4-användning. Värdet speglar CIDR-blockstorleken. Ställ in till 32 för bästa precision. Standard = 32."
 config_rate_limiting_precision_ipv6: "Den precision som ska användas för att spåra IPv6-användning. Värdet speglar CIDR-blockstorleken. Ställ in till 128 för bästa precision. Standard = 128."
+config_rate_limiting_segregate: "Bör kvoter för olika domäner och värdar segregeras eller delas? True = Kvoter kommer att vara segregerade. False = Kvoter kommer att vara delas [Standard]."
 config_recaptcha: "Konfiguration för ReCaptcha (ger ett sätt för människor att återfå åtkomst när de blockeras)."
 config_recaptcha_api: *CaptchaAPI
 config_recaptcha_expiry: *CaptchaExpiry
@@ -334,10 +335,10 @@ hints_asnlookup: "** Kräver ASN-uppslagsfunktion (t.ex., via BGPView-modulen)."
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="en-AU">Vad kan jag använda för "default_dns"?</a></em>"
 hints_duration:
- SI.: "Duration can be described using the "International System of Units". E.g., <strong>1d2h3min4s</strong> or <strong>1d 2h 3min 4s</strong> for one day, two hours, three minutes, four seconds, or <strong>5min</strong> for just five minutes."
- Arctime.: "Duration can be described using arctime notation. E.g., <strong>1d2°3′4″</strong> for one day, two hours, three minutes, four seconds, or <strong>5″</strong> for just five seconds."
- Plain English.: "Duration can be described by writing the units in plain English. E.g., <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> for one week, two days, three hours, four minutes, five seconds."
- Constraints.: "Notation can be mixed, but units must always be described from largest to smallest, and can't be repeated. E.g., <strong>1 week 2 days 3′4″</strong> is <span class="txtGn">valid</span> and will be understood correctly, but <strong>3′4″ 1 week 2 days</strong> and <strong>3 hours 3h 3°</strong> are <span class="txtRd">invalid</span>. CIDRAM doesn't care whether you using spacing or not. Numbers must be plain and unformatted. For practicality, the largest supported unit is a week. When configuration is updated, CIDRAM normalises durations to arctime."
+ SI.: "Varaktighet kan beskrivas med hjälp av "International System of Units". T.ex., <strong>1d2h3min4s</strong> eller <strong>1d 2h 3min 4s</strong> för en dag, två timmar, tre minuter, fyra sekunder, eller <strong>5min</strong> för bara fem minuter."
+ Bågtid.: "Varaktighet kan beskrivas med bågtidsnotation. T.ex., <strong>1d2°3′4″</strong> för en dag, två timmar, tre minuter, fyra sekunder, eller <strong>5″</strong> för bara fem sekunder."
+ Vanlig engelska.: "Varaktighet kan beskrivas genom att skriva enheterna på vanlig engelska. T.ex., <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> för en vecka, två dagar, tre timmar, fyra minuter, fem sekunder."
+ Begränsningar.: "Notation kan blandas, men enheter måste alltid beskrivas från största till minsta, och kan inte upprepas. T.ex., <strong>1 week 2 days 3′4″</strong> är <span class="txtGn">giltigt</span> och kommer att förstås korrekt, men <strong>3′4″ 1 week 2 days</strong> och <strong>3 hours 3h 3°</strong> är <span class="txtRd">ogiltiga</span>. CIDRAM bryr sig inte om du använder mellanrum eller inte. Siffror måste vara enkla och oformaterade. För praktiska skull är den största enheten som stöds en vecka. När konfigurationen uppdateras, normaliserar CIDRAM varaktigheterna till bågtid."
 hints_ipv6_on_32bit: "Obs: IPv6-sökningar kanske inte fungerar korrekt på vissa 32-bitarssystem."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#HOW_TO_USE_PDO" hreflang="en-AU">Vad är en "PDO DSN"? Hur kan jag använda PDO med CIDRAM?</a></em>"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2022.10.29).
+# This file: Defaults file (last modified: 2022.11.05).
 ##/
 
 Config Defaults:
@@ -964,6 +964,9 @@ Config Defaults:
    choices:
     Whitelisted: "field_whitelisted_requests"
     Verified: "field_verified_requests"
+  segregate:
+   type: "bool"
+   default: false
  supplementary_cache_options:
   prefix:
    type: "string"

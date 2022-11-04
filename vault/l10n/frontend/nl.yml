@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2022.10.29).
+# This file: Dutch language data for the front-end (last modified: 2022.11.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -208,6 +208,7 @@ config_rate_limiting_max_bandwidth: "De maximale hoeveelheid toegestane bandbree
 config_rate_limiting_max_requests: "Het maximale aantal toegestane verzoeken binnen de toeslagperiode voordat de tarieflimiet voor toekomstige verzoeken wordt ingeschakeld. Een waarde van 0 schakelt dit type tarieflimiet uit. Standaard = 0."
 config_rate_limiting_precision_ipv4: "De precisie om te gebruiken bij het monitoren op het gebruik van IPv4. Waarde weerspiegelt de CIDR-blokgrootte. Stel in op 32 voor de beste precisie. Standaard = 32."
 config_rate_limiting_precision_ipv6: "De precisie om te gebruiken bij het monitoren op het gebruik van IPv6. Waarde weerspiegelt de CIDR-blokgrootte. Stel in op 128 voor de beste precisie. Standaard = 128."
+config_rate_limiting_segregate: "Moeten quota voor verschillende domeinen en hosts worden gescheiden of gedeeld? True = Quota zullen worden gescheiden. False = Quota zullen worden gedeeld [Standaard]."
 config_recaptcha: "Configuratie voor ReCaptcha (biedt een manier voor mensen om toegang te krijgen wanneer ze worden geblokkeerd)."
 config_recaptcha_api: *CaptchaAPI
 config_recaptcha_expiry: *CaptchaExpiry
@@ -336,10 +337,10 @@ hints_asnlookup: "** Vereist ASN-opzoekfunctionaliteit (b.v., via de BGPView-mod
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.nl.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="nl">Wat kan ik gebruiken voor "default_dns"?</a></em>"
 hints_duration:
- SI.: "Duration can be described using the "International System of Units". E.g., <strong>1d2h3min4s</strong> or <strong>1d 2h 3min 4s</strong> for one day, two hours, three minutes, four seconds, or <strong>5min</strong> for just five minutes."
- Arctime.: "Duration can be described using arctime notation. E.g., <strong>1d2°3′4″</strong> for one day, two hours, three minutes, four seconds, or <strong>5″</strong> for just five seconds."
- Plain English.: "Duration can be described by writing the units in plain English. E.g., <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> for one week, two days, three hours, four minutes, five seconds."
- Constraints.: "Notation can be mixed, but units must always be described from largest to smallest, and can't be repeated. E.g., <strong>1 week 2 days 3′4″</strong> is <span class="txtGn">valid</span> and will be understood correctly, but <strong>3′4″ 1 week 2 days</strong> and <strong>3 hours 3h 3°</strong> are <span class="txtRd">invalid</span>. CIDRAM doesn't care whether you using spacing or not. Numbers must be plain and unformatted. For practicality, the largest supported unit is a week. When configuration is updated, CIDRAM normalises durations to arctime."
+ SI.: "Duur kan worden beschreven met behulp van het "International System of Units". B.v., <strong>1d2h3min4s</strong> of <strong>1d 2h 3min 4s</strong> voor één dag, twee uur, drie minuten, vier seconden, of <strong>5min</strong> voor slechts vijf minuten."
+ Boogtijd.: "Duur kan worden beschreven met behulp van boogtijdnotatie. B.v., <strong>1d2°3′4″</strong> voor één dag, twee uur, drie minuten, vier seconden, of <strong>5″</strong> voor slechts vijf seconden."
+ Normaal Engels.: "De duur kan worden beschreven door de eenheden in normaal Engels te schrijven. B.v., <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> voor een week, twee dagen, drie uur, vier minuten, vijf seconden."
+ Beperkingen.: "Notatie kan worden gemengd, maar eenheden moeten altijd van groot naar klein worden beschreven, en kunnen niet worden herhaald. B.v., <strong>1 week 2 days 3′4″</strong> is <span class="txtGn">geldig</span> en zal correct worden begrepen, maar <strong>3′4″ 1 week 2 days</strong> en <strong>3 hours 3h 3°</strong> zijn <span class="txtRd">ongeldig</span>. Het maakt CIDRAM niet uit of u spaties gebruikt of niet. Nummers moeten duidelijk en ongeformatteerd zijn. De grootste ondersteunde eenheid is een week. Wanneer de configuratie wordt bijgewerkt, normaliseert CIDRAM de duur naar boogtijd."
 hints_ipv6_on_32bit: "Opmerking: IPv6-opzoeken mogelijk werken niet correct op sommige 32-bits systemen."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.nl.md\#HOW_TO_USE_PDO" hreflang="nl">Wat is een "PDO DSN"? Hoe kan ik PDO gebruiken met CIDRAM?</a></em>"

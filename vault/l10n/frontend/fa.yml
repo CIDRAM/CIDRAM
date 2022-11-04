@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Farsi language data for the front (last modified: 2022.10.29).
+# This file: Farsi language data for the front (last modified: 2022.11.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -208,6 +208,7 @@ config_rate_limiting_max_bandwidth: "حداکثر مقدار پهنای باند
 config_rate_limiting_max_requests: "حداکثر تعداد درخواست‌های مجاز در دوره کمک هزینه قبل از محدود کردن نرخ درخواست‌های آینده. مقدار 0 این نوع محدودیت نرخ را غیرفعال می کند. پیش فرض = 0."
 config_rate_limiting_precision_ipv4: "دقت مورد استفاده برای ردیابی استفاده از IPv4. ارزش منعکس کننده اندازه بلوک CIDR است. برای بهترین دقت روی 32 تنظیم کنید. پیش فرض = 32."
 config_rate_limiting_precision_ipv6: "دقت مورد استفاده برای ردیابی استفاده از IPv6. ارزش منعکس کننده اندازه بلوک CIDR است. برای بهترین دقت روی 128 تنظیم کنید. پیش فرض = 128."
+config_rate_limiting_segregate: "آیا سهمیه ها برای دامنه ها و هاست های مختلف باید جدا شوند یا به اشتراک گذاشته شوند؟ True = سهمیه ها تفکیک خواهد شد. False = سهمیه ها به اشتراک گذاشته می شود [پیش فرض]."
 config_recaptcha: "پیکربندی برای ReCaptcha (راهی را برای انسان ها فراهم می کند تا در صورت مسدود شدن، دوباره دسترسی پیدا کنند)."
 config_recaptcha_api: *CaptchaAPI
 config_recaptcha_expiry: *CaptchaExpiry
@@ -334,10 +335,10 @@ hints_asnlookup: "** به عملکرد جستجوی ASN نیاز دارد (به 
 hints_default_dns:
  سوالات متداول.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="en-AU">برای «default_dns» از چه چیزی می توانم استفاده کنم؟</a></em>"
 hints_duration:
- SI.: "Duration can be described using the "International System of Units". E.g., <strong>1d2h3min4s</strong> or <strong>1d 2h 3min 4s</strong> for one day, two hours, three minutes, four seconds, or <strong>5min</strong> for just five minutes."
- Arctime.: "Duration can be described using arctime notation. E.g., <strong>1d2°3′4″</strong> for one day, two hours, three minutes, four seconds, or <strong>5″</strong> for just five seconds."
- Plain English.: "Duration can be described by writing the units in plain English. E.g., <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> for one week, two days, three hours, four minutes, five seconds."
- Constraints.: "Notation can be mixed, but units must always be described from largest to smallest, and can't be repeated. E.g., <strong>1 week 2 days 3′4″</strong> is <span class="txtGn">valid</span> and will be understood correctly, but <strong>3′4″ 1 week 2 days</strong> and <strong>3 hours 3h 3°</strong> are <span class="txtRd">invalid</span>. CIDRAM doesn't care whether you using spacing or not. Numbers must be plain and unformatted. For practicality, the largest supported unit is a week. When configuration is updated, CIDRAM normalises durations to arctime."
+ SI.: "مدت زمان را می توان با استفاده از "سیستم بین المللی واحدها" توصیف کرد. به عنوان مثال، <strong dir="ltr">1d2h3min4s</strong> یا <strong dir="ltr">1d 2h 3min 4s</strong> برای نشان دادن یک روز، دو ساعت، سه دقیقه، چهار ثانیه، یا <strong dir="ltr">5min</strong> برای نشان دادن فقط پنج دقیقه."
+ زمان زاویه ای.: "مدت زمان را می توان با استفاده از زمان زاویه ای توصیف کرد. به عنوان مثال، <strong dir="ltr">1d2°3′4″</strong> برای نشان دادن یک روز، دو ساعت، سه دقیقه، چهار ثانیه، یا <strong dir="ltr">5″</strong> برای نشان دادن فقط پنج ثانیه."
+ انگلیسی ساده.: "مدت زمان را می توان با نوشتن واحدها به زبان انگلیسی ساده توصیف کرد. به عنوان مثال، <strong dir="ltr">1 week 2 days 3 hours 4 minutes 5 seconds</strong> برای نشان دادن یک هفته، دو روز، سه ساعت، چهار دقیقه، پنج ثانیه."
+ محدودیت ها.: "نمادگذاری را می توان مخلوط کرد، اما واحدها همیشه باید از بزرگترین به کوچک ترین توصیف شوند، و نمی توان آنها را تکرار کرد. به عنوان مثال، <strong dir="ltr">1 week 2 days 3′4″</strong> <span class="txtGn">معتبر</span> است و به درستی درک خواهد شد، اما <strong dir="ltr">3′4″ 1 week 2 days</strong> و <strong dir="ltr">3 hours 3h 3°</strong> <span class="txtRd">نامعتبر</span> هستند. CIDRAM اهمیتی نمی دهد که از فاصله استفاده می کنید یا نه. اعداد باید ساده و بدون قالب باشند. برای عملی بودن، بزرگترین واحد پشتیبانی شده یک هفته است. هنگامی که پیکربندی به روز می شود، CIDRAM مدت زمان را به زمان زاویه ای عادی می کند."
 hints_ipv6_on_32bit: "توجه داشته باشید: جستجوی IPv6 ممکن است در برخی از سیستم های 32 بیتی به درستی کار نکند."
 hints_pdo_dsn:
  سوالات متداول.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#HOW_TO_USE_PDO" hreflang="en-AU">«PDO DSN» چیست؟ چگونه می توانم از PDO با CIDRAM استفاده کنم؟</a></em>"

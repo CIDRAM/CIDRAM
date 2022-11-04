@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2022.10.29).
+# This file: Urdu language data for the front-end (last modified: 2022.11.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -208,6 +208,7 @@ config_rate_limiting_max_bandwidth: "بینڈوڈتھ کی زیادہ سے زی�
 config_rate_limiting_max_requests: "الاؤنس کی مدت کے اندر اندر زیادہ سے زیادہ درخواستوں کی اجازت دی گئی ہے. جب سے تجاوز کی گئی، مستقبل کی درخواستوں کی شرح محدود ہے. جب 0، اس قسم کی محدود استعمال نہیں کی جائے گی. پہلے سے طے شدہ = 0."
 config_rate_limiting_precision_ipv4: "IPv4 استعمال کی نگرانی کرتے وقت استعمال کرنے کی صحت سے متعلق. قیمت CIDR بلاک سائز کی عکاسی کرتا ہے. بہترین صحت سے متعلق کے لئے 32 پر مقرر کریں. پہلے سے طے شدہ = 32."
 config_rate_limiting_precision_ipv6: "IPv6 استعمال کی نگرانی کرتے وقت استعمال کرنے کی صحت سے متعلق. قیمت CIDR بلاک سائز کی عکاسی کرتا ہے. بہترین صحت سے متعلق کے لئے 128 پر مقرر کریں. پہلے سے طے شدہ = 128."
+config_rate_limiting_segregate: "کیا مختلف ڈومینز اور میزبانوں کے کوٹوں کو الگ یا شیئر کیا جانا چاہیے؟ True = کوٹے الگ کیے جائیں گے. False = کوٹے شیئر کیے جائیں گے [پہلے سے طے شدہ]."
 config_recaptcha: "ReCaptcha کی ترتیبات (بلاک ہونے پر انسانوں کو دوبارہ رسائی حاصل کرنے کا ایک راستہ فراہم کرتا ہے)."
 config_recaptcha_api: *CaptchaAPI
 config_recaptcha_expiry: *CaptchaExpiry
@@ -334,10 +335,10 @@ hints_asnlookup: "** ASN تلاش کی فعالیت کی ضرورت ہے (مثا
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.ur.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="ur">میں "default_dns" کے لئے کیا استعمال کر سکتا ہوں؟</a></em>"
 hints_duration:
- SI.: "Duration can be described using the "International System of Units". E.g., <strong>1d2h3min4s</strong> or <strong>1d 2h 3min 4s</strong> for one day, two hours, three minutes, four seconds, or <strong>5min</strong> for just five minutes."
- Arctime.: "Duration can be described using arctime notation. E.g., <strong>1d2°3′4″</strong> for one day, two hours, three minutes, four seconds, or <strong>5″</strong> for just five seconds."
- Plain English.: "Duration can be described by writing the units in plain English. E.g., <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> for one week, two days, three hours, four minutes, five seconds."
- Constraints.: "Notation can be mixed, but units must always be described from largest to smallest, and can't be repeated. E.g., <strong>1 week 2 days 3′4″</strong> is <span class="txtGn">valid</span> and will be understood correctly, but <strong>3′4″ 1 week 2 days</strong> and <strong>3 hours 3h 3°</strong> are <span class="txtRd">invalid</span>. CIDRAM doesn't care whether you using spacing or not. Numbers must be plain and unformatted. For practicality, the largest supported unit is a week. When configuration is updated, CIDRAM normalises durations to arctime."
+ SI.: "مدت کو "انٹرنیشنل سسٹم آف یونٹس" کا استعمال کرتے ہوئے بیان کیا جا سکتا ہے. جیسے، ایک دن، دو گھنٹے، تین منٹ، چار سیکنڈ کے لیے <strong dir="ltr">1d2h3min4s</strong> یا <strong dir="ltr">1d 2h 3min 4s</strong> کا استعمال کریں، یا صرف پانچ منٹ کے لیے <strong dir="ltr">5min</strong> کا استعمال کریں."
+ آرک ٹائم.: "دورانیہ کو آرک ٹائم اشارے کا استعمال کرتے ہوئے بیان کیا جا سکتا ہے. جیسے، ایک دن، دو گھنٹے، تین منٹ، چار سیکنڈ کے لیے <strong dir="ltr">1d2°3′4″</strong> کا استعمال کریں، یا صرف پانچ سیکنڈ کے لیے <strong dir="ltr">5″</strong> کا استعمال کریں."
+ سادہ انگریزی.: "مدت کو سادہ انگریزی میں یونٹ لکھ کر بیان کیا جا سکتا ہے. جیسے، ایک ہفتہ، دو دن، تین گھنٹے، چار منٹ، پانچ سیکنڈ کے لیے <strong dir="ltr">1 week 2 days 3 hours 4 minutes 5 seconds</strong> کا استعمال کریں."
+ حدود.: "اشارے کو ملایا جا سکتا ہے، لیکن اکائیوں کو ہمیشہ بڑے سے چھوٹے تک بیان کیا جانا چاہیے، اور اسے دہرایا نہیں جا سکتا. جیسے، <strong dir="ltr">1 week 2 days 3′4″</strong> <span class="txtGn">درست</span> ہے اور صحیح طور پر سمجھا جائے گا، لیکن <strong dir="ltr">3′4″ 1 week 2 days</strong> اور <strong dir="ltr">3 hours 3h 3°</strong> <span class="txtRd">غلط</span> ہیں. CIDRAM کو پرواہ نہیں ہے کہ آیا آپ وقفہ کاری کا استعمال کرتے ہیں یا نہیں. نمبر سادہ اور غیر فارمیٹ ہونے چاہئیں. عملی طور پر، سب سے بڑا تعاون یافتہ یونٹ ایک ہفتہ ہے۔ جب کنفیگریشن کو اپ ڈیٹ کیا جاتا ہے، CIDRAM دورانیے کو آرک ٹائم میں معمول بناتا ہے."
 hints_ipv6_on_32bit: "نوٹ: ہو سکتا ہے IPv6 تلاش کچھ 32 بٹ سسٹمز پر صحیح طریقے سے کام نہ کرے."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.ur.md\#HOW_TO_USE_PDO" hreflang="ur">"PDO DSN" کیا ہے؟ میں CIDRAM کے ساتھ PDO کیسے استعمال کرسکتا ہوں؟</a></em>"

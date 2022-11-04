@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2022.10.29).
+ * This file: The CIDRAM core (last modified: 2022.11.05).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -2442,14 +2442,16 @@ class Core
      */
     public function rateLimitFetch(): void
     {
+        $SourceName = ($this->Configuration['rate_limiting']['segregate'] && $this->CIDRAM['HTTP_HOST'] !== '') ? 'rl-' . $this->CIDRAM['HTTP_HOST'] : 'rl';
+
         /** Override if using a different preferred caching mechanism. */
         if ($this->Cache->Using && $this->Cache->Using !== 'FF') {
-            $this->CIDRAM['RL_Data'] = $this->Cache->getEntry('rl');
+            $this->CIDRAM['RL_Data'] = $this->Cache->getEntry($SourceName);
             return;
         }
 
         /** Default process. */
-        $this->CIDRAM['RL_Data'] = $this->readFile($this->Vault . 'rl.dat');
+        $this->CIDRAM['RL_Data'] = $this->readFile($this->Vault . $SourceName . '.dat');
     }
 
     /**
@@ -2461,18 +2463,19 @@ class Core
      */
     public function rateLimitWriteEvent(string $RL_Capture, int $RL_Size): void
     {
+        $SourceName = ($this->Configuration['rate_limiting']['segregate'] && $this->CIDRAM['HTTP_HOST'] !== '') ? 'rl-' . $this->CIDRAM['HTTP_HOST'] : 'rl';
         $TimePacked = pack('l*', $this->Now);
         $SizePacked = pack('l*', $RL_Size);
         $Data = $TimePacked . $SizePacked . $RL_Capture;
 
         /** Override if using a different preferred caching mechanism. */
         if ($this->Cache->Using && $this->Cache->Using !== 'FF') {
-            $this->Cache->setEntry('rl', $this->CIDRAM['RL_Data'] . $Data, $this->Configuration['rate_limiting']['allowance_period']->getAsSeconds());
+            $this->Cache->setEntry($SourceName, $this->CIDRAM['RL_Data'] . $Data, $this->Configuration['rate_limiting']['allowance_period']->getAsSeconds());
             return;
         }
 
         /** Default process. */
-        $Handle = fopen($this->Vault . 'rl.dat', 'ab');
+        $Handle = fopen($this->Vault . $SourceName . '.dat', 'ab');
         fwrite($Handle, $Data);
         fclose($Handle);
     }
@@ -2505,18 +2508,19 @@ class Core
             $Pos += 4 + $Block[1];
         }
         if ($Pos) {
+            $SourceName = ($this->Configuration['rate_limiting']['segregate'] && $this->CIDRAM['HTTP_HOST'] !== '') ? 'rl-' . $this->CIDRAM['HTTP_HOST'] : 'rl';
             if ($this->CIDRAM['RL_Data']) {
                 $this->CIDRAM['RL_Data'] = substr($this->CIDRAM['RL_Data'], $Pos);
             }
 
             /** Override if using a different preferred caching mechanism. */
             if ($this->Cache->Using && $this->Cache->Using !== 'FF') {
-                $this->Cache->setEntry('rl', $this->CIDRAM['RL_Data'], $this->Configuration['rate_limiting']['allowance_period']->getAsSeconds());
+                $this->Cache->setEntry($SourceName, $this->CIDRAM['RL_Data'], $this->Configuration['rate_limiting']['allowance_period']->getAsSeconds());
                 return;
             }
 
             /** Default process. */
-            $Handle = fopen($this->Vault . 'rl.dat', 'wb');
+            $Handle = fopen($this->Vault . $SourceName . '.dat', 'wb');
             fwrite($Handle, $this->CIDRAM['RL_Data']);
             fclose($Handle);
         }

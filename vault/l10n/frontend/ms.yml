@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malay language data for the front-end (last modified: 2022.10.29).
+# This file: Malay language data for the front-end (last modified: 2022.11.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -208,6 +208,7 @@ config_rate_limiting_max_bandwidth: "Jumlah maksimum lebar jalur yang dibenarkan
 config_rate_limiting_max_requests: "Jumlah maksimum permintaan yang dibenarkan dalam tempoh elaun sebelum kadar mengehadkan permintaan masa hadapan. Nilai 0 nyahaktifkan pengehadan kadar jenis ini. Lalai = 0."
 config_rate_limiting_precision_ipv4: "Ketepatan yang digunakan untuk menjejaki penggunaan IPv4. Nilai mencerminkan saiz blok CIDR. Tetapkan kepada 32 untuk ketepatan terbaik. Lalai = 32."
 config_rate_limiting_precision_ipv6: "Ketepatan yang digunakan untuk menjejaki penggunaan IPv6. Nilai mencerminkan ukuran blok CIDR. Tetapkan kepada 128 untuk ketepatan terbaik. Lalai = 128."
+config_rate_limiting_segregate: "Patutkah kuota untuk domain dan hos yang berbeza dipisahkan atau dikongsi? True = Kuota akan diasingkan. False = Kuota akan dikongsi [Lalai]."
 config_recaptcha: "Konfigurasi untuk ReCaptcha (menyediakan cara untuk manusia mendapatkan semula akses apabila disekat)."
 config_recaptcha_api: *CaptchaAPI
 config_recaptcha_expiry: *CaptchaExpiry
@@ -334,10 +335,10 @@ hints_asnlookup: "** Memerlukan kefungsian carian ASN (cth., melalui modul BGPVi
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.id.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="id">Apakah yang boleh saya gunakan untuk "default_dns"?</a></em>"
 hints_duration:
- SI.: "Duration can be described using the "International System of Units". E.g., <strong>1d2h3min4s</strong> or <strong>1d 2h 3min 4s</strong> for one day, two hours, three minutes, four seconds, or <strong>5min</strong> for just five minutes."
- Arctime.: "Duration can be described using arctime notation. E.g., <strong>1d2°3′4″</strong> for one day, two hours, three minutes, four seconds, or <strong>5″</strong> for just five seconds."
- Plain English.: "Duration can be described by writing the units in plain English. E.g., <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> for one week, two days, three hours, four minutes, five seconds."
- Constraints.: "Notation can be mixed, but units must always be described from largest to smallest, and can't be repeated. E.g., <strong>1 week 2 days 3′4″</strong> is <span class="txtGn">valid</span> and will be understood correctly, but <strong>3′4″ 1 week 2 days</strong> and <strong>3 hours 3h 3°</strong> are <span class="txtRd">invalid</span>. CIDRAM doesn't care whether you using spacing or not. Numbers must be plain and unformatted. For practicality, the largest supported unit is a week. When configuration is updated, CIDRAM normalises durations to arctime."
+ SI.: "Tempoh boleh diterangkan menggunakan "Sistem Unit Antarabangsa". Cth., <strong>1d2h3min4s</strong> atau <strong>1d 2h 3min 4s</strong> untuk satu hari, dua jam, tiga minit, empat saat, atau <strong>5min</strong> untuk lima minit sahaja."
+ Tatatanda arka.: "Tempoh boleh diterangkan menggunakan tatatanda arka. Cth., <strong>1d2°3′4″</strong> untuk satu hari, dua jam, tiga minit, empat saat, atau <strong>5″</strong> untuk lima saat sahaja."
+ Bahasa Inggeris biasa.: "Tempoh boleh diterangkan dengan menulis unit dalam bahasa Inggeris biasa. Cth., <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> untuk satu minggu, dua hari, tiga jam, empat minit, lima saat."
+ Kekangan.: "Notasi boleh dicampur, tetapi unit mesti sentiasa diterangkan daripada terbesar hingga terkecil, dan tidak boleh diulang. Cth., <strong>1 week 2 days 3′4″</strong> adalah <span class="txtGn">sah</span> dan akan difahami dengan betul, tetapi <strong>3′4″ 1 week 2 days</strong> dan <strong>3 hours 3h 3°</strong> adalah <span class="txtRd">tidak sah</span>. CIDRAM tidak peduli sama ada anda menggunakan ruang atau tidak. Nombor mestilah biasa dan tidak berformat. Untuk kepraktisan, unit sokongan yang terbesar ialah seminggu. Apabila konfigurasi dikemas kini, CIDRAM menormalkan tempoh kepada tatatanda arka."
 hints_ipv6_on_32bit: "Nota: Carian IPv6 mungkin tidak berfungsi dengan betul pada sesetengah sistem 32-bit."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.id.md\#HOW_TO_USE_PDO" hreflang="id">Apakah itu "PDO DSN"? Bagaimanakah saya boleh menggunakan PDO dengan CIDRAM?</a></em>"

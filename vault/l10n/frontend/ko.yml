@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2022.10.29).
+# This file: Korean language data for the front-end (last modified: 2022.11.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -208,6 +208,7 @@ config_rate_limiting_max_bandwidth: "향후 요청에 대해 속도 제한을 �
 config_rate_limiting_max_requests: "향후 요청에 대해 속도 제한을 사용하도록 설정하기 전에 허용 기간 내에 허용되는 최대 요청 수입니다. 0 값은 이러한 유형의 속도 제한을 비활성화합니다. Default (기본 설정) = 0."
 config_rate_limiting_precision_ipv4: "IPv4 사용을 모니터링 할 때 사용할 정밀도입니다. 값은 CIDR 블록 크기와 동일합니다. 최상의 정밀도를 위해 32로 설정하십시오. Default (기본 설정) = 32."
 config_rate_limiting_precision_ipv6: "IPv6 사용을 모니터링 할 때 사용할 정밀도입니다. 값은 CIDR 블록 크기와 동일합니다. 최상의 정밀도를 위해 128로 설정하십시오. Default (기본 설정) = 128."
+config_rate_limiting_segregate: "서로 다른 도메인과 호스트에 대한 할당량을 분리하거나 공유해야 합니까? True = 할당량이 분리됩니다. False = 할당량이 공유됩니다 (Default / 기본 설정)."
 config_recaptcha: "ReCaptcha 설정 (차단될 때 사람이 다시 액세스할 수 있는 방법을 제공합니다)."
 config_recaptcha_api: *CaptchaAPI
 config_recaptcha_expiry: *CaptchaExpiry
@@ -334,10 +335,10 @@ hints_asnlookup: "** ASN 조회 기능이 필요합니다 (예\_: BGPView 모듈
 hints_default_dns:
  자주하는 질문.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.ko.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="ko">"default_dns"에 사용할 수있는 항목은 무엇입니까?</a></em>"
 hints_duration:
- SI.: "Duration can be described using the "International System of Units". E.g., <strong>1d2h3min4s</strong> or <strong>1d 2h 3min 4s</strong> for one day, two hours, three minutes, four seconds, or <strong>5min</strong> for just five minutes."
- Arctime.: "Duration can be described using arctime notation. E.g., <strong>1d2°3′4″</strong> for one day, two hours, three minutes, four seconds, or <strong>5″</strong> for just five seconds."
- Plain English.: "Duration can be described by writing the units in plain English. E.g., <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> for one week, two days, three hours, four minutes, five seconds."
- Constraints.: "Notation can be mixed, but units must always be described from largest to smallest, and can't be repeated. E.g., <strong>1 week 2 days 3′4″</strong> is <span class="txtGn">valid</span> and will be understood correctly, but <strong>3′4″ 1 week 2 days</strong> and <strong>3 hours 3h 3°</strong> are <span class="txtRd">invalid</span>. CIDRAM doesn't care whether you using spacing or not. Numbers must be plain and unformatted. For practicality, the largest supported unit is a week. When configuration is updated, CIDRAM normalises durations to arctime."
+ SI.: "기간은 "국제단위계"를 사용하여 설명할 수 있습니다. 예를 들어, 1일, 2시간, 3분, 4초 하기 위해 <strong>1d2h3min4s</strong> 또는 <strong>1d 2h 3min 4s</strong>를 사용하고, 단 5분만 하기 위해 <strong>5min</strong>를 사용합니다."
+ 아크타임.: "기간은 아크타임 표기법을 사용하여 설명할 수 있습니다. 예를 들어, 1일, 2시간, 3분, 4초 하기 위해 <strong>1d2°3′4″</strong>를 사용하고, 단 5초 하기 위해 <strong>5″</strong>를 사용합니다."
+ 평범한 영어.: "기간은 일반 영어로 단위를 작성하여 설명할 수 있습니다. 예를 들어, 1주, 2일, 3시간, 4분, 5초 하기 위해 <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong>를 사용합니다."
+ 제약.: "표기법은 혼합될 수, 있지만 단위는 항상 가장 큰 것에서 가장 작은 것으로 설명되어야, 하며 반복될 수 없습니다. 예를 들어, <strong>1 week 2 days 3′4″</strong>는 <span class="txtGn">유효하</span>고 올바르게 이해되지만, <strong>3′4″ 1 week 2 days</strong>와 <strong>3 hours 3h 3°</strong>는 <span class="txtRd">유효하지 않습니다</span>. CIDRAM은 공백을 사용하는지 여부를 신경 쓰지 않습니다. 숫자는 형식이 지정되지 않아야 합니다. 실용성을 위해, 지원되는 최대 단위는 일주일입니다. 구성이 업데이트되면, CIDRAM은 지속 시간을 아크타임으로 정규화합니다."
 hints_ipv6_on_32bit: "참고\_: IPv6 조회는 일부 32비트 시스템에서 제대로 작동하지 않을 수 있습니다."
 hints_pdo_dsn:
  자주하는 질문.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.ko.md\#HOW_TO_USE_PDO" hreflang="ko">"PDO DSN"은 무엇입니까? CIDRAM과 함께 PDO를 사용하려면 어떻게해야합니까?</a></em>"

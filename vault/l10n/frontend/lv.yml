@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2022.10.29).
+# This file: Latvian language data for the front-end (last modified: 2022.11.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -208,6 +208,7 @@ config_rate_limiting_max_bandwidth: "Maksimālais pieļaujamais joslas platuma a
 config_rate_limiting_max_requests: "Maksimālais atļauto pieprasījumu skaits kvotu periodā pirms ierobežot pieprasījumus nākotnē. Vērtība 0 atspējo šāda veida ierobežošanu. Noklusējuma = 0."
 config_rate_limiting_precision_ipv4: "IPv4 lietošanas izsekošanas precizitāte. Vērtības spoguļi CIDR bloka izmērs. Iestatiet uz 32 vislabākajai precizitātei. Noklusējuma = 32."
 config_rate_limiting_precision_ipv6: "IPv6 lietošanas izsekošanas precizitāte. Vērtības spoguļi CIDR bloka izmērs. Iestatiet uz 128 vislabākajai precizitātei. Noklusējuma = 128."
+config_rate_limiting_segregate: "Vai kvotas dažādiem domēniem un resursdatoriem ir jānodala vai jādala? True = Kvotas tiks atdalīts. False = Kvotas tiks dalītas [Noklusējuma]."
 config_recaptcha: "ReCaptcha konfigurācija (nodrošina veidu, kā cilvēki var atgūt piekļuvi, kad tā ir bloķēta)."
 config_recaptcha_api: *CaptchaAPI
 config_recaptcha_expiry: *CaptchaExpiry
@@ -337,10 +338,10 @@ hints_asnlookup: "** Nepieciešama ASN uzmeklēšanas funkcionalitāte (piemēra
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="en-AU">Ko es varu izmantot “default_dns”-m?</a></em>"
 hints_duration:
- SI.: "Duration can be described using the "International System of Units". E.g., <strong>1d2h3min4s</strong> or <strong>1d 2h 3min 4s</strong> for one day, two hours, three minutes, four seconds, or <strong>5min</strong> for just five minutes."
- Arctime.: "Duration can be described using arctime notation. E.g., <strong>1d2°3′4″</strong> for one day, two hours, three minutes, four seconds, or <strong>5″</strong> for just five seconds."
- Plain English.: "Duration can be described by writing the units in plain English. E.g., <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> for one week, two days, three hours, four minutes, five seconds."
- Constraints.: "Notation can be mixed, but units must always be described from largest to smallest, and can't be repeated. E.g., <strong>1 week 2 days 3′4″</strong> is <span class="txtGn">valid</span> and will be understood correctly, but <strong>3′4″ 1 week 2 days</strong> and <strong>3 hours 3h 3°</strong> are <span class="txtRd">invalid</span>. CIDRAM doesn't care whether you using spacing or not. Numbers must be plain and unformatted. For practicality, the largest supported unit is a week. When configuration is updated, CIDRAM normalises durations to arctime."
+ SI.: "Ilgumu var aprakstīt, izmantojot “Starptautisko mērvienību sistēmu”. Piemēram, <strong>1d2h3min4s</strong> vai <strong>1d 2h 3min 4s</strong> vienu dienu, divas stundas, trīs minūtes, četras sekundes, vai <strong>5min</strong> tikai piecas minūtes."
+ Loka laiks.: "Ilgumu var aprakstīt, izmantojot loka laika apzīmējumu. Piemēram, <strong>1d2°3′4″</strong> vienu dienu, divas stundas, trīs minūtes, četras sekundes, vai <strong>5″</strong> tikai piecas sekundes."
+ Vienkārša angļu valoda.: "Ilgumu var aprakstīt, ierakstot vienības vienkāršā angļu valodā. Piemēram, <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> vienu nedēļu, divas dienas, trīs stundas, četras minūtes, piecas sekundes."
+ Ierobežojumi.: "Apzīmējumus var jaukt, taču vienības vienmēr jāapraksta no lielākās līdz mazākajai, un tās nevar atkārtot. Piemēram, <strong>1 week 2 days 3′4″</strong> ir <span class="txtGn">derīgs</span> un tiks pareizi saprasts, bet <strong>3′4″ 1 week 2 days</strong> un <strong>3 hours 3h 3°</strong> ir <span class="txtRd">nav derīgi</span>. CIDRAM ir vienalga, vai izmantojat atstarpes. Cipariem jābūt vienkāršiem un neformatētiem. Praktiskuma labad lielākā atbalstītā vienība ir nedēļa. Kad konfigurācija tiek atjaunināta, CIDRAM normalizē ilgumus uz loka laiku."
 hints_ipv6_on_32bit: "Piezīme: Dažās 32 bitu sistēmās IPv6 meklēšana var nedarboties pareizi."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#HOW_TO_USE_PDO" hreflang="en-AU">Kas ir "PDO DSN"? Kā es varu izmantot PDO ar CIDRAM?</a></em>"

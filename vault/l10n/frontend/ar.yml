@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2022.10.29).
+# This file: Arabic language data for the front-end (last modified: 2022.11.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -208,6 +208,7 @@ config_rate_limiting_max_bandwidth: "أقصى قدر من عرض النطاق ا
 config_rate_limiting_max_requests: "الحد الأقصى لعدد الطلبات المسموح بها خلال فترة السماح. عندما يتم تجاوزت، يتم تمكين حدود السعر للطلبات المستقبلية. تعمل القيمة 0 على تعطيل هذا النوع من تحديد السرعة. افتراضي = 0."
 config_rate_limiting_precision_ipv4: "الدقة المستخدمة عند مراقبة استخدام IPv4. قيمة تعكس حجم كتلة CIDR. تعيين إلى 32 للحصول على أفضل دقة. افتراضي = 32."
 config_rate_limiting_precision_ipv6: "الدقة المستخدمة عند مراقبة استخدام IPv6. قيمة تعكس حجم كتلة CIDR. تعيين إلى 128 للحصول على أفضل دقة. افتراضي = 128."
+config_rate_limiting_segregate: "هل يجب فصل أو مشاركة الحصص الخاصة بالمجالات والمضيفين المختلفين؟ True = سيتم فصل الحصص. False = سيتم تقاسم الحصص [افتراضي]."
 config_recaptcha: "التكوين ل ReCaptcha (يوفر وسيلة للبشر لاستعادة الوصول عند حجبه)."
 config_recaptcha_api: *CaptchaAPI
 config_recaptcha_expiry: *CaptchaExpiry
@@ -334,10 +335,10 @@ hints_asnlookup: "** يتطلب وظيفة بحث ASN (على سبيل المث�
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.ar.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="ar">ما الذي يمكنني استخدامه لـ "default_dns"؟</a></em>"
 hints_duration:
- SI.: "Duration can be described using the "International System of Units". E.g., <strong>1d2h3min4s</strong> or <strong>1d 2h 3min 4s</strong> for one day, two hours, three minutes, four seconds, or <strong>5min</strong> for just five minutes."
- Arctime.: "Duration can be described using arctime notation. E.g., <strong>1d2°3′4″</strong> for one day, two hours, three minutes, four seconds, or <strong>5″</strong> for just five seconds."
- Plain English.: "Duration can be described by writing the units in plain English. E.g., <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> for one week, two days, three hours, four minutes, five seconds."
- Constraints.: "Notation can be mixed, but units must always be described from largest to smallest, and can't be repeated. E.g., <strong>1 week 2 days 3′4″</strong> is <span class="txtGn">valid</span> and will be understood correctly, but <strong>3′4″ 1 week 2 days</strong> and <strong>3 hours 3h 3°</strong> are <span class="txtRd">invalid</span>. CIDRAM doesn't care whether you using spacing or not. Numbers must be plain and unformatted. For practicality, the largest supported unit is a week. When configuration is updated, CIDRAM normalises durations to arctime."
+ SI.: "يمكن وصف المدة باستخدام "النظام الدولي للوحدات". على سبيل المثال، <strong dir="ltr">1d2h3min4s</strong> أو <strong dir="ltr">1d 2h 3min 4s</strong> ليوم واحد، ساعتان، ثلاث دقائق، أربع ثوان، أو <strong dir="ltr">5min</strong> لمدة خمس دقائق فقط."
+ الوقت الزاوي.: "يمكن وصف المدة باستخدام الوقت الزاوي. على سبيل المثال، <strong dir="ltr">1d2°3′4″</strong> ليوم واحد، ساعتان، ثلاث دقائق، أربع ثوان، أو <strong dir="ltr">5″</strong> لمدة خمس ثوانٍ فقط."
+ لغة إنجليزية بسيطة.: "يمكن وصف المدة بكتابة الوحدات بلغة إنجليزية بسيطة. على سبيل المثال، <strong dir="ltr">1 week 2 days 3 hours 4 minutes 5 seconds</strong> لمدة أسبوع، يومين، ثلاث ساعات، أربع دقائق، خمس ثوان."
+ القيود.: "يمكن خلط الترميز، ولكن يجب دائمًا وصف الوحدات من الأكبر إلى الأصغر، ولا يمكن تكرارها. على سبيل المثال، <strong dir="ltr">1 week 2 days 3′4″</strong> <span class="txtGn">صالح</span> وسيتم فهمه بشكل صحيح، لكن <strong dir="ltr">3′4″ 1 week 2 days</strong> و <strong dir="ltr">3 hours 3h 3°</strong> <span class="txtRd">غير صالحين</span>. لا يهتم CIDRAM سواء كنت تستخدم التباعد أم لا. يجب أن تكون الأرقام عادية وغير منسقة. أكبر وحدة مدعومة هي أسبوع. عندما يتم تحديث التكوين، يتم تطبيع المدة إلى الوقت الزاوي."
 hints_ipv6_on_32bit: "ملاحظة: قد لا تعمل عمليات بحث IPv6 بشكل صحيح على بعض أنظمة 32 بت."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.ar.md\#HOW_TO_USE_PDO" hreflang="ar">ما هو "PDO DSN"؟ كيف يمكنني استخدام PDO مع CIDRAM؟</a></em>"

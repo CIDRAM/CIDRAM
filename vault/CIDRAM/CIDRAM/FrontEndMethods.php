@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2022.10.29).
+ * This file: General methods used by the front-end (last modified: 2022.11.05).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -783,7 +783,7 @@ trait FrontEndMethods
                 }
             }
             if (is_array($Value)) {
-                if ($Depth === 0) {
+                if ($Depth === 0 || ($Depth === 1 && isset($this->CIDRAM['ListGroups'][$ParentKey]))) {
                     $SizeField = $this->L10N->getString('field_size') ?: 'Size';
                     $Size = isset($Value['Data']) && is_string($Value['Data']) ? strlen($Value['Data']) : (
                         isset($Value[0]) && is_string($Value[0]) ? strlen($Value[0]) : false

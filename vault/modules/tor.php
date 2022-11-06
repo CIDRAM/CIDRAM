@@ -10,7 +10,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Tor blocker module (last modified: 2022.10.03).
+ * This file: Tor blocker module (last modified: 2022.11.06).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -24,6 +24,11 @@ if (!isset($this->CIDRAM['ModuleResCache'])) {
 $this->CIDRAM['ModuleResCache'][$Module] = function () {
     /** Guard. */
     if (empty($this->BlockInfo['IPAddr'])) {
+        return;
+    }
+
+    /** Don't waste time by looking up invalid, private, or reserved ranges. */
+    if (filter_var($this->BlockInfo['IPAddr'], FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE) === false) {
         return;
     }
 

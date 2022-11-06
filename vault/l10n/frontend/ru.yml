@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2022.11.05).
+# This file: Russian language data for the front-end (last modified: 2022.11.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -489,6 +489,8 @@ label_checksum_after: "Контрольная сумма после"
 label_checksum_before: "Контрольная сумма перед"
 label_cidram: "Используемая версия CIDRAM:"
 label_clientinfo: "Информация о клиенте:"
+label_current_data: "Current data."
+label_current_data_for: "Current data for "%s"."
 label_default: "Стандарт"
 label_dependencies: "Зависимости:"
 label_difference: "Разность множеств"
@@ -534,6 +536,7 @@ label_is_not_available: "%s недоступен."
 label_netmask: "Сетевая маска"
 label_never: "Никогда"
 label_next: "Следующий:"
+label_no_data_available: "No data available."
 label_os: "Используемая операционная система:"
 label_other: "Другие"
 label_other_active_events: "Активные события"
@@ -553,6 +556,9 @@ label_requests_all: "Каждый запрос.\nБолее строгий и т
 label_requests_none: "Ничего.\nЕсли вы хотите использовать модуль только для отчетов, ничего не ища, используйте это."
 label_requests_sensitive_pages: "Запросы только для конфиденциальных страниц (например, войти страницы, регистрационные формы, и т.д.).\nМенее строгий и тщательный, но более консервативный с точки зрения квот и ограничений, и с меньшей вероятностью негативно повлияет на производительность. Рекомендуемая стратегия в большинстве случаев."
 label_results: "Результаты (%s вход – %s отвергнуто – %s принято – %s слиты – %s вывод):"
+label_rl_bandwidth: "Bandwidth used: %s – Bandwidth available: %s"
+label_rl_requests: "Requests sent: %s – Requests available: %s"
+label_rl_when: "Newest record: %s – Oldest record: %s."
 label_sanity_check: "Проверка здоровья:"
 label_sapi: "Используемая SAPI:"
 label_sections_across_x_files:
@@ -604,6 +610,7 @@ link_ip_tracking: "Отслеживания IP"
 link_log_out: "Выйдите"
 link_logs: "Лог-Файлы"
 link_range: "Таблицы Диапазонов"
+link_rate_limiting: "Ограничения скорости"
 link_sections_list: "Списка Секций"
 link_statistics: "Статистика"
 link_subtractor: "Вычитатель"
@@ -829,6 +836,8 @@ tip_ip_tracking: "Привет, {username}.<br />Страница отслежи
 tip_logs: "Привет, {username}.<br />Выберите лог-файл из приведенного ниже списка чтобы прочитать содержимое лог-файл."
 tip_number_of_infractions: "Сколько нарушений применить."
 tip_range: "Привет, {username}.<br />На этой странице показана базовая статистическая информация о диапазонах IP, охватываемых активными сигнатурными файлами."
+tip_rate_limiting: "Привет, {username}.<br />На этой странице показано текущее использование и доступность квоты в отношении ограничения скорости."
+tip_rate_limiting_disabled: "Note: Rate limiting is currently disabled, but can be enabled via the configuration page."
 tip_sections_list: "Привет, {username}.<br />На этой странице перечислены секций, которые существуют в активных файлах сигнатур."
 tip_see_the_documentation: "Просмотреть <a href="https://github.com/CIDRAM/Docs/blob/master/readme.ru.md\#SECTION5" hreflang="ru" rel="noopener external">документации</a> для получения информации о различных директив конфигурации и их целей."
 tip_statistics: "Привет, {username}.<br />На этой странице показаны основные статистические данные об использовании вашей CIDRAM-инсталляция."

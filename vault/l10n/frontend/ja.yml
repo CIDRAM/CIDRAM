@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2022.11.05).
+# This file: Japanese language data for the front-end (last modified: 2022.11.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -484,6 +484,8 @@ label_checksum_after: "後のチェックサム"
 label_checksum_before: "前のチェックサム"
 label_cidram: "使用されたCIDRAMバージョン："
 label_clientinfo: "クライアント情報："
+label_current_data: "Current data."
+label_current_data_for: "Current data for "%s"."
 label_default: "デフォルト"
 label_dependencies: "依存関係："
 label_difference: "違い"
@@ -523,6 +525,7 @@ label_is_not_available: "%s は使用できません。"
 label_netmask: "ネットマスク"
 label_never: "決して"
 label_next: "次："
+label_no_data_available: "No data available."
 label_os: "使用されたオペレーティングシステム："
 label_other: "その他"
 label_other_active_events: "アクティブなイベンツ"
@@ -542,6 +545,9 @@ label_requests_all: "すべてのリクエスト。\nより厳格で徹底的で
 label_requests_none: "しない。\nモジュールをレポート目的でのみ使用する場合し、何も調べない場合は、これを使用しますください。"
 label_requests_sensitive_pages: "機密ページのみのリクエスト（例：ログイン・ページ、登録フォーム、など）。\nそれほど厳格で徹底的ではありませんが、割り当てと制限の点でより保守的であり、パフォーマンスに悪影響を与える可能性は低くなります。​ほとんどの場合、推奨される戦略です。"
 label_results: "結果 （%s が入力された – %s が拒否された – %s が受け入れられた – %s が合併した – %s 出力された）："
+label_rl_bandwidth: "Bandwidth used: %s – Bandwidth available: %s"
+label_rl_requests: "Requests sent: %s – Requests available: %s"
+label_rl_when: "Newest record: %s – Oldest record: %s."
 label_sanity_check: "サニティ・チェック："
 label_sapi: "使用されたＳＡＰＩ："
 label_sections_across_x_files: "%2$sつのファイルにまたがる%1$s"
@@ -587,6 +593,7 @@ link_ip_tracking: "ＩＰトラッキング"
 link_log_out: "ログアウト"
 link_logs: "ログページ"
 link_range: "範囲テーブル"
+link_rate_limiting: "レート制限"
 link_sections_list: "セクション・リスト"
 link_statistics: "統計"
 link_subtractor: "減算器"
@@ -770,6 +777,8 @@ tip_ip_tracking: "こんにちは、​{username}。​<br />ＩＰトラッキ�
 tip_logs: "こんにちは、​{username}。​<br />そのログの内容を表示するために、​次のリストからログを選択します。"
 tip_number_of_infractions: "発生する違反の数。"
 tip_range: "こんにちは、​{username}。​<br />このページには、現在アクティブな・シグネチャ・ファイルが対象とするＩＰ範囲に関する基本的な統計情報が表示されます。"
+tip_rate_limiting: "こんにちは、​{username}。<br />このページには、レート制限に関する現在のクォータの使用状況と可用性が表示されます。"
+tip_rate_limiting_disabled: "Note: Rate limiting is currently disabled, but can be enabled via the configuration page."
 tip_sections_list: "こんにちは、​{username}。<br />このページには、現在アクティブなシグネチャ・ファイルに存在するセクションが一覧表示されます。"
 tip_see_the_documentation: "コンフィギュレーション・ディレクティブの詳細については、​<a href="https://github.com/CIDRAM/Docs/blob/master/readme.ja.md\#SECTION5" hreflang="ja" rel="noopener external">ドキュメント</a>を参照してください。"
 tip_statistics: "こんにちは、​{username}。​<br />このページには、CIDRAMのインストールに関する基本的な使用状況の統計情報が表示されます。"

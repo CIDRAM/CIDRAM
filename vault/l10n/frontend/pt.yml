@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2022.11.05).
+# This file: Portuguese language data for the front-end (last modified: 2022.11.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -484,6 +484,8 @@ label_checksum_after: "Checksum após"
 label_checksum_before: "Checksum antes"
 label_cidram: "Versão do CIDRAM usada:"
 label_clientinfo: "Informação ao cliente:"
+label_current_data: "Current data."
+label_current_data_for: "Current data for "%s"."
 label_default: "Padrão"
 label_dependencies: "Dependências:"
 label_difference: "Diferença"
@@ -527,6 +529,7 @@ label_is_not_available: "%s não está disponível."
 label_netmask: "Máscara de rede"
 label_never: "Nunca"
 label_next: "Próxima:"
+label_no_data_available: "No data available."
 label_os: "Sistema operacional usada:"
 label_other: "Outros"
 label_other_active_events: "Eventos ativos"
@@ -546,6 +549,9 @@ label_requests_all: "Cada solicitação.\nMais rigoroso e completo, mas também 
 label_requests_none: "Nenhum.\nSe você quiser usar o módulo apenas para fins de relatório, sem pesquisar nada, use isso."
 label_requests_sensitive_pages: "Solicitações apenas para páginas confidenciais (por exemplo, páginas de login, formulários de registro, etc).\nMenos rigoroso e completo, mas mais conservador em termos de cotas e limites, e menos propenso a afetar negativamente o desempenho do site. A estratégia recomendada na maioria dos casos."
 label_results: "Resultados (%s entrada – %s rejeitado – %s aceito – %s mesclado – %s saída):"
+label_rl_bandwidth: "Bandwidth used: %s – Bandwidth available: %s"
+label_rl_requests: "Requests sent: %s – Requests available: %s"
+label_rl_when: "Newest record: %s – Oldest record: %s."
 label_sanity_check: "Verificação de sanidade:"
 label_sapi: "SAPI usada:"
 label_sections_across_x_files:
@@ -595,6 +601,7 @@ link_ip_tracking: "Monitoração IP"
 link_log_out: "Sair"
 link_logs: "Arquivos de Log"
 link_range: "Tabelas de Alcance"
+link_rate_limiting: "Limitação de taxa"
 link_sections_list: "Lista de Seções"
 link_statistics: "Estatisticas"
 link_subtractor: "Subtrator"
@@ -806,6 +813,8 @@ tip_ip_tracking: "Olá, {username}.<br />A página de monitoração IP permite v
 tip_logs: "Olá, {username}.<br />Selecionar um arquivo de log da lista abaixo para visualizar o conteúdo desse arquivo de log."
 tip_number_of_infractions: "Quantas infrações incorrer."
 tip_range: "Olá, {username}.<br />Esta página mostra algumas informações estatísticas básicas sobre os IPs abrangidos pelos arquivos de assinatura ativos no momento."
+tip_rate_limiting: "Olá, {username}.<br />Esta página mostra o uso e a disponibilidade da cota atual em relação à limitação de taxa."
+tip_rate_limiting_disabled: "Note: Rate limiting is currently disabled, but can be enabled via the configuration page."
 tip_sections_list: "Olá, {username}.<br />Esta página lista quais seções existem nos arquivos de assinatura atualmente ativos."
 tip_see_the_documentation: "Consulte a <a href="https://github.com/CIDRAM/Docs/blob/master/readme.pt.md\#SECTION5" hreflang="pt" rel="noopener external">documentação</a> para obter informações sobre as várias diretrizes de configuração e seus objetivos."
 tip_statistics: "Olá, {username}.<br />Esta página mostra algumas estatísticas de uso básicas relativas à instalação do CIDRAM."

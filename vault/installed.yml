@@ -61,13 +61,13 @@ CIDRAM Core:
    Checksum: "deb8c82461eb04a30f83a536a485bac4a99a42b56d3309f3051018678a824be7:6833"
 CIDRAM Front-End:
  Name: "CIDRAM Front-End"
- Version: "3.0.0-DEV+22308000"
+ Version: "3.0.0-DEV+22309000"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "Latest"
   Common Classes Package: "^2.9.3-DEV+22298000"
   l10n/core/{lang}: ">=2022.142"
-  l10n/frontend/{lang}: ">=2022.301"
+  l10n/frontend/{lang}: ">=2022.309"
  Changelog: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/Changelog.md"
  Uninstallable: false
  Files:
@@ -145,7 +145,7 @@ CIDRAM Front-End:
    Checksum: "38cc66a19fc6ba45e8421629335e086e398cc601798f1c5db383c9399f7c40bf:531"
   assets/frontend/default/_nav_complete_access.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/default/_nav_complete_access.html"
-   Checksum: "eab04202c7398340a301b2eef6511e5700e3a5e9df470370bc07fe5695be0c63:2048"
+   Checksum: "20d0c496abcb9e08cbda2ddf4ce95faa74526fe9ea8f379b9f064334fe572339:2115"
   assets/frontend/default/_nav_logs_access_only.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/default/_nav_logs_access_only.html"
    Checksum: "0e3a92ab961ed14d70701642c21e0a17d4785e8d1792e7e396874dff370b5603:692"
@@ -155,6 +155,9 @@ CIDRAM Front-End:
   assets/frontend/default/_range_row.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/default/_range_row.html"
    Checksum: "2f71b7f651bbf58b4270a927a9692b1809f754b76c103800f82676e1b5fb51de:184"
+  assets/frontend/default/_rl.html:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/default/_rl.html"
+   Checksum: "e9fa94d0f4a81204055a0cb01291d3695fd27d31a2a590a1bf6064c63d2ac933:166"
   assets/frontend/default/_sections.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/default/_sections.html"
    Checksum: "a7b5d72026bdc2fb67ac5fcee00b1a4e70fb1beb0bfe427c39e79d60f9f57219:107"
@@ -253,10 +256,10 @@ CIDRAM Front-End:
    Checksum: "d5999ccbbe0c2abeb10d56452fb791adb0515466d3f3aa537486b7c79d7178d0:3495"
   CIDRAM/CIDRAM/FrontEnd.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/FrontEnd.php"
-   Checksum: "72b12ce5812c72072caf765a25f75a5e77dd7104c68ba361ffca5a60358a143f:291966"
+   Checksum: "d55f9f755860b8ece0a059492fb5e9b51724330af7651747ddfab33e6bfa8f13:299745"
   CIDRAM/CIDRAM/FrontEndMethods.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/FrontEndMethods.php"
-   Checksum: "9b14f4a9f99aa6e1b448708f8b8fb3a394ccc9ab3f2d70921bfabc140a3c223d:49923"
+   Checksum: "ed629f234a9579a5e67352e5a941a9682d99760b7bd993b54a7a40f92433f806:51347"
   CIDRAM/CIDRAM/Logs.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Logs.php"
    Checksum: "f3fdc90d53edb4ee750ab3994e3878ec2cbcb396c090e5f430c5e3f6fe1482f3:17850"
@@ -633,208 +636,208 @@ l10n/core/zh:
    Checksum: "e62b168819bf0a4bc14cd467a3eac5ac2ad7e7d726872d33f631263fb55ca346:5700"
 l10n/frontend/ar:
  Extended Description: "التعريب العربي"
- Version: "2022.301.0"
+ Version: "2022.309.0"
  Files:
   l10n/frontend/ar.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/ar.yml"
-   Checksum: "1bbb0c3a364d1b6881dda493979b7d1d6ae289641c3dde05602813e02f779049:89337"
+   Checksum: "85207595091ab806d132102ddbf85deccc202f49ffd505525bc7d4017c3ac94d:90816"
 l10n/frontend/bn:
  Extended Description: "বাংলা স্থানীয়করণ"
- Version: "2022.301.0"
+ Version: "2022.309.0"
  Files:
   l10n/frontend/bn.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/bn.yml"
-   Checksum: "b6745e5f9956643005a6413c6d8b431a4b187714995ad06e9e6045fc6297c8a1:132412"
+   Checksum: "398906c6c3cb4e64ee006ddc08ac921d7849231b9e8c1be106c14d2c22484e53:135055"
 l10n/frontend/de:
  Extended Description: "Deutsche Lokalisierung"
- Version: "2022.301.0"
+ Version: "2022.309.0"
  Files:
   l10n/frontend/de.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/de.yml"
-   Checksum: "e2b9943a3b7eedcfbca0539ebe1acd9a79624c1b5056fc8c6dc7a678a0e98501:74324"
+   Checksum: "ba98994f14c3ff91bc20247b4e72575c530d4ab30c37d6990a17186c43949b93:75370"
 l10n/frontend/en:
  Extended Description: "English localisation"
- Version: "2022.301.0"
+ Version: "2022.309.0"
  Uninstallable: false
  Files:
   l10n/frontend/en.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/en.yml"
-   Checksum: "0356c7c6992b4cabea1c11eef4be9291d8d42122e819e1c833bef06fe1446390:65459"
+   Checksum: "0e3435810058a4b9dbae7b8943f131a05eba455d970c6068f5deff5104ca9d77:66248"
 l10n/frontend/es:
  Extended Description: "Localización en Español"
- Version: "2022.301.0"
+ Version: "2022.309.0"
  Files:
   l10n/frontend/es.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/es.yml"
-   Checksum: "197531fdb775d76a6907e0fa513cbd7337898310542a289fc75ffeccc60b0f1f:74120"
+   Checksum: "999c80f289e51fe399a183e9b60521a41e0f7a76eaefec98e2df5aba9903ea80:75116"
 l10n/frontend/fa:
  Extended Description: "بومی سازی در فارسی"
- Version: "2022.301.0"
+ Version: "2022.309.0"
  Files:
   l10n/frontend/fa.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/fa.yml"
-   Checksum: "3706f3338cc265c3f2c31a8331eaac08cb01f258bc292b547cb802edab79bbc4:95305"
+   Checksum: "a44ab8853abb9864089f059f72a12acb81f347f5eceadd8a1bef5feb7e98621b:97228"
 l10n/frontend/fr:
  Extended Description: "Localisation Française"
- Version: "2022.301.0"
+ Version: "2022.309.0"
  Files:
   l10n/frontend/fr.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/fr.yml"
-   Checksum: "97f73c7ba50d5c39da652baf8a450b5b57d59db6cce02527d138533c96a9a732:76439"
+   Checksum: "bb9208d7b65f211c7b91ff9dd23c119e2aed016d1eeea42ef775cec11bc2add2:77521"
 l10n/frontend/he:
  Extended Description: "לוקליזציה עברית"
- Version: "2022.301.0"
+ Version: "2022.309.0"
  Files:
   l10n/frontend/he.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/he.yml"
-   Checksum: "82f7ed4c28655ba74a3b4b43d3af9d6355e7a4a58acbbd21eb547f13a0c48f3a:72767"
+   Checksum: "bed30f748cf21ccc6e4a82ef4a69b2fa516ba14b87f68264f034d05cc0747a97:74168"
 l10n/frontend/hi:
  Extended Description: "हिंदी भाषा स्थानीयकरण"
- Version: "2022.301.0"
+ Version: "2022.309.0"
  Files:
   l10n/frontend/hi.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/hi.yml"
-   Checksum: "d4b67f29c3fbaf6b23520da13f42d2cac367520900b024d8cf6053838932cc1a:132818"
+   Checksum: "b832b9a904d29e9df1a0f10faf9ef3d79a40f25485300732367ee6f932580595:135512"
 l10n/frontend/id:
  Extended Description: "Lokalisasi di Bahasa Indonesia"
- Version: "2022.301.0"
+ Version: "2022.309.0"
  Files:
   l10n/frontend/id.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/id.yml"
-   Checksum: "726f7fe34494ef7b8e428e76904748794678e3ac774b38cc7a913ae1fe4743c3:69429"
+   Checksum: "50cb782d18b90bc26620c1634ccccd451106ca0956ba2103e0efe1524c7b5212:70348"
 l10n/frontend/it:
  Extended Description: "Localizzazione Italiana"
- Version: "2022.301.0"
+ Version: "2022.309.0"
  Files:
   l10n/frontend/it.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/it.yml"
-   Checksum: "7229bb7212e4787f86b3635ac8d60dfb8981021449e7f839ae40977e060735d2:72813"
+   Checksum: "d7203fdab8c9e82a486270222fada773916b505250fbb35d7c81df460cf279a3:73797"
 l10n/frontend/ja:
  Extended Description: "日本語ローカリゼーション"
- Version: "2022.301.0"
+ Version: "2022.309.0"
  Files:
   l10n/frontend/ja.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/ja.yml"
-   Checksum: "a846698bcc2bc38f6d07986535ffb6b04339a6defac00a7a90003101692e67c4:89289"
+   Checksum: "483f770d7a8ee019bac45548bdd3ed9225dd682e06478f710d981376f3529274:90646"
 l10n/frontend/ko:
  Extended Description: "한국어 현지화"
- Version: "2022.301.0"
+ Version: "2022.309.0"
  Files:
   l10n/frontend/ko.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/ko.yml"
-   Checksum: "40768f15d6180051f83e9624bd4d0b65a64bca1d8370911ae5d8f426c9a02c72:74299"
+   Checksum: "46f153dc2d0e7cfdb653665571006cbc48c0ae3dc1baf09c678c133170457d22:75441"
 l10n/frontend/lv:
  Extended Description: "Latviešu lokalizācija"
- Version: "2022.301.0"
+ Version: "2022.309.0"
  Files:
   l10n/frontend/lv.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/lv.yml"
-   Checksum: "598eeac5e943c222a51d0246c1ebf9f50178e14d7269d11d35634d8131d95668:71432"
+   Checksum: "0024e1e4dbbf37f2e2eedf08749c083f5171638e9b51f683dc2eec5f85d195dc:72361"
 l10n/frontend/ms:
  Extended Description: "Penyetempatan Bahasa Melayu"
- Version: "2022.301.0"
+ Version: "2022.309.0"
  Files:
   l10n/frontend/ms.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/ms.yml"
-   Checksum: "a3c36ae0b050d740c7b8fafa96e7f44c3ab0b09bbe253fbf325bd34a0e715f91:70032"
+   Checksum: "c9ec00766e923c158bed93659242c18948afeadc7a2ef85fdc8248904ca45176:70913"
 l10n/frontend/nl:
  Extended Description: "Nederlandse lokalisatie"
- Version: "2022.301.0"
+ Version: "2022.309.0"
  Files:
   l10n/frontend/nl.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/nl.yml"
-   Checksum: "d34eb3493e2bd48fc7d9fa50f7910f590c5ca84941a3360ba8c5c1dd94f2489b:71682"
+   Checksum: "fe7e702f32d96b067b2eb55838ee5a158229419b0e812220b51350aa0a615f02:72592"
 l10n/frontend/no:
  Extended Description: "Norsk lokalisering"
- Version: "2022.301.0"
+ Version: "2022.309.0"
  Files:
   l10n/frontend/no.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/no.yml"
-   Checksum: "f5e1d3ce6697908cfae8946ae714b0fee9dc7e4c3ee0856c9a076a7998a2b40c:67911"
+   Checksum: "9222d0d9e601e544a3152db4a2e6777c412faced63f12435331bc1778b3d1b24:68739"
 l10n/frontend/pl:
  Extended Description: "Polska lokalizacja"
- Version: "2022.301.0"
+ Version: "2022.309.0"
  Files:
   l10n/frontend/pl.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/pl.yml"
-   Checksum: "146f5427af222f49d473297b879501f54af28e47c6ed31bcd141f031843b54aa:73278"
+   Checksum: "226fb54acb73b5e00967480fa4b4e53a49df16331440bce362cf18e59dcc57fa:74233"
 l10n/frontend/pt:
  Extended Description: "Localização portuguesa"
- Version: "2022.301.0"
+ Version: "2022.309.0"
  Files:
   l10n/frontend/pt.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/pt.yml"
-   Checksum: "8b16664616c7a46e60211a9e76e7c408067b09d362c5e10790cabdc2a63754a0:72566"
+   Checksum: "b4e89c7587008a431d720d07324c1dced6c7d2cd57dc388d6b745ef7ff03a72a:73550"
 l10n/frontend/ru:
  Extended Description: "Русском локализация"
- Version: "2022.301.0"
+ Version: "2022.309.0"
  Files:
   l10n/frontend/ru.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/ru.yml"
-   Checksum: "6700e7d0ff788f9d33087b98a8539f6f28eda97b4e2daff586a10312d2196133:106846"
+   Checksum: "78c36bfcee92c18e0e6eff00d5ea13829d9bc57f7c9643e5db1f5754e96e0747:108837"
 l10n/frontend/sv:
  Extended Description: "Svensk lokalisering"
- Version: "2022.301.0"
+ Version: "2022.309.0"
  Files:
   l10n/frontend/sv.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/sv.yml"
-   Checksum: "8ac3c898c6e14b46769acd77ccd2ea4f58daa0114cfed51df74c5cd3a600711c:69514"
+   Checksum: "3fdae58cba1a49ee72e43707f60ee571641cdcbfaa4025b6446dc4587bae4590:70431"
 l10n/frontend/ta:
  Extended Description: "தமிழ் உள்ளூர்மயமாக்கல்"
- Version: "2022.301.0"
+ Version: "2022.309.0"
  Files:
   l10n/frontend/ta.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/ta.yml"
-   Checksum: "ea74adb045923a4f75e0561889bafd389621cf5356a90d0c8c3b8c4bb5229160:151949"
+   Checksum: "e3855fd01e1842601b8f2f1bad5d0144983e75a139e03c486062949c12a029fa:155318"
 l10n/frontend/th:
  Extended Description: "การแปลภาษาไทย"
- Version: "2022.301.0"
+ Version: "2022.309.0"
  Files:
   l10n/frontend/th.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/th.yml"
-   Checksum: "ca3394ca78f3d17634bc3ac650fa99501ec46afade417fd240ffdc6c829e53f4:118898"
+   Checksum: "2684f99479a080c3ca86c943f111a7d0fe80318a222862fb324d5e2aa611faf0:121379"
 l10n/frontend/tr:
  Extended Description: "Türkçe yerelleştirme"
- Version: "2022.301.0"
+ Version: "2022.309.0"
  Files:
   l10n/frontend/tr.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/tr.yml"
-   Checksum: "66439c3f54e8192e8ba2434659832fb84d32bc9f5e5949af7c75bd69d3908f83:71987"
+   Checksum: "44153379108fe57c794d5ed1e1cba503b4a93eca60b00180170946f4c9ba2bfb:72950"
 l10n/frontend/uk:
  Extended Description: "Локалізація Українською мовою"
- Version: "2022.301.0"
+ Version: "2022.309.0"
  Files:
   l10n/frontend/uk.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/uk.yml"
-   Checksum: "5f26088c2a38c85a1a7fd0c5a31151f43155fee16a130af016ea4f9676a2836f:103187"
+   Checksum: "77ad929fa9ff0b07f4c7ba13247a3166778fbee5f6e49047a11e4bf896700f25:105075"
 l10n/frontend/ur:
  Extended Description: "‏اردو لوکلائزیشن"
- Version: "2022.301.0"
+ Version: "2022.309.0"
  Files:
   l10n/frontend/ur.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/ur.yml"
-   Checksum: "9eb360f24921519ec85d612383701e94c4ba5ff04ee2d0d03aa9a8a03081aaac:95309"
+   Checksum: "bed28e396911cafd4c5c14c0fe4b26fac4da0752edcb4be093cfc53158b39dfd:97191"
 l10n/frontend/vi:
  Extended Description: "Bản địa hóa tiếng Việt"
- Version: "2022.301.0"
+ Version: "2022.309.0"
  Files:
   l10n/frontend/vi.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/vi.yml"
-   Checksum: "284df47d17992c2acac94ab28e6aa88a395e45e4548f990c91397b779474b2eb:82414"
+   Checksum: "45b3ed3fe646239bcf8fd218681caf2486317b02e94c83dc5344876ad962a344:83651"
 l10n/frontend/zh-TW:
  Extended Description: "傳統中文本地化"
- Version: "2022.301.0"
+ Version: "2022.309.0"
  Files:
   l10n/frontend/zh-TW.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/zh-TW.yml"
-   Checksum: "4a764bfb5718983bead36d58952f54e24c5198cfd95e285180595815a3dcfd03:61428"
+   Checksum: "f71b7fc97bd08f02fa39ea7e01929d12e3b738407cad85c727f68dc4aa9cb5a0:62144"
 l10n/frontend/zh:
  Extended Description: "简体中文本地化"
- Version: "2022.301.0"
+ Version: "2022.309.0"
  Files:
   l10n/frontend/zh.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/zh.yml"
-   Checksum: "8843aaf12aa8f39d8c8b105549f55c4cbb879bfecf81a5b33455f6b0b3137b9d:61418"
+   Checksum: "551ac43a0447372d7a0e71081258a335f2243c7e047d7f644616bddc873ccc34:62134"
 AbuseIPDB module:
  Name: "AbuseIPDB module"
  False Positive Risk: "Medium"
@@ -952,11 +955,11 @@ Stop Forum Spam module:
 Tor blocker module:
  Name: "Tor blocker module"
  False Positive Risk: "Low"
- Version: "2022.275.0"
+ Version: "2022.309.0"
  Files:
   modules/tor.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/tor.php"
-   Checksum: "5c5e00afc8e02642e2fe095c88e766a8b1231ad6f7f6d061555106ed6f05d37a:3808"
+   Checksum: "fee67d42b3a4265f947eac9dcfd0770ebeb2d0fc00048ea4c11c412be50ee785:4045"
    Used with: "modules"
 theme/bluemetal:
  Name: "Theme: Blue Metal"
@@ -984,10 +987,11 @@ theme/bluemetal:
 theme/fullmoon:
  Name: "Theme: Full Moon"
  Extended Description: "<img src="https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/themes/preview-fullmoon.png" alt="Preview" />"
- Version: "2022.269.0"
+ Version: "2022.309.0"
  Dependencies:
   CIDRAM Core: "^3.0.0-DEV"
   CIDRAM Front-End: "^3.0.0-DEV"
+  l10n/frontend/{lang}: ">=2022.309"
  Files:
   assets/core/captcha_fullmoon.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/core/captcha_fullmoon.html"
@@ -1045,7 +1049,7 @@ theme/fullmoon:
    Checksum: "cf7095ea62cc4151e04bc4bf5f95f81c0d78f2aaa39d854433388c878fa93fc1:311"
   assets/frontend/fullmoon/_nav_complete_access.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/fullmoon/_nav_complete_access.html"
-   Checksum: "a4a76d3e2cf8cb07ab0038f0cfa9f868ddec0b0e2cfc04fe6f59942ad39e9822:1308"
+   Checksum: "01d4d936cf16214dbb1174874c276b9435ab5013c1ce5efcfd85260a957ccb28:1361"
   assets/frontend/fullmoon/_nav_logs_access_only.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/fullmoon/_nav_logs_access_only.html"
    Checksum: "ee6175bffa6a6323e28a35943e15a00a3de51341277026796101ead3efce1ea3:323"
@@ -1055,6 +1059,9 @@ theme/fullmoon:
   assets/frontend/fullmoon/_range_row.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/fullmoon/_range_row.html"
    Checksum: "1f85875ba371d03a1a7e359821b0c8be5d737fda00321439f290d95ada69d598:168"
+  assets/frontend/fullmoon/_rl.html:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/fullmoon/_rl.html"
+   Checksum: "9526b3dad2a5eb52f734c7c2982519465e4001f2c2902391dc57bd76ee027b6f:94"
   assets/frontend/fullmoon/_sections.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/fullmoon/_sections.html"
    Checksum: "25926fe60915a4e511968d5d83e9b6f39e724575f2a4defb0bce17d95e5cc653:43"
@@ -1105,10 +1112,11 @@ theme/moss:
 theme/primer:
  Name: "Theme: Primer"
  Extended Description: "<img src="https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/themes/preview-primer.png" alt="Preview" />"
- Version: "2022.268.0"
+ Version: "2022.309.0"
  Dependencies:
   CIDRAM Core: "^3.0.0-DEV"
   CIDRAM Front-End: "^3.0.0-DEV"
+  l10n/frontend/{lang}: ">=2022.309"
  Files:
   assets/core/captcha_primer.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/core/captcha_primer.html"
@@ -1118,7 +1126,7 @@ theme/primer:
    Checksum: "337527f9650d6f64fb55ab314adc706f8ed8c1c542763d1312ede1d5ccd65fcd:3346"
   assets/frontend/primer/_nav_complete_access.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/primer/_nav_complete_access.html"
-   Checksum: "f25757717b7261ca95f3469eb393ed4425394704c21cf1db22b30db7d74097b0:1905"
+   Checksum: "aa4521118b94b66c33bacfff86c96b656d1a96d9895db676642ecf896032ba2c:1972"
   assets/frontend/primer/_nav_logs_access_only.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/primer/_nav_logs_access_only.html"
    Checksum: "15d639db102c0986b59e9a0cded4f39e9d84184841a83cfa0ebdf7d6562c77fe:627"
@@ -1131,10 +1139,11 @@ theme/primer:
 theme/primerdark:
  Name: "Theme: Primer Dark"
  Extended Description: "<img src="https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/themes/preview-primerdark.png" alt="Preview" />"
- Version: "2022.268.0"
+ Version: "2022.309.0"
  Dependencies:
   CIDRAM Core: "^3.0.0-DEV"
   CIDRAM Front-End: "^3.0.0-DEV"
+  l10n/frontend/{lang}: ">=2022.309"
  Files:
   assets/core/captcha_primerdark.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/core/captcha_primerdark.html"
@@ -1144,7 +1153,7 @@ theme/primerdark:
    Checksum: "ae066fd053b54fdc0d4799f376082854fe061ea5d198478ae60ec8b7d118dc32:3327"
   assets/frontend/primerdark/_nav_complete_access.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/primerdark/_nav_complete_access.html"
-   Checksum: "f25757717b7261ca95f3469eb393ed4425394704c21cf1db22b30db7d74097b0:1905"
+   Checksum: "aa4521118b94b66c33bacfff86c96b656d1a96d9895db676642ecf896032ba2c:1972"
   assets/frontend/primerdark/_nav_logs_access_only.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/primerdark/_nav_logs_access_only.html"
    Checksum: "15d639db102c0986b59e9a0cded4f39e9d84184841a83cfa0ebdf7d6562c77fe:627"

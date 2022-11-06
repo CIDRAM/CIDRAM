@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Farsi language data for the front (last modified: 2022.11.05).
+# This file: Farsi language data for the front (last modified: 2022.11.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -472,6 +472,8 @@ label_checksum_after: "چک سام بعد از"
 label_checksum_before: "چک سام قبل"
 label_cidram: "نسخه CIDRAM استفاده شده:"
 label_clientinfo: "اطلاعات مشتری:"
+label_current_data: "Current data."
+label_current_data_for: "Current data for "%s"."
 label_default: "پیش فرض"
 label_dependencies: "وابستگی ها:"
 label_difference: "تفاوت"
@@ -511,6 +513,7 @@ label_is_not_available: "%s در دسترس نیست."
 label_netmask: "ماسک شبکه"
 label_never: "هرگز"
 label_next: "بعد:"
+label_no_data_available: "No data available."
 label_os: "سیستم عامل مورد استفاده:"
 label_other: "دیگر"
 label_other_active_events: "رویدادهای فعال"
@@ -530,6 +533,9 @@ label_requests_all: "هر درخواستی.\nسخت‌گیرانه‌تر و ک�
 label_requests_none: "هیچ یک.\nاگر می خواهید از ماژول فقط برای مقاصد گزارش استفاده کنید، بدون اینکه چیزی را جستجو کنید، از این استفاده کنید."
 label_requests_sensitive_pages: "درخواست فقط برای صفحات حساس (به عنوان مثال، صفحات ورود، فرم های ثبت نام و غیره).\nکمتر سختگیرانه و کامل، اما محافظه کارانه تر از نظر سهمیه ها و محدودیت ها، و کمتر بر عملکرد تأثیر منفی می گذارد. استراتژی توصیه شده در اکثر موارد."
 label_results: "نتایج (%s وارد شد – %s رد شد – %s پذیرفته شد – %s ادغام شد – %s پس داده شد):"
+label_rl_bandwidth: "Bandwidth used: %s – Bandwidth available: %s"
+label_rl_requests: "Requests sent: %s – Requests available: %s"
+label_rl_when: "Newest record: %s – Oldest record: %s."
 label_sanity_check: "بررسی سلامت عقل:"
 label_sapi: "SAPI مورد استفاده:"
 label_sections_across_x_files: "%s در %s فایل"
@@ -575,6 +581,7 @@ link_ip_tracking: "ردیابی IP"
 link_log_out: "خروج"
 link_logs: "داده های ثبت نام"
 link_range: "جداول محدوده"
+link_rate_limiting: "محدودیت های نرخ"
 link_sections_list: "فهرست بخش ها"
 link_statistics: "آمار"
 link_subtractor: "تفریق کننده"
@@ -758,6 +765,8 @@ tip_ip_tracking: "سلام، {username}.<br />صفحه ردیابی IP به شم
 tip_logs: "سلام، {username}.<br />برای مشاهده محتویات آن فایل گزارش، یک فایل گزارش را از لیست زیر انتخاب کنید."
 tip_number_of_infractions: "چند تخلف انجام شود."
 tip_range: "سلام، {username}.<br />این صفحه برخی از اطلاعات آماری اولیه در مورد محدوده IP تحت پوشش فایل های امضای فعال فعلی را نشان می دهد."
+tip_rate_limiting: "سلام، {username}.<br />این صفحه میزان استفاده و در دسترس بودن سهمیه فعلی را با توجه به محدودیت نرخ نشان می دهد."
+tip_rate_limiting_disabled: "Note: Rate limiting is currently disabled, but can be enabled via the configuration page."
 tip_sections_list: "سلام، {username}.<br />این صفحه فهرست می کند که کدام بخش ها در فایل های امضای فعال موجود هستند."
 tip_see_the_documentation: "برای اطلاعات در مورد دستورالعمل های پیکربندی مختلف و اهداف آنها به <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#SECTION5" hreflang="en" rel="noopener external">مستندات</a> مراجعه کنید."
 tip_statistics: "سلام، {username}.<br />این صفحه برخی از آمارهای اولیه استفاده از نصب CIDRAM شما را نشان می دهد."

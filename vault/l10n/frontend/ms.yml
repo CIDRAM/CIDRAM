@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malay language data for the front-end (last modified: 2022.11.05).
+# This file: Malay language data for the front-end (last modified: 2022.11.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -488,6 +488,8 @@ label_checksum_after: "Checksum selepas"
 label_checksum_before: "Checksum sebelum ini"
 label_cidram: "Versi CIDRAM digunakan:"
 label_clientinfo: "Maklumat pelanggan:"
+label_current_data: "Current data."
+label_current_data_for: "Current data for "%s"."
 label_default: "Lalai"
 label_dependencies: "Kebergantungan:"
 label_difference: "Beza"
@@ -527,6 +529,7 @@ label_is_not_available: "%s tidak tersedia."
 label_netmask: "Netmask"
 label_never: "Tak pernah"
 label_next: "Seterusnya:"
+label_no_data_available: "No data available."
 label_os: "Sistem operasi digunakan:"
 label_other: "Lain"
 label_other_active_events: "Acara aktif"
@@ -546,6 +549,9 @@ label_requests_all: "Setiap permintaan.\nLebih ketat dan teliti, tetapi juga leb
 label_requests_none: "Tiada.\nJika anda ingin menggunakan modul untuk tujuan pelaporan sahaja, tanpa carian untuk apa-apa, gunakan ini."
 label_requests_sensitive_pages: "Permintaan untuk halaman sensitif sahaja (cth., halaman login, borang pendaftaran, dsb).\nKurang ketat dan teliti, tetapi lebih konservatif dari segi kuota dan had, dan kurang berkemungkinan menjejaskan prestasi secara negatif. Strategi yang disyorkan dalam kebanyakan kes."
 label_results: "Keputusan (%s dimasukkan – %s ditolak – %s diterima – %s digabungkan – %s keluaran):"
+label_rl_bandwidth: "Bandwidth used: %s – Bandwidth available: %s"
+label_rl_requests: "Requests sent: %s – Requests available: %s"
+label_rl_when: "Newest record: %s – Oldest record: %s."
 label_sanity_check: "Pemeriksaan kewarasan:"
 label_sapi: "SAPI digunakan:"
 label_sections_across_x_files: "%s dalam %s fail"
@@ -591,6 +597,7 @@ link_ip_tracking: "Penjejakan IP"
 link_log_out: "Log Keluar"
 link_logs: "Log"
 link_range: "Jadual Julat"
+link_rate_limiting: "Pengehadan kadar"
 link_sections_list: "Senarai Bahagian"
 link_statistics: "Statistik"
 link_subtractor: "Penolakan"
@@ -774,6 +781,8 @@ tip_ip_tracking: "Salam, {username}.<br />Halaman penjejakan IP membolehkan anda
 tip_logs: "Salam, {username}.<br />Pilih fail log daripada senarai di bawah untuk melihat kandungan fail log tersebut."
 tip_number_of_infractions: "Berapa banyak pelanggaran yang perlu dilakukan."
 tip_range: "Salam, {username}.<br />Halaman ini menunjukkan beberapa maklumat statistik asas tentang julat IP yang diliputi oleh fail tandatangan yang sedang aktif."
+tip_rate_limiting: "Salam, {username}.<br />Halaman ini menunjukkan penggunaan dan ketersediaan kuota semasa berkaitan dengan pengehadan kadar."
+tip_rate_limiting_disabled: "Note: Rate limiting is currently disabled, but can be enabled via the configuration page."
 tip_sections_list: "Salam, {username}.<br />Halaman ini menyenaraikan bahagian mana yang wujud dalam fail tandatangan yang sedang aktif."
 tip_see_the_documentation: "Lihat <a href="https://github.com/CIDRAM/Docs/blob/master/readme.id.md\#SECTION5" hreflang="id" rel="noopener external">dokumentasi</a> untuk mendapatkan maklumat tentang pelbagai arahan konfigurasi dan tujuannya."
 tip_statistics: "Salam, {username}.<br />Halaman ini menunjukkan beberapa statistik penggunaan asas mengenai pemasangan CIDRAM anda."

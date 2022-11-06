@@ -93,3 +93,4 @@
 - Reworked how the configuration page deals with volume-based configuration.
 - Added a mechanism to perform adjustments for when in the context of verification (e.g., to prevent CAPTCHAs being served for blocked requests which failed verification).
 - Added a new configuration directive, `segregate`, to specify whether the data for rate limiting should be segregated based on domain/hostname or shared (#345).
+- Added a new page to the front-end for the purpose of viewing current rate limit quotas, useful for confirming whether rate limiting is working correctly at installations (#345).

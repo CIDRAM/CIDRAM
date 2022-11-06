@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2022.11.05).
+# This file: Polish language data for the front-end (last modified: 2022.11.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -488,6 +488,8 @@ label_checksum_after: "Suma kontrolna po"
 label_checksum_before: "Suma kontrolna przed"
 label_cidram: "Użyta wersja CIDRAM:"
 label_clientinfo: "Informacja klientów:"
+label_current_data: "Current data."
+label_current_data_for: "Current data for "%s"."
 label_default: "Domyślna"
 label_dependencies: "Zależności:"
 label_difference: "Różnica dwóch zbiorów"
@@ -533,6 +535,7 @@ label_is_not_available: "%s nie jest dostępny."
 label_netmask: "Maska sieci"
 label_never: "Nigdy"
 label_next: "Następny:"
+label_no_data_available: "No data available."
 label_os: "Używany system operacyjny:"
 label_other: "Inny"
 label_other_active_events: "Aktywne wydarzenia"
@@ -552,6 +555,9 @@ label_requests_all: "Każde żądanie.\nBardziej rygorystyczne i dokładne, ale 
 label_requests_none: "Nic.\nJeśli chcesz używać modułu tylko do celów raportowania, bez wyszukiwania czegokolwiek, użyj tego."
 label_requests_sensitive_pages: "Żądania tylko dla wrażliwych stron (np., strony logowania, formularze rejestracyjne, itp).\nMniej rygorystyczne i dokładne, ale bardziej konserwatywne pod względem kontyngentów i limitów oraz mniej prawdopodobne, że wpłynie to negatywnie na wyniki. Zalecana strategia w większości przypadków."
 label_results: "Rezultat (%s dostarczone – %s odrzucone – %s zaakceptowane – %s połączone – %s zwrócone):"
+label_rl_bandwidth: "Bandwidth used: %s – Bandwidth available: %s"
+label_rl_requests: "Requests sent: %s – Requests available: %s"
+label_rl_when: "Newest record: %s – Oldest record: %s."
 label_sanity_check: "Sprawdzanie poczytalności:"
 label_sapi: "SAPI w użyciu:"
 label_sections_across_x_files:
@@ -603,6 +609,7 @@ link_ip_tracking: "Śledzenie IP"
 link_log_out: "Wyloguj się"
 link_logs: "Dzienniki"
 link_range: "Tabele Zakresów"
+link_rate_limiting: "Ograniczenie"
 link_sections_list: "Lista Sekcji"
 link_statistics: "Statystyki"
 link_subtractor: "Odejmator"
@@ -828,6 +835,8 @@ tip_ip_tracking: "Witaj, {username}.<br />Strona śledzenia IP pozwala sprawdzi�
 tip_logs: "Witaj, {username}.<br />Wybierz plik dziennika z poniższej listy, aby wyświetlić zawartość tego pliku dziennika."
 tip_number_of_infractions: "Ile wykroczeń ponieść."
 tip_range: "Witaj, {username}.<br />Ta strona pokazuje podstawowe informacje statystyczne o zakresach adresów IP objętych obecnie aktywnymi plikami podpis."
+tip_rate_limiting: "Witaj, {username}.<br />Ta strona pokazuje aktualne wykorzystanie i dostępność przydziału w odniesieniu do ograniczenia."
+tip_rate_limiting_disabled: "Note: Rate limiting is currently disabled, but can be enabled via the configuration page."
 tip_sections_list: "Witaj, {username}.<br />Ta strona zawiera listę sekcji, które istnieją w aktualnie aktywnych plikach podpis."
 tip_see_the_documentation: "Informacje na temat różnych dyrektyw konfiguracyjnych i ich celów można znaleźć w <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#SECTION5" hreflang="en" rel="noopener external">dokumentacji</a>."
 tip_statistics: "Witaj, {username}.<br />Ta strona pokazuje podstawowe statystyki użytkowania dotyczące instalacji CIDRAM."

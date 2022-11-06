@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2022.11.05).
+# This file: Dutch language data for the front-end (last modified: 2022.11.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -488,6 +488,8 @@ label_checksum_after: "Controlesom na"
 label_checksum_before: "Controlesom voor"
 label_cidram: "CIDRAM versie gebruikt:"
 label_clientinfo: "Gebruikers informatie:"
+label_current_data: "Current data."
+label_current_data_for: "Current data for "%s"."
 label_default: "Standaard"
 label_dependencies: "Afhankelijkheden:"
 label_difference: "Verschil"
@@ -531,6 +533,7 @@ label_is_not_available: "%s is niet beschikbaar."
 label_netmask: "Netmasker"
 label_never: "Nooit"
 label_next: "Volgende:"
+label_no_data_available: "No data available."
 label_os: "Besturingssysteem gebruikt:"
 label_other: "Anders"
 label_other_active_events: "Actieve evenementen"
@@ -550,6 +553,9 @@ label_requests_all: "Elk verzoek.\nStrenger en grondiger, maar het is ook waarsc
 label_requests_none: "Geen.\nAls u de module alleen voor rapportagedoeleinden wilt gebruiken, zonder iets op te zoeken, gebruik deze."
 label_requests_sensitive_pages: "Alleen verzoeken voor gevoelige pagina's (b.v., inlogpagina's, registratieformulieren, enz).\nMinder streng en grondig, maar conservatiever in termen van quota en limieten, en minder waarschijnlijk een negatieve invloed op de prestaties te hebben. De aanbevolen strategie in de meeste gevallen."
 label_results: "Resultaten (%s in – %s verworpen – %s aanvaard – %s samengevoegd – %s uit):"
+label_rl_bandwidth: "Bandwidth used: %s – Bandwidth available: %s"
+label_rl_requests: "Requests sent: %s – Requests available: %s"
+label_rl_when: "Newest record: %s – Oldest record: %s."
 label_sanity_check: "Gezondheidscontrole:"
 label_sapi: "SAPI gebruikt:"
 label_sections_across_x_files:
@@ -599,6 +605,7 @@ link_ip_tracking: "IP-Tracking"
 link_log_out: "Uitloggen"
 link_logs: "Logbestanden"
 link_range: "Reeks Tafels"
+link_rate_limiting: "Tarieflimiet"
 link_sections_list: "Sectielijst"
 link_statistics: "Statistieken"
 link_subtractor: "Aftrekker"
@@ -802,6 +809,8 @@ tip_ip_tracking: "Hallo, {username}.<br />Met het IP-Tracking pagina, is het mog
 tip_logs: "Hallo, {username}.<br />Selecteer een logbestand uit de onderstaande lijst om de inhoud van de logbestand te bekijken."
 tip_number_of_infractions: "Hoeveel overtredingen toe te passen."
 tip_range: "Hallo, {username}.<br />Deze pagina toont enige statistische basisinformatie over de IP-reeksen die worden bestreken door de actieve signatuurbestanden."
+tip_rate_limiting: "Hallo, {username}.<br />Deze pagina toont het huidige quotagebruik en beschikbaarheid met betrekking tot tarieflimiet."
+tip_rate_limiting_disabled: "Note: Rate limiting is currently disabled, but can be enabled via the configuration page."
 tip_sections_list: "Hallo, {username}.<br />Deze pagina geeft een overzicht van de secties die bestaan in de actieve signatuurbestanden."
 tip_see_the_documentation: "Zie de <a href="https://github.com/CIDRAM/Docs/blob/master/readme.nl.md\#SECTION5" hreflang="nl" rel="noopener external">documentatie</a> voor informatie over de verschillende configuratie richtlijnen en hun doeleinden."
 tip_statistics: "Hallo, {username}.<br />Deze pagina bevat een aantal basisgebruiksstatistieken voor uw CIDRAM-installatie."

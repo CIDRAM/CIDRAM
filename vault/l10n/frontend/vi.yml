@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2022.11.05).
+# This file: Vietnamese language data for the front-end (last modified: 2022.11.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -485,6 +485,8 @@ label_checksum_after: "Tổng kiểm tra sau khi"
 label_checksum_before: "Tổng kiểm tra trước đây"
 label_cidram: "Phiên bản CIDRAM đang được dùng:"
 label_clientinfo: "Thông tin người dùng:"
+label_current_data: "Current data."
+label_current_data_for: "Current data for "%s"."
 label_default: "Mặc định"
 label_dependencies: "Sự phụ thuộc:"
 label_difference: "Sự khác biệt"
@@ -524,6 +526,7 @@ label_is_not_available: "%s không có sẵn."
 label_netmask: "Mặt nạ mạng"
 label_never: "Không bao giờ"
 label_next: "Kế tiếp:"
+label_no_data_available: "No data available."
 label_os: "Hệ điều hành đang được dùng:"
 label_other_active_events: "Sự kiện kích hoạt"
 label_other_active_imports: "Nhập khẩu kích hoạt"
@@ -543,6 +546,9 @@ label_requests_all: "Tất cả các yêu cầu.\nNghiêm ngặt hơn, nhưng c�
 label_requests_none: "Không phải bất kỳ.\nNếu bạn chỉ muốn sử dụng mô-đun cho mục đích báo cáo mà không cần tra cứu gì, hãy sử dụng mô-đun này."
 label_requests_sensitive_pages: "Yêu cầu chỉ dành cho các trang nhạy cảm (ví dụ: trang đăng nhập, biểu mẫu đăng ký, vv).\nÍt nghiêm ngặt hơn, nhưng thận trọng hơn về hạn ngạch và giới hạn, và ít có khả năng tác động tiêu cực đến hiệu suất. Chiến lược được khuyến khích trong hầu hết các trường hợp."
 label_results: "Các kết quả (%s trong – %s từ chối – %s chấp nhận – %s sáp nhập – %s ngoài):"
+label_rl_bandwidth: "Bandwidth used: %s – Bandwidth available: %s"
+label_rl_requests: "Requests sent: %s – Requests available: %s"
+label_rl_when: "Newest record: %s – Oldest record: %s."
 label_sanity_check: "Kiểm tra an toàn:"
 label_sapi: "SAPI đang được dùng:"
 label_sections_across_x_files: "%s trên %s tập tin"
@@ -588,6 +594,7 @@ link_ip_tracking: "Giám sát IP"
 link_log_out: "Đăng Xuất"
 link_logs: "Bản ghi"
 link_range: "Bảng phạm vi"
+link_rate_limiting: "Giới hạn tốc độ"
 link_sections_list: "Danh sách phần"
 link_statistics: "Số liệu thống kê"
 link_subtractor: "Phép trừ"
@@ -771,6 +778,8 @@ tip_ip_tracking: "Xin chào, {username}.<br />Các trang cho giám sát IP cho p
 tip_logs: "Xin chào, {username}.<br />Chọn một bản ghi từ danh sách dưới đây để xem nội dung của bản ghi này."
 tip_number_of_infractions: "Có bao nhiêu vi phạm để áp dụng."
 tip_range: "Xin chào, {username}.<br />Trang này hiển thị một số thông tin thống kê cơ bản về các phạm vi IP được bao phủ bởi các tập tin chữ ký đang hoạt động."
+tip_rate_limiting: "Xin chào, {username}.<br />Trang này hiển thị hạn ngạch hiện có và được sử dụng liên quan đến giới hạn tốc độ."
+tip_rate_limiting_disabled: "Note: Rate limiting is currently disabled, but can be enabled via the configuration page."
 tip_sections_list: "Xin chào, {username}.<br />Trang này liệt kê những phần nào tồn tại trong các tập tin chữ ký đang kích hoạt."
 tip_see_the_documentation: "Xem <a href="https://github.com/CIDRAM/Docs/blob/master/readme.vi.md\#SECTION5" hreflang="vi" rel="noopener external">tài liệu</a> để biết thông tin về các chỉ thị cấu hình khác nhau và mục đích của họ."
 tip_statistics: "Xin chào, {username}.<br />Trang này cho thấy một số thống kê của sử dụng cơ bản liên quan đến cài đặt CIDRAM của bạn."

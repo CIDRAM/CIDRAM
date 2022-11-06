@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2022.11.05).
+# This file: Swedish language data for the front-end (last modified: 2022.11.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -487,6 +487,8 @@ label_checksum_after: "Kontrollsumma efter"
 label_checksum_before: "Kontrollsumma innan"
 label_cidram: "CIDRAM-version som används:"
 label_clientinfo: "Klientinformation:"
+label_current_data: "Current data."
+label_current_data_for: "Current data for "%s"."
 label_default: "Standard"
 label_dependencies: "Programvarukrav:"
 label_difference: "Differensen"
@@ -530,6 +532,7 @@ label_is_not_available: "%s är inte tillgänglig."
 label_netmask: "Nätmask"
 label_never: "Aldrig"
 label_next: "Nästa:"
+label_no_data_available: "No data available."
 label_os: "Operativsystem som används:"
 label_other: "Andra"
 label_other_active_events: "Aktiva händelser"
@@ -549,6 +552,9 @@ label_requests_all: "Varje förfrågan.\nMer strängt och noggrant, men också m
 label_requests_none: "Ingen.\nOm du vill använda modulen endast för rapporteringsändamål, utan att slå upp något, använd denna."
 label_requests_sensitive_pages: "Förfrågningar endast för känsliga sidor (t.ex., inloggningssidor, registreringsformulär, etc).\nMindre stränga och noggranna, men mer konservativa när det gäller kvoter och gränser, och mindre sannolikt att det påverkar resultatet negativt. Den rekommenderade strategin i de flesta fall."
 label_results: "Resultat (%s i – %s avvisade – %s accepterad – %s kombinerad – %s ut):"
+label_rl_bandwidth: "Bandwidth used: %s – Bandwidth available: %s"
+label_rl_requests: "Requests sent: %s – Requests available: %s"
+label_rl_when: "Newest record: %s – Oldest record: %s."
 label_sanity_check: "Säkerhetskontroll:"
 label_sapi: "SAPI som används:"
 label_sections_across_x_files:
@@ -598,6 +604,7 @@ link_ip_tracking: "IP-Spårning"
 link_log_out: "Logga Ut"
 link_logs: "Loggfiler"
 link_range: "Range Tabeller"
+link_rate_limiting: "Hastighetsbegränsning"
 link_sections_list: "Sektionslista"
 link_statistics: "Statistik"
 link_subtractor: "Subtraktor"
@@ -805,6 +812,8 @@ tip_ip_tracking: "Hallå, {username}.<br />Med hjälp av IP-spårningssidan, du 
 tip_logs: "Hallå, {username}.<br />Välj en loggfil från listan nedan för att se innehållet i den loggfilen."
 tip_number_of_infractions: "Hur många överträdelser som ska tillämpas."
 tip_range: "Hallå, {username}.<br />Den här sidan visar några grundläggande statistiska uppgifter om de signaturer som omfattas av de aktuella aktiva signaturfilerna."
+tip_rate_limiting: "Hallå, {username}.<br />Den här sidan visar den aktuella kvotanvändningen och tillgängligheten när det gäller hastighetsbegränsning."
+tip_rate_limiting_disabled: "Note: Rate limiting is currently disabled, but can be enabled via the configuration page."
 tip_sections_list: "Hallå, {username}.<br />Den här sidan visar vilka sektioner som finns i de aktuella aktiva signaturfilerna."
 tip_see_the_documentation: "Se <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#SECTION5" hreflang="en" rel="noopener external">dokumentationen</a> för information om de olika konfigurationsdirektiven och deras ändamål."
 tip_statistics: "Hallå, {username}.<br />Den här sidan visar en viss användarstatistik för din CIDRAM-installation."

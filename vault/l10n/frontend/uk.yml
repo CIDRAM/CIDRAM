@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Ukrainian language data for the front-end (last modified: 2022.11.05).
+# This file: Ukrainian language data for the front-end (last modified: 2022.11.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -488,6 +488,8 @@ label_checksum_after: "Контрольна сума після"
 label_checksum_before: "Контрольна сума раніше"
 label_cidram: "Використана версія CIDRAM:"
 label_clientinfo: "Інформація про клієнта:"
+label_current_data: "Current data."
+label_current_data_for: "Current data for "%s"."
 label_default: "Стандарт"
 label_dependencies: "Залежності:"
 label_difference: "Різниця"
@@ -533,6 +535,7 @@ label_is_not_available: "%s недоступний."
 label_netmask: "Маска мережі"
 label_never: "Ніколи"
 label_next: "Далі:"
+label_no_data_available: "No data available."
 label_os: "Використана операційна система:"
 label_other: "Інший"
 label_other_active_events: "Активні події"
@@ -552,6 +555,9 @@ label_requests_all: "Кожен запит.\nБільш суворий і рет
 label_requests_none: "Жодного.\nЯкщо ви хочете використовувати модуль лише для звітування, нічого не шукаючи, використовуйте це."
 label_requests_sensitive_pages: "Запити лише для конфіденційних сторінок (наприклад, сторінки входу, реєстраційні форми, тощо).\nМенш суворий і ретельний, але більш консервативний щодо квот і обмежень, і менша ймовірність негативного впливу на роботу веб-сайту. Рекомендована стратегія в більшості випадків."
 label_results: "Результати (%s введено – %s відхилено – %s прийнято – %s об'єднано – %s вийшов):"
+label_rl_bandwidth: "Bandwidth used: %s – Bandwidth available: %s"
+label_rl_requests: "Requests sent: %s – Requests available: %s"
+label_rl_when: "Newest record: %s – Oldest record: %s."
 label_sanity_check: "Перевірка осудності:"
 label_sapi: "Використана SAPI:"
 label_sections_across_x_files:
@@ -603,6 +609,7 @@ link_ip_tracking: "Відстеження IP"
 link_log_out: "Вийти"
 link_logs: "Журнали"
 link_range: "Таблиці Діапазонів"
+link_rate_limiting: "Обмеження швидкості"
 link_sections_list: "Список Розділів"
 link_statistics: "Статистика"
 link_subtractor: "Від'ємник"
@@ -828,6 +835,8 @@ tip_ip_tracking: "Привіт, {username}.<br />Сторінка відстеж
 tip_logs: "Привіт, {username}.<br />Виберіть файл журналу зі списку нижче, щоб переглянути вміст цього файлу журналу."
 tip_number_of_infractions: "Скільки порушень понести."
 tip_range: "Привіт, {username}.<br />На цій сторінці показано базову статистичну інформацію про діапазони IP-адрес, охоплених поточними активними файлами сигнатур."
+tip_rate_limiting: "Привіт, {username}.<br />На цій сторінці показано поточне використання та доступність для квоти відносно обмеження швидкості."
+tip_rate_limiting_disabled: "Note: Rate limiting is currently disabled, but can be enabled via the configuration page."
 tip_sections_list: "Привіт, {username}.<br />На цій сторінці вказано, які розділи існують у поточних активних файлах сигнатур."
 tip_see_the_documentation: "Перегляньте <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#SECTION5" hreflang="en" rel="noopener external">документацію</a> для отримання інформації про різні директиви конфігурації та їх призначення."
 tip_statistics: "Привіт, {username}.<br />На цій сторінці показано деякі базові статистичні дані щодо вашого встановлення CIDRAM."

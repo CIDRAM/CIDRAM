@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2022.11.05).
+ * This file: General methods used by the front-end (last modified: 2022.11.06).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1163,5 +1163,48 @@ trait FrontEndMethods
             return $this->EventsPath;
         }
         return $this->Vault;
+    }
+
+    /**
+     * Process all current request and bandwidth usage for this period.
+     *
+     * @param string $Data The data to be processed.
+     * @return array The processed data.
+     */
+    private function processRLUsage(string $Data): array
+    {
+        $Pos = 0;
+        $EoS = strlen($Data);
+        $Out = [];
+        while ($Pos < $EoS) {
+            $Time = substr($Data, $Pos, 4);
+            if (strlen($Time) !== 4) {
+                break;
+            }
+            $Time = unpack('l*', $Time);
+            $Pos += 4;
+            $Bandwidth = substr($Data, $Pos, 4);
+            if (strlen($Bandwidth) !== 4) {
+                break;
+            }
+            $Bandwidth = unpack('l*', $Bandwidth);
+            $Pos += 4;
+            $BlockSize = substr($Data, $Pos, 4);
+            if (strlen($BlockSize) !== 4) {
+                break;
+            }
+            $BlockSize = unpack('l*', $BlockSize);
+            $Pos += 4;
+            $Block = substr($Data, $Pos, $BlockSize[1]);
+            $Pos += $BlockSize[1];
+            if (isset($Out[$Block])) {
+                $Out[$Block]['Bandwidth'] += $Bandwidth[1];
+                $Out[$Block]['Requests']++;
+                $Out[$Block]['Newest'] = $Time[1];
+            } else {
+                $Out[$Block] = ['Bandwidth' => $Bandwidth[1], 'Requests' => 1, 'Oldest' => $Time[1], 'Newest' => $Time[1]];
+            }
+        }
+        return $Out;
     }
 }

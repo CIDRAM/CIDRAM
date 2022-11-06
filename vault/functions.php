@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2022.11.05).
+ * This file: Functions file (last modified: 2022.11.06).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -1503,11 +1503,13 @@ $CIDRAM['InitialiseCacheSection'] = function (string $SectionName) use (&$CIDRAM
  * @return void
  */
 $CIDRAM['DestroyCacheObject'] = function () use (&$CIDRAM): void {
-    foreach ($CIDRAM['AtCacheDestroyUnset'] as $DestroyThis) {
-        if ($CIDRAM[$DestroyThis . '-Modified']) {
-            $CIDRAM['Cache']->setEntry($DestroyThis, $CIDRAM[$DestroyThis], 0);
+    if (isset($CIDRAM['AtCacheDestroyUnset'])) {
+        foreach ($CIDRAM['AtCacheDestroyUnset'] as $DestroyThis) {
+            if ($CIDRAM[$DestroyThis . '-Modified']) {
+                $CIDRAM['Cache']->setEntry($DestroyThis, $CIDRAM[$DestroyThis], 0);
+            }
+            unset($CIDRAM[$DestroyThis . '-Modified'], $CIDRAM[$DestroyThis]);
         }
-        unset($CIDRAM[$DestroyThis . '-Modified'], $CIDRAM[$DestroyThis]);
     }
     unset($CIDRAM['AtCacheDestroyUnset'], $CIDRAM['Cache']);
 };

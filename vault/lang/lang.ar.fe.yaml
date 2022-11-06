@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2022.11.05).
+# This file: Arabic language data for the front-end (last modified: 2022.11.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -396,6 +396,8 @@ label_check_verification: "أيضا اختبار ضد التحقق من محرك
 label_checkbox: "خانة اختيار"
 label_cidram: "النسخة CIDRAM المستخدمة:"
 label_clientinfo: "معلومات المستخدممعلومات المستخدم:"
+label_current_data: "Current data."
+label_current_data_for: "Current data for "%s"."
 label_default: "الافتراضي"
 label_dependencies: "التبعيات:"
 label_difference: "فرق"
@@ -432,6 +434,7 @@ label_is_available_class: "%s متاح."
 label_is_not_available: "%s غير متاح."
 label_never: "أبدا"
 label_next: "التالي:"
+label_no_data_available: "No data available."
 label_os: "نظام التشغيل المستخدمة:"
 label_other: "آخر"
 label_other-ActiveIPv4: "ملفات التوقيع IPv4 النشطة"
@@ -445,6 +448,9 @@ label_preferred_source: "المصدر المفضل:"
 label_previous: "سابق:"
 label_remember: "احفظها"
 label_results: "النتائج (%s في – %s مرفوض – %s قبلت – %s اندمجت – %s خارج):"
+label_rl_bandwidth: "Bandwidth used: %s – Bandwidth available: %s"
+label_rl_requests: "Requests sent: %s – Requests available: %s"
+label_rl_when: "Newest record: %s – Oldest record: %s."
 label_sanity_check: "التحقق من التعقل:"
 label_sapi: "SAPI المستخدمة:"
 label_sections_across_x_files:
@@ -494,6 +500,7 @@ link_logs: "سجلات"
 link_range: "جداول الشبكة الفرعية"
 link_range_intersector: "أداة التقاطع للعناوين"
 link_range_subtractor: "أداة الطرح للعناوين"
+link_rate_limiting: "تحديد معدل"
 link_sections_list: "قائمة الأقسام"
 link_statistics: "الإحصاء"
 link_updates: "التحديثات"
@@ -689,6 +696,8 @@ tip_number_of_infractions: "كم عدد المخالفات لتحملها."
 tip_range: "مرحبا، {username}.<br />تعرض هذه الصفحة بعض المعلومات الإحصائية الأساسية حول نطاقات IP التي تغطيها ملفات التوقيع النشطة حاليًا."
 tip_range_intersector: "مرحبا، {username}.<br />يمكن استخدام أداة التقاطع للعناوين لتحديد العوامل المشتركة بين مجموعتين من النطاقات."
 tip_range_subtractor: "مرحبا، {username}.<br />يمكن استخدام أداة الطرح للعناوين النطاق لطرح مجموعة من عناوين IP/CIDR من مجموعة أخرى."
+tip_rate_limiting: "مرحبا، {username}.<br />هذه الصفحة تعرض الحالية استخدام الحصة النسبية وتوافرها فيما يتعلق بتحديد المعدل."
+tip_rate_limiting_disabled: "Note: Rate limiting is currently disabled, but can be enabled via the configuration page."
 tip_sections_list: "مرحبا، {username}.<br />تسرد هذه الصفحة الأقسام الموجودة في ملفات التوقيع النشطة حاليا."
 tip_see_the_documentation: "راجع <a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.ar.md\#SECTION6" hreflang="ar" rel="noopener external">وثائق</a> للحصول على معلومات حول مختلف توجيهات التكوين ونيتهم."
 tip_statistics: "مرحبا، {username}.<br />تعرض هذه الصفحة بعض إحصاءات الاستخدام الأساسية المتعلقة بتثبيت CIDRAM."

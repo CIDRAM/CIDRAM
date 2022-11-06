@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Tamil language data for the front-end (last modified: 2022.11.05).
+# This file: Tamil language data for the front-end (last modified: 2022.11.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -400,6 +400,8 @@ label_check_verification: "தேடுபொறி மற்றும் சம
 label_checkbox: "தேர்வுப்பெட்டி"
 label_cidram: "பயன்படுத்தப்படும் CIDRAM பதிப்பு:"
 label_clientinfo: "வாடிக்கையாளர் தகவல்:"
+label_current_data: "Current data."
+label_current_data_for: "Current data for "%s"."
 label_default: "இயல்புநிலை"
 label_dependencies: "சார்புநிலைகள்:"
 label_difference: "வேறுபாடு"
@@ -440,6 +442,7 @@ label_is_available_class: "%s கிடைக்கிறது."
 label_is_not_available: "%s கிடைக்கவில்லை."
 label_never: "ஒருபோதும்"
 label_next: "அடுத்தது:"
+label_no_data_available: "No data available."
 label_os: "பயன்படுத்தப்படும் இயக்க முறைமை:"
 label_other: "மற்ற"
 label_other-ActiveIPv4: "செயலில் உள்ள IPv4 கையொப்பக் கோப்புகள்"
@@ -453,6 +456,9 @@ label_preferred_source: "விருப்பமான மூல:"
 label_previous: "முந்தைய:"
 label_remember: "நினைவில்"
 label_results: "முடிவுகள் (%s இல் – %s நிராகரித்தார் – %s ஏற்றுக்கொள்ளப்பட்ட – %s இணைக்கப்பட்டது – %s வெளியே):"
+label_rl_bandwidth: "Bandwidth used: %s – Bandwidth available: %s"
+label_rl_requests: "Requests sent: %s – Requests available: %s"
+label_rl_when: "Newest record: %s – Oldest record: %s."
 label_sanity_check: "நல்லறிவு சோதனை:"
 label_sapi: "SAPI பயன்படுத்தப்பட்டது:"
 label_sections_across_x_files:
@@ -502,6 +508,7 @@ link_logs: "பதிவு கோப்புகள்"
 link_range: "வரம்பு அட்டவணைகள்"
 link_range_intersector: "வரம்பு குறுக்குவெட்டு"
 link_range_subtractor: "வரம்பு சப்டிராகடரின்"
+link_rate_limiting: "வீத வரம்புக்கு"
 link_sections_list: "பிரிவுகளின் பட்டியல்"
 link_statistics: "புள்ளியியல்"
 link_updates: "மேம்படுத்தல்கள்"
@@ -695,6 +702,8 @@ tip_number_of_infractions: "எத்தனை விதிமீறல்கள
 tip_range: "வணக்கம், {username}.<br />தற்போது செயலில் உள்ள கையொப்பக் கோப்புகளால் மூடப்பட்ட ஐபி வரம்புகள் குறித்த சில அடிப்படை புள்ளிவிவர தகவல்களை இந்தப் பக்கம் காட்டுகிறது."
 tip_range_intersector: "வணக்கம், {username}.<br />இரண்டு செட் வரம்புகளிலிருந்து பொதுவான காரணிகளைத் தீர்மானிக்க வரம்பு குறுக்குவெட்டு பயன்படுத்தப்படலாம்."
 tip_range_subtractor: "வணக்கம், {username}.<br />ஒரு ஐபி/CIDR வரம்பை மற்றொன்றிலிருந்து அகற்ற இந்தப் பக்கத்தைப் பயன்படுத்தலாம்."
+tip_rate_limiting: "வணக்கம், {username}.<br />இந்தப் பக்கம் தற்போதைய ஒதுக்கீடு பயன்பாடு மற்றும் கிடைக்கும் தன்மையைக் வீத வரம்புகள் தொடர்பாக காட்டுகிறது."
+tip_rate_limiting_disabled: "Note: Rate limiting is currently disabled, but can be enabled via the configuration page."
 tip_sections_list: "வணக்கம், {username}.<br />தற்போது செயலில் உள்ள கையொப்பக் கோப்புகளில் எந்த பிரிவுகள் உள்ளன என்பதை இந்தப் பக்கம் பட்டியலிடுகிறது."
 tip_see_the_documentation: "பல்வேறு உள்ளமைவு வழிமுறைகள் மற்றும் அவற்றின் நோக்கங்கள் பற்றிய தகவல்களுக்கு <a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.en.md\#SECTION6" hreflang="en" rel="noopener external">ஆவணங்களைக்</a> காண்க."
 tip_statistics: "வணக்கம், {username}.<br />உங்கள் CIDRAM நிறுவல் தொடர்பான சில அடிப்படை பயன்பாட்டு புள்ளிவிவரங்களை இந்த பக்கம் காட்டுகிறது."

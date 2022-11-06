@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2022.11.05).
+# This file: Spanish language data for the front-end (last modified: 2022.11.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -400,6 +400,8 @@ label_check_verification: "También prueba contra verificación de motor de bús
 label_checkbox: "Casilla de verificación"
 label_cidram: "Versión CIDRAM utilizada:"
 label_clientinfo: "Información del cliente:"
+label_current_data: "Current data."
+label_current_data_for: "Current data for "%s"."
 label_default: "Predefinido"
 label_dependencies: "Dependencias:"
 label_difference: "Diferencia de conjuntos"
@@ -440,6 +442,7 @@ label_is_available_class: "%s está disponible."
 label_is_not_available: "%s no está disponible."
 label_never: "Nunca"
 label_next: "Próxima:"
+label_no_data_available: "No data available."
 label_os: "Sistema operativo utilizada:"
 label_other: "Otro"
 label_other-ActiveIPv4: "Archivos de firmas IPv4 activas"
@@ -453,6 +456,9 @@ label_preferred_source: "Fuente preferida:"
 label_previous: "Previa:"
 label_remember: "Recuerda"
 label_results: "Resultados (%s en – %s rechazado – %s aceptado – %s fusionado – %s fuera):"
+label_rl_bandwidth: "Bandwidth used: %s – Bandwidth available: %s"
+label_rl_requests: "Requests sent: %s – Requests available: %s"
+label_rl_when: "Newest record: %s – Oldest record: %s."
 label_sanity_check: "Verificación de cordura:"
 label_sapi: "SAPI utilizada:"
 label_sections_across_x_files:
@@ -502,6 +508,7 @@ link_logs: "Archivos de Registro"
 link_range: "Tablas de Rango"
 link_range_intersector: "Intersector de Rango"
 link_range_subtractor: "Sustractor de Rango"
+link_rate_limiting: "Limitación de velocidad"
 link_sections_list: "Lista de Secciones"
 link_statistics: "Estadística"
 link_updates: "Actualizaciones"
@@ -699,6 +706,8 @@ tip_number_of_infractions: "Cuantas infracciones incurrir."
 tip_range: "Hola, {username}.<br />Esta página muestra información estadística básica sobre los rangos de IP cubiertos por los archivos de firma actualmente activos."
 tip_range_intersector: "Hola, {username}.<br />El intersector de rangos se puede utilizar para determinar los factores comunes de dos conjuntos de rangos."
 tip_range_subtractor: "Hola, {username}.<br />El sustractor de rango se puede usar para restar un rango de IP/CIDR de otro."
+tip_rate_limiting: "Hola, {username}.<br />Esta página muestra el uso y la disponibilidad actual de la cuota con respecto a la limitación de velocidad."
+tip_rate_limiting_disabled: "Note: Rate limiting is currently disabled, but can be enabled via the configuration page."
 tip_sections_list: "Hola, {username}.<br />Esta página enumera qué secciones existen en los archivos de firma actualmente activos."
 tip_see_the_documentation: "Ver la <a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.es.md\#SECTION6" hreflang="es" rel="noopener external">documentación</a> para obtener información sobre las distintas directivas de la configuración y sus propósitos."
 tip_statistics: "Hola, {username}.<br />Esta página muestra algunas estadísticas de uso básicas relacionadas con la instalación de CIDRAM."

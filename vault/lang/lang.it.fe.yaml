@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2022.11.05).
+# This file: Italian language data for the front-end (last modified: 2022.11.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -398,6 +398,8 @@ label_check_verification: "Prova anche contro la verifica dei motori di ricerca 
 label_checkbox: "Casella di controllo"
 label_cidram: "Versione CIDRAM utilizzata:"
 label_clientinfo: "Informazioni sul cliente:"
+label_current_data: "Current data."
+label_current_data_for: "Current data for "%s"."
 label_default: "Predefinito"
 label_dependencies: "Dipendenze:"
 label_difference: "Differenza tra i due insiemi"
@@ -438,6 +440,7 @@ label_is_available_class: "%s è disponibile."
 label_is_not_available: "%s non è disponibile."
 label_never: "Mai"
 label_next: "Prossima:"
+label_no_data_available: "No data available."
 label_os: "Sistema operativo utilizzata:"
 label_other: "Altro"
 label_other-ActiveIPv4: "File di firme IPv4 attivi"
@@ -451,6 +454,9 @@ label_preferred_source: "Fonte preferita:"
 label_previous: "Precedente:"
 label_remember: "Ricorda"
 label_results: "Risultati (%s in – %s rifiutato – %s accettato – %s combinato – %s su):"
+label_rl_bandwidth: "Bandwidth used: %s – Bandwidth available: %s"
+label_rl_requests: "Requests sent: %s – Requests available: %s"
+label_rl_when: "Newest record: %s – Oldest record: %s."
 label_sanity_check: "Controllo sanitario:"
 label_sapi: "SAPI utilizzata:"
 label_sections_across_x_files: "%s su %s file"
@@ -498,6 +504,7 @@ link_logs: "File di Log"
 link_range: "Tabelle della Gamma"
 link_range_intersector: "Intersettore di Gamma"
 link_range_subtractor: "Sottrattore di Gamma"
+link_rate_limiting: "Limitazione della velocità"
 link_sections_list: "Lista delle Sezioni"
 link_statistics: "Statistiche"
 link_updates: "Aggiornamenti"
@@ -693,6 +700,8 @@ tip_number_of_infractions: "Quante infrazioni incorrere."
 tip_range: "Salve, {username}.<br />Questa pagina mostra alcune informazioni statistiche sugli gamme IP coperti dai file delle firme attualmente attivi."
 tip_range_intersector: "Salve, {username}.<br />L'intersettore di gamma può essere utilizzato per determinare i fattori comuni da due serie di gamme."
 tip_range_subtractor: "Salve, {username}.<br />Il sottrattore di gamma può essere utilizzato per sottrarre un gamma di IP/CIDR da un altro."
+tip_rate_limiting: "Salve, {username}.<br />Questa pagina mostra l'utilizzo e la disponibilità corrente della quota riguarda la limitazione della velocità."
+tip_rate_limiting_disabled: "Note: Rate limiting is currently disabled, but can be enabled via the configuration page."
 tip_sections_list: "Salve, {username}.<br />Questa pagina elenca le sezioni presenti nei file di firma attualmente attivi."
 tip_see_the_documentation: "Vedere la <a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.it.md\#SECTION6" hreflang="it" rel="noopener external">documentazione</a> per informazioni sulle varie direttive di configurazione ed i loro scopi."
 tip_statistics: "Salve, {username}.<br />Questa pagina mostra alcune statistiche di utilizzo relative all'installazione di CIDRAM."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2022.11.05).
+# This file: Polish language data for the front-end (last modified: 2022.11.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -401,6 +401,8 @@ label_check_verification: "Testuj także z weryfikacji w wyszukiwarkach i mediac
 label_checkbox: "Pole wyboru"
 label_cidram: "Użyta wersja CIDRAM:"
 label_clientinfo: "Informacja klientów:"
+label_current_data: "Current data."
+label_current_data_for: "Current data for "%s"."
 label_default: "Domyślna"
 label_dependencies: "Zależności:"
 label_difference: "Różnica dwóch zbiorów"
@@ -443,6 +445,7 @@ label_is_available_class: "%s jest dostępny."
 label_is_not_available: "%s nie jest dostępny."
 label_never: "Nigdy"
 label_next: "Następny:"
+label_no_data_available: "No data available."
 label_os: "Używany system operacyjny:"
 label_other: "Inny"
 label_other-ActiveIPv4: "Aktywne pliki podpisów IPv4"
@@ -456,6 +459,9 @@ label_preferred_source: "Preferowane źródło:"
 label_previous: "Poprzedni:"
 label_remember: "Zapamiętaj"
 label_results: "Rezultat (%s dostarczone – %s odrzucone – %s zaakceptowane – %s połączone – %s zwrócone):"
+label_rl_bandwidth: "Bandwidth used: %s – Bandwidth available: %s"
+label_rl_requests: "Requests sent: %s – Requests available: %s"
+label_rl_when: "Newest record: %s – Oldest record: %s."
 label_sanity_check: "Sprawdzanie poczytalności:"
 label_sapi: "SAPI w użyciu:"
 label_sections_across_x_files:
@@ -507,6 +513,7 @@ link_logs: "Dzienniki"
 link_range: "Tabele Zakresów"
 link_range_intersector: "Narzędzie do Przecinania Zakresów"
 link_range_subtractor: "Odejmator Zakresów"
+link_rate_limiting: "Ograniczenie"
 link_sections_list: "Lista Sekcji"
 link_statistics: "Statystyki"
 link_updates: "Aktualizacje"
@@ -718,6 +725,8 @@ tip_number_of_infractions: "Ile wykroczeń ponieść."
 tip_range: "Witaj, {username}.<br />Ta strona pokazuje podstawowe informacje statystyczne o zakresach adresów IP objętych obecnie aktywnymi plikami podpis."
 tip_range_intersector: "Witaj, {username}.<br />Narzędzie do przecinania zakresów może służyć do określenia wspólnych czynników z dwóch zestawów zakresów."
 tip_range_subtractor: "Witaj, {username}.<br />Subtraktora zakresu można użyć do odjęcia jednego zakresu adresów IP/CIDR od drugiego."
+tip_rate_limiting: "Witaj, {username}.<br />Ta strona pokazuje aktualne wykorzystanie i dostępność przydziału w odniesieniu do ograniczenia."
+tip_rate_limiting_disabled: "Note: Rate limiting is currently disabled, but can be enabled via the configuration page."
 tip_sections_list: "Witaj, {username}.<br />Ta strona zawiera listę sekcji, które istnieją w aktualnie aktywnych plikach podpis."
 tip_see_the_documentation: "Informacje na temat różnych dyrektyw konfiguracyjnych i ich celów można znaleźć w <a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.en.md\#SECTION6" hreflang="en" rel="noopener external">dokumentacji</a>."
 tip_statistics: "Witaj, {username}.<br />Ta strona pokazuje podstawowe statystyki użytkowania dotyczące instalacji CIDRAM."

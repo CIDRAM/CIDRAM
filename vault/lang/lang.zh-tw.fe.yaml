@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2022.11.05).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2022.11.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -399,6 +399,8 @@ label_check_verification: "也用搜索引擎和社交媒體驗證進行測試�
 label_checkbox: "選框"
 label_cidram: "目前使用CIDRAM版本："
 label_clientinfo: "客戶信息："
+label_current_data: "Current data."
+label_current_data_for: "Current data for "%s"."
 label_default: "標準"
 label_dependencies: "依存關係："
 label_difference: "差異"
@@ -435,6 +437,7 @@ label_is_available_class: "%s可用。"
 label_is_not_available: "%s不可用。"
 label_never: "決不"
 label_next: "下一個："
+label_no_data_available: "No data available."
 label_os: "目前使用操作系統："
 label_other: "其他"
 label_other-ActiveIPv4: "活動IPv4簽名文件"
@@ -448,6 +451,9 @@ label_preferred_source: "首選來源："
 label_previous: "以前的："
 label_remember: "記得"
 label_results: "結果 （%s 輸入 – %s 拒絕 – %s 公認 – %s 合併 – %s 產量）："
+label_rl_bandwidth: "Bandwidth used: %s – Bandwidth available: %s"
+label_rl_requests: "Requests sent: %s – Requests available: %s"
+label_rl_when: "Newest record: %s – Oldest record: %s."
 label_sanity_check: "安全檢查："
 label_sapi: "目前使用SAPI："
 label_sections_across_x_files: "%2$s%1$s個簽名"
@@ -493,6 +499,7 @@ link_logs: "日誌"
 link_range: "範圍表"
 link_range_intersector: "範圍相交儀"
 link_range_subtractor: "範圍減法儀"
+link_rate_limiting: "速率限制"
 link_sections_list: "章節列表"
 link_statistics: "統計"
 link_updates: "更新"
@@ -662,6 +669,8 @@ tip_number_of_infractions: "有多少違規行為。"
 tip_range: "你好，​{username}。<br />本頁面顯示了有關當前活性簽名文件覆蓋的IP範圍的一些基本統計信息。"
 tip_range_intersector: "你好，​{username}。<br />範圍相交儀可用於從兩組範圍確定公共因子。"
 tip_range_subtractor: "你好，​{username}。<br />範圍減法儀可用於從另一個範圍中減去一個IP/CIDR範圍。"
+tip_rate_limiting: "你好，​{username}。<br />此頁面顯示有關速率限制的當前配額使用情況和可用性。"
+tip_rate_limiting_disabled: "Note: Rate limiting is currently disabled, but can be enabled via the configuration page."
 tip_sections_list: "你好，​{username}。<br />此頁面列出當前活動簽名文件中存在哪些章節。"
 tip_see_the_documentation: "請參閱<a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.zh-TW.md\#SECTION6" hreflang="zh-TW" rel="noopener external">文檔</a>以獲取有關各種配置指令的信息和他們的目的。"
 tip_statistics: "你好，​{username}。​<br />此頁面顯示了有關CIDRAM安裝的一些基本使用統計信息。"

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2022.09.22).
+ * This file: Front-end functions file (last modified: 2022.11.06).
  */
 
 /**
@@ -4997,6 +4997,48 @@ $CIDRAM['ArrayFromL10NDataToArray'] = function ($References) use (&$CIDRAM): arr
                 continue;
             }
             $Out[$Key] = $Value;
+        }
+    }
+    return $Out;
+};
+
+/**
+ * Process all current request and bandwidth usage for this period.
+ *
+ * @param string $Data The data to be processed.
+ * @return array The processed data.
+ */
+$CIDRAM['ProcessRLUsage'] = function (string $Data): array {
+    $Pos = 0;
+    $EoS = strlen($Data);
+    $Out = [];
+    while ($Pos < $EoS) {
+        $Time = substr($Data, $Pos, 4);
+        if (strlen($Time) !== 4) {
+            break;
+        }
+        $Time = unpack('l*', $Time);
+        $Pos += 4;
+        $Bandwidth = substr($Data, $Pos, 4);
+        if (strlen($Bandwidth) !== 4) {
+            break;
+        }
+        $Bandwidth = unpack('l*', $Bandwidth);
+        $Pos += 4;
+        $BlockSize = substr($Data, $Pos, 4);
+        if (strlen($BlockSize) !== 4) {
+            break;
+        }
+        $BlockSize = unpack('l*', $BlockSize);
+        $Pos += 4;
+        $Block = substr($Data, $Pos, $BlockSize[1]);
+        $Pos += $BlockSize[1];
+        if (isset($Out[$Block])) {
+            $Out[$Block]['Bandwidth'] += $Bandwidth[1];
+            $Out[$Block]['Requests']++;
+            $Out[$Block]['Newest'] = $Time[1];
+        } else {
+            $Out[$Block] = ['Bandwidth' => $Bandwidth[1], 'Requests' => 1, 'Oldest' => $Time[1], 'Newest' => $Time[1]];
         }
     }
     return $Out;

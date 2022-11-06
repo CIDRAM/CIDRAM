@@ -10,11 +10,16 @@ Detailed version release guidelines for CIDRAM can be found at:
 
 === Changes made since last versioned release ===
 
-- [2022.10.31; Bug-fix; Maikuolan]: Reconstructed URIs didn't account for port number; Fixed.
+- [2022.10.31; Bug-fix; Maikuolan]: Reconstructed URIs didn't account for port
+  number; Fixed.
 
 - [2022.11.05; NEW FEATURE; Maikuolan]: Added a new configuration directive,
   "segregate", to specify whether the data for rate limiting should be
   segregated based on domain/hostname or shared (#345).
+
+- [2022.11.06; NEW FEATURE; Maikuolan]: Added a new page to the front-end for
+  the purpose of viewing current rate limit quotas, useful for confirming
+  whether rate limiting is working correctly at installations (#345).
 
 === Version/Release 1.22.2 ===
 PATCH RELEASE.

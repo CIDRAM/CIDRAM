@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2022.11.05).
+# This file: Korean language data for the front-end (last modified: 2022.11.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -398,6 +398,8 @@ label_check_verification: "검색 엔진 및 소셜 미디어 검증 테스트�
 label_checkbox: "체크 박스"
 label_cidram: "사용된 CIDRAM 버전\_:"
 label_clientinfo: "사용자 정보\_:"
+label_current_data: "Current data."
+label_current_data_for: "Current data for "%s"."
 label_default: "기본값"
 label_dependencies: "종속성\_:"
 label_difference: "차이"
@@ -434,6 +436,7 @@ label_is_available_class: "%s를 사용할 수 있습니다."
 label_is_not_available: "%s는 사용할 수 없습니다."
 label_never: "못"
 label_next: "다음\_:"
+label_no_data_available: "No data available."
 label_os: "사용된 운영 체제\_:"
 label_other: "다른"
 label_other-ActiveIPv4: "활성 IPv4 서명 파일"
@@ -447,6 +450,9 @@ label_preferred_source: "선호하는 출처\_:"
 label_previous: "이전\_:"
 label_remember: "기억하다"
 label_results: "결과 (%s 입력된 – %s 거부된 – %s 받아 들인 – %s 합병된 – %s 출력된)\_:"
+label_rl_bandwidth: "Bandwidth used: %s – Bandwidth available: %s"
+label_rl_requests: "Requests sent: %s – Requests available: %s"
+label_rl_when: "Newest record: %s – Oldest record: %s."
 label_sanity_check: "건강 검사\_:"
 label_sapi: "사용된 SAPI\_:"
 label_sections_across_x_files: "%2$s 개 파일에 %1$s"
@@ -492,6 +498,7 @@ link_logs: "로고스"
 link_range: "범위 테이블"
 link_range_intersector: "범위 교차 섹터"
 link_range_subtractor: "범위 빼기"
+link_rate_limiting: "속도 제한"
 link_sections_list: "섹션 목록"
 link_statistics: "통계"
 link_updates: "업데이트"
@@ -661,6 +668,8 @@ tip_number_of_infractions: "얼마나 많은 위반이 발생합니다."
 tip_range: "안녕하세요, {username}.<br />이 페이지는 현재 활성화 된 서명 파일에서 다루는 IP 범위에 대한 몇 가지 기본 통계 정보를 보여줍니다."
 tip_range_intersector: "안녕하세요, {username}.<br />범위 교차 섹터는 두 범위 세트에서 공통 인자를 결정하는 데 사용할 수 있습니다."
 tip_range_subtractor: "안녕하세요, {username}.<br />범위 감산기는 한 범위의 IP/CIDR을 다른 범위에서 빼는 데 사용할 수 있습니다."
+tip_rate_limiting: "안녕하세요, {username}.<br />이 페이지는 속도 제한과 관련된 현재 할당량 사용량 및 가용성을 보여줍니다."
+tip_rate_limiting_disabled: "Note: Rate limiting is currently disabled, but can be enabled via the configuration page."
 tip_sections_list: "안녕하세요, {username}.<br />이 페이지는 현재 활성화 된 서명 파일에 존재하는 섹션을 나열합니다."
 tip_see_the_documentation: "설정 지시어에 대한 자세한 내용은 <a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.ko.md\#SECTION6" hreflang="ko" rel="noopener external">문서를</a> 참조하십시오."
 tip_statistics: "안녕하세요, {username}.<br />이 페이지는 CIDRAM 설치와 관련된 몇 가지 기본 사용 통계를 보여줍니다."

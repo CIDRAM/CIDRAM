@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.10.28).
+ * This file: Front-end handler (last modified: 2022.11.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -3248,6 +3248,129 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
     $CIDRAM['FormatFilesize']($CIDRAM['FE']['FreeSpace']);
     $CIDRAM['FormatFilesize']($CIDRAM['FE']['TotalSpace']);
     $CIDRAM['FormatFilesize']($CIDRAM['FE']['TotalUsage']);
+
+    /** Send output. */
+    echo $CIDRAM['SendOutput']();
+}
+
+/** Rate limiting. */
+elseif ($CIDRAM['QueryVars']['cidram-page'] === 'rl' && $CIDRAM['FE']['Permissions'] === 1) {
+    /** Page initial prepwork. */
+    $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_rate_limiting'), $CIDRAM['L10N']->getString('tip_rate_limiting'));
+
+    /** Maximum bandwidth for rate limiting. */
+    $CIDRAM['RLMaxBandwidth'] = $CIDRAM['ReadBytes']($CIDRAM['Config']['rate_limiting']['max_bandwidth']);
+
+    $CIDRAM['RLLowBandwidth'] = $CIDRAM['RLMaxBandwidth'] > 0 ? floor($CIDRAM['RLMaxBandwidth'] / 4) : 0;
+    $CIDRAM['RLHighBandwidth'] = $CIDRAM['RLMaxBandwidth'] > 0 ? ceil(($CIDRAM['RLMaxBandwidth'] / 4) * 3) : 0;
+    $CIDRAM['RLLowRequests'] = $CIDRAM['Config']['rate_limiting']['max_requests'] > 0 ? floor($CIDRAM['Config']['rate_limiting']['max_requests'] / 4) : 0;
+    $CIDRAM['RLHighRequests'] = $CIDRAM['Config']['rate_limiting']['max_requests'] > 0 ? ceil(($CIDRAM['Config']['rate_limiting']['max_requests'] / 4) * 3) : 0;
+
+    /** For entries to appear on the page. */
+    $CIDRAM['FE']['Entries'] = '';
+
+    if ($CIDRAM['Config']['rate_limiting']['max_requests'] > 0 || $CIDRAM['RLMaxBandwidth'] > 0) {
+        if ($CIDRAM['Cache']->Using && $CIDRAM['Cache']->Using !== 'FF') {
+            /** Get all entries for when using a non-flatfile cache strategy. */
+            $CIDRAM['Entries'] = [];
+            foreach ($CIDRAM['Cache']->getAllEntries() as $CIDRAM['EntryName'] => $CIDRAM['EntryData']) {
+                if (preg_match('~^rl(?:-.+)?$~', $CIDRAM['EntryName'])) {
+                    $CIDRAM['Entries'][$CIDRAM['EntryName']] = $CIDRAM['EntryData'];
+                }
+            }
+        } else {
+            /** Get all entries for when using a flatfile cache strategy. */
+            $CIDRAM['Entries'] = [];
+            foreach (new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($CIDRAM['Vault'], \RecursiveDirectoryIterator::FOLLOW_SYMLINKS), \RecursiveIteratorIterator::SELF_FIRST) as $CIDRAM['Item'] => $CIDRAM['AllFiles']) {
+                if (preg_match('~rl\.dat$~i', $CIDRAM['Item'])) {
+                    $CIDRAM['Entries']['rl'] = $CIDRAM['ReadFile']($CIDRAM['Item']);
+                } elseif (preg_match('~rl(?:-(.+))?\.dat$~i', $CIDRAM['Item'], $CIDRAM['Matched'])) {
+                    $CIDRAM['Entries']['rl-' . $CIDRAM['Matched'][1]] = $CIDRAM['ReadFile']($CIDRAM['Item']);
+                }
+            }
+            unset($CIDRAM['Matched'], $CIDRAM['Item'], $CIDRAM['AllFiles']);
+        }
+        
+        if (count($CIDRAM['Entries']) === 0) {
+            /** Display how to enable rate limiting if currently disabled. */
+            $CIDRAM['FE']['state_msg'] .= '<span class="s">' . $CIDRAM['L10N']->getString('label_no_data_available') . '</span><br />';
+        } else {
+            /** Process all entries. */
+            foreach ($CIDRAM['Entries'] as $CIDRAM['EntryName'] => $CIDRAM['EntryData']) {
+                if ($CIDRAM['EntryName'] === 'rl') {
+                    $CIDRAM['FE']['Entries'] .= "\n" . sprintf('<tr><td class="center h4f" colspan="2"><div class="s">%s</div></td></tr>', $CIDRAM['L10N']->getString('label_current_data'));
+                } elseif (substr($CIDRAM['EntryName'], 0, 3) === 'rl-') {
+                    $CIDRAM['FE']['Entries'] .= "\n" . sprintf('<tr><td class="center h4f" colspan="2"><div class="s">%s</div></td></tr>', sprintf(
+                        $CIDRAM['L10N']->getString('label_current_data'), substr($CIDRAM['EntryName'], 3)
+                    ));
+                }
+                $CIDRAM['EntryData'] = $CIDRAM['ProcessRLUsage'](is_array($CIDRAM['EntryData']) && isset($CIDRAM['EntryData']['Data']) ? $CIDRAM['EntryData']['Data'] : $CIDRAM['EntryData']);
+                foreach ($CIDRAM['EntryData'] as $CIDRAM['Address'] => $CIDRAM['EntryDetails']) {
+                    $CIDRAM['EntryDetails']['Class'] = (
+                        $CIDRAM['EntryDetails']['Bandwidth'] >= $CIDRAM['RLMaxBandwidth'] ||
+                        $CIDRAM['EntryDetails']['Requests'] >= $CIDRAM['Config']['rate_limiting']['max_requests']
+                    ) ? 'txtRd' : 's';
+                    $CIDRAM['EntryDetails']['BandwidthUsed'] = $CIDRAM['EntryDetails']['Bandwidth'];
+                    $CIDRAM['EntryDetails']['BandwidthAvailable'] = $CIDRAM['RLMaxBandwidth'] - $CIDRAM['EntryDetails']['Bandwidth'];
+                    if ($CIDRAM['EntryDetails']['BandwidthAvailable'] < 1) {
+                        $CIDRAM['EntryDetails']['BandwidthAvailable'] = 0;
+                    }
+                    $CIDRAM['FormatFilesize']($CIDRAM['EntryDetails']['BandwidthUsed']);
+                    $CIDRAM['FormatFilesize']($CIDRAM['EntryDetails']['BandwidthAvailable']);
+                    $CIDRAM['EntryDetails']['Bandwidth'] = sprintf(
+                        '%s.<br /><meter min="0" max="%d" low="%d" high="%d" optimum="0" value="%d" style="width:100%%"></meter><br /><br />',
+                        sprintf(
+                            $CIDRAM['L10N']->getString('label_rl_bandwidth'),
+                            $CIDRAM['EntryDetails']['BandwidthUsed'],
+                            $CIDRAM['EntryDetails']['BandwidthAvailable']
+                        ),
+                        $CIDRAM['RLMaxBandwidth'],
+                        $CIDRAM['RLLowBandwidth'],
+                        $CIDRAM['RLHighBandwidth'],
+                        $CIDRAM['EntryDetails']['Bandwidth']
+                    );
+                    $CIDRAM['EntryDetails']['RequestsAvailable'] = $CIDRAM['Config']['rate_limiting']['max_requests'] - $CIDRAM['EntryDetails']['Requests'];
+                    if ($CIDRAM['EntryDetails']['RequestsAvailable'] < 1) {
+                        $CIDRAM['EntryDetails']['RequestsAvailable'] = 0;
+                    }
+                    $CIDRAM['EntryDetails']['Requests'] = sprintf(
+                        '%s.<br /><meter min="0" max="%d" low="%d" high="%d" optimum="0" value="%d" style="width:100%%"></meter><br /><br />',
+                        sprintf(
+                            $CIDRAM['L10N']->getString('label_rl_requests'),
+                            $CIDRAM['NumberFormatter']->format($CIDRAM['EntryDetails']['Requests']),
+                            $CIDRAM['NumberFormatter']->format($CIDRAM['EntryDetails']['RequestsAvailable'])
+                        ),
+                        $CIDRAM['Config']['rate_limiting']['max_requests'],
+                        $CIDRAM['RLLowRequests'],
+                        $CIDRAM['RLHighRequests'],
+                        $CIDRAM['EntryDetails']['Requests']
+                    );
+                    $CIDRAM['FE']['Entries'] .= "\n" . sprintf('<tr><td class="h3"><div class="%s">%s</div></td>', $CIDRAM['EntryDetails']['Class'], $CIDRAM['Address']);
+                    $CIDRAM['FE']['Entries'] .= "\n" . sprintf(
+                        '<td class="h3f"><div class="s">%s%s%s<br /></div></td></tr>',
+                        $CIDRAM['EntryDetails']['Bandwidth'],
+                        $CIDRAM['EntryDetails']['Requests'],
+                        sprintf(
+                            $CIDRAM['L10N']->getString('label_rl_when'),
+                            $CIDRAM['RelativeTime']($CIDRAM['EntryDetails']['Oldest']),
+                            $CIDRAM['RelativeTime']($CIDRAM['EntryDetails']['Newest'])
+                        )
+                    );
+                }
+            }
+            unset($CIDRAM['EntryDetails'], $CIDRAM['Address'], $CIDRAM['EntryData'], $CIDRAM['EntryName']);
+        }
+        unset($CIDRAM['Entries']);
+    } else {
+        /** Display how to enable rate limiting if currently disabled. */
+        $CIDRAM['FE']['state_msg'] .= '<span class="txtRd">' . $CIDRAM['L10N']->getString('tip_rate_limiting_disabled') . '</span><br />';
+    }
+
+    /** Parse output. */
+    $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
+        $CIDRAM['L10N']->Data + $CIDRAM['FE'],
+        $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_rl.html'))
+    );
 
     /** Send output. */
     echo $CIDRAM['SendOutput']();

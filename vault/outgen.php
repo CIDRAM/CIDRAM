@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2022.10.31).
+ * This file: Output generator (last modified: 2022.11.06).
  */
 
 /** Initialise cache. */
@@ -368,8 +368,12 @@ if ($CIDRAM['RL_Active'] && isset($CIDRAM['Factors']) && (!$CIDRAM['Config']['ra
             return $In;
         }, 1);
         register_shutdown_function(function () use (&$CIDRAM) {
-            $CIDRAM['RL_WriteEvent']($CIDRAM['RL_Capture'], $CIDRAM['RL_Size']);
-            $CIDRAM['DestroyCacheObject']();
+            if (isset($CIDRAM['Cache'], $CIDRAM['Vault'], $CIDRAM['RL_WriteEvent'], $CIDRAM['RL_Capture'], $CIDRAM['RL_Size'])) {
+                $CIDRAM['RL_WriteEvent']($CIDRAM['RL_Capture'], $CIDRAM['RL_Size']);
+            }
+            if (isset($CIDRAM['DestroyCacheObject'])) {
+                $CIDRAM['DestroyCacheObject']();
+            }
             ob_end_flush();
         });
     }

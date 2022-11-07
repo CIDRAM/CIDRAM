@@ -3282,7 +3282,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'rl' && $CIDRAM['FE']['Permissio
             }
             unset($CIDRAM['Matched'], $CIDRAM['Item'], $CIDRAM['AllFiles']);
         }
-        
+
         if (count($CIDRAM['Entries']) === 0) {
             /** Display how to enable rate limiting if currently disabled. */
             $CIDRAM['FE']['state_msg'] .= '<span class="s">' . $CIDRAM['L10N']->getString('label_no_data_available') . '</span><br />';
@@ -3293,7 +3293,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'rl' && $CIDRAM['FE']['Permissio
                     $CIDRAM['FE']['Entries'] .= "\n" . sprintf('<tr><td class="center h4f" colspan="2"><div class="s">%s</div></td></tr>', $CIDRAM['L10N']->getString('label_current_data'));
                 } elseif (substr($CIDRAM['EntryName'], 0, 3) === 'rl-') {
                     $CIDRAM['FE']['Entries'] .= "\n" . sprintf('<tr><td class="center h4f" colspan="2"><div class="s">%s</div></td></tr>', sprintf(
-                        $CIDRAM['L10N']->getString('label_current_data'), substr($CIDRAM['EntryName'], 3)
+                        $CIDRAM['L10N']->getString('label_current_data'),
+                        substr($CIDRAM['EntryName'], 3)
                     ));
                 }
                 $CIDRAM['EntryData'] = $CIDRAM['ProcessRLUsage'](is_array($CIDRAM['EntryData']) && isset($CIDRAM['EntryData']['Data']) ? $CIDRAM['EntryData']['Data'] : $CIDRAM['EntryData']);

@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2022.307.0
-# Last modified: 2022.11.04
+# Version: 2022.310.0
+# Last modified: 2022.11.07
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -1076,8 +1076,8 @@ Tag: Black Lotus
 
 
 # ASNs 8100, 29761 ("QuadraNet, Inc").
-# Stop Forum Spam (SFS) listings: 68,780 (AS8100).
-# Updated: 2022.05.16
+# Stop Forum Spam (SFS) listings: 40,038 (AS8100).
+# Updated: 2022.11.07
 
 2a05:b0c6:300::/40 Deny Cloud
 2a07:9944:1a::/48 Deny Cloud
@@ -1093,7 +1093,6 @@ Origin: UA
 2602:fff6:2::/48 Deny Cloud
 2604:bc0::/48 Deny Cloud
 2605:8900:3000::/36 Deny Cloud
-2606:ca40:1::/48 Deny Cloud
 2607:fcd0::/32 Deny Cloud
 2607:ff48::/32 Deny Cloud
 Origin: US
@@ -4571,7 +4570,7 @@ Tag: D.E.Tech
 # ASNs 29873, 30380, 46606, 49392, 51659, 62729, 394695, 398343 ("The
 # Endurance International Group, Inc").
 # See also: onlinetoolsexpert.com/full-list-of-eig-web-hosting-companies/
-# Updated: 2022.09.19
+# Updated: 2022.11.07
 
 2a00:b700::/46 Deny Cloud
 2a00:b700:4::/47 Deny Cloud
@@ -4582,6 +4581,9 @@ Tag: D.E.Tech
 2a06:1307::/32 Deny Cloud
 2a0d:3c43::/32 Deny Cloud
 2a0d:3c45::/32 Deny Cloud
+2a0e:eec4::/32 Deny Cloud
+2a0e:eec6::/32 Deny Cloud
+2a0e:fb44::/32 Deny Cloud
 2a0f:3106::/32 Deny Cloud
 2a0f:8445::/32 Deny Cloud
 Origin: RU
@@ -5475,11 +5477,12 @@ Profile: Infrastructure/Transit
 Tag: Hydra Communications
 
 
-# ASNs 47890, 203523 ("UNMANAGED LTD", "Virtono Networks SRL").
-# Romanian dedicated webhosting. Constant port scans, brute-force, and SSH
-# attacks detected from here. Network infested by XRumer.
-# Stop Forum Spam (SFS) listings: 269 (AS47890), 16 (AS203523).
-# Updated: 2022.01.14
+# ASNs 47890, 48090, 49468, 203523 ("UNMANAGED LTD", "PPTECHNOLOGY LIMITED",
+# "SC Mag Bross Web Services SRL", "Virtono Networks SRL"). Romanian dedicated
+# webhosting. DDoS, SSH, and brute-force attacks, port scans, and spam detected
+# from here. Network infested by XRumer.
+# Stop Forum Spam (SFS) listings: 1,050 (AS47890), 21 (AS48090), 13 (AS203523).
+# Updated: 2022.01.14 / Checked: 2022.11.05
 
 2a10:9100:6::/48 Deny Cloud
 2a10:9100:a::/48 Deny Cloud
@@ -9583,8 +9586,8 @@ Tag: Hetzner Online GmbH
 # Provides webhosting, DDoS protection, and dedicated servers. Brute-force,
 # SQLi, and webapp attacks, tor endpoints, hacking, spam, and masquerading as
 # Googlebot detected from here.
-# Stop Forum Spam (SFS) listings: 114 (AS30823).
-# Updated: 2022.03.22 / Checked: 2022.08.02
+# Stop Forum Spam (SFS) listings: 105 (AS30823).
+# Updated: 2022.11.07
 
 2a00:ccc1:4::/48 Deny Cloud
 2a00:f826:3::/48 Deny Cloud
@@ -9596,7 +9599,6 @@ Tag: Hetzner Online GmbH
 2a0e:5100::/29 Deny Cloud
 2a0e:b540::/29 Deny Cloud
 2a10:9c00::/29 Deny Cloud
-2a12:3e80::/40 Deny Cloud
 Origin: DE
 2001:df1:7780::/48 Deny Cloud
 Origin: US
@@ -10635,9 +10637,13 @@ Tag: AbsamHost
 # ASN 49581 ("Ferdinand Zink trading as Tube-Hosting").
 # Brute-force, SSH, DDoS, and webapp attacks, DNS poisoning, port scans,
 # hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 2,317.
-# Updated: 2022.07.04
+# Stop Forum Spam (SFS) listings: 4,879.
+# Updated: 2022.11.07
 
+2a07:4b40::/29 Deny Cloud
+Origin: DE
+2a0f:9400:6161::/48 Deny Cloud
+Origin: GB
 2a12:3e80::/40 Deny Cloud
 2a12:3e80:200::/40 Deny Cloud
 2a12:8640::/29 Deny Cloud
@@ -10646,7 +10652,7 @@ Tag: AbsamHost
 2a12:de40::/29 Deny Cloud
 2a12:eb00::/29 Deny Cloud
 Origin: DE
-Profile: Webhosting
+Profile: Frequent changes;Webhosting
 Tag: Tube-Hosting
 
 

@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2022.307.0
-# Last modified: 2022.11.04
+# Version: 2022.308.0
+# Last modified: 2022.11.05
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -143,10 +143,10 @@ Profile: Domestic ISP;Tor endpoints here
 Tag: Kyivstar
 
 
-# ASNs 7552, 24086, 37620, 133606, 262210, 327799, 327885 ("Viettel Corporation").
-# Vietnamese ISP also serving Cameroon, East Timor, Peru, Burundi, and
-# Tanzania. Brute-force and SSH attacks, port scans, hacking, and spam detected
-# from here. Listing just the affected ranges/addresses only.
+# ASNs 7552, 24086, 37620, 38623, 133606, 140659, 262210, 327799, 327885 ("Viettel Corporation").
+# Vietnamese ISP also serving Cameroon, Cambodia, East Timor, Peru, Burundi,
+# and Tanzania. Brute-force and SSH attacks, port scans, hacking, and spam
+# detected from here. Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 14,076 (AS7552), 2,888 (AS24086),
 # 46 (AS37620), 77 (AS262210), 46 (AS327799), 18 (AS327885).
 # Updated: 2022.08.13
@@ -1171,15 +1171,13 @@ Tag: DNA Oyj
 # Canadian domestic ISP. Brute-force, XMLRPC/WordPress, SQLi, manifest, and
 # webapp attacks, port scans, hacking, and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,251.
-# Updated: 2022.02.20
+# Stop Forum Spam (SFS) listings: 1,585.
+# Updated: 2022.11.05
 
-2605:8d80:606:9a09::/64 Deny Spam
-2607:9880:1150:55::/64 Deny Spam
-2607:fea8:55e:af00::/64 Deny Spam
-2607:fea8:562:fb00::/64 Deny Spam
-2607:fea8:5520:7e90::/64 Deny Spam
-2607:fea8:e3e2:ac00::/64 Deny Spam
+2607:9880:2a78:4b::/64 Deny Spam
+2607:fea8:562:a500::/64 Deny Spam
+2607:fea8:28c1:8d00::/64 Deny Spam
+2607:fea8:6940:2470::/64 Deny Spam
 Origin: CA
 Profile: Domestic ISP
 Tag: Rogers

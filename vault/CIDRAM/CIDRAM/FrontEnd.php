@@ -3117,7 +3117,7 @@ class FrontEnd extends Core
                     }
                     unset($Matched, $Item, $AllFiles);
                 }
-                
+
                 if (count($Entries) === 0) {
                     /** Display how to enable rate limiting if currently disabled. */
                     $this->FE['state_msg'] .= '<span class="s">' . $this->L10N->getString('label_no_data_available') . '</span><br />';
@@ -3128,7 +3128,8 @@ class FrontEnd extends Core
                             $this->FE['Entries'] .= "\n" . sprintf('<tr><td class="center h4f" colspan="2"><div class="s">%s</div></td></tr>', $this->L10N->getString('label_current_data'));
                         } elseif (substr($EntryName, 0, 3) === 'rl-') {
                             $this->FE['Entries'] .= "\n" . sprintf('<tr><td class="center h4f" colspan="2"><div class="s">%s</div></td></tr>', sprintf(
-                                $this->L10N->getString('label_current_data'), substr($EntryName, 3)
+                                $this->L10N->getString('label_current_data'),
+                                substr($EntryName, 3)
                             ));
                         }
                         $EntryData = $this->processRLUsage(is_array($EntryData) && isset($EntryData['Data']) ? $EntryData['Data'] : $EntryData);

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.11.06).
+ * This file: Front-end handler (last modified: 2022.11.08).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -3290,10 +3290,10 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'rl' && $CIDRAM['FE']['Permissio
             }
             unset($CIDRAM['Matched'], $CIDRAM['Item'], $CIDRAM['AllFiles']);
         }
-        
+
         if (count($CIDRAM['Entries']) === 0) {
-            /** Display how to enable rate limiting if currently disabled. */
-            $CIDRAM['FE']['state_msg'] .= '<span class="s">' . $CIDRAM['L10N']->getString('label_no_data_available') . '</span><br />';
+            /** Default message to display if there aren't any rate limiting records currently available. */
+            $CIDRAM['FE']['Entries'] .= "\n" . sprintf('<tr><td class="center h4f" colspan="2"><div class="s">%s</div></td></tr>', $CIDRAM['L10N']->getString('label_no_data_available'));
         } else {
             /** Process all entries. */
             foreach ($CIDRAM['Entries'] as $CIDRAM['EntryName'] => $CIDRAM['EntryData']) {
@@ -3301,24 +3301,32 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'rl' && $CIDRAM['FE']['Permissio
                     $CIDRAM['FE']['Entries'] .= "\n" . sprintf('<tr><td class="center h4f" colspan="2"><div class="s">%s</div></td></tr>', $CIDRAM['L10N']->getString('label_current_data'));
                 } elseif (substr($CIDRAM['EntryName'], 0, 3) === 'rl-') {
                     $CIDRAM['FE']['Entries'] .= "\n" . sprintf('<tr><td class="center h4f" colspan="2"><div class="s">%s</div></td></tr>', sprintf(
-                        $CIDRAM['L10N']->getString('label_current_data'),
+                        $CIDRAM['L10N']->getString('label_current_data_for'),
                         substr($CIDRAM['EntryName'], 3)
                     ));
                 }
                 $CIDRAM['EntryData'] = $CIDRAM['ProcessRLUsage'](is_array($CIDRAM['EntryData']) && isset($CIDRAM['EntryData']['Data']) ? $CIDRAM['EntryData']['Data'] : $CIDRAM['EntryData']);
+                if (count($CIDRAM['EntryData']) === 0) {
+                    $CIDRAM['FE']['Entries'] .= "\n" . sprintf(
+                        '<tr><td class="h3f" colspan="2"><div class="s">%s</div></td></tr>',
+                        $CIDRAM['L10N']->getString('label_no_data_available')
+                    );
+                }
                 foreach ($CIDRAM['EntryData'] as $CIDRAM['Address'] => $CIDRAM['EntryDetails']) {
                     $CIDRAM['EntryDetails']['Class'] = (
                         $CIDRAM['EntryDetails']['Bandwidth'] >= $CIDRAM['RLMaxBandwidth'] ||
                         $CIDRAM['EntryDetails']['Requests'] >= $CIDRAM['Config']['rate_limiting']['max_requests']
                     ) ? 'txtRd' : 's';
-                    $CIDRAM['EntryDetails']['BandwidthUsed'] = $CIDRAM['EntryDetails']['Bandwidth'];
-                    $CIDRAM['EntryDetails']['BandwidthAvailable'] = $CIDRAM['RLMaxBandwidth'] - $CIDRAM['EntryDetails']['Bandwidth'];
-                    if ($CIDRAM['EntryDetails']['BandwidthAvailable'] < 1) {
-                        $CIDRAM['EntryDetails']['BandwidthAvailable'] = 0;
+                    if ($CIDRAM['RLMaxBandwidth'] > 0) {
+                        $CIDRAM['EntryDetails']['BandwidthUsed'] = $CIDRAM['EntryDetails']['Bandwidth'];
+                        $CIDRAM['EntryDetails']['BandwidthAvailable'] = $CIDRAM['RLMaxBandwidth'] - $CIDRAM['EntryDetails']['Bandwidth'];
+                        if ($CIDRAM['EntryDetails']['BandwidthAvailable'] < 1) {
+                            $CIDRAM['EntryDetails']['BandwidthAvailable'] = 0;
+                        }
+                        $CIDRAM['FormatFilesize']($CIDRAM['EntryDetails']['BandwidthUsed']);
+                        $CIDRAM['FormatFilesize']($CIDRAM['EntryDetails']['BandwidthAvailable']);
                     }
-                    $CIDRAM['FormatFilesize']($CIDRAM['EntryDetails']['BandwidthUsed']);
-                    $CIDRAM['FormatFilesize']($CIDRAM['EntryDetails']['BandwidthAvailable']);
-                    $CIDRAM['EntryDetails']['Bandwidth'] = sprintf(
+                    $CIDRAM['EntryDetails']['Bandwidth'] = $CIDRAM['RLMaxBandwidth'] > 0 ? sprintf(
                         '%s.<br /><meter min="0" max="%d" low="%d" high="%d" optimum="0" value="%d" style="width:100%%"></meter><br /><br />',
                         sprintf(
                             $CIDRAM['L10N']->getString('label_rl_bandwidth'),
@@ -3329,12 +3337,12 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'rl' && $CIDRAM['FE']['Permissio
                         $CIDRAM['RLLowBandwidth'],
                         $CIDRAM['RLHighBandwidth'],
                         $CIDRAM['EntryDetails']['Bandwidth']
-                    );
+                    ) : '';
                     $CIDRAM['EntryDetails']['RequestsAvailable'] = $CIDRAM['Config']['rate_limiting']['max_requests'] - $CIDRAM['EntryDetails']['Requests'];
                     if ($CIDRAM['EntryDetails']['RequestsAvailable'] < 1) {
                         $CIDRAM['EntryDetails']['RequestsAvailable'] = 0;
                     }
-                    $CIDRAM['EntryDetails']['Requests'] = sprintf(
+                    $CIDRAM['EntryDetails']['Requests'] = $CIDRAM['Config']['rate_limiting']['max_requests'] > 0 ? sprintf(
                         '%s.<br /><meter min="0" max="%d" low="%d" high="%d" optimum="0" value="%d" style="width:100%%"></meter><br /><br />',
                         sprintf(
                             $CIDRAM['L10N']->getString('label_rl_requests'),
@@ -3345,16 +3353,18 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'rl' && $CIDRAM['FE']['Permissio
                         $CIDRAM['RLLowRequests'],
                         $CIDRAM['RLHighRequests'],
                         $CIDRAM['EntryDetails']['Requests']
-                    );
+                    ) : '';
                     $CIDRAM['FE']['Entries'] .= "\n" . sprintf('<tr><td class="h3"><div class="%s">%s</div></td>', $CIDRAM['EntryDetails']['Class'], $CIDRAM['Address']);
                     $CIDRAM['FE']['Entries'] .= "\n" . sprintf(
-                        '<td class="h3f"><div class="s">%s%s%s<br /></div></td></tr>',
+                        '<td class="h3f"><div class="s">%s%s%s</div></td></tr>',
                         $CIDRAM['EntryDetails']['Bandwidth'],
                         $CIDRAM['EntryDetails']['Requests'],
                         sprintf(
                             $CIDRAM['L10N']->getString('label_rl_when'),
-                            $CIDRAM['RelativeTime']($CIDRAM['EntryDetails']['Oldest']),
-                            $CIDRAM['RelativeTime']($CIDRAM['EntryDetails']['Newest'])
+                            $CIDRAM['RelativeTime']($EntryDetails['Newest']),
+                            $CIDRAM['RelativeTime']($EntryDetails['Newest'] + $this->Configuration['rate_limiting']['allowance_period']->getAsSeconds()),
+                            $CIDRAM['RelativeTime']($EntryDetails['Oldest']),
+                            $CIDRAM['RelativeTime']($EntryDetails['Oldest'] + $this->Configuration['rate_limiting']['allowance_period']->getAsSeconds())
                         )
                     );
                 }
@@ -3366,6 +3376,13 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'rl' && $CIDRAM['FE']['Permissio
         /** Display how to enable rate limiting if currently disabled. */
         $CIDRAM['FE']['state_msg'] .= '<span class="txtRd">' . $CIDRAM['L10N']->getString('tip_rate_limiting_disabled') . '</span><br />';
     }
+
+    /** Calculate page load time (useful for debugging). */
+    $CIDRAM['FE']['ProcessTime'] = microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];
+    $CIDRAM['FE']['state_msg'] .= sprintf(
+        $CIDRAM['L10N']->getPlural($CIDRAM['FE']['ProcessTime'], 'state_loadtime'),
+        '<span class="txtRd">' . $CIDRAM['NumberFormatter']->format($CIDRAM['FE']['ProcessTime'], 3) . '</span>'
+    );
 
     /** Parse output. */
     $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](

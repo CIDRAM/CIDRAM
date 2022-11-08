@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2022.11.07).
+ * This file: Optional security extras module (last modified: 2022.11.08).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -86,14 +86,14 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         $Query = str_replace("\\", '/', strtolower(urldecode($this->BlockInfo['Query'])));
         $QueryNoSpace = preg_replace('/\s/', '', $Query);
 
-        $this->trigger(preg_match(
+        $this->trigger(!$is_WP_plugin && preg_match(
             '/(?:_once|able|as(?:c|hes|sert)|c(?:hr|ode|ontents)|e(?:cho|regi|sc' .
-            'ape|val)|ex(?:ec|ists)?|f(?:ile|late|unction)|get(?:c|csv|ss?)?|i(?' .
-            ':f|nclude)|len(?:gth)?|nt|open|p(?:ress|lace|lode|uts)|print(?:f|_r' .
-            ')?|re(?:ad|place|quire|store)|rot13|s(?:tart|ystem)|w(?:hil|rit)e)[' .
-            '"\':(?:\[{<$]/',
+            'ape|val)|ex(?:ec|ists)?|f(?:ile|late|unction)|get(?:c|csv|ss?)?|if|' .
+            '(?<!context=edit&)include|len(?:gth)?|nt|open|p(?:ress|lace|lode|ut' .
+            's)|print(?:f|_r)?|re(?:ad|place|quire|store)|rot13|s(?:tart|ystem)|' .
+            'w(?:hil|rit)e)["\':(?:\[{<$]/',
             $QueryNoSpace
-        ), 'Query command injection'); // 2018.05.02
+        ), 'Query command injection'); // 2018.05.02 mod 2022.11.08
 
         $this->trigger(preg_match(
             '~\$(?:globals|_(?:cookie|env|files|get|post|request|se(?:rver|ssion)))|' .

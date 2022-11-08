@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2022.11.06).
+ * This file: The CIDRAM front-end (last modified: 2022.11.08).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -3119,8 +3119,8 @@ class FrontEnd extends Core
                 }
 
                 if (count($Entries) === 0) {
-                    /** Display how to enable rate limiting if currently disabled. */
-                    $this->FE['state_msg'] .= '<span class="s">' . $this->L10N->getString('label_no_data_available') . '</span><br />';
+                    /** Default message to display if there aren't any rate limiting records currently available. */
+                    $this->FE['Entries'] .= "\n" . sprintf('<tr><td class="center h4f" colspan="2"><div class="s">%s</div></td></tr>', $this->L10N->getString('label_no_data_available'));
                 } else {
                     /** Process all entries. */
                     foreach ($Entries as $EntryName => $EntryData) {
@@ -3128,24 +3128,32 @@ class FrontEnd extends Core
                             $this->FE['Entries'] .= "\n" . sprintf('<tr><td class="center h4f" colspan="2"><div class="s">%s</div></td></tr>', $this->L10N->getString('label_current_data'));
                         } elseif (substr($EntryName, 0, 3) === 'rl-') {
                             $this->FE['Entries'] .= "\n" . sprintf('<tr><td class="center h4f" colspan="2"><div class="s">%s</div></td></tr>', sprintf(
-                                $this->L10N->getString('label_current_data'),
+                                $this->L10N->getString('label_current_data_for'),
                                 substr($EntryName, 3)
                             ));
                         }
                         $EntryData = $this->processRLUsage(is_array($EntryData) && isset($EntryData['Data']) ? $EntryData['Data'] : $EntryData);
+                        if (count($EntryData) === 0) {
+                            $this->FE['Entries'] .= "\n" . sprintf(
+                                '<tr><td class="h3f" colspan="2"><div class="s">%s</div></td></tr>',
+                                $this->L10N->getString('label_no_data_available')
+                            );
+                        }
                         foreach ($EntryData as $Address => $EntryDetails) {
                             $EntryDetails['Class'] = (
                                 $EntryDetails['Bandwidth'] >= $RLMaxBandwidth ||
                                 $EntryDetails['Requests'] >= $this->Configuration['rate_limiting']['max_requests']
                             ) ? 'txtRd' : 's';
-                            $EntryDetails['BandwidthUsed'] = $EntryDetails['Bandwidth'];
-                            $EntryDetails['BandwidthAvailable'] = $RLMaxBandwidth - $EntryDetails['Bandwidth'];
-                            if ($EntryDetails['BandwidthAvailable'] < 1) {
-                                $EntryDetails['BandwidthAvailable'] = 0;
+                            if ($RLMaxBandwidth > 0) {
+                                $EntryDetails['BandwidthUsed'] = $EntryDetails['Bandwidth'];
+                                $EntryDetails['BandwidthAvailable'] = $RLMaxBandwidth - $EntryDetails['Bandwidth'];
+                                if ($EntryDetails['BandwidthAvailable'] < 1) {
+                                    $EntryDetails['BandwidthAvailable'] = 0;
+                                }
+                                $this->formatFileSize($EntryDetails['BandwidthUsed']);
+                                $this->formatFileSize($EntryDetails['BandwidthAvailable']);
                             }
-                            $this->formatFileSize($EntryDetails['BandwidthUsed']);
-                            $this->formatFileSize($EntryDetails['BandwidthAvailable']);
-                            $EntryDetails['Bandwidth'] = sprintf(
+                            $EntryDetails['Bandwidth'] = $RLMaxBandwidth > 0 ? sprintf(
                                 '%s.<br /><meter min="0" max="%d" low="%d" high="%d" optimum="0" value="%d" style="width:100%%"></meter><br /><br />',
                                 sprintf(
                                     $this->L10N->getString('label_rl_bandwidth'),
@@ -3156,12 +3164,12 @@ class FrontEnd extends Core
                                 $RLLowBandwidth,
                                 $RLHighBandwidth,
                                 $EntryDetails['Bandwidth']
-                            );
+                            ) : '';
                             $EntryDetails['RequestsAvailable'] = $this->Configuration['rate_limiting']['max_requests'] - $EntryDetails['Requests'];
                             if ($EntryDetails['RequestsAvailable'] < 1) {
                                 $EntryDetails['RequestsAvailable'] = 0;
                             }
-                            $EntryDetails['Requests'] = sprintf(
+                            $EntryDetails['Requests'] = $this->Configuration['rate_limiting']['max_requests'] > 0 ? sprintf(
                                 '%s.<br /><meter min="0" max="%d" low="%d" high="%d" optimum="0" value="%d" style="width:100%%"></meter><br /><br />',
                                 sprintf(
                                     $this->L10N->getString('label_rl_requests'),
@@ -3172,16 +3180,18 @@ class FrontEnd extends Core
                                 $RLLowRequests,
                                 $RLHighRequests,
                                 $EntryDetails['Requests']
-                            );
+                            ) : '';
                             $this->FE['Entries'] .= "\n" . sprintf('<tr><td class="h3"><div class="%s">%s</div></td>', $EntryDetails['Class'], $Address);
                             $this->FE['Entries'] .= "\n" . sprintf(
-                                '<td class="h3f"><div class="s">%s%s%s<br /></div></td></tr>',
+                                '<td class="h3f"><div class="s">%s%s%s</div></td></tr>',
                                 $EntryDetails['Bandwidth'],
                                 $EntryDetails['Requests'],
                                 sprintf(
                                     $this->L10N->getString('label_rl_when'),
+                                    $this->relativeTime($EntryDetails['Newest']),
+                                    $this->relativeTime($EntryDetails['Newest'] + $this->Configuration['rate_limiting']['allowance_period']->getAsSeconds()),
                                     $this->relativeTime($EntryDetails['Oldest']),
-                                    $this->relativeTime($EntryDetails['Newest'])
+                                    $this->relativeTime($EntryDetails['Oldest'] + $this->Configuration['rate_limiting']['allowance_period']->getAsSeconds())
                                 )
                             );
                         }
@@ -3193,6 +3203,13 @@ class FrontEnd extends Core
                 /** Display how to enable rate limiting if currently disabled. */
                 $this->FE['state_msg'] .= '<span class="txtRd">' . $this->L10N->getString('tip_rate_limiting_disabled') . '</span><br />';
             }
+
+            /** Calculate page load time (useful for debugging). */
+            $this->FE['ProcessTime'] = microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];
+            $this->FE['state_msg'] .= sprintf(
+                $this->L10N->getPlural($this->FE['ProcessTime'], 'state_loadtime'),
+                '<span class="txtRd">' . $this->NumberFormatter->format($this->FE['ProcessTime'], 3) . '</span>'
+            );
 
             /** Parse output. */
             $this->FE['FE_Content'] = $this->parseVars(

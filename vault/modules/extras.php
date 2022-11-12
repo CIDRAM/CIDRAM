@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2022.11.08).
+ * This file: Optional security extras module (last modified: 2022.11.12).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -241,8 +241,6 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             'Joomla plugins update bypass (POST RFI conflict)'
         ); // 2017.05.10
 
-        $this->trigger(preg_match('~(?:=\[\\\\|%5C\]|\(\)|=%5Bphp%5D|=\[php\]|\\\\\]|=\[%5C|`)~i', $RawInput), 'POST BBCESC/BBCEX/EX'); // 2017.03.01
-
         $this->trigger(preg_match(
             '~(?:%61%(6c%6c%6f%77%5f%75%72%6c%5f%69%6e%63%6c%75%64%65%3d%6f%6e|7' .
             '5%74%6f%5f%70%72%65%70%65%6e%64%5f%66%69%6c%65%3d%70%68%70%3a%2f%2f' .
@@ -295,8 +293,6 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $this->Reporter->report([15], ['Null truncation attempt detected.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'Overflow attempt') !== false) {
             $this->Reporter->report([15], ['Overflow attempt detected.'], $this->BlockInfo['IPAddr']);
-        } elseif (strpos($this->BlockInfo['WhyReason'], 'POST BBCESC/BBCEX/EX') !== false) {
-            $this->Reporter->report([15], ['POST BBCESC/BBCEX/EX detected.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'Path hack') !== false) {
             $this->Reporter->report([15], ['Path hack detected.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'Pipe hack') !== false) {

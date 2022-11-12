@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2022.10.31).
+ * This file: Protect traits (last modified: 2022.11.11).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -201,7 +201,7 @@ trait Protect
         }
 
         /** Instantiate report orchestrator (used by some modules). */
-        $this->Reporter = new Reporter();
+        $this->Reporter = new Reporter($this->Events);
 
         /** Identify proxy connections (conjunctive reporting element). */
         if (strpos($this->BlockInfo['WhyReason'], $this->L10N->getString('Short_Proxy')) !== false) {

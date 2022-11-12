@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used to simulate block events (last modified: 2022.10.29).
+ * This file: Methods used to simulate block events (last modified: 2022.11.11).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -127,7 +127,7 @@ trait SimulateBlockEvent
         }
 
         /** Instantiate report orchestrator (used by some modules). */
-        $this->Reporter = new Reporter();
+        $this->Reporter = new Reporter($this->Events);
 
         /** Execute modules, if any have been enabled. */
         if ($Modules && $this->Configuration['components']['modules'] && empty($this->CIDRAM['Whitelisted'])) {

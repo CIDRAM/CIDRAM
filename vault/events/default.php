@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Default event handlers (last modified: 2022.06.30).
+ * This file: Default event handlers (last modified: 2022.11.11).
  */
 
 /**
@@ -256,6 +256,42 @@ $this->Events->addHandler('isLogFile', function (): bool {
     }
     if ($this->Configuration['hcaptcha']['hcaptcha_log'] !== '') {
         $this->CIDRAM['LogPatterns'][] = $this->buildLogPattern($this->Configuration['hcaptcha']['hcaptcha_log'], true);
+    }
+    return true;
+});
+
+/**
+ * Writes to the report log.
+ *
+ * @param string $Data What to write.
+ * @return bool True on success; False on failure.
+ */
+$this->Events->addHandler('writeToReportLog', function (string $Data): bool {
+    /** Guard. */
+    if (
+        $this->Configuration['logging']['report_log'] === '' ||
+        !($Filename = $this->buildPath($this->Vault . $this->Configuration['logging']['report_log']))
+    ) {
+        return false;
+    }
+
+    $Data = sprintf(
+        "%1\$s\n%2\$s%3\$s%4\$s\n%5\$s%3\$s%6\$s\n\n",
+        $this->L10N->getString('label_report_log'),
+        $this->L10N->getString('field_datetime'),
+        $this->L10N->getString('pair_separator'),
+        date('c', time()),
+        $this->L10N->getString('field_comments'),
+        $Data
+    );
+
+    $Truncate = $this->readBytes($this->Configuration['logging']['truncate']);
+    $WriteMode = (!file_exists($Filename) || $Truncate > 0 && filesize($Filename) >= $Truncate) ? 'wb' : 'ab';
+    $File = fopen($Filename, $WriteMode);
+    fwrite($File, $Data);
+    fclose($File);
+    if ($WriteMode === 'wb') {
+        $this->logRotation($this->Configuration['logging']['report_log']);
     }
     return true;
 });

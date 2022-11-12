@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Report orchestrator (last modified: 2022.02.21).
+ * This file: Report orchestrator (last modified: 2022.11.11).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -24,6 +24,22 @@ class Reporter
      * @var array An array of reports to process.
      */
     private $Reports = [];
+
+    /**
+     * @var \Maikuolan\Common\Events Needed for logging.
+     */
+    private $Events;
+
+    /**
+     * Construct the report orchestrator.
+     *
+     * @param \Maikuolan\Common\Events $Events Needed for logging.
+     * @return void
+     */
+    public function __construct(\Maikuolan\Common\Events &$Events)
+    {
+        $this->Events = &$Events;
+    }
 
     /**
      * Adds a new report handler.
@@ -82,6 +98,8 @@ class Reporter
     {
         /** Iterate through handlers. */
         foreach ($this->Handlers as $Handler) {
+            $DateTime = date('c', time());
+
             /** Iterate through queued reports. */
             foreach ($this->Reports as $Report) {
                 /** Guard. */
@@ -93,10 +111,23 @@ class Reporter
                 $Report['Categories'] = array_unique($Report['Categories'], SORT_NUMERIC);
 
                 /** Prepare comments. */
-                $Report['Comments'] = sprintf('Automated report (%s). %s', date('c', time()), implode(' ', $Report['Comments']));
+                $Report['Comments'] = sprintf('Automated report (%s). %s', $DateTime, implode(' ', $Report['Comments']));
 
                 /** Call handler. */
                 $Handler($Report);
+            }
+        }
+
+        /** Report logging. */
+        if ($this->Events->assigned('writeToReportLog')) {
+            foreach ($this->Reports as $Report) {
+                /** Guard. */
+                if (empty($Report['Comments']) || empty($Report['IP'])) {
+                    continue;
+                }
+
+                /** Fire the logger. */
+                $this->Events->fireEvent('writeToReportLog', implode(' ', $Report['Comments']));
             }
         }
 

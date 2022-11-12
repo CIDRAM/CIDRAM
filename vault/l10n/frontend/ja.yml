@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2022.11.06).
+# This file: Japanese language data for the front-end (last modified: 2022.11.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -179,6 +179,7 @@ config_logging_log_banned_ips: "禁止されたＩＰからブロックされた
 config_logging_log_rotation_action: "ログ・ローテーションは、一度に存在する必要があるログ・ファイルの数を制限します。​新しいログ・ファイルが作成されると、ログ・ファイルの総数が指定された制限を超えると、指定されたアクションが実行されます。​ここで希望のアクションを指定できます。"
 config_logging_log_rotation_limit: "ログ・ローテーションは、一度に存在する必要があるログ・ファイルの数を制限します。​新しいログ・ファイルが作成されると、ログ・ファイルの総数が指定された制限を超えると、指定されたアクションが実行されます。​ここで希望の制限を指定することができます。​値「0」は、ログ・ローテーションを無効にします。"
 config_logging_log_sanitisation: "フロントエンドのログページを使用してログデータを表示する場合、ＸＳＳ攻撃やその他の潜在的な脅威からユーザーを保護する、CIDRAMはログデータを表示前にサニタイズします。​ただし、デフォルトでは、データはロギング中にサニタイズされません。​これは、ログデータが正確に記録されるようにするためです（将来必要になる可能性があるヒューリスティックまたはフォレンジック分析に役立ちます）。​ただし、ユーザーが外部ツールを使用してログデータを読み込もうとした場合、それらの外部ツールが独自のサニティゼーション・プロセスを実行しない場合、ユーザーがＸＳＳ攻撃にさらされる可能性があります。​必要に応じて、このコンフィギュレーション・ディレクティブを使ってデフォルトの動作を変更することができます。 True = データを記録するときは、それをサニタイズして（記録データの精度はもっと低いですが、ＸＳＳリスクはもっと低いです）。 False = データを記録するときは、それをサニタイズしない（記録データの精度はもっと高いですが、ＸＳＳリスクはもっと高いです）。 Default/デフォルルト = False。"
+config_logging_report_log: "外部ＡＰＩに送信されたレポートを記録するためのファイル。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。"
 config_logging_serialised_log: "アクセス試行阻止の記録、​シリアル化されました。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。"
 config_logging_standard_log: "アクセス試行阻止の記録、​人間によって読み取り可能。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。"
 config_logging_truncate: "ログ・ファイルが一定のサイズに達したら切り詰めますか？​値は、​ログ・ファイルが切り捨てられる前に大きくなる可能性があるＢ/ＫＢ/ＭＢ/ＧＢ/ＴＢ単位の最大サイズです。​デフォルト値の０ＫＢは切り捨てを無効にします （ログ・ファイルは無期限に拡張できます）。​注：個々のログ・ファイルに適用されます。​ログ・ファイルのサイズは一括して考慮されません。"
@@ -484,8 +485,8 @@ label_checksum_after: "後のチェックサム"
 label_checksum_before: "前のチェックサム"
 label_cidram: "使用されたCIDRAMバージョン："
 label_clientinfo: "クライアント情報："
-label_current_data: "Current data."
-label_current_data_for: "Current data for "%s"."
+label_current_data: "現在のデータ。"
+label_current_data_for: "「%s」の現在のデータ。"
 label_default: "デフォルト"
 label_dependencies: "依存関係："
 label_difference: "違い"
@@ -525,7 +526,7 @@ label_is_not_available: "%s は使用できません。"
 label_netmask: "ネットマスク"
 label_never: "決して"
 label_next: "次："
-label_no_data_available: "No data available."
+label_no_data_available: "データなし。"
 label_os: "使用されたオペレーティングシステム："
 label_other: "その他"
 label_other_active_events: "アクティブなイベンツ"
@@ -545,9 +546,9 @@ label_requests_all: "すべてのリクエスト。\nより厳格で徹底的で
 label_requests_none: "しない。\nモジュールをレポート目的でのみ使用する場合し、何も調べない場合は、これを使用しますください。"
 label_requests_sensitive_pages: "機密ページのみのリクエスト（例：ログイン・ページ、登録フォーム、など）。\nそれほど厳格で徹底的ではありませんが、割り当てと制限の点でより保守的であり、パフォーマンスに悪影響を与える可能性は低くなります。​ほとんどの場合、推奨される戦略です。"
 label_results: "結果 （%s が入力された – %s が拒否された – %s が受け入れられた – %s が合併した – %s 出力された）："
-label_rl_bandwidth: "Bandwidth used: %s – Bandwidth available: %s"
-label_rl_requests: "Requests sent: %s – Requests available: %s"
-label_rl_when: "Newest record: %s – Oldest record: %s."
+label_rl_bandwidth: "使用された帯域幅： %s – 利用可能な帯域幅： %s"
+label_rl_requests: "送信されたリクエスト： %s – 利用可能なリクエスト： %s"
+label_rl_when: "最新記録： %s （有効期限： %s）。<br />最も古い記録： %s （有効期限： %s）。"
 label_sanity_check: "サニティ・チェック："
 label_sapi: "使用されたＳＡＰＩ："
 label_sections_across_x_files: "%2$sつのファイルにまたがる%1$s"
@@ -778,7 +779,7 @@ tip_logs: "こんにちは、​{username}。​<br />そのログの内容を�
 tip_number_of_infractions: "発生する違反の数。"
 tip_range: "こんにちは、​{username}。​<br />このページには、現在アクティブな・シグネチャ・ファイルが対象とするＩＰ範囲に関する基本的な統計情報が表示されます。"
 tip_rate_limiting: "こんにちは、​{username}。<br />このページには、レート制限に関する現在のクォータの使用状況と可用性が表示されます。"
-tip_rate_limiting_disabled: "Note: Rate limiting is currently disabled, but can be enabled via the configuration page."
+tip_rate_limiting_disabled: "注意：レート制限は現在オフラインですが、コンフィギュレーション・ページで有効にすることができます。"
 tip_sections_list: "こんにちは、​{username}。<br />このページには、現在アクティブなシグネチャ・ファイルに存在するセクションが一覧表示されます。"
 tip_see_the_documentation: "コンフィギュレーション・ディレクティブの詳細については、​<a href="https://github.com/CIDRAM/Docs/blob/master/readme.ja.md\#SECTION5" hreflang="ja" rel="noopener external">ドキュメント</a>を参照してください。"
 tip_statistics: "こんにちは、​{username}。​<br />このページには、CIDRAMのインストールに関する基本的な使用状況の統計情報が表示されます。"

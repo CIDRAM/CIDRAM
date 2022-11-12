@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2022.11.06).
+# This file: Dutch language data for the front-end (last modified: 2022.11.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -179,6 +179,7 @@ config_logging_log_banned_ips: "Omvatten geblokkeerde verzoeken van verbannen IP
 config_logging_log_rotation_action: "Logrotatie beperkt het aantal logbestanden dat op elk moment zou moeten bestaan. Wanneer nieuwe logbestanden worden gemaakt en het totale aantal logbestanden de opgegeven limiet overschrijdt, wordt de opgegeven actie uitgevoerd. U kunt hier de gewenste actie opgeven."
 config_logging_log_rotation_limit: "Logrotatie beperkt het aantal logbestanden dat op elk moment zou moeten bestaan. Wanneer nieuwe logbestanden worden gemaakt en het totale aantal logbestanden de opgegeven limiet overschrijdt, wordt de opgegeven actie uitgevoerd. U kunt hier de gewenste limiet opgeven. Een waarde van 0 zal logrotatie uitschakelen."
 config_logging_log_sanitisation: "Bij gebruik van de frontend logbestanden pagina om loggegevens te bekijken, CIDRAM sanitiseert de loggegevens voordat deze worden weergegeven, om gebruikers te beschermen tegen XSS-aanvallen en andere potentiële bedreigingen die logboekgegevens kunnen bevatten. Standaard echter, gegevens worden niet gesanitiseerd wanneer ze worden opgenomen. Dit is om ervoor te zorgen dat loggegevens nauwkeurig worden bewaard, om eventuele heuristische of forensische analyses te ondersteunen die in de toekomst nodig kunnen zijn. Echter, in het geval dat een gebruiker probeert om loggegevens te lezen met behulp van externe hulpmiddelen, en of die externe tools hun eigen sanitatieproces niet uitvoeren, de gebruiker kan worden blootgesteld aan XSS-aanvallen. Indien nodig kunt u het standaardgedrag wijzigen met behulp van deze configuratierichtlijn. True = Sanitiseren gegevens tijdens het opnemen (gegevens worden minder nauwkeurig bewaard, maar het XSS-risico is lager). False = Sanitiseren gegevens niet tijdens het opnemen (gegevens worden nauwkeuriger bewaard, maar het XSS-risico is hoger) [Standaard]."
+config_logging_report_log: "Een bestand voor het loggen van rapporten die naar externe API's zijn verzonden. Geef een bestandsnaam, of laat leeg om uit te schakelen."
 config_logging_serialised_log: "Geserialiseerd bestand om alle geblokkeerde toegang pogingen te loggen. Geef een bestandsnaam, of laat leeg om uit te schakelen."
 config_logging_standard_log: "Mensen leesbare bestand om alle geblokkeerde toegang pogingen te loggen. Geef een bestandsnaam, of laat leeg om uit te schakelen."
 config_logging_truncate: "Trunceren logbestanden wanneer ze een bepaalde grootte bereiken? Waarde is de maximale grootte in B/KB/MB/GB/TB dat een logbestand kan groeien tot voordat het wordt getrunceerd. De standaardwaarde van 0KB schakelt truncatie uit (logbestanden kunnen onbepaald groeien). Notitie: Van toepassing op individuele logbestanden! De grootte van de logbestanden wordt niet collectief beschouwd."
@@ -488,8 +489,8 @@ label_checksum_after: "Controlesom na"
 label_checksum_before: "Controlesom voor"
 label_cidram: "CIDRAM versie gebruikt:"
 label_clientinfo: "Gebruikers informatie:"
-label_current_data: "Current data."
-label_current_data_for: "Current data for "%s"."
+label_current_data: "Huidige gegevens."
+label_current_data_for: "Huidige gegevens voor "%s"."
 label_default: "Standaard"
 label_dependencies: "Afhankelijkheden:"
 label_difference: "Verschil"
@@ -533,7 +534,7 @@ label_is_not_available: "%s is niet beschikbaar."
 label_netmask: "Netmasker"
 label_never: "Nooit"
 label_next: "Volgende:"
-label_no_data_available: "No data available."
+label_no_data_available: "Geen gegevens beschikbaar."
 label_os: "Besturingssysteem gebruikt:"
 label_other: "Anders"
 label_other_active_events: "Actieve evenementen"
@@ -553,9 +554,9 @@ label_requests_all: "Elk verzoek.\nStrenger en grondiger, maar het is ook waarsc
 label_requests_none: "Geen.\nAls u de module alleen voor rapportagedoeleinden wilt gebruiken, zonder iets op te zoeken, gebruik deze."
 label_requests_sensitive_pages: "Alleen verzoeken voor gevoelige pagina's (b.v., inlogpagina's, registratieformulieren, enz).\nMinder streng en grondig, maar conservatiever in termen van quota en limieten, en minder waarschijnlijk een negatieve invloed op de prestaties te hebben. De aanbevolen strategie in de meeste gevallen."
 label_results: "Resultaten (%s in – %s verworpen – %s aanvaard – %s samengevoegd – %s uit):"
-label_rl_bandwidth: "Bandwidth used: %s – Bandwidth available: %s"
-label_rl_requests: "Requests sent: %s – Requests available: %s"
-label_rl_when: "Newest record: %s – Oldest record: %s."
+label_rl_bandwidth: "Gebruikte bandbreedte: %s – Bandbreedte beschikbaar: %s"
+label_rl_requests: "Verzonden verzoeken: %s – Verzoeken beschikbaar: %s"
+label_rl_when: "Nieuwste vermelding: %s (Verloopt: %s).<br />Oudste vermelding: %s (Verloopt: %s)."
 label_sanity_check: "Gezondheidscontrole:"
 label_sapi: "SAPI gebruikt:"
 label_sections_across_x_files:
@@ -810,7 +811,7 @@ tip_logs: "Hallo, {username}.<br />Selecteer een logbestand uit de onderstaande 
 tip_number_of_infractions: "Hoeveel overtredingen toe te passen."
 tip_range: "Hallo, {username}.<br />Deze pagina toont enige statistische basisinformatie over de IP-reeksen die worden bestreken door de actieve signatuurbestanden."
 tip_rate_limiting: "Hallo, {username}.<br />Deze pagina toont het huidige quotagebruik en beschikbaarheid met betrekking tot tarieflimiet."
-tip_rate_limiting_disabled: "Note: Rate limiting is currently disabled, but can be enabled via the configuration page."
+tip_rate_limiting_disabled: "Notitie: Tarieflimiet is momenteel uitgeschakeld, maar kan via de configuratiepagina worden ingeschakeld."
 tip_sections_list: "Hallo, {username}.<br />Deze pagina geeft een overzicht van de secties die bestaan in de actieve signatuurbestanden."
 tip_see_the_documentation: "Zie de <a href="https://github.com/CIDRAM/Docs/blob/master/readme.nl.md\#SECTION5" hreflang="nl" rel="noopener external">documentatie</a> voor informatie over de verschillende configuratie richtlijnen en hun doeleinden."
 tip_statistics: "Hallo, {username}.<br />Deze pagina bevat een aantal basisgebruiksstatistieken voor uw CIDRAM-installatie."

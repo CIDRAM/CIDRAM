@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2022.11.06).
+# This file: Polish language data for the front-end (last modified: 2022.11.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -179,6 +179,7 @@ config_logging_log_banned_ips: "Umieścić zablokowane żądania z zablokowanych
 config_logging_log_rotation_action: "Rotacja dziennika ogranicza liczbę plików dziennika, które powinny istnieć jednocześnie. Po utworzeniu nowych plików dziennika, jeśli całkowita liczba plików dziennika przekroczy określony limit, zostanie wykonana określona akcja. Tutaj możesz określić żądaną akcję."
 config_logging_log_rotation_limit: "Rotacja dziennika ogranicza liczbę plików dziennika, które powinny istnieć jednocześnie. Po utworzeniu nowych plików dziennika, jeśli całkowita liczba plików dziennika przekroczy określony limit, zostanie wykonana określona akcja. Tutaj możesz określić żądany limit. Wartość 0 spowoduje wyłączenie rotacja dziennika."
 config_logging_log_sanitisation: "Podczas korzystania ze strony dzienników do przeglądania danych dziennika CIDRAM odkaża dane dziennika przed ich wyświetleniem, aby chronić użytkowników przed atakami XSS i innymi potencjalnymi zagrożeniami, które mogą być zawarte w danych dziennika. Jednak domyślnie dane nie są odkażane podczas logowania. Zapewnia to dokładne zachowanie danych dziennika, aby wspomóc każdą analizę heurystyczną, która może być konieczna w przyszłości. Jednak w przypadku, gdy użytkownik próbuje odczytać dane dziennika za pomocą zewnętrznych narzędzi, a jeśli te narzędzia zewnętrzne nie przeprowadzają własnego procesu sanityzacji, użytkownik może być narażony na ataki XSS. W razie potrzeby możesz zmienić domyślne zachowanie za pomocą tej dyrektywy konfiguracyjnej. True (Prawdziwe) = Odkaż dane podczas logowania (dane są przechowywane mniej dokładnie, ale ryzyko XSS jest niższe). False (Fałszywy) = Nie odkaż danych podczas logowania (dane są przechowywane dokładniej, ale ryzyko XSS jest wyższe) [Domyślna]."
+config_logging_report_log: "Plik do rejestrowania wszelkich raportów wysyłanych do zewnętrznych APIów. Podaj nazwę pliku lub pozostaw puste, aby wyłączyć."
 config_logging_serialised_log: "Plik szeregowy do rejestrowania wszystkich zablokowanych prób dostępu. Podaj nazwę pliku lub pozostaw puste, aby wyłączyć."
 config_logging_standard_log: "Plik czytelny dla człowieka do rejestrowania wszystkich zablokowanych prób dostępu. Podaj nazwę pliku lub pozostaw puste, aby wyłączyć."
 config_logging_truncate: "Obciąć pliki dziennika, gdy osiągną określony rozmiar? Wartość to maksymalny rozmiar w B/KB/MB/GB/TB, do którego plik dziennika może się powiększyć, zanim zostanie obcięty. Domyślna wartość 0KB wyłącza obcinanie (pliki dziennika mogą rosnąć w nieskończoność). Uwaga: Dotyczy pojedynczych plików dziennika! Rozmiar plików dziennika nie jest rozpatrywany łącznie."
@@ -488,8 +489,8 @@ label_checksum_after: "Suma kontrolna po"
 label_checksum_before: "Suma kontrolna przed"
 label_cidram: "Użyta wersja CIDRAM:"
 label_clientinfo: "Informacja klientów:"
-label_current_data: "Current data."
-label_current_data_for: "Current data for "%s"."
+label_current_data: "Aktualne dane."
+label_current_data_for: "Aktualne dane dla „%s”."
 label_default: "Domyślna"
 label_dependencies: "Zależności:"
 label_difference: "Różnica dwóch zbiorów"
@@ -535,7 +536,7 @@ label_is_not_available: "%s nie jest dostępny."
 label_netmask: "Maska sieci"
 label_never: "Nigdy"
 label_next: "Następny:"
-label_no_data_available: "No data available."
+label_no_data_available: "Brak dostępnych danych."
 label_os: "Używany system operacyjny:"
 label_other: "Inny"
 label_other_active_events: "Aktywne wydarzenia"
@@ -555,9 +556,9 @@ label_requests_all: "Każde żądanie.\nBardziej rygorystyczne i dokładne, ale 
 label_requests_none: "Nic.\nJeśli chcesz używać modułu tylko do celów raportowania, bez wyszukiwania czegokolwiek, użyj tego."
 label_requests_sensitive_pages: "Żądania tylko dla wrażliwych stron (np., strony logowania, formularze rejestracyjne, itp).\nMniej rygorystyczne i dokładne, ale bardziej konserwatywne pod względem kontyngentów i limitów oraz mniej prawdopodobne, że wpłynie to negatywnie na wyniki. Zalecana strategia w większości przypadków."
 label_results: "Rezultat (%s dostarczone – %s odrzucone – %s zaakceptowane – %s połączone – %s zwrócone):"
-label_rl_bandwidth: "Bandwidth used: %s – Bandwidth available: %s"
-label_rl_requests: "Requests sent: %s – Requests available: %s"
-label_rl_when: "Newest record: %s – Oldest record: %s."
+label_rl_bandwidth: "Wykorzystywana przepustowość: %s – Dostępna przepustowość: %s"
+label_rl_requests: "Wysłane wnioski: %s – Dostępne wnioski: %s"
+label_rl_when: "Najnowszy rekord: %s (Wygasa: %s).<br />Najstarszy rekord: %s (Wygasa: %s)."
 label_sanity_check: "Sprawdzanie poczytalności:"
 label_sapi: "SAPI w użyciu:"
 label_sections_across_x_files:
@@ -836,7 +837,7 @@ tip_logs: "Witaj, {username}.<br />Wybierz plik dziennika z poniższej listy, ab
 tip_number_of_infractions: "Ile wykroczeń ponieść."
 tip_range: "Witaj, {username}.<br />Ta strona pokazuje podstawowe informacje statystyczne o zakresach adresów IP objętych obecnie aktywnymi plikami podpis."
 tip_rate_limiting: "Witaj, {username}.<br />Ta strona pokazuje aktualne wykorzystanie i dostępność przydziału w odniesieniu do ograniczenia."
-tip_rate_limiting_disabled: "Note: Rate limiting is currently disabled, but can be enabled via the configuration page."
+tip_rate_limiting_disabled: "Uwaga: Ograniczenie szybkości jest obecnie wyłączone, ale można je włączyć na stronie konfiguracji."
 tip_sections_list: "Witaj, {username}.<br />Ta strona zawiera listę sekcji, które istnieją w aktualnie aktywnych plikach podpis."
 tip_see_the_documentation: "Informacje na temat różnych dyrektyw konfiguracyjnych i ich celów można znaleźć w <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#SECTION5" hreflang="en" rel="noopener external">dokumentacji</a>."
 tip_statistics: "Witaj, {username}.<br />Ta strona pokazuje podstawowe statystyki użytkowania dotyczące instalacji CIDRAM."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2022.11.06).
+# This file: Swedish language data for the front-end (last modified: 2022.11.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -179,6 +179,7 @@ config_logging_log_banned_ips: "Inkludera blockerade förfrågningar från förb
 config_logging_log_rotation_action: "Loggrotering begränsar antalet loggfiler som ska existera vid en gång. När nya loggfiler skapas, om det totala antalet loggfiler överstiger den angivna gränsen, den angivna åtgärden kommer att utföras. Du kan ange önskad åtgärd här."
 config_logging_log_rotation_limit: "Loggrotering begränsar antalet loggfiler som ska existera vid en gång. När nya loggfiler skapas, om det totala antalet loggfiler överstiger den angivna gränsen, den angivna åtgärden kommer att utföras. Du kan ange önskad gräns här. Ett värde på 0 kommer att inaktivera loggroteringen."
 config_logging_log_sanitisation: "När du använder loggningssidan för att visa loggdata, CIDRAM sanerar loggdata innan den visas, för att skydda användare mot XSS-attacker och andra potentiella hot som loggdata kan innehålla. Men som standard, data saneras inte under loggning. Det här är för att säkerställa att loggdata bevaras exakt, för att hjälpa någon heuristisk analys som kan vara nödvändig i framtiden. Men om en användare försöker läsa loggdata med hjälp av externa verktyg, och om dessa externa verktyg inte utför sin egen saneringsprocess, användaren kan utsättas för XSS-attacker. Om det behövs kan du ändra standardbeteendet med det här konfigurationsdirektivet. True = Sanera data när loggar data (uppgifterna bevaras mindre exakt, men XSS-risken är lägre). False = Sanera inte data när loggar data (uppgifterna bevaras mer exakt, men XSS-risken är högre) [Standard]."
+config_logging_report_log: "En fil för att logga alla rapporter som skickas till externa APIer. Ange ett filnamn, eller lämna tomt för att inaktivera."
 config_logging_serialised_log: "Serialiserad fil för att logga alla blockerade åtkomstförsök. Ange ett filnamn, eller lämna tomt för att inaktivera."
 config_logging_standard_log: "Mänsklig läsbar fil för att logga in alla blockerade åtkomstförsök. Ange ett filnamn, eller lämna tomt för att inaktivera."
 config_logging_truncate: "Avkorta loggfiler när de når en viss storlek? Värdet är den maximala storleken i B/KB/MB/GB/TB som en loggfil kan växa till innan den trunkeras. Standardvärdet på 0KB inaktiverar avkortning (loggfiler kan växa i obestämd tid). Notera: Gäller enskilda loggfiler! Loggfiler storlek anses inte kollektivt."
@@ -487,8 +488,8 @@ label_checksum_after: "Kontrollsumma efter"
 label_checksum_before: "Kontrollsumma innan"
 label_cidram: "CIDRAM-version som används:"
 label_clientinfo: "Klientinformation:"
-label_current_data: "Current data."
-label_current_data_for: "Current data for "%s"."
+label_current_data: "Aktuella data."
+label_current_data_for: "Aktuella data för "%s"."
 label_default: "Standard"
 label_dependencies: "Programvarukrav:"
 label_difference: "Differensen"
@@ -532,7 +533,7 @@ label_is_not_available: "%s är inte tillgänglig."
 label_netmask: "Nätmask"
 label_never: "Aldrig"
 label_next: "Nästa:"
-label_no_data_available: "No data available."
+label_no_data_available: "Ingen data tillgänglig."
 label_os: "Operativsystem som används:"
 label_other: "Andra"
 label_other_active_events: "Aktiva händelser"
@@ -552,9 +553,9 @@ label_requests_all: "Varje förfrågan.\nMer strängt och noggrant, men också m
 label_requests_none: "Ingen.\nOm du vill använda modulen endast för rapporteringsändamål, utan att slå upp något, använd denna."
 label_requests_sensitive_pages: "Förfrågningar endast för känsliga sidor (t.ex., inloggningssidor, registreringsformulär, etc).\nMindre stränga och noggranna, men mer konservativa när det gäller kvoter och gränser, och mindre sannolikt att det påverkar resultatet negativt. Den rekommenderade strategin i de flesta fall."
 label_results: "Resultat (%s i – %s avvisade – %s accepterad – %s kombinerad – %s ut):"
-label_rl_bandwidth: "Bandwidth used: %s – Bandwidth available: %s"
-label_rl_requests: "Requests sent: %s – Requests available: %s"
-label_rl_when: "Newest record: %s – Oldest record: %s."
+label_rl_bandwidth: "Använd bandbredd: %s – Tillgänglig bandbredd: %s"
+label_rl_requests: "Förfrågningar skickade: %s – Förfrågningar tillgängliga: %s"
+label_rl_when: "Nyaste rekordet: %s (Upphörande: %s).<br />Äldsta rekordet: %s (Upphörande: %s)."
 label_sanity_check: "Säkerhetskontroll:"
 label_sapi: "SAPI som används:"
 label_sections_across_x_files:
@@ -813,7 +814,7 @@ tip_logs: "Hallå, {username}.<br />Välj en loggfil från listan nedan för att
 tip_number_of_infractions: "Hur många överträdelser som ska tillämpas."
 tip_range: "Hallå, {username}.<br />Den här sidan visar några grundläggande statistiska uppgifter om de signaturer som omfattas av de aktuella aktiva signaturfilerna."
 tip_rate_limiting: "Hallå, {username}.<br />Den här sidan visar den aktuella kvotanvändningen och tillgängligheten när det gäller hastighetsbegränsning."
-tip_rate_limiting_disabled: "Note: Rate limiting is currently disabled, but can be enabled via the configuration page."
+tip_rate_limiting_disabled: "Notera: Hastighetsbegränsning är för närvarande inaktiverad, men kan aktiveras via konfigurationssidan."
 tip_sections_list: "Hallå, {username}.<br />Den här sidan visar vilka sektioner som finns i de aktuella aktiva signaturfilerna."
 tip_see_the_documentation: "Se <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#SECTION5" hreflang="en" rel="noopener external">dokumentationen</a> för information om de olika konfigurationsdirektiven och deras ändamål."
 tip_statistics: "Hallå, {username}.<br />Den här sidan visar en viss användarstatistik för din CIDRAM-installation."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2022.11.06).
+# This file: Italian language data for the front-end (last modified: 2022.11.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -179,6 +179,7 @@ config_logging_log_banned_ips: "Includi richieste bloccate da IP vietati nei fil
 config_logging_log_rotation_action: "La rotazione dei log limita il numero di file di log che dovrebbero esistere in qualsiasi momento. Quando vengono creati nuovi file di log, se il numero totale di file di log supera il limite specificato, verrà eseguita l'azione specificata. Qui puoi specificare l'azione desiderato."
 config_logging_log_rotation_limit: "La rotazione dei log limita il numero di file di log che dovrebbero esistere in qualsiasi momento. Quando vengono creati nuovi file di log, se il numero totale di file di log supera il limite specificato, verrà eseguita l'azione specificata. Qui puoi specificare il limite desiderato. Un valore di 0 disabiliterà la rotazione dei log."
 config_logging_log_sanitisation: "Quando si utilizza il front-end pagina per i file di log per visualizzare i dati di log, CIDRAM sanitizzará i dati del registro prima di visualizzarli, per proteggere gli utenti dagli attacchi XSS e altre potenziali minacce che i dati di log potrebbero contenere. Tuttavia, per impostazione predefinita, i dati non vengono sanitizzati durante la registrazione. Questo è per garantire che i dati siano conservati in modo accurato, per aiutare qualsiasi analisi euristica che potrebbe essere necessaria in futuro. Tuttavia, nel caso in cui un utente tenti di leggere i dati utilizzando strumenti esterni, e se quegli strumenti esterni non eseguono il loro processo sanificazione, l'utente potrebbe essere esposto agli attacchi XSS. Se necessario, è possibile modificare il comportamento predefinito utilizzando questa direttiva di configurazione. True = Sanitizzare i dati durante la registrazione (i dati vengono conservati in modo meno accurato, ma il rischio XSS è inferiore). False = Non sanitizzare i dati durante la registrazione (i dati vengono conservati in modo più accurato, ma il rischio XSS è più alto) [Predefinito]."
+config_logging_report_log: "Un file per la registrazione di tutti i rapporti inviati ad API esterne. Specificare un nome di file, o lasciare vuoto per disabilitare."
 config_logging_serialised_log: "Un file serializzato per la registrazione di tutti i tentativi di accesso bloccati. Specificare un nome di file, o lasciare vuoto per disabilitare."
 config_logging_standard_log: "Un file leggibile dagli umani per la registrazione di tutti i tentativi di accesso bloccati. Specificare un nome di file, o lasciare vuoto per disabilitare."
 config_logging_truncate: "Troncare i file di log quando raggiungono una determinata dimensione? Il valore è la dimensione massima in B/KB/MB/GB/TB che un file di log può crescere prima di essere troncato. Il valore predefinito di 0KB disattiva il troncamento (i file di log possono crescere indefinitamente). Nota: Si applica ai singoli file di log! La dimensione dei file di log non viene considerata collettivamente."
@@ -487,8 +488,8 @@ label_checksum_after: "Checksum dopo"
 label_checksum_before: "Checksum prima"
 label_cidram: "Versione CIDRAM utilizzata:"
 label_clientinfo: "Informazioni sul cliente:"
-label_current_data: "Current data."
-label_current_data_for: "Current data for "%s"."
+label_current_data: "Dati attuali."
+label_current_data_for: "Dati attuali per "%s"."
 label_default: "Predefinito"
 label_dependencies: "Dipendenze:"
 label_difference: "Differenza tra i due insiemi"
@@ -532,7 +533,7 @@ label_is_not_available: "%s non è disponibile."
 label_netmask: "Maschera di rete"
 label_never: "Mai"
 label_next: "Prossima:"
-label_no_data_available: "No data available."
+label_no_data_available: "Nessun dato disponibile."
 label_os: "Sistema operativo utilizzata:"
 label_other: "Altro"
 label_other_active_events: "Eventi attivi"
@@ -552,9 +553,9 @@ label_requests_all: "Ogni richiesta.\nPiù rigoroso e completo, ma anche più pr
 label_requests_none: "Nessuno.\nSe si desidera utilizzare il modulo solo a scopo di reportistica, senza cercare nulla, utilizzare questo."
 label_requests_sensitive_pages: "Richieste solo per pagine sensibili (ad es., pagine di accesso, moduli di registrazione, ecc).\nMeno rigoroso e completo, ma più prudente in termini di quote e limiti, e meno probabile che incida negativamente sulla performance. La strategia consigliata nella maggior parte dei casi."
 label_results: "Risultati (%s in – %s rifiutato – %s accettato – %s combinato – %s su):"
-label_rl_bandwidth: "Bandwidth used: %s – Bandwidth available: %s"
-label_rl_requests: "Requests sent: %s – Requests available: %s"
-label_rl_when: "Newest record: %s – Oldest record: %s."
+label_rl_bandwidth: "Larghezza di banda utilizzata: %s – Larghezza di banda disponibile: %s"
+label_rl_requests: "Richieste inviate: %s – Richieste disponibili: %s"
+label_rl_when: "Record più recente: %s (Scade: %s).<br />Record più vecchio: %s (Scade: %s)."
 label_sanity_check: "Controllo sanitario:"
 label_sapi: "SAPI utilizzata:"
 label_sections_across_x_files: "%s su %s file"
@@ -813,7 +814,7 @@ tip_logs: "Salve, {username}.<br />Selezionare un file di log dall'elenco sottos
 tip_number_of_infractions: "Quante infrazioni incorrere."
 tip_range: "Salve, {username}.<br />Questa pagina mostra alcune informazioni statistiche sugli gamme IP coperti dai file delle firme attualmente attivi."
 tip_rate_limiting: "Salve, {username}.<br />Questa pagina mostra l'utilizzo e la disponibilità corrente della quota riguarda la limitazione della velocità."
-tip_rate_limiting_disabled: "Note: Rate limiting is currently disabled, but can be enabled via the configuration page."
+tip_rate_limiting_disabled: "Nota: La limitazione della velocità è attualmente disattivato, ma può essere attivato tramite la pagina di configurazione."
 tip_sections_list: "Salve, {username}.<br />Questa pagina elenca le sezioni presenti nei file di firma attualmente attivi."
 tip_see_the_documentation: "Vedere la <a href="https://github.com/CIDRAM/Docs/blob/master/readme.it.md\#SECTION5" hreflang="it" rel="noopener external">documentazione</a> per informazioni sulle varie direttive di configurazione ed i loro scopi."
 tip_statistics: "Salve, {username}.<br />Questa pagina mostra alcune statistiche di utilizzo relative all'installazione di CIDRAM."

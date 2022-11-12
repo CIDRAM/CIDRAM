@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hebrew language data for the front-end (last modified: 2022.11.06).
+# This file: Hebrew language data for the front-end (last modified: 2022.11.12).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -179,6 +179,7 @@ config_logging_log_banned_ips: "האם לכלול בקשות חסומות מכת
 config_logging_log_rotation_action: "סיבוב יומן מגביל את מספר קובצי היומן שצריכים להתקיים בכל זמן נתון. כאשר נוצרים קובצי יומן חדשים, אם המספר הכולל של קובצי יומן חורג מהמגבלה שצוינה, הפעולה שצוינה תתבצע. אתה יכול לציין את הפעולה הרצויה כאן."
 config_logging_log_rotation_limit: "סיבוב יומן מגביל את מספר קובצי היומן שצריכים להתקיים בכל זמן נתון. כאשר נוצרים קובצי יומן חדשים, אם המספר הכולל של קובצי יומן חורג מהמגבלה שצוינה, הפעולה שצוינה תתבצע. אתה יכול לציין את המגבלה הרצויה כאן. ערך של 0 ישבית את סיבוב היומן."
 config_logging_log_sanitisation: "בעת שימוש בדף היומנים הקדמיים לצפייה בנתוני יומן, CIDRAM מחטא את נתוני היומן לפני הצגתם, כדי להגן על המשתמשים מפני התקפות XSS ואיומים פוטנציאליים אחרים שנתוני יומן יכולים להכיל. עם זאת, כסטנדרט, הנתונים אינם מחוטאים במהלך הרישום. זאת כדי להבטיח שנתוני יומן נשמרים בצורה מדויקת, כדי לסייע בכל ניתוח היוריסטי או משפטי שעשוי להיות נחוץ בעתיד. עם זאת, במקרה שמשתמש מנסה לקרוא נתוני יומן באמצעות כלים חיצוניים, ואם הכלים החיצוניים הללו אינם מבצעים תהליך חיטוי משלהם, המשתמש עלול להיחשף להתקפות XSS. במידת הצורך, תוכל לשנות את ההתנהגות הסטנדרטית באמצעות הוראת תצורה זו. True = לחטא נתונים בעת רישום אותם (הנתונים נשמרים בצורה פחות מדויקת, אך סיכון XSS נמוך יותר). False = אל לחטא נתונים בעת רישום אותם (הנתונים נשמרים בצורה מדויקת יותר, אך סיכון XSS גבוה יותר) [סטנדרטי]."
+config_logging_report_log: "קובץ לרישום דוחות שנשלחו ל-API חיצוניים. ציין שם קובץ, או השאר ריק כדי להשבית."
 config_logging_serialised_log: "קובץ סידורי לרישום כל ניסיונות הגישה החסומים. ציין שם קובץ, או השאר ריק כדי להשבית."
 config_logging_standard_log: "קובץ קריא לאדם לרישום כל ניסיונות הגישה החסומים. ציין שם קובץ, או השאר ריק כדי להשבית."
 config_logging_truncate: "לקצץ קובצי יומן כשהם מגיעים לגודל מסוים? הערך הוא הגודל המקסימלי ב-B/KB/MB/GB/TB שקובץ יומן עשוי לגדול אליו לפני קיצוץ. הערך הסטנדרטי של 0KB משבית חיתוך (קבצי יומן יכולים לגדול ללא הגבלת). הערה: חל על קבצי יומן בודדים! הגודל של קובצי יומן לא נחשב באופן קולקטיבי."
@@ -347,41 +348,46 @@ hints_ipv6_on_32bit: "הערה: ייתכן שחיפושי IPv6 לא יפעלו �
 hints_pdo_dsn:
  שאלות נפוצות.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#HOW_TO_USE_PDO" hreflang="en-AU">מהו "PDO DSN"? כיצד להשתמש ב-PDO עם CIDRAM?</a></em>"
 hints_shorthand:
- 0.: "If your website needs access via LAN or localhost, don't block this. Otherwise though, you can block this."
- 1.: "None of the standard signature files use this, but it's supported nonetheless in case it might be useful for some users."
- 2.: "If you need users to be able to access your website via proxies, don't block this. Otherwise though, you can block this."
- 3.: "Direct usage in signatures isn't supported, but it may be invoked by other means in particular circumstances."
- 4.: "Refers to cases where shorthand words aren't used at all, or aren't recognised by CIDRAM."
- One per signature.: "A signature may invoke multiple profiles, but can use only one shorthand word. It's possible that multiple shorthand words may be suitable, but as only one can be used, we aim to always use only the most suitable."
- Priority.: "An option selected always takes priority over an option not selected. למשל., if multiple shorthand words are in play but only one of them is set as being blocked, the request will still be blocked."
- Human endpoints and cloud services.: "Cloud service may refer to webhosting providers, server farms, data centers, or any number of other things. Human endpoint refers to the means by which a human accesses the internet, such as by way of an internet service provider. A network usually provides just one or the other, but may sometimes provide both. We aim to never identify potential human endpoints as cloud services. Therefore, a cloud service may be identified as something else if its range is shared by known human endpoints. Conversely, we aim to always identify cloud services, whose ranges are not shared by any known human endpoints, as cloud services. Therefore, a request identified explicitly as a cloud service probably doesn't share its range with any known human endpoints. Likewise, a request identified explicitly by attacks or spam probably does. However, the internet is always in flux, the purposes of networks changes over time, and ranges are always being bought or sold, so remain cognisant and vigilant in regards to false positives."
+ 0.: "אם האתר שלך זקוק לגישה דרך LAN או localhost, אל תחסום זאת. במקרים אחרים, אתה יכול לחסום את זה."
+ 1.: "אף אחד מקובצי החתימה הסטנדרטיים לא משתמש בזה, אבל זה נתמך בכל זאת למקרה שזה עשוי להיות שימושי עבור משתמשים מסוימים."
+ 2.: "אם אתה צריך שמשתמשים יוכלו לגשת לאתר שלך באמצעות פרוקסי, אל תחסום זאת. במקרים אחרים, אתה יכול לחסום את זה."
+ 3.: "שימוש ישיר בחתימות אינו נתמך, אך הוא עשוי להיות מופעל באמצעים אחרים בנסיבות מסוימות."
+ 4.: "מתייחס למקרים שבהם מילים קצרות אינן משמשות כלל, או שאינן מזוהות על ידי CIDRAM."
+ אחת לכל חתימה.: "חתימה עשויה להפעיל פרופילים מרובים, אך יכולה להשתמש רק במילת קיצור אחת. ייתכן שמספר מילים קצרות עשויות להתאים, אך מכיוון שניתן להשתמש רק באחת, אנו שואפים להשתמש תמיד רק במילים המתאימות ביותר."
+ עדיפות.: "אפשרות שנבחרה תמיד מקבלת עדיפות על אפשרות שלא נבחרה. למשל., אם מילים קצרות מרובות בתוקף, אך רק אחת מהן מוגדרת כחסומה, הבקשה עדיין תיחסם."
+ נקודות קצה אנושיות ושירותי ענן.: "שירות ענן עשוי להתייחס לספקי אחסון אתרים, חוות שרתים, מרכזי נתונים או כל מספר דברים אחרים. נקודת קצה אנושית מתייחסת לאמצעים שבהם אדם ניגש לאינטרנט, כגון דרך ספק שירותי אינטרנט. רשת בדרך כלל מספקת רק את זה או את זה, אבל לפעמים עשויה לספק את שניהם. אנו שואפים לעולם לא לזהות נקודות קצה אנושיות פוטנציאליות כשירותי ענן. לכן, שירות ענן עשוי להיות מזוהה כמשהו אחר אם הטווח שלו משותף לנקודות קצה אנושיות ידועות. לעומת זאת, אנו שואפים לזהות תמיד שירותי ענן, שהטווחים שלהם אינם משותפים לאף נקודת קצה אנושית ידועה, כשירותי ענן. לכן, בקשה שזוהתה במפורש כשירות ענן כנראה לא חולקת את הטווח שלה עם אף נקודת קצה אנושית ידועה. כמו כן, בקשה שזוהתה במפורש על ידי התקפות או דואר זבל כנראה משתפת אותם. עם זאת, האינטרנט תמיד בתנופה, מטרות הרשתות משתנות עם הזמן, וטווחים תמיד נרכשים או נמכרים, אז הישאר מודע וערני בכל הנוגע לתוצאות שגויות."
 hints_verification:
- "What are "positives" and "negatives"?": "When verifying the identity presented by a request, a successful outcome could be described as "positive" or "negative". In the case that the identity presented is confirmed to be the true identity, it would be described as "positive". In the case that the identity presented is confirmed to be falsified, it would be described as "negative". However, an unsuccessful outcome (למשל., verification fails, or the veracity of the identity presented isn't able to be determined) would not be described as "positive" or "negative". Instead, an unsuccessful outcome would be described simply as non-verified. When no attempt to verify the identity presented by a request is made, the request would likewise be described as non-verified. The terms make sense only in the context where the identity presented by a request is recognised, and therefore, where verification is possible. In cases where the identity presented doesn't match the options provided above, or where no identity is presented, the options provided above become irrelevant."
- "What are "single-hit bypasses"?": "In some cases, a positive-verified request may still blocked as a result of the signature files, modules, or other conditions of the request, and bypasses may be necessary in order to avoid false positives. In the case where a bypass is intended to deal with exactly one infraction, no more and no less, such a bypass could be described as a "single-hit bypass"."
+ "מה זה "חיובי" ו"שליליים"?": "בעת אימות הזהות המוצגת על ידי בקשה, תוצאה מוצלחת יכולה להיות מתוארת כ"חיובית" או "שלילית". במקרה שהזהות המוצגת תאושר כזהות האמיתית, היא תתואר כ"חיובית". במקרה שבו יאושר שהוא מזויף, הוא יתואר כ"שלילי". עם זאת, תוצאה לא מוצלחת (למשל., כאשר לא ניתן לאמת, או שלא ניתן לקבוע את אמיתות הזהות המוצגת) לא תתואר כ"חיובית" או "שלילית". במקום זאת, תוצאה לא מוצלחת תתואר פשוט כלא מאומתת. כאשר לא נעשה ניסיון לאמת את הזהות שהוצגה בבקשה, הבקשה תתואר גם כלא מאומתת. המונחים הגיוניים רק בהקשר שבו הזהות המוצגת על ידי בקשה מוכרת, ולכן, כאשר אימות אפשרי. במקרים שבהם הזהות המוצגת אינה תואמת את האפשרויות שצוינו לעיל, או שבהם לא מוצגת זהות, האפשרויות שצוינו לעיל הופכות ללא רלוונטיות."
+ "מה זה "מעוקפים של פגיעה אחת"?": "במקרים מסוימים, בקשה מאומתת חיובית עדיין עשויה להיחסם כתוצאה מקובצי החתימה, המודולים, או תנאים אחרים של הבקשה, וייתכן שיהיה צורך עוקף על מנת למנוע תוצאות חיוביות כוזבות. במקרה בו מעוקף נועד לטפל בדיוק בהפרה אחת, לא יותר ולא פחות, ניתן לתאר מעוקף כזה כ"מעוקף של פגיעה אחת"."
 info_cli_by_default_ips: |
- As standard, IPs are tested against all signature files, all modules, all auxiliary rules, as well as verification for search engines and social media. However, you can optionally disable, on a per-IP basis, checking against modules with --no-mod, checking against auxiliary rules with --no-aux, and checking against verification for search engines and social media with --no-ssv, like so:
-info_cli_cidram_cli_mod: "CIDRAM CLI mode."
+ כסטנדרט, כתובות IP נבדקות מול כל קבצי החתימה, כל המודולים, כל כללי העזר,
+ כמו גם אימות עבור מנועי חיפוש ומדיה חברתית. אבל, על בסיס לכל IP,
+ אתה יכול להשתמש ב-"--no-mod" כדי לא להשתמש במודולים,
+ להשתמש ב-"--no-aux" כדי לא להשתמש בכללי עזר,
+ ולהשתמש ב-"--no-ssv" כדי לא לאמת מנועי חיפוש או מדיה חברתית:
+info_cli_cidram_cli_mod: "מצב CLI של CIDRAM."
 info_cli_ipv4_ipv6_are_: |
- IPv4/IPv6 are both supported. Multiline input is possible for all CLI mode operations (למשל., to test multiple IP addresses in a single operation) by using quotes, like so:
-info_cli_or_depending_o: "Or, depending on whether you'd prefer to chain first-to-last, or last-to-first:"
-info_cli_or_to_aggregat: "Or, to aggregate them as netmasks:"
-info_cli_or_using_comma: "Or, using commas instead of multilines (does exactly the same thing):"
-info_cli_the_signature_: "The signature fixer can be used via CLI, too:"
-info_cli_to_calculate_c: "To calculate CIDRs from an IP address:"
-info_cli_to_test_whethe: "To test whether an IP address is blocked by CIDRAM:"
-info_cli_to_quit_type_q: "To quit, type "q", "quit", or "exit", then press enter."
-info_cli_you_can_also_a: "You can also aggregate IPs and CIDRs like so:"
+ שתיהן IPv4/IPv6 נתמכות. קלט מרובה שורות אפשרי עבור כל פעולות מצב CLI (למשל.,
+ כדי לבדוק מספר כתובות IP בפעולה אחת) על ידי שימוש במרכאות, כגון:
+info_cli_or_depending_o: "או, תלוי אם אתה מעדיף לשרשר ראשון-לאחרון, או אחרון-ראשון:"
+info_cli_or_to_aggregat: "לחלופין, כדי לצבור אותם כמסכות רשת:"
+info_cli_or_using_comma: "לחלופין, שימוש בפסיקים במקום ריבוי קווים (עושה בדיוק את אותו הדבר):"
+info_cli_the_signature_: "ניתן להשתמש במתקן החתימה גם דרך CLI:"
+info_cli_to_calculate_c: "כדי לחשב CIDRים מכתובת IP:"
+info_cli_to_test_whethe: "כדי לבדוק אם כתובת IP חסומה על ידי CIDRAM:"
+info_cli_to_quit_type_q: "כדי לצאת, הקלד "q", "quit" או "יציאה", ולאחר מכן הקש אנטר."
+info_cli_you_can_also_a: "אתה יכול גם לצבור כתובות IP ו-CIDR כך:"
 info_cli_you_can_also_c: |
- You can also chain commands together (the example reads from some files, aggregates their content, then writes the aggregated data to output.dat):
-info_cli_you_can_also_r: "You can also read from files like so:"
+ אתה יכול גם לשרשר פקודות יחד (הדוגמה קוראת מקבצים מסוימים, אוספת את התוכן שלהם,
+ ואז כותבת את הנתונים המצטברים ל-output.dat):
+info_cli_you_can_also_r: "אתה יכול גם לקרוא מקבצים:"
 info_cli_you_can_also_u: |
- You can also use commas instead if you want (this is treated the same as using multilines, but you won't need to use quotes, and don't mix both together):
-info_cli_you_can_also_w: "You can also write to files like so:"
-info_cli_you_can_print_: |
- You can print data to the screen like so (sometimes useful when chaining
- commands):
+ אתה יכול גם להשתמש בפסיקים במקום אם אתה רוצה (זה מטופל כמו שימוש בריבוי שורות,
+ אבל לא תצטרך להשתמש במירכאות, ואל תערבב את שניהם יחד):
+info_cli_you_can_also_w: "אתה יכול גם לכתוב לקבצים:"
+info_cli_you_can_print_: "ניתן להדפיס נתונים למסך (לפעמים שימושי בעת שרשור פקודות):"
 info_some_useful_links: |
- Some useful links:<br />
+ כמה קישורים שימושיים:<br />
      <ul class="pieul">
        <li><span class="comCat">Tools, resources, etc for CIDRAM.</span>
          <ul class="comSub">
@@ -477,8 +483,8 @@ label_checksum_after: "סכום בדיקה לאחר"
 label_checksum_before: "סכום בדיקה לפני"
 label_cidram: "CIDRAM version used:"
 label_clientinfo: "Client information:"
-label_current_data: "Current data."
-label_current_data_for: "Current data for "%s"."
+label_current_data: "נתונים נוכחיים."
+label_current_data_for: "נתונים נוכחיים עבור "%s"."
 label_default: "סטנדרטי"
 label_dependencies: "Dependencies:"
 label_difference: "Difference"
@@ -522,7 +528,7 @@ label_is_not_available: "%s is not available."
 label_netmask: "מסיכת רשת"
 label_never: "Never"
 label_next: "Next:"
-label_no_data_available: "No data available."
+label_no_data_available: "אין נתונים זמינים."
 label_os: "Operating system used:"
 label_other: "Other"
 label_other_active_events: "Active events"
@@ -544,7 +550,7 @@ label_requests_sensitive_pages: "Requests for sensitive pages only (למשל., l
 label_results: "Results (%s in – %s rejected – %s accepted – %s merged – %s out):"
 label_rl_bandwidth: "Bandwidth used: %s – Bandwidth available: %s"
 label_rl_requests: "Requests sent: %s – Requests available: %s"
-label_rl_when: "Newest record: %s – Oldest record: %s."
+label_rl_when: "Newest record: %s (Expires: %s).<br />Oldest record: %s (Expires: %s)."
 label_sanity_check: "Sanity check:"
 label_sapi: "SAPI used:"
 label_sections_across_x_files:
@@ -807,7 +813,7 @@ tip_logs: "Hello, {username}.<br />Select a log file from the list below to view
 tip_number_of_infractions: "How many infractions to incur."
 tip_range: "Hello, {username}.<br />This page shows some basic statistical information about the IP ranges covered by the currently active signature files."
 tip_rate_limiting: "Hello, {username}.<br />This page shows the current quota usage and availability in regards to rate limiting."
-tip_rate_limiting_disabled: "Note: Rate limiting is currently disabled, but can be enabled via the configuration page."
+tip_rate_limiting_disabled: "הערה: Rate limiting is currently disabled, but can be enabled via the configuration page."
 tip_sections_list: "Hello, {username}.<br />This page lists which sections exist in the currently active signature files."
 tip_see_the_documentation: "See the <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#SECTION5" hreflang="en" rel="noopener external">documentation</a> for information about the various configuration directives and their purposes."
 tip_statistics: "Hello, {username}.<br />This page shows some basic usage statistics regarding your CIDRAM installation."

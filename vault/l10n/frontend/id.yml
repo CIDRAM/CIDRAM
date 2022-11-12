@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2022.11.06).
+# This file: Indonesian language data for the front-end (last modified: 2022.11.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -179,6 +179,7 @@ config_logging_log_banned_ips: "Termasuk permintaan diblokir dari IP dilarang da
 config_logging_log_rotation_action: "Rotasi log membatasi jumlah file log yang seharusnya ada pada satu waktu. Ketika file log baru dibuat, jika jumlah total file log melebihi batas yang ditentukan, tindakan yang ditentukan akan dilakukan. Anda dapat menentukan tindakan yang diinginkan disini."
 config_logging_log_rotation_limit: "Rotasi log membatasi jumlah file log yang seharusnya ada pada satu waktu. Ketika file log baru dibuat, jika jumlah total file log melebihi batas yang ditentukan, tindakan yang ditentukan akan dilakukan. Anda dapat menentukan batas yang diinginkan disini. Nilai 0 akan menonaktifkan rotasi log."
 config_logging_log_sanitisation: "Saat menggunakan halaman log untuk melihat data log, CIDRAM mensanitasikan data log sebelum menampilkannya, untuk melindungi pengguna dari serangan XSS dan potensi ancaman lain yang bisa terkandung dalam data tersebut. Namun, secara default, data tidak disanitasikan selama pencatatan. Ini untuk memastikan bahwa data log dicatatan secara akurat, untuk membantu analisis heuristik atau forensik yang mungkin diperlukan di masa depan. Namun, jika pengguna mencoba membaca data log menggunakan alat eksternal, dan jika alat eksternal itu tidak melakukan proses sanitasi sendiri, pengguna bisa terkena serangan XSS. Jika perlu, Anda dapat mengubah perilaku default menggunakan direktif konfigurasi ini. True = Mensanitasikan data saat mencatatnya (data disimpan kurang akurat, tetapi risiko XSS lebih rendah). False = Jangan mensanitasikan data saat mencatatnya (data disimpan lebih akurat, tetapi risiko XSS lebih tinggi) [Default]."
+config_logging_report_log: "File untuk mencatat setiap laporan yang dikirim ke API eksternal. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
 config_logging_serialised_log: "File serial untuk mencatat semua upaya akses diblokir. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
 config_logging_standard_log: "File yang dapat dibaca oleh manusia untuk mencatat semua upaya akses diblokir. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
 config_logging_truncate: "Memotong file log ketika mereka mencapai ukuran tertentu? Nilai adalah ukuran maksimum dalam B/KB/MB/GB/TB yang bisa ditambahkan untuk file log sebelum dipotong. Nilai default 0KB menonaktifkan pemotongan (file log dapat tumbuh tanpa batas waktu). Catat: Berlaku untuk file log individu! Ukuran file log tidak dianggap secara kolektif."
@@ -485,8 +486,8 @@ label_checksum_after: "Checksum setelahnya"
 label_checksum_before: "Checksum sebelumnya"
 label_cidram: "Versi CIDRAM digunakan:"
 label_clientinfo: "Informasi klien:"
-label_current_data: "Current data."
-label_current_data_for: "Current data for "%s"."
+label_current_data: "Data saat ini."
+label_current_data_for: "Data saat ini untuk "%s"."
 label_default: "Default"
 label_dependencies: "Dependensi:"
 label_difference: "Perbedaan"
@@ -526,7 +527,7 @@ label_is_not_available: "%s tidak tersedia."
 label_netmask: "Topeng jaring"
 label_never: "Tak pernah"
 label_next: "Berikutnya:"
-label_no_data_available: "No data available."
+label_no_data_available: "Tidak ada data yang tersedia."
 label_os: "Sistem operasi digunakan:"
 label_other: "Lain"
 label_other_active_events: "Acara aktif"
@@ -546,9 +547,9 @@ label_requests_all: "Setiap permintaan.\nLebih ketat dan menyeluruh, tetapi juga
 label_requests_none: "Tidak satupun.\nJika Anda ingin menggunakan modul hanya untuk tujuan pelaporan, tanpa mencari apapun, gunakan ini."
 label_requests_sensitive_pages: "Permintaan hanya untuk halaman sensitif (misalnya, halaman login, formulir pendaftaran, dll).\nKurang ketat dan menyeluruh, tetapi lebih konservatif dalam hal kuota dan batasan, dan kecil kemungkinannya untuk berdampak negatif pada kinerja. Strategi yang direkomendasikan dalam banyak kasus."
 label_results: "Hasil (%s dimasukkan – %s ditolak – %s diterima – %s digabungkan – %s keluaran):"
-label_rl_bandwidth: "Bandwidth used: %s – Bandwidth available: %s"
-label_rl_requests: "Requests sent: %s – Requests available: %s"
-label_rl_when: "Newest record: %s – Oldest record: %s."
+label_rl_bandwidth: "Bandwidth yang digunakan: %s – Bandwidth yang tersedia: %s"
+label_rl_requests: "Permintaan dikirim: %s – Permintaan yang tersedia: %s"
+label_rl_when: "Rekor terbaru: %s (Kedaluwarsa: %s).<br />Rekor tertua: %s (Kedaluwarsa: %s)."
 label_sanity_check: "Pemeriksaan kewarasan:"
 label_sapi: "SAPI digunakan:"
 label_sections_across_x_files: "%s di %s file"
@@ -779,7 +780,7 @@ tip_logs: "Salam, {username}.<br />Pilih log dari daftar dibawah untuk melihat i
 tip_number_of_infractions: "Berapa banyak pelanggaran yang harus dilakukan."
 tip_range: "Salam, {username}.<br />Halaman ini menunjukkan beberapa informasi statistik dasar tentang rentang IP yang dicakup oleh file tanda tangan yang saat ini aktif."
 tip_rate_limiting: "Salam, {username}.<br />Halaman ini menunjukkan penggunaan dan ketersediaan kuota saat ini terkait dengan pembatasan laju."
-tip_rate_limiting_disabled: "Note: Rate limiting is currently disabled, but can be enabled via the configuration page."
+tip_rate_limiting_disabled: "Catat: Pembatasan laju saat ini dinonaktifkan, namun dapat diaktifkan melalui halaman konfigurasi."
 tip_sections_list: "Salam, {username}.<br />Halaman ini mencantumkan bagian yang ada di file tanda tangan yang aktif saat ini."
 tip_see_the_documentation: "Lihat <a href="https://github.com/CIDRAM/Docs/blob/master/readme.id.md\#SECTION5" hreflang="id" rel="noopener external">dokumentasi</a> untuk informasi tentang berbagai direktif konfigurasi dan tujuan mereka."
 tip_statistics: "Salam, {username}.<br />Halaman ini menunjukkan beberapa statistik penggunaan dasar mengenai instalasi CIDRAM Anda."

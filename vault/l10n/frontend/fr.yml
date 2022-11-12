@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2022.11.06).
+# This file: French language data for the front-end (last modified: 2022.11.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -179,6 +179,7 @@ config_logging_log_banned_ips: "Inclure les requêtes bloquées provenant d'IP i
 config_logging_log_rotation_action: "La rotation du journal limite le nombre de fichiers journaux qui doivent exister à un moment donné. Lorsque de nouveaux fichiers journaux sont créés, si le nombre total de fichiers journaux dépasse la limite spécifiée, l'action spécifiée sera effectuée. Vous pouvez spécifier l'action souhaitée ici."
 config_logging_log_rotation_limit: "La rotation du journal limite le nombre de fichiers journaux qui doivent exister à un moment donné. Lorsque de nouveaux fichiers journaux sont créés, si le nombre total de fichiers journaux dépasse la limite spécifiée, l'action spécifiée sera effectuée. Vous pouvez spécifier la limite souhaitée ici. Une valeur de 0 désactivera la rotation du journal."
 config_logging_log_sanitisation: "Lorsque vous utilisez la page pour les fichiers journaux pour afficher les données de journaux, CIDRAM assainit les données de journaux avant de les afficher, pour protéger les utilisateurs contre les attaques XSS et autres menaces potentielles que les données de journalisation peuvent contenir. Cependant, par défaut, les données ne sont pas assainie lors de la journalisation. Cela garantit que les données du journalisation sont conservées avec précision, pour faciliter toute analyse heuristique qui pourrait être nécessaire à l'avenir. Cependant, dans le cas où un utilisateur tente de lire les données du journalisation à l'aide d'outils externes, et si ces outils externes n'effectuent pas leur propre processus d'assainissement, l'utilisateur pourrait être exposé à des attaques XSS. Si nécessaire, vous pouvez modifier le comportement par défaut à l'aide de cette directive de configuration. True = Assainir les données lors de la journalisation (les données sont moins bien préservées, mais le risque XSS est plus faible). False = Ne pas assainir les données lors de la journalisation (les données sont mieux préservées, mais le risque XSS est plus élevé) [Défaut]."
+config_logging_report_log: "Un fichier pour l'enregistrement des rapports envoyés aux API externes. Spécifier un fichier, ou laisser vide à désactiver."
 config_logging_serialised_log: "Un fichier sérialisé pour enregistrement de toutes les tentatives d'accès bloquées. Spécifier un fichier, ou laisser vide à désactiver."
 config_logging_standard_log: "Un fichier lisible par l'homme pour enregistrement de toutes les tentatives d'accès bloquées. Spécifier un fichier, ou laisser vide à désactiver."
 config_logging_truncate: "Tronquer les fichiers journaux lorsqu'ils atteignent une certaine taille\_? La valeur est la taille maximale en o/Ko/Mo/Go/To qu'un fichier journal peut croître avant d'être tronqué. La valeur par défaut de 0Ko désactive la troncature (les fichiers journaux peuvent croître indéfiniment). Remarque\_: S'applique aux fichiers journaux individuels\_! La taille des fichiers journaux n'est pas considérée collectivement."
@@ -493,8 +494,8 @@ label_checksum_after: "Somme de contrôle après"
 label_checksum_before: "Somme de contrôle avant"
 label_cidram: "Version CIDRAM utilisée\_:"
 label_clientinfo: "Informations sur le client\_:"
-label_current_data: "Current data."
-label_current_data_for: "Current data for "%s"."
+label_current_data: "Données actuelles."
+label_current_data_for: "Données actuelles pour «\_%s\_»."
 label_default: "Défaut"
 label_dependencies: "Dépendances\_:"
 label_difference: "Différence"
@@ -538,7 +539,7 @@ label_is_not_available: "%s n'est pas disponible."
 label_netmask: "Masque de réseau"
 label_never: "Jamais"
 label_next: "Prochaine\_:"
-label_no_data_available: "No data available."
+label_no_data_available: "Pas de données disponibles."
 label_os: "Système opérateur utilisée\_:"
 label_other: "Autres"
 label_other_active_events: "Événements actifs"
@@ -558,9 +559,9 @@ label_requests_all: "Chaque requête.\nPlus rigoureux et minutieux, mais aussi p
 label_requests_none: "Aucun.\nSi vous souhaitez utiliser le module seulement à des fins de création de rapports, sans rien rechercher, utilisez ceci."
 label_requests_sensitive_pages: "Requêtes de pages sensibles seulement (par exemple, les pages de connexion, les formulaires d'enregistrement, etc).\nMoins rigoureux et minutieux, mais plus prudent en termes de quotas et de limites, et moins susceptible d'avoir un impact négatif sur les performances. La stratégie recommandée dans la plupart des cas."
 label_results: "Résultats (%s entré – %s rejeté – %s accepté – %s fusionné – %s sortie)\_:"
-label_rl_bandwidth: "Bandwidth used: %s – Bandwidth available: %s"
-label_rl_requests: "Requests sent: %s – Requests available: %s"
-label_rl_when: "Newest record: %s – Oldest record: %s."
+label_rl_bandwidth: "Bande passante utilisée\_: %s – Bande passante disponible\_: %s"
+label_rl_requests: "Requêtes envoyés\_: %s – Requêtes disponibles\_: %s"
+label_rl_when: "Le plus récent enregistrement\_: %s (Expire\_: %s).<br />Le plus ancien enregistrement\_: %s (Expire\_: %s)."
 label_sanity_check: "Vérification de santé\_:"
 label_sapi: "SAPI utilisée\_:"
 label_sections_across_x_files:
@@ -823,7 +824,7 @@ tip_logs: "Bonjour, {username}.<br />Sélectionnez un fichier journal dans la li
 tip_number_of_infractions: "Combien d'infractions encourir."
 tip_range: "Bonjour, {username}.<br />Cette page affiche des informations statistiques sur les plages IP couvertes par les fichiers de signatures actuellement actifs."
 tip_rate_limiting: "Bonjour, {username}.<br />Cette page affiche l'utilisation et la disponibilité actuelles des quotas en ce qui concerne la limitation du débit."
-tip_rate_limiting_disabled: "Note: Rate limiting is currently disabled, but can be enabled via the configuration page."
+tip_rate_limiting_disabled: "Remarque\_: La limitation du débit est actuellement désactivé, mais peut être activé via la page de configuration."
 tip_sections_list: "Bonjour, {username}.<br />Cette page répertorie les sections qui existent dans les fichiers de signatures actuellement actifs."
 tip_see_the_documentation: "Voir la <a href="https://github.com/CIDRAM/Docs/blob/master/readme.fr.md\#SECTION5" hreflang="fr" rel="noopener external">documentation</a> pour information sur les différentes directives de la configuration et leurs objectifs."
 tip_statistics: "Bonjour, {username}.<br />Cette page présente certaines statistiques d'utilisation concernant votre installation pour CIDRAM."

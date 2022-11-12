@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2022.11.06).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2022.11.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -179,6 +179,7 @@ config_logging_log_banned_ips: "包括IP禁止從阻止請求在日誌文件嗎�
 config_logging_log_rotation_action: "日誌輪轉限制了任何時候應該存在的日誌文件的數量。​當新的日誌文件被創建時，如果日誌文件的指定的最大數量已經超過，將執行指定的操作。​您可以在此處指定所需的操作。"
 config_logging_log_rotation_limit: "日誌輪轉限制了任何時候應該存在的日誌文件的數量。​當新的日誌文件被創建時，如果日誌文件的指定的最大數量已經超過，將執行指定的操作。​您可以在此指定所需的限制。​值為『0』將禁用日誌輪轉。"
 config_logging_log_sanitisation: "當使用前端日誌頁面查看日誌數據時，CIDRAM在顯示之前清理日誌數據。​這可以保護用戶免受XSS攻擊和其他潛在威脅。​但是，默認情況下，在記錄期間不會清理數據。​這是為了確保准確地保留日誌數據（可以幫助任何未來的啟發式或法醫分析）。​但是，如果用戶嘗試使用外部工具讀取日誌數據，如果這些外部工具不執行自己的清理過程，用戶可能會受到XSS攻擊。​如有必要，可以使用此配置指令更改默認行為。 True = 記錄數據時清理數據（數據保存不太準確，但XSS風險較低）。 False = 記錄數據時不要清理數據（數據保存得更準確，但XSS風險更高）【標準】。"
+config_logging_report_log: "用於記錄發送到外部API的任何報告的文件。​指定一個文件名，​或留空以禁用。"
 config_logging_serialised_log: "連載的文件用於記錄所有被攔截的訪問。​指定一個文件名，​或留空以禁用。"
 config_logging_standard_log: "人類可讀文件用於記錄所有被攔截的訪問。​指定一個文件名，​或留空以禁用。"
 config_logging_truncate: "截斷日誌文件當他們達到一定的大小嗎？​值是在B/KB/MB/GB/TB，​是日誌文件允許的最大大小直到它被截斷。​默認值為『0KB』將禁用截斷（日誌文件可以無限成長）。​注意：適用於單個日誌文件！​日誌文件大小不被算集體的。"
@@ -477,8 +478,8 @@ label_checksum_after: "之後的校驗和"
 label_checksum_before: "之前的校驗和"
 label_cidram: "目前使用CIDRAM版本："
 label_clientinfo: "客戶信息："
-label_current_data: "Current data."
-label_current_data_for: "Current data for "%s"."
+label_current_data: "當前數據。"
+label_current_data_for: "『%s』的當前數據。"
 label_default: "標準"
 label_dependencies: "依存關係："
 label_difference: "差異"
@@ -518,7 +519,7 @@ label_is_not_available: "%s不可用。"
 label_netmask: "網絡掩碼"
 label_never: "決不"
 label_next: "下一個："
-label_no_data_available: "No data available."
+label_no_data_available: "沒有可用數據。"
 label_os: "目前使用操作系統："
 label_other: "其他"
 label_other_active_events: "活動事件"
@@ -538,9 +539,9 @@ label_requests_all: "所有請求。\n更嚴格和徹底，但也可能更快地
 label_requests_none: "不要執行。\n使用如果您只想將該模塊用於報告目的，而不是檢查結果。"
 label_requests_sensitive_pages: "僅對敏感頁面的請求（例如，登錄頁面，註冊表單，等等）。\n不那麼嚴格和徹底，但在配額和限制方面更加保守，並且不太可能對性能產生負面影響。​大多數情況下推薦的策略。"
 label_results: "結果 （%s 輸入 – %s 拒絕 – %s 公認 – %s 合併 – %s 產量）："
-label_rl_bandwidth: "Bandwidth used: %s – Bandwidth available: %s"
-label_rl_requests: "Requests sent: %s – Requests available: %s"
-label_rl_when: "Newest record: %s – Oldest record: %s."
+label_rl_bandwidth: "使用的帶寬： %s – 可用帶寬： %s"
+label_rl_requests: "發送的請求： %s – 可用請求： %s"
+label_rl_when: "最新記錄： %s （過期： %s）。<br />最早記錄： %s （過期： %s）。"
 label_sanity_check: "安全檢查："
 label_sapi: "目前使用SAPI："
 label_sections_across_x_files: "%2$s%1$s個簽名"
@@ -771,7 +772,7 @@ tip_logs: "你好，​{username}。​<br />選擇一個日誌從下面的列�
 tip_number_of_infractions: "有多少違規行為。"
 tip_range: "你好，​{username}。<br />本頁面顯示了有關當前活性簽名文件覆蓋的IP範圍的一些基本統計信息。"
 tip_rate_limiting: "你好，​{username}。<br />此頁面顯示有關速率限制的當前配額使用情況和可用性。"
-tip_rate_limiting_disabled: "Note: Rate limiting is currently disabled, but can be enabled via the configuration page."
+tip_rate_limiting_disabled: "注意：速率限制目前已被禁用，但可以通過配置頁面啟用。"
 tip_sections_list: "你好，​{username}。<br />此頁面列出當前活動簽名文件中存在哪些章節。"
 tip_see_the_documentation: "請參閱<a href="https://github.com/CIDRAM/Docs/blob/master/readme.zh-TW.md\#SECTION5" hreflang="zh-TW" rel="noopener external">文檔</a>以獲取有關各種配置指令的信息和他們的目的。"
 tip_statistics: "你好，​{username}。​<br />此頁面顯示了有關CIDRAM安裝的一些基本使用統計信息。"

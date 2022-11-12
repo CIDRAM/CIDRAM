@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2022.11.06).
+# This file: Vietnamese language data for the front-end (last modified: 2022.11.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -179,6 +179,7 @@ config_logging_log_banned_ips: "Bao gồm các yêu cầu bị chặn từ các 
 config_logging_log_rotation_action: "Xoay vòng nhật ký giới hạn số lượng của tập tin nhật ký có cần tồn tại cùng một lúc. Khi các tập tin nhật ký mới được tạo, nếu tổng số lượng tập tin nhật ký vượt quá giới hạn được chỉ định, hành động được chỉ định sẽ được thực hiện. Bạn có thể chỉ định hành động mong muốn tại đây."
 config_logging_log_rotation_limit: "Xoay vòng nhật ký giới hạn số lượng của tập tin nhật ký có cần tồn tại cùng một lúc. Khi các tập tin nhật ký mới được tạo, nếu tổng số lượng tập tin nhật ký vượt quá giới hạn được chỉ định, hành động được chỉ định sẽ được thực hiện. Bạn có thể chỉ định giới hạn mong muốn tại đây. Giá trị 0 sẽ vô hiệu hóa xoay vòng nhật ký."
 config_logging_log_sanitisation: "Khi sử dụng trang bản ghi để xem dữ liệu bản ghi, CIDRAM vệ sinh dữ liệu bản ghi trước khi hiển thị nó, để bảo vệ người dùng khỏi các cuộc tấn công XSS và các mối đe dọa tiềm năng khác. Tuy nhiên, theo mặc định, dữ liệu không được vệ sinh trong quá ghi bản ghi. Điều này là để đảm bảo dữ liệu bản ghi được bảo quản chính xác, để hỗ trợ bất kỳ phân tích heuristic hoặc pháp y có thể cần thiết trong tương lai. Tuy nhiên, nếu người dùng cố gắng đọc dữ liệu bản ghi bằng các công cụ bên ngoài, và nếu những công cụ bên ngoài đó không thực hiện quy trình vệ sinh riêng của họ, người dùng có thể tiếp xúc với các cuộc tấn công XSS. Nếu cần, bạn có thể thay đổi hành vi mặc định bằng cách sử dụng chỉ thị cấu hình này. True = Vệ sinh dữ liệu khi ghi nó (dữ liệu được bảo quản ít chính xác hơn, nhưng rủi ro XSS thấp hơn). False = Không vệ sinh dữ liệu khi ghi nó (dữ liệu được bảo quản chính xác hơn, nhưng rủi ro XSS cao hơn) [Mặc định]."
+config_logging_report_log: "Một tập tin để ghi lại bất kỳ báo cáo nào được gửi đến các API bên ngoài. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa."
 config_logging_serialised_log: "Tập tin tuần tự cho ghi tất cả các nỗ lực truy cập bị chặn. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa."
 config_logging_standard_log: "Tập tin có thể đọc con người cho ghi tất cả các nỗ lực truy cập bị chặn. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa."
 config_logging_truncate: "Dọn dẹp các bản ghi khi họ được một kích thước nhất định? Giá trị là kích thước tối đa bằng B/KB/MB/GB/TB mà một tập tin bản ghi có thể tăng lên trước khi bị dọn dẹp. Giá trị mặc định 0KB sẽ vô hiệu hoá dọn dẹp (các bản ghi có thể tăng lên vô hạn). Lưu ý: Áp dụng cho tập tin riêng biệt! Kích thước tập tin bản ghi không được coi là tập thể."
@@ -485,8 +486,8 @@ label_checksum_after: "Tổng kiểm tra sau khi"
 label_checksum_before: "Tổng kiểm tra trước đây"
 label_cidram: "Phiên bản CIDRAM đang được dùng:"
 label_clientinfo: "Thông tin người dùng:"
-label_current_data: "Current data."
-label_current_data_for: "Current data for "%s"."
+label_current_data: "Dữ liệu hiện tại."
+label_current_data_for: "Dữ liệu hiện tại cho "%s"."
 label_default: "Mặc định"
 label_dependencies: "Sự phụ thuộc:"
 label_difference: "Sự khác biệt"
@@ -526,7 +527,7 @@ label_is_not_available: "%s không có sẵn."
 label_netmask: "Mặt nạ mạng"
 label_never: "Không bao giờ"
 label_next: "Kế tiếp:"
-label_no_data_available: "No data available."
+label_no_data_available: "Không có dữ liệu."
 label_os: "Hệ điều hành đang được dùng:"
 label_other_active_events: "Sự kiện kích hoạt"
 label_other_active_imports: "Nhập khẩu kích hoạt"
@@ -546,9 +547,9 @@ label_requests_all: "Tất cả các yêu cầu.\nNghiêm ngặt hơn, nhưng c�
 label_requests_none: "Không phải bất kỳ.\nNếu bạn chỉ muốn sử dụng mô-đun cho mục đích báo cáo mà không cần tra cứu gì, hãy sử dụng mô-đun này."
 label_requests_sensitive_pages: "Yêu cầu chỉ dành cho các trang nhạy cảm (ví dụ: trang đăng nhập, biểu mẫu đăng ký, vv).\nÍt nghiêm ngặt hơn, nhưng thận trọng hơn về hạn ngạch và giới hạn, và ít có khả năng tác động tiêu cực đến hiệu suất. Chiến lược được khuyến khích trong hầu hết các trường hợp."
 label_results: "Các kết quả (%s trong – %s từ chối – %s chấp nhận – %s sáp nhập – %s ngoài):"
-label_rl_bandwidth: "Bandwidth used: %s – Bandwidth available: %s"
-label_rl_requests: "Requests sent: %s – Requests available: %s"
-label_rl_when: "Newest record: %s – Oldest record: %s."
+label_rl_bandwidth: "Băng thông được sử dụng: %s – Băng thông có sẵn: %s"
+label_rl_requests: "Các yêu cầu đã được gửi: %s – Các yêu cầu có sẵn: %s"
+label_rl_when: "Kỷ lục mới nhất: %s (Hết hạn: %s).<br />Kỷ lục cũ nhất: %s (Hết hạn: %s)."
 label_sanity_check: "Kiểm tra an toàn:"
 label_sapi: "SAPI đang được dùng:"
 label_sections_across_x_files: "%s trên %s tập tin"
@@ -779,7 +780,7 @@ tip_logs: "Xin chào, {username}.<br />Chọn một bản ghi từ danh sách d�
 tip_number_of_infractions: "Có bao nhiêu vi phạm để áp dụng."
 tip_range: "Xin chào, {username}.<br />Trang này hiển thị một số thông tin thống kê cơ bản về các phạm vi IP được bao phủ bởi các tập tin chữ ký đang hoạt động."
 tip_rate_limiting: "Xin chào, {username}.<br />Trang này hiển thị hạn ngạch hiện có và được sử dụng liên quan đến giới hạn tốc độ."
-tip_rate_limiting_disabled: "Note: Rate limiting is currently disabled, but can be enabled via the configuration page."
+tip_rate_limiting_disabled: "Lưu ý: Giới hạn tốc độ hiện bị vô hiệu hóa, nhưng có thể được kích hoạt thông qua trang cấu hình."
 tip_sections_list: "Xin chào, {username}.<br />Trang này liệt kê những phần nào tồn tại trong các tập tin chữ ký đang kích hoạt."
 tip_see_the_documentation: "Xem <a href="https://github.com/CIDRAM/Docs/blob/master/readme.vi.md\#SECTION5" hreflang="vi" rel="noopener external">tài liệu</a> để biết thông tin về các chỉ thị cấu hình khác nhau và mục đích của họ."
 tip_statistics: "Xin chào, {username}.<br />Trang này cho thấy một số thống kê của sử dụng cơ bản liên quan đến cài đặt CIDRAM của bạn."

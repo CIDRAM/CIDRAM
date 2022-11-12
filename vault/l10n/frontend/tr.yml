@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2022.11.06).
+# This file: Turkish language data for the front-end (last modified: 2022.11.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -179,6 +179,7 @@ config_logging_log_banned_ips: "Yasaklanmış IP'lerden engellenen istekleri gü
 config_logging_log_rotation_action: "Log rotasyonu, herhangi bir zamanda bulunması gereken günlük dosyalarının sayısını sınırlar. Yeni log dosyaları oluşturulduğunda, toplam log dosya sayısı belirtilen sınırı aşarsa, belirtilen eylem gerçekleştirilecektir. İstenen işlemi burada belirtebilirsiniz."
 config_logging_log_rotation_limit: "Log rotasyonu, herhangi bir zamanda bulunması gereken günlük dosyalarının sayısını sınırlar. Yeni log dosyaları oluşturulduğunda, toplam log dosya sayısı belirtilen sınırı aşarsa, belirtilen eylem gerçekleştirilecektir. İstenen sınırı burada belirtebilirsiniz. 0 değeri, log rotasyonunu devre dışı bırakır."
 config_logging_log_sanitisation: "Günlük verilerini görüntülemek için ön uç günlükler sayfasını kullanırken, CIDRAM, kullanıcıları XSS saldırılarından korumak için, günlük verilerini görüntülemeden önce hazırlar. Ancak bu normalde veriler ilk kaydedildiğinde gerçekleşmez. Bu, gerekli olabilecek gelecekteki analizlere yardımcı olmak için günlük verilerinin doğru bir şekilde korunmasını sağlamaktır. Bununla birlikte, kullanıcı verileri benzer şekilde işlemeyen harici araçları kullanarak günlük verilerini okumaya çalışırsa, kullanıcı XSS saldırılarına maruz kalabilir. Gerekirse, bu yapılandırma direktifini kullanarak varsayılan davranışı değiştirebilirsiniz. True = Veriyi ilk kaydederken hazırlayın (daha az doğru, ancak daha az risk). False = Veriyi ilk kaydederken hazırlamayın (daha doğru, ancak daha risk) [Varsayılan]."
+config_logging_report_log: "Harici API'lere gönderilen tüm raporların günlüğe kaydedilmesi için bir dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
 config_logging_serialised_log: "Engellenen tüm erişim girişimlerini kaydetmek için seri haline getirilmiş dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
 config_logging_standard_log: "Engellenen tüm erişim girişimlerini kaydetmek için insanlar tarafından okunabilir dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
 config_logging_truncate: "Belirli bir boyuta ulaştığında günlük dosyalarını kesin? Değer, bir günlük dosyasının kesilmeden önce büyüyebileceği B/KB/MB/GB/TB cinsinden maksimum boyuttur. Varsayılan 0KB değeri, kesmeyi devre dışı bırakır (günlük dosyaları sınırsız büyüyebilir). Not: Tek tek kayıt dosyaları için geçerlidir! Günlük dosyalarının boyutu toplam olarak alınmaz."
@@ -485,8 +486,8 @@ label_checksum_after: "Sonra sağlama toplamı"
 label_checksum_before: "Önce sağlama toplamı"
 label_cidram: "Kullanılan CIDRAM sürümü:"
 label_clientinfo: "Kullanıcı bilgisi:"
-label_current_data: "Current data."
-label_current_data_for: "Current data for "%s"."
+label_current_data: "Geçerli veriler."
+label_current_data_for: ""%s" için geçerli veriler."
 label_default: "Varsayılan"
 label_dependencies: "Gereksinimler:"
 label_difference: "Fark"
@@ -530,7 +531,7 @@ label_is_not_available: "%s mevcut değil."
 label_netmask: "Ağ maskesi"
 label_never: "Asla"
 label_next: "Sonraki:"
-label_no_data_available: "No data available."
+label_no_data_available: "Veri yok."
 label_os: "Kullanılan işletim sistemi:"
 label_other: "Diğer"
 label_other_active_events: "Etkin etkinlikler"
@@ -550,9 +551,9 @@ label_requests_all: "Her istek.\nDaha katı ve kapsamlıdır, ancak aynı zamand
 label_requests_none: "Hiçbiri.\nModülü hiçbir şeye bakmadan yalnızca raporlama amacıyla kullanmak istiyorsanız, bunu kullanın."
 label_requests_sensitive_pages: "Yalnızca hassas sayfalar için istekler (örneğin, giriş sayfaları, kayıt formları, vb).\nDaha az katı ve kapsamlı, ancak kotalar ve sınırlar açısından daha tutucu, ve performansı olumsuz etkileme olasılığı daha düşük. Çoğu durumda önerilen strateji."
 label_results: "Sonuçlar (%s giriş – %s reddedildi – %s kabul edildi – %s birleşti – %s çıktı):"
-label_rl_bandwidth: "Bandwidth used: %s – Bandwidth available: %s"
-label_rl_requests: "Requests sent: %s – Requests available: %s"
-label_rl_when: "Newest record: %s – Oldest record: %s."
+label_rl_bandwidth: "Kullanılan bant genişliği: %s – Mevcut bant genişliği: %s"
+label_rl_requests: "Gönderilen istekler: %s – Mevcut istekler: %s"
+label_rl_when: "En yeni kayıt: %s (Son: %s).<br />En eski kayıt: %s (Son: %s)."
 label_sanity_check: "Güvenlik denetimi:"
 label_sapi: "Kullanılan SAPI:"
 label_sections_across_x_files: "%sda %s imza"
@@ -783,7 +784,7 @@ tip_logs: "Merhaba, {username}.<br />Bu günlük dosyasının içeriğini görü
 tip_number_of_infractions: "Kaç tane ihlal yapılacak."
 tip_range: "Merhaba, {username}.<br />Bu sayfa, şu anda aktif imza dosyalarının kapsadığı IP aralıkları hakkında bazı temel istatistiksel bilgileri göstermektedir."
 tip_rate_limiting: "Merhaba, {username}.<br />Bu sayfa, hız sınırlamasıyla ilgili olarak mevcut kota kullanımını ve kullanılabilirliğini gösterir."
-tip_rate_limiting_disabled: "Note: Rate limiting is currently disabled, but can be enabled via the configuration page."
+tip_rate_limiting_disabled: "Not: Hız sınırlaması şu anda devre dışı, ancak yapılandırma sayfası aracılığıyla etkinleştirilebilir."
 tip_sections_list: "Merhaba, {username}.<br />Bu sayfa şu anda etkin olan imza dosyalarında hangi bölümlerin bulunduğunu listeler."
 tip_see_the_documentation: "Çeşitli yapılandırma yönergeleri ve amaçlarıyla ilgili bilgi için <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#SECTION5" hreflang="en" rel="noopener external">belgelere</a> bakın."
 tip_statistics: "Merhaba, {username}.<br />Bu sayfada, CIDRAM kurulumunuzla ilgili bazı temel kullanım istatistikleri gösterilmektedir."

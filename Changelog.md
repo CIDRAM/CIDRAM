@@ -57,6 +57,7 @@
 - When using the front-end IP test page, hostnames sometimes weren't looked up properly under some conditions; Fixed (#313).
 - Reconstructed URIs didn't account for port number; Fixed.
 - Detection for "sensitive pages" sometimes wouldn't detect contact pages; Fixed (#351).
+- Compatibility issue when using Firefox to access some of the options provided at the front-end auxiliary rules page; Fixed (#356).
 
 #### Other changes.
 - Improved IP address resolution strategy (#286).

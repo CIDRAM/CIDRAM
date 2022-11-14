@@ -7,37 +7,37 @@ function delRule(a, i) {
 
 function moveToTop(a, i) {
   window.auxT = a, $('POST', '', ['auxT'], null, function(a) {
-    window.location.reload()
+    window.location.reload(true)
   })
 }
 
 function moveToBottom(a, i) {
   window.auxB = a, $('POST', '', ['auxB'], null, function(a) {
-    window.location.reload()
+    window.location.reload(true)
   })
 }
 
 function moveUp(a, i) {
   window.auxMU = a, $('POST', '', ['auxMU'], null, function(a) {
-    window.location.reload()
+    window.location.reload(true)
   })
 }
 
 function moveDown(a, i) {
   window.auxMD = a, $('POST', '', ['auxMD'], null, function(a) {
-    window.location.reload()
+    window.location.reload(true)
   })
 }
 
 function disableRule(a, i) {
   window.auxDR = a, $('POST', '', ['auxDR'], null, function(a) {
-    window.location.reload()
+    window.location.reload(true)
   })
 }
 
 function enableRule(a, i) {
   window.auxER = a, $('POST', '', ['auxER'], null, function(a) {
-    window.location.reload()
+    window.location.reload(true)
   })
 }
 

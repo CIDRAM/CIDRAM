@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2022.308.0
-# Last modified: 2022.11.05
+# Version: 2022.321.0
+# Last modified: 2022.11.18
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -265,11 +265,13 @@ Tag: SKYBROADBAND
 # ASN 12389 ("PJSC Rostelecom").
 # Russian domestic ISP. Continuation of previous signatures section.
 # Listing this particular ASN in its entirety.
-# Stop Forum Spam (SFS) listings: 64,885.
-# Updated: 2021.03.23 / Checked: 2021.12.09
+# Stop Forum Spam (SFS) listings: 40,776.
+# Updated: 2022.11.18
 
 2a00:1640::/32 Deny Spam
 2a00:1e88::/32 Deny Spam
+2a00:62c0::/32 Deny Spam
+2a00:b440::/32 Deny Spam
 2a01:540::/32 Deny Spam
 2a01:620::/32 Deny Spam
 2a02:ad8::/32 Deny Spam

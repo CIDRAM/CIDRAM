@@ -97,3 +97,4 @@
 - Added a new configuration directive, `segregate`, to specify whether the data for rate limiting should be segregated based on domain/hostname or shared (#345).
 - Added a new page to the front-end for the purpose of viewing current rate limit quotas, useful for confirming whether rate limiting is working correctly at installations (#345).
 - Added a new configuration directive, `report_log`, for logging when reports are submitted to external APIs.
+- Avoid packaging unnecessary files into dist.

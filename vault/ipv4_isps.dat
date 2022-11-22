@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv4_isps.dat
 
-# Version: 2022.321.0
-# Last modified: 2022.11.18
+# Version: 2022.325.0
+# Last modified: 2022.11.22
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -1982,7 +1982,7 @@ Tag: BSNL
 # probing, etc detected from here. Mozi botnets detected from here.
 # Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 48,132.
-# Updated: 2022.05.15 / Modified: 2022.11.18
+# Updated: 2022.05.15 / Modified: 2022.11.22
 
 1.68.195.0/24 Deny Attacks
 1.69.16.0/24 Deny Attacks
@@ -2207,6 +2207,7 @@ Tag: BSNL
 114.226.109.205/32 Deny Attacks
 114.227.27.0/24 Deny Attacks
 114.227.28.0/24 Deny Attacks
+114.228.236.0/24 Deny Attacks
 114.230.85.0/24 Deny Attacks
 114.239.50.0/24 Deny Attacks
 114.239.220.0/24 Deny Attacks
@@ -2316,6 +2317,9 @@ Tag: BSNL
 180.107.3.176/32 Deny Attacks
 180.107.3.231/32 Deny Attacks
 180.115.81.0/24 Deny Attacks
+180.115.229.0/24 Deny Attacks
+180.116.227.0/24 Deny Attacks
+180.116.186.0/24 Deny Attacks
 180.117.197.0/24 Deny Attacks
 180.117.198.0/23 Deny Attacks
 180.117.200.0/23 Deny Attacks
@@ -10447,141 +10451,118 @@ Tag: Ote SA
 # "AMX Argentina S.A", "CLARO S.A").
 # A South American ISP caught performing brute-force and webapp attacks, port
 # scans, and spamming. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 680 (AS11664), 172 (AS19037), 3,027 (AS28573).
-# Updated: 2022.03.15 / Modified: 2022.06.24
+# Stop Forum Spam (SFS) listings: 359 (AS11664), 16 (AS19037), 1,526 (AS28573).
+# Updated: 2022.11.22
 
-138.99.6.0/23 Deny Attacks
+138.99.6.141/32 Deny Attacks
+138.99.6.174/32 Deny Attacks
+138.99.6.214/32 Deny Attacks
+138.99.7.139/32 Deny Attacks
+138.99.7.150/32 Deny Attacks
+138.99.7.165/32 Deny Attacks
+138.99.7.177/32 Deny Attacks
+138.99.7.208/32 Deny Attacks
 170.51.100.0/23 Deny Attacks
 170.51.102.0/24 Deny Attacks
 170.51.104.0/24 Deny Attacks
 170.51.200.0/22 Deny Attacks
-177.192.109.17/32 Deny Attacks
-177.192.109.78/32 Deny Attacks
-181.117.128.14/32 Deny Attacks
-181.117.128.38/32 Deny Attacks
-181.117.128.121/32 Deny Attacks
-181.117.128.213/32 Deny Attacks
-181.117.197.0/24 Deny Attacks
-181.117.202.65/32 Deny Spam
-181.117.209.0/24 Deny Attacks
+181.117.6.49/32 Deny Attacks
+181.117.6.209/32 Deny Attacks
+181.117.128.38/32 Deny Spam
+181.117.197.55/32 Deny Attacks
+181.117.197.74/32 Deny Attacks
+181.117.197.126/32 Deny Attacks
+181.117.197.137/32 Deny Attacks
+181.117.197.215/32 Deny Attacks
+181.117.209.40/32 Deny Attacks
+181.117.209.81/32 Deny Attacks
+181.117.209.234/31 Deny Attacks
 181.117.240.0/23 Deny Attacks
-181.117.244.36/32 Deny Spam
 181.238.214.208/32 Deny Spam
-186.13.38.0/23 Deny Attacks
-186.13.40.0/24 Deny Attacks
-186.13.46.37/32 Deny Attacks
-186.13.46.99/32 Deny Attacks
+186.13.38.24/32 Deny Attacks
+186.13.38.191/32 Deny Attacks
+186.13.38.193/32 Deny Attacks
+186.13.38.218/32 Deny Attacks
+186.13.39.154/32 Deny Attacks
+186.13.39.199/32 Deny Attacks
+186.13.39.215/32 Deny Attacks
+186.13.40.62/32 Deny Attacks
+186.13.40.78/32 Deny Attacks
+186.13.40.120/32 Deny Attacks
+186.13.46.124/32 Deny Attacks
+186.13.46.154/32 Deny Attacks
 186.13.46.159/32 Deny Attacks
-186.13.46.184/32 Deny Attacks
-186.13.122.70/32 Deny Attacks
-186.122.17.0/24 Deny Attacks
+186.13.46.179/32 Deny Attacks
+186.13.46.212/32 Deny Attacks
+186.13.46.242/32 Deny Attacks
+186.122.17.65/32 Deny Attacks
+186.122.17.97/32 Deny Attacks
+186.122.17.103/32 Deny Attacks
 186.122.89.0/24 Deny Attacks
 186.122.179.113/32 Deny Spam
 186.122.179.155/32 Deny Spam
-186.157.240.69/32 Deny Spam
-186.158.132.0/24 Deny Attacks
-186.182.120.4/32 Deny Attacks
-186.182.120.140/32 Deny Attacks
-190.3.35.41/32 Deny Attacks
+186.158.132.186/32 Deny Attacks
+186.182.120.230/32 Deny Attacks
 190.220.1.173/32 Deny Attacks
 200.123.119.17/32 Deny Spam
 Origin: AR
-177.34.12.89/32 Deny Attacks
-177.34.12.221/32 Deny Attacks
 177.64.119.132/32 Deny Spam
-177.65.128.0/24 Deny Attacks
+177.65.159.132/32 Deny Attacks
+177.65.159.153/32 Deny Attacks
 177.65.159.163/32 Deny Attacks
-177.65.159.213/32 Deny Attacks
-177.65.159.237/32 Deny Attacks
-177.65.159.251/32 Deny Attacks
 177.80.38.207/32 Deny Spam
 177.141.148.120/32 Deny Attacks
-177.142.32.11/32 Deny Attacks
-177.142.32.251/32 Deny Attacks
 177.143.42.212/32 Deny Spam
-177.143.128.37/32 Deny Spam
 177.143.143.160/32 Deny Spam
+177.192.109.78/32 Deny Attacks
+177.192.109.143/32 Deny Attacks
+177.192.109.172/32 Deny Attacks
 177.195.238.129/32 Deny Attacks
-177.195.238.248/32 Deny Attacks
-177.235.99.234/32 Deny Spam
-179.156.184.17/32 Deny Attacks
-179.156.184.113/32 Deny Attacks
-179.156.184.149/32 Deny Attacks
-179.156.184.254/32 Deny Attacks
-179.156.201.87/32 Deny Attacks
-179.157.4.0/24 Deny Attacks
-179.159.130.49/32 Deny Attacks
-179.159.130.135/32 Deny Attacks
-179.159.130.187/32 Deny Attacks
-179.208.93.123/32 Deny Spam
+179.153.112.33/32 Deny Spam
+179.157.4.168/32 Deny Attacks
 179.208.206.30/32 Deny Spam
-179.210.76.131/32 Deny Attacks
-179.210.76.159/32 Deny Attacks
-179.210.76.174/32 Deny Attacks
-179.210.76.236/32 Deny Attacks
-179.213.138.10/32 Deny Attacks
-179.217.203.14/32 Deny Attacks
+179.213.138.10/32 Deny Spam
+179.214.191.191/32 Deny Spam
+179.216.63.46/32 Deny Spam
 179.220.5.244/32 Deny Attacks
-179.220.12.26/32 Deny Attacks
-179.220.13.239/32 Deny Spam
-179.232.67.32/32 Deny Attacks
-179.235.219.193/32 Deny Attacks
-181.223.160.40/32 Deny Attacks
-181.223.160.80/32 Deny Attacks
-181.223.165.86/32 Deny Attacks
-186.204.239.187/32 Deny Attacks
-186.207.237.22/32 Deny Attacks
-186.207.237.186/32 Deny Attacks
-186.207.237.241/32 Deny Attacks
-186.218.3.33/32 Deny Spam
-186.223.144.104/32 Deny Attacks
-187.21.131.19/32 Deny Spam
-187.23.172.135/32 Deny Spam
-187.36.64.105/32 Deny Attacks
+181.223.160.45/32 Deny Attacks
+186.204.239.187/32 Deny Spam
+186.207.237.186/32 Deny Spam
+186.222.14.169/32 Deny Spam
+186.223.144.183/32 Deny Attacks
+186.223.144.185/32 Deny Attacks
+187.20.28.110/32 Deny Spam
 187.37.121.236/32 Deny Attacks
 187.67.249.230/32 Deny Spam
-187.107.11.0/24 Deny Attacks
+187.107.10.148/32 Deny Spam
+187.107.11.34/32 Deny Attacks
 187.122.26.25/32 Deny Spam
 187.122.105.181/32 Deny Attacks
-187.122.105.193/32 Deny Attacks
-187.122.248.0/24 Deny Attacks
-187.180.148.245/32 Deny Spam
+187.122.248.48/32 Deny Attacks
+187.122.248.194/32 Deny Attacks
+187.180.142.218/32 Deny Spam
+187.180.178.82/32 Deny Spam
 187.181.6.148/32 Deny Attacks
-187.181.6.152/32 Deny Attacks
-187.181.6.171/32 Deny Attacks
-187.181.8.194/32 Deny Attacks
-187.181.8.248/32 Deny Attacks
+187.181.8.194/32 Deny Spam
 187.183.200.173/32 Deny Spam
 189.4.11.123/32 Deny Attacks
-189.6.246.248/32 Deny Spam
-189.33.1.159/32 Deny Attacks
+189.33.1.52/32 Deny Attacks
 189.33.136.114/32 Deny Spam
-189.55.160.84/32 Deny Attacks
-189.60.102.246/32 Deny Attacks
-189.62.217.104/32 Deny Attacks
-189.62.217.245/32 Deny Attacks
-189.100.95.184/32 Deny Spam
-189.100.205.19/32 Deny Attacks
+189.62.217.93/32 Deny Attacks
 189.121.227.30/32 Deny Attacks
 189.121.227.139/32 Deny Attacks
+189.121.227.149/32 Deny Attacks
 189.122.55.81/32 Deny Attacks
-189.123.243.220/32 Deny Attacks
-191.177.226.16/32 Deny Attacks
-191.180.206.74/32 Deny Attacks
-191.181.15.23/32 Deny Attacks
-191.181.15.82/32 Deny Attacks
-191.181.15.194/32 Deny Attacks
-191.181.243.179/32 Deny Attacks
-191.183.71.30/32 Deny Spam
-191.184.203.53/32 Deny Attacks
-191.187.128.102/32 Deny Spam
+189.122.55.224/32 Deny Attacks
+189.123.107.198/32 Deny Spam
+191.180.206.74/32 Deny Spam
+191.181.15.82/32 Deny Spam
+191.184.203.53/32 Deny Spam
 191.189.17.255/32 Deny Spam
-191.191.135.103/32 Deny Spam
 201.6.252.49/32 Deny Spam
-201.17.147.150/32 Deny Attacks
-201.52.64.49/32 Deny Attacks
-201.75.214.175/32 Deny Attacks
-201.82.6.49/32 Deny Attacks
+201.17.147.150/32 Deny Spam
+201.17.147.180/32 Deny Attacks
+201.52.64.100/32 Deny Attacks
 Origin: BR
 Profile: Domestic ISP
 Tag: CLARO S.A

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hebrew language data for the front-end (last modified: 2022.11.12).
+# This file: Hebrew language data for the front-end (last modified: 2022.11.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -26,8 +26,8 @@
 
 Extended Description AbuseIPDB module: "חוסם בקשות מכתובות IP הרשומות ב-AbuseIPDB."
 Extended Description BGPView module: "מנף את ה-{{Links.BGPView}} API כדי לספק מתקן חיפוש ASN וקוד מדינה עבור CIDRAM, המאפשרת חסימה או אישור של ASN ומדינות באמצעות תצורת CIDRAM, ומספקת אמצעי לאימות רשתות חברתיות לאימות בקשות של פייסבוק."
-Extended Description Bad TLDs blocker module: "חוסם מארחים השייכים ל-TLD בשימוש תכוף על ידי שולחי דואר זבל, האקרים, וגורמים מרושעים אחרים."
-Extended Description Bad hosts blocker module: "חוסם מארחים בשימוש תכוף על ידי שולחי דואר זבל, האקרים, וגורמים מרושעים אחרים."
+Extended Description Bad TLDs blocker module: "חוסם מארחים השייכים ל-TLD בשימוש תכוף על ידי שולחי ספאם, האקרים, וגורמים מרושעים אחרים."
+Extended Description Bad hosts blocker module: "חוסם מארחים בשימוש תכוף על ידי שולחי ספאם, האקרים, וגורמים מרושעים אחרים."
 Extended Description Bot user agents module: "חוסם סוכני משתמשים הקשורים לבוטים לא רצויים ולפעילות מרושעת."
 Extended Description Bypasses: "החתימה הסטנדרטית עוקפת קבצים הנכללים בדרך כלל בחבילה הראשית."
 Extended Description Chart.js: "מאפשר לקצה הקדמי ליצור תרשימי סופגניות.<br />{{Links.Chart.js}} זמין באמצעות רישיון <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
@@ -355,7 +355,7 @@ hints_shorthand:
  4.: "מתייחס למקרים שבהם מילים קצרות אינן משמשות כלל, או שאינן מזוהות על ידי CIDRAM."
  אחת לכל חתימה.: "חתימה עשויה להפעיל פרופילים מרובים, אך יכולה להשתמש רק במילת קיצור אחת. ייתכן שמספר מילים קצרות עשויות להתאים, אך מכיוון שניתן להשתמש רק באחת, אנו שואפים להשתמש תמיד רק במילים המתאימות ביותר."
  עדיפות.: "אפשרות שנבחרה תמיד מקבלת עדיפות על אפשרות שלא נבחרה. למשל., אם מילים קצרות מרובות בתוקף, אך רק אחת מהן מוגדרת כחסומה, הבקשה עדיין תיחסם."
- נקודות קצה אנושיות ושירותי ענן.: "שירות ענן עשוי להתייחס לספקי אחסון אתרים, חוות שרתים, מרכזי נתונים או כל מספר דברים אחרים. נקודת קצה אנושית מתייחסת לאמצעים שבהם אדם ניגש לאינטרנט, כגון דרך ספק שירותי אינטרנט. רשת בדרך כלל מספקת רק את זה או את זה, אבל לפעמים עשויה לספק את שניהם. אנו שואפים לעולם לא לזהות נקודות קצה אנושיות פוטנציאליות כשירותי ענן. לכן, שירות ענן עשוי להיות מזוהה כמשהו אחר אם הטווח שלו משותף לנקודות קצה אנושיות ידועות. לעומת זאת, אנו שואפים לזהות תמיד שירותי ענן, שהטווחים שלהם אינם משותפים לאף נקודת קצה אנושית ידועה, כשירותי ענן. לכן, בקשה שזוהתה במפורש כשירות ענן כנראה לא חולקת את הטווח שלה עם אף נקודת קצה אנושית ידועה. כמו כן, בקשה שזוהתה במפורש על ידי התקפות או דואר זבל כנראה משתפת אותם. עם זאת, האינטרנט תמיד בתנופה, מטרות הרשתות משתנות עם הזמן, וטווחים תמיד נרכשים או נמכרים, אז הישאר מודע וערני בכל הנוגע לתוצאות שגויות."
+ נקודות קצה אנושיות ושירותי ענן.: "שירות ענן עשוי להתייחס לספקי אחסון אתרים, חוות שרתים, מרכזי נתונים או כל מספר דברים אחרים. נקודת קצה אנושית מתייחסת לאמצעים שבהם אדם ניגש לאינטרנט, כגון דרך ספק שירותי אינטרנט. רשת בדרך כלל מספקת רק את זה או את זה, אבל לפעמים עשויה לספק את שניהם. אנו שואפים לעולם לא לזהות נקודות קצה אנושיות פוטנציאליות כשירותי ענן. לכן, שירות ענן עשוי להיות מזוהה כמשהו אחר אם הטווח שלו משותף לנקודות קצה אנושיות ידועות. לעומת זאת, אנו שואפים לזהות תמיד שירותי ענן, שהטווחים שלהם אינם משותפים לאף נקודת קצה אנושית ידועה, כשירותי ענן. לכן, בקשה שזוהתה במפורש כשירות ענן כנראה לא חולקת את הטווח שלה עם אף נקודת קצה אנושית ידועה. כמו כן, בקשה שזוהתה במפורש על ידי התקפות או ספאם כנראה משתפת אותם. עם זאת, האינטרנט תמיד בתנופה, מטרות הרשתות משתנות עם הזמן, וטווחים תמיד נרכשים או נמכרים, אז הישאר מודע וערני בכל הנוגע לתוצאות שגויות."
 hints_verification:
  "מה זה "חיובי" ו"שליליים"?": "בעת אימות הזהות המוצגת על ידי בקשה, תוצאה מוצלחת יכולה להיות מתוארת כ"חיובית" או "שלילית". במקרה שהזהות המוצגת תאושר כזהות האמיתית, היא תתואר כ"חיובית". במקרה שבו יאושר שהוא מזויף, הוא יתואר כ"שלילי". עם זאת, תוצאה לא מוצלחת (למשל., כאשר לא ניתן לאמת, או שלא ניתן לקבוע את אמיתות הזהות המוצגת) לא תתואר כ"חיובית" או "שלילית". במקום זאת, תוצאה לא מוצלחת תתואר פשוט כלא מאומתת. כאשר לא נעשה ניסיון לאמת את הזהות שהוצגה בבקשה, הבקשה תתואר גם כלא מאומתת. המונחים הגיוניים רק בהקשר שבו הזהות המוצגת על ידי בקשה מוכרת, ולכן, כאשר אימות אפשרי. במקרים שבהם הזהות המוצגת אינה תואמת את האפשרויות שצוינו לעיל, או שבהם לא מוצגת זהות, האפשרויות שצוינו לעיל הופכות ללא רלוונטיות."
  "מה זה "מעוקפים של פגיעה אחת"?": "במקרים מסוימים, בקשה מאומתת חיובית עדיין עשויה להיחסם כתוצאה מקובצי החתימה, המודולים, או תנאים אחרים של הבקשה, וייתכן שיהיה צורך עוקף על מנת למנוע תוצאות חיוביות כוזבות. במקרה בו מעוקף נועד לטפל בדיוק בהפרה אחת, לא יותר ולא פחות, ניתן לתאר מעוקף כזה כ"מעוקף של פגיעה אחת"."
@@ -389,105 +389,105 @@ info_cli_you_can_print_: "ניתן להדפיס נתונים למסך (לפעמ�
 info_some_useful_links: |
  כמה קישורים שימושיים:<br />
      <ul class="pieul">
-       <li><span class="comCat">Tools, resources, etc for CIDRAM.</span>
+       <li><span class="comCat">כלים, משאבים, וכו' עבור CIDRAM.</span>
          <ul class="comSub">
-           <li>{{Links.CIDRAM.Issues}} – Issues page for CIDRAM (support, assistance, etc).</li>
-           <li>{{Links.CIDRAM.WordPress}} – WordPress plugin for CIDRAM.</li>
-           <li>{{Links.CIDRAM.Extras}} – Various extras.</li>
+           <li>{{Links.CIDRAM.Issues}} – דף בעיות עבור CIDRAM (תמיכה, סיוע, וכו').</li>
+           <li>{{Links.CIDRAM.WordPress}} – תוסף וורדפרס עבור CIDRAM.</li>
+           <li>{{Links.CIDRAM.Extras}} – תוספות שונות.</li>
          </ul>
        </li>
-       <li><span class="comCat">Groups, forums, communities, etc.</span>
+       <li><span class="comCat">קבוצות, פורומים, קהילות, וכו'.</span>
          <ul class="comSub">
-           <li>{{Links.PHP.Earth.Facebook}} – PHP learning resources and discussion.</li>
-           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Forum@Stop Forum Spam</a> – Useful discussion forum about stopping forum spam.</li>
+           <li>{{Links.PHP.Earth.Facebook}} – משאבי למידה ודיון ב-PHP.</li>
+           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">פורום@Stop Forum Spam</a> – פורום דיון שימושי בנושא עצירת ספאם בפורום.</li>
          </ul>
        </li>
-       <li><span class="comCat">Other useful tools, resources, services, etc.</span>
+       <li><span class="comCat">כלים אחרים, משאבים, שירותים, וכו' שיכולים להיות שימושיים.</span>
          <ul class="comSub">
-           <li>{{Links.SFS}} – Maintains a database of known forum spammers. Useful for protecting websites and forums against spammers.</li>
-           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Get CIDRs from ASNs, determine ASN relationships, discover ASNs based upon network names, etc.</li>
-           <li>{{Links.BGPView}} – Get CIDRs from ASNs, determine ASN relationships, discover ASNs based upon network names, etc.</li>
-           <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar by Qrator</a> – Useful tool for checking the connectivity of ASNs as well as for various other information about ASNs.</li>
-           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">The Spamhaus Project</a> – Displays reports regarding botnet infection rates for ASNs.</li>
-           <li>{{Links.AbuseIPDB}} – Maintains a database of known abusive IPs; Provides an API for checking and reporting IPs.</li>
+           <li>{{Links.SFS}} – שומר על מסד הנתונים של שולחי ספאם של פורומים ידועים. שימושי להגנה על אתרים ופורומים מפני שולחי ספאם.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric ערכת הכלים של BGP</a> – קבל CIDRים מ-ASN, לברר את מערכות היחסים של ASN, גלה ASNים על סמך שמות רשת, וכו'.</li>
+           <li>{{Links.BGPView}} – קבל CIDRים מ-ASN, לברר את מערכות היחסים של ASN, גלה ASNים על סמך שמות רשת, וכו'.</li>
+           <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar מאת Qrator</a> – כלי שימושי לבדיקת הקישוריות של ASNים, וכן למידע נוסף על ASNים.</li>
+           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">פרויקט Spamhaus</a> – מציג דוחות לגבי שיעורי הדבקה של רשתות בוט עבור ASNים.</li>
+           <li>{{Links.AbuseIPDB}} – שומר על מסד נתונים של כתובות IP ידועות לרעה; מספק API לבדיקה ודיווח על כתובות IP.</li>
          </ul>
        </li>
-       <li><span class="comCat">Informational and learning resources.</span>
+       <li><span class="comCat">מידע ומשאבי למידה.</span>
          <ul class="comSub">
-           <li>{{Links.PHP.Earth.Website}} – PHP learning resources and discussion.</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Vulnerability Charts</a> – Lists safe/unsafe versions of various packages (HHVM, PHP, phpMyAdmin, Python, etc).</li>
-           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Compatibility Charts</a> – Lists compatibility information for various packages (CIDRAM, phpMussel, etc).</li>
+           <li>{{Links.PHP.Earth.Website}} – משאבי למידה ודיון ב-PHP.</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">תרשימי פגיעות</a> – מפרטת גרסאות בטוחות ולא בטוחות של חבילות שונות (HHVM ,PHP ,phpMyAdmin ,Python, וכו').</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">תרשימי תאימות</a> – מפרטת מידע תאימות עבור חבילות שונות (CIDRAM ,phpMussel, וכו').</li>
          </ul>
        </li>
      </ul>
 
-label_active_config_file: "Active configuration file:"
-label_actual: "Actual"
-label_aux_actBlk: "block"
-label_aux_actByp: "bypass"
-label_aux_actGrl: "greylist"
-label_aux_actLog: "don't log"
-label_aux_actPro: "profile"
-label_aux_actRdr: "redirect (without blocking)"
-label_aux_actRun: "run a file to handle"
-label_aux_actWhl: "whitelist"
-label_aux_create_new_rule: "Create new rule"
-label_aux_expiry: "When the rule should expire (optional):"
-label_aux_from: "When the rule should begin (optional):"
-label_aux_http_status_code_override: "HTTP status code override:"
-label_aux_logic_all: "In order to trigger the rule, all conditions must be met."
-label_aux_logic_any: "Any "equals" (=) conditions may trigger the rule, as long as all "not equals" (≠) conditions are also met."
-label_aux_menu_action: "If the following conditions are met, %s the request."
-label_aux_menu_method: "Use %s to test the conditions."
-label_aux_mode_edit: "Edit mode"
-label_aux_mode_view: "View mode"
-label_aux_modify_rule: "Modify rule"
-label_aux_move_bottom: "Move to the bottom"
-label_aux_move_down: "Move down"
-label_aux_move_top: "Move to the top"
-label_aux_move_up: "Move up"
-label_aux_mtdReg: "regular expressions"
-label_aux_mtdStr: "direct string comparison"
-label_aux_mtdWin: "Windows-style wildcards"
-label_aux_name: "A name for the new rule:"
-label_aux_notes: "Notes (only shown at this page, and doesn't affect the rule):"
-label_aux_reason: "The reason given to the user when blocked:"
-label_aux_run: "The name of the file to run:"
-label_aux_special: "Other options and special flags:"
-label_aux_special_default_state: "Leave it as is (don't set anything)"
-label_aux_special_disable: "Disable this rule"
-label_aux_special_enable: "Enable this rule"
-label_aux_special_hcaptcha_disable: "Forcibly disable HCaptcha"
-label_aux_special_hcaptcha_mark: "Mark for use with HCaptcha"
-label_aux_special_ip_tracking_disable: "Forcibly disable IP tracking"
-label_aux_special_ip_tracking_enable: "Forcibly enable IP tracking"
-label_aux_special_recaptcha_disable: "Forcibly disable reCAPTCHA"
-label_aux_special_recaptcha_mark: "Mark for use with reCAPTCHA"
-label_aux_special_suppress: "Suppress output template"
-label_aux_special_suppress_logging: "Suppress logging"
-label_aux_special_tracking_default: "Enforce standard IP tracking options"
-label_aux_special_tracking_extended: "Enforce extended IP tracking options"
-label_aux_target: "Where to redirect the request:"
-label_aux_webhooks: "Webhooks to apply when the rule requirements are met:"
-label_backup_location: "Repository backup locations (in case of emergency, or if all else fails):"
-label_banned: "Requests banned"
-label_blocked: "Requests blocked"
-label_branch: "Branch latest stable:"
-label_bypass_the_request: "Trigger a bypass.\nSubtracts one count from the number of signatures triggered, as long as at least one signature has already been triggered. Recommended for dealing with simple false positives potentially caused by the default signature files."
-label_captcha: "CAPTCHA attempts"
-label_check_aux: "Also test against auxiliary rules."
-label_check_modules: "Also test against modules."
-label_check_verification: "Also test against search engine and social media verification."
-label_checkbox: "Checkbox"
+label_active_config_file: "קובץ תצורה פעיל:"
+label_actual: "ממשי"
+label_aux_actBlk: "חסום"
+label_aux_actByp: "עקוף"
+label_aux_actGrl: "רשימה אפורה"
+label_aux_actLog: "אל רשום"
+label_aux_actPro: "פרופיל"
+label_aux_actRdr: "הפנה מחדש (ללא חסום)"
+label_aux_actRun: "להפעיל קובץ כדי לטפל"
+label_aux_actWhl: "רשימה לבן"
+label_aux_create_new_rule: "צור כלל חדש"
+label_aux_expiry: "מתי הכלל אמור לפוג (אופציונלי):"
+label_aux_from: "מתי הכלל אמור להתחיל (אופציונלי):"
+label_aux_http_status_code_override: "עקיפה של קוד סטטוס HTTP:"
+label_aux_logic_all: "על מנת להפעיל את הכלל, יש לעמוד בכל התנאים."
+label_aux_logic_any: "כל תנאי "שווה" (=) עשויים להפעיל את הכלל, כל עוד מתקיימים גם כל התנאים "לא שווים" (≠)."
+label_aux_menu_action: "אם מתקיימים התנאים הבאים, %s את הבקשה."
+label_aux_menu_method: "השתמש %s כדי לבדוק את התנאים."
+label_aux_mode_edit: "מצב עריכה"
+label_aux_mode_view: "מצב צפייה"
+label_aux_modify_rule: "שנה כלל"
+label_aux_move_bottom: "לזוז לתחתית"
+label_aux_move_down: "לזוז לרדת"
+label_aux_move_top: "לזוז לראש"
+label_aux_move_up: "לזוז למעלה"
+label_aux_mtdReg: "בביטויים רגולריים"
+label_aux_mtdStr: "בהשוואת מחרוזת ישירה"
+label_aux_mtdWin: "בתווים כלליים בסגנון Windows"
+label_aux_name: "שם לכלל החדש:"
+label_aux_notes: "הערות (מוצגות בדף זה בלבד ואינן משפיעות על הכלל):"
+label_aux_reason: "הסיבה שניתנה למשתמש בעת החסימה:"
+label_aux_run: "שם הקובץ להרצה:"
+label_aux_special: "אפשרויות נוספות ודגלים מיוחדים:"
+label_aux_special_default_state: "השאר את זה כמו שהוא (אל תגדיר כלום)"
+label_aux_special_disable: "כבה את הכלל הזה"
+label_aux_special_enable: "הפעל את הכלל הזה"
+label_aux_special_hcaptcha_disable: "להשבית בכוח HCaptcha"
+label_aux_special_hcaptcha_mark: "לסמן לשימוש עם HCaptcha"
+label_aux_special_ip_tracking_disable: "להשבית בכוח מעקב IP"
+label_aux_special_ip_tracking_enable: "לאפשר בכוח מעקב IP"
+label_aux_special_recaptcha_disable: "להשבית בכוח reCAPTCHA"
+label_aux_special_recaptcha_mark: "לסמן לשימוש עם reCAPTCHA"
+label_aux_special_suppress: "השמט תבנית פלט"
+label_aux_special_suppress_logging: "השמט רישום"
+label_aux_special_tracking_default: "לאכוף אפשרויות מעקב IP סטנדרטיות"
+label_aux_special_tracking_extended: "לאכוף אפשרויות מעקב IP מורחבות"
+label_aux_target: "לאן להפנות את הבקשה:"
+label_aux_webhooks: "Webhooks ליישום כאשר דרישות הכלל מתקיימות:"
+label_backup_location: "מיקומי גיבוי של מאגר (במקרה חירום, או אם כל השאר נכשל):"
+label_banned: "הבקשות שנאסרו"
+label_blocked: "הבקשות חסומות"
+label_branch: "האורווה האחרונה של הסניף:"
+label_bypass_the_request: "הפעל עוקף.\nמוריד ספירה אחת ממספר החתימות שהופעלו, כל עוד לפחות חתימה אחת כבר הופעלה. מומלץ לטיפול בתוצאות שגויות פשוטות שעלולות להיגרם על ידי קובצי החתימה המוגדרים כברירת מחדל."
+label_captcha: "ניסיונות CAPTCHA"
+label_check_aux: "בדוק גם נגד כללי עזר."
+label_check_modules: "בדוק גם מול מודולים."
+label_check_verification: "בדוק גם מול מנוע חיפוש ומדיה חברתית אימות."
+label_checkbox: "תיבת סימון"
 label_checksum_after: "סכום בדיקה לאחר"
 label_checksum_before: "סכום בדיקה לפני"
-label_cidram: "CIDRAM version used:"
-label_clientinfo: "Client information:"
+label_cidram: "גרסת CIDRAM בשימוש:"
+label_clientinfo: "מידע הלקוח:"
 label_current_data: "נתונים נוכחיים."
 label_current_data_for: "נתונים נוכחיים עבור "%s"."
 label_default: "סטנדרטי"
-label_dependencies: "Dependencies:"
-label_difference: "Difference"
+label_dependencies: "תלות:"
+label_difference: "הבדל"
 label_displaying:
  - "Displaying %s entry."
  - "Displaying %s entries."
@@ -495,11 +495,11 @@ label_displaying_that_cite:
  - "Displaying %s entry that cites "%s"."
  - "Displaying %s entries that cite "%s"."
 label_entries_per_page: "Entries per page:"
-label_expected: "Expected"
-label_expires: "Expires:"
-label_extension: "Extension"
-label_external: "External"
-label_false_positive_risk: "False positive risk:"
+label_expected: "צפוי"
+label_expires: "פג תוקף:"
+label_extension: "הרחבת"
+label_external: "חיצוני"
+label_false_positive_risk: "סיכון חיובי כוזב:"
 label_fmgr_cache_data: "Cache data and temporary files"
 label_fmgr_disk_usage: "CIDRAM disk usage:"
 label_fmgr_free_space: "Free disk space:"
@@ -517,29 +517,29 @@ label_http_response_header_code_418: "418 I'm a teapot\nReferences an April Fool
 label_http_response_header_code_429: "429 Too Many Requests\nRecommended for rate limiting, when dealing with DDoS attacks, and for flood prevention. Not recommended in other contexts."
 label_http_response_header_code_451: "451 Unavailable For Legal Reasons\nRecommended when blocking primarily for legal reasons. Not recommended in other contexts."
 label_http_response_header_code_503: "503 Service Unavailable\nMost robust, but least user-friendly. Recommended for when under attack, or for when dealing with extremely persistent unwanted traffic."
-label_ignore: "Ignore this"
-label_installed_available: "Installed/Available"
+label_ignore: "התעלם מזה"
+label_installed_available: "מותקן/זמין"
 label_integrity_check: "Integrity check:"
 label_intersect: "Intersect"
 label_invisible: "Invisible"
-label_is_available: "%s is available (%s)."
-label_is_available_class: "%s is available."
-label_is_not_available: "%s is not available."
+label_is_available: "%s זמין (%s)."
+label_is_available_class: "%s זמין."
+label_is_not_available: "%s אינו זמין."
 label_netmask: "מסיכת רשת"
-label_never: "Never"
-label_next: "Next:"
+label_never: "לעולם לא"
+label_next: "הבא:"
 label_no_data_available: "אין נתונים זמינים."
-label_os: "Operating system used:"
-label_other: "Other"
-label_other_active_events: "Active events"
-label_other_active_imports: "Active imports"
-label_other_active_ipv4: "Active IPv4 signature files"
-label_other_active_ipv6: "Active IPv6 signature files"
-label_other_active_modules: "Active modules"
-label_other_since: "Start date"
+label_os: "מערכת הפעלה בשימוש:"
+label_other: "אחר"
+label_other_active_events: "אירועים פעילים"
+label_other_active_imports: "יבוא פעילים"
+label_other_active_ipv4: "קבצי חתימת IPv4 פעילים"
+label_other_active_ipv6: "קבצי חתימת IPv6 פעילים"
+label_other_active_modules: "מודולים פעילים"
+label_other_since: "תאריך התחלה"
 label_paginate: "Paginate"
 label_passed: "Requests passed"
-label_php: "PHP version used:"
+label_php: "גרסת PHP בשימוש:"
 label_preferred_source: "Preferred source:"
 label_previous: "Previous:"
 label_range_tools: "Range tools"
@@ -820,17 +820,17 @@ tip_statistics: "Hello, {username}.<br />This page shows some basic usage statis
 tip_statistics_disabled: "הערה: Statistics tracking is currently disabled, but can be enabled via the configuration page."
 tip_subtractor: "Hello, {username}.<br />The subtractor can be used to subtract one range of IPs/CIDRs/netmasks from another."
 tip_updates: "Hello, {username}.<br />The updates page allows you to install, uninstall, and update the various components of CIDRAM (the core package, signatures, L10N files, etc)."
-title_login: "Login"
-warning_default_password: "אזהרה: Using the standard password!"
+title_login: "התחברות"
+warning_default_password: "אזהרה: שימוש בסיסמת ברירת מחדל!"
 warning_dry_run_mode: "אזהרה: Operating in dry run mode! While in dry run mode, requests are still checked and logged as block events as per usual, but nothing is blocked."
 warning_file_php: "אזהרה: Some webhosting security solutions have been known to automatically ban IP addresses upon detecting PHP tags within requests (למשל., when attempting to modify PHP files through a browser). CIDRAM has no means of knowing whether your webhosting service uses such a security solution. In order to avoid such problems, not editing PHP files in such a way is recommended when possible."
 warning_file_overwritten: "אזהרה: The file you're currently editing belongs to the component, "%s". Any changes made to this file are very likely to be overwritten the next time that component is updated."
 warning_ip_tests_disabled: "אזהרה: IP tests are disabled! Signature files can't be utilised until this is resolved."
-warning_javascript_required: "אזהרה: Some front-end functionality requires JavaScript. To ensure that the entire front-end behaves as expected, enabling JavaScript is recommended."
+warning_javascript_required: "אזהרה: חלק מפונקציונליות הקצה הקדמי דורשת JavaScript. כדי להבטיח שכל הקצה הקדמי יתנהג כמצופה, מומלץ להפעיל JavaScript."
 warning_maintenance_mode: "אזהרה: Operating in maintenance mode! While in maintenance mode, nothing is checked, logged, or blocked."
 warning_modules_disabled: "אזהרה: Modules are disabled! Modules can't be utilised until this is resolved."
-warning_no_active_modules: "אזהרה: No modules are active! Modules can be activated using the configuration or updates pages."
-warning_no_active_signature_files: "אזהרה: No signature files are active! Signature files can be activated using the configuration or updates pages."
-warning_password_not_valid: "אזהרה: This account is not using a valid password!"
-warning_termination_disabled: "אזהרה: Page termination is disabled! Requests can't be properly blocked until this is resolved."
-warning_will_log_out_all_users: "אזהרה: Proceeding will log out all users."
+warning_no_active_modules: "אזהרה: אין מודולים פעילים! ניתן להפעיל מודולים באמצעות דפי התצורה או העדכונים."
+warning_no_active_signature_files: "אזהרה: אין קבצי חתימה פעילים! ניתן להפעיל קובצי חתימה באמצעות דפי התצורה או העדכונים."
+warning_password_not_valid: "אזהרה: חשבון זה אינו משתמש בסיסמה חוקית!"
+warning_termination_disabled: "אזהרה: סיום הדף כבוי! לא ניתן לחסום בקשות כראוי עד לפתרון הבעיה."
+warning_will_log_out_all_users: "אזהרה: אם תמשיך, כל המשתמשים ינותקו."

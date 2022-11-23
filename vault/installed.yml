@@ -316,8 +316,6 @@ Common Classes Package:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/Maikuolan/Common/YAML.php"
    Checksum: "769bb13062ac7d109a4196e9dbffd10c5f13a70df9681fb252fe533792649ff4:51576"
 IPv4:
- Extended Description: >
-  Default IPv4 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.
  False Positive Risk: "Low"
  Version: "2022.321.0"
  Dependencies:
@@ -328,7 +326,6 @@ IPv4:
    Checksum: "f826cd8de2b88fa1a7489480c92865795b18d934c2139258551b3e866e6a96f3:1130157"
    Used with: "ipv4"
 IPv4-Bogons:
- Extended Description: "Default IPv4 signatures normally included with the main package. Blocks bogon/martian CIDRs."
  False Positive Risk: "Low"
  Version: "2022.154.0"
  Files:
@@ -337,7 +334,6 @@ IPv4-Bogons:
    Checksum: "a32aa7edc0c8fbd369fd9401c6275d2e15f3bc07058df93217c77da34ab59c3b:739"
    Used with: "ipv4"
 IPv4-ISPs:
- Extended Description: "Default IPv4 signatures normally included with the main package. Blocks dangerous and spammy ISPs."
  False Positive Risk: "Medium"
  Version: "2022.325.0"
  Dependencies:
@@ -348,7 +344,6 @@ IPv4-ISPs:
    Checksum: "0617a78af87a20d3825a2d0a76987a37ef39a36ad1493d252028b1ee6f4fb487:647103"
    Used with: "ipv4"
 IPv4-Nonblocking:
- Extended Description: "Default IPv4 non-blocking signatures file."
  Version: "2021.166.298"
  Files:
   signatures/ipv4_nonblocking.dat:
@@ -356,9 +351,6 @@ IPv4-Nonblocking:
    Checksum: "ed7590e4def93d9de293410f8827613a832f1efbb3f623350de995a8c858e0ff:641"
    Used with: "ipv4"
 IPv4-Other:
- Extended Description: >
-  Default IPv4 signatures normally included with the main package. Blocks CIDRs for proxies, VPNs, and other miscellaneous
-  unwanted services.
  False Positive Risk: "Medium"
  Version: "2022.275.0"
  Files:
@@ -367,8 +359,6 @@ IPv4-Other:
    Checksum: "ba10ce0f8a32cdaa30c796e5b6a029689f4d44298bfe247029b575ad54f0e2a1:32148"
    Used with: "ipv4"
 IPv6:
- Extended Description: >
-  Default IPv6 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.
  False Positive Risk: "Low"
  Version: "2022.321.0"
  Dependencies:
@@ -379,7 +369,6 @@ IPv6:
    Checksum: "489fce28b994ff47d480f62ad57050e74749e28f8cc901e788402a4478fad17d:321720"
    Used with: "ipv6"
 IPv6-Bogons:
- Extended Description: "Default IPv6 signatures normally included with the main package. Blocks bogon/martian CIDRs."
  False Positive Risk: "Low"
  Version: "2022.154.0"
  Files:
@@ -388,7 +377,6 @@ IPv6-Bogons:
    Checksum: "e6d84dd7cc89aabab34d9dd2736b5317d8da5cd61ee18585571898e0effdc3ce:952"
    Used with: "ipv6"
 IPv6-ISPs:
- Extended Description: "Default IPv6 signatures normally included with the main package. Blocks dangerous and spammy ISPs."
  False Positive Risk: "Medium"
  Version: "2022.321.0"
  Dependencies:
@@ -399,7 +387,6 @@ IPv6-ISPs:
    Checksum: "1e65a070eaa7b26f49ce4974147d3afe63259600b5830a42da6737f23014c87c:45645"
    Used with: "ipv6"
 IPv6-Nonblocking:
- Extended Description: "Default IPv6 non-blocking signatures file."
  Version: "2021.166.298"
  Files:
   signatures/ipv6_nonblocking.dat:
@@ -407,9 +394,6 @@ IPv6-Nonblocking:
    Checksum: "2cf0afbe9d80a38e273657841f4185034c7b2044a94533e6a2ee9b1e1a4e3b36:619"
    Used with: "ipv6"
 IPv6-Other:
- Extended Description: >
-  Default IPv6 signatures normally included with the main package. Blocks CIDRs for proxies, VPNs, and other miscellaneous
-  unwanted services.
  False Positive Risk: "Low"
  Version: "2022.275.0"
  Files:

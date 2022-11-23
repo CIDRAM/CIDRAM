@@ -1,0 +1,77 @@
+##\
+# This file is a part of one of macmathan's optional modules for the  CIDRAM package.
+# Homepage: https://bitbucket.org/macmathan/blocklists
+#
+# COPYRIGHT 2021 and beyond by David MacMathan (macmathan).
+#
+# License: GNU/GPLv2
+# @see LICENSE.txt
+#
+# This file: Configuration defaults (last modified: 2021-03-23 11:29:33).
+# Version: 2021.81.478
+##/
+
+Config Defaults:
+ bobuam:
+  sanity_check:
+   type: "string"
+   default: yes
+   choices: 
+    yes: yes
+    no: no
+   allow_other: false
+  Reason_Ambiguos:
+   type: "string"
+   default: "Ambiguos browser ID detected!"
+  Reason_Malformed:
+   type: "string"
+   default: "Malformed user agent detected!"
+  Reason_Masquerade:
+   type: "string"
+   default: "Sneaky masquerading attempt detected!"
+  block_bots:
+   type: "string"
+   default: yes
+   choices: 
+    yes: yes
+    no: no
+   allow_other: false
+  Reason_Bot:
+   type: "string"
+   default: "Suspected bot or scraper probe detected!"
+  block_eol_browsers:
+   type: "string"
+   default: yes
+   choices: 
+    yes: yes
+    no: no
+   allow_other: false
+  Chrome:
+   type: "int"
+   default: "0"
+  Firefox:
+   type: "int"
+   default: "0"
+  Firefox_ESR:
+   type: "int"
+   default: "0"
+  Safari:
+   type: "int"
+   default: "0"
+  Reason_Browser:
+   type: "string"
+   default: "Your browser identifies as outdated, and as such constitutes a safety risk. Please update to the current version before accessing this site."
+L10N:
+ config_bobuam: "Configuration for the optional &quot;Bot Or Browser User Agent Module&quot;, which detects unwanted bots, old browsers, and performs some sanity checks"
+ config_bobuam_block_bots: "Block bots recogniced as malicious or unwanted?"
+ config_bobuam_block_eol_browsers: "Block browsers that has reached End Of Life? (Set versions below)"
+ config_bobuam_sanity_check: "Block browsers that shows ambiguos or clearly malformed user agent strings?"
+ config_bobuam_Chrome: "Lowest allowed version of the &quot;Chrome/Chromium&quot; token. (Not valid for EdgeHTML or Edge mobile.) [Integer]<br /><em>If set to &quot;0&quot; when the module is activated, then a default value from the module will be used. Currently: 86</em>"
+ config_bobuam_Firefox: "Lowest allowed version of the &quot;Firefox&quot; token. [Integer]<br /><em>If set to &quot;0&quot; when the module is activated, then a default value from the module will be used. Currently: 83</em>"
+ config_bobuam_Firefox_ESR: "Allowed version of the &quot;Firefox&quot; token for the ESR version. [Integer]<br /><em>If set to &quot;0&quot; when the module is activated, then a default value from the module will be used. Currently: 78</em>"
+ config_bobuam_Safari: "Lowest allowed version of Safari's &quot;Version&quot; token. [Integer]<br /><em>If set to &quot;0&quot; when the module is activated, then a default value from the module will be used. Currently: 13</em>"
+ config_bobuam_Reason_Bot: "Block reason shown for bot-blocks. [String]"
+ config_bobuam_Reason_Browser: "Block reason shown when a broswer that is too old gets blocked. [String]"
+ config_bobuam_Reason_Ambiguos: "Block reason shown when an ambigous user agent string is detected. [String]"
+ config_bobuam_Reason_Malformed: "Block reason shown when a malformed user agent string is detected. [String]"
+ config_bobuam_Reason_Masquerade: "Block reason shown when an user agent tries to masquerade as something else. [String]"

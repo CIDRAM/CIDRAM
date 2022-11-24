@@ -836,11 +836,11 @@ AbuseIPDB module:
    Used with: "modules"
 Bad hosts blocker module:
  False Positive Risk: "Medium"
- Version: "2022.189.0"
+ Version: "2022.326.0"
  Files:
   modules/badhosts.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/badhosts.php"
-   Checksum: "3f56032c1bbc1dbf7818f486d9b530bc5ffe8ad0ae38f826745f94d5a95a1fc4:15327"
+   Checksum: "f73003a9b88c1554972f7db6c265617c34874a42be9515dbc781d771b3ac824b:15282"
    Used with: "modules"
 Bad TLDs blocker module:
  False Positive Risk: "Low"
@@ -933,6 +933,24 @@ Tor blocker module:
   modules/tor.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/tor.php"
    Checksum: "fee67d42b3a4265f947eac9dcfd0770ebeb2d0fc00048ea4c11c412be50ee785:4045"
+   Used with: "modules"
+BOBUAM:
+ Extended Description: "Optional module which detects unwanted bots, old browsers, and performs some sanity checks.<br />Contains some data from the Wordpress plugin "Stop Bad Bots" by William "Bill" Minozzi.<br />(A few webservices bots might need bypasses)."
+ False Positive Risk: "Medium"
+ Version: "2022.326.0"
+ Dependencies:
+  PHP: "^7.2|^8"
+  CIDRAM Front-End: ">=3.0.0-DEV+22317000"
+  l10n/core/{lang}: ">=2022.142"
+  l10n/frontend/{lang}: ">=2022.142"
+ Files:
+  imports/bobuam.yml:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/imports/bobuam.yml"
+   Checksum: "ca73ef7b1a7970b14f3c8755a361c4266d013b1a1821f364cfcef0a6fb5a6d13:41435"
+   Used with: "imports"
+  modules/bobuam.php:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/bobuam.php"
+   Checksum: "961077474096d5fb59aa776da3f8eb437be6a33fa9441a3c9e120562b3dda6aa:3371"
    Used with: "modules"
 theme/bluemetal:
  Name: "Theme: Blue Metal"

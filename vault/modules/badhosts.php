@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bad hosts blocker module (last modified: 2022.07.07).
+ * This file: Bad hosts blocker module (last modified: 2022.11.23).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -53,9 +53,9 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     $UANoSpace = preg_replace('/\s/', '', $UA);
 
     $this->trigger(preg_match(
-        '/\$(?:globals|_(cookie|env|files|get|post|request|se(rver|ssion)))/',
+        '/\$(?:globals|_(?:cookie|env|files|get|post|request|server|session))/',
         $HN
-    ), 'Banned hostname'); // 2017.01.21
+    ), 'Banned hostname'); // 2017.01.21 mod 2022.11.23
 
     $this->trigger(preg_match(
         '/(?:<(\?|body|i?frame|object|script)|(body|i?frame|object|script)>)/',
@@ -165,10 +165,9 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         'cedge|cyber-freaks|dailyrazor|gothamdating|ibuzytravel|server306|we' .
         'bfaction|\.siteprotect)\.com$|(?:aramenet|dinaserver|phishmongers|w' .
         'eb(?:hostinghub|sitewelcome))\.com|server4u\.cz$|acetrophies\.co\.u' .
-        'k$|\.pomserve2\.co\.uk|webhostserver\.biz$|\.haremo\.de$|webcreator' .
-        's\.nl|vpsnow\.ru$/',
+        'k$|vpsnow\.ru$|cyberresilience\.io$/',
         $HN
-    ), 'Probe/Scanner'); // 2019.03.04
+    ), 'Probe/Scanner'); // 2022.11.23
 
     if ($this->trigger(preg_match(
         '/(?:\.oroxy|anonine)\.com$|thefreevpn|vpn(?:999\.com|gate)|public-net/',

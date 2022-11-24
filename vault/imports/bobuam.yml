@@ -11,7 +11,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: BOBUAM defaults file (last modified: 2022.11.23).
+# This file: BOBUAM defaults file (last modified: 2022.11.24).
 ##/
 
 Config Defaults:
@@ -22,27 +22,24 @@ Config Defaults:
    choices:
     yes: "response_yes"
     no: "response_no"
-  Reason_Ambiguos:
+  reason_ambiguous:
    type: "string"
-   default: "bobuam_ambiguous_browser"
+   default: "denied"
    choices:
-    bobuam_ambiguous_browser: "Ambiguos browser ID detected!"
     denied: "denied"
    preview: "allow_other"
    allow_other: true
-  Reason_Malformed:
+  reason_malformed:
    type: "string"
-   default: "bobuam_malformed_ua"
+   default: "denied"
    choices:
-    bobuam_malformed_ua: "Malformed user agent detected!"
     denied: "denied"
    preview: "allow_other"
    allow_other: true
-  Reason_Masquerade:
+  reason_masquerade:
    type: "string"
-   default: "bobuam_masquerade"
+   default: "denied"
    choices:
-    bobuam_masquerade: "Sneaky masquerading attempt detected!"
     denied: "denied"
    preview: "allow_other"
    allow_other: true
@@ -52,11 +49,10 @@ Config Defaults:
    choices:
     yes: "response_yes"
     no: "response_no"
-  Reason_Bot:
+  reason_bot:
    type: "string"
-   default: "bobuam_suspected"
+   default: "denied"
    choices:
-    bobuam_suspected: "Suspected bot or scraper probe detected!"
     denied: "denied"
    preview: "allow_other"
    allow_other: true
@@ -66,37 +62,32 @@ Config Defaults:
    choices:
     yes: "response_yes"
     no: "response_no"
-  Chrome:
+  chrome:
    type: "int"
    default: 0
-  Firefox:
+   hints: "bobuam_hint_default_value"
+  firefox:
    type: "int"
    default: 0
-  Firefox_ESR:
+   hints: "bobuam_hint_default_value"
+  firefox_esr:
    type: "int"
    default: 0
-  Safari:
+   hints: "bobuam_hint_default_value"
+  safari:
    type: "int"
    default: 0
-  Reason_Browser:
+   hints: "bobuam_hint_default_value"
+  reason_browser:
    type: "string"
-   default: "bobuam_outdated"
+   default: "bobuam_outdated_long"
    choices:
-    bobuam_outdated: "Your browser identifies as outdated, and as such constitutes a safety risk. Please update to the current version before accessing this site."
+    bobuam_outdated_long: "bobuam_outdated_long"
     denied: "denied"
    preview: "allow_other"
    allow_other: true
-L10N:
- config_bobuam: "Configuration for the optional &quot;Bot Or Browser User Agent Module&quot;, which detects unwanted bots, old browsers, and performs some sanity checks"
- config_bobuam_block_bots: "Block bots recognised as malicious or unwanted?"
- config_bobuam_block_eol_browsers: "Block browsers that has reached End Of Life? (Set versions below)"
- config_bobuam_sanity_check: "Block browsers that shows ambiguos or clearly malformed user agent strings?"
- config_bobuam_Chrome: "Lowest allowed version of the &quot;Chrome/Chromium&quot; token. (Not valid for EdgeHTML or Edge mobile.) [Integer]<br /><em>If set to &quot;0&quot; when the module is activated, then a default value from the module will be used. Currently: 86</em>"
- config_bobuam_Firefox: "Lowest allowed version of the &quot;Firefox&quot; token. [Integer]<br /><em>If set to &quot;0&quot; when the module is activated, then a default value from the module will be used. Currently: 83</em>"
- config_bobuam_Firefox_ESR: "Allowed version of the &quot;Firefox&quot; token for the ESR version. [Integer]<br /><em>If set to &quot;0&quot; when the module is activated, then a default value from the module will be used. Currently: 78</em>"
- config_bobuam_Safari: "Lowest allowed version of Safari's &quot;Version&quot; token. [Integer]<br /><em>If set to &quot;0&quot; when the module is activated, then a default value from the module will be used. Currently: 13</em>"
- config_bobuam_Reason_Bot: "Block reason shown for bot-blocks. [String]"
- config_bobuam_Reason_Browser: "Block reason shown when a broswer that is too old gets blocked. [String]"
- config_bobuam_Reason_Ambiguos: "Block reason shown when an ambigous user agent string is detected. [String]"
- config_bobuam_Reason_Malformed: "Block reason shown when a malformed user agent string is detected. [String]"
- config_bobuam_Reason_Masquerade: "Block reason shown when an user agent tries to masquerade as something else. [String]"
+BOBUAM Token:
+ Chrome: "86"
+ Firefox: "83"
+ Firefox ESR: "78"
+ Safari: "13"

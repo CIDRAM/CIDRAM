@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2022.11.23).
+# This file: English language data for the front-end (last modified: 2022.11.24).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -74,6 +74,7 @@ Name Project Honeypot module: "Project Honeypot module."
 Name Referrer spam module: "Referrer spam module."
 Name Stop Forum Spam module: "Stop Forum Spam module."
 Name Tor blocker module: "Tor blocker module."
+bobuam_hint_default_value: "When set to 0, the module will defer to the currently recommended value."
 checkbox_choice_negatives: "Blocked negatives"
 checkbox_choice_nonverified: "Blocked non-verified"
 checkbox_delete_orphaned_values: "Delete orphaned values."
@@ -107,6 +108,19 @@ config_bgpview_blocked_asns: "A list of ASNs to be blocked when matched by the B
 config_bgpview_blocked_ccs: "A list of countries (identified by their {{Links.ISO.3166}} 2-digit country codes) to be blocked when matched by the BGPView module."
 config_bgpview_whitelisted_asns: "A list of ASNs to be whitelisted when matched by the BGPView module."
 config_bgpview_whitelisted_ccs: "A list of countries (identified by their {{Links.ISO.3166}} 2-digit country codes) to be whitelisted when matched by the BGPView module."
+config_bobuam: "Configuration for the optional "bot or browser user agent module", which detects unwanted bots, old browsers, and performs some sanity checks."
+config_bobuam_block_bots: "Block bots recognised as malicious or unwanted?"
+config_bobuam_block_eol_browsers: "Block browsers that've reached end of life? (Set versions below)."
+config_bobuam_chrome: "Lowest allowed version of the "Chrome/Chromium" token. Recommended: {{BOBUAM Token.Chrome}}."
+config_bobuam_firefox: "Lowest allowed version of the "Firefox" token. Recommended: {{BOBUAM Token.Firefox}}."
+config_bobuam_firefox_esr: "Allowed version of the "Firefox" token for the ESR version. Recommended: {{BOBUAM Token.Firefox ESR}}."
+config_bobuam_reason_ambiguous: "Block reason shown when an ambiguous user agent string is detected."
+config_bobuam_reason_bot: "Block reason shown for bot blocks."
+config_bobuam_reason_browser: "Block reason shown when a browser that is too old gets blocked."
+config_bobuam_reason_malformed: "Block reason shown when a malformed user agent string is detected."
+config_bobuam_reason_masquerade: "Block reason shown when an user agent tries to masquerade as something else."
+config_bobuam_safari: "Lowest allowed version of Safari's "Version" token. Recommended: {{BOBUAM Token.Safari}}."
+config_bobuam_sanity_check: "Block browsers that shows ambiguous or clearly malformed user agent strings?"
 config_bunnycdn: "BunnyCDN compatibility module configuration."
 config_bunnycdn_positive_action: "Which action should CIDRAM perform when it encounters a request from BunnyCDN? Default action = Bypass."
 config_bypasses: "Default signature bypasses configuration."

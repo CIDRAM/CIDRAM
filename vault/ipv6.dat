@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2022.321.0
-# Last modified: 2022.11.18
+# Version: 2022.326.0
+# Last modified: 2022.11.23
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -89,20 +89,20 @@ Profile: Commercial;Infrastructure/Transit;University
 Tag: CST-NET
 
 
-# ASN 46573 ("Global Frag Networks").
-# Stop Forum Spam (SFS) listings: 399.
-# Updated: 2021.12.16
+# ASNs 46573, 397086, 400309 ("LayerHost").
+# Stop Forum Spam (SFS) listings: 877 (AS46573), 198 (AS397086).
+# Updated: 2022.11.23
 
 2602:fdd3::/36 Deny Cloud
 Origin: CA
-2a0f:9bc0::/30 Deny Cloud
-2a10:3e80::/30 Deny Cloud
-Origin: LT
+2406:2580::/32 Deny Cloud
+Origin: CN
+2401:fb40::/32 Deny Cloud
+Origin: IN
 2604:d180::/32 Deny Cloud
-2605:5fc8::/32 Deny Cloud
 Origin: US
-Profile: Infrastructure/Transit;Webhosting
-Tag: Global Frag Networks
+Profile: Webhosting
+Tag: LayerHost
 
 
 # ASN 54600 ("PEG TECH INC").
@@ -182,8 +182,8 @@ Tag: home.pl
 
 
 # ASN 25532 ("Masterhost").
-# Stop Forum Spam (SFS) listings: 7.
-# Updated: 2016.04.18 / Checked: 2021.12.24
+# Stop Forum Spam (SFS) listings: 2.
+# Updated: 2016.04.18 / Checked: 2022.11.23
 
 2a00:15f8::/32 Deny Cloud
 Origin: RU
@@ -245,8 +245,8 @@ Tag: IONOS SE
 
 
 # ASN 27823 ("Dattatec.com").
-# Stop Forum Spam (SFS) listings: 8.
-# Updated: 2016.04.18 / Checked: 2021.12.12
+# Stop Forum Spam (SFS) listings: 78.
+# Updated: 2016.04.18 / Checked: 2022.11.25
 
 2800:6c0::/32 Deny Cloud
 Origin: AR
@@ -759,13 +759,12 @@ Tag: Eonix Corporation
 
 
 # ASNs 10661, 32748, 46440 ("Steadfast Networks").
-# Stop Forum Spam (SFS) listings: 374 (AS32748).
-# Updated: 2021.12.23
+# Stop Forum Spam (SFS) listings: 364 (AS32748).
+# Updated: 2022.11.23
 
-2602:fc5c:3::/48 Deny Cloud
 2607:f128::/32 Deny Cloud
 Origin: US
-Profile: Dedicated;Infrastructure/Transit;Webhosting
+Profile: Dedicated;Webhosting
 Tag: Steadfast Networks
 
 
@@ -1057,22 +1056,13 @@ Tag: IDEAL HOSTING
 
 # ASN 54489 ("CoreSpace, Inc").
 # Subtract 44.0.0.0/9, 44.128.0.0/10 (clean).
-# Stop Forum Spam (SFS) listings: 869.
-# Updated: 2016.01.22 / Checked: 2021.12.12
+# Stop Forum Spam (SFS) listings: 3.
+# Updated: 2016.01.22 / Checked: 2022.11.25
 
 2604:7780::/32 Deny Cloud
 Origin: US
 Profile: Infrastructure/Transit;Tor endpoints here
 Tag: CoreSpace, Inc
-
-
-# ASN 32421 ("Black Lotus Communications").
-# Updated: 2018.04.30 / Checked: 2021.12.12
-
-2001:67c:2f08::/48 Deny Cloud
-Origin: GB
-Profile: Commercial
-Tag: Black Lotus
 
 
 # ASNs 8100, 29761 ("QuadraNet, Inc").
@@ -2739,8 +2729,8 @@ Tag: Trabia-Network
 
 
 # ASN 29691 ("Nine Internet Solutions AG").
-# Stop Forum Spam (SFS) listings: 6,604.
-# Updated: 2020.05.30 / Checked: 2021.12.10
+# Stop Forum Spam (SFS) listings: 2,183.
+# Updated: 2020.05.30 / Checked: 2022.11.25
 
 2001:67c:2f98::/48 Deny Cloud
 2a02:418::/29 Deny Cloud
@@ -5353,7 +5343,7 @@ Tag: NTX Technologies s.r.o
 
 
 # ASN 200161 ('"DATAPRO" Limited Liability Company').
-# Updated: 2018.02.25 / Checked: 2021.12.12
+# Updated: 2018.02.25 / Checked: 2022.11.25
 
 2a00:a960::/32 Deny Cloud
 Origin: RU
@@ -5903,8 +5893,8 @@ Tag: CloudSol
 
 
 # ASN 132839 ("POWER LINE DATACENTER").
-# Stop Forum Spam (SFS) listings: 56.
-# Updated: 2021.05.27 / Checked: 2021.12.23
+# Stop Forum Spam (SFS) listings: 168.
+# Updated: 2021.05.27 / Checked: 2022.11.23
 
 2401:f940::/32 Deny Cloud
 Origin: HK
@@ -7130,8 +7120,8 @@ Tag: ServerAstra Kft
 
 # ASN 48524 ("INTERRA telecommunications group, Ltd").
 # Caught attempting to hack WordPress sites.
-# Stop Forum Spam (SFS) listings: 1,152.
-# Updated: 2019.10.02 / Checked: 2021.12.12
+# Stop Forum Spam (SFS) listings: 111.
+# Updated: 2019.10.02 / Checked: 2022.11.25
 
 2a03:dec0::/32 Deny Cloud
 Origin: RU
@@ -7343,7 +7333,7 @@ Tag: Rack Sphere Hosting
 
 # ASN 394844 ("Root Level Technology, LLC").
 # Dedicated server farm/lease and an occasional source of spam.
-# Updated: 2019.12.26 / Checked: 2021.12.24
+# Updated: 2019.12.26 / Checked: 2022.11.23
 
 2605:2080:8000::/34 Deny Cloud
 2607:d100::/32 Deny Cloud
@@ -8262,7 +8252,7 @@ Tag: Patron Technology Persia Ltd
 # ASN 48896 ("dhosting.pl Sp. z o.o").
 # Dedicated webhosting provider. Drive-by WordPress attacks detected
 # originating from this network.
-# Updated: 2020.07.27 / Checked: 2021.12.24
+# Updated: 2020.07.27 / Checked: 2022.11.23
 
 2001:67c:1c8::/48 Deny Cloud
 Origin: PL
@@ -8273,8 +8263,8 @@ Tag: dhosting.pl
 # ASN 7684 ("SAKURA Internet Inc").
 # Dedicated webhosting provider. Drive-by WordPress attacks detected
 # originating from this network.
-# Stop Forum Spam (SFS) listings: 44.
-# Updated: 2020.07.27 / Checked: 2021.12.24
+# Stop Forum Spam (SFS) listings: 67.
+# Updated: 2020.07.27 / Checked: 2022.11.23
 
 2401:2500::/32 Deny Cloud
 Origin: JP
@@ -8308,8 +8298,8 @@ Tag: Micron21 Datacentre
 
 
 # ASN 205081 ("EasyDataHost S.L").
-# Stop Forum Spam (SFS) listings: 610.
-# Updated: 2020.08.17 / Checked: 2021.12.12
+# Stop Forum Spam (SFS) listings: 23.
+# Updated: 2020.08.17 / Checked: 2022.11.25
 
 2a0c:5500::/46 Deny Cloud
 2a0c:5500:4::/48 Deny Cloud
@@ -8361,11 +8351,12 @@ Tag: Censys, Inc
 
 # ASN 51468 ("One.com A/S").
 # Caught trying to hack into WordPress wp-admin and probing for backups.
-# Stop Forum Spam (SFS) listings: 2.
-# Updated: 2020.09.01 / Checked: 2021.12.23
+# Updated: 2022.11.23
 
+2001:67c:3c0::/48 Deny Cloud
 2001:67c:28cc::/48 Deny Cloud
 2a02:2350::/32 Deny Cloud
+2a03:53c0::/32 Deny Cloud
 Origin: DK
 Profile: Webhosting
 Tag: One.com A/S
@@ -8617,9 +8608,9 @@ Tag: Beijing Baidu Netcom
 # Webhosting and cloud lease network. Regular brute-force attacks and
 # port scans detected from here. Caught by honeypots searching for vulnerable
 # login systems. Has been hitting my honeypots daily for a number of years now.
-# Stop Forum Spam (SFS) listings: 18 (AS47869), 2,585 (AS211252),
-# 702 (AS213035), 4,793 (AS399471), 373 (AS400377).
-# Updated: 2022.10.22
+# Stop Forum Spam (SFS) listings: 18 (AS47869), 2,538 (AS211252),
+# 224 (AS213035), 5,252 (AS399471), 373 (AS400377).
+# Updated: 2022.11.23
 
 2803:8080::/32 Deny Cloud
 Origin: AR
@@ -8630,10 +8621,11 @@ Origin: BE
 Origin: NL
 2a0e:1c80:4::/48 Deny Cloud
 2a0e:1c80:b::/48 Deny Cloud
+2a0e:1c80:c::/47 Deny Cloud
 Origin: SE
 2604:bc0:2::/48 Deny Cloud
 2604:bc0:8::/48 Deny Cloud
-2606:3f40::/48 Deny Cloud
+2606:3f40::/47 Deny Cloud
 2606:3f40:2::/48 Deny Cloud
 2606:ed00::/32 Deny Cloud
 2a07:5c0::/29 Deny Cloud
@@ -9400,16 +9392,6 @@ Tag: Optitrust GmbH
 Origin: AT
 Profile: Webhosting
 Tag: IPAX OG
-
-
-# ASN 33151 ("Trustwave Holdings, Inc").
-# Caught probing/testing website defences without permission.
-# Updated: 2021.04.26 / Checked: 2021.12.23
-
-2620:bb:c000::/48 Deny Cloud
-Origin: US
-Profile: Commercial
-Tag: Trustwave Holdings, Inc
 
 
 # ASN 28855 ("Octopuce s.a.r.l").
@@ -10877,6 +10859,21 @@ Tag: Internet Technologies LLC
 Origin: OM
 Profile: Webhosting
 Tag: Awaser Oman LLC
+
+
+# ASN 15598 ("IP Exchange GmbH").
+# German webhosting provider caught probing for ".env" files.
+# Webapp attacks also detected from here.
+# Updated: 2022.11.23
+
+2001:67c:2a7c::/48 Deny Cloud
+2a00:a8e0:201::/48 Deny Cloud
+2a00:a8e0:202::/48 Deny Cloud
+2a01:138::/32 Deny Cloud
+2a02:6f20::/32 Deny Cloud
+Origin: DE
+Profile: Webhosting
+Tag: IP Exchange GmbH
 
 
 # ---

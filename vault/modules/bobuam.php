@@ -152,18 +152,21 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $this->L10N->getString($this->Configuration['bobuam']['reason_browser']) ?: $this->Configuration['bobuam']['reason_browser'] ?: $this->L10N->getString('denied')
         ];
         if (preg_match('%(?:^.*(?<!googlebot\.com|google\.com|search\.msn\.com)$|^.*(?<=proxy))%', $this->CIDRAM['Hostname'])) {
-            $EOLChrome = $this->Configuration['bobuam']['chrome'] ?: $this->CIDRAM['BOBUAM Token']['Chrome'];
-            $EOLFirefox = $this->Configuration['bobuam']['firefox'] ?: $this->CIDRAM['BOBUAM Token']['Firefox'];
-            $EOLFirefoxESR = $this->Configuration['bobuam']['firefox_esr'] ?: $this->CIDRAM['BOBUAM Token']['Firefox ESR'];
-            $EOLSafari = $this->Configuration['bobuam']['safari'] ?: $this->CIDRAM['BOBUAM Token']['Safari'];
+            $EOLChrome = $this->Configuration['bobuam']['chrome'] ?: (int)$this->CIDRAM['BOBUAM Token']['Chrome'];
+            $EOLFirefox = $this->Configuration['bobuam']['firefox'] ?: (int)$this->CIDRAM['BOBUAM Token']['Firefox'];
+            $EOLFirefoxESR = $this->Configuration['bobuam']['firefox_esr'] ?: (int)$this->CIDRAM['BOBUAM Token']['Firefox ESR'];
+            $EOLSafari = $this->Configuration['bobuam']['safari'] ?: (int)$this->CIDRAM['BOBUAM Token']['Safari'];
             if (preg_match('%^(?i)(?!.*edg(?:a|e|ios)\/)(?!.* build\/)(?!.* Favicon).*chrom(?:e|ium)\/(\d+)\.\d+.*$%', $this->BlockInfo['UA'], $rebt)) {
-                $this->trigger(($rebt[1] < $EOLChrome), $Browser[0] . ' (C)', $Browser[1]);
+                $rebt = (int)$rebt[1];
+                $this->trigger(($rebt < $EOLChrome), $Browser[0] . ' (C)', $Browser[1]);
             }
             if (preg_match('%(?!.*SeaMonkey).*Firefox\/(\d+)\.\d+%', $this->BlockInfo['UA'], $rebt)) {
-                $this->trigger((($rebt[1] < $EOLFirefox) && ($rebt[1] !== $EOLFirefoxESR)), $Browser[0] . ' (F)', $Browser[1]);
+                $rebt = (int)$rebt[1];
+                $this->trigger((($rebt < $EOLFirefox) && ($rebt !== $EOLFirefoxESR)), $Browser[0] . ' (F)', $Browser[1]);
             }
             if (preg_match('%^(?=.*Safari\/)(?!.*(?:(?:Kindle|DuckDuckGo| Build)\/|; wv\)).*)(?i).*version\/(\d+).*$%', $this->BlockInfo['UA'], $rebt)) {
-                $this->trigger(($rebt[1] < $EOLSafari), $Browser[0] . ' (S)', $Browser[1]);
+                $rebt = (int)$rebt[1];
+                $this->trigger(($rebt < $EOLSafari), $Browser[0] . ' (S)', $Browser[1]);
             }
             $this->trigger(preg_match('%^(?i)(?!.*opera (?:mini\/|mobi).*)(?!.*(?:google(?:bot\/| web preview)|(android.*(?:version|samsungbrowser)\/)).*).*(?: Edge\/(?:(?:\d|1[01]|1(?:2\.(?:[02-9]|1(?:0[01346-9]|[1-9]))|3\.(?:[02-9]|1(?:0[0-46-9]|[1-9]))|4\.(?:[02-9]|1(?:4[0-24-9]|[0-35-9]))|5\.(?:0|1[0-4])))\.|[02-9])| Edg\/(?:\d|[0-6]\d)\.|msie\s?(?:\d|1[2-9]|[2-9]\d|\d{3,})\.|(?:netscape|mozilla\/(?:[0-3]\.|4\.0[24568]\s\[|4\.[578]|[7-9]\.|\d{2,}\.))|opera[\s\/](?:[0-8]\.|9\.[1-79]|bork-edition|1[01]\.|12\.(?:[02-9]|1[0-579])|1[3-9]\.|[2-9]\d\.|\d{3,}))%', $this->BlockInfo['UA']), $Browser[0] . ' (HC)', $Browser[1]);
             if (preg_match('%^17\.%', $this->BlockInfo['IPAddr'])) {

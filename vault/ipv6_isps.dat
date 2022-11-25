@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2022.321.0
-# Last modified: 2022.11.18
+# Version: 2022.328.0
+# Last modified: 2022.11.25
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -746,28 +746,23 @@ Tag: British Telecom PLC
 
 
 # ASN 7018 ("AT&T Services, Inc").
-# Major domestic ISP in the United States; Should NEVER be blocked in entirety.
-# DDoS, SQLi, brute-force and WordPress/XMLRPC attacks, credential stuffing,
-# port scans, and spam detected from here. Listed just the affected
-# ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 17,932.
-# Updated: 2022.03.11
+# Major US domestic ISP. DDoS, SQLi, brute-force and WordPress/XMLRPC attacks,
+# credential stuffing, port scans, and spam detected from here. Listed just the
+# affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 6,296.
+# Updated: 2022.11.25
 
-2600:1700:3480:95c0::/64 Deny Spam
-2600:1700:3720:f100::/64 Deny Spam
-2600:1700:38e0:8810::/64 Deny Spam
-2600:1700:39b0:4340::/64 Deny Spam
-2600:1700:5020:a030::/64 Deny Spam
-2600:1700:78e0:3640::/64 Deny Spam
-2600:1700:7e10:6060::/64 Deny Spam
-2600:1700:8610:2990::/64 Deny Spam
-2600:1700:a3e0:5e90::/64 Deny Spam
-2600:1700:ac80:49a0::/64 Deny Spam
-2600:1700:b2d2:36f0::/64 Deny Spam
-2600:1700:b9f0:30c0::/64 Deny Spam
-2600:1700:e5a0:6300::/64 Deny Spam
-2600:1700:f2b0:9ed0::/64 Deny Spam
-2600:1702:2dc0:5520::/64 Deny Spam
+2600:1700:210:4470::/64 Deny Spam
+2600:1700:1114:9410::/64 Deny Spam
+2600:1700:13a2:5e0::/64 Deny Spam
+2600:1700:1488:4480::/64 Deny Spam
+2600:1700:27f0:9cf0::/64 Deny Spam
+2600:1700:55c0:8110::/64 Deny Spam
+2600:1700:8b31:43e0::/64 Deny Spam
+2600:1700:ef70:9f20::/64 Deny Spam
+2600:1700:fe20:e670::/64 Deny Spam
+2600:1702:4e2c:8010::/64 Deny Spam
+2602:306:33fd:6c10::/64 Deny Spam
 Origin: US
 Profile: Domestic ISP;Tor endpoints here
 Tag: AT&T Services, Inc
@@ -1019,8 +1014,8 @@ Tag: SFR SA
 # Russian domestic ISP. Relative to the size of the network, a *HUGE* amount of
 # spam has been detected from here. Port scans, and webapp, brute-force, and
 # SSH attacks also detected from here.
-# Stop Forum Spam (SFS) listings: 17,903.
-# Updated: 2021.05.20 / Checked: 2021.12.23
+# Stop Forum Spam (SFS) listings: 6,023.
+# Updated: 2021.05.20 / Checked: 2022.11.23
 
 2a00:f440:c::/48 Deny Spam
 Origin: RU

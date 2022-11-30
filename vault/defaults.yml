@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2022.11.27).
+# This file: Defaults file (last modified: 2022.11.30).
 ##/
 
 Config Defaults:
@@ -998,7 +998,7 @@ Config Defaults:
   memcached_port:
    type: "int"
    default: 11211
-   min: 1
+   min: 0
    max: 65535
   redis_host:
    type: "string"
@@ -1006,7 +1006,7 @@ Config Defaults:
   redis_port:
    type: "int"
    default: 6379
-   min: 1
+   min: 0
    max: 65535
   redis_timeout:
    type: "float"

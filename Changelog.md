@@ -98,3 +98,4 @@
 - Added a new page to the front-end for the purpose of viewing current rate limit quotas, useful for confirming whether rate limiting is working correctly at installations (#345).
 - Added a new configuration directive, `report_log`, for logging when reports are submitted to external APIs.
 - Avoid packaging unnecessary files into dist.
+- Adjusted minimum value for some port directives from 1 to 0.

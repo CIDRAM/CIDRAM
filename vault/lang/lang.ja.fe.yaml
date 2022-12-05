@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2022.11.11).
+# This file: Japanese language data for the front-end (last modified: 2022.11.29).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -152,7 +152,7 @@ config_hcaptcha_show_cookie_warning: &ShowCookieWarning "クッキーの警告�
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "キャプチャが取り消される前に許可されるシグネチャの最大数。​Default/デフォルルト = １。"
 config_hcaptcha_sitekey: *CaptchaDashboard
 config_hcaptcha_usemode: &CaptchaUseMode "キャプチャはいつ提供する必要がありますか？​注：ホワイト・リストされまたは検証済みでブロックされていないリクエストは、キャプチャを完了する必要はありません。​また注意してください：​ＣＡＰＴＣＨＡは、ボットやさまざまな種類の悪意のある自動化されたリクエストに対する有用な追加の保護レイヤーを提供できますが、悪意のある人間に対する保護は提供しません。"
-config_legal: "法的要件の設定。"
+config_legal: "法的要件のコンフィギュレーション。"
 config_legal_omit_hostname: "ログからホスト名を省略しますか？ True = はい。 False = いいえ（Default/デフォルルト）。"
 config_legal_omit_ip: "ログからＩＰアドレスを省略しますか？ True = はい。 False = いいえ（Default/デフォルルト）。​注：「omit_ip」が「true」の場合、「pseudonymise_ip_addresses」は冗長になります。"
 config_legal_omit_ua: "ログからユーザー・エージェント（ユーエイ）を省略しますか？ True = はい。 False = いいえ（Default/デフォルルト）。"
@@ -179,7 +179,7 @@ config_recaptcha_show_cookie_warning: *ShowCookieWarning
 config_recaptcha_signature_limit: *CaptchaSignatureLimit
 config_recaptcha_sitekey: *CaptchaDashboard
 config_recaptcha_usemode: *CaptchaUseMode
-config_signatures: "シグネチャ、シグネチャ・ファイル、モジュール、などの設定。"
+config_signatures: "シグネチャ、シグネチャ・ファイル、モジュール、などのコンフィギュレーション。"
 config_signatures_block_attacks: "攻撃やその他の異常なトラフィックに関連するＣＩＤＲをブロックしますか？​例：ポートスキャン、ハッキング、脆弱性の調査、など。​問題がある場合を除き、​一般的には、​これをtrueに設定する必要があります。"
 config_signatures_block_bogons: "ボゴン・アドレスからのＣＩＤＲをブロックする必要がありますか？​あなたがローカルホストから、​またはお使いのＬＡＮから、​ローカルネットワーク内からの接続を受信した場合、​これはfalseに設定する必要があります。​ない場合は、​これをtrueに設定する必要があります。"
 config_signatures_block_cloud: "クラウドサービスからのＣＩＤＲをブロックする必要がありますか？​あなたのウェブサイトからのＡＰＩサービスを操作する場合、​または、​あなたがウェブサイトツーサイト接続が予想される場合、​これはfalseに設定する必要があります。​ない場合は、​これをtrueに設定する必要があります。"

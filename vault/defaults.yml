@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2022.11.30).
+# This file: Defaults file (last modified: 2022.12.05).
 ##/
 
 Config Defaults:
@@ -452,6 +452,9 @@ Config Defaults:
    type: "int"
    default: 12
    preview: "seconds"
+  sensitive:
+   type: "string"
+   default: "~/(?:comprofiler|user)/(?:login|register)|[/=](?:activate|contact|login|regist(?:er|ration)|signup)|act(?:ion)?=(?:edit|reg)|(?:activate|con(?:firm|tact)|login|newuser|reg(?:ist(?:er|ration))?|signin|signup)(?:\.php|[/=])|special:userlogin&|verifyemail|wp-comments-post~i"
  components:
   ipv4:
    type: "string"

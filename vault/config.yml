@@ -118,6 +118,7 @@ general:
  allow_gethostbyaddr_lookup: true
  disabled_channels: ""
  default_timeout: 12
+ sensitive: "~/(?:comprofiler|user)/(?:login|register)|[/=](?:activate|contact|login|regist(?:er|ration)|signup)|act(?:ion)?=(?:edit|reg)|(?:activate|con(?:firm|tact)|login|newuser|reg(?:ist(?:er|ration))?|signin|signup)(?:\\.php|[/=])|special:userlogin&|verifyemail|wp-comments-post~i"
 components:
  ipv4: |
   ipv4.dat

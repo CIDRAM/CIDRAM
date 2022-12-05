@@ -99,3 +99,4 @@
 - Added a new configuration directive, `report_log`, for logging when reports are submitted to external APIs.
 - Avoid packaging unnecessary files into dist.
 - Adjusted minimum value for some port directives from 1 to 0.
+- Added a new configuration directive, `sensitive`, to allow users to specify which paths should be regarded as sensitive pages.

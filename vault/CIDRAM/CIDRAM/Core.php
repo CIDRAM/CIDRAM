@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2022.11.08).
+ * This file: The CIDRAM core (last modified: 2022.12.05).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -2739,13 +2739,25 @@ class Core
      */
     public function isSensitive(string $URI): bool
     {
-        return preg_match(
-            '~/(?:comprofiler|user)/(?:login|register)|[/=](?:activate|contact|login|re' .
-            'gist(?:er|ration)|signup)|act(?:ion)?=(?:edit|reg)|(?:activate|con(?:firm|' .
-            'tact)|login|newuser|reg(?:ist(?:er|ration))?|signin|signup)(?:\.php|[/=])|' .
-            'special:userlogin&|verifyemail|wp-comments-post~i',
-            $URI
-        );
+        if (isset($this->CIDRAM['isSensitive'])) {
+            return $this->CIDRAM['isSensitive'];
+        }
+        foreach (explode("\n", $this->Configuration['general']['sensitive']) as $Try) {
+            $First = substr($Try, 0, 1);
+            if ($First === '/') {
+                $PathOnly = $_SERVER['REQUEST_URI'] ?? '/';
+                if ($Try === substr($PathOnly, 0, strlen($Try))) {
+                    return $this->CIDRAM['isSensitive'] = true;
+                }
+            } elseif (($First === substr($Try, -1) || $First === substr($Try, -2, 1) . 'i') && !preg_match('~^[\dA-Za-z]$~', $First)) {
+                if (preg_match($Try, $URI)) {
+                    return $this->CIDRAM['isSensitive'] = true;
+                }
+            } elseif (strpos($URI, $Try) !== false) {
+                return $this->CIDRAM['isSensitive'] = true;
+            }
+        }
+        return $this->CIDRAM['isSensitive'] = false;
     }
 
     /**

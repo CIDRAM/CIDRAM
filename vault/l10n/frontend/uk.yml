@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Ukrainian language data for the front-end (last modified: 2022.11.23).
+# This file: Ukrainian language data for the front-end (last modified: 2022.11.29).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -74,6 +74,7 @@ Name Project Honeypot module: "Модуль Project Honeypot."
 Name Referrer spam module: "Модуль реферального спаму."
 Name Stop Forum Spam module: "Модуль Stop Forum Spam."
 Name Tor blocker module: "Модуль блокувальника Tor."
+bobuam_hint_default_value: "Якщо встановлено значення 0, модуль використовує поточне рекомендоване значення."
 checkbox_choice_negatives: "Заблоковані негативи"
 checkbox_choice_nonverified: "Заблоковані неперевірені"
 checkbox_delete_orphaned_values: "Видалити втрачені цінності."
@@ -107,6 +108,19 @@ config_bgpview_blocked_asns: "Список ASN, які будуть заблок
 config_bgpview_blocked_ccs: "Список країн (ідентифікуються 2-значним кодом країни {{Links.ISO.3166}}), які будуть заблоковані, якщо їх знайде модуль BGPView."
 config_bgpview_whitelisted_asns: "Список ASN, які будуть додані до білого списку, коли вони будуть відповідати модулю BGPView."
 config_bgpview_whitelisted_ccs: "Список країн (ідентифікуються 2-значним кодом країни {{Links.ISO.3166}}), які будуть додані до білого списку, коли вони будуть відповідати модулю BGPView."
+config_bobuam: "Конфігурація для додаткового «модуль для користувальницьких агентів ботів або браузерів», який виявляє небажаних ботів, старі браузери, та виконує певні перевірки осудності."
+config_bobuam_block_bots: "Блокувати ботів, визнаних шкідливими чи небажаними?"
+config_bobuam_block_eol_browsers: "Блокувати браузери, термін служби яких закінчився? (Встановіть версії нижче)."
+config_bobuam_chrome: "Найнижча дозволена версія токена «Chrome/Chromium». Рекомендовано: {{BOBUAM Token.Chrome}}."
+config_bobuam_firefox: "Найнижча дозволена версія токена «Firefox». Рекомендовано: {{BOBUAM Token.Firefox}}."
+config_bobuam_reason_ambiguous: "Причина блокування, яка відображається, коли виявлено неоднозначний рядок агента користувача."
+config_bobuam_firefox_esr: "Дозволена версія токена «Firefox» для версії ESR. Рекомендовано: {{BOBUAM Token.Firefox ESR}}."
+config_bobuam_reason_bot: "Причина блокування, показана для блокування ботом."
+config_bobuam_reason_browser: "Причина блокування, яка відображається, коли заблоковано занадто старий браузер."
+config_bobuam_reason_malformed: "Причина блокування, яка відображається, коли виявлено неправильно сформований рядок агента користувача."
+config_bobuam_reason_masquerade: "Причина блокування, яка відображається, коли агент користувача намагається маскуватися під щось інше."
+config_bobuam_safari: "Найнижча дозволена версія токена «Version» для Safari. Рекомендовано: {{BOBUAM Token.Safari}}."
+config_bobuam_sanity_check: "Блокувати браузери, які показують неоднозначні або явно неправильно сформовані рядки агента користувача?"
 config_bunnycdn: "Конфігурація модуля сумісності BunnyCDN."
 config_bunnycdn_positive_action: "Яку дію має виконати CIDRAM, коли він зустрічає запит від BunnyCDN? Стандартна дія = байпас."
 config_bypasses: "Стандартний сигнатур байпаса конфігурацію."

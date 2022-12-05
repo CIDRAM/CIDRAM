@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2022.11.23).
+# This file: Latvian language data for the front-end (last modified: 2022.12.04).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -74,6 +74,7 @@ Name Project Honeypot module: "Project Honeypot modulis."
 Name Referrer spam module: "Novirzītāja surogātpastu modulis."
 Name Stop Forum Spam module: "Stop Forum Spam modulis."
 Name Tor blocker module: "Tor bloķētāja modulis."
+bobuam_hint_default_value: "Ja iestatīts uz 0, modulis izmanto pašlaik ieteicamo vērtību."
 checkbox_choice_negatives: "Bloķēti negatīvi"
 checkbox_choice_nonverified: "Bloķēti nepārbaudīti"
 checkbox_delete_orphaned_values: "Dzēst bezsaimnieka vērtības."
@@ -107,6 +108,19 @@ config_bgpview_blocked_asns: "To ASN saraksts, kuras jābloķē, ja tos saskaņo
 config_bgpview_blocked_ccs: "To valstu saraksts (identificē ar to {{Links.ISO.3166}} 2-ciparu valsts kodiem), kuras jābloķē, ja tos saskaņo BGPView modulis."
 config_bgpview_whitelisted_asns: "To ASN saraksts, kas jāiekļauj baltajā sarakstā, ja tos saskaņo BGPView modulis."
 config_bgpview_whitelisted_ccs: "To valstu saraksts (identificē ar to {{Links.ISO.3166}} 2-ciparu valsts kodiem), kas jāiekļauj baltajā sarakstā, ja tos saskaņo BGPView modulis."
+config_bobuam: ""Modulis robotu vai pārlūkprogrammu lietotāju aģentiem" izvēles konfigurācija. Šis modulis atklāj nevēlamus robotus, vecas pārlūkprogrammas, un veic dažas saprāta pārbaudes."
+config_bobuam_block_bots: "Bloķēt robotprogrammatūras, kas atzītas par ļaunprātīgām vai nevēlamām?"
+config_bobuam_block_eol_browsers: "Bloķēt pārlūkprogrammas, kuru darbības laiks ir beidzies? (Iestatiet tālāk versijas)."
+config_bobuam_chrome: "Zemākā atļautā "Chrome/Chromium" marķiera versija. Ieteicams: {{BOBUAM Token.Chrome}}."
+config_bobuam_firefox: "Zemākā atļautā "Firefox" marķiera versija. Ieteicams: {{BOBUAM Token.Firefox}}."
+config_bobuam_firefox_esr: "Atļautā "Firefox" marķiera versija ESR versijai. Ieteicams: {{BOBUAM Token.Firefox ESR}}."
+config_bobuam_reason_ambiguous: "Bloķēšanas iemesls, kas tiek parādīts, kad tiek konstatēta neskaidra lietotāja aģenta virkne."
+config_bobuam_reason_bot: "Bloķēšanas iemesls, kas tiek parādīts, kad robotprogrammatūra ir bloķēta."
+config_bobuam_reason_browser: "Bloķēšanas iemesls, kas tiek parādīts, kad tiek bloķēta pārāk veca pārlūkprogramma."
+config_bobuam_reason_malformed: "Bloķēšanas iemesls, kas tiek parādīts, kad tiek konstatēta nepareizi veidota lietotāja aģenta virkne."
+config_bobuam_reason_masquerade: "Bloķēšanas iemesls, kas tiek parādīts, kad lietotāja aģents mēģina maskēties kā kaut kas cits."
+config_bobuam_safari: "Safari “Version” marķiera zemākā atļautā versija. Ieteicams: {{BOBUAM Token.Safari}}."
+config_bobuam_sanity_check: "Bloķēt pārlūkprogrammas, kurās tiek parādīts neskaidras vai nepārprotami nepareizi veidotas lietotāja aģentu virknes?"
 config_bunnycdn: "BunnyCDN saderības moduļa konfigurācija."
 config_bunnycdn_positive_action: "Kura darbība CIDRAM jāveic, kad tiek saņemts pieprasījums no BunnyCDN? Noklusējuma darbība = Apietu."
 config_bypasses: "Noklusējuma parakstu apvedceļu konfigurācija."

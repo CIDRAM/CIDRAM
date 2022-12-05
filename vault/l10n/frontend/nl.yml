@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2022.11.23).
+# This file: Dutch language data for the front-end (last modified: 2022.11.28).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -51,10 +51,10 @@ Extended Description Stop Forum Spam module: "Beschermt registratie en login teg
 Extended Description Tor blocker module: "Verbiedt toegang vanaf Tor exit-knooppunten via DNSEL-lookups (ondersteunt zowel IPv4 en IPv6)."
 Name AbuseIPDB module: "AbuseIPDB module."
 Name BGPView module: "BGPView module."
-Name BOBUAM: "Bot of browser gebruikersagent module."
+Name BOBUAM: "Bot of browser gebruikersagents module."
 Name Bad TLDs blocker module: "Slechte TLD's blokkermodule."
 Name Bad hosts blocker module: "Slechte hosts blokkermodule."
-Name Bot user agents module: "Bot gebruikersagent module."
+Name Bot user agents module: "Bot gebruikersagents module."
 Name BunnyCDN compatibility module: "BunnyCDN compatibiliteitsmodule."
 Name Bypasses: "Standaard signature bypasses."
 Name Cookie scanner module: "Optionele cookie-scanner module."
@@ -74,6 +74,7 @@ Name Project Honeypot module: "Project Honeypot module."
 Name Referrer spam module: "Verwijzersspam module."
 Name Stop Forum Spam module: "Stop Forum Spam module."
 Name Tor blocker module: "Tor blokkermodule."
+bobuam_hint_default_value: "Indien ingesteld op 0, de module gebruikt de huidige aanbevolen waarde."
 checkbox_choice_negatives: "Geblokkeerde negatieven"
 checkbox_choice_nonverified: "Geblokkeerde niet-geverifieerde"
 checkbox_delete_orphaned_values: "Verweesde waarden verwijderen."
@@ -107,6 +108,19 @@ config_bgpview_blocked_asns: "Een lijst met ASN's die moeten worden geblokkeerd 
 config_bgpview_blocked_ccs: "Een lijst met landen (geïdentificeerd door hun {{Links.ISO.3166}} 2-cijferige landcodes) die moeten worden geblokkeerd wanneer ze worden gekoppeld mit de BGPView-module."
 config_bgpview_whitelisted_asns: "Een lijst met ASN's die op de witte lijst moeten worden geplaatst wanneer ze worden gekoppeld mit de BGPView-module."
 config_bgpview_whitelisted_ccs: "Een lijst met landen (geïdentificeerd door hun {{Links.ISO.3166}} 2-cijferige landcodes) die op de witte lijst moeten worden geplaatst wanneer ze worden gekoppeld mit de BGPView-module."
+config_bobuam: "Configuratie voor de optionele "bot of browser gebruikersagents module", die ongewenste bots en oude browsers detecteert, en een aantal gezondheidscontroles uitvoert."
+config_bobuam_block_bots: "Bots blokkeren die worden herkend als kwaadaardig of ongewenst?"
+config_bobuam_block_eol_browsers: "De browsers blokkeren die het einde van hun levensduur hebben bereikt? (Stel hieronder versies in)."
+config_bobuam_chrome: "Laagst toegestane versie van het "Chrome/Chromium"-token. Aanbevolen: {{BOBUAM Token.Chrome}}."
+config_bobuam_firefox: "Laagst toegestane versie van het "Firefox"-token. Aanbevolen: {{BOBUAM Token.Firefox}}."
+config_bobuam_firefox_esr: "Toegestane versie van het "Firefox"-token voor de ESR-versie. Aanbevolen: {{BOBUAM Token.Firefox ESR}}."
+config_bobuam_reason_ambiguous: "De blokkeringsreden die wordt weergegeven wanneer een onduidelijke tekenreeks van de gebruikersagent wordt gedetecteerd."
+config_bobuam_reason_bot: "De blokkeringsreden die wordt weergegeven voor geblokkeerde bots."
+config_bobuam_reason_browser: "De blokkeringsreden die wordt weergegeven wanneer een te oude browser wordt geblokkeerd."
+config_bobuam_reason_malformed: "De blokkeringsreden die wordt weergegeven wanneer een misvormd tekenreeks van de gebruikersagent wordt gedetecteerd."
+config_bobuam_reason_masquerade: "De blokkeringsreden die wordt weergegeven wanneer een gebruikersagent zich probeert voor te maskerades als iets anders."
+config_bobuam_safari: "Laagst toegestane versie van Safari's "Version"-token. Aanbevolen: {{BOBUAM Token.Safari}}."
+config_bobuam_sanity_check: "De browsers blokkeren die dubbelzinnige of duidelijk misvormde gebruikersagents tonen?"
 config_bunnycdn: "Configuratie voor de BunnyCDN-compatibiliteitsmodule."
 config_bunnycdn_positive_action: "Welke actie moet CIDRAM uitvoeren wanneer het een verzoek van BunnyCDN tegenkomt? Standaard actie = Omzeil."
 config_bypasses: "Configuratie voor de standaard bypasses voor signatures."

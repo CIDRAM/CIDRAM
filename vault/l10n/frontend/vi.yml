@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2022.11.23).
+# This file: Vietnamese language data for the front-end (last modified: 2022.12.01).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -51,10 +51,10 @@ Extended Description Stop Forum Spam module: "Bảo vệ các trang đăng ký v
 Extended Description Tor blocker module: "Cấm truy cập từ các nút thoát Tor thông qua tra cứu DNSEL (hỗ trợ cả IPv4 và IPv6)."
 Name AbuseIPDB module: "Mô-đun AbuseIPDB."
 Name BGPView module: "Mô-đun BGPView."
-Name BOBUAM: "Mô-đun cho các tác nhân người dùng của bot hoặc trình duyệt."
+Name BOBUAM: "Mô-đun cho các đại lý người dùng của bot hoặc trình duyệt."
 Name Bad TLDs blocker module: "Mô-đun cho chặn các TLD xấu."
 Name Bad hosts blocker module: "Mô-đun cho chặn các host xấu."
-Name Bot user agents module: "Mô-đun tác nhân người dùng bot."
+Name Bot user agents module: "Mô-đun đại lý người dùng bot."
 Name BunnyCDN compatibility module: "Mô-đun tương thích BunnyCDN."
 Name Bypasses: "Các đường tránh chữ ký mặc định."
 Name Cookie scanner module: "Mô-đun tùy chọn cho cookie quét."
@@ -74,6 +74,7 @@ Name Project Honeypot module: "Mô-đun Project Honeypot."
 Name Referrer spam module: "Mô-đun spam giới thiệu."
 Name Stop Forum Spam module: "Mô-đun Stop Forum Spam."
 Name Tor blocker module: "Mô-đun cho chặn Tor."
+bobuam_hint_default_value: "Khi được đặt thành 0, mô-đun sẽ sử dụng giá trị được khuyến nghị hiện tại."
 checkbox_choice_negatives: "Tiêu cực bị chặn"
 checkbox_choice_nonverified: "Chưa được xác minh bị chặn"
 checkbox_delete_orphaned_values: "Xóa các giá trị mồ côi."
@@ -107,6 +108,19 @@ config_bgpview_blocked_asns: "Danh sách các ASN sẽ bị chặn khi được 
 config_bgpview_blocked_ccs: "Danh sách các quốc gia (được xác định bằng mã quốc gia 2 chữ số {{Links.ISO.3166}} của họ) bị chặn khi được đối sánh bởi mô-đun BGPView."
 config_bgpview_whitelisted_asns: "Danh sách các ASN sẽ được đưa vào danh sách trắng khi được đối sánh bởi mô-đun BGPView."
 config_bgpview_whitelisted_ccs: "Danh sách các quốc gia (được xác định bằng mã quốc gia 2 chữ số {{Links.ISO.3166}} của họ) sẽ được đưa vào danh sách trắng khi được đối sánh bởi mô-đun BGPView."
+config_bobuam: "Cấu hình cho "mô-đun cho các đại lý người dùng của bot hoặc trình duyệt" tùy chọn, giúp phát hiện các bot không mong muốn, trình duyệt cũ, và thực hiện một số kiểm tra an toàn."
+config_bobuam_block_bots: "Chặn các bot được nhận dạng là độc hại hoặc không mong muốn?"
+config_bobuam_block_eol_browsers: "Chặn các trình duyệt đã hết tuổi thọ? (Đặt các phiên bản bên dưới)."
+config_bobuam_chrome: "Phiên bản thấp nhất được phép của mã thông báo "Chrome/Chromium". Khuyến khích: {{BOBUAM Token.Chrome}}."
+config_bobuam_firefox: "Phiên bản thấp nhất được phép của mã thông báo "Firefox". Khuyến khích: {{BOBUAM Token.Firefox}}."
+config_bobuam_firefox_esr: "Phiên bản được phép của mã thông báo "Firefox" cho phiên bản ESR. Khuyến khích: {{BOBUAM Token.Firefox ESR}}."
+config_bobuam_reason_ambiguous: "Lý do chặn được hiển thị khi phát hiện chuỗi đại lý người dùng không rõ ràng."
+config_bobuam_reason_bot: "Lý do chặn được hiển thị cho các bot bị chặn."
+config_bobuam_reason_browser: "Lý do chặn được hiển thị khi một trình duyệt quá cũ bị chặn."
+config_bobuam_reason_malformed: "Lý do chặn được hiển thị khi phát hiện chuỗi đại lý người dùng dị dạng."
+config_bobuam_reason_masquerade: "Lý do chặn được hiển thị khi một đại lý người dùng cố gắng giả mạo thành một thứ khác."
+config_bobuam_safari: "Phiên bản thấp nhất được phép của mã thông báo "Version" của Safari. Khuyến khích: {{BOBUAM Token.Safari}}."
+config_bobuam_sanity_check: "Chặn các trình duyệt hiển thị các chuỗi đại lý người dùng không rõ ràng hoặc dị dạng?"
 config_bunnycdn: "Cấu hình cho mô-đun tương thích BunnyCDN."
 config_bunnycdn_positive_action: "CIDRAM nên thực hiện hành động nào khi gặp yêu cầu từ BunnyCDN? Hành động mặc định = Đường tránh."
 config_bypasses: "Cấu hình cho các đường tránh chữ ký mặc định."
@@ -120,7 +134,7 @@ config_components_modules: "Mô-đun."
 config_experimental: "Không ổn định / Thử nghiệm!"
 config_extras: "Cấu hình cho mô-đun của các tính năng bổ sung bảo mật tùy chọn."
 config_extras_signatures: "Những loại chữ ký nào nên được tôn vinh?"
-config_extras_signatures_empty_ua: "Tác nhân người dùng trống."
+config_extras_signatures_empty_ua: "Đại lý người dùng trống."
 config_extras_signatures_query: "Chữ ký dựa trên các truy vấn yêu cầu."
 config_extras_signatures_raw: "Chữ ký dựa trên đầu vào yêu cầu thô."
 config_extras_signatures_ruri: "Chữ ký dựa trên các URI được xây dựng lại."

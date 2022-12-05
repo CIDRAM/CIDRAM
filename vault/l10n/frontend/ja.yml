@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2022.11.23).
+# This file: Japanese language data for the front-end (last modified: 2022.11.29).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -74,6 +74,7 @@ Name Project Honeypot module: "Project Honeypot モジュール。"
 Name Referrer spam module: "リファラー・スパム・モジュール。"
 Name Stop Forum Spam module: "Stop Forum Spam モジュール。"
 Name Tor blocker module: "Ｔｏｒブロッカー・モジュール。"
+bobuam_hint_default_value: "「0」に設定すると、モジュールは現在推奨されている値を使用します。"
 checkbox_choice_negatives: "ブロックされた陰性"
 checkbox_choice_nonverified: "ブロックされた未確認"
 checkbox_delete_orphaned_values: "孤立した値を削除します。"
@@ -93,7 +94,7 @@ checkbox_label_suppress_hcaptcha: "HCaptchaを抑制して"
 checkbox_label_suppress_recaptcha: "ReCaptchaを抑制して"
 checkbox_label_untrack_positives: "陽性の追跡をやめますか？"
 checkbox_label_verify: "確認してみますか？"
-config_abuseipdb: "AbuseIPDBモジュールの設定。"
+config_abuseipdb: "AbuseIPDBモジュールのコンフィギュレーション。"
 config_abuseipdb_api_key: &EnterAPIKey "ここにＡＰＩキーを入力してください。"
 config_abuseipdb_build_profiles_from_usage_type: "ＡＰＩによって返される使用タイプを使用してプロファイルを作成しますか？ True = はい（Default/デフォルルト）。 False = いいえ。"
 config_abuseipdb_lookup_strategy: &WhenToLookup "どのリクエストに対してルックアップを実行する必要がありますか？"
@@ -107,6 +108,19 @@ config_bgpview_blocked_asns: "BGPViewモジュールによってブロックさ�
 config_bgpview_blocked_ccs: "BGPViewモジュールによってブロックされる国（{{Links.ISO.3166}}二桁の国コードで識別）のリスト。"
 config_bgpview_whitelisted_asns: "BGPViewモジュールによってホワイトリストに登録されるASNのリスト。"
 config_bgpview_whitelisted_ccs: "BGPViewモジュールによってホワイトリストに登録される国（{{Links.ISO.3166}}二桁の国コードで識別）のリスト。"
+config_bobuam: "「ボットまたはブラウザーのユーザー・エージェント・モジュール」のコンフィギュレーション。​このモジュールは、不要なボットや古いブラウザーを検出し、サニティ・チェックを実行します。"
+config_bobuam_block_bots: "悪意のあるまたは望ましくないと認識されたボットをブロックしますか？"
+config_bobuam_block_eol_browsers: "サポートが終了したブラウザーをブロックしますか？​（以下のバージョンを設定して）。"
+config_bobuam_chrome: "「Chrome/Chromium」トークンの許可されている最低バージョン。 おすすめされた： {{BOBUAM Token.Chrome}}。"
+config_bobuam_firefox: "「Firefox」トークンの許可されている最低バージョン。 おすすめされた： {{BOBUAM Token.Firefox}}。"
+config_bobuam_firefox_esr: "ＥＳＲため「Firefox」トークンの許可されたバージョン。 おすすめされた： {{BOBUAM Token.Firefox ESR}}。"
+config_bobuam_reason_ambiguous: "あいまいなユーザー・エージェント文字列が検出されたときに表示されるブロックの理由。"
+config_bobuam_reason_bot: "ブロックされたボットに表示されるブロック理由。"
+config_bobuam_reason_browser: "古いブラウザがブロックされた場合に表示されるブロック理由。"
+config_bobuam_reason_malformed: "不正な形式のユーザー・エージェント文字列が検出されたときに表示されるブロックの理由。"
+config_bobuam_reason_masquerade: "ユーザー・エージェントが別のものになりすましたときに表示されるブロックの理由。"
+config_bobuam_safari: "許可されているSafariの「Version」トークンの最低バージョン。 おすすめされた： {{BOBUAM Token.Safari}}。"
+config_bobuam_sanity_check: "あいまいなまたは明らかに不正な形式のユーザー・エージェント文字列を表示するブラウザーをブロックしますか？"
 config_bunnycdn: "BunnyCDN互換性モジュールの設定。"
 config_bunnycdn_positive_action: "BunnyCDNからの要求に遭遇した場合、CIDRAMはどのアクションを実行する必要がありますか？ デフォルト・アクション = バイパスする。"
 config_bypasses: "デフォルト・シグネチャ・バイパスのコンフィギュレーション。"
@@ -125,7 +139,7 @@ config_extras_signatures_query: "リクエスト・クエリに基づくシグ�
 config_extras_signatures_raw: "生のリクエスト入力に基づくシグネチャ。"
 config_extras_signatures_ruri: "再構築されたＵＲＩに基づくシグネチャ。"
 config_extras_signatures_uri: "リクエストＵＲＩに基づくシグネチャ。"
-config_frontend: "フロントエンドの設定。"
+config_frontend: "フロントエンド・コンフィギュレーション。"
 config_frontend_custom_footer: "すべてのフロントエンド・ページの最下部にＨＴＭＬとして挿入されます。​法的通知、連絡先リンク、ビジネス情報、などに役立ちます。"
 config_frontend_custom_header: "すべてのフロントエンド・ページの最初にＨＴＭＬとして挿入されます。​ウェブサイトのロゴ、パーソナライズされたヘッダー、スクリプト、などに役立ちます。"
 config_frontend_enable_two_factor: "このディレクティブは、フロントエンド・アカウントに２ＦＡを使用するかどうかを決定します。"
@@ -170,7 +184,7 @@ config_hcaptcha_show_cookie_warning: &ShowCookieWarning "クッキーの警告�
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "キャプチャが取り消される前に許可されるシグネチャの最大数。​Default/デフォルルト = １。"
 config_hcaptcha_sitekey: *CaptchaDashboard
 config_hcaptcha_usemode: &CaptchaUseMode "キャプチャはいつ提供する必要がありますか？​注：ホワイト・リストされまたは検証済みでブロックされていないリクエストは、キャプチャを完了する必要はありません。​また注意してください：​ＣＡＰＴＣＨＡは、ボットやさまざまな種類の悪意のある自動化されたリクエストに対する有用な追加の保護レイヤーを提供できますが、悪意のある人間に対する保護は提供しません。"
-config_legal: "法的要件の設定。"
+config_legal: "法的要件のコンフィギュレーション。"
 config_legal_privacy_policy: "生成されたページのフッターに表示される関連プライバシー・ポリシーのアドレス。​ＵＲＬを指定するか、無効にしたい場合は空白のままにして下さい。"
 config_legal_pseudonymise_ip_addresses: "ログ・ファイルを書き込むときにＩＰアドレス偽名化するか「プセユードニマイズ」？ True = はい（Default/デフォルルト）。 False = いいえ。"
 config_logging: "ロギングに関連するコンフィギュレーション（他のカテゴリに該当するものを除く）。"
@@ -226,7 +240,7 @@ config_recaptcha_sitekey: *CaptchaDashboard
 config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Stop Forum Spam モジュールの設定。"
 config_sfs_offer_captcha: "このモジュールによってリクエストがブロックされた場合、CAPTCHAを提供できます。 Default（デフォルト設定） = True。 注：他のディレクティブをオーバーライドしません。 CAPTCHAを提供するには、すべてのディレクティブが同意し、必要なキーが構成されている必要があります。 CAPTCHAの提供が通常許可される場合、このディレクティブをfalseに設定すると、このモジュールによって特別にブロックされたリクエストに対してCAPTCHAが提供されないようにする方法が提供されます。"
-config_signatures: "シグネチャ、シグネチャ・ファイル、モジュール、などの設定。"
+config_signatures: "シグネチャ、シグネチャ・ファイル、モジュール、などのコンフィギュレーション。"
 config_signatures_default_tracktime: "ＩＰアドレスを追跡する期間。​Default（デフォルト設定） = 「7d0°0′0″」 （１週間）。"
 config_signatures_infraction_limit: "ＩＰがＩＰトラッキングによって禁止される前に発生することが、​許される違反の最大数。​Default（デフォルト設定） = １０。"
 config_signatures_shorthand: "与えられた速記語を利用するシグネチャに対してポジティブ・マッチがある場合に、要求をどう処理するかを制御のためです。"

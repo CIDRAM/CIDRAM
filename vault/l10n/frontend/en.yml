@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2022.11.24).
+# This file: English language data for the front-end (last modified: 2022.12.04).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -51,7 +51,7 @@ Extended Description Stop Forum Spam module: "Protects registration and login pa
 Extended Description Tor blocker module: "Prohibits access from Tor exit nodes through DNSEL lookups (supports both IPv4 and IPv6)."
 Name AbuseIPDB module: "AbuseIPDB module."
 Name BGPView module: "BGPView module."
-Name BOBUAM: "Bot or browser user agent module."
+Name BOBUAM: "Bot or browser user agents module."
 Name Bad TLDs blocker module: "Bad TLDs blocker module."
 Name Bad hosts blocker module: "Bad hosts blocker module."
 Name Bot user agents module: "Bot user agents module."
@@ -108,7 +108,7 @@ config_bgpview_blocked_asns: "A list of ASNs to be blocked when matched by the B
 config_bgpview_blocked_ccs: "A list of countries (identified by their {{Links.ISO.3166}} 2-digit country codes) to be blocked when matched by the BGPView module."
 config_bgpview_whitelisted_asns: "A list of ASNs to be whitelisted when matched by the BGPView module."
 config_bgpview_whitelisted_ccs: "A list of countries (identified by their {{Links.ISO.3166}} 2-digit country codes) to be whitelisted when matched by the BGPView module."
-config_bobuam: "Configuration for the optional "bot or browser user agent module", which detects unwanted bots, old browsers, and performs some sanity checks."
+config_bobuam: "Configuration for the optional "bot or browser user agents module", which detects unwanted bots, old browsers, and performs some sanity checks."
 config_bobuam_block_bots: "Block bots recognised as malicious or unwanted?"
 config_bobuam_block_eol_browsers: "Block browsers that've reached end of life? (Set versions below)."
 config_bobuam_chrome: "Lowest allowed version of the "Chrome/Chromium" token. Recommended: {{BOBUAM Token.Chrome}}."
@@ -120,7 +120,7 @@ config_bobuam_reason_browser: "Block reason shown when a browser that is too old
 config_bobuam_reason_malformed: "Block reason shown when a malformed user agent string is detected."
 config_bobuam_reason_masquerade: "Block reason shown when an user agent tries to masquerade as something else."
 config_bobuam_safari: "Lowest allowed version of Safari's "Version" token. Recommended: {{BOBUAM Token.Safari}}."
-config_bobuam_sanity_check: "Block browsers that shows ambiguous or clearly malformed user agent strings?"
+config_bobuam_sanity_check: "Block browsers that show ambiguous or clearly malformed user agent strings?"
 config_bunnycdn: "BunnyCDN compatibility module configuration."
 config_bunnycdn_positive_action: "Which action should CIDRAM perform when it encounters a request from BunnyCDN? Default action = Bypass."
 config_bypasses: "Default signature bypasses configuration."
@@ -165,6 +165,7 @@ config_general_ipaddr: "Where to find the IP address of connecting requests? (Us
 config_general_lang: "Specify the default language for CIDRAM."
 config_general_lang_override: "Localise according to HTTP_ACCEPT_LANGUAGE whenever possible? True = Yes [Default]; False = No."
 config_general_numbers: "How do you prefer numbers to be displayed? Select the example that looks the most correct to you."
+config_general_sensitive: "A list of paths to regard as sensitive pages. Each path listed will be checked against the reconstructed URI when needed. A path which begins with a forward slash will be treated as a literal, and matched from the path component of the request onward. Otherwise, a path which begins with a non-alphanumeric character, and ends with that same character (or that same character plus an optional "i" flag) will be treated as a regular expression. Any other kind of path will be treated as a literal, and can match from any part of the URI. Whether a path is regarded as a sensitive page may affect how some modules behave, but doesn't have any effect otherwise."
 config_general_silent_mode: "Should CIDRAM silently redirect blocked access attempts instead of displaying the "Access Denied" page? If yes, specify the location to redirect blocked access attempts to. If no, leave this variable blank."
 config_general_stages: "Controls for the stages of the execution chain (whether enabled, whether errors are logged, etc)."
 config_general_statistics: "Controls which statistical information to track."

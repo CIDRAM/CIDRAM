@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2022.11.23).
+# This file: Indonesian language data for the front-end (last modified: 2022.11.28).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -74,6 +74,7 @@ Name Project Honeypot module: "Modul Project Honeypot."
 Name Referrer spam module: "Modul spam pengarah."
 Name Stop Forum Spam module: "Modul Stop Forum Spam."
 Name Tor blocker module: "Modul pemblokir Tor."
+bobuam_hint_default_value: "Saat diatur ke 0, modul akan tunduk pada nilai yang direkomendasikan saat ini."
 checkbox_choice_negatives: "Negatif yang diblokir"
 checkbox_choice_nonverified: "Tidak diverifikasi yang diblokir"
 checkbox_delete_orphaned_values: "Menghapus nilai-nilai yang diyatimkan."
@@ -107,6 +108,19 @@ config_bgpview_blocked_asns: "Daftar ASN yang akan diblokir saat dicocokkan oleh
 config_bgpview_blocked_ccs: "Daftar negara (diidentifikasi oleh kode negara 2 digit {{Links.ISO.3166}} mereka) yang akan diblokir saat dicocokkan oleh modul BGPView."
 config_bgpview_whitelisted_asns: "Daftar ASN yang akan terdaftar putih saat dicocokkan oleh modul BGPView."
 config_bgpview_whitelisted_ccs: "Daftar negara (diidentifikasi oleh kode negara 2 digit {{Links.ISO.3166}} mereka) yang akan terdaftar putih saat dicocokkan oleh modul BGPView."
+config_bobuam: "Konfigurasi untuk "modul agen pengguna bot atau browser" opsional, yang mendeteksi bot yang tidak diinginkan, browser lama, dan melakukan beberapa pemeriksaan kewarasan."
+config_bobuam_block_bots: "Blokir bot yang dianggap berbahaya atau tidak diinginkan?"
+config_bobuam_block_eol_browsers: "Blokir browser yang telah mencapai akhir masa pakainya? (Tetapkan versi dibawah)."
+config_bobuam_chrome: "Versi token "Chrome/Chromium" terendah yang diizinkan. Direkomendasikan: {{BOBUAM Token.Chrome}}."
+config_bobuam_firefox: "Versi token "Firefox" terendah yang diizinkan. Direkomendasikan: {{BOBUAM Token.Firefox}}."
+config_bobuam_firefox_esr: "Versi token "Firefox" yang diizinkan untuk versi ESR. Direkomendasikan: {{BOBUAM Token.Firefox ESR}}."
+config_bobuam_reason_ambiguous: "Alasan pemblokiran ditampilkan saat string agen pengguna yang ambigu terdeteksi."
+config_bobuam_reason_bot: "Alasan pemblokiran ditampilkan untuk pemblokiran bot."
+config_bobuam_reason_browser: "Alasan pemblokiran ditampilkan saat browser yang terlalu lama diblokir."
+config_bobuam_reason_malformed: "Alasan pemblokiran ditampilkan saat string agen pengguna yang cacat terdeteksi."
+config_bobuam_reason_masquerade: "Alasan pemblokiran ditampilkan saat agen pengguna mencoba menyamar sebagai sesuatu yang lain."
+config_bobuam_safari: "Versi terendah dari token "Version" Safari yang diizinkan. Direkomendasikan: {{BOBUAM Token.Safari}}."
+config_bobuam_sanity_check: "Blokir browser yang menunjukkan string agen pengguna yang ambigu atau jelas cacat?"
 config_bunnycdn: "Konfigurasi untuk modul kompatibilitas BunnyCDN."
 config_bunnycdn_positive_action: "Tindakan mana yang harus dilakukan CIDRAM saat menangani permintaan dari BunnyCDN? Tindakan default = Melewatinya."
 config_bypasses: "Konfigurasi untuk bypass tanda tangan default."

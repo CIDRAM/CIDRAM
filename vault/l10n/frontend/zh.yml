@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2022.11.23).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2022.12.01).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -74,6 +74,7 @@ Name Project Honeypot module: "Project Honeypot 模块。"
 Name Referrer spam module: "引荐来源垃圾邮件模块。"
 Name Stop Forum Spam module: "Stop Forum Spam 模块。"
 Name Tor blocker module: "Tor阻塞模块。"
+bobuam_hint_default_value: "设置为“0”时，模块使用当前推荐值。"
 checkbox_choice_negatives: "被阻止的阴性"
 checkbox_choice_nonverified: "被阻止的未验证"
 checkbox_delete_orphaned_values: "删除孤立值。"
@@ -107,6 +108,19 @@ config_bgpview_blocked_asns: "被BGPView模块匹配时要阻止的ASN列表。"
 config_bgpview_blocked_ccs: "由BGPView模块匹配时要阻止的国家列表（由其{{Links.ISO.3166}}两个字母的国家代码标识）。"
 config_bgpview_whitelisted_asns: "由BGPView模块匹配时要列入白名单的ASN列表。"
 config_bgpview_whitelisted_ccs: "由BGPView模块匹配时要列入白名单的国家列表（由其{{Links.ISO.3166}}两个字母的国家代码标识）。"
+config_bobuam: "“机器人或浏览器用户代理模块”的配置。​该模块检测不需要的机器人、旧浏览器，并执行一些健全性检查。"
+config_bobuam_block_bots: "阻止被认为是恶意或不需要的机器人？"
+config_bobuam_block_eol_browsers: "阻止已经过时的浏览器？（下面设置版本）。"
+config_bobuam_chrome: "“Chrome/Chromium”令牌的最低允许版本。 推荐的：“{{BOBUAM Token.Chrome}}”。"
+config_bobuam_firefox: "“Firefox”令牌的最低允许版本。 推荐的：“{{BOBUAM Token.Firefox}}”。"
+config_bobuam_firefox_esr: "ESR版本的“Firefox”令牌的允许版本。 推荐的：“{{BOBUAM Token.Firefox ESR}}”。"
+config_bobuam_reason_ambiguous: "检测到模糊的用户代理字符串时显示的阻止原因。"
+config_bobuam_reason_bot: "为被阻止的机器人显示的阻止原因。"
+config_bobuam_reason_browser: "太旧的浏览器被阻止时显示的阻止原因。"
+config_bobuam_reason_malformed: "检测到畸形的用户代理字符串时显示的阻止原因。"
+config_bobuam_reason_masquerade: "当用户代理试图伪装成其他东西时显示的阻止原因。"
+config_bobuam_safari: "Safari的“Version”令牌的最低允许版本。 推荐的：“{{BOBUAM Token.Safari}}”。"
+config_bobuam_sanity_check: "阻止模糊的或格式畸形的用户代理字符串的浏览器？"
 config_bunnycdn: "BunnyCDN兼容性模块配置。"
 config_bunnycdn_positive_action: "CIDRAM遇到BunnyCDN的请求时应该执行什么动作？ 默认操作 = 绕行。"
 config_bypasses: "默认签名绕过配置。"

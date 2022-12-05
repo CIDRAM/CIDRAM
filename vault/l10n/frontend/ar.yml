@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2022.11.23).
+# This file: Arabic language data for the front-end (last modified: 2022.12.01).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -74,6 +74,7 @@ Name Project Honeypot module: "Project Honeypot المكون."
 Name Referrer spam module: "المكون للإحالة البريد المزعج."
 Name Stop Forum Spam module: "Stop Forum Spam المكون."
 Name Tor blocker module: "المكون مانع Tor."
+bobuam_hint_default_value: "عند التعيين على 0، تستخدم الوحدة الرقم الموصى به حاليًا."
 checkbox_choice_negatives: "السلبيات المحظورة"
 checkbox_choice_nonverified: "المحظور التي لم يتم التحقق"
 checkbox_delete_orphaned_values: "حذف القيم المعزولة."
@@ -107,6 +108,19 @@ config_bgpview_blocked_asns: "قائمة ASNs التي سيتم حظرها عن�
 config_bgpview_blocked_ccs: "قائمة البلدان (التي تم تحديدها من خلال رموز البلدان المكونة من رقمين {{Links.ISO.3166}}) التي سيتم حظرها عند مطابقتها مع وحدة BGPView."
 config_bgpview_whitelisted_asns: "قائمة ASNs التي سيتم وضعها في القائمة البيضاء عند مطابقتها مع وحدة BGPView."
 config_bgpview_whitelisted_ccs: "قائمة البلدان (التي تم تحديدها من خلال رموز البلدان المكونة من رقمين {{Links.ISO.3166}}) التي سيتم إدراجها في القائمة البيضاء عند مطابقتها مع وحدة BGPView."
+config_bobuam: "التكوين للوحدة الاختيارية "وحدة وكيل مستخدم الروبوت أو المتصفح"، والتي تكتشف برامج التتبع غير المرغوب فيها والمتصفحات القديمة، وتجري بعض عمليات التحقق من الصحة."
+config_bobuam_block_bots: "حظر الروبوتات المعترف بها على أنها ضارة أو غير مرغوب فيها؟"
+config_bobuam_block_eol_browsers: "حظر المتصفحات التي وصلت إلى نهاية العمر الافتراضي؟ (تعيين الإصدارات أدناه)."
+config_bobuam_chrome: "أقل إصدار مسموح به من الرمز المميز "Chrome/Chromium". مُستَحسَن: {{BOBUAM Token.Chrome}}."
+config_bobuam_firefox: "أقل إصدار مسموح به من الرمز المميز "Firefox". مُستَحسَن: {{BOBUAM Token.Firefox}}."
+config_bobuam_firefox_esr: "الإصدار المسموح بها من رمز "Firefox" لإصدار ESR. مُستَحسَن: {{BOBUAM Token.Firefox ESR}}."
+config_bobuam_reason_ambiguous: "السبب المقدم عند اكتشاف وكيل مستخدم غامض وحظره."
+config_bobuam_reason_bot: "السبب المُقدَّم عند حظر برامج الروبوت."
+config_bobuam_reason_browser: "السبب المُقدَّم عند حظر المتصفحات القديمة."
+config_bobuam_reason_malformed: "السبب المُقدَّم عند اكتشاف وكيل مستخدم تالف وحظره."
+config_bobuam_reason_masquerade: "السبب المُقدَّم عندما يحاول وكيل المستخدم التنكر في صورة شيء آخر."
+config_bobuam_safari: "أقل إصدار مسموح به من رمز "Version" في Safari. مُستَحسَن: {{BOBUAM Token.Safari}}."
+config_bobuam_sanity_check: "هل تريد حظر المتصفحات التي تعرض وكلاء مستخدم غامضين أو مشوهين بشكل واضح؟"
 config_bunnycdn: "التكوين لوحدة التوافق BunnyCDN."
 config_bunnycdn_positive_action: "ما الإجراء الذي يجب أن يقوم به CIDRAM عندما يواجه طلبًا من BunnyCDN؟ الإجراء القياسي = تجاوز."
 config_bypasses: "التكوين لتجاوز التوقيع الافتراضي."

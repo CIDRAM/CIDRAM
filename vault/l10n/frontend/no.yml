@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2022.11.23).
+# This file: Norwegian language data for the front-end (last modified: 2022.11.28).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -74,6 +74,7 @@ Name Project Honeypot module: "Project Honeypot modul."
 Name Referrer spam module: "Henvisende spam modul."
 Name Stop Forum Spam module: "Stop Forum Spam modul."
 Name Tor blocker module: "Tor blokkeringsmodul."
+bobuam_hint_default_value: "Når satt til 0, modulen bruker den anbefalte verdien."
 checkbox_choice_negatives: "Blokkerte negativer"
 checkbox_choice_nonverified: "Blokkerte ikke-verifiserte"
 checkbox_delete_orphaned_values: "Slett foreldreløse verdier."
@@ -107,6 +108,19 @@ config_bgpview_blocked_asns: "En liste over ASNer som skal blokkeres når de mat
 config_bgpview_blocked_ccs: "En liste over land (identifisert av deres {{Links.ISO.3166}} 2-sifrede landskoder) som skal blokkeres når de matchet av BGPView-modulen."
 config_bgpview_whitelisted_asns: "En liste over ASNer som skal hvitelistes når de matchet av BGPView-modulen."
 config_bgpview_whitelisted_ccs: "En liste over land (identifisert av deres {{Links.ISO.3166}} 2-sifrede landskoder) som skal hvitelistes når de matchet av BGPView-modulen."
+config_bobuam: "Konfigurasjon for den valgfrie "bot eller nettleser brukeragentmodul", som oppdager uønskede roboter, gamle nettlesere, og utfører noen sikkerhetskontroll."
+config_bobuam_block_bots: "Blokkere roboter gjenkjent som ondsinnet eller uønsket?"
+config_bobuam_block_eol_browsers: "Blokkere nettlesere som har nådd slutten av livet? (Angi versjonene nedenfor)."
+config_bobuam_chrome: "Laveste tillatte versjon av "Chrome/Chromium"-tokenet. Anbefalt: {{BOBUAM Token.Chrome}}."
+config_bobuam_firefox: "Laveste tillatte versjon av "Firefox"-tokenet. Anbefalt: {{BOBUAM Token.Firefox}}."
+config_bobuam_firefox_esr: "Tillatt versjon av "Firefox"-tokenet for ESR-versjonen. Anbefalt: {{BOBUAM Token.Firefox ESR}}."
+config_bobuam_reason_ambiguous: "Årsaken til blokkering vises når en tvetydig brukeragentstreng oppdages."
+config_bobuam_reason_bot: "Blokkeringsårsaken vist for botblokker."
+config_bobuam_reason_browser: "Årsaken til blokkering vises når en for gammel nettleser blir blokkert."
+config_bobuam_reason_malformed: "Årsaken til blokkering vises når en feilformet brukeragentstreng oppdages."
+config_bobuam_reason_masquerade: "Årsaken til blokkering vises når en brukeragent prøver å maskerade for noe annet."
+config_bobuam_safari: "Laveste tillatte versjon av Safaris "Version"-token. Anbefalt: {{BOBUAM Token.Safari}}."
+config_bobuam_sanity_check: "Blokkere nettlesere som viser tvetydige eller tydelig misformede brukeragentstrenger?"
 config_bunnycdn: "Konfigurasjon for BunnyCDN-kompatibilitetsmodulen."
 config_bunnycdn_positive_action: "Hvilken handling skal CIDRAM utføre når den møter en forespørsel fra BunnyCDN? Standard handling = Bypassere."
 config_bypasses: "Konfigurasjon for standard-signatur-bypassene."

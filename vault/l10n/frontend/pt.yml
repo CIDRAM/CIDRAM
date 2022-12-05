@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2022.11.23).
+# This file: Portuguese language data for the front-end (last modified: 2022.11.28).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -51,7 +51,7 @@ Extended Description Stop Forum Spam module: "Protege as páginas de registro e 
 Extended Description Tor blocker module: "Proíbe o acesso de nós de saída do Tor por meio de pesquisas DNSEL (suporta IPv4 e IPv6 ambas)."
 Name AbuseIPDB module: "Módulo AbuseIPDB."
 Name BGPView module: "Módulo BGPView."
-Name BOBUAM: "Módulo para agentes de usuário bot ou navegador."
+Name BOBUAM: "Módulo para agentes do usuário de bot ou navegador."
 Name Bad TLDs blocker module: "Módulo bloqueador de TLDs perigosos."
 Name Bad hosts blocker module: "Módulo bloqueador de hosts perigosos."
 Name Bot user agents module: "Módulo de agentes do usuário de bot."
@@ -74,6 +74,7 @@ Name Project Honeypot module: "Módulo Project Honeypot."
 Name Referrer spam module: "Módulo de spam de referência."
 Name Stop Forum Spam module: "Módulo Stop Forum Spam."
 Name Tor blocker module: "Módulo bloqueador do Tor."
+bobuam_hint_default_value: "Quando definido como 0, o módulo adiará para o valor atualmente recomendado."
 checkbox_choice_negatives: "Os negativos bloqueados"
 checkbox_choice_nonverified: "Os não verificados bloqueados"
 checkbox_delete_orphaned_values: "Deletar valores órfãos."
@@ -107,6 +108,19 @@ config_bgpview_blocked_asns: "Uma lista de ASNs a serem bloqueados quando corres
 config_bgpview_blocked_ccs: "Uma lista de países (identificados por seus códigos de país de 2 dígitos {{Links.ISO.3166}}) a serem bloqueados quando correspondidos pelo módulo BGPView."
 config_bgpview_whitelisted_asns: "Uma lista de ASNs a serem incluídos na lista branca quando correspondidos pelo módulo BGPView."
 config_bgpview_whitelisted_ccs: "Uma lista de países (identificados por seus códigos de país de 2 dígitos {{Links.ISO.3166}}) a serem incluídos na lista branca quando correspondidos pelo módulo BGPView."
+config_bobuam: "Configuração para o "módulo para agentes do usuário de bot ou navegador" opcional, que detecta bots indesejados, navegadores antigos, e executa algumas verificações de sanidade."
+config_bobuam_block_bots: "Bloquear bots reconhecidos como maliciosos ou indesejados?"
+config_bobuam_block_eol_browsers: "Bloquear navegadores que atingiram o fim da vida útil? (Defina as versões abaixo)."
+config_bobuam_chrome: "Versão mais baixa permitida do token "Chrome/Chromium". Recomendado: {{BOBUAM Token.Chrome}}."
+config_bobuam_firefox: "Versão mais baixa permitida do token "Firefox". Recomendado: {{BOBUAM Token.Firefox}}."
+config_bobuam_firefox_esr: "Versão permitida do token "Firefox" para a versão ESR. Recomendado: {{BOBUAM Token.Firefox ESR}}."
+config_bobuam_reason_ambiguous: "O motivo do bloqueio mostrado quando um agente de usuário ambígua é detectado."
+config_bobuam_reason_bot: "O motivo do bloqueio mostrado quando os bots são bloqueados."
+config_bobuam_reason_browser: "O motivo do bloqueio mostrado quando um navegador muito antigo é bloqueado."
+config_bobuam_reason_malformed: "O motivo do bloqueio mostrado quando um agente de usuário malformado é detectado."
+config_bobuam_reason_masquerade: "O motivo do bloqueio mostrado quando um agente do usuário tenta se disfarçar de outra coisa."
+config_bobuam_safari: "Versão mais baixa permitida do token "Version" do Safari. Recomendado: {{BOBUAM Token.Safari}}."
+config_bobuam_sanity_check: "Bloquear navegadores que mostram agentes de usuário ambíguos ou claramente malformados?"
 config_bunnycdn: "Configuração para o módulo de compatibilidade BunnyCDN."
 config_bunnycdn_positive_action: "Qual ação o CIDRAM deve executar quando encontrar uma solicitação do BunnyCDN? Ação padrão = Contornar."
 config_bypasses: "Configuração para o bypass das assinaturas padrão."

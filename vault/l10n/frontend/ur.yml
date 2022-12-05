@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2022.11.23).
+# This file: Urdu language data for the front-end (last modified: 2022.12.04).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -74,6 +74,7 @@ Name Project Honeypot module: "Project Honeypot ماڈیول."
 Name Referrer spam module: "حوالہ دینے والا اسپام ماڈیول."
 Name Stop Forum Spam module: "Stop Forum Spam ماڈیول."
 Name Tor blocker module: "ٹور بلاکر ماڈیول."
+bobuam_hint_default_value: "0 پر سیٹ ہونے پر، ماڈیول فی الحال تجویز کردہ قدر استعمال کرتا ہے."
 checkbox_choice_negatives: "بلاک شدہ منفی"
 checkbox_choice_nonverified: "بلاک شدہ غیر تصدیق شدہ"
 checkbox_delete_orphaned_values: "یتیم اقدار کو حذف کریں."
@@ -107,6 +108,19 @@ config_bgpview_blocked_asns: "BGPView ماڈیول کے ذریعے بلاک کی
 config_bgpview_blocked_ccs: "BGPView ماڈیول کے ذریعے بلاک کیے جانے والے ممالک کی فہرست (ان کے {{Links.ISO.3166}} دو حرفی کنٹری کوڈز سے شناخت کی گئی ہے)."
 config_bgpview_whitelisted_asns: "BGPView ماڈیول کے ذریعے وائٹ لسٹ کیے جانے والے ASNs کی فہرست."
 config_bgpview_whitelisted_ccs: "BGPView ماڈیول کے ذریعے وائٹ لسٹ کیے جانے والے ممالک کی فہرست (ان کے {{Links.ISO.3166}} دو حرفی کنٹری کوڈز سے شناخت کی گئی ہے)."
+config_bobuam: ""بوٹ یا براؤزر صارف ایجنٹ ماڈیول" کے لیے کنفیگریشن. یہ ماڈیول ناپسندیدہ بوٹس، پرانے براؤزرز کا پتہ لگاتا ہے، اور کچھ سنٹی چیک کرتا ہے."
+config_bobuam_block_bots: "بدنیتی پر مبنی یا ناپسندیدہ کے طور پر پہچانے گئے بوٹس کو مسدود کریں؟"
+config_bobuam_block_eol_browsers: "ان براؤزرز کو مسدود کریں جو زندگی کے اختتام کو پہنچ چکے ہیں؟ (ذیل میں ورژن سیٹ کریں)."
+config_bobuam_chrome: ""Chrome/Chromium" ٹوکن کا سب سے کم اجازت شدہ ورژن. تجویز کردہ: {{BOBUAM Token.Chrome}}."
+config_bobuam_firefox: ""Firefox" ٹوکن کا سب سے کم اجازت شدہ ورژن. تجویز کردہ: {{BOBUAM Token.Firefox}}."
+config_bobuam_firefox_esr: "ESR ورژن کے لیے "Firefox" ٹوکن کا مجاز ورژن. تجویز کردہ: {{BOBUAM Token.Firefox ESR}}."
+config_bobuam_reason_ambiguous: "ایک مبہم صارف ایجنٹ سٹرنگ کا پتہ چلنے پر بلاک کی وجہ دکھائی گئی."
+config_bobuam_reason_bot: "بوٹس کے بلاک ہونے پر بلاک کی وجہ دکھائی گئی."
+config_bobuam_reason_browser: "جب بہت پرانا براؤزر بلاک ہو جاتا ہے تو بلاک کی وجہ دکھائی جاتی ہے."
+config_bobuam_reason_malformed: "ایک خراب صارف ایجنٹ سٹرنگ کا پتہ چلنے پر بلاک کی وجہ دکھائی جاتی ہے."
+config_bobuam_reason_masquerade: "بلاک کی وجہ اس وقت دکھائی گئی جب صارف ایجنٹ کسی اور چیز کے طور پر بہانا کرنے کی کوشش کرتا ہے."
+config_bobuam_safari: "Safari کے "Version" ٹوکن کا سب سے کم اجازت شدہ ورژن. تجویز کردہ: {{BOBUAM Token.Safari}}."
+config_bobuam_sanity_check: "ان براؤزرز کو مسدود کریں جو مبہم یا واضح طور پر غلط صارف ایجنٹ کے تار دکھاتے ہیں؟"
 config_bunnycdn: "BunnyCDN مطابقت ماڈیول کنفیگریشن."
 config_bunnycdn_positive_action: "BunnyCDN کی درخواست کا سامنا کرنا پڑتا ہے تو CIDRAM کو کون سا عمل کرنا چاہئے؟ پہلے سے طے شدہ کارروائی = بائی پاس."
 config_bypasses: "پہلے سے طے شدہ دستخط کو نظرانداز کرنے کیلئے تشکیل."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2022.11.23).
+# This file: Korean language data for the front-end (last modified: 2022.11.29).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -74,6 +74,7 @@ Name Project Honeypot module: "Project Honeypot 모듈."
 Name Referrer spam module: "리퍼러 스팸 모듈."
 Name Stop Forum Spam module: "Stop Forum Spam 모듈."
 Name Tor blocker module: "Tor 차단제 모듈."
+bobuam_hint_default_value: "0으로 설정하면, 모듈은 현재 권장값을 사용합니다."
 checkbox_choice_negatives: "차단된 네거티브"
 checkbox_choice_nonverified: "차단된 검증되지 않은"
 checkbox_delete_orphaned_values: "분리된 값을 삭제합니다."
@@ -107,6 +108,19 @@ config_bgpview_blocked_asns: "BGPView 모듈에서 차단할 ASN 목록입니다
 config_bgpview_blocked_ccs: "BGPView 모듈에서 차단할 국가 목록 ({{Links.ISO.3166}} 2자리 국가 코드로 식별) 목록입니다."
 config_bgpview_whitelisted_asns: "BGPView 모듈에서 화이트리스트에 추가할 ASN 목록입니다."
 config_bgpview_whitelisted_ccs: "BGPView 모듈에서 허용 목록에 추가할 국가 ({{Links.ISO.3166}} 2자리 국가 코드로 식별) 목록입니다."
+config_bobuam: ""봇 또는 브라우저 사용자 에이전트 모듈"에 대한 구성. 이 모듈은 원치 않는 봇, 오래된 브라우저를 감지하고, 일부 온전성 검사를 수행합니다."
+config_bobuam_block_bots: "악성 또는 원치 않는 것으로 인식되는 봇을 차단하시겠습니까?"
+config_bobuam_block_eol_browsers: "수명이 다한 브라우저를 차단하시겠습니까? (아래 버전 설정)."
+config_bobuam_chrome: ""Chrome/Chromium" 토큰의 가장 낮은 허용 버전입니다. 추천\_: {{BOBUAM Token.Chrome}}."
+config_bobuam_firefox: ""Firefox" 토큰의 가장 낮은 허용 버전입니다. 추천\_: {{BOBUAM Token.Firefox}}."
+config_bobuam_firefox_esr: "ESR 버전에 허용되는 "Firefox" 토큰 버전입니다. 추천\_: {{BOBUAM Token.Firefox ESR}}."
+config_bobuam_reason_ambiguous: "모호한 사용자 에이전트 문자열이 감지될 때 표시되는 차단 이유입니다."
+config_bobuam_reason_bot: "봇 차단에 대해 표시되는 차단 이유입니다."
+config_bobuam_reason_browser: "너무 오래된 브라우저가 차단되었을 때 표시되는 차단 이유입니다."
+config_bobuam_reason_malformed: "잘못된 사용자 에이전트 문자열이 감지되었을 때 표시되는 차단 이유입니다."
+config_bobuam_reason_masquerade: "사용자 에이전트가 다른 것으로 가장하려고 할 때 표시되는 차단 이유입니다."
+config_bobuam_safari: "Safari의 "Version" 토큰 중 허용되는 가장 낮은 버전입니다. 추천\_: {{BOBUAM Token.Safari}}."
+config_bobuam_sanity_check: "모호하거나 명백히 잘못된 사용자 에이전트 문자열을 표시하는 브라우저를 차단하시겠습니까\_?"
 config_bunnycdn: "BunnyCDN 호환 모듈 구성."
 config_bunnycdn_positive_action: "CIDRAM은 BunnyCDN의 요청을 만났을 때 어떤 작업을 수행해야 합니까? 기본 동작 = 우회."
 config_bypasses: "기본 서명 바이 패스 구성."

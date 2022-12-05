@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2022.11.23).
+# This file: Turkish language data for the front-end (last modified: 2022.11.29).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -51,7 +51,7 @@ Extended Description Stop Forum Spam module: "SFS tarafından listelenen IP'lere
 Extended Description Tor blocker module: "DNSEL aramaları aracılığıyla Tor çıkış düğümlerinden erişimi yasaklar (IPv4 ve IPv6'yı ikisi de destekleniyor)."
 Name AbuseIPDB module: "AbuseIPDB modülü."
 Name BGPView module: "BGPView modülü."
-Name BOBUAM: "Bot veya tarayıcı kullanıcı aracısı modülü."
+Name BOBUAM: "Bot veya tarayıcı kullanıcı aracıları modülü."
 Name Bad TLDs blocker module: "Kötü TLD engelleyici modülü."
 Name Bad hosts blocker module: "Kötü ana engelleyici modülü."
 Name Bot user agents module: "Bot kullanıcı aracıları modülü."
@@ -74,6 +74,7 @@ Name Project Honeypot module: "Project Honeypot modülü."
 Name Referrer spam module: "Yönlendiren spam modülü."
 Name Stop Forum Spam module: "Stop Forum Spam modülü."
 Name Tor blocker module: "Tor engelleyici modülü."
+bobuam_hint_default_value: "0'a ayarlandığında, modül şu anda önerilen değeri kullanır."
 checkbox_choice_negatives: "Engellenen negatifler"
 checkbox_choice_nonverified: "Engellenen doğrulanmamış"
 checkbox_delete_orphaned_values: "Artık değerleri silin."
@@ -107,6 +108,19 @@ config_bgpview_blocked_asns: "BGPView modülü tarafından eşleştirildiğinde 
 config_bgpview_blocked_ccs: "BGPView modülü tarafından eşleştirildiğinde engellenecek ülkelerin listesi ({{Links.ISO.3166}} 2-haneli ülke kodlarıyla tanımlanır)."
 config_bgpview_whitelisted_asns: "BGPView modülü tarafından eşleştirildiğinde beyaz listeye alınacak ASN'lerin listesi."
 config_bgpview_whitelisted_ccs: "BGPView modülü tarafından eşleştirildiğinde beyaz listeye alınacak ülkelerin listesi ({{Links.ISO.3166}} 2-haneli ülke kodlarıyla tanımlanır)."
+config_bobuam: "İstenmeyen botları, eski tarayıcıları algılayan, ve bazı akıl sağlığı kontrolleri gerçekleştiren isteğe bağlı "bot veya tarayıcı kullanıcı aracıları modülü" için yapılandırma."
+config_bobuam_block_bots: "Kötü amaçlı veya istenmeyen olarak tanınan botlar engelleniyor mu?"
+config_bobuam_block_eol_browsers: "Kullanım ömrünün sonuna ulaşan tarayıcılar engellensin mi? (Aşağıda sürümleri ayarlayın)."
+config_bobuam_chrome: ""Chrome/Chromium" belirtecinin izin verilen en düşük sürümü. Önerilen: {{BOBUAM Token.Chrome}}."
+config_bobuam_firefox: ""Firefox" belirtecinin izin verilen en düşük sürümü. Önerilen: {{BOBUAM Token.Firefox}}."
+config_bobuam_firefox_esr: "ESR sürümü için "Firefox" belirtecinin izin verilen sürümü. Önerilen: {{BOBUAM Token.Firefox ESR}}."
+config_bobuam_reason_ambiguous: "Belirsiz bir kullanıcı aracısı dizesi algılandığında gösterilen engelleme nedeni."
+config_bobuam_reason_bot: "Botlar engellendiğinde gösterilen engelleme nedeni."
+config_bobuam_reason_browser: "Çok eski bir tarayıcı engellendiğinde gösterilen engelleme nedeni."
+config_bobuam_reason_malformed: "Hatalı biçimlendirilmiş bir kullanıcı aracısı dizesi algılandığında gösterilen engelleme nedeni."
+config_bobuam_reason_masquerade: "Bir kullanıcı aracısı başka bir şey gibi görünmeye çalıştığında gösterilen engelleme nedeni."
+config_bobuam_safari: "Safari'nin "Version" belirtecinin izin verilen en düşük sürümü. Önerilen: {{BOBUAM Token.Safari}}."
+config_bobuam_sanity_check: "Belirsiz veya açıkça hatalı biçimlendirilmiş kullanıcı aracısı dizeleri gösteren tarayıcılar engellensin mi?"
 config_bunnycdn: "BunnyCDN uyumluluk modülü için yapılandırma."
 config_bunnycdn_positive_action: "CIDRAM, BunnyCDN'den bir istekle karşılaştığında hangi eylemi gerçekleştirmelidir? Varsayılan aksiyon = Atlayın."
 config_bypasses: "Varsayılan imza bypass için yapılandırma."

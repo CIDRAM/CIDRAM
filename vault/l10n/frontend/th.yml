@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2022.11.23).
+# This file: Thai language data for the front-end (last modified: 2022.12.04).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -74,6 +74,7 @@ Name Project Honeypot module: "โมดูล Project Honeypot."
 Name Referrer spam module: "โมดูลสแปมผู้อ้างอิง."
 Name Stop Forum Spam module: "โมดูล Stop Forum Spam."
 Name Tor blocker module: "โมดูลตัวบล็อก Tor."
+bobuam_hint_default_value: "เมื่อตั้งค่าเป็น 0 โมดูลจะใช้ค่าที่แนะนำในปัจจุบัน."
 checkbox_choice_negatives: "เชิงลบที่ถูกบล็อก"
 checkbox_choice_nonverified: "ไม่ได้รับการยืนยันที่ถูกบล็อก"
 checkbox_delete_orphaned_values: "ลบค่าที่ถูกละเลย."
@@ -107,6 +108,19 @@ config_bgpview_blocked_asns: "รายการ ASN ที่จะถูกบ
 config_bgpview_blocked_ccs: "รายชื่อประเทศ (ระบุด้วยรหัสประเทศ {{Links.ISO.3166}} สองตัวอักษร) ที่จะบล็อกโดยโมดูล BGPView."
 config_bgpview_whitelisted_asns: "รายการ ASN ที่จะอนุญาตพิเศษโดยโมดูล BGPView."
 config_bgpview_whitelisted_ccs: "รายชื่อประเทศ (ระบุด้วยรหัสประเทศ {{Links.ISO.3166}} สองตัวอักษร) ที่จะอนุญาตพิเศษโดยโมดูล BGPView."
+config_bobuam: "การกำหนดค่าสำหรับ "โมดูลสำหรับตัวแทนผู้ใช้ของบอทหรือเบราว์เซอร์". โมดูลนี้จะตรวจหาบ็อตที่ไม่ต้องการ เบราว์เซอร์เก่า และทำการตรวจสุขภาพบางอย่าง."
+config_bobuam_block_bots: "บล็อกบอทที่รู้ว่าเป็นอันตรายหรือไม่พึงประสงค์?"
+config_bobuam_block_eol_browsers: "บล็อกเบราว์เซอร์ที่หมดอายุแล้วหรือไม่? (ตั้งค่าเวอร์ชันด้านล่าง)."
+config_bobuam_chrome: "โทเค็น "Chrome/Chromium" เวอร์ชันต่ำสุดที่อนุญาต. ที่แนะนำ: {{BOBUAM Token.Chrome}}."
+config_bobuam_firefox: "โทเค็น "Firefox" เวอร์ชันต่ำสุดที่อนุญาต. ที่แนะนำ: {{BOBUAM Token.Firefox}}."
+config_bobuam_firefox_esr: "โทเค็น "Firefox" เวอร์ชันที่อนุญาตสำหรับเวอร์ชัน ESR. ที่แนะนำ: {{BOBUAM Token.Firefox ESR}}."
+config_bobuam_reason_ambiguous: "เหตุผลในการบล็อกที่แสดงเมื่อตรวจพบสตริงตัวแทนผู้ใช้ที่ไม่ชัดเจน."
+config_bobuam_reason_bot: "เหตุผลในการบล็อกที่แสดงเมื่อบ็อตถูกบล็อก."
+config_bobuam_reason_browser: "เหตุผลในการบล็อกที่แสดงขึ้นเมื่อเบราว์เซอร์ที่เก่าเกินไปถูกบล็อก."
+config_bobuam_reason_malformed: "เหตุผลในการบล็อกที่แสดงเมื่อตรวจพบสตริงตัวแทนผู้ใช้ที่มีรูปแบบไม่ถูกต้อง."
+config_bobuam_reason_masquerade: "เหตุผลในการบล็อกที่แสดงขึ้นเมื่อตัวแทนผู้ใช้พยายามปลอมตัวเป็นอย่างอื่น."
+config_bobuam_safari: "โทเค็น "Version" ของ Safari เวอร์ชันต่ำสุดที่อนุญาต. ที่แนะนำ: {{BOBUAM Token.Safari}}."
+config_bobuam_sanity_check: "บล็อกเบราว์เซอร์ที่แสดงสตริงตัวแทนผู้ใช้ที่คลุมเครือหรือผิดรูปแบบอย่างชัดเจนหรือไม่?"
 config_bunnycdn: "การกำหนดค่าสำหรับโมดูลความเข้ากันได้ของ BunnyCDN."
 config_bunnycdn_positive_action: "CIDRAM ควรดำเนินการใดเมื่อพบคำขอจาก BunnyCDN? การกระทำเริ่มต้น = บายพาส."
 config_bypasses: "การกำหนดค่าสำหรับการข้ามลายเซ็นเริ่มต้น."

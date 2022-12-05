@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malay language data for the front-end (last modified: 2022.11.23).
+# This file: Malay language data for the front-end (last modified: 2022.11.28).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -74,6 +74,7 @@ Name Project Honeypot module: "Modul Project Honeypot."
 Name Referrer spam module: "Modul spam perujuk."
 Name Stop Forum Spam module: "Modul Stop Forum Spam."
 Name Tor blocker module: "Modul penyekat Tor."
+bobuam_hint_default_value: "Apabila ditetapkan kepada 0, modul akan menggunakan nilai yang disyorkan pada masa ini."
 checkbox_choice_negatives: "Negatif yang disekat"
 checkbox_choice_nonverified: "Tidak disahkan yang disekat"
 checkbox_delete_orphaned_values: "Padamkan nilai-nilai yang diyatimkan."
@@ -107,6 +108,19 @@ config_bgpview_blocked_asns: "Senarai ASN yang akan disekat apabila dipadankan o
 config_bgpview_blocked_ccs: "Senarai negara (dikenal oleh kod negara 2 digit {{Links.ISO.3166}} mereka) yang akan disekat apabila dipadankan oleh modul BGPView."
 config_bgpview_whitelisted_asns: "Senarai ASN yang akan disenarai putih apabila dipadankan oleh modul BGPView."
 config_bgpview_whitelisted_ccs: "Senarai negara (dikenal oleh kod negara 2 digit {{Links.ISO.3166}} mereka) yang akan disenarai putih apabila dipadankan oleh modul BGPView."
+config_bobuam: "Konfigurasi untuk "modul ejen pengguna bot atau penyemak imbas" pilihan, yang mengesan bot yang tidak diingini, penyemak imbas lama, dan melakukan beberapa semakan kewarasan."
+config_bobuam_block_bots: "Sekat bot yang diiktiraf sebagai berniat jahat atau tidak diingini?"
+config_bobuam_block_eol_browsers: "Sekat penyemak imbas yang telah mencapai akhir hayat? (Tetapkan versi di bawah)."
+config_bobuam_chrome: "Versi token "Chrome/Chromium" paling rendah dibenarkan. Disyorkan: {{BOBUAM Token.Chrome}}."
+config_bobuam_firefox: "Versi token "Firefox" paling rendah dibenarkan. Disyorkan: {{BOBUAM Token.Firefox}}."
+config_bobuam_firefox_esr: "Versi token "Firefox" yang dibenarkan untuk versi ESR. Disyorkan: {{BOBUAM Token.Firefox ESR}}."
+config_bobuam_reason_ambiguous: "Sebab sekat ditunjukkan apabila rentetan ejen pengguna yang tidak jelas dikesan."
+config_bobuam_reason_bot: "Sebab sekat ditunjukkan untuk bot yang disekat."
+config_bobuam_reason_browser: "Sebab sekat ditunjukkan untuk bot yang disekat."
+config_bobuam_reason_malformed: "Sebab sekat ditunjukkan apabila rentetan ejen pengguna yang cacat dikesan."
+config_bobuam_reason_masquerade: "Sebab sekat ditunjukkan apabila ejen pengguna cuba menyamar sebagai sesuatu yang lain."
+config_bobuam_safari: "Versi token "Version" Safari paling rendah dibenarkan. Disyorkan: {{BOBUAM Token.Safari}}."
+config_bobuam_sanity_check: "Sekat penyemak imbas yang menunjukkan rentetan ejen pengguna yang tidak jelas atau jelas cacat?"
 config_bunnycdn: "Konfigurasi untuk modul keserasian BunnyCDN."
 config_bunnycdn_positive_action: "Tindakan manakah yang perlu CIDRAM lakukan apabila ia menghadapi permintaan daripada BunnyCDN? Tindakan lalai = Memintasnya."
 config_bypasses: "Konfigurasi untuk pintasan tandatangan lalai."
@@ -144,7 +158,7 @@ config_general_default_timeout: "Tamat masa lalai yang digunakan untuk permintaa
 config_general_disabled_channels: "Ini boleh digunakan untuk menghalang CIDRAM daripada menggunakan saluran tertentu semasa menghantar permintaan (cth., semasa mengemas kini, semasa mengambil metadata komponen, dll)."
 config_general_emailaddr: "Jika anda mahu, anda boleh memberikan alamat e-mel disini untuk diberikan kepada pengguna apabila disekat, untuk mereka gunakan sebagai titik hubungan untuk sokongan dan/atau bantuan sekiranya mereka disekat secara tersilap. AMARAN: Apa sahaja alamat e-mel yang anda berikan disini pasti akan diperolehi oleh spambot dan pengikis apabila digunakan disini, dan oleh itu, jika anda ingin memberikan alamat e-mel disini, adalah amat disyorkan anda memastikan bahawa alamat e-mel yang anda berikan disini adalah alamat pakai buang dan/atau alamat yang anda tidak kisah di-spam (dengan kata lain, anda mungkin tidak mahu menggunakan alamat e-mel peribadi utama atau perniagaan utama anda)."
 config_general_emailaddr_display_style: "Bagaimanakah anda lebih suka alamat e-mel disampaikan kepada pengguna?"
-config_general_fields: "Kawalan untuk medan semasa acara blok (apabila permintaan disekat)."
+config_general_fields: "Kawalan untuk medan semasa acara sekat (apabila permintaan disekat)."
 config_general_force_hostname_lookup: "Kuatkuasakan carian nama hos? True = Ya; False = Tidak [Lalai]. Carian nama hos biasanya dilakukan atas dasar "seperti yang diperlukan", tetapi boleh dipaksa untuk semua permintaan. Melakukannya mungkin berguna sebagai cara menyediakan maklumat yang lebih terperinci dalam fail log, tetapi mungkin juga mempunyai kesan negatif sedikit pada prestasi."
 config_general_http_response_header_code: "Mesej status HTTP manakah yang harus dihantar oleh CIDRAM apabila menyekat permintaan?"
 config_general_ipaddr: "Dimana untuk mencari alamat IP daripada permintaan penyambungan? (Berguna untuk perkhidmatan seperti Cloudflare dan seumpamanya). Lalai = REMOTE_ADDR. AMARAN: Jangan ganti ini melainkan anda tahu apa yang anda lakukan!"
@@ -209,7 +223,7 @@ config_rate_limiting_exceptions: "Pengecualian (iaitu, permintaan yang tidak sep
 config_rate_limiting_max_bandwidth: "Jumlah maksimum lebar jalur yang dibenarkan dalam tempoh elaun sebelum kadar mengehadkan permintaan masa hadapan. Nilai 0 nyahaktifkan pengehadan kadar jenis ini. Lalai = 0KB."
 config_rate_limiting_max_requests: "Jumlah maksimum permintaan yang dibenarkan dalam tempoh elaun sebelum kadar mengehadkan permintaan masa hadapan. Nilai 0 nyahaktifkan pengehadan kadar jenis ini. Lalai = 0."
 config_rate_limiting_precision_ipv4: "Ketepatan yang digunakan untuk menjejaki penggunaan IPv4. Nilai mencerminkan saiz blok CIDR. Tetapkan kepada 32 untuk ketepatan terbaik. Lalai = 32."
-config_rate_limiting_precision_ipv6: "Ketepatan yang digunakan untuk menjejaki penggunaan IPv6. Nilai mencerminkan ukuran blok CIDR. Tetapkan kepada 128 untuk ketepatan terbaik. Lalai = 128."
+config_rate_limiting_precision_ipv6: "Ketepatan yang digunakan untuk menjejaki penggunaan IPv6. Nilai mencerminkan saiz blok CIDR. Tetapkan kepada 128 untuk ketepatan terbaik. Lalai = 128."
 config_rate_limiting_segregate: "Patutkah kuota untuk domain dan hos yang berbeza dipisahkan atau dikongsi? True = Kuota akan diasingkan. False = Kuota akan dikongsi [Lalai]."
 config_recaptcha: "Konfigurasi untuk ReCaptcha (menyediakan cara untuk manusia mendapatkan semula akses apabila disekat)."
 config_recaptcha_api: *CaptchaAPI
@@ -246,7 +260,7 @@ config_supplementary_cache_options_redis_host: "Nilai hos Redis. Lalai = "localh
 config_supplementary_cache_options_redis_port: "Nilai port Redis. Lalai = "6379"."
 config_supplementary_cache_options_redis_timeout: "Nilai tamat masa Redis. Lalai = "2.5"."
 config_template_data: "Konfigurasi untuk templat dan tema."
-config_template_data_block_event_title: "Tajuk halaman yang akan dipaparkan untuk acara blok."
+config_template_data_block_event_title: "Tajuk halaman yang akan dipaparkan untuk acara sekat."
 config_template_data_captcha_title: "Tajuk halaman yang akan dipaparkan untuk permintaan CAPTCHA."
 config_template_data_css_url: "URL fail CSS untuk tema tersuai."
 config_template_data_custom_footer: "Disisipkan sebagai HTML pada penghujung semua halaman "akses dinafikan". Ini mungkin berguna sekiranya anda ingin menyertakan notis undang-undang, pautan hubungan, maklumat perniagaan, dsb pada semua halaman tersebut."

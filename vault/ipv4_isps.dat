@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv4_isps.dat
 
-# Version: 2022.337.0
-# Last modified: 2022.12.04
+# Version: 2022.342.0
+# Last modified: 2022.12.09
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -112,7 +112,7 @@ Tag: AS48159
 # Telecommunication Company PJS"). Brute-force, SSH, and DDoS attacks, email
 # harvesters, scrapers, port scans, hacking, and spam detected from here.
 # Stop Forum Spam (SFS) listings: 309 (AS12880), 3,244 (AS58224).
-# Updated: 2022.06.08 / Modified: 2022.09.26
+# Updated: 2022.06.08 / Modified: 2022.12.06
 
 5.34.208.0/20 Deny Attacks
 Origin: AU
@@ -181,6 +181,7 @@ Origin: AU
 85.185.24.217/32 Deny Attacks
 85.185.237.0/24 Deny Attacks
 85.185.238.0/24 Deny Attacks
+89.40.247.0/24 Deny Attacks
 91.92.127.0/24 Deny Attacks
 91.92.183.0/24 Deny Attacks
 91.92.214.0/24 Deny Attacks
@@ -506,8 +507,7 @@ Tag: Josef Nopp GmbH
 # many years. XRumer plus others operating on their network. Highly unlikely to
 # ever delist. Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 10,389 (AS17557), 200 (AS45595).
-# Updated: 2022.06.22 / Modified: 2022.08.10
-
+# Updated: 2022.06.22 / Modified: 2022.12.09
 39.33.202.53/32 Deny Spam
 39.36.8.121/32 Deny Spam
 39.36.60.9/32 Deny Spam
@@ -516,6 +516,7 @@ Tag: Josef Nopp GmbH
 39.36.212.194/32 Deny Spam
 39.36.223.159/32 Deny Spam
 39.36.234.92/32 Deny Spam
+39.37.207.0/24 Deny Attacks
 39.37.227.0/24 Deny Attacks
 39.37.231.39/32 Deny Spam
 39.37.234.147/32 Deny Spam
@@ -2067,7 +2068,7 @@ Tag: BSNL
 # probing, etc detected from here. Mozi botnets detected from here.
 # Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 48,132.
-# Updated: 2022.05.15 / Modified: 2022.12.04
+# Updated: 2022.05.15 / Modified: 2022.12.09
 
 1.68.195.0/24 Deny Attacks
 1.69.16.0/24 Deny Attacks
@@ -2250,6 +2251,7 @@ Tag: BSNL
 113.25.131.190/32 Deny Attacks
 113.25.214.0/24 Deny Attacks
 113.25.223.0/24 Deny Attacks
+113.26.86.0/24 Deny Attacks
 113.26.208.0/21 Deny Attacks
 113.26.216.0/22 Deny Attacks
 113.26.232.0/24 Deny Attacks
@@ -10427,17 +10429,16 @@ Tag: PJSC MegaFon
 
 
 # ASN 34700 ("MAXNET TELECOM, LTD").
-# A Ukrainian domestic ISP and a significant source of spam.
-# Stop Forum Spam (SFS) listings: 3,494.
-# Updated: 2020.02.17 / Checked: 2021.12.30
+# Ukrainian domestic ISP. Spam and brute-force attacks detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 699.
+# Updated: 2022.12.09
 
-5.255.160.0/20 Deny Spam
-31.202.0.0/17 Deny Spam
-31.202.128.0/18 Deny Spam
-46.160.88.0/21 Deny Spam
-79.171.120.0/21 Deny Spam
-178.165.0.0/17 Deny Spam
-185.147.96.0/22 Deny Spam
+31.202.174.38/32 Deny Spam
+178.165.32.232/32 Deny Spam
+178.165.34.41/32 Deny Attacks
+178.165.34.162/32 Deny Spam
+178.165.69.238/32 Deny Spam
 Origin: UA
 Profile: Domestic ISP;Tor endpoints here
 Tag: MAXNET TELECOM
@@ -15137,9 +15138,9 @@ Tag: Xs4all Internet BV
 
 
 # ASN 135471 ("PEMERINTAH KABUPATEN BOYOLALI").
-# Indonesian government network. Port scans, brute-force, SSH hack attempts
-# detected from here. For now, listing just the affected ranges/addresses only.
-# Updated: 2021.04.15 / Checked: 2021.12.14
+# Indonesian government network. Port scans, brute-force, SSH attacks detected
+# from here. Listing just the affected ranges/addresses only.
+# Updated: 2021.04.15 / Checked: 2022.12.09
 
 103.71.255.0/24 Deny Attacks
 Origin: ID
@@ -18909,14 +18910,17 @@ Tag: Telia Company AB
 # ASN 12083 ("WideOpenWest Finance LLC").
 # US domestic ISP. Brute-force, SSH, SQLi, and webapp attacks, hacking, and
 # spam detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 384.
-# Updated: 2022.01.04
+# Stop Forum Spam (SFS) listings: 337.
+# Updated: 2022.12.09
 
-24.35.51.51/32 Deny Spam
-67.149.198.147/32 Deny Attacks
-69.14.146.227/32 Deny Spam
-69.73.39.185/32 Deny Spam
-96.27.127.128/32 Deny Spam
+23.28.71.68/32 Deny Spam
+24.214.238.54/32 Deny Spam
+50.4.244.190/32 Deny Spam
+69.14.122.214/32 Deny Spam
+74.81.193.155/32 Deny Spam
+74.199.1.141/32 Deny Spam
+76.73.227.218/32 Deny Attacks
+96.27.199.199/32 Deny Spam
 216.186.250.53/32 Deny Attacks
 Origin: US
 Profile: Domestic ISP;Tor endpoints here
@@ -18926,58 +18930,166 @@ Tag: WideOpenWest Finance
 # ASN 9341 ("PT INDONESIA COMNETS PLUS").
 # Indonesian domestic ISP. Brute-force, SSH attacks, hacking, port scans, and
 # spam detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,633.
-# Updated: 2022.01.04
+# Stop Forum Spam (SFS) listings: 3,622.
+# Updated: 2022.12.09
 
-103.76.170.0/23 Deny Attacks
-103.76.172.0/23 Deny Attacks
-103.94.0.0/21 Deny Attacks
-103.111.54.0/23 Deny Attacks
-103.111.56.0/23 Deny Attacks
-103.111.80.0/22 Deny Attacks
-103.124.44.0/24 Deny Attacks
-103.124.45.3/32 Deny Attacks
-103.124.144.0/23 Deny Attacks
-103.124.147.0/24 Deny Attacks
-103.127.64.0/22 Deny Attacks
-103.141.46.0/23 Deny Attacks
-103.143.192.0/23 Deny Attacks
+103.76.170.171/32 Deny Attacks
+103.76.171.30/32 Deny Attacks
+103.76.171.102/32 Deny Attacks
+103.76.171.106/32 Deny Attacks
+103.76.172.13/32 Deny Attacks
+103.76.172.90/32 Deny Attacks
+103.76.172.162/32 Deny Attacks
+103.76.172.230/32 Deny Attacks
+103.76.172.250/32 Deny Attacks
+103.76.173.93/32 Deny Attacks
+103.76.173.186/32 Deny Attacks
+103.76.173.199/32 Deny Attacks
+103.76.173.201/32 Deny Attacks
+103.94.0.0/24 Deny Attacks
+103.94.1.42/32 Deny Attacks
+103.94.1.98/32 Deny Attacks
+103.94.1.186/32 Deny Attacks
+103.94.2.106/32 Deny Attacks
+103.94.2.110/32 Deny Attacks
+103.94.3.122/32 Deny Attacks
+103.94.3.162/32 Deny Attacks
+103.94.3.194/32 Deny Attacks
+103.94.4.194/32 Deny Attacks
+103.94.5.210/32 Deny Attacks
+103.94.5.250/32 Deny Attacks
+103.94.6.10/32 Deny Attacks
+103.94.6.69/32 Deny Attacks
+103.94.6.154/32 Deny Attacks
+103.94.6.243/32 Deny Attacks
+103.94.7.0/24 Deny Attacks
+103.111.54.26/32 Deny Attacks
+103.111.54.94/32 Deny Attacks
+103.111.54.210/32 Deny Attacks
+103.111.54.218/32 Deny Attacks
+103.111.54.250/32 Deny Attacks
+103.111.55.2/32 Deny Attacks
+103.111.55.122/32 Deny Attacks
+103.111.56.18/32 Deny Attacks
+103.111.80.254/32 Deny Attacks
+103.111.81.211/32 Deny Attacks
+103.111.82.0/24 Deny Attacks
+103.111.83.90/32 Deny Attacks
+103.111.83.98/32 Deny Attacks
+103.124.147.58/32 Deny Attacks
+103.127.64.26/32 Deny Attacks
+103.127.64.226/32 Deny Attacks
+103.127.65.0/24 Deny Attacks
+103.127.66.0/23 Deny Attacks
+103.141.46.154/32 Deny Attacks
+103.141.47.0/24 Deny Attacks
 103.144.14.0/23 Deny Attacks
-103.144.170.39/32 Deny Attacks
-103.144.180.0/23 Deny Attacks
+103.144.170.0/24 Deny Attacks
+103.144.171.138/32 Deny Attacks
+103.144.171.214/32 Deny Attacks
+103.144.175.0/24 Deny Attacks
+103.144.180.0/24 Deny Attacks
+103.144.181.122/32 Deny Attacks
 103.144.182.0/24 Deny Attacks
-103.145.30.58/32 Deny Attacks
+103.144.183.83/32 Deny Attacks
+103.144.183.142/32 Deny Attacks
 103.145.30.146/32 Deny Attacks
-103.145.31.0/24 Deny Attacks
-103.145.32.0/23 Deny Attacks
+103.145.31.138/32 Deny Attacks
+103.145.31.250/32 Deny Attacks
+103.145.32.0/24 Deny Attacks
+103.145.33.26/32 Deny Attacks
 103.145.129.34/32 Deny Attacks
-103.145.129.43/32 Deny Attacks
-103.145.180.0/23 Deny Attacks
+103.145.149.62/32 Deny Attacks
+103.145.149.122/32 Deny Attacks
+103.145.150.0/24 Deny Attacks
+103.145.161.0/24 Deny Attacks
+103.145.180.10/32 Deny Attacks
+103.145.181.0/24 Deny Attacks
+119.252.166.10/32 Deny Attacks
+119.252.166.30/32 Deny Attacks
+119.252.166.76/32 Deny Attacks
+119.252.166.126/32 Deny Attacks
+119.252.174.0/24 Deny Attacks
 124.158.160.0/20 Deny Attacks
-160.202.40.0/22 Deny Attacks
-163.53.184.0/22 Deny Attacks
-202.62.8.0/22 Deny Attacks
-202.154.180.0/23 Deny Attacks
+160.202.40.0/24 Deny Attacks
+160.202.41.22/32 Deny Attacks
+160.202.41.194/32 Deny Attacks
+160.202.41.234/32 Deny Attacks
+160.202.42.54/32 Deny Attacks
+160.202.42.98/32 Deny Attacks
+160.202.42.174/32 Deny Attacks
+163.53.184.218/32 Deny Attacks
+163.53.185.92/32 Deny Attacks
+163.53.186.250/32 Deny Attacks
+163.53.187.100/32 Deny Attacks
+163.53.187.187/32 Deny Attacks
+202.62.8.0/23 Deny Attacks
+202.62.10.42/32 Deny Attacks
+202.62.10.101/32 Deny Attacks
+202.62.10.250/32 Deny Attacks
+202.62.11.0/24 Deny Attacks
+202.154.180.0/24 Deny Attacks
+202.154.181.50/32 Deny Attacks
+202.154.181.98/32 Deny Attacks
+202.154.181.226/32 Deny Attacks
 202.154.182.0/24 Deny Attacks
-202.162.214.0/23 Deny Attacks
-202.162.216.0/23 Deny Attacks
-202.162.220.0/22 Deny Attacks
-220.247.170.0/23 Deny Attacks
-220.247.172.0/22 Deny Attacks
-223.25.100.0/22 Deny Attacks
+202.162.214.0/24 Deny Attacks
+202.162.215.112/32 Deny Attacks
+202.162.215.172/32 Deny Attacks
+202.162.215.210/32 Deny Attacks
+202.162.216.0/24 Deny Attacks
+202.162.217.122/32 Deny Attacks
+202.162.217.147/32 Deny Attacks
+202.162.217.173/32 Deny Attacks
+202.162.220.27/32 Deny Attacks
+202.162.220.82/32 Deny Attacks
+202.162.221.0/24 Deny Attacks
+202.162.222.146/32 Deny Attacks
+202.162.222.230/32 Deny Attacks
+202.162.223.130/32 Deny Attacks
+220.247.170.107/32 Deny Attacks
+220.247.170.230/32 Deny Attacks
+220.247.171.2/32 Deny Attacks
+220.247.171.90/32 Deny Attacks
+220.247.171.242/32 Deny Attacks
+220.247.172.122/32 Deny Attacks
+220.247.173.10/32 Deny Attacks
+220.247.174.0/24 Deny Attacks
+220.247.175.10/32 Deny Attacks
+220.247.175.12/32 Deny Attacks
+220.247.175.253/32 Deny Attacks
+223.25.100.0/23 Deny Attacks
+223.25.102.0/24 Deny Attacks
+223.25.103.42/32 Deny Attacks
+223.25.103.110/32 Deny Attacks
+223.25.103.174/32 Deny Attacks
 Origin: ID
 Profile: Domestic ISP
 Tag: COMNETS
 
 
+# ASN 45722 ("Widya Intersat Nusantara, PT").
+# Indonesian domestic ISP. Brute-force attacks and port scans detected from
+# here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 7.
+# Updated: 2022.12.09
+
+103.94.8.0/23 Deny Attacks
+103.94.10.196/31 Deny Attacks
+103.94.10.198/32 Deny Attacks
+103.94.10.234/32 Deny Attacks
+Origin: ID
+Profile: Domestic ISP
+Tag: Widya Intersat Nusantara
+
+
 # ASN 134359 ("Wanna Internet Limited").
 # NZ domestic ISP. Brute-force, SSH, FTP, and webapp attacks, hacking, and
-# spam detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 3.
-# Updated: 2022.01.04
+# spam detected from here. Clean at last check.
+# Will remove at the next update if it stays that way.
+# Updated: 2022.12.09
 
-103.141.44.35/32 Deny Attacks
-103.233.132.185/32 Deny Attacks
+#<redacted>
 Origin: NZ
 Profile: Domestic ISP
 Tag: Wanna Internet Limited
@@ -22610,3 +22722,16 @@ Tag: tomica
 Origin: TD
 Profile: Mobile ISP
 Tag: AIRTEL TCHAD
+
+
+# ASN 327756 ("Zambia Research and Education Network (ZAMREN)").
+# Brute-force attacks and spam detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 36.
+# Updated: 2022.12.09
+
+41.63.9.36 Deny Attacks
+41.63.9.13 Deny Attacks
+Origin: ZM
+Profile: University
+Tag: ZAMREN

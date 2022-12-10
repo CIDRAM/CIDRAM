@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2022.12.01).
+# This file: Arabic language data for the front-end (last modified: 2022.12.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -165,6 +165,7 @@ config_general_ipaddr: "أين يمكن العثور على عنوان IP لرب
 config_general_lang: "تحديد اللغة الافتراضية الخاصة بـ CIDRAM."
 config_general_lang_override: "الترجمة وفقًا لـ HTTP_ACCEPT_LANGUAGE كلما أمكن ذلك؟ صحيح/True = نعم [افتراضي]؛ زائفة/False = لا."
 config_general_numbers: "كيف تفضل الأرقام ليتم عرضها؟ حدد المثال الذي يبدو أكثر صحيح لك."
+config_general_sensitive: "قائمة المسارات التي يجب اعتبارها صفحات حساسة. ستتم مقارنة كل مسار مدرج مع URI المعاد بناؤه عند الحاجة. سيتم التعامل مع المسار الذي يبدأ بشرطة مائلة للأمام على أنه حرفي، ويتم مطابقته من مكون المسار للطلب فصاعدًا. سيتم التعامل مع المسار الذي يبدأ بحرف غير أبجدي رقمي وينتهي بنفس الحرف (أو نفس الحرف بالإضافة إلى علامة اختيارية "i") كتعبير عادي. سيتم التعامل مع أي نوع آخر من المسارات على أنه حرفي، ويمكن أن يتطابق مع أي جزء من URI. قد يؤثر المسار الذي يتم اعتباره صفحة حساسة على كيفية تصرف بعض الوحدات، ولكن ليس له أي تأثير آخر."
 config_general_silent_mode: "يجب CIDRAM إعادة توجيه بصمت محاولات وصول مرفوض بدلا من عرض الصفحة "تم رفض الوصول"؟ اذا نعم، تحديد الموقع لإعادة توجيه محاولات وصول مرفوض. ان لم، ترك هذا الحقل فارغا."
 config_general_stages: "ضوابط لمراحل سلسلة التنفيذ (سواء تم التمكين، أو تسجيل الأخطاء، وما إلى ذلك)."
 config_general_statistics: "يتحكم في المعلومات الإحصائية التي يجب تتبعها."

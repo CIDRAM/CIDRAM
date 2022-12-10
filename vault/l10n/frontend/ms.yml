@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malay language data for the front-end (last modified: 2022.11.28).
+# This file: Malay language data for the front-end (last modified: 2022.12.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -165,6 +165,7 @@ config_general_ipaddr: "Dimana untuk mencari alamat IP daripada permintaan penya
 config_general_lang: "Tentukan bahasa lalai untuk CIDRAM."
 config_general_lang_override: "Setempatkan mengikut HTTP_ACCEPT_LANGUAGE apabila boleh? True = Ya [Lalai]; False = Tidak."
 config_general_numbers: "Bagaimanakah anda lebih suka nombor untuk dipaparkan? Pilih contoh yang kelihatan paling betul untuk anda."
+config_general_sensitive: "Senarai laluan untuk dianggap sebagai halaman sensitif. Setiap laluan yang disenaraikan akan disemak terhadap URI yang dibina semula apabila diperlukan. Laluan yang bermula dengan garis miring ke hadapan akan dianggap sebagai literal, dan dipadankan dari komponen laluan permintaan. Jika tidak, laluan yang bermula dengan aksara bukan abjad angka, dan berakhir dengan aksara yang sama (atau aksara yang sama ditambah bendera "i" pilihan) akan dianggap sebagai ekspresi biasa. Sebarang jenis laluan lain akan dianggap sebagai literal, dan boleh dipadankan dari mana-mana bahagian URI. Sama ada laluan dianggap sebagai halaman sensitif boleh menjejaskan cara sesetengah modul berkelakuan, tetapi mempunyai tiada kesan lain."
 config_general_silent_mode: "Perlukah CIDRAM mengubah hala percubaan akses yang disekat secara senyap bukannya memaparkan halaman "akses dinafikan"? Jika ya, nyatakan lokasi untuk mengubah hala percubaan akses yang disekat. Jika tidak, biarkan pembolehubah ini kosong."
 config_general_stages: "Kawalan untuk peringkat rantaian pelaksanaan (jika diaktifkan, jika ralat dilog, dll)."
 config_general_statistics: "Mengawal maklumat statistik yang hendak dijejaki."

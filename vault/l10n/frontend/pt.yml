@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2022.11.28).
+# This file: Portuguese language data for the front-end (last modified: 2022.12.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -165,6 +165,7 @@ config_general_ipaddr: "Onde encontrar o IP endereço das solicitações? (Útil
 config_general_lang: "Especificar o padrão da linguagem por CIDRAM."
 config_general_lang_override: "Localizar de acordo com HTTP_ACCEPT_LANGUAGE sempre que possível? True = Sim [Padrão]; False = Não."
 config_general_numbers: "Como você prefere que os números sejam exibidos? Selecione o exemplo que parece mais correto para você."
+config_general_sensitive: "Uma lista de caminhos a serem considerados como páginas confidenciais. Cada caminho listado será verificado em relação ao URI reconstruído quando necessário. Um caminho que começa com uma barra será tratado como um literal, e correspondido a partir do componente de caminho da solicitação em diante. Como alternativa, um caminho que começa com um caractere não alfanumérico, e termina com o mesmo caractere (ou o mesmo caractere mais um sinalizador "i" opcional) será tratado como uma expressão regular. Qualquer outro tipo de caminho será tratado como um literal, e pode corresponder a qualquer parte do URI. O fato de um caminho ser considerado uma página confidencial pode afetar o comportamento de alguns módulos, mas não tem nenhum efeito de outra forma."
 config_general_silent_mode: "Deve CIDRAM silenciosamente redirecionar as tentativas de acesso bloqueadas em vez de exibir o "Acesso Negado" página? Se sim, especificar o local para redirecionar as tentativas de acesso bloqueadas para. Se não, deixe esta variável em branco."
 config_general_stages: "Controles para as etapas da cadeia de execução (se ativado, se os erros são registrados, etc)."
 config_general_statistics: "Controla quais informações estatísticas rastrear."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2022.11.28).
+# This file: Spanish language data for the front-end (last modified: 2022.12.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -165,6 +165,7 @@ config_general_ipaddr: "¿Dónde puedo encontrar el IP dirección de las solicit
 config_general_lang: "Especifique la predefinido del lenguaje para CIDRAM."
 config_general_lang_override: "¿Localizar según HTTP_ACCEPT_LANGUAGE siempre que sea posible? True = Sí [Predefinido]; False = No."
 config_general_numbers: "¿Cómo prefieres los números que se muestran? Seleccione el ejemplo que le parezca más correcto."
+config_general_sensitive: "Una lista de rutas para considerar como páginas confidenciales. Cada ruta listada se comparará con el URI reconstruido cuando sea necesario. Una ruta que comienza con una barra inclinada se tratará como un literal, y se comparará desde el componente de ruta de la solicitud en adelante. Alternativamente, una ruta que comienza con un carácter no alfanumérico, y termina con ese mismo carácter (o ese mismo carácter más un indicador "i" opcional) se tratará como una expresión regular. Cualquier otro tipo de ruta se tratará como un literal, y puede coincidir con cualquier parte del URI. Si una ruta se considera una página confidencial puede afectar el comportamiento de algunos módulos, pero no tiene ningún efecto en otros casos."
 config_general_silent_mode: "Debería CIDRAM silencio redirigir los intentos de acceso bloqueados en lugar de mostrar la página "Acceso Denegado"? En caso afirmativo, especifique la ubicación para redirigir los intentos de acceso bloqueados. Si no, dejar esta variable en blanco."
 config_general_stages: "Controles para las etapas de la cadena de ejecución (si está habilitado, si se registran errores, etc)."
 config_general_statistics: "Controla qué información estadística rastrear."

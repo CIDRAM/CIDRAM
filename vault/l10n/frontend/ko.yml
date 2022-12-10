@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2022.11.29).
+# This file: Korean language data for the front-end (last modified: 2022.12.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -165,6 +165,7 @@ config_general_ipaddr: "연결 요청의 IP 주소를 어디에서 찾을 것인
 config_general_lang: "CIDRAM의 기본 언어를 설정합니다."
 config_general_lang_override: "가능할 때마다 HTTP_ACCEPT_LANGUAGE에 따라 현지화 하시겠습니까? True = 예 (Default / 기본값); False = 아니오."
 config_general_numbers: "어떻게 숫자를 표시하는 것을 선호합니까? 가장 정확한 것으로 보이는 예제를 선택하십시오."
+config_general_sensitive: "민감한 페이지로 간주할 경로 목록입니다. 나열된 각 경로는 필요할 때 재구성된 URI에 관해 확인됩니다. 슬래시로 시작하는 경로는 리터럴로 처리되며 요청의 경로 구성 요소부터 일치합니다. 영숫자가 아닌 문자로 시작하고 동일한 문자(또는 동일한 문자와 선택적 "i" 플래그)로 끝나는 경로는 정규식으로 처리됩니다. 다른 종류의 경로는 리터럴로 취급되며 URI의 모든 부분에서 일치할 수 있습니다. 경로가 민감한 페이지로 간주하는지 여부는 일부 모듈의 작동 방식에 영향을 미칠 수 있지만 다른 것에는 영향을 미치지 않습니다."
 config_general_silent_mode: ""액세스 거부" 페이지를 표시하는 대신 CIDRAM는 차단 된 액세스 시도를 자동으로 리디렉션해야합니까? 그렇다면 리디렉션 위치를 지정합니다. 아니오의 경우이 변수를 비워 둡니다."
 config_general_stages: "실행 체인의 단계에 대한 제어 (활성화 여부, 오류 기록 여부, 등등)."
 config_general_statistics: "추적할 통계 정보를 제어합니다."

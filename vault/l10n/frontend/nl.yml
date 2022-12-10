@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2022.11.28).
+# This file: Dutch language data for the front-end (last modified: 2022.12.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -165,6 +165,7 @@ config_general_ipaddr: "Waar het IP-adres van het aansluiten verzoek te vinden? 
 config_general_lang: "Geef de standaardtaal voor CIDRAM."
 config_general_lang_override: "Waar mogelijk lokaliseren volgens HTTP_ACCEPT_LANGUAGE? True = Ja [Standaard]; False = Nee."
 config_general_numbers: "Hoe verkiest u nummers die worden weergegeven? Selecteer het voorbeeld dat het meest correct voor u lijkt."
+config_general_sensitive: "Een lijst met paden die als gevoelige pagina's moeten worden beschouwd. Elk vermeld pad wordt indien nodig gecontroleerd aan de hand van de gereconstrueerde URI. Een pad dat begint met een schuine streep naar voren wordt behandeld als een letterlijke waarde en wordt gematcht vanaf de padcomponent van het verzoek. Anders wordt een pad dat begint met een niet-alfanumeriek teken en eindigt met datzelfde teken (of datzelfde teken plus een optionele "i"-vlag) behandeld als een reguliere expressie. Elk ander pad wordt behandeld als een letterlijk pad en kan overeenkomen met elk deel van de URI. Of een pad als een gevoelige pagina wordt beschouwd, kan van invloed zijn op het gedrag van sommige modules, maar heeft verder geen effect."
 config_general_silent_mode: "Moet CIDRAM stilletjes redirect geblokkeerd toegang pogingen in plaats van het weergeven van de "Toegang Geweigerd" pagina? Als ja, geef de locatie te redirect geblokkeerd toegang pogingen. Als nee, verlaat deze variabele leeg."
 config_general_stages: "Controles voor de fasen van de uitvoeringsketen (of ingeschakeld, of fouten worden geregistreerd, enz)."
 config_general_statistics: "Bepaalt welke statistische informatie moet worden bijgehouden."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2022.12.01).
+# This file: Vietnamese language data for the front-end (last modified: 2022.12.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -165,6 +165,7 @@ config_general_ipaddr: "Nơi để tìm địa chỉ IP của các yêu cầu k�
 config_general_lang: "Xác định tiếng mặc định cho CIDRAM."
 config_general_lang_override: "Bản địa hóa theo HTTP_ACCEPT_LANGUAGE bất cứ khi nào có thể? True = Vâng [Mặc định]; False = Không."
 config_general_numbers: "Làm thế nào để bạn thích số được hiển thị? Chọn ví dụ có vẻ chính xác nhất cho bạn."
+config_general_sensitive: "Một danh sách các đường dẫn được coi là các trang nhạy cảm. Mỗi đường dẫn được liệt kê sẽ, khi cần, được kiểm tra dựa trên URI được xây dựng lại. Một đường dẫn bắt đầu bằng dấu gạch chéo lên phía trước sẽ được coi là một nghĩa đen, và được so khớp từ thành phần đường dẫn của yêu cầu trở đi. Mặt khác, một đường dẫn bắt đầu bằng một ký tự không phải chữ và số, và kết thúc bằng cùng ký tự đó (hoặc cùng ký tự đó cộng với "i") sẽ được coi là biểu thức chính quy. Bất kỳ loại đường dẫn nào khác sẽ được coi là theo nghĩa đen, và có thể khớp từ bất kỳ phần nào của URI. Việc một đường dẫn có được coi là một trang nhạy cảm hay không có thể ảnh hưởng đến cách một số mô-đun hoạt động, nhưng không có bất kỳ ảnh hưởng nào khác."
 config_general_silent_mode: "CIDRAM nên âm thầm chuyển hướng cố gắng truy cập bị chặn thay vì hiển thị trang "Truy cập đã bị từ chối"? Nếu vâng, xác định vị trí để chuyển hướng cố gắng truy cập bị chặn để. Nếu không, để cho biến này được trống."
 config_general_stages: "Kiểm soát các giai đoạn của chuỗi thực thi (có được bật hay không, có lỗi được ghi lại hay không, vv)."
 config_general_statistics: "Kiểm soát thông tin thống kê cần giám sát."

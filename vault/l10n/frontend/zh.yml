@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2022.12.01).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2022.12.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -165,6 +165,7 @@ config_general_ipaddr: "在哪里可以找到连接请求IP地址？​（可以
 config_general_lang: "指定标准CIDRAM语言。"
 config_general_lang_override: "尽可能根据HTTP_ACCEPT_LANGUAGE进行本地化？True（真）=进行本地化【标准】；False（假）=不要本地化。"
 config_general_numbers: "您如何喜欢显示数字？​选择最适合示例。"
+config_general_sensitive: "视为敏感页面的路径列表。​需要时，将根据重建的URI检查列出的每个路径。​以正斜杠开头的路径将被视为文字，并从请求的路径部分开始匹配。​否则，以非字母数字字符开头并以相同字符（或相同字符加上可选的“i”标志）结束的路径将被视为正则表达式。​任何其他类型的路径都将被视为文字，并且可以匹配URI的任何部分。​被视为敏感页面的路径可能会影响某些模块的行为方式，但不会产生任何其他影响。"
 config_general_silent_mode: "CIDRAM应该默默重定向被拦截的访问而不是显示该“拒绝访问”页吗？​指定位置至重定向被拦截的访问，​或让它空将其禁用。"
 config_general_stages: "用于执行链的各个阶段的控件（是否启用，是否记录错误，等等）。"
 config_general_statistics: "控制要跟踪的统计信息。"

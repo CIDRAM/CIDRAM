@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2022.12.04).
+# This file: Latvian language data for the front-end (last modified: 2022.12.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -165,6 +165,7 @@ config_general_ipaddr: "Kur atrast savienojošo pieprasījumu IP adresi? (Noder�
 config_general_lang: "Norādiet CIDRAM noklusējuma valodu."
 config_general_lang_override: "Ja iespējams, lokalizēt saskaņā ar HTTP_ACCEPT_LANGUAGE? True (Patiess) = Jā [Noklusējuma]; False (Nepatiess) = Nē."
 config_general_numbers: "Kā jūs izvēlaties skaitļu parādīšanu? Atlasiet piemēru, kas jums šķiet vispareizākais."
+config_general_sensitive: "Ceļu saraksts, kas jāuzskata par sensitīvām lapām. Katrs norādītais ceļš tiks pārbaudīts ar rekonstruēto URI, kad tas būs nepieciešams. Ceļš, kas sākas ar slīpsvītru uz priekšu, tiks uzskatīts par burtu un tiks saskaņots, sākot ar pieprasījuma ceļa komponentu. Alternatīvi, ceļš, kas sākas ar rakstzīmi, kas nav burtciparu, un beidzas ar to pašu rakstzīmi (vai to pašu rakstzīmi un neobligātu karodziņu “i”), tiks uzskatīts par regulāru izteiksmi. Jebkurš cita veida ceļš tiks uzskatīts par burtisku, un var atbilst jebkurai URI daļai. Ceļš, kas tiek uzskatīts par sensitīvu lapu, var ietekmēt dažu moduļu darbību, bet citādi tam nav nekādas ietekmes."
 config_general_silent_mode: "Vai CIDRAM vajadzētu klusībā novirzīt bloķētas piekļuves mēģinājumus, nevis parādīt lapu "piekļuve liegta"? Ja tā, norādiet vietu, uz kuru novirzīt bloķētas piekļuves mēģinājumus. Ja nē, atstājiet šo mainīgo tukšu."
 config_general_stages: "Kontroles mehānisms izpildes ķēdes posmiem (vai iespējots, vai tiek reģistrētas kļūdas, utt)."
 config_general_statistics: "Kontrolē, kuru statistikas informāciju izsekot."

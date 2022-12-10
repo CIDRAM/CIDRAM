@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2022.11.28).
+# This file: Indonesian language data for the front-end (last modified: 2022.12.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -165,6 +165,7 @@ config_general_ipaddr: "Dimana menemukan alamat IP dari menghubungkan permintaan
 config_general_lang: "Tentukan bahasa default untuk CIDRAM."
 config_general_lang_override: "Melokalisasikan sesuai dengan HTTP_ACCEPT_LANGUAGE jika/bila memungkinkan? True = Ya [Default]; False = Tidak."
 config_general_numbers: "Cara apa yang kamu suka nomor menjadi ditampilkan? Pilih contoh yang paling sesuai untuk Anda."
+config_general_sensitive: "Daftar jalur yang dianggap sebagai halaman sensitif. Setiap jalur yang terdaftar akan diperiksa terhadap URI yang direkonstruksi bila diperlukan. Jalur yang dimulai dengan garis miring ke depan akan diperlakukan sebagai literal, dan dicocokkan dari komponen jalur permintaan selanjutnya. Jika tidak, jalur yang dimulai dengan karakter non-alfanumerik, dan diakhiri dengan karakter yang sama (atau karakter yang sama ditambah tanda "i" opsional) akan diperlakukan sebagai ekspresi reguler. Jenis jalur lain apapun akan diperlakukan sebagai literal, dan dapat dicocokkan dari bagian manapun dari URI. Apakah jalur dianggap sebagai halaman sensitif dapat memengaruhi perilaku beberapa modul, tetapi sebaliknya tidak berpengaruh apapun."
 config_general_silent_mode: "Seharusnya CIDRAM diam-diam mengarahkan diblokir upaya akses bukannya menampilkan halaman "akses ditolak"? Jika ya, menentukan lokasi untuk mengarahkan diblokir upaya akses. Jika tidak, kosongkan variabel ini."
 config_general_stages: "Kontrol untuk tahapan rantai eksekusi (apakah diaktifkan, apakah kesalahan dicatat, dll)."
 config_general_statistics: "Mengontrol informasi statistik mana yang akan dilacak."

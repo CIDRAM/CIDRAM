@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2022.11.28).
+# This file: French language data for the front-end (last modified: 2022.12.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -165,6 +165,7 @@ config_general_ipaddr: "Où trouver l'adresse IP de requêtes\_? (Utile pour ser
 config_general_lang: "Spécifiez la langue défaut pour CIDRAM."
 config_general_lang_override: "Localiser selon HTTP_ACCEPT_LANGUAGE autant que possible\_? True = Oui [Défaut]\_; False = Non."
 config_general_numbers: "Comment préférez-vous que les nombres soient affichés\_? Sélectionnez l'exemple qui vous paraît le plus approprié."
+config_general_sensitive: "Une liste de chemins à considérer comme des pages sensibles. Chaque chemin listé sera vérifié par rapport à l'URI reconstruit si nécessaire. Un chemin qui commence par une barre oblique sera traité comme un littéral, et mis en correspondance à partir du composant de chemin de la requête. Sinon, un chemin qui commence par un caractère non alphanumérique, et se termine par ce même caractère (ou ce même caractère plus un indicateur «\_i\_» facultatif) sera traité comme une expression régulière. Tout autre type de chemin sera traité comme un littéral, et peut correspondre à partir de n'importe quelle partie de l'URI. Le fait qu'un chemin soit considéré comme une page sensible peut affecter le comportement de certains modules, mais n'a aucun effet autrement."
 config_general_silent_mode: "Devrait CIDRAM rediriger silencieusement les tentatives d'accès bloquées à la place de l'affichage de la page «\_Accès Refusé\_»\_? Si oui, spécifiez l'emplacement pour rediriger les tentatives d'accès bloquées. Si non, laisser cette variable vide."
 config_general_stages: "Contrôles des étapes de la chaîne d'exécution (s'il est activé, si les erreurs sont enregistrées, etc)."
 config_general_statistics: "Contrôle les informations statistiques à suivre."

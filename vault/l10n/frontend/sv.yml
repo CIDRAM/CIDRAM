@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2022.11.28).
+# This file: Swedish language data for the front-end (last modified: 2022.12.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -165,6 +165,7 @@ config_general_ipaddr: "Var hittar du IP-adressen för anslutningsförfrågninga
 config_general_lang: "Ange standardspråk för CIDRAM."
 config_general_lang_override: "Lokalisera enligt HTTP_ACCEPT_LANGUAGE när det är möjligt? True = Ja [Standard]; False = Nej."
 config_general_numbers: "Hur föredrar du nummer som ska visas? Välj det exempel som är mest korrekt för dig."
+config_general_sensitive: "En lista över vägar att betrakta som känsliga sidor. Varje väg som listas kommer att kontrolleras mot den rekonstruerade URI när det behövs. En väg som börjar med ett snedstreck kommer att behandlas som en bokstavlig och matchas från vägskomponenten i begäran och framåt. Annars kommer en väg som börjar med ett icke-alfanumeriskt tecken, och slutar med samma tecken (eller samma tecken plus en valfri "i"-flagga) att behandlas som ett reguljärt uttryck. Alla andra typer av väg kommer att behandlas som en bokstavlig och kan matcha från vilken del av URI som helst. Huruvida en väg betraktas som en känslig sida kan påverka hur vissa moduler beter sig, men har ingen effekt i övrigt."
 config_general_silent_mode: "Ska CIDRAM utföra tyst omdirigering av blockerade åtkomstförsök istället för att visa sidan "Nekat Tillgång"? Om ja, ange platsen för omdirigering av blockerade åtkomstförsök. Om nej, lämna denna variabel tom."
 config_general_stages: "Kontroller för stadierna i utförandekedjan (om aktiverat, om fel loggas, osv)."
 config_general_statistics: "Styr vilken statistisk information som ska spåras."

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.11.08).
+ * This file: Front-end handler (last modified: 2022.12.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1783,6 +1783,13 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
 
             /** Reset to defaults. */
             if ($CIDRAM['ThisDir']['Reset'] !== '') {
+                if (isset($CIDRAM['DirValue']['preview'], $CIDRAM['DirValue']['default']) && $CIDRAM['DirValue']['preview'] === 'allow_other') {
+                    $CIDRAM['ThisDir']['Reset'] .= sprintf(
+                        'hideid(\'%1$s_field\');getElementById(\'%1$s_field\').value=\'%2$s\';',
+                        $CIDRAM['ThisDir']['DirLangKeyOther'],
+                        $CIDRAM['DirValue']['default']
+                    );
+                }
                 $CIDRAM['ThisDir']['FieldOut'] .= sprintf(
                     '<br /><br /><input type="button" class="reset" onclick="javascript:%s" value="↺ %s" />',
                     $CIDRAM['ThisDir']['Reset'],

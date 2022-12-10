@@ -58,6 +58,7 @@
 - Reconstructed URIs didn't account for port number; Fixed.
 - Detection for "sensitive pages" sometimes wouldn't detect contact pages; Fixed (#351).
 - Compatibility issue when using Firefox to access some of the options provided at the front-end auxiliary rules page; Fixed (#356).
+- The reset button at the front-end configuration page wasn't resetting the hidden "other" field; Fixed.
 
 #### Other changes.
 - Improved IP address resolution strategy (#286).

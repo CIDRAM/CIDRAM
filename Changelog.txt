@@ -39,6 +39,11 @@ Detailed version release guidelines for CIDRAM can be found at:
 - [2022.12.15; Bug-fix; Maikuolan]: Redis shouldn't set EXPIRE for TTLs less
   than 1; Fixed (#369).
 
+- [2022.12.15; Bug-fix; Maikuolan]: Added `ob_get_level()` guard for
+  `ob_end_flush()` call at registered shutdown closure for in case of missing
+  buffer data (e.g., due to prior calls at the implementation) to resolve
+  related notice (#367).
+
 === Version/Release 2.9.2 ===
 PATCH RELEASE.
 

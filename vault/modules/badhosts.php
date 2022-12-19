@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bad hosts blocker module (last modified: 2022.11.23).
+ * This file: Bad hosts blocker module (last modified: 2022.12.19).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -98,9 +98,6 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         $HN
     ), 'Unauthorised'); // 2018.09.15
 
-    // Caught attempting to brute-force WordPress logins.
-    $this->trigger(preg_match('~\.domainserver\.ne\.jp$~', $HN), 'Cloud/Webhosting'); // 2020.11.09
-
     $this->trigger(preg_match('~anchorfree|hotspotsheild|esonicspider\.com$~', $HN), 'Hostile/esonicspider'); // 2018.09.15
 
     $this->trigger(preg_match(
@@ -110,64 +107,64 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
     $this->trigger(preg_match('~brandaffinity~', $HN), 'Hostile/SLAPP'); // 2018.09.15
 
-    $this->trigger(preg_match(
-        '~i(?:g|nsite)\.com\.br$|terra\.cl$|(?:\.(?:appian|cloud|ctera|dyn|emc|fo' .
-        'rce|fsfreeware|gnip|gridlayer|hosting|icims|panorama|parallels|quest|the' .
-        'gridlayer|voda|vultr|webzilla|workday)|10gen|12designer|3leafsystems|3te' .
-        'ra|a(?:ccentrainc|conex|dvologix|gathon|ltornetworks|mericanforeclosures' .
-        '|mitive|pp(?:irio|istry|jet|nexus|renda|spot|zero)|ptana|riasystems|rjun' .
-        'a|rtofdefence|sterdata|syanka|uthenticnetworks|zati)|b(?:alticservers|ea' .
-        'm4d|hivesoft|irtondemand|linklogic|lue(?:host|lock|wolf)|oomi|ucketexplo' .
-        'rer|ungeeconnect)|c(?:a(?:dinor|msolutionsinc|spio|ssatt|stiron)|l(?:ari' .
-        'oanalytics|ickability|oud(?:42|9analytics|computingchina|control|era|fou' .
-        'ndry|kick|scale|status|switch|works)|usterseven)|o(?:ghead|hesiveft|ldli' .
-        'ghtsolutions|ncur|ntroltier)|tinets)|d(?:ata(?:line|sisar|synaps)|edicat' .
-        'edpanel|irectlaw|ns-safe|oclanding|ropbox|ynamsoft)|e(?:last(?:ichosts|r' .
-        'a)|n(?:gineyard|omalism|stratus)|telos|ucalyptus|vapt|vionet)|fathomdb|f' .
-        'lexiscale|followmeoffice|g(?:emstone|enerositycool|igaspaces|ogrid|roupc' .
-        'ross)|h(?:eroku|exagrid|olhost|ost(?:acy|cats|ing24)|ubspan|yperic)|i(?:' .
-        'cloud|modrive|nfo(?:bright|rmatica)|tricityhosting)|j(?:oyent|umpbox|ung' .
-        'lebox|usthost)|k(?:2analytics|aavo|eynote|nowledgetree)|l(?:ayeredtech|i' .
-        'nkneo|iveops|oadstorm|ogixml|ongjump|tdomains)|m(?:o(?:derro|jsite|rphex' .
-        'change|sso|zy)|idphase|turk|ulesoft)|n(?:asstar|e(?:ointeractiva|t(?:app' .
-        '|documents|suite|topia)|wrelic|wservers)|ionex|irvanix|ovatium|scaled)|o' .
-        '(?:co-inc|nelogin|npathtech|penqrm|psource)|p(?:ara(?:scal|tur)e|hatserv' .
-        'ers|iemontetv|inqidentity|ivotlink|luraprocessing)|q(?:layer|rimp|uanti(' .
-        '?:vo|x-uk))|r(?:ackspace(?:cloud)?|e(?:di2|ductivelabs|lia(?:blehosting|' .
-        'cloud)|sponsys)|ight(?:now|scale)|ollbase|omania-webhosting|path)|s(?:al' .
-        'esforce|avvis|ertifi|huilinchi|kytap|martservercontrol|naplogic|oasta|pr' .
-        'ingcm|tax|treetsmarts|tretchoid|uccessmetrics|wifttrim|ymplified|yncplic' .
-        'ity)|t(?:aleo|err[ae]mark|h(?:eprocessfactory|inkgos|oughtexpress)|rusts' .
-        'aas)|utilitystatus|v(?:aultscape|ertica|mware|ordel)|web(?:hosting\.uk|s' .
-        'calesolutions)|xactlycorp|xlhost|xythos|z(?:embly|imory|manda|oho|uora))' .
-        '\.com$|(?:alxagency|capellahealthcare|host(?:gator|ingprod)|instantdedic' .
-        'ated|khavarzamin|link88\.seo|securityspace|serve(?:path|rbuddies))\.com|' .
-        '(?:(?:\.|kunden)server|clanmoi|fastwebserver|optimal|server4you)\.de$|yo' .
-        'ur-server\.de|eucalyptus\.cs\.uscb\.edu$|candycloud\.eu$|adsinmedia\.co\.in$' .
-        '|server\.lu$|starnet\.md$|(?:\.(?:bhsrv|box|propagation|voxel)|1978th|co' .
-        'llab|enkiconsulting|incrediserve|recyber|reliablesite|techajans)\.net$|h' .
-        'itech-hosting\.nl|(?:\.terracotta|beowulf|iboss|opennebula|xen)\.org$|mo' .
-        'r\.ph$|(?:ogicom|vampire)\.pl$|(?:cyber-host|slaskdatacenter)\.pl|(?:ser' .
-        'verhub|rivreg)\.ru$|(?:tkvprok|vympelstroy)\.ru|g\.ho\.st$|(?:webfusion|' .
-        'xcalibre)\.co\.uk$|bergdorf-group|cloudsigma|dreamhost|ipxserver|linode|' .
-        'money(?:mattersnow|tech\.mg)|psychz|requestedoffers|scopehosts|s(?:p?lic' .
-        'e|teep)host~',
-        $HN
-    ), 'Server farm'); // 2022.06.24
+    if (
+        // Caught attempting to brute-force WordPress logins (2020.11.09).
+        $this->trigger(preg_match('~\.domainserver\.ne\.jp$~', $HN), 'Cloud/Webhosting') ||
 
-    $this->trigger(preg_match(
-        '~\.google(?:domains|usercontent)\.com$~',
-        $HN
-    ), 'Google user content not permitted here'); // 2022.06.22
+        // 2022.12.19
+        $this->trigger(preg_match(
+            '~i(?:g|nsite)\.com\.br$|terra\.cl$|acetrophies\.co\.uk$|adsinmedia\.co\.' .
+            'in$|(?:webfusion|xcalibre)\.co\.uk$|(?:\.(?:appian|cloud|ctera|dyn|emc|f' .
+            'orce|fsfreeware|gnip|gridlayer|hosting|icims|panorama|parallels|quest|si' .
+            'teprotect|thegridlayer|voda|vultr|webzilla|workday)|10gen|12designer|3le' .
+            'afsystems|3tera|a(?:cademicedge|ccentrainc|conex|dvologix|gathon|ltornet' .
+            'works|mericanforeclosures|mitive|pp(?:irio|istry|jet|nexus|renda|spot|ze' .
+            'ro)|ptana|ramenet|riasystems|rjuna|rtofdefence|sterdata|syanka|uthenticn' .
+            'etworks|zati)|b(?:alticservers|eam4d|hivesoft|irtondemand|linklogic|lue(' .
+            '?:host|lock|wolf)|oomi|ucketexplorer|ungeeconnect)|c(?:a(?:dinor|msoluti' .
+            'onsinc|spio|ssatt|stiron)|l(?:arioanalytics|ickability|oud(?:42|9analyti' .
+            'cs|computingchina|control|era|foundry|kick|scale|status|switch|works)|us' .
+            'terseven)|o(?:ghead|hesiveft|ldlightsolutions|ncur|ntroltier)|tinets|ybe' .
+            'r-freaks)|d(?:ata(?:line|sisar|synaps)|ailyrazor|edicatedpanel|inaserver' .
+            '|irectlaw|ns-safe|oclanding|ropbox|ynamsoft)|e(?:last(?:ichosts|ra)|n(?:' .
+            'gineyard|omalism|stratus)|telos|ucalyptus|vapt|vionet)|fathomdb|flexisca' .
+            'le|followmeoffice|g(?:emstone|enerositycool|igaspaces|ogrid|othamdating|' .
+            'roupcross)|h(?:eroku|exagrid|olhost|ost(?:acy|cats|ing24)|ubspan|yperic)' .
+            '|i(?:buzytravel|cloud|modrive|nfo(?:bright|rmatica)|tricityhosting)|j(?:' .
+            'oyent|umpbox|unglebox|usthost)|k(?:2analytics|aavo|eynote|nowledgetree)|' .
+            'l(?:ayeredtech|inkneo|iveops|oadstorm|ogixml|ongjump|tdomains)|m(?:o(?:d' .
+            'erro|jsite|rphexchange|sso|zy)|idphase|turk|ulesoft)|n(?:asstar|e(?:oint' .
+            'eractiva|t(?:app|documents|suite|topia)|wrelic|wservers)|ionex|irvanix|o' .
+            'vatium|scaled)|o(?:co-inc|nelogin|npathtech|penqrm|psource)|p(?:ara(?:sc' .
+            'al|tur)e|hatservers|hishmongers|iemontetv|inqidentity|ivotlink|luraproce' .
+            'ssing)|q(?:layer|rimp|uanti(?:vo|x-uk))|r(?:ackspace(?:cloud)?|e(?:di2|d' .
+            'uctivelabs|lia(?:blehosting|cloud)|sponsys)|ight(?:now|scale)|ollbase|om' .
+            'ania-webhosting|path)|s(?:alesforce|avvis|ertifi|erver306|huilinchi|kyta' .
+            'p|martservercontrol|naplogic|oasta|pringcm|tax|treetsmarts|tretchoid|ucc' .
+            'essmetrics|wifttrim|ymplified|yncplicity)|t(?:aleo|err[ae]mark|h(?:eproc' .
+            'essfactory|inkgos|oughtexpress)|rustsaas)|utilitystatus|v(?:aultscape|er' .
+            'tica|mware|ordel)|web(?:faction|hosting\.uk|hostinghub|scalesolutions|si' .
+            'tewelcome)|xactlycorp|xlhost|xythos|z(?:embly|imory|manda|oho|uora))\.co' .
+            'm$|(?:alxagency|capellahealthcare|host(?:gator|ingprod)|instantdedicated' .
+            '|khavarzamin|link88\.seo|securityspace|serve(?:path|rbuddies))\.com|serv' .
+            'er4u\.cz$|(?:(?:\.|kunden)server|clanmoi|fastwebserver|optimal|server4yo' .
+            'u|your-server)\.de$|eucalyptus\.cs\.uscb\.edu$|candycloud\.eu$|cyberresi' .
+            'lience\.io$|server\.lu$|starnet\.md$|(?:\.(?:above|akpackaging|bhsrv|box' .
+            '|propagation|voxel)|1978th|collab|enkiconsulting|incrediserve|jkserv|rec' .
+            'yber|reliablesite|shared-server|techajans)\.net$|hitech-hosting\.nl$|(?:' .
+            '\.terracotta|beowulf|iboss|opennebula|xen)\.org$|mor\.ph$|(?:ogicom|vamp' .
+            'ire)\.pl$|(?:cyber-host|slaskdatacenter)\.pl|(?:serverhub|rivreg|tkvprok' .
+            '|vpsnow|vympelstroy)\.ru$|g\.ho\.st$|bergdorf-group|cloudsigma|dreamhost' .
+            '|ipxserver|linode|money(?:mattersnow|tech\.mg)|psychz|requestedoffers|sc' .
+            'opehosts|s(?:p?lice|teep)host~',
+            $HN
+        ), 'Cloud/Webhosting') ||
 
-    $this->trigger(preg_match(
-        '/(?:\.above|shared-server|jkserv)\.net$|akpackaging\.net|(?:academi' .
-        'cedge|cyber-freaks|dailyrazor|gothamdating|ibuzytravel|server306|we' .
-        'bfaction|\.siteprotect)\.com$|(?:aramenet|dinaserver|phishmongers|w' .
-        'eb(?:hostinghub|sitewelcome))\.com|server4u\.cz$|acetrophies\.co\.u' .
-        'k$|vpsnow\.ru$|cyberresilience\.io$/',
-        $HN
-    ), 'Probe/Scanner'); // 2022.11.23
+        // 2022.06.22
+        $this->trigger(preg_match('~\.google(?:domains|usercontent)\.com$~', $HN), 'Google user content not permitted here')
+    ) {
+        $this->addProfileEntry('Webhosting');
+    }
 
     if ($this->trigger(preg_match(
         '/(?:\.oroxy|anonine)\.com$|thefreevpn|vpn(?:999\.com|gate)|public-net/',
@@ -179,16 +176,16 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     $this->trigger(preg_match(
         '~(?:(?:criminalip|dimenoc|dumpyourbitch|hostenko|internetserviceteam|ipr' .
         'edator|krypt|webandnetworksolutions|xcelmg)\.com|mbox\.kz|doctore\.sk|ho' .
-        'stnoc\.net|\.(?:host|spheral)\.ru)$|45ru\.net\.au|dedipower|p(?:rohibitivestuff|wn)~',
+        'stnoc\.net|\.(?:host|spheral)\.ru)$|45ru\.net\.au|p(?:rohibitivestuff|wn)~',
         $HN
-    ), 'Dangerous Host'); // 2022.06.24
+    ), 'Dangerous Host'); // 2022.06.24 mod 2022.12.19
 
     $this->trigger(preg_match(
         '~(?:iweb|privatedns)\.com$|iweb\.ca$|^(?:www\.)?iweb~',
         $HN
     ), 'Domain Snipers'); // 2017.02.15 mod 2021.06.28
 
-    $this->trigger(preg_match('~(?<!ssg-corp\.)zetta\.net$|(?<!\.user\.)veloxzone\.com\.br$~', $HN), 'Server farm'); // 2022.06.24
+    $this->trigger(preg_match('~(?<!ssg-corp\.)zetta\.net$|(?<!\.user\.)veloxzone\.com\.br$|12bot\.com$~', $HN), 'Server farm'); // 2022.12.19
 
     $this->trigger(empty($this->CIDRAM['Ignore']['SoftLayer']) && preg_match('/softlayer\.com$/', $HN) && (
         !substr_count($this->BlockInfo['UALC'], 'disqus') &&

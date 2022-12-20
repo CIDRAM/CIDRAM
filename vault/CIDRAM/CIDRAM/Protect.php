@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2022.12.15).
+ * This file: Protect traits (last modified: 2022.12.20).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -421,7 +421,7 @@ trait Protect
                     }, 1);
                     register_shutdown_function(function () {
                         $this->rateLimitWriteEvent($this->CIDRAM['RL_Capture'], $this->CIDRAM['RL_Size']);
-                        if (ob_get_level > 0) {
+                        if (ob_get_level() > 0) {
                             ob_end_flush();
                         }
                     });

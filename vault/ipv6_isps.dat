@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2022.342.0
-# Last modified: 2022.12.09
+# Version: 2022.361.0
+# Last modified: 2022.12.28
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -579,11 +579,12 @@ Tag: Ote SA
 # A South American ISP caught performing brute-force and webapp attacks, port
 # scans, and spamming. Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 680 (AS11664), 172 (AS19037), 3,027 (AS28573).
-# Updated: 2022.03.15
+# Updated: 2022.11.22 / Modified: 2022.12.25
 
 2803:9800:908f:80a0::/64 Deny Spam
 Origin: AR
 2804:14d:3291:4e99::/64 Deny Spam
+2804:14d:c883:88b6::/64 Deny Malware
 Origin: BR
 Profile: Domestic ISP
 Tag: CLARO S.A
@@ -977,12 +978,10 @@ Tag: Hutchison 3G UK Limited
 # ASN 15557 ("SFR SA").
 # French fibre network. Spam, hacking, webapp, DDoS, and brute-force attacks
 # detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,156.
-# Updated: 2022.01.07
+# Stop Forum Spam (SFS) listings: 1,100.
+# Updated: 2022.12.28
 
-2a02:842b:80fb:ce01::/64 Deny Spam
-2a02:8440:4609:c91a::/64 Deny Spam
-2a02:8440:511b:9667::/64 Deny Spam
+2a02:8428:129b:c01::/64 Deny Spam
 Origin: FR
 Profile: Domestic ISP;Infrastructure/Transit;Multiplay
 Tag: SFR SA

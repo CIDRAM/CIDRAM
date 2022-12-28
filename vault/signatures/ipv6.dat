@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2022.352.0
-# Last modified: 2022.12.19
+# Version: 2022.361.0
+# Last modified: 2022.12.28
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -4368,17 +4368,6 @@ Profile: Dedicated;Infrastructure/Transit
 Tag: Shenzhen Tencent
 
 
-# ASN 24413 ("ShenZhen Sunrise Technology Co.,Ltd").
-# Chinese data center. Brute-force and SSH attacks detected from here.
-# Stop Forum Spam (SFS) listings: 5.
-# Updated: 2018.08.05 / Checked: 2022.01.04
-
-2402:33c0::/32 Deny Cloud
-Origin: CN
-Profile: Infrastructure/Transit;Webhosting
-Tag: ShenZhen Sunrise
-
-
 # ASN 39572 ("DataWeb Global Group B.V").
 # Stop Forum Spam (SFS) listings: 49.
 # Updated: 2019.08.13 / Checked: 2022.02.25
@@ -7008,10 +6997,9 @@ Tag: LightEdge Solutions
 
 
 # ASN 1764 ("Next Layer Telekommunikationsdienstleistungs- und Beratungs GmbH").
-# Caught trying to hack WordPress sites + massive source of spam. No evidence
-# of human endpoints at this time, but recheck this whenever updating in case.
-# Stop Forum Spam (SFS) listings: 146.
-# Updated: 2022.08.13
+# WordPress attacks and spam detected from here.
+# Stop Forum Spam (SFS) listings: 126.
+# Updated: 2022.08.13 / Checked: 2022.12.25
 
 2001:67c:22a0::/48 Deny Cloud
 2001:4b60:100::/48 Deny Cloud
@@ -8729,10 +8717,11 @@ Tag: NETACTION TELECOM SRL-D
 
 # ASN 64425 ("SKB Enterprise B.V").
 # Dedicated webhosting provider caught port scanning.
-# Stop Forum Spam (SFS) listings: 974.
-# Updated: 2021.05.17 / Checked: 2022.01.07
+# Stop Forum Spam (SFS) listings: 151.
+# Updated: 2022.12.28
 
 2a0d:2406:200::/39 Deny Cloud
+2a0f:5e00::/29 Deny Cloud
 Origin: NL
 Profile: Dedicated;Webhosting
 Tag: SKB Enterprise B.V
@@ -9863,29 +9852,13 @@ Tag: Sergeevich/Nedilskyi
 # ASN 48715 ("Sefroyek Pardaz Engineering Co. LTD").
 # Iranian colo provider and server farm. Brute-force and webapp attacks
 # detected from here.
-# Stop Forum Spam (SFS) listings: 76.
-# Updated: 2021.05.13 / Checked: 2022.01.07
+# Stop Forum Spam (SFS) listings: 59.
+# Updated: 2021.05.13 / Checked: 2022.12.28
 
 2a0a:5e80::/48 Deny Cloud
 Origin: IR
 Profile: Commercial;Infrastructure/Transit;Webhosting
 Tag: Sefroyek Pardaz Engineering
-
-
-# ASNs 16262, 211193 ("Datacheap Ltd", "ABDILAZIZ UULU ZHUSUP").
-# Russian webhoster and server farm. Brute-force, SSH attacks, hacking, and
-# port scans detected from here.
-# Stop Forum Spam (SFS) listings: 13 (AS211193).
-# Updated: 2022.01.07
-
-2a03:e140:3a::/48 Deny Cloud
-2a0e:c147::/32 Deny Cloud
-2a0f:6fc6::/32 Deny Cloud
-2a0f:8444::/32 Deny Cloud
-2a0f:c082::/32 Deny Cloud
-Origin: RU
-Profile: Infrastructure/Transit;Webhosting
-Tag: Datacheap Ltd
 
 
 # ASN 30968 ("INFOBOX").
@@ -10428,15 +10401,18 @@ Tag: Cloud assets LLC
 
 # ASN 56655 ("TerraHost AS").
 # Dedicated server and colo provider. Spam detected here.
-# Stop Forum Spam (SFS) listings: 2,116.
-# Updated: 2022.01.04
+# Stop Forum Spam (SFS) listings: 43,573.
+# Updated: 2022.12.22
 
 2a07:a342:7000::/36 Deny Cloud
 Origin: GB
+2001:7f8:1::/64 Deny Cloud
+2001:7f8:12a::/64 Deny Cloud
 2a0a:4300::/29 Deny Cloud
 2a0f:c480::/29 Deny Cloud
 Origin: NL
-2a03:94e0::/32 Deny Cloud
+2a02:d140:1:110c::/64 Deny Cloud
+2a03:94e0::/30 Deny Cloud
 Origin: NO
 Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: TerraHost AS
@@ -10445,9 +10421,9 @@ Tag: TerraHost AS
 # ASN 24151 ("China Internet Network Infomation Center").
 # Whois provider and network information organisation. Brute-force, SSH, and
 # webapp attacks, port scans, and hacking detected from here.
-# Updated: 2022.01.04
+# Updated: 2022.12.24
 
-2001:dc7::/32 Deny Attacks
+2001:dc7::/32 Deny Cloud
 Origin: CN
 Profile: Commercial;Infrastructure/Transit
 Tag: CNNIC
@@ -10455,8 +10431,8 @@ Tag: CNNIC
 
 # ASN 204818 ("HOSTEUR SAS").
 # Port scans, hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 12.
-# Updated: 2022.01.04
+# Stop Forum Spam (SFS) listings: 11.
+# Updated: 2022.01.04 / Checked: 2022.12.22
 
 2a0d:5380::/29 Deny Cloud
 Origin: CH
@@ -10468,8 +10444,8 @@ Tag: HOSTEUR SAS
 # Server farm/leaser. Brute-force, webapp attacks, hacking, port scans, and
 # spam detected from here. Caught trying to hack Git servers and sniffing for
 # unsecured Git credentials.
-# Stop Forum Spam (SFS) listings: 4,179.
-# Updated: 2022.01.07
+# Stop Forum Spam (SFS) listings: 353.
+# Updated: 2022.01.07 / Checked: 2022.12.28
 
 2a04:1740::/29 Deny Cloud
 2a07:c800::/29 Deny Cloud

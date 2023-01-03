@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: BGPView module (last modified: 2022.06.08).
+ * This file: BGPView module (last modified: 2023.01.03).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -18,12 +18,12 @@ if (!isset($this->CIDRAM['ModuleResCache'])) {
     $this->CIDRAM['ModuleResCache'] = [];
 }
 
-/** Initialise BGPView module  information. */
+/** Initialise BGPView module information. */
 $this->CIDRAM['BGPConfig'] = [
-    'blocked_asns' => array_flip(explode("\n", $this->Configuration['bgpview']['blocked_asns'])),
-    'whitelisted_asns' => array_flip(explode("\n", $this->Configuration['bgpview']['whitelisted_asns'])),
-    'blocked_ccs' => array_flip(explode("\n", $this->Configuration['bgpview']['blocked_ccs'])),
-    'whitelisted_ccs' => array_flip(explode("\n", $this->Configuration['bgpview']['whitelisted_ccs']))
+    'blocked_asns' => array_flip(preg_split('~[\s,]~', $this->Configuration['bgpview']['blocked_asns'], -1, PREG_SPLIT_NO_EMPTY)),
+    'whitelisted_asns' => array_flip(preg_split('~[\s,]~', $this->Configuration['bgpview']['whitelisted_asns'], -1, PREG_SPLIT_NO_EMPTY)),
+    'blocked_ccs' => array_flip(preg_split('~[\s,]~', $this->Configuration['bgpview']['blocked_ccs'], -1, PREG_SPLIT_NO_EMPTY)),
+    'whitelisted_ccs' => array_flip(preg_split('~[\s,]~', $this->Configuration['bgpview']['whitelisted_ccs'], -1, PREG_SPLIT_NO_EMPTY))
 ];
 
 /** Defining as closure for later recall (no params; no return value). */

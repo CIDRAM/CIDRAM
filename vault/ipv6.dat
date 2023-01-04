@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2022.361.0
-# Last modified: 2022.12.28
+# Version: 2023.3.0
+# Last modified: 2023.01.04
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -460,8 +460,8 @@ Tag: eServer.ru
 
 
 # ASN 42244 ("Hosting Operator eServer.ru Ltd").
-# Stop Forum Spam (SFS) listings: 2.
-# Updated: 2019.03.19 / Checked: 2021.12.24
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2019.03.19 / Checked: 2023.01.01
 
 2a0a:2540::/29 Deny Cloud
 Origin: RU
@@ -1002,8 +1002,8 @@ Tag: Ready Server
 
 
 # ASN 42655 ("ON-LINE Ltd").
-# Stop Forum Spam (SFS) listings: 11.
-# Updated: 2016.01.21 / Checked: 2021.12.24
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2016.01.21 / Checked: 2023.01.01
 
 2001:67c:2224::/48 Deny Cloud
 Origin: UA
@@ -1134,11 +1134,10 @@ Tag: SERVERYOU INC
 # ASN 25577 ("CloudCoCo Connect Limited").
 # Occasional reports of WordPress/XMLRPC and honeypot attacks recorded at
 # AbuseIPDB for this network.
-# Updated: 2019.04.07 / Checked: 2022.01.14
+# Updated: 2023.01.04
 
 2803:8700:10::/48 Deny Cloud
 Origin: CR
-2001:67c:1c0::/48 Deny Cloud
 2001:9d8::/32 Deny Cloud
 2a0d:5e00::/29 Deny Cloud
 Origin: GB
@@ -2123,12 +2122,11 @@ Tag: Continuum
 # ASNs 40021, 51167 ("Contabo GmbH").
 # Caught spamming while pretending to be Google. Port scans, brute-force, and
 # webapp attacks also detected from here.
-# Stop Forum Spam (SFS) listings: 1,935 (AS40021), 30,326 (AS51167).
-# Updated: 2022.01.11
+# Stop Forum Spam (SFS) listings: 9,602 (AS40021), 33,794 (AS51167).
+# Updated: 2023.01.01
 
 2a02:c200::/32 Deny Cloud
-2a02:c205::/32 Deny Cloud
-2a02:c206::/31 Deny Cloud
+2a02:c204::/30 Deny Cloud
 Origin: DE
 2605:a140::/31 Deny Cloud
 2605:a142::/32 Deny Cloud
@@ -4710,7 +4708,7 @@ Tag: MnogoByte LLC
 
 
 # ASN 29014 ("ScaleUp Technologies GmbH & Co. KG").
-# Updated: 2020.10.14 / Checked: 2022.01.04
+# Updated: 2023.01.04
 
 2a0e:37c0::/32 Deny Cloud
 Origin: AT
@@ -4719,7 +4717,7 @@ Origin: AT
 2a00:1c38::/47 Deny Cloud
 2a00:1c39::/32 Deny Cloud
 2a0b:2a40::/29 Deny Cloud
-2a0e:7b80::/32 Deny Cloud
+2a0e:7b80::/29 Deny Cloud
 Origin: DE
 Profile: Dedicated;Webhosting
 Tag: ScaleUp Technologies
@@ -5787,7 +5785,8 @@ Tag: Lunavi, Inc
 # with uptime monitoring service "InternetSeer.com". Users of this service
 # should list this section in their ignore.dat file. I won't be mainlining a
 # bypass for them though due to abuse reports from some users.
-# Updated: 2018.08.05 / Checked: 2021.12.30
+# Stop Forum Spam (SFS) listings: 20.
+# Updated: 2018.08.05 / Checked: 2023.01.01
 
 2600:1300::/32 Deny Cloud
 2600:1304::/32 Deny Cloud
@@ -6265,7 +6264,7 @@ Tag: Gigabit Hosting
 # Trademark protection organisation; Scans websites looking for potential
 # infringements in order to send legal notices on behalf of clients. Serves no
 # benefit to the websites being scanned.
-# Updated: 2018.02.25 / Checked: 2021.12.24
+# Updated: 2018.02.25 / Checked: 2023.01.01
 
 2a00:77e0::/32 Deny Cloud
 Origin: GB
@@ -6630,8 +6629,8 @@ Tag: Gyron Internet Ltd
 
 
 # ASN 55229 ("White Sands Hosting").
-# Stop Forum Spam (SFS) listings: 8.
-# Updated: 2018.09.01 / Checked: 2021.12.24
+# Stop Forum Spam (SFS) listings: 23.
+# Updated: 2018.09.01 / Checked: 2023.01.01
 
 2606:3980::/48 Deny Cloud
 Origin: US
@@ -7663,9 +7662,10 @@ Tag: ReliableSite.Net LLC
 
 # ASN 39782 ("Rack Sphere Hosting S.A").
 # Webhosting company caught spamming and attacking WordPress sites.
-# Updated: 2021.05.02 / Checked: 2021.12.31
+# Dead at last check. Will remove at the next update if no change.
+# Updated: 2023.01.01
 
-2a0c:b200::/29 Deny Cloud
+#<redacted>
 Origin: PA
 Profile: Webhosting
 Tag: Rack Sphere Hosting
@@ -8615,7 +8615,8 @@ Tag: SAKURA Internet Inc
 # ASN 25504 ("Vautron Rechenzentrum AG").
 # Server farm, colo/infrastructure provider, hosting provider.
 # Brute-force attempts and SSH attacks detected originating from this network.
-# Updated: 2016.01.18 / Checked: 2022.01.04
+# Stop Forum Spam (SFS) listings: 2.
+# Updated: 2016.01.18 / Checked: 2023.01.04
 
 2001:67c:2394::/48 Deny Cloud
 2a00:19e0::/29 Deny Cloud
@@ -9747,8 +9748,8 @@ Tag: IPAX OG
 
 # ASN 28855 ("Octopuce s.a.r.l").
 # Webhosting provider caught spamming.
-# Stop Forum Spam (SFS) listings: 1,580.
-# Updated: 2021.04.26 / Checked: 2021.12.24
+# Stop Forum Spam (SFS) listings: 1,043.
+# Updated: 2021.04.26 / Checked: 2023.01.01
 
 2001:67c:288::/48 Deny Cloud
 2001:1b78::/32 Deny Cloud
@@ -9828,8 +9829,8 @@ Tag: Alviva Holding Limited
 
 # ASN 45045 ("FOP Kazakov Oleksandr Oleksandrovich").
 # Hacking, brute-force, webapp attacks, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 716.
-# Updated: 2021.05.11 / Checked: 2022.01.07
+# Stop Forum Spam (SFS) listings: 714.
+# Updated: 2021.05.11 / Checked: 2023.01.04
 
 2001:67c:25f4::/48 Deny Attacks
 Origin: UA
@@ -11254,6 +11255,37 @@ Origin: GB
 Origin: US
 Profile: Dedicated;Webhosting
 Tag: VeloxServ
+
+
+# ASN 48551 ("Sindad Network Technology Ltd").
+# WordPress/XMLRPC, SSH, brute-force, and webapp attacks, port scans, hacking,
+# and spam detected from here.
+# Stop Forum Spam (SFS) listings: 8.
+# Updated: 2023.01.01
+
+2a0d:9500::/29 Deny Cloud
+Origin: IR
+Profile: Webhosting
+Tag: Sindad
+
+
+# ASN 14445 ("PeaceWeb").
+# WordPress/XMLRPC and webapp attacks, port scans, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2023.01.01
+
+2a11:1680::/46 Deny Cloud
+2a11:1680:4::/47 Deny Cloud
+2a11:1680:13::/48 Deny Cloud
+2a11:1680:14::/46 Deny Cloud
+2a11:1680:18::/48 Deny Cloud
+Origin: NL
+2606:18c0:9::/48 Deny Cloud
+2606:18c0:a::/47 Deny Cloud
+2606:18c0:c::/48 Deny Cloud
+Origin: US
+Profile: Webhosting
+Tag: PeaceWeb
 
 
 # ---

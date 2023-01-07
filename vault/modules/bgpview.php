@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: BGPView module (last modified: 2023.01.03).
+ * This file: BGPView module (last modified: 2023.01.07).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -59,7 +59,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         $ToCheck[] = array_slice($Expanded[0], 23);
     }
     if (is_array($Expanded[1]) && count($Expanded[1]) === 128) {
-        $ToCheck[] = array_slice($Expanded[0], 47);
+        $ToCheck[] = array_slice($Expanded[1], 47);
     }
 
     /** Check whether we've already performed a lookup for this origin. */

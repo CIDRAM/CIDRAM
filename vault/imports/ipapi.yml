@@ -1,0 +1,29 @@
+##\
+# This file is a part of the CIDRAM package.
+# Homepage: https://cidram.github.io/
+#
+# CIDRAM COPYRIGHT 2016 and beyond by Caleb Mazalevskis (Maikuolan).
+#
+# License: GNU/GPLv2
+# @see LICENSE.txt
+#
+# This file: ip-api defaults file (last modified: 2023.01.07).
+##/
+
+Config Defaults:
+ ipapi:
+  blocked_asns:
+   type: "string"
+   default: ""
+  whitelisted_asns:
+   type: "string"
+   default: ""
+  blocked_ccs:
+   type: "string"
+   default: ""
+  whitelisted_ccs:
+   type: "string"
+   default: ""
+  timeout_limit:
+   type: "int"
+   default: 12

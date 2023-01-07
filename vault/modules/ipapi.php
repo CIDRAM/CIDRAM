@@ -140,7 +140,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             if (!empty($this->BlockInfo['Signatures'])) {
                 $this->BlockInfo['Signatures'] .= ', ';
             }
-            $this->BlockInfo['Signatures'] .= $Factor;
+            $this->BlockInfo['Signatures'] .= $ToCheck;
             $this->BlockInfo['SignatureCount']++;
         }
     }
@@ -172,7 +172,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             if (!empty($this->BlockInfo['Signatures'])) {
                 $this->BlockInfo['Signatures'] .= ', ';
             }
-            $this->BlockInfo['Signatures'] .= $Factor;
+            $this->BlockInfo['Signatures'] .= $ToCheck;
             $this->BlockInfo['SignatureCount']++;
         }
     }

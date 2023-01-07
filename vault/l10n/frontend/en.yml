@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2022.12.04).
+# This file: English language data for the front-end (last modified: 2023.01.07).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -33,16 +33,17 @@ Extended Description Bypasses: "The default signature bypass files normally incl
 Extended Description Chart.js: "Enables the front-end to generate doughnut charts.<br />{{Links.Chart.js}} is available via the <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
 Extended Description Cookie scanner module: "Provides some limited protections against dangerous cookies."
 Extended Description HTTP version checker module: "Makes it possible to block specific protocols and HTTP versions through the CIDRAM configuration."
-Extended Description IPv4: &ExtDesCloud "Blocks unwanted cloud services and non-human endpoints."
+Extended Description IP-API module: "Leverages the {{Links.IP-API}} API to provide an ASN and country code lookup facility for CIDRAM, enabling ASNs and countries to be blocked or whitelisted via the CIDRAM configuration, and providing a means for social networking verification to verify Facebook requests."
 Extended Description IPv4-Bogons: &ExtDesBogons "Blocks bogon/martian CIDRs."
 Extended Description IPv4-ISPs: &ExtDesISPs "Blocks dangerous and spammy ISPs (includes multiplay networks, which may contain both human and non-human endpoints)."
 Extended Description IPv4-Nonblocking: &ExtDesNonblocking "Useful for profiling, but doesn't block anything in its own right."
 Extended Description IPv4-Other: &ExtDesOther "Blocks CIDRs for proxies, VPNs, and other miscellaneous unwanted services."
-Extended Description IPv6: *ExtDesCloud
+Extended Description IPv4: &ExtDesCloud "Blocks unwanted cloud services and non-human endpoints."
 Extended Description IPv6-Bogons: *ExtDesBogons
 Extended Description IPv6-ISPs: *ExtDesISPs
 Extended Description IPv6-Nonblocking: *ExtDesNonblocking
 Extended Description IPv6-Other: *ExtDesOther
+Extended Description IPv6: *ExtDesCloud
 Extended Description Optional security extras module: "Provides some limited protections against various attack vectors commonly used in requests."
 Extended Description PHPMailer: "Required for using any functionality that involves sending email.<br />{{Links.PHPMailer.PHPMailer}} is available via the {{Links.PHPMailer.License}} license."
 Extended Description Project Honeypot module: "Blocks requests from IPs listed at Project Honeypot."
@@ -59,6 +60,7 @@ Name BunnyCDN compatibility module: "BunnyCDN compatibility module."
 Name Bypasses: "Default signature bypasses."
 Name Cookie scanner module: "Optional cookie scanner module."
 Name HTTP version checker module: "HTTP version checker module."
+Name IP-API module: "IP-API module."
 Name IPv4: "IPv4 (cloud and hosting services)."
 Name IPv4-Bogons: "IPv4 (bogons)."
 Name IPv4-ISPs: "IPv4 (spammy ISPs)."
@@ -185,6 +187,11 @@ config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Show cookie warning? Tr
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Maximum number of signatures allowed before the CAPTCHA offer is withdrawn. Default = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
 config_hcaptcha_usemode: &CaptchaUseMode "When should the CAPTCHA be offered? Note: Whitelisted or verified and non-blocked requests never need to complete a CAPTCHA. Also note: CAPTCHAs can provide a useful, additional layer of protection against bots and various kinds of malicious automated requests, but won't provide any protection against a malicious human."
+config_ipapi: "Configuration for the IP-API module (provides an ASN and country code lookup facility for CIDRAM)."
+config_ipapi_blocked_asns: "A list of ASNs to be blocked when matched by the IP-API module."
+config_ipapi_blocked_ccs: "A list of countries (identified by their {{Links.ISO.3166}} 2-digit country codes) to be blocked when matched by the IP-API module."
+config_ipapi_whitelisted_asns: "A list of ASNs to be whitelisted when matched by the IP-API module."
+config_ipapi_whitelisted_ccs: "A list of countries (identified by their {{Links.ISO.3166}} 2-digit country codes) to be whitelisted when matched by the IP-API module."
 config_legal: "Configuration for legal requirements."
 config_legal_privacy_policy: "The address of a relevant privacy policy to be displayed in the footer of any generated pages. Specify a URL, or leave blank to disable."
 config_legal_pseudonymise_ip_addresses: "Pseudonymise IP addresses when logging? True = Yes [Default]; False = No."
@@ -294,6 +301,7 @@ field_delete: "Delete"
 field_delete_account: "Delete account"
 field_download_file: "Download"
 field_edit: "Edit"
+field_execute: "Execute"
 field_execution_order: "Execution order:"
 field_expiry: "Expiry"
 field_false: "False"
@@ -428,6 +436,7 @@ info_some_useful_links: |
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar by Qrator</a> – Useful tool for checking the connectivity of ASNs as well as for various other information about ASNs.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">The Spamhaus Project</a> – Displays reports regarding botnet infection rates for ASNs.</li>
            <li>{{Links.AbuseIPDB}} – Maintains a database of known abusive IPs; Provides an API for checking and reporting IPs.</li>
+           <li>{{Links.IP-API}} – Get information about IP addresses or hostnames such as country code, region name, longitude, latitude, organisation name, etc.</li>
          </ul>
        </li>
        <li><span class="comCat">Informational and learning resources.</span>
@@ -467,6 +476,7 @@ label_aux_move_up: "Move up"
 label_aux_mtdReg: "regular expressions"
 label_aux_mtdStr: "direct string comparison"
 label_aux_mtdWin: "Windows-style wildcards"
+label_aux_mtdDMA: "Detect the method for testing the conditions automatically."
 label_aux_name: "A name for the new rule:"
 label_aux_notes: "Notes (only shown at this page, and doesn't affect the rule):"
 label_aux_reason: "The reason given to the user when blocked:"
@@ -671,6 +681,7 @@ response_directory_deleted: "Directory successfully deleted!"
 response_directory_renamed: "Directory successfully renamed!"
 response_failed: "Failed"
 response_failed_to_access: "Failed to access "%s"!"
+response_failed_to_execute: "Failed to execute!"
 response_failed_to_install: "Failed to install!"
 response_failed_to_update: "Failed to update!"
 response_file_deleted: "File successfully deleted!"

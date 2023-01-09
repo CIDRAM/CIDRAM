@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2023.01.07).
+# This file: Portuguese language data for the front-end (last modified: 2023.01.09).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -33,6 +33,7 @@ Extended Description Bypasses: "Os arquivos para bypass das assinaturas padrão 
 Extended Description Chart.js: "Permite que o front-end gere gráficos de pizza.<br />{{Links.Chart.js}} está disponível através do <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
 Extended Description Cookie scanner module: "Fornece algumas proteções limitadas contra cookies perigosos."
 Extended Description HTTP version checker module: "Possibilita o bloqueio de protocolos específicos e versões HTTP por meio da configuração CIDRAM."
+Extended Description IP-API module: "Aproveita a API {{Links.IP-API}} para fornecer funcionalidade de pesquisa para ASNs e códigos de país para o CIDRAM, permitindo que ASNs e países sejam bloqueados ou incluídos na lista branca por meio da configuração da CIDRAM, e fornecer um meio de verificação de rede social para verificar solicitações do Facebook."
 Extended Description IPv4: &ExtDesCloud "Bloqueia serviços em nuvem indesejados e pontos de extremidade não-humanos."
 Extended Description IPv4-Bogons: &ExtDesBogons "Bloqueia bogon/marciano CIDRs."
 Extended Description IPv4-ISPs: &ExtDesISPs "Bloqueia ISPs perigosos e propensos a spam (inclui redes multijogos, que podem conter endpoints humanos e não humanos)."
@@ -59,6 +60,7 @@ Name BunnyCDN compatibility module: "BunnyCDN módulo de compatibilidade."
 Name Bypasses: "Bypasses das assinaturas padrão."
 Name Cookie scanner module: "Módulo opcional para análise de cookies."
 Name HTTP version checker module: "Módulo verificador de versão HTTP."
+Name IP-API module: "Módulo IP-API."
 Name IPv4: "IPv4 (serviços de nuvem e hospedagem)."
 Name IPv4-Bogons: "IPv4 (bogon)."
 Name IPv4-ISPs: "IPv4 (ISPs que enviam spam)."
@@ -104,10 +106,10 @@ config_abuseipdb_minimum_confidence_score: "A pontuação mínima de confiança 
 config_abuseipdb_minimum_total_reports: "O número mínimo de relatórios totais necessários para que o CIDRAM bloqueie um endereço IP. Padrão = 1."
 config_abuseipdb_report_back: "Permitir que o CIDRAM relate o mau comportamento detectado de volta ao AbuseIPDB usando sua chave de API? Padrão = False."
 config_bgpview: "Configuração para o módulo BGPView (fornece um recurso de pesquisa de código de país e ASN para CIDRAM)."
-config_bgpview_blocked_asns: "Uma lista de ASNs a serem bloqueados quando correspondidos pelo módulo BGPView."
-config_bgpview_blocked_ccs: "Uma lista de países (identificados por seus códigos de país de 2 dígitos {{Links.ISO.3166}}) a serem bloqueados quando correspondidos pelo módulo BGPView."
-config_bgpview_whitelisted_asns: "Uma lista de ASNs a serem incluídos na lista branca quando correspondidos pelo módulo BGPView."
-config_bgpview_whitelisted_ccs: "Uma lista de países (identificados por seus códigos de país de 2 dígitos {{Links.ISO.3166}}) a serem incluídos na lista branca quando correspondidos pelo módulo BGPView."
+config_bgpview_blocked_asns: &ConfigBlockedASNs "Uma lista de ASNs a serem bloqueados quando correspondidos pelo módulo."
+config_bgpview_blocked_ccs: &ConfigBlockedCCs "Uma lista de países (identificados por seus códigos de país de 2 dígitos {{Links.ISO.3166}}) a serem bloqueados quando correspondidos pelo módulo."
+config_bgpview_whitelisted_asns: &ConfigWhitelistedASNs "Uma lista de ASNs a serem incluídos na lista branca quando correspondidos pelo módulo."
+config_bgpview_whitelisted_ccs: &ConfigWhitelistedCCs "Uma lista de países (identificados por seus códigos de país de 2 dígitos {{Links.ISO.3166}}) a serem incluídos na lista branca quando correspondidos pelo módulo."
 config_bobuam: "Configuração para o "módulo para agentes do usuário de bot ou navegador" opcional, que detecta bots indesejados, navegadores antigos, e executa algumas verificações de sanidade."
 config_bobuam_block_bots: "Bloquear bots reconhecidos como maliciosos ou indesejados?"
 config_bobuam_block_eol_browsers: "Bloquear navegadores que atingiram o fim da vida útil? (Defina as versões abaixo)."
@@ -185,6 +187,11 @@ config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Mostrar aviso de cookie
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "O número máximo de assinaturas permitidas antes que o CAPTCHA seja retirado. Padrão = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
 config_hcaptcha_usemode: &CaptchaUseMode "Quando o CAPTCHA deve ser oferecido? Nota: Solicitações na lista branca ou verificadas e não bloqueadas nunca precisam completar um CAPTCHA. Também: Os CAPTCHAs podem fornecer uma camada de proteção útil contra bots e vários tipos de solicitações automatizadas e maliciosas, mas não fornecerão nenhuma proteção contra humanos maliciosas."
+config_ipapi: "Configuração para o módulo IP-API (fornece um recurso de pesquisa de código de país e ASN para CIDRAM)."
+config_ipapi_blocked_asns: *ConfigBlockedASNs
+config_ipapi_blocked_ccs: *ConfigBlockedCCs
+config_ipapi_whitelisted_asns: *ConfigWhitelistedASNs
+config_ipapi_whitelisted_ccs: *ConfigWhitelistedCCs
 config_legal: "Configuração para requisitos legais."
 config_legal_privacy_policy: "O endereço de uma política de privacidade relevante a ser exibida no rodapé de qualquer página gerada. Especifique um URL, ou deixe em branco para desabilitar."
 config_legal_pseudonymise_ip_addresses: "Pseudonimiza endereços IP ao escrever os arquivos de log? True = Sim [Padrão]; False = Não."
@@ -351,7 +358,7 @@ field_verify_all: "Verifique tudo"
 field_whitelisted_requests: "Solicitações marcadas como na lista branca"
 field_your_version: "Sua Versão"
 header_login: "Por favor faça o login para continuar."
-hints_asnlookup: "** Requer funcionalidade de pesquisa ASN (por exemplo, através do módulo BGPView)."
+hints_asnlookup: "** Requer funcionalidade de pesquisa ASN (por exemplo, através do módulo IP-API ou BGPView)."
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.pt.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="pt">O que posso usar para "default_dns"?</a></em>"
 hints_duration:

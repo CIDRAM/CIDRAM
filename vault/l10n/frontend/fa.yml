@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Farsi language data for the front (last modified: 2023.01.07).
+# This file: Farsi language data for the front (last modified: 2023.01.09).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -33,6 +33,7 @@ Extended Description Bypasses: "فایل‌های دور زدن امضای پی�
 Extended Description Chart.js: "این امکان را برای جلویی ایجاد می کند تا نمودارهای دونات تولید کند.<br />{{Links.Chart.js}} از طریق مجوز <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a> در دسترس است."
 Extended Description Cookie scanner module: "محافظت های محدودی در برابر کوکی های خطرناک ارائه می دهد."
 Extended Description HTTP version checker module: "مسدود کردن پروتکل‌های خاص و نسخه‌های HTTP را از طریق پیکربندی CIDRAM ممکن می‌سازد."
+Extended Description IP-API module: "از API {{Links.IP-API}} برای ارائه تسهیلات جستجوی ASN و کد کشور برای CIDRAM استفاده می کند، این امکان را می دهد که ASN ها و کشورها از طریق پیکربندی CIDRAM مسدود یا در لیست سفید قرار گیرند و ابزاری برای تأیید شبکه های اجتماعی برای تأیید درخواست های فیس بوک فراهم شود."
 Extended Description IPv4: &ExtDesCloud "خدمات ابری ناخواسته و نقاط پایانی غیر انسانی را مسدود می کند."
 Extended Description IPv4-Bogons: &ExtDesBogons "CIDR های بوگون/مریخی را مسدود می کند."
 Extended Description IPv4-ISPs: &ExtDesISPs "ISP های خطرناک و اسپم را مسدود می کند (شامل شبکه‌هایی می‌شود که ممکن است حاوی نقاط پایانی انسانی و غیر انسانی باشند)."
@@ -59,6 +60,7 @@ Name BunnyCDN compatibility module: "ماژول سازگاری BunnyCDN."
 Name Bypasses: "دور زدن امضای پیش‌فرض."
 Name Cookie scanner module: "ماژول اسکنر کوکی اختیاری."
 Name HTTP version checker module: "ماژول بررسی نسخه HTTP."
+Name IP-API module: "ماژول IP-API."
 Name IPv4: "IPv4 (خدمات ابری و هاستینگ)."
 Name IPv4-Bogons: "IPv4 (بوگون ها)."
 Name IPv4-ISPs: "IPv4 (ISP های اسپم)."
@@ -104,10 +106,10 @@ config_abuseipdb_minimum_confidence_score: "حداقل امتیاز اطمینا
 config_abuseipdb_minimum_total_reports: "حداقل تعداد کل گزارش های مورد نیاز برای مسدود کردن یک آدرس IP توسط CIDRAM. پیش فرض = 1."
 config_abuseipdb_report_back: "به CIDRAM اجازه می‌دهید با استفاده از کلید API شما، رفتار بد شناسایی شده را به AbuseIPDB گزارش دهد؟ پیش فرض = False."
 config_bgpview: "پیکربندی ماژول BGPView (یک مرکز جستجوی کد ASN و کشور برای CIDRAM فراهم می کند)."
-config_bgpview_blocked_asns: "لیستی از ASNهایی که در صورت مطابقت با ماژول BGPView مسدود می شوند."
-config_bgpview_blocked_ccs: "لیستی از کشورهایی (با کدهای دو رقمی {{Links.ISO.3166}} آنها شناسایی می شود) که در صورت مطابقت با ماژول BGPView مسدود می شوند."
-config_bgpview_whitelisted_asns: "لیستی از ASN هایی که در صورت تطبیق با ماژول BGPView در لیست سفید قرار می گیرند."
-config_bgpview_whitelisted_ccs: "لیستی از کشورهایی (با کدهای دو رقمی {{Links.ISO.3166}} آنها شناسایی می شود) که در صورت تطبیق با ماژول BGPView در لیست سفید قرار می گیرند."
+config_bgpview_blocked_asns: &ConfigBlockedASNs "لیستی از ASNهایی که در صورت مطابقت با ماژول مسدود می شوند."
+config_bgpview_blocked_ccs: &ConfigBlockedCCs "لیستی از کشورهایی (با کدهای دو رقمی {{Links.ISO.3166}} آنها شناسایی می شود) که در صورت مطابقت با ماژول مسدود می شوند."
+config_bgpview_whitelisted_asns: &ConfigWhitelistedASNs "لیستی از ASN هایی که در صورت تطبیق با ماژول در لیست سفید قرار می گیرند."
+config_bgpview_whitelisted_ccs: &ConfigWhitelistedCCs "لیستی از کشورهایی (با کدهای دو رقمی {{Links.ISO.3166}} آنها شناسایی می شود) که در صورت تطبیق با ماژول در لیست سفید قرار می گیرند."
 config_bobuam: "پیکربندی برای «ربات یا ماژول عامل های کاربر مرورگر». این ماژول ربات های ناخواسته، مرورگرهای قدیمی را شناسایی می کند، و برخی از بررسی های سلامت عقل را انجام می دهد."
 config_bobuam_block_bots: "ربات های مخرب یا ناخواسته را مسدود کنید؟"
 config_bobuam_block_eol_browsers: "مرورگرهایی را که به پایان عمرشان رسیده‌اند مسدود کنید؟ (نسخه های را زیر تنظیم کنید)."
@@ -185,6 +187,11 @@ config_hcaptcha_show_cookie_warning: &ShowCookieWarning "نمایش هشدار �
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "حداکثر تعداد امضاهای مجاز قبل از لغو پیشنهاد CAPTCHA. پیش فرض = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
 config_hcaptcha_usemode: &CaptchaUseMode "چه زمانی باید CAPTCHA ارائه شود؟ توجه داشته باشید: درخواست هایی که در لیست سفید قرار می گیرند، یا تأیید می شوند و مسدود نمی شوند، هرگز نیازی به تکمیل یک CAPTCHA ندارند. همچنین توجه داشته باشید: CAPTCHA ها می توانند یک لایه حفاظتی مفید و اضافی در برابر ربات ها و انواع مختلف درخواست های خودکار مخرب ارائه دهند، اما هیچ گونه محافظتی در برابر یک انسان مخرب ارائه نمی کنند."
+config_ipapi: "پیکربندی ماژول IP-API (یک مرکز جستجوی کد ASN و کشور برای CIDRAM فراهم می کند)."
+config_ipapi_blocked_asns: *ConfigBlockedASNs
+config_ipapi_blocked_ccs: *ConfigBlockedCCs
+config_ipapi_whitelisted_asns: *ConfigWhitelistedASNs
+config_ipapi_whitelisted_ccs: *ConfigWhitelistedCCs
 config_legal: "پیکربندی برای الزامات قانونی."
 config_legal_privacy_policy: "آدرس یک سیاست حفظ حریم خصوصی مربوطه که باید در پاورقی هر صفحه ایجاد شده نمایش داده شود. URL را مشخص کنید، یا برای غیرفعال کردن آن را خالی بگذارید."
 config_legal_pseudonymise_ip_addresses: "نام مستعار آدرس های IP هنگام ثبت؟ True = آره [پیش فرض]؛ False = نکن."
@@ -349,7 +356,7 @@ field_verify_all: "همه آنها را تأیید کنید"
 field_whitelisted_requests: "درخواست های لیست سفید"
 field_your_version: "نسخه شما"
 header_login: "لطفا برای ادامه وارد شوید."
-hints_asnlookup: "** به عملکرد جستجوی ASN نیاز دارد (به عنوان مثال، از طریق ماژول BGPView)."
+hints_asnlookup: "** به عملکرد جستجوی ASN نیاز دارد (به عنوان مثال، از طریق ماژول IP-API یا BGPView)."
 hints_default_dns:
  سوالات متداول.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="en-AU">برای «default_dns» از چه چیزی می توانم استفاده کنم؟</a></em>"
 hints_duration:

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2023.01.07).
+# This file: Norwegian language data for the front-end (last modified: 2023.01.09).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -33,6 +33,7 @@ Extended Description Bypasses: "Standard-signatur-bypass-filene som normalt føl
 Extended Description Chart.js: "Gjør det mulig for frontendens å generere pajediagrammer.<br />{{Links.Chart.js}} er tilgjengelig via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
 Extended Description Cookie scanner module: "Gir noen begrensede beskyttelser mot farlige informasjonskapsler."
 Extended Description HTTP version checker module: "Gjør det mulig å blokkere spesifikke protokoller og HTTP-versjoner gjennom CIDRAM-konfigurasjonen."
+Extended Description IP-API module: "Utnytter {{Links.IP-API}} API for å tilby et ASN og landkode oppslag funksjonalitet for CIDRAM, slik at ASNer og land kan blokkeres eller hvitelister via CIDRAM-konfigurasjonen, og tilveiebringe et middel for verifisering av sosiale nettverk for å bekrefte Facebook-forespørsler."
 Extended Description IPv4: &ExtDesCloud "Blokkerer uønskede sky-tjenester og ikke-menneskelige endepunkter."
 Extended Description IPv4-Bogons: &ExtDesBogons "Blokkerer bogon/martian CIDRer."
 Extended Description IPv4-ISPs: &ExtDesISPs "Blokkerer farlige og spam-fylte ISPer (inkluderer flerspillnettverk, som kan inneholde både menneskelige og ikke-menneskelige endepunkter)."
@@ -59,6 +60,7 @@ Name BunnyCDN compatibility module: "BunnyCDN kompatibilitetsmodul."
 Name Bypasses: "Standard-signatur-bypassene."
 Name Cookie scanner module: "Valgfrie informasjonskapselskannermodul."
 Name HTTP version checker module: "HTTP-versjonskontrollmodul."
+Name IP-API module: "IP-API modul."
 Name IPv4: "IPv4 (sky og hosting tjenester)."
 Name IPv4-Bogons: "IPv4 (bogoner)."
 Name IPv4-ISPs: "IPv4 (spam-fylte ISPer)."
@@ -104,10 +106,10 @@ config_abuseipdb_minimum_confidence_score: "Minste konfidenspoengsummen som krev
 config_abuseipdb_minimum_total_reports: "Minimum antall totalt rapporter som kreves for at CIDRAM skal blokkere en IP-adresse. Standardverdi = 1."
 config_abuseipdb_report_back: "Tillate at CIDRAM rapporterer oppdaget dårlig oppførsel tilbake til AbuseIPDB ved å bruke API-nøkkelen din? Standardverdi = False."
 config_bgpview: "Konfigurasjon for BGPView-modulen (tilbyr en ASN- og landskodeoppslagsfunksjon for CIDRAM)."
-config_bgpview_blocked_asns: "En liste over ASNer som skal blokkeres når de matchet av BGPView-modulen."
-config_bgpview_blocked_ccs: "En liste over land (identifisert av deres {{Links.ISO.3166}} 2-sifrede landskoder) som skal blokkeres når de matchet av BGPView-modulen."
-config_bgpview_whitelisted_asns: "En liste over ASNer som skal hvitelistes når de matchet av BGPView-modulen."
-config_bgpview_whitelisted_ccs: "En liste over land (identifisert av deres {{Links.ISO.3166}} 2-sifrede landskoder) som skal hvitelistes når de matchet av BGPView-modulen."
+config_bgpview_blocked_asns: &ConfigBlockedASNs "En liste over ASNer som skal blokkeres når de matchet av modulen."
+config_bgpview_blocked_ccs: &ConfigBlockedCCs "En liste over land (identifisert av deres {{Links.ISO.3166}} 2-sifrede landskoder) som skal blokkeres når de matchet av modulen."
+config_bgpview_whitelisted_asns: &ConfigWhitelistedASNs "En liste over ASNer som skal hvitelistes når de matchet av modulen."
+config_bgpview_whitelisted_ccs: &ConfigWhitelistedCCs "En liste over land (identifisert av deres {{Links.ISO.3166}} 2-sifrede landskoder) som skal hvitelistes når de matchet av modulen."
 config_bobuam: "Konfigurasjon for den valgfrie "bot eller nettleser brukeragentmodul", som oppdager uønskede roboter, gamle nettlesere, og utfører noen sikkerhetskontroll."
 config_bobuam_block_bots: "Blokkere roboter gjenkjent som ondsinnet eller uønsket?"
 config_bobuam_block_eol_browsers: "Blokkere nettlesere som har nådd slutten av livet? (Angi versjonene nedenfor)."
@@ -185,6 +187,11 @@ config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Inkludere informasjonsk
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Maksimalt antall signaturer tillatt før du trekker tilbake et CAPTCHA-tilbud. Standardverdi = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
 config_hcaptcha_usemode: &CaptchaUseMode "Når skal CAPTCHA tilbys? Merk: Hvitlistet eller verifiserte og ikke-blokkerte forespørsler trenger aldri å fullføre en CAPTCHA. Merk også: CAPTCHA-er kan gi et nyttig, ekstra lag med beskyttelse mot roboter og ulike typer ondsinnede automatiske forespørsler, men vil ikke gi noen beskyttelse mot et ondsinnet menneske."
+config_ipapi: "Konfigurasjon for IP-API-modulen (tilbyr en ASN- og landskodeoppslagsfunksjon for CIDRAM)."
+config_ipapi_blocked_asns: *ConfigBlockedASNs
+config_ipapi_blocked_ccs: *ConfigBlockedCCs
+config_ipapi_whitelisted_asns: *ConfigWhitelistedASNs
+config_ipapi_whitelisted_ccs: *ConfigWhitelistedCCs
 config_legal: "Konfigurasjon for juridiske krav."
 config_legal_privacy_policy: "Adressen til en relevant personvernpolicy som skal vises i bunnteksten til genererte sider. Angi en nettadresse, eller la det være tomt for å deaktivere."
 config_legal_pseudonymise_ip_addresses: "Pseudonymisere IP-adresser når du logger? True = Ja [Standardverdi]; False = Nei."
@@ -349,7 +356,7 @@ field_verify_all: "Verifisere alt"
 field_whitelisted_requests: "Hvitlistede forespørsler"
 field_your_version: "Din Versjon"
 header_login: "Vennligst logg inn for å fortsette."
-hints_asnlookup: "** Krever ASN-oppslagsfunksjonalitet (f.eks., via BGPView-modulen)."
+hints_asnlookup: "** Krever ASN-oppslagsfunksjonalitet (f.eks., via IP-API-modulen eller BGPView-modulen)."
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="en-AU">Hva kan jeg bruke for "default_dns"?</a></em>"
 hints_duration:

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2023.01.07).
+# This file: Swedish language data for the front-end (last modified: 2023.01.09).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -33,6 +33,7 @@ Extended Description Bypasses: "Standard-signatur-bypass-filer som normalt ingå
 Extended Description Chart.js: "Gör det möjligt för framsidan att generera cirkeldiagram.<br />{{Links.Chart.js}} är tillgängligt via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
 Extended Description Cookie scanner module: "Ger vissa begränsade skydd mot farliga kakor."
 Extended Description HTTP version checker module: "Gör det möjligt att blockera specifika protokoll och HTTP-versioner genom CIDRAM-konfigurationen."
+Extended Description IP-API module: "Utnyttjar {{Links.IP-API}} API för att tillhandahålla sökfunktioner för ASNer och landskoder för CIDRAM, så att ASNer och länder kan blockeras eller listas med vitlista via CIDRAM-konfigurationen, och tillhandahålla ett sätt för verifiering av socialt nätverk för att verifiera Facebook-förfrågningar."
 Extended Description IPv4: &ExtDesCloud "Blockerar oönskade molntjänster och icke-mänskliga ändpunkter."
 Extended Description IPv4-Bogons: &ExtDesBogons "Blockerar bogon/martian CIDRer."
 Extended Description IPv4-ISPs: &ExtDesISPs "Blockerar farliga och spammiga internetleverantörer (inkluderar multiplay-nätverk, som kan innehålla både mänskliga och icke-mänskliga slutpunkter)."
@@ -59,6 +60,7 @@ Name BunnyCDN compatibility module: "BunnyCDN-kompatibilitetsmodul."
 Name Bypasses: "Standard-signatur-bypasser."
 Name Cookie scanner module: "Valfri cookieskannermodul."
 Name HTTP version checker module: "HTTP-versionskontrollmodul."
+Name IP-API module: "IP-API modul."
 Name IPv4: "IPv4 (molntjänster och värdtjänster)."
 Name IPv4-Bogons: "IPv4 (bogons)."
 Name IPv4-ISPs: "IPv4 (spammiga internetleverantörer)."
@@ -104,10 +106,10 @@ config_abuseipdb_minimum_confidence_score: "Det minsta konfidenspoäng som kräv
 config_abuseipdb_minimum_total_reports: "Det minsta antalet totala rapporter som krävs för att CIDRAM ska blockera en IP-adress. Standard = 1."
 config_abuseipdb_report_back: "Tillåta CIDRAM att rapportera upptäckt dåligt beteende tillbaka till AbuseIPDB med din API-nyckel? Standard = False."
 config_bgpview: "Konfiguration för BGPView-modulen (tillhandahåller en ASN- och landskodsökningsfunktion för CIDRAM)."
-config_bgpview_blocked_asns: "En lista över ASNer som ska blockeras när de matchas av BGPView-modulen."
-config_bgpview_blocked_ccs: "En lista över länder (identifieras med sina tvåsiffriga {{Links.ISO.3166}}-landskoder) som ska blockeras när de matchas av BGPView-modulen."
-config_bgpview_whitelisted_asns: "En lista över ASNer som ska vitlistas när de matchas av BGPView-modulen."
-config_bgpview_whitelisted_ccs: "En lista över länder (identifieras med sina tvåsiffriga {{Links.ISO.3166}}-landskoder) som ska vitlistas när de matchas av BGPView-modulen."
+config_bgpview_blocked_asns: &ConfigBlockedASNs "En lista över ASNer som ska blockeras när de matchas av modulen."
+config_bgpview_blocked_ccs: &ConfigBlockedCCs "En lista över länder (identifieras med sina tvåsiffriga {{Links.ISO.3166}}-landskoder) som ska blockeras när de matchas av modulen."
+config_bgpview_whitelisted_asns: &ConfigWhitelistedASNs "En lista över ASNer som ska vitlistas när de matchas av modulen."
+config_bgpview_whitelisted_ccs: &ConfigWhitelistedCCs "En lista över länder (identifieras med sina tvåsiffriga {{Links.ISO.3166}}-landskoder) som ska vitlistas när de matchas av modulen."
 config_bobuam: "Konfiguration för den valfria "modul för användaragenter för bots eller webbläsare", som upptäcker oönskade bots, gamla webbläsare, och utför vissa säkerhetskontroller."
 config_bobuam_block_bots: "Blockera bots som identifierats som skadliga eller oönskade?"
 config_bobuam_block_eol_browsers: "Blockera webbläsare som har nått slutet på livet? (Ställ in versionerna nedan)."
@@ -185,6 +187,11 @@ config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Inkludera cookievarning
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Maximalt antal signaturer tillåtna innan CAPTCHA-erbjudandet dras tillbaka. Standard = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
 config_hcaptcha_usemode: &CaptchaUseMode "När ska CAPTCHA erbjudas? Obs: Vitlistade eller verifierade och icke-blockerade förfrågningar behöver aldrig slutföra en CAPTCHA. Också: CAPTCHA-ar kan ge ett användbart, ytterligare skydd mot bots och olika typer av illvilliga automatiska förfrågningar, men ger inget skydd mot illvilliga människor."
+config_ipapi: "Konfiguration för IP-API-modulen (tillhandahåller en ASN- och landskodsökningsfunktion för CIDRAM)."
+config_ipapi_blocked_asns: *ConfigBlockedASNs
+config_ipapi_blocked_ccs: *ConfigBlockedCCs
+config_ipapi_whitelisted_asns: *ConfigWhitelistedASNs
+config_ipapi_whitelisted_ccs: *ConfigWhitelistedCCs
 config_legal: "Konfiguration för lagkrav."
 config_legal_privacy_policy: "Adressen till en relevant integritetspolicy som ska visas i sidfoten av genererade sidor. Ange en webbadress, eller lämna tomt för att inaktivera."
 config_legal_pseudonymise_ip_addresses: "Pseudonymisera IP-adresser när loggning? True = Ja [Standard]; False = Nej."
@@ -349,7 +356,7 @@ field_verify_all: "Verifiera allt"
 field_whitelisted_requests: "Vitlistade förfrågningar"
 field_your_version: "Din version"
 header_login: "Snälla logga in för att fortsätta."
-hints_asnlookup: "** Kräver ASN-uppslagsfunktion (t.ex., via BGPView-modulen)."
+hints_asnlookup: "** Kräver ASN-uppslagsfunktion (t.ex., via IP-API-modulen eller BGPView-modulen)."
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="en-AU">Vad kan jag använda för "default_dns"?</a></em>"
 hints_duration:

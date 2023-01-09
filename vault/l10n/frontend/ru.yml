@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2023.01.07).
+# This file: Russian language data for the front-end (last modified: 2023.01.09).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -33,6 +33,7 @@ Extended Description Bypasses: "Стандартная сигнатуры бай
 Extended Description Chart.js: "Позволяет фронтенд создавать круговые диаграммы.<br />{{Links.Chart.js}} доступен через <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
 Extended Description Cookie scanner module: "Обеспечивает некоторые ограниченные средства защиты против опасных куки."
 Extended Description HTTP version checker module: "Дает возможность блокировать определенные протоколы и версии HTTP через конфигурацию CIDRAM."
+Extended Description IP-API module: "Использует API {{Links.IP-API}} для предоставления средства поиска для ASN и коды страны для CIDRAM, таким образом, позволяя блокировать или вносить белый список ASN и стран через конфигурацию CIDRAM, и предоставление средств для проверки в социальных сетях для проверки запросов Facebook."
 Extended Description IPv4: &ExtDesCloud "Блокирует нежелательные облачные сервисы и нечеловеческие конечные точки."
 Extended Description IPv4-Bogons: &ExtDesBogons "Блокирует bogon/марсианин CIDRы."
 Extended Description IPv4-ISPs: &ExtDesISPs "Блокирует опасно и спам-склонным интернет-провайдеры (включает multiplay сети, которые могут содержать человеческие и нечеловеческие конечные точки)."
@@ -59,6 +60,7 @@ Name BunnyCDN compatibility module: "Модуль совместимости Bun
 Name Bypasses: "Стандартная сигнатуры байпасы."
 Name Cookie scanner module: "Куки сканер модуль необязательный."
 Name HTTP version checker module: "Модуль проверки версии HTTP."
+Name IP-API module: "Модуль IP-API."
 Name IPv4: "IPv4 (облачные и хостинговые услуги)."
 Name IPv4-Bogons: "IPv4 (bogon)."
 Name IPv4-ISPs: "IPv4 (спам-толерантные интернет-провайдеры)."
@@ -104,10 +106,10 @@ config_abuseipdb_minimum_confidence_score: "Минимальная оценка 
 config_abuseipdb_minimum_total_reports: "Минимальное общее количество отчетов, необходимых для того, чтобы CIDRAM заблокировала IP-адрес. Стандарт = 1."
 config_abuseipdb_report_back: "Разрешить CIDRAM сообщать об обнаруженном плохом поведении обратно в AbuseIPDB, используя ваш ключ API? Стандарт = False."
 config_bgpview: "Конфигурация для модуля BGPView (предоставляет средство поиска ASN и кода страны для CIDRAM)."
-config_bgpview_blocked_asns: "Список ASN, которые будут заблокированы при соответствует модулем BGPView."
-config_bgpview_blocked_ccs: "Список стран (идентифицируются их двухзначными кодами стран {{Links.ISO.3166}}), которые будут заблокированы при соответствует модулем BGPView."
-config_bgpview_whitelisted_asns: "Список ASN для включения в белый список при соответствует модулем BGPView."
-config_bgpview_whitelisted_ccs: "Список стран (идентифицируются их двухзначными кодами стран {{Links.ISO.3166}}) для включения в белый список при соответствует модулем BGPView."
+config_bgpview_blocked_asns: &ConfigBlockedASNs "Список ASN, которые будут заблокированы при соответствует модулем."
+config_bgpview_blocked_ccs: &ConfigBlockedCCs "Список стран (идентифицируются их двухзначными кодами стран {{Links.ISO.3166}}), которые будут заблокированы при соответствует модулем."
+config_bgpview_whitelisted_asns: &ConfigWhitelistedASNs "Список ASN для включения в белый список при соответствует модулем."
+config_bgpview_whitelisted_ccs: &ConfigWhitelistedCCs "Список стран (идентифицируются их двухзначными кодами стран {{Links.ISO.3166}}) для включения в белый список при соответствует модулем."
 config_bobuam: "Конфигурация для дополнительного «модуля пользовательских агентов бота или браузера», который обнаруживает нежелательных ботов, старые браузеры, и выполняет некоторые проверки работоспособности."
 config_bobuam_block_bots: "Блокировать ботов, признанных вредоносными или нежелательными?"
 config_bobuam_block_eol_browsers: "Блокировать браузеры, срок службы которых истек? (Установить версии ниже)."
@@ -185,6 +187,11 @@ config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Показать пре
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Максимально допустимое количество сигнатурей перед снятием CAPTCHA. Стандарт = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
 config_hcaptcha_usemode: &CaptchaUseMode "Когда следует предлагать CAPTCHA? Примечание: Запросы из белого списка или проверенные и неблокированные запросы никогда не требуют выполнения CAPTCHA. Также обратите внимание: CAPTCHA может обеспечить полезный дополнительный уровень защиты от ботов и различных вредоносных автоматических запросов, но не обеспечивает никакой защиты от вредоносных люди."
+config_ipapi: "Конфигурация для модуля IP-API (предоставляет средство поиска ASN и кода страны для CIDRAM)."
+config_ipapi_blocked_asns: *ConfigBlockedASNs
+config_ipapi_blocked_ccs: *ConfigBlockedCCs
+config_ipapi_whitelisted_asns: *ConfigWhitelistedASNs
+config_ipapi_whitelisted_ccs: *ConfigWhitelistedCCs
 config_legal: "Конфигурация для юридических требований."
 config_legal_privacy_policy: "Адрес соответствующей политики конфиденциальности, отображаемый в нижнем колонтитуле любых сгенерированных страниц. Укажите URL-адрес, или оставьте пустым для отключения."
 config_legal_pseudonymise_ip_addresses: "Псевдонимный IP-адреса при записи файлов журнала? True = Да [Стандарт]; False = Нет."
@@ -352,7 +359,7 @@ field_verify_all: "Проверить все"
 field_whitelisted_requests: "Запросы отмечены как в белом списке"
 field_your_version: "Ваша версия"
 header_login: "Пожалуйста войдите чтобы продолжить."
-hints_asnlookup: "** Требуется функция поиска ASN (например, через модуль BGPView)."
+hints_asnlookup: "** Требуется функция поиска ASN (например, через модуль IP-API или BGPView)."
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.ru.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="ru">Что я могу использовать для «default_dns»?</a></em>"
 hints_duration:

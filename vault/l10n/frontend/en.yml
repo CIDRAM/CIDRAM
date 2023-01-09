@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2023.01.07).
+# This file: English language data for the front-end (last modified: 2023.01.09).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -34,16 +34,16 @@ Extended Description Chart.js: "Enables the front-end to generate doughnut chart
 Extended Description Cookie scanner module: "Provides some limited protections against dangerous cookies."
 Extended Description HTTP version checker module: "Makes it possible to block specific protocols and HTTP versions through the CIDRAM configuration."
 Extended Description IP-API module: "Leverages the {{Links.IP-API}} API to provide an ASN and country code lookup facility for CIDRAM, enabling ASNs and countries to be blocked or whitelisted via the CIDRAM configuration, and providing a means for social networking verification to verify Facebook requests."
+Extended Description IPv4: &ExtDesCloud "Blocks unwanted cloud services and non-human endpoints."
 Extended Description IPv4-Bogons: &ExtDesBogons "Blocks bogon/martian CIDRs."
 Extended Description IPv4-ISPs: &ExtDesISPs "Blocks dangerous and spammy ISPs (includes multiplay networks, which may contain both human and non-human endpoints)."
 Extended Description IPv4-Nonblocking: &ExtDesNonblocking "Useful for profiling, but doesn't block anything in its own right."
 Extended Description IPv4-Other: &ExtDesOther "Blocks CIDRs for proxies, VPNs, and other miscellaneous unwanted services."
-Extended Description IPv4: &ExtDesCloud "Blocks unwanted cloud services and non-human endpoints."
+Extended Description IPv6: *ExtDesCloud
 Extended Description IPv6-Bogons: *ExtDesBogons
 Extended Description IPv6-ISPs: *ExtDesISPs
 Extended Description IPv6-Nonblocking: *ExtDesNonblocking
 Extended Description IPv6-Other: *ExtDesOther
-Extended Description IPv6: *ExtDesCloud
 Extended Description Optional security extras module: "Provides some limited protections against various attack vectors commonly used in requests."
 Extended Description PHPMailer: "Required for using any functionality that involves sending email.<br />{{Links.PHPMailer.PHPMailer}} is available via the {{Links.PHPMailer.License}} license."
 Extended Description Project Honeypot module: "Blocks requests from IPs listed at Project Honeypot."
@@ -106,10 +106,10 @@ config_abuseipdb_minimum_confidence_score: "The minimum confidence score require
 config_abuseipdb_minimum_total_reports: "The minimum number of total reports required in order for CIDRAM to block an IP address. Default = 1."
 config_abuseipdb_report_back: "Allow CIDRAM to report detected bad behaviour back to AbuseIPDB using your API key? Default = False."
 config_bgpview: "Configuration for the BGPView module (provides an ASN and country code lookup facility for CIDRAM)."
-config_bgpview_blocked_asns: "A list of ASNs to be blocked when matched by the BGPView module."
-config_bgpview_blocked_ccs: "A list of countries (identified by their {{Links.ISO.3166}} 2-digit country codes) to be blocked when matched by the BGPView module."
-config_bgpview_whitelisted_asns: "A list of ASNs to be whitelisted when matched by the BGPView module."
-config_bgpview_whitelisted_ccs: "A list of countries (identified by their {{Links.ISO.3166}} 2-digit country codes) to be whitelisted when matched by the BGPView module."
+config_bgpview_blocked_asns: &ConfigBlockedASNs "A list of ASNs to be blocked when matched by the module."
+config_bgpview_blocked_ccs: &ConfigBlockedCCs "A list of countries (identified by their {{Links.ISO.3166}} 2-digit country codes) to be blocked when matched by the module."
+config_bgpview_whitelisted_asns: &ConfigWhitelistedASNs "A list of ASNs to be whitelisted when matched by the module."
+config_bgpview_whitelisted_ccs: &ConfigWhitelistedCCs "A list of countries (identified by their {{Links.ISO.3166}} 2-digit country codes) to be whitelisted when matched by the module."
 config_bobuam: "Configuration for the optional "bot or browser user agents module", which detects unwanted bots, old browsers, and performs some sanity checks."
 config_bobuam_block_bots: "Block bots recognised as malicious or unwanted?"
 config_bobuam_block_eol_browsers: "Block browsers that've reached end of life? (Set versions below)."
@@ -188,10 +188,10 @@ config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Maximum number of signa
 config_hcaptcha_sitekey: *CaptchaDashboard
 config_hcaptcha_usemode: &CaptchaUseMode "When should the CAPTCHA be offered? Note: Whitelisted or verified and non-blocked requests never need to complete a CAPTCHA. Also note: CAPTCHAs can provide a useful, additional layer of protection against bots and various kinds of malicious automated requests, but won't provide any protection against a malicious human."
 config_ipapi: "Configuration for the IP-API module (provides an ASN and country code lookup facility for CIDRAM)."
-config_ipapi_blocked_asns: "A list of ASNs to be blocked when matched by the IP-API module."
-config_ipapi_blocked_ccs: "A list of countries (identified by their {{Links.ISO.3166}} 2-digit country codes) to be blocked when matched by the IP-API module."
-config_ipapi_whitelisted_asns: "A list of ASNs to be whitelisted when matched by the IP-API module."
-config_ipapi_whitelisted_ccs: "A list of countries (identified by their {{Links.ISO.3166}} 2-digit country codes) to be whitelisted when matched by the IP-API module."
+config_ipapi_blocked_asns: *ConfigBlockedASNs
+config_ipapi_blocked_ccs: *ConfigBlockedCCs
+config_ipapi_whitelisted_asns: *ConfigWhitelistedASNs
+config_ipapi_whitelisted_ccs: *ConfigWhitelistedCCs
 config_legal: "Configuration for legal requirements."
 config_legal_privacy_policy: "The address of a relevant privacy policy to be displayed in the footer of any generated pages. Specify a URL, or leave blank to disable."
 config_legal_pseudonymise_ip_addresses: "Pseudonymise IP addresses when logging? True = Yes [Default]; False = No."
@@ -358,7 +358,7 @@ field_verify_all: "Verify all"
 field_whitelisted_requests: "Whitelisted requests"
 field_your_version: "Your Version"
 header_login: "Please log in to continue."
-hints_asnlookup: "** Requires ASN lookup functionality (e.g., via the BGPView module)."
+hints_asnlookup: "** Requires ASN lookup functionality (e.g., via the IP-API or BGPView module)."
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="en-AU">What can I use for "default_dns"?</a></em>"
 hints_duration:

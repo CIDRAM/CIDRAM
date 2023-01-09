@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2023.01.07).
+# This file: Vietnamese language data for the front-end (last modified: 2023.01.09).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -33,6 +33,7 @@ Extended Description Bypasses: "Các tập tin đường tránh chữ ký mặc 
 Extended Description Chart.js: "Cho phép front-end tạo biểu đồ hình tròn.<br />{{Links.Chart.js}} có sẵn qua <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
 Extended Description Cookie scanner module: "Cung cấp một số bảo vệ hạn chế đối với cookie nguy hiểm."
 Extended Description HTTP version checker module: "Bạn có thể chặn các giao thức và phiên bản HTTP cụ thể thông qua cấu hình CIDRAM."
+Extended Description IP-API module: "Tận dụng API {{Links.IP-API}} để cung cấp phương tiện tra cứu mã quốc gia và ASN cho CIDRAM, cho phép các ASN và quốc gia bị chặn hay đưa vào danh sách trắng thông qua cấu hình CIDRAM, và cung cấp một phương tiện để xác minh mạng xã hội để xác minh các yêu cầu của Facebook."
 Extended Description IPv4: &ExtDesCloud "Chặn dịch vụ điện toán đám mây không mong muốn và thiết bị đầu cuối không phải con người."
 Extended Description IPv4-Bogons: &ExtDesBogons "Chặn các CIDR bogon/martian."
 Extended Description IPv4-ISPs: &ExtDesISPs "Chặn ISP nguy hiểm và gửi thư rác (bao gồm các mạng nhiều chơi, có thể chứa cả điểm cuối của con người và không con người)."
@@ -59,6 +60,7 @@ Name BunnyCDN compatibility module: "Mô-đun tương thích BunnyCDN."
 Name Bypasses: "Các đường tránh chữ ký mặc định."
 Name Cookie scanner module: "Mô-đun tùy chọn cho cookie quét."
 Name HTTP version checker module: "Mô-đun kiểm tra phiên bản HTTP."
+Name IP-API module: "Mô-đun IP-API."
 Name IPv4: "IPv4 (dịch vụ đám mây và lưu trữ)."
 Name IPv4-Bogons: "IPv4 (bogon)."
 Name IPv4-ISPs: "IPv4 (ISP chứa người gửi thư rác)."
@@ -104,10 +106,10 @@ config_abuseipdb_minimum_confidence_score: "Điểm tin cậy tối thiểu bắ
 config_abuseipdb_minimum_total_reports: "Cần có tổng số báo cáo tối thiểu để CIDRAM chặn địa chỉ IP. Mặc định = 1."
 config_abuseipdb_report_back: "Cho phép CIDRAM báo cáo hành vi xấu đã phát hiện trở lại AbuseIPDB bằng cách sử dụng khóa API của bạn? Mặc định = False."
 config_bgpview: "Cấu hình cho mô-đun BGPView (cung cấp cơ sở tra cứu cho ASN và mã quốc gia cho CIDRAM)."
-config_bgpview_blocked_asns: "Danh sách các ASN sẽ bị chặn khi được đối sánh bởi mô-đun BGPView."
-config_bgpview_blocked_ccs: "Danh sách các quốc gia (được xác định bằng mã quốc gia 2 chữ số {{Links.ISO.3166}} của họ) bị chặn khi được đối sánh bởi mô-đun BGPView."
-config_bgpview_whitelisted_asns: "Danh sách các ASN sẽ được đưa vào danh sách trắng khi được đối sánh bởi mô-đun BGPView."
-config_bgpview_whitelisted_ccs: "Danh sách các quốc gia (được xác định bằng mã quốc gia 2 chữ số {{Links.ISO.3166}} của họ) sẽ được đưa vào danh sách trắng khi được đối sánh bởi mô-đun BGPView."
+config_bgpview_blocked_asns: &ConfigBlockedASNs "Danh sách các ASN sẽ bị chặn khi được đối sánh bởi mô-đun."
+config_bgpview_blocked_ccs: &ConfigBlockedCCs "Danh sách các quốc gia (được xác định bằng mã quốc gia 2 chữ số {{Links.ISO.3166}} của họ) bị chặn khi được đối sánh bởi mô-đun."
+config_bgpview_whitelisted_asns: &ConfigWhitelistedASNs "Danh sách các ASN sẽ được đưa vào danh sách trắng khi được đối sánh bởi mô-đun."
+config_bgpview_whitelisted_ccs: &ConfigWhitelistedCCs "Danh sách các quốc gia (được xác định bằng mã quốc gia 2 chữ số {{Links.ISO.3166}} của họ) sẽ được đưa vào danh sách trắng khi được đối sánh bởi mô-đun."
 config_bobuam: "Cấu hình cho "mô-đun cho các đại lý người dùng của bot hoặc trình duyệt" tùy chọn, giúp phát hiện các bot không mong muốn, trình duyệt cũ, và thực hiện một số kiểm tra an toàn."
 config_bobuam_block_bots: "Chặn các bot được nhận dạng là độc hại hoặc không mong muốn?"
 config_bobuam_block_eol_browsers: "Chặn các trình duyệt đã hết tuổi thọ? (Đặt các phiên bản bên dưới)."
@@ -185,6 +187,11 @@ config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Hiển thị cảnh bá
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Số lượng chữ ký tối đa được phép trước khi đề nghị CAPTCHA bị rút lại. Mặc định = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
 config_hcaptcha_usemode: &CaptchaUseMode "Khi nào nên cung cấp CAPTCHA? Lưu ý: Các yêu cầu trong danh sách trắng hay đã xác minh và không bị chặn không cần phải hoàn thành CAPTCHA. Cũng lưu ý: CAPTCHA có thể cung cấp một lớp bảo vệ bổ sung, hữu ích chống lại bot và các loại yêu cầu tự động độc hại khác nhau, nhưng sẽ không cung cấp bất kỳ biện pháp bảo vệ nào chống lại con người độc hại."
+config_ipapi: "Cấu hình cho mô-đun IP-API (cung cấp cơ sở tra cứu cho ASN và mã quốc gia cho CIDRAM)."
+config_ipapi_blocked_asns: *ConfigBlockedASNs
+config_ipapi_blocked_ccs: *ConfigBlockedCCs
+config_ipapi_whitelisted_asns: *ConfigWhitelistedASNs
+config_ipapi_whitelisted_ccs: *ConfigWhitelistedCCs
 config_legal: "Cấu hình cho các yêu cầu pháp lý."
 config_legal_privacy_policy: "Địa chỉ của chính sách bảo mật liên quan được hiển thị ở chân trang của bất kỳ trang nào được tạo. Chỉ định URL, hoặc để trống để vô hiệu hóa."
 config_legal_pseudonymise_ip_addresses: "Pseudonymise địa chỉ IP khi viết các tập tin nhật ký? True = Vâng [Mặc định]; False = Không."
@@ -349,7 +356,7 @@ field_verify_all: "Xác minh tất cả"
 field_whitelisted_requests: "Yêu cầu trong danh sách trắng"
 field_your_version: "Phiên bản của bạn"
 header_login: "Vui lòng đăng nhập để tiếp tục."
-hints_asnlookup: "** Yêu cầu chức năng tra cứu ASN (v.d., thông qua mô-đun BGPView)."
+hints_asnlookup: "** Yêu cầu chức năng tra cứu ASN (v.d., thông qua mô-đun IP-API hoặc BGPView)."
 hints_default_dns:
  Câu hỏi thường gặp.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.vi.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="vi">Những gì tôi có thể sử dụng cho "default_dns"?</a></em>"
 hints_duration:

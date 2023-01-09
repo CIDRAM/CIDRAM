@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malay language data for the front-end (last modified: 2023.01.07).
+# This file: Malay language data for the front-end (last modified: 2023.01.09).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -33,6 +33,7 @@ Extended Description Bypasses: "Fail untuk pintasan tandatangan standard yang bi
 Extended Description Chart.js: "Membolehkan bahagian hadapan menjana carta donat.<br />{{Links.Chart.js}} tersedia melalui <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
 Extended Description Cookie scanner module: "Menyediakan beberapa perlindungan terhad terhadap kuki berbahaya."
 Extended Description HTTP version checker module: "Memungkinkan untuk menyekat protokol tertentu dan versi HTTP melalui konfigurasi CIDRAM."
+Extended Description IP-API module: "Memanfaatkan {{Links.IP-API}} API untuk menyediakan kemudahan carian ASN dan kod negara untuk CIDRAM, membolehkan ASN dan negara untuk disekat atau disenarai putih melalui konfigurasi CIDRAM, dan menyediakan cara untuk pengesahan rangkaian sosial untuk mengesahkan permintaan Facebook."
 Extended Description IPv4: &ExtDesCloud "Menyekat perkhidmatan awan yang tidak diingini dan titik akhir bukan manusia."
 Extended Description IPv4-Bogons: &ExtDesBogons "Menyekat CIDR bogon/martian."
 Extended Description IPv4-ISPs: &ExtDesISPs "Menyekat ISP yang berbahaya dan terdedah kepada spam (termasuk rangkaian berbilang-permainan, yang mungkin mengandungi titik akhir manusia dan bukan manusia)."
@@ -59,6 +60,7 @@ Name BunnyCDN compatibility module: "Modul keserasian BunnyCDN."
 Name Bypasses: "Pintasan tandatangan standard."
 Name Cookie scanner module: "Modul pengimbas kuki pilihan."
 Name HTTP version checker module: "Modul penyemak versi HTTP."
+Name IP-API module: "Modul IP-API."
 Name IPv4: "IPv4 (perkhidmatan awan dan pengehosan)."
 Name IPv4-Bogons: "IPv4 (bogon)."
 Name IPv4-ISPs: "IPv4 (ISP yang menghantar spam)."
@@ -104,10 +106,10 @@ config_abuseipdb_minimum_confidence_score: "Skor keyakinan minimum diperlukan un
 config_abuseipdb_minimum_total_reports: "Jumlah kuantiti minimum laporan yang diperlukan untuk CIDRAM menyekat alamat IP. Lalai = 1."
 config_abuseipdb_report_back: "Benarkan CIDRAM melaporkan tingkah laku buruk yang dikesan kembali kepada AbuseIPDB menggunakan kunci API anda? Lalai = False."
 config_bgpview: "Konfigurasi untuk modul BGPView (menyediakan kemudahan carian ASN dan kod negara untuk CIDRAM)."
-config_bgpview_blocked_asns: "Senarai ASN yang akan disekat apabila dipadankan oleh modul BGPView."
-config_bgpview_blocked_ccs: "Senarai negara (dikenal oleh kod negara 2 digit {{Links.ISO.3166}} mereka) yang akan disekat apabila dipadankan oleh modul BGPView."
-config_bgpview_whitelisted_asns: "Senarai ASN yang akan disenarai putih apabila dipadankan oleh modul BGPView."
-config_bgpview_whitelisted_ccs: "Senarai negara (dikenal oleh kod negara 2 digit {{Links.ISO.3166}} mereka) yang akan disenarai putih apabila dipadankan oleh modul BGPView."
+config_bgpview_blocked_asns: &ConfigBlockedASNs "Senarai ASN yang akan disekat apabila dipadankan oleh modul."
+config_bgpview_blocked_ccs: &ConfigBlockedCCs "Senarai negara (dikenal oleh kod negara 2 digit {{Links.ISO.3166}} mereka) yang akan disekat apabila dipadankan oleh modul."
+config_bgpview_whitelisted_asns: &ConfigWhitelistedASNs "Senarai ASN yang akan disenarai putih apabila dipadankan oleh modul."
+config_bgpview_whitelisted_ccs: &ConfigWhitelistedCCs "Senarai negara (dikenal oleh kod negara 2 digit {{Links.ISO.3166}} mereka) yang akan disenarai putih apabila dipadankan oleh modul."
 config_bobuam: "Konfigurasi untuk "modul ejen pengguna bot atau penyemak imbas" pilihan, yang mengesan bot yang tidak diingini, penyemak imbas lama, dan melakukan beberapa semakan kewarasan."
 config_bobuam_block_bots: "Sekat bot yang diiktiraf sebagai berniat jahat atau tidak diingini?"
 config_bobuam_block_eol_browsers: "Sekat penyemak imbas yang telah mencapai akhir hayat? (Tetapkan versi di bawah)."
@@ -185,6 +187,11 @@ config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Tunjukkan amaran kuki? 
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Jumlah maksimum tandatangan yang dibenarkan sebelum tawaran CAPTCHA ditarik. Lalai = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
 config_hcaptcha_usemode: &CaptchaUseMode "Bilakah CAPTCHA perlu ditawarkan? Perhatian: Permintaan yang disenarai putih atau disahkan dan tidak disekat tidak perlu melengkapkan CAPTCHA. Juga ambil perhatian: CAPTCHA boleh memberikan lapisan perlindungan tambahan yang berguna terhadap bot dan pelbagai jenis permintaan automatik yang berniat jahat, tetapi tidak akan memberikan sebarang perlindungan terhadap manusia yang berniat jahat."
+config_ipapi: "Konfigurasi untuk modul IP-API (menyediakan kemudahan carian ASN dan kod negara untuk CIDRAM)."
+config_ipapi_blocked_asns: *ConfigBlockedASNs
+config_ipapi_blocked_ccs: *ConfigBlockedCCs
+config_ipapi_whitelisted_asns: *ConfigWhitelistedASNs
+config_ipapi_whitelisted_ccs: *ConfigWhitelistedCCs
 config_legal: "Konfigurasi untuk keperluan undang-undang."
 config_legal_privacy_policy: "Alamat kepada dasar privasi yang akan dipaparkan dalam pengaki mana-mana halaman yang dijana. Tentukan URL, atau biarkan kosong untuk menyahaktifkan."
 config_legal_pseudonymise_ip_addresses: "Pseudonimisasikan alamat IP apabila mengelog? True = Ya [Lalai]; False = Tidak."
@@ -349,7 +356,7 @@ field_verify_all: "Sahkan semua"
 field_whitelisted_requests: "Permintaan disenarai putih"
 field_your_version: "Versi anda"
 header_login: "Sila log masuk untuk meneruskan."
-hints_asnlookup: "** Memerlukan kefungsian carian ASN (cth., melalui modul BGPView)."
+hints_asnlookup: "** Memerlukan kefungsian carian ASN (cth., melalui modul IP-API atau BGPView)."
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.id.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="id">Apakah yang boleh saya gunakan untuk "default_dns"?</a></em>"
 hints_duration:

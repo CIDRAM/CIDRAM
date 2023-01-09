@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hebrew language data for the front-end (last modified: 2023.01.07).
+# This file: Hebrew language data for the front-end (last modified: 2023.01.09).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -33,6 +33,7 @@ Extended Description Bypasses: "החתימה הסטנדרטית עוקפת קב�
 Extended Description Chart.js: "מאפשר לקצה הקדמי ליצור תרשימי סופגניות.<br />{{Links.Chart.js}} זמין באמצעות רישיון <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
 Extended Description Cookie scanner module: "מספק כמה הגנות מוגבלות מפני עוגיות מסוכנות."
 Extended Description HTTP version checker module: "מאפשר לחסום פרוטוקולים ספציפיים וגרסאות HTTP באמצעות תצורת CIDRAM."
+Extended Description IP-API module: "מנף את ה-{{Links.IP-API}} API כדי לספק מתקן חיפוש ASN וקוד מדינה עבור CIDRAM, המאפשרת חסימה או אישור של ASN ומדינות באמצעות תצורת CIDRAM, ומספקת אמצעי לאימות רשתות חברתיות לאימות בקשות של פייסבוק."
 Extended Description IPv4: &ExtDesCloud "חוסם שירותי ענן לא רצויים ונקודות קצה לא אנושיות."
 Extended Description IPv4-Bogons: &ExtDesBogons "חוסם בוגון/מאדים CIDR."
 Extended Description IPv4-ISPs: &ExtDesISPs "חוסם ספקי אינטרנט מסוכנים וספאמיים (כולל רשתות מולטיפליי, שעשויות להכיל נקודות קצה אנושיות ולא אנושיות כאחד)."
@@ -59,6 +60,7 @@ Name BunnyCDN compatibility module: "מודול תאימות של BunnyCDN."
 Name Bypasses: "עוקף חתימה סטנדרטית."
 Name Cookie scanner module: "מודול סורק עוגיות אופציונלי."
 Name HTTP version checker module: "מודול בודק גרסאות HTTP."
+Name IP-API module: "מודול IP-API."
 Name IPv4: "IPv4 (שירותי ענן ואירוח)."
 Name IPv4-Bogons: "IPv4 (בוגונים)."
 Name IPv4-ISPs: "IPv4 (ספקי אינטרנט ספאמיים)."
@@ -104,10 +106,10 @@ config_abuseipdb_minimum_confidence_score: "ציון הביטחון המינימ
 config_abuseipdb_minimum_total_reports: "המספר המינימלי של סך הדוחות הנדרש על מנת ש-CIDRAM יחסום כתובת IP. סטנדרטי = 1."
 config_abuseipdb_report_back: "האם לאפשר ל-CIDRAM לדווח על התנהגות רעה שזוהתה בחזרה ל-AbuseIPDB באמצעות מפתח ה-API שלך? סטנדרטי = False."
 config_bgpview: "תצורה עבור מודול BGPView (מספק מתקן חיפוש ASN וקוד מדינה עבור CIDRAM)."
-config_bgpview_blocked_asns: "רשימה של ASN שיש לחסום כשהם תואמים על ידי מודול BGPView."
-config_bgpview_blocked_ccs: "רשימה של מדינות (מזוהה באמצעות קודי המדינה הדו-ספרתיים {{Links.ISO.3166}} שלהם) שיש לחסום כאשר מודול BGPView תואם."
-config_bgpview_whitelisted_asns: "רשימה של ASN לרשימה הלבנה כאשר מודול BGPView תואם אותם."
-config_bgpview_whitelisted_ccs: "רשימה של מדינות (מזוהה באמצעות קודי המדינה הדו-ספרתיים {{Links.ISO.3166}} שלהם) לרשימה הלבנה כאשר מודול BGPView תואם אותם."
+config_bgpview_blocked_asns: &ConfigBlockedASNs "רשימה של ASN שיש לחסום כשהם תואמים על ידי מודול."
+config_bgpview_blocked_ccs: &ConfigBlockedCCs "רשימה של מדינות (מזוהה באמצעות קודי המדינה הדו-ספרתיים {{Links.ISO.3166}} שלהם) שיש לחסום כאשר מודול תואם."
+config_bgpview_whitelisted_asns: &ConfigWhitelistedASNs "רשימה של ASN לרשימה הלבנה כאשר מודול תואם אותם."
+config_bgpview_whitelisted_ccs: &ConfigWhitelistedCCs "רשימה של מדינות (מזוהה באמצעות קודי המדינה הדו-ספרתיים {{Links.ISO.3166}} שלהם) לרשימה הלבנה כאשר מודול תואם אותם."
 config_bobuam: "תצורה עבור "מודול סוכני משתמש של בוט או דפדפן" האופציונלי, שמזהה בוטים לא רצויים, דפדפנים ישנים, ומבצע כמה בדיקות שפיות."
 config_bobuam_block_bots: "לחסום בוטים שזוהו כזדוניים או לא רצויים?"
 config_bobuam_block_eol_browsers: "לחסום דפדפנים שהגיעו לסוף החיים? (הגדר גרסאות למטה)."
@@ -185,6 +187,11 @@ config_hcaptcha_show_cookie_warning: &ShowCookieWarning "להציג אזהרת �
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "המספר המרבי של חתימות המותר לפני ביטול הצעת ה-CAPTCHA. סטנדרטי = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
 config_hcaptcha_usemode: &CaptchaUseMode "מתי יש להציע את ה-CAPTCHA? הערה: בקשות ברשימה הלבנה או מאומתת ולא חסומה לעולם אינן צריכות להשלים CAPTCHA. שימו לב גם: CAPTCHA יכול לספק שכבה שימושית נוספת של הגנה מפני בוטים וסוגים שונים של בקשות אוטומטיות זדוניות, אך לא תספק כל הגנה מפני אדם זדוני."
+config_ipapi: "תצורה עבור מודול IP-API (מספק מתקן חיפוש ASN וקוד מדינה עבור CIDRAM)."
+config_ipapi_blocked_asns: *ConfigBlockedASNs
+config_ipapi_blocked_ccs: *ConfigBlockedCCs
+config_ipapi_whitelisted_asns: *ConfigWhitelistedASNs
+config_ipapi_whitelisted_ccs: *ConfigWhitelistedCCs
 config_legal: "תצורה לדרישות משפטיות."
 config_legal_privacy_policy: "הכתובת של מדיניות פרטיות רלוונטית שתוצג בכותרת התחתונה של כל עמוד שנוצר. ציין כתובת אתר, או השאר ריק כדי להשבית."
 config_legal_pseudonymise_ip_addresses: "לטשטש חלקית כתובות IP בעת רישום? True = כן [סטנדרטי]; False = לא."
@@ -353,7 +360,7 @@ field_verify_all: "לאמת הכל"
 field_whitelisted_requests: "בקשות לרשימת ההיתרים"
 field_your_version: "הגרסה שלך"
 header_login: "אנא התחבר על מנת להמשיך."
-hints_asnlookup: "** דורש פונקציונליות חיפוש ASN (למשל, דרך מודול BGPView)."
+hints_asnlookup: "** דורש פונקציונליות חיפוש ASN (למשל, דרך מודול IP-API או BGPView)."
 hints_default_dns:
  שאלות נפוצות.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="en-AU">במה עלי להשתמש עבור "default_dns"?</a></em>"
 hints_duration:

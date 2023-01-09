@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2023.01.07).
+# This file: Urdu language data for the front-end (last modified: 2023.01.09).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -33,6 +33,7 @@ Extended Description Bypasses: "پہلے سے طے شدہ دستخطی بائی 
 Extended Description Chart.js: "پائی چارٹ پیدا کرنے کے لئے سامنے کے آخر میں قابل بناتا ہے.<br />{{Links.Chart.js}} <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> کے ذریعہ دستیاب ہے."
 Extended Description Cookie scanner module: "خطرناک کوکیز کے خلاف کچھ محدود تحفظ فراہم کرتا ہے."
 Extended Description HTTP version checker module: "CIDRAM ترتیب کے ذریعے مخصوص پروٹوکول اور HTTP ورژن کو روکنا ممکن بناتا ہے."
+Extended Description IP-API module: "ASN اور ملکی کوڈز کو تلاش کرنے کے لئے {{Links.IP-API}} کا استعمال کریں. اس سے ASN اور ممالک کو ترتیب کے ذریعے مسدود یا وائٹ لسٹ کرنے کا اہل بناتا ہے، اور Facebook درخواستوں کی توثیق کرنے کا ایک ذریعہ فراہم کرتا ہے."
 Extended Description IPv4: &ExtDesCloud "بلاکس ناپسندیدہ کلاؤڈ سروسز اور غیر انسانی رسائی پوائنٹس."
 Extended Description IPv4-Bogons: &ExtDesBogons "بلاکس martian/bogon CIDR."
 Extended Description IPv4-ISPs: &ExtDesISPs "خطرناک بلاکس اور سپام ISP (ملٹی پلے نیٹ ورک پر مشتمل ہے. ان میں انسانی اور غیر انسانی مقامات بھی ہوسکتے ہیں)."
@@ -59,6 +60,7 @@ Name BunnyCDN compatibility module: "BunnyCDN مطابقت ماڈیول."
 Name Bypasses: "پہلے سے طے شدہ دستخطی بائ پاس."
 Name Cookie scanner module: "اختیاری کوکی سکینر ماڈیول."
 Name HTTP version checker module: "HTTP ورژن چیکر ماڈیول."
+Name IP-API module: "IP-API ماڈیول."
 Name IPv4: "IPv4 (کلاوڈ اور میزبان خدمات)."
 Name IPv4-Bogons: "IPv4 (bogons)."
 Name IPv4-ISPs: "IPv4 (سروس فراہم کرنے والے سپیم بھیجنے کے لئے)."
@@ -104,10 +106,10 @@ config_abuseipdb_minimum_confidence_score: "IP ایڈریس کو بلاک کرن
 config_abuseipdb_minimum_total_reports: "CIDRAM کے IP ایڈریس کو بلاک کرنے کے لیے مطلوبہ کل رپورٹس کی کم از کم تعداد. پہلے سے طے شدہ = 1."
 config_abuseipdb_report_back: "CIDRAM کو آپ کی API کلید کا استعمال کرتے ہوئے پتہ چلنے والے خراب رویے کی واپس AbuseIPDB کو رپورٹ کرنے کی اجازت دیں؟ پہلے سے طے شدہ = False."
 config_bgpview: "BGPView ماڈیول کے لیے کنفیگریشن (CIDRAM کے لیے ASN اور کنٹری کوڈ تلاش کرنے کی سہولت فراہم کرتا ہے)."
-config_bgpview_blocked_asns: "BGPView ماڈیول کے ذریعے بلاک کیے جانے والے ASNs کی فہرست."
-config_bgpview_blocked_ccs: "BGPView ماڈیول کے ذریعے بلاک کیے جانے والے ممالک کی فہرست (ان کے {{Links.ISO.3166}} دو حرفی کنٹری کوڈز سے شناخت کی گئی ہے)."
-config_bgpview_whitelisted_asns: "BGPView ماڈیول کے ذریعے وائٹ لسٹ کیے جانے والے ASNs کی فہرست."
-config_bgpview_whitelisted_ccs: "BGPView ماڈیول کے ذریعے وائٹ لسٹ کیے جانے والے ممالک کی فہرست (ان کے {{Links.ISO.3166}} دو حرفی کنٹری کوڈز سے شناخت کی گئی ہے)."
+config_bgpview_blocked_asns: &ConfigBlockedASNs "ماڈیول کے ذریعے بلاک کیے جانے والے ASNs کی فہرست."
+config_bgpview_blocked_ccs: &ConfigBlockedCCs "ماڈیول کے ذریعے بلاک کیے جانے والے ممالک کی فہرست (ان کے {{Links.ISO.3166}} دو حرفی کنٹری کوڈز سے شناخت کی گئی ہے)."
+config_bgpview_whitelisted_asns: &ConfigWhitelistedASNs "ماڈیول کے ذریعے وائٹ لسٹ کیے جانے والے ASNs کی فہرست."
+config_bgpview_whitelisted_ccs: &ConfigWhitelistedCCs "ماڈیول کے ذریعے وائٹ لسٹ کیے جانے والے ممالک کی فہرست (ان کے {{Links.ISO.3166}} دو حرفی کنٹری کوڈز سے شناخت کی گئی ہے)."
 config_bobuam: ""بوٹ یا براؤزر صارف ایجنٹ ماڈیول" کے لیے کنفیگریشن. یہ ماڈیول ناپسندیدہ بوٹس، پرانے براؤزرز کا پتہ لگاتا ہے، اور کچھ سنٹی چیک کرتا ہے."
 config_bobuam_block_bots: "بدنیتی پر مبنی یا ناپسندیدہ کے طور پر پہچانے گئے بوٹس کو مسدود کریں؟"
 config_bobuam_block_eol_browsers: "ان براؤزرز کو مسدود کریں جو زندگی کے اختتام کو پہنچ چکے ہیں؟ (ذیل میں ورژن سیٹ کریں)."
@@ -185,6 +187,11 @@ config_hcaptcha_show_cookie_warning: &ShowCookieWarning "کوکی انتباہ �
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "CAPTCHA پیش کش واپس لینے سے پہلے دستخطوں کی زیادہ سے زیادہ تعداد کی اجازت. پہلے سے طے شدہ = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
 config_hcaptcha_usemode: &CaptchaUseMode "CAPTCHA کب پیش کیا جائے؟ نوٹ: وائٹ لسٹڈ یا توثیق شدہ اور غیر مسدود درخواستوں کو کبھی بھی CAPTCHA کو مکمل کرنے کی ضرورت نہیں ہے. یہ بھی نوٹ کریں: CAPTCHA بوٹس اور مختلف قسم کی بدنیتی پر مبنی خودکار درخواستوں کے خلاف مفید تحفظ فراہم کر سکتے ہیں، لیکن بدنیتی پر مبنی انسان کے خلاف کوئی تحفظ فراہم نہیں کریں گے."
+config_ipapi: "IP-API ماڈیول کے لیے کنفیگریشن (CIDRAM کے لیے ASN اور کنٹری کوڈ تلاش کرنے کی سہولت فراہم کرتا ہے)."
+config_ipapi_blocked_asns: *ConfigBlockedASNs
+config_ipapi_blocked_ccs: *ConfigBlockedCCs
+config_ipapi_whitelisted_asns: *ConfigWhitelistedASNs
+config_ipapi_whitelisted_ccs: *ConfigWhitelistedCCs
 config_legal: "قانونی تقاضوں کے لئے ترتیبات."
 config_legal_privacy_policy: "کسی بھی پیدا کردہ صفحات کے فوٹر میں ظاہر ہونے والی متعلقہ رازداری کی پالیسی کا پتہ. ایک URL کی وضاحت کریں، یا غیر فعال کرنے کیلئے خالی چھوڑ دیں."
 config_legal_pseudonymise_ip_addresses: "لاگ ان کرتے وقت پی ایس ڈی نامناسب IP پتے؟ True (سچے) = جی ہاں [پہلے سے طے شدہ]؛ False (جھوٹی) = نہیں."
@@ -349,7 +356,7 @@ field_verify_all: "سب کی توثیق کریں"
 field_whitelisted_requests: "وائٹ لسٹ کی درخواستیں"
 field_your_version: "آپ کے ورژن"
 header_login: "جاری رکھنے کے لیے لاگ ان کریں."
-hints_asnlookup: "** ASN تلاش کی فعالیت کی ضرورت ہے (مثال کے طور پر، BGPView ماڈیول کے ذریعے)."
+hints_asnlookup: "** ASN تلاش کی فعالیت کی ضرورت ہے (مثال کے طور پر، IP-API یا BGPView ماڈیول کے ذریعے)."
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.ur.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="ur">میں "default_dns" کے لئے کیا استعمال کر سکتا ہوں؟</a></em>"
 hints_duration:

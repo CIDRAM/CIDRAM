@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2023.01.07).
+# This file: Latvian language data for the front-end (last modified: 2023.01.09).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -33,6 +33,7 @@ Extended Description Bypasses: "Noklusējuma paraksta apiešana faili, kas paras
 Extended Description Chart.js: "Ļauj sektoru diagrammas izmantot administratīvai piekļuvei.<br />{{Links.Chart.js}} ir pieejams caur <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT licenci</a>."
 Extended Description Cookie scanner module: "Nodrošina ierobežotu aizsardzību pret bīstamām sīkdatnēm."
 Extended Description HTTP version checker module: "Ļauj bloķēt noteiktus protokolus un HTTP versijas, izmantojot CIDRAM konfigurāciju."
+Extended Description IP-API module: "Izmanto {{Links.IP-API}} API, lai nodrošinātu ASN un valsts koda meklēšanas iespēju CIDRAM, tādējādi dodot iespēju bloķēt vai iekļaut baltajā sarakstā ASN un valstis, izmantojot CIDRAM konfigurāciju, un sociālo mediju verifikācijas līdzekļu nodrošināšana, lai pārbaudītu Facebook pieprasījumus."
 Extended Description IPv4: &ExtDesCloud "Bloķē nevēlamus mākoņa pakalpojumus un necilvēku galapunktus."
 Extended Description IPv4-Bogons: &ExtDesBogons "Bloķē bogona CIDRs."
 Extended Description IPv4-ISPs: &ExtDesISPs "Bloķē bīstamus un surogātpastu ISPs (ietver daudzspēļu tīklus, kas var saturēt cilvēks galapunktus un nēcilvēks galapunktus)."
@@ -59,6 +60,7 @@ Name BunnyCDN compatibility module: "BunnyCDN saderības modulis."
 Name Bypasses: "Noklusējuma paraksta apiešana."
 Name Cookie scanner module: "Neobligāts sīkdatņu skeneru modulis."
 Name HTTP version checker module: "HTTP versiju pārbaudītāja modulis."
+Name IP-API module: "IP-API modulis."
 Name IPv4: "IPv4 (mākonis un mitināšanas pakalpojumi)."
 Name IPv4-Bogons: "IPv4 (bogonu adreses)."
 Name IPv4-ISPs: "IPv4 (surogātpastu ISPs)."
@@ -104,10 +106,10 @@ config_abuseipdb_minimum_confidence_score: "Minimālais ticamības rādītājs, 
 config_abuseipdb_minimum_total_reports: "Minimālais kopējais pārskatu skaits, kas nepieciešams, lai CIDRAM bloķētu IP adresi. Noklusējuma = 1."
 config_abuseipdb_report_back: "Vai atļaut CIDRAM ziņot par konstatēto sliktu darbību atpakaļ AbuseIPDB, izmantojot jūsu API atslēgu? Noklusējuma = False."
 config_bgpview: "BGPView moduļa konfigurācija (nodrošina ASN un valsts koda uzmeklēšanas iespēju CIDRAM)."
-config_bgpview_blocked_asns: "To ASN saraksts, kuras jābloķē, ja tos saskaņo BGPView modulis."
-config_bgpview_blocked_ccs: "To valstu saraksts (identificē ar to {{Links.ISO.3166}} 2-ciparu valsts kodiem), kuras jābloķē, ja tos saskaņo BGPView modulis."
-config_bgpview_whitelisted_asns: "To ASN saraksts, kas jāiekļauj baltajā sarakstā, ja tos saskaņo BGPView modulis."
-config_bgpview_whitelisted_ccs: "To valstu saraksts (identificē ar to {{Links.ISO.3166}} 2-ciparu valsts kodiem), kas jāiekļauj baltajā sarakstā, ja tos saskaņo BGPView modulis."
+config_bgpview_blocked_asns: &ConfigBlockedASNs "To ASN saraksts, kuras jābloķē, ja tos saskaņo modulis."
+config_bgpview_blocked_ccs: &ConfigBlockedCCs "To valstu saraksts (identificē ar to {{Links.ISO.3166}} 2-ciparu valsts kodiem), kuras jābloķē, ja tos saskaņo modulis."
+config_bgpview_whitelisted_asns: &ConfigWhitelistedASNs "To ASN saraksts, kas jāiekļauj baltajā sarakstā, ja tos saskaņo modulis."
+config_bgpview_whitelisted_ccs: &ConfigWhitelistedCCs "To valstu saraksts (identificē ar to {{Links.ISO.3166}} 2-ciparu valsts kodiem), kas jāiekļauj baltajā sarakstā, ja tos saskaņo modulis."
 config_bobuam: ""Modulis robotu vai pārlūkprogrammu lietotāju aģentiem" izvēles konfigurācija. Šis modulis atklāj nevēlamus robotus, vecas pārlūkprogrammas, un veic dažas saprāta pārbaudes."
 config_bobuam_block_bots: "Bloķēt robotprogrammatūras, kas atzītas par ļaunprātīgām vai nevēlamām?"
 config_bobuam_block_eol_browsers: "Bloķēt pārlūkprogrammas, kuru darbības laiks ir beidzies? (Iestatiet tālāk versijas)."
@@ -185,6 +187,11 @@ config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Rādīt brīdinājumu p
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Maksimālais atļautais parakstu skaits pirms CAPTCHA piedāvājuma atsaukšanas. Noklusējuma = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
 config_hcaptcha_usemode: &CaptchaUseMode "Kad vajadzētu piedāvāt CAPTCHA? Piezīme: Baltā sarakstā iekļautajiem vai pārbaudītajiem un nebloķētajiem pieprasījumiem nekad nav jāaizpilda CAPTCHA. Ņemiet vērā arī: CAPTCHA var nodrošināt noderīgu aizsardzību pret robotprogrammatūrām un dažāda veida ļaunprātīgiem un automatizētiem pieprasījumiem, taču tās nenodrošina nekādu aizsardzību pret ļaunprātīgu cilvēku."
+config_ipapi: "IP-API moduļa konfigurācija (nodrošina ASN un valsts koda uzmeklēšanas iespēju CIDRAM)."
+config_ipapi_blocked_asns: *ConfigBlockedASNs
+config_ipapi_blocked_ccs: *ConfigBlockedCCs
+config_ipapi_whitelisted_asns: *ConfigWhitelistedASNs
+config_ipapi_whitelisted_ccs: *ConfigWhitelistedCCs
 config_legal: "Juridisko prasību konfigurācija."
 config_legal_privacy_policy: "Attiecīgās privātuma politikas adrese, kas jāparāda visu ģenerēto lapu kājenē. Norādiet URL vai atstājiet tukšu lai to atspējotu."
 config_legal_pseudonymise_ip_addresses: "Pseidonimizēt IP adresi reģistrējoties? True (Patiess) = Jā [Noklusējuma]; False (Nepatiess) = Nē."
@@ -352,7 +359,7 @@ field_verify_all: "Verificēt visus"
 field_whitelisted_requests: "Baltajā sarakstā iekļautie pieprasījumi"
 field_your_version: "Jūsu Versija"
 header_login: "Lūdzu, ielogoties, lai turpinātu."
-hints_asnlookup: "** Nepieciešama ASN uzmeklēšanas funkcionalitāte (piemēram, izmantojot BGPView moduli)."
+hints_asnlookup: "** Nepieciešama ASN uzmeklēšanas funkcionalitāte (piemēram, izmantojot IP-API vai BGPView moduli)."
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="en-AU">Ko es varu izmantot “default_dns”-m?</a></em>"
 hints_duration:

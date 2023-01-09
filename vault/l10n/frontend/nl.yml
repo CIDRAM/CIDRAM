@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2023.01.07).
+# This file: Dutch language data for the front-end (last modified: 2023.01.09).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -33,6 +33,7 @@ Extended Description Bypasses: "De standaard signature bypasses normaal opgenome
 Extended Description Chart.js: "Hiermee kan de frontend taartdiagrammen genereren.<br />{{Links.Chart.js}} is beschikbaar via de <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
 Extended Description Cookie scanner module: "Biedt een beperkte bescherming tegen gevaarlijke cookies."
 Extended Description HTTP version checker module: "Maakt het mogelijk om specifieke protocollen en HTTP-versies te blokkeren via de CIDRAM-configuratie."
+Extended Description IP-API module: "Maakt gebruik van de {{Links.IP-API}} API om ASN en landcode op te zoeken voor CIDRAM, waardoor ASN's en landen kunnen worden geblokkeerd of op de witte lijst kunnen worden gezet via de CIDRAM-configuratie, en het verschaffen van een middel voor sociale netwerkverificatie om Facebook-verzoeken te verifiëren."
 Extended Description IPv4: &ExtDesCloud "Blokkeert ongewenste cloud-diensten en niet-menselijke eindpunten."
 Extended Description IPv4-Bogons: &ExtDesBogons "Blokkeert bogon/martian CIDR's."
 Extended Description IPv4-ISPs: &ExtDesISPs "Blokkeert gevaarlijk en spammy ISP's (omvat multiplay-netwerken, die zowel menselijke als niet-menselijke eindpunten kunnen bevatten)."
@@ -59,6 +60,7 @@ Name BunnyCDN compatibility module: "BunnyCDN compatibiliteitsmodule."
 Name Bypasses: "Standaard signature bypasses."
 Name Cookie scanner module: "Optionele cookie-scanner module."
 Name HTTP version checker module: "HTTP versie controle module."
+Name IP-API module: "IP-API module."
 Name IPv4: "IPv4 (cloud en hosting diensten)."
 Name IPv4-Bogons: "IPv4 (bogons)."
 Name IPv4-ISPs: "IPv4 (spammy ISP's)."
@@ -104,10 +106,10 @@ config_abuseipdb_minimum_confidence_score: "De minimale betrouwbaarheidsscore di
 config_abuseipdb_minimum_total_reports: "Het minimale totale aantal rapporten dat nodig is om CIDRAM een IP-adres te blokkeren. Standaard = 1."
 config_abuseipdb_report_back: "Sta CIDRAM toe om gedetecteerd slecht gedrag te melden terug aan AbuseIPDB met behulp van uw API-sleutel? Standaard = False."
 config_bgpview: "Configuratie voor de BGPView-module (biedt een zoekfunctie voor ASN en landcodes voor CIDRAM)."
-config_bgpview_blocked_asns: "Een lijst met ASN's die moeten worden geblokkeerd wanneer ze worden gekoppeld mit de BGPView-module."
-config_bgpview_blocked_ccs: "Een lijst met landen (geïdentificeerd door hun {{Links.ISO.3166}} 2-cijferige landcodes) die moeten worden geblokkeerd wanneer ze worden gekoppeld mit de BGPView-module."
-config_bgpview_whitelisted_asns: "Een lijst met ASN's die op de witte lijst moeten worden geplaatst wanneer ze worden gekoppeld mit de BGPView-module."
-config_bgpview_whitelisted_ccs: "Een lijst met landen (geïdentificeerd door hun {{Links.ISO.3166}} 2-cijferige landcodes) die op de witte lijst moeten worden geplaatst wanneer ze worden gekoppeld mit de BGPView-module."
+config_bgpview_blocked_asns: &ConfigBlockedASNs "Een lijst met ASN's die moeten worden geblokkeerd wanneer ze worden gekoppeld mit de module."
+config_bgpview_blocked_ccs: &ConfigBlockedCCs "Een lijst met landen (geïdentificeerd door hun {{Links.ISO.3166}} 2-cijferige landcodes) die moeten worden geblokkeerd wanneer ze worden gekoppeld mit de module."
+config_bgpview_whitelisted_asns: &ConfigWhitelistedASNs "Een lijst met ASN's die op de witte lijst moeten worden geplaatst wanneer ze worden gekoppeld mit de module."
+config_bgpview_whitelisted_ccs: &ConfigWhitelistedCCs "Een lijst met landen (geïdentificeerd door hun {{Links.ISO.3166}} 2-cijferige landcodes) die op de witte lijst moeten worden geplaatst wanneer ze worden gekoppeld mit de module."
 config_bobuam: "Configuratie voor de optionele "bot of browser gebruikersagents module", die ongewenste bots en oude browsers detecteert, en een aantal gezondheidscontroles uitvoert."
 config_bobuam_block_bots: "Bots blokkeren die worden herkend als kwaadaardig of ongewenst?"
 config_bobuam_block_eol_browsers: "De browsers blokkeren die het einde van hun levensduur hebben bereikt? (Stel hieronder versies in)."
@@ -185,6 +187,11 @@ config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Cookiewaarschuwing weer
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Maximaal aantal toegestane signatures voordat een CAPTCHA-aanbieding wordt ingetrokken. Standaard = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
 config_hcaptcha_usemode: &CaptchaUseMode "Wanneer moet de CAPTCHA worden aangeboden? Opmerking: Op de witte lijst geplaatste of geverifieerde en niet-geblokkeerde verzoeken hoeven nooit een CAPTCHA in te vullen. Let ook op: CAPTCHA's kunnen een nuttige, extra beschermingslaag bieden tegen bots en verschillende soorten kwaadwillende geautomatiseerde verzoeken, maar bieden geen enkele bescherming tegen kwaadwillende mensen."
+config_ipapi: "Configuratie voor de IP-API-module (biedt een zoekfunctie voor ASN en landcodes voor CIDRAM)."
+config_ipapi_blocked_asns: *ConfigBlockedASNs
+config_ipapi_blocked_ccs: *ConfigBlockedCCs
+config_ipapi_whitelisted_asns: *ConfigWhitelistedASNs
+config_ipapi_whitelisted_ccs: *ConfigWhitelistedCCs
 config_legal: "Configuratie voor wettelijke vereisten."
 config_legal_privacy_policy: "Het adres van een relevant privacybeleid dat moet worden weergegeven in de voettekst van eventuele gegenereerde pagina's. Geef een URL, of laat leeg om uit te schakelen."
 config_legal_pseudonymise_ip_addresses: "Pseudonimiseren de IP-adressen bij het schrijven van logbestanden? True = Ja [Standaard]; False = Nee."
@@ -351,7 +358,7 @@ field_verify_all: "Verifiëren alles"
 field_whitelisted_requests: "Verzoeken gemarkeerd als op de witte lijst"
 field_your_version: "Uw Versie"
 header_login: "Inloggen om verder te gaan."
-hints_asnlookup: "** Vereist ASN-opzoekfunctionaliteit (b.v., via de BGPView-module)."
+hints_asnlookup: "** Vereist ASN-opzoekfunctionaliteit (b.v., via de IP-API-module of BGPView-module)."
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.nl.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="nl">Wat kan ik gebruiken voor "default_dns"?</a></em>"
 hints_duration:

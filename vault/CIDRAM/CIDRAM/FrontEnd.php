@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2022.12.10).
+ * This file: The CIDRAM front-end (last modified: 2022.12.19).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -664,11 +664,11 @@ class FrontEnd extends Core
         /** Only execute this code block for already logged in users. */
         if ($this->FE['UserState'] === 1) {
             /** Where to find remote version information? */
-            $this->CIDRAM['RemoteVerPath'] = 'https://raw.githubusercontent.com/Maikuolan/Compatibility-Charts/gh-pages/';
+            $RemoteVerPath = 'https://raw.githubusercontent.com/Maikuolan/Compatibility-Charts/gh-pages/';
 
             /** Fetch remote CIDRAM version information and cache it if necessary. */
             if (($this->CIDRAM['Remote-YAML-CIDRAM'] = $this->Cache->getEntry('cidram-ver.yaml')) === false) {
-                $this->CIDRAM['Remote-YAML-CIDRAM'] = $this->Request->request($this->CIDRAM['RemoteVerPath'] . 'cidram-ver.yaml', [], 8);
+                $this->CIDRAM['Remote-YAML-CIDRAM'] = $this->Request->request($RemoteVerPath . 'cidram-ver.yaml', [], 8);
                 $this->Cache->setEntry('cidram-ver.yaml', $this->CIDRAM['Remote-YAML-CIDRAM'] ?: '-', 86400);
             }
 
@@ -683,11 +683,11 @@ class FrontEnd extends Core
                 /** CIDRAM branch latest stable. */
                 $this->FE['info_cidram_branch'] = $this->L10N->getString('response_error');
             } else {
-                $this->CIDRAM['Remote-YAML-CIDRAM-Array'] = [];
-                $this->YAML->process($this->CIDRAM['Remote-YAML-CIDRAM'], $this->CIDRAM['Remote-YAML-CIDRAM-Array']);
+                $RemoteYAMLCIDRAMArray = [];
+                $this->YAML->process($this->CIDRAM['Remote-YAML-CIDRAM'], $RemoteYAMLCIDRAMArray);
 
                 /** CIDRAM latest stable. */
-                if (empty($this->CIDRAM['Remote-YAML-CIDRAM-Array']['Stable'])) {
+                if (empty($RemoteYAMLCIDRAMArray['Stable'])) {
                     $this->FE['info_cidram_stable'] = $this->L10N->getString('response_error');
                 } else {
                     $this->FE['MajorVersionCurrent'] = (int)substr(
@@ -696,36 +696,36 @@ class FrontEnd extends Core
                         strpos($this->ScriptVersion, '.') ?: strlen($this->ScriptVersion)
                     );
                     $this->FE['MajorVersionLatest'] = (int)substr(
-                        $this->CIDRAM['Remote-YAML-CIDRAM-Array']['Stable'],
+                        $RemoteYAMLCIDRAMArray['Stable'],
                         0,
-                        strpos($this->CIDRAM['Remote-YAML-CIDRAM-Array']['Stable'], '.') ?: strlen($this->CIDRAM['Remote-YAML-CIDRAM-Array']['Stable'])
+                        strpos($RemoteYAMLCIDRAMArray['Stable'], '.') ?: strlen($RemoteYAMLCIDRAMArray['Stable'])
                     );
                     if (
                         $this->FE['MajorVersionCurrent'] < $this->FE['MajorVersionLatest'] &&
-                        !empty($this->CIDRAM['Remote-YAML-CIDRAM-Array']['Stable Minimum PHP Required']) &&
-                        is_string($this->CIDRAM['Remote-YAML-CIDRAM-Array']['Stable Minimum PHP Required']) &&
-                        version_compare(PHP_VERSION, $this->CIDRAM['Remote-YAML-CIDRAM-Array']['Stable Minimum PHP Required'], '>=')
+                        !empty($RemoteYAMLCIDRAMArray['Stable Minimum PHP Required']) &&
+                        is_string($RemoteYAMLCIDRAMArray['Stable Minimum PHP Required']) &&
+                        version_compare(PHP_VERSION, $RemoteYAMLCIDRAMArray['Stable Minimum PHP Required'], '>=')
                     ) {
                         $this->CIDRAM['MajorVersionNotice'] = sprintf(
                             $this->L10N->getString('notice_new_major_version'),
-                            'CIDRAM v' . $this->CIDRAM['Remote-YAML-CIDRAM-Array']['Stable'],
+                            'CIDRAM v' . $RemoteYAMLCIDRAMArray['Stable'],
                             $this->ScriptIdent
                         );
                     }
-                    $this->FE['info_cidram_stable'] = $this->CIDRAM['Remote-YAML-CIDRAM-Array']['Stable'];
+                    $this->FE['info_cidram_stable'] = $RemoteYAMLCIDRAMArray['Stable'];
                 }
 
                 /** CIDRAM latest unstable. */
-                $this->FE['info_cidram_unstable'] = empty($this->CIDRAM['Remote-YAML-CIDRAM-Array']['Unstable']) ?
-                    $this->L10N->getString('response_error') : $this->CIDRAM['Remote-YAML-CIDRAM-Array']['Unstable'];
+                $this->FE['info_cidram_unstable'] = empty($RemoteYAMLCIDRAMArray['Unstable']) ?
+                    $this->L10N->getString('response_error') : $RemoteYAMLCIDRAMArray['Unstable'];
 
                 /** CIDRAM branch latest stable. */
-                if ($this->CIDRAM['ThisBranch'] = substr($this->ScriptVersion, 0, strpos($this->ScriptVersion, '.') ?: 1)) {
-                    $this->CIDRAM['ThisBranch'] = 'v' . ($this->CIDRAM['ThisBranch'] ?: 1);
-                    if (empty($this->CIDRAM['Remote-YAML-CIDRAM-Array']['Branch'][$this->CIDRAM['ThisBranch']]['Latest'])) {
+                if ($ThisBranch = substr($this->ScriptVersion, 0, strpos($this->ScriptVersion, '.') ?: 1)) {
+                    $ThisBranch = 'v' . ($ThisBranch ?: 1);
+                    if (empty($RemoteYAMLCIDRAMArray['Branch'][$ThisBranch]['Latest'])) {
                         $this->FE['info_cidram_branch'] = $this->L10N->getString('response_error');
                     } else {
-                        $this->FE['info_cidram_branch'] = $this->CIDRAM['Remote-YAML-CIDRAM-Array']['Branch'][$this->CIDRAM['ThisBranch']]['Latest'];
+                        $this->FE['info_cidram_branch'] = $RemoteYAMLCIDRAMArray['Branch'][$ThisBranch]['Latest'];
                     }
                 } else {
                     $this->FE['info_php_branch'] = $this->L10N->getString('response_error');
@@ -733,16 +733,16 @@ class FrontEnd extends Core
             }
 
             /** Cleanup. */
-            unset($this->CIDRAM['Remote-YAML-CIDRAM-Array'], $this->CIDRAM['Remote-YAML-CIDRAM']);
+            unset($RemoteYAMLCIDRAMArray, $this->CIDRAM['Remote-YAML-CIDRAM']);
 
             /** Fetch remote PHP version information and cache it if necessary. */
-            if (($this->CIDRAM['Remote-YAML-PHP'] = $this->Cache->getEntry('php-ver.yaml')) === false) {
-                $this->CIDRAM['Remote-YAML-PHP'] = $this->Request->request($this->CIDRAM['RemoteVerPath'] . 'php-ver.yaml', [], 8);
-                $this->Cache->setEntry('php-ver.yaml', $this->CIDRAM['Remote-YAML-PHP'] ?: '-', 86400);
+            if (($RemoteYAMLPHP = $this->Cache->getEntry('php-ver.yaml')) === false) {
+                $RemoteYAMLPHP = $this->Request->request($RemoteVerPath . 'php-ver.yaml', [], 8);
+                $this->Cache->setEntry('php-ver.yaml', $RemoteYAMLPHP ?: '-', 86400);
             }
 
             /** Process remote PHP version information. */
-            if (empty($this->CIDRAM['Remote-YAML-PHP'])) {
+            if (empty($RemoteYAMLPHP)) {
                 /** PHP latest stable. */
                 $this->FE['info_php_stable'] = $this->L10N->getString('response_error');
 
@@ -752,23 +752,23 @@ class FrontEnd extends Core
                 /** PHP branch latest stable. */
                 $this->FE['info_php_branch'] = $this->L10N->getString('response_error');
             } else {
-                $this->CIDRAM['Remote-YAML-PHP-Array'] = [];
-                $this->YAML->process($this->CIDRAM['Remote-YAML-PHP'], $this->CIDRAM['Remote-YAML-PHP-Array']);
+                $RemoteYAMLPHPArray = [];
+                $this->YAML->process($RemoteYAMLPHP, $RemoteYAMLPHPArray);
 
                 /** PHP latest stable. */
-                $this->FE['info_php_stable'] = empty($this->CIDRAM['Remote-YAML-PHP-Array']['Stable']) ?
-                    $this->L10N->getString('response_error') : $this->CIDRAM['Remote-YAML-PHP-Array']['Stable'];
+                $this->FE['info_php_stable'] = empty($RemoteYAMLPHPArray['Stable']) ?
+                    $this->L10N->getString('response_error') : $RemoteYAMLPHPArray['Stable'];
 
                 /** PHP latest unstable. */
-                $this->FE['info_php_unstable'] = empty($this->CIDRAM['Remote-YAML-PHP-Array']['Unstable']) ?
-                    $this->L10N->getString('response_error') : $this->CIDRAM['Remote-YAML-PHP-Array']['Unstable'];
+                $this->FE['info_php_unstable'] = empty($RemoteYAMLPHPArray['Unstable']) ?
+                    $this->L10N->getString('response_error') : $RemoteYAMLPHPArray['Unstable'];
 
                 /** PHP branch latest stable. */
-                if ($this->CIDRAM['ThisBranch'] = substr(PHP_VERSION, 0, strpos(PHP_VERSION, '.') ?: 0)) {
-                    $this->CIDRAM['ThisBranch'] .= substr(PHP_VERSION, strlen($this->CIDRAM['ThisBranch']) + 1, strpos(PHP_VERSION, '.', strlen($this->CIDRAM['ThisBranch'])) ?: 0);
-                    $this->CIDRAM['ThisBranch'] = 'php' . $this->CIDRAM['ThisBranch'];
-                    $this->FE['info_php_branch'] = empty($this->CIDRAM['Remote-YAML-PHP-Array']['Branch'][$this->CIDRAM['ThisBranch']]['Latest']) ?
-                        $this->L10N->getString('response_error') : $this->CIDRAM['Remote-YAML-PHP-Array']['Branch'][$this->CIDRAM['ThisBranch']]['Latest'];
+                if ($ThisBranch = substr(PHP_VERSION, 0, strpos(PHP_VERSION, '.') ?: 0)) {
+                    $ThisBranch .= substr(PHP_VERSION, strlen($ThisBranch) + 1, strpos(PHP_VERSION, '.', strlen($ThisBranch)) ?: 0);
+                    $ThisBranch = 'php' . $ThisBranch;
+                    $this->FE['info_php_branch'] = empty($RemoteYAMLPHPArray['Branch'][$ThisBranch]['Latest']) ?
+                        $this->L10N->getString('response_error') : $RemoteYAMLPHPArray['Branch'][$ThisBranch]['Latest'];
                 } else {
                     $this->FE['info_php_branch'] = $this->L10N->getString('response_error');
                 }
@@ -778,7 +778,7 @@ class FrontEnd extends Core
             $this->FE['CachedLogsLink'] = $this->Cache->getEntry('CachedLogsLink-' . $this->FE['User']) ?: '?cidram-page=logs';
 
             /** Cleanup. */
-            unset($this->CIDRAM['Remote-YAML-PHP-Array'], $this->CIDRAM['Remote-YAML-PHP'], $this->CIDRAM['ThisBranch'], $this->CIDRAM['RemoteVerPath']);
+            unset($RemoteYAMLPHPArray, $RemoteYAMLPHP, $ThisBranch, $RemoteVerPath);
         }
 
         /** Useful for avoiding excessive IO operations when dealing with components. */

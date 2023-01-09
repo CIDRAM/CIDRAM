@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: ip-api module (last modified: 2023.01.07).
+ * This file: ip-api module (last modified: 2023.01.09).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -146,11 +146,10 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     }
 
     /** Act based on CC. */
-    if (!empty($this->CIDRAM['IPAPI-' . $ToCheck]['CC']) && empty($CCDone)) {
+    if (!empty($this->CIDRAM['IPAPI-' . $ToCheck]['CC'])) {
         /** Populate country code lookup information. */
         if ($this->CIDRAM['IPAPI-' . $ToCheck]['CC'] !== 'XX') {
             $this->BlockInfo['CCLookup'] = $this->CIDRAM['IPAPI-' . $ToCheck]['CC'];
-            $CCDone = true;
         }
 
         /** Origin is whitelisted. */

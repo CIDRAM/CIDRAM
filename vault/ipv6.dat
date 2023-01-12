@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2023.3.0
-# Last modified: 2023.01.04
+# Version: 2023.11.0
+# Last modified: 2023.01.12
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -582,8 +582,8 @@ Tag: IMAQLIQ
 
 # ASN 41722 ("Miran Ltd").
 # A source of brute-force and SSH attacks.
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2020.10.19 / Checked: 2022.01.16
+# Stop Forum Spam (SFS) listings: 23.
+# Updated: 2020.10.19 / Checked: 2023.01.12
 
 2a03:21c0::/32 Deny Cloud
 Origin: RU
@@ -604,14 +604,10 @@ Tag: MEDYABIM INTERNET HIZMETLERI
 # ASN 19969 ("Joe's Datacenter, LLC").
 # Dedicated data center. A *huge* source of spam and unwanted traffic!
 # Subtract 44.0.0.0/9, 44.128.0.0/10 (clean).
-# Stop Forum Spam (SFS) listings: 10,824.
-# Updated: 2022.01.16
+# Stop Forum Spam (SFS) listings: 54.
+# Updated: 2023.01.12
 
 2001:470:32::/48 Deny Cloud
-2602:fed3:1::/48 Deny Cloud
-2602:fed3:2::/47 Deny Cloud
-2602:fed3:4::/47 Deny Cloud
-2602:fed3:8::/48 Deny Cloud
 2602:ffc5:10a::/48 Deny Cloud
 2604:5800::/32 Deny Cloud
 Origin: US
@@ -966,10 +962,15 @@ Tag: WestHost, Inc
 
 
 # ASN 32097 ("WholeSale Internet, Inc").
-# Stop Forum Spam (SFS) listings: 96,160.
-# Updated: 2022.09.21
+# Stop Forum Spam (SFS) listings: 54,619.
+# Updated: 2023.01.12
 
 2001:4858::/32 Deny Cloud
+2602:fed3:1::/48 Deny Cloud
+2602:fed3:2::/47 Deny Cloud
+2602:fed3:4::/47 Deny Cloud
+2602:fed3:6::/48 Deny Cloud
+2602:fed3:8::/47 Deny Cloud
 2604:4300:f40::/48 Deny Cloud
 2604:4300:c00d::/48 Deny Cloud
 Origin: US
@@ -7130,10 +7131,11 @@ Tag: Serverfield
 # Listing here due to reports from some users of spam events, brute-force
 # attempts, probing, etc. Example: abuseipdb.com/check/129.213.67.237
 # But, listing only the ASNs directly connected to current reports.
-# Stop Forum Spam (SFS) listings: 14,441.
-# Updated: 2022.10.03
+# Stop Forum Spam (SFS) listings: 10,591.
+# Updated: 2023.01.12
 
 2a09:a447:ac1e::/48 Run bypasses.php
+2a12:dd47:8047::/48 Run bypasses.php
 Origin: GB
 2600:2000:2100::/42 Run bypasses.php
 2600:2000:2200::/42 Run bypasses.php
@@ -7217,6 +7219,8 @@ Origin: GB
 2603:c028::/35 Run bypasses.php
 2603:c028:4000::/35 Run bypasses.php
 2606:b400:8012::/48 Run bypasses.php
+2620:123:208b::/48 Run bypasses.php
+2620:123:208c::/48 Run bypasses.php
 Origin: US
 Profile: Commercial;Infrastructure/Transit;Tor endpoints here
 Tag: Oracle Corporation
@@ -10472,10 +10476,10 @@ Profile: Commercial
 Tag: Babbar SAS
 
 
-# ASN 212322 ("Cloud Computing Corporation").
+# ASN 58519 ("Cloud Computing Corporation").
 # Port scans, hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 1,187.
-# Updated: 2022.01.18
+# Stop Forum Spam (SFS) listings: 556.
+# Updated: 2022.01.18 / Checked: 2023.01.12
 
 2407:c080:1800::/37 Deny Cloud
 240e:40:8::/48 Deny Cloud

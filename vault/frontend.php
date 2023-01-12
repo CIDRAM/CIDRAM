@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.12.10).
+ * This file: Front-end handler (last modified: 2023.01.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1268,6 +1268,16 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                 ['&', '<', '>'],
                 strip_tags($CIDRAM['ThisDir']['DirLang'])
             ), 77, "\r\n; ") . "\r\n";
+
+            /** Fix for PHP automatically changing certain kinds of $_POST keys. */
+            if (!isset($_POST[$CIDRAM['ThisDir']['DirLangKey']])) {
+                $CIDRAM['Try'] = str_replace('.', '_', $CIDRAM['ThisDir']['DirLangKey']);
+                if (isset($_POST[$CIDRAM['Try']])) {
+                    $_POST[$CIDRAM['ThisDir']['DirLangKey']] = $_POST[$CIDRAM['Try']];
+                    unset($_POST[$CIDRAM['Try']]);
+                }
+            }
+
             if (isset($_POST[$CIDRAM['ThisDir']['DirLangKey']])) {
                 if (in_array($CIDRAM['DirValue']['type'], ['bool', 'float', 'int', 'kb', 'string', 'timezone', 'email', 'url'], true)) {
                     $CIDRAM['AutoType']($_POST[$CIDRAM['ThisDir']['DirLangKey']], $CIDRAM['DirValue']['type']);
@@ -1300,10 +1310,24 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                         foreach ($CIDRAM['DirValue']['labels'] as $CIDRAM['DirValue']['ThisLabelKey'] => $CIDRAM['DirValue']['ThisLabel']) {
                             if (!empty($_POST[$CIDRAM['ThisDir']['DirLangKey'] . '_' . $CIDRAM['DirValue']['ThisChoiceKey'] . '_' . $CIDRAM['DirValue']['ThisLabelKey']])) {
                                 $CIDRAM['DirValue']['Posts'][] = $CIDRAM['DirValue']['ThisChoiceKey'] . ':' . $CIDRAM['DirValue']['ThisLabelKey'];
+                            } else {
+                                $CIDRAM['Try'] = str_replace('.', '_', $CIDRAM['ThisDir']['DirLangKey'] . '_' . $CIDRAM['DirValue']['ThisChoiceKey'] . '_' . $CIDRAM['DirValue']['ThisLabelKey']);
+                                if (!empty($_POST[$CIDRAM['Try']])) {
+                                    $_POST[$CIDRAM['ThisDir']['DirLangKey'] . '_' . $CIDRAM['DirValue']['ThisChoiceKey'] . '_' . $CIDRAM['DirValue']['ThisLabelKey']] = $_POST[$CIDRAM['Try']];
+                                    unset($_POST[$CIDRAM['Try']]);
+                                    $CIDRAM['DirValue']['Posts'][] = $CIDRAM['DirValue']['ThisChoiceKey'] . ':' . $CIDRAM['DirValue']['ThisLabelKey'];
+                                }
                             }
                         }
                     } elseif (!empty($_POST[$CIDRAM['ThisDir']['DirLangKey'] . '_' . $CIDRAM['DirValue']['ThisChoiceKey']])) {
                         $CIDRAM['DirValue']['Posts'][] = $CIDRAM['DirValue']['ThisChoiceKey'];
+                    } else {
+                        $CIDRAM['Try'] = str_replace('.', '_', $CIDRAM['ThisDir']['DirLangKey'] . '_' . $CIDRAM['DirValue']['ThisChoiceKey']);
+                        if (!empty($_POST[$CIDRAM['Try']])) {
+                            $_POST[$CIDRAM['ThisDir']['DirLangKey'] . '_' . $CIDRAM['DirValue']['ThisChoiceKey']] = $_POST[$CIDRAM['Try']];
+                            unset($_POST[$CIDRAM['Try']]);
+                            $CIDRAM['DirValue']['Posts'][] = $CIDRAM['DirValue']['ThisChoiceKey'];
+                        }
                     }
                 }
                 $CIDRAM['DirValue']['Posts'] = implode(',', $CIDRAM['DirValue']['Posts']) ?: '';

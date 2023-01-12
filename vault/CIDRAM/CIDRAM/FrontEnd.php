@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2022.12.19).
+ * This file: The CIDRAM front-end (last modified: 2023.01.12).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1205,6 +1205,16 @@ class FrontEnd extends Core
                         ' autocomplete="%s"',
                         $DirValue['autocomplete']
                     );
+
+                    /** Fix for PHP automatically changing certain kinds of $_POST keys. */
+                    if (!isset($_POST[$ThisDir['DirLangKey']])) {
+                        $Try = str_replace('.', '_', $ThisDir['DirLangKey']);
+                        if (isset($_POST[$Try])) {
+                            $_POST[$ThisDir['DirLangKey']] = $_POST[$Try];
+                            unset($_POST[$Try]);
+                        }
+                    }
+
                     if (isset($_POST[$ThisDir['DirLangKey']])) {
                         if (in_array($DirValue['type'], ['email', 'string', 'timezone', 'url', 'float', 'int', 'duration', 'bool', 'kb'], true)) {
                             $this->autoType($_POST[$ThisDir['DirLangKey']], $DirValue['type']);
@@ -1232,10 +1242,24 @@ class FrontEnd extends Core
                                 foreach ($DirValue['labels'] as $DirValue['ThisLabelKey'] => $DirValue['ThisLabel']) {
                                     if (!empty($_POST[$ThisDir['DirLangKey'] . '_' . $DirValue['ThisChoiceKey'] . '_' . $DirValue['ThisLabelKey']])) {
                                         $DirValue['Posts'][] = $DirValue['ThisChoiceKey'] . ':' . $DirValue['ThisLabelKey'];
+                                    } else {
+                                        $Try = str_replace('.', '_', $ThisDir['DirLangKey'] . '_' . $DirValue['ThisChoiceKey'] . '_' . $DirValue['ThisLabelKey']);
+                                        if (!empty($_POST[$Try])) {
+                                            $_POST[$ThisDir['DirLangKey'] . '_' . $DirValue['ThisChoiceKey'] . '_' . $DirValue['ThisLabelKey']] = $_POST[$Try];
+                                            unset($_POST[$Try]);
+                                            $DirValue['Posts'][] = $DirValue['ThisChoiceKey'] . ':' . $DirValue['ThisLabelKey'];
+                                        }
                                     }
                                 }
                             } elseif (!empty($_POST[$ThisDir['DirLangKey'] . '_' . $DirValue['ThisChoiceKey']])) {
                                 $DirValue['Posts'][] = $DirValue['ThisChoiceKey'];
+                            } else {
+                                $Try = str_replace('.', '_', $ThisDir['DirLangKey'] . '_' . $DirValue['ThisChoiceKey']);
+                                if (!empty($_POST[$Try])) {
+                                    $_POST[$ThisDir['DirLangKey'] . '_' . $DirValue['ThisChoiceKey']] = $_POST[$Try];
+                                    unset($_POST[$Try]);
+                                    $DirValue['Posts'][] = $DirValue['ThisChoiceKey'];
+                                }
                             }
                         }
                         $DirValue['Posts'] = implode("\n", $DirValue['Posts']) ?: '';

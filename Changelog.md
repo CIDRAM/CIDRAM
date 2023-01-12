@@ -61,6 +61,7 @@
 - The reset button at the front-end configuration page wasn't resetting the hidden "other" field; Fixed.
 - Redis shouldn't set EXPIRE for TTLs less than 1; Fixed (#369).
 - Added `ob_get_level()` guard for `ob_end_flush()` call at registered shutdown closure for in case of missing buffer data (e.g., due to prior calls at the implementation) to resolve related notice (#367).
+- Decimals in the names, choice keys, and labels keys of configuration directives were being coerced by PHP to underscores; Fixed.
 
 #### Other changes.
 - Improved IP address resolution strategy (#286).

@@ -225,6 +225,9 @@ config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "Aramalar yapılırken raporların dikkate alınması için gün cinsinden maksimum yaş. Varsayılan = 365."
 config_projecthoneypot_max_ts_for_captcha: "Bir CAPTCHA için izin verilen maksimum tehdit puanı (1 ile 100 arasında bir sayı olmalıdır). Varsayılan = 10."
 config_projecthoneypot_minimum_threat_score: "CIDRAM'ın bir IP adresini engellemesi için gereken minimum tehdit puanı (1 ile 100 arasında bir sayı olmalıdır). Varsayılan = 10."
+config_protocol: "Protokol engelleyici modülü için yapılandırma."
+config_protocol_blocked: "Seçilen protokoller engellenecektir. Not: Cloudflare gibi tamamen aynı protokolü kullanacak şekilde istekleri yeniden yazan hizmetler aracılığıyla yönlendirilen web siteleri için herhangi bir etkisi olmayacaktır."
+config_protocol_reason_message: "Bu tür istekler engellendiğinde görüntülenen neden mesajı."
 config_rate_limiting: "Hız sınırlaması için yapılandırma (genel kullanım için önerilmez)."
 config_rate_limiting_allowance_period: "Kullanımı izlemek için süre. Varsayılan = 0°0′0″."
 config_rate_limiting_exceptions: "İstisnalar (yani oran sınırlı olmaması gereken istekler). Yalnızca sınırlaması etkin olduğunda geçerlidir."
@@ -523,6 +526,7 @@ label_displaying:
 label_displaying_that_cite:
  - ""%2$s" ibaresi verilen %1$s öğe görüntülenir."
  - ""%2$s" ibaresi verilen %1$s öğe görüntüleniyor."
+label_empty_unfamiliar: "Boş, yabancı, ve diğerleri."
 label_entries_per_page: "Sayfa başına girişler:"
 label_expected: "Beklenen"
 label_expires: "Son Geçerlilik Tarihi:"

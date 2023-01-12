@@ -225,6 +225,9 @@ config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "Beim Durchführen die Suchen, das maximale Alter in Tagen für Berichte zu berücksichtigende werden. Standardeinstellung = 365."
 config_projecthoneypot_max_ts_for_captcha: "Die maximal zulässige Bedrohungsbewert für die Zustellung eines CAPTCHA (muss eine Zahl zwischen 1 und 100 sein). Standardeinstellung = 10."
 config_projecthoneypot_minimum_threat_score: "Die minimale Bedrohungsbewert, die erforderlich ist, damit CIDRAM eine IP-Adresse blockieren kann (muss eine Zahl zwischen 1 und 100 sein). Standardeinstellung = 10."
+config_protocol: "Konfiguration für das Protokollblockermodul."
+config_protocol_blocked: "Ausgewählte Protokolle werden blockiert. Hinweis: Hat keine Auswirkungen auf Websites die über Dienste geleitet werden, die Anfragen so umschreiben dass sie alle dasselbe Protokoll verwenden, z.B. Cloudflare."
+config_protocol_reason_message: "Die Grundmeldung die angezeigt wird wenn solche Anfragen blockiert werden."
 config_rate_limiting: "Konfiguration für Ratenbegrenzung (nicht für den allgemeinen Gebrauch empfohlen)."
 config_rate_limiting_allowance_period: "Die Dauer um die Nutzung zu überwachen. Standardeinstellung = 0°0′0″."
 config_rate_limiting_exceptions: "Ausnahmen (d.h., Anfragen die nicht ratenbegrenzt sein sollten). Nur relevant wenn die Ratenbegrenzung aktiviert ist."
@@ -528,6 +531,7 @@ label_displaying:
 label_displaying_that_cite:
  - "%s Eintrag mit „%s“ angezeigt."
  - "%s Einträge mit „%s“ angezeigt."
+label_empty_unfamiliar: "Leer, ungewohnt, und andere."
 label_entries_per_page: "Einträge pro Seite:"
 label_expected: "Erwartet"
 label_expires: "Läuft ab:"

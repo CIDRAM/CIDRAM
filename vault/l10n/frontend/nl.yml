@@ -225,6 +225,9 @@ config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "De maximale leeftijd in dagen waarvoor rapporten worden overwogen bij het uitvoeren van zoekopdrachten. Standaard = 365."
 config_projecthoneypot_max_ts_for_captcha: "De maximale dreigingsscore die is toegestaan voor een CAPTCHA (moet een getal zijn tussen 1 en 100). Standaard = 10."
 config_projecthoneypot_minimum_threat_score: "De minimale dreigingsscore die vereist is om CIDRAM een IP-adres te blokkeren (moet een getal zijn tussen 1 en 100). Standaard = 10."
+config_protocol: "Configuratie voor de protocolblokkeringsmodule."
+config_protocol_blocked: "Geselecteerde protocollen worden geblokkeerd. Opmerking: Heeft geen enkel effect op websites die via services routeren die verzoeken herschrijven om allemaal exact hetzelfde protocol te gebruiken, zoals Cloudflare."
+config_protocol_reason_message: "Het redenbericht dat wordt weergegeven wanneer dergelijke verzoeken worden geblokkeerd."
 config_rate_limiting: "Configuratie voor tarieflimiet (niet aanbevolen voor algemeen gebruik)."
 config_rate_limiting_allowance_period: "De duur om het gebruik bij te controleren. Standaard = 0°0′0″."
 config_rate_limiting_exceptions: "Excepties (d.w.z., verzoeken die moet niet worden beperkt). Alleen relevant wanneer tarieflimiet is ingeschakeld."
@@ -526,6 +529,7 @@ label_displaying:
 label_displaying_that_cite:
  - "%s item weergeven dat "%s" citeert."
  - "%s items weergeven dat "%s" citeren."
+label_empty_unfamiliar: "Leeg, onbekend, en andere."
 label_entries_per_page: "Inzendingen per pagina:"
 label_expected: "Verwacht"
 label_expires: "Verloopt:"

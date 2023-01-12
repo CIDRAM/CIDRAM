@@ -1,0 +1,61 @@
+##\
+# Bot Or Browser User Agent Module (defaults file).
+#
+# This file is a part of the "Bot or browser user agent module", created by
+# David MacMathan, intended for use with CIDRAM.
+# Homepage: https://cidram.github.io/
+#
+# CIDRAM COPYRIGHT 2016 and beyond by Caleb Mazalevskis (Maikuolan).
+# BOBUAM COPYRIGHT 2021 and beyond by David MacMathan (macmathan).
+#
+# License: GNU/GPLv2
+# @see LICENSE.txt
+#
+# This file: Protocol blocker module (last modified: 2023.01.10).
+##/
+
+Config Defaults:
+ protocol:
+  blocked:
+   type: "checkbox"
+   default: |
+    HTTP/0.9
+    HTTP/0.x
+    HTTP/1.x
+    HTTP/x.x
+    SHTTP/x.x
+    SPDY/x.x
+    IRC/6.9
+    IRC/x.x
+    RTA/x11
+    Other
+   choices:
+    HTTP/0.9: "HTTP/0.9"
+    HTTP/0.x: "HTTP/0.x ({label_other})"
+    HTTP/1.0: "HTTP/1.0"
+    HTTP/1.1: "HTTP/1.1"
+    HTTP/1.2: "HTTP/1.2"
+    HTTP/1.3: "HTTP/1.3"
+    HTTP/1.x: "HTTP/1.x ({label_other})"
+    HTTP/2.0: "HTTP/2.0"
+    HTTP/2.x: "HTTP/2.x ({label_other})"
+    HTTP/3.0: "HTTP/3.0"
+    HTTP/3.x: "HTTP/3.x ({label_other})"
+    HTTP/x.x: "HTTP/x.x ({label_other})"
+    SHTTP/1.3: "SHTTP/1.3"
+    SHTTP/x.x: "SHTTP/x.x ({label_other})"
+    SPDY/3.0: "SPDY/3.0"
+    SPDY/3.1: "SPDY/3.1"
+    SPDY/x.x: "SPDY/x.x ({label_other})"
+    IRC/6.9: "IRC/6.9"
+    IRC/x.x: "IRC/x.x ({label_other})"
+    RTA/x11: "RTA/x11"
+    Other: "label_empty_unfamiliar"
+  reason_message:
+   type: "string"
+   default: "protocol_denied_long"
+   choices:
+    protocol_denied_long: "protocol_denied_long"
+    denied: "denied"
+   preview: "allow_other"
+   allow_other: true

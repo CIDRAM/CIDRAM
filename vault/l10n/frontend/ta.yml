@@ -225,6 +225,9 @@ config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "லுக்-அப்களைச் செய்யும்போது கருத்தில் கொள்ள வேண்டிய அறிக்கைகளுக்கான அதிகபட்ச வயது. இயல்புநிலை = 365."
 config_projecthoneypot_max_ts_for_captcha: "CAPTCHAகளை வழங்குவதற்கு அதிகபட்ச அச்சுறுத்தல் மதிப்பெண் அனுமதிக்கப்படுகிறது (1க்கும் 100க்கும் இடைப்பட்ட எண்ணாக இருக்க வேண்டும்). இயல்புநிலை = 10."
 config_projecthoneypot_minimum_threat_score: "ஐபி முகவரிகளைத் தடுக்க CIDRAM க்கு தேவையான குறைந்தபட்ச அச்சுறுத்தல் மதிப்பெண் (1க்கும் 100க்கும் இடைப்பட்ட எண்ணாக இருக்க வேண்டும்). இயல்புநிலை = 10."
+config_protocol: "Configuration for the protocol blocker module."
+config_protocol_blocked: "Selected protocols will be blocked. Note: Won't affect websites that route through services which rewrite requests to all use the same protocol, such as Cloudflare."
+config_protocol_reason_message: "The reason message displayed when such requests are blocked."
 config_rate_limiting: "வீத வரம்புக்கு உள்ளமைவு (பொது பயன்பாட்டிற்கு பரிந்துரைக்கப்படவில்லை)."
 config_rate_limiting_allowance_period: "பயன்பாட்டைக் கண்காணிக்கும் காலம். இயல்புநிலை = 0°0′0″."
 config_rate_limiting_exceptions: "விதிவிலக்குகள் (அதாவது, அந்த கோரிக்கைகள் மட்டுப்படுத்தப்படக்கூடாது). வீத வரம்பு இயக்கப்பட்டால் மட்டுமே தொடர்புடையது."
@@ -526,6 +529,7 @@ label_displaying:
 label_displaying_that_cite:
  - ""%2$s" என்று மேற்கோள் காட்டி %1$s உருப்படி காண்பிக்கிறேன்."
  - ""%2$s" என்று மேற்கோள் காட்டி %1$s உருப்படிகளைக் காண்பிக்கிறேன்."
+label_empty_unfamiliar: "Empty, unfamiliar, and others."
 label_entries_per_page: "ஒரு பக்கத்திற்கு உருப்படிகளின் எண்ணிக்கை:"
 label_expected: "எதிர்பார்க்கப்படுகிறது"
 label_expires: "காலாவதியாகிறது:"

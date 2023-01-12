@@ -225,6 +225,9 @@ config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "Maksimal alder i dager som rapporter vil bli vurdert for når du utfører oppslag. Standardverdi = 365."
 config_projecthoneypot_max_ts_for_captcha: "Maksimal trusselpoengsum tillatt for å bli servert en CAPTCHA (må være et tall mellom 1 og 100). Standardverdi = 10."
 config_projecthoneypot_minimum_threat_score: "Minimum trusselpoengsum som kreves for at CIDRAM skal blokkere en IP-adresse (må være et tall mellom 1 og 100). Standardverdi = 10."
+config_protocol: "Konfigurasjon for protokollblokkeringsmodulen."
+config_protocol_blocked: "Utvalgte protokoller vil bli blokkert. Merk: Vil ikke ha noen effekt for de nettstedene som ruter gjennom tjenester som omskriver forespørsler til alle bruker nøyaktig samme protokoll, for eksempel Cloudflare."
+config_protocol_reason_message: "Årsaksmeldingen vises når slike forespørsler blokkeres."
 config_rate_limiting: "Konfigurasjon for hastighetsbegrensning (anbefales ikke til generell bruk)."
 config_rate_limiting_allowance_period: "Varigheten for å spore bruk. Standardverdi = 0°0′0″."
 config_rate_limiting_exceptions: "Unntak (dvs, forespørsler som ikke bør være hastighetsbegrenset). Relevant bare når hastighetsbegrensning er aktivert."
@@ -523,6 +526,7 @@ label_displaying:
 label_displaying_that_cite:
  - "%s oppføring vises som citerer "%s"."
  - "%s oppføringer vises som citerer "%s"."
+label_empty_unfamiliar: "Tom, ukjent, og andre."
 label_entries_per_page: "Oppføringer per side:"
 label_expected: "Forventet"
 label_expires: "Utgår:"

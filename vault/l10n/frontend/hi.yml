@@ -225,6 +225,9 @@ config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "लुकअप करते समय रिपोर्ट के लिए दिनों में अधिकतम आयु पर विचार किया जाना चाहिए। डिफ़ॉल्ट = 365।"
 config_projecthoneypot_max_ts_for_captcha: "कैप्चा परोसने के लिए अधिकतम खतरा स्कोर की अनुमति है (1 और 100 के बीच की कोई संख्या होनी चाहिए)। डिफ़ॉल्ट = 10।"
 config_projecthoneypot_minimum_threat_score: "CIDRAM के लिए IP पते को ब्लॉक करने के लिए आवश्यक न्यूनतम खतरा स्कोर (1 और 100 के बीच की कोई संख्या होनी चाहिए)। डिफ़ॉल्ट = 10।"
+config_protocol: "Configuration for the protocol blocker module."
+config_protocol_blocked: "Selected protocols will be blocked. Note: Won't affect websites that route through services which rewrite requests to all use the same protocol, such as Cloudflare."
+config_protocol_reason_message: "The reason message displayed when such requests are blocked."
 config_rate_limiting: "दर सीमित करने के लिए कॉन्फ़िगरेशन (सामान्य उपयोग के लिए अनुशंसित नहीं है)।"
 config_rate_limiting_allowance_period: "उपयोग को ट्रैक करने की अवधि। डिफ़ॉल्ट = 0°0′0″।"
 config_rate_limiting_exceptions: "अपवाद (अर्थात, अनुरोध जो दर सीमित नहीं होने चाहिए)। केवल एक प्रभाव है जब दर सीमित करने में सक्षम है।"
@@ -525,6 +528,7 @@ label_displaying:
 label_displaying_that_cite:
  - "%s प्रविष्टि प्रदर्शित है जो "%s" का हवाला देते हैं।"
  - "%s प्रविष्टियां प्रदर्शित है जो "%s" का हवाला देते हैं।"
+label_empty_unfamiliar: "Empty, unfamiliar, and others."
 label_entries_per_page: "प्रति पृष्ठ प्रविष्टियाँ:"
 label_expected: "अपेक्षित होना"
 label_expires: "समय समाप्ति:"

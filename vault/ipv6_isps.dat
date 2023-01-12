@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2023.3.0
-# Last modified: 2023.01.04
+# Version: 2023.11.0
+# Last modified: 2023.01.12
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -1427,3 +1427,14 @@ Tag: PT Cyberindo Aditama
 Origin: AL
 Profile: Domestic ISP;Mobile ISP
 Tag: IPKO
+
+
+# ASN 263744 ("Udasha S.A").
+# Honduran domestic ISP. Significant source of spam and other strange traffic.
+# Stop Forum Spam (SFS) listings: 4,551.
+# Updated: 2023.01.12
+
+2803:5380::/32 Deny Attacks
+Origin: HN
+Profile: Domestic ISP
+Tag: Udasha S.A

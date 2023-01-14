@@ -405,7 +405,7 @@ class Cache
                 $this->Indexes[$Index] = true;
                 $this->ModifiedIndexes = true;
             }
-            $Out = $this->unserializeEntry($this->WorkingData->get($Entry));
+            return $this->unserializeEntry($Out);
         }
         if ($this->Using === 'Redis') {
             return $this->unserializeEntry($this->WorkingData->get($Entry));

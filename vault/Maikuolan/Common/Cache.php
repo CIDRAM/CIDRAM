@@ -1,6 +1,6 @@
 <?php
 /**
- * A simple, unified cache handler (last modified: 2022.12.15).
+ * A simple, unified cache handler (last modified: 2023.01.14).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -113,6 +113,16 @@ class Cache
     private $WorkingData = null;
 
     /**
+     * @var array Used for manual cache key indexing for mechanisms which don't provide means of properly fetching all keys (e.g., Memcached).
+     */
+    private $Indexes = [];
+
+    /**
+     * @var bool Whether the cache indexes have been modified since instantiation as far as we know.
+     */
+    private $ModifiedIndexes = false;
+
+    /**
      * @var string Prepared set query for PDO.
      */
     public const SET_QUERY = 'REPLACE INTO `Cache` (`Key`, `Data`, `Time`) values (:key, :data, :time)';
@@ -193,6 +203,9 @@ class Cache
     public function __destruct()
     {
         if ($this->Using === 'Memcached') {
+            if ($this->ModifiedIndexes) {
+                $this->setEntry('__Indexes', implode("\n", array_keys($this->Indexes)), 0);
+            }
             $this->WorkingData->quit();
             return;
         }
@@ -251,6 +264,10 @@ class Cache
             $this->WorkingData = new \Memcached();
             if ($this->WorkingData->addServer($this->MemcachedHost, $this->MemcachedPort)) {
                 $this->Using = 'Memcached';
+                $Indexes = $this->getEntry('__Indexes');
+                if (is_string($Indexes)) {
+                    $this->Indexes = array_fill_keys(explode("\n", $Indexes), true);
+                }
                 return true;
             }
             $this->WorkingData = null;
@@ -371,12 +388,26 @@ class Cache
      */
     public function getEntry(string $Entry)
     {
+        $Index = $Entry;
         $Entry = $this->Prefix . $Entry;
         $this->enforceKeyLimit($Entry);
         if ($this->Using === 'APCu') {
             return $this->unserializeEntry(apcu_fetch($Entry));
         }
-        if ($this->Using === 'Memcached' || $this->Using === 'Redis') {
+        if ($this->Using === 'Memcached') {
+            $Out = $this->WorkingData->get($Entry);
+            if ($Out === false) {
+                if (isset($this->Indexes[$Index])) {
+                    unset($this->Indexes[$Index]);
+                    $this->ModifiedIndexes = true;
+                }
+            } elseif (!isset($this->Indexes[$Index])) {
+                $this->Indexes[$Index] = true;
+                $this->ModifiedIndexes = true;
+            }
+            $Out = $this->unserializeEntry($this->WorkingData->get($Entry));
+        }
+        if ($this->Using === 'Redis') {
             return $this->unserializeEntry($this->WorkingData->get($Entry));
         }
         if ($this->Using === 'PDO') {
@@ -414,6 +445,7 @@ class Cache
      */
     public function setEntry(string $Key, $Value, int $TTL = 3600): bool
     {
+        $Index = $Key;
         $Key = $this->Prefix . $Key;
         $this->enforceKeyLimit($Key);
         $Value = $this->serializeEntry($Value);
@@ -428,6 +460,10 @@ class Cache
                 $TTL += time();
             }
             if ($this->WorkingData->set($Key, $Value, $TTL)) {
+                if (!isset($this->Indexes[$Index])) {
+                    $this->Indexes[$Index] = true;
+                    $this->ModifiedIndexes = true;
+                }
                 return $this->Modified = true;
             }
             return false;
@@ -474,6 +510,7 @@ class Cache
      */
     public function deleteEntry(string $Entry): bool
     {
+        $Index = $Entry;
         $Entry = $this->Prefix . $Entry;
         $this->enforceKeyLimit($Entry);
         if ($this->Using === 'APCu') {
@@ -484,6 +521,10 @@ class Cache
         }
         if ($this->Using === 'Memcached') {
             if ($this->WorkingData->delete($Entry)) {
+                if (isset($this->Indexes[$Index])) {
+                    unset($this->Indexes[$Index]);
+                    $this->ModifiedIndexes = true;
+                }
                 return $this->Modified = true;
             }
             return false;
@@ -557,7 +598,8 @@ class Cache
         }
         $Success = null;
         if ($this->Using === 'APCu') {
-            apcu_inc($Key, $Value, $Success, $TTL);
+            $Try = apcu_inc($Key, $Value, $Success, $TTL);
+            $Success = $Try !== false;
         } elseif ($this->Using === 'Memcached') {
             if ($TTL >= 2592000) {
                 $TTL += time();
@@ -619,7 +661,8 @@ class Cache
         }
         $Success = null;
         if ($this->Using === 'APCu') {
-            apcu_dec($Key, $Value, $Success, $TTL);
+            $Try = apcu_dec($Key, $Value, $Success, $TTL);
+            $Success = $Try !== false;
         } elseif ($this->Using === 'Memcached') {
             if ($TTL >= 2592000) {
                 $TTL += time();
@@ -676,7 +719,12 @@ class Cache
             return $this->Modified = apcu_clear_cache();
         }
         if ($this->Using === 'Memcached') {
-            return ($this->WorkingData->flush() && ($this->Modified = true));
+            if ($this->WorkingData->flush()) {
+                $this->Indexes = [];
+                $this->ModifiedIndexes = false;
+                return $this->Modified = true;
+            }
+            return false;
         }
         if ($this->Using === 'Redis') {
             return ($this->WorkingData->flushDb() && ($this->Modified = true));
@@ -702,6 +750,20 @@ class Cache
      */
     public function getAllEntries(): array
     {
+        if ($this->Using === 'Memcached') {
+            $Output = [];
+            $Indexes = $this->Indexes;
+            foreach ($Indexes as $Index => $Unused) {
+                $Try = $this->getEntry($Index);
+                if ($Try === false) {
+                    unset($this->Indexes[$Index]);
+                    $this->ModifiedIndexes = true;
+                    continue;
+                }
+                $Output[$Index] = $Try;
+            }
+            return $Output;
+        }
         $PrefixLen = strlen($this->Prefix);
         if ($this->Using === 'APCu') {
             $Data = apcu_cache_info();
@@ -724,34 +786,6 @@ class Cache
                     'Data' => $Entry['Data'],
                     'Time' => $Creation + $Entry['ttl']
                 ] : $Entry['Data'];
-            }
-            return $Output;
-        }
-        if ($this->Using === 'Memcached') {
-            $Keys = $this->WorkingData->getAllKeys();
-            if ($Keys !== false && $this->WorkingData->getDelayed($Keys)) {
-                $Data = $this->WorkingData->fetchAll();
-            }
-            if (!is_array($Data)) {
-                return [];
-            }
-            $Output = [];
-            foreach ($Data as $Entry) {
-                if (
-                    !is_array($Entry) ||
-                    !isset($Entry['key'], $Entry['value'], $Entry['cas']) ||
-                    strlen($Entry['key']) > self::KEY_SIZE_LIMIT ||
-                    ($PrefixLen && substr($Entry['key'], 0, $PrefixLen) !== $this->Prefix)
-                ) {
-                    continue;
-                }
-                $Key = substr($Entry['key'], $PrefixLen);
-                $Output[$Key] = ['Data' => $this->unserializeEntry($Entry['value'])];
-                if ($Entry['cas'] > 2592000) {
-                    $Output[$Key]['Time'] = $Entry['cas'];
-                } else {
-                    $Output[$Key] = $Output[$Key]['Data'];
-                }
             }
             return $Output;
         }

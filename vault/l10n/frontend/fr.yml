@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2023.01.09).
+# This file: French language data for the front-end (last modified: 2023.01.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -25,7 +25,7 @@
 ##/
 
 Extended Description AbuseIPDB module: "Bloque les requêtes des adresses IP répertoriées dans AbuseIPDB."
-Extended Description BGPView module: "Exploite l'API {{Links.BGPView}} pour fournir la possibilité de rechercher des codes de pays et des ASN pour CIDRAM, permettre le blocage ou la mise en liste blanche des ASN et des pays via la configuration CIDRAM, et fournir un moyen de vérification des réseaux sociaux pour vérifier les requêtes de Facebook."
+Extended Description BGPView module: "Exploite l'API {{Links.BGPView}} pour fournir la possibilité de rechercher des codes de pays et des ASN pour CIDRAM, permettre le blocage ou la mise en liste blanche des ASN et des pays via la configuration CIDRAM, et fournir un moyen de vérification des réseaux sociaux pour vérifier les requêtes de Facebook. (Si vous utilisez ce module, vous n'aurez pas besoin d'utiliser le module IP-API, car ils ont le même objectif)."
 Extended Description Bad TLDs blocker module: "Bloque les hôtes appartenant aux TLDs fréquemment utilisés par les spammeurs, les hackers et autres entités malveillantes."
 Extended Description Bad hosts blocker module: "Bloque les hôtes fréquemment utilisés par les spammeurs, les hackers et autres entités malveillantes."
 Extended Description Bot user agents module: "Bloque les agents utilisateurs associés aux bots indésirables et aux activités malveillantes."
@@ -33,7 +33,7 @@ Extended Description Bypasses: "Les fichiers pour contourner les signatures stan
 Extended Description Chart.js: "Permet à l'interface frontale de générer des diagrammes à secteurs.<br />{{Links.Chart.js}} est disponible via le <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
 Extended Description Cookie scanner module: "Fournit quelques protections limitées contre les cookies dangereux."
 Extended Description HTTP version checker module: "Permet de bloquer des protocoles spécifiques et des versions HTTP via la configuration CIDRAM."
-Extended Description IP-API module: "Exploite l'API {{Links.IP-API}} pour fournir la possibilité de rechercher des codes de pays et des ASN pour CIDRAM, permettre le blocage ou la mise en liste blanche des ASN et des pays via la configuration CIDRAM, et fournir un moyen de vérification des réseaux sociaux pour vérifier les requêtes de Facebook."
+Extended Description IP-API module: "Exploite l'API {{Links.IP-API}} pour fournir la possibilité de rechercher des codes de pays et des ASN pour CIDRAM, permettre le blocage ou la mise en liste blanche des ASN et des pays via la configuration CIDRAM, et fournir un moyen de vérification des réseaux sociaux pour vérifier les requêtes de Facebook. (Si vous utilisez ce module, vous n'aurez pas besoin d'utiliser le module BGPView, car ils ont le même objectif)."
 Extended Description IPv4: &ExtDesCloud "Bloque les services cloud indésirables et les noeuds finaux non humains."
 Extended Description IPv4-Bogons: &ExtDesBogons "Bloque bogon/martien CIDRs."
 Extended Description IPv4-ISPs: &ExtDesISPs "Bloque les FAI dangereux et sujets au spam (comprend des réseaux multijoueurs, qui peuvent contenir des points de terminaison humains et aussi non humains)."
@@ -47,6 +47,7 @@ Extended Description IPv6-Other: *ExtDesOther
 Extended Description Optional security extras module: "Fournit quelques protections limitées contre divers vecteurs d'attaque communément utilisé dans les requêtes."
 Extended Description PHPMailer: "Requis pour l'utilisation de toute fonctionnalité impliquant l'envoi d'e-mails.<br />{{Links.PHPMailer.PHPMailer}} est disponible via la licence {{Links.PHPMailer.License}}."
 Extended Description Project Honeypot module: "Bloque les requêtes des adresses IP répertoriées dans Project Honeypot."
+Extended Description Protocol blocker module: "Fournit la possibilité de bloquer des protocoles de requête spécifiques via la configuration (par exemple, HTTP/0.9, HTTP/1.1, SPDY/3.0, etc). Remarque\_: N'aura aucun effet pour les sites Web qui acheminent via des services qui réécrivent les requêtes pour tous utiliser exactement le même protocole, tel que Cloudflare."
 Extended Description Referrer spam module: "Le blocage basé sur le spam référent ne procure généralement aucun avantage de sécurité significatif, mais dans certains cas, cela pourrait être utile à certains utilisateurs pour rassembler plus d'informations sur les requêtes et pour pouvoir les signaler.<br />L'installation de ce module installe également les polyfills Symfony pour {{Links.Symfony.Intl/Idn}} (car ce module nécessite la fonctionnalité Idn, que ne toutes pas les installations PHP fournissent par défaut), disponibles via la licence <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
 Extended Description Stop Forum Spam module: "Protège l'enregistrement et les pages de connexion contre les adresses IP répertoriées par SFS."
 Extended Description Tor blocker module: "Interdit l'accès à partir des nœuds de sortie Tor via les recherches DNSEL (le supporte IPv4 et IPv6)."
@@ -73,6 +74,7 @@ Name IPv6-Nonblocking: "Signatures non bloquantes IPv6."
 Name IPv6-Other: "IPv6 (proxy, VPN, etc)."
 Name Optional security extras module: "Module optionnel pour la sécurité supplémentaire."
 Name Project Honeypot module: "Module Project Honeypot."
+Name Protocol blocker module: "Module bloqueur de protocoles."
 Name Referrer spam module: "Module spam référent."
 Name Stop Forum Spam module: "Module Stop Forum Spam."
 Name Tor blocker module: "Module de blocage Tor."
@@ -85,7 +87,7 @@ checkbox_label_block_negatives: "Bloquer les négatifs\_?"
 checkbox_label_block_nonverified: "Bloquer les requêtes non vérifiés\_?"
 checkbox_label_fields_logs: "Inclure ce champ dans les journaux\_?"
 checkbox_label_fields_omit: "Omettre ce champ lorsqu'il est vide\_?"
-checkbox_label_fields_page_output: "Inclure ce champ sur la page «\_Accès Refusé\_»\_?"
+checkbox_label_fields_page_output: "Inclure ce champ sur la page «\_accès refusé\_»\_?"
 checkbox_label_profile_it: "Profilez le."
 checkbox_label_single_hit_bypass: "Autoriser les contournements en un seul coup\_?"
 checkbox_label_stage_enable: "Activer cette étape\_?"
@@ -168,7 +170,7 @@ config_general_lang: "Spécifiez la langue défaut pour CIDRAM."
 config_general_lang_override: "Localiser selon HTTP_ACCEPT_LANGUAGE autant que possible\_? True = Oui [Défaut]\_; False = Non."
 config_general_numbers: "Comment préférez-vous que les nombres soient affichés\_? Sélectionnez l'exemple qui vous paraît le plus approprié."
 config_general_sensitive: "Une liste de chemins à considérer comme des pages sensibles. Chaque chemin listé sera vérifié par rapport à l'URI reconstruit si nécessaire. Un chemin qui commence par une barre oblique sera traité comme un littéral, et mis en correspondance à partir du composant de chemin de la requête. Sinon, un chemin qui commence par un caractère non alphanumérique, et se termine par ce même caractère (ou ce même caractère plus un indicateur «\_i\_» facultatif) sera traité comme une expression régulière. Tout autre type de chemin sera traité comme un littéral, et peut correspondre à partir de n'importe quelle partie de l'URI. Le fait qu'un chemin soit considéré comme une page sensible peut affecter le comportement de certains modules, mais n'a aucun effet autrement."
-config_general_silent_mode: "Devrait CIDRAM rediriger silencieusement les tentatives d'accès bloquées à la place de l'affichage de la page «\_Accès Refusé\_»\_? Si oui, spécifiez l'emplacement pour rediriger les tentatives d'accès bloquées. Si non, laisser cette variable vide."
+config_general_silent_mode: "Devrait CIDRAM rediriger silencieusement les tentatives d'accès bloquées à la place de l'affichage de la page «\_accès refusé\_»\_? Si oui, spécifiez l'emplacement pour rediriger les tentatives d'accès bloquées. Si non, laisser cette variable vide."
 config_general_stages: "Contrôles des étapes de la chaîne d'exécution (s'il est activé, si les erreurs sont enregistrées, etc)."
 config_general_statistics: "Contrôle les informations statistiques à suivre."
 config_general_time_format: "Le format de notation de la date/heure utilisé par CIDRAM. Des options supplémentaires peuvent être ajoutées sur requête."

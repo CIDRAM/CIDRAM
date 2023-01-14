@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2023.01.09).
+# This file: Norwegian language data for the front-end (last modified: 2023.01.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -25,7 +25,7 @@
 ##/
 
 Extended Description AbuseIPDB module: "Blokkerer forespørsler fra IPer oppført på AbuseIPDB."
-Extended Description BGPView module: "Utnytter {{Links.BGPView}} API for å tilby et ASN og landkode oppslag funksjonalitet for CIDRAM, slik at ASNer og land kan blokkeres eller hvitelister via CIDRAM-konfigurasjonen, og tilveiebringe et middel for verifisering av sosiale nettverk for å bekrefte Facebook-forespørsler."
+Extended Description BGPView module: "Utnytter {{Links.BGPView}} API for å tilby et ASN og landkode oppslag funksjonalitet for CIDRAM, slik at ASNer og land kan blokkeres eller hvitelister via CIDRAM-konfigurasjonen, og tilveiebringe et middel for verifisering av sosiale nettverk for å bekrefte Facebook-forespørsler. (Hvis du bruker denne modulen, du ikke trenger bruke IP-API-modulen, siden de tjener samme formål)."
 Extended Description Bad TLDs blocker module: "Blokker vertene som tilhører TLDer ofte brukt av spammere, hackere og andre farlige enheter."
 Extended Description Bad hosts blocker module: "Blokker vertene ofte brukt av spammere, hackere og andre farlige enheter."
 Extended Description Bot user agents module: "Blokkerer brukeragenter assosiert med uønskede bots og ufarlig aktivitet."
@@ -33,7 +33,7 @@ Extended Description Bypasses: "Standard-signatur-bypass-filene som normalt føl
 Extended Description Chart.js: "Gjør det mulig for frontendens å generere pajediagrammer.<br />{{Links.Chart.js}} er tilgjengelig via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
 Extended Description Cookie scanner module: "Gir noen begrensede beskyttelser mot farlige informasjonskapsler."
 Extended Description HTTP version checker module: "Gjør det mulig å blokkere spesifikke protokoller og HTTP-versjoner gjennom CIDRAM-konfigurasjonen."
-Extended Description IP-API module: "Utnytter {{Links.IP-API}} API for å tilby et ASN og landkode oppslag funksjonalitet for CIDRAM, slik at ASNer og land kan blokkeres eller hvitelister via CIDRAM-konfigurasjonen, og tilveiebringe et middel for verifisering av sosiale nettverk for å bekrefte Facebook-forespørsler."
+Extended Description IP-API module: "Utnytter {{Links.IP-API}} API for å tilby et ASN og landkode oppslag funksjonalitet for CIDRAM, slik at ASNer og land kan blokkeres eller hvitelister via CIDRAM-konfigurasjonen, og tilveiebringe et middel for verifisering av sosiale nettverk for å bekrefte Facebook-forespørsler. (Hvis du bruker denne modulen, du ikke trenger bruke BGPView-modulen, siden de tjener samme formål)."
 Extended Description IPv4: &ExtDesCloud "Blokkerer uønskede sky-tjenester og ikke-menneskelige endepunkter."
 Extended Description IPv4-Bogons: &ExtDesBogons "Blokkerer bogon/martian CIDRer."
 Extended Description IPv4-ISPs: &ExtDesISPs "Blokkerer farlige og spam-fylte ISPer (inkluderer flerspillnettverk, som kan inneholde både menneskelige og ikke-menneskelige endepunkter)."
@@ -47,6 +47,7 @@ Extended Description IPv6-Other: *ExtDesOther
 Extended Description Optional security extras module: "Gir noen begrensede beskyttelser mot ulike angrepsvektorer som ofte brukes i forespørsler."
 Extended Description PHPMailer: "Kreves for bruk av funksjonalitet som innebærer sending av e-post.<br />{{Links.PHPMailer.PHPMailer}} er tilgjengelig via {{Links.PHPMailer.License}}-lisensen."
 Extended Description Project Honeypot module: "Blokkerer forespørsler fra IPer oppført på Project Honeypot."
+Extended Description Protocol blocker module: "Gir muligheten til å blokkere spesifikke forespørselsprotokoller via konfigurasjonen (f.eks., HTTP/0.9, HTTP/1.1, SPDY/3.0, osv). Merk: Vil ikke ha noen effekt for de nettstedene som ruter gjennom tjenester som omskriver forespørsler til alle bruker nøyaktig samme protokoll, for eksempel Cloudflare."
 Extended Description Referrer spam module: "Blokkering basert på referansesøppel vil vanligvis ikke gi noen meningsfull sikkerhetsgevinst, men i noen tilfeller kan det være nyttig for noen brukere, for å samle mer informasjon om forespørsler og for å kunne rapportere det.<br />Ved å installere denne modulen installeres også Symfony-polyfyllene for {{Links.Symfony.Intl/Idn}} (fordi denne modulen krever Idn-funksjonalitet, som ikke alle PHP-installasjoner leverer som standard), tilgjengelige via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a> lisensen."
 Extended Description Stop Forum Spam module: "Beskytter registrerings og innloggingssider mot IP-adresser oppført av SFS."
 Extended Description Tor blocker module: "Forbyr tilgang fra Tor-utgangsnoder gjennom DNSEL-oppslag (støtter både IPv4 og IPv6)."
@@ -73,6 +74,7 @@ Name IPv6-Nonblocking: "IPv6 ikke-blokkerende signaturer."
 Name IPv6-Other: "IPv6 (proxyer, VPN, etc)."
 Name Optional security extras module: "Valgfrie sikkerhetstilleggsmodul."
 Name Project Honeypot module: "Project Honeypot modul."
+Name Protocol blocker module: "Protokollblokkeringsmodul."
 Name Referrer spam module: "Henvisende spam modul."
 Name Stop Forum Spam module: "Stop Forum Spam modul."
 Name Tor blocker module: "Tor blokkeringsmodul."
@@ -168,7 +170,7 @@ config_general_lang: "Angi standardspråket for CIDRAM."
 config_general_lang_override: "Lokaliser i henhold til HTTP_ACCEPT_LANGUAGE når det er mulig? True = Ja [Standardverdi]; False = Nei."
 config_general_numbers: "Hvordan foretrekker du at tall vises? Velg eksempelet som passer best for deg."
 config_general_sensitive: "En liste over stier å betrakte som sensitive sider. Hver sti som er oppført vil bli sjekket mot den rekonstruerte URIen når det er nødvendig. En sti som begynner med en skråstrek vil bli behandlet som en bokstavelig, og matchet fra stikomponenten i forespørselen og fremover. Ellers vil en sti som begynner med et ikke-alfanumerisk tegn, og slutter med det samme tegnet (eller det samme tegnet pluss et valgfritt "i"-flagg) behandles som et regulært uttrykk. Enhver annen type sti vil bli behandlet som en bokstavelig, og kan matche fra hvilken som helst del av URI. Hvorvidt en sti anses som en sensitiv side kan påvirke hvordan enkelte moduler oppfører seg, men har ingen effekt ellers."
-config_general_silent_mode: "Bør CIDRAM stille omdirigere blokkerte tilgangsforsøk i stedet for å vise "Tilgang Nektet" siden? Hvis ja, spesifiser stedet for å omdirigere blokkerte tilgangsforsøk til. Hvis nei, la denne variablen være tom."
+config_general_silent_mode: "Bør CIDRAM stille omdirigere blokkerte tilgangsforsøk i stedet for å vise "tilgang nektet" siden? Hvis ja, spesifiser stedet for å omdirigere blokkerte tilgangsforsøk til. Hvis nei, la denne variablen være tom."
 config_general_stages: "Kontroller for stadiene i utførelseskjeden (om aktivert, om feil logges, osv)."
 config_general_statistics: "Kontrollerer hvilken statistisk informasjon som skal spores."
 config_general_time_format: "Dato/tid notasjonsformat som brukes av CIDRAM. Ytterligere alternativer kan legges på forespørsel."

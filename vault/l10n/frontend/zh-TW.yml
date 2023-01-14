@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2023.01.09).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2023.01.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -25,7 +25,7 @@
 ##/
 
 Extended Description AbuseIPDB module: "阻止來自AbuseIPDB列出的IP的請求。"
-Extended Description BGPView module: "利用{{Links.BGPView}} API為CIDRAM提供ASN和國家代碼查找功能，提供通過CIDRAM配置一種ASN和國家被阻止或列入白名單的方法，並提供一種用於社交媒體驗證的方式來驗證Facebook請求。"
+Extended Description BGPView module: "利用{{Links.BGPView}} API為CIDRAM提供ASN和國家代碼查找功能，提供通過CIDRAM配置一種ASN和國家被阻止或列入白名單的方法，並提供一種用於社交媒體驗證的方式來驗證Facebook請求。 （如果您使用此模塊，則無需使用IP-API模塊，因為它們的用途相同）。"
 Extended Description Bad TLDs blocker module: "阻止垃圾郵件發送者，黑客，和其他惡意實體經常使用的主機的TLD。"
 Extended Description Bad hosts blocker module: "阻止垃圾郵件發送者，黑客，和其他惡意實體經常使用的主機。"
 Extended Description Bot user agents module: "阻止不需要的機器人和惡意活動相關聯的用戶代理。"
@@ -33,7 +33,7 @@ Extended Description Bypasses: "標準簽名旁路文件通常包括在主包。
 Extended Description Chart.js: "使前端能夠生成餅圖。<br />{{Links.Chart.js}}可通過<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>獲得。"
 Extended Description Cookie scanner module: "提供一些針對危險cookie的有限保護。"
 Extended Description HTTP version checker module: "通過CIDRAM配置可以阻止特定的協議和HTTP版本。"
-Extended Description IP-API module: "利用{{Links.IP-API}} API為CIDRAM提供ASN和國家代碼查找功能，提供通過CIDRAM配置一種ASN和國家被阻止或列入白名單的方法，並提供一種用於社交媒體驗證的方式來驗證Facebook請求。"
+Extended Description IP-API module: "利用{{Links.IP-API}} API為CIDRAM提供ASN和國家代碼查找功能，提供通過CIDRAM配置一種ASN和國家被阻止或列入白名單的方法，並提供一種用於社交媒體驗證的方式來驗證Facebook請求。 （如果您使用此模塊，則無需使用BGPView模塊，因為它們的用途相同）。"
 Extended Description IPv4: &ExtDesCloud "阻止不想要的雲服務和非人終端。"
 Extended Description IPv4-Bogons: &ExtDesBogons "阻止bogon/火星CIDR。"
 Extended Description IPv4-ISPs: &ExtDesISPs "阻止危險和垃圾容易ISP（包括多重播放網絡，可能包含人類和非人類端點）。"
@@ -47,6 +47,7 @@ Extended Description IPv6-Other: *ExtDesOther
 Extended Description Optional security extras module: "提供一些有限的保護針對各種攻擊向量常用於請求。"
 Extended Description PHPMailer: "使用涉及發送電子郵件的任何功能時需要。<br />{{Links.PHPMailer.PHPMailer}}可通過{{Links.PHPMailer.License}}許可證獲得。"
 Extended Description Project Honeypot module: "阻止來自Project Honeypot列出的IP的請求。"
+Extended Description Protocol blocker module: "提供通過配置阻止特定請求協議的能力（例如，HTTP/0.9、HTTP/1.1、SPDY/3.0、等等）。注意：不會影響通過強制請求使用相同協議的服務（例如，Cloudflare）路由的網站。"
 Extended Description Referrer spam module: "基於引薦來源垃圾郵件阻止通常不會提供任何有意義的安全利益，但在某些情況下，對某些用戶可能有用，用於收集有關請求的更多信息，以及能夠報告它。<br />通過安裝此模塊，還將安裝用於{{Links.Symfony.Intl/Idn}}的Symfony polyfills（因為此模塊需要Idn功能性，但並非所有PHP安裝都默認提供該功能性）。​可以通過<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>許可獲得。"
 Extended Description Stop Forum Spam module: "防止通過SFS列出的IP地址訪問註冊和登錄頁面。"
 Extended Description Tor blocker module: "禁止通過DNSEL查找從Tor出口節點進行訪問（支持IPv4和IPv6）。"
@@ -73,6 +74,7 @@ Name IPv6-Nonblocking: "IPv6非阻止簽名。"
 Name IPv6-Other: "IPv6（代理，VPN，等等）。"
 Name Optional security extras module: "可選安全附加模塊。"
 Name Project Honeypot module: "Project Honeypot 模塊。"
+Name Protocol blocker module: "協議阻塞模塊。"
 Name Referrer spam module: "引薦來源垃圾郵件模塊。"
 Name Stop Forum Spam module: "Stop Forum Spam 模塊。"
 Name Tor blocker module: "Tor阻塞模塊。"

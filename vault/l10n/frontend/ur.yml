@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2023.01.09).
+# This file: Urdu language data for the front-end (last modified: 2023.01.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -25,7 +25,7 @@
 ##/
 
 Extended Description AbuseIPDB module: "AbuseIPDB میں درج IP کے بلاکس کی درخواستیں."
-Extended Description BGPView module: "ASN اور ملکی کوڈز کو تلاش کرنے کے لئے {{Links.BGPView}} کا استعمال کریں. اس سے ASN اور ممالک کو ترتیب کے ذریعے مسدود یا وائٹ لسٹ کرنے کا اہل بناتا ہے، اور Facebook درخواستوں کی توثیق کرنے کا ایک ذریعہ فراہم کرتا ہے."
+Extended Description BGPView module: "ASN اور ملکی کوڈز کو تلاش کرنے کے لئے {{Links.BGPView}} کا استعمال کریں. اس سے ASN اور ممالک کو ترتیب کے ذریعے مسدود یا وائٹ لسٹ کرنے کا اہل بناتا ہے، اور Facebook درخواستوں کی توثیق کرنے کا ایک ذریعہ فراہم کرتا ہے. (اگر آپ یہ ماڈیول استعمال کرتے ہیں، تو آپ کو IP-API ماڈیول استعمال کرنے کی ضرورت نہیں ہوگی، کیونکہ وہ ایک ہی مقصد کو پورا کرتے ہیں)."
 Extended Description Bad TLDs blocker module: "عام طور پر اسپیمرز، ہیکرز، اور دیگر نواحی اداروں کے ذریعہ TLDs سے تعلق رکھنے والے بلاکس میزبان."
 Extended Description Bad hosts blocker module: "بلاکس اکثر سپیمرز، ہیکرز، اور دیگر غلط تنظیموں کے ذریعہ استعمال ہوتے ہیں."
 Extended Description Bot user agents module: "ناپسندیدہ بوٹس اور نفیاری سرگرمی سے منسلک بلاکس صارف ایجنٹوں."
@@ -33,7 +33,7 @@ Extended Description Bypasses: "پہلے سے طے شدہ دستخطی بائی 
 Extended Description Chart.js: "پائی چارٹ پیدا کرنے کے لئے سامنے کے آخر میں قابل بناتا ہے.<br />{{Links.Chart.js}} <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> کے ذریعہ دستیاب ہے."
 Extended Description Cookie scanner module: "خطرناک کوکیز کے خلاف کچھ محدود تحفظ فراہم کرتا ہے."
 Extended Description HTTP version checker module: "CIDRAM ترتیب کے ذریعے مخصوص پروٹوکول اور HTTP ورژن کو روکنا ممکن بناتا ہے."
-Extended Description IP-API module: "ASN اور ملکی کوڈز کو تلاش کرنے کے لئے {{Links.IP-API}} کا استعمال کریں. اس سے ASN اور ممالک کو ترتیب کے ذریعے مسدود یا وائٹ لسٹ کرنے کا اہل بناتا ہے، اور Facebook درخواستوں کی توثیق کرنے کا ایک ذریعہ فراہم کرتا ہے."
+Extended Description IP-API module: "ASN اور ملکی کوڈز کو تلاش کرنے کے لئے {{Links.IP-API}} کا استعمال کریں. اس سے ASN اور ممالک کو ترتیب کے ذریعے مسدود یا وائٹ لسٹ کرنے کا اہل بناتا ہے، اور Facebook درخواستوں کی توثیق کرنے کا ایک ذریعہ فراہم کرتا ہے. (اگر آپ یہ ماڈیول استعمال کرتے ہیں، تو آپ کو BGPView ماڈیول استعمال کرنے کی ضرورت نہیں ہوگی، کیونکہ وہ ایک ہی مقصد کو پورا کرتے ہیں)."
 Extended Description IPv4: &ExtDesCloud "بلاکس ناپسندیدہ کلاؤڈ سروسز اور غیر انسانی رسائی پوائنٹس."
 Extended Description IPv4-Bogons: &ExtDesBogons "بلاکس martian/bogon CIDR."
 Extended Description IPv4-ISPs: &ExtDesISPs "خطرناک بلاکس اور سپام ISP (ملٹی پلے نیٹ ورک پر مشتمل ہے. ان میں انسانی اور غیر انسانی مقامات بھی ہوسکتے ہیں)."
@@ -47,6 +47,7 @@ Extended Description IPv6-Other: *ExtDesOther
 Extended Description Optional security extras module: "عام طور پر درخواستوں میں استعمال ہونے والی مختلف حمل ویکٹروں کے خلاف کچھ محدود تحفظ فراہم کرتا ہے."
 Extended Description PHPMailer: "یہ کسی بھی فعالیت کا استعمال کرنے کے لئے ضروری ہے جس میں ای میل بھیجنا شامل ہے.<br />{{Links.PHPMailer.PHPMailer}} لائسنس {{Links.PHPMailer.License}} کے ذریعہ دستیاب ہے."
 Extended Description Project Honeypot module: "Project Honeypot میں درج IP کے بلاکس کی درخواستیں."
+Extended Description Protocol blocker module: "کنفیگریشن کے ذریعے مخصوص درخواست پروٹوکول کو بلاک کرنے کی صلاحیت فراہم کرتا ہے (مثال کے طور پر، HTTP/0.9، HTTP/1.1 ،SPDY/3.0، وغیرہ). نوٹ: کچھ خدمات (مثلاً، Cloudflare) نافذ کرتی ہیں کہ تمام درخواستیں ایک ہی پروٹوکول کا استعمال کرتی ہیں. ایسی خدمات استعمال کرنے والی ویب سائٹیں ماڈیول سے متاثر نہیں ہوں گی."
 Extended Description Referrer spam module: "ریفرر اسپام پر مبنی مسدودیت عام طور پر کوئی معنی خیز فائدہ نہیں فراہم کرے گی، لیکن کبھی کبھی درخواستوں کے بارے میں مزید معلومات اکٹھا کرنے اور اس کی اطلاع دینے کے قابل ہوسکتے ہیں.<br />اس ماڈیول کو انسٹال کرنے سے، {{Links.Symfony.Intl/Idn}} کے لئے Symfony polyfills بھی انسٹال ہوجائیں گے. اس کی وجہ یہ ہے کہ ماڈیول کو Idn فعالیت کی ضرورت ہوتی ہے، جو نہیں تمام PHP کی تنصیبات بطور ڈیفالٹ فراہم کرتی ہیں. <a dir="ltr" href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a> لائسنس کے ذریعے دستیاب ہے."
 Extended Description Stop Forum Spam module: "SFS سے گنا IP ایس کے خلاف رجسٹریشن اور لاگ ان صفحات کی حفاظت کرتا ہے."
 Extended Description Tor blocker module: "DNSEL تلاش کے ذریعے ٹور ایگزٹ نوڈس تک رسائی کو روکتا ہے (IPv4 اور IPv6 دونوں کو سپورٹ کرتا ہے)."
@@ -73,6 +74,7 @@ Name IPv6-Nonblocking: "IPv6 غیر مسدود دستخطیں."
 Name IPv6-Other: "IPv6 (پراکسی، وی پی این، وغیرہ)."
 Name Optional security extras module: "اختیاری سیکورٹی مع اضافہ جات ماڈیول."
 Name Project Honeypot module: "Project Honeypot ماڈیول."
+Name Protocol blocker module: "پروٹوکول بلاکر ماڈیول."
 Name Referrer spam module: "حوالہ دینے والا اسپام ماڈیول."
 Name Stop Forum Spam module: "Stop Forum Spam ماڈیول."
 Name Tor blocker module: "ٹور بلاکر ماڈیول."
@@ -225,9 +227,9 @@ config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "تلاش کرتے وقت رپورٹس کو مدنظر رکھنے کے لیے دنوں میں زیادہ سے زیادہ عمر. پہلے سے طے شدہ = 365."
 config_projecthoneypot_max_ts_for_captcha: "کیپچا پیش کیے جانے کے لیے زیادہ سے زیادہ خطرے کے اسکور کی اجازت ہے (1 اور 100 کے درمیان نمبر ہونا چاہیے). پہلے سے طے شدہ = 10."
 config_projecthoneypot_minimum_threat_score: "IP ایڈریس کو بلاک کرنے کے لیے CIDRAM کے لیے درکار کم از کم خطرے کا سکور (1 اور 100 کے درمیان نمبر ہونا چاہیے). پہلے سے طے شدہ = 10."
-config_protocol: "Configuration for the protocol blocker module."
-config_protocol_blocked: "Selected protocols will be blocked. Note: Won't affect websites that route through services which rewrite requests to all use the same protocol, such as Cloudflare."
-config_protocol_reason_message: "The reason message displayed when such requests are blocked."
+config_protocol: "پروٹوکول بلاکر ماڈیول کے لیے کنفیگریشن."
+config_protocol_blocked: "منتخب پروٹوکولز کو بلاک کر دیا جائے گا. نوٹ: کچھ خدمات (مثلاً، Cloudflare) نافذ کرتی ہیں کہ تمام درخواستیں ایک ہی پروٹوکول کا استعمال کرتی ہیں. ایسی خدمات استعمال کرنے والی ویب سائٹیں ماڈیول سے متاثر نہیں ہوں گی."
+config_protocol_reason_message: "The reason message to display when such requests are blocked."
 config_rate_limiting: "شرح کو محدود کرنے کی ترتیبات (عام استعمال کے لئے سفارش نہیں کی جاتی ہے)."
 config_rate_limiting_allowance_period: "استعمال کو ٹریک کرنے کا دورانیہ. پہلے سے طے شدہ = 0°0′0″."
 config_rate_limiting_exceptions: "مستثنیات (یعنی، درخواستوں کو جس کی شرح محدود نہیں ہونی چاہئے). متعلقہ صرف اس وقت جب شرح کی حد بندی قابل ہو."
@@ -524,7 +526,7 @@ label_displaying:
 label_displaying_that_cite:
  - "%s آئٹم دکھایا کہ "%s" کا حوالہ دیتے ہیں."
  - "%s اشیاء دکھایا کہ "%s" کا حوالہ دیتے ہیں."
-label_empty_unfamiliar: "Empty, unfamiliar, and others."
+label_empty_unfamiliar: "خالی، ناواقف، اور دیگر."
 label_entries_per_page: "فی صفحہ اندراجات:"
 label_expected: "متوقع"
 label_expires: "ختم ہو جاتی ہے:"

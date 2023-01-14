@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2023.01.09).
+# This file: Russian language data for the front-end (last modified: 2023.01.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -25,7 +25,7 @@
 ##/
 
 Extended Description AbuseIPDB module: "Блокирует запросы от IP-адресов, перечисленных в AbuseIPDB."
-Extended Description BGPView module: "Использует API {{Links.BGPView}} для предоставления средства поиска для ASN и коды страны для CIDRAM, таким образом, позволяя блокировать или вносить белый список ASN и стран через конфигурацию CIDRAM, и предоставление средств для проверки в социальных сетях для проверки запросов Facebook."
+Extended Description BGPView module: "Использует API {{Links.BGPView}} для предоставления средства поиска для ASN и коды страны для CIDRAM, таким образом, позволяя блокировать или вносить белый список ASN и стран через конфигурацию CIDRAM, и предоставление средств для проверки в социальных сетях для проверки запросов Facebook. (Если вы используете этот модуль, вам не нужно будет использовать модуль IP-API, так как они служат той же цели)."
 Extended Description Bad TLDs blocker module: "Блокирует хосты, принадлежащие ДВУ, часто используемые спамерами, хакерами и другими гнусными объектами."
 Extended Description Bad hosts blocker module: "Блокирует хосты, часто используемые спамерами, хакерами и другими гнусными объектами."
 Extended Description Bot user agents module: "Блокирует пользовательские агенты, связанные с нежелательными ботами и нечестной деятельностью."
@@ -33,7 +33,7 @@ Extended Description Bypasses: "Стандартная сигнатуры бай
 Extended Description Chart.js: "Позволяет фронтенд создавать круговые диаграммы.<br />{{Links.Chart.js}} доступен через <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
 Extended Description Cookie scanner module: "Обеспечивает некоторые ограниченные средства защиты против опасных куки."
 Extended Description HTTP version checker module: "Дает возможность блокировать определенные протоколы и версии HTTP через конфигурацию CIDRAM."
-Extended Description IP-API module: "Использует API {{Links.IP-API}} для предоставления средства поиска для ASN и коды страны для CIDRAM, таким образом, позволяя блокировать или вносить белый список ASN и стран через конфигурацию CIDRAM, и предоставление средств для проверки в социальных сетях для проверки запросов Facebook."
+Extended Description IP-API module: "Использует API {{Links.IP-API}} для предоставления средства поиска для ASN и коды страны для CIDRAM, таким образом, позволяя блокировать или вносить белый список ASN и стран через конфигурацию CIDRAM, и предоставление средств для проверки в социальных сетях для проверки запросов Facebook. (Если вы используете этот модуль, вам не нужно будет использовать модуль BGPView, так как они служат той же цели)."
 Extended Description IPv4: &ExtDesCloud "Блокирует нежелательные облачные сервисы и нечеловеческие конечные точки."
 Extended Description IPv4-Bogons: &ExtDesBogons "Блокирует bogon/марсианин CIDRы."
 Extended Description IPv4-ISPs: &ExtDesISPs "Блокирует опасно и спам-склонным интернет-провайдеры (включает multiplay сети, которые могут содержать человеческие и нечеловеческие конечные точки)."
@@ -47,6 +47,7 @@ Extended Description IPv6-Other: *ExtDesOther
 Extended Description Optional security extras module: "Обеспечивает некоторые ограниченные средства защиты против различных векторов атак обычно используются в запросах."
 Extended Description PHPMailer: "Требуется для использования любых функций, связанных с отправкой электронной почты.<br />{{Links.PHPMailer.PHPMailer}} доступен через лицензию {{Links.PHPMailer.License}}."
 Extended Description Project Honeypot module: "Блокирует запросы от IP-адресов, перечисленных в Project Honeypot."
+Extended Description Protocol blocker module: "Предоставляет возможность блокировать определенные протоколы запросов через конфигурацию (например, HTTP/0.9, HTTP/1.1, SPDY/3.0, и т.д.). Примечание: Не будет иметь никакого эффекта для тех веб-сайтов, которые маршрутизируют через службы, которые переписывают запросы, чтобы все использовали один и тот же протокол, например Cloudflare."
 Extended Description Referrer spam module: "Блокировка, основанная на реферальный спам, как правило, не дает сколько-нибудь значимого преимущества безопасности, но в некоторых случаях может быть полезным для некоторых пользователей, для сбора дополнительной информации о запросах и для возможности сообщить об этом.<br />Установка этого модуля также устанавливает полифилы Symfony для {{Links.Symfony.Intl/Idn}} (потому что этот модуль требует функциональности Idn, которую не все установки PHP предоставляют по умолчанию), доступно через лицензию <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
 Extended Description Stop Forum Spam module: "Защищает страницы регистрации и входа в систему от IP-адресов, перечисленных в SFS."
 Extended Description Tor blocker module: "Запрещает доступ с выходных узлов Tor через поиск DNSEL (поддерживает IPv4 и IPv6 оба)."
@@ -73,6 +74,7 @@ Name IPv6-Nonblocking: "Неблокирующие сигнатуры IPv6."
 Name IPv6-Other: "IPv6 (прокси, VPN, и т.д.)."
 Name Optional security extras module: "Модуль необязательный дополнительные безопасности."
 Name Project Honeypot module: "Модуль Project Honeypot."
+Name Protocol blocker module: "Модуль блокировщика протоколов."
 Name Referrer spam module: "Модуль реферера спама."
 Name Stop Forum Spam module: "Модуль Stop Forum Spam."
 Name Tor blocker module: "Модуль блокатор Tor."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2023.01.09).
+# This file: Vietnamese language data for the front-end (last modified: 2023.01.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -25,7 +25,7 @@
 ##/
 
 Extended Description AbuseIPDB module: "Chặn các yêu cầu từ IP được liệt kê tại AbuseIPDB."
-Extended Description BGPView module: "Tận dụng API {{Links.BGPView}} để cung cấp phương tiện tra cứu mã quốc gia và ASN cho CIDRAM, cho phép các ASN và quốc gia bị chặn hay đưa vào danh sách trắng thông qua cấu hình CIDRAM, và cung cấp một phương tiện để xác minh mạng xã hội để xác minh các yêu cầu của Facebook."
+Extended Description BGPView module: "Tận dụng API {{Links.BGPView}} để cung cấp phương tiện tra cứu mã quốc gia và ASN cho CIDRAM, cho phép các ASN và quốc gia bị chặn hay đưa vào danh sách trắng thông qua cấu hình CIDRAM, và cung cấp một phương tiện để xác minh mạng xã hội để xác minh các yêu cầu của Facebook. (Nếu bạn sử dụng mô-đun này, bạn sẽ không cần sử dụng mô-đun IP-API, vì chúng phục vụ cùng một mục đích)."
 Extended Description Bad TLDs blocker module: "Chặn các máy chủ web của các TLD mà thường được sử dụng bởi các chương trình thư rác, hacker và thực thể bất chính khác."
 Extended Description Bad hosts blocker module: "Chặn các máy chủ web mà thường được sử dụng bởi các chương trình thư rác, hacker và thực thể bất chính khác."
 Extended Description Bot user agents module: "Chặn các đại lý người dùng liên quan đến các chương trình không mong muốn và hoạt động bất chính."
@@ -33,7 +33,7 @@ Extended Description Bypasses: "Các tập tin đường tránh chữ ký mặc 
 Extended Description Chart.js: "Cho phép front-end tạo biểu đồ hình tròn.<br />{{Links.Chart.js}} có sẵn qua <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
 Extended Description Cookie scanner module: "Cung cấp một số bảo vệ hạn chế đối với cookie nguy hiểm."
 Extended Description HTTP version checker module: "Bạn có thể chặn các giao thức và phiên bản HTTP cụ thể thông qua cấu hình CIDRAM."
-Extended Description IP-API module: "Tận dụng API {{Links.IP-API}} để cung cấp phương tiện tra cứu mã quốc gia và ASN cho CIDRAM, cho phép các ASN và quốc gia bị chặn hay đưa vào danh sách trắng thông qua cấu hình CIDRAM, và cung cấp một phương tiện để xác minh mạng xã hội để xác minh các yêu cầu của Facebook."
+Extended Description IP-API module: "Tận dụng API {{Links.IP-API}} để cung cấp phương tiện tra cứu mã quốc gia và ASN cho CIDRAM, cho phép các ASN và quốc gia bị chặn hay đưa vào danh sách trắng thông qua cấu hình CIDRAM, và cung cấp một phương tiện để xác minh mạng xã hội để xác minh các yêu cầu của Facebook. (Nếu bạn sử dụng mô-đun này, bạn sẽ không cần sử dụng mô-đun BGPView, vì chúng phục vụ cùng một mục đích)."
 Extended Description IPv4: &ExtDesCloud "Chặn dịch vụ điện toán đám mây không mong muốn và thiết bị đầu cuối không phải con người."
 Extended Description IPv4-Bogons: &ExtDesBogons "Chặn các CIDR bogon/martian."
 Extended Description IPv4-ISPs: &ExtDesISPs "Chặn ISP nguy hiểm và gửi thư rác (bao gồm các mạng nhiều chơi, có thể chứa cả điểm cuối của con người và không con người)."
@@ -47,6 +47,7 @@ Extended Description IPv6-Other: *ExtDesOther
 Extended Description Optional security extras module: "Cung cấp một số bảo vệ hạn chế chống vectơ tấn công khác nhau thường được sử dụng trong các yêu cầu."
 Extended Description PHPMailer: "Cần thiết để sử dụng bất kỳ chức năng nào liên quan đến việc gửi email.<br />{{Links.PHPMailer.PHPMailer}} có sẵn qua giấy phép {{Links.PHPMailer.License}}."
 Extended Description Project Honeypot module: "Chặn các yêu cầu từ IP được liệt kê tại Project Honeypot."
+Extended Description Protocol blocker module: "Cung cấp khả năng chặn các giao thức yêu cầu cụ thể thông qua cấu hình (ví dụ, HTTP/0.9, HTTP/1.1, SPDY/3.0, vv). Ghi chú: Sẽ không có bất kỳ ảnh hưởng nào đối với các trang web đó định tuyến thông qua các dịch vụ viết lại các yêu cầu cho tất cả đều sử dụng cùng một giao thức, chẳng hạn như Cloudflare."
 Extended Description Referrer spam module: "Chặn dựa trên spam giới thiệu thường không cung cấp bất kỳ lợi ích bảo mật có ý nghĩa nào, nhưng trong một số trường hợp, có thể hữu ích cho một số người dùng, để thu thập thêm thông tin về các yêu cầu và để có thể báo cáo nó.<br />Bằng cách cài đặt mô-đun này, các polyfill Symfony cho {{Links.Symfony.Intl/Idn}} cũng sẽ được cài đặt (bởi vì mô-đun này yêu cầu chức năng "Idn", và không phải tất cả các cài đặt PHP cung cấp nó theo mặc định). Có sẵn thông qua giấy phép <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
 Extended Description Stop Forum Spam module: "Bảo vệ các trang đăng ký và đăng nhập đối với các địa chỉ IP do SFS liệt kê."
 Extended Description Tor blocker module: "Cấm truy cập từ các nút thoát Tor thông qua tra cứu DNSEL (hỗ trợ cả IPv4 và IPv6)."
@@ -73,6 +74,7 @@ Name IPv6-Nonblocking: "Chữ ký không chặn IPv6."
 Name IPv6-Other: "IPv6 (proxy, VPN, vv)."
 Name Optional security extras module: "Mô-đun tùy chọn cho bảo mật tính năng bổ sung."
 Name Project Honeypot module: "Mô-đun Project Honeypot."
+Name Protocol blocker module: "Mô-đun chặn giao thức."
 Name Referrer spam module: "Mô-đun spam giới thiệu."
 Name Stop Forum Spam module: "Mô-đun Stop Forum Spam."
 Name Tor blocker module: "Mô-đun cho chặn Tor."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2023.01.09).
+# This file: Turkish language data for the front-end (last modified: 2023.01.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -25,7 +25,7 @@
 ##/
 
 Extended Description AbuseIPDB module: "AbuseIPDB'de listelenen IP'lerden gelen istekleri engeller."
-Extended Description BGPView module: "CIDRAM için ASN ve ülke kodu arama olanağı sağlamak için {{Links.BGPView}} API'den yararlanır, ASN'lerin ve ülkelerin CIDRAM yapılandırması aracılığıyla engellenmesini veya beyaz listeye eklenmesini sağlamak, ve Facebook isteklerini doğrulamak için sosyal ağ doğrulaması için bir araç sağlamak."
+Extended Description BGPView module: "CIDRAM için ASN ve ülke kodu arama olanağı sağlamak için {{Links.BGPView}} API'den yararlanır, ASN'lerin ve ülkelerin CIDRAM yapılandırması aracılığıyla engellenmesini veya beyaz listeye eklenmesini sağlamak, ve Facebook isteklerini doğrulamak için sosyal ağ doğrulaması için bir araç sağlamak. (Bu modülü kullanırsanız, aynı amaca hizmet ettikleri için IP-API modülünü kullanmanıza gerek kalmaz)."
 Extended Description Bad TLDs blocker module: "Spam gönderenler, bilgisayar korsanları ve diğer haince varlıklar tarafından sıkça TLD'lere ait kullanılan ana bilgisayarları engeller."
 Extended Description Bad hosts blocker module: "Spam gönderenler, bilgisayar korsanları ve diğer haince varlıklar tarafından sıkça kullanılan ana bilgisayarları engeller."
 Extended Description Bot user agents module: "İstenmeyen botlar ve nefret dolu faaliyetlerle ilişkili kullanıcı aracılarını engeller."
@@ -33,7 +33,7 @@ Extended Description Bypasses: "Varsayılan imza bypass'lar, normalde ana paketl
 Extended Description Chart.js: "Ön uçların pasta grafikler oluşturmasını sağlar.<br />{{Links.Chart.js}}, <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> üzerinden kullanılabilir."
 Extended Description Cookie scanner module: "Tehlikeli çerezlere karşı bazı sınırlı koruma sağlar."
 Extended Description HTTP version checker module: "CIDRAM yapılandırması aracılığıyla belirli protokolleri ve HTTP sürümlerini engellemeyi mümkün kılar."
-Extended Description IP-API module: "CIDRAM için ASN ve ülke kodu arama olanağı sağlamak için {{Links.IP-API}} API'den yararlanır, ASN'lerin ve ülkelerin CIDRAM yapılandırması aracılığıyla engellenmesini veya beyaz listeye eklenmesini sağlamak, ve Facebook isteklerini doğrulamak için sosyal ağ doğrulaması için bir araç sağlamak."
+Extended Description IP-API module: "CIDRAM için ASN ve ülke kodu arama olanağı sağlamak için {{Links.IP-API}} API'den yararlanır, ASN'lerin ve ülkelerin CIDRAM yapılandırması aracılığıyla engellenmesini veya beyaz listeye eklenmesini sağlamak, ve Facebook isteklerini doğrulamak için sosyal ağ doğrulaması için bir araç sağlamak. (Bu modülü kullanırsanız, aynı amaca hizmet ettikleri için BGPView modülünü kullanmanıza gerek kalmaz)."
 Extended Description IPv4: &ExtDesCloud "İstenmeyen bulut servislerini ve insan olmayan uç noktaları engeller."
 Extended Description IPv4-Bogons: &ExtDesBogons "Bogon/martian CIDR'leri engeller."
 Extended Description IPv4-ISPs: &ExtDesISPs "Tehlikeli ve spam yapan ISS'leri engeller (çoklu hizmet ağları içerir; bunlar insan ve ayrıca insan dışı uç noktaları içerebilir)."
@@ -47,6 +47,7 @@ Extended Description IPv6-Other: *ExtDesOther
 Extended Description Optional security extras module: "İsteklerde yaygın olarak kullanılan çeşitli saldırı vektörlerine karşı bazı sınırlı koruma sağlar."
 Extended Description PHPMailer: "E-posta göndermeyi içeren herhangi bir işlev kullanmak için gereklidir.<br />{{Links.PHPMailer.PHPMailer}}, {{Links.PHPMailer.License}} lisansı üzerinden kullanılabilir."
 Extended Description Project Honeypot module: "Project Honeypot'de listelenen IP'lerden gelen istekleri engeller."
+Extended Description Protocol blocker module: "Yapılandırma yoluyla belirli istek protokollerini engelleme yeteneği sağlar (örneğin, HTTP/0.9, HTTP/1.1, SPDY/3.0, vb). Not: Cloudflare gibi tamamen aynı protokolü kullanacak şekilde istekleri yeniden yazan hizmetler aracılığıyla yönlendirilen web siteleri için herhangi bir etkisi olmayacaktır."
 Extended Description Referrer spam module: "Yönlendiren spam'e dayalı engelleme genellikle anlamlı bir güvenlik avantajı sağlamaz, ancak bazı durumlarda, bazı kullanıcılar için istekler hakkında daha fazla bilgi toplamak ve bunu rapor edebilmek için yararlı olabilir.<br />Bu modülün yüklenmesi, {{Links.Symfony.Intl/Idn}} için Symfony çoklu dolgularını da yükler (çünkü bu modül, tüm PHP kurulumlarının varsayılan olarak sağlamadığı Idn işlevselliği gerektirir), <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a> lisansı ile kullanılabilir."
 Extended Description Stop Forum Spam module: "SFS tarafından listelenen IP'lere karşı kayıt ve oturum açma sayfalarını korur."
 Extended Description Tor blocker module: "DNSEL aramaları aracılığıyla Tor çıkış düğümlerinden erişimi yasaklar (IPv4 ve IPv6'yı ikisi de destekleniyor)."
@@ -73,6 +74,7 @@ Name IPv6-Nonblocking: "IPv6 engellemeyen imzalar."
 Name IPv6-Other: "IPv6 (proxy, VPN'ler, vb)."
 Name Optional security extras module: "İsteğe bağlı güvenlik ekstrası modülü."
 Name Project Honeypot module: "Project Honeypot modülü."
+Name Protocol blocker module: "Protokol engelleyici modülü."
 Name Referrer spam module: "Yönlendiren spam modülü."
 Name Stop Forum Spam module: "Stop Forum Spam modülü."
 Name Tor blocker module: "Tor engelleyici modülü."
@@ -168,7 +170,7 @@ config_general_lang: "CIDRAM için varsayılan dili belirleyin."
 config_general_lang_override: "Mümkün olduğunda, HTTP_ACCEPT_LANGUAGE uyarınca yerelleştirilsin mi? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
 config_general_numbers: "Numaraların görüntülenmesini nasıl tercih edersiniz? Size en uygun görünen örneği seçin."
 config_general_sensitive: "Hassas sayfalar olarak değerlendirilecek yolların listesi. Listelenen her yol, gerektiğinde yeniden oluşturulmuş URI'ye göre kontrol edilecektir. Eğik çizgi ile başlayan bir yol değişmez bilgi olarak ele alınır ve isteğin yol bileşeninden itibaren eşleştirilir. Alfasayısal olmayan bir karakterle başlayan ve aynı karakterle (veya aynı karakter artı isteğe bağlı bir "i" bayrağıyla) biten bir yol, düzenli ifade olarak ele alınacaktır. Diğer herhangi bir yol hazır bilgi olarak ele alınır ve URI'nin herhangi bir bölümünden eşleşebilir. Bir yolun hassas sayfa olarak görülmesi, bazı modüllerin davranışını etkileyebilir, ancak başka bir etkisi yoktur."
-config_general_silent_mode: "CIDRAM, "Erişim Reddedildi" sayfasını göstermek yerine, engellenen erişim girişimlerini sessizce yönlendirmeli mi? Yanıt evet ise, engellenen erişim girişimleri için yeniden yönlendirilecek konumu belirtin. Yanıt hayır ise, bu değişkeni boş bırakın."
+config_general_silent_mode: "CIDRAM, "erişim reddedildi" sayfasını göstermek yerine, engellenen erişim girişimlerini sessizce yönlendirmeli mi? Yanıt evet ise, engellenen erişim girişimleri için yeniden yönlendirilecek konumu belirtin. Yanıt hayır ise, bu değişkeni boş bırakın."
 config_general_stages: "Yürütme zincirinin aşamaları için kontroller (etkin olup olmadığı, hataların günlüğe kaydedilip kaydedilmediği, vb)."
 config_general_statistics: "Hangi istatistiksel bilgilerin izleneceğini kontrol eder."
 config_general_time_format: "CIDRAM tarafından kullanılan tarih/saat gösterimi biçimi. İsteğe bağlı olarak ek seçenekler eklenebilir."

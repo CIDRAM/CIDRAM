@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2023.01.09).
+# This file: Japanese language data for the front-end (last modified: 2023.01.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -25,7 +25,7 @@
 ##/
 
 Extended Description AbuseIPDB module: "AbuseIPDBにリストされているＩＰからの要求をブロックします。"
-Extended Description BGPView module: "{{Links.BGPView}}のＡＰＩを活用して、ＣＩＤＲＡＭのためにＡＳＮおよび国コード検索機能を提供します。​ＣＩＤＲＡＭコンフィギュレーションを介して、ＡＳＮと国をブロックまたはホワイトリストに登録できます。​Facebookリクエストを検証する、ソーシャル・メディア・ベリフィケーションの手段を提供します。"
+Extended Description BGPView module: "{{Links.BGPView}}のＡＰＩを活用して、ＣＩＤＲＡＭのためにＡＳＮおよび国コード検索機能を提供します。​ＣＩＤＲＡＭコンフィギュレーションを介して、ＡＳＮと国をブロックまたはホワイトリストに登録できます。​Facebookリクエストを検証する、ソーシャル・メディア・ベリフィケーションの手段を提供します。 （このモジュールを使用する場合、同じ目的を果たすため、IP-APIモジュールを使用する必要はありません）。"
 Extended Description Bad TLDs blocker module: "スパマー、ハッカー、その他の悪意のあるエンティティによって頻繁に使用されるＴＬＤに属するホストをブロックします。"
 Extended Description Bad hosts blocker module: "スパマー、ハッカー、およびその他の悪意のあるエンティティによって頻繁に使用されるホストをブロックします。"
 Extended Description Bot user agents module: "望ましくないボットや悪意のあるアクティビティに関連付けられたユーザー・エージェントをブロックします。"
@@ -33,7 +33,7 @@ Extended Description Bypasses: "メインパッケージに通常含まれてい
 Extended Description Chart.js: "フロントエンドが円グラフを生成できるようにします。<br />「{{Links.Chart.js}}」は、「<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>」を介して利用可能です。"
 Extended Description Cookie scanner module: "危険なクッキーに対するいくつかの限定された保護を提供します。"
 Extended Description HTTP version checker module: "CIDRAMコンフィギュレーションを介して特定のプロトコルとＨＴＴＰバージョンをブロックすることを可能にします。"
-Extended Description IP-API module: "{{Links.IP-API}}のＡＰＩを活用して、ＣＩＤＲＡＭのためにＡＳＮおよび国コード検索機能を提供します。​ＣＩＤＲＡＭコンフィギュレーションを介して、ＡＳＮと国をブロックまたはホワイトリストに登録できます。​Facebookリクエストを検証する、ソーシャル・メディア・ベリフィケーションの手段を提供します。"
+Extended Description IP-API module: "{{Links.IP-API}}のＡＰＩを活用して、ＣＩＤＲＡＭのためにＡＳＮおよび国コード検索機能を提供します。​ＣＩＤＲＡＭコンフィギュレーションを介して、ＡＳＮと国をブロックまたはホワイトリストに登録できます。​Facebookリクエストを検証する、ソーシャル・メディア・ベリフィケーションの手段を提供します。 （このモジュールを使用する場合、同じ目的を果たすため、BGPViewモジュールを使用する必要はありません）。"
 Extended Description IPv4: &ExtDesCloud "不要なクラウドサービスと非人のエンドポイントをブロックします。"
 Extended Description IPv4-Bogons: &ExtDesBogons "ボゴンＣＩＤＲをブロックします。"
 Extended Description IPv4-ISPs: &ExtDesISPs "スパマーを持つ危険なＩＳＰをブロックします（マルチプレイ・ネットワークが含まれています。人間と人間以外のエンドポイントの両方が含まれる場合があります）。"
@@ -47,6 +47,7 @@ Extended Description IPv6-Other: *ExtDesOther
 Extended Description Optional security extras module: "リクエストでよく使用される攻撃経路に対して、​いくつかの制限された保護を提供します。"
 Extended Description PHPMailer: "電子Ｅメールの送信を含む機能の使用に必要です。<br />「{{Links.PHPMailer.PHPMailer}}」は、「{{Links.PHPMailer.License}}」ライセンスを介して利用可能です。"
 Extended Description Project Honeypot module: "Project HoneypotにリストされているＩＰからの要求をブロックします。"
+Extended Description Protocol blocker module: "コンフィギュレーションを介して特定の要求プロトコルをブロックする機能を提供します（例：HTTP/0.9、HTTP/1.1、SPDY/3.0、など）。​注：すべての要求をまったく同じプロトコルを使用するように書き換えるサービスを（例:Cloudflare）介してルーティングするウェブサイトには影響しません。"
 Extended Description Referrer spam module: "リファラー・スパムに基づくブロックは、通常、有意義なセキュリティ上の利点を提供しません、ただし、場合によっては、リクエストに関する詳細情報の収集、およびレポートの作成に役立つ可能性があります。<br />このモジュールをインストールすると、{{Links.Symfony.Intl/Idn}}のSymfonyポリフィルもインストールされます（このモジュールは「Idn」機能を必要とするためが、すべてのＰＨＰインストールがデフォルトで提供するわけではありません）。​<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">ＭＩＴ</a>ライセンスを通じて入手できます。"
 Extended Description Stop Forum Spam module: "ＳＦＳによってリストされたＩＰに対して登録ページとログインページを保護します。"
 Extended Description Tor blocker module: "ＤＮＳＥＬルックアップによるＴｏｒ出口ノードからのアクセスを禁止します（ＩＰｖ４とＩＰｖ６の両方をサポートします）。"
@@ -73,6 +74,7 @@ Name IPv6-Nonblocking: "ＩＰｖ６ノンブロッキング・シグネチャ�
 Name IPv6-Other: "ＩＰｖ６（プロキシ、​ＶＰＮ、​およびその他の不要なサービス）。"
 Name Optional security extras module: "オプショナル・セキュリティ・エクストラス・モジュール。"
 Name Project Honeypot module: "Project Honeypot モジュール。"
+Name Protocol blocker module: "プロトコル・ブロッカー・モジュール。"
 Name Referrer spam module: "リファラー・スパム・モジュール。"
 Name Stop Forum Spam module: "Stop Forum Spam モジュール。"
 Name Tor blocker module: "Ｔｏｒブロッカー・モジュール。"

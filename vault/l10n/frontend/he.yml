@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hebrew language data for the front-end (last modified: 2023.01.09).
+# This file: Hebrew language data for the front-end (last modified: 2023.01.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -25,7 +25,7 @@
 ##/
 
 Extended Description AbuseIPDB module: "חוסם בקשות מכתובות IP הרשומות ב-AbuseIPDB."
-Extended Description BGPView module: "מנף את ה-{{Links.BGPView}} API כדי לספק מתקן חיפוש ASN וקוד מדינה עבור CIDRAM, המאפשרת חסימה או אישור של ASN ומדינות באמצעות תצורת CIDRAM, ומספקת אמצעי לאימות רשתות חברתיות לאימות בקשות של פייסבוק."
+Extended Description BGPView module: "מנף את ה-{{Links.BGPView}} API כדי לספק מתקן חיפוש ASN וקוד מדינה עבור CIDRAM, המאפשרת חסימה או אישור של ASN ומדינות באמצעות תצורת CIDRAM, ומספקת אמצעי לאימות רשתות חברתיות לאימות בקשות של פייסבוק. (אם אתה משתמש במודול זה, לא תצטרך להשתמש במודול IP-API, מכיוון שהם משרתים את אותה מטרה)."
 Extended Description Bad TLDs blocker module: "חוסם מארחים השייכים ל-TLD בשימוש תכוף על ידי שולחי ספאם, האקרים, וגורמים מרושעים אחרים."
 Extended Description Bad hosts blocker module: "חוסם מארחים בשימוש תכוף על ידי שולחי ספאם, האקרים, וגורמים מרושעים אחרים."
 Extended Description Bot user agents module: "חוסם סוכני משתמשים הקשורים לבוטים לא רצויים ולפעילות מרושעת."
@@ -33,7 +33,7 @@ Extended Description Bypasses: "החתימה הסטנדרטית עוקפת קב�
 Extended Description Chart.js: "מאפשר לקצה הקדמי ליצור תרשימי סופגניות.<br />{{Links.Chart.js}} זמין באמצעות רישיון <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
 Extended Description Cookie scanner module: "מספק כמה הגנות מוגבלות מפני עוגיות מסוכנות."
 Extended Description HTTP version checker module: "מאפשר לחסום פרוטוקולים ספציפיים וגרסאות HTTP באמצעות תצורת CIDRAM."
-Extended Description IP-API module: "מנף את ה-{{Links.IP-API}} API כדי לספק מתקן חיפוש ASN וקוד מדינה עבור CIDRAM, המאפשרת חסימה או אישור של ASN ומדינות באמצעות תצורת CIDRAM, ומספקת אמצעי לאימות רשתות חברתיות לאימות בקשות של פייסבוק."
+Extended Description IP-API module: "מנף את ה-{{Links.IP-API}} API כדי לספק מתקן חיפוש ASN וקוד מדינה עבור CIDRAM, המאפשרת חסימה או אישור של ASN ומדינות באמצעות תצורת CIDRAM, ומספקת אמצעי לאימות רשתות חברתיות לאימות בקשות של פייסבוק. (אם אתה משתמש במודול זה, לא תצטרך להשתמש במודול BGPView, מכיוון שהם משרתים את אותה מטרה)."
 Extended Description IPv4: &ExtDesCloud "חוסם שירותי ענן לא רצויים ונקודות קצה לא אנושיות."
 Extended Description IPv4-Bogons: &ExtDesBogons "חוסם בוגון/מאדים CIDR."
 Extended Description IPv4-ISPs: &ExtDesISPs "חוסם ספקי אינטרנט מסוכנים וספאמיים (כולל רשתות מולטיפליי, שעשויות להכיל נקודות קצה אנושיות ולא אנושיות כאחד)."
@@ -47,6 +47,7 @@ Extended Description IPv6-Other: *ExtDesOther
 Extended Description Optional security extras module: "מספק כמה הגנות מוגבלות מפני וקטורי תקיפה שונים הנפוצים בבקשות."
 Extended Description PHPMailer: "נדרש לשימוש בכל פונקציונליות הכרוכה בשליחת דואר אלקטרוני.<br />{{Links.PHPMailer.PHPMailer}} זמין באמצעות רישיון {{Links.PHPMailer.License}}."
 Extended Description Project Honeypot module: "חוסם בקשות מכתובות IP המופיעות ב-Project Honeypot."
+Extended Description Protocol blocker module: "מספק את היכולת לחסום פרוטוקולי בקשות ספציפיים באמצעות התצורה (למשל., HTTP/0.9 ,HTTP/1.1 ,SPDY/3.0, וכו). הערה: לא ישפיע על אתרים שמנתבים דרך שירותים המשכתבים בקשות לכולן משתמשות באותו פרוטוקול, כגון Cloudflare."
 Extended Description Referrer spam module: "חסימה המבוססת על ספאם מפנה לא תספק בדרך כלל תועלת אבטחה משמעותית, אך במקרים מסוימים, יכול להיות שימושי עבור חלק מהמשתמשים, לאיסוף מידע נוסף על בקשות וליכולת לדווח על כך.<br />התקנת מודול זה מתקינה גם את ה-Symfony polyfills עבור {{Links.Symfony.Intl/Idn}} (כי מודול זה דורש פונקציונליות Idn, שלא כל התקנות PHP מספקות כסטנדרט), זמין באמצעות רישיון <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
 Extended Description Stop Forum Spam module: "מגן על דפי רישום וכניסה מפני כתובות IP הרשומות על ידי SFS."
 Extended Description Tor blocker module: "אוסר על גישה מצמתי יציאה של Tor דרך חיפושי DNSEL (תומך גם ב-IPv4 וגם ב-IPv6)."
@@ -73,6 +74,7 @@ Name IPv6-Nonblocking: "חתימות IPv6 לא חוסמות."
 Name IPv6-Other: "IPv6 (פרוקסי, VPN, וכו')."
 Name Optional security extras module: "מודול תוספות אבטחה אופציונליות."
 Name Project Honeypot module: "מודול Project Honeypot."
+Name Protocol blocker module: "מודול חוסם פרוטוקול."
 Name Referrer spam module: "מודול ספאם מפנה."
 Name Stop Forum Spam module: "מודול Stop Forum Spam."
 Name Tor blocker module: "מודול חוסם Tor."
@@ -225,9 +227,9 @@ config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "הגיל המרבי בימים לבחינת דוחות. סטנדרטי = 365."
 config_projecthoneypot_max_ts_for_captcha: "ציון האיום המקסימלי המותר להצגת CAPTCHA (חייב להיות מספר בין 1 ל-100). סטנדרטי = 10."
 config_projecthoneypot_minimum_threat_score: "ציון האיום המינימלי הנדרש על מנת ש-CIDRAM יחסום כתובת IP (חייב להיות מספר בין 1 ל-100). סטנדרטי = 10."
-config_protocol: "Configuration for the protocol blocker module."
-config_protocol_blocked: "Selected protocols will be blocked. Note: Won't affect websites that route through services which rewrite requests to all use the same protocol, such as Cloudflare."
-config_protocol_reason_message: "The reason message displayed when such requests are blocked."
+config_protocol: "תצורה עבור מודול חוסם הפרוטוקולים."
+config_protocol_blocked: "הפרוטוקולים שנבחרו ייחסמו. הערה: לא ישפיע על אתרים שמנתבים דרך שירותים המשכתבים בקשות לכולן משתמשות באותו פרוטוקול, כגון Cloudflare."
+config_protocol_reason_message: "הודעת הסיבה המוצגת כאשר בקשות כאלה נחסמות."
 config_rate_limiting: "תצורה להגבלת קצב (לא מומלץ לשימוש כללי)."
 config_rate_limiting_allowance_period: "משך הזמן למעקב אחר השימוש. סטנדרטי = 0°0′0″."
 config_rate_limiting_exceptions: "חריגים (כלומר, בקשות שלא צריכות להיות מוגבלות בתעריף). רלוונטי רק כאשר הגבלת תעריפים מופעלת."
@@ -527,7 +529,7 @@ label_displaying_that_cite:
  - "מציג %s ערכים שמצטטים "%s"."
  - "מציג %s ערכים שמצטטים "%s"."
  - "מציג %s ערכים שמצטטים "%s"."
-label_empty_unfamiliar: "Empty, unfamiliar, and others."
+label_empty_unfamiliar: "ריקים, לא מוכרים, ואחרים."
 label_entries_per_page: "ערכים לכל עמוד:"
 label_expected: "צפוי"
 label_expires: "פג תוקף:"

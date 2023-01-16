@@ -1,8 +1,8 @@
 # IPv4 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv4.dat
 
-# Version: 2023.11.0
-# Last modified: 2023.01.12
+# Version: 2023.15.0
+# Last modified: 2023.01.16
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -36739,7 +36739,7 @@ Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: Tier.Net Technologies LLC
 
 
-# ASN 4713 ("NTT Communications Corporation").
+# ASNs 2514, 4713 ("NTT Communications Corporation").
 # Dedicated IaaS/HaaS, cloud, streaming, and webhosting provider. Brute-force
 # and webapp attacks and spam detected from here.
 # Stop Forum Spam (SFS) listings: 314.
@@ -36761,6 +36761,7 @@ Tag: Tier.Net Technologies LLC
 153.232.105.141/32 Deny Attacks
 153.243.48.129/32 Deny Spam
 153.246.189.53/32 Deny Spam
+157.120.60.0/24 Deny Attacks
 180.13.173.225/32 Deny Spam
 180.34.219.35/32 Deny Spam
 180.48.122.50/32 Deny Spam
@@ -39425,10 +39426,9 @@ Tag: Hop One Networks LLC
 
 # ASN 15828 ("Blue Diamond Network Co., Ltd").
 # Iranian webhosting provider. Brute-force attacks detected from here.
-# Updated: 2022.06.08
+# Updated: 2023.01.16
 
-5.34.204.0/24 Deny Attacks
-5.34.207.0/24 Deny Attacks
+46.148.40.0/24 Deny Cloud
 Origin: IR
 Profile: Webhosting
 Tag: Blue Diamond

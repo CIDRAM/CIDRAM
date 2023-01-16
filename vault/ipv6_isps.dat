@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2023.11.0
-# Last modified: 2023.01.12
+# Version: 2023.15.0
+# Last modified: 2023.01.16
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -390,14 +390,11 @@ Tag: RCS & RDS SA
 # French multiplay network and domestic ISP. Caught trying to DDoS SFS, and
 # hacking honeypots. Spam and other unwanted traffic detected here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,569.
-# Updated: 2022.01.18
+# Stop Forum Spam (SFS) listings: 1,357.
+# Updated: 2023.01.16
 
-2a01:e0a:8f:1b50::/64 Deny Spam
-2a01:e0a:47c:1370::/64 Deny Spam
-2a01:e0a:554:a960::/64 Deny Spam
-2a01:e0a:561:b570::/64 Deny Spam
-2a01:e0a:5f2:7080::/64 Deny Spam
+2a01:e0a:33a:9670::/64 Deny Spam
+2a01:e0a:45e:40e0::/64 Deny Spam
 Origin: FR
 Profile: Domestic ISP;Multiplay;Tor endpoints here
 Tag: Free SAS
@@ -1438,3 +1435,14 @@ Tag: IPKO
 Origin: HN
 Profile: Domestic ISP
 Tag: Udasha S.A
+
+
+# ASN 265725 ("COOP. DE ELECT., OBRAS, CR??DITO, VIVIENDA Y SERVICIOS P??BLICOS
+# DE LAS FLORES LTDA"). Argentinian domestic ISP. Brute-force, SSH, and webapp
+# attacks, port scans, and hacking detected from here. Entire network affected.
+# Updated: 2023.01.16
+
+2803:7dc0::/32 Deny Attacks
+Origin: AR
+Profile: Domestic ISP
+Tag: AS265725

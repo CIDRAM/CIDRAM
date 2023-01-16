@@ -3977,6 +3977,15 @@ class FrontEnd extends Core
 
                 /** Get all IP tracking entries. */
                 $Entries = $this->Cache->getAllEntriesWhere('~^Tracking-(.+)(?<!-MinimumTime)$~', '\1', function ($A, $B): int {
+                    if (!is_array($A) || !isset($A['Time'])) {
+                        return is_array($B) && isset($B['Time']) ? -1 : 0;
+                    }
+                    if (!is_array($B) || !isset($B['Time'])) {
+                        return 1;
+                    }
+                    if ($A['Time'] === $B['Time']) {
+                        return 0;
+                    }
                     return ($A['Time'] < $B['Time']) ? -1 : 1;
                 });
 
@@ -3989,8 +3998,13 @@ class FrontEnd extends Core
 
                 /** Iterate through all addresses being currently tracked. */
                 foreach ($Entries as $ThisTracking['IPAddr'] => $ThisTrackingArray) {
+                    /** Normalise in case of cache mechanism type which doesn't support returning expiries. */
+                    if (is_int($ThisTrackingArray)) {
+                        $ThisTrackingArray = ['Time' => 0, 'Data' => $ThisTrackingArray];
+                    }
+
                     /** Guard. */
-                    if (!isset($ThisTrackingArray['Time'], $ThisTrackingArray['Data'])) {
+                    if (!is_array($ThisTrackingArray) || !isset($ThisTrackingArray['Time'], $ThisTrackingArray['Data'])) {
                         continue;
                     }
 
@@ -4022,10 +4036,14 @@ class FrontEnd extends Core
                     );
 
                     /** When the entry expires. */
-                    $ThisTracking['Expiry'] = $this->timeFormat(
-                        $ThisTrackingArray['Time'],
-                        $this->Configuration['general']['time_format']
-                    ) . '<br />(' . $this->relativeTime($ThisTrackingArray['Time']) . ')';
+                    if (!is_int($ThisTrackingArray['Time']) || $ThisTrackingArray['Time'] < 1) {
+                        $ThisTracking['Expiry'] = $this->L10N->getString('label_no_data_available');
+                    } else {
+                        $ThisTracking['Expiry'] = $this->timeFormat(
+                            $ThisTrackingArray['Time'],
+                            $this->Configuration['general']['time_format']
+                        ) . '<br />(' . $this->relativeTime($ThisTrackingArray['Time']) . ')';
+                    }
 
                     if ($ThisTrackingArray['Data'] >= $this->Configuration['signatures']['infraction_limit']) {
                         $ThisTracking['StatClass'] = 'txtRd';

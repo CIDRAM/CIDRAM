@@ -1,6 +1,6 @@
 <?php
 /**
- * A simple, unified cache handler (last modified: 2023.01.14).
+ * A simple, unified cache handler (last modified: 2023.01.16).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -411,9 +411,7 @@ class Cache
             return $this->unserializeEntry($this->WorkingData->get($Entry));
         }
         if ($this->Using === 'PDO') {
-            if ($this->clearExpiredPDO()) {
-                $this->Modified = true;
-            }
+            $this->clearExpiredPDO();
             $PDO = $this->WorkingData->prepare(self::GET_QUERY);
             if ($PDO !== false && $PDO->execute([':key' => $Entry])) {
                 $Data = $PDO->fetch(\PDO::FETCH_ASSOC);
@@ -790,8 +788,12 @@ class Cache
             return $Output;
         }
         if ($this->Using === 'Redis') {
-            $Keys = $this->WorkingData->keys('*') ?: [];
             $Output = [];
+            if ($PrefixLen === 0 || preg_match('~[^\dA-Za-z_]~', $this->Prefix)) {
+                $Keys = $this->WorkingData->keys('*') ?: [];
+            } else {
+                $Keys = $this->WorkingData->keys($this->Prefix . '*') ?: [];
+            }
             foreach ($Keys as $Key) {
                 if (
                     strlen($Key) > self::KEY_SIZE_LIMIT ||
@@ -799,15 +801,12 @@ class Cache
                 ) {
                     continue;
                 }
-                $DeFixed = substr($Key, $PrefixLen);
-                $Output[$DeFixed] = $this->unserializeEntry($this->WorkingData->get($Key));
+                $Output[substr($Key, $PrefixLen)] = $this->unserializeEntry($this->WorkingData->get($Key));
             }
             return $Output;
         }
         if ($this->Using === 'PDO') {
-            if ($this->clearExpiredPDO()) {
-                $this->Modified = true;
-            }
+            $this->clearExpiredPDO();
             $PDO = $this->WorkingData->prepare(self::GET_ALL_QUERY);
             if ($PDO !== false && $PDO->execute()) {
                 $Data = $PDO->fetchAll();
@@ -831,7 +830,7 @@ class Cache
             }
             return [];
         }
-        if ($Arr = ($this->exposeWorkingDataArray() ?: [])) {
+        if ($Arr = $this->exposeWorkingDataArray()) {
             $Out = [];
             foreach ($Arr as $Key => $Entry) {
                 if ($PrefixLen) {
@@ -845,6 +844,136 @@ class Cache
             return $Out;
         }
         return [];
+    }
+
+    /**
+     * Get a limited subset of all available cache entries.
+     *
+     * @param string $Pattern The pattern for which entries to return.
+     * @param string $Replacement An optional replacement for entry names.
+     * @param ?callable $Sort An optional callable to sort entries.
+     * @return array An array of matching entries.
+     */
+    public function getAllEntriesWhere(string $Pattern, string $Replacement = '', ?callable $Sort = null): array
+    {
+        $Set = [];
+        if ($this->Using === 'Memcached') {
+            $Indexes = $this->Indexes;
+            foreach ($Indexes as $Index => $Unused) {
+                if (!preg_match($Pattern, $Index)) {
+                    continue;
+                }
+                $Try = $this->getEntry($Index);
+                if ($Try === false) {
+                    unset($this->Indexes[$Index]);
+                    $this->ModifiedIndexes = true;
+                    continue;
+                }
+                $Set[$Index] = $Try;
+            }
+            unset($Try);
+        } else {
+            $PrefixLen = strlen($this->Prefix);
+        }
+        if ($this->Using === 'APCu') {
+            $Data = apcu_cache_info();
+            if (empty($Data['cache_list'])) {
+                return [];
+            }
+            foreach ($Data['cache_list'] as $Entry) {
+                if (
+                    empty($Entry['info']) ||
+                    !is_string($Entry['info']) ||
+                    ($PrefixLen && substr($Entry['info'], 0, $PrefixLen) !== $this->Prefix)
+                ) {
+                    continue;
+                }
+                $Key = substr($Entry['info'], $PrefixLen);
+                if (!preg_match($Pattern, $Key)) {
+                    continue;
+                }
+                $Creation = $Entry['creation_time'] ?? 0;
+                $Entry['Data'] = $this->getEntry($Key);
+                $Set[$Key] = $Entry['ttl'] > 0 ? [
+                    'Data' => $Entry['Data'],
+                    'Time' => $Creation + $Entry['ttl']
+                ] : $Entry['Data'];
+            }
+            unset($Data);
+        } elseif ($this->Using === 'Redis') {
+            if ($PrefixLen === 0 || preg_match('~[^\dA-Za-z_]~', $this->Prefix)) {
+                $Keys = $this->WorkingData->keys('*') ?: [];
+            } else {
+                $Keys = $this->WorkingData->keys($this->Prefix . '*') ?: [];
+            }
+            foreach ($Keys as $Key) {
+                if (
+                    strlen($Key) > self::KEY_SIZE_LIMIT ||
+                    ($PrefixLen && substr($Key, 0, $PrefixLen) !== $this->Prefix)
+                ) {
+                    continue;
+                }
+                $Index = substr($Key, $PrefixLen);
+                if (!preg_match($Pattern, $Index)) {
+                    continue;
+                }
+                $Set[$Index] = $this->unserializeEntry($this->WorkingData->get($Key));
+            }
+            unset($Keys);
+        } elseif ($this->Using === 'PDO') {
+            $this->clearExpiredPDO();
+            $PDO = $this->WorkingData->prepare(self::GET_ALL_QUERY);
+            if ($PDO !== false && $PDO->execute()) {
+                $Data = $PDO->fetchAll();
+                foreach ($Data as $Entry) {
+                    if (
+                        !is_array($Entry) ||
+                        !isset($Entry['Key'], $Entry['Data'], $Entry['Time']) ||
+                        strlen($Entry['Key']) > self::KEY_SIZE_LIMIT ||
+                        ($PrefixLen && substr($Entry['Key'], 0, $PrefixLen) !== $this->Prefix)
+                    ) {
+                        continue;
+                    }
+                    $Key = substr($Entry['Key'], $PrefixLen);
+                    if (!preg_match($Pattern, $Key)) {
+                        continue;
+                    }
+                    $Set[$Key] = $Entry['Time'] > 0 ? [
+                        'Data' => $this->unserializeEntry($Entry['Data']),
+                        'Time' => $Entry['Time']
+                    ] : $this->unserializeEntry($Entry['Data']);
+                }
+            }
+            unset($PDO);
+        } elseif ($Arr = $this->exposeWorkingDataArray()) {
+            foreach ($Arr as $Key => $Entry) {
+                if ($PrefixLen) {
+                    if (substr($Key, 0, $PrefixLen) !== $this->Prefix) {
+                        continue;
+                    }
+                    $Key = substr($Key, $PrefixLen);
+                }
+                if (!preg_match($Pattern, $Key)) {
+                    continue;
+                }
+                $Set[$Key] = $this->unserializeEntry($Entry);
+            }
+        }
+        $Out = [];
+        $Now = time();
+        foreach ($Set as $EntryName => $EntryData) {
+            if (isset($EntryData['Time']) && $EntryData['Time'] > 0 && $EntryData['Time'] < $Now) {
+                continue;
+            }
+            if ($Replacement !== '') {
+                $EntryName = preg_replace($Pattern, $Replacement, $EntryName);
+            }
+            $Out[$EntryName] = $EntryData;
+        }
+        if ($Sort !== null && is_callable($Sort)) {
+            uasort($Out, $Sort);
+        }
+        return $Out;
     }
 
     /**
@@ -891,7 +1020,9 @@ class Cache
         }
         $PDO = $this->WorkingData->prepare(self::CLEAR_EXPIRED_QUERY);
         if ($PDO !== false && $PDO->execute([':time' => time()])) {
-            return ($PDO->rowCount() > 0);
+            if ($PDO->rowCount() > 0) {
+                return $this->Modified = true;
+            }
         }
         return false;
     }
@@ -905,7 +1036,7 @@ class Cache
      */
     public function unserializeEntry($Entry)
     {
-        if (!$Entry || !is_string($Entry) || !preg_match('~^a\:\d+\:\{.*\}$~', $Entry)) {
+        if (!is_string($Entry) || !preg_match('~^a\:\d+\:\{.*\}$~', $Entry)) {
             return $Entry;
         }
         $Arr = unserialize($Entry);

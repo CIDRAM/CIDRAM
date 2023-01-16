@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.01.12).
+ * This file: The CIDRAM front-end (last modified: 2023.01.16).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -3135,7 +3135,7 @@ class FrontEnd extends Core
             if (isset($this->Stages['RL:Enable']) && ($this->Configuration['rate_limiting']['max_requests'] > 0 || $RLMaxBandwidth > 0)) {
                 if ($this->Cache->Using && $this->Cache->Using !== 'FF') {
                     /** Get all entries for when using a non-flatfile cache strategy. */
-                    $Entries = $this->getAllEntriesWhere('~^rl(?:-.+)?$~');
+                    $Entries = $this->Cache->getAllEntriesWhere('~^rl(?:-.+)?$~');
                 } else {
                     /** Get all entries for when using a flatfile cache strategy. */
                     $Entries = [];
@@ -3976,7 +3976,7 @@ class FrontEnd extends Core
                 $this->Shorthand = array_flip(explode("\n", $this->Configuration['signatures']['shorthand']));
 
                 /** Get all IP tracking entries. */
-                $Entries = $this->getAllEntriesWhere('~^Tracking-(.+)(?<!-MinimumTime)$~', '\1', function ($A, $B): int {
+                $Entries = $this->Cache->getAllEntriesWhere('~^Tracking-(.+)(?<!-MinimumTime)$~', '\1', function ($A, $B): int {
                     return ($A['Time'] < $B['Time']) ? -1 : 1;
                 });
 

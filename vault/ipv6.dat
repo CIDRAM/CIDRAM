@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2023.11.0
-# Last modified: 2023.01.12
+# Version: 2023.18.0
+# Last modified: 2023.01.19
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -515,8 +515,8 @@ Tag: GorillaServers, Inc
 
 # ASN 17439 ("Netmagic Datacenter Mumbai").
 # A source of SSH and brute-force attacks.
-# Stop Forum Spam (SFS) listings: 147.
-# Updated: 2022.01.18
+# Stop Forum Spam (SFS) listings: 20.
+# Updated: 2023.01.17
 
 2001:df0:411::/48 Deny Cloud
 2001:df0:3a00::/48 Deny Cloud
@@ -535,7 +535,6 @@ Tag: GorillaServers, Inc
 2401:8800:c00::/40 Deny Cloud
 2401:8800:e00::/40 Deny Cloud
 2406:69c0:1000::/36 Deny Cloud
-2406:69c0:2000::/36 Deny Cloud
 2407:e9c0::/45 Deny Cloud
 Origin: IN
 Profile: Infrastructure/Transit;Webhosting
@@ -546,11 +545,10 @@ Tag: Netmagic Datacenter Mumbai
 # A source of SSH, SQLi, and brute-force attacks. A possible staging point for
 # social engineering and extortion campaigns, according to some reports found
 # via AbuseIPDB (unverified/unconfirmed).
-# Stop Forum Spam (SFS) listings: 2.
-# Updated: 2022.01.18
+# Stop Forum Spam (SFS) listings: 13.
+# Updated: 2023.01.17
 
 2404:7e80:1000::/36 Deny Cloud
-2404:7e80:3000::/48 Deny Cloud
 2404:7e80:4000::/36 Deny Cloud
 Origin: IN
 Profile: Webhosting
@@ -4483,10 +4481,10 @@ Tag: 23Media GmbH
 
 
 # ASN 49544 ("i3d B.V").
-# Huge infrastructure provider focused on low-latency (e.g., for gaming). Also
-# a significant source of spam.
-# Stop Forum Spam (SFS) listings: 10,677.
-# Updated: 2022.01.18
+# Infrastructure provider focused on low-latency (e.g., for gaming).
+# Spam detected from here.
+# Stop Forum Spam (SFS) listings: 439.
+# Updated: 2023.01.17
 
 2a06:7a00::/48 Deny Cloud
 Origin: AT
@@ -4507,7 +4505,6 @@ Origin: CN
 2a03:3a60::/32 Deny Cloud
 2a04:c600::/29 Deny Cloud
 2a05:6440::/29 Deny Cloud
-2a09:bfc7::/32 Deny Cloud
 2a0a:5980::/29 Deny Cloud
 2a0b:1b00::/29 Deny Cloud
 2a0b:d9c0:164::/47 Deny Cloud
@@ -4517,6 +4514,9 @@ Origin: CN
 Origin: NL
 2402:b180:9000::/36 Deny Cloud
 Origin: SG
+2a0e:5940:20::/44 Deny Cloud
+2a0e:5940:90::/44 Deny Cloud
+Origin: US
 Profile: Dedicated;Infrastructure/Transit
 Tag: i3d B.V
 
@@ -4845,8 +4845,8 @@ Tag: Cyber Wurx LLC
 
 # ASN 60117 ("Host Sailor Ltd").
 # Webhosting provider. DE ranges as proxy; The rest as cloud.
-# Stop Forum Spam (SFS) listings: 241.
-# Updated: 2021.05.08 / Checked: 2022.01.18
+# Stop Forum Spam (SFS) listings: 54.
+# Updated: 2023.01.17
 
 2a03:660::/32 Deny Cloud
 2a04:dd00::/31 Deny Cloud
@@ -4854,6 +4854,7 @@ Tag: Cyber Wurx LLC
 2a05:9340::/31 Deny Cloud
 2a05:9342::/32 Deny Cloud
 2a06:3d80::/29 Deny Cloud
+2a0e:df40::/32 Deny Cloud
 Origin: AE
 Profile: Webhosting
 Tag: Host Sailor Ltd
@@ -10501,8 +10502,8 @@ Tag: Cloud Computing Corporation
 # ASN 12876 ("ONLINE S.A.S").
 # Caught trying to DDoS SFS, and hacking honeypots. Spam and other unwanted
 # traffic detected here.
-# Stop Forum Spam (SFS) listings: 118,624.
-# Updated: 2022.01.18
+# Stop Forum Spam (SFS) listings: 29,593.
+# Updated: 2022.01.18 / Checked: 2023.01.17
 
 2001:bc8::/32 Deny Cloud
 Origin: FR
@@ -10512,8 +10513,8 @@ Tag: ONLINE S.A.S
 
 # ASNs 21159, 24875 ("NovoServe B.V").
 # Brute-force attacks, hacking, port scans, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 4 (AS21159), 6 (AS24875).
-# Updated: 2022.01.20
+# Stop Forum Spam (SFS) listings: 1 (AS21159), 11 (AS24875).
+# Updated: 2022.01.20 / Checked: 2023.01.19
 
 2a0a:e680::/29 Deny Cloud
 Origin: DE
@@ -10527,8 +10528,8 @@ Tag: NovoServe B.V
 
 # ASN 15493 ('"Russian company" LLC').
 # Port scans, hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 379.
-# Updated: 2022.01.20
+# Stop Forum Spam (SFS) listings: 157.
+# Updated: 2022.01.20 / Checked: 2023.01.19
 
 2a02:dc00:1::/48 Deny Cloud
 2a02:dc00:2::/48 Deny Cloud

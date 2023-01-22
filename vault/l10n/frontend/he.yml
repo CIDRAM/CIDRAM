@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hebrew language data for the front-end (last modified: 2023.01.13).
+# This file: Hebrew language data for the front-end (last modified: 2023.01.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -347,8 +347,6 @@ field_size_TB: "TB"
 field_size_bytes:
  - "בייט"
  - "בתים"
- - "בתים"
- - "בתים"
 field_status: "המצב"
 field_system_timezone: "השתמש באזור הזמן הסטנדרטי של המערכת."
 field_tracking: "מעקב"
@@ -522,12 +520,8 @@ label_difference: "הבדל"
 label_displaying:
  - "מציג %s ערך."
  - "מציג %s ערכים."
- - "מציג %s ערכים."
- - "מציג %s ערכים."
 label_displaying_that_cite:
  - "מציג %s ערך שמצטט "%s"."
- - "מציג %s ערכים שמצטטים "%s"."
- - "מציג %s ערכים שמצטטים "%s"."
  - "מציג %s ערכים שמצטטים "%s"."
 label_empty_unfamiliar: "ריקים, לא מוכרים, ואחרים."
 label_entries_per_page: "ערכים לכל עמוד:"
@@ -592,12 +586,8 @@ label_sapi: "SAPI בשימוש:"
 label_sections_across_x_files:
  - "%s על פני %s קובץ"
  - "%s על פני %s קבצים"
- - "%s על פני %s קבצים"
- - "%s על פני %s קבצים"
 label_sections_x_signatures:
  - "%s חתימה"
- - "%s חתימות"
- - "%s חתימות"
  - "%s חתימות"
 label_see_also: "ראה גם:"
 label_show: "הצג"
@@ -759,8 +749,6 @@ state_fixer: "%s %s."
 state_fixer_changed:
  - "ביצעו %s שינוי"
  - "ביצעו %s שינויים"
- - "ביצעו %s שינויים"
- - "ביצעו %s שינויים"
 state_fixer_seconds: "ב-%s שניות"
 state_loading: "טוען..."
 state_loadtime: "בקשת הדף הושלמה תוך %s שניות."
@@ -774,8 +762,6 @@ state_risk_medium: "בינוני"
 state_sl_totals: "סיכומים (חתימות: %s – קטעי חתימה: %s – קבצי חתימה: %s – תגי מדור ייחודיים: %s)."
 state_tracking:
  - "כרגע עוקב אחר %s כתובת IP."
- - "כרגע עוקב אחר %s כתובות IP."
- - "כרגע עוקב אחר %s כתובות IP."
  - "כרגע עוקב אחר %s כתובות IP."
 switch-descending-order-set-false: "מיין בסדר עולה"
 switch-descending-order-set-true: "מיון בסדר יורד"
@@ -794,62 +780,38 @@ switch-tracking-hide-banned-blocked-set-true: "הסתר כתובות IP חסומ
 time_days_ago:
  - "לפני %s יום"
  - "לפני %s ימים"
- - "לפני %s ימים"
- - "לפני %s ימים"
 time_days_from_now:
  - "עוד %s יום מהיום"
- - "עוד %s ימים מהיום"
- - "עוד %s ימים מהיום"
  - "עוד %s ימים מהיום"
 time_hours_ago:
  - "לפני %s שעה"
  - "לפני %s שעות"
- - "לפני %s שעות"
- - "לפני %s שעות"
 time_hours_from_now:
  - "עוד %s שעה מהיום"
- - "עוד %s שעות מהיום"
- - "עוד %s שעות מהיום"
  - "עוד %s שעות מהיום"
 time_minutes_ago:
  - "לפני %s דקה"
  - "לפני %s דקות"
- - "לפני %s דקות"
- - "לפני %s דקות"
 time_minutes_from_now:
  - "עוד %s דקה מעכשיו"
- - "עוד %s דקות מעכשיו"
- - "עוד %s דקות מעכשיו"
  - "עוד %s דקות מעכשיו"
 time_months_ago:
  - "לפני %s חודש"
  - "לפני %s חודשים"
- - "לפני %s חודשים"
- - "לפני %s חודשים"
 time_months_from_now:
  - "עוד %s חודש מהיום"
- - "עוד %s חודשים מהיום"
- - "עוד %s חודשים מהיום"
  - "עוד %s חודשים מהיום"
 time_seconds_ago:
  - "לפני %s שנייה"
  - "לפני %s שניות"
- - "לפני %s שניות"
- - "לפני %s שניות"
 time_seconds_from_now:
  - "%s שנייה מעכשיו"
- - "%s שניות מעכשיו"
- - "%s שניות מעכשיו"
  - "%s שניות מעכשיו"
 time_years_ago:
  - "לפני %s שנה"
  - "לפני %s שנים"
- - "לפני %s שנים"
- - "לפני %s שנים"
 time_years_from_now:
  - "עוד %s שנה מהיום"
- - "עוד %s שנים מהיום"
- - "עוד %s שנים מהיום"
  - "עוד %s שנים מהיום"
 tip_2fa_sent: "דוא"ל המכיל קוד אימות דו-גורמי נשלח לכתובת הדוא"ל שלך. אנא אשר את הקוד הזה למטה כדי לקבל גישה להקצה הקדמי. אם לא קיבלת דוא"ל זה, נסה להתנתק, המתן 10 דקות, ולהיכנס שוב כדי לקבל דוא"ל חדש המכיל קוד חדש."
 tip_accounts: "שלום, {username}.<br />דף החשבונות מאפשר לך לשלוט למי יכול לגשת להקצה הקדמי ה-CIDRAM."

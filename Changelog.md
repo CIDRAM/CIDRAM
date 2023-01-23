@@ -105,3 +105,4 @@
 - Adjusted minimum value for some port directives from 1 to 0.
 - Added a new configuration directive, `sensitive`, to allow users to specify which paths should be regarded as sensitive pages.
 - Added a new module for IP-API (#373).
+- Protocol is now recognised as a source for auxiliary rules and as a block event field.

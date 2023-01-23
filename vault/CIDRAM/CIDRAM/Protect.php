@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2022.12.20).
+ * This file: Protect traits (last modified: 2023.01.23).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -92,6 +92,7 @@ trait Protect
             'Expired' => '',
             'Ignored' => '',
             'Request_Method' => $_SERVER['REQUEST_METHOD'] ?? '',
+            'Protocol' => $_SERVER['SERVER_PROTOCOL'] ?? '',
             'xmlLang' => $this->Configuration['general']['lang']
         ];
         if (isset($this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']])) {
@@ -686,6 +687,7 @@ trait Protect
                 $this->addField('Expired', 'state_expired', $this->BlockInfo['Expired']);
                 $this->addField('Ignored', 'state_ignored', $this->BlockInfo['Ignored']);
                 $this->addField('Request_Method', 'field_request_method', $this->BlockInfo['Request_Method'], true);
+                $this->addField('Protocol', 'field_protocol', $this->BlockInfo['Protocol'], true);
                 $this->addField('Hostname', 'field_hostname', $this->BlockInfo['Hostname'], true);
                 $this->addField('CAPTCHA', 'field_captcha', $this->BlockInfo['CAPTCHA']);
             }

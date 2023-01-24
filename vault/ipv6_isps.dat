@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2023.18.0
-# Last modified: 2023.01.19
+# Version: 2023.23.0
+# Last modified: 2023.01.24
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -813,8 +813,8 @@ Tag: Bell Canada
 # limited ADSL connectivity also provided. A significant source of spam here,
 # caught trying to hack honeypots, brute-force, SSH, and webapp attacks, and
 # unauthorised WordPress vulnerability scanners detected from here.
-# Stop Forum Spam (SFS) listings: 297,577 (AS16276), 6 (AS35540).
-# Updated: 2021.01.27 / Checked: 2022.02.25
+# Stop Forum Spam (SFS) listings: 566,385 (AS16276), 30 (AS35540).
+# Updated: 2021.01.27 / Checked: 2023.01.23
 
 2607:5300::/32 Run bypasses.php
 Origin: CA
@@ -1111,31 +1111,6 @@ Tag: WIND Telecom S.A
 Origin: BR
 Profile: Domestic ISP
 Tag: STAYNET
-
-
-# ASN 45582 ("IRONNET Ltd").
-# Russian domestic ISP. Port scans, hacking, and spam detected from here.
-# Manually checked all ranges; All ranges affected.
-# Stop Forum Spam (SFS) listings: 26.
-# Updated: 2022.02.10
-
-2001:678:62c::/48 Deny Attacks
-Origin: RU
-Profile: Domestic ISP
-Tag: IRONNET Ltd
-
-
-# ASN 16086 ("DNA Oyj").
-# Finnish commercial network. Port scans, hacking, and spam detected from here.
-# Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 157.
-# Updated: 2022.02.10
-
-2001:14bb:673:c888::/64 Deny Spam
-2001:14bb:6b6:bd78::/64 Deny Spam
-Origin: FI
-Profile: Commercial
-Tag: DNA Oyj
 
 
 # ASN 812 ("Rogers Communications Canada Inc").

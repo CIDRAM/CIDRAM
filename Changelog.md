@@ -8,6 +8,8 @@
 
 *At the time of branching, CIDRAM's changelog was more than 2,300 lines long and was becoming difficult to read due to both its length and its format. To improve readability, I've decided to clear out the old changelogs from the v3 branch, and to switch from plain-text format to markdown format from v3 onward. The old changelogs will continue at previous branches and remain accessible from there.*
 
+*v3.0.0 major release tagged/released 2023.01.24.*
+
 #### Backwards-incompatible changes.
 - Removed support for webfonts (this expands upon other changes made in the past in response to potential legal concerns; #66).
 - Removed support for INI files in favour of using just YAML files instead (this is necessary because of changes to the configuration directives available made for v3 and how those changes are intended to work for v3).

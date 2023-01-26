@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: ReCaptcha class (last modified: 2022.09.11).
+ * This file: ReCaptcha class (last modified: 2023.01.26).
  */
 
 namespace CIDRAM\Core;
@@ -51,9 +51,6 @@ class ReCaptcha extends Captcha
                         $UserMeld = $this->meld($Salt, $UserSalt, $this->CIDRAM['IPAddr']);
                     } else {
                         $UserMeld = $this->meld($Salt, $UserSalt);
-                    }
-                    if (strpos($UserMeld, "\0") !== false) {
-                        $UserMeld = str_replace("\0", '', $UserMeld);
                     }
                 }
             }

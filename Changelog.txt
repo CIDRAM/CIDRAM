@@ -10,7 +10,11 @@ Detailed version release guidelines for CIDRAM can be found at:
 
 === Changes made since last versioned release ===
 
-(none)
+- [2023.01.26; Bug-fix; Maikuolan]: When authenticating a completed CAPTCHA
+  instance, depending on the exact configuration, in some cases, salts were
+  being munged after fetching the instance hash but prior to verifying the
+  hash, resulting in an infinite loop of needing recomplete CAPTCHA instances;
+  Fixed (#389).
 
 === Version/Release 2.10.0 ===
 MINOR RELEASE.

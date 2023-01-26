@@ -43,7 +43,7 @@ class ReCaptcha extends Captcha
              * Determine whether a reCAPTCHA instance has already been completed by the
              * user and populate relevant variables.
              */
-            if (!empty($_COOKIE['CIDRAM']) && $Split = strpos($_COOKIE['CIDRAM'], ',')) {
+            if (!empty($_COOKIE['CIDRAM']) && ($Split = strpos($_COOKIE['CIDRAM'], ',')) !== false) {
                 $UserHash = substr($_COOKIE['CIDRAM'], 0, $Split);
                 if (strpos($HastList, "\n" . $UserHash . ',') !== false) {
                     $UserSalt = base64_decode(substr($_COOKIE['CIDRAM'], $Split));
@@ -51,9 +51,6 @@ class ReCaptcha extends Captcha
                         $UserMeld = $this->meld($Salt, $UserSalt, $this->CIDRAM->ipAddr);
                     } else {
                         $UserMeld = $this->meld($Salt, $UserSalt);
-                    }
-                    if (strpos($UserMeld, "\0") !== false) {
-                        $UserMeld = str_replace("\0", '', $UserMeld);
                     }
                 }
             }

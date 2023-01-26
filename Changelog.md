@@ -108,3 +108,7 @@
 - Added a new configuration directive, `sensitive`, to allow users to specify which paths should be regarded as sensitive pages.
 - Added a new module for IP-API (#373).
 - Protocol is now recognised as a source for auxiliary rules and as a block event field.
+
+### v3.1.0
+
+[2023.01.26; Bug-fix; Maikuolan]: When authenticating a completed CAPTCHA instance, depending on the exact configuration, in some cases, salts were being munged after fetching the instance hash but prior to verifying the hash, resulting in an infinite loop of needing recomplete CAPTCHA instances; Fixed (#389).

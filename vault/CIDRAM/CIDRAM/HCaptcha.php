@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: HCaptcha class (last modified: 2022.09.11).
+ * This file: HCaptcha class (last modified: 2023.01.26).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -57,14 +57,14 @@ class HCaptcha extends Captcha
                     }
                 }
             }
-            if (empty($UserMeld)) {
+            if (!isset($UserMeld) || strlen($UserMeld) === 0) {
                 $UserMeld = '';
                 $UserSalt = '';
                 $UserHash = '';
             }
 
             /** Verify whether they've passed, update cookies, generate fields. */
-            if ($UserHash && $UserMeld && password_verify($UserMeld, $UserHash)) {
+            if ($UserHash !== '' && $UserMeld !== '' && password_verify($UserMeld, $UserHash)) {
                 $this->Bypass = true;
                 $this->CIDRAM->BlockInfo['SignatureCount'] = 0;
                 $this->CIDRAM->Cache->deleteEntry('Tracking-' . $this->CIDRAM->BlockInfo['IPAddr']);

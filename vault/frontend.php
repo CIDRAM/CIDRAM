@@ -2706,8 +2706,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'backup' && $CIDRAM['FE']['Permi
     /** Page initial prepwork. */
     $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_backup'), $CIDRAM['L10N']->getString('tip_backup'));
 
-    $CIDRAM['FE']['size_config'] = filesize($CIDRAM['FE']['ActiveConfigFile']) ?: 0;
-    $CIDRAM['FE']['size_aux'] = filesize($CIDRAM['Vault'] . 'auxiliary.yml') ?: 0;
+    $CIDRAM['FE']['size_config'] = filesize($CIDRAM['Vault'] . $CIDRAM['FE']['ActiveConfigFile']) ?: 0;
+    $CIDRAM['FE']['size_aux'] = filesize($CIDRAM['Vault'] . 'auxiliary.yaml') ?: 0;
     $CIDRAM['FormatFilesize']($CIDRAM['FE']['size_config']);
     $CIDRAM['FormatFilesize']($CIDRAM['FE']['size_aux']);
 
@@ -2725,7 +2725,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'backup' && $CIDRAM['FE']['Permi
             if (isset($_POST['doAux']) && $_POST['doAux'] === 'on') {
                 if (!isset($CIDRAM['AuxData'])) {
                     $CIDRAM['AuxData'] = [];
-                    $CIDRAM['YAML']->process($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'auxiliary.yml'), $CIDRAM['AuxData']);
+                    $CIDRAM['YAML']->process($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'auxiliary.yaml'), $CIDRAM['AuxData']);
                 }
                 $CIDRAM['Export']['Auxiliary Rules'] = $CIDRAM['AuxData'];
             }
@@ -2780,12 +2780,12 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'backup' && $CIDRAM['FE']['Permi
                         if (isset($CIDRAM['Import']['Auxiliary Rules']) && is_array($CIDRAM['Import']['Auxiliary Rules'])) {
                             if (!isset($CIDRAM['AuxData'])) {
                                 $CIDRAM['AuxData'] = [];
-                                $CIDRAM['YAML']->process($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'auxiliary.yml'), $CIDRAM['AuxData']);
+                                $CIDRAM['YAML']->process($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'auxiliary.yaml'), $CIDRAM['AuxData']);
                             }
                             $CIDRAM['AuxData'] = array_replace($CIDRAM['AuxData'], $CIDRAM['Import']['Auxiliary Rules']);
                             if (
                                 ($CIDRAM['NewAuxData'] = $CIDRAM['YAML']->reconstruct($CIDRAM['AuxData'])) !== '' &&
-                                ($CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'auxiliary.yml', 'wb')) !== false
+                                ($CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'auxiliary.yaml', 'wb')) !== false
                             ) {
                                 if ((fwrite($CIDRAM['Handle'], $CIDRAM['NewAuxData'])) !== false) {
                                     $CIDRAM['FE']['state_msg'] .= $CIDRAM['L10N']->getString('response_aux_updated') . '<br />';

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2023.01.07).
+# This file: Korean language data for the front-end (last modified: 2023.01.27).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -400,6 +400,7 @@ label_check_verification: "검색 엔진 및 소셜 미디어 검증 테스트�
 label_checkbox: "체크 박스"
 label_cidram: "사용된 CIDRAM 버전\_:"
 label_clientinfo: "사용자 정보\_:"
+label_compress: "압축"
 label_current_data: "현재의 데이터."
 label_current_data_for: ""%s"에 대한 현재의 데이터."
 label_default: "기본값"
@@ -410,6 +411,7 @@ label_displaying_that_cite: ""%2$s"라고 표시된 %1$s 개의 항목이 표시
 label_entries_per_page: "페이지당 항목 수\_:"
 label_expected: "예상 된"
 label_expires: "만료일\_:"
+label_export: "내보내기"
 label_extension: "확장"
 label_false_positive_risk: "거짓 양성 위험\_:"
 label_fmgr_cache_data: "캐시 데이터 및 임시 파일 "
@@ -429,6 +431,7 @@ label_http_response_header_code_429: "429 Too Many Requests (너무 많은 요�
 label_http_response_header_code_451: "451 Unavailable For Legal Reasons (법적 이유로 사용할 수 없음)\n주로 법적 이유로 차단할 때 권장됩니다. 다른 상황에서는 권장되지 않습니다."
 label_http_response_header_code_503: "503 Service Unavailable (서비스 불가)\n가장 강력하지만 사용자 친화적이지 않습니다. 공격받거나 매우 지속적인 원치 않는 트래픽을 처리할 때 권장됩니다."
 label_ignore: "이것을 무시하십시오"
+label_import: "가져오기"
 label_installed_available: "설치되어있다 / 이용 가능"
 label_integrity_check: "무결성 검사\_:"
 label_intersect: "교차"
@@ -483,6 +486,7 @@ label_your_ip: "당신의 IP\_:"
 label_your_ua: "당신의 UA\_:"
 link_accounts: "계정"
 link_aux: "보조 규칙"
+link_backup: "백업"
 link_cache_data: "데이터 캐쉬"
 link_cidr_calc: "CIDR 계산기"
 link_config: "구성"
@@ -535,12 +539,14 @@ response_activation_failed: "활성화에 실패했습니다!"
 response_aux_none: "현재 보조 규칙이 없습니다."
 response_aux_rule_created_successfully: "새 보조 규칙 "%s"가 성공적으로 작성되었습니다."
 response_aux_rule_deleted_successfully: "보조 규칙 "%s"가 성공적으로 삭제되었습니다."
+response_aux_update_failed: "보조 규칙을 업데이트하지 못했습니다!"
 response_aux_updated: "보조 규칙이 성공적으로 업데이트되었습니다."
 response_checksum_error: "체크섬 오류! 파일이 거부되었습니다!"
 response_component_successfully_installed: "구성 요소의 설치에 성공했습니다."
 response_component_successfully_uninstalled: "구성 요소의 제거는 성공했습니다."
 response_component_successfully_updated: "구성 요소의 업데이트에 성공했습니다!"
 response_component_uninstall_error: "구성 요소 제거하는 동안 오류가 발생했습니다."
+response_configuration_update_failed: "구성을 업데이트하지 못했습니다!"
 response_configuration_updated: "구성 업데이트가 성공했습니다."
 response_copied: "복사되었습니다"
 response_deactivated: "비활성화했습니다."
@@ -550,6 +556,7 @@ response_directory_deleted: "디렉토리가 성공적으로 삭제되었습니�
 response_directory_renamed: "디렉토리의 이름이 변경되었습니다!"
 response_error: "오류"
 response_failed: "실패했습니다"
+response_failed_to_import: "가져오기에 실패했습니다!"
 response_failed_to_install: "설치하지 못했습니다!"
 response_failed_to_update: "업데이트하지 못했습니다!"
 response_file_deleted: "파일 삭제가 성공했습니다!"
@@ -645,6 +652,7 @@ tip_aux: "안녕하세요, {username}.<br />이 페이지를 사용하여 CIDRAM
 tip_aux_operators: "힌트\_: 조건에 다른 연산자가 필요한 경우, 당신은 그것의 가치 시작 부분에 추가 할 수 있습니다 (직접 문자열 비교가 필요합니다)."
 tip_aux_priority: "우선 순위 (최고➡(같은🔄동등한)➡최저한의)\_:"
 tip_aux_webhooks: "규칙이 트리거 되면, CIDRAM은 연결된 웹 훅에 이벤트에 대해 알리려고 시도합니다."
+tip_backup: "안녕하세요, {username}.<br />이 페이지는 구성, 보조 규칙, 등을 가져오거나 내보내는 데 사용할 수 있습니다. 이는 다른 설치 또는 다른 주 버전 간에 데이터를 마이그레이션 해야 하는 경우에 유용할 수 있습니다."
 tip_cache_data: "안녕하세요, {username}.<br />여기서 캐시의 내용을 검토 할 수 있습니다."
 tip_cidr_calc: "안녕하세요, {username}.<br />CIDR 계산기는 IP 주소가 어떻게 CIDR에 속해 있는지를 계산할 수 있습니다."
 tip_click_the_component: "자세한 내용은 구성 요소 이름을 클릭하십시오."

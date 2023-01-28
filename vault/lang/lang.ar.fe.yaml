@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2023.01.07).
+# This file: Arabic language data for the front-end (last modified: 2023.01.27).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -398,6 +398,7 @@ label_check_verification: "أيضا اختبار ضد التحقق من محرك
 label_checkbox: "خانة اختيار"
 label_cidram: "النسخة CIDRAM المستخدمة:"
 label_clientinfo: "معلومات المستخدممعلومات المستخدم:"
+label_compress: "ضغط البيانات"
 label_current_data: "البيانات الحالية."
 label_current_data_for: "البيانات الحالية لـ "%s"."
 label_default: "الافتراضي"
@@ -408,6 +409,7 @@ label_displaying_that_cite: "عرض %s إدخالات تشير إلى "%s"."
 label_entries_per_page: "إدخالات لكل صفحة:"
 label_expected: "متوقع"
 label_expires: "تنتهي:"
+label_export: "تصدير"
 label_extension: "التمديد"
 label_false_positive_risk: "خطر إيجابية كاذبة:"
 label_fmgr_cache_data: "بيانات ذاكرة التخزين المؤقت والملفات المؤقتة"
@@ -427,6 +429,7 @@ label_http_response_header_code_429: "429 Too Many Requests (طلبات كثير
 label_http_response_header_code_451: "451 Unavailable For Legal Reasons (غير متاح لأسباب قانونية)\nيوصى به عند الحظر لأسباب قانونية في المقام الأول. لا ينصح به في سياقات أخرى."
 label_http_response_header_code_503: "503 Service Unavailable (الخدمة غير متوفرة)\nالأكثر قوة، ولكن الأقل سهولة في الاستخدام. يوصى به عند التعرض للهجوم أو عند التعامل مع حركة مرور غير مرغوب فيها بشكل دائم للغاية."
 label_ignore: "تجاهل هذا"
+label_import: "قم باستيراد"
 label_installed_available: "المثبتة/متاح"
 label_integrity_check: "التحقق من النزاهة:"
 label_intersect: "التقاطع"
@@ -485,6 +488,7 @@ label_your_ip: "عنوان IP الخاص بك:"
 label_your_ua: "وكيل المستخدم الخاص بك:"
 link_accounts: "حسابات"
 link_aux: "القواعد المساعدة"
+link_backup: "نسخ احتياطي"
 link_cache_data: "بيانات ذاكرة التخزين المؤقت"
 link_cidr_calc: "CIDR حاسبة"
 link_config: "التكوين"
@@ -532,26 +536,29 @@ response_accounts_created: "تم انشاء الحساب بنجاح!"
 response_accounts_deleted: "تم حذف الحساب بنجاح!"
 response_accounts_doesnt_exist: "حساب غير موجود."
 response_accounts_password_updated: "تم تحديث كلمه السر بنجاح!"
-response_activated: "نجحت في جعل نشطة"
+response_activated: "نجحت في جعل نشطة."
 response_activation_failed: "فشلت في جعله نشطة!"
 response_aux_none: "لا توجد حاليا أي القواعد المساعدة."
 response_aux_rule_created_successfully: "تم إنشاء قاعدة مساعدة جديدة "%s" بنجاح."
 response_aux_rule_deleted_successfully: "تم حذف القاعدة المساعدة "%s" بنجاح."
+response_aux_update_failed: "فشل تحديث القواعد المساعدة!"
 response_aux_updated: "تم تحديث القواعد المساعدة بنجاح."
 response_checksum_error: "خطأ أختباري! تم رفض الملف!"
-response_component_successfully_installed: "تم تثبيت المكون بنجاح"
-response_component_successfully_uninstalled: "تم الغاء تثبيت المكون بنجاح"
-response_component_successfully_updated: "تم تحديث المكون بنجاح"
+response_component_successfully_installed: "تم تثبيت المكون بنجاح."
+response_component_successfully_uninstalled: "تم الغاء تثبيت المكون بنجاح."
+response_component_successfully_updated: "تم تحديث المكون بنجاح."
 response_component_uninstall_error: "حدث خطأ أثناء محاولة إلغاء تثبيت المكون."
-response_configuration_updated: "تم تحديث التكوين بنجاح"
+response_configuration_update_failed: "فشل تحديث التكوين!"
+response_configuration_updated: "تم تحديث التكوين بنجاح."
 response_copied: "نسخ"
-response_deactivated: "نجحت في جعل غير نشطة"
+response_deactivated: "نجحت في جعل غير نشطة."
 response_deactivation_failed: "فشلت في جعله غير نشطة!"
 response_delete_error: "فشلت في حذف!"
 response_directory_deleted: "تم حذف الدليل بنجاح!"
 response_directory_renamed: "تم اعادة تسمية الدليل بنجاح!"
 response_error: "خطأ"
 response_failed: "فشل"
+response_failed_to_import: "فشل الاستيراد!"
 response_failed_to_install: "فشل التثبيت!"
 response_failed_to_update: "فشل التحديث!"
 response_file_deleted: "ملف حذف بنجاح!"
@@ -673,6 +680,7 @@ tip_aux: "مرحبا، {username}.<br />يمكنك استخدام هذه الص�
 tip_aux_operators: "تلميح: إذا كان الشرط يحتاج إلى نوع مختلف من عامل التشغيل، يمكنك إضافته إلى بداية قيمته (يتطلب مقارنة سلسلة مباشرة)."
 tip_aux_priority: "أفضلية (أعلى⬅(مساو🔄ما يعادل)⬅الأدنى):"
 tip_aux_webhooks: "عندما يتم استيفاء القاعدة، سيحاول CIDRAM إبلاغ أي webhooks متصلة بالحدث."
+tip_backup: "مرحبا، {username}.<br />يمكن استخدام هذه الصفحة لاستيراد وتصدير التكوين والقواعد المساعدة وما إلى ذلك. يمكن أن يكون هذا مفيدًا إذا كنت بحاجة إلى ترحيل البيانات عبر عمليات التثبيت المختلفة أو الإصدارات الرئيسية المختلفة."
 tip_cache_data: "مرحبا، {username}.<br />هنا يمكنك مراجعة محتويات ذاكرة التخزين المؤقت."
 tip_cidr_calc: "مرحبا، {username}.<br />آلة حاسبة CIDR يسمح لك لحساب CIDRs حيث عنوان IP هو عامل."
 tip_click_the_component: "انقر فوق اسم المكون لمزيد من التفاصيل."

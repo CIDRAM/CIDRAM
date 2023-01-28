@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2023.23.0
-# Last modified: 2023.01.24
+# Version: 2023.27.0
+# Last modified: 2023.01.28
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -616,19 +616,6 @@ Profile: Domestic ISP
 Tag: Uninet
 
 
-# ASN 58055 ("Extratel Ltd").
-# Domestic Ukrainian ISP; IPs from this ASN caught attempting automated attacks
-# against honeypots and login pages, with some evidence of some IPs being used
-# as low-end C&Cs and for malware distribution.
-# Stop Forum Spam (SFS) listings: 28.
-# Updated: 2020.03.21 / Checked: 2022.01.14
-
-2a0f:1e40::/32 Deny Attacks
-Origin: UA
-Profile: Domestic ISP
-Tag: Extratel Ltd
-
-
 # ASN 6830 ("Liberty Global B.V").
 # European international 5G and fibre provider. Brute-force, WordPress, and
 # webapp attacks, port scans, email harvestors, and spam detected from here.
@@ -1010,19 +997,6 @@ Profile: Domestic ISP
 Tag: WildPark Co
 
 
-# ASN 63996 ("Mazeda Networks Limited").
-# Caught XRumer operating on this network. Bangladesh multiplay network.
-# Primarily a webhost and server leaser, but also offers corporate internet
-# connectivity.
-# Stop Forum Spam (SFS) listings: 193.
-# Updated: 2019.05.28 / Checked: 2022.02.07
-
-2400:3240::/32 Deny Cloud
-Origin: BD
-Profile: Commercial;Infrastructure/Transit;Multiplay;Webhosting
-Tag: Mazeda Networks
-
-
 # ASN 9123 ("OOO TimeWeb").
 # Russian multiplay network. Brute-force, XMLRPC/WordPress, and webapp attacks,
 # hacking, port scans, and spam detected from here.
@@ -1170,8 +1144,8 @@ Tag: Binariang Berhad
 # ASN 132116 ("Ani Network Pvt Ltd").
 # Indian multiplay network. Ongoing spam campaigns, SSH, and brute-force
 # attacks. Huge source of spam, increasing over time.
-# Stop Forum Spam (SFS) listings: 43,744.
-# Updated: 2022.03.23
+# Stop Forum Spam (SFS) listings: 26,145.
+# Updated: 2022.03.23 / Checked: 2023.01.28
 
 2405:e100::/43 Deny Attacks
 Origin: IN
@@ -1421,3 +1395,15 @@ Tag: Udasha S.A
 Origin: AR
 Profile: Domestic ISP
 Tag: AS265725
+
+
+# ASNs 7303, 10481 ("Telecom Argentina S.A").
+# Argentinian domestic ISP. Brute-force and SSH attacks, hacking, and spam
+# detected from here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 830 (AS7303), 1 (AS10481).
+# Updated: 2023.01.26
+
+2800:2141:5400:3f::/64 Deny Spam
+Origin: AR
+Profile: Domestic ISP
+Tag: Telecom Argentina S.A

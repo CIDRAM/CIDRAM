@@ -109,9 +109,10 @@ blockquote.comSub{margin:-2px 0 0 0;padding:0 0 0 0}
 .iCntn{margin-left:42px}
 @keyframes forRotate{0%{transform:rotate(0)}100%{transform:rotate({45deg})}}
 @keyframes revRotate{0%{transform:rotate({45deg})}100%{transform:rotate(0)}}
-#acctnavlink::before,#discussionslink::before,#docsnavlink::before,#confnavlink::before,#fmgrnavlink::before,#homenavlink::before,#websitelink::before,
+#acctnavlink::before,#bckpnavlink::before,#discussionslink::before,#docsnavlink::before,#confnavlink::before,#fmgrnavlink::before,#homenavlink::before,#websitelink::before,
 #logsnavlink::before,#statnavlink::before,#testnavlink::before,#updtnavlink::before{display:inline;color:rgba(0,0,0,0);text-shadow:0 0 #832}
 #acctnavlink::before{content:"🔐"}
+#bckpnavlink::before{content:"💾"}
 #confnavlink::before{content:"🔧"}
 #discussionslink::before{content:"💬"}
 #docsnavlink::before{content:"📕"}

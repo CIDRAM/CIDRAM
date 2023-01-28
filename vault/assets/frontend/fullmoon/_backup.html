@@ -1,0 +1,21 @@
+<div class="nav">{nav}</div>
+<hr />
+<div class="s" id="stateMsg">{state_msg}</div>
+<div class="ng1">
+  <form enctype="multipart/form-data" id="bckpForm" action="?cidram-page=backup" method="POST">
+    <input type="radio" class="auto" name="bckpAct" id="doImport" value="import" onchange="javascript:this.checked?(hide('forExport'),show('forImport')):(hide('forImport'),show('forExport'))" checked /> <label class="s" for="doImport">{label_import}</label>
+    <span class="forImport" style="float:{FE_Align_Reverse}">
+      <input type="file" name="importFile" class="auto" />
+    </span><br /><br />
+    <input type="radio" class="auto" name="bckpAct" id="doExport" value="export" onchange="javascript:this.checked?(show('forExport'),hide('forImport')):(show('forImport'),hide('forExport'))" /> <label class="s" for="doExport">{label_export}</label>
+    <span class="forExport" style="float:{FE_Align_Reverse}">
+      <span class="s"><input type="checkbox" name="doCompress" id="doCompress" class="auto" checked /> <label for="doCompress">{label_compress}</label></span>
+    </span><hr />
+    <div style="display:grid;margin:38px;grid-template-columns:auto">
+      <div class="gridboxitem gridHA"><span class="s gridlabel"><input type="checkbox" name="doConfig" id="doConfig" class="auto" /> <label for="doConfig">{link_config}<span class="forExport"> ({size_config})</span></label></span></div>
+      <div class="gridboxitem gridHB"><span class="s gridlabel"><input type="checkbox" name="doAux" id="doAux" class="auto" /> <label for="doAux">{link_aux}<span class="forExport"> ({size_aux})</span></label></span></div>
+    </div>
+    <input type="submit" value="{field_ok}" />
+  </form>
+  <script type="text/javascript">hide('forExport')</script>
+</div>

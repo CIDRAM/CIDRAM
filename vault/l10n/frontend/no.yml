@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2023.01.14).
+# This file: Norwegian language data for the front-end (last modified: 2023.01.27).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -386,10 +386,10 @@ hints_verification:
  "Hva er "enkelt-hit bypasser"?": "I noen tilfeller kan en positiv bekreftet forespørsel fortsatt blokkeres som et resultat av signaturfilene, modulene, eller andre forhold i forespørselen, og bypasser kan være nødvendig for å unngå falske positiver. I tilfellet der en bypass er ment å håndtere nøyaktig ett infraksjon, verken mer eller mindre, slik en bypass kan beskrives som en "enkelt-hit bypass"."
 info_cli_by_default_ips: |
  Som standard testes IPer mot alle signaturfiler, alle moduler, alle
- hjelperegler, samt sosiale medier og søkemotor verifisering. Imidlertid, du
+ tilleggsregler, samt sosiale medier og søkemotor verifisering. Imidlertid, du
  kan valgfritt deaktivere, på en per-IP-basis, sjekk mot moduler med --no-mod,
- sjekk mot hjelperegler med --no-aux, og sjekk mot sosiale medier og søkemotor
- verifisering med --no-ssv:
+ sjekk mot tilleggsregler med --no-aux, og sjekk mot sosiale medier og
+ søkemotor verifisering med --no-ssv:
 info_cli_cidram_cli_mod: "CIDRAM CLI-modus."
 info_cli_ipv4_ipv6_are_: |
  IPv4/IPv6 støttes begge. Flerlinjeinngang er mulig for alle CLI-modus
@@ -517,6 +517,7 @@ label_checksum_after: "Sjekksum etter"
 label_checksum_before: "Sjekksum før"
 label_cidram: "CIDRAM versjon brukt:"
 label_clientinfo: "Klientinformasjon:"
+label_compress: "Komprimere"
 label_current_data: "Aktuelle data."
 label_current_data_for: "Aktuelle data for "%s"."
 label_default: "Standardverdi"
@@ -532,6 +533,7 @@ label_empty_unfamiliar: "Tom, ukjent, og andre."
 label_entries_per_page: "Oppføringer per side:"
 label_expected: "Forventet"
 label_expires: "Utgår:"
+label_export: "Eksporter"
 label_extension: "Forlengelse"
 label_external: "Ekstern"
 label_false_positive_risk: "Falsk positiv risiko:"
@@ -553,6 +555,7 @@ label_http_response_header_code_429: "429 Too Many Requests (For mange forespør
 label_http_response_header_code_451: "451 Unavailable For Legal Reasons (Utilgjengelig av juridiske årsaker)\nAnbefales ved blokkering primært av juridiske årsaker. Anbefales ikke i andre sammenhenger."
 label_http_response_header_code_503: "503 Service Unavailable (Tjenesten er utilgjengelig)\nMest robust, men minst brukervennlig. Anbefalt for angrep, eller for ekstremt vedvarende uønsket trafikk."
 label_ignore: "Ignorere dette"
+label_import: "Importer"
 label_installed_available: "Installert/Tilgjengelig"
 label_integrity_check: "Integritetskontroll:"
 label_intersect: "Krysset"
@@ -619,6 +622,7 @@ label_your_ua: "Din UA:"
 link_accounts: "Kontoer"
 link_aggregator: "Aggregator"
 link_aux: "Tilleggsregler"
+link_backup: "Sikkerhetskopi"
 link_cache_data: "Cache Data"
 link_calculator: "Kalkulator"
 link_config: "Konfigurasjon"
@@ -670,6 +674,7 @@ response_activation_failed: "Aktivering mislyktes!"
 response_aux_none: "Det finnes for øyeblikket ingen tilleggsregler."
 response_aux_rule_created_successfully: "Ny tilleggsregel, "%s", opprettet vellykket."
 response_aux_rule_deleted_successfully: "Tilleggsregel, "%s", slettet vellykket."
+response_aux_update_failed: "Kunne ikke oppdatere tilleggsregler!"
 response_aux_updated: "Tilleggsregler er oppdatert."
 response_checksum_error: "Sjekksum feil! Fil avvist!"
 response_cli_bad_chain: "%s-kommandoen kan ikke lenkes på den måten, beklager."
@@ -679,6 +684,7 @@ response_component_successfully_installed: "Komponent installert."
 response_component_successfully_uninstalled: "Komponent avinstallert."
 response_component_successfully_updated: "Komponent oppdatert."
 response_component_uninstall_error: "Det oppsto en feil under forsøk på å avinstallere komponenten."
+response_configuration_update_failed: "Kunne ikke oppdatere konfigurasjonen!"
 response_configuration_updated: "Konfigurasjon oppdatert."
 response_copied: "Kopiert"
 response_deactivated: "Deaktivering vellykket."
@@ -689,6 +695,7 @@ response_directory_renamed: "Filkatalog omdøpt!"
 response_failed: "Mislyktes"
 response_failed_to_access: "Kunne ikke få tilgang til "%s"!"
 response_failed_to_execute: "Utføres mislyktes!"
+response_failed_to_import: "Kunne ikke importere!"
 response_failed_to_install: "Installasjon mislyktes!"
 response_failed_to_update: "Oppdatering mislyktes!"
 response_file_deleted: "Fil slettet!"
@@ -821,6 +828,7 @@ tip_aux: "Hallo, {username}.<br />Du kan bruke denne siden til å opprette, slet
 tip_aux_operators: "Hint: Hvis en tilstand trenger en annen type operatør, du kan legge den til i begynnelsen av verdien (krever direkte streng sammenligning)."
 tip_aux_priority: "Prioritet (høyeste➡(lik🔄tilsvarende)➡lavest):"
 tip_aux_webhooks: "Når en regel utløses, CIDRAM vil prøve å varsle eventuelle tilkoblede nettkroker om hendelsen."
+tip_backup: "Hallo, {username}.<br />Denne siden kan brukes til å importere/eksportere konfigurasjonen din, tilleggsregler din, osv. Dette kan være nyttig hvis du trenger å migrere data på tvers av forskjellige installasjoner eller forskjellige hovedversjoner."
 tip_cache_data: "Hallo, {username}.<br />Her kan du se innholdet i cachen."
 tip_calculator: "Hallo, {username}.<br />Kalkulatoren lar deg beregne CIDR-ene og nettmaskene til en IP-adresse."
 tip_click_the_component: "Klikk på komponentnavnet for flere detaljer."

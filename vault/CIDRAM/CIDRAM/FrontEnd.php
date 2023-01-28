@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.01.16).
+ * This file: The CIDRAM front-end (last modified: 2023.01.28).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1840,7 +1840,7 @@ class FrontEnd extends Core
                 if ($this->updateConfiguration()) {
                     $this->FE['state_msg'] = $this->L10N->getString('response_configuration_updated');
                 } else {
-                    $this->FE['state_msg'] = $this->L10N->getString('response_failed_to_update');
+                    $this->FE['state_msg'] = $this->L10N->getString('response_configuration_update_failed');
                 }
             }
 
@@ -2537,6 +2537,129 @@ class FrontEnd extends Core
 
             /** Cleanup. */
             unset($this->FE['CFBoilerplate'], $this->CIDRAM['Operation']);
+        }
+
+        /** Backup. */
+        elseif ($this->CIDRAM['QueryVars']['cidram-page'] === 'backup' && $this->FE['Permissions'] === 1) {
+            /** Page initial prepwork. */
+            $this->initialPrepwork($this->L10N->getString('link_backup'), $this->L10N->getString('tip_backup'));
+
+            $this->FE['size_config'] = filesize($this->FE['ActiveConfigFile']) ?: 0;
+            $this->FE['size_aux'] = filesize($this->Vault . 'auxiliary.yml') ?: 0;
+            $this->formatFileSize($this->FE['size_config']);
+            $this->formatFileSize($this->FE['size_aux']);
+
+            /** Temporary. */
+            $this->FE['state_msg'] .= 'Warning: The backup feature is still a <span class="txtRd">work-in-progress</span>, and I recommend not using it until it has been finished, because until then, it mightn\'t behave as expected. When it\'s finished, I\'ll remove this warning from the page.<br />';
+
+            if (isset($_POST['bckpAct'])) {
+                /** Export. */
+                if ($_POST['bckpAct'] === 'export') {
+                    $Export = ['CIDRAM Version' => $this->ScriptVersion];
+                    $this->initialiseErrorHandler();
+                    if (isset($_POST['doConfig']) && $_POST['doConfig'] === 'on') {
+                        $Export['Configuration'] = $this->Configuration;
+                    }
+                    if (isset($_POST['doAux']) && $_POST['doAux'] === 'on') {
+                        if (!isset($this->CIDRAM['AuxData'])) {
+                            $this->CIDRAM['AuxData'] = [];
+                            $this->YAML->process($this->readFile($this->Vault . 'auxiliary.yml'), $this->CIDRAM['AuxData']);
+                        }
+                        $Export['Auxiliary Rules'] = $this->CIDRAM['AuxData'];
+                    }
+                    $Export = $this->YAML->reconstruct($Export);
+                    $Filename = 'CIDRAM-v' . $this->ScriptVersion . '-Exported-' . date('Y-m-d-H-i-s', $this->Now) . '.yml';
+                    if (isset($_POST['doCompress']) && $_POST['doCompress'] === 'on' && $Export !== '') {
+                        $Export = gzencode($Export);
+                        $Filename .= '.gz';
+                    }
+                    header('Content-Type: application/octet-stream');
+                    header('Content-Transfer-Encoding: Binary');
+                    header('Content-disposition: attachment; filename="' . $Filename . '"');
+                    echo $Export;
+                    $this->restoreErrorHandler();
+                    die;
+                }
+
+                /** Import. */
+                if ($_POST['bckpAct'] === 'import') {
+                    if (
+                        isset($_FILES['importFile']['name'], $_FILES['importFile']['tmp_name'], $_FILES['importFile']['error']) &&
+                        $_FILES['importFile']['error'] === UPLOAD_ERR_OK &&
+                        is_uploaded_file($_FILES['importFile']['tmp_name'])
+                    ) {
+                        $this->initialiseErrorHandler();
+                        $Try = $this->readFile($_FILES['importFile']['tmp_name']);
+                        if (substr($Try, 0, 2) === "\x1F\x8B") {
+                            $Try = gzdecode($Try);
+                        }
+                        $Import = [];
+                        if (substr($Try, 0, 6) === 'CIDRAM') {
+                            $this->YAML->process($Try, $Import);
+                        }
+                        $Try = false;
+                        if (!isset($Import['CIDRAM Version'])) {
+                            $this->FE['state_msg'] .= $this->L10N->getString('response_failed_to_import') . '<br />';
+                        } else {
+                            if (isset($_POST['doConfig']) && $_POST['doConfig'] === 'on') {
+                                if (isset($Import['Configuration']) && is_array($Import['Configuration'])) {
+                                    $this->Configuration = array_replace_recursive($this->Configuration, $Import['Configuration']);
+                                    if ($this->updateConfiguration()) {
+                                        $this->FE['state_msg'] .= $this->L10N->getString('response_configuration_updated') . '<br />';
+                                    } else {
+                                        $this->FE['state_msg'] .= $this->L10N->getString('response_configuration_update_failed') . '<br />';
+                                    }
+                                } else {
+                                    $this->FE['state_msg'] .= $this->L10N->getString('response_configuration_update_failed') . '<br />';
+                                }
+                            }
+                            if (isset($_POST['doAux']) && $_POST['doAux'] === 'on') {
+                                if (isset($Import['Auxiliary Rules']) && is_array($Import['Auxiliary Rules'])) {
+                                    if (!isset($this->CIDRAM['AuxData'])) {
+                                        $this->CIDRAM['AuxData'] = [];
+                                        $this->YAML->process($this->readFile($this->Vault . 'auxiliary.yml'), $this->CIDRAM['AuxData']);
+                                    }
+                                    $this->CIDRAM['AuxData'] = array_replace($this->CIDRAM['AuxData'], $Import['Auxiliary Rules']);
+                                    if (
+                                        ($this->CIDRAM['NewAuxData'] = $this->YAML->reconstruct($this->CIDRAM['AuxData'])) !== '' &&
+                                        ($Handle = fopen($this->Vault . 'auxiliary.yml', 'wb')) !== false
+                                    ) {
+                                        if ((fwrite($Handle, $this->CIDRAM['NewAuxData'])) !== false) {
+                                            $this->FE['state_msg'] .= $this->L10N->getString('response_aux_updated') . '<br />';
+                                        } else {
+                                            $this->FE['state_msg'] .= $this->L10N->getString('response_aux_update_failed') . '<br />';
+                                        }
+                                        fclose($Handle);
+                                    } else {
+                                        $this->FE['state_msg'] .= $this->L10N->getString('response_aux_update_failed') . '<br />';
+                                    }
+                                } else {
+                                    $this->FE['state_msg'] .= $this->L10N->getString('response_aux_update_failed') . '<br />';
+                                }
+                            }
+                        }
+                        $this->restoreErrorHandler();
+                    } else {
+                        $this->FE['state_msg'] = $this->L10N->getString('response_upload_error') . '<br />';
+                    }
+                }
+            }
+
+            /** Calculate page load time (useful for debugging). */
+            $this->FE['ProcessTime'] = microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];
+            $this->FE['state_msg'] .= sprintf(
+                $this->L10N->getPlural($this->FE['ProcessTime'], 'state_loadtime'),
+                '<span class="txtRd">' . $this->NumberFormatter->format($this->FE['ProcessTime'], 3) . '</span>'
+            );
+
+            /** Parse output. */
+            $this->FE['FE_Content'] = $this->parseVars(
+                $this->L10N->Data + $this->FE,
+                $this->readFile($this->getAssetPath('_backup.html'))
+            );
+
+            /** Send output. */
+            echo $this->sendOutput();
         }
 
         /** Signature file fixer. */

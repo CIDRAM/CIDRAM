@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2023.01.14).
+# This file: Dutch language data for the front-end (last modified: 2023.01.27).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -402,6 +402,7 @@ label_check_verification: "Test ook tegen verificatie van zoekmachines en social
 label_checkbox: "Selectievakje"
 label_cidram: "CIDRAM versie gebruikt:"
 label_clientinfo: "Gebruikers informatie:"
+label_compress: "Comprimeren"
 label_current_data: "Huidige gegevens."
 label_current_data_for: "Huidige gegevens voor "%s"."
 label_default: "Standaard"
@@ -416,6 +417,7 @@ label_displaying_that_cite:
 label_entries_per_page: "Inzendingen per pagina:"
 label_expected: "Verwacht"
 label_expires: "Verloopt:"
+label_export: "Exporteer"
 label_extension: "Extensie"
 label_false_positive_risk: "Vals positieve risico:"
 label_fmgr_cache_data: "Cache data en tijdelijke bestanden"
@@ -435,6 +437,7 @@ label_http_response_header_code_429: "429 Too Many Requests (Te veel verzoeken)\
 label_http_response_header_code_451: "451 Unavailable For Legal Reasons (Om juridische redenen onbeschikbaar)\nAanbevolen bij blokkering voornamelijk om juridische redenen. Niet aanbevolen in andere contexten."
 label_http_response_header_code_503: "503 Service Unavailable (Dienst onbeschikbaar)\nMeest robuust, maar minst gebruiksvriendelijk. Aanbevolen voor wanneer u wordt aangevallen, of wanneer u te maken hebt met extreem hardnekkig ongewenst verkeer."
 label_ignore: "Negeer dit"
+label_import: "Importeer"
 label_installed_available: "Geïnstalleerd/Beschikbaar"
 label_integrity_check: "Integriteitscontrole:"
 label_intersect: "Intersect"
@@ -492,7 +495,8 @@ label_usemode_not_blkd_mrkd: "Alleen wanneer niet geblokkeerd, of wanneer specia
 label_your_ip: "Je IP:"
 label_your_ua: "Je UA:"
 link_accounts: "Accounts"
-link_aux: "Aanvullende Regels"
+link_aux: "Aanvullende regels"
+link_backup: "Back-up"
 link_cache_data: "Cachegegevens"
 link_cidr_calc: "CIDR Calculator"
 link_config: "Configuratie"
@@ -545,12 +549,14 @@ response_activation_failed: "Mislukt om te activeren!"
 response_aux_none: "Er zijn momenteel geen aanvullende regels."
 response_aux_rule_created_successfully: "Nieuwe aanvullende regel, "%s", succesvol aangemaakt."
 response_aux_rule_deleted_successfully: "Aanvullende regel, "%s", succesvol verwijderd."
+response_aux_update_failed: "Update van aanvullende regels mislukt!"
 response_aux_updated: "Aanvullende regels zijn succesvol gewijzigd."
 response_checksum_error: "Controlesom fout! Bestand afgewezen!"
 response_component_successfully_installed: "Component succesvol geïnstalleerd."
 response_component_successfully_uninstalled: "Component succesvol verwijderd."
 response_component_successfully_updated: "Component succesvol gewijzigd."
 response_component_uninstall_error: "Er is een fout opgetreden tijdens een poging om de component te verwijderen."
+response_configuration_update_failed: "Update van configuratie mislukt!"
 response_configuration_updated: "Configuratie succesvol gewijzigd."
 response_copied: "Gekopieerd"
 response_deactivated: "Succesvol gedeactiveerd."
@@ -560,6 +566,7 @@ response_directory_deleted: "Bestandsmap succesvol verwijderd!"
 response_directory_renamed: "De naam van de bestandsmap met succes veranderd!"
 response_error: "Fout"
 response_failed: "Mislukt"
+response_failed_to_import: "Importeren mislukt!"
 response_failed_to_install: "Installatie mislukt!"
 response_failed_to_update: "Update mislukt!"
 response_file_deleted: "Bestand succesvol verwijderd!"
@@ -675,6 +682,7 @@ tip_aux: "Hallo, {username}.<br />U kunt deze pagina gebruiken om aanvullende re
 tip_aux_operators: "Tip: Als een voorwaarde een ander soort operator nodig heeft, u kunt het toevoegen aan het begin van de waarde (vereist directe stringvergelijking)."
 tip_aux_priority: "Prioriteit (hoogste➡(gelijk🔄gelijkwaardig)➡laagste):"
 tip_aux_webhooks: "Wanneer een regel wordt geactiveerd, CIDRAM probeert alle aangesloten webhooks op de hoogte te stellen van het evenement."
+tip_backup: "Hallo, {username}.<br />Deze pagina kan worden gebruikt om uw configuratie, aanvullende regels, enz. te importeren/exporteren. Dit kan handig zijn als u gegevens moet migreren tussen verschillende installaties of verschillende hoofdversies."
 tip_cache_data: "Hallo, {username}.<br />Hier kunt u de inhoud van de cache bekijken."
 tip_cidr_calc: "Hallo, {username}.<br />De CIDR calculator stelt u in staat om te berekenen welke CIDR's een IP-adres is een factor."
 tip_click_the_component: "Klik op de componentnaam voor meer details."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2023.01.07).
+# This file: Japanese language data for the front-end (last modified: 2023.01.27).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -400,6 +400,7 @@ label_check_verification: "検索エンジンの検証とソーシャル・メ�
 label_checkbox: "チェック・ボックス"
 label_cidram: "使用されたCIDRAMバージョン："
 label_clientinfo: "クライアント情報："
+label_compress: "圧縮して"
 label_current_data: "現在のデータ。"
 label_current_data_for: "「%s」の現在のデータ。"
 label_default: "デフォルト"
@@ -410,6 +411,7 @@ label_displaying_that_cite: "「%2$s」を含む%1$sつのエントリが表示�
 label_entries_per_page: "ページあたりのエントリ数："
 label_expected: "予想される"
 label_expires: "有効期限："
+label_export: "エクスポートして"
 label_extension: "エクステンション"
 label_false_positive_risk: "オプション："
 label_fmgr_cache_data: "キャッシュ・データとテンポラリ・ファイル"
@@ -429,6 +431,7 @@ label_http_response_header_code_429: "429 Too Many Requests （リクエスト�
 label_http_response_header_code_451: "451 Unavailable For Legal Reasons （法的な理由で利用できません）\n主に法的な理由でブロックする場合に推奨されます。 他のコンテキストでは推奨されません。"
 label_http_response_header_code_503: "503 Service Unavailable （サービスは利用できません）\nそれは最も堅牢が、最小のユーザー・フレンドリーです。 攻撃を受けている場合、または非常に永続的な不要なトラフィックを処理する場合に推奨されます。"
 label_ignore: "これを無視する"
+label_import: "インポートして"
 label_installed_available: "インストールされている/利用可能です"
 label_integrity_check: "整合性チェック："
 label_intersect: "インタセクト"
@@ -483,6 +486,7 @@ label_your_ip: "あなたのＩＰ："
 label_your_ua: "あなたのＵＡ："
 link_accounts: "アカウント"
 link_aux: "補助ルール"
+link_backup: "バックアップ"
 link_cache_data: "キャッシュ・データ"
 link_cidr_calc: "ＣＩＤＲ計算機"
 link_config: "コンフィギュレーション"
@@ -535,12 +539,14 @@ response_activation_failed: "アクティブ化に失敗しました！"
 response_aux_none: "現在、補助ルールはありません。"
 response_aux_rule_created_successfully: "新しい補助ルール、「%s」が、作成されました。"
 response_aux_rule_deleted_successfully: "補助ルール、「%s」が、削除されました。"
+response_aux_update_failed: "補助ルールの更新に失敗しました！"
 response_aux_updated: "補助ルールが正常に更新されました。"
 response_checksum_error: "チェックサム・エラー！​ファイルが拒否されました！"
 response_component_successfully_installed: "コンポーネントのインストールに成功しました。"
 response_component_successfully_uninstalled: "コンポーネントのアンインストールは成功しました。"
 response_component_successfully_updated: "コンポーネントのアップデートに成功しました！"
 response_component_uninstall_error: "コンポーネントのアンインストール中にエラーが発生しました。"
+response_configuration_update_failed: "コンフィギュレーションの更新に失敗しました！"
 response_configuration_updated: "コンフィギュレーションの更新が成功しました。"
 response_copied: "コピーされました"
 response_deactivated: "非アクティブにしました。"
@@ -550,6 +556,7 @@ response_directory_deleted: "ディレクトリが正常に削除されました
 response_directory_renamed: "ディレクトリの名前が変更されました！"
 response_error: "エラー"
 response_failed: "失敗しました"
+response_failed_to_import: "インポートに失敗しました！"
 response_failed_to_install: "インストールに失敗しました！"
 response_failed_to_update: "アップデートに失敗しました！"
 response_file_deleted: "ファイルを削除が成功しました！"
@@ -645,6 +652,7 @@ tip_aux: "こんにちは、​{username}。<br />このページを使用して
 tip_aux_operators: "ヒント：条件に別の種類の演算子が必要な場合は、それを値の最初に追加できます（直接の文字列比較が必要）。"
 tip_aux_priority: "優先（最高➡(等しい🔄同等)➡最低）："
 tip_aux_webhooks: "ルールがトリガーされると、CIDRAMは接続されているすべてのWebhookにイベントについて通知しようとします。"
+tip_backup: "こんにちは、​{username}。<br />このページを利用して、コンフィギュレーション、補助ルール、などをインポートとエクスポートできます。​これは、異なるインストールまたは異なるメジャー・バージョン間でデータを移行する必要がある場合に役立ちます。"
 tip_cache_data: "こんにちは、​{username}。<br />ここでは、キャッシュの内容を確認できます。"
 tip_cidr_calc: "こんにちは、​{username}。​<br />ＣＩＤＲ計算機では、​ＩＰアドレスがどのＣＩＤＲに属しているかを計算できます。"
 tip_click_the_component: "詳細についてはコンポーネント名をクリックしてください。"

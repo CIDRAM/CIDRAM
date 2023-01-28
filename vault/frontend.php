@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2023.01.12).
+ * This file: Front-end handler (last modified: 2023.01.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1844,14 +1844,16 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
 
     /** Update the currently active configuration file if any changes were made. */
     if ($CIDRAM['ConfigModified']) {
-        $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_configuration_updated');
-        $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . $CIDRAM['FE']['ActiveConfigFile'], 'wb');
-        fwrite($CIDRAM['Handle'], $CIDRAM['RegenerateConfig']);
-        fclose($CIDRAM['Handle']);
-        if (empty($CIDRAM['QueryVars']['updated'])) {
-            header('Location: ?cidram-page=config&updated=true');
-            die;
+        $CIDRAM['UpdateSuccess'] = false;
+        if (($CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . $CIDRAM['FE']['ActiveConfigFile'], 'wb')) !== false) {
+            $CIDRAM['UpdateSuccess'] = fwrite($CIDRAM['Handle'], $CIDRAM['RegenerateConfig']);
+            fclose($CIDRAM['Handle']);
+            if ($CIDRAM['UpdateSuccess'] !== false && empty($CIDRAM['QueryVars']['updated'])) {
+                header('Location: ?cidram-page=config&updated=true');
+                die;
+            }
         }
+        $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString($CIDRAM['UpdateSuccess'] ? 'response_configuration_updated' : 'response_configuration_update_failed');
     }
 
     $CIDRAM['FE']['Indexes'] .= '</ul>';
@@ -2699,6 +2701,130 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
     unset($CIDRAM['Components'], $CIDRAM['CFBoilerplate'], $CIDRAM['Operation']);
 }
 
+/** Backup. */
+elseif ($CIDRAM['QueryVars']['cidram-page'] === 'backup' && $CIDRAM['FE']['Permissions'] === 1) {
+    /** Page initial prepwork. */
+    $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_backup'), $CIDRAM['L10N']->getString('tip_backup'));
+
+    $CIDRAM['FE']['size_config'] = filesize($CIDRAM['FE']['ActiveConfigFile']) ?: 0;
+    $CIDRAM['FE']['size_aux'] = filesize($CIDRAM['Vault'] . 'auxiliary.yml') ?: 0;
+    $CIDRAM['FormatFilesize']($CIDRAM['FE']['size_config']);
+    $CIDRAM['FormatFilesize']($CIDRAM['FE']['size_aux']);
+
+    /** Temporary. */
+    $CIDRAM['FE']['state_msg'] .= 'Warning: The backup feature is still a <span class="txtRd">work-in-progress</span>, and I recommend not using it until it has been finished, because until then, it mightn\'t behave as expected. When it\'s finished, I\'ll remove this warning from the page.<br />';
+
+    if (isset($_POST['bckpAct'])) {
+        /** Export. */
+        if ($_POST['bckpAct'] === 'export') {
+            $CIDRAM['Export'] = ['CIDRAM Version' => $CIDRAM['ScriptVersion']];
+            $CIDRAM['InitialiseErrorHandler']();
+            if (isset($_POST['doConfig']) && $_POST['doConfig'] === 'on') {
+                $CIDRAM['Export']['Configuration'] = $CIDRAM['Config'];
+            }
+            if (isset($_POST['doAux']) && $_POST['doAux'] === 'on') {
+                if (!isset($CIDRAM['AuxData'])) {
+                    $CIDRAM['AuxData'] = [];
+                    $CIDRAM['YAML']->process($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'auxiliary.yml'), $CIDRAM['AuxData']);
+                }
+                $CIDRAM['Export']['Auxiliary Rules'] = $CIDRAM['AuxData'];
+            }
+            $CIDRAM['Export'] = $CIDRAM['YAML']->reconstruct($CIDRAM['Export']);
+            $CIDRAM['Filename'] = 'CIDRAM-v' . $CIDRAM['ScriptVersion'] . '-Exported-' . date('Y-m-d-H-i-s', $CIDRAM['Now']) . '.yml';
+            if (isset($_POST['doCompress']) && $_POST['doCompress'] === 'on' && $CIDRAM['Export'] !== '') {
+                $CIDRAM['Export'] = gzencode($CIDRAM['Export']);
+                $CIDRAM['Filename'] .= '.gz';
+            }
+            header('Content-Type: application/octet-stream');
+            header('Content-Transfer-Encoding: Binary');
+            header('Content-disposition: attachment; filename="' . $CIDRAM['Filename'] . '"');
+            echo $CIDRAM['Export'];
+            $CIDRAM['RestoreErrorHandler']();
+            die;
+        }
+
+        /** Import. */
+        if ($_POST['bckpAct'] === 'import') {
+            if (
+                isset($_FILES['importFile']['name'], $_FILES['importFile']['tmp_name'], $_FILES['importFile']['error']) &&
+                $_FILES['importFile']['error'] === UPLOAD_ERR_OK &&
+                is_uploaded_file($_FILES['importFile']['tmp_name'])
+            ) {
+                $CIDRAM['InitialiseErrorHandler']();
+                $CIDRAM['Try'] = $CIDRAM['ReadFile']($_FILES['importFile']['tmp_name']);
+                if (substr($CIDRAM['Try'], 0, 2) === "\x1F\x8B") {
+                    $CIDRAM['Try'] = gzdecode($CIDRAM['Try']);
+                }
+                $CIDRAM['Import'] = [];
+                if (substr($CIDRAM['Try'], 0, 6) === 'CIDRAM') {
+                    $CIDRAM['YAML']->process($CIDRAM['Try'], $CIDRAM['Import']);
+                }
+                $CIDRAM['Try'] = false;
+                if (!isset($CIDRAM['Import']['CIDRAM Version'])) {
+                    $CIDRAM['FE']['state_msg'] .= $CIDRAM['L10N']->getString('response_failed_to_import') . '<br />';
+                } else {
+                    if (isset($_POST['doConfig']) && $_POST['doConfig'] === 'on') {
+                        if (isset($CIDRAM['Import']['Configuration']) && is_array($CIDRAM['Import']['Configuration'])) {
+                            $CIDRAM['Config'] = array_replace_recursive($CIDRAM['Config'], $CIDRAM['Import']['Configuration']);
+                            //if ($this->updateConfiguration()) {
+                            if (false) {
+                                $CIDRAM['FE']['state_msg'] .= $CIDRAM['L10N']->getString('response_configuration_updated') . '<br />';
+                            } else {
+                                $CIDRAM['FE']['state_msg'] .= $CIDRAM['L10N']->getString('response_configuration_update_failed') . '<br />';
+                            }
+                        } else {
+                            $CIDRAM['FE']['state_msg'] .= $CIDRAM['L10N']->getString('response_configuration_update_failed') . '<br />';
+                        }
+                    }
+                    if (isset($_POST['doAux']) && $_POST['doAux'] === 'on') {
+                        if (isset($CIDRAM['Import']['Auxiliary Rules']) && is_array($CIDRAM['Import']['Auxiliary Rules'])) {
+                            if (!isset($CIDRAM['AuxData'])) {
+                                $CIDRAM['AuxData'] = [];
+                                $CIDRAM['YAML']->process($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'auxiliary.yml'), $CIDRAM['AuxData']);
+                            }
+                            $CIDRAM['AuxData'] = array_replace($CIDRAM['AuxData'], $CIDRAM['Import']['Auxiliary Rules']);
+                            if (
+                                ($CIDRAM['NewAuxData'] = $CIDRAM['YAML']->reconstruct($CIDRAM['AuxData'])) !== '' &&
+                                ($CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'auxiliary.yml', 'wb')) !== false
+                            ) {
+                                if ((fwrite($CIDRAM['Handle'], $CIDRAM['NewAuxData'])) !== false) {
+                                    $CIDRAM['FE']['state_msg'] .= $CIDRAM['L10N']->getString('response_aux_updated') . '<br />';
+                                } else {
+                                    $CIDRAM['FE']['state_msg'] .= $CIDRAM['L10N']->getString('response_aux_update_failed') . '<br />';
+                                }
+                                fclose($CIDRAM['Handle']);
+                            } else {
+                                $CIDRAM['FE']['state_msg'] .= $CIDRAM['L10N']->getString('response_aux_update_failed') . '<br />';
+                            }
+                        } else {
+                            $CIDRAM['FE']['state_msg'] .= $CIDRAM['L10N']->getString('response_aux_update_failed') . '<br />';
+                        }
+                    }
+                }
+                $CIDRAM['RestoreErrorHandler']();
+            } else {
+                $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_upload_error') . '<br />';
+            }
+        }
+    }
+
+    /** Calculate page load time (useful for debugging). */
+    $CIDRAM['FE']['ProcessTime'] = microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];
+    $CIDRAM['FE']['state_msg'] .= sprintf(
+        $CIDRAM['L10N']->getPlural($CIDRAM['FE']['ProcessTime'], 'state_loadtime'),
+        '<span class="txtRd">' . $CIDRAM['NumberFormatter']->format($CIDRAM['FE']['ProcessTime'], 3) . '</span>'
+    );
+
+    /** Parse output. */
+    $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
+        $CIDRAM['L10N']->Data + $CIDRAM['FE'],
+        $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_backup.html'))
+    );
+
+    /** Send output. */
+    echo $CIDRAM['SendOutput']();
+}
+
 /** Signature file fixer. */
 elseif ($CIDRAM['QueryVars']['cidram-page'] === 'fixer' && $CIDRAM['FE']['Permissions'] === 1) {
     /** Page initial prepwork. */
@@ -3392,10 +3518,10 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'rl' && $CIDRAM['FE']['Permissio
                         $CIDRAM['EntryDetails']['Requests'],
                         sprintf(
                             $CIDRAM['L10N']->getString('label_rl_when'),
-                            $CIDRAM['RelativeTime']($EntryDetails['Newest']),
-                            $CIDRAM['RelativeTime']($EntryDetails['Newest'] + $this->Configuration['rate_limiting']['allowance_period']->getAsSeconds()),
-                            $CIDRAM['RelativeTime']($EntryDetails['Oldest']),
-                            $CIDRAM['RelativeTime']($EntryDetails['Oldest'] + $this->Configuration['rate_limiting']['allowance_period']->getAsSeconds())
+                            $CIDRAM['RelativeTime']($CIDRAM['EntryDetails']['Newest']),
+                            $CIDRAM['RelativeTime']($CIDRAM['EntryDetails']['Newest'] + $CIDRAM['Config']['rate_limiting']['allowance_period']->getAsSeconds()),
+                            $CIDRAM['RelativeTime']($CIDRAM['EntryDetails']['Oldest']),
+                            $CIDRAM['RelativeTime']($CIDRAM['EntryDetails']['Oldest'] + $CIDRAM['Config']['rate_limiting']['allowance_period']->getAsSeconds())
                         )
                     );
                 }

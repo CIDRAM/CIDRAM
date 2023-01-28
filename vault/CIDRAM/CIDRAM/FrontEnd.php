@@ -4122,12 +4122,12 @@ class FrontEnd extends Core
                 /** Iterate through all addresses being currently tracked. */
                 foreach ($Entries as $ThisTracking['IPAddr'] => $ThisTrackingArray) {
                     /** Normalise in case of cache mechanism type which doesn't support returning expiries. */
-                    if (is_int($ThisTrackingArray)) {
+                    if (!is_array($ThisTrackingArray)) {
                         $ThisTrackingArray = ['Time' => 0, 'Data' => $ThisTrackingArray];
                     }
 
                     /** Guard. */
-                    if (!is_array($ThisTrackingArray) || !isset($ThisTrackingArray['Time'], $ThisTrackingArray['Data'])) {
+                    if (!isset($ThisTrackingArray['Time'], $ThisTrackingArray['Data']) || !is_scalar($ThisTrackingArray['Time']) || !is_scalar($ThisTrackingArray['Data'])) {
                         continue;
                     }
 
@@ -4159,7 +4159,7 @@ class FrontEnd extends Core
                     );
 
                     /** When the entry expires. */
-                    if (!is_int($ThisTrackingArray['Time']) || $ThisTrackingArray['Time'] < 1) {
+                    if (!is_numeric($ThisTrackingArray['Time']) || $ThisTrackingArray['Time'] < 1) {
                         $ThisTracking['Expiry'] = $this->L10N->getString('label_no_data_available');
                     } else {
                         $ThisTracking['Expiry'] = $this->timeFormat(

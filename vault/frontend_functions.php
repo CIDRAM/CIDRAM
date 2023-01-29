@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2022.11.06).
+ * This file: Front-end functions file (last modified: 2023.01.29).
  */
 
 /**
@@ -3397,11 +3397,19 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
             /** Update cell style. */
             $StyleClass = $StyleClass === 'ng1' ? 'ng2' : 'ng1';
 
-            /** Rule begin and rule name. */
+            /** Rule begin and sticky. */
             $Output .= sprintf(
-                '%1$s<div class="%2$s"><div class="iCntr">%1$s  <div class="iLabl s">%4$s</div><div class="iCntn"><input type="text" name="ruleName[%5$s]" class="f400" value="%3$s" /></div></div>',
+                '%s<div class="%s"><div style="float:%s;position:sticky;top:0px;writing-mode:overflow:hidden;z-index;-1"><span class="s">%s</span></div>',
                 "\n      ",
                 $StyleClass,
+                $CIDRAM['FE']['FE_Align_Reverse'],
+                ($Name === ' ' && count($Data) === 0) ? '' : sprintf($CIDRAM['L10N']->getString('label_current_data_for'), $Name)
+            );
+
+            /** Rule name. */
+            $Output .= sprintf(
+                '%1$s<div class="iCntr">%1$s  <div class="iLabl s">%3$s</div><div class="iCntn"><input type="text" name="ruleName[%4$s]" class="f400" value="%2$s" /></div></div>',
+                "\n      ",
                 $Name === ' ' ? '' : $Name,
                 $CIDRAM['L10N']->getString('field_new_name'),
                 $Current

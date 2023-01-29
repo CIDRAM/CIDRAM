@@ -182,7 +182,7 @@ trait AuxiliaryRules
                 $ConditionsFrom = '';
 
                 /** Action menu. */
-                $Output .= sprintf('<div class="iCntr"><div class="iLabl"><select id="act%1$s" name="act[%1$s]" class="auto" onchange="javascript:onauxActionChange(this.value,\'%2$s\',\'%1$s\')">', $Current, $RuleClass);
+                $Output .= sprintf('<div class="iCntr"><div class="iLabl"><select id="act%1$s" name="act[%1$s]" class="auto" onchange="javascript:onAuxActionChange(this.value,\'%2$s\',\'%1$s\')">', $Current, $RuleClass);
                 foreach ([
                     ['actWhl', 'optActWhl', 'Whitelist'],
                     ['actGrl', 'optActGrl', 'Greylist'],
@@ -201,7 +201,7 @@ trait AuxiliaryRules
                     );
                     if (!empty($Data[$MenuOption[2]])) {
                         $ConditionsFrom = $MenuOption[2];
-                        $JSAppend .= sprintf('onauxActionChange(\'%1$s\',\'%2$s\',\'%3$s\');', $MenuOption[0], $RuleClass, $Current);
+                        $JSAppend .= sprintf('onAuxActionChange(\'%1$s\',\'%2$s\',\'%3$s\');', $MenuOption[0], $RuleClass, $Current);
                     }
                 }
                 $Output .= sprintf(

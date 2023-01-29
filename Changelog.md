@@ -120,3 +120,5 @@
 [2023.01.28; Bug-fix; Maikuolan]: A database system incorrectly casting an integer to a string when attempting to fetch all cache entries could, in theory, cause the front-end IP tracking page to be unable to correctly display the expiry information for any current tracking entries, due to an `is_int()` guard in the IP tracking page code. Changed it to `is_numeric()` to resolve the problem.
 
 [2023.01.28; Bug-fix; Maikuolan]: Cache handler potentially generating unexpected exceptions in some situations; Fixed (#388).
+
+[2023.01.29; Maikuolan]: Sticky the names of auxiliary rules while scrolling in edit mode to help reduce confusion over which rule's data is currently being edited.

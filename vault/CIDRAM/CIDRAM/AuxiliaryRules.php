@@ -201,13 +201,13 @@ trait AuxiliaryRules
                     );
                     if (!empty($Data[$MenuOption[2]])) {
                         $ConditionsFrom = $MenuOption[2];
-                        $JSAppend .= sprintf('onAuxActionChange(\'%1$s\',\'%2$s\',\'%3$s\');', $MenuOption[0], $RuleClass, $Current);
+                        $JSAppend .= sprintf('onAuxActionChange(\'%s\',\'%s\',\'%s\');', $MenuOption[0], $RuleClass, $Current);
                     }
                 }
                 $Output .= sprintf(
-                    '</select><input type="button" onclick="javascript:addCondition(\'%2$s\')" value="%1$s" class="auto" /></div>',
-                    $this->L10N->getString('field_add_more_conditions'),
-                    $Current
+                    '</select><input type="button" onclick="javascript:addCondition(\'%s\')" value="%s" class="auto" /></div>',
+                    $Current,
+                    $this->L10N->getString('field_add_more_conditions')
                 );
                 $Output .= sprintf('<div class="iCntn" id="%1$sconditions">', $Current);
 

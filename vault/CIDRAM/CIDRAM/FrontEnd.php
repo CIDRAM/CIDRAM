@@ -2623,10 +2623,10 @@ class FrontEnd extends Core
                                     }
                                     $this->CIDRAM['AuxData'] = array_replace($this->CIDRAM['AuxData'], $Import['Auxiliary Rules']);
                                     if (
-                                        ($this->CIDRAM['NewAuxData'] = $this->YAML->reconstruct($this->CIDRAM['AuxData'])) !== '' &&
+                                        ($NewAuxData = $this->YAML->reconstruct($this->CIDRAM['AuxData'])) !== '' &&
                                         ($Handle = fopen($this->Vault . 'auxiliary.yml', 'wb')) !== false
                                     ) {
-                                        if ((fwrite($Handle, $this->CIDRAM['NewAuxData'])) !== false) {
+                                        if ((fwrite($Handle, $NewAuxData)) !== false) {
                                             $this->FE['state_msg'] .= $this->L10N->getString('response_aux_updated') . '<br />';
                                         } else {
                                             $this->FE['state_msg'] .= $this->L10N->getString('response_aux_update_failed') . '<br />';
@@ -4444,12 +4444,12 @@ class FrontEnd extends Core
                     ['Expiry', 'expiry'],
                     ['Status Code', 'statusCode'],
                     ['Webhooks', 'webhooks']
-                ] as $this->CIDRAM['AuxTmp']) {
-                    if (!empty($_POST[$this->CIDRAM['AuxTmp'][1]])) {
-                        $this->CIDRAM['AuxData'][$_POST['ruleName']][$this->CIDRAM['AuxTmp'][0]] = $_POST[$this->CIDRAM['AuxTmp'][1]];
+                ] as $AuxTmp) {
+                    if (!empty($_POST[$AuxTmp[1]])) {
+                        $this->CIDRAM['AuxData'][$_POST['ruleName']][$AuxTmp[0]] = $_POST[$AuxTmp[1]];
                     }
                 }
-                unset($this->CIDRAM['AuxTmp']);
+                unset($AuxTmp);
 
                 /** Process webhooks. */
                 if (!empty($this->CIDRAM['AuxData'][$_POST['ruleName']]['Webhooks'])) {
@@ -4463,21 +4463,21 @@ class FrontEnd extends Core
                 }
 
                 /** Process other options and special flags. */
-                foreach ($this->CIDRAM['Provide']['Auxiliary Rules']['Flags'] as $this->CIDRAM['FlagSetName'] => $this->CIDRAM['FlagSet']) {
-                    $this->CIDRAM['FlagSetKey'] = preg_replace('~[^A-Za-z]~', '', $this->CIDRAM['FlagSetName']);
-                    if (!isset($_POST[$this->CIDRAM['FlagSetKey']])) {
+                foreach ($this->CIDRAM['Provide']['Auxiliary Rules']['Flags'] as $FlagSetName => $FlagSetValue) {
+                    $FlagSetKey = preg_replace('~[^A-Za-z]~', '', $FlagSetName);
+                    if (!isset($_POST[$FlagSetKey])) {
                         continue;
                     }
-                    foreach ($this->CIDRAM['FlagSet'] as $this->CIDRAM['FlagName'] => $this->CIDRAM['FlagData']) {
-                        if ($_POST[$this->CIDRAM['FlagSetKey']] === $this->CIDRAM['FlagName']) {
-                            $this->CIDRAM['AuxData'][$_POST['ruleName']][$this->CIDRAM['FlagName']] = true;
+                    foreach ($FlagSetValue as $FlagName => $FlagData) {
+                        if ($_POST[$FlagSetKey] === $FlagName) {
+                            $this->CIDRAM['AuxData'][$_POST['ruleName']][$FlagName] = true;
                         }
                     }
                 }
-                unset($this->CIDRAM['FlagData'], $this->CIDRAM['FlagName'], $this->CIDRAM['FlagSetKey'], $this->CIDRAM['FlagSet'], $this->CIDRAM['FlagSetName']);
+                unset($FlagData, $FlagName, $FlagSetKey, $FlagSetValue, $FlagSetName);
 
                 /** Possible actions (other than block). */
-                $this->CIDRAM['Actions'] = [
+                $Actions = [
                     'actWhl' => 'Whitelist',
                     'actGrl' => 'Greylist',
                     'actByp' => 'Bypass',
@@ -4488,74 +4488,72 @@ class FrontEnd extends Core
                 ];
 
                 /** Determine appropriate action for new rule. */
-                $this->CIDRAM['Action'] = $this->CIDRAM['Actions'][$_POST['act']] ?? 'Block';
+                $Action = $Actions[$_POST['act']] ?? 'Block';
 
                 /** Construct new rule action array. */
-                if ($this->CIDRAM['Action'] === 'Run' && isset($_POST['ruleRun'])) {
-                    $this->CIDRAM['AuxData'][$_POST['ruleName']][$this->CIDRAM['Action']] = ['File' => $_POST['ruleRun'], 'If matches' => [], 'But not if matches' => []];
+                if ($Action === 'Run' && isset($_POST['ruleRun'])) {
+                    $this->CIDRAM['AuxData'][$_POST['ruleName']][$Action] = ['File' => $_POST['ruleRun'], 'If matches' => [], 'But not if matches' => []];
                 } else {
-                    $this->CIDRAM['AuxData'][$_POST['ruleName']][$this->CIDRAM['Action']] = ['If matches' => [], 'But not if matches' => []];
+                    $this->CIDRAM['AuxData'][$_POST['ruleName']][$Action] = ['If matches' => [], 'But not if matches' => []];
                 }
 
                 /** Determine number of new rule conditions to construct. */
-                $this->CIDRAM['AuxConditions'] = count($_POST['conSourceType']);
+                $AuxConditions = count($_POST['conSourceType']);
 
                 /** Construct new rule conditions. */
-                for ($this->CIDRAM['Iteration'] = 0; $this->CIDRAM['Iteration'] < $this->CIDRAM['AuxConditions']; $this->CIDRAM['Iteration']++) {
+                for ($Iteration = 0; $Iteration < $AuxConditions; $Iteration++) {
                     /** Skip if something went wrong during form submission, or if the fields are empty. */
                     if (
-                        empty($_POST['conSourceType'][$this->CIDRAM['Iteration']]) ||
-                        empty($_POST['conIfOrNot'][$this->CIDRAM['Iteration']]) ||
-                        empty($_POST['conSourceValue'][$this->CIDRAM['Iteration']])
+                        empty($_POST['conSourceType'][$Iteration]) ||
+                        empty($_POST['conIfOrNot'][$Iteration]) ||
+                        empty($_POST['conSourceValue'][$Iteration])
                     ) {
                         continue;
                     }
 
                     /** Where to construct into. */
-                    $this->CIDRAM['ConstructInto'] = (
-                        $_POST['conIfOrNot'][$this->CIDRAM['Iteration']] === 'If'
-                    ) ? 'If matches' : 'But not if matches';
+                    $ConstructInto = ($_POST['conIfOrNot'][$Iteration] === 'If') ? 'If matches' : 'But not if matches';
 
                     /** Set source sub in rule if it doesn't already exist. */
-                    if (!isset($this->CIDRAM['AuxData'][$_POST['ruleName']][$this->CIDRAM['Action']][$this->CIDRAM['ConstructInto']][
-                        $_POST['conSourceType'][$this->CIDRAM['Iteration']]
+                    if (!isset($this->CIDRAM['AuxData'][$_POST['ruleName']][$Action][$ConstructInto][
+                        $_POST['conSourceType'][$Iteration]
                     ])) {
-                        $this->CIDRAM['AuxData'][$_POST['ruleName']][$this->CIDRAM['Action']][$this->CIDRAM['ConstructInto']][
-                            $_POST['conSourceType'][$this->CIDRAM['Iteration']]
+                        $this->CIDRAM['AuxData'][$_POST['ruleName']][$Action][$ConstructInto][
+                            $_POST['conSourceType'][$Iteration]
                         ] = [];
                     }
 
                     /** Construct expected condition values. */
-                    $this->CIDRAM['AuxData'][$_POST['ruleName']][$this->CIDRAM['Action']][$this->CIDRAM['ConstructInto']][
-                        $_POST['conSourceType'][$this->CIDRAM['Iteration']]
-                    ][] = $_POST['conSourceValue'][$this->CIDRAM['Iteration']];
+                    $this->CIDRAM['AuxData'][$_POST['ruleName']][$Action][$ConstructInto][
+                        $_POST['conSourceType'][$Iteration]
+                    ][] = $_POST['conSourceValue'][$Iteration];
                 }
 
                 /** Remove possible empty array. */
-                if (empty($this->CIDRAM['AuxData'][$_POST['ruleName']][$this->CIDRAM['Action']]['If matches'])) {
-                    unset($this->CIDRAM['AuxData'][$_POST['ruleName']][$this->CIDRAM['Action']]['If matches']);
+                if (empty($this->CIDRAM['AuxData'][$_POST['ruleName']][$Action]['If matches'])) {
+                    unset($this->CIDRAM['AuxData'][$_POST['ruleName']][$Action]['If matches']);
                 }
 
                 /** Remove possible empty array. */
-                if (empty($this->CIDRAM['AuxData'][$_POST['ruleName']][$this->CIDRAM['Action']]['But not if matches'])) {
-                    unset($this->CIDRAM['AuxData'][$_POST['ruleName']][$this->CIDRAM['Action']]['But not if matches']);
+                if (empty($this->CIDRAM['AuxData'][$_POST['ruleName']][$Action]['But not if matches'])) {
+                    unset($this->CIDRAM['AuxData'][$_POST['ruleName']][$Action]['But not if matches']);
                 }
 
                 /** Reconstruct and update auxiliary rules data. */
-                if ($this->CIDRAM['NewAuxData'] = $this->YAML->reconstruct($this->CIDRAM['AuxData'])) {
+                if ($NewAuxData = $this->YAML->reconstruct($this->CIDRAM['AuxData'])) {
                     $Handle = fopen($this->Vault . 'auxiliary.yml', 'wb');
-                    fwrite($Handle, $this->CIDRAM['NewAuxData']);
+                    fwrite($Handle, $NewAuxData);
                     fclose($Handle);
                 }
 
                 /** Cleanup. */
-                unset($this->CIDRAM['NewAuxData'], $this->CIDRAM['ConstructInto'], $this->CIDRAM['Iteration'], $this->CIDRAM['AuxConditions'], $this->CIDRAM['Action']);
+                unset($NewAuxData, $ConstructInto, $Iteration, $AuxConditions, $Action);
 
                 /** Update state message. */
                 $this->FE['state_msg'] = sprintf(
                     $this->L10N->getString('response_aux_rule_created_successfully'),
                     $_POST['ruleName']
-                );
+                ) . '<br />';
             }
 
             /** Prepare data for display. */
@@ -4605,27 +4603,27 @@ class FrontEnd extends Core
                 $this->FE['AuxFlagsProvides'] = '<div class="gridbox">';
                 $this->CIDRAM['GridID'] = 'AAA';
                 $this->CIDRAM['JSAuxAppend'] = '';
-                foreach ($this->CIDRAM['Provide']['Auxiliary Rules']['Flags'] as $this->CIDRAM['FlagSetName'] => $this->CIDRAM['FlagSet']) {
-                    $this->CIDRAM['FlagKey'] = preg_replace('~[^A-Za-z]~', '', $this->CIDRAM['FlagSetName']);
-                    foreach ($this->CIDRAM['FlagSet'] as $this->CIDRAM['FlagName'] => $this->CIDRAM['FlagData']) {
-                        if ($this->CIDRAM['FlagName'] === 'Empty' && isset($this->CIDRAM['FlagData']['Decoration'])) {
+                foreach ($this->CIDRAM['Provide']['Auxiliary Rules']['Flags'] as $FlagSetName => $FlagSetValue) {
+                    $this->CIDRAM['FlagKey'] = preg_replace('~[^A-Za-z]~', '', $FlagSetName);
+                    foreach ($FlagSetValue as $FlagName => $FlagData) {
+                        if ($FlagName === 'Empty' && isset($FlagData['Decoration'])) {
                             $this->FE['AuxFlagsProvides'] .= sprintf(
                                 '<div class="gridboxitem" style="%s"></div>',
-                                $this->CIDRAM['FlagData']['Decoration'] . 'filter:grayscale(.75)'
+                                $FlagData['Decoration'] . 'filter:grayscale(.75)'
                             );
                             continue;
                         }
-                        if (!isset($this->CIDRAM['FlagData']['Label'])) {
+                        if (!isset($FlagData['Label'])) {
                             $this->FE['AuxFlagsProvides'] .= '<div class="gridboxitem"></div>';
                             continue;
                         }
                         $this->FE['AuxFlagsProvides'] .= sprintf(
                             '<label><div class="gridboxitem" style="%s" id="%s"><input type="radio" class="auto" name="%s" value="%s" onchange="javascript:checkFlagsSelected()" /> <strong>%s</strong></div></label>',
-                            ($this->CIDRAM['FlagData']['Decoration'] ?? '') . 'filter:grayscale(.75)',
+                            ($FlagData['Decoration'] ?? '') . 'filter:grayscale(.75)',
                             $this->CIDRAM['GridID'],
                             $this->CIDRAM['FlagKey'],
-                            $this->CIDRAM['FlagName'],
-                            $this->L10N->getString($this->CIDRAM['FlagData']['Label']) ?: $this->CIDRAM['FlagData']['Label']
+                            $FlagName,
+                            $this->L10N->getString($FlagData['Label']) ?: $FlagData['Label']
                         );
                         $this->CIDRAM['JSAuxAppend'] .= ($this->CIDRAM['JSAuxAppend'] ? ',' : '') . "'" . $this->CIDRAM['GridID'] . "'";
                         $this->CIDRAM['GridID']++;
@@ -4642,7 +4640,14 @@ class FrontEnd extends Core
                     $this->CIDRAM['GridID']++;
                 }
                 $this->FE['AuxFlagsProvides'] .= '</div><script type="text/javascript">window.auxFlags=['. $this->CIDRAM['JSAuxAppend'] . ']</script>';
-                unset($this->CIDRAM['FlagData'], $this->CIDRAM['FlagName'], $this->CIDRAM['FlagKey'], $this->CIDRAM['FlagSet'], $this->CIDRAM['FlagSetName'], $this->CIDRAM['JSAuxAppend'], $this->CIDRAM['GridID']);
+                unset($FlagData, $FlagName, $this->CIDRAM['FlagKey'], $FlagSetValue, $FlagSetName, $this->CIDRAM['JSAuxAppend'], $this->CIDRAM['GridID']);
+
+                /** Calculate page load time (useful for debugging). */
+                $this->FE['ProcessTime'] = microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];
+                $this->FE['state_msg'] .= sprintf(
+                    $this->L10N->getPlural($this->FE['ProcessTime'], 'state_loadtime'),
+                    '<span class="txtRd">' . $this->NumberFormatter->format($this->FE['ProcessTime'], 3) . '</span>'
+                );
 
                 /** Parse output. */
                 $this->FE['FE_Content'] = $this->parseVars(
@@ -4699,8 +4704,11 @@ class FrontEnd extends Core
             /** Populate methods and actions. */
             $this->populateMethodsActions();
 
+            /** Avoid max_input_vars limitations. */
+            $this->processMinifiedFormData('minifiedFormData');
+
             /** Update auxiliary rules. */
-            if (isset($_POST, $_POST['rulePriority']) && is_array($_POST['rulePriority'])) {
+            if (isset($_POST['rulePriority']) && is_array($_POST['rulePriority'])) {
                 $NewAuxArr = [];
                 foreach ($_POST['rulePriority'] as $Iterant => $Priority) {
                     if (
@@ -4749,18 +4757,18 @@ class FrontEnd extends Core
                     $NewAuxArr[$_POST['ruleName'][$Iterant]]['SourceType'] = $_POST['conSourceType'][$Iterant] ?? '';
                     $NewAuxArr[$_POST['ruleName'][$Iterant]]['IfOrNot'] = $_POST['conIfOrNot'][$Iterant] ?? '';
                     $NewAuxArr[$_POST['ruleName'][$Iterant]]['SourceValue'] = $_POST['conSourceValue'][$Iterant] ?? '';
-                    foreach ($this->CIDRAM['Provide']['Auxiliary Rules']['Flags'] as $this->CIDRAM['FlagSetName'] => $this->CIDRAM['FlagSet']) {
-                        $this->CIDRAM['FlagSetKey'] = preg_replace('~[^A-Za-z]~', '', $this->CIDRAM['FlagSetName']);
-                        if (!empty($_POST[$this->CIDRAM['FlagSetKey']][$Iterant])) {
-                            foreach ($this->CIDRAM['FlagSet'] as $this->CIDRAM['FlagName'] => $this->CIDRAM['FlagData']) {
-                                if ($_POST[$this->CIDRAM['FlagSetKey']][$Iterant] === $this->CIDRAM['FlagName']) {
-                                    $NewAuxArr[$_POST['ruleName'][$Iterant]][$this->CIDRAM['FlagName']] = true;
+                    foreach ($this->CIDRAM['Provide']['Auxiliary Rules']['Flags'] as $FlagSetName => $FlagSetValue) {
+                        $FlagSetKey = preg_replace('~[^A-Za-z]~', '', $FlagSetName);
+                        if (!empty($_POST[$FlagSetKey][$Iterant])) {
+                            foreach ($FlagSetValue as $FlagName => $FlagData) {
+                                if ($_POST[$FlagSetKey][$Iterant] === $FlagName) {
+                                    $NewAuxArr[$_POST['ruleName'][$Iterant]][$FlagName] = true;
                                 }
                             }
                         }
                     }
                 }
-                unset($this->CIDRAM['FlagData'], $this->CIDRAM['FlagName'], $this->CIDRAM['FlagSetKey'], $this->CIDRAM['FlagSetName'], $this->CIDRAM['FlagSet']);
+                unset($FlagData, $FlagName, $FlagSetKey, $FlagSetName, $FlagSetValue);
                 uasort($NewAuxArr, function ($A, $B): int {
                     if ($A['Priority'] === $B['Priority']) {
                         return 0;
@@ -4829,13 +4837,20 @@ class FrontEnd extends Core
                     $Handle = fopen($this->Vault . 'auxiliary.yml', 'wb');
                     fwrite($Handle, $NewAuxArr);
                     fclose($Handle);
-                    $this->FE['state_msg'] = $this->L10N->getString('response_aux_updated');
+                    $this->FE['state_msg'] = $this->L10N->getString('response_aux_updated') . '<br />';
                 }
                 unset($ThisAuxData, $DataInner, $Iterant, $IterantInner, $NewAuxArr, $Priority);
             }
 
             /** Process auxiliary rules. */
             $this->FE['Data'] = '      ' . $this->generateRules(true);
+
+            /** Calculate page load time (useful for debugging). */
+            $this->FE['ProcessTime'] = microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];
+            $this->FE['state_msg'] .= sprintf(
+                $this->L10N->getPlural($this->FE['ProcessTime'], 'state_loadtime'),
+                '<span class="txtRd">' . $this->NumberFormatter->format($this->FE['ProcessTime'], 3) . '</span>'
+            );
 
             /** Parse output. */
             $this->FE['FE_Content'] = $this->parseVars(

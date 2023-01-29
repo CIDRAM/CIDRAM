@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2023.01.16).
+ * This file: General methods used by the front-end (last modified: 2023.01.29).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1178,5 +1178,49 @@ trait FrontEndMethods
             }
         }
         return $Out;
+    }
+
+    /**
+     * Process minified form data.
+     *
+     * @param string $MinifiedKey The key for the minified form data.
+     * @return void
+     */
+    private function processMinifiedFormData(string $MinifiedKey): void
+    {
+        if (!isset($_POST[$MinifiedKey]) || substr($_POST[$MinifiedKey], 0, 1) !== '{' || substr($_POST[$MinifiedKey], -1) !== '}') {
+            return;
+        }
+        $this->initialiseErrorHandler();
+        $MinifiedFormData = json_decode($_POST[$MinifiedKey], true);
+        $this->restoreErrorHandler();
+        if (!is_array($MinifiedFormData)) {
+            return;
+        }
+        $ToMerge = [];
+        $ToBase = [];
+        foreach ($MinifiedFormData as $Key => $Value) {
+            if (preg_match('~^(.+)\[(\d+)\]\[(?:New)?\d*\]$|^"(.+)\[(\d+)\]\[(?:New)?\d*\]"$~', $Key, $Index)) {
+                if (!isset($ToMerge[$Index[1]])) {
+                    $ToMerge[$Index[1]] = [];
+                }
+                if (!isset($ToMerge[$Index[1]][$Index[2]])) {
+                    $ToMerge[$Index[1]][$Index[2]] = [];
+                }
+                $ToMerge[$Index[1]][$Index[2]][] = $Value;
+                continue;
+            }
+            if (preg_match('~^(.+)\[(?:New)?\d*\]$|^"(.+)\[(?:New)?\d*\]"$~', $Key, $Index)) {
+                if (!isset($ToMerge[$Index[1]])) {
+                    $ToMerge[$Index[1]] = [];
+                }
+                $ToMerge[$Index[1]][] = $Value;
+                continue;
+            }
+            $ToBase[$Key] = $Value;
+        }
+        $MinifiedFormData = array_merge($ToBase, $ToMerge);
+        $_POST = array_replace($_POST, $MinifiedFormData);
+        unset($_POST[$MinifiedKey]);
     }
 }

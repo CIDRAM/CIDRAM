@@ -105,10 +105,10 @@ function onAuxActionChange(e, p, i) {
   }
 }
 
-var conIn = 1;
-var addCondition = function(p) {
-  var namePart = p.length > 0 ? '['+p+'][]' : '[]',
-  conId = 'condition'+conIn,
+var conIter = 1;
+function addCondition(p) {
+  var namePart = p.length > 0 ? '['+p+'][New'+conIter+']' : '[]',
+  conId = 'condition'+conIter,
   t = document.createElement('div');
   t.setAttribute('id', conId),
   t.setAttribute('style', 'opacity:0;animation:xAux 2s ease 0s 1 normal'),
@@ -135,13 +135,13 @@ var addCondition = function(p) {
   setTimeout(function() {
     document.getElementById(conId).style.opacity = '1'
   }, 1999),
-  conIn++
-};
+  conIter++
+}
 
-var whIn = 1;
-var addWebhook = function(p) {
-  var namePart = p.length > 0 ? '['+p+'][]' : '[]',
-  whId = 'webhook'+whIn,
+var whIter = 1;
+function addWebhook(p) {
+  var namePart = p.length > 0 ? '['+p+'][New'+whIter+']' : '[]',
+  whId = 'webhook'+whIter,
   t = document.createElement('div');
   t.setAttribute('id', whId),
   t.setAttribute('style', 'opacity:0;animation:xAux 2s ease 0s 1 normal'),
@@ -154,10 +154,10 @@ var addWebhook = function(p) {
   setTimeout(function() {
     document.getElementById(whId).style.opacity = '1'
   }, 1999),
-  whIn++
-};
+  whIter++
+}
 
-var createNewRule = function() {
+function createNewRule() {
   var e = true, z = !1;
   document.getElementById('ruleName').value || (e = !1, document.getElementById('ruleNameDd').style.animation = 'rAux 1s ease 0s 1 normal', setTimeout(function() {
     document.getElementById('ruleNameDd').style.animation = ''
@@ -170,7 +170,7 @@ var createNewRule = function() {
   }), z || (document.getElementById('conditions').style.animation = 'rAux 1s ease 0s 1 normal', setTimeout(function() {
     document.getElementById('conditions').style.animation = ''
   }, 999)), e && z && document.getElementById('auxForm').submit()
-};
+}
 
 function checkFlagsSelected() {
   null !== window.auxFlags && window.auxFlags.forEach(function(e) {

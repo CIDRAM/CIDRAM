@@ -4713,7 +4713,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
         $CIDRAM['FE']['state_msg'] = sprintf(
             $CIDRAM['L10N']->getString('response_aux_rule_created_successfully'),
             $_POST['ruleName']
-        );
+        ) . '<br />';
     }
 
     /** Prepare data for display. */
@@ -4801,6 +4801,13 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
         $CIDRAM['FE']['AuxFlagsProvides'] .= '</div><script type="text/javascript">window.auxFlags=['. $CIDRAM['JSAuxAppend'] . ']</script>';
         unset($CIDRAM['FlagData'], $CIDRAM['FlagName'], $CIDRAM['FlagKey'], $CIDRAM['FlagSet'], $CIDRAM['FlagSetName'], $CIDRAM['JSAuxAppend'], $CIDRAM['GridID']);
 
+        /** Calculate page load time (useful for debugging). */
+        $CIDRAM['FE']['ProcessTime'] = microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];
+        $CIDRAM['FE']['state_msg'] .= sprintf(
+            $CIDRAM['L10N']->getPlural($CIDRAM['FE']['ProcessTime'], 'state_loadtime'),
+            '<span class="txtRd">' . $CIDRAM['NumberFormatter']->format($CIDRAM['FE']['ProcessTime'], 3) . '</span>'
+        );
+
         /** Parse output. */
         $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
             $CIDRAM['L10N']->Data + $CIDRAM['FE'],
@@ -4856,8 +4863,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux-edit' && $CIDRAM['FE']['Per
     /** Populate methods and actions. */
     $CIDRAM['PopulateMethodsActions']();
 
+    /** Avoid max_input_vars limitations. */
+    $CIDRAM['ProcessMinifiedFormData']('minifiedFormData');
+
     /** Update auxiliary rules. */
-    if (isset($_POST, $_POST['rulePriority']) && is_array($_POST['rulePriority'])) {
+    if (isset($_POST['rulePriority']) && is_array($_POST['rulePriority'])) {
         $CIDRAM['NewAuxArr'] = [];
         foreach ($_POST['rulePriority'] as $CIDRAM['Iterant'] => $CIDRAM['Priority']) {
             if (
@@ -4986,13 +4996,20 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux-edit' && $CIDRAM['FE']['Per
             $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'auxiliary.yaml', 'wb');
             fwrite($CIDRAM['Handle'], $CIDRAM['NewAuxArr']);
             fclose($CIDRAM['Handle']);
-            $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_aux_updated');
+            $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_aux_updated') . '<br />';
         }
         unset($CIDRAM['IterantInner'], $CIDRAM['DataInner'], $CIDRAM['Iterant']);
     }
 
     /** Process auxiliary rules. */
     $CIDRAM['FE']['Data'] = '      ' . $CIDRAM['AuxGenerateFEData'](true);
+
+    /** Calculate page load time (useful for debugging). */
+    $CIDRAM['FE']['ProcessTime'] = microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];
+    $CIDRAM['FE']['state_msg'] .= sprintf(
+        $CIDRAM['L10N']->getPlural($CIDRAM['FE']['ProcessTime'], 'state_loadtime'),
+        '<span class="txtRd">' . $CIDRAM['NumberFormatter']->format($CIDRAM['FE']['ProcessTime'], 3) . '</span>'
+    );
 
     /** Parse output. */
     $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](

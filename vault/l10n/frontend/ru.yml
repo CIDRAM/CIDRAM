@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2023.01.27).
+# This file: Russian language data for the front-end (last modified: 2023.02.01).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -227,6 +227,7 @@ config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "Максимальный возраст в днях, для которого отчеты будут учитываться при выполнении поиска. Стандарт = 365."
 config_projecthoneypot_max_ts_for_captcha: "Максимальный оценка угрозы, разрешенный для обслуживания CAPTCHA (должно быть числом от 1 до 100). Стандарт = 10."
 config_projecthoneypot_minimum_threat_score: "Минимальная оценка угрозы, необходимая для того, чтобы CIDRAM заблокировала IP-адрес (должно быть числом от 1 до 100). Стандарт = 10."
+config_projecthoneypot_type_of_visitor: "Управляет блокировкой или профилированием в зависимости от типа посетителя, как определенного Project Honeypot."
 config_protocol: "Конфигурация для модуля блокировщика протоколов."
 config_protocol_blocked: "Выбранные протоколы будут заблокированы. Примечание: Не будет иметь никакого эффекта для тех веб-сайтов, которые маршрутизируют через службы, которые переписывают запросы, чтобы все использовали один и тот же протокол, например Cloudflare."
 config_protocol_reason_message: "Сообщение о причине, отображаемое при блокировке таких запросов."
@@ -584,6 +585,10 @@ label_other_since: "Дата начала"
 label_paginate: "Разбивать на страницы"
 label_passed: "Запросы прошли"
 label_php: "Используемая версия PHP:"
+label_phvt_comment_spammer: "Спамер в комментариях"
+label_phvt_harvester: "Сборщик"
+label_phvt_search_engine: "Поисковый движок"
+label_phvt_suspicious: "Подозрительный"
 label_preferred_source: "Предпочитаемый источник:"
 label_previous: "Предыдущий:"
 label_range_tools: "Инструменты диапазона"

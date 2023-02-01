@@ -126,3 +126,5 @@
 [2023.01.29; Bug-fix; Maikuolan]: At the auxiliary rules page, when attempting to submit form data while the number of input fields displayed on the page exceeds the `php.ini` value defined for `max_input_vars` (such a thing could happen if, e.g., more than several dozen auxiliary rules already exist, or some auxiliary rules have a very large number of conditions attached), a warning would be generated, and PHP would arbitrarily drop post values from the submitted form data, the end result being that auxiliary rules would be arbitrarily munged or dropped; Fixed (#384).
 
 [2023.02.01; Bug-fix; Maikuolan]: Undefined index warning occasionally generated at resetBypassFlags with specific IP ranges; Fixed.
+
+[2023.02.01; Maikuolan]: Better controls for the type of visitor for the Project Honeypot module (#396).

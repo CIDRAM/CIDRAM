@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Tamil language data for the front-end (last modified: 2023.01.27).
+# This file: Tamil language data for the front-end (last modified: 2023.02.01).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -227,6 +227,7 @@ config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "லுக்-அப்களைச் செய்யும்போது கருத்தில் கொள்ள வேண்டிய அறிக்கைகளுக்கான அதிகபட்ச வயது. இயல்புநிலை = 365."
 config_projecthoneypot_max_ts_for_captcha: "CAPTCHAகளை வழங்குவதற்கு அதிகபட்ச அச்சுறுத்தல் மதிப்பெண் அனுமதிக்கப்படுகிறது (1க்கும் 100க்கும் இடைப்பட்ட எண்ணாக இருக்க வேண்டும்). இயல்புநிலை = 10."
 config_projecthoneypot_minimum_threat_score: "ஐபி முகவரிகளைத் தடுக்க CIDRAM க்கு தேவையான குறைந்தபட்ச அச்சுறுத்தல் மதிப்பெண் (1க்கும் 100க்கும் இடைப்பட்ட எண்ணாக இருக்க வேண்டும்). இயல்புநிலை = 10."
+config_projecthoneypot_type_of_visitor: "Project Honeypot மூலம் தீர்மானிக்கப்படும் பார்வையாளரின் வகையின் அடிப்படையில் தடுக்க வேண்டுமா அல்லது சுயவிவரப்படுத்த வேண்டுமா என்பதற்கான கட்டுப்பாட்டுகள்."
 config_protocol: "நெறிமுறை தடுப்பான் தொகுதிக்கான உள்ளமைவு."
 config_protocol_blocked: "தேர்ந்தெடுக்கப்பட்ட நெறிமுறைகள் தடுக்கப்படும். குறிப்பு: சில சேவைகள் (எ.கா., Cloudflare) எல்லா கோரிக்கைகளும் ஒரே நெறிமுறையைப் பயன்படுத்துகின்றன. அத்தகைய சேவைகளைப் பயன்படுத்தும் இணையதளங்கள் தொகுதியால் பாதிக்கப்படாது."
 config_protocol_reason_message: "அத்தகைய கோரிக்கைகள் தடுக்கப்படும் போது காட்டுவதற்கான காரணம் செய்தி."
@@ -581,6 +582,10 @@ label_other_since: "தொடக்க தேதி"
 label_paginate: "பக்கம் பிரித்து"
 label_passed: "கோரிக்கைகள் நிறைவேற்றப்பட்டன"
 label_php: "பயன்படுத்தப்படும் PHP பதிப்பு:"
+label_phvt_comment_spammer: "கருத்து ஸ்பேமர்"
+label_phvt_harvester: "அறுவடை இயந்திரம்"
+label_phvt_search_engine: "தேடுபொறி"
+label_phvt_suspicious: "சந்தேகத்திற்குரியது"
 label_preferred_source: "விருப்பமான மூல:"
 label_previous: "முந்தைய:"
 label_range_tools: "வரம்பு கருவிகள்"

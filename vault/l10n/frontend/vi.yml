@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2023.01.27).
+# This file: Vietnamese language data for the front-end (last modified: 2023.02.01).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -227,6 +227,7 @@ config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "Tuổi tối đa tính theo ngày mà các báo cáo sẽ được xem xét khi thực hiện tra cứu. Mặc định = 365."
 config_projecthoneypot_max_ts_for_captcha: "Điểm đe dọa tối đa được phép để được phân phát CAPTCHA (phải là một số từ 1 đến 100). Mặc định = 10."
 config_projecthoneypot_minimum_threat_score: "Điểm số mối đe dọa tối thiểu cần thiết để CIDRAM chặn một địa chỉ IP (phải là một số từ 1 đến 100). Mặc định = 10."
+config_projecthoneypot_type_of_visitor: "Kiểm soát để chặn hay hồ sơ dựa trên loại khách truy cập do Project Honeypot xác định."
 config_protocol: "Cấu hình cho mô-đun chặn giao thức."
 config_protocol_blocked: "Các giao thức đã chọn sẽ bị chặn. Ghi chú: Sẽ không có bất kỳ ảnh hưởng nào đối với các trang web đó định tuyến thông qua các dịch vụ viết lại các yêu cầu cho tất cả đều sử dụng cùng một giao thức, chẳng hạn như Cloudflare."
 config_protocol_reason_message: "Thông báo lý do hiển thị khi các yêu cầu đó bị chặn."
@@ -567,13 +568,17 @@ label_os: "Hệ điều hành đang được dùng:"
 label_other_active_events: "Sự kiện kích hoạt"
 label_other_active_imports: "Nhập khẩu kích hoạt"
 label_other_active_ipv4: "Tập tin chữ ký IPv4 kích hoạt"
-label_other_active_ipv6: "Tập tin chữ ký IPv6 kích hoạt"
 label_other: "Khác"
+label_other_active_ipv6: "Tập tin chữ ký IPv6 kích hoạt"
 label_other_active_modules: "Mô-đun kích hoạt"
 label_other_since: "Ngày bắt đầu"
 label_paginate: "Chia theo trang"
 label_passed: "Yêu cầu được phép"
 label_php: "Phiên bản PHP đang được dùng:"
+label_phvt_comment_spammer: "Bình luận người gửi thư rác"
+label_phvt_harvester: "Trình thu thập"
+label_phvt_search_engine: "Máy tìm kiếm"
+label_phvt_suspicious: "Khả nghi"
 label_preferred_source: "Nguồn ưu tiên:"
 label_previous: "Trước:"
 label_range_tools: "Phạm vi công cụ"

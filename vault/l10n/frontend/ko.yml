@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2023.01.27).
+# This file: Korean language data for the front-end (last modified: 2023.02.01).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -227,6 +227,7 @@ config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "조회를 수행할 때 보고서가 고려되는 최대 기간(일). Default (기본 설정) = 365."
 config_projecthoneypot_max_ts_for_captcha: "CAPTCHA를 제공하는 데 허용되는 최대 위협 점수입니다 (1에서 100 사이의 숫자여야 합니다). Default (기본 설정) = 10."
 config_projecthoneypot_minimum_threat_score: "CIDRAM이 IP 주소를 차단하는 데 필요한 최소 위협 점수입니다 (1에서 100 사이의 숫자여야 합니다). Default (기본 설정) = 10."
+config_projecthoneypot_type_of_visitor: "Project Honeypot에서 결정한 방문자 유형에 따라 차단 또는 프로파일링 여부를 제어합니다."
 config_protocol: "프로토콜 차단기 모듈에 대한 설정."
 config_protocol_blocked: "선택한 프로토콜이 차단됩니다. 참고\_: 일한 프로토콜을 사용하도록 요청을 시행하는 서비스를 (예: Cloudflare) 통해 라우팅 되는 웹사이트에는 영향을 미치지 않습니다."
 config_protocol_reason_message: "이러한 요청이 차단될 때 표시되는 이유 메시지입니다."
@@ -571,6 +572,10 @@ label_other_since: "시작일"
 label_paginate: "페이지 매김"
 label_passed: "허용된 요청"
 label_php: "사용된 PHP 버전\_:"
+label_phvt_comment_spammer: "댓글 스패머"
+label_phvt_harvester: "수집기"
+label_phvt_search_engine: "검색 엔진"
+label_phvt_suspicious: "의심스러운"
 label_preferred_source: "선호하는 출처\_:"
 label_previous: "이전\_:"
 label_range_tools: "범위 도구"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2023.01.27).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2023.02.01).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -227,6 +227,7 @@ config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "执行查找时将考虑报告的最长天数。标准=365。"
 config_projecthoneypot_max_ts_for_captcha: "为了提供CAPTCHA的目的最大威胁分数（必须是1到100之间的数字）。标准=10。"
 config_projecthoneypot_minimum_threat_score: "为了让CIDRAM阻止IP地址所需的最低威胁分数（必须是1到100之间的数字）。标准=10。"
+config_projecthoneypot_type_of_visitor: "根据Project Honeypot确定的访问者类型进行阻止或分类。"
 config_protocol: "协议阻塞模块的配置。"
 config_protocol_blocked: "选定的协议将被阻止。注意：不会影响通过强制请求使用相同协议的服务（例如，Cloudflare）路由的网站。"
 config_protocol_reason_message: "阻止此类请求时显示的原因消息。"
@@ -566,6 +567,10 @@ label_other_since: "开始日期"
 label_paginate: "分页"
 label_passed: "允许的请求"
 label_php: "目前使用PHP版本："
+label_phvt_comment_spammer: "评论垃圾发送者"
+label_phvt_harvester: "收割机"
+label_phvt_search_engine: "搜索引擎"
+label_phvt_suspicious: "可疑的"
 label_preferred_source: "首选来源："
 label_previous: "以前的："
 label_range_tools: "范围工具"

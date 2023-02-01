@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2023.01.27).
+# This file: Swedish language data for the front-end (last modified: 2023.02.01).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -227,6 +227,7 @@ config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "Den maximala åldern i dagar för vilken rapporter kommer att beaktas vid sökningar. Standard = 365."
 config_projecthoneypot_max_ts_for_captcha: "Den maximala hotpoäng som tillåts för att få en CAPTCHA (måste vara ett tal mellan 1 och 100). Standard = 10."
 config_projecthoneypot_minimum_threat_score: "Minsta hotpoäng som krävs för att CIDRAM ska blockera en IP-adress (måste vara ett tal mellan 1 och 100). Standard = 10."
+config_projecthoneypot_type_of_visitor: "Kontroller för om du vill blockera eller profilera baserat på typen av besökare som bestäms av Project Honeypot."
 config_protocol: "Konfiguration för protokollblockeringsmodulen."
 config_protocol_blocked: "Valda protokoll kommer att blockeras. Obs: Kommer inte ha någon effekt för de webbplatser som dirigerar genom tjänster som skriver om förfrågningar till att alla använder exakt samma protokoll, sådan som Cloudflare."
 config_protocol_reason_message: "Orsaksmeddelandet visas när sådana förfrågningar blockeras."
@@ -580,6 +581,10 @@ label_other_since: "Start datum"
 label_paginate: "Paginera"
 label_passed: "Förfrågningar godkända"
 label_php: "PHP-version som används:"
+label_phvt_comment_spammer: "Kommentar-Spammare"
+label_phvt_harvester: "Skördare"
+label_phvt_search_engine: "Sökmotor"
+label_phvt_suspicious: "Misstänksam"
 label_preferred_source: "Föredragen källa:"
 label_previous: "Tidigare:"
 label_range_tools: "Range verktyg"

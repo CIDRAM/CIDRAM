@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2023.01.27).
+# This file: French language data for the front-end (last modified: 2023.02.01).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -227,6 +227,7 @@ config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "L'âge maximal en jours pour lequel les rapports seront pris en compte lors de l'exécution de recherches. Défaut = 365."
 config_projecthoneypot_max_ts_for_captcha: "Le score de menace maximum autorisé pour recevoir un CAPTCHA (doit être un nombre compris entre 1 et 100). Défaut = 10."
 config_projecthoneypot_minimum_threat_score: "Le score de menace minimum requis pour que CIDRAM bloque une adresse IP (doit être un nombre compris entre 1 et 100). Défaut = 10."
+config_projecthoneypot_type_of_visitor: "Contrôle le blocage ou le profilage en fonction du type de visiteur tel que déterminé par Project Honeypot."
 config_protocol: "Configuration pour le module bloqueur de protocole."
 config_protocol_blocked: "Les protocoles sélectionnés seront bloqués. Remarque\_: N'aura aucun effet pour les sites Web qui acheminent via des services qui réécrivent les requêtes pour tous utiliser exactement le même protocole, tel que Cloudflare."
 config_protocol_reason_message: "Le message de raison affiché lorsque de telles requêtes sont bloquées."
@@ -586,6 +587,10 @@ label_other_since: "Date de début"
 label_paginate: "Paginer"
 label_passed: "Requêtes passées"
 label_php: "Version PHP utilisée\_:"
+label_phvt_comment_spammer: "Spammeur de commentaires"
+label_phvt_harvester: "Récolteur"
+label_phvt_search_engine: "Moteur de recherche"
+label_phvt_suspicious: "Suspecte"
 label_preferred_source: "Source préférée\_:"
 label_previous: "Précédente\_:"
 label_range_tools: "Outils des gammes"

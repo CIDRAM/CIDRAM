@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2023.01.27).
+# This file: Urdu language data for the front-end (last modified: 2023.02.01).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -227,6 +227,7 @@ config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "تلاش کرتے وقت رپورٹس کو مدنظر رکھنے کے لیے دنوں میں زیادہ سے زیادہ عمر. پہلے سے طے شدہ = 365."
 config_projecthoneypot_max_ts_for_captcha: "کیپچا پیش کیے جانے کے لیے زیادہ سے زیادہ خطرے کے اسکور کی اجازت ہے (1 اور 100 کے درمیان نمبر ہونا چاہیے). پہلے سے طے شدہ = 10."
 config_projecthoneypot_minimum_threat_score: "IP ایڈریس کو بلاک کرنے کے لیے CIDRAM کے لیے درکار کم از کم خطرے کا سکور (1 اور 100 کے درمیان نمبر ہونا چاہیے). پہلے سے طے شدہ = 10."
+config_projecthoneypot_type_of_visitor: "Project Honeypot کے ذریعے طے شدہ وزیٹر کی قسم کی بنیاد پر بلاک کرنا یا پروفائل کرنے کے لیے کنٹرول."
 config_protocol: "پروٹوکول بلاکر ماڈیول کے لیے کنفیگریشن."
 config_protocol_blocked: "منتخب پروٹوکولز کو بلاک کر دیا جائے گا. نوٹ: کچھ خدمات (مثلاً، Cloudflare) نافذ کرتی ہیں کہ تمام درخواستیں ایک ہی پروٹوکول کا استعمال کرتی ہیں. ایسی خدمات استعمال کرنے والی ویب سائٹیں ماڈیول سے متاثر نہیں ہوں گی."
 config_protocol_reason_message: "The reason message to display when such requests are blocked."
@@ -576,6 +577,10 @@ label_other_since: "شروع کرنے کی تاریخ"
 label_paginate: "صفحات میں تقسیم"
 label_passed: "درخواستیں گزر گئیں"
 label_php: "PHP ورژن استعمال کیا:"
+label_phvt_comment_spammer: "تبصرہ سپیمر"
+label_phvt_harvester: "ہارویسٹر"
+label_phvt_search_engine: "سرچ انجن"
+label_phvt_suspicious: "مشکوک"
 label_preferred_source: "پسندیدہ ذریعہ:"
 label_previous: "پچھلا:"
 label_range_tools: "رینج ٹولز"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2023.01.27).
+# This file: Japanese language data for the front-end (last modified: 2023.02.01).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -227,6 +227,7 @@ config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "ルックアップを実行するときに考慮されるレポートの最大経過日数。​Default/デフォルルト = 365。"
 config_projecthoneypot_max_ts_for_captcha: "キャプチャを提供できる最大の脅威スコア（１から１００までの数値である必要があります）。​Default/デフォルルト = 10。"
 config_projecthoneypot_minimum_threat_score: "CIDRAMがＩＰアドレスをブロックするために必要な最小脅威スコア（１から１００までの数値である必要があります）。​Default/デフォルルト = 10。"
+config_projecthoneypot_type_of_visitor: "Project Honeypotによって決定された訪問者のタイプに基づいて、ブロックまたはプロファイリングするかどうかを制御します。"
 config_protocol: "プロトコル・ブロッカー・モジュールの設定。"
 config_protocol_blocked: "選択したプロトコルがブロックされます。​注：すべての要求をまったく同じプロトコルを使用するように書き換えるサービスを（例:Cloudflare）介してルーティングするウェブサイトには影響しません。"
 config_protocol_reason_message: "そのようなリクエストがブロックされたときに表示される理由メッセージ。"
@@ -573,6 +574,10 @@ label_other_since: "開始日"
 label_paginate: "ページ付けして"
 label_passed: "許可されたリクエスト"
 label_php: "使用されたPHPバージョン："
+label_phvt_comment_spammer: "コメント・スパマー"
+label_phvt_harvester: "ハーベスター"
+label_phvt_search_engine: "検索エンジン"
+label_phvt_suspicious: "疑わしい"
 label_preferred_source: "優先ソース："
 label_previous: "前："
 label_range_tools: "範囲ツール"

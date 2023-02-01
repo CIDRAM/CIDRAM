@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2023.01.27).
+# This file: Turkish language data for the front-end (last modified: 2023.02.01).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -227,6 +227,7 @@ config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "Aramalar yapılırken raporların dikkate alınması için gün cinsinden maksimum yaş. Varsayılan = 365."
 config_projecthoneypot_max_ts_for_captcha: "Bir CAPTCHA için izin verilen maksimum tehdit puanı (1 ile 100 arasında bir sayı olmalıdır). Varsayılan = 10."
 config_projecthoneypot_minimum_threat_score: "CIDRAM'ın bir IP adresini engellemesi için gereken minimum tehdit puanı (1 ile 100 arasında bir sayı olmalıdır). Varsayılan = 10."
+config_projecthoneypot_type_of_visitor: "Project Honeypot tarafından belirlenen ziyaretçi türüne göre engelleme veya profileme kontrolleri."
 config_protocol: "Protokol engelleyici modülü için yapılandırma."
 config_protocol_blocked: "Seçilen protokoller engellenecektir. Not: Cloudflare gibi tamamen aynı protokolü kullanacak şekilde istekleri yeniden yazan hizmetler aracılığıyla yönlendirilen web siteleri için herhangi bir etkisi olmayacaktır."
 config_protocol_reason_message: "Bu tür istekler engellendiğinde görüntülenen neden mesajı."
@@ -578,6 +579,10 @@ label_other_since: "Başlangıç tarihi"
 label_paginate: "Sayfalandır"
 label_passed: "İzin verilen istekler"
 label_php: "Kullanılan PHP sürümü:"
+label_phvt_comment_spammer: "Yorum spamcısı"
+label_phvt_harvester: "Toplayıcı"
+label_phvt_search_engine: "Arama motoru"
+label_phvt_suspicious: "Şüpheli"
 label_preferred_source: "Tercih edilen kaynak:"
 label_previous: "Önceki:"
 label_range_tools: "Aralıklar için araçlar"

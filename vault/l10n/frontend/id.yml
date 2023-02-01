@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2023.01.27).
+# This file: Indonesian language data for the front-end (last modified: 2023.02.01).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -227,6 +227,7 @@ config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "Usia maksimum dalam hari dimana laporan akan dipertimbangkan saat melakukan pencarian. Default = 365."
 config_projecthoneypot_max_ts_for_captcha: "Skor ancaman maksimum yang diizinkan untuk CAPTCHA disajikan (harus berupa angka diantara 1 dan 100). Default = 10."
 config_projecthoneypot_minimum_threat_score: "Skor ancaman minimum yang diperlukan agar CIDRAM memblokir alamat IP (harus berupa angka diantara 1 dan 100). Default = 10."
+config_projecthoneypot_type_of_visitor: "Kontrol apakah akan memblokir atau memprofil berdasarkan jenis pengunjung sebagaimana ditentukan oleh Project Honeypot."
 config_protocol: "Konfigurasi untuk modul pemblokir protokol."
 config_protocol_blocked: "Protokol yang dipilih akan diblokir. Catatan: Tidak akan berpengaruh pada situs web yang merutekan melalui layanan yang menulis ulang permintaan untuk semua menggunakan protokol yang sama persis, seperti Cloudflare."
 config_protocol_reason_message: "Pesan alasan ditampilkan saat permintaan tersebut diblokir."
@@ -574,6 +575,10 @@ label_other_since: "Mulai tanggal"
 label_paginate: "Mempaginasi"
 label_passed: "Permintaan berlalu"
 label_php: "Versi PHP digunakan:"
+label_phvt_comment_spammer: "Komentar spammer"
+label_phvt_harvester: "Pemanen"
+label_phvt_search_engine: "Mesin pencari"
+label_phvt_suspicious: "Mencurigakan"
 label_preferred_source: "Sumber yang disukai:"
 label_previous: "Sebelumnya:"
 label_range_tools: "Alat rentang"

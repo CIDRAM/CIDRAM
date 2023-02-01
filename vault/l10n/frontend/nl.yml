@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2023.01.27).
+# This file: Dutch language data for the front-end (last modified: 2023.02.01).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -227,6 +227,7 @@ config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "De maximale leeftijd in dagen waarvoor rapporten worden overwogen bij het uitvoeren van zoekopdrachten. Standaard = 365."
 config_projecthoneypot_max_ts_for_captcha: "De maximale dreigingsscore die is toegestaan voor een CAPTCHA (moet een getal zijn tussen 1 en 100). Standaard = 10."
 config_projecthoneypot_minimum_threat_score: "De minimale dreigingsscore die vereist is om CIDRAM een IP-adres te blokkeren (moet een getal zijn tussen 1 en 100). Standaard = 10."
+config_projecthoneypot_type_of_visitor: "Bepaalt of er moet worden geblokkeerd of geprofileerd op basis van het type bezoeker zoals bepaald door Project Honeypot."
 config_protocol: "Configuratie voor de protocolblokkeringsmodule."
 config_protocol_blocked: "Geselecteerde protocollen worden geblokkeerd. Opmerking: Heeft geen enkel effect op websites die via services routeren die verzoeken herschrijven om allemaal exact hetzelfde protocol te gebruiken, zoals Cloudflare."
 config_protocol_reason_message: "Het redenbericht dat wordt weergegeven wanneer dergelijke verzoeken worden geblokkeerd."
@@ -581,6 +582,10 @@ label_other_since: "Begin datum"
 label_paginate: "Pagineren"
 label_passed: "Verzoeken toegestaan"
 label_php: "PHP versie gebruikt:"
+label_phvt_comment_spammer: "Reactie spammer"
+label_phvt_harvester: "Oogstmachine"
+label_phvt_search_engine: "Zoekmachine"
+label_phvt_suspicious: "Verdacht"
 label_preferred_source: "Voorkeursbron:"
 label_previous: "Vorig:"
 label_range_tools: "Bereik tools"

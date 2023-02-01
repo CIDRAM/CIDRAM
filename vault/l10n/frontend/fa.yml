@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Farsi language data for the front (last modified: 2023.01.27).
+# This file: Farsi language data for the front (last modified: 2023.02.01).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -227,6 +227,7 @@ config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "حداکثر سن در روز برای در نظر گرفتن گزارش ها. پیش فرض = 365."
 config_projecthoneypot_max_ts_for_captcha: "حداکثر امتیاز تهدید مجاز برای ارائه یک CAPTCHA (باید عددی بین 1 تا 100 باشد). پیش فرض = 10."
 config_projecthoneypot_minimum_threat_score: "حداقل امتیاز تهدید مورد نیاز برای مسدود کردن یک آدرس IP توسط CIDRAM (باید عددی بین 1 تا 100 باشد). پیش فرض = 10."
+config_projecthoneypot_type_of_visitor: "بر اساس نوع بازدیدکننده که توسط Project Honeypot تعیین می شود، مسدود کردن یا نمایه شدن را کنترل می کند."
 config_protocol: "پیکربندی برای ماژول مسدود کننده پروتکل."
 config_protocol_blocked: "پروتکل های انتخاب شده مسدود خواهند شد. توجه داشته باشید: بر روی وب سایت هایی که از طریق سرویس هایی که درخواست ها را بازنویسی می کنند مسیریابی می کنند تا همه از پروتکل یکسان استفاده کنند (به عنوان مثال، Cloudflare) تأثیری نخواهد گذاشت."
 config_protocol_reason_message: "پیام دلیل نمایش داده شده زمانی که چنین درخواست هایی مسدود می شوند."
@@ -561,6 +562,10 @@ label_other_since: "تاریخ شروع"
 label_paginate: "صفحه بندی کنید"
 label_passed: "درخواست ها تصویب شد"
 label_php: "نسخه PHP استفاده شده:"
+label_phvt_comment_spammer: "هرزنامه کننده"
+label_phvt_harvester: "دروگر"
+label_phvt_search_engine: "موتور جستجو"
+label_phvt_suspicious: "مشکوک"
 label_preferred_source: "منبع برگزیده:"
 label_previous: "قبلی:"
 label_range_tools: "ابزار برای محدوده"

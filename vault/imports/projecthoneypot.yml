@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Project Honeypot defaults file (last modified: 2022.10.25).
+# This file: Project Honeypot defaults file (last modified: 2023.02.01).
 ##/
 
 Config Defaults:
@@ -44,3 +44,25 @@ Config Defaults:
   timeout_limit:
    type: "int"
    default: 5
+  type_of_visitor:
+   type: "checkbox"
+   default: |
+    SearchEngine:Profile
+    Suspicious:Block
+    Suspicious:Profile
+    Harvester:Block
+    Harvester:Profile
+    CommentSpammer:Block
+    CommentSpammer:Profile
+    Other:Block
+   labels:
+    Block: "checkbox_label_block_it"
+    Profile: "checkbox_label_profile_it"
+   choices:
+    SearchEngine: "label_phvt_search_engine"
+    Suspicious: "label_phvt_suspicious"
+    Harvester: "label_phvt_harvester"
+    CommentSpammer: "label_phvt_comment_spammer"
+    Other: "label_other"
+   nonsense: |
+    Other:Profile

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2023.01.27).
+# This file: Latvian language data for the front-end (last modified: 2023.02.01).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -227,6 +227,7 @@ config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "Maksimālais vecums dienās, kad pārskati jāņem vērā, veicot meklēšanu. Noklusējuma = 365."
 config_projecthoneypot_max_ts_for_captcha: "Maksimālais apdraudējuma rādītājs, kas atļauts, lai saņemtu CAPTCHA (jābūt skaitlim no 1 līdz 100). Noklusējuma = 10."
 config_projecthoneypot_minimum_threat_score: "Minimālais apdraudējuma rādītājs, kas nepieciešams, lai CIDRAM bloķētu IP adresi (jābūt skaitlim no 1 līdz 100). Noklusējuma = 10."
+config_projecthoneypot_type_of_visitor: "Kontrolē, vai bloķēt vai profilēt, pamatojoties uz apmeklētāja veidu, ko nosaka Project Honeypot."
 config_protocol: "Protokolu bloķētāja moduļa konfigurācija."
 config_protocol_blocked: "Atlasītie protokoli tiks bloķēti. Piezīme: Tas neietekmēs vietnes, kas maršrutē caur pakalpojumiem, kas pārraksta pieprasījumus visiem, izmantojot tieši to pašu protokolu (piem., Cloudflare)."
 config_protocol_reason_message: "Iemesla ziņojums, kas tiek parādīts, kad šādi pieprasījumi ir bloķēti."
@@ -578,6 +579,10 @@ label_other_since: "Sākuma datums"
 label_paginate: "Pagināts"
 label_passed: "Atļautie pieprasījumu skaits"
 label_php: "Izmantotā PHP versija:"
+label_phvt_comment_spammer: "Komentāru surogātpasta izplatītājs"
+label_phvt_harvester: "Kombains"
+label_phvt_search_engine: "Meklētājs"
+label_phvt_suspicious: "Aizdomīgi"
 label_preferred_source: "Vēlamais avots:"
 label_previous: "Iepriekšējais:"
 label_range_tools: "Diapazona instrumenti"

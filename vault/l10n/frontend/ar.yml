@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2023.01.27).
+# This file: Arabic language data for the front-end (last modified: 2023.02.01).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -227,6 +227,7 @@ config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "الحد الأقصى للعمر بالأيام التي سيتم وضع التقارير فيها في الاعتبار عند إجراء عمليات البحث. افتراضي = 365."
 config_projecthoneypot_max_ts_for_captcha: "الحد الأقصى لدرجة التهديد المسموح به لتلقي اختبار CAPTCHA (يجب أن يكون رقمًا بين 1 و 100). افتراضي = 10."
 config_projecthoneypot_minimum_threat_score: "الحد الأدنى لدرجة التهديد المطلوبة لكي يقوم CIDRAM بحظر عنوان IP (يجب أن يكون رقمًا بين 1 و 100). افتراضي = 10."
+config_projecthoneypot_type_of_visitor: "عناصر التحكم في ما إذا كان سيتم الحظر أو الملف الشخصي بناءً على نوع الزائر كما هو محدد بواسطة Project Honeypot."
 config_protocol: "التكوين لوحدة مانع البروتوكول."
 config_protocol_blocked: "سيتم حظر البروتوكولات المحددة. ملاحظة: لن تؤثر على مواقع الويب التي توجه من خلال الخدمات التي تعيد كتابة الطلبات للجميع باستخدام نفس البروتوكول، مثل Cloudflare."
 config_protocol_reason_message: "رسالة السبب التي يتم عرضها عند حظر مثل هذه الطلبات."
@@ -570,6 +571,10 @@ label_other_since: "تاريخ البدء"
 label_paginate: "فصل إلى صفحات"
 label_passed: "مرت الطلبات"
 label_php: "النسخة PHP المستخدمة:"
+label_phvt_comment_spammer: "تعليق البريد المزعج"
+label_phvt_harvester: "الحاصدة"
+label_phvt_search_engine: "محرك البحث"
+label_phvt_suspicious: "مشبوه"
 label_preferred_source: "المصدر المفضل:"
 label_previous: "سابق:"
 label_range_tools: "أدوات النطاق"

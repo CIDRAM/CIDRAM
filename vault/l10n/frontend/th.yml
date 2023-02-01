@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2023.01.27).
+# This file: Thai language data for the front-end (last modified: 2023.02.01).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -227,6 +227,7 @@ config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "อายุสูงสุดเป็นจำนวนวันสำหรับรายงานที่ต้องพิจารณาเมื่อทำการค้นหา. ค่าเริ่มต้น = 365."
 config_projecthoneypot_max_ts_for_captcha: "คะแนนภัยคุกคามสูงสุดที่อนุญาตให้ใช้ CAPTCHA (ต้องเป็นตัวเลขระหว่าง 1 ถึง 100). ค่าเริ่มต้น = 10."
 config_projecthoneypot_minimum_threat_score: "คะแนนภัยคุกคามขั้นต่ำที่จำเป็นสำหรับ CIDRAM เพื่อบล็อกที่อยู่ IP (ต้องเป็นตัวเลขระหว่าง 1 ถึง 100). ค่าเริ่มต้น = 10."
+config_projecthoneypot_type_of_visitor: "ควบคุมว่าจะบล็อกหรือโปรไฟล์ตามประเภทของผู้เข้าชมที่กำหนดโดย Project Honeypot."
 config_protocol: "การกำหนดค่าสำหรับโมดูลตัวบล็อกโปรโตคอล."
 config_protocol_blocked: "โปรโตคอลที่เลือกจะถูกบล็อก. หมายเหตุ: จะไม่ส่งผลกระทบต่อเว็บไซต์ที่ส่งผ่านบริการที่เขียนคำขอใหม่ทั้งหมดโดยใช้โปรโตคอลเดียวกัน เช่น Cloudflare."
 config_protocol_reason_message: "ข้อความเหตุผลที่จะแสดงเมื่อคำขอดังกล่าวถูกบล็อก."
@@ -566,6 +567,10 @@ label_other_since: "วันที่เริ่มต้น"
 label_paginate: "แยกตามหน้า"
 label_passed: "คำขอที่ได้รับอนุญาต"
 label_php: "รุ่น PHP ในการใช้งาน:"
+label_phvt_comment_spammer: "ผู้ส่งสแปมความคิดเห็น"
+label_phvt_harvester: "เครื่องมือเก็บเกี่ยว"
+label_phvt_search_engine: "เครื่องมือค้นหา"
+label_phvt_suspicious: "น่าสงสัย"
 label_preferred_source: "แหล่งที่ต้องการ:"
 label_previous: "ก่อนหน้า:"
 label_range_tools: "เครื่องมือวัดระยะ"

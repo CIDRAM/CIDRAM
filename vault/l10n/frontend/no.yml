@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2023.01.27).
+# This file: Norwegian language data for the front-end (last modified: 2023.02.01).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -227,6 +227,7 @@ config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "Maksimal alder i dager som rapporter vil bli vurdert for når du utfører oppslag. Standardverdi = 365."
 config_projecthoneypot_max_ts_for_captcha: "Maksimal trusselpoengsum tillatt for å bli servert en CAPTCHA (må være et tall mellom 1 og 100). Standardverdi = 10."
 config_projecthoneypot_minimum_threat_score: "Minimum trusselpoengsum som kreves for at CIDRAM skal blokkere en IP-adresse (må være et tall mellom 1 og 100). Standardverdi = 10."
+config_projecthoneypot_type_of_visitor: "Kontroller om du vil blokkere eller profilere basert på typen besøkende som bestemt av Project Honeypot."
 config_protocol: "Konfigurasjon for protokollblokkeringsmodulen."
 config_protocol_blocked: "Utvalgte protokoller vil bli blokkert. Merk: Vil ikke ha noen effekt for de nettstedene som ruter gjennom tjenester som omskriver forespørsler til alle bruker nøyaktig samme protokoll, for eksempel Cloudflare."
 config_protocol_reason_message: "Årsaksmeldingen vises når slike forespørsler blokkeres."
@@ -578,6 +579,10 @@ label_other_since: "Startdato"
 label_paginate: "Paginere"
 label_passed: "Forespørsler bestått"
 label_php: "PHP versjon brukt:"
+label_phvt_comment_spammer: "Kommentar spammer"
+label_phvt_harvester: "Harvester"
+label_phvt_search_engine: "Søkemotor"
+label_phvt_suspicious: "Mistenkelig"
 label_preferred_source: "Foretrukket kilde:"
 label_previous: "Tidligere:"
 label_range_tools: "Rekkevidde verktøy"

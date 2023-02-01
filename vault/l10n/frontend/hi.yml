@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data for the front-end (last modified: 2023.01.27).
+# This file: Hindi language data for the front-end (last modified: 2023.02.01).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -227,6 +227,7 @@ config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "लुकअप करते समय रिपोर्ट के लिए दिनों में अधिकतम आयु पर विचार किया जाना चाहिए। डिफ़ॉल्ट = 365।"
 config_projecthoneypot_max_ts_for_captcha: "कैप्चा परोसने के लिए अधिकतम खतरा स्कोर की अनुमति है (1 और 100 के बीच की कोई संख्या होनी चाहिए)। डिफ़ॉल्ट = 10।"
 config_projecthoneypot_minimum_threat_score: "CIDRAM के लिए IP पते को ब्लॉक करने के लिए आवश्यक न्यूनतम खतरा स्कोर (1 और 100 के बीच की कोई संख्या होनी चाहिए)। डिफ़ॉल्ट = 10।"
+config_projecthoneypot_type_of_visitor: "Project Honeypot द्वारा निर्धारित विज़िटर के प्रकार के आधार पर ब्लॉक या प्रोफाइल करने के लिए नियंत्रण।"
 config_protocol: "प्रोटोकॉल ब्लॉकर मॉड्यूल के लिए कॉन्फ़िगरेशन।"
 config_protocol_blocked: "चयनित प्रोटोकॉल ब्लॉक कर दिए जाएंगे। नोट: कुछ सेवाएं (जैसे, Cloudflare) यह लागू करती हैं कि सभी अनुरोध एक ही प्रोटोकॉल का उपयोग करते हैं। ऐसी सेवाओं का उपयोग करने वाली वेबसाइटें मॉड्यूल से प्रभावित नहीं होंगी।"
 config_protocol_reason_message: "इस तरह के अनुरोधों को ब्लॉक किए जाने पर प्रदर्शित होने का कारण संदेश।"
@@ -580,6 +581,10 @@ label_other_since: "आरंभ करने की तिथि"
 label_paginate: "पृष्ठ द्वारा विभाजित"
 label_passed: "अनुरोध पारित"
 label_php: "PHP संस्करण का इस्तेमाल किया:"
+label_phvt_comment_spammer: "स्पैमर टिप्पणी"
+label_phvt_harvester: "हारवेस्टर"
+label_phvt_search_engine: "खोज इंजन"
+label_phvt_suspicious: "संदिग्ध"
 label_preferred_source: "पसंदीदा स्रोत:"
 label_previous: "पहले का:"
 label_range_tools: "रेंज टूल्स"

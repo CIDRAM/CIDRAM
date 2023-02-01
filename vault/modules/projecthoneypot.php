@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Project Honeypot module (last modified: 2022.06.06).
+ * This file: Project Honeypot module (last modified: 2023.02.01).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -17,6 +17,9 @@
 if (!isset($this->CIDRAM['ModuleResCache'])) {
     $this->CIDRAM['ModuleResCache'] = [];
 }
+
+/** Project Honeypot type of visitor controls. */
+$this->CIDRAM['PHVC'] = array_flip(explode("\n", $this->Configuration['projecthoneypot']['type_of_visitor']));
 
 /** Defining as closure for later recall (no params; no return value). */
 $this->CIDRAM['ModuleResCache'][$Module] = function () {
@@ -111,7 +114,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
                 $this->CIDRAM['Project Honeypot-' . $this->BlockInfo['IPAddr']] = [
                     'Days since last activity' => $Data[1],
                     'Threat score' => $Data[2],
-                    'Type of visitor' => $Data[3]
+                    'Type of visitor' => (int)$Data[3]
                 ];
                 $this->Cache->setEntry(
                     'Project Honeypot-' . $this->BlockInfo['IPAddr'],
@@ -133,11 +136,51 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         }
     }
 
-    /** Block the request if the IP is listed by Project Honeypot. */
+    /** Visitor type matrix. */
+    if (isset($this->CIDRAM['Project Honeypot-' . $this->BlockInfo['IPAddr']]['Type of visitor'])) {
+        $Try = (int)$this->CIDRAM['Project Honeypot-' . $this->BlockInfo['IPAddr']]['Type of visitor'];
+        $Visitor = ['SearchEngine' => $Try === 0, 'Suspicious' => false, 'Harvester' => false, 'CommentSpammer' => false, 'Other' => false];
+        if ($Visitor['SearchEngine'] && isset($this->CIDRAM['PHVC']['SearchEngine:Profile'])) {
+            $this->addProfileEntry('Search Engine');
+        }
+        if ($Try > 7) {
+            $Visitor['Other'] = true;
+            $Try %= 8;
+        }
+        if ($Try > 3) {
+            $Visitor['CommentSpammer'] = true;
+            $Try -= 4;
+            if (isset($this->CIDRAM['PHVC']['CommentSpammer:Profile'])) {
+                $this->addProfileEntry('Comment Spammer');
+            }
+        }
+        if ($Try > 1) {
+            $Visitor['Harvester'] = true;
+            $Try -= 2;
+            if (isset($this->CIDRAM['PHVC']['Harvester:Profile'])) {
+                $this->addProfileEntry('Harvester');
+            }
+        }
+        if ($Try > 0) {
+            $Visitor['Suspicious'] = true;
+            if (isset($this->CIDRAM['PHVC']['Suspicious:Profile'])) {
+                $this->addProfileEntry('Suspicious');
+            }
+        }
+    }
+
+    /** Block the request if the IP is listed by Project Honeypot and fits the constraints configured. */
     $this->trigger(
         (
             $this->CIDRAM['Project Honeypot-' . $this->BlockInfo['IPAddr']]['Threat score'] >= $this->Configuration['projecthoneypot']['minimum_threat_score'] &&
-            $this->CIDRAM['Project Honeypot-' . $this->BlockInfo['IPAddr']]['Days since last activity'] <= $this->Configuration['projecthoneypot']['max_age_in_days']
+            $this->CIDRAM['Project Honeypot-' . $this->BlockInfo['IPAddr']]['Days since last activity'] <= $this->Configuration['projecthoneypot']['max_age_in_days'] &&
+            (
+                ($Visitor['SearchEngine'] && isset($this->CIDRAM['PHVC']['SearchEngine:Block'])) ||
+                ($Visitor['Suspicious'] && isset($this->CIDRAM['PHVC']['Suspicious:Block'])) ||
+                ($Visitor['Harvester'] && isset($this->CIDRAM['PHVC']['Harvester:Block'])) ||
+                ($Visitor['CommentSpammer'] && isset($this->CIDRAM['PHVC']['CommentSpammer:Block'])) ||
+                ($Visitor['Other'] && isset($this->CIDRAM['PHVC']['Other:Block']))
+            )
         ),
         'Project Honeypot Lookup',
         $this->L10N->getString('ReasonMessage_Generic') . '<br />' . sprintf(

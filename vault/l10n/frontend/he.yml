@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hebrew language data for the front-end (last modified: 2023.01.27).
+# This file: Hebrew language data for the front-end (last modified: 2023.02.01).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -227,6 +227,7 @@ config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "הגיל המרבי בימים לבחינת דוחות. סטנדרטי = 365."
 config_projecthoneypot_max_ts_for_captcha: "ציון האיום המקסימלי המותר להצגת CAPTCHA (חייב להיות מספר בין 1 ל-100). סטנדרטי = 10."
 config_projecthoneypot_minimum_threat_score: "ציון האיום המינימלי הנדרש על מנת ש-CIDRAM יחסום כתובת IP (חייב להיות מספר בין 1 ל-100). סטנדרטי = 10."
+config_projecthoneypot_type_of_visitor: "בקרות האם לחסום או לפרופיל על סמך סוג המבקר כפי שנקבע על ידי Project Honeypot."
 config_protocol: "תצורה עבור מודול חוסם הפרוטוקולים."
 config_protocol_blocked: "הפרוטוקולים שנבחרו ייחסמו. הערה: לא ישפיע על אתרים שמנתבים דרך שירותים המשכתבים בקשות לכולן משתמשות באותו פרוטוקול, כגון Cloudflare."
 config_protocol_reason_message: "הודעת הסיבה המוצגת כאשר בקשות כאלה נחסמות."
@@ -573,6 +574,10 @@ label_other_since: "תאריך התחלה"
 label_paginate: "עמוד בעמודים"
 label_passed: "הבקשות עברו"
 label_php: "גרסת PHP בשימוש:"
+label_phvt_comment_spammer: "שולח הערת ספאם"
+label_phvt_harvester: "קוצר"
+label_phvt_search_engine: "מנוע חיפוש"
+label_phvt_suspicious: "חשודה"
 label_preferred_source: "מקור מועדף:"
 label_previous: "קודם:"
 label_range_tools: "כלים לטווחים"

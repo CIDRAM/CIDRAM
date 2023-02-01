@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2023.27.0
-# Last modified: 2023.01.28
+# Version: 2023.31.0
+# Last modified: 2023.02.01
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -571,11 +571,11 @@ Profile: Domestic ISP
 Tag: Ote SA
 
 
-# ASNs 11664, 19037, 28573 ("Techtel LMDS Comunicaciones Interactivas S.A",
+# ASNs 11664, 19037, 22085, 28573 ("Techtel LMDS Comunicaciones Interactivas S.A",
 # "AMX Argentina S.A", "CLARO S.A").
 # A South American ISP caught performing brute-force and webapp attacks, port
 # scans, and spamming. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 680 (AS11664), 172 (AS19037), 3,027 (AS28573).
+# Stop Forum Spam (SFS) listings: 359 (AS11664), 16 (AS19037), 1,526 (AS28573).
 # Updated: 2022.11.22 / Modified: 2022.12.25
 
 2803:9800:908f:80a0::/64 Deny Spam
@@ -585,18 +585,6 @@ Origin: AR
 Origin: BR
 Profile: Domestic ISP
 Tag: CLARO S.A
-
-
-# ASN 12849 ("Hot-Net internet services Ltd").
-# Israeli domestic ISP. Port scans, hacking, and spam detected from here.
-# Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 311.
-# Updated: 2022.05.12
-
-2a00:a040:19b:72a::/64 Deny Spam
-Origin: IL
-Profile: Domestic ISP
-Tag: Hot-Net internet
 
 
 # ASNs 6332, 8151 ("Uninet S.A. de C.V").
@@ -897,18 +885,6 @@ Profile: Domestic ISP;Mobile ISP;Multiplay
 Tag: Vodafone Deutschland GmbH
 
 
-# ASN 3737 ("PenTeleData Inc").
-# US fibre and broadband provider. Port scans, hacking, and spam detected from
-# here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 378.
-# Updated: 2022.06.13
-
-2606:9400:9d9f:fe15::/64 Deny Spam
-Origin: US
-Profile: Domestic ISP
-Tag: PenTeleData Inc
-
-
 # ASNs 3215, 5511 ("Orange S.A").
 # French domestic/mobile ISP. Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 2,095 (AS3215), 51 (AS5511).
@@ -984,25 +960,12 @@ Profile: Domestic ISP
 Tag: NPF SOFTVIDEO Ltd
 
 
-# ASN 31272 ("WildPark Co").
-# Ukrainian domestic ISP. Brute-force, phpMyAdmin-based, SSH, and various
-# webapp attacks, hacking, port scans, and spam detected from here.
-# Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,130.
-# Updated: 2022.02.14
-
-2a00:bc00:8801:44bf::/64 Deny Spam
-Origin: UA
-Profile: Domestic ISP
-Tag: WildPark Co
-
-
 # ASN 9123 ("OOO TimeWeb").
 # Russian multiplay network. Brute-force, XMLRPC/WordPress, and webapp attacks,
 # hacking, port scans, and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 221.
-# Updated: 2022.02.14
+# Stop Forum Spam (SFS) listings: 460.
+# Updated: 2022.02.14 / Checked: 2023.01.31
 
 2a03:6f00:6:1::/64 Deny Attacks
 Origin: RU
@@ -1013,12 +976,12 @@ Tag: OOO TimeWeb
 # ASN 35047 ("Abissnet sh.a").
 # Albanian domestic ISP. Spam, port scans, CGI hacks, brute-force, and SSH
 # attacks detected from here. Huge listings across entire ASN.
-# Stop Forum Spam (SFS) listings: 651.
-# Updated: 2021.05.29 / Checked: 2022.02.17
+# Stop Forum Spam (SFS) listings: 49.
+# Updated: 2021.05.29 / Checked: 2023.01.31
 
 2a01:4f00::/32 Deny Attacks
 Origin: AL
-Profile: Commercial;Domestic ISP
+Profile: Domestic ISP
 Tag: Abissnet
 
 

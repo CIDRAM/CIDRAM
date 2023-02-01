@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2022.12.05).
+ * This file: The CIDRAM core (last modified: 2023.02.01).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1736,7 +1736,7 @@ class Core
         }
 
         foreach ($this->CIDRAM['VerificationData']['Search Engine Verification'] as $Values) {
-            if (strlen($Values['Bypass flag'])) {
+            if (isset($Values['Bypass flag']) && strlen($Values['Bypass flag'])) {
                 $this->CIDRAM[$Values['Bypass flag']] = false;
             }
         }

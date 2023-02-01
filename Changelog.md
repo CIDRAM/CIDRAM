@@ -124,3 +124,5 @@
 [2023.01.29; Maikuolan]: Sticky the names of auxiliary rules while scrolling in edit mode to help reduce confusion over which rule's data is currently being edited.
 
 [2023.01.29; Bug-fix; Maikuolan]: At the auxiliary rules page, when attempting to submit form data while the number of input fields displayed on the page exceeds the `php.ini` value defined for `max_input_vars` (such a thing could happen if, e.g., more than several dozen auxiliary rules already exist, or some auxiliary rules have a very large number of conditions attached), a warning would be generated, and PHP would arbitrarily drop post values from the submitted form data, the end result being that auxiliary rules would be arbitrarily munged or dropped; Fixed (#384).
+
+[2023.02.01; Bug-fix; Maikuolan]: Undefined index warning occasionally generated at resetBypassFlags with specific IP ranges; Fixed.

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2023.01.29).
+ * This file: Front-end handler (last modified: 2023.02.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2757,8 +2757,15 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'backup' && $CIDRAM['FE']['Permi
                 if (!isset($CIDRAM['Import']['CIDRAM Version'])) {
                     $CIDRAM['FE']['state_msg'] .= $CIDRAM['L10N']->getString('response_failed_to_import') . '<br />';
                 } else {
+                    $CIDRAM['Operation'] = new \Maikuolan\Common\Operation();
+                    $CIDRAM['NextMajorVersion'] = (preg_replace('~^(\d+)(?:\D.*)?$~', '\1', $CIDRAM['ScriptVersion'])) + 1;
                     if (isset($_POST['doConfig']) && $_POST['doConfig'] === 'on') {
-                        if (isset($CIDRAM['Import']['Configuration']) && is_array($CIDRAM['Import']['Configuration'])) {
+                        if ($CIDRAM['Operation']->singleCompare($CIDRAM['Import']['CIDRAM Version'], '<1.23|>=2 <2.10|>=' . $CIDRAM['NextMajorVersion'])) {
+                            $this->FE['state_msg'] .= sprintf(
+                                $this->L10N->getString('response_import_bad_version'),
+                                $CIDRAM['Import']['CIDRAM Version']
+                            ) . ' ' . $CIDRAM['L10N']->getString('response_configuration_update_failed') . '<br />';
+                        } elseif (isset($CIDRAM['Import']['Configuration']) && is_array($CIDRAM['Import']['Configuration'])) {
                             $CIDRAM['Config'] = array_replace_recursive($CIDRAM['Config'], $CIDRAM['Import']['Configuration']);
                             //if ($this->updateConfiguration()) {
                             if (false) {
@@ -2775,6 +2782,17 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'backup' && $CIDRAM['FE']['Permi
                             if (!isset($CIDRAM['AuxData'])) {
                                 $CIDRAM['AuxData'] = [];
                                 $CIDRAM['YAML']->process($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'auxiliary.yaml'), $CIDRAM['AuxData']);
+                            }
+                            if ($CIDRAM['Operation']->singleCompare($CIDRAM['Import']['CIDRAM Version'], '>=3')) {
+                                $CIDRAM['CallableRecursive']($CIDRAM['Import']['Auxiliary Rules'], function(&$Arr, $Depth) {
+                                    if ($Depth === 2) {
+                                        if (isset($Arr['Profiles'])) {
+                                            $Arr['Profile'] = $Arr['Profiles'];
+                                            unset($Arr['Profiles']);
+                                        }
+                                    }
+                                    return ($Depth < 3);
+                                });
                             }
                             $CIDRAM['AuxData'] = array_replace($CIDRAM['AuxData'], $CIDRAM['Import']['Auxiliary Rules']);
                             if (

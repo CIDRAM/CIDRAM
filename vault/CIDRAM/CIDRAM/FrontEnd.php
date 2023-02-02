@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.01.29).
+ * This file: The CIDRAM front-end (last modified: 2023.02.02).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -2546,10 +2546,13 @@ class FrontEnd extends Core
 
             $this->FE['size_config'] = filesize($this->FE['ActiveConfigFile']) ?: 0;
             $this->FE['size_aux'] = filesize($this->Vault . 'auxiliary.yml') ?: 0;
+            $this->FE['size_metadata'] = filesize($this->Vault . 'installed.yml') ?: 0;
             $this->formatFileSize($this->FE['size_config']);
             $this->formatFileSize($this->FE['size_aux']);
+            $this->formatFileSize($this->FE['size_metadata']);
             $this->FE['size_config'] = '[<span dir="ltr" class="txtRd">' . $this->FE['ActiveConfigFile'] . '</span>] – ' . $this->FE['size_config'];
             $this->FE['size_aux'] = '[<span dir="ltr" class="txtRd">' . $this->Vault . 'auxiliary.yml</span>] – ' . $this->FE['size_aux'];
+            $this->FE['size_metadata'] = '[<span dir="ltr" class="txtRd">' . $this->Vault . 'installed.yml</span>] – ' . $this->FE['size_metadata'];
 
             /** Temporary. */
             $this->FE['state_msg'] .= 'Warning: The backup feature is still a <span class="txtRd">work-in-progress</span>, and I recommend not using it until it has been finished, because until then, it mightn\'t behave as expected. When it\'s finished, I\'ll remove this warning from the page.<br />';
@@ -2568,6 +2571,9 @@ class FrontEnd extends Core
                             $this->YAML->process($this->readFile($this->Vault . 'auxiliary.yml'), $this->CIDRAM['AuxData']);
                         }
                         $Export['Auxiliary Rules'] = $this->CIDRAM['AuxData'];
+                    }
+                    if (isset($_POST['doMetadata']) && $_POST['doMetadata'] === 'on') {
+                        $this->FE['state_msg'] .= 'Exporting components metadata not yet supported. Coming soon.<br />';
                     }
                     $Export = $this->YAML->reconstruct($Export);
                     $Filename = 'CIDRAM-v' . $this->ScriptVersion . '-Exported-' . date('Y-m-d-H-i-s', $this->Now) . '.yml';
@@ -2603,8 +2609,15 @@ class FrontEnd extends Core
                         if (!isset($Import['CIDRAM Version'])) {
                             $this->FE['state_msg'] .= $this->L10N->getString('response_failed_to_import') . '<br />';
                         } else {
+                            $this->CIDRAM['Operation'] = new \Maikuolan\Common\Operation();
+                            $NextMajorVersion = (preg_replace('~^(\d+)(?:\D.*)?$~', '\1', $this->ScriptVersion)) + 1;
                             if (isset($_POST['doConfig']) && $_POST['doConfig'] === 'on') {
-                                if (isset($Import['Configuration']) && is_array($Import['Configuration'])) {
+                                if ($this->CIDRAM['Operation']->singleCompare($Import['CIDRAM Version'], '<1.23|>=2 <2.10|>=' . $NextMajorVersion)) {
+                                    $this->FE['state_msg'] .= sprintf(
+                                        $this->L10N->getString('response_import_bad_version'),
+                                        $Import['CIDRAM Version']
+                                    ) . ' ' . $this->L10N->getString('response_configuration_update_failed') . '<br />';
+                                } elseif (isset($Import['Configuration']) && is_array($Import['Configuration'])) {
                                     $this->Configuration = array_replace_recursive($this->Configuration, $Import['Configuration']);
                                     if ($this->updateConfiguration()) {
                                         $this->FE['state_msg'] .= $this->L10N->getString('response_configuration_updated') . '<br />';
@@ -2620,6 +2633,17 @@ class FrontEnd extends Core
                                     if (!isset($this->CIDRAM['AuxData'])) {
                                         $this->CIDRAM['AuxData'] = [];
                                         $this->YAML->process($this->readFile($this->Vault . 'auxiliary.yml'), $this->CIDRAM['AuxData']);
+                                    }
+                                    if ($this->CIDRAM['Operation']->singleCompare($Import['CIDRAM Version'], '<3')) {
+                                        $this->callableRecursive($Import['Auxiliary Rules'], function(&$Arr, $Depth) {
+                                            if ($Depth === 2) {
+                                                if (isset($Arr['Profile'])) {
+                                                    $Arr['Profiles'] = $Arr['Profile'];
+                                                    unset($Arr['Profile']);
+                                                }
+                                            }
+                                            return ($Depth < 3);
+                                        });
                                     }
                                     $this->CIDRAM['AuxData'] = array_replace($this->CIDRAM['AuxData'], $Import['Auxiliary Rules']);
                                     if (
@@ -2638,6 +2662,9 @@ class FrontEnd extends Core
                                 } else {
                                     $this->FE['state_msg'] .= $this->L10N->getString('response_aux_update_failed') . '<br />';
                                 }
+                            }
+                            if (isset($_POST['doMetadata']) && $_POST['doMetadata'] === 'on') {
+                                $this->FE['state_msg'] .= 'Importing components metadata not yet supported. Coming soon.<br />';
                             }
                         }
                         $this->restoreErrorHandler();

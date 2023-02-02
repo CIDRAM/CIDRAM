@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2023.01.29).
+ * This file: General methods used by the front-end (last modified: 2023.02.02).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1222,5 +1222,25 @@ trait FrontEndMethods
         $MinifiedFormData = array_merge($ToBase, $ToMerge);
         $_POST = array_replace($_POST, $MinifiedFormData);
         unset($_POST[$MinifiedKey]);
+    }
+
+    /**
+     * Perform callback against an array where a callback matches.
+     *
+     * @param array $Arr The array to work upon.
+     * @param callable $Perform The callable to perform.
+     * @param int $Depth The current depth.
+     * @return void
+     */
+    private function callableRecursive(array &$Arr, callable $Perform, int $Depth = 0): void
+    {
+        foreach ($Arr as $Key => &$Value) {
+            if (!$Perform($Value, $Depth)) {
+                break;
+            }
+            if (is_array($Value)) {
+                $this->callableRecursive($Value, $Perform, $Depth + 1);
+            }
+        }
     }
 }

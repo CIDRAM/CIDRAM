@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used for auxiliary rules (last modified: 2023.01.29).
+ * This file: Methods used for auxiliary rules (last modified: 2023.01.31).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -84,7 +84,7 @@ trait AuxiliaryRules
 
                 /** Rule begin and sticky. */
                 $Output .= sprintf(
-                    '%s<div class="%s"><div style="float:%s;position:sticky;top:0px;writing-mode:overflow:hidden;z-index;-1"><span class="s">%s</span></div>',
+                    '%s<div class="%s"><div style="float:%s;position:sticky;top:0px;overflow:hidden;z-index;-1"><span class="s">%s</span></div>',
                     "\n      ",
                     $StyleClass,
                     $this->FE['FE_Align_Reverse'],

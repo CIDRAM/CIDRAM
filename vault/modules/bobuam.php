@@ -22,7 +22,7 @@
  * William "Bill" Minozzi.
  * @link https://www.stopbadbots.com/
  *
- * This file: Bot Or Browser User Agent Module (last modified: 2022.12.08).
+ * This file: Bot Or Browser User Agent Module (last modified: 2023.02.02).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -168,7 +168,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
                 $rebt = (int)$rebt[1];
                 $this->trigger(($rebt < $EOLSafari), $Browser[0] . ' (S)', $Browser[1]);
             }
-            $this->trigger(preg_match('%^(?i)(?!.*opera (?:mini\/|mobi).*)(?!.*(?:google(?:bot\/| web preview)|(android.*(?:version|samsungbrowser)\/)).*).*(?: Edge\/(?:(?:\d|1[01]|1(?:2\.(?:[02-9]|1(?:0[01346-9]|[1-9]))|3\.(?:[02-9]|1(?:0[0-46-9]|[1-9]))|4\.(?:[02-9]|1(?:4[0-24-9]|[0-35-9]))|5\.(?:0|1[0-4])))\.|[02-9])| Edg\/(?:\d|[0-6]\d)\.|msie\s?(?:\d|1[2-9]|[2-9]\d|\d{3,})\.|(?:netscape|mozilla\/(?:[0-3]\.|4\.0[24568]\s\[|4\.[578]|[7-9]\.|\d{2,}\.))|opera[\s\/](?:[0-8]\.|9\.[1-79]|bork-edition|1[01]\.|12\.(?:[02-9]|1[0-579])|1[3-9]\.|[2-9]\d\.|\d{3,}))%', $this->BlockInfo['UA']), $Browser[0] . ' (HC)', $Browser[1]);
+            $this->trigger(preg_match('%^(?i)(?!.*opera (?:mini\/|mobi).*)(?!.*(?:google(?:bot\/| web preview)|(android.*(?:version|samsungbrowser)\/)).*).*(?: Edge\/(?:(?:\d|1[01]|1(?:2\.(?:[02-9]|1(?:0[01346-9]|[1-9]))|3\.(?:[02-9]|1(?:0[0-46-9]|[1-9]))|4\.(?:[02-9]|1(?:4[0-24-9]|[0-35-9]))|5\.(?:0|1[0-4])))\.|\d(?!\d))| Edg\/(?:\d|[0-6]\d)\.|msie\s?(?:\d|1[2-9]|[2-9]\d|\d{3,})\.|(?:netscape|mozilla\/(?:[0-3]\.|4\.0[24568]\s\[|4\.[578]|[7-9]\.|\d{2,}\.))|opera[\s\/](?:[0-8]\.|9\.[1-79]|bork-edition|1[01]\.|12\.(?:[02-9]|1[0-579])|1[3-9]\.|[2-9]\d\.|\d{3,}))%', $this->BlockInfo['UA']), $Browser[0] . ' (HC)', $Browser[1]);
             if (preg_match('%^17\.%', $this->BlockInfo['IPAddr'])) {
                 if (preg_match('%\.applebot\.apple\.com$%', $this->CIDRAM['Hostname'])) {
                     if (strpos($this->BlockInfo['UA'], 'Applebot') !== false) {

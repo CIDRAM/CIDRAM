@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2023.01.29).
+ * This file: Front-end functions file (last modified: 2023.02.02).
  */
 
 /**
@@ -3399,7 +3399,7 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
 
             /** Rule begin and sticky. */
             $Output .= sprintf(
-                '%s<div class="%s"><div style="float:%s;position:sticky;top:0px;writing-mode:overflow:hidden;z-index;-1"><span class="s">%s</span></div>',
+                '%s<div class="%s"><div style="float:%s;position:sticky;top:0px;overflow:hidden;z-index;-1"><span class="s">%s</span></div>',
                 "\n      ",
                 $StyleClass,
                 $CIDRAM['FE']['FE_Align_Reverse'],
@@ -4823,4 +4823,23 @@ $CIDRAM['ProcessMinifiedFormData'] = function ($MinifiedKey) use (&$CIDRAM) {
     $MinifiedFormData = array_merge($ToBase, $ToMerge);
     $_POST = array_replace($_POST, $MinifiedFormData);
     unset($_POST[$MinifiedKey]);
+};
+
+/**
+ * Perform callback against an array where a callback matches.
+ *
+ * @param array $Arr The array to work upon.
+ * @param callable $Perform The callable to perform.
+ * @param int $Depth The current depth.
+ * @return void
+ */
+$CIDRAM['CallableRecursive'] = function (array &$Arr, $Perform, $Depth = 0) use (&$CIDRAM) {
+    foreach ($Arr as $Key => &$Value) {
+        if (!$Perform($Value, $Depth)) {
+            break;
+        }
+        if (is_array($Value)) {
+            $CIDRAM['CallableRecursive']($Value, $Perform, $Depth + 1);
+        }
+    }
 };

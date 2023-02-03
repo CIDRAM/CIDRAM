@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.02.02).
+ * This file: The CIDRAM front-end (last modified: 2023.02.03).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -2507,7 +2507,7 @@ class FrontEnd extends Core
                 echo $this->sendOutput();
             } elseif ($this->FE['CronType'] === 'localUpdate') {
                 /** Returned state message for Cronable (updating locally). */
-                $Results = ['state_msg' => str_ireplace(
+                $GLOBALS['Results'] = ['state_msg' => str_ireplace(
                     ['<code>', '</code>', '<br />', '<hr />'],
                     ['[', ']', "\n", "\n---\n"],
                     $this->FE['state_msg']
@@ -2635,9 +2635,9 @@ class FrontEnd extends Core
                                         $this->YAML->process($this->readFile($this->Vault . 'auxiliary.yml'), $this->CIDRAM['AuxData']);
                                     }
                                     if ($this->CIDRAM['Operation']->singleCompare($Import['CIDRAM Version'], '<3')) {
-                                        $this->callableRecursive($Import['Auxiliary Rules'], function(&$Arr, $Depth) {
+                                        $this->callableRecursive($Import['Auxiliary Rules'], function (&$Arr, $Depth) {
                                             if ($Depth === 2) {
-                                                if (isset($Arr['Profile'])) {
+                                                if (isset($Arr['Profile']) && !isset($Arr['Profiles'])) {
                                                     $Arr['Profiles'] = $Arr['Profile'];
                                                     unset($Arr['Profile']);
                                                 }
@@ -5336,7 +5336,7 @@ class FrontEnd extends Core
         /** Print Cronable failure state messages here. */
         if ($this->FE['CronMode'] !== '' && $this->FE['state_msg'] !== '' && $this->FE['UserState'] !== 1) {
             if ($this->FE['CronType'] === 'localUpdate') {
-                $Results = ['state_msg' => $this->FE['state_msg']];
+                $GLOBALS['Results'] = ['state_msg' => $this->FE['state_msg']];
             } else {
                 echo json_encode(['state_msg' => $this->FE['state_msg']]);
             }

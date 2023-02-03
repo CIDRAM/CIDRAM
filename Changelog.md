@@ -128,3 +128,5 @@
 [2023.02.01; Bug-fix; Maikuolan]: Undefined index warning occasionally generated at resetBypassFlags with specific IP ranges; Fixed.
 
 [2023.02.01; Maikuolan]: Better controls for the type of visitor for the Project Honeypot module (#396).
+
+[2023.02.03; Bug-fix; Maikuolan]: Cronable's localUpdate() broken for CIDRAM v3; Fixed (Maikuolan/Cronable#9).

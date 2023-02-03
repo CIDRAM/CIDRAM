@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2023.02.02).
+ * This file: Front-end handler (last modified: 2023.02.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2784,9 +2784,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'backup' && $CIDRAM['FE']['Permi
                                 $CIDRAM['YAML']->process($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'auxiliary.yaml'), $CIDRAM['AuxData']);
                             }
                             if ($CIDRAM['Operation']->singleCompare($CIDRAM['Import']['CIDRAM Version'], '>=3')) {
-                                $CIDRAM['CallableRecursive']($CIDRAM['Import']['Auxiliary Rules'], function(&$Arr, $Depth) {
+                                $CIDRAM['CallableRecursive']($CIDRAM['Import']['Auxiliary Rules'], function (&$Arr, $Depth) {
                                     if ($Depth === 2) {
-                                        if (isset($Arr['Profiles'])) {
+                                        if (isset($Arr['Profiles']) && !isset($Arr['Profile'])) {
                                             $Arr['Profile'] = $Arr['Profiles'];
                                             unset($Arr['Profiles']);
                                         }
@@ -3084,7 +3084,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
     }
 
     /** Upload a new file. */
-    if (isset($_POST['do']) && $_POST['do'] === 'upload-file' && isset($_FILES['upload-file']['name'])) {
+    if (isset($_POST['do'], $_FILES['upload-file']['name']) && $_POST['do'] === 'upload-file') {
         /** Check whether safe. */
         $CIDRAM['SafeToContinue'] = (
             basename($_FILES['upload-file']['name']) === $_FILES['upload-file']['name'] &&

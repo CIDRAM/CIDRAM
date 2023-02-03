@@ -2940,7 +2940,7 @@ class FrontEnd extends Core
             }
 
             /** Upload a new file. */
-            if (isset($_POST['do']) && $_POST['do'] === 'upload-file' && isset($_FILES['upload-file']['name'])) {
+            if (isset($_POST['do'], $_FILES['upload-file']['name']) && $_POST['do'] === 'upload-file') {
                 /** Check whether safe. */
                 $SafeToContinue = (
                     basename($_FILES['upload-file']['name']) === $_FILES['upload-file']['name'] &&

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2023.02.01).
+ * This file: The CIDRAM core (last modified: 2023.02.03).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1263,8 +1263,7 @@ class Core
 
                 /** Single-hit bypass. */
                 $this->bypass((
-                    isset($this->CIDRAM['VPermissions'][$Friendly . ':SingleHitBypass']) &&
-                    isset($this->BlockInfo['SignatureCount'], $this->BlockInfo['WhyReason']) &&
+                    isset($this->CIDRAM['VPermissions'][$Friendly . ':SingleHitBypass'], $this->BlockInfo['SignatureCount'], $this->BlockInfo['WhyReason']) &&
                     $this->BlockInfo['SignatureCount'] === 1 &&
                     preg_match('~, L\d+:F\d+,~', $this->BlockInfo['WhyReason'])
                 ), $this->L10N->getString('why_single_hit_bypass'));
@@ -1302,8 +1301,7 @@ class Core
 
                 /** Single-hit bypass. */
                 $this->bypass((
-                    isset($this->CIDRAM['VPermissions'][$Friendly . ':SingleHitBypass']) &&
-                    isset($this->BlockInfo['SignatureCount'], $this->BlockInfo['WhyReason']) &&
+                    isset($this->CIDRAM['VPermissions'][$Friendly . ':SingleHitBypass'], $this->BlockInfo['SignatureCount'], $this->BlockInfo['WhyReason']) &&
                     $this->BlockInfo['SignatureCount'] === 1 &&
                     preg_match('~, L\d+:F\d+,~', $this->BlockInfo['WhyReason'])
                 ), $this->L10N->getString('why_single_hit_bypass'));
@@ -2927,8 +2925,7 @@ class Core
 
                 /** Single-hit bypass. */
                 $this->bypass((
-                    isset($this->CIDRAM['VPermissions'][$Friendly . ':SingleHitBypass']) &&
-                    isset($this->BlockInfo['SignatureCount'], $this->BlockInfo['WhyReason']) &&
+                    isset($this->CIDRAM['VPermissions'][$Friendly . ':SingleHitBypass'], $this->BlockInfo['SignatureCount'], $this->BlockInfo['WhyReason']) &&
                     $this->BlockInfo['SignatureCount'] === 1 &&
                     preg_match('~, L\d+:F\d+,~', $this->BlockInfo['WhyReason'])
                 ), $this->L10N->getString('why_single_hit_bypass'));

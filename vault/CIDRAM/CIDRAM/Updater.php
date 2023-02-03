@@ -623,8 +623,7 @@ trait Updater
                             continue;
                         }
                         if (
-                            isset($FileMeta['Checksum']) &&
-                            isset($this->Components['Meta'][$ThisTarget]['Files'][$FileName]['Checksum']) &&
+                            isset($FileMeta['Checksum'], $this->Components['Meta'][$ThisTarget]['Files'][$FileName]['Checksum']) &&
                             $FileMeta['Checksum'] === $this->Components['Meta'][$ThisTarget]['Files'][$FileName]['Checksum']
                         ) {
                             $IgnoredFiles[$FileName] = true;

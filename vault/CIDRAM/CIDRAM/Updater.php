@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods for updating CIDRAM components (last modified: 2022.09.03).
+ * This file: Methods for updating CIDRAM components (last modified: 2023.02.03).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -617,7 +617,6 @@ trait Updater
                                 $BytesAdded -= filesize($this->Vault . $FileName);
                                 unlink($this->Vault . $FileName);
                                 if (is_readable($this->Vault . $FileName . '.rollback')) {
-                                    $BytesRemoved -= filesize($this->Vault . $FileName . '.rollback');
                                     rename($this->Vault . $FileName . '.rollback', $this->Vault . $FileName);
                                 }
                             }
@@ -684,7 +683,6 @@ trait Updater
                         }
                         $this->buildPath($this->Vault . $FileName);
                         if (is_readable($this->Vault . $FileName)) {
-                            $BytesRemoved += filesize($this->Vault . $FileName);
                             if (file_exists($this->Vault . $FileName . '.rollback')) {
                                 $BytesRemoved += filesize($this->Vault . $FileName . '.rollback');
                                 unlink($this->Vault . $FileName . '.rollback');
@@ -728,6 +726,7 @@ trait Updater
                                 continue;
                             }
                             if (file_exists($this->Vault . $FileName . '.rollback')) {
+                                $BytesRemoved += filesize($this->Vault . $FileName . '.rollback');
                                 unlink($this->Vault . $FileName . '.rollback');
                             }
                             if (

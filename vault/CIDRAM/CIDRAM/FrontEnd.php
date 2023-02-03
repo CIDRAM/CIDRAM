@@ -2225,7 +2225,7 @@ class FrontEnd extends Core
                 }
 
                 /** Append changelog. */
-                $this->Components['ThisComponent']['Changelog'] = empty(
+                $this->Components['ThisComponent']['ChangelogFormatted'] = empty(
                     $this->Components['ThisComponent']['Changelog']
                 ) ? '' : '<br /><a href="' . $this->Components['ThisComponent']['Changelog'] . '" rel="noopener external">Changelog</a>';
 
@@ -2389,7 +2389,7 @@ class FrontEnd extends Core
                 }
 
                 /** Append changelog. */
-                $this->Components['ThisComponent']['Changelog'] = empty(
+                $this->Components['ThisComponent']['ChangelogFormatted'] = empty(
                     $this->Components['ThisComponent']['Changelog']
                 ) ? '' : '<br /><a href="' . $this->Components['ThisComponent']['Changelog'] . '" rel="noopener external">Changelog</a>';
 

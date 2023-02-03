@@ -1462,11 +1462,26 @@ trait Updater
             }
             unset(
                 $Data['All Constraints Met'],
+                $Data['ChangelogFormatted'],
                 $Data['Dependency Status'],
+                $Data['Filename'],
                 $Data['Has Signatures'],
+                $Data['ID'],
+                $Data['Latest'],
+                $Data['LatestSize'],
+                $Data['Options'],
                 $Data['Remote All Constraints Met'],
-                $Data['Remote Dependency Status']
+                $Data['Remote Dependency Status'],
+                $Data['RemoteFilename'],
+                $Data['RowClass'],
+                $Data['SortKey'],
+                $Data['StatClass'],
+                $Data['StatusOptions'],
+                $Data['VersionSize']
             );
+            if (isset($Data['Extended Description']) && $Data['Extended Description'] === '') {
+                unset($Data['Extended Description']);
+            }
             foreach ($Data as $DataKey => $InnerData) {
                 if ($InnerData === null) {
                     unset($Data[$DataKey]);

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2022.11.08).
+ * This file: Functions file (last modified: 2023.02.04).
  */
 
 /**
@@ -2285,13 +2285,13 @@ $CIDRAM['OperatorFromAuxValue'] = function (&$Value, $Negate = false) {
         }
         return $Negate ? '≮' : '<';
     }
-    if ($Stub === "\xe2") {
+    if ($Stub === "\xE2") {
         $Stub = substr($Value, 1, 2);
-        if ($Stub === "\x89\xa5") {
+        if ($Stub === "\x89\xA5") {
             $Value = substr($Value, 3);
             return $Negate ? '≱' : '≥';
         }
-        if ($Stub === "\x89\xa4") {
+        if ($Stub === "\x89\xA4") {
             $Value = substr($Value, 3);
             return $Negate ? '≰' : '≤';
         }

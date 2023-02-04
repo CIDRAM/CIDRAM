@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2023.02.03).
+ * This file: Front-end handler (last modified: 2023.02.04).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2721,9 +2721,18 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'backup' && $CIDRAM['FE']['Permi
         if ($_POST['bckpAct'] === 'export') {
             $CIDRAM['Export'] = ['CIDRAM Version' => $CIDRAM['ScriptVersion']];
             $CIDRAM['InitialiseErrorHandler']();
+
+            /** Export configuration. */
             if (isset($_POST['doConfig']) && $_POST['doConfig'] === 'on') {
                 $CIDRAM['Export']['Configuration'] = $CIDRAM['Config'];
+                unset(
+                    $CIDRAM['Export']['Configuration']['Config Defaults'],
+                    $CIDRAM['Export']['Configuration']['Provide'],
+                    $CIDRAM['Export']['Configuration']['Links']
+                );
             }
+
+            /** Export auxiliary rules. */
             if (isset($_POST['doAux']) && $_POST['doAux'] === 'on') {
                 if (!isset($CIDRAM['AuxData'])) {
                     $CIDRAM['AuxData'] = [];
@@ -2731,6 +2740,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'backup' && $CIDRAM['FE']['Permi
                 }
                 $CIDRAM['Export']['Auxiliary Rules'] = $CIDRAM['AuxData'];
             }
+
+            /** Build output. */
             $CIDRAM['Export'] = $CIDRAM['YAML']->reconstruct($CIDRAM['Export']);
             $CIDRAM['Filename'] = 'CIDRAM-v' . $CIDRAM['ScriptVersion'] . '-Exported-' . date('Y-m-d-H-i-s', $CIDRAM['Now']) . '.yml';
             if (isset($_POST['doCompress']) && $_POST['doCompress'] === 'on' && $CIDRAM['Export'] !== '') {
@@ -2766,25 +2777,112 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'backup' && $CIDRAM['FE']['Permi
                     $CIDRAM['FE']['state_msg'] .= $CIDRAM['L10N']->getString('response_failed_to_import') . '<br />';
                 } else {
                     $CIDRAM['Operation'] = new \Maikuolan\Common\Operation();
-                    $CIDRAM['NextMajorVersion'] = (preg_replace('~^(\d+)(?:\D.*)?$~', '\1', $CIDRAM['ScriptVersion'])) + 1;
+
+                    /** Import configuration. */
                     if (isset($_POST['doConfig']) && $_POST['doConfig'] === 'on') {
-                        if ($CIDRAM['Operation']->singleCompare($CIDRAM['Import']['CIDRAM Version'], '<1.23|>=2 <2.10|>=' . $CIDRAM['NextMajorVersion'])) {
+                        if ($CIDRAM['Operation']->singleCompare($CIDRAM['Import']['CIDRAM Version'], '<1.23|>=2 <2.10|>=3')) {
                             $this->FE['state_msg'] .= sprintf(
                                 $this->L10N->getString('response_import_bad_version'),
                                 $CIDRAM['Import']['CIDRAM Version']
                             ) . ' ' . $CIDRAM['L10N']->getString('response_configuration_update_failed') . '<br />';
                         } elseif (isset($CIDRAM['Import']['Configuration']) && is_array($CIDRAM['Import']['Configuration'])) {
-                            $CIDRAM['Config'] = array_replace_recursive($CIDRAM['Config'], $CIDRAM['Import']['Configuration']);
-                            //if ($this->updateConfiguration()) {
-                            if (false) {
-                                $CIDRAM['FE']['state_msg'] .= $CIDRAM['L10N']->getString('response_configuration_updated') . '<br />';
-                            } else {
-                                $CIDRAM['FE']['state_msg'] .= $CIDRAM['L10N']->getString('response_configuration_update_failed') . '<br />';
+                            if ($CIDRAM['Operation']->singleCompare($CIDRAM['Import']['CIDRAM Version'], '^2.10')) {
+                                /** To allow backporting (v1<-v2). */
+                                foreach ([
+                                    'general' => [
+                                        ['logfileApache', 'logfile_apache'],
+                                        ['logfileSerialized', 'logfile_serialized'],
+                                        ['timeOffset', 'time_offset'],
+                                        ['timeFormat', 'time_format'],
+                                        ['FrontEndLog', 'frontend_log']
+                                    ],
+                                    'template_data' => [['Magnification', 'magnification']],
+                                    'PHPMailer' => [
+                                        ['EventLog', 'event_log'],
+                                        ['SkipAuthProcess', 'skip_auth_process'],
+                                        ['Enable2FA', 'enable_two_factor'],
+                                        ['Host', 'host'],
+                                        ['Port', 'port'],
+                                        ['SMTPSecure', 'smtp_secure'],
+                                        ['SMTPAuth', 'smtp_auth'],
+                                        ['Username', 'username'],
+                                        ['Password', 'password'],
+                                        ['setFromAddress', 'set_from_address'],
+                                        ['setFromName', 'set_from_name'],
+                                        ['addReplyToAddress', 'add_reply_to_address'],
+                                        ['addReplyToName', 'add_reply_to_name']
+                                    ],
+                                ] as $CIDRAM['CatKey'] => $CIDRAM['Cat']) {
+                                    foreach ($CIDRAM['Cat'] as $CIDRAM['Pair']) {
+                                        if (isset($CIDRAM['Import']['Configuration'][$CIDRAM['CatKey']][$CIDRAM['Pair'][1]]) && !isset($CIDRAM['Import']['Configuration'][$CIDRAM['CatKey']][$CIDRAM['Pair'][0]])) {
+                                            $CIDRAM['Import']['Configuration'][$CIDRAM['CatKey']][$CIDRAM['Pair'][0]] = $CIDRAM['Import']['Configuration'][$CIDRAM['CatKey']][$CIDRAM['Pair'][1]];
+                                            unset($CIDRAM['Import']['Configuration'][$CIDRAM['CatKey']][$CIDRAM['Pair'][1]]);
+                                        }
+                                    }
+                                }
+                                unset($CIDRAM['Pair'], $CIDRAM['Cat']);
                             }
+                            $CIDRAM['Config'] = array_replace_recursive($CIDRAM['Config'], $CIDRAM['Import']['Configuration']);
+                            $CIDRAM['RegenerateConfig'] = '';
+                            foreach ($CIDRAM['Config'] as $CIDRAM['CatKey'] => $CIDRAM['CatValue']) {
+                                if (
+                                    !is_array($CIDRAM['CatValue']) ||
+                                    $CIDRAM['CatKey'] === 'Config Defaults' ||
+                                    $CIDRAM['CatKey'] === 'Provide' ||
+                                    $CIDRAM['CatKey'] === 'Links'
+                                ) {
+                                    continue;
+                                }
+                                $CIDRAM['RegenerateConfig'] .= '[' . $CIDRAM['CatKey'] . ']';
+                                if ($CIDRAM['CatInfo'] = $CIDRAM['L10N']->getString('config_' . $CIDRAM['CatKey']) ?: (
+                                    $CIDRAM['FromModuleConfigL10N']('config_' . $CIDRAM['CatKey'])
+                                )) {
+                                    $CIDRAM['RegenerateConfig'] .= "\r\n; " . wordwrap(str_replace(
+                                        ['&amp;', '&lt;', '&gt;'],
+                                        ['&', '<', '>'],
+                                        strip_tags($CIDRAM['CatInfo'])
+                                    ), 77, "\r\n; ") . "\r\n\r\n";
+                                }
+                                foreach ($CIDRAM['CatValue'] as $CIDRAM['DirKey'] => $CIDRAM['DirValue']) {
+                                    if (is_string($CIDRAM['DirValue'])) {
+                                        $CIDRAM['RegenerateDir'] = $CIDRAM['DirKey'] . '=\'' . $CIDRAM['DirValue'] . "'\r\n";
+                                    } elseif ($CIDRAM['DirValue'] === true) {
+                                        $CIDRAM['RegenerateDir'] = $CIDRAM['DirKey'] . "=true\r\n";
+                                    } elseif ($CIDRAM['DirValue'] === false) {
+                                        $CIDRAM['RegenerateDir'] = $CIDRAM['DirKey'] . "=false\r\n";
+                                    } elseif (is_scalar($CIDRAM['DirValue'])) {
+                                        $CIDRAM['RegenerateDir'] = $CIDRAM['DirKey'] . '=' . $CIDRAM['DirValue'] . "\r\n";
+                                    } else {
+                                        continue;
+                                    }
+                                    $CIDRAM['DirInfo'] =
+                                        $CIDRAM['L10N']->getString('config_' . $CIDRAM['CatKey'] . '_' . $CIDRAM['DirKey']) ?:
+                                        $CIDRAM['L10N']->getString('label_' . $CIDRAM['DirKey']) ?:
+                                        $CIDRAM['L10N']->getString('config_' . $CIDRAM['CatKey']) ?:
+                                        $CIDRAM['FromModuleConfigL10N']('config_' . $CIDRAM['CatKey'] . '_' . $CIDRAM['DirKey']) ?:
+                                        $CIDRAM['FromModuleConfigL10N']('config_' . $CIDRAM['CatKey']) ?:
+                                        $CIDRAM['L10N']->getString('response_error');
+                                    $CIDRAM['RegenerateConfig'] .= '; ' . wordwrap(str_replace(
+                                        ['&amp;', '&lt;', '&gt;'],
+                                        ['&', '<', '>'],
+                                        strip_tags($CIDRAM['DirInfo'])
+                                    ), 77, "\r\n; ") . "\r\n" . $CIDRAM['RegenerateDir'] . "\r\n";
+                                }
+                                $CIDRAM['RegenerateConfig'] .= "\r\n";
+                            }
+                            $CIDRAM['UpdateSuccess'] = false;
+                            if (($CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . $CIDRAM['FE']['ActiveConfigFile'], 'wb')) !== false) {
+                                $CIDRAM['UpdateSuccess'] = fwrite($CIDRAM['Handle'], $CIDRAM['RegenerateConfig']);
+                                fclose($CIDRAM['Handle']);
+                            }
+                            $CIDRAM['FE']['state_msg'] .= $CIDRAM['L10N']->getString($CIDRAM['UpdateSuccess'] ? 'response_configuration_updated' : 'response_configuration_update_failed') . '<br />';
+                            unset($CIDRAM['Handle'], $CIDRAM['UpdateSuccess'], $CIDRAM['DirInfo'], $CIDRAM['RegenerateDir'], $CIDRAM['DirValue'], $CIDRAM['DirKey'], $CIDRAM['CatValue'], $CIDRAM['CatKey'], $CIDRAM['RegenerateConfig']);
                         } else {
                             $CIDRAM['FE']['state_msg'] .= $CIDRAM['L10N']->getString('response_configuration_update_failed') . '<br />';
                         }
                     }
+
+                    /** Import auxiliary rules. */
                     if (isset($_POST['doAux']) && $_POST['doAux'] === 'on') {
                         if (isset($CIDRAM['Import']['Auxiliary Rules']) && is_array($CIDRAM['Import']['Auxiliary Rules'])) {
                             if (!isset($CIDRAM['AuxData'])) {
@@ -2823,7 +2921,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'backup' && $CIDRAM['FE']['Permi
                 }
                 $CIDRAM['RestoreErrorHandler']();
             } else {
-                $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_upload_error') . '<br />';
+                $CIDRAM['FE']['state_msg'] .= $CIDRAM['L10N']->getString('response_upload_error') . '<br />';
             }
         }
     }

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Captcha class (last modified: 2022.05.24).
+ * This file: Captcha class (last modified: 2023.02.04).
  */
 
 namespace CIDRAM\Core;
@@ -48,7 +48,7 @@ class Captcha
         $Count = count($Strings);
         for ($Index = 0; $Index < $Count; $Index++) {
             if ($StrLens[$Index] < $WalkLen) {
-                $Strings[$Index] = str_pad($Strings[$Index], $WalkLen, "\xff");
+                $Strings[$Index] = str_pad($Strings[$Index], $WalkLen, "\xFF");
             }
         }
         for ($Lt = $Strings[0], $Index = 1, $Meld = ''; $Index < $Count; $Index++, $Meld = '') {

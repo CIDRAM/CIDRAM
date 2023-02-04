@@ -130,3 +130,5 @@
 [2023.02.01; Maikuolan]: Better controls for the type of visitor for the Project Honeypot module (#396).
 
 [2023.02.03; Bug-fix; Maikuolan]: Cronable's localUpdate() broken for CIDRAM v3; Fixed (Maikuolan/Cronable#9).
+
+[2023.02.05; Maikuolan]: Slightly improved the lookup API (#401).

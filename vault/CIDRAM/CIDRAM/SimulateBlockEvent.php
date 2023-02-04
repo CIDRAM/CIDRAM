@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used to simulate block events (last modified: 2023.01.23).
+ * This file: Methods used to simulate block events (last modified: 2023.02.05).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -55,7 +55,7 @@ trait SimulateBlockEvent
         $this->BlockInfo = [
             'ID' => $this->generateId(),
             'ScriptIdent' => $this->ScriptIdent,
-            'DateTime' => 'SimulateBlockEvent',
+            'DateTime' => $this->FE['DateTime'],
             'IPAddr' => $Addr,
             'IPAddrResolved' => $this->resolve6to4($Addr),
             'Query' => !empty($this->FE['custom-query']) ? $this->FE['custom-query'] : 'SimulateBlockEvent',
@@ -220,8 +220,15 @@ trait SimulateBlockEvent
      */
     public function lookup($Addr = '', bool $Modules = false, bool $Aux = false, bool $Verification = false, string $Query = '', string $Referrer = '', string $UA = ''): array
     {
-        if (!isset($this->FE)) {
-            $this->FE = [];
+        if (!($this->Cache instanceof \Maikuolan\Common\Cache)) {
+            $this->initialiseCache();
+        }
+        $this->FE = ['DateTime' => $this->timeFormat($this->Now, $this->Configuration['general']['time_format'])];
+        if ($this->Stages === []) {
+            $this->Stages = array_flip(explode("\n", $this->Configuration['general']['stages']));
+        }
+        if ($this->Shorthand === []) {
+            $this->Shorthand = array_flip(explode("\n", $this->Configuration['signatures']['shorthand']));
         }
         if (strlen($Query)) {
             $this->FE['custom-query'] = $Query;

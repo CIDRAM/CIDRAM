@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.02.03).
+ * This file: The CIDRAM front-end (last modified: 2023.02.04).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -2562,9 +2562,13 @@ class FrontEnd extends Core
                 if ($_POST['bckpAct'] === 'export') {
                     $Export = ['CIDRAM Version' => $this->ScriptVersion];
                     $this->initialiseErrorHandler();
+
+                    /** Export configuration. */
                     if (isset($_POST['doConfig']) && $_POST['doConfig'] === 'on') {
                         $Export['Configuration'] = $this->Configuration;
                     }
+
+                    /** Export auxiliary rules. */
                     if (isset($_POST['doAux']) && $_POST['doAux'] === 'on') {
                         if (!isset($this->CIDRAM['AuxData'])) {
                             $this->CIDRAM['AuxData'] = [];
@@ -2572,9 +2576,13 @@ class FrontEnd extends Core
                         }
                         $Export['Auxiliary Rules'] = $this->CIDRAM['AuxData'];
                     }
+
+                    /** Export component updates metadata. */
                     if (isset($_POST['doMetadata']) && $_POST['doMetadata'] === 'on') {
                         $this->FE['state_msg'] .= 'Exporting components metadata not yet supported. Coming soon.<br />';
                     }
+
+                    /** Build output. */
                     $Export = $this->YAML->reconstruct($Export);
                     $Filename = 'CIDRAM-v' . $this->ScriptVersion . '-Exported-' . date('Y-m-d-H-i-s', $this->Now) . '.yml';
                     if (isset($_POST['doCompress']) && $_POST['doCompress'] === 'on' && $Export !== '') {
@@ -2610,24 +2618,123 @@ class FrontEnd extends Core
                             $this->FE['state_msg'] .= $this->L10N->getString('response_failed_to_import') . '<br />';
                         } else {
                             $this->CIDRAM['Operation'] = new \Maikuolan\Common\Operation();
-                            $NextMajorVersion = (preg_replace('~^(\d+)(?:\D.*)?$~', '\1', $this->ScriptVersion)) + 1;
+
+                            /** Import configuration. */
                             if (isset($_POST['doConfig']) && $_POST['doConfig'] === 'on') {
-                                if ($this->CIDRAM['Operation']->singleCompare($Import['CIDRAM Version'], '<1.23|>=2 <2.10|>=' . $NextMajorVersion)) {
+                                if ($this->CIDRAM['Operation']->singleCompare($Import['CIDRAM Version'], '<1.23|>=2 <2.10|>=4')) {
                                     $this->FE['state_msg'] .= sprintf(
                                         $this->L10N->getString('response_import_bad_version'),
                                         $Import['CIDRAM Version']
                                     ) . ' ' . $this->L10N->getString('response_configuration_update_failed') . '<br />';
                                 } elseif (isset($Import['Configuration']) && is_array($Import['Configuration'])) {
-                                    $this->Configuration = array_replace_recursive($this->Configuration, $Import['Configuration']);
-                                    if ($this->updateConfiguration()) {
-                                        $this->FE['state_msg'] .= $this->L10N->getString('response_configuration_updated') . '<br />';
-                                    } else {
-                                        $this->FE['state_msg'] .= $this->L10N->getString('response_configuration_update_failed') . '<br />';
+                                    if ($this->CIDRAM['Operation']->singleCompare($Import['CIDRAM Version'], '<3')) {
+                                        /** Renamed configuration directives (v1->v2->v3). */
+                                        foreach ([
+                                            'general' => [
+                                                ['logfileApache', 'logfile_apache'],
+                                                ['logfileSerialized', 'logfile_serialized'],
+                                                ['timeOffset', 'time_offset'],
+                                                ['timeFormat', 'time_format'],
+                                                ['FrontEndLog', 'frontend_log'],
+                                                ['forbid_on_block', 'http_response_header_code']
+                                            ],
+                                            'recaptcha' => [['logfile', 'recaptcha_log']],
+                                            'hcaptcha' => [['logfile', 'hcaptcha_log']],
+                                            'template_data' => [['Magnification', 'magnification']],
+                                            'PHPMailer' => [
+                                                ['EventLog', 'event_log'],
+                                                ['SkipAuthProcess', 'skip_auth_process'],
+                                                ['Enable2FA', 'enable_two_factor'],
+                                                ['Host', 'host'],
+                                                ['Port', 'port'],
+                                                ['SMTPSecure', 'smtp_secure'],
+                                                ['SMTPAuth', 'smtp_auth'],
+                                                ['Username', 'username'],
+                                                ['Password', 'password'],
+                                                ['setFromAddress', 'set_from_address'],
+                                                ['setFromName', 'set_from_name'],
+                                                ['addReplyToAddress', 'add_reply_to_address'],
+                                                ['addReplyToName', 'add_reply_to_name']
+                                            ],
+                                        ] as $CatKey => $Cat) {
+                                            foreach ($Cat as $Pair) {
+                                                if (isset($Import['Configuration'][$CatKey][$Pair[0]]) && !isset($Import['Configuration'][$CatKey][$Pair[1]])) {
+                                                    $Import['Configuration'][$CatKey][$Pair[1]] = $Import['Configuration'][$CatKey][$Pair[0]];
+                                                    unset($Import['Configuration'][$CatKey][$Pair[0]]);
+                                                }
+                                            }
+                                        }
+                                        if (isset($Import['Configuration']['PHPMailer']) && !isset($Import['Configuration']['phpmailer'])) {
+                                            $Import['Configuration']['phpmailer'] = $Import['Configuration']['PHPMailer'];
+                                            unset($Import['Configuration']['PHPMailer']);
+                                        }
+
+                                        /** Moved configuration directives (v2->v3). */
+                                        $Import['Configuration'] = array_replace_recursive($Import['Configuration'], ['logging' => [
+                                            'standard_log' => $Import['Configuration']['general']['logfile'] ?? $this->Configuration['logging']['standard_log'],
+                                            'apache_style_log' => $Import['Configuration']['general']['logfile_apache'] ?? $this->Configuration['logging']['apache_style_log'],
+                                            'serialised_log' => $Import['Configuration']['general']['logfile_serialized'] ?? $this->Configuration['logging']['serialised_log'],
+                                            'error_log' => $Import['Configuration']['general']['error_log'] ?? $this->Configuration['logging']['error_log'],
+                                            'truncate' => $Import['Configuration']['general']['truncate'] ?? $this->Configuration['logging']['truncate'],
+                                            'log_rotation_limit' => $Import['Configuration']['general']['log_rotation_limit'] ?? $this->Configuration['logging']['log_rotation_limit'],
+                                            'log_rotation_action' => $Import['Configuration']['general']['log_rotation_action'] ?? $this->Configuration['logging']['log_rotation_action'],
+                                            'log_banned_ips' => $Import['Configuration']['general']['log_banned_ips'] ?? $this->Configuration['logging']['log_banned_ips'],
+                                            'log_sanitisation' => $Import['Configuration']['general']['log_sanitisation'] ?? $this->Configuration['logging']['log_sanitisation']
+                                        ], 'frontend' => [
+                                            'frontend_log' => $Import['Configuration']['general']['frontend_log'] ?? $this->Configuration['frontend']['frontend_log'],
+                                            'signatures_update_event_log' => $Import['Configuration']['general']['signatures_update_event_log'] ?? $this->Configuration['frontend']['signatures_update_event_log'],
+                                            'max_login_attempts' => $Import['Configuration']['general']['max_login_attempts'] ?? $this->Configuration['frontend']['max_login_attempts'],
+                                            'theme' => $Import['Configuration']['template_data']['theme'] ?? $this->Configuration['frontend']['theme'],
+                                            'magnification' => $Import['Configuration']['template_data']['magnification'] ?? $this->Configuration['frontend']['magnification'],
+                                            'enable_two_factor' => $Import['Configuration']['phpmailer']['enable_two_factor'] ?? $this->Configuration['frontend']['enable_two_factor']
+                                        ], 'components' => [
+                                            'ipv4' => $Import['Configuration']['signatures']['ipv4'] ?? $this->Configuration['components']['ipv4'],
+                                            'ipv6' => $Import['Configuration']['signatures']['ipv6'] ?? $this->Configuration['components']['ipv6'],
+                                            'modules' => $Import['Configuration']['signatures']['modules'] ?? $this->Configuration['components']['modules'],
+                                            'imports' => $Import['Configuration']['general']['config_imports'] ?? $this->Configuration['components']['imports'],
+                                            'events' => $Import['Configuration']['general']['events'] ?? $this->Configuration['components']['events']
+                                        ]]);
+
+                                        /** Deleted configuration directives (v1->v2->v3). */
+                                        foreach ([
+                                            'general' => [
+                                                'config_imports', 'disable_cli', 'disable_frontend', 'empty_fields', 'error_log', 'error_log_stages', 'events', 'frontend_log',
+                                                'hide_version', 'log_banned_ips', 'log_rotation_action', 'log_rotation_limit', 'log_sanitisation', 'logfile', 'logfile_apache', 'logfile_serialized',
+                                                'maintenance_mode', 'max_login_attempts', 'omit_hostname', 'omit_ip', 'omit_ua', 'other_verification', 'protect_frontend', 'protect_frontend',
+                                                'search_engine_verification', 'signatures_update_event_log', 'social_media_verification', 'truncate'
+                                            ],
+                                            'phpmailer' => ['enable_two_factor'],
+                                            'signatures' => [
+                                                'block_attacks', 'block_bogons', 'block_cloud', 'block_generic', 'block_legal', 'block_malware', 'block_proxies', 'block_spam',
+                                                'config_imports', 'events', 'ipv4', 'ipv6', 'modules', 'track_mode'
+                                            ]
+                                        ] as $CatKey => $Cat) {
+                                            foreach ($Cat as $Pair) {
+                                                if (isset($Import['Configuration'][$CatKey])) {
+                                                    unset($Import['Configuration'][$CatKey][$Pair]);
+                                                }
+                                            }
+                                        }
                                     }
+
+                                    /** Normalisation and modified configuration directives (v2->v3). */
+                                    foreach (['general' => ['default_dns'], 'components' => ['ipv4', 'ipv6', 'modules', 'imports', 'events'], 'frontend' => ['remotes'], 'bypasses' => ['used']] as $CatKey => $Cat) {
+                                        foreach ($Cat as $Pair) {
+                                            if (isset($Import['Configuration'][$CatKey][$Pair])) {
+                                                $Import['Configuration'][$CatKey][$Pair] = preg_replace(['~(?<=^|,)[\r\t ]+|[\r\t ]+(?=,|$)~', '~,~'], ['', "\n"], $Import['Configuration'][$CatKey][$Pair]);
+                                            }
+                                        }
+                                    }
+
+                                    unset($Pair, $Cat, $CatKey, $Import['Configuration']['Config Defaults'], $Import['Configuration']['Provide'], $Import['Configuration']['Links']);
+                                    $this->Configuration = array_replace_recursive($this->Configuration, $Import['Configuration']);
+                                    $this->FE['state_msg'] .= $this->L10N->getString($this->updateConfiguration() ? 'response_configuration_updated' : 'response_configuration_update_failed') . '<br />';
                                 } else {
                                     $this->FE['state_msg'] .= $this->L10N->getString('response_configuration_update_failed') . '<br />';
                                 }
                             }
+
+                            /** Import auxiliary rules. */
                             if (isset($_POST['doAux']) && $_POST['doAux'] === 'on') {
                                 if (isset($Import['Auxiliary Rules']) && is_array($Import['Auxiliary Rules'])) {
                                     if (!isset($this->CIDRAM['AuxData'])) {
@@ -2663,13 +2770,15 @@ class FrontEnd extends Core
                                     $this->FE['state_msg'] .= $this->L10N->getString('response_aux_update_failed') . '<br />';
                                 }
                             }
+
+                            /** Import component updates metadata. */
                             if (isset($_POST['doMetadata']) && $_POST['doMetadata'] === 'on') {
                                 $this->FE['state_msg'] .= 'Importing components metadata not yet supported. Coming soon.<br />';
                             }
                         }
                         $this->restoreErrorHandler();
                     } else {
-                        $this->FE['state_msg'] = $this->L10N->getString('response_upload_error') . '<br />';
+                        $this->FE['state_msg'] .= $this->L10N->getString('response_upload_error') . '<br />';
                     }
                 }
             }

@@ -1,6 +1,6 @@
 CIDRAM Core:
  Name: "CIDRAM Core"
- Version: "3.0.1-DEV+23033000"
+ Version: "3.1.0-DEV+23033000"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Front-End: "Latest"
@@ -62,7 +62,7 @@ CIDRAM Core:
    Checksum: "fed455682aa256ece38ebae4aa1491d86538fb96f4557b7d5d915fd88d370436:6811"
 CIDRAM Front-End:
  Name: "CIDRAM Front-End"
- Version: "3.0.1-DEV+23033100"
+ Version: "3.1.0-DEV+23033100"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "Latest"
@@ -965,7 +965,7 @@ Tor blocker module:
 BOBUAM:
  Extended Description: "Optional module which detects unwanted bots, old browsers, and performs some sanity checks.<br />Contains some data from the Wordpress plugin "Stop Bad Bots" by William "Bill" Minozzi.<br />(A few webservices bots might need bypasses)."
  False Positive Risk: "Medium"
- Version: "2023.32.0"
+ Version: "2023.34.0"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Front-End: "^3.0.0-DEV+22317000"
@@ -974,11 +974,11 @@ BOBUAM:
  Files:
   imports/bobuam.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/imports/bobuam.yml"
-   Checksum: "d2844ccacd79d3f4015452a6fe696e0389f82eda7f54d682a3e747d0a9836db4:1999"
+   Checksum: "9b32ade32f0fe0026bdee90ab797374ca7f88cb9a5f2dfca119859fe73b100b1:2002"
    Used with: "imports"
   modules/bobuam.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/bobuam.php"
-   Checksum: "9626c05849bda0b0176ee7ad8cf234115f6860b92627c38a39e340a741b1da99:42731"
+   Checksum: "3b778fee3984baf1c4328c39e7e6eb7aada736bf8ce81981cad39a3299168647:42757"
    Used with: "modules"
 theme/bluemetal:
  Name: "Theme: Blue Metal"

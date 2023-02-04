@@ -22,7 +22,7 @@
  * William "Bill" Minozzi.
  * @link https://www.stopbadbots.com/
  *
- * This file: Bot Or Browser User Agent Module (last modified: 2023.02.02).
+ * This file: Bot Or Browser User Agent Module (last modified: 2023.02.04).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -45,7 +45,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     }
 
     /** Sanity checks (checking for ambiguous and clearly malformed user agents). */
-    if ($this->Configuration['bobuam']['sanity_check'] !== "no") {
+    if ($this->Configuration['bobuam']['sanity_check'] === 'yes') {
         $Masquerade = [
             $this->L10N->getString('bobuam_masquerade'),
             $this->L10N->getString($this->Configuration['bobuam']['reason_masquerade']) ?: $this->Configuration['bobuam']['reason_masquerade'] ?: $this->L10N->getString('denied')
@@ -71,7 +71,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     }
 
     /** Signatures for recognised malicious and unwanted bots. */
-    if ($this->Configuration['bobuam']['block_bots'] !== "no") {
+    if ($this->Configuration['bobuam']['block_bots'] === 'yes') {
         $Bot = [
             $this->L10N->getString('bobuam_bot'),
             $this->L10N->getString($this->Configuration['bobuam']['reason_bot']) ?: $this->Configuration['bobuam']['reason_bot'] ?: $this->L10N->getString('denied')
@@ -146,7 +146,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     }
 
     /** Signatures for end of life (EoL) browsers. */
-    if ($this->Configuration['bobuam']['block_eol_browsers'] === "yes") {
+    if ($this->Configuration['bobuam']['block_eol_browsers'] === 'yes') {
         $Browser = [
             $this->L10N->getString('bobuam_outdated_short'),
             $this->L10N->getString($this->Configuration['bobuam']['reason_browser']) ?: $this->Configuration['bobuam']['reason_browser'] ?: $this->L10N->getString('denied')
@@ -156,7 +156,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $EOLFirefox = $this->Configuration['bobuam']['firefox'] ?: (int)$this->CIDRAM['BOBUAM Token']['Firefox'];
             $EOLFirefoxESR = $this->Configuration['bobuam']['firefox_esr'] ?: (int)$this->CIDRAM['BOBUAM Token']['Firefox ESR'];
             $EOLSafari = $this->Configuration['bobuam']['safari'] ?: (int)$this->CIDRAM['BOBUAM Token']['Safari'];
-            if (preg_match('%^(?i)(?!.*edg(?:a|e|ios)\/)(?!.* build\/)(?!.* Favicon).*chrom(?:e|ium)\/(\d+)\.\d+.*$%', $this->BlockInfo['UA'], $rebt)) {
+            if ($Chromium = preg_match('%^(?i)(?!.*edg(?:a|e|ios)\/)(?!.* build\/)(?!.* Favicon).*chrom(?:e|ium)\/(\d+)\.\d+.*$%', $this->BlockInfo['UA'], $rebt)) {
                 $rebt = (int)$rebt[1];
                 $this->trigger(($rebt < $EOLChrome), $Browser[0] . ' (C)', $Browser[1]);
             }
@@ -168,7 +168,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
                 $rebt = (int)$rebt[1];
                 $this->trigger(($rebt < $EOLSafari), $Browser[0] . ' (S)', $Browser[1]);
             }
-            $this->trigger(preg_match('%^(?i)(?!.*opera (?:mini\/|mobi).*)(?!.*(?:google(?:bot\/| web preview)|(android.*(?:version|samsungbrowser)\/)).*).*(?: Edge\/(?:(?:\d|1[01]|1(?:2\.(?:[02-9]|1(?:0[01346-9]|[1-9]))|3\.(?:[02-9]|1(?:0[0-46-9]|[1-9]))|4\.(?:[02-9]|1(?:4[0-24-9]|[0-35-9]))|5\.(?:0|1[0-4])))\.|\d(?!\d))| Edg\/(?:\d|[0-6]\d)\.|msie\s?(?:\d|1[2-9]|[2-9]\d|\d{3,})\.|(?:netscape|mozilla\/(?:[0-3]\.|4\.0[24568]\s\[|4\.[578]|[7-9]\.|\d{2,}\.))|opera[\s\/](?:[0-8]\.|9\.[1-79]|bork-edition|1[01]\.|12\.(?:[02-9]|1[0-579])|1[3-9]\.|[2-9]\d\.|\d{3,}))%', $this->BlockInfo['UA']), $Browser[0] . ' (HC)', $Browser[1]);
+            $this->trigger(!$Chromium && preg_match('%^(?i)(?!.*opera (?:mini\/|mobi).*)(?!.*(?:google(?:bot\/| web preview)|(android.*(?:version|samsungbrowser)\/)).*).*(?: Edge\/(?:(?:\d|1[01]|1(?:2\.(?:[02-9]|1(?:0[01346-9]|[1-9]))|3\.(?:[02-9]|1(?:0[0-46-9]|[1-9]))|4\.(?:[02-9]|1(?:4[0-24-9]|[0-35-9]))|5\.(?:0|1[0-4])))\.|[02-9])| Edg\/(?:\d|[0-6]\d)\.|msie\s?(?:\d|1[2-9]|[2-9]\d|\d{3,})\.|(?:netscape|mozilla\/(?:[0-3]\.|4\.0[24568]\s\[|4\.[578]|[7-9]\.|\d{2,}\.))|opera[\s\/](?:[0-8]\.|9\.[1-79]|bork-edition|1[01]\.|12\.(?:[02-9]|1[0-579])|1[3-9]\.|[2-9]\d\.|\d{3,}))%', $this->BlockInfo['UA']), $Browser[0] . ' (HC)', $Browser[1]);
             if (preg_match('%^17\.%', $this->BlockInfo['IPAddr'])) {
                 if (preg_match('%\.applebot\.apple\.com$%', $this->CIDRAM['Hostname'])) {
                     if (strpos($this->BlockInfo['UA'], 'Applebot') !== false) {

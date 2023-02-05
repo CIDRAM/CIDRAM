@@ -242,12 +242,12 @@ trait SimulateBlockEvent
         if (is_array($Addr)) {
             $Results = [];
             foreach ($Addr as $ThisAddr) {
-                $this->simulateBlockEvent($ThisAddr, $Modules);
+                $this->simulateBlockEvent($ThisAddr, $Modules, $Aux, $Verification);
                 $Results[$ThisAddr] = $this->BlockInfo;
             }
             return $Results;
         }
-        $this->simulateBlockEvent($Addr, $Modules);
+        $this->simulateBlockEvent($Addr, $Modules, $Aux, $Verification);
         return $this->BlockInfo;
     }
 }

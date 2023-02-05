@@ -132,3 +132,5 @@
 [2023.02.03; Bug-fix; Maikuolan]: Cronable's localUpdate() broken for CIDRAM v3; Fixed (Maikuolan/Cronable#9).
 
 [2023.02.05; Maikuolan]: Slightly improved the lookup API (#401).
+
+[2023.02.05; Bug-fix; Maikuolan]: Lookup API wasn't honouring auxiliary rules or verification parameters; Fixed (#401).

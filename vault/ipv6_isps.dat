@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2023.31.0
-# Last modified: 2023.02.01
+# Version: 2023.35.0
+# Last modified: 2023.02.05
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -44,16 +44,17 @@ Tag: PP SKS-LUGAN
 # Turkish multiplay network (webhosting provider, domestic ISP, data center,
 # plus others). Caught trying to DDoS SFS. Brute-force, DDoS, phishing attacks,
 # port scans, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 756.
-# Updated: 2022.06.15
+# Stop Forum Spam (SFS) listings: 491.
+# Updated: 2023.02.05
 
+2a11:840:24::/48 Deny Attacks
+Origin: CA
 2a04:4280:10::/48 Deny Attacks
 2a04:4280:20::/48 Deny Attacks
 2a04:4280:30::/48 Deny Attacks
 2a04:4280:100::/48 Deny Attacks
 2a04:4280:200::/48 Deny Attacks
 2a04:8340::/29 Deny Attacks
-2a05:9bc0::/29 Deny Attacks
 2a05:abc0::/29 Deny Attacks
 2a05:bf00::/29 Deny Attacks
 2a05:f7c0::/29 Deny Attacks
@@ -61,7 +62,6 @@ Tag: PP SKS-LUGAN
 2a07:cd00::/48 Deny Attacks
 2a07:e700::/29 Deny Attacks
 2a09:2340::/29 Deny Attacks
-2a09:9d00::/29 Deny Attacks
 2a0b:2780::/29 Deny Attacks
 2a0c:1340::/29 Deny Attacks
 2a0c:89c0::/29 Deny Attacks
@@ -69,6 +69,7 @@ Tag: PP SKS-LUGAN
 2a0c:acc0::/29 Deny Attacks
 2a0d:2bc0::/48 Deny Attacks
 2a0d:49c0::/29 Deny Attacks
+2a12:7740::/29 Deny Attacks
 Origin: TR
 Profile: Commercial;Dedicated;Domestic ISP;Infrastructure/Transit;Multiplay;Webhosting
 Tag: DGN TEKNOLOJI
@@ -661,36 +662,26 @@ Tag: Sky UK Limited
 # ASN 2856 ("British Telecommunications PLC").
 # UK domestic ISP. Spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 2,114.
-# Updated: 2022.02.17
+# Stop Forum Spam (SFS) listings: 1,932.
+# Updated: 2023.02.04
 
-2a00:23c4:2827:1e01::/64 Deny Spam
-2a00:23c4:3e02:8501::/64 Deny Spam
-2a00:23c4:6aa5:b701::/64 Deny Spam
-2a00:23c4:9109:1201::/64 Deny Spam
-2a00:23c4:db2a:7401::/64 Deny Spam
-2a00:23c5:b825:3e01::/64 Deny Spam
-2a00:23c5:d18c:8a01::/64 Deny Spam
-2a00:23c5:dd9d:f801::/64 Deny Spam
-2a00:23c5:f309:e01::/64 Deny Spam
-2a00:23c6:2899:1b01::/64 Deny Spam
-2a00:23c6:299d:8c01::/64 Deny Spam
-2a00:23c6:a901:9501::/64 Deny Spam
-2a00:23c6:b115:8d01::/64 Deny Spam
-2a00:23c6:d0e4:9b00::/64 Deny Spam
-2a00:23c7:2e0b:4300::/64 Deny Spam
-2a00:23c7:5195:ee01::/64 Deny Spam
-2a00:23c7:5b9c:ab01::/64 Deny Spam
-2a00:23c7:6c88:8600::/64 Deny Spam
-2a00:23c7:8081:1601::/64 Deny Spam
-2a00:23c7:8904:7101::/64 Deny Spam
-2a00:23c7:890b:b701::/64 Deny Spam
+2a00:23c6:3100:8201::/64 Deny Spam
+2a00:23c6:5e81:6f01::/64 Deny Spam
+2a00:23c6:a381:2401::/64 Deny Spam
+2a00:23c6:f985:f401::/64 Deny Spam
+2a00:23c7:2106:5901::/64 Deny Spam
+2a00:23c7:580d:601::/64 Deny Spam
+2a00:23c7:6188:9501::/64 Deny Spam
+2a00:23c7:898d:b701::/64 Deny Spam
+2a00:23c7:a005:4001::/64 Deny Spam
+2a00:23c7:bd84:e501::/64 Deny Spam
 2a00:23c7:c601:aa01::/64 Deny Spam
-2a00:23c7:e800:ff01::/64 Deny Spam
-2a00:23c7:f480:201::/64 Deny Spam
-2a00:23c8:8a2:b101::/64 Deny Spam
-2a00:23c8:4f1a:4f01::/64 Deny Spam
-2a00:23c8:9285:b500::/64 Deny Spam
+2a00:23c7:e903:7701::/64 Deny Spam
+2a00:23c8:7f95:c101::/64 Deny Spam
+2a00:23c8:a29b:fd01::/64 Deny Spam
+2a00:23ee:10b1:ebd5::/64 Deny Spam
+2a00:23ee:11b0:f4b0::/64 Deny Spam
+2a00:23ee:1421:75be::/64 Deny Spam
 Origin: GB
 Profile: Domestic ISP
 Tag: British Telecom PLC
@@ -722,25 +713,32 @@ Tag: AT&T Services, Inc
 # ASN 21928 ("T-Mobile USA, Inc").
 # US mobile provider. Spam, brute-force, and SSH attacks detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 3,840.
-# Updated: 2022.02.17
+# Stop Forum Spam (SFS) listings: 3,246.
+# Updated: 2023.02.04
 
-2607:fb90:374:4783::/64 Deny Spam
-2607:fb90:2065:23e2::/64 Deny Spam
-2607:fb90:25a9:32a5::/64 Deny Spam
-2607:fb90:2b1b:ce75::/64 Deny Spam
-2607:fb90:2edd:6442::/64 Deny Spam
-2607:fb90:473a:3a48::/64 Deny Spam
-2607:fb90:5514:1aab::/64 Deny Spam
-2607:fb90:55ca:4773::/64 Deny Spam
-2607:fb90:5d88:4249::/64 Deny Spam
-2607:fb90:6824:56b5::/64 Deny Spam
-2607:fb90:a797:f42f::/64 Deny Spam
-2607:fb90:a907:1323::/64 Deny Spam
-2607:fb90:d902:4562::/64 Deny Spam
-2607:fb90:e1b1:6942::/64 Deny Spam
-2607:fb90:e329:62b2::/64 Deny Spam
-2607:fb91:bd07:4b66::/64 Deny Spam
+2607:fb90:1bd1:447d::/64 Deny Spam
+2607:fb90:1cd6:4cf6::/64 Deny Spam
+2607:fb90:1cdb:5818::/64 Deny Spam
+2607:fb90:25d4:2532::/64 Deny Spam
+2607:fb90:4555:9918::/64 Deny Spam
+2607:fb90:7594:5d27::/64 Deny Spam
+2607:fb90:8a43:69a5::/64 Deny Spam
+2607:fb90:8a86:150d::/64 Deny Spam
+2607:fb90:8d02:5298::/64 Deny Spam
+2607:fb90:9b97:483::/64 Deny Spam
+2607:fb90:a900:6688::/64 Deny Spam
+2607:fb90:b7aa:746::/64 Deny Spam
+2607:fb90:c985:4b82::/64 Deny Spam
+2607:fb90:cf8e:f28b::/64 Deny Spam
+2607:fb90:ea0d:99da::/64 Deny Spam
+2607:fb91:123:4c6::/64 Deny Spam
+2607:fb91:18f:b69::/64 Deny Spam
+2607:fb91:1cb:5644::/64 Deny Spam
+2607:fb91:2caa:5991::/64 Deny Spam
+2607:fb91:2d0d:428f::/64 Deny Spam
+2607:fb91:2d10:cee4::/64 Deny Spam
+2607:fb91:bd12:1f01::/64 Deny Spam
+2607:fb91:bdae:40fc::/64 Deny Spam
 Origin: US
 Profile: Domestic ISP;Mobile ISP;Multiplay
 Tag: T-Mobile USA, Inc

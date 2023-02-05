@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2023.02.02).
+ * This file: Front-end functions file (last modified: 2023.02.05).
  */
 
 /**
@@ -3693,6 +3693,11 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
             }
         }
         unset($Options[0]);
+        $Options['exportRule'] = sprintf(
+            '(<span style="cursor:pointer" onclick="javascript:{document.getElementById(\'xprtName\').value=\'%s\';document.getElementById(\'xprtForm\').submit()}"><code class="s">%s</code></span>)',
+            addslashes($Name),
+            $CIDRAM['L10N']->getString('label_export')
+        );
         $Options['delRule'] = sprintf(
             '(<span style="cursor:pointer" onclick="javascript:confirm(\'%s\')&&delRule(\'' . addslashes($Name) . '\',\'' . $RuleClass . '\')"><code class="s"><span class="txtRd">⌧</span>%s</code></span>)',
             str_replace(["'", '"'], ["\'", '\x22'], sprintf($CIDRAM['L10N']->getString('confirm_delete'), $Name)),

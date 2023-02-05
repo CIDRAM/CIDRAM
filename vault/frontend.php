@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2023.02.04).
+ * This file: Front-end handler (last modified: 2023.02.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2730,7 +2730,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'backup' && $CIDRAM['FE']['Permi
                     $CIDRAM['AuxData'] = [];
                     $CIDRAM['YAML']->process($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'auxiliary.yaml'), $CIDRAM['AuxData']);
                 }
-                $CIDRAM['Export']['Auxiliary Rules'] = $CIDRAM['AuxData'];
+                if (isset($_POST['xprtName'])) {
+                    $CIDRAM['Export']['Auxiliary Rules'] = isset($CIDRAM['AuxData'][$_POST['xprtName']]) ? [$_POST['xprtName'] => $CIDRAM['AuxData'][$_POST['xprtName']]] : [];
+                } else {
+                    $CIDRAM['Export']['Auxiliary Rules'] = $CIDRAM['AuxData'];
+                }
             }
 
             /** Build output. */

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.02.04).
+ * This file: The CIDRAM front-end (last modified: 2023.02.05).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -2574,7 +2574,11 @@ class FrontEnd extends Core
                             $this->CIDRAM['AuxData'] = [];
                             $this->YAML->process($this->readFile($this->Vault . 'auxiliary.yml'), $this->CIDRAM['AuxData']);
                         }
-                        $Export['Auxiliary Rules'] = $this->CIDRAM['AuxData'];
+                        if (isset($_POST['xprtName'])) {
+                            $Export['Auxiliary Rules'] = isset($this->CIDRAM['AuxData'][$_POST['xprtName']]) ? [$_POST['xprtName'] => $this->CIDRAM['AuxData'][$_POST['xprtName']]] : [];
+                        } else {
+                            $Export['Auxiliary Rules'] = $this->CIDRAM['AuxData'];
+                        }
                     }
 
                     /** Export component updates metadata. */

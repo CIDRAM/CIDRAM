@@ -4,6 +4,9 @@
 <div class="ng1 center"><a href="?cidram-page=aux">{label_aux_mode_view}</a> – <a href="?cidram-page=aux-edit">{label_aux_mode_edit}</a></div>
 <div class="ng1"><ul class="pieul">{Data}
 </ul>
+<form enctype="multipart/form-data" id="xprtForm" action="?cidram-page=backup" method="POST" style="display:none">
+  <input type="hidden" name="doAux" value="on" /><input type="hidden" name="bckpAct" value="export" /><input type="hidden" name="xprtName" id="xprtName" value="" />
+</form>
 <form id="auxForm" action="?cidram-page=aux" method="POST">
 <hr />
 <ul class="pieul">

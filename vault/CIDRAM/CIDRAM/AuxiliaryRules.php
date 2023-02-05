@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used for auxiliary rules (last modified: 2023.01.31).
+ * This file: Methods used for auxiliary rules (last modified: 2023.02.05).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -393,6 +393,11 @@ trait AuxiliaryRules
                 }
             }
             unset($Options[0]);
+            $Options['exportRule'] = sprintf(
+                '(<span style="cursor:pointer" onclick="javascript:{document.getElementById(\'xprtName\').value=\'%s\';document.getElementById(\'xprtForm\').submit()}"><code class="s">%s</code></span>)',
+                addslashes($Name),
+                $this->L10N->getString('label_export')
+            );
             $Options['delRule'] = sprintf(
                 '(<span style="cursor:pointer" onclick="javascript:confirm(\'%s\')&&delRule(\'' . addslashes($Name) . '\',\'' . $RuleClass . '\')"><code class="s"><span class="txtRd">⌧</span>%s</code></span>)',
                 str_replace(["'", '"'], ["\'", '\x22'], sprintf($this->L10N->getString('confirm_delete'), $Name)),

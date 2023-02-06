@@ -177,3 +177,10 @@ function checkFlagsSelected() {
     document.getElementById(e).style.filter = document.getElementById(e).firstChild.checked ? 'grayscale(0)' : 'grayscale(.75)'
   })
 }
+
+function heavenToggle(c) {
+  document.getElementById('heaven'+c).classList.toggle('scaleXToZero');
+  document.getElementById('heaven'+c).classList.toggle('scaleXToOne');
+  document.getElementById('hidden'+c).classList.toggle('scaleXToZero');
+  document.getElementById('hidden'+c).classList.toggle('scaleXToOne');
+}

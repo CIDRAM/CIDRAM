@@ -168,3 +168,5 @@ input[type=checkbox]+label,input[type=radio]+label,input[type=radio]+label,.grid
 input[type=button].reset{background:none;cursor:pointer;border:none;padding:0 12px 0 12px;margin:0;width:auto;color:#fca}
 input[type=button].reset:hover,input[type=button].reset:active{color:#ffc}
 .tablend{margin-top:-2px}
+.scaleXToZero{display:inline-block;overflow:hidden;transform:scaleX(0);transform-origin:{FE_Align};opacity:0;max-height:1lh;max-width:0;transition:all .2s ease-out}
+.scaleXToOne{display:inline-block;overflow:hidden;transform:scaleX(1);transform-origin:{FE_Align};opacity:1;max-height:1lh;max-width:auto;transition:all .2s ease-in}

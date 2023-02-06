@@ -136,3 +136,5 @@
 [2023.02.05; Bug-fix; Maikuolan]: Lookup API wasn't honouring auxiliary rules or verification parameters; Fixed (#401).
 
 [2023.02.05; Maikuolan]: Added the ability to export individual auxiliary rules to the auxiliary rules page.
+
+[2023.02.06; Maikuolan]: Shifted the auxiliary rules view mode options to an expandable menu.

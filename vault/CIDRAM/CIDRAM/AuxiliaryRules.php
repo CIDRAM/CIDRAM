@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used for auxiliary rules (last modified: 2023.02.05).
+ * This file: Methods used for auxiliary rules (last modified: 2023.02.06).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -403,7 +403,15 @@ trait AuxiliaryRules
                 str_replace(["'", '"'], ["\'", '\x22'], sprintf($this->L10N->getString('confirm_delete'), $Name)),
                 $this->L10N->getString('field_delete')
             );
-            $Options = ' – ' . implode(' ', $Options);
+            $Options = implode(' ', $Options);
+            if (substr($Options, 0, 1) === '(' && substr($Options, -1) === ')') {
+                $Options = sprintf(
+                    '<span style="display:inline-block">(<span style="cursor:pointer" id="heaven%1$s" class="scaleXToOne" onclick="javascript:heavenToggle(\'%1$s\')"><code style="s">☰</code></span><span id="hidden%1$s" class="scaleXToZero">%2$s</span>)</span>',
+                    $RuleClass,
+                    substr($Options, 1, -1)
+                );
+            }
+            $Options = ' – ' . $Options;
 
             /** Begin generating rule output. */
             $Output .= sprintf(
@@ -531,7 +539,7 @@ trait AuxiliaryRules
                 }
             }
             if (count($Flags)) {
-                $Output .= "\n            <li><div class=\"iCntr\"><div class=\"iLabl s\">" . $this->L10N->getString('label_aux_special') . '</div><div class="iCntn">' . implode('<br />', $Flags) . '</div></div></li>';
+                $Output .= "\n          <li><div class=\"iCntr\"><div class=\"iLabl s\">" . $this->L10N->getString('label_aux_special') . '</div><div class="iCntn">' . implode('<br />', $Flags) . '</div></div></li>';
             }
 
             /** Show the method to be used. */

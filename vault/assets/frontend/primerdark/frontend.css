@@ -8,6 +8,7 @@ code{background-color:rgba(255,153,102,.3);vertical-align:0;display:inline-block
 .branchline,hr::before{display:table;content:""}
 img.ico{width:16px;height:16px;border:0}
 label{font-weight:600}
+table{table-layout:fixed}
 table,.spanner{width:100%}
 textarea{height:150px}
 textarea.half{height:75px}
@@ -105,7 +106,10 @@ li>span.comCat:first-child{cursor:pointer}
 blockquote.comSub{margin:-2px 0 0 0;padding:0 0 0 0}
 .iCntr,.iLabl,.iCntn{display:block}
 .iCntr{margin:16px 0 16px 0}
-.iCntn{margin-left:42px}
+.iCntn{margin-{FE_Align}:42px}
+@media only all and (max-width:968px) {
+  .iCntn{margin:0}
+}
 @keyframes forRotate{0%{transform:rotate(0)}100%{transform:rotate({45deg})}}
 @keyframes revRotate{0%{transform:rotate({45deg})}100%{transform:rotate(0)}}
 #acctnavlink::before,#bckpnavlink::before,#discussionslink::before,#docsnavlink::before,#confnavlink::before,#fmgrnavlink::before,#homenavlink::before,#websitelink::before,
@@ -122,6 +126,7 @@ blockquote.comSub{margin:-2px 0 0 0;padding:0 0 0 0}
 #testnavlink::before{content:"🔬"}
 #updtnavlink::before{content:"🔄"}
 #websitelink::before{content:"🔗"}
+.navicon{filter:invert(78%) sepia(74%) saturate(2174%) brightness(105%) contrast(104%);position:relative;top:1px;width:16px;height:16px}
 p{margin-top:0;margin-bottom:10px}
 small{font-size:.9em}
 sub,sup{font-size:.7em;line-height:0;position:relative;vertical-align:baseline}

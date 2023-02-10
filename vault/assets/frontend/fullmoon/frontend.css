@@ -18,6 +18,7 @@ select,option,input,textarea{filter:grayscale(.1) brightness(.94)}
 select:active,textarea:active:not([readonly]),input:active{filter:grayscale(0) brightness(1)}
 select:disabled,textarea:disabled,input:disabled{filter:grayscale(1) brightness(.5)}
 select:focus,textarea:focus,input:focus,select:hover,textarea:hover:not([readonly]),input:hover{filter:grayscale(0) brightness(1)}
+table{table-layout:fixed}
 table,.spanner{width:100%}
 textarea{height:150px}
 textarea.half{height:75px}
@@ -100,7 +101,10 @@ li>span.comCat:first-child{cursor:pointer}
 blockquote.comSub{margin:-2px 0 0 0;padding:0 0 0 0}
 .iCntr,.iLabl,.iCntn{display:block}
 .iCntr{margin:16px 0 16px 0}
-.iCntn{margin-left:42px}
+.iCntn{margin-{FE_Align}:42px}
+@media only all and (max-width:968px) {
+  .iCntn{margin:0}
+}
 @keyframes forRotate{0%{transform:rotate(0)}100%{transform:rotate({45deg})}}
 @keyframes revRotate{0%{transform:rotate({45deg})}100%{transform:rotate(0)}}
 select+input[type=submit],select+input[type=button]{height:20px;margin-{FE_Align}:-3px;border-bottom-{FE_Align}-radius:0;border-top-{FE_Align}-radius:0;padding-{FE_Align}:3px}

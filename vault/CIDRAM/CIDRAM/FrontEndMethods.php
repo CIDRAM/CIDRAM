@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2023.02.02).
+ * This file: General methods used by the front-end (last modified: 2023.02.10).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1242,5 +1242,64 @@ trait FrontEndMethods
                 $this->callableRecursive($Value, $Perform, $Depth + 1);
             }
         }
+    }
+
+    /**
+     * Fetch an etaggable asset as requested by the client.
+     *
+     * @param string $Asset The path to the asset.
+     * @param ?callable $Callback An optional callback.
+     * @return exit
+     */
+    private function eTaggable(string $Asset, ?callable $Callback = null): void
+    {
+        if ($this->pathSecurityCheck($Asset) && !preg_match('~[^\da-z._]~i', $Asset)) {
+            $ThisAsset = $this->getAssetPath($Asset, true);
+            if (strlen($ThisAsset) && is_readable($ThisAsset) && ($ThisAssetDel = strrpos($ThisAsset, '.')) !== false) {
+                $Success = false;
+                $Type = strtolower(substr($ThisAsset, $ThisAssetDel + 1));
+                if ($Type === 'jpeg') {
+                    $Type = 'jpg';
+                }
+                if (preg_match('/^(?:gif|jpg|png|webp)$/', $Type)) {
+                    $MimeType = 'Content-Type: image/' . $Type;
+                    $Success = true;
+                } elseif ($Type === 'js') {
+                    $MimeType = 'Content-Type: text/javascript';
+                    $Success = true;
+                } elseif ($Type === 'css') {
+                    $MimeType = 'Content-Type: text/css';
+                    $Success = true;
+                }
+                if ($Success) {
+                    $AssetData = $this->readFile($ThisAsset);
+                    $OldETag = $_SERVER['HTTP_IF_NONE_MATCH'] ?? '';
+                    $NewETag = hash('sha256', $AssetData) . '-' . strlen($AssetData);
+                    header('Last-Modified: ' . gmdate('D, d M Y H:i:s T', filemtime($ThisAsset)));
+                    header('ETag: "' . $NewETag . '"');
+                    header('Expires: ' . gmdate('D, d M Y H:i:s T', $this->Now + 2592000));
+                    if (preg_match('~(?:^|, )(?:"' . $NewETag . '"|' . $NewETag . ')(?:$|, )~', $OldETag)) {
+                        header('HTTP/1.0 304 Not Modified');
+                        header('HTTP/1.1 304 Not Modified');
+                        header('Status: 304 Not Modified');
+                        die;
+                    }
+                    header($MimeType);
+                    if (is_callable($Callback)) {
+                        $AssetData = $Callback($AssetData);
+                    }
+                    echo $AssetData;
+                    die;
+                }
+            }
+            header('HTTP/1.0 404 Not Found');
+            header('HTTP/1.1 404 Not Found');
+            header('Status: 404 Not Found');
+            die;
+        }
+        header('HTTP/1.0 403 Forbidden');
+        header('HTTP/1.1 403 Forbidden');
+        header('Status: 403 Forbidden');
+        die;
     }
 }

@@ -1,6 +1,6 @@
 CIDRAM Core:
  Name: "CIDRAM Core"
- Version: "3.1.0-DEV+23034000"
+ Version: "3.1.0-DEV+23040000"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Front-End: "Latest"
@@ -53,7 +53,7 @@ CIDRAM Core:
    Checksum: "b62c0cf1deeb97c7ee15638f0a4102292a6bab6f0b6b1ee3a1dec7fa485c2e05:1352"
   defaults.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/defaults.yml"
-   Checksum: "908bc7d07cd2f4e623f0eee0c233c065ce0d5ec9da6565ba19d66fb5c48f52ac:34196"
+   Checksum: "9dd77bcef1ac988847a8189923ac52c4cdd5d560d110994219bebe22baa748d1:33546"
   loader.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/loader.php"
    Checksum: "2024a633fae0edeff14119bd2308d9599a8651bd1fc877838e3901b72afffdc0:1312"
@@ -62,7 +62,7 @@ CIDRAM Core:
    Checksum: "fed455682aa256ece38ebae4aa1491d86538fb96f4557b7d5d915fd88d370436:6811"
 CIDRAM Front-End:
  Name: "CIDRAM Front-End"
- Version: "3.1.0-DEV+23036001"
+ Version: "3.1.0-DEV+23040000"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "Latest"
@@ -86,7 +86,7 @@ CIDRAM Front-End:
    Checksum: "762587e8549980459603625ad19cdf052856b3f696c45fca3815159bf66554c0:1690"
   assets/frontend/default/_aux.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/default/_aux.html"
-   Checksum: "10b52d9df3d7128d36c72f354e84b8a359d778608b49ff13ec5b2bbc20de6c0e:9070"
+   Checksum: "b687ee8ff6195e6afe9ec571acdd62b6b572b30a6ab18b43e3e4db58891efb60:8937"
   assets/frontend/default/_aux_edit.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/default/_aux_edit.html"
    Checksum: "2b2f0c8ad16587f68ae214c663b55e79c10861d70d25c20cdf2d9041b649cbcf:675"
@@ -182,7 +182,7 @@ CIDRAM Front-End:
    Checksum: "fcb806b4ba4923ac25f008b5bc6bc75ad05e64a02d6279ec7794c6ad04542259:544"
   assets/frontend/default/auxiliary.js:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/default/auxiliary.js"
-   Checksum: "418b15b0baeca0f1c15f5fb02d7e51155ccd2a0eb7d952593b9555db2c1627a3:8894"
+   Checksum: "16e219ae4304344913be960132ed9f016627d1559330dc444f43859c00ab5f63:8658"
   assets/frontend/default/database.gif:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/default/database.gif"
    Checksum: "638a962d2b944fa3e3eb734bf8e1e05506f298f693e3c3dc8138bbd6c30dd536:381"
@@ -197,7 +197,7 @@ CIDRAM Front-End:
    Checksum: "f7c085055bd1833de3b5838677152efea0bdd4c64b8a880a7ef0eab7c3194ee0:375"
   assets/frontend/default/frontend.css:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/default/frontend.css"
-   Checksum: "f175098034c3295115c0b9100fc3d70cfef5d4b387aa8d7d0ee8111c51ab83e9:11346"
+   Checksum: "630502715fd80ac84a20cac0d0724e2b4be9d0f682c1ebfe8f7653469abe7f89:11594"
   assets/frontend/default/frontend.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/default/frontend.html"
    Checksum: "31dc9ceb50f92bd703fd5200edcf2b91a4a57a3cc08c7c8cfdd85baf931b9f70:908"
@@ -227,7 +227,7 @@ CIDRAM Front-End:
    Checksum: "3bc42724fbf0651e7225d54e1761948c1d624c1d853549aa0809721abf700a07:722"
   assets/frontend/default/pips.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/default/pips.yml"
-   Checksum: "0fb6590d5a6f0717f948ebd4a39dbcc6a06bce6c90bc4a643e7e7a1753630973:729"
+   Checksum: "aad6e07e07be2f2925deae2c4c380a7bd500a36a6b5954161faf695bfc9b704c:810"
   assets/frontend/default/presentation.gif:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/default/presentation.gif"
    Checksum: "b9b747143d36fcbc26e4466790762b86bf60f36db139453660a549ef76a44fe9:360"
@@ -251,7 +251,7 @@ CIDRAM Front-End:
    Checksum: "d6b39bc75052e16f3a383c958445a2e0964ebfd4517799137ce09e3f6227f270:16430"
   CIDRAM/CIDRAM/AuxiliaryRules.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/AuxiliaryRules.php"
-   Checksum: "d0c3bbade59895423e1bf1a096869b08daf40d408026167cdcdc53df012701b1:37646"
+   Checksum: "fbcae234e183d8aa5c32ef892ce0a0371abd7397921b8f4568fd123bbde9dd27:36264"
   CIDRAM/CIDRAM/CLI.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/CLI.php"
    Checksum: "dfbb581ee399800b77d4e1d8fb68ab73777bb6daf904844152b7bc104a5f2301:27964"
@@ -260,10 +260,10 @@ CIDRAM Front-End:
    Checksum: "d5999ccbbe0c2abeb10d56452fb791adb0515466d3f3aa537486b7c79d7178d0:3495"
   CIDRAM/CIDRAM/FrontEnd.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/FrontEnd.php"
-   Checksum: "83a6f371a28e49c6e898212275ef926bb589c96a57e3b2be94483a7271dce6b5:323646"
+   Checksum: "fb97c23b2c705b802d954de21ced9a9b2a9ab8eaa39212b732922510c3111414:319327"
   CIDRAM/CIDRAM/FrontEndMethods.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/FrontEndMethods.php"
-   Checksum: "acea6b0ad220977924bea576dca34a01d9f0cf6c8fd2a833d2a84636d48a6665:52555"
+   Checksum: "688bd2b0cf41b34d2553ca8f443faa5f0e816afbbb1c9e305514e533192e1f6c:55208"
   CIDRAM/CIDRAM/Logs.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Logs.php"
    Checksum: "f3fdc90d53edb4ee750ab3994e3878ec2cbcb396c090e5f430c5e3f6fe1482f3:17850"
@@ -348,6 +348,7 @@ IPv4-ISPs:
    Checksum: "3a4778e7b45a463f797f3c57b00bfdde6a0464936b22f0cb1e35bf327992574d:684623"
    Used with: "ipv4"
 IPv4-Nonblocking:
+ False Positive Risk: "Low"
  Version: "2021.166.298"
  Files:
   signatures/ipv4_nonblocking.dat:
@@ -391,6 +392,7 @@ IPv6-ISPs:
    Checksum: "5781d681af5c3b8f0fdfbaaf661bf0aa82e5c619dd0ff91a77c94ed936e8c0dc:43248"
    Used with: "ipv6"
 IPv6-Nonblocking:
+ False Positive Risk: "Low"
  Version: "2021.166.298"
  Files:
   signatures/ipv6_nonblocking.dat:
@@ -983,7 +985,7 @@ BOBUAM:
 theme/bluemetal:
  Name: "Theme: Blue Metal"
  Extended Description: "<img src="https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/themes/preview-bluemetal.png" alt="Preview" />"
- Version: "2023.36.1"
+ Version: "2023.40.0"
  Dependencies:
   CIDRAM Core: "^3.0.0-DEV"
   CIDRAM Front-End: "^3.0.0-DEV"
@@ -996,17 +998,17 @@ theme/bluemetal:
    Checksum: "9468bb7612b9481f47832ff239cdaf09a2c1b0f1ab4c0212b97b96e93bb8794d:2546"
   assets/frontend/bluemetal/frontend.css:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/bluemetal/frontend.css"
-   Checksum: "f9755265b1064c992ee699d94cc70dd9adfe27fb412de72af8e8cfe7bbdc726c:11515"
+   Checksum: "864eb890e5b14e9b182a00767da8598746fc50a96eb1ebbbd5b2e4f7baefdfcf:11752"
   assets/frontend/bluemetal/frontend.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/bluemetal/frontend.html"
    Checksum: "bc2ad9ab2f4afc68cec163ce866d5b2be709f79eca98b104629b55e771296d3d:892"
   assets/frontend/bluemetal/pips.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/bluemetal/pips.yml"
-   Checksum: "201cdb3e77b59386a43efad4a1fc2180d398779e211fb0f3dad8a9dd8b4f602d:729"
+   Checksum: "f56b1d6cad294276a83a0e703e8e53f6d32d8aa7fb580fa7f3c56878c9e95357:810"
 theme/fullmoon:
  Name: "Theme: Full Moon"
  Extended Description: "<img src="https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/themes/preview-fullmoon.png" alt="Preview" />"
- Version: "2023.36.1"
+ Version: "2023.40.0"
  Dependencies:
   CIDRAM Core: "^3.0.0-DEV"
   CIDRAM Front-End: "^3.0.0-DEV"
@@ -1026,7 +1028,7 @@ theme/fullmoon:
    Checksum: "18f8f889225daaa0678130bcfbccf6031ef20f990e989dc13f723038d78fabd0:1493"
   assets/frontend/fullmoon/_aux.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/fullmoon/_aux.html"
-   Checksum: "c3798a8f01ada615110e8d91d5857091813dcd3a1a4eaf394c295827c0bad82d:8302"
+   Checksum: "47c25b3777cb8f888f730685806ec639140044743f7a1f2d320ab67ea9b1bc5c:8185"
   assets/frontend/fullmoon/_aux_edit.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/fullmoon/_aux_edit.html"
    Checksum: "d4f4bc4006ec858e7c92aacb4f16a1fbbe0a03099d7d597dd2105fc7c3c05956:587"
@@ -1098,7 +1100,7 @@ theme/fullmoon:
    Checksum: "2dc043c315ad494bcc06b32ded6bd46b8beb09acde8237b0ece9f191323bb5e0:743"
   assets/frontend/fullmoon/frontend.css:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/fullmoon/frontend.css"
-   Checksum: "89972788203e760a5658d5b24f9011ec4091d6900d013b7dadde58aa57981166:10442"
+   Checksum: "25cfb92ec88c3783ef81cde090c038c5d6b716f0afa2bece9bf8dc15679809dc:10535"
   assets/frontend/fullmoon/frontend.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/fullmoon/frontend.html"
    Checksum: "2818827a4bbaa5a8bc5c2ae59e748504921235afc8c0a9301a7667ee5a9e283c:843"
@@ -1107,11 +1109,11 @@ theme/fullmoon:
    Checksum: "17703149e6f8a4312527243bfaf369c2dfa73e56c50d4d2fdb2b9f8fa0b332c3:34088"
   assets/frontend/fullmoon/pips.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/fullmoon/pips.yml"
-   Checksum: "eeb1b76d234af46fe3134d92511dad400fd4d144db617b64e8d026771d4d446f:729"
+   Checksum: "5f4eb9f1f23c3e0ad04fe77a4174e9a7635ef8c2cc8ecec1d1c72f726c1217a3:810"
 theme/moss:
  Name: "Theme: Moss"
  Extended Description: "<img src="https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/themes/preview-moss.png" alt="Preview" />"
- Version: "2023.36.1"
+ Version: "2023.40.0"
  Dependencies:
   CIDRAM Core: "^3.0.0-DEV"
   CIDRAM Front-End: "^3.0.0-DEV"
@@ -1127,14 +1129,14 @@ theme/moss:
    Checksum: "ceb4497bbae40d04a2a8ecb42086307bc57677235685ea07bedf98795dea780f:17804"
   assets/frontend/moss/frontend.css:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/moss/frontend.css"
-   Checksum: "955f41c57881da10a11bd49ae1c287255d7fb82902839290e17216d19b6b80da:11704"
+   Checksum: "1cef278e744f4d15b32f65ef34e233030ad3c1a2bc3f1118c7cf68b48b0ae5e9:11950"
   assets/frontend/moss/frontend.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/moss/frontend.html"
    Checksum: "bc2ad9ab2f4afc68cec163ce866d5b2be709f79eca98b104629b55e771296d3d:892"
 theme/primer:
  Name: "Theme: Primer"
  Extended Description: "<img src="https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/themes/preview-primer.png" alt="Preview" />"
- Version: "2023.36.1"
+ Version: "2023.40.0"
  Dependencies:
   CIDRAM Core: "^3.0.0-DEV"
   CIDRAM Front-End: "^3.0.0-DEV"
@@ -1154,14 +1156,14 @@ theme/primer:
    Checksum: "15d639db102c0986b59e9a0cded4f39e9d84184841a83cfa0ebdf7d6562c77fe:627"
   assets/frontend/primer/frontend.css:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/primer/frontend.css"
-   Checksum: "0fc3a4e7b7ba5419f053919c11c2cbb9a351e97dcbb0b94637f58ae4a1f8a9a5:12532"
+   Checksum: "4d80231456ea08dc2f7969a4285117138fd6c1cc1bf09f9568a2207e8db37ee8:12779"
   assets/frontend/primer/frontend.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/primer/frontend.html"
    Checksum: "3b080c851026d83aa63a599a94e249209df9edea64b2ce915b269e0ec03829de:866"
 theme/primerdark:
  Name: "Theme: Primer Dark"
  Extended Description: "<img src="https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/themes/preview-primerdark.png" alt="Preview" />"
- Version: "2023.36.1"
+ Version: "2023.40.0"
  Dependencies:
   CIDRAM Core: "^3.0.0-DEV"
   CIDRAM Front-End: "^3.0.0-DEV"
@@ -1181,14 +1183,14 @@ theme/primerdark:
    Checksum: "15d639db102c0986b59e9a0cded4f39e9d84184841a83cfa0ebdf7d6562c77fe:627"
   assets/frontend/primerdark/frontend.css:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/primerdark/frontend.css"
-   Checksum: "10b3ad53691b24846f65213c40a2269e5ed533495632d200864e5700c320f6ca:12379"
+   Checksum: "51a2c44fff686f1d02820fbd81d037a45aa770452cbaca088f88a12f17d90729:12609"
   assets/frontend/primerdark/frontend.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/primerdark/frontend.html"
    Checksum: "3b080c851026d83aa63a599a94e249209df9edea64b2ce915b269e0ec03829de:866"
 theme/rbi:
  Name: "Theme: Red-Blue Inverted"
  Extended Description: "<img src="https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/themes/preview-rbi.png" alt="Preview" />"
- Version: "2023.36.1"
+ Version: "2023.40.0"
  Dependencies:
   CIDRAM Core: "^3.0.0-DEV"
   CIDRAM Front-End: "^3.0.0-DEV"
@@ -1201,11 +1203,11 @@ theme/rbi:
    Checksum: "5473b9a847ad81a2329eecbe060524856476f4562484e83a60ee98123cda0771:2436"
   assets/frontend/rbi/frontend.css:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/rbi/frontend.css"
-   Checksum: "bfe7433c379e69a93dc227b67341728ba58b7a2a7f27bb4ba5edfc0489c1d32b:11370"
+   Checksum: "b9cd7d4231fa618467e07dbff4601a074cc9bb6cec2504a884c11ca7cea83343:11617"
 theme/slate:
  Name: "Theme: Slate"
  Extended Description: "<img src="https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/themes/preview-slate.png" alt="Preview" />"
- Version: "2023.36.1"
+ Version: "2023.40.0"
  Dependencies:
   CIDRAM Core: "^3.0.0-DEV"
   CIDRAM Front-End: "^3.0.0-DEV"
@@ -1218,10 +1220,10 @@ theme/slate:
    Checksum: "7fbbf7c20d96223d889923bd5ff5fc581de2b2e8d78fa27280ed4b0be373722e:2608"
   assets/frontend/slate/frontend.css:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/slate/frontend.css"
-   Checksum: "be28062190a8b028df0853d8cb1dcd09bfcadfc0a803554fe8c6ed98a3586616:11467"
+   Checksum: "5e63933e67bdfa4e2b42ad05bfdd142fa6c47c3280534a59c502f8d54a096fee:11714"
   assets/frontend/slate/frontend.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/slate/frontend.html"
    Checksum: "bc2ad9ab2f4afc68cec163ce866d5b2be709f79eca98b104629b55e771296d3d:892"
   assets/frontend/slate/pips.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/slate/pips.yml"
-   Checksum: "eeb1b76d234af46fe3134d92511dad400fd4d144db617b64e8d026771d4d446f:729"
+   Checksum: "5f4eb9f1f23c3e0ad04fe77a4174e9a7635ef8c2cc8ecec1d1c72f726c1217a3:810"

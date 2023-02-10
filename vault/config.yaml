@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2023.01.07).
+# This file: Configuration defaults file (last modified: 2023.02.09).
 ##/
 
 Config Defaults:
@@ -798,83 +798,57 @@ Provide:
    reCAPTCHA:
     Mark for use with reCAPTCHA:
      Label: "label_aux_special_recaptcha_mark"
-     Decoration: &GreenLeft "background:linear-gradient(90deg,rgba(0,64,0,0),rgba(128,255,128,0.5));"
      Sets:
       Config:
-       recaptcha:
-        enabled: true
+       recaptcha: {enabled: true}
     Forcibly disable reCAPTCHA:
      Label: "label_aux_special_recaptcha_disable"
-     Decoration: &RedMiddle "background-color:rgba(255,128,128,0.5);"
      Sets:
       Config:
-       recaptcha:
-        usemode: 0
-        enabled: false
+       recaptcha: {usemode: 0, enabled: false}
    HCaptcha:
     Mark for use with HCaptcha:
      Label: "label_aux_special_hcaptcha_mark"
-     Decoration: *GreenLeft
      Sets:
       Config:
-       hcaptcha:
-        enabled: true
+       hcaptcha: {enabled: true}
     Forcibly disable HCaptcha:
      Label: "label_aux_special_hcaptcha_disable"
-     Decoration: *RedMiddle
      Sets:
       Config:
-       hcaptcha:
-        usemode: 0
-        enabled: false
+       hcaptcha: {usemode: 0, enabled: false}
    Output template:
-    Empty:
-     Decoration: &RedLeft "background:linear-gradient(90deg,rgba(64,0,0,0),rgba(255,128,128,0.5));"
     Suppress output template:
      Label: "label_aux_special_suppress"
-     Decoration: *RedMiddle
      Sets:
       Suppress output template: true
    Logging:
-    Empty:
-     Decoration: *RedLeft
     Suppress logging:
      Label: "label_aux_special_suppress_logging"
-     Decoration: *RedMiddle
      Sets:
       Config:
-       general:
-        logfile: ""
-        logfile_apache: ""
-        logfile_serialized: ""
+       general: {logfile: "", logfile_apache: "", logfile_serialized: ""}
    IP Tracking:
     Forcibly enable IP tracking:
      Label: "label_aux_special_ip_tracking_enable"
-     Decoration: *GreenLeft
      Sets:
       Trackable: true
     Forcibly disable IP tracking:
      Label: "label_aux_special_ip_tracking_disable"
-     Decoration: *RedMiddle
      Sets:
       Trackable: false
    Values for IP Tracking:
     Enforce extended IP tracking options:
      Label: "label_aux_special_tracking_extended"
-     Decoration: *RedLeft
      Sets:
       Tracking options override: "extended"
     Enforce default IP tracking options:
      Label: "label_aux_special_tracking_default"
-     Decoration: &OrangeMiddle "background-color:rgba(255,153,0,0.5);"
      Sets:
       Tracking options override: "default"
    Disable this rule:
-    Empty:
-     Decoration: *RedLeft
     Disable this rule:
      Label: "label_aux_special_disable"
-     Decoration: *RedMiddle
 Links:
  AbuseIPDB: "<a href="https://abuseipdb.com/" dir="ltr" hreflang="en-US" rel="noopener noreferrer external">AbuseIPDB</a>"
  BGPView: "<a href="https://bgpview.io/" dir="ltr" hreflang="en-US" rel="noopener noreferrer external">BGPView</a>"

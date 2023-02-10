@@ -172,12 +172,6 @@ function createNewRule() {
   }, 999)), e && z && document.getElementById('auxForm').submit()
 }
 
-function checkFlagsSelected() {
-  null !== window.auxFlags && window.auxFlags.forEach(function(e) {
-    document.getElementById(e).style.filter = document.getElementById(e).firstChild.checked ? 'grayscale(0)' : 'grayscale(.75)'
-  })
-}
-
 function heavenToggle(c) {
   document.getElementById('heaven'+c).classList.toggle('scaleXToZero');
   document.getElementById('heaven'+c).classList.toggle('scaleXToOne');

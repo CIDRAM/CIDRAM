@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2023.02.06).
+ * This file: Front-end functions file (last modified: 2023.02.10).
  */
 
 /**
@@ -3381,12 +3381,6 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
         );
     };
 
-    /** Used to generate IDs for radio fields. */
-    $GridID = 'AAAA';
-
-    /** Used to link radio field IDs with checkFlagsSelected. */
-    $JSAuxAppend = '';
-
     /** Iterate through the auxiliary rules. */
     foreach ($CIDRAM['AuxData'] as $Name => $Data) {
         /** Rule row ID. */
@@ -3519,6 +3513,9 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
                     $JSAppend .= sprintf('onAuxActionChange(\'%s\',\'%s\',\'%s\');', $MenuOption[0], $RuleClass, $Current);
                 }
             }
+            if ($ConditionsFrom === '') {
+                $JSAppend .= sprintf('onAuxActionChange(\'actWhl\',\'%s\',\'%s\');', $RuleClass, $Current);
+            }
             $Output .= sprintf(
                 '</select><input type="button" onclick="javascript:addCondition(\'%s\')" value="%s" class="auto" /></div>',
                 $Current,
@@ -3619,62 +3616,43 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
             );
 
             /** Other options and special flags. */
-            $Output .= '<div class="gridbox">';
             foreach ($CIDRAM['Config']['Provide']['Auxiliary Rules']['Flags'] as $FlagSetName => $FlagSet) {
                 $FlagKey = preg_replace('~[^A-Za-z]~', '', $FlagSetName);
                 $UseDefaultState = true;
+                $Options = '';
                 foreach ($FlagSet as $FlagName => $FlagData) {
-                    if ($FlagName === 'Empty' && isset($FlagData['Decoration'])) {
-                        $Output .= sprintf(
-                            '<div class="gridboxitem" style="%s"></div>',
-                            $FlagData['Decoration'] . 'filter:grayscale(.75)'
-                        );
-                        continue;
-                    }
-                    if (!isset($FlagData['Label'])) {
-                        $Output .= '<div class="gridboxitem"></div>';
-                        continue;
-                    }
-                    $Label = $CIDRAM['L10N']->getString($FlagData['Label']) ?: $FlagData['Label'];
-                    $Filter = isset($FlagData['Decoration']) ? $FlagData['Decoration'] : '';
                     if (empty($Data[$FlagName])) {
-                        $Filter .= 'filter:grayscale(.75)';
-                        $ThisSelected = '';
+                        $Selected = '';
                     } else {
-                        $Filter .= 'filter:grayscale(0)';
-                        $ThisSelected = ' checked';
                         $UseDefaultState = false;
+                        $Selected = ' selected';
                     }
-                    $Output .= sprintf(
-                        '<label><div class="gridboxitem" style="%1$s" id="%6$s"><input type="radio" class="auto" name="%2$s[%3$d]" value="%4$s" onchange="javascript:checkFlagsSelected()"%7$s /> <strong>%5$s</strong></div></label>',
-                        $Filter,
-                        $FlagKey,
-                        $Current,
+                    $Options .= sprintf(
+                        '<option value="%s"%s>%s</option>',
                         $FlagName,
-                        $Label,
-                        $GridID,
-                        $ThisSelected
+                        $Selected,
+                        $CIDRAM['L10N']->getString($FlagData['Label']) ?: $FlagName
                     );
-                    $JSAuxAppend .= ($JSAuxAppend ? ',' : '') . "'" . $GridID . "'";
-                    $GridID++;
                 }
-                $Output .= sprintf(
-                    '<label><div class="gridboxitem" style="%1$s" id="%6$s"><input type="radio" class="auto" name="%2$s[%3$d]" value="%4$s" onchange="javascript:checkFlagsSelected()"%7$s /> <strong>%5$s</strong></div></label>',
-                    $CIDRAM['FE']['Empty'] . ($UseDefaultState ? 'filter:grayscale(0)' : 'filter:grayscale(.75)'),
+                $Options = sprintf(
+                    '<select name="%s[%s]" class="auto"><option value="Default State"%s>%s</option>',
                     $FlagKey,
                     $Current,
-                    'Default State',
-                    $CIDRAM['L10N']->getString('label_aux_special_default_state'),
-                    $GridID,
-                    $UseDefaultState ? ' checked' : ''
+                    $UseDefaultState ? ' selected' : '',
+                    $CIDRAM['L10N']->getString('label_aux_special_default_state')
+                ) . $Options . '</select><br /><br />';
+                $Output .= sprintf(
+                    '<div class="iLabl s"><label for="%s[%s]">%s</label></div><div class="iCntn">%s</div>',
+                    $FlagKey,
+                    $Current,
+                    $FlagSetName . $CIDRAM['L10N']->getString('pair_separator'),
+                    $Options
                 );
-                $JSAuxAppend .= ($JSAuxAppend ? ',' : '') . "'" . $GridID . "'";
-                $GridID++;
             }
 
             /** Rule notes. */
             $Output .= sprintf(
-                '</div><div class="iCntr"><div class="iLabl s">%1$s</div><div class="iCntn"><textarea id="Notes[%2$s]" name="Notes[%2$s]" class="half">%3$s</textarea></div></div>',
+                '<div class="iCntr"><div class="iLabl s">%1$s</div><div class="iCntn"><textarea id="Notes[%2$s]" name="Notes[%2$s]" class="half">%3$s</textarea></div></div>',
                 $CIDRAM['L10N']->getString('label_aux_notes'),
                 $Current,
                 isset($Data['Notes']) ? $Data['Notes'] : ''
@@ -3885,7 +3863,7 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
     };
 
     /** Exit with generated output. */
-    return $Output . '<script type="text/javascript">window.auxFlags=['. $JSAuxAppend . '];' . $JSAppend . '</script>';
+    return $Output . '<script type="text/javascript">' . $JSAppend . '</script>';
 };
 
 /**
@@ -4855,4 +4833,62 @@ $CIDRAM['CallableRecursive'] = function (array &$Arr, $Perform, $Depth = 0) use 
             $CIDRAM['CallableRecursive']($Value, $Perform, $Depth + 1);
         }
     }
+};
+
+/**
+ * Fetch an etaggable asset as requested by the client.
+ *
+ * @param string $Asset The path to the asset.
+ * @param ?callable $Callback An optional callback.
+ * @return exit
+ */
+$CIDRAM['eTaggable'] = function ($Asset, $Callback = null) use (&$CIDRAM) {
+    if ($CIDRAM['FileManager-PathSecurityCheck']($Asset) && !preg_match('~[^\da-z._]~i', $Asset)) {
+        $ThisAsset = $CIDRAM['GetAssetPath']($Asset, true);
+        if (strlen($ThisAsset) && is_readable($ThisAsset) && ($ThisAssetDel = strrpos($ThisAsset, '.')) !== false) {
+            $Success = false;
+            $Type = strtolower(substr($ThisAsset, $ThisAssetDel + 1));
+            if ($Type === 'jpeg') {
+                $Type = 'jpg';
+            }
+            if (preg_match('/^(?:gif|jpg|png|webp)$/', $Type)) {
+                $MimeType = 'Content-Type: image/' . $Type;
+                $Success = true;
+            } elseif ($Type === 'js') {
+                $MimeType = 'Content-Type: text/javascript';
+                $Success = true;
+            } elseif ($Type === 'css') {
+                $MimeType = 'Content-Type: text/css';
+                $Success = true;
+            }
+            if ($Success) {
+                $AssetData = $CIDRAM['ReadFile']($ThisAsset);
+                $OldETag = isset($_SERVER['HTTP_IF_NONE_MATCH']) ? $_SERVER['HTTP_IF_NONE_MATCH'] : '';
+                $NewETag = hash('sha256', $AssetData) . '-' . strlen($AssetData);
+                header('Last-Modified: ' . gmdate('D, d M Y H:i:s T', filemtime($ThisAsset)));
+                header('ETag: "' . $NewETag . '"');
+                header('Expires: ' . gmdate('D, d M Y H:i:s T', $CIDRAM['Now'] + 2592000));
+                if (preg_match('~(?:^|, )(?:"' . $NewETag . '"|' . $NewETag . ')(?:$|, )~', $OldETag)) {
+                    header('HTTP/1.0 304 Not Modified');
+                    header('HTTP/1.1 304 Not Modified');
+                    header('Status: 304 Not Modified');
+                    die;
+                }
+                header($MimeType);
+                if (is_callable($Callback)) {
+                    $AssetData = $Callback($AssetData);
+                }
+                echo $AssetData;
+                die;
+            }
+        }
+        header('HTTP/1.0 404 Not Found');
+        header('HTTP/1.1 404 Not Found');
+        header('Status: 404 Not Found');
+        die;
+    }
+    header('HTTP/1.0 403 Forbidden');
+    header('HTTP/1.1 403 Forbidden');
+    header('Status: 403 Forbidden');
+    die;
 };

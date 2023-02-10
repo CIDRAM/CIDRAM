@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2023.02.05).
+ * This file: Front-end handler (last modified: 2023.02.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -236,61 +236,14 @@ if (empty($CIDRAM['L10N']->Data['Text Direction']) || $CIDRAM['L10N']->Data['Tex
 
 /** A simple passthru for non-private theme images and related data. */
 if (!empty($CIDRAM['QueryVars']['cidram-asset'])) {
-    $CIDRAM['Success'] = false;
-
-    if (
-        $CIDRAM['FileManager-PathSecurityCheck']($CIDRAM['QueryVars']['cidram-asset']) &&
-        !preg_match('~[^\da-z._]~i', $CIDRAM['QueryVars']['cidram-asset'])
-    ) {
-        $CIDRAM['ThisAsset'] = $CIDRAM['GetAssetPath']($CIDRAM['QueryVars']['cidram-asset'], true);
-        if (
-            $CIDRAM['ThisAsset'] &&
-            is_readable($CIDRAM['ThisAsset']) &&
-            ($CIDRAM['ThisAssetDel'] = strrpos($CIDRAM['ThisAsset'], '.')) !== false
-        ) {
-            $CIDRAM['ThisAssetType'] = strtolower(substr($CIDRAM['ThisAsset'], $CIDRAM['ThisAssetDel'] + 1));
-            if ($CIDRAM['ThisAssetType'] === 'jpeg') {
-                $CIDRAM['ThisAssetType'] = 'jpg';
-            }
-            if (preg_match('/^(gif|jpg|png|webp)$/', $CIDRAM['ThisAssetType'])) {
-                /** Set asset mime-type (images). */
-                header('Content-Type: image/' . $CIDRAM['ThisAssetType']);
-                $CIDRAM['Success'] = true;
-            } elseif ($CIDRAM['ThisAssetType'] === 'js') {
-                /** Set asset mime-type (JavaScript). */
-                header('Content-Type: text/javascript');
-                $CIDRAM['Success'] = true;
-            }
-            if ($CIDRAM['Success']) {
-                if (!empty($CIDRAM['QueryVars']['theme'])) {
-                    /** Prevents needlessly reloading static assets. */
-                    header('Last-Modified: ' . gmdate('D, d M Y H:i:s T', filemtime($CIDRAM['ThisAsset'])));
-                }
-                /** Send asset data. */
-                echo $CIDRAM['ReadFile']($CIDRAM['ThisAsset']);
-            }
-        }
-    }
-
-    if ($CIDRAM['Success']) {
-        die;
-    }
-
-    /** Cleanup. */
-    unset($CIDRAM['ThisAssetType'], $CIDRAM['ThisAssetDel'], $CIDRAM['ThisAsset'], $CIDRAM['Success']);
+    $CIDRAM['eTaggable']($CIDRAM['QueryVars']['cidram-asset']);
 }
 
 /** A simple passthru for the front-end CSS. */
 if ($CIDRAM['QueryVars']['cidram-page'] === 'css') {
-    $CIDRAM['AssetPath'] = $CIDRAM['GetAssetPath']('frontend.css');
-    header('Content-Type: text/css');
-    if (!empty($CIDRAM['QueryVars']['theme'])) {
-        /** Prevents needlessly reloading static assets. */
-        header('Last-Modified: ' . gmdate('D, d M Y H:i:s T', filemtime($CIDRAM['AssetPath'])));
-    }
-    /** Send asset data. */
-    echo $CIDRAM['ParseVars']($CIDRAM['L10N']->Data + $CIDRAM['FE'], $CIDRAM['ReadFile']($CIDRAM['AssetPath']));
-    die;
+    $CIDRAM['eTaggable']('frontend.css', function ($AssetData) use (&$CIDRAM) {
+        return $CIDRAM['ParseVars']($CIDRAM['L10N']->Data + $CIDRAM['FE'], $AssetData);
+    });
 }
 
 /** A simple passthru for the favicon. */
@@ -4879,47 +4832,26 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
         );
 
         /** Provides the "other options and special flags" to the default view mode new rule creation. */
-        $CIDRAM['FE']['AuxFlagsProvides'] = '<div class="gridbox">';
-        $CIDRAM['GridID'] = 'AAA';
-        $CIDRAM['JSAuxAppend'] = '';
+        $CIDRAM['FE']['AuxFlagsProvides'] = '';
         foreach ($CIDRAM['Config']['Provide']['Auxiliary Rules']['Flags'] as $CIDRAM['FlagSetName'] => $CIDRAM['FlagSet']) {
             $CIDRAM['FlagKey'] = preg_replace('~[^A-Za-z]~', '', $CIDRAM['FlagSetName']);
+            $CIDRAM['Options'] = sprintf('<select name="%s" class="auto"><option value="Default State" selected>%s</option>', $CIDRAM['FlagKey'], $CIDRAM['L10N']->getString('label_aux_special_default_state'));
             foreach ($CIDRAM['FlagSet'] as $CIDRAM['FlagName'] => $CIDRAM['FlagData']) {
-                if ($CIDRAM['FlagName'] === 'Empty' && isset($CIDRAM['FlagData']['Decoration'])) {
-                    $CIDRAM['FE']['AuxFlagsProvides'] .= sprintf(
-                        '<div class="gridboxitem" style="%s"></div>',
-                        $CIDRAM['FlagData']['Decoration'] . 'filter:grayscale(.75)'
-                    );
-                    continue;
-                }
-                if (!isset($CIDRAM['FlagData']['Label'])) {
-                    $CIDRAM['FE']['AuxFlagsProvides'] .= '<div class="gridboxitem"></div>';
-                    continue;
-                }
-                $CIDRAM['FE']['AuxFlagsProvides'] .= sprintf(
-                    '<label><div class="gridboxitem" style="%s" id="%s"><input type="radio" class="auto" name="%s" value="%s" onchange="javascript:checkFlagsSelected()" /> <strong>%s</strong></div></label>',
-                    (isset($CIDRAM['FlagData']['Decoration']) ? $CIDRAM['FlagData']['Decoration'] : '') . 'filter:grayscale(.75)',
-                    $CIDRAM['GridID'],
-                    $CIDRAM['FlagKey'],
+                $CIDRAM['Options'] .= sprintf(
+                    '<option value="%s">%s</option>',
                     $CIDRAM['FlagName'],
-                    $CIDRAM['L10N']->getString($CIDRAM['FlagData']['Label']) ?: $CIDRAM['FlagData']['Label']
+                    isset($CIDRAM['FlagData']['Label']) ? ($CIDRAM['L10N']->getString($CIDRAM['FlagData']['Label']) ?: $CIDRAM['FlagName']) : $CIDRAM['FlagName']
                 );
-                $CIDRAM['JSAuxAppend'] .= ($CIDRAM['JSAuxAppend'] ? ',' : '') . "'" . $CIDRAM['GridID'] . "'";
-                $CIDRAM['GridID']++;
             }
+            $CIDRAM['Options'] .= '</select><br /><br />';
             $CIDRAM['FE']['AuxFlagsProvides'] .= sprintf(
-                '<label><div class="gridboxitem" style="%s" id="%s"><input type="radio" class="auto" name="%s" value="%s" onchange="javascript:checkFlagsSelected()" checked /> <strong>%s</strong></div></label>',
-                $CIDRAM['FE']['Empty'] . 'filter:grayscale(0)',
-                $CIDRAM['GridID'],
+                '<div class="iLabl s"><label for="%s">%s</label></div><div class="iCntn">%s</div>',
                 $CIDRAM['FlagKey'],
-                'Default State',
-                $CIDRAM['L10N']->getString('label_aux_special_default_state')
+                $CIDRAM['FlagSetName'] . $CIDRAM['L10N']->getString('pair_separator'),
+                $CIDRAM['Options']
             );
-            $CIDRAM['JSAuxAppend'] .= ($CIDRAM['JSAuxAppend'] ? ',' : '') . "'" . $CIDRAM['GridID'] . "'";
-            $CIDRAM['GridID']++;
         }
-        $CIDRAM['FE']['AuxFlagsProvides'] .= '</div><script type="text/javascript">window.auxFlags=['. $CIDRAM['JSAuxAppend'] . ']</script>';
-        unset($CIDRAM['FlagData'], $CIDRAM['FlagName'], $CIDRAM['FlagKey'], $CIDRAM['FlagSet'], $CIDRAM['FlagSetName'], $CIDRAM['JSAuxAppend'], $CIDRAM['GridID']);
+        unset($CIDRAM['FlagData'], $CIDRAM['FlagName'], $CIDRAM['Options'], $CIDRAM['FlagKey'], $CIDRAM['FlagSet'], $CIDRAM['FlagSetName']);
 
         /** Calculate page load time (useful for debugging). */
         $CIDRAM['FE']['ProcessTime'] = microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];

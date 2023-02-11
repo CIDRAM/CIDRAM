@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2023.35.0
-# Last modified: 2023.02.05
+# Version: 2023.41.0
+# Last modified: 2023.02.11
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -63,8 +63,8 @@ Tag: Multacom Corp
 # "Hybrid cloud integration" provider. Spam, port scans, hacking, and
 # brute-force, webapp, DDoS, and SSH attacks, hacking, and sniffing for
 # vulnerabilities detected from here.
-# Stop Forum Spam (SFS) listings: 116 (AS137443).
-# Updated: 2022.02.26
+# Stop Forum Spam (SFS) listings: 16 (AS58879), 165 (AS137443).
+# Updated: 2023.02.10
 
 2403:a100::/48 Deny Cloud
 Origin: CN
@@ -72,6 +72,7 @@ Origin: CN
 2404:de80::/39 Deny Cloud
 2404:de80:400::/40 Deny Cloud
 2404:de80:800::/39 Deny Cloud
+2406:9640::/32 Deny Cloud
 Origin: HK
 Profile: Commercial;Dedicated;Infrastructure/Transit
 Tag: 51idc
@@ -132,21 +133,21 @@ Tag: New Dream Network
 
 
 # ASN 33182 ("HostDime.com, Inc").
-# Stop Forum Spam (SFS) listings: 1,887.
-# Updated: 2021.05.27 / Checked: 2022.02.22
+# Stop Forum Spam (SFS) listings: 3,050.
+# Updated: 2023.02.11
 
 2804:9c4::/32 Deny Cloud
 Origin: BR
 2803:c40::/32 Deny Cloud
 Origin: CO
-2a04:840::/43 Deny Cloud
+2a04:840::/44 Deny Cloud
 Origin: GB
 2404:a700::/32 Deny Cloud
 Origin: IN
 2806:213::/32 Deny Cloud
 Origin: MX
 2605:2080::/33 Deny Cloud
-2607:fcd8::/43 Deny Cloud
+2607:fcd8::/44 Deny Cloud
 2607:fcd8:20::/44 Deny Cloud
 Origin: US
 Profile: Dedicated;Infrastructure/Transit;Webhosting
@@ -707,7 +708,7 @@ Tag: HOSTKEY B.V
 #   44716, 45187, 54636, 58683.
 # Subtract when updating:
 # - 162.13.83.46/32 (used by "googlealert.com", "gigaalert.com", "copyscape.com").
-# Updated: 2022.02.26
+# Updated: 2022.02.26 / Checked: 2023.02.10
 
 2a0b:440::/32 Deny Cloud
 Origin: DE
@@ -840,9 +841,10 @@ Tag: Root SA
 
 # ASN 11878 ("Tzulo Inc").
 # Dedicated cloud provider + source of forum and blog spam.
-# Stop Forum Spam (SFS) listings: 2,041.
-# Updated: 2022.02.22
+# Stop Forum Spam (SFS) listings: 1,878.
+# Updated: 2023.02.10
 
+2607:1e40::/48 Deny Cloud
 2607:2780::/48 Deny Cloud
 2607:9000::/35 Deny Cloud
 2607:9000:2000::/36 Deny Cloud
@@ -4083,12 +4085,11 @@ Tag: Shenzhen Tencent
 
 
 # ASN 39572 ("DataWeb Global Group B.V").
-# Stop Forum Spam (SFS) listings: 49.
-# Updated: 2019.08.13 / Checked: 2022.02.25
+# Stop Forum Spam (SFS) listings: 305.
+# Updated: 2023.02.11
 
-2a02:b48::/31 Deny Cloud
-2a02:b4a::/32 Deny Cloud
-2a02:b4b::/48 Deny Cloud
+2a02:b48::/30 Deny Cloud
+2a02:b4c::/32 Deny Cloud
 Origin: NL
 Profile: Webhosting
 Tag: DataWeb Global
@@ -5678,10 +5679,10 @@ Tag: HostPalace
 
 
 # ASN 62 ("CyrusOne LLC").
-# Commercial cloud network. Probing for database dumps, SSH and brute-force
+# Cloud service provider. Probing for database dumps, SSH and brute-force
 # attacks detected from here. (Just blocking this ASN; Not the others).
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2021.05.28 / Checked: 2022.02.22
+# Very few listings at last check; Possible candidate for future removal.
+# Updated: 2023.02.11
 
 2605:9600::/32 Deny Cloud
 2607:ff70::/32 Deny Cloud
@@ -5689,6 +5690,7 @@ Tag: HostPalace
 2610:190:1c00::/38 Deny Cloud
 2610:190:5e00::/39 Deny Cloud
 2610:190:6000::/39 Deny Cloud
+2610:190:8000::/39 Deny Cloud
 2610:190:df00::/40 Deny Cloud
 Origin: US
 Profile: Commercial;Infrastructure/Transit
@@ -9675,8 +9677,8 @@ Tag: Sefroyek Pardaz Engineering
 
 
 # ASN 30968 ("INFOBOX").
-# Stop Forum Spam (SFS) listings: 226.
-# Updated: 2021.05.26 / Checked: 2022.02.22
+# Stop Forum Spam (SFS) listings: 48.
+# Updated: 2021.05.26 / Checked: 2023.02.10
 
 2a02:440::/32 Deny Cloud
 Origin: RU

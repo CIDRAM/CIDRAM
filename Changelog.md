@@ -138,3 +138,5 @@
 [2023.02.05; Maikuolan]: Added the ability to export individual auxiliary rules to the auxiliary rules page.
 
 [2023.02.06; Maikuolan]: Shifted the auxiliary rules view mode options to an expandable menu.
+
+[2023.02.12; Maikuolan]: Apply single-hit bypasses to API lookups (#410).

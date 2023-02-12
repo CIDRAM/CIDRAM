@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2023.02.04).
+ * This file: The CIDRAM core (last modified: 2023.02.12).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1224,8 +1224,7 @@ class Core
         if (strlen($this->CIDRAM['Hostname']) === 0 || $this->CIDRAM['Hostname'] === $this->BlockInfo['IPAddr']) {
             /** Block non-verified requests. */
             if (isset($this->CIDRAM['VPermissions'][$Friendly . ':BlockNonVerified'])) {
-                $Reason = sprintf($this->L10N->getString('Short_Unverified_UA'), $Friendly);
-                $this->trigger(true, $Reason);
+                $this->trigger(true, sprintf($this->L10N->getString('Short_Unverified_UA'), $Friendly));
                 $this->addProfileEntry('Blocked Non-Verified');
             }
 
@@ -1265,7 +1264,7 @@ class Core
                 $this->bypass((
                     isset($this->CIDRAM['VPermissions'][$Friendly . ':SingleHitBypass'], $this->BlockInfo['SignatureCount'], $this->BlockInfo['WhyReason']) &&
                     $this->BlockInfo['SignatureCount'] === 1 &&
-                    preg_match('~, L\d+:F\d+,~', $this->BlockInfo['WhyReason'])
+                    preg_match('~, L\d+:F\d+,| Lookup~', $this->BlockInfo['WhyReason'])
                 ), $this->L10N->getString('why_single_hit_bypass'));
 
                 /** Exit. */
@@ -1279,8 +1278,7 @@ class Core
             if ($Resolved === '') {
                 /** Block non-verified requests. */
                 if (isset($this->CIDRAM['VPermissions'][$Friendly . ':BlockNonVerified'])) {
-                    $Reason = sprintf($this->L10N->getString('Short_Unverified_UA'), $Friendly);
-                    $this->trigger(true, $Reason);
+                    $this->trigger(true, sprintf($this->L10N->getString('Short_Unverified_UA'), $Friendly));
                     $this->addProfileEntry('Blocked Non-Verified');
                 }
 
@@ -1303,7 +1301,7 @@ class Core
                 $this->bypass((
                     isset($this->CIDRAM['VPermissions'][$Friendly . ':SingleHitBypass'], $this->BlockInfo['SignatureCount'], $this->BlockInfo['WhyReason']) &&
                     $this->BlockInfo['SignatureCount'] === 1 &&
-                    preg_match('~, L\d+:F\d+,~', $this->BlockInfo['WhyReason'])
+                    preg_match('~, L\d+:F\d+,| Lookup~', $this->BlockInfo['WhyReason'])
                 ), $this->L10N->getString('why_single_hit_bypass'));
 
                 /** Exit. */
@@ -1313,8 +1311,7 @@ class Core
 
         /** It's a fake; Block it. */
         if (isset($this->CIDRAM['VPermissions'][$Friendly . ':BlockNegatives'])) {
-            $Reason = sprintf($this->L10N->getString('Short_Fake_UA'), $Friendly);
-            $this->trigger(true, $Reason);
+            $this->trigger(true, sprintf($this->L10N->getString('Short_Fake_UA'), $Friendly));
             $this->addProfileEntry('Blocked Negative');
         }
 
@@ -2927,7 +2924,7 @@ class Core
                 $this->bypass((
                     isset($this->CIDRAM['VPermissions'][$Friendly . ':SingleHitBypass'], $this->BlockInfo['SignatureCount'], $this->BlockInfo['WhyReason']) &&
                     $this->BlockInfo['SignatureCount'] === 1 &&
-                    preg_match('~, L\d+:F\d+,~', $this->BlockInfo['WhyReason'])
+                    preg_match('~, L\d+:F\d+,| Lookup~', $this->BlockInfo['WhyReason'])
                 ), $this->L10N->getString('why_single_hit_bypass'));
 
                 /** Exit. */
@@ -2937,8 +2934,7 @@ class Core
 
         /** Nothing matched. Block it. */
         if (isset($this->CIDRAM['VPermissions'][$Friendly . ':BlockNegatives'])) {
-            $Reason = sprintf($this->L10N->getString('Short_Fake_UA'), $Friendly);
-            $this->trigger(true, $Reason);
+            $this->trigger(true, sprintf($this->L10N->getString('Short_Fake_UA'), $Friendly));
             $this->addProfileEntry('Blocked Negative');
         }
 
@@ -2988,8 +2984,7 @@ class Core
                 if (isset($this->CIDRAM['VPermissions'][$Name . ':Verify'])) {
                     $this->{$Values['Method']}($Values['Valid domains'], $Name, $Values);
                 } elseif (isset($this->CIDRAM['VPermissions'][$Name . ':BlockNonVerified'])) {
-                    $Reason = sprintf($this->L10N->getString('Short_Unverified_UA'), $Name);
-                    $this->trigger(true, $Reason);
+                    $this->trigger(true, sprintf($this->L10N->getString('Short_Unverified_UA'), $Name));
                     $this->addProfileEntry('Blocked Non-Verified');
                 }
             }

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: AbuseIPDB module (last modified: 2022.06.06).
+ * This file: AbuseIPDB module (last modified: 2023.02.12).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -29,7 +29,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
      * We can't perform lookups without an API key, so we should check for
      * that, too.
      */
-    if (!strlen($this->Configuration['abuseipdb']['api_key'])) {
+    if ($this->Configuration['abuseipdb']['api_key'] === '') {
         return;
     }
 
@@ -129,6 +129,11 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     /** Block the request if the IP is listed by AbuseIPDB. */
     $this->trigger(
         (
+            !(
+                (isset($this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']]['usageType']) && $this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']]['usageType'] === 'Search Engine Spider') ||
+                $this->hasProfile(['Search Engine', 'Search Engine Spider']) ||
+                (isset($this->BlockInfo['Verified']) && $this->BlockInfo['Verified'] !== '')
+            ) &&
             $this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']]['isWhitelisted'] === false &&
             $this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']]['abuseConfidenceScore'] >= $this->Configuration['abuseipdb']['minimum_confidence_score'] &&
             $this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']]['totalReports'] >= $this->Configuration['abuseipdb']['minimum_total_reports']
@@ -152,7 +157,7 @@ if ($this->Configuration['abuseipdb']['report_back']) {
     $this->Reporter->addHandler(function ($Report) {
         if (
             isset($this->CIDRAM['AbuseIPDB-Recently Reported-' . $Report['IP']]) ||
-            $this->Cache->getEntry('AbuseIPDB-Recently Reported-' . $Report['IP']) !== false
+            ($this->CIDRAM['AbuseIPDB-Recently Reported-' . $Report['IP']] = $this->Cache->getEntry('AbuseIPDB-Recently Reported-' . $Report['IP'])) !== false
         ) {
             return;
         }

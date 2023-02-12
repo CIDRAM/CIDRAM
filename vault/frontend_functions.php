@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2023.02.10).
+ * This file: Front-end functions file (last modified: 2023.02.11).
  */
 
 /**
@@ -1236,7 +1236,7 @@ $CIDRAM['Tally'] = function (string $In, string $BlockLink, array $Exclusions = 
     if (empty($Data['Origin'])) {
         unset($Data['Origin']);
     }
-    $Out = '<table>';
+    $Out = '<table id="logsTA">';
     foreach ($Data as $Field => $Entries) {
         $Out .= '<tr><td class="h2f" colspan="2"><div class="s">' . $Field . "</div></td></tr>\n";
         if ($CIDRAM['FE']['SortOrder'] === 'descending') {
@@ -5110,7 +5110,7 @@ $CIDRAM['CallableRecursive'] = function (array &$Arr, callable $Perform, int $De
  *
  * @param string $Asset The path to the asset.
  * @param ?callable $Callback An optional callback.
- * @return exit
+ * @return never
  */
 $CIDRAM['eTaggable'] = function (string $Asset, ?callable $Callback = null) use (&$CIDRAM): void {
     if ($CIDRAM['FileManager-PathSecurityCheck']($Asset) && !preg_match('~[^\da-z._]~i', $Asset)) {

@@ -155,10 +155,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 /** Add AbuseIPDB report handler. */
 if ($this->Configuration['abuseipdb']['report_back']) {
     $this->Reporter->addHandler(function ($Report) {
-        if (
-            isset($this->CIDRAM['AbuseIPDB-Recently Reported-' . $Report['IP']]) ||
-            ($this->CIDRAM['AbuseIPDB-Recently Reported-' . $Report['IP']] = $this->Cache->getEntry('AbuseIPDB-Recently Reported-' . $Report['IP'])) !== false
-        ) {
+        if (isset($this->CIDRAM['AbuseIPDB-Recently Reported-' . $Report['IP']])) {
             return;
         }
         $Categories = [];

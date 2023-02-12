@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2023.02.10).
+ * This file: Front-end handler (last modified: 2023.02.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -248,8 +248,19 @@ if ($CIDRAM['QueryVars']['cidram-page'] === 'css') {
 
 /** A simple passthru for the favicon. */
 if ($CIDRAM['QueryVars']['cidram-page'] === 'favicon') {
+    $CIDRAM['FavIconData'] = base64_decode($CIDRAM['favicon']);
+    $CIDRAM['OldETag'] = $_SERVER['HTTP_IF_NONE_MATCH'] ?? '';
+    $CIDRAM['NewETag'] = hash('sha256', $CIDRAM['FavIconData']) . '-' . strlen($CIDRAM['FavIconData']);
+    header('ETag: "' . $CIDRAM['NewETag'] . '"');
+    header('Expires: ' . gmdate('D, d M Y H:i:s T', $CIDRAM['Now'] + 2592000));
+    if (preg_match('~(?:^|, )(?:"' . $CIDRAM['NewETag'] . '"|' . $CIDRAM['NewETag'] . ')(?:$|, )~', $CIDRAM['OldETag'])) {
+        header('HTTP/1.0 304 Not Modified');
+        header('HTTP/1.1 304 Not Modified');
+        header('Status: 304 Not Modified');
+        die;
+    }
     header('Content-Type: image/' . $CIDRAM['favicon_extension']);
-    echo base64_decode($CIDRAM['favicon']);
+    echo $CIDRAM['FavIconData'];
     die;
 }
 
@@ -5454,7 +5465,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
 
     /** Logs control form. */
     $CIDRAM['FE']['TextModeSwitchLink'] = sprintf(
-        '<td class="h4"><span class="s">%1$s<br /><select name="textMode" class="auto">' .
+        '<td class="h4"><span class="s"><label for="textMode">%1$s</label><br /><select name="textMode" class="auto" title="%1$s">' .
         '<option value="simple"%2$s>%3$s</option>' .
         '<option value="fancy"%4$s>%5$s</option>' .
         '<option value="tally"%6$s>%7$s</option>' .
@@ -5499,7 +5510,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
             [$CIDRAM['L10N']->getString('field_id'), $CIDRAM['L10N']->getString('field_datetime')]
         );
     } else {
-        $CIDRAM['FE']['logfileData'] = '<textarea readonly>' . trim($CIDRAM['FE']['logfileData']) . '</textarea>';
+        $CIDRAM['FE']['logfileData'] = '<textarea id="logsTA" readonly>' . trim($CIDRAM['FE']['logfileData']) . '</textarea>';
     }
 
     /** Generate a list of the logs. */
@@ -5516,7 +5527,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
 
     /** Calculate page load time (useful for debugging). */
     $CIDRAM['FE']['ProcessTime'] = microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];
-    $CIDRAM['FE']['SearchInfo'] = '<td colspan="3" class="spanner">' . sprintf(
+    $CIDRAM['FE']['SearchInfo'] = '<td colspan="2" class="spanner">' . sprintf(
         $CIDRAM['L10N']->getPlural($CIDRAM['FE']['ProcessTime'], 'state_loadtime'),
         '<span class="txtRd">' . $CIDRAM['NumberFormatter']->format($CIDRAM['FE']['ProcessTime'], 3) . '</span>'
     ) . $CIDRAM['FE']['SearchInfo'] . '</td>';

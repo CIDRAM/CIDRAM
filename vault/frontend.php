@@ -249,7 +249,7 @@ if ($CIDRAM['QueryVars']['cidram-page'] === 'css') {
 /** A simple passthru for the favicon. */
 if ($CIDRAM['QueryVars']['cidram-page'] === 'favicon') {
     $CIDRAM['FavIconData'] = base64_decode($CIDRAM['favicon']);
-    $CIDRAM['OldETag'] = $_SERVER['HTTP_IF_NONE_MATCH'] ?? '';
+    $CIDRAM['OldETag'] = isset($_SERVER['HTTP_IF_NONE_MATCH']) ? $_SERVER['HTTP_IF_NONE_MATCH'] : '';
     $CIDRAM['NewETag'] = hash('sha256', $CIDRAM['FavIconData']) . '-' . strlen($CIDRAM['FavIconData']);
     header('ETag: "' . $CIDRAM['NewETag'] . '"');
     header('Expires: ' . gmdate('D, d M Y H:i:s T', $CIDRAM['Now'] + 2592000));

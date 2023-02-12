@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2023.02.10).
+ * This file: General methods used by the front-end (last modified: 2023.02.11).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1249,7 +1249,7 @@ trait FrontEndMethods
      *
      * @param string $Asset The path to the asset.
      * @param ?callable $Callback An optional callback.
-     * @return exit
+     * @return never
      */
     private function eTaggable(string $Asset, ?callable $Callback = null): void
     {

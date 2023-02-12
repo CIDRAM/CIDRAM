@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used by the logs page (last modified: 2022.06.19).
+ * This file: Methods used by the logs page (last modified: 2023.02.11).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -239,7 +239,7 @@ trait Logs
         if (empty($Data['Origin'])) {
             unset($Data['Origin']);
         }
-        $Out = '<table>';
+        $Out = '<table id="logsTA">';
         foreach ($Data as $Field => $Entries) {
             $Out .= '<tr><td class="h2f" colspan="2"><div class="s">' . $Field . "</div></td></tr>\n";
             if ($this->FE['SortOrder'] === 'descending') {

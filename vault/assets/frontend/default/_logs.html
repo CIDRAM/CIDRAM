@@ -2,23 +2,20 @@
 <tr>
   <td class="nav{mod_class_nav}"><div class="big">
 {nav}    <hr /></div>
-    <table><tr><td class="ng1"><div class="idx">
-      {LogFiles}
-    </div></td></tr></table>
+    <div class="ng1 idx">{LogFiles}</div>
   </td>
   <td class="right{mod_class_right}">
-  <span class="s">
-    <form method="GET" action=""><input type="hidden" name="cidram-page" value="logs" />
-      <table>
-        <tr>
-          {TextModeSwitchLink}
-        </tr>
-        <tr>
-          {SearchInfo}
-        </tr>
-      </table>
-    </form>
-  </span>
+  <div class="ng1 flong mob">{LogFiles}</div>
+  <form class="s" method="GET" action=""><input type="hidden" name="cidram-page" value="logs" />
+    <table>
+      <tr>
+        {TextModeSwitchLink}
+      </tr>
+      <tr>
+        {SearchInfo}
+      </tr>
+    </table>
+  </form>
 {logfileData}
   </td>
 </tr>

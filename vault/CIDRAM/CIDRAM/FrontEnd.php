@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.02.10).
+ * This file: The CIDRAM front-end (last modified: 2023.02.12).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -345,8 +345,19 @@ class FrontEnd extends Core
 
         /** A simple passthru for the favicon. */
         if ($this->CIDRAM['QueryVars']['cidram-page'] === 'favicon') {
+            $FavIconData = base64_decode($this->FE['favicon']);
+            $OldETag = $_SERVER['HTTP_IF_NONE_MATCH'] ?? '';
+            $NewETag = hash('sha256', $FavIconData) . '-' . strlen($FavIconData);
+            header('ETag: "' . $NewETag . '"');
+            header('Expires: ' . gmdate('D, d M Y H:i:s T', $this->Now + 2592000));
+            if (preg_match('~(?:^|, )(?:"' . $NewETag . '"|' . $NewETag . ')(?:$|, )~', $OldETag)) {
+                header('HTTP/1.0 304 Not Modified');
+                header('HTTP/1.1 304 Not Modified');
+                header('Status: 304 Not Modified');
+                die;
+            }
             header('Content-Type: image/' . $this->FE['favicon_extension']);
-            echo base64_decode($this->FE['favicon']);
+            echo $FavIconData;
             die;
         }
 
@@ -883,20 +894,8 @@ class FrontEnd extends Core
             ) {
                 header('Content-Type: image/x-icon');
                 echo $this->readFile($this->Vault . $this->CIDRAM['QueryVars']['file']);
-            } elseif (
-                !empty($this->CIDRAM['QueryVars']['icon']) &&
-                $this->pathSecurityCheck($this->CIDRAM['QueryVars']['icon'] . '.gif') &&
-                ($this->CIDRAM['IconPath'] = $this->getAssetPath($this->CIDRAM['QueryVars']['icon'] . '.gif')) &&
-                ($this->CIDRAM['IconData'] = $this->readFile($this->CIDRAM['IconPath']))
-            ) {
-                /** Set mime-type. */
-                header('Content-Type: image/gif');
-
-                /** Prevents needlessly reloading static assets. */
-                header('Last-Modified: ' . gmdate('D, d M Y H:i:s T', filemtime($this->CIDRAM['IconPath'])));
-
-                /** Send icon data. */
-                echo $this->CIDRAM['IconData'];
+            } elseif (!empty($this->CIDRAM['QueryVars']['icon'])) {
+                $this->eTaggable($this->CIDRAM['QueryVars']['icon'] . '.gif');
             }
         }
 
@@ -5292,7 +5291,7 @@ class FrontEnd extends Core
 
             /** Logs control form. */
             $this->FE['TextModeSwitchLink'] = sprintf(
-                '<td class="h4"><span class="s">%1$s<br /><select name="textMode" class="auto">' .
+                '<td class="h4"><span class="s"><label for="textMode">%1$s</label><br /><select name="textMode" class="auto" title="%1$s">' .
                 '<option value="simple"%2$s>%3$s</option>' .
                 '<option value="fancy"%4$s>%5$s</option>' .
                 '<option value="tally"%6$s>%7$s</option>' .
@@ -5337,7 +5336,7 @@ class FrontEnd extends Core
                     [$this->L10N->getString('field_id'), $this->L10N->getString('field_datetime')]
                 );
             } else {
-                $this->FE['logfileData'] = '<textarea readonly>' . trim($this->FE['logfileData']) . '</textarea>';
+                $this->FE['logfileData'] = '<textarea id="logsTA" readonly>' . trim($this->FE['logfileData']) . '</textarea>';
             }
 
             /** Generate a list of the logs. */
@@ -5354,7 +5353,7 @@ class FrontEnd extends Core
 
             /** Calculate page load time (useful for debugging). */
             $this->FE['ProcessTime'] = microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];
-            $this->FE['SearchInfo'] = '<td colspan="3" class="spanner">' . sprintf(
+            $this->FE['SearchInfo'] = '<td colspan="2" class="spanner">' . sprintf(
                 $this->L10N->getPlural($this->FE['ProcessTime'], 'state_loadtime'),
                 '<span class="txtRd">' . $this->NumberFormatter->format($this->FE['ProcessTime'], 3) . '</span>'
             ) . $this->FE['SearchInfo'] . '</td>';

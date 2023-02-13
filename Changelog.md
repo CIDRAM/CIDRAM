@@ -140,3 +140,5 @@
 [2023.02.06; Maikuolan]: Shifted the auxiliary rules view mode options to an expandable menu.
 
 [2023.02.12; Maikuolan]: Apply single-hit bypasses to API lookups (#410).
+
+[2023.02.13; Maikuolan]: Slightly improved performance for when using PDO (#393).

@@ -142,3 +142,5 @@
 [2023.02.12; Maikuolan]: Apply single-hit bypasses to API lookups (#410).
 
 [2023.02.13; Maikuolan]: Slightly improved performance for when using PDO (#393).
+
+[2023.02.14; Maikuolan]: Slightly improved client-specified language overrides.

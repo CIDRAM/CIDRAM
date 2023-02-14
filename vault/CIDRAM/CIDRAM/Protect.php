@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2023.01.23).
+ * This file: Protect traits (last modified: 2023.02.14).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -23,15 +23,11 @@ trait Protect
     public function protect()
     {
         /** Attach client-accepted L10N declaration. */
-        if ($this->Configuration['general']['lang'] === $this->CIDRAM['Client-L10N-Accepted']) {
-            $this->CIDRAM['L10N-Lang-Attache'] = '';
-        } else {
-            $this->CIDRAM['L10N-Lang-Attache'] = sprintf(
-                ' lang="%s" dir="%s"',
-                $this->CIDRAM['Client-L10N-Accepted'],
-                $this->CIDRAM['Client-L10N']->Data['Text Direction'] ?? 'ltr'
-            );
-        }
+        $this->CIDRAM['L10N-Lang-Attache'] = $this->Configuration['general']['lang'] === $this->ClientL10NAccepted ? '' : sprintf(
+            ' lang="%s" dir="%s"',
+            $this->ClientL10NAccepted,
+            $this->ClientL10N->Data['Text Direction'] ?? 'ltr'
+        );
 
         /** Initialise stages. */
         $this->Stages = array_flip(explode("\n", $this->Configuration['general']['stages']));
@@ -720,7 +716,7 @@ trait Protect
                     $this->BlockInfo['ReasonMessage'] .= sprintf(
                         '<br /><br /><span%s>%s</span>',
                         $this->CIDRAM['L10N-Lang-Attache'],
-                        $this->CIDRAM['Client-L10N']->getString('MoreInfo')
+                        $this->ClientL10N->getString('MoreInfo')
                     );
                     $this->arrayify($this->Configuration['More Info']);
 
@@ -743,10 +739,10 @@ trait Protect
                     [
                         'L10N-Lang-Attache' => $this->CIDRAM['L10N-Lang-Attache'],
                         'GeneratedBy' => isset($this->CIDRAM['Fields']['ScriptIdent:ShowInPageOutput']) ? sprintf(
-                            $this->CIDRAM['Client-L10N']->getString('generated_by'),
+                            $this->ClientL10N->getString('generated_by'),
                             '<div id="ScriptIdent" dir="ltr">' . $this->ScriptIdent . '</div>'
                         ) : '',
-                        'Title' => $this->CIDRAM['Client-L10N']->getString($this->Configuration['template_data']['block_event_title']) ?: $this->Configuration['template_data']['block_event_title']
+                        'Title' => $this->ClientL10N->getString($this->Configuration['template_data']['block_event_title']) ?: $this->Configuration['template_data']['block_event_title']
                     ]
                 );
                 if (!isset($this->CIDRAM['Fields']['ReasonMessage:ShowInPageOutput'])) {
@@ -756,8 +752,8 @@ trait Protect
                 /** Pull relevant client-specified L10N data first. */
                 if (!empty($this->CIDRAM['L10N-Lang-Attache'])) {
                     foreach (['denied', 'captcha_cookie_warning', 'captcha_message', 'captcha_message_invisible', 'label_submit'] as $PullThis) {
-                        if (isset($this->CIDRAM['Client-L10N']->Data[$PullThis])) {
-                            $this->CIDRAM['Parsables'][$PullThis] = $this->CIDRAM['Client-L10N']->Data[$PullThis];
+                        if (isset($this->ClientL10N->Data[$PullThis])) {
+                            $this->CIDRAM['Parsables'][$PullThis] = $this->ClientL10N->Data[$PullThis];
                         }
                     }
                     unset($PullThis);
@@ -813,7 +809,7 @@ trait Protect
                         $HTML = '';
                     } elseif (!file_exists($this->AssetsPath . $this->CIDRAM['template_file'])) {
                         header('Content-Type: text/plain');
-                        $HTML = '[CIDRAM] ' . $this->CIDRAM['Client-L10N']->getString('denied');
+                        $HTML = '[CIDRAM] ' . $this->ClientL10N->getString('denied');
                     } else {
                         $this->BlockInfo['EmailAddr'] = '';
 
@@ -825,10 +821,10 @@ trait Protect
                                     '?subject=CIDRAM%20Event&body=' . urlencode($this->parseVars(
                                         $this->CIDRAM['Parsables'],
                                         $this->CIDRAM['FieldTemplates']['Logs'] . "\n"
-                                    )) . '"><strong>' . $this->CIDRAM['Client-L10N']->getString('click_here') . '</strong></a>';
+                                    )) . '"><strong>' . $this->ClientL10N->getString('click_here') . '</strong></a>';
                                 $this->BlockInfo['EmailAddr'] = "\n  <p class=\"detected\"" . $this->CIDRAM['L10N-Lang-Attache'] . '>' . $this->parseVars([
                                     'ClickHereLink' => $this->BlockInfo['EmailAddr']
-                                ], $this->CIDRAM['Client-L10N']->getString('Support_Email')) . '</p>';
+                                ], $this->ClientL10N->getString('Support_Email')) . '</p>';
                             } elseif ($this->Configuration['general']['emailaddr_display_style'] === 'noclick') {
                                 $this->BlockInfo['EmailAddr'] = "\n  <p class=\"detected\" dir=\"ltr\">" . $this->parseVars([
                                     'EmailAddr' => str_replace(
@@ -836,7 +832,7 @@ trait Protect
                                         '<img src="data:image/gif;base64,R0lGODdhCQAKAIABAAAAAP///ywAAAAACQAKAAACE4yPAcsG+ZR7kcp6pWY4Hb54SAEAOw==" alt="@" />',
                                         '<strong>' . $this->Configuration['general']['emailaddr'] . '</strong>'
                                     )
-                                ], $this->CIDRAM['Client-L10N']->getString('Support_Email_2')) . '</p>';
+                                ], $this->ClientL10N->getString('Support_Email_2')) . '</p>';
                             }
                         }
 
@@ -845,7 +841,7 @@ trait Protect
                             '<br /><a href="%s"%s>%s</a>',
                             $this->Configuration['legal']['privacy_policy'],
                             $this->CIDRAM['L10N-Lang-Attache'],
-                            $this->CIDRAM['Client-L10N']->getString('PrivacyPolicy')
+                            $this->ClientL10N->getString('PrivacyPolicy')
                         );
 
                         /** Generate HTML output. */
@@ -942,16 +938,16 @@ trait Protect
                     $this->CIDRAM['Parsables'] = array_merge($this->CIDRAM['FieldTemplates'], $this->CIDRAM['FieldTemplates'], $this->BlockInfo);
                     $this->CIDRAM['Parsables']['L10N-Lang-Attache'] = $this->CIDRAM['L10N-Lang-Attache'];
                     $this->CIDRAM['Parsables']['GeneratedBy'] = isset($this->CIDRAM['Fields']['ScriptIdent:ShowInPageOutput']) ? sprintf(
-                        $this->CIDRAM['Client-L10N']->getString('generated_by'),
+                        $this->ClientL10N->getString('generated_by'),
                         '<div id="ScriptIdent" dir="ltr">' . $this->ScriptIdent . '</div>'
                     ) : '';
-                    $this->CIDRAM['Parsables']['Title'] = $this->CIDRAM['Client-L10N']->getString($this->Configuration['template_data']['captcha_title']) ?: $this->Configuration['template_data']['captcha_title'];
+                    $this->CIDRAM['Parsables']['Title'] = $this->ClientL10N->getString($this->Configuration['template_data']['captcha_title']) ?: $this->Configuration['template_data']['captcha_title'];
 
                     /** Pull relevant client-specified L10N data first. */
                     if (!empty($this->CIDRAM['L10N-Lang-Attache'])) {
                         foreach (['captcha_cookie_warning', 'captcha_message_automated_traffic', 'captcha_message', 'captcha_message_invisible', 'label_submit'] as $PullThis) {
-                            if (isset($this->CIDRAM['Client-L10N']->Data[$PullThis])) {
-                                $this->CIDRAM['Parsables'][$PullThis] = $this->CIDRAM['Client-L10N']->Data[$PullThis];
+                            if (isset($this->ClientL10N->Data[$PullThis])) {
+                                $this->CIDRAM['Parsables'][$PullThis] = $this->ClientL10N->Data[$PullThis];
                             }
                         }
                         unset($PullThis);
@@ -976,7 +972,7 @@ trait Protect
                         '<br /><a href="%s"%s>%s</a>',
                         $this->Configuration['legal']['privacy_policy'],
                         $this->CIDRAM['L10N-Lang-Attache'],
-                        $this->CIDRAM['Client-L10N']->getString('PrivacyPolicy')
+                        $this->ClientL10N->getString('PrivacyPolicy')
                     );
 
                     /** Process non-blocked status code. */
@@ -1044,8 +1040,8 @@ trait Protect
             $this->CIDRAM['FieldTemplates']['Output'][] = sprintf(
                 '<span class="textLabel"%s>%s%s</span>%s<br />',
                 $this->CIDRAM['L10N-Lang-Attache'],
-                $this->CIDRAM['Client-L10N']->getString($FieldName) ?: $this->L10N->getString($FieldName) ?: $FieldName,
-                $this->CIDRAM['Client-L10N']->getString('pair_separator') ?: $this->L10N->getString('pair_separator') ?: ': ',
+                $this->ClientL10N->getString($FieldName) ?: $this->L10N->getString($FieldName) ?: $FieldName,
+                $this->ClientL10N->getString('pair_separator') ?: $this->L10N->getString('pair_separator') ?: ': ',
                 $Prepared
             );
         }

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2023.02.12).
+ * This file: The CIDRAM core (last modified: 2023.02.14).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -2786,7 +2786,7 @@ class Core
         }
 
         /** Instantiate the L10N object, or append to the instance if it already exists. */
-        if (isset($this->L10N) && $this->L10N instanceof \Maikuolan\Common\L10N && is_array($this->L10N->Data)) {
+        if ($this->L10N instanceof \Maikuolan\Common\L10N && is_array($this->L10N->Data)) {
             if (!empty($Primary) && is_array($this->L10N->Data)) {
                 $this->L10N->Data = array_merge($this->L10N->Data, $Primary);
             }
@@ -2804,55 +2804,60 @@ class Core
 
         /** Load client-specified L10N data if possible. */
         if (!$this->Configuration['general']['lang_override'] || empty($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
-            if (!isset($this->CIDRAM['Client-L10N']) || !($this->CIDRAM['Client-L10N'] instanceof \Maikuolan\Common\L10N)) {
-                $this->CIDRAM['Client-L10N'] = &$this->L10N;
+            if (!($this->ClientL10N instanceof \Maikuolan\Common\L10N)) {
+                $this->ClientL10N = &$this->L10N;
             }
         } else {
-            $Accepted = preg_replace(['~^([^,]*).*$~', '~[^-A-Za-z]~'], ['\1', ''], $_SERVER['HTTP_ACCEPT_LANGUAGE']);
-            $Primary = '';
-            $IsSameAs = false;
-            if ($this->Configuration['general']['lang'] === $Accepted) {
-                $IsSameAs = true;
-            } elseif (is_readable($Path . $Accepted . '.yml')) {
-                $Primary = $this->readFile($Path . $Accepted . '.yml');
-            } else {
-                $Accepted = strtolower(preg_replace('~^([^-]*).*$~', '\1', $Accepted));
+            $Try = explode(',', $_SERVER['HTTP_ACCEPT_LANGUAGE']);
+            foreach ($Try as $Accepted) {
+                $Accepted = preg_replace(['~;.*$~', '~[^-A-Za-z]~'], '', $Accepted);
+                $ForAutoAssign = $Accepted;
+                $Primary = '';
+                $IsSameAs = false;
                 if ($this->Configuration['general']['lang'] === $Accepted) {
                     $IsSameAs = true;
-                } elseif (is_readable($Path . $Accepted . '.yml')) {
+                    break;
+                }
+                if (is_readable($Path . $Accepted . '.yml')) {
                     $Primary = $this->readFile($Path . $Accepted . '.yml');
+                    break;
+                }
+                $Accepted = strtolower(preg_replace('~-.*$~', '', $Accepted));
+                if ($this->Configuration['general']['lang'] === $Accepted) {
+                    $IsSameAs = true;
+                    break;
+                }
+                if (is_readable($Path . $Accepted . '.yml')) {
+                    $Primary = $this->readFile($Path . $Accepted . '.yml');
+                    break;
                 }
             }
 
             /** Process client-specified L10N data. */
             if ($IsSameAs) {
-                if (!isset($this->CIDRAM['Client-L10N']) || !($this->CIDRAM['Client-L10N'] instanceof \Maikuolan\Common\L10N)) {
-                    $this->CIDRAM['Client-L10N'] = &$this->L10N;
+                if (!($this->ClientL10N instanceof \Maikuolan\Common\L10N)) {
+                    $this->ClientL10N = &$this->L10N;
                 }
-            } elseif ($Primary) {
+            } elseif ($Primary !== '') {
                 $Arr = [];
-                if (!isset($this->CIDRAM['Client-L10N-Accepted'])) {
-                    $this->CIDRAM['Client-L10N-Accepted'] = $Accepted;
+                if ($this->ClientL10NAccepted === '') {
+                    $this->ClientL10NAccepted = $Accepted;
                 }
                 $this->YAML->process($Primary, $Arr);
-                if (
-                    isset($this->CIDRAM['Client-L10N']) &&
-                    $this->CIDRAM['Client-L10N'] instanceof \Maikuolan\Common\L10N &&
-                    is_array($this->CIDRAM['Client-L10N']->Data)
-                ) {
-                    $this->CIDRAM['Client-L10N']->Data = array_merge($this->CIDRAM['Client-L10N']->Data, $Arr);
+                if ($this->ClientL10N instanceof \Maikuolan\Common\L10N && is_array($this->ClientL10N->Data)) {
+                    $this->ClientL10N->Data = array_merge($this->ClientL10N->Data, $Arr);
                 } else {
-                    $this->CIDRAM['Client-L10N'] = new \Maikuolan\Common\L10N($Arr, $this->L10N);
-                    $this->CIDRAM['Client-L10N']->autoAssignRules($Accepted);
+                    $this->ClientL10N = new \Maikuolan\Common\L10N($Arr, $this->L10N);
+                    $this->ClientL10N->autoAssignRules($ForAutoAssign);
                 }
-            } elseif (!isset($this->CIDRAM['Client-L10N']) || !($this->CIDRAM['Client-L10N'] instanceof \Maikuolan\Common\L10N)) {
-                $this->CIDRAM['Client-L10N'] = new \Maikuolan\Common\L10N([], $this->L10N);
+            } elseif (!($this->ClientL10N instanceof \Maikuolan\Common\L10N)) {
+                $this->ClientL10N = new \Maikuolan\Common\L10N([], $this->L10N);
             }
         }
 
         /** Fallback for missing accepted client L10N choice. */
-        if (empty($this->CIDRAM['Client-L10N-Accepted'])) {
-            $this->CIDRAM['Client-L10N-Accepted'] = $this->Configuration['general']['lang'];
+        if ($this->ClientL10NAccepted === '') {
+            $this->ClientL10NAccepted = $this->Configuration['general']['lang'];
         }
     }
 

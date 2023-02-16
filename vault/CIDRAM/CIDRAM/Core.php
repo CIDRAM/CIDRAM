@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2023.02.14).
+ * This file: The CIDRAM core (last modified: 2023.02.16).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -385,7 +385,7 @@ class Core
         $this->Request = new \Maikuolan\Common\Request();
         $this->Request->DefaultTimeout = $this->Configuration['general']['default_timeout'];
         $ChannelsArrayData = [];
-        $this->YAML->process($this->readFile($this->Vault . 'channels.yaml'), $ChannelsArrayData);
+        $this->YAML->process($this->readFile($this->Vault . 'channels.yml'), $ChannelsArrayData);
         $this->Request->Channels = $ChannelsArrayData ?: [];
         unset($ChannelsArrayData);
         if (!isset($this->Request->Channels['Triggers'])) {

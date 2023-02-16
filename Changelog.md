@@ -144,3 +144,5 @@
 [2023.02.13; Maikuolan]: Slightly improved performance for when using PDO (#393).
 
 [2023.02.14; Maikuolan]: Slightly improved client-specified language overrides.
+
+[2023.02.16; Bug-fix; Maikuolan]: Typo in the readFile call for the channels data; Fixed (#414).

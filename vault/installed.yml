@@ -967,10 +967,10 @@ Tor blocker module:
 BOBUAM:
  Extended Description: "Optional module which detects unwanted bots, old browsers, and performs some sanity checks.<br />Contains some data from the Wordpress plugin "Stop Bad Bots" by William "Bill" Minozzi.<br />(A few webservices bots might need bypasses)."
  False Positive Risk: "Medium"
- Version: "2023.34.0"
+ Version: "2023.46.0"
  Dependencies:
   PHP: "^7.2|^8"
-  CIDRAM Front-End: "^3.0.0-DEV+22317000"
+  CIDRAM Front-End: "^3"
   l10n/core/{lang}: ">=2022.327"
   l10n/frontend/{lang}: ">=2022.327"
  Files:
@@ -980,7 +980,7 @@ BOBUAM:
    Used with: "imports"
   modules/bobuam.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/bobuam.php"
-   Checksum: "3b778fee3984baf1c4328c39e7e6eb7aada736bf8ce81981cad39a3299168647:42757"
+   Checksum: "5e67e3e6c4b1d6850b1146e2bfd77643c7ecb8d6bb60d3a5a859faaa306c7b17:42786"
    Used with: "modules"
 theme/bluemetal:
  Name: "Theme: Blue Metal"

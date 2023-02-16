@@ -22,7 +22,7 @@
  * William "Bill" Minozzi.
  * @link https://www.stopbadbots.com/
  *
- * This file: Bot Or Browser User Agent Module (last modified: 2023.02.04).
+ * This file: Bot Or Browser User Agent Module (last modified: 2023.02.16).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -62,7 +62,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         $this->trigger(preg_match('%(?i)(?=.*opera)(?=.*(?:firefox|msie)).*%', $this->BlockInfo['UA']), $Ambiguous[0] . ' (OFM)', $Ambiguous[1]);
         $this->trigger(preg_match('%(?i)(?=.*firefox)(?=.*(?:chrom(?:e|ium)|msie)).*%', $this->BlockInfo['UA']), $Ambiguous[0] . ' (FCM)', $Ambiguous[1]);
         $this->trigger(preg_match('%(?i:(?=(?:.*)(?:mozilla.*){2,})|(?=.*(?:msie.*){2,})).*%', $this->BlockInfo['UA']), $Ambiguous[0] . ' (MM)', $Ambiguous[1]);
-        $this->trigger(preg_match('%(?i)(?=.*gecko\/\d*)(?=.*rv:([\d\.]*)).*firefox\/(?!\1)%', $this->BlockInfo['UA']), $Malformed[0] . ' (FF)', $Malformed[1]);
+        $this->trigger(preg_match('%(?i)(?=.*gecko\/\d*)(?=.*rv:([\d\.]*)).*firefox\/(?!\1)%', $this->BlockInfo['UA'], $Ver) && $Ver[1] !== '109.0', $Malformed[0] . ' (FF)', $Malformed[1]);
         $this->trigger(preg_match('%(?i)(?!.*gecko\/20100101).*rv:([\d\.]*).*gecko\/(?!\1)%', $this->BlockInfo['UA']), $Malformed[0] . ' (MZ)', $Malformed[1]);
         $this->trigger(preg_match('%(?:.* Chrome\/(\d*\.)).* Edg\/(?!\1)%', $this->BlockInfo['UA']), $Malformed[0] . ' (EC)', $Malformed[1]);
         $this->trigger(preg_match('%(?i)(?!.*safari\/\d{3,4}(?![\w]))(?=safari).*%', $this->BlockInfo['UA']), $Malformed[0] . ' (S)', $Malformed[1]);

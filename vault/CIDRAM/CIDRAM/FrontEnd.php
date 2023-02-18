@@ -1884,19 +1884,19 @@ class FrontEnd extends Core
 
             $this->FE['UpdatesFormTarget'] = 'cidram-page=updates';
             $this->FE['UpdatesFormTargetControls'] = '';
-            $this->CIDRAM['StateModified'] = false;
+            $StateModified = false;
             $this->filterSwitch(
                 ['hide-non-outdated', 'hide-unused', 'sort-by-name', 'descending-order'],
                 $_POST['FilterSelector'] ?? '',
-                $this->CIDRAM['StateModified'],
+                $StateModified,
                 $this->FE['UpdatesFormTarget'],
                 $this->FE['UpdatesFormTargetControls']
             );
-            if ($this->CIDRAM['StateModified']) {
+            if ($StateModified) {
                 header('Location: ?' . $this->FE['UpdatesFormTarget']);
                 die;
             }
-            unset($this->CIDRAM['StateModified']);
+            unset($StateModified);
 
             /** Useful for checking dependency version constraints. */
             $this->CIDRAM['Operation'] = new \Maikuolan\Common\Operation();
@@ -2530,7 +2530,9 @@ class FrontEnd extends Core
 
                     /** Export component updates metadata. */
                     if (isset($_POST['doMetadata']) && $_POST['doMetadata'] === 'on') {
-                        $this->FE['state_msg'] .= 'Exporting components metadata not yet supported. Coming soon.<br />';
+                        $Arr = [];
+                        $this->readInstalledMetadata($Arr);
+                        $Export['Components'] = array_keys($Arr);
                     }
 
                     /** Build output. */
@@ -2724,7 +2726,52 @@ class FrontEnd extends Core
 
                             /** Import component updates metadata. */
                             if (isset($_POST['doMetadata']) && $_POST['doMetadata'] === 'on') {
-                                $this->FE['state_msg'] .= 'Importing components metadata not yet supported. Coming soon.<br />';
+                                if ($this->CIDRAM['Operation']->singleCompare($Import['CIDRAM Version'], '<3')) {
+                                    $this->FE['state_msg'] .= sprintf(
+                                        $this->L10N->getString('response_import_bad_version'),
+                                        $Import['CIDRAM Version']
+                                    ) . ' ' . $this->L10N->getString('response_failed_to_install') . '<br />';
+                                } elseif (isset($Import['Components']) && is_array($Import['Components'])) {
+                                    $this->Components = ['Meta' => [], 'Installed Versions' => ['PHP' => PHP_VERSION], 'Available Versions' => []];
+                                    $this->fetchRemotesData();
+                                    $this->readInstalledMetadata($this->Components['Meta']);
+                                    $this->checkVersions($this->Components['Meta'], $this->Components['Installed Versions']);
+                                    $this->checkVersions($this->Components['RemoteMeta'], $this->Components['Available Versions']);
+                                    $this->calculateShared();
+                                    $Try = [];
+                                    foreach ($Import['Components'] as $Component) {
+                                        if (!is_string($Component)) {
+                                            continue;
+                                        }
+                                        if (!isset($this->Components['Available Versions'][$Component])) {
+                                            $this->FE['state_msg'] .= '<code>' . $Component . '</code> – ' . $this->L10N->getString('response_not_available_at_upstream') . '<br />';
+                                        } elseif (!isset($this->Components['Installed Versions'][$Component]) || $this->CIDRAM['Operation']->singleCompare(
+                                            $this->Components['Installed Versions'][$Component],
+                                            '<' . $this->Components['Available Versions'][$Component]
+                                        )) {
+                                            $Try[] = $Component;
+                                        } else {
+                                            $this->FE['state_msg'] .= '<code>' . $Component . '</code> – ' . $this->L10N->getString('response_updates_already_up_to_date') . '<br />';
+                                        }
+                                    }
+
+                                    /** Trigger updates handler. */
+                                    $this->updatesHandler('update-component', $Try);
+
+                                    /** Trigger signatures update log event. */
+                                    if (!empty($this->CIDRAM['SignaturesUpdateEvent'])) {
+                                        $this->CIDRAM['SignaturesUpdateEvent'] = sprintf(
+                                            $this->L10N->getString('response_signatures_updated'),
+                                            $this->timeFormat(
+                                                $this->CIDRAM['SignaturesUpdateEvent'],
+                                                $this->Configuration['general']['time_format']
+                                            )
+                                        );
+                                        $this->Events->fireEvent('writeToSignaturesUpdateEventLog', $this->CIDRAM['SignaturesUpdateEvent']);
+                                    }
+                                } else {
+                                    $this->FE['state_msg'] .= $this->L10N->getString('response_failed_to_install') . '<br />';
+                                }
                             }
                         }
                         $this->restoreErrorHandler();
@@ -4096,19 +4143,19 @@ class FrontEnd extends Core
         elseif ($this->CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $this->FE['Permissions'] === 1) {
             $this->FE['TrackingFilter'] = 'cidram-page=ip-tracking';
             $this->FE['TrackingFilterControls'] = '';
-            $this->CIDRAM['StateModified'] = false;
+            $StateModified = false;
             $this->filterSwitch(
                 ['tracking-blocked-already', 'tracking-aux', 'tracking-hide-banned-blocked'],
                 $_POST['FilterSelector'] ?? '',
-                $this->CIDRAM['StateModified'],
+                $StateModified,
                 $this->FE['TrackingFilter'],
                 $this->FE['TrackingFilterControls']
             );
-            if ($this->CIDRAM['StateModified']) {
+            if ($StateModified) {
                 header('Location: ?' . $this->FE['TrackingFilter']);
                 die;
             }
-            unset($this->CIDRAM['StateModified']);
+            unset($StateModified);
 
             /** Temporarily mute signature files if "tracking-blocked-already" is false. */
             if (!$this->FE['tracking-blocked-already']) {

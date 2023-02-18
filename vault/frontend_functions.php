@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2023.02.11).
+ * This file: Front-end functions file (last modified: 2023.02.18).
  */
 
 /**
@@ -1187,7 +1187,6 @@ $CIDRAM['Tally'] = function (string $In, string $BlockLink, array $Exclusions = 
     if (empty($In)) {
         return '';
     }
-    $Doubles = strpos($In, "\n\n") !== false;
     $Data = [];
     $PosA = 0;
     while (($PosB = strpos($In, "\n", $PosA)) !== false) {
@@ -1197,23 +1196,22 @@ $CIDRAM['Tally'] = function (string $In, string $BlockLink, array $Exclusions = 
             continue;
         }
         foreach ($Exclusions as $Exclusion) {
-            $Len = strlen($Exclusion);
-            if (substr($Line, 0, $Len) === $Exclusion) {
+            if (substr($Line, 0, strlen($Exclusion)) === $Exclusion) {
                 continue 2;
             }
         }
         $Separator = (strpos($Line, '：') !== false) ? '：' : ': ';
         $FieldsCount = substr_count($Line, ' - ') + 1;
-        if ($Doubles === false && substr_count($Line, $Separator) === $FieldsCount && $FieldsCount > 1) {
-            $Fields = explode(' - ', $Line);
-        } else {
-            $Fields = [$Line];
-        }
+        $FieldsCountMatch = (substr_count($Line, $Separator) === $FieldsCount);
+        $Fields = ($FieldsCountMatch && $FieldsCount > 1) ? explode(' - ', $Line) : [$Line];
         foreach ($Fields as $FieldRaw) {
             if (($SeparatorPos = strpos($FieldRaw, $Separator)) === false) {
                 continue;
             }
             $Field = trim(substr($FieldRaw, 0, $SeparatorPos));
+            if (in_array($Field, $Exclusions, true)) {
+                continue;
+            }
             $Entry = trim(substr($FieldRaw, $SeparatorPos + strlen($Separator)));
             if (!isset($Data[$Field])) {
                 $Data[$Field] = [];

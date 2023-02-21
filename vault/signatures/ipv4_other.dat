@@ -1,8 +1,8 @@
 # IPv4 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv4_other.dat
 
-# Version: 2023.35.0
-# Last modified: 2023.02.05
+# Version: 2023.51.0
+# Last modified: 2023.02.21
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -1113,19 +1113,6 @@ Tag: Emerald Onion
 223.254.0.0/16 Deny Spam
 Profile: Third-party sourced
 Tag: Spamhaus DROP/EDROP
-
-
-# Split from SFS toxic CIDRs to separate sections for stronger capturing.
-# Duplicates, bogons, etc removed.
-# Refer stopforumspam.com/downloads/toxic_ip_cidr.txt
-# Updated: 2019.10.23 / Checked: 2022.02.25
-
-# "Beliefnet".
-174.76.30.0/24 Deny Spam
-174.77.145.0/24 Deny Spam
-Origin: US
-Profile: Third-party sourced
-Tag: Beliefnet
 
 
 # Octopusnet VPN (mostly from AS44724, but we'll update via announces instead,

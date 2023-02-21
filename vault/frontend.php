@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2023.02.12).
+ * This file: Front-end handler (last modified: 2023.02.21).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -220,7 +220,6 @@ if (empty($CIDRAM['L10N']->Data['Text Direction']) || $CIDRAM['L10N']->Data['Tex
     $CIDRAM['FE']['Half_Border'] = 'solid solid none none';
     $CIDRAM['FE']['45deg'] = '45deg';
     $CIDRAM['FE']['90deg'] = '90deg';
-    $CIDRAM['FE']['Empty'] = 'background:linear-gradient(90deg,rgba(128,128,255,0.5),rgba(0,0,64,0));';
 } else {
     $CIDRAM['FE']['FE_Align'] = 'right';
     $CIDRAM['FE']['FE_Align_Reverse'] = 'left';
@@ -231,7 +230,6 @@ if (empty($CIDRAM['L10N']->Data['Text Direction']) || $CIDRAM['L10N']->Data['Tex
     $CIDRAM['FE']['Half_Border'] = 'solid none none solid';
     $CIDRAM['FE']['45deg'] = '-45deg';
     $CIDRAM['FE']['90deg'] = '270deg';
-    $CIDRAM['FE']['Empty'] = 'background:linear-gradient(90deg,rgba(0,0,64,0),rgba(128,128,255,0.5));';
 }
 
 /** A simple passthru for non-private theme images and related data. */

@@ -150,3 +150,5 @@
 [2023.02.18; Bug-fix; Maikuolan]: Tally mode at the front-end logs page wouldn't always correctly delimit entry fields when reading log files with mixed content (e.g., block events and CAPTCHA events in the same file); Fixed.
 
 [2023.02.21; Maikuolan]: Replaced the emojis at the front-end navigation menu with SVGs.
+
+[2023.02.21; Bug-fix; Maikuolan]: When using the cache handler with PDO, if the size of a cache entry exceeds 64KB, in order to avoid exceeding the 64KB upper limit of the TEXT data type, the cache handler will now attempt to compress the data prior to executing the query. This should resolve #415.

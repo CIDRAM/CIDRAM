@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.02.12).
+ * This file: The CIDRAM front-end (last modified: 2023.02.21).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -317,7 +317,6 @@ class FrontEnd extends Core
             $this->FE['Half_Border'] = 'solid solid none none';
             $this->FE['45deg'] = '45deg';
             $this->FE['90deg'] = '90deg';
-            $this->FE['Empty'] = 'background:linear-gradient(90deg,rgba(128,128,255,0.5),rgba(0,0,64,0));';
         } else {
             $this->FE['FE_Align'] = 'right';
             $this->FE['FE_Align_Reverse'] = 'left';
@@ -328,7 +327,6 @@ class FrontEnd extends Core
             $this->FE['Half_Border'] = 'solid none none solid';
             $this->FE['45deg'] = '-45deg';
             $this->FE['90deg'] = '270deg';
-            $this->FE['Empty'] = 'background:linear-gradient(90deg,rgba(0,0,64,0),rgba(128,128,255,0.5));';
         }
 
         /** A simple passthru for non-private theme images and related data. */

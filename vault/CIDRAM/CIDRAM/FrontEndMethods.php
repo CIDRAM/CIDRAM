@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2023.02.11).
+ * This file: General methods used by the front-end (last modified: 2023.02.20).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1263,6 +1263,9 @@ trait FrontEndMethods
                 }
                 if (preg_match('/^(?:gif|jpg|png|webp)$/', $Type)) {
                     $MimeType = 'Content-Type: image/' . $Type;
+                    $Success = true;
+                } elseif ($Type === 'svg') {
+                    $MimeType = 'Content-Type: image/svg+xml';
                     $Success = true;
                 } elseif ($Type === 'js') {
                     $MimeType = 'Content-Type: text/javascript';

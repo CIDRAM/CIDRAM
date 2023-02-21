@@ -148,3 +148,5 @@
 [2023.02.16; Bug-fix; Maikuolan]: Typo in the readFile call for the channels data; Fixed (#414).
 
 [2023.02.18; Bug-fix; Maikuolan]: Tally mode at the front-end logs page wouldn't always correctly delimit entry fields when reading log files with mixed content (e.g., block events and CAPTCHA events in the same file); Fixed.
+
+[2023.02.21; Maikuolan]: Replaced the emojis at the front-end navigation menu with SVGs.

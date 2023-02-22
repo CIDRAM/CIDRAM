@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2023.02.16).
+ * This file: The CIDRAM core (last modified: 2023.02.22).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -117,7 +117,7 @@ class Core
     /**
      * @var string CIDRAM version number (SemVer).
      */
-    public $ScriptVersion = '3.0.0';
+    public $ScriptVersion = '3.1.0';
 
     /**
      * @var string CIDRAM version identifier (complete notation).
@@ -268,9 +268,6 @@ class Core
 
         /** Instantiate events orchestrator in order to allow malleable logging and etc. */
         $this->Events = new \Maikuolan\Common\Events();
-
-        /** CIDRAM version number (SemVer). */
-        $this->ScriptVersion = '3.0.0';
 
         /** CIDRAM version identifier (complete notation). */
         $this->ScriptIdent = 'CIDRAM v' . $this->ScriptVersion;

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.02.21).
+ * This file: The CIDRAM front-end (last modified: 2023.02.22).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -159,7 +159,7 @@ class FrontEnd extends Core
 
             /** Used to return home. */
             'HomeButton' => sprintf(
-                '<form action="?" method="GET" style="display:inline"><input type="submit" id="homebutton" value="%s" class="auto" /></form>',
+                '<form action="" method="GET" style="display:inline"><input type="hidden" name="cidram-page" value="" /><input type="submit" id="homebutton" value="%s" class="auto" /></form>',
                 $this->L10N->getString('link_home')
             ),
 
@@ -186,6 +186,24 @@ class FrontEnd extends Core
             'Links.Documentation' => $this->CIDRAM['Links']['Documentation'],
             'Links.Website' => $this->CIDRAM['Links']['Website']
         ];
+
+        /** Header appended by integration. */
+        if (isset($this->CIDRAM['IntegrationHeader'])) {
+            if ($this->FE['CustomHeader'] !== '') {
+                $this->FE['CustomHeader'] .= '<br /><br />' . $this->CIDRAM['IntegrationHeader'];
+            } else {
+                $this->FE['CustomHeader'] = $this->CIDRAM['IntegrationHeader'];
+            }
+        }
+
+        /** Footer appended by integration. */
+        if (isset($this->CIDRAM['IntegrationFooter'])) {
+            if ($this->FE['CustomFooter'] !== '') {
+                $this->FE['CustomFooter'] .= '<br /><br />' . $this->CIDRAM['IntegrationFooter'];
+            } else {
+                $this->FE['CustomFooter'] = $this->CIDRAM['IntegrationFooter'];
+            }
+        }
 
         /** CIDRAM front-end favicon. */
         [$this->FE['favicon'], $this->FE['favicon_extension']] = $this->fetchFavicon($this->Configuration['frontend']['theme']);

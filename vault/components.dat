@@ -1,7 +1,7 @@
 ---
 CIDRAM Core:
  Name: "CIDRAM Core"
- Version: "2.11.0-DEV+23051000"
+ Version: "2.11.0"
  Dependencies:
   PHP: "^7.2|^8"
   Common Classes Package: "^2.9"
@@ -57,7 +57,7 @@ CIDRAM Core:
    - "f64dc686483c02f21c8608d5ee10c952c2eb6f1e5ea05d60ed19a9dca9ebfbde:15223"
    - "b55e54f0d41f7c17f2d9919ffed9ad9e5cb067eb59f021407e8e2b65d5558055:14677"
    - "a700fb40dba91aa85f16c67e5a3a3993cb84544f0eb7413c9f9a72cc67949b92:2927"
-   - "b98c77a7ceb3e0d6f6c404d242f368f646645a46625068b526d881a28feb5d5d:7180"
+   - "89431c41929b66345aec3cf99ba98ebd834c35d93a1f7edf2406dfcfe62cf1ad:7180"
    - "4b6ebd4ea6e303637e9d5c7d5b67832d2dcffb57380cb90bcbec3e7ac00775ea:25116"
    - "1fde7d2d1df4b9bf014bb3bb4a9f589087182fc14661da2e31d1a2792328d1e3:9109"
    - "9a583bad3b206488141ad424cc74865203e52f66cd92646e4b0bbe89843b00a8:100099"
@@ -69,7 +69,7 @@ CIDRAM Core:
  Reannotate: "components.dat"
 CIDRAM Front-End:
  Name: "CIDRAM Front-End"
- Version: "2.11.0-DEV+23051000"
+ Version: "2.11.0"
  Dependencies:
   PHP: "^7.2|^8"
   Common Classes Package: "^2.9"
@@ -226,7 +226,7 @@ CIDRAM Front-End:
    - "3bc42724fbf0651e7225d54e1761948c1d624c1d853549aa0809721abf700a07:722"
    - "828d6cb0f53f3ff440d9901f295f8c6a0eefb295998445b81436158e94b40f2e:1391"
    - "9acc8e42f33d79379bfa11e2d0c88685286f4548811d70bcb1f3151e68e18cf1:2303"
-   - "a9e03980deade0498e2b968d987f48df989af6af74d5c316b7b4ccaecda377ff:308510"
+   - "e32ca644417fe70a9c004b8ae3e03995bb22ce013be08aa1731dc9ad6880e21f:308188"
    - "325b6c72299a2f562bbf5a1654b6378ec842e7a251c67b74a4ba03214acf354a:228197"
  Reannotate: "components.dat"
 Common Classes Package:
@@ -279,7 +279,7 @@ Common Classes Package:
 IPv4:
  Extended Description: "Default IPv4 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints."
  False Positive Risk: "Medium"
- Version: "2023.51.0"
+ Version: "2023.54.0"
  Dependencies:
   CIDRAM Core: ">=1"
   Bypasses: ">=2022.172"
@@ -291,7 +291,7 @@ IPv4:
   To:
    - "ipv4.dat"
   Checksum:
-   - "b12f1d442c85c5cf62941b622b8b9e8533dc08750e3ea4c74e0b4ed05d0f8850:1169324"
+   - "40b2b6618845237af458df921a1338bbfaa6e41fc641595052856d0d8019f403:1168505"
  Used with: "ipv4"
  Reannotate: "components.dat"
 IPv4-Bogons:
@@ -314,7 +314,7 @@ IPv4-Bogons:
 IPv4-ISPs:
  Extended Description: "Default IPv4 signatures normally included with the main package. Blocks dangerous and spammy ISPs."
  False Positive Risk: "Medium"
- Version: "2023.51.0"
+ Version: "2023.54.0"
  Dependencies:
   CIDRAM Core: ">=1"
   Bypasses: ">=2022.172"
@@ -326,7 +326,7 @@ IPv4-ISPs:
   To:
    - "ipv4_isps.dat"
   Checksum:
-   - "4150f4e7d54912864d3d697b067cee3d9a1a8545ea94150e658b6708c056dc3c:692467"
+   - "cd214a107db89968d55493568e505a5a4c1b9d457d820c1c79e06a6a65d33871:692498"
  Used with: "ipv4"
  Reannotate: "components.dat"
 IPv4-Nonblocking:
@@ -366,7 +366,7 @@ IPv4-Other:
 IPv6:
  Extended Description: "Default IPv6 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints."
  False Positive Risk: "Low"
- Version: "2023.51.0"
+ Version: "2023.54.0"
  Dependencies:
   CIDRAM Core: ">=1"
   Bypasses: ">=2022.172"
@@ -378,7 +378,7 @@ IPv6:
   To:
    - "ipv6.dat"
   Checksum:
-   - "f88ae9d432a66e662268b5271ecff24f7c605a5e8c6f8670333d43fd5057c726:332309"
+   - "ec1c721cf50dff62517e0977f8a32d8345c4faebfd80c52caeb95a1ab6c86b17:332259"
  Used with: "ipv6"
  Reannotate: "components.dat"
 IPv6-Bogons:
@@ -401,7 +401,7 @@ IPv6-Bogons:
 IPv6-ISPs:
  Extended Description: "Default IPv6 signatures normally included with the main package. Blocks dangerous and spammy ISPs."
  False Positive Risk: "Medium"
- Version: "2023.48.0"
+ Version: "2023.54.0"
  Dependencies:
   CIDRAM Core: ">=1"
   Bypasses: ">=2022.172"
@@ -413,7 +413,7 @@ IPv6-ISPs:
   To:
    - "ipv6_isps.dat"
   Checksum:
-   - "18d6613587a7ed28ff76c67630fcd08e209b6b6cab298fb277b9c38e13edfbdf:43293"
+   - "881c620fab6252db78248c74846d38738232c02b5d2f1e68f5b6cb7309be068c:42623"
  Used with: "ipv6"
  Reannotate: "components.dat"
 IPv6-Nonblocking:

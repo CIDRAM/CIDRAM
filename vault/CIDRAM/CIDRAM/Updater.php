@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods for updating CIDRAM components (last modified: 2023.02.03).
+ * This file: Methods for updating CIDRAM components (last modified: 2023.02.24).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -403,16 +403,24 @@ trait Updater
     private function wpVer(): void
     {
         if (
-            !empty($this->Components['RemoteMeta']['CIDRAM']['Version']) &&
-            ($ThisData = $this->CIDRAM['Updater-IO']->readFile($this->Vault . '../cidram.php'))
+            empty($this->Components['RemoteMeta']['CIDRAM']['Version']) ||
+            ($ThisData = $this->CIDRAM['Updater-IO']->readFile($this->Vault . '../cidram.php')) === ''
         ) {
-            $PlugHead = "\x3C\x3Fphp\n/**\n * Plugin Name: CIDRAM\n * Version: ";
-            if (substr($ThisData, 0, 45) === $PlugHead) {
-                $PlugHeadEnd = strpos($ThisData, "\n", 45);
-                $this->CIDRAM['Updater-IO']->writeFile(
-                    $this->Vault . '../cidram.php',
-                    $PlugHead . $this->Components['RemoteMeta']['CIDRAM Core']['Version'] . substr($ThisData, $PlugHeadEnd)
-                );
+            return;
+        }
+        $PlugHead = "\x3C\x3Fphp\n/**\n * Plugin Name: CIDRAM\n * Version: ";
+        if (substr($ThisData, 0, 45) === $PlugHead) {
+            $PlugHeadEnd = strpos($ThisData, "\n", 45);
+            $this->CIDRAM['Updater-IO']->writeFile(
+                $this->Vault . '../cidram.php',
+                $PlugHead . $this->Components['RemoteMeta']['CIDRAM Core']['Version'] . substr($ThisData, $PlugHeadEnd)
+            );
+        }
+        if (!file_exists($this->Vault . '../../.htaccess')) {
+            $Handle = fopen($this->Vault . '../../.htaccess', 'wb');
+            if (is_resource($Handle)) {
+                fwrite($Handle, "<Files \"cidram-configuration.yml\">  \n  Order Allow,Deny\n  Deny from all\n</Files>\n");
+                fclose($Handle);
             }
         }
     }

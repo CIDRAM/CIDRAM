@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.02.22).
+ * This file: The CIDRAM front-end (last modified: 2023.02.24).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -2516,9 +2516,6 @@ class FrontEnd extends Core
             $this->FE['size_config'] = '[<span dir="ltr" class="txtRd">' . $this->FE['ActiveConfigFile'] . '</span>] – ' . $this->FE['size_config'];
             $this->FE['size_aux'] = '[<span dir="ltr" class="txtRd">' . $this->Vault . 'auxiliary.yml</span>] – ' . $this->FE['size_aux'];
             $this->FE['size_metadata'] = '[<span dir="ltr" class="txtRd">' . $this->Vault . 'installed.yml</span>] – ' . $this->FE['size_metadata'];
-
-            /** Temporary. */
-            $this->FE['state_msg'] .= 'Warning: The backup feature is still a <span class="txtRd">work-in-progress</span>, and I recommend not using it until it has been finished, because until then, it mightn\'t behave as expected. When it\'s finished, I\'ll remove this warning from the page.<br />';
 
             if (isset($_POST['bckpAct'])) {
                 /** Export. */

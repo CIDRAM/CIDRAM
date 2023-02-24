@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2023.48.0
-# Last modified: 2023.02.18
+# Version: 2023.54.0
+# Last modified: 2023.02.24
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -156,26 +156,6 @@ Tag: Kyivstar
 Origin: VN
 Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Tor endpoints here
 Tag: Viettel Corporation
-
-
-# ASNs 24955, 41704, 60095 ("Orenburgskaya Gorodskaya Set, ZAO").
-# Caught spamming while pretending to be Google. Repeated hack attempts, port
-# scans, probing for hardware vulnerabilities, brute-force and SSH attacks,
-# spam, IoT attacks, and more regularly encountered from here.
-# Stop Forum Spam (SFS) listings: 326,541 (AS24955), 41,704 (AS41704), 619 (AS60095).
-# Updated: 2022.03.17
-
-2a02:1c8::/47 Deny Attacks
-2a02:1c8:7::/48 Deny Attacks
-2a02:1c8:a::/48 Deny Attacks
-2a02:1c8:10::/44 Deny Attacks
-2a02:1c8:40::/44 Deny Attacks
-2a02:1c8:90::/44 Deny Attacks
-2a02:1c8:100::/40 Deny Attacks
-2a02:1c8:700::/40 Deny Attacks
-Origin: RU
-Profile: Domestic ISP
-Tag: Ufanet
 
 
 # ASNs 9498, 9730, 24560, 37140, 45609, 132045 ("Bharti Airtel").
@@ -1064,19 +1044,6 @@ Profile: Domestic ISP
 Tag: Rogers
 
 
-# ASN 5483 ("Magyar Telekom plc").
-# Hungarian multiplay ISP. Brute-force, WordPress, and webapp attacks,
-# credential stuffing, port scans, hacking, and spam detected from here.
-# Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 517.
-# Updated: 2022.07.11
-
-2a00:1110:203:ab46::/64 Deny Spam
-Origin: HU
-Profile: Domestic ISP;Infrastructure/Transit;Multiplay
-Tag: Magyar Telekom plc
-
-
 # ASN 269663 ("CONNECTLINK TECH").
 # Port scans, hacking, and spam detected from here.
 # Manually checked all ranges; All ranges affected.
@@ -1368,3 +1335,16 @@ Tag: AS265725
 Origin: AR
 Profile: Domestic ISP
 Tag: Telecom Argentina S.A
+
+
+# ASNs 10429, 18881, 27699 ("TELEFNICA BRASIL S.A").
+# Brazilian domestic ISP. Port scans, hacking, and spam detected from here.
+# Listing just the affected address/ranges only.
+# Stop Forum Spam (SFS) listings: 1,706 (AS10429), 682 (AS18881), 1,528 (AS27699).
+# Updated: 2023.02.24
+
+2804:431:c7ee:8a9d::/64 Deny Spam
+2804:7f0:b5c1:f572::/64 Deny Spam
+Origin: BR
+Profile: Domestic ISP;Mobile ISP
+Tag: TELEFNICA BRASIL S.A

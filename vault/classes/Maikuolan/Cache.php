@@ -1,6 +1,6 @@
 <?php
 /**
- * A simple, unified cache handler (last modified: 2023.02.23).
+ * A simple, unified cache handler (last modified: 2023.02.24).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -637,13 +637,16 @@ class Cache
                 $Success = ($PDO->rowCount() > 0);
             }
         } elseif (is_array($this->WorkingData)) {
-            if (
-                isset($this->WorkingData[$Key]) &&
-                is_array($this->WorkingData[$Key]) &&
-                isset($this->WorkingData[$Key]['Data']) &&
-                is_numeric($this->WorkingData[$Key]['Data'])
-            ) {
-                $Value += $this->WorkingData[$Key]['Data'];
+            if (isset($this->WorkingData[$Key])) {
+                if (
+                    is_array($this->WorkingData[$Key]) &&
+                    isset($this->WorkingData[$Key]['Data']) &&
+                    is_numeric($this->WorkingData[$Key]['Data'])
+                ) {
+                    $Value += $this->WorkingData[$Key]['Data'];
+                } elseif (is_numeric($this->WorkingData[$Key])) {
+                    $Value += $this->WorkingData[$Key];
+                }
             }
             if ($TTL > 0) {
                 $TTL += time();
@@ -699,13 +702,16 @@ class Cache
                 $Success = ($PDO->rowCount() > 0);
             }
         } elseif (is_array($this->WorkingData)) {
-            if (
-                isset($this->WorkingData[$Key]) &&
-                is_array($this->WorkingData[$Key]) &&
-                isset($this->WorkingData[$Key]['Data']) &&
-                is_numeric($this->WorkingData[$Key]['Data'])
-            ) {
-                $Value -= $this->WorkingData[$Key]['Data'];
+            if (isset($this->WorkingData[$Key])) {
+                if (
+                    is_array($this->WorkingData[$Key]) &&
+                    isset($this->WorkingData[$Key]['Data']) &&
+                    is_numeric($this->WorkingData[$Key]['Data'])
+                ) {
+                    $Value -= $this->WorkingData[$Key]['Data'];
+                } elseif (is_numeric($this->WorkingData[$Key])) {
+                    $Value -= $this->WorkingData[$Key];
+                }
             }
             if ($TTL > 0) {
                 $TTL += time();

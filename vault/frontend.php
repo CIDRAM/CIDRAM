@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2023.02.21).
+ * This file: Front-end handler (last modified: 2023.02.24).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2674,9 +2674,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'backup' && $CIDRAM['FE']['Permi
     $CIDRAM['FormatFilesize']($CIDRAM['FE']['size_aux']);
     $CIDRAM['FE']['size_config'] = '[<span dir="ltr" class="txtRd">' . $CIDRAM['Vault'] . $CIDRAM['FE']['ActiveConfigFile'] . '</span>] – ' . $CIDRAM['FE']['size_config'];
     $CIDRAM['FE']['size_aux'] = '[<span dir="ltr" class="txtRd">' . $CIDRAM['Vault'] . 'auxiliary.yaml</span>] – ' . $CIDRAM['FE']['size_aux'];
-
-    /** Temporary. */
-    $CIDRAM['FE']['state_msg'] .= 'Warning: The backup feature is still a <span class="txtRd">work-in-progress</span>, and I recommend not using it until it has been finished, because until then, it mightn\'t behave as expected. When it\'s finished, I\'ll remove this warning from the page.<br />';
 
     if (isset($_POST['bckpAct'])) {
         /** Export. */

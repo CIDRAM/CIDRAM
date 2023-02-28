@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2023.02.24).
+ * This file: Front-end handler (last modified: 2023.03.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -5098,11 +5098,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
         $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_logs.html'))
     );
 
+    /** Sort order */
+    $CIDRAM['FE']['SortOrder'] = (empty($CIDRAM['QueryVars']['sortOrder']) || $CIDRAM['QueryVars']['sortOrder'] === 'ascending') ? 'ascending' : 'descending';
+
     /** Initialise array for fetching logs data. */
-    $CIDRAM['FE']['LogFiles'] = [
-        'Files' => $CIDRAM['Logs-RecursiveList']($CIDRAM['Vault']),
-        'Out' => ''
-    ];
+    $CIDRAM['FE']['LogFiles'] = ['Files' => $CIDRAM['Logs-RecursiveList']($CIDRAM['Vault'], $CIDRAM['FE']['SortOrder']), 'Out' => ''];
 
     $CIDRAM['FE']['SearchInfo'] = '';
     $CIDRAM['FE']['SearchQuery'] = '';
@@ -5124,13 +5124,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
         $CIDRAM['FE']['TextModeLinks'] = 'tally';
     } else {
         $CIDRAM['FE']['TextModeLinks'] = 'simple';
-    }
-
-    /** Sort order */
-    if (empty($CIDRAM['QueryVars']['sortOrder']) || $CIDRAM['QueryVars']['sortOrder'] === 'ascending') {
-        $CIDRAM['FE']['SortOrder'] = 'ascending';
-    } else {
-        $CIDRAM['FE']['SortOrder'] = 'descending';
     }
 
     /** Remember display preferences? */

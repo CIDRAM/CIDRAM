@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bad hosts blocker module (last modified: 2023.01.27).
+ * This file: Bad hosts blocker module (last modified: 2023.02.28).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -213,8 +213,11 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             'auri|pinterest|slack|silk-accelerated=true$~',
             $UANoSpace
         ) &&
-        substr($this->BlockInfo['UA'], -32) !== 'Feedspot http://www.feedspot.com'
-    ), 'Amazon Web Services'); // 2021.06.30
+        !preg_match(
+            '~(?:Feedspot http\://www\.feedspot\.com|developers\.snap\.com/robots)$~',
+            $this->BlockInfo['UA']
+        )
+    ), 'Amazon Web Services'); // 2023.02.28
 
     $this->trigger(preg_match('/\.local$/', $HN), 'Spoofed/Fake Hostname'); // 2017.02.06
 

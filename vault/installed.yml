@@ -905,11 +905,11 @@ AbuseIPDB module:
    Used with: "modules"
 Bad hosts blocker module:
  False Positive Risk: "Medium"
- Version: "2023.26.0"
+ Version: "2023.58.0"
  Files:
   modules/badhosts.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/badhosts.php"
-   Checksum: "42f2687cce5f1b346c34fc18c888966b8f9bedd5894418aab0ba400bcfaa0ff0:15356"
+   Checksum: "26f001daf8e97973c817c8413cd75a2a6eb13d1120f6c23ebf8d2d024f9a2ba7:15426"
    Used with: "modules"
 Bad TLDs blocker module:
  False Positive Risk: "Low"
@@ -1032,7 +1032,7 @@ BOBUAM:
   Optional module which detects unwanted bots, old browsers, and performs some sanity checks.<br />Contains some data from
   the Wordpress plugin "Stop Bad Bots" by William "Bill" Minozzi.<br />(A few webservices bots might need bypasses).
  False Positive Risk: "Medium"
- Version: "2023.55.0"
+ Version: "2023.58.0"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Front-End: "^3"
@@ -1045,7 +1045,7 @@ BOBUAM:
    Used with: "imports"
   modules/bobuam.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/bobuam.php"
-   Checksum: "87de3dd4cfc0c9e9147a1cb6d59a8436b8e6a95eb71ae6d182012019dd776b9e:42801"
+   Checksum: "acdacb7b113f184d5f6467800d14831377bfd026e42f3b18c92e7db8a9b3a982:42794"
    Used with: "modules"
 theme/bluemetal:
  Name: "Theme: Blue Metal"

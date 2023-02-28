@@ -159,6 +159,6 @@
 
 [2023.02.24; Bug-fix; Maikuolan]: The cache handler's incEntry and decEntry methods weren't handling non-expiring values correctly when using flatfile caching; Fixed (#328).
 
-[2023.02.28; Maikuolan]: Added verification support for Snapchat (#422).
+[2023.02.28; Maikuolan]: Added verification support for Snapchat (#422). Added search engine verification support for Neeva.
 
 [2023.02.28; Maikuolan]: Adjusted the eTaggable method, increasing expiries from 1 month to 6 months to further reduce superfluous requests for static files, and explicitly removing the Cache-Control header due to some implementations setting the Cache-Control header within their own code, prior to calling CIDRAM, thus preventing browsers from being able to properly cache CIDRAM's static assets (explicitly removing the header should ensure that static assets can be cached as expected).

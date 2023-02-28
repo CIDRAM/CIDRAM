@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Default signature bypasses (last modified: 2022.06.22).
+ * This file: Default signature bypasses (last modified: 2023.02.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -165,6 +165,17 @@ $CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [], $Fa
         if (
             $CIDRAM['Request']->inCsv('Redditbot', $CIDRAM['Config']['bypasses']['used']) &&
             strpos($CIDRAM['BlockInfo']['UALC'], 'redditbot/') !== false
+        ) {
+            return;
+        }
+
+        /**
+         * Snapchat bypass.
+         * @link https://github.com/CIDRAM/CIDRAM/issues/422
+         */
+        if (
+            $CIDRAM['Request']->inCsv('Snapchat', $CIDRAM['Config']['bypasses']['used']) &&
+            preg_match('~developers\.snap\.com/robots$~', $CIDRAM['BlockInfo']['UALC'])
         ) {
             return;
         }

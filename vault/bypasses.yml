@@ -7,14 +7,14 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Default signature bypasses configuration (last modified: 2022.07.24).
+# This file: Default signature bypasses configuration (last modified: 2023.02.28).
 ##/
 
 Config Defaults:
  bypasses:
   used:
    type: "checkbox"
-   default: "AbuseIPDB,AmazonAdBot,Bingbot,DuckDuckBot,Embedly,Feedbot,Feedspot,GoogleFiber,Googlebot,Grapeshot,Jetpack,PetalBot,Pinterest,Redditbot,WordPress REST API"
+   default: "AbuseIPDB,AmazonAdBot,Bingbot,DuckDuckBot,Embedly,Feedbot,Feedspot,GoogleFiber,Googlebot,Grapeshot,Jetpack,PetalBot,Pinterest,Redditbot,Snapchat,WordPress REST API"
    choices:
     AbuseIPDB: "AbuseIPDB"
     AmazonAdBot: "AmazonAdBot"
@@ -30,6 +30,7 @@ Config Defaults:
     PetalBot: "PetalBot"
     Pinterest: "Pinterest"
     Redditbot: "Redditbot"
+    Snapchat: "Snapchat"
     WordPress REST API: "WordPress REST API"
    value_preg_filter:
     "~^\s*|\s*$~": ""

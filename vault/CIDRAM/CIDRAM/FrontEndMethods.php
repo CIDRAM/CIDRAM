@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2023.02.20).
+ * This file: General methods used by the front-end (last modified: 2023.02.28).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1253,6 +1253,7 @@ trait FrontEndMethods
      */
     private function eTaggable(string $Asset, ?callable $Callback = null): void
     {
+        header_remove('Cache-Control');
         if ($this->pathSecurityCheck($Asset) && !preg_match('~[^\da-z._]~i', $Asset)) {
             $ThisAsset = $this->getAssetPath($Asset, true);
             if (strlen($ThisAsset) && is_readable($ThisAsset) && ($ThisAssetDel = strrpos($ThisAsset, '.')) !== false) {
@@ -1280,7 +1281,7 @@ trait FrontEndMethods
                     $NewETag = hash('sha256', $AssetData) . '-' . strlen($AssetData);
                     header('Last-Modified: ' . gmdate('D, d M Y H:i:s T', filemtime($ThisAsset)));
                     header('ETag: "' . $NewETag . '"');
-                    header('Expires: ' . gmdate('D, d M Y H:i:s T', $this->Now + 2592000));
+                    header('Expires: ' . gmdate('D, d M Y H:i:s T', $this->Now + 15552000));
                     if (preg_match('~(?:^|, )(?:"' . $NewETag . '"|' . $NewETag . ')(?:$|, )~', $OldETag)) {
                         header('HTTP/1.0 304 Not Modified');
                         header('HTTP/1.1 304 Not Modified');

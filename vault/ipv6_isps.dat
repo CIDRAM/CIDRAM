@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2023.54.0
-# Last modified: 2023.02.24
+# Version: 2023.58.0
+# Last modified: 2023.02.28
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -142,6 +142,18 @@ Tag: Idea Cellular Ltd
 Origin: UA
 Profile: Domestic ISP;Tor endpoints here
 Tag: Kyivstar
+
+
+# ASN 13188 ("CONTENT DELIVERY NETWORK LTD", A.K.A. "TRIOLAN, UA").
+# Brute-force and SSH attacks, port scans, hacking, and spam detected from
+# here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 1,314.
+# Updated: 2023.02.28
+
+2a03:7380:380f:9::/64 Deny Spam
+Origin: UA
+Profile: Infrastructure/Transit
+Tag: TRIOLAN
 
 
 # ASNs 7552, 24086, 37620, 38623, 133606, 140659, 262210, 327799, 327885 ("Viettel Corporation").

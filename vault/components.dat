@@ -251,7 +251,7 @@ CIDRAM:
 IPv4:
  Extended Description: "Default IPv4 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints."
  False Positive Risk: "Medium"
- Version: "2023.54.0"
+ Version: "2023.58.0"
  Dependencies:
   CIDRAM Core: ">=1"
   Bypasses: ">=2022.172"
@@ -263,7 +263,7 @@ IPv4:
   To:
    - "ipv4.dat"
   Checksum:
-   - "40b2b6618845237af458df921a1338bbfaa6e41fc641595052856d0d8019f403:1168505"
+   - "696097c6b470121f6cee62dff2e140860fc2346add99c3a427053ccdd28eccac:1170626"
  Used with: "ipv4"
  Reannotate: "components.dat"
 IPv4-Bogons:
@@ -286,7 +286,7 @@ IPv4-Bogons:
 IPv4-ISPs:
  Extended Description: "Default IPv4 signatures normally included with the main package. Blocks dangerous and spammy ISPs."
  False Positive Risk: "Medium"
- Version: "2023.54.0"
+ Version: "2023.58.0"
  Dependencies:
   CIDRAM Core: ">=1"
   Bypasses: ">=2022.172"
@@ -298,7 +298,7 @@ IPv4-ISPs:
   To:
    - "ipv4_isps.dat"
   Checksum:
-   - "cd214a107db89968d55493568e505a5a4c1b9d457d820c1c79e06a6a65d33871:692498"
+   - "9e3c67530697c1301f8bdb86570261d8adf5143173ac5eb38b0a1b255b6e3c57:697121"
  Used with: "ipv4"
  Reannotate: "components.dat"
 IPv4-Nonblocking:
@@ -338,7 +338,7 @@ IPv4-Other:
 IPv6:
  Extended Description: "Default IPv6 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints."
  False Positive Risk: "Low"
- Version: "2023.54.0"
+ Version: "2023.58.0"
  Dependencies:
   CIDRAM Core: ">=1"
   Bypasses: ">=2022.172"
@@ -350,7 +350,7 @@ IPv6:
   To:
    - "ipv6.dat"
   Checksum:
-   - "ec1c721cf50dff62517e0977f8a32d8345c4faebfd80c52caeb95a1ab6c86b17:332259"
+   - "300c3e568b2d9b5627865188f24d158340c140b3ff41c3664f00976c26442548:332396"
  Used with: "ipv6"
  Reannotate: "components.dat"
 IPv6-Bogons:
@@ -373,7 +373,7 @@ IPv6-Bogons:
 IPv6-ISPs:
  Extended Description: "Default IPv6 signatures normally included with the main package. Blocks dangerous and spammy ISPs."
  False Positive Risk: "Medium"
- Version: "2023.54.0"
+ Version: "2023.58.0"
  Dependencies:
   CIDRAM Core: ">=1"
   Bypasses: ">=2022.172"
@@ -385,7 +385,7 @@ IPv6-ISPs:
   To:
    - "ipv6_isps.dat"
   Checksum:
-   - "881c620fab6252db78248c74846d38738232c02b5d2f1e68f5b6cb7309be068c:42623"
+   - "822d4dfd0f3dbd4de10bdc08d78698e094ffcc8f7d8cf83cd79e1f518580ba62:42977"
  Used with: "ipv6"
  Reannotate: "components.dat"
 IPv6-Nonblocking:

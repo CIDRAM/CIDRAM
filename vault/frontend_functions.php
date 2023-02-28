@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2023.02.20).
+ * This file: Front-end functions file (last modified: 2023.02.28).
  */
 
 /**
@@ -5111,6 +5111,7 @@ $CIDRAM['CallableRecursive'] = function (array &$Arr, callable $Perform, int $De
  * @return never
  */
 $CIDRAM['eTaggable'] = function (string $Asset, ?callable $Callback = null) use (&$CIDRAM): void {
+    header_remove('Cache-Control');
     if ($CIDRAM['FileManager-PathSecurityCheck']($Asset) && !preg_match('~[^\da-z._]~i', $Asset)) {
         $ThisAsset = $CIDRAM['GetAssetPath']($Asset, true);
         if (strlen($ThisAsset) && is_readable($ThisAsset) && ($ThisAssetDel = strrpos($ThisAsset, '.')) !== false) {
@@ -5138,7 +5139,7 @@ $CIDRAM['eTaggable'] = function (string $Asset, ?callable $Callback = null) use 
                 $NewETag = hash('sha256', $AssetData) . '-' . strlen($AssetData);
                 header('Last-Modified: ' . gmdate('D, d M Y H:i:s T', filemtime($ThisAsset)));
                 header('ETag: "' . $NewETag . '"');
-                header('Expires: ' . gmdate('D, d M Y H:i:s T', $CIDRAM['Now'] + 2592000));
+                header('Expires: ' . gmdate('D, d M Y H:i:s T', $CIDRAM['Now'] + 15552000));
                 if (preg_match('~(?:^|, )(?:"' . $NewETag . '"|' . $NewETag . ')(?:$|, )~', $OldETag)) {
                     header('HTTP/1.0 304 Not Modified');
                     header('HTTP/1.1 304 Not Modified');

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2023.02.28).
+ * This file: Front-end functions file (last modified: 2023.03.01).
  */
 
 /**
@@ -494,9 +494,10 @@ $CIDRAM['FileManager-PathSecurityCheck'] = function ($Path) {
  * working directory (normally, the vault).
  *
  * @param string $Base The path to the working directory.
+ * @param string $Order Whether to sort the list in ascending or descending order.
  * @return array A list of the logfiles contained in the working directory.
  */
-$CIDRAM['Logs-RecursiveList'] = function ($Base) use (&$CIDRAM) {
+$CIDRAM['Logs-RecursiveList'] = function ($Base, $Order = 'ascending') use (&$CIDRAM) {
     $Arr = [];
     $List = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($Base, \RecursiveDirectoryIterator::FOLLOW_SYMLINKS), \RecursiveIteratorIterator::SELF_FIRST);
     foreach ($List as $Item => $List) {
@@ -507,7 +508,11 @@ $CIDRAM['Logs-RecursiveList'] = function ($Base) use (&$CIDRAM) {
         $Arr[$ThisName] = ['Filename' => $ThisName, 'Filesize' => filesize($Item)];
         $CIDRAM['FormatFilesize']($Arr[$ThisName]['Filesize']);
     }
-    ksort($Arr);
+    if ($Order === 'ascending') {
+        ksort($Arr);
+    } elseif ($Order === 'descending') {
+        krsort($Arr);
+    }
     return $Arr;
 };
 

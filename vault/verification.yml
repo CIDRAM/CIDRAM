@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Verification data (last modified: 2023.01.04).
+# This file: Verification data (last modified: 2023.02.28).
 ##/
 
 # Additional references: https://udger.com/resources/ua-list/crawlers
@@ -193,6 +193,16 @@ Social Media Verification:
   Method: "dnsReverseForward"
   Valid domains:
    - ".twttr.com"
+
+ # https://github.com/CIDRAM/CIDRAM/issues/422
+ # https://robotsdb.de/snap-url-preview-service-bot-snapchat/
+ # https://udger.com/resources/ua-list/bot-detail?bot=Snap+URL+Preview+Service
+ # Updated: 2023.02.28
+ Snapchat:
+  User Agent Pattern: "~snapchat|developers\.snap\.com/robots$~"
+  Method: "dnsReverseForward"
+  Valid domains:
+   - ".amazonaws.com"
 
 Other Verification:
  # https://developers.google.com/search/docs/advanced/crawling/overview-google-crawlers

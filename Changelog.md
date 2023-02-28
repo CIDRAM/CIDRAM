@@ -158,3 +158,5 @@
 ### v3.1.1
 
 [2023.02.24; Bug-fix; Maikuolan]: The cache handler's incEntry and decEntry methods weren't handling non-expiring values correctly when using flatfile caching; Fixed (#328).
+
+[2023.02.28; Maikuolan]: Added verification support for Snapchat (#422).

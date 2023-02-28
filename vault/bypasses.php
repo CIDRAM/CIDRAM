@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Default signature bypasses (last modified: 2022.07.07).
+ * This file: Default signature bypasses (last modified: 2023.02.28).
  */
 
 /** Prevents execution from outside of the checkFactors method. */
@@ -144,6 +144,14 @@ $this->CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [
          * @link https://github.com/CIDRAM/CIDRAM/issues/243
          */
         if (isset($Bypasses['Redditbot']) && strpos($this->BlockInfo['UALC'], 'redditbot/') !== false) {
+            return;
+        }
+
+        /**
+         * Snapchat bypass.
+         * @link https://github.com/CIDRAM/CIDRAM/issues/422
+         */
+        if (isset($Bypasses['Snapchat']) && preg_match('~developers\.snap\.com/robots$~', $this->BlockInfo['UALC'])) {
             return;
         }
     }

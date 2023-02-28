@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.02.24).
+ * This file: The CIDRAM front-end (last modified: 2023.03.01).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -4995,11 +4995,11 @@ class FrontEnd extends Core
                 $this->readFile($this->getAssetPath('_logs.html'))
             );
 
+            /** Sort order */
+            $this->FE['SortOrder'] = (empty($this->CIDRAM['QueryVars']['sortOrder']) || $this->CIDRAM['QueryVars']['sortOrder'] === 'ascending') ? 'ascending' : 'descending';
+
             /** Initialise array for fetching logs data. */
-            $this->FE['LogFiles'] = [
-                'Files' => $this->logsRecursiveList($this->Vault),
-                'Out' => ''
-            ];
+            $this->FE['LogFiles'] = ['Files' => $this->logsRecursiveList($this->Vault, $this->FE['SortOrder']), 'Out' => ''];
 
             $this->FE['SearchInfo'] = '';
             $this->FE['SearchQuery'] = '';
@@ -5021,13 +5021,6 @@ class FrontEnd extends Core
                 $this->FE['TextModeLinks'] = 'tally';
             } else {
                 $this->FE['TextModeLinks'] = 'simple';
-            }
-
-            /** Sort order */
-            if (empty($this->CIDRAM['QueryVars']['sortOrder']) || $this->CIDRAM['QueryVars']['sortOrder'] === 'ascending') {
-                $this->FE['SortOrder'] = 'ascending';
-            } else {
-                $this->FE['SortOrder'] = 'descending';
             }
 
             /** Remember display preferences? */

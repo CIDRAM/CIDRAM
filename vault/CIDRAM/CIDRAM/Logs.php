@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used by the logs page (last modified: 2023.02.18).
+ * This file: Methods used by the logs page (last modified: 2023.03.01).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -20,9 +20,10 @@ trait Logs
      * working directory (normally, the vault).
      *
      * @param string $Base The path to the working directory.
+     * @param string $Order Whether to sort the list in ascending or descending order.
      * @return array A list of the logfiles contained in the working directory.
      */
-    private function logsRecursiveList(string $Base): array
+    private function logsRecursiveList(string $Base, string $Order = 'ascending'): array
     {
         $Arr = [];
         $List = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($Base), \RecursiveIteratorIterator::SELF_FIRST);
@@ -34,7 +35,11 @@ trait Logs
             $Arr[$ThisName] = ['Filename' => $ThisName, 'Filesize' => filesize($Item)];
             $this->formatFileSize($Arr[$ThisName]['Filesize']);
         }
-        ksort($Arr);
+        if ($Order === 'ascending') {
+            ksort($Arr);
+        } elseif ($Order === 'descending') {
+            krsort($Arr);
+        }
         return $Arr;
     }
 

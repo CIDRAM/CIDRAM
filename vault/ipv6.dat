@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2023.54.0
-# Last modified: 2023.02.24
+# Version: 2023.58.0
+# Last modified: 2023.02.28
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -110,11 +110,12 @@ Tag: LayerHost
 # I don't anticipate ever removing these listings. Have been blocking them due
 # to all kinds of unwanted traffic of all descriptions from their network since
 # many years before CIDRAM existed.
-# Stop Forum Spam (SFS) listings: 439.
-# Updated: 2020.11.27 / Checked: 2022.03.23
+# Stop Forum Spam (SFS) listings: 1,897.
+# Updated: 2023.02.28
 
 2600:bc00::/24 Deny Cloud
 2605:7280::/32 Deny Cloud
+2a06:a000:140::/44 Deny Cloud
 Origin: US
 Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: PEG TECH INC
@@ -2588,9 +2589,11 @@ Profile: Dedicated;Tor endpoints here;Webhosting
 Tag: Krypt Technologies
 
 
-# ASN 12586 ("GHOSTnet GmbH").
-# Stop Forum Spam (SFS) listings: 520.
-# Updated: 2021.11.21 / Checked: 2022.09.19
+# ASNs 12586, 57509 ("GHOSTnet GmbH").
+# Brute-force, DDoS, SQLi, and webapp attacks, port scans, hacking, and spam
+# detected from here.
+# Stop Forum Spam (SFS) listings: 52 (AS12586), 15 (AS57509).
+# Updated: 2021.11.21 / Checked: 2023.02.28
 
 2a00:12d8::/29 Deny Cloud
 2a00:19d0::/29 Deny Cloud
@@ -9683,8 +9686,7 @@ Tag: BIT BV
 
 
 # ASN 51013 ("Websupport s.r.o").
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2021.06.16 / Checked: 2022.03.13
+# Updated: 2021.06.16 / Checked: 2023.02.26
 
 2a02:250:2::/48 Deny Cloud
 Origin: SE
@@ -10404,15 +10406,16 @@ Tag: PINVDS OU
 # ASN 133296 ("Web Werks India Pvt. Ltd").
 # Indian server farm. Brute-force, XMLRPC/WordPress, and webapp attacks, port
 # scans, hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 153.
-# Updated: 2022.03.23
+# Stop Forum Spam (SFS) listings: 20.
+# Updated: 2023.02.28
 
 2001:df1:1400::/48 Deny Cloud
+2001:df2:e900::/48 Deny Cloud
 2001:df3:1680::/48 Deny Cloud
+2001:df5:4380::/48 Deny Cloud
 2001:df5:4480::/48 Deny Cloud
 2001:df5:f500::/48 Deny Cloud
 2001:df7:5d00::/48 Deny Cloud
-2001:df7:6880::/48 Deny Cloud
 2400:11c0::/32 Deny Cloud
 2401:7500:200::/40 Deny Cloud
 2401:7500:ff1::/48 Deny Cloud
@@ -10424,21 +10427,19 @@ Tag: PINVDS OU
 2401:7500:fffa::/47 Deny Cloud
 2401:7500:fffc::/48 Deny Cloud
 Origin: IN
-Profile: Infrastructure/Transit;Webhosting
+Profile: Webhosting
 Tag: Web Werks India
 
 
-# ASNs 134366, 138077 ("Cloud Computing HK Limited").
+# ASN 134366 ("Cloud Computing HK Limited").
 # Hong Kong cloud and webhosting provider. Brute-force, SSH, DDoS,
 # XMLRPC/WordPress, and webapp attacks, port scans, scraping, hacking, and spam
 # detected from here.
-# Stop Forum Spam (SFS) listings: 53 (AS134366), 1 (AS138077).
-# Updated: 2022.03.23
+# Stop Forum Spam (SFS) listings: 42.
+# Updated: 2023.02.28
 
 2402:e7c0:c00::/38 Deny Cloud
 Origin: CN
-2407:14c0::/32 Deny Cloud
-Origin: ID
 Profile: Infrastructure/Transit;Webhosting
 Tag: Cloud Computing HK Limited
 
@@ -10534,11 +10535,15 @@ Tag: 1337 Services GmbH
 # ASN 14315 ("1GSERVERS, LLC").
 # Dedicated servers and bare metal provider. Brute-force, SQLi, and webapp
 # attacks, port scans, hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 13.
-# Updated: 2022.04.16
+# Stop Forum Spam (SFS) listings: 7.
+# Updated: 2023.02.28
 
+2a05:4140:600::/40 Deny Cloud
+Origin: IT
+2602:fac2:4::/48 Deny Cloud
 2605:8340::/32 Deny Cloud
 2605:9d00:0:100::/56 Deny Cloud
+2606:fc40:4000::/48 Deny Cloud
 Origin: US
 Profile: Dedicated;Webhosting
 Tag: 1GSERVERS, LLC

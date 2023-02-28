@@ -143,6 +143,14 @@ $CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [], int
             return;
         }
 
+        /** Neevabot bypass. */
+        if (
+            $CIDRAM['Request']->inCsv('Neevabot', $CIDRAM['Config']['bypasses']['used']) &&
+            strpos($CIDRAM['BlockInfo']['UALC'], 'neevabot') !== false
+        ) {
+            return;
+        }
+
         /**
          * Pinterest bypass.
          * @link https://github.com/CIDRAM/CIDRAM/issues/253

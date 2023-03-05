@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2023.02.28).
+# This file: Defaults file (last modified: 2023.03.05).
 ##/
 
 Config Defaults:
@@ -164,8 +164,8 @@ Config Defaults:
     ReasonMessage: "field_reasonmessage"
     rURI: "field_rURI"
     Infractions: "field_infractions"
-    ASNLookup: "field_asnlookup"
-    CCLookup: "field_cclookup"
+    ASNLookup: "** {field_asnlookup}"
+    CCLookup: "** {field_cclookup}"
     Verified: "field_verified"
     Expired: "state_expired"
     Ignored: "state_ignored"
@@ -179,6 +179,7 @@ Config Defaults:
     DateTime:OmitIfEmpty
     SignatureCount:OmitIfEmpty
     Infractions:OmitIfEmpty
+   hints: "hints_asnlookup"
   timezone:
    type: "timezone"
    default: "SYSTEM"

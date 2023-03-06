@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2023.02.04).
+ * This file: Functions file (last modified: 2023.03.06).
  */
 
 /**
@@ -1920,10 +1920,21 @@ $CIDRAM['AuxMatch'] = function ($Criteria, $Actual, $Method = '') use (&$CIDRAM)
         return false;
     }
 
+    $ActualType = gettype($Actual);
+
     /** Perform a match using direct string comparison. */
     foreach ($Criteria as $TestCase) {
         $Operator = $CIDRAM['OperatorFromAuxValue']($TestCase);
         if ($Operator === '=') {
+            if ($ActualType !== gettype($TestCase)) {
+                if ($ActualType === 'integer') {
+                    $TestCase = (int)$TestCase;
+                } elseif ($ActualType === 'double') {
+                    $TestCase = (float)$TestCase;
+                } elseif ($ActualType === 'string') {
+                    $TestCase = (string)$TestCase;
+                }
+            }
             if ($Actual === $TestCase) {
                 return true;
             }

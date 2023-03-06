@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2023.02.18).
+# This file: Spanish language data for the front-end (last modified: 2023.03.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -366,7 +366,7 @@ field_your_version: "Tu Versión"
 header_login: "Por favor iniciar sesión para continuar."
 hints_asnlookup: "** Requiere la funcionalidad de búsqueda de ASN (por ejemplo, a través del módulo IP-API o BGPView)."
 hints_default_dns:
- FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.es.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="es">¿Qué puedo usar para "default_dns"?</a></em>"
+ FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.es.md\#qué-puedo-usar-para-default_dns" hreflang="es">¿Qué puedo usar para "default_dns"?</a></em>"
 hints_duration:
  SI.: "La duración se puede describir usando el "Sistema Internacional de Unidades". Por ejemplo, <strong>1d2h3min4s</strong> o <strong>1d 2h 3min 4s</strong> para un día, dos horas, tres minutos, cuatro segundos, o <strong>5min</strong> para solo cinco minutos."
  Tiempo de arco.: "La duración se puede describir utilizando la notación de tiempo de arco. Por ejemplo, <strong>1d2°3′4″</strong> para un día, dos horas, tres minutos, cuatro segundos, o <strong>5″</strong> para solo cinco segundos."
@@ -374,7 +374,7 @@ hints_duration:
  Restricciones.: "La notación se puede mezclar, pero las unidades siempre se deben describir de mayor a menor, y no se pueden repetir. Por ejemplo, <strong>1 week 2 days 3′4″</strong> es <span class="txtGn">válido</span> y se entenderá correctamente, pero <strong>3′4″ 1 week 2 days</strong> y <strong>3 hours 3h 3°</strong> <span class="txtRd">no son válidos</span>. A CIDRAM no le importa si usa espaciado o no. Los números deben ser simples y sin formato. Por motivos prácticos, la unidad más grande admitida es una semana. Cuando se actualiza la configuración, CIDRAM normaliza las duraciones al tiempo de arco."
 hints_ipv6_on_32bit: "Nota: Es posible que las búsquedas de IPv6 no funcionen correctamente en algunos sistemas de 32 bits."
 hints_pdo_dsn:
- FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.es.md\#HOW_TO_USE_PDO" hreflang="es">¿Qué es un "PDO DSN"? Cómo puedo usar PDO con CIDRAM?</a></em>"
+ FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.es.md\#user-content-HOW_TO_USE_PDO" hreflang="es">¿Qué es un "PDO DSN"? Cómo puedo usar PDO con CIDRAM?</a></em>"
 hints_shorthand:
  0.: "Si su sitio web necesita acceso a través de LAN o localhost, no bloquee esto. De lo contrario, puedes bloquear esto."
  1.: "Ninguno de los archivos de firma predeterminados usa esto, pero no obstante, es soportado en caso que pueda ser útil para algunos usuarios."
@@ -868,7 +868,7 @@ tip_range: "Hola, {username}.<br />Esta página muestra información estadístic
 tip_rate_limiting: "Hola, {username}.<br />Esta página muestra el uso y la disponibilidad actual de la cuota con respecto a la limitación de velocidad."
 tip_rate_limiting_disabled: "Nota: La limitación de velocidad está actualmente deshabilitada, pero se puede habilitar a través de la página de configuración."
 tip_sections_list: "Hola, {username}.<br />Esta página enumera qué secciones existen en los archivos de firma actualmente activos."
-tip_see_the_documentation: "Ver la <a href="https://github.com/CIDRAM/Docs/blob/master/readme.es.md\#SECTION5" hreflang="es" rel="noopener external">documentación</a> para obtener información sobre las distintas directivas de la configuración y sus propósitos."
+tip_see_the_documentation: "Ver la <a href="https://github.com/CIDRAM/Docs/blob/master/readme.es.md\#user-content-SECTION5" hreflang="es" rel="noopener external">documentación</a> para obtener información sobre las distintas directivas de la configuración y sus propósitos."
 tip_statistics: "Hola, {username}.<br />Esta página muestra algunas estadísticas de uso básicas relacionadas con la instalación de CIDRAM."
 tip_statistics_disabled: "Nota: El seguimiento de estadísticas está actualmente deshabilitado, pero se puede habilitar a través de la página de configuración."
 tip_subtractor: "Hola, {username}.<br />El sustractor se puede usar para restar un rango de IP/CIDR/máscaras de red de otro."

@@ -166,3 +166,5 @@
 [2023.03.01; Maikuolan]: Logs sort order now also affects the list of log files (#424).
 
 [2023.03.06; Bug-fix; Maikuolan]: Type-casting bug discovered in the code for auxiliary rules direct string comparison condition matching; Fixed (#429).
+
+[2023.03.06; Documentation; Maikuolan]: Due to changes implemented by GitHub in how it handles anchors in markdown files, a vast majority of the internal links within the documentation were broken, as well as most links within the L10N data which pointed to said documentation; Fixed.

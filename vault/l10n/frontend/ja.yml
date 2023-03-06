@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2023.02.18).
+# This file: Japanese language data for the front-end (last modified: 2023.03.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -364,7 +364,7 @@ field_your_version: "お使いのバージョン"
 header_login: "継続するには、​ログインしてください。"
 hints_asnlookup: "** ＡＳＮルックアップ機能が必要です（たとえば、IP-APIモジュールまたはBGPViewモジュールを介して）。"
 hints_default_dns:
- ＦＡＱ。: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.ja.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="ja">「default_dns」には何が使えますか？</a></em>"
+ ＦＡＱ。: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.ja.md\#default_dnsには何が使えますか" hreflang="ja">「default_dns」には何が使えますか？</a></em>"
 hints_duration:
  ＳＩ。: "期間は、「国際単位系」を使用して記述できます。​例えば、１日、２時間、３分、４秒れするために<strong>「1d2h3min4s」</strong>または<strong>「1d 2h 3min 4s」</strong>して、または５分だけするために<strong>「5min」</strong>して。"
  アークタイム。: "期間はアークタイム表記を使用して記述できます。​例えば、１日、２時間、３分、４秒するために<strong>「1d2°3′4″」</strong>して、または５秒だけするために<strong>「5″」</strong>して。"
@@ -372,7 +372,7 @@ hints_duration:
  制約。: "表記は混在できますが、単位は常に最大から最小の順に記述する必要があり、繰り返すことはできません。​例えば、<strong>「1 week 2 days 3′4″」</strong>は<span class="txtGn">有効</span>で、正しく理解されますが、<strong>「3′4″ 1 week 2 days」</strong>と<strong>「3 hours 3h 3°」</strong>は<span class="txtRd">無効/span>です。​CIDRAM は、スペーシングを使用するかどうかは気にしません。​数値はプレーンでフォーマットなし必要があります。​実用性のために、サポートされている最大の単位は１週間です。​コンフィギュレーションがアップデートされると、CIDRAMは期間をアークタイムに正規化します。"
 hints_ipv6_on_32bit: "注：一部の３２ビットシステムでは、ＩＰｖ６ルックアップが正しく機能しない場合があります。"
 hints_pdo_dsn:
- ＦＡＱ。: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.ja.md\#HOW_TO_USE_PDO" hreflang="ja">「PDO DSN」とは何ですか？​CIDRAMでPDOを使用するにはどうすればよいですか？</a></em>"
+ ＦＡＱ。: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.ja.md\#user-content-HOW_TO_USE_PDO" hreflang="ja">「PDO DSN」とは何ですか？​CIDRAMでPDOを使用するにはどうすればよいですか？</a></em>"
 hints_shorthand:
  0.: "ウェブサイトにＬＡＮまたはｌｏｃａｌｈｏｓｔ「ローカルホスト」経由でアクセスする必要がある場合は、これをブロックしないで。​それ以外の場合は、これをブロックできます。"
  1.: "デフォルト・シグネチャ・ファイルはどれもこれを使用していませんが、それでも一部のユーザーにとって役立つ可能性がある場合に備えてサポートされています。"
@@ -829,7 +829,7 @@ tip_range: "こんにちは、​{username}。​<br />このページには、�
 tip_rate_limiting: "こんにちは、​{username}。<br />このページには、レート制限に関する現在のクォータの使用状況と可用性が表示されます。"
 tip_rate_limiting_disabled: "注意：レート制限は現在オフラインですが、コンフィギュレーション・ページで有効にすることができます。"
 tip_sections_list: "こんにちは、​{username}。<br />このページには、現在アクティブなシグネチャ・ファイルに存在するセクションが一覧表示されます。"
-tip_see_the_documentation: "コンフィギュレーション・ディレクティブの詳細については、​<a href="https://github.com/CIDRAM/Docs/blob/master/readme.ja.md\#SECTION5" hreflang="ja" rel="noopener external">ドキュメント</a>を参照してください。"
+tip_see_the_documentation: "コンフィギュレーション・ディレクティブの詳細については、​<a href="https://github.com/CIDRAM/Docs/blob/master/readme.ja.md\#user-content-SECTION5" hreflang="ja" rel="noopener external">ドキュメント</a>を参照してください。"
 tip_statistics: "こんにちは、​{username}。​<br />このページには、CIDRAMのインストールに関する基本的な使用状況の統計情報が表示されます。"
 tip_statistics_disabled: "注意：統計トラッキングは現在オフラインですが、コンフィギュレーション・ページで有効にすることができます。"
 tip_subtractor: "こんにちは、​{username}。<br />ある範囲のＩＰ/ＣＩＤＲ/ネットマスクを別の範囲から減算ために、減算器を使用できます。"

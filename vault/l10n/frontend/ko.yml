@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2023.02.18).
+# This file: Korean language data for the front-end (last modified: 2023.03.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -364,7 +364,7 @@ field_your_version: "사용 버전"
 header_login: "계속하려면 로그인하십시오."
 hints_asnlookup: "** ASN 조회 기능이 필요합니다 (예\_: IP-API 또는 BGPView 모듈을 통해)."
 hints_default_dns:
- 자주하는 질문.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.ko.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="ko">"default_dns"에 사용할 수있는 항목은 무엇입니까?</a></em>"
+ 자주하는 질문.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.ko.md\#default_dns에-사용할-수있는-항목은-무엇입니까" hreflang="ko">"default_dns"에 사용할 수있는 항목은 무엇입니까?</a></em>"
 hints_duration:
  SI.: "기간은 "국제단위계"를 사용하여 설명할 수 있습니다. 예를 들어, 1일, 2시간, 3분, 4초 하기 위해 <strong>1d2h3min4s</strong> 또는 <strong>1d 2h 3min 4s</strong>를 사용하고, 단 5분만 하기 위해 <strong>5min</strong>를 사용합니다."
  아크타임.: "기간은 아크타임 표기법을 사용하여 설명할 수 있습니다. 예를 들어, 1일, 2시간, 3분, 4초 하기 위해 <strong>1d2°3′4″</strong>를 사용하고, 단 5초 하기 위해 <strong>5″</strong>를 사용합니다."
@@ -372,7 +372,7 @@ hints_duration:
  제약.: "표기법은 혼합될 수, 있지만 단위는 항상 가장 큰 것에서 가장 작은 것으로 설명되어야, 하며 반복될 수 없습니다. 예를 들어, <strong>1 week 2 days 3′4″</strong>는 <span class="txtGn">유효하</span>고 올바르게 이해되지만, <strong>3′4″ 1 week 2 days</strong>와 <strong>3 hours 3h 3°</strong>는 <span class="txtRd">유효하지 않습니다</span>. CIDRAM은 공백을 사용하는지 여부를 신경 쓰지 않습니다. 숫자는 형식이 지정되지 않아야 합니다. 실용성을 위해, 지원되는 최대 단위는 일주일입니다. 구성이 업데이트되면, CIDRAM은 지속 시간을 아크타임으로 정규화합니다."
 hints_ipv6_on_32bit: "참고\_: IPv6 조회는 일부 32비트 시스템에서 제대로 작동하지 않을 수 있습니다."
 hints_pdo_dsn:
- 자주하는 질문.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.ko.md\#HOW_TO_USE_PDO" hreflang="ko">"PDO DSN"은 무엇입니까? CIDRAM과 함께 PDO를 사용하려면 어떻게해야합니까?</a></em>"
+ 자주하는 질문.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.ko.md\#user-content-HOW_TO_USE_PDO" hreflang="ko">"PDO DSN"은 무엇입니까? CIDRAM과 함께 PDO를 사용하려면 어떻게해야합니까?</a></em>"
 hints_shorthand:
  0.: "웹 사이트에 LAN 또는 localhost를 통한 액세스가 필요한 경우, 이를 차단하지 마십시오. 그렇지 않은 경우, 이를 차단할 수 있습니다."
  1.: "기본 서명 파일은 이것을 사용하지 않습니다, 그러나 일부 사용자에게 유용한 경우를 위해 지원됩니다."
@@ -827,7 +827,7 @@ tip_range: "안녕하세요, {username}.<br />이 페이지는 현재 활성화 
 tip_rate_limiting: "안녕하세요, {username}.<br />이 페이지는 속도 제한과 관련된 현재 할당량 사용량 및 가용성을 보여줍니다."
 tip_rate_limiting_disabled: "노트\_: 속도 제한은 현재 비활성화되어, 있지만 구성 페이지를 통해 활성화할 수 있습니다."
 tip_sections_list: "안녕하세요, {username}.<br />이 페이지는 현재 활성화 된 서명 파일에 존재하는 섹션을 나열합니다."
-tip_see_the_documentation: "설정 지시어에 대한 자세한 내용은 <a href="https://github.com/CIDRAM/Docs/blob/master/readme.ko.md\#SECTION5" hreflang="ko" rel="noopener external">문서를</a> 참조하십시오."
+tip_see_the_documentation: "설정 지시어에 대한 자세한 내용은 <a href="https://github.com/CIDRAM/Docs/blob/master/readme.ko.md\#user-content-SECTION5" hreflang="ko" rel="noopener external">문서를</a> 참조하십시오."
 tip_statistics: "안녕하세요, {username}.<br />이 페이지는 CIDRAM 설치와 관련된 몇 가지 기본 사용 통계를 보여줍니다."
 tip_statistics_disabled: "노트\_: 통계 추적은 현재 비활성화되어, 있지만 구성 페이지를 통해 활성화할 수 있습니다."
 tip_subtractor: "안녕하세요, {username}.<br />감산기는 한 범위의 IP/CIDR을 다른 범위에서 빼는 데 사용할 수 있습니다."

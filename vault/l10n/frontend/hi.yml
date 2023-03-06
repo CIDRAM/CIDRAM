@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data for the front-end (last modified: 2023.02.18).
+# This file: Hindi language data for the front-end (last modified: 2023.03.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -366,7 +366,7 @@ field_your_version: "आपका संस्करण"
 header_login: "जारी रखने के लिए कृपया लॉग इन करें।"
 hints_asnlookup: "** ASN लुकअप कार्यक्षमता की आवश्यकता है (उदा., IP-API या BGPView मॉड्यूल के माध्यम से)।"
 hints_default_dns:
- सामान्य प्रश्न।: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="en-AU">मैं "Default_dns" के लिए क्या उपयोग कर सकता हूं?</a></em>"
+ सामान्य प्रश्न।: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#what-can-i-use-for-default_dns" hreflang="en-AU">मैं "Default_dns" के लिए क्या उपयोग कर सकता हूं?</a></em>"
 hints_duration:
  SI.: ""इकाइयों की अंतर्राष्ट्रीय प्रणाली" का उपयोग करके अवधि का वर्णन किया जा सकता है। उदा., एक दिन, दो घंटे, तीन मिनट, चार सेकंड के लिए <strong>1d2h3min4s</strong> या <strong>1d 2h 3min 4s</strong> का प्रयोग करें, या सिर्फ पांच मिनट के लिए <strong>5min</strong> का प्रयोग करें।"
  कोणीय समय।: "कोणीय समय का उपयोग करके अवधि का वर्णन किया जा सकता है। उदा., एक दिन, दो घंटे, तीन मिनट, चार सेकंड के लिए <strong>1d2°3′4″</strong> का प्रयोग करें, या सिर्फ पांच सेकंड के लिए <strong>5″</strong> का प्रयोग करें।"
@@ -374,7 +374,7 @@ hints_duration:
  सीमाएं।: "अंकन मिश्रित किया जा सकता है, लेकिन इकाइयों को हमेशा सबसे बड़े से सबसे छोटे तक वर्णित किया जाना चाहिए, और दोहराया नहीं जा सकता। उदा., <strong>1 week 2 days 3′4″</strong> <span class="txtGn">मान्य</span> है और सही ढंग से समझा जाएगा, लेकिन <strong>3′4″ 1 week 2 days</strong> और <strong>3 hours 3h 3°</strong> <span class="txtRd">अमान्य</span> हैं। CIDRAM परवाह नहीं है कि आप स्पेस बार का उपयोग करते हैं या नहीं। नंबर सादे और बिना फ़ॉर्मेट वाले होने चाहिए। व्यावहारिकता के लिए, सबसे बड़ी समर्थित इकाई एक सप्ताह है। जब कॉन्फ़िगरेशन अपडेट किया जाता है, तो CIDRAM अवधि को कोणीय समय तक सामान्य कर देता है।"
 hints_ipv6_on_32bit: "नोट: हो सकता है कि कुछ 32-बिट सिस्टम पर IPv6 लुकअप ठीक से काम न करें।"
 hints_pdo_dsn:
- सामान्य प्रश्न।: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#HOW_TO_USE_PDO" hreflang="en-AU">"PDO DSN" क्या है? मैं CIDRAM के साथ PDO का उपयोग कैसे कर सकता हूं?</a></em>"
+ सामान्य प्रश्न।: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">"PDO DSN" क्या है? मैं CIDRAM के साथ PDO का उपयोग कैसे कर सकता हूं?</a></em>"
 hints_shorthand:
  0.: "यदि आपकी वेबसाइट को LAN या localhost के माध्यम से एक्सेस की आवश्यकता है, तो इसे ब्लॉक न करें। अन्यथा, आप इसे ब्लॉक कर सकते हैं।"
  1.: "डिफ़ॉल्ट हस्ताक्षर फ़ाइलें इसका उपयोग नहीं करती हैं, लेकिन कुछ उपयोगकर्ताओं के लिए उपयोगी होने की स्थिति में यह समर्थित रहती है।"
@@ -842,7 +842,7 @@ tip_range: "हैलो, {username}।<br />यह पृष्ठ वर्त
 tip_rate_limiting: "हैलो, {username}।<br />यह पृष्ठ दर सीमित करने के संबंध में वर्तमान कोटा उपयोग और उपलब्धता को दर्शाता है।"
 tip_rate_limiting_disabled: "नोट: दर सीमित वर्तमान में अक्षम है, लेकिन कॉन्फ़िगरेशन पृष्ठ के माध्यम से सक्षम किया जा।"
 tip_sections_list: "हैलो, {username}।<br />यह पृष्ठ वर्तमान सक्रिय हस्ताक्षर फ़ाइलों में मौजूद अनुभागों को सूचीबद्ध करता है।"
-tip_see_the_documentation: "विभिन्न कॉन्फ़िगरेशन निर्देशों और उनके उद्देश्यों के बारे में जानकारी के लिए <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#SECTION5" hreflang="en" rel="noopener external">डॉक्यूमेंटेशन</a> देखें।"
+tip_see_the_documentation: "विभिन्न कॉन्फ़िगरेशन निर्देशों और उनके उद्देश्यों के बारे में जानकारी के लिए <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external">डॉक्यूमेंटेशन</a> देखें।"
 tip_statistics: "हैलो, {username}।<br />यह पृष्ठ आपके CIDRAM स्थापना के बारे में कुछ बुनियादी उपयोग सांख्यिकी दिखाता है।"
 tip_statistics_disabled: "नोट: सांख्यिकी ट्रैकिंग वर्तमान में अक्षम है, लेकिन कॉन्फ़िगरेशन पृष्ठ के माध्यम से सक्षम किया जा।"
 tip_subtractor: "हैलो, {username}।<br />सबट्रैक्टर को एक से दूसरे IP/CIDR/नेटमास्क की एक रेंज को घटाने के लिए इस्तेमाल किया जा सकता है।"

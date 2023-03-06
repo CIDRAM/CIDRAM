@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2023.02.18).
+# This file: Swedish language data for the front-end (last modified: 2023.03.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -364,7 +364,7 @@ field_your_version: "Din version"
 header_login: "Snälla logga in för att fortsätta."
 hints_asnlookup: "** Kräver ASN-uppslagsfunktion (t.ex., via IP-API-modulen eller BGPView-modulen)."
 hints_default_dns:
- FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="en-AU">Vad kan jag använda för "default_dns"?</a></em>"
+ FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#what-can-i-use-for-default_dns" hreflang="en-AU">Vad kan jag använda för "default_dns"?</a></em>"
 hints_duration:
  SI.: "Varaktighet kan beskrivas med hjälp av "International System of Units". T.ex., <strong>1d2h3min4s</strong> eller <strong>1d 2h 3min 4s</strong> för en dag, två timmar, tre minuter, fyra sekunder, eller <strong>5min</strong> för bara fem minuter."
  Bågtid.: "Varaktighet kan beskrivas med bågtidsnotation. T.ex., <strong>1d2°3′4″</strong> för en dag, två timmar, tre minuter, fyra sekunder, eller <strong>5″</strong> för bara fem sekunder."
@@ -372,7 +372,7 @@ hints_duration:
  Begränsningar.: "Notation kan blandas, men enheter måste alltid beskrivas från största till minsta, och kan inte upprepas. T.ex., <strong>1 week 2 days 3′4″</strong> är <span class="txtGn">giltigt</span> och kommer att förstås korrekt, men <strong>3′4″ 1 week 2 days</strong> och <strong>3 hours 3h 3°</strong> är <span class="txtRd">ogiltiga</span>. CIDRAM bryr sig inte om du använder mellanrum eller inte. Siffror måste vara enkla och oformaterade. För praktiska skull är den största enheten som stöds en vecka. När konfigurationen uppdateras, normaliserar CIDRAM varaktigheterna till bågtid."
 hints_ipv6_on_32bit: "Obs: IPv6-sökningar kanske inte fungerar korrekt på vissa 32-bitarssystem."
 hints_pdo_dsn:
- FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#HOW_TO_USE_PDO" hreflang="en-AU">Vad är en "PDO DSN"? Hur kan jag använda PDO med CIDRAM?</a></em>"
+ FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">Vad är en "PDO DSN"? Hur kan jag använda PDO med CIDRAM?</a></em>"
 hints_shorthand:
  0.: "Om din webbplats behöver åtkomst via LAN eller localhost, inte blockera detta. Annars du kan blockera detta."
  1.: "Ingen av standardsignaturfilerna använder detta, men det stöds ändå i så fall det kan vara användbart för vissa användare."
@@ -864,7 +864,7 @@ tip_range: "Hallå, {username}.<br />Den här sidan visar några grundläggande 
 tip_rate_limiting: "Hallå, {username}.<br />Den här sidan visar den aktuella kvotanvändningen och tillgängligheten när det gäller hastighetsbegränsning."
 tip_rate_limiting_disabled: "Notera: Hastighetsbegränsning är för närvarande inaktiverad, men kan aktiveras via konfigurationssidan."
 tip_sections_list: "Hallå, {username}.<br />Den här sidan visar vilka sektioner som finns i de aktuella aktiva signaturfilerna."
-tip_see_the_documentation: "Se <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#SECTION5" hreflang="en" rel="noopener external">dokumentationen</a> för information om de olika konfigurationsdirektiven och deras ändamål."
+tip_see_the_documentation: "Se <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external">dokumentationen</a> för information om de olika konfigurationsdirektiven och deras ändamål."
 tip_statistics: "Hallå, {username}.<br />Den här sidan visar en viss användarstatistik för din CIDRAM-installation."
 tip_statistics_disabled: "Notera: Statistikspårning är för närvarande inaktiverad, men kan aktiveras via konfigurationssidan."
 tip_subtractor: "Hallå, {username}.<br />Subtraktoren kan användas för att subtrahera intervaller av IPer/CIDRer/nätmasker från ett annat."

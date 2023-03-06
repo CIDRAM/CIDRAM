@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2023.02.18).
+# This file: German language data for the front-end (last modified: 2023.03.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -366,7 +366,7 @@ field_your_version: "Ihre Version"
 header_login: "Bitte einloggen zum Fortfahren."
 hints_asnlookup: "** Erfordert ASN-Lookup-Funktionalität (z.B., über das IP-API-Modul oder BGPView-Modul)."
 hints_default_dns:
- FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.de.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="de">Was kann ich für „default_dns“ verwenden?</a></em>"
+ FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.de.md\#was-kann-ich-für-default_dns-verwenden" hreflang="de">Was kann ich für „default_dns“ verwenden?</a></em>"
 hints_duration:
  SI.: "Die Dauer kann mit dem „International System of Units“ beschrieben werden. z.B., <strong>1d2h3min4s</strong> oder <strong>1d 2h 3min 4s</strong> für einen Tag, zwei Stunden, drei Minuten, vier Sekunden, oder <strong>5min</strong> für nur fünf Minuten."
  Bogenzeit.: "Die Dauer kann unter Verwendung der Bogenzeit-Notation beschrieben werden. z.B., <strong>1d2°3′4″</strong> für einen Tag, zwei Stunden, drei Minuten, vier Sekunden, oder <strong>5″</strong> für nur fünf Sekunden."
@@ -374,7 +374,7 @@ hints_duration:
  Einschränkungen.: "Die Notation kann gemischt werden, aber Einheiten müssen immer vom größten zum kleinsten beschrieben werden, und können nicht wiederholt werden. z.B., <strong>1 week 2 days 3′4″</strong> ist <span class="txtGn">gültig</span> und wird korrekt verstanden, aber <strong>3′4″ 1 week 2 days</strong> und <strong>3 hours 3h 3°</strong> sind <span class="txtRd">ungültig</span>. CIDRAM kümmert sich nicht darum ob Sie Leerzeichen verwenden oder nicht. Zahlen müssen einfach und unformatiert sein. Aus praktischen Gründen ist die größte unterstützte Einheit eine Woche. Wenn die Konfiguration aktualisiert wird, normalisiert CIDRAM die Dauer auf Bogenzeit."
 hints_ipv6_on_32bit: "Hinweis: IPv6-Lookups funktionieren auf einigen 32-Bit-Systemen möglicherweise nicht richtig."
 hints_pdo_dsn:
- FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.de.md\#HOW_TO_USE_PDO" hreflang="de">Was ist ein „PDO DSN“? Wie kann ich PDO mit CIDRAM verwenden?</a></em>"
+ FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.de.md\#user-content-HOW_TO_USE_PDO" hreflang="de">Was ist ein „PDO DSN“? Wie kann ich PDO mit CIDRAM verwenden?</a></em>"
 hints_shorthand:
  0.: "Wenn Ihre Website Zugriff über LAN oder localhost benötigt, blockieren Sie dies nicht. Andernfalls können Sie dies blockieren."
  1.: "Keine der Standard-Signaturdateien verwendet dies, aber es wird trotzdem unterstützt für in dem Fall es für einige Benutzer nützlich sein könnte."
@@ -871,7 +871,7 @@ tip_range: "Hallo, {username}.<br />Diese Seite enthält einige grundlegende sta
 tip_rate_limiting: "Hallo, {username}.<br />Diese Seite zeigt die aktuelle Kontingentnutzung und Verfügbarkeit in Bezug auf die Ratenbegrenzung."
 tip_rate_limiting_disabled: "Hinweis: Die Ratenbegrenzung ist derzeit deaktiviert, aber kann über die Konfigurationsseite aktiviert werden."
 tip_sections_list: "Hallo, {username}.<br />Auf dieser Seite wird aufgelistet, welche Sektionen in den derzeit aktiven Signaturdateien vorhanden sind."
-tip_see_the_documentation: "Siehe die <a href="https://github.com/CIDRAM/Docs/blob/master/readme.de.md\#SECTION5" hreflang="de" rel="noopener external">Dokumentation</a> für Informationen über den verschiedenen Konfigurationseinstellungen und ihren Zwecken."
+tip_see_the_documentation: "Siehe die <a href="https://github.com/CIDRAM/Docs/blob/master/readme.de.md\#user-content-SECTION5" hreflang="de" rel="noopener external">Dokumentation</a> für Informationen über den verschiedenen Konfigurationseinstellungen und ihren Zwecken."
 tip_statistics: "Hallo, {username}.<br />Diese Seite zeigt einige grundlegende Nutzungsstatistiken zu Ihrer CIDRAM-Installation."
 tip_statistics_disabled: "Hinweis: Die Statistikverfolgung ist derzeit deaktiviert, aber kann über die Konfigurationsseite aktiviert werden."
 tip_subtractor: "Hallo, {username}.<br />Der Subtrahierer kann verwendet werden, um einen Bereich von IPs/CIDRs/Netzmasken von einem anderen zu subtrahieren."

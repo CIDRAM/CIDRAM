@@ -164,3 +164,5 @@
 [2023.02.28; Maikuolan]: Adjusted the eTaggable method, increasing expiries from 1 month to 6 months to further reduce superfluous requests for static files, and explicitly removing the Cache-Control header due to some implementations setting the Cache-Control header within their own code, prior to calling CIDRAM, thus preventing browsers from being able to properly cache CIDRAM's static assets (explicitly removing the header should ensure that static assets can be cached as expected).
 
 [2023.03.01; Maikuolan]: Logs sort order now also affects the list of log files (#424).
+
+[2023.03.06; Bug-fix; Maikuolan]: Type-casting bug discovered in the code for auxiliary rules direct string comparison condition matching; Fixed (#429).

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2023.02.22).
+ * This file: The CIDRAM core (last modified: 2023.03.06).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -2018,10 +2018,21 @@ class Core
             return false;
         }
 
+        $ActualType = gettype($Actual);
+
         /** Perform a match using direct string comparison. */
         foreach ($Criteria as $TestCase) {
             $Operator = $this->operatorFromAuxValue($TestCase);
             if ($Operator === '=') {
+                if ($ActualType !== gettype($TestCase)) {
+                    if ($ActualType === 'integer') {
+                        $TestCase = (int)$TestCase;
+                    } elseif ($ActualType === 'double') {
+                        $TestCase = (float)$TestCase;
+                    } elseif ($ActualType === 'string') {
+                        $TestCase = (string)$TestCase;
+                    }
+                }
                 if ($Actual === $TestCase) {
                     return true;
                 }

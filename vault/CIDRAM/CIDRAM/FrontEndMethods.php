@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2023.02.28).
+ * This file: General methods used by the front-end (last modified: 2023.03.07).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -589,7 +589,7 @@ trait FrontEndMethods
                 $Template = substr($Template, 0, $BPos) . substr($Template, $EPos + strlen($Segment) + 13);
             }
         }
-        return $this->parseVars(array_merge($this->L10N->Data, $this->FE), $Template);
+        return $this->embedAssets($this->parseVars(array_merge($this->L10N->Data, $this->FE), $Template));
     }
 
     /**
@@ -1305,5 +1305,32 @@ trait FrontEndMethods
         header('HTTP/1.1 403 Forbidden');
         header('Status: 403 Forbidden');
         die;
+    }
+
+    /**
+     * Embed assets inside a string.
+     *
+     * @param string $In The string to embed assets in.
+     * @return string
+     */
+    private function embedAssets(string $In): string
+    {
+        if (preg_match_all('~\{Asset\:([^{}]+)\}~', $In, $Matches)) {
+            $Matches = (isset($Matches[1]) && is_array($Matches[1])) ? array_unique($Matches[1]) : [];
+            foreach ($Matches as $AssetName) {
+                if (($AssetPath = $this->getAssetPath($AssetName, true)) !== '') {
+                    if (($Value = $this->readFile($AssetPath)) !== '') {
+                        $In = str_replace('{Asset:' . $AssetName . '}', $Value, $In);
+                    }
+                }
+            }
+        }
+        if (preg_match_all('~\{Base64Encode\}(.+?)\{/Base64Encode\}~s', $In, $Matches)) {
+            $Matches = (isset($Matches[1]) && is_array($Matches[1])) ? array_unique($Matches[1]) : [];
+            foreach ($Matches as $Data) {
+                $In = str_replace('{Base64Encode}' . $Data . '{/Base64Encode}', base64_encode($Data), $In);
+            }
+        }
+        return $In;
     }
 }

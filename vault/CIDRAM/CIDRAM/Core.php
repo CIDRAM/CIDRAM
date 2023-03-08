@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2023.03.06).
+ * This file: The CIDRAM core (last modified: 2023.03.07).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -440,7 +440,7 @@ class Core
      */
     public function parseVars(array $Needles, string $Haystack): string
     {
-        if (empty($Haystack)) {
+        if ($Haystack === '') {
             return '';
         }
         foreach ($Needles as $Key => $Value) {

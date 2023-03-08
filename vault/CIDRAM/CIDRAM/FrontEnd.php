@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.03.01).
+ * This file: The CIDRAM front-end (last modified: 2023.03.07).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -318,20 +318,12 @@ class FrontEnd extends Core
             'sList.toggle("caret-down")&&this.classList.toggle("caret-up")&&setTimeo' .
             'ut(function(t){t.classList.toggle("caret-up")},200,this)});</script>';
 
-        /** Fetch pips data. */
-        if ($this->CIDRAM['Pips_Path'] = $this->getAssetPath('pips.yml', true)) {
-            $this->YAML->process($this->readFile($this->CIDRAM['Pips_Path']), $this->FE);
-        }
-
         /** A fix for correctly displaying LTR/RTL text. */
         if (empty($this->L10N->Data['Text Direction']) || $this->L10N->Data['Text Direction'] !== 'rtl') {
             $this->L10N->Data['Text Direction'] = 'ltr';
             $this->FE['FE_Align'] = 'left';
             $this->FE['FE_Align_Reverse'] = 'right';
             $this->FE['FE_Align_Mode'] = 'lr';
-            $this->FE['PIP_Input'] = $this->FE['PIP_Right'];
-            $this->FE['PIP_Input_Valid'] = $this->FE['PIP_Right_Valid'];
-            $this->FE['PIP_Input_Invalid'] = $this->FE['PIP_Right_Invalid'];
             $this->FE['Half_Border'] = 'solid solid none none';
             $this->FE['45deg'] = '45deg';
             $this->FE['90deg'] = '90deg';
@@ -339,9 +331,6 @@ class FrontEnd extends Core
             $this->FE['FE_Align'] = 'right';
             $this->FE['FE_Align_Reverse'] = 'left';
             $this->FE['FE_Align_Mode'] = 'rl';
-            $this->FE['PIP_Input'] = $this->FE['PIP_Left'];
-            $this->FE['PIP_Input_Valid'] = $this->FE['PIP_Left_Valid'];
-            $this->FE['PIP_Input_Invalid'] = $this->FE['PIP_Left_Invalid'];
             $this->FE['Half_Border'] = 'solid none none solid';
             $this->FE['45deg'] = '-45deg';
             $this->FE['90deg'] = '270deg';
@@ -355,7 +344,7 @@ class FrontEnd extends Core
         /** A simple passthru for the front-end CSS. */
         if ($this->CIDRAM['QueryVars']['cidram-page'] === 'css') {
             $this->eTaggable('frontend.css', function ($AssetData) {
-                return $this->parseVars($this->L10N->Data + $this->FE, $AssetData);
+                return $this->embedAssets($this->parseVars($this->L10N->Data + $this->FE, $AssetData));
             });
         }
 

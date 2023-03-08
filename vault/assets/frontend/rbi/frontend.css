@@ -9,10 +9,10 @@ input,select{width:150px;background-repeat:no-repeat;background-position:top {FE
 input[type=submit]:not(.auto),input[type=button]:not(.auto){width:auto;min-width:150px}
 input.auto,select.auto{width:auto;padding-left:10px;padding-right:10px}
 input[type=image]{width:inherit;border:inherit}
-input[type=password]{background-image:url(data:image/gif;base64,{PIP_Key})}
-input[type=text]{background-image:url(data:image/gif;base64,{PIP_Input})}
-input[type=text][pattern]:valid:not(input[type=text]:placeholder-shown){background-image:url(data:image/gif;base64,{PIP_Input_Valid})}
-input[type=text][pattern]:invalid:not(input[type=text]:placeholder-shown){background-image:url(data:image/gif;base64,{PIP_Input_Invalid})}
+input[type=password]{background-image:url(data:image/gif;base64,{Base64Encode}{Asset:pip_key_red.gif}{/Base64Encode})}
+input[type=text]{background-image:url(data:image/gif;base64,{Base64Encode}{Asset:pip_{Text Direction}_red.gif}{/Base64Encode})}
+input[type=text][pattern]:valid:not(input[type=text]:placeholder-shown){background-image:url(data:image/gif;base64,{Base64Encode}{Asset:pip_{Text Direction}_red_valid.gif}{/Base64Encode})}
+input[type=text][pattern]:invalid:not(input[type=text]:placeholder-shown){background-image:url(data:image/gif;base64,{Base64Encode}{Asset:pip_{Text Direction}_red_invalid.gif}{/Base64Encode})}
 input{border-radius:0}
 input[type=button],input[type=submit],input[type=reset]{border-radius:18px;transition:all .3s ease-out}
 select,option,input,textarea{filter:grayscale(.1) brightness(.94)}
@@ -72,7 +72,7 @@ a:active,a:focus{color:red}
 @keyframes rAux{0%{background:rgba(255,0,0,.7)}100%{background:rgba(255,0,0,0)}}
 .inv{opacity:0}
 .mob{display:none}
-input[id=logoutbutton]{border-top-{FE_Align}-radius:0;border-bottom-{FE_Align}-radius:0;padding-{FE_Align}:18px;margin-{FE_Align}:-1px;background-position:top 1px {FE_Align} 4px,top 1px {FE_Align} 4px;background-image:url('?cidram-asset=lock_rd_o.png&theme={theme}'),url('?cidram-asset=lock_rd_c.png&theme={theme}')}
+input[id=logoutbutton]{border-top-{FE_Align}-radius:0;border-bottom-{FE_Align}-radius:0;padding-{FE_Align}:18px;margin-{FE_Align}:-1px;background-position:top 1px {FE_Align} 4px,top 1px {FE_Align} 4px;background-image:url(data:image/png;base64,{Base64Encode}{Asset:lock_rd_o.png}{/Base64Encode}),url(data:image/png;base64,{Base64Encode}{Asset:lock_rd_c.png}{/Base64Encode})}
 input[id=logoutbutton]:hover,input[id=logoutbutton]:active,input[id=logoutbutton]:focus{background-position:top 3px {FE_Align} 4px,top 1px {FE_Align} 4px}
 input[id=homebutton]{border-top-{FE_Align_Reverse}-radius:0;border-bottom-{FE_Align_Reverse}-radius:0;margin-{FE_Align_Reverse}:0}
 .textLabel{color:#664;white-space:pre}
@@ -114,7 +114,7 @@ blockquote.comSub{margin:-2px 0 0 0;padding:0 0 0 0}
 }
 @keyframes forRotate{0%{transform:rotate(0)}100%{transform:rotate({45deg})}}
 @keyframes revRotate{0%{transform:rotate({45deg})}100%{transform:rotate(0)}}
-.navicon{filter:invert(22%) sepia(17%) saturate(5055%) hue-rotate(340deg) brightness(97%) contrast(90%);position:relative;top:1px;width:16px;height:16px}
+.navicon{display:inline-block;filter:invert(22%) sepia(17%) saturate(5055%) hue-rotate(340deg) brightness(97%) contrast(90%);position:relative;top:1px;width:16px;height:16px}
 select+input[type=submit],select+input[type=button]{margin-{FE_Align}:-3px;border-bottom-{FE_Align}-radius:0;border-top-{FE_Align}-radius:0;padding-{FE_Align}:3px}
 select,input[type=submit],input[type=reset],input[type=button],input[type=text],input[type=password],input[type=number],input[type=date],input[type=time],button{box-sizing:border-box;height:20px;padding-top:0;padding-bottom:0}
 select[class=auto]+select[class=auto]{margin-{FE_Align}:-3px;margin-{FE_Align_Reverse}:0}
@@ -165,3 +165,23 @@ input[type=button].reset:hover,input[type=button].reset:active{color:#f88}
 .scaleXToZero{display:inline-block;overflow:hidden;transform:scaleX(0);transform-origin:{FE_Align};opacity:0;max-height:16px;max-width:0;transition:all .2s ease-out}
 .scaleXToOne{display:inline-block;overflow:hidden;transform:scaleX(1);transform-origin:{FE_Align};opacity:1;max-height:16px;max-width:auto;transition:all .2s ease-in}
 #logsTA{position:relative;top:-2px}
+.navicon.accounts{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:accounts.svg}{/Base64Encode})}
+.navicon.auxiliary{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxiliary.svg}{/Base64Encode})}
+.navicon.cache{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:cache.svg}{/Base64Encode})}
+.navicon.configuration{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:configuration.svg}{/Base64Encode})}
+.navicon.folder{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:folder.svg}{/Base64Encode})}
+.navicon.test{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:test.svg}{/Base64Encode})}
+.navicon.tracking{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:tracking.svg}{/Base64Encode})}
+.navicon.range{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:range.svg}{/Base64Encode})}
+.navicon.rl{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:rl.svg}{/Base64Encode})}
+.navicon.statistics{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:statistics.svg}{/Base64Encode})}
+.navicon.updates{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:updates.svg}{/Base64Encode})}
+.navicon.backup{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:backup.svg}{/Base64Encode})}
+.navicon.logs{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:logs.svg}{/Base64Encode})}
+.navicon.calculator{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:calculator.svg}{/Base64Encode})}
+.navicon.aggregator{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:aggregator.svg}{/Base64Encode})}
+.navicon.intersector{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:intersector.svg}{/Base64Encode})}
+.navicon.subtractor{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:subtractor.svg}{/Base64Encode})}
+.navicon.documentation{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:documentation.svg}{/Base64Encode})}
+.navicon.discussions{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:discussions.svg}{/Base64Encode})}
+.navicon.link{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:link.svg}{/Base64Encode})}

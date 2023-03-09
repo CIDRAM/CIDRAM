@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CIDRAM CLI mode (last modified: 2022.10.29).
+ * This file: CIDRAM CLI mode (last modified: 2023.03.09).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -470,49 +470,46 @@ trait CLI
                 if (strpos($Data, "\r") !== false) {
                     $Data = str_replace("\r", '', $Data);
                 }
-                $Fixer['StrObject'] = new \Maikuolan\Common\ComplexStringHandler(
-                    "\n" . $Data . "\n",
-                    '~(?<=\n)(?:\n|Expires\: \d{4}\.\d\d\.\d\d|Origin\: [A-Z]{2}|(?:\#|Tag\: |Profile\: |Defers to\: )[^\n]+| *\/\*\*(?:\n *\*[^\n]*)*\/| *\/\*\*? [^\n*]+\*\/|---\n(?:[^\n:]+\:(?:\n +[^\n:]+\: [^\n]+)+)+)+\n~',
-                    function ($Data) {
-                        if (!$Data = trim($Data)) {
-                            return '';
-                        }
-                        $Output = '';
-                        $EoLPos = $NEoLPos = 0;
-                        while ($NEoLPos !== false) {
-                            $Set = $Previous = '';
-                            while (true) {
-                                if (($NEoLPos = strpos($Data, "\n", $EoLPos)) === false) {
-                                    $Line = trim(substr($Data, $EoLPos));
-                                } else {
-                                    $Line = trim(substr($Data, $EoLPos, $NEoLPos - $EoLPos));
-                                    $NEoLPos++;
-                                }
-                                $Param = (($Pos = strpos($Line, ' ')) !== false) ? substr($Line, $Pos + 1) : 'Deny Generic';
-                                if (!$Previous) {
-                                    $Previous = $Param;
-                                }
-                                if ($Param !== $Previous) {
-                                    $NEoLPos = 0;
-                                    break;
-                                }
-                                if ($Line) {
-                                    $Set .= $Line . "\n";
-                                }
-                                if ($NEoLPos === false) {
-                                    break;
-                                }
-                                $EoLPos = $NEoLPos;
-                            }
-                            if ($Set = $Fixer['Aggregator']->aggregate(trim($Set))) {
-                                $Set = preg_replace('~$~m', ' ' . $Previous, $Set);
-                                $Output .= $Set . "\n";
-                            }
-                        }
-                        return trim($Output);
+                $Fixer['StrObject'] = new \Maikuolan\Common\ComplexStringHandler("\n" . $Data . "\n", self::REGEX_TAGS, function (string $Data) use (&$Fixer): string {
+                    if (!$Data = trim($Data)) {
+                        return '';
                     }
-                );
-                $Fixer['StrObject']->iterateClosure(function ($Data) {
+                    $Output = '';
+                    $EoLPos = $NEoLPos = 0;
+                    while ($NEoLPos !== false) {
+                        $Set = $Previous = '';
+                        while (true) {
+                            if (($NEoLPos = strpos($Data, "\n", $EoLPos)) === false) {
+                                $Line = trim(substr($Data, $EoLPos));
+                            } else {
+                                $Line = trim(substr($Data, $EoLPos, $NEoLPos - $EoLPos));
+                                $NEoLPos++;
+                            }
+                            $Param = (($Pos = strpos($Line, ' ')) !== false) ? substr($Line, $Pos + 1) : 'Deny Generic';
+                            $Param = preg_replace(['~^\s+|\s+$~', '~(\S+)\s+(\S+)~'], ['', '\1 \2'], $Param);
+                            if ($Previous === '') {
+                                $Previous = $Param;
+                            }
+                            if ($Param !== $Previous) {
+                                $NEoLPos = 0;
+                                break;
+                            }
+                            if ($Line) {
+                                $Set .= $Line . "\n";
+                            }
+                            if ($NEoLPos === false) {
+                                break;
+                            }
+                            $EoLPos = $NEoLPos;
+                        }
+                        if ($Set = $Fixer['Aggregator']->aggregate(trim($Set))) {
+                            $Set = preg_replace('~$~m', ' ' . $Previous, $Set);
+                            $Output .= $Set . "\n";
+                        }
+                    }
+                    return trim($Output);
+                });
+                $Fixer['StrObject']->iterateClosure(function (string $Data) {
                     if (($Pos = strpos($Data, "---\n")) !== false && substr($Data, $Pos - 1, 1) === "\n") {
                         $YAML = substr($Data, $Pos + 4);
                         if (($HPos = strpos($YAML, "\n#")) !== false) {

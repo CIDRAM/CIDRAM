@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bot user agents module (last modified: 2023.03.05).
+ * This file: Bot user agents module (last modified: 2023.03.09).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -253,7 +253,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     ), 'Unauthorised'); // 2022.08.28
 
     $this->trigger(preg_match(
-        '~^(?:bot|java|msie|windows-live-social-object-extractor)|\((?:java|\w\:\d{2,})~',
+        '~^(?:bot|java|msie|windows-live-social-object-extractor)|\((?:java|\w:\d{2,})~',
         $UANoSpace
     ), 'Fake UA'); // 2019.06.30
 

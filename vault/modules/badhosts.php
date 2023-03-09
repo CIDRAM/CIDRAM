@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bad hosts blocker module (last modified: 2023.02.28).
+ * This file: Bad hosts blocker module (last modified: 2023.03.09).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -214,7 +214,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $UANoSpace
         ) &&
         !preg_match(
-            '~(?:Feedspot http\://www\.feedspot\.com|developers\.snap\.com/robots)$~',
+            '~(?:Feedspot http://www\.feedspot\.com|developers\.snap\.com/robots)$~',
             $this->BlockInfo['UA']
         )
     ), 'Amazon Web Services'); // 2023.02.28
@@ -241,7 +241,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         ), 'Banned hostname') || // 2017.01.21
         $this->trigger(preg_match('~rumer|pymep|румер~', $HN), 'Spamhost') || // 2017.01.21
         $this->trigger(preg_match('/^localhost$/', $HN) && (
-            !preg_match('/^(?:1(?:27|92\.168)(?:\.1?\d{1,2}|\.2[0-4]\d|\.25[0-5]){2,3}|\:\:1)$/', $this->BlockInfo['IPAddr'])
+            !preg_match('/^(?:1(?:27|92\.168)(?:\.1?\d{1,2}|\.2[0-4]\d|\.25[0-5]){2,3}|::1)$/', $this->BlockInfo['IPAddr'])
         ), 'Spoofed/Fake Hostname') || // 2018.06.24
         $this->trigger($HN === '.', 'DNS error') // 2017.02.25
     ) {

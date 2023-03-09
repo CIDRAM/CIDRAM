@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2023.03.07).
+ * This file: The CIDRAM core (last modified: 2023.03.09).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1570,7 +1570,7 @@ class Core
      */
     public function resolve6to4(string $In): string
     {
-        if (!preg_match('~^(?:200[12]|fe80)\:~i', $In)) {
+        if (!preg_match('~^(?:200[12]|fe80):~i', $In)) {
             return '';
         }
         $Parts = explode(':', $In, 8);
@@ -1602,7 +1602,7 @@ class Core
         }
 
         /** ISATAP. */
-        if (preg_match('~^fe80\:\:(?:0200\:)?5efe\:([\da-f]{1,4})\:([\da-f]{1,4})$~i', $In, $Parts)) {
+        if (preg_match('~^fe80::(?:0200:)?5efe:([\da-f]{1,4}):([\da-f]{1,4})$~i', $In, $Parts)) {
             $Parts[1] = hexdec($Parts[1]) ?: 0;
             $Parts[2] = hexdec($Parts[2]) ?: 0;
             $Octets = [0 => floor($Parts[1] / 256), 1 => $Parts[1] % 256, 2 => floor($Parts[2] / 256), 3 => $Parts[2] % 256];
@@ -1838,7 +1838,7 @@ class Core
     {
         return '~^' . preg_replace(
             ['~\\\{(?:dd|mm|yy|hh|ii|ss)\\\}~i', '~\\\{yyyy\\\}~i', '~\\\{(?:Day|Mon)\\\}~i', '~\\\{tz\\\}~i', '~\\\{t\\\:z\\\}~i'],
-            ['\d{2}', '\d{4}', '\w{3}', '.{1,2}\d{4}', '.{1,2}\d{2}\:\d{2}'],
+            ['\d{2}', '\d{4}', '\w{3}', '.{1,2}\d{4}', '.{1,2}\d{2}:\d{2}'],
             preg_quote(str_replace("\\", '/', $Str))
         ) . ($GZ ? '(?:\.gz)?' : '') . '$~i';
     }

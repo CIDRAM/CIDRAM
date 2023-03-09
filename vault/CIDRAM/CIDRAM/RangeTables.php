@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used by the range tables page (last modified: 2022.07.22).
+ * This file: Methods used by the range tables page (last modified: 2023.03.09).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -590,10 +590,10 @@ trait RangeTables
                 }
                 yield $Mark;
             } elseif (
-                preg_match('~^()([\da-f]{1,2})()()\:\:/(\d+) (Deny|Whitelist|Greylist|Run)~', $Line, $Matches) ||
-                preg_match('~^([\da-f]{1,2})([\da-f]{2})()()\:\:/(\d+) (Deny|Whitelist|Greylist|Run)~', $Line, $Matches) ||
-                preg_match('~^([\da-f]{1,2})([\da-f]{2})\:()([\da-f]{1,2})\:\:/(\d+) (Deny|Whitelist|Greylist|Run)~', $Line, $Matches) ||
-                preg_match('~^([\da-f]{1,2})([\da-f]{2})\:([\da-f]{1,2})([\da-f]{2})\:\:/(\d+) (Deny|Whitelist|Greylist|Run)~', $Line, $Matches)
+                preg_match('~^()([\da-f]{1,2})()()::/(\d+) (Deny|Whitelist|Greylist|Run)~', $Line, $Matches) ||
+                preg_match('~^([\da-f]{1,2})([\da-f]{2})()()::/(\d+) (Deny|Whitelist|Greylist|Run)~', $Line, $Matches) ||
+                preg_match('~^([\da-f]{1,2})([\da-f]{2}):()([\da-f]{1,2})::/(\d+) (Deny|Whitelist|Greylist|Run)~', $Line, $Matches) ||
+                preg_match('~^([\da-f]{1,2})([\da-f]{2}):([\da-f]{1,2})([\da-f]{2})::/(\d+) (Deny|Whitelist|Greylist|Run)~', $Line, $Matches)
             ) {
                 $Mark['6or4'] = 6;
                 if ($Matches[6] === 'Deny') {

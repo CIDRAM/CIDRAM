@@ -170,3 +170,5 @@
 [2023.03.06; Documentation; Maikuolan]: Due to changes implemented by GitHub in how it handles anchors in markdown files, a vast majority of the internal links within the documentation were broken, as well as most links within the L10N data which pointed to said documentation; Fixed.
 
 [2023.03.08; Maikuolan]: Optimised nav icons, pip icons, and related assets (#431).
+
+[2023.03.09; Maikuolan]: The signature file fixer is now capable of detecting and removing extraneous spaces from signatures (#435).

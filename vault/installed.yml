@@ -1,6 +1,6 @@
 CIDRAM Core:
  Name: "CIDRAM Core"
- Version: "3.1.1-DEV+23066000"
+ Version: "3.1.1-DEV+23067000"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Front-End: "Latest"
@@ -26,7 +26,7 @@ CIDRAM Core:
    Checksum: "8bfa4d8f80d7adef8670529cd229de10682a538ae139b9af972d2cfe803476e2:4843"
   CIDRAM/CIDRAM/Core.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Core.php"
-   Checksum: "f3d41ecf6836e73a3026deeeac29de59fe1e17afd60b36fd8868f3a2b277ee95:120611"
+   Checksum: "7c2fa02b49b6b03b340975f04964833096bd5546b12eedef368362e20a58ca48:120604"
   CIDRAM/CIDRAM/Duration.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Duration.php"
    Checksum: "f7ea95b8ef317359a166dcc4b228701b23702ede5e6df7dcf09ed8fe2a32d2ec:11666"
@@ -62,7 +62,7 @@ CIDRAM Core:
    Checksum: "0464045b8ef60a043daa506e8b8159a2be0e542752d5b34b694bcf1b64f07411:7348"
 CIDRAM Front-End:
  Name: "CIDRAM Front-End"
- Version: "3.1.1-DEV+23066000"
+ Version: "3.1.1-DEV+23067000"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "Latest"
@@ -377,22 +377,22 @@ CIDRAM Front-End:
    Checksum: "fbcae234e183d8aa5c32ef892ce0a0371abd7397921b8f4568fd123bbde9dd27:36264"
   CIDRAM/CIDRAM/CLI.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/CLI.php"
-   Checksum: "dfbb581ee399800b77d4e1d8fb68ab73777bb6daf904844152b7bc104a5f2301:27964"
+   Checksum: "9c0aad725cbf7e06280e7f1665d141118eb7610a5e92b5047eb27fe0cbcd9555:27701"
   CIDRAM/CIDRAM/Configuration.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Configuration.php"
    Checksum: "d5999ccbbe0c2abeb10d56452fb791adb0515466d3f3aa537486b7c79d7178d0:3495"
   CIDRAM/CIDRAM/FrontEnd.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/FrontEnd.php"
-   Checksum: "2ac229ebbb75929fe97d4113422402342aa3b6203a43b54fb015eac6b03a70a9:322490"
+   Checksum: "f282d7a7bb88bd384a80f9595c2be343bb3c7cd25110b5241487c133b3b0a6cf:322294"
   CIDRAM/CIDRAM/FrontEndMethods.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/FrontEndMethods.php"
-   Checksum: "2fd4be32d9d366d1e559ca134b9059d82cdb23d0fb76f9530277b5675fcb6261:56532"
+   Checksum: "337c801fb8768653d970b7cecc3871e54e1669d3467f782f72a46bfd88f04892:56167"
   CIDRAM/CIDRAM/Logs.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Logs.php"
    Checksum: "5e0c38d90f82aa31da1e5c56e868a11f7c540c7c332b26c59191b1c625f9f61a:18081"
   CIDRAM/CIDRAM/RangeTables.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/RangeTables.php"
-   Checksum: "15c5693eb238551f5ef71eb6cbd5ba7fefa7c9b3f1b2f1e8473810e6e2aefa94:39336"
+   Checksum: "8a813d7db234c11fa45944cb91ecd8b26f7b568c8927ed029bef4e77f627744a:39326"
   CIDRAM/CIDRAM/SimulateBlockEvent.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/SimulateBlockEvent.php"
    Checksum: "8fb10ea008e4c7a0973622ffb1d7b0256d5a36d6a3840832455f310f8273b301:10992"
@@ -965,11 +965,11 @@ AbuseIPDB module:
    Used with: "modules"
 Bad hosts blocker module:
  False Positive Risk: "Medium"
- Version: "2023.58.0"
+ Version: "2023.67.0"
  Files:
   modules/badhosts.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/badhosts.php"
-   Checksum: "26f001daf8e97973c817c8413cd75a2a6eb13d1120f6c23ebf8d2d024f9a2ba7:15426"
+   Checksum: "c800badfc019d3ab388510f52a397a13e02771d332c8b7aa332f1818fce0d250:15423"
    Used with: "modules"
 Bad TLDs blocker module:
  False Positive Risk: "Low"
@@ -993,11 +993,11 @@ BGPView module:
    Used with: "modules"
 Bot user agents module:
  False Positive Risk: "Medium"
- Version: "2023.63.0"
+ Version: "2023.67.0"
  Files:
   modules/botua.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/botua.php"
-   Checksum: "ce754d9a4116e7f86bc180fdd66ef15bab432a69561596234e17894b53726fef:24288"
+   Checksum: "803d48cc6a488c582abdbfceec3dca30e480347ef9f016d268b8a0400b282458:24287"
    Used with: "modules"
 BunnyCDN compatibility module:
  False Positive Risk: "Low"
@@ -1013,11 +1013,11 @@ BunnyCDN compatibility module:
    Used with: "modules"
 Cookie scanner module:
  False Positive Risk: "Low"
- Version: "2022.142.0"
+ Version: "2023.67.0"
  Files:
   modules/cookies.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/cookies.php"
-   Checksum: "55548e3b7a1b087a807f839a42c5b358dfd264f2dd7b03fb548438d7a6cb6905:8298"
+   Checksum: "5dc993abbfa437dc170d793a5b1324a7e63ccef23a633e062b1e73ac220330b4:8296"
    Used with: "modules"
 IP-API module:
  False Positive Risk: "Low"
@@ -1092,7 +1092,7 @@ BOBUAM:
   Optional module which detects unwanted bots, old browsers, and performs some sanity checks.<br />Contains some data from
   the Wordpress plugin "Stop Bad Bots" by William "Bill" Minozzi.<br />(A few webservices bots might need bypasses).
  False Positive Risk: "Medium"
- Version: "2023.58.0"
+ Version: "2023.67.0"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Front-End: "^3"
@@ -1105,7 +1105,7 @@ BOBUAM:
    Used with: "imports"
   modules/bobuam.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/bobuam.php"
-   Checksum: "acdacb7b113f184d5f6467800d14831377bfd026e42f3b18c92e7db8a9b3a982:42794"
+   Checksum: "67f80b1baf32fbdc4e1fd99f628d7cb0df8fefc7658b5378712b3f73ab44ea88:42793"
    Used with: "modules"
 theme/bluemetal:
  Name: "Theme: Blue Metal"

@@ -51,6 +51,11 @@ class FrontEnd extends Core
     private const TWO_FACTOR_MAX_INT = 99999999;
 
     /**
+     * @var string Regular expression used to separate signature sections and tags.
+     */
+    private const REGEX_TAGS = '~(?<=\n)(?:\n|Expires: \d{4}\.\d\d\.\d\d|Origin: [A-Z]{2}|(?:\#|Tag: |Profile: |Defers to: )[^\n]+| *\/\*\*(?:\n *\*[^\n]*)*\/| *\/\*\*? [^\n*]+\*\/|---\n(?:[^\n:]+:(?:\n +[^\n:]+: [^\n]+)+)+)+\n~';
+
+    /**
      * View the front-end.
      *
      * @return void
@@ -225,9 +230,6 @@ class FrontEnd extends Core
         } else {
             $this->FE['CronType'] = '';
         }
-
-        /** Regular expression used to separate signature sections and tags. */
-        $this->CIDRAM['RegExTags'] = '~(?<=\n)(?:\n|Expires: \d{4}\.\d\d\.\d\d|Origin: [A-Z]{2}|(?:\#|Tag: |Profile: |Defers to: )[^\n]+| *\/\*\*(?:\n *\*[^\n]*)*\/| *\/\*\*? [^\n*]+\*\/|---\n(?:[^\n:]+:(?:\n +[^\n:]+: [^\n]+)+)+)+\n~';
 
         /** Populated by [Home | Log Out] by default; Replaced by [Log Out] for some specific pages (e.g., the homepage). */
         $this->FE['bNav'] = $this->FE['HomeButton'] . $this->FE['LogoutButton'];
@@ -2879,51 +2881,48 @@ class FrontEnd extends Core
                     $this->FE['FixerOutput'] = str_replace("\r", '', $this->FE['FixerOutput']);
                     $Fixer['Changes']++;
                 }
-                $Fixer['StrObject'] = new \Maikuolan\Common\ComplexStringHandler(
-                    "\n" . $this->FE['FixerOutput'] . "\n",
-                    $this->CIDRAM['RegExTags'],
-                    function ($Data) use (&$Fixer): string {
-                        if (!$Data = trim($Data)) {
-                            return '';
-                        }
-                        $Output = '';
-                        $EoLPos = $NEoLPos = 0;
-                        while ($NEoLPos !== false) {
-                            $Set = $Previous = '';
-                            while (true) {
-                                if (($NEoLPos = strpos($Data, "\n", $EoLPos)) === false) {
-                                    $Line = trim(substr($Data, $EoLPos));
-                                } else {
-                                    $Line = trim(substr($Data, $EoLPos, $NEoLPos - $EoLPos));
-                                    $NEoLPos++;
-                                }
-                                $Param = (($Pos = strpos($Line, ' ')) !== false) ? substr($Line, $Pos + 1) : 'Deny Generic';
-                                if (!$Previous) {
-                                    $Previous = $Param;
-                                }
-                                if ($Param !== $Previous) {
-                                    $NEoLPos = 0;
-                                    break;
-                                }
-                                if ($Line) {
-                                    $Set .= $Line . "\n";
-                                }
-                                if ($NEoLPos === false) {
-                                    break;
-                                }
-                                $EoLPos = $NEoLPos;
-                            }
-                            if ($Set = $Fixer['Aggregator']->aggregate(trim($Set))) {
-                                $Set = preg_replace('~$~m', ' ' . $Previous, $Set);
-                                $Output .= $Set . "\n";
-                            }
-                            $Fixer['Changes'] += $Fixer['Aggregator']->NumberRejected;
-                            $Fixer['Changes'] += $Fixer['Aggregator']->NumberMerged;
-                        }
-                        return trim($Output);
+                $Fixer['StrObject'] = new \Maikuolan\Common\ComplexStringHandler("\n" . $this->FE['FixerOutput'] . "\n", self::REGEX_TAGS, function (string $Data) use (&$Fixer): string {
+                    if (!$Data = trim($Data)) {
+                        return '';
                     }
-                );
-                $Fixer['StrObject']->iterateClosure(function ($Data) {
+                    $Output = '';
+                    $EoLPos = $NEoLPos = 0;
+                    while ($NEoLPos !== false) {
+                        $Set = $Previous = '';
+                        while (true) {
+                            if (($NEoLPos = strpos($Data, "\n", $EoLPos)) === false) {
+                                $Line = trim(substr($Data, $EoLPos));
+                            } else {
+                                $Line = trim(substr($Data, $EoLPos, $NEoLPos - $EoLPos));
+                                $NEoLPos++;
+                            }
+                            $Param = (($Pos = strpos($Line, ' ')) !== false) ? substr($Line, $Pos + 1) : 'Deny Generic';
+                            $Param = preg_replace(['~^\s+|\s+$~', '~(\S+)\s+(\S+)~'], ['', '\1 \2'], $Param);
+                            if ($Previous === '') {
+                                $Previous = $Param;
+                            }
+                            if ($Param !== $Previous) {
+                                $NEoLPos = 0;
+                                break;
+                            }
+                            if ($Line) {
+                                $Set .= $Line . "\n";
+                            }
+                            if ($NEoLPos === false) {
+                                break;
+                            }
+                            $EoLPos = $NEoLPos;
+                        }
+                        if ($Set = $Fixer['Aggregator']->aggregate(trim($Set))) {
+                            $Set = preg_replace('~$~m', ' ' . $Previous, $Set);
+                            $Output .= $Set . "\n";
+                        }
+                        $Fixer['Changes'] += $Fixer['Aggregator']->NumberRejected;
+                        $Fixer['Changes'] += $Fixer['Aggregator']->NumberMerged;
+                    }
+                    return trim($Output);
+                });
+                $Fixer['StrObject']->iterateClosure(function (string $Data) use (&$Fixer) {
                     if (($Pos = strpos($Data, "---\n")) !== false && substr($Data, $Pos - 1, 1) === "\n") {
                         $YAML = substr($Data, $Pos + 4);
                         if (($HPos = strpos($YAML, "\n#")) !== false) {
@@ -3831,17 +3830,13 @@ class FrontEnd extends Core
                 $this->CIDRAM['Aggregator'] = new Aggregator($OutputFormat);
                 $this->CIDRAM['Aggregator']->Results = true;
                 if ($Preserve) {
-                    $StrObject = new \Maikuolan\Common\ComplexStringHandler(
-                        "\n" . $this->FE['input'] . "\n",
-                        $this->CIDRAM['RegExTags'],
-                        function ($Data): string {
-                            if (!$Data = trim($Data)) {
-                                return '';
-                            }
-                            return $this->CIDRAM['Aggregator']->aggregate($Data);
+                    $StrObject = new \Maikuolan\Common\ComplexStringHandler("\n" . $this->FE['input'] . "\n", self::REGEX_TAGS, function (string $Data): string {
+                        if (!$Data = trim($Data)) {
+                            return '';
                         }
-                    );
-                    $StrObject->iterateClosure(function ($Data) {
+                        return $this->CIDRAM['Aggregator']->aggregate($Data);
+                    });
+                    $StrObject->iterateClosure(function (string $Data): string {
                         return "\n" . $Data;
                     }, true);
                     $this->FE['output'] = trim($StrObject->recompile());

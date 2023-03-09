@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2023.03.07).
+ * This file: General methods used by the front-end (last modified: 2023.03.09).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -903,45 +903,41 @@ trait FrontEndMethods
      */
     private function intersectCidr(string $A = '', string $B = '', int $Format = 0): string
     {
-        $StrObject = new \Maikuolan\Common\ComplexStringHandler(
-            $A . "\n",
-            $this->CIDRAM['RegExTags'],
-            function (string $Data) use ($B, $Format): string {
-                $Data = "\n" . $this->CIDRAM['Aggregator']->aggregate($Data) . "\n";
-                $Intersect = '';
-                foreach ([['B', 'Data'], ['Data', 'B']] as $Points) {
-                    $LPos = 0;
-                    while (($NPos = strpos(${$Points[0]}, "\n", $LPos)) !== false) {
-                        $Line = substr(${$Points[0]}, $LPos, $NPos - $LPos);
-                        $LPos = $NPos + 1;
-                        if (($DPos = strpos($Line, '/')) !== false) {
-                            $Range = substr($Line, $DPos + 1);
-                            $Base = substr($Line, 0, $DPos);
-                        } else {
+        $StrObject = new \Maikuolan\Common\ComplexStringHandler($A . "\n", self::REGEX_TAGS, function (string $Data) use ($B, $Format): string {
+            $Data = "\n" . $this->CIDRAM['Aggregator']->aggregate($Data) . "\n";
+            $Intersect = '';
+            foreach ([['B', 'Data'], ['Data', 'B']] as $Points) {
+                $LPos = 0;
+                while (($NPos = strpos(${$Points[0]}, "\n", $LPos)) !== false) {
+                    $Line = substr(${$Points[0]}, $LPos, $NPos - $LPos);
+                    $LPos = $NPos + 1;
+                    if (($DPos = strpos($Line, '/')) !== false) {
+                        $Range = substr($Line, $DPos + 1);
+                        $Base = substr($Line, 0, $DPos);
+                    } else {
+                        continue;
+                    }
+                    if (!$CIDRs = $this->expandIpv4($Base)) {
+                        if (!$CIDRs = $this->expandIpv6($Base)) {
                             continue;
                         }
-                        if (!$CIDRs = $this->expandIpv4($Base)) {
-                            if (!$CIDRs = $this->expandIpv6($Base)) {
-                                continue;
-                            }
+                    }
+                    foreach ($CIDRs as $Key => $Actual) {
+                        if (strpos(${$Points[1]}, "\n" . $Actual . "\n") === false) {
+                            continue;
                         }
-                        foreach ($CIDRs as $Key => $Actual) {
-                            if (strpos(${$Points[1]}, "\n" . $Actual . "\n") === false) {
-                                continue;
-                            }
-                            if (($Key + 1) > (int)$Range) {
-                                $Intersect .= $Actual . "\n";
-                            } else {
-                                $Intersect .= $Line . "\n";
-                            }
-                            break;
+                        if (($Key + 1) > (int)$Range) {
+                            $Intersect .= $Actual . "\n";
+                        } else {
+                            $Intersect .= $Line . "\n";
                         }
+                        break;
                     }
                 }
-                $Aggregator = new Aggregator($Format);
-                return trim($Aggregator->aggregate($Intersect));
             }
-        );
+            $Aggregator = new Aggregator($Format);
+            return trim($Aggregator->aggregate($Intersect));
+        });
         $StrObject->iterateClosure(function (string $Data): string {
             return "\n" . $Data;
         }, true);
@@ -959,40 +955,36 @@ trait FrontEndMethods
      */
     private function subtractCidr(string $Minuend = '', string $Subtrahend = '', int $Format = 0): string
     {
-        $StrObject = new \Maikuolan\Common\ComplexStringHandler(
-            $Minuend . "\n",
-            $this->CIDRAM['RegExTags'],
-            function (string $Minuend) use ($Subtrahend, $Format): string {
-                $Minuend = "\n" . $this->CIDRAM['Aggregator']->aggregate($Minuend . "\n" . $Subtrahend) . "\n";
-                $LPos = 0;
-                while (($NPos = strpos($Subtrahend, "\n", $LPos)) !== false) {
-                    $Line = substr($Subtrahend, $LPos, $NPos - $LPos);
-                    $LPos = $NPos + 1;
-                    if (($DPos = strpos($Line, '/')) !== false) {
-                        $Range = substr($Line, $DPos + 1);
-                        $Base = substr($Line, 0, $DPos);
-                    } else {
+        $StrObject = new \Maikuolan\Common\ComplexStringHandler($Minuend . "\n", self::REGEX_TAGS, function (string $Minuend) use ($Subtrahend, $Format): string {
+            $Minuend = "\n" . $this->CIDRAM['Aggregator']->aggregate($Minuend . "\n" . $Subtrahend) . "\n";
+            $LPos = 0;
+            while (($NPos = strpos($Subtrahend, "\n", $LPos)) !== false) {
+                $Line = substr($Subtrahend, $LPos, $NPos - $LPos);
+                $LPos = $NPos + 1;
+                if (($DPos = strpos($Line, '/')) !== false) {
+                    $Range = substr($Line, $DPos + 1);
+                    $Base = substr($Line, 0, $DPos);
+                } else {
+                    continue;
+                }
+                if (!$CIDRs = $this->expandIpv4($Base, false, $Range)) {
+                    if (!$CIDRs = $this->expandIpv6($Base, false, $Range)) {
                         continue;
                     }
-                    if (!$CIDRs = $this->expandIpv4($Base, false, $Range)) {
-                        if (!$CIDRs = $this->expandIpv6($Base, false, $Range)) {
-                            continue;
-                        }
-                    }
-                    foreach ($CIDRs as $Key => $Actual) {
-                        if (strpos($Minuend, "\n" . $Actual . "\n") === false) {
-                            continue;
-                        }
-                        if ($Range > ($Key + 1) && $Split = $this->splitCidr($Actual)) {
-                            $Minuend .= implode("\n", $Split) . "\n";
-                        }
-                        $Minuend = str_replace("\n" . $Actual . "\n", "\n", $Minuend);
-                    }
                 }
-                $Aggregator = new Aggregator($Format);
-                return trim($Aggregator->aggregate($Minuend));
+                foreach ($CIDRs as $Key => $Actual) {
+                    if (strpos($Minuend, "\n" . $Actual . "\n") === false) {
+                        continue;
+                    }
+                    if ($Range > ($Key + 1) && $Split = $this->splitCidr($Actual)) {
+                        $Minuend .= implode("\n", $Split) . "\n";
+                    }
+                    $Minuend = str_replace("\n" . $Actual . "\n", "\n", $Minuend);
+                }
             }
-        );
+            $Aggregator = new Aggregator($Format);
+            return trim($Aggregator->aggregate($Minuend));
+        });
         $StrObject->iterateClosure(function (string $Data): string {
             return "\n" . $Data;
         }, true);
@@ -1315,7 +1307,7 @@ trait FrontEndMethods
      */
     private function embedAssets(string $In): string
     {
-        if (preg_match_all('~\{Asset\:([^{}]+)\}~', $In, $Matches)) {
+        if (preg_match_all('~\{Asset:([^{}]+)\}~', $In, $Matches)) {
             $Matches = (isset($Matches[1]) && is_array($Matches[1])) ? array_unique($Matches[1]) : [];
             foreach ($Matches as $AssetName) {
                 if (($AssetPath = $this->getAssetPath($AssetName, true)) !== '') {

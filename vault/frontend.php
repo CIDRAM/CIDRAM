@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2023.03.01).
+ * This file: Front-end handler (last modified: 2023.03.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2979,7 +2979,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'fixer' && $CIDRAM['FE']['Permis
         $CIDRAM['Fixer']['StrObject'] = new \Maikuolan\Common\ComplexStringHandler(
             "\n" . $CIDRAM['FE']['FixerOutput'] . "\n",
             $CIDRAM['RegExTags'],
-            function ($Data) use (&$CIDRAM): string {
+            function (string $Data) use (&$CIDRAM): string {
                 if (!$Data = trim($Data)) {
                     return '';
                 }
@@ -2995,7 +2995,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'fixer' && $CIDRAM['FE']['Permis
                             $NEoLPos++;
                         }
                         $Param = (($Pos = strpos($Line, ' ')) !== false) ? substr($Line, $Pos + 1) : 'Deny Generic';
-                        if (!$Previous) {
+                        $Param = preg_replace(['~^\s+|\s+$~', '~(\S+)\s+(\S+)~'], ['', '\1 \2'], $Param);
+                        if ($Previous === '') {
                             $Previous = $Param;
                         }
                         if ($Param !== $Previous) {
@@ -3021,7 +3022,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'fixer' && $CIDRAM['FE']['Permis
                 return trim($Output);
             }
         );
-        $CIDRAM['Fixer']['StrObject']->iterateClosure(function ($Data) use (&$CIDRAM) {
+        $CIDRAM['Fixer']['StrObject']->iterateClosure(function (string $Data) use (&$CIDRAM) {
             if (($Pos = strpos($Data, "---\n")) !== false && substr($Data, $Pos - 1, 1) === "\n") {
                 $YAML = substr($Data, $Pos + 4);
                 if (($HPos = strpos($YAML, "\n#")) !== false) {
@@ -3948,7 +3949,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-aggregator' && $CIDRAM['FE']
             $CIDRAM['StrObject'] = new \Maikuolan\Common\ComplexStringHandler(
                 "\n" . $CIDRAM['FE']['input'] . "\n",
                 $CIDRAM['RegExTags'],
-                function ($Data) use (&$CIDRAM): string {
+                function (string $Data) use (&$CIDRAM): string {
                     if (!$Data = trim($Data)) {
                         return '';
                     }
@@ -3962,7 +3963,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-aggregator' && $CIDRAM['FE']
                     return $Data;
                 }
             );
-            $CIDRAM['StrObject']->iterateClosure(function ($Data) {
+            $CIDRAM['StrObject']->iterateClosure(function (string $Data): string {
                 return "\n" . $Data;
             }, true);
             $CIDRAM['FE']['output'] = trim($CIDRAM['StrObject']->recompile());

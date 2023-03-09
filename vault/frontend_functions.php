@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2023.03.01).
+ * This file: Front-end functions file (last modified: 2023.03.09).
  */
 
 /**
@@ -4370,10 +4370,10 @@ $CIDRAM['Matrix-Create-Generator'] = function (string &$Source) use (&$CIDRAM): 
             }
             yield $Mark;
         } elseif (
-            preg_match('~^()([\da-f]{1,2})()()\:\:/(\d+) (Deny|Whitelist|Greylist|Run)~', $Line, $Matches) ||
-            preg_match('~^([\da-f]{1,2})([\da-f]{2})()()\:\:/(\d+) (Deny|Whitelist|Greylist|Run)~', $Line, $Matches) ||
-            preg_match('~^([\da-f]{1,2})([\da-f]{2})\:()([\da-f]{1,2})\:\:/(\d+) (Deny|Whitelist|Greylist|Run)~', $Line, $Matches) ||
-            preg_match('~^([\da-f]{1,2})([\da-f]{2})\:([\da-f]{1,2})([\da-f]{2})\:\:/(\d+) (Deny|Whitelist|Greylist|Run)~', $Line, $Matches)
+            preg_match('~^()([\da-f]{1,2})()()::/(\d+) (Deny|Whitelist|Greylist|Run)~', $Line, $Matches) ||
+            preg_match('~^([\da-f]{1,2})([\da-f]{2})()()::/(\d+) (Deny|Whitelist|Greylist|Run)~', $Line, $Matches) ||
+            preg_match('~^([\da-f]{1,2})([\da-f]{2}):()([\da-f]{1,2})::/(\d+) (Deny|Whitelist|Greylist|Run)~', $Line, $Matches) ||
+            preg_match('~^([\da-f]{1,2})([\da-f]{2}):([\da-f]{1,2})([\da-f]{2})::/(\d+) (Deny|Whitelist|Greylist|Run)~', $Line, $Matches)
         ) {
             $Mark['6or4'] = 6;
             if ($Matches[6] === 'Deny') {

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.03.07).
+ * This file: The CIDRAM front-end (last modified: 2023.03.09).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -36,17 +36,17 @@ class FrontEnd extends Core
     private $Components = [];
 
     /**
-     * @var string Whether we're calling CIDRAM through an alternative pathway.
+     * @var bool Whether we're calling CIDRAM through an alternative pathway.
      */
     private $Alternate = false;
 
     /**
-     * @var string Lowest possible two-factor authentication code.
+     * @var int Lowest possible two-factor authentication code.
      */
     private const TWO_FACTOR_MIN_INT = 10000000;
 
     /**
-     * @var string Highest possible two-factor authentication code.
+     * @var int Highest possible two-factor authentication code.
      */
     private const TWO_FACTOR_MAX_INT = 99999999;
 

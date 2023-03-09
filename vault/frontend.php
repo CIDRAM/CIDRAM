@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2023.03.01).
+ * This file: Front-end handler (last modified: 2023.03.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -3003,7 +3003,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'fixer' && $CIDRAM['FE']['Permis
                             $NEoLPos++;
                         }
                         $Param = (($Pos = strpos($Line, ' ')) !== false) ? substr($Line, $Pos + 1) : 'Deny Generic';
-                        if (!$Previous) {
+                        $Param = preg_replace(['~^\s+|\s+$~', '~(\S+)\s+(\S+)~'], ['', '\1 \2'], $Param);
+                        if ($Previous === '') {
                             $Previous = $Param;
                         }
                         if ($Param !== $Previous) {

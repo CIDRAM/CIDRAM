@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: ip-api module (last modified: 2023.01.09).
+ * This file: ip-api module (last modified: 2023.03.10).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -106,11 +106,6 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         $this->Cache->setEntry('IPAPI-' . $ToCheck, ['ASN' => $ASN, 'CC' => $CC], $Expiry);
         $this->CIDRAM['IPAPI-' . $ToCheck] = ['ASN' => $ASN, 'CC' => $CC];
         $InCache = true;
-    }
-
-    /** Guard. */
-    if (!$InCache) {
-        return;
     }
 
     /** Act based on ASN. */

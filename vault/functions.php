@@ -1203,9 +1203,13 @@ $CIDRAM['Trigger'] = function ($Condition, $ReasonShort, $ReasonLong = '', array
     if (!empty($CIDRAM['BlockInfo']['Signatures'])) {
         $CIDRAM['BlockInfo']['Signatures'] .= ', ';
     }
-    $Debug = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT | DEBUG_BACKTRACE_IGNORE_ARGS, 1)[0];
-    $Source = basename($Debug['file']);
-    $CIDRAM['BlockInfo']['Signatures'] .= $Source . ':L' . $Debug['line'];
+    if ($CIDRAM['Stage'] === 'Aux') {
+        $CIDRAM['BlockInfo']['Signatures'] .= 'auxiliary.yaml:' . $ReasonShort;
+    } else {
+        $Debug = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT | DEBUG_BACKTRACE_IGNORE_ARGS, 1)[0];
+        $Source = basename($Debug['file']);
+        $CIDRAM['BlockInfo']['Signatures'] .= $Source . ':L' . $Debug['line'];
+    }
     $CIDRAM['BlockInfo']['SignatureCount']++;
     if ($CIDRAM['Events']->assigned('triggered')) {
         $CIDRAM['Events']->fireEvent('triggered', $Source);
@@ -1248,9 +1252,13 @@ $CIDRAM['Bypass'] = function ($Condition, $ReasonShort, array $DefineOptions = [
     if (!empty($CIDRAM['BlockInfo']['Signatures'])) {
         $CIDRAM['BlockInfo']['Signatures'] .= ', ';
     }
-    $Debug = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT | DEBUG_BACKTRACE_IGNORE_ARGS, 1)[0];
-    $Source = basename($Debug['file']);
-    $CIDRAM['BlockInfo']['Signatures'] .= $Source . ':L' . $Debug['line'];
+    if ($CIDRAM['Stage'] === 'Aux') {
+        $CIDRAM['BlockInfo']['Signatures'] .= 'auxiliary.yaml:' . $ReasonShort;
+    } else {
+        $Debug = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT | DEBUG_BACKTRACE_IGNORE_ARGS, 1)[0];
+        $Source = basename($Debug['file']);
+        $CIDRAM['BlockInfo']['Signatures'] .= $Source . ':L' . $Debug['line'];
+    }
     $CIDRAM['BlockInfo']['SignatureCount']--;
     if ($CIDRAM['Events']->assigned('bypassed')) {
         $CIDRAM['Events']->fireEvent('bypassed', $Source);

@@ -1421,9 +1421,13 @@ class Core
         if (!empty($this->BlockInfo['Signatures'])) {
             $this->BlockInfo['Signatures'] .= ', ';
         }
-        $Debug = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT | DEBUG_BACKTRACE_IGNORE_ARGS, 1)[0];
-        $Source = basename($Debug['file']);
-        $this->BlockInfo['Signatures'] .= $Source . ':L' . $Debug['line'];
+        if ($this->Stage === 'Aux') {
+            $this->BlockInfo['Signatures'] .= 'auxiliary.yml:' . $ReasonShort;
+        } else {
+            $Debug = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT | DEBUG_BACKTRACE_IGNORE_ARGS, 1)[0];
+            $Source = basename($Debug['file']);
+            $this->BlockInfo['Signatures'] .= $Source . ':L' . $Debug['line'];
+        }
         $this->BlockInfo['SignatureCount']++;
         if ($this->Events->assigned('triggered')) {
             $this->Events->fireEvent('triggered', $Source);
@@ -1469,9 +1473,13 @@ class Core
         if (!empty($this->BlockInfo['Signatures'])) {
             $this->BlockInfo['Signatures'] .= ', ';
         }
-        $Debug = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT | DEBUG_BACKTRACE_IGNORE_ARGS, 1)[0];
-        $Source = basename($Debug['file']);
-        $this->BlockInfo['Signatures'] .= $Source . ':L' . $Debug['line'];
+        if ($this->Stage === 'Aux') {
+            $this->BlockInfo['Signatures'] .= 'auxiliary.yml:' . $ReasonShort;
+        } else {
+            $Debug = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT | DEBUG_BACKTRACE_IGNORE_ARGS, 1)[0];
+            $Source = basename($Debug['file']);
+            $this->BlockInfo['Signatures'] .= $Source . ':L' . $Debug['line'];
+        }
         $this->BlockInfo['SignatureCount']--;
         if ($this->Events->assigned('bypassed')) {
             $this->Events->fireEvent('bypassed', $Source);

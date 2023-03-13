@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2023.67.0
-# Last modified: 2023.03.09
+# Version: 2023.71.0
+# Last modified: 2023.03.13
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -156,19 +156,23 @@ Tag: HostDime.com, Inc
 
 
 # ASN 47583 ("Hostinger International Limited").
-# Stop Forum Spam (SFS) listings: 72.
-# Updated: 2022.08.13
+# Stop Forum Spam (SFS) listings: 87.
+# Updated: 2023.03.13
 
 2a02:4780::/46 Deny Cloud
 2a02:4780:4::/47 Deny Cloud
 2a02:4780:6::/48 Deny Cloud
 2a02:4780:8::/45 Deny Cloud
-2a02:4780:10::/47 Deny Cloud
-2a02:4780:13::/48 Deny Cloud
+2a02:4780:10::/45 Deny Cloud
+2a02:4780:18::/48 Deny Cloud
+2a02:4780:21::/48 Deny Cloud
+2a02:4780:22::/48 Deny Cloud
+2a02:4780:27::/48 Deny Cloud
+2a02:4780:84::/48 Deny Cloud
 Origin: CY
 2a00:1eb8:c006::/48 Deny Cloud
 Origin: LT
-Profile: Dedicated;Infrastructure/Transit;Webhosting
+Profile: Dedicated;Webhosting
 Tag: Hostinger Int
 
 

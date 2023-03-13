@@ -174,3 +174,7 @@
 [2023.03.09; Maikuolan]: The signature file fixer is now capable of detecting and removing extraneous spaces from signatures (#435).
 
 [2023.03.09; Maikuolan]: When an auxiliary rule is triggered, show the actual rule name in the signature reference, not just the line number for where in the code the trigger can be found.
+
+### v3.2.0
+
+[2023.03.13; Bug-fix; Maikuolan]: Typo found in CIDRAM's WordPress update hook; Fixed.

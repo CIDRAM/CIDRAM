@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods for updating CIDRAM components (last modified: 2023.02.24).
+ * This file: Methods for updating CIDRAM components (last modified: 2023.03.13).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -403,7 +403,7 @@ trait Updater
     private function wpVer(): void
     {
         if (
-            empty($this->Components['RemoteMeta']['CIDRAM']['Version']) ||
+            empty($this->Components['RemoteMeta']['CIDRAM Core']['Version']) ||
             ($ThisData = $this->CIDRAM['Updater-IO']->readFile($this->Vault . '../cidram.php')) === ''
         ) {
             return;

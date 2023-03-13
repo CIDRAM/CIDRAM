@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.03.09).
+ * This file: The CIDRAM front-end (last modified: 2023.03.13).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -4317,14 +4317,12 @@ class FrontEnd extends Core
                     }
                     $ThisTracking['Status'] .= ' – ' . $this->NumberFormatter->format($ThisTrackingArray['Data'], 0);
                     $ThisTracking['TrackingFilter'] = $this->FE['TrackingFilter'];
-                    if (!empty($this->FE['CachedLogsLink']) && strpos($this->FE['CachedLogsLink'], 'logfile=') !== false) {
-                        $ThisTracking['IPAddr'] = sprintf(
-                            '<a href="%s&search=%s">%s</a>',
-                            $this->FE['CachedLogsLink'],
-                            str_replace('=', '_', base64_encode($ThisTracking['IPAddr'])),
-                            $ThisTracking['IPAddr']
-                        );
-                    }
+                    $ThisTracking['IPAddrLink'] = (!empty($this->FE['CachedLogsLink']) && strpos($this->FE['CachedLogsLink'], 'logfile=') !== false) ? sprintf(
+                        '<a href="%s&search=%s">%s</a>',
+                        $this->FE['CachedLogsLink'],
+                        str_replace('=', '_', base64_encode($ThisTracking['IPAddr'])),
+                        $ThisTracking['IPAddr']
+                    ) : $ThisTracking['IPAddr'];
                     if (
                         isset($this->BlockInfo['SignatureCount'], $this->BlockInfo['WhyReason']) &&
                         strlen($this->BlockInfo['WhyReason'])

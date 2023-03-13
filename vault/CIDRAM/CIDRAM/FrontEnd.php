@@ -4099,16 +4099,12 @@ class FrontEnd extends Core
                         }
                     }
                     $this->CIDRAM['ThisIP']['ID'] = preg_replace('~[^\dA-Za-z]~', '_', $this->CIDRAM['ThisIP']['IPAddress']);
-                    if (!empty($this->FE['CachedLogsLink']) && strpos($this->FE['CachedLogsLink'], 'logfile=') !== false) {
-                        $this->CIDRAM['ThisIP']['IPAddressLink'] = sprintf(
-                            '<a href="%s&search=%s">%s</a>',
-                            $this->FE['CachedLogsLink'],
-                            str_replace('=', '_', base64_encode($this->CIDRAM['ThisIP']['IPAddress'])),
-                            $this->CIDRAM['ThisIP']['IPAddress']
-                        );
-                    } else {
-                        $this->CIDRAM['ThisIP']['IPAddressLink'] = $this->CIDRAM['ThisIP']['IPAddress'];
-                    }
+                    $this->CIDRAM['ThisIP']['IPAddressLink'] = (!empty($this->FE['CachedLogsLink']) && strpos($this->FE['CachedLogsLink'], 'logfile=') !== false) ? sprintf(
+                        '<a href="%s&search=%s">%s</a>',
+                        $this->FE['CachedLogsLink'],
+                        str_replace('=', '_', base64_encode($this->CIDRAM['ThisIP']['IPAddress'])),
+                        $this->CIDRAM['ThisIP']['IPAddress']
+                    ) : $this->CIDRAM['ThisIP']['IPAddress'];
                     $this->FE['IPTestResults'] .= $this->parseVars(
                         $this->L10N->Data + $this->CIDRAM['ThisIP'],
                         $this->FE['IPTestRow']

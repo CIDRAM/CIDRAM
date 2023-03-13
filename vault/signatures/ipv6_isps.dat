@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2023.67.0
-# Last modified: 2023.03.09
+# Version: 2023.71.0
+# Last modified: 2023.03.13
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -615,15 +615,15 @@ Tag: Liberty Global
 # Australia's largest domestic ISP. Brute-force, SSH, and telnet attacks, port
 # scans, hacking, and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 689.
-# Updated: 2022.10.22
+# Stop Forum Spam (SFS) listings: 666.
+# Updated: 2023.03.13
 
-2001:8003:26d2:1600::/64 Deny Spam
-2001:8003:30bd:b400::/64 Deny Spam
-2001:8003:7464:8a01::/64 Deny Spam
-2001:8004:1281:e080::/64 Deny Spam
-2001:8004:12f3:6731::/64 Deny Spam
-2001:8004:1d60:5d14::/64 Deny Spam
+2001:8003:205d:2c00::/64 Deny Spam
+2001:8003:270b:6801::/64 Deny Spam
+2001:8004:1160:29b2::/64 Deny Spam
+2001:8004:1242:e5e8::/64 Deny Spam
+2001:8004:13b1:7914::/64 Deny Spam
+2001:8004:5100:967::/64 Deny Spam
 Origin: AU
 Profile: Domestic ISP;Mobile ISP;Multiplay
 Tag: Telstra Corporation
@@ -1383,3 +1383,16 @@ Tag: TELEFNICA BRASIL S.A
 Origin: VN
 Profile: Domestic ISP;Infrastructure/Transit;Multiplay
 Tag: CFPT
+
+
+# ASN 5610 ("O2 Czech Republic, a.s").
+# Czech domestic ISP. Brute-force and SSH attacks, port scans, hacking, and
+# spam detected from here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 684.
+# Updated: 2023.03.13
+
+2a00:1028:96d3:44f2::/64 Deny Spam
+2a00:102a:4018:3b8e::/64 Deny Spam
+Origin: CZ
+Profile: Domestic ISP
+Tag: O2 Czech Republic

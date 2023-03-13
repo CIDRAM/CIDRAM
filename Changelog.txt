@@ -10,6 +10,11 @@ Detailed version release guidelines for CIDRAM can be found at:
 
 === Changes made since last versioned release ===
 
+(none)
+
+=== Version/Release 1.24.1 ===
+PATCH RELEASE.
+
 - [2023.02.24; Bug-fix; Maikuolan]: The cache handler's incEntry and decEntry
   methods weren't handling non-expiring values correctly when using flatfile
   caching; Fixed (#328).
@@ -42,6 +47,9 @@ Detailed version release guidelines for CIDRAM can be found at:
 - [2023.03.09; Maikuolan]: When an auxiliary rule is triggered, show the actual
   rule name in the signature reference, not just the line number for where in
   the code the trigger can be found.
+
+Caleb M (Maikuolan),
+March 13, 2023.
 
 === Version/Release 1.24.0 ===
 MINOR RELEASE.

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2023.03.09).
+ * This file: Front-end handler (last modified: 2023.03.13).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -4415,14 +4415,12 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
             }
             $CIDRAM['ThisTracking']['Status'] .= ' – ' . $CIDRAM['NumberFormatter']->format($CIDRAM['ThisTrackingArr']['Count'], 0);
             $CIDRAM['ThisTracking']['TrackingFilter'] = $CIDRAM['FE']['TrackingFilter'];
-            if (!empty($CIDRAM['FE']['CachedLogsLink']) && strpos($CIDRAM['FE']['CachedLogsLink'], 'logfile=') !== false) {
-                $CIDRAM['ThisTracking']['IPAddr'] = sprintf(
-                    '<a href="%s&search=%s">%s</a>',
-                    $CIDRAM['FE']['CachedLogsLink'],
-                    str_replace('=', '_', base64_encode($CIDRAM['ThisTracking']['IPAddr'])),
-                    $CIDRAM['ThisTracking']['IPAddr']
-                );
-            }
+            $CIDRAM['ThisTracking']['IPAddrLink'] = (!empty($CIDRAM['FE']['CachedLogsLink']) && strpos($CIDRAM['FE']['CachedLogsLink'], 'logfile=') !== false) ? sprintf(
+                '<a href="%s&search=%s">%s</a>',
+                $CIDRAM['FE']['CachedLogsLink'],
+                str_replace('=', '_', base64_encode($CIDRAM['ThisTracking']['IPAddr'])),
+                $CIDRAM['ThisTracking']['IPAddr']
+            ) : $CIDRAM['ThisTracking']['IPAddr'];
             if (
                 isset($CIDRAM['BlockInfo']['SignatureCount'], $CIDRAM['BlockInfo']['WhyReason']) &&
                 strlen($CIDRAM['BlockInfo']['WhyReason'])

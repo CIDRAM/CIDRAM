@@ -4221,16 +4221,12 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
                 }
             }
             $CIDRAM['ThisIP']['ID'] = preg_replace('~[^\dA-Za-z]~', '_', $CIDRAM['ThisIP']['IPAddress']);
-            if (!empty($CIDRAM['FE']['CachedLogsLink']) && strpos($CIDRAM['FE']['CachedLogsLink'], 'logfile=') !== false) {
-                $CIDRAM['ThisIP']['IPAddressLink'] = sprintf(
-                    '<a href="%s&search=%s">%s</a>',
-                    $CIDRAM['FE']['CachedLogsLink'],
-                    str_replace('=', '_', base64_encode($CIDRAM['ThisIP']['IPAddress'])),
-                    $CIDRAM['ThisIP']['IPAddress']
-                );
-            } else {
-                $CIDRAM['ThisIP']['IPAddressLink'] = $CIDRAM['ThisIP']['IPAddress'];
-            }
+            $CIDRAM['ThisIP']['IPAddressLink'] = (!empty($CIDRAM['FE']['CachedLogsLink']) && strpos($CIDRAM['FE']['CachedLogsLink'], 'logfile=') !== false) ? sprintf(
+                '<a href="%s&search=%s">%s</a>',
+                $CIDRAM['FE']['CachedLogsLink'],
+                str_replace('=', '_', base64_encode($CIDRAM['ThisIP']['IPAddress'])),
+                $CIDRAM['ThisIP']['IPAddress']
+            ) : $CIDRAM['ThisIP']['IPAddress'];
             $CIDRAM['FE']['IPTestResults'] .= $CIDRAM['ParseVars'](
                 $CIDRAM['L10N']->Data + $CIDRAM['ThisIP'],
                 $CIDRAM['FE']['IPTestRow']

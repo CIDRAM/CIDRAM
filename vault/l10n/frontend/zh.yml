@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2023.03.06).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2023.03.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -332,7 +332,6 @@ field_permissions: "权限"
 field_preferred_direct_input: "直接输入"
 field_preferred_list: "当前活动的签名文件"
 field_preserve: "保留标签和评论"
-field_profile: "分类"
 field_range: "范围 （初始 – 最后）"
 field_rename_file: "改名"
 field_repair: "修复"
@@ -370,6 +369,7 @@ hints_duration:
  弧时。: "持续时间可以使用弧时表示法来描述。 例如， <strong>1d2°3′4″</strong> 表示一天，两小时，三分钟，四秒。 <strong>5″</strong> 表示仅五秒。"
  简单的英语。: "持续时间可以通过用简单的英语书写单位来描述。 例如， <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> 表示一周、两天、三小时、四分钟、五秒。"
  约束。: "表示法可以混合使用，但单位必须始终从大到小描述，并且不能重复。 例如， <strong>1 week 2 days 3′4″</strong> 是<span class="txtGn">有效的</span>并且会被正确理解，但 <strong>3′4″ 1 week 2 days</strong> 和 <strong>3 hours 3h 3°</strong> 是<span class="txtRd">无效的</span>。 CIDRAM 不关心是否使用间距。 数字必须是普通的和无格式的。 为实用起见，支持的最大单位是一周。 当配置更新时，CIDRAM 将持续时间标准化为弧时。"
+hints_inspection: "* 仅用于调试辅助规则。​不向被阻止的用户显示。"
 hints_ipv6_on_32bit: "注意：IPv6查找在某些32位系统上可能无法正常工作。"
 hints_pdo_dsn:
  常问问题。: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.zh.md\#user-content-HOW_TO_USE_PDO" hreflang="zh-CN">“PDO DSN”是什么？如何能PDO与CIDRAM一起使用？</a></em>"
@@ -700,7 +700,6 @@ response_login_username_field_empty: "用户名输入是空的！"
 response_login_wrong_endpoint: "错误的端点！"
 response_no: "不是"
 response_not_available_at_upstream: "在上游找不到。"
-response_not_satisfied: "不满意。"
 response_passed: "成功"
 response_please_check_config: "请检查您的配置，以确保新安装的模块按您的意愿运行。"
 response_ready_to_install: "准备安装。"
@@ -708,7 +707,6 @@ response_rename_error: "无法改名！"
 response_repair_process_completed: "修复过程完成。"
 response_repair_process_failed: "修复过程失败。"
 response_sanity_1: "文件包含意外的内容！​文件拒绝！"
-response_satisfied: "满意。"
 response_signatures_updated: "签名文件已更新（%s）。"
 response_skipped: "跳过了"
 response_statistics_cleared: "统计删除。"

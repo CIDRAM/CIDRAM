@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2023.03.06).
+# This file: Vietnamese language data for the front-end (last modified: 2023.03.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -332,7 +332,6 @@ field_permissions: "Quyền"
 field_preferred_direct_input: "Nhập dữ liệu trực tiếp"
 field_preferred_list: "Tập tin chữ ký hiện đang hoạt động"
 field_preserve: "Giữ nguyên thẻ và bình luận"
-field_profile: "Hồ sơ"
 field_range: "Phạm vi (Đầu tiên – Cuối cùng)"
 field_rename_file: "Đổi tên"
 field_repair: "Sửa chữa"
@@ -370,6 +369,7 @@ hints_duration:
  Thời gian góc.: "Khoảng thời gian có thể được mô tả bằng cách sử dụng thời gian góc. V.d., <strong>1d2°3′4″</strong> cho một ngày, hai giờ, ba phút, bốn giây, hoặc <strong>5″</strong> cho chỉ năm giây."
  Tiếng Anh đơn giản.: "Khoảng thời gian có thể được mô tả bằng cách viết các đơn vị bằng tiếng Anh đơn giản. V.d., <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> cho một tuần, hai ngày, ba giờ, bốn phút, năm giây."
  Hạn chế.: "Ký hiệu có thể được trộn lẫn, nhưng các đơn vị phải luôn được mô tả từ lớn nhất đến nhỏ nhất, và không được lặp lại. V.d., <strong>1 week 2 days 3′4″</strong> là <span class="txtGn">hợp lệ</span> và sẽ được hiểu đúng, nhưng <strong>3′4″ 1 week 2 days</strong> và <strong>3 hours 3h 3°</strong> <span class="txtRd">không hợp lệ</span>. CIDRAM không quan tâm đến việc bạn có sử dụng khoảng cách hay không. Các số phải đơn giản và không có định dạng. Đơn vị được hỗ trợ lớn nhất là một tuần. Khi cấu hình được cập nhật, CIDRAM chuẩn  hóa khoảng thời gian thành thời gian góc."
+hints_inspection: "* Chỉ dành cho việc gỡ lỗi các quy tắc phụ trợ. Không hiển thị cho người dùng bị chặn."
 hints_ipv6_on_32bit: "Lưu ý: Tra cứu IPv6 có thể không hoạt động chính xác trên một số hệ thống 32 bit."
 hints_pdo_dsn:
  Câu hỏi thường gặp.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.vi.md\#user-content-HOW_TO_USE_PDO" hreflang="vi">"PDO DSN" là gì? Làm cách nào tôi có thể sử dụng PDO với CIDRAM?</a></em>"
@@ -708,7 +708,6 @@ response_login_username_field_empty: "Tên người dùng là trống!"
 response_login_wrong_endpoint: "Điểm truy cập không đúng!"
 response_no: "Không"
 response_not_available_at_upstream: "Không có sẵn ở thượng nguồn."
-response_not_satisfied: "Không hài lòng."
 response_passed: "Thành công"
 response_please_check_config: "Vui lòng kiểm tra cấu hình của bạn để đảm bảo rằng mô-đun mới được cài đặt sẽ hoạt động như bạn dự định."
 response_ready_to_install: "Sẵn sàng để cài đặt."
@@ -716,7 +715,6 @@ response_rename_error: "Không thể đổi tên!"
 response_repair_process_completed: "Quá trình sửa chữa hoàn thành."
 response_repair_process_failed: "Quá trình sửa chữa thất bại."
 response_sanity_1: "Tập tin chứa nội dung không mong muốn! Tập tin đã bị từ chối!"
-response_satisfied: "Hài lòng."
 response_signatures_updated: "Các tập tin chữ ký đã được cập nhật (%s)."
 response_skipped: "Bỏ qua"
 response_statistics_cleared: "Thống kê đã được xóa."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2023.03.06).
+# This file: Latvian language data for the front-end (last modified: 2023.03.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -332,7 +332,6 @@ field_permissions: "Atļaujas"
 field_preferred_direct_input: "Tieša ievade"
 field_preferred_list: "Pašlaik aktīvi paraksta faili"
 field_preserve: "Saglabājiet tagus un komentārus"
-field_profile: "Profils"
 field_range: "Diapazons (Pirmais – Pēdējais)"
 field_rename_file: "Pārdēvējiet"
 field_repair: "Remontēt"
@@ -372,6 +371,7 @@ hints_duration:
  Loka laiks.: "Ilgumu var aprakstīt, izmantojot loka laika apzīmējumu. Piemēram, <strong>1d2°3′4″</strong> vienu dienu, divas stundas, trīs minūtes, četras sekundes, vai <strong>5″</strong> tikai piecas sekundes."
  Vienkārša angļu valoda.: "Ilgumu var aprakstīt, ierakstot vienības vienkāršā angļu valodā. Piemēram, <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> vienu nedēļu, divas dienas, trīs stundas, četras minūtes, piecas sekundes."
  Ierobežojumi.: "Apzīmējumus var jaukt, taču vienības vienmēr jāapraksta no lielākās līdz mazākajai, un tās nevar atkārtot. Piemēram, <strong>1 week 2 days 3′4″</strong> ir <span class="txtGn">derīgs</span> un tiks pareizi saprasts, bet <strong>3′4″ 1 week 2 days</strong> un <strong>3 hours 3h 3°</strong> ir <span class="txtRd">nav derīgi</span>. CIDRAM ir vienalga, vai izmantojat atstarpes. Cipariem jābūt vienkāršiem un neformatētiem. Praktiskuma labad lielākā atbalstītā vienība ir nedēļa. Kad konfigurācija tiek atjaunināta, CIDRAM normalizē ilgumus uz loka laiku."
+hints_inspection: "* Paredzēts tikai palīgnoteikumu atkļūdošanai. Netiek rādīts bloķētajiem lietotājiem."
 hints_ipv6_on_32bit: "Piezīme: Dažās 32 bitu sistēmās IPv6 meklēšana var nedarboties pareizi."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">Kas ir "PDO DSN"? Kā es varu izmantot PDO ar CIDRAM?</a></em>"
@@ -716,7 +716,6 @@ response_login_username_field_empty: "Lietotājvārda lauks ir tukšs!"
 response_login_wrong_endpoint: "Nepareizs galapunkts!"
 response_no: "Nē"
 response_not_available_at_upstream: "Nav pieejams augštecē."
-response_not_satisfied: "Neapmierināts."
 response_passed: "Izturējis"
 response_please_check_config: "Lūdzu, pārbaudiet konfigurāciju, lai pārliecinātos, ka tikko instalētais modulis rīkosies atbilstoši iecerētajam."
 response_ready_to_install: "Gatavs instalēšanai."
@@ -724,7 +723,6 @@ response_rename_error: "Pārdēvēt neizdevās!"
 response_repair_process_completed: "Remonta process pabeigts."
 response_repair_process_failed: "Remonta process neizdevās."
 response_sanity_1: "Failā ir neparedzēts saturs! Fails noraidīts!"
-response_satisfied: "Apmierināts."
 response_signatures_updated: "Parakstu faili ir atjaunināti (%s)."
 response_skipped: "Izlaists"
 response_statistics_cleared: "Statistika ir notīrīta."

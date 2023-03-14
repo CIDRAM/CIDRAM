@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2023.03.06).
+# This file: Arabic language data for the front-end (last modified: 2023.03.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -332,7 +332,6 @@ field_permissions: "أذونات"
 field_preferred_direct_input: "إدخال البيانات مباشرة"
 field_preferred_list: "ملفات التوقيع النشطة حاليا"
 field_preserve: "الحفاظ على العلامات والتعليقات"
-field_profile: "تصنيف"
 field_range: "نطاق (الأول – الاخير)"
 field_rename_file: "إعادة تسمية"
 field_repair: "إصلاح"
@@ -370,6 +369,7 @@ hints_duration:
  الوقت الزاوي.: "يمكن وصف المدة باستخدام الوقت الزاوي. على سبيل المثال، <strong dir="ltr">1d2°3′4″</strong> ليوم واحد، ساعتان، ثلاث دقائق، أربع ثوان، أو <strong dir="ltr">5″</strong> لمدة خمس ثوانٍ فقط."
  لغة إنجليزية بسيطة.: "يمكن وصف المدة بكتابة الوحدات بلغة إنجليزية بسيطة. على سبيل المثال، <strong dir="ltr">1 week 2 days 3 hours 4 minutes 5 seconds</strong> لمدة أسبوع، يومين، ثلاث ساعات، أربع دقائق، خمس ثوان."
  القيود.: "يمكن خلط الترميز، ولكن يجب دائمًا وصف الوحدات من الأكبر إلى الأصغر، ولا يمكن تكرارها. على سبيل المثال، <strong dir="ltr">1 week 2 days 3′4″</strong> <span class="txtGn">صالح</span> وسيتم فهمه بشكل صحيح، لكن <strong dir="ltr">3′4″ 1 week 2 days</strong> و <strong dir="ltr">3 hours 3h 3°</strong> <span class="txtRd">غير صالحين</span>. لا يهتم CIDRAM سواء كنت تستخدم التباعد أم لا. يجب أن تكون الأرقام عادية وغير منسقة. أكبر وحدة مدعومة هي أسبوع. عندما يتم تحديث التكوين، يتم تطبيع المدة إلى الوقت الزاوي."
+hints_inspection: "* مخصص فقط من أجل تصحيح أخطاء القواعد المساعدة. غير معروض أمام المستخدمين المحظورين."
 hints_ipv6_on_32bit: "ملاحظة: قد لا تعمل عمليات بحث IPv6 بشكل صحيح على بعض أنظمة 32 بت."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.ar.md\#user-content-HOW_TO_USE_PDO" hreflang="ar">ما هو "PDO DSN"؟ كيف يمكنني استخدام PDO مع CIDRAM؟</a></em>"
@@ -708,7 +708,6 @@ response_login_username_field_empty: "اسم المستخدم حقل فارغ!"
 response_login_wrong_endpoint: "نقطة نهاية خاطئة!"
 response_no: "لا"
 response_not_available_at_upstream: "غير متوفر في المنبع."
-response_not_satisfied: "غير راضية."
 response_passed: "إجتاز"
 response_please_check_config: "يرجى التحقق من التكوين الخاص بك للتأكد من أن الوحدة المثبتة حديثًا سوف تعمل بالشكل الذي تريده."
 response_ready_to_install: "جاهز للتركيب."
@@ -716,7 +715,6 @@ response_rename_error: "فشل في إعادة تسمية!"
 response_repair_process_completed: "اكتملت عملية الإصلاح."
 response_repair_process_failed: "فشلت عملية الإصلاح."
 response_sanity_1: "يحتوي الملف على محتوى غير متوقع! تم رفض الملف!"
-response_satisfied: "راضي."
 response_signatures_updated: "تم تحديث ملفات التوقيع (%s)."
 response_skipped: "تخطي"
 response_statistics_cleared: "تم مسح الإحصاءات."

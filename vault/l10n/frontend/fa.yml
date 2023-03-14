@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Farsi language data for the front (last modified: 2023.03.06).
+# This file: Farsi language data for the front (last modified: 2023.03.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -332,7 +332,6 @@ field_permissions: "مجوزها"
 field_preferred_direct_input: "ورودی مستقیم"
 field_preferred_list: "فایل های امضا در حال حاضر فعال هستند"
 field_preserve: "برچسب ها و نظرات را حفظ کنید"
-field_profile: "پروفایل کنید"
 field_range: "محدوده (اولین – آخر)"
 field_rename_file: "تغییر نام دهید"
 field_repair: "تعمیرش کن"
@@ -370,6 +369,7 @@ hints_duration:
  زمان زاویه ای.: "مدت زمان را می توان با استفاده از زمان زاویه ای توصیف کرد. به عنوان مثال، <strong dir="ltr">1d2°3′4″</strong> برای نشان دادن یک روز، دو ساعت، سه دقیقه، چهار ثانیه، یا <strong dir="ltr">5″</strong> برای نشان دادن فقط پنج ثانیه."
  انگلیسی ساده.: "مدت زمان را می توان با نوشتن واحدها به زبان انگلیسی ساده توصیف کرد. به عنوان مثال، <strong dir="ltr">1 week 2 days 3 hours 4 minutes 5 seconds</strong> برای نشان دادن یک هفته، دو روز، سه ساعت، چهار دقیقه، پنج ثانیه."
  محدودیت ها.: "نمادگذاری را می توان مخلوط کرد، اما واحدها همیشه باید از بزرگترین به کوچک ترین توصیف شوند، و نمی توان آنها را تکرار کرد. به عنوان مثال، <strong dir="ltr">1 week 2 days 3′4″</strong> <span class="txtGn">معتبر</span> است و به درستی درک خواهد شد، اما <strong dir="ltr">3′4″ 1 week 2 days</strong> و <strong dir="ltr">3 hours 3h 3°</strong> <span class="txtRd">نامعتبر</span> هستند. CIDRAM اهمیتی نمی دهد که از فاصله استفاده می کنید یا نه. اعداد باید ساده و بدون قالب باشند. برای عملی بودن، بزرگترین واحد پشتیبانی شده یک هفته است. هنگامی که پیکربندی به روز می شود، CIDRAM مدت زمان را به زمان زاویه ای عادی می کند."
+hints_inspection: "* فقط برای اشکال زدایی قوانین کمکی در نظر گرفته شده است. برای کاربران مسدود شده نمایش داده نمی شود."
 hints_ipv6_on_32bit: "توجه داشته باشید: جستجوی IPv6 ممکن است در برخی از سیستم های 32 بیتی به درستی کار نکند."
 hints_pdo_dsn:
  سوالات متداول.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">«PDO DSN» چیست؟ چگونه می توانم از PDO با CIDRAM استفاده کنم؟</a></em>"
@@ -695,7 +695,6 @@ response_login_username_field_empty: "فیلد نام کاربری خالی اس
 response_login_wrong_endpoint: "نقطه پایانی اشتباه!"
 response_no: "خیر"
 response_not_available_at_upstream: "در بالادست در دسترس نیست."
-response_not_satisfied: "راضی نیست."
 response_passed: "قبول شد"
 response_please_check_config: "لطفاً پیکربندی خود را بررسی کنید تا مطمئن شوید که ماژول تازه نصب شده همانطور که می خواهید رفتار می کند."
 response_ready_to_install: "آماده نصب."
@@ -703,7 +702,6 @@ response_rename_error: "تغییر نام ناموفق بود!"
 response_repair_process_completed: "تعمیر شد."
 response_repair_process_failed: "تعمیر کردن ناموفق بود."
 response_sanity_1: "فایل حاوی محتوای غیرمنتظره است! فایل رد شد!"
-response_satisfied: "راضی."
 response_signatures_updated: "فایل های امضا به روز شده است (%s)."
 response_skipped: "عمل نشده"
 response_statistics_cleared: "آمار حذف شد."

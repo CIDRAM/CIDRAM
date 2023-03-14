@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Ukrainian language data for the front-end (last modified: 2023.03.06).
+# This file: Ukrainian language data for the front-end (last modified: 2023.03.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -332,7 +332,6 @@ field_permissions: "Дозволи"
 field_preferred_direct_input: "Прямий вхід"
 field_preferred_list: "Зараз активні файли сигнатур"
 field_preserve: "Зберігайте теги та коментарі"
-field_profile: "Профіль"
 field_range: "Діапазон (Перший – Останній)"
 field_rename_file: "Перейменуйте"
 field_repair: "Відремонтуйте"
@@ -373,6 +372,7 @@ hints_duration:
  Кутовий час.: "Тривалість можна описати за допомогою кутового часу. Наприклад, <strong>1d2°3′4″</strong> для один день, дві години, три хвилини, чотири секунди, або <strong>5″</strong> лише на п'ять секунд."
  Звичайна англійська.: "Тривалість можна описати, написавши одиниці звичайна англійською. Наприклад, <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> для одного тижня, двох днів, трьох годин, чотирьох хвилин, п'яти секунд."
  Обмеження.: "Позначення можна змішувати, але одиниці завжди потрібно описувати від найбільшої до найменшої, і їх не можна повторювати. Наприклад, <strong>1 week 2 days 3′4″</strong> <span class="txtGn">дійсний</span> і буде зрозумілий правильно, але <strong>3′4″ 1 week 2 days</strong> і <strong>3 hours 3h 3°</strong> <span class="txtRd">недійсні</span>. CIDRAM не хвилює, використовуєте ви пробіли чи ні. Числа мають бути простими та неформатованими. Щоб бути практичним, найбільшою підтримуваною одиницею є тиждень. Під час оновлення конфігурації, CIDRAM нормалізує тривалість до кутового часу."
+hints_inspection: "* Призначений тільки для налагодження допоміжних правил. Не відображається заблокованим користувачам."
 hints_ipv6_on_32bit: "Зауважте: Пошук IPv6 може не працювати належним чином у деяких 32-розрядних системах."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">Що таке «PDO DSN»? Як я можу використовувати PDO з CIDRAM?</a></em>"
@@ -723,7 +723,6 @@ response_login_username_field_empty: "Поле імені користувача
 response_login_wrong_endpoint: "Неправильна кінцева точка!"
 response_no: "Ні"
 response_not_available_at_upstream: "Недоступно у верхній частині течії."
-response_not_satisfied: "Не задоволений."
 response_passed: "Пройшов"
 response_please_check_config: "Будь ласка, перевірте свою конфігурацію, щоб переконатися, що нещодавно встановлений модуль працюватиме так, як ви бажаєте."
 response_ready_to_install: "Готовий до встановлення."
@@ -731,7 +730,6 @@ response_rename_error: "Помилка перейменування!"
 response_repair_process_completed: "Процес ремонту завершено."
 response_repair_process_failed: "Помилка процесу ремонту."
 response_sanity_1: "Файл містить неочікуваний вміст! Файл відхилено!"
-response_satisfied: "Задоволений."
 response_signatures_updated: "Файли сигнатур оновлено (%s)."
 response_skipped: "Пропущено"
 response_statistics_cleared: "Статистика очищена."

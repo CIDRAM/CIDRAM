@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malay language data for the front-end (last modified: 2023.03.06).
+# This file: Malay language data for the front-end (last modified: 2023.03.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -332,7 +332,6 @@ field_permissions: "Kebenaran"
 field_preferred_direct_input: "Input langsung"
 field_preferred_list: "Fail tandatangan yang aktif pada masa ini"
 field_preserve: "Kekalkan tag dan ulasan"
-field_profile: "Profil"
 field_range: "Julat (Pertama – Terakhir)"
 field_rename_file: "Namakan semula"
 field_repair: "Baikikan"
@@ -370,6 +369,7 @@ hints_duration:
  Tatatanda arka.: "Tempoh boleh diterangkan menggunakan tatatanda arka. Cth., <strong>1d2°3′4″</strong> untuk satu hari, dua jam, tiga minit, empat saat, atau <strong>5″</strong> untuk lima saat sahaja."
  Bahasa Inggeris biasa.: "Tempoh boleh diterangkan dengan menulis unit dalam bahasa Inggeris biasa. Cth., <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> untuk satu minggu, dua hari, tiga jam, empat minit, lima saat."
  Kekangan.: "Notasi boleh dicampur, tetapi unit mesti sentiasa diterangkan daripada terbesar hingga terkecil, dan tidak boleh diulang. Cth., <strong>1 week 2 days 3′4″</strong> adalah <span class="txtGn">sah</span> dan akan difahami dengan betul, tetapi <strong>3′4″ 1 week 2 days</strong> dan <strong>3 hours 3h 3°</strong> adalah <span class="txtRd">tidak sah</span>. CIDRAM tidak peduli sama ada anda menggunakan ruang atau tidak. Nombor mestilah biasa dan tidak berformat. Untuk kepraktisan, unit sokongan yang terbesar ialah seminggu. Apabila konfigurasi dikemas kini, CIDRAM menormalkan tempoh kepada tatatanda arka."
+hints_inspection: "* Bertujuan hanya untuk menyahpepijat peraturan tambahan. Tidak dipaparkan kepada pengguna yang disekat."
 hints_ipv6_on_32bit: "Nota: Carian IPv6 mungkin tidak berfungsi dengan betul pada sesetengah sistem 32-bit."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.id.md\#user-content-HOW_TO_USE_PDO" hreflang="id">Apakah itu "PDO DSN"? Bagaimanakah saya boleh menggunakan PDO dengan CIDRAM?</a></em>"
@@ -711,7 +711,6 @@ response_login_username_field_empty: "Medan nama pengguna kosong!"
 response_login_wrong_endpoint: "Titik akhir salah!"
 response_no: "Tidak"
 response_not_available_at_upstream: "Tidak terdapat di hulu."
-response_not_satisfied: "Tidak berpuas hati."
 response_passed: "Lulus"
 response_please_check_config: "Sila semak konfigurasi anda untuk memastikan bahawa modul yang baru dipasang akan berfungsi seperti yang anda mahukan."
 response_ready_to_install: "Sedia untuk dipasang."
@@ -719,7 +718,6 @@ response_rename_error: "Gagal menamakan semula!"
 response_repair_process_completed: "Proses pembaikan selesai."
 response_repair_process_failed: "Proses pembaikan gagal."
 response_sanity_1: "Fail mengandungi kandungan yang tidak dijangka! Fail ditolak!"
-response_satisfied: "Berpuas hati."
 response_signatures_updated: "Fail tandatangan telah dikemas kini (%s)."
 response_skipped: "Diabaikan"
 response_statistics_cleared: "Statistik dikosongkan."

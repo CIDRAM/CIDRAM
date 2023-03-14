@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used for auxiliary rules (last modified: 2023.02.09).
+ * This file: Methods used for auxiliary rules (last modified: 2023.03.14).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -470,7 +470,11 @@ trait AuxiliaryRules
                             if ($Value === '') {
                                 $Value = '&nbsp;';
                             }
-                            $Operator = $this->operatorFromAuxValue($Value, true);
+                            if (isset($Data['Method']) && $Data['Method'] === 'WinEx') {
+                                $Operator = strpos($Value, '*') === false ? '≠' : '≉';
+                            } else {
+                                $Operator = $this->operatorFromAuxValue($Value, true);
+                            }
                             $Output .= "\n              <div class=\"iCntn\"><span style=\"float:" . $this->FE['FE_Align'] . '">' . $ThisSource . '&nbsp;' . $Operator . '&nbsp;</span><code>' . $Value . '</code></div>';
                         }
                     }
@@ -488,7 +492,11 @@ trait AuxiliaryRules
                             if ($Value === '') {
                                 $Value = '&nbsp;';
                             }
-                            $Operator = $this->operatorFromAuxValue($Value);
+                            if (isset($Data['Method']) && $Data['Method'] === 'WinEx') {
+                                $Operator = strpos($Value, '*') === false ? '=' : '≈';
+                            } else {
+                                $Operator = $this->operatorFromAuxValue($Value);
+                            }
                             $Output .= "\n              <div class=\"iCntn\"><span style=\"float:" . $this->FE['FE_Align'] . '">' . $ThisSource . '&nbsp;' . $Operator . '&nbsp;</span><code>' . $Value . '</code></div>';
                         }
                     }

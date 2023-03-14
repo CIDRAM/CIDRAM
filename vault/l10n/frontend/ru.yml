@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2023.03.06).
+# This file: Russian language data for the front-end (last modified: 2023.03.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -332,7 +332,6 @@ field_permissions: "Разрешения"
 field_preferred_direct_input: "Прямой ввод"
 field_preferred_list: "В настоящее время активные файлы сигнатуры"
 field_preserve: "Сохранить теги и комментарии"
-field_profile: "Профиль"
 field_range: "Диапазон (Первый – Последний)"
 field_rename_file: "Переименовывать"
 field_repair: "Починить"
@@ -373,6 +372,7 @@ hints_duration:
  Угловая время.: "Продолжительность можно описать с помощью углового времени. Например, <strong>1d2°3′4″</strong> для один день, два часа, три минуты, четыре секунды, или <strong>5″</strong> для всего пять секунд."
  Простой английский.: "Продолжительность можно описать, написав единицы на простом английском. Например, <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> для одной недели, двух дней, трех часов, четырех минут, пяти секунд."
  Ограничения.: "Обозначения могут быть смешанными, но единицы всегда должны описываться от наибольшего к наименьшему, и не могут повторяться. Например, <strong>1 week 2 days 3′4″</strong> <span class="txtGn">valid</span>действителен</span> и будет правильно понят, но <strong>3′4″ 1 week 2 days</strong> и <strong>3 hours 3h 3°</strong> <span class="txtRd">недействительны</span>. CIDRAM не волнует, ли используете вы интервалы или нет. Числа должны быть простыми и неформатированными. Чтобы быть практичным, наибольшая поддерживаемая единица — неделя. Когда конфигурация обновляется, CIDRAM нормализует длительность к угловому времени."
+hints_inspection: "* Предназначен только для отладки вспомогательных правил. Не отображается для заблокированных пользователей."
 hints_ipv6_on_32bit: "Примечание: Поиск IPv6 может работать некорректно в некоторых 32-разрядных системах."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.ru.md\#user-content-HOW_TO_USE_PDO" hreflang="ru">Что такое «PDO DSN»? Как я могу использовать PDO с CIDRAM?</a></em>"
@@ -724,7 +724,6 @@ response_login_username_field_empty: "Имя пользователя пусто
 response_login_wrong_endpoint: "Неправильная конечная точка!"
 response_no: "Нет"
 response_not_available_at_upstream: "Недоступно в восходящем направлении."
-response_not_satisfied: "Не удовлетворены."
 response_passed: "Удалось"
 response_please_check_config: "Пожалуйста, проверьте свою конфигурацию, чтобы убедиться, что вновь установленный модуль будет вести себя должным образом."
 response_ready_to_install: "Готовы к установке."
@@ -732,7 +731,6 @@ response_rename_error: "Не удалось переименовать!"
 response_repair_process_completed: "Процесс ремонта завершен."
 response_repair_process_failed: "Процесс ремонта не удался."
 response_sanity_1: "Файл содержит неожиданный контент! Файл отклонен!"
-response_satisfied: "Удовлетворены."
 response_signatures_updated: "Файлы сигнатурей обновлены (%s)."
 response_skipped: "Проигнорировал"
 response_statistics_cleared: "Статистика очищена."

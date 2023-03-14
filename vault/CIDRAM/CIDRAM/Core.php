@@ -1982,14 +1982,17 @@ class Core
      * @param string|array $Criteria The criteria to accept for the match.
      * @param mixed $Actual The actual value we're trying to match.
      * @param string $Method The method for handling data when matching.
+     * @param string $SourceName The name of the actual value's source.
+     * @param string $Name The name of the rule (needed for inspection only).
+     * @param bool $Negate Whether operators should be negated.
      * @return bool Match succeeded (true) or failed (false).
      */
-    public function auxMatch($Criteria, $Actual, string $Method = ''): bool
+    public function auxMatch($Criteria, $Actual, string $Method = '', string $SourceName = '', string $Name = '', bool $Negate = false): bool
     {
         /** Recurse through actual values if an array. */
         if (is_array($Actual)) {
             foreach ($Actual as $ThisActual) {
-                if ($this->auxMatch($Criteria, $ThisActual, $Method)) {
+                if ($this->auxMatch($Criteria, $ThisActual, $Method, $SourceName, $Name, $Negate)) {
                     return true;
                 }
             }
@@ -2008,10 +2011,13 @@ class Core
 
         /** Perform a match using regular expressions. */
         if ($Method === 'RegEx') {
+            $Operator = $Negate ? '≠' : '=';
             foreach ($Criteria as $TestCase) {
                 if (preg_match($TestCase, $Actual)) {
+                    $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response_not_satisfied' : 'response_satisfied'));
                     return true;
                 }
+                $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response_satisfied' : 'response_not_satisfied'));
             }
             return false;
         }
@@ -2019,9 +2025,16 @@ class Core
         /** Perform a match using Windows-style wildcards. */
         if ($Method === 'WinEx') {
             foreach ($Criteria as $TestCase) {
+                if ($Negate) {
+                    $Operator = strpos($TestCase, '*') === false ? '≠' : '≉';
+                } else {
+                    $Operator = strpos($TestCase, '*') === false ? '=' : '≈';
+                }
                 if (preg_match('~^' . str_replace('\*', '.*', preg_quote($TestCase, '~')) . '$~', $Actual)) {
+                    $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response_not_satisfied' : 'response_satisfied'));
                     return true;
                 }
+                $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response_satisfied' : 'response_not_satisfied'));
             }
             return false;
         }
@@ -2030,8 +2043,8 @@ class Core
 
         /** Perform a match using direct string comparison. */
         foreach ($Criteria as $TestCase) {
-            $Operator = $this->operatorFromAuxValue($TestCase);
-            if ($Operator === '=') {
+            $Operator = $this->operatorFromAuxValue($TestCase, $Negate);
+            if ($Operator === '≠' || $Operator === '=') {
                 if ($ActualType !== gettype($TestCase)) {
                     if ($ActualType === 'integer') {
                         $TestCase = (int)$TestCase;
@@ -2042,24 +2055,34 @@ class Core
                     }
                 }
                 if ($Actual === $TestCase) {
+                    $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response_not_satisfied' : 'response_satisfied'));
                     return true;
                 }
-            } elseif ($Operator === '>') {
+                $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response_satisfied' : 'response_not_satisfied'));
+            } elseif ($Operator === '≯' || $Operator === '>') {
                 if ($this->auxIntFromString($Actual) > $this->auxIntFromString($TestCase)) {
+                    $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response_not_satisfied' : 'response_satisfied'));
                     return true;
                 }
-            } elseif ($Operator === '≥') {
+                $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response_satisfied' : 'response_not_satisfied'));
+            } elseif ($Operator === '≱' || $Operator === '≥') {
                 if ($this->auxIntFromString($Actual) >= $this->auxIntFromString($TestCase)) {
+                    $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response_not_satisfied' : 'response_satisfied'));
                     return true;
                 }
-            } elseif ($Operator === '<') {
+                $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response_satisfied' : 'response_not_satisfied'));
+            } elseif ($Operator === '≮' || $Operator === '<') {
                 if ($this->auxIntFromString($Actual) < $this->auxIntFromString($TestCase)) {
+                    $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response_not_satisfied' : 'response_satisfied'));
                     return true;
                 }
-            } elseif ($Operator === '≤') {
+                $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response_satisfied' : 'response_not_satisfied'));
+            } elseif ($Operator === '≰' || $Operator === '≤') {
                 if ($this->auxIntFromString($Actual) <= $this->auxIntFromString($TestCase)) {
+                    $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response_not_satisfied' : 'response_satisfied'));
                     return true;
                 }
+                $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response_satisfied' : 'response_not_satisfied'));
             }
         }
 
@@ -2272,6 +2295,7 @@ class Core
                                 continue;
                             }
                             foreach ($SourceArr as $SourceKey => $Source) {
+                                $SourceName = $this->L10N->getString($Source) ?: $Source;
                                 if (!isset($Data[$Mode]['But not if matches'][$SourceKey], $Property[$SourceKey])) {
                                     continue;
                                 }
@@ -2280,7 +2304,7 @@ class Core
                                 }
                                 foreach ($Data[$Mode]['But not if matches'][$SourceKey] as $Value) {
                                     /** Perform match. */
-                                    if ($this->auxMatch($Value, $Property[$SourceKey], $Method)) {
+                                    if ($this->auxMatch($Value, $Property[$SourceKey], $Method, $SourceName, $Name, true)) {
                                         continue 4;
                                     }
                                 }
@@ -2293,9 +2317,10 @@ class Core
                         if (!is_array($Data[$Mode]['But not if matches'][$SourceArrKey])) {
                             $Data[$Mode]['But not if matches'][$SourceArrKey] = [$Data[$Mode]['But not if matches'][$SourceArrKey]];
                         }
+                        $SourceName = $this->L10N->getString($SourceArr) ?: $SourceArr;
                         foreach ($Data[$Mode]['But not if matches'][$SourceArrKey] as $Value) {
                             /** Perform match. */
-                            if ($this->auxMatch($Value, $Property, $Method)) {
+                            if ($this->auxMatch($Value, $Property, $Method, $SourceName, $Name, true)) {
                                 continue 3;
                             }
                         }
@@ -2315,6 +2340,7 @@ class Core
                                 continue;
                             }
                             foreach ($SourceArr as $SourceKey => $Source) {
+                                $SourceName = $this->L10N->getString($Source) ?: $Source;
                                 if (!isset($Data[$Mode]['If matches'][$SourceKey], $Property[$SourceKey])) {
                                     continue;
                                 }
@@ -2323,7 +2349,7 @@ class Core
                                 }
                                 foreach ($Data[$Mode]['If matches'][$SourceKey] as $Value) {
                                     /** Perform match. */
-                                    if ($this->auxMatch($Value, $Property[$SourceKey], $Method)) {
+                                    if ($this->auxMatch($Value, $Property[$SourceKey], $Method, $SourceName, $Name)) {
                                         $Matched = true;
                                         if ($Logic === 'All') {
                                             continue;
@@ -2345,9 +2371,10 @@ class Core
                         if (!is_array($Data[$Mode]['If matches'][$SourceArrKey])) {
                             $Data[$Mode]['If matches'][$SourceArrKey] = [$Data[$Mode]['If matches'][$SourceArrKey]];
                         }
+                        $SourceName = $this->L10N->getString($SourceArr) ?: $SourceArr;
                         foreach ($Data[$Mode]['If matches'][$SourceArrKey] as $Value) {
                             /** Perform match. */
-                            if ($this->auxMatch($Value, $Property, $Method)) {
+                            if ($this->auxMatch($Value, $Property, $Method, $SourceName, $Name)) {
                                 $Matched = true;
                                 if ($Logic === 'All') {
                                     continue;
@@ -3010,5 +3037,25 @@ class Core
                 }
             }
         }
+    }
+
+    /**
+     * Add inspection entry.
+     *
+     * @param string $Name The name of the rule.
+     * @param string $Condition The condition.
+     * @param string $State The state of the match.
+     * @return void
+     */
+    private function addInspectionEntry(string $Name, string $Condition, string $State): void
+    {
+        if (!isset($this->BlockInfo['Inspection'])) {
+            return;
+        }
+        if ($this->BlockInfo['Inspection'] === '') {
+            $this->BlockInfo['Inspection'] = '↓';
+        }
+        $Pair = $this->L10N->getString('pair_separator') ?: ': ';
+        $this->BlockInfo['Inspection'] .= "\n- " . $Name . ' – ' . $Condition . $Pair . $State;
     }
 }

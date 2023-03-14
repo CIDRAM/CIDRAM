@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2023.02.14).
+ * This file: Protect traits (last modified: 2023.03.14).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -89,6 +89,7 @@ trait Protect
             'Ignored' => '',
             'Request_Method' => $_SERVER['REQUEST_METHOD'] ?? '',
             'Protocol' => $_SERVER['SERVER_PROTOCOL'] ?? '',
+            'Inspection' => '',
             'xmlLang' => $this->Configuration['general']['lang']
         ];
         if (isset($this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']])) {
@@ -684,6 +685,7 @@ trait Protect
                 $this->addField('Ignored', 'state_ignored', $this->BlockInfo['Ignored']);
                 $this->addField('Request_Method', 'field_request_method', $this->BlockInfo['Request_Method'], true);
                 $this->addField('Protocol', 'field_protocol', $this->BlockInfo['Protocol'], true);
+                $this->addField('Inspection', 'field_inspection', $this->BlockInfo['Inspection'], false, false);
                 $this->addField('Hostname', 'field_hostname', $this->BlockInfo['Hostname'], true);
                 $this->addField('CAPTCHA', 'field_captcha', $this->BlockInfo['CAPTCHA']);
             }

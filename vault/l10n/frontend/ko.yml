@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2023.03.06).
+# This file: Korean language data for the front-end (last modified: 2023.03.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -332,7 +332,6 @@ field_permissions: "권한"
 field_preferred_direct_input: "직접 입력"
 field_preferred_list: "현재 활성 서명 파일"
 field_preserve: "태그 및 주석 유지"
-field_profile: "프로파일링"
 field_range: "범위 (처음 – 마지막)"
 field_rename_file: "이름을 변경하려면"
 field_repair: "수리"
@@ -370,6 +369,7 @@ hints_duration:
  아크타임.: "기간은 아크타임 표기법을 사용하여 설명할 수 있습니다. 예를 들어, 1일, 2시간, 3분, 4초 하기 위해 <strong>1d2°3′4″</strong>를 사용하고, 단 5초 하기 위해 <strong>5″</strong>를 사용합니다."
  평범한 영어.: "기간은 일반 영어로 단위를 작성하여 설명할 수 있습니다. 예를 들어, 1주, 2일, 3시간, 4분, 5초 하기 위해 <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong>를 사용합니다."
  제약.: "표기법은 혼합될 수, 있지만 단위는 항상 가장 큰 것에서 가장 작은 것으로 설명되어야, 하며 반복될 수 없습니다. 예를 들어, <strong>1 week 2 days 3′4″</strong>는 <span class="txtGn">유효하</span>고 올바르게 이해되지만, <strong>3′4″ 1 week 2 days</strong>와 <strong>3 hours 3h 3°</strong>는 <span class="txtRd">유효하지 않습니다</span>. CIDRAM은 공백을 사용하는지 여부를 신경 쓰지 않습니다. 숫자는 형식이 지정되지 않아야 합니다. 실용성을 위해, 지원되는 최대 단위는 일주일입니다. 구성이 업데이트되면, CIDRAM은 지속 시간을 아크타임으로 정규화합니다."
+hints_inspection: "* 보조 규칙 디버깅 전용입니다. 차단된 사용자에게는 표시되지 않습니다."
 hints_ipv6_on_32bit: "참고\_: IPv6 조회는 일부 32비트 시스템에서 제대로 작동하지 않을 수 있습니다."
 hints_pdo_dsn:
  자주하는 질문.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.ko.md\#user-content-HOW_TO_USE_PDO" hreflang="ko">"PDO DSN"은 무엇입니까? CIDRAM과 함께 PDO를 사용하려면 어떻게해야합니까?</a></em>"
@@ -705,7 +705,6 @@ response_login_username_field_empty: "사용자 이름 입력이 비어 있습�
 response_login_wrong_endpoint: "잘못된 끝점!"
 response_no: "아니오"
 response_not_available_at_upstream: "업스트림에서는 찾을 수 없습니다."
-response_not_satisfied: "충족되지 않았습니다."
 response_passed: "성공했습니다"
 response_please_check_config: "새로 설치된 모듈이 의도 한 대로 작동하는지 확인하려면 구성을 확인하십시오."
 response_ready_to_install: "설치할 준비가되었습니다."
@@ -713,7 +712,6 @@ response_rename_error: "이름을 변경할 수 없습니다!"
 response_repair_process_completed: "수리 프로세스가 완료되었습니다."
 response_repair_process_failed: "수리 프로세스가 실패했습니다."
 response_sanity_1: "파일에 예상치 못한 내용이 포함되어 있습니다! 파일이 거부되었습니다!"
-response_satisfied: "충족되었습니다."
 response_signatures_updated: "서명 파일이 업데이트되었습니다 (%s)."
 response_skipped: "확인하지 않았다"
 response_statistics_cleared: "통계가 삭제되었습니다."

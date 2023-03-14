@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2023.03.06).
+# This file: Portuguese language data for the front-end (last modified: 2023.03.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -332,7 +332,6 @@ field_permissions: "Permissões"
 field_preferred_direct_input: "Insira os dados diretamente"
 field_preferred_list: "Arquivos de assinatura atualmente ativos"
 field_preserve: "Preservar tags e comentários"
-field_profile: "Classificação"
 field_range: "Alcance (Primeiro – Final)"
 field_rename_file: "Renomear"
 field_repair: "Reparar isso"
@@ -372,6 +371,7 @@ hints_duration:
  Tempo de arco.: "A duração pode ser descrita usando a notação de tempo de arco. Por exemplo, <strong>1d2°3′4″</strong> por um dia, duas horas, três minutos, quatro segundos ou <strong>5″</strong> por apenas cinco segundos."
  Inglês simples.: "A duração pode ser descrita escrevendo as unidades em inglês simples. Por exemplo, <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> por uma semana, dois dias, três horas, quatro minutos, cinco segundos."
  Restrições.: "A notação pode ser mista, mas as unidades devem sempre ser descritas da maior para a menor, e não podem ser repetidas. Por exemplo, <strong>1 week 2 days 3′4″</strong> é <span class="txtGn">válido</span> e será entendido corretamente, mas <strong>3′4″ 1 week 2 days</strong> e <strong>3 hours 3h 3°</strong> são <span class="txtRd">inválidos</span>. O CIDRAM não se importa se você está usando espaçamento ou não. Os números devem ser simples e não formatados. Por praticidade, a maior unidade suportada é uma semana. Quando a configuração é atualizada, o CIDRAM normaliza as durações para o tempo de arco."
+hints_inspection: "* Destina-se apenas à depuração de regras auxiliares. Não exibido para usuários bloqueados."
 hints_ipv6_on_32bit: "Nota: As pesquisas de IPv6 podem não funcionar corretamente em alguns sistemas de 32 bits."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.pt.md\#user-content-HOW_TO_USE_PDO" hreflang="pt">O que é um "PDO DSN"? Como posso usar o PDO com o CIDRAM?</a></em>"
@@ -715,7 +715,6 @@ response_login_username_field_empty: "Entrada de nome de usuário vazio!"
 response_login_wrong_endpoint: "Ponto final errado!"
 response_no: "Não"
 response_not_available_at_upstream: "Não disponível no upstream."
-response_not_satisfied: "Não satisfeito."
 response_passed: "Passado"
 response_please_check_config: "Verifique sua configuração para garantir que o módulo recém-instalado se comporte como você deseja."
 response_ready_to_install: "Pronto para instalar."
@@ -723,7 +722,6 @@ response_rename_error: "Falha ao renomear!"
 response_repair_process_completed: "Processo de reparo concluído."
 response_repair_process_failed: "Processo de reparo falhou."
 response_sanity_1: "Arquivo contém conteúdo inesperado! Arquivo rejeitado!"
-response_satisfied: "Satisfeito."
 response_signatures_updated: "Os arquivos de assinatura foram atualizados (%s)."
 response_skipped: "Ignorado"
 response_statistics_cleared: "Estatísticas apagadas."

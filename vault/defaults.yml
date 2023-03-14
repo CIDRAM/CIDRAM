@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2023.03.08).
+# This file: Defaults file (last modified: 2023.03.14).
 ##/
 
 Config Defaults:
@@ -144,6 +144,7 @@ Config Defaults:
     Hostname:OmitIfEmpty
     CAPTCHA:ShowInLogs
     CAPTCHA:OmitIfEmpty
+    Inspection:OmitIfEmpty
    labels:
     ShowInLogs: "checkbox_label_fields_logs"
     ShowInPageOutput: "checkbox_label_fields_page_output"
@@ -173,13 +174,17 @@ Config Defaults:
     Protocol: "field_protocol"
     Hostname: "field_hostname"
     CAPTCHA: "field_captcha"
+    Inspection: "* {field_inspection}"
    nonsense: |
     ID:OmitIfEmpty
     ScriptIdent:OmitIfEmpty
     DateTime:OmitIfEmpty
     SignatureCount:OmitIfEmpty
     Infractions:OmitIfEmpty
-   hints: "hints_asnlookup"
+    Inspection:ShowInPageOutput
+   hints:
+    - "hints_inspection"
+    - "hints_asnlookup"
   timezone:
    type: "timezone"
    default: "SYSTEM"

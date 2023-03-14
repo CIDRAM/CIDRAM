@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2023.03.06).
+# This file: Swedish language data for the front-end (last modified: 2023.03.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -332,7 +332,6 @@ field_permissions: "Behörigheter"
 field_preferred_direct_input: "Direkt ingång"
 field_preferred_list: "Aktuella aktiva signaturfiler"
 field_preserve: "Bevara taggar och kommentarer"
-field_profile: "Profil"
 field_range: "Räckvidd (Först – Sista)"
 field_rename_file: "Byt namn"
 field_repair: "Reparera"
@@ -370,6 +369,7 @@ hints_duration:
  Bågtid.: "Varaktighet kan beskrivas med bågtidsnotation. T.ex., <strong>1d2°3′4″</strong> för en dag, två timmar, tre minuter, fyra sekunder, eller <strong>5″</strong> för bara fem sekunder."
  Vanlig engelska.: "Varaktighet kan beskrivas genom att skriva enheterna på vanlig engelska. T.ex., <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> för en vecka, två dagar, tre timmar, fyra minuter, fem sekunder."
  Begränsningar.: "Notation kan blandas, men enheter måste alltid beskrivas från största till minsta, och kan inte upprepas. T.ex., <strong>1 week 2 days 3′4″</strong> är <span class="txtGn">giltigt</span> och kommer att förstås korrekt, men <strong>3′4″ 1 week 2 days</strong> och <strong>3 hours 3h 3°</strong> är <span class="txtRd">ogiltiga</span>. CIDRAM bryr sig inte om du använder mellanrum eller inte. Siffror måste vara enkla och oformaterade. För praktiska skull är den största enheten som stöds en vecka. När konfigurationen uppdateras, normaliserar CIDRAM varaktigheterna till bågtid."
+hints_inspection: "* Avsedd endast för felsökning av hjälpregler. Visas inte för blockerade användare."
 hints_ipv6_on_32bit: "Obs: IPv6-sökningar kanske inte fungerar korrekt på vissa 32-bitarssystem."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">Vad är en "PDO DSN"? Hur kan jag använda PDO med CIDRAM?</a></em>"
@@ -718,7 +718,6 @@ response_login_username_field_empty: "Användarnamn fältet tomt!"
 response_login_wrong_endpoint: "Felaktig slutpunkt!"
 response_no: "Nej"
 response_not_available_at_upstream: "Inte tillgängligt uppströms."
-response_not_satisfied: "Inte nöjda."
 response_passed: "Passerade"
 response_please_check_config: "Kontrollera din konfiguration för att säkerställa att den nyligen installerade modulen fungerar som du tänker."
 response_ready_to_install: "Redo att installeras."
@@ -726,7 +725,6 @@ response_rename_error: "Misslyckades med att byta namn!"
 response_repair_process_completed: "Reparationsprocessen lyckades."
 response_repair_process_failed: "Reparationsprocessen misslyckades."
 response_sanity_1: "Filen innehåller oväntat innehåll! Filen avvisas!"
-response_satisfied: "Nöjda."
 response_signatures_updated: "Signaturfiler har uppdaterats (%s)."
 response_skipped: "Ignoreras"
 response_statistics_cleared: "Statistik rensas."

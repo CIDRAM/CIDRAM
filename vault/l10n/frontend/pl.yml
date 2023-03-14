@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2023.03.06).
+# This file: Polish language data for the front-end (last modified: 2023.03.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -332,7 +332,6 @@ field_permissions: "Uprawnienia"
 field_preferred_direct_input: "Bezpośrednie wprowadzanie"
 field_preferred_list: "Obecnie aktywne pliki podpis"
 field_preserve: "Zachowaj tagi i komentarze"
-field_profile: "Profil"
 field_range: "Zakres (Pierwszy – Ostatni)"
 field_rename_file: "Przemianować"
 field_repair: "Naprawić"
@@ -373,6 +372,7 @@ hints_duration:
  Czas kątowa.: "Czas trwania można opisać za pomocą notacji czasu kątowego. Np., <strong>1d2°3′4″</strong> dla jeden dzień, dwie godziny, trzy minuty, cztery sekundy, lub <strong>5″</strong> dla tylko pięć sekund."
  Zwykły angielski.: "Czas trwania można opisać, pisząc jednostki w zwykły angielskim. Np., <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> dla jeden tydzień, dwa dni, trzy godziny, cztery minuty, pięć sekund."
  Ograniczenia.: "Notację można mieszać, ale jednostki należy zawsze opisywać od największej do najmniejszej, i nie można ich powtarzać. Np., <strong>1 week 2 days 3′4″</strong> jest <span class="txtGn">ważne</span> i będzie poprawnie rozumiane, ale <strong>3′4″ 1 week 2 days</strong> i <strong>3 hours 3h 3°</strong> są <span class="txtRd">nieważne</span>. CIDRAM nie dba o to, czy używasz odstępów. Liczby muszą być proste i niesformatowane. Ze względów praktycznych największa obsługiwana jednostka to tydzień. Gdy konfiguracja jest aktualizowana, CIDRAM normalizuje czasy trwania do czasu kątowego."
+hints_inspection: "* Przeznaczony tylko do debugowania reguł pomocniczych. Nie wyświetla się zablokowanym użytkownikom."
 hints_ipv6_on_32bit: "Uwaga: Wyszukiwania IPv6 mogą nie działać poprawnie w niektórych systemach 32-bitowych."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">Co to jest „PDO DSN”? Jak mogę używać PDO z CIDRAM?</a></em>"
@@ -723,7 +723,6 @@ response_login_username_field_empty: "Pole nazwy użytkownika jest puste!"
 response_login_wrong_endpoint: "Niewłaściwy punkt końcowy!"
 response_no: "Nie"
 response_not_available_at_upstream: "Nie znaleziono u źródła."
-response_not_satisfied: "Niespełnione."
 response_passed: "Wszystko dobrze"
 response_please_check_config: "Sprawdź swoją konfigurację, aby upewnić się, że nowo zainstalowany moduł będzie zachowywał się zgodnie z przeznaczeniem."
 response_ready_to_install: "Gotowy do instalacji."
@@ -731,7 +730,6 @@ response_rename_error: "Nie zmieniłem nazwy!"
 response_repair_process_completed: "Zakończenie procesu naprawy."
 response_repair_process_failed: "Niepowodzenie procesu naprawy."
 response_sanity_1: "Plik zawiera nieoczekiwaną treść! Plik odrzucony!"
-response_satisfied: "Spełnione."
 response_signatures_updated: "Pliki podpis zostały zaktualizowane (%s)."
 response_skipped: "Pominięte"
 response_statistics_cleared: "Statystyki wyczyszczone."

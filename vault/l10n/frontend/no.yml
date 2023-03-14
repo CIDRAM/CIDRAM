@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2023.03.06).
+# This file: Norwegian language data for the front-end (last modified: 2023.03.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -332,7 +332,6 @@ field_permissions: "Tillatelser"
 field_preferred_direct_input: "Direkte inngang"
 field_preferred_list: "Aktuelt aktive signaturfiler"
 field_preserve: "Bevar tagger og kommentarer"
-field_profile: "Profil"
 field_range: "Område (Først – Siste)"
 field_rename_file: "Gi nytt navn"
 field_repair: "Reparer"
@@ -370,6 +369,7 @@ hints_duration:
  Buetid.: "Varighet kan beskrives ved bruk av buetidsnotasjon. F.eks., <strong>1d2°3′4″</strong> for én dag, to timer, tre minutter, fire sekunder, eller <strong>5″</strong> for bare fem sekunder."
  Vanlig engelsk.: "Varighet kan beskrives ved å skrive enhetene på vanlig engelsk. F.eks., <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> for én uke, to dager, tre timer, fire minutter, fem sekunder."
  Begrensninger.: "Notasjon kan blandes, men enheter må alltid beskrives fra størst til minste, og kan ikke gjentas. F.eks., <strong>1 week 2 days 3′4″</strong> er <span class="txtGn">gyldig</span> og vil bli forstått riktig, men <strong>3′4″ 1 week 2 days</strong> og <strong>3 hours 3h 3°</strong> er <span class="txtRd">ugyldige</span>. CIDRAM bryr seg ikke om du bruker mellomrom eller ikke. Tall må være enkle og uformaterte. For praktiske formål er den største støttede enheten en uke. Når konfigurasjonen oppdateres, normaliserer CIDRAM varighetene til buetid."
+hints_inspection: "* Kun ment for feilsøking av tilleggsregler. Ikke vist for blokkerte brukere."
 hints_ipv6_on_32bit: "Merk: IPv6-oppslag fungerer kanskje ikke riktig på enkelte 32-biters systemer."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">Hva er en "PDO DSN"? Hvordan kan jeg bruke PDO med CIDRAM?</a></em>"
@@ -716,7 +716,6 @@ response_login_username_field_empty: "Brukernavn-felt tomt!"
 response_login_wrong_endpoint: "Feil sluttpunkt!"
 response_no: "Nei"
 response_not_available_at_upstream: "Ikke tilgjengelig ved oppstrøms."
-response_not_satisfied: "Ikke fornøyd."
 response_passed: "Bestått"
 response_please_check_config: "Kontroller konfigurasjonen for å sikre at den nylig installerte modulen vil oppføre seg slik du har tenkt deg."
 response_ready_to_install: "Klar til installasjon."
@@ -724,7 +723,6 @@ response_rename_error: "Omdøpe mislyktes!"
 response_repair_process_completed: "Reparasjonsprosessen er fullført."
 response_repair_process_failed: "Reparasjonsprosessen mislyktes."
 response_sanity_1: "Filen inneholder uventet innhold! Fil avvist!"
-response_satisfied: "Fornøyd."
 response_signatures_updated: "Signaturfiler er oppdatert (%s)."
 response_skipped: "Ignorert"
 response_statistics_cleared: "Statistikk fjernet."

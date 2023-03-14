@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2023.03.06).
+# This file: German language data for the front-end (last modified: 2023.03.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -332,7 +332,6 @@ field_permissions: "Berechtigungen"
 field_preferred_direct_input: "Direkteingabe"
 field_preferred_list: "Derzeit aktive Signaturdateien"
 field_preserve: "Tags und Kommentare beibehalten"
-field_profile: "Profil"
 field_range: "Umfang (Erste – Letzte)"
 field_rename_file: "Umbenennen"
 field_repair: "Reparieren"
@@ -372,6 +371,7 @@ hints_duration:
  Bogenzeit.: "Die Dauer kann unter Verwendung der Bogenzeit-Notation beschrieben werden. z.B., <strong>1d2°3′4″</strong> für einen Tag, zwei Stunden, drei Minuten, vier Sekunden, oder <strong>5″</strong> für nur fünf Sekunden."
  Einfaches Englisch.: "Die Dauer kann beschrieben werden indem die Einheiten in einfachem Englisch geschrieben werden. z.B., <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> für eine Woche, zwei Tage, drei Stunden, vier Minuten, fünf Sekunden."
  Einschränkungen.: "Die Notation kann gemischt werden, aber Einheiten müssen immer vom größten zum kleinsten beschrieben werden, und können nicht wiederholt werden. z.B., <strong>1 week 2 days 3′4″</strong> ist <span class="txtGn">gültig</span> und wird korrekt verstanden, aber <strong>3′4″ 1 week 2 days</strong> und <strong>3 hours 3h 3°</strong> sind <span class="txtRd">ungültig</span>. CIDRAM kümmert sich nicht darum ob Sie Leerzeichen verwenden oder nicht. Zahlen müssen einfach und unformatiert sein. Aus praktischen Gründen ist die größte unterstützte Einheit eine Woche. Wenn die Konfiguration aktualisiert wird, normalisiert CIDRAM die Dauer auf Bogenzeit."
+hints_inspection: "* Nur zum Debuggen von Hilfsregeln vorgesehen. Blockierten Benutzern nicht angezeigt."
 hints_ipv6_on_32bit: "Hinweis: IPv6-Lookups funktionieren auf einigen 32-Bit-Systemen möglicherweise nicht richtig."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.de.md\#user-content-HOW_TO_USE_PDO" hreflang="de">Was ist ein „PDO DSN“? Wie kann ich PDO mit CIDRAM verwenden?</a></em>"
@@ -721,7 +721,6 @@ response_login_username_field_empty: "Benutzername-Feld leer!"
 response_login_wrong_endpoint: "Falscher Endpunkt!"
 response_no: "Nein"
 response_not_available_at_upstream: "An der Upstream nicht verfügbar."
-response_not_satisfied: "Nicht zufrieden."
 response_passed: "Bestanden"
 response_please_check_config: "Bitte überprüfen Sie Ihre Konfiguration um sicherzustellen dass das neu installierte Modul wie gewünscht verhält."
 response_ready_to_install: "Bereit zur Installation."
@@ -729,7 +728,6 @@ response_rename_error: "Umbenennung-Fehler!"
 response_repair_process_completed: "Reparaturvorgang abgeschlossen."
 response_repair_process_failed: "Reparaturvorgang fehlgeschlagen."
 response_sanity_1: "Datei enthält unerwarteten Inhalt! Datei abgelehnt!"
-response_satisfied: "Zufrieden."
 response_signatures_updated: "Signaturdateien wurden aktualisiert (%s)."
 response_skipped: "Übersprang"
 response_statistics_cleared: "Statistiken gelöscht."

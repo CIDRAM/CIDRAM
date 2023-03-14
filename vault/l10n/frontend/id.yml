@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2023.03.06).
+# This file: Indonesian language data for the front-end (last modified: 2023.03.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -332,7 +332,6 @@ field_permissions: "Izin"
 field_preferred_direct_input: "Input langsung"
 field_preferred_list: "File tanda tangan yang aktif saat ini"
 field_preserve: "Pertahankan tag dan komentar"
-field_profile: "Klasifikasi"
 field_range: "Rentang (Pertama – Terakhir)"
 field_rename_file: "Memodifikasi nama"
 field_repair: "Memperbaiki"
@@ -370,6 +369,7 @@ hints_duration:
  Waktu busur.: "Durasi dapat dideskripsikan dengan menggunakan notasi waktu busur. Misalnya, <strong>1d2°3′4″</strong> untuk satu hari, dua jam, tiga menit, empat detik, atau <strong>5″</strong> untuk hanya lima detik."
  Bahasa Inggris sederhana.: "Durasi dapat dideskripsikan dengan menulis satuan dalam bahasa Inggris sederhana. Misalnya, <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> untuk satu minggu, dua hari, tiga jam, empat menit, lima detik."
  Kendala.: "Notasi dapat dicampur, tetapi satuan harus selalu dideskripsikan dari terbesar ke terkecil, dan tidak dapat diulang. Misalnya, <strong>1 week 2 days 3′4″</strong> adalah <span class="txtGn">valid</span> dan akan dipahami dengan benar, tetapi <strong>3′4″ 1 week 2 days</strong> dan <strong>3 hours 3h 3°</strong> adalah <span class="txtRd">tidak valid</span>. CIDRAM tidak peduli apakah Anda menggunakan spasi atau tidak. Nomor harus polos dan tidak diformat. Untuk kepraktisan, satuan didukung yang terbesar adalah seminggu. Saat konfigurasi diperbarui, CIDRAM menormalkan durasi ke waktu busur."
+hints_inspection: "* Dimaksudkan hanya untuk men-debug aturan tambahan. Tidak ditampilkan kepada pengguna yang diblokir."
 hints_ipv6_on_32bit: "Catatan: Pencarian IPv6 mungkin tidak bekerja dengan benar pada beberapa sistem 32-bit."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.id.md\#user-content-HOW_TO_USE_PDO" hreflang="id">Apa itu "PDO DSN"? Bagaimana saya bisa menggunakan PDO dengan CIDRAM?</a></em>"
@@ -708,7 +708,6 @@ response_login_username_field_empty: "Nama pengguna yang kosong!"
 response_login_wrong_endpoint: "Jalur akses salah!"
 response_no: "Tidak"
 response_not_available_at_upstream: "Tidak tersedia di hulu."
-response_not_satisfied: "Tidak puas."
 response_passed: "Lulus"
 response_please_check_config: "Memeriksa konfigurasi Anda untuk memastikan bahwa modul yang baru diinstal akan berfungsi seperti yang Anda inginkan."
 response_ready_to_install: "Siap untuk instalasi."
@@ -716,7 +715,6 @@ response_rename_error: "Gagal memodifikasi nama!"
 response_repair_process_completed: "Proses perbaikan selesai."
 response_repair_process_failed: "Proses perbaikan gagal."
 response_sanity_1: "File berisi konten yang tidak diharapkan! File ditolak!"
-response_satisfied: "Puas."
 response_signatures_updated: "File tanda tangan telah diperbarui (%s)."
 response_skipped: "Diabaikan"
 response_statistics_cleared: "Statistik dicabut."

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods for updating CIDRAM components (last modified: 2023.03.15).
+ * This file: Methods for updating CIDRAM components (last modified: 2023.03.16).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -385,10 +385,8 @@ trait Updater
             /** Purge the queue before iterating. */
             $this->CIDRAM['ExecutorQueue'] = [];
 
-            /** Recursively iterate through the executor queue. */
-            foreach ($Items as $QueueItem) {
-                $this->executor($QueueItem);
-            }
+            /** Iterate through the executor queue. */
+            $this->executor($Items);
             return;
         }
 
@@ -397,6 +395,20 @@ trait Updater
 
         /** Recursively execute all methods in the current queue item. */
         foreach ($Methods as $Method) {
+            /** Foreach looping. */
+            if (preg_match('~^foreach \{(.+?)\} as ([^ ]+?) => ([^ ]+?) (.*)$~i', $Method, $Tokens)) {
+                $Iterable = $this->CIDRAM['Operation']->dataTraverse($this, $Tokens[1], true);
+                if (!is_iterable($Iterable)) {
+                    continue;
+                }
+                $Arr = [];
+                foreach ($Iterable as $Key => $Value) {
+                    $Arr[] = str_replace(['{' . $Tokens[2] . '}', '{' . $Tokens[3] . '}'], [$Key, $Value], $Tokens[4]);
+                }
+                $this->executor($Arr);
+                continue;
+            }
+
             /** All logic, data traversal, dot notation, etc handled here. */
             $Method = $this->CIDRAM['Operation']->ifCompare($this, $Method);
 

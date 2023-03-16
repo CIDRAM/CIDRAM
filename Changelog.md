@@ -180,3 +180,5 @@
 [2023.03.13; Bug-fix; Maikuolan]: Typo found in CIDRAM's WordPress update hook; Fixed.
 
 [2023.03.13; Bug-fix; Maikuolan]: If a logs link cache entry for the logs page has already been set, IP tracking entries shown at the IP tracking page would sometimes be munged by the copy to clipboard SVGs; Fixed.
+
+[2023.03.16~17; New Feature; Maikuolan]: Added support for macros to the updates page (#418).

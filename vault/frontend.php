@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2023.03.13).
+ * This file: Front-end handler (last modified: 2023.03.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2358,7 +2358,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
                 $CIDRAM['Components']['ThisComponent']['Name']
             );
             $CIDRAM['Components']['Out'][$CIDRAM['Components']['ThisComponent']['SortKey']] = $CIDRAM['ParseVars'](
-                $CIDRAM['L10N']->Data + $CIDRAM['ArrayFlatten']($CIDRAM['Components']['ThisComponent']) + $CIDRAM['ArrayFlatten']($CIDRAM['FE']),
+                $CIDRAM['ArrayFlatten']($CIDRAM['Components']['ThisComponent']) + $CIDRAM['ArrayFlatten']($CIDRAM['FE']),
                 $CIDRAM['FE']['UpdatesRow']
             );
         }

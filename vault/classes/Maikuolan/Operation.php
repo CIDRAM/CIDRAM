@@ -215,23 +215,24 @@ class Operation
      *
      * @param mixed $Data The data to traverse.
      * @param string|array $Path The path to traverse.
+     * @param bool $AllowNonScalar Whether to allow non-scalar returns.
      * @return mixed The traversed data, or an empty string on failure.
      */
-    public function dataTraverse(&$Data, $Path = [])
+    public function dataTraverse(&$Data, $Path = [], $AllowNonScalar = false)
     {
         if (!is_array($Path)) {
             $Path = preg_split('~(?<!\\\)\.~', $Path) ?: [];
         }
         $Segment = array_shift($Path);
         if ($Segment === null || strlen($Segment) === 0) {
-            return is_scalar($Data) ? $Data : '';
+            return $AllowNonScalar || is_scalar($Data) ? $Data : '';
         }
         $Segment = str_replace('\.', '.', $Segment);
         if (is_array($Data) && isset($Data[$Segment])) {
-            return $this->dataTraverse($Data[$Segment], $Path);
+            return $this->dataTraverse($Data[$Segment], $Path, $AllowNonScalar);
         }
         if (is_object($Data) && property_exists($Data, $Segment)) {
-            return $this->dataTraverse($Data->$Segment, $Path);
+            return $this->dataTraverse($Data->$Segment, $Path, $AllowNonScalar);
         }
         if (is_string($Data)) {
             if (preg_match('~^(?:trim|str(?:tolower|toupper|len))\(\)~i', $Segment)) {
@@ -239,7 +240,7 @@ class Operation
                 $Data = $Segment($Data);
             }
         }
-        return $this->dataTraverse($Data, $Path);
+        return $this->dataTraverse($Data, $Path, $AllowNonScalar);
     }
 
     /**

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2023.03.13).
+ * This file: Front-end functions file (last modified: 2023.03.15).
  */
 
 /**
@@ -440,7 +440,7 @@ $CIDRAM['FileManager-RecursiveList'] = function (string $Base) use (&$CIDRAM): a
  * Used by the file manager and the updates pages to fetch the components list.
  *
  * @param string $Base The path to the working directory.
- * @param array $Arr The array to use for rendering components file YAML data.
+ * @param array $Arr The array to use for rendering the components metadata.
  * @return void
  */
 $CIDRAM['FetchComponentsLists'] = function (string $Base, array &$Arr) use (&$CIDRAM): void {

@@ -1,0 +1,78 @@
+activate_modules:
+ On Execute:
+  - "if {Components.Installed Versions.AbuseIPDB module}>0&&{Components.In Use.AbuseIPDB module}!=1 then updatesHandlerActivate AbuseIPDB module"
+  - "if {Components.Installed Versions.Bad hosts blocker module}>0&&{Components.In Use.Bad hosts blocker module}!=1 then updatesHandlerActivate Bad hosts blocker module"
+  - "if {Components.Installed Versions.Bad TLDs blocker module}>0&&{Components.In Use.Bad TLDs blocker module}!=1 then updatesHandlerActivate Bad TLDs blocker module"
+  - "if {Components.Installed Versions.BGPView module}>0&&{Components.In Use.BGPView module}!=1 then updatesHandlerActivate BGPView module"
+  - "if {Components.Installed Versions.Bot user agents module}>0&&{Components.In Use.Bot user agents module}!=1 then updatesHandlerActivate Bot user agents module"
+  - "if {Components.Installed Versions.BunnyCDN compatibility module}>0&&{Components.In Use.BunnyCDN compatibility module}!=1 then updatesHandlerActivate BunnyCDN compatibility module"
+  - "if {Components.Installed Versions.Cookie scanner module}>0&&{Components.In Use.Cookie scanner module}!=1 then updatesHandlerActivate Cookie scanner module"
+  - "if {Components.Installed Versions.IP-API module}>0&&{Components.In Use.IP-API module}!=1 then updatesHandlerActivate IP-API module"
+  - "if {Components.Installed Versions.Optional security extras module}>0&&{Components.In Use.Optional security extras module}!=1 then updatesHandlerActivate Optional security extras module"
+  - "if {Components.Installed Versions.Project Honeypot module}>0&&{Components.In Use.Project Honeypot module}!=1 then updatesHandlerActivate Project Honeypot module"
+  - "if {Components.Installed Versions.Protocol blocker module}>0&&{Components.In Use.Protocol blocker module}!=1 then updatesHandlerActivate Protocol blocker module"
+  - "if {Components.Installed Versions.Stop Forum Spam module}>0&&{Components.In Use.Stop Forum Spam module}!=1 then updatesHandlerActivate Stop Forum Spam module"
+  - "if {Components.Installed Versions.Tor blocker module}>0&&{Components.In Use.Tor blocker module}!=1 then updatesHandlerActivate Tor blocker module"
+  - "if {Components.Installed Versions.BOBUAM}>0&&{Components.In Use.BOBUAM}!=1 then updatesHandlerActivate BOBUAM"
+  - "if {Components.Installed Versions.PHPMailer}>0&&{Components.In Use.PHPMailer}!=1 then updatesHandlerActivate PHPMailer"
+  - "if {Components.Installed Versions.Referrer spam module}>0&&{Components.In Use.Referrer spam module}!=1 then updatesHandlerActivate Referrer spam module"
+activate_signatures:
+ On Execute:
+  - "if {Components.Installed Versions.IPv4}>0&&{Components.In Use.IPv4}!=1 then updatesHandlerActivate IPv4"
+  - "if {Components.Installed Versions.IPv4-Bogons}>0&&{Components.In Use.IPv4-Bogons}!=1 then updatesHandlerActivate IPv4-Bogons"
+  - "if {Components.Installed Versions.IPv4-ISPs}>0&&{Components.In Use.IPv4-ISPs}!=1 then updatesHandlerActivate IPv4-ISPs"
+  - "if {Components.Installed Versions.IPv4-Nonblocking}>0&&{Components.In Use.IPv4-Nonblocking}!=1 then updatesHandlerActivate IPv4-Nonblocking"
+  - "if {Components.Installed Versions.IPv4-Other}>0&&{Components.In Use.IPv4-Other}!=1 then updatesHandlerActivate IPv4-Other"
+  - "if {Components.Installed Versions.IPv6}>0&&{Components.In Use.IPv6}!=1 then updatesHandlerActivate IPv6"
+  - "if {Components.Installed Versions.IPv6-Bogons}>0&&{Components.In Use.IPv6-Bogons}!=1 then updatesHandlerActivate IPv6-Bogons"
+  - "if {Components.Installed Versions.IPv6-ISPs}>0&&{Components.In Use.IPv6-ISPs}!=1 then updatesHandlerActivate IPv6-ISPs"
+  - "if {Components.Installed Versions.IPv6-Nonblocking}>0&&{Components.In Use.IPv6-Nonblocking}!=1 then updatesHandlerActivate IPv6-Nonblocking"
+  - "if {Components.Installed Versions.IPv6-Other}>0&&{Components.In Use.IPv6-Other}!=1 then updatesHandlerActivate IPv6-Other"
+  - "if {Components.Installed Versions.Bypasses}>0&&{Components.In Use.Bypasses}!=1 then updatesHandlerActivate Bypasses"
+deactivate_modules:
+ On Execute:
+  - "if {Components.Installed Versions.AbuseIPDB module}>0&&{Components.In Use.AbuseIPDB module}!=0 then updatesHandlerDeactivate AbuseIPDB module"
+  - "if {Components.Installed Versions.Bad hosts blocker module}>0&&{Components.In Use.Bad hosts blocker module}!=0 then updatesHandlerDeactivate Bad hosts blocker module"
+  - "if {Components.Installed Versions.Bad TLDs blocker module}>0&&{Components.In Use.Bad TLDs blocker module}!=0 then updatesHandlerDeactivate Bad TLDs blocker module"
+  - "if {Components.Installed Versions.BGPView module}>0&&{Components.In Use.BGPView module}!=0 then updatesHandlerDeactivate BGPView module"
+  - "if {Components.Installed Versions.Bot user agents module}>0&&{Components.In Use.Bot user agents module}!=0 then updatesHandlerDeactivate Bot user agents module"
+  - "if {Components.Installed Versions.BunnyCDN compatibility module}>0&&{Components.In Use.BunnyCDN compatibility module}!=0 then updatesHandlerDeactivate BunnyCDN compatibility module"
+  - "if {Components.Installed Versions.Cookie scanner module}>0&&{Components.In Use.Cookie scanner module}!=0 then updatesHandlerDeactivate Cookie scanner module"
+  - "if {Components.Installed Versions.IP-API module}>0&&{Components.In Use.IP-API module}!=0 then updatesHandlerDeactivate IP-API module"
+  - "if {Components.Installed Versions.Optional security extras module}>0&&{Components.In Use.Optional security extras module}!=0 then updatesHandlerDeactivate Optional security extras module"
+  - "if {Components.Installed Versions.Project Honeypot module}>0&&{Components.In Use.Project Honeypot module}!=0 then updatesHandlerDeactivate Project Honeypot module"
+  - "if {Components.Installed Versions.Protocol blocker module}>0&&{Components.In Use.Protocol blocker module}!=0 then updatesHandlerDeactivate Protocol blocker module"
+  - "if {Components.Installed Versions.Stop Forum Spam module}>0&&{Components.In Use.Stop Forum Spam module}!=0 then updatesHandlerDeactivate Stop Forum Spam module"
+  - "if {Components.Installed Versions.Tor blocker module}>0&&{Components.In Use.Tor blocker module}!=0 then updatesHandlerDeactivate Tor blocker module"
+  - "if {Components.Installed Versions.BOBUAM}>0&&{Components.In Use.BOBUAM}!=0 then updatesHandlerDeactivate BOBUAM"
+  - "if {Components.Installed Versions.PHPMailer}>0&&{Components.In Use.PHPMailer}!=0 then updatesHandlerDeactivate PHPMailer"
+  - "if {Components.Installed Versions.Referrer spam module}>0&&{Components.In Use.Referrer spam module}!=0 then updatesHandlerDeactivate Referrer spam module"
+deactivate_signatures:
+ On Execute:
+  - "if {Components.Installed Versions.IPv4}>0&&{Components.In Use.IPv4}!=0 then updatesHandlerDeactivate IPv4"
+  - "if {Components.Installed Versions.IPv4-Bogons}>0&&{Components.In Use.IPv4-Bogons}!=0 then updatesHandlerDeactivate IPv4-Bogons"
+  - "if {Components.Installed Versions.IPv4-ISPs}>0&&{Components.In Use.IPv4-ISPs}!=0 then updatesHandlerDeactivate IPv4-ISPs"
+  - "if {Components.Installed Versions.IPv4-Nonblocking}>0&&{Components.In Use.IPv4-Nonblocking}!=0 then updatesHandlerDeactivate IPv4-Nonblocking"
+  - "if {Components.Installed Versions.IPv4-Other}>0&&{Components.In Use.IPv4-Other}!=0 then updatesHandlerDeactivate IPv4-Other"
+  - "if {Components.Installed Versions.IPv6}>0&&{Components.In Use.IPv6}!=0 then updatesHandlerDeactivate IPv6"
+  - "if {Components.Installed Versions.IPv6-Bogons}>0&&{Components.In Use.IPv6-Bogons}!=0 then updatesHandlerDeactivate IPv6-Bogons"
+  - "if {Components.Installed Versions.IPv6-ISPs}>0&&{Components.In Use.IPv6-ISPs}!=0 then updatesHandlerDeactivate IPv6-ISPs"
+  - "if {Components.Installed Versions.IPv6-Nonblocking}>0&&{Components.In Use.IPv6-Nonblocking}!=0 then updatesHandlerDeactivate IPv6-Nonblocking"
+  - "if {Components.Installed Versions.IPv6-Other}>0&&{Components.In Use.IPv6-Other}!=0 then updatesHandlerDeactivate IPv6-Other"
+  - "if {Components.Installed Versions.Bypasses}>0&&{Components.In Use.Bypasses}!=0 then updatesHandlerDeactivate Bypasses"
+install_l10n_core:
+ On Execute: ""
+install_l10n_fe:
+ On Execute: ""
+install_modules:
+ On Execute: ""
+install_signatures:
+ On Execute: ""
+uninstall_l10n_core:
+ On Execute: ""
+uninstall_l10n_fe:
+ On Execute: ""
+uninstall_modules:
+ On Execute: ""
+uninstall_signatures:
+ On Execute: ""

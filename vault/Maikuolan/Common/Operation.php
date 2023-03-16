@@ -1,6 +1,6 @@
 <?php
 /**
- * Operation handler (last modified: 2023.02.23).
+ * Operation handler (last modified: 2023.03.16).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -230,6 +230,9 @@ class Operation
         if (is_array($Data) && isset($Data[$Segment])) {
             return $this->dataTraverse($Data[$Segment], $Path);
         }
+        if (is_object($Data) && property_exists($Data, $Segment)) {
+            return $this->dataTraverse($Data->$Segment, $Path);
+        }
         if (is_string($Data)) {
             if (preg_match('~^(?:trim|str(?:tolower|toupper|len))\(\)~i', $Segment)) {
                 $Segment = substr($Segment, 0, -2);
@@ -290,7 +293,7 @@ class Operation
         foreach (explode('||', $IfString) as $PartsOr) {
             $IfPass = true;
             foreach (explode('&&', $PartsOr) as $PartsAnd) {
-                $Parts = preg_split('~([<>]=?|[=^]+)~', $PartsAnd, -1, PREG_SPLIT_DELIM_CAPTURE);
+                $Parts = preg_split('~([<>]=?|!?[=^]+)~', $PartsAnd, -1, PREG_SPLIT_DELIM_CAPTURE);
                 foreach ($Parts as &$Part) {
                     $Part = trim($Part);
                     if (substr($Part, 0, 1) === '{' && substr($Part, -1) === '}') {
@@ -309,6 +312,12 @@ class Operation
                 } elseif ($CParts === 3) {
                     if ($Parts[1] === '===') {
                         $Try = ($Parts[0] === $Parts[2]);
+                    } elseif ($Parts[1] === '!==') {
+                        $Try = ($Parts[0] !== $Parts[2]);
+                    } elseif ($Parts[1] === '==') {
+                        $Try = ($Parts[0] == $Parts[2]);
+                    } elseif ($Parts[1] === '!=') {
+                        $Try = ($Parts[0] != $Parts[2]);
                     } else {
                         $Initial = substr($Parts[1], 0, 1);
                         if ($Initial === '=' || $Initial === '^') {

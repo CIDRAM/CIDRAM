@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2023.03.14).
+# This file: English language data for the front-end (last modified: 2023.03.15).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -321,6 +321,7 @@ field_latest_version: "Latest Version"
 field_log_in: "Log In"
 field_log_rotation_archive: "Firstly archive, and then delete the oldest log files, until the limit is no longer exceeded."
 field_log_rotation_delete: "Delete the oldest log files, until the limit is no longer exceeded."
+field_macro: "Macro"
 field_netmask: "Generate output as netmasks"
 field_new_name: "New name:"
 field_nonclickable_text: "Non-clickable text"
@@ -651,6 +652,24 @@ link_updates: "Updates"
 logs_logfile_doesnt_exist: "Selected log file doesn't exist!"
 logs_no_logfile_selected: "No log file selected."
 logs_no_logfiles_available: "No log files available."
+macro_description_activate_modules: &MayImpactPerformance "Not generally recommended, as there's likely to be some that you don't need. Installing and activating components when they aren't needed could negatively impact performance."
+macro_description_install_l10n_core: &RecommendKeepingCore "When the <code>lang_override</code> configuration directive is enabled, if a user's browser specifies a particular language preference, as long as core L10N data for that language is installed, CIDRAM is able to display the "access denied" page in that specified language. Accordingly, having all core L10N data remain installed is recommended."
+macro_description_install_l10n_fe: &RecommendFEOnlyNeeded "Your preferred language can be specified via the <code>lang</code> configuration directive. Once this has been done, you're unlikely to need any front-end L10N data other than that for your preferred language, and may want to remove it for the sake of marginally freeing up some available disk space. Though, whether you choose to remove it or keep it, either way, shouldn't do any harm."
+macro_description_install_modules: *MayImpactPerformance
+macro_description_uninstall_l10n_core: *RecommendKeepingCore
+macro_description_uninstall_l10n_fe: *RecommendFEOnlyNeeded
+macro_name_activate_modules: "Activate all modules."
+macro_name_activate_signatures: "Activate all signature files."
+macro_name_deactivate_modules: "Deactivate all modules."
+macro_name_deactivate_signatures: "Deactivate all signature files."
+macro_name_install_l10n_core: "Install all available core L10N."
+macro_name_install_l10n_fe: "Install all available front-end L10N."
+macro_name_install_modules: "Install all available modules."
+macro_name_install_signatures: "Install all available signature files."
+macro_name_uninstall_l10n_core: "Uninstall all inactive core L10N."
+macro_name_uninstall_l10n_fe: "Uninstall all inactive front-end L10N."
+macro_name_uninstall_modules: "Uninstall all inactive modules."
+macro_name_uninstall_signatures: "Uninstall all inactive signature files."
 max_login_attempts_exceeded: "Maximum number of login attempts exceeded; Access denied."
 msg_subject_2fa: "Two-Factor Authentication"
 msg_template_2fa: |

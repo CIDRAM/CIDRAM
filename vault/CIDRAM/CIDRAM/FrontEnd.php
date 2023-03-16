@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.03.13).
+ * This file: The CIDRAM front-end (last modified: 2023.03.15).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -27,13 +27,13 @@ class FrontEnd extends Core
     /**
      * @var array For any front-end working data without dedicated properties.
      */
-    private $FE = [];
+    public $FE = [];
 
     /**
      * @var array Used by the updater and file manager to store and work with
      *      local data about components.
      */
-    private $Components = [];
+    public $Components = [];
 
     /**
      * @var bool Whether we're calling CIDRAM through an alternative pathway.
@@ -1917,8 +1917,10 @@ class FrontEnd extends Core
             /** Prepare components metadata working array. */
             $this->Components = [
                 'Meta' => [],
+                'Macros' => [],
                 'Installed Versions' => ['PHP' => PHP_VERSION],
                 'Available Versions' => [],
+                'In Use' => [],
                 'Install Together' => [],
                 'Outdated' => [],
                 'OutdatedSignatureFiles' => [],
@@ -1928,8 +1930,11 @@ class FrontEnd extends Core
             ];
             $this->fetchRemotesData();
 
-            /** Fetch components lists. */
+            /** Fetch components metadata. */
             $this->readInstalledMetadata($this->Components['Meta']);
+
+            /** Fetch components metadata. */
+            $this->readInstalledMacros($this->Components['Macros']);
 
             /** Check current versions beforehand (needed for dependency checks). */
             $this->checkVersions($this->Components['Meta'], $this->Components['Installed Versions']);
@@ -1943,20 +1948,32 @@ class FrontEnd extends Core
             $this->calculateShared();
 
             /** A form has been submitted. */
-            if (empty($this->Alternate) && $this->FE['FormTarget'] === 'updates' && !empty($_POST['do']) && !empty($_POST['ID'])) {
-                /** Trigger updates handler. */
-                $this->updatesHandler($_POST['do'], $_POST['ID']);
+            if (empty($this->Alternate) && $this->FE['FormTarget'] === 'updates') {
+                /** Components. */
+                if (!empty($_POST['do']) && !empty($_POST['ID'])) {
+                    /** Trigger updates handler. */
+                    $this->updatesHandler($_POST['do'], $_POST['ID']);
 
-                /** Trigger signatures update log event. */
-                if (!empty($this->CIDRAM['SignaturesUpdateEvent'])) {
-                    $this->CIDRAM['SignaturesUpdateEvent'] = sprintf(
-                        $this->L10N->getString('response_signatures_updated'),
-                        $this->timeFormat(
-                            $this->CIDRAM['SignaturesUpdateEvent'],
-                            $this->Configuration['general']['time_format']
-                        )
-                    );
-                    $this->Events->fireEvent('writeToSignaturesUpdateEventLog', $this->CIDRAM['SignaturesUpdateEvent']);
+                    /** Trigger signatures update log event. */
+                    if (!empty($this->CIDRAM['SignaturesUpdateEvent'])) {
+                        $this->CIDRAM['SignaturesUpdateEvent'] = sprintf(
+                            $this->L10N->getString('response_signatures_updated'),
+                            $this->timeFormat(
+                                $this->CIDRAM['SignaturesUpdateEvent'],
+                                $this->Configuration['general']['time_format']
+                            )
+                        );
+                        $this->Events->fireEvent('writeToSignaturesUpdateEventLog', $this->CIDRAM['SignaturesUpdateEvent']);
+                    }
+                }
+
+                /** Macros. */
+                if (!empty($_POST['Macro']) && is_string($_POST['Macro'])) {
+                    if (isset($this->Components['Macros'][$_POST['Macro']]['On Execute'])) {
+                        $this->executor($this->Components['Macros'][$_POST['Macro']]['On Execute']);
+                    } else {
+                        $this->FE['state_msg'] .= $this->L10N->getString('response_failed_to_execute') . '<br />';
+                    }
                 }
 
                 /** Check again, since the information might've been updated. */
@@ -1970,12 +1987,13 @@ class FrontEnd extends Core
             $this->initialPrepwork($this->L10N->getString('link_updates'), $this->L10N->getString('tip_updates'));
 
             $this->FE['UpdatesRow'] = $this->readFile($this->getAssetPath('_updates_row.html'));
+            $this->FE['MacrosRow'] = $this->parseVars(['UpdatesFormTarget' => $this->FE['UpdatesFormTarget']], $this->readFile($this->getAssetPath('_updates_macro.html')));
 
             /** Prepare installed component metadata and options for display. */
-            foreach ($this->Components['Meta'] as $this->Components['Key'] => &$this->Components['ThisComponent']) {
+            foreach ($this->Components['Meta'] as $Key => &$this->Components['ThisComponent']) {
                 /** Fall back to component key if the component's name isn't defined. */
-                if (empty($this->Components['ThisComponent']['Name']) && !$this->L10N->getString('Name ' . $this->Components['Key'])) {
-                    $this->Components['ThisComponent']['Name'] = $this->Components['Key'];
+                if (empty($this->Components['ThisComponent']['Name']) && !$this->L10N->getString('Name ' . $Key)) {
+                    $this->Components['ThisComponent']['Name'] = $Key;
                 }
 
                 /** Execute any necessary preload instructions. */
@@ -1984,58 +2002,58 @@ class FrontEnd extends Core
                 }
 
                 /** Determine whether all dependency constraints have been met. */
-                $this->checkConstraints($this->Components['ThisComponent'], false, $this->Components['Key']);
+                $this->checkConstraints($this->Components['ThisComponent'], false, $Key);
 
-                $this->prepareName($this->Components['ThisComponent'], $this->Components['Key']);
-                $this->prepareExtendedDescription($this->Components['ThisComponent'], $this->Components['Key']);
-                $this->Components['ThisComponent']['ID'] = $this->Components['Key'];
+                $this->prepareName($this->Components['ThisComponent'], $Key);
+                $this->prepareExtendedDescription($this->Components['ThisComponent'], $Key);
+                $this->Components['ThisComponent']['ID'] = $Key;
                 $this->Components['ThisComponent']['Options'] = '';
                 $this->Components['ThisComponent']['StatusOptions'] = '';
                 $this->Components['ThisComponent']['StatClass'] = '';
-                if (isset($this->Components['Available Versions'][$this->Components['Key']])) {
-                    $this->Components['ThisComponent']['Latest'] = $this->Components['Available Versions'][$this->Components['Key']];
+                if (isset($this->Components['Available Versions'][$Key])) {
+                    $this->Components['ThisComponent']['Latest'] = $this->Components['Available Versions'][$Key];
                 } else {
                     $this->Components['ThisComponent']['Latest'] = $this->L10N->getString('response_updates_unable_to_determine');
                     $this->Components['ThisComponent']['StatClass'] = 's';
                 }
 
                 /** Guard against component metadata missing at the upstream. */
-                if (!isset($this->Components['RemoteMeta'][$this->Components['Key']])) {
-                    $this->Components['RemoteMeta'][$this->Components['Key']] = [];
+                if (!isset($this->Components['RemoteMeta'][$Key])) {
+                    $this->Components['RemoteMeta'][$Key] = [];
                 }
 
                 /** Determine whether all dependency constraints have been met. */
-                $this->checkConstraints($this->Components['RemoteMeta'][$this->Components['Key']], true);
+                $this->checkConstraints($this->Components['RemoteMeta'][$Key], true);
                 foreach (['Dependency Status', 'All Constraints Met'] as $CopyItem) {
-                    $this->Components['ThisComponent']['Remote ' . $CopyItem] = $this->Components['RemoteMeta'][$this->Components['Key']][$CopyItem] ?? '';
+                    $this->Components['ThisComponent']['Remote ' . $CopyItem] = $this->Components['RemoteMeta'][$Key][$CopyItem] ?? '';
                 }
                 unset($CopyItem);
-                if (isset($this->Components['RemoteMeta'][$this->Components['Key']]['Install Together'])) {
-                    if (!isset($this->Components['Install Together'][$this->Components['Key']])) {
-                        $this->Components['Install Together'][$this->Components['Key']] = [];
+                if (isset($this->Components['RemoteMeta'][$Key]['Install Together'])) {
+                    if (!isset($this->Components['Install Together'][$Key])) {
+                        $this->Components['Install Together'][$Key] = [];
                     }
-                    $this->Components['Install Together'][$this->Components['Key']] = array_merge(
-                        $this->Components['Install Together'][$this->Components['Key']],
-                        $this->Components['RemoteMeta'][$this->Components['Key']]['Install Together']
+                    $this->Components['Install Together'][$Key] = array_merge(
+                        $this->Components['Install Together'][$Key],
+                        $this->Components['RemoteMeta'][$Key]['Install Together']
                     );
                 }
 
-                if (!empty($this->Components['RemoteMeta'][$this->Components['Key']]['Name'])) {
+                if (!empty($this->Components['RemoteMeta'][$Key]['Name'])) {
                     $this->Components['ThisComponent']['Name'] =
-                        $this->Components['RemoteMeta'][$this->Components['Key']]['Name'];
-                    $this->prepareName($this->Components['ThisComponent'], $this->Components['Key']);
+                        $this->Components['RemoteMeta'][$Key]['Name'];
+                    $this->prepareName($this->Components['ThisComponent'], $Key);
                 }
                 if (
                     empty($this->Components['ThisComponent']['False Positive Risk']) &&
-                    !empty($this->Components['RemoteMeta'][$this->Components['Key']]['False Positive Risk'])
+                    !empty($this->Components['RemoteMeta'][$Key]['False Positive Risk'])
                 ) {
                     $this->Components['ThisComponent']['False Positive Risk'] =
-                        $this->Components['RemoteMeta'][$this->Components['Key']]['False Positive Risk'];
+                        $this->Components['RemoteMeta'][$Key]['False Positive Risk'];
                 }
-                if (!empty($this->Components['RemoteMeta'][$this->Components['Key']]['Extended Description'])) {
+                if (!empty($this->Components['RemoteMeta'][$Key]['Extended Description'])) {
                     $this->Components['ThisComponent']['Extended Description'] =
-                        $this->Components['RemoteMeta'][$this->Components['Key']]['Extended Description'];
-                    $this->prepareExtendedDescription($this->Components['ThisComponent'], $this->Components['Key']);
+                        $this->Components['RemoteMeta'][$Key]['Extended Description'];
+                    $this->prepareExtendedDescription($this->Components['ThisComponent'], $Key);
                 }
                 if ($this->Components['ThisComponent']['StatClass'] === '') {
                     if (!empty($this->Components['ThisComponent']['Latest']) && $this->CIDRAM['Operation']->singleCompare(
@@ -2043,9 +2061,9 @@ class FrontEnd extends Core
                         '<' . $this->Components['ThisComponent']['Latest']
                     )) {
                         $this->Components['ThisComponent']['Outdated'] = true;
-                        $this->Components['Outdated'][] = $this->Components['Key'];
+                        $this->Components['Outdated'][] = $Key;
                         if ($this->Components['ThisComponent']['Has Signatures'] === true) {
-                            $this->Components['OutdatedSignatureFiles'][] = $this->Components['Key'];
+                            $this->Components['OutdatedSignatureFiles'][] = $Key;
                         }
                         $this->Components['ThisComponent']['RowClass'] = 'r';
                         $this->Components['ThisComponent']['StatClass'] = 'txtRd';
@@ -2057,26 +2075,23 @@ class FrontEnd extends Core
                     } else {
                         $this->Components['ThisComponent']['StatClass'] = 'txtGn';
                         $this->Components['ThisComponent']['StatusOptions'] = $this->L10N->getString('response_updates_already_up_to_date');
-                        if (isset(
-                            $this->Components['RemoteMeta'][$this->Components['Key']]['Files'],
-                            $this->Components['ThisComponent']['Files']
-                        ) && (
-                            serialize($this->Components['RemoteMeta'][$this->Components['Key']]['Files']) === serialize($this->Components['ThisComponent']['Files'])
+                        if (isset($this->Components['RemoteMeta'][$Key]['Files'], $this->Components['ThisComponent']['Files']) && (
+                            serialize($this->Components['RemoteMeta'][$Key]['Files']) === serialize($this->Components['ThisComponent']['Files'])
                         )) {
-                            $this->Components['Repairable'][] = $this->Components['Key'];
+                            $this->Components['Repairable'][] = $Key;
                             $this->Components['ThisComponent']['Options'] .= '<option value="repair-component">' . $this->L10N->getString('field_repair') . '</option>';
                         }
                     }
                 }
                 if (!empty($this->Components['ThisComponent']['Files'])) {
-                    $this->CIDRAM['Activable'] = $this->isActivable($this->Components['ThisComponent']);
-                    $this->Components['ThisIsInUse'] = $this->isInUse($this->Components['ThisComponent']);
+                    $Activable = $this->isActivable($this->Components['ThisComponent']);
+                    $this->Components['In Use'][$Key] = $this->isInUse($this->Components['ThisComponent']);
                     if (preg_match(sprintf(
                         '~^(?:theme/(?:%s|%s)|CIDRAM.*|Common Classes Package)$~i',
                         preg_quote($this->Configuration['frontend']['theme']),
                         preg_quote($this->Configuration['template_data']['theme'])
-                    ), $this->Components['Key']) || $this->Components['ThisIsInUse'] !== 0) {
-                        if ($this->Components['ThisIsInUse'] === -1) {
+                    ), $Key) || $this->Components['In Use'][$Key] !== 0) {
+                        if ($this->Components['In Use'][$Key] === -1) {
                             $this->appendToString(
                                 $this->Components['ThisComponent']['StatusOptions'],
                                 '<hr />',
@@ -2089,7 +2104,7 @@ class FrontEnd extends Core
                                 '<div class="txtGn">' . $this->L10N->getString('state_component_is_active') . '</div>'
                             );
                         }
-                        if ($this->CIDRAM['Activable']) {
+                        if ($Activable) {
                             $this->Components['ThisComponent']['Options'] .= '<option value="deactivate-component">' . $this->L10N->getString('field_deactivate') . '</option>';
                             if (!isset($this->Components['ThisComponent']['Uninstallable']) || $this->Components['ThisComponent']['Uninstallable'] !== false) {
                                 $this->Components['ThisComponent']['Options'] .=
@@ -2099,7 +2114,7 @@ class FrontEnd extends Core
                             }
                         }
                     } else {
-                        if ($this->CIDRAM['Activable']) {
+                        if ($Activable) {
                             $this->Components['ThisComponent']['Options'] .=
                                 '<option value="activate-component">' . $this->L10N->getString('field_activate') . '</option>';
                         }
@@ -2128,7 +2143,7 @@ class FrontEnd extends Core
                 $this->Components['ThisComponent']['VersionSize'] = 0;
                 $this->Components['ThisComponent']['Options'] .=
                     '<option value="verify-component" selected>' . $this->L10N->getString('field_verify') . '</option>';
-                $this->Components['Verify'][] = $this->Components['Key'];
+                $this->Components['Verify'][] = $Key;
                 if (isset($this->Components['ThisComponent']['Files'])) {
                     foreach ($this->Components['ThisComponent']['Files'] as $ThisFile) {
                         if (isset($ThisFile['Checksum']) && strlen($ThisFile['Checksum'])) {
@@ -2149,8 +2164,8 @@ class FrontEnd extends Core
                     $this->Components['ThisComponent']['VersionSize'] = '';
                 }
                 $this->Components['ThisComponent']['LatestSize'] = 0;
-                if (isset($this->Components['RemoteMeta'][$this->Components['Key']]['Files'])) {
-                    foreach ($this->Components['RemoteMeta'][$this->Components['Key']]['Files'] as $ThisFile) {
+                if (isset($this->Components['RemoteMeta'][$Key]['Files'])) {
+                    foreach ($this->Components['RemoteMeta'][$Key]['Files'] as $ThisFile) {
                         if (isset($ThisFile['Checksum']) && strlen($ThisFile['Checksum'])) {
                             if (($Delimiter = strpos($ThisFile['Checksum'], ':')) !== false) {
                                 $this->Components['ThisComponent']['LatestSize'] += (int)substr($ThisFile['Checksum'], $Delimiter + 1);
@@ -2191,9 +2206,9 @@ class FrontEnd extends Core
 
                 /** Append filename (upstream). */
                 $this->Components['ThisComponent']['RemoteFilename'] = (
-                    empty($this->Components['RemoteMeta'][$this->Components['Key']]['Files']) ||
-                    count($this->Components['RemoteMeta'][$this->Components['Key']]['Files']) !== 1
-                ) ? '' : '<br />' . $this->L10N->getString('field_filename') . ' ' . key($this->Components['RemoteMeta'][$this->Components['Key']]['Files']);
+                    empty($this->Components['RemoteMeta'][$Key]['Files']) ||
+                    count($this->Components['RemoteMeta'][$Key]['Files']) !== 1
+                ) ? '' : '<br />' . $this->L10N->getString('field_filename') . ' ' . key($this->Components['RemoteMeta'][$Key]['Files']);
 
                 /** Finalise entry. */
                 if (
@@ -2206,7 +2221,7 @@ class FrontEnd extends Core
                     if (!empty($this->FE['sort-by-name']) && !empty($this->Components['ThisComponent']['Name'])) {
                         $this->Components['ThisComponent']['SortKey'] = $this->Components['ThisComponent']['Name'];
                     } else {
-                        $this->Components['ThisComponent']['SortKey'] = $this->Components['Key'];
+                        $this->Components['ThisComponent']['SortKey'] = $Key;
                     }
                     $this->FE['Indexes'][$this->Components['ThisComponent']['SortKey']] = '';
                     if (isset($PreviousIndex)) {
@@ -2221,7 +2236,7 @@ class FrontEnd extends Core
                         $this->Components['ThisComponent']['Name']
                     );
                     $this->Components['Out'][$this->Components['ThisComponent']['SortKey']] = $this->parseVars(
-                        $this->L10N->Data + $this->arrayFlatten($this->Components['ThisComponent']) + $this->arrayFlatten($this->FE),
+                        $this->arrayFlatten($this->Components['ThisComponent']) + $this->arrayFlatten($this->FE),
                         $this->FE['UpdatesRow']
                     );
                 }
@@ -2242,11 +2257,11 @@ class FrontEnd extends Core
             )) {
                 /** Fetch dependency installation triggers. */
                 $this->Components['Build'] = $this->Components[$BuildUse];
-                foreach ($this->Components[$BuildUse] as $this->Components['Key']) {
-                    if (isset($this->Components['Install Together'][$this->Components['Key']])) {
+                foreach ($this->Components[$BuildUse] as $Key) {
+                    if (isset($this->Components['Install Together'][$Key])) {
                         $this->Components['Build'] = array_merge(
                             $this->Components['Build'],
-                            $this->Components['Install Together'][$this->Components['Key']]
+                            $this->Components['Install Together'][$Key]
                         );
                     }
                 }
@@ -2272,9 +2287,9 @@ class FrontEnd extends Core
             }
 
             /** Prepare newly found component metadata and options for display. */
-            foreach ($this->Components['RemoteMeta'] as $this->Components['Key'] => &$this->Components['ThisComponent']) {
+            foreach ($this->Components['RemoteMeta'] as $Key => &$this->Components['ThisComponent']) {
                 if (
-                    isset($this->Components['Meta'][$this->Components['Key']]) ||
+                    isset($this->Components['Meta'][$Key]) ||
                     empty($this->Components['ThisComponent']['Version']) ||
                     empty($this->Components['ThisComponent']['Files'])
                 ) {
@@ -2282,8 +2297,8 @@ class FrontEnd extends Core
                 }
 
                 /** Fall back to component key if the component's name isn't defined. */
-                if (empty($this->Components['ThisComponent']['Name']) && !$this->L10N->getString('Name ' . $this->Components['Key'])) {
-                    $this->Components['ThisComponent']['Name'] = $this->Components['Key'];
+                if (empty($this->Components['ThisComponent']['Name']) && !$this->L10N->getString('Name ' . $Key)) {
+                    $this->Components['ThisComponent']['Name'] = $Key;
                 }
 
                 /** Determine whether all dependency constraints have been met. */
@@ -2292,18 +2307,18 @@ class FrontEnd extends Core
                 $this->Components['ThisComponent']['Dependency Status'] = '';
                 $this->Components['ThisComponent']['Remote All Constraints Met'] = $this->Components['ThisComponent']['All Constraints Met'];
                 if (isset($this->Components['ThisComponent']['Install Together'])) {
-                    if (!isset($this->Components['Install Together'][$this->Components['Key']])) {
-                        $this->Components['Install Together'][$this->Components['Key']] = [];
+                    if (!isset($this->Components['Install Together'][$Key])) {
+                        $this->Components['Install Together'][$Key] = [];
                     }
-                    $this->Components['Install Together'][$this->Components['Key']] = array_merge(
-                        $this->Components['Install Together'][$this->Components['Key']],
+                    $this->Components['Install Together'][$Key] = array_merge(
+                        $this->Components['Install Together'][$Key],
                         $this->Components['ThisComponent']['Install Together']
                     );
                 }
 
-                $this->prepareName($this->Components['ThisComponent'], $this->Components['Key']);
-                $this->prepareExtendedDescription($this->Components['ThisComponent'], $this->Components['Key']);
-                $this->Components['ThisComponent']['ID'] = $this->Components['Key'];
+                $this->prepareName($this->Components['ThisComponent'], $Key);
+                $this->prepareExtendedDescription($this->Components['ThisComponent'], $Key);
+                $this->Components['ThisComponent']['ID'] = $Key;
                 $this->Components['ThisComponent']['Latest'] = $this->Components['ThisComponent']['Version'];
                 $this->Components['ThisComponent']['Version'] = $this->L10N->getString('response_updates_not_installed');
                 $this->Components['ThisComponent']['StatClass'] = 'txtRd';
@@ -2361,7 +2376,7 @@ class FrontEnd extends Core
                     if (!empty($this->FE['sort-by-name']) && !empty($this->Components['ThisComponent']['Name'])) {
                         $this->Components['ThisComponent']['SortKey'] = $this->Components['ThisComponent']['Name'];
                     } else {
-                        $this->Components['ThisComponent']['SortKey'] = $this->Components['Key'];
+                        $this->Components['ThisComponent']['SortKey'] = $Key;
                     }
                     $this->FE['Indexes'][$this->Components['ThisComponent']['SortKey']] = '';
                     if (isset($PreviousIndex)) {
@@ -2435,6 +2450,21 @@ class FrontEnd extends Core
                 $this->FE['UpdateAll'] .= '<input type="submit" value="' . $this->L10N->getString('field_verify_all') . '" class="auto" /></form>';
             }
 
+            $this->FE['Macros'] = '';
+
+            /** Prepare macros for display. */
+            foreach ($this->Components['Macros'] as $Key => &$MacroData) {
+                if (!isset($MacroData['On Execute'])) {
+                    continue;
+                }
+                $MacroData['Key'] = $Key;
+                $MacroData['Name'] = $this->L10N->getString('macro_name_' . $Key) ?: $Key;
+                $MacroData['Description'] = $this->L10N->getString('macro_description_' . $Key);
+                $MacroData['Options'] = '<input type="submit" value="' . $this->L10N->getString('field_execute') . '" class="auto" />';
+                $this->FE['Macros'] .= $this->parseVars($this->arrayFlatten($MacroData), $this->FE['MacrosRow']);
+            }
+            unset($MacrosData, $Key);
+
             /** Parse output. */
             $this->FE['FE_Content'] = $this->parseVars(
                 $this->L10N->Data + $this->FE,
@@ -2442,15 +2472,15 @@ class FrontEnd extends Core
             ) . $this->CIDRAM['MenuToggle'];
 
             /** Process dependency installation triggers. */
-            foreach ($this->Components['Install Together'] as $this->Components['Key'] => $this->Components['ID']) {
+            foreach ($this->Components['Install Together'] as $Key => $this->Components['ID']) {
                 $this->Components['Build'] = '';
                 $this->Components['ID'] = array_unique($this->Components['ID']);
                 foreach ($this->Components['ID'] as $this->Components['ThisID']) {
                     $this->Components['Build'] .= '<input name="InstallTogether[]" type="hidden" value="' . $this->Components['ThisID'] . '" />';
                 }
                 $this->FE['FE_Content'] = str_replace(
-                    '<input name="ID[]" type="hidden" value="' .$this->Components['Key'] . '" />',
-                    $this->Components['Build'] . '<input name="ID[]" type="hidden" value="' .$this->Components['Key'] . '" />',
+                    '<input name="ID[]" type="hidden" value="' . $Key . '" />',
+                    $this->Components['Build'] . '<input name="ID[]" type="hidden" value="' . $Key . '" />',
                     $this->FE['FE_Content']
                 );
             }
@@ -3029,7 +3059,7 @@ class FrontEnd extends Core
                 $this->FE['ShowHideLink'] = '<a href="?cidram-page=file-manager">' . $this->L10N->getString('label_hide') . '</a>';
             }
 
-            /** Fetch components lists. */
+            /** Fetch components metadata. */
             $this->readInstalledMetadata($this->Components['Components']);
 
             /** Identifying file component correlations. */

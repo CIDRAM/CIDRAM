@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods for updating CIDRAM components (last modified: 2023.03.13).
+ * This file: Methods for updating CIDRAM components (last modified: 2023.03.15).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -23,47 +23,51 @@ trait Updater
      */
     private function in(string $Query): bool
     {
-        if (!isset($this->CIDRAM['Updater-IO']) || !$Delimiter = substr($Query, 0, 1)) {
+        if (
+            !isset($this->CIDRAM['Updater-IO']) ||
+            preg_match('~^\s*(.+?) +((?:preg_)?replace) +(.+?) +with +(.+?)\s*$~i', $Query, $QueryParts) === false
+        ) {
             return false;
         }
-        $QueryParts = explode($Delimiter, $Query);
-        $CountParts = count($QueryParts);
-        if (!($CountParts % 2)) {
-            return false;
-        }
-        $Arr = [];
-        for ($Iter = 0; $Iter < $CountParts; $Iter++) {
-            if ($Iter % 2) {
-                $Arr[] = $QueryParts[$Iter];
-                continue;
-            }
-            $QueryParts[$Iter] = preg_split('~ +~', $QueryParts[$Iter], -1, PREG_SPLIT_NO_EMPTY);
-            foreach ($QueryParts[$Iter] as $ThisPart) {
-                $Arr[] = $ThisPart;
+        unset($QueryParts[0]);
+
+        /** Strip quotes. */
+        foreach ($QueryParts as &$QueryPart) {
+            if (
+                (substr($QueryPart, 0, 1) === '"' && substr($QueryPart, -1) === '"') ||
+                (substr($QueryPart, 0, 1) === "'" && substr($QueryPart, -1) === "'")
+            ) {
+                $QueryPart = substr($QueryPart, 1, -1);
             }
         }
-        $QueryParts = $Arr;
-        unset($ThisPart, $Iter, $Arr, $CountParts);
 
         /** Safety mechanism. */
-        if (empty($QueryParts[0]) || empty($QueryParts[1]) || !file_exists($this->Vault . $QueryParts[0]) || !is_readable($this->Vault . $QueryParts[0])) {
+        if (!file_exists($this->Vault . $QueryParts[1]) || !is_readable($this->Vault . $QueryParts[1])) {
             return false;
         }
 
         /** Fetch file content. */
-        $Data = $this->CIDRAM['Updater-IO']->readFile($this->Vault . $QueryParts[0]);
-
-        /** Normalise main instruction. */
-        $QueryParts[1] = strtolower($QueryParts[1]);
+        $Data = $this->CIDRAM['Updater-IO']->readFile($this->Vault . $QueryParts[1]);
 
         /** Replace file content. */
-        if ($QueryParts[1] === 'replace' && !empty($QueryParts[3]) && strtolower($QueryParts[3]) === 'with') {
-            $Data = preg_replace($QueryParts[2], ($QueryParts[4] ?? ''), $Data);
-            return $this->CIDRAM['Updater-IO']->writeFile($this->Vault . $QueryParts[0], $Data);
-        }
+        $Data = strtolower($QueryParts[2]) === 'preg_replace' ? preg_replace($QueryParts[3], $QueryParts[4], $Data) : str_replace($QueryParts[3], $QueryParts[4], $Data);
 
-        /** Nothing done. Return false (failure). */
-        return false;
+        /** Write and return. */
+        return $this->CIDRAM['Updater-IO']->writeFile($this->Vault . $QueryParts[1], $Data);
+    }
+
+    /**
+     * Wrapper to execute a macro from within another macro.
+     *
+     * @param string $Macro The macro to execute.
+     * @return void
+     */
+    private function executeMacro(string $Macro): void
+    {
+        if (!isset($this->Components['Macros'][$Macro]['On Execute'])) {
+            return;
+        }
+        $this->executor($this->Components['Macros'][$_POST['Macro']]['On Execute']);
     }
 
     /**
@@ -77,7 +81,7 @@ trait Updater
         if (preg_match('~^(\'.*\'|".*")$~', $File)) {
             $File = substr($File, 1, -1);
         }
-        if (!empty($File) && file_exists($this->Vault . $File) && $this->freeFromTraversal($File)) {
+        if ($File !== '' && file_exists($this->Vault . $File) && $this->freeFromTraversal($File)) {
             if (!unlink($this->Vault . $File)) {
                 return false;
             }
@@ -171,15 +175,36 @@ trait Updater
     }
 
     /**
-     * Used by the file manager and the updates pages to fetch the determine which
-     * components are currently installed.
+     * Used by the file manager and the updates pages to determine which components
+     * are currently installed.
      *
-     * @param array $Arr The array to use for rendering components file YAML data.
+     * @param array $Arr The array to use for rendering the components metadata.
      * @return void
      */
     private function readInstalledMetadata(array &$Arr): void
     {
         $Data = $this->CIDRAM['Updater-IO']->readFile($this->Vault . 'installed.yml');
+        if ($Data !== '') {
+            $this->YAML->process($Data, $Arr);
+        }
+        if (!isset($this->Components['In Use'])) {
+            return;
+        }
+        foreach ($Arr as $Key => $Value) {
+            $this->Components['In Use'][$Key] = $this->isInUse($Value);
+        }
+    }
+
+    /**
+     * Used by the updates pages to determine which
+     * components are currently installed.
+     *
+     * @param array $Arr The array to use for rendering the macros from YAML.
+     * @return void
+     */
+    private function readInstalledMacros(array &$Arr): void
+    {
+        $Data = $this->CIDRAM['Updater-IO']->readFile($this->Vault . 'macros.yml');
         if ($Data !== '') {
             $this->YAML->process($Data, $Arr);
         }
@@ -195,20 +220,14 @@ trait Updater
      */
     private function isInUse(array $Component): int
     {
-        if (!empty($Component['Name']) && $Component['Name'] === 'L10N: ' . $this->L10N->getString('Local Name')) {
+        if (isset($Component['Name']) && preg_match('~^l10n/(?:core|frontend)/' . $this->Configuration['general']['lang'] . '$~', $Component['Name'])) {
             return 1;
         }
         $Files = $Component['Files'] ?? [];
         $this->arrayify($Files);
         foreach ($Files as $FileName => $FileMeta) {
             $UsedWith = $FileMeta['Used with'] ?? '';
-            if (
-                $UsedWith !== 'ipv4' &&
-                $UsedWith !== 'ipv6' &&
-                $UsedWith !== 'modules' &&
-                $UsedWith !== 'imports' &&
-                $UsedWith !== 'events'
-            ) {
+            if ($UsedWith !== 'ipv4' && $UsedWith !== 'ipv6' && $UsedWith !== 'modules' && $UsedWith !== 'imports' && $UsedWith !== 'events') {
                 continue;
             }
             if (($UsedWith === 'ipv4' || $UsedWith === 'ipv6') && substr($FileName, 0, 11) === 'signatures/') {
@@ -346,9 +365,9 @@ trait Updater
      * @param bool $Queue Whether to queue the operation or perform immediately.
      * @return void
      */
-    private function executor($Methods = false, bool $Queue = false): void
+    private function executor($Methods = '', bool $Queue = false): void
     {
-        if ($Queue && $Methods !== false) {
+        if ($Queue && $Methods !== '') {
             /** Guard. */
             if (empty($this->CIDRAM['ExecutorQueue']) || !is_array($this->CIDRAM['ExecutorQueue'])) {
                 $this->CIDRAM['ExecutorQueue'] = [];
@@ -359,7 +378,7 @@ trait Updater
             return;
         }
 
-        if ($Methods === false && !empty($this->CIDRAM['ExecutorQueue']) && is_array($this->CIDRAM['ExecutorQueue'])) {
+        if ($Methods === '' && !empty($this->CIDRAM['ExecutorQueue']) && is_array($this->CIDRAM['ExecutorQueue'])) {
             /** We'll iterate an array from the local scope to guard against infinite loops. */
             $Items = $this->CIDRAM['ExecutorQueue'];
 
@@ -379,7 +398,7 @@ trait Updater
         /** Recursively execute all methods in the current queue item. */
         foreach ($Methods as $Method) {
             /** All logic, data traversal, dot notation, etc handled here. */
-            $Method = $this->CIDRAM['Operation']->ifCompare($this->CIDRAM, $Method);
+            $Method = $this->CIDRAM['Operation']->ifCompare($this, $Method);
 
             if (method_exists($this, $Method)) {
                 $this->{$Method}();
@@ -387,7 +406,7 @@ trait Updater
                 $Params = substr($Method, $Pos + 1);
                 $Method = substr($Method, 0, $Pos);
                 if (method_exists($this, $Method)) {
-                    $Params = $this->CIDRAM['Operation']->ifCompare($this->CIDRAM, $Params);
+                    $Params = $this->CIDRAM['Operation']->ifCompare($this, $Params);
                     $this->{$Method}($Params);
                 }
             }

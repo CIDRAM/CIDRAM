@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bot user agents module (last modified: 2023.03.09).
+ * This file: Bot user agents module (last modified: 2023.03.18).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -233,7 +233,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         'a(?:bonti|ccserver|cme.spider|nyevent-http|ppengine)|' .
         'b(?:abbar\.tech|igbozz|lackbird|logsearch|logbot|salsa)|' .
         'c(?:astlebot|atexplorador|lickagy|liqzbot|ontextad|orporama|rowsnest|yberpatrol)|' .
-        'd(?:le_spider|omainappender|umprendertree)|' .
+        'd(?:le_spider|nbcrawler|omainappender|umprendertree)|' .
         'flightdeckreportsbot|fluid/|' .
         'g(?:atheranalyzeprovide|dnplus|imme60|ooglebenjojo)|' .
         'internetcensus|ips-agent|isitwp|' .
@@ -250,7 +250,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         'xenu|xovi|' .
         'zibber|zurichfinancialservices~',
         $UANoSpace
-    ), 'Unauthorised'); // 2022.08.28
+    ), 'Unauthorised'); // 2023.03.18
 
     $this->trigger(preg_match(
         '~^(?:bot|java|msie|windows-live-social-object-extractor)|\((?:java|\w:\d{2,})~',

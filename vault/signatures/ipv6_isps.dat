@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2023.71.0
-# Last modified: 2023.03.13
+# Version: 2023.73.0
+# Last modified: 2023.03.15
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -1396,3 +1396,16 @@ Tag: CFPT
 Origin: CZ
 Profile: Domestic ISP
 Tag: O2 Czech Republic
+
+
+# ASNs 4775, 18392, 132199 ("Globe Telecoms").
+# Phillipines commercial network and ISP. Spam, port scans, hacking, webapp and
+# brute-force attacks detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 87 (AS4775), 2,004 (AS132199).
+# Updated: 2023.03.15
+
+2001:fd8:f310:2c06::/64 Deny Spam
+Origin: PH
+Profile: Domestic ISP;Infrastructure/Transit
+Tag: Globe Telecoms

@@ -182,3 +182,5 @@
 [2023.03.13; Bug-fix; Maikuolan]: If a logs link cache entry for the logs page has already been set, IP tracking entries shown at the IP tracking page would sometimes be munged by the copy to clipboard SVGs; Fixed.
 
 [2023.03.15~16; New Feature; Maikuolan]: Added support for macros to the updates page (#418).
+
+[2023.03.18; Bug-fix; Maikuolan]: Bug discovered in the code for dealing with type casting/coercion in auxiliary rules; Fixed (#442).

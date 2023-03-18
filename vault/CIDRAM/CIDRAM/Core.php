@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2023.03.13).
+ * This file: The CIDRAM core (last modified: 2023.03.18).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -2047,9 +2047,9 @@ class Core
             if ($Operator === '≠' || $Operator === '=') {
                 if ($ActualType !== gettype($TestCase)) {
                     if ($ActualType === 'integer') {
-                        $TestCase = (int)$TestCase;
+                        $TestCase = (int)preg_replace('~^\D*~', '', $TestCase);
                     } elseif ($ActualType === 'double') {
-                        $TestCase = (float)$TestCase;
+                        $TestCase = (float)preg_replace('~^\D*~', '', $TestCase);
                     } elseif ($ActualType === 'string') {
                         $TestCase = (string)$TestCase;
                     }

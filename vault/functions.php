@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2023.03.09).
+ * This file: Functions file (last modified: 2023.03.18).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -1895,9 +1895,9 @@ $CIDRAM['AuxMatch'] = function ($Criteria, $Actual, string $Method = '') use (&$
         if ($Operator === '=') {
             if ($ActualType !== gettype($TestCase)) {
                 if ($ActualType === 'integer') {
-                    $TestCase = (int)$TestCase;
+                    $TestCase = (int)preg_replace('~^\D*~', '', $TestCase);
                 } elseif ($ActualType === 'double') {
-                    $TestCase = (float)$TestCase;
+                    $TestCase = (float)preg_replace('~^\D*~', '', $TestCase);
                 } elseif ($ActualType === 'string') {
                     $TestCase = (string)$TestCase;
                 }

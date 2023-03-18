@@ -184,3 +184,5 @@
 [2023.03.15~16; New Feature; Maikuolan]: Added support for macros to the updates page (#418).
 
 [2023.03.18; Bug-fix; Maikuolan]: Bug discovered in the code for dealing with type casting/coercion in auxiliary rules; Fixed (#442).
+
+[2023.03.19; Bug-fix; Maikuolan]: Type error found in the updates executor; Fixed (#442).

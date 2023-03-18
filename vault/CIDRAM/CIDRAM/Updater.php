@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods for updating CIDRAM components (last modified: 2023.03.16).
+ * This file: Methods for updating CIDRAM components (last modified: 2023.03.19).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -374,7 +374,11 @@ trait Updater
             }
 
             /** Add to the executor queue. */
-            $this->CIDRAM['ExecutorQueue'][] = $Methods;
+            if (is_array($Methods)) {
+                $this->CIDRAM['ExecutorQueue'] = array_merge($this->CIDRAM['ExecutorQueue'], $Methods);
+            } else {
+                $this->CIDRAM['ExecutorQueue'][] = $Methods;
+            }
             return;
         }
 
@@ -395,6 +399,14 @@ trait Updater
 
         /** Recursively execute all methods in the current queue item. */
         foreach ($Methods as $Method) {
+            /** Guard. */
+            if (is_array($Method)) {
+                foreach ($Method as $Item) {
+                    $this->executor($Item);
+                }
+                continue;
+            }
+
             /** Foreach looping. */
             if (preg_match('~^foreach \{(.+?)\} as ([^ ]+?) => ([^ ]+?) (.*)$~i', $Method, $Tokens)) {
                 $Iterable = $this->CIDRAM['Operation']->dataTraverse($this, $Tokens[1], true);

@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2023.71.0
-# Last modified: 2023.03.13
+# Version: 2023.76.0
+# Last modified: 2023.03.18
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -1149,8 +1149,8 @@ Tag: SingleHop, Inc
 
 
 # ASN 29550 ("eUKhost LTD").
-# Stop Forum Spam (SFS) listings: 18.
-# Updated: 2017.03.19 / Checked: 2022.04.02
+# Stop Forum Spam (SFS) listings: 176.
+# Updated: 2017.03.19 / Checked: 2023.03.15
 
 2a02:af8::/32 Deny Cloud
 Origin: GB
@@ -3967,8 +3967,8 @@ Tag: InMotion Hosting, Inc
 
 
 # ASN 53755 ("Input Output Flood LLC").
-# Stop Forum Spam (SFS) listings: 462.
-# Updated: 2020.08.11 / Checked: 2022.04.02
+# Stop Forum Spam (SFS) listings: 765.
+# Updated: 2020.08.11 / Checked: 2023.03.15
 
 2a0d:da07::/32 Deny Cloud
 Origin: GB
@@ -8116,9 +8116,9 @@ Tag: UpCloud
 
 
 # ASN 30736 ("ASERGO Scandinavia ApS").
-# Dedicated webhosting provider and a source of spam.
-# Stop Forum Spam (SFS) listings: 71.
-# Updated: 2020.04.18 / Checked: 2022.03.22
+# No recent reports or bad activity detected. Possible removal candidate.
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2020.04.18 / Checked: 2023.03.15
 
 2a00:9080::/32 Deny Cloud
 Origin: DK
@@ -9779,7 +9779,7 @@ Tag: Simcentric Solutions
 
 # ASNs 11572, 39239, 50389, 57872, 60558, 207134, 210266 ("PHOENIX NAP, LLC").
 # Dedicated server/VPN/VPS provider. Also serves proxies.
-# Updated: 2021.06.24 / Checked: 2022.04.02
+# Updated: 2021.06.24 / Checked: 2023.03.18
 
 2a01:b960:2307::/48 Deny Cloud
 2a01:b960:230b::/48 Deny Cloud
@@ -10488,12 +10488,12 @@ Tag: Triple C
 
 # ASN 32338 ("Hostiserver Ltd").
 # Brute-force attacks, port scans, hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2022.04.02
+# Stop Forum Spam (SFS) listings: 1,058.
+# Updated: 2023.03.15
 
 2605:6280::/32 Deny Cloud
 Origin: AI
-2a05:44c0::/32 Deny Cloud
+2a05:44c0::/31 Deny Cloud
 2a07:68c0::/31 Deny Cloud
 2a07:68c2::/32 Deny Cloud
 2a0b:85c0::/32 Deny Cloud
@@ -11248,6 +11248,19 @@ Origin: DE
 Origin: US
 Profile: Dedicated;Webhosting
 Tag: Advin Services LLC
+
+
+# ASN 29686 ("Probe Networks").
+# Dedicated servers. Scrapers detected from here.
+# Updated: 2023.03.14
+
+2001:678:2e0::/48 Deny Cloud
+2001:1bc0::/31 Deny Cloud
+2001:1bc7::/48 Deny Cloud
+2a09:e080::/29 Deny Cloud
+Origin: DE
+Profile: Dedicated;Webhosting
+Tag: Probe Networks
 
 
 # ---

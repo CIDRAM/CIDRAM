@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2023.03.15).
+ * This file: Front-end functions file (last modified: 2023.03.23).
  */
 
 /**
@@ -1715,8 +1715,8 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM): void {
                             '<code>' . $ThisTarget . '</code> – ' .
                             '<code>' . $ThisFileName . '</code> – ' .
                             $CIDRAM['L10N']->getString('response_checksum_error') . '<br />';
-                        if (!empty($CIDRAM['Components']['Meta'][$ThisTarget]['On Checksum Error'])) {
-                            $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$ThisTarget]['On Checksum Error'], true);
+                        if (!empty($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['On Checksum Error'])) {
+                            $CIDRAM['FE_Executor']($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['On Checksum Error'], true);
                         }
                         $Iterate = 0;
                         $Rollback = true;
@@ -1733,8 +1733,8 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM): void {
                         $ThisFileName,
                         $CIDRAM['L10N']->getString('response_sanity_1')
                     );
-                    if (!empty($CIDRAM['Components']['Meta'][$ThisTarget]['On Sanity Error'])) {
-                        $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$ThisTarget]['On Sanity Error'], true);
+                    if (!empty($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['On Sanity Error'])) {
+                        $CIDRAM['FE_Executor']($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['On Sanity Error'], true);
                     }
                     $Iterate = 0;
                     $Rollback = true;
@@ -1802,13 +1802,13 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM): void {
                     empty($CIDRAM['Components']['Meta'][$ThisTarget]['Files'])
                 ) {
                     $CIDRAM['FE']['state_msg'] .= $CIDRAM['L10N']->getString('response_component_successfully_installed');
-                    if (!empty($CIDRAM['Components']['Meta'][$ThisTarget]['When Install Succeeds'])) {
-                        $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$ThisTarget]['When Install Succeeds'], true);
+                    if (!empty($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['When Install Succeeds'])) {
+                        $CIDRAM['FE_Executor']($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['When Install Succeeds'], true);
                     }
                 } else {
                     $CIDRAM['FE']['state_msg'] .= $CIDRAM['L10N']->getString('response_component_successfully_updated');
-                    if (!empty($CIDRAM['Components']['Meta'][$ThisTarget]['When Update Succeeds'])) {
-                        $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$ThisTarget]['When Update Succeeds'], true);
+                    if (!empty($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['When Update Succeeds'])) {
+                        $CIDRAM['FE_Executor']($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['When Update Succeeds'], true);
                     }
                 }
 
@@ -1833,13 +1833,13 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM): void {
                 empty($CIDRAM['Components']['Meta'][$ThisTarget]['Files'])
             ) {
                 $CIDRAM['FE']['state_msg'] .= $CIDRAM['L10N']->getString('response_failed_to_install');
-                if (!empty($CIDRAM['Components']['Meta'][$ThisTarget]['When Install Fails'])) {
-                    $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$ThisTarget]['When Install Fails'], true);
+                if (!empty($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['When Install Fails'])) {
+                    $CIDRAM['FE_Executor']($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['When Install Fails'], true);
                 }
             } else {
                 $CIDRAM['FE']['state_msg'] .= $CIDRAM['L10N']->getString('response_failed_to_update');
-                if (!empty($CIDRAM['Components']['Meta'][$ThisTarget]['When Update Fails'])) {
-                    $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$ThisTarget]['When Update Fails'], true);
+                if (!empty($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['When Update Fails'])) {
+                    $CIDRAM['FE_Executor']($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['When Update Fails'], true);
                 }
             }
         }

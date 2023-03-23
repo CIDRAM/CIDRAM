@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods for updating CIDRAM components (last modified: 2023.03.19).
+ * This file: Methods for updating CIDRAM components (last modified: 2023.03.23).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -708,8 +708,8 @@ trait Updater
                                     $this->L10N->getString('label_expected'),
                                     $FileMeta['Checksum']
                                 );
-                                if (!empty($this->Components['Meta'][$ThisTarget]['On Checksum Error'])) {
-                                    $this->executor($this->Components['Meta'][$ThisTarget]['On Checksum Error'], true);
+                                if (!empty($this->Components['RemoteMeta'][$ThisTarget]['On Checksum Error'])) {
+                                    $this->executor($this->Components['RemoteMeta'][$ThisTarget]['On Checksum Error'], true);
                                 }
                                 $Rollback = true;
                                 continue 2;
@@ -725,8 +725,8 @@ trait Updater
                                 $FileName,
                                 $this->L10N->getString('response_sanity_1')
                             );
-                            if (!empty($this->Components['Meta'][$ThisTarget]['On Sanity Error'])) {
-                                $this->executor($this->Components['Meta'][$ThisTarget]['On Sanity Error'], true);
+                            if (!empty($this->Components['RemoteMeta'][$ThisTarget]['On Sanity Error'])) {
+                                $this->executor($this->Components['RemoteMeta'][$ThisTarget]['On Sanity Error'], true);
                             }
                             $Rollback = true;
                             continue 2;
@@ -798,13 +798,13 @@ trait Updater
                         empty($this->Components['Meta'][$ThisTarget]['Files'])
                     ) {
                         $this->FE['state_msg'] .= $this->L10N->getString('response_component_successfully_installed');
-                        if (!empty($this->Components['Meta'][$ThisTarget]['When Install Succeeds'])) {
-                            $this->executor($this->Components['Meta'][$ThisTarget]['When Install Succeeds'], true);
+                        if (!empty($this->Components['RemoteMeta'][$ThisTarget]['When Install Succeeds'])) {
+                            $this->executor($this->Components['RemoteMeta'][$ThisTarget]['When Install Succeeds'], true);
                         }
                     } else {
                         $this->FE['state_msg'] .= $this->L10N->getString('response_component_successfully_updated');
-                        if (!empty($this->Components['Meta'][$ThisTarget]['When Update Succeeds'])) {
-                            $this->executor($this->Components['Meta'][$ThisTarget]['When Update Succeeds'], true);
+                        if (!empty($this->Components['RemoteMeta'][$ThisTarget]['When Update Succeeds'])) {
+                            $this->executor($this->Components['RemoteMeta'][$ThisTarget]['When Update Succeeds'], true);
                         }
                     }
 
@@ -829,13 +829,13 @@ trait Updater
                     empty($this->Components['Meta'][$ThisTarget]['Files'])
                 ) {
                     $this->FE['state_msg'] .= $this->L10N->getString('response_failed_to_install');
-                    if (!empty($this->Components['Meta'][$ThisTarget]['When Install Fails'])) {
-                        $this->executor($this->Components['Meta'][$ThisTarget]['When Install Fails'], true);
+                    if (!empty($this->Components['RemoteMeta'][$ThisTarget]['When Install Fails'])) {
+                        $this->executor($this->Components['RemoteMeta'][$ThisTarget]['When Install Fails'], true);
                     }
                 } else {
                     $this->FE['state_msg'] .= $this->L10N->getString('response_failed_to_update');
-                    if (!empty($this->Components['Meta'][$ThisTarget]['When Update Fails'])) {
-                        $this->executor($this->Components['Meta'][$ThisTarget]['When Update Fails'], true);
+                    if (!empty($this->Components['RemoteMeta'][$ThisTarget]['When Update Fails'])) {
+                        $this->executor($this->Components['RemoteMeta'][$ThisTarget]['When Update Fails'], true);
                     }
                 }
             }

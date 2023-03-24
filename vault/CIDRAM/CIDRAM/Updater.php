@@ -67,7 +67,7 @@ trait Updater
         if (!isset($this->Components['Macros'][$Macro]['On Execute'])) {
             return;
         }
-        $this->executor($this->Components['Macros'][$_POST['Macro']]['On Execute']);
+        $this->executor($this->Components['Macros'][$Macro]['On Execute']);
     }
 
     /**

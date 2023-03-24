@@ -1,6 +1,6 @@
 <?php
 /**
- * YAML handler (last modified: 2023.02.23).
+ * YAML handler (last modified: 2023.03.24).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -132,7 +132,7 @@ class YAML
      *      be needed by some implementations to ensure compatibility).
      * @link https://github.com/Maikuolan/Common/tags
      */
-    public const VERSION = '2.9.5';
+    public const VERSION = '2.9.6';
 
     /**
      * Can optionally begin processing data as soon as the object is
@@ -380,7 +380,7 @@ class YAML
         $Success = true;
 
         /** Needed for processing any remaining data. */
-        if ($SendTo && !empty($Key)) {
+        if ($SendTo) {
             if (!$this->MultiLine && !$this->MultiLineFolded) {
                 if (!isset($Arr[$Key]) || !is_array($Arr[$Key])) {
                     $Arr[$Key] = [];
@@ -448,22 +448,32 @@ class YAML
      *
      * @param mixed $Data The data to traverse.
      * @param string|array $Path The path to traverse.
+     * @param bool $AllowNonScalar Whether to allow non-scalar returns.
      * @return mixed The traversed data, or an empty string on failure.
      */
-    public function dataTraverse(&$Data, $Path = [])
+    public function dataTraverse(&$Data, $Path = [], bool $AllowNonScalar = false)
     {
         if (!is_array($Path)) {
             $Path = preg_split('~(?<!\\\)\.~', $Path) ?: [];
         }
         $Segment = array_shift($Path);
         if ($Segment === null || strlen($Segment) === 0) {
-            return is_scalar($Data) ? $Data : '';
+            return $AllowNonScalar || is_scalar($Data) ? $Data : '';
         }
         $Segment = str_replace('\.', '.', $Segment);
-        if (is_array($Data)) {
-            return isset($Data[$Segment]) ? $this->dataTraverse($Data[$Segment], $Path) : '';
+        if (is_array($Data) && isset($Data[$Segment])) {
+            return $this->dataTraverse($Data[$Segment], $Path, $AllowNonScalar);
         }
-        return $this->dataTraverse($Data, $Path);
+        if (is_object($Data) && property_exists($Data, $Segment)) {
+            return $this->dataTraverse($Data->$Segment, $Path, $AllowNonScalar);
+        }
+        if (is_string($Data)) {
+            if (preg_match('~^(?:trim|str(?:tolower|toupper|len))\(\)~i', $Segment)) {
+                $Segment = substr($Segment, 0, -2);
+                $Data = $Segment($Data);
+            }
+        }
+        return $this->dataTraverse($Data, $Path, $AllowNonScalar);
     }
 
     /**

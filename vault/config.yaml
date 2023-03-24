@@ -24,9 +24,6 @@ Config Defaults:
   error_log:
    type: "string"
    default: ""
-  outbound_request_log:
-   type: "string"
-   default: ""
   error_log_stages:
    type: "checkbox"
    default: "Tests,Modules,SearchEngineVerification,SocialMediaVerification,OtherVerification,Aux,Reporting,Tracking,RL,CAPTCHA,Statistics,Webhooks,Output,NonBlockedCAPTCHA"
@@ -47,6 +44,9 @@ Config Defaults:
     NonBlockedCAPTCHA: "NonBlockedCAPTCHA"
    value_preg_filter:
     "~\s~": ""
+  outbound_request_log:
+   type: "string"
+   default: ""
   truncate:
    type: "kb"
    default: "0KB"

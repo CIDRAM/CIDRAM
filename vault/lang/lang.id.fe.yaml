@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2023.03.06).
+# This file: Indonesian language data for the front-end (last modified: 2023.03.24).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -128,7 +128,8 @@ config_general_logfileSerialized: "File serial untuk mencatat semua upaya akses 
 config_general_maintenance_mode: "Aktifkan modus perawatan? True = Ya; False = Tidak [Default]. Nonaktifkan semuanya selain bagian depan. Terkadang berguna saat memperbarui CMS, kerangka kerja, dll."
 config_general_max_login_attempts: "Jumlah maksimum upaya memasukkan ke bagian depan. Default = 5."
 config_general_numbers: "Cara apa yang kamu suka nomor menjadi ditampilkan? Pilih contoh yang paling sesuai untuk Anda."
-config_general_other_verification: "jika/bila memungkinkan, coba verifikasi jenis permintaan lain (mis., AdSense, pemeriksa SEO, dll)? Saat terdeteksi, permintaan palsu akan diblokir. True = Mengaktifkan [Default]; False = Menonaktifkan."
+config_general_other_verification: "Jika/Bila memungkinkan, coba verifikasi jenis permintaan lain (mis., AdSense, pemeriksa SEO, dll)? Saat terdeteksi, permintaan palsu akan diblokir. True = Mengaktifkan [Default]; False = Menonaktifkan."
+config_general_outbound_request_log: "File untuk mencatat hasil permintaan keluar apapun. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
 config_general_protect_frontend: "Menentukan apakah perlindungan biasanya disediakan oleh CIDRAM harus diterapkan pada bagian depan. True = Ya [Default]; False = Tidak."
 config_general_search_engine_verification: "Mencoba memverifikasi permintaan dari mesin pencari? Verifikasi mesin pencari memastikan bahwa mereka tidak akan dilarang sebagai akibat dari melebihi batas pelanggaran (melarang mesin pencari dari situs web Anda biasanya akan memiliki efek negatif pada peringkat mesin pencari Anda, SEO, dll). Ketika diverifikasi, mesin pencari dapat diblokir seperti biasa, tapi tidak akan dilarang. Ketika tidak diverifikasi, itu mungkin bagi mereka untuk dilarang sebagai akibat dari melebihi batas pelanggaran. Juga, verifikasi mesin pencari memberikan proteksi terhadap permintaan mesin pencari palsu dan terhadap entitas yang berpotensi berbahaya yang menyamar sebagai mesin pencari (permintaan tersebut akan diblokir ketika verifikasi mesin pencari diaktifkan). True = Mengaktifkan verifikasi mesin pencari [Default]; False = Menonaktifkan verifikasi mesin pencari."
 config_general_signatures_update_event_log: "File untuk mencatat ketika tanda tangan diperbarui melalui bagian depan. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."

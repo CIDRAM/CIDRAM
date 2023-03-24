@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malay language data for the front-end (last modified: 2023.03.15).
+# This file: Malay language data for the front-end (last modified: 2023.03.24).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,6 +204,7 @@ config_logging_log_banned_ips: "Sertakan permintaan yang disekat daripada IP yan
 config_logging_log_rotation_action: "Putaran log mengehadkan bilangan fail log yang sepatutnya wujud pada satu-satu masa. Apabila fail log baharu dicipta, jika jumlah bilangan fail log melebihi had yang ditentukan, tindakan yang ditentukan akan dilakukan. Anda boleh menentukan tindakan yang diingini disini."
 config_logging_log_rotation_limit: "Putaran log mengehadkan bilangan fail log yang sepatutnya wujud pada satu-satu masa. Apabila fail log baharu dicipta, jika jumlah bilangan fail log melebihi had yang ditentukan, tindakan yang ditentukan akan dilakukan. Anda boleh menentukan had yang dikehendaki disini. Nilai 0 akan menyahaktifkan putaran log."
 config_logging_log_sanitisation: "Apabila menggunakan halaman log untuk melihat data log, CIDRAM sanitasikan data log sebelum memaparkannya, untuk melindungi pengguna daripada serangan XSS dan potensi ancaman lain yang boleh dibendung dalam data log tersebut. Walau bagaimanapun, secara lalai, data tidak disanitasikan semasa pengelogan. Ini adalah untuk memastikan data log dipelihara dengan tepat, untuk membantu sebarang analisis heuristik atau forensik yang mungkin diperlukan pada masa hadapan. Walau bagaimanapun, sekiranya pengguna cuba membaca data log menggunakan alat luaran, dan jika alat luaran tersebut tidak melakukan proses sanitasi mereka sendiri, pengguna boleh terdedah kepada serangan XSS. Jika perlu, anda boleh menukar tingkah laku lalai menggunakan arahan konfigurasi ini. True = Sanitasikan data semasa mengelognya (data dipelihara kurang tepat, tetapi risiko XSS ia kurang). False = Jangan sanitasikan data semasa mengelognya (data dipelihara dengan lebih tepat, tetapi risiko XSS lebih) [Lalai]."
+config_logging_outbound_request_log: "Fail untuk mengelog hasil sebarang permintaan keluar. Tentukan nama fail, atau biarkan kosong untuk nyahaktifkan."
 config_logging_report_log: "Fail untuk mengelog sebarang laporan yang dihantar ke API luaran. Tentukan nama fail, atau biarkan kosong untuk nyahaktifkan."
 config_logging_serialised_log: "Fail bersiri untuk mengelog semua percubaan akses yang disekat. Tentukan nama fail, atau biarkan kosong untuk nyahaktifkan."
 config_logging_standard_log: "Fail yang boleh dibaca oleh manusia untuk mengelog semua percubaan akses yang disekat. Tentukan nama fail, atau biarkan kosong untuk nyahaktifkan."
@@ -648,6 +649,24 @@ link_updates: "Kemas kini"
 logs_logfile_doesnt_exist: "Fail log yang dipilih tidak wujud!"
 logs_no_logfile_selected: "Tiada fail log dipilih."
 logs_no_logfiles_available: "Tiada fail log tersedia."
+macro_description_activate_modules: &MayImpactPerformance "Tidak disyorkan secara amnya, kerana mungkin terdapat beberapa yang anda tidak perlukan. Memasang dan mengaktifkan komponen apabila ia tidak diperlukan boleh menjejaskan prestasi secara negatif."
+macro_description_install_l10n_core: &RecommendKeepingCore "Apabila arahan konfigurasi <code>lang_override</code> didayakan, jika penyemak imbas pengguna menentukan bahasa pilihan yang tertentu, selagi data L10N core untuk bahasa itu dipasang, CIDRAM dapat memaparkan halaman "akses dinafikan" dalam bahasa yang ditentukan. Sehubungan itu, adalah disyorkan untuk memastikan semua data L10N core dipasang."
+macro_description_install_l10n_fe: &RecommendFEOnlyNeeded "Bahasa pilihan anda boleh ditentukan melalui arahan konfigurasi <code>lang</code>. Setelah ini dilakukan, anda mungkin tidak memerlukan sebarang data L10N bahagian hadapan selain daripada bahasa pilihan anda, dan mungkin mahu mengalih keluarnya demi sedikit membebaskan ruang cakera yang tersedia. Walau bagaimanapun, sama ada anda memilih untuk mengalih keluarnya atau menyimpannya, sama ada cara, tidak sepatutnya membahayakan."
+macro_description_install_modules: *MayImpactPerformance
+macro_description_uninstall_l10n_core: *RecommendKeepingCore
+macro_description_uninstall_l10n_fe: *RecommendFEOnlyNeeded
+macro_name_activate_modules: "Aktifkan semua modul."
+macro_name_activate_signatures: "Aktifkan semua fail tandatangan."
+macro_name_deactivate_modules: "Nyahaktifkan semua modul."
+macro_name_deactivate_signatures: "Nyahaktifkan semua fail tandatangan."
+macro_name_install_l10n_core: "Pasang semua L10N core yang tersedia."
+macro_name_install_l10n_fe: "Pasang semua L10N bahagian hadapan yang tersedia."
+macro_name_install_modules: "Pasang semua modul yang tersedia."
+macro_name_install_signatures: "Pasang semua fail tandatangan yang tersedia."
+macro_name_uninstall_l10n_core: "Nyahpasang semua L10N core yang tidak aktif."
+macro_name_uninstall_l10n_fe: "Nyahpasang semua L10N bahagian hadapan yang tidak aktif."
+macro_name_uninstall_modules: "Nyahpasang semua modul yang tidak aktif."
+macro_name_uninstall_signatures: "Nyahpasang semua fail tandatangan yang tidak aktif."
 max_login_attempts_exceeded: "Bilangan maksimum percubaan untuk memasuki dicapai; Akses dinafikan."
 msg_subject_2fa: "Pengesahan Dua-Faktor"
 msg_template_2fa: |

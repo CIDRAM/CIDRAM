@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2023.03.15).
+# This file: German language data for the front-end (last modified: 2023.03.24).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,6 +204,7 @@ config_logging_log_banned_ips: "Sollen auch blockierte Anfragen von verbannten I
 config_logging_log_rotation_action: "Die Protokollrotation begrenzt die Anzahl der Protokolldateien, die gleichzeitig vorhanden sein sollten. Wenn neue Protokolldateien erstellt werden, und wenn die Gesamtzahl der Protokolldateien den angegebenen Limit überschreitet, wird die angegebene Aktion ausgeführt. Sie können hier die gewünschte Aktion angeben."
 config_logging_log_rotation_limit: "Die Protokollrotation begrenzt die Anzahl der Protokolldateien, die gleichzeitig vorhanden sein dürfen. Wenn neue Protokolldateien erstellt werden, und wenn die Gesamtzahl der Protokolldateien den angegebenen Limit überschreitet, wird die angegebene Aktion ausgeführt. Sie können hier das gewünschte Limit angeben. Ein Wert von 0 deaktiviert die Protokollrotation."
 config_logging_log_sanitisation: "Wenn Sie die Frontend Protokolldateien-Seite verwenden, um Protokolldaten anzuzeigen, saniert CIDRAM die Protokolldaten vor der Anzeige, um Benutzer vor XSS-Angriffen und anderen potenziellen Bedrohungen zu schützen, die Protokolldaten enthalten könnten. Standardmäßig werden Daten während der Protokollierung jedoch nicht saniert. Dadurch wird sichergestellt, dass die Protokolldaten genau aufbewahrt werden, um eine eventuell erforderliche heuristische oder forensische Analyse zu unterstützen. Falls jedoch ein Benutzer versucht, Protokolldaten mit externen Werkzeuge zu lesen, und wenn diese externen Werkzeuge keinen eigenen Sanierungsprozess durchführen, der Benutzer könnte XSS-Angriffen ausgesetzt sein. Bei Bedarf können Sie das Standardverhalten mithilfe dieser Konfigurationsanweisung ändern. True = Sanieren der Daten, wenn der Daten protokolliert (Daten werden weniger genau aufbewahrt, jedoch das XSS-Risiko ist geringer). False = Sanieren der Daten nicht, wenn der Daten protokolliert (Daten werden genauer aufbewahrt, jedoch das XSS-Risiko ist höher) [Standardeinstellung]."
+config_logging_outbound_request_log: "Eine Datei zum Protokollieren der Ergebnisse aller ausgehenden Anforderungen. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer."
 config_logging_report_log: "Eine Datei zum Protokollieren aller an externe APIs gesendeten Berichte. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer."
 config_logging_serialised_log: "Name einer Datei zu protokollieren alle blockierten Zugriffsversuche (Format ist serialisiert). Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer."
 config_logging_standard_log: "Name einer Datei in welcher Menschenlesbar alle blockierten zugriffsversuche protokolliert werden. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer."
@@ -658,6 +659,24 @@ link_updates: "Aktualisierungen"
 logs_logfile_doesnt_exist: "Ausgewählte Protokolldatei existiert nicht!"
 logs_no_logfile_selected: "Keine Protokolldatei ausgewählt."
 logs_no_logfiles_available: "Keine Protokolldateien vorhanden."
+macro_description_activate_modules: &MayImpactPerformance "Im Allgemeinen nicht empfohlen, da es wahrscheinlich einige, die Sie nicht benötigen. Das Installieren und Aktivieren von Komponenten, wenn sie nicht benötigt werden, kann die Leistung negativ beeinflussen."
+macro_description_install_l10n_core: &RecommendKeepingCore "Wenn die <code>lang_override</code>-Konfigurationsanweisung aktiviert ist, Wenn der Browser eines Benutzers eine bestimmte Sprachpräferenz angibt, CIDRAM kann die Seite „Zugriff verweigert“ in dieser angegebenen Sprache anzeigen, solange L10N-Core-daten für diese Sprache installiert sind. Dementsprechend wird empfohlen, alle L10N-Core-daten installiert zu lassen."
+macro_description_install_l10n_fe: &RecommendFEOnlyNeeded "Ihre bevorzugte Sprache kann über die <code>lang</code>-Konfigurationsanweisung angegeben werden. Sobald dies erledigt ist, benötigen Sie wahrscheinlich keine anderen Front-End-L10N-Daten als die für Ihre bevorzugte Sprache und möchten sie möglicherweise entfernen, um etwas verfügbaren Speicherplatz geringfügig freizugeben. Aber, ob Sie es zu entfernen oder es zu behalten entscheiden, sollte in jedem Fall keinen Schaden anrichten."
+macro_description_install_modules: *MayImpactPerformance
+macro_description_uninstall_l10n_core: *RecommendKeepingCore
+macro_description_uninstall_l10n_fe: *RecommendFEOnlyNeeded
+macro_name_activate_modules: "Aktivieren Sie alle Module."
+macro_name_activate_signatures: "Aktivieren Sie alle Signaturdateien."
+macro_name_deactivate_modules: "Deaktivieren Sie alle Module."
+macro_name_deactivate_signatures: "Deaktivieren Sie alle Signaturdateien."
+macro_name_install_l10n_core: "Installieren Sie alle verfügbaren Core-L10N."
+macro_name_install_l10n_fe: "Installieren Sie alle verfügbaren Front-End-L10N."
+macro_name_install_modules: "Installieren Sie alle verfügbaren Module."
+macro_name_install_signatures: "Installieren Sie alle verfügbaren Signaturdateien."
+macro_name_uninstall_l10n_core: "Deinstallieren Sie alle inaktiven Core-L10N."
+macro_name_uninstall_l10n_fe: "Deinstallieren Sie alle inaktiven Front-End-L10N."
+macro_name_uninstall_modules: "Deinstallieren Sie alle inaktiven Module."
+macro_name_uninstall_signatures: "Deinstallieren Sie alle inaktiven Signaturdateien."
 max_login_attempts_exceeded: "Maximale Anzahl der Versucht zu einloggen überschritten; Zugriff verweigert."
 msg_subject_2fa: "Zwei-Faktor-Authentifizierung"
 msg_template_2fa: |

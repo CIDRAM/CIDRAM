@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2023.03.15).
+# This file: French language data for the front-end (last modified: 2023.03.24).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,6 +204,7 @@ config_logging_log_banned_ips: "Inclure les requêtes bloquées provenant d'IP i
 config_logging_log_rotation_action: "La rotation du journal limite le nombre de fichiers journaux qui doivent exister à un moment donné. Lorsque de nouveaux fichiers journaux sont créés, si le nombre total de fichiers journaux dépasse la limite spécifiée, l'action spécifiée sera effectuée. Vous pouvez spécifier l'action souhaitée ici."
 config_logging_log_rotation_limit: "La rotation du journal limite le nombre de fichiers journaux qui doivent exister à un moment donné. Lorsque de nouveaux fichiers journaux sont créés, si le nombre total de fichiers journaux dépasse la limite spécifiée, l'action spécifiée sera effectuée. Vous pouvez spécifier la limite souhaitée ici. Une valeur de 0 désactivera la rotation du journal."
 config_logging_log_sanitisation: "Lorsque vous utilisez la page pour les fichiers journaux pour afficher les données de journaux, CIDRAM assainit les données de journaux avant de les afficher, pour protéger les utilisateurs contre les attaques XSS et autres menaces potentielles que les données de journalisation peuvent contenir. Cependant, par défaut, les données ne sont pas assainie lors de la journalisation. Cela garantit que les données du journalisation sont conservées avec précision, pour faciliter toute analyse heuristique qui pourrait être nécessaire à l'avenir. Cependant, dans le cas où un utilisateur tente de lire les données du journalisation à l'aide d'outils externes, et si ces outils externes n'effectuent pas leur propre processus d'assainissement, l'utilisateur pourrait être exposé à des attaques XSS. Si nécessaire, vous pouvez modifier le comportement par défaut à l'aide de cette directive de configuration. True = Assainir les données lors de la journalisation (les données sont moins bien préservées, mais le risque XSS est plus faible). False = Ne pas assainir les données lors de la journalisation (les données sont mieux préservées, mais le risque XSS est plus élevé) [Défaut]."
+config_logging_outbound_request_log: "Un fichier pour l'enregistrement des résultats de toutes les requêtes sortantes. Spécifier un fichier, ou laisser vide à désactiver."
 config_logging_report_log: "Un fichier pour l'enregistrement des rapports envoyés aux API externes. Spécifier un fichier, ou laisser vide à désactiver."
 config_logging_serialised_log: "Un fichier sérialisé pour enregistrement de toutes les tentatives d'accès bloquées. Spécifier un fichier, ou laisser vide à désactiver."
 config_logging_standard_log: "Un fichier lisible par l'homme pour enregistrement de toutes les tentatives d'accès bloquées. Spécifier un fichier, ou laisser vide à désactiver."
@@ -661,6 +662,24 @@ link_updates: "Mises à Jour"
 logs_logfile_doesnt_exist: "Le fichier journal sélectionné n'existe pas\_!"
 logs_no_logfile_selected: "Aucun fichier journal sélectionné."
 logs_no_logfiles_available: "Aucun fichiers journaux disponibles."
+macro_description_activate_modules: &MayImpactPerformance "Généralement pas recommandé, car il y en a probablement certains dont vous n'avez pas besoin. L'installation et l'activation de composants lorsqu'ils ne sont pas nécessaires peuvent avoir un impact négatif sur les performances."
+macro_description_install_l10n_core: &RecommendKeepingCore "Lorsque la directive de configuration <code>lang_override</code> est activée, si le navigateur d'un utilisateur spécifie une préférence de langue particulière, tant que les données L10N de core pour cette langue sont installées, CIDRAM est capable d'afficher la page «\_accès refusé\_» dans cette langue spécifié."
+macro_description_install_l10n_fe: &RecommendFEOnlyNeeded "Votre langue préférée peut être spécifiée via la directive de configuration <code>lang</code>. Une fois cela fait, il est peu probable que vous ayez besoin de données L10N frontales autres que celles de votre langue préférée, et vous voudrez peut-être les supprimer pour libérer un peu d'espace disque disponible. Cela dit, que vous choisissiez de le supprimer ou de le conserver, de toute façon, cela ne devrait pas faire de mal."
+macro_description_install_modules: *MayImpactPerformance
+macro_description_uninstall_l10n_core: *RecommendKeepingCore
+macro_description_uninstall_l10n_fe: *RecommendFEOnlyNeeded
+macro_name_activate_modules: "Activez tous les modules."
+macro_name_activate_signatures: "Activez tous les fichiers de signature."
+macro_name_deactivate_modules: "Désactivez tous les modules."
+macro_name_deactivate_signatures: "Désactivez tous les fichiers de signature."
+macro_name_install_l10n_core: "Installez tous les L10N de core disponibles."
+macro_name_install_l10n_fe: "Installez tous les L10N de frontales disponibles."
+macro_name_install_modules: "Installez tous les modules disponibles."
+macro_name_install_signatures: "Installez tous les fichiers de signature disponibles."
+macro_name_uninstall_l10n_core: "Désinstallez tous les L10N de core inactifs."
+macro_name_uninstall_l10n_fe: "Désinstallez tous les L10N de frontales inactifs."
+macro_name_uninstall_modules: "Désinstallez tous les modules inactifs."
+macro_name_uninstall_signatures: "Désinstallez tous les fichiers de signature inactifs."
 max_login_attempts_exceeded: "Nombre maximal de tentatives de connexion excédée\_; Accès refusé."
 msg_subject_2fa: "Authentification à deux facteurs"
 msg_template_2fa: |

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2023.03.15).
+# This file: Spanish language data for the front-end (last modified: 2023.03.24).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,6 +204,7 @@ config_logging_log_banned_ips: "¿Incluir las solicitudes bloqueadas de IPs proh
 config_logging_log_rotation_action: "La rotación de registros limita la cantidad de archivos de registro que deberían existir al mismo tiempo. Cuando se crean nuevos archivos de registro, si la cantidad total de archivos de registro excede el límite especificado, se realizará la acción especificada. Puede especificar la acción deseada aquí."
 config_logging_log_rotation_limit: "La rotación de registros limita la cantidad de archivos de registro que deberían existir al mismo tiempo. Cuando se crean nuevos archivos de registro, si la cantidad total de archivos de registro excede el límite especificado, se realizará la acción especificada. Puede especificar el límite deseado aquí. Un valor de 0 deshabilitará la rotación de registros."
 config_logging_log_sanitisation: "Cuando se utiliza el front-end página de los archivos de registro para ver los datos de registro, CIDRAM sanea los datos de registro antes de mostrarlos, para proteger a los usuarios de los ataques XSS y otras amenazas potenciales que podrían estar contenido dentro de los datos de registro. Pero, de forma predefinida, los datos no se sanean durante el registro. Esto es para asegurar que los datos de registro se conserven con precisión, para ayudar a cualquier análisis heurístico o forense que pueda ser necesario en el futuro. Pero, en el caso de que un usuario intente leer los datos de registro utilizando herramientas externas, y si esas herramientas externas no realizan su propio proceso de saneamiento, el usuario podría estar expuesto a ataques XSS. Si es necesario, puede cambiar el comportamiento predefinido utilizando esta directiva de configuración. True = Sanear datos al registrarlo (los datos se conservan con menos precisión, pero el riesgo de XSS es menor). False = No sanear datos al registrarlo (los datos se conservan con mayor precisión, pero el riesgo de XSS es mayor) [Predefinido]."
+config_logging_outbound_request_log: "Un archivo para registrar los resultados de cualquier solicitud saliente. Especificar el nombre del archivo, o dejar en blanco para desactivar."
 config_logging_report_log: "Un archivo para registrar cualquier informe enviado a las API externas. Especificar el nombre del archivo, o dejar en blanco para desactivar."
 config_logging_serialised_log: "Un archivo serializado para el registro de todos los intentos de acceso bloqueados. Especificar el nombre del archivo, o dejar en blanco para desactivar."
 config_logging_standard_log: "Un archivo legible por humanos para el registro de todos los intentos de acceso bloqueados. Especificar el nombre del archivo, o dejar en blanco para desactivar."
@@ -655,6 +656,24 @@ link_updates: "Actualizaciones"
 logs_logfile_doesnt_exist: "¡Archivo de registro seleccionado no existe!"
 logs_no_logfile_selected: "Ningún archivo de registro seleccionado."
 logs_no_logfiles_available: "Ningún archivos de registro disponibles."
+macro_description_activate_modules: &MayImpactPerformance "En general, no se recomienda, ya que es probable que haya algunos que no necesite. La instalación y activación de componentes cuando no se necesitan podría afectar negativamente el rendimiento."
+macro_description_install_l10n_core: &RecommendKeepingCore "Cuando la directiva de configuración <code>lang_override</code> está habilitada, si el navegador de un usuario especifica una preferencia de idioma en particular, siempre que estén instalados los datos de L10N core para ese idioma, CIDRAM puede mostrar la página de "acceso denegado" en ese idioma especificado. En consecuencia, se recomienda tener todos los datos de L10N core instalados."
+macro_description_install_l10n_fe: &RecommendFEOnlyNeeded "Su idioma preferido se puede especificar a través de la directiva de configuración <code>lang</code>. Una vez hecho esto, es poco probable que necesite datos de L10N front-end que no sean los de su idioma preferido, y es posible que desee eliminarlos para liberar marginalmente algo de espacio disponible en el disco. Dicho esto, ya sea que elija eliminarlo o mantenerlo, de cualquier manera, no debería causar ningún daño."
+macro_description_install_modules: *MayImpactPerformance
+macro_description_uninstall_l10n_core: *RecommendKeepingCore
+macro_description_uninstall_l10n_fe: *RecommendFEOnlyNeeded
+macro_name_activate_modules: "Activa todos los módulos."
+macro_name_activate_signatures: "Activa todos los archivos de firma."
+macro_name_deactivate_modules: "Desactiva todos los módulos."
+macro_name_deactivate_signatures: "Desactiva todos los archivos de firma."
+macro_name_install_l10n_core: "Instale todos los L10N core disponibles."
+macro_name_install_l10n_fe: "Instale todos los L10N front-end disponibles."
+macro_name_install_modules: "Instale todos los módulos disponibles."
+macro_name_install_signatures: "Instale todos los archivos de firma disponibles."
+macro_name_uninstall_l10n_core: "Desinstale todos los L10N core inactivos."
+macro_name_uninstall_l10n_fe: "Desinstale todos los L10N front-end inactivos."
+macro_name_uninstall_modules: "Desinstale todos los módulos inactivos."
+macro_name_uninstall_signatures: "Desinstale todos los archivos de firma inactivos."
 max_login_attempts_exceeded: "Número máximo de intentos de login excedido; Acceso denegado."
 msg_subject_2fa: "Autenticación de dos factores"
 msg_template_2fa: |

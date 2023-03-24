@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2023.03.15).
+# This file: Italian language data for the front-end (last modified: 2023.03.24).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,6 +204,7 @@ config_logging_log_banned_ips: "Includi richieste bloccate da IP vietati nei fil
 config_logging_log_rotation_action: "La rotazione dei log limita il numero di file di log che dovrebbero esistere in qualsiasi momento. Quando vengono creati nuovi file di log, se il numero totale di file di log supera il limite specificato, verrà eseguita l'azione specificata. Qui puoi specificare l'azione desiderato."
 config_logging_log_rotation_limit: "La rotazione dei log limita il numero di file di log che dovrebbero esistere in qualsiasi momento. Quando vengono creati nuovi file di log, se il numero totale di file di log supera il limite specificato, verrà eseguita l'azione specificata. Qui puoi specificare il limite desiderato. Un valore di 0 disabiliterà la rotazione dei log."
 config_logging_log_sanitisation: "Quando si utilizza il front-end pagina per i file di log per visualizzare i dati di log, CIDRAM sanitizzará i dati del registro prima di visualizzarli, per proteggere gli utenti dagli attacchi XSS e altre potenziali minacce che i dati di log potrebbero contenere. Tuttavia, per impostazione predefinita, i dati non vengono sanitizzati durante la registrazione. Questo è per garantire che i dati siano conservati in modo accurato, per aiutare qualsiasi analisi euristica che potrebbe essere necessaria in futuro. Tuttavia, nel caso in cui un utente tenti di leggere i dati utilizzando strumenti esterni, e se quegli strumenti esterni non eseguono il loro processo sanificazione, l'utente potrebbe essere esposto agli attacchi XSS. Se necessario, è possibile modificare il comportamento predefinito utilizzando questa direttiva di configurazione. True = Sanitizzare i dati durante la registrazione (i dati vengono conservati in modo meno accurato, ma il rischio XSS è inferiore). False = Non sanitizzare i dati durante la registrazione (i dati vengono conservati in modo più accurato, ma il rischio XSS è più alto) [Predefinito]."
+config_logging_outbound_request_log: "Un file per la registrazione dei risultati di eventuali richieste in uscita. Specificare un nome di file, o lasciare vuoto per disabilitare."
 config_logging_report_log: "Un file per la registrazione di tutti i rapporti inviati ad API esterne. Specificare un nome di file, o lasciare vuoto per disabilitare."
 config_logging_serialised_log: "Un file serializzato per la registrazione di tutti i tentativi di accesso bloccati. Specificare un nome di file, o lasciare vuoto per disabilitare."
 config_logging_standard_log: "Un file leggibile dagli umani per la registrazione di tutti i tentativi di accesso bloccati. Specificare un nome di file, o lasciare vuoto per disabilitare."
@@ -653,6 +654,24 @@ link_updates: "Aggiornamenti"
 logs_logfile_doesnt_exist: "Log selezionato non esiste!"
 logs_no_logfile_selected: "Nessun file di log selezionato."
 logs_no_logfiles_available: "Nessun file di log disponibili."
+macro_description_activate_modules: &MayImpactPerformance "Generalmente non consigliato, poiché è probabile che ce ne siano alcuni di cui non hai bisogno. L'installazione e l'attivazione di componenti quando non sono necessari potrebbe influire negativamente sulle prestazioni."
+macro_description_install_l10n_core: &RecommendKeepingCore "Quando la direttiva di configurazione <code>lang_override</code> è abilitata, se il browser di un utente specifica una particolare preferenza di lingua, fintanto che i dati L10N di core per quella lingua sono installati, CIDRAM è in grado di visualizzare la pagina "accesso negato" in quella lingua specificata. Di conseguenza, si consiglia di mantenere installati tutti i dati L10N di core."
+macro_description_install_l10n_fe: &RecommendFEOnlyNeeded "La lingua preferita può essere specificata tramite la direttiva di configurazione <code>lang</code>. Una volta fatto ciò, è improbabile che tu abbia bisogno di dati L10N di front-end diversi da quelli per vostra lingua preferita e potresti voler rimuoverli per liberare leggermente spazio su disco disponibile. Tuttavia, sia che tu scelga di rimuoverlo o tenerlo, in entrambi i casi, non dovrebbe causare alcun danno."
+macro_description_install_modules: *MayImpactPerformance
+macro_description_uninstall_l10n_core: *RecommendKeepingCore
+macro_description_uninstall_l10n_fe: *RecommendFEOnlyNeeded
+macro_name_activate_modules: "Attiva tutti i moduli."
+macro_name_activate_signatures: "Attiva tutti i file di firma."
+macro_name_deactivate_modules: "Disattiva tutti i moduli."
+macro_name_deactivate_signatures: "Disattiva tutti i file di firma."
+macro_name_install_l10n_core: "Installa tutti i L10N di core disponibili."
+macro_name_install_l10n_fe: "Installa tutti i L10N di front-end disponibili."
+macro_name_install_modules: "Installa tutti i moduli disponibili."
+macro_name_install_signatures: "Installa tutti i file di firma disponibili."
+macro_name_uninstall_l10n_core: "Disinstalla tutti i L10N di core inattivi."
+macro_name_uninstall_l10n_fe: "Disinstalla tutti i L10N di front-end inattivi."
+macro_name_uninstall_modules: "Disinstalla tutti i moduli inattivi."
+macro_name_uninstall_signatures: "Disinstalla tutti i file di firma inattivi."
 max_login_attempts_exceeded: "Numero massimo di tentativi di accesso superato; Accesso negato."
 msg_subject_2fa: "Autenticazione a due fattori"
 msg_template_2fa: |

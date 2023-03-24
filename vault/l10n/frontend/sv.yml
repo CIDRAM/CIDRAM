@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2023.03.15).
+# This file: Swedish language data for the front-end (last modified: 2023.03.24).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,6 +204,7 @@ config_logging_log_banned_ips: "Inkludera blockerade förfrågningar från förb
 config_logging_log_rotation_action: "Loggrotering begränsar antalet loggfiler som ska existera vid en gång. När nya loggfiler skapas, om det totala antalet loggfiler överstiger den angivna gränsen, den angivna åtgärden kommer att utföras. Du kan ange önskad åtgärd här."
 config_logging_log_rotation_limit: "Loggrotering begränsar antalet loggfiler som ska existera vid en gång. När nya loggfiler skapas, om det totala antalet loggfiler överstiger den angivna gränsen, den angivna åtgärden kommer att utföras. Du kan ange önskad gräns här. Ett värde på 0 kommer att inaktivera loggroteringen."
 config_logging_log_sanitisation: "När du använder loggningssidan för att visa loggdata, CIDRAM sanerar loggdata innan den visas, för att skydda användare mot XSS-attacker och andra potentiella hot som loggdata kan innehålla. Men som standard, data saneras inte under loggning. Det här är för att säkerställa att loggdata bevaras exakt, för att hjälpa någon heuristisk analys som kan vara nödvändig i framtiden. Men om en användare försöker läsa loggdata med hjälp av externa verktyg, och om dessa externa verktyg inte utför sin egen saneringsprocess, användaren kan utsättas för XSS-attacker. Om det behövs kan du ändra standardbeteendet med det här konfigurationsdirektivet. True = Sanera data när loggar data (uppgifterna bevaras mindre exakt, men XSS-risken är lägre). False = Sanera inte data när loggar data (uppgifterna bevaras mer exakt, men XSS-risken är högre) [Standard]."
+config_logging_outbound_request_log: "En fil för att logga resultaten av eventuella utgående förfrågningar. Ange ett filnamn, eller lämna tomt för att inaktivera."
 config_logging_report_log: "En fil för att logga alla rapporter som skickas till externa APIer. Ange ett filnamn, eller lämna tomt för att inaktivera."
 config_logging_serialised_log: "Serialiserad fil för att logga alla blockerade åtkomstförsök. Ange ett filnamn, eller lämna tomt för att inaktivera."
 config_logging_standard_log: "Mänsklig läsbar fil för att logga in alla blockerade åtkomstförsök. Ange ett filnamn, eller lämna tomt för att inaktivera."
@@ -655,6 +656,24 @@ link_updates: "Uppdateringar"
 logs_logfile_doesnt_exist: "Vald loggfil existerar inte!"
 logs_no_logfile_selected: "Ingen loggfil vald."
 logs_no_logfiles_available: "Inga loggfiler finns tillgängliga."
+macro_description_activate_modules: &MayImpactPerformance "Rekommenderas inte generellt, eftersom det sannolikt finns några som du inte behöver. Att installera och aktivera komponenter när de inte behövs kan påverka prestandan negativt."
+macro_description_install_l10n_core: &RecommendKeepingCore "När <code>lang_override</code>-konfigurationsdirektivet är aktiverat, om en användares webbläsare anger en viss språkpreferens, så länge L10N-data för det språket är installerad, kan CIDRAM visa sidan "nekat tillgång" på det angivna språket. Följaktligen rekommenderas att ha all core L10N-data kvar installerad."
+macro_description_install_l10n_fe: &RecommendFEOnlyNeeded "Ditt föredragna språk kan anges via <code>lang</code>-konfigurationsdirektivet. När detta väl har gjorts behöver du sannolikt ingen front-end L10N-data förutom det för ditt föredragna språk, och du kanske vill ta bort det för att marginellt frigöra lite tillgängligt diskutrymme. Men oavsett om du väljer att ta bort den eller behålla den, borde det inte göra någon skada."
+macro_description_install_modules: *MayImpactPerformance
+macro_description_uninstall_l10n_core: *RecommendKeepingCore
+macro_description_uninstall_l10n_fe: *RecommendFEOnlyNeeded
+macro_name_activate_modules: "Aktivera alla moduler."
+macro_name_activate_signatures: "Aktivera alla signaturfiler."
+macro_name_deactivate_modules: "Inaktivera alla moduler."
+macro_name_deactivate_signatures: "Inaktivera alla signaturfiler."
+macro_name_install_l10n_core: "Installera all tillgänglig core L10N."
+macro_name_install_l10n_fe: "Installera all tillgänglig front-end L10N."
+macro_name_install_modules: "Installera alla tillgängliga moduler."
+macro_name_install_signatures: "Installera alla tillgängliga signaturfiler."
+macro_name_uninstall_l10n_core: "Avinstallera alla inaktiva core L10N."
+macro_name_uninstall_l10n_fe: "Avinstallera alla inaktiva front-end L10N."
+macro_name_uninstall_modules: "Avinstallera alla inaktiva moduler."
+macro_name_uninstall_signatures: "Avinstallera alla inaktiva signaturfiler."
 max_login_attempts_exceeded: "Maximalt antal inloggningsförsök överskreds; Nekat tillgång."
 msg_subject_2fa: "Tvåfaktorsautentisering"
 msg_template_2fa: |

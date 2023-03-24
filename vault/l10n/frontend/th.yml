@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2023.03.15).
+# This file: Thai language data for the front-end (last modified: 2023.03.24).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,6 +204,7 @@ config_logging_log_banned_ips: "รวมคำขอที่ถูกบล็
 config_logging_log_rotation_action: "หมุนเวียนล็อก (log rotation) จำกัด จำนวนล็อกไฟล์ที่ควรมีอยู่ ณ เวลาใดก็ได้. เมื่อล็อกไฟล์ใหม่ถูกสร้างขึ้น ถ้าจำนวนล็อกไฟล์ทั้งหมด เกินขีด จำกัด ที่ระบุ การดำเนินการที่ระบุจะถูกดำเนินการ. คุณสามารถระบุการกระทำที่ต้องการได้ที่นี่."
 config_logging_log_rotation_limit: "หมุนเวียนล็อก (log rotation) จำกัด จำนวนล็อกไฟล์ที่ควรมีอยู่ ณ เวลาใดก็ได้. เมื่อล็อกไฟล์ใหม่ถูกสร้างขึ้น ถ้าจำนวนล็อกไฟล์ทั้งหมด เกินขีด จำกัด ที่ระบุ การดำเนินการที่ระบุจะถูกดำเนินการ. คุณสามารถระบุขีด จำกัด ที่ต้องการได้ที่นี่. ค่า 0 จะปิดใช้งานการหมุนเวียนล็อก (log rotation)."
 config_logging_log_sanitisation: "เมื่อใช้หน้าบันทึกเพื่อดูข้อมูลบันทึก CIDRAM เตรียมข้อมูลบันทึกก่อนแสดงเพื่อปกป้องผู้ใช้จากการโจมตี XSS. อย่างไรก็ตามสิ่งนี้จะไม่เกิดขึ้นเมื่อข้อมูลถูกบันทึกครั้งแรก. นี่คือเพื่อให้แน่ใจว่าข้อมูลบันทึกถูกเก็บรักษาไว้อย่างถูกต้องเพื่อช่วยในการวิเคราะห์ในอนาคตที่อาจจำเป็น. อย่างไรก็ตามหากผู้ใช้พยายามอ่านข้อมูลบันทึกโดยใช้เครื่องมือภายนอกที่ไม่ได้เตรียมข้อมูลไว้ในทำนองเดียวกัน ผู้ใช้อาจถูกโจมตี XSS. หากจำเป็นคุณสามารถเปลี่ยนพฤติกรรมเริ่มต้นโดยใช้คำสั่งกำหนดค่านี้. True = เตรียมข้อมูลเมื่อทำการบันทึกครั้งแรก (แม่นยำน้อยกว่า แต่มีความเสี่ยงน้อยกว่า). False = อย่าเตรียมข้อมูลเมื่อทำการบันทึกครั้งแรก (ถูกต้องมากขึ้น แต่มีความเสี่ยงมากขึ้น) [ค่าเริ่มต้น]."
+config_logging_outbound_request_log: "ไฟล์สำหรับบันทึกผลลัพธ์ของคำขอขาออก. ระบุชื่อไฟล์หรือเว้นว่างไว้เพื่อปิดใช้งาน."
 config_logging_report_log: "ไฟล์สำหรับบันทึกรายงานใดๆ ที่ส่งไปยัง API ภายนอก. ระบุชื่อไฟล์หรือเว้นว่างไว้เพื่อปิดใช้งาน."
 config_logging_serialised_log: "ไฟล์รูปแบบอนุกรมสำหรับบันทึกทั้งหมดของพยายามเข้าถึงที่ถูกบล็อก. ระบุชื่อไฟล์หรือเว้นว่างไว้เพื่อปิดใช้งาน."
 config_logging_standard_log: "ไฟล์มนุษย์สามารถอ่านได้สำหรับบันทึกทั้งหมดของพยายามเข้าถึงที่ถูกบล็อก. ระบุชื่อไฟล์หรือเว้นว่างไว้เพื่อปิดใช้งาน."
@@ -637,6 +638,24 @@ link_updates: "อัปเดต"
 logs_logfile_doesnt_exist: "ไฟล์บันทึกเลือกไม่มีอยู่จริง!"
 logs_no_logfile_selected: "ไม่มีไฟล์บันทึกเลือก."
 logs_no_logfiles_available: "ไม่มีไฟล์บันทึกใช้ได้."
+macro_description_activate_modules: &MayImpactPerformance "ไม่แนะนำโดยทั่วไป เนื่องจากอาจมีบางอย่างที่คุณไม่ต้องการ. เมื่อส่วนประกอบไม่จำเป็น การติดตั้งและเปิดใช้งานอาจส่งผลเสียต่อประสิทธิภาพการทำงาน."
+macro_description_install_l10n_core: &RecommendKeepingCore "เมื่อเปิดใช้งานคำสั่งการกำหนดค่า <code>lang_override</code> หากเบราว์เซอร์ของผู้ใช้ระบุการตั้งค่าภาษาเฉพาะ ตราบเท่าที่มีการติดตั้งข้อมูล core L10N สำหรับภาษานั้น CIDRAM สามารถแสดงหน้า "ปฏิเสธการเข้าใช้" ในภาษาที่ระบุ. ดังนั้น ขอแนะนำให้ติดตั้งข้อมูล core L10N ทั้งหมดไว้."
+macro_description_install_l10n_fe: &RecommendFEOnlyNeeded "สามารถระบุภาษาที่คุณต้องการผ่าน <code>lang</code>. เมื่อทำเสร็จแล้ว คุณไม่จำเป็นต้องใช้ข้อมูล L10N ของฟรอนต์เอนด์นอกเหนือจากภาษาที่คุณต้องการ และอาจต้องการลบออกเพื่อเพิ่มพื้นที่ว่างในดิสก์. แม้ว่าคุณจะลบออกหรือเก็บไว้ก็ไม่น่าจะสร้างปัญหาใด ๆ โดยไม่คำนึงว่า."
+macro_description_install_modules: *MayImpactPerformance
+macro_description_uninstall_l10n_core: *RecommendKeepingCore
+macro_description_uninstall_l10n_fe: *RecommendFEOnlyNeeded
+macro_name_activate_modules: "เปิดใช้งานโมดูลทั้งหมด."
+macro_name_activate_signatures: "เปิดใช้งานไฟล์ลายเซ็นทั้งหมด."
+macro_name_deactivate_modules: "ปิดใช้งานโมดูลทั้งหมด."
+macro_name_deactivate_signatures: "ปิดใช้งานไฟล์ลายเซ็นทั้งหมด."
+macro_name_install_l10n_core: "ติดตั้ง core L10N ที่มีทั้งหมด."
+macro_name_install_l10n_fe: "ติดตั้งฟรอนต์เอนด์ L10N ที่มีทั้งหมด."
+macro_name_install_modules: "ติดตั้งโมดูลที่มีอยู่ทั้งหมด."
+macro_name_install_signatures: "ติดตั้งไฟล์ลายเซ็นที่มีอยู่ทั้งหมด."
+macro_name_uninstall_l10n_core: "ถอนการติดตั้ง core L10N ที่ไม่ได้ใช้งานทั้งหมด."
+macro_name_uninstall_l10n_fe: "ถอนการติดตั้ง L10N ฟรอนต์เอนด์ที่ไม่ได้ใช้งานทั้งหมด."
+macro_name_uninstall_modules: "ถอนการติดตั้งโมดูลที่ไม่ได้ใช้งานทั้งหมด."
+macro_name_uninstall_signatures: "ถอนการติดตั้งไฟล์ลายเซ็นที่ไม่ได้ใช้งานทั้งหมด."
 max_login_attempts_exceeded: "จำนวนสูงสุดความพยายามเข้าสู่ระบบเกิน; ปฏิเสธการเข้าใช้."
 msg_subject_2fa: "2FA"
 msg_template_2fa: |

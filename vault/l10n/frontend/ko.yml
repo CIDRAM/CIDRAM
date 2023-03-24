@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2023.03.15).
+# This file: Korean language data for the front-end (last modified: 2023.03.24).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,6 +204,7 @@ config_logging_log_banned_ips: "금지 된 IP에서 차단 된 요청을 로그 
 config_logging_log_rotation_action: "로그 회전은 한 번에 존재해야하는 로그 파일 수를 제한합니다. 새 로그 파일을 만들 때 총 로그, 파일 수가 지정된 제한을 초과하면, 지정된 작업이 수행됩니다. 여기서 원하는 동작을 지정할 수 있습니다."
 config_logging_log_rotation_limit: "로그 회전은 한 번에 존재해야하는 로그 파일 수를 제한합니다. 새 로그 파일을 만들 때 총 로그, 파일 수가 지정된 제한을 초과하면, 지정된 작업이 수행됩니다. 여기서 원하는 한계를 지정할 수 있습니다. 값 0은 로그 회전을 비활성화합니다."
 config_logging_log_sanitisation: "프런트 엔드 로그 페이지를 사용하여 로그 데이터를 볼 때, XSS 공격 및 기타 잠재적 인 위협으로부터 사용자를 보호하기 위해 CIDRAM은 로그 데이터를 표시하기 전에 위생 처리합니다. 그러나 기본적으로, 로깅 중에는 데이터가 삭제되지 않습니다. 이렇게하면 로그 데이터가 정확하게 보존됩니다 (앞으로 필요할 수도있는 경험적 또는 법의학 분석에 유용합니다). 그러나, 사용자가 외부 도구를 사용하여 로그 데이터를 읽으려고하면, 외부 도구가 자체 위생 처리를 수행하지 않는 경우, 사용자가 XSS 공격에 노출 될 수 있습니다. 필요한 경우, 이 구성 지정 문을 사용하여 기본 작동을 변경할 수 있습니다. True = 데이터 로깅 할 때 데이터, 위생적으로하다 (기록된 데이터 정확도가 더 낮습니다, 않지만 XSS 위험이 더 낮습니다). False = 데이터 로깅 할 때 데이터, 위생적으로하지 마라 (기록된 데이터 정확도가 더 높습니다, 않지만 XSS 위험이 더 높습니다) (Default / 기본 설정)."
+config_logging_outbound_request_log: "아웃바운드 요청의 결과를 기록하기 위한 파일. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다."
 config_logging_report_log: "외부 API로 전송된 보고서를 기록하기 위한 파일입니다. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다."
 config_logging_serialised_log: "액세스 시도 저지를 기록 직렬화되었습니다. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다."
 config_logging_standard_log: "액세스 시도 저지를 기록, 인간에 의해 읽기 가능. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다."
@@ -642,6 +643,24 @@ link_updates: "업데이트"
 logs_logfile_doesnt_exist: "선택한 로그는 존재하지 않습니다!"
 logs_no_logfile_selected: "로그가 선택되어 있지 않습니다."
 logs_no_logfiles_available: "아니 로그를 사용할 수 있습니다."
+macro_description_activate_modules: &MayImpactPerformance "모두 필요하지 않을 수 있으므로 권장하지 않습니다. 필요하지 않은 구성 요소를 설치하고 활성화하면 성능에 부정적인 영향을 미칠 수 있습니다."
+macro_description_install_l10n_core: &RecommendKeepingCore "<code>lang_override</code> 구성 지시문이 활성화된 경우, 사용자의 브라우저가 특정 언어 기본 설정을 지정하는 경우, 해당 언어의 core L10N 데이터가 설치되어 있는 한, CIDRAM은 지정된 언어로 "액세스 거부" 페이지를 표시할 수 있습니다. 따라서, 모든 core L10N 데이터를 설치된 상태로 유지하는 것이 좋습니다."
+macro_description_install_l10n_fe: &RecommendFEOnlyNeeded "선호하는 언어는 <code>lang</code> 구성 지시문을 통해 지정할 수 있습니다. 이 작업이 완료되면, 선호하는 언어에 대한 데이터 이외의 다른 프런트 엔드 L10N 데이터가 필요하지 않으며, 사용 가능한 디스크 공간을 약간 확보하기 위해 제거할 수 있습니다. 그러나, 제거를 선택하든 유지하든 어느 쪽이든 아무런 해를 끼치지 않아야 합니다."
+macro_description_install_modules: *MayImpactPerformance
+macro_description_uninstall_l10n_core: *RecommendKeepingCore
+macro_description_uninstall_l10n_fe: *RecommendFEOnlyNeeded
+macro_name_activate_modules: "모든 모듈을 활성화합니다."
+macro_name_activate_signatures: "모든 서명 파일을 활성화합니다."
+macro_name_deactivate_modules: "모든 모듈을 비활성화합니다."
+macro_name_deactivate_signatures: "모든 서명 파일을 비활성화합니다."
+macro_name_install_l10n_core: "사용 가능한 모든 core L10N을 설치합니다."
+macro_name_install_l10n_fe: "사용 가능한 모든 프런트 엔드 L10N을 설치합니다."
+macro_name_install_modules: "사용 가능한 모든 모듈을 설치합니다."
+macro_name_install_signatures: "사용 가능한 모든 서명 파일을 설치합니다."
+macro_name_uninstall_l10n_core: "모든 비활성 core L10N을 제거합니다."
+macro_name_uninstall_l10n_fe: "모든 비활성 프런트 엔드 L10N을 제거합니다."
+macro_name_uninstall_modules: "모든 비활성 모듈을 제거합니다."
+macro_name_uninstall_signatures: "모든 비활성 서명 파일을 제거합니다."
 max_login_attempts_exceeded: "로그인 시도 횟수를 초과했습니다; 액세스 거부."
 msg_subject_2fa: "2FA (이중 인증)"
 msg_template_2fa: |

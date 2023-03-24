@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2023.03.15).
+# This file: Vietnamese language data for the front-end (last modified: 2023.03.24).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,6 +204,7 @@ config_logging_log_banned_ips: "Bao gồm các yêu cầu bị chặn từ các 
 config_logging_log_rotation_action: "Xoay vòng nhật ký giới hạn số lượng của tập tin nhật ký có cần tồn tại cùng một lúc. Khi các tập tin nhật ký mới được tạo, nếu tổng số lượng tập tin nhật ký vượt quá giới hạn được chỉ định, hành động được chỉ định sẽ được thực hiện. Bạn có thể chỉ định hành động mong muốn tại đây."
 config_logging_log_rotation_limit: "Xoay vòng nhật ký giới hạn số lượng của tập tin nhật ký có cần tồn tại cùng một lúc. Khi các tập tin nhật ký mới được tạo, nếu tổng số lượng tập tin nhật ký vượt quá giới hạn được chỉ định, hành động được chỉ định sẽ được thực hiện. Bạn có thể chỉ định giới hạn mong muốn tại đây. Giá trị 0 sẽ vô hiệu hóa xoay vòng nhật ký."
 config_logging_log_sanitisation: "Khi sử dụng trang bản ghi để xem dữ liệu bản ghi, CIDRAM vệ sinh dữ liệu bản ghi trước khi hiển thị nó, để bảo vệ người dùng khỏi các cuộc tấn công XSS và các mối đe dọa tiềm năng khác. Tuy nhiên, theo mặc định, dữ liệu không được vệ sinh trong quá ghi bản ghi. Điều này là để đảm bảo dữ liệu bản ghi được bảo quản chính xác, để hỗ trợ bất kỳ phân tích heuristic hoặc pháp y có thể cần thiết trong tương lai. Tuy nhiên, nếu người dùng cố gắng đọc dữ liệu bản ghi bằng các công cụ bên ngoài, và nếu những công cụ bên ngoài đó không thực hiện quy trình vệ sinh riêng của họ, người dùng có thể tiếp xúc với các cuộc tấn công XSS. Nếu cần, bạn có thể thay đổi hành vi mặc định bằng cách sử dụng chỉ thị cấu hình này. True = Vệ sinh dữ liệu khi ghi nó (dữ liệu được bảo quản ít chính xác hơn, nhưng rủi ro XSS thấp hơn). False = Không vệ sinh dữ liệu khi ghi nó (dữ liệu được bảo quản chính xác hơn, nhưng rủi ro XSS cao hơn) [Mặc định]."
+config_logging_outbound_request_log: "Một tập tin để ghi nhật ký kết quả của bất kỳ yêu cầu gửi đi nào. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa."
 config_logging_report_log: "Một tập tin để ghi lại bất kỳ báo cáo nào được gửi đến các API bên ngoài. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa."
 config_logging_serialised_log: "Tập tin tuần tự cho ghi tất cả các nỗ lực truy cập bị chặn. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa."
 config_logging_standard_log: "Tập tin có thể đọc con người cho ghi tất cả các nỗ lực truy cập bị chặn. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa."
@@ -645,6 +646,24 @@ link_updates: "Cập nhật"
 logs_logfile_doesnt_exist: "Bản ghi đã chọn không tồn tại!"
 logs_no_logfile_selected: "Không có bản ghi được chọn."
 logs_no_logfiles_available: "Không có bản ghi có sẵn."
+macro_description_activate_modules: &MayImpactPerformance "Nói chung không nên khuyến khích vì có thể có một số thứ bạn không cần. Việc cài đặt và kích hoạt các thành phần khi không cần thiết có thể tác động tiêu cực đến hiệu suất."
+macro_description_install_l10n_core: &RecommendKeepingCore "Khi chỉ thị cấu hình <code>lang_override</code> được bật, nếu trình duyệt của người dùng chỉ định một ngôn ngữ cụ thể, miễn là dữ liệu L10N core cho ngôn ngữ đó được cài đặt, thì CIDRAM có thể hiển thị trang "truy cập đã bị từ chối" bằng ngôn ngữ được chỉ định đó. Theo đó, được khuyến khích cài đặt tất cả dữ liệu L10N core."
+macro_description_install_l10n_fe: &RecommendFEOnlyNeeded "Ngôn ngữ ưa thích của bạn có thể được chỉ định thông qua chỉ thị cấu hình <code>lang</code>. Khi điều này đã được thực hiện, bạn có thể sẽ không cần bất kỳ dữ liệu L10N front-end nào ngoài dữ liệu dành cho ngôn ngữ ưa thích của bạn và có thể muốn xóa dữ liệu đó để giải phóng một chút dung lượng ổ đĩa khả dụng. Mặc dù vậy, xóa hay giữ nó, trong cả hai trường hợp, không nên gây ra bất kỳ vấn đề."
+macro_description_install_modules: *MayImpactPerformance
+macro_description_uninstall_l10n_core: *RecommendKeepingCore
+macro_description_uninstall_l10n_fe: *RecommendFEOnlyNeeded
+macro_name_activate_modules: "Kích hoạt tất cả các mô-đun."
+macro_name_activate_signatures: "Kích hoạt tất cả các tập tin chữ ký."
+macro_name_deactivate_modules: "Vô hiệu hóa tất cả các mô-đun."
+macro_name_deactivate_signatures: "Vô hiệu hóa tất cả các tập tin chữ ký."
+macro_name_install_l10n_core: "Cài đặt tất cả các L10N core có sẵn."
+macro_name_install_l10n_fe: "Cài đặt tất cả các L10N front-end có sẵn."
+macro_name_install_modules: "Cài đặt tất cả các mô-đun có sẵn."
+macro_name_install_signatures: "Cài đặt tất cả các tập tin chữ ký có sẵn."
+macro_name_uninstall_l10n_core: "Gỡ bỏ cài đặt tất cả L10N core không kích hoạt."
+macro_name_uninstall_l10n_fe: "Gỡ bỏ cài đặt tất cả L10N front-end không kích hoạt."
+macro_name_uninstall_modules: "Gỡ bỏ cài đặt tất cả các mô-đun không kích hoạt."
+macro_name_uninstall_signatures: "Gỡ bỏ cài đặt tất cả các tập tin chữ ký không kích hoạt."
 max_login_attempts_exceeded: "Số lượng tối đa cố gắng đăng nhập đã bị vượt quá; Truy cập đã bị từ chối."
 msg_subject_2fa: "2FA (Xác thực hai yếu tố)"
 msg_template_2fa: |

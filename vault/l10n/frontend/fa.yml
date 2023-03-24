@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Farsi language data for the front (last modified: 2023.03.15).
+# This file: Farsi language data for the front (last modified: 2023.03.24).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,6 +204,7 @@ config_logging_log_banned_ips: "شامل درخواست های مسدود شده
 config_logging_log_rotation_action: "چرخش گزارش، تعداد فایل‌های گزارشی را که باید در هر زمان وجود داشته باشند، محدود می‌کند. هنگامی که فایل های گزارش جدید ایجاد می شوند، اگر تعداد کل فایل های گزارش از حد تعیین شده بیشتر شود، اقدام مشخص شده انجام می شود. در اینجا می توانید عمل مورد نظر را مشخص کنید."
 config_logging_log_rotation_limit: "چرخش گزارش، تعداد فایل‌های گزارشی را که باید در هر زمان وجود داشته باشند، محدود می‌کند. هنگامی که فایل های گزارش جدید ایجاد می شوند، اگر تعداد کل فایل های گزارش از حد تعیین شده بیشتر شود، اقدام مشخص شده انجام می شود. در اینجا می توانید حد مورد نظر را مشخص کنید. مقدار 0 چرخش گزارش را غیرفعال می کند."
 config_logging_log_sanitisation: "هنگام استفاده از صفحه گزارش های جلویی برای مشاهده داده های گزارش، CIDRAM داده های گزارش را قبل از نمایش آن ها پاکسازی می کند. این برای محافظت از کاربران در برابر حملات XSS و سایر تهدیدات بالقوه موجود در آن داده های گزارش است. با این حال، به‌طور پیش‌فرض، چنین داده‌هایی در زمان ثبت ها پاکسازی نمی‌شوند. این برای اطمینان از حفظ دقیق داده‌های گزارش است تا به تحلیل اکتشافی که ممکن است در آینده لازم باشد کمک کند. با این حال، در صورتی که کاربر سعی کند داده های گزارش را با استفاده از ابزارهای خارجی بخواند، اگر آن ابزارهای خارجی فرآیند پاکسازی خود را انجام ندهند، کاربر ممکن است در معرض حملات XSS قرار گیرد. در صورت لزوم، می توانید رفتار پیش فرض را با استفاده از این دستورالعمل پیکربندی تغییر دهید. True = هنگام ثبت اطلاعات، داده ها را پاکسازی کنید (داده ها با دقت کمتری حفظ می شوند، اما خطر XSS کمتر است). False = هنگام ثبت اطلاعات، داده ها را پاکسازی نکنید (داده ها با دقت بیشتری حفظ می شوند، اما خطر XSS بالاتر است) [پیش فرض]."
+config_logging_outbound_request_log: "فایلی برای ثبت نتایج هر درخواست خروجی. نام فایل را مشخص کنید، یا برای غیرفعال کردن آن را خالی بگذارید."
 config_logging_report_log: "فایلی برای ثبت هرگونه گزارش ارسال شده به APIهای خارجی. نام فایل را مشخص کنید، یا برای غیرفعال کردن آن را خالی بگذارید."
 config_logging_serialised_log: "فایل سریالی شده برای ثبت تمام تلاش های دسترسی مسدود شده. نام فایل را مشخص کنید، یا برای غیرفعال کردن آن را خالی بگذارید."
 config_logging_standard_log: "فایل قابل خواندن توسط انسان برای ثبت تمام تلاش های دسترسی مسدود شده. نام فایل را مشخص کنید، یا برای غیرفعال کردن آن را خالی بگذارید."
@@ -632,6 +633,24 @@ link_updates: "به روز رسانی کننده"
 logs_logfile_doesnt_exist: "فایل گزارش انتخابی وجود ندارد!"
 logs_no_logfile_selected: "هیچ فایل گزارشی انتخاب نشده است."
 logs_no_logfiles_available: "هیچ فایل گزارشی در دسترس نیست."
+macro_description_activate_modules: &MayImpactPerformance "توصیه نمی شود، زیرا احتمالاً به همه آنها نیاز نخواهید داشت. نصب و فعال کردن قطعات در مواقعی که نیازی به آنها نیست می تواند بر عملکرد تأثیر منفی بگذارد."
+macro_description_install_l10n_core: &RecommendKeepingCore "وقتی دستور پیکربندی <code>lang_override</code> فعال است، اگر مرورگر کاربر ترجیح زبان خاصی را مشخص کند، تا زمانی که داده های core L10N برای آن زبان نصب شده باشد، CIDRAM قادر است صفحه "دسترسی ممنوع" را به آن زبان مشخص شده نمایش دهد. بر این اساس، نصب تمام داده های core L10N توصیه می شود."
+macro_description_install_l10n_fe: &RecommendFEOnlyNeeded "زبان مورد نظر شما را می توان از طریق دستور پیکربندی <code>lang</code> مشخص کرد. پس از انجام این کار، بعید است که به هیچ داده‌ی جلویی L10N به جز آن برای زبان دلخواه خود نیاز نداشته باشید، و ممکن است بخواهید به خاطر آزاد کردن کمی فضای دیسک در دسترس، آن را حذف کنید. اگرچه، چه آن را حذف کنید یا آن را نگه دارید، در هر صورت، نباید مشکلی ایجاد کند."
+macro_description_install_modules: *MayImpactPerformance
+macro_description_uninstall_l10n_core: *RecommendKeepingCore
+macro_description_uninstall_l10n_fe: *RecommendFEOnlyNeeded
+macro_name_activate_modules: "همه ماژول ها را فعال کنید."
+macro_name_activate_signatures: "همه فایل های امضا را فعال کنید."
+macro_name_deactivate_modules: "همه ماژول ها را غیرفعال کنید."
+macro_name_deactivate_signatures: "همه فایل های امضا را غیرفعال کنید."
+macro_name_install_l10n_core: "همه core L10N موجود را نصب کنید."
+macro_name_install_l10n_fe: "همه L10N جلویی موجود را نصب کنید."
+macro_name_install_modules: "همه ماژول های موجود را نصب کنید."
+macro_name_install_signatures: "همه فایل های امضای موجود را نصب کنید."
+macro_name_uninstall_l10n_core: "همه core L10N غیرفعال را حذف نصب کنید."
+macro_name_uninstall_l10n_fe: "همه L10N جلویی غیرفعال را حذف نصب کنید."
+macro_name_uninstall_modules: "همه ماژول های غیرفعال را حذف نصب کنید."
+macro_name_uninstall_signatures: "همه فایل های امضای غیرفعال را حذف نصب کنید."
 max_login_attempts_exceeded: "از حداکثر تعداد تلاش برای ورود به سیستم بیشتر شد؛ دسترسی رد شد."
 msg_subject_2fa: "احراز هویت دو مرحله ای"
 msg_template_2fa: |

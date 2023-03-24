@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2023.03.15).
+# This file: Polish language data for the front-end (last modified: 2023.03.24).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,6 +204,7 @@ config_logging_log_banned_ips: "Umieścić zablokowane żądania z zablokowanych
 config_logging_log_rotation_action: "Rotacja dziennika ogranicza liczbę plików dziennika, które powinny istnieć jednocześnie. Po utworzeniu nowych plików dziennika, jeśli całkowita liczba plików dziennika przekroczy określony limit, zostanie wykonana określona akcja. Tutaj możesz określić żądaną akcję."
 config_logging_log_rotation_limit: "Rotacja dziennika ogranicza liczbę plików dziennika, które powinny istnieć jednocześnie. Po utworzeniu nowych plików dziennika, jeśli całkowita liczba plików dziennika przekroczy określony limit, zostanie wykonana określona akcja. Tutaj możesz określić żądany limit. Wartość 0 spowoduje wyłączenie rotacja dziennika."
 config_logging_log_sanitisation: "Podczas korzystania ze strony dzienników do przeglądania danych dziennika CIDRAM odkaża dane dziennika przed ich wyświetleniem, aby chronić użytkowników przed atakami XSS i innymi potencjalnymi zagrożeniami, które mogą być zawarte w danych dziennika. Jednak domyślnie dane nie są odkażane podczas logowania. Zapewnia to dokładne zachowanie danych dziennika, aby wspomóc każdą analizę heurystyczną, która może być konieczna w przyszłości. Jednak w przypadku, gdy użytkownik próbuje odczytać dane dziennika za pomocą zewnętrznych narzędzi, a jeśli te narzędzia zewnętrzne nie przeprowadzają własnego procesu sanityzacji, użytkownik może być narażony na ataki XSS. W razie potrzeby możesz zmienić domyślne zachowanie za pomocą tej dyrektywy konfiguracyjnej. True (Prawdziwe) = Odkaż dane podczas logowania (dane są przechowywane mniej dokładnie, ale ryzyko XSS jest niższe). False (Fałszywy) = Nie odkaż danych podczas logowania (dane są przechowywane dokładniej, ale ryzyko XSS jest wyższe) [Domyślna]."
+config_logging_outbound_request_log: "Plik do rejestrowania wyników wszelkich żądań wychodzących. Podaj nazwę pliku lub pozostaw puste, aby wyłączyć."
 config_logging_report_log: "Plik do rejestrowania wszelkich raportów wysyłanych do zewnętrznych APIów. Podaj nazwę pliku lub pozostaw puste, aby wyłączyć."
 config_logging_serialised_log: "Plik szeregowy do rejestrowania wszystkich zablokowanych prób dostępu. Podaj nazwę pliku lub pozostaw puste, aby wyłączyć."
 config_logging_standard_log: "Plik czytelny dla człowieka do rejestrowania wszystkich zablokowanych prób dostępu. Podaj nazwę pliku lub pozostaw puste, aby wyłączyć."
@@ -660,6 +661,24 @@ link_updates: "Aktualizacje"
 logs_logfile_doesnt_exist: "Wybrany plik dziennika nie istnieje!"
 logs_no_logfile_selected: "Nie wybrano pliku dziennika."
 logs_no_logfiles_available: "Brak dostępnych plików dziennika."
+macro_description_activate_modules: &MayImpactPerformance "Ogólnie nie jest to zalecane, ponieważ prawdopodobnie są takie, których nie potrzebujesz. Instalowanie i aktywowanie komponentów, gdy nie są potrzebne, może negatywnie wpłynąć na wydajność."
+macro_description_install_l10n_core: &RecommendKeepingCore "Gdy dyrektywa konfiguracji <code>lang_override</code> jest włączona, jeśli przeglądarka użytkownika określa określone preferencje językowe, o ile są zainstalowane podstawowe dane L10N dla tego języka, CIDRAM może wyświetlić stronę „dostęp zabroniony” w tym określonym języku. W związku z tym zaleca się pozostawienie zainstalowanych wszystkich podstawowych danych L10N."
+macro_description_install_l10n_fe: &RecommendFEOnlyNeeded "Preferowany język można określić za pomocą dyrektywy konfiguracyjnej <code>lang</code>. Po wykonaniu tej czynności prawdopodobnie nie będziesz potrzebować żadnych danych frontendu L10N innych niż te dla preferowanego języka i możesz chcieć je usunąć, aby zwolnić trochę dostępnego miejsca na dysku. To powiedziawszy, wybór usunięcia lub zachowania go, tak czy inaczej, nie powinien wyrządzić żadnej szkody."
+macro_description_install_modules: *MayImpactPerformance
+macro_description_uninstall_l10n_core: *RecommendKeepingCore
+macro_description_uninstall_l10n_fe: *RecommendFEOnlyNeeded
+macro_name_activate_modules: "Aktywuj wszystkie moduły."
+macro_name_activate_signatures: "Aktywuj wszystkie pliki podpisów."
+macro_name_deactivate_modules: "Dezaktywuj wszystkie moduły."
+macro_name_deactivate_signatures: "Dezaktywuj wszystkie pliki podpisów."
+macro_name_install_l10n_core: "Zainstaluj wszystkie dostępne core L10N."
+macro_name_install_l10n_fe: "Zainstaluj wszystkie dostępne front-end L10N."
+macro_name_install_modules: "Zainstaluj wszystkie dostępne moduły."
+macro_name_install_signatures: "Zainstaluj wszystkie dostępne pliki podpisów."
+macro_name_uninstall_l10n_core: "Odinstaluj wszystkie nieaktywne core L10N."
+macro_name_uninstall_l10n_fe: "Odinstaluj wszystkie nieaktywne front-end L10N."
+macro_name_uninstall_modules: "Odinstaluj wszystkie nieaktywne moduły."
+macro_name_uninstall_signatures: "Odinstaluj wszystkie nieaktywne pliki podpisów."
 max_login_attempts_exceeded: "Przekroczono maksymalną liczbę prób logowania; Dostęp zabroniony."
 msg_subject_2fa: "Uwierzytelnianie Dwuskładnikowe"
 msg_template_2fa: |

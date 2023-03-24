@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2023.03.15).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2023.03.24).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,6 +204,7 @@ config_logging_log_banned_ips: "包括IP禁止从阻止请求在日志文件吗�
 config_logging_log_rotation_action: "日志轮转限制了任何时候应该存在的日志文件的数量。​当新的日志文件被创建时，如果日志文件的指定的最大数量已经超过，将执行指定的操作。​您可以在此处指定所需的操作。"
 config_logging_log_rotation_limit: "日志轮转限制了任何时候应该存在的日志文件的数量。​当新的日志文件被创建时，如果日志文件的指定的最大数量已经超过，将执行指定的操作。​您可以在此指定所需的限制。​值为“0”将禁用日志轮转。"
 config_logging_log_sanitisation: "当使用前端日志页面查看日志数据时，CIDRAM在显示之前清理日志数据。​这可以保护用户免受XSS攻击和其他潜在威胁。​但是，默认情况下，在记录期间不会清理数据。​这是为了确保准确地保留日志数据（可以帮助任何未来的启发式或法医分析）。​但是，如果用户尝试使用外部工具读取日志数据，如果这些外部工具不执行自己的清理过程，用户可能会受到XSS攻击。​如有必要，可以使用此配置指令更改默认行为。 True = 记录数据时清理数据（数据保存不太准确，但XSS风险较低）。 False = 记录数据时不要清理数据（数据保存得更准确，但XSS风险更高）【标准】。"
+config_logging_outbound_request_log: "用于记录任何出站请求结果的文件。​指定一个文件名，​或留空以禁用。"
 config_logging_report_log: "用于记录发送到外部API的任何报告的文件。​指定一个文件名，​或留空以禁用。"
 config_logging_serialised_log: "连载的文件用于记录所有被拦截的访问。​指定一个文件名，​或留空以禁用。"
 config_logging_standard_log: "人类可读文件用于记录所有被拦截的访问。​指定一个文件名，​或留空以禁用。"
@@ -637,6 +638,24 @@ link_updates: "更新"
 logs_logfile_doesnt_exist: "选择的日志不存在！"
 logs_no_logfile_selected: "没有选择的日志。"
 logs_no_logfiles_available: "没有日志可用。"
+macro_description_activate_modules: &MayImpactPerformance "通常不推荐，因为可能有一些您不需要。​在不需要时安装和启用组件可能会对性能产生负面影响。"
+macro_description_install_l10n_core: &RecommendKeepingCore "在启用<code>lang_override</code>配置指令时，如果用户的浏览器指定了语言，只要安装了该语言的核心L10N数据，CIDRAM就能够以该语言显示“拒绝访问”页面。​因此，建议保留所有核心L10N数据。"
+macro_description_install_l10n_fe: &RecommendFEOnlyNeeded "您可以通过<code>lang</code>配置指令指定您的首选语言。​完成此操作后，除了您的首选语言之外，您不太可能需要任何前端L10N数据，并且可能希望删除它以释放一些可用磁盘空间。​但是，无论您选择删除它还是保留它，都不应该造成任何伤害。"
+macro_description_install_modules: *MayImpactPerformance
+macro_description_uninstall_l10n_core: *RecommendKeepingCore
+macro_description_uninstall_l10n_fe: *RecommendFEOnlyNeeded
+macro_name_activate_modules: "启用所有模块。"
+macro_name_activate_signatures: "启用所有签名文件。"
+macro_name_deactivate_modules: "停用所有模块。"
+macro_name_deactivate_signatures: "停用所有签名文件。"
+macro_name_install_l10n_core: "安装所有可用的核心L10N。"
+macro_name_install_l10n_fe: "安装所有可用的前端L10N。"
+macro_name_install_modules: "安装所有可用的模块。"
+macro_name_install_signatures: "安装所有可用的签名文件。"
+macro_name_uninstall_l10n_core: "卸载所有非活动核心L10N。"
+macro_name_uninstall_l10n_fe: "卸载所有非活动前端L10N。"
+macro_name_uninstall_modules: "卸载所有非活动模块。"
+macro_name_uninstall_signatures: "卸载所有非活动签名文件。"
 max_login_attempts_exceeded: "最大登录尝试次数已经超过；拒绝访问。"
 msg_subject_2fa: "2FA（双因素身份验证）"
 msg_template_2fa: |

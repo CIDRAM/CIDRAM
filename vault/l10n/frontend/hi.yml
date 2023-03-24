@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data for the front-end (last modified: 2023.03.15).
+# This file: Hindi language data for the front-end (last modified: 2023.03.24).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,6 +204,7 @@ config_logging_log_banned_ips: "प्रवेश फाइलें में 
 config_logging_log_rotation_action: "लॉग रोटेशन लॉगफाइल की संख्या को सीमित करता है जो कि किसी भी समय मौजूद होना चाहिए। जब नई लॉगफाइल बनाई जाती हैं, यदि लॉगफाइल की कुल संख्या निर्दिष्ट सीमा से अधिक है, तो निर्दिष्ट कार्रवाई की जाएगी। आप यहां वांछित कार्रवाई निर्दिष्ट कर सकते हैं।"
 config_logging_log_rotation_limit: "लॉग रोटेशन लॉगफाइल की संख्या को सीमित करता है जो कि किसी भी समय मौजूद होना चाहिए। जब नई लॉगफाइल बनाई जाती हैं, यदि लॉगफाइल की कुल संख्या निर्दिष्ट सीमा से अधिक है, तो निर्दिष्ट कार्रवाई की जाएगी। आप यहां वांछित सीमा निर्दिष्ट कर सकते हैं। 0 का मान लॉग रोटेशन अक्षम कर देगा।"
 config_logging_log_sanitisation: "लॉग डेटा देखने के लिए फ्रंट-एंड लॉग्स पेज का उपयोग करते समय, उपयोगकर्ताओं को XSS हमलों और अन्य संभावित खतरों से बचाने के लिए, CIDRAM प्रदर्शित करने से पहले लॉग डेटा को सुरक्षित करता है। हालाँकि, डिफ़ॉल्ट रूप से, लॉगिंग के दौरान डेटा को साफ नहीं किया जाता है। यह सुनिश्चित करने के लिए है कि लॉग डेटा को सही ढंग से संरक्षित किया जाए, ताकि भविष्य में आवश्यक होने वाले किसी भी अनुमान या फोरेंसिक विश्लेषण की सहायता की जा सके। हालांकि, इस घटना में कि उपयोगकर्ता बाहरी उपकरणों का उपयोग करके लॉग डेटा को पढ़ने का प्रयास करता है जो अपनी स्वच्छता प्रक्रिया नहीं करते हैं, उपयोगकर्ता को XSS हमलों के संपर्क में लाया जा सकता है। यदि आवश्यक हो, तो आप इस कॉन्फ़िगरेशन निर्देश का उपयोग करके डिफ़ॉल्ट व्यवहार को बदल सकते हैं। True(सच्चे) = इसे लॉग करते समय डेटा को संचित करें (डेटा कम सटीक रूप से संरक्षित है, लेकिन XSS जोखिम कम है)। False(झूठी) = इसे लॉग करते समय डेटा को साफ न करें (डेटा अधिक सटीक रूप से संरक्षित है, लेकिन XSS जोखिम अधिक है) [डिफ़ॉल्ट]।"
+config_logging_outbound_request_log: "किसी भी आउटबाउंड अनुरोध के परिणामों को लॉग करने के लिए एक फ़ाइल। एक फाइल नाम निर्दिष्ट करें, या निष्क्रिय करने के लिए खाली छोड़।"
 config_logging_report_log: "बाहरी API को भेजी गई किसी भी रिपोर्ट को लॉग करने के लिए एक फाइल। एक फाइल नाम निर्दिष्ट करें, या निष्क्रिय करने के लिए खाली छोड़।"
 config_logging_serialised_log: "सभी अवरुद्ध पहुँच प्रयासों को लॉग इन करने के लिए धारावाहिक फाइल। एक फाइल नाम निर्दिष्ट करें, या निष्क्रिय करने के लिए खाली छोड़।"
 config_logging_standard_log: "सभी अवरुद्ध पहुँच प्रयासों को लॉग इन करने के लिए मानव पठनीय फाइल। एक फाइल नाम निर्दिष्ट करें, या निष्क्रिय करने के लिए खाली छोड़।"
@@ -653,6 +654,24 @@ link_updates: "अपडेट"
 logs_logfile_doesnt_exist: "चयनित लॉग फाइल मौजूद नहीं है!"
 logs_no_logfile_selected: "कोई लॉग फाइल चयनित नहीं।"
 logs_no_logfiles_available: "कोई लॉग फाइल उपलब्ध नहीं।"
+macro_description_activate_modules: &MayImpactPerformance "आमतौर पर अनुशंसित नहीं है, क्योंकि कुछ ऐसे हो सकते हैं जिनकी आपको आवश्यकता नहीं है। जब घटकों की आवश्यकता न हो तो उन्हें इंस्टॉल और सक्रिय करना प्रदर्शन को नकारात्मक रूप से प्रभावित कर सकता है।"
+macro_description_install_l10n_core: &RecommendKeepingCore "जब <code>lang_override</code> कॉन्फ़िगरेशन निर्देश सक्षम होता है, यदि उपयोगकर्ता का ब्राउज़र किसी विशेष भाषा वरीयता को निर्दिष्ट करता है, जब तक कि उस भाषा के लिए core L10N डेटा इंस्टॉल है, CIDRAM उस निर्दिष्ट भाषा में "पहुंच अस्वीकृत" पृष्ठ प्रदर्शित करने में सक्षम है। तदनुसार, सभी core L10N डेटा को इंस्टॉल रखने की अनुशंसा की जाती है।"
+macro_description_install_l10n_fe: &RecommendFEOnlyNeeded "आपकी पसंदीदा भाषा को <code>lang</code> कॉन्फ़िगरेशन निर्देश के माध्यम से निर्दिष्ट किया जा सकता है। एक बार यह हो जाने के बाद, आपको अपनी पसंदीदा भाषा के अलावा किसी फ्रंट-एंड L10N डेटा की आवश्यकता नहीं है, और कुछ उपलब्ध डिस्क स्थान को खाली करने के लिए इसे हटाना चाह सकते हैं। हालांकि, चाहे आप इसे हटाने या इसे रखने के लिए चुनते हैं, किसी भी तरह से, कोई नुकसान नहीं होना चाहिए।"
+macro_description_install_modules: *MayImpactPerformance
+macro_description_uninstall_l10n_core: *RecommendKeepingCore
+macro_description_uninstall_l10n_fe: *RecommendFEOnlyNeeded
+macro_name_activate_modules: "सभी मॉड्यूल सक्रिय करें।"
+macro_name_activate_signatures: "सभी हस्ताक्षर फ़ाइलें सक्रिय करें।"
+macro_name_deactivate_modules: "सभी मॉड्यूल निष्क्रिय करें।"
+macro_name_deactivate_signatures: "सभी हस्ताक्षर फ़ाइलें निष्क्रिय करें।"
+macro_name_install_l10n_core: "सभी उपलब्ध core L10N इंस्टॉल करें।"
+macro_name_install_l10n_fe: "सभी उपलब्ध फ्रंट-एंड L10N इंस्टॉल करें।"
+macro_name_install_modules: "सभी उपलब्ध मॉड्यूल इंस्टॉल करें।"
+macro_name_install_signatures: "सभी उपलब्ध हस्ताक्षर फ़ाइलें इंस्टॉल करें।"
+macro_name_uninstall_l10n_core: "सभी निष्क्रिय core L10N को अनइंस्टॉल करें।"
+macro_name_uninstall_l10n_fe: "सभी निष्क्रिय फ्रंट-एंड L10N को अनइंस्टॉल करें।"
+macro_name_uninstall_modules: "सभी निष्क्रिय मॉड्यूल को अनइंस्टॉल करें।"
+macro_name_uninstall_signatures: "सभी निष्क्रिय हस्ताक्षर फ़ाइलें को अनइंस्टॉल करें।"
 max_login_attempts_exceeded: "लॉगिन प्रयासों की अधिकतम संख्या पार हो गई; पहुंच अस्वीकृत।"
 msg_subject_2fa: "दो तरीकों से प्रमाणीकरण"
 msg_template_2fa: |
@@ -702,7 +721,7 @@ response_failed: "असफलता"
 response_failed_to_access: ""%s" तक पहुंचने में विफल!"
 response_failed_to_execute: "निष्पादित करने में विफल!"
 response_failed_to_import: "आयात करने में विफल!"
-response_failed_to_install: "इनस्टॉल करने में विफल!"
+response_failed_to_install: "इंस्टॉल करने में विफल!"
 response_failed_to_update: "अपडेट करने में विफल!"
 response_file_deleted: "सफलतापूर्वक फाइल हटाया गया!"
 response_file_edited: "सफलतापूर्वक फाइल संशोधित किया गया!"

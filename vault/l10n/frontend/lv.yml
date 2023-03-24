@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2023.03.15).
+# This file: Latvian language data for the front-end (last modified: 2023.03.24).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,6 +204,7 @@ config_logging_log_banned_ips: "Vai failos iekļaut bloķētus IP pieprasījumus
 config_logging_log_rotation_action: "Log rotācija ierobežo to logfailu skaitu, kuriem vajadzētu pastāvēt vienlaikus. Veidojot jaunus logfailus, ja kopējais logfailu skaits pārsniedz noteikto limitu, tiks veikta norādītā darbība. Šeit varat norādīt vēlamo darbību."
 config_logging_log_rotation_limit: "Log rotācija ierobežo to logfailu skaitu, kuriem vajadzētu pastāvēt vienlaikus. Veidojot jaunus logfailus, ja kopējais logfailu skaits pārsniedz noteikto limitu, tiks veikta norādītā darbība. Šeit varat norādīt vēlamo ierobežojumu. Ja vērtība ir 0, tiks atspējota log rotācija."
 config_logging_log_sanitisation: "Izmantojot logs lapu, lai skatītu log datus, CIDRAM pirms to parādīšanas sanitizē log datus, lai aizsargātu lietotājus no XSS uzbrukumiem un citiem iespējamiem draudiem, ko varētu saturēt log dati. Tomēr pēc noklusējuma dati reģistrēšanas laikā netiek sanitizēti. Tas ir paredzēts, lai log dati tiktu saglabāti precīzi, lai palīdzētu veikt heiristisko analīzi, kas varētu būt nepieciešama nākotnē. Tomēr, ja lietotājs mēģina nolasīt log datus izmantojot ārējus rīkus, ja šie ārējie rīki neveic savu sanitizācijas procesu, lietotājs var tikt pakļauts XSS uzbrukumiem. Ja nepieciešams, jūs varat mainīt noklusējuma izturēšanos, izmantojot šo konfigurācijas direktīvu. True (Patiess) = Sanitizēt datus reģistrācijas laikā (dati tiek saglabāti mazāk precīzi, bet XSS risks ir mazāks). False (Nepatiess) = Nesanitizēt datus reģistrācijas laikā (dati tiek saglabāti precīzāk, bet XSS risks ir lielāks) [Noklusējuma]."
+config_logging_outbound_request_log: "Fails, visu izejošo pieprasījumu rezultātu reģistrēšanai. Norādiet faila nosaukumu, vai atstājiet tukšu, lai to atspējotu."
 config_logging_report_log: "Fails, lai reģistrētu visus pārskatus, kas nosūtīti uz ārējiem API. Norādiet faila nosaukumu, vai atstājiet tukšu, lai to atspējotu."
 config_logging_serialised_log: "Sērijveida fails visu bloķēto piekļuves mēģinājumu reģistrēšanai. Norādiet faila nosaukumu, vai atstājiet tukšu, lai to atspējotu."
 config_logging_standard_log: "Cilvēkam lasāms fails visu bloķēto piekļuves mēģinājumu reģistrēšanai. Norādiet faila nosaukumu, vai atstājiet tukšu, lai to atspējotu."
@@ -653,6 +654,24 @@ link_updates: "Atjauninājumi"
 logs_logfile_doesnt_exist: "Atlasītais logfails neeksistē!"
 logs_no_logfile_selected: "Nav atlasīts logfails."
 logs_no_logfiles_available: "Neviens logfails nav pieejams."
+macro_description_activate_modules: &MayImpactPerformance "Parasti nav ieteicams, jo, iespējams, ir daži, kas jums nav vajadzīgi. Komponentu instalēšana un aktivizēšana, kad tie nav nepieciešami, var negatīvi ietekmēt veiktspēju."
+macro_description_install_l10n_core: &RecommendKeepingCore "Kad ir iespējota <code>lang_override</code> konfigurācijas direktīva, ja lietotāja pārlūkprogrammā ir norādīta valodas izvēle, kamēr ir instalēti šīs valodas core L10N dati, CIDRAM var parādīt lapu "piekļuve liegta" šajā norādītajā valodā. Attiecīgi ir ieteicams saglabāt visus L10N pamatdatus."
+macro_description_install_l10n_fe: &RecommendFEOnlyNeeded "Vēlamo valodu var norādīt, izmantojot <code>lang</code> konfigurācijas direktīvu. Kad tas ir izdarīts, jums, visticamāk, nebūs nepieciešami citi front-end L10N dati, izņemot tos, kas paredzēti jūsu izvēlētajai valodai, un, iespējams, vēlēsities tos noņemt, lai nedaudz atbrīvotu vietu diskā. Tomēr neatkarīgi no tā, vai izvēlaties to noņemt vai paturēt, tam nevajadzētu nodarīt nekādu kaitējumu."
+macro_description_install_modules: *MayImpactPerformance
+macro_description_uninstall_l10n_core: *RecommendKeepingCore
+macro_description_uninstall_l10n_fe: *RecommendFEOnlyNeeded
+macro_name_activate_modules: "Aktivizējiet visus moduļus."
+macro_name_activate_signatures: "Aktivizējiet visus paraksta failus."
+macro_name_deactivate_modules: "Deaktivizējiet visus moduļus."
+macro_name_deactivate_signatures: "Deaktivizējiet visus paraksta failus."
+macro_name_install_l10n_core: "Instalējiet visu pieejamo core L10N."
+macro_name_install_l10n_fe: "Instalējiet visu pieejamo front-end L10N."
+macro_name_install_modules: "Instalējiet visus pieejamos moduļus."
+macro_name_install_signatures: "Instalējiet visus pieejamos paraksta failus."
+macro_name_uninstall_l10n_core: "Atinstalējiet visu neaktīvo core L10N."
+macro_name_uninstall_l10n_fe: "Atinstalējiet visu neaktīvo front-end L10N."
+macro_name_uninstall_modules: "Atinstalējiet visus neaktīvos moduļus."
+macro_name_uninstall_signatures: "Atinstalējiet visus neaktīvos paraksta failus."
 max_login_attempts_exceeded: "Pārsniegts maksimālais ielogošanās mēģinājumu skaits; Piekļuve liegta."
 msg_subject_2fa: "Divu-Faktoru Autentifikācija"
 msg_template_2fa: |

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2023.03.15).
+# This file: Dutch language data for the front-end (last modified: 2023.03.24).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,6 +204,7 @@ config_logging_log_banned_ips: "Omvatten geblokkeerde verzoeken van verbannen IP
 config_logging_log_rotation_action: "Logrotatie beperkt het aantal logbestanden dat op elk moment zou moeten bestaan. Wanneer nieuwe logbestanden worden gemaakt en het totale aantal logbestanden de opgegeven limiet overschrijdt, wordt de opgegeven actie uitgevoerd. U kunt hier de gewenste actie opgeven."
 config_logging_log_rotation_limit: "Logrotatie beperkt het aantal logbestanden dat op elk moment zou moeten bestaan. Wanneer nieuwe logbestanden worden gemaakt en het totale aantal logbestanden de opgegeven limiet overschrijdt, wordt de opgegeven actie uitgevoerd. U kunt hier de gewenste limiet opgeven. Een waarde van 0 zal logrotatie uitschakelen."
 config_logging_log_sanitisation: "Bij gebruik van de frontend logbestanden pagina om loggegevens te bekijken, CIDRAM sanitiseert de loggegevens voordat deze worden weergegeven, om gebruikers te beschermen tegen XSS-aanvallen en andere potentiële bedreigingen die logboekgegevens kunnen bevatten. Standaard echter, gegevens worden niet gesanitiseerd wanneer ze worden opgenomen. Dit is om ervoor te zorgen dat loggegevens nauwkeurig worden bewaard, om eventuele heuristische of forensische analyses te ondersteunen die in de toekomst nodig kunnen zijn. Echter, in het geval dat een gebruiker probeert om loggegevens te lezen met behulp van externe hulpmiddelen, en of die externe tools hun eigen sanitatieproces niet uitvoeren, de gebruiker kan worden blootgesteld aan XSS-aanvallen. Indien nodig kunt u het standaardgedrag wijzigen met behulp van deze configuratierichtlijn. True = Sanitiseren gegevens tijdens het opnemen (gegevens worden minder nauwkeurig bewaard, maar het XSS-risico is lager). False = Sanitiseren gegevens niet tijdens het opnemen (gegevens worden nauwkeuriger bewaard, maar het XSS-risico is hoger) [Standaard]."
+config_logging_outbound_request_log: "Een bestand voor het loggen van de resultaten van eventuele uitgaande verzoeken. Geef een bestandsnaam, of laat leeg om uit te schakelen."
 config_logging_report_log: "Een bestand voor het loggen van rapporten die naar externe API's zijn verzonden. Geef een bestandsnaam, of laat leeg om uit te schakelen."
 config_logging_serialised_log: "Geserialiseerd bestand om alle geblokkeerde toegang pogingen te loggen. Geef een bestandsnaam, of laat leeg om uit te schakelen."
 config_logging_standard_log: "Mensen leesbare bestand om alle geblokkeerde toegang pogingen te loggen. Geef een bestandsnaam, of laat leeg om uit te schakelen."
@@ -656,6 +657,24 @@ link_updates: "Updates"
 logs_logfile_doesnt_exist: "Geselecteerde logbestand bestaat niet!"
 logs_no_logfile_selected: "Geen logbestand geselecteerd."
 logs_no_logfiles_available: "Geen logbestanden beschikbaar."
+macro_description_activate_modules: &MayImpactPerformance "Over het algemeen niet aanbevolen, omdat er waarschijnlijk enkele zijn die u niet nodig heeft. Het installeren en activeren van componenten wanneer ze niet nodig zijn, kan een negatieve invloed hebben op de prestaties."
+macro_description_install_l10n_core: &RecommendKeepingCore "Wanneer de <code>lang_override</code>-configuratierichtlijn is ingeschakeld, als de browser van een gebruiker een bepaalde taalvoorkeur specificeert, zolang de core L10N-gegevens voor die taal zijn geïnstalleerd, CIDRAM kan de pagina "toegang geweigerd" in die specificeert taal weergeven. Daarom wordt aanbevolen om alle L10N-gegevens van de core geïnstalleerd te houden."
+macro_description_install_l10n_fe: &RecommendFEOnlyNeeded "Uw voorkeurstaal kan worden opgegeven via de <code>lang</code>-configuratierichtlijn. Nadat dit is gedaan, is het onwaarschijnlijk dat u andere front-end L10N-gegevens nodig hebt dan die voor uw voorkeurstaal, en misschien wilt u deze verwijderen om wat beschikbare schijfruimte marginaal vrij te maken. Hoewel, ongeacht of u ervoor kiest om het te verwijderen of te behouden, het zou geen probleem moeten zijn."
+macro_description_install_modules: *MayImpactPerformance
+macro_description_uninstall_l10n_core: *RecommendKeepingCore
+macro_description_uninstall_l10n_fe: *RecommendFEOnlyNeeded
+macro_name_activate_modules: "Activeer alle modules."
+macro_name_activate_signatures: "Activeer alle signatuurbestanden."
+macro_name_deactivate_modules: "Deactiveer alle modules."
+macro_name_deactivate_signatures: "Deactiveer alle signatuurbestanden."
+macro_name_install_l10n_core: "Installeer alle beschikbare core L10N."
+macro_name_install_l10n_fe: "Installeer alle beschikbare front-end L10N."
+macro_name_install_modules: "Installeer alle beschikbare modules."
+macro_name_install_signatures: "Installeer alle beschikbare signatuurbestanden."
+macro_name_uninstall_l10n_core: "Verwijder alle inactieve core L10N."
+macro_name_uninstall_l10n_fe: "Verwijder alle inactieve front-end L10N."
+macro_name_uninstall_modules: "Verwijder alle inactieve modules."
+macro_name_uninstall_signatures: "Verwijder alle inactieve signatuurbestanden."
 max_login_attempts_exceeded: "Maximum aantal inlogpogingen overschreden; Toegang geweigerd."
 msg_subject_2fa: "2FA (Twee-Factor Authenticatie)"
 msg_template_2fa: |

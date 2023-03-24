@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hebrew language data for the front-end (last modified: 2023.03.15).
+# This file: Hebrew language data for the front-end (last modified: 2023.03.24).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,6 +204,7 @@ config_logging_log_banned_ips: "האם לכלול בקשות חסומות מכת
 config_logging_log_rotation_action: "סיבוב יומן מגביל את מספר קובצי היומן שצריכים להתקיים בכל זמן נתון. כאשר נוצרים קובצי יומן חדשים, אם המספר הכולל של קובצי יומן חורג מהמגבלה שצוינה, הפעולה שצוינה תתבצע. אתה יכול לציין את הפעולה הרצויה כאן."
 config_logging_log_rotation_limit: "סיבוב יומן מגביל את מספר קובצי היומן שצריכים להתקיים בכל זמן נתון. כאשר נוצרים קובצי יומן חדשים, אם המספר הכולל של קובצי יומן חורג מהמגבלה שצוינה, הפעולה שצוינה תתבצע. אתה יכול לציין את המגבלה הרצויה כאן. ערך של 0 ישבית את סיבוב היומן."
 config_logging_log_sanitisation: "בעת שימוש בדף היומנים הקדמיים לצפייה בנתוני יומן, CIDRAM מחטא את נתוני היומן לפני הצגתם, כדי להגן על המשתמשים מפני התקפות XSS ואיומים פוטנציאליים אחרים שנתוני יומן יכולים להכיל. עם זאת, כסטנדרט, הנתונים אינם מחוטאים במהלך הרישום. זאת כדי להבטיח שנתוני יומן נשמרים בצורה מדויקת, כדי לסייע בכל ניתוח היוריסטי או משפטי שעשוי להיות נחוץ בעתיד. עם זאת, במקרה שמשתמש מנסה לקרוא נתוני יומן באמצעות כלים חיצוניים, ואם הכלים החיצוניים הללו אינם מבצעים תהליך חיטוי משלהם, המשתמש עלול להיחשף להתקפות XSS. במידת הצורך, תוכל לשנות את ההתנהגות הסטנדרטית באמצעות הוראת תצורה זו. True = לחטא נתונים בעת רישום אותם (הנתונים נשמרים בצורה פחות מדויקת, אך סיכון XSS נמוך יותר). False = אל לחטא נתונים בעת רישום אותם (הנתונים נשמרים בצורה מדויקת יותר, אך סיכון XSS גבוה יותר) [סטנדרטי]."
+config_logging_outbound_request_log: "קובץ לרישום התוצאות של כל בקשות יוצאות. ציין שם קובץ, או השאר ריק כדי להשבית."
 config_logging_report_log: "קובץ לרישום דוחות שנשלחו ל-API חיצוניים. ציין שם קובץ, או השאר ריק כדי להשבית."
 config_logging_serialised_log: "קובץ סידורי לרישום כל ניסיונות הגישה החסומים. ציין שם קובץ, או השאר ריק כדי להשבית."
 config_logging_standard_log: "קובץ קריא לאדם לרישום כל ניסיונות הגישה החסומים. ציין שם קובץ, או השאר ריק כדי להשבית."
@@ -217,7 +218,7 @@ config_phpmailer_password: "הסיסמה לשימוש בעת שליחת אימי
 config_phpmailer_port: "מספר היציאה לשימוש עבור אימייל יוצא. סטנדרטי = 587."
 config_phpmailer_set_from_address: "כתובת השולח בעת שליחת אימייל באמצעות SMTP."
 config_phpmailer_set_from_name: "שם השולח בעת שליחת אימייל באמצעות SMTP."
-config_phpmailer_skip_auth_process: "הגדרת זה ל-<code>true</code> אומרת ל-PHPMailer לא לבצע אימות בעת שליחת אימייל באמצעות SMTP. יש להימנע מכך, כי אי אימות עלול לחשוף דואר יוצא למתקפות MITM, אך עשוי להיות נחוץ במקרים שבהם פעולה זו תמנע מ-PHPMailer להתחבר לשרת SMTP."
+config_phpmailer_skip_auth_process: "הגדרת זה ל-<code dir="ltr">true</code> אומרת ל-PHPMailer לא לבצע אימות בעת שליחת אימייל באמצעות SMTP. יש להימנע מכך, כי אי אימות עלול לחשוף דואר יוצא למתקפות MITM, אך עשוי להיות נחוץ במקרים שבהם פעולה זו תמנע מ-PHPMailer להתחבר לשרת SMTP."
 config_phpmailer_smtp_auth: "קובע אם לאמת הפעלות SMTP (בדרך כלל צריך להשאיר לבד)."
 config_phpmailer_smtp_secure: "הפרוטוקול לשימוש בעת שליחת אימייל באמצעות SMTP (TLS או SSL)."
 config_phpmailer_username: "שם המשתמש לשימוש בעת שליחת אימייל באמצעות SMTP."
@@ -648,6 +649,24 @@ link_updates: "עדכונים"
 logs_logfile_doesnt_exist: "קובץ היומן שנבחר לא קיים!"
 logs_no_logfile_selected: "לא נבחר קובץ יומן."
 logs_no_logfiles_available: "אין קבצי יומן זמינים."
+macro_description_activate_modules: &MayImpactPerformance "לא מומלץ בדרך כלל, מכיוון שסביר להניח שיש כאלה שאתה לא צריך. התקנה והפעלה של רכיבים כאשר אין בהם צורך עלולים להשפיע לרעה על הביצועים."
+macro_description_install_l10n_core: &RecommendKeepingCore "כאשר הוראת התצורה <code dir="ltr">lang_override</code> מופעלת, אם הדפדפן של משתמש מציין העדפת שפה מסוימת, כל עוד נתוני ליבה L10N עבור שפה זו מותקנים, CIDRAM מסוגל להציג את דף "הגישה נדחתה" בשפה שצוינה. בהתאם לכך, מומלץ להשאיר את כל נתוני הליבה של L10N מותקנים."
+macro_description_install_l10n_fe: &RecommendFEOnlyNeeded "ניתן לציין את השפה המועדפת עליך באמצעות הוראת התצורה <code dir="ltr">lang</code>. לאחר שהדבר נעשה, לא סביר שתזדקק לנתוני L10N קדמיים מלבד אלה עבור השפה המועדפת עליך, ואולי תרצה להסיר אותם למען שחרור שולי של שטח דיסק פנוי. עם זאת, בין אם תבחר להסיר אותו או לשמור אותו, כך או כך, לא אמור לגרום לבעיות."
+macro_description_install_modules: *MayImpactPerformance
+macro_description_uninstall_l10n_core: *RecommendKeepingCore
+macro_description_uninstall_l10n_fe: *RecommendFEOnlyNeeded
+macro_name_activate_modules: "הפעל את כל המודולים."
+macro_name_activate_signatures: "הפעל את כל קבצי החתימה."
+macro_name_deactivate_modules: "השבת את כל המודולים."
+macro_name_deactivate_signatures: "השבת את כל קבצי החתימה."
+macro_name_install_l10n_core: "התקן את כל הליבה L10N הזמינים."
+macro_name_install_l10n_fe: "התקן את כל הקצה הקדמי L10N הזמינים."
+macro_name_install_modules: "התקן את כל המודולים הזמינים."
+macro_name_install_signatures: "התקן את כל קבצי החתימה הזמינים."
+macro_name_uninstall_l10n_core: "הסר את כל הליבה L10N הלא פעילים."
+macro_name_uninstall_l10n_fe: "הסר את כל הקצה הקדמי L10N הלא פעילים."
+macro_name_uninstall_modules: "הסר את כל המודולים הלא פעילים."
+macro_name_uninstall_signatures: "הסר את כל קבצי החתימה הלא פעילים."
 max_login_attempts_exceeded: "חרג מהמספר המרבי של ניסיונות התחברות; גישה נדחתה."
 msg_subject_2fa: "אימות דו-גורמי"
 msg_template_2fa: |

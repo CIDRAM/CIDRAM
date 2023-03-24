@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2023.03.15).
+# This file: Indonesian language data for the front-end (last modified: 2023.03.24).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,6 +204,7 @@ config_logging_log_banned_ips: "Termasuk permintaan diblokir dari IP dilarang da
 config_logging_log_rotation_action: "Rotasi log membatasi jumlah file log yang seharusnya ada pada satu waktu. Ketika file log baru dibuat, jika jumlah total file log melebihi batas yang ditentukan, tindakan yang ditentukan akan dilakukan. Anda dapat menentukan tindakan yang diinginkan disini."
 config_logging_log_rotation_limit: "Rotasi log membatasi jumlah file log yang seharusnya ada pada satu waktu. Ketika file log baru dibuat, jika jumlah total file log melebihi batas yang ditentukan, tindakan yang ditentukan akan dilakukan. Anda dapat menentukan batas yang diinginkan disini. Nilai 0 akan menonaktifkan rotasi log."
 config_logging_log_sanitisation: "Saat menggunakan halaman log untuk melihat data log, CIDRAM mensanitasikan data log sebelum menampilkannya, untuk melindungi pengguna dari serangan XSS dan potensi ancaman lain yang bisa terkandung dalam data tersebut. Namun, secara default, data tidak disanitasikan selama pencatatan. Ini untuk memastikan bahwa data log dicatatan secara akurat, untuk membantu analisis heuristik atau forensik yang mungkin diperlukan di masa depan. Namun, jika pengguna mencoba membaca data log menggunakan alat eksternal, dan jika alat eksternal itu tidak melakukan proses sanitasi sendiri, pengguna bisa terkena serangan XSS. Jika perlu, Anda dapat mengubah perilaku default menggunakan direktif konfigurasi ini. True = Mensanitasikan data saat mencatatnya (data disimpan kurang akurat, tetapi risiko XSS lebih rendah). False = Jangan mensanitasikan data saat mencatatnya (data disimpan lebih akurat, tetapi risiko XSS lebih tinggi) [Default]."
+config_logging_outbound_request_log: "File untuk mencatat hasil permintaan keluar apapun. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
 config_logging_report_log: "File untuk mencatat setiap laporan yang dikirim ke API eksternal. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
 config_logging_serialised_log: "File serial untuk mencatat semua upaya akses diblokir. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
 config_logging_standard_log: "File yang dapat dibaca oleh manusia untuk mencatat semua upaya akses diblokir. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
@@ -645,6 +646,24 @@ link_updates: "Pembaruan"
 logs_logfile_doesnt_exist: "File log yang dipilih tidak ada!"
 logs_no_logfile_selected: "Tidak ada file log dipilih."
 logs_no_logfiles_available: "Tidak ada file log tersedia."
+macro_description_activate_modules: &MayImpactPerformance "Tidak direkomendasikan secara umum, karena kemungkinan ada beberapa yang tidak Anda butuhkan. Menginstal dan mengaktifkan komponen saat tidak dibutuhkan dapat berdampak negatif pada performa."
+macro_description_install_l10n_core: &RecommendKeepingCore "Ketika direktif konfigurasi <code>lang_override</code> diaktifkan, jika browser pengguna menentukan preferensi bahasa tertentu, selama data L10N core untuk bahasa tersebut diinstal, CIDRAM dapat menampilkan halaman "akses ditolak" dalam bahasa tersebut yang ditentukan. Dengan demikian, direkomendasikan semua data L10N core tetap terinstal."
+macro_description_install_l10n_fe: &RecommendFEOnlyNeeded "Bahasa pilihan Anda dapat ditentukan melalui direktif konfigurasi <code>lang</code>. Setelah ini dilakukan, Anda tidak akan memerlukan data L10N front-end selain bahasa pilihan Anda, dan mungkin ingin menghapusnya demi sedikit membebaskan ruang disk yang tersedia. Tetapi, apakah Anda memilih menghapusnya atau menyimpannya, bagaimanapun juga, seharusnya tidak menimbulkan masalah."
+macro_description_install_modules: *MayImpactPerformance
+macro_description_uninstall_l10n_core: *RecommendKeepingCore
+macro_description_uninstall_l10n_fe: *RecommendFEOnlyNeeded
+macro_name_activate_modules: "Aktifkan semua modul."
+macro_name_activate_signatures: "Aktifkan semua file tanda tangan."
+macro_name_deactivate_modules: "Nonaktifkan semua modul."
+macro_name_deactivate_signatures: "Nonaktifkan semua file tanda tangan."
+macro_name_install_l10n_core: "Instal semua L10N core yang tersedia."
+macro_name_install_l10n_fe: "Instal semua L10N front-end yang tersedia."
+macro_name_install_modules: "Instal semua modul yang tersedia."
+macro_name_install_signatures: "Instal semua file tanda tangan yang tersedia."
+macro_name_uninstall_l10n_core: "Uninstal semua L10N core yang tidak aktif."
+macro_name_uninstall_l10n_fe: "Uninstal semua L10N front-end yang tidak aktif."
+macro_name_uninstall_modules: "Uninstal semua modul yang tidak aktif."
+macro_name_uninstall_signatures: "Uninstal semua file tanda tangan yang tidak aktif."
 max_login_attempts_exceeded: "Jumlah maksimum upaya untuk memasukkan tercapai; Akses ditolak."
 msg_subject_2fa: "Otentikasi Dua-Faktor"
 msg_template_2fa: |

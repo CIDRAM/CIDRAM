@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Default event handlers (last modified: 2022.11.11).
+ * This file: Default event handlers (last modified: 2023.03.24).
  */
 
 /**
@@ -264,11 +264,13 @@ $this->Events->addHandler('isLogFile', function (): bool {
  * Writes to the report log.
  *
  * @param string $Data What to write.
+ * @param array $Misc Other data passed from the events handler.
  * @return bool True on success; False on failure.
  */
-$this->Events->addHandler('writeToReportLog', function (string $Data): bool {
+$this->Events->addHandler('writeToReportLog', function (string $Data, array $Misc): bool {
     /** Guard. */
     if (
+        !isset($Misc[0]) ||
         $this->Configuration['logging']['report_log'] === '' ||
         !($Filename = $this->buildPath($this->Vault . $this->Configuration['logging']['report_log']))
     ) {
@@ -276,14 +278,16 @@ $this->Events->addHandler('writeToReportLog', function (string $Data): bool {
     }
 
     $Data = sprintf(
-        "%1\$s\n%2\$s%3\$s%4\$s\n%5\$s%3\$s%6\$s\n\n",
-        $this->L10N->getString('label_report_log'),
+        '%1$s%2$s%3$s%4$s%5$s%3$s%6$s%7$s%3$s%8$s',
+        $this->L10N->getString('label_report_log') . "\n",
         $this->L10N->getString('field_datetime'),
         $this->L10N->getString('pair_separator'),
-        date('c', time()),
+        date('c', time()) . "\n",
+        $this->L10N->getString('field_ipaddr'),
+        $Misc[0] . "\n",
         $this->L10N->getString('field_comments'),
         $Data
-    );
+    ) . "\n\n";
 
     $Truncate = $this->readBytes($this->Configuration['logging']['truncate']);
     $WriteMode = (!file_exists($Filename) || $Truncate > 0 && filesize($Filename) >= $Truncate) ? 'wb' : 'ab';

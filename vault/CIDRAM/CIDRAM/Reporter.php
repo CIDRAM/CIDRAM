@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Report orchestrator (last modified: 2022.11.11).
+ * This file: Report orchestrator (last modified: 2023.03.24).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -127,7 +127,7 @@ class Reporter
                 }
 
                 /** Fire the logger. */
-                $this->Events->fireEvent('writeToReportLog', implode(' ', $Report['Comments']));
+                $this->Events->fireEvent('writeToReportLog', implode(' ', $Report['Comments']), $Report['IP']);
             }
         }
 

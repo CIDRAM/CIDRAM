@@ -188,3 +188,5 @@
 [2023.03.19; Bug-fix; Maikuolan]: Type error found in the updates executor; Fixed (#442).
 
 [2023.03.23; Bug-fix; Maikuolan]: Some executor calls at the updates page could never be triggered due to relying on downstream metadata which mightn't exist at the time of the call; Switched to the upstream for such instances to resolve the problem.
+
+[2023.03.24; New Feature; Maikuolan]: Added the ability to log outbound requests (#445).

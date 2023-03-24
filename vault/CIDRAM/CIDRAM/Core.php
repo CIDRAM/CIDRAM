@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2023.03.18).
+ * This file: The CIDRAM core (last modified: 2023.03.24).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -117,7 +117,7 @@ class Core
     /**
      * @var string CIDRAM version number (SemVer).
      */
-    public $ScriptVersion = '3.1.1';
+    public $ScriptVersion = '3.2.0';
 
     /**
      * @var string CIDRAM version identifier (complete notation).
@@ -381,6 +381,9 @@ class Core
         /** Instantiate the request class. */
         $this->Request = new \Maikuolan\Common\Request();
         $this->Request->DefaultTimeout = $this->Configuration['general']['default_timeout'];
+        if ($this->Configuration['logging']['outbound_request_log'] !== '') {
+            $this->Request->ObjLoggerFile = $this->buildPath($this->Vault . $this->Configuration['logging']['outbound_request_log']);
+        }
         $ChannelsArrayData = [];
         $this->YAML->process($this->readFile($this->Vault . 'channels.yml'), $ChannelsArrayData);
         $this->Request->Channels = $ChannelsArrayData ?: [];

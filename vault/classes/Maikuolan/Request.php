@@ -64,7 +64,7 @@ class Request
      *      be needed by some implementations to ensure compatibility).
      * @link https://github.com/Maikuolan/Common/tags
      */
-    const VERSION = '1.9.5';
+    const VERSION = '1.9.6';
 
     /**
      * Allow calling the instance as a function (proxies to request).
@@ -243,7 +243,7 @@ class Request
      */
     public function sendMessage($Message)
     {
-        $this->ObjLogger .= '[' . date('Y-m-d\Th:i:sO',time()) . '] ' . $Message . "\n";
+        $this->ObjLogger .= '[' . date('Y-m-d\Th:i:sO', time()) . '] ' . $Message . "\n";
         if ($this->SendToOut !== true) {
             return;
         }

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2023.03.06).
+# This file: English language data for the front-end (last modified: 2023.03.24).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -129,6 +129,7 @@ config_general_maintenance_mode: "Enable maintenance mode? True = Yes; False = N
 config_general_max_login_attempts: "Maximum number of front-end login attempts. Default = 5."
 config_general_numbers: "How do you prefer numbers to be displayed? Select the example that looks the most correct to you."
 config_general_other_verification: "Wherever possible, attempt to verify other kinds of requests (e.g., AdSense, SEO checkers, etc)? When detected, faked requests will be blocked. True = Enable [Default]; False = Disable."
+config_general_outbound_request_log: "A file for logging the results of any outbound requests. Specify a filename, or leave blank to disable."
 config_general_protect_frontend: "Specifies whether the protections normally provided by CIDRAM should be applied to the front-end. True = Yes [Default]; False = No."
 config_general_search_engine_verification: "Attempt to verify requests from search engines? Verifying search engines ensures that they won't be banned as a result of exceeding the infraction limit (banning search engines from your website will usually have a negative effect upon your search engine ranking, SEO, etc). When verified, search engines can be blocked as per normal, but won't be banned. When not verified, it's possible for them to be banned as a result of exceeding the infraction limit. Additionally, search engine verification provides protection against fake search engine requests and against potentially malicious entities masquerading as search engines (such requests will be blocked when search engine verification is enabled). True = Enable search engine verification [Default]; False = Disable search engine verification."
 config_general_signatures_update_event_log: "A file for logging when signatures are updated via the front-end. Specify a filename, or leave blank to disable."

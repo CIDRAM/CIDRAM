@@ -1,6 +1,6 @@
 <?php
 /**
- * Request handler (last modified: 2023.02.23).
+ * Request handler (last modified: 2023.03.24).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -38,7 +38,19 @@ class Request
     public $SendToOut = false;
 
     /**
-     * @var string The default user agent to cite.
+     * @var string Object-level logger for the results of outbound requests.
+     */
+    public $ObjLogger = '';
+
+    /**
+     * @var string Whether to dump the object-level logger to a file (and where to find it).
+     */
+    public $ObjLoggerFile = '';
+
+    /**
+     * @var string The default user agent to cite (implementations *should* override
+     *  this with a user agent of their own, in order to properly inform servers of
+     *  the implementation's identity.
      */
     public $UserAgent = 'Request class (https://github.com/Maikuolan/Common)';
 
@@ -62,6 +74,27 @@ class Request
     public function __invoke($URI, $Params = [], $Timeout = -1, array $Headers = [], $Depth = 0)
     {
         return $this->request($URI, $Params, $Timeout, $Headers, $Depth);
+    }
+
+    /**
+     * Object destructor. Used to write the object-level logger to a file when necessary.
+     *
+     * @return void
+     */
+    public function __destruct()
+    {
+        /** Guard. */
+        if ($this->ObjLogger === '' || $this->ObjLoggerFile === '') {
+            return;
+        }
+
+        $WriteMode = file_exists($this->ObjLoggerFile) ? 'ab' : 'wb';
+        $Handle = fopen($this->ObjLoggerFile, $WriteMode);
+        if (!is_resource($Handle)) {
+            return;
+        }
+        fwrite($Handle, $this->ObjLogger);
+        fclose($Handle);
     }
 
     /**
@@ -155,13 +188,7 @@ class Request
 
         /** Check for problems (e.g., resource not found, server errors, etc). */
         if (($Info = curl_getinfo($Request)) && is_array($Info) && isset($Info['http_code'])) {
-            $this->sendMessage(sprintf(
-                "\r%s - %s - %s - %s\n",
-                $Post ? 'POST' : 'GET',
-                $URI,
-                $Info['http_code'],
-                (floor($Time * 100) / 100) . 's'
-            ));
+            $this->sendMessage(sprintf('%s - %s - %s - %s', $Post ? 'POST' : 'GET', $URI, $Info['http_code'], (floor($Time * 100) / 100) . 's'));
 
             /** Most recent HTTP status code. */
             $this->MostRecentStatusCode = $Info['http_code'];
@@ -172,13 +199,7 @@ class Request
                 return $this($AlternateURI, $Params, $Timeout, $Headers, $Depth + 1);
             }
         } else {
-            $this->sendMessage(sprintf(
-                "\r%s - %s - %s - %s\n",
-                $Post ? 'POST' : 'GET',
-                $URI,
-                200,
-                (floor($Time * 100) / 100) . 's'
-            ));
+            $this->sendMessage(sprintf('%s - %s - %s - %s', $Post ? 'POST' : 'GET', $URI, 200, (floor($Time * 100) / 100) . 's'));
 
             /** Most recent HTTP status code. */
             $this->MostRecentStatusCode = 200;
@@ -222,11 +243,12 @@ class Request
      */
     public function sendMessage($Message)
     {
+        $this->ObjLogger .= '[' . date('Y-m-d\Th:i:sO',time()) . '] ' . $Message . "\n";
         if ($this->SendToOut !== true) {
             return;
         }
         $Handle = fopen('php://stdout', 'wb');
-        fwrite($Handle, $Message);
+        fwrite($Handle, "\r" . $Message . "\n");
         fclose($Handle);
     }
 }

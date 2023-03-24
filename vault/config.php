@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2023.03.13).
+ * This file: Configuration handler (last modified: 2023.03.24).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -17,7 +17,7 @@ if (!defined('CIDRAM')) {
 }
 
 /** CIDRAM version number (SemVer). */
-$CIDRAM['ScriptVersion'] = '2.11.1';
+$CIDRAM['ScriptVersion'] = '2.12.0';
 
 /** CIDRAM version identifier (complete notation). */
 $CIDRAM['ScriptIdent'] = 'CIDRAM v' . $CIDRAM['ScriptVersion'];
@@ -142,6 +142,9 @@ $CIDRAM['DefaultAlgo'] = (
 /** Instantiate the request class. */
 $CIDRAM['Request'] = new \Maikuolan\Common\Request();
 $CIDRAM['Request']->DefaultTimeout = $CIDRAM['Config']['general']['default_timeout'];
+if ($CIDRAM['Config']['general']['outbound_request_log'] !== '') {
+    $CIDRAM['Request']->ObjLoggerFile = $CIDRAM['BuildPath']($CIDRAM['Vault'] . $CIDRAM['Config']['general']['outbound_request_log']);
+}
 $CIDRAM['ChannelsDataArray'] = [];
 $CIDRAM['YAML']->process($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'channels.yaml'), $CIDRAM['ChannelsDataArray']);
 $CIDRAM['Request']->Channels = $CIDRAM['ChannelsDataArray'] ?: [];

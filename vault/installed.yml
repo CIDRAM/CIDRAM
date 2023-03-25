@@ -7,7 +7,7 @@ CIDRAM Core:
   Common Classes Package: "^2.9.6"
   l10n/core/{lang}: ">=2023.22"
   l10n/frontend/{lang}: ">=2023.83"
- Changelog: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/Changelog.md"
+ Changelog: "https://github.com/CIDRAM/CIDRAM/blob/v3/Changelog.md"
  When Update Succeeds:
   - "wpVer"
   - "if {Components.Meta.CIDRAM Core.Version}<3.2&&{Components.RemoteMeta.CIDRAM Core.Version}>=3.2 then message response_release_notes https://github.com/CIDRAM/CIDRAM/releases/tag/v3.2.0 CIDRAM v3.2.0"
@@ -71,7 +71,7 @@ CIDRAM Front-End:
   Common Classes Package: "^2.9.4"
   l10n/core/{lang}: ">=2023.22"
   l10n/frontend/{lang}: ">=2023.83"
- Changelog: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/Changelog.md"
+ Changelog: "https://github.com/CIDRAM/CIDRAM/blob/v3/Changelog.md"
  Uninstallable: false
  Files:
   assets/frontend/default/_2fa.html:

@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2023.73.0
-# Last modified: 2023.03.15
+# Version: 2023.83.0
+# Last modified: 2023.03.25
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -747,19 +747,6 @@ Profile: Domestic ISP;Multiplay
 Tag: LLC Renome-Service
 
 
-# ASN 13030 ("Init7").
-# Swiss multiplay network (domestic ISP, webhosting, etc). Hacking and
-# brute-force attacks detected from here.
-# Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 5,970.
-# Updated: 2022.04.11
-
-2a02:168:2000:61::/64 Deny Attacks
-Origin: CH
-Profile: Domestic ISP;Multiplay;Tor endpoints here;Webhosting
-Tag: Init7
-
-
 # ASN 577 ("Bell Canada").
 # Canadian domestic ISP. Phishing, webapp attacks, spam, and probing for
 # vulnerabilities detected from here. Listing just the affected
@@ -1091,19 +1078,6 @@ Tag: Binariang Berhad
 Origin: IN
 Profile: Domestic ISP;Multiplay
 Tag: Ani Network Pvt Ltd
-
-
-# ASN 52510 ("MI INTERNET SPA").
-# Chilean domestic ISP. Brute-force, telnet, synflood, FTP, and SSH attacks,
-# port scans, hacking, and spam detected from here. Manually checked all
-# ranges; All ranges affected.
-# Stop Forum Spam (SFS) listings: 8.
-# Updated: 2022.04.15
-
-2803:5e40::/32 Deny Attacks
-Origin: CL
-Profile: Domestic ISP
-Tag: MI INTERNET SPA
 
 
 # ASN 10030 ("Celcom Axiata Berhad").

@@ -196,3 +196,5 @@
 [2023.03.25; Bug-fix; Maikuolan]: Non-blocked CAPTCHAs broken since v3.1; Fixed.
 
 [2023.03.25; Maikuolan]: Added the ability to include release notes for new versions to the updates page.
+
+[2023.03.25; Bug-fix; Maikuolan]: Some entries missing from the isLogFile event handler; Fixed.

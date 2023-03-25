@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Default event handlers (last modified: 2023.03.24).
+ * This file: Default event handlers (last modified: 2023.03.25).
  */
 
 /**
@@ -246,7 +246,13 @@ $this->Events->addHandler('isLogFile', function (): bool {
         $this->CIDRAM['LogPatterns'][] = $this->buildLogPattern($this->Configuration['logging']['serialised_log'], true);
     }
     if ($this->Configuration['logging']['error_log'] !== '') {
-        $this->CIDRAM['LogPatterns'][] = $this->buildLogPattern($this->Configuration['logging']['serialised_log'], true);
+        $this->CIDRAM['LogPatterns'][] = $this->buildLogPattern($this->Configuration['logging']['error_log'], true);
+    }
+    if ($this->Configuration['logging']['outbound_request_log'] !== '') {
+        $this->CIDRAM['LogPatterns'][] = $this->buildLogPattern($this->Configuration['logging']['outbound_request_log'], true);
+    }
+    if ($this->Configuration['logging']['report_log'] !== '') {
+        $this->CIDRAM['LogPatterns'][] = $this->buildLogPattern($this->Configuration['logging']['report_log'], true);
     }
     if ($this->Configuration['frontend']['frontend_log'] !== '') {
         $this->CIDRAM['LogPatterns'][] = $this->buildLogPattern($this->Configuration['frontend']['frontend_log'], true);

@@ -194,3 +194,5 @@
 [2023.03.24; Maikuolan]: Report logs now include the IP address of the report.
 
 [2023.03.25; Bug-fix; Maikuolan]: Non-blocked CAPTCHAs broken since v3.1; Fixed.
+
+[2023.03.25; Maikuolan]: Added the ability to include release notes for new versions to the updates page.

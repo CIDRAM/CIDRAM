@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods for updating CIDRAM components (last modified: 2023.03.23).
+ * This file: Methods for updating CIDRAM components (last modified: 2023.03.25).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -99,12 +99,29 @@ trait Updater
      */
     private function message(string $Message): void
     {
-        if (isset($this->FE['state_msg'])) {
-            if ($Try = $this->L10N->getString($Message)) {
+        if (!isset($this->FE['state_msg'])) {
+            return;
+        }
+        if (($Try = $this->L10N->getString($Message)) !== '') {
+            $Message = $Try;
+        } elseif (($SPos = strpos($Message, ' ')) !== false) {
+            if (($Try = $this->L10N->getString(substr($Message, 0, $SPos))) !== '') {
+                $Params = substr($Message, $SPos + 1);
+                $FC = substr_count($Try, '%s');
+                if ($FC === 1) {
+                    $Try = sprintf($Try, $Params);
+                } elseif ($FC > 1) {
+                    $SC = substr_count($Params, ' ');
+                    if ($SC + 1 === $FC) {
+                        $Try = sprintf($Try, explode(' ', $Params));
+                    } elseif ($SC >= $FC) {
+                        $Try = sprintf($Try, ...explode(' ', $Params, $FC));
+                    }
+                }
                 $Message = $Try;
             }
-            $this->FE['state_msg'] .= $Message . '<br />';
         }
+        $this->FE['state_msg'] .= $Message . '<br />';
     }
 
     /**

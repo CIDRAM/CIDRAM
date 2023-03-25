@@ -192,3 +192,5 @@
 [2023.03.24; New Feature; Maikuolan]: Added the ability to log outbound requests (#445).
 
 [2023.03.24; Maikuolan]: Report logs now include the IP address of the report.
+
+[2023.03.25; Bug-fix; Maikuolan]: Non-blocked CAPTCHAs broken since v3.1; Fixed.

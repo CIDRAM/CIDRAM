@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2023.03.14).
+ * This file: Protect traits (last modified: 2023.03.25).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -707,10 +707,10 @@ trait Protect
                 /** Fallback for themes without default template files. */
                 if (
                     $this->CIDRAM['FieldTemplates']['theme'] !== 'default' &&
-                    !$this->CIDRAM['FieldTemplates']['css_url'] &&
+                    $this->CIDRAM['FieldTemplates']['css_url'] === '' &&
                     !file_exists($this->AssetsPath . $this->CIDRAM['template_file'])
                 ) {
-                    $this->CIDRAM['template_file'] = 'template_default.html';
+                    $this->CIDRAM['template_file'] = 'core/template_default.html';
                 }
 
                 /** Prepare to process "more info" entries, if any exist. */
@@ -915,7 +915,7 @@ trait Protect
                     ($this->Configuration['recaptcha']['usemode'] >= 3 && $this->Configuration['recaptcha']['usemode'] <= 5)
                 ) {
                     /** Execute the ReCaptcha class. */
-                    $CaptchaDone = new ReCaptcha($this->CIDRAM);
+                    $CaptchaDone = new ReCaptcha($this);
 
                     $this->CIDRAM['StatusCodeForNonBlocked'] = $this->Configuration['recaptcha']['nonblocked_status_code'];
                 } elseif (
@@ -925,7 +925,7 @@ trait Protect
                     ($this->Configuration['hcaptcha']['usemode'] >= 3 && $this->Configuration['hcaptcha']['usemode'] <= 5)
                 ) {
                     /** Execute the HCaptcha class. */
-                    $CaptchaDone = new HCaptcha($this->CIDRAM);
+                    $CaptchaDone = new HCaptcha($this);
 
                     $this->CIDRAM['StatusCodeForNonBlocked'] = $this->Configuration['hcaptcha']['nonblocked_status_code'];
                 }
@@ -964,7 +964,7 @@ trait Protect
                     /** Fallback for themes without CAPTCHA template files. */
                     if (
                         $this->CIDRAM['FieldTemplates']['theme'] !== 'default' &&
-                        !file_exists($this->Vault . $this->CIDRAM['CaptchaTemplateFile'])
+                        !file_exists($this->AssetsPath . 'core/' . $this->CIDRAM['CaptchaTemplateFile'])
                     ) {
                         $this->CIDRAM['CaptchaTemplateFile'] = 'captcha_default.html';
                     }
@@ -990,7 +990,7 @@ trait Protect
                     /** Generate HTML output. */
                     $HTML = $this->parseVars(
                         $this->CIDRAM['Parsables'],
-                        $this->readFile($this->Vault . $this->CIDRAM['CaptchaTemplateFile'])
+                        $this->readFile($this->AssetsPath . 'core/' . $this->CIDRAM['CaptchaTemplateFile'])
                     );
 
                     /** Final event before we exit. */

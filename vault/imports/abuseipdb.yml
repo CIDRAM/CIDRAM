@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: AbuseIPDB defaults file (last modified: 2022.10.25).
+# This file: AbuseIPDB defaults file (last modified: 2023.03.28).
 ##/
 
 Config Defaults:
@@ -50,6 +50,9 @@ Config Defaults:
   timeout_limit:
    type: "int"
    default: 12
+  timeout_rl:
+   type: "duration"
+   default: "24°0′0″"
   build_profiles_from_usage_type:
    type: "bool"
    default: true

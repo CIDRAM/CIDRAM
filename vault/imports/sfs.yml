@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Stop Forum Spam defaults file (last modified: 2022.05.26).
+# This file: Stop Forum Spam defaults file (last modified: 2023.03.28).
 ##/
 
 Config Defaults:
@@ -15,6 +15,9 @@ Config Defaults:
   timeout_limit:
    type: "int"
    default: 12
+  timeout_rl:
+   type: "duration"
+   default: "24°0′0″"
   offer_captcha:
    type: "bool"
    default: true

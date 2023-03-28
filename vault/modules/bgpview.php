@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: BGPView module (last modified: 2023.01.07).
+ * This file: BGPView module (last modified: 2023.03.28).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -86,7 +86,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
         if ($this->Request->MostRecentStatusCode !== 200) {
             /** Lookup limit has been exceeded. */
-            $this->Cache->setEntry('BGPView-429', true, 14400);
+            $this->Cache->setEntry('BGPView-429', true, $this->Configuration['bgpview']['timeout_rl']->getAsSeconds());
             $this->CIDRAM['BGPView-429'] = true;
             return;
         }

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: ip-api module (last modified: 2023.03.10).
+ * This file: ip-api module (last modified: 2023.03.28).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -79,7 +79,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
         if ($this->Request->MostRecentStatusCode !== 200) {
             /** Lookup limit has been exceeded. */
-            $this->Cache->setEntry('IPAPI-429', true, 14400);
+            $this->Cache->setEntry('IPAPI-429', true, $this->Configuration['ipapi']['timeout_rl']->getAsSeconds());
             $this->CIDRAM['IPAPI-429'] = true;
             return;
         }

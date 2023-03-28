@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: AbuseIPDB module (last modified: 2023.02.12).
+ * This file: AbuseIPDB module (last modified: 2023.03.28).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -85,7 +85,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
             if ($this->Request->MostRecentStatusCode === 429) {
                 /** Lookup limit has been exceeded. */
-                $this->Cache->setEntry('AbuseIPDB-429', true, 604800);
+                $this->Cache->setEntry('AbuseIPDB-429', true, $this->Configuration['abuseipdb']['timeout_rl']->getAsSeconds());
                 $this->CIDRAM['AbuseIPDB-429'] = true;
                 return;
             }

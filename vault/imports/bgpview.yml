@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: BGPView defaults file (last modified: 2022.05.27).
+# This file: BGPView defaults file (last modified: 2023.03.28).
 ##/
 
 Config Defaults:
@@ -27,3 +27,6 @@ Config Defaults:
   timeout_limit:
    type: "int"
    default: 12
+  timeout_rl:
+   type: "duration"
+   default: "4°0′0″"

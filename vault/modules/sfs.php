@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Stop Forum Spam module (last modified: 2022.06.06).
+ * This file: Stop Forum Spam module (last modified: 2023.03.28).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -76,7 +76,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
             if ($this->Request->MostRecentStatusCode === 429) {
                 /** Lookup limit has been exceeded. */
-                $this->Cache->setEntry('SFS-429', true, 604800);
+                $this->Cache->setEntry('SFS-429', true, $this->Configuration['sfs']['timeout_rl']->getAsSeconds());
                 $this->CIDRAM['SFS-429'] = true;
                 return;
             }

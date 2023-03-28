@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Project Honeypot module (last modified: 2023.02.01).
+ * This file: Project Honeypot module (last modified: 2023.03.28).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -99,7 +99,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
             if ($this->Request->MostRecentStatusCode === 429) {
                 /** Lookup limit has been exceeded. */
-                $this->Cache->setEntry('Project Honeypot-429', true, 604800);
+                $this->Cache->setEntry('Project Honeypot-429', true, $this->Configuration['projecthoneypot']['timeout_rl']->getAsSeconds());
                 $this->CIDRAM['Project Honeypot-429'] = true;
                 return;
             }

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Project Honeypot defaults file (last modified: 2023.02.01).
+# This file: Project Honeypot defaults file (last modified: 2023.03.28).
 ##/
 
 Config Defaults:
@@ -44,6 +44,9 @@ Config Defaults:
   timeout_limit:
    type: "int"
    default: 5
+  timeout_rl:
+   type: "duration"
+   default: "24°0′0″"
   type_of_visitor:
    type: "checkbox"
    default: |

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2023.03.24).
+# This file: Spanish language data for the front-end (last modified: 2023.03.28).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -159,9 +159,9 @@ config_legal_omit_ip: "Omitir direcciones IP de los archivos de registro? True =
 config_legal_omit_ua: "Omitir agentes de usuario de los archivos de registro? True = Sí; False = No [Predefinido]."
 config_legal_privacy_policy: "La dirección de una política de privacidad relevante que se mostrará en el pie de página de cualquier página generada. Especificar una URL, o dejar en blanco para desactivar."
 config_legal_pseudonymise_ip_addresses: "¿Seudonimizar las direcciones IP cuando al escribir archivos de registro? True = Sí [Predefinido]; False = No."
-config_rate_limiting: "Configuración para limitar la velocidad de acceso (no recomendado para uso general)."
+config_rate_limiting: "Configuración para limitar la tasa de acceso (no recomendado para uso general)."
 config_rate_limiting_allowance_period: "El número de horas para monitorear el uso. Predefinido = 0."
-config_rate_limiting_exceptions: "Excepciones (es decir, solicitudes que no deberían limitada). Relevante solo cuando la limitación de velocidad está habilitada."
+config_rate_limiting_exceptions: "Excepciones (es decir, solicitudes que no deberían limitada). Relevante solo cuando la limitación de tasa está habilitada."
 config_rate_limiting_max_bandwidth: "La cantidad máxima de ancho de banda permitida dentro del período de asignación antes de habilitar los límites de tarifas para solicitudes futuras. Un valor de 0 desactiva este tipo de limitación de la tarifa. Predefinido = 0KB."
 config_rate_limiting_max_requests: "El número máximo de solicitudes permitido dentro del período de asignación antes de habilitar los límites de tarifas para solicitudes futuras. Un valor de 0 desactiva este tipo de limitación de la tarifa. Predefinido = 0."
 config_rate_limiting_precision_ipv4: "La precisión a utilizar cuando se monitorea el uso de IPv4. El valor refleja el tamaño del bloque CIDR. Establecer en 32 para la mejor precisión. Predefinido = 32."
@@ -434,7 +434,7 @@ label_http_response_header_code_200: "200 OK\nValor por predefinido. Menos robus
 label_http_response_header_code_403: "403 Forbidden (Prohibido)\nUn poco más robusto, pero un poco menos fácil de usar. Recomendado para la mayoría de las circunstancias generales."
 label_http_response_header_code_410: "410 Gone (Ido)\nPodría causar problemas a la hora de resolver falsos positivos, ya que algunos navegadores almacenan en caché este mensaje de estado y no envían solicitudes posteriores, incluso después de haber sido desbloqueados. Puede ser el más preferible en algunos contextos, para ciertos tipos de tráfico."
 label_http_response_header_code_418: "418 I'm a teapot (Soy una tetera)\nHace referencia a una broma del Día de los Inocentes ({{Links.RFC2324}}). Es muy poco probable que cualquier cliente, bot, navegador, u otro lo entiendará. Provisto por diversión y conveniencia, pero generalmente no recomendado."
-label_http_response_header_code_429: "429 Too Many Requests (Demasiadas solicitudes)\nRecomendado para limitar la velocidad, cuando se trata de ataques DDoS, y para la prevención de inundaciones. No recomendado en otros contextos."
+label_http_response_header_code_429: "429 Too Many Requests (Demasiadas solicitudes)\nRecomendado para la limitación de tasa, cuando se trata de ataques DDoS, y para la prevención de inundaciones. No recomendado en otros contextos."
 label_http_response_header_code_451: "451 Unavailable For Legal Reasons (No disponible por razones legales)\nRecomendado cuando se bloquea principalmente por razones legales. No recomendado en otros contextos."
 label_http_response_header_code_503: "503 Service Unavailable (Servicio no disponible)\nMás robusto, pero menos fácil de usar. Recomendado para cuando está bajo ataque, o para cuando se trata de tráfico no deseado extremadamente persistente."
 label_ignore: "Ignora esto"
@@ -515,7 +515,7 @@ link_logs: "Archivos de registro"
 link_range: "Tablas de rango"
 link_range_intersector: "Intersector de rango"
 link_range_subtractor: "Sustractor de rango"
-link_rate_limiting: "Limitación de velocidad"
+link_rate_limiting: "Limitación de tasa"
 link_sections_list: "Lista de secciones"
 link_statistics: "Estadística"
 link_updates: "Actualizaciones"
@@ -718,8 +718,8 @@ tip_number_of_infractions: "Cuantas infracciones incurrir."
 tip_range: "Hola, {username}.<br />Esta página muestra información estadística básica sobre los rangos de IP cubiertos por los archivos de firma actualmente activos."
 tip_range_intersector: "Hola, {username}.<br />El intersector de rangos se puede utilizar para determinar los factores comunes de dos conjuntos de rangos."
 tip_range_subtractor: "Hola, {username}.<br />El sustractor de rango se puede usar para restar un rango de IP/CIDR de otro."
-tip_rate_limiting: "Hola, {username}.<br />Esta página muestra el uso y la disponibilidad actual de la cuota con respecto a la limitación de velocidad."
-tip_rate_limiting_disabled: "Nota: La limitación de velocidad está actualmente deshabilitada, pero se puede habilitar a través de la página de configuración."
+tip_rate_limiting: "Hola, {username}.<br />Esta página muestra el uso y la disponibilidad actual de la cuota con respecto a la limitación de tasa."
+tip_rate_limiting_disabled: "Nota: La limitación de tasa está actualmente deshabilitada, pero se puede habilitar a través de la página de configuración."
 tip_sections_list: "Hola, {username}.<br />Esta página enumera qué secciones existen en los archivos de firma actualmente activos."
 tip_see_the_documentation: "Ver la <a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.es.md\#user-content-SECTION6" hreflang="es" rel="noopener external">documentación</a> para obtener información sobre las distintas directivas de la configuración y sus propósitos."
 tip_statistics: "Hola, {username}.<br />Esta página muestra algunas estadísticas de uso básicas relacionadas con la instalación de CIDRAM."

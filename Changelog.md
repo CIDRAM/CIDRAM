@@ -198,3 +198,5 @@
 [2023.03.25; Maikuolan]: Added the ability to include release notes for new versions to the updates page.
 
 [2023.03.25; Bug-fix; Maikuolan]: Some entries missing from the isLogFile event handler; Fixed.
+
+[2023.03.31; Maikuolan]: Eliminated a low-risk potential performance bottleneck at the loadL10N method.

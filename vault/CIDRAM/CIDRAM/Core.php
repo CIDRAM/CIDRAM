@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2023.03.24).
+ * This file: The CIDRAM core (last modified: 2023.03.31).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -2854,7 +2854,7 @@ class Core
                 $this->ClientL10N = &$this->L10N;
             }
         } else {
-            $Try = explode(',', $_SERVER['HTTP_ACCEPT_LANGUAGE']);
+            $Try = explode(',', $_SERVER['HTTP_ACCEPT_LANGUAGE'], 20);
             foreach ($Try as $Accepted) {
                 $Accepted = preg_replace(['~;.*$~', '~[^-A-Za-z]~'], '', $Accepted);
                 $ForAutoAssign = $Accepted;

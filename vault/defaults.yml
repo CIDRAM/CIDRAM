@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2023.03.30).
+# This file: Defaults file (last modified: 2023.04.01).
 ##/
 
 Config Defaults:
@@ -305,10 +305,10 @@ Config Defaults:
    type: "string"
    default: "en"
    choices:
-    en: "English"
     ar: "العربية"
     bn: "বাংলা"
     de: "Deutsch"
+    en: "English"
     es: "Español"
     fa: "فارسی"
     fr: "Français"
@@ -335,6 +335,42 @@ Config Defaults:
     zh: "中文（简体）"
     zh-TW: "中文（傳統）"
    choice_filter: "filterL10N"
+   defer:
+    en-GB: "en-AU"
+    en-NZ: "en-AU"
+    en-SG: "en-AU"
+    en-ZA: "en-AU"
+    zh-HK: "zh-TW"
+    zh-MO: "zh-TW"
+    zh-SG: "zh-CN"
+   assume:
+    bn: "bn-BD"
+    de: "de-DE"
+    en: "en-AU"
+    es: "es-ES"
+    fa: "fa-IR"
+    fr: "fr-FR"
+    he: "he-IL"
+    hi: "hi-IN"
+    id: "id-ID"
+    it: "it-IT"
+    ja: "ja-JP"
+    ko: "ko-KR"
+    lv: "lv-LV"
+    ms: "ms-MY"
+    nl: "nl-NL"
+    no: "no-NO"
+    pl: "pl-PL"
+    pt: "pt-PT"
+    ru: "ru-RU"
+    sv: "sv-SE"
+    ta: "ta-IN"
+    th: "th-TH"
+    tr: "tr-TR"
+    uk: "uk-UA"
+    ur: "ur-PK"
+    vi: "vi-VN"
+    zh: "zh-CN"
   lang_override:
    type: "bool"
    default: true

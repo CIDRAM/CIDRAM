@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2023.03.31).
+ * This file: The CIDRAM core (last modified: 2023.04.01).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -82,6 +82,11 @@ class Core
      * @var \Maikuolan\Common\L10N An object for handling configuration-defined L10N data.
      */
     public $L10N;
+
+    /**
+     * @var string Which configuration-defined language was accepted by CIDRAM.
+     */
+    public $L10NAccepted = '';
 
     /**
      * @var \Maikuolan\Common\L10N An object for handling client-defined L10N data.
@@ -2816,14 +2821,19 @@ class Core
             $Primary = $this->readFile($Path . $this->Configuration['general']['lang'] . '.yml');
             $Fallback = $this->readFile($Path . 'en.yml');
         }
-        if (strlen($Primary)) {
+        if ($Primary !== '') {
+            $Accepted = $this->CIDRAM['Config Defaults']['general']['lang']['assume'][$this->Configuration['general']['lang']] ?? $this->Configuration['general']['lang'];
             $Arr = [];
             $this->YAML->process($Primary, $Arr);
             $Primary = $Arr;
         } else {
+            $Accepted = '';
             $Primary = [];
         }
-        if (strlen($Fallback)) {
+        if ($this->L10NAccepted === '' && $Accepted !== '') {
+            $this->L10NAccepted = $Accepted;
+        }
+        if ($Fallback !== '') {
             $Arr = [];
             $this->YAML->process($Fallback, $Arr);
             $Fallback = $Arr;
@@ -2842,9 +2852,9 @@ class Core
         } else {
             $this->L10N = new \Maikuolan\Common\L10N($Primary, $Fallback);
             if ($this->Configuration['general']['lang'] === 'en') {
-                $this->L10N->autoAssignRules('en');
+                $this->L10N->autoAssignRules('en-AU');
             } else {
-                $this->L10N->autoAssignRules($this->Configuration['general']['lang'], 'en');
+                $this->L10N->autoAssignRules($this->L10NAccepted, 'en-AU');
             }
         }
 
@@ -2860,9 +2870,19 @@ class Core
                 $ForAutoAssign = $Accepted;
                 $Primary = '';
                 $IsSameAs = false;
-                if ($this->Configuration['general']['lang'] === $Accepted) {
+                if ($this->L10NAccepted === $Accepted) {
                     $IsSameAs = true;
                     break;
+                }
+                if (isset($this->CIDRAM['Config Defaults']['general']['lang']['defer'][$Accepted])) {
+                    if ($this->L10NAccepted === $this->CIDRAM['Config Defaults']['general']['lang']['defer'][$Accepted]) {
+                        $IsSameAs = true;
+                        break;
+                    }
+                    if (is_readable($Path . $this->CIDRAM['Config Defaults']['general']['lang']['defer'][$Accepted] . '.yml')) {
+                        $Primary = $this->readFile($Path . $this->CIDRAM['Config Defaults']['general']['lang']['defer'][$Accepted] . '.yml');
+                        break;
+                    }
                 }
                 if (is_readable($Path . $Accepted . '.yml')) {
                     $Primary = $this->readFile($Path . $Accepted . '.yml');
@@ -2870,10 +2890,15 @@ class Core
                 }
                 $Accepted = strtolower(preg_replace('~-.*$~', '', $Accepted));
                 if ($this->Configuration['general']['lang'] === $Accepted) {
+                    $Accepted = $this->L10NAccepted;
                     $IsSameAs = true;
                     break;
                 }
                 if (is_readable($Path . $Accepted . '.yml')) {
+                    if (isset($this->CIDRAM['Config Defaults']['general']['lang']['assume'][$Accepted])) {
+                        $Accepted = $this->CIDRAM['Config Defaults']['general']['lang']['assume'][$Accepted];
+                        $ForAutoAssign = $Accepted;
+                    }
                     $Primary = $this->readFile($Path . $Accepted . '.yml');
                     break;
                 }
@@ -2886,7 +2911,7 @@ class Core
                 }
             } elseif ($Primary !== '') {
                 $Arr = [];
-                if ($this->ClientL10NAccepted === '') {
+                if ($this->ClientL10NAccepted === '' && $Accepted !== '') {
                     $this->ClientL10NAccepted = $Accepted;
                 }
                 $this->YAML->process($Primary, $Arr);
@@ -2898,12 +2923,13 @@ class Core
                 }
             } elseif (!($this->ClientL10N instanceof \Maikuolan\Common\L10N)) {
                 $this->ClientL10N = new \Maikuolan\Common\L10N([], $this->L10N);
+                $this->ClientL10N->autoAssignRules($ForAutoAssign);
             }
         }
 
         /** Fallback for missing accepted client L10N choice. */
         if ($this->ClientL10NAccepted === '') {
-            $this->ClientL10NAccepted = $this->Configuration['general']['lang'];
+            $this->ClientL10NAccepted = $this->L10NAccepted;
         }
     }
 

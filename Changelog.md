@@ -200,3 +200,5 @@
 [2023.03.25; Bug-fix; Maikuolan]: Some entries missing from the isLogFile event handler; Fixed.
 
 [2023.03.31; Maikuolan]: Eliminated a low-risk potential performance bottleneck at the loadL10N method.
+
+[2023.04.01; Maikuolan]: Reworked the loadL10N method, how it handles HTTP_ACCEPT_LANGUAGE, improved rule assignment, added some assumptions for supported L10N, and added the ability to defer non-supported L10N to supported L10N where sufficiently similar to be acceptable.

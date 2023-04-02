@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2023.03.25).
+ * This file: Protect traits (last modified: 2023.04.01).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -23,10 +23,10 @@ trait Protect
     public function protect()
     {
         /** Attach client-accepted L10N declaration. */
-        $this->CIDRAM['L10N-Lang-Attache'] = $this->Configuration['general']['lang'] === $this->ClientL10NAccepted ? '' : sprintf(
+        $this->CIDRAM['L10N-Lang-Attache'] = $this->L10NAccepted === $this->ClientL10NAccepted ? '' : sprintf(
             ' lang="%s" dir="%s"',
             $this->ClientL10NAccepted,
-            $this->ClientL10N->Data['Text Direction'] ?? 'ltr'
+            $this->ClientL10N->Directionality
         );
 
         /** Initialise stages. */
@@ -90,7 +90,7 @@ trait Protect
             'Request_Method' => $_SERVER['REQUEST_METHOD'] ?? '',
             'Protocol' => $_SERVER['SERVER_PROTOCOL'] ?? '',
             'Inspection' => '',
-            'xmlLang' => $this->Configuration['general']['lang']
+            'xmlLang' => $this->L10NAccepted
         ];
         if (isset($this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']])) {
             $this->BlockInfo['Infractions'] = $this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']];
@@ -622,11 +622,12 @@ trait Protect
         $this->Stage = '';
 
         /** A fix for correctly displaying LTR/RTL text. */
-        if ($this->L10N->getString('Text Direction') !== 'rtl') {
+        if ($this->L10N->Directionality !== 'rtl') {
             $this->L10N->Data['Text Direction'] = 'ltr';
             $this->CIDRAM['FieldTemplates']['textBlockAlign'] = 'text-align:left;';
             $this->CIDRAM['FieldTemplates']['textBlockFloat'] = '';
         } else {
+            $this->L10N->Data['Text Direction'] = 'rtl';
             $this->CIDRAM['FieldTemplates']['textBlockAlign'] = 'text-align:right;';
             $this->CIDRAM['FieldTemplates']['textBlockFloat'] = 'float:right;';
         }

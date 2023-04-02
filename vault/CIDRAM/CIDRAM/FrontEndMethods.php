@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2023.03.09).
+ * This file: General methods used by the front-end (last modified: 2023.04.01).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -833,14 +833,8 @@ trait FrontEndMethods
      */
     private function ltrInRtf(string $String = ''): string
     {
-        /** Get direction. */
-        $Direction = (
-            !isset($this->L10N->Data['Text Direction']) ||
-            $this->L10N->Data['Text Direction'] !== 'rtl'
-        ) ? 'ltr' : 'rtl';
-
         /** If the page isn't RTL, the string should be returned verbatim. */
-        if ($Direction !== 'rtl') {
+        if ($this->L10N->Directionality !== 'rtl') {
             return $String;
         }
 

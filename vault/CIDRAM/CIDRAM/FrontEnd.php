@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.03.15).
+ * This file: The CIDRAM front-end (last modified: 2023.04.01).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -110,7 +110,7 @@ class FrontEnd extends Core
             'DefaultPassword' => '$2y$10$FPF5Im9MELEvF5AYuuRMSO.QKoYVpsiu1YU9aDClgrU57XtLof/dK',
 
             /** Current default language. */
-            'FE_Lang' => $this->Configuration['general']['lang'],
+            'FE_Lang' => $this->L10NAccepted,
 
             /** Font magnification. */
             'magnification' => $this->Configuration['frontend']['magnification'],
@@ -321,7 +321,7 @@ class FrontEnd extends Core
             'ut(function(t){t.classList.toggle("caret-up")},200,this)});</script>';
 
         /** A fix for correctly displaying LTR/RTL text. */
-        if (empty($this->L10N->Data['Text Direction']) || $this->L10N->Data['Text Direction'] !== 'rtl') {
+        if ($this->L10N->Directionality !== 'rtl') {
             $this->L10N->Data['Text Direction'] = 'ltr';
             $this->FE['FE_Align'] = 'left';
             $this->FE['FE_Align_Reverse'] = 'right';
@@ -330,6 +330,7 @@ class FrontEnd extends Core
             $this->FE['45deg'] = '45deg';
             $this->FE['90deg'] = '90deg';
         } else {
+            $this->L10N->Data['Text Direction'] = 'rtl';
             $this->FE['FE_Align'] = 'right';
             $this->FE['FE_Align_Reverse'] = 'left';
             $this->FE['FE_Align_Mode'] = 'rl';
@@ -4729,7 +4730,7 @@ class FrontEnd extends Core
                 /** Priority information about auxiliary rules. */
                 $this->FE['Priority_Aux'] = sprintf(
                     '%2$s%1$s%8$s%1$s(%9$s🔄%3$s🔄%4$s🔄%5$s🔄%6$s)%1$s%7$s',
-                    $this->L10N->Data['Text Direction'] !== 'rtl' ? '➡' : '⬅',
+                    $this->L10N->Directionality !== 'rtl' ? '➡' : '⬅',
                     $this->L10N->getString('label_aux_actWhl'),
                     $this->L10N->getString('label_aux_actGrl'),
                     $this->L10N->getString('label_aux_actBlk'),
@@ -4743,7 +4744,7 @@ class FrontEnd extends Core
                 /** Priority information about status codes. */
                 $this->FE['Priority_Status_Codes'] = sprintf(
                     '%2$s%1$s%3$s%1$s%4$s%1$s%5$s%1$s%6$s%1$s%7$s%1$s%8$s%1$s%9$s',
-                    $this->L10N->Data['Text Direction'] !== 'rtl' ? '➡' : '⬅',
+                    $this->L10N->Directionality !== 'rtl' ? '➡' : '⬅',
                     '<code dir="ltr">silent_mode(301)</code>',
                     '<code dir="ltr">ban_override(4xx🔄5xx)</code>',
                     '<code dir="ltr">rate_limiting(429)</code>',

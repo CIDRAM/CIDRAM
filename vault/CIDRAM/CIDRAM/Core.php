@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2023.04.01).
+ * This file: The CIDRAM core (last modified: 2023.04.02).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1684,7 +1684,7 @@ class Core
         }
         $Before = $this->BlockInfo['SignatureCount'];
         $this->xVerification('Search Engine Verification', true);
-        if (isset($this->Stages['SearchEngineVerification:Tracking']) && $this->BlockInfo['SignatureCount'] > $Before) {
+        if (isset($this->Stages['SearchEngineVerification:Tracking']) && $this->BlockInfo['SignatureCount'] !== $Before) {
             $this->BlockInfo['Infractions'] += $this->BlockInfo['SignatureCount'] - $Before;
         }
     }
@@ -1705,7 +1705,7 @@ class Core
         }
         $Before = $this->BlockInfo['SignatureCount'];
         $this->xVerification('Social Media Verification', false);
-        if (isset($this->Stages['SocialMediaVerification:Tracking']) && $this->BlockInfo['SignatureCount'] > $Before) {
+        if (isset($this->Stages['SocialMediaVerification:Tracking']) && $this->BlockInfo['SignatureCount'] !== $Before) {
             $this->BlockInfo['Infractions'] += $this->BlockInfo['SignatureCount'] - $Before;
         }
     }
@@ -1726,7 +1726,7 @@ class Core
         }
         $Before = $this->BlockInfo['SignatureCount'];
         $this->xVerification('Other Verification', false);
-        if (isset($this->Stages['OtherVerification:Tracking']) && $this->BlockInfo['SignatureCount'] > $Before) {
+        if (isset($this->Stages['OtherVerification:Tracking']) && $this->BlockInfo['SignatureCount'] !== $Before) {
             $this->BlockInfo['Infractions'] += $this->BlockInfo['SignatureCount'] - $Before;
         }
     }

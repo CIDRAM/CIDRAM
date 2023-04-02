@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2023.04.01).
+ * This file: Protect traits (last modified: 2023.04.02).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -234,7 +234,7 @@ trait Protect
                 } else {
                     require $this->ModulesPath . $Module;
                 }
-                if (isset($this->Stages['Modules:Tracking']) && $this->BlockInfo['SignatureCount'] > $Before) {
+                if (isset($this->Stages['Modules:Tracking']) && $this->BlockInfo['SignatureCount'] !== $Before) {
                     $this->BlockInfo['Infractions'] += $this->BlockInfo['SignatureCount'] - $Before;
                 }
             });
@@ -273,7 +273,7 @@ trait Protect
             $Before = $this->BlockInfo['SignatureCount'];
             $this->Stage = 'Aux';
             $this->aux();
-            if (isset($this->Stages['Aux:Tracking']) && $this->BlockInfo['SignatureCount'] > $Before) {
+            if (isset($this->Stages['Aux:Tracking']) && $this->BlockInfo['SignatureCount'] !== $Before) {
                 $this->BlockInfo['Infractions'] += $this->BlockInfo['SignatureCount'] - $Before;
             }
             unset($Before);

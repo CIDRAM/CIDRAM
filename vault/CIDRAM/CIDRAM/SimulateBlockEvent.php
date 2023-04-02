@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used to simulate block events (last modified: 2023.04.01).
+ * This file: Methods used to simulate block events (last modified: 2023.04.02).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -157,7 +157,7 @@ trait SimulateBlockEvent
                 } elseif (file_exists($this->ModulesPath . $Module) && is_readable($this->ModulesPath . $Module)) {
                     require $this->ModulesPath . $Module;
                 }
-                if (isset($this->Stages['Modules:Tracking']) && $this->BlockInfo['SignatureCount'] > $Before) {
+                if (isset($this->Stages['Modules:Tracking']) && $this->BlockInfo['SignatureCount'] !== $Before) {
                     $this->BlockInfo['Infractions'] += $this->BlockInfo['SignatureCount'] - $Before;
                 }
             });
@@ -194,7 +194,7 @@ trait SimulateBlockEvent
             $this->initialiseErrorHandler();
             $Before = $this->BlockInfo['SignatureCount'];
             $this->aux();
-            if (isset($this->Stages['Aux:Tracking']) && $this->BlockInfo['SignatureCount'] > $Before) {
+            if (isset($this->Stages['Aux:Tracking']) && $this->BlockInfo['SignatureCount'] !== $Before) {
                 $this->BlockInfo['Infractions'] += $this->BlockInfo['SignatureCount'] - $Before;
             }
             $this->CIDRAM['AuxErrors'] = $this->CIDRAM['Errors'];

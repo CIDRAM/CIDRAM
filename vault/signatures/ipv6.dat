@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2023.83.0
-# Last modified: 2023.03.25
+# Version: 2023.91.0
+# Last modified: 2023.04.02
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -93,8 +93,8 @@ Tag: CST-NET
 
 
 # ASNs 46573, 397086, 400309 ("LayerHost").
-# Stop Forum Spam (SFS) listings: 877 (AS46573), 198 (AS397086).
-# Updated: 2022.11.23
+# Stop Forum Spam (SFS) listings: 3,935 (AS46573), 469 (AS397086).
+# Updated: 2022.11.23 / Checked: 2023.04.01
 
 2602:fdd3::/36 Deny Cloud
 Origin: CA
@@ -886,14 +886,13 @@ Tag: iWeb
 
 
 # ASNs 13926, 22781, 29713, 46253, 54203, 62651 ("Strong Technology, LLC").
-# Stop Forum Spam (SFS) listings: 614 (AS13926), 1,557 (AS22781), 12 (AS29713),
-# 78 (AS46253), 6,213 (AS54203), 6,089 (AS62651).
-# Updated: 2022.12.04
+# Stop Forum Spam (SFS) listings: 598 (AS13926), 1,547 (AS22781), 12 (AS29713),
+# 15 (AS46253), 13,773 (AS54203), 6,486 (AS62651).
+# Updated: 2023.04.02
 
 2404:5d80:6000::/39 Deny Cloud
 2404:5d80:6300::/40 Deny Cloud
 2404:5d80:6600::/40 Deny Cloud
-2404:5d80:6800::/40 Deny Cloud
 2404:5d80:7200::/40 Deny Cloud
 Origin: JP
 2604:4100::/36 Deny Cloud
@@ -912,7 +911,9 @@ Origin: JP
 2606:b300:9600::/40 Deny Cloud
 2606:b300:a000::/40 Deny Cloud
 2606:b300:a400::/40 Deny Cloud
+2606:b300:a800::/40 Deny Cloud
 2606:b300:ac00::/40 Deny Cloud
+2606:b300:b000::/40 Deny Cloud
 2607:fb50::/32 Deny Cloud
 2a03:efc0:200::/40 Deny Cloud
 2a03:efc0:500::/40 Deny Cloud
@@ -4802,12 +4803,13 @@ Profile: Commercial;Dedicated;Frequent changes;Infrastructure/Transit;Tor endpoi
 Tag: D.E.Tech
 
 
-# ASNs 29873, 30380, 46606, 49392, 51659, 62729, 394695, 398343 ("The
+# ASNs 26383, 29873, 46606, 49392, 51659, 394695, 398343 ("The
 # Endurance International Group, Inc").
 # See also: onlinetoolsexpert.com/full-list-of-eig-web-hosting-companies/
-# Updated: 2022.11.07
+# Updated: 2023.04.01
 
-2a00:b700::/46 Deny Cloud
+2a00:b700::/47 Deny Cloud
+2a00:b700:2::/48 Deny Cloud
 2a00:b700:4::/47 Deny Cloud
 2a00:b700:f::/48 Deny Cloud
 2a00:b701::/32 Deny Cloud
@@ -4822,7 +4824,10 @@ Tag: D.E.Tech
 2a0f:3106::/32 Deny Cloud
 2a0f:8445::/32 Deny Cloud
 Origin: RU
-2605:e440::/48 Deny Cloud
+2605:e440::/45 Deny Cloud
+2605:e440:8::/47 Deny Cloud
+2605:e440:12::/47 Deny Cloud
+2605:e440:14::/47 Deny Cloud
 2605:f300:ffff::/48 Deny Cloud
 Origin: US
 Profile: Frequent changes;Tor endpoints here;Webhosting
@@ -5734,10 +5739,11 @@ Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: 24 SHELLS
 
 
-# ASNs 12989, 20446, 33438 ("Highwinds Network Group, Inc").
-# IP transit, CDN, and colo provider; also a source of spam.
-# Stop Forum Spam (SFS) listings: 297 (AS12989), 16,326 (AS33438).
-# Updated: 2023.01.30
+# ASNs 12989, 18607, 20446, 33438 ("StackPath LLC").
+# Virtual server, webhosting, and cloud infrastructure provider. Brute-force,
+# webapp, phishing attacks, port scans, hacking, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 207 (AS12989), 11,369 (AS33438).
+# Updated: 2023.04.02
 
 2804:266c::/32 Deny Cloud
 Origin: BR
@@ -5778,7 +5784,8 @@ Origin: NL
 2407:1580:1100::/40 Deny Cloud
 2407:1580:1200::/39 Deny Cloud
 2407:1580:1400::/38 Deny Cloud
-2407:1580:1800::/39 Deny Cloud
+2407:1580:1800::/38 Deny Cloud
+2407:1580:1c00::/40 Deny Cloud
 2604:6840:ff::/48 Deny Cloud
 2604:6840:1200::/39 Deny Cloud
 2604:6840:1400::/38 Deny Cloud
@@ -5809,7 +5816,7 @@ Origin: NL
 2a10:1140::/29 Deny Cloud
 Origin: US
 Profile: Frequent changes;Infrastructure/Transit;Webhosting
-Tag: Highwinds
+Tag: StackPath LLC
 
 
 # ASN 62 ("CyrusOne LLC").
@@ -8766,13 +8773,12 @@ Tag: dogado GmbH
 # ASN 53356 ("Free Range Cloud Hosting Inc").
 # Subtract 44.0.0.0/9, 44.128.0.0/10 (clean).
 # Canadian cloud hosting network and a source of spam.
-# Stop Forum Spam (SFS) listings: 50.
-# Updated: 2022.09.21
+# Stop Forum Spam (SFS) listings: 23.
+# Updated: 2023.03.30
 
 2a0c:b641:493::/48 Deny Cloud
 Origin: BE
 2602:fc1c::/44 Deny Cloud
-2602:fc1c:10::/48 Deny Cloud
 2602:fc1c:fa0::/44 Deny Cloud
 2602:fed2::/48 Deny Cloud
 2602:fed2:3e9::/48 Deny Cloud
@@ -8781,9 +8787,7 @@ Origin: BE
 2602:fed2:fa0::/43 Deny Cloud
 2602:fed2:fc0::/44 Deny Cloud
 2602:fed2:fe0::/44 Deny Cloud
-2602:fed2:ff4::/48 Deny Cloud
 2602:fed2:4000::/36 Deny Cloud
-2602:fed2:7060::/44 Deny Cloud
 2602:fed2:7080::/48 Deny Cloud
 2602:fed2:7090::/44 Deny Cloud
 2602:fed2:7102::/48 Deny Cloud
@@ -8795,60 +8799,117 @@ Origin: BE
 2602:fed2:7118::/48 Deny Cloud
 2602:fed2:711c::/48 Deny Cloud
 2602:fed2:7121::/48 Deny Cloud
-2602:fed2:7122::/48 Deny Cloud
 2602:fed2:7128::/48 Deny Cloud
 2602:fed2:712d::/48 Deny Cloud
 2602:fed2:7181::/48 Deny Cloud
 2602:fed2:7182::/48 Deny Cloud
 2602:fed2:7184::/46 Deny Cloud
-2602:fed2:7189::/48 Deny Cloud
 2602:fed2:718b::/48 Deny Cloud
-2602:fed2:718c::/48 Deny Cloud
 2602:fed2:718e::/48 Deny Cloud
-2602:fed2:7190::/46 Deny Cloud
-2602:fed2:7194::/48 Deny Cloud
 2602:fed2:719a::/48 Deny Cloud
+2602:fed2:7200::/40 Deny Cloud
 2602:fed2:7305::/48 Deny Cloud
 2602:fed2:730a::/47 Deny Cloud
 2602:fed2:730c::/48 Deny Cloud
 2602:fed2:730f::/48 Deny Cloud
 2602:fed2:7311::/48 Deny Cloud
-2602:fed2:7314::/48 Deny Cloud
-2602:fed2:7316::/47 Deny Cloud
+2602:fed2:7316::/48 Deny Cloud
 2602:fed2:7319::/48 Deny Cloud
-2602:fed2:731a::/48 Deny Cloud
+2602:fed2:731a::/47 Deny Cloud
 2602:fed2:731e::/48 Deny Cloud
-2602:fed2:7600::/48 Deny Cloud
+2602:fed2:7600::/40 Deny Cloud
 2602:fed2:7700::/47 Deny Cloud
-2602:fed2:7706::/48 Deny Cloud
-2602:fed2:770a::/48 Deny Cloud
-2602:fed2:770c::/47 Deny Cloud
-2602:fed2:770f::/48 Deny Cloud
+2602:fed2:770c::/48 Deny Cloud
+2602:fed2:7e00::/48 Deny Cloud
+2602:fed2:7e80::/48 Deny Cloud
 Origin: CA
 2a0c:9a40:808c::/48 Deny Cloud
 Origin: CH
 2a0f:5707:ab2a::/48 Deny Cloud
 Origin: DE
 2a0f:9400:fa0::/43 Deny Cloud
-2a0f:9400:6100::/46 Deny Cloud
-2a0f:9400:6104::/48 Deny Cloud
+2a0f:9400:6102::/48 Deny Cloud
 2a0f:9400:6106::/48 Deny Cloud
-2a0f:9400:7382::/48 Deny Cloud
-2a0f:9400:7386::/47 Deny Cloud
-2a0f:9400:7388::/48 Deny Cloud
+2a0f:9400:6109::/48 Deny Cloud
+2a0f:9400:6118::/48 Deny Cloud
+2a0f:9400:6900::/47 Deny Cloud
+2a0f:9400:6920::/44 Deny Cloud
+2a0f:9400:7387::/48 Deny Cloud
 2a0f:9400:738c::/48 Deny Cloud
-2a0f:9400:770c::/48 Deny Cloud
-2a0f:9400:7719::/48 Deny Cloud
 2a0f:9400:7726::/48 Deny Cloud
-2a0f:9400:7728::/48 Deny Cloud
-2a0f:9400:772c::/48 Deny Cloud
+2a0f:9400:7728::/47 Deny Cloud
 2a0f:9400:772f::/48 Deny Cloud
-2a0f:9400:8024::/47 Deny Cloud
+2a0f:9400:8024::/48 Deny Cloud
+2a0f:9407:15::/48 Deny Cloud
+2a0f:9407:36::/48 Deny Cloud
+2a0f:9407:c7::/48 Deny Cloud
+2a0f:9407:129::/48 Deny Cloud
+2a0f:9407:179::/48 Deny Cloud
+2a0f:9407:1f1::/48 Deny Cloud
+2a0f:9407:233::/48 Deny Cloud
+2a0f:9407:3e9::/48 Deny Cloud
+2a0f:9407:408::/48 Deny Cloud
+2a0f:9407:50c::/48 Deny Cloud
+2a0f:9407:540::/48 Deny Cloud
+2a0f:9407:629::/48 Deny Cloud
+2a0f:9407:696::/48 Deny Cloud
+2a0f:9407:6ca::/48 Deny Cloud
+2a0f:9407:73d::/48 Deny Cloud
+2a0f:9407:75c::/48 Deny Cloud
+2a0f:9407:812::/48 Deny Cloud
+2a0f:9407:880::/48 Deny Cloud
+2a0f:9407:8c2::/48 Deny Cloud
+2a0f:9407:90f::/48 Deny Cloud
+2a0f:9407:a13::/48 Deny Cloud
+2a0f:9407:a2c::/48 Deny Cloud
+2a0f:9407:a5d::/48 Deny Cloud
+2a0f:9407:d2c::/48 Deny Cloud
+2a0f:9407:daa::/48 Deny Cloud
+2a0f:9407:e59::/48 Deny Cloud
+2a0f:9407:e88::/48 Deny Cloud
+2a0f:9407:eb5::/48 Deny Cloud
+2a0f:9407:f1d::/48 Deny Cloud
+2a0f:9407:3031::/48 Deny Cloud
+2a0f:9407:3187::/48 Deny Cloud
+2a0f:9407:33a4::/48 Deny Cloud
+2a0f:9407:342e::/48 Deny Cloud
+2a0f:9407:34ec::/48 Deny Cloud
+2a0f:9407:36e2::/48 Deny Cloud
+2a0f:9407:374e::/48 Deny Cloud
+2a0f:9407:3a3a::/48 Deny Cloud
+2a0f:9407:3a57::/48 Deny Cloud
+2a0f:9407:3c0a::/48 Deny Cloud
+2a0f:9407:3c74::/48 Deny Cloud
+2a0f:9407:3e63::/48 Deny Cloud
+2a0f:9407:3f09::/48 Deny Cloud
+2a0f:9407:3fd7::/48 Deny Cloud
+2a0f:9407:4214::/48 Deny Cloud
+2a0f:9407:608a::/48 Deny Cloud
+2a0f:9407:6275::/48 Deny Cloud
+2a0f:9407:66f7::/48 Deny Cloud
+2a0f:9407:6dc0::/48 Deny Cloud
+2a0f:9407:6e0c::/48 Deny Cloud
+2a0f:9407:7405::/48 Deny Cloud
+2a0f:9407:7991::/48 Deny Cloud
+2a0f:9407:7c47::/48 Deny Cloud
+2a0f:9407:7ca2::/48 Deny Cloud
+2a0f:9407:7daf::/48 Deny Cloud
+2a0f:9407:7fd5::/48 Deny Cloud
+2a0f:9407:802f::/48 Deny Cloud
+2a0f:9407:8a6a::/48 Deny Cloud
+2a0f:9407:9452::/48 Deny Cloud
+2a0f:9407:947e::/48 Deny Cloud
+2a0f:9407:967f::/48 Deny Cloud
+2a0f:9407:cf2b::/48 Deny Cloud
+2a0f:9407:e38b::/48 Deny Cloud
 Origin: GB
 2a0e:fd45:40ff::/48 Deny Cloud
 Origin: NL
-2602:fe13:802::/48 Deny Cloud
-2602:fe13:fa0::/44 Deny Cloud
+2602:fe13:fa0::/43 Deny Cloud
+2602:fe13:fc1::/48 Deny Cloud
+2602:fe13:fc2::/47 Deny Cloud
+2602:fe13:fc4::/46 Deny Cloud
+2602:fe13:fc8::/47 Deny Cloud
 2620:13a:c000::/40 Deny Cloud
 Origin: US
 Profile: Dedicated;Tor endpoints here;Webhosting
@@ -11452,6 +11513,36 @@ Tag: IP-Projects GmbH
 Origin: GB
 Profile: Webhosting
 Tag: SYN LTD
+
+
+# ASN 59895 ("Binary Racks Limited").
+# Port scans and hacking detected from here.
+# Updated: 2023.03.30
+
+2a05:300::/46 Deny Cloud
+Origin: GB
+Profile: Webhosting
+Tag: Binary Racks Limited
+
+
+# ASN 142594 ("SpeedyPage Ltd").
+# Brute-force, DDoS, WordPress/XMLRPC, and webapp attacks, port scans, hacking,
+# and spam detected from here.
+# Stop Forum Spam (SFS) listings: 5.
+# Updated: 2023.03.30
+
+2602:fed2:719b::/48 Deny Cloud
+Origin: CA
+2001:df7:1d80::/48 Deny Cloud
+Origin: GB
+2602:fd92:c90::/44 Deny Cloud
+2a06:a000:1d0::/44 Deny Cloud
+2a06:a005:108c::/48 Deny Cloud
+2a06:a005:16d0::/44 Deny Cloud
+2a06:a005:19e0::/44 Deny Cloud
+Origin: US
+Profile: Webhosting
+Tag: SpeedyPage Ltd
 
 
 # ---

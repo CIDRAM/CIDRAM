@@ -626,10 +626,14 @@ trait Protect
             $this->L10N->Data['Text Direction'] = 'ltr';
             $this->CIDRAM['FieldTemplates']['textBlockAlign'] = 'text-align:left;';
             $this->CIDRAM['FieldTemplates']['textBlockFloat'] = '';
+            $this->CIDRAM['FieldTemplates']['FE_Align'] = 'left';
+            $this->CIDRAM['FieldTemplates']['FE_Align_Reverse'] = 'right';
         } else {
             $this->L10N->Data['Text Direction'] = 'rtl';
             $this->CIDRAM['FieldTemplates']['textBlockAlign'] = 'text-align:right;';
             $this->CIDRAM['FieldTemplates']['textBlockFloat'] = 'float:right;';
+            $this->CIDRAM['FieldTemplates']['FE_Align'] = 'right';
+            $this->CIDRAM['FieldTemplates']['FE_Align_Reverse'] = 'left';
         }
 
         /** If any signatures were triggered, log it, generate output, then die. */

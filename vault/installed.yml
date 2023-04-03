@@ -1,6 +1,6 @@
 CIDRAM Core:
  Name: "CIDRAM Core"
- Version: "3.2.0-DEV+230911"
+ Version: "3.2.0-DEV+230920"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Front-End: "Latest"
@@ -55,7 +55,7 @@ CIDRAM Core:
    Checksum: "b62c0cf1deeb97c7ee15638f0a4102292a6bab6f0b6b1ee3a1dec7fa485c2e05:1352"
   defaults.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/defaults.yml"
-   Checksum: "6718d3ce3b4148defe4549b7ce3a78f67837b90cd5ebf4112697a2053b05eefd:34579"
+   Checksum: "5d10cb0c6eb0b5fd6620f7a9c35044733a450fe8bd690609f63fc11eedd114e7:34605"
   loader.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/loader.php"
    Checksum: "2024a633fae0edeff14119bd2308d9599a8651bd1fc877838e3901b72afffdc0:1312"
@@ -385,7 +385,7 @@ CIDRAM Front-End:
    Checksum: "9c0aad725cbf7e06280e7f1665d141118eb7610a5e92b5047eb27fe0cbcd9555:27701"
   CIDRAM/CIDRAM/Configuration.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Configuration.php"
-   Checksum: "d5999ccbbe0c2abeb10d56452fb791adb0515466d3f3aa537486b7c79d7178d0:3495"
+   Checksum: "43556eb23d3ea8e0bbae919b7727eb8e8eb7d4ed8c3056eb1af56e8eb0ca14da:4148"
   CIDRAM/CIDRAM/FrontEnd.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/FrontEnd.php"
    Checksum: "86bc8e058668e0aa8406067c69400d6156c007ee7b7795288e95b398bab1e877:322520"
@@ -577,12 +577,19 @@ l10n/core/de:
    Checksum: "f96585fbdf9ceba1d86fb75debe7979ecbabc8cab50c33ad18a603e200963c76:7525"
 l10n/core/en:
  Extended Description: "English localisation"
- Version: "2023.72.0"
+ Version: "2023.92.0"
  Uninstallable: false
  Files:
   l10n/core/en.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/en.yml"
-   Checksum: "d1b2307c82d593e30a460911c5db7c81cb9c65f57ffa1d8946b9586df7d1861c:6766"
+   Checksum: "fc27424e1122613ae573db5d92ad6406b4eee4e8f07ddd5e0abc59bf7ff32663:5791"
+l10n/core/en-US:
+ Extended Description: "English (US) localisation"
+ Version: "2023.92.0"
+ Files:
+  l10n/core/en-US.yml:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/en-US.yml"
+   Checksum: "80a1dabb2bfea85c52df2920d649b188f371cf262fd902bdbc41f2d5e13094f4:1339"
 l10n/core/es:
  Extended Description: "Localización en Español"
  Version: "2023.72.0"
@@ -781,12 +788,19 @@ l10n/frontend/de:
    Checksum: "b773c85e20cfde2d59c71c5cb2a7053a098884fccd27d161e5d4c12056c8f001:84289"
 l10n/frontend/en:
  Extended Description: "English localisation"
- Version: "2023.86.0"
+ Version: "2023.92.0"
  Uninstallable: false
  Files:
   l10n/frontend/en.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/en.yml"
-   Checksum: "48fe5ce23a21371e82d2472a35e6ae617fef4379cfaa7f6218dc0465a4649ef9:74087"
+   Checksum: "96200502374b40845386f4cd15a1a652ac8f4d2fea4a0942b36d47665dde0703:73126"
+l10n/frontend/en-US:
+ Extended Description: "English (US) localisation"
+ Version: "2023.92.0"
+ Files:
+  l10n/frontend/en-US.yml:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/en-US.yml"
+   Checksum: "8f64625a573aa399b2e2dcc654d52606544fc77fbb40f62c2c7ca878785e6ac0:9943"
 l10n/frontend/es:
  Extended Description: "Localización en Español"
  Version: "2023.86.0"
@@ -948,13 +962,6 @@ l10n/frontend/vi:
   l10n/frontend/vi.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/vi.yml"
    Checksum: "271279eec71bf30e1a06c64634ebbb329c35b8780745fb5666571f76d7ba8fc9:94018"
-l10n/frontend/zh-TW:
- Extended Description: "傳統中文本地化"
- Version: "2023.86.0"
- Files:
-  l10n/frontend/zh-TW.yml:
-   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/zh-TW.yml"
-   Checksum: "f5f1f95b46a4055a502c1e820a9e5a6e9be515b5e3d106def44d34641175886a:69335"
 l10n/frontend/zh:
  Extended Description: "简体中文本地化"
  Version: "2023.86.0"
@@ -962,6 +969,13 @@ l10n/frontend/zh:
   l10n/frontend/zh.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/zh.yml"
    Checksum: "841d05c1566e09773e411feb1d039dbcfada38532e5c05d4dd0020a6e00e3bce:69325"
+l10n/frontend/zh-TW:
+ Extended Description: "傳統中文本地化"
+ Version: "2023.86.0"
+ Files:
+  l10n/frontend/zh-TW.yml:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/zh-TW.yml"
+   Checksum: "f5f1f95b46a4055a502c1e820a9e5a6e9be515b5e3d106def44d34641175886a:69335"
 AbuseIPDB module:
  False Positive Risk: "Medium"
  Version: "2023.86.0"

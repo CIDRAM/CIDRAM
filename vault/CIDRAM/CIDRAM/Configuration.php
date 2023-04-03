@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used by the configuration page and configuration filters (last modified: 2022.08.11).
+ * This file: Methods used by the configuration page and configuration filters (last modified: 2023.04.03).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -95,6 +95,16 @@ trait Configuration
         foreach ($References as $Reference) {
             if (isset($this->L10N->Data[$Reference])) {
                 $Reference = $this->L10N->Data[$Reference];
+            } elseif (is_array($this->L10N->Fallback)) {
+                if (isset($this->L10N->Fallback[$Reference])) {
+                    $Reference = $this->L10N->Fallback[$Reference];
+                }
+            } elseif ($this->L10N->Fallback instanceof \Maikuolan\Common\L10N) {
+                if (isset($this->L10N->Fallback->Data[$Reference])) {
+                    $Reference = $this->L10N->Fallback->Data[$Reference];
+                } elseif (is_array($this->L10N->Fallback->Fallback) && isset($this->L10N->Fallback->Fallback[$Reference])) {
+                    $Reference = $this->L10N->Fallback->Fallback[$Reference];
+                }
             }
             if (!is_array($Reference)) {
                 $Reference = [$Reference];

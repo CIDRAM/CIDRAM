@@ -28,7 +28,7 @@ CIDRAM Core:
    Checksum: "8bfa4d8f80d7adef8670529cd229de10682a538ae139b9af972d2cfe803476e2:4843"
   CIDRAM/CIDRAM/Core.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Core.php"
-   Checksum: "67ce3343ec514f1cb16085ae94c8c988369acb4482832d5de9c8515ad747512b:127368"
+   Checksum: "73bada472eedcfdb0802b885e2c632d96aeb25fe6f76331a4d20661a867fdbab:127797"
   CIDRAM/CIDRAM/Duration.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Duration.php"
    Checksum: "f7ea95b8ef317359a166dcc4b228701b23702ede5e6df7dcf09ed8fe2a32d2ec:11666"
@@ -55,7 +55,7 @@ CIDRAM Core:
    Checksum: "b62c0cf1deeb97c7ee15638f0a4102292a6bab6f0b6b1ee3a1dec7fa485c2e05:1352"
   defaults.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/defaults.yml"
-   Checksum: "5d10cb0c6eb0b5fd6620f7a9c35044733a450fe8bd690609f63fc11eedd114e7:34605"
+   Checksum: "7b7681d6141f117e6ff2ab88c28e6e5277648af9b295b0eeabeb2fa27237d9ee:34616"
   loader.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/loader.php"
    Checksum: "2024a633fae0edeff14119bd2308d9599a8651bd1fc877838e3901b72afffdc0:1312"
@@ -64,7 +64,7 @@ CIDRAM Core:
    Checksum: "0464045b8ef60a043daa506e8b8159a2be0e542752d5b34b694bcf1b64f07411:7348"
 CIDRAM Front-End:
  Name: "CIDRAM Front-End"
- Version: "3.2.0-DEV+230911"
+ Version: "3.2.0-DEV+230920"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "Latest"
@@ -385,13 +385,13 @@ CIDRAM Front-End:
    Checksum: "9c0aad725cbf7e06280e7f1665d141118eb7610a5e92b5047eb27fe0cbcd9555:27701"
   CIDRAM/CIDRAM/Configuration.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Configuration.php"
-   Checksum: "43556eb23d3ea8e0bbae919b7727eb8e8eb7d4ed8c3056eb1af56e8eb0ca14da:4148"
+   Checksum: "9ad03db5d541589d57bcd9d5c5f563522bd1e826eeade239a3d0c8101db2e4b2:4126"
   CIDRAM/CIDRAM/FrontEnd.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/FrontEnd.php"
-   Checksum: "86bc8e058668e0aa8406067c69400d6156c007ee7b7795288e95b398bab1e877:322520"
+   Checksum: "c1a0b6059ebf9859b9e6eadb84ddf6320e9f36ceaa81fd6bbb01cd3d18ee563c:320250"
   CIDRAM/CIDRAM/FrontEndMethods.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/FrontEndMethods.php"
-   Checksum: "baba4155ffc5dcf7377f5ab7ff745155f7511123010fd1d7028cdf99d0d4addb:55986"
+   Checksum: "729993a310f6d3d5f9a74d9dfaff4f325ac4619be6e3cc41332fef39aa180045:55951"
   CIDRAM/CIDRAM/Logs.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Logs.php"
    Checksum: "5e0c38d90f82aa31da1e5c56e868a11f7c540c7c332b26c59191b1c625f9f61a:18081"
@@ -403,7 +403,7 @@ CIDRAM Front-End:
    Checksum: "35648aead4a75b52c48edd779cbbd7b482b1455fe6212e96c45b685fd1d9cb20:11008"
   CIDRAM/CIDRAM/Updater.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Updater.php"
-   Checksum: "85d63e0bdf781f63c78af220b3f1f5573d67348f7bdc90e73dc60390a4c82812:68657"
+   Checksum: "b8908709d65c48e31436b8b0b28734053afded034b49f378858ad39879fc1581:68647"
   macros.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/macros.yml"
    Checksum: "05461026927df4913773fa4d080d698921c94c946f9b8a1a6a9cd12f00f49358:3489"
@@ -576,7 +576,7 @@ l10n/core/de:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/de.yml"
    Checksum: "f96585fbdf9ceba1d86fb75debe7979ecbabc8cab50c33ad18a603e200963c76:7525"
 l10n/core/en:
- Extended Description: "English localisation"
+ Extended Description: "English (AU/GB/NZ) localisation"
  Version: "2023.92.0"
  Uninstallable: false
  Files:
@@ -787,7 +787,7 @@ l10n/frontend/de:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/de.yml"
    Checksum: "b773c85e20cfde2d59c71c5cb2a7053a098884fccd27d161e5d4c12056c8f001:84289"
 l10n/frontend/en:
- Extended Description: "English localisation"
+ Extended Description: "English (AU/GB/NZ) localisation"
  Version: "2023.92.0"
  Uninstallable: false
  Files:

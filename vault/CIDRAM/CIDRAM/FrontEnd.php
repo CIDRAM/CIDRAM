@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.04.01).
+ * This file: The CIDRAM front-end (last modified: 2023.04.03).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -347,7 +347,7 @@ class FrontEnd extends Core
         /** A simple passthru for the front-end CSS. */
         if ($this->CIDRAM['QueryVars']['cidram-page'] === 'css') {
             $this->eTaggable('frontend.css', function ($AssetData) {
-                return $this->embedAssets($this->parseVars($this->L10N->Data + $this->FE, $AssetData));
+                return $this->embedAssets($this->parseVars($this->FE, $AssetData, true));
             });
         }
 
@@ -618,16 +618,10 @@ class FrontEnd extends Core
 
             if ($this->FE['Permissions'] === 1) {
                 /** If the user has complete access. */
-                $this->FE['nav'] = $this->parseVars(
-                    $this->L10N->Data + $this->FE,
-                    $this->readFile($this->getAssetPath('_nav_complete_access.html'))
-                );
+                $this->FE['nav'] = $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_nav_complete_access.html')), true);
             } elseif ($this->FE['Permissions'] === 2) {
                 /** If the user has logs access only. */
-                $this->FE['nav'] = $this->parseVars(
-                    $this->L10N->Data + $this->FE,
-                    $this->readFile($this->getAssetPath('_nav_logs_access_only.html'))
-                );
+                $this->FE['nav'] = $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_nav_logs_access_only.html')), true);
             } else {
                 /** No valid navigation state. */
                 $this->FE['nav'] = '';
@@ -773,19 +767,13 @@ class FrontEnd extends Core
                 $this->FE['2fa_status_spacer'] = empty($this->FE['state_msg']) ? '' : '<br /><br />';
 
                 /** Show them the two-factor authentication page. */
-                $this->FE['FE_Content'] = $this->parseVars(
-                    $this->L10N->Data + $this->FE,
-                    $this->readFile($this->getAssetPath('_2fa.html'))
-                );
+                $this->FE['FE_Content'] = $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_2fa.html')), true);
             } else {
                 /** Omit the log out and home links. */
                 $this->FE['bNav'] = '';
 
                 /** Show them the login page. */
-                $this->FE['FE_Content'] = $this->parseVars(
-                    $this->L10N->Data + $this->FE,
-                    $this->readFile($this->getAssetPath('_login.html'))
-                );
+                $this->FE['FE_Content'] = $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_login.html')), true);
             }
 
             /** Send output. */
@@ -884,10 +872,7 @@ class FrontEnd extends Core
             );
 
             /** Parse output. */
-            $this->FE['FE_Content'] = $this->parseVars(
-                $this->L10N->Data + $this->FE,
-                $this->readFile($this->getAssetPath('_home.html'))
-            ) . $this->CIDRAM['MenuToggle'];
+            $this->FE['FE_Content'] = $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_home.html')), true) . $this->CIDRAM['MenuToggle'];
 
             /** Send output. */
             echo $this->sendOutput();
@@ -1068,10 +1053,7 @@ class FrontEnd extends Core
 
                     $this->CIDRAM['RowInfo']['AccID'] = bin2hex($this->CIDRAM['RowInfo']['AccUsername']);
                     $this->CIDRAM['RowInfo']['AccUsername'] = htmlentities($this->CIDRAM['RowInfo']['AccUsername']);
-                    $this->FE['Accounts'] .= $this->parseVars(
-                        $this->L10N->Data,
-                        $this->parseVars($this->CIDRAM['RowInfo'], $this->FE['AccountsRow'])
-                    );
+                    $this->FE['Accounts'] .= $this->parseVars($this->CIDRAM['RowInfo'], $this->FE['AccountsRow'], true);
                 }
                 unset($this->CIDRAM['RowInfo'], $this->CIDRAM['CatValues'], $CatKey, $this->FE['LI']);
             }
@@ -1081,10 +1063,7 @@ class FrontEnd extends Core
                 echo $this->FE['state_msg'];
             } else {
                 /** Parse output. */
-                $this->FE['FE_Content'] = $this->parseVars(
-                    $this->L10N->Data + $this->FE,
-                    $this->readFile($this->getAssetPath('_accounts.html'))
-                );
+                $this->FE['FE_Content'] = $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_accounts.html')), true);
 
                 /** Send output. */
                 echo $this->sendOutput();
@@ -1443,7 +1422,7 @@ class FrontEnd extends Core
                             $DirValue['gridH'] = ($DirValue['gridH']) === 'gridHB' ? 'gridHA' : 'gridHB';
                             $ChoiceValue = $this->timeFormat($this->Now, $ChoiceValue);
                             if (strpos($ChoiceValue, '{') !== false) {
-                                $ChoiceValue = $this->parseVars($this->L10N->Data, $ChoiceValue);
+                                $ChoiceValue = $this->parseVars([], $ChoiceValue, true);
                             }
                             $this->replaceLabelWithL10n($ChoiceValue);
                             if ($DirValue['type'] === 'checkbox') {
@@ -1732,7 +1711,7 @@ class FrontEnd extends Core
                             $ThisDir['FieldOut'] .= sprintf(
                                 '<li><a dir="ltr" href="%s">%s</a></li>',
                                 $DirValue['Ref link'],
-                                $this->L10N->Data[$DirValue['Ref key']] ?? $DirValue['Ref key']
+                                $this->L10N->getString($DirValue['Ref key']) ?: $DirValue['Ref key']
                             );
                         }
                         $ThisDir['FieldOut'] .= "\n</ul>";
@@ -1755,10 +1734,7 @@ class FrontEnd extends Core
                     }
 
                     /** Finalise configuration row. */
-                    $this->FE['ConfigFields'] .= $this->parseVars(
-                        $this->L10N->Data + $ThisDir,
-                        $this->FE['ConfigRow']
-                    );
+                    $this->FE['ConfigFields'] .= $this->parseVars($ThisDir, $this->FE['ConfigRow'], true);
 
                     /** Rebuilding in order to strip out orphaned data. */
                     if (isset($NewConfig)) {
@@ -1802,10 +1778,7 @@ class FrontEnd extends Core
             $this->FE['Indexes'] .= '</ul>';
 
             /** Parse output. */
-            $this->FE['FE_Content'] = $this->parseVars(
-                $this->L10N->Data + $this->FE,
-                $this->readFile($this->getAssetPath('_config.html'))
-            ) . $this->CIDRAM['MenuToggle'];
+            $this->FE['FE_Content'] = $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_config.html')), true) . $this->CIDRAM['MenuToggle'];
 
             /** Send output. */
             echo $this->sendOutput();
@@ -1873,10 +1846,7 @@ class FrontEnd extends Core
                 }
 
                 /** Parse output. */
-                $this->FE['FE_Content'] = $this->parseVars(
-                    $this->L10N->Data + $this->FE,
-                    $this->readFile($this->getAssetPath('_cache.html'))
-                ) . $this->CIDRAM['MenuToggle'];
+                $this->FE['FE_Content'] = $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_cache.html')), true) . $this->CIDRAM['MenuToggle'];
 
                 /** Send output. */
                 echo $this->sendOutput();
@@ -2392,8 +2362,9 @@ class FrontEnd extends Core
                         $this->Components['ThisComponent']['Name']
                     );
                     $this->Components['Out'][$this->Components['ThisComponent']['SortKey']] = $this->parseVars(
-                        $this->L10N->Data + $this->arrayFlatten($this->Components['ThisComponent']) + $this->arrayFlatten($this->FE),
-                        $this->FE['UpdatesRow']
+                        $this->arrayFlatten($this->Components['ThisComponent']) + $this->arrayFlatten($this->FE),
+                        $this->FE['UpdatesRow'],
+                        true
                     );
                 }
             }
@@ -2467,10 +2438,7 @@ class FrontEnd extends Core
             unset($MacrosData, $Key);
 
             /** Parse output. */
-            $this->FE['FE_Content'] = $this->parseVars(
-                $this->L10N->Data + $this->FE,
-                $this->readFile($this->getAssetPath('_updates.html'))
-            ) . $this->CIDRAM['MenuToggle'];
+            $this->FE['FE_Content'] = $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_updates.html')), true) . $this->CIDRAM['MenuToggle'];
 
             /** Process dependency installation triggers. */
             foreach ($this->Components['Install Together'] as $Key => $this->Components['ID']) {
@@ -2824,10 +2792,7 @@ class FrontEnd extends Core
             );
 
             /** Parse output. */
-            $this->FE['FE_Content'] = $this->parseVars(
-                $this->L10N->Data + $this->FE,
-                $this->readFile($this->getAssetPath('_backup.html'))
-            );
+            $this->FE['FE_Content'] = $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_backup.html')), true);
 
             /** Send output. */
             echo $this->sendOutput();
@@ -3014,10 +2979,7 @@ class FrontEnd extends Core
             }
 
             /** Parse output. */
-            $this->FE['FE_Content'] = $this->parseVars(
-                $this->L10N->Data + $this->FE,
-                $this->readFile($this->getAssetPath('_fixer.html'))
-            );
+            $this->FE['FE_Content'] = $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_fixer.html')), true);
 
             /** Send output. */
             echo $this->sendOutput();
@@ -3197,10 +3159,7 @@ class FrontEnd extends Core
                         $this->FE['filename'] = $_POST['filename'];
 
                         /** Parse output. */
-                        $this->FE['FE_Content'] = $this->parseVars(
-                            $this->L10N->Data + $this->FE,
-                            $this->readFile($this->getAssetPath('_files_rename.html'))
-                        );
+                        $this->FE['FE_Content'] = $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_files_rename.html')), true);
 
                         /** Send output. */
                         echo $this->sendOutput();
@@ -3249,10 +3208,7 @@ class FrontEnd extends Core
                         }
 
                         /** Parse output. */
-                        $this->FE['FE_Content'] = $this->parseVars(
-                            $this->L10N->Data + $this->FE,
-                            $this->readFile($this->getAssetPath('_files_edit.html'))
-                        );
+                        $this->FE['FE_Content'] = $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_files_edit.html')), true);
 
                         /** Send output. */
                         echo $this->sendOutput();
@@ -3274,10 +3230,7 @@ class FrontEnd extends Core
             $this->FE['FilesRow'] = $this->readFile($this->getAssetPath('_files_row.html'));
 
             /** Parse output. */
-            $this->FE['FE_Content'] = $this->parseVars(
-                $this->L10N->Data + $this->FE,
-                $this->readFile($this->getAssetPath('_files.html'))
-            );
+            $this->FE['FE_Content'] = $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_files.html')), true);
 
             /** Initialise files data variable. */
             $this->FE['FilesData'] = '';
@@ -3359,7 +3312,7 @@ class FrontEnd extends Core
                 $this->FE['DoughnutColours'] = '["' . implode('", "', $this->FE['DoughnutColours']) . '"]';
 
                 /** Finalise doughnut. */
-                $this->FE['Doughnut'] = $this->parseVars($this->L10N->Data + $this->FE, $DoughnutFile);
+                $this->FE['Doughnut'] = $this->parseVars($this->FE, $DoughnutFile, true);
             }
 
             /** Process files data. */
@@ -3381,10 +3334,7 @@ class FrontEnd extends Core
                         '<select name="do">' . $ThisFile['ThisOptions'] . '</select>' .
                         '<input type="submit" value="' . $this->L10N->getString('field_ok') . '" class="auto" />';
                 }
-                $this->FE['FilesData'] .= $this->parseVars(
-                    $this->L10N->Data + $this->FE + $ThisFile,
-                    $this->FE['FilesRow']
-                );
+                $this->FE['FilesData'] .= $this->parseVars($this->FE + $ThisFile, $this->FE['FilesRow'], true);
             });
 
             /** Total size. */
@@ -3534,10 +3484,7 @@ class FrontEnd extends Core
             );
 
             /** Parse output. */
-            $this->FE['FE_Content'] = $this->parseVars(
-                $this->L10N->Data + $this->FE,
-                $this->readFile($this->getAssetPath('_rl.html'))
-            );
+            $this->FE['FE_Content'] = $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_rl.html')), true);
 
             /** Send output. */
             echo $this->sendOutput();
@@ -3581,10 +3528,7 @@ class FrontEnd extends Core
                 ) . '</div><hr />' . $this->FE['Data'];
 
                 /** Parse output. */
-                $this->FE['FE_Content'] = $this->parseVars(
-                    $this->L10N->Data + $this->FE,
-                    $this->readFile($this->getAssetPath('_sections.html'))
-                );
+                $this->FE['FE_Content'] = $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_sections.html')), true);
 
                 /** Send output. */
                 echo $this->sendOutput();
@@ -3664,10 +3608,7 @@ class FrontEnd extends Core
             unset($this->FE['Matrix'], $this->FE['Matrix-Data']);
 
             /** Parse output. */
-            $this->FE['FE_Content'] = $this->parseVars(
-                $this->L10N->Data + $this->FE,
-                $this->readFile($this->getAssetPath('_range.html'))
-            );
+            $this->FE['FE_Content'] = $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_range.html')), true);
 
             /** Send output. */
             echo $this->sendOutput();
@@ -3733,10 +3674,7 @@ class FrontEnd extends Core
             );
 
             /** Parse output. */
-            $this->FE['FE_Content'] = $this->parseVars(
-                $this->L10N->Data + $this->FE,
-                $this->readFile($this->getAssetPath('_intersector.html'))
-            );
+            $this->FE['FE_Content'] = $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_intersector.html')));
 
             /** Strip output row if input doesn't exist. */
             if ($this->FE['Intersector_AB'] !== '') {
@@ -3813,10 +3751,7 @@ class FrontEnd extends Core
             );
 
             /** Parse output. */
-            $this->FE['FE_Content'] = $this->parseVars(
-                $this->L10N->Data + $this->FE,
-                $this->readFile($this->getAssetPath('_subtractor.html'))
-            );
+            $this->FE['FE_Content'] = $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_subtractor.html')), true);
 
             /** Strip output row if input doesn't exist. */
             if ($this->FE['Subtractor_AB'] !== '') {
@@ -3896,10 +3831,7 @@ class FrontEnd extends Core
             );
 
             /** Parse output. */
-            $this->FE['FE_Content'] = $this->parseVars(
-                $this->L10N->Data + $this->FE,
-                $this->readFile($this->getAssetPath('_aggregator.html'))
-            );
+            $this->FE['FE_Content'] = $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_aggregator.html')), true);
 
             /** Strip output row if input doesn't exist. */
             if ($this->FE['input']) {
@@ -4136,10 +4068,7 @@ class FrontEnd extends Core
                         str_replace('=', '_', base64_encode($this->CIDRAM['ThisIP']['IPAddress'])),
                         $this->CIDRAM['ThisIP']['IPAddress']
                     ) : $this->CIDRAM['ThisIP']['IPAddress'];
-                    $this->FE['IPTestResults'] .= $this->parseVars(
-                        $this->L10N->Data + $this->CIDRAM['ThisIP'],
-                        $this->FE['IPTestRow']
-                    );
+                    $this->FE['IPTestResults'] .= $this->parseVars($this->CIDRAM['ThisIP'], $this->FE['IPTestRow'], true);
                 }
                 unset($this->CIDRAM['ThisIP']);
             } else {
@@ -4154,10 +4083,7 @@ class FrontEnd extends Core
             );
 
             /** Parse output. */
-            $this->FE['FE_Content'] = $this->parseVars(
-                $this->L10N->Data + $this->FE,
-                $this->readFile($this->getAssetPath('_ip_test.html'))
-            );
+            $this->FE['FE_Content'] = $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_ip_test.html')), true);
 
             /** Send output. */
             echo $this->sendOutput();
@@ -4371,10 +4297,7 @@ class FrontEnd extends Core
                         unset($ThisTracking['Matches'], $ThisTracking['ThisMatch']);
                     }
                     $ThisTracking['ID'] = preg_replace('~[^\dA-Za-z]~', '_', $ThisTracking['IPAddr']);
-                    $this->FE['TrackingData'] .= $this->parseVars(
-                        $this->L10N->Data + $ThisTracking,
-                        $this->FE['TrackingRow']
-                    );
+                    $this->FE['TrackingData'] .= $this->parseVars($ThisTracking, $this->FE['TrackingRow'], true);
                 }
                 unset($ThisTrackingArray, $ThisTracking);
             }
@@ -4407,10 +4330,7 @@ class FrontEnd extends Core
                 echo $this->FE['state_msg'] . $this->FE['TrackingCount'];
             } else {
                 /** Parse output. */
-                $this->FE['FE_Content'] = $this->parseVars(
-                    $this->L10N->Data + $this->FE,
-                    $this->readFile($this->getAssetPath('_ip_tracking.html'))
-                );
+                $this->FE['FE_Content'] = $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_ip_tracking.html')), true);
 
                 /** Send output. */
                 echo $this->sendOutput();
@@ -4460,10 +4380,7 @@ class FrontEnd extends Core
             }
 
             /** Parse output. */
-            $this->FE['FE_Content'] = $this->parseVars($this->L10N->Data, $this->parseVars(
-                $this->FE,
-                $this->readFile($this->getAssetPath('_calculator.html'))
-            ));
+            $this->FE['FE_Content'] = $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_calculator.html')), true);
 
             /** Send output. */
             echo $this->sendOutput();
@@ -4554,10 +4471,7 @@ class FrontEnd extends Core
             }
 
             /** Parse output. */
-            $this->FE['FE_Content'] = $this->parseVars(
-                $this->L10N->Data + $this->FE,
-                $this->readFile($this->getAssetPath('_statistics.html'))
-            );
+            $this->FE['FE_Content'] = $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_statistics.html')), true);
 
             /** Send output. */
             echo $this->sendOutput();
@@ -4781,10 +4695,7 @@ class FrontEnd extends Core
                 );
 
                 /** Parse output. */
-                $this->FE['FE_Content'] = $this->parseVars(
-                    $this->L10N->Data + $this->FE,
-                    $this->readFile($this->getAssetPath('_aux.html'))
-                ) . $this->CIDRAM['MenuToggle'];
+                $this->FE['FE_Content'] = $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_aux.html')), true) . $this->CIDRAM['MenuToggle'];
 
                 /** Send output. */
                 echo $this->sendOutput();
@@ -4984,10 +4895,7 @@ class FrontEnd extends Core
             );
 
             /** Parse output. */
-            $this->FE['FE_Content'] = $this->parseVars(
-                $this->L10N->Data + $this->FE,
-                $this->readFile($this->getAssetPath('_aux_edit.html'))
-            ) . $this->CIDRAM['MenuToggle'];
+            $this->FE['FE_Content'] = $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_aux_edit.html')), true) . $this->CIDRAM['MenuToggle'];
 
             /** Send output. */
             echo $this->sendOutput();
@@ -4999,10 +4907,7 @@ class FrontEnd extends Core
             $this->initialPrepwork($this->L10N->getString('link_logs'), $this->L10N->getString('tip_logs'), false);
 
             /** Parse output. */
-            $this->FE['FE_Content'] = $this->parseVars(
-                $this->L10N->Data + $this->FE,
-                $this->readFile($this->getAssetPath('_logs.html'))
-            );
+            $this->FE['FE_Content'] = $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_logs.html')), true);
 
             /** Sort order */
             $this->FE['SortOrder'] = (empty($this->CIDRAM['QueryVars']['sortOrder']) || $this->CIDRAM['QueryVars']['sortOrder'] === 'ascending') ? 'ascending' : 'descending';

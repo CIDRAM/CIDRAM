@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2023.04.02).
+ * This file: The CIDRAM core (last modified: 2023.04.03).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -444,12 +444,20 @@ class Core
      *
      * @param array $Needles An array containing replacement values.
      * @param string $Haystack The string to work with.
+     * @param bool $L10N Whether to parse L10N placeholders found in the haystack.
      * @return string The string with its encapsulated substrings replaced.
      */
-    public function parseVars(array $Needles, string $Haystack): string
+    public function parseVars(array $Needles, string $Haystack = '', bool $L10N = false): string
     {
         if ($Haystack === '') {
             return '';
+        }
+        if ($L10N && preg_match_all('~\{([A-Za-z_ ]+)\}~', $Haystack, $Matches)) {
+            foreach ($Matches[1] as $Key) {
+                if (($Value = $this->L10N->getString($Key)) !== '') {
+                    $Haystack = str_replace('{' . $Key . '}', $Value, $Haystack);
+                }
+            }
         }
         foreach ($Needles as $Key => $Value) {
             if (!is_array($Value) && $Value !== null) {

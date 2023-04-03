@@ -73,8 +73,8 @@ trait Configuration
     private function replaceLabelWithL10n(string &$Label): void
     {
         foreach (['', 'response_', 'label_', 'field_'] as $Prefix) {
-            if (isset($this->L10N->Data[$Prefix . $Label])) {
-                $Label = $this->L10N->getString($Prefix . $Label);
+            if (($Try = $this->L10N->getString($Prefix . $Label)) !== '') {
+                $Label = $Try;
                 return;
             }
         }

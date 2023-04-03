@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods for updating CIDRAM components (last modified: 2023.04.01).
+ * This file: Methods for updating CIDRAM components (last modified: 2023.04.03).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -330,8 +330,8 @@ trait Updater
     private function prepareExtendedDescription(array &$Arr, string $Key = ''): void
     {
         $Key = 'Extended Description ' . $Key;
-        if (isset($this->L10N->Data[$Key])) {
-            $Arr['Extended Description'] = $this->L10N->getString($Key);
+        if (($Try = $this->L10N->getString($Key)) !== '') {
+            $Arr['Extended Description'] = $Try;
         } elseif (!isset($Arr['Extended Description'])) {
             $Arr['Extended Description'] = '';
         }

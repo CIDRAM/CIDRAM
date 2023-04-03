@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2023.04.01).
+ * This file: General methods used by the front-end (last modified: 2023.04.03).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -261,9 +261,9 @@ trait FrontEndMethods
     private function prepareName(array &$Arr, string $Key = ''): void
     {
         $Key = 'Name ' . $Key;
-        if (isset($this->L10N->Data[$Key])) {
-            $Arr['Name'] = $this->L10N->getString($Key);
-        } elseif (empty($Arr['Name'])) {
+        if (($Try = $this->L10N->getString($Key)) !== '') {
+            $Arr['Name'] = $Try;
+        } elseif (!isset($Arr['Name'])) {
             $Arr['Name'] = '';
         }
     }
@@ -589,7 +589,7 @@ trait FrontEndMethods
                 $Template = substr($Template, 0, $BPos) . substr($Template, $EPos + strlen($Segment) + 13);
             }
         }
-        return $this->embedAssets($this->parseVars(array_merge($this->L10N->Data, $this->FE), $Template));
+        return $this->embedAssets($this->parseVars($this->FE, $Template, true));
     }
 
     /**

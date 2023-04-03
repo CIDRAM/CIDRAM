@@ -452,7 +452,7 @@ class Core
         if ($Haystack === '') {
             return '';
         }
-        if ($L10N && preg_match_all('~\{([A-Za-z_ ]+)\}~', $Haystack, $Matches)) {
+        if ($L10N && preg_match_all('~\{([A-Za-z\d_ -]+)\}~', $Haystack, $Matches)) {
             foreach ($Matches[1] as $Key) {
                 if (($Value = $this->L10N->getString($Key)) !== '') {
                     $Haystack = str_replace('{' . $Key . '}', $Value, $Haystack);

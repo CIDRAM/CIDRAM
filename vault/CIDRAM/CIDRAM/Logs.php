@@ -75,6 +75,8 @@ trait Logs
                 $Section = substr($In, $Caret, $SectionLen) . $this->CIDRAM['BlockSeparator'];
                 $Caret += $SectionLen;
             }
+
+            /** Add code tags. */
             preg_match_all('~(&lt;\?(?:(?!&lt;\?)[^\n])+\?&gt;|<\?(?:(?!<\?)[^\n])+\?>|\{\?(?:(?!\{\?)[^\n])+\?\})~i', $Section, $Parts);
             foreach ($Parts[0] as $ThisPart) {
                 if (strlen($ThisPart) > 512 || strpos($ThisPart, "\n") !== false) {
@@ -82,8 +84,9 @@ trait Logs
                 }
                 $Section = str_replace($ThisPart, '<code>' . $ThisPart . '</code>', $Section);
             }
-            preg_match_all('~\n(- .*|(?!：)[^\n:]+)' . $FieldSeparator . '((?:(?!<br />)[^\n])+)~i', $Section, $Parts);
-            if (count($Parts[1])) {
+
+            /** Add label styles. */
+            if (preg_match_all('~\n(- .*|(?!：)[^\n:]+)' . $FieldSeparator . '((?:(?!<br />)[^\n])+)~i', $Section, $Parts) && count($Parts[1])) {
                 $Parts[1] = array_unique($Parts[1]);
                 foreach ($Parts[1] as $ThisPart) {
                     $Section = str_replace(
@@ -93,7 +96,9 @@ trait Logs
                     );
                 }
             }
-            if (count($Parts[2]) && $BlockSeparatorLen === 14) {
+
+            /** Fix bad encoding. */
+            if (isset($Parts[2]) && is_array($Parts[2]) && count($Parts[2]) && $BlockSeparatorLen === 14) {
                 $Parts[2] = array_unique($Parts[2]);
                 foreach ($Parts[2] as $ThisPart) {
                     $ThisPartUnsafe = str_replace(['&gt;', '&lt;'], ['>', '<'], $ThisPart);
@@ -117,25 +122,16 @@ trait Logs
                     );
                 }
             }
-            preg_match_all('~ - ((?!：)[^\n:-]+)' . $FieldSeparator . '(?!<br />)[^<> \n-]+~i', $Section, $Parts);
-            if (count($Parts[1])) {
-                $Parts[1] = array_unique($Parts[1]);
-                foreach ($Parts[1] as $ThisPart) {
-                    $Section = str_replace(
-                        ' - ' . $ThisPart . $FieldSeparator,
-                        ' - <span class="textLabel">' . $ThisPart . '</span>' . $FieldSeparator,
-                        $Section
-                    );
-                }
-            }
-            preg_match_all('~\n((?:<span class="textLabel">.*|(?!：)[^\n:]+)' . $FieldSeparator . '(?:(?!<br />)[^\n])+)~i', $Section, $Parts);
-            if (count($Parts[1])) {
+
+            /** Add pair styles. */
+            if (preg_match_all('~\n((?:<span class="textLabel">.*|(?!：)[^\n:]+)' . $FieldSeparator . '(?:(?!<br />)[^\n])+)~i', $Section, $Parts) && count($Parts[1])) {
                 foreach ($Parts[1] as $ThisPart) {
                     $Section = str_replace("\n" . $ThisPart . "<br />\n", "\n<span class=\"s\">" . $ThisPart . "</span><br />\n", $Section);
                 }
             }
-            preg_match_all('~\("([^()"]+)", L~', $Section, $Parts);
-            if (count($Parts[1])) {
+
+            /** Add signature section name search links. */
+            if (preg_match_all('~\("([^()"]+)", L~', $Section, $Parts) && count($Parts[1])) {
                 $Parts[1] = array_unique($Parts[1]);
                 foreach ($Parts[1] as $ThisPart) {
                     $Section = str_replace(
@@ -145,8 +141,9 @@ trait Logs
                     );
                 }
             }
-            preg_match_all('~\[([A-Z]{2})\]~', $Section, $Parts);
-            if (count($Parts[1])) {
+
+            /** Add country flags. */
+            if (preg_match_all('~\[([A-Z]{2})\]~', $Section, $Parts) && count($Parts[1])) {
                 if ($Flags) {
                     $OuterOpen = '';
                     $OuterClose = '';
@@ -166,6 +163,7 @@ trait Logs
                     );
                 }
             }
+
             $Out .= substr($Section, 0, $BlockSeparatorLen * -1);
         }
         $Out = substr($Out, 1);

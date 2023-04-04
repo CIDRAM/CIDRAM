@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2023.03.23).
+ * This file: Front-end functions file (last modified: 2023.04.04).
  */
 
 /**
@@ -1172,7 +1172,7 @@ $CIDRAM['Formatter'] = function (string &$In, string $BlockLink = '', string $Cu
     $BlockEnd = 0;
     while ($BlockEnd !== false) {
         $Darken = empty($Darken);
-        $Style = '<div class="h' . ($Darken ? 'B' : 'W') . ' hFd fW">';
+        $Style = '<div style="overflow:visible auto" class="h' . ($Darken ? 'B' : 'W') . ' hFd fW">';
         $BlockEnd = strpos($Out, $BlockSeparator, $BlockStart);
         $In[] = $Style . substr($Out, $BlockStart, $BlockEnd - $BlockStart + $BlockSeparatorLen) . '</div>';
         $BlockStart = $BlockEnd + $BlockSeparatorLen;

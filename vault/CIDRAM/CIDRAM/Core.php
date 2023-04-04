@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2023.04.03).
+ * This file: The CIDRAM core (last modified: 2023.04.04).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -453,7 +453,7 @@ class Core
             return '';
         }
         if ($L10N && preg_match_all('~\{([A-Za-z\d_ -]+)\}~', $Haystack, $Matches)) {
-            foreach ($Matches[1] as $Key) {
+            foreach (array_unique($Matches[1]) as $Key) {
                 if (($Value = $this->L10N->getString($Key)) !== '') {
                     $Haystack = str_replace('{' . $Key . '}', $Value, $Haystack);
                 }

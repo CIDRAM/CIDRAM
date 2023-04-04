@@ -97,7 +97,7 @@ trait Logs
                 }
             }
 
-            /** Fix bad encoding. */
+            /** Fix bad encoding and add block info search links. */
             if (isset($Parts[2]) && is_array($Parts[2]) && count($Parts[2]) && $BlockSeparatorLen === 14) {
                 $Parts[2] = array_unique($Parts[2]);
                 foreach ($Parts[2] as $ThisPart) {
@@ -122,6 +122,9 @@ trait Logs
                     );
                 }
             }
+
+            /** Make satisfied red. */
+            $Section = preg_replace('~(?<=' . $FieldSeparator . ')' . $this->L10N->getString('response_satisfied') . '(?=\n|<br />| <a href)~', '<span class="txtRd">' . $this->L10N->getString('response_satisfied') . '</span>', $Section);
 
             /** Add pair styles. */
             if (preg_match_all('~\n((?:<span class="textLabel">.*|(?!：)[^\n:]+)' . $FieldSeparator . '(?:(?!<br />)[^\n])+)~i', $Section, $Parts) && count($Parts[1])) {

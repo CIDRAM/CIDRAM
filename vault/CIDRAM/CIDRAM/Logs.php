@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used by the logs page (last modified: 2023.03.01).
+ * This file: Methods used by the logs page (last modified: 2023.04.04).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -82,7 +82,7 @@ trait Logs
                 }
                 $Section = str_replace($ThisPart, '<code>' . $ThisPart . '</code>', $Section);
             }
-            preg_match_all('~\n((?!：)[^\n:]+)' . $FieldSeparator . '((?:(?!<br />)[^\n])+)~i', $Section, $Parts);
+            preg_match_all('~\n(- .*|(?!：)[^\n:]+)' . $FieldSeparator . '((?:(?!<br />)[^\n])+)~i', $Section, $Parts);
             if (count($Parts[1])) {
                 $Parts[1] = array_unique($Parts[1]);
                 foreach ($Parts[1] as $ThisPart) {
@@ -128,7 +128,7 @@ trait Logs
                     );
                 }
             }
-            preg_match_all('~\n((?:(?!：)[^\n:]+)' . $FieldSeparator . '(?:(?!<br />)[^\n])+)~i', $Section, $Parts);
+            preg_match_all('~\n((?:<span class="textLabel">.*|(?!：)[^\n:]+)' . $FieldSeparator . '(?:(?!<br />)[^\n])+)~i', $Section, $Parts);
             if (count($Parts[1])) {
                 foreach ($Parts[1] as $ThisPart) {
                     $Section = str_replace("\n" . $ThisPart . "<br />\n", "\n<span class=\"s\">" . $ThisPart . "</span><br />\n", $Section);
@@ -174,7 +174,7 @@ trait Logs
         $BlockEnd = 0;
         while ($BlockEnd !== false) {
             $Darken = empty($Darken);
-            $Style = '<div class="h' . ($Darken ? 'B' : 'W') . ' hFd fW">';
+            $Style = '<div style="overflow:visible auto" class="h' . ($Darken ? 'B' : 'W') . ' hFd fW">';
             $BlockEnd = strpos($Out, $this->CIDRAM['BlockSeparator'], $BlockStart);
             $In[] = $Style . substr($Out, $BlockStart, $BlockEnd - $BlockStart + $BlockSeparatorLen) . '</div>';
             $BlockStart = $BlockEnd + $BlockSeparatorLen;

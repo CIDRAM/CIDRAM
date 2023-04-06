@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2023.04.04).
+ * This file: The CIDRAM core (last modified: 2023.04.06).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -719,7 +719,7 @@ class Core
                         $this->zeroOutBlockInfo();
                         break 2;
                     }
-                    if ($Category === 'Deny' && $Signature !== '') {
+                    if (($Category === 'Deny' || $RunExitCode === 1) && $Signature !== '') {
                         if (
                             isset($this->CIDRAM['Config Defaults']['signatures']['shorthand']['choices'][$Signature]) &&
                             !isset($this->CIDRAM['Config Defaults']['signatures']['shorthand']['nonsense'][$Signature . ':Profile'])

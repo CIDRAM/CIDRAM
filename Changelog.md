@@ -181,7 +181,7 @@
 
 [2023.03.13; Bug-fix; Maikuolan]: If a logs link cache entry for the logs page has already been set, IP tracking entries shown at the IP tracking page would sometimes be munged by the copy to clipboard SVGs; Fixed.
 
-[2023.03.13~14; New Feature; Maikuolan]: A new block event field (optional, disabled by default) has been added: Condition inspection. This new field is intended only for logging (i.e., it can't be displayed at the "access denied" page). Condition inspection can be used to confirm exactly which conditions for which auxiliary rules were/weren't satisfied for any given block event, which may sometimes be needed when attempting to debug problematic auxiliary rules (#430, #438).
+[2023.03.13~14; New Feature; Maikuolan]: A new block event field (optional, disabled by default) has been added: Conditions inspection. This new field is intended only for logging (i.e., it can't be displayed at the "access denied" page). Conditions inspection can be used to confirm exactly which conditions for which auxiliary rules were/weren't satisfied for any given block event, which may sometimes be needed when attempting to debug problematic auxiliary rules (#430, #438).
 
 [2023.03.15~16; New Feature; Maikuolan]: Added support for macros to the updates page (#418).
 
@@ -206,3 +206,5 @@
 [2023.04.01; Maikuolan]: Reworked the loadL10N method, how it handles HTTP_ACCEPT_LANGUAGE, improved rule assignment, added some assumptions for supported L10N, and added the ability to defer non-supported L10N to supported L10N where sufficiently similar to be acceptable.
 
 [2023.04.02; Bug-fix; Maikuolan]: Infractions not decrementing upon bypass; Fixed (#449).
+
+[2023.04.06; Bug-fix; Maikuolan]: Exit code 1 responses generated via run parameters in signatures weren't being honoured (although nothing in CIDRAM currently actually returns exit code 1 anyway, so this doesn't have any practical bearing); Fixed.

@@ -958,7 +958,10 @@ $CIDRAM['DNS-Reverse-Forward'] = function ($Domains, string $Friendly, array $Op
     /** Compare the hostname against the accepted domain/hostname partials. */
     foreach ($Domains as $Domain) {
         $Len = strlen($Domain) * -1;
-        if (substr($CIDRAM['Hostname'], $Len) === $Domain) {
+        if (
+            substr($CIDRAM['Hostname'], $Len) === $Domain ||
+            (substr($Domain, 0, 1) === '.' && $CIDRAM['Hostname'] === substr($Domain, 1))
+        ) {
             $Pass = true;
             break;
         }
@@ -1022,8 +1025,7 @@ $CIDRAM['DNS-Reverse-Forward'] = function ($Domains, string $Friendly, array $Op
     }
 
     /** It's a fake; Block it. */
-    $Reason = sprintf($CIDRAM['L10N']->getString('Short_Fake_UA'), $Friendly);
-    $CIDRAM['Trigger'](true, $Reason);
+    $CIDRAM['Trigger'](true, sprintf($CIDRAM['L10N']->getString('Short_Fake_UA'), $Friendly));
     $CIDRAM['AddProfileEntry']('Blocked Negative');
 
     /** Reporting. */
@@ -1130,8 +1132,7 @@ $CIDRAM['UA-X-Match'] = function ($Datapoints, $Expected, string $Friendly, arra
     }
 
     /** Nothing matched. Block it. */
-    $Reason = sprintf($CIDRAM['L10N']->getString('Short_Fake_UA'), $Friendly);
-    $CIDRAM['Trigger'](true, $Reason);
+    $CIDRAM['Trigger'](true, sprintf($CIDRAM['L10N']->getString('Short_Fake_UA'), $Friendly));
     $CIDRAM['AddProfileEntry']('Blocked Negative');
 
     /** Reporting. */

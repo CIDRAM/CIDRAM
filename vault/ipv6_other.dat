@@ -1,8 +1,8 @@
 # IPv6 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_other.dat
 
-# Version: 2023.35.0
-# Last modified: 2023.02.05
+# Version: 2023.95.0
+# Last modified: 2023.04.06
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -15,8 +15,8 @@
 # DDoS, and phishing attacks, hacking, port scans, sniffing for
 # vulnerabilities, IMAP flooding, and spam detected from here.
 # Caught masquerading as Baidu while sniffing for vulnerabilities.
-# Stop Forum Spam (SFS) listings: 78,636.
-# Updated: 2021.08.26 / Modified: 2022.07.22 / Checked: 2022.08.13
+# Stop Forum Spam (SFS) listings: 94,706.
+# Updated: 2021.08.26 / Modified: 2022.07.22 / Checked: 2023.04.06
 
 2a0b:f4c0::/40 Deny Attacks
 2a0b:f4c0:100::/48 Deny Attacks
@@ -32,11 +32,10 @@ Tag: F3 Netze e.V
 # ASN 396507 ("Emerald Onion").
 # Tor provider. Significant source of spam.
 # Caught masquerading as Baidu while sniffing for vulnerabilities.
-# Stop Forum Spam (SFS) listings: 12,018.
-# Updated: 2022.07.22
+# Stop Forum Spam (SFS) listings: 25,233.
+# Updated: 2023.04.04
 
-2620:18c:1::/48 Deny Proxy
-2620:18c:f1::/48 Deny Proxy
+2620:18c::/36 Deny Proxy
 Origin: US
 Profile: Tor endpoints here
 Tag: Emerald Onion
@@ -45,7 +44,7 @@ Tag: Emerald Onion
 # Octopusnet VPN (mostly from AS44724, but we'll update via announces instead,
 # because we don't need to block the entire ASN, and there could be stray CIDRs
 # too). Proxy service with a history of spam events.
-# Updated: 2019.12.14 / Checked: 2022.07.22
+# Updated: 2019.12.14 / Checked: 2023.04.06
 
 2a04:db80::/32 Deny Proxy
 Origin: RU
@@ -54,8 +53,8 @@ Tag: Octopusnet VPN
 
 
 # ASN 208323 ("Foundation for Applied Privacy").
-# Stop Forum Spam (SFS) listings: 88,004.
-# Updated: 2019.10.02 / Checked: 2022.10.03
+# Stop Forum Spam (SFS) listings: 117,309.
+# Updated: 2019.10.02 / Checked: 2023.04.06
 
 2a03:e600:100::/48 Deny Proxy
 Origin: AT
@@ -66,7 +65,8 @@ Tag: Applied Privacy
 # ASNs 50495, 62874, 199438, 204646 ("Web2Objects LLC").
 # Provides anonymous proxy services. Spam, hacking, probing for
 # vulnerabilities, and other kinds of unwanted traffic detected from here.
-# Updated: 2022.10.03
+# Stop Forum Spam (SFS) listings: 407 (AS50495), 1,831 (AS62874).
+# Updated: 2022.10.03 / Checked: 2023.04.06
 
 2a00:f826:11::/48 Deny Proxy
 2a06:ef40::/32 Deny Proxy
@@ -83,29 +83,6 @@ Origin: DE
 Origin: US
 Profile: Commercial;Tor endpoints here
 Tag: Web2Objects LLC
-
-
-# ASN 197640 ("OverPlay.Net LP").
-# A paid VPN provider. Brute-force and SQLi attacks, port scans, hacking, and
-# spam detected from here.
-# Stop Forum Spam (SFS) listings: 690.
-# Updated: 2021.02.07 / Checked: 2022.08.05
-
-2a03:efc0:500::/40 Deny Attacks
-Origin: US
-Profile: Infrastructure/Transit;Tor endpoints here
-Tag: OverPlay.Net LP
-
-
-# ASN 209854 ("Surfshark Ltd").
-# A paid VPN provider. Brute-force and SSH attacks detected from here.
-# Stop Forum Spam (SFS) listings: 500.
-# Updated: 2021.04.16 / Checked: 2022.08.05
-
-2a09:a700::/29 Deny Proxy
-Origin: VG
-Profile: Infrastructure/Transit;Tor endpoints here
-Tag: Surfshark Ltd
 
 
 # ASN 398355 ("Data Ideas llc").

@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2023.91.0
-# Last modified: 2023.04.02
+# Version: 2023.95.0
+# Last modified: 2023.04.06
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -4206,34 +4206,30 @@ Tag: Alibaba Advertising
 # ASNs 45090, 132203, 132591 ("Shenzhen Tencent Computer Systems Company Limited").
 # Dedicated server farm/lease and cloud provider, and an ongoing, long-term
 # source of just about every kind of unwanted traffic you could imagine.
-# Stop Forum Spam (SFS) listings: 11,480 (AS45090), 21,165 (AS132203).
-# Updated: 2023.01.28
+# Stop Forum Spam (SFS) listings: 3,716 (AS45090), 5,757 (AS132203).
+# Updated: 2023.04.06
 
-2001:df6:f400::/48 Deny Cloud
-2402:4e00::/32 Deny Cloud
+2402:4e00::/32 Run bypasses.php
 Origin: CN
-240d:c000:1000::/36 Deny Cloud
-240d:c000:2000::/35 Deny Cloud
-240d:c010::/47 Deny Cloud
-240d:c010:12::/48 Deny Cloud
-240d:c010:14::/48 Deny Cloud
-240d:c010:16::/48 Deny Cloud
-240d:c010:18::/48 Deny Cloud
-240d:c010:1d::/48 Deny Cloud
-240d:c010:1f::/48 Deny Cloud
-240d:c010:20::/44 Deny Cloud
-240d:c010:30::/47 Deny Cloud
-240d:c010:50::/48 Deny Cloud
-240d:c010:54::/48 Deny Cloud
-240d:c010:57::/48 Deny Cloud
-240d:c010:58::/48 Deny Cloud
-240d:c010:5b::/48 Deny Cloud
-240d:c010:5c::/48 Deny Cloud
-240d:c010:5e::/48 Deny Cloud
-240d:c010:68::/48 Deny Cloud
-240d:c010:6c::/48 Deny Cloud
-240d:c010:72::/48 Deny Cloud
-240d:c040::/44 Deny Cloud
+240d:c000:1000::/36 Run bypasses.php
+240d:c000:2000::/35 Run bypasses.php
+240d:c010::/47 Run bypasses.php
+240d:c010:14::/48 Run bypasses.php
+240d:c010:16::/48 Run bypasses.php
+240d:c010:18::/48 Run bypasses.php
+240d:c010:1d::/48 Run bypasses.php
+240d:c010:1f::/48 Run bypasses.php
+240d:c010:20::/44 Run bypasses.php
+240d:c010:30::/47 Run bypasses.php
+240d:c010:50::/48 Run bypasses.php
+240d:c010:58::/48 Run bypasses.php
+240d:c010:5b::/48 Run bypasses.php
+240d:c010:5c::/48 Run bypasses.php
+240d:c010:5e::/48 Run bypasses.php
+240d:c010:68::/48 Run bypasses.php
+240d:c010:6c::/48 Run bypasses.php
+240d:c010:72::/48 Run bypasses.php
+240d:c040::/44 Run bypasses.php
 Origin: SG
 Profile: Dedicated;Infrastructure/Transit
 Tag: Shenzhen Tencent
@@ -6841,15 +6837,14 @@ Tag: KLAYER LLC
 
 # ASN 25780 ("HugeServer Networks, LLC").
 # Caught trying to hack WordPress sites.
-# Stop Forum Spam (SFS) listings: 638.
-# Updated: 2022.04.15
+# Stop Forum Spam (SFS) listings: 635.
+# Updated: 2023.04.06
 
 2604:34c0::/32 Deny Cloud
 2605:8680::/48 Deny Cloud
 2605:8680:12::/47 Deny Cloud
 2605:8680:fffe::/47 Deny Cloud
 2605:8681::/32 Deny Cloud
-2605:b4c0:550::/48 Deny Cloud
 2605:b4c0:1234::/48 Deny Cloud
 2606:6c40::/32 Deny Cloud
 2a03:a3a0::/32 Deny Cloud
@@ -8238,8 +8233,8 @@ Tag: NetConnex/Coreix
 
 # ASN 7040 ("NETMINDERS DATA SOLUTION").
 # Dedicated data center and a *HUGE* source of spam!
-# Stop Forum Spam (SFS) listings: 186,150.
-# Updated: 2022.04.15
+# Stop Forum Spam (SFS) listings: 302,007.
+# Updated: 2022.04.15 / Checked: 2023.04.06
 
 2605:bc40::/32 Deny Cloud
 Origin: CA
@@ -8958,15 +8953,16 @@ Profile: Webhosting
 Tag: GB Network Solutions
 
 
-# ASN 38365 ("Beijing Baidu Netcom Science and Technology Co., Ltd").
+# ASNs 38365, 38627, 55967 ("Beijing Baidu Netcom Science and Technology Co., Ltd").
 # *MASSIVE* source of SSH and brute-force attacks unending !!
-# Stop Forum Spam (SFS) listings: 4,341.
-# Updated: 2020.11.23 / Checked: 2022.10.31
+# Stop Forum Spam (SFS) listings: 85 (AS38365), 33 (AS55967).
+# Updated: 2023.04.06
 
-2400:da00::/32 Deny Cloud
-240c:4000::/22 Deny Cloud
+2400:da00::/32 Run bypasses.php
+2402:2b40:8000::/36 Run bypasses.php
+240c:4000::/22 Run bypasses.php
 Origin: CN
-Profile: Commercial
+Profile: Commercial;Infrastructure/Transit;Search engine
 Tag: Beijing Baidu Netcom
 
 
@@ -9423,38 +9419,47 @@ Tag: The Infrastructure Group B.V
 
 # ASNs 199524, 202422 ("G-Core Labs S.A").
 # Server farm with significant tor endpoints and a significant source of spam.
-# Stop Forum Spam (SFS) listings: 28,949 (AS199524), 4,191 (AS202422).
-# Updated: 2022.04.15
+# Stop Forum Spam (SFS) listings: 1,269 (AS199524), 2,075 (AS202422).
+# Updated: 2023.04.06
 
 2a03:90c0:10::/44 Deny Cloud
 2a03:90c0:20::/43 Deny Cloud
-2a03:90c0:40::/42 Deny Cloud
-2a03:90c0:80::/41 Deny Cloud
-2a03:90c0:100::/41 Deny Cloud
-2a03:90c0:180::/44 Deny Cloud
-2a03:90c0:1a0::/43 Deny Cloud
-2a03:90c0:1c0::/42 Deny Cloud
+2a03:90c0:40::/44 Deny Cloud
+2a03:90c0:60::/44 Deny Cloud
+2a03:90c0:80::/43 Deny Cloud
+2a03:90c0:c0::/42 Deny Cloud
+2a03:90c0:100::/42 Deny Cloud
+2a03:90c0:140::/44 Deny Cloud
+2a03:90c0:160::/43 Deny Cloud
+2a03:90c0:180::/41 Deny Cloud
 2a03:90c0:210::/44 Deny Cloud
-2a03:90c0:220::/43 Deny Cloud
-2a03:90c0:240::/42 Deny Cloud
-2a03:90c0:280::/41 Deny Cloud
-2a03:90c0:320::/43 Deny Cloud
-2a03:90c0:340::/42 Deny Cloud
+2a03:90c0:220::/44 Deny Cloud
+2a03:90c0:240::/43 Deny Cloud
+2a03:90c0:270::/44 Deny Cloud
+2a03:90c0:280::/43 Deny Cloud
+2a03:90c0:2a0::/44 Deny Cloud
+2a03:90c0:2c0::/42 Deny Cloud
+2a03:90c0:320::/44 Deny Cloud
+2a03:90c0:350::/44 Deny Cloud
+2a03:90c0:360::/43 Deny Cloud
 2a03:90c0:380::/42 Deny Cloud
 2a03:90c0:3f0::/44 Deny Cloud
-2a03:90c0:400::/44 Deny Cloud
 2a03:90c0:420::/43 Deny Cloud
-2a03:90c0:440::/44 Deny Cloud
 2a03:90c0:460::/43 Deny Cloud
-2a03:90c0:4a0::/43 Deny Cloud
-2a03:90c0:4c0::/43 Deny Cloud
-2a03:90c0:4e0::/44 Deny Cloud
+2a03:90c0:4b0::/44 Deny Cloud
+2a03:90c0:4c0::/42 Deny Cloud
 2a03:90c0:500::/41 Deny Cloud
 2a03:90c0:580::/42 Deny Cloud
 2a03:90c0:5d0::/44 Deny Cloud
 2a03:90c0:5e0::/43 Deny Cloud
 2a03:90c0:610::/44 Deny Cloud
-2a03:90c0:9981::/48 Deny Cloud
+2a03:90c0:640::/44 Deny Cloud
+2a03:90c0:660::/44 Deny Cloud
+2a03:90c0:680::/42 Deny Cloud
+2a03:90c0:6c0::/43 Deny Cloud
+2a03:90c0:6f0::/44 Deny Cloud
+2a03:90c0:700::/43 Deny Cloud
+2a03:90c0:720::/44 Deny Cloud
 2a03:90c0:9990::/47 Deny Cloud
 2a03:90c0:9992::/48 Deny Cloud
 2a03:90c0:9994::/46 Deny Cloud
@@ -9462,8 +9467,6 @@ Tag: The Infrastructure Group B.V
 2a03:90c0:999c::/47 Deny Cloud
 2a03:90c0:999f::/48 Deny Cloud
 Origin: LU
-2a11:27c0::/43 Deny Cloud
-Origin: RU
 Profile: Infrastructure/Transit;Tor endpoints here;Webhosting
 Tag: G-Core Labs S.A
 
@@ -10743,7 +10746,7 @@ Tag: PureVoltage Hosting Inc
 # amounts of email spam and email scams, though somewhat a moot point given
 # that CIDRAM has nothing to do with mail servers).
 # Stop Forum Spam (SFS) listings: 8.
-# Updated: 2022.04.15
+# Updated: 2022.04.15 / Checked: 2023.04.06
 
 2a00:1148::/29 Deny Cloud
 2a00:a300::/32 Deny Cloud
@@ -10757,8 +10760,8 @@ Tag: LLC VK
 # Russian VPS provider. Brute-force, SQLi, and webapp attacks, port scans,
 # hacking, and spam detected from here. Manually checked all ranges; All ranges
 # affected.
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2022.04.15
+# Stop Forum Spam (SFS) listings: 283.
+# Updated: 2022.04.15 / Checked: 2023.04.06
 
 2a0e:7200::/40 Deny Attacks
 Origin: RU
@@ -11543,6 +11546,29 @@ Origin: GB
 Origin: US
 Profile: Webhosting
 Tag: SpeedyPage Ltd
+
+
+# ASNs 13238, 43247, 44534, 200350, 202611, 207207, 208722 ("YANDEX LLC",
+# '"YooMoney" NBCO LLC', "Yandex.Cloud LLC", "Yandex.Telecom LLC",
+# "Yandex.OFD LLC", "Global DC Oy").
+# Stop Forum Spam (SFS) listings: 335 (AS200350), 5 (AS208722).
+# Updated: 2023.04.06
+
+2a0e:fd80::/32 Run bypasses.php
+2a0e:fd87::/46 Run bypasses.php
+2a0e:fd87:4::/47 Run bypasses.php
+2a0e:fd87:6::/48 Run bypasses.php
+Origin: FI
+2001:678:384::/48 Run bypasses.php
+2a02:6b8::/29 Run bypasses.php
+2a02:5180::/32 Run bypasses.php
+2a0b:1440::/32 Run bypasses.php
+2a0d:d6c0::/29 Run bypasses.php
+Origin: RU
+2620:10f:d000::/44 Run bypasses.php
+Origin: US
+Profile: Commercial;Infrastructure/Transit;Search engine
+Tag: Yandex
 
 
 # ---

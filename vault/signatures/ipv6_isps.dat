@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2023.91.0
-# Last modified: 2023.04.02
+# Version: 2023.95.0
+# Last modified: 2023.04.06
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -584,15 +584,13 @@ Tag: CLARO S.A
 # ASNs 6332, 8151 ("Uninet S.A. de C.V").
 # Mexican domestic ISP. Brute-force attacks, port scans, and spam detected from
 # here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 89 (AS6332), 2,828 (AS8151).
-# Updated: 2022.09.12
+# Stop Forum Spam (SFS) listings: 22 (AS6332), 1,557 (AS8151).
+# Updated: 2023.04.06
 
 2806:1016:a:12f2::/64 Deny Spam
-2806:1016:a:57d0::/64 Deny Spam
-2806:103e:c:864d::/64 Deny Spam
-2806:108e:12:3d4b::/64 Deny Spam
-2806:10ae:13:219f::/64 Deny Spam
-2806:10ae:13:63ad::/64 Deny Spam
+2806:1016:a:4567::/64 Deny Spam
+2806:107e:f:1944::/64 Deny Spam
+2806:10a6:6:af1b::/64 Deny Spam
 Origin: MX
 Profile: Domestic ISP
 Tag: Uninet
@@ -865,10 +863,12 @@ Tag: Vodafone Deutschland GmbH
 
 # ASNs 3215, 5511 ("Orange S.A").
 # French domestic/mobile ISP. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 2,095 (AS3215), 51 (AS5511).
-# Updated: 2022.09.26
+# Stop Forum Spam (SFS) listings: 1,450 (AS3215), 43 (AS5511).
+# Updated: 2023.04.03
 
-2a01:cb05:8f91:9700::/64 Deny Spam
+2a01:cb00:8065:800::/64 Deny Spam
+2a01:cb04:6de:9b00::/64 Deny Spam
+2a01:cb1d:8966:5200::/64 Deny Spam
 Origin: FR
 Profile: Domestic ISP;Mobile ISP
 Tag: Orange S.A

@@ -25,6 +25,11 @@ Detailed version release guidelines for CIDRAM can be found at:
 - [2023.03.24; New Feature; Maikuolan]: Added the ability to log outbound
   requests (#445).
 
+- [2023.04.06; Bug-fix; Maikuolan]: Exit code 1 responses generated via run
+  parameters in signatures weren't being honoured (although nothing in CIDRAM
+  currently actually returns exit code 1 anyway, so this doesn't have any
+  practical bearing); Fixed.
+
 === Version/Release 1.24.1 ===
 PATCH RELEASE.
 

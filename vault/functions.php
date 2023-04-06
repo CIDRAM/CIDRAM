@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2023.03.18).
+ * This file: Functions file (last modified: 2023.04.06).
  */
 
 /**
@@ -452,7 +452,7 @@ $CIDRAM['CheckFactors'] = function (array $Files, array $Factors) use (&$CIDRAM)
                     $CIDRAM['ZeroOutBlockInfo']();
                     break 2;
                 }
-                if ($Category === 'Deny' && $Signature !== '') {
+                if (($Category === 'Deny' || $RunExitCode === 1) && $Signature !== '') {
                     $DenyMatched = false;
                     if (!$CIDRAM['CIDRAM_sapi']) {
                         foreach ([

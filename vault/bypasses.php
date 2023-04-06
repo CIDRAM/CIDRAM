@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Default signature bypasses (last modified: 2023.02.28).
+ * This file: Default signature bypasses (last modified: 2023.04.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -100,7 +100,7 @@ $CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [], $Fa
     }
 
     /** Skip further processing if the "block_cloud" directive is false, or if no section tag has been defined. */
-    if (!$CIDRAM['Config']['signatures']['block_cloud'] || !$Tag) {
+    if (!$CIDRAM['Config']['signatures']['block_cloud'] || $Tag === '') {
         return;
     }
 
@@ -222,26 +222,22 @@ $CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [], $Fa
 
     /** Google bypasses. */
     if ($Tag === 'Google LLC') {
-        /**
-         * Googlebot bypass.
-         */
+        /** Googlebot bypass. */
         if ($CIDRAM['Request']->inCsv('Googlebot', $CIDRAM['Config']['bypasses']['used'])) {
             if (empty($CIDRAM['Hostname'])) {
                 $CIDRAM['Hostname'] = $CIDRAM['DNS-Reverse']($CIDRAM['BlockInfo']['IPAddr']);
             }
-            if (preg_match('~\.google(?:bot)?\.com$~i', $CIDRAM['Hostname'])) {
+            if (preg_match('~(?:^|\.)google(?:bot)?\.com$~i', $CIDRAM['Hostname'])) {
                 return 2;
             }
         }
 
-        /**
-         * Google Fiber bypass.
-         */
+        /** Google Fiber bypass. */
         if ($CIDRAM['Request']->inCsv('GoogleFiber', $CIDRAM['Config']['bypasses']['used'])) {
             if (empty($CIDRAM['Hostname'])) {
                 $CIDRAM['Hostname'] = $CIDRAM['DNS-Reverse']($CIDRAM['BlockInfo']['IPAddr']);
             }
-            if (preg_match('~\.googlefiber\.net$~i', $CIDRAM['Hostname'])) {
+            if (preg_match('~(?:^|\.)googlefiber\.net$~i', $CIDRAM['Hostname'])) {
                 return 2;
             }
         }
@@ -258,10 +254,9 @@ $CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [], $Fa
                 $CIDRAM['Hostname'] = $CIDRAM['DNS-Reverse']($CIDRAM['BlockInfo']['IPAddr']);
             }
             if (
-                preg_match('~\.(?:aspiegel|petalsearch)\.com$~i', $CIDRAM['Hostname']) ||
+                preg_match('~(?:^|\.)(?:aspiegel|petalsearch)\.com$~i', $CIDRAM['Hostname']) ||
                 strpos($CIDRAM['BlockInfo']['UALC'], 'petalbot') !== false
             ) {
-                $CIDRAM['Flag-Bypass-PetalBot-Check'] = true;
                 return 4;
             }
         }
@@ -321,6 +316,36 @@ $CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [], $Fa
         $CIDRAM['BlockInfo']['UA'] === 'AbuseIPDB_Bot/1.0'
     ) {
         return;
+    }
+
+    /** Yandex bypass. */
+    if ($Tag === 'Yandex' && $CIDRAM['Request']->inCsv('Yandex', $CIDRAM['Config']['bypasses']['used'])) {
+        if (empty($CIDRAM['Hostname'])) {
+            $CIDRAM['Hostname'] = $CIDRAM['DNS-Reverse']($CIDRAM['BlockInfo']['IPAddr']);
+        }
+        if (preg_match('~(?:^|\.)yandex\.(?:com|net|ru)$~i', $CIDRAM['Hostname']) && strpos($CIDRAM['BlockInfo']['UALC'], 'yandex') !== false) {
+            return;
+        }
+    }
+
+    /** Baiduspider bypass. */
+    if ($Tag === 'Beijing Baidu Netcom' && $CIDRAM['Request']->inCsv('Baidu', $CIDRAM['Config']['bypasses']['used'])) {
+        if (empty($CIDRAM['Hostname'])) {
+            $CIDRAM['Hostname'] = $CIDRAM['DNS-Reverse']($CIDRAM['BlockInfo']['IPAddr']);
+        }
+        if (preg_match('~(?:^|\.)baidu\.(?:com|jp)$~i', $CIDRAM['Hostname']) && strpos($CIDRAM['BlockInfo']['UALC'], 'baiduspider') !== false) {
+            return;
+        }
+    }
+
+    /** Sogou bypass. */
+    if ($Tag === 'Shenzhen Tencent' && $CIDRAM['Request']->inCsv('Sogou', $CIDRAM['Config']['bypasses']['used'])) {
+        if (empty($CIDRAM['Hostname'])) {
+            $CIDRAM['Hostname'] = $CIDRAM['DNS-Reverse']($CIDRAM['BlockInfo']['IPAddr']);
+        }
+        if (preg_match('~(?:^|\.)sogou\.com$~i', $CIDRAM['Hostname']) && strpos($CIDRAM['BlockInfo']['UALC'], 'sogou') !== false) {
+            return;
+        }
     }
 
     if (empty($CIDRAM['CIDRAM_sapi'])) {

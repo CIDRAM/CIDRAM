@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2023.04.03).
+ * This file: Protect traits (last modified: 2023.04.06).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -270,8 +270,8 @@ trait Protect
 
         /** Process auxiliary rules, if any exist. */
         if (empty($this->CIDRAM['Whitelisted']) && isset($this->Stages['Aux:Enable'])) {
-            $Before = $this->BlockInfo['SignatureCount'];
             $this->Stage = 'Aux';
+            $Before = $this->BlockInfo['SignatureCount'];
             $this->aux();
             if (isset($this->Stages['Aux:Tracking']) && $this->BlockInfo['SignatureCount'] !== $Before) {
                 $this->BlockInfo['Infractions'] += $this->BlockInfo['SignatureCount'] - $Before;

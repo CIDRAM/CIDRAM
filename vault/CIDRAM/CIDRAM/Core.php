@@ -1253,7 +1253,10 @@ class Core
         /** Compare the hostname against the accepted domain/hostname partials. */
         foreach ($Domains as $Domain) {
             $Len = strlen($Domain) * -1;
-            if (substr($this->CIDRAM['Hostname'], $Len) === $Domain) {
+            if (
+                substr($this->CIDRAM['Hostname'], $Len) === $Domain ||
+                (substr($Domain, 0, 1) === '.' && $this->CIDRAM['Hostname'] === substr($Domain, 1))
+            ) {
                 $Pass = true;
                 break;
             }

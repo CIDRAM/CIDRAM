@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2023.03.28).
+# This file: Japanese language data for the front-end (last modified: 2023.04.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -371,6 +371,7 @@ hints_duration:
  アークタイム。: "期間はアークタイム表記を使用して記述できます。​例えば、１日、２時間、３分、４秒するために<strong>「1d2°3′4″」</strong>して、または５秒だけするために<strong>「5″」</strong>して。"
  平易な英語を使用します。: "期間は、平易な英語で単位を書くことで記述できます。​例えば、１週間、２日、３時間、４分、５秒するために<strong>「1 week 2 days 3 hours 4 minutes 5 seconds」</strong>して。"
  制約。: "表記は混在できますが、単位は常に最大から最小の順に記述する必要があり、繰り返すことはできません。​例えば、<strong>「1 week 2 days 3′4″」</strong>は<span class="txtGn">有効</span>で、正しく理解されますが、<strong>「3′4″ 1 week 2 days」</strong>と<strong>「3 hours 3h 3°」</strong>は<span class="txtRd">無効/span>です。​CIDRAM は、スペーシングを使用するかどうかは気にしません。​数値はプレーンでフォーマットなし必要があります。​実用性のために、サポートされている最大の単位は１週間です。​コンフィギュレーションがアップデートされると、CIDRAMは期間をアークタイムに正規化します。"
+hints_has_bypass: "* このオプションには、<code class="s">bypasses➡used</code>の下に対応するバイパスがあります。​対応するバイパスのチェックボックスが、このオプションの検証のチェックボックスと同じようにマークされていることを確認することをお勧めします。"
 hints_inspection: "* 補助ルールのデバッグのみを目的としています。​ブロックされたユーザーには表示されません。"
 hints_ipv6_on_32bit: "注：一部の３２ビットシステムでは、ＩＰｖ６ルックアップが正しく機能しない場合があります。"
 hints_pdo_dsn:
@@ -514,7 +515,7 @@ label_captcha: "キャプチャの試み"
 label_check_aux: "補助ルールに対してもテストします。"
 label_check_modules: "モジュールに対してもテストします。"
 label_check_verification: "検索エンジンの検証とソーシャル・メディアの検証に対してもテストします。"
-label_checkbox: "チェック・ボックス"
+label_checkbox: "チェックボックス"
 label_checksum_after: "後のチェックサム"
 label_checksum_before: "前のチェックサム"
 label_cidram: "使用されたCIDRAMバージョン："

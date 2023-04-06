@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Default signature bypasses configuration (last modified: 2023.02.28).
+# This file: Default signature bypasses configuration (last modified: 2023.04.06).
 ##/
 
 Config Defaults:
@@ -17,6 +17,7 @@ Config Defaults:
    default: |
     AbuseIPDB
     AmazonAdBot
+    Baidu
     Bingbot
     DuckDuckBot
     Embedly
@@ -31,9 +32,12 @@ Config Defaults:
     Pinterest
     Redditbot
     Snapchat
+    Sogou
+    Yandex
    choices:
     AbuseIPDB: "AbuseIPDB"
     AmazonAdBot: "AmazonAdBot"
+    Baidu: "Baiduspider/百度"
     Bingbot: "Bingbot"
     DuckDuckBot: "DuckDuckBot"
     Embedly: "Embedly"
@@ -48,3 +52,5 @@ Config Defaults:
     Pinterest: "Pinterest"
     Redditbot: "Redditbot"
     Snapchat: "Snapchat"
+    Sogou: "Sogou/搜狗"
+    Yandex: "Yandex/Яндекс"

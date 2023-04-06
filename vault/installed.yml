@@ -55,7 +55,7 @@ CIDRAM Core:
    Checksum: "b62c0cf1deeb97c7ee15638f0a4102292a6bab6f0b6b1ee3a1dec7fa485c2e05:1352"
   defaults.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/defaults.yml"
-   Checksum: "876526526acd1b0aec45d30199779497d623f4c39ea523bc9a452da0f8a42f31:34754"
+   Checksum: "e2742bef380c35799c5d017a85c9f74f10ba6fcd70efd43d52dc3095e3eaba88:34760"
   loader.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/loader.php"
    Checksum: "2024a633fae0edeff14119bd2308d9599a8651bd1fc877838e3901b72afffdc0:1312"
@@ -457,7 +457,7 @@ IPv4:
  False Positive Risk: "Medium"
  Version: "2023.91.0"
  Dependencies:
-  Bypasses: ">=2022.172"
+  Bypasses: ">=2023.95"
  Files:
   signatures/ipv4.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/signatures/ipv4.dat"
@@ -475,7 +475,7 @@ IPv4-ISPs:
  False Positive Risk: "Medium"
  Version: "2023.91.0"
  Dependencies:
-  Bypasses: ">=2022.172"
+  Bypasses: ">=2023.95"
  Files:
   signatures/ipv4_isps.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/signatures/ipv4_isps.dat"
@@ -501,7 +501,7 @@ IPv6:
  False Positive Risk: "Low"
  Version: "2023.91.0"
  Dependencies:
-  Bypasses: ">=2022.172"
+  Bypasses: ">=2023.95"
  Files:
   signatures/ipv6.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/signatures/ipv6.dat"
@@ -519,7 +519,7 @@ IPv6-ISPs:
  False Positive Risk: "Medium"
  Version: "2023.91.0"
  Dependencies:
-  Bypasses: ">=2022.172"
+  Bypasses: ">=2023.95"
  Files:
   signatures/ipv6_isps.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/signatures/ipv6_isps.dat"
@@ -542,17 +542,19 @@ IPv6-Other:
    Checksum: "e5481b4b2ae99777fee7352cb0eac4c4238e258837202ba58cb7940375c112aa:3883"
    Used with: "ipv6"
 Bypasses:
- Version: "2023.59.0"
+ Version: "2023.95.0"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "^3.0.0-DEV"
+ When Update Succeeds:
+  - "if {Components.Meta.Bypasses.Version}<2023.95&&{Components.RemoteMeta.Bypasses.Version}>=2023.95 then message <span dir="ltr" lang="en-AU">A recent signatures update may affect search engine verification, and new bypasses have been added accordingly. Reviewing your configuration (in particular, <code class="s">bypasses➡used</code>) is strongly recommended.</span>"
  Files:
   bypasses.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/bypasses.php"
-   Checksum: "3b9d24d4230fa2ac3f7b39c7228ebc7f6aaf21012452110bd5781e358666bcab:10056"
+   Checksum: "75d761b46b482085f7e38debd41a443909a5419307e9a3160c013146425980ee:11227"
   imports/bypasses.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/imports/bypasses.yml"
-   Checksum: "47b8d048003808a40de517b54ad8c7618e89eadfc76419d0f1586d9bdeeae829:1011"
+   Checksum: "a073bc8a106dc487ec765c320a73722e9d85f5457b9ef22ddd0e40ac4ec8554c:1134"
    Used with: "imports"
 l10n/core/ar:
  Extended Description: "التعريب العربي"

@@ -208,3 +208,5 @@
 [2023.04.02; Bug-fix; Maikuolan]: Infractions not decrementing upon bypass; Fixed (#449).
 
 [2023.04.06; Bug-fix; Maikuolan]: Exit code 1 responses generated via run parameters in signatures weren't being honoured (although nothing in CIDRAM currently actually returns exit code 1 anyway, so this doesn't have any practical bearing); Fixed.
+
+[2023.04.06; Maikuolan]: Default signature bypasses updated.

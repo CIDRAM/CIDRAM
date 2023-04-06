@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2023.04.03).
+# This file: Defaults file (last modified: 2023.04.06).
 ##/
 
 Config Defaults:
@@ -728,20 +728,22 @@ Config Defaults:
    choices:
     Amazonbot: "Amazonbot"
     Applebot: "Applebot"
-    Baidu: "Baiduspider/百度"
-    Bingbot: "Bingbot"
-    DuckDuckBot: "DuckDuckBot"
-    Googlebot: "Googlebot"
+    Baidu: "* Baiduspider/百度"
+    Bingbot: "* Bingbot"
+    DuckDuckBot: "* DuckDuckBot"
+    Googlebot: "* Googlebot"
     MojeekBot: "MojeekBot"
-    Neevabot: "Neevabot"
-    PetalBot: "PetalBot"
+    Neevabot: "* Neevabot"
+    PetalBot: "* PetalBot"
     Qwantify: "Qwantify/Bleriot"
     SeznamBot: "SeznamBot"
-    Sogou: "Sogou/搜狗"
+    Sogou: "* Sogou/搜狗"
     Yahoo: "Yahoo/Slurp"
-    Yandex: "Yandex/Яндекс"
+    Yandex: "* Yandex/Яндекс"
     YoudaoBot: "YoudaoBot"
-   hints: "hints_verification"
+   hints:
+    - "hints_verification"
+    - "hints_has_bypass"
   social_media:
    type: "checkbox"
    default: |
@@ -766,13 +768,14 @@ Config Defaults:
     SingleHitBypass: "checkbox_label_single_hit_bypass"
     UntrackPositives: "checkbox_label_untrack_positives"
    choices:
-    Embedly: "Embedly"
+    Embedly: "* Embedly"
     Facebook: "** Facebook"
-    Pinterest: "Pinterest"
-    Snapchat: "Snapchat"
+    Pinterest: "* Pinterest"
+    Snapchat: "* Snapchat"
     Twitterbot: "Twitterbot"
    hints:
     - "hints_verification"
+    - "hints_has_bypass"
     - "hints_asnlookup"
   other:
    type: "checkbox"
@@ -796,9 +799,11 @@ Config Defaults:
     UntrackPositives: "checkbox_label_untrack_positives"
    choices:
     AdSense: "AdSense"
-    AmazonAdBot: "AmazonAdBot"
-    Grapeshot: "Oracle Data Cloud Crawler"
-   hints: "hints_verification"
+    AmazonAdBot: "* AmazonAdBot"
+    Grapeshot: "* Oracle Data Cloud Crawler (Grapeshot)"
+   hints:
+    - "hints_verification"
+    - "hints_has_bypass"
   adjust:
    type: "checkbox"
    default: |

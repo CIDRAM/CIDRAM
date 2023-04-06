@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Default signature bypasses (last modified: 2023.02.28).
+ * This file: Default signature bypasses (last modified: 2023.04.06).
  */
 
 /** Prevents execution from outside of the checkFactors method. */
@@ -96,7 +96,7 @@ $this->CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [
      * Skip further processing if cloud signatures aren't set to be blocked, or
      * if no section tag has been defined.
      */
-    if (!isset($this->Shorthand['Cloud:Block']) || !$Tag) {
+    if (!isset($this->Shorthand['Cloud:Block']) || $Tag === '') {
         return;
     }
 
@@ -191,26 +191,22 @@ $this->CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [
 
     /** Google bypasses. */
     if ($Tag === 'Google LLC') {
-        /**
-         * Googlebot bypass.
-         */
+        /** Googlebot bypass. */
         if (isset($Bypasses['Googlebot'])) {
             if (empty($this->CIDRAM['Hostname'])) {
                 $this->CIDRAM['Hostname'] = $this->dnsReverse($this->BlockInfo['IPAddr']);
             }
-            if (preg_match('~\.google(?:bot)?\.com$~i', $this->CIDRAM['Hostname'])) {
+            if (preg_match('~(?:^|\.)google(?:bot)?\.com$~i', $this->CIDRAM['Hostname'])) {
                 return 2;
             }
         }
 
-        /**
-         * Google Fiber bypass.
-         */
+        /** Google Fiber bypass. */
         if (isset($Bypasses['GoogleFiber'])) {
             if (empty($this->CIDRAM['Hostname'])) {
                 $this->CIDRAM['Hostname'] = $this->dnsReverse($this->BlockInfo['IPAddr']);
             }
-            if (preg_match('~\.googlefiber\.net$~i', $this->CIDRAM['Hostname'])) {
+            if (preg_match('~(?:^|\.)googlefiber\.net$~i', $this->CIDRAM['Hostname'])) {
                 return 2;
             }
         }
@@ -227,10 +223,9 @@ $this->CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [
                 $this->CIDRAM['Hostname'] = $this->dnsReverse($this->BlockInfo['IPAddr']);
             }
             if (
-                preg_match('~\.(?:aspiegel|petalsearch)\.com$~i', $this->CIDRAM['Hostname']) ||
+                preg_match('~(?:^|\.)(?:aspiegel|petalsearch)\.com$~i', $this->CIDRAM['Hostname']) ||
                 strpos($this->BlockInfo['UALC'], 'petalbot') !== false
             ) {
-                $this->CIDRAM['Flag-Bypass-PetalBot-Check'] = true;
                 return 4;
             }
         }
@@ -266,6 +261,36 @@ $this->CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [
     /** AbuseIPDB webmaster verification bot bypass. */
     if ($Tag === 'Digital Ocean, Inc' && isset($Bypasses['AbuseIPDB']) && $this->BlockInfo['UA'] === 'AbuseIPDB_Bot/1.0') {
         return;
+    }
+
+    /** Yandex bypass. */
+    if ($Tag === 'Yandex' && isset($Bypasses['Yandex'])) {
+        if (empty($this->CIDRAM['Hostname'])) {
+            $this->CIDRAM['Hostname'] = $this->dnsReverse($this->BlockInfo['IPAddr']);
+        }
+        if (preg_match('~(?:^|\.)yandex\.(?:com|net|ru)$~i', $this->CIDRAM['Hostname']) && strpos($this->BlockInfo['UALC'], 'yandex') !== false) {
+            return;
+        }
+    }
+
+    /** Baiduspider bypass. */
+    if ($Tag === 'Beijing Baidu Netcom' && isset($Bypasses['Baidu'])) {
+        if (empty($this->CIDRAM['Hostname'])) {
+            $this->CIDRAM['Hostname'] = $this->dnsReverse($this->BlockInfo['IPAddr']);
+        }
+        if (preg_match('~(?:^|\.)baidu\.(?:com|jp)$~i', $this->CIDRAM['Hostname']) && strpos($this->BlockInfo['UALC'], 'baiduspider') !== false) {
+            return;
+        }
+    }
+
+    /** Sogou bypass. */
+    if ($Tag === 'Shenzhen Tencent' && isset($Bypasses['Sogou'])) {
+        if (empty($this->CIDRAM['Hostname'])) {
+            $this->CIDRAM['Hostname'] = $this->dnsReverse($this->BlockInfo['IPAddr']);
+        }
+        if (preg_match('~(?:^|\.)sogou\.com$~i', $this->CIDRAM['Hostname']) && strpos($this->BlockInfo['UALC'], 'sogou') !== false) {
+            return;
+        }
     }
 
     $this->BlockInfo['ReasonMessage'] = $this->L10N->getString('ReasonMessage_Cloud');

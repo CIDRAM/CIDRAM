@@ -1,8 +1,8 @@
 # IPv4 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv4_other.dat
 
-# Version: 2023.51.0
-# Last modified: 2023.02.21
+# Version: 2023.95.0
+# Last modified: 2023.04.06
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -15,8 +15,8 @@
 # DDoS, and phishing attacks, hacking, port scans, sniffing for
 # vulnerabilities, IMAP flooding, and spam detected from here.
 # Caught masquerading as Baidu while sniffing for vulnerabilities.
-# Stop Forum Spam (SFS) listings: 78,636.
-# Updated: 2018.04.23 / Modified: 2022.07.22 / Checked: 2022.08.13
+# Stop Forum Spam (SFS) listings: 94,706.
+# Updated: 2018.04.23 / Modified: 2022.07.22 / Checked: 2023.04.06
 
 185.220.100.0/24 Deny Attacks
 Origin: DE
@@ -26,7 +26,7 @@ Tag: F3 Netze e.V
 
 # ASN 209519 ("Packet Flip, LLC").
 # Proxy service sometimes used by spammmers and other nefarious entities.
-# Updated: 2021.02.02 / Checked: 2022.10.03
+# Updated: 2021.02.02 / Checked: 2023.04.06
 
 31.207.8.0/21 Deny Proxy
 31.207.16.0/20 Deny Proxy
@@ -81,8 +81,8 @@ Tag: Packet Flip
 # ASN 396507 ("Emerald Onion").
 # Tor provider. Significant source of spam.
 # Caught masquerading as Baidu while sniffing for vulnerabilities.
-# Stop Forum Spam (SFS) listings: 12,018.
-# Updated: 2022.02.26 / Checked: 2022.07.22
+# Stop Forum Spam (SFS) listings: 25,233.
+# Updated: 2022.02.26 / Checked: 2023.04.04
 
 23.129.64.0/24 Deny Proxy
 23.190.144.0/24 Deny Proxy
@@ -98,7 +98,7 @@ Tag: Emerald Onion
 # name Spamhaus as source of the data. (For example, include the copyright statement at the top of the list).
 # Refer spamhaus.org/drop/drop.txt
 # Refer spamhaus.org/drop/edrop.txt
-# Updated: 2023.02.05
+# Updated: 2023.04.04
 
 1.10.16.0/20 Deny Spam
 1.19.0.0/16 Deny Spam
@@ -107,10 +107,17 @@ Tag: Emerald Onion
 2.57.232.0/22 Deny Spam
 2.59.200.0/22 Deny Spam
 5.42.199.0/24 Deny Spam
+5.105.62.0/24 Deny Spam
+5.105.71.0/24 Deny Spam
+5.105.101.0/24 Deny Spam
+5.105.107.0/24 Deny Spam
+5.105.110.0/23 Deny Spam
+5.105.117.0/24 Deny Spam
+5.105.220.0/23 Deny Spam
 5.134.128.0/19 Deny Spam
 5.178.2.0/24 Deny Spam
 5.180.4.0/22 Deny Spam
-5.182.211.0/24 Deny Spam
+5.182.210.0/23 Deny Spam
 5.183.60.0/22 Deny Spam
 5.188.10.0/23 Deny Spam
 24.137.16.0/20 Deny Spam
@@ -118,21 +125,25 @@ Tag: Emerald Onion
 24.233.0.0/19 Deny Spam
 24.236.0.0/19 Deny Spam
 27.112.32.0/19 Deny Spam
+27.123.208.0/22 Deny Spam
 27.124.17.0/24 Deny Spam
 27.124.41.0/24 Deny Spam
 27.126.160.0/20 Deny Spam
 27.146.0.0/16 Deny Spam
-31.14.65.0/24 Deny Spam
-31.41.244.0/24 Deny Spam
-31.210.20.0/24 Deny Spam
+31.210.20.0/23 Deny Spam
 36.0.8.0/21 Deny Spam
 36.37.48.0/20 Deny Spam
 36.116.0.0/16 Deny Spam
 36.119.0.0/16 Deny Spam
+37.0.8.0/24 Deny Spam
+37.0.10.0/23 Deny Spam
+37.0.14.0/24 Deny Spam
 37.139.128.0/23 Deny Spam
 37.156.64.0/23 Deny Spam
 37.156.173.0/24 Deny Spam
+37.220.87.0/24 Deny Spam
 41.72.0.0/18 Deny Spam
+41.216.183.0/24 Deny Spam
 42.0.32.0/19 Deny Spam
 42.1.128.0/17 Deny Spam
 42.128.0.0/12 Deny Spam
@@ -141,29 +152,41 @@ Tag: Emerald Onion
 43.229.52.0/22 Deny Spam
 43.229.240.0/22 Deny Spam
 43.236.0.0/16 Deny Spam
+43.248.40.0/22 Deny Spam
 43.250.116.0/22 Deny Spam
+45.9.74.0/24 Deny Spam
 45.9.148.0/22 Deny Spam
 45.12.253.0/24 Deny Spam
 45.14.165.0/24 Deny Spam
+45.15.40.0/24 Deny Spam
+45.15.156.0/23 Deny Spam
 45.65.32.0/22 Deny Spam
 45.66.230.0/24 Deny Spam
 45.80.248.0/23 Deny Spam
 45.81.39.0/24 Deny Spam
+45.81.243.0/24 Deny Spam
+45.85.90.0/24 Deny Spam
 45.86.20.0/22 Deny Spam
 45.86.48.0/22 Deny Spam
+45.88.14.0/24 Deny Spam
 45.88.67.0/24 Deny Spam
+45.88.90.0/24 Deny Spam
 45.91.227.0/24 Deny Spam
 45.116.224.0/22 Deny Spam
 45.121.204.0/22 Deny Spam
 45.128.234.0/24 Deny Spam
 45.133.200.0/24 Deny Spam
-45.136.140.0/24 Deny Spam
+45.136.140.0/23 Deny Spam
 45.137.22.0/24 Deny Spam
-45.143.136.0/23 Deny Spam
-45.143.139.0/24 Deny Spam
+45.139.105.0/24 Deny Spam
+45.143.136.0/22 Deny Spam
 45.148.120.0/23 Deny Spam
+45.148.148.0/22 Deny Spam
+45.149.235.0/24 Deny Spam
 45.186.152.0/22 Deny Spam
 45.220.64.0/18 Deny Spam
+46.23.100.0/22 Deny Spam
+46.23.110.0/24 Deny Spam
 46.102.177.0/24 Deny Spam
 46.102.178.0/23 Deny Spam
 46.102.182.0/23 Deny Spam
@@ -174,6 +197,8 @@ Tag: Emerald Onion
 46.173.218.0/23 Deny Spam
 46.173.223.0/24 Deny Spam
 46.174.204.0/22 Deny Spam
+46.232.0.0/24 Deny Spam
+49.88.112.0/24 Deny Spam
 49.156.160.0/19 Deny Spam
 49.238.64.0/18 Deny Spam
 58.2.0.0/17 Deny Spam
@@ -182,11 +207,19 @@ Tag: Emerald Onion
 61.11.224.0/19 Deny Spam
 61.45.251.0/24 Deny Spam
 61.111.129.0/24 Deny Spam
+61.177.172.0/23 Deny Spam
+62.76.227.0/24 Deny Spam
 62.112.16.0/21 Deny Spam
+62.197.136.0/24 Deny Spam
+62.204.41.0/24 Deny Spam
+62.233.50.0/23 Deny Spam
 63.66.60.0/23 Deny Spam
 64.15.0.0/20 Deny Spam
 64.69.16.0/20 Deny Spam
 64.92.224.0/20 Deny Spam
+64.137.39.0/24 Deny Spam
+64.137.76.0/24 Deny Spam
+64.137.102.0/24 Deny Spam
 64.250.144.0/20 Deny Spam
 64.254.80.0/20 Deny Spam
 67.213.112.0/20 Deny Spam
@@ -195,28 +228,48 @@ Tag: Emerald Onion
 72.46.24.0/22 Deny Spam
 74.114.148.0/22 Deny Spam
 76.191.0.0/20 Deny Spam
+77.73.134.0/24 Deny Spam
 77.81.84.0/23 Deny Spam
 77.81.86.0/24 Deny Spam
 77.81.89.0/24 Deny Spam
 77.81.90.0/23 Deny Spam
+77.90.178.0/24 Deny Spam
+78.40.143.0/24 Deny Spam
+78.153.144.0/24 Deny Spam
 79.110.22.0/24 Deny Spam
-79.137.194.0/24 Deny Spam
+79.110.62.0/23 Deny Spam
+79.137.192.0/24 Deny Spam
+79.137.194.0/23 Deny Spam
+79.137.197.0/24 Deny Spam
+79.137.198.0/24 Deny Spam
+79.137.204.0/24 Deny Spam
 80.66.64.0/24 Deny Spam
-80.76.42.0/24 Deny Spam
+80.66.75.0/24 Deny Spam
 80.76.51.0/24 Deny Spam
 80.208.192.0/20 Deny Spam
 81.161.229.0/24 Deny Spam
+82.115.223.0/24 Deny Spam
+82.153.224.0/24 Deny Spam
+83.137.156.0/24 Deny Spam
 83.175.0.0/18 Deny Spam
+83.217.11.0/24 Deny Spam
 83.218.218.0/24 Deny Spam
 84.21.172.0/24 Deny Spam
-84.32.128.0/22 Deny Spam
+84.32.34.0/24 Deny Spam
+84.32.185.0/24 Deny Spam
 84.32.190.0/24 Deny Spam
+84.54.50.0/24 Deny Spam
 84.238.160.0/22 Deny Spam
-85.31.44.0/24 Deny Spam
+85.31.44.0/23 Deny Spam
+85.31.46.0/24 Deny Spam
 85.121.39.0/24 Deny Spam
-85.202.168.0/24 Deny Spam
+85.158.148.0/24 Deny Spam
+85.158.151.0/24 Deny Spam
+85.202.168.0/23 Deny Spam
+85.208.136.0/24 Deny Spam
 85.209.4.0/22 Deny Spam
-85.209.135.0/24 Deny Spam
+85.209.134.0/23 Deny Spam
+85.217.144.0/23 Deny Spam
 86.104.0.0/23 Deny Spam
 86.104.2.0/24 Deny Spam
 86.104.212.0/23 Deny Spam
@@ -248,7 +301,10 @@ Tag: Emerald Onion
 86.107.72.0/24 Deny Spam
 86.107.193.0/24 Deny Spam
 86.107.194.0/23 Deny Spam
+87.120.84.0/24 Deny Spam
+87.121.221.0/24 Deny Spam
 87.246.7.0/24 Deny Spam
+87.251.67.0/24 Deny Spam
 87.251.79.0/24 Deny Spam
 88.218.148.0/22 Deny Spam
 89.32.43.0/24 Deny Spam
@@ -302,22 +358,24 @@ Tag: Emerald Onion
 89.46.47.0/24 Deny Spam
 91.109.176.0/20 Deny Spam
 91.132.164.0/22 Deny Spam
+91.194.192.0/22 Deny Spam
+91.198.123.0/24 Deny Spam
 91.200.12.0/22 Deny Spam
 91.200.81.0/24 Deny Spam
-91.200.82.0/23 Deny Spam
+91.200.83.0/24 Deny Spam
 91.200.133.0/24 Deny Spam
 91.200.164.0/24 Deny Spam
 91.200.248.0/22 Deny Spam
 91.203.192.0/23 Deny Spam
+91.213.50.0/24 Deny Spam
 91.215.85.0/24 Deny Spam
 91.216.3.0/24 Deny Spam
 91.218.236.0/22 Deny Spam
-91.220.163.0/24 Deny Spam
 91.229.52.0/22 Deny Spam
 91.232.18.0/24 Deny Spam
 91.235.130.0/23 Deny Spam
 91.243.93.0/24 Deny Spam
-92.118.80.0/22 Deny Spam
+92.52.217.0/24 Deny Spam
 93.114.51.0/24 Deny Spam
 93.114.52.0/23 Deny Spam
 93.114.54.0/24 Deny Spam
@@ -326,31 +384,44 @@ Tag: Emerald Onion
 93.119.118.0/23 Deny Spam
 93.119.120.0/23 Deny Spam
 93.119.124.0/23 Deny Spam
+94.131.220.0/24 Deny Spam
 94.131.228.0/22 Deny Spam
+94.142.138.0/24 Deny Spam
+94.156.161.0/24 Deny Spam
 95.161.128.0/23 Deny Spam
 95.214.24.0/24 Deny Spam
+95.214.27.0/24 Deny Spam
 101.134.0.0/15 Deny Spam
 101.203.128.0/19 Deny Spam
 101.248.0.0/15 Deny Spam
-102.196.96.0/19 Deny Spam
-102.211.224.0/19 Deny Spam
-102.212.224.0/19 Deny Spam
 102.240.0.0/16 Deny Spam
 103.5.116.0/22 Deny Spam
 103.7.198.0/23 Deny Spam
+103.13.140.0/22 Deny Spam
 103.20.72.0/22 Deny Spam
 103.23.8.0/21 Deny Spam
 103.23.124.0/22 Deny Spam
+103.25.88.0/22 Deny Spam
 103.30.12.0/22 Deny Spam
+103.30.132.0/22 Deny Spam
 103.32.0.0/16 Deny Spam
 103.34.0.0/16 Deny Spam
 103.36.64.0/22 Deny Spam
+103.43.140.0/22 Deny Spam
+103.48.36.0/22 Deny Spam
 103.75.36.0/22 Deny Spam
 103.80.132.0/22 Deny Spam
-103.99.0.0/22 Deny Spam
+103.81.44.0/22 Deny Spam
+103.99.54.0/24 Deny Spam
 103.100.168.0/22 Deny Spam
 103.147.204.0/23 Deny Spam
+103.148.42.0/24 Deny Spam
 103.151.46.0/23 Deny Spam
+103.153.254.0/23 Deny Spam
+103.157.75.0/24 Deny Spam
+103.167.40.0/24 Deny Spam
+103.183.217.0/24 Deny Spam
+103.192.228.0/22 Deny Spam
 103.197.240.0/22 Deny Spam
 103.199.88.0/22 Deny Spam
 103.210.244.0/22 Deny Spam
@@ -358,18 +429,22 @@ Tag: Emerald Onion
 103.225.72.0/22 Deny Spam
 103.228.60.0/22 Deny Spam
 103.230.144.0/22 Deny Spam
-103.232.172.0/22 Deny Spam
 103.236.32.0/22 Deny Spam
-103.243.8.0/22 Deny Spam
+103.243.240.0/22 Deny Spam
 104.193.228.0/22 Deny Spam
+104.234.183.0/24 Deny Spam
 104.243.192.0/20 Deny Spam
 104.244.56.0/21 Deny Spam
 104.250.192.0/19 Deny Spam
 106.95.0.0/16 Deny Spam
 107.182.129.0/24 Deny Spam
 107.182.240.0/20 Deny Spam
+109.206.240.0/23 Deny Spam
 109.206.243.0/24 Deny Spam
-110.41.0.0/16 Deny Spam
+111.68.64.0/24 Deny Spam
+111.68.69.0/24 Deny Spam
+111.68.76.0/24 Deny Spam
+111.68.79.0/24 Deny Spam
 111.223.192.0/19 Deny Spam
 113.212.128.0/19 Deny Spam
 115.144.69.0/24 Deny Spam
@@ -393,7 +468,6 @@ Tag: Emerald Onion
 125.58.0.0/18 Deny Spam
 125.169.0.0/16 Deny Spam
 128.24.0.0/16 Deny Spam
-128.85.0.0/16 Deny Spam
 130.148.0.0/16 Deny Spam
 130.196.0.0/16 Deny Spam
 130.222.0.0/16 Deny Spam
@@ -403,12 +477,10 @@ Tag: Emerald Onion
 132.255.0.0/22 Deny Spam
 134.18.0.0/16 Deny Spam
 134.33.0.0/16 Deny Spam
-134.172.0.0/16 Deny Spam
 137.19.0.0/16 Deny Spam
 137.31.0.0/16 Deny Spam
 137.55.0.0/16 Deny Spam
 137.72.0.0/16 Deny Spam
-137.76.0.0/16 Deny Spam
 137.105.0.0/16 Deny Spam
 137.218.0.0/16 Deny Spam
 138.31.0.0/16 Deny Spam
@@ -437,7 +509,6 @@ Tag: Emerald Onion
 142.102.0.0/16 Deny Spam
 143.0.236.0/22 Deny Spam
 143.49.0.0/16 Deny Spam
-143.136.0.0/16 Deny Spam
 143.253.0.0/16 Deny Spam
 145.231.0.0/16 Deny Spam
 146.3.0.0/16 Deny Spam
@@ -448,6 +519,7 @@ Tag: Emerald Onion
 146.252.0.0/16 Deny Spam
 147.7.0.0/16 Deny Spam
 147.16.0.0/14 Deny Spam
+147.78.103.0/24 Deny Spam
 147.78.224.0/22 Deny Spam
 147.119.0.0/16 Deny Spam
 148.148.0.0/16 Deny Spam
@@ -467,6 +539,7 @@ Tag: Emerald Onion
 150.242.120.0/22 Deny Spam
 150.242.144.0/22 Deny Spam
 151.212.0.0/16 Deny Spam
+152.89.198.0/24 Deny Spam
 152.109.0.0/16 Deny Spam
 152.147.0.0/16 Deny Spam
 153.14.0.0/16 Deny Spam
@@ -474,6 +547,7 @@ Tag: Emerald Onion
 153.85.0.0/16 Deny Spam
 153.93.0.0/16 Deny Spam
 154.0.64.0/18 Deny Spam
+154.13.137.0/24 Deny Spam
 154.73.200.0/21 Deny Spam
 155.40.0.0/16 Deny Spam
 155.66.0.0/16 Deny Spam
@@ -489,6 +563,8 @@ Tag: Emerald Onion
 157.162.0.0/16 Deny Spam
 157.186.0.0/16 Deny Spam
 157.195.0.0/16 Deny Spam
+158.46.205.0/24 Deny Spam
+158.46.207.0/24 Deny Spam
 158.54.0.0/16 Deny Spam
 158.249.0.0/16 Deny Spam
 159.80.0.0/16 Deny Spam
@@ -517,10 +593,8 @@ Tag: Emerald Onion
 163.50.0.0/16 Deny Spam
 163.53.247.0/24 Deny Spam
 163.123.143.0/24 Deny Spam
-163.128.224.0/19 Deny Spam
 163.197.0.0/16 Deny Spam
 163.198.0.0/16 Deny Spam
-163.216.0.0/19 Deny Spam
 163.250.0.0/16 Deny Spam
 163.254.0.0/16 Deny Spam
 164.6.0.0/16 Deny Spam
@@ -537,7 +611,6 @@ Tag: Emerald Onion
 167.82.144.0/20 Deny Spam
 167.103.0.0/16 Deny Spam
 167.158.0.0/16 Deny Spam
-167.175.0.0/16 Deny Spam
 167.224.0.0/19 Deny Spam
 167.224.32.0/20 Deny Spam
 167.224.48.0/21 Deny Spam
@@ -604,15 +677,20 @@ Tag: Emerald Onion
 170.83.232.0/22 Deny Spam
 170.113.0.0/16 Deny Spam
 170.179.0.0/16 Deny Spam
-170.244.40.0/22 Deny Spam
 170.244.240.0/22 Deny Spam
 170.247.220.0/22 Deny Spam
+171.22.30.0/24 Deny Spam
+171.22.240.0/22 Deny Spam
 171.26.0.0/16 Deny Spam
 172.247.38.0/24 Deny Spam
 175.103.64.0/18 Deny Spam
+176.100.42.0/24 Deny Spam
+176.111.173.0/24 Deny Spam
+176.113.115.0/24 Deny Spam
 176.124.192.0/23 Deny Spam
 176.126.192.0/23 Deny Spam
 176.126.194.0/24 Deny Spam
+176.223.66.0/24 Deny Spam
 176.223.116.0/23 Deny Spam
 176.223.118.0/24 Deny Spam
 176.223.160.0/23 Deny Spam
@@ -620,25 +698,32 @@ Tag: Emerald Onion
 178.159.97.0/24 Deny Spam
 178.159.100.0/24 Deny Spam
 178.159.107.0/24 Deny Spam
+179.43.142.0/24 Deny Spam
+179.43.149.0/24 Deny Spam
 180.178.192.0/18 Deny Spam
 181.177.64.0/18 Deny Spam
-182.255.36.0/22 Deny Spam
-185.0.96.0/19 Deny Spam
+185.11.61.0/24 Deny Spam
 185.14.192.0/23 Deny Spam
 185.14.195.0/24 Deny Spam
 185.21.8.0/22 Deny Spam
 185.30.168.0/22 Deny Spam
+185.51.120.0/24 Deny Spam
 185.56.83.0/24 Deny Spam
 185.64.23.0/24 Deny Spam
+185.65.201.0/24 Deny Spam
 185.71.0.0/22 Deny Spam
 185.77.248.0/24 Deny Spam
 185.80.112.0/22 Deny Spam
+185.81.217.0/24 Deny Spam
 185.105.56.0/22 Deny Spam
+185.106.92.0/23 Deny Spam
 185.110.0.0/22 Deny Spam
 185.116.172.0/23 Deny Spam
 185.116.175.0/24 Deny Spam
 185.120.8.0/22 Deny Spam
+185.121.120.0/24 Deny Spam
 185.122.128.0/22 Deny Spam
+185.122.204.0/24 Deny Spam
 185.123.248.0/21 Deny Spam
 185.124.56.0/21 Deny Spam
 185.127.44.0/22 Deny Spam
@@ -652,22 +737,30 @@ Tag: Emerald Onion
 185.134.48.0/22 Deny Spam
 185.144.180.0/22 Deny Spam
 185.147.140.0/22 Deny Spam
+185.156.72.0/24 Deny Spam
 185.161.148.0/22 Deny Spam
 185.165.24.0/22 Deny Spam
 185.180.192.0/22 Deny Spam
 185.193.90.0/24 Deny Spam
 185.215.113.0/24 Deny Spam
 185.215.132.0/22 Deny Spam
+185.216.68.0/24 Deny Spam
+185.216.71.0/24 Deny Spam
 185.225.73.0/24 Deny Spam
 185.225.74.0/24 Deny Spam
 185.230.44.0/22 Deny Spam
+185.232.19.0/24 Deny Spam
 185.234.64.0/22 Deny Spam
 185.237.104.0/22 Deny Spam
 185.237.220.0/22 Deny Spam
 185.237.226.0/23 Deny Spam
 185.238.176.0/22 Deny Spam
+185.242.0.0/22 Deny Spam
 185.246.220.0/23 Deny Spam
+185.252.178.0/24 Deny Spam
 185.254.37.0/24 Deny Spam
+185.255.38.0/24 Deny Spam
+185.255.171.0/24 Deny Spam
 186.65.112.0/20 Deny Spam
 186.179.0.0/18 Deny Spam
 187.19.64.0/20 Deny Spam
@@ -734,23 +827,47 @@ Tag: Emerald Onion
 192.245.248.0/24 Deny Spam
 192.251.231.0/24 Deny Spam
 192.252.16.0/20 Deny Spam
+193.30.144.0/20 Deny Spam
 193.30.254.0/23 Deny Spam
 193.32.66.0/23 Deny Spam
-193.42.33.0/24 Deny Spam
-193.43.104.0/24 Deny Spam
+193.42.32.0/23 Deny Spam
 193.47.61.0/24 Deny Spam
+193.58.122.0/24 Deny Spam
 193.139.0.0/16 Deny Spam
 193.151.160.0/22 Deny Spam
+193.233.20.0/24 Deny Spam
 193.233.48.0/24 Deny Spam
 193.233.81.0/24 Deny Spam
+193.233.234.0/24 Deny Spam
 193.243.0.0/17 Deny Spam
 193.254.48.0/20 Deny Spam
+194.26.229.0/24 Deny Spam
+194.31.96.0/24 Deny Spam
+194.36.177.0/24 Deny Spam
 194.41.60.0/23 Deny Spam
 194.49.94.0/24 Deny Spam
+194.50.111.0/24 Deny Spam
+194.55.186.0/24 Deny Spam
+194.55.224.0/24 Deny Spam
+194.58.154.0/24 Deny Spam
+194.87.85.0/24 Deny Spam
+194.87.87.0/24 Deny Spam
 194.87.151.0/24 Deny Spam
 194.87.200.0/24 Deny Spam
+194.87.212.0/24 Deny Spam
+194.87.218.0/24 Deny Spam
+194.87.221.0/24 Deny Spam
+194.99.44.0/24 Deny Spam
+194.99.46.0/24 Deny Spam
+194.110.203.0/24 Deny Spam
 194.180.48.0/23 Deny Spam
-195.140.147.0/24 Deny Spam
+195.22.149.0/24 Deny Spam
+195.49.128.0/22 Deny Spam
+195.133.18.0/23 Deny Spam
+195.133.38.0/24 Deny Spam
+195.133.40.0/22 Deny Spam
+195.133.85.0/24 Deny Spam
+195.178.120.0/24 Deny Spam
 195.181.224.0/20 Deny Spam
 195.210.96.0/19 Deny Spam
 196.1.109.0/24 Deny Spam
@@ -789,12 +906,10 @@ Tag: Emerald Onion
 198.177.176.0/22 Deny Spam
 198.177.180.0/24 Deny Spam
 198.177.214.0/24 Deny Spam
-198.178.64.0/19 Deny Spam
 198.179.22.0/24 Deny Spam
 198.181.96.0/20 Deny Spam
 198.183.32.0/19 Deny Spam
 198.184.193.0/24 Deny Spam
-198.184.208.0/24 Deny Spam
 198.186.25.0/24 Deny Spam
 198.187.64.0/18 Deny Spam
 198.187.192.0/24 Deny Spam
@@ -814,6 +929,7 @@ Tag: Emerald Onion
 199.5.194.0/24 Deny Spam
 199.5.229.0/24 Deny Spam
 199.7.32.0/21 Deny Spam
+199.7.40.0/22 Deny Spam
 199.7.44.0/23 Deny Spam
 199.7.46.0/24 Deny Spam
 199.26.137.0/24 Deny Spam
@@ -826,6 +942,7 @@ Tag: Emerald Onion
 199.33.222.0/24 Deny Spam
 199.34.128.0/18 Deny Spam
 199.38.0.0/21 Deny Spam
+199.59.8.0/21 Deny Spam
 199.60.102.0/24 Deny Spam
 199.71.139.0/24 Deny Spam
 199.71.192.0/20 Deny Spam
@@ -838,7 +955,6 @@ Tag: Emerald Onion
 199.89.16.0/20 Deny Spam
 199.89.157.0/24 Deny Spam
 199.89.198.0/24 Deny Spam
-199.119.136.0/21 Deny Spam
 199.120.163.0/24 Deny Spam
 199.164.136.0/24 Deny Spam
 199.165.32.0/19 Deny Spam
@@ -894,29 +1010,25 @@ Tag: Emerald Onion
 200.22.0.0/16 Deny Spam
 200.71.124.0/22 Deny Spam
 200.142.208.0/20 Deny Spam
+200.189.16.0/20 Deny Spam
 200.189.44.0/22 Deny Spam
+200.194.240.0/21 Deny Spam
 200.226.128.0/17 Deny Spam
 201.148.168.0/22 Deny Spam
 201.169.0.0/16 Deny Spam
 202.21.64.0/19 Deny Spam
-202.27.96.0/21 Deny Spam
-202.27.120.0/22 Deny Spam
-202.27.161.0/24 Deny Spam
-202.27.162.0/23 Deny Spam
-202.27.164.0/22 Deny Spam
-202.27.168.0/24 Deny Spam
+202.27.98.0/24 Deny Spam
+202.27.100.0/22 Deny Spam
 202.40.32.0/19 Deny Spam
 202.40.64.0/18 Deny Spam
+202.73.4.0/24 Deny Spam
 202.86.0.0/22 Deny Spam
 202.92.18.0/24 Deny Spam
-202.92.20.0/24 Deny Spam
 202.148.32.0/20 Deny Spam
 202.183.0.0/19 Deny Spam
 202.189.80.0/20 Deny Spam
-203.2.200.0/22 Deny Spam
 203.9.0.0/19 Deny Spam
 203.31.88.0/23 Deny Spam
-203.34.70.0/23 Deny Spam
 203.86.252.0/22 Deny Spam
 203.169.0.0/22 Deny Spam
 203.191.64.0/18 Deny Spam
@@ -1097,10 +1209,14 @@ Tag: Emerald Onion
 209.182.64.0/19 Deny Spam
 210.57.128.0/18 Deny Spam
 210.57.192.0/20 Deny Spam
-212.193.30.0/24 Deny Spam
+212.87.204.0/24 Deny Spam
+212.192.8.0/24 Deny Spam
+212.192.241.0/24 Deny Spam
+212.192.242.0/24 Deny Spam
+212.193.30.0/23 Deny Spam
 212.237.152.0/21 Deny Spam
 213.130.88.0/22 Deny Spam
-213.176.20.0/22 Deny Spam
+213.226.123.0/24 Deny Spam
 216.137.144.0/20 Deny Spam
 216.147.192.0/20 Deny Spam
 216.152.112.0/20 Deny Spam
@@ -1118,7 +1234,7 @@ Tag: Spamhaus DROP/EDROP
 # Octopusnet VPN (mostly from AS44724, but we'll update via announces instead,
 # because we don't need to block the entire ASN, and there could be stray CIDRs
 # too). Proxy service with a history of spam events.
-# Updated: 2021.12.23 / Checked: 2022.07.22
+# Updated: 2021.12.23 / Checked: 2023.04.06
 
 46.46.0.0/20 Deny Proxy
 46.46.17.0/24 Deny Proxy
@@ -1134,8 +1250,8 @@ Tag: Octopusnet VPN
 
 
 # ASN 208323 ("Foundation for Applied Privacy").
-# Stop Forum Spam (SFS) listings: 88,004.
-# Updated: 2019.10.02 / Checked: 2022.10.03
+# Stop Forum Spam (SFS) listings: 117,309.
+# Updated: 2019.10.02 / Checked: 2023.04.06
 
 109.70.100.0/24 Deny Proxy
 Origin: AT
@@ -1146,7 +1262,8 @@ Tag: Applied Privacy
 # ASNs 50495, 62874, 199438, 204646 ("Web2Objects LLC").
 # Provides anonymous proxy services. Spam, hacking, probing for
 # vulnerabilities, and other kinds of unwanted traffic detected from here.
-# Updated: 2022.10.03
+# Stop Forum Spam (SFS) listings: 407 (AS50495), 1,831 (AS62874).
+# Updated: 2023.04.06
 
 77.83.232.0/22 Deny Proxy
 83.136.221.0/24 Deny Proxy
@@ -1158,9 +1275,8 @@ Tag: Applied Privacy
 176.119.202.0/24 Deny Proxy
 194.39.32.0/22 Deny Proxy
 195.234.99.0/24 Deny Proxy
-Origin: DE
 204.225.218.0/24 Deny Proxy
-Origin: LT
+Origin: DE
 194.14.219.0/24 Deny Proxy
 Origin: SE
 45.41.128.0/22 Deny Proxy
@@ -1168,9 +1284,12 @@ Origin: SE
 45.56.132.0/22 Deny Proxy
 45.56.144.0/23 Deny Proxy
 45.56.147.0/24 Deny Proxy
+45.56.172.0/22 Deny Proxy
 45.56.184.0/22 Deny Proxy
 45.61.88.0/21 Deny Proxy
 45.61.104.0/21 Deny Proxy
+45.61.116.0/22 Deny Proxy
+45.61.120.0/21 Deny Proxy
 64.57.136.0/21 Deny Proxy
 104.37.24.0/22 Deny Proxy
 104.37.28.0/24 Deny Proxy
@@ -1185,8 +1304,11 @@ Origin: SE
 104.232.196.0/22 Deny Proxy
 104.232.212.0/22 Deny Proxy
 104.238.33.0/24 Deny Proxy
-104.238.52.0/22 Deny Proxy
-142.147.128.0/17 Deny Proxy
+104.238.36.0/22 Deny Proxy
+104.238.48.0/21 Deny Proxy
+142.147.224.0/20 Deny Proxy
+142.147.247.0/24 Deny Proxy
+142.147.248.0/21 Deny Proxy
 162.249.164.0/22 Deny Proxy
 167.160.32.0/22 Deny Proxy
 167.160.38.0/23 Deny Proxy
@@ -1197,44 +1319,41 @@ Profile: Commercial;Tor endpoints here
 Tag: Web2Objects LLC
 
 
-# ASN 197640 ("OverPlay.Net LP").
-# A paid VPN provider. Brute-force and SQLi attacks, port scans, hacking, and
-# spam detected from here.
-# Stop Forum Spam (SFS) listings: 690.
-# Updated: 2022.08.05
-
-185.147.213.0/24 Deny Attacks
-Origin: US
-Profile: Infrastructure/Transit;Tor endpoints here
-Tag: OverPlay.Net LP
-
-
 # ASN 209854 ("Surfshark Ltd").
 # A paid VPN provider. Brute-force and SSH attacks detected from here.
-# Stop Forum Spam (SFS) listings: 500.
-# Updated: 2022.08.05
+# Stop Forum Spam (SFS) listings: 834.
+# Updated: 2023.04.06
 
 31.169.120.0/22 Deny Attacks
 45.129.32.0/24 Deny Attacks
 45.134.224.0/24 Deny Attacks
-83.97.112.0/22 Deny Attacks
-176.227.240.0/23 Deny Attacks
+83.97.112.0/23 Deny Attacks
+83.97.114.0/24 Deny Attacks
+176.227.241.0/24 Deny Attacks
 Origin: DE
+185.128.135.0/24 Deny Attacks
+185.239.189.0/24 Deny Attacks
+Origin: GB
 196.44.118.0/24 Deny Attacks
 Origin: GH
-194.41.112.0/23 Deny Attacks
-194.41.114.0/24 Deny Attacks
-Origin: LT
+36.255.196.0/24 Deny Attacks
+Origin: IN
 45.95.242.0/24 Deny Attacks
 45.130.137.0/24 Deny Attacks
 45.135.184.0/24 Deny Attacks
+45.139.252.0/23 Deny Attacks
+45.144.227.0/24 Deny Attacks
 45.149.3.0/24 Deny Attacks
 62.197.144.0/20 Deny Attacks
-91.190.100.0/22 Deny Attacks
+91.190.101.0/24 Deny Attacks
+91.190.103.0/24 Deny Attacks
 91.206.168.0/24 Deny Attacks
 92.62.120.0/22 Deny Attacks
+93.185.162.0/24 Deny Attacks
 94.154.124.0/24 Deny Attacks
 185.244.139.0/24 Deny Attacks
+193.56.113.0/24 Deny Attacks
+193.57.94.0/23 Deny Attacks
 193.218.35.0/24 Deny Attacks
 194.26.131.0/24 Deny Attacks
 194.169.168.0/22 Deny Attacks
@@ -1243,6 +1362,13 @@ Origin: LT
 Origin: NL
 113.203.221.0/24 Deny Attacks
 Origin: PK
+45.150.5.0/24 Deny Attacks
+93.120.24.0/23 Deny Attacks
+146.66.210.0/24 Deny Attacks
+178.157.109.0/24 Deny Attacks
+Origin: RO
+172.252.131.0/24 Deny Attacks
+Origin: US
 92.249.36.0/22 Deny Attacks
 Origin: VG
 Profile: Infrastructure/Transit;Tor endpoints here

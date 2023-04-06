@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Verification data (last modified: 2023.02.28).
+# This file: Verification data (last modified: 2023.04.06).
 ##/
 
 # Additional references: https://udger.com/resources/ua-list/crawlers
@@ -32,7 +32,7 @@ Search Engine Verification:
 
  # https://help.baidu.com/question?prod_en=master&class=Baiduspider
  # https://help.baidu.com/question?prod_id=99&class=476&id=3001
- # Updated: 2020.02.07 / Checked: 2022.02.18
+ # Updated: 2020.02.07 / Checked: 2023.04.06
  Baiduspider/百度:
   Bypass flag: "Flag-Bypass-Baidu-Check"
   User Agent: "baiduspider"
@@ -129,7 +129,7 @@ Search Engine Verification:
    - ".seznam.cz"
 
  # https://www.sogou.com/docs/help/webmasters.htm#07
- # Updated: 2018.07.16 / Checked: 2022.02.18
+ # Updated: 2018.07.16 / Checked: 2023.04.06
  Sogou/搜狗:
   Bypass flag: "Flag-Bypass-Sogou-Check"
   User Agent: "sogou"
@@ -147,7 +147,7 @@ Search Engine Verification:
    - ".yse.yahoo.net"
 
  # https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml
- # Updated: 2018.07.14 / Checked: 2022.02.18
+ # Updated: 2018.07.14 / Checked: 2023.04.06
  Yandex/Яндекс:
   Bypass flag: "Flag-Bypass-Yandex-Check"
   User Agent: "yandex"
@@ -233,7 +233,6 @@ Other Verification:
  # https://github.com/CIDRAM/CIDRAM/issues/260
  # Updated: 2021.10.01 / Checked: 2022.02.18
  AmazonAdBot:
-  Bypass flag: "Flag-Bypass-AmazonAdBot-Check"
   User Agent Pattern: "~amazonadbot|adbot\.amazon\.com~"
   Closure: "DNS-Reverse-Forward"
   Valid domains:
@@ -241,7 +240,7 @@ Other Verification:
   Single hit bypass: true
 
  # https://www.oracle.com/corporate/acquisitions/grapeshot/crawler.html
- # Updated: 2021.03.13 / Checked: 2023.01.04
+ # Updated: 2021.03.13 / Checked: 2023.04.06
  Oracle Data Cloud Crawler:
   User Agent: "grapeshot"
   Closure: "UA-CIDR-Match"

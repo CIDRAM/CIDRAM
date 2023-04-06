@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2023.03.15).
+ * This file: Front-end handler (last modified: 2023.04.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -4004,7 +4004,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-aggregator' && $CIDRAM['FE']
     echo $CIDRAM['SendOutput']();
 }
 
-/** IP Test. */
+/** IP Testing. */
 elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Permissions'] === 1) {
     /** Page initial prepwork. */
     $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_ip_test'), $CIDRAM['L10N']->getString('tip_ip_test'));

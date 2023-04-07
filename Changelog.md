@@ -209,4 +209,8 @@
 
 [2023.04.06; Bug-fix; Maikuolan]: Exit code 1 responses generated via run parameters in signatures weren't being honoured (although nothing in CIDRAM currently actually returns exit code 1 anyway, so this doesn't have any practical bearing); Fixed.
 
+[2023.04.06; Bug-fix; Maikuolan]: Yandex verification broken since v3.0; Fixed.
+
 [2023.04.06; Maikuolan]: Default signature bypasses updated.
+
+[2023.04.07; Maikuolan]: Reworked the IP test page.

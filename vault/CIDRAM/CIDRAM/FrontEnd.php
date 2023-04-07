@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.04.03).
+ * This file: The CIDRAM front-end (last modified: 2023.04.07).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -3846,7 +3846,7 @@ class FrontEnd extends Core
             echo $this->sendOutput();
         }
 
-        /** IP Test. */
+        /** IP Testing. */
         elseif ($this->CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $this->FE['Permissions'] === 1) {
             /** Page initial prepwork. */
             $this->initialPrepwork($this->L10N->getString('link_ip_test'), $this->L10N->getString('tip_ip_test'));
@@ -3862,29 +3862,34 @@ class FrontEnd extends Core
             /** Initialise results data. */
             $this->FE['IPTestResults'] = '';
 
-            /** Module switch for simulateBlockEvent method. */
-            $this->CIDRAM['ModuleSwitch'] = !empty($_POST['ModuleSwitch']);
-
-            /** Auxiliary switch for simulateBlockEvent method. */
-            $this->CIDRAM['AuxSwitch'] = !empty($_POST['AuxSwitch']);
-
-            /** Verification switch for simulateBlockEvent method. */
-            $this->CIDRAM['VerificationSwitch'] = !empty($_POST['VerificationSwitch']);
-
-            /** Module switch for HTML. */
+            /** Switches for which stages to enable for the IP test. */
+            if (isset($_POST['ip-addr'])) {
+                $this->CIDRAM['TestsSwitch'] = !empty($_POST['TestsSwitch']);
+                $this->CIDRAM['ModuleSwitch'] = !empty($_POST['ModuleSwitch']);
+                $this->CIDRAM['SEVSwitch'] = !empty($_POST['SEVSwitch']);
+                $this->CIDRAM['SMVSwitch'] = !empty($_POST['SMVSwitch']);
+                $this->CIDRAM['OVSwitch'] = !empty($_POST['OVSwitch']);
+                $this->CIDRAM['AuxSwitch'] = !empty($_POST['AuxSwitch']);
+            } else {
+                $this->CIDRAM['TestsSwitch'] = true;
+                $this->CIDRAM['ModuleSwitch'] = false;
+                $this->CIDRAM['SEVSwitch'] = false;
+                $this->CIDRAM['SMVSwitch'] = false;
+                $this->CIDRAM['OVSwitch'] = false;
+                $this->CIDRAM['AuxSwitch'] = false;
+            }
+            $this->FE['TestsSwitch'] = $this->CIDRAM['TestsSwitch'] ? ' checked' : '';
             $this->FE['ModuleSwitch'] = $this->CIDRAM['ModuleSwitch'] ? ' checked' : '';
-
-            /** Auxiliary switch for HTML. */
+            $this->FE['SEVSwitch'] = $this->CIDRAM['SEVSwitch'] ? ' checked' : '';
+            $this->FE['SMVSwitch'] = $this->CIDRAM['SMVSwitch'] ? ' checked' : '';
+            $this->FE['OVSwitch'] = $this->CIDRAM['OVSwitch'] ? ' checked' : '';
             $this->FE['AuxSwitch'] = $this->CIDRAM['AuxSwitch'] ? ' checked' : '';
 
-            /** Verification switch for HTML. */
-            $this->FE['VerificationSwitch'] = $this->CIDRAM['VerificationSwitch'] ? ' checked' : '';
-
             /** Fetch custom fields if specified. */
-            foreach (['custom-query', 'custom-referrer', 'custom-ua'] as $this->CIDRAM['ThisField']) {
-                $this->FE[$this->CIDRAM['ThisField']] = $_POST[$this->CIDRAM['ThisField']] ?? '';
+            foreach (['custom-query', 'custom-referrer', 'custom-ua'] as $Field) {
+                $this->FE[$Field] = $_POST[$Field] ?? '';
             }
-            unset($this->CIDRAM['ThisField']);
+            unset($Field);
 
             /** Set field label. */
             if (!empty($_POST['ip-addr']) || empty($_POST['custom-ua'])) {
@@ -3913,17 +3918,33 @@ class FrontEnd extends Core
                 /** Iterate through the addresses given to test. */
                 foreach ($_POST['ip-addr'] as $this->CIDRAM['ThisIP']['IPAddress']) {
                     if ($this->FE['TestMode'] === 1) {
-                        if (strlen($this->CIDRAM['ThisIP']['IPAddress']) === 0) {
+                        if ($this->CIDRAM['ThisIP']['IPAddress'] === '') {
                             continue;
                         }
-                        $this->simulateBlockEvent($this->CIDRAM['ThisIP']['IPAddress'], $this->CIDRAM['ModuleSwitch'], $this->CIDRAM['AuxSwitch'], $this->CIDRAM['VerificationSwitch']);
+                        $this->simulateBlockEvent(
+                            $this->CIDRAM['ThisIP']['IPAddress'],
+                            $this->CIDRAM['TestsSwitch'],
+                            $this->CIDRAM['ModuleSwitch'],
+                            $this->CIDRAM['SEVSwitch'],
+                            $this->CIDRAM['SMVSwitch'],
+                            $this->CIDRAM['OVSwitch'],
+                            $this->CIDRAM['AuxSwitch']
+                        );
                     } elseif ($this->FE['TestMode'] === 2) {
-                        $this->simulateBlockEvent('', $this->CIDRAM['ModuleSwitch'], $this->CIDRAM['AuxSwitch'], $this->CIDRAM['VerificationSwitch']);
+                        $this->simulateBlockEvent(
+                            '',
+                            $this->CIDRAM['TestsSwitch'],
+                            $this->CIDRAM['ModuleSwitch'],
+                            $this->CIDRAM['SEVSwitch'],
+                            $this->CIDRAM['SMVSwitch'],
+                            $this->CIDRAM['OVSwitch'],
+                            $this->CIDRAM['AuxSwitch']
+                        );
                         $this->CIDRAM['ThisIP']['IPAddress'] = $this->FE['custom-ua'];
                     }
                     if (
                         !empty($this->CIDRAM['Caught']) ||
-                        ($this->FE['TestMode'] === 1 && (empty($this->CIDRAM['LastTestIP']) || empty($this->CIDRAM['TestResults']))) ||
+                        ($this->FE['TestMode'] === 1 && $this->CIDRAM['TestsSwitch'] && (empty($this->CIDRAM['LastTestIP']) || empty($this->CIDRAM['TestResults']))) ||
                         !empty($this->CIDRAM['RunErrors']) ||
                         !empty($this->CIDRAM['ModuleErrors']) ||
                         !empty($this->CIDRAM['AuxErrors'])
@@ -4107,16 +4128,6 @@ class FrontEnd extends Core
             }
             unset($StateModified);
 
-            /** Temporarily mute signature files if "tracking-blocked-already" is false. */
-            if (!$this->FE['tracking-blocked-already']) {
-                $TempMuted = [
-                    'IPv4' => $this->Configuration['components']['ipv4'],
-                    'IPv6' => $this->Configuration['components']['ipv6']
-                ];
-                $this->Configuration['components']['ipv4'] = '';
-                $this->Configuration['components']['ipv6'] = '';
-            }
-
             if (!$this->FE['ASYNC']) {
                 /** Page initial prepwork. */
                 $this->initialPrepwork($this->L10N->getString('link_ip_tracking'), $this->L10N->getString('tip_ip_tracking'));
@@ -4219,7 +4230,7 @@ class FrontEnd extends Core
 
                     /** Check whether normally blocked by signature files and/or auxiliary rules. */
                     if ($this->FE['tracking-blocked-already'] || $this->FE['tracking-aux']) {
-                        $this->simulateBlockEvent($ThisTracking['IPAddr'], false, $this->FE['tracking-aux'], false);
+                        $this->simulateBlockEvent($ThisTracking['IPAddr'], $this->FE['tracking-blocked-already'], false, false, false, false, $this->FE['tracking-aux']);
                         $ThisTracking['Blocked'] = ($this->CIDRAM['Caught'] || $this->BlockInfo['SignatureCount']);
                     } else {
                         $ThisTracking['Blocked'] = false;
@@ -4300,13 +4311,6 @@ class FrontEnd extends Core
                     $this->FE['TrackingData'] .= $this->parseVars($ThisTracking, $this->FE['TrackingRow'], true);
                 }
                 unset($ThisTrackingArray, $ThisTracking);
-            }
-
-            /** Restore muted values. */
-            if (isset($TempMuted['IPv4'], $TempMuted['IPv6'])) {
-                $this->Configuration['components']['ipv4'] = $TempMuted['IPv4'];
-                $this->Configuration['components']['ipv6'] = $TempMuted['IPv6'];
-                unset($TempMuted);
             }
 
             /** Fix status display. */

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CIDRAM CLI mode (last modified: 2023.03.09).
+ * This file: CIDRAM CLI mode (last modified: 2023.04.07).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -39,8 +39,8 @@ trait CLI
             "\r%s\n\n%s\n>> test xxx.xxx.xxx.xxx\n\n%s\n>> cidrs xxx.xxx.xxx.xxx\n\n" .
             "%s\n>> test \"xxx.xxx.xxx.xxx\n>> yyy.yyy.yyy.yyy\n>> 2002::1\n>> zzz.zzz.zzz.zzz\"\n\n" .
             "%s\n>> test xxx.xxx.xxx.xxx,yyy.yyy.yyy.yyy,2002::1,zzz.zzz.zzz.zzz\n\n%s\n" .
-            ">> test \"aaa.aaa.aaa.aaa --no-mod\n>> bbb.bbb.bbb.bbb --no-aux\n>> ccc.ccc.ccc.ccc --no-ssv\n" .
-            ">> ddd.ddd.ddd.ddd --no-mod --no-aux --no-ssv\"\n\n" .
+            ">> test \"aaa.aaa.aaa.aaa --no-mod\n>> bbb.bbb.bbb.bbb --no-aux\n>> ccc.ccc.ccc.ccc --no-sev --no-smv --no-ov\n" .
+            ">> ddd.ddd.ddd.ddd --no-mod --no-aux --no-sev --no-smv --no-ov\"\n\n" .
             "%s\n>> fread \"file1.dat\n>> file2.dat\n>> file3.dat\"\n\n%s\n>> fwrite=file.dat\n\n" .
             "%s\n>> aggregate \"1.2.3.4/32\n>> 1.2.3.5/32\n>> 1.2.3.6/32\n>> 1.2.3.7/32\"\n\n" .
             "%s\n>> aggregate=netmasks \"1.2.3.4/32\n>> 1.2.3.5/32\"\n\n" .
@@ -246,20 +246,15 @@ trait CLI
                     echo $this->L10N->getString('field_ipaddr') . ' – ' . $this->L10N->getString('field_blocked') . "\n===\n";
                 }
                 foreach ($Data as $ThisItem) {
-                    $Results = ['Mod' => true, 'Aux' => true, 'SSV' => true];
-                    if (preg_match('~( --no-(?:mod|aux|ssv))+$~', $ThisItem)) {
-                        if (strpos($ThisItem, ' --no-mod') !== false) {
-                            $Results['Mod'] = false;
-                        }
-                        if (strpos($ThisItem, ' --no-aux') !== false) {
-                            $Results['Aux'] = false;
-                        }
-                        if (strpos($ThisItem, ' --no-ssv') !== false) {
-                            $Results['SSV'] = false;
-                        }
-                        $ThisItem = preg_replace('~( --no-(?:mod|aux|ssv))+$~', '', $ThisItem);
-                    }
-                    $this->simulateBlockEvent($ThisItem, $Results['Mod'], $Results['Aux'], $Results['SSV']);
+                    $Results = [];
+                    $Results['TestsSwitch'] = (strpos($ThisItem, ' --no-sig') === false);
+                    $Results['ModuleSwitch'] = (strpos($ThisItem, ' --no-mod') === false);
+                    $Results['SEVSwitch'] = (strpos($ThisItem, ' --no-sev') === false);
+                    $Results['SMVSwitch'] = (strpos($ThisItem, ' --no-smv') === false);
+                    $Results['OVSwitch'] = (strpos($ThisItem, ' --no-ov') === false);
+                    $Results['AuxSwitch'] = (strpos($ThisItem, ' --no-aux') === false);
+                    $ThisItem = preg_replace('~( --no-(?:sig|mod|s[em]v|ov|aux))+$~', '', $ThisItem);
+                    $this->simulateBlockEvent($ThisItem, ...$Results);
                     if (
                         $this->CIDRAM['Caught'] ||
                         empty($this->CIDRAM['LastTestIP']) ||

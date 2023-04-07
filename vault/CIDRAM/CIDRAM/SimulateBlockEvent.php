@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used to simulate block events (last modified: 2023.04.02).
+ * This file: Methods used to simulate block events (last modified: 2023.04.07).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -19,14 +19,18 @@ trait SimulateBlockEvent
      * Simulates block events (used by the IP tracking and IP test pages).
      *
      * @param string $Addr The IP address to test against.
-     * @param bool $Modules Specifies whether to test against modules.
-     * @param bool $Aux Specifies whether to test against auxiliary rules.
-     * @param bool $Verification Specifies whether to test against search
-     *          engine and social media verification.
+     * @param bool $Tests Switch for signature file testing.
+     * @param bool $Modules Switch for modules.
+     * @param bool $SEV Switch for search engine verification.
+     * @param bool $SMV Switch for social media verification.
+     * @param bool $OV Switch for other verification.
+     * @param bool $Aux Switch for auxiliary rules.
      * @return void
      */
-    public function simulateBlockEvent(string $Addr, bool $Modules = false, bool $Aux = false, bool $Verification = false): void
+    public function simulateBlockEvent(string $Addr, bool $Tests = true, bool $Modules = false, bool $SEV = false, bool $SMV = false, bool $OV = false, bool $Aux = false): void
     {
+        $this->Stage = '';
+
         /** Reset bypass flags (needed to prevent falsing due to search engine verification). */
         $this->resetBypassFlags();
 
@@ -90,7 +94,9 @@ trait SimulateBlockEvent
             $this->BlockInfo['rURI'] .= '?' . $this->FE['custom-query'];
         }
 
-        if (strlen($Addr)) {
+        if ($Tests && $Addr !== '') {
+            $this->Stage = 'Tests';
+
             /** Catch run errors. */
             $this->initialiseErrorHandler();
 
@@ -133,6 +139,7 @@ trait SimulateBlockEvent
 
         /** Execute modules, if any have been enabled. */
         if ($Modules && $this->Configuration['components']['modules'] && empty($this->CIDRAM['Whitelisted'])) {
+            $this->Stage = 'Modules';
             if (!isset($this->CIDRAM['ModuleResCache'])) {
                 $this->CIDRAM['ModuleResCache'] = [];
             }
@@ -175,22 +182,26 @@ trait SimulateBlockEvent
         }
 
         /** Execute search engine verification. */
-        if ($Verification && empty($this->CIDRAM['Whitelisted'])) {
+        if ($SEV && empty($this->CIDRAM['Whitelisted'])) {
+            $this->Stage = 'SearchEngineVerification';
             $this->searchEngineVerification();
         }
 
         /** Execute social media verification. */
-        if ($Verification && empty($this->CIDRAM['Whitelisted'])) {
+        if ($SMV && empty($this->CIDRAM['Whitelisted'])) {
+            $this->Stage = 'SocialMediaVerification';
             $this->socialMediaVerification();
         }
 
         /** Execute other verification. */
-        if ($Verification && empty($this->CIDRAM['Whitelisted'])) {
+        if ($OV && empty($this->CIDRAM['Whitelisted'])) {
+            $this->Stage = 'OtherVerification';
             $this->otherVerification();
         }
 
-        /** Process auxiliary rules, if any exist. */
+        /** Execute auxiliary rules, if any exist. */
         if ($Aux && empty($this->CIDRAM['Whitelisted'])) {
+            $this->Stage = 'Aux';
             $this->initialiseErrorHandler();
             $Before = $this->BlockInfo['SignatureCount'];
             $this->aux();
@@ -205,6 +216,7 @@ trait SimulateBlockEvent
          * Destroying the reporter (we won't process reports in this case, because we're only simulating block events,
          * as opposed to checking against actual, real requests; still needed to set it though to prevent errors).
          */
+        $this->Stage = 'Reporting';
         $this->Reporter = null;
     }
 
@@ -243,12 +255,12 @@ trait SimulateBlockEvent
         if (is_array($Addr)) {
             $Results = [];
             foreach ($Addr as $ThisAddr) {
-                $this->simulateBlockEvent($ThisAddr, $Modules, $Aux, $Verification);
+                $this->simulateBlockEvent($ThisAddr, true, $Modules, $Verification, $Verification, $Verification, $Aux);
                 $Results[$ThisAddr] = $this->BlockInfo;
             }
             return $Results;
         }
-        $this->simulateBlockEvent($Addr, $Modules, $Aux, $Verification);
+        $this->simulateBlockEvent($Addr, true, $Modules, $Verification, $Verification, $Verification, $Aux);
         return $this->BlockInfo;
     }
 }

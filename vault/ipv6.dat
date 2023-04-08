@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2023.95.0
-# Last modified: 2023.04.06
+# Version: 2023.97.0
+# Last modified: 2023.04.08
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -10802,8 +10802,7 @@ Tag: 1GSERVERS, LLC
 # Hong Kong computing and data center. Brute-force, XMLRPC/WordPress, and
 # webapp attacks, scanning for vulnerabilities, port scans, hacking, and spam
 # detected from here.
-# Stop Forum Spam (SFS) listings: 88.
-# Updated: 2022.04.16
+# Updated: 2022.04.16 / Checked: 2023.04.08
 
 2001:df3:7580::/48 Deny Cloud
 Origin: HK
@@ -10811,23 +10810,11 @@ Profile: Infrastructure/Transit
 Tag: Beecloud
 
 
-# ASN 63612 ("Shenzhen Qianhai bird cloud computing Co. Ltd").
-# Chinese computing and data center. Brute-force, SSH, RDP, and webapp attacks,
-# port scans, hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 3,184.
-# Updated: 2022.04.16
-
-2403:2940:1::/48 Deny Cloud
-Origin: CN
-Profile: Infrastructure/Transit
-Tag: Shenzhen Qianhai Bird
-
-
 # ASN 35816 ("Lancom Ltd").
 # Russian webhosting provider. Brute-force, DDoS, and webapp attacks, port
 # scans, hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 2,569.
-# Updated: 2022.04.16
+# Stop Forum Spam (SFS) listings: 3,838.
+# Updated: 2022.04.16 / Checked: 2023.04.08
 
 2a02:2b18::/32 Deny Cloud
 Origin: RU
@@ -11569,6 +11556,18 @@ Origin: RU
 Origin: US
 Profile: Commercial;Infrastructure/Transit;Search engine
 Tag: Yandex
+
+
+# ASN 48882 ("LLC Optima-East").
+# Brute-force, WordPress/XMLRPC, and webapp attacks, hacking, and spam detected
+# from here.
+# Stop Forum Spam (SFS) listings: 4.
+# Updated: 2023.04.08
+
+2001:678:2b4::/48 Deny Cloud
+Origin: UA
+Profile: Webhosting
+Tag: LLC Optima-East
 
 
 # ---

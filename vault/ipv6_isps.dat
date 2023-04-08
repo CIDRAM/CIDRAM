@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2023.95.0
-# Last modified: 2023.04.06
+# Version: 2023.97.0
+# Last modified: 2023.04.08
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -433,26 +433,29 @@ Tag: PJSC Moscow city
 # Listed here are some specific CIDRs/IPs on their network that pose a major
 # spam risk and/or are known sources of spam and/or other undesirable traffic.
 # Mozi botnet detected from here.
-# Stop Forum Spam (SFS) listings: 13,371 (AS7922).
-# Updated: 2022.08.28
+# Stop Forum Spam (SFS) listings: 10,164 (AS7922).
+# Updated: 2023.04.08
 
-2601:c6:cc00:81b0::/64 Deny Spam
-2601:18d:8b80:2470::/64 Deny Spam
-2601:18e:4100:d0d0::/64 Deny Spam
-2601:1c2:700:9450::/64 Deny Spam
-2601:204:100:8470::/64 Deny Spam
-2601:242:4080:73d0::/64 Deny Spam
-2601:248:c000:53d0::/64 Deny Spam
-2601:282:1782:2cd0::/64 Deny Spam
-2601:442:8100:4700::/64 Deny Spam
-2601:4c1:c102:dd0::/64 Deny Spam
-2601:5cc:4400:10a0::/64 Deny Spam
-2601:5ce:4480:7180::/64 Deny Spam
-2601:601:9c00:4aa0::/64 Deny Spam
-2601:602:8a00:a130::/64 Deny Spam
-2601:701:8200:550::/64 Deny Spam
-2601:883:8001:2530::/64 Deny Spam
-2603:3024:21a5:6080::/64 Deny Spam
+2601:41:4380:c170::/64 Deny Spam
+2601:88:8100:46e4::/64 Deny Spam
+2601:183:c903:10d0::/64 Deny Spam
+2601:19b:4401:9220::/64 Deny Spam
+2601:204:f000:c360::/64 Deny Spam
+2601:285:501:1500::/64 Deny Spam
+2601:2c2:4201:300::/64 Deny Spam
+2601:541:c080:5000::/64 Deny Spam
+2601:547:3:2330::/64 Deny Spam
+2601:582:4800:37e::/64 Deny Spam
+2601:5c0:c200:a10::/64 Deny Spam
+2601:601:8401:f090::/64 Deny Spam
+2601:642:4700:a650::/64 Deny Spam
+2601:642:c100:d150::/64 Deny Spam
+2601:644:0:73::/64 Deny Spam
+2601:802:4100:5e20::/64 Deny Spam
+2601:8c0:801:b3d0::/64 Deny Spam
+2603:3001:1cd2:8100::/64 Deny Spam
+2603:300c:616:c000::/64 Deny Spam
+2603:3024:1930:2000::/64 Deny Spam
 Origin: US
 Profile: Domestic ISP
 Tag: Comcast Spam IPs
@@ -967,10 +970,13 @@ Tag: Abissnet
 # Dutch domestic ISP and phone provider. Brute-force, SSH, webapp, DDoS, and
 # XMLRPC attacks, hacking, port scans, and spam detected from here. Listing
 # just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 411.
-# Updated: 2022.04.25
+# Stop Forum Spam (SFS) listings: 355.
+# Updated: 2023.04.07
 
-2a02:a443:578:1::/64 Deny Spam
+2a02:a441:3460:1::/64 Deny Spam
+2a02:a441:8f83:1::/64 Deny Spam
+2a02:a447:7ba1:1::/64 Deny Spam
+2a02:a44d:3a99:1::/64 Deny Spam
 Origin: NL
 Profile: Domestic ISP;Multiplay
 Tag: KPN B.V
@@ -1099,8 +1105,8 @@ Tag: Starhub Ltd
 # Czech domestic ISP. Brute-force, SSH, env, and webapp attacks, attempting to
 # execute exploits, port scans, hacking, and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 78.
-# Updated: 2022.04.25
+# Stop Forum Spam (SFS) listings: 34.
+# Updated: 2022.04.25 / Checked: 2023.04.07
 
 2a02:2b88:2:1::/64 Deny Attacks
 Origin: CZ
@@ -1111,8 +1117,8 @@ Tag: WEDOS Internet, a.s
 # ASN 134319 ("Elyzium Technologies Pvt. Ltd").
 # Indian infrastructure provider. Brute-force attacks, hacking, port scans, and
 # spam detected from here. Manually checked all ranges; All ranges affected.
-# Stop Forum Spam (SFS) listings: 291.
-# Updated: 2022.04.25
+# Stop Forum Spam (SFS) listings: 79.
+# Updated: 2022.04.25 / Checked: 2023.04.07
 
 2001:df2:4480::/48 Deny Attacks
 Origin: IN

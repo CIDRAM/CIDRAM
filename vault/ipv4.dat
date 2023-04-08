@@ -1,8 +1,8 @@
 # IPv4 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv4.dat
 
-# Version: 2023.95.0
-# Last modified: 2023.04.06
+# Version: 2023.97.0
+# Last modified: 2023.04.08
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -40819,40 +40819,42 @@ Tag: Kanzas LLC
 # Hong Kong computing and data center. Brute-force, XMLRPC/WordPress, and
 # webapp attacks, scanning for vulnerabilities, port scans, hacking, and spam
 # detected from here.
-# Stop Forum Spam (SFS) listings: 88.
-# Updated: 2022.04.16
+# Updated: 2023.04.08
 
 103.150.118.0/23 Deny Cloud
-203.168.226.0/24 Deny Cloud
+203.168.224.0/22 Deny Cloud
 Origin: HK
-46.20.96.0/24 Deny Cloud
-Origin: LB
 154.91.5.0/24 Deny Cloud
 154.91.7.0/24 Deny Cloud
-154.91.202.0/23 Deny Cloud
-154.212.160.0/22 Deny Cloud
 156.230.6.0/23 Deny Cloud
-156.233.26.0/24 Deny Cloud
 Origin: SC
-154.38.96.0/21 Deny Cloud
-205.198.108.0/23 Deny Cloud
+38.47.60.0/24 Deny Cloud
+205.198.108.0/22 Deny Cloud
 Origin: US
 Profile: Infrastructure/Transit
 Tag: Beecloud
 
 
 # ASN 147186 ("VCCL Cloud Private Limited").
-# Indian network, unknown purpose. Brute-force, XMLRPC/WordPress, and webapp
-# attacks, and hacking detected from here. For now, listing just the affected
-# ranges/addresses only.
-# Updated: 2022.04.16
+# Indian network, identified as a cloud network at other sources, but exact
+# purpose unknown. Brute-force, XMLRPC/WordPress, and webapp attacks, hacking,
+# and spam detected from here.
+# Stop Forum Spam (SFS) listings: 7.
+# Updated: 2023.04.08
 
-103.174.87.138/32 Deny Attacks
+103.238.130.0/24 Deny Cloud
+Origin: HK
+103.174.86.0/23 Deny Cloud
 Origin: IN
-154.91.140.12/32 Deny Attacks
-154.91.140.111/32 Deny Attacks
-154.91.140.134/32 Deny Attacks
+103.125.147.0/24 Deny Cloud
+Origin: PK
+154.91.140.0/24 Deny Cloud
 Origin: SC
+195.95.200.0/24 Deny Cloud
+Origin: SI
+108.165.146.0/24 Deny Cloud
+216.185.57.0/24 Deny Cloud
+Origin: US
 Profile: Restricted/Unidentifiable
 Tag: VCCL Cloud
 
@@ -40860,8 +40862,8 @@ Tag: VCCL Cloud
 # ASN 63612 ("Shenzhen Qianhai bird cloud computing Co. Ltd").
 # Chinese computing and data center. Brute-force, SSH, RDP, and webapp attacks,
 # port scans, hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 3,184.
-# Updated: 2022.04.16
+# Stop Forum Spam (SFS) listings: 6.
+# Updated: 2022.04.16 / Checked: 2023.04.08
 
 103.45.97.0/24 Deny Cloud
 103.45.98.0/23 Deny Cloud
@@ -40877,26 +40879,25 @@ Tag: Shenzhen Qianhai Bird
 # ASN 35816 ("Lancom Ltd").
 # Russian webhosting provider. Brute-force, DDoS, and webapp attacks, port
 # scans, hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 2,569.
-# Updated: 2022.04.16
+# Stop Forum Spam (SFS) listings: 3,838.
+# Updated: 2023.04.08
 
 5.149.208.0/20 Deny Cloud
 31.28.224.0/19 Deny Cloud
 37.139.96.0/20 Deny Cloud
 46.35.224.0/19 Deny Cloud
 78.30.192.0/18 Deny Cloud
-109.110.64.0/19 Deny Cloud
-130.255.128.0/20 Deny Cloud
-185.16.28.0/22 Deny Cloud
-185.153.132.0/22 Deny Cloud
-Origin: RU
 91.200.44.0/22 Deny Cloud
 91.207.146.0/23 Deny Cloud
 91.215.248.0/22 Deny Cloud
 91.218.28.0/22 Deny Cloud
+109.110.64.0/19 Deny Cloud
+130.255.128.0/20 Deny Cloud
 178.219.240.0/20 Deny Cloud
+185.16.28.0/22 Deny Cloud
+185.153.132.0/22 Deny Cloud
 194.12.96.0/19 Deny Cloud
-Origin: UA
+Origin: RU
 Profile: Webhosting
 Tag: Lancom Ltd
 
@@ -43256,6 +43257,51 @@ Origin: RU
 Origin: US
 Profile: Commercial;Infrastructure/Transit;Search engine
 Tag: Yandex
+
+
+# ASN 48882 ("LLC Optima-East").
+# Brute-force, WordPress/XMLRPC, and webapp attacks, hacking, and spam detected
+# from here.
+# Stop Forum Spam (SFS) listings: 4.
+# Updated: 2023.04.08
+
+31.40.156.0/24 Deny Cloud
+91.224.140.0/24 Deny Cloud
+193.203.105.0/24 Deny Cloud
+Origin: RU
+31.133.64.0/20 Deny Cloud
+91.218.16.0/22 Deny Cloud
+91.224.113.0/24 Deny Cloud
+95.215.48.0/22 Deny Cloud
+Origin: UA
+Profile: Webhosting
+Tag: LLC Optima-East
+
+
+# ASN 44774 ("Alliance LLC").
+# Brute-force, WordPress/XMLRPC, and webapp attacks, and hacking detected from
+# here.
+# Updated: 2023.04.08
+
+91.237.181.0/24 Deny Cloud
+Origin: RU
+Profile: Webhosting
+Tag: Alliance LLC
+
+
+# ASN 59392 ("Dihtyaruk Dmitry Yurievich").
+# Brute-force, WordPress/XMLRPC, and webapp attacks, and hacking detected from
+# here.
+# Updated: 2023.04.08
+
+31.148.52.0/22 Deny Cloud
+31.148.56.0/21 Deny Cloud
+95.47.204.0/22 Deny Cloud
+Origin: CZ
+93.190.125.0/24 Deny Cloud
+Origin: HK
+Profile: Webhosting
+Tag: Dihtyaruk DY
 
 
 # ---

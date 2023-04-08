@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2023.04.06).
+# This file: Thai language data for the front-end (last modified: 2023.04.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -391,8 +391,12 @@ hints_verification:
 info_cli_by_default_ips: |
  ที่อยู่ IP ถูกทดสอบกับไฟล์ลายเซ็นทั้งหมด โมดูลทั้งหมด กฎเสริมทั้งหมด
  เช่นเดียวกับการตรวจสอบโซเชียลมีเดียและเครื่องมือค้นหา.
- --no-mod ปิดใช้งานการตรวจสอบโมดูล. --no-aux ปิดใช้งานการตรวจสอบกฎเสริม.
- --no-ssv ปิดใช้งานการตรวจสอบโซการตรวจสอบเชียลมีเดียและเครื่องมือค้นหา.
+ --no-sig    ป้องกันการทดสอบกับไฟล์ลายเซ็น.
+ --no-mod    ป้องกันการทดสอบกับโมดูล.
+ --no-sev    ป้องกันการตรวจสอบเครื่องมือค้นหา.
+ --no-smv    ป้องกันการตรวจสอบโซเชียลมีเดีย.
+ --no-ov     ป้องกันการตรวจสอบอื่นๆ.
+ --no-aux    ป้องกันการทดสอบกับกฎเสริม.
 info_cli_cidram_cli_mod: "โหมด CLI ของ CIDRAM."
 info_cli_ipv4_ipv6_are_: |
  รองรับทั้ง IPv4/IPv6. อินพุตแบบหลายบรรทัดเป็นไปได้สำหรับการดำเนินการโหมด CLI
@@ -685,9 +689,12 @@ response_aux_rule_deleted_successfully: "กฎเสริม "%s" ถูกล
 response_aux_update_failed: "การอัปเดตกฎเสริมล้มเหลว!"
 response_aux_updated: "อัปเดตกฎเสริมสำเร็จแล้ว."
 response_checksum_error: "ข้อผิดพลาดเช็คซัม! ไฟล์ถูกปฏิเสธ!"
-response_cli_bad_chain: "คำสั่ง %s ไม่สามารถโยงแบบนั้นได้ขอโทษ."
-response_cli_bad_command: "ฉันไม่เข้าใจคำสั่งนั้นขอโทษ."
-response_cli_cant_write: "ฉันไม่สามารถเขียนถึง "%s" ได้ ขอโทษ."
+response_cli_bad_chain: "คำสั่ง %s ไม่สามารถโยงแบบนั้นได้ ขออภัย."
+response_cli_bad_command: "ฉันไม่เข้าใจคำสั่งนั้น ขออภัย."
+response_cli_cant_write: "ฉันไม่สามารถเขียนถึง "%s" ได้  ขออภัย."
+response_cli_no_analyse: "ไม่มีอะไรต้องวิเคราะห์ ขออภัย."
+response_cli_no_print: "ไม่มีอะไรจะพิมพ์ ขออภัย."
+response_cli_no_write: "ไม่มีอะไรจะเขียน ขออภัย."
 response_component_successfully_installed: "คอมโพเนนต์สำเร็จแล้วในการติดตั้ง."
 response_component_successfully_uninstalled: "คอมโพเนนต์สำเร็จแล้วถอนการติดตั้ง."
 response_component_successfully_updated: "คอมโพเนนต์สำเร็จแล้วอัปเดต."

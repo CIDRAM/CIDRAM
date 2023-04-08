@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2023.04.06).
+# This file: Latvian language data for the front-end (last modified: 2023.04.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -393,10 +393,13 @@ hints_verification:
 info_cli_by_default_ips: |
  Pēc noklusējuma IP tiek pārbaudīti attiecībā pret visiem paraksta failiem,
  visiem moduļiem, visiem palīgnoteikumiem, kā arī sociālo mediju un
- meklētājprogrammu verifikāciju. Tomēr pēc izvēles varat atspējot, pamatojoties
- uz katru IP, pārbaudi pret moduļiem ar --no-mod, pārbaudi pret
- palīgnoteikumiem ar --no-aux, un pārbaudi pret sociālo mediju un
- meklētājprogrammas verifikāciju ar --no-ssv, piemēram:
+ meklētājprogrammu verifikāciju.
+ --no-sig    Novērš testēšanu pret paraksta failiem.
+ --no-mod    Novērš testēšanu pret moduļiem.
+ --no-sev    Novērš meklētājprogrammas verifikāciju.
+ --no-smv    Novērš sociālo mediju verifikāciju.
+ --no-ov     Novērš citu verifikāciju.
+ --no-aux    Novērš testēšanu pret palīgnoteikumiem.
 info_cli_cidram_cli_mod: "CIDRAM CLI režīms."
 info_cli_ipv4_ipv6_are_: |
  Tiek atbalstīti abi IPv4/IPv6. Daudzrindu ievade ir iespējama visām CLI režīma
@@ -704,6 +707,9 @@ response_checksum_error: "Kontrolsummas kļūda! Fails noraidīts!"
 response_cli_bad_chain: "Atvainojiet, komandu %s nevar pieķēdēt šādā veidā."
 response_cli_bad_command: "Atvainojiet, es nesaprotu šo komandu."
 response_cli_cant_write: "Atvainojiet, es nevaru uzrakstīt uz "%s"."
+response_cli_no_analyse: "Atvainojiet, nav ko analizēt."
+response_cli_no_print: "Atvainojiet, nav ko drukāt."
+response_cli_no_write: "Atvainojiet, nav ko rakstīt."
 response_component_successfully_installed: "Komponents instalēšana izdevās."
 response_component_successfully_uninstalled: "Komponents atinstalēšana izdevās."
 response_component_successfully_updated: "Komponents atjaunināšana izdevās."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2023.04.06).
+# This file: Indonesian language data for the front-end (last modified: 2023.04.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -390,11 +390,13 @@ hints_verification:
  "Apa itu "bypass satu pelanggaran"?": "Dalam beberapa kasus, permintaan diverifikasi secara positif mungkin masih diblokir sebagai akibat dari file tanda tangan, modul, atau kondisi permintaan lainnya, dan bypass mungkin diperlukan untuk menghindari positif palsu. Dalam kasus dimana bypass dimaksudkan untuk menangani tepat satu pelanggaran, tidak lebih dan tidak kurang, bypass seperti itu dapat digambarkan sebagai "bypass satu pelanggaran"."
 info_cli_by_default_ips: |
  Sebagai standar, IP akan diuji terhadap semua file tanda tangan, semua modul,
- semua aturan tambahan, serta verifikasi media sosial dan mesin pencari. Namun,
- Anda secara opsional dapat menonaktifkan, berdasarkan IP, memeriksa terhadap
- modul dengan --no-mod, memeriksa terhadap aturan tambahan dengan --no-aux, dan
- memeriksa terhadap verifikasi media sosial dan mesin pencari dengan --no-ssv,
- seperti berikut:
+ semua aturan tambahan, serta verifikasi media sosial dan mesin pencari.
+ --no-sig    Mencegah pengujian terhadap file tanda tangan.
+ --no-mod    Mencegah pengujian terhadap modul.
+ --no-sev    Mencegah verifikasi mesin pencari.
+ --no-smv    Mencegah verifikasi media sosial.
+ --no-ov     Mencegah verifikasi lainnya.
+ --no-aux    Mencegah pengujian terhadap aturan tambahan.
 info_cli_cidram_cli_mod: "CIDRAM mode CLI."
 info_cli_ipv4_ipv6_are_: |
  IPv4/IPv6 keduanya didukung. Input multi-baris dimungkinkan untuk semua
@@ -696,6 +698,9 @@ response_checksum_error: "Kesalahan checksum! File ditolak!"
 response_cli_bad_chain: "Perintah %s tidak dapat dirantai dengan cara ini, maaf."
 response_cli_bad_command: "Saya tidak mengerti perintah ini, maaf."
 response_cli_cant_write: "Saya tidak dapat menulis ke "%s", maaf."
+response_cli_no_analyse: "Tidak punya apa-apa untuk dianalisis, maaf."
+response_cli_no_print: "Tidak punya apa-apa untuk dicetak, maaf."
+response_cli_no_write: "Tidak punya apa-apa untuk ditulis, maaf."
 response_component_successfully_installed: "Komponen berhasil diinstal."
 response_component_successfully_uninstalled: "Komponen berhasil diuninstal."
 response_component_successfully_updated: "Komponen berhasil diperbarui."

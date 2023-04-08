@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2023.04.06).
+# This file: Polish language data for the front-end (last modified: 2023.04.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -394,10 +394,13 @@ hints_verification:
 info_cli_by_default_ips: |
  Domyślnie adresy IP są testowane pod kątem wszystkich plików podpisów,
  wszystkich modułów, wszystkich reguł pomocniczych, a także weryfikacji mediów
- społecznościowych i wyszukiwarek. Możesz jednak opcjonalnie wyłączyć, na
- podstawie IP, sprawdzanie modułów za pomocą --no-mod, sprawdzanie reguł
- pomocniczych za pomocą --no-aux, oraz sprawdzanie pod kątem weryfikacji w
- mediach społecznościowych i wyszukiwarkach za pomocą --no-ssv, jak tak:
+ społecznościowych i wyszukiwarek.
+ --no-sig    Zapobiega testowaniu plików podpisów.
+ --no-mod    Zapobiega testowaniu modułów.
+ --no-sev    Zapobiega weryfikację w wyszukiwarce.
+ --no-smv    Zapobiega weryfikację w mediach społecznościowych.
+ --no-ov     Zapobiega innej weryfikacji.
+ --no-aux    Zapobiega testowaniu pod kątem reguł pomocniczych.
 info_cli_cidram_cli_mod: "CIDRAM tryb CLI."
 info_cli_ipv4_ipv6_are_: |
  Obsługiwane są oba IPv4/IPv6. Wprowadzanie wielowierszowe jest możliwe dla
@@ -711,6 +714,9 @@ response_checksum_error: "Błąd sumy kontrolnej! Plik odrzucony!"
 response_cli_bad_chain: "Przepraszam, polecenie %s nie może być połączone w ten sposób."
 response_cli_bad_command: "Przepraszam, nie rozumiem tego polecenia."
 response_cli_cant_write: "Przepraszam, nie mogę napisać do „%s”."
+response_cli_no_analyse: "Przepraszam, nie ma nic do analizować."
+response_cli_no_print: "Przepraszam, nie ma nic do wydrukowania."
+response_cli_no_write: "Przepraszam, nie ma nic do napisania."
 response_component_successfully_installed: "Sukces instalowanie komponentu."
 response_component_successfully_uninstalled: "Sukces odinstalowanie komponentu."
 response_component_successfully_updated: "Sukces aktualizacji komponentu."

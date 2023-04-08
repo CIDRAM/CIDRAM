@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2023.04.06).
+# This file: Swedish language data for the front-end (last modified: 2023.04.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -390,10 +390,13 @@ hints_verification:
  "Vad är "singel-hit bypasser"?": "I vissa fall kan en positivt verifierad begäran fortfarande blockeras som ett resultat av signaturfilerna, modulerna, eller andra villkor för begäran, och bypasser kan vara nödvändiga för att undvika falska positiva resultat. I det fall där en bypass är avsedd att hantera exakt en infraktion, varken mer eller mindre, sådan en bypass kan beskrivas som en "singel-hit bypass"."
 info_cli_by_default_ips: |
  Som standard testas IPer mot alla signaturfiler, alla moduler, alla
- hjälpregler, samt verifiering av sociala medier och sökmotorer. Däremot, du
- kan valfritt inaktivera, på en per-IP-basis, kontroll mot moduler med
- --no-mod, kontroll mot hjälpregler med --no-aux, och kontroll mot verifiering
- av sociala medier och sökmotorer med --no-ssv, såhär:
+ hjälpregler, samt verifiering av sociala medier och sökmotorer.
+ --no-sig    Förhindrar testning mot signaturfiler.
+ --no-mod    Förhindrar testning mot moduler.
+ --no-sev    Förhindrar verifiering av sökmotorer.
+ --no-smv    Förhindrar verifiering av sociala medier.
+ --no-ov     Förhindrar annan verifiering.
+ --no-aux    Förhindrar testning mot hjälpregler.
 info_cli_cidram_cli_mod: "CIDRAM CLI-läge."
 info_cli_ipv4_ipv6_are_: |
  IPv4/IPv6 stöds båda. Flerlinjeingång är möjlig för alla CLI-lägesoperationer
@@ -706,6 +709,9 @@ response_checksum_error: "Kontrollsumma fel! Filen avvisas!"
 response_cli_bad_chain: "Kommandot %s kan inte kedjan på det sättet, ursäkta."
 response_cli_bad_command: "Jag förstår inte det kommandot, ursäkta."
 response_cli_cant_write: "Jag kan inte skriva till "%s", ursäkta."
+response_cli_no_analyse: "Det finns inget att analysera, ursäkta."
+response_cli_no_print: "Det finns inget att skriva ut på skärmen, ursäkta."
+response_cli_no_write: "Det finns inget att skriva, ursäkta."
 response_component_successfully_installed: "Komponent har installerats framgångsrikt."
 response_component_successfully_uninstalled: "Komponent har avinstallerats framgångsrikt."
 response_component_successfully_updated: "Komponent har uppdaterats framgångsrikt."

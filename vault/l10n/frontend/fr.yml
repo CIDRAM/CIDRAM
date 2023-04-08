@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2023.04.06).
+# This file: French language data for the front-end (last modified: 2023.04.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -393,11 +393,13 @@ hints_verification:
 info_cli_by_default_ips: |
  Par défaut, les adresses IP sont testés par rapport à tous les fichiers de
  signature, tous les modules, toutes les règles auxiliaires, ainsi que la
- vérification des médias sociaux et des moteurs de recherche. Mais, vous pouvez
- désactiver, sur une base de l'IP, les tests par rapport aux modules avec
- --no-mod, les tests par rapport aux règles auxiliaires avec --no-aux, et les
- tests des médias sociaux et des moteurs de recherche avec --no-ssv, comme
- ceci :
+ vérification des médias sociaux et des moteurs de recherche.
+ --no-sig    Empêche les tests sur les fichiers de signature.
+ --no-mod    Empêche les tests sur les modules.
+ --no-sev    Empêche la vérification des moteurs de recherche.
+ --no-smv    Empêche la vérification des médias sociaux.
+ --no-ov     Empêche toute autre vérification.
+ --no-aux    Empêche les tests sur les règles auxiliaires.
 info_cli_cidram_cli_mod: "Mode CLI de CIDRAM."
 info_cli_ipv4_ipv6_are_: |
  IPv4/IPv6 sont tous deux supportés. L'entré multiligne est possible pour
@@ -712,6 +714,9 @@ response_checksum_error: "Erreur de la somme de contrôle\_! Fichier rejeté\_!"
 response_cli_bad_chain: "La commande %s ne peut pas être enchaîné de cette façon, désolé."
 response_cli_bad_command: "Je ne comprends pas cette commande, désolé."
 response_cli_cant_write: "Je ne peux pas écrire à «\_%s\_», désolé."
+response_cli_no_analyse: "Il n'y a rien à analyser, désolé."
+response_cli_no_print: "Il n'y a rien à imprimer, désolé."
+response_cli_no_write: "Il n'y a rien à écrire, désolé."
 response_component_successfully_installed: "Composant installé avec succès."
 response_component_successfully_uninstalled: "Composant désinstallé avec succès."
 response_component_successfully_updated: "Composant mise à jour avec succès."

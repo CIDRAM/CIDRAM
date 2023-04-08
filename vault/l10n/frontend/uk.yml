@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Ukrainian language data for the front-end (last modified: 2023.04.06).
+# This file: Ukrainian language data for the front-end (last modified: 2023.04.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -394,10 +394,13 @@ hints_verification:
 info_cli_by_default_ips: |
  Стандартно IP-адреси перевіряються на відповідність усім файлам сигнатурам,
  усім модулям, усім допоміжним правилам, а також перевірці соціальних мереж і
- пошукової системи. Однак ви можете додатково вимкнути для кожної IP-адреси,
- перевірку модулів за допомогою --no-mod, перевірку допоміжних правил за
- допомогою --no-aux, і перевірку соціальних мереж і пошукової системи за
- допомогою --no-ssv, як так:
+ пошукової системи.
+ --no-sig    Запобігає тестуванню проти файлів сигнатур.
+ --no-mod    Запобігає тестуванню проти модулів.
+ --no-sev    Запобігає перевірці пошукової системи.
+ --no-smv    Запобігає перевірці соціальних мереж.
+ --no-ov     Запобігає іншим перевіркам.
+ --no-aux    Запобігає тестуванню проти допоміжних правил.
 info_cli_cidram_cli_mod: "Режим CLI CIDRAM."
 info_cli_ipv4_ipv6_are_: |
  Підтримуються IPv4/IPv6 обидва. Багаторядковий ввід можливий для всіх операцій
@@ -711,6 +714,9 @@ response_checksum_error: "Помилка контрольної суми! Фай
 response_cli_bad_chain: "Команда %s не може бути зв'язана таким чином, вибачте."
 response_cli_bad_command: "Я не розумію цю команду, вибачте."
 response_cli_cant_write: "Я не можу написати на «%s», вибачте."
+response_cli_no_analyse: "Нема чого аналізувати, вибачте."
+response_cli_no_print: "Нема чого друкувати, вибачте."
+response_cli_no_write: "Нема чого писати, вибачте."
 response_component_successfully_installed: "Компонент успішно встановлено."
 response_component_successfully_uninstalled: "Компонент успішно видалено."
 response_component_successfully_updated: "Компонент успішно оновлено."

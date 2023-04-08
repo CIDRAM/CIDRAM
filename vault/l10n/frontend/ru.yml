@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2023.04.06).
+# This file: Russian language data for the front-end (last modified: 2023.04.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -394,10 +394,13 @@ hints_verification:
 info_cli_by_default_ips: |
  Стандартно IP-адреса проверяются на соответствие всем файлам сигнатурам, всем
  модулям, всем вспомогательным правилам, а также проверке в социальных сетях и
- поисковых системах. Однако вы можете дополнительно отключить для каждого
- IP-адреса, проверку модулей с помощью --no-mod, проверку вспомогательных
- правил с помощью --no-aux, и проверку социальных сетей и поисковых систем с
- помощью --no-ssv, вот так:
+ поисковых системах.
+ --no-sig    Предотвращает тестирование файлов сигнатурей.
+ --no-mod    Предотвращает тестирование модулей.
+ --no-sev    Предотвращает проверку в поисковых системах.
+ --no-smv    Предотвращает проверку в социальных сетях.
+ --no-ov     Предотвращает другие проверки.
+ --no-aux    Предотвращает тестирование вспомогательным правилам.
 info_cli_cidram_cli_mod: "Режим CLI CIDRAM."
 info_cli_ipv4_ipv6_are_: |
  Поддерживаются IPv4/IPv6 оба. Многострочный ввод возможен для всех операций
@@ -712,6 +715,9 @@ response_checksum_error: "Ошибка контрольной суммы! Фай
 response_cli_bad_chain: "Извините, команда %s не может быть связана таким образом."
 response_cli_bad_command: "Извините, команда непонятна."
 response_cli_cant_write: "Извините, я не могу писать на «%s»."
+response_cli_no_analyse: "Извините, там нечего анализировать."
+response_cli_no_print: "Извините, там нечего печатать."
+response_cli_no_write: "Извините, там нечего писать."
 response_component_successfully_installed: "Компонент успешно установлен."
 response_component_successfully_uninstalled: "Компонент успешно удален."
 response_component_successfully_updated: "Компонент успешно обновлено."

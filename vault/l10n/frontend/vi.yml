@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2023.04.06).
+# This file: Vietnamese language data for the front-end (last modified: 2023.04.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -391,9 +391,13 @@ hints_verification:
 info_cli_by_default_ips: |
  Theo mặc định, các IP được kiểm tra dựa trên tất cả các tập tin chữ ký, tất cả
  các mô-đun, tất cả các quy tắc phụ trợ, cũng như xác minh truyền thông xã hội
- và máy tìm kiếm. Tuy nhiên, bạn có thể tùy chọn vô hiệu hóa, trên cơ sở mỗi
- IP, kiểm tra mô-đun với --no-mod, kiểm tra quy tắc phụ trợ với --no-aux, và
- kiểm tra xác minh truyền thông xã máy tìm kiếm với --no-ssv, như vậy:
+ và máy tìm kiếm.
+ --no-sig    Ngăn chặn thử nghiệm đối với các tập tin chữ ký.
+ --no-mod    Ngăn chặn thử nghiệm đối với các mô-đun.
+ --no-sev    Ngăn chặn xác minh máy tìm kiếm.
+ --no-smv    Ngăn chặn xác minh truyền thông xã hội.
+ --no-ov     Ngăn chặn xác minh khác.
+ --no-aux    Ngăn chặn thử nghiệm đối với các quy tắc phụ trợ.
 info_cli_cidram_cli_mod: "CIDRAM chế độ CLI."
 info_cli_ipv4_ipv6_are_: |
  IPv4/IPv6 đều được hỗ trợ. Có thể có nhiều dòng đầu vào cho tất cả các
@@ -696,6 +700,9 @@ response_checksum_error: "Kiểm tra lỗi! Tập tin đã bị từ chối!"
 response_cli_bad_chain: "Xin lỗi, lệnh %s không thể được xâu chuỗi theo cách đó."
 response_cli_bad_command: "Xin lỗi, tôi không hiểu câu lệnh này."
 response_cli_cant_write: "Xin lỗi, tôi không thể viết thư cho "%s"."
+response_cli_no_analyse: "Xin lỗi, không có gì để phân tích."
+response_cli_no_print: "Xin lỗi, không có gì để in."
+response_cli_no_write: "Xin lỗi, không có gì để viết."
 response_component_successfully_installed: "Thành phần cài đặt thành công."
 response_component_successfully_uninstalled: "Thành phần gỡ bỏ cài đặt thành công."
 response_component_successfully_updated: "Thành phần cập nhật thành công."

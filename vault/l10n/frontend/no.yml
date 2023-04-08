@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2023.04.06).
+# This file: Norwegian language data for the front-end (last modified: 2023.04.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -390,10 +390,13 @@ hints_verification:
  "Hva er "enkelt-hit bypasser"?": "I noen tilfeller kan en positiv bekreftet forespørsel fortsatt blokkeres som et resultat av signaturfilene, modulene, eller andre forhold i forespørselen, og bypasser kan være nødvendig for å unngå falske positiver. I tilfellet der en bypass er ment å håndtere nøyaktig ett infraksjon, verken mer eller mindre, slik en bypass kan beskrives som en "enkelt-hit bypass"."
 info_cli_by_default_ips: |
  Som standard testes IPer mot alle signaturfiler, alle moduler, alle
- tilleggsregler, samt sosiale medier og søkemotor verifisering. Imidlertid, du
- kan valgfritt deaktivere, på en per-IP-basis, sjekk mot moduler med --no-mod,
- sjekk mot tilleggsregler med --no-aux, og sjekk mot sosiale medier og
- søkemotor verifisering med --no-ssv:
+ tilleggsregler, samt sosiale medier og søkemotor verifisering.
+ --no-sig    Hindrer testing mot signaturfiler.
+ --no-mod    Hindrer testing mot moduler.
+ --no-sev    Hindrer verifisering av søkemotorer.
+ --no-smv    Hindrer verifisering av sosiale medier.
+ --no-ov     Hindrer annen verifisering.
+ --no-aux    Hindrer testing mot tilleggsregler.
 info_cli_cidram_cli_mod: "CIDRAM CLI-modus."
 info_cli_ipv4_ipv6_are_: |
  IPv4/IPv6 støttes begge. Flerlinjeinngang er mulig for alle CLI-modus
@@ -704,6 +707,9 @@ response_checksum_error: "Sjekksum feil! Fil avvist!"
 response_cli_bad_chain: "%s-kommandoen kan ikke lenkes på den måten, beklager."
 response_cli_bad_command: "Jeg forstår ikke den kommandoen, beklager."
 response_cli_cant_write: "Jeg kan ikke skrive til "%s", beklager."
+response_cli_no_analyse: "Det er ingenting å analysere, beklager."
+response_cli_no_print: "Det er ingenting å skrive ut på skjermen, beklager."
+response_cli_no_write: "Det er ingenting å skrive, beklager."
 response_component_successfully_installed: "Komponent installert."
 response_component_successfully_uninstalled: "Komponent avinstallert."
 response_component_successfully_updated: "Komponent oppdatert."

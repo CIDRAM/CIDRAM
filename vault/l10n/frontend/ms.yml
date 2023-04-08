@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malay language data for the front-end (last modified: 2023.04.06).
+# This file: Malay language data for the front-end (last modified: 2023.04.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -391,10 +391,12 @@ hints_verification:
 info_cli_by_default_ips: |
  Sebagai standard, IP akan diuji terhadap semua fail tandatangan, semua modul,
  semua peraturan tambahan, serta pengesahan media sosial dan enjin carian.
- Walau bagaimanapun, anda boleh menyahdayakan secara pilihan, berdasarkan IP,
- menyemak terhadap modul dengan --no-mod, menyemak terhadap peraturan tambahan
- dengan --no-aux, dan menyemak terhadap pengesahan media sosial dan enjin
- carian dengan --no-ssv, seperti berikut:
+ --no-sig    Menghalang ujian terhadap fail tandatangan.
+ --no-mod    Menghalang ujian terhadap modul.
+ --no-sev    Menghalang pengesahan enjin carian.
+ --no-smv    Menghalang pengesahan media sosial.
+ --no-ov     Menghalang pengesahan lain.
+ --no-aux    Menghalang ujian terhadap peraturan tambahan.
 info_cli_cidram_cli_mod: "CIDRAM mod CLI."
 info_cli_ipv4_ipv6_are_: |
  IPv4/IPv6 kedua-duanya disokong. Input berbilang baris disokong untuk semua
@@ -699,6 +701,9 @@ response_checksum_error: "Ralat checksum! Fail ditolak!"
 response_cli_bad_chain: "Perintah %s tidak boleh dirantai dengan cara ini, maaf."
 response_cli_bad_command: "Saya tidak faham arahan ini, maaf."
 response_cli_cant_write: "Saya tidak boleh menulis kepada "%s", maaf."
+response_cli_no_analyse: "Tiada apa-apa untuk dianalisis, maaf."
+response_cli_no_print: "Tiada apa-apa untuk dicetak, maaf."
+response_cli_no_write: "Tiada apa-apa untuk ditulis, maaf."
 response_component_successfully_installed: "Komponen berjaya dipasang."
 response_component_successfully_uninstalled: "Komponen berjaya dinyahpasang."
 response_component_successfully_updated: "Komponen berjaya dikemas kini."

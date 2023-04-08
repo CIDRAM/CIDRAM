@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2023.04.06).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2023.04.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -390,8 +390,13 @@ hints_verification:
  "什麼是『一擊繞過』？": "在某些情況下，由於簽名文件、模塊、或請求的其他條件，可能仍會阻止經過肯定驗證的請求，為了避免誤報，可能需要繞過。​在繞過旨在處理僅一項違規行為的情況下，這樣的繞過可以被描述為『一擊繞過』。"
 info_cli_by_default_ips: |
  IP地址針對所有簽名文件、所有模塊、所有輔助規則、以及社交媒體和搜索引擎驗證進行
- 測試。您可以使用 --no-mod 禁用對模塊的檢查，使用 --no-aux 禁用對輔助規則的
- 檢查，以及使用 --no-ssv 禁用對社交媒體和搜索引擎驗證的檢查：
+ 測試。
+ --no-sig    防止針對簽名文件進行測試。
+ --no-mod    防止針對模塊進行測試。
+ --no-sev    防止搜索引擎驗證。
+ --no-smv    防止社交媒體驗證。
+ --no-ov     防止其他驗證。
+ --no-aux    防止針對輔助規則進行測試。
 info_cli_cidram_cli_mod: "CIDRAM CLI模式。"
 info_cli_ipv4_ipv6_are_: |
  IPv4/IPv6均受支持。通過使用引號，所有CLI模式操作（例如，
@@ -688,6 +693,9 @@ response_checksum_error: "校驗和錯誤！​文件拒絕！"
 response_cli_bad_chain: "%s命令不能以這種方式鏈接，對不起。"
 response_cli_bad_command: "我不明白的命令，對不起。"
 response_cli_cant_write: "我不能寫信給『%s』，對不起。"
+response_cli_no_analyse: "沒有什麼可分析的，對不起。"
+response_cli_no_print: "沒有什麼可打印的，對不起。"
+response_cli_no_write: "沒有什麼可寫的，對不起。"
 response_component_successfully_installed: "組件成功安裝。"
 response_component_successfully_uninstalled: "組件成功卸載。"
 response_component_successfully_updated: "組件成功更新。"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2023.04.06).
+# This file: Italian language data for the front-end (last modified: 2023.04.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -391,10 +391,13 @@ hints_verification:
 info_cli_by_default_ips: |
  Normalmente, gli IP vengono testati rispetto a tutti i file di firma, tutti i
  moduli, tutte le regole ausiliarie, nonché la verifica dei social media e dei
- motori di ricerca. Tuttavia, puoi opzionalmente disabilitare, in base all'IP,
- il testare dei moduli con --no-mod, il testare delle regole ausiliarie con
- --no-aux, e il testare dei social media e della verifica dei motori di ricerca
- con --no-ssv, così:
+ motori di ricerca.
+ --no-sig    Impedisce il test contro i file delle firme.
+ --no-mod    Impedisce il test contro i moduli.
+ --no-sev    Impedisce la verifica dei motori di ricerca.
+ --no-smv    Impedisce la verifica dei social media.
+ --no-ov     Impedisce altre verifiche.
+ --no-aux    Impedisce il test contro le regole ausiliarie.
 info_cli_cidram_cli_mod: "CIDRAM modalità CLI."
 info_cli_ipv4_ipv6_are_: |
  IPv4/IPv6 sono entrambi supportati. L'ingresso multilinea è possibile per
@@ -704,6 +707,9 @@ response_checksum_error: "Errore di checksum! File rifiutato!"
 response_cli_bad_chain: "Il comando %s non può essere concatenato in questo modo, mi dispiace."
 response_cli_bad_command: "Non capisco quel comando, mi dispiace."
 response_cli_cant_write: "Non posso scrivere a "%s", mi dispiace."
+response_cli_no_analyse: "Non c'è niente da analizzare, mi dispiace."
+response_cli_no_print: "Non c'è niente da stampare, mi dispiace."
+response_cli_no_write: "Non c'è niente da scrivere, mi dispiace."
 response_component_successfully_installed: "Componente installato con successo."
 response_component_successfully_uninstalled: "Componente disinstallato con successo."
 response_component_successfully_updated: "Componente aggiornato con successo."

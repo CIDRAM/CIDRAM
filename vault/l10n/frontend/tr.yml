@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2023.04.06).
+# This file: Turkish language data for the front-end (last modified: 2023.04.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -391,10 +391,13 @@ hints_verification:
 info_cli_by_default_ips: |
  Varsayılan olarak, IP'ler tüm imza dosyalarına, tüm modüllere, tüm yardımcı
  kurallara, ve ayrıca sosyal medya ve arama motoru doğrulamasına karşı test
- edilir. Ancak, isteğe bağlı olarak IP bazında, --no-mod ile modüllere karşı
- denetimi, --no-aux ile yardımcı kurallara karşı denetimi, ve --no-ssv ile
- sosyal medya ve arama motoru doğrulamasına karşı denetimi devre dışı
- bırakabilirsiniz, şöyle:
+ edilir.
+ --no-sig    İmza dosyalarına karşı test yapılmasını önler.
+ --no-mod    Modüllere karşı test yapılmasını önler.
+ --no-sev    Arama motoru doğrulamasını önler.
+ --no-smv    Sosyal medya doğrulamasını önler.
+ --no-ov     Diğer doğrulamasını önler.
+ --no-aux    Yardımcı kurallara karşı test yapılmasını önler.
 info_cli_cidram_cli_mod: "CIDRAM CLI modu."
 info_cli_ipv4_ipv6_are_: |
  IPv4/IPv6 her ikisi de desteklenir. Tüm CLI modu işlemleri için (örneğin, tek
@@ -700,6 +703,9 @@ response_checksum_error: "Sağlama toplamı hatası! Dosya reddedildi!"
 response_cli_bad_chain: "%s komutu bu şekilde zincirlenemez, üzgünüm."
 response_cli_bad_command: "Bu komutu anlamıyorum, üzgünüm."
 response_cli_cant_write: ""%s" e yazamıyorum, üzgünüm."
+response_cli_no_analyse: "Analiz edilecek bir şey yok, üzgünüm."
+response_cli_no_print: "Yazdırılacak bir şey yok, üzgünüm."
+response_cli_no_write: "Yazacak bir şey yok, üzgünüm."
 response_component_successfully_installed: "Bileşen başarıyla yüklendi."
 response_component_successfully_uninstalled: "Bileşen başarıyla kaldırıldı."
 response_component_successfully_updated: "Bileşen başarıyla güncellendi."

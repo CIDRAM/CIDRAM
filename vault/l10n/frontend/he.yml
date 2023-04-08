@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hebrew language data for the front-end (last modified: 2023.04.06).
+# This file: Hebrew language data for the front-end (last modified: 2023.04.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -392,10 +392,13 @@ hints_verification:
  "מה זה "מעוקפים של פגיעה אחת"?": "במקרים מסוימים, בקשה מאומתת חיובית עדיין עשויה להיחסם כתוצאה מקובצי החתימה, המודולים, או תנאים אחרים של הבקשה, וייתכן שיהיה צורך עוקף על מנת למנוע תוצאות חיוביות כוזבות. במקרה בו מעוקף נועד לטפל בדיוק בהפרה אחת, לא יותר ולא פחות, ניתן לתאר מעוקף כזה כ"מעוקף של פגיעה אחת"."
 info_cli_by_default_ips: |
  כסטנדרט, כתובות IP נבדקות מול כל קבצי החתימה, כל המודולים, כל כללי העזר,
- כמו גם אימות עבור מנועי חיפוש ומדיה חברתית. אבל, על בסיס לכל IP,
- אתה יכול להשתמש ב-"--no-mod" כדי לא להשתמש במודולים,
- להשתמש ב-"--no-aux" כדי לא להשתמש בכללי עזר,
- ולהשתמש ב-"--no-ssv" כדי לא לאמת מנועי חיפוש או מדיה חברתית:
+ כמו גם אימות עבור מנועי חיפוש ומדיה חברתית.
+ --no-sig    מונע בדיקה מול קבצי חתימה.
+ --no-mod    מונע בדיקה מול מודולים.
+ --no-sev    מונע אימות מנוע חיפוש.
+ --no-smv    מונע אימות מדיה חברתית.
+ --no-ov     מונע אימות אחר.
+ --no-aux    מונע בדיקה מול כללי עזר.
 info_cli_cidram_cli_mod: "מצב CLI של CIDRAM."
 info_cli_ipv4_ipv6_are_: |
  שתיהן IPv4/IPv6 נתמכות. קלט מרובה שורות אפשרי עבור כל פעולות מצב CLI (למשל.,
@@ -699,6 +702,9 @@ response_checksum_error: "שגיאת סיכום בדיקה! הקובץ נדחה!
 response_cli_bad_chain: "לא ניתן לשרשר את הפקודה %s בצורה כזו, סליחה."
 response_cli_bad_command: "אני לא מבין את הפקודה הזאת, סליחה."
 response_cli_cant_write: "אני לא יכול לכתוב ל"%s", מצטער."
+response_cli_no_analyse: "אין מה לנתח, סליחה."
+response_cli_no_print: "אין מה להדפיס, סליחה."
+response_cli_no_write: "אין מה לכתוב, סליחה."
 response_component_successfully_installed: "הרכיב הותקן בהצלחה."
 response_component_successfully_uninstalled: "הרכיב הוסר בהצלחה."
 response_component_successfully_updated: "הרכיב עודכן בהצלחה."

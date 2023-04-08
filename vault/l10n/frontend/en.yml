@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2023.04.06).
+# This file: English language data for the front-end (last modified: 2023.04.08).
 ##/
 
 Extended Description AbuseIPDB module: "Blocks requests from IPs listed at AbuseIPDB."
@@ -379,10 +379,12 @@ hints_verification:
 info_cli_by_default_ips: |
  By default, IPs are tested against all signature files, all modules, all
  auxiliary rules, *and* against social media and search engine verification.
- However, you can optionally disable, on a per-IP basis, checking against
- modules with --no-mod, checking against auxiliary rules with --no-aux, and
- checking against social media and search engine verification with --no-ssv,
- like so:
+ --no-sig    Prevents testing against signature files.
+ --no-mod    Prevents testing against modules.
+ --no-sev    Prevents search engine verification.
+ --no-smv    Prevents social media verification.
+ --no-ov     Prevents other verification.
+ --no-aux    Prevents testing against auxiliary rules.
 info_cli_cidram_cli_mod: "CIDRAM CLI mode."
 info_cli_ipv4_ipv6_are_: |
  IPv4/IPv6 are both supported. Multiline input is possible for *all* CLI mode
@@ -689,6 +691,9 @@ response_checksum_error: "Checksum error! File rejected!"
 response_cli_bad_chain: "The %s command can't be chained in that way, sorry."
 response_cli_bad_command: "I don't understand that command, sorry."
 response_cli_cant_write: "I can't write to "%s", sorry."
+response_cli_no_analyse: "There's nothing to analyse, sorry."
+response_cli_no_print: "There's nothing to print, sorry."
+response_cli_no_write: "There's nothing to write, sorry."
 response_component_successfully_installed: "Component successfully installed."
 response_component_successfully_uninstalled: "Component successfully uninstalled."
 response_component_successfully_updated: "Component successfully updated."

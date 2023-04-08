@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Tamil language data for the front-end (last modified: 2023.04.06).
+# This file: Tamil language data for the front-end (last modified: 2023.04.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -393,10 +393,13 @@ hints_verification:
 info_cli_by_default_ips: |
  அனைத்து கையொப்பக் கோப்புகள், அனைத்து தொகுதிகள், அனைத்து துணை விதிகள், மற்றும்
  சமூக ஊடகங்கள் மற்றும் தேடுபொறி சரிபார்ப்பு ஆகியவற்றிற்கு எதிராக IP முகவரிகள்
- சோதிக்கப்படுகின்றன. --no-mod மூலம் தொகுதிகளுக்கு எதிராகச் சரிபார்ப்பதையும்,
- --no-aux மூலம் துணை விதிகளுக்கு எதிராகச் சரிபார்ப்பதையும், மற்றும்
- --no-ssv மூலம் சமூக ஊடகங்கள் மற்றும் தேடுபொறி சரிபார்ப்பைச் சரிபார்ப்பதையும்
- முடக்கலாம்:
+ சோதிக்கப்படுகின்றன.
+ --no-sig    கையொப்பக் கோப்புகளுக்கு எதிரான சோதனையைத் தடுக்கிறது.
+ --no-mod    தொகுதிகளுக்கு எதிரான சோதனையைத் தடுக்கிறது.
+ --no-sev    தேடுபொறி சரிபார்ப்பைத் தடுக்கிறது.
+ --no-smv    சமூக ஊடக சரிபார்ப்பைத் தடுக்கிறது.
+ --no-ov     பிற சரிபார்ப்பைத் தடுக்கிறது.
+ --no-aux    துணை விதிகளுக்கு எதிரான சோதனையைத் தடுக்கிறது.
 info_cli_cidram_cli_mod: "CIDRAM CLI பயன்முறை."
 info_cli_ipv4_ipv6_are_: |
  IPv4/IPv6 இரண்டும் ஆதரிக்கப்படுகின்றன. மேற்கோள்களைப் பயன்படுத்தி அனைத்து CLI
@@ -707,6 +710,9 @@ response_checksum_error: "செக்சம் பிழை! கோப்பு
 response_cli_bad_chain: "%s கட்டளையை அந்த வகையில் சங்கிலியால் பிணைக்க முடியாது, மன்னிக்கவும்."
 response_cli_bad_command: "இந்த கட்டளை எனக்கு புரியவில்லை, மன்னிக்கவும்."
 response_cli_cant_write: "என்னால் "%s" க்கு எழுத முடியவில்லை, மன்னிக்கவும்."
+response_cli_no_analyse: "பகுப்பாய்வு செய்ய எதுவும் இல்லை, மன்னிக்கவும்."
+response_cli_no_print: "அச்சிட எதுவும் இல்லை, மன்னிக்கவும்."
+response_cli_no_write: "எழுதுவதற்கு எதுவும் இல்லை, மன்னிக்கவும்."
 response_component_successfully_installed: "கூறு வெற்றிகரமாக நிறுவப்பட்டது."
 response_component_successfully_uninstalled: "கூறு வெற்றிகரமாக நிறுவல் நீக்கப்பட்டது."
 response_component_successfully_updated: "கூறு வெற்றிகரமாக புதுப்பிக்கப்பட்டது."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2023.04.06).
+# This file: Spanish language data for the front-end (last modified: 2023.04.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -393,10 +393,13 @@ hints_verification:
 info_cli_by_default_ips: |
  De forma predeterminada, las direcciones IP se prueban con todos los archivos
  de firma, todos los módulos, todas las reglas auxiliares, así como con la
- verificación de redes sociales y motores de búsqueda. Pero, puede deshabilitar
- opcionalmente, por IP, verificar los módulos con --no-mod, verificar las
- reglas auxiliares con --no-aux, y verificar las redes sociales y la
- verificación del motor de búsqueda con --no-ssv, como así:
+ verificación de redes sociales y motores de búsqueda.
+ --no-sig    Evita las pruebas contra los archivos de firma.
+ --no-mod    Evita las pruebas contra los módulos.
+ --no-sev    Evita la verificación de los motores de búsqueda.
+ --no-smv    Evita la verificación de las redes sociales.
+ --no-ov     Evita otra verificación.
+ --no-aux    Evita las pruebas contra las reglas auxiliares.
 info_cli_cidram_cli_mod: "CIDRAM modo CLI."
 info_cli_ipv4_ipv6_are_: |
  IPv4/IPv6 son soportados ambos. La entrada multilínea es posible para todas
@@ -706,6 +709,9 @@ response_checksum_error: "¡Error de suma de comprobación! Archivo rechazado!"
 response_cli_bad_chain: "El comando %s no se puede encadenar de esa manera, lo siento."
 response_cli_bad_command: "No entiendo ese comando, lo siento."
 response_cli_cant_write: "No puedo escribir a "%s", lo siento."
+response_cli_no_analyse: "No hay nada que analizar, lo siento."
+response_cli_no_print: "No hay nada que imprimir, lo siento."
+response_cli_no_write: "No hay nada que escribir, lo siento."
 response_component_successfully_installed: "Componente instalado con éxito."
 response_component_successfully_uninstalled: "Componente desinstalado con éxito."
 response_component_successfully_updated: "Componente actualizado con éxito."

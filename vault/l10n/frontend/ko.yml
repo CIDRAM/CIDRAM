@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2023.04.06).
+# This file: Korean language data for the front-end (last modified: 2023.04.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -390,10 +390,13 @@ hints_verification:
  ""단일 히트 바이 패스"란 무엇입니까?": "어떤 경우에는 서명 파일, 모듈, 또는 기타 요청 조건으로 인해 긍정적으로 확인된 요청이 여전히 차단될 수 있으며 소 탐을 피하고자 바이 패스가 필요할 수 있습니다. 바이패스가 정확히 하나의 위반을 처리하도록 의도된 경우 이러한 바이패스는 "단일 히트 바이 패스"로 설명될 수 있습니다."
 info_cli_by_default_ips: |
  IP 주소는 모든 서명 파일, 모든 모듈, 모든 보조 규칙, 소셜 미디어 및
- 검색 엔진 검증에 대해 테스트 됩니다. --no-mod를 사용하여 모듈에 대한 검사를
- 비활성화하고, --no-aux를 사용하여 보조 규칙에 대해 검사를 비활성화하고,
- --no-ssv를 사용하여 소셜 미디어 및 검색 엔진 확인에 대해 검사를
- 비활성화할 수 있습니다.
+ 검색 엔진 검증에 대해 테스트 됩니다.
+ --no-sig    서명 파일에 대한 테스트를 방지합니다.
+ --no-mod    모듈에 대한 테스트를 방지합니다.
+ --no-sev    검색 엔진 확인을 방지합니다.
+ --no-smv    소셜 미디어 인증을 방지합니다.
+ --no-ov     다른 확인을 방지합니다.
+ --no-aux    보조 규칙에 대한 테스트를 방지합니다.
 info_cli_cidram_cli_mod: "CIDRAM CLI 모드."
 info_cli_ipv4_ipv6_are_: |
  IPv4/IPv6이 모두 지원됩니다.
@@ -693,6 +696,9 @@ response_checksum_error: "체크섬 오류! 파일이 거부되었습니다!"
 response_cli_bad_chain: "미안 해요, %s 명령은 그런 식으로 연결할 수 없습니다."
 response_cli_bad_command: "미안 해요, 명령을 이해할 수 없습니다."
 response_cli_cant_write: "미안 해요, "%s"에 쓸 수 없습니다."
+response_cli_no_analyse: "미안 해요, 분석할 것이 없습니다."
+response_cli_no_print: "미안 해요, 인쇄할 내용이 없습니다."
+response_cli_no_write: "미안 해요, 쓸 일이 없습니다."
 response_component_successfully_installed: "구성 요소의 설치에 성공했습니다."
 response_component_successfully_uninstalled: "구성 요소의 제거는 성공했습니다."
 response_component_successfully_updated: "구성 요소의 업데이트에 성공했습니다!"

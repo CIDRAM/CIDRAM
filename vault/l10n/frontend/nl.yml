@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2023.04.06).
+# This file: Dutch language data for the front-end (last modified: 2023.04.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -392,11 +392,13 @@ hints_verification:
  "Wat zijn "enkele-treffer bypasses"?": "In sommige gevallen kan een positief-geverifieerd verzoek nog steeds worden geblokkeerd als gevolg van de signatuurbestanden, modules, of andere voorwaarden van het verzoek, en bypasses kunnen nodig zijn om valse positieven te voorkomen. In het geval dat een bypass bedoeld is om precies één overtreding af te handelen, niet meer en niet minder, dergelijke een bypass zou kunnen worden omschreven als een "enkele-treffer bypass"."
 info_cli_by_default_ips: |
  Standaard worden IP's getest tegen alle signatuurbestanden, alle modules, alle
- aanvullende regels, evenals verificatie van sociale media en zoekmachines. U
- kunt echter optioneel, per IP, het controleren op modules uitschakelen met
- --no-mod, het controleren op aanvullende regels uitschakelen met --no-aux, en
- het controleren op sociale media en zoekmachine verificatie uitschakelen met
- --no-ssv:
+ aanvullende regels, evenals verificatie van sociale media en zoekmachines.
+ --no-sig    Voorkomt testen tegen signatuurbestanden.
+ --no-mod    Voorkomt testen tegen modules.
+ --no-sev    Voorkomt verificatie van zoekmachines.
+ --no-smv    Voorkomt verificatie van sociale media.
+ --no-ov     Voorkomt andere verificatie.
+ --no-aux    Voorkomt testen tegen aanvullende regels.
 info_cli_cidram_cli_mod: "CIDRAM CLI-modus."
 info_cli_ipv4_ipv6_are_: |
  IPv4/IPv6 worden beide ondersteund. Multilijnen-invoer is mogelijk voor alle
@@ -707,6 +709,9 @@ response_checksum_error: "Controlesom fout! Bestand afgewezen!"
 response_cli_bad_chain: "Het %s-commando kan niet op die manier worden geketend, sorry."
 response_cli_bad_command: "Ik begrijp niet dat bevel, sorry."
 response_cli_cant_write: "Ik kan niet naar "%s" schrijven, sorry."
+response_cli_no_analyse: "Er is niets te analyseren, sorry."
+response_cli_no_print: "Er is niets te drukken, sorry."
+response_cli_no_write: "Er is niets te schrijven, sorry."
 response_component_successfully_installed: "Component succesvol geïnstalleerd."
 response_component_successfully_uninstalled: "Component succesvol verwijderd."
 response_component_successfully_updated: "Component succesvol gewijzigd."

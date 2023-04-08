@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CIDRAM CLI mode (last modified: 2023.04.07).
+ * This file: CIDRAM CLI mode (last modified: 2023.04.08).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -36,18 +36,21 @@ trait CLI
 
         /** Show basic information. */
         echo sprintf(
-            "\r%s\n\n%s\n>> test xxx.xxx.xxx.xxx\n\n%s\n>> cidrs xxx.xxx.xxx.xxx\n\n" .
-            "%s\n>> test \"xxx.xxx.xxx.xxx\n>> yyy.yyy.yyy.yyy\n>> 2002::1\n>> zzz.zzz.zzz.zzz\"\n\n" .
-            "%s\n>> test xxx.xxx.xxx.xxx,yyy.yyy.yyy.yyy,2002::1,zzz.zzz.zzz.zzz\n\n%s\n" .
-            ">> test \"aaa.aaa.aaa.aaa --no-mod\n>> bbb.bbb.bbb.bbb --no-aux\n>> ccc.ccc.ccc.ccc --no-sev --no-smv --no-ov\n" .
-            ">> ddd.ddd.ddd.ddd --no-mod --no-aux --no-sev --no-smv --no-ov\"\n\n" .
-            "%s\n>> fread \"file1.dat\n>> file2.dat\n>> file3.dat\"\n\n%s\n>> fwrite=file.dat\n\n" .
-            "%s\n>> aggregate \"1.2.3.4/32\n>> 1.2.3.5/32\n>> 1.2.3.6/32\n>> 1.2.3.7/32\"\n\n" .
-            "%s\n>> aggregate=netmasks \"1.2.3.4/32\n>> 1.2.3.5/32\"\n\n" .
-            "%s\n>> fread>aggregate>fwrite=output.dat \"input1.dat\n>> input2.dat\n>> input3.dat\"\n\n" .
-            "%s\n>> fwrite=output.dat<aggregate<fread \"input1.dat\n>> input2.dat\n>> input3.dat\"\n\n" .
-            "%s\n>> fread>aggregate>fwrite=output.dat input1.dat,input2.dat,input3.dat\n\n" .
-            "%s\n>> print Hello World\n\n%s\n>> fread>fix>fwrite=fixed.dat broken.dat\n\n%s\n\n",
+            "\r\033[0;41m%s\033[0m\n\n\033[0;33m%s\n\033[0;32m>>\033[0m test xxx.xxx.xxx.xxx\n\n" .
+            "\033[0;33m%s\n\033[0;32m>>\033[0m cidrs xxx.xxx.xxx.xxx\n\n" .
+            "\033[0;33m%s\n\033[0;32m>>\033[0m test \"xxx.xxx.xxx.xxx\n\033[0;32m>>\033[0m yyy.yyy.yyy.yyy\n" .
+            "\033[0;32m>>\033[0m 2002::1\n\033[0;32m>>\033[0m zzz.zzz.zzz.zzz\"\n\n" .
+            "\033[0;33m%s\n\033[0;32m>>\033[0m test xxx.xxx.xxx.xxx,yyy.yyy.yyy.yyy,2002::1,zzz.zzz.zzz.zzz\n\n" .
+            "\033[0;33m%s\n\033[0;32m>>\033[0m test \"aaa.aaa.aaa.aaa --no-mod\n\033[0;32m>>\033[0m bbb.bbb.bbb.bbb --no-aux\n\033[0;32m>>\033[0m ccc.ccc.ccc.ccc --no-sev --no-smv --no-ov\n" .
+            "\033[0;32m>>\033[0m ddd.ddd.ddd.ddd --no-mod --no-aux --no-sev --no-smv --no-ov\"\n\n" .
+            "\033[0;33m%s\n\033[0;32m>>\033[0m fread \"file1.dat\n\033[0;32m>>\033[0m file2.dat\n\033[0;32m>>\033[0m file3.dat\"\n\n" .
+            "\033[0;33m%s\n\033[0;32m>>\033[0m fwrite=file.dat\n\n" .
+            "\033[0;33m%s\n\033[0;32m>>\033[0m aggregate \"1.2.3.4/32\n\033[0;32m>>\033[0m 1.2.3.5/32\n\033[0;32m>>\033[0m 1.2.3.6/32\n\033[0;32m>>\033[0m 1.2.3.7/32\"\n\n" .
+            "\033[0;33m%s\n\033[0;32m>>\033[0m aggregate=netmasks \"1.2.3.4/32\n\033[0;32m>>\033[0m 1.2.3.5/32\"\n\n" .
+            "\033[0;33m%s\n\033[0;32m>>\033[0m fread>aggregate>fwrite=output.dat \"input1.dat\n\033[0;32m>>\033[0m input2.dat\n\033[0;32m>>\033[0m input3.dat\"\n\n" .
+            "\033[0;33m%s\n\033[0;32m>>\033[0m fwrite=output.dat<aggregate<fread \"input1.dat\n\033[0;32m>>\033[0m input2.dat\n\033[0;32m>>\033[0m input3.dat\"\n\n" .
+            "\033[0;33m%s\n\033[0;32m>>\033[0m fread>aggregate>fwrite=output.dat input1.dat,input2.dat,input3.dat\n\n" .
+            "\033[0;33m%s\n\033[0;32m>>\033[0m print Hello World\n\n\033[0;33m%s\n\033[0;32m>>\033[0m fread>fix>fwrite=fixed.dat broken.dat\n\n\033[0;33m%s\n\n",
             $this->L10N->getString('info_cli_cidram_cli_mod'),
             $this->L10N->getString('info_cli_to_test_whethe'),
             $this->L10N->getString('info_cli_to_calculate_c'),
@@ -78,7 +81,7 @@ trait CLI
 
             /** Echo the CLI-mode prompt. */
             if (!$Chain) {
-                echo '>> ';
+                echo "\033[0;32m>> \033[0m";
             }
 
             /** Wait for user input or assume it from chaining. */
@@ -149,8 +152,9 @@ trait CLI
 
             /** Print data to the screen. */
             if ($Cmd === 'print') {
+                echo "\033[0;33m";
                 if (empty($Data) || (count($Data) === 1 && empty($Data[0]))) {
-                    echo "There's nothing to print, sorry.\n\n";
+                    echo $this->L10N->getString('response_cli_no_print') . "\n\n";
                     continue;
                 }
                 if (!$Chain) {
@@ -167,8 +171,9 @@ trait CLI
 
             /** Write data to a file. */
             if (substr($Cmd, 0, 7) === 'fwrite=') {
+                echo "\033[0;33m";
                 if (empty($Data) || (count($Data) === 1 && empty($Data[0]))) {
-                    echo "There's nothing to write, sorry.\n\n";
+                    echo $this->L10N->getString('response_cli_no_write') . "\n\n";
                     continue;
                 }
                 if ($Chain !== '') {
@@ -204,6 +209,7 @@ trait CLI
 
             /** Read data from files. */
             if ($Cmd === 'fread') {
+                echo "\033[0;33m";
                 if ($Chain === '') {
                     echo "I'm not sure what to do with the file's data after reading it.\nPlease chain fread to something else so that I'll know what to do. Thanks.\n\n";
                     continue;
@@ -242,6 +248,7 @@ trait CLI
 
             /** Perform IP test. */
             if ($Cmd === 'test') {
+                echo "\033[0;33m";
                 if (!$Chain) {
                     echo $this->L10N->getString('field_ipaddr') . ' – ' . $this->L10N->getString('field_blocked') . "\n===\n";
                 }
@@ -315,6 +322,7 @@ trait CLI
 
             /** Calculate CIDRs. */
             if ($Cmd === 'cidrs') {
+                echo "\033[0;33m";
                 if (!$Chain) {
                     echo $this->L10N->getString('field_range') . "\n===\n";
                 }
@@ -354,7 +362,7 @@ trait CLI
 
             /** Aggregate IPs/CIDRs. */
             if ($Cmd === 'aggregate' || substr($Cmd, 0, 10) === 'aggregate=') {
-                echo $this->L10N->getString('link_ip_aggregator') . "\n===\n";
+                echo "\033[0;33m" . $this->L10N->getString('link_ip_aggregator') . "\n===\n";
                 $this->CIDRAM['Aggregator'] = new Aggregator(substr($Cmd, 10) === 'netmasks' ? 1 : 0);
                 $this->CIDRAM['Aggregator']->Results = true;
                 $Data = implode("\n", $Data);
@@ -407,8 +415,9 @@ trait CLI
 
             /** Create analysis matrix. */
             if (class_exists('\Maikuolan\Common\Matrix') && function_exists('imagecreatetruecolor') && substr($Cmd, 0, 7) === 'matrix=') {
+                echo "\033[0;33m";
                 if (empty($Data) || (count($Data) === 1 && empty($Data[0]))) {
-                    echo "There's nothing to analyse, sorry.\n\n";
+                    echo $this->L10N->getString('response_cli_no_analyse') . "\n\n";
                     continue;
                 }
                 if ($Chain) {
@@ -428,7 +437,7 @@ trait CLI
 
             /** Signature file fixer. */
             if ($Cmd === 'fix') {
-                echo $this->L10N->getString('link_fixer') . "\n===\n";
+                echo "\033[0;33m" . $this->L10N->getString('link_fixer') . "\n===\n";
                 $Data = implode("\n", $Data);
                 $Fixer = [
                     'Aggregator' => new Aggregator(),
@@ -553,7 +562,7 @@ trait CLI
             $Chain = '';
 
             /** Let the user know that the current command isn't valid. */
-            echo $this->L10N->getString('response_cli_bad_command') . "\n\n";
+            echo "\033[0;33m" . $this->L10N->getString('response_cli_bad_command') . "\n\n";
         }
         die;
     }

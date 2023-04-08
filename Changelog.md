@@ -207,6 +207,8 @@
 
 [2023.04.02; Bug-fix; Maikuolan]: Infractions not decrementing upon bypass; Fixed (#449).
 
+[2023.04.03~04; Bug-fix; Maikuolan]: Some front-end pages were calling L10N data directly (which means, no opportunity for fetching fallback data) instead of invoking it via getString (getString tries to fetch fallback L10N data when primary L10N data isn't available); Fixed.
+
 [2023.04.06; Bug-fix; Maikuolan]: Exit code 1 responses generated via run parameters in signatures weren't being honoured (although nothing in CIDRAM currently actually returns exit code 1 anyway, so this doesn't have any practical bearing); Fixed.
 
 [2023.04.06; Bug-fix; Maikuolan]: Yandex verification broken since v3.0; Fixed.
@@ -214,3 +216,5 @@
 [2023.04.06; Maikuolan]: Default signature bypasses updated.
 
 [2023.04.07; Maikuolan]: Reworked the IP test page.
+
+[2023.04.08; Maikuolan]: Colourised CIDRAM's CLI mode and improved some of its L10N.

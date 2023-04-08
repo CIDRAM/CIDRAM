@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2023.04.06).
+# This file: Arabic language data for the front-end (last modified: 2023.04.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -391,9 +391,13 @@ hints_verification:
 info_cli_by_default_ips: |
  بشكل افتراضي، يتم اختبار عناوين IP مقابل جميع ملفات التوقيع، وجميع الوحدات،
  وجميع القواعد المساعدة، بالإضافة إلى التحقق من وسائل التواصل الاجتماعي ومحركات
- البحث. يمكنك تعطيل التحقق من الوحدات باستخدام --no-mod، والتحقق من القواعد
- المساعدة مع --no-aux، والتحقق من وسائل التواصل الاجتماعي ومحرك البحث باستخدام
- --no-ssv:
+ البحث.
+ --no-sig    يوقف الاختبار مقابل ملفات التوقيع.
+ --no-mod    يوقف الاختبار مقابل الوحدات.
+ --no-sev    يغلق التحقق من محرك البحث.
+ --no-smv    يغلق التحقق من وسائل التواصل الاجتماعي.
+ --no-ov     يغلق إجراءات التحقق الأخرى.
+ --no-aux    يوقف الاختبار مقابل القواعد المساعدة.
 info_cli_cidram_cli_mod: "وضع CLI CIDRAM."
 info_cli_ipv4_ipv6_are_: |
  يتم دعم كل من IPv4/IPv6. الإدخال متعدد الأسطر ممكن لجميع عمليات وضع CLI (على
@@ -696,6 +700,9 @@ response_checksum_error: "خطأ أختباري! تم رفض الملف!"
 response_cli_bad_chain: "لا يمكن ربط الأمر %s بهذه الطريقة، آسف."
 response_cli_bad_command: "أنا لا أفهم هذا الأمر، آسف."
 response_cli_cant_write: "لا أستطيع الكتابة إلى "%s"، آسف."
+response_cli_no_analyse: "لا يوجد شيء لتحليله، آسف."
+response_cli_no_print: "لا يوجد شيء للطباعة، آسف."
+response_cli_no_write: "لا يوجد شيء للكتابة، آسف."
 response_component_successfully_installed: "تم تثبيت المكون بنجاح."
 response_component_successfully_uninstalled: "تم الغاء تثبيت المكون بنجاح."
 response_component_successfully_updated: "تم تحديث المكون بنجاح."

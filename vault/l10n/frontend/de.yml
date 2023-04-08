@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2023.04.06).
+# This file: German language data for the front-end (last modified: 2023.04.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -393,9 +393,12 @@ hints_verification:
 info_cli_by_default_ips: |
  Standardmäßig werden IPs gegen alle Signaturdateien, alle Module, alle
  Hilfsregeln, sowie Social Media und Suchmaschinen Verifizierung getestet.
- Sie können jedoch optional auf IP-Basis die Prüfung gegen Module mit --no-mod,
- die Prüfung gegen Hilfsregeln mit --no-aux, und die Prüfung gegen Social Media
- und Suchmaschinen Verifizierung mit --no-ssv deaktivieren, so gemacht:
+ --no-sig    Verhindert das Testen gegen Signaturdateien.
+ --no-mod    Verhindert das Testen gegen Module.
+ --no-sev    Verhindert die Suchmaschinen-Verifizierung.
+ --no-smv    Verhindert die Social-Medien-Verifizierung.
+ --no-ov     Verhindert andere Verifizierung.
+ --no-aux    Verhindert das Testen gegen Hilfsregeln.
 info_cli_cidram_cli_mod: "CIDRAM CLI-Modus."
 info_cli_ipv4_ipv6_are_: |
  IPv4/IPv6 werden beide unterstützt. Eine mehrzeilige Eingabe ist für alle
@@ -709,6 +712,9 @@ response_checksum_error: "Prüfsummenfehler! Datei abgelehnt!"
 response_cli_bad_chain: "Entschuldigung, der %s-Befehl kann nicht auf diese Weise verkettet werden."
 response_cli_bad_command: "Entschuldigung, ich verstehe diesen Befehl nicht."
 response_cli_cant_write: "Entschuldigung, ich kann an „%s“ schreiben nicht."
+response_cli_no_analyse: "Entschuldigung, es nichts zu analysieren."
+response_cli_no_print: "Entschuldigung, es nichts zu drucken."
+response_cli_no_write: "Entschuldigung, es nichts zu schreiben."
 response_component_successfully_installed: "Komponente erfolgreich installiert."
 response_component_successfully_uninstalled: "Komponente erfolgreich deinstalliert."
 response_component_successfully_updated: "Komponente erfolgreich aktualisiert."

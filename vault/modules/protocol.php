@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protocol blocker module (last modified: 2023.01.12).
+ * This file: Protocol blocker module (last modified: 2023.04.09).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -23,6 +23,11 @@ $this->CIDRAM['ProtocolBlocker'] = ['blocked' => array_flip(explode("\n", $this-
 
 /** Defining as closure for later recall (no params; no return value). */
 $this->CIDRAM['ModuleResCache'][$Module] = function () {
+    /** Guard. */
+    if (!isset($_SERVER['SERVER_PROTOCOL'])) {
+        return;
+    }
+
     if (($Split = strpos($_SERVER['SERVER_PROTOCOL'], '/')) !== false) {
         $Protocol = strtoupper(preg_replace('~[^A-Za-z]~', '', substr($_SERVER['SERVER_PROTOCOL'], 0, $Split)));
         $Version = explode('.', preg_replace('~[^\d.]~', '', substr($_SERVER['SERVER_PROTOCOL'], $Split + 1)), 2);

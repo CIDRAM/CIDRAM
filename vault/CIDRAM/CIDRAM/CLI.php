@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CIDRAM CLI mode (last modified: 2023.04.08).
+ * This file: CIDRAM CLI mode (last modified: 2023.04.09).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -33,6 +33,14 @@ trait CLI
 
         /** Load CIDRAM front-end L10N data. */
         $this->loadL10N($this->Vault . 'l10n' . DIRECTORY_SEPARATOR . 'frontend' . DIRECTORY_SEPARATOR);
+
+        $this->FE = ['DateTime' => $this->timeFormat($this->Now, $this->Configuration['general']['time_format'])];
+        if ($this->Stages === []) {
+            $this->Stages = array_flip(explode("\n", $this->Configuration['general']['stages']));
+        }
+        if ($this->Shorthand === []) {
+            $this->Shorthand = array_flip(explode("\n", $this->Configuration['signatures']['shorthand']));
+        }
 
         /** Show basic information. */
         echo sprintf(
@@ -253,13 +261,19 @@ trait CLI
                     echo $this->L10N->getString('field_ipaddr') . ' – ' . $this->L10N->getString('field_blocked') . "\n===\n";
                 }
                 foreach ($Data as $ThisItem) {
-                    $Results = [];
-                    $Results['TestsSwitch'] = (strpos($ThisItem, ' --no-sig') === false);
-                    $Results['ModuleSwitch'] = (strpos($ThisItem, ' --no-mod') === false);
-                    $Results['SEVSwitch'] = (strpos($ThisItem, ' --no-sev') === false);
-                    $Results['SMVSwitch'] = (strpos($ThisItem, ' --no-smv') === false);
-                    $Results['OVSwitch'] = (strpos($ThisItem, ' --no-ov') === false);
-                    $Results['AuxSwitch'] = (strpos($ThisItem, ' --no-aux') === false);
+                    $this->CIDRAM['Caught'] = false;
+                    $this->CIDRAM['LastTestIP'] = 0;
+                    $this->CIDRAM['TestResults'] = false;
+                    $this->CIDRAM['ModuleErrors'] = '';
+                    $this->CIDRAM['AuxErrors'] = '';
+                    $Results = [
+                        'Tests' => (strpos($ThisItem, ' --no-sig') === false),
+                        'Modules' => (strpos($ThisItem, ' --no-mod') === false),
+                        'SEV' => (strpos($ThisItem, ' --no-sev') === false),
+                        'SMV' => (strpos($ThisItem, ' --no-smv') === false),
+                        'OV' => (strpos($ThisItem, ' --no-ov') === false),
+                        'Aux' => (strpos($ThisItem, ' --no-aux') === false)
+                    ];
                     $ThisItem = preg_replace('~( --no-(?:sig|mod|s[em]v|ov|aux))+$~', '', $ThisItem);
                     $this->simulateBlockEvent($ThisItem, ...$Results);
                     if (

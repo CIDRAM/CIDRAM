@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.04.07).
+ * This file: The CIDRAM front-end (last modified: 2023.04.08).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -3674,7 +3674,7 @@ class FrontEnd extends Core
             );
 
             /** Parse output. */
-            $this->FE['FE_Content'] = $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_intersector.html')));
+            $this->FE['FE_Content'] = $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_intersector.html')), true);
 
             /** Strip output row if input doesn't exist. */
             if ($this->FE['Intersector_AB'] !== '') {

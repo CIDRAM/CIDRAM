@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2023.04.04).
+ * This file: Front-end functions file (last modified: 2023.04.06).
  */
 
 /**
@@ -854,6 +854,8 @@ $CIDRAM['ComponentFunctionUpdatePrep'] = function ($Target) use (&$CIDRAM) {
  * @return void
  */
 $CIDRAM['SimulateBlockEvent'] = function ($Addr, $Modules = false, $Aux = false, $Verification = false) use (&$CIDRAM) {
+    $CIDRAM['Stage'] = '';
+
     /** Reset bypass flags (needed to prevent falsing due to search engine verification). */
     $CIDRAM['ResetBypassFlags']();
 
@@ -903,6 +905,8 @@ $CIDRAM['SimulateBlockEvent'] = function ($Addr, $Modules = false, $Aux = false,
     }
 
     if (strlen($Addr)) {
+        $CIDRAM['Stage'] = 'Tests';
+
         /** Catch run errors. */
         $CIDRAM['InitialiseErrorHandler']();
 
@@ -941,6 +945,7 @@ $CIDRAM['SimulateBlockEvent'] = function ($Addr, $Modules = false, $Aux = false,
 
     /** Execute modules, if any have been enabled. */
     if ($Modules && $CIDRAM['Config']['signatures']['modules'] && empty($CIDRAM['Whitelisted'])) {
+        $CIDRAM['Stage'] = 'Modules';
         if (!isset($CIDRAM['ModuleResCache'])) {
             $CIDRAM['ModuleResCache'] = [];
         }
@@ -984,26 +989,32 @@ $CIDRAM['SimulateBlockEvent'] = function ($Addr, $Modules = false, $Aux = false,
 
     /** Execute search engine verification. */
     if ($Verification && empty($CIDRAM['Whitelisted'])) {
+        $CIDRAM['Stage'] = 'SearchEngineVerification';
         $CIDRAM['SearchEngineVerification']();
     }
 
     /** Execute social media verification. */
     if ($Verification && empty($CIDRAM['Whitelisted'])) {
+        $CIDRAM['Stage'] = 'SocialMediaVerification';
         $CIDRAM['SocialMediaVerification']();
     }
 
     /** Execute other verification. */
     if ($Verification && empty($CIDRAM['Whitelisted'])) {
+        $CIDRAM['Stage'] = 'OtherVerification';
         $CIDRAM['OtherVerification']();
     }
 
     /** Process auxiliary rules, if any exist. */
     if ($Aux && empty($CIDRAM['Whitelisted'])) {
+        $CIDRAM['Stage'] = 'Aux';
         $CIDRAM['InitialiseErrorHandler']();
         $CIDRAM['Aux']();
         $CIDRAM['AuxErrors'] = $CIDRAM['Errors'];
         $CIDRAM['RestoreErrorHandler']();
     }
+
+    $CIDRAM['Stage'] = 'Reporting';
 
     /**
      * Destroying the reporter (we won't process reports in this case, because we're only simulating block events,

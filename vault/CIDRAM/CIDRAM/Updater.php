@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods for updating CIDRAM components (last modified: 2023.04.03).
+ * This file: Methods for updating CIDRAM components (last modified: 2023.04.10).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -122,6 +122,17 @@ trait Updater
             }
         }
         $this->FE['state_msg'] .= $Message . '<br />';
+    }
+
+    /**
+     * Append to the current executor queue.
+     *
+     * @param string $Message What to append.
+     * @return void
+     */
+    private function queue(string $Message): void
+    {
+        $this->executor($Message, true);
     }
 
     /**
@@ -399,15 +410,17 @@ trait Updater
             return;
         }
 
-        if ($Methods === '' && !empty($this->CIDRAM['ExecutorQueue']) && is_array($this->CIDRAM['ExecutorQueue'])) {
-            /** We'll iterate an array from the local scope to guard against infinite loops. */
-            $Items = $this->CIDRAM['ExecutorQueue'];
+        if ($Methods === '') {
+            if (!empty($this->CIDRAM['ExecutorQueue']) && is_array($this->CIDRAM['ExecutorQueue'])) {
+                /** We'll iterate an array from the local scope to guard against infinite loops. */
+                $Items = $this->CIDRAM['ExecutorQueue'];
 
-            /** Purge the queue before iterating. */
-            $this->CIDRAM['ExecutorQueue'] = [];
+                /** Purge the queue before iterating. */
+                $this->CIDRAM['ExecutorQueue'] = [];
 
-            /** Iterate through the executor queue. */
-            $this->executor($Items);
+                /** Iterate through the executor queue. */
+                $this->executor($Items);
+            }
             return;
         }
 
@@ -726,7 +739,7 @@ trait Updater
                                     $FileMeta['Checksum']
                                 );
                                 if (!empty($this->Components['RemoteMeta'][$ThisTarget]['On Checksum Error'])) {
-                                    $this->executor($this->Components['RemoteMeta'][$ThisTarget]['On Checksum Error'], true);
+                                    $this->executor($this->Components['RemoteMeta'][$ThisTarget]['On Checksum Error']);
                                 }
                                 $Rollback = true;
                                 continue 2;
@@ -743,7 +756,7 @@ trait Updater
                                 $this->L10N->getString('response_sanity_1')
                             );
                             if (!empty($this->Components['RemoteMeta'][$ThisTarget]['On Sanity Error'])) {
-                                $this->executor($this->Components['RemoteMeta'][$ThisTarget]['On Sanity Error'], true);
+                                $this->executor($this->Components['RemoteMeta'][$ThisTarget]['On Sanity Error']);
                             }
                             $Rollback = true;
                             continue 2;
@@ -816,12 +829,12 @@ trait Updater
                     ) {
                         $this->FE['state_msg'] .= $this->L10N->getString('response_component_successfully_installed');
                         if (!empty($this->Components['RemoteMeta'][$ThisTarget]['When Install Succeeds'])) {
-                            $this->executor($this->Components['RemoteMeta'][$ThisTarget]['When Install Succeeds'], true);
+                            $this->executor($this->Components['RemoteMeta'][$ThisTarget]['When Install Succeeds']);
                         }
                     } else {
                         $this->FE['state_msg'] .= $this->L10N->getString('response_component_successfully_updated');
                         if (!empty($this->Components['RemoteMeta'][$ThisTarget]['When Update Succeeds'])) {
-                            $this->executor($this->Components['RemoteMeta'][$ThisTarget]['When Update Succeeds'], true);
+                            $this->executor($this->Components['RemoteMeta'][$ThisTarget]['When Update Succeeds']);
                         }
                     }
 
@@ -847,12 +860,12 @@ trait Updater
                 ) {
                     $this->FE['state_msg'] .= $this->L10N->getString('response_failed_to_install');
                     if (!empty($this->Components['RemoteMeta'][$ThisTarget]['When Install Fails'])) {
-                        $this->executor($this->Components['RemoteMeta'][$ThisTarget]['When Install Fails'], true);
+                        $this->executor($this->Components['RemoteMeta'][$ThisTarget]['When Install Fails']);
                     }
                 } else {
                     $this->FE['state_msg'] .= $this->L10N->getString('response_failed_to_update');
                     if (!empty($this->Components['RemoteMeta'][$ThisTarget]['When Update Fails'])) {
-                        $this->executor($this->Components['RemoteMeta'][$ThisTarget]['When Update Fails'], true);
+                        $this->executor($this->Components['RemoteMeta'][$ThisTarget]['When Update Fails']);
                     }
                 }
             }
@@ -913,7 +926,7 @@ trait Updater
 
             $this->FE['state_msg'] .= $this->L10N->getString('response_component_successfully_uninstalled');
             if (!empty($this->Components['Meta'][$ID]['When Uninstall Succeeds'])) {
-                $this->executor($this->Components['Meta'][$ID]['When Uninstall Succeeds'], true);
+                $this->executor($this->Components['Meta'][$ID]['When Uninstall Succeeds']);
             }
 
             /** Remove downstream meta. */
@@ -924,7 +937,7 @@ trait Updater
         } else {
             $this->FE['state_msg'] .= $this->L10N->getString('response_component_uninstall_error');
             if (!empty($this->Components['Meta'][$ID]['When Uninstall Fails'])) {
-                $this->executor($this->Components['Meta'][$ID]['When Uninstall Fails'], true);
+                $this->executor($this->Components['Meta'][$ID]['When Uninstall Fails']);
             }
         }
         $this->formatFileSize($BytesRemoved);
@@ -999,7 +1012,7 @@ trait Updater
         if (!$Activation['Modified']) {
             $this->FE['state_msg'] .= $this->L10N->getString('response_activation_failed') . '<br />';
             if (!empty($this->Components['Meta'][$ID]['When Activation Fails'])) {
-                $this->executor($this->Components['Meta'][$ID]['When Activation Fails'], true);
+                $this->executor($this->Components['Meta'][$ID]['When Activation Fails']);
             }
         } else {
             $this->Configuration['components']['ipv4'] = $Activation['ipv4'];
@@ -1010,13 +1023,13 @@ trait Updater
             if ($this->updateConfiguration()) {
                 $this->FE['state_msg'] .= $this->L10N->getString('response_activated') . '<br />';
                 if (!empty($this->Components['Meta'][$ID]['When Activation Succeeds'])) {
-                    $this->executor($this->Components['Meta'][$ID]['When Activation Succeeds'], true);
+                    $this->executor($this->Components['Meta'][$ID]['When Activation Succeeds']);
                 }
                 $Success = true;
             } else {
                 $this->FE['state_msg'] .= $this->L10N->getString('response_activation_failed') . '<br />';
                 if (!empty($this->Components['Meta'][$ID]['When Activation Fails'])) {
-                    $this->executor($this->Components['Meta'][$ID]['When Activation Fails'], true);
+                    $this->executor($this->Components['Meta'][$ID]['When Activation Fails']);
                 }
             }
         }
@@ -1110,7 +1123,7 @@ trait Updater
         if (!$this->CIDRAM['Deactivation']['Modified']) {
             $this->FE['state_msg'] .= $this->L10N->getString('response_deactivation_failed') . '<br />';
             if (!empty($this->Components['Meta'][$ID]['When Deactivation Fails'])) {
-                $this->executor($this->Components['Meta'][$ID]['When Deactivation Fails'], true);
+                $this->executor($this->Components['Meta'][$ID]['When Deactivation Fails']);
             }
         } else {
             $this->Configuration['components']['ipv4'] = $this->CIDRAM['Deactivation']['ipv4'];
@@ -1121,13 +1134,13 @@ trait Updater
             if ($this->updateConfiguration()) {
                 $this->FE['state_msg'] .= $this->L10N->getString('response_deactivated') . '<br />';
                 if (!empty($this->Components['Meta'][$ID]['When Deactivation Succeeds'])) {
-                    $this->executor($this->Components['Meta'][$ID]['When Deactivation Succeeds'], true);
+                    $this->executor($this->Components['Meta'][$ID]['When Deactivation Succeeds']);
                 }
                 $Success = true;
             } else {
                 $this->FE['state_msg'] .= $this->L10N->getString('response_deactivation_failed') . '<br />';
                 if (!empty($this->Components['Meta'][$ID]['When Deactivation Fails'])) {
-                    $this->executor($this->Components['Meta'][$ID]['When Deactivation Fails'], true);
+                    $this->executor($this->Components['Meta'][$ID]['When Deactivation Fails']);
                 }
             }
         }
@@ -1246,7 +1259,7 @@ trait Updater
                 /** Repair operation succeeded. */
                 $this->FE['state_msg'] .= $this->L10N->getString('response_repair_process_completed');
                 if (!empty($this->Components['Meta'][$ThisTarget]['When Repair Succeeds'])) {
-                    $this->executor($this->Components['Meta'][$ThisTarget]['When Repair Succeeds'], true);
+                    $this->executor($this->Components['Meta'][$ThisTarget]['When Repair Succeeds']);
                 }
             } else {
                 $RepairFailed = true;
@@ -1254,7 +1267,7 @@ trait Updater
                 /** Repair operation failed. */
                 $this->FE['state_msg'] .= $this->L10N->getString('response_repair_process_failed');
                 if (!empty($this->Components['Meta'][$ThisTarget]['When Repair Fails'])) {
-                    $this->executor($this->Components['Meta'][$ThisTarget]['When Repair Fails'], true);
+                    $this->executor($this->Components['Meta'][$ThisTarget]['When Repair Fails']);
                 }
             }
             $this->formatFileSize($BytesAdded);

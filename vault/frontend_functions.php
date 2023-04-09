@@ -4068,7 +4068,7 @@ $CIDRAM['Message'] = function ($Message) use (&$CIDRAM) {
  * @param string $Message What to append.
  * @return void
  */
-$CIDRAM['Queue'] = function (string $Message) use (&$CIDRAM): void {
+$CIDRAM['Queue'] = function ($Message) use (&$CIDRAM) {
     $CIDRAM['FE_Executor']($Message, true);
 };
 

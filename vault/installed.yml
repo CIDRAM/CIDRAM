@@ -541,7 +541,7 @@ IPv6-Other:
    Checksum: "bc39f9b7c6dc45954983a5522e57e69f07a477592778f629449488bb45d5713c:3306"
    Used with: "ipv6"
 Bypasses:
- Version: "2023.98.0"
+ Version: "2023.99.0"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "^3.0.0-DEV"
@@ -550,7 +550,7 @@ Bypasses:
  Files:
   bypasses.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/bypasses.php"
-   Checksum: "75d761b46b482085f7e38debd41a443909a5419307e9a3160c013146425980ee:11227"
+   Checksum: "668b19ec7c30c76bb6b1b2784b5e763e968479b044f319e6e604c2f3ee321720:11236"
   imports/bypasses.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/imports/bypasses.yml"
    Checksum: "a073bc8a106dc487ec765c320a73722e9d85f5457b9ef22ddd0e40ac4ec8554c:1134"
@@ -1021,11 +1021,11 @@ BGPView module:
    Used with: "modules"
 Bot user agents module:
  False Positive Risk: "Medium"
- Version: "2023.76.0"
+ Version: "2023.99.0"
  Files:
   modules/botua.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/botua.php"
-   Checksum: "23dd80a0e370a392ccc1ef1ea0720b1f1b726ea0df4fb99b76cf4354087e1751:24297"
+   Checksum: "3e7fca9e60ee88180a8137557956cbaab477e78a745cf95321ff0e48eb24628c:24200"
    Used with: "modules"
 BunnyCDN compatibility module:
  False Positive Risk: "Low"
@@ -1126,7 +1126,7 @@ BOBUAM:
   Optional module which detects unwanted bots, old browsers, and performs some sanity checks.<br />Contains some data from
   the Wordpress plugin "Stop Bad Bots" by William "Bill" Minozzi.<br />(A few webservices bots might need bypasses).
  False Positive Risk: "Medium"
- Version: "2023.67.0"
+ Version: "2023.99.0"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Front-End: "^3"
@@ -1140,7 +1140,7 @@ BOBUAM:
    Used with: "imports"
   modules/bobuam.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/bobuam.php"
-   Checksum: "67f80b1baf32fbdc4e1fd99f628d7cb0df8fefc7658b5378712b3f73ab44ea88:42793"
+   Checksum: "3769a48518dda138d878bb1985033af97a05cc53f107f00ed4e8d79f9c861bb9:42788"
    Used with: "modules"
 theme/bluemetal:
  Name: "Theme: Blue Metal"

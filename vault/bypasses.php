@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Default signature bypasses (last modified: 2023.04.06).
+ * This file: Default signature bypasses (last modified: 2023.04.10).
  */
 
 /** Prevents execution from outside of the checkFactors method. */
@@ -253,7 +253,7 @@ $this->CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [
         }
 
         /** Jetpack bypass. */
-        if (isset($Bypasses['Jetpack']) && strpos($this->BlockInfo['UALC'], 'jetpack') !== false) {
+        if (isset($Bypasses['Jetpack']) && preg_match('~^(?:jetpack|photon/)~', $this->BlockInfo['UALC'])) {
             return;
         }
     }

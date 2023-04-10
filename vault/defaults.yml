@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2023.04.06).
+# This file: Defaults file (last modified: 2023.04.10).
 ##/
 
 Config Defaults:
@@ -758,8 +758,6 @@ Config Defaults:
     Snapchat:Verify
     Snapchat:BlockNegatives
     Snapchat:UntrackPositives
-    Twitterbot:Verify
-    Twitterbot:BlockNegatives
     Twitterbot:UntrackPositives
    labels:
     Verify: "checkbox_label_verify"
@@ -772,11 +770,12 @@ Config Defaults:
     Facebook: "** Facebook"
     Pinterest: "* Pinterest"
     Snapchat: "* Snapchat"
-    Twitterbot: "Twitterbot"
+    Twitterbot: "*!! Twitterbot"
    hints:
     - "hints_verification"
     - "hints_has_bypass"
     - "hints_asnlookup"
+    - "hints_cause_fp iMessage"
   other:
    type: "checkbox"
    default: |

@@ -5022,9 +5022,18 @@ $CIDRAM['ArrayFromL10NDataToArray'] = function ($References) use (&$CIDRAM): arr
     }
     $Out = [];
     foreach ($References as $Reference) {
+        $Try = '';
         if (isset($CIDRAM['L10N']->Data[$Reference])) {
-            $Reference = $CIDRAM['L10N']->Data[$Reference];
+            $Try = $CIDRAM['L10N']->Data[$Reference];
         }
+        if ($Try === '') {
+            if (($SPos = strpos($Reference, ' ')) !== '') {
+                $Try = (($TryFrom = $CIDRAM['L10N']->getString(substr($Reference, 0, $SPos))) !== '' && strpos($TryFrom, '%s') !== '') ? sprintf($TryFrom, substr($Reference, $SPos + 1)) : $Reference;
+            } else {
+                $Try = $Reference;
+            }
+        }
+        $Reference = $Try;
         if (!is_array($Reference)) {
             $Reference = [$Reference];
         }

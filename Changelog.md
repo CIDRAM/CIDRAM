@@ -218,3 +218,5 @@
 [2023.04.07; Maikuolan]: Reworked the IP test page.
 
 [2023.04.08; Maikuolan]: Colourised CIDRAM's CLI mode and improved some of its L10N.
+
+[2023.04.10; Maikuolan]: Added warning about iMessage false positives due to Twitterbot verification to the configuration page and turned Twitterbot verification off by default.

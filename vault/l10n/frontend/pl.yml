@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2023.04.08).
+# This file: Polish language data for the front-end (last modified: 2023.04.10).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -367,6 +367,7 @@ field_whitelisted_requests: "Żądania na białej liście"
 field_your_version: "Twoja Wersja"
 header_login: "Proszę się zalogować, aby kontynuować."
 hints_asnlookup: "** Wymaga funkcji wyszukiwania ASN (np., przez moduł IP-API lub BGPView)."
+hints_cause_fp: "*!! Wysokie prawdopodobieństwo spowodowania fałszywych pozytywów z powodu %s."
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#what-can-i-use-for-default_dns" hreflang="en-AU">Czego mogę użyć dla „default_dns”?</a></em>"
 hints_duration:
@@ -517,7 +518,7 @@ label_backup_location: "Lokalizacje kopii zapasowych repozytorium (w nagłym wyp
 label_banned: "Żądania zbanowane"
 label_blocked: "Żądania zablokowane"
 label_branch: "Oddział najnowsza stabilna:"
-label_bypass_the_request: "Uruchom obejście.\nJeśli przynajmniej jedna podpisa została już wyzwolona, odejmuje jedną liczbę od liczby wyzwolonych podpis. Zalecane do obsługi prostych fałszywych alarmów potencjalnie spowodowanych przez domyślne pliki podpis."
+label_bypass_the_request: "Uruchom obejście.\nJeśli przynajmniej jedna podpisa została już wyzwolona, odejmuje jedną liczbę od liczby wyzwolonych podpis. Zalecane do obsługi prostych fałszywych pozytywów potencjalnie spowodowanych przez domyślne pliki podpis."
 label_captcha: "Próby CAPTCHA"
 label_checkbox: "Pole wyboru"
 label_checksum_after: "Suma kontrolna po"
@@ -558,7 +559,7 @@ label_greylist_the_request: "Traktuj żądanie jako umieszczone na szarej liści
 label_hide: "Ukryj"
 label_http_response_header_code_200: "200 OK\nNajmniej solidny, ale najbardziej przyjazny dla użytkownika. Zautomatyzowane żądania najprawdopodobniej zinterpretują tę odpowiedź jako wskazanie, że żądanie zakończyło się powodzeniem."
 label_http_response_header_code_403: "403 Forbidden (Zakazana)\nBardziej solidny, ale mniej przyjazny dla użytkownika. Zalecany w większości ogólnych okoliczności."
-label_http_response_header_code_410: "410 Gone (Odszedł)\nMoże powodować problemy podczas rozwiązywania fałszywych alarmów, ponieważ niektóre przeglądarki buforują ten komunikat o stanie i nie wysyłają kolejnych żądań, nawet po odblokowaniu. Może być najbardziej preferowany w niektórych kontekstach, dla niektórych rodzajów ruchu."
+label_http_response_header_code_410: "410 Gone (Odszedł)\nMoże powodować problemy podczas rozwiązywania fałszywych pozytywów, ponieważ niektóre przeglądarki buforują ten komunikat o stanie i nie wysyłają kolejnych żądań, nawet po odblokowaniu. Może być najbardziej preferowany w niektórych kontekstach, dla niektórych rodzajów ruchu."
 label_http_response_header_code_418: "418 I'm a teapot (Jestem czajnikiem)\nOdniesienia do żartu primaaprilisowego ({{Links.RFC2324}}). Jest bardzo mało prawdopodobne, że zostanie zrozumiany przez żadnego klienta, bota, przeglądarkę, lub w inny sposób. Przewidziane dla rozrywki i wygody, ale ogólnie nie polecane."
 label_http_response_header_code_429: "429 Too Many Requests (Zbyt dużo próśb)\nZalecany do ograniczania, w przypadku ataków DDoS, i do zapobiegania powodziom. Niezalecane w innych kontekstach."
 label_http_response_header_code_451: "451 Unavailable For Legal Reasons (Niedostępne ze względów prawnych)\nZalecane przy blokowaniu przede wszystkim ze względów prawnych. Niezalecane w innych kontekstach."

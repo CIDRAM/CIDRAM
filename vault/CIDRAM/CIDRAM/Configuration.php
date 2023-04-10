@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used by the configuration page and configuration filters (last modified: 2023.04.03).
+ * This file: Methods used by the configuration page and configuration filters (last modified: 2023.04.10).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -93,19 +93,28 @@ trait Configuration
         }
         $Out = [];
         foreach ($References as $Reference) {
+            $Try = '';
             if (isset($this->L10N->Data[$Reference])) {
-                $Reference = $this->L10N->Data[$Reference];
+                $Try = $this->L10N->Data[$Reference];
             } elseif (is_array($this->L10N->Fallback)) {
                 if (isset($this->L10N->Fallback[$Reference])) {
-                    $Reference = $this->L10N->Fallback[$Reference];
+                    $Try = $this->L10N->Fallback[$Reference];
                 }
             } elseif ($this->L10N->Fallback instanceof \Maikuolan\Common\L10N) {
                 if (isset($this->L10N->Fallback->Data[$Reference])) {
-                    $Reference = $this->L10N->Fallback->Data[$Reference];
+                    $Try = $this->L10N->Fallback->Data[$Reference];
                 } elseif (is_array($this->L10N->Fallback->Fallback) && isset($this->L10N->Fallback->Fallback[$Reference])) {
-                    $Reference = $this->L10N->Fallback->Fallback[$Reference];
+                    $Try = $this->L10N->Fallback->Fallback[$Reference];
                 }
             }
+            if ($Try === '') {
+                if (($SPos = strpos($Reference, ' ')) !== '') {
+                    $Try = (($TryFrom = $this->L10N->getString(substr($Reference, 0, $SPos))) !== '' && strpos($TryFrom, '%s') !== '') ? sprintf($TryFrom, substr($Reference, $SPos + 1)) : $Reference;
+                } else {
+                    $Try = $Reference;
+                }
+            }
+            $Reference = $Try;
             if (!is_array($Reference)) {
                 $Reference = [$Reference];
             }

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2023.04.08).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2023.04.10).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -364,6 +364,7 @@ field_whitelisted_requests: "在白名單中的請求"
 field_your_version: "您的版本"
 header_login: "請登錄以繼續。"
 hints_asnlookup: "** 需要ASN查找功能（例如，通過IP-API或BGPView模塊）。"
+hints_cause_fp: "*!! 由於%s而導致假陽性的可能性很高。"
 hints_default_dns:
  常問問題。: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.zh-tw.md\#在default_dns中我可以使用什麼" hreflang="zh-TW">在『default_dns』中我可以使用什麼？</a></em>"
 hints_duration:
@@ -387,7 +388,7 @@ hints_shorthand:
  人類端點和雲服務。: "雲服務可能是指虛擬主機提供商、服務器場、數據中心、或許多其他事物。​人類端點是指人類訪問互聯網的方式，例如，通過互聯網服務提供商。​網絡通常只提供一個或另一個，但有時可能同時提供兩者。​我們試圖不將潛在的人類端點識別為雲服務。​因此，如果雲服務的範圍由已知的人類端點共享，則可以將其識別為其他東西。​同樣，如果範圍不被任何已知的人類端點共享，我們會試圖始終將雲服務識別為雲服務。​因此，明確標識為雲服務的請求很可能不會與任何已知的人類端點共享其範圍。​同樣，由攻擊或垃圾郵件的風險明確識別的請求很可能共享範圍。​然而，互聯網總是在不斷變化，網絡的目的可以改變，範圍總是被買賣，所以關於假陽性的保持有意識和警惕。"
 hints_verification:
  "什麼是『陽性』和『陰性』？": "在驗證請求提供的身份時，成功的結果可以描述為『陽性』或『陰性』。​當所呈現的身份被確認為真實身份時，將被描述為『陽性』。​當所提供的身份被證實為偽造時，將被描述為『陰性』。​但是，不成功的結果（例如，驗證失敗，或無法確定所提供身份的真實性）不會被描述為『陽性』或『陰性』。​相反，不成功的結果將被簡單地描述為未驗證。​當沒有嘗試驗證請求提供的身份時，該請求同樣會被描述為未驗證。​這些術語僅在請求提供的身份被識別的情況下才有意義，因此，在可以進行驗證的情況下。​如果提供的身份與上面提供的選項不匹配，或者沒有提供身份，則上面提供的選項變得無關。"
- "什麼是『一擊繞過』？": "在某些情況下，由於簽名文件、模塊、或請求的其他條件，可能仍會阻止經過肯定驗證的請求，為了避免誤報，可能需要繞過。​在繞過旨在處理僅一項違規行為的情況下，這樣的繞過可以被描述為『一擊繞過』。"
+ "什麼是『一擊繞過』？": "在某些情況下，由於簽名文件、模塊、或請求的其他條件，可能仍會阻止經過肯定驗證的請求，為了避免假陽性，可能需要繞過。​在繞過旨在處理僅一項違規行為的情況下，這樣的繞過可以被描述為『一擊繞過』。"
 info_cli_by_default_ips: |
  IP地址針對所有簽名文件、所有模塊、所有輔助規則、以及社交媒體和搜索引擎驗證進行
  測試。

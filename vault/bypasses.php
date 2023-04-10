@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Default signature bypasses (last modified: 2023.04.06).
+ * This file: Default signature bypasses (last modified: 2023.04.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -299,7 +299,7 @@ $CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [], int
         /** Jetpack bypass. */
         if (
             $CIDRAM['Request']->inCsv('Jetpack', $CIDRAM['Config']['bypasses']['used']) &&
-            strpos($CIDRAM['BlockInfo']['UALC'], 'jetpack') !== false
+            preg_match('~^(?:jetpack|photon/)~', $CIDRAM['BlockInfo']['UALC'])
         ) {
             return;
         }

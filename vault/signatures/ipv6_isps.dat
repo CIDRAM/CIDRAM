@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2023.97.0
-# Last modified: 2023.04.08
+# Version: 2023.98.0
+# Last modified: 2023.04.09
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -683,22 +683,25 @@ Tag: British Telecom PLC
 
 # ASN 7018 ("AT&T Services, Inc").
 # Major US domestic ISP. DDoS, SQLi, brute-force and WordPress/XMLRPC attacks,
-# credential stuffing, port scans, and spam detected from here. Listed just the
-# affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 6,296.
-# Updated: 2022.11.25
+# credential stuffing, port scans, and spam detected from here.
+# Listed just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 5,549.
+# Updated: 2023.04.09
 
-2600:1700:210:4470::/64 Deny Spam
-2600:1700:1114:9410::/64 Deny Spam
-2600:1700:13a2:5e0::/64 Deny Spam
-2600:1700:1488:4480::/64 Deny Spam
-2600:1700:27f0:9cf0::/64 Deny Spam
-2600:1700:55c0:8110::/64 Deny Spam
-2600:1700:8b31:43e0::/64 Deny Spam
-2600:1700:ef70:9f20::/64 Deny Spam
+2600:1700:1c20:8900::/64 Deny Spam
+2600:1700:3040:b230::/64 Deny Spam
+2600:1700:4494:2000::/64 Deny Spam
+2600:1700:6830:50e0::/64 Deny Spam
+2600:1700:72a0:3260::/64 Deny Spam
+2600:1700:82f0:83d0::/64 Deny Spam
+2600:1700:8ab8:8000::/64 Deny Spam
+2600:1700:a640:2010::/64 Deny Spam
+2600:1700:a882:2530::/64 Deny Spam
+2600:1700:c970:6bb0::/64 Deny Spam
+2600:1700:d820:1ad0::/64 Deny Spam
 2600:1700:fe20:e670::/64 Deny Spam
-2600:1702:4e2c:8010::/64 Deny Spam
-2602:306:33fd:6c10::/64 Deny Spam
+2600:1702:14b0:3950::/64 Deny Spam
+2600:1702:4610:1020::/64 Deny Spam
 Origin: US
 Profile: Domestic ISP;Tor endpoints here
 Tag: AT&T Services, Inc

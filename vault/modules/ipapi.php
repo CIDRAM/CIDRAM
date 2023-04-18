@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: ip-api module (last modified: 2023.03.28).
+ * This file: IP-API module (last modified: 2023.04.18).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */

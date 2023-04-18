@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Stop Forum Spam defaults file (last modified: 2023.03.28).
+# This file: Stop Forum Spam defaults file (last modified: 2023.04.18).
 ##/
 
 Config Defaults:
@@ -21,3 +21,7 @@ Config Defaults:
   offer_captcha:
    type: "bool"
    default: true
+Cache Prefetch:
+ SFS-429: ""
+Problems:
+ - "if {CIDRAM.Cache Prefetch.SFS-429}==1 then warn warning_rate_limited_api Stop Forum Spam"

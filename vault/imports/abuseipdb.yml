@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: AbuseIPDB defaults file (last modified: 2023.03.28).
+# This file: AbuseIPDB defaults file (last modified: 2023.04.18).
 ##/
 
 Config Defaults:
@@ -56,3 +56,7 @@ Config Defaults:
   build_profiles_from_usage_type:
    type: "bool"
    default: true
+Cache Prefetch:
+ AbuseIPDB-429: ""
+Problems:
+ - "if {CIDRAM.Cache Prefetch.AbuseIPDB-429}==1 then warn warning_rate_limited_api AbuseIPDB"

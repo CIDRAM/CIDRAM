@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.04.08).
+ * This file: The CIDRAM front-end (last modified: 2023.04.18).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -303,15 +303,6 @@ class FrontEnd extends Core
             }
         }
 
-        /** Prepare warnings. */
-        $this->FE['Warnings'] = count($this->CIDRAM['Warnings']) ? "\n<div class=\"center\"><div class=\"warning\">" . implode(
-            "</div>\n<div class=\"warning\">",
-            $this->CIDRAM['Warnings']
-        ) . '</div></div><hr />' : '';
-
-        /** Cleanup. */
-        unset($this->CIDRAM['Warnings']);
-
         /** Menu toggle JavaScript, needed by some front-end pages. */
         $this->CIDRAM['MenuToggle'] = '<script type="text/javascript">' .
             'var i,toggler=document.getElementsByClassName("comCat");for(i=0;i<toggl' .
@@ -374,6 +365,31 @@ class FrontEnd extends Core
 
         /** Initialise cache. */
         $this->initialiseCache();
+
+        /** Needed for checking dependency version constraints, for imports, and for processing import and module warnings. */
+        $this->CIDRAM['Operation'] = new \Maikuolan\Common\Operation();
+
+        /** Warnings from imports and modules. */
+        if (isset($this->CIDRAM['Problems']) && is_array($this->CIDRAM['Problems'])) {
+            /** Prefetch any needed cache entries. */
+            if (isset($this->CIDRAM['Cache Prefetch']) && is_array($this->CIDRAM['Cache Prefetch'])) {
+                foreach ($this->CIDRAM['Cache Prefetch'] as $Key => &$Value) {
+                    $Value = $this->Cache->getEntry($Key);
+                }
+            }
+
+            /** Process all warning conditions. */
+            $this->executor($this->CIDRAM['Problems']);
+        }
+
+        /** Prepare warnings. */
+        $this->FE['Warnings'] = count($this->CIDRAM['Warnings']) ? "\n<div class=\"center\"><div class=\"warning\">" . implode(
+            "</div>\n<div class=\"warning\">",
+            $this->CIDRAM['Warnings']
+        ) . '</div></div><hr />' : '';
+
+        /** Cleanup. */
+        unset($this->CIDRAM['Warnings']);
 
         /** Initialise statistics tracked. */
         $this->StatisticsTracked = array_flip(explode("\n", $this->Configuration['general']['statistics']));
@@ -1876,9 +1892,6 @@ class FrontEnd extends Core
             }
             unset($StateModified);
 
-            /** Useful for checking dependency version constraints. */
-            $this->CIDRAM['Operation'] = new \Maikuolan\Common\Operation();
-
             /** Updates page form boilerplate. */
             $this->FE['CFBoilerplate'] =
                 '<form action="?%s" method="POST" style="display:inline">' .
@@ -2573,8 +2586,6 @@ class FrontEnd extends Core
                         if (!isset($Import['CIDRAM Version'])) {
                             $this->FE['state_msg'] .= $this->L10N->getString('response_failed_to_import') . '<br />';
                         } else {
-                            $this->CIDRAM['Operation'] = new \Maikuolan\Common\Operation();
-
                             /** Import configuration. */
                             if (isset($_POST['doConfig']) && $_POST['doConfig'] === 'on') {
                                 if ($this->CIDRAM['Operation']->singleCompare($Import['CIDRAM Version'], '<1.23|>=2 <2.10|>=4')) {

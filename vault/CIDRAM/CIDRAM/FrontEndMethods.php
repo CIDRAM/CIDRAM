@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2023.04.03).
+ * This file: General methods used by the front-end (last modified: 2023.04.18).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1318,5 +1318,130 @@ trait FrontEndMethods
             }
         }
         return $In;
+    }
+
+    /**
+     * Executes a list of methods or commands when specific conditions are met.
+     *
+     * @param string|array $Methods The list of methods or commands to execute.
+     * @param bool $Queue Whether to queue the operation or perform immediately.
+     * @return void
+     */
+    private function executor($Methods = '', bool $Queue = false): void
+    {
+        if ($Queue && $Methods !== '') {
+            /** Guard. */
+            if (empty($this->CIDRAM['ExecutorQueue']) || !is_array($this->CIDRAM['ExecutorQueue'])) {
+                $this->CIDRAM['ExecutorQueue'] = [];
+            }
+
+            /** Add to the executor queue. */
+            if (is_array($Methods)) {
+                $this->CIDRAM['ExecutorQueue'] = array_merge($this->CIDRAM['ExecutorQueue'], $Methods);
+            } else {
+                $this->CIDRAM['ExecutorQueue'][] = $Methods;
+            }
+            return;
+        }
+
+        if ($Methods === '') {
+            if (!empty($this->CIDRAM['ExecutorQueue']) && is_array($this->CIDRAM['ExecutorQueue'])) {
+                /** We'll iterate an array from the local scope to guard against infinite loops. */
+                $Items = $this->CIDRAM['ExecutorQueue'];
+
+                /** Purge the queue before iterating. */
+                $this->CIDRAM['ExecutorQueue'] = [];
+
+                /** Iterate through the executor queue. */
+                $this->executor($Items);
+            }
+            return;
+        }
+
+        /** Guard. */
+        $this->arrayify($Methods);
+
+        /** Recursively execute all methods in the current queue item. */
+        foreach ($Methods as $Method) {
+            /** Guard. */
+            if (is_array($Method)) {
+                foreach ($Method as $Item) {
+                    $this->executor($Item);
+                }
+                continue;
+            }
+
+            /** Foreach looping. */
+            if (preg_match('~^foreach \{(.+?)\} as ([^ ]+?) => ([^ ]+?) (.*)$~i', $Method, $Tokens)) {
+                $Iterable = $this->CIDRAM['Operation']->dataTraverse($this, $Tokens[1], true);
+                if (!is_iterable($Iterable)) {
+                    continue;
+                }
+                $Arr = [];
+                foreach ($Iterable as $Key => $Value) {
+                    $Arr[] = str_replace(['{' . $Tokens[2] . '}', '{' . $Tokens[3] . '}'], [$Key, $Value], $Tokens[4]);
+                }
+                $this->executor($Arr);
+                continue;
+            }
+
+            /** All logic, data traversal, dot notation, etc handled here. */
+            $Method = $this->CIDRAM['Operation']->ifCompare($this, $Method);
+
+            if (method_exists($this, $Method)) {
+                $this->{$Method}();
+            } elseif (($Pos = strpos($Method, ' ')) !== false) {
+                $Params = substr($Method, $Pos + 1);
+                $Method = substr($Method, 0, $Pos);
+                if (method_exists($this, $Method)) {
+                    $Params = $this->CIDRAM['Operation']->ifCompare($this, $Params);
+                    $this->{$Method}($Params);
+                }
+            }
+        }
+    }
+
+    /**
+     * Discern a message.
+     *
+     * @param string $Message What to discern.
+     * @return string THe discerned message.
+     */
+    private function discern(string $Message): string
+    {
+        if (($Try = $this->L10N->getString($Message)) !== '') {
+            $Message = $Try;
+        } elseif (($SPos = strpos($Message, ' ')) !== false) {
+            if (($Try = $this->L10N->getString(substr($Message, 0, $SPos))) !== '') {
+                $Params = substr($Message, $SPos + 1);
+                $FC = substr_count($Try, '%s');
+                if ($FC === 1) {
+                    $Try = sprintf($Try, $Params);
+                } elseif ($FC > 1) {
+                    $SC = substr_count($Params, ' ');
+                    if ($SC + 1 === $FC) {
+                        $Try = sprintf($Try, explode(' ', $Params));
+                    } elseif ($SC >= $FC) {
+                        $Try = sprintf($Try, ...explode(' ', $Params, $FC));
+                    }
+                }
+                $Message = $Try;
+            }
+        }
+        return $Message;
+    }
+
+    /**
+     * Append to the current warnings.
+     *
+     * @param string $Message What to append.
+     * @return void
+     */
+    private function warn(string $Message): void
+    {
+        if (!isset($this->CIDRAM['Warnings'])) {
+            return;
+        }
+        $this->CIDRAM['Warnings'][] = $this->discern($Message);
     }
 }

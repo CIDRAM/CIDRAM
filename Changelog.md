@@ -220,3 +220,5 @@
 [2023.04.08; Maikuolan]: Colourised CIDRAM's CLI mode and improved some of its L10N.
 
 [2023.04.10; Maikuolan]: Added warning about iMessage false positives due to Twitterbot verification to the configuration page and turned Twitterbot verification off by default.
+
+[2023.04.18; Maikuolan]: Added warnings for when it's detected that access to the APIs used by various modules appear to be being rate limited (#453).

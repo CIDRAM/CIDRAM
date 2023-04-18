@@ -1405,7 +1405,7 @@ trait FrontEndMethods
      * Discern a message.
      *
      * @param string $Message What to discern.
-     * @return string THe discerned message.
+     * @return string The discerned message.
      */
     private function discern(string $Message): string
     {

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bot user agents module (last modified: 2023.04.10).
+ * This file: Bot user agents module (last modified: 2023.04.20).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -325,6 +325,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         $this->trigger(strpos($UANoSpace, '$_' . '[$' . '__') !== false, 'UA shell upload attempt') || // 2017.01.02
         $this->trigger(strpos($UANoSpace, '@$' . '_[' . ']=' . '@!' . '+_') !== false, 'UA shell upload attempt') || // 2017.01.02
         $this->trigger(preg_match('/h[4a]c' . 'k(?:e[dr]|ing|t([3e][4a]m|[0o]{2}l))/', $UANoSpace), 'Hack UA') || // 2017.01.06
+        $this->trigger(strpos($UANoSpace, 'alittleclient') !== false, 'Hack UA') || // 2023.04.20
         $this->trigger((
             strpos($UA, 'rm ' . '-rf') !== false ||
             strpos($UA, 'wordpress ha') !== false ||
@@ -377,7 +378,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         } elseif (strpos($this->BlockInfo['WhyReason'], 'UA shell upload attempt') !== false) {
             $this->Reporter->report([15], ['Shell upload attempt detected in user agent.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'Hack UA') !== false) {
-            $this->Reporter->report([15], ['Hack identifier detected in user agent.'], $this->BlockInfo['IPAddr']);
+            $this->Reporter->report([15, 19, 21], ['Hack identifier detected in user agent.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'Vulner') !== false) {
             $this->Reporter->report([15], ['Caught looking for vulnerabilities.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'UASQLi') !== false) {

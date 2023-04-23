@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2023.04.06).
+ * This file: Functions file (last modified: 2023.04.23).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -2570,8 +2570,11 @@ $CIDRAM['HonourLookup'] = function () use (&$CIDRAM): bool {
  * @param string $URI The URI.
  * @return bool True is sensitive; False is not sensitive.
  */
-$CIDRAM['IsSensitive'] = function (string $URI): bool {
-    return preg_match(
+$CIDRAM['IsSensitive'] = function (string $URI) use (&$CIDRAM): bool {
+    if (isset($CIDRAM['InstanceIsSensitive'])) {
+        return $CIDRAM['InstanceIsSensitive'];
+    }
+    return $CIDRAM['InstanceIsSensitive'] = preg_match(
         '~/(?:comprofiler|user)/(?:login|register)|[/=](?:activate|contact|login|re' .
         'gist(?:er|ration)|signup)|act(?:ion)?=(?:edit|reg)|(?:activate|con(?:firm|' .
         'tact)|login|newuser|reg(?:ist(?:er|ration))?|signin|signup)(?:\.php|[/=])|' .

@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2023.106.0
-# Last modified: 2023.04.17
+# Version: 2023.112.0
+# Last modified: 2023.04.23
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -4312,8 +4312,8 @@ Tag: WebCentral
 
 
 # ASN 22552 ("eSited Solutions").
-# Stop Forum Spam (SFS) listings: 35.
-# Updated: 2017.08.25 / Checked: 2022.04.25
+# Stop Forum Spam (SFS) listings: 191.
+# Updated: 2017.08.25 / Checked: 2023.04.18
 
 2604:4480::/32 Deny Cloud
 Origin: US
@@ -7400,16 +7400,6 @@ Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: GigeNET
 
 
-# ASN 8683 ("Nominet UK").
-# Webhosting provider. Caught trying to brute-force website login pages.
-# Updated: 2021.07.19 / Checked: 2022.04.25
-
-2a01:618:8000::/33 Deny Cloud
-Origin: GB
-Profile: Webhosting
-Tag: Nominet UK
-
-
 # ASNs 7489, 25926 ("HostUS").
 # Owns IPs associated with a Spamhaus top 10 worst offender listing (Nov 2019).
 # Dedicated webhosting provider with spam records at SFS and elsewhere.
@@ -10089,7 +10079,8 @@ Tag: AxcelX Technologies LLC
 # ASN 208091 ("XHOST INTERNET SOLUTIONS LP").
 # Webhosting provider and server farm. Caught repeatedly trying to hack into
 # RDP. Caught trying to hack into honeypots.
-# Updated: 2022.05.01
+# Stop Forum Spam (SFS) listings: 3.
+# Updated: 2022.05.01 / Checked: 2023.04.23
 
 2a0c:6900::/32 Deny Cloud
 2a0d:65c0::/29 Deny Cloud
@@ -10110,23 +10101,11 @@ Profile: Restricted/Unidentifiable
 Tag: Yanoor Islam Khan
 
 
-# ASN 63730 ("VNSO TECHNOLOGY COMPANY").
-# Caught hacking WordPress websites, brute-force, SSH, SMB, RDP, XMLRPC, and
-# webapp attacks, hacking, port scans, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 2,493.
-# Updated: 2021.07.28 / Checked: 2022.05.01
-
-2405:e0c0::/48 Deny Cloud
-Origin: VN
-Profile: Webhosting
-Tag: VNSO TECHNOLOGY COMPANY
-
-
 # ASNs 56694, 62212 ("LLC Smart Ape", "SmartApe OU").
 # Russian server farm. Brute-force, XMLRPC, and webapp attacks, hacking, port
 # scans, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 1,377 (AS56694).
-# Updated: 2022.05.01
+# Stop Forum Spam (SFS) listings: 395 (AS56694), 161 (AS62212).
+# Updated: 2022.05.01 / Checked: 2023.04.23
 
 2a06:dd00::/29 Deny Cloud
 2a11:3b80::/29 Deny Cloud

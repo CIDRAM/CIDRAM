@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2023.04.06).
+ * This file: Front-end handler (last modified: 2023.04.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -4015,7 +4015,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
     }
 
     /** Template for result rows. */
-    $CIDRAM['FE']['IPTestRow'] = $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_ip_test_row.html'));
+    $CIDRAM['FE']['IPTestRow'] = $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_ip_testing_row.html'));
 
     /** Initialise results data. */
     $CIDRAM['FE']['IPTestResults'] = '';
@@ -4037,6 +4037,12 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
 
     /** Verification switch for HTML. */
     $CIDRAM['FE']['VerificationSwitch'] = $CIDRAM['VerificationSwitch'] ? ' checked' : '';
+
+    /** Sensitive request switch. */
+    $CIDRAM['InstanceIsSensitive'] = !empty($_POST['SensitiveSwitch']);
+
+    /** Sensitive request switch for HTML. */
+    $CIDRAM['FE']['SensitiveSwitch'] = $CIDRAM['InstanceIsSensitive'] ? ' checked' : '';
 
     /** Fetch custom fields if specified. */
     foreach (['custom-query', 'custom-referrer', 'custom-ua'] as $CIDRAM['ThisField']) {
@@ -4239,7 +4245,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
     /** Parse output. */
     $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
         $CIDRAM['L10N']->Data + $CIDRAM['FE'],
-        $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_ip_test.html'))
+        $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_ip_testing.html'))
     );
 
     /** Send output. */

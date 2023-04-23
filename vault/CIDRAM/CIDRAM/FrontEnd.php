@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.04.18).
+ * This file: The CIDRAM front-end (last modified: 2023.04.23).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -3868,33 +3868,35 @@ class FrontEnd extends Core
             }
 
             /** Template for result rows. */
-            $this->FE['IPTestRow'] = $this->readFile($this->getAssetPath('_ip_test_row.html'));
+            $this->FE['IPTestRow'] = $this->readFile($this->getAssetPath('_ip_testing_row.html'));
 
             /** Initialise results data. */
             $this->FE['IPTestResults'] = '';
 
             /** Switches for which stages to enable for the IP test. */
             if (isset($_POST['ip-addr'])) {
-                $this->CIDRAM['TestsSwitch'] = !empty($_POST['TestsSwitch']);
-                $this->CIDRAM['ModuleSwitch'] = !empty($_POST['ModuleSwitch']);
-                $this->CIDRAM['SEVSwitch'] = !empty($_POST['SEVSwitch']);
-                $this->CIDRAM['SMVSwitch'] = !empty($_POST['SMVSwitch']);
-                $this->CIDRAM['OVSwitch'] = !empty($_POST['OVSwitch']);
-                $this->CIDRAM['AuxSwitch'] = !empty($_POST['AuxSwitch']);
+                $TestsSwitch = !empty($_POST['TestsSwitch']);
+                $ModuleSwitch = !empty($_POST['ModuleSwitch']);
+                $SEVSwitch = !empty($_POST['SEVSwitch']);
+                $SMVSwitch = !empty($_POST['SMVSwitch']);
+                $OVSwitch = !empty($_POST['OVSwitch']);
+                $AuxSwitch = !empty($_POST['AuxSwitch']);
             } else {
-                $this->CIDRAM['TestsSwitch'] = true;
-                $this->CIDRAM['ModuleSwitch'] = false;
-                $this->CIDRAM['SEVSwitch'] = false;
-                $this->CIDRAM['SMVSwitch'] = false;
-                $this->CIDRAM['OVSwitch'] = false;
-                $this->CIDRAM['AuxSwitch'] = false;
+                $TestsSwitch = true;
+                $ModuleSwitch = false;
+                $SEVSwitch = false;
+                $SMVSwitch = false;
+                $OVSwitch = false;
+                $AuxSwitch = false;
             }
-            $this->FE['TestsSwitch'] = $this->CIDRAM['TestsSwitch'] ? ' checked' : '';
-            $this->FE['ModuleSwitch'] = $this->CIDRAM['ModuleSwitch'] ? ' checked' : '';
-            $this->FE['SEVSwitch'] = $this->CIDRAM['SEVSwitch'] ? ' checked' : '';
-            $this->FE['SMVSwitch'] = $this->CIDRAM['SMVSwitch'] ? ' checked' : '';
-            $this->FE['OVSwitch'] = $this->CIDRAM['OVSwitch'] ? ' checked' : '';
-            $this->FE['AuxSwitch'] = $this->CIDRAM['AuxSwitch'] ? ' checked' : '';
+            $this->FE['TestsSwitch'] = $TestsSwitch ? ' checked' : '';
+            $this->FE['ModuleSwitch'] = $ModuleSwitch ? ' checked' : '';
+            $this->FE['SEVSwitch'] = $SEVSwitch ? ' checked' : '';
+            $this->FE['SMVSwitch'] = $SMVSwitch ? ' checked' : '';
+            $this->FE['OVSwitch'] = $OVSwitch ? ' checked' : '';
+            $this->FE['AuxSwitch'] = $AuxSwitch ? ' checked' : '';
+            $this->CIDRAM['isSensitive'] = !empty($_POST['SensitiveSwitch']);
+            $this->FE['SensitiveSwitch'] = $this->CIDRAM['isSensitive'] ? ' checked' : '';
 
             /** Fetch custom fields if specified. */
             foreach (['custom-query', 'custom-referrer', 'custom-ua'] as $Field) {
@@ -3934,28 +3936,28 @@ class FrontEnd extends Core
                         }
                         $this->simulateBlockEvent(
                             $this->CIDRAM['ThisIP']['IPAddress'],
-                            $this->CIDRAM['TestsSwitch'],
-                            $this->CIDRAM['ModuleSwitch'],
-                            $this->CIDRAM['SEVSwitch'],
-                            $this->CIDRAM['SMVSwitch'],
-                            $this->CIDRAM['OVSwitch'],
-                            $this->CIDRAM['AuxSwitch']
+                            $TestsSwitch,
+                            $ModuleSwitch,
+                            $SEVSwitch,
+                            $SMVSwitch,
+                            $OVSwitch,
+                            $AuxSwitch
                         );
                     } elseif ($this->FE['TestMode'] === 2) {
                         $this->simulateBlockEvent(
                             '',
-                            $this->CIDRAM['TestsSwitch'],
-                            $this->CIDRAM['ModuleSwitch'],
-                            $this->CIDRAM['SEVSwitch'],
-                            $this->CIDRAM['SMVSwitch'],
-                            $this->CIDRAM['OVSwitch'],
-                            $this->CIDRAM['AuxSwitch']
+                            $TestsSwitch,
+                            $ModuleSwitch,
+                            $SEVSwitch,
+                            $SMVSwitch,
+                            $OVSwitch,
+                            $AuxSwitch
                         );
                         $this->CIDRAM['ThisIP']['IPAddress'] = $this->FE['custom-ua'];
                     }
                     if (
                         !empty($this->CIDRAM['Caught']) ||
-                        ($this->FE['TestMode'] === 1 && $this->CIDRAM['TestsSwitch'] && (empty($this->CIDRAM['LastTestIP']) || empty($this->CIDRAM['TestResults']))) ||
+                        ($this->FE['TestMode'] === 1 && $TestsSwitch && (empty($this->CIDRAM['LastTestIP']) || empty($this->CIDRAM['TestResults']))) ||
                         !empty($this->CIDRAM['RunErrors']) ||
                         !empty($this->CIDRAM['ModuleErrors']) ||
                         !empty($this->CIDRAM['AuxErrors'])
@@ -4115,7 +4117,7 @@ class FrontEnd extends Core
             );
 
             /** Parse output. */
-            $this->FE['FE_Content'] = $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_ip_test.html')), true);
+            $this->FE['FE_Content'] = $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_ip_testing.html')), true);
 
             /** Send output. */
             echo $this->sendOutput();

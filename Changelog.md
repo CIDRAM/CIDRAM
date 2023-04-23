@@ -222,3 +222,5 @@
 [2023.04.10; Maikuolan]: Added warning about iMessage false positives due to Twitterbot verification to the configuration page and turned Twitterbot verification off by default.
 
 [2023.04.18; Maikuolan]: Added warnings for when it's detected that access to the APIs used by various modules appear to be being rate limited (#453).
+
+[2023.04.23; Maikuolan]: Added a checkbox to the IP testing page to toggle whether to test as a sensitive request (#453).

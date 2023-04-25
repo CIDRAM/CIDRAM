@@ -230,3 +230,5 @@
 [2023.04.25; Bug-fix; Maikuolan]: Explicitly defining the region for the configured L10N where deferment may be available but the region for the corresponding listed configuration choice not included could've caused the L10N loader to simply use fallbacks instead; Fixed.
 
 [2023.04.25; Maikuolan]: Split the existing L10N for Portuguese into two variants, Brazilian and European.
+
+[2023.04.25; Maikuolan]: Added an option to the rate limiting exceptions to enable requests to the CIDRAM front-end to be exempted from rate limiting (#457).

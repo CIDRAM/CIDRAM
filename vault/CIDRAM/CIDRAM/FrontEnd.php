@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.04.23).
+ * This file: The CIDRAM front-end (last modified: 2023.04.25).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -191,6 +191,9 @@ class FrontEnd extends Core
             'Links.Documentation' => $this->CIDRAM['Links']['Documentation'],
             'Links.Website' => $this->CIDRAM['Links']['Website']
         ];
+
+        /** Used by rate limiting exceptions. */
+        $this->CIDRAM['ViewCalled'] = true;
 
         /** Header appended by integration. */
         if (isset($this->CIDRAM['IntegrationHeader'])) {

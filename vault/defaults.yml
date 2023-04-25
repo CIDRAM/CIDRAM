@@ -1026,10 +1026,11 @@ Config Defaults:
    default: "0°0′0″"
   exceptions:
    type: "checkbox"
-   default: ""
+   default: "FE"
    choices:
     Whitelisted: "field_whitelisted_requests"
     Verified: "field_verified_requests"
+    FE: "field_fe_requests"
   segregate:
    type: "bool"
    default: false

@@ -2520,6 +2520,11 @@ class Core
      */
     public function rateLimitWriteEvent(string $RL_Capture, int $RL_Size): void
     {
+        /** Guard. */
+        if (isset($this->CIDRAM['ViewCalled']) && preg_match('~(?:^|\n)FE(?:\n|$)~', $this->Configuration['rate_limiting']['exceptions'])) {
+            return;
+        }
+
         $SourceName = ($this->Configuration['rate_limiting']['segregate'] && $this->CIDRAM['HTTP_HOST'] !== '') ? 'rl-' . $this->CIDRAM['HTTP_HOST'] : 'rl';
         $TimePacked = pack('l*', $this->Now);
         $SizePacked = pack('l*', $RL_Size);

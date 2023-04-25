@@ -3596,9 +3596,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'rl' && $CIDRAM['FE']['Permissio
                         sprintf(
                             $CIDRAM['L10N']->getString('label_rl_when'),
                             $CIDRAM['RelativeTime']($CIDRAM['EntryDetails']['Newest']),
-                            $CIDRAM['RelativeTime']($CIDRAM['EntryDetails']['Newest'] + $this->Configuration['rate_limiting']['allowance_period']->getAsSeconds()),
+                            $CIDRAM['RelativeTime']($CIDRAM['EntryDetails']['Newest'] + ($CIDRAM['Config']['rate_limiting']['allowance_period'] * 3600)),
                             $CIDRAM['RelativeTime']($CIDRAM['EntryDetails']['Oldest']),
-                            $CIDRAM['RelativeTime']($CIDRAM['EntryDetails']['Oldest'] + $this->Configuration['rate_limiting']['allowance_period']->getAsSeconds())
+                            $CIDRAM['RelativeTime']($CIDRAM['EntryDetails']['Oldest'] + ($CIDRAM['Config']['rate_limiting']['allowance_period'] * 3600))
                         )
                     );
                 }

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2023.03.24).
+# This file: Configuration defaults file (last modified: 2023.04.25).
 ##/
 
 Config Defaults:
@@ -689,10 +689,11 @@ Config Defaults:
    preview: "hours"
   exceptions:
    type: "checkbox"
-   default: ""
+   default: "FE"
    choices:
     Whitelisted: "field_whitelisted_requests"
     Verified: "field_verified_requests"
+    FE: "field_fe_requests"
   segregate:
    type: "bool"
    default: false

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2023.04.06).
+ * This file: The CIDRAM core (last modified: 2023.04.25).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -2829,7 +2829,15 @@ class Core
             $Primary = $this->readFile($Path . 'en.yml');
             $Fallback = '';
         } else {
-            $Primary = $this->readFile($Path . $this->Configuration['general']['lang'] . '.yml');
+            if (($Primary = $this->readFile($Path . $this->Configuration['general']['lang'] . '.yml')) === '') {
+                if (isset($this->CIDRAM['Config Defaults']['general']['lang']['defer'][$this->Configuration['general']['lang']])) {
+                    $Primary = $this->readFile($Path . $this->CIDRAM['Config Defaults']['general']['lang']['defer'][$this->Configuration['general']['lang']] . '.yml');
+                }
+                if ($Primary === '') {
+                    $Try = preg_replace('~-.*$~', '', $this->Configuration['general']['lang']);
+                    $Primary = $this->readFile($Path . $Try . '.yml');
+                }
+            }
             $Fallback = $this->readFile($Path . 'en.yml');
         }
         if ($Primary !== '') {

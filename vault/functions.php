@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2023.04.23).
+ * This file: Functions file (last modified: 2023.04.25).
  */
 
 /**
@@ -2368,6 +2368,11 @@ $CIDRAM['RL_Fetch'] = function () use (&$CIDRAM) {
  * @return void
  */
 $CIDRAM['RL_WriteEvent'] = function ($RL_Capture, $RL_Size) use (&$CIDRAM) {
+    /** Guard. */
+    if (isset($CIDRAM['ViewCalled']) && $CIDRAM['Request']->inCsv('FE', $CIDRAM['Config']['rate_limiting']['exceptions'])) {
+        return;
+    }
+
     $SourceName = ($CIDRAM['Config']['rate_limiting']['segregate'] && $CIDRAM['HTTP_HOST'] !== '') ? 'rl-' . $CIDRAM['HTTP_HOST'] : 'rl';
     $TimePacked = pack('l*', $CIDRAM['Now']);
     $SizePacked = pack('l*', $RL_Size);

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2023.04.23).
+ * This file: Front-end handler (last modified: 2023.04.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -144,6 +144,9 @@ $CIDRAM['FE'] = [
     'Links.Documentation' => $CIDRAM['Config']['Links']['Documentation'],
     'Links.Website' => $CIDRAM['Config']['Links']['Website']
 ];
+
+/** Used by rate limiting exceptions. */
+$CIDRAM['ViewCalled'] = true;
 
 /** Trace to determine the type of cron operation. */
 if ($CIDRAM['FE']['CronMode'] !== '') {

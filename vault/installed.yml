@@ -1,6 +1,6 @@
 CIDRAM Core:
  Name: "CIDRAM Core"
- Version: "3.2.0"
+ Version: "3.2.1-DEV+231140"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Front-End: "Latest"
@@ -28,7 +28,7 @@ CIDRAM Core:
    Checksum: "8bfa4d8f80d7adef8670529cd229de10682a538ae139b9af972d2cfe803476e2:4843"
   CIDRAM/CIDRAM/Core.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Core.php"
-   Checksum: "cf0e73bcf23f9d4b5ffe221c27e1c2867821453577e45f547b8fbab29a365a7e:127971"
+   Checksum: "f64277aa48c18b47ca30e390889e950ec8fff276fdb218e1691f7ecc23eec99a:128542"
   CIDRAM/CIDRAM/Duration.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Duration.php"
    Checksum: "f7ea95b8ef317359a166dcc4b228701b23702ede5e6df7dcf09ed8fe2a32d2ec:11666"
@@ -55,7 +55,7 @@ CIDRAM Core:
    Checksum: "b62c0cf1deeb97c7ee15638f0a4102292a6bab6f0b6b1ee3a1dec7fa485c2e05:1352"
   defaults.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/defaults.yml"
-   Checksum: "52ab301a67ed9616aa12f691371cca83db0fb3f13a8fbca5265c4f1dc0b1a7b8:34744"
+   Checksum: "322aebfe0be9855ea5c9877bac36b758666750f1b11da0a0e455f4a9912dedce:34768"
   loader.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/loader.php"
    Checksum: "2024a633fae0edeff14119bd2308d9599a8651bd1fc877838e3901b72afffdc0:1312"
@@ -690,12 +690,19 @@ l10n/core/pl:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/pl.yml"
    Checksum: "464a3b5c14c9df1ed3f617d28b2ed87f801102fa68c2e487b3ebd9a56df7f4e8:7573"
 l10n/core/pt:
- Extended Description: "Localização portuguesa"
- Version: "2023.92.0"
+ Extended Description: "Localização em português brasileiro"
+ Version: "2023.114.0"
  Files:
   l10n/core/pt.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/pt.yml"
-   Checksum: "0af95941398b3c982472142fc77c32c0e90f84a3d3a1878fbe71db95a6989308:7232"
+   Checksum: "b685c76537d609d3c759dc5b7067048bba80fc03231885f3d05c3892231608b9:7241"
+l10n/core/pt-PT:
+ Extended Description: "Localização em português europeu"
+ Version: "2023.114.0"
+ Files:
+  l10n/core/pt-PT.yml:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/pt-PT.yml"
+   Checksum: "a7b6a3014625c11ac2468b5a7386d88ea52e0bcee6322e33d05816c37c335f39:7232"
 l10n/core/ru:
  Extended Description: "Русском локализация"
  Version: "2023.92.0"
@@ -901,12 +908,19 @@ l10n/frontend/pl:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/pl.yml"
    Checksum: "3e1a60c9b00b391e39e8d3c667086b305e7e02f1f22b6bf8acc77badd7920838:83628"
 l10n/frontend/pt:
- Extended Description: "Localização portuguesa"
- Version: "2023.112.0"
+ Extended Description: "Localização em português brasileiro"
+ Version: "2023.114.0"
  Files:
   l10n/frontend/pt.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/pt.yml"
-   Checksum: "e50f84dff0b4333ed19306737a5ca0385874e0bf4704ad13c257d7ea58b68509:82833"
+   Checksum: "c16cb15301097afd7c81984b54a141f9fd31c32aae51d804580475525ae508ab:82826"
+l10n/frontend/pt-PT:
+ Extended Description: "Localização em português europeu"
+ Version: "2023.114.0"
+ Files:
+  l10n/frontend/pt-PT.yml:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/pt-PT.yml"
+   Checksum: "176f60375b06c06e28ae6b136c8b38132e1bd7e0c34d2e6567f5f67c386bad15:82911"
 l10n/frontend/ru:
  Extended Description: "Русском локализация"
  Version: "2023.112.0"

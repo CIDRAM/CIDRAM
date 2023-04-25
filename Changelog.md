@@ -224,3 +224,9 @@
 [2023.04.18; Maikuolan]: Added warnings for when it's detected that access to the APIs used by various modules appear to be being rate limited (#453).
 
 [2023.04.23; Maikuolan]: Added a checkbox to the IP testing page to toggle whether to test as a sensitive request (#453).
+
+### v3.2.1
+
+[2023.04.25; Bug-fix; Maikuolan]: Explicitly defining the region for the configured L10N where deferment may be available but the region for the corresponding listed configuration choice not included could've caused the L10N loader to simply use fallbacks instead; Fixed.
+
+[2023.04.25; Maikuolan]: Split the existing L10N for Portuguese into two variants, Brazilian and European.

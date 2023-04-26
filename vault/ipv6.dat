@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2023.112.0
-# Last modified: 2023.04.23
+# Version: 2023.115.0
+# Last modified: 2023.04.26
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -512,12 +512,12 @@ Tag: Webzilla B.V
 
 
 # ASN 53850 ("GorillaServers, Inc").
-# Stop Forum Spam (SFS) listings: 82.
-# Updated: 2016.09.15 / Checked: 2022.05.04
+# Stop Forum Spam (SFS) listings: 44.
+# Updated: 2016.09.15 / Checked: 2023.04.26
 
 2606:c700::/32 Deny Cloud
 Origin: US
-Profile: Dedicated;Infrastructure/Transit
+Profile: Dedicated;Webhosting
 Tag: GorillaServers, Inc
 
 
@@ -8959,13 +8959,13 @@ Profile: Commercial;Infrastructure/Transit;Search engine
 Tag: Beijing Baidu Netcom
 
 
-# ASNs 38337, 47869, 138687, 211252, 213035, 399471, 400377 ("Des Capital B.V").
+# ASNs 23734, 38337, 47869, 138687, 211252, 213035, 399471, 400377 ("Des Capital B.V").
 # Webhosting and cloud lease network. Regular brute-force attacks and
 # port scans detected from here. Caught by honeypots searching for vulnerable
 # login systems. Has been hitting my honeypots daily for a number of years now.
-# Stop Forum Spam (SFS) listings: 18 (AS47869), 2,538 (AS211252),
-# 224 (AS213035), 5,252 (AS399471), 373 (AS400377).
-# Updated: 2022.11.23
+# Stop Forum Spam (SFS) listings: 3 (AS23734), 88 (AS38337), 6 (AS47869),
+# 435 (AS138687), 4,026 (AS211252), 83 (AS213035), 2,909 (AS399471), 387 (AS400377).
+# Updated: 2022.11.23 / Checked: 2023.04.26
 
 2803:8080::/32 Deny Cloud
 Origin: AR
@@ -10092,8 +10092,7 @@ Tag: XHOST
 # ASN 213186 ("Yanoor Islam Khan").
 # FTP brute-force, brute-force, webapp, and XMLRPC attacks, hacking, port
 # scans, bot spoofing, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 91.
-# Updated: 2021.07.28 / Checked: 2022.05.01
+# Updated: 2021.07.28 / Checked: 2023.04.25
 
 2a0b:b87:ffd2::/48 Deny Attacks
 Origin: US
@@ -11566,6 +11565,61 @@ Origin: RU
 Origin: UA
 Profile: Webhosting;Dedicated
 Tag: bytes.ua
+
+
+# ASN 211138 ("Private-Hosting di Cipriano oscar").
+# Brute-force, SSH attacks, port scans, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 42.
+# Updated: 2023.04.26
+
+2a10:cc44:202::/48 Deny Cloud
+Origin: CH
+2a05:4140:500::/48 Deny Cloud
+Origin: IT
+Profile: Webhosting
+Tag: Private-Hosting
+
+
+# ASN 141968 ("PT Industri Kreatif Digital").
+# Brute-force, SSH attacks, port scans, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 6.
+# Updated: 2023.04.26
+
+2407:6ac0:1::/48 Deny Cloud
+2407:6ac0:2::/47 Deny Cloud
+2407:6ac0:4::/46 Deny Cloud
+2407:6ac0:12::/48 Deny Cloud
+Origin: ID
+Profile: Webhosting
+Tag: Industri Kreatif Digital
+
+
+# ASN 58212 ("dataforest GmbH").
+# Brute-force, SSH, and webapp attacks, port scans, hacking, and spam detected
+# from here.
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2023.04.26
+
+2a0c:4ac0:1100::/40 Deny Cloud
+2a0c:4ac0:1200::/40 Deny Cloud
+2a0d:5940::/29 Deny Cloud
+Origin: DE
+Profile: Webhosting
+Tag: dataforest GmbH
+
+
+# ASN 41745 ("Baykov Ilya Sergeevich").
+# Brute-force, SSH, and FTP attacks, port scans, hacking, and spam detected
+# from here.
+# Stop Forum Spam (SFS) listings: 16.
+# Updated: 2023.04.26
+
+2a03:afc0:9::/48 Deny Cloud
+Origin: NL
+2001:67c:263c::/48 Deny Cloud
+Origin: RU
+Profile: Webhosting
+Tag: B.I.Sergeevich
 
 
 # ---

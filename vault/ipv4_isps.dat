@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv4_isps.dat
 
-# Version: 2023.112.0
-# Last modified: 2023.04.23
+# Version: 2023.115.0
+# Last modified: 2023.04.26
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -2179,7 +2179,7 @@ Tag: BSNL
 # probing, etc detected from here. Mozi botnets detected from here.
 # Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 48,132.
-# Updated: 2022.05.15 / Modified: 2023.04.23
+# Updated: 2022.05.15 / Modified: 2023.04.26
 
 1.68.195.0/24 Deny Attacks
 1.69.16.0/24 Deny Attacks
@@ -2188,6 +2188,7 @@ Tag: BSNL
 1.69.97.0/24 Deny Attacks
 1.69.103.0/24 Deny Attacks
 1.70.8.0/21 Deny Attacks
+1.70.96.0/21 Deny Attacks
 1.70.133.0/24 Deny Attacks
 1.70.160.0/19 Deny Attacks
 1.80.151.21/32 Deny Attacks
@@ -2634,6 +2635,7 @@ Tag: BSNL
 125.106.128.106/32 Deny Spam
 125.112.85.0/24 Deny Attacks
 125.112.168.0/24 Deny Attacks
+125.119.88.4/32 Deny Malware
 140.255.40.0/24 Deny Attacks
 175.6.27.0/24 Deny Attacks
 175.6.103.0/24 Deny Attacks
@@ -2698,6 +2700,7 @@ Tag: BSNL
 218.2.157.213/32 Deny Attacks
 218.2.157.222/32 Deny Attacks
 218.2.157.235/32 Deny Attacks
+218.18.239.0/24 Deny Attacks
 218.22.190.133/32 Deny Spam
 218.23.216.0/24 Deny Attacks
 218.70.22.0/24 Deny Attacks
@@ -17958,18 +17961,17 @@ Tag: Hps Digital Broadband
 # Indian corporate, domestic ISP. Brute-force, webapp, and SSH attacks,
 # hacking, port scans, and spam detected from here. Listing just the affected
 # ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 698.
-# Updated: 2022.05.01
+# Stop Forum Spam (SFS) listings: 102.
+# Updated: 2023.04.25
 
 45.114.144.0/23 Deny Attacks
-45.114.147.0/24 Deny Attacks
-45.119.88.0/24 Deny Attacks
-45.119.89.25/32 Deny Attacks
+45.114.146.43/32 Deny Attacks
+45.114.146.78/32 Deny Attacks
+45.119.88.0/23 Deny Attacks
 45.119.90.0/24 Deny Attacks
-103.23.118.0/24 Deny Attacks
-103.23.119.55/32 Deny Attacks
 103.87.168.0/22 Deny Attacks
 182.237.16.7/32 Deny Attacks
+182.237.17.138/32 Deny Attacks
 182.237.17.202/32 Deny Attacks
 Origin: IN
 Profile: Domestic ISP;Infrastructure/Transit
@@ -19662,9 +19664,12 @@ Tag: Inforoom Ltd
 # ASN 16652 ("Riseup Networks").
 # Webmail and VPN provider. Port scans and other unusual traffic detected from
 # some specific addresses here. Listing just the affected addresses only.
-# Updated: 2021.12.23 / Checked: 2022.05.26
+# Stop Forum Spam (SFS) listings: 36.
+# Updated: 2023.04.24
 
-204.13.164.118/32 Deny Malware
+198.252.153.28/32 Deny Attacks
+198.252.153.109/32 Deny Spam
+198.252.153.129/32 Deny Attacks
 Origin: US
 Profile: Infrastructure/Transit;Tor endpoints here
 Tag: Riseup Networks

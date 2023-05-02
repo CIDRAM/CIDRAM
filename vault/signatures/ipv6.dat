@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2023.115.0
-# Last modified: 2023.04.26
+# Version: 2023.121.0
+# Last modified: 2023.05.02
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -2470,14 +2470,13 @@ Tag: Daniela Agro
 
 
 # ASN 57169 ("EDIS GmbH").
-# Stop Forum Spam (SFS) listings: 277.
-# Updated: 2022.05.03
+# Stop Forum Spam (SFS) listings: 1,718.
+# Updated: 2023.05.02
 
 2a03:f80:ad15::/48 Deny Cloud
 2a03:f80:ed15::/48 Deny Cloud
 2a03:f80:ed16::/47 Deny Cloud
 2a03:f80:ed31::/48 Deny Cloud
-2a03:f87:ffff::/48 Deny Cloud
 Origin: AT
 Profile: Infrastructure/Transit;Webhosting
 Tag: EDIS GmbH
@@ -5023,9 +5022,11 @@ Tag: Net Access Corp
 
 
 # ASN 19318 ("Interserver, Inc").
-# Stop Forum Spam (SFS) listings: 1,299.
-# Updated: 2022.02.25 / Checked: 2022.10.30
+# Stop Forum Spam (SFS) listings: 1,615.
+# Updated: 2023.04.27
 
+2602:fcd3:111::/48 Deny Cloud
+Origin: CA
 2a0a:b382::/32 Deny Cloud
 Origin: RU
 2604:a00::/32 Deny Cloud
@@ -5304,8 +5305,8 @@ Tag: CloudSRV Limited
 
 # ASN 42831 ("UK Dedicated Servers Limited").
 # Dedicated hosting and server lease and a significant source of spam.
-# Stop Forum Spam (SFS) listings: 3,343.
-# Updated: 2023.03.25
+# Stop Forum Spam (SFS) listings: 2,879.
+# Updated: 2023.03.25 / Checked: 2023.04.27
 
 2a01:a500::/32 Deny Cloud
 2a01:a507::/32 Deny Cloud
@@ -6431,10 +6432,9 @@ Tag: ARDH GLOBAL
 
 # ASN 24971 ("Master Internet s.r.o").
 # Czech IT firm (provides servers, infrastructure, kubernetes clusters, etc).
-# Stop Forum Spam (SFS) listings: 22.
-# Updated: 2021.02.07 / Checked: 2022.05.02
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2023.05.02
 
-2001:678:a50::/48 Deny Cloud
 2001:67c:68::/48 Deny Cloud
 2a00:8220::/32 Deny Cloud
 2a00:a5a0::/32 Deny Cloud
@@ -6445,6 +6445,8 @@ Tag: ARDH GLOBAL
 2a0b:3240::/32 Deny Cloud
 2a0c:6380::/29 Deny Cloud
 Origin: CZ
+2001:678:a50::/48 Deny Cloud
+Origin: DM
 2a04:16c0:200::/48 Deny Cloud
 Origin: NL
 Profile: Dedicated;Infrastructure/Transit;Tor endpoints here
@@ -10705,14 +10707,14 @@ Tag: Hostiserver Ltd
 # ASN 26548 ("PureVoltage Hosting Inc").
 # Brute-force, SSH, webapp, and phishing attacks, port scans, hacking, and spam
 # detected from here.
-# Stop Forum Spam (SFS) listings: 1,754.
-# Updated: 2022.08.28 / Checked: 2022.10.30
+# Stop Forum Spam (SFS) listings: 9,135.
+# Updated: 2023.04.27
 
+2602:fad3::/40 Deny Cloud
 2602:ff96:6::/48 Deny Cloud
 2602:ff96:8::/48 Deny Cloud
 2602:ff96:10::/48 Deny Cloud
 2602:ff96:13::/48 Deny Cloud
-2602:ffc5:500::/40 Deny Cloud
 2604:7a80:1000::/36 Deny Cloud
 2604:7a80:2000::/36 Deny Cloud
 2605:3a40:3::/48 Deny Cloud
@@ -10804,19 +10806,6 @@ Tag: Beecloud
 Origin: RU
 Profile: Webhosting
 Tag: Lancom Ltd
-
-
-# ASN 210546 ("Miglovets Egor Andreevich").
-# Russian business network. Port scans, hacking, synfloods, and brute-force
-# attacks detected from here.
-# Updated: 2022.05.03
-
-2a0c:b641:540::/44 Deny Attacks
-2a0c:b641:6f0::/46 Deny Attacks
-2a0c:b641:750::/44 Deny Attacks
-Origin: BE
-Profile: Webhosting
-Tag: M.E.Andreevich
 
 
 # ASN 50214 ("QWARTA LLC").
@@ -11620,6 +11609,31 @@ Origin: NL
 Origin: RU
 Profile: Webhosting
 Tag: B.I.Sergeevich
+
+
+# ASN 203394 ("MDCLOUD LTD").
+# SaaS provider. DDoS attacks, port scans, and hacking detected from here.
+# Updated: 2023.05.02
+
+2a0c:b641:6f0::/47 Deny Cloud
+2a0c:b641:6f2::/48 Deny Cloud
+2a0c:b641:6f4::/48 Deny Cloud
+Origin: BE
+Profile: Commercial
+Tag: MDCLOUD LTD
+
+
+# ASN 199785 ("Cloud Hosting Solutions, Limited").
+# WordPress/XMLRPC, webapp, brute-force, and honeypot attacks, hacking, and
+# spam detected from here.
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2023.05.02
+
+2a0f:cdc6:100::/44 Deny Cloud
+2a0f:cdc6:500::/44 Deny Cloud
+Origin: LV
+Profile: Webhosting
+Tag: Cloud Hosting Solutions
 
 
 # ---

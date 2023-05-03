@@ -16,6 +16,10 @@ Detailed version release guidelines for CIDRAM can be found at:
 - [2023.04.25; Bug-fix; Maikuolan]: Some bad code backporting for the front-end
   rate limiting page could cause a fatal error in some circumstances; Fixed.
 
+- [2023.05.03; Bug-fix; Maikuolan]: Under specific circumstances, the front-end
+  updater would sometimes attempt to (de/re)activate non-activable components;
+  Fixed (#462).
+
 === Version/Release 2.12.0 ===
 MINOR RELEASE.
 

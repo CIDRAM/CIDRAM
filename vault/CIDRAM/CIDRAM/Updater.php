@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods for updating CIDRAM components (last modified: 2023.04.18).
+ * This file: Methods for updating CIDRAM components (last modified: 2023.05.03).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -560,11 +560,7 @@ trait Updater
             $BytesRemoved = 0;
             $TimeRequired = microtime(true);
             $HasSigs = false;
-            if (isset($this->Components['Meta'][$ThisTarget])) {
-                $Reactivate = $this->isInUse($this->Components['Meta'][$ThisTarget]);
-            } else {
-                $Reactivate = 0;
-            }
+            $Reactivate = isset($this->Components['Meta'][$ThisTarget]) && $this->isActivable($this->Components['Meta'][$ThisTarget]) ? $this->isInUse($this->Components['Meta'][$ThisTarget]) : 0;
             if ($Reactivate !== 0) {
                 $this->updatesHandlerDeactivate($ThisTarget);
             }
@@ -1077,7 +1073,7 @@ trait Updater
                 $this->arrayify($this->Components['RemoteMeta'][$ThisTarget]['Files']);
                 $RepairFailed = false;
             }
-            $Reactivate = $this->isInUse($this->Components['Meta'][$ThisTarget]);
+            $Reactivate = $this->isActivable($this->Components['Meta'][$ThisTarget]) ? $this->isInUse($this->Components['Meta'][$ThisTarget]) : 0;
             if ($Reactivate !== 0) {
                 $this->updatesHandlerDeactivate($ThisTarget);
             }

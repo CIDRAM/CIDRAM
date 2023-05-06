@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2023.04.25).
+# This file: Indonesian language data for the front-end (last modified: 2023.05.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -30,7 +30,7 @@ Extended Description Bad TLDs blocker module: "Memblokir host yang milik TLD, ya
 Extended Description Bad hosts blocker module: "Memblokir host yang sering digunakan oleh spammer, peretas, dan entitas jahat lainnya."
 Extended Description Bot user agents module: "Memblokir agen pengguna yang terkait dengan bot yang tidak diinginkan dan aktivitas jahat."
 Extended Description Bypasses: "File untuk bypass tanda tangan standar yang biasanya disertakan dengan paket utama."
-Extended Description Chart.js: "Memungkinkan bagian depan untuk menghasilkan bagan pai.<br />{{Links.Chart.js}} tersedia melalui <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
+Extended Description Chart.js: "Memungkinkan bagian depan untuk menghasilkan bagan pai.<br />{{Links.Chart.js}} tersedia melalui lisensi {{Links.MIT}}."
 Extended Description Cookie scanner module: "Menyediakan beberapa perlindungan terbatas terhadap cookie berbahaya."
 Extended Description HTTP version checker module: "Memungkinkan untuk memblokir protokol tertentu dan versi HTTP melalui konfigurasi CIDRAM."
 Extended Description IP-API module: "Memanfaatkan {{Links.IP-API}} API untuk menyediakan fasilitas pencarian untuk ASN dan kode negara untuk CIDRAM, memungkinkan ASN dan negara untuk diblokir atau masuk daftar putih melalui konfigurasi CIDRAM, dan menyediakan sarana untuk verifikasi media sosial untuk memverifikasi permintaan Facebook. (Jika Anda menggunakan modul ini, Anda tidak perlu menggunakan modul BGPView, karena mereka memiliki tujuan yang sama)."
@@ -48,7 +48,7 @@ Extended Description Optional security extras module: "Menyediakan beberapa perl
 Extended Description PHPMailer: "Diperlukan untuk menggunakan fungsionalitas apapun yang melibatkan pengiriman email.<br />{{Links.PHPMailer.PHPMailer}} tersedia melalui lisensi {{Links.PHPMailer.License}}."
 Extended Description Project Honeypot module: "Memblokir permintaan dari IP yang terdaftar oleh Project Honeypot."
 Extended Description Protocol blocker module: "Menyediakan kemampuan untuk memblokir protokol permintaan spesifik melalui konfigurasi (misalnya, HTTP/0.9, HTTP/1.1, SPDY/3.0, dll). Catatan: Tidak akan berpengaruh pada situs web yang merutekan melalui layanan yang menulis ulang permintaan untuk semua menggunakan protokol yang sama persis, seperti Cloudflare."
-Extended Description Referrer spam module: "Memblokir berdasarkan spam pengarah umumnya tidak akan memberikan manfaat keamanan yang berarti, tetapi dalam beberapa kasus, dapat bermanfaat bagi beberapa pengguna, untuk mengumpulkan lebih banyak informasi tentang permintaan, dan untuk dapat melaporkannya.<br />Menginstal modul ini juga menginstal polyfill Symfony untuk {{Links.Symfony.Intl/Idn}} (karena modul ini memerlukan fungsionalitas Idn, yang tidak semua instalasi PHP menyediakan secara default), tersedia melalui lisensi <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
+Extended Description Referrer spam module: "Memblokir berdasarkan spam pengarah umumnya tidak akan memberikan manfaat keamanan yang berarti, tetapi dalam beberapa kasus, dapat bermanfaat bagi beberapa pengguna, untuk mengumpulkan lebih banyak informasi tentang permintaan, dan untuk dapat melaporkannya.<br />Menginstal modul ini juga menginstal polyfill Symfony untuk {{Links.Symfony.Intl/Idn}} (karena modul ini memerlukan fungsionalitas Idn, yang tidak semua instalasi PHP menyediakan secara default), tersedia melalui lisensi {{Links.MIT}}."
 Extended Description Stop Forum Spam module: "Melindungi halaman pendaftaran dan login terhadap IP yang terdaftar oleh SFS."
 Extended Description Tor blocker module: "Melarang akses dari simpul keluar Tor melalui pencarian DNSEL (mendukung keduanya IPv4 dan IPv6)."
 Name AbuseIPDB module: "Modul AbuseIPDB."
@@ -368,7 +368,7 @@ header_login: "Silahkan masuk untuk melanjutkan."
 hints_asnlookup: "** Memerlukan fungsionalitas pencarian ASN (misalnya, melalui modul IP-API atau BGPView)."
 hints_cause_fp: "*!! Kemungkinan tinggi menyebabkan positif palsu karena %s."
 hints_default_dns:
- FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.id.md\#apa-yang-bisa-saya-gunakan-untuk-default_dns" hreflang="id">Apa yang bisa saya gunakan untuk "default_dns"?</a></em>"
+ FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.id.md\#apa-yang-bisa-saya-gunakan-untuk-default_dns" hreflang="id-ID">Apa yang bisa saya gunakan untuk "default_dns"?</a></em>"
 hints_duration:
  SI.: "Durasi dapat dideskripsikan dengan menggunakan "Sistem Satuan Internasional". Misalnya, <strong>1d2h3min4s</strong> atau <strong>1d 2h 3min 4s</strong> untuk satu hari, dua jam, tiga menit, empat detik, atau <strong>5min</strong> untuk hanya lima menit."
  Waktu busur.: "Durasi dapat dideskripsikan dengan menggunakan notasi waktu busur. Misalnya, <strong>1d2°3′4″</strong> untuk satu hari, dua jam, tiga menit, empat detik, atau <strong>5″</strong> untuk hanya lima detik."
@@ -378,7 +378,7 @@ hints_has_bypass: "* Opsi ini memiliki bypass terkait dibawah <code class="s">by
 hints_inspection: "* Dimaksudkan hanya untuk men-debug aturan tambahan. Tidak ditampilkan kepada pengguna yang diblokir."
 hints_ipv6_on_32bit: "Catatan: Pencarian IPv6 mungkin tidak bekerja dengan benar pada beberapa sistem 32-bit."
 hints_pdo_dsn:
- FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.id.md\#user-content-HOW_TO_USE_PDO" hreflang="id">Apa itu "PDO DSN"? Bagaimana saya bisa menggunakan PDO dengan CIDRAM?</a></em>"
+ FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.id.md\#user-content-HOW_TO_USE_PDO" hreflang="id-ID">Apa itu "PDO DSN"? Bagaimana saya bisa menggunakan PDO dengan CIDRAM?</a></em>"
 hints_shorthand:
  0.: "Jika situs web Anda memerlukan akses melalui LAN atau localhost, jangan blokir ini. Jika tidak memerlukannya, Anda dapat memblokir ini."
  1.: "Tidak ada file tanda tangan default yang menggunakan ini, tapi tetap didukung dalam kasus mungkin berguna untuk beberapa pengguna."
@@ -446,7 +446,7 @@ info_some_useful_links: |
        <li><span class="comCat">Alat, sumber daya, layanan, dll bermanfaat lainnya.</span>
          <ul class="comSub">
            <li>{{Links.SFS}} – Mempertahankan basis data spammer forum yang dikenal. Berguna untuk melindungi situs web dan forum terhadap spammer.</li>
-           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Dapatkan CIDR dari ASN, menentukan hubungan ASN, menemukan ASN berdasarkan nama jaringan, dll.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Dapatkan CIDR dari ASN, menentukan hubungan ASN, menemukan ASN berdasarkan nama jaringan, dll.</li>
            <li>{{Links.BGPView}} – Dapatkan CIDR dari ASN, menentukan hubungan ASN, menemukan ASN berdasarkan nama jaringan, dll.</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar oleh Qrator</a> – Alat yang berguna untuk memeriksa konektivitas ASN serta berbagai informasi lainnya tentang ASN.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Proyek Spamhaus</a> – Menampilkan laporan tentang tingkat infeksi botnet untuk ASN.</li>
@@ -701,6 +701,7 @@ response_checksum_error: "Kesalahan checksum! File ditolak!"
 response_cli_bad_chain: "Perintah %s tidak dapat dirantai dengan cara ini, maaf."
 response_cli_bad_command: "Saya tidak mengerti perintah ini, maaf."
 response_cli_cant_write: "Saya tidak dapat menulis ke "%s", maaf."
+response_cli_finished_writing: "Selesai menulis ke %s."
 response_cli_no_analyse: "Tidak punya apa-apa untuk dianalisis, maaf."
 response_cli_no_print: "Tidak punya apa-apa untuk dicetak, maaf."
 response_cli_no_write: "Tidak punya apa-apa untuk ditulis, maaf."
@@ -738,6 +739,7 @@ response_not_available_at_upstream: "Tidak tersedia di hulu."
 response_passed: "Lulus"
 response_please_check_config: "Memeriksa konfigurasi Anda untuk memastikan bahwa modul yang baru diinstal akan berfungsi seperti yang Anda inginkan."
 response_ready_to_install: "Siap untuk instalasi."
+response_redirected: "Dialihkan"
 response_release_notes: "<a href="%s"><span class="navicon link"></span>Catatan rilis untuk %s.</a>"
 response_rename_error: "Gagal memodifikasi nama!"
 response_repair_process_completed: "Proses perbaikan selesai."
@@ -855,7 +857,7 @@ tip_range: "Salam, {username}.<br />Halaman ini menunjukkan beberapa informasi s
 tip_rate_limiting: "Salam, {username}.<br />Halaman ini menunjukkan penggunaan dan ketersediaan kuota saat ini terkait dengan pembatasan laju."
 tip_rate_limiting_disabled: "Catat: Pembatasan laju saat ini dinonaktifkan, namun dapat diaktifkan melalui halaman konfigurasi."
 tip_sections_list: "Salam, {username}.<br />Halaman ini mencantumkan bagian yang ada di file tanda tangan yang aktif saat ini."
-tip_see_the_documentation: "Lihat <a href="https://github.com/CIDRAM/Docs/blob/master/readme.id.md\#user-content-SECTION5" hreflang="id" rel="noopener external">dokumentasi</a> untuk informasi tentang berbagai direktif konfigurasi dan tujuan mereka."
+tip_see_the_documentation: "Lihat <a href="https://github.com/CIDRAM/Docs/blob/master/readme.id.md\#user-content-SECTION5" hreflang="id-ID" rel="noopener external">dokumentasi</a> untuk informasi tentang berbagai direktif konfigurasi dan tujuan mereka."
 tip_statistics: "Salam, {username}.<br />Halaman ini menunjukkan beberapa statistik penggunaan dasar mengenai instalasi CIDRAM Anda."
 tip_statistics_disabled: "Catat: Pelacakan statistik saat ini dinonaktifkan, namun dapat diaktifkan melalui halaman konfigurasi."
 tip_subtractor: "Salam, {username}.<br />Pengurangan dapat digunakan untuk mengurangi satu rentang IP/CIDR/topeng jaring dari yang lain."

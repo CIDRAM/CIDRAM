@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malay language data for the front-end (last modified: 2023.04.25).
+# This file: Malay language data for the front-end (last modified: 2023.05.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -30,7 +30,7 @@ Extended Description Bad TLDs blocker module: "Menyekat hos kepunyaan TLD yang k
 Extended Description Bad hosts blocker module: "Menyekat hos yang kerap digunakan oleh penghantar spam, penggodam, dan entiti jahat lain."
 Extended Description Bot user agents module: "Menyekat ejen pengguna yang dikaitkan dengan bot yang tidak diingini dan aktiviti jahat."
 Extended Description Bypasses: "Fail untuk pintasan tandatangan standard yang biasanya disertakan dengan pakej utama."
-Extended Description Chart.js: "Membolehkan bahagian hadapan menjana carta donat.<br />{{Links.Chart.js}} tersedia melalui <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
+Extended Description Chart.js: "Membolehkan bahagian hadapan menjana carta donat.<br />{{Links.Chart.js}} tersedia melalui lisensi {{Links.MIT}}."
 Extended Description Cookie scanner module: "Menyediakan beberapa perlindungan terhad terhadap kuki berbahaya."
 Extended Description HTTP version checker module: "Memungkinkan untuk menyekat protokol tertentu dan versi HTTP melalui konfigurasi CIDRAM."
 Extended Description IP-API module: "Memanfaatkan {{Links.IP-API}} API untuk menyediakan kemudahan carian ASN dan kod negara untuk CIDRAM, membolehkan ASN dan negara untuk disekat atau disenarai putih melalui konfigurasi CIDRAM, dan menyediakan cara untuk pengesahan rangkaian sosial untuk mengesahkan permintaan Facebook. (Jika anda menggunakan modul ini, anda tidak perlu menggunakan modul BGPView, kerana mereka mempunyai tujuan yang sama)."
@@ -48,7 +48,7 @@ Extended Description Optional security extras module: "Menyediakan beberapa perl
 Extended Description PHPMailer: "Diperlukan untuk menggunakan kefungsian apa-apa yang melibatkan penghantaran e-mel.<br />{{Links.PHPMailer.PHPMailer}} tersedia melalui lesen {{Links.PHPMailer.License}}."
 Extended Description Project Honeypot module: "Menyekat permintaan daripada IP yang disenaraikan oleh Project Honeypot."
 Extended Description Protocol blocker module: "Menyediakan keupayaan untuk menyekat protokol permintaan tertentu melalui konfigurasi (cth., HTTP/0.9, HTTP/1.1, SPDY/3.0, dsb). Nota: Tidak akan mempunyai sebarang kesan untuk laman web yang menghalakan melalui perkhidmatan yang menulis semula permintaan kepada semua menggunakan protokol yang sama, seperti Cloudflare."
-Extended Description Referrer spam module: "Menyekat berdasarkan spam perujuk pada umumnya tidak akan memberikan sebarang manfaat keselamatan yang bermakna, tetapi dalam beberapa kes, mungkin berguna untuk sesetengah pengguna, untuk mengumpulkan lebih banyak maklumat tentang permintaan, dan untuk dapat melaporkannya.<br />Memasang modul ini juga memasang polyfill Symfony untuk {{Links.Symfony.Intl/Idn}} (kerana modul ini memerlukan kefungsian Idn, yang tidak semua pemasangan PHP menyediakan secara lalai), tersedia melalui lesen <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
+Extended Description Referrer spam module: "Menyekat berdasarkan spam perujuk pada umumnya tidak akan memberikan sebarang manfaat keselamatan yang bermakna, tetapi dalam beberapa kes, mungkin berguna untuk sesetengah pengguna, untuk mengumpulkan lebih banyak maklumat tentang permintaan, dan untuk dapat melaporkannya.<br />Memasang modul ini juga memasang polyfill Symfony untuk {{Links.Symfony.Intl/Idn}} (kerana modul ini memerlukan kefungsian Idn, yang tidak semua pemasangan PHP menyediakan secara lalai), tersedia melalui lesen {{Links.MIT}}."
 Extended Description Stop Forum Spam module: "Melindungi halaman pendaftaran dan log masuk daripada IP yang disenaraikan oleh SFS."
 Extended Description Tor blocker module: "Melarang akses daripada nod keluar Tor melalui carian DNSEL (menyokong kedua-dua IPv4 dan IPv6)."
 Name AbuseIPDB module: "Modul AbuseIPDB."
@@ -368,7 +368,7 @@ header_login: "Sila log masuk untuk meneruskan."
 hints_asnlookup: "** Memerlukan kefungsian carian ASN (cth., melalui modul IP-API atau BGPView)."
 hints_cause_fp: "*!! Kemungkinan tinggi menyebabkan positif palsu kerana %s."
 hints_default_dns:
- FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.id.md\#apa-yang-bisa-saya-gunakan-untuk-default_dns" hreflang="id">Apakah yang boleh saya gunakan untuk "default_dns"?</a></em>"
+ FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.id.md\#apa-yang-bisa-saya-gunakan-untuk-default_dns" hreflang="id-ID">Apakah yang boleh saya gunakan untuk "default_dns"?</a></em>"
 hints_duration:
  SI.: "Tempoh boleh diterangkan menggunakan "Sistem Unit Antarabangsa". Cth., <strong>1d2h3min4s</strong> atau <strong>1d 2h 3min 4s</strong> untuk satu hari, dua jam, tiga minit, empat saat, atau <strong>5min</strong> untuk lima minit sahaja."
  Tatatanda arka.: "Tempoh boleh diterangkan menggunakan tatatanda arka. Cth., <strong>1d2°3′4″</strong> untuk satu hari, dua jam, tiga minit, empat saat, atau <strong>5″</strong> untuk lima saat sahaja."
@@ -378,7 +378,7 @@ hints_has_bypass: "* Pilihan ini mempunyai pintasan yang sepadan di bawah <code 
 hints_inspection: "* Bertujuan hanya untuk menyahpepijat peraturan tambahan. Tidak dipaparkan kepada pengguna yang disekat."
 hints_ipv6_on_32bit: "Nota: Carian IPv6 mungkin tidak berfungsi dengan betul pada sesetengah sistem 32-bit."
 hints_pdo_dsn:
- FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.id.md\#user-content-HOW_TO_USE_PDO" hreflang="id">Apakah itu "PDO DSN"? Bagaimanakah saya boleh menggunakan PDO dengan CIDRAM?</a></em>"
+ FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.id.md\#user-content-HOW_TO_USE_PDO" hreflang="id-ID">Apakah itu "PDO DSN"? Bagaimanakah saya boleh menggunakan PDO dengan CIDRAM?</a></em>"
 hints_shorthand:
  0.: "Jika tapak web anda memerlukan akses melalui LAN atau localhost, jangan sekat ini. Jika tidak, anda boleh menyekat ini."
  1.: "Tiada fail tandatangan lalai menggunakan ini, tetapi ia tetap disokong sekiranya ia mungkin berguna untuk sesetengah pengguna."
@@ -449,7 +449,7 @@ info_some_useful_links: |
        <li><span class="comCat">Alat berguna, sumber, perkhidmatan, dll lain.</span>
          <ul class="comSub">
            <li>{{Links.SFS}} – Mengekalkan pangkalan data spammer forum yang diketahui. Berguna untuk melindungi tapak web dan forum terhadap spammer.</li>
-           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Dapatkan CIDR daripada ASN, tentukan perhubungan ASN, temui ASN berdasarkan nama rangkaian, dsb.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Dapatkan CIDR daripada ASN, tentukan perhubungan ASN, temui ASN berdasarkan nama rangkaian, dsb.</li>
            <li>{{Links.BGPView}} – Dapatkan CIDR daripada ASN, tentukan perhubungan ASN, temui ASN berdasarkan nama rangkaian, dsb.</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar oleh Qrator</a> – Alat berguna untuk menyemak ketersambungan ASN serta pelbagai maklumat lain tentang ASN.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Projek Spamhaus</a> – Memaparkan laporan mengenai kadar jangkitan botnet untuk ASN.</li>
@@ -704,6 +704,7 @@ response_checksum_error: "Ralat checksum! Fail ditolak!"
 response_cli_bad_chain: "Perintah %s tidak boleh dirantai dengan cara ini, maaf."
 response_cli_bad_command: "Saya tidak faham arahan ini, maaf."
 response_cli_cant_write: "Saya tidak boleh menulis kepada "%s", maaf."
+response_cli_finished_writing: "Selesai menulis kepada %s."
 response_cli_no_analyse: "Tiada apa-apa untuk dianalisis, maaf."
 response_cli_no_print: "Tiada apa-apa untuk dicetak, maaf."
 response_cli_no_write: "Tiada apa-apa untuk ditulis, maaf."
@@ -741,6 +742,7 @@ response_not_available_at_upstream: "Tidak terdapat di hulu."
 response_passed: "Lulus"
 response_please_check_config: "Sila semak konfigurasi anda untuk memastikan bahawa modul yang baru dipasang akan berfungsi seperti yang anda mahukan."
 response_ready_to_install: "Sedia untuk dipasang."
+response_redirected: "Diubah hala"
 response_release_notes: "<a href="%s"><span class="navicon link"></span>Nota keluaran untuk %s.</a>"
 response_rename_error: "Gagal menamakan semula!"
 response_repair_process_completed: "Proses pembaikan selesai."
@@ -858,7 +860,7 @@ tip_range: "Salam, {username}.<br />Halaman ini menunjukkan beberapa maklumat st
 tip_rate_limiting: "Salam, {username}.<br />Halaman ini menunjukkan penggunaan dan ketersediaan kuota semasa berkaitan dengan pengehadan kadar."
 tip_rate_limiting_disabled: "Nota: Pengehadan kadar kini dinyahaktifkan, tetapi boleh diaktifkan melalui halaman konfigurasi."
 tip_sections_list: "Salam, {username}.<br />Halaman ini menyenaraikan bahagian mana yang wujud dalam fail tandatangan yang sedang aktif."
-tip_see_the_documentation: "Lihat <a href="https://github.com/CIDRAM/Docs/blob/master/readme.id.md\#user-content-SECTION5" hreflang="id" rel="noopener external">dokumentasi</a> untuk mendapatkan maklumat tentang pelbagai arahan konfigurasi dan tujuannya."
+tip_see_the_documentation: "Lihat <a href="https://github.com/CIDRAM/Docs/blob/master/readme.id.md\#user-content-SECTION5" hreflang="id-ID" rel="noopener external">dokumentasi</a> untuk mendapatkan maklumat tentang pelbagai arahan konfigurasi dan tujuannya."
 tip_statistics: "Salam, {username}.<br />Halaman ini menunjukkan beberapa statistik penggunaan asas mengenai pemasangan CIDRAM anda."
 tip_statistics_disabled: "Nota: Penjejakan statistik kini dinyahaktifkan, tetapi boleh diaktifkan melalui halaman konfigurasi."
 tip_subtractor: "Salam, {username}.<br />Penolakan boleh digunakan untuk menolak satu julat IP/CIDR/netmask daripada yang lain."

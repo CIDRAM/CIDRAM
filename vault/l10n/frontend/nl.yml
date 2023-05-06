@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2023.04.25).
+# This file: Dutch language data for the front-end (last modified: 2023.05.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -30,7 +30,7 @@ Extended Description Bad TLDs blocker module: "Blokkeert hosts van TLD's die vaa
 Extended Description Bad hosts blocker module: "Blokkeert hosts die vaak worden gebruikt door spammers, hackers en andere kwaadwillige entiteiten."
 Extended Description Bot user agents module: "Blokkeert gebruikersagenten die zijn gekoppeld aan ongewenste bots en schadelijke activiteiten."
 Extended Description Bypasses: "De standaard signature bypasses normaal opgenomen met de primaire pakket."
-Extended Description Chart.js: "Hiermee kan de frontend taartdiagrammen genereren.<br />{{Links.Chart.js}} is beschikbaar via de <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
+Extended Description Chart.js: "Hiermee kan de frontend taartdiagrammen genereren.<br />{{Links.Chart.js}} is beschikbaar via de {{Links.MIT}}-licentie."
 Extended Description Cookie scanner module: "Biedt een beperkte bescherming tegen gevaarlijke cookies."
 Extended Description HTTP version checker module: "Maakt het mogelijk om specifieke protocollen en HTTP-versies te blokkeren via de CIDRAM-configuratie."
 Extended Description IP-API module: "Maakt gebruik van de {{Links.IP-API}} API om ASN en landcode op te zoeken voor CIDRAM, waardoor ASN's en landen kunnen worden geblokkeerd of op de witte lijst kunnen worden gezet via de CIDRAM-configuratie, en het verschaffen van een middel voor sociale netwerkverificatie om Facebook-verzoeken te verifiëren. (Als u deze module gebruikt, hoeft u de BGPVIew-module niet te gebruiken, omdat deze hetzelfde doel dienen)."
@@ -48,7 +48,7 @@ Extended Description Optional security extras module: "Biedt een beperkte besche
 Extended Description PHPMailer: "Vereist voor het gebruik van functionaliteit die het verzenden van e-mail vereisen.<br />{{Links.PHPMailer.PHPMailer}} is beschikbaar via de {{Links.PHPMailer.License}}-licentie."
 Extended Description Project Honeypot module: "Blokkeert aanvragen van IP's die worden vermeld op Project Honeypot."
 Extended Description Protocol blocker module: "Biedt de mogelijkheid om specifieke verzoekprotocollen te blokkeren via de configuratie (b.v., HTTP/0.9, HTTP/1.1, SPDY/3.0, enz). Opmerking: Heeft geen enkel effect op websites die via services routeren die verzoeken herschrijven om allemaal exact hetzelfde protocol te gebruiken, zoals Cloudflare."
-Extended Description Referrer spam module: "Blokkering op basis van verwijzende spam levert over het algemeen geen betekenisvol beveiligingsvoordeel op, maar in sommige gevallen kan het nuttig zijn voor sommige gebruikers, voor het verzamelen van meer informatie over verzoeken en erover te rapporteren.<br />Door deze module te installeren, worden ook de Symfony-polyfills voor {{Links.Symfony.Intl/Idn}} geïnstalleerd (omdat deze module Idn-functionaliteit vereist, die niet alle PHP-installaties standaard bieden), beschikbaar via de <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a> licentie."
+Extended Description Referrer spam module: "Blokkering op basis van verwijzende spam levert over het algemeen geen betekenisvol beveiligingsvoordeel op, maar in sommige gevallen kan het nuttig zijn voor sommige gebruikers, voor het verzamelen van meer informatie over verzoeken en erover te rapporteren.<br />Door deze module te installeren, worden ook de Symfony-polyfills voor {{Links.Symfony.Intl/Idn}} geïnstalleerd (omdat deze module Idn-functionaliteit vereist, die niet alle PHP-installaties standaard bieden), beschikbaar via de {{Links.MIT}} licentie."
 Extended Description Stop Forum Spam module: "Beschermt registratie en login tegen IP's die door SFS worden vermeld."
 Extended Description Tor blocker module: "Verbiedt toegang vanaf Tor exit-knooppunten via DNSEL-lookups (ondersteunt zowel IPv4 en IPv6)."
 Name AbuseIPDB module: "AbuseIPDB module."
@@ -370,7 +370,7 @@ header_login: "Inloggen om verder te gaan."
 hints_asnlookup: "** Vereist ASN-opzoekfunctionaliteit (b.v., via de IP-API-module of BGPView-module)."
 hints_cause_fp: "*!! Grote kans op het veroorzaken van valse positieven vanwege %s."
 hints_default_dns:
- FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.nl.md\#wat-kan-ik-gebruiken-voor-default_dns" hreflang="nl">Wat kan ik gebruiken voor "default_dns"?</a></em>"
+ FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.nl.md\#wat-kan-ik-gebruiken-voor-default_dns" hreflang="nl-NL">Wat kan ik gebruiken voor "default_dns"?</a></em>"
 hints_duration:
  SI.: "Duur kan worden beschreven met behulp van het "International System of Units". B.v., <strong>1d2h3min4s</strong> of <strong>1d 2h 3min 4s</strong> voor één dag, twee uur, drie minuten, vier seconden, of <strong>5min</strong> voor slechts vijf minuten."
  Boogtijd.: "Duur kan worden beschreven met behulp van boogtijdnotatie. B.v., <strong>1d2°3′4″</strong> voor één dag, twee uur, drie minuten, vier seconden, of <strong>5″</strong> voor slechts vijf seconden."
@@ -380,7 +380,7 @@ hints_has_bypass: "* Deze optie heeft een bijbehorende bypass onder <code class=
 hints_inspection: "* Alleen bedoeld voor het debuggen van aanvullende regels. Niet weergegeven voor geblokkeerde gebruikers."
 hints_ipv6_on_32bit: "Opmerking: IPv6-opzoeken mogelijk werken niet correct op sommige 32-bits systemen."
 hints_pdo_dsn:
- FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.nl.md\#user-content-HOW_TO_USE_PDO" hreflang="nl">Wat is een "PDO DSN"? Hoe kan ik PDO gebruiken met CIDRAM?</a></em>"
+ FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.nl.md\#user-content-HOW_TO_USE_PDO" hreflang="nl-NL">Wat is een "PDO DSN"? Hoe kan ik PDO gebruiken met CIDRAM?</a></em>"
 hints_shorthand:
  0.: "Als uw website nodig toegang via LAN of localhost, blokkeer dit dan niet. Anders u kunt dit blokkeren."
  1.: "Geen van de standaard signatuurbestanden gebruikt dit, maar het wordt niettemin ondersteund voor het geval het voor sommige gebruikers nuttig kan zijn."
@@ -449,7 +449,7 @@ info_some_useful_links: |
        <li><span class="comCat">Andere handige tools, bronnen, diensten, enz.</span>
          <ul class="comSub">
            <li>{{Links.SFS}} – Beheert een database van bekende forumspammers. Handig voor het beschermen van websites en forums tegen spammers.</li>
-           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Krijg CIDR's van ASN, bepalen ASN relaties, ontdek ASN's op basis van netwerknamen, enz.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Krijg CIDR's van ASN, bepalen ASN relaties, ontdek ASN's op basis van netwerknamen, enz.</li>
            <li>{{Links.BGPView}} – Krijg CIDR's van ASN, bepalen ASN relaties, ontdek ASN's op basis van netwerknamen, enz.</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar van Qrator</a> – Handig hulpmiddel voor het controleren van de connectiviteit van ASN's en ook voor diverse andere informatie over ASN's.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Het Spamhaus Project</a> – Geeft rapporten over botnet infectie tarieven voor ASN.</li>
@@ -712,6 +712,7 @@ response_checksum_error: "Controlesom fout! Bestand afgewezen!"
 response_cli_bad_chain: "Het %s-commando kan niet op die manier worden geketend, sorry."
 response_cli_bad_command: "Ik begrijp niet dat bevel, sorry."
 response_cli_cant_write: "Ik kan niet naar "%s" schrijven, sorry."
+response_cli_finished_writing: "Klaar met schrijven naar %s."
 response_cli_no_analyse: "Er is niets te analyseren, sorry."
 response_cli_no_print: "Er is niets te drukken, sorry."
 response_cli_no_write: "Er is niets te schrijven, sorry."
@@ -749,6 +750,7 @@ response_not_available_at_upstream: "Aan de upstream niet gevonden."
 response_passed: "Geslaagd"
 response_please_check_config: "Controleer uw configuratie om er zeker van te zijn dat de nieuw geïnstalleerde module zich zal gedragen zoals u wilt."
 response_ready_to_install: "Klaar om te installeren."
+response_redirected: "Omgeleid"
 response_release_notes: "<a href="%s"><span class="navicon link"></span>Releaseopmerkingen voor %s.</a>"
 response_rename_error: "Mislukt om de naam te veranderen!"
 response_repair_process_completed: "Reparatieproces voltooid."
@@ -886,7 +888,7 @@ tip_range: "Hallo, {username}.<br />Deze pagina toont enige statistische basisin
 tip_rate_limiting: "Hallo, {username}.<br />Deze pagina toont het huidige quotagebruik en beschikbaarheid met betrekking tot tarieflimiet."
 tip_rate_limiting_disabled: "Notitie: Tarieflimiet is momenteel uitgeschakeld, maar kan via de configuratiepagina worden ingeschakeld."
 tip_sections_list: "Hallo, {username}.<br />Deze pagina geeft een overzicht van de secties die bestaan in de actieve signatuurbestanden."
-tip_see_the_documentation: "Zie de <a href="https://github.com/CIDRAM/Docs/blob/master/readme.nl.md\#user-content-SECTION5" hreflang="nl" rel="noopener external">documentatie</a> voor informatie over de verschillende configuratie richtlijnen en hun doeleinden."
+tip_see_the_documentation: "Zie de <a href="https://github.com/CIDRAM/Docs/blob/master/readme.nl.md\#user-content-SECTION5" hreflang="nl-NL" rel="noopener external">documentatie</a> voor informatie over de verschillende configuratie richtlijnen en hun doeleinden."
 tip_statistics: "Hallo, {username}.<br />Deze pagina bevat een aantal basisgebruiksstatistieken voor uw CIDRAM-installatie."
 tip_statistics_disabled: "Notitie: Statistische tracking is momenteel uitgeschakeld, maar kan via de configuratiepagina worden ingeschakeld."
 tip_subtractor: "Hallo, {username}.<br />De aftrekker kan worden gebruikt om het een bereik van IP's/CIDR's/netmaskers van het andere af te trekken."

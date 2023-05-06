@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2023.04.25).
+# This file: Japanese language data for the front-end (last modified: 2023.05.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -30,7 +30,7 @@ Extended Description Bad TLDs blocker module: "スパマー、ハッカー、そ
 Extended Description Bad hosts blocker module: "スパマー、ハッカー、およびその他の悪意のあるエンティティによって頻繁に使用されるホストをブロックします。"
 Extended Description Bot user agents module: "望ましくないボットや悪意のあるアクティビティに関連付けられたユーザー・エージェントをブロックします。"
 Extended Description Bypasses: "メインパッケージに通常含まれているデフォルト・シグネチャ・バイパス。"
-Extended Description Chart.js: "フロントエンドが円グラフを生成できるようにします。<br />「{{Links.Chart.js}}」は、「<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>」を介して利用可能です。"
+Extended Description Chart.js: "フロントエンドが円グラフを生成できるようにします。<br />「{{Links.Chart.js}}」は、「{{Links.MIT}}」ライセンスを介して利用可能です。"
 Extended Description Cookie scanner module: "危険なクッキーに対するいくつかの限定された保護を提供します。"
 Extended Description HTTP version checker module: "CIDRAMコンフィギュレーションを介して特定のプロトコルとＨＴＴＰバージョンをブロックすることを可能にします。"
 Extended Description IP-API module: "{{Links.IP-API}}のＡＰＩを活用して、ＣＩＤＲＡＭのためにＡＳＮおよび国コード検索機能を提供します。​ＣＩＤＲＡＭコンフィギュレーションを介して、ＡＳＮと国をブロックまたはホワイトリストに登録できます。​Facebookリクエストを検証する、ソーシャル・メディア・ベリフィケーションの手段を提供します。 （このモジュールを使用する場合、同じ目的を果たすため、BGPViewモジュールを使用する必要はありません）。"
@@ -48,7 +48,7 @@ Extended Description Optional security extras module: "リクエストでよく�
 Extended Description PHPMailer: "電子Ｅメールの送信を含む機能の使用に必要です。<br />「{{Links.PHPMailer.PHPMailer}}」は、「{{Links.PHPMailer.License}}」ライセンスを介して利用可能です。"
 Extended Description Project Honeypot module: "Project HoneypotにリストされているＩＰからの要求をブロックします。"
 Extended Description Protocol blocker module: "コンフィギュレーションを介して特定の要求プロトコルをブロックする機能を提供します（例：HTTP/0.9、HTTP/1.1、SPDY/3.0、など）。​注：すべての要求をまったく同じプロトコルを使用するように書き換えるサービスを（例:Cloudflare）介してルーティングするウェブサイトには影響しません。"
-Extended Description Referrer spam module: "リファラー・スパムに基づくブロックは、通常、有意義なセキュリティ上の利点を提供しません、ただし、場合によっては、リクエストに関する詳細情報の収集、およびレポートの作成に役立つ可能性があります。<br />このモジュールをインストールすると、{{Links.Symfony.Intl/Idn}}のSymfonyポリフィルもインストールされます（このモジュールは「Idn」機能を必要とするためが、すべてのＰＨＰインストールがデフォルトで提供するわけではありません）。​<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">ＭＩＴ</a>ライセンスを通じて入手できます。"
+Extended Description Referrer spam module: "リファラー・スパムに基づくブロックは、通常、有意義なセキュリティ上の利点を提供しません、ただし、場合によっては、リクエストに関する詳細情報の収集、およびレポートの作成に役立つ可能性があります。<br />このモジュールをインストールすると、{{Links.Symfony.Intl/Idn}}のSymfonyポリフィルもインストールされます（このモジュールは「Idn」機能を必要とするためが、すべてのＰＨＰインストールがデフォルトで提供するわけではありません）。​{{Links.MIT}}ライセンスを通じて入手できます。"
 Extended Description Stop Forum Spam module: "ＳＦＳによってリストされたＩＰに対して登録ページとログインページを保護します。"
 Extended Description Tor blocker module: "ＤＮＳＥＬルックアップによるＴｏｒ出口ノードからのアクセスを禁止します（ＩＰｖ４とＩＰｖ６の両方をサポートします）。"
 Name AbuseIPDB module: "AbuseIPDB モジュール。"
@@ -368,7 +368,7 @@ header_login: "継続するには、​ログインしてください。"
 hints_asnlookup: "** ＡＳＮルックアップ機能が必要です（たとえば、IP-APIモジュールまたはBGPViewモジュールを介して）。"
 hints_cause_fp: "*!! %sによる誤検知の可能性が高い。"
 hints_default_dns:
- ＦＡＱ。: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.ja.md\#default_dnsには何が使えますか" hreflang="ja">「default_dns」には何が使えますか？</a></em>"
+ ＦＡＱ。: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.ja.md\#default_dnsには何が使えますか" hreflang="ja-JP">「default_dns」には何が使えますか？</a></em>"
 hints_duration:
  ＳＩ。: "期間は、「国際単位系」を使用して記述できます。​例えば、１日、２時間、３分、４秒れするために<strong>「1d2h3min4s」</strong>または<strong>「1d 2h 3min 4s」</strong>して、または５分だけするために<strong>「5min」</strong>して。"
  アークタイム。: "期間はアークタイム表記を使用して記述できます。​例えば、１日、２時間、３分、４秒するために<strong>「1d2°3′4″」</strong>して、または５秒だけするために<strong>「5″」</strong>して。"
@@ -378,7 +378,7 @@ hints_has_bypass: "* このオプションには、<code class="s">bypasses➡us
 hints_inspection: "* 補助ルールのデバッグのみを目的としています。​ブロックされたユーザーには表示されません。"
 hints_ipv6_on_32bit: "注：一部の３２ビットシステムでは、ＩＰｖ６ルックアップが正しく機能しない場合があります。"
 hints_pdo_dsn:
- ＦＡＱ。: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.ja.md\#user-content-HOW_TO_USE_PDO" hreflang="ja">「PDO DSN」とは何ですか？​CIDRAMでPDOを使用するにはどうすればよいですか？</a></em>"
+ ＦＡＱ。: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.ja.md\#user-content-HOW_TO_USE_PDO" hreflang="ja-JP">「PDO DSN」とは何ですか？​CIDRAMでPDOを使用するにはどうすればよいですか？</a></em>"
 hints_shorthand:
  0.: "ウェブサイトにＬＡＮまたはｌｏｃａｌｈｏｓｔ「ローカルホスト」経由でアクセスする必要がある場合は、これをブロックしないで。​それ以外の場合は、これをブロックできます。"
  1.: "デフォルト・シグネチャ・ファイルはどれもこれを使用していませんが、それでも一部のユーザーにとって役立つ可能性がある場合に備えてサポートされています。"
@@ -447,7 +447,7 @@ info_some_useful_links: |
        <li><span class="comCat">その他の便利なツール、リソース、サービス、など。</span>
          <ul class="comSub">
            <li>{{Links.SFS}} – 既知のフォーラム・スパマーのデータベースを維持します。​ウェブサイトやフォーラムをスパマーから保護するのに役立ちます。</li>
-           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – ＡＳＮからＣＩＤＲを取得する、​ＡＳＮ関係を決定する、​ネットワーク名に基づいてＡＳＮを検出する、​等。</li>
+           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – ＡＳＮからＣＩＤＲを取得する、​ＡＳＮ関係を決定する、​ネットワーク名に基づいてＡＳＮを検出する、​等。</li>
            <li>{{Links.BGPView}} – ＡＳＮからＣＩＤＲを取得する、​ＡＳＮ関係を決定する、​ネットワーク名に基づいてＡＳＮを検出する、​等。</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">QratorのRadar</a> – ＡＳＮの接続性をチェックするのに便利なツール；​ＡＳＮに関するその他の様々な情報。</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Spamhausプロジェクト</a> – ＡＳＮのボットネット感染率に関するレポートを表示します。</li>
@@ -702,6 +702,7 @@ response_checksum_error: "チェックサム・エラー！​ファイルが拒
 response_cli_bad_chain: "%sコマンドは、このように連鎖することはできません、ごめんなさい。"
 response_cli_bad_command: "コマンドが理解できません、ごめんなさい。"
 response_cli_cant_write: "「%s」には書き込めません、ごめんなさい。"
+response_cli_finished_writing: "%sへの書き込みが完了しました。"
 response_cli_no_analyse: "分析するものは何もありません、ごめんなさい。"
 response_cli_no_print: "印刷するものは何もありません、ごめんなさい。"
 response_cli_no_write: "書くことは何もありません、ごめんなさい。"
@@ -739,6 +740,7 @@ response_not_available_at_upstream: "アップストリームでは見つかり�
 response_passed: "合格しました"
 response_please_check_config: "新しくインストールされたモジュールが意図したとおりに動作することを確認するために、コンフィギュレーションを確認してください。"
 response_ready_to_install: "インストールの準備ができました。"
+response_redirected: "リダイレクトされました"
 response_release_notes: "<a href="%s"><span class="navicon link"></span>%s のリリース・ノート。</a>"
 response_rename_error: "名前を変更できませんでした！"
 response_repair_process_completed: "修復プロセスが完了しました。"
@@ -856,7 +858,7 @@ tip_range: "こんにちは、​{username}。​<br />このページには、�
 tip_rate_limiting: "こんにちは、​{username}。<br />このページには、レート制限に関する現在のクォータの使用状況と可用性が表示されます。"
 tip_rate_limiting_disabled: "注意：レート制限は現在オフラインですが、コンフィギュレーション・ページで有効にすることができます。"
 tip_sections_list: "こんにちは、​{username}。<br />このページには、現在アクティブなシグネチャ・ファイルに存在するセクションが一覧表示されます。"
-tip_see_the_documentation: "コンフィギュレーション・ディレクティブの詳細については、​<a href="https://github.com/CIDRAM/Docs/blob/master/readme.ja.md\#user-content-SECTION5" hreflang="ja" rel="noopener external">ドキュメント</a>を参照してください。"
+tip_see_the_documentation: "コンフィギュレーション・ディレクティブの詳細については、​<a href="https://github.com/CIDRAM/Docs/blob/master/readme.ja.md\#user-content-SECTION5" hreflang="ja-JP" rel="noopener external">ドキュメント</a>を参照してください。"
 tip_statistics: "こんにちは、​{username}。​<br />このページには、CIDRAMのインストールに関する基本的な使用状況の統計情報が表示されます。"
 tip_statistics_disabled: "注意：統計トラッキングは現在オフラインですが、コンフィギュレーション・ページで有効にすることができます。"
 tip_subtractor: "こんにちは、​{username}。<br />ある範囲のＩＰ/ＣＩＤＲ/ネットマスクを別の範囲から減算ために、減算器を使用できます。"

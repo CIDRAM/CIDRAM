@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CIDRAM CLI mode (last modified: 2023.04.09).
+ * This file: CIDRAM CLI mode (last modified: 2023.05.05).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -210,7 +210,7 @@ trait CLI
                 $MemoryUsage = memory_get_usage();
                 $this->formatFileSize($MemoryUsage);
                 $this->formatFileSize($FileSize);
-                echo 'Finished writing to ' . $WriteTo . '. <' . $this->L10N->getString('field_file') . ': ' . $FileSize . '> <RAM: ' . $MemoryUsage . ">\n\n";
+                echo sprintf($this->L10N->getString('response_cli_finished_writing'), $WriteTo) . '. <' . $this->L10N->getString('field_file') . ': ' . $FileSize . '> <RAM: ' . $MemoryUsage . ">\n\n";
                 unset($WriteTo, $Handle, $BlocksToDo, $ThisBlock, $MemoryUsage, $FileSize);
                 continue;
             }

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hebrew language data for the front-end (last modified: 2023.04.25).
+# This file: Hebrew language data for the front-end (last modified: 2023.05.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -30,7 +30,7 @@ Extended Description Bad TLDs blocker module: "חוסם מארחים השייכ�
 Extended Description Bad hosts blocker module: "חוסם מארחים בשימוש תכוף על ידי שולחי ספאם, האקרים, וגורמים מרושעים אחרים."
 Extended Description Bot user agents module: "חוסם סוכני משתמשים הקשורים לבוטים לא רצויים ולפעילות מרושעת."
 Extended Description Bypasses: "החתימה הסטנדרטית עוקפת קבצים הנכללים בדרך כלל בחבילה הראשית."
-Extended Description Chart.js: "מאפשר לקצה הקדמי ליצור תרשימי סופגניות.<br />{{Links.Chart.js}} זמין באמצעות רישיון <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
+Extended Description Chart.js: "מאפשר לקצה הקדמי ליצור תרשימי סופגניות.<br />{{Links.Chart.js}} זמין באמצעות רישיון {{Links.MIT}}."
 Extended Description Cookie scanner module: "מספק כמה הגנות מוגבלות מפני עוגיות מסוכנות."
 Extended Description HTTP version checker module: "מאפשר לחסום פרוטוקולים ספציפיים וגרסאות HTTP באמצעות תצורת CIDRAM."
 Extended Description IP-API module: "מנף את ה-{{Links.IP-API}} API כדי לספק מתקן חיפוש ASN וקוד מדינה עבור CIDRAM, המאפשרת חסימה או אישור של ASN ומדינות באמצעות תצורת CIDRAM, ומספקת אמצעי לאימות רשתות חברתיות לאימות בקשות של פייסבוק. (אם אתה משתמש במודול זה, לא תצטרך להשתמש במודול BGPView, מכיוון שהם משרתים את אותה מטרה)."
@@ -48,7 +48,7 @@ Extended Description Optional security extras module: "מספק כמה הגנו�
 Extended Description PHPMailer: "נדרש לשימוש בכל פונקציונליות הכרוכה בשליחת דואר אלקטרוני.<br />{{Links.PHPMailer.PHPMailer}} זמין באמצעות רישיון {{Links.PHPMailer.License}}."
 Extended Description Project Honeypot module: "חוסם בקשות מכתובות IP המופיעות ב-Project Honeypot."
 Extended Description Protocol blocker module: "מספק את היכולת לחסום פרוטוקולי בקשות ספציפיים באמצעות התצורה (למשל., HTTP/0.9 ,HTTP/1.1 ,SPDY/3.0, וכו). הערה: לא ישפיע על אתרים שמנתבים דרך שירותים המשכתבים בקשות לכולן משתמשות באותו פרוטוקול, כגון Cloudflare."
-Extended Description Referrer spam module: "חסימה המבוססת על ספאם מפנה לא תספק בדרך כלל תועלת אבטחה משמעותית, אך במקרים מסוימים, יכול להיות שימושי עבור חלק מהמשתמשים, לאיסוף מידע נוסף על בקשות וליכולת לדווח על כך.<br />התקנת מודול זה מתקינה גם את ה-Symfony polyfills עבור {{Links.Symfony.Intl/Idn}} (כי מודול זה דורש פונקציונליות Idn, שלא כל התקנות PHP מספקות כסטנדרט), זמין באמצעות רישיון <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
+Extended Description Referrer spam module: "חסימה המבוססת על ספאם מפנה לא תספק בדרך כלל תועלת אבטחה משמעותית, אך במקרים מסוימים, יכול להיות שימושי עבור חלק מהמשתמשים, לאיסוף מידע נוסף על בקשות וליכולת לדווח על כך.<br />התקנת מודול זה מתקינה גם את ה-Symfony polyfills עבור {{Links.Symfony.Intl/Idn}} (כי מודול זה דורש פונקציונליות Idn, שלא כל התקנות PHP מספקות כסטנדרט), זמין באמצעות רישיון {{Links.MIT}}."
 Extended Description Stop Forum Spam module: "מגן על דפי רישום וכניסה מפני כתובות IP הרשומות על ידי SFS."
 Extended Description Tor blocker module: "אוסר על גישה מצמתי יציאה של Tor דרך חיפושי DNSEL (תומך גם ב-IPv4 וגם ב-IPv6)."
 Name AbuseIPDB module: "מודול AbuseIPDB."
@@ -442,7 +442,7 @@ info_some_useful_links: |
        <li><span class="comCat">כלים אחרים, משאבים, שירותים, וכו' שיכולים להיות שימושיים.</span>
          <ul class="comSub">
            <li>{{Links.SFS}} – שומר על מסד הנתונים של שולחי ספאם של פורומים ידועים. שימושי להגנה על אתרים ופורומים מפני שולחי ספאם.</li>
-           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric ערכת הכלים של BGP</a> – קבל CIDRים מ-ASN, לברר את מערכות היחסים של ASN, גלה ASNים על סמך שמות רשת, וכו'.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric ערכת הכלים של BGP</a> – קבל CIDRים מ-ASN, לברר את מערכות היחסים של ASN, גלה ASNים על סמך שמות רשת, וכו'.</li>
            <li>{{Links.BGPView}} – קבל CIDRים מ-ASN, לברר את מערכות היחסים של ASN, גלה ASNים על סמך שמות רשת, וכו'.</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar מאת Qrator</a> – כלי שימושי לבדיקת הקישוריות של ASNים, וכן למידע נוסף על ASNים.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">פרויקט Spamhaus</a> – מציג דוחות לגבי שיעורי הדבקה של רשתות בוט עבור ASNים.</li>
@@ -705,6 +705,7 @@ response_checksum_error: "שגיאת סיכום בדיקה! הקובץ נדחה!
 response_cli_bad_chain: "לא ניתן לשרשר את הפקודה %s בצורה כזו, סליחה."
 response_cli_bad_command: "אני לא מבין את הפקודה הזאת, סליחה."
 response_cli_cant_write: "אני לא יכול לכתוב ל"%s", מצטער."
+response_cli_finished_writing: "סיימתי לכתוב ל-%s."
 response_cli_no_analyse: "אין מה לנתח, סליחה."
 response_cli_no_print: "אין מה להדפיס, סליחה."
 response_cli_no_write: "אין מה לכתוב, סליחה."
@@ -742,6 +743,7 @@ response_not_available_at_upstream: "לא זמין במעלה הזרם."
 response_passed: "טוב"
 response_please_check_config: "אנא בדוק את התצורה שלך כדי להבטיח שהמודול שהותקן לאחרונה יתנהג כפי שאתה מתכוון."
 response_ready_to_install: "מוכן להתקין."
+response_redirected: "הופנה מחדש"
 response_release_notes: "<a href="%s"><span class="navicon link"></span>הערות שחרור עבור %s.</a>"
 response_rename_error: "שינוי השם נכשל!"
 response_repair_process_completed: "תהליך התיקון הסתיים."

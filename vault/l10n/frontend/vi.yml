@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2023.04.25).
+# This file: Vietnamese language data for the front-end (last modified: 2023.05.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -30,7 +30,7 @@ Extended Description Bad TLDs blocker module: "Chặn các máy chủ web của 
 Extended Description Bad hosts blocker module: "Chặn các máy chủ web mà thường được sử dụng bởi các chương trình thư rác, hacker và thực thể bất chính khác."
 Extended Description Bot user agents module: "Chặn các đại lý người dùng liên quan đến các chương trình không mong muốn và hoạt động bất chính."
 Extended Description Bypasses: "Các tập tin đường tránh chữ ký mặc định thường bao gồm với gói thầu chính."
-Extended Description Chart.js: "Cho phép front-end tạo biểu đồ hình tròn.<br />{{Links.Chart.js}} có sẵn qua <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
+Extended Description Chart.js: "Cho phép front-end tạo biểu đồ hình tròn.<br />{{Links.Chart.js}} có sẵn thông qua giấy phép {{Links.MIT}}."
 Extended Description Cookie scanner module: "Cung cấp một số bảo vệ hạn chế đối với cookie nguy hiểm."
 Extended Description HTTP version checker module: "Bạn có thể chặn các giao thức và phiên bản HTTP cụ thể thông qua cấu hình CIDRAM."
 Extended Description IP-API module: "Tận dụng API {{Links.IP-API}} để cung cấp phương tiện tra cứu mã quốc gia và ASN cho CIDRAM, cho phép các ASN và quốc gia bị chặn hay đưa vào danh sách trắng thông qua cấu hình CIDRAM, và cung cấp một phương tiện để xác minh mạng xã hội để xác minh các yêu cầu của Facebook. (Nếu bạn sử dụng mô-đun này, bạn sẽ không cần sử dụng mô-đun BGPView, vì chúng phục vụ cùng một mục đích)."
@@ -48,7 +48,7 @@ Extended Description Optional security extras module: "Cung cấp một số b�
 Extended Description PHPMailer: "Cần thiết để sử dụng bất kỳ chức năng nào liên quan đến việc gửi email.<br />{{Links.PHPMailer.PHPMailer}} có sẵn qua giấy phép {{Links.PHPMailer.License}}."
 Extended Description Project Honeypot module: "Chặn các yêu cầu từ IP được liệt kê tại Project Honeypot."
 Extended Description Protocol blocker module: "Cung cấp khả năng chặn các giao thức yêu cầu cụ thể thông qua cấu hình (ví dụ, HTTP/0.9, HTTP/1.1, SPDY/3.0, vv). Ghi chú: Sẽ không có bất kỳ ảnh hưởng nào đối với các trang web đó định tuyến thông qua các dịch vụ viết lại các yêu cầu cho tất cả đều sử dụng cùng một giao thức, chẳng hạn như Cloudflare."
-Extended Description Referrer spam module: "Chặn dựa trên spam giới thiệu thường không cung cấp bất kỳ lợi ích bảo mật có ý nghĩa nào, nhưng trong một số trường hợp, có thể hữu ích cho một số người dùng, để thu thập thêm thông tin về các yêu cầu và để có thể báo cáo nó.<br />Bằng cách cài đặt mô-đun này, các polyfill Symfony cho {{Links.Symfony.Intl/Idn}} cũng sẽ được cài đặt (bởi vì mô-đun này yêu cầu chức năng "Idn", và không phải tất cả các cài đặt PHP cung cấp nó theo mặc định). Có sẵn thông qua giấy phép <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
+Extended Description Referrer spam module: "Chặn dựa trên spam giới thiệu thường không cung cấp bất kỳ lợi ích bảo mật có ý nghĩa nào, nhưng trong một số trường hợp, có thể hữu ích cho một số người dùng, để thu thập thêm thông tin về các yêu cầu và để có thể báo cáo nó.<br />Bằng cách cài đặt mô-đun này, các polyfill Symfony cho {{Links.Symfony.Intl/Idn}} cũng sẽ được cài đặt (bởi vì mô-đun này yêu cầu chức năng "Idn", và không phải tất cả các cài đặt PHP cung cấp nó theo mặc định). Có sẵn thông qua giấy phép {{Links.MIT}}."
 Extended Description Stop Forum Spam module: "Bảo vệ các trang đăng ký và đăng nhập đối với các địa chỉ IP do SFS liệt kê."
 Extended Description Tor blocker module: "Cấm truy cập từ các nút thoát Tor thông qua tra cứu DNSEL (hỗ trợ cả IPv4 và IPv6)."
 Name AbuseIPDB module: "Mô-đun AbuseIPDB."
@@ -368,7 +368,7 @@ header_login: "Vui lòng đăng nhập để tiếp tục."
 hints_asnlookup: "** Yêu cầu chức năng tra cứu ASN (v.d., thông qua mô-đun IP-API hoặc BGPView)."
 hints_cause_fp: "*!! Khả năng cao gây ra sai tích cực do %s."
 hints_default_dns:
- Câu hỏi thường gặp.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.vi.md\#những-gì-tôi-có-thể-sử-dụng-cho-default_dns" hreflang="vi">Những gì tôi có thể sử dụng cho "default_dns"?</a></em>"
+ Câu hỏi thường gặp.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.vi.md\#những-gì-tôi-có-thể-sử-dụng-cho-default_dns" hreflang="vi-VN">Những gì tôi có thể sử dụng cho "default_dns"?</a></em>"
 hints_duration:
  SI.: "Khoảng thời gian có thể được mô tả bằng cách sử dụng "hệ thống đơn vị quốc tế". V.d., <strong>1d2h3min4s</strong> hoặc <strong>1d 2h 3min 4s</strong> cho một ngày, hai giờ, ba phút, bốn giây, hoặc <strong>5min</strong> cho chỉ năm phút."
  Thời gian góc.: "Khoảng thời gian có thể được mô tả bằng cách sử dụng thời gian góc. V.d., <strong>1d2°3′4″</strong> cho một ngày, hai giờ, ba phút, bốn giây, hoặc <strong>5″</strong> cho chỉ năm giây."
@@ -378,7 +378,7 @@ hints_has_bypass: "* Tùy chọn này có một đường tránh tương ứng d
 hints_inspection: "* Chỉ dành cho việc gỡ lỗi các quy tắc phụ trợ. Không hiển thị cho người dùng bị chặn."
 hints_ipv6_on_32bit: "Lưu ý: Tra cứu IPv6 có thể không hoạt động chính xác trên một số hệ thống 32 bit."
 hints_pdo_dsn:
- Câu hỏi thường gặp.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.vi.md\#user-content-HOW_TO_USE_PDO" hreflang="vi">"PDO DSN" là gì? Làm cách nào tôi có thể sử dụng PDO với CIDRAM?</a></em>"
+ Câu hỏi thường gặp.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.vi.md\#user-content-HOW_TO_USE_PDO" hreflang="vi-VN">"PDO DSN" là gì? Làm cách nào tôi có thể sử dụng PDO với CIDRAM?</a></em>"
 hints_shorthand:
  0.: "Nếu trang web của bạn cần truy cập qua mạng LAN hoặc localhost, đừng chặn điều này. Nếu không cần, bạn có thể chặn điều này."
  1.: "Không có tập tin chữ ký mặc định nào sử dụng điều này, nhưng nó vẫn được hỗ trợ trong trường hợp nó có thể hữu ích cho một số người dùng."
@@ -448,7 +448,7 @@ info_some_useful_links: |
        <li><span class="comCat">Công cụ, tài nguyên, dịch vụ, vv hữu ích khác.</span>
          <ul class="comSub">
            <li>{{Links.SFS}} – Duy trì một cơ sở dữ liệu của những kẻ gửi thư rác được biết đến. Hữu ích để bảo vệ các trang web và diễn đàn chống lại kẻ gửi thư rác.</li>
-           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Nhận các CIDR từ các ASN, xác định các mối quan hệ các ASN, khám phá vùng các ASN dựa trên các tên mạng, vv.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Nhận các CIDR từ các ASN, xác định các mối quan hệ các ASN, khám phá vùng các ASN dựa trên các tên mạng, vv.</li>
            <li>{{Links.BGPView}} – Nhận các CIDR từ các ASN, xác định các mối quan hệ các ASN, khám phá vùng các ASN dựa trên các tên mạng, vv.</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar bởi Qrator</a> – Công cụ hữu ích để kiểm tra kết nối ASN cũng như cho nhiều thông tin khác về ASN.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Dự án Spamhaus</a> – Hiển thị báo cáo về tỷ lệ lây nhiễm chương trình thư rác cho các ASN.</li>
@@ -703,6 +703,7 @@ response_checksum_error: "Kiểm tra lỗi! Tập tin đã bị từ chối!"
 response_cli_bad_chain: "Xin lỗi, lệnh %s không thể được xâu chuỗi theo cách đó."
 response_cli_bad_command: "Xin lỗi, tôi không hiểu câu lệnh này."
 response_cli_cant_write: "Xin lỗi, tôi không thể viết thư cho "%s"."
+response_cli_finished_writing: "Viết xong cho %s."
 response_cli_no_analyse: "Xin lỗi, không có gì để phân tích."
 response_cli_no_print: "Xin lỗi, không có gì để in."
 response_cli_no_write: "Xin lỗi, không có gì để viết."
@@ -740,6 +741,7 @@ response_not_available_at_upstream: "Không có sẵn ở thượng nguồn."
 response_passed: "Thành công"
 response_please_check_config: "Vui lòng kiểm tra cấu hình của bạn để đảm bảo rằng mô-đun mới được cài đặt sẽ hoạt động như bạn dự định."
 response_ready_to_install: "Sẵn sàng để cài đặt."
+response_redirected: "Chuyển hướng"
 response_release_notes: "<a href="%s"><span class="navicon link"></span>Ghi chú phát hành cho %s.</a>"
 response_rename_error: "Không thể đổi tên!"
 response_repair_process_completed: "Quá trình sửa chữa hoàn thành."
@@ -857,7 +859,7 @@ tip_range: "Xin chào, {username}.<br />Trang này hiển thị một số thôn
 tip_rate_limiting: "Xin chào, {username}.<br />Trang này hiển thị hạn ngạch hiện có và được sử dụng liên quan đến giới hạn tốc độ."
 tip_rate_limiting_disabled: "Lưu ý: Giới hạn tốc độ hiện bị vô hiệu hóa, nhưng có thể được kích hoạt thông qua trang cấu hình."
 tip_sections_list: "Xin chào, {username}.<br />Trang này liệt kê những phần nào tồn tại trong các tập tin chữ ký đang kích hoạt."
-tip_see_the_documentation: "Xem <a href="https://github.com/CIDRAM/Docs/blob/master/readme.vi.md\#user-content-SECTION5" hreflang="vi" rel="noopener external">tài liệu</a> để biết thông tin về các chỉ thị cấu hình khác nhau và mục đích của họ."
+tip_see_the_documentation: "Xem <a href="https://github.com/CIDRAM/Docs/blob/master/readme.vi.md\#user-content-SECTION5" hreflang="vi-VN" rel="noopener external">tài liệu</a> để biết thông tin về các chỉ thị cấu hình khác nhau và mục đích của họ."
 tip_statistics: "Xin chào, {username}.<br />Trang này cho thấy một số thống kê của sử dụng cơ bản liên quan đến cài đặt CIDRAM của bạn."
 tip_statistics_disabled: "Lưu ý: Giám sát thống kê hiện bị vô hiệu hóa, nhưng có thể được kích hoạt thông qua trang cấu hình."
 tip_subtractor: "Xin chào, {username}.<br />Phép trừ có thể được sử dụng để trừ phạm vi IP/CIDR/mặt nạ mạng từ một phạm vi khác."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2023.04.25).
+# This file: Polish language data for the front-end (last modified: 2023.05.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -30,7 +30,7 @@ Extended Description Bad TLDs blocker module: "Blokuje hosty należące do TLD c
 Extended Description Bad hosts blocker module: "Blokuje hosty często używane przez spamerów, hakerów i inne nikczemne podmioty."
 Extended Description Bot user agents module: "Blokuje agenty użytkownika związane z niechcianymi botami i nikczemną aktywnością."
 Extended Description Bypasses: "Domyślne pliki obejścia podpisów zwykle zawarte w pakiecie głównym."
-Extended Description Chart.js: "Umożliwia interfejsowi użytkownika generowanie wykresów kołowych.<br />{{Links.Chart.js}} jest dostępny za pośrednictwem licencji <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
+Extended Description Chart.js: "Umożliwia interfejsowi użytkownika generowanie wykresów kołowych.<br />{{Links.Chart.js}} jest dostępny za pośrednictwem licencji {{Links.MIT}}."
 Extended Description Cookie scanner module: "Zapewnia pewne ograniczone zabezpieczenia przed niebezpiecznymi plikami cookie."
 Extended Description HTTP version checker module: "Umożliwia blokowanie określonych protokołów i wersji HTTP poprzez konfigurację CIDRAM."
 Extended Description IP-API module: "Wykorzystuje API {{Links.IP-API}} do zapewnienia dla CIDRAM funkcjonalności wyszukiwania dla ASN i kodu kraju, który umożliwia blokowanie ASN i krajów lub umieszczanie ich na białej liście za pomocą konfiguracji CIDRAM oraz zapewnia sposób weryfikacji żądań z sieci społecznościowych, takich jak Facebook. (Jeśli używasz tego modułu, nie będziesz musiał używać modułu BGPView, ponieważ służą one temu samemu celowi)."
@@ -48,7 +48,7 @@ Extended Description Optional security extras module: "Zapewnia pewne ograniczon
 Extended Description PHPMailer: "Wymagane do korzystania z dowolnej funkcji związanej z wysyłaniem wiadomości e-mail.<br />{{Links.PHPMailer.PHPMailer}} jest dostępny za pośrednictwem licencji {{Links.PHPMailer.License}}."
 Extended Description Project Honeypot module: "Blokuje żądania z adresów IP wymienionych w Project Honeypot."
 Extended Description Protocol blocker module: "Zapewnia możliwość blokowania określonych protokołów żądań za pośrednictwem konfiguracji (np., HTTP/0.9, HTTP/1.1, SPDY/3.0, itp). Uwaga: Nie będzie to miało żadnego wpływu na te strony internetowe, które przechodzą przez usługi, które przepisują żądania do wszystkich, używając dokładnie tego samego protokołu, takiego jak Cloudflare."
-Extended Description Referrer spam module: "Blokowanie na podstawie spamu odsyłającego zwykle nie zapewnia żadnych znaczących korzyści bezpieczeństwa, ale w niektórych przypadkach może być przydatne dla niektórych użytkowników, do gromadzenia dodatkowych informacji na temat żądań i możliwości ich zgłaszania.<br />Zainstalowanie tego modułu powoduje również zainstalowanie polifillów Symfony dla {{Links.Symfony.Intl/Idn}} (ponieważ ten moduł wymaga funkcjonalności Idn, której domyślnie nie zapewniają wszystkie instalacje PHP), dostępne za pośrednictwem licencji <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
+Extended Description Referrer spam module: "Blokowanie na podstawie spamu odsyłającego zwykle nie zapewnia żadnych znaczących korzyści bezpieczeństwa, ale w niektórych przypadkach może być przydatne dla niektórych użytkowników, do gromadzenia dodatkowych informacji na temat żądań i możliwości ich zgłaszania.<br />Zainstalowanie tego modułu powoduje również zainstalowanie polifillów Symfony dla {{Links.Symfony.Intl/Idn}} (ponieważ ten moduł wymaga funkcjonalności Idn, której domyślnie nie zapewniają wszystkie instalacje PHP), dostępne za pośrednictwem licencji {{Links.MIT}}."
 Extended Description Stop Forum Spam module: "Chroni strony rejestracji i logowania przed adresami IP wymienionymi przez SFS."
 Extended Description Tor blocker module: "Zabrania dostępu z węzłów wyjściowych Tora przez wyszukiwania DNSEL (obsługuje zarówno IPv4 i IPv6)."
 Name AbuseIPDB module: "Moduł AbuseIPDB."
@@ -450,7 +450,7 @@ info_some_useful_links: |
        <li><span class="comCat">Inne przydatne narzędzia, zasoby, usługi, itp.</span>
          <ul class="comSub">
            <li>{{Links.SFS}} – Prowadzi bazę danych znanych spamerów na forum. Przydatny do ochrony stron internetowych i forów przed spamerami.</li>
-           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Pobierz CIDRy z ASNy, określ relacje ASN, odkryj ASNy na podstawie nazw sieci, itp.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Pobierz CIDRy z ASNy, określ relacje ASN, odkryj ASNy na podstawie nazw sieci, itp.</li>
            <li>{{Links.BGPView}} – Pobierz CIDRy z ASNy, określ relacje ASN, odkryj ASNy na podstawie nazw sieci, itp.</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar by Qrator</a> – Przydatne narzędzie do sprawdzania połączeń ASN, a także różnych innych informacji o ASN.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">The Spamhaus Project</a> – Wyświetla raporty dotyczące częstości infekcji botnetem dla ASNy.</li>
@@ -717,6 +717,7 @@ response_checksum_error: "Błąd sumy kontrolnej! Plik odrzucony!"
 response_cli_bad_chain: "Przepraszam, polecenie %s nie może być połączone w ten sposób."
 response_cli_bad_command: "Przepraszam, nie rozumiem tego polecenia."
 response_cli_cant_write: "Przepraszam, nie mogę napisać do „%s”."
+response_cli_finished_writing: "Skończyłem pisać do %s."
 response_cli_no_analyse: "Przepraszam, nie ma nic do analizować."
 response_cli_no_print: "Przepraszam, nie ma nic do wydrukowania."
 response_cli_no_write: "Przepraszam, nie ma nic do napisania."
@@ -754,6 +755,7 @@ response_not_available_at_upstream: "Nie znaleziono u źródła."
 response_passed: "Wszystko dobrze"
 response_please_check_config: "Sprawdź swoją konfigurację, aby upewnić się, że nowo zainstalowany moduł będzie zachowywał się zgodnie z przeznaczeniem."
 response_ready_to_install: "Gotowy do instalacji."
+response_redirected: "Przekierowany"
 response_release_notes: "<a href="%s"><span class="navicon link"></span>Informacje o wersji dla %s.</a>"
 response_rename_error: "Nie zmieniłem nazwy!"
 response_repair_process_completed: "Zakończenie procesu naprawy."

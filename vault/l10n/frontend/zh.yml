@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2023.04.25).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2023.05.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -30,7 +30,7 @@ Extended Description Bad TLDs blocker module: "阻止垃圾邮件发送者，黑
 Extended Description Bad hosts blocker module: "阻止垃圾邮件发送者，黑客，和其他恶意实体经常使用的主机。"
 Extended Description Bot user agents module: "阻止不需要的机器人和恶意活动相关联的用户代理。"
 Extended Description Bypasses: "标准签名旁路文件通常包括在主包。"
-Extended Description Chart.js: "使前端能够生成饼图。<br />{{Links.Chart.js}}可通过<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>获得。"
+Extended Description Chart.js: "使前端能够生成饼图。<br />{{Links.Chart.js}}可通过{{Links.MIT}}许可证获得。"
 Extended Description Cookie scanner module: "提供一些针对危险cookie的有限保护。"
 Extended Description HTTP version checker module: "通过CIDRAM配置可以阻止特定的协议和HTTP版本。"
 Extended Description IP-API module: "利用{{Links.IP-API}} API为CIDRAM提供ASN和国家代码查找功能，提供通过CIDRAM配置一种ASN和国家被阻止或列入白名单的方法，并提供一种用于社交媒体验证的方式来验证Facebook请求。 （如果您使用此模块，则无需使用BGPView模块，因为它们的用途相同）。"
@@ -48,7 +48,7 @@ Extended Description Optional security extras module: "提供一些有限的保�
 Extended Description PHPMailer: "使用涉及发送电子邮件的任何功能时需要。<br />{{Links.PHPMailer.PHPMailer}}可通过{{Links.PHPMailer.License}}许可证获得。"
 Extended Description Project Honeypot module: "阻止来自Project Honeypot列出的IP的请求。"
 Extended Description Protocol blocker module: "提供通过配置阻止特定请求协议的能力（例如，HTTP/0.9、HTTP/1.1、SPDY/3.0、等等）。注意：不会影响通过强制请求使用相同协议的服务（例如，Cloudflare）路由的网站。"
-Extended Description Referrer spam module: "基于引荐来源垃圾邮件阻止通常不会提供任何有意义的安全利益，但在某些情况下，对某些用户可能有用，用于收集有关请求的更多信息，以及能够报告它。<br />通过安装此模块，还将安装用于{{Links.Symfony.Intl/Idn}}的Symfony polyfills（因为此模块需要Idn功能性，但并非所有PHP安装都默认提供该功能性）。​可以通过<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>许可获得。"
+Extended Description Referrer spam module: "基于引荐来源垃圾邮件阻止通常不会提供任何有意义的安全利益，但在某些情况下，对某些用户可能有用，用于收集有关请求的更多信息，以及能够报告它。<br />通过安装此模块，还将安装用于{{Links.Symfony.Intl/Idn}}的Symfony polyfills（因为此模块需要Idn功能性，但并非所有PHP安装都默认提供该功能性）。​可以通过{{Links.MIT}}许可证获得。"
 Extended Description Stop Forum Spam module: "防止通过SFS列出的IP地址访问注册和登录页面。"
 Extended Description Tor blocker module: "禁止通过DNSEL查找从Tor出口节点进行访问（支持IPv4和IPv6）。"
 Name AbuseIPDB module: "AbuseIPDB 模块。"
@@ -441,7 +441,7 @@ info_some_useful_links: |
        <li><span class="comCat">其他有用的工具，资源，服务，等等</span>
          <ul class="comSub">
            <li>{{Links.SFS}} – 维护已知论坛垃圾邮件发送者的数据库。有用的保护网站和论坛免受垃圾邮件发送者的攻。</li>
-           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – 从ASN获取CIDR，​确定ASN关系，​基于网络名称发现ASN，​等等。</li>
+           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – 从ASN获取CIDR，​确定ASN关系，​基于网络名称发现ASN，​等等。</li>
            <li>{{Links.BGPView}} – 从ASN获取CIDR，​确定ASN关系，​基于网络名称发现ASN，​等等。</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Qrator的Radar</a> – 检查ASN连接的有用工具，​以及关于ASN的各种其他信息。</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Spamhaus项目</a> – 显示有关ASN僵尸网络感染率的报告。</li>
@@ -696,6 +696,7 @@ response_checksum_error: "校验和错误！​文件拒绝！"
 response_cli_bad_chain: "%s命令不能以这种方式链接，对不起。"
 response_cli_bad_command: "我不明白的命令，对不起。"
 response_cli_cant_write: "我不能写信给“%s”，对不起。"
+response_cli_finished_writing: "完成对%s的写入。"
 response_cli_no_analyse: "没有什么可分析的，对不起。"
 response_cli_no_print: "没有什么可打印的，对不起。"
 response_cli_no_write: "没有什么可写的，对不起。"
@@ -733,6 +734,7 @@ response_not_available_at_upstream: "在上游找不到。"
 response_passed: "成功"
 response_please_check_config: "请检查您的配置，以确保新安装的模块按您的意愿运行。"
 response_ready_to_install: "准备安装。"
+response_redirected: "重定向"
 response_release_notes: "<a href="%s"><span class="navicon link"></span>%s的发行说明。</a>"
 response_rename_error: "无法改名！"
 response_repair_process_completed: "修复过程完成。"

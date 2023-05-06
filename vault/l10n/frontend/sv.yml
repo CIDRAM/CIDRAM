@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2023.04.25).
+# This file: Swedish language data for the front-end (last modified: 2023.05.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -30,7 +30,7 @@ Extended Description Bad TLDs blocker module: "Blockerar värdar som tillhör to
 Extended Description Bad hosts blocker module: "Blockar värdar som ofta används av spammare, hackare och andra skändlig enheter."
 Extended Description Bot user agents module: "Blockerar användaragenter associerade med oönskade bots och nöjesaktivitet."
 Extended Description Bypasses: "Standard-signatur-bypass-filer som normalt ingår i huvudpaketet."
-Extended Description Chart.js: "Gör det möjligt för framsidan att generera cirkeldiagram.<br />{{Links.Chart.js}} är tillgängligt via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
+Extended Description Chart.js: "Gör det möjligt för framsidan att generera cirkeldiagram.<br />{{Links.Chart.js}} är tillgänglig via {{Links.MIT}}-licensen."
 Extended Description Cookie scanner module: "Ger vissa begränsade skydd mot farliga kakor."
 Extended Description HTTP version checker module: "Gör det möjligt att blockera specifika protokoll och HTTP-versioner genom CIDRAM-konfigurationen."
 Extended Description IP-API module: "Utnyttjar {{Links.IP-API}} API för att tillhandahålla sökfunktioner för ASNer och landskoder för CIDRAM, så att ASNer och länder kan blockeras eller listas med vitlista via CIDRAM-konfigurationen, och tillhandahålla ett sätt för verifiering av socialt nätverk för att verifiera Facebook-förfrågningar. (Om du använder den här modulen, du inte behöver använda BGPView-modulen, eftersom de tjänar samma syfte)."
@@ -48,7 +48,7 @@ Extended Description Optional security extras module: "Ger vissa begränsade sky
 Extended Description PHPMailer: "Krävs för att använda någon funktionalitet som involverar att skicka e-post.<br />{{Links.PHPMailer.PHPMailer}} är tillgängligt via {{Links.PHPMailer.License}}-licensen."
 Extended Description Project Honeypot module: "Blockerar förfrågningar från IP-adresser som listas på Project Honeypot."
 Extended Description Protocol blocker module: "Ger möjlighet att blockera specifika begärandeprotokoll via konfigurationen (t.ex., HTTP/0.9, HTTP/1.1, SPDY/3.0, etc). Obs: Kommer inte ha någon effekt för de webbplatser som dirigerar genom tjänster som skriver om förfrågningar till att alla använder exakt samma protokoll, sådan som Cloudflare."
-Extended Description Referrer spam module: "Blockering baserat på referensspam ger i allmänhet ingen meningsfull säkerhetsfördel, men i vissa fall kan det vara användbart för vissa användare, för att samla in mer information om förfrågningar och för att kunna rapportera det.<br />Genom att installera den här modulen installeras också Symfony polyfyllningar för {{Links.Symfony.Intl/Idn}} (eftersom den här modulen kräver Idn-funktionalitet, som inte alla PHP-installationer tillhandahåller som standard), tillgängliga via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>-licensen."
+Extended Description Referrer spam module: "Blockering baserat på referensspam ger i allmänhet ingen meningsfull säkerhetsfördel, men i vissa fall kan det vara användbart för vissa användare, för att samla in mer information om förfrågningar och för att kunna rapportera det.<br />Genom att installera den här modulen installeras också Symfony polyfyllningar för {{Links.Symfony.Intl/Idn}} (eftersom den här modulen kräver Idn-funktionalitet, som inte alla PHP-installationer tillhandahåller som standard), tillgängliga via {{Links.MIT}}-licensen."
 Extended Description Stop Forum Spam module: "Skyddar registrerings och inloggningssidor mot IP-adresser som listas av SFS."
 Extended Description Tor blocker module: "Förbjuder åtkomst från Tor-utgångsnoder genom DNSEL-uppslagningar (stöder både IPv4 och IPv6)."
 Name AbuseIPDB module: "AbuseIPDB modul."
@@ -449,7 +449,7 @@ info_some_useful_links: |
        <li><span class="comCat">Andra användbara verktyg, resurser, tjänster, osv.</span>
          <ul class="comSub">
            <li>{{Links.SFS}} – Hanterar en databas med kända forumspammare. Användbar för att skydda webbplatser och forum mot spammare.</li>
-           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Få CIDRer från ASNer, bestäm ASN-relationer, upptäck ASNer baserat på nätverksnamn, osv.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Få CIDRer från ASNer, bestäm ASN-relationer, upptäck ASNer baserat på nätverksnamn, osv.</li>
            <li>{{Links.BGPView}} – Få CIDRer från ASNer, bestäm ASN-relationer, upptäck ASNer baserat på nätverksnamn, osv.</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar av Qrator</a> – Användbart verktyg för att kontrollera ASN-anslutningar samt för annan information om ASNer.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Spamhausprojektet</a> – Visar rapporter om botnätinfektionshastigheter för ASNer.</li>
@@ -712,6 +712,7 @@ response_checksum_error: "Kontrollsumma fel! Filen avvisas!"
 response_cli_bad_chain: "Kommandot %s kan inte kedjan på det sättet, ursäkta."
 response_cli_bad_command: "Jag förstår inte det kommandot, ursäkta."
 response_cli_cant_write: "Jag kan inte skriva till "%s", ursäkta."
+response_cli_finished_writing: "Har skrivit klart till %s."
 response_cli_no_analyse: "Det finns inget att analysera, ursäkta."
 response_cli_no_print: "Det finns inget att skriva ut på skärmen, ursäkta."
 response_cli_no_write: "Det finns inget att skriva, ursäkta."
@@ -749,6 +750,7 @@ response_not_available_at_upstream: "Inte tillgängligt uppströms."
 response_passed: "Passerade"
 response_please_check_config: "Kontrollera din konfiguration för att säkerställa att den nyligen installerade modulen fungerar som du tänker."
 response_ready_to_install: "Redo att installeras."
+response_redirected: "Omdirigerad"
 response_release_notes: "<a href="%s"><span class="navicon link"></span>Utgivningsinformation för %s.</a>"
 response_rename_error: "Misslyckades med att byta namn!"
 response_repair_process_completed: "Reparationsprocessen lyckades."

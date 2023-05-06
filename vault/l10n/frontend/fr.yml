@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2023.04.25).
+# This file: French language data for the front-end (last modified: 2023.05.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -30,7 +30,7 @@ Extended Description Bad TLDs blocker module: "Bloque les hôtes appartenant aux
 Extended Description Bad hosts blocker module: "Bloque les hôtes fréquemment utilisés par les spammeurs, les hackers et autres entités malveillantes."
 Extended Description Bot user agents module: "Bloque les agents utilisateurs associés aux bots indésirables et aux activités malveillantes."
 Extended Description Bypasses: "Les fichiers pour contourner les signatures standard qui sont normalement inclus dans le paquet principal."
-Extended Description Chart.js: "Permet à l'interface frontale de générer des diagrammes à secteurs.<br />{{Links.Chart.js}} est disponible via le <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
+Extended Description Chart.js: "Permet à l'interface frontale de générer des diagrammes à secteurs.<br />{{Links.Chart.js}} est disponible via la licence {{Links.MIT}}."
 Extended Description Cookie scanner module: "Fournit quelques protections limitées contre les cookies dangereux."
 Extended Description HTTP version checker module: "Permet de bloquer des protocoles spécifiques et des versions HTTP via la configuration CIDRAM."
 Extended Description IP-API module: "Exploite l'API {{Links.IP-API}} pour fournir la possibilité de rechercher des codes de pays et des ASN pour CIDRAM, permettre le blocage ou la mise en liste blanche des ASN et des pays via la configuration CIDRAM, et fournir un moyen de vérification des réseaux sociaux pour vérifier les requêtes de Facebook. (Si vous utilisez ce module, vous n'aurez pas besoin d'utiliser le module BGPView, car ils ont le même objectif)."
@@ -48,7 +48,7 @@ Extended Description Optional security extras module: "Fournit quelques protecti
 Extended Description PHPMailer: "Requis pour l'utilisation de toute fonctionnalité impliquant l'envoi d'e-mails.<br />{{Links.PHPMailer.PHPMailer}} est disponible via la licence {{Links.PHPMailer.License}}."
 Extended Description Project Honeypot module: "Bloque les requêtes des adresses IP répertoriées dans Project Honeypot."
 Extended Description Protocol blocker module: "Fournit la possibilité de bloquer des protocoles de requête spécifiques via la configuration (par exemple, HTTP/0.9, HTTP/1.1, SPDY/3.0, etc). Remarque\_: N'aura aucun effet pour les sites Web qui acheminent via des services qui réécrivent les requêtes pour tous utiliser exactement le même protocole, tel que Cloudflare."
-Extended Description Referrer spam module: "Le blocage basé sur le spam référent ne procure généralement aucun avantage de sécurité significatif, mais dans certains cas, cela pourrait être utile à certains utilisateurs pour rassembler plus d'informations sur les requêtes et pour pouvoir les signaler.<br />L'installation de ce module installe également les polyfills Symfony pour {{Links.Symfony.Intl/Idn}} (car ce module nécessite la fonctionnalité Idn, que ne toutes pas les installations PHP fournissent par défaut), disponibles via la licence <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
+Extended Description Referrer spam module: "Le blocage basé sur le spam référent ne procure généralement aucun avantage de sécurité significatif, mais dans certains cas, cela pourrait être utile à certains utilisateurs pour rassembler plus d'informations sur les requêtes et pour pouvoir les signaler.<br />L'installation de ce module installe également les polyfills Symfony pour {{Links.Symfony.Intl/Idn}} (car ce module nécessite la fonctionnalité Idn, que ne toutes pas les installations PHP fournissent par défaut), disponibles via la licence {{Links.MIT}}."
 Extended Description Stop Forum Spam module: "Protège l'enregistrement et les pages de connexion contre les adresses IP répertoriées par SFS."
 Extended Description Tor blocker module: "Interdit l'accès à partir des nœuds de sortie Tor via les recherches DNSEL (le supporte IPv4 et IPv6)."
 Name AbuseIPDB module: "Module AbuseIPDB."
@@ -370,7 +370,7 @@ header_login: "Merci de vous connecter pour continuer."
 hints_asnlookup: "** La fonctionnalité de recherche ASN est nécessaire (par exemple, via le module IP-API ou BGPView)."
 hints_cause_fp: "*!! Forte probabilité de provoquer des faux positifs en raison de %s."
 hints_default_dns:
- FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.fr.md\#que-puis-je-utiliser-pour-default_dns" hreflang="fr">Que puis-je utiliser pour «\_default_dns\_»\_?</a></em>"
+ FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.fr.md\#que-puis-je-utiliser-pour-default_dns" hreflang="fr-FR">Que puis-je utiliser pour «\_default_dns\_»\_?</a></em>"
 hints_duration:
  SI.: "La durée peut être décrite à l'aide du «\_Système international d'unités\_. Par exemple, <strong>1d2h3min4s</strong> ou <strong>1d 2h 3min 4s</strong> pour un jour, deux heures, trois minutes, quatre secondes, ou <strong>5min</strong> pour seulement cinq minutes."
  Temps d'arc.: "La durée peut être décrite en utilisant la notation temps d'arc. Par exemple, <strong>1d2°3′4″</strong> pour un jour, deux heures, trois minutes, quatre secondes, ou <strong>5″</strong> pour seulement cinq secondes."
@@ -380,7 +380,7 @@ hints_has_bypass: "* Cette option a un contournement correspondant sous <code cl
 hints_inspection: "* Destiné uniquement au débogage des règles auxiliaires. Non affiché pour les utilisateurs bloqués."
 hints_ipv6_on_32bit: "Remarque\_: Les recherches IPv6 peuvent ne pas fonctionner correctement sur certains systèmes 32 bits."
 hints_pdo_dsn:
- FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.fr.md\#user-content-HOW_TO_USE_PDO" hreflang="fr">Qu'est-ce qu'un «\_PDO DSN\_»\_? Comment utiliser PDO avec CIDRAM\_?</a></em>"
+ FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.fr.md\#user-content-HOW_TO_USE_PDO" hreflang="fr-FR">Qu'est-ce qu'un «\_PDO DSN\_»\_? Comment utiliser PDO avec CIDRAM\_?</a></em>"
 hints_shorthand:
  0.: "Si votre site Web a besoin d'accès via LAN ou localhost, ne bloquez pas cela. Sinon, vous pouvez bloquer cela."
  1.: "Aucun des fichiers de signature défaut n'utilisent pas cela, mais il est néanmoins supporté au cas où cela pourrait être utile à certains utilisateurs."
@@ -454,7 +454,7 @@ info_some_useful_links: |
        <li><span class="comCat">Autres outils, ressources, services, etc. utiles.</span>
          <ul class="comSub">
            <li>{{Links.SFS}} – Maintient une base de données des spammeurs connus sur les forums. Utile pour protéger les sites Web et les forums contre les spammeurs.</li>
-           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Obtenir les CIDR des ASNs, Déterminer les relations entre ASNs, découvrez les ASN basés sur les noms de réseaux, etc.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Obtenir les CIDR des ASNs, Déterminer les relations entre ASNs, découvrez les ASN basés sur les noms de réseaux, etc.</li>
            <li>{{Links.BGPView}} – Obtenir les CIDR des ASNs, Déterminer les relations entre ASNs, découvrez les ASN basés sur les noms de réseaux, etc.</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar par Qrator</a> – Outil utile pour vérifier la connectivité des ASN ainsi pour diverses autres informations sur les ASNs.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Le projet Spamhaus</a> – Affiche les rapports concernant les taux d'infection par botnet pour les ASN.</li>
@@ -717,6 +717,7 @@ response_checksum_error: "Erreur de la somme de contrôle\_! Fichier rejeté\_!"
 response_cli_bad_chain: "La commande %s ne peut pas être enchaîné de cette façon, désolé."
 response_cli_bad_command: "Je ne comprends pas cette commande, désolé."
 response_cli_cant_write: "Je ne peux pas écrire à «\_%s\_», désolé."
+response_cli_finished_writing: "L'écriture sur %s s'est terminé."
 response_cli_no_analyse: "Il n'y a rien à analyser, désolé."
 response_cli_no_print: "Il n'y a rien à imprimer, désolé."
 response_cli_no_write: "Il n'y a rien à écrire, désolé."
@@ -754,6 +755,7 @@ response_not_available_at_upstream: "Non disponible en amont."
 response_passed: "Passé"
 response_please_check_config: "Vérifier votre configuration afin d'assurer que le module nouvellement installé se comportera comme vous le souhaitez."
 response_ready_to_install: "Prêt à installer."
+response_redirected: "Redirigé"
 response_release_notes: "<a href="%s"><span class="navicon link"></span>Notes de version pour %s.</a>"
 response_rename_error: "Échec du renomment\_!"
 response_repair_process_completed: "Le processus de réparation a été un succès."
@@ -899,7 +901,7 @@ tip_range: "Bonjour, {username}.<br />Cette page affiche des informations statis
 tip_rate_limiting: "Bonjour, {username}.<br />Cette page affiche l'utilisation et la disponibilité actuelles des quotas en ce qui concerne la limitation du débit."
 tip_rate_limiting_disabled: "Remarque\_: La limitation du débit est actuellement désactivé, mais peut être activé via la page de configuration."
 tip_sections_list: "Bonjour, {username}.<br />Cette page répertorie les sections qui existent dans les fichiers de signatures actuellement actifs."
-tip_see_the_documentation: "Voir la <a href="https://github.com/CIDRAM/Docs/blob/master/readme.fr.md\#user-content-SECTION5" hreflang="fr" rel="noopener external">documentation</a> pour information sur les différentes directives de la configuration et leurs objectifs."
+tip_see_the_documentation: "Voir la <a href="https://github.com/CIDRAM/Docs/blob/master/readme.fr.md\#user-content-SECTION5" hreflang="fr-FR" rel="noopener external">documentation</a> pour information sur les différentes directives de la configuration et leurs objectifs."
 tip_statistics: "Bonjour, {username}.<br />Cette page présente certaines statistiques d'utilisation concernant votre installation pour CIDRAM."
 tip_statistics_disabled: "Remarque\_: Le suivi des statistiques est actuellement désactivé, mais peut être activé via la page de configuration."
 tip_subtractor: "Bonjour, {username}.<br />Le soustracteur peut être utilisé pour soustraire une gamme d'IP/d'CIDR/des masques de réseau d'une autre."

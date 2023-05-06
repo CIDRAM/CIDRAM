@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2023.04.18).
+ * This file: General methods used by the front-end (last modified: 2023.05.06).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1325,9 +1325,11 @@ trait FrontEndMethods
      *
      * @param string|array $Methods The list of methods or commands to execute.
      * @param bool $Queue Whether to queue the operation or perform immediately.
+     * @param int $BytesRemoved The number of bytes removed (optional).
+     * @param int $BytesAdded The number of bytes added (optional).
      * @return void
      */
-    private function executor($Methods = '', bool $Queue = false): void
+    private function executor($Methods = '', bool $Queue = false, ?int &$BytesRemoved = null, ?int &$BytesAdded = null): void
     {
         if ($Queue && $Methods !== '') {
             /** Guard. */
@@ -1353,7 +1355,7 @@ trait FrontEndMethods
                 $this->CIDRAM['ExecutorQueue'] = [];
 
                 /** Iterate through the executor queue. */
-                $this->executor($Items);
+                $this->executor($Items, false, $BytesRemoved, $BytesAdded);
             }
             return;
         }
@@ -1366,7 +1368,7 @@ trait FrontEndMethods
             /** Guard. */
             if (is_array($Method)) {
                 foreach ($Method as $Item) {
-                    $this->executor($Item);
+                    $this->executor($Item, false, $BytesRemoved, $BytesAdded);
                 }
                 continue;
             }
@@ -1381,7 +1383,7 @@ trait FrontEndMethods
                 foreach ($Iterable as $Key => $Value) {
                     $Arr[] = str_replace(['{' . $Tokens[2] . '}', '{' . $Tokens[3] . '}'], [$Key, $Value], $Tokens[4]);
                 }
-                $this->executor($Arr);
+                $this->executor($Arr, false, $BytesRemoved, $BytesAdded);
                 continue;
             }
 
@@ -1389,13 +1391,13 @@ trait FrontEndMethods
             $Method = $this->CIDRAM['Operation']->ifCompare($this, $Method);
 
             if (method_exists($this, $Method)) {
-                $this->{$Method}();
+                $this->{$Method}($BytesRemoved, $BytesAdded);
             } elseif (($Pos = strpos($Method, ' ')) !== false) {
                 $Params = substr($Method, $Pos + 1);
                 $Method = substr($Method, 0, $Pos);
                 if (method_exists($this, $Method)) {
                     $Params = $this->CIDRAM['Operation']->ifCompare($this, $Params);
-                    $this->{$Method}($Params);
+                    $this->{$Method}($Params, $BytesRemoved, $BytesAdded);
                 }
             }
         }

@@ -234,3 +234,5 @@
 [2023.04.25; Maikuolan]: Added an option to the rate limiting exceptions to enable requests to the CIDRAM front-end to be exempted from rate limiting (#457).
 
 [2023.05.03; Bug-fix; Maikuolan]: Under specific circumstances, the front-end updater would sometimes attempt to (de/re)activate non-activable components; Fixed (#462).
+
+[2023.05.06; Maikuolan]: Slightly improved some peripheral updater functionality.

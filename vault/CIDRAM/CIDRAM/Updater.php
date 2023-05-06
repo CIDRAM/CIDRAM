@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods for updating CIDRAM components (last modified: 2023.05.03).
+ * This file: Methods for updating CIDRAM components (last modified: 2023.05.06).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -19,9 +19,11 @@ trait Updater
      * Sometimes used by the updater to partially patch parts of files.
      *
      * @param string $Query The instruction to execute.
+     * @param int $BytesRemoved The number of bytes removed (optional).
+     * @param int $BytesAdded The number of bytes added (optional).
      * @return bool Success or failure.
      */
-    private function in(string $Query): bool
+    private function in(string $Query, ?int &$BytesRemoved = null, ?int &$BytesAdded = null): bool
     {
         if (
             !isset($this->CIDRAM['Updater-IO']) ||
@@ -48,9 +50,24 @@ trait Updater
 
         /** Fetch file content. */
         $Data = $this->CIDRAM['Updater-IO']->readFile($this->Vault . $QueryParts[1]);
+        $SizeDiff = strlen($Data);
 
         /** Replace file content. */
         $Data = strtolower($QueryParts[2]) === 'preg_replace' ? preg_replace($QueryParts[3], $QueryParts[4], $Data) : str_replace($QueryParts[3], $QueryParts[4], $Data);
+        $SizeDiff -= strlen($Data);
+
+        /** Calculate bytes. */
+        if ($SizeDiff > 0) {
+            if ($BytesRemoved !== null) {
+                $BytesRemoved += $SizeDiff;
+            }
+        } else {
+            if ($BytesAdded !== null) {
+                $BytesAdded -= $SizeDiff;
+            } elseif ($BytesRemoved !== null) {
+                $BytesRemoved += $SizeDiff;
+            }
+        }
 
         /** Write and return. */
         return $this->CIDRAM['Updater-IO']->writeFile($this->Vault . $QueryParts[1], $Data);
@@ -74,21 +91,40 @@ trait Updater
      * Sometimes used by the updater to delete files via metadata commands.
      *
      * @param string $File The file to delete.
+     * @param int $BytesRemoved The number of bytes removed (optional).
      * @return bool Success or failure.
      */
-    private function delete(string $File): bool
+    private function delete(string $File, ?int &$BytesRemoved = null): bool
     {
         if (preg_match('~^(\'.*\'|".*")$~', $File)) {
             $File = substr($File, 1, -1);
         }
         if ($File !== '' && file_exists($this->Vault . $File) && $this->freeFromTraversal($File)) {
+            $Size = filesize($this->Vault . $File);
             if (!unlink($this->Vault . $File)) {
                 return false;
+            }
+            if ($BytesRemoved !== null) {
+                $BytesRemoved += $Size;
             }
             $this->deleteDirectory($File);
             return true;
         }
         return false;
+    }
+
+    /**
+     * Sometimes used by the updater to update timestamps or create temporary files.
+     *
+     * @param string $File The file to target.
+     * @return bool Success or failure.
+     */
+    private function touch(string $File): bool
+    {
+        if (preg_match('~^(\'.*\'|".*")$~', $File)) {
+            $File = substr($File, 1, -1);
+        }
+        return $this->freeFromTraversal($File) ? touch($this->Vault . $File) : false;
     }
 
     /**
@@ -635,7 +671,7 @@ trait Updater
                                     $FileMeta['Checksum']
                                 );
                                 if (!empty($this->Components['RemoteMeta'][$ThisTarget]['On Checksum Error'])) {
-                                    $this->executor($this->Components['RemoteMeta'][$ThisTarget]['On Checksum Error']);
+                                    $this->executor($this->Components['RemoteMeta'][$ThisTarget]['On Checksum Error'], $BytesRemoved, $BytesAdded);
                                 }
                                 $Rollback = true;
                                 continue 2;
@@ -652,7 +688,7 @@ trait Updater
                                 $this->L10N->getString('response_sanity_1')
                             );
                             if (!empty($this->Components['RemoteMeta'][$ThisTarget]['On Sanity Error'])) {
-                                $this->executor($this->Components['RemoteMeta'][$ThisTarget]['On Sanity Error']);
+                                $this->executor($this->Components['RemoteMeta'][$ThisTarget]['On Sanity Error'], $BytesRemoved, $BytesAdded);
                             }
                             $Rollback = true;
                             continue 2;
@@ -725,12 +761,12 @@ trait Updater
                     ) {
                         $this->FE['state_msg'] .= $this->L10N->getString('response_component_successfully_installed');
                         if (!empty($this->Components['RemoteMeta'][$ThisTarget]['When Install Succeeds'])) {
-                            $this->executor($this->Components['RemoteMeta'][$ThisTarget]['When Install Succeeds']);
+                            $this->executor($this->Components['RemoteMeta'][$ThisTarget]['When Install Succeeds'], $BytesRemoved, $BytesAdded);
                         }
                     } else {
                         $this->FE['state_msg'] .= $this->L10N->getString('response_component_successfully_updated');
                         if (!empty($this->Components['RemoteMeta'][$ThisTarget]['When Update Succeeds'])) {
-                            $this->executor($this->Components['RemoteMeta'][$ThisTarget]['When Update Succeeds']);
+                            $this->executor($this->Components['RemoteMeta'][$ThisTarget]['When Update Succeeds'], $BytesRemoved, $BytesAdded);
                         }
                     }
 
@@ -756,12 +792,12 @@ trait Updater
                 ) {
                     $this->FE['state_msg'] .= $this->L10N->getString('response_failed_to_install');
                     if (!empty($this->Components['RemoteMeta'][$ThisTarget]['When Install Fails'])) {
-                        $this->executor($this->Components['RemoteMeta'][$ThisTarget]['When Install Fails']);
+                        $this->executor($this->Components['RemoteMeta'][$ThisTarget]['When Install Fails'], $BytesRemoved, $BytesAdded);
                     }
                 } else {
                     $this->FE['state_msg'] .= $this->L10N->getString('response_failed_to_update');
                     if (!empty($this->Components['RemoteMeta'][$ThisTarget]['When Update Fails'])) {
-                        $this->executor($this->Components['RemoteMeta'][$ThisTarget]['When Update Fails']);
+                        $this->executor($this->Components['RemoteMeta'][$ThisTarget]['When Update Fails'], $BytesRemoved, $BytesAdded);
                     }
                 }
             }
@@ -822,7 +858,7 @@ trait Updater
 
             $this->FE['state_msg'] .= $this->L10N->getString('response_component_successfully_uninstalled');
             if (!empty($this->Components['Meta'][$ID]['When Uninstall Succeeds'])) {
-                $this->executor($this->Components['Meta'][$ID]['When Uninstall Succeeds']);
+                $this->executor($this->Components['Meta'][$ID]['When Uninstall Succeeds'], $BytesRemoved);
             }
 
             /** Remove downstream meta. */
@@ -833,7 +869,7 @@ trait Updater
         } else {
             $this->FE['state_msg'] .= $this->L10N->getString('response_component_uninstall_error');
             if (!empty($this->Components['Meta'][$ID]['When Uninstall Fails'])) {
-                $this->executor($this->Components['Meta'][$ID]['When Uninstall Fails']);
+                $this->executor($this->Components['Meta'][$ID]['When Uninstall Fails'], $BytesRemoved);
             }
         }
         $this->formatFileSize($BytesRemoved);
@@ -1155,7 +1191,7 @@ trait Updater
                 /** Repair operation succeeded. */
                 $this->FE['state_msg'] .= $this->L10N->getString('response_repair_process_completed');
                 if (!empty($this->Components['Meta'][$ThisTarget]['When Repair Succeeds'])) {
-                    $this->executor($this->Components['Meta'][$ThisTarget]['When Repair Succeeds']);
+                    $this->executor($this->Components['Meta'][$ThisTarget]['When Repair Succeeds'], $BytesRemoved, $BytesAdded);
                 }
             } else {
                 $RepairFailed = true;
@@ -1163,7 +1199,7 @@ trait Updater
                 /** Repair operation failed. */
                 $this->FE['state_msg'] .= $this->L10N->getString('response_repair_process_failed');
                 if (!empty($this->Components['Meta'][$ThisTarget]['When Repair Fails'])) {
-                    $this->executor($this->Components['Meta'][$ThisTarget]['When Repair Fails']);
+                    $this->executor($this->Components['Meta'][$ThisTarget]['When Repair Fails'], $BytesRemoved, $BytesAdded);
                 }
             }
             $this->formatFileSize($BytesAdded);

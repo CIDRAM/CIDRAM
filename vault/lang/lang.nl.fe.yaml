@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2023.04.25).
+# This file: Dutch language data for the front-end (last modified: 2023.05.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -25,7 +25,7 @@
 ##/
 
 Extended Description Bypasses: "De standaard signature bypasses normaal opgenomen met de primaire pakket."
-Extended Description Chart.js: "Hiermee kan de frontend taartdiagrammen genereren.<br />{{Links.Chart.js}} is beschikbaar via de <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
+Extended Description Chart.js: "Hiermee kan de frontend taartdiagrammen genereren.<br />{{Links.Chart.js}} is beschikbaar via de {{Links.MIT}}-licentie."
 Extended Description IPv4: &ExtDesCloud "Blokkeert ongewenste cloud-diensten en niet-menselijke eindpunten."
 Extended Description IPv4-Bogons: &ExtDesBogons "Blokkeert bogon/martian CIDR's."
 Extended Description IPv4-ISPs: &ExtDesISPs "Blokkeert gevaarlijk en spammy ISP's (omvat multiplay-netwerken, die zowel menselijke als niet-menselijke eindpunten kunnen bevatten)."
@@ -49,7 +49,7 @@ Extended Description module_cookies.php: "Biedt een beperkte bescherming tegen g
 Extended Description module_extras.php: "Biedt een beperkte bescherming tegen verschillende aanvalsvectoren vaak gebruikt in aanvragen."
 Extended Description module_httpver.php: "Maakt het mogelijk om specifieke protocollen en HTTP-versies te blokkeren via de CIDRAM-configuratie."
 Extended Description module_projecthoneypot.php: "Blokkeert aanvragen van IP's die worden vermeld op Project Honeypot."
-Extended Description module_refspam.php: "Blokkering op basis van verwijzende spam levert over het algemeen geen betekenisvol beveiligingsvoordeel op, maar in sommige gevallen kan het nuttig zijn voor sommige gebruikers, voor het verzamelen van meer informatie over verzoeken en erover te rapporteren.<br />Door deze module te installeren, worden ook de Symfony-polyfills voor {{Links.Symfony.Intl/Idn}} en {{Links.Symfony.Mbstring}} geïnstalleerd (omdat deze module Idn-functionaliteit vereist, die niet alle PHP-installaties standaard bieden), beide die zijn beschikbaar via de <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a> licentie."
+Extended Description module_refspam.php: "Blokkering op basis van verwijzende spam levert over het algemeen geen betekenisvol beveiligingsvoordeel op, maar in sommige gevallen kan het nuttig zijn voor sommige gebruikers, voor het verzamelen van meer informatie over verzoeken en erover te rapporteren.<br />Door deze module te installeren, worden ook de Symfony-polyfills voor {{Links.Symfony.Intl/Idn}} en {{Links.Symfony.Mbstring}} geïnstalleerd (omdat deze module Idn-functionaliteit vereist, die niet alle PHP-installaties standaard bieden), beide die zijn beschikbaar via de {{Links.MIT}} licentie."
 Extended Description module_sfs.php: "Beschermt registratie en login tegen IP's die door SFS worden vermeld."
 Name Bypasses: "Standaard signature bypasses."
 Name CN_cidram.inc: "China IPv4-blokkeerlijst."
@@ -305,10 +305,10 @@ field_whitelisted_requests: "Verzoeken gemarkeerd als op de witte lijst"
 field_your_version: "Uw Versie"
 header_login: "Inloggen om verder te gaan."
 hints_default_dns:
- FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.nl.md\#user-content-wat-kan-ik-gebruiken-voor-default_dns" hreflang="nl">Wat kan ik gebruiken voor "default_dns"?</a></em>"
+ FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.nl.md\#user-content-wat-kan-ik-gebruiken-voor-default_dns" hreflang="nl-NL">Wat kan ik gebruiken voor "default_dns"?</a></em>"
 hints_ipv6_on_32bit: "Opmerking: IPv6-opzoeken mogelijk werken niet correct op sommige 32-bits systemen."
 hints_pdo_dsn:
- FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.nl.md\#user-content-HOW_TO_USE_PDO" hreflang="nl">Wat is een "PDO DSN"? Hoe kan ik PDO gebruiken met CIDRAM?</a></em>"
+ FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.nl.md\#user-content-HOW_TO_USE_PDO" hreflang="nl-NL">Wat is een "PDO DSN"? Hoe kan ik PDO gebruiken met CIDRAM?</a></em>"
 info_some_useful_links: |
  Enkele nuttige links:<br />
      <ul class="pieul">
@@ -328,7 +328,7 @@ info_some_useful_links: |
        <li><span class="comCat">Andere handige tools, bronnen, diensten, enz.</span>
          <ul class="comSub">
            <li>{{Links.SFS}} – Beheert een database van bekende forumspammers. Handig voor het beschermen van websites en forums tegen spammers.</li>
-           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Krijg CIDR's van ASN, bepalen ASN relaties, ontdek ASN's op basis van netwerknamen, enz.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Krijg CIDR's van ASN, bepalen ASN relaties, ontdek ASN's op basis van netwerknamen, enz.</li>
            <li>{{Links.BGPView}} – Krijg CIDR's van ASN, bepalen ASN relaties, ontdek ASN's op basis van netwerknamen, enz.</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar van Qrator</a> – Handig hulpmiddel voor het controleren van de connectiviteit van ASN's en ook voor diverse andere informatie over ASN's.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Het Spamhaus Project</a> – Geeft rapporten over botnet infectie tarieven voor ASN.</li>
@@ -587,6 +587,7 @@ response_not_satisfied: "Niet tevreden."
 response_passed: "Geslaagd"
 response_please_check_config: "Controleer uw configuratie om er zeker van te zijn dat de nieuw geïnstalleerde module zich zal gedragen zoals u wilt."
 response_ready_to_install: "Klaar om te installeren."
+response_redirected: "Omgeleid"
 response_rename_error: "Mislukt om de naam te veranderen!"
 response_repair_process_completed: "Reparatieproces voltooid."
 response_repair_process_failed: "Reparatieproces is mislukt."
@@ -715,7 +716,7 @@ tip_range_subtractor: "Hallo, {username}.<br />De reeks aftrekker kan worden geb
 tip_rate_limiting: "Hallo, {username}.<br />Deze pagina toont het huidige quotagebruik en beschikbaarheid met betrekking tot tarieflimiet."
 tip_rate_limiting_disabled: "Notitie: Tarieflimiet is momenteel uitgeschakeld, maar kan via de configuratiepagina worden ingeschakeld."
 tip_sections_list: "Hallo, {username}.<br />Deze pagina geeft een overzicht van de secties die bestaan in de actieve signatuurbestanden."
-tip_see_the_documentation: "Zie de <a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.nl.md\#user-content-SECTION6" hreflang="nl" rel="noopener external">documentatie</a> voor informatie over de verschillende configuratie richtlijnen en hun doeleinden."
+tip_see_the_documentation: "Zie de <a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.nl.md\#user-content-SECTION6" hreflang="nl-NL" rel="noopener external">documentatie</a> voor informatie over de verschillende configuratie richtlijnen en hun doeleinden."
 tip_statistics: "Hallo, {username}.<br />Deze pagina bevat een aantal basisgebruiksstatistieken voor uw CIDRAM-installatie."
 tip_statistics_disabled: "Notitie: Statistische tracking is momenteel uitgeschakeld, maar kan via de configuratiepagina worden ingeschakeld."
 tip_updates: "Hallo, {username}.<br />De updates pagina stelt u in staat om de verschillende CIDRAM componenten te installeren, verwijderen, en actualiseren (de core pakket, signatures, L10N bestanden, enz)."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2023.04.25).
+# This file: Latvian language data for the front-end (last modified: 2023.05.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -25,7 +25,7 @@
 ##/
 
 Extended Description Bypasses: "Noklusējuma paraksta apiešana faili, kas parasti ir iekļauti galvenajā paketē."
-Extended Description Chart.js: "Ļauj sektoru diagrammas izmantot administratīvai piekļuvei.<br />{{Links.Chart.js}} ir pieejams caur <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT licenci</a>."
+Extended Description Chart.js: "Ļauj sektoru diagrammas izmantot administratīvai piekļuvei.<br />{{Links.Chart.js}} ir pieejams caur {{Links.MIT}} licenci."
 Extended Description IPv4: &ExtDesCloud "Bloķē nevēlamus mākoņa pakalpojumus un necilvēku galapunktus."
 Extended Description IPv4-Bogons: &ExtDesBogons "Bloķē bogona CIDRs."
 Extended Description IPv4-ISPs: &ExtDesISPs "Bloķē bīstamus un surogātpastu ISPs (ietver daudzspēļu tīklus, kas var saturēt cilvēks galapunktus un nēcilvēks galapunktus)."
@@ -49,7 +49,7 @@ Extended Description module_cookies.php: "Nodrošina ierobežotu aizsardzību pr
 Extended Description module_extras.php: "Nodrošina ierobežotu aizsardzību pret dažādiem uzbrukumu vektoriem, kurus parasti izmanto pieprasījumos."
 Extended Description module_httpver.php: "Ļauj bloķēt noteiktus protokolus un HTTP versijas, izmantojot CIDRAM konfigurāciju."
 Extended Description module_projecthoneypot.php: "Bloķē pieprasījumus no IP, kas uzskaitīti vietnē Project Honeypot."
-Extended Description module_refspam.php: "Bloķēšana, pamatojoties uz novirzītāja surogātpastu, parasti nesniegs nozīmīgus drošības ieguvumus, taču dažos gadījumos tas varētu būt noderīgs dažiem lietotājiem, lai savāktu vairāk informācijas par pieprasījumiem un par iespēju par to ziņot.<br />Instalējot šo moduli, tiek instalēti arī Symfony polifilmi {{Links.Symfony.Intl/Idn}} un {{Links.Symfony.Mbstring}} (jo šim modulim ir nepieciešama Idn funkcionalitāte, ko ne visas PHP instalācijas nodrošina pēc noklusējuma), abi ir pieejami, izmantojot <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a> licenci."
+Extended Description module_refspam.php: "Bloķēšana, pamatojoties uz novirzītāja surogātpastu, parasti nesniegs nozīmīgus drošības ieguvumus, taču dažos gadījumos tas varētu būt noderīgs dažiem lietotājiem, lai savāktu vairāk informācijas par pieprasījumiem un par iespēju par to ziņot.<br />Instalējot šo moduli, tiek instalēti arī Symfony polifilmi {{Links.Symfony.Intl/Idn}} un {{Links.Symfony.Mbstring}} (jo šim modulim ir nepieciešama Idn funkcionalitāte, ko ne visas PHP instalācijas nodrošina pēc noklusējuma), abi ir pieejami, izmantojot {{Links.MIT}} licenci."
 Extended Description module_sfs.php: "Aizsargā reģistrācijas un ielogošanās lapas pret SFS uzskaitītajiem IP."
 Name Bypasses: "Noklusējuma paraksta apiešana."
 Name CN_cidram.inc: "Ķīnas IPv4 bloķēšanas saraksts."
@@ -328,7 +328,7 @@ info_some_useful_links: |
        <li><span class="comCat">Citi noderīgi rīki, resursi, pakalpojumi, utt.</span>
          <ul class="comSub">
            <li>{{Links.SFS}} – Uztur zināmu forumu surogātpasta izplatītāju datu bāzi. Noderīga vietņu un forumu aizsardzībai pret surogātpastu izplatītājiem.</li>
-           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Saņemiet CIDR no ASN, nosakiet ASN attiecības, atklājiet ASN pamatojoties uz tīkla nosaukumiem, utt.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Saņemiet CIDR no ASN, nosakiet ASN attiecības, atklājiet ASN pamatojoties uz tīkla nosaukumiem, utt.</li>
            <li>{{Links.BGPView}} – Saņemiet CIDR no ASN, nosakiet ASN attiecības, atklājiet ASN pamatojoties uz tīkla nosaukumiem, utt.</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar by Qrator</a> – Noderīgs rīks, lai pārbaudītu informāciju par ASN, pārbaudītu ASN savienojumu, utt.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">The Spamhaus Project</a> – Parāda ziņojumus par robottīkla inficēšanās biežumu ASN.</li>
@@ -587,6 +587,7 @@ response_not_satisfied: "Neapmierināts."
 response_passed: "Izturējis"
 response_please_check_config: "Lūdzu, pārbaudiet konfigurāciju, lai pārliecinātos, ka tikko instalētais modulis rīkosies atbilstoši iecerētajam."
 response_ready_to_install: "Gatavs instalēšanai."
+response_redirected: "Novirzīja"
 response_rename_error: "Pārdēvēt neizdevās!"
 response_repair_process_completed: "Remonta process pabeigts."
 response_repair_process_failed: "Remonta process neizdevās."

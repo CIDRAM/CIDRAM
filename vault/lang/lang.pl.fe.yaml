@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2023.04.25).
+# This file: Polish language data for the front-end (last modified: 2023.05.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -25,7 +25,7 @@
 ##/
 
 Extended Description Bypasses: "Domyślne pliki obejścia podpisów zwykle zawarte w pakiecie głównym."
-Extended Description Chart.js: "Umożliwia interfejsowi użytkownika generowanie wykresów kołowych.<br />{{Links.Chart.js}} jest dostępny za pośrednictwem licencji <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
+Extended Description Chart.js: "Umożliwia interfejsowi użytkownika generowanie wykresów kołowych.<br />{{Links.Chart.js}} jest dostępny za pośrednictwem licencji {{Links.MIT}}."
 Extended Description IPv4: &ExtDesCloud "Blokuje niechciane usługi w chmurze i punkty końcowe inne niż ludzkie."
 Extended Description IPv4-Bogons: &ExtDesBogons "Blokuje bogid/marsjańskie CIDR."
 Extended Description IPv4-ISPs: &ExtDesISPs "Blokuje niebezpieczne i spamerscy dostawcy usług internetowych (obejmuje sieci typu multiplay, które mogą zawierać zarówno ludzkie, jak i inne niż ludzkie punkty końcowe)."
@@ -49,7 +49,7 @@ Extended Description module_cookies.php: "Zapewnia pewne ograniczone zabezpiecze
 Extended Description module_extras.php: "Zapewnia pewne ograniczone zabezpieczenia przed różnymi wektorami ataków powszechnie używanymi w żądaniach."
 Extended Description module_httpver.php: "Umożliwia blokowanie określonych protokołów i wersji HTTP poprzez konfigurację CIDRAM."
 Extended Description module_projecthoneypot.php: "Blokuje żądania z adresów IP wymienionych w Project Honeypot."
-Extended Description module_refspam.php: "Blokowanie na podstawie spamu odsyłającego zwykle nie zapewnia żadnych znaczących korzyści bezpieczeństwa, ale w niektórych przypadkach może być przydatne dla niektórych użytkowników, do gromadzenia dodatkowych informacji na temat żądań i możliwości ich zgłaszania.<br />Zainstalowanie tego modułu powoduje również zainstalowanie polifillów Symfony dla {{Links.Symfony.Intl/Idn}} i {{Links.Symfony.Mbstring}} (ponieważ ten moduł wymaga funkcjonalności Idn, której domyślnie nie zapewniają wszystkie instalacje PHP), oba które są dostępne za pośrednictwem licencji <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
+Extended Description module_refspam.php: "Blokowanie na podstawie spamu odsyłającego zwykle nie zapewnia żadnych znaczących korzyści bezpieczeństwa, ale w niektórych przypadkach może być przydatne dla niektórych użytkowników, do gromadzenia dodatkowych informacji na temat żądań i możliwości ich zgłaszania.<br />Zainstalowanie tego modułu powoduje również zainstalowanie polifillów Symfony dla {{Links.Symfony.Intl/Idn}} i {{Links.Symfony.Mbstring}} (ponieważ ten moduł wymaga funkcjonalności Idn, której domyślnie nie zapewniają wszystkie instalacje PHP), oba które są dostępne za pośrednictwem licencji {{Links.MIT}}."
 Extended Description module_sfs.php: "Chroni strony rejestracji i logowania przed adresami IP wymienionymi przez SFS."
 Name Bypasses: "Domyślne obejścia podpisu."
 Name CN_cidram.inc: "Blokowa lista IPv4 dla Chin."
@@ -329,7 +329,7 @@ info_some_useful_links: |
        <li><span class="comCat">Inne przydatne narzędzia, zasoby, usługi, itp.</span>
          <ul class="comSub">
            <li>{{Links.SFS}} – Prowadzi bazę danych znanych spamerów na forum. Przydatny do ochrony stron internetowych i forów przed spamerami.</li>
-           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Pobierz CIDRy z ASNy, określ relacje ASN, odkryj ASNy na podstawie nazw sieci, itp.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Pobierz CIDRy z ASNy, określ relacje ASN, odkryj ASNy na podstawie nazw sieci, itp.</li>
            <li>{{Links.BGPView}} – Pobierz CIDRy z ASNy, określ relacje ASN, odkryj ASNy na podstawie nazw sieci, itp.</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar by Qrator</a> – Przydatne narzędzie do sprawdzania połączeń ASN, a także różnych innych informacji o ASN.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">The Spamhaus Project</a> – Wyświetla raporty dotyczące częstości infekcji botnetem dla ASNy.</li>
@@ -592,6 +592,7 @@ response_not_satisfied: "Niespełnione."
 response_passed: "Wszystko dobrze"
 response_please_check_config: "Sprawdź swoją konfigurację, aby upewnić się, że nowo zainstalowany moduł będzie zachowywał się zgodnie z przeznaczeniem."
 response_ready_to_install: "Gotowy do instalacji."
+response_redirected: "Przekierowany"
 response_rename_error: "Nie zmieniłem nazwy!"
 response_repair_process_completed: "Zakończenie procesu naprawy."
 response_repair_process_failed: "Niepowodzenie procesu naprawy."

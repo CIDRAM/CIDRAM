@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2023.04.25).
+# This file: Norwegian language data for the front-end (last modified: 2023.05.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -25,7 +25,7 @@
 ##/
 
 Extended Description Bypasses: "Standard-signatur-bypass-filene som normalt følger med hovedpakken."
-Extended Description Chart.js: "Gjør det mulig for frontendens å generere pajediagrammer.<br />{{Links.Chart.js}} er tilgjengelig via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
+Extended Description Chart.js: "Gjør det mulig for frontendens å generere pajediagrammer.<br />{{Links.Chart.js}} er tilgjengelig via {{Links.MIT}}-lisensen."
 Extended Description IPv4: &ExtDesCloud "Blokkerer uønskede sky-tjenester og ikke-menneskelige endepunkter."
 Extended Description IPv4-Bogons: &ExtDesBogons "Blokkerer bogon/martian CIDRer."
 Extended Description IPv4-ISPs: &ExtDesISPs "Blokkerer farlige og spam-fylte ISPer (inkluderer flerspillnettverk, som kan inneholde både menneskelige og ikke-menneskelige endepunkter)."
@@ -49,7 +49,7 @@ Extended Description module_cookies.php: "Gir noen begrensede beskyttelser mot f
 Extended Description module_extras.php: "Gir noen begrensede beskyttelser mot ulike angrepsvektorer som ofte brukes i forespørsler."
 Extended Description module_httpver.php: "Gjør det mulig å blokkere spesifikke protokoller og HTTP-versjoner gjennom CIDRAM-konfigurasjonen."
 Extended Description module_projecthoneypot.php: "Blokkerer forespørsler fra IPer oppført på Project Honeypot."
-Extended Description module_refspam.php: "Blokkering basert på referansesøppel vil vanligvis ikke gi noen meningsfull sikkerhetsgevinst, men i noen tilfeller kan det være nyttig for noen brukere, for å samle mer informasjon om forespørsler og for å kunne rapportere det.<br />Ved å installere denne modulen installeres også Symfony-polyfyllene for {{Links.Symfony.Intl/Idn}} og {{Links.Symfony.Mbstring}} (fordi denne modulen krever Idn-funksjonalitet, som ikke alle PHP-installasjoner leverer som standard), begge som er tilgjengelige via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a> lisensen."
+Extended Description module_refspam.php: "Blokkering basert på referansesøppel vil vanligvis ikke gi noen meningsfull sikkerhetsgevinst, men i noen tilfeller kan det være nyttig for noen brukere, for å samle mer informasjon om forespørsler og for å kunne rapportere det.<br />Ved å installere denne modulen installeres også Symfony-polyfyllene for {{Links.Symfony.Intl/Idn}} og {{Links.Symfony.Mbstring}} (fordi denne modulen krever Idn-funksjonalitet, som ikke alle PHP-installasjoner leverer som standard), begge som er tilgjengelige via {{Links.MIT}} lisensen."
 Extended Description module_sfs.php: "Beskytter registrerings og innloggingssider mot IP-adresser oppført av SFS."
 Name Bypasses: "Standard-signatur-bypassene."
 Name CN_cidram.inc: "Kina IPv4-blokkliste."
@@ -98,7 +98,7 @@ config_bypasses_used: "Hvilke bypasser skal brukes?"
 config_experimental: "Ustabil/Eksperimentell!"
 config_general: "Generell konfigurasjon (enhver kjernekonfigurasjon som ikke tilhører andre kategorier)."
 config_general_allow_gethostbyaddr_lookup: "Tillat gethostbyaddr oppslag når UDP er utilgjengelig? True = Ja [Standardverdi]; False = Nei."
-config_general_ban_override: "Overstyr "forbid_on_block" når "infraction_limit" overskrides? Når overstyrende: Blokkerte forespørsler returnerer en tom side (malfiler blir ikke brukt). 200 = Ikke overstyre [Standardverdi]. Andre verdier er de samme som tilgjengelige verdier for "forbid_on_block"."
+config_general_ban_override: "Overstyr «forbid_on_block» når «infraction_limit» overskrides? Når overstyrende: Blokkerte forespørsler returnerer en tom side (malfiler blir ikke brukt). 200 = Ikke overstyre [Standardverdi]. Andre verdier er de samme som tilgjengelige verdier for «forbid_on_block»."
 config_general_config_imports: "En kommaavgrenset liste over filer som skal importeres til CIDRAM-standardkonfigurasjonen. Vanligvis befolket av oppdateringssiden når du aktiverer komponenter som trenger det når det er nødvendig. I de fleste tilfeller kan ignorere det."
 config_general_default_algo: "Definerer hvilken algoritme som skal brukes for alle fremtidige passord og økter. Alternativer: PASSWORD_DEFAULT (standardverdi), PASSWORD_BCRYPT, PASSWORD_ARGON2I, PASSWORD_ARGON2ID (krever PHP &gt;= 7.3.0)."
 config_general_default_dns: "En kommaseparert liste over DNS-servere som skal brukes til vertsnavn-oppslag. Standardverdi = "8.8.8.8,8.8.4.4" (Google DNS). ADVARSEL: Ikke endre dette med mindre du vet hva du gjør!"
@@ -108,12 +108,12 @@ config_general_disable_webfonts: "Deaktiver webfonter? True = Ja [Standardverdi]
 config_general_disabled_channels: "Dette kan brukes til å forhindre CIDRAM i å bruke bestemte kanaler når du sender forespørsler (f.eks., når du oppdaterer, når du henter komponentmetadata, osv)."
 config_general_emailaddr: "Hvis du vil, du kan levere en e-postadresse her for å bli gitt til brukerne når de er blokkert, for dem å bruke som et kontaktpunkt for støtte og/eller assistanse i tilfelle de blir blokkert feilaktig eller i feil. ADVARSEL: Uansett hvilken e-postadresse du leverer her, det vil helt sikkert bli ervervet av spamboter og skraper i løpet av bruken her, og så, det anbefales sterkt at hvis du velger å levere en e-postadresse her, at du sørger for at e-postadressen du oppgir her er en engangsadresse og/eller en adresse som du ikke bryr deg om å bli spammet (dvs., du vil sannsynligvis ikke bruke dine primære personlige eller primære virksomhets e-postadresser)."
 config_general_emailaddr_display_style: "Hvordan foretrekker du e-postadressen som skal presenteres for brukerne?"
-config_general_empty_fields: "Hvordan skal CIDRAM håndtere tomme felter når du logger og viser blokkhendelseinformasjon? "include" = Inkluder tomme felt. "omit" = Utelater tomme felt [standardverdi]."
+config_general_empty_fields: "Hvordan skal CIDRAM håndtere tomme felter når du logger og viser blokkhendelseinformasjon? «include» = Inkluder tomme felt. «omit» = Utelater tomme felt [standardverdi]."
 config_general_error_log: "En fil for logging av eventuelle ikke-fatale feil som er oppdaget. Angi et filnavn, eller la det være tomt for å deaktivere."
 config_general_error_log_stages: "En liste over stadiene i utførelseskjeden som skal ha loggført eventuelle genererte feil."
 config_general_events: "Filene som er oppført her, lastes inn rett etter hendelsesbehandlerfilen. Vanligvis befolket av oppdateringssiden når du aktiverer komponenter som trenger det når det er nødvendig. I de fleste tilfeller kan ignorere det."
 config_general_forbid_on_block: "Hvilken HTTP-statusmelding skal CIDRAM sende når blokkerer forespørsler?"
-config_general_force_hostname_lookup: "Håndheve vertsnavn-oppslag? True = Ja; False = Nei [Standardverdi]. Vertsnavn-oppslag utføres normalt på en "etter behov" basis, men kan håndheves for alle forespørsler. Å gjøre det kan være nyttig som et middel til å gi mer detaljert informasjon i loggfilene, men kan også ha en litt negativ effekt på ytelsen."
+config_general_force_hostname_lookup: "Håndheve vertsnavn-oppslag? True = Ja; False = Nei [Standardverdi]. Vertsnavn-oppslag utføres normalt på en «etter behov» basis, men kan håndheves for alle forespørsler. Å gjøre det kan være nyttig som et middel til å gi mer detaljert informasjon i loggfilene, men kan også ha en litt negativ effekt på ytelsen."
 config_general_frontend_log: "Fil for å logge innloggingsforsøk på frontenden. Angi et filnavn, eller la det være tomt for å deaktivere."
 config_general_hide_version: "Skjul versjoninformasjon fra logger og sideutdata? True = Ja; False = Nei [Standardverdi]."
 config_general_ipaddr: "Hvor finner jeg IP-adressen til å koble til forespørsler? (Nyttig for tjenester som Cloudflare og så videre). Standardverdi = REMOTE_ADDR. ADVARSEL: Ikke endre dette med mindre du vet hva du gjør!"
@@ -134,12 +134,12 @@ config_general_outbound_request_log: "En fil for å logge resultatene av eventue
 config_general_protect_frontend: "Angir om beskyttelsen som normalt leveres av CIDRAM, skal brukes på frontenden. True = Ja [Standardverdi]; False = Nei."
 config_general_search_engine_verification: "Forsøk å bekrefte forespørsler fra søkemotorer? Verifiserende søkemotorer sikrer at de ikke vil bli utestengt som et resultat av å overskride infraksjonsgrensen (utestenging mot søkemotorer fra nettstedet ditt vil vanligvis ha en negativ effekt på søkemotorrangeringen din, SEO, osv). Når verifisert, kan søkemotorer bli blokkert som normalt, men vil ikke bli utestengt. Når det ikke er verifisert, er det mulig for dem å bli utestengt som et resultat av å overskride infraksjonsgrensen. Dess, søkemotor verifisering gir beskyttelse mot falske søkemotor forespørsler og mot potensielt skadelige enheter som later til å være søkemotorer (slike forespørsler vil bli blokkert når søkemotor verifisering er aktivert). True = Aktiver søkemotor verifisering [Standardverdi]; False = Deaktiver søkemotor verifisering."
 config_general_signatures_update_event_log: "En fil for logging når signaturer oppdateres via frontend. Angi et filnavn, eller la det være tomt for å deaktivere."
-config_general_silent_mode: "Bør CIDRAM stille omdirigere blokkerte tilgangsforsøk i stedet for å vise "tilgang nektet" siden? Hvis ja, spesifiser stedet for å omdirigere blokkerte tilgangsforsøk til. Hvis nei, la denne variablen være tom."
+config_general_silent_mode: "Bør CIDRAM stille omdirigere blokkerte tilgangsforsøk i stedet for å vise «tilgang nektet» siden? Hvis ja, spesifiser stedet for å omdirigere blokkerte tilgangsforsøk til. Hvis nei, la denne variablen være tom."
 config_general_social_media_verification: "Forsøk å verifisere sosial media forespørsler? Sosial media verifisering gir beskyttelse mot falske sosiale medier forespørsler (slike forespørsler vil bli blokkert). True = Aktiver sosial media verifisering [Standardverdi]; False = Deaktiver sosial media verifisering."
 config_general_statistics: "Spor CIDRAM bruksstatistikk? True = Ja; False = Nei [Standardverdi]."
 config_general_time_format: "Dato/tid notasjonsformat som brukes av CIDRAM. Ytterligere alternativer kan legges på forespørsel."
 config_general_time_offset: "Tidssone forskjøvet i minutter."
-config_general_timezone: "Dette brukes til å spesifisere tidssonen som skal brukes (f.eks., Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, etc). Spesifiser "SYSTEM" for å la PHP håndtere dette for deg automatisk."
+config_general_timezone: "Dette brukes til å spesifisere tidssonen som skal brukes (f.eks., Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, etc). Spesifiser «SYSTEM» for å la PHP håndtere dette for deg automatisk."
 config_general_truncate: "Skjær loggfiler når de kommer til en viss størrelse? Verdi er den maksimale størrelsen i B/KB/MB/GB/TB som en loggfil kan vokse til før den blir avkortet. Standardverdi på 0KB deaktiverer avkorting (loggfilene kan vokse på ubestemt tid). Merk: Gjelder for individuelle loggfiler! Størrelsen på loggfiler anses ikke kollektivt."
 config_hcaptcha: "Konfigurasjon for HCaptcha (gir en måte for mennesker å gjenvinne tilgang når de blokkeres)."
 config_hcaptcha_api: &CaptchaAPI "Hvilken API skal du bruke?"
@@ -156,7 +156,7 @@ config_hcaptcha_sitekey: *CaptchaDashboard
 config_hcaptcha_usemode: &CaptchaUseMode "Når skal CAPTCHA tilbys? Merk: Hvitlistet eller verifiserte og ikke-blokkerte forespørsler trenger aldri å fullføre en CAPTCHA. Merk også: CAPTCHA-er kan gi et nyttig, ekstra lag med beskyttelse mot roboter og ulike typer ondsinnede automatiske forespørsler, men vil ikke gi noen beskyttelse mot et ondsinnet menneske."
 config_legal: "Konfigurasjon for juridiske krav."
 config_legal_omit_hostname: "Utelat vertsnavn fra logger? True = Ja; False = Nei [Standardverdi]."
-config_legal_omit_ip: "Utelat IP-adresser fra logger? True = Ja; False = Nei [Standardverdi]. Merk: "pseudonymise_ip_addresses" blir overflødig når "omit_ip" er "true"."
+config_legal_omit_ip: "Utelat IP-adresser fra logger? True = Ja; False = Nei [Standardverdi]. Merk: "pseudonymise_ip_addresses" blir overflødig når «omit_ip» er «true»."
 config_legal_omit_ua: "Utelat brukeragenter fra logger? True = Ja; False = Nei [Standardverdi]."
 config_legal_privacy_policy: "Adressen til en relevant personvernpolicy som skal vises i bunnteksten til genererte sider. Angi en nettadresse, eller la det være tomt for å deaktivere."
 config_legal_pseudonymise_ip_addresses: "Pseudonymisere IP-adresser når du logger? True = Ja [Standardverdi]; False = Nei."
@@ -186,7 +186,7 @@ config_signatures_block_attacks: "Blokker CIDRer assosiert med angrep og annen u
 config_signatures_block_bogons: "Blokker bogon/martian CIDRer? Hvis du forventer tilkoblinger til nettstedet ditt fra ditt lokale nettverk, fra localhost eller fra ditt LAN, bør dette direktivet settes til false. Hvis du ikke forventer slike tilkoblinger, bør dette direktivet settes til true."
 config_signatures_block_cloud: "Blokker CIDRer identifisert som tilhørende web-verter og sky-tjenester? Hvis du driver en API-tjeneste fra nettstedet ditt eller hvis du forventer at andre nettsteder skal koble til nettstedet ditt, bør dette settes til false. Hvis du ikke gjør det, da bør dette direktivet settes til true."
 config_signatures_block_generic: "Blokker CIDRer anbefales vanligvis for svarteliste? Dette dekker alle signaturer som ikke er merket som en del av noen av de andre mer spesifikke signaturkategoriene."
-config_signatures_block_legal: "Blokker CIDRer som svar på juridiske forpliktelser? Dette direktivet bør normalt ikke ha noen effekt, fordi CIDRAM ikke som standard forbinder noen CIDRer med "juridiske forpliktelser" som standard, men det eksisterer likevel som et ekstra kontrollmål til fordel for eventuelle tilpassede signaturfiler eller moduler som kan eksistere av juridiske årsaker."
+config_signatures_block_legal: "Blokker CIDRer som svar på juridiske forpliktelser? Dette direktivet bør normalt ikke ha noen effekt, fordi CIDRAM ikke som standard forbinder noen CIDRer med «juridiske forpliktelser» som standard, men det eksisterer likevel som et ekstra kontrollmål til fordel for eventuelle tilpassede signaturfiler eller moduler som kan eksistere av juridiske årsaker."
 config_signatures_block_malware: "Blokker CIDRer knyttet til skadelig programvare? Dette inkluderer C&C-servere, infiserte maskiner, maskiner involvert i distribusjon av skadelig programvare, osv."
 config_signatures_block_proxies: "Blokker CIDRer som er identifisert som tilhørende proxy-tjenester eller VPNer? Hvis du trenger at brukerne skal kunne få tilgang til nettstedet ditt fra proxy-tjenester og VPNer, bør dette settes til false. Ellers, hvis du ikke trenger proxy-tjenester eller VPNer, bør dette direktivet settes til true som et middel til å forbedre sikkerheten."
 config_signatures_block_spam: "Blokker CIDRer som er utsatt for høy risiko for spam? Med mindre du opplever problemer når du gjør det, bør dette vanligvis alltid settes til true."
@@ -202,13 +202,13 @@ config_supplementary_cache_options_enable_apcu: "Dette angir om skal bruke APCu 
 config_supplementary_cache_options_enable_memcached: "Dette angir om skal bruke Memcached for caching. Standardverdi = False."
 config_supplementary_cache_options_enable_pdo: "Dette angir om skal bruke PDO for caching. Standardverdi = False."
 config_supplementary_cache_options_enable_redis: "Dette angir om skal bruke Redis for caching. Standardverdi = False."
-config_supplementary_cache_options_memcached_host: "Memcached vertsverdi. Standardverdi = "localhost"."
+config_supplementary_cache_options_memcached_host: "Memcached vertsverdi. Standardverdi = «localhost»."
 config_supplementary_cache_options_memcached_port: "Memcached portsverdi. Standardverdi = "11211"."
-config_supplementary_cache_options_pdo_dsn: "PDO DSN-verdi. Standardverdi = "mysql:dbname=cidram;host=localhost;port=3306"."
+config_supplementary_cache_options_pdo_dsn: "PDO DSN-verdi. Standardverdi = «mysql:dbname=cidram;host=localhost;port=3306»."
 config_supplementary_cache_options_pdo_password: "PDO passord."
 config_supplementary_cache_options_pdo_username: "PDO brukernavn."
 config_supplementary_cache_options_prefix: "Verdien som er spesifisert her vil bli lagt foran alle cache-oppføringsnøkler. Tom som standard. Når flere installasjoner eksisterer på samme server, dette kan være nyttig for å holde cachen deres atskilt fra hverandre."
-config_supplementary_cache_options_redis_host: "Redis vertsverdi. Standardverdi = "localhost"."
+config_supplementary_cache_options_redis_host: "Redis vertsverdi. Standardverdi = «localhost»."
 config_supplementary_cache_options_redis_port: "Redis portsverdi. Standardverdi = "6379"."
 config_supplementary_cache_options_redis_timeout: "Redis timeout-verdi. Standardverdi = "2.5"."
 config_template_data: "Konfigurasjon for maler og temaer."
@@ -303,10 +303,10 @@ field_whitelisted_requests: "Hvitlistede forespørsler"
 field_your_version: "Din Versjon"
 header_login: "Vennligst logg inn for å fortsette."
 hints_default_dns:
- FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.en.md\#user-content-WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="en-AU">Hva kan jeg bruke for "default_dns"?</a></em>"
+ FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.en.md\#user-content-WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="en-AU">Hva kan jeg bruke for «default_dns»?</a></em>"
 hints_ipv6_on_32bit: "Merk: IPv6-oppslag fungerer kanskje ikke riktig på enkelte 32-biters systemer."
 hints_pdo_dsn:
- FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">Hva er en "PDO DSN"? Hvordan kan jeg bruke PDO med CIDRAM?</a></em>"
+ FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">Hva er en «PDO DSN»? Hvordan kan jeg bruke PDO med CIDRAM?</a></em>"
 info_some_useful_links: |
  Noen nyttige lenker:<br />
      <ul class="pieul">
@@ -326,7 +326,7 @@ info_some_useful_links: |
        <li><span class="comCat">Andre nyttige verktøy, ressurser, tjenester, etc.</span>
          <ul class="comSub">
            <li>{{Links.SFS}} – Opprettholder en database med kjente forumspammere. Nyttig for å beskytte nettsteder og fora mot spammere.</li>
-           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Få CIDRer fra ASNer, fastslå ASN-relasjoner, oppdag ASN basert på nettverksnavn, osv.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Få CIDRer fra ASNer, fastslå ASN-relasjoner, oppdag ASN basert på nettverksnavn, osv.</li>
            <li>{{Links.BGPView}} – Få CIDRer fra ASNer, fastslå ASN-relasjoner, oppdag ASN basert på nettverksnavn, osv.</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar by Qrator</a> – Nyttig verktøy for å sjekke ASN-tilkobling og annen informasjon relatert til ASNer.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">The Spamhaus Project</a> – Viser rapporter om botnets infeksjonsrate for ASNer.</li>
@@ -358,7 +358,7 @@ label_aux_expiry: "Når regelen skal utløpe (valgfri):"
 label_aux_from: "Når regelen skal begynne (valgfri):"
 label_aux_http_status_code_override: "HTTP-statuskode overstyrer:"
 label_aux_logic_all: "For å utløse regelen må alle betingelser være oppfylt."
-label_aux_logic_any: "Eventuelle "likeverdige" (=) betingelse kan utløse regelen, så lenge alle "ikke likeverdige" (≠) betingelser også er oppfylt."
+label_aux_logic_any: "Eventuelle «likeverdige» (=) betingelse kan utløse regelen, så lenge alle «ikke likeverdige» (≠) betingelser også er oppfylt."
 label_aux_menu_action: "Hvis følgende betingelser er oppfylt, %s forespørselen."
 label_aux_menu_method: "Bruk %s for å teste betingelsene."
 label_aux_mode_edit: "Redigeringsmodus"
@@ -585,6 +585,7 @@ response_not_satisfied: "Ikke fornøyd."
 response_passed: "Bestått"
 response_please_check_config: "Kontroller konfigurasjonen for å sikre at den nylig installerte modulen vil oppføre seg slik du har tenkt deg."
 response_ready_to_install: "Klar til installasjon."
+response_redirected: "Omdirigert"
 response_rename_error: "Omdøpe mislyktes!"
 response_repair_process_completed: "Reparasjonsprosessen er fullført."
 response_repair_process_failed: "Reparasjonsprosessen mislyktes."
@@ -705,7 +706,7 @@ tip_fe_cookie_warning: "Merk: CIDRAM bruker en informasjonskapsel for å godkjen
 tip_file_manager: "Hallo, {username}.<br />Filbehandleren lar deg slette, redigere, laste opp og laste ned filer. Bruk med forsiktighet (du kan ødelegge installasjonen din med dette)."
 tip_fixer: "Hallo, {username}.<br />Signaturfilfikseren gir en måte å oppdage og fikse potensielle problemer i signaturfiler."
 tip_home: "Hallo, {username}.<br />Dette er hjemmesiden for frontenden av CIDRAM. Velg en lenke fra navigasjonsmenyen til venstre for å fortsette."
-tip_ip_aggregator: "Hallo, {username}.<br />IP-aggregatoren lar deg uttrykke IPer og CIDRer på den minste mulige måten. Skriv inn dataene som skal aggregeres og trykk "OK"."
+tip_ip_aggregator: "Hallo, {username}.<br />IP-aggregatoren lar deg uttrykke IPer og CIDRer på den minste mulige måten. Skriv inn dataene som skal aggregeres og trykk «OK»."
 tip_ip_test: "Hallo, {username}.<br />IP-testsiden lar deg teste om IP-adresser er blokkert av signaturene som er installert."
 tip_ip_test_switches: "(Når ikke valgt, blir bare signaturfiler testet mot)."
 tip_ip_tracking: "Hallo, {username}.<br />IP-sporing-siden lar deg sjekke sporingsstatus for IP-adresser, for å sjekke hvilken av dem som er blitt utestengt, og å oppheve utestengt status eller slutte å spore hvis du vil gjøre det."

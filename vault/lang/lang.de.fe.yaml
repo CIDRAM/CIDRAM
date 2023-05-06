@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2023.04.25).
+# This file: German language data for the front-end (last modified: 2023.05.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -26,7 +26,7 @@
 
 Extended Description Bypasses: "Die Standard-Signatur-Bypässe, die normalerweise im Hauptpaket enthalten sind."
 Extended Description CIDRAM: "Das Hauptpaket (Abzüglich der Unterschriften, Dokumentation, und Konfiguration)."
-Extended Description Chart.js: "Ermöglicht dem Frontend die Generierung von Kreisdiagrammen.<br />{{Links.Chart.js}} ist über die <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> verfügbar."
+Extended Description Chart.js: "Ermöglicht dem Frontend die Generierung von Kreisdiagrammen.<br />{{Links.Chart.js}} ist über die {{Links.MIT}}-Lizenz verfügbar."
 Extended Description IPv4: &ExtDesCloud "Blockiert unerwünschte Cloud-Services und nicht-menschliche Endpunkte."
 Extended Description IPv4-Bogons: &ExtDesBogons "Blockiert Bogon/Marsmensch CIDRs."
 Extended Description IPv4-ISPs: &ExtDesISPs "Blockiert gefährliche und spam-anfällig ISPs (umfasst Mehrspielnetzwerke, die sowohl menschliche als auch nichtmenschliche Endpunkte enthalten können)."
@@ -49,7 +49,7 @@ Extended Description module_cookies.php: "Bietet einige begrenzte Schutzmaßnahm
 Extended Description module_extras.php: "Bietet einige begrenzte Schutzmaßnahmen gegen verschiedene Angriffsvektoren häufig in Anfragen verwendet."
 Extended Description module_httpver.php: "Ermöglicht das Blockieren bestimmter Protokolle und HTTP-Versionen über die CIDRAM-Konfiguration."
 Extended Description module_projecthoneypot.php: "Blockiert Anfragen von IPs, die bei Project Honeypot aufgelistet sind."
-Extended Description module_refspam.php: "Das Blockieren auf der Basis von Referrer-Spam bietet im Allgemeinen keinen bedeutenden Sicherheitsvorteil, jedoch in einigen Fällen kann dies für einige Benutzer hilfreich sein, um weitere Informationen zur Anfragen zu sammeln und um sie zu melden.<br />Durch die Installation dieses Moduls werden auch die Symfony-Polyfills für {{Links.Symfony.Intl/Idn}} und {{Links.Symfony.Mbstring}} installiert (weil dieses Modul Idn-Funktionalität erfordert, die nicht alle PHP-Installationen standardmäßig bereitstellen), beide sind über die <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>-Lizenz erhältlich."
+Extended Description module_refspam.php: "Das Blockieren auf der Basis von Referrer-Spam bietet im Allgemeinen keinen bedeutenden Sicherheitsvorteil, jedoch in einigen Fällen kann dies für einige Benutzer hilfreich sein, um weitere Informationen zur Anfragen zu sammeln und um sie zu melden.<br />Durch die Installation dieses Moduls werden auch die Symfony-Polyfills für {{Links.Symfony.Intl/Idn}} und {{Links.Symfony.Mbstring}} installiert (weil dieses Modul Idn-Funktionalität erfordert, die nicht alle PHP-Installationen standardmäßig bereitstellen), beide sind über die {{Links.MIT}}-Lizenz erhältlich."
 Extended Description module_sfs.php: "Schützt die Registrierung und die Einloggen-Seiten vor den von SFS aufgelisteten IPs."
 Name Bypasses: "Standard-Signatur-Bypässe."
 Name CN_cidram.inc: "China IPv4 Blockliste."
@@ -305,10 +305,10 @@ field_whitelisted_requests: "Anfragen die als auf der Whitelist markiert sind"
 field_your_version: "Ihre Version"
 header_login: "Bitte einloggen zum Fortfahren."
 hints_default_dns:
- FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.de.md\#user-content-was-kann-ich-für-default_dns-verwenden" hreflang="de">Was kann ich für „default_dns“ verwenden?</a></em>"
+ FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.de.md\#user-content-was-kann-ich-für-default_dns-verwenden" hreflang="de-DE">Was kann ich für „default_dns“ verwenden?</a></em>"
 hints_ipv6_on_32bit: "Hinweis: IPv6-Lookups funktionieren auf einigen 32-Bit-Systemen möglicherweise nicht richtig."
 hints_pdo_dsn:
- FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.de.md\#user-content-HOW_TO_USE_PDO" hreflang="de">Was ist ein „PDO DSN“? Wie kann ich PDO mit CIDRAM verwenden?</a></em>"
+ FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.de.md\#user-content-HOW_TO_USE_PDO" hreflang="de-DE">Was ist ein „PDO DSN“? Wie kann ich PDO mit CIDRAM verwenden?</a></em>"
 info_some_useful_links: |
  Einige nützliche Links:<br />
      <ul class="pieul">
@@ -328,7 +328,7 @@ info_some_useful_links: |
        <li><span class="comCat">Andere nützliche Werkzeuge, Ressourcen, Dienste, u.s.w.</span>
          <ul class="comSub">
            <li>{{Links.SFS}} – Verwaltet eine Datenbank mit bekannten Forumspammern. Nützlich zum Schutz von Websites und Foren gegen Spammer.</li>
-           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Erhalten Sie CIDRs von ASNs, bestimmen Sie ASN-Beziehungen, entdecken Sie ASNs basierend auf Netzwerknamen, u.s.w.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Erhalten Sie CIDRs von ASNs, bestimmen Sie ASN-Beziehungen, entdecken Sie ASNs basierend auf Netzwerknamen, u.s.w.</li>
            <li>{{Links.BGPView}} – Erhalten Sie CIDRs von ASNs, bestimmen Sie ASN-Beziehungen, entdecken Sie ASNs basierend auf Netzwerknamen, u.s.w.</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar by Qrator</a> – Nützliches Werkzeug für die Überprüfung der Konnektivität von ASNs sowie für verschiedene andere Informationen über ASNs.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">The Spamhaus Project</a> – Zeigt Berichte über Botnet-Infektionsraten für ASNs.</li>
@@ -587,6 +587,7 @@ response_not_satisfied: "Nicht zufrieden."
 response_passed: "Bestanden"
 response_please_check_config: "Bitte überprüfen Sie Ihre Konfiguration um sicherzustellen dass das neu installierte Modul wie gewünscht verhält."
 response_ready_to_install: "Bereit zur Installation."
+response_redirected: "Umgeleitet"
 response_rename_error: "Umbenennung-Fehler!"
 response_repair_process_completed: "Reparaturvorgang abgeschlossen."
 response_repair_process_failed: "Reparaturvorgang fehlgeschlagen."
@@ -723,7 +724,7 @@ tip_range_subtractor: "Hallo, {username}.<br />Der Subtrahierer kann verwendet w
 tip_rate_limiting: "Hallo, {username}.<br />Diese Seite zeigt die aktuelle Kontingentnutzung und Verfügbarkeit in Bezug auf die Ratenbegrenzung."
 tip_rate_limiting_disabled: "Hinweis: Die Ratenbegrenzung ist derzeit deaktiviert, aber kann über die Konfigurationsseite aktiviert werden."
 tip_sections_list: "Hallo, {username}.<br />Auf dieser Seite wird aufgelistet, welche Sektionen in den derzeit aktiven Signaturdateien vorhanden sind."
-tip_see_the_documentation: "Siehe die <a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.de.md\#user-content-SECTION6" hreflang="de" rel="noopener external">Dokumentation</a> für Informationen über den verschiedenen Konfigurationseinstellungen und ihren Zwecken."
+tip_see_the_documentation: "Siehe die <a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.de.md\#user-content-SECTION6" hreflang="de-DE" rel="noopener external">Dokumentation</a> für Informationen über den verschiedenen Konfigurationseinstellungen und ihren Zwecken."
 tip_statistics: "Hallo, {username}.<br />Diese Seite zeigt einige grundlegende Nutzungsstatistiken zu Ihrer CIDRAM-Installation."
 tip_statistics_disabled: "Hinweis: Die Statistikverfolgung ist derzeit deaktiviert, aber kann über die Konfigurationsseite aktiviert werden."
 tip_updates: "Hallo, {username}.<br />Das Aktualisierungsseite macht es möglich für Sie zu installieren, zu deinstallieren und zu aktualisieren die verschiedenen Komponenten von CIDRAM (das Kernpaket, Signaturen, L10N-Dateien, u.s.w.)."

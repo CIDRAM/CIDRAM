@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2023.04.25).
+# This file: Vietnamese language data for the front-end (last modified: 2023.05.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -26,7 +26,7 @@
 
 Extended Description Bypasses: "Các tập tin đường tránh chữ ký mặc định thường bao gồm với gói thầu chính."
 Extended Description CIDRAM: "Các gói thầu chính (mà không có các tập tin chữ ký, tài liệu, và cấu hình)."
-Extended Description Chart.js: "Cho phép front-end tạo biểu đồ hình tròn.<br />{{Links.Chart.js}} có sẵn qua <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
+Extended Description Chart.js: "Cho phép front-end tạo biểu đồ hình tròn.<br />{{Links.Chart.js}} có sẵn thông qua giấy phép {{Links.MIT}}."
 Extended Description IPv4: &ExtDesCloud "Chặn dịch vụ điện toán đám mây không mong muốn và thiết bị đầu cuối không phải con người."
 Extended Description IPv4-Bogons: &ExtDesBogons "Chặn các CIDR bogon/martian."
 Extended Description IPv4-ISPs: &ExtDesISPs "Chặn ISP nguy hiểm và gửi thư rác (bao gồm các mạng nhiều chơi, có thể chứa cả điểm cuối của con người và không con người)."
@@ -49,7 +49,7 @@ Extended Description module_cookies.php: "Cung cấp một số bảo vệ hạn
 Extended Description module_extras.php: "Cung cấp một số bảo vệ hạn chế chống vectơ tấn công khác nhau thường được sử dụng trong các yêu cầu."
 Extended Description module_httpver.php: "Bạn có thể chặn các giao thức và phiên bản HTTP cụ thể thông qua cấu hình CIDRAM."
 Extended Description module_projecthoneypot.php: "Chặn các yêu cầu từ IP được liệt kê tại Project Honeypot."
-Extended Description module_refspam.php: "Chặn dựa trên spam giới thiệu thường không cung cấp bất kỳ lợi ích bảo mật có ý nghĩa nào, nhưng trong một số trường hợp, có thể hữu ích cho một số người dùng, để thu thập thêm thông tin về các yêu cầu và để có thể báo cáo nó.<br />Bằng cách cài đặt mô-đun này, các polyfill Symfony cho {{Links.Symfony.Intl/Idn}} và {{Links.Symfony.Mbstring}} cũng sẽ được cài đặt (bởi vì mô-đun này yêu cầu chức năng "Idn", và không phải tất cả các cài đặt PHP cung cấp nó theo mặc định). Cả hai đều có sẵn thông qua giấy phép <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
+Extended Description module_refspam.php: "Chặn dựa trên spam giới thiệu thường không cung cấp bất kỳ lợi ích bảo mật có ý nghĩa nào, nhưng trong một số trường hợp, có thể hữu ích cho một số người dùng, để thu thập thêm thông tin về các yêu cầu và để có thể báo cáo nó.<br />Bằng cách cài đặt mô-đun này, các polyfill Symfony cho {{Links.Symfony.Intl/Idn}} và {{Links.Symfony.Mbstring}} cũng sẽ được cài đặt (bởi vì mô-đun này yêu cầu chức năng "Idn", và không phải tất cả các cài đặt PHP cung cấp nó theo mặc định). Cả hai đều có sẵn thông qua giấy phép {{Links.MIT}}."
 Extended Description module_sfs.php: "Bảo vệ các trang đăng ký và đăng nhập đối với các địa chỉ IP do SFS liệt kê."
 Name Bypasses: "Các đường tránh chữ ký mặc định."
 Name CN_cidram.inc: "Danh sách chặn IPv4 của Trung Quốc."
@@ -303,10 +303,10 @@ field_whitelisted_requests: "Yêu cầu trong danh sách trắng"
 field_your_version: "Phiên bản của bạn"
 header_login: "Vui lòng đăng nhập để tiếp tục."
 hints_default_dns:
- Câu hỏi thường gặp.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.vi.md\#user-content-những-gì-tôi-có-thể-sử-dụng-cho-default_dns" hreflang="vi">Những gì tôi có thể sử dụng cho "default_dns"?</a></em>"
+ Câu hỏi thường gặp.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.vi.md\#user-content-những-gì-tôi-có-thể-sử-dụng-cho-default_dns" hreflang="vi-VN">Những gì tôi có thể sử dụng cho "default_dns"?</a></em>"
 hints_ipv6_on_32bit: "Lưu ý: Tra cứu IPv6 có thể không hoạt động chính xác trên một số hệ thống 32 bit."
 hints_pdo_dsn:
- Câu hỏi thường gặp.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.vi.md\#user-content-HOW_TO_USE_PDO" hreflang="vi">"PDO DSN" là gì? Làm cách nào tôi có thể sử dụng PDO với CIDRAM?</a></em>"
+ Câu hỏi thường gặp.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.vi.md\#user-content-HOW_TO_USE_PDO" hreflang="vi-VN">"PDO DSN" là gì? Làm cách nào tôi có thể sử dụng PDO với CIDRAM?</a></em>"
 info_some_useful_links: |
  Một số liên kết hữu ích:<br />
      <ul class="pieul">
@@ -326,7 +326,7 @@ info_some_useful_links: |
        <li><span class="comCat">Công cụ, tài nguyên, dịch vụ, vv hữu ích khác.</span>
          <ul class="comSub">
            <li>{{Links.SFS}} – Duy trì một cơ sở dữ liệu của những kẻ gửi thư rác được biết đến. Hữu ích để bảo vệ các trang web và diễn đàn chống lại kẻ gửi thư rác.</li>
-           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Nhận các CIDR từ các ASN, xác định các mối quan hệ các ASN, khám phá vùng các ASN dựa trên các tên mạng, vv.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Nhận các CIDR từ các ASN, xác định các mối quan hệ các ASN, khám phá vùng các ASN dựa trên các tên mạng, vv.</li>
            <li>{{Links.BGPView}} – Nhận các CIDR từ các ASN, xác định các mối quan hệ các ASN, khám phá vùng các ASN dựa trên các tên mạng, vv.</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar bởi Qrator</a> – Công cụ hữu ích để kiểm tra kết nối ASN cũng như cho nhiều thông tin khác về ASN.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Dự án Spamhaus</a> – Hiển thị báo cáo về tỷ lệ lây nhiễm chương trình thư rác cho các ASN.</li>
@@ -577,6 +577,7 @@ response_not_satisfied: "Không hài lòng."
 response_passed: "Thành công"
 response_please_check_config: "Vui lòng kiểm tra cấu hình của bạn để đảm bảo rằng mô-đun mới được cài đặt sẽ hoạt động như bạn dự định."
 response_ready_to_install: "Sẵn sàng để cài đặt."
+response_redirected: "Chuyển hướng"
 response_rename_error: "Không thể đổi tên!"
 response_repair_process_completed: "Quá trình sửa chữa hoàn thành."
 response_repair_process_failed: "Quá trình sửa chữa thất bại."
@@ -685,7 +686,7 @@ tip_range_subtractor: "Xin chào, {username}.<br />Phép trừ phạm vi có th�
 tip_rate_limiting: "Xin chào, {username}.<br />Trang này hiển thị hạn ngạch hiện có và được sử dụng liên quan đến giới hạn tốc độ."
 tip_rate_limiting_disabled: "Lưu ý: Giới hạn tốc độ hiện bị vô hiệu hóa, nhưng có thể được kích hoạt thông qua trang cấu hình."
 tip_sections_list: "Xin chào, {username}.<br />Trang này liệt kê những phần nào tồn tại trong các tập tin chữ ký đang kích hoạt."
-tip_see_the_documentation: "Xem <a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.vi.md\#user-content-SECTION6" hreflang="vi" rel="noopener external">tài liệu</a> để biết thông tin về các chỉ thị cấu hình khác nhau và mục đích của họ."
+tip_see_the_documentation: "Xem <a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.vi.md\#user-content-SECTION6" hreflang="vi-VN" rel="noopener external">tài liệu</a> để biết thông tin về các chỉ thị cấu hình khác nhau và mục đích của họ."
 tip_statistics: "Xin chào, {username}.<br />Trang này cho thấy một số thống kê của sử dụng cơ bản liên quan đến cài đặt CIDRAM của bạn."
 tip_statistics_disabled: "Lưu ý: Giám sát thống kê hiện bị vô hiệu hóa, nhưng có thể được kích hoạt thông qua trang cấu hình."
 tip_updates: "Xin chào, {username}.<br />Trang cập nhật cho phép bạn cài đặt, gỡ bỏ cài đặt, và cập nhật các gói khác nhau cho CIDRAM (các gói cốt lõi, chữ ký, bổ sung, các tập tin L10N, vv)."

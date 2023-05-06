@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2023.04.25).
+# This file: Portuguese language data for the front-end (last modified: 2023.05.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -26,7 +26,7 @@
 
 Extended Description Bypasses: "Os arquivos para bypass das assinaturas padrão normalmente incluído com o pacote principal."
 Extended Description CIDRAM: "O pacote principal (menos as assinaturas, documentação e configuração)."
-Extended Description Chart.js: "Permite que o front-end gere gráficos de pizza.<br />{{Links.Chart.js}} está disponível através do <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
+Extended Description Chart.js: "Permite que o front-end gere gráficos de pizza.<br />{{Links.Chart.js}} está disponível através da licença {{Links.MIT}}."
 Extended Description IPv4: &ExtDesCloud "Bloqueia serviços em nuvem indesejados e pontos de extremidade não-humanos."
 Extended Description IPv4-Bogons: &ExtDesBogons "Bloqueia bogon/marciano CIDRs."
 Extended Description IPv4-ISPs: &ExtDesISPs "Bloqueia ISPs perigosos e propensos a spam (inclui redes multijogos, que podem conter endpoints humanos e não humanos)."
@@ -49,7 +49,7 @@ Extended Description module_cookies.php: "Fornece algumas proteções limitadas 
 Extended Description module_extras.php: "Fornece algumas proteções limitadas contra vários vectores de ataque comumente usado em solicitações."
 Extended Description module_httpver.php: "Possibilita o bloqueio de protocolos específicos e versões HTTP por meio da configuração CIDRAM."
 Extended Description module_projecthoneypot.php: "Bloqueia solicitações de IPs listados no Project Honeypot."
-Extended Description module_refspam.php: "O bloqueio baseado em spam de referência geralmente não fornece nenhum benefício de segurança significativoBloqueio baseado em spam de referência geralmente não fornece nenhum benefício de segurança significativo, mas, em alguns casos, pode ser útil para alguns usuários, para reunir mais informações sobre solicitações e para relatá-las.<br />A instalação deste módulo também instala os polyfills do Symfony para {{Links.Symfony.Intl/Idn}} e {{Links.Symfony.Mbstring}} (porque este módulo requer a funcionalidade Idn, que nem todas as instalações PHP fornecem por padrão), ambos que estão disponíveis através da licença <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
+Extended Description module_refspam.php: "O bloqueio baseado em spam de referência geralmente não fornece nenhum benefício de segurança significativoBloqueio baseado em spam de referência geralmente não fornece nenhum benefício de segurança significativo, mas, em alguns casos, pode ser útil para alguns usuários, para reunir mais informações sobre solicitações e para relatá-las.<br />A instalação deste módulo também instala os polyfills do Symfony para {{Links.Symfony.Intl/Idn}} e {{Links.Symfony.Mbstring}} (porque este módulo requer a funcionalidade Idn, que nem todas as instalações PHP fornecem por padrão), ambos que estão disponíveis através da licença {{Links.MIT}}."
 Extended Description module_sfs.php: "Protege as páginas de registro e login contra IPs listados pelo SFS."
 Name Bypasses: "Bypasses das assinaturas padrão."
 Name CN_cidram.inc: "Lista de bloqueio de IPv4 para a China."
@@ -328,7 +328,7 @@ info_some_useful_links: |
        <li><span class="comCat">Outras ferramentas, recursos, serviços, etc que são úteis.</span>
          <ul class="comSub">
            <li>{{Links.SFS}} – Mantém um banco de dados de spammers de fórum conhecidos. Útil para proteger sites e fóruns contra spammers.</li>
-           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Obter CIDRs de ASNs, Determinar relações de ASNs, descobrir ASNs com base em nomes de rede, etc.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Obter CIDRs de ASNs, Determinar relações de ASNs, descobrir ASNs com base em nomes de rede, etc.</li>
            <li>{{Links.BGPView}} – Obter CIDRs de ASNs, Determinar relações de ASNs, descobrir ASNs com base em nomes de rede, etc.</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar por Qrator</a> – Ferramenta útil para verificar a conectividade de ASNs bem como para várias outras informações sobre ASNs.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">O Projeto Spamhaus</a> – Exibe relatórios sobre taxas de infecção por botnets para ASNs.</li>
@@ -587,6 +587,7 @@ response_not_satisfied: "Não satisfeito."
 response_passed: "Passado"
 response_please_check_config: "Verifique sua configuração para garantir que o módulo recém-instalado se comporte como você deseja."
 response_ready_to_install: "Pronto para instalar."
+response_redirected: "Redirecionado"
 response_rename_error: "Falha ao renomear!"
 response_repair_process_completed: "Processo de reparo concluído."
 response_repair_process_failed: "Processo de reparo falhou."

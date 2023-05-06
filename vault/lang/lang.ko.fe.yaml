@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2023.04.25).
+# This file: Korean language data for the front-end (last modified: 2023.05.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -26,7 +26,7 @@
 
 Extended Description Bypasses: "기본 서명 우회 일반적으로 기본 패키지에 포함되어 있습니다."
 Extended Description CIDRAM: "메인 패키지 (서명, 문서, 구성, 은 포함되지 않습니다)."
-Extended Description Chart.js: "프런트 엔드에서 원형 차트를 생성 할 수 있습니다.<br />{{Links.Chart.js}}는 <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>를 통해 사용 가능합니다."
+Extended Description Chart.js: "프런트 엔드에서 원형 차트를 생성 할 수 있습니다.<br />{{Links.Chart.js}}는 {{Links.MIT}} 라이선스를 통해 사용 가능합니다."
 Extended Description IPv4: &ExtDesCloud "불필요한 클라우드 서비스와 非人의 끝점을 차단합니다."
 Extended Description IPv4-Bogons: &ExtDesBogons "보곤 CIDR을 차단합니다."
 Extended Description IPv4-ISPs: &ExtDesISPs "스팸 발송자를 가진 위험한 ISP를 차단합니다 (멀티 플레이 네트워크가 포함됩니다. 사람과 사람이 아닌 끝점을 모두 포함 할 수 있습니다)."
@@ -49,7 +49,7 @@ Extended Description module_cookies.php: "위험한 쿠키에 대해 제한된 �
 Extended Description module_extras.php: "요청에서 자주 사용되는 공격 경로에 대해 몇 가지 제한된 보호를 제공합니다."
 Extended Description module_httpver.php: "CIDRAM 구성을 통해 특정 프로토콜 및 HTTP 버전을 차단할 수 있습니다."
 Extended Description module_projecthoneypot.php: "Project Honeypot에 나열된 IP의 요청을 차단합니다."
-Extended Description module_refspam.php: "리퍼러 스팸에 기반한 차단은 일반적으로 의미 있는 보안 이점을 제공하지 않습니다, 그러나 어떤 경우에는, 요청에 대한 추가 정보를 수집하고 보고서를 생성하는 데 유용 할 수 있습니다.<br />이 모듈을 설치하면, {{Links.Symfony.Intl/Idn}}및 {{Links.Symfony.Mbstring}}에 대한 Symfony 폴리 필도 설치됩니다 (이 모듈에는 Idn 기능이 필요하기 때문에 및, 모든 PHP 설치에서 기본적으로 제공하는 것은 아닙니다). 둘 다 <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>라이센스를 통해 사용 가능합니다."
+Extended Description module_refspam.php: "리퍼러 스팸에 기반한 차단은 일반적으로 의미 있는 보안 이점을 제공하지 않습니다, 그러나 어떤 경우에는, 요청에 대한 추가 정보를 수집하고 보고서를 생성하는 데 유용 할 수 있습니다.<br />이 모듈을 설치하면, {{Links.Symfony.Intl/Idn}}및 {{Links.Symfony.Mbstring}}에 대한 Symfony 폴리 필도 설치됩니다 (이 모듈에는 Idn 기능이 필요하기 때문에 및, 모든 PHP 설치에서 기본적으로 제공하는 것은 아닙니다). 둘 다 {{Links.MIT}}라이센스를 통해 사용 가능합니다."
 Extended Description module_sfs.php: "SFS가 나열한 IP에 대한 등록 및 로그인 페이지를 보호합니다."
 Name Bypasses: "기본 서명 우회."
 Name CN_cidram.inc: "중국 IPv4 차단 목록."
@@ -303,10 +303,10 @@ field_whitelisted_requests: "화이트리스트 된 것으로 표시된 요청"
 field_your_version: "사용 버전"
 header_login: "계속하려면 로그인하십시오."
 hints_default_dns:
- 자주하는 질문.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.ko.md\#user-content-default_dns에-사용할-수있는-항목은-무엇입니까" hreflang="ko">"default_dns"에 사용할 수있는 항목은 무엇입니까?</a></em>"
+ 자주하는 질문.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.ko.md\#user-content-default_dns에-사용할-수있는-항목은-무엇입니까" hreflang="ko-KR">"default_dns"에 사용할 수있는 항목은 무엇입니까?</a></em>"
 hints_ipv6_on_32bit: "참고\_: IPv6 조회는 일부 32비트 시스템에서 제대로 작동하지 않을 수 있습니다."
 hints_pdo_dsn:
- 자주하는 질문.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.ko.md\#user-content-HOW_TO_USE_PDO" hreflang="ko">"PDO DSN"은 무엇입니까? CIDRAM과 함께 PDO를 사용하려면 어떻게해야합니까?</a></em>"
+ 자주하는 질문.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.ko.md\#user-content-HOW_TO_USE_PDO" hreflang="ko-KR">"PDO DSN"은 무엇입니까? CIDRAM과 함께 PDO를 사용하려면 어떻게해야합니까?</a></em>"
 info_some_useful_links: |
  유용한 링크 :<br />
      <ul class="pieul">
@@ -326,7 +326,7 @@ info_some_useful_links: |
        <li><span class="comCat">기타 유용한 도구, 자원, 서비스, 등.</span>
          <ul class="comSub">
            <li>{{Links.SFS}} – 알려진 포럼 스패머 데이터베이스를 유지 관리합니다. 스패머에 대한 보호 웹 사이트 및 포럼 보호에 유용합니다.</li>
-           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – ASN에서 CIDR을 취득하는 ASN 관계를 결정하는 네트워크 이름에 따라 ASN을 감지, 등등.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – ASN에서 CIDR을 취득하는 ASN 관계를 결정하는 네트워크 이름에 따라 ASN을 감지, 등등.</li>
            <li>{{Links.BGPView}} – ASN에서 CIDR을 취득하는 ASN 관계를 결정하는 네트워크 이름에 따라 ASN을 감지, 등등.</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Qrator의 Radar</a> – ASN의 연결을 확인하는 데 유용한 도구; ASN에 관한 기타 다양한 정보.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Spamhaus 프로젝트</a> – ASN의 봇넷 감염 속도에 대한 보고서를 표시합니다.</li>
@@ -577,6 +577,7 @@ response_not_satisfied: "충족되지 않았습니다."
 response_passed: "성공했습니다"
 response_please_check_config: "새로 설치된 모듈이 의도 한 대로 작동하는지 확인하려면 구성을 확인하십시오."
 response_ready_to_install: "설치할 준비가되었습니다."
+response_redirected: "리디렉션됨"
 response_rename_error: "이름을 변경할 수 없습니다!"
 response_repair_process_completed: "수리 프로세스가 완료되었습니다."
 response_repair_process_failed: "수리 프로세스가 실패했습니다."
@@ -685,7 +686,7 @@ tip_range_subtractor: "안녕하세요, {username}.<br />범위 감산기는 한
 tip_rate_limiting: "안녕하세요, {username}.<br />이 페이지는 속도 제한과 관련된 현재 할당량 사용량 및 가용성을 보여줍니다."
 tip_rate_limiting_disabled: "노트\_: 속도 제한은 현재 비활성화되어, 있지만 구성 페이지를 통해 활성화할 수 있습니다."
 tip_sections_list: "안녕하세요, {username}.<br />이 페이지는 현재 활성화 된 서명 파일에 존재하는 섹션을 나열합니다."
-tip_see_the_documentation: "설정 지시어에 대한 자세한 내용은 <a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.ko.md\#user-content-SECTION6" hreflang="ko" rel="noopener external">문서를</a> 참조하십시오."
+tip_see_the_documentation: "설정 지시어에 대한 자세한 내용은 <a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.ko.md\#user-content-SECTION6" hreflang="ko-KR" rel="noopener external">문서를</a> 참조하십시오."
 tip_statistics: "안녕하세요, {username}.<br />이 페이지는 CIDRAM 설치와 관련된 몇 가지 기본 사용 통계를 보여줍니다."
 tip_statistics_disabled: "노트\_: 통계 추적은 현재 비활성화되어, 있지만 구성 페이지를 통해 활성화할 수 있습니다."
 tip_updates: "안녕하세요, {username}.<br />업데이트 페이지는 CIDRAM의 다양한 구성 요소를 설치·제거·업데이트 할 수 있습니다 (코어 패키지, 서명, L10N 파일, 등)."

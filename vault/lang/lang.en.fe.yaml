@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2023.04.25).
+# This file: English language data for the front-end (last modified: 2023.05.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -26,7 +26,7 @@
 
 Extended Description Bypasses: "The default signature bypass files normally included with the main package."
 Extended Description CIDRAM: "The main package (minus the signatures, documentation, and configuration)."
-Extended Description Chart.js: "Enables the front-end to generate doughnut charts.<br />{{Links.Chart.js}} is available via the <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
+Extended Description Chart.js: "Enables the front-end to generate doughnut charts.<br />{{Links.Chart.js}} is available via the {{Links.MIT}} licence."
 Extended Description IPv4: &ExtDesCloud "Blocks unwanted cloud services and non-human endpoints."
 Extended Description IPv4-Bogons: &ExtDesBogons "Blocks bogon/martian CIDRs."
 Extended Description IPv4-ISPs: &ExtDesISPs "Blocks dangerous and spammy ISPs (includes multiplay networks, which may contain both human and non-human endpoints)."
@@ -49,7 +49,7 @@ Extended Description module_cookies.php: "Provides some limited protections agai
 Extended Description module_extras.php: "Provides some limited protections against various attack vectors commonly used in requests."
 Extended Description module_httpver.php: "Makes it possible to block specific protocols and HTTP versions through the CIDRAM configuration."
 Extended Description module_projecthoneypot.php: "Blocks requests from IPs listed at Project Honeypot."
-Extended Description module_refspam.php: "Blocking based on referrer spam won't generally provide any meaningful security benefit, but in some cases, could be useful for some users, for gathering more information about requests, and for being able to report it.<br />Installing this module also installs the Symfony polyfills for {{Links.Symfony.Intl/Idn}} and {{Links.Symfony.Mbstring}} (because this module requires Idn functionality, which not all PHP installations provide by default), both which are available via the <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
+Extended Description module_refspam.php: "Blocking based on referrer spam won't generally provide any meaningful security benefit, but in some cases, could be useful for some users, for gathering more information about requests, and for being able to report it.<br />Installing this module also installs the Symfony polyfills for {{Links.Symfony.Intl/Idn}} and {{Links.Symfony.Mbstring}} (because this module requires Idn functionality, which not all PHP installations provide by default), both which are available via the {{Links.MIT}} licence."
 Extended Description module_sfs.php: "Protects registration and login pages against IPs listed by SFS."
 Name Bypasses: "Default signature bypasses."
 Name CN_cidram.inc: "China IPv4 blocklist."
@@ -328,7 +328,7 @@ info_some_useful_links: |
        <li><span class="comCat">Other useful tools, resources, services, etc.</span>
          <ul class="comSub">
            <li>{{Links.SFS}} – Maintains a database of known forum spammers. Useful for protecting websites and forums against spammers.</li>
-           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Get CIDRs from ASNs, determine ASN relationships, discover ASNs based upon network names, etc.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Get CIDRs from ASNs, determine ASN relationships, discover ASNs based upon network names, etc.</li>
            <li>{{Links.BGPView}} – Get CIDRs from ASNs, determine ASN relationships, discover ASNs based upon network names, etc.</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar by Qrator</a> – Useful tool for checking the connectivity of ASNs as well as for various other information about ASNs.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">The Spamhaus Project</a> – Displays reports regarding botnet infection rates for ASNs.</li>
@@ -586,6 +586,7 @@ response_not_satisfied: "Not satisfied."
 response_passed: "Passed"
 response_please_check_config: "Please check your configuration in order to ensure that the newly installed module will behave as you intend."
 response_ready_to_install: "Ready to install."
+response_redirected: "Redirected"
 response_rename_error: "Failed to rename!"
 response_repair_process_completed: "Repair process completed."
 response_repair_process_failed: "Repair process failed."

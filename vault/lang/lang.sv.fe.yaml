@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2023.04.25).
+# This file: Swedish language data for the front-end (last modified: 2023.05.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -26,7 +26,7 @@
 
 Extended Description Bypasses: "Standard-signatur-bypass-filer som normalt ingår i huvudpaketet."
 Extended Description CIDRAM: "Huvudpaketet (minus signaturerna, dokumentationen och konfigurationen)."
-Extended Description Chart.js: "Gör det möjligt för framsidan att generera cirkeldiagram.<br />{{Links.Chart.js}} är tillgängligt via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
+Extended Description Chart.js: "Gör det möjligt för framsidan att generera cirkeldiagram.<br />{{Links.Chart.js}} är tillgänglig via {{Links.MIT}}-licensen."
 Extended Description IPv4: &ExtDesCloud "Blockerar oönskade molntjänster och icke-mänskliga ändpunkter."
 Extended Description IPv4-Bogons: &ExtDesBogons "Blockerar bogon/martian CIDRer."
 Extended Description IPv4-ISPs: &ExtDesISPs "Blockerar farliga och spammiga internetleverantörer (inkluderar multiplay-nätverk, som kan innehålla både mänskliga och icke-mänskliga slutpunkter)."
@@ -49,7 +49,7 @@ Extended Description module_cookies.php: "Ger vissa begränsade skydd mot farlig
 Extended Description module_extras.php: "Ger vissa begränsade skydd mot olika angreppsvektorer som vanligen används i förfrågningar."
 Extended Description module_httpver.php: "Gör det möjligt att blockera specifika protokoll och HTTP-versioner genom CIDRAM-konfigurationen."
 Extended Description module_projecthoneypot.php: "Blockerar förfrågningar från IP-adresser som listas på Project Honeypot."
-Extended Description module_refspam.php: "Blockering baserat på referensspam ger i allmänhet ingen meningsfull säkerhetsfördel, men i vissa fall kan det vara användbart för vissa användare, för att samla in mer information om förfrågningar och för att kunna rapportera det.<br />Genom att installera den här modulen installeras också Symfony polyfyllningar för {{Links.Symfony.Intl/Idn}} och {{Links.Symfony.Mbstring}} (eftersom den här modulen kräver Idn-funktionalitet, som inte alla PHP-installationer tillhandahåller som standard), båda som är tillgängliga via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>-licensen."
+Extended Description module_refspam.php: "Blockering baserat på referensspam ger i allmänhet ingen meningsfull säkerhetsfördel, men i vissa fall kan det vara användbart för vissa användare, för att samla in mer information om förfrågningar och för att kunna rapportera det.<br />Genom att installera den här modulen installeras också Symfony polyfyllningar för {{Links.Symfony.Intl/Idn}} och {{Links.Symfony.Mbstring}} (eftersom den här modulen kräver Idn-funktionalitet, som inte alla PHP-installationer tillhandahåller som standard), båda som är tillgängliga via {{Links.MIT}}-licensen."
 Extended Description module_sfs.php: "Skyddar registrerings och inloggningssidor mot IP-adresser som listas av SFS."
 Name Bypasses: "Standard-signatur-bypasser."
 Name CN_cidram.inc: "Kina IPv4-blocklista."
@@ -326,7 +326,7 @@ info_some_useful_links: |
        <li><span class="comCat">Andra användbara verktyg, resurser, tjänster, osv.</span>
          <ul class="comSub">
            <li>{{Links.SFS}} – Hanterar en databas med kända forumspammare. Användbar för att skydda webbplatser och forum mot spammare.</li>
-           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Få CIDRer från ASNer, bestäm ASN-relationer, upptäck ASNer baserat på nätverksnamn, osv.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Få CIDRer från ASNer, bestäm ASN-relationer, upptäck ASNer baserat på nätverksnamn, osv.</li>
            <li>{{Links.BGPView}} – Få CIDRer från ASNer, bestäm ASN-relationer, upptäck ASNer baserat på nätverksnamn, osv.</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar av Qrator</a> – Användbart verktyg för att kontrollera ASN-anslutningar samt för annan information om ASNer.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Spamhausprojektet</a> – Visar rapporter om botnätinfektionshastigheter för ASNer.</li>
@@ -585,6 +585,7 @@ response_not_satisfied: "Inte nöjda."
 response_passed: "Passerade"
 response_please_check_config: "Kontrollera din konfiguration för att säkerställa att den nyligen installerade modulen fungerar som du tänker."
 response_ready_to_install: "Redo att installeras."
+response_redirected: "Omdirigerad"
 response_rename_error: "Misslyckades med att byta namn!"
 response_repair_process_completed: "Reparationsprocessen lyckades."
 response_repair_process_failed: "Reparationsprocessen misslyckades."

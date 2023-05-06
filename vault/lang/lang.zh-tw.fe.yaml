@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2023.04.25).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2023.05.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -26,7 +26,7 @@
 
 Extended Description Bypasses: "標準簽名旁路文件通常包括在主包。"
 Extended Description CIDRAM: "主包（沒有簽名文件，文檔，和配置）。"
-Extended Description Chart.js: "使前端能夠生成餅圖。<br />{{Links.Chart.js}}可通過<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>獲得。"
+Extended Description Chart.js: "使前端能夠生成餅圖。<br />{{Links.Chart.js}}可通過{{Links.MIT}}許可證獲得。"
 Extended Description IPv4: &ExtDesCloud "阻止不想要的雲服務和非人終端。"
 Extended Description IPv4-Bogons: &ExtDesBogons "阻止bogon/火星CIDR。"
 Extended Description IPv4-ISPs: &ExtDesISPs "阻止危險和垃圾容易ISP（包括多重播放網絡，可能包含人類和非人類端點）。"
@@ -49,7 +49,7 @@ Extended Description module_cookies.php: "提供一些針對危險cookie的有�
 Extended Description module_extras.php: "提供一些有限的保護針對各種攻擊向量常用於請求。"
 Extended Description module_httpver.php: "通過CIDRAM配置可以阻止特定的協議和HTTP版本。"
 Extended Description module_projecthoneypot.php: "阻止來自Project Honeypot列出的IP的請求。"
-Extended Description module_refspam.php: "基於引薦來源垃圾郵件阻止通常不會提供任何有意義的安全利益，但在某些情況下，對某些用戶可能有用，用於收集有關請求的更多信息，以及能夠報告它。<br />通過安裝此模塊，還將安裝用於{{Links.Symfony.Intl/Idn}}和{{Links.Symfony.Mbstring}}的Symfony polyfills（因為此模塊需要Idn功能性，但並非所有PHP安裝都默認提供該功能性）。​這兩個都可以通過<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>許可獲得。"
+Extended Description module_refspam.php: "基於引薦來源垃圾郵件阻止通常不會提供任何有意義的安全利益，但在某些情況下，對某些用戶可能有用，用於收集有關請求的更多信息，以及能夠報告它。<br />通過安裝此模塊，還將安裝用於{{Links.Symfony.Intl/Idn}}和{{Links.Symfony.Mbstring}}的Symfony polyfills（因為此模塊需要Idn功能性，但並非所有PHP安裝都默認提供該功能性）。​這兩個都可以通過{{Links.MIT}}許可證獲得。"
 Extended Description module_sfs.php: "防止通過SFS列出的IP地址訪問註冊和登錄頁面。"
 Name Bypasses: "標準簽名旁路。"
 Name CN_cidram.inc: "中國IPv4阻止清單。"
@@ -327,7 +327,7 @@ info_some_useful_links: |
        <li><span class="comCat">其他有用的工具，資源，服務，等等</span>
          <ul class="comSub">
            <li>{{Links.SFS}} – 維護已知論壇垃圾郵件發送者的數據庫。有用的保護網站和論壇免受垃圾郵件發送者的攻。</li>
-           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – 從ASN獲取CIDR，​確定ASN關係，​基於網絡名稱發現ASN，​等等。</li>
+           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – 從ASN獲取CIDR，​確定ASN關係，​基於網絡名稱發現ASN，​等等。</li>
            <li>{{Links.BGPView}} – 從ASN獲取CIDR，​確定ASN關係，​基於網絡名稱發現ASN，​等等。</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Qrator的Radar</a> – 檢查ASN連接的有用工具，​以及關於ASN的各種其他信息。</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Spamhaus項目</a> – 顯示有​關ASN殭屍網絡感染率的報告。</li>
@@ -578,6 +578,7 @@ response_not_satisfied: "不滿意。"
 response_passed: "成功"
 response_please_check_config: "請檢查您的配置，以確保新安裝的模塊按您的意願運行。"
 response_ready_to_install: "準備安裝。"
+response_redirected: "重定向"
 response_rename_error: "無法改名！"
 response_repair_process_completed: "修復過程完成。"
 response_repair_process_failed: "修復過程失敗。"

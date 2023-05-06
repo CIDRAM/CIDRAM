@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2023.04.25).
+# This file: Indonesian language data for the front-end (last modified: 2023.05.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -26,7 +26,7 @@
 
 Extended Description Bypasses: "File untuk bypass tanda tangan standar yang biasanya disertakan dengan paket utama."
 Extended Description CIDRAM: "Paket utama (tanpa tanda tangan, dokumentasi, konfigurasi)."
-Extended Description Chart.js: "Memungkinkan bagian depan untuk menghasilkan bagan pai.<br />{{Links.Chart.js}} tersedia melalui <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
+Extended Description Chart.js: "Memungkinkan bagian depan untuk menghasilkan bagan pai.<br />{{Links.Chart.js}} tersedia melalui lisensi {{Links.MIT}}."
 Extended Description IPv4: &ExtDesCloud "Memblokir layanan cloud tidak diinginkan dan jalur akses non-manusia."
 Extended Description IPv4-Bogons: &ExtDesBogons "Memblokir CIDR bogon/martian."
 Extended Description IPv4-ISPs: &ExtDesISPs "Memblokir ISP berbahaya dan spam rawan (termasuk jaringan multi-permainan, yang mungkin berisi titik akhir manusia dan non-manusia)."
@@ -49,7 +49,7 @@ Extended Description module_cookies.php: "Menyediakan beberapa perlindungan terb
 Extended Description module_extras.php: "Menyediakan beberapa perlindungan terbatas terhadap berbagai vektor serangan umum digunakan dalam permintaan."
 Extended Description module_httpver.php: "Memungkinkan untuk memblokir protokol tertentu dan versi HTTP melalui konfigurasi CIDRAM."
 Extended Description module_projecthoneypot.php: "Memblokir permintaan dari IP yang terdaftar oleh Project Honeypot."
-Extended Description module_refspam.php: "Memblokir berdasarkan spam pengarah umumnya tidak akan memberikan manfaat keamanan yang berarti, tetapi dalam beberapa kasus, dapat bermanfaat bagi beberapa pengguna, untuk mengumpulkan lebih banyak informasi tentang permintaan, dan untuk dapat melaporkannya.<br />Menginstal modul ini juga menginstal polyfill Symfony untuk {{Links.Symfony.Intl/Idn}} dan {{Links.Symfony.Mbstring}} (karena modul ini memerlukan fungsionalitas Idn, yang tidak semua instalasi PHP menyediakan secara default), keduanya tersedia melalui lisensi <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
+Extended Description module_refspam.php: "Memblokir berdasarkan spam pengarah umumnya tidak akan memberikan manfaat keamanan yang berarti, tetapi dalam beberapa kasus, dapat bermanfaat bagi beberapa pengguna, untuk mengumpulkan lebih banyak informasi tentang permintaan, dan untuk dapat melaporkannya.<br />Menginstal modul ini juga menginstal polyfill Symfony untuk {{Links.Symfony.Intl/Idn}} dan {{Links.Symfony.Mbstring}} (karena modul ini memerlukan fungsionalitas Idn, yang tidak semua instalasi PHP menyediakan secara default), keduanya tersedia melalui lisensi {{Links.MIT}}."
 Extended Description module_sfs.php: "Melindungi halaman pendaftaran dan login terhadap IP yang terdaftar oleh SFS."
 Name Bypasses: "Bypass tanda tangan standar."
 Name CN_cidram.inc: "IPv4 pemblokir Cina."
@@ -303,10 +303,10 @@ field_whitelisted_requests: "Permintaan yang masuk daftar putih"
 field_your_version: "Versi Anda"
 header_login: "Silahkan masuk untuk melanjutkan."
 hints_default_dns:
- FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.id.md\#user-content-apa-yang-bisa-saya-gunakan-untuk-default_dns" hreflang="id">Apa yang bisa saya gunakan untuk "default_dns"?</a></em>"
+ FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.id.md\#user-content-apa-yang-bisa-saya-gunakan-untuk-default_dns" hreflang="id-ID">Apa yang bisa saya gunakan untuk "default_dns"?</a></em>"
 hints_ipv6_on_32bit: "Catatan: Pencarian IPv6 mungkin tidak bekerja dengan benar pada beberapa sistem 32-bit."
 hints_pdo_dsn:
- FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.id.md\#user-content-HOW_TO_USE_PDO" hreflang="id">Apa itu "PDO DSN"? Bagaimana saya bisa menggunakan PDO dengan CIDRAM?</a></em>"
+ FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.id.md\#user-content-HOW_TO_USE_PDO" hreflang="id-ID">Apa itu "PDO DSN"? Bagaimana saya bisa menggunakan PDO dengan CIDRAM?</a></em>"
 info_some_useful_links: |
  Beberapa link yang berguna:<br />
      <ul class="pieul">
@@ -326,7 +326,7 @@ info_some_useful_links: |
        <li><span class="comCat">Alat, sumber daya, layanan, dll bermanfaat lainnya.</span>
          <ul class="comSub">
            <li>{{Links.SFS}} – Mempertahankan basis data spammer forum yang dikenal. Berguna untuk melindungi situs web dan forum terhadap spammer.</li>
-           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Dapatkan CIDR dari ASN, menentukan hubungan ASN, menemukan ASN berdasarkan nama jaringan, dll.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Dapatkan CIDR dari ASN, menentukan hubungan ASN, menemukan ASN berdasarkan nama jaringan, dll.</li>
            <li>{{Links.BGPView}} – Dapatkan CIDR dari ASN, menentukan hubungan ASN, menemukan ASN berdasarkan nama jaringan, dll.</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar oleh Qrator</a> – Alat yang berguna untuk memeriksa konektivitas ASN serta berbagai informasi lainnya tentang ASN.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Proyek Spamhaus</a> – Menampilkan laporan tentang tingkat infeksi botnet untuk ASN.</li>
@@ -577,6 +577,7 @@ response_not_satisfied: "Tidak puas."
 response_passed: "Lulus"
 response_please_check_config: "Memeriksa konfigurasi Anda untuk memastikan bahwa modul yang baru diinstal akan berfungsi seperti yang Anda inginkan."
 response_ready_to_install: "Siap untuk instalasi."
+response_redirected: "Dialihkan"
 response_rename_error: "Gagal memodifikasi nama!"
 response_repair_process_completed: "Proses perbaikan selesai."
 response_repair_process_failed: "Proses perbaikan gagal."
@@ -685,7 +686,7 @@ tip_range_subtractor: "Salam, {username}.<br />Pengurangan rentang dapat digunak
 tip_rate_limiting: "Salam, {username}.<br />Halaman ini menunjukkan penggunaan dan ketersediaan kuota saat ini terkait dengan pembatasan laju."
 tip_rate_limiting_disabled: "Catat: Pembatasan laju saat ini dinonaktifkan, namun dapat diaktifkan melalui halaman konfigurasi."
 tip_sections_list: "Salam, {username}.<br />Halaman ini mencantumkan bagian yang ada di file tanda tangan yang aktif saat ini."
-tip_see_the_documentation: "Lihat <a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.id.md\#user-content-SECTION6" hreflang="id" rel="noopener external">dokumentasi</a> untuk informasi tentang berbagai direktif konfigurasi dan tujuan mereka."
+tip_see_the_documentation: "Lihat <a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.id.md\#user-content-SECTION6" hreflang="id-ID" rel="noopener external">dokumentasi</a> untuk informasi tentang berbagai direktif konfigurasi dan tujuan mereka."
 tip_statistics: "Salam, {username}.<br />Halaman ini menunjukkan beberapa statistik penggunaan dasar mengenai instalasi CIDRAM Anda."
 tip_statistics_disabled: "Catat: Pelacakan statistik saat ini dinonaktifkan, namun dapat diaktifkan melalui halaman konfigurasi."
 tip_updates: "Salam, {username}.<br />Halaman pembaruan memungkinkan Anda untuk menginstal, menguninstal, dan memperbarui berbagai komponen CIDRAM (paket inti, tanda tangan, file L10N, dll)."

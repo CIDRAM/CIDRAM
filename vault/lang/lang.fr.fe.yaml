@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2023.04.25).
+# This file: French language data for the front-end (last modified: 2023.05.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -26,7 +26,7 @@
 
 Extended Description Bypasses: "Les fichiers pour contourner les signatures standard qui sont normalement inclus dans le paquet principal."
 Extended Description CIDRAM: "Le paquet principal (moins les signatures, la documentation et la configuration)."
-Extended Description Chart.js: "Permet à l'interface frontale de générer des diagrammes à secteurs.<br />{{Links.Chart.js}} est disponible via le <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
+Extended Description Chart.js: "Permet à l'interface frontale de générer des diagrammes à secteurs.<br />{{Links.Chart.js}} est disponible via la licence {{Links.MIT}}."
 Extended Description IPv4: &ExtDesCloud "Bloque les services cloud indésirables et les noeuds finaux non humains."
 Extended Description IPv4-Bogons: &ExtDesBogons "Bloque bogon/martien CIDRs."
 Extended Description IPv4-ISPs: &ExtDesISPs "Bloque les FAI dangereux et sujets au spam (comprend des réseaux multijoueurs, qui peuvent contenir des points de terminaison humains et aussi non humains)."
@@ -49,7 +49,7 @@ Extended Description module_cookies.php: "Fournit quelques protections limitées
 Extended Description module_extras.php: "Fournit quelques protections limitées contre divers vecteurs d'attaque communément utilisé dans les requêtes."
 Extended Description module_httpver.php: "Permet de bloquer des protocoles spécifiques et des versions HTTP via la configuration CIDRAM."
 Extended Description module_projecthoneypot.php: "Bloque les requêtes des adresses IP répertoriées dans Project Honeypot."
-Extended Description module_refspam.php: "Le blocage basé sur le spam référent ne procure généralement aucun avantage de sécurité significatif, mais dans certains cas, cela pourrait être utile à certains utilisateurs pour rassembler plus d'informations sur les requêtes et pour pouvoir les signaler.<br />L'installation de ce module installe également les polyfills Symfony pour {{Links.Symfony.Intl/Idn}} et {{Links.Symfony.Mbstring}} (car ce module nécessite la fonctionnalité Idn, que ne toutes pas les installations PHP fournissent par défaut), les deux qui sont disponibles via la licence <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
+Extended Description module_refspam.php: "Le blocage basé sur le spam référent ne procure généralement aucun avantage de sécurité significatif, mais dans certains cas, cela pourrait être utile à certains utilisateurs pour rassembler plus d'informations sur les requêtes et pour pouvoir les signaler.<br />L'installation de ce module installe également les polyfills Symfony pour {{Links.Symfony.Intl/Idn}} et {{Links.Symfony.Mbstring}} (car ce module nécessite la fonctionnalité Idn, que ne toutes pas les installations PHP fournissent par défaut), les deux qui sont disponibles via la licence {{Links.MIT}}."
 Extended Description module_sfs.php: "Protège l'enregistrement et les pages de connexion contre les adresses IP répertoriées par SFS."
 Name Bypasses: "Contournements pour signatures standard."
 Name CN_cidram.inc: "Liste de blocage IPv4 pour la Chine."
@@ -305,10 +305,10 @@ field_whitelisted_requests: "Requêtes qui ont été listé blanche"
 field_your_version: "Votre Version"
 header_login: "Merci de vous connecter pour continuer."
 hints_default_dns:
- FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.fr.md\#user-content-que-puis-je-utiliser-pour-default_dns" hreflang="fr">Que puis-je utiliser pour «\_default_dns\_»\_?</a></em>"
+ FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.fr.md\#user-content-que-puis-je-utiliser-pour-default_dns" hreflang="fr-FR">Que puis-je utiliser pour «\_default_dns\_»\_?</a></em>"
 hints_ipv6_on_32bit: "Remarque\_: Les recherches IPv6 peuvent ne pas fonctionner correctement sur certains systèmes 32 bits."
 hints_pdo_dsn:
- FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.fr.md\#user-content-HOW_TO_USE_PDO" hreflang="fr">Qu'est-ce qu'un «\_PDO DSN\_»\_? Comment utiliser PDO avec CIDRAM\_?</a></em>"
+ FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.fr.md\#user-content-HOW_TO_USE_PDO" hreflang="fr-FR">Qu'est-ce qu'un «\_PDO DSN\_»\_? Comment utiliser PDO avec CIDRAM\_?</a></em>"
 info_some_useful_links: |
  Quelques liens utiles :<br />
      <ul class="pieul">
@@ -328,7 +328,7 @@ info_some_useful_links: |
        <li><span class="comCat">Autres outils, ressources, services, etc. utiles.</span>
          <ul class="comSub">
            <li>{{Links.SFS}} – Maintient une base de données des spammeurs connus sur les forums. Utile pour protéger les sites Web et les forums contre les spammeurs.</li>
-           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Obtenir les CIDR des ASNs, Déterminer les relations entre ASNs, découvrez les ASN basés sur les noms de réseaux, etc.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Obtenir les CIDR des ASNs, Déterminer les relations entre ASNs, découvrez les ASN basés sur les noms de réseaux, etc.</li>
            <li>{{Links.BGPView}} – Obtenir les CIDR des ASNs, Déterminer les relations entre ASNs, découvrez les ASN basés sur les noms de réseaux, etc.</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar par Qrator</a> – Outil utile pour vérifier la connectivité des ASN ainsi pour diverses autres informations sur les ASNs.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Le projet Spamhaus</a> – Affiche les rapports concernant les taux d'infection par botnet pour les ASN.</li>
@@ -587,6 +587,7 @@ response_not_satisfied: "Pas satisfait."
 response_passed: "Passé"
 response_please_check_config: "Vérifier votre configuration afin d'assurer que le module nouvellement installé se comportera comme vous le souhaitez."
 response_ready_to_install: "Prêt à installer."
+response_redirected: "Redirigé"
 response_rename_error: "Échec du renomment\_!"
 response_repair_process_completed: "Le processus de réparation a été un succès."
 response_repair_process_failed: "Le processus de réparation a échoué."
@@ -723,7 +724,7 @@ tip_range_subtractor: "Bonjour, {username}.<br />Le soustracteur de gamme peut �
 tip_rate_limiting: "Bonjour, {username}.<br />Cette page affiche l'utilisation et la disponibilité actuelles des quotas en ce qui concerne la limitation du débit."
 tip_rate_limiting_disabled: "Remarque\_: La limitation du débit est actuellement désactivé, mais peut être activé via la page de configuration."
 tip_sections_list: "Bonjour, {username}.<br />Cette page répertorie les sections qui existent dans les fichiers de signatures actuellement actifs."
-tip_see_the_documentation: "Voir la <a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.fr.md\#user-content-SECTION6" hreflang="fr" rel="noopener external">documentation</a> pour information sur les différentes directives de la configuration et leurs objectifs."
+tip_see_the_documentation: "Voir la <a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.fr.md\#user-content-SECTION6" hreflang="fr-FR" rel="noopener external">documentation</a> pour information sur les différentes directives de la configuration et leurs objectifs."
 tip_statistics: "Bonjour, {username}.<br />Cette page présente certaines statistiques d'utilisation concernant votre installation pour CIDRAM."
 tip_statistics_disabled: "Remarque\_: Le suivi des statistiques est actuellement désactivé, mais peut être activé via la page de configuration."
 tip_updates: "Bonjour, {username}.<br />La page des mises à jour vous permet d'installer, de désinstaller et de mettre à jour les différentes composantes de CIDRAM (le paquet de base, signatures, fichiers de L10N, etc)."

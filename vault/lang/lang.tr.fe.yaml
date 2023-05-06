@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2023.04.25).
+# This file: Turkish language data for the front-end (last modified: 2023.05.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -26,7 +26,7 @@
 
 Extended Description Bypasses: "Varsayılan imza bypass'lar, normalde ana paketle birlikte verilir."
 Extended Description CIDRAM: "Ana paket (hariç imzalar, belgeler, ve yapılandırma)."
-Extended Description Chart.js: "Ön uçların pasta grafikler oluşturmasını sağlar.<br />{{Links.Chart.js}}, <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> üzerinden kullanılabilir."
+Extended Description Chart.js: "Ön uçların pasta grafikler oluşturmasını sağlar.<br />{{Links.Chart.js}}, {{Links.MIT}} lisansı aracılığıyla kullanılabilir."
 Extended Description IPv4: &ExtDesCloud "İstenmeyen bulut servislerini ve insan olmayan uç noktaları engeller."
 Extended Description IPv4-Bogons: &ExtDesBogons "Bogon/martian CIDR'leri engeller."
 Extended Description IPv4-ISPs: &ExtDesISPs "Tehlikeli ve spam yapan ISS'leri engeller (çoklu hizmet ağları içerir; bunlar insan ve ayrıca insan dışı uç noktaları içerebilir)."
@@ -49,7 +49,7 @@ Extended Description module_cookies.php: "Tehlikeli çerezlere karşı bazı sı
 Extended Description module_extras.php: "İsteklerde yaygın olarak kullanılan çeşitli saldırı vektörlerine karşı bazı sınırlı koruma sağlar."
 Extended Description module_httpver.php: "CIDRAM yapılandırması aracılığıyla belirli protokolleri ve HTTP sürümlerini engellemeyi mümkün kılar."
 Extended Description module_projecthoneypot.php: "Project Honeypot'de listelenen IP'lerden gelen istekleri engeller."
-Extended Description module_refspam.php: "Yönlendiren spam'e dayalı engelleme genellikle anlamlı bir güvenlik avantajı sağlamaz, ancak bazı durumlarda, bazı kullanıcılar için istekler hakkında daha fazla bilgi toplamak ve bunu rapor edebilmek için yararlı olabilir.<br />Bu modülün yüklenmesi, {{Links.Symfony.Intl/Idn}} ve {{Links.Symfony.Mbstring}} için Symfony çoklu dolgularını da yükler (çünkü bu modül, tüm PHP kurulumlarının varsayılan olarak sağlamadığı Idn işlevselliği gerektirir), her ikisi de <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a> lisansı ile kullanılabilir."
+Extended Description module_refspam.php: "Yönlendiren spam'e dayalı engelleme genellikle anlamlı bir güvenlik avantajı sağlamaz, ancak bazı durumlarda, bazı kullanıcılar için istekler hakkında daha fazla bilgi toplamak ve bunu rapor edebilmek için yararlı olabilir.<br />Bu modülün yüklenmesi, {{Links.Symfony.Intl/Idn}} ve {{Links.Symfony.Mbstring}} için Symfony çoklu dolgularını da yükler (çünkü bu modül, tüm PHP kurulumlarının varsayılan olarak sağlamadığı Idn işlevselliği gerektirir), her ikisi de {{Links.MIT}} lisansı ile kullanılabilir."
 Extended Description module_sfs.php: "SFS tarafından listelenen IP'lere karşı kayıt ve oturum açma sayfalarını korur."
 Name Bypasses: "Varsayılan imza bypass'lar."
 Name CN_cidram.inc: "Çin IPv4 engelleme listesi."
@@ -326,7 +326,7 @@ info_some_useful_links: |
        <li><span class="comCat">Diğer faydalı araçlar, kaynaklar, hizmetler, vb.</span>
          <ul class="comSub">
            <li>{{Links.SFS}} – Bilinen forum spam göndericileri veritabanını yönetir. Web sitelerini ve forumları spam göndericilere karşı korumak için kullanışlıdır.</li>
-           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – ASN'lerden CIDR'ler alın, ASN ilişkilerini belirleyin, ağ adlarına dayalı ASN'leri keşfedin.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – ASN'lerden CIDR'ler alın, ASN ilişkilerini belirleyin, ağ adlarına dayalı ASN'leri keşfedin.</li>
            <li>{{Links.BGPView}} – ASN'lerden CIDR'ler alın, ASN ilişkilerini belirleyin, ağ adlarına dayalı ASN'leri keşfedin.</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar by Qrator</a> – ASN'lerin bağlantısını kontrol etmek için yararlı araç ve ASN'ler hakkında çeşitli diğer bilgiler.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Spamhaus Projesi</a> – ASN'ler için botnet enfeksiyon oranları ile ilgili raporları görüntüler.</li>
@@ -581,6 +581,7 @@ response_not_satisfied: "Karşılanmadı."
 response_passed: "Geçti"
 response_please_check_config: "Yeni kurulan modülün istediğiniz gibi davrandığından emin olmak için lütfen yapılandırmanızı kontrol edin."
 response_ready_to_install: "Yüklemeye hazır."
+response_redirected: "Yönlendirildi"
 response_rename_error: "Yeniden adlandırılamadı!"
 response_repair_process_completed: "Onarım işlemi tamamlandı."
 response_repair_process_failed: "Onarım işlemi başarısız oldu."

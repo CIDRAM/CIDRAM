@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2022.12.20).
+ * This file: Output generator (last modified: 2023.05.07).
  */
 
 /** Initialise cache. */
@@ -216,9 +216,7 @@ if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode'] && e
             $Infractions = $CIDRAM['BlockInfo']['SignatureCount'];
             if (isset($CIDRAM['ModuleResCache'][$Module]) && is_object($CIDRAM['ModuleResCache'][$Module])) {
                 $CIDRAM['ModuleResCache'][$Module]($Infractions);
-            } elseif (!file_exists($CIDRAM['Vault'] . $Module) || !is_readable($CIDRAM['Vault'] . $Module)) {
-                return;
-            } else {
+            } elseif (file_exists($CIDRAM['Vault'] . $Module) && is_readable($CIDRAM['Vault'] . $Module)) {
                 require $CIDRAM['Vault'] . $Module;
             }
             $CIDRAM['Trackable'] = $CIDRAM['Trackable'] ?: ($CIDRAM['BlockInfo']['SignatureCount'] - $Infractions) > 0;
@@ -394,6 +392,7 @@ if (
         empty($CIDRAM['Banned']) &&
         class_exists('\CIDRAM\Core\ReCaptcha') &&
         $CIDRAM['BlockInfo']['SignatureCount'] <= $CIDRAM['Config']['recaptcha']['signature_limit'] &&
+        empty($CIDRAM['Config']['recaptcha']['forcibly_disabled']) &&
         (
             $CIDRAM['Config']['recaptcha']['usemode'] === 1 ||
             $CIDRAM['Config']['recaptcha']['usemode'] === 3 ||
@@ -413,6 +412,7 @@ if (
         empty($CIDRAM['Banned']) &&
         class_exists('\CIDRAM\Core\HCaptcha') &&
         $CIDRAM['BlockInfo']['SignatureCount'] <= $CIDRAM['Config']['hcaptcha']['signature_limit'] &&
+        empty($CIDRAM['Config']['hcaptcha']['forcibly_disabled']) &&
         (
             $CIDRAM['Config']['hcaptcha']['usemode'] === 1 ||
             $CIDRAM['Config']['hcaptcha']['usemode'] === 3 ||
@@ -868,14 +868,8 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
         $CIDRAM['HTML'] = '';
     }
 
-    /**
-     * Skip this section if the IP has been banned and logging banned IPs has
-     * been disabled, or if the don't log flag has been set.
-     */
-    if (empty($CIDRAM['Flag Don\'t Log']) && (
-        $CIDRAM['Config']['general']['log_banned_ips'] || empty($CIDRAM['Banned'])
-    )) {
-        /** Write to logs. */
+    /** Write to logs. */
+    if ($CIDRAM['Config']['general']['log_banned_ips'] || empty($CIDRAM['Banned'])) {
         $CIDRAM['Events']->fireEvent('writeToLog');
     }
 

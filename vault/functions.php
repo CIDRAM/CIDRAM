@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2023.04.25).
+ * This file: Functions file (last modified: 2023.05.07).
  */
 
 /**
@@ -2048,7 +2048,7 @@ $CIDRAM['AuxAction'] = function ($Action, $Name, $Reason = '', $Target = '', $St
 
     /** Don't log the request instance. */
     elseif ($Action === 'Don\'t log') {
-        $CIDRAM['Flag Don\'t Log'] = true;
+        $CIDRAM['Suppress logging'] = true;
     }
 
     /** Redirect the request (without blocking it). */

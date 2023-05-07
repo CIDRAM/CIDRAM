@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2023.04.25).
+ * This file: Front-end handler (last modified: 2023.05.07).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -4186,6 +4186,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
                     $CIDRAM['BlockInfo']['Ignored']
                 );
                 $CIDRAM['ThisIP']['StatClass'] = 'txtOe';
+            } elseif (!empty($CIDRAM['Aux Redirect']) && !empty($CIDRAM['Aux Status Code'])) {
+                $CIDRAM['ThisIP']['YesNo'] = $CIDRAM['L10N']->getString('response_no') . '(' . $CIDRAM['L10N']->getString('response_redirected') . ')';
+                $CIDRAM['ThisIP']['StatClass'] = 'txtOe';
             } else {
                 $CIDRAM['ThisIP']['YesNo'] = $CIDRAM['L10N']->getString('response_no');
                 $CIDRAM['ThisIP']['StatClass'] = 'txtGn';
@@ -4194,27 +4197,43 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
                 if ($CIDRAM['ThisIP']['StatClass'] === 'txtGn') {
                     $CIDRAM['ThisIP']['StatClass'] = 'txtOe';
                 }
-                $CIDRAM['ThisIP']['YesNo'] .= ' ' . $CIDRAM['LTRinRTF'](sprintf(
+                $CIDRAM['ThisIP']['YesNo'] .= '<br />' . $CIDRAM['LTRinRTF'](sprintf(
                     '%1$s <%2$d> ➡ %3$s',
-                    '<br /><span style="text-transform:capitalize">++' . $CIDRAM['L10N']->getString('label_aux_actRdr') . '</span>',
+                    $CIDRAM['L10N']->getString('response_redirected'),
                     $CIDRAM['Aux Status Code'],
                     '<code>' . $CIDRAM['Aux Redirect'] . '</code>'
                 ));
             }
-            if (!empty($CIDRAM['Flag Don\'t Log'])) {
-                $CIDRAM['ThisIP']['YesNo'] .= '<br /><span style="text-transform:capitalize">++' . $CIDRAM['L10N']->getString('label_aux_actLog') . '</span>';
+            if (isset($CIDRAM['Trackable'])) {
+                $CIDRAM['ThisIP']['YesNo'] .= '<br />' . $CIDRAM['L10N']->getString('field_tracking') . ' – ' . $CIDRAM['L10N']->getString((
+                    $CIDRAM['Trackable'] &&
+                    $CIDRAM['BlockInfo']['SignatureCount'] > 0
+                ) ? 'response_yes' : 'response_no');
             }
             if (!empty($CIDRAM['Config']['recaptcha']['enabled'])) {
                 $CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $CIDRAM['L10N']->getString('label_aux_special_recaptcha_mark');
             }
+            if (!empty($CIDRAM['Config']['recaptcha']['forcibly_disabled'])) {
+                $CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $CIDRAM['L10N']->getString('label_aux_special_recaptcha_disable');
+            }
             if (!empty($CIDRAM['Config']['hcaptcha']['enabled'])) {
                 $CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $CIDRAM['L10N']->getString('label_aux_special_hcaptcha_mark');
+            }
+            if (!empty($CIDRAM['Config']['hcaptcha']['forcibly_disabled'])) {
+                $CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $CIDRAM['L10N']->getString('label_aux_special_hcaptcha_disable');
             }
             if (!empty($CIDRAM['Suppress output template'])) {
                 $CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $CIDRAM['L10N']->getString('label_aux_special_suppress');
             }
-            if (!empty($CIDRAM['Tracking options override'])) {
-                $CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $CIDRAM['L10N']->getString('label_aux_special_tracking_extended');
+            if (!empty($CIDRAM['Suppress logging'])) {
+                $CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $CIDRAM['L10N']->getString('label_aux_special_suppress_logging');
+            }
+            if (isset($CIDRAM['Tracking options override'])) {
+                if ($CIDRAM['Tracking options override'] === 'extended') {
+                    $CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $CIDRAM['L10N']->getString('label_aux_special_tracking_extended');
+                } elseif ($CIDRAM['Tracking options override'] === 'default') {
+                    $CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $CIDRAM['L10N']->getString('label_aux_special_tracking_default');
+                }
             }
             if (isset($CIDRAM['Profile']) && is_array($CIDRAM['Profile']) && count($CIDRAM['Profile'])) {
                 foreach ($CIDRAM['Profile'] as $CIDRAM['ThisProfile']) {

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2023.05.06).
+# This file: Configuration defaults file (last modified: 2023.05.07).
 ##/
 
 Config Defaults:
@@ -759,14 +759,12 @@ Config Defaults:
 Provide:
  Initialise SimulateBlockEvent:
   Config:
-   recaptcha:
-    enabled: false
-   hcaptcha:
-    enabled: false
-  Tracking options override: false
+   recaptcha: {enabled: false, forcibly_disabled: false}
+   hcaptcha: {enabled: false, forcibly_disabled: false}
+  Tracking options override: ""
   Suppress output template: false
+  Suppress logging: false
   Trackable: true
-  Flag Don't Log: false
   Aux Redirect: ""
   Aux Status Code: 200
   Hostname: ""
@@ -812,7 +810,7 @@ Provide:
      Label: "label_aux_special_recaptcha_disable"
      Sets:
       Config:
-       recaptcha: {usemode: 0, enabled: false}
+       recaptcha: {usemode: 0, forcibly_disabled: true}
    HCaptcha:
     Mark for use with HCaptcha:
      Label: "label_aux_special_hcaptcha_mark"
@@ -823,7 +821,7 @@ Provide:
      Label: "label_aux_special_hcaptcha_disable"
      Sets:
       Config:
-       hcaptcha: {usemode: 0, enabled: false}
+       hcaptcha: {usemode: 0, forcibly_disabled: true}
    Output template:
     Suppress output template:
      Label: "label_aux_special_suppress"
@@ -833,8 +831,7 @@ Provide:
     Suppress logging:
      Label: "label_aux_special_suppress_logging"
      Sets:
-      Config:
-       general: {logfile: "", logfileApache: "", logfileSerialized: ""}
+      Suppress logging: true
    IP Tracking:
     Forcibly enable IP tracking:
      Label: "label_aux_special_ip_tracking_enable"

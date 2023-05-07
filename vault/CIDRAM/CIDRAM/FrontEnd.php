@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.04.25).
+ * This file: The CIDRAM front-end (last modified: 2023.05.07).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -3937,25 +3937,9 @@ class FrontEnd extends Core
                         if ($this->CIDRAM['ThisIP']['IPAddress'] === '') {
                             continue;
                         }
-                        $this->simulateBlockEvent(
-                            $this->CIDRAM['ThisIP']['IPAddress'],
-                            $TestsSwitch,
-                            $ModuleSwitch,
-                            $SEVSwitch,
-                            $SMVSwitch,
-                            $OVSwitch,
-                            $AuxSwitch
-                        );
+                        $this->simulateBlockEvent($this->CIDRAM['ThisIP']['IPAddress'], $TestsSwitch, $ModuleSwitch, $SEVSwitch, $SMVSwitch, $OVSwitch, $AuxSwitch);
                     } elseif ($this->FE['TestMode'] === 2) {
-                        $this->simulateBlockEvent(
-                            '',
-                            $TestsSwitch,
-                            $ModuleSwitch,
-                            $SEVSwitch,
-                            $SMVSwitch,
-                            $OVSwitch,
-                            $AuxSwitch
-                        );
+                        $this->simulateBlockEvent('', $TestsSwitch, $ModuleSwitch, $SEVSwitch, $SMVSwitch, $OVSwitch, $AuxSwitch);
                         $this->CIDRAM['ThisIP']['IPAddress'] = $this->FE['custom-ua'];
                     }
                     if (
@@ -3965,7 +3949,7 @@ class FrontEnd extends Core
                         !empty($this->CIDRAM['ModuleErrors']) ||
                         !empty($this->CIDRAM['AuxErrors'])
                     ) {
-                        $this->CIDRAM['ThisIP']['YesNo'] = $this->L10N->getString('response_error');
+                        $this->CIDRAM['ThisIP']['YesNo'] = $this->L10N->getString('field_blocked') . $this->L10N->getString('pair_separator') . $this->L10N->getString('response_error');
                         $this->CIDRAM['ThisIP']['StatClass'] = 'txtOe';
                         if (!empty($this->CIDRAM['AuxErrors'])) {
                             $this->CIDRAM['AuxErrorCounts'] = [];
@@ -4033,7 +4017,7 @@ class FrontEnd extends Core
                         }
                     } elseif ($this->BlockInfo['SignatureCount']) {
                         $this->BlockInfo['WhyReason'] = preg_replace('~(?<=</span>\),|]\),)( )(?=[\dA-Za-z])~', '<br />', $this->BlockInfo['WhyReason']);
-                        $this->CIDRAM['ThisIP']['YesNo'] = $this->L10N->getString('response_yes') . ' – ' . $this->BlockInfo['WhyReason'];
+                        $this->CIDRAM['ThisIP']['YesNo'] = $this->L10N->getString('field_blocked') . $this->L10N->getString('pair_separator') . $this->L10N->getString('response_yes') . ' – ' . $this->BlockInfo['WhyReason'];
                         $this->CIDRAM['ThisIP']['StatClass'] = 'txtRd';
                         if (
                             $this->FE['Flags'] &&
@@ -4056,46 +4040,71 @@ class FrontEnd extends Core
                             );
                         }
                     } elseif ($this->BlockInfo['Ignored']) {
-                        $this->CIDRAM['ThisIP']['YesNo'] = sprintf(
-                            '%s (%s) – %s',
-                            $this->L10N->getString('response_no'),
-                            $this->L10N->getString('state_ignored'),
-                            $this->BlockInfo['Ignored']
-                        );
+                        $this->CIDRAM['ThisIP']['YesNo'] = $this->L10N->getString('field_blocked') . $this->L10N->getString('pair_separator') . $this->L10N->getString('response_no') . '(' . $this->L10N->getString('state_ignored') . ')' . $this->BlockInfo['Ignored'];
+                        $this->CIDRAM['ThisIP']['StatClass'] = 'txtOe';
+                    } elseif (!empty($this->CIDRAM['Aux Redirect']) && !empty($this->CIDRAM['Aux Status Code'])) {
+                        $this->CIDRAM['ThisIP']['YesNo'] = $this->L10N->getString('field_blocked') . $this->L10N->getString('pair_separator') . $this->L10N->getString('response_no') . '(' . $this->L10N->getString('response_redirected') . ')';
                         $this->CIDRAM['ThisIP']['StatClass'] = 'txtOe';
                     } else {
-                        $this->CIDRAM['ThisIP']['YesNo'] = $this->L10N->getString('response_no');
+                        $this->CIDRAM['ThisIP']['YesNo'] = $this->L10N->getString('field_blocked') . $this->L10N->getString('pair_separator') . $this->L10N->getString('response_no');
                         $this->CIDRAM['ThisIP']['StatClass'] = 'txtGn';
                     }
                     if ($this->CIDRAM['Aux Redirect'] && $this->CIDRAM['Aux Status Code']) {
                         if ($this->CIDRAM['ThisIP']['StatClass'] === 'txtGn') {
                             $this->CIDRAM['ThisIP']['StatClass'] = 'txtOe';
                         }
-                        $this->CIDRAM['ThisIP']['YesNo'] .= ' ' . $this->ltrInRtf(sprintf(
+                        $this->CIDRAM['ThisIP']['YesNo'] .= '<br />' . $this->ltrInRtf(sprintf(
                             '%1$s <%2$d> ➡ %3$s',
-                            '<br /><span style="text-transform:capitalize">++' . $this->L10N->getString('label_aux_actRdr') . '</span>',
+                            $this->L10N->getString('response_redirected'),
                             $this->CIDRAM['Aux Status Code'],
                             '<code>' . $this->CIDRAM['Aux Redirect'] . '</code>'
                         ));
                     }
-                    if (!empty($this->CIDRAM['Flag Don\'t Log'])) {
-                        $this->CIDRAM['ThisIP']['YesNo'] .= '<br /><span style="text-transform:capitalize">++' . $this->L10N->getString('label_aux_actLog') . '</span>';
+                    $this->CIDRAM['ThisIP']['YesNo'] .= '<br />' . $this->L10N->getString('field_tracking') . $this->L10N->getString('pair_separator');
+                    if (isset($this->CIDRAM['Trackable'])) {
+                        if ($this->CIDRAM['Trackable']) {
+                            $this->CIDRAM['ThisIP']['YesNo'] .= $this->L10N->getString('response_yes') . ' (++' . $this->L10N->getString('label_aux_special_ip_tracking_enable') . ')';
+                        } else {
+                            $this->CIDRAM['ThisIP']['YesNo'] .= $this->L10N->getString('response_no') . ' (++' . $this->L10N->getString('label_aux_special_ip_tracking_disable') . ')';
+                        }
+                    } else {
+                        $this->CIDRAM['ThisIP']['YesNo'] .= $this->L10N->getString((
+                            isset($this->Stages['Tracking:Enable']) &&
+                            $this->BlockInfo['Infractions'] > 0 &&
+                            $this->BlockInfo['SignatureCount'] > 0
+                        ) ? 'response_yes' : 'response_no');
+                    }
+                    if ($this->FE['TestMode'] === 1) {
+                        $this->CIDRAM['ThisIP']['YesNo'] .= '<br />' . $this->L10N->getString('field_banned') . $this->L10N->getString('pair_separator') . $this->L10N->getString($this->CIDRAM['Banned'] ? 'response_yes' : 'response_no');
                     }
                     if (!empty($this->Configuration['recaptcha']['enabled'])) {
                         $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label_aux_special_recaptcha_mark');
                     }
+                    if (!empty($this->Configuration['recaptcha']['forcibly_disabled'])) {
+                        $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label_aux_special_recaptcha_disable');
+                    }
                     if (!empty($this->Configuration['hcaptcha']['enabled'])) {
                         $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label_aux_special_hcaptcha_mark');
+                    }
+                    if (!empty($this->Configuration['hcaptcha']['forcibly_disabled'])) {
+                        $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label_aux_special_hcaptcha_disable');
                     }
                     if (!empty($this->CIDRAM['Suppress output template'])) {
                         $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label_aux_special_suppress');
                     }
-                    if (!empty($this->CIDRAM['Tracking options override'])) {
-                        $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label_aux_special_tracking_extended');
+                    if (!empty($this->CIDRAM['Suppress logging'])) {
+                        $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label_aux_special_suppress_logging');
                     }
-                    if (isset($this->Profiles) && is_array($this->Profiles) && count($this->Profiles)) {
-                        foreach ($this->Profiles as $this->CIDRAM['ThisProfile']) {
-                            $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++&lt;' . $this->CIDRAM['ThisProfile'] . '&gt;';
+                    if (isset($this->CIDRAM['Tracking options override'])) {
+                        if ($this->CIDRAM['Tracking options override'] === 'extended') {
+                            $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label_aux_special_tracking_extended');
+                        } elseif ($this->CIDRAM['Tracking options override'] === 'default') {
+                            $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label_aux_special_tracking_default');
+                        }
+                    }
+                    if (is_array($this->Profiles) && count($this->Profiles)) {
+                        foreach ($this->Profiles as $Profile) {
+                            $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++&lt;' . $Profile . '&gt;';
                         }
                     }
                     $this->CIDRAM['ThisIP']['ID'] = preg_replace('~[^\dA-Za-z]~', '_', $this->CIDRAM['ThisIP']['IPAddress']);

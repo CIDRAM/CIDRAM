@@ -236,3 +236,5 @@
 [2023.05.03; Bug-fix; Maikuolan]: Under specific circumstances, the front-end updater would sometimes attempt to (de/re)activate non-activable components; Fixed (#462).
 
 [2023.05.06; Maikuolan]: Slightly improved some peripheral updater functionality.
+
+[2023.05.07; Maikuolan]: Merged the "suppress logging" and "don't log" internal flags, assigned forced IP tracking status its own flags, slightly restructured block event simulation, and updated the IP testing page to properly describe all currently supported auxiliary rules options and special flags, IP tracking status, and banned status (#464).

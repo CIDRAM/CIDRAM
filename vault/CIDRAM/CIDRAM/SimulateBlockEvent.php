@@ -123,6 +123,23 @@ trait SimulateBlockEvent
             /** Prepare run errors. */
             $this->CIDRAM['RunErrors'] = $this->CIDRAM['Errors'];
             $this->restoreErrorHandler();
+
+            if (!$this->CIDRAM['Caught']) {
+                $DoBan = false;
+                $Try = $this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']] ?? $this->Cache->getEntry('Tracking-' . $this->BlockInfo['IPAddr']);
+                if ($Try !== false && $Try >= $this->Configuration['signatures']['infraction_limit']) {
+                    $DoBan = true;
+                }
+                if (!$DoBan && $this->BlockInfo['IPAddr'] !== $this->BlockInfo['IPAddrResolved']) {
+                    $Try = $this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']] ?? $this->Cache->getEntry('Tracking-' . $this->BlockInfo['IPAddr']);
+                    if ($Try !== false && $Try >= $this->Configuration['signatures']['infraction_limit']) {
+                        $DoBan = true;
+                    }
+                }
+                if ($DoBan) {
+                    $this->CIDRAM['Banned'] = true;
+                }
+            }
         }
 
         if (isset($this->Stages['Tests:Tracking']) && $this->BlockInfo['SignatureCount'] > 0) {

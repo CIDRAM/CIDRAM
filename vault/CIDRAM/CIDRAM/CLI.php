@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CIDRAM CLI mode (last modified: 2023.05.05).
+ * This file: CIDRAM CLI mode (last modified: 2023.05.07).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -315,7 +315,7 @@ trait CLI
                         $Results['YesNo'] = $this->L10N->getString('response_no');
                     }
                     $Results['NegateFlags'] = '';
-                    if ($this->CIDRAM['Flag Don\'t Log']) {
+                    if (!empty($this->CIDRAM['Suppress logging'])) {
                         $Results['NegateFlags'] .= '📓';
                     }
                     if ($Results['NegateFlags']) {

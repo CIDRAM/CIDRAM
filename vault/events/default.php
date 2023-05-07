@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Default event handlers (last modified: 2023.03.25).
+ * This file: Default event handlers (last modified: 2023.05.07).
  */
 
 /**
@@ -20,6 +20,7 @@ $this->Events->addHandler('writeToLog', function (): bool {
     /** Guard. */
     if (
         $this->Configuration['logging']['standard_log'] === '' ||
+        !empty($this->CIDRAM['Suppress logging']) ||
         !($Filename = $this->buildPath($this->Vault . $this->Configuration['logging']['standard_log']))
     ) {
         return false;
@@ -49,6 +50,7 @@ $this->Events->addHandler('writeToLog', function (): bool {
     if (
         empty($this->BlockInfo) ||
         $this->Configuration['logging']['apache_style_log'] === '' ||
+        !empty($this->CIDRAM['Suppress logging']) ||
         !($Filename = $this->buildPath($this->Vault . $this->Configuration['logging']['apache_style_log']))
     ) {
         return false;
@@ -88,6 +90,7 @@ $this->Events->addHandler('writeToLog', function (): bool {
     if (
         empty($this->BlockInfo) ||
         $this->Configuration['logging']['serialised_log'] === '' ||
+        !empty($this->CIDRAM['Suppress logging']) ||
         !($Filename = $this->buildPath($this->Vault . $this->Configuration['logging']['serialised_log']))
     ) {
         return false;

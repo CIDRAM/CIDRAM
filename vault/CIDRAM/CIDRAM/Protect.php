@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2023.04.06).
+ * This file: Protect traits (last modified: 2023.05.07).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -229,9 +229,7 @@ trait Protect
                 $Before = $this->BlockInfo['SignatureCount'];
                 if (isset($this->CIDRAM['ModuleResCache'][$Module]) && is_object($this->CIDRAM['ModuleResCache'][$Module])) {
                     $this->CIDRAM['ModuleResCache'][$Module]();
-                } elseif (!file_exists($this->ModulesPath . $Module) || !is_readable($this->ModulesPath . $Module)) {
-                    return;
-                } else {
+                } elseif (file_exists($this->ModulesPath . $Module) && is_readable($this->ModulesPath . $Module)) {
                     require $this->ModulesPath . $Module;
                 }
                 if (isset($this->Stages['Modules:Tracking']) && $this->BlockInfo['SignatureCount'] !== $Before) {
@@ -440,6 +438,7 @@ trait Protect
                 $this->Configuration['recaptcha']['secret'] !== '' &&
                 empty($this->CIDRAM['Banned']) &&
                 $this->BlockInfo['SignatureCount'] <= $this->Configuration['recaptcha']['signature_limit'] &&
+                empty($this->Configuration['recaptcha']['forcibly_disabled']) &&
                 (
                     $this->Configuration['recaptcha']['usemode'] === 1 ||
                     $this->Configuration['recaptcha']['usemode'] === 3 ||
@@ -460,6 +459,7 @@ trait Protect
                 $this->Configuration['hcaptcha']['secret'] !== '' &&
                 empty($this->CIDRAM['Banned']) &&
                 $this->BlockInfo['SignatureCount'] <= $this->Configuration['hcaptcha']['signature_limit'] &&
+                empty($this->Configuration['hcaptcha']['forcibly_disabled']) &&
                 (
                     $this->Configuration['hcaptcha']['usemode'] === 1 ||
                     $this->Configuration['hcaptcha']['usemode'] === 3 ||
@@ -868,17 +868,10 @@ trait Protect
                 }
             }
 
+            /** Write to logs. */
             if (isset($this->Stages['WriteLogs:Enable'])) {
                 $this->Stage = 'WriteLogs';
-
-                /**
-                 * Skip this section if the IP has been banned and logging banned IPs has
-                 * been disabled, or if the "Don't Log" flag has been set.
-                 */
-                if (empty($this->CIDRAM['Flag Don\'t Log']) && (
-                    $this->Configuration['logging']['log_banned_ips'] || empty($this->CIDRAM['Banned'])
-                )) {
-                    /** Write to logs. */
+                if ($this->Configuration['logging']['log_banned_ips'] || empty($this->CIDRAM['Banned'])) {
                     $this->Events->fireEvent('writeToLog');
                 }
             }

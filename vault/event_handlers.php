@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Event handlers file (last modified: 2021.05.28).
+ * This file: Event handlers file (last modified: 2023.05.07).
  */
 
 /**
@@ -20,6 +20,7 @@ $CIDRAM['Events']->addHandler('writeToLog', function () use (&$CIDRAM): bool {
     /** Guard. */
     if (
         $CIDRAM['Config']['general']['logfile'] === '' ||
+        !empty($CIDRAM['Suppress logging']) ||
         !($Filename = $CIDRAM['BuildPath']($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfile']))
     ) {
         return false;
@@ -49,6 +50,7 @@ $CIDRAM['Events']->addHandler('writeToLog', function () use (&$CIDRAM): bool {
     if (
         empty($CIDRAM['BlockInfo']) ||
         $CIDRAM['Config']['general']['logfile_apache'] === '' ||
+        !empty($CIDRAM['Suppress logging']) ||
         !($Filename = $CIDRAM['BuildPath']($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfile_apache']))
     ) {
         return false;
@@ -88,6 +90,7 @@ $CIDRAM['Events']->addHandler('writeToLog', function () use (&$CIDRAM): bool {
     if (
         empty($CIDRAM['BlockInfo']) ||
         $CIDRAM['Config']['general']['logfile_serialized'] === '' ||
+        !empty($CIDRAM['Suppress logging']) ||
         !($Filename = $CIDRAM['BuildPath']($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfile_serialized']))
     ) {
         return false;

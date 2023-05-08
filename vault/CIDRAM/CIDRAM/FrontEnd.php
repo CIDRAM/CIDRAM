@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.05.07).
+ * This file: The CIDRAM front-end (last modified: 2023.05.08).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -4076,6 +4076,9 @@ class FrontEnd extends Core
                     }
                     if ($this->FE['TestMode'] === 1) {
                         $this->CIDRAM['ThisIP']['YesNo'] .= '<br />' . $this->L10N->getString('field_banned') . $this->L10N->getString('pair_separator') . $this->L10N->getString($this->CIDRAM['Banned'] ? 'response_yes' : 'response_no');
+                    }
+                    if (isset($this->CIDRAM['ThisStatusHTTP'])) {
+                        $this->CIDRAM['ThisIP']['YesNo'] .= '<br />' . $this->L10N->getString('field_status_code') . $this->L10N->getString('pair_separator') . $this->CIDRAM['ThisStatusHTTP'];
                     }
                     if (!empty($this->Configuration['recaptcha']['enabled'])) {
                         $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label_aux_special_recaptcha_mark');

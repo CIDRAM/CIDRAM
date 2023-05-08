@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2023.05.07).
+# This file: Defaults file (last modified: 2023.05.08).
 ##/
 
 Config Defaults:
@@ -1099,17 +1099,18 @@ Config Defaults:
 Provide:
  Initialise SimulateBlockEvent:
   CIDRAM:
-   Banned: false
-   Tracking options override: ""
-   Suppress output template: false
-   Suppress logging: false
-   Trackable: null
    Aux Redirect: ""
    Aux Status Code: 200
+   Banned: false
    Hostname: ""
+   Suppress logging: false
+   Suppress output template: false
+   ThisStatusHTTP: 200
+   Trackable: null
+   Tracking options override: ""
   Configuration:
-   recaptcha: {enabled: false, forcibly_disabled: false}
    hcaptcha: {enabled: false, forcibly_disabled: false}
+   recaptcha: {enabled: false, forcibly_disabled: false}
  Auxiliary Rules:
   Modes:
    - "Whitelist"

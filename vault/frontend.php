@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2023.05.07).
+ * This file: Front-end handler (last modified: 2023.05.08).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -4195,7 +4195,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
                 );
                 $CIDRAM['ThisIP']['StatClass'] = 'txtOe';
             } elseif (!empty($CIDRAM['Aux Redirect']) && !empty($CIDRAM['Aux Status Code'])) {
-                $CIDRAM['ThisIP']['YesNo'] = $CIDRAM['L10N']->getString('response_no') . '(' . $CIDRAM['L10N']->getString('response_redirected') . ')';
+                $CIDRAM['ThisIP']['YesNo'] = $CIDRAM['L10N']->getString('response_no') . ' (' . $CIDRAM['L10N']->getString('response_redirected') . ')';
                 $CIDRAM['ThisIP']['StatClass'] = 'txtOe';
             } else {
                 $CIDRAM['ThisIP']['YesNo'] = $CIDRAM['L10N']->getString('response_no');
@@ -4205,12 +4205,13 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
                 if ($CIDRAM['ThisIP']['StatClass'] === 'txtGn') {
                     $CIDRAM['ThisIP']['StatClass'] = 'txtOe';
                 }
-                $CIDRAM['ThisIP']['YesNo'] .= '<br />' . $CIDRAM['LTRinRTF'](sprintf(
-                    '%1$s <%2$d> ➡ %3$s',
-                    $CIDRAM['L10N']->getString('response_redirected'),
-                    $CIDRAM['Aux Status Code'],
-                    '<code>' . $CIDRAM['Aux Redirect'] . '</code>'
-                ));
+                $CIDRAM['ThisIP']['YesNo'] .= '<br />' . $CIDRAM['LTRinRTF'](
+                    $CIDRAM['L10N']->getString('response_redirected') . ' <' . $CIDRAM['Aux Status Code'] . '> ➡ <code>' . $CIDRAM['Aux Redirect'] . '</code>'
+                );
+            } elseif ($CIDRAM['BlockInfo']['SignatureCount'] && $CIDRAM['Config']['general']['silent_mode'] !== '') {
+                $CIDRAM['ThisIP']['YesNo'] .= '<br />' . $CIDRAM['LTRinRTF'](
+                    $CIDRAM['L10N']->getString('response_redirected') . ' <301> ➡ <code>' . $CIDRAM['Config']['general']['silent_mode'] . '</code>'
+                );
             }
             if (isset($CIDRAM['Trackable'])) {
                 $CIDRAM['ThisIP']['YesNo'] .= '<br />' . $CIDRAM['L10N']->getString('field_tracking') . ' – ' . $CIDRAM['L10N']->getString((

@@ -251,7 +251,7 @@ trait SimulateBlockEvent
          */
         if ($this->BlockInfo['SignatureCount'] > 0) {
             $this->CIDRAM['ThisStatusHTTP'] = (
-                ($this->Configuration['general']['silent_mode'] && ($Try = 301)) ||
+                ($this->Configuration['general']['silent_mode'] !== '' && ($Try = 301)) ||
                 (!empty($this->CIDRAM['Banned']) && $this->Configuration['general']['ban_override'] > 400 && ($Try = $this->Configuration['general']['ban_override'])) ||
                 (!empty($this->CIDRAM['RL_Status']) && $this->BlockInfo['SignatureCount'] === 1 && ($Try = 429)) ||
                 (!empty($this->CIDRAM['Aux Status Code']) && $this->CIDRAM['Aux Status Code'] > 400 && ($Try = $this->CIDRAM['Aux Status Code'])) ||

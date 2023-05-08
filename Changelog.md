@@ -240,3 +240,5 @@
 [2023.05.07; Maikuolan]: Merged the "suppress logging" and "don't log" internal flags, assigned forced IP tracking status its own flags, slightly restructured block event simulation, and updated the IP testing page to properly describe all currently supported auxiliary rules options and special flags, IP tracking status, and banned status (#464).
 
 [2023.05.08; Maikuolan]: Results at the IP test page now include the HTTP status code which could be expected (#464).
+
+[2023.05.08; Maikuolan]: Results at the IP test page now include information about redirects via silent mode and auxiliary rules (#464).

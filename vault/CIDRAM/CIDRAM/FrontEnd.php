@@ -4040,10 +4040,10 @@ class FrontEnd extends Core
                             );
                         }
                     } elseif ($this->BlockInfo['Ignored']) {
-                        $this->CIDRAM['ThisIP']['YesNo'] = $this->L10N->getString('field_blocked') . $this->L10N->getString('pair_separator') . $this->L10N->getString('response_no') . '(' . $this->L10N->getString('state_ignored') . ')' . $this->BlockInfo['Ignored'];
+                        $this->CIDRAM['ThisIP']['YesNo'] = $this->L10N->getString('field_blocked') . $this->L10N->getString('pair_separator') . $this->L10N->getString('response_no') . ' (' . $this->L10N->getString('state_ignored') . ') ' . $this->BlockInfo['Ignored'];
                         $this->CIDRAM['ThisIP']['StatClass'] = 'txtOe';
                     } elseif (!empty($this->CIDRAM['Aux Redirect']) && !empty($this->CIDRAM['Aux Status Code'])) {
-                        $this->CIDRAM['ThisIP']['YesNo'] = $this->L10N->getString('field_blocked') . $this->L10N->getString('pair_separator') . $this->L10N->getString('response_no') . '(' . $this->L10N->getString('response_redirected') . ')';
+                        $this->CIDRAM['ThisIP']['YesNo'] = $this->L10N->getString('field_blocked') . $this->L10N->getString('pair_separator') . $this->L10N->getString('response_no') . ' (' . $this->L10N->getString('response_redirected') . ')';
                         $this->CIDRAM['ThisIP']['StatClass'] = 'txtOe';
                     } else {
                         $this->CIDRAM['ThisIP']['YesNo'] = $this->L10N->getString('field_blocked') . $this->L10N->getString('pair_separator') . $this->L10N->getString('response_no');
@@ -4053,12 +4053,13 @@ class FrontEnd extends Core
                         if ($this->CIDRAM['ThisIP']['StatClass'] === 'txtGn') {
                             $this->CIDRAM['ThisIP']['StatClass'] = 'txtOe';
                         }
-                        $this->CIDRAM['ThisIP']['YesNo'] .= '<br />' . $this->ltrInRtf(sprintf(
-                            '%1$s <%2$d> ➡ %3$s',
-                            $this->L10N->getString('response_redirected'),
-                            $this->CIDRAM['Aux Status Code'],
-                            '<code>' . $this->CIDRAM['Aux Redirect'] . '</code>'
-                        ));
+                        $this->CIDRAM['ThisIP']['YesNo'] .= '<br />' . $this->ltrInRtf(
+                            $this->L10N->getString('response_redirected') . ' <' . $this->CIDRAM['Aux Status Code'] . '> ➡ <code>' . $this->CIDRAM['Aux Redirect'] . '</code>'
+                        );
+                    } elseif ($this->BlockInfo['SignatureCount'] && $this->Configuration['general']['silent_mode'] !== '') {
+                        $this->CIDRAM['ThisIP']['YesNo'] .= '<br />' . $this->ltrInRtf(
+                            $this->L10N->getString('response_redirected') . ' <301> ➡ <code>' . $this->Configuration['general']['silent_mode'] . '</code>'
+                        );
                     }
                     $this->CIDRAM['ThisIP']['YesNo'] .= '<br />' . $this->L10N->getString('field_tracking') . $this->L10N->getString('pair_separator');
                     if (isset($this->CIDRAM['Trackable'])) {

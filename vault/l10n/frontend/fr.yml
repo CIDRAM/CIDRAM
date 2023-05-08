@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2023.05.06).
+# This file: French language data for the front-end (last modified: 2023.05.07).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -235,7 +235,7 @@ config_protocol_blocked: "Les protocoles sélectionnés seront bloqués. Remarqu
 config_protocol_reason_message: "Le message de raison affiché lorsque de telles requêtes sont bloquées."
 config_rate_limiting: "Configuration pour la limitation du débit (non recommandé pour d'utilisation générale)."
 config_rate_limiting_allowance_period: "La durée pour surveiller l'utilisation Défaut = 0°0′0″."
-config_rate_limiting_exceptions: "Exceptions (c'est à dire, requêtes qui ne devraient pas être limitées). Pertinent uniquement lorsque la limitation du débit est activée."
+config_rate_limiting_exceptions: "Exceptions (c'est à dire, requêtes qui ne devraient pas être limitées). Pertinent uniquement lorsque la limitation du débit est activé."
 config_rate_limiting_max_bandwidth: "La quantité maximale de bande passante autorisée dans la période de tolérance avant de permettre la limitation du débit pour les requêtes futures. Une valeur de 0 désactive ce type de limitation du débit. Défaut = 0KB."
 config_rate_limiting_max_requests: "Le nombre maximal de requêtes autorisées dans la période de tolérance avant de permettre la limitation du débit pour les requêtes futures. Une valeur de 0 désactive ce type de limitation du débit. Défaut = 0."
 config_rate_limiting_precision_ipv4: "La précision à utiliser lors de la surveillance de l'utilisation d'IPv4. La valeur reflète la taille du bloc CIDR. Réglez sur 32 pour une meilleure précision. Défaut = 32."
@@ -322,8 +322,8 @@ field_filetype_unknown: "Inconnu"
 field_install: "Installer"
 field_latest_version: "Dernière Version"
 field_log_in: "Connecter"
-field_log_rotation_archive: "Tout d'abord archiver, puis supprimez les fichiers journaux les plus anciens, jusqu'à ce que la limite ne soit plus dépassée."
-field_log_rotation_delete: "Supprimez les fichiers journaux les plus anciens, jusqu'à ce que la limite ne soit plus dépassée."
+field_log_rotation_archive: "Tout d'abord archiver, puis supprimez les fichiers journaux les plus anciens, jusqu'à ce que la limite ne soit plus dépassé."
+field_log_rotation_delete: "Supprimez les fichiers journaux les plus anciens, jusqu'à ce que la limite ne soit plus dépassé."
 field_macro: "Macro"
 field_netmask: "Générer une sortie sous forme de masques de réseau"
 field_new_name: "Nouveau nom\_:"
@@ -667,7 +667,7 @@ logs_logfile_doesnt_exist: "Le fichier journal sélectionné n'existe pas\_!"
 logs_no_logfile_selected: "Aucun fichier journal sélectionné."
 logs_no_logfiles_available: "Aucun fichiers journaux disponibles."
 macro_description_activate_modules: &MayImpactPerformance "Généralement pas recommandé, car il y en a probablement certains dont vous n'avez pas besoin. L'installation et l'activation de composants lorsqu'ils ne sont pas nécessaires peuvent avoir un impact négatif sur les performances."
-macro_description_install_l10n_core: &RecommendKeepingCore "Lorsque la directive de configuration <code>lang_override</code> est activée, si le navigateur d'un utilisateur spécifie une préférence de langue particulière, tant que les données L10N de core pour cette langue sont installées, CIDRAM est capable d'afficher la page «\_accès refusé\_» dans cette langue spécifié."
+macro_description_install_l10n_core: &RecommendKeepingCore "Lorsque la directive de configuration <code>lang_override</code> est activé, si le navigateur d'un utilisateur spécifie une préférence de langue particulière, tant que les données L10N de core pour cette langue sont installées, CIDRAM est capable d'afficher la page «\_accès refusé\_» dans cette langue spécifié."
 macro_description_install_l10n_fe: &RecommendFEOnlyNeeded "Votre langue préférée peut être spécifiée via la directive de configuration <code>lang</code>. Une fois cela fait, il est peu probable que vous ayez besoin de données L10N frontales autres que celles de votre langue préférée, et vous voudrez peut-être les supprimer pour libérer un peu d'espace disque disponible. Cela dit, que vous choisissiez de le supprimer ou de le conserver, de toute façon, cela ne devrait pas faire de mal."
 macro_description_install_modules: *MayImpactPerformance
 macro_description_uninstall_l10n_core: *RecommendKeepingCore
@@ -883,7 +883,7 @@ tip_condition_placeholder: "Spécifiez une valeur, ou laissez vide pour ne pas e
 tip_config: "Bonjour, {username}.<br />La page de configuration vous permet de modifier la configuration pour CIDRAM à l'accès frontal."
 tip_custom_query: "Entrez la query ici (optionnel)."
 tip_custom_referrer: "Entrez le referrer ici (optionnel)."
-tip_custom_ua: "Entrez l'agent utilisateur [user agent] ici (optionnel)."
+tip_custom_ua: "Entrez l'agent utilisateur ici (optionnel)."
 tip_enter_input_here: "Entrez ici les données."
 tip_enter_ip_here: "Entrez ici l'adresse IP."
 tip_enter_ips_here: "Entrez ici les adresses IP."
@@ -919,5 +919,5 @@ warning_no_active_modules: "Attention\_: Aucun module n'est actif\_! Les modules
 warning_no_active_signature_files: "Attention\_: Aucun fichier de signature n'est actif\_! Les fichiers de signature peuvent être activés à l'aide des pages de configuration ou de mises à jour."
 warning_password_not_valid: "Attention\_: Ce compte n'utilise un mot de passe valide\_!"
 warning_rate_limited_api: "Attention\_: L'accès à l'API %s semble actuellement limité."
-warning_termination_disabled: "Attention\_: La fin de la page est désactivée\_! Les requêtes ne peuvent pas être correctement bloquées tant que ce problème n'est pas résolu."
+warning_termination_disabled: "Attention\_: La fin de la page est désactivé\_! Les requêtes ne peuvent pas être correctement bloquées tant que ce problème n'est pas résolu."
 warning_will_log_out_all_users: "Attention\_: Continuer déconnectera tous les utilisateurs."

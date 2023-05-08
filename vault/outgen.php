@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2023.05.07).
+ * This file: Output generator (last modified: 2023.05.08).
  */
 
 /** Initialise cache. */
@@ -776,7 +776,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
         header('Status: 429 ' . $CIDRAM['RL_Status']);
         header('Retry-After: ' . floor($CIDRAM['Config']['rate_limiting']['allowance_period'] * 3600));
         $CIDRAM['HTML'] = '';
-    } elseif (!$CIDRAM['Config']['general']['silent_mode']) {
+    } elseif ($CIDRAM['Config']['general']['silent_mode'] !== '') {
         /** Fetch appropriate status code based on either "forbid_on_block" or "Aux Status Code". */
         if ((
             !empty($CIDRAM['Aux Status Code']) &&

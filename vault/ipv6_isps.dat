@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2023.125.0
-# Last modified: 2023.05.06
+# Version: 2023.128.0
+# Last modified: 2023.05.09
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -559,10 +559,11 @@ Tag: Atria Convergence
 # ASN 6799 ("Ote SA (Hellenic Telecommunications Organisation)").
 # Greek domestic ISP. Brute-force, webapp attacks, and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 11,375.
-# Updated: 2022.05.09
+# Stop Forum Spam (SFS) listings: 3,227.
+# Updated: 2023.05.09
 
-2a02:587:3f03:7654::/64 Deny Spam
+2a02:587:6a24:3b6e::/64 Deny Spam
+2a02:587:818d:f800::/64 Deny Spam
 Origin: GR
 Profile: Domestic ISP
 Tag: Ote SA
@@ -990,9 +991,10 @@ Tag: KPN B.V
 # hacking, and spam detected from here. Listing just the affected
 # ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 28 (AS15480), 710 (AS33915).
-# Updated: 2022.05.09
+# Updated: 2023.05.09
 
-2001:1c02:210d:fb00::/64 Deny Spam
+2001:1c00:f1b:dc00::/64 Deny Spam
+2001:1c00:248b:2400::/64 Deny Spam
 Origin: NL
 Profile: Domestic ISP
 Tag: Vodafone Libertel

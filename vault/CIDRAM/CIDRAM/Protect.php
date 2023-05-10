@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2023.05.08).
+ * This file: Protect traits (last modified: 2023.05.10).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -769,7 +769,7 @@ trait Protect
                 /** Append default L10N data. */
                 $this->CIDRAM['Parsables'] += $this->L10N->Data;
 
-                if ($this->Configuration['general']['silent_mode'] !== '') {
+                if ($this->Configuration['general']['silent_mode'] === '') {
                     /** Enforce output template suppression. */
                     if (
                         (!empty($this->CIDRAM['Banned']) && isset($this->Shorthand['Banned:Suppress'])) ||

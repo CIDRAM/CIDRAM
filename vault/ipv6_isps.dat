@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2023.128.0
-# Last modified: 2023.05.09
+# Version: 2023.130.0
+# Last modified: 2023.05.11
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -1368,3 +1368,15 @@ Tag: Globe Telecoms
 Origin: US
 Profile: Commercial
 Tag: Pufferfish Studios LLC
+
+
+# ASN 8193 ('"Uzbektelekom" Joint Stock Company').
+# Uzbek domestic ISP. Brute-force attacks, port scans, hacking, and spam
+# detected from here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 505.
+# Updated: 2023.05.11
+
+2a05:45c0::/48 Deny Attacks
+Origin: UZ
+Profile: Domestic ISP
+Tag: Uzbektelekom

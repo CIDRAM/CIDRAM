@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bulgarian language data for the front-end (last modified: 2023.05.08).
+# This file: Bulgarian language data for the front-end (last modified: 2023.05.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -58,7 +58,7 @@ Name Bad TLDs blocker module: "Модул за блокиране на лоши 
 Name Bad hosts blocker module: "Модул за блокиране на лоши хостове."
 Name Bot user agents module: "Модул за бот потребителски агенти."
 Name BunnyCDN compatibility module: "BunnyCDN модул за съвместимост."
-Name Bypasses: "Стандартни заобикаляния на сигнатури."
+Name Bypasses: "Стандартни байпаси на сигнатури."
 Name Cookie scanner module: "Допълнителен модул за скенер на бисквитки."
 Name HTTP version checker module: "Модул за проверка на HTTP версии."
 Name IP-API module: "IP-API модул."
@@ -196,20 +196,20 @@ config_ipapi_blocked_ccs: *ConfigBlockedCCs
 config_ipapi_whitelisted_asns: *ConfigWhitelistedASNs
 config_ipapi_whitelisted_ccs: *ConfigWhitelistedCCs
 config_legal: "Конфигурация за законови изисквания."
-config_legal_privacy_policy: "The address of a relevant privacy policy to be displayed in the footer of any generated pages. Specify a URL, or leave blank to disable."
-config_legal_pseudonymise_ip_addresses: "Pseudonymise IP addresses when logging? True (Вярно) = Да [Стандарт]; False (Невярно) = Не."
-config_logging: "Configuration related to logging (excluding that applicable to other categories)."
-config_logging_apache_style_log: "Apache-style file for logging all blocked access attempts. Посочете име на файл, или за да го деактивирате, оставете го празно."
+config_legal_privacy_policy: "Адресът на съответната политика за поверителност, който да се показва в долния колонтитул на всички генерирани страници. Посочете URL или оставете празно за да деактивирате."
+config_legal_pseudonymise_ip_addresses: "Псевдонимизиране на IP адреси при регистриране? True (Вярно) = Да [Стандарт]; False (Невярно) = Не."
+config_logging: "Конфигурация, свързана с регистриране (с изключение на тази, приложима за други категории)."
+config_logging_apache_style_log: "Файл в стил Apache за регистриране на всички блокирани опити за достъп. Посочете име на файл, или за да го деактивирате, оставете го празно."
 config_logging_error_log: "Файл за регистриране на всички открити нефатални грешки. Посочете име на файл, или за да го деактивирате, оставете го празно."
-config_logging_log_banned_ips: "Include blocked requests from banned IPs in logs? True (Вярно) = Да [Стандарт]; False (Невярно) = Не."
+config_logging_log_banned_ips: "В регистрационните файлове да се включат ли блокирани заявки от забранени IP адреси? True (Вярно) = Да [Стандарт]; False (Невярно) = Не."
 config_logging_log_rotation_action: "Ротацията на регистрационните ограничава броя на регистрационните файлове, които трябва да съществуват във всеки един момент. Когато се създават нови регистрационни файлове, ако общият брой на регистрационните файлове надвиши указаното ограничение, определеното действие ще бъде извършено. Тук можете да посочите желаното действие."
 config_logging_log_rotation_limit: "Ротацията на регистрационните ограничава броя на регистрационните файлове, които трябва да съществуват във всеки един момент. Когато се създават нови регистрационни файлове, ако общият брой на регистрационните файлове надвиши указаното ограничение, определеното действие ще бъде извършено. Тук можете да посочите желания лимит. Стойност 0 ще деактивира ротацията на регистрационните."
-config_logging_log_sanitisation: "When using the front-end logs page to view log data, CIDRAM sanitises the log data before displaying it, to protect users from XSS attacks and other potential threats that log data could contain. However, by default, data isn't sanitised during logging. This is to ensure that log data is preserved accurately, to aid any heuristic or forensic analysis that might be necessary in the future. However, in the event that a user attempts to read log data using external tools, and if those external tools don't perform their own sanitisation process, the user could be exposed to XSS attacks. If necessary, you can change the standard behaviour using this configuration directive. True (Вярно) = Sanitise data when logging it (data is preserved less accurately, but XSS risk is lower). False (Невярно) = Don't sanitise data when logging it (data is preserved more accurately, but XSS risk is higher) [Стандарт]."
+config_logging_log_sanitisation: "Когато използвате страницата с регистрационни файлове за преглед на регистрационните данни, CIDRAM дезинфекцира регистрационните данни, преди да ги покаже, за да защити потребителите от XSS атаки и други потенциални заплахи, които могат да съдържат в регистрационните данни. Стандартно обаче данните не се дезинфекцират по време на регистриране. Това е за да се гарантира че регистрационните данни се съхраняват точно, за да се подпомогне всеки евристичен анализ, който може да е необходим в бъдеще. Въпреки това, в случай че потребител се опита да прочете данни от регистрационния файл с помощта на външни инструменти и ако тези външни инструменти не извършат собствен процес на дезинфекция, потребителят може да бъде изложен на XSS атаки. Ако е необходимо, можете да промените стандартното поведение, като използвате тази конфигурационна директива. True (Вярно) = Дезинфекцирайте данните, когато ги регистрирате (данните се запазват по-малко точно, но XSS рискът е по-нисък). False (Невярно) = Не дезинфекцирайте данните, когато ги регистрирате (данните се запазват по-точно, но XSS рискът е по-висок) [Стандарт]."
 config_logging_outbound_request_log: "Файл за регистриране на резултатите от всякакви изходящи заявки. Посочете име на файл, или за да го деактивирате, оставете го празно."
-config_logging_report_log: "A file for logging any reports sent to external APIs. Посочете име на файл, или за да го деактивирате, оставете го празно."
-config_logging_serialised_log: "Serialised file for logging all blocked access attempts. Посочете име на файл, или за да го деактивирате, оставете го празно."
-config_logging_standard_log: "Human-readable file for logging all blocked access attempts. Посочете име на файл, или за да го деактивирате, оставете го празно."
-config_logging_truncate: "Truncate log files when they reach a certain size? Value is the maximum size in B/KB/MB/GB/TB that a log file may grow to before being truncated. the standard value of 0KB disables truncation (регистрационните файлове могат да растат за неопределено време). Забележка: Отнася се за отделни регистрационните файлове! Размерът на регистрационните файлове не се разглежда колективно."
+config_logging_report_log: "Файл за регистриране на всички отчети, изпратени до външни API. Посочете име на файл, или за да го деактивирате, оставете го празно."
+config_logging_serialised_log: "Сериализиран файл за регистриране на всички блокирани опити за достъп. Посочете име на файл, или за да го деактивирате, оставете го празно."
+config_logging_standard_log: "Четим от човека файл за регистриране на всички блокирани опити за достъп. Посочете име на файл, или за да го деактивирате, оставете го празно."
+config_logging_truncate: "Съкращаване на регистрационни файлове, когато достигнат определен размер? Стойността е максималният размер в Б/КБ/МБ/ГБ/ТБ, до който може да нарасне регистрационният файл, преди да бъде съкратен. Стандартната стойност от 0KB деактивира съкращаване (регистрационните файлове могат да растат за неопределено време). Забележка: Отнася се за отделни регистрационните файлове! Размерът на регистрационните файлове не се разглежда колективно."
 config_phpmailer: "Конфигурация за PHPMailer (използвани за двуфакторно удостоверяване)."
 config_phpmailer_add_reply_to_address: "Адресът за отговор, когато изпращате имейл чрез SMTP."
 config_phpmailer_add_reply_to_name: "Името на отговора, когато изпращате имейл чрез SMTP."
@@ -223,24 +223,24 @@ config_phpmailer_skip_auth_process: "Задаването на тази дире
 config_phpmailer_smtp_auth: "Тази директива определя дали да се удостоверяват SMTP сесиите (обикновено трябва да се остави сама)."
 config_phpmailer_smtp_secure: "Протоколът, който да се използва при изпращане на имейл чрез SMTP (TLS или SSL)."
 config_phpmailer_username: "Потребителското име, което да използвате при изпращане на имейл чрез SMTP."
-config_projecthoneypot: "Configuration for the Project Honeypot module."
+config_projecthoneypot: "Конфигурация за модула Project Honeypot."
 config_projecthoneypot_api_key: *EnterAPIKey
 config_projecthoneypot_lookup_strategy: *WhenToLookup
-config_projecthoneypot_max_age_in_days: "The maximum age in days for which reports will be considered when performing lookups. Стандарт = 365."
-config_projecthoneypot_max_ts_for_captcha: "The maximum threat score allowed for being served a CAPTCHA (трябва да е число между 1 и 100). Стандарт = 10."
-config_projecthoneypot_minimum_threat_score: "The minimum threat score required in order for CIDRAM to block an IP address (трябва да е число между 1 и 100). Стандарт = 10."
-config_projecthoneypot_type_of_visitor: "Controls for whether to block or profile based on type of visitor as determined by Project Honeypot."
-config_protocol: "Configuration for the protocol blocker module."
-config_protocol_blocked: "Selected protocols will be blocked. Забележка: Won't have any effect for those websites routing through services which rewrite requests to all use the exact same protocol, such as Cloudflare."
-config_protocol_reason_message: "The reason message displayed when such requests are blocked."
-config_rate_limiting: "Configuration for rate limiting (not recommended for general use)."
-config_rate_limiting_allowance_period: "The duration to track usage. Стандарт = 0°0′0″."
-config_rate_limiting_exceptions: "Exceptions (i.e., requests which shouldn't be rate limited). Relevant only when rate limiting is activated."
-config_rate_limiting_max_bandwidth: "The maximum amount of bandwidth allowed within the allowance period before rate limiting future requests. A value of 0 disables this type of rate limiting. Стандарт = 0KB."
-config_rate_limiting_max_requests: "The maximum number of requests allowed within the allowance period before rate limiting future requests. A value of 0 disables this type of rate limiting. Стандарт = 0."
-config_rate_limiting_precision_ipv4: "The precision to use for tracking IPv4 usage. Value mirrors CIDR block size. Set to 32 for best precision. Стандарт = 32."
-config_rate_limiting_precision_ipv6: "The precision to use for tracking IPv6 usage. Value mirrors CIDR block size. Set to 128 for best precision. Стандарт = 128."
-config_rate_limiting_segregate: "Should quotas for different domains and hosts be segregated or shared? True (Вярно) = Quotas will be segregated. False (Невярно) = Quotas will be shared [Стандарт]."
+config_projecthoneypot_max_age_in_days: "Максималната възраст в дни, за която докладите ще бъдат взети предвид при извършване на търсения. Стандарт = 365."
+config_projecthoneypot_max_ts_for_captcha: "Максималният резултат за заплаха, разрешен за обслужване на CAPTCHA (трябва да е число между 1 и 100). Стандарт = 10."
+config_projecthoneypot_minimum_threat_score: "Минималният резултат за заплаха, необходим за да може CIDRAM да блокира IP адрес (трябва да е число между 1 и 100). Стандарт = 10."
+config_projecthoneypot_type_of_visitor: "Контролира дали да се блокира или профилира въз основа на типа посетител, както е определено от Project Honeypot."
+config_protocol: "Конфигурация за модула за блокиране на протоколи."
+config_protocol_blocked: "Избраните протоколи ще бъдат блокирани. Забележка: Няма да има ефект за тези уебсайтове, маршрутизиращи през услуги, които пренаписват заявки, така че всички да използват абсолютно същия протокол, като Cloudflare."
+config_protocol_reason_message: "Съобщението за причина, което се показва, когато такива заявки са блокирани."
+config_rate_limiting: "Конфигурация за ограничаване на скоростта (не се препоръчва за обща употреба)."
+config_rate_limiting_allowance_period: "Продължителността за проследяване на използването. Стандарт = 0°0′0″."
+config_rate_limiting_exceptions: "Изключения (т.е. заявки, които не трябва да бъдат ограничени по скорост). Уместно само когато е активирано ограничаване на скоростта."
+config_rate_limiting_max_bandwidth: "Максималният обем на честотната лента, разрешен в рамките на разрешения период преди ограничаване на скоростта на бъдещи заявки. Стойност 0 деактивира този тип ограничаване на скоростта. Стандарт = 0KB."
+config_rate_limiting_max_requests: "Максималният брой заявки, позволени в рамките на разрешения период преди ограничаване на скоростта на бъдещи заявки. Стойност 0 деактивира този тип ограничаване на скоростта. Стандарт = 0."
+config_rate_limiting_precision_ipv4: "Прецизността, която да използвате за проследяване на използването на IPv4. Стойността отразява размера на CIDR блока. Задайте 32 за най-добра точност. Стандарт = 32."
+config_rate_limiting_precision_ipv6: "Прецизността, която да използвате за проследяване на използването на IPv6. Стойността отразява размера на CIDR блока. Задайте 128 за най-добра точност. Стандарт = 128."
+config_rate_limiting_segregate: "Трябва ли квотите за различни домейни и хостове да бъдат разделени или споделени? True (Вярно) = Квотите ще бъдат разделени. False (Невярно) = Квотите ще бъдат споделени [Стандарт]."
 config_recaptcha: "Конфигурация за ReCaptcha (предоставя начин за хората да си възвърнат достъпа, когато бъдат блокирани)."
 config_recaptcha_api: *CaptchaAPI
 config_recaptcha_expiry: *CaptchaExpiry
@@ -254,210 +254,215 @@ config_recaptcha_show_cookie_warning: *ShowCookieWarning
 config_recaptcha_signature_limit: *CaptchaSignatureLimit
 config_recaptcha_sitekey: *CaptchaDashboard
 config_recaptcha_usemode: *CaptchaUseMode
-config_sfs: "Configuration for the Stop Forum Spam module."
-config_sfs_offer_captcha: "When requests are blocked by this module, CAPTCHAs may be served. Стандарт = True. Забележка: Doesn't override other directives. For CAPTCHAs to be served, all directives must agree, necessary keys configured, etc. In the event that CAPTCHAs would normally be permitted to be served, setting this directive to false provides a way to prevent CAPTCHAs being served for requests blocked specifically by this module."
-config_signatures: "Configuration for signatures, signature files, modules, etc."
-config_signatures_default_tracktime: "The duration that IP addresses should be tracked for. Стандарт = 7d0°0′0″ (1 week)."
-config_signatures_infraction_limit: "Maximum number of infractions an IP is allowed to incur before it is banned by IP tracking. Стандарт = 10."
-config_signatures_shorthand: "Controls for what to do with a request when there's a positive match against a signature which utilises the given shorthand words."
-config_signatures_tracking_override: "Allow modules to override tracking options? True (Вярно) = Да [Стандарт]; False (Невярно) = Не."
-config_supplementary_cache_options: "Supplementary cache options. Забележка: Changing these values may potentially log you out."
-config_supplementary_cache_options_enable_apcu: "Specifies whether to try using APCu for caching. Стандарт = True."
-config_supplementary_cache_options_enable_memcached: "Specifies whether to try using Memcached for caching. Стандарт = False."
-config_supplementary_cache_options_enable_pdo: "Specifies whether to try using PDO for caching. Стандарт = False."
-config_supplementary_cache_options_enable_redis: "Specifies whether to try using Redis for caching. Стандарт = False."
-config_supplementary_cache_options_memcached_host: "Memcached host value. Стандарт = "localhost"."
-config_supplementary_cache_options_memcached_port: "Memcached port value. Стандарт = "11211"."
-config_supplementary_cache_options_pdo_dsn: "PDO DSN value. Стандарт = "mysql:dbname=cidram;host=localhost;port=3306"."
-config_supplementary_cache_options_pdo_password: "PDO password."
-config_supplementary_cache_options_pdo_username: "PDO username."
-config_supplementary_cache_options_prefix: "The value specified here will be prepended to all cache entry keys. Стандарт = "CIDRAM_". When multiple installations exist at the same server, this can be useful for keeping their caches separate from each other."
-config_supplementary_cache_options_redis_host: "Redis host value. Стандарт = "localhost"."
-config_supplementary_cache_options_redis_port: "Redis port value. Стандарт = "6379"."
-config_supplementary_cache_options_redis_timeout: "Redis timeout value. Стандарт = "2.5"."
-config_template_data: "Configuration for templates and themes."
-config_template_data_block_event_title: "The page title to display for block events."
-config_template_data_captcha_title: "The page title to display for CAPTCHA requests."
-config_template_data_css_url: "CSS file URL for custom themes."
+config_sfs: "Конфигурация за модула Stop Forum Spam."
+config_sfs_offer_captcha: "Когато заявките са блокирани от този модул, може да се сервират CAPTCHA. Стандарт = True. Забележка: Не отменя други директиви. За да бъдат обслужвани CAPTCHA, всички директиви трябва да са съгласувани, необходимите ключове да са конфигурирани, и т.н. В случай, че обикновено е разрешено да се обслужват CAPTCHA, настройката на тази директива на false осигурява начин да се предотврати обслужването на CAPTCHA за заявки, блокирани конкретно от този модул."
+config_signatures: "Конфигурация за сигнатури, файлове за сигнатури, модули, и т.н."
+config_signatures_default_tracktime: "Продължителността, за която трябва да се проследяват IP адресите. Стандарт = 7d0°0′0″ (1 седмица)."
+config_signatures_infraction_limit: "Максимален брой нарушения, които IP може да извърши, преди да бъде забранен от проследяването на IP. Стандарт = 10."
+config_signatures_shorthand: "Контролира какво да се прави със заявка, когато има положително съвпадение срещу сигнатур, който използва дадените съкратени думи."
+config_signatures_tracking_override: "Да се позволи на модулите да заменят опциите за проследяване? True (Вярно) = Да [Стандарт]; False (Невярно) = Не."
+config_supplementary_cache_options: "Допълнителни опции за кеш памет. Забележка: Промяната на тези стойности може потенциално да ви излезе от системата."
+config_supplementary_cache_options_enable_apcu: "Указва дали да опитате да използвате APCu за кеширане. Стандарт = True."
+config_supplementary_cache_options_enable_memcached: "Указва дали да опитате да използвате Memcached за кеширане. Стандарт = False."
+config_supplementary_cache_options_enable_pdo: "Указва дали да опитате да използвате PDO за кеширане. Стандарт = False."
+config_supplementary_cache_options_enable_redis: "Указва дали да опитате да използвате Redis за кеширане. Стандарт = False."
+config_supplementary_cache_options_memcached_host: "Memcached стойност на хоста. Стандарт = „localhost“."
+config_supplementary_cache_options_memcached_port: "Memcached стойност на порта. Стандарт = „11211“."
+config_supplementary_cache_options_pdo_dsn: "PDO DSN стойност. Стандарт = „mysql:dbname=cidram;host=localhost;port=3306“."
+config_supplementary_cache_options_pdo_password: "PDO парола."
+config_supplementary_cache_options_pdo_username: "PDO потребителско име."
+config_supplementary_cache_options_prefix: "Посочената тук стойност ще бъде добавена пред всички ключове за въвеждане в кеша. Стандарт = „CIDRAM_“. Когато съществуват множество инсталации на един и същи сървър, това може да бъде полезно за поддържане на техните кешове отделно един от друг."
+config_supplementary_cache_options_redis_host: "Redis стойност на хоста. Стандарт = „localhost“."
+config_supplementary_cache_options_redis_port: "Redis стойност на порта. Стандарт = „6379“."
+config_supplementary_cache_options_redis_timeout: "Стойност за изчакване на Redis. Стандарт = „2.5“."
+config_template_data: "Конфигурация за шаблони и теми."
+config_template_data_block_event_title: "Заглавието на страницата, което да се показва за блокови събития."
+config_template_data_captcha_title: "Заглавието на страницата, което да се показва за CAPTCHA заявки."
+config_template_data_css_url: "URL адрес на CSS файл за персонализирани теми."
 config_template_data_custom_footer: "Вмъква се като HTML в самия край на всички страници „отказан достъп“. Това може да бъде полезно, в случай че искате да включите правно съобщение, връзка за контакт, бизнес информация, или подобни на всички подобни страници."
 config_template_data_custom_header: "Вмъква се като HTML в самото начало на всички страници „отказан достъп“. Това може да бъде полезно, в случай че искате да включите лого на уебсайт, персонализирана заглавка, скриптове, или подобни на всички подобни страници."
 config_template_data_magnification: *MagnifDesc
-config_template_data_theme: "The standard theme to use for CIDRAM."
-config_verification: "Configuration for verifying where requests originate from."
-config_verification_adjust: "Controls to adjust other features when in the context of verification."
-config_verification_other: "Controls for verifying other kinds of requests where possible."
-config_verification_search_engines: "Controls for verifying requests from search engines."
-config_verification_social_media: "Controls for verifying requests from social media platforms."
-confirm_action: "Are you sure you want to "%s"?"
-confirm_delete: "Are you sure you want to delete "%s"?"
-field_2fa: "2FA code"
-field_activate: "Activate"
-field_add_more_conditions: "Add more conditions"
-field_add_to_tracking: "Add to tracking"
-field_add_webhook: "Add webhook"
-field_banned: "Banned"
-field_blocked: "Blocked"
-field_cidr: "Generate output as CIDRs"
-field_clear: "Clear"
-field_clear_all: "Clear all"
-field_clickable_link: "Clickable link"
-field_component: "Component"
-field_confirm: "Confirm"
-field_create_new_account: "Create new account"
-field_deactivate: "Deactivate"
-field_delete: "Delete"
-field_delete_account: "Delete account"
-field_download_file: "Download"
-field_edit: "Edit"
-field_execute: "Execute"
-field_execution_order: "Execution order:"
-field_expiry: "Expiry"
+config_template_data_theme: "Стандартната тема за използване за CIDRAM."
+config_verification: "Конфигурация за проверка откъде идват заявките."
+config_verification_adjust: "Контроли за коригиране на други функции в контекста на проверка."
+config_verification_other: "Контроли за проверка на други видове заявки, където е възможно."
+config_verification_search_engines: "Контроли за проверка на заявки от търсачките."
+config_verification_social_media: "Контроли за проверка на заявки от социални медийни платформи."
+confirm_action: "Сигурни ли сте, че искате да „%s“?"
+confirm_delete: "Сигурни ли сте, че искате да изтриете „%s“?"
+field_2fa: "2FA код"
+field_activate: "Активирайте"
+field_add_more_conditions: "Добавете още условия"
+field_add_to_tracking: "Добавете към проследяване"
+field_add_webhook: "Добавете уеб кукичка"
+field_banned: "Забранен"
+field_blocked: "Блокиран"
+field_cidr: "Генерирайте изход като CIDR"
+field_clear: "Почистете"
+field_clear_all: "Почистете всички"
+field_clickable_link: "Линк върху който може да се кликне"
+field_component: "Компонент"
+field_confirm: "Потвърдете"
+field_create_new_account: "Създаване на нов акаунт"
+field_deactivate: "Деактивирайте"
+field_delete: "Изтриване"
+field_delete_account: "Изтриване на акаунт"
+field_download_file: "Изтеглете"
+field_edit: "Редактирайте"
+field_execute: "Изпълнете"
+field_execution_order: "Заповед за изпълнение:"
+field_expiry: "Изтичане"
 field_false: "False (Невярно)"
-field_fe_requests: "Requests to the CIDRAM front-end"
-field_file: "File"
-field_filename: "Filename:"
-field_filetype_directory: "Directory"
-field_filetype_info: "%s File"
-field_filetype_unknown: "Unknown"
-field_install: "Install"
-field_latest_version: "Latest Version"
-field_log_in: "Log In"
-field_log_rotation_archive: "Firstly archive, and then delete the oldest log files, until the limit is no longer exceeded."
-field_log_rotation_delete: "Delete the oldest log files, until the limit is no longer exceeded."
-field_macro: "Macro"
-field_netmask: "Generate output as netmasks"
-field_new_name: "New name:"
-field_nonclickable_text: "Non-clickable text"
-field_not_tracking: "Not tracking."
-field_ok: "OK"
-field_options: "Options"
-field_password: "Password"
-field_permissions: "Permissions"
-field_preferred_direct_input: "Direct input"
-field_preferred_list: "Currently active signature files"
-field_preserve: "Preserve tags and comments"
-field_range: "Range (First – Last)"
-field_rename_file: "Rename"
-field_repair: "Repair"
-field_repair_all: "Repair all"
-field_reset: "Reset"
-field_set_new_password: "Set new password"
-field_size: "Total Size:"
-field_size_GB: "GB"
-field_size_KB: "KB"
-field_size_MB: "MB"
-field_size_PB: "PB"
-field_size_TB: "TB"
+field_fe_requests: "Заявки към фронтенд на CIDRAM"
+field_file: "Файл"
+field_filename: "Име на файл:"
+field_filetype_directory: "Директория"
+field_filetype_info: "%s файл"
+field_filetype_unknown: "Неизвестен"
+field_install: "Инсталирайте"
+field_latest_version: "Последна версия"
+field_log_in: "Влезте"
+field_log_rotation_archive: "Първо архивирайте и след това изтрийте най-старите регистрационни файлове, докато ограничението вече не бъде превишено."
+field_log_rotation_delete: "Изтрийте най-старите регистрационни файлове, докато ограничението вече не бъде превишено."
+field_macro: "Макро"
+field_netmask: "Генерирайте изход като мрежови маски"
+field_new_name: "Ново име:"
+field_nonclickable_text: "Текст който не може да се кликне"
+field_not_tracking: "Не се проследява."
+field_ok: "Добре"
+field_options: "Опции"
+field_password: "Парола"
+field_permissions: "Разрешения"
+field_preferred_direct_input: "Директно въвеждане"
+field_preferred_list: "Текущо активни файлове за сигнатур"
+field_preserve: "Запазете етикети и коментари"
+field_range: "Обхват (Първо – Последно)"
+field_rename_file: "Преименувайте"
+field_repair: "Поправете"
+field_repair_all: "Поправете всички"
+field_reset: "Нулирайте"
+field_set_new_password: "Задайте нова парола"
+field_size: "Общият размер:"
+field_size_GB: "ГБ"
+field_size_KB: "КБ"
+field_size_MB: "МБ"
+field_size_PB: "ПБ"
+field_size_TB: "ТБ"
 field_size_bytes:
- - "byte"
- - "bytes"
-field_status: "Status"
-field_system_timezone: "Use system default timezone."
-field_tracking: "Tracking"
+ - "байт"
+ - "байта"
+field_status: "Статус"
+field_system_timezone: "Използвайте стандартната часова зона на системата."
+field_tracking: "Проследяване"
 field_true: "True (Вярно)"
-field_uninstall: "Uninstall"
-field_update: "Update"
-field_update_all: "Update all"
-field_update_signatures_files: "Update signature files"
-field_upload_file: "Upload new file"
-field_username: "Username"
-field_verified_requests: "Verified search engine and social media requests"
-field_verify: "Verify"
-field_verify_all: "Verify all"
-field_whitelisted_requests: "Whitelisted requests"
-field_your_version: "Your Version"
-header_login: "Please log in to continue."
-hints_asnlookup: "** Requires ASN lookup functionality (напр., via the IP-API or BGPView module)."
-hints_cause_fp: "*!! High likelihood of causing false positives due to %s."
+field_uninstall: "Деинсталирайте"
+field_update: "Актуализирайте"
+field_update_all: "Актуализирай всички"
+field_update_signatures_files: "Актуализирайте файловете за сигнатур"
+field_upload_file: "Качете нов файл"
+field_username: "Потребителско име"
+field_verified_requests: "Проверени заявки за търсачки и социални медии"
+field_verify: "Проверете"
+field_verify_all: "Проверете всички"
+field_whitelisted_requests: "Заявки в белия списък"
+field_your_version: "Вашата версия"
+header_login: "Моля, влезте, за да продължите."
+hints_asnlookup: "** Изисква функционалност за търсене в ASN (напр., чрез модула IP-API или BGPView)."
+hints_cause_fp: "*!! Висока вероятност за причиняване на фалшиви положителни резултати поради %s."
 hints_default_dns:
- FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#what-can-i-use-for-default_dns" hreflang="en-AU">What can I use for "default_dns"?</a></em>"
+ ЧЗВ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#what-can-i-use-for-default_dns" hreflang="en-AU">Какво мога да използвам за „default_dns“?</a></em>"
 hints_duration:
- SI.: "Duration can be described using the "International System of Units". E.g., <strong>1d2h3min4s</strong> or <strong>1d 2h 3min 4s</strong> for one day, two hours, three minutes, four seconds, or <strong>5min</strong> for just five minutes."
- Arctime.: "Duration can be described using arctime notation. E.g., <strong>1d2°3′4″</strong> for one day, two hours, three minutes, four seconds, or <strong>5″</strong> for just five seconds."
- Plain English.: "Duration can be described by writing the units in plain English. E.g., <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> for one week, two days, three hours, four minutes, five seconds."
- Constraints.: "Notation can be mixed, but units must always be described from largest to smallest, and can't be repeated. E.g., <strong>1 week 2 days 3′4″</strong> is <span class="txtGn">valid</span> and will be understood correctly, but <strong>3′4″ 1 week 2 days</strong> and <strong>3 hours 3h 3°</strong> are <span class="txtRd">invalid</span>. CIDRAM doesn't care whether you use spacing or not. Numbers must be plain and unformatted. For practicality, the largest supported unit is a week. When configuration is updated, CIDRAM normalises durations to arctime."
-hints_has_bypass: "* This option has a corresponding bypass under <code class="s">bypasses➡used</code>. It's recommended to ensure that the checkbox for the corresponding bypass is marked the same way as the checkbox for attempting to verify this option."
-hints_inspection: "* Intended only for debugging auxiliary rules. Not displayed to blocked users."
-hints_ipv6_on_32bit: "Забележка: IPv6 lookups mightn't work correctly on some 32-bit systems."
+ SI.: "Продължителността може да бъде описана с помощта на „Международната система от единици“. Напр., <strong>1d2h3min4s</strong> или <strong>1d 2h 3min 4s</strong> за един ден, два часа, три минути, четири секунди, или <strong>5min</strong> за само пет минути."
+ Арктайм.: "Продължителността може да бъде описана с помощта на нотация за арктайм. Напр., <strong>1d2°3′4″</strong> за един ден, два часа, три минути, четири секунди, или <strong>5″</strong> за само пет секунди."
+ Обикновен английски.: "Продължителността може да бъде описана чрез изписване на единиците на обикновен английски език. Напр., <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> за една седмица, два дни, три часа, четири минути, пет секунди."
+ Ограничения.: "Нотацията може да се смесва, но единиците винаги трябва да се описват от най-голямата към най-малката и не могат да се повтарят. Напр., <strong>1 week 2 days 3′4″</strong> е <span class="txtGn">валиден</span> и ще бъде разбран правилно, но <strong>3′4″ 1 week 2 days</strong> и <strong>3 hours 3h 3°</strong> са <span class="txtRd">невалидни</span>. CIDRAM не се интересува дали използвате интервали или не. Числата трябва да са обикновени и неформатирани. За практичност най-голямата поддържана единица е седмица. Когато конфигурацията се актуализира, CIDRAM нормализира продължителността към арктайм."
+hints_has_bypass: "* Тази опция има съответен байпас под <code class="s">bypasses➡used</code>. Препоръчително е да се уверите, че квадратчето за отметка за съответния байпас е маркирано по същия начин като квадратчето за отметка за опит за проверка на тази опция."
+hints_inspection: "* Предназначен само за отстраняване на грешки на спомагателни правила. Не се показва на блокираните потребители."
+hints_ipv6_on_32bit: "Забележка: IPv6 търсенията може да не работят правилно на някои 32-битови системи."
 hints_pdo_dsn:
- FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">What is a "PDO DSN"? How can I use PDO with CIDRAM?</a></em>"
+ ЧЗВ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">Какво е „PDO DSN“? Как мога да използвам PDO с CIDRAM?</a></em>"
 hints_shorthand:
- 0.: "If your website needs access via LAN or localhost, don't block this. Otherwise though, you can block this."
- 1.: "None of the standard signature files use this, but it's supported nonetheless in case it might be useful for some users."
- 2.: "If you need users to be able to access your website via proxies, don't block this. Otherwise though, you can block this."
- 3.: "Direct usage in signatures isn't supported, but it may be invoked by other means in particular circumstances."
- 4.: "Refers to cases where shorthand words aren't used at all, or aren't recognised by CIDRAM."
- One per signature.: "A signature may invoke multiple profiles, but can use only one shorthand word. It's possible that multiple shorthand words may be suitable, but as only one can be used, we aim to always use only the most suitable."
- Priority.: "An option selected always takes priority over an option not selected. E.g., if multiple shorthand words are in play but only one of them is set as being blocked, the request will still be blocked."
- Human endpoints and cloud services.: "Cloud service may refer to webhosting providers, server farms, data centres, or any number of other things. Human endpoint refers to the means by which a human accesses the internet, such as by way of an internet service provider. A network usually provides just one or the other, but may sometimes provide both. We aim to never identify potential human endpoints as cloud services. Therefore, a cloud service may be identified as something else if its range is shared by known human endpoints. Conversely, we aim to always identify cloud services, whose ranges are not shared by any known human endpoints, as cloud services. Therefore, a request identified explicitly as a cloud service probably doesn't share its range with any known human endpoints. Likewise, a request identified explicitly by attacks or spam probably does. However, the internet is always in flux, the purposes of networks changes over time, and ranges are always being bought or sold, so remain cognisant and vigilant in regards to false positives."
+ 0.: "Ако вашият уебсайт се нуждае от достъп през LAN или localhost, не блокирайте това. В противен случай обаче можете да блокирате това."
+ 1.: "Нито един от стандартните файлове за сигнатур не използва това, но въпреки това се поддържа, в случай че може да е полезно за някои потребители."
+ 2.: "Ако имате нужда потребителите да имат достъп до уебсайта ви чрез проксита, не блокирайте това. В противен случай обаче можете да блокирате това."
+ 3.: "Директното използване в сигнатури не се поддържа, но може да бъде извикано с други средства при определени обстоятелства."
+ 4.: "Отнася се за случаи, в които съкратените думи изобщо не се използват или не се разпознават от CIDRAM."
+ По един на сигнатур.: "Един сигнатур може да извиква множество профили, но може да използва само една съкратена дума. Възможно е няколко съкратени думи да са подходящи, но тъй като може да се използва само една, ние се стремим винаги да използваме само най-подходящата."
+ Приоритет.: "Избрана опция винаги има приоритет пред неизбрана опция. Напр., ако се играят няколко съкратени думи, но само една от тях е зададена като блокирана, заявката пак ще бъде блокирана."
+ Човешки крайни точки и облачни услуги.: "Облачната услуга може да се отнася до доставчици на уеб хостинг, сървърни ферми, центрове за данни, или много други неща. Човешка крайна точка се отнася до средствата, чрез които човек осъществява достъп до интернет, като например чрез доставчик на интернет услуги. Мрежата обикновено предоставя само едното или другото, но понякога може да предостави и двете. Ние се стремим никога да не идентифицираме потенциални човешки крайни точки като облачни услуги. Следователно облачна услуга може да бъде идентифицирана като нещо друго, ако нейният обхват се споделя от известни човешки крайни точки. Обратно, ние се стремим винаги да идентифицираме облачните услуги, чиито обхвати не се споделят от никакви известни човешки крайни точки, като облачни услуги. Следователно заявка, идентифицирана изрично като облачна услуга, вероятно не споделя обхвата си с известни човешки крайни точки. По същия начин заявка, идентифицирана изрично чрез атаки или спам, вероятно го прави. Въпреки това, интернет винаги е в движение, целите на мрежите се променят с времето, и диапазоните винаги се купуват или продават, така че бъдете наясно и бдителни по отношение на фалшиви положителни резултати."
 hints_verification:
- "What are "positives" and "negatives"?": "When verifying the identity presented by a request, a successful outcome could be described as "positive" or "negative". In the case that the identity presented is confirmed to be the true identity, it would be described as "positive". In the case that the identity presented is confirmed to be falsified, it would be described as "negative". However, an unsuccessful outcome (напр., verification fails, or the veracity of the identity presented isn't able to be determined) would not be described as "positive" or "negative". Instead, an unsuccessful outcome would be described simply as non-verified. When no attempt to verify the identity presented by a request is made, the request would likewise be described as non-verified. The terms make sense only in the context where the identity presented by a request is recognised, and therefore, where verification is possible. In cases where the identity presented doesn't match the options provided above, or where no identity is presented, the options provided above become irrelevant."
- "What are "single-hit bypasses"?": "In some cases, a positive-verified request may still blocked as a result of the signature files, modules, or other conditions of the request, and bypasses may be necessary in order to avoid false positives. In the case where a bypass is intended to deal with exactly one infraction, no more and no less, such a bypass could be described as a "single-hit bypass"."
+ "Какво са „позитиви“ и „негативи“?": "При проверка на самоличността, представена от заявка, успешният резултат може да бъде описан като „положителен“ или „отрицателен“. В случай, че представената самоличност се потвърди като истинската самоличност, тя ще бъде описана като „положителна“. В случай, че се потвърди, че представената самоличност е фалшифицирана, тя ще бъде описана като „отрицателна“. Неуспешният резултат обаче (напр., проверката е неуспешна или истинността на представената самоличност не може да бъде определена) не би бил описан като „положителен“ или „отрицателен“. Вместо това, неуспешният резултат би бил описан просто като непроверен. Когато не бъде направен опит за проверка на самоличността, представена от заявка, заявката също ще бъде описана като непроверена. Термините имат смисъл само в контекста, в който самоличността, представена от заявка, е разпозната и следователно, когато е възможна проверка. В случаите, когато представената самоличност не отговаря на опциите, предоставени по-горе, или когато не е представена самоличност, предоставените по-горе опции стават неуместни."
+ "Какво представляват „байпасите с един удар“?": "В някои случаи положително потвърдена заявка все още може да бъде блокирана в резултат на файловете за сигнатур, модулите или други условия на заявката и може да са необходими байпас, за да се избегнат фалшиви положителни резултати. В случай, че байпасът е предназначен да се справи с точно едно нарушение, нито повече, нито по-малко, такъв байпас може да се опише като „байпас с един удар“."
 info_cli_by_default_ips: |
- By default, IPs are tested against all signature files, all modules, all
- auxiliary rules, *and* against social media and search engine verification.
- --no-sig    Prevents testing against signature files.
- --no-mod    Prevents testing against modules.
- --no-sev    Prevents search engine verification.
- --no-smv    Prevents social media verification.
- --no-ov     Prevents other verification.
- --no-aux    Prevents testing against auxiliary rules.
-info_cli_cidram_cli_mod: "CIDRAM CLI mode."
+ Стандартно IP адресите се тестват спрямо всички файлове за сигнатур, всички
+ модули, всички спомагателни правила, *и* срещу проверка на социални медии и
+ търсачки.
+ --no-sig    Предотвратява тестване срещу файлове със сигнатури.
+ --no-mod    Предотвратява тестване срещу модули.
+ --no-sev    Предотвратява проверката на търсачката.
+ --no-smv    Предотвратява проверката на социалните медии.
+ --no-ov     Предотвратява друга проверка.
+ --no-aux    Предотвратява тестване срещу спомагателни правила.
+info_cli_cidram_cli_mod: "CIDRAM CLI режим."
 info_cli_ipv4_ipv6_are_: |
- IPv4/IPv6 are both supported. Multiline input is possible for *all* CLI mode
- operations (напр., to test multiple IP addresses in a single operation) by
- using quotes, like so:
-info_cli_or_depending_o: "Or, depending on whether you'd prefer to chain first to last, or last to first:"
-info_cli_or_to_aggregat: "Or, to aggregate them as netmasks:"
-info_cli_or_using_comma: "Or, using commas instead of multilines (does exactly the same thing):"
-info_cli_the_signature_: "The signature fixer can be used via CLI, too:"
-info_cli_to_calculate_c: "To calculate CIDRs from an IP address:"
-info_cli_to_test_whethe: "To test whether an IP address is blocked by CIDRAM:"
-info_cli_to_quit_type_q: "To quit, type "q", "quit", or "exit", then press enter."
-info_cli_you_can_also_a: "You can also aggregate IPs and CIDRs like so:"
+ IPv4/IPv6 се поддържат. Многоредовото въвеждане е възможно за *всички*
+ операции в CLI режим (напр., за тестване на множество IP адреси в една
+ операция), чрез използвате кавички, като така:
+info_cli_or_depending_o: |
+ Или, в зависимост от това дали предпочитате да вържете верига първи към
+ последен или последен към първи:
+info_cli_or_to_aggregat: "Или, за да ги агрегирате като мрежови маски:"
+info_cli_or_using_comma: "Или, използването на запетаи вместо многоредове (прави точно същото):"
+info_cli_the_signature_: "Фиксаторът на сигнатур може да се използва и чрез CLI:"
+info_cli_to_calculate_c: "За да изчислите CIDR от IP адрес:"
+info_cli_to_test_whethe: "За да проверите дали даден IP адрес е блокиран от CIDRAM:"
+info_cli_to_quit_type_q: "За да излезете, въведете „q“, „quit“, или „exit“, след което натиснете enter."
+info_cli_you_can_also_a: "Можете също да агрегирате IP и CIDR по следния начин:"
 info_cli_you_can_also_c: |
- You can also chain commands together (the example reads from some files,
- aggregates their content, then writes the aggregated data to output.dat):
-info_cli_you_can_also_r: "You can also read from files like so:"
+ Можете също да верижите команди заедно (примерът чете от някои файлове,
+ агрегира тяхното съдържание, след което записва агрегираните данни в
+ output.dat):
+info_cli_you_can_also_r: "Можете също да четете от файлове, като така:"
 info_cli_you_can_also_u: |
- You can also use commas instead if you want (this is treated the same as using
- multilines, but you won't need to use quotes, and don't mix both together):
-info_cli_you_can_also_w: "You can also write to files like so:"
+ Можете също да използвате запетаи вместо това, ако искате (това се третира по
+ същия начин като използването на многоредове, но няма да е необходимо да
+ използвате кавички, и не смесвайте и двете заедно):
+info_cli_you_can_also_w: "Можете също да пишете във файлове, като така:"
 info_cli_you_can_print_: |
- You can print data to the screen like so (sometimes useful when chaining
- commands):
+ Можете да отпечатате данни на екрана, като така (понякога е полезно при верижно
+ свързване на команди):
 info_some_useful_links: |
- Some useful links:<br />
+ Някои полезни връзки:<br />
      <ul class="pieul">
-       <li><span class="comCat">Tools, resources, etc for CIDRAM.</span>
+       <li><span class="comCat">Инструменти, ресурси, и т.н. за CIDRAM.</span>
          <ul class="comSub">
-           <li>{{Links.CIDRAM.Issues}} – Issues page for CIDRAM (support, assistance, и т.н).</li>
-           <li>{{Links.CIDRAM.WordPress}} – WordPress plugin for CIDRAM.</li>
-           <li>{{Links.CIDRAM.Extras}} – Various extras.</li>
+           <li>{{Links.CIDRAM.Issues}} – Страницата issues за CIDRAM (подкрепа, помощ, и т.н).</li>
+           <li>{{Links.CIDRAM.WordPress}} – WordPress плъгин за CIDRAM.</li>
+           <li>{{Links.CIDRAM.Extras}} – Различни екстри.</li>
          </ul>
        </li>
-       <li><span class="comCat">Groups, forums, communities, etc.</span>
+       <li><span class="comCat">Групи, форуми, общности, и т.н.</span>
          <ul class="comSub">
-           <li>{{Links.PHP.Earth.Facebook}} – PHP learning resources and discussion.</li>
-           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Forum@Stop Forum Spam</a> – Useful discussion forum about stopping forum spam.</li>
+           <li>{{Links.PHP.Earth.Facebook}} – PHP учебни ресурси и дискусия.</li>
+           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Форум@Stop Forum Spam</a> – Полезен дискусионен форум за спиране на спама във форума.</li>
          </ul>
        </li>
-       <li><span class="comCat">Other useful tools, resources, services, etc.</span>
+       <li><span class="comCat">Други полезни инструменти, ресурси, услуги, и т.н.</span>
          <ul class="comSub">
-           <li>{{Links.SFS}} – Maintains a database of known forum spammers. Useful for protecting websites and forums against spammers.</li>
-           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Get CIDRs from ASNs, determine ASN relationships, discover ASNs based upon network names, etc.</li>
-           <li>{{Links.BGPView}} – Get CIDRs from ASNs, determine ASN relationships, discover ASNs based upon network names, etc.</li>
-           <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar by Qrator</a> – Useful tool for checking the connectivity of ASNs as well as for various other information about ASNs.</li>
-           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">The Spamhaus Project</a> – Displays reports regarding botnet infection rates for ASNs.</li>
-           <li>{{Links.AbuseIPDB}} – Maintains a database of known abusive IPs; Provides an API for checking and reporting IPs.</li>
-           <li>{{Links.IP-API}} – Get information about IP addresses or hostnames such as country code, region name, longitude, latitude, organisation name, etc.</li>
+           <li>{{Links.SFS}} – Поддържа база данни с известни форумни спамери. Полезно за защита на уебсайтове и форуми срещу спамери.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Вземете CIDR от ASN, определете ASN връзки, открийте ASN въз основа на имена на мрежи, и т.н.</li>
+           <li>{{Links.BGPView}} – Вземете CIDR от ASN, определете ASN връзки, открийте ASN въз основа на имена на мрежи, и т.н.</li>
+           <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar от Qrator</a> – Полезен инструмент за проверка на свързаността на ASN, както и за различна друга информация относно ASN.</li>
+           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Проектът Spamhaus</a> – Показва отчети относно нивата на заразяване на ботнет за ASN.</li>
+           <li>{{Links.AbuseIPDB}} – Поддържа база данни с известни злоупотреби с IP адреси; Предоставя API за проверка и отчитане на IP адреси.</li>
+           <li>{{Links.IP-API}} – Получавайте информация за IP адреси или имена на хостове, като код на държава, име на регион, географска дължина, ширина, име на организация, и т.н.</li>
          </ul>
        </li>
-       <li><span class="comCat">Informational and learning resources.</span>
+       <li><span class="comCat">Информационни и учебни ресурси.</span>
          <ul class="comSub">
-           <li>{{Links.PHP.Earth.Website}} – PHP learning resources and discussion.</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Vulnerability Charts</a> – Lists safe/unsafe versions of various packages (HHVM, PHP, phpMyAdmin, Python, и т.н).</li>
-           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Compatibility Charts</a> – Lists compatibility information for various packages (CIDRAM, phpMussel, и т.н).</li>
+           <li>{{Links.PHP.Earth.Website}} – PHP учебни ресурси и дискусия.</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Диаграми на уязвимости</a> – Изброява безопасни/небезопасни версии на различни пакети (HHVM, PHP, phpMyAdmin, Python, и т.н).</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Диаграми за съвместимост</a> – Изброява информация за съвместимост за различни пакети (CIDRAM, phpMussel, и т.н).</li>
          </ul>
        </li>
      </ul>
@@ -712,6 +717,7 @@ response_cli_finished_writing: "Finished writing to %s."
 response_cli_no_analyse: "There's nothing to analyse, sorry."
 response_cli_no_print: "There's nothing to print, sorry."
 response_cli_no_write: "There's nothing to write, sorry."
+response_cli_what_to_do: "Не знам какво да правя с данните, след като ги прочета.\nПомислете за свързването му към друга команда. Благодаря."
 response_component_successfully_installed: "Component successfully installed."
 response_component_successfully_uninstalled: "Component successfully uninstalled."
 response_component_successfully_updated: "Component successfully updated."

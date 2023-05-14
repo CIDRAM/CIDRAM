@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CIDRAM CLI mode (last modified: 2023.05.07).
+ * This file: CIDRAM CLI mode (last modified: 2023.05.10).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -210,7 +210,7 @@ trait CLI
                 $MemoryUsage = memory_get_usage();
                 $this->formatFileSize($MemoryUsage);
                 $this->formatFileSize($FileSize);
-                echo sprintf($this->L10N->getString('response_cli_finished_writing'), $WriteTo) . '. <' . $this->L10N->getString('field_file') . ': ' . $FileSize . '> <RAM: ' . $MemoryUsage . ">\n\n";
+                echo sprintf($this->L10N->getString('response_cli_finished_writing'), $WriteTo) . ' <' . $this->L10N->getString('field_file') . ': ' . $FileSize . '> <RAM: ' . $MemoryUsage . ">\n\n";
                 unset($WriteTo, $Handle, $BlocksToDo, $ThisBlock, $MemoryUsage, $FileSize);
                 continue;
             }
@@ -219,7 +219,7 @@ trait CLI
             if ($Cmd === 'fread') {
                 echo "\033[0;33m";
                 if ($Chain === '') {
-                    echo "I'm not sure what to do with the file's data after reading it.\nPlease chain fread to something else so that I'll know what to do. Thanks.\n\n";
+                    echo $this->L10N->getString('response_cli_what_to_do') . "\n\n";
                     continue;
                 }
                 foreach ($Data as $ThisItem) {

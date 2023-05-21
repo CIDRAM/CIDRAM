@@ -242,3 +242,5 @@
 [2023.05.08; Maikuolan]: Results at the IP test page now include the HTTP status code which could be expected (#464).
 
 [2023.05.08; Maikuolan]: Results at the IP test page now include information about redirects via silent mode and auxiliary rules (#464).
+
+[2023.05.03~21; Maikuolan]: Added L10N for Bulgarian.

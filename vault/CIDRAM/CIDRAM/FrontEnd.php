@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.05.08).
+ * This file: The CIDRAM front-end (last modified: 2023.05.21).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1138,7 +1138,7 @@ class FrontEnd extends Core
                     }
                     $ThisDir['DirLangKey'] = 'config_' . $CatKey . '_' . $DirKey;
                     $ThisDir['DirLangKeyOther'] = $ThisDir['DirLangKey'] . '_other';
-                    $ThisDir['DirName'] = '<span class="normalHeight">' . $this->ltrInRtf($CatKey . '➡' . $DirKey) . '</span>';
+                    $ThisDir['DirName'] = '<span class="normalHeight">' . $this->ltrInRtf($CatKey . '➡' . $DirKey) . ':</span>';
                     $ThisDir['Friendly'] = $this->L10N->getString($ThisDir['DirLangKey'] . '_label') ?: $DirKey;
                     $CatData .= sprintf(
                         '<li><a onclick="javascript:toggleconfigNav(\'%1$sRow\',\'%1$sShowLink\')" href="#%2$s">%3$s</a></li>',

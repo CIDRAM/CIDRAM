@@ -490,23 +490,24 @@ $CIDRAM['FileManager-PathSecurityCheck'] = function ($Path) {
 };
 
 /**
- * Used by the logs viewer to generate a list of the logfiles contained in a
+ * Used by the logs viewer to generate a list of the log files contained in a
  * working directory (normally, the vault).
  *
  * @param string $Base The path to the working directory.
  * @param string $Order Whether to sort the list in ascending or descending order.
- * @return array A list of the logfiles contained in the working directory.
+ * @return array A list of the log files contained in the working directory.
  */
 $CIDRAM['Logs-RecursiveList'] = function ($Base, $Order = 'ascending') use (&$CIDRAM) {
     $Arr = [];
     $List = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($Base, \RecursiveDirectoryIterator::FOLLOW_SYMLINKS), \RecursiveIteratorIterator::SELF_FIRST);
     foreach ($List as $Item => $List) {
         $ThisName = str_replace("\\", '/', substr($Item, strlen($Base)));
-        if (!is_file($Item) || !is_readable($Item) || is_dir($Item) || !$CIDRAM['FileManager-IsLogFile']($ThisName)) {
+        $Normalised = $ThisName;
+        if (!is_file($Item) || !is_readable($Item) || is_dir($Item) || !$CIDRAM['FileManager-IsLogFile']($ThisName, $Normalised)) {
             continue;
         }
-        $Arr[$ThisName] = ['Filename' => $ThisName, 'Filesize' => filesize($Item)];
-        $CIDRAM['FormatFilesize']($Arr[$ThisName]['Filesize']);
+        $Arr[$Normalised] = ['Filename' => $ThisName, 'Filesize' => filesize($Item)];
+        $CIDRAM['FormatFilesize']($Arr[$Normalised]['Filesize']);
     }
     if ($Order === 'ascending') {
         ksort($Arr);
@@ -3105,12 +3106,13 @@ $CIDRAM['SendOutput'] = function () use (&$CIDRAM) {
 };
 
 /**
- * Confirm whether a file is a logfile (used by the file manager and logs viewer).
+ * Confirms whether a file is a log file (used by the file manager and logs viewer).
  *
  * @param string $File The path/name of the file to be confirmed.
- * @return bool True if it's a logfile; False if it isn't.
+ * @param string $Normalised A normalised name for the log, useful for better sorting.
+ * @return bool True if it's a log file; False if it isn't.
  */
-$CIDRAM['FileManager-IsLogFile'] = function ($File) use (&$CIDRAM) {
+$CIDRAM['FileManager-IsLogFile'] = function ($File, &$Normalised = '') use (&$CIDRAM) {
     static $Pattern_logfile = false;
     if (!$Pattern_logfile && $CIDRAM['Config']['general']['logfile']) {
         $Pattern_logfile = $CIDRAM['BuildLogPattern']($CIDRAM['Config']['general']['logfile'], true);
@@ -3169,7 +3171,7 @@ $CIDRAM['GenerateConfirm'] = function ($Action, $Form) use (&$CIDRAM) {
 };
 
 /**
- * A quicker way to add entries to the front-end logfile.
+ * A quicker way to add entries to the front-end log file.
  *
  * @param string $IPAddr The IP address triggering the log event.
  * @param string $User The user triggering the log event.

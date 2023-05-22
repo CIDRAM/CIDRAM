@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2023.05.10).
+ * This file: Output generator (last modified: 2023.05.22).
  */
 
 /** Initialise cache. */
@@ -98,7 +98,7 @@ $CIDRAM['BlockInfo']['rURI'] .= $CIDRAM['Try'];
 unset($CIDRAM['Try']);
 $CIDRAM['BlockInfo']['rURI'] .= (!empty($_SERVER['REQUEST_URI'])) ? $_SERVER['REQUEST_URI'] : '/';
 
-/** Initialise page output and block event logfile fields. */
+/** Initialise page output and block event log-file fields. */
 $CIDRAM['FieldTemplates'] = $CIDRAM['Config']['template_data'] + [
     'Logs' => '',
     'Output' => [],

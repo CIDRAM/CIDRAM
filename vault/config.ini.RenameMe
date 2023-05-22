@@ -26,25 +26,25 @@ error_log_stages='Tests,Modules,SearchEngineVerification,SocialMediaVerification
 ; or leave blank to disable.
 outbound_request_log=''
 
-; Truncate logfiles when they reach a certain size? Value is the maximum size
-; in B/KB/MB/GB/TB that a logfile may grow to before being truncated. The
-; default value of 0KB disables truncation (logfiles can grow indefinitely).
-; Note: Applies to individual logfiles! The size of logfiles is not considered
-; collectively.
+; Truncate log files when they reach a certain size? Value is the maximum size
+; in B/KB/MB/GB/TB that a log file may grow to before being truncated. The
+; default value of 0KB disables truncation (log files can grow indefinitely).
+; Note: Applies to individual log files! The size of log files is not
+; considered collectively.
 truncate='0KB'
 
-; Log rotation limits the number of logfiles that should exist at any one time.
-; When new logfiles are created, if the total number of logfiles exceeds the
+; Log rotation limits the number of log files that should exist at any one time.
+; When new log files are created, if the total number of log files exceeds the
 ; specified limit, the specified action will be performed. You can specify the
 ; desired limit here. A value of 0 will disable log rotation.
 log_rotation_limit=0
 
-; Log rotation limits the number of logfiles that should exist at any one time.
-; When new logfiles are created, if the total number of logfiles exceeds the
+; Log rotation limits the number of log files that should exist at any one time.
+; When new log files are created, if the total number of log files exceeds the
 ; specified limit, the specified action will be performed. You can specify the
-; desired action here. Delete = Delete the oldest logfiles, until the limit is
+; desired action here. Delete = Delete the oldest log files, until the limit is
 ; no longer exceeded. Archive = Firstly archive, and then delete the oldest
-; logfiles, until the limit is no longer exceeded.
+; log files, until the limit is no longer exceeded.
 log_rotation_action='Delete'
 
 ; This is used to specify the timezone to use (e.g., Africa/Cairo,
@@ -129,7 +129,7 @@ signatures_update_event_log=''
 ; available values for "forbid_on_block".
 ban_override=200
 
-; Include blocked requests from banned IPs in the logfiles? True = Yes
+; Include blocked requests from banned IPs in the log files? True = Yes
 ; [Default]; False = No.
 log_banned_ips=true
 
@@ -185,7 +185,7 @@ statistics=false
 ; Force hostname lookups? True = Yes; False = No [Default]. Hostname lookups
 ; are normally performed on an "as needed" basis, but can be forced for all
 ; requests. Doing so may be useful as a means of providing more detailed
-; information in the logfiles, but may also have a slightly negative effect on
+; information in the log files, but may also have a slightly negative effect on
 ; performance.
 force_hostname_lookup=false
 
@@ -332,8 +332,8 @@ secret=''
 ; Number of hours to remember CAPTCHA instances. Default = 720 (1 month).
 expiry=720
 
-; Log all CAPTCHA attempts? If yes, specify the name to use for the logfile. If
-; no, leave this variable blank.
+; Log all CAPTCHA attempts? If yes, specify the name to use for the log file.
+; If no, leave this variable blank.
 logfile=''
 
 ; Maximum number of signatures allowed before the CAPTCHA offer is withdrawn.
@@ -377,8 +377,8 @@ secret=''
 ; Number of hours to remember CAPTCHA instances. Default = 720 (1 month).
 expiry=720
 
-; Log all CAPTCHA attempts? If yes, specify the name to use for the logfile. If
-; no, leave this variable blank.
+; Log all CAPTCHA attempts? If yes, specify the name to use for the log file.
+; If no, leave this variable blank.
 logfile=''
 
 ; Maximum number of signatures allowed before the CAPTCHA offer is withdrawn.

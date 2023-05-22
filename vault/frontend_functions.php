@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2023.05.03).
+ * This file: Front-end functions file (last modified: 2023.05.22).
  */
 
 /**
@@ -3658,7 +3658,7 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
                     '<div class="iLabl s"><label for="%s[%s]">%s</label></div><div class="iCntn">%s</div>',
                     $FlagKey,
                     $Current,
-                    $FlagSetName . $CIDRAM['L10N']->getString('pair_separator'),
+                    trim($FlagSetName . $CIDRAM['L10N']->getString('pair_separator')),
                     $Options
                 );
             }

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2023.05.21).
+ * This file: Front-end handler (last modified: 2023.05.22).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -4881,11 +4881,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
                     isset($CIDRAM['FlagData']['Label']) ? ($CIDRAM['L10N']->getString($CIDRAM['FlagData']['Label']) ?: $CIDRAM['FlagName']) : $CIDRAM['FlagName']
                 );
             }
-            $CIDRAM['Options'] .= '</select><br /><br />';
+            $CIDRAM['Options'] .= '</select>';
             $CIDRAM['FE']['AuxFlagsProvides'] .= sprintf(
-                '<div class="iLabl s"><label for="%s">%s</label></div><div class="iCntn">%s</div>',
+                "\n          <li>\n            <div class=\"iCntr\">\n              <div class=\"iLabl s\"><label for=\"%s\">%s</label></div><div class=\"iCntn\">%s</div>\n            </div>\n          </li>",
                 $CIDRAM['FlagKey'],
-                $CIDRAM['FlagSetName'] . $CIDRAM['L10N']->getString('pair_separator'),
+                trim($CIDRAM['FlagSetName'] . $CIDRAM['L10N']->getString('pair_separator')),
                 $CIDRAM['Options']
             );
         }

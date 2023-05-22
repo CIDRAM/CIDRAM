@@ -5552,7 +5552,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
         '<span class="txtRd">' . $CIDRAM['NumberFormatter']->format($CIDRAM['FE']['ProcessTime'], 3) . '</span>'
     ) . $CIDRAM['FE']['SearchInfo'] . '</td>';
 
-    /** Set logfile list or no logfiles available message. */
+    /** Set log-file list or no log files available message. */
     $CIDRAM['FE']['LogFiles'] = $CIDRAM['FE']['LogFiles']['Out'] ?: $CIDRAM['L10N']->getString('logs_no_logfiles_available');
 
     /** Send output. */

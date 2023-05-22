@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2023.05.07).
+ * This file: Functions file (last modified: 2023.05.22).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -603,7 +603,7 @@ $CIDRAM['FetchExpires'] = function (string $in) {
 
 /**
  * A simple closure for replacing date/time placeholders with corresponding
- * date/time information. Used by the logfiles and some timestamps.
+ * date/time information. Used by the log files and some timestamps.
  *
  * @param int $Time A unix timestamp.
  * @param string|array $In An input or an array of inputs to manipulate.
@@ -934,7 +934,7 @@ $CIDRAM['DNS-Resolve'] = function (string $Host, int $Timeout = 5) use (&$CIDRAM
  * with and the request isn't blocked).
  *
  * @param string|array $Domains Accepted domain/hostname partials.
- * @param string $Friendly A friendly name to use in logfiles.
+ * @param string $Friendly A friendly name to use in log files.
  * @param array $Options Various options that can be passed to the closure.
  * @return void
  */
@@ -1037,7 +1037,7 @@ $CIDRAM['DNS-Reverse-Forward'] = function ($Domains, string $Friendly, array $Op
  * being checked, and if not, the request is blocked. Has no return value.
  *
  * @param string|array $Expected Accepted/Expected IPs.
- * @param string $Friendly A friendly name to use in logfiles.
+ * @param string $Friendly A friendly name to use in log files.
  * @param array $Options Various options that can be passed to the closure.
  * @return void
  */
@@ -1056,7 +1056,7 @@ $CIDRAM['UA-IP-Match'] = function ($Expected, string $Friendly, array $Options =
  * being checked, and if not, the request is blocked. Has no return value.
  *
  * @param string|array $Expected Accepted/Expected CIDRs.
- * @param string $Friendly A friendly name to use in logfiles.
+ * @param string $Friendly A friendly name to use in log files.
  * @param array $Options Various options that can be passed to the closure.
  * @return void
  */
@@ -1077,7 +1077,7 @@ $CIDRAM['UA-CIDR-Match'] = function ($Expected, string $Friendly, array $Options
  * capable of performing ASN lookups, has been enabled.
  *
  * @param string|array $Origins Accepted originating ASNs.
- * @param string $Friendly A friendly name to use in logfiles.
+ * @param string $Friendly A friendly name to use in log files.
  * @param array $Options Various options that can be passed to the closure.
  * @return void
  */
@@ -1097,7 +1097,7 @@ $CIDRAM['UA-ASN-Match'] = function ($Origins, string $Friendly, array $Options =
  *
  * @param mixed $Datapoints The datapoint to be matched.
  * @param string|array $Expected The expected values (per the call origin).
- * @param string $Friendly A friendly name to use in logfiles.
+ * @param string $Friendly A friendly name to use in log files.
  * @param array $Options Various options that can be passed to the closure.
  * @return void
  */
@@ -1146,7 +1146,7 @@ $CIDRAM['UA-X-Match'] = function ($Datapoints, $Expected, string $Friendly, arra
  *      evaluated for truthiness. Truthiness is evaluated, and if true, the
  *      signature is "triggered". If false, the signature is *not* "triggered".
  * @param string $ReasonShort Cited in the "Why Blocked" field when the
- *      signature is triggered and thus included within logfile entries.
+ *      signature is triggered and thus included within log-file entries.
  * @param string $ReasonLong Message displayed to the user/client when blocked,
  *      to explain why they've been blocked. Optional. Defaults to the standard
  *      "Access Denied!" message.
@@ -1202,7 +1202,7 @@ $CIDRAM['Trigger'] = function (bool $Condition, string $ReasonShort, string $Rea
  *      evaluated for truthiness. Truthiness is evaluated, and if true, the
  *      bypass is "triggered". If false, the bypass is *not* "triggered".
  * @param string $ReasonShort Cited in the "Why Blocked" field when the
- *      bypass is triggered (included within logfile entries if there are still
+ *      bypass is triggered (included within log-file entries if there are still
  *      other preexisting signatures which have otherwise been triggered).
  * @param array $DefineOptions An optional array containing key/value pairs,
  *      used to define configuration options specific to the request instance.
@@ -1355,7 +1355,7 @@ $CIDRAM['ReadBytes'] = function (string $In, int $Mode = 0) {
 };
 
 /**
- * Add to page output and block event logfile fields.
+ * Add to page output and block event log-file fields.
  *
  * @param string $FieldName Name of the field for internal use (e.g., logging).
  * @param string $ClientFieldName Name of the field for external use (e.g., for
@@ -1714,8 +1714,8 @@ $CIDRAM['DeleteDirectory'] = function (string $Dir) use (&$CIDRAM): void {
  */
 $CIDRAM['BuildLogPattern'] = function (string $Str, bool $GZ = false): string {
     return '~^' . preg_replace(
-        ['~\\\{(?:dd|mm|yy|hh|ii|ss)\\\}~i', '~\\\{yyyy\\\}~i', '~\\\{(?:Day|Mon)\\\}~i', '~\\\{tz\\\}~i', '~\\\{t\\\:z\\\}~i'],
-        ['\d{2}', '\d{4}', '\w{3}', '.{1,2}\d{4}', '.{1,2}\d{2}:\d{2}'],
+        ['~\\\{(d|m|h|i|s)\\\}~i', '~\\\{(dd|mm|yy|hh|ii|ss)\\\}~i', '~\\\{yyyy\\\}~i', '~\\\{(Day|Mon)\\\}~i', '~\\\{tz\\\}~i', '~\\\{t\\\:z\\\}~i'],
+        ['(?<\1>\d{1,2})', '(?<\1>\d{2})', '(?<yyyy>\d{4})', '(?<\1>\w{3})', '(?<tz>.{1,2}\d{4})', '(?<tz>.{1,2}\d{2}:\d{2})'],
         preg_quote(str_replace("\\", '/', $Str))
     ) . ($GZ ? '(?:\.gz)?' : '') . '$~i';
 };
@@ -1752,8 +1752,10 @@ $CIDRAM['GZCompressFile'] = function (string $File): bool {
 /**
  * Log rotation.
  *
- * @param string $Pattern What to identify logfiles by (should be supplied via the relevant logging directive).
- * @return bool False when log rotation is disabled or errors occur; True otherwise.
+ * @param string $Pattern What to identify log files by (should be supplied
+ *                        via the relevant logging directive).
+ * @return bool           False when log rotation is disabled or errors occur;
+ *                        True otherwise.
  */
 $CIDRAM['LogRotation'] = function (string $Pattern) use (&$CIDRAM): bool {
     $Limit = $CIDRAM['Config']['general']['log_rotation_limit'] ?? 0;

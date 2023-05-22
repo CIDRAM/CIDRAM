@@ -8,11 +8,11 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Event handlers file (last modified: 2023.05.07).
+ * This file: Event handlers file (last modified: 2023.05.22).
  */
 
 /**
- * Writes to the standard logfile.
+ * Writes to the standard log file.
  *
  * @return bool True on success; False on failure.
  */
@@ -41,7 +41,7 @@ $CIDRAM['Events']->addHandler('writeToLog', function () use (&$CIDRAM): bool {
 });
 
 /**
- * Writes to the Apache-style logfile.
+ * Writes to the Apache-style log file.
  *
  * @return bool True on success; False on failure.
  */
@@ -81,7 +81,7 @@ $CIDRAM['Events']->addHandler('writeToLog', function () use (&$CIDRAM): bool {
 });
 
 /**
- * Writes to the serialised logfile.
+ * Writes to the serialised log file.
  *
  * @return bool True on success; False on failure.
  */

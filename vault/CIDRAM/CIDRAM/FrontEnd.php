@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.05.21).
+ * This file: The CIDRAM front-end (last modified: 2023.05.22).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -4710,11 +4710,11 @@ class FrontEnd extends Core
                     foreach ($FlagSetValue as $FlagName => $FlagData) {
                         $Options .= sprintf('<option value="%s">%s</option>', $FlagName, isset($FlagData['Label']) ? ($this->L10N->getString($FlagData['Label']) ?: $FlagName) : $FlagName);
                     }
-                    $Options .= '</select><br /><br />';
+                    $Options .= '</select>';
                     $this->FE['AuxFlagsProvides'] .= sprintf(
-                        '<div class="iLabl s"><label for="%s">%s</label></div><div class="iCntn">%s</div>',
+                        "\n          <li>\n            <div class=\"iCntr\">\n              <div class=\"iLabl s\"><label for=\"%s\">%s</label></div><div class=\"iCntn\">%s</div>\n            </div>\n          </li>",
                         $FlagKey,
-                        $FlagSetName . $this->L10N->getString('pair_separator'),
+                        trim($FlagSetName . $this->L10N->getString('pair_separator')),
                         $Options
                     );
                 }

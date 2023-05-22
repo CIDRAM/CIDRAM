@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used for auxiliary rules (last modified: 2023.03.14).
+ * This file: Methods used for auxiliary rules (last modified: 2023.05.22).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -330,7 +330,7 @@ trait AuxiliaryRules
                         '<div class="iLabl s"><label for="%s[%s]">%s</label></div><div class="iCntn">%s</div>',
                         $FlagKey,
                         $Current,
-                        $FlagSetName . $this->L10N->getString('pair_separator'),
+                        trim($FlagSetName . $this->L10N->getString('pair_separator')),
                         $Options
                     );
                 }

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Czech language data for the front-end (last modified: 2023.05.21).
+# This file: Czech language data for the front-end (last modified: 2023.05.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -102,7 +102,6 @@ checkbox_label_verify: "Pokus o ověření?"
 config_abuseipdb: "Konfigurace pro modul AbuseIPDB."
 config_abuseipdb_api_key: &EnterAPIKey "Zde zadejte svůj klíč API."
 config_abuseipdb_build_profiles_from_usage_type: "Sestavit profily pomocí typu použití vráceného rozhraním API? False (Nepravdivé) = Ne. True (Pravdivé) = Ano. Standardní = True."
-config_abuseipdb_lookup_strategy: &WhenToLookup "Které požadavky by se měly provádět vyhledávání?"
 config_abuseipdb_max_age_in_days: "Maximální věk ve dnech, pro které budou přehledy zohledněny při provádění vyhledávání (musí být číslo mezi 1 a 365). Standardní = 365."
 config_abuseipdb_max_cs_for_captcha: "Maximální skóre spolehlivosti povolené pro zobrazení CAPTCHA (musí být číslo mezi 0 a 100). Standardní = 10."
 config_abuseipdb_minimum_confidence_score: "Minimální skóre spolehlivosti požadované k tomu, aby CIDRAM zablokoval IP adresu (musí být číslo mezi 0 a 100). Standardní = 50."
@@ -225,7 +224,6 @@ config_phpmailer_smtp_secure: "Protokol, který se má použít při odesílán�
 config_phpmailer_username: "Uživatelské jméno, které se použije při odesílání e-mailu přes SMTP."
 config_projecthoneypot: "Configuration for the Project Honeypot module."
 config_projecthoneypot_api_key: *EnterAPIKey
-config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "The maximum age in days for which reports will be considered when performing lookups. Standardní = 365."
 config_projecthoneypot_max_ts_for_captcha: "The maximum threat score allowed for being served a CAPTCHA (musí být číslo mezi 1 a 100). Standardní = 10."
 config_projecthoneypot_minimum_threat_score: "The minimum threat score required in order for CIDRAM to block an IP address (musí být číslo mezi 1 a 100). Standardní = 10."
@@ -568,6 +566,7 @@ label_invisible: "Invisible"
 label_is_available: "%s is available (%s)."
 label_is_available_class: "%s is available."
 label_is_not_available: "%s is not available."
+label_lookup_strategy: "Které požadavky by se měly provádět vyhledávání?"
 label_netmask: "Netmask"
 label_never: "Never"
 label_next: "Next:"

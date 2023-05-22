@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2023.05.13).
+# This file: English language data for the front-end (last modified: 2023.05.22).
 ##/
 
 Extended Description AbuseIPDB module: "Blocks requests from IPs listed at AbuseIPDB."
@@ -88,7 +88,6 @@ checkbox_label_verify: "Attempt to verify?"
 config_abuseipdb: "Configuration for the AbuseIPDB module."
 config_abuseipdb_api_key: &EnterAPIKey "Please enter your API key here."
 config_abuseipdb_build_profiles_from_usage_type: "Build profiles using the usage type returned by the API? False = No. True = Yes. Default = True."
-config_abuseipdb_lookup_strategy: &WhenToLookup "Which requests should lookups be performed for?"
 config_abuseipdb_max_age_in_days: "The maximum age in days for which reports will be considered when performing lookups (must be a number between 1 and 365). Default = 365."
 config_abuseipdb_max_cs_for_captcha: "The maximum confidence score allowed for being served a CAPTCHA (must be a number between 0 and 100). Default = 10."
 config_abuseipdb_minimum_confidence_score: "The minimum confidence score required in order for CIDRAM to block an IP address (must be a number between 0 and 100). Default = 50."
@@ -211,7 +210,6 @@ config_phpmailer_smtp_secure: "The protocol to use when sending email via SMTP (
 config_phpmailer_username: "The username to use when sending email via SMTP."
 config_projecthoneypot: "Configuration for the Project Honeypot module."
 config_projecthoneypot_api_key: *EnterAPIKey
-config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "The maximum age in days for which reports will be considered when performing lookups. Default = 365."
 config_projecthoneypot_max_ts_for_captcha: "The maximum threat score allowed for being served a CAPTCHA (must be a number between 1 and 100). Default = 10."
 config_projecthoneypot_minimum_threat_score: "The minimum threat score required in order for CIDRAM to block an IP address (must be a number between 1 and 100). Default = 10."
@@ -554,6 +552,7 @@ label_invisible: "Invisible"
 label_is_available: "%s is available (%s)."
 label_is_available_class: "%s is available."
 label_is_not_available: "%s is not available."
+label_lookup_strategy: "Which requests should lookups be performed for?"
 label_netmask: "Netmask"
 label_never: "Never"
 label_next: "Next:"

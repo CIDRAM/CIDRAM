@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2023.05.10).
+# This file: Urdu language data for the front-end (last modified: 2023.05.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -102,7 +102,6 @@ checkbox_label_verify: "تصدیق کرنے کی کوشش کریں؟"
 config_abuseipdb: "AbuseIPDB ماڈیول کے لیے کنفیگریشن."
 config_abuseipdb_api_key: &EnterAPIKey "براہ کرم اپنی API کلید یہاں درج کریں."
 config_abuseipdb_build_profiles_from_usage_type: "API کے ذریعہ واپس کردہ استعمال کی قسم کا استعمال کرتے ہوئے پروفائلز بنائیں؟ True (سچے) = جی ہاں [پہلے سے طے شدہ]؛ False (جھوٹی) = نہیں."
-config_abuseipdb_lookup_strategy: &WhenToLookup "کن درخواستوں کے لیے تلاش کی جانی چاہیے؟"
 config_abuseipdb_max_age_in_days: "تلاش کرتے وقت رپورٹس کو مدنظر رکھنے کے لیے دنوں میں زیادہ سے زیادہ عمر (1 اور 365 کے درمیان نمبر ہونا چاہیے). پہلے سے طے شدہ = 365."
 config_abuseipdb_max_cs_for_captcha: "زیادہ سے زیادہ اعتماد کا سکور جو کیپچا کو پیش کرنے کی اجازت ہے (0 اور 100 کے درمیان نمبر ہونا چاہیے). پہلے سے طے شدہ = 10."
 config_abuseipdb_minimum_confidence_score: "IP ایڈریس کو بلاک کرنے کے لیے CIDRAM کے لیے کم از کم اعتماد کا اسکور درکار ہے (0 اور 100 کے درمیان نمبر ہونا چاہیے). پہلے سے طے شدہ = 50."
@@ -225,7 +224,6 @@ config_phpmailer_smtp_secure: "ای میل بھیجنے پر پروٹوکول ا
 config_phpmailer_username: "ای میل بھیجنے کے لئے صارف کا نام."
 config_projecthoneypot: "Project Honeypot ماڈیول کے لیے کنفیگریشن."
 config_projecthoneypot_api_key: *EnterAPIKey
-config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "تلاش کرتے وقت رپورٹس کو مدنظر رکھنے کے لیے دنوں میں زیادہ سے زیادہ عمر. پہلے سے طے شدہ = 365."
 config_projecthoneypot_max_ts_for_captcha: "کیپچا پیش کیے جانے کے لیے زیادہ سے زیادہ خطرے کے اسکور کی اجازت ہے (1 اور 100 کے درمیان نمبر ہونا چاہیے). پہلے سے طے شدہ = 10."
 config_projecthoneypot_minimum_threat_score: "IP ایڈریس کو بلاک کرنے کے لیے CIDRAM کے لیے درکار کم از کم خطرے کا سکور (1 اور 100 کے درمیان نمبر ہونا چاہیے). پہلے سے طے شدہ = 10."
@@ -569,6 +567,7 @@ label_invisible: "پوشیدہ"
 label_is_available: "%s دستیاب ہے (%s)."
 label_is_available_class: "%s دستیاب ہے."
 label_is_not_available: "%s دستیاب نہیں ہے."
+label_lookup_strategy: "کن درخواستوں کے لیے تلاش کی جانی چاہیے؟"
 label_netmask: "نیٹ ماسک"
 label_never: "کبھی نہیں"
 label_next: "اگلے:"

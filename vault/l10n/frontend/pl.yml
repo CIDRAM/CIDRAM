@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2023.05.13).
+# This file: Polish language data for the front-end (last modified: 2023.05.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -102,7 +102,6 @@ checkbox_label_verify: "Próbować zweryfikować?"
 config_abuseipdb: "Konfiguracja dla modułu AbuseIPDB."
 config_abuseipdb_api_key: &EnterAPIKey "Wprowadź tutaj swój klucz API."
 config_abuseipdb_build_profiles_from_usage_type: "Zbudować profile przy użyciu typu użytkowania zwróconego przez API? False = Nie. True = Tak. Domyślna = True."
-config_abuseipdb_lookup_strategy: &WhenToLookup "Dla jakich żądań należy wykonać wyszukiwania?"
 config_abuseipdb_max_age_in_days: "Maksymalny wiek w dniach, dla którego raporty będą brane pod uwagę podczas wyszukiwania (musi być liczbą od 1 do 365). Domyślna = 365."
 config_abuseipdb_max_cs_for_captcha: "Maksymalny wynik ufności dozwolony w przypadku wyświetlania CAPTCHA (musi być liczbą od 0 do 100). Domyślna = 10."
 config_abuseipdb_minimum_confidence_score: "Minimalny wynik ufności wymagany do zablokowania adresu IP przez CIDRAM (musi być liczbą od 0 do 100). Domyślna = 50."
@@ -225,7 +224,6 @@ config_phpmailer_smtp_secure: "Protokół używany podczas wysyłania wiadomośc
 config_phpmailer_username: "Nazwa użytkownika używana podczas wysyłania wiadomości e-mail przez SMTP."
 config_projecthoneypot: "Konfiguracja dla modułu Project Honeypot."
 config_projecthoneypot_api_key: *EnterAPIKey
-config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "Maksymalny wiek w dniach, dla którego raporty będą brane pod uwagę podczas wyszukiwania. Domyślna = 365."
 config_projecthoneypot_max_ts_for_captcha: "Maksymalny wynik zagrożenia, na który można było podać CAPTCHA (musi być liczbą od 1 do 100). Domyślna = 10."
 config_projecthoneypot_minimum_threat_score: "Minimalny wynik zagrożenia wymagany do zablokowania adresu IP przez CIDRAM (musi być liczbą od 1 do 100). Domyślna = 10."
@@ -575,6 +573,7 @@ label_invisible: "Niewidzialny"
 label_is_available: "%s jest dostępny (%s)."
 label_is_available_class: "%s jest dostępny."
 label_is_not_available: "%s nie jest dostępny."
+label_lookup_strategy: "Dla jakich żądań należy wykonać wyszukiwania?"
 label_netmask: "Maska sieci"
 label_never: "Nigdy"
 label_next: "Następny:"

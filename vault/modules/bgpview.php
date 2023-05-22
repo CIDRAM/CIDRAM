@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: BGPView module (last modified: 2023.03.28).
+ * This file: BGPView module (last modified: 2023.05.22).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -30,6 +30,15 @@ $this->CIDRAM['BGPConfig'] = [
 $this->CIDRAM['ModuleResCache'][$Module] = function () {
     /** Guard. */
     if (empty($this->BlockInfo['IPAddr'])) {
+        return;
+    }
+
+    /**
+     * Depending on the configured lookup strategy, if the request isn't
+     * attempting to access a sensitive page (login, registration page, etc),
+     * exit.
+     */
+    if ($this->Configuration['bgpview']['lookup_strategy'] !== 1 && !$this->isSensitive(preg_replace('/\s/', '', strtolower($this->BlockInfo['rURI'])))) {
         return;
     }
 

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2023.05.13).
+# This file: Turkish language data for the front-end (last modified: 2023.05.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -102,7 +102,6 @@ checkbox_label_verify: "Doğrulamayı dene?"
 config_abuseipdb: "AbuseIPDB modülü için yapılandırma."
 config_abuseipdb_api_key: &EnterAPIKey "Lütfen API anahtarınızı buraya girin."
 config_abuseipdb_build_profiles_from_usage_type: "API tarafından döndürülen kullanım türünü kullanarak profiller oluşturulsun mu? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
-config_abuseipdb_lookup_strategy: &WhenToLookup "Hangi istekler için arama yapılmalıdır?"
 config_abuseipdb_max_age_in_days: "Aramalar yapılırken raporların dikkate alınması için gün cinsinden maksimum yaş (1 ile 365 arasında bir sayı olmalıdır). Varsayılan = 365."
 config_abuseipdb_max_cs_for_captcha: "CAPTCHA'ların sunulmasına izin verilen maksimum güven puanı (0 ile 100 arasında bir sayı olmalıdır). Varsayılan = 10."
 config_abuseipdb_minimum_confidence_score: "CIDRAM'ın bir IP adresini engellemesi için gereken minimum güven puanı (0 ile 100 arasında bir sayı olmalıdır). Varsayılan = 50."
@@ -225,7 +224,6 @@ config_phpmailer_smtp_secure: "SMTP ile e-posta gönderirken kullanılacak proto
 config_phpmailer_username: "SMTP ile e-posta gönderirken kullanılacak kullanıcı adı."
 config_projecthoneypot: "Project Honeypot modülü için yapılandırma."
 config_projecthoneypot_api_key: *EnterAPIKey
-config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "Aramalar yapılırken raporların dikkate alınması için gün cinsinden maksimum yaş. Varsayılan = 365."
 config_projecthoneypot_max_ts_for_captcha: "Bir CAPTCHA için izin verilen maksimum tehdit puanı (1 ile 100 arasında bir sayı olmalıdır). Varsayılan = 10."
 config_projecthoneypot_minimum_threat_score: "CIDRAM'ın bir IP adresini engellemesi için gereken minimum tehdit puanı (1 ile 100 arasında bir sayı olmalıdır). Varsayılan = 10."
@@ -570,6 +568,7 @@ label_invisible: "Görünmez"
 label_is_available: "%s mevcuttur (%s)."
 label_is_available_class: "%s mevcuttur."
 label_is_not_available: "%s mevcut değil."
+label_lookup_strategy: "Hangi istekler için arama yapılmalıdır?"
 label_netmask: "Ağ maskesi"
 label_never: "Asla"
 label_next: "Sonraki:"

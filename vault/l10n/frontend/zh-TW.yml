@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2023.05.10).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2023.05.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -102,7 +102,6 @@ checkbox_label_verify: "嘗試驗證？"
 config_abuseipdb: "AbuseIPDB模塊的配置。"
 config_abuseipdb_api_key: &EnterAPIKey "請在此處輸入您的API密鑰。"
 config_abuseipdb_build_profiles_from_usage_type: "使用API返回的使用類型構建分類？ False = 不要使用。 True = 使用。 標準 = True。"
-config_abuseipdb_lookup_strategy: &WhenToLookup "應該為哪些請求執行查找？"
 config_abuseipdb_max_age_in_days: "執行查找時將考慮報告的最長天數（必須是1到365之間的數字）。標準=365。"
 config_abuseipdb_max_cs_for_captcha: "為了提供CAPTCHA的目的最大置信度分數（必須是0到100之間的數字）。標準=10。"
 config_abuseipdb_minimum_confidence_score: "為了讓CIDRAM阻止IP地址所需的最低置信度分數（必須是0到100之間的數字）。標準=50。"
@@ -225,7 +224,6 @@ config_phpmailer_smtp_secure: "通過SMTP發送電子郵件時使用的協議（
 config_phpmailer_username: "通過SMTP發送電子郵件時使用的用戶名。"
 config_projecthoneypot: "Project Honeypot模塊的配置。"
 config_projecthoneypot_api_key: *EnterAPIKey
-config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "執行查找時將考慮報告的最長天數。標準=365。"
 config_projecthoneypot_max_ts_for_captcha: "為了提供CAPTCHA的目的最大威脅分數（必須是1到100之間的數字）。標準=10。"
 config_projecthoneypot_minimum_threat_score: "為了讓CIDRAM阻止IP地址所需的最低威脅分數（必須是1到100之間的數字）。標準=10。"
@@ -560,6 +558,7 @@ label_invisible: "不可見的"
 label_is_available: "%s可用（%s）。"
 label_is_available_class: "%s可用。"
 label_is_not_available: "%s不可用。"
+label_lookup_strategy: "應該為哪些請求執行查找？"
 label_netmask: "網絡掩碼"
 label_never: "決不"
 label_next: "下一個："

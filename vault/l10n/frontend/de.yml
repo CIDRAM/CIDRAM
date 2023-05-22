@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2023.05.10).
+# This file: German language data for the front-end (last modified: 2023.05.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -102,7 +102,6 @@ checkbox_label_verify: "Versuchen zu verifizieren?"
 config_abuseipdb: "Konfiguration für das AbuseIPDB-Modul."
 config_abuseipdb_api_key: &EnterAPIKey "Bitte geben Sie hier Ihren API-Schlüssel."
 config_abuseipdb_build_profiles_from_usage_type: "Erstellen Profile von der Verwendungstyp von der API zurückgegeben? False = Nein. True = Ja. Standardeinstellung = True."
-config_abuseipdb_lookup_strategy: &WhenToLookup "Für welche Anfragen sollen Lookups durchgeführt werden?"
 config_abuseipdb_max_age_in_days: "Beim Durchführen die Suchen, das maximale Alter in Tagen für Berichte zu berücksichtigende werden (muss eine Zahl zwischen 1 und 365 sein). Standardeinstellung = 365."
 config_abuseipdb_max_cs_for_captcha: "Die maximale Konfidenzwert, die für die Bereitstellung von CAPTCHAs zulässig sein (muss eine Zahl zwischen 0 und 100 sein). Standardeinstellung = 10."
 config_abuseipdb_minimum_confidence_score: "Der minimale Konfidenzwert, der erforderlich ist, damit CIDRAM eine IP-Adresse blockieren kann (muss eine Zahl zwischen 0 und 100 sein). Standardeinstellung = 50."
@@ -225,7 +224,6 @@ config_phpmailer_smtp_secure: "Das Protokoll zum Senden von E-Mails über SMTP (
 config_phpmailer_username: "Der Benutzername zum Senden von E-Mails über SMTP."
 config_projecthoneypot: "Konfiguration für das Project-Honeypot-Modul."
 config_projecthoneypot_api_key: *EnterAPIKey
-config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "Beim Durchführen die Suchen, das maximale Alter in Tagen für Berichte zu berücksichtigende werden. Standardeinstellung = 365."
 config_projecthoneypot_max_ts_for_captcha: "Die maximal zulässige Bedrohungsbewert für die Zustellung eines CAPTCHA (muss eine Zahl zwischen 1 und 100 sein). Standardeinstellung = 10."
 config_projecthoneypot_minimum_threat_score: "Die minimale Bedrohungsbewert, die erforderlich ist, damit CIDRAM eine IP-Adresse blockieren kann (muss eine Zahl zwischen 1 und 100 sein). Standardeinstellung = 10."
@@ -575,6 +573,7 @@ label_invisible: "Unsichtbar"
 label_is_available: "%s ist verfügbar (%s)."
 label_is_available_class: "%s ist verfügbar."
 label_is_not_available: "%s ist nicht verfügbar."
+label_lookup_strategy: "Für welche Anfragen sollen Lookups durchgeführt werden?"
 label_netmask: "Netzmaske"
 label_never: "Noch nie"
 label_next: "Nächste:"

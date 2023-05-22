@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2023.05.13).
+# This file: Russian language data for the front-end (last modified: 2023.05.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -102,7 +102,6 @@ checkbox_label_verify: "Попробуй проверить?"
 config_abuseipdb: "Конфигурация для модуля AbuseIPDB."
 config_abuseipdb_api_key: &EnterAPIKey "Пожалуйста, введите ваш ключ API здесь."
 config_abuseipdb_build_profiles_from_usage_type: "Создавать профили, используя тип использования, возвращаемый API? False = Нет. True = Да. Стандарт = True."
-config_abuseipdb_lookup_strategy: &WhenToLookup "Для каких запросов следует выполнять поиск?"
 config_abuseipdb_max_age_in_days: "Максимальный возраст в днях, за который отчеты будут учитываться при выполнении поиска (должно быть числом от 1 до 365). Стандарт = 365."
 config_abuseipdb_max_cs_for_captcha: "Максимальная оценка достоверности, разрешенный для обслуживания CAPTCHA (должно быть числом от 0 до 100). Стандарт = 10."
 config_abuseipdb_minimum_confidence_score: "Минимальная оценка достоверности, необходимая для того, чтобы CIDRAM заблокировала IP-адрес (должно быть числом от 0 до 100). Стандарт = 50."
@@ -225,7 +224,6 @@ config_phpmailer_smtp_secure: "Протокол для при отправке �
 config_phpmailer_username: "Имя пользователя для отправки электронной почты через SMTP."
 config_projecthoneypot: "Конфигурация для модуля Project Honeypot."
 config_projecthoneypot_api_key: *EnterAPIKey
-config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "Максимальный возраст в днях, для которого отчеты будут учитываться при выполнении поиска. Стандарт = 365."
 config_projecthoneypot_max_ts_for_captcha: "Максимальный оценка угрозы, разрешенный для обслуживания CAPTCHA (должно быть числом от 1 до 100). Стандарт = 10."
 config_projecthoneypot_minimum_threat_score: "Минимальная оценка угрозы, необходимая для того, чтобы CIDRAM заблокировала IP-адрес (должно быть числом от 1 до 100). Стандарт = 10."
@@ -576,6 +574,7 @@ label_invisible: "Невидимый"
 label_is_available: "%s доступен (%s)."
 label_is_available_class: "%s доступен."
 label_is_not_available: "%s недоступен."
+label_lookup_strategy: "Для каких запросов следует выполнять поиск?"
 label_netmask: "Сетевая маска"
 label_never: "Никогда"
 label_next: "Следующий:"

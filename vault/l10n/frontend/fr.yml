@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2023.05.13).
+# This file: French language data for the front-end (last modified: 2023.05.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -102,7 +102,6 @@ checkbox_label_verify: "Essayer de vérifier\_?"
 config_abuseipdb: "Configuration pour le module AbusIPDB."
 config_abuseipdb_api_key: &EnterAPIKey "Veuillez entrer votre clé API ici."
 config_abuseipdb_build_profiles_from_usage_type: "Créer des profils à l'aide du type d'utilisation renvoyé par l'API\_? False = Non. True = Oui. Défaut = True."
-config_abuseipdb_lookup_strategy: &WhenToLookup "Pour quelles requêtes les recherches doivent-elles être effectuées\_?"
 config_abuseipdb_max_age_in_days: "L'âge maximal en jours pour lequel les rapports seront pris en compte lors de l'exécution de recherches (doit être un nombre compris entre 1 et 365). Défaut = 365."
 config_abuseipdb_max_cs_for_captcha: "Le score de confiance maximal autorisé pour que les CAPTCHA soient servis (doit être un nombre compris entre 0 et 100). Défaut = 10."
 config_abuseipdb_minimum_confidence_score: "Le score de confiance minimum requis pour que CIDRAM bloque une adresse IP (doit être un nombre compris entre 0 et 100). Défaut = 50."
@@ -225,7 +224,6 @@ config_phpmailer_smtp_secure: "Le protocole à utiliser lors de l'envoi d'e-mail
 config_phpmailer_username: "Le nom d'utilisateur à utiliser lors de l'envoi d'e-mail via SMTP."
 config_projecthoneypot: "Configuration pour le module Project Honeypot."
 config_projecthoneypot_api_key: *EnterAPIKey
-config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "L'âge maximal en jours pour lequel les rapports seront pris en compte lors de l'exécution de recherches. Défaut = 365."
 config_projecthoneypot_max_ts_for_captcha: "Le score de menace maximum autorisé pour recevoir un CAPTCHA (doit être un nombre compris entre 1 et 100). Défaut = 10."
 config_projecthoneypot_minimum_threat_score: "Le score de menace minimum requis pour que CIDRAM bloque une adresse IP (doit être un nombre compris entre 1 et 100). Défaut = 10."
@@ -577,6 +575,7 @@ label_invisible: "Invisible"
 label_is_available: "%s est disponible (%s)."
 label_is_available_class: "%s est disponible."
 label_is_not_available: "%s n'est pas disponible."
+label_lookup_strategy: "Pour quelles requêtes les recherches doivent-elles être effectuées\_?"
 label_netmask: "Masque de réseau"
 label_never: "Jamais"
 label_next: "Prochaine\_:"

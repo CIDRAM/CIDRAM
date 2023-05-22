@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: BGPView defaults file (last modified: 2023.04.18).
+# This file: BGPView defaults file (last modified: 2023.05.22).
 ##/
 
 Config Defaults:
@@ -24,6 +24,13 @@ Config Defaults:
   whitelisted_ccs:
    type: "string"
    default: ""
+  lookup_strategy:
+   type: "int"
+   default: 1
+   choices:
+    1: "label_requests_all"
+    2: "label_requests_sensitive_pages"
+   style: "radio"
   timeout_limit:
    type: "int"
    default: 12

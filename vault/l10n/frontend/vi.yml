@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2023.05.10).
+# This file: Vietnamese language data for the front-end (last modified: 2023.05.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -102,7 +102,6 @@ checkbox_label_verify: "Cố gắng xác minh?"
 config_abuseipdb: "Cấu hình cho mô-đun AbuseIPDB."
 config_abuseipdb_api_key: &EnterAPIKey "Vui lòng nhập khóa API của bạn tại đây."
 config_abuseipdb_build_profiles_from_usage_type: "Xây dựng hồ sơ bằng cách sử dụng loại sử dụng do API trả về? False = Không. True = Vâng. Mặc định = True."
-config_abuseipdb_lookup_strategy: &WhenToLookup "Những yêu cầu nào nên thực hiện tra cứu?"
 config_abuseipdb_max_age_in_days: "Tuổi tối đa tính theo ngày mà các báo cáo sẽ được xem xét khi thực hiện tra cứu (phải là một số từ 1 đến 365). Mặc định = 365."
 config_abuseipdb_max_cs_for_captcha: "Điểm tin cậy tối đa cho phép CAPTCHA được phân phát (phải là một số từ 0 đến 100). Mặc định = 10."
 config_abuseipdb_minimum_confidence_score: "Điểm tin cậy tối thiểu bắt buộc để CIDRAM chặn địa chỉ IP (phải là một số từ 0 đến 100). Mặc định = 50."
@@ -225,7 +224,6 @@ config_phpmailer_smtp_secure: "Giao thức sử dụng khi gửi email qua SMTP 
 config_phpmailer_username: "Tên người dùng để sử dụng khi gửi email qua SMTP."
 config_projecthoneypot: "Cấu hình cho mô-đun Project Honeypot."
 config_projecthoneypot_api_key: *EnterAPIKey
-config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "Tuổi tối đa tính theo ngày mà các báo cáo sẽ được xem xét khi thực hiện tra cứu. Mặc định = 365."
 config_projecthoneypot_max_ts_for_captcha: "Điểm đe dọa tối đa được phép để được phân phát CAPTCHA (phải là một số từ 1 đến 100). Mặc định = 10."
 config_projecthoneypot_minimum_threat_score: "Điểm số mối đe dọa tối thiểu cần thiết để CIDRAM chặn một địa chỉ IP (phải là một số từ 1 đến 100). Mặc định = 10."
@@ -567,6 +565,7 @@ label_invisible: "Vô hình"
 label_is_available: "%s có sẵn (%s)."
 label_is_available_class: "%s có sẵn."
 label_is_not_available: "%s không có sẵn."
+label_lookup_strategy: "Những yêu cầu nào nên thực hiện tra cứu?"
 label_netmask: "Mặt nạ mạng"
 label_never: "Không bao giờ"
 label_next: "Kế tiếp:"

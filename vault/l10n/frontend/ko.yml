@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2023.05.10).
+# This file: Korean language data for the front-end (last modified: 2023.05.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -102,7 +102,6 @@ checkbox_label_verify: "검증을 시도?"
 config_abuseipdb: "AbuseIPDB 모듈 구성."
 config_abuseipdb_api_key: &EnterAPIKey "여기에 API 키를 입력하세요."
 config_abuseipdb_build_profiles_from_usage_type: "API에서 반환된 사용 유형을 사용하여 프로필을 작성하시겠습니까? True = 예 (Default / 기본 설정); False = 아니오."
-config_abuseipdb_lookup_strategy: &WhenToLookup "어떤 요청에 대해 조회를 수행해야 합니까?"
 config_abuseipdb_max_age_in_days: "조회를 수행할 때 보고서가 고려되는 최대 기간(일). 1에서 365 사이의 숫자여야 합니다. Default (기본 설정) = 365."
 config_abuseipdb_max_cs_for_captcha: "CAPTCHA 제공에 허용되는 최대 신뢰도 점수입니다 (0에서 100 사이의 숫자여야 합니다). Default (기본 설정) = 10."
 config_abuseipdb_minimum_confidence_score: "CIDRAM이 IP 주소를 차단하는 데 필요한 최소 신뢰도 점수 (0에서 100 사이의 숫자여야 합니다). Default (기본 설정) = 50."
@@ -225,7 +224,6 @@ config_phpmailer_smtp_secure: "SMTP를 통해 이메일을 보낼 때 사용할 
 config_phpmailer_username: "SMTP를 통해 이메일을 보낼 때 사용할 사용자 이름입니다."
 config_projecthoneypot: "Project Honeypot 모듈 구성."
 config_projecthoneypot_api_key: *EnterAPIKey
-config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "조회를 수행할 때 보고서가 고려되는 최대 기간(일). Default (기본 설정) = 365."
 config_projecthoneypot_max_ts_for_captcha: "CAPTCHA를 제공하는 데 허용되는 최대 위협 점수입니다 (1에서 100 사이의 숫자여야 합니다). Default (기본 설정) = 10."
 config_projecthoneypot_minimum_threat_score: "CIDRAM이 IP 주소를 차단하는 데 필요한 최소 위협 점수입니다 (1에서 100 사이의 숫자여야 합니다). Default (기본 설정) = 10."
@@ -563,6 +561,7 @@ label_invisible: "보이지 않음"
 label_is_available: "%s를 사용할 수 있습니다 (%s)."
 label_is_available_class: "%s를 사용할 수 있습니다."
 label_is_not_available: "%s는 사용할 수 없습니다."
+label_lookup_strategy: "어떤 요청에 대해 조회를 수행해야 합니까?"
 label_netmask: "넷마스크"
 label_never: "못"
 label_next: "다음\_:"

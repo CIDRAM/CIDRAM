@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Farsi language data for the front (last modified: 2023.05.10).
+# This file: Farsi language data for the front (last modified: 2023.05.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -102,7 +102,6 @@ checkbox_label_verify: "تلاش برای تأیید؟"
 config_abuseipdb: "پیکربندی ماژول AbuseIPDB."
 config_abuseipdb_api_key: &EnterAPIKey "لطفاً کلید API خود را در اینجا وارد کنید."
 config_abuseipdb_build_profiles_from_usage_type: "نمایه‌ها را با استفاده از نوع استفاده برگردانده شده توسط API بسازید؟ False = نکن. True = آره. پیش فرض = True."
-config_abuseipdb_lookup_strategy: &WhenToLookup "جستجو برای کدام درخواست ها باید انجام شود؟"
 config_abuseipdb_max_age_in_days: "حداکثر سن در روز برای در نظر گرفتن گزارش ها (باید عددی بین 1 تا 365 باشد). پیش فرض = 365."
 config_abuseipdb_max_cs_for_captcha: "حداکثر امتیاز اطمینان مجاز برای ارائه یک CAPTCHA (باید عددی بین 0 تا 100 باشد). پیش فرض = 10."
 config_abuseipdb_minimum_confidence_score: "حداقل امتیاز اطمینان مورد نیاز برای مسدود کردن آدرس IP توسط CIDRAM (باید عددی بین 0 تا 100 باشد). پیش فرض = 50."
@@ -225,7 +224,6 @@ config_phpmailer_smtp_secure: "پروتکل مورد استفاده هنگام �
 config_phpmailer_username: "نام کاربری که هنگام ارسال ایمیل از طریق SMTP استفاده می شود."
 config_projecthoneypot: "پیکربندی ماژول Project Honeypot."
 config_projecthoneypot_api_key: *EnterAPIKey
-config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "حداکثر سن در روز برای در نظر گرفتن گزارش ها. پیش فرض = 365."
 config_projecthoneypot_max_ts_for_captcha: "حداکثر امتیاز تهدید مجاز برای ارائه یک CAPTCHA (باید عددی بین 1 تا 100 باشد). پیش فرض = 10."
 config_projecthoneypot_minimum_threat_score: "حداقل امتیاز تهدید مورد نیاز برای مسدود کردن یک آدرس IP توسط CIDRAM (باید عددی بین 1 تا 100 باشد). پیش فرض = 10."
@@ -564,6 +562,7 @@ label_invisible: "نامرئی"
 label_is_available: "%s موجود است (%s)."
 label_is_available_class: "%s موجود است."
 label_is_not_available: "%s در دسترس نیست."
+label_lookup_strategy: "جستجو برای کدام درخواست ها باید انجام شود؟"
 label_netmask: "ماسک شبکه"
 label_never: "هرگز"
 label_next: "بعد:"

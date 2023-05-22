@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hebrew language data for the front-end (last modified: 2023.05.10).
+# This file: Hebrew language data for the front-end (last modified: 2023.05.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -102,7 +102,6 @@ checkbox_label_verify: "ניסיון לאמת?"
 config_abuseipdb: "תצורה עבור מודול AbuseIPDB."
 config_abuseipdb_api_key: &EnterAPIKey "אנא הזן את מפתח ה-API שלך כאן."
 config_abuseipdb_build_profiles_from_usage_type: "לבנות פרופילים באמצעות סוג השימוש המוחזר על ידי ה-API? False = לא. True = כן. סטנדרטי = True."
-config_abuseipdb_lookup_strategy: &WhenToLookup "עבור אילו בקשות יש לבצע חיפושים?"
 config_abuseipdb_max_age_in_days: "הגיל המרבי בימים לבחינת דוחות (חייב להיות מספר בין 1 ל-365). סטנדרטי = 365."
 config_abuseipdb_max_cs_for_captcha: "ציון הביטחון המקסימלי המותר להצגת CAPTCHA (חייב להיות מספר בין 0 ל-100). סטנדרטי = 10."
 config_abuseipdb_minimum_confidence_score: "ציון הביטחון המינימלי הנדרש על מנת ש-CIDRAM יחסום כתובת IP (חייב להיות מספר בין 0 ל-100). סטנדרטי = 50."
@@ -225,7 +224,6 @@ config_phpmailer_smtp_secure: "הפרוטוקול לשימוש בעת שליחת
 config_phpmailer_username: "שם המשתמש לשימוש בעת שליחת אימייל באמצעות SMTP."
 config_projecthoneypot: "תצורה עבור מודול Project Honeypot."
 config_projecthoneypot_api_key: *EnterAPIKey
-config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "הגיל המרבי בימים לבחינת דוחות. סטנדרטי = 365."
 config_projecthoneypot_max_ts_for_captcha: "ציון האיום המקסימלי המותר להצגת CAPTCHA (חייב להיות מספר בין 1 ל-100). סטנדרטי = 10."
 config_projecthoneypot_minimum_threat_score: "ציון האיום המינימלי הנדרש על מנת ש-CIDRAM יחסום כתובת IP (חייב להיות מספר בין 1 ל-100). סטנדרטי = 10."
@@ -565,6 +563,7 @@ label_invisible: "בלתי נראה"
 label_is_available: "%s זמין (%s)."
 label_is_available_class: "%s זמין."
 label_is_not_available: "%s אינו זמין."
+label_lookup_strategy: "עבור אילו בקשות יש לבצע חיפושים?"
 label_netmask: "מסיכת רשת"
 label_never: "לעולם לא"
 label_next: "הבא:"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2023.05.13).
+# This file: Dutch language data for the front-end (last modified: 2023.05.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -102,7 +102,6 @@ checkbox_label_verify: "Proberen te verifiëren?"
 config_abuseipdb: "Configuratie voor de AbuseIPDB-module."
 config_abuseipdb_api_key: &EnterAPIKey "Voer hier uw API-sleutel."
 config_abuseipdb_build_profiles_from_usage_type: "Profielen bouwen met het gebruikstype dat door de API wordt geretourneerd? False = Nee. True = Ja. Standaard = True."
-config_abuseipdb_lookup_strategy: &WhenToLookup "Voor welke verzoeken moeten zoekopdrachten worden uitgevoerd?"
 config_abuseipdb_max_age_in_days: "De maximale leeftijd in dagen waarvoor rapporten worden overwogen bij het uitvoeren van zoekopdrachten (moet een getal zijn tussen 1 en 365). Standaard = 365."
 config_abuseipdb_max_cs_for_captcha: "De maximale betrouwbaarheidsscore die is toegestaan voor een CAPTCHA (moet een getal zijn tussen 0 en 100). Standaard = 10."
 config_abuseipdb_minimum_confidence_score: "De minimale betrouwbaarheidsscore die vereist is om CIDRAM een IP-adres te blokkeren (moet een getal zijn tussen 0 en 100). Standaard = 50."
@@ -225,7 +224,6 @@ config_phpmailer_smtp_secure: "Het protocol voor het verzenden van e-mail via SM
 config_phpmailer_username: "De gebruikersnaam voor het verzenden van e-mail via SMTP."
 config_projecthoneypot: "Configuratie voor de Project Honeypot-module."
 config_projecthoneypot_api_key: *EnterAPIKey
-config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "De maximale leeftijd in dagen waarvoor rapporten worden overwogen bij het uitvoeren van zoekopdrachten. Standaard = 365."
 config_projecthoneypot_max_ts_for_captcha: "De maximale dreigingsscore die is toegestaan voor een CAPTCHA (moet een getal zijn tussen 1 en 100). Standaard = 10."
 config_projecthoneypot_minimum_threat_score: "De minimale dreigingsscore die vereist is om CIDRAM een IP-adres te blokkeren (moet een getal zijn tussen 1 en 100). Standaard = 10."
@@ -572,6 +570,7 @@ label_invisible: "Onzichtbaar"
 label_is_available: "%s is beschikbaar (%s)."
 label_is_available_class: "%s is beschikbaar."
 label_is_not_available: "%s is niet beschikbaar."
+label_lookup_strategy: "Voor welke verzoeken moeten zoekopdrachten worden uitgevoerd?"
 label_netmask: "Netmasker"
 label_never: "Nooit"
 label_next: "Volgende:"

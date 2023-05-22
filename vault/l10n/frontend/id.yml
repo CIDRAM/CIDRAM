@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2023.05.13).
+# This file: Indonesian language data for the front-end (last modified: 2023.05.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -102,7 +102,6 @@ checkbox_label_verify: "Mencoba memverifikasi?"
 config_abuseipdb: "Konfigurasi untuk modul AbuseIPDB."
 config_abuseipdb_api_key: &EnterAPIKey "Silahkan masukkan kunci API Anda disini."
 config_abuseipdb_build_profiles_from_usage_type: "Buat profil menggunakan jenis penggunaan yang dikembalikan oleh API? False = Tidak. True = Ya. Default = True."
-config_abuseipdb_lookup_strategy: &WhenToLookup "Untuk permintaan mana pencarian harus dilakukan?"
 config_abuseipdb_max_age_in_days: "Usia maksimum dalam hari dimana laporan akan dipertimbangkan saat melakukan pencarian (harus berupa angka diantara 1 dan 365). Default = 365."
 config_abuseipdb_max_cs_for_captcha: "Skor kepercayaan maksimum yang diizinkan untuk CAPTCHA disajikan (harus berupa angka diantara 0 dan 100). Default = 10."
 config_abuseipdb_minimum_confidence_score: "Skor kepercayaan minimum yang diperlukan agar CIDRAM dapat memblokir alamat IP (harus berupa angka diantara 0 dan 100). Default = 50."
@@ -225,7 +224,6 @@ config_phpmailer_smtp_secure: "Protokol yang digunakan saat mengirim email melal
 config_phpmailer_username: "Nama pengguna yang digunakan saat mengirim email melalui SMTP."
 config_projecthoneypot: "Konfigurasi untuk modul Project Honeypot."
 config_projecthoneypot_api_key: *EnterAPIKey
-config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "Usia maksimum dalam hari dimana laporan akan dipertimbangkan saat melakukan pencarian. Default = 365."
 config_projecthoneypot_max_ts_for_captcha: "Skor ancaman maksimum yang diizinkan untuk CAPTCHA disajikan (harus berupa angka diantara 1 dan 100). Default = 10."
 config_projecthoneypot_minimum_threat_score: "Skor ancaman minimum yang diperlukan agar CIDRAM memblokir alamat IP (harus berupa angka diantara 1 dan 100). Default = 10."
@@ -565,6 +563,7 @@ label_invisible: "Tak terlihat"
 label_is_available: "%s tersedia (%s)."
 label_is_available_class: "%s tersedia."
 label_is_not_available: "%s tidak tersedia."
+label_lookup_strategy: "Untuk permintaan mana pencarian harus dilakukan?"
 label_netmask: "Topeng jaring"
 label_never: "Tak pernah"
 label_next: "Berikutnya:"

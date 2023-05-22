@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2023.05.13).
+# This file: Latvian language data for the front-end (last modified: 2023.05.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -102,7 +102,6 @@ checkbox_label_verify: "Vai mēģināt pārbaudīt?"
 config_abuseipdb: "AbuseIPDB moduļa konfigurācija."
 config_abuseipdb_api_key: &EnterAPIKey "Lūdzu, ievadiet šeit savu API atslēgu."
 config_abuseipdb_build_profiles_from_usage_type: "Vai veidot profilus, izmantojot API atgriezto lietošanas veidu? False = Nē. True = Jā. Noklusējuma = True."
-config_abuseipdb_lookup_strategy: &WhenToLookup "Kuriem pieprasījumiem ir jāveic meklēšana?"
 config_abuseipdb_max_age_in_days: "Maksimālais vecums dienās, kad pārskati jāņem vērā, veicot meklēšanu (jābūt skaitlim no 1 līdz 365). Noklusējuma = 365."
 config_abuseipdb_max_cs_for_captcha: "Maksimālais uzticamības rādītājs, kas atļauts, lai saņemtu CAPTCHA (jābūt skaitlim no 0 līdz 100). Noklusējuma = 10."
 config_abuseipdb_minimum_confidence_score: "Minimālais ticamības rādītājs, kas nepieciešams, lai CIDRAM bloķētu IP adresi (jābūt skaitlim no 0 līdz 100). Noklusējuma = 50."
@@ -225,7 +224,6 @@ config_phpmailer_smtp_secure: "Protokols, kas jāizmanto, nosūtot e-pastu izman
 config_phpmailer_username: "Lietotājvārds, kas jāizmanto, nosūtot e-pastu izmantojot SMTP."
 config_projecthoneypot: "Project Honeypot moduļa konfigurācija."
 config_projecthoneypot_api_key: *EnterAPIKey
-config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "Maksimālais vecums dienās, kad pārskati jāņem vērā, veicot meklēšanu. Noklusējuma = 365."
 config_projecthoneypot_max_ts_for_captcha: "Maksimālais apdraudējuma rādītājs, kas atļauts, lai saņemtu CAPTCHA (jābūt skaitlim no 1 līdz 100). Noklusējuma = 10."
 config_projecthoneypot_minimum_threat_score: "Minimālais apdraudējuma rādītājs, kas nepieciešams, lai CIDRAM bloķētu IP adresi (jābūt skaitlim no 1 līdz 100). Noklusējuma = 10."
@@ -570,6 +568,7 @@ label_invisible: "Neredzams"
 label_is_available: "%s ir pieejams (%s)."
 label_is_available_class: "%s ir pieejams."
 label_is_not_available: "%s nav pieejams."
+label_lookup_strategy: "Kuriem pieprasījumiem ir jāveic meklēšana?"
 label_netmask: "Tīkla maska"
 label_never: "Nekad"
 label_next: "Nākamais:"

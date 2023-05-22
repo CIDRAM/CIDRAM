@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bulgarian language data for the front-end (last modified: 2023.05.21).
+# This file: Bulgarian language data for the front-end (last modified: 2023.05.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -102,7 +102,6 @@ checkbox_label_verify: "Опит за проверка?"
 config_abuseipdb: "Конфигурация за модула AbuseIPDB."
 config_abuseipdb_api_key: &EnterAPIKey "Моля, въведете вашия API ключ тук."
 config_abuseipdb_build_profiles_from_usage_type: "Създаване на профили с помощта на вида на използване, върнат от API? False (Невярно) = Не. True (Вярно) = Да. Стандарт = True."
-config_abuseipdb_lookup_strategy: &WhenToLookup "За кои заявки трябва да се извършват търсения?"
 config_abuseipdb_max_age_in_days: "Максималната възраст в дни, за която докладите ще бъдат взети предвид при извършване на търсения (трябва да е число между 1 и 365). Стандарт = 365."
 config_abuseipdb_max_cs_for_captcha: "Максималният резултат за доверие, разрешен за обслужване на CAPTCHA (трябва да е число между 0 и 100). Стандарт = 10."
 config_abuseipdb_minimum_confidence_score: "Минималният резултат за доверие, необходим, за да може CIDRAM да блокира IP адрес (трябва да е число между 0 и 100). Стандарт = 50."
@@ -225,7 +224,6 @@ config_phpmailer_smtp_secure: "Протоколът, който да се изп
 config_phpmailer_username: "Потребителското име, което да използвате при изпращане на имейл чрез SMTP."
 config_projecthoneypot: "Конфигурация за модула Project Honeypot."
 config_projecthoneypot_api_key: *EnterAPIKey
-config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "Максималната възраст в дни, за която докладите ще бъдат взети предвид при извършване на търсения. Стандарт = 365."
 config_projecthoneypot_max_ts_for_captcha: "Максималният резултат за заплаха, разрешен за обслужване на CAPTCHA (трябва да е число между 1 и 100). Стандарт = 10."
 config_projecthoneypot_minimum_threat_score: "Минималният резултат за заплаха, необходим за да може CIDRAM да блокира IP адрес (трябва да е число между 1 и 100). Стандарт = 10."
@@ -573,6 +571,7 @@ label_invisible: "Невидим"
 label_is_available: "%s е наличен (%s)."
 label_is_available_class: "%s е наличен."
 label_is_not_available: "%s не е наличен."
+label_lookup_strategy: "За кои заявки трябва да се извършват търсения?"
 label_netmask: "Мрежова маска"
 label_never: "Никога"
 label_next: "Следващия:"

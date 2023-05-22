@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2023.05.10).
+# This file: Arabic language data for the front-end (last modified: 2023.05.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -102,7 +102,6 @@ checkbox_label_verify: "محاولة التحقق؟"
 config_abuseipdb: "التكوين لوحدة AbuseIPDB."
 config_abuseipdb_api_key: &EnterAPIKey "الرجاء إدخال مفتاح API الخاص بك هنا."
 config_abuseipdb_build_profiles_from_usage_type: "إنشاء ملفات تعريف باستخدام نوع الاستخدام الذي تم إرجاعه بواسطة API؟ صحيح/True = نعم [افتراضي]؛ زائفة/False = لا."
-config_abuseipdb_lookup_strategy: &WhenToLookup "ما الطلبات التي يجب إجراء عمليات البحث عنها؟"
 config_abuseipdb_max_age_in_days: "الحد الأقصى للعمر بالأيام التي سيتم وضع التقارير فيها في الاعتبار عند إجراء عمليات البحث (يجب أن يكون رقمًا بين 1 و 365). افتراضي = 365."
 config_abuseipdb_max_cs_for_captcha: "الحد الأقصى لدرجة الثقة المسموح به للحصول على اختبار CAPTCHA (يجب أن يكون رقمًا بين 0 و 100). افتراضي = 10."
 config_abuseipdb_minimum_confidence_score: "الحد الأدنى لدرجة الثقة المطلوبة لكي يحظر CIDRAM عنوان IP (يجب أن يكون رقمًا بين 0 و 100). افتراضي = 50."
@@ -225,7 +224,6 @@ config_phpmailer_smtp_secure: "البروتوكول المستخدم عند إر
 config_phpmailer_username: "اسم المستخدم لاستخدامه عند إرسال البريد الإلكتروني عبر SMTP."
 config_projecthoneypot: "التكوين لوحدة Project Honeypot."
 config_projecthoneypot_api_key: *EnterAPIKey
-config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "الحد الأقصى للعمر بالأيام التي سيتم وضع التقارير فيها في الاعتبار عند إجراء عمليات البحث. افتراضي = 365."
 config_projecthoneypot_max_ts_for_captcha: "الحد الأقصى لدرجة التهديد المسموح به لتلقي اختبار CAPTCHA (يجب أن يكون رقمًا بين 1 و 100). افتراضي = 10."
 config_projecthoneypot_minimum_threat_score: "الحد الأدنى لدرجة التهديد المطلوبة لكي يقوم CIDRAM بحظر عنوان IP (يجب أن يكون رقمًا بين 1 و 100). افتراضي = 10."
@@ -563,6 +561,7 @@ label_invisible: "غير مرئى"
 label_is_available: "%s متاح (%s)."
 label_is_available_class: "%s متاح."
 label_is_not_available: "%s غير متاح."
+label_lookup_strategy: "ما الطلبات التي يجب إجراء عمليات البحث عنها؟"
 label_netmask: "قناع الشبكة"
 label_never: "أبدا"
 label_next: "التالي:"

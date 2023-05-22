@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used by the logs page (last modified: 2023.04.04).
+ * This file: Methods used by the logs page (last modified: 2023.05.22).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -16,12 +16,12 @@ namespace CIDRAM\CIDRAM;
 trait Logs
 {
     /**
-     * Used by the logs viewer to generate a list of the logfiles contained in a
+     * Used by the logs viewer to generate a list of the log files contained in a
      * working directory (normally, the vault).
      *
      * @param string $Base The path to the working directory.
      * @param string $Order Whether to sort the list in ascending or descending order.
-     * @return array A list of the logfiles contained in the working directory.
+     * @return array A list of the log files contained in the working directory.
      */
     private function logsRecursiveList(string $Base, string $Order = 'ascending'): array
     {
@@ -29,11 +29,12 @@ trait Logs
         $List = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($Base), \RecursiveIteratorIterator::SELF_FIRST);
         foreach ($List as $Item => $List) {
             $ThisName = str_replace("\\", '/', substr($Item, strlen($Base)));
-            if (!is_file($Item) || !is_readable($Item) || is_dir($Item) || !$this->isLogFile($ThisName)) {
+            $Normalised = $ThisName;
+            if (!is_file($Item) || !is_readable($Item) || is_dir($Item) || !$this->isLogFile($ThisName, $Normalised)) {
                 continue;
             }
-            $Arr[$ThisName] = ['Filename' => $ThisName, 'Filesize' => filesize($Item)];
-            $this->formatFileSize($Arr[$ThisName]['Filesize']);
+            $Arr[$Normalised] = ['Filename' => $ThisName, 'Filesize' => filesize($Item)];
+            $this->formatFileSize($Arr[$Normalised]['Filesize']);
         }
         if ($Order === 'ascending') {
             ksort($Arr);

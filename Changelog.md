@@ -246,3 +246,5 @@
 [2023.05.03~21; Maikuolan]: Added L10N for Bulgarian.
 
 [2023.05.22; Maikuolan]: For the BGPView module and the IP-API module, whether to perform lookups for all requests or just for requests for sensitive pages only, can now be configured (#467).
+
+[2023.05.22; Maikuolan]: Improved the log sorting strategy (#463).

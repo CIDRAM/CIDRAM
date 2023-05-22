@@ -5358,7 +5358,7 @@ class FrontEnd extends Core
                 '<span class="txtRd">' . $this->NumberFormatter->format($this->FE['ProcessTime'], 3) . '</span>'
             ) . $this->FE['SearchInfo'] . '</td>';
 
-            /** Set logfile list or no logfiles available message. */
+            /** Set log-file list or no log files available message. */
             $this->FE['LogFiles'] = $this->FE['LogFiles']['Out'] ?: $this->L10N->getString('logs_no_logfiles_available');
 
             /** Send output. */

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2023.05.06).
+ * This file: General methods used by the front-end (last modified: 2023.05.22).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -597,14 +597,13 @@ trait FrontEndMethods
      * logs page).
      *
      * @param string $File The path/name of the file to be confirmed.
+     * @param string $Normalised A normalised name for the log, useful for better sorting.
      * @return bool True if it's a log file; False if it isn't.
      */
-    private function isLogFile(string $File): bool
+    private function isLogFile(string $File, string &$Normalised = ''): bool
     {
         $FileLC = strtolower($File);
-        if (preg_match('~\.log(?:\.gz)?$~', strtolower($FileLC))) {
-            return true;
-        }
+        $Normalised = '';
         if ($this->Events->assigned('isLogFile')) {
             $this->Events->fireEvent('isLogFile');
             $this->Events->destroyEvent('isLogFile');
@@ -613,9 +612,33 @@ trait FrontEndMethods
             return false;
         }
         foreach ($this->CIDRAM['LogPatterns'] as $LogPattern) {
-            if (preg_match($LogPattern, $FileLC)) {
+            if (preg_match($LogPattern, $FileLC, $Matches)) {
+                if (isset($Matches['yyyy'])) {
+                    $Normalised .= $Matches['yyyy'] . '.';
+                } elseif (isset($Matches['yy'])) {
+                    $Normalised .= '20' . $Matches['yy'] . '.';
+                }
+                if (isset($Matches['Mon']) && !isset($Matches['mm']) && !isset($Matches['m'])) {
+                    static $Months = ['Jan' => '01', 'Feb' => '02', 'Mar' => '03', 'Apr' => '04', 'May' => '05', 'Jun' => '06', 'Jul' => '07', 'Aug' => '08', 'Sep' => '09', 'Oct' => '10', 'Nov' => '11', 'Dec' => '12'];
+                    if (isset($Months[$Matches['Mon']])) {
+                        $Matches['mm'] = $Months[$Matches['Mon']];
+                    }
+                }
+                foreach (['m', 'd', 'h', 'i', 's'] as $Unit) {
+                    $Double = $Unit . $Unit;
+                    if (isset($Matches[$Double])) {
+                        $Normalised .= $Matches[$Double] . '.';
+                    } elseif (isset($Matches[$Unit])) {
+                        $Normalised .= (strlen($Matches[$Unit]) < 2 ? '0' : '') . $Matches[$Unit] . '.';
+                    }
+                }
+                $Normalised .= "\xFF" . $File;
                 return true;
             }
+        }
+        if (preg_match('~\.log(?:\.gz)?$~', strtolower($FileLC))) {
+            $Normalised = "\xFF" . $File;
+            return true;
         }
         return false;
     }

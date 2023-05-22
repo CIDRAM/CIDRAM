@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2023.05.07).
+ * This file: The CIDRAM core (last modified: 2023.05.22).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1864,8 +1864,8 @@ class Core
     public function buildLogPattern(string $Str, bool $GZ = false): string
     {
         return '~^' . preg_replace(
-            ['~\\\{(?:dd|mm|yy|hh|ii|ss)\\\}~i', '~\\\{yyyy\\\}~i', '~\\\{(?:Day|Mon)\\\}~i', '~\\\{tz\\\}~i', '~\\\{t\\\:z\\\}~i'],
-            ['\d{2}', '\d{4}', '\w{3}', '.{1,2}\d{4}', '.{1,2}\d{2}:\d{2}'],
+            ['~\\\{(d|m|h|i|s)\\\}~i', '~\\\{(dd|mm|yy|hh|ii|ss)\\\}~i', '~\\\{yyyy\\\}~i', '~\\\{(Day|Mon)\\\}~i', '~\\\{tz\\\}~i', '~\\\{t\\\:z\\\}~i'],
+            ['(?<\1>\d{1,2})', '(?<\1>\d{2})', '(?<yyyy>\d{4})', '(?<\1>\w{3})', '(?<tz>.{1,2}\d{4})', '(?<tz>.{1,2}\d{2}:\d{2})'],
             preg_quote(str_replace("\\", '/', $Str))
         ) . ($GZ ? '(?:\.gz)?' : '') . '$~i';
     }

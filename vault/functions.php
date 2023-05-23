@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2023.05.22).
+ * This file: Functions file (last modified: 2023.05.23).
  */
 
 /**
@@ -1752,9 +1752,37 @@ $CIDRAM['DeleteDirectory'] = function ($Dir) use (&$CIDRAM) {
  */
 $CIDRAM['BuildLogPattern'] = function ($Str, $GZ = false) {
     return '~^' . preg_replace(
-        ['~\\\{(d|m|h|i|s)\\\}~i', '~\\\{(dd|mm|yy|hh|ii|ss)\\\}~i', '~\\\{yyyy\\\}~i', '~\\\{(Day|Mon)\\\}~i', '~\\\{tz\\\}~i', '~\\\{t\\\:z\\\}~i'],
-        ['(?<\1>\d{1,2})', '(?<\1>\d{2})', '(?<yyyy>\d{4})', '(?<\1>\w{3})', '(?<tz>.{1,2}\d{4})', '(?<tz>.{1,2}\d{2}:\d{2})'],
-        preg_quote(str_replace("\\", '/', $Str))
+        ['~\\\{(?:d|m|h|i|s)\\\}~i', '~\\\{(?:dd|mm|yy|hh|ii|ss)\\\}~i', '~\\\{yyyy\\\}~i', '~\\\{(?:Day|Mon)\\\}~i', '~\\\{tz\\\}~i', '~\\\{t\\\:z\\\}~i'],
+        ['\d{1,2}', '\d{2}', '\d{4}', '\w{3}', '.{1,2}\d{4}', '.{1,2}\d{2}:\d{2}'],
+        preg_replace([
+            '~\\\{yyyy\\\}~i',
+            '~\\\{yy\\\}~i',
+            '~\\\{mm\\\}~i',
+            '~\\\{m\\\}~i',
+            '~\\\{dd\\\}~i',
+            '~\\\{d\\\}~i',
+            '~\\\{hh\\\}~i',
+            '~\\\{h\\\}~i',
+            '~\\\{ii\\\}~i',
+            '~\\\{i\\\}~i',
+            '~\\\{ss\\\}~i',
+            '~\\\{s\\\}~i',
+            '~\\\{Mon\\\}~i'
+        ], [
+            '(?<yyyy>\d{4})',
+            '(?<yy>\d{2})',
+            '(?<mm>\d{2})',
+            '(?<m>\d{1,2})',
+            '(?<dd>\d{2})',
+            '(?<d>\d{1,2})',
+            '(?<hh>\d{2})',
+            '(?<h>\d{1,2})',
+            '(?<ii>\d{2})',
+            '(?<i>\d{1,2})',
+            '(?<ss>\d{2})',
+            '(?<s>\d{1,2})',
+            '(?<Mon>\w{3})'
+        ], preg_quote(str_replace("\\", '/', $Str)), 1)
     ) . ($GZ ? '(?:\.gz)?' : '') . '$~i';
 };
 

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2023.05.22).
+ * This file: Front-end functions file (last modified: 2023.05.23).
  */
 
 /**
@@ -4944,4 +4944,25 @@ $CIDRAM['eTaggable'] = function ($Asset, $Callback = null) use (&$CIDRAM) {
     header('HTTP/1.1 403 Forbidden');
     header('Status: 403 Forbidden');
     die;
+};
+
+/**
+ * Replace array keys according to a supplied closure/callable.
+ *
+ * @param array $Arr The array from which to replace keys.
+ * @param callable $Perform The closure/callable to use to determine the replacement key.
+ * @return array The array with replaced keys.
+ */
+$CIDRAM['arrayReplaceKeys'] = function (array $Arr, $Perform) {
+    if (!is_callable($Perform)) {
+        return [];
+    }
+    $Out = [];
+    foreach ($Arr as $Item) {
+        $NewKey = $Perform($Item);
+        if (is_string($NewKey) || is_int($NewKey)) {
+            $Out[$NewKey] = $Item;
+        }
+    }
+    return $Out;
 };

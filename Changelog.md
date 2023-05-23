@@ -248,3 +248,5 @@
 [2023.05.22; Maikuolan]: For the BGPView module and the IP-API module, whether to perform lookups for all requests or just for requests for sensitive pages only, can now be configured (#467).
 
 [2023.05.22; Maikuolan]: Improved the log sorting strategy (#463).
+
+[2023.05.23; Bug-fix; Maikuolan]: Single-digit h/i/s date/time placeholders weren't being honoured; Fixed.

@@ -920,6 +920,9 @@ class Core
         ];
         $Values['d'] = (int)$Values['dd'];
         $Values['m'] = (int)$Values['mm'];
+        $Values['h'] = (int)$Values['hh'];
+        $Values['i'] = (int)$Values['ii'];
+        $Values['s'] = (int)$Values['ss'];
         return is_array($In) ? array_map(function (string $Item) use (&$Values): string {
             return $this->parseVars($Values, $Item);
         }, $In) : $this->parseVars($Values, $In);

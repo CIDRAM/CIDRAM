@@ -5201,7 +5201,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
     /** Define log data. */
     if (empty($CIDRAM['QueryVars']['logfile'])) {
         $CIDRAM['FE']['logfileData'] = $CIDRAM['L10N']->getString('logs_no_logfile_selected');
-    } elseif (!in_array($CIDRAM['QueryVars']['logfile'], $CIDRAM['FE']['LogFiles']['Files'], true)) {
+    } elseif (!isset($CIDRAM['FE']['LogFiles']['Files'][$CIDRAM['QueryVars']['logfile']])) {
         $CIDRAM['FE']['logfileData'] = $CIDRAM['L10N']->getString('logs_logfile_doesnt_exist');
     } else {
         if (strtolower(substr($CIDRAM['QueryVars']['logfile'], -3)) === '.gz') {

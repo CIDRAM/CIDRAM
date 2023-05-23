@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2023.130.0
-# Last modified: 2023.05.11
+# Version: 2023.142.0
+# Last modified: 2023.05.23
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -301,52 +301,68 @@ Tag: BKB Network
 # Indian domestic ISP. Brute-force, SSH, and webapp attacks, WordPress hack
 # attempts, port scans, and spam detected from here. Listing just the affected
 # ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 860 (AS18101), 93,224 (AS55836).
-# Updated: 2022.05.12
+# Stop Forum Spam (SFS) listings: 40 (AS18101), 119,233 (AS55836).
+# Updated: 2023.05.23
 
-2405:201:4:3d0b::/64 Deny Spam
-2405:201:2010:1a0e::/64 Deny Spam
-2405:201:2015:8028::/64 Deny Spam
-2405:201:2015:881b::/64 Deny Spam
-2405:201:4021:19e3::/64 Deny Spam
-2405:201:4031:707a::/64 Deny Spam
-2405:201:5c01:6101::/64 Deny Spam
-2405:201:5c01:614e::/64 Deny Spam
-2405:201:5c01:6b62::/64 Deny Spam
-2405:201:5c03:2::/64 Deny Spam
-2405:201:5c05:20cc::/64 Deny Spam
-2405:201:800b:e073::/64 Deny Spam
-2405:201:a402:6835::/64 Deny Spam
-2405:201:a402:68a3::/64 Deny Spam
-2405:201:a402:6994::/64 Deny Spam
-2405:201:e001:703c::/64 Deny Spam
-2405:204:101b:1077::/64 Deny Spam
-2405:204:101e:ee09::/64 Deny Spam
-2405:204:1093:440f::/64 Deny Spam
-2405:204:1300:e10b::/64 Deny Spam
-2405:204:138b:ef4e::/64 Deny Spam
-2405:204:30ae:8565::/64 Deny Spam
-2405:204:3320:f396::/64 Deny Spam
-2405:204:3386:7f38::/64 Deny Spam
-2405:204:3408:a947::/64 Deny Spam
-2405:204:528d:3402::/64 Deny Spam
-2409:4041:2d13:d6a3::/64 Deny Spam
-2409:4043:515:6535::/64 Deny Spam
-2409:4050:d98:d91e::/64 Deny Spam
-2409:4050:e06:9428::/64 Deny Spam
-2409:4050:e8f:826f::/64 Deny Spam
-2409:4050:e96:d51f::/64 Deny Spam
-2409:4050:ecc:f2bc::/64 Deny Spam
-2409:4050:2d43:1687::/64 Deny Spam
-2409:4050:2d94:9c06::/64 Deny Spam
-2409:4050:2db8:2dd8::/64 Deny Spam
-2409:4050:2dbb:3051::/64 Deny Spam
-2409:4050:2dcd:5c7a::/64 Deny Spam
-2409:4050:2e1c:c66b::/64 Deny Spam
-2409:4050:2e40:941::/64 Deny Spam
-2409:4050:2e84:6834::/64 Deny Spam
-2409:4050:2e99:c63f::/64 Deny Spam
-2409:4050:2eb8:9c7c::/64 Deny Spam
+2405:201:2004:e004::/64 Deny Spam
+2405:201:200c:9087::/64 Deny Spam
+2405:201:200c:919c::/64 Deny Spam
+2405:201:200d:8f::/64 Deny Spam
+2405:201:201c:4830::/64 Deny Spam
+2405:201:4007:c06a::/64 Deny Spam
+2405:201:4008:1bca::/64 Deny Spam
+2405:201:4041:c812::/64 Deny Spam
+2405:201:5c01:60cc::/64 Deny Spam
+2405:201:5c01:617a::/64 Deny Spam
+2405:201:5c01:61fc::/64 Deny Spam
+2405:201:5c01:6a72::/64 Deny Spam
+2405:201:5c01:6b76::/64 Deny Spam
+2405:201:5c01:6bb7::/64 Deny Spam
+2405:201:5c01:6c35::/64 Deny Spam
+2405:201:5c01:6cd9::/64 Deny Spam
+2405:201:5c01:6de9::/64 Deny Spam
+2405:201:5c01:6ed3::/64 Deny Spam
+2405:201:5c09:210c::/64 Deny Spam
+2405:201:5c0c:a0ba::/64 Deny Spam
+2405:204:128c:b733::/64 Deny Spam
+2405:204:12a3:4316::/64 Deny Spam
+2405:204:140d:8950::/64 Deny Spam
+2405:204:1487:dbd4::/64 Deny Spam
+2405:204:1489:d8bc::/64 Deny Spam
+2405:204:300a:4076::/64 Deny Spam
+2405:204:300f:cc97::/64 Deny Spam
+2405:204:3017:fae7::/64 Deny Spam
+2405:204:3103:b84f::/64 Deny Spam
+2405:204:310c:29c0::/64 Deny Spam
+2405:204:3115:53b3::/64 Deny Spam
+2405:204:328f:659b::/64 Deny Spam
+2405:204:32a0:7e1f::/64 Deny Spam
+2405:204:338d:8c75::/64 Deny Spam
+2405:204:3397:62f7::/64 Deny Spam
+2405:204:33a6:ea3c::/64 Deny Spam
+2409:4043:192:66fd::/64 Deny Spam
+2409:4050:e09:3eef::/64 Deny Spam
+2409:4050:ebb:cec9::/64 Deny Spam
+2409:4050:ec1:146f::/64 Deny Spam
+2409:4050:2d1d:4526::/64 Deny Spam
+2409:4050:2d41:ec82::/64 Deny Spam
+2409:4050:2db9:4eea::/64 Deny Spam
+2409:4050:2dcc:1d5f::/64 Deny Spam
+2409:4050:2e8e:e6a5::/64 Deny Spam
+2409:4050:2e8f:9033::/64 Deny Spam
+2409:4050:2ebd:2bf0::/64 Deny Spam
+2409:4051:4e14:13a7::/64 Deny Spam
+2409:4053:2019:4854::/64 Deny Spam
+2409:4053:2d18:fd23::/64 Deny Spam
+2409:4064:2c96:344::/64 Deny Spam
+2409:4081:918d:26d8::/64 Deny Spam
+2409:4081:9b01:62a5::/64 Deny Spam
+2409:4081:9c88:6262::/64 Deny Spam
+2409:4081:9d01:97db::/64 Deny Spam
+2409:4081:9e14:63b3::/64 Deny Spam
+2409:4081:9e14:9d00::/64 Deny Spam
+2409:4081:ad9f:4cca::/64 Deny Spam
+2409:4081:ae0b:57bf::/64 Deny Spam
 Origin: IN
 Profile: Domestic ISP;Infrastructure/Transit
 Tag: Reliance Communications

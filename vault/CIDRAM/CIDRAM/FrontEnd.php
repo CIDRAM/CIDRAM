@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.05.22).
+ * This file: The CIDRAM front-end (last modified: 2023.05.23).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -4946,7 +4946,9 @@ class FrontEnd extends Core
             $this->FE['SortOrder'] = (empty($this->CIDRAM['QueryVars']['sortOrder']) || $this->CIDRAM['QueryVars']['sortOrder'] === 'ascending') ? 'ascending' : 'descending';
 
             /** Initialise array for fetching logs data. */
-            $this->FE['LogFiles'] = ['Files' => $this->logsRecursiveList($this->Vault, $this->FE['SortOrder']), 'Out' => ''];
+            $this->FE['LogFiles'] = ['Files' => $this->arrayReplaceKeys($this->logsRecursiveList($this->Vault, $this->FE['SortOrder']), function (array $Item): string {
+                return $Item['Filename'] ?? '';
+            }), 'Out' => ''];
 
             $this->FE['SearchInfo'] = '';
             $this->FE['SearchQuery'] = '';
@@ -5013,7 +5015,7 @@ class FrontEnd extends Core
             /** Define log data. */
             if (empty($this->CIDRAM['QueryVars']['logfile'])) {
                 $this->FE['logfileData'] = $this->L10N->getString('logs_no_logfile_selected');
-            } elseif (empty($this->FE['LogFiles']['Files'][$this->CIDRAM['QueryVars']['logfile']])) {
+            } elseif (!isset($this->FE['LogFiles']['Files'][$this->CIDRAM['QueryVars']['logfile']])) {
                 $this->FE['logfileData'] = $this->L10N->getString('logs_logfile_doesnt_exist');
             } else {
                 if (strtolower(substr($this->CIDRAM['QueryVars']['logfile'], -3)) === '.gz') {
@@ -5340,16 +5342,17 @@ class FrontEnd extends Core
             }
 
             /** Generate a list of the logs. */
-            foreach ($this->FE['LogFiles']['Files'] as $this->FE['LogFiles']['ThisLogFile']) {
+            foreach ($this->FE['LogFiles']['Files'] as $ThisLogFile) {
                 $this->FE['LogFiles']['Out'] .= sprintf(
                     '      <a href="?cidram-page=logs&textMode=%1$s&sortOrder=%2$s%3$s&logfile=%4$s">%4$s</a> – %5$s<br />',
                     $this->FE['TextModeLinks'],
                     $this->FE['SortOrder'],
                     $this->FE['Remember'] ? '&remember=on' : '',
-                    $this->FE['LogFiles']['ThisLogFile']['Filename'],
-                    $this->FE['LogFiles']['ThisLogFile']['Filesize']
+                    $ThisLogFile['Filename'],
+                    $ThisLogFile['Filesize']
                 ) . "\n";
             }
+            unset($ThisLogFile);
 
             /** Calculate page load time (useful for debugging). */
             $this->FE['ProcessTime'] = microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];

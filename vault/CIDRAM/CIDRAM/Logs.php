@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used by the logs page (last modified: 2023.05.22).
+ * This file: Methods used by the logs page (last modified: 2023.05.23).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -397,5 +397,24 @@ trait Logs
             $Link .= '&search=' . $this->CIDRAM['QueryVars']['search'];
         }
         $this->FE['SearchInfo'] .= sprintf(' %s <a href="%s">%s</a>', $this->L10N->getString($Label), $Link, $Needle);
+    }
+
+    /**
+     * Replace array keys according to a supplied closure/callable.
+     *
+     * @param array $Arr The array from which to replace keys.
+     * @param callable $Perform The closure/callable to use to determine the replacement key.
+     * @return array The array with replaced keys.
+     */
+    private function arrayReplaceKeys(array $Arr, callable $Perform): array
+    {
+        $Out = [];
+        foreach ($Arr as $Item) {
+            $NewKey = $Perform($Item);
+            if (is_string($NewKey) || is_int($NewKey)) {
+                $Out[$NewKey] = $Item;
+            }
+        }
+        return $Out;
     }
 }

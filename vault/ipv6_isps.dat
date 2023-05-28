@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2023.142.0
-# Last modified: 2023.05.23
+# Version: 2023.147.0
+# Last modified: 2023.05.28
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -771,12 +771,12 @@ Tag: LLC Renome-Service
 
 # ASN 577 ("Bell Canada").
 # Canadian domestic ISP. Phishing, webapp attacks, spam, and probing for
-# vulnerabilities detected from here. Listing just the affected
-# ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,021.
-# Updated: 2022.05.27
+# vulnerabilities detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 694.
+# Updated: 2023.05.24
 
-2605:b100:b1d:76b8::/64 Deny Spam
+2605:b100:b29:2a86::/64 Deny Spam
 Origin: CA
 Profile: Domestic ISP
 Tag: Bell Canada
@@ -1085,12 +1085,14 @@ Tag: CONNECTLINK TECH
 # ASN 9534 ("Binariang Berhad").
 # Malaysian broadband provider. Port scans, hacking, and spam detected from
 # here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 304.
-# Updated: 2022.09.27
+# Stop Forum Spam (SFS) listings: 258.
+# Updated: 2023.05.28
 
-2001:d08:de:c81f::/64 Deny Spam
-2001:d08:de:dbd9::/64 Deny Spam
-2001:d08:de:f1e2::/64 Deny Spam
+2001:d08:1200:5e36::/64 Deny Spam
+2001:d08:1b8d:b113::/64 Deny Spam
+2001:d08:228b:d1d2::/64 Deny Spam
+2001:d08:2297:89f5::/64 Deny Spam
+2001:d08:229e:2b82::/64 Deny Spam
 Origin: MY
 Profile: Domestic ISP
 Tag: Binariang Berhad
@@ -1150,13 +1152,10 @@ Tag: Elyzium Technologies
 # ASNs 132761, 134331 ("Smartlink Solutions Pvt. Ltd").
 # Indian commercial broadband reseller. Port scans, hacking, and spam detected
 # from here. Manually checked all ranges; All ranges affected.
-# Stop Forum Spam (SFS) listings: 10 (AS132761), 492 (AS134331).
-# Updated: 2022.05.25
+# Stop Forum Spam (SFS) listings: 31 (AS134331).
+# Updated: 2023.05.28
 
-2402:dc40::/48 Deny Attacks
-2402:dc40:4::/47 Deny Attacks
-2402:dc40:100::/40 Deny Attacks
-2402:dc40:200::/40 Deny Attacks
+2402:dc40::/32 Deny Attacks
 Origin: IN
 Profile: Commercial;Domestic ISP;Infrastructure/Transit
 Tag: Smartlink Solutions

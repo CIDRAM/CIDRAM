@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2023.05.13).
+# This file: Latvian language data for the front-end (last modified: 2023.06.01).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -101,7 +101,7 @@ config_general_allow_gethostbyaddr_lookup: "Vai atļaut meklēt ar gethostbyaddr
 config_general_ban_override: "Vai ignorēt "forbid_on_block", ja tiek pārsniegts "infraction_limit"? Ja tā, bloķētie pieprasījumi atdod tukšu lapu (veidņu faili netiek izmantoti). 200 = Neignorējiet [Noklusējuma]. Citas vērtības ir tādas pašas kā pieejamās vērtības "forbid_on_block"."
 config_general_config_imports: "Ar komatu atdalīts failu saraksts, kas jāimportē CIDRAM noklusējuma konfigurācijā. Parasti aizpilda atjauninājumu lapa, kad tiek aktivizēti komponenti, kuriem tas nepieciešams, kad nepieciešams. Vairumā gadījumu var to ignorēt."
 config_general_default_algo: "Definē, kuru algoritmu izmantot visām turpmākajām parolēm un sesijām. Iespējas: PASSWORD_DEFAULT (noklusējuma), PASSWORD_BCRYPT, PASSWORD_ARGON2I, PASSWORD_ARGON2ID (nepieciešama &gt;= 7.3.0)."
-config_general_default_dns: "Ar komatu atdalīts DNS serveru saraksts, ko izmantot saimniekdatora nosaukuma meklēšanā. Noklusējuma = "8.8.8.8,8.8.4.4" (Google DNS). BRĪDINĀJUMS: Nemainiet to, ja vien nezināt, ko darāt!"
+config_general_default_dns: "Ar komatu atdalīts DNS serveru saraksts, ko izmantot resursdatora nosaukuma meklēšanā. Noklusējuma = "8.8.8.8,8.8.4.4" (Google DNS). BRĪDINĀJUMS: Nemainiet to, ja vien nezināt, ko darāt!"
 config_general_default_timeout: "Kādu noklusējuma taimautu izmantot ārējiem pieprasījumiem? Noklusējuma = 12 sekundes."
 config_general_disable_frontend: "Vai atspējot administratīvo piekļuvi, kas izmanto tīmekļa pārlūku? Administratīvā piekļuve, izmantojot tīmekļa pārlūku, var padarīt CIDRAM pārvaldāmāku, taču tas var būt arī potenciāls drošības risks. CIDRAM ieteicams pārvaldīt, izmantojot citus līdzekļus, kad vien iespējams (piemēram, izmantojot FTP), taču administratīvā piekļuve, izmantojot tīmekļa pārlūku, tiek nodrošināta gadījumos, kad citi līdzekļi nav dzīvotspējīgi. Iespējojiet to, ja jums tas ir nepieciešams; Atspējojiet to, ja jums nav. False (Nepatiess) = Iespējojiet to; True (Patiess) = Atspējojiet to [Noklusējuma]."
 config_general_disable_webfonts: "Vai atspējot tīmekļa fontus? True (Patiess) = Jā [Noklusējuma]; False (Nepatiess) = Nē."
@@ -113,7 +113,7 @@ config_general_error_log: "Fails reģistrēšanai visas atklātās kļūdas, kas
 config_general_error_log_stages: "Izpildes ķēdes posmu saraksts, kurā vajadzētu reģistrēt ģenerētās kļūdas."
 config_general_events: "Šeit uzskaitītie faili tiek ielādēti tūlīt pēc notikumu apstrādātāja faila. Parasti aizpilda atjauninājumu lapa, kad tiek aktivizēti komponenti, kuriem tas nepieciešams, kad nepieciešams. Vairumā gadījumu var to ignorēt."
 config_general_forbid_on_block: "Kurš HTTP statusa ziņojums būtu jāsūta CIDRAM, bloķējot pieprasījumus?"
-config_general_force_hostname_lookup: "Force hostname lookups? True (Patiess) = Jā; False (Nepatiess) = Nē [Noklusējuma]. Hostname lookups are normally performed on an "as needed" basis, but can be forced for all requests. Doing so may be useful as a means of providing more detailed information in the logfiles, but may also have a slightly negative effect on performance."
+config_general_force_hostname_lookup: "Vai piespiest resursdatora nosaukuma meklēšanu? True (Patiess) = Jā; False (Nepatiess) = Nē [Noklusējuma]. Resursdatora nosaukuma meklēšana parasti tiek veikta pēc vajadzības, taču to var piespiest visiem pieprasījumiem. Šāda rīcība var būt noderīga, lai žurnālfailos sniegtu detalizētāku informāciju, taču tā var arī nedaudz negatīvi ietekmēt veiktspēju."
 config_general_frontend_log: "Fails ielogošanās mēģinājumu reģistrēšanai. Norādiet faila nosaukumu, vai atstājiet tukšu, lai to atspējotu."
 config_general_hide_version: "Vai paslēpt versiju informāciju no logs un lapas izvades? True (Patiess) = Jā; False (Nepatiess) = Nē [Noklusējuma]."
 config_general_ipaddr: "Kur atrast savienojošo pieprasījumu IP adresi? (Noderīga tādiem pakalpojumiem kā Cloudflare un tamlīdzīgi). Noklusējuma = REMOTE_ADDR. BRĪDINĀJUMS: Nemainiet to, ja vien nezināt, ko darāt!"

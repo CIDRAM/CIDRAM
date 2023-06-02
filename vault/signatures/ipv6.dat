@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2023.147.0
-# Last modified: 2023.05.28
+# Version: 2023.152.0
+# Last modified: 2023.06.02
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -625,9 +625,14 @@ Tag: Sedo Domain Parking
 
 
 # ASN 46475 ("Limestone Networks, Inc").
-# Stop Forum Spam (SFS) listings: 2,915.
-# Updated: 2019.03.19 / Checked: 2022.06.02
+# Stop Forum Spam (SFS) listings: 195.
+# Updated: 2023.06.02
 
+2a11:840:34::/46 Deny Cloud
+2a11:840:38::/47 Deny Cloud
+Origin: CA
+2a0e:b107:16ee::/48 Deny Cloud
+Origin: CH
 2602:fe6b::/36 Deny Cloud
 2607:ff68::/32 Deny Cloud
 Origin: US
@@ -4320,13 +4325,16 @@ Tag: AS45538
 
 
 # ASN 45102 ("Alibaba (China) Technology Co., Ltd").
-# Stop Forum Spam (SFS) listings: 48,578.
-# Updated: 2022.06.02
+# Stop Forum Spam (SFS) listings: 6,566.
+# Updated: 2023.06.01
 
 2400:b200:4100::/46 Deny Cloud
 2401:b180:4100::/48 Deny Cloud
 2408:4009:500::/48 Deny Cloud
 Origin: CN
+2404:2280:1600::/40 Deny Cloud
+2404:2280:1f00::/40 Deny Cloud
+2404:2280:2000::/36 Deny Cloud
 240b:4000::/31 Deny Cloud
 240b:4002::/32 Deny Cloud
 240b:4003:7::/48 Deny Cloud
@@ -4344,7 +4352,7 @@ Origin: CN
 240b:4007::/32 Deny Cloud
 240b:4009::/32 Deny Cloud
 240b:400c::/32 Deny Cloud
-240b:400e:fffe::/47 Deny Cloud
+240b:400e::/32 Deny Cloud
 Origin: SG
 Profile: Commercial
 Tag: Alibaba
@@ -4473,13 +4481,12 @@ Tag: eSited Solutions
 
 
 # ASN 39326 ("HighSpeed Office Limited").
-# Stop Forum Spam (SFS) listings: 19.
-# Updated: 2022.06.02
+# Stop Forum Spam (SFS) listings: 83.
+# Updated: 2023.06.01
 
 2001:a08::/32 Deny Cloud
 2a01:348::/32 Deny Cloud
 2a03:94c0::/40 Deny Cloud
-2a09:b540::/29 Deny Cloud
 Origin: GB
 Profile: Commercial;Infrastructure/Transit;Webhosting
 Tag: HighSpeed Office Ltd
@@ -5820,7 +5827,7 @@ Tag: HostMySite
 
 
 # ASN 40034 ("Confluence Networks Inc").
-# Updated: 2020.05.21 / Checked: 2022.06.02
+# Updated: 2020.05.21 / Checked: 2023.06.02
 
 2604:10c0::/47 Deny Cloud
 2604:10c0:ffff::/48 Deny Cloud
@@ -6725,8 +6732,8 @@ Tag: TakeWYN
 
 
 # ASN 44901 ("BelCloud Hosting Corporation").
-# Stop Forum Spam (SFS) listings: 69.
-# Updated: 2020.01.31 / Checked: 2022.06.02
+# Stop Forum Spam (SFS) listings: 34.
+# Updated: 2020.01.31 / Checked: 2023.06.02
 
 2a07:5740::/31 Deny Cloud
 2a09:be80::/32 Deny Cloud
@@ -7029,7 +7036,7 @@ Tag: Infortelecom Hosting S.L
 # ASN 11320 ("LightEdge Solutions").
 # Caught trying to hack WordPress sites and caught brute-forcing.
 # Stop Forum Spam (SFS) listings: 14.
-# Updated: 2020.12.29 / Checked: 2022.06.02
+# Updated: 2020.12.29 / Checked: 2023.06.02
 
 2604:a400::/32 Deny Cloud
 2607:f190::/32 Deny Cloud
@@ -7516,8 +7523,8 @@ Tag: INTERRA
 
 # ASN 204490 ("Kontel LLC").
 # Caught trying to hack WordPress sites.
-# Stop Forum Spam (SFS) listings: 539.
-# Updated: 2019.10.05 / Checked: 2022.06.02
+# Stop Forum Spam (SFS) listings: 512.
+# Updated: 2019.10.05 / Checked: 2023.06.02
 
 2a0d:c580::/29 Deny Cloud
 Origin: RU
@@ -8265,8 +8272,8 @@ Tag: Sundance International
 
 # ASN 197706 ("Keminet SHPK").
 # Caught spamming honeypots and probing for vulnerabilities.
-# Stop Forum Spam (SFS) listings: 634.
-# Updated: 2021.01.03 / Checked: 2022.06.02
+# Stop Forum Spam (SFS) listings: 2,568.
+# Updated: 2023.06.02
 
 2a04:27c0::/29 Deny Cloud
 2a09:6ec0::/29 Deny Cloud
@@ -8274,11 +8281,10 @@ Tag: Sundance International
 2a0d:27c0::/29 Deny Cloud
 2a0d:42c0::/29 Deny Cloud
 2a0d:4940::/29 Deny Cloud
-2a0d:4a40::/29 Deny Cloud
 2a0e:3f00::/29 Deny Cloud
-2a0e:abc0::/29 Deny Cloud
 2a0e:d4c0::/29 Deny Cloud
 2a0f:4780::/29 Deny Cloud
+2a13:1540::/48 Deny Cloud
 Origin: AL
 Profile: Webhosting
 Tag: Keminet SHPK
@@ -9218,18 +9224,23 @@ Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: Zenex 5ive Limited
 
 
-# ASN 208046 ("Maximilian Kutzner trading as HostSlick").
+# ASN 208046 ("ColocationX Ltd").
 # Hacking detected from here.
-# Stop Forum Spam (SFS) listings: 170.
-# Updated: 2022.06.22
+# Stop Forum Spam (SFS) listings: 4,686.
+# Updated: 2023.06.02
 
 2a0f:ca80::/47 Deny Cloud
+2a0f:ca80:617::/48 Deny Cloud
+2a0f:ca80:618::/47 Deny Cloud
+2a0f:ca80:1100::/40 Deny Cloud
 2a0f:ca80:1337::/48 Deny Cloud
 2a0f:ca80:1338::/48 Deny Cloud
 2a0f:ca83:1337::/48 Deny Cloud
 2a0f:ca84::/40 Deny Cloud
 2a0f:ca86::/40 Deny Cloud
 Origin: DE
+2a13:29c0::/29 Deny Cloud
+Origin: GB
 2a06:a000:160::/44 Deny Cloud
 2a06:a001:a010::/44 Deny Cloud
 Origin: US
@@ -10346,8 +10357,8 @@ Tag: HOST PARA TU VIDA
 
 # ASN 205500 ("Mega Tec LLC").
 # Spam and brute-force attempts detected from here.
-# Stop Forum Spam (SFS) listings: 6.
-# Updated: 2021.08.26 / Checked: 2022.05.25
+# Stop Forum Spam (SFS) listings: 5.
+# Updated: 2021.08.26 / Checked: 2023.06.01
 
 2a0f:5000::/29 Deny Cloud
 Origin: RU
@@ -11052,8 +11063,8 @@ Tag: CyberCTM
 # ASN 397391 ("Hop One Networks LLC").
 # US server farm. Brute-force, WordPress/XMRPC, webapp, and DDoS attacks, DNS
 # poisoning, fraudulent orders, port scans, hacking, and spam detected here.
-# Stop Forum Spam (SFS) listings: 76.
-# Updated: 2022.06.01
+# Stop Forum Spam (SFS) listings: 29.
+# Updated: 2022.06.01 / Checked: 2023.06.01
 
 2605:7d40::/32 Deny Cloud
 Origin: US

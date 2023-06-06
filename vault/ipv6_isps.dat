@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2023.152.0
-# Last modified: 2023.06.02
+# Version: 2023.153.0
+# Last modified: 2023.06.03
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -75,19 +75,6 @@ Tag: DGN TEKNOLOJI
 Origin: UA
 Profile: Domestic ISP;Infrastructure/Transit;Multiplay
 Tag: TeNeT
-
-
-# ASN 31252 ("Starnet Servicii SRL").
-# Moldovan multiplay business ISP. Spam, malware, hacking, etc detected here.
-# Stop Forum Spam (SFS) listings: 5,178.
-# Updated: 2017.03.11 / Modified: 2019.11.02 / Checked: 2022.06.04
-
-2a00:9900::/29 Deny Spam
-2a01:320::/29 Deny Spam
-2a0b:dd00::/29 Deny Spam
-Origin: MD
-Profile: Commercial;Domestic ISP;Multiplay
-Tag: STARNET S.R.L
 
 
 # ASN 45271 ("Idea Cellular Limited").
@@ -546,6 +533,18 @@ Profile: Domestic ISP
 Tag: TOTAL PLAY TELECOMUNICACIONES
 
 
+# ASN 135763 ("GAYATRI COMMUNICATIONS").
+# Indian domestic ISP. Brute-force and SSH attacks, port scans, and spam
+# detected from here. No clean ranges here.
+# Stop Forum Spam (SFS) listings: 76.
+# Updated: 2023.06.03
+
+2400:ec20::/32 Deny Attacks
+Origin: IN
+Profile: Domestic ISP
+Tag: GAYATRI COMMUNICATIONS
+
+
 # ASNs 18209, 24309, 131269 ("Atria Convergence Technologies Pvt. Ltd.
 # Broadband Internet Service Provider INDIA", "ACTFIBERNET Pvt Ltd").
 # Indian domestic ISP. Brute-force, SSH, FTP, SQLi, and webapp attacks, port
@@ -749,8 +748,8 @@ Tag: T-Mobile USA, Inc
 
 # ASNs 31593, 34187 ("LLC Renome-Service").
 # Ukrainian TV cable provider and a significant source of spam.
-# Stop Forum Spam (SFS) listings: 4,784 (AS31593), 45 (AS34187).
-# Updated: 2020.11.21 / Checked: 2022.06.02
+# Stop Forum Spam (SFS) listings: 47 (AS31593), 64 (AS34187).
+# Updated: 2020.11.21 / Checked: 2023.06.03
 
 2a03:1240::/48 Deny Spam
 Origin: UA

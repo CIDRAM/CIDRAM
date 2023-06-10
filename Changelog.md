@@ -243,7 +243,7 @@
 
 [2023.05.08; Maikuolan]: Results at the IP test page now include information about redirects via silent mode and auxiliary rules (#464).
 
-[2023.05.03~21; Maikuolan]: Added L10N for Bulgarian.
+[2023.05~06; Maikuolan]: Added L10N for Bulgarian and Czech.
 
 [2023.05.22; Maikuolan]: For the BGPView module and the IP-API module, whether to perform lookups for all requests or just for requests for sensitive pages only, can now be configured (#467).
 

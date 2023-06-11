@@ -1,8 +1,8 @@
 # IPv6 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_other.dat
 
-# Version: 2023.95.0
-# Last modified: 2023.04.06
+# Version: 2023.160.0
+# Last modified: 2023.06.10
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -88,18 +88,30 @@ Tag: Web2Objects LLC
 # ASN 398355 ("Data Ideas llc").
 # Tor provider. Brute-force and webapp attacks, port scans, hacking, and spam
 # detected from here.
-# Stop Forum Spam (SFS) listings: 22,517.
-# Updated: 2022.08.05 / Checked: 2023.02.05
+# Stop Forum Spam (SFS) listings: 29,636.
+# Updated: 2023.06.10
 
 2a0e:b107:14ff::/48 Deny Proxy
 Origin: CH
 2400:3e20::/36 Deny Proxy
 Origin: SE
 2001:550:3402::/48 Deny Proxy
-2602:fbdf::/36 Deny Proxy
-2602:fc05::/40 Deny Proxy
 2602:fccf::/36 Deny Proxy
 2605:6400:d814::/48 Deny Proxy
 Origin: US
 Profile: Tor endpoints here
 Tag: Data Ideas llc
+
+
+# ASN 55103 ("Thin-nology, LLC").
+# Colo and webhosting provider which hosts Tor services.
+# Brute-force, SSH, DDoS, WordPress/XMLRPC, and webapp attacks, port scans,
+# hacking, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 98.
+# Updated: 2023.06.10
+
+2602:fc05::/40 Deny Proxy
+2602:fcdb::/36 Deny Proxy
+Origin: US
+Profile: Tor endpoints here;Webhosting
+Tag: Thin-nology, LLC

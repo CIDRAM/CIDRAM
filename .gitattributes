@@ -25,7 +25,6 @@
 .github/* -linguist-detectable
 vault/* linguist-detectable
 vault/ipv* -linguist-detectable
-vault/lang/* -linguist-detectable
 
 components.dat linguist-language=YAML
 modules.dat linguist-language=YAML
@@ -40,3 +39,15 @@ config.ini.RenameMe linguist-language=INI
 /.gitattributes export-ignore
 /.gitignore export-ignore
 /tests export-ignore
+
+# Going to be a bit more explicit about languages in order to ensure that files
+# are detected and identified *correctly*. Refer to:
+# https://github.com/github-linguist/linguist/blob/master/lib/linguist/languages.yml
+
+*.css linguist-language=CSS
+*.html linguist-language=HTML
+*.js linguist-language=JavaScript
+*.php linguist-language=PHP
+*.svg linguist-language=SVG
+*.yaml linguist-language=YAML
+*.yml linguist-language=YAML

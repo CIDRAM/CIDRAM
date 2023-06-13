@@ -28,3 +28,14 @@ vault/signatures/* -linguist-detectable
 /.gitattributes export-ignore
 /.gitignore export-ignore
 /tests export-ignore
+
+# Going to be a bit more explicit about languages in order to ensure that files
+# are detected and identified *correctly*. Refer to:
+# https://github.com/github-linguist/linguist/blob/master/lib/linguist/languages.yml
+
+*.css linguist-language=CSS
+*.html linguist-language=HTML
+*.js linguist-language=JavaScript
+*.php linguist-language=PHP
+*.svg linguist-language=SVG
+*.yml linguist-language=YAML

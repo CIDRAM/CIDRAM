@@ -41,7 +41,11 @@ if ($CIDRAM['Config']['general']['statistics']) {
             'Banned-IPv4' => 0,
             'Banned-IPv6' => 0,
             'CAPTCHAs-Failed' => 0,
-            'CAPTCHAs-Passed' => 0
+            'CAPTCHAs-Passed' => 0,
+            'Reported-IPv4-OK' => 0,
+            'Reported-IPv4-Failed' => 0,
+            'Reported-IPv6-OK' => 0,
+            'Reported-IPv6-Failed' => 0
         ];
         $CIDRAM['Statistics-Modified'] = true;
     }
@@ -448,6 +452,21 @@ if ($CIDRAM['Config']['general']['statistics'] && $CIDRAM['BlockInfo']['Signatur
         $CIDRAM['Statistics']['Blocked-IPv6']++;
     } else {
         $CIDRAM['Statistics']['Blocked-Other']++;
+    }
+    if ($CIDRAM['LastTestIP'] === 4) {
+        if (isset($CIDRAM['Report OK']) && $CIDRAM['Report OK'] > 0) {
+            $CIDRAM['Statistics']['Reported-IPv4-OK'] += $CIDRAM['Report OK'];
+        }
+        if (isset($CIDRAM['Report Failed']) && $CIDRAM['Report Failed'] > 0) {
+            $CIDRAM['Statistics']['Reported-IPv4-Failed'] += $CIDRAM['Report Failed'];
+        }
+    } elseif ($CIDRAM['LastTestIP'] === 6) {
+        if (isset($CIDRAM['Report OK']) && $CIDRAM['Report OK'] > 0) {
+            $CIDRAM['Statistics']['Reported-IPv6-OK'] += $CIDRAM['Report OK'];
+        }
+        if (isset($CIDRAM['Report Failed']) && $CIDRAM['Report Failed'] > 0) {
+            $CIDRAM['Statistics']['Reported-IPv6-Failed'] += $CIDRAM['Report Failed'];
+        }
     }
     $CIDRAM['Statistics-Modified'] = true;
 }

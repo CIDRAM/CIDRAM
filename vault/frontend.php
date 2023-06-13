@@ -4610,7 +4610,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'statistics' && $CIDRAM['FE']['P
         ['Passed-IPv6', 'Passed-Total', false],
         ['Passed-Other', 'Passed-Total', false],
         ['CAPTCHAs-Failed', 'CAPTCHAs-Total', true],
-        ['CAPTCHAs-Passed', 'CAPTCHAs-Total', true]
+        ['CAPTCHAs-Passed', 'CAPTCHAs-Total', true],
+        ['Reported-IPv4-OK', 'Reported-Total', true],
+        ['Reported-IPv4-Failed', 'Reported-Total', true],
+        ['Reported-IPv6-OK', 'Reported-Total', true],
+        ['Reported-IPv6-Failed', 'Reported-Total', true]
     ] as $CIDRAM['TheseStats']) {
         if ($CIDRAM['TheseStats'][2] === false) {
             $CIDRAM['FE'][$CIDRAM['TheseStats'][0]] = $CIDRAM['L10N']->getString('field_not_tracking');
@@ -4633,7 +4637,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'statistics' && $CIDRAM['FE']['P
     }
 
     /** Fetch and process totals. */
-    foreach (['Blocked-Total', 'Banned-Total', 'Passed-Total', 'CAPTCHAs-Total'] as $CIDRAM['TheseStats']) {
+    foreach (['Blocked-Total', 'Banned-Total', 'Passed-Total', 'CAPTCHAs-Total', 'Reported-Total'] as $CIDRAM['TheseStats']) {
         if (!isset($CIDRAM['FE'][$CIDRAM['TheseStats']]) || !is_int($CIDRAM['FE'][$CIDRAM['TheseStats']]) || (
             $CIDRAM['FE'][$CIDRAM['TheseStats']] === 0 && $CIDRAM['Config']['general']['statistics'] === false
         )) {

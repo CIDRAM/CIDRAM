@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2023.05.23).
+ * This file: Functions file (last modified: 2023.06.11).
  */
 
 /**
@@ -1899,8 +1899,9 @@ $CIDRAM['Pseudonymise-IP'] = function ($IP) {
  * @return string HTTP status message (empty when using non-supported codes).
  */
 $CIDRAM['GetStatusHTTP'] = function ($Status) {
-    $Message = [
+    static $Message = [
         301 => 'Moved Permanently',
+        302 => 'Found',
         307 => 'Temporary Redirect',
         308 => 'Permanent Redirect',
         403 => 'Forbidden',

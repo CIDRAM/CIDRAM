@@ -73,6 +73,10 @@ forbid_on_block=200
 ; access attempts to. If no, leave this variable blank.
 silent_mode=''
 
+; Which HTTP status message should CIDRAM send when silently redirecting
+; blocked access attempts?
+silent_mode_response_header_code=301
+
 ; Specify the default language for CIDRAM.
 lang='en'
 

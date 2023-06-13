@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2023.05.06).
+# This file: Korean language data for the front-end (last modified: 2023.06.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -135,6 +135,7 @@ config_general_protect_frontend: "CIDRAM 의해 보통 제공되는 보호를 �
 config_general_search_engine_verification: "검색 엔진의 요청을 확인해야합니까? 검색 엔진을 확인하여, 위반의 최대 수를 초과했기 때문에 검색 엔진이 금지되지 않는 것이 보증됩니다 (검색 엔진을 금지하는 것은 일반적으로 검색 엔진 순위의, SEO 등에 악영향을 미칩니다). 확인되면, 검색 엔진이 차단 될 수 있지만, 그러나 금지되지 않습니다. 검증되지 않은 경우는, 위반의 최대를 초과 한 결과, 금지 될 수 있습니다. 또한 검색 엔진의 검증은 사칭 된 검색 엔진으로부터 보호합니다 (이러한 요청은 차단됩니다). True = 검색 엔진의 검증을 활성화한다 (Default/기본 설정); False = 검색 엔진의 검증을 무효로한다."
 config_general_signatures_update_event_log: "프런트 엔드임를 통해 서명이 업데이트될 때 로깅을 위한 파일입니다. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다."
 config_general_silent_mode: ""액세스 거부" 페이지를 표시하는 대신 CIDRAM는 차단 된 액세스 시도를 자동으로 리디렉션해야합니까? 그렇다면 리디렉션 위치를 지정합니다. 아니오의 경우이 변수를 비워 둡니다."
+config_general_silent_mode_response_header_code: "차단된 액세스 시도를 자동으로 리디렉션할 때 CIDRAM이 전송해야하는 HTTP 상태 메시지는 무엇입니까?"
 config_general_social_media_verification: "소셜 미디어 요청을 확인하려고합니까? 소셜 미디어 인증은 가짜 소셜 미디어 요청으로부터 보호합니다 (이러한 요청은 차단됩니다). True = 소셜 미디어 검증을 활성화한다 (Default / 기본 설정); False = 소셜 미디어 인증을 무효로한다."
 config_general_statistics: "CIDRAM 사용 통계를 추적합니까? True = 예; False = 아니오 (Default / 기본 설정)."
 config_general_timeFormat: "CIDRAM에서 사용되는 날짜 형식. 추가 옵션이 요청에 따라 추가 될 수 있습니다."
@@ -302,6 +303,7 @@ field_verify_all: "모두 검증"
 field_whitelisted_requests: "화이트리스트 된 것으로 표시된 요청"
 field_your_version: "사용 버전"
 header_login: "계속하려면 로그인하십시오."
+hints_client_honour: "우리가 고객에게 지시하는 방법에 상관없이, 궁극적으로 고객이 선택하는 것을 제어할 수 없으며 고객이 우리의 지시를 존중할 것이라는 보장이 전혀 없다는 점을 기억하는 것이 중요합니다."
 hints_default_dns:
  자주하는 질문.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.ko.md\#user-content-default_dns에-사용할-수있는-항목은-무엇입니까" hreflang="ko-KR">"default_dns"에 사용할 수있는 항목은 무엇입니까?</a></em>"
 hints_ipv6_on_32bit: "참고\_: IPv6 조회는 일부 32비트 시스템에서 제대로 작동하지 않을 수 있습니다."
@@ -468,6 +470,10 @@ label_sections_x_signatures: "%s 개의 서명"
 label_see_also: "또한보십시오\_:"
 label_show: "보여"
 label_signature_type: "서명 유형\_:"
+label_silent_mode_response_header_code_301: "301 Moved Permanently (영구 이동)\n리디렉션이 영구적임을 클라이언트에 지시합니다. 리디렉션 및 초기 요청의 요청 방법은 다를 수 있습니다."
+label_silent_mode_response_header_code_302: "302 Found (임시 이동)\n리디렉션이 일시적임을 클라이언트에 지시합니다. 리디렉션 및 초기 요청의 요청 방법은 다를 수 있습니다."
+label_silent_mode_response_header_code_307: "307 Temporary Redirect (임시 리다이렉션)\n리디렉션이 일시적임을 클라이언트에 지시합니다. 리디렉션 및 초기 요청의 요청 방법은 다를 수 없습니다."
+label_silent_mode_response_header_code_308: "308 Permanent Redirect (영구 리다이렉션)\n리디렉션이 영구적임을 클라이언트에 지시합니다. 리디렉션 및 초기 요청의 요청 방법은 다를 수 없습니다."
 label_stable: "최신 안정\_:"
 label_starting_from: ""%s"부터 시작합니다."
 label_sysinfo: "시스템 정보\_:"

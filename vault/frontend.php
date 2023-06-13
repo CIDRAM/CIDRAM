@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2023.05.23).
+ * This file: Front-end handler (last modified: 2023.06.13).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -4202,7 +4202,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
                 );
             } elseif ($CIDRAM['BlockInfo']['SignatureCount'] && $CIDRAM['Config']['general']['silent_mode'] !== '') {
                 $CIDRAM['ThisIP']['YesNo'] .= '<br />' . $CIDRAM['LTRinRTF'](
-                    $CIDRAM['L10N']->getString('response_redirected') . ' <301> ➡ <code>' . $CIDRAM['Config']['general']['silent_mode'] . '</code>'
+                    $CIDRAM['L10N']->getString('response_redirected') . ' <' . $CIDRAM['Config']['general']['silent_mode_response_header_code'] . '> ➡ <code>' . $CIDRAM['Config']['general']['silent_mode'] . '</code>'
                 );
             }
             if (isset($CIDRAM['Trackable'])) {
@@ -4854,7 +4854,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
             $CIDRAM['L10N']->Data['Text Direction'] !== 'rtl' ? '➡' : '⬅',
             '<code dir="ltr">ban_override(4xx🔄5xx)</code>',
             '<code dir="ltr">rate_limiting(429)</code>',
-            '<code dir="ltr">silent_mode(301)</code>',
+            '<code dir="ltr">silent_mode(30x)</code>',
             $CIDRAM['L10N']->getString('link_aux') . '<code dir="ltr">(4xx🔄5xx)</code>',
             '<code dir="ltr">forbid_on_block(xxx)</code>',
             $CIDRAM['L10N']->getString('link_aux') . '<code dir="ltr">(30x)</code>',

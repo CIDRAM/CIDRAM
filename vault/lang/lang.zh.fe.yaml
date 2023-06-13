@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2023.05.07).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2023.06.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -135,6 +135,7 @@ config_general_protect_frontend: "指定是否应将CIDRAM通常提供的保护�
 config_general_search_engine_verification: "尝试验证来自搜索引擎的请求？​验证搜索引擎确保他们不会因超过违规限制而被禁止 （禁止在您的网站上使用搜索引擎通常会有产生负面影响对您的搜索引擎排名，​SEO，​等等）。​当被验证，​搜索引擎可以被阻止，​但不会被禁止。​当不被验证，​他们可以由于超过违规限制而被禁止。​另外，​搜索引擎验证提供保护针对假搜索引擎请求和针对潜在的恶意实体伪装成搜索引擎（当搜索引擎验证是启用，​这些请求将被阻止）。​True（真）=搜索引擎验证是启用【标准】；False（假）=搜索引擎验证是禁用。"
 config_general_signatures_update_event_log: "通过前端更新签名时用于记录的文件。​指定一个文件名，​或留空以禁用。"
 config_general_silent_mode: "CIDRAM应该默默重定向被拦截的访问而不是显示该“拒绝访问”页吗？​指定位置至重定向被拦截的访问，​或让它空将其禁用。"
+config_general_silent_mode_response_header_code: "当静默重定向被阻止的访问尝试时，CIDRAM应发送哪个HTTP状态消息？"
 config_general_social_media_verification: "尝试验证社交媒体请求？​社交媒体验证可以防止虚假社交媒体请求（此类请求将被阻止）。​True（真）=启用社交媒体验证【标准】；​False（假）=禁用社交媒体验证。"
 config_general_statistics: "跟踪CIDRAM使用情况统计？​True（真）=跟踪；False（假）=不跟踪【标准】。"
 config_general_timeFormat: "CIDRAM使用的日期符号格式。​可根据要求增加附加选项。"
@@ -302,6 +303,7 @@ field_verify_all: "验证全部"
 field_whitelisted_requests: "在白名单中的请求"
 field_your_version: "您的版本"
 header_login: "请登录以继续。"
+hints_client_honour: "无论我们如何指示客户，重要的是要记住，我们无法控制客户选择做什么，而且客户会遵守我们的指示的没有保证。"
 hints_default_dns:
  常问问题。: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.zh.md\#user-content-在default_dns中我可以使用什么" hreflang="zh-CN">在“default_dns”中我可以使用什么？</a></em>"
 hints_ipv6_on_32bit: "注意：IPv6查找在某些32位系统上可能无法正常工作。"
@@ -469,6 +471,10 @@ label_sections_x_signatures: "%s个文件中的"
 label_see_also: "也可以看看："
 label_show: "显示"
 label_signature_type: "签名类型："
+label_silent_mode_response_header_code_301: "301 Moved Permanently （永久移动）\n指示客户端重定向是永久的。​重定向和初始请求的请求方法允许不同。"
+label_silent_mode_response_header_code_302: "302 Found （找到）\n指示客户端重定向是临时的。​重定向和初始请求的请求方法允许不同。"
+label_silent_mode_response_header_code_307: "307 Temporary Redirect （临时重定向）\n指示客户端重定向是临时的。​重定向和初始请求的请求方法不允许不同。"
+label_silent_mode_response_header_code_308: "308 Permanent Redirect （永久重定向）\n指示客户端重定向是永久的。​重定向和初始请求的请求方法不允许不同。"
 label_stable: "最新稳定："
 label_starting_from: "从“%s”开始。"
 label_sysinfo: "系统信息："

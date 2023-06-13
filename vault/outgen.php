@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2023.05.22).
+ * This file: Output generator (last modified: 2023.06.13).
  */
 
 /** Initialise cache. */
@@ -859,11 +859,14 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
             }
         }
     } else {
-        $CIDRAM['errCode'] = 301;
-        $CIDRAM['Status'] = $CIDRAM['GetStatusHTTP'](301);
-        header('HTTP/1.0 301 ' . $CIDRAM['Status']);
-        header('HTTP/1.1 301 ' . $CIDRAM['Status']);
-        header('Status: 301 ' . $CIDRAM['Status']);
+        $CIDRAM['errCode'] = (
+            $CIDRAM['Config']['general']['silent_mode_response_header_code'] > 300 &&
+            $CIDRAM['Config']['general']['silent_mode_response_header_code'] < 309
+        ) ? $CIDRAM['Config']['general']['silent_mode_response_header_code'] : 301;
+        $CIDRAM['Status'] = $CIDRAM['GetStatusHTTP']($CIDRAM['errCode']);
+        header('HTTP/1.0 ' . $CIDRAM['errCode'] . ' ' . $CIDRAM['Status']);
+        header('HTTP/1.1 ' . $CIDRAM['errCode'] . ' ' . $CIDRAM['Status']);
+        header('Status: ' . $CIDRAM['errCode'] . ' ' . $CIDRAM['Status']);
         header('Location: ' . $CIDRAM['Config']['general']['silent_mode']);
         $CIDRAM['HTML'] = '';
     }
@@ -881,7 +884,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
 }
 
 /** Executed only if request redirection has been triggered by auxiliary rules. */
-if (!empty($CIDRAM['Aux Redirect']) && !empty($CIDRAM['Aux Status Code']) && $CIDRAM['Aux Status Code'] > 300 && $CIDRAM['Aux Status Code'] < 400) {
+if (!empty($CIDRAM['Aux Redirect']) && !empty($CIDRAM['Aux Status Code']) && $CIDRAM['Aux Status Code'] > 300 && $CIDRAM['Aux Status Code'] < 309) {
     $CIDRAM['errCode'] = $CIDRAM['Aux Status Code'];
     $CIDRAM['Status'] = $CIDRAM['GetStatusHTTP']($CIDRAM['Aux Status Code']);
     header('HTTP/1.0 ' . $CIDRAM['Aux Status Code'] . ' ' . $CIDRAM['Status']);

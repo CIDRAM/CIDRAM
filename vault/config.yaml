@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2023.05.07).
+# This file: Configuration defaults file (last modified: 2023.06.11).
 ##/
 
 Config Defaults:
@@ -176,6 +176,16 @@ Config Defaults:
    type: "url"
    default: ""
    autocomplete: "url"
+  silent_mode_response_header_code:
+   type: "int"
+   default: 301
+   choices:
+    301: &301 "label_silent_mode_response_header_code_301"
+    302: &302 "label_silent_mode_response_header_code_302"
+    307: &307 "label_silent_mode_response_header_code_307"
+    308: &308 "label_silent_mode_response_header_code_308"
+   style: "radio"
+   hints: "hints_client_honour"
   lang:
    type: "string"
    default: "en"

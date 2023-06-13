@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2023.05.07).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2023.06.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -135,6 +135,7 @@ config_general_protect_frontend: "指定是否應將CIDRAM通常提供的保護�
 config_general_search_engine_verification: "嘗試驗證來自搜索引擎的請求？​驗證搜索引擎確保他們不會因超過違規限製而被禁止 （禁止在您的網站上使用搜索引擎通常會有產生負面影響對您的搜索引擎排名，​SEO，​等等）。​當被驗證，​搜索引擎可以被阻止，​但不會被禁止。​當不被驗證，​他們可以由於超過違規限製而被禁止。​另外，​搜索引擎驗證提供保護針對假搜索引擎請求和針對潛在的惡意實體偽裝成搜索引擎（當搜索引擎驗證是啟用，​這些請求將被阻止）。​True（真）=搜索引擎驗證是啟用【標準】；False（假）=搜索引擎驗證是禁用。"
 config_general_signatures_update_event_log: "通過前端更新簽名時用於記錄的文件。​指定一個文件名，​或留空以禁用。"
 config_general_silent_mode: "CIDRAM應該默默重定向被攔截的訪問而不是顯示該『拒絕訪問』頁嗎？​指定位置至重定向被攔截的訪問，​或讓它空將其禁用。"
+config_general_silent_mode_response_header_code: "當靜默重定向被阻止的訪問嘗試時，CIDRAM應發送哪個HTTP狀態消息？"
 config_general_social_media_verification: "嘗試驗證社交媒體請求？​社交媒體驗證可以防止虛假社交媒體請求（此類請求將被阻止）。​True（真）=啟用社交媒體驗證【標準】；​False（假）=禁用社交媒體驗證。"
 config_general_statistics: "跟踪CIDRAM使用情況統計？​True（真）=跟踪；False（假）=不跟踪【標準】。"
 config_general_time_format: "CIDRAM使用的日期符號格式。​可根據要求增加附加選項。"
@@ -302,6 +303,7 @@ field_verify_all: "驗證全部"
 field_whitelisted_requests: "在白名單中的請求"
 field_your_version: "您的版本"
 header_login: "請登錄以繼續。"
+hints_client_honour: "無論我們如何指示客戶，重要的是要記住，我們無法控制客戶選擇做什麼，而且客戶會遵守我們的指示的沒有保證。"
 hints_default_dns:
  常問問題。: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.zh-tw.md\#在default_dns中我可以使用什麼" hreflang="zh-TW">在『default_dns』中我可以使用什麼？</a></em>"
 hints_ipv6_on_32bit: "注意：IPv6查找在某些32位系統上可能無法正常工作。"
@@ -469,6 +471,10 @@ label_sections_x_signatures: "%s個文件中的"
 label_see_also: "也可以看看："
 label_show: "顯示"
 label_signature_type: "簽名類型："
+label_silent_mode_response_header_code_301: "301 Moved Permanently （永久移動）\n指示客戶端重定向是永久的。​重定向和初始請求的請求方法允許不同。"
+label_silent_mode_response_header_code_302: "302 Found （找到）\n指示客戶端重定向是臨時的。​重定向和初始請求的請求方法允許不同。"
+label_silent_mode_response_header_code_307: "307 Temporary Redirect （臨時重定向）\n指示客戶端重定向是臨時的。​重定向和初始請求的請求方法不允許不同。"
+label_silent_mode_response_header_code_308: "308 Permanent Redirect （永久重定向）\n指示客戶端重定向是永久的。​重定向和初始請求的請求方法不允許不同。"
 label_stable: "最新穩定："
 label_starting_from: "從『%s』開始。"
 label_sysinfo: "系統信息："

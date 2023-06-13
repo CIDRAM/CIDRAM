@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2023.05.13).
+# This file: Portuguese language data for the front-end (last modified: 2023.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -135,6 +135,7 @@ config_general_protect_frontend: "Especifica se as proteções normalmente forne
 config_general_search_engine_verification: "Tentativa de verificar solicitações dos motores de busca? Verificando os motores de busca garante que eles não serão banidos como resultado de exceder o limite de infrações (proibindo motores de busca de seu site normalmente terá um efeito negativo sobre o seu motor de busca ranking, SEO, etc). Quando verificado, os motores de busca podem ser bloqueados como por normal, mas não serão banidos. Quando não verificado, é possível que eles serão banidos como resultado de ultrapassar o limite de infrações. Também, a verificação dos motores de busca fornece proteção contra falsos solicitações de motores de busca e contra entidades potencialmente mal-intencionadas mascarando como motores de busca (tais solicitações serão bloqueados quando a verificação dos motores de busca estiver ativada). True = Ativar a verificação dos motores de busca [Padrão]; False = Desativar a verificação dos motores de busca."
 config_general_signatures_update_event_log: "Um arquivo para registrar quando as assinaturas são atualizadas por meio do front-end. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
 config_general_silent_mode: "Deve CIDRAM silenciosamente redirecionar as tentativas de acesso bloqueadas em vez de exibir o "acesso negado" página? Se sim, especificar o local para redirecionar as tentativas de acesso bloqueadas para. Se não, deixe esta variável em branco."
+config_general_silent_mode_response_header_code: "Qual mensagem de status HTTP deve enviar o CIDRAM ao redirecionar silenciosamente as tentativas de acesso bloqueados?"
 config_general_social_media_verification: "Tentativa de verificar solicitações de mídia social? A verificação de mídia social fornece proteção contra solicitações falsas de mídia social (essas solicitações serão bloqueadas). True = Ativar a verificação de mídia social [Padrão]; False = Desativar a verificação de mídia social."
 config_general_statistics: "Monitorar as estatísticas de uso do CIDRAM? True = Sim; False = Não [Padrão]."
 config_general_time_format: "O formato de notação de data/tempo utilizado pelo CIDRAM. Opções adicionais podem ser adicionadas mediante solicitação."
@@ -304,6 +305,7 @@ field_verify_all: "Verifique tudo"
 field_whitelisted_requests: "Solicitações marcadas como na lista branca"
 field_your_version: "Sua versão"
 header_login: "Por favor faça o login para continuar."
+hints_client_honour: "Independentemente de como instruímos o cliente, é importante lembrar que não temos controle sobre o que o cliente escolhe fazer, e não há garantia de que o cliente honrará nossas instruções."
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.pt.md\#user-content-o-que-posso-usar-para-default_dns" hreflang="pt">O que posso usar para "default_dns"?</a></em>"
 hints_ipv6_on_32bit: "Nota: As pesquisas de IPv6 podem não funcionar corretamente em alguns sistemas de 32 bits."
@@ -478,6 +480,10 @@ label_sections_x_signatures:
 label_see_also: "Veja também:"
 label_show: "Mostrar"
 label_signature_type: "Tipo de assinatura:"
+label_silent_mode_response_header_code_301: "301 Moved Permanently (Movido Permanentemente)\nInstrui o cliente que o redirecionamento é PERMANENTE, e que o método de solicitação usado para o redirecionamento PODE ser diferente do método de solicitação usado na solicitação inicial."
+label_silent_mode_response_header_code_302: "302 Found (Encontrado)\nInstrui o cliente que o redirecionamento é TEMPORÁRIO, e que o método de solicitação usado para o redirecionamento PODE ser diferente do método de solicitação usado na solicitação inicial."
+label_silent_mode_response_header_code_307: "307 Temporary Redirect (Redirecionamento Temporário)\nInstrui o cliente que o redirecionamento é TEMPORÁRIO, e que o método de solicitação usado para o redirecionamento NÃO pode ser diferente do método de solicitação usado para a solicitação inicial."
+label_silent_mode_response_header_code_308: "308 Permanent Redirect (Redirecionamento Permanente)\nInstrui o cliente que o redirecionamento é PERMANENTE, e que o método de solicitação usado para o redirecionamento NÃO pode ser diferente do método de solicitação usado para a solicitação inicial."
 label_stable: "Mais novo de estável:"
 label_starting_from: "Começa em "%s"."
 label_sysinfo: "Informação do sistema:"

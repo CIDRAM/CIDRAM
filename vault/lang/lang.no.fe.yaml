@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2023.05.13).
+# This file: Norwegian language data for the front-end (last modified: 2023.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -135,6 +135,7 @@ config_general_protect_frontend: "Angir om beskyttelsen som normalt leveres av C
 config_general_search_engine_verification: "Forsøk å bekrefte forespørsler fra søkemotorer? Verifiserende søkemotorer sikrer at de ikke vil bli utestengt som et resultat av å overskride infraksjonsgrensen (utestenging mot søkemotorer fra nettstedet ditt vil vanligvis ha en negativ effekt på søkemotorrangeringen din, SEO, osv). Når verifisert, kan søkemotorer bli blokkert som normalt, men vil ikke bli utestengt. Når det ikke er verifisert, er det mulig for dem å bli utestengt som et resultat av å overskride infraksjonsgrensen. Dess, søkemotor verifisering gir beskyttelse mot falske søkemotor forespørsler og mot potensielt skadelige enheter som later til å være søkemotorer (slike forespørsler vil bli blokkert når søkemotor verifisering er aktivert). True = Aktiver søkemotor verifisering [Standardverdi]; False = Deaktiver søkemotor verifisering."
 config_general_signatures_update_event_log: "En fil for logging når signaturer oppdateres via frontend. Angi et filnavn, eller la det være tomt for å deaktivere."
 config_general_silent_mode: "Bør CIDRAM stille omdirigere blokkerte tilgangsforsøk i stedet for å vise «tilgang nektet» siden? Hvis ja, spesifiser stedet for å omdirigere blokkerte tilgangsforsøk til. Hvis nei, la denne variablen være tom."
+config_general_silent_mode_response_header_code: "Hvilken HTTP-statusmelding skal CIDRAM sende under stille omdirigering av forsøk på blokkert tilgang?"
 config_general_social_media_verification: "Forsøk å verifisere sosial media forespørsler? Sosial media verifisering gir beskyttelse mot falske sosiale medier forespørsler (slike forespørsler vil bli blokkert). True = Aktiver sosial media verifisering [Standardverdi]; False = Deaktiver sosial media verifisering."
 config_general_statistics: "Spor CIDRAM bruksstatistikk? True = Ja; False = Nei [Standardverdi]."
 config_general_time_format: "Dato/tid notasjonsformat som brukes av CIDRAM. Ytterligere alternativer kan legges på forespørsel."
@@ -302,6 +303,7 @@ field_verify_all: "Verifisere alt"
 field_whitelisted_requests: "Hvitlistede forespørsler"
 field_your_version: "Din versjon"
 header_login: "Vennligst logg inn for å fortsette."
+hints_client_honour: "Uansett hvordan vi instruerer klienten, er det viktig å huske at vi til syvende og sist ikke har kontroll over hva klienten velger å gjøre, og det er ingen garanti for at klienten vil respektere instruksjonene våre."
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.en.md\#user-content-WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="en-AU">Hva kan jeg bruke for «default_dns»?</a></em>"
 hints_ipv6_on_32bit: "Merk: IPv6-oppslag fungerer kanskje ikke riktig på enkelte 32-biters systemer."
@@ -476,6 +478,10 @@ label_sections_x_signatures:
 label_see_also: "Se også:"
 label_show: "Vis"
 label_signature_type: "Signaturtype:"
+label_silent_mode_response_header_code_301: "301 Moved Permanently (Flyttet permanent)\nInstruerer klienten om at omdirigeringen er PERMANENT, og at forespørselsmetoden som brukes for omdirigeringen KAN være annerledes enn forespørselsmetoden som ble brukt for den første forespørselen."
+label_silent_mode_response_header_code_302: "302 Found (Funnet)\nInstruerer klienten om at omdirigeringen er MIDLERTIDIG, og at forespørselsmetoden som brukes for omdirigeringen KAN være annerledes enn forespørselsmetoden som ble brukt for den første forespørselen."
+label_silent_mode_response_header_code_307: "307 Temporary Redirect (Midlertidig omdirigering)\nInstruerer klienten om at omdirigeringen er MIDLERTIDIG, og at forespørselsmetoden som brukes for omdirigeringen IKKE kan være annerledes enn forespørselsmetoden som ble brukt for den første forespørselen."
+label_silent_mode_response_header_code_308: "308 Permanent Redirect (Permanent omdirigering)\nInstruerer klienten om at omdirigeringen er PERMANENT, og at forespørselsmetoden som brukes for omdirigeringen IKKE kan være annerledes enn forespørselsmetoden som ble brukt for den første forespørselen."
 label_stable: "Siste stabile:"
 label_starting_from: "Starter fra "%s"."
 label_sysinfo: "Systeminformasjon:"

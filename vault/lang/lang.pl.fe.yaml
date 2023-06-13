@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2023.05.13).
+# This file: Polish language data for the front-end (last modified: 2023.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -135,6 +135,7 @@ config_general_protect_frontend: "Określa, czy zabezpieczenia zwykle zapewniane
 config_general_search_engine_verification: "Próbujesz zweryfikować żądania z wyszukiwarek? Weryfikacja wyszukiwarek zapewnia, że nie zostaną zbanowane w wyniku przekroczenia limitu wykroczeń (banowanie wyszukiwarek z twojej strony będzie miało zazwyczaj negatywny wpływ na pozycję w wyszukiwarkach, SEO, itp). Kiedy zweryfikowane, wyszukiwarki można blokować jak zwykle, ale nie zostaną zbanowane. W przypadku braku weryfikacji może zostać zbanowany w wyniku przekroczenia limitu wykroczeń. Ponadto weryfikacja w wyszukiwarkach zapewnia ochronę przed fałszywymi żądaniami wyszukiwarek oraz przed potencjalnie złośliwymi bytami udającymi wyszukiwarki (takie żądania będą zablokowane po włączeniu weryfikacja wyszukiwarek). True (Prawdziwe) = Włącz weryfikację w wyszukiwarce [Domyślna]; False (Fałszywy) = Wyłącz weryfikację w wyszukiwarce."
 config_general_signatures_update_event_log: "Plik do rejestrowania, gdy podpisy są aktualizowane za pośrednictwem interfejsu użytkownika. Podaj nazwę pliku lub pozostaw puste, aby wyłączyć."
 config_general_silent_mode: "Czy CIDRAM powinien po cichu przekierowywać zablokowane próby dostępu zamiast wyświetlać stronę „dostęp zabroniony”? Jeśli tak, podaj lokalizację, do której mają zostać przekierowane zablokowane próby dostępu. Jeśli nie, pozostaw tę zmienną pustą."
+config_general_silent_mode_response_header_code: "Który komunikat o stanie HTTP powinien wysłać CIDRAM podczas cichego przekierowania zablokowanych prób dostępu?"
 config_general_social_media_verification: "Próbujesz zweryfikować żądania mediów społecznościowych? Weryfikacja mediów społecznościowych zapewnia ochronę przed fałszywymi żądaniami mediów społecznościowych (takie żądania zostaną zablokowane). True (Prawdziwe) = Włącz weryfikację w mediach społecznościowych [Domyślna]; False (Fałszywy) = Wyłącz weryfikację w mediach społecznościowych."
 config_general_statistics: "Śledzić statystyki użytkowania CIDRAM? True (Prawdziwe) = Tak; False (Fałszywy) = Nie [Domyślna]."
 config_general_time_format: "Format notacja daty/godziny używany przez CIDRAM. Dodatkowe opcje mogą być dodane na życzenie."
@@ -305,6 +306,7 @@ field_verify_all: "Zweryfikuj wszystko"
 field_whitelisted_requests: "Żądania na białej liście"
 field_your_version: "Twoja wersja"
 header_login: "Proszę się zalogować, aby kontynuować."
+hints_client_honour: "Niezależnie od tego, jak instruujemy klienta, ważne jest aby pamiętać, że ostatecznie nie mamy kontroli nad tym, co klient zdecyduje się zrobić, i nie ma żadnej gwarancji że klient będzie przestrzegał naszych instrukcji."
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.en.md\#user-content-WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="en-AU">Czego mogę użyć dla „default_dns”?</a></em>"
 hints_ipv6_on_32bit: "Uwaga: Wyszukiwania IPv6 mogą nie działać poprawnie w niektórych systemach 32-bitowych."
@@ -483,6 +485,10 @@ label_sections_x_signatures:
 label_see_also: "Zobacz też:"
 label_show: "Pokaż"
 label_signature_type: "Rodzaj podpisu:"
+label_silent_mode_response_header_code_301: "301 Moved Permanently (Trwale przeniesiony)\nInstruuje klienta, że przekierowanie jest STAŁE, oraz że metoda żądania użyta do przekierowania MOŻE być inna niż metoda żądania użyta do pierwotnego żądania."
+label_silent_mode_response_header_code_302: "302 Found (Znaleziono)\nInstruuje klienta, że przekierowanie jest TYMCZASOWE, oraz że metoda żądania użyta do przekierowania MOŻE być inna niż metoda żądania użyta do pierwotnego żądania."
+label_silent_mode_response_header_code_307: "307 Temporary Redirect (Tymczasowe przekierowanie)\nInstruuje klienta, że przekierowanie jest TYMCZASOWE, oraz że metoda żądania użyta do przekierowania NIE może być inna niż metoda żądania użyta do pierwotnego żądania."
+label_silent_mode_response_header_code_308: "308 Permanent Redirect (Stałe przekierowanie)\nInstruuje klienta, że przekierowanie jest STAŁE, oraz że metoda żądania użyta do przekierowania NIE może być inna niż metoda żądania użyta do pierwotnego żądania."
 label_stable: "Najnowsza stabilna:"
 label_starting_from: "Zaczynając od „%s”."
 label_sysinfo: "Informacje o systemie:"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2023.05.07).
+# This file: Vietnamese language data for the front-end (last modified: 2023.06.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -135,6 +135,7 @@ config_general_protect_frontend: "Chỉ định liệu các bảo vệ thường
 config_general_search_engine_verification: "Cố gắng xác minh các yêu cầu từ các máy tìm kiếm? Xác minh máy tìm kiếm đảm bảo rằng họ sẽ không bị cấm là kết quả của vượt quá giới các hạn vi phạm (cấm các máy tìm kiếm từ trang web của bạn thường sẽ có một tác động tiêu cực đến các xếp hạng máy tìm kiếm của bạn, SEO, vv). Khi xác minh được kích hoạt, các máy tìm kiếm có thể bị chặn như bình thường, nhưng sẽ không bị cấm. Khi xác minh không được kích hoạt, họ có thể bị cấm như là kết quả của vượt quá giới các hạn vi phạm. Ngoài ra, xác minh máy tìm kiếm cung cấp bảo vệ chống lại các yêu cầu giả máy tìm kiếm và chống lại các thực thể rằng là khả năng độc hại được giả mạo như là các máy tìm kiếm (những yêu cầu này sẽ bị chặn khi xác minh máy tìm kiếm được kích hoạt). True = Kích hoạt xác minh máy tìm kiếm [Mặc định]; False = Vô hiệu hóa xác minh máy tìm kiếm."
 config_general_signatures_update_event_log: "Một tập tin để ghi nhật ký khi chữ ký được cập nhật qua front-end. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa."
 config_general_silent_mode: "CIDRAM nên âm thầm chuyển hướng cố gắng truy cập bị chặn thay vì hiển thị trang "Truy cập đã bị từ chối"? Nếu vâng, xác định vị trí để chuyển hướng cố gắng truy cập bị chặn để. Nếu không, để cho biến này được trống."
+config_general_silent_mode_response_header_code: "Những gì thông báo trạng thái HTTP mà CIDRAM nên gửi khi âm thầm chuyển hướng các nỗ lực truy cập bị chặn?"
 config_general_social_media_verification: "Cố gắng xác minh yêu cầu truyền thông xã hội? Xác minh truyền thông xã hội cung cấp sự bảo vệ chống lại các yêu cầu truyền thông xã hội giả mạo (các yêu cầu như vậy sẽ bị chặn). True = Kích hoạt xác minh truyền thông xã hội [Mặc định]; False = Vô hiệu hóa xác minh truyền thông xã hội."
 config_general_statistics: "Giám sát thống kê sử dụng CIDRAM? True = Vâng; False = Không [Mặc định]."
 config_general_time_format: "Định dạng ngày tháng sử dụng bởi CIDRAM. Các tùy chọn bổ sung có thể được bổ sung theo yêu cầu."
@@ -302,6 +303,7 @@ field_verify_all: "Xác minh tất cả"
 field_whitelisted_requests: "Yêu cầu trong danh sách trắng"
 field_your_version: "Phiên bản của bạn"
 header_login: "Vui lòng đăng nhập để tiếp tục."
+hints_client_honour: "Bất kể chúng tôi hướng dẫn khách hàng như thế nào, điều quan trọng cần nhớ là cuối cùng chúng tôi không kiểm soát được những gì khách hàng chọn làm, và không có gì đảm bảo rằng khách hàng sẽ tôn trọng hướng dẫn của chúng tôi."
 hints_default_dns:
  Câu hỏi thường gặp.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.vi.md\#user-content-những-gì-tôi-có-thể-sử-dụng-cho-default_dns" hreflang="vi-VN">Những gì tôi có thể sử dụng cho "default_dns"?</a></em>"
 hints_ipv6_on_32bit: "Lưu ý: Tra cứu IPv6 có thể không hoạt động chính xác trên một số hệ thống 32 bit."
@@ -468,6 +470,10 @@ label_sections_x_signatures: "%s chữ ký"
 label_see_also: "Xem thêm:"
 label_show: "Hiển thị"
 label_signature_type: "Loại chữ ký"
+label_silent_mode_response_header_code_301: "301 Moved Permanently (Đã di chuyển vĩnh viễn)\nHướng dẫn khách hàng rằng chuyển hướng là VĨNH VIỄN, và rằng phương thức yêu cầu được sử dụng cho chuyển hướng CÓ THỂ khác với phương thức yêu cầu được sử dụng cho yêu cầu ban đầu."
+label_silent_mode_response_header_code_302: "302 Found (Tìm thấy)\nHướng dẫn khách hàng rằng chuyển hướng là TẠM THỜI, và rằng phương thức yêu cầu được sử dụng cho chuyển hướng CÓ THỂ khác với phương thức yêu cầu được sử dụng cho yêu cầu ban đầu."
+label_silent_mode_response_header_code_307: "307 Temporary Redirect (Chuyển hướng tạm thời)\nHướng dẫn khách hàng rằng chuyển hướng là TẠM THỜI, và rằng phương thức yêu cầu được sử dụng cho chuyển hướng có thể KHÔNG khác với phương thức yêu cầu được sử dụng cho yêu cầu ban đầu."
+label_silent_mode_response_header_code_308: "308 Permanent Redirect (Chuyển hướng vĩnh viễn)\nHướng dẫn khách hàng rằng chuyển hướng là VĨNH VIỄN, và rằng phương thức yêu cầu được sử dụng cho chuyển hướng có thể KHÔNG khác với phương thức yêu cầu được sử dụng cho yêu cầu ban đầu."
 label_stable: "Ổn định mới nhất:"
 label_starting_from: "Bắt đầu từ "%s"."
 label_sysinfo: "Thông tin hệ thống:"

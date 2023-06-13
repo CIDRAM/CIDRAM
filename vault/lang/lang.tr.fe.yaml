@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2023.05.13).
+# This file: Turkish language data for the front-end (last modified: 2023.06.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -112,7 +112,7 @@ config_general_empty_fields: "Blok olay bilgilerini kaydederken ve görüntüler
 config_general_error_log: "Ölümcül olmayan hataları kaydetmek için bir dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
 config_general_error_log_stages: "Yürütme zincirinde hataların kaydedilmesi gereken aşamaların bir listesi."
 config_general_events: "Burada listelenen dosyalar, olay işleyicileri dosyasından hemen sonra yüklenir. Bileşenleri etkinleştirirken genellikle gerektiğinde güncellemeler sayfası tarafından doldurulur. Çoğu durumda, görmezden gelebilir."
-config_general_forbid_on_block: "İstekleri engellerken hangi HTTP durum iletisinin CIDRAM göndermesi gerekir?"
+config_general_forbid_on_block: "İstekleri engellerken CIDRAM hangi HTTP durum mesajını göndermelidir?"
 config_general_force_hostname_lookup: "Hostname aramayı zorla? Doğru/True = Evet; Yanlış/False = Hayır [Varsayılan]. Hostname aramaları normal olarak ihtiyaçlara göre yapılır, ancak tüm istekler için zorla çalıştırılabilir. Bu, günlük dosyalarında daha ayrıntılı bilgi sağlama aracı olarak kullanışlı olabilir, ancak performans üzerinde de olumsuz bir etkisi olabilir."
 config_general_frontend_log: "Ön uç giriş denemelerini kaydetmek için kullanılan dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
 config_general_hide_version: "Sürüm bilgilerini günlüklerden ve sayfa çıktısından gizle? Doğru/True = Evet; Yanlış/False = Hayır [Varsayılan]."
@@ -135,6 +135,7 @@ config_general_protect_frontend: "Normal olarak CIDRAM tarafından sağlanan kor
 config_general_search_engine_verification: "Arama motorlarından gelen istekleri doğrulamaya çalışın? Arama motorlarını doğrulamak, ihlal sınırını aşmanın bir sonucu olarak yasaklanmamasını sağlar (sitenizdeki arama motorlarını yasaklamak genellikle arama motoru sıralaması, SEO, vb. üzerinde olumsuz bir etki yapar). Doğrulandığı zaman, arama motorları normal olarak engellenebilir, ancak yasaklanmaz. Doğrulanmadığı zaman ise, ihlal sınırının aşılmasının bir sonucu olarak yasaklanmaları mümkündür. Buna ek olarak, arama motoru doğrulaması, sahte arama motoru isteklerine ve arama motorları kılığına bürünen potansiyel olarak kötü amaçlı varlıklara karşı koruma sağlar (arama motoru doğrulama etkinleştirildiğinde bu tür istekler engellenir). Doğru/True = Arama motoru doğrulamasını etkinleştir [Varsayılan]; Yanlış/False = Arama motoru doğrulamasını devre dışı bırakın."
 config_general_signatures_update_event_log: "Ön uç aracılığıyla imzalar güncellendiğinde günlüğe kaydedilecek bir dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
 config_general_silent_mode: "CIDRAM, "erişim reddedildi" sayfasını göstermek yerine, engellenen erişim girişimlerini sessizce yönlendirmeli mi? Yanıt evet ise, engellenen erişim girişimleri için yeniden yönlendirilecek konumu belirtin. Yanıt hayır ise, bu değişkeni boş bırakın."
+config_general_silent_mode_response_header_code: "Engellenen erişim denemelerini sessizce yeniden yönlendirirken CIDRAM hangi HTTP durum mesajını göndermelidir?"
 config_general_social_media_verification: "Sosyal medya isteklerini doğrulamayı denemek mi istiyorsunuz? Sosyal medya doğrulama, sahte sosyal medya isteklerine karşı koruma sağlar (bu gibi istekler engellenir). True = Sosyal medya doğrulamasını etkinleştir [Varsayılan]; False = Sosyal medya doğrulamasını devre dışı bırak."
 config_general_statistics: "CIDRAM kullanım istatistiklerini takip et? Doğru/True = Evet; Yanlış/False = Hayır [Varsayılan]."
 config_general_time_format: "CIDRAM tarafından kullanılan tarih/saat gösterimi biçimi. İsteğe bağlı olarak ek seçenekler eklenebilir."
@@ -302,6 +303,7 @@ field_verify_all: "Tümünü doğrula"
 field_whitelisted_requests: "Beyaz listeye eklenen istekler"
 field_your_version: "Sürümünüz"
 header_login: "Devam etmek için lütfen giriş yapınız."
+hints_client_honour: "Müşteriye nasıl talimat verirsek verelim, müşterinin ne yapmayı seçtiği üzerinde nihai olarak hiçbir kontrole sahip olmadığımızı ve müşterinin talimatlarımızı yerine getireceğine dair sıfır garanti olduğunu unutmamak önemlidir."
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.en.md\#user-content-WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="en-AU">"default_dns" için ne kullanabilirim?</a></em>"
 hints_ipv6_on_32bit: "Not: IPv6 aramaları bazı 32 bit sistemlerde düzgün çalışmayabilir."
@@ -472,6 +474,10 @@ label_sections_x_signatures: "%s dosya"
 label_see_also: "Ayrıca bakınız:"
 label_show: "Göstermek"
 label_signature_type: "İmza tipi:"
+label_silent_mode_response_header_code_301: "301 Moved Permanently (Kalıcı Olarak Taşındı)\nİstemciye yönlendirmenin KALICI olduğunu söyler. Yönlendirme ve ilk isteğin istek yöntemleri farklı OLABİLİR."
+label_silent_mode_response_header_code_302: "302 Found (Kurmak)\nİstemciye yönlendirmenin GEÇİCİ olduğunu söyler. Yönlendirme ve ilk isteğin istek yöntemleri farklı OLABİLİR."
+label_silent_mode_response_header_code_307: "307 Temporary Redirect (Geçici Yönlendirme)\nİstemciye yönlendirmenin GEÇİCİ olduğunu söyler. Yönlendirme ve ilk isteğin istek yöntemleri farklı OLMAYABİLİR."
+label_silent_mode_response_header_code_308: "308 Permanent Redirect (Kalıcı Yönlendirme)\nİstemciye yönlendirmenin KALICI olduğunu söyler. Yönlendirme ve ilk isteğin istek yöntemleri farklı OLMAYABİLİR."
 label_stable: "En yeni kararlı:"
 label_starting_from: ""%s" den başlayarak."
 label_sysinfo: "Sistem bilgisi:"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2023.05.13).
+# This file: Indonesian language data for the front-end (last modified: 2023.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -135,6 +135,7 @@ config_general_protect_frontend: "Menentukan apakah perlindungan biasanya disedi
 config_general_search_engine_verification: "Mencoba memverifikasi permintaan dari mesin pencari? Verifikasi mesin pencari memastikan bahwa mereka tidak akan dilarang sebagai akibat dari melebihi batas pelanggaran (melarang mesin pencari dari situs web Anda biasanya akan memiliki efek negatif pada peringkat mesin pencari Anda, SEO, dll). Ketika diverifikasi, mesin pencari dapat diblokir seperti biasa, tapi tidak akan dilarang. Ketika tidak diverifikasi, itu mungkin bagi mereka untuk dilarang sebagai akibat dari melebihi batas pelanggaran. Juga, verifikasi mesin pencari memberikan proteksi terhadap permintaan mesin pencari palsu dan terhadap entitas yang berpotensi berbahaya yang menyamar sebagai mesin pencari (permintaan tersebut akan diblokir ketika verifikasi mesin pencari diaktifkan). True = Mengaktifkan verifikasi mesin pencari [Default]; False = Menonaktifkan verifikasi mesin pencari."
 config_general_signatures_update_event_log: "File untuk mencatat ketika tanda tangan diperbarui melalui bagian depan. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
 config_general_silent_mode: "Seharusnya CIDRAM diam-diam mengarahkan diblokir upaya akses bukannya menampilkan halaman "akses ditolak"? Jika ya, menentukan lokasi untuk mengarahkan diblokir upaya akses. Jika tidak, kosongkan variabel ini."
+config_general_silent_mode_response_header_code: "Pesan status HTTP mana yang harus dikirim oleh CIDRAM saat secara diam-diam mengarahkan upaya akses yang diblokir?"
 config_general_social_media_verification: "Mencoba memverifikasi permintaan media sosial? Verifikasi media sosial memberikan perlindungan terhadap permintaan media sosial palsu (permintaan semacam ini akan diblokir). True = Mengaktifkan verifikasi media sosial [Default]; False = Mengaktifkan verifikasi media sosial."
 config_general_statistics: "Lacak statistik penggunaan CIDRAM? True = Ya; False = Tidak [Default]."
 config_general_time_format: "Format notasi tanggal/waktu yang digunakan oleh CIDRAM. Opsi tambahan dapat ditambahkan atas permintaan."
@@ -302,6 +303,7 @@ field_verify_all: "Memverifikasi semua"
 field_whitelisted_requests: "Permintaan yang masuk daftar putih"
 field_your_version: "Versi Anda"
 header_login: "Silahkan masuk untuk melanjutkan."
+hints_client_honour: "Terlepas dari bagaimana kami menginstruksikan klien, penting untuk diingat bahwa pada akhirnya kami tidak memiliki kendali atas apa yang klien pilih untuk dilakukan, dan tidak ada jaminan bahwa klien akan menghormati instruksi kami."
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.id.md\#user-content-apa-yang-bisa-saya-gunakan-untuk-default_dns" hreflang="id-ID">Apa yang bisa saya gunakan untuk "default_dns"?</a></em>"
 hints_ipv6_on_32bit: "Catatan: Pencarian IPv6 mungkin tidak bekerja dengan benar pada beberapa sistem 32-bit."
@@ -350,7 +352,7 @@ label_aux_actByp: "melewati"
 label_aux_actGrl: "mendaftar abu-abu"
 label_aux_actLog: "jangan mencatat"
 label_aux_actPro: "mengklasifikasikan"
-label_aux_actRdr: "mengalihkan (tanpa memblokir)"
+label_aux_actRdr: "mengarahkan (tanpa memblokir)"
 label_aux_actRun: "mengeksekusi file untuk menangani"
 label_aux_actWhl: "mendaftar putih"
 label_aux_create_new_rule: "Buat aturan baru"
@@ -390,7 +392,7 @@ label_aux_special_suppress: "Menekan template output"
 label_aux_special_suppress_logging: "Menekan catatan"
 label_aux_special_tracking_default: "Terapkan opsi pelacakan IP default"
 label_aux_special_tracking_extended: "Terapkan opsi pelacakan IP diperpanjang"
-label_aux_target: "Dimana mengalihkan permintaan:"
+label_aux_target: "Dimana mengarahkan permintaan:"
 label_aux_webhooks: "Webhook untuk diterapkan ketika persyaratan aturan dipenuhi:"
 label_backup_location: "Lokasi cadangan repositori (dalam keadaan darurat, atau jika semuanya gagal):"
 label_banned: "Permintaan dilarang"
@@ -468,6 +470,10 @@ label_sections_x_signatures: "%s tanda tangan"
 label_see_also: "Lihat juga:"
 label_show: "Menunjukkan"
 label_signature_type: "Jenis tanda tangan:"
+label_silent_mode_response_header_code_301: "301 Moved Permanently (Dipindahkan Secara Permanen)\nMenginstruksikan klien bahwa pengalihan adalah PERMANEN, dan bahwa metode permintaan yang digunakan untuk pengalihan MUNGKIN berbeda dari metode permintaan yang digunakan untuk permintaan awal."
+label_silent_mode_response_header_code_302: "302 Found (Ditemukan)\nMenginstruksikan klien bahwa pengalihan adalah SEMENTARA, dan bahwa metode permintaan yang digunakan untuk pengalihan MUNGKIN berbeda dari metode permintaan yang digunakan untuk permintaan awal."
+label_silent_mode_response_header_code_307: "307 Temporary Redirect (Pengalihan Sementara)\nMenginstruksikan klien bahwa pengalihan adalah SEMENTARA, dan bahwa metode permintaan yang digunakan untuk pengalihan TIDAK mungkin berbeda dari metode permintaan yang digunakan untuk permintaan awal."
+label_silent_mode_response_header_code_308: "308 Permanent Redirect (Pengalihan Permanen)\nMenginstruksikan klien bahwa pengalihan adalah PERMANEN, dan bahwa metode permintaan yang digunakan untuk pengalihan TIDAK mungkin berbeda dari metode permintaan yang digunakan untuk permintaan awal."
 label_stable: "Terbaru stabil:"
 label_starting_from: "Memulai dari "%s"."
 label_sysinfo: "Informasi sistem:"

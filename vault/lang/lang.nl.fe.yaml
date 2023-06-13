@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2023.05.13).
+# This file: Dutch language data for the front-end (last modified: 2023.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -135,6 +135,7 @@ config_general_protect_frontend: "Geeft aan of de bescherming die gewoonlijk doo
 config_general_search_engine_verification: "Poging om aanvragen van zoekmachines te bevestigen? Verificatie van zoekmachines zorgt ervoor dat ze niet zullen worden verbannen als gevolg van het overschrijden van de overtreding limiet (verbod op zoekmachines van uw website zal meestal een negatief effect hebben op uw zoekmachine ranking, SEO, enz). Wanneer geverifieerd, zoekmachines kunnen worden geblokkeerd als per normaal, maar zal niet worden verbannen. Wanneer niet geverifieerd, het is mogelijk dat zij worden verbannen ten gevolge van het overschrijden van de overtreding limiet. Bovendien, het verifiëren van zoekmachines biedt bescherming tegen nep-zoekmachine aanvragen en tegen de mogelijk schadelijke entiteiten vermomd als zoekmachines (dergelijke aanvragen zal worden geblokkeerd wanneer het verifiëren van zoekmachines is ingeschakeld). True = Inschakelen het verifiëren van zoekmachines [Standaard]; False = Uitschakelen het verifiëren van zoekmachines."
 config_general_signatures_update_event_log: "Een bestand om te loggen wanneer signatures worden bijgewerkt via de frontend. Geef een bestandsnaam, of laat leeg om uit te schakelen."
 config_general_silent_mode: "Moet CIDRAM stilletjes redirect geblokkeerd toegang pogingen in plaats van het weergeven van de "toegang geweigerd" pagina? Als ja, geef de locatie te redirect geblokkeerd toegang pogingen. Als nee, verlaat deze variabele leeg."
+config_general_silent_mode_response_header_code: "Welk HTTP-statusbericht moet CIDRAM verzenden bij het stilzwijgend omleiden van geblokkeerde toegangspogingen?"
 config_general_social_media_verification: "Poging om aanvragen voor sociale media te verifiëren? Verificatie van sociale media biedt bescherming tegen nep-aanvragen voor sociale media (dergelijke aanvragen worden geblokkeerd). True = Inschakelen verificatie van sociale media [Standaard]; False = Uitschakelen verificatie van sociale media."
 config_general_statistics: "Track CIDRAM gebruiksstatistieken? True = Ja; False = Nee [Standaard]."
 config_general_time_format: "De datum notatie gebruikt door CIDRAM. Extra opties kunnen worden toegevoegd op aanvraag."
@@ -304,6 +305,7 @@ field_verify_all: "Verifiëren alles"
 field_whitelisted_requests: "Verzoeken gemarkeerd als op de witte lijst"
 field_your_version: "Uw versie"
 header_login: "Inloggen om verder te gaan."
+hints_client_honour: "Het maakt niet uit hoe we de klant instrueren, het is belangrijk om te onthouden dat we uiteindelijk geen controle hebben over wat de klant kiest om te doen, en er is geen enkele garantie dat de klant onze instructies zal opvolgen."
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.nl.md\#user-content-wat-kan-ik-gebruiken-voor-default_dns" hreflang="nl-NL">Wat kan ik gebruiken voor "default_dns"?</a></em>"
 hints_ipv6_on_32bit: "Opmerking: IPv6-opzoeken mogelijk werken niet correct op sommige 32-bits systemen."
@@ -478,6 +480,10 @@ label_sections_x_signatures:
 label_see_also: "Zie ook:"
 label_show: "Zien"
 label_signature_type: "Signature type:"
+label_silent_mode_response_header_code_301: "301 Moved Permanently (Permanent verhuisd)\nInstrueert de client dat de omleiding PERMANENT is, en dat de verzoekmethode die wordt gebruikt voor de omleiding KAN verschillen van de verzoekmethode die wordt gebruikt voor het oorspronkelijke verzoek."
+label_silent_mode_response_header_code_302: "302 Found (Gevonden)\nInstrueert de client dat de omleiding TIJDELIJK is, en dat de verzoekmethode die wordt gebruikt voor de omleiding KAN verschillen van de verzoekmethode die wordt gebruikt voor het oorspronkelijke verzoek."
+label_silent_mode_response_header_code_307: "307 Temporary Redirect (Tijdelijke omleiding)\nInstrueert de client dat de omleiding TIJDELIJK is, en dat de verzoekmethode die wordt gebruikt voor de omleiding NIET mag verschillen van de verzoekmethode die wordt gebruikt voor het oorspronkelijke verzoek."
+label_silent_mode_response_header_code_308: "308 Permanent Redirect (Permanente omleiding)\nInstrueert de client dat de omleiding PERMANENT is, en dat de verzoekmethode die wordt gebruikt voor de omleiding NIET mag verschillen van de verzoekmethode die wordt gebruikt voor het oorspronkelijke verzoek."
 label_stable: "Laatste stabiele:"
 label_starting_from: "Beginnend met "%s"."
 label_sysinfo: "Systeem informatie:"

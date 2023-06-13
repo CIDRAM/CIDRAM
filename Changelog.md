@@ -254,3 +254,5 @@
 ### v3.3.0
 
 [2023.06.13; New Feature; Maikuolan]: The HTTP response code used when silent mode is invoked is now configurable.
+
+[2023.06.13; Maikuolan]: 302 now permitted as an auxiliary rule HTTP status code override.

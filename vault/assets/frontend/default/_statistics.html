@@ -7,7 +7,7 @@
     <table><tr><td class="spanner">
       <form id="statForm" action="?cidram-page=statistics" method="POST">
         <input name="ClearStats" type="hidden" value="1" />
-        <input type="button" value="{link_copy_to_clipboard}" class="auto" onclick="javascript:if(navigator.clipboard){var doCopy='{label_blocked}\nIPv4 – {Blocked-IPv4}\nIPv6 – {Blocked-IPv6}\n{label_other} – {Blocked-Other}\n{label_total} – {Blocked-Total}\n\n{label_banned}\nIPv4 – {Banned-IPv4}\nIPv6 – {Banned-IPv6}\n{label_total} – {Banned-Total}\n\n{label_captcha}\n{state_failed} – {CAPTCHAs-Failed}\n{state_passed} – {CAPTCHAs-Passed}\n{label_total} – {CAPTCHAs-Total}\n\n{label_other}\n{label_other_since} – {Other-Since}\n{label_other_active_ipv4} – {Other-ActiveIPv4}\n{label_other_active_ipv6} – {Other-ActiveIPv6}\n{label_other_active_modules} – {Other-ActiveModules}\n';navigator.clipboard.writeText(doCopy);alert(doCopy)}else{alert('{response_failed}')}" />
+        <input type="button" value="{link_copy_to_clipboard}" class="auto" onclick="javascript:if(navigator.clipboard){var doCopy='{label_blocked}\nIPv4 – {Blocked-IPv4}\nIPv6 – {Blocked-IPv6}\n{label_other} – {Blocked-Other}\n{label_total} – {Blocked-Total}\n\n{label_banned}\nIPv4 – {Banned-IPv4}\nIPv6 – {Banned-IPv6}\n{label_total} – {Banned-Total}\n\n{label_captcha}\n{state_failed} – {CAPTCHAs-Failed}\n{state_passed} – {CAPTCHAs-Passed}\n{label_total} – {CAPTCHAs-Total}\n\n{label_reported}\nIPv4 – {field_ok} – {Reported-IPv4-OK}\nIPv4 – {response_failed} – {Reported-IPv4-Failed}\nIPv6 – {field_ok} – {Reported-IPv6-OK}\nIPv6 – {response_failed} – {Reported-IPv6-Failed}\n\n{label_other}\n{label_other_since} – {Other-Since}\n{label_other_active_ipv4} – {Other-ActiveIPv4}\n{label_other_active_ipv6} – {Other-ActiveIPv6}\n{label_other_active_modules} – {Other-ActiveModules}\n';navigator.clipboard.writeText(doCopy);alert(doCopy)}else{alert('{response_failed}')}" />
         <input type="button" value="{field_clear_all}" class="auto" onclick="{Confirm-ClearAll}" />
       </form>
     </td></tr></table>
@@ -71,6 +71,27 @@
       <tr>
         <td class="h3"><div class="s">{label_total}</div></td>
         <td class="h3f"><div class="s">{CAPTCHAs-Total}</div></td>
+      </tr>
+      <tr><td class="center h4f" colspan="2"><div class="s">{label_reported}</div></td></tr>
+      <tr>
+        <td class="h3"><div class="s">IPv4 – {field_ok}</div></td>
+        <td class="h3f"><div class="s">{Reported-IPv4-OK}</div></td>
+      </tr>
+      <tr>
+        <td class="h3"><div class="s">IPv4 – {response_failed}</div></td>
+        <td class="h3f"><div class="s">{Reported-IPv4-Failed}</div></td>
+      </tr>
+      <tr>
+        <td class="h3"><div class="s">IPv6 – {field_ok}</div></td>
+        <td class="h3f"><div class="s">{Reported-IPv6-OK}</div></td>
+      </tr>
+      <tr>
+        <td class="h3"><div class="s">IPv6 – {response_failed}</div></td>
+        <td class="h3f"><div class="s">{Reported-IPv6-Failed}</div></td>
+      </tr>
+      <tr>
+        <td class="h3"><div class="s">{label_total}</div></td>
+        <td class="h3f"><div class="s">{Reported-Total}</div></td>
       </tr>
       <tr><td class="center h4f" colspan="2"><div class="s">{label_other}</div></td></tr>
       <tr>

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2023.06.11).
+# This file: Defaults file (last modified: 2023.06.13).
 ##/
 
 Config Defaults:
@@ -485,6 +485,10 @@ Config Defaults:
     Banned-IPv6
     CAPTCHAs-Failed
     CAPTCHAs-Passed
+    Reported-IPv4-OK
+    Reported-IPv4-Failed
+    Reported-IPv6-OK
+    Reported-IPv6-Failed
    choices:
     Blocked-IPv4: "{label_blocked} – IPv4"
     Blocked-IPv6: "{label_blocked} – IPv6"
@@ -496,6 +500,10 @@ Config Defaults:
     Passed-Other: "{label_passed} – {label_other}"
     CAPTCHAs-Failed: "{label_captcha} – {state_failed}"
     CAPTCHAs-Passed: "{label_captcha} – {state_passed}"
+    Reported-IPv4-OK: "{label_reported} – IPv4 – {field_ok}"
+    Reported-IPv4-Failed: "{label_reported} – IPv4 – {response_failed}"
+    Reported-IPv6-OK: "{label_reported} – IPv6 – {field_ok}"
+    Reported-IPv6-Failed: "{label_reported} – IPv6 – {response_failed}"
   force_hostname_lookup:
    type: "bool"
    default: false

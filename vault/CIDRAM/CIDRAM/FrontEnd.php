@@ -4458,7 +4458,11 @@ class FrontEnd extends Core
                 ['Passed-IPv6', 'Passed-Total'],
                 ['Passed-Other', 'Passed-Total'],
                 ['CAPTCHAs-Failed', 'CAPTCHAs-Total'],
-                ['CAPTCHAs-Passed', 'CAPTCHAs-Total']
+                ['CAPTCHAs-Passed', 'CAPTCHAs-Total'],
+                ['Reported-IPv4-OK', 'Reported-Total'],
+                ['Reported-IPv4-Failed', 'Reported-Total'],
+                ['Reported-IPv6-OK', 'Reported-Total'],
+                ['Reported-IPv6-Failed', 'Reported-Total']
             ] as $TheseStats) {
                 if (!isset($this->FE[$TheseStats[1]])) {
                     $this->FE[$TheseStats[1]] = 0;
@@ -4475,7 +4479,7 @@ class FrontEnd extends Core
             }
 
             /** Fetch and process totals. */
-            foreach (['Blocked-Total', 'Banned-Total', 'Passed-Total', 'CAPTCHAs-Total'] as $TheseStats) {
+            foreach (['Blocked-Total', 'Banned-Total', 'Passed-Total', 'CAPTCHAs-Total', 'Reported-Total'] as $TheseStats) {
                 $this->FE[$TheseStats] = $this->NumberFormatter->format($this->FE[$TheseStats]);
             }
 

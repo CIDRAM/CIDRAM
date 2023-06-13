@@ -116,6 +116,10 @@ general:
   Banned-IPv6
   CAPTCHAs-Failed
   CAPTCHAs-Passed
+  Reported-IPv4-OK
+  Reported-IPv4-Failed
+  Reported-IPv6-OK
+  Reported-IPv6-Failed
  force_hostname_lookup: false
  allow_gethostbyaddr_lookup: true
  disabled_channels: ""
@@ -137,8 +141,7 @@ components:
  modules: |
   botua.php
   cookies.php
- imports: |
-  bypasses.yml
+ imports: "bypasses.yml"
  events: ""
 logging:
  standard_log: ""

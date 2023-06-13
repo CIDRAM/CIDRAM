@@ -70,9 +70,10 @@ function onAuxActionChange(e, p, i) {
     document.getElementById(p+'statGroup45').style.backgroundColor = 'rgba(0,0,0,0.1)';
   }
   if ('actRdr' === e) {
-    301 != statusCode && 307 != statusCode && 308 != statusCode && (document.getElementById(p+'statusCode301').checked = true);
+    301 != statusCode && 302 != statusCode && 307 != statusCode && 308 != statusCode && (document.getElementById(p+'statusCode301').checked = true);
     document.getElementById(p+'statusCodeX').disabled = true;
     document.getElementById(p+'statusCode301').disabled = false;
+    document.getElementById(p+'statusCode302').disabled = false;
     document.getElementById(p+'statusCode307').disabled = false;
     document.getElementById(p+'statusCode308').disabled = false;
     document.getElementById(i.length < 1 ? 'ruleTargetDd' : p+'ruleTargetDd').style.filter = '';
@@ -84,6 +85,7 @@ function onAuxActionChange(e, p, i) {
   } else {
     document.getElementById(p+'statusCodeX').disabled = false;
     document.getElementById(p+'statusCode301').disabled = true;
+    document.getElementById(p+'statusCode302').disabled = true;
     document.getElementById(p+'statusCode307').disabled = true;
     document.getElementById(p+'statusCode308').disabled = true;
     document.getElementById(i.length < 1 ? 'ruleTargetDd' : p+'ruleTargetDd').style.filter = 'grayscale(80%) brightness(80%)';

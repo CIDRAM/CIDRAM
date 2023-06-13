@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2023.05.22).
+# This file: Swedish language data for the front-end (last modified: 2023.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -171,6 +171,7 @@ config_general_lang_override: "Lokalisera enligt HTTP_ACCEPT_LANGUAGE när det �
 config_general_numbers: "Hur föredrar du nummer som ska visas? Välj det exempel som är mest korrekt för dig."
 config_general_sensitive: "En lista över vägar att betrakta som känsliga sidor. Varje väg som listas kommer att kontrolleras mot den rekonstruerade URI när det behövs. En väg som börjar med ett snedstreck kommer att behandlas som en bokstavlig och matchas från vägskomponenten i begäran och framåt. Annars kommer en väg som börjar med ett icke-alfanumeriskt tecken, och slutar med samma tecken (eller samma tecken plus en valfri "i"-flagga) att behandlas som ett reguljärt uttryck. Alla andra typer av väg kommer att behandlas som en bokstavlig och kan matcha från vilken del av URI som helst. Huruvida en väg betraktas som en känslig sida kan påverka hur vissa moduler beter sig, men har ingen effekt i övrigt."
 config_general_silent_mode: "Ska CIDRAM utföra tyst omdirigering av blockerade åtkomstförsök istället för att visa sidan "nekat tillgång"? Om ja, ange platsen för omdirigering av blockerade åtkomstförsök. Om nej, lämna denna variabel tom."
+config_general_silent_mode_response_header_code: "Vilket HTTP-statusmeddelande ska CIDRAM skicka vid tyst omdirigering av försök med blockerad åtkomst?"
 config_general_stages: "Kontroller för stadierna i utförandekedjan (om aktiverat, om fel loggas, osv)."
 config_general_statistics: "Styr vilken statistisk information som ska spåras."
 config_general_time_format: "Datum/tid notationsformat som används av CIDRAM. Ytterligare alternativ kan läggas till på begäran."
@@ -365,6 +366,7 @@ field_your_version: "Din version"
 header_login: "Snälla logga in för att fortsätta."
 hints_asnlookup: "** Kräver ASN-uppslagsfunktion (t.ex., via IP-API-modulen eller BGPView-modulen)."
 hints_cause_fp: "*!! Hög sannolikhet för att orsaka falska positiva resultat på grund av %s."
+hints_client_honour: "Oavsett hur vi instruerar kunden är det viktigt att komma ihåg att vi i slutändan inte har någon kontroll över vad kunden väljer att göra, och det finns ingen garanti för att kunden kommer att respektera våra instruktioner."
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#what-can-i-use-for-default_dns" hreflang="en-AU">Vad kan jag använda för "default_dns"?</a></em>"
 hints_duration:
@@ -612,6 +614,10 @@ label_sections_x_signatures:
 label_see_also: "Se även:"
 label_show: "Visa"
 label_signature_type: "Signaturtyp:"
+label_silent_mode_response_header_code_301: "301 Moved Permanently (Flyttad permanent)\nInstruerar klienten att omdirigeringen är PERMANENT, och att förfrågningsmetoden som används för omdirigeringen KAN vara annorlunda än den förfrågningsmetod som användes för den initiala begäran."
+label_silent_mode_response_header_code_302: "302 Found (Hittades)\nInstruerar klienten att omdirigeringen är TILLFÄLLIG, och att förfrågningsmetoden som används för omdirigeringen KAN vara annorlunda än den förfrågningsmetod som användes för den initiala begäran."
+label_silent_mode_response_header_code_307: "307 Temporary Redirect (Tillfällig omdirigering)\nInstruerar klienten att omdirigeringen är TILLFÄLLIG, och att förfrågningsmetoden som används för omdirigeringen INTE får vara annorlunda än den förfrågningsmetod som användes för den initiala begäran."
+label_silent_mode_response_header_code_308: "308 Permanent Redirect (Permanent omdirigering)\nInstruerar klienten att omdirigeringen är PERMANENT, och att förfrågningsmetoden som används för omdirigeringen INTE får vara annorlunda än den förfrågningsmetod som användes för den initiala begäran."
 label_stable: "Senaste stabila:"
 label_starting_from: "Börjar med "%s"."
 label_sysinfo: "Systeminformation:"

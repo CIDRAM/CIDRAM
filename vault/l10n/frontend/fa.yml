@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Farsi language data for the front (last modified: 2023.05.22).
+# This file: Farsi language data for the front (last modified: 2023.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -171,6 +171,7 @@ config_general_lang_override: "هر زمان ممکن است بر اساس HTTP_
 config_general_numbers: "ترجیح می دهید اعداد چگونه نمایش داده شوند؟? مثالی را که به نظر شما صحیح تر است را انتخاب کنید."
 config_general_sensitive: "فهرستی از مسیرهایی که باید به عنوان صفحات حساس در نظر گرفته شوند. هر مسیر لیست شده در صورت نیاز با URI بازسازی شده بررسی می شود. مسیری که با اسلش رو به جلو شروع می‌شود، به صورت تحت اللفظی در نظر گرفته می‌شود، و از جزء مسیر درخواست به بعد مطابقت داده می‌شود. مسیری که با یک کاراکتر غیرالفبایی شروع می‌شود و با همان کاراکتر (یا همان کاراکتر به اضافه پرچم اختیاری «i») به‌عنوان یک عبارت منظم تلقی می‌شود. هر نوع مسیر دیگری به عنوان یک تحت اللفظی تلقی می شود و می تواند از هر بخشی از URI مطابقت داشته باشد. اینکه یک مسیر به عنوان یک صفحه حساس در نظر گرفته شود ممکن است بر رفتار برخی از ماژول ها تأثیر بگذارد، اما تأثیر دیگری ندارد."
 config_general_silent_mode: "آیا CIDRAM باید به‌جای نمایش صفحه «دسترسی ممنوع»، تلاش‌های دسترسی مسدود شده را به‌طور بی‌صدا هدایت کند؟ اگر بله، مکانی را برای تغییر مسیر تلاش های دسترسی مسدود شده مشخص کنید. اگر نه، این متغیر را خالی بگذارید."
+config_general_silent_mode_response_header_code: "CIDRAM هنگام هدایت بی‌صدا تلاش‌های دسترسی مسدود شده باید کدام پیام وضعیت HTTP را ارسال کند؟"
 config_general_stages: "کنترل مراحل زنجیره اجرا (آیا فعال است، آیا خطاها ثبت شده اند، و غیره)."
 config_general_statistics: "کنترل می کند که کدام اطلاعات آماری را ردیابی کند."
 config_general_time_format: "قالب نماد تاریخ/زمان استفاده شده توسط CIDRAM. در صورت درخواست ممکن است گزینه های اضافی اضافه شود."
@@ -365,6 +366,7 @@ field_your_version: "نسخه شما"
 header_login: "لطفا برای ادامه وارد شوید."
 hints_asnlookup: "** به عملکرد جستجوی ASN نیاز دارد (به عنوان مثال، از طریق ماژول IP-API یا BGPView)."
 hints_cause_fp: "*!! احتمال زیاد ایجاد مثبت کاذب به دلیل %s."
+hints_client_honour: "صرف نظر از اینکه چگونه به مشتری دستور می دهیم، مهم است که به خاطر داشته باشید که ما در نهایت هیچ کنترلی بر کاری که مشتری برای انجام انتخاب می کند نداریم، و هیچ تضمینی وجود ندارد که مشتری دستورالعمل های ما را رعایت کند."
 hints_default_dns:
  سوالات متداول.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#what-can-i-use-for-default_dns" hreflang="en-AU">برای «default_dns» از چه چیزی می توانم استفاده کنم؟</a></em>"
 hints_duration:
@@ -600,6 +602,10 @@ label_sections_x_signatures: "%s امضا"
 label_see_also: "همچنین ببینید:"
 label_show: "آشکار کردن"
 label_signature_type: "نوع امضا:"
+label_silent_mode_response_header_code_301: "301 Moved Permanently (برای همیشه جابجا شد)\nبه مشتری دستور می دهد که تغییر مسیر دائمی است و روش درخواست استفاده شده برای تغییر مسیر ممکن است با روش درخواست استفاده شده برای درخواست اولیه متفاوت باشد."
+label_silent_mode_response_header_code_302: "302 Found (پیدا شد)\nبه مشتری دستور می دهد که تغییر مسیر موقتی است و روش درخواست استفاده شده برای تغییر مسیر ممکن است با روش درخواست استفاده شده برای درخواست اولیه متفاوت باشد."
+label_silent_mode_response_header_code_307: "307 Temporary Redirect (تغییر مسیر موقت)\nبه مشتری دستور می دهد که تغییر مسیر موقتی است و روش درخواست استفاده شده برای تغییر مسیر ممکن است با روش درخواست استفاده شده برای درخواست اولیه متفاوت نباشد."
+label_silent_mode_response_header_code_308: "308 Permanent Redirect (تغییر مسیر دائمی)\nبه مشتری دستور می دهد که تغییر مسیر دائمی است و روش درخواست استفاده شده برای تغییر مسیر ممکن است با روش درخواست استفاده شده برای درخواست اولیه متفاوت نباشد."
 label_stable: "آخرین نسخه پایدار:"
 label_starting_from: "شروع از «%s»."
 label_sysinfo: "اطلاعات سیستم:"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Czech language data for the front-end (last modified: 2023.06.10).
+# This file: Czech language data for the front-end (last modified: 2023.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -171,6 +171,7 @@ config_general_lang_override: "Lokalizovat podle HTTP_ACCEPT_LANGUAGE, kdykoli j
 config_general_numbers: "Jak preferujete zobrazení čísel? Vyberte příklad, který se vám zdá nejsprávnější."
 config_general_sensitive: "Seznam cest, které je třeba považovat za citlivé stránky. Každá uvedená cesta bude v případě potřeby zkontrolováno podle rekonstruovaného URI. Cesta, která začíná lomítkem, bude považováno za literál a bude porovnáváno od komponenty cesty v požadavku dále. Jinak bude cesta, která začíná nealfanumerickým znakem a končí stejným znakem (nebo stejným znakem plus volitelný příznak „i“), považováno za regulární výraz. Jakýkoli jiný druh cesty bude považován za literál a může se shodovat s jakoukoli částí URI. To zda je cesta považováno za citlivou stránku, může ovlivnit chování některých modulů, ale jinak to nemá žádný vliv."
 config_general_silent_mode: "Měl by CIDRAM tiše přesměrovat zablokované pokusy o přístup namísto zobrazení stránky „přístup odepřen“? Pokud ano, zadejte umístění, kam se mají pokusy o blokovaný přístup přesměrovat. Pokud ne, ponechte tuto proměnnou prázdnou."
+config_general_silent_mode_response_header_code: "Jakou zprávu o stavu HTTP má CIDRAM odeslat při tichém přesměrování zablokovaných pokusů o přístup?"
 config_general_stages: "Ovládací prvky pro fáze prováděcího řetězce (zda je aktivován, zda jsou zaznamenány chyby, atd)."
 config_general_statistics: "Ovládací prvky pro které statistické informace se mají sledovat."
 config_general_time_format: "Formát zápisu data/času používaný CIDRAM. Další možnosti mohou být přidány na vyžádání."
@@ -368,6 +369,7 @@ field_your_version: "Vaše verze"
 header_login: "Pro pokračování se prosím přihlašte."
 hints_asnlookup: "** Vyžaduje funkčnost vyhledávání ASN (např., přes modul IP-API nebo BGPView)."
 hints_cause_fp: "*!! Vysoká pravděpodobnost způsobení falešných poplachů v důsledku %s."
+hints_client_honour: "Bez ohledu na to, jak dáváme klientovi pokyny, je důležité mít na paměti, že v konečném důsledku nemáme žádnou kontrolu nad tím, co se klient rozhodne udělat, a neexistuje žádná záruka, že klient bude respektovat naše pokyny."
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#what-can-i-use-for-default_dns" hreflang="en-AU">Co mohu použít pro „default_dns“?</a></em>"
 hints_duration:
@@ -615,6 +617,10 @@ label_sections_x_signatures:
 label_see_also: "Viz také:"
 label_show: "Ukázat"
 label_signature_type: "Typ podpisu:"
+label_silent_mode_response_header_code_301: "301 Moved Permanently (Přesunuto natrvalo)\nInstruuje klienta, že přesměrování je TRVALÉ, a že metoda požadavku použitá pro přesměrování MŮŽE být jiná než metoda požadavku použitá pro počáteční požadavek."
+label_silent_mode_response_header_code_302: "302 Found (Našel)\nInstruuje klienta, že přesměrování je DOČASNÉ, a že metoda požadavku použitá pro přesměrování MŮŽE být jiná než metoda požadavku použitá pro počáteční požadavek."
+label_silent_mode_response_header_code_307: "307 Temporary Redirect (Dočasné přesměrování)\nInstruuje klienta, že přesměrování je DOČASNÉ, a že metoda požadavku použitá pro přesměrování NESMÍ být jiná než metoda požadavku použitá pro počáteční požadavek."
+label_silent_mode_response_header_code_308: "308 Permanent Redirect (Trvalé přesměrování)\nInstruuje klienta, že přesměrování je TRVALÉ, a že metoda požadavku použitá pro přesměrování NESMÍ být jiná než metoda požadavku použitá pro počáteční požadavek."
 label_stable: "Nejnovější stabilní:"
 label_starting_from: "Počínaje „%s“."
 label_sysinfo: "Systémové informace:"

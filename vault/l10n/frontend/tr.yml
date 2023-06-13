@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2023.05.22).
+# This file: Turkish language data for the front-end (last modified: 2023.06.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -164,13 +164,14 @@ config_general_emailaddr: "İsterseniz, kullanıcıları engellediğinde verilec
 config_general_emailaddr_display_style: "E-posta adresinin kullanıcılara sunulmasını nasıl tercih ederdiniz?"
 config_general_fields: "Blok olayları sırasında alanlar için kontroller (bir istek engellendiğinde)."
 config_general_force_hostname_lookup: "Hostname aramayı zorla? Doğru/True = Evet; Yanlış/False = Hayır [Varsayılan]. Hostname aramaları normal olarak ihtiyaçlara göre yapılır, ancak tüm istekler için zorla çalıştırılabilir. Bu, günlük dosyalarında daha ayrıntılı bilgi sağlama aracı olarak kullanışlı olabilir, ancak performans üzerinde de olumsuz bir etkisi olabilir."
-config_general_http_response_header_code: "İstekleri engellerken hangi HTTP durum iletisinin CIDRAM göndermesi gerekir?"
+config_general_http_response_header_code: "İstekleri engellerken CIDRAM hangi HTTP durum mesajını göndermelidir?"
 config_general_ipaddr: "Bağlama isteklerinin IP adresi nerede bulunur? (Cloudflare ve benzeri hizmetler için yararlıdır). Varsayılan = REMOTE_ADDR. UYARI: Ne yaptığınızı bilmiyorsanız bunu değiştirmeyin!"
 config_general_lang: "CIDRAM için varsayılan dili belirleyin."
 config_general_lang_override: "Mümkün olduğunda, HTTP_ACCEPT_LANGUAGE uyarınca yerelleştirilsin mi? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
 config_general_numbers: "Numaraların görüntülenmesini nasıl tercih edersiniz? Size en uygun görünen örneği seçin."
 config_general_sensitive: "Hassas sayfalar olarak değerlendirilecek yolların listesi. Listelenen her yol, gerektiğinde yeniden oluşturulmuş URI'ye göre kontrol edilecektir. Eğik çizgi ile başlayan bir yol değişmez bilgi olarak ele alınır ve isteğin yol bileşeninden itibaren eşleştirilir. Alfasayısal olmayan bir karakterle başlayan ve aynı karakterle (veya aynı karakter artı isteğe bağlı bir "i" bayrağıyla) biten bir yol, düzenli ifade olarak ele alınacaktır. Diğer herhangi bir yol hazır bilgi olarak ele alınır ve URI'nin herhangi bir bölümünden eşleşebilir. Bir yolun hassas sayfa olarak görülmesi, bazı modüllerin davranışını etkileyebilir, ancak başka bir etkisi yoktur."
 config_general_silent_mode: "CIDRAM, "erişim reddedildi" sayfasını göstermek yerine, engellenen erişim girişimlerini sessizce yönlendirmeli mi? Yanıt evet ise, engellenen erişim girişimleri için yeniden yönlendirilecek konumu belirtin. Yanıt hayır ise, bu değişkeni boş bırakın."
+config_general_silent_mode_response_header_code: "Engellenen erişim denemelerini sessizce yeniden yönlendirirken CIDRAM hangi HTTP durum mesajını göndermelidir?"
 config_general_stages: "Yürütme zincirinin aşamaları için kontroller (etkin olup olmadığı, hataların günlüğe kaydedilip kaydedilmediği, vb)."
 config_general_statistics: "Hangi istatistiksel bilgilerin izleneceğini kontrol eder."
 config_general_time_format: "CIDRAM tarafından kullanılan tarih/saat gösterimi biçimi. İsteğe bağlı olarak ek seçenekler eklenebilir."
@@ -365,6 +366,7 @@ field_your_version: "Sürümünüz"
 header_login: "Devam etmek için lütfen giriş yapınız."
 hints_asnlookup: "** ASN arama işlevi gerektirir (örneğin, IP-API veya BGPView modülü aracılığıyla)."
 hints_cause_fp: "*!! %s nedeniyle yanlış pozitiflere neden olma olasılığı yüksektir."
+hints_client_honour: "Müşteriye nasıl talimat verirsek verelim, müşterinin ne yapmayı seçtiği üzerinde nihai olarak hiçbir kontrole sahip olmadığımızı ve müşterinin talimatlarımızı yerine getireceğine dair sıfır garanti olduğunu unutmamak önemlidir."
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#what-can-i-use-for-default_dns" hreflang="en-AU">"default_dns" için ne kullanabilirim?</a></em>"
 hints_duration:
@@ -606,6 +608,10 @@ label_sections_x_signatures: "%s dosya"
 label_see_also: "Ayrıca bakınız:"
 label_show: "Göstermek"
 label_signature_type: "İmza tipi:"
+label_silent_mode_response_header_code_301: "301 Moved Permanently (Kalıcı Olarak Taşındı)\nİstemciye yönlendirmenin KALICI olduğunu söyler. Yönlendirme ve ilk isteğin istek yöntemleri farklı OLABİLİR."
+label_silent_mode_response_header_code_302: "302 Found (Kurmak)\nİstemciye yönlendirmenin GEÇİCİ olduğunu söyler. Yönlendirme ve ilk isteğin istek yöntemleri farklı OLABİLİR."
+label_silent_mode_response_header_code_307: "307 Temporary Redirect (Geçici Yönlendirme)\nİstemciye yönlendirmenin GEÇİCİ olduğunu söyler. Yönlendirme ve ilk isteğin istek yöntemleri farklı OLMAYABİLİR."
+label_silent_mode_response_header_code_308: "308 Permanent Redirect (Kalıcı Yönlendirme)\nİstemciye yönlendirmenin KALICI olduğunu söyler. Yönlendirme ve ilk isteğin istek yöntemleri farklı OLMAYABİLİR."
 label_stable: "En yeni kararlı:"
 label_starting_from: ""%s" den başlayarak."
 label_sysinfo: "Sistem bilgisi:"

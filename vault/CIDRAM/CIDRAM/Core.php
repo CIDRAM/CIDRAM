@@ -2012,8 +2012,9 @@ class Core
      */
     public function getStatusHTTP(int $Status): string
     {
-        $Message = [
+        static $Message = [
             301 => 'Moved Permanently',
+            302 => 'Found',
             307 => 'Temporary Redirect',
             308 => 'Permanent Redirect',
             403 => 'Forbidden',

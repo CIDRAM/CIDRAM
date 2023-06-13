@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2023.05.22).
+# This file: German language data for the front-end (last modified: 2023.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -171,6 +171,7 @@ config_general_lang_override: "Nach HTTP_ACCEPT_LANGUAGE lokalisieren wann mögl
 config_general_numbers: "Wie willst du Nummern anzeigen? Wählen Sie das Beispiel aus, das Ihnen am besten entspricht."
 config_general_sensitive: "Eine Liste von Pfaden die als vertrauliche Seiten betrachtet werden sollen. Jeder aufgelistete Pfad wird bei Bedarf mit dem rekonstruierten URI verglichen. Ein Pfad, der mit einem Schrägstrich beginnt, wird als Literal behandelt und ab der Pfadkomponente der Anforderung abgeglichen. Andernfalls wird ein Pfad, der mit einem nicht alphanumerischen Zeichen beginnt, und mit demselben Zeichen (oder demselben Zeichen plus einem optionalen „i“-Flag) endet, als regulärer Ausdruck behandelt. Jede andere Art von Pfad wird als Literal behandelt, und kann mit jedem Teil des URI abgeglichen. Ob ein Pfad als sensible Seite betrachtet wird, kann sich auf das Verhalten einiger Module auswirken, aber hat ansonsten keine Auswirkungen."
 config_general_silent_mode: "Anstatt die „Zugriff verweigert“ Meldung auszugeben, sollte CIDRAM leise die Zugriffe umleiten? Wenn ja, geben Sie den Speicherort an auf welchen die Zugriffe umgeleitet werden sollen. Wenn nein, diese Variable leer lassen."
+config_general_silent_mode_response_header_code: "Welche HTTP-Status-Message sollte CIDRAM senden, wenn blockierte Zugriffsversuche stillschweigend umgeleitet werden?"
 config_general_stages: "Kontrollen für die Phasen der Ausführungskette (ob aktiviert, ob Fehler protokolliert, u.s.w.)."
 config_general_statistics: "Kontrollen für welche statistischen Informationen nachverfolgt werden sollen."
 config_general_time_format: "Das Datumsformat verwendet von CIDRAM. Zusätzliche Optionen können auf Anfrage hinzugefügt werden."
@@ -367,6 +368,7 @@ field_your_version: "Ihre Version"
 header_login: "Bitte einloggen zum Fortfahren."
 hints_asnlookup: "** Erfordert ASN-Lookup-Funktionalität (z.B., über das IP-API-Modul oder BGPView-Modul)."
 hints_cause_fp: "*!! Aufgrund von %s Falsch-Positive zu verursachen Wahrscheinlichkeit Hohe ist."
+hints_client_honour: "Egal was wir dem Client sagen, Es ist wichtig zu bedenken, dass wir letztendlich keine Kontrolle darüber haben, was der Client tut, und es gibt keine Garantie dafür, dass der Client unseren Anweisungen Folge leistet."
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.de.md\#was-kann-ich-für-default_dns-verwenden" hreflang="de-DE">Was kann ich für „default_dns“ verwenden?</a></em>"
 hints_duration:
@@ -615,6 +617,10 @@ label_sections_x_signatures:
 label_see_also: "Siehe auch:"
 label_show: "Zeig"
 label_signature_type: "Signaturtyp:"
+label_silent_mode_response_header_code_301: "301 Moved Permanently (Dauerhaft umgezogen)\nWeist den Client an, dass die Weiterleitung DAUERHAFT ist, und die Anfragemethode der Weiterleitung KANN sich von der der ursprünglichen Anfrage unterscheiden."
+label_silent_mode_response_header_code_302: "302 Found (Gefunden)\nWeist den Client an, dass die Weiterleitung TEMPORÄR ist, und die Anfragemethode der Weiterleitung KANN sich von der der ursprünglichen Anfrage unterscheiden."
+label_silent_mode_response_header_code_307: "307 Temporary Redirect (Temporäre Weiterleitung)\nWeist den Client an, dass die Weiterleitung TEMPORÄR ist, und die Anfragemethode der Weiterleitung kann NICHT sich von der der ursprünglichen Anfrage unterscheiden."
+label_silent_mode_response_header_code_308: "308 Permanent Redirect (Permanente Weiterleitung)\nWeist den Client an, dass die Weiterleitung DAUERHAFT ist, und die Anfragemethode der Weiterleitung kann NICHT sich von der der ursprünglichen Anfrage unterscheiden."
 label_stable: "Neueste stabil:"
 label_starting_from: "Beginnend mit „%s“."
 label_sysinfo: "System Information:"

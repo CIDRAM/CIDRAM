@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Punjabi language data for the front-end (last modified: 2023.05.22).
+# This file: Punjabi language data for the front-end (last modified: 2023.06.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -171,6 +171,7 @@ config_general_lang_override: "Localise according to HTTP_ACCEPT_LANGUAGE whenev
 config_general_numbers: "How do you prefer numbers to be displayed? Select the example that looks the most correct to you."
 config_general_sensitive: "A list of paths to regard as sensitive pages. Each path listed will be checked against the reconstructed URI when needed. A path which begins with a forward slash will be treated as a literal, and matched from the path component of the request onward. Otherwise, a path which begins with a non-alphanumeric character, and ends with that same character (or that same character plus an optional "i" flag) will be treated as a regular expression. Any other kind of path will be treated as a literal, and can match from any part of the URI. Whether a path is regarded as a sensitive page may affect how some modules behave, but doesn't have any effect otherwise."
 config_general_silent_mode: "Should CIDRAM silently redirect blocked access attempts instead of displaying the "ਪਹੁੰਚ ਇਨਕਾਰ" page? If yes, specify the location to redirect blocked access attempts to. If no, leave this variable blank."
+config_general_silent_mode_response_header_code: "ਬਲੌਕ ਕੀਤੀਆਂ ਐਕਸੈਸ ਕੋਸ਼ਿਸ਼ਾਂ ਨੂੰ ਚੁੱਪਚਾਪ ਰੀਡਾਇਰੈਕਟ ਕਰਨ ਵੇਲੇ CIDRAM ਨੂੰ ਕਿਹੜਾ HTTP ਸਥਿਤੀ ਸੁਨੇਹਾ ਭੇਜਣਾ ਚਾਹੀਦਾ ਹੈ?"
 config_general_stages: "Controls for the stages of the execution chain (whether activated, whether errors are logged, etc)."
 config_general_statistics: "Controls which statistical information to track."
 config_general_time_format: "The date/time notation format used by CIDRAM. Additional options may be added upon request."
@@ -367,6 +368,7 @@ field_your_version: "Your version"
 header_login: "Please log in to continue."
 hints_asnlookup: "** Requires ASN lookup functionality (e.g., via the IP-API or BGPView module)."
 hints_cause_fp: "*!! High likelihood of causing false positives due to %s."
+hints_client_honour: "ਕਲਾਇੰਟ ਨੂੰ ਦਿੱਤੀਆਂ ਗਈਆਂ ਹਿਦਾਇਤਾਂ ਦੇ ਪਰਵਾਹ ਕੀਤੇ ਬਿਨਾਂ, ਇਹ ਯਾਦ ਰੱਖਣਾ ਮਹੱਤਵਪੂਰਨ ਹੈ ਕਿ ਅਸੀਂ ਉਹਨਾਂ ਦੀਆਂ ਚੋਣਾਂ ਨੂੰ ਨਿਯੰਤਰਿਤ ਕਰਨ ਵਿੱਚ ਅਸਮਰੱਥ ਹਾਂ, ਅਤੇ ਇਸ ਗੱਲ ਦੀ ਕੋਈ ਗਾਰੰਟੀ ਨਹੀਂ ਹੈ ਕਿ ਕਲਾਇੰਟ ਸਾਡੀਆਂ ਹਿਦਾਇਤਾਂ ਦਾ ਸਨਮਾਨ ਕਰੇਗਾ।"
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#what-can-i-use-for-default_dns" hreflang="en-AU">What can I use for "default_dns"?</a></em>"
 hints_duration:
@@ -608,6 +610,10 @@ label_sections_x_signatures:
 label_see_also: "See also:"
 label_show: "Show"
 label_signature_type: "Signature type:"
+label_silent_mode_response_header_code_301: "301 Moved Permanently (ਸਥਾਈ ਤੌਰ 'ਤੇ ਚਲੇ ਗਏ)\nਕਲਾਇੰਟ ਨੂੰ ਨਿਰਦੇਸ਼ ਦਿੰਦਾ ਹੈ ਕਿ ਰੀਡਾਇਰੈਕਟ ਸਥਾਈ ਹੈ, ਅਤੇ ਇਹ ਕਿ ਰੀਡਾਇਰੈਕਟ ਲਈ ਵਰਤੀ ਗਈ ਬੇਨਤੀ ਵਿਧੀ ਸ਼ੁਰੂਆਤੀ ਬੇਨਤੀ ਲਈ ਵਰਤੀ ਗਈ ਬੇਨਤੀ ਵਿਧੀ ਨਾਲੋਂ ਵੱਖਰੀ ਹੋ ਸਕਦੀ ਹੈ।"
+label_silent_mode_response_header_code_302: "302 Found (ਮਿਲਿਆ)\nਕਲਾਇੰਟ ਨੂੰ ਨਿਰਦੇਸ਼ ਦਿੰਦਾ ਹੈ ਕਿ ਰੀਡਾਇਰੈਕਟ ਅਸਥਾਈ ਹੈ, ਅਤੇ ਇਹ ਕਿ ਰੀਡਾਇਰੈਕਟ ਲਈ ਵਰਤੀ ਗਈ ਬੇਨਤੀ ਵਿਧੀ ਸ਼ੁਰੂਆਤੀ ਬੇਨਤੀ ਲਈ ਵਰਤੀ ਗਈ ਬੇਨਤੀ ਵਿਧੀ ਨਾਲੋਂ ਵੱਖਰੀ ਹੋ ਸਕਦੀ ਹੈ।"
+label_silent_mode_response_header_code_307: "307 Temporary Redirect (ਅਸਥਾਈ ਰੀਡਾਇਰੈਕਟ)\nਕਲਾਇੰਟ ਨੂੰ ਨਿਰਦੇਸ਼ ਦਿੰਦਾ ਹੈ ਕਿ ਰੀਡਾਇਰੈਕਟ ਅਸਥਾਈ ਹੈ, ਅਤੇ ਇਹ ਕਿ ਰੀਡਾਇਰੈਕਟ ਲਈ ਵਰਤੀ ਗਈ ਬੇਨਤੀ ਵਿਧੀ ਸ਼ੁਰੂਆਤੀ ਬੇਨਤੀ ਲਈ ਵਰਤੀ ਗਈ ਬੇਨਤੀ ਵਿਧੀ ਨਾਲੋਂ ਵੱਖਰੀ ਨਹੀਂ ਹੋ ਸਕਦੀ।"
+label_silent_mode_response_header_code_308: "308 Permanent Redirect (ਸਥਾਈ ਰੀਡਾਇਰੈਕਟ)\nਕਲਾਇੰਟ ਨੂੰ ਨਿਰਦੇਸ਼ ਦਿੰਦਾ ਹੈ ਕਿ ਰੀਡਾਇਰੈਕਟ ਸਥਾਈ ਹੈ, ਅਤੇ ਇਹ ਕਿ ਰੀਡਾਇਰੈਕਟ ਲਈ ਵਰਤੀ ਗਈ ਬੇਨਤੀ ਵਿਧੀ ਸ਼ੁਰੂਆਤੀ ਬੇਨਤੀ ਲਈ ਵਰਤੀ ਗਈ ਬੇਨਤੀ ਵਿਧੀ ਨਾਲੋਂ ਵੱਖਰੀ ਨਹੀਂ ਹੋ ਸਕਦੀ।"
 label_stable: "Latest stable:"
 label_starting_from: "Starting from "%s"."
 label_sysinfo: "System information:"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2023.05.22).
+# This file: Dutch language data for the front-end (last modified: 2023.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -171,6 +171,7 @@ config_general_lang_override: "Waar mogelijk lokaliseren volgens HTTP_ACCEPT_LAN
 config_general_numbers: "Hoe verkiest u nummers die worden weergegeven? Selecteer het voorbeeld dat het meest correct voor u lijkt."
 config_general_sensitive: "Een lijst met paden die als gevoelige pagina's moeten worden beschouwd. Elk vermeld pad wordt indien nodig gecontroleerd aan de hand van de gereconstrueerde URI. Een pad dat begint met een schuine streep naar voren wordt behandeld als een letterlijke waarde en wordt gematcht vanaf de padcomponent van het verzoek. Anders wordt een pad dat begint met een niet-alfanumeriek teken en eindigt met datzelfde teken (of datzelfde teken plus een optionele "i"-vlag) behandeld als een reguliere expressie. Elk ander pad wordt behandeld als een letterlijk pad en kan overeenkomen met elk deel van de URI. Of een pad als een gevoelige pagina wordt beschouwd, kan van invloed zijn op het gedrag van sommige modules, maar heeft verder geen effect."
 config_general_silent_mode: "Moet CIDRAM stilletjes redirect geblokkeerd toegang pogingen in plaats van het weergeven van de "toegang geweigerd" pagina? Als ja, geef de locatie te redirect geblokkeerd toegang pogingen. Als nee, verlaat deze variabele leeg."
+config_general_silent_mode_response_header_code: "Welk HTTP-statusbericht moet CIDRAM verzenden bij het stilzwijgend omleiden van geblokkeerde toegangspogingen?"
 config_general_stages: "Controles voor de fasen van de uitvoeringsketen (of ingeschakeld, of fouten worden geregistreerd, enz)."
 config_general_statistics: "Bepaalt welke statistische informatie moet worden bijgehouden."
 config_general_time_format: "De datum notatie gebruikt door CIDRAM. Extra opties kunnen worden toegevoegd op aanvraag."
@@ -367,6 +368,7 @@ field_your_version: "Uw versie"
 header_login: "Inloggen om verder te gaan."
 hints_asnlookup: "** Vereist ASN-opzoekfunctionaliteit (b.v., via de IP-API-module of BGPView-module)."
 hints_cause_fp: "*!! Grote kans op het veroorzaken van valse positieven vanwege %s."
+hints_client_honour: "Het maakt niet uit hoe we de klant instrueren, het is belangrijk om te onthouden dat we uiteindelijk geen controle hebben over wat de klant kiest om te doen, en er is geen enkele garantie dat de klant onze instructies zal opvolgen."
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.nl.md\#wat-kan-ik-gebruiken-voor-default_dns" hreflang="nl-NL">Wat kan ik gebruiken voor "default_dns"?</a></em>"
 hints_duration:
@@ -612,6 +614,10 @@ label_sections_x_signatures:
 label_see_also: "Zie ook:"
 label_show: "Zien"
 label_signature_type: "Signature type:"
+label_silent_mode_response_header_code_301: "301 Moved Permanently (Permanent verhuisd)\nInstrueert de client dat de omleiding PERMANENT is, en dat de verzoekmethode die wordt gebruikt voor de omleiding KAN verschillen van de verzoekmethode die wordt gebruikt voor het oorspronkelijke verzoek."
+label_silent_mode_response_header_code_302: "302 Found (Gevonden)\nInstrueert de client dat de omleiding TIJDELIJK is, en dat de verzoekmethode die wordt gebruikt voor de omleiding KAN verschillen van de verzoekmethode die wordt gebruikt voor het oorspronkelijke verzoek."
+label_silent_mode_response_header_code_307: "307 Temporary Redirect (Tijdelijke omleiding)\nInstrueert de client dat de omleiding TIJDELIJK is, en dat de verzoekmethode die wordt gebruikt voor de omleiding NIET mag verschillen van de verzoekmethode die wordt gebruikt voor het oorspronkelijke verzoek."
+label_silent_mode_response_header_code_308: "308 Permanent Redirect (Permanente omleiding)\nInstrueert de client dat de omleiding PERMANENT is, en dat de verzoekmethode die wordt gebruikt voor de omleiding NIET mag verschillen van de verzoekmethode die wordt gebruikt voor het oorspronkelijke verzoek."
 label_stable: "Laatste stabiele:"
 label_starting_from: "Beginnend met "%s"."
 label_sysinfo: "Systeem informatie:"

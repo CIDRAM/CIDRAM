@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2023.05.22).
+# This file: Indonesian language data for the front-end (last modified: 2023.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -171,6 +171,7 @@ config_general_lang_override: "Melokalisasikan sesuai dengan HTTP_ACCEPT_LANGUAG
 config_general_numbers: "Cara apa yang kamu suka nomor menjadi ditampilkan? Pilih contoh yang paling sesuai untuk Anda."
 config_general_sensitive: "Daftar jalur yang dianggap sebagai halaman sensitif. Setiap jalur yang terdaftar akan diperiksa terhadap URI yang direkonstruksi bila diperlukan. Jalur yang dimulai dengan garis miring ke depan akan diperlakukan sebagai literal, dan dicocokkan dari komponen jalur permintaan selanjutnya. Jika tidak, jalur yang dimulai dengan karakter non-alfanumerik, dan diakhiri dengan karakter yang sama (atau karakter yang sama ditambah tanda "i" opsional) akan diperlakukan sebagai ekspresi reguler. Jenis jalur lain apapun akan diperlakukan sebagai literal, dan dapat dicocokkan dari bagian manapun dari URI. Apakah jalur dianggap sebagai halaman sensitif dapat memengaruhi perilaku beberapa modul, tetapi sebaliknya tidak berpengaruh apapun."
 config_general_silent_mode: "Seharusnya CIDRAM diam-diam mengarahkan diblokir upaya akses bukannya menampilkan halaman "akses ditolak"? Jika ya, menentukan lokasi untuk mengarahkan diblokir upaya akses. Jika tidak, kosongkan variabel ini."
+config_general_silent_mode_response_header_code: "Pesan status HTTP mana yang harus dikirim oleh CIDRAM saat secara diam-diam mengarahkan upaya akses yang diblokir?"
 config_general_stages: "Kontrol untuk tahapan rantai eksekusi (apakah diaktifkan, apakah kesalahan dicatat, dll)."
 config_general_statistics: "Mengontrol informasi statistik mana yang akan dilacak."
 config_general_time_format: "Format notasi tanggal/waktu yang digunakan oleh CIDRAM. Opsi tambahan dapat ditambahkan atas permintaan."
@@ -365,6 +366,7 @@ field_your_version: "Versi Anda"
 header_login: "Silahkan masuk untuk melanjutkan."
 hints_asnlookup: "** Memerlukan fungsionalitas pencarian ASN (misalnya, melalui modul IP-API atau BGPView)."
 hints_cause_fp: "*!! Kemungkinan tinggi menyebabkan positif palsu karena %s."
+hints_client_honour: "Terlepas dari bagaimana kami menginstruksikan klien, penting untuk diingat bahwa pada akhirnya kami tidak memiliki kendali atas apa yang klien pilih untuk dilakukan, dan tidak ada jaminan bahwa klien akan menghormati instruksi kami."
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.id.md\#apa-yang-bisa-saya-gunakan-untuk-default_dns" hreflang="id-ID">Apa yang bisa saya gunakan untuk "default_dns"?</a></em>"
 hints_duration:
@@ -468,7 +470,7 @@ label_aux_actByp: "melewati"
 label_aux_actGrl: "mendaftar abu-abu"
 label_aux_actLog: "jangan mencatat"
 label_aux_actPro: "mengklasifikasikan"
-label_aux_actRdr: "mengalihkan (tanpa memblokir)"
+label_aux_actRdr: "mengarahkan (tanpa memblokir)"
 label_aux_actRun: "mengeksekusi file untuk menangani"
 label_aux_actWhl: "mendaftar putih"
 label_aux_create_new_rule: "Buat aturan baru"
@@ -508,7 +510,7 @@ label_aux_special_suppress: "Menekan template output"
 label_aux_special_suppress_logging: "Menekan catatan"
 label_aux_special_tracking_default: "Terapkan opsi pelacakan IP default"
 label_aux_special_tracking_extended: "Terapkan opsi pelacakan IP diperpanjang"
-label_aux_target: "Dimana mengalihkan permintaan:"
+label_aux_target: "Dimana mengarahkan permintaan:"
 label_aux_webhooks: "Webhook untuk diterapkan ketika persyaratan aturan dipenuhi:"
 label_backup_location: "Lokasi cadangan repositori (dalam keadaan darurat, atau jika semuanya gagal):"
 label_banned: "Permintaan dilarang"
@@ -601,6 +603,10 @@ label_sections_x_signatures: "%s tanda tangan"
 label_see_also: "Lihat juga:"
 label_show: "Menunjukkan"
 label_signature_type: "Jenis tanda tangan:"
+label_silent_mode_response_header_code_301: "301 Moved Permanently (Dipindahkan Secara Permanen)\nMenginstruksikan klien bahwa pengalihan adalah PERMANEN, dan bahwa metode permintaan yang digunakan untuk pengalihan MUNGKIN berbeda dari metode permintaan yang digunakan untuk permintaan awal."
+label_silent_mode_response_header_code_302: "302 Found (Ditemukan)\nMenginstruksikan klien bahwa pengalihan adalah SEMENTARA, dan bahwa metode permintaan yang digunakan untuk pengalihan MUNGKIN berbeda dari metode permintaan yang digunakan untuk permintaan awal."
+label_silent_mode_response_header_code_307: "307 Temporary Redirect (Pengalihan Sementara)\nMenginstruksikan klien bahwa pengalihan adalah SEMENTARA, dan bahwa metode permintaan yang digunakan untuk pengalihan TIDAK mungkin berbeda dari metode permintaan yang digunakan untuk permintaan awal."
+label_silent_mode_response_header_code_308: "308 Permanent Redirect (Pengalihan Permanen)\nMenginstruksikan klien bahwa pengalihan adalah PERMANEN, dan bahwa metode permintaan yang digunakan untuk pengalihan TIDAK mungkin berbeda dari metode permintaan yang digunakan untuk permintaan awal."
 label_stable: "Terbaru stabil:"
 label_starting_from: "Memulai dari "%s"."
 label_sysinfo: "Informasi sistem:"

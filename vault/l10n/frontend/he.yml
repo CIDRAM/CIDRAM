@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hebrew language data for the front-end (last modified: 2023.05.22).
+# This file: Hebrew language data for the front-end (last modified: 2023.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -171,6 +171,7 @@ config_general_lang_override: "האם לבצע לוקליזציה לפי HTTP_AC
 config_general_numbers: "איך אתה מעדיף שמספרים יוצגו? בחר את הדוגמה שנראית לך הנכונה ביותר."
 config_general_sensitive: "רשימה של נתיבים להתייחס אליהם כדפים רגישים. כל נתיב הרשום ייבדק מול ה-URI המשוחזר בעת הצורך. נתיב שמתחיל באלכסון קדימה יטופל כמחרוזת מילולי, ויתאים ממרכיב הנתיב של הבקשה ואילך. אחרת, נתיב שמתחיל בתו שאינו אלפאנומרי ומסתיים באותו תו (או אותו תו בתוספת דגל "i") יטופל כביטוי רגיל. כל סוג אחר של נתיב יטופל כמחרוזת מילולי, והוא יכול להתאים מכל חלק של ה-URI. נתיב הנחשב כדף רגיש עשוי להשפיע על אופן הפעולה של מודולים מסוימים, אך אין לו השפעה אחרת."
 config_general_silent_mode: "האם CIDRAM צריך לנתב מחדש בשקט ניסיונות גישה חסומים במקום להציג את הדף "גישה נדחתה"? אם כן, ציין את המיקום שאליו יש להפנות ניסיונות גישה חסומה. אם לא, השאר את המשתנה הזה ריק."
+config_general_silent_mode_response_header_code: "איזו הודעת מצב HTTP צריך לשלוח על CIDRAM בעת הפנייה שקטה של ניסיונות גישה חסומה?"
 config_general_stages: "בקרות לשלבי שרשרת הביצוע (אם מופעל, אם נרשמות שגיאות, וכו')."
 config_general_statistics: "שולט על איזה מידע סטטיסטי לעקוב."
 config_general_time_format: "פורמט סימון התאריך/שעה המשמש את CIDRAM. ניתן להוסיף אפשרויות נוספות לפי בקשה."
@@ -367,6 +368,7 @@ field_your_version: "הגרסה שלך"
 header_login: "אנא התחבר על מנת להמשיך."
 hints_asnlookup: "** דורש פונקציונליות חיפוש ASN (למשל, דרך מודול IP-API או BGPView)."
 hints_cause_fp: "*!! סבירות גבוהה לגרום לתוצאות חיוביות שגויות עקב %s."
+hints_client_honour: "לא משנה איך אנחנו מדריכים את הלקוח, חשוב לזכור שבסופו של דבר אין לנו שליטה על מה שהלקוח בוחר לעשות, ואין שום ערובה לכך שהלקוח יכבד את הוראותינו."
 hints_default_dns:
  שאלות נפוצות.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#what-can-i-use-for-default_dns" hreflang="en-AU">במה עלי להשתמש עבור "default_dns"?</a></em>"
 hints_duration:
@@ -605,6 +607,10 @@ label_sections_x_signatures:
 label_see_also: "ראה גם:"
 label_show: "הצג"
 label_signature_type: "סוג חתימה:"
+label_silent_mode_response_header_code_301: "301 Moved Permanently (הועבר באופן קבוע)\nמורה ללקוח שההפניה מחדש היא קבועה, וששיטת הבקשה המשמשת להפניה מחדש עשויה להיות שונה משיטת הבקשה ששימשה לבקשה הראשונית."
+label_silent_mode_response_header_code_302: "302 Found (מצאתי)\nמורה ללקוח שההפניה מחדש היא זמנית, וששיטת הבקשה המשמשת להפניה מחדש עשויה להיות שונה משיטת הבקשה ששימשה לבקשה הראשונית."
+label_silent_mode_response_header_code_307: "307 Temporary Redirect (הפניה זמנית)\nמורה ללקוח שההפניה מחדש היא זמנית, וששיטת הבקשה המשמשת להפניה מחדש לא יכולה להיות שונה משיטת הבקשה המשמשת לבקשה הראשונית."
+label_silent_mode_response_header_code_308: "308 Permanent Redirect (הפניה קבועה)\nמורה ללקוח שההפניה מחדש היא קבועה, וששיטת הבקשה המשמשת להפניה מחדש לא יכולה להיות שונה משיטת הבקשה המשמשת לבקשה הראשונית."
 label_stable: "יציב אחרון:"
 label_starting_from: "החל מ-"%s"."
 label_sysinfo: "מידע מערכת:"

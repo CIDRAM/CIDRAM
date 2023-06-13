@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2023.05.22).
+# This file: Spanish language data for the front-end (last modified: 2023.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -171,6 +171,7 @@ config_general_lang_override: "¿Localizar según HTTP_ACCEPT_LANGUAGE siempre q
 config_general_numbers: "¿Cómo prefieres los números que se muestran? Seleccione el ejemplo que le parezca más correcto."
 config_general_sensitive: "Una lista de rutas para considerar como páginas confidenciales. Cada ruta listada se comparará con el URI reconstruido cuando sea necesario. Una ruta que comienza con una barra inclinada se tratará como un literal, y se comparará desde el componente de ruta de la solicitud en adelante. Alternativamente, una ruta que comienza con un carácter no alfanumérico, y termina con ese mismo carácter (o ese mismo carácter más un indicador "i" opcional) se tratará como una expresión regular. Cualquier otro tipo de ruta se tratará como un literal, y puede coincidir con cualquier parte del URI. Si una ruta se considera una página confidencial puede afectar el comportamiento de algunos módulos, pero no tiene ningún efecto en otros casos."
 config_general_silent_mode: "Debería CIDRAM silencio redirigir los intentos de acceso bloqueados en lugar de mostrar la página "acceso denegado"? En caso afirmativo, especifique la ubicación para redirigir los intentos de acceso bloqueados. Si no, dejar esta variable en blanco."
+config_general_silent_mode_response_header_code: "¿Cuál mensaje de estado HTTP debe enviar CIDRAM al redirigir silenciosamente los intentos de acceso bloqueados?"
 config_general_stages: "Controles para las etapas de la cadena de ejecución (si está habilitado, si se registran errores, etc)."
 config_general_statistics: "Controla qué información estadística rastrear."
 config_general_time_format: "El formato de notación de fecha/hora usado por CIDRAM. Se pueden añadir opciones adicionales bajo petición."
@@ -367,6 +368,7 @@ field_your_version: "Tu versión"
 header_login: "Por favor iniciar sesión para continuar."
 hints_asnlookup: "** Requiere la funcionalidad de búsqueda de ASN (por ejemplo, a través del módulo IP-API o BGPView)."
 hints_cause_fp: "*!! Alta probabilidad de causar falsos positivos debido a %s."
+hints_client_honour: "Independientemente de como instruimos al cliente, es importante recordar que no tenemos control sobre lo que el cliente elige hacer, y no hay garantía de que el cliente cumplirá con nuestras instrucciones."
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.es.md\#qué-puedo-usar-para-default_dns" hreflang="es-ES">¿Qué puedo usar para "default_dns"?</a></em>"
 hints_duration:
@@ -612,6 +614,10 @@ label_sections_x_signatures:
 label_see_also: "Ver también:"
 label_show: "Mostrar"
 label_signature_type: "Tipo de firma:"
+label_silent_mode_response_header_code_301: "301 Moved Permanently (Movido permanentemente)\nIndica al cliente que la redirección es PERMANENTE, y que el método de solicitud utilizado para la redirección PUEDE ser diferente del método de solicitud utilizado para la solicitud inicial."
+label_silent_mode_response_header_code_302: "302 Found (Encontrado)\nIndica al cliente que la redirección es TEMPORAL, y que el método de solicitud utilizado para la redirección PUEDE ser diferente del método de solicitud utilizado para la solicitud inicial."
+label_silent_mode_response_header_code_307: "307 Temporary Redirect (Redirección temporal)\nIndica al cliente que la redirección es TEMPORAL, y que el método de solicitud utilizado para la redirección NO puede ser diferente del método de solicitud utilizado para la solicitud inicial."
+label_silent_mode_response_header_code_308: "308 Permanent Redirect (Redirección permanente)\nIndica al cliente que la redirección es PERMANENTE, y que el método de solicitud utilizado para la redirección NO puede ser diferente del método de solicitud utilizado para la solicitud inicial."
 label_stable: "Más nuevo estable:"
 label_starting_from: "Empezando por "%s"."
 label_sysinfo: "Información del sistema:"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2023.05.22).
+# This file: English language data for the front-end (last modified: 2023.06.11).
 ##/
 
 Extended Description AbuseIPDB module: "Blocks requests from IPs listed at AbuseIPDB."
@@ -157,6 +157,7 @@ config_general_lang_override: "Localise according to HTTP_ACCEPT_LANGUAGE whenev
 config_general_numbers: "How do you prefer numbers to be displayed? Select the example that looks the most correct to you."
 config_general_sensitive: "A list of paths to regard as sensitive pages. Each path listed will be checked against the reconstructed URI when needed. A path which begins with a forward slash will be treated as a literal, and matched from the path component of the request onward. Otherwise, a path which begins with a non-alphanumeric character, and ends with that same character (or that same character plus an optional "i" flag) will be treated as a regular expression. Any other kind of path will be treated as a literal, and can match from any part of the URI. Whether a path is regarded as a sensitive page may affect how some modules behave, but doesn't have any effect otherwise."
 config_general_silent_mode: "Should CIDRAM silently redirect blocked access attempts instead of displaying the "access denied" page? If yes, specify the location to redirect blocked access attempts to. If no, leave this variable blank."
+config_general_silent_mode_response_header_code: "Which HTTP status message should CIDRAM send when silently redirecting blocked access attempts?"
 config_general_stages: "Controls for the stages of the execution chain (whether enabled, whether errors are logged, etc)."
 config_general_statistics: "Controls which statistical information to track."
 config_general_time_format: "The date/time notation format used by CIDRAM. Additional options may be added upon request."
@@ -353,6 +354,7 @@ field_your_version: "Your version"
 header_login: "Please log in to continue."
 hints_asnlookup: "** Requires ASN lookup functionality (e.g., via the IP-API or BGPView module)."
 hints_cause_fp: "*!! High likelihood of causing false positives due to %s."
+hints_client_honour: "No matter how we instruct the client, it's important to remember that we ultimately have no control over what the client chooses to do, and there's zero guarantee that the client will honour our instructions."
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#what-can-i-use-for-default_dns" hreflang="en-AU">What can I use for "default_dns"?</a></em>"
 hints_duration:
@@ -594,6 +596,10 @@ label_sections_x_signatures:
 label_see_also: "See also:"
 label_show: "Show"
 label_signature_type: "Signature type:"
+label_silent_mode_response_header_code_301: "301 Moved Permanently\nInstructs the client that the redirect is PERMANENT, and that the request method used for the redirect MAY be different than the request method used for the initial request."
+label_silent_mode_response_header_code_302: "302 Found\nInstructs the client that the redirect is TEMPORARY, and that the request method used for the redirect MAY be different than the request method used for the initial request."
+label_silent_mode_response_header_code_307: "307 Temporary Redirect\nInstructs the client that the redirect is TEMPORARY, and that the request method used for the redirect may NOT be different than the request method used for the initial request."
+label_silent_mode_response_header_code_308: "308 Permanent Redirect\nInstructs the client that the redirect is PERMANENT, and that the request method used for the redirect may NOT be different than the request method used for the initial request."
 label_stable: "Latest stable:"
 label_starting_from: "Starting from "%s"."
 label_sysinfo: "System information:"

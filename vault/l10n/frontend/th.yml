@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2023.05.22).
+# This file: Thai language data for the front-end (last modified: 2023.06.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -171,6 +171,7 @@ config_general_lang_override: "แปลตาม HTTP_ACCEPT_LANGUAGE ทุก
 config_general_numbers: "คุณต้องการตัวเลขที่จะแสดงอย่างไร? เลือกตัวอย่างที่ดูเหมือนถูกต้องที่สุด."
 config_general_sensitive: "รายการเส้นทางที่จะพิจารณาว่าเป็นหน้าที่ละเอียดอ่อน. หากจำเป็น แต่ละพาธที่แสดงจะถูกตรวจสอบกับ URI ที่สร้างขึ้นใหม่. เส้นทางที่ขึ้นต้นด้วยเครื่องหมายทับจะถือว่าเป็นตัวอักษร และจับคู่จากองค์ประกอบเส้นทางของคำขอเป็นต้นไป. มิฉะนั้น เส้นทางที่ขึ้นต้นด้วยอักขระที่ไม่ใช่ตัวอักษรและตัวเลข และลงท้ายด้วยอักขระเดียวกันนั้น (หรืออักขระเดียวกันนั้นบวกกับแฟล็ก "i" ที่เป็นทางเลือก) จะถือว่าเป็นนิพจน์ทั่วไป. เส้นทางประเภทอื่นๆ จะถือเป็นตัวอักษร และสามารถจับคู่จากส่วนใดก็ได้ของ URI. การที่เส้นทางถือเป็นเพจที่ละเอียดอ่อนอาจส่งผลต่อลักษณะการทำงานของโมดูลบางโมดูลหรือไม่ แต่ไม่มีผลกระทบอื่นใด."
 config_general_silent_mode: "ควร CIDRAM เปลี่ยนเส้นทางพยายามเข้าถึงที่ถูกบล็อกเงียบค่อนข้างมากกว่าการแสดงหน้า "ปฏิเสธการเข้าใช้" หรือไม่? ถ้าใช่ ระบุตำแหน่งเป้าหมาย. ถ้าไม่ ปล่อยให้ตัวแปรนี้ว่างเปล่า."
+config_general_silent_mode_response_header_code: "ข้อความสถานะ HTTP ที่ CIDRAM ควรส่งเมื่อพยายามเปลี่ยนเส้นทางการเข้าถึงที่ถูกบล็อกโดยไม่โต้ตอบ?"
 config_general_stages: "การควบคุมสำหรับขั้นตอนของห่วงโซ่การดำเนินการ (ไม่ว่าจะเปิดใช้งาน ไม่ว่าจะบันทึกข้อผิดพลาด ฯลฯ)."
 config_general_statistics: "ควบคุมข้อมูลสถิติที่จะติดตาม."
 config_general_time_format: "รูปแบบสัญกรณ์สำหรับวันและเวลาใช้โดย CIDRAM. ตัวเลือกเพิ่มเติมอาจเพิ่มเมื่อมีการร้องขอ."
@@ -365,6 +366,7 @@ field_your_version: "เวอร์ชั่นของคุณ"
 header_login: "เข้าสู่ระบบเพื่อดำเนินการต่อ."
 hints_asnlookup: "** ต้องใช้ฟังก์ชันการค้นหา ASN (เช่น, ผ่านโมดูล IP-API หรือ BGPView)."
 hints_cause_fp: "*!! มีโอกาสสูงที่จะทำให้เกิดผลบวกลวงเนื่องจาก %s."
+hints_client_honour: "โดยไม่คำนึงถึงคำแนะนำที่ให้กับไคลเอ็นต์ สิ่งสำคัญคือต้องจำไว้ว่าเราไม่สามารถควบคุมตัวเลือกของพวกเขาได้ และไม่มีการรับประกันว่าไคลเอ็นต์จะปฏิบัติตามคำแนะนำของเรา."
 hints_default_dns:
  คำถามที่พบบ่อย.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#what-can-i-use-for-default_dns" hreflang="en-AU">ฉันจะใช้อะไรกับ "default_dns" ได้บ้าง?</a></em>"
 hints_duration:
@@ -595,6 +597,10 @@ label_sections_x_signatures: "%s ลายเซ็น"
 label_see_also: "ดูสิ่งนี้ด้วย:"
 label_show: "แสดง"
 label_signature_type: "ประเภทลายเซ็น:"
+label_silent_mode_response_header_code_301: "301 Moved Permanently (ย้ายอย่างถาวร)\nแนะนำไคลเอ็นต์ว่าการเปลี่ยนเส้นทางเป็นแบบถาวร และวิธีการขอเปลี่ยนเส้นทางและคำขอเริ่มต้นจะแตกต่างกันได้."
+label_silent_mode_response_header_code_302: "302 Found (พบ)\nแนะนำไคลเอ็นต์ว่าการเปลี่ยนเส้นทางเป็นแบบชั่วคราว และวิธีการขอเปลี่ยนเส้นทางและคำขอเริ่มต้นจะแตกต่างกันได้."
+label_silent_mode_response_header_code_307: "307 Temporary Redirect (เปลี่ยนเส้นทางชั่วคราว)\nแนะนำไคลเอ็นต์ว่าการเปลี่ยนเส้นทางเป็นแบบชั่วคราว และวิธีการของคำขอเปลี่ยนเส้นทางและคำขอเริ่มต้นไม่ได้รับอนุญาตให้แตกต่างกัน."
+label_silent_mode_response_header_code_308: "308 Permanent Redirect (เปลี่ยนเส้นทางถาวร)\nแนะนำไคลเอ็นต์ว่าการเปลี่ยนเส้นทางเป็นแบบถาวร และวิธีการของคำขอเปลี่ยนเส้นทางและคำขอเริ่มต้นไม่ได้รับอนุญาตให้แตกต่างกัน."
 label_stable: "เสถียรล่าสุด:"
 label_starting_from: "เริ่มจาก "%s"."
 label_sysinfo: "ข้อมูลระบบ:"

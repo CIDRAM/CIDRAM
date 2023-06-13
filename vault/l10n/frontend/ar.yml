@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2023.05.22).
+# This file: Arabic language data for the front-end (last modified: 2023.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -171,6 +171,7 @@ config_general_lang_override: "الترجمة وفقًا لـ HTTP_ACCEPT_LANGUA
 config_general_numbers: "كيف تفضل الأرقام ليتم عرضها؟ حدد المثال الذي يبدو أكثر صحيح لك."
 config_general_sensitive: "قائمة المسارات التي يجب اعتبارها صفحات حساسة. ستتم مقارنة كل مسار مدرج مع URI المعاد بناؤه عند الحاجة. سيتم التعامل مع المسار الذي يبدأ بشرطة مائلة للأمام على أنه حرفي، ويتم مطابقته من مكون المسار للطلب فصاعدًا. سيتم التعامل مع المسار الذي يبدأ بحرف غير أبجدي رقمي وينتهي بنفس الحرف (أو نفس الحرف بالإضافة إلى علامة اختيارية "i") كتعبير عادي. سيتم التعامل مع أي نوع آخر من المسارات على أنه حرفي، ويمكن أن يتطابق مع أي جزء من URI. قد يؤثر المسار الذي يتم اعتباره صفحة حساسة على كيفية تصرف بعض الوحدات، ولكن ليس له أي تأثير آخر."
 config_general_silent_mode: "يجب CIDRAM إعادة توجيه بصمت محاولات وصول مرفوض بدلا من عرض الصفحة "تم رفض الوصول"؟ اذا نعم، تحديد الموقع لإعادة توجيه محاولات وصول مرفوض. ان لم، ترك هذا الحقل فارغا."
+config_general_silent_mode_response_header_code: "ما رسالة حالة HTTP التي يجب على CIDRAM إرسالها عند إعادة توجيه محاولات الوصول المحظورة بصمت؟"
 config_general_stages: "ضوابط لمراحل سلسلة التنفيذ (سواء تم التمكين، أو تسجيل الأخطاء، وما إلى ذلك)."
 config_general_statistics: "يتحكم في المعلومات الإحصائية التي يجب تتبعها."
 config_general_time_format: "شكل التواريخ المستخدم من قبل CIDRAM. ويمكن إضافة خيارات إضافية عند الطلب."
@@ -365,6 +366,7 @@ field_your_version: "الإصدار الخاص بك"
 header_login: "الرجاء تسجيل الدخول للمتابعة."
 hints_asnlookup: "** يتطلب وظيفة بحث ASN (على سبيل المثال، عبر وحدة IP-API أو وحدة BGPView)."
 hints_cause_fp: "*!! احتمالية عالية للتسبب في نتائج إيجابية خاطئة بسبب %s."
+hints_client_honour: "بغض النظر عن الطريقة التي نوجه بها للعميل، من المهم أن نتذكر أننا في النهاية ليس لدينا أي سيطرة على ما يختاره العميل، وليس هناك ما يضمن أن العميل سوف يحترم تعليماتنا."
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.ar.md\#ما-الذي-يمكنني-استخدامه-لـ-default_dns" hreflang="ar">ما الذي يمكنني استخدامه لـ "default_dns"؟</a></em>"
 hints_duration:
@@ -603,6 +605,10 @@ label_sections_x_signatures:
 label_see_also: "أنظر أيضا:"
 label_show: "اظهره"
 label_signature_type: "نوع التوقيع:"
+label_silent_mode_response_header_code_301: "301 Moved Permanently (منقول بشكل دائم)\nيوجه العميل أن إعادة التوجيه دائمة، وأن طريقة الطلب المستخدمة لإعادة التوجيه قد تكون مختلفة عن طريقة الطلب المستخدمة للطلب الأولي."
+label_silent_mode_response_header_code_302: "302 Found (موجود)\nيوجه العميل أن إعادة التوجيه مؤقتة، وأن طريقة الطلب المستخدمة لإعادة التوجيه قد تكون مختلفة عن طريقة الطلب المستخدمة للطلب الأولي."
+label_silent_mode_response_header_code_307: "307 Temporary Redirect (إعادة توجيه مؤقتة)\nيوجه العميل أن إعادة التوجيه مؤقتة، وأن طريقة الطلب المستخدمة لإعادة التوجيه قد لا تختلف عن طريقة الطلب المستخدمة للطلب الأولي."
+label_silent_mode_response_header_code_308: "308 Permanent Redirect (إعادة توجيه دائمة)\nيوجه العميل أن إعادة التوجيه دائمة، وأن طريقة الطلب المستخدمة لإعادة التوجيه قد لا تختلف عن طريقة الطلب المستخدمة للطلب الأولي."
 label_stable: "أحدث مستقرة:"
 label_starting_from: "تبدأ من "%s"."
 label_sysinfo: "معلومات النظام:"

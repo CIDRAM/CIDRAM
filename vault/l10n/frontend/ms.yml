@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malay language data for the front-end (last modified: 2023.05.22).
+# This file: Malay language data for the front-end (last modified: 2023.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -171,6 +171,7 @@ config_general_lang_override: "Setempatkan mengikut HTTP_ACCEPT_LANGUAGE apabila
 config_general_numbers: "Bagaimanakah anda lebih suka nombor untuk dipaparkan? Pilih contoh yang kelihatan paling betul untuk anda."
 config_general_sensitive: "Senarai laluan untuk dianggap sebagai halaman sensitif. Setiap laluan yang disenaraikan akan disemak terhadap URI yang dibina semula apabila diperlukan. Laluan yang bermula dengan garis miring ke hadapan akan dianggap sebagai literal, dan dipadankan dari komponen laluan permintaan. Jika tidak, laluan yang bermula dengan aksara bukan abjad angka, dan berakhir dengan aksara yang sama (atau aksara yang sama ditambah bendera "i" pilihan) akan dianggap sebagai ekspresi biasa. Sebarang jenis laluan lain akan dianggap sebagai literal, dan boleh dipadankan dari mana-mana bahagian URI. Sama ada laluan dianggap sebagai halaman sensitif boleh menjejaskan cara sesetengah modul berkelakuan, tetapi mempunyai tiada kesan lain."
 config_general_silent_mode: "Perlukah CIDRAM mengubah hala percubaan akses yang disekat secara senyap bukannya memaparkan halaman "akses dinafikan"? Jika ya, nyatakan lokasi untuk mengubah hala percubaan akses yang disekat. Jika tidak, biarkan pembolehubah ini kosong."
+config_general_silent_mode_response_header_code: "Mesej status HTTP manakah yang harus dihantar oleh CIDRAM apabila mengubah hala percubaan akses yang disekat secara senyap?"
 config_general_stages: "Kawalan untuk peringkat rantaian pelaksanaan (jika diaktifkan, jika ralat dilog, dll)."
 config_general_statistics: "Mengawal maklumat statistik yang hendak dijejaki."
 config_general_time_format: "Format notasi tarikh/masa yang digunakan oleh CIDRAM. Pilihan tambahan boleh ditambah atas permintaan."
@@ -365,6 +366,7 @@ field_your_version: "Versi anda"
 header_login: "Sila log masuk untuk meneruskan."
 hints_asnlookup: "** Memerlukan kefungsian carian ASN (cth., melalui modul IP-API atau BGPView)."
 hints_cause_fp: "*!! Kemungkinan tinggi menyebabkan positif palsu kerana %s."
+hints_client_honour: "Tidak kira cara kami mengarahkan pelanggan, adalah penting untuk diingat bahawa kami akhirnya tidak mempunyai kawalan ke atas perkara yang pelanggan pilih untuk lakukan, dan tiada jaminan bahawa pelanggan akan mematuhi arahan kami."
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.id.md\#apa-yang-bisa-saya-gunakan-untuk-default_dns" hreflang="id-ID">Apakah yang boleh saya gunakan untuk "default_dns"?</a></em>"
 hints_duration:
@@ -604,6 +606,10 @@ label_sections_x_signatures: "%s tandatangan"
 label_see_also: "Lihat juga:"
 label_show: "Tunjukkan"
 label_signature_type: "Jenis tandatangan:"
+label_silent_mode_response_header_code_301: "301 Moved Permanently (Berpindah secara tetap)\nMengarahkan klien bahawa ubah hala adalah KEKAL, dan kaedah permintaan yang digunakan untuk ubah hala MUNGKIN berbeza daripada kaedah permintaan yang digunakan untuk permintaan awal."
+label_silent_mode_response_header_code_302: "302 Found (Dijumpai)\nMengarahkan klien bahawa ubah hala adalah SEMENTARA, dan kaedah permintaan yang digunakan untuk ubah hala MUNGKIN berbeza daripada kaedah permintaan yang digunakan untuk permintaan awal."
+label_silent_mode_response_header_code_307: "307 Temporary Redirect (Ubah hala sementara)\nMengarahkan klien bahawa ubah hala adalah SEMENTARA, dan kaedah permintaan yang digunakan untuk ubah hala mungkin TIDAK berbeza daripada kaedah permintaan yang digunakan untuk permintaan awal."
+label_silent_mode_response_header_code_308: "308 Permanent Redirect (Ubah hala kekal)\nMengarahkan klien bahawa ubah hala adalah KEKAL, dan kaedah permintaan yang digunakan untuk ubah hala mungkin TIDAK berbeza daripada kaedah permintaan yang digunakan untuk permintaan awal."
 label_stable: "Terkini stabil:"
 label_starting_from: "Bermula dari "%s"."
 label_sysinfo: "Maklumat sistem:"

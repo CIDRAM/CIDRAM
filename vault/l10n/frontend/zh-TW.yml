@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2023.05.22).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2023.06.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -171,6 +171,7 @@ config_general_lang_override: "盡可能根據HTTP_ACCEPT_LANGUAGE進行本地�
 config_general_numbers: "您如何喜歡顯示數字？​選擇最適合示例。"
 config_general_sensitive: "視為敏感頁面的路徑列表。​需要時，將根據重建的URI檢查列出的每個路徑。​以正斜杠開頭的路徑將被視為文字，並從請求的路徑部分開始匹配。​否則，以非字母數字字符開頭並以相同字符（或相同字符加上可選的『i』標誌）結束的路徑將被視為正則表達式。​任何其他類型的路徑都將被視為文字，並且可以匹配URI的任何部分。​被視為敏感頁面的路徑可能會影響某些模塊的行為方式，但不會產生任何其他影響。"
 config_general_silent_mode: "CIDRAM應該默默重定向被攔截的訪問而不是顯示該『拒絕訪問』頁嗎？​指定位置至重定向被攔截的訪問，​或讓它空將其禁用。"
+config_general_silent_mode_response_header_code: "當靜默重定向被阻止的訪問嘗試時，CIDRAM應發送哪個HTTP狀態消息？"
 config_general_stages: "用於執行鏈的各個階段的控件（是否啟用，是否記錄錯誤，等等）。"
 config_general_statistics: "控制要跟踪的統計信息。"
 config_general_time_format: "CIDRAM使用的日期符號格式。​可根據要求增加附加選項。"
@@ -365,6 +366,7 @@ field_your_version: "您的版本"
 header_login: "請登錄以繼續。"
 hints_asnlookup: "** 需要ASN查找功能（例如，通過IP-API或BGPView模塊）。"
 hints_cause_fp: "*!! 由於%s而導致假陽性的可能性很高。"
+hints_client_honour: "無論我們如何指示客戶，重要的是要記住，我們無法控制客戶選擇做什麼，而且客戶會遵守我們的指示的沒有保證。"
 hints_default_dns:
  常問問題。: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.zh-tw.md\#在default_dns中我可以使用什麼" hreflang="zh-TW">在『default_dns』中我可以使用什麼？</a></em>"
 hints_duration:
@@ -596,6 +598,10 @@ label_sections_x_signatures: "%s個文件中的"
 label_see_also: "也可以看看："
 label_show: "顯示"
 label_signature_type: "簽名類型："
+label_silent_mode_response_header_code_301: "301 Moved Permanently （永久移動）\n指示客戶端重定向是永久的。​重定向和初始請求的請求方法允許不同。"
+label_silent_mode_response_header_code_302: "302 Found （找到）\n指示客戶端重定向是臨時的。​重定向和初始請求的請求方法允許不同。"
+label_silent_mode_response_header_code_307: "307 Temporary Redirect （臨時重定向）\n指示客戶端重定向是臨時的。​重定向和初始請求的請求方法不允許不同。"
+label_silent_mode_response_header_code_308: "308 Permanent Redirect （永久重定向）\n指示客戶端重定向是永久的。​重定向和初始請求的請求方法不允許不同。"
 label_stable: "最新穩定："
 label_starting_from: "從『%s』開始。"
 label_sysinfo: "系統信息："

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used to simulate block events (last modified: 2023.05.08).
+ * This file: Methods used to simulate block events (last modified: 2023.06.13).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -239,7 +239,7 @@ trait SimulateBlockEvent
 
         /**
          * Determine HTTP status code. Priority (from highest to lowest):
-         * - silent_mode(301)
+         * - silent_mode(30x)
          * - ban_override(4xx~5xx)
          * - rate_limiting(429)
          * - Auxiliary Rules(4xx~5xx)
@@ -251,7 +251,10 @@ trait SimulateBlockEvent
          */
         if ($this->BlockInfo['SignatureCount'] > 0) {
             $this->CIDRAM['ThisStatusHTTP'] = (
-                ($this->Configuration['general']['silent_mode'] !== '' && ($Try = 301)) ||
+                ($this->Configuration['general']['silent_mode'] !== '' && ($Try = (
+                    $this->Configuration['general']['silent_mode_response_header_code'] > 300 &&
+                    $this->Configuration['general']['silent_mode_response_header_code'] < 309
+                ) ? $this->Configuration['general']['silent_mode_response_header_code'] : 301)) ||
                 (!empty($this->CIDRAM['Banned']) && $this->Configuration['general']['ban_override'] > 400 && ($Try = $this->Configuration['general']['ban_override'])) ||
                 (!empty($this->CIDRAM['RL_Status']) && $this->BlockInfo['SignatureCount'] === 1 && ($Try = 429)) ||
                 (!empty($this->CIDRAM['Aux Status Code']) && $this->CIDRAM['Aux Status Code'] > 400 && ($Try = $this->CIDRAM['Aux Status Code'])) ||

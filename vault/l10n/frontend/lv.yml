@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2023.06.01).
+# This file: Latvian language data for the front-end (last modified: 2023.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -171,6 +171,7 @@ config_general_lang_override: "Ja iespējams, lokalizēt saskaņā ar HTTP_ACCEP
 config_general_numbers: "Kā jūs izvēlaties skaitļu parādīšanu? Atlasiet piemēru, kas jums šķiet vispareizākais."
 config_general_sensitive: "Ceļu saraksts, kas jāuzskata par sensitīvām lapām. Katrs norādītais ceļš tiks pārbaudīts ar rekonstruēto URI, kad tas būs nepieciešams. Ceļš, kas sākas ar slīpsvītru uz priekšu, tiks uzskatīts par burtu un tiks saskaņots, sākot ar pieprasījuma ceļa komponentu. Alternatīvi, ceļš, kas sākas ar rakstzīmi, kas nav burtciparu, un beidzas ar to pašu rakstzīmi (vai to pašu rakstzīmi un neobligātu karodziņu “i”), tiks uzskatīts par regulāru izteiksmi. Jebkurš cita veida ceļš tiks uzskatīts par burtisku, un var atbilst jebkurai URI daļai. Ceļš, kas tiek uzskatīts par sensitīvu lapu, var ietekmēt dažu moduļu darbību, bet citādi tam nav nekādas ietekmes."
 config_general_silent_mode: "Vai CIDRAM vajadzētu klusībā novirzīt bloķētas piekļuves mēģinājumus, nevis parādīt lapu "piekļuve liegta"? Ja tā, norādiet vietu, uz kuru novirzīt bloķētas piekļuves mēģinājumus. Ja nē, atstājiet šo mainīgo tukšu."
+config_general_silent_mode_response_header_code: "Kurš HTTP statusa ziņojums būtu jāsūta CIDRAM, klusi novirzot bloķētās piekļuves mēģinājumus?"
 config_general_stages: "Kontroles mehānisms izpildes ķēdes posmiem (vai iespējots, vai tiek reģistrētas kļūdas, utt)."
 config_general_statistics: "Kontrolē, kuru statistikas informāciju izsekot."
 config_general_time_format: "CIDRAM izmantotais datuma/laika apzīmējuma formāts. Pēc pieprasījuma var tikt pievienotas papildu iespējas."
@@ -367,6 +368,7 @@ field_your_version: "Jūsu versija"
 header_login: "Lūdzu, ielogoties, lai turpinātu."
 hints_asnlookup: "** Nepieciešama ASN uzmeklēšanas funkcionalitāte (piemēram, izmantojot IP-API vai BGPView moduli)."
 hints_cause_fp: "*!! Liela iespējamība izraisīt viltus pozitīvus rezultātus %s dēļ."
+hints_client_honour: "Neatkarīgi no tā, kā mēs instruējam klientu, ir svarīgi atcerēties, ka galu galā mēs nevaram kontrolēt to, ko klients izvēlas darīt, un nav nekādas garantijas, ka klients ievēros mūsu norādījumus."
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#what-can-i-use-for-default_dns" hreflang="en-AU">Ko es varu izmantot “default_dns”-m?</a></em>"
 hints_duration:
@@ -610,6 +612,10 @@ label_sections_x_signatures:
 label_see_also: "Skatīt arī:"
 label_show: "Parādiet"
 label_signature_type: "Paraksta tips:"
+label_silent_mode_response_header_code_301: "301 Moved Permanently (Pārvietots uz visiem laikiem)\nNorāda klientam, ka novirzīšana ir PASTĀVĪGA, un ka novirzīšanai izmantotā pieprasījuma metode VAR atšķirties no pieprasījuma metodes, kas izmantota sākotnējam pieprasījumam."
+label_silent_mode_response_header_code_302: "302 Found (Atrasts)\nNorāda klientam, ka novirzīšana ir PAGAIDU, un ka novirzīšanai izmantotā pieprasījuma metode VAR atšķirties no pieprasījuma metodes, kas izmantota sākotnējam pieprasījumam."
+label_silent_mode_response_header_code_307: "307 Temporary Redirect (Pagaidu novirzīšana)\nNorāda klientam, ka novirzīšana ir PAGAIDU, un ka novirzīšanai izmantotā pieprasījuma metode NEDRĪKST atšķirties no pieprasījuma metodes, kas izmantota sākotnējam pieprasījumam."
+label_silent_mode_response_header_code_308: "308 Permanent Redirect (Pastāvīga novirzīšana)\nNorāda klientam, ka novirzīšana ir PASTĀVĪGA, un ka novirzīšanai izmantotā pieprasījuma metode NEDRĪKST atšķirties no pieprasījuma metodes, kas izmantota sākotnējam pieprasījumam."
 label_stable: "Jaunākā stabilā:"
 label_starting_from: "Sākot no "%s"."
 label_sysinfo: "Sistēmas informācija:"

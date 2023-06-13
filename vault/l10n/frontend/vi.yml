@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2023.05.22).
+# This file: Vietnamese language data for the front-end (last modified: 2023.06.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -171,6 +171,7 @@ config_general_lang_override: "Bản địa hóa theo HTTP_ACCEPT_LANGUAGE bất
 config_general_numbers: "Làm thế nào để bạn thích số được hiển thị? Chọn ví dụ có vẻ chính xác nhất cho bạn."
 config_general_sensitive: "Một danh sách các đường dẫn được coi là các trang nhạy cảm. Mỗi đường dẫn được liệt kê sẽ, khi cần, được kiểm tra dựa trên URI được xây dựng lại. Một đường dẫn bắt đầu bằng dấu gạch chéo lên phía trước sẽ được coi là một nghĩa đen, và được so khớp từ thành phần đường dẫn của yêu cầu trở đi. Mặt khác, một đường dẫn bắt đầu bằng một ký tự không phải chữ và số, và kết thúc bằng cùng ký tự đó (hoặc cùng ký tự đó cộng với "i") sẽ được coi là biểu thức chính quy. Bất kỳ loại đường dẫn nào khác sẽ được coi là theo nghĩa đen, và có thể khớp từ bất kỳ phần nào của URI. Việc một đường dẫn có được coi là một trang nhạy cảm hay không có thể ảnh hưởng đến cách một số mô-đun hoạt động, nhưng không có bất kỳ ảnh hưởng nào khác."
 config_general_silent_mode: "CIDRAM nên âm thầm chuyển hướng cố gắng truy cập bị chặn thay vì hiển thị trang "Truy cập đã bị từ chối"? Nếu vâng, xác định vị trí để chuyển hướng cố gắng truy cập bị chặn để. Nếu không, để cho biến này được trống."
+config_general_silent_mode_response_header_code: "Những gì thông báo trạng thái HTTP mà CIDRAM nên gửi khi âm thầm chuyển hướng các nỗ lực truy cập bị chặn?"
 config_general_stages: "Kiểm soát các giai đoạn của chuỗi thực thi (có được bật hay không, có lỗi được ghi lại hay không, vv)."
 config_general_statistics: "Kiểm soát thông tin thống kê cần giám sát."
 config_general_time_format: "Định dạng ngày tháng sử dụng bởi CIDRAM. Các tùy chọn bổ sung có thể được bổ sung theo yêu cầu."
@@ -365,6 +366,7 @@ field_your_version: "Phiên bản của bạn"
 header_login: "Vui lòng đăng nhập để tiếp tục."
 hints_asnlookup: "** Yêu cầu chức năng tra cứu ASN (v.d., thông qua mô-đun IP-API hoặc BGPView)."
 hints_cause_fp: "*!! Khả năng cao gây ra sai tích cực do %s."
+hints_client_honour: "Bất kể chúng tôi hướng dẫn khách hàng như thế nào, điều quan trọng cần nhớ là cuối cùng chúng tôi không kiểm soát được những gì khách hàng chọn làm, và không có gì đảm bảo rằng khách hàng sẽ tôn trọng hướng dẫn của chúng tôi."
 hints_default_dns:
  Câu hỏi thường gặp.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.vi.md\#những-gì-tôi-có-thể-sử-dụng-cho-default_dns" hreflang="vi-VN">Những gì tôi có thể sử dụng cho "default_dns"?</a></em>"
 hints_duration:
@@ -603,6 +605,10 @@ label_sections_x_signatures: "%s chữ ký"
 label_see_also: "Xem thêm:"
 label_show: "Hiển thị"
 label_signature_type: "Loại chữ ký"
+label_silent_mode_response_header_code_301: "301 Moved Permanently (Đã di chuyển vĩnh viễn)\nHướng dẫn khách hàng rằng chuyển hướng là VĨNH VIỄN, và rằng phương thức yêu cầu được sử dụng cho chuyển hướng CÓ THỂ khác với phương thức yêu cầu được sử dụng cho yêu cầu ban đầu."
+label_silent_mode_response_header_code_302: "302 Found (Tìm thấy)\nHướng dẫn khách hàng rằng chuyển hướng là TẠM THỜI, và rằng phương thức yêu cầu được sử dụng cho chuyển hướng CÓ THỂ khác với phương thức yêu cầu được sử dụng cho yêu cầu ban đầu."
+label_silent_mode_response_header_code_307: "307 Temporary Redirect (Chuyển hướng tạm thời)\nHướng dẫn khách hàng rằng chuyển hướng là TẠM THỜI, và rằng phương thức yêu cầu được sử dụng cho chuyển hướng có thể KHÔNG khác với phương thức yêu cầu được sử dụng cho yêu cầu ban đầu."
+label_silent_mode_response_header_code_308: "308 Permanent Redirect (Chuyển hướng vĩnh viễn)\nHướng dẫn khách hàng rằng chuyển hướng là VĨNH VIỄN, và rằng phương thức yêu cầu được sử dụng cho chuyển hướng có thể KHÔNG khác với phương thức yêu cầu được sử dụng cho yêu cầu ban đầu."
 label_stable: "Ổn định mới nhất:"
 label_starting_from: "Bắt đầu từ "%s"."
 label_sysinfo: "Thông tin hệ thống:"

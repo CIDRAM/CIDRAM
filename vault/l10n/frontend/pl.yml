@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2023.05.22).
+# This file: Polish language data for the front-end (last modified: 2023.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -171,6 +171,7 @@ config_general_lang_override: "Kiedy to możliwe, lokalizuj według HTTP_ACCEPT_
 config_general_numbers: "Jak wolisz wyświetlać liczby? Wybierz przykład, który wygląda najlepiej dla Ciebie."
 config_general_sensitive: "Lista ścieżek, które należy uznać za wrażliwe strony. Kiedy potrzebny, każda wymieniona ścieżka zostanie sprawdzona pod kątem zrekonstruowanego URI. Ścieżka rozpoczynająca się od ukośnika będzie traktowana jako literał i dopasowywana począwszy od składnika ścieżki żądania. Alternatywnie, ścieżka, która zaczyna się od znaku niealfanumerycznego i kończy tym samym znakiem (lub tym samym znakiem plus opcjonalna flaga „i”) będzie traktowana jako wyrażenie regularne. Każdy inny rodzaj ścieżki będzie traktowany jako literał i może pasować z dowolnej części URI. Ścieżka traktowana jako wrażliwa strona może wpływać na zachowanie niektórych modułów, ale nie ma żadnego wpływu w innym przypadku."
 config_general_silent_mode: "Czy CIDRAM powinien po cichu przekierowywać zablokowane próby dostępu zamiast wyświetlać stronę „dostęp zabroniony”? Jeśli tak, podaj lokalizację, do której mają zostać przekierowane zablokowane próby dostępu. Jeśli nie, pozostaw tę zmienną pustą."
+config_general_silent_mode_response_header_code: "Który komunikat o stanie HTTP powinien wysłać CIDRAM podczas cichego przekierowania zablokowanych prób dostępu?"
 config_general_stages: "Kontrole etapów łańcucha egzekucyjnego (czy włączone, czy błędy są rejestrowane, itp)."
 config_general_statistics: "Kontroluje, które informacje statystyczne należy śledzić."
 config_general_time_format: "Format notacja daty/godziny używany przez CIDRAM. Dodatkowe opcje mogą być dodane na życzenie."
@@ -368,6 +369,7 @@ field_your_version: "Twoja wersja"
 header_login: "Proszę się zalogować, aby kontynuować."
 hints_asnlookup: "** Wymaga funkcji wyszukiwania ASN (np., przez moduł IP-API lub BGPView)."
 hints_cause_fp: "*!! Wysokie prawdopodobieństwo spowodowania fałszywych pozytywów z powodu %s."
+hints_client_honour: "Niezależnie od tego, jak instruujemy klienta, ważne jest aby pamiętać, że ostatecznie nie mamy kontroli nad tym, co klient zdecyduje się zrobić, i nie ma żadnej gwarancji że klient będzie przestrzegał naszych instrukcji."
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#what-can-i-use-for-default_dns" hreflang="en-AU">Czego mogę użyć dla „default_dns”?</a></em>"
 hints_duration:
@@ -617,6 +619,10 @@ label_sections_x_signatures:
 label_see_also: "Zobacz też:"
 label_show: "Pokaż"
 label_signature_type: "Rodzaj podpisu:"
+label_silent_mode_response_header_code_301: "301 Moved Permanently (Trwale przeniesiony)\nInstruuje klienta, że przekierowanie jest STAŁE, oraz że metoda żądania użyta do przekierowania MOŻE być inna niż metoda żądania użyta do pierwotnego żądania."
+label_silent_mode_response_header_code_302: "302 Found (Znaleziono)\nInstruuje klienta, że przekierowanie jest TYMCZASOWE, oraz że metoda żądania użyta do przekierowania MOŻE być inna niż metoda żądania użyta do pierwotnego żądania."
+label_silent_mode_response_header_code_307: "307 Temporary Redirect (Tymczasowe przekierowanie)\nInstruuje klienta, że przekierowanie jest TYMCZASOWE, oraz że metoda żądania użyta do przekierowania NIE może być inna niż metoda żądania użyta do pierwotnego żądania."
+label_silent_mode_response_header_code_308: "308 Permanent Redirect (Stałe przekierowanie)\nInstruuje klienta, że przekierowanie jest STAŁE, oraz że metoda żądania użyta do przekierowania NIE może być inna niż metoda żądania użyta do pierwotnego żądania."
 label_stable: "Najnowsza stabilna:"
 label_starting_from: "Zaczynając od „%s”."
 label_sysinfo: "Informacje o systemie:"

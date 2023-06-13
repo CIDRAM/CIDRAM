@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2023.05.22).
+# This file: Italian language data for the front-end (last modified: 2023.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -171,6 +171,7 @@ config_general_lang_override: "Localizzare secondo HTTP_ACCEPT_LANGUAGE quando p
 config_general_numbers: "Come preferisci che i numeri siano visualizzati? Seleziona l'esempio che ti sembra più corretto."
 config_general_sensitive: "Un elenco di percorsi da considerare come pagine sensibili. Ogni percorso elencato verrà confrontato con l'URI ricostruito quando necessario. Un percorso che inizia con una barra verrà trattato come letterale, e confrontato dal componente del percorso della richiesta in poi. In alternativa, un percorso che inizia con un carattere non alfanumerico, e termina con lo stesso carattere (o lo stesso carattere più un flag "i" facoltativo) verrà trattato come un'espressione regolare. Qualsiasi altro tipo di percorso verrà trattato come letterale, e può corrispondere a qualsiasi parte dell'URI. Il fatto che un percorso sia considerato una pagina sensibile può influire sul comportamento di alcuni moduli, ma non ha alcun effetto in altri casi."
 config_general_silent_mode: "CIDRAM dovrebbe reindirizzare silenziosamente tutti i tentativi di accesso bloccati invece di visualizzare la pagina "accesso negato"? Se si, specificare la localizzazione di reindirizzare i tentativi di accesso bloccati. Se no, lasciare questo variabile vuoto."
+config_general_silent_mode_response_header_code: "Quale messaggio di stato HTTP dovrebbe inviare CIDRAM quando reindirizza silenziosamente i tentativi di accesso bloccati?"
 config_general_stages: "Controlli per le fasi della catena di esecuzione (se abilitato, se gli errori sono registrati, ecc)."
 config_general_statistics: "Controlla quali informazioni statistiche tracciare."
 config_general_time_format: "Il formato della data/ora di notazione usata da CIDRAM. Ulteriori opzioni possono essere aggiunti su richiesta."
@@ -365,6 +366,7 @@ field_your_version: "La vostra versione"
 header_login: "Per favore accedi per continuare."
 hints_asnlookup: "** Richiede la funzionalità di ricerca ASN (ad es., tramite il modulo IP-API o BGPView)."
 hints_cause_fp: "*!! Alta probabilità di causare falsi positivi a causa di %s."
+hints_client_honour: "Indipendentemente da come istruiamo il cliente, è importante ricordare che alla fine non abbiamo alcun controllo su ciò che il cliente sceglie di fare, e non c'è alcuna garanzia che il cliente rispetti le nostre istruzioni."
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.it.md\#cosa-posso-usare-per-default_dns" hreflang="it-IT">Cosa posso usare per "default_dns"?</a></em>"
 hints_duration:
@@ -610,6 +612,10 @@ label_sections_x_signatures:
 label_see_also: "Guarda anche:"
 label_show: "Mostrare"
 label_signature_type: "Tipo di firma:"
+label_silent_mode_response_header_code_301: "301 Moved Permanently (Spostato definitivamente)\nIndica al client che il reindirizzamento è PERMANENTE, e che il metodo di richiesta utilizzato per il reindirizzamento PUÒ essere diverso dal metodo di richiesta utilizzato per la richiesta iniziale."
+label_silent_mode_response_header_code_302: "302 Found (Trovato)\nIndica al client che il reindirizzamento è TEMPORANEO, e che il metodo di richiesta utilizzato per il reindirizzamento PUÒ essere diverso dal metodo di richiesta utilizzato per la richiesta iniziale."
+label_silent_mode_response_header_code_307: "307 Temporary Redirect (Reindirizzamento temporaneo)\nIndica al client che il reindirizzamento è TEMPORANEO, e che il metodo di richiesta utilizzato per il reindirizzamento NON può essere diverso dal metodo di richiesta utilizzato per la richiesta iniziale."
+label_silent_mode_response_header_code_308: "308 Permanent Redirect (Reindirizzamento permanente)\nIndica al client che il reindirizzamento è PERMANENTE, e che il metodo di richiesta utilizzato per il reindirizzamento NON può essere diverso dal metodo di richiesta utilizzato per la richiesta iniziale."
 label_stable: "Più recente stabile:"
 label_starting_from: "Inizia da "%s"."
 label_sysinfo: "Informazioni sul sistema:"

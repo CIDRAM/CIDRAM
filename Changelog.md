@@ -250,3 +250,7 @@
 [2023.05.22; Maikuolan]: Improved the log sorting strategy (#463).
 
 [2023.05.23; Bug-fix; Maikuolan]: Single-digit h/i/s date/time placeholders weren't being honoured; Fixed.
+
+### v3.3.0
+
+[2023.06.13; New Feature; Maikuolan]: The HTTP response code used when silent mode is invoked is now configurable.

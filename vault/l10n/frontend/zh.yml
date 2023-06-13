@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2023.05.22).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2023.06.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -171,6 +171,7 @@ config_general_lang_override: "尽可能根据HTTP_ACCEPT_LANGUAGE进行本地�
 config_general_numbers: "您如何喜欢显示数字？​选择最适合示例。"
 config_general_sensitive: "视为敏感页面的路径列表。​需要时，将根据重建的URI检查列出的每个路径。​以正斜杠开头的路径将被视为文字，并从请求的路径部分开始匹配。​否则，以非字母数字字符开头并以相同字符（或相同字符加上可选的“i”标志）结束的路径将被视为正则表达式。​任何其他类型的路径都将被视为文字，并且可以匹配URI的任何部分。​被视为敏感页面的路径可能会影响某些模块的行为方式，但不会产生任何其他影响。"
 config_general_silent_mode: "CIDRAM应该默默重定向被拦截的访问而不是显示该“拒绝访问”页吗？​指定位置至重定向被拦截的访问，​或让它空将其禁用。"
+config_general_silent_mode_response_header_code: "当静默重定向被阻止的访问尝试时，CIDRAM应发送哪个HTTP状态消息？"
 config_general_stages: "用于执行链的各个阶段的控件（是否启用，是否记录错误，等等）。"
 config_general_statistics: "控制要跟踪的统计信息。"
 config_general_time_format: "CIDRAM使用的日期符号格式。​可根据要求增加附加选项。"
@@ -365,6 +366,7 @@ field_your_version: "您的版本"
 header_login: "请登录以继续。"
 hints_asnlookup: "** 需要ASN查找功能（例如，通过IP-API或BGPView模块）。"
 hints_cause_fp: "*!! 由于%s而导致假阳性的可能性很高。"
+hints_client_honour: "无论我们如何指示客户，重要的是要记住，我们无法控制客户选择做什么，而且客户会遵守我们的指示的没有保证。"
 hints_default_dns:
  常问问题。: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.zh.md\#在default_dns中我可以使用什么" hreflang="zh-CN">在“default_dns”中我可以使用什么？</a></em>"
 hints_duration:
@@ -596,6 +598,10 @@ label_sections_x_signatures: "%s个文件中的"
 label_see_also: "也可以看看："
 label_show: "显示"
 label_signature_type: "签名类型："
+label_silent_mode_response_header_code_301: "301 Moved Permanently （永久移动）\n指示客户端重定向是永久的。​重定向和初始请求的请求方法允许不同。"
+label_silent_mode_response_header_code_302: "302 Found （找到）\n指示客户端重定向是临时的。​重定向和初始请求的请求方法允许不同。"
+label_silent_mode_response_header_code_307: "307 Temporary Redirect （临时重定向）\n指示客户端重定向是临时的。​重定向和初始请求的请求方法不允许不同。"
+label_silent_mode_response_header_code_308: "308 Permanent Redirect （永久重定向）\n指示客户端重定向是永久的。​重定向和初始请求的请求方法不允许不同。"
 label_stable: "最新稳定："
 label_starting_from: "从“%s”开始。"
 label_sysinfo: "系统信息："

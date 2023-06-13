@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2023.05.22).
+# This file: Korean language data for the front-end (last modified: 2023.06.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -171,6 +171,7 @@ config_general_lang_override: "가능할 때마다 HTTP_ACCEPT_LANGUAGE에 따�
 config_general_numbers: "어떻게 숫자를 표시하는 것을 선호합니까? 가장 정확한 것으로 보이는 예제를 선택하십시오."
 config_general_sensitive: "민감한 페이지로 간주할 경로 목록입니다. 나열된 각 경로는 필요할 때 재구성된 URI에 관해 확인됩니다. 슬래시로 시작하는 경로는 리터럴로 처리되며 요청의 경로 구성 요소부터 일치합니다. 영숫자가 아닌 문자로 시작하고 동일한 문자(또는 동일한 문자와 선택적 "i" 플래그)로 끝나는 경로는 정규식으로 처리됩니다. 다른 종류의 경로는 리터럴로 취급되며 URI의 모든 부분에서 일치할 수 있습니다. 경로가 민감한 페이지로 간주하는지 여부는 일부 모듈의 작동 방식에 영향을 미칠 수 있지만 다른 것에는 영향을 미치지 않습니다."
 config_general_silent_mode: ""액세스 거부" 페이지를 표시하는 대신 CIDRAM는 차단 된 액세스 시도를 자동으로 리디렉션해야합니까? 그렇다면 리디렉션 위치를 지정합니다. 아니오의 경우이 변수를 비워 둡니다."
+config_general_silent_mode_response_header_code: "차단된 액세스 시도를 자동으로 리디렉션할 때 CIDRAM이 전송해야하는 HTTP 상태 메시지는 무엇입니까?"
 config_general_stages: "실행 체인의 단계에 대한 제어 (활성화 여부, 오류 기록 여부, 등등)."
 config_general_statistics: "추적할 통계 정보를 제어합니다."
 config_general_time_format: "CIDRAM에서 사용되는 날짜 형식. 추가 옵션이 요청에 따라 추가 될 수 있습니다."
@@ -365,6 +366,7 @@ field_your_version: "사용 버전"
 header_login: "계속하려면 로그인하십시오."
 hints_asnlookup: "** ASN 조회 기능이 필요합니다 (예\_: IP-API 또는 BGPView 모듈을 통해)."
 hints_cause_fp: "*!! %s로 인해 오탐이 발생할 가능성이 높습니다."
+hints_client_honour: "우리가 고객에게 지시하는 방법에 상관없이, 궁극적으로 고객이 선택하는 것을 제어할 수 없으며 고객이 우리의 지시를 존중할 것이라는 보장이 전혀 없다는 점을 기억하는 것이 중요합니다."
 hints_default_dns:
  자주하는 질문.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.ko.md\#default_dns에-사용할-수있는-항목은-무엇입니까" hreflang="ko-KR">"default_dns"에 사용할 수있는 항목은 무엇입니까?</a></em>"
 hints_duration:
@@ -599,6 +601,10 @@ label_sections_x_signatures: "%s 개의 서명"
 label_see_also: "또한보십시오\_:"
 label_show: "보여"
 label_signature_type: "서명 유형\_:"
+label_silent_mode_response_header_code_301: "301 Moved Permanently (영구 이동)\n리디렉션이 영구적임을 클라이언트에 지시합니다. 리디렉션 및 초기 요청의 요청 방법은 다를 수 있습니다."
+label_silent_mode_response_header_code_302: "302 Found (임시 이동)\n리디렉션이 일시적임을 클라이언트에 지시합니다. 리디렉션 및 초기 요청의 요청 방법은 다를 수 있습니다."
+label_silent_mode_response_header_code_307: "307 Temporary Redirect (임시 리다이렉션)\n리디렉션이 일시적임을 클라이언트에 지시합니다. 리디렉션 및 초기 요청의 요청 방법은 다를 수 없습니다."
+label_silent_mode_response_header_code_308: "308 Permanent Redirect (영구 리다이렉션)\n리디렉션이 영구적임을 클라이언트에 지시합니다. 리디렉션 및 초기 요청의 요청 방법은 다를 수 없습니다."
 label_stable: "최신 안정\_:"
 label_starting_from: ""%s"부터 시작합니다."
 label_sysinfo: "시스템 정보\_:"

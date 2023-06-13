@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2023.05.10).
+ * This file: Protect traits (last modified: 2023.06.13).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -858,11 +858,14 @@ trait Protect
                         );
                     }
                 } else {
-                    $this->CIDRAM['errCode'] = 301;
-                    $this->CIDRAM['Status'] = $this->getStatusHTTP(301);
-                    header('HTTP/1.0 301 ' . $this->CIDRAM['Status']);
-                    header('HTTP/1.1 301 ' . $this->CIDRAM['Status']);
-                    header('Status: 301 ' . $this->CIDRAM['Status']);
+                    $this->CIDRAM['errCode'] = (
+                        $this->Configuration['general']['silent_mode_response_header_code'] > 300 &&
+                        $this->Configuration['general']['silent_mode_response_header_code'] < 309
+                    ) ? $this->Configuration['general']['silent_mode_response_header_code'] : 301;
+                    $this->CIDRAM['Status'] = $this->getStatusHTTP($this->CIDRAM['errCode']);
+                    header('HTTP/1.0 ' . $this->CIDRAM['errCode'] . ' ' . $this->CIDRAM['Status']);
+                    header('HTTP/1.1 ' . $this->CIDRAM['errCode'] . ' ' . $this->CIDRAM['Status']);
+                    header('Status: ' . $this->CIDRAM['errCode'] . ' ' . $this->CIDRAM['Status']);
                     header('Location: ' . $this->Configuration['general']['silent_mode']);
                     $HTML = '';
                 }
@@ -890,7 +893,7 @@ trait Protect
         /** Executed only if request redirection has been triggered by auxiliary rules. */
         if (isset($this->Stages['AuxRedirect:Enable'])) {
             $this->Stage = 'AuxRedirect';
-            if (!empty($this->CIDRAM['Aux Redirect']) && !empty($this->CIDRAM['Aux Status Code']) && $this->CIDRAM['Aux Status Code'] > 300 && $this->CIDRAM['Aux Status Code'] < 400) {
+            if (!empty($this->CIDRAM['Aux Redirect']) && !empty($this->CIDRAM['Aux Status Code']) && $this->CIDRAM['Aux Status Code'] > 300 && $this->CIDRAM['Aux Status Code'] < 309) {
                 $this->CIDRAM['errCode'] = $this->CIDRAM['Aux Status Code'];
                 $this->CIDRAM['Status'] = $this->getStatusHTTP($this->CIDRAM['Aux Status Code']);
                 header('HTTP/1.0 ' . $this->CIDRAM['Aux Status Code'] . ' ' . $this->CIDRAM['Status']);

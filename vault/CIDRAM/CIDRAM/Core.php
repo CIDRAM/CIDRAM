@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2023.06.11).
+ * This file: The CIDRAM core (last modified: 2023.06.15).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -122,7 +122,7 @@ class Core
     /**
      * @var string CIDRAM version number (SemVer).
      */
-    public $ScriptVersion = '3.2.1';
+    public $ScriptVersion = '3.3.0';
 
     /**
      * @var string CIDRAM version identifier (complete notation).
@@ -3003,7 +3003,7 @@ class Core
             }
             return [
                 base64_encode($this->readFile($this->Vault . 'favicon_' . $Theme . '.' . $Extension)),
-                $Extension
+                $Extension === 'ico' ? 'x-icon' : $Extension
             ];
         }
         return [

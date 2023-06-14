@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2023.06.11).
+ * This file: Configuration handler (last modified: 2023.06.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -17,7 +17,7 @@ if (!defined('CIDRAM')) {
 }
 
 /** CIDRAM version number (SemVer). */
-$CIDRAM['ScriptVersion'] = '1.25.1';
+$CIDRAM['ScriptVersion'] = '1.26.0';
 
 /** CIDRAM version identifier (complete notation). */
 $CIDRAM['ScriptIdent'] = 'CIDRAM v' . $CIDRAM['ScriptVersion'];
@@ -173,6 +173,10 @@ foreach (['ico', 'png', 'jpg', 'gif'] as $CIDRAM['favicon_extension']) {
     $CIDRAM['favicon'] = base64_encode($CIDRAM['ReadFile'](
         $CIDRAM['Vault'] . 'favicon_' . $CIDRAM['Config']['template_data']['theme'] . '.' . $CIDRAM['favicon_extension']
     ));
+    if ($CIDRAM['favicon_extension'] === 'ico') {
+        $CIDRAM['favicon_extension'] = 'x-icon';
+    }
+    break;
 }
 if (empty($CIDRAM['favicon'])) {
     $CIDRAM['favicon'] =

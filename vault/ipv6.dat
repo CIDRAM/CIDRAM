@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2023.160.0
-# Last modified: 2023.06.10
+# Version: 2023.162.0
+# Last modified: 2023.06.12
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -1796,11 +1796,12 @@ Tag: Host Europe GmbH
 
 # ASN 14576 ("Hosting Solution Ltd").
 # Caught trying to hack WordPress sites.
-# Stop Forum Spam (SFS) listings: 1,524.
-# Updated: 2022.04.11 / Checked: 2022.06.15
+# Stop Forum Spam (SFS) listings: 2,159.
+# Updated: 2023.06.12
 
 2a07:4dc0::/29 Deny Cloud
 2a07:b400::/29 Deny Cloud
+2a0b:2000::/29 Deny Cloud
 2a0d:6800::/29 Deny Cloud
 Origin: EE
 2606:5e00::/35 Deny Cloud
@@ -10557,15 +10558,12 @@ Tag: Sapinet
 
 # ASNs 200019, 207636 ("ALEXHOST SRL").
 # A significant source of spam, hacking, and other nefarious activity.
-# Stop Forum Spam (SFS) listings: 841 (AS200019), 575 (AS207636).
-# Updated: 2021.12.09 / Checked: 2022.06.15
+# Stop Forum Spam (SFS) listings: 3,025 (AS200019), 375 (AS207636).
+# Updated: 2023.06.12
 
 2001:678:6d4::/48 Deny Cloud
-2a09:7c46::/32 Deny Cloud
-2a0f:5f40::/29 Deny Cloud
+2a0f:5f40::/48 Deny Cloud
 Origin: MD
-2a0a:8d80:1::/48 Deny Cloud
-Origin: RU
 Profile: Frequent changes;Tor endpoints here;Webhosting
 Tag: ALEXHOST SRL
 
@@ -11961,6 +11959,16 @@ Tag: ab stract
 Origin: US
 Profile: Webhosting
 Tag: DFDB LLC
+
+
+# ASN 56582 ("NETFACTOR TELEKOMINIKASYON VE TEKNOLOJI HIZMETLERI SANAYI VE JSC").
+# WordPress/XMLRPC attacks detected from here.
+# Updated: 2023.06.12
+
+2a00:5740::/29 Deny Cloud
+Origin: TR
+Profile: Webhosting
+Tag: NETFACTOR TELEKOMINIKASYON
 
 
 # ---

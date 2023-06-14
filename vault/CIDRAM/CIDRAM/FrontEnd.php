@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.06.13).
+ * This file: The CIDRAM front-end (last modified: 2023.06.14).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -4376,7 +4376,7 @@ class FrontEnd extends Core
             $this->initialPrepwork($this->L10N->getString('link_calculator'), $this->L10N->getString('tip_calculator'));
 
             /** Template for result rows. */
-            $this->FE['CalcRow'] = $this->readFile($this->getAssetPath('_calculator_row.html'));
+            $this->FE['CalcRow'] = $this->parseVars([], $this->readFile($this->getAssetPath('_calculator_row.html')), true);
 
             /** Initialise results data. */
             $this->FE['Ranges'] = '';

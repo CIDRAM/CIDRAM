@@ -258,3 +258,5 @@
 [2023.06.13; Maikuolan]: 302 now permitted as an auxiliary rule HTTP status code override.
 
 [2023.06.13; Maikuolan]: The number of reports, both successful and failed, which CIDRAM attempted to submit to external APIs (at this time, namely, just AbuseIPDB's API) can now be tracked via the front-end statistics page.
+
+[2023.06.14; Bug-fix; Maikuolan]: Copied text not rendering properly at the front-end calculator page; Fixed.

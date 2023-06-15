@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: AbuseIPDB module (last modified: 2023.06.14).
+ * This file: AbuseIPDB module (last modified: 2023.06.16).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -178,7 +178,7 @@ if ($this->Configuration['abuseipdb']['report_back']) {
         ]);
         $this->Cache->setEntry('AbuseIPDB-Recently Reported-' . $Report['IP'], true, 900);
         $this->CIDRAM['AbuseIPDB-Recently Reported-' . $Report['IP']] = true;
-        if (strpos($Status, '"ipAddress": "' . $Report['IP'] . '"') !== false && strpos($Status, '"errors":') === false) {
+        if (strpos($Status, '"ipAddress":"' . $Report['IP'] . '"') !== false && strpos($Status, '"errors":') === false) {
             if (!isset($this->CIDRAM['Report OK'])) {
                 $this->CIDRAM['Report OK'] = 0;
             }

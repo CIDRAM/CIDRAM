@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2023.06.13).
+ * This file: Protect traits (last modified: 2023.06.16).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -284,17 +284,17 @@ trait Protect
             if (isset($this->CIDRAM['LastTestIP'])) {
                 if ($this->CIDRAM['LastTestIP'] === 4) {
                     if (isset($this->CIDRAM['Report OK']) && $this->CIDRAM['Report OK'] > 0 && isset($this->StatisticsTracked['Reported-IPv4-OK'])) {
-                        $this->Cache->incEntry('Reported-IPv4-OK', $this->CIDRAM['Report OK']);
+                        $this->Cache->incEntry('Statistics-Reported-IPv4-OK', $this->CIDRAM['Report OK']);
                     }
                     if (isset($this->CIDRAM['Report Failed']) && $this->CIDRAM['Report Failed'] > 0 && isset($this->StatisticsTracked['Reported-IPv4-Failed'])) {
-                        $this->Cache->incEntry('Reported-IPv4-Failed', $this->CIDRAM['Report Failed']);
+                        $this->Cache->incEntry('Statistics-Reported-IPv4-Failed', $this->CIDRAM['Report Failed']);
                     }
                 } elseif ($this->CIDRAM['LastTestIP'] === 6) {
                     if (isset($this->CIDRAM['Report OK']) && $this->CIDRAM['Report OK'] > 0 && isset($this->StatisticsTracked['Reported-IPv6-OK'])) {
-                        $this->Cache->incEntry('Reported-IPv6-OK', $this->CIDRAM['Report OK']);
+                        $this->Cache->incEntry('Statistics-Reported-IPv6-OK', $this->CIDRAM['Report OK']);
                     }
                     if (isset($this->CIDRAM['Report Failed']) && $this->CIDRAM['Report Failed'] > 0 && isset($this->StatisticsTracked['Reported-IPv6-Failed'])) {
-                        $this->Cache->incEntry('Reported-IPv6-Failed', $this->CIDRAM['Report Failed']);
+                        $this->Cache->incEntry('Statistics-Reported-IPv6-Failed', $this->CIDRAM['Report Failed']);
                     }
                 }
             }

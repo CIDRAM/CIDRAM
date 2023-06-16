@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2023.06.13).
+ * This file: Front-end functions file (last modified: 2023.06.16).
  */
 
 /**
@@ -5176,6 +5176,9 @@ $CIDRAM['eTaggable'] = function (string $Asset, ?callable $Callback = null) use 
                 $Success = true;
             } elseif ($Type === 'svg') {
                 $MimeType = 'Content-Type: image/svg+xml';
+                $Success = true;
+            } elseif ($Type === 'ico') {
+                $MimeType = 'Content-Type: image/x-icon';
                 $Success = true;
             } elseif ($Type === 'js') {
                 $MimeType = 'Content-Type: text/javascript';

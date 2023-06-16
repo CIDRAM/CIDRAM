@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2023.06.13).
+ * This file: Front-end handler (last modified: 2023.06.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -40,9 +40,6 @@ $CIDRAM['FE'] = [
 
     /** Main front-end HTML template file. */
     'Template' => $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('frontend.html')),
-
-    /** Needed for custom favicons. */
-    'favicon_extension' => $CIDRAM['favicon_extension'],
 
     /** Populated by front-end JavaScript data as per needed. */
     'JS' => '',
@@ -245,24 +242,6 @@ if ($CIDRAM['QueryVars']['cidram-page'] === 'css') {
     $CIDRAM['eTaggable']('frontend.css', function ($AssetData) use (&$CIDRAM) {
         return $CIDRAM['ParseVars']($CIDRAM['L10N']->Data + $CIDRAM['FE'], $AssetData);
     });
-}
-
-/** A simple passthru for the favicon. */
-if ($CIDRAM['QueryVars']['cidram-page'] === 'favicon') {
-    $CIDRAM['FavIconData'] = base64_decode($CIDRAM['favicon']);
-    $CIDRAM['OldETag'] = $_SERVER['HTTP_IF_NONE_MATCH'] ?? '';
-    $CIDRAM['NewETag'] = hash('sha256', $CIDRAM['FavIconData']) . '-' . strlen($CIDRAM['FavIconData']);
-    header('ETag: "' . $CIDRAM['NewETag'] . '"');
-    header('Expires: ' . gmdate('D, d M Y H:i:s T', $CIDRAM['Now'] + 2592000));
-    if (preg_match('~(?:^|, )(?:"' . $CIDRAM['NewETag'] . '"|' . $CIDRAM['NewETag'] . ')(?:$|, )~', $CIDRAM['OldETag'])) {
-        header('HTTP/1.0 304 Not Modified');
-        header('HTTP/1.1 304 Not Modified');
-        header('Status: 304 Not Modified');
-        die;
-    }
-    header('Content-Type: image/' . $CIDRAM['favicon_extension']);
-    echo $CIDRAM['FavIconData'];
-    die;
 }
 
 /** Set the current request's form target. */

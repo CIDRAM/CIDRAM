@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2023.06.15).
+ * This file: Configuration handler (last modified: 2023.06.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -169,8 +169,13 @@ foreach (['ico', 'png', 'jpg', 'gif'] as $CIDRAM['favicon_extension']) {
     }
     break;
 }
-if (empty($CIDRAM['favicon'])) {
+if (!isset($CIDRAM['favicon'])) {
     $CIDRAM['favicon'] =
-        'R0lGODlhEAAQAMIBAAAAAGYAAJkAAMz//2YAAGYAAGYAAGYAACH5BAEKAAQALAAAAAAQABAAAANBCLrcKjBK+eKQ' .
-        'N76RIb+g0oGewAmiZZbZRppnC0y0BgR4rutK8OWfn2jgI3KKxeHvyBwMkc0kIEp13nZYnGPLSAAAOw==';
+        'AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' .
+        'AAAAAAAAAABmAAAAmQDu7u4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' .
+        'AAAAAAAAAAAAAAAAAAAAERERERERAAETETExMTEQARMRMTExMRABEzMxMTExEAETETExMTEQAREzETMz' .
+        'ERABEREREREREAIiIiIiIiIgAjMjIjMyMiADIiMjIjIyIAMiIyMiMjMgAjMiIjMyMjACIiMiIjIiIAAi' .
+        'IiIiIiIAAAAAAAAAAACAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' .
+        'AAAAAAAAAAAAAAAAAACAAQAA';
+    $CIDRAM['favicon_extension'] = 'x-icon';
 }

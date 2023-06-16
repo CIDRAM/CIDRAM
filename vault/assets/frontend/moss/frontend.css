@@ -1,6 +1,6 @@
 *{vertical-align:text-top}
 body,input,select,textarea,.idx{font-size:calc((12px * {magnification}) + .03vw)}
-body{font-family:'Tahoma','Verdana','Arial';letter-spacing:1px;text-decoration:none;border-style:none;margin:0;white-space:normal;background-color:#789048;background-image:url('?cidram-asset=bg.png&theme={theme}');background-repeat:no-repeat;background-attachment:fixed;background-position:left bottom;color:#303c24}
+body{font-family:'Tahoma','Verdana','Arial';letter-spacing:1px;text-decoration:none;border-style:none;margin:0;white-space:normal;background-color:#789048;background-image:url('?cidram-asset=bg.png&theme={theme}');background-repeat:repeat-x;background-attachment:fixed;background-position:left bottom;color:#303c24}
 code{vertical-align:0;display:inline-block;height:calc(1em + 2px)}
 hr{border-style:solid none none;border-width:1px;margin:5px 2px 0;padding:2px;color:#604848}
 img.ico{width:16px;height:16px;border:0;filter:hue-rotate(45deg) brightness(.9)}
@@ -114,6 +114,7 @@ blockquote.comSub{margin:-2px 0 0 0;padding:0 0 0 0}
 @keyframes forRotate{0%{transform:rotate(0)}100%{transform:rotate({45deg})}}
 @keyframes revRotate{0%{transform:rotate({45deg})}100%{transform:rotate(0)}}
 .navicon{display:inline-block;filter:invert(27%) sepia(5%) saturate(2258%) hue-rotate(314deg) brightness(97%) contrast(85%);position:relative;top:1px;width:16px;height:16px}
+a:hover>.navicon,a:active>.navicon,a:focus>.navicon{filter:invert(40%) sepia(6%) saturate(1564%) hue-rotate(314deg) brightness(103%) contrast(87%)}
 select+input[type=submit],select+input[type=button]{height:20px;margin-{FE_Align}:-3px;border-bottom-{FE_Align}-radius:0;border-top-{FE_Align}-radius:0;padding-{FE_Align}:3px}
 select,input[type=submit],input[type=reset],input[type=button],input[type=text],input[type=password],input[type=number],input[type=date],input[type=time],button{box-sizing:border-box;height:20px;padding-top:0;padding-bottom:0}
 select[class=auto]+select[class=auto]{margin-{FE_Align}:-3px;margin-{FE_Align_Reverse}:0}

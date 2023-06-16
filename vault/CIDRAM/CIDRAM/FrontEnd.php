@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.06.14).
+ * This file: The CIDRAM front-end (last modified: 2023.06.16).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -213,9 +213,6 @@ class FrontEnd extends Core
             }
         }
 
-        /** CIDRAM front-end favicon. */
-        [$this->FE['favicon'], $this->FE['favicon_extension']] = $this->fetchFavicon($this->Configuration['frontend']['theme']);
-
         /** Trace to determine the type of cron operation. */
         if ($this->FE['CronMode'] !== '') {
             $this->FE['CronType'] = 'update';
@@ -343,24 +340,6 @@ class FrontEnd extends Core
             $this->eTaggable('frontend.css', function ($AssetData) {
                 return $this->embedAssets($this->parseVars($this->FE, $AssetData, true));
             });
-        }
-
-        /** A simple passthru for the favicon. */
-        if ($this->CIDRAM['QueryVars']['cidram-page'] === 'favicon') {
-            $FavIconData = base64_decode($this->FE['favicon']);
-            $OldETag = $_SERVER['HTTP_IF_NONE_MATCH'] ?? '';
-            $NewETag = hash('sha256', $FavIconData) . '-' . strlen($FavIconData);
-            header('ETag: "' . $NewETag . '"');
-            header('Expires: ' . gmdate('D, d M Y H:i:s T', $this->Now + 2592000));
-            if (preg_match('~(?:^|, )(?:"' . $NewETag . '"|' . $NewETag . ')(?:$|, )~', $OldETag)) {
-                header('HTTP/1.0 304 Not Modified');
-                header('HTTP/1.1 304 Not Modified');
-                header('Status: 304 Not Modified');
-                die;
-            }
-            header('Content-Type: image/' . $this->FE['favicon_extension']);
-            echo $FavIconData;
-            die;
         }
 
         /** Set the current request's form target. */

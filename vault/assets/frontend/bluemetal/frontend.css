@@ -1,7 +1,7 @@
 *{vertical-align:text-top}
 body,input,select,textarea,.idx{font-size:calc((12px * {magnification}) + .03vw)}
 body{font-family:'Tahoma','Verdana','Arial';letter-spacing:1px;text-decoration:none;border-style:none;margin:0;white-space:normal;background-color:#333;color:#cde;background-image:url(data:image/gif;base64,R0lGODdhAwADAIACADMzM1VicCwAAAAAAwADAAACBIQRBwUAOw==);background-attachment:fixed}
-code{background-color:rgba(85,85,85,.5);color:#111;vertical-align:0;display:inline-block;height:calc(1em + 2px)}
+code{background-color:rgba(85,85,85,.5);color:#eee;vertical-align:0;display:inline-block;height:calc(1em + 2px)}
 hr{border-style:solid none none;border-width:1px;margin:5px 2px 0;padding:2px;color:#89b}
 img.ico{width:16px;height:16px;border:0;filter:hue-rotate(180deg) brightness(.8)}
 input,select,option,textarea{background-color:#345;border:none;color:#ccc;margin:2px;padding:2px}
@@ -56,7 +56,7 @@ a:hover,a:active,a:focus,.txtRd{color:#fca}
 .rf{background:linear-gradient({90deg},rgba(153,102,51,.6),#c96)}
 .right{padding:20px;width:80%}
 .branchline{border-style:none none solid none;border-width:1px;border-color:#89b}
-.txtBl{color:#111}
+.txtBl{color:#eee}
 .txtGn{color:#9c7}
 .txtOe{color:#f96}
 .ufts{width:220px}
@@ -113,6 +113,7 @@ blockquote.comSub{margin:-2px 0 0 0;padding:0 0 0 0}
 @keyframes forRotate{0%{transform:rotate(0)}100%{transform:rotate({45deg})}}
 @keyframes revRotate{0%{transform:rotate({45deg})}100%{transform:rotate(0)}}
 .navicon{display:inline-block;filter:invert(85%) saturate(1074%) hue-rotate(206deg) brightness(100%) contrast(87%);position:relative;top:1px;width:16px;height:16px}
+a:hover>.navicon,a:active>.navicon,a:focus>.navicon{filter:invert(91%) sepia(87%) saturate(611%) hue-rotate(298deg) brightness(100%) contrast(109%)}
 select+input[type=submit],select+input[type=button]{height:20px;margin-{FE_Align}:-3px;border-bottom-{FE_Align}-radius:0;border-top-{FE_Align}-radius:0;padding-{FE_Align}:3px}
 select,input[type=submit],input[type=reset],input[type=button],input[type=text],input[type=password],input[type=number],input[type=date],input[type=time],button{box-sizing:border-box;height:20px;padding-top:0;padding-bottom:0}
 select[class=auto]+select[class=auto]{margin-{FE_Align}:-3px;margin-{FE_Align_Reverse}:0}

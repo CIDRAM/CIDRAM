@@ -262,3 +262,5 @@
 [2023.06.14; Bug-fix; Maikuolan]: Copied text not rendering properly at the front-end calculator page; Fixed.
 
 [2023.06.15; Bug-fix; Maikuolan]: Wrong MIME type returned for custom ICO favicons; Fixed.
+
+[2023.06.16; Maikuolan]: Slightly adjusted the favicon.

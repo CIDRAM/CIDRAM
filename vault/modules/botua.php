@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bot user agents module (last modified: 2023.04.20).
+ * This file: Bot user agents module (last modified: 2023.06.16).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -245,11 +245,11 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         's(?:can\.lol|creener|itedomain|mut|nap(?:preview)?bot|oapclient|ocial(?:ayer|searcher)|oso|pyglass|quider|treetbot|ynapse)|' .
         't(?:impi|omba|weezler)|' .
         'urlappendbot|' .
-        'w(?:asalive|atchmouse|eb(?:-monitoring|bot|masteraid|money|thumbnail)|hatweb|ikiapiary|in(?:http|inet)|maid\.com|sr-agent|wwtype)|' .
+        'w(?:asalive|atchmouse|eb(?:-monitoring|bot|masteraid|money|pros|thumbnail)|hatweb|ikiapiary|in(?:http|inet)|maid\.com|sr-agent|wwtype)|' .
         'xenu|xovi|' .
         'zibber|zurichfinancialservices~',
         $UANoSpace
-    ), 'Unauthorised'); // 2023.03.18
+    ), 'Unauthorised'); // 2023.06.16
 
     $this->trigger(preg_match(
         '~^(?:bot|java|msie|windows-live-social-object-extractor)|\((?:java|\w:\d{2,})~',
@@ -290,10 +290,10 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
     $this->trigger(strpos($UA, 'bittorrent') !== false, 'Bad context (not a bittorrent hub)'); // 2017.02.25
 
-    $this->trigger(
-        strpos($UA, 'projectdiscovery') !== false || strpos($UA, 'nuclei') !== false,
-        'Vulnerability scanner detected; Unauthorised'
-    ); // 2021.02.08
+    $this->trigger(preg_match(
+        '~foregenix|nuclei|projectdiscovery|threatview~',
+        $UA
+    ), 'Vulnerability scanner detected; Unauthorised'); // 2023.06.16
 
     $this->trigger(preg_match('~^python/|aiohttp/|\.post0~', $UANoSpace), 'Bad context (Python/AIO clients not permitted here)'); // 2021.05.18
 
@@ -380,7 +380,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         } elseif (strpos($this->BlockInfo['WhyReason'], 'Hack UA') !== false) {
             $this->Reporter->report([15, 19, 21], ['Hack identifier detected in user agent.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'Vulner') !== false) {
-            $this->Reporter->report([15], ['Caught looking for vulnerabilities.'], $this->BlockInfo['IPAddr']);
+            $this->Reporter->report([15, 19, 21], ['Caught looking for vulnerabilities.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'UASQLi') !== false) {
             $this->Reporter->report([16], ['SQLi attempt detected in user agent.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'CAPTCHA cracker UA') !== false) {

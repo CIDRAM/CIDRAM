@@ -1,8 +1,8 @@
 # IPv4 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv4.dat
 
-# Version: 2023.162.0
-# Last modified: 2023.06.12
+# Version: 2023.167.0
+# Last modified: 2023.06.17
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -33756,13 +33756,13 @@ Profile: Commercial
 Tag: Castle Global Inc
 
 
-# ASNs 38337, 47869, 138687, 211252, 213035, 397373, 399471, 400377 ("Des Capital B.V").
+# ASNs 38337, 46308, 47869, 138687, 211252, 213035, 397373, 399471, 400377 ("Des Capital B.V").
 # Webhosting and cloud lease network. Regular brute-force attacks and
 # port scans detected from here. Caught by honeypots searching for vulnerable
 # login systems. Has been hitting my honeypots daily for a number of years now.
 # Stop Forum Spam (SFS) listings: 88 (AS38337), 7 (AS47869), 473 (AS138687),
 # 4,038 (AS211252), 82 (AS213035), 1,211 (AS397373), 2,872 (AS399471), 387 (AS400377).
-# Updated: 2023.05.23
+# Updated: 2023.05.23 / Modified: 2023.06.15
 
 45.150.23.0/24 Deny Cloud
 45.191.164.0/22 Deny Cloud
@@ -33796,6 +33796,7 @@ Origin: AE
 Origin: AR
 5.178.7.0/24 Deny Cloud
 Origin: AZ
+2.59.255.0/24 Deny Cloud
 37.139.128.0/23 Deny Cloud
 45.12.253.0/24 Deny Cloud
 45.14.165.0/24 Deny Cloud
@@ -33806,7 +33807,7 @@ Origin: AZ
 45.128.234.0/23 Deny Cloud
 45.139.105.0/24 Deny Cloud
 45.149.235.0/24 Deny Cloud
-79.110.48.0/24 Deny Cloud
+79.110.48.0/23 Deny Cloud
 79.110.62.0/23 Deny Cloud
 80.76.51.0/24 Deny Cloud
 81.161.229.0/24 Deny Cloud
@@ -33816,9 +33817,12 @@ Origin: AZ
 85.31.44.0/23 Deny Cloud
 85.31.46.0/24 Deny Cloud
 85.208.136.0/24 Deny Cloud
+85.208.139.0/24 Deny Cloud
 85.209.134.0/23 Deny Cloud
 85.217.144.0/24 Deny Cloud
+87.120.88.0/24 Deny Cloud
 87.121.3.0/24 Deny Cloud
+87.121.47.0/24 Deny Cloud
 87.121.221.0/24 Deny Cloud
 93.123.84.0/24 Deny Cloud
 94.156.6.0/24 Deny Cloud
@@ -33826,8 +33830,7 @@ Origin: AZ
 95.214.24.0/24 Deny Cloud
 95.214.27.0/24 Deny Cloud
 109.206.236.0/23 Deny Cloud
-109.206.240.0/23 Deny Cloud
-109.206.243.0/24 Deny Cloud
+109.206.240.0/22 Deny Cloud
 141.98.6.0/24 Deny Cloud
 171.22.30.0/24 Deny Cloud
 185.216.68.0/23 Deny Cloud
@@ -33836,7 +33839,8 @@ Origin: AZ
 185.225.73.0/24 Deny Cloud
 185.225.74.0/23 Deny Cloud
 185.246.220.0/23 Deny Cloud
-185.252.178.0/24 Deny Cloud
+185.246.222.0/24 Deny Cloud
+185.252.178.0/23 Deny Cloud
 185.254.37.0/24 Deny Cloud
 193.37.41.0/24 Deny Cloud
 193.42.32.0/23 Deny Cloud
@@ -33844,7 +33848,7 @@ Origin: AZ
 194.49.94.0/24 Deny Cloud
 194.55.186.0/24 Deny Cloud
 194.55.224.0/24 Deny Cloud
-194.59.30.0/24 Deny Cloud
+194.59.30.0/23 Deny Cloud
 194.180.48.0/23 Deny Cloud
 195.178.120.0/24 Deny Cloud
 212.87.204.0/24 Deny Cloud
@@ -41609,7 +41613,8 @@ Tag: ITP-Solutions
 # ASN 34240 ("manitu GmbH").
 # German webhosting provider. Brute-force, WordPress/XMLRPC, and webapp attacks
 # detected from here.
-# Updated: 2022.06.21
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2022.06.21 / Checked: 2023.06.14
 
 2.59.84.0/22 Deny Cloud
 85.116.192.0/19 Deny Cloud
@@ -41622,11 +41627,11 @@ Tag: manitu GmbH
 
 # ASN 206264 ("Amarutu Technology Ltd").
 # Webhosting; DDoS services. Port scans, hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 22,497.
-# Updated: 2022.06.21
+# Stop Forum Spam (SFS) listings: 3,427.
+# Updated: 2023.06.14
 
-103.104.142.0/24 Deny Cloud
-Origin: BD
+217.113.28.0/24 Deny Cloud
+Origin: AM
 31.220.0.0/22 Deny Cloud
 31.220.40.0/23 Deny Cloud
 85.202.80.0/24 Deny Cloud
@@ -41634,22 +41639,34 @@ Origin: BD
 185.192.98.0/24 Deny Cloud
 Origin: DE
 103.28.88.0/23 Deny Cloud
+103.55.8.0/24 Deny Cloud
 103.109.100.0/22 Deny Cloud
 Origin: HK
+122.254.117.0/24 Deny Cloud
+Origin: MN
+103.47.145.0/24 Deny Cloud
 103.47.147.0/24 Deny Cloud
 Origin: PK
 185.126.181.0/24 Deny Cloud
 Origin: RU
 5.183.209.0/24 Deny Cloud
 45.139.122.0/24 Deny Cloud
+80.251.152.0/23 Deny Cloud
 89.249.49.0/24 Deny Cloud
+93.123.72.0/24 Deny Cloud
 94.156.33.0/24 Deny Cloud
-156.236.31.0/24 Deny Cloud
 185.191.124.0/22 Deny Cloud
 Origin: SC
+45.74.41.0/24 Deny Cloud
+104.243.250.0/24 Deny Cloud
 149.57.22.0/24 Deny Cloud
 172.111.168.0/24 Deny Cloud
+172.111.192.0/24 Deny Cloud
+172.111.234.0/24 Deny Cloud
 172.111.252.0/24 Deny Cloud
+192.253.240.0/24 Deny Cloud
+192.253.242.0/24 Deny Cloud
+192.253.252.0/24 Deny Cloud
 198.144.120.0/23 Deny Cloud
 Origin: US
 Profile: Commercial;Dedicated;Webhosting
@@ -41659,9 +41676,10 @@ Tag: Amarutu Technology Ltd
 # ASNs 42335, 200303 ("Jan Philipp Waldecker trading as LUMASERV Systems").
 # German webhosting provider. Webapp attacks, port scans, hacking, and spam
 # detected from here.
-# Stop Forum Spam (SFS) listings: 2 (AS200303).
-# Updated: 2022.06.21
+# Stop Forum Spam (SFS) listings: 13 (AS200303).
+# Updated: 2023.06.14
 
+45.67.138.0/24 Deny Cloud
 45.95.52.0/22 Deny Cloud
 45.132.124.0/22 Deny Cloud
 45.142.112.0/22 Deny Cloud
@@ -41676,8 +41694,7 @@ Tag: LUMASERV
 # ASN 264400 ("VIDEOSAT SERVICOS DE INFORMATICA LTDA").
 # Brazilian webhosting provider. Dead homepage. Port scans, hacking, and spam
 # detected from here.
-# Stop Forum Spam (SFS) listings: 7.
-# Updated: 2022.06.21
+# Updated: 2022.06.21 / Checked: 2023.06.14
 
 131.161.208.0/22 Deny Cloud
 Origin: BR
@@ -44371,6 +44388,23 @@ Tag: Negah Roshan
 Origin: TR
 Profile: Webhosting
 Tag: NETFACTOR TELEKOMINIKASYON
+
+
+# ASN 140810 ("Megacore Technology Company Limited").
+# Brute-force, DDoS, and SSH attacks, hacking, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 2,866.
+# Updated: 2023.06.17
+
+103.77.172.0/23 Deny Cloud
+103.141.140.0/22 Deny Cloud
+103.155.216.0/23 Deny Cloud
+103.168.53.0/24 Deny Cloud
+103.176.108.0/23 Deny Cloud
+103.178.234.0/23 Deny Cloud
+103.214.8.0/22 Deny Cloud
+Origin: VN
+Profile: Webhosting
+Tag: Megacore
 
 
 # ---

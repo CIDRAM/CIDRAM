@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2023.162.0
-# Last modified: 2023.06.12
+# Version: 2023.167.0
+# Last modified: 2023.06.17
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -9139,13 +9139,13 @@ Profile: Commercial;Infrastructure/Transit;Search engine
 Tag: Beijing Baidu Netcom
 
 
-# ASNs 38337, 47869, 138687, 211252, 213035, 397373, 399471, 400377 ("Des Capital B.V").
+# ASNs 38337, 46308, 47869, 138687, 211252, 213035, 397373, 399471, 400377 ("Des Capital B.V").
 # Webhosting and cloud lease network. Regular brute-force attacks and
 # port scans detected from here. Caught by honeypots searching for vulnerable
 # login systems. Has been hitting my honeypots daily for a number of years now.
 # Stop Forum Spam (SFS) listings: 88 (AS38337), 7 (AS47869), 473 (AS138687),
 # 4,038 (AS211252), 82 (AS213035), 1,211 (AS397373), 2,872 (AS399471), 387 (AS400377).
-# Updated: 2023.05.23
+# Updated: 2023.05.23 / Modified: 2023.06.15
 
 2803:8080::/32 Deny Cloud
 Origin: AR
@@ -11091,7 +11091,8 @@ Tag: ITP-Solutions
 # ASN 34240 ("manitu GmbH").
 # German webhosting provider. Brute-force, WordPress/XMLRPC, and webapp attacks
 # detected from here.
-# Updated: 2022.06.21
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2022.06.21 / Checked: 2023.06.14
 
 2a00:1828::/32 Deny Cloud
 Origin: DE
@@ -11101,8 +11102,8 @@ Tag: manitu GmbH
 
 # ASN 206264 ("Amarutu Technology Ltd").
 # Webhosting; DDoS services. Port scans, hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 22,497.
-# Updated: 2022.06.21
+# Stop Forum Spam (SFS) listings: 3,427.
+# Updated: 2022.06.21 / Checked: 2023.06.14
 
 2402:7840::/32 Deny Cloud
 Origin: HK
@@ -11119,11 +11120,9 @@ Tag: Amarutu Technology Ltd
 # ASNs 42335, 200303 ("Jan Philipp Waldecker trading as LUMASERV Systems").
 # German webhosting provider. Webapp attacks, port scans, hacking, and spam
 # detected from here.
-# Stop Forum Spam (SFS) listings: 2 (AS200303).
-# Updated: 2022.06.21
+# Stop Forum Spam (SFS) listings: 13 (AS200303).
+# Updated: 2023.06.14
 
-2a0e:97c0:180::/44 Deny Cloud
-Origin: CH
 2001:678:c20::/48 Deny Cloud
 2a0d:3580::/32 Deny Cloud
 2a0d:3584:1111::/48 Deny Cloud
@@ -11137,7 +11136,7 @@ Tag: LUMASERV
 # Brazilian webhosting provider. Dead homepage. Port scans, hacking, and spam
 # detected from here.
 # Stop Forum Spam (SFS) listings: 7.
-# Updated: 2022.06.21
+# Updated: 2022.06.21 / Checked: 2023.06.14
 
 2804:1de0::/32 Deny Cloud
 Origin: BR
@@ -11969,6 +11968,18 @@ Tag: DFDB LLC
 Origin: TR
 Profile: Webhosting
 Tag: NETFACTOR TELEKOMINIKASYON
+
+
+# ASN 140810 ("Megacore Technology Company Limited").
+# Brute-force, DDoS, and SSH attacks, hacking, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 2,866.
+# Updated: 2023.06.17
+
+2001:df4:d880::/48 Deny Cloud
+2405:19c0::/32 Deny Cloud
+Origin: VN
+Profile: Webhosting
+Tag: Megacore
 
 
 # ---

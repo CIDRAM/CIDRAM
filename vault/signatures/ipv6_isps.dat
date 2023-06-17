@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2023.162.0
-# Last modified: 2023.06.12
+# Version: 2023.167.0
+# Last modified: 2023.06.17
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -977,10 +977,10 @@ Tag: NPF SOFTVIDEO Ltd
 # Russian multiplay network. Brute-force, XMLRPC/WordPress, and webapp attacks,
 # hacking, port scans, and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 460.
-# Updated: 2022.02.14 / Checked: 2023.01.31
+# Stop Forum Spam (SFS) listings: 591.
+# Updated: 2023.06.15
 
-2a03:6f00:6:1::/64 Deny Attacks
+2a03:6f00::/32 Deny Attacks
 Origin: RU
 Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Tor endpoints here;Webhosting
 Tag: OOO TimeWeb
@@ -1405,3 +1405,25 @@ Tag: Uzbektelekom
 Origin: BD
 Profile: Domestic ISP
 Tag: Pan M Tech Limited
+
+
+# ASNs 7643, 45899, 135905, 135967 ("VietNam Post and Telecom Corporation").
+# A *major* Vietnamese domestic ISP, but also a significant source of spam,
+# hack attempts, probing, etc. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 10,063 (AS7643), 21,440 (AS45899),
+# 397 (AS135905), 7,078 (AS135967).
+# Updated: 2023.06.17
+
+2001:df7:c600:4::/64 Deny Spam
+2001:ee0:4141:fe7d::/64 Deny Spam
+2001:ee0:4253:ddd0::/64 Deny Spam
+2001:ee0:4269:f4a0::/64 Deny Spam
+2001:ee0:4959:5250::/64 Deny Spam
+2001:ee0:497d:b150::/64 Deny Spam
+2001:ee0:4f84:3e70::/64 Deny Spam
+2001:ee0:4fcc:9550::/64 Deny Spam
+2001:ee0:53cd:950::/64 Deny Spam
+2001:ee0:566b:eba0::/64 Deny Spam
+Origin: VN
+Profile: Domestic ISP;Infrastructure/Transit;Tor endpoints here
+Tag: VNPT Corp

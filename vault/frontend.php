@@ -5240,7 +5240,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
             $CIDRAM['FE']['Needle'] = strlen($CIDRAM['FE']['logfileData'][0]);
             $CIDRAM['Iterations'] = 0;
             while ($CIDRAM['StepBlock']($CIDRAM['FE']['logfileData'][0], $CIDRAM['FE']['Needle'], 0, $CIDRAM['FE']['SearchQuery'], '<')) {
-                if (strlen($CIDRAM['FE']['SearchQuery'])) {
+                if ($CIDRAM['FE']['SearchQuery'] !== '') {
                     $CIDRAM['StepBlock']($CIDRAM['FE']['logfileData'][0], $CIDRAM['FE']['Needle'], 0, '', '<');
                 }
                 $CIDRAM['Iterations']++;
@@ -5260,7 +5260,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
                     $CIDRAM['FE']['FieldSeparator']
                 );
             }
-            if (!$CIDRAM['FE']['From']) {
+            if ($CIDRAM['FE']['From'] === '') {
                 $CIDRAM['FE']['From'] = $CIDRAM['IsolateFirstFieldEntry'](
                     $CIDRAM['FE']['logfileData'][1],
                     $CIDRAM['FE']['FieldSeparator']
@@ -5292,7 +5292,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
                 $CIDRAM['FE']['BlockStart'] = strrpos(substr($CIDRAM['FE']['logfileData'], 0, $CIDRAM['FE']['Needle']), $CIDRAM['FE']['BlockSeparator'], $CIDRAM['FE']['BlockEnd']);
                 $CIDRAM['FE']['BlockEnd'] = strpos($CIDRAM['FE']['logfileData'], $CIDRAM['FE']['BlockSeparator'], $CIDRAM['FE']['Needle']);
                 if ($CIDRAM['FE']['Paginate']) {
-                    if (!$CIDRAM['FE']['From']) {
+                    if ($CIDRAM['FE']['From'] === '') {
                         $CIDRAM['FE']['From'] = $CIDRAM['IsolateFirstFieldEntry'](
                             substr($CIDRAM['FE']['logfileData'], $CIDRAM['FE']['BlockStart'], $CIDRAM['FE']['BlockEnd'] - $CIDRAM['FE']['BlockStart']),
                             $CIDRAM['FE']['FieldSeparator']
@@ -5339,11 +5339,15 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
                         $CIDRAM['PaginationFromLink']('label_next', $CIDRAM['FE']['Next']);
                     }
                     if (isset($CIDRAM['FE']['EstAft'])) {
-                        $CIDRAM['FE']['EstAft'] = floor(($CIDRAM['FE']['EstAft'] / (($CIDRAM['FE']['EstAft'] + $CIDRAM['FE']['EstFore']) ?: 1)) * 100);
+                        $CIDRAM['FE']['EstAft'] = floor(($CIDRAM['FE']['EstAft'] / ($CIDRAM['FE']['EntryCountBefore'] ?: 1)) * 100);
                         if ($CIDRAM['FE']['EstFore'] <= $CIDRAM['FE']['PerPage']) {
                             $CIDRAM['FE']['EstWidth'] = 100 - $CIDRAM['FE']['EstAft'];
                         } else {
                             $CIDRAM['FE']['EstWidth'] = floor(($CIDRAM['FE']['EntryCountPaginated'] / ($CIDRAM['FE']['EntryCountBefore'] ?: $CIDRAM['FE']['EntryCount'])) * 100);
+                        }
+                        if ($CIDRAM['FE']['EstAft'] >= 100) {
+                            $CIDRAM['FE']['EstAft'] = 0;
+                            $CIDRAM['FE']['EstWidth'] = 100;
                         }
                         $CIDRAM['FE']['SearchInfo'] .= sprintf(
                             '<br /><div style="width:100%%;height:2px;overflow:visible;background-color:rgba(0,192,0,.4);margin:1px 0 1px 0">' .
@@ -5367,7 +5371,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
                 $CIDRAM['FE']['OriginalLogDataLen'] = strlen($CIDRAM['FE']['logfileData']);
                 $CIDRAM['FE']['BlockStart'] = 0;
                 $CIDRAM['FE']['BlockEnd'] = 0;
-                if (!$CIDRAM['FE']['From']) {
+                if ($CIDRAM['FE']['From'] === '') {
                     $CIDRAM['FE']['From'] = $CIDRAM['IsolateFirstFieldEntry'](
                         $CIDRAM['FE']['logfileData'],
                         $CIDRAM['FE']['FieldSeparator']
@@ -5428,11 +5432,15 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
                         $CIDRAM['PaginationFromLink']('label_next', $CIDRAM['FE']['Next']);
                     }
                     if (isset($CIDRAM['FE']['EstAft'])) {
-                        $CIDRAM['FE']['EstAft'] = floor(($CIDRAM['FE']['EstAft'] / (($CIDRAM['FE']['EstAft'] + $CIDRAM['FE']['EstFore']) ?: 1)) * 100);
+                        $CIDRAM['FE']['EstAft'] = floor(($CIDRAM['FE']['EstAft'] / ($CIDRAM['FE']['EntryCountBefore'] ?: 1)) * 100);
                         if ($CIDRAM['FE']['EstFore'] <= $CIDRAM['FE']['PerPage']) {
                             $CIDRAM['FE']['EstWidth'] = 100 - $CIDRAM['FE']['EstAft'];
                         } else {
                             $CIDRAM['FE']['EstWidth'] = floor(($CIDRAM['FE']['EntryCount'] / ($CIDRAM['FE']['EntryCountBefore'] ?: $CIDRAM['FE']['EntryCount'])) * 100);
+                        }
+                        if ($CIDRAM['FE']['EstAft'] >= 100) {
+                            $CIDRAM['FE']['EstAft'] = 0;
+                            $CIDRAM['FE']['EstWidth'] = 100;
                         }
                         $CIDRAM['FE']['SearchInfo'] .= sprintf(
                             '<br /><div style="width:100%%;height:2px;overflow:visible;background-color:rgba(0,192,0,.4);margin:1px 0 1px 0">' .

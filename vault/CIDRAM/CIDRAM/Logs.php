@@ -397,13 +397,15 @@ trait Logs
      */
     private function paginationFromLink(string $Label, string $Needle): void
     {
-        if (strpos($this->FE['BlockLink'], '&from=' . $this->FE['From']) !== false) {
-            $Link = str_replace('&from=' . $this->FE['From'], '&from=' . $Needle, $this->FE['BlockLink']);
+        $From = urlencode($this->FE['From']);
+        $URLNeedle = urlencode($Needle);
+        if (strpos($this->FE['BlockLink'], '&from=' . $From) !== false) {
+            $Link = str_replace('&from=' . $From, '&from=' . $URLNeedle, $this->FE['BlockLink']);
         } else {
-            $Link = $this->FE['BlockLink'] . '&from=' . $Needle;
+            $Link = $this->FE['BlockLink'] . '&from=' . $URLNeedle;
         }
         if (!empty($this->CIDRAM['QueryVars']['search'])) {
-            $Link .= '&search=' . $this->CIDRAM['QueryVars']['search'];
+            $Link .= '&search=' . urlencode($this->CIDRAM['QueryVars']['search']);
         }
         $this->FE['SearchInfo'] .= sprintf(' %s <a href="%s">%s</a>', $this->L10N->getString($Label), $Link, $Needle);
     }

@@ -4981,7 +4981,7 @@ class FrontEnd extends Core
                 $this->FE['Remember'] ? '&remember=on' : '',
                 $this->FE['Paginate'] ? '&paginate=on' : '',
                 $this->FE['PerPage'] > 0 && $this->FE['PerPage'] !== 20 ? '&perpage=' . $this->FE['PerPage'] : '',
-                $this->FE['From'] ? '&from=' . $this->FE['From'] : '',
+                $this->FE['From'] ? '&from=' . urlencode($this->FE['From']) : '',
                 empty($this->CIDRAM['QueryVars']['logfile']) ? '' : '&logfile=' . $this->CIDRAM['QueryVars']['logfile']
             );
 

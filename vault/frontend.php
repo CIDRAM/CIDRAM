@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2023.06.16).
+ * This file: Front-end handler (last modified: 2023.06.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -5161,7 +5161,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
         $CIDRAM['FE']['Remember'] ? '&remember=on' : '',
         $CIDRAM['FE']['Paginate'] ? '&paginate=on' : '',
         $CIDRAM['FE']['PerPage'] > 0 && $CIDRAM['FE']['PerPage'] !== 20 ? '&perpage=' . $CIDRAM['FE']['PerPage'] : '',
-        $CIDRAM['FE']['From'] ? '&from=' . $CIDRAM['FE']['From'] : '',
+        $CIDRAM['FE']['From'] ? '&from=' . urlencode($CIDRAM['FE']['From']) : '',
         empty($CIDRAM['QueryVars']['logfile']) ? '' : '&logfile=' . $CIDRAM['QueryVars']['logfile']
     );
 

@@ -4825,10 +4825,12 @@ $CIDRAM['StepBlock'] = function (string $Data, &$Needle, $End, string $SearchQue
  * @return void
  */
 $CIDRAM['PaginationFromLink'] = function (string $Label, string $Needle) use (&$CIDRAM): void {
-    if (strpos($CIDRAM['FE']['BlockLink'], '&from=' . $CIDRAM['FE']['From']) !== false) {
-        $Link = str_replace('&from=' . $CIDRAM['FE']['From'], '&from=' . $Needle, $CIDRAM['FE']['BlockLink']);
+    $From = urlencode($CIDRAM['FE']['From']);
+    $URLNeedle = urlencode($Needle);
+    if (strpos($CIDRAM['FE']['BlockLink'], '&from=' . $From) !== false) {
+        $Link = str_replace('&from=' . $From, '&from=' . $URLNeedle, $CIDRAM['FE']['BlockLink']);
     } else {
-        $Link = $CIDRAM['FE']['BlockLink'] . '&from=' . $Needle;
+        $Link = $CIDRAM['FE']['BlockLink'] . '&from=' . $URLNeedle;
     }
     if (!empty($CIDRAM['QueryVars']['search'])) {
         $Link .= '&search=' . $CIDRAM['QueryVars']['search'];

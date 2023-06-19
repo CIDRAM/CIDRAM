@@ -29,6 +29,10 @@ Detailed version release guidelines for CIDRAM can be found at:
   seeking the final block's needle position could, in some circumstances, cause
   fatal errors to occur; Fixed.
 
+- [2023.06.19; Bug-fix; Maikuolan]: Needles containing non-alphanumeric
+  characters which weren't URL-encoded could potentially break pagination
+  ordering; Fixed.
+
 === Version/Release 2.12.1 ===
 PATCH RELEASE.
 

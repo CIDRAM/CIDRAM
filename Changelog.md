@@ -264,3 +264,5 @@
 [2023.06.15; Bug-fix; Maikuolan]: Wrong MIME type returned for custom ICO favicons; Fixed.
 
 [2023.06.16; Maikuolan]: Slightly adjusted the favicon.
+
+[2023.06.19; Bug-fix; Maikuolan]: When paginating unfiltered mixed log data, seeking the final block's needle position could, in some circumstances, cause fatal errors to occur; Fixed.

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.06.16).
+ * This file: The CIDRAM front-end (last modified: 2023.06.19).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -5002,15 +5002,15 @@ class FrontEnd extends Core
                 $this->FE['logfileData'] = $this->L10N->getString('logs_logfile_doesnt_exist');
             } else {
                 if (strtolower(substr($this->CIDRAM['QueryVars']['logfile'], -3)) === '.gz') {
-                    $this->CIDRAM['GZLogHandler'] = gzopen($this->Vault . $this->CIDRAM['QueryVars']['logfile'], 'rb');
+                    $GZLogHandler = gzopen($this->Vault . $this->CIDRAM['QueryVars']['logfile'], 'rb');
                     $this->FE['logfileData'] = '';
-                    if (is_resource($this->CIDRAM['GZLogHandler'])) {
-                        while (!gzeof($this->CIDRAM['GZLogHandler'])) {
-                            $this->FE['logfileData'] .= gzread($this->CIDRAM['GZLogHandler'], self::FILE_BLOCKSIZE);
+                    if (is_resource($GZLogHandler)) {
+                        while (!gzeof($GZLogHandler)) {
+                            $this->FE['logfileData'] .= gzread($GZLogHandler, self::FILE_BLOCKSIZE);
                         }
-                        gzclose($this->CIDRAM['GZLogHandler']);
+                        gzclose($GZLogHandler);
                     }
-                    unset($this->CIDRAM['GZLogHandler']);
+                    unset($GZLogHandler);
                 } else {
                     $this->FE['logfileData'] = $this->readFile($this->Vault . $this->CIDRAM['QueryVars']['logfile']);
                 }
@@ -5051,19 +5051,19 @@ class FrontEnd extends Core
                     $this->FE['logfileData'] = $this->splitBeforeLine($this->FE['logfileData'], $this->FE['From']);
                     $this->FE['EstAft'] = substr_count($this->FE['logfileData'][0], $this->CIDRAM['BlockSeparator']);
                     $this->FE['EstFore'] = substr_count($this->FE['logfileData'][1], $this->CIDRAM['BlockSeparator']);
-                    $this->FE['Needle'] = strlen($this->FE['logfileData'][0]);
-                    $this->CIDRAM['Iterations'] = 0;
-                    while ($this->stepThroughBlocks($this->FE['logfileData'][0], $this->FE['Needle'], 0, $this->FE['SearchQuery'], '<')) {
+                    $Needle = strlen($this->FE['logfileData'][0]);
+                    $Iterations = 0;
+                    while ($this->stepThroughBlocks($this->FE['logfileData'][0], $Needle, 0, $this->FE['SearchQuery'], '<')) {
                         if (strlen($this->FE['SearchQuery'])) {
-                            $this->stepThroughBlocks($this->FE['logfileData'][0], $this->FE['Needle'], 0, '', '<');
+                            $this->stepThroughBlocks($this->FE['logfileData'][0], $Needle, 0, '', '<');
                         }
-                        $this->CIDRAM['Iterations']++;
+                        $Iterations++;
                         if (!empty($this->CIDRAM['QueryVars']['search'])) {
                             $this->FE['EntryCountBefore']++;
                         }
-                        if (($this->CIDRAM['Iterations'] > $this->FE['PerPage']) && !$this->FE['Previous']) {
+                        if (($Iterations > $this->FE['PerPage']) && !$this->FE['Previous']) {
                             $this->FE['Previous'] = $this->isolateFirstFieldEntry(
-                                substr($this->FE['logfileData'][0], $this->FE['Needle'] + $BlockSepLen),
+                                substr($this->FE['logfileData'][0], $Needle + $BlockSepLen),
                                 $this->FE['FieldSeparator']
                             );
                         }
@@ -5084,7 +5084,7 @@ class FrontEnd extends Core
                         $this->FE['Previous'] = '';
                     }
                     $this->FE['logfileData'] = $this->FE['logfileData'][1];
-                    unset($this->CIDRAM['Iterations']);
+                    unset($Iterations);
                 }
 
                 /** Pagination counter. */
@@ -5093,18 +5093,13 @@ class FrontEnd extends Core
                 /** Handle block filtering. */
                 if (!empty($this->FE['logfileData']) && !empty($this->CIDRAM['QueryVars']['search'])) {
                     $NewLogFileData = '';
-                    $this->FE['Needle'] = 0;
+                    $Needle = 0;
                     $BlockEnd = 0;
                     $this->FE['EntryCountPaginated'] = 0;
-                    while ($this->stepThroughBlocks(
-                        $this->FE['logfileData'],
-                        $this->FE['Needle'],
-                        $BlockEnd,
-                        $this->FE['SearchQuery']
-                    )) {
+                    while ($this->stepThroughBlocks($this->FE['logfileData'], $Needle, $BlockEnd, $this->FE['SearchQuery'])) {
                         $this->FE['EntryCountBefore']++;
-                        $BlockStart = strrpos(substr($this->FE['logfileData'], 0, $this->FE['Needle']), $this->CIDRAM['BlockSeparator'], $BlockEnd);
-                        $BlockEnd = strpos($this->FE['logfileData'], $this->CIDRAM['BlockSeparator'], $this->FE['Needle']);
+                        $BlockStart = strrpos(substr($this->FE['logfileData'], 0, $Needle), $this->CIDRAM['BlockSeparator'], $BlockEnd);
+                        $BlockEnd = strpos($this->FE['logfileData'], $this->CIDRAM['BlockSeparator'], $Needle);
                         if ($this->FE['Paginate']) {
                             if (!$this->FE['From']) {
                                 $this->FE['From'] = $this->isolateFirstFieldEntry(
@@ -5129,7 +5124,7 @@ class FrontEnd extends Core
                         }
                     }
                     $this->FE['logfileData'] = rtrim($NewLogFileData) . $this->CIDRAM['BlockSeparator'];
-                    unset($this->FE['Needle'], $this->CIDRAM['BlockSeparator'], $BlockEnd, $BlockStart, $NewLogFileData);
+                    unset($Needle, $this->CIDRAM['BlockSeparator'], $BlockEnd, $BlockStart, $NewLogFileData);
                     $this->FE['SearchInfoRender'] = (
                         $this->FE['Flags'] && preg_match('~^[A-Z]{2}$~', $this->FE['SearchQuery'])
                     ) ? '<span class="flag ' . $this->FE['SearchQuery'] . '"><span></span></span>' : '<code>' . $this->FE['SearchQuery'] . '</code>';
@@ -5192,7 +5187,7 @@ class FrontEnd extends Core
                             if ($BlockOffset >= $OriginalLogDataLen) {
                                 break;
                             }
-                            $BlockEnd = strpos($this->FE['logfileData'], $this->CIDRAM['BlockSeparator'], $BlockStart);
+                            $BlockEnd = strpos($this->FE['logfileData'], $this->CIDRAM['BlockSeparator'], $BlockOffset);
                             if ($BlockEnd === false) {
                                 break;
                             }

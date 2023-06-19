@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used by the logs page (last modified: 2023.05.23).
+ * This file: Methods used by the logs page (last modified: 2023.06.19).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -356,12 +356,21 @@ trait Logs
             return false;
         }
 
+        /** Needed for guards. */
+        $DataLen = strlen($Data);
+
         /** Directionality. */
         if ($Direction === '>') {
             $StrFunction = 'strpos';
         } else {
             $StrFunction = 'strrpos';
             $End = ((strlen($Data) - $Needle) * -1) - strlen($this->CIDRAM['BlockSeparator']);
+        }
+
+        /** Guard against the needle being outside the range of the data length. */
+        if (($End > 0 && $End > $DataLen) || ($End < 0 && ($End * -1) > $DataLen)) {
+            $Needle = false;
+            return false;
         }
 
         /** Step with search query. */

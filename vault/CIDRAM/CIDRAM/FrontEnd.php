@@ -5054,7 +5054,7 @@ class FrontEnd extends Core
                     $Needle = strlen($this->FE['logfileData'][0]);
                     $Iterations = 0;
                     while ($this->stepThroughBlocks($this->FE['logfileData'][0], $Needle, 0, $this->FE['SearchQuery'], '<')) {
-                        if (strlen($this->FE['SearchQuery'])) {
+                        if ($this->FE['SearchQuery'] !== '') {
                             $this->stepThroughBlocks($this->FE['logfileData'][0], $Needle, 0, '', '<');
                         }
                         $Iterations++;
@@ -5074,7 +5074,7 @@ class FrontEnd extends Core
                             $this->FE['FieldSeparator']
                         );
                     }
-                    if (!$this->FE['From']) {
+                    if ($this->FE['From'] === '') {
                         $this->FE['From'] = $this->isolateFirstFieldEntry(
                             $this->FE['logfileData'][1],
                             $this->FE['FieldSeparator']
@@ -5101,7 +5101,7 @@ class FrontEnd extends Core
                         $BlockStart = strrpos(substr($this->FE['logfileData'], 0, $Needle), $this->CIDRAM['BlockSeparator'], $BlockEnd);
                         $BlockEnd = strpos($this->FE['logfileData'], $this->CIDRAM['BlockSeparator'], $Needle);
                         if ($this->FE['Paginate']) {
-                            if (!$this->FE['From']) {
+                            if ($this->FE['From'] === '') {
                                 $this->FE['From'] = $this->isolateFirstFieldEntry(
                                     substr($this->FE['logfileData'], $BlockStart, $BlockEnd - $BlockStart),
                                     $this->FE['FieldSeparator']
@@ -5148,11 +5148,15 @@ class FrontEnd extends Core
                                 $this->paginationFromLink('label_next', $this->FE['Next']);
                             }
                             if (isset($this->FE['EstAft'])) {
-                                $this->FE['EstAft'] = floor(($this->FE['EstAft'] / (($this->FE['EstAft'] + $this->FE['EstFore']) ?: 1)) * 100);
+                                $this->FE['EstAft'] = floor(($this->FE['EstAft'] / ($this->FE['EntryCountBefore'] ?: 1)) * 100);
                                 if ($this->FE['EstFore'] <= $this->FE['PerPage']) {
                                     $this->FE['EstWidth'] = 100 - $this->FE['EstAft'];
                                 } else {
-                                    $this->FE['EstWidth'] = floor(($this->FE['EntryCountPaginated'] / ($this->FE['EntryCountBefore'] ?: $this->FE['EntryCount'])) * 100);
+                                    $this->FE['EstWidth'] = floor(($this->FE['EntryCountPaginated'] / ($this->FE['EntryCountBefore'] ?: 1)) * 100);
+                                }
+                                if ($this->FE['EstAft'] >= 100) {
+                                    $this->FE['EstAft'] = 0;
+                                    $this->FE['EstWidth'] = 100;
                                 }
                                 $this->FE['SearchInfo'] .= sprintf(
                                     '<br /><div style="width:100%%;height:2px;overflow:visible;background-color:rgba(0,192,0,.4);margin:1px 0 1px 0">' .
@@ -5176,7 +5180,7 @@ class FrontEnd extends Core
                         $OriginalLogDataLen = strlen($this->FE['logfileData']);
                         $BlockStart = 0;
                         $BlockEnd = 0;
-                        if (!$this->FE['From']) {
+                        if ($this->FE['From'] === '') {
                             $this->FE['From'] = $this->isolateFirstFieldEntry(
                                 $this->FE['logfileData'],
                                 $this->FE['FieldSeparator']
@@ -5229,11 +5233,15 @@ class FrontEnd extends Core
                                 $this->paginationFromLink('label_next', $this->FE['Next']);
                             }
                             if (isset($this->FE['EstAft'])) {
-                                $this->FE['EstAft'] = floor(($this->FE['EstAft'] / (($this->FE['EstAft'] + $this->FE['EstFore']) ?: 1)) * 100);
+                                $this->FE['EstAft'] = floor(($this->FE['EstAft'] / ($this->FE['EntryCountBefore'] ?: 1)) * 100);
                                 if ($this->FE['EstFore'] <= $this->FE['PerPage']) {
                                     $this->FE['EstWidth'] = 100 - $this->FE['EstAft'];
                                 } else {
-                                    $this->FE['EstWidth'] = floor(($this->FE['EntryCount'] / ($this->FE['EntryCountBefore'] ?: $this->FE['EntryCount'])) * 100);
+                                    $this->FE['EstWidth'] = floor(($this->FE['EntryCount'] / ($this->FE['EntryCountBefore'] ?: 1)) * 100);
+                                }
+                                if ($this->FE['EstAft'] >= 100) {
+                                    $this->FE['EstAft'] = 0;
+                                    $this->FE['EstWidth'] = 100;
                                 }
                                 $this->FE['SearchInfo'] .= sprintf(
                                     '<br /><div style="width:100%%;height:2px;overflow:visible;background-color:rgba(0,192,0,.4);margin:1px 0 1px 0">' .

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2023.06.16).
+ * This file: Front-end functions file (last modified: 2023.06.19).
  */
 
 /**
@@ -4506,9 +4506,12 @@ $CIDRAM['IsolateFirstFieldEntry'] = function ($Block, $Separator) {
  */
 $CIDRAM['StepBlock'] = function ($Data, &$Needle, $End, $SearchQuery = '', $Direction = '>') use (&$CIDRAM) {
     /** Guard. */
-    if (!is_int($End) || !strlen($Data) || ($Direction !== '<' && $Direction !== '>')) {
+    if (!is_int($End) || !is_string($Data) || $Data === '' || ($Direction !== '<' && $Direction !== '>')) {
         return false;
     }
+
+    /** Needed for guards. */
+    $DataLen = strlen($Data);
 
     /** Directionality. */
     if ($Direction === '>') {
@@ -4516,6 +4519,12 @@ $CIDRAM['StepBlock'] = function ($Data, &$Needle, $End, $SearchQuery = '', $Dire
     } else {
         $StrFunction = 'strrpos';
         $End = ((strlen($Data) - $Needle) * -1) - strlen($CIDRAM['FE']['BlockSeparator']);
+    }
+
+    /** Guard against the needle being outside the range of the data length. */
+    if (($End > 0 && $End > $DataLen) || ($End < 0 && ($End * -1) > $DataLen)) {
+        $Needle = false;
+        return false;
     }
 
     /** Step with search query. */

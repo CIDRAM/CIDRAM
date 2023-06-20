@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2023.06.19).
+ * This file: Front-end handler (last modified: 2023.06.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -5339,11 +5339,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
                         $CIDRAM['PaginationFromLink']('label_next', $CIDRAM['FE']['Next']);
                     }
                     if (isset($CIDRAM['FE']['EstAft'])) {
-                        $CIDRAM['FE']['EstAft'] = floor(($CIDRAM['FE']['EstAft'] / ($CIDRAM['FE']['EntryCountBefore'] ?: 1)) * 100);
+                        $CIDRAM['FE']['EstAft'] = floor(($CIDRAM['FE']['EstAft'] / ($CIDRAM['FE']['EntryCountBefore'] ?: 1)) * 10000) / 100;
                         if ($CIDRAM['FE']['EstFore'] <= $CIDRAM['FE']['PerPage']) {
                             $CIDRAM['FE']['EstWidth'] = 100 - $CIDRAM['FE']['EstAft'];
                         } else {
-                            $CIDRAM['FE']['EstWidth'] = floor(($CIDRAM['FE']['EntryCountPaginated'] / ($CIDRAM['FE']['EntryCountBefore'] ?: $CIDRAM['FE']['EntryCount'])) * 100);
+                            $CIDRAM['FE']['EstWidth'] = floor(($CIDRAM['FE']['EntryCountPaginated'] / ($CIDRAM['FE']['EntryCountBefore'] ?: $CIDRAM['FE']['EntryCount'])) * 10000) / 100;
                         }
                         if ($CIDRAM['FE']['EstAft'] >= 100) {
                             $CIDRAM['FE']['EstAft'] = 0;
@@ -5351,7 +5351,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
                         }
                         $CIDRAM['FE']['SearchInfo'] .= sprintf(
                             '<br /><div style="width:100%%;height:2px;overflow:visible;background-color:rgba(0,192,0,.4);margin:1px 0 1px 0">' .
-                            '<div style="position:relative;%s:%d%%;top:-1px;width:%d%%;height:4px;overflow:visible;background-color:rgba(192,0,0,.5);margin:0"></div></div>',
+                            '<div style="position:relative;%s:%s%%;top:-1px;width:%s%%;height:4px;overflow:visible;background-color:rgba(192,0,0,.5);margin:0"></div></div>',
                             $CIDRAM['FE']['FE_Align'],
                             $CIDRAM['FE']['EstAft'],
                             $CIDRAM['FE']['EstWidth']
@@ -5432,11 +5432,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
                         $CIDRAM['PaginationFromLink']('label_next', $CIDRAM['FE']['Next']);
                     }
                     if (isset($CIDRAM['FE']['EstAft'])) {
-                        $CIDRAM['FE']['EstAft'] = floor(($CIDRAM['FE']['EstAft'] / ($CIDRAM['FE']['EntryCountBefore'] ?: 1)) * 100);
+                        $CIDRAM['FE']['EstAft'] = floor(($CIDRAM['FE']['EstAft'] / ($CIDRAM['FE']['EntryCountBefore'] ?: 1)) * 10000) / 100;
                         if ($CIDRAM['FE']['EstFore'] <= $CIDRAM['FE']['PerPage']) {
                             $CIDRAM['FE']['EstWidth'] = 100 - $CIDRAM['FE']['EstAft'];
                         } else {
-                            $CIDRAM['FE']['EstWidth'] = floor(($CIDRAM['FE']['EntryCount'] / ($CIDRAM['FE']['EntryCountBefore'] ?: $CIDRAM['FE']['EntryCount'])) * 100);
+                            $CIDRAM['FE']['EstWidth'] = floor(($CIDRAM['FE']['EntryCount'] / ($CIDRAM['FE']['EntryCountBefore'] ?: $CIDRAM['FE']['EntryCount'])) * 10000) / 100;
                         }
                         if ($CIDRAM['FE']['EstAft'] >= 100) {
                             $CIDRAM['FE']['EstAft'] = 0;
@@ -5444,7 +5444,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
                         }
                         $CIDRAM['FE']['SearchInfo'] .= sprintf(
                             '<br /><div style="width:100%%;height:2px;overflow:visible;background-color:rgba(0,192,0,.4);margin:1px 0 1px 0">' .
-                            '<div style="position:relative;%s:%d%%;top:-1px;width:%d%%;height:4px;overflow:visible;background-color:rgba(192,0,0,.5);margin:0"></div></div>',
+                            '<div style="position:relative;%s:%s%%;top:-1px;width:%s%%;height:4px;overflow:visible;background-color:rgba(192,0,0,.5);margin:0"></div></div>',
                             $CIDRAM['FE']['FE_Align'],
                             $CIDRAM['FE']['EstAft'],
                             $CIDRAM['FE']['EstWidth']

@@ -267,4 +267,4 @@
 
 [2023.06.19; Bug-fixes; Maikuolan]: When paginating unfiltered mixed log data, seeking the final block's needle position could, in some circumstances, cause fatal errors to occur; Fixed. Needles containing non-alphanumeric characters which weren't URL-encoded could potentially break pagination ordering; Fixed. Pagination progress bar could float beyond the page confines when filtered search parameters returned exactly one result; Fixed.
 
-[2023.06.20; Maikuolan]: Improved pagination progress bar precision.
+[2023.06.20; Maikuolan]: Improved pagination progress bar precision. Adjusted the pagination information displayed at the logs page to make it easier for the user to track their progress within the pagination (#386).

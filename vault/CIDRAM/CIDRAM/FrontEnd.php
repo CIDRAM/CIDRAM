@@ -5129,10 +5129,17 @@ class FrontEnd extends Core
                         $this->FE['Flags'] && preg_match('~^[A-Z]{2}$~', $this->FE['SearchQuery'])
                     ) ? '<span class="flag ' . $this->FE['SearchQuery'] . '"><span></span></span>' : '<code>' . $this->FE['SearchQuery'] . '</code>';
                     if ($this->FE['Paginate']) {
+                        if (($TryRange = $this->FE['EstAft'] + $this->FE['PerPage']) > $this->FE['EntryCountBefore']) {
+                            $TryRange = $this->FE['EntryCountBefore'];
+                        }
+                        if ($this->FE['EstAft'] > $TryRange) {
+                            $this->FE['EstAft'] = $TryRange - $this->FE['EntryCountBefore'];
+                        }
                         $this->FE['SearchInfo'] = '<br />' . sprintf(
                             $this->L10N->getPlural($this->FE['EntryCountBefore'], 'label_displaying_that_cite'),
-                            '<span class="txtRd">' . $this->NumberFormatter->format($this->FE['EntryCountPaginated']) . '</span>' .
-                            '<span class="txtBl">/</span>' .
+                            '<span class="txtRd">' . $this->NumberFormatter->format($this->FE['EstAft'] + 1) .
+                            '-' . $this->NumberFormatter->format($TryRange) . '</span>' .
+                            '<span class="txtBl">(</span><span class="txtRd">' . $this->NumberFormatter->format($this->FE['EntryCountPaginated']) . '</span><span class="txtBl">)/</span>' .
                             '<span class="txtRd">' . $this->NumberFormatter->format($this->FE['EntryCountBefore']) . '</span>',
                             $this->FE['SearchInfoRender']
                         );
@@ -5148,12 +5155,8 @@ class FrontEnd extends Core
                                 $this->paginationFromLink('label_next', $this->FE['Next']);
                             }
                             if (isset($this->FE['EstAft'])) {
+                                $this->FE['EstWidth'] = floor((($TryRange - $this->FE['EstAft']) / ($this->FE['EntryCountBefore'] ?: 1)) * 10000) / 100;
                                 $this->FE['EstAft'] = floor(($this->FE['EstAft'] / ($this->FE['EntryCountBefore'] ?: 1)) * 10000) / 100;
-                                if ($this->FE['EstFore'] <= $this->FE['PerPage']) {
-                                    $this->FE['EstWidth'] = 100 - $this->FE['EstAft'];
-                                } else {
-                                    $this->FE['EstWidth'] = floor(($this->FE['EntryCountPaginated'] / ($this->FE['EntryCountBefore'] ?: 1)) * 10000) / 100;
-                                }
                                 if ($this->FE['EstAft'] >= 100) {
                                     $this->FE['EstAft'] = 0;
                                     $this->FE['EstWidth'] = 100;
@@ -5215,10 +5218,17 @@ class FrontEnd extends Core
                         substr_count($this->FE['logfileData'], "\n\n") ?: substr_count($this->FE['logfileData'], "\n")
                     );
                     if ($this->FE['Paginate']) {
+                        if (($TryRange = $this->FE['EstAft'] + $this->FE['PerPage']) > $this->FE['EntryCountBefore']) {
+                            $TryRange = $this->FE['EntryCountBefore'];
+                        }
+                        if ($this->FE['EstAft'] > $TryRange) {
+                            $this->FE['EstAft'] = $TryRange - $this->FE['EntryCountBefore'];
+                        }
                         $this->FE['SearchInfo'] = '<br />' . sprintf(
                             $this->L10N->getPlural($this->FE['EntryCountBefore'], 'label_displaying'),
-                            '<span class="txtRd">' . $this->NumberFormatter->format($this->FE['EntryCount']) . '</span>' .
-                            '<span class="txtBl">/</span>' .
+                            '<span class="txtRd">' . $this->NumberFormatter->format($this->FE['EstAft'] + 1) .
+                            '-' . $this->NumberFormatter->format($TryRange) . '</span>' .
+                            '<span class="txtBl">(</span><span class="txtRd">' . $this->NumberFormatter->format($this->FE['EntryCount']) . '</span><span class="txtBl">)/</span>' .
                             '<span class="txtRd">' . $this->NumberFormatter->format($this->FE['EntryCountBefore']) . '</span>'
                         );
                         if ($this->FE['From']) {
@@ -5233,12 +5243,8 @@ class FrontEnd extends Core
                                 $this->paginationFromLink('label_next', $this->FE['Next']);
                             }
                             if (isset($this->FE['EstAft'])) {
+                                $this->FE['EstWidth'] = floor((($TryRange - $this->FE['EstAft']) / ($this->FE['EntryCountBefore'] ?: 1)) * 10000) / 100;
                                 $this->FE['EstAft'] = floor(($this->FE['EstAft'] / ($this->FE['EntryCountBefore'] ?: 1)) * 10000) / 100;
-                                if ($this->FE['EstFore'] <= $this->FE['PerPage']) {
-                                    $this->FE['EstWidth'] = 100 - $this->FE['EstAft'];
-                                } else {
-                                    $this->FE['EstWidth'] = floor(($this->FE['EntryCount'] / ($this->FE['EntryCountBefore'] ?: 1)) * 10000) / 100;
-                                }
                                 if ($this->FE['EstAft'] >= 100) {
                                     $this->FE['EstAft'] = 0;
                                     $this->FE['EstWidth'] = 100;

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used by the logs page (last modified: 2023.06.19).
+ * This file: Methods used by the logs page (last modified: 2023.06.20).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -118,7 +118,7 @@ trait Logs
                     $Enc = str_replace('=', '_', base64_encode($ThisPart));
                     $Section = str_replace(
                         $FieldSeparator . $ThisPart . "<br />\n",
-                        $FieldSeparator . $ThisPart . ' <a href="' . $BlockLink . '&search=' . $Enc . '">»</a>' . "<br />\n" . $Alternate,
+                        $FieldSeparator . $ThisPart . ' <a href="' . $this->paginationRemoveFrom($BlockLink) . '&search=' . $Enc . '">»</a>' . "<br />\n" . $Alternate,
                         $Section
                     );
                 }
@@ -140,7 +140,7 @@ trait Logs
                 foreach ($Parts[1] as $ThisPart) {
                     $Section = str_replace(
                         '("' . $ThisPart . '", L',
-                        '("<a href="' . $BlockLink . '&search=' . str_replace('=', '_', base64_encode($ThisPart)) . '">' . $ThisPart . '</a>", L',
+                        '("<a href="' . $this->paginationRemoveFrom($BlockLink) . '&search=' . str_replace('=', '_', base64_encode($ThisPart)) . '">' . $ThisPart . '</a>", L',
                         $Section
                     );
                 }
@@ -162,7 +162,7 @@ trait Logs
                 foreach ($Parts[1] as $ThisPart) {
                     $Section = str_replace(
                         '[' . $ThisPart . ']',
-                        $OuterOpen . '<a href="' . $BlockLink . '&search=' . str_replace('=', '_', base64_encode($ThisPart)) . '">' . $InnerOpen . $ThisPart . $InnerClose . '</a>' . $OuterClose,
+                        $OuterOpen . '<a href="' . $this->paginationRemoveFrom($BlockLink) . '&search=' . str_replace('=', '_', base64_encode($ThisPart)) . '">' . $InnerOpen . $ThisPart . $InnerClose . '</a>' . $OuterClose,
                         $Section
                     );
                 }
@@ -254,14 +254,14 @@ trait Logs
             }
             foreach ($Entries as $Entry => $Count) {
                 if (!(substr($Entry, 0, 1) === '[' && substr($Entry, 3, 1) === ']')) {
-                    $Entry .= ' <a href="' . $BlockLink . '&search=' . str_replace('=', '_', base64_encode($Entry)) . '">»</a>';
+                    $Entry .= ' <a href="' . $this->paginationRemoveFrom($BlockLink) . '&search=' . str_replace('=', '_', base64_encode($Entry)) . '">»</a>';
                 }
                 preg_match_all('~\("([^()"]+)", L~', $Entry, $Parts);
                 if (count($Parts[1])) {
                     foreach ($Parts[1] as $ThisPart) {
                         $Entry = str_replace(
                             '("' . $ThisPart . '", L',
-                            '("<a href="' . $BlockLink . '&search=' . str_replace('=', '_', base64_encode($ThisPart)) . '">' . $ThisPart . '</a>", L',
+                            '("<a href="' . $this->paginationRemoveFrom($BlockLink) . '&search=' . str_replace('=', '_', base64_encode($ThisPart)) . '">' . $ThisPart . '</a>", L',
                             $Entry
                         );
                     }
@@ -270,9 +270,9 @@ trait Logs
                 if (count($Parts[1])) {
                     foreach ($Parts[1] as $ThisPart) {
                         $Entry = str_replace('[' . $ThisPart . ']', $this->FE['Flags'] ? (
-                            '<a href="' . $BlockLink . '&search=' . str_replace('=', '_', base64_encode($ThisPart)) . '"><span class="flag ' . $ThisPart . '"></span></a>'
+                            '<a href="' . $this->paginationRemoveFrom($BlockLink) . '&search=' . str_replace('=', '_', base64_encode($ThisPart)) . '"><span class="flag ' . $ThisPart . '"></span></a>'
                         ) : (
-                            '[<a href="' . $BlockLink . '&search=' . str_replace('=', '_', base64_encode($ThisPart)) . '">' . $ThisPart . '</a>]'
+                            '[<a href="' . $this->paginationRemoveFrom($BlockLink) . '&search=' . str_replace('=', '_', base64_encode($ThisPart)) . '">' . $ThisPart . '</a>]'
                         ), $Entry);
                     }
                 }
@@ -408,6 +408,17 @@ trait Logs
             $Link .= '&search=' . urlencode($this->CIDRAM['QueryVars']['search']);
         }
         $this->FE['SearchInfo'] .= sprintf(' %s <a href="%s">%s</a>', $this->L10N->getString($Label), $Link, $Needle);
+    }
+
+    /**
+     * Removes the "from" parameter for log filtering.
+     *
+     * @param string $Link The link to clean.
+     * @return string The cleaned link.
+     */
+    private function paginationRemoveFrom(string $Link): string
+    {
+        return preg_replace(['~\?from=[^&]+~i', '~&from=[^&]+~i'], ['?', ''], $Link);
     }
 
     /**

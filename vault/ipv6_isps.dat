@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2023.167.0
-# Last modified: 2023.06.17
+# Version: 2023.170.0
+# Last modified: 2023.06.20
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -284,17 +284,6 @@ Tag: PJSC Rostelecom
 Origin: UA
 Profile: Domestic ISP;Government
 Tag: UARNet
-
-
-# ASN 137432 ("BKB Network").
-# Caught using automated hacktools to try hacking into honeypots.
-# Stop Forum Spam (SFS) listings: 4.
-# Updated: 2022.07.14
-
-2402:68c0:a000::/36 Deny Attacks
-Origin: BD
-Profile: Domestic ISP;Multiplay
-Tag: BKB Network
 
 
 # ASNs 18101, 55836 ("Reliance Communications Ltd").
@@ -1427,3 +1416,34 @@ Tag: Pan M Tech Limited
 Origin: VN
 Profile: Domestic ISP;Infrastructure/Transit;Tor endpoints here
 Tag: VNPT Corp
+
+
+# ASNs 4224, 60729 ("The Calyx Institute", "Zwiebelfreunde e.V").
+# Offers primarily anonymous mobile internet, Tor proxy services, and internet
+# rerouting services, among various related cloud services. Brute-force, SSH,
+# WordPress/XMLRPC, SQLi, XSS, and webapp attacks, port scans, hacking, and
+# spam detected from here, caught faking as Googlebot, and caught sniffing for
+# vulnerabilities to exploit. Significant source of unwanted traffic.
+# Stop Forum Spam (SFS) listings: 31,630 (AS4224), 211,765 (AS60729).
+# Updated: 2023.06.19
+
+2a0a:4587:2010::/46 Deny Attacks
+2a0b:f4c1:2::/48 Deny Attacks
+2a0b:f4c2::/40 Deny Attacks
+Origin: DE
+2602:fef9:100::/48 Deny Attacks
+Origin: US
+Profile: Mobile ISP;Tor endpoints here;Webhosting
+Tag: Calyx/Zwiebelfreunde
+
+
+# ASN 29465 ("MTN NIGERIA Communication limited").
+# Nigerian multiplay ISP. Brute-force, SSH attacks, and spam detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 3,349.
+# Updated: 2023.06.20
+
+2c0f:f5c0:424:ad6f::/64 Deny Spam
+Origin: NG
+Profile: Domestic ISP;Multiplay
+Tag: MTN NIGERIA

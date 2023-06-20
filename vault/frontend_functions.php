@@ -4569,7 +4569,7 @@ $CIDRAM['PaginationFromLink'] = function ($Label, $Needle) use (&$CIDRAM) {
  * @param string $Link The link to clean.
  * @return string The cleaned link.
  */
-$CIDRAM['PaginationRemoveFrom'] = function (string $Link): string {
+$CIDRAM['PaginationRemoveFrom'] = function ($Link) {
     return preg_replace(['~\?from=[^&]+~i', '~&from=[^&]+~i'], ['?', ''], $Link);
 };
 

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.06.19).
+ * This file: The CIDRAM front-end (last modified: 2023.06.20).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -5148,11 +5148,11 @@ class FrontEnd extends Core
                                 $this->paginationFromLink('label_next', $this->FE['Next']);
                             }
                             if (isset($this->FE['EstAft'])) {
-                                $this->FE['EstAft'] = floor(($this->FE['EstAft'] / ($this->FE['EntryCountBefore'] ?: 1)) * 100);
+                                $this->FE['EstAft'] = floor(($this->FE['EstAft'] / ($this->FE['EntryCountBefore'] ?: 1)) * 10000) / 100;
                                 if ($this->FE['EstFore'] <= $this->FE['PerPage']) {
                                     $this->FE['EstWidth'] = 100 - $this->FE['EstAft'];
                                 } else {
-                                    $this->FE['EstWidth'] = floor(($this->FE['EntryCountPaginated'] / ($this->FE['EntryCountBefore'] ?: 1)) * 100);
+                                    $this->FE['EstWidth'] = floor(($this->FE['EntryCountPaginated'] / ($this->FE['EntryCountBefore'] ?: 1)) * 10000) / 100;
                                 }
                                 if ($this->FE['EstAft'] >= 100) {
                                     $this->FE['EstAft'] = 0;
@@ -5160,7 +5160,7 @@ class FrontEnd extends Core
                                 }
                                 $this->FE['SearchInfo'] .= sprintf(
                                     '<br /><div style="width:100%%;height:2px;overflow:visible;background-color:rgba(0,192,0,.4);margin:1px 0 1px 0">' .
-                                    '<div style="position:relative;%s:%d%%;top:-1px;width:%d%%;height:4px;overflow:visible;background-color:rgba(192,0,0,.5);margin:0"></div></div>',
+                                    '<div style="position:relative;%s:%s%%;top:-1px;width:%s%%;height:4px;overflow:visible;background-color:rgba(192,0,0,.5);margin:0"></div></div>',
                                     $this->FE['FE_Align'],
                                     $this->FE['EstAft'],
                                     $this->FE['EstWidth']
@@ -5233,11 +5233,11 @@ class FrontEnd extends Core
                                 $this->paginationFromLink('label_next', $this->FE['Next']);
                             }
                             if (isset($this->FE['EstAft'])) {
-                                $this->FE['EstAft'] = floor(($this->FE['EstAft'] / ($this->FE['EntryCountBefore'] ?: 1)) * 100);
+                                $this->FE['EstAft'] = floor(($this->FE['EstAft'] / ($this->FE['EntryCountBefore'] ?: 1)) * 10000) / 100;
                                 if ($this->FE['EstFore'] <= $this->FE['PerPage']) {
                                     $this->FE['EstWidth'] = 100 - $this->FE['EstAft'];
                                 } else {
-                                    $this->FE['EstWidth'] = floor(($this->FE['EntryCount'] / ($this->FE['EntryCountBefore'] ?: 1)) * 100);
+                                    $this->FE['EstWidth'] = floor(($this->FE['EntryCount'] / ($this->FE['EntryCountBefore'] ?: 1)) * 10000) / 100;
                                 }
                                 if ($this->FE['EstAft'] >= 100) {
                                     $this->FE['EstAft'] = 0;
@@ -5245,7 +5245,7 @@ class FrontEnd extends Core
                                 }
                                 $this->FE['SearchInfo'] .= sprintf(
                                     '<br /><div style="width:100%%;height:2px;overflow:visible;background-color:rgba(0,192,0,.4);margin:1px 0 1px 0">' .
-                                    '<div style="position:relative;%s:%d%%;top:-1px;width:%d%%;height:4px;overflow:visible;background-color:rgba(192,0,0,.5);margin:0"></div></div>',
+                                    '<div style="position:relative;%s:%s%%;top:-1px;width:%s%%;height:4px;overflow:visible;background-color:rgba(192,0,0,.5);margin:0"></div></div>',
                                     $this->FE['FE_Align'],
                                     $this->FE['EstAft'],
                                     $this->FE['EstWidth']

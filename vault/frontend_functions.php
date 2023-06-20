@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2023.06.19).
+ * This file: Front-end functions file (last modified: 2023.06.20).
  */
 
 /**
@@ -1131,7 +1131,7 @@ $CIDRAM['Formatter'] = function (&$In, $BlockLink = '', $Current = '', $FieldSep
                 $Enc = str_replace('=', '_', base64_encode($ThisPart));
                 $Section = str_replace(
                     $FieldSeparator . $ThisPart . "<br />\n",
-                    $FieldSeparator . $ThisPart . ' <a href="' . $BlockLink . '&search=' . $Enc . '">»</a>' . "<br />\n" . $Alternate,
+                    $FieldSeparator . $ThisPart . ' <a href="' . $CIDRAM['PaginationRemoveFrom']($BlockLink) . '&search=' . $Enc . '">»</a>' . "<br />\n" . $Alternate,
                     $Section
                 );
             }
@@ -1159,7 +1159,7 @@ $CIDRAM['Formatter'] = function (&$In, $BlockLink = '', $Current = '', $FieldSep
             foreach ($Parts[1] as $ThisPart) {
                 $Section = str_replace(
                     '("' . $ThisPart . '", L',
-                    '("<a href="' . $BlockLink . '&search=' . str_replace('=', '_', base64_encode($ThisPart)) . '">' . $ThisPart . '</a>", L',
+                    '("<a href="' . $CIDRAM['PaginationRemoveFrom']($BlockLink) . '&search=' . str_replace('=', '_', base64_encode($ThisPart)) . '">' . $ThisPart . '</a>", L',
                     $Section
                 );
             }
@@ -1180,7 +1180,7 @@ $CIDRAM['Formatter'] = function (&$In, $BlockLink = '', $Current = '', $FieldSep
             foreach ($Parts[1] as $ThisPart) {
                 $Section = str_replace(
                     '[' . $ThisPart . ']',
-                    $OuterOpen . '<a href="' . $BlockLink . '&search=' . str_replace('=', '_', base64_encode($ThisPart)) . '">' . $InnerOpen . $ThisPart . $InnerClose . '</a>' . $OuterClose,
+                    $OuterOpen . '<a href="' . $CIDRAM['PaginationRemoveFrom']($BlockLink) . '&search=' . str_replace('=', '_', base64_encode($ThisPart)) . '">' . $InnerOpen . $ThisPart . $InnerClose . '</a>' . $OuterClose,
                     $Section
                 );
             }
@@ -1270,14 +1270,14 @@ $CIDRAM['Tally'] = function ($In, $BlockLink, array $Exclusions = []) use (&$CID
         }
         foreach ($Entries as $Entry => $Count) {
             if (!(substr($Entry, 0, 1) === '[' && substr($Entry, 3, 1) === ']')) {
-                $Entry .= ' <a href="' . $BlockLink . '&search=' . str_replace('=', '_', base64_encode($Entry)) . '">»</a>';
+                $Entry .= ' <a href="' . $CIDRAM['PaginationRemoveFrom']($BlockLink) . '&search=' . str_replace('=', '_', base64_encode($Entry)) . '">»</a>';
             }
             preg_match_all('~\("([^()"]+)", L~', $Entry, $Parts);
             if (count($Parts[1])) {
                 foreach ($Parts[1] as $ThisPart) {
                     $Entry = str_replace(
                         '("' . $ThisPart . '", L',
-                        '("<a href="' . $BlockLink . '&search=' . str_replace('=', '_', base64_encode($ThisPart)) . '">' . $ThisPart . '</a>", L',
+                        '("<a href="' . $CIDRAM['PaginationRemoveFrom']($BlockLink) . '&search=' . str_replace('=', '_', base64_encode($ThisPart)) . '">' . $ThisPart . '</a>", L',
                         $Entry
                     );
                 }
@@ -1286,9 +1286,9 @@ $CIDRAM['Tally'] = function ($In, $BlockLink, array $Exclusions = []) use (&$CID
             if (count($Parts[1])) {
                 foreach ($Parts[1] as $ThisPart) {
                     $Entry = str_replace('[' . $ThisPart . ']', $CIDRAM['FE']['Flags'] ? (
-                        '<a href="' . $BlockLink . '&search=' . str_replace('=', '_', base64_encode($ThisPart)) . '"><span class="flag ' . $ThisPart . '"></span></a>'
+                        '<a href="' . $CIDRAM['PaginationRemoveFrom']($BlockLink) . '&search=' . str_replace('=', '_', base64_encode($ThisPart)) . '"><span class="flag ' . $ThisPart . '"></span></a>'
                     ) : (
-                        '[<a href="' . $BlockLink . '&search=' . str_replace('=', '_', base64_encode($ThisPart)) . '">' . $ThisPart . '</a>]'
+                        '[<a href="' . $CIDRAM['PaginationRemoveFrom']($BlockLink) . '&search=' . str_replace('=', '_', base64_encode($ThisPart)) . '">' . $ThisPart . '</a>]'
                     ), $Entry);
                 }
             }
@@ -4561,6 +4561,16 @@ $CIDRAM['PaginationFromLink'] = function ($Label, $Needle) use (&$CIDRAM) {
         $Link .= '&search=' . $CIDRAM['QueryVars']['search'];
     }
     $CIDRAM['FE']['SearchInfo'] .= sprintf(' %s <a href="%s">%s</a>', $CIDRAM['L10N']->getString($Label), $Link, $Needle);
+};
+
+/**
+ * Removes the "from" parameter for log filtering.
+ *
+ * @param string $Link The link to clean.
+ * @return string The cleaned link.
+ */
+$CIDRAM['PaginationRemoveFrom'] = function (string $Link): string {
+    return preg_replace(['~\?from=[^&]+~i', '~&from=[^&]+~i'], ['?', ''], $Link);
 };
 
 /**

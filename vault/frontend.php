@@ -5320,10 +5320,17 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
                 $CIDRAM['FE']['Flags'] && preg_match('~^[A-Z]{2}$~', $CIDRAM['FE']['SearchQuery'])
             ) ? '<span class="flag ' . $CIDRAM['FE']['SearchQuery'] . '"><span></span></span>' : '<code>' . $CIDRAM['FE']['SearchQuery'] . '</code>';
             if ($CIDRAM['FE']['Paginate']) {
+                if (($CIDRAM['FE']['TryRange'] = $CIDRAM['FE']['EstAft'] + $CIDRAM['FE']['PerPage']) > $CIDRAM['FE']['EntryCountBefore']) {
+                    $CIDRAM['FE']['TryRange'] = $CIDRAM['FE']['EntryCountBefore'];
+                }
+                if ($CIDRAM['FE']['EstAft'] > $CIDRAM['FE']['TryRange']) {
+                    $CIDRAM['FE']['EstAft'] = $CIDRAM['FE']['TryRange'] - $CIDRAM['FE']['EntryCountBefore'];
+                }
                 $CIDRAM['FE']['SearchInfo'] = '<br />' . sprintf(
                     $CIDRAM['L10N']->getPlural($CIDRAM['FE']['EntryCountBefore'], 'label_displaying_that_cite'),
-                    '<span class="txtRd">' . $CIDRAM['NumberFormatter']->format($CIDRAM['FE']['EntryCountPaginated']) . '</span>' .
-                    '<span class="txtBl">/</span>' .
+                    '<span class="txtRd">' . $CIDRAM['NumberFormatter']->format($CIDRAM['FE']['EstAft'] + 1) .
+                    '-' . $CIDRAM['NumberFormatter']->format($CIDRAM['FE']['TryRange']) . '</span>' .
+                    '<span class="txtBl">(</span><span class="txtRd">' . $CIDRAM['NumberFormatter']->format($CIDRAM['FE']['EntryCountPaginated']) . '</span><span class="txtBl">)/</span>' .
                     '<span class="txtRd">' . $CIDRAM['NumberFormatter']->format($CIDRAM['FE']['EntryCountBefore']) . '</span>',
                     $CIDRAM['FE']['SearchInfoRender']
                 );
@@ -5414,10 +5421,17 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
                 substr_count($CIDRAM['FE']['logfileData'], "\n\n") ?: substr_count($CIDRAM['FE']['logfileData'], "\n")
             );
             if ($CIDRAM['FE']['Paginate']) {
+                if (($CIDRAM['FE']['TryRange'] = $CIDRAM['FE']['EstAft'] + $CIDRAM['FE']['PerPage']) > $CIDRAM['FE']['EntryCountBefore']) {
+                    $CIDRAM['FE']['TryRange'] = $CIDRAM['FE']['EntryCountBefore'];
+                }
+                if ($CIDRAM['FE']['EstAft'] > $CIDRAM['FE']['TryRange']) {
+                    $CIDRAM['FE']['EstAft'] = $CIDRAM['FE']['TryRange'] - $CIDRAM['FE']['EntryCountBefore'];
+                }
                 $CIDRAM['FE']['SearchInfo'] = '<br />' . sprintf(
                     $CIDRAM['L10N']->getPlural($CIDRAM['FE']['EntryCountBefore'], 'label_displaying'),
-                    '<span class="txtRd">' . $CIDRAM['NumberFormatter']->format($CIDRAM['FE']['EntryCount']) . '</span>' .
-                    '<span class="txtBl">/</span>' .
+                    '<span class="txtRd">' . $CIDRAM['NumberFormatter']->format($CIDRAM['FE']['EstAft'] + 1) .
+                    '-' . $CIDRAM['NumberFormatter']->format($CIDRAM['FE']['TryRange']) . '</span>' .
+                    '<span class="txtBl">(</span><span class="txtRd">' . $CIDRAM['NumberFormatter']->format($CIDRAM['FE']['EntryCount']) . '</span><span class="txtBl">)/</span>' .
                     '<span class="txtRd">' . $CIDRAM['NumberFormatter']->format($CIDRAM['FE']['EntryCountBefore']) . '</span>'
                 );
                 if ($CIDRAM['FE']['From']) {

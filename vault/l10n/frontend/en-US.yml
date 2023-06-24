@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: US English language data for the front-end (last modified: 2023.05.06).
+# This file: US English language data for the front-end (last modified: 2023.06.14).
 #
 # Note: Including data only where it differs from its AU/GB/NZ English
 # counterpart (doing otherwise isn't necessary due to the L10N handler's
@@ -27,6 +27,7 @@ config_logging_log_sanitisation: "When using the front-end logs page to view log
 config_logging_serialised_log: "Serialized file for logging all blocked access attempts. Specify a filename, or leave blank to disable."
 config_signatures_shorthand: "Controls for what to do with a request when there's a positive match against a signature which utilizes the given shorthand words."
 config_template_data_custom_header: "Inserted as HTML at the very beginning of all "access denied" pages. This could be useful in case you want to include a website logo, personalized header, scripts, or similar at all such pages."
+hints_client_honour: "No matter how we instruct the client, it's important to remember that we ultimately have no control over what the client chooses to do, and there's zero guarantee that the client will honor our instructions."
 hints_shorthand:
  0.: "If your website needs access via LAN or localhost, don't block this. Otherwise though, you can block this."
  1.: "None of the default signature files use this, but it's supported nonetheless in case it might be useful for some users."

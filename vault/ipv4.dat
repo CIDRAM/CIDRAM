@@ -1,8 +1,8 @@
 # IPv4 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv4.dat
 
-# Version: 2023.170.0
-# Last modified: 2023.06.20
+# Version: 2023.174.0
+# Last modified: 2023.06.24
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -7384,13 +7384,15 @@ Tag: AltusHost B.V
 
 
 # ASN 59564 ("Unit-IS Ltd").
-# Stop Forum Spam (SFS) listings: 143.
-# Updated: 2020.12.06 / Checked: 2022.06.04
+# Stop Forum Spam (SFS) listings: 5.
+# Updated: 2023.06.24
 
 188.72.101.0/24 Deny Cloud
 Origin: NL
 195.211.152.0/22 Deny Cloud
 Origin: UA
+172.94.92.0/24 Deny Cloud
+Origin: US
 Profile: Infrastructure/Transit
 Tag: Unit-IS Ltd
 
@@ -18490,12 +18492,10 @@ Tag: Interserver, Inc
 
 
 # ASNs 59349, 131392, 135161 ("GMO-Z.com USA, INC").
-# Stop Forum Spam (SFS) listings: 40 (AS59349), 117 (AS131392), 24 (AS135161).
-# Updated: 2019.08.29 / Checked: 2022.06.02
+# Stop Forum Spam (SFS) listings: 16 (AS131392), 11 (AS135161).
+# Updated: 2023.06.24
 
-163.44.128.0/19 Deny Cloud
-Origin: JP
-103.234.168.0/22 Deny Cloud
+103.234.170.0/23 Deny Cloud
 118.27.128.0/19 Deny Cloud
 150.95.20.0/22 Deny Cloud
 150.95.24.0/22 Deny Cloud
@@ -18504,10 +18504,11 @@ Origin: JP
 150.95.64.0/19 Deny Cloud
 150.95.96.0/21 Deny Cloud
 157.120.160.0/19 Deny Cloud
+163.44.128.0/19 Deny Cloud
 163.44.196.0/22 Deny Cloud
 163.44.201.0/24 Deny Cloud
 163.44.202.0/23 Deny Cloud
-Origin: SG
+Origin: JP
 103.18.4.0/22 Deny Cloud
 118.27.192.0/19 Deny Cloud
 137.59.104.0/22 Deny Cloud
@@ -25003,8 +25004,8 @@ Tag: SOFTplus
 
 
 # ASN 263735 ("SOCIEDAD BUENA HOSTING, S.A").
-# Stop Forum Spam (SFS) listings: 12,034.
-# Updated: 2018.04.06 / Checked: 2022.06.04
+# Stop Forum Spam (SFS) listings: 13,846.
+# Updated: 2018.04.06 / Checked: 2023.06.24
 
 181.177.64.0/18 Deny Cloud
 Origin: BZ
@@ -26186,8 +26187,8 @@ Tag: ICME LIMITED
 
 
 # ASN 202054 ("GRUPO SYS4NET, S.L").
-# Stop Forum Spam (SFS) listings: 4.
-# Updated: 2020.12.06 / Checked: 2022.06.04
+# Stop Forum Spam (SFS) listings: 3.
+# Updated: 2020.12.06 / Checked: 2023.06.24
 
 46.16.132.0/23 Deny Cloud
 46.16.134.0/24 Deny Cloud
@@ -38594,8 +38595,6 @@ Origin: GB
 147.124.198.0/23 Deny Cloud
 147.124.201.0/24 Deny Cloud
 Origin: IN
-
-Origin: IX
 89.116.193.0/24 Deny Cloud
 Origin: LT
 78.142.218.0/24 Deny Cloud
@@ -39148,8 +39147,8 @@ Tag: HOST PARA TU VIDA
 # ASN 208890 ("Republican Digital Communications Office LAN").
 # Commercial network. Brute-force, SSH, and webapp attacks, hacking, port
 # scans, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 1,926.
-# Updated: 2021.08.23 / Checked: 2022.06.02
+# Stop Forum Spam (SFS) listings: 229.
+# Updated: 2021.08.23 / Checked: 2023.06.24
 
 176.96.230.0/24 Deny Attacks
 Origin: CZ
@@ -39228,9 +39227,14 @@ Tag: PS Internet Company LLC
 # ASN 209605 ("UAB Host Baltic").
 # Brute-force, SSH, and webapp attacks, hacking, port scans, and spam detected
 # from here. HUGE number of listing at AbuseIPDB for this network!
-# Stop Forum Spam (SFS) listings: 128.
-# Updated: 2021.08.26 / Checked: 2022.06.02
+# Stop Forum Spam (SFS) listings: 671.
+# Updated: 2023.06.24
 
+91.224.92.0/24 Deny Cloud
+94.103.126.0/24 Deny Cloud
+185.36.81.0/24 Deny Cloud
+185.169.4.0/24 Deny Cloud
+Origin: GB
 141.98.8.0/24 Deny Cloud
 141.98.10.0/23 Deny Cloud
 193.31.6.0/24 Deny Cloud
@@ -44658,6 +44662,23 @@ Tag: HOSTYPE LLC
 Origin: US
 Profile: Webhosting
 Tag: Network Solutions, LLC
+
+
+# ASN 207709 ("Cnc Bilisim Hizmetleri Ins San Tic Ltd Sti").
+# Brute-force, SSH attacks, and spam detected from here.
+# Updated: 2023.06.21
+
+84.32.230.0/24 Deny Cloud
+Origin: LT
+2.56.152.0/22 Deny Cloud
+31.210.54.0/24 Deny Cloud
+146.19.57.0/24 Deny Cloud
+185.242.160.0/22 Deny Cloud
+195.85.207.0/24 Deny Cloud
+195.85.216.0/24 Deny Cloud
+Origin: TR
+Profile: Webhosting
+Tag: Bilisim Hizmetleri
 
 
 # ---

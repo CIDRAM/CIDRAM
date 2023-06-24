@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2023.170.0
-# Last modified: 2023.06.20
+# Version: 2023.174.0
+# Last modified: 2023.06.24
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -5194,12 +5194,12 @@ Tag: Interserver, Inc
 
 
 # ASNs 59349, 131392, 135161 ("GMO-Z.com USA, INC").
-# Stop Forum Spam (SFS) listings: 40 (AS59349), 117 (AS131392), 24 (AS135161).
-# Updated: 2020.11.29 / Checked: 2022.06.02
+# Stop Forum Spam (SFS) listings: 16 (AS131392), 11 (AS135161).
+# Updated: 2023.06.24
 
 2001:df6:b800::/48 Deny Cloud
 2404:8680:1000::/36 Deny Cloud
-Origin: SG
+Origin: JP
 2404:f080::/32 Deny Cloud
 Origin: VN
 Profile: Dedicated;Webhosting
@@ -6336,6 +6336,16 @@ Tag: Trader soft LLC
 Origin: CH
 Profile: Dedicated;Infrastructure/Transit;Multiplay;Tor endpoints here
 Tag: SOFTplus
+
+
+# ASN 263735 ("SOCIEDAD BUENA HOSTING, S.A").
+# Stop Forum Spam (SFS) listings: 13,846.
+# Updated: 2023.06.24
+
+2803:9f80::/32 Deny Cloud
+Origin: HN
+Profile: Dedicated;Webhosting
+Tag: SOCIEDAD BUENA
 
 
 # ASN 63199 ("Capitalonline Data Service Co.,LTD").

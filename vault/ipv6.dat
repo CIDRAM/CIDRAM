@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2023.185.0
-# Last modified: 2023.07.04
+# Version: 2023.188.0
+# Last modified: 2023.07.08
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -1827,27 +1827,28 @@ Tag: Enzu Inc
 
 
 # ASN 18779 ("EGIHosting").
-# Stop Forum Spam (SFS) listings: 598.
-# Updated: 2022.06.22
+# Stop Forum Spam (SFS) listings: 134.
+# Updated: 2023.07.08
 
 2a11:5840::/29 Deny Cloud
-2a11:5f80::/29 Deny Cloud
-2a11:7380::/29 Deny Cloud
 2a11:73c0::/29 Deny Cloud
-2a11:8680::/29 Deny Cloud
 2a11:bd40::/29 Deny Cloud
 Origin: GB
-2a0c:7080::/29 Deny Cloud
-Origin: RU
+2a11:8ec0::/29 Deny Cloud
+2a11:c500::/29 Deny Cloud
+2a12:4980::/29 Deny Cloud
+Origin: HK
 2a02:f240::/29 Deny Cloud
 2a0c:47c0::/29 Deny Cloud
 2a0c:7dc0::/29 Deny Cloud
+2a0c:89c0::/29 Deny Cloud
 2a0c:9ac0::/29 Deny Cloud
 Origin: TR
 2604:bc0:3::/48 Deny Cloud
 2606:6680:35::/48 Deny Cloud
 2606:6680:36::/48 Deny Cloud
 2607:f358::/32 Deny Cloud
+2a0c:7080::/29 Deny Cloud
 Origin: US
 Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: EGIHosting
@@ -1898,8 +1899,8 @@ Tag: Contabo GmbH
 
 
 # ASN 45815 ("ESDS Software Solution").
-# Stop Forum Spam (SFS) listings: 19.
-# Updated: 2022.06.22
+# Stop Forum Spam (SFS) listings: 39.
+# Updated: 2022.06.22 / Checked: 2023.07.08
 
 2400:5300::/47 Deny Cloud
 2400:5300:3::/48 Deny Cloud
@@ -4720,8 +4721,8 @@ Tag: UK-2 Limited
 
 
 # ASN 25820 ("IT7 Networks Inc").
-# Stop Forum Spam (SFS) listings: 3,680.
-# Updated: 2022.06.22
+# Stop Forum Spam (SFS) listings: 1,384.
+# Updated: 2022.06.22 / Checked: 2023.07.08
 
 2607:8700:102::/48 Deny Cloud
 2607:8700:110::/47 Deny Cloud
@@ -6398,8 +6399,8 @@ Tag: Dotsi
 
 
 # ASN 264850 ("TODAS LAS REDES SA").
-# Stop Forum Spam (SFS) listings: 25,670.
-# Updated: 2022.06.22
+# Stop Forum Spam (SFS) listings: 29,911.
+# Updated: 2022.06.22 / Checked: 2023.07.05
 
 2803:6180::/32 Deny Cloud
 Origin: HN
@@ -6726,11 +6727,11 @@ Tag: BelCloud
 # ASN 204601 ("Zomro B.V").
 # Malware indicators, hacktools, and brute-force attempts detected via
 # honeypots at this network.
-# Stop Forum Spam (SFS) listings: 21,900.
-# Updated: 2022.06.22
+# Stop Forum Spam (SFS) listings: 26,371.
+# Updated: 2023.07.05
 
 2a07:5980::/29 Deny Cloud
-Origin: NL
+Origin: UA
 Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: TORAT Private Enterprise
 
@@ -7534,8 +7535,8 @@ Tag: GigeNET
 # Owns IPs associated with a Spamhaus top 10 worst offender listing (Nov 2019).
 # Dedicated webhosting provider with spam records at SFS and elsewhere.
 # Subtract 44.0.0.0/9, 44.128.0.0/10 (clean).
-# Stop Forum Spam (SFS) listings: 440 (AS7489).
-# Updated: 2022.10.03
+# Stop Forum Spam (SFS) listings: 3,859 (AS7489).
+# Updated: 2023.07.08
 
 2403:5680::/48 Deny Cloud
 2403:97c0::/48 Deny Cloud
@@ -7552,8 +7553,6 @@ Origin: DE
 Origin: HK
 2a0e:fd45:40fa::/48 Deny Cloud
 Origin: NL
-2c0f:f360::/34 Deny Cloud
-Origin: SC
 2602:ffc5::/48 Deny Cloud
 2602:ffc5:10::/44 Deny Cloud
 2602:ffc5:20::/48 Deny Cloud
@@ -7566,15 +7565,22 @@ Origin: SC
 2602:ffc5:152::/47 Deny Cloud
 2602:ffc5:190::/47 Deny Cloud
 2602:ffc5:192::/48 Deny Cloud
-2602:ffc5:cc8::/48 Deny Cloud
 2602:ffc5:d10::/44 Deny Cloud
 2602:ffc5:da0::/44 Deny Cloud
-2a0b:b82::/44 Deny Cloud
-2a0b:b84::/31 Deny Cloud
-2a0b:b87:fff0::/44 Deny Cloud
-2a0b:7080:10::/44 Deny Cloud
-2a0b:7080:20::/44 Deny Cloud
-2a0d:77c7::/32 Deny Cloud
+2a0b:7080:10::/48 Deny Cloud
+2a0b:7080:20::/48 Deny Cloud
+2a0b:7080:30::/48 Deny Cloud
+2a0d:77c7::/48 Deny Cloud
+2a0d:77c7:a4d::/48 Deny Cloud
+2a0d:77c7:2240::/48 Deny Cloud
+2a0d:77c7:33c5::/48 Deny Cloud
+2a0d:77c7:792c::/48 Deny Cloud
+2a0d:77c7:88e2::/48 Deny Cloud
+2a0d:77c7:d794::/48 Deny Cloud
+2a0d:77c7:de23::/48 Deny Cloud
+2a0d:77c7:e907::/48 Deny Cloud
+2a0d:77c7:f1e4::/48 Deny Cloud
+2a0d:77c7:f6cd::/48 Deny Cloud
 Origin: US
 Profile: Dedicated;Tor endpoints here;Webhosting
 Tag: HostUS
@@ -10924,26 +10930,23 @@ Tag: Melbikomas UAB
 # Russian dedicated webhosting provider. Brute-force, SQLi, DDoS, and webapp
 # attacks, hacking, port scans, and spam detected from here. Caught
 # masquerading as Googlebot.
-# Stop Forum Spam (SFS) listings: 9,432.
-# Updated: 2023.05.14
+# Stop Forum Spam (SFS) listings: 13,211.
+# Updated: 2023.07.05
 
 2a12:5940::/45 Deny Cloud
 2a12:5940:8::/47 Deny Cloud
-2a12:5940:10::/47 Deny Cloud
-2a12:5940:12::/48 Deny Cloud
+2a12:5940:10::/46 Deny Cloud
+2a12:5940:14::/48 Deny Cloud
 2a12:5940:1000::/36 Deny Cloud
 2a12:5940:2000::/35 Deny Cloud
 2a12:5940:4000::/34 Deny Cloud
-2a12:5940:8000::/34 Deny Cloud
-2a12:5940:c000::/35 Deny Cloud
-2a12:5940:e000::/36 Deny Cloud
-2a13:f180::/29 Deny Cloud
+2a12:5940:8000::/33 Deny Cloud
 Origin: RU
 2a0e:d602:1::/48 Deny Cloud
-2a0e:d602:2::/47 Deny Cloud
+2a0e:d602:2::/48 Deny Cloud
 2a0e:d606::/48 Deny Cloud
 Origin: SC
-Profile: Dedicated;Infrastructure/Transit;Webhosting
+Profile: Dedicated;Frequent changes;Infrastructure/Transit;Webhosting
 Tag: AEZA GROUP Ltd
 
 

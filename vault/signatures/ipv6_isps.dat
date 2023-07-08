@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2023.184.0
-# Last modified: 2023.07.03
+# Version: 2023.188.0
+# Last modified: 2023.07.08
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -558,16 +558,34 @@ Profile: Domestic ISP
 Tag: GAYATRI COMMUNICATIONS
 
 
-# ASNs 18209, 24309, 131269 ("Atria Convergence Technologies Pvt. Ltd.
+# ASNs 18209, 24309, 55577, 131269 ("Atria Convergence Technologies Pvt. Ltd.
 # Broadband Internet Service Provider INDIA", "ACTFIBERNET Pvt Ltd").
 # Indian domestic ISP. Brute-force, SSH, FTP, SQLi, and webapp attacks, port
 # scans, hacking, and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 412 (AS18209), 3,307 (AS24309), 412 (AS131269).
-# Updated: 2022.11.04
+# Stop Forum Spam (SFS) listings: 15,656 (AS18209), 3,679 (AS24309),
+# 1,192 (AS55577), 555 (AS131269).
+# Updated: 2023.07.05
 
-2406:7400:56:4cb4::/64 Deny Spam
-2406:7400:56:d9ac::/64 Deny Spam
+2406:7400:3b:a745::/64 Deny Spam
+2406:7400:51:57fd::/64 Deny Spam
+2406:7400:56:a6b5::/64 Deny Spam
+2406:7400:56:dad8::/64 Deny Spam
+2406:7400:bb:f2f5::/64 Deny Spam
+2406:7400:bb:f487::/64 Deny Spam
+2406:b400:60:eff8::/64 Deny Spam
+2406:b400:66:25e::/64 Deny Spam
+2406:b400:66:22e3::/64 Deny Spam
+2406:b400:b1:79e6::/64 Deny Spam
+2406:b400:b4:e46::/64 Deny Spam
+2406:b400:b4:a523::/64 Deny Spam
+2406:b400:b4:c51c::/64 Deny Spam
+2406:b400:d1:1b8a::/64 Deny Spam
+2406:b400:d1:3311::/64 Deny Spam
+2406:b400:d1:7df8::/64 Deny Spam
+2406:b400:d5:5e08::/64 Deny Spam
+2406:b400:d5:93dd::/64 Deny Spam
+2406:b400:d5:f4bc::/64 Deny Spam
 Origin: IN
 Profile: Domestic ISP
 Tag: Atria Convergence
@@ -1437,3 +1455,19 @@ Tag: Calyx/Zwiebelfreunde
 Origin: NG
 Profile: Domestic ISP;Multiplay
 Tag: MTN NIGERIA
+
+
+# ASN 7713 ("PT Telekomunikasi Indonesia").
+# Indonesian domestic ISP. Brute-force, SSH, and webapp attacks, hacking, and
+# spam detected from here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 3,499.
+# Updated: 2023.07.08
+
+2001:448a:5130:d601::/64 Deny Spam
+2001:448a:6040:2524::/64 Deny Spam
+2001:448a:6040:9de5::/64 Deny Spam
+2001:448a:6040:a384::/64 Deny Spam
+2001:448a:60e2:9baf::/64 Deny Spam
+Origin: ID
+Profile: Domestic ISP;Infrastructure/Transit;Mobile ISP;Multiplay
+Tag: PT Telekomunikasi Indonesia

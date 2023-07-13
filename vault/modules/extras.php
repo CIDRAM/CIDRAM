@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2023.07.13).
+ * This file: Optional security extras module (last modified: 2023.07.14).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -104,13 +104,14 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
         $this->trigger(preg_match('/%(?:0[0-8bcef]|1)/i', $this->BlockInfo['Query']), 'Non-printable characters in query'); // 2016.12.31
 
-        $this->trigger(preg_match('/(?:amp(?:;|%3b)){3,}/', $QueryNoSpace), 'Nesting attack'); // 2016.12.31 mod 2022.10.01
+        $this->trigger(!$is_WP_plugin && preg_match('/(?:amp(?:;|%3b)){3,}/', $QueryNoSpace), 'Nesting attack'); // 2016.12.31 mod 2023.07.14
 
         $this->trigger((
+            !$is_WP_plugin &&
             strpos($this->BlockInfo['rURI'], '/ucp.php?mode=login') === false &&
             strpos($this->BlockInfo['rURI'], 'Category=') === false &&
             preg_match('/%(?:(25){2,}|(25)+27)/', $this->BlockInfo['Query'])
-        ), 'Nesting attack'); // 2017.01.01 mod 2022.10.01
+        ), 'Nesting attack'); // 2017.01.01 mod 2023.07.14
 
         $this->trigger(preg_match(
             '/(?:<(\?|body|i?frame|object|script)|(body|i?frame|object|script)>)/',

@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2023.188.0
-# Last modified: 2023.07.08
+# Version: 2023.193.0
+# Last modified: 2023.07.13
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -1294,18 +1294,6 @@ Tag: Udasha S.A
 Origin: AR
 Profile: Domestic ISP
 Tag: AS265725
-
-
-# ASNs 7303, 10481 ("Telecom Argentina S.A").
-# Argentinian domestic ISP. Brute-force and SSH attacks, hacking, and spam
-# detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 830 (AS7303), 1 (AS10481).
-# Updated: 2023.01.26
-
-2800:2141:5400:3f::/64 Deny Spam
-Origin: AR
-Profile: Domestic ISP
-Tag: Telecom Argentina S.A
 
 
 # ASNs 10429, 18881, 27699 ("TELEFNICA BRASIL S.A").

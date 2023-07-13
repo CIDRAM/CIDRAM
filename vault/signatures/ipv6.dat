@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2023.191.0
-# Last modified: 2023.07.11
+# Version: 2023.193.0
+# Last modified: 2023.07.13
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -808,8 +808,8 @@ Tag: IOMart
 
 
 # ASNs 14061, 46652 ("DigitalOcean, LLC", "ServerStack, Inc").
-# Brute-force, SSH, and webapp attacks, spam, port scans, and other unwanted
-# detected here. Also flagged by honeypots.
+# Brute-force, SSH, honeypot, and webapp attacks, port scans, hacking, and spam
+# detected from here.
 # Stop Forum Spam (SFS) listings: 33,851 (AS14061).
 # Updated: 2023.04.09 / Checked: 2023.06.28
 
@@ -1196,38 +1196,48 @@ Tag: Private Layer INC
 
 
 # ASN 40676 ("Psychz Networks").
-# Stop Forum Spam (SFS) listings: 8,443.
-# Updated: 2023.01.30
+# Stop Forum Spam (SFS) listings: 6,322.
+# Updated: 2023.07.13
 
 2402:2f80:a::/48 Deny Cloud
 2404:f980:3::/48 Deny Cloud
 Origin: AU
+2602:fed2:7316::/48 Deny Cloud
+Origin: CA
 2405:84c0:9710::/44 Deny Cloud
 Origin: CN
+2a09:ff00:200::/44 Deny Cloud
+Origin: DE
 2a07:9940:3333::/48 Deny Cloud
 2a0b:ae40:1::/48 Deny Cloud
 2a0b:ae40:2::/47 Deny Cloud
 2a0b:ae40:4::/48 Deny Cloud
 2a0b:ae47:3::/48 Deny Cloud
 2a0b:ae47:4::/48 Deny Cloud
-2a0e:3840:2::/48 Deny Cloud
-2a0e:3840:4::/48 Deny Cloud
-2a0e:3840:242::/48 Deny Cloud
-2a0e:3840:415::/48 Deny Cloud
-2a0e:3840:801::/48 Deny Cloud
-2a0f:9400:6600::/40 Deny Cloud
+2a0f:9400:6950::/44 Deny Cloud
+2a0f:9400:a000::/40 Deny Cloud
+2a12:bec0:161::/48 Deny Cloud
 Origin: GB
 2403:ad80:1000::/48 Deny Cloud
 Origin: HK
-2a03:b2c0::/29 Deny Cloud
 2a10:17c0::/29 Deny Cloud
 Origin: LT
+2a0f:dec0::/29 Deny Cloud
+2a0f:e7c1::/36 Deny Cloud
+2a0f:e7c1:1000::/39 Deny Cloud
+2a0f:e7c1:1300::/40 Deny Cloud
+2a0f:e7c1:1400::/38 Deny Cloud
+2a0f:e7c1:1800::/38 Deny Cloud
+2a0f:e7c1:1c00::/39 Deny Cloud
+Origin: SC
 2406:4f40:4::/46 Deny Cloud
 2406:4f40:8::/48 Deny Cloud
 2406:4f40:c::/46 Deny Cloud
 2406:4f40:10::/45 Deny Cloud
 2406:b2c0::/32 Deny Cloud
-2602:fd92:cc0::/44 Deny Cloud
+2602:2c5:1::/48 Deny Cloud
+2602:2e6::/48 Deny Cloud
+2602:fd92:efe::/48 Deny Cloud
 2602:fdba::/36 Deny Cloud
 2602:fe13:e00::/40 Deny Cloud
 2602:fea6::/36 Deny Cloud
@@ -1244,18 +1254,11 @@ Origin: LT
 2602:ffb0:11::/48 Deny Cloud
 2602:ffb0:ffe::/48 Deny Cloud
 2602:ffb0:cafe::/48 Deny Cloud
-2602:ffc5:10c::/48 Deny Cloud
-2602:ffc5:110::/44 Deny Cloud
 2602:ffc5:158::/48 Deny Cloud
-2603:f600::/29 Deny Cloud
-2603:f8f0::/29 Deny Cloud
-2603:fb48::/29 Deny Cloud
-2603:ffb0::/29 Deny Cloud
 2604:980:1::/48 Deny Cloud
 2604:6600::/32 Deny Cloud
 2605:6c80:8000::/33 Deny Cloud
 2606:cc0:10::/47 Deny Cloud
-2606:1780::/32 Deny Cloud
 2606:6680:2::/48 Deny Cloud
 2606:6680:4::/48 Deny Cloud
 2606:6680:7::/48 Deny Cloud
@@ -1274,11 +1277,18 @@ Origin: LT
 2606:6680:4000::/35 Deny Cloud
 2606:6680:6000::/36 Deny Cloud
 2607:6b80:68::/48 Deny Cloud
+2a06:a000:101::/48 Deny Cloud
+2a06:a000:150::/44 Deny Cloud
 2a0a:6700::/45 Deny Cloud
 2a0e:c80:3::/48 Deny Cloud
 2a0e:c80:323::/48 Deny Cloud
 2a0e:c80:403::/48 Deny Cloud
 2a0e:c80:743::/48 Deny Cloud
+2a0e:3840:2::/48 Deny Cloud
+2a0e:3840:4::/48 Deny Cloud
+2a0e:3840:242::/48 Deny Cloud
+2a0e:3840:415::/48 Deny Cloud
+2a0e:3840:801::/48 Deny Cloud
 2a0f:2c80::/48 Deny Cloud
 2a0f:9980:6::/48 Deny Cloud
 2a0f:9980:195::/48 Deny Cloud
@@ -1895,8 +1905,15 @@ Tag: Continuum
 2a02:c200::/32 Deny Cloud
 2a02:c204::/30 Deny Cloud
 Origin: DE
-2605:a140::/31 Deny Cloud
-2605:a142::/32 Deny Cloud
+2400:d320::/32 Deny Cloud
+2407:3640::/31 Deny Cloud
+Origin: SG
+2605:a140::/30 Deny Cloud
+2607:4740:2000::/35 Deny Cloud
+2607:4740:5000::/36 Deny Cloud
+2607:4740:6000::/36 Deny Cloud
+2607:4740:8000::/36 Deny Cloud
+2607:4740:a000::/36 Deny Cloud
 Origin: US
 Profile: Dedicated;Frequent changes;Infrastructure/Transit;Tor endpoints here;Webhosting
 Tag: Contabo GmbH
@@ -12180,6 +12197,49 @@ Tag: Rackdog, LLC
 Origin: HK
 Profile: Restricted/Unidentifiable
 Tag: Fifth Dog
+
+
+# ASN 211760 ("Suisse Limited").
+# Webapp attacks, trolling campaigns, malware, C&Cs, port scans, hacking, and
+# spam detected from here.
+# Stop Forum Spam (SFS) listings: 592.
+# Updated: 2023.07.13
+
+2a10:cc45:100::/44 Deny Cloud
+Origin: CH
+Profile: Commercial
+Tag: Suisse Limited
+
+
+# ASN 202685 ("Aggros Operations Ltd").
+# Brute-force, SSH, and webapp attacks, port scans, hacking, tor endpoints, and
+# spam detected from here.
+# Stop Forum Spam (SFS) listings: 285.
+# Updated: 2023.07.13
+
+2a0e:46c4:28c2::/48 Deny Cloud
+Origin: DE
+2a12:dd47:8500::/40 Deny Cloud
+Origin: GB
+2a05:dfc7:4000::/39 Deny Cloud
+2a06:1287:d000::/37 Deny Cloud
+Origin: US
+Profile: Commercial;Tor endpoints here
+Tag: Aggros Operations Ltd
+
+
+# ASN 212872 ("Serverio technologijos MB").
+# DDoS attacks and spam detected from here.
+# Stop Forum Spam (SFS) listings: 371.
+# Updated: 2023.07.13
+
+2001:67c:1688::/48 Deny Cloud
+2a05:5940::/29 Deny Cloud
+2a0e:9100::/29 Deny Cloud
+2a0e:a240::/29 Deny Cloud
+Origin: RU
+Profile: Webhosting
+Tag: Serverio technologijos MB
 
 
 # ---

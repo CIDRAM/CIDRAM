@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.06.20).
+ * This file: The CIDRAM front-end (last modified: 2023.07.14).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -2021,7 +2021,7 @@ class FrontEnd extends Core
                         $this->Components['RemoteMeta'][$Key]['Extended Description'];
                     $this->prepareExtendedDescription($this->Components['ThisComponent'], $Key);
                 }
-                if ($this->Components['ThisComponent']['StatClass'] === '') {
+                if ($this->Components['ThisComponent']['StatClass'] === '' && isset($this->Components['ThisComponent']['Version'])) {
                     if (!empty($this->Components['ThisComponent']['Latest']) && $this->CIDRAM['Operation']->singleCompare(
                         $this->Components['ThisComponent']['Version'],
                         '<' . $this->Components['ThisComponent']['Latest']

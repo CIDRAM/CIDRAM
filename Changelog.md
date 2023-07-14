@@ -270,3 +270,5 @@
 [2023.06.20; Maikuolan]: Improved pagination progress bar precision. Adjusted the pagination information displayed at the logs page to make it easier for the user to track their progress within the pagination (#386).
 
 [2023.07.14; Maikuolan]: Added CSS for selection pseudo-element.
+
+[2023.07.14; Bug-fix; Maikuolan]: When needed version information is missing from component metadata, uncaught type errors could potentially occur at the updates page in some cases; Fixed.

@@ -1,8 +1,8 @@
 # IPv6 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_other.dat
 
-# Version: 2023.160.0
-# Last modified: 2023.06.10
+# Version: 2023.195.0
+# Last modified: 2023.07.15
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -66,7 +66,7 @@ Tag: Applied Privacy
 # Provides anonymous proxy services. Spam, hacking, probing for
 # vulnerabilities, and other kinds of unwanted traffic detected from here.
 # Stop Forum Spam (SFS) listings: 407 (AS50495), 1,831 (AS62874).
-# Updated: 2022.10.03 / Checked: 2023.04.06
+# Updated: 2022.10.03 / Checked: 2023.07.15
 
 2a00:f826:11::/48 Deny Proxy
 2a06:ef40::/32 Deny Proxy
@@ -115,3 +115,15 @@ Tag: Data Ideas llc
 Origin: US
 Profile: Tor endpoints here;Webhosting
 Tag: Thin-nology, LLC
+
+
+# ASN 1004 ("Ambyre LLC").
+# Tor provider. Brute-force, WordPress/XMLRPC, SSH, router exploit, and webapp
+# attacks, port scans, hacking, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2023.07.15
+
+2602:fba3:400::/47 Deny Proxy
+Origin: US
+Profile: Tor endpoints here
+Tag: Ambyre LLC

@@ -1,8 +1,8 @@
 # IPv4 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv4_other.dat
 
-# Version: 2023.160.0
-# Last modified: 2023.06.10
+# Version: 2023.195.0
+# Last modified: 2023.07.15
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -1386,8 +1386,18 @@ Tag: Applied Privacy
 # Provides anonymous proxy services. Spam, hacking, probing for
 # vulnerabilities, and other kinds of unwanted traffic detected from here.
 # Stop Forum Spam (SFS) listings: 407 (AS50495), 1,831 (AS62874).
-# Updated: 2023.04.06
+# Updated: 2023.07.15
 
+2.58.12.0/23 Deny Proxy
+45.10.234.0/23 Deny Proxy
+45.80.164.0/22 Deny Proxy
+45.86.160.0/23 Deny Proxy
+45.89.210.0/23 Deny Proxy
+45.93.97.0/24 Deny Proxy
+45.93.98.0/23 Deny Proxy
+45.135.16.0/22 Deny Proxy
+45.142.80.0/22 Deny Proxy
+45.153.40.0/22 Deny Proxy
 77.83.232.0/22 Deny Proxy
 83.136.221.0/24 Deny Proxy
 91.223.99.0/24 Deny Proxy
@@ -1396,10 +1406,18 @@ Tag: Applied Privacy
 91.223.163.0/24 Deny Proxy
 91.239.64.0/24 Deny Proxy
 176.119.202.0/24 Deny Proxy
+185.134.220.0/22 Deny Proxy
+185.166.253.0/24 Deny Proxy
+185.244.10.0/24 Deny Proxy
+185.247.188.0/22 Deny Proxy
+185.253.196.0/22 Deny Proxy
+194.5.224.0/22 Deny Proxy
 194.39.32.0/22 Deny Proxy
 195.234.99.0/24 Deny Proxy
-204.225.218.0/24 Deny Proxy
+212.103.42.0/23 Deny Proxy
 Origin: DE
+204.225.218.0/24 Deny Proxy
+Origin: LT
 194.14.219.0/24 Deny Proxy
 Origin: SE
 45.41.128.0/22 Deny Proxy
@@ -1424,18 +1442,20 @@ Origin: SE
 104.194.208.0/22 Deny Proxy
 104.194.223.0/24 Deny Proxy
 104.200.76.0/22 Deny Proxy
+104.232.194.0/23 Deny Proxy
 104.232.196.0/22 Deny Proxy
+104.232.200.0/21 Deny Proxy
 104.232.212.0/22 Deny Proxy
+104.232.218.0/23 Deny Proxy
+104.232.220.0/22 Deny Proxy
 104.238.33.0/24 Deny Proxy
 104.238.36.0/22 Deny Proxy
+104.238.40.0/22 Deny Proxy
 104.238.48.0/21 Deny Proxy
 142.147.224.0/20 Deny Proxy
-142.147.247.0/24 Deny Proxy
 142.147.248.0/21 Deny Proxy
 162.249.164.0/22 Deny Proxy
-167.160.32.0/22 Deny Proxy
-167.160.38.0/23 Deny Proxy
-167.160.40.0/21 Deny Proxy
+167.160.32.0/20 Deny Proxy
 167.160.48.0/22 Deny Proxy
 Origin: US
 Profile: Commercial;Tor endpoints here
@@ -1528,3 +1548,15 @@ Tag: Data Ideas llc
 Origin: US
 Profile: Tor endpoints here;Webhosting
 Tag: Thin-nology, LLC
+
+
+# ASN 1004 ("Ambyre LLC").
+# Tor provider. Brute-force, WordPress/XMLRPC, SSH, router exploit, and webapp
+# attacks, port scans, hacking, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2023.07.15
+
+2.56.164.0/24 Deny Proxy
+Origin: US
+Profile: Tor endpoints here
+Tag: Ambyre LLC

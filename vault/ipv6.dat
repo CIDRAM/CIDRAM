@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2023.193.0
-# Last modified: 2023.07.13
+# Version: 2023.195.0
+# Last modified: 2023.07.15
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -2852,10 +2852,10 @@ Profile: Dedicated;Webhosting
 Tag: Hostwinds LLC
 
 
-# ASN 8342 ("OJSC RTComm.RU").
+# ASN 8342 ("JSC RTComm.RU").
 # Dedicated server farm + an ongoing source of spam and other unwanted traffic.
-# Stop Forum Spam (SFS) listings: 190.
-# Updated: 2016.04.23 / Checked: 2022.06.29
+# Stop Forum Spam (SFS) listings: 102.
+# Updated: 2016.04.23 / Checked: 2023.07.15
 
 2001:1bb0::/32 Deny Cloud
 Origin: RU
@@ -4654,8 +4654,8 @@ Tag: NewMedia Express
 
 
 # ASN 198203 ("RouteLabel V.O.F").
-# Stop Forum Spam (SFS) listings: 252.
-# Updated: 2021.09.09 / Checked: 2022.06.22
+# Stop Forum Spam (SFS) listings: 57.
+# Updated: 2021.09.09 / Checked: 2023.07.15
 
 2a03:afe1::/32 Deny Cloud
 Origin: GB
@@ -6108,9 +6108,10 @@ Tag: Aruba S.p.A
 # Australian server farm/leaser. Spam, brute-force, webapp and hack attacks
 # detected from here.
 # Subtract 44.0.0.0/9, 44.128.0.0/10 (clean).
-# Stop Forum Spam (SFS) listings: 1,365.
-# Updated: 2022.06.30
+# Stop Forum Spam (SFS) listings: 464.
+# Updated: 2023.07.15
 
+2001:df1:3ac0::/48 Deny Cloud
 2001:df1:6800::/48 Deny Cloud
 2001:df5:1680::/48 Deny Cloud
 2400:8100::/32 Deny Cloud
@@ -6130,10 +6131,8 @@ Tag: Aruba S.p.A
 2400:d400:9898::/48 Deny Cloud
 2400:d400:b00b::/48 Deny Cloud
 2400:d400:ffff::/48 Deny Cloud
-2403:1540::/48 Deny Cloud
 2403:b800:1000::/48 Deny Cloud
 2405:1000::/32 Deny Cloud
-2406:bf00:1::/48 Deny Cloud
 2406:c500:fff3::/48 Deny Cloud
 Origin: AU
 2a0f:11c0::/29 Deny Cloud
@@ -8774,19 +8773,22 @@ Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: EasyDataHost S.L
 
 
-# ASNs 46516, 203020, 204287 ("HostRoyale LLC").
+# ASNs 46516, 203020, 204287, 207990 ("HostRoyale LLC").
 # Dedicated webhosting provider. A significant source of spam, network abuse,
 # and various other kinds of unwanted traffic.
-# Stop Forum Spam (SFS) listings: 5 (AS46516), 25,063 (AS203020).
-# Updated: 2022.06.30
+# Stop Forum Spam (SFS) listings: 3,534 (AS46516), 53,536 (AS203020), 569 (AS207990).
+# Updated: 2023.07.15
 
 2a06:2700::/29 Deny Cloud
-2a06:3040::/48 Deny Cloud
+2a06:3040::/47 Deny Cloud
 2a06:3040:3::/48 Deny Cloud
 2a06:3040:4::/47 Deny Cloud
+2a06:3040:6::/48 Deny Cloud
 2a06:3040:9::/48 Deny Cloud
 2a06:3040:b::/48 Deny Cloud
-2a06:3040:10::/48 Deny Cloud
+2a06:3040:c::/47 Deny Cloud
+2a06:3040:f::/48 Deny Cloud
+2a06:3040:10::/47 Deny Cloud
 2a06:3040:12::/48 Deny Cloud
 Origin: IN
 Profile: Dedicated;Frequent changes;Webhosting
@@ -10786,6 +10788,17 @@ Profile: Webhosting
 Tag: HOSTEUR SAS
 
 
+# ASNs 7354, 399045 ("DediOutlet, LLC").
+# Brute-force attacs, port scans, hacking, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 47 (AS399045).
+# Updated: 2023.07.14
+
+2606:d640::/32 Deny Cloud
+Origin: US
+Profile: Dedicated;Webhosting
+Tag: DediOutlet, LLC
+
+
 # ASN 42159 ("Zemlyaniy Dmitro Leonidovich").
 # Server farm/leaser. Brute-force, webapp attacks, hacking, port scans, and
 # spam detected from here. Caught trying to hack Git servers and sniffing for
@@ -11439,6 +11452,18 @@ Tag: CompleteWeb.Net LLC
 Origin: VG
 Profile: Webhosting
 Tag: IT WEB LTD
+
+
+# ASNs 202973, 204603 ("Partner LLC").
+# Russian webhosting provider. Brute-force, SSH, and webapp attacks, port
+# scans, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 19,474 (AS204603).
+# Updated: 2023.07.15
+
+2a0c:b641:826::/48 Deny Cloud
+Origin: RU
+Profile: Webhosting
+Tag: Partner LLC
 
 
 # ASN 51248 ("Host-Telecom.com s.r.o").
@@ -12240,6 +12265,16 @@ Tag: Aggros Operations Ltd
 Origin: RU
 Profile: Webhosting
 Tag: Serverio technologijos MB
+
+
+# ASN 204914 ("LABIXE LTD").
+# SSH attacks, port scans, and hacking detected from here.
+# Updated: 2023.07.15
+
+2a0c:9a40:8350::/48 Deny Cloud
+Origin: CH
+Profile: Webhosting
+Tag: LABIXE LTD
 
 
 # ---

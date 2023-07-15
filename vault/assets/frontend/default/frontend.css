@@ -128,7 +128,7 @@ td code~input,td code~select{vertical-align:middle}
 .pipCntrs>img{display:inline-block;position:absolute;left:0;transition:inherit}
 input[type=checkbox]+label,input[type=radio]+label,input[type=radio]+label,.gridboxitem>label,.gridboxitem input+strong{vertical-align:-2px;cursor:pointer}
 .statGroup{display:inline-block;height:18px}
-.gridHA:not(.gridVA):not(.gridVB):not(.gridboxstretch),.gridHB:not(.gridVA):not(.gridVB):not(.gridboxstretch){white-space:nowrap}
+.gridHA:not(.gridVA,.gridVB,.gridboxstretch),.gridHB:not(.gridVA,.gridVB,.gridboxstretch){white-space:nowrap}
 .configMatrixLabel,.vrte,.gridbox,.gridboxcheckcell{text-align:center}
 .gridbox{display:grid;grid-template-columns:auto auto auto}
 .gridboxitem,.gridboxcheckcell{height:19px}
@@ -139,7 +139,7 @@ input[type=checkbox]+label,input[type=radio]+label,input[type=radio]+label,.grid
 .gridboxcheckcell>input[type=checkbox],.gridboxcheckcell>input[type=radio],.gridlabel>input[type=checkbox],.gridlabel>input[type=radio]{position:relative;top:1px}
 .gridlabel{display:block;height:100%;width:100%}
 .gridlabel:hover{background-color:rgba(255,255,255,.25);filter:brightness(1.25)}
-.gridHA.vrte,.gridHA:not(.gridVA):not(.gridVB):not(.vrto){background:linear-gradient({90deg},rgba(0,0,0,.125) 0 40%,rgba(0,0,0,0) 80%)}
+.gridHA.vrte,.gridHA:not(.gridVA,.gridVB,.vrto){background:linear-gradient({90deg},rgba(0,0,0,.125) 0 40%,rgba(0,0,0,0) 80%)}
 .gridHA.vrto{background:linear-gradient({90deg},rgba(0,0,0,.125) 0 25%,rgba(0,0,0,0) 50%)}
 .gridHA.gridVA{background-color:rgba(0,0,0,.125)}
 .gridHA.gridVB{background-color:rgba(127,110,85,.6)}
@@ -187,6 +187,6 @@ input[type=button].reset:hover,input[type=button].reset:active{color:#f88}
 .navicon.discussions{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:discussions.svg}{/Base64Encode})}
 .navicon.link{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:link.svg}{/Base64Encode})}
 ::selection{background-color:rgba(0,102,204,.6);color:#fff}
-.txtGn::selection{color:#dfc}
-.txtOe::selection{color:#fec}
-.txtRd::selection{color:#fcc}
+.txtGn::selection,.txtGn>*:not(.txtOe,.txtRd)::selection{color:#dfc}
+.txtOe::selection,.txtOe>*:not(.txtGn,.txtRd)::selection{color:#fec}
+.txtRd::selection,.txtRd>*:not(.txtGn,.txtOe)::selection{color:#fcc}

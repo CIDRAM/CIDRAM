@@ -132,7 +132,7 @@ input[type=checkbox]+label,input[type=radio]+label,input[type=radio]+label,.grid
 input[type=text]{background-repeat:no-repeat;background-position:{FE_Align_Reverse} 3px center;background-image:none}
 input[type=text][pattern]:valid:not(input[type=text]:placeholder-shown){background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAICAYAAADaxo44AAABhWlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AcxV9TpaKVDnYQEQlSnSyIijhKFYtgobQVWnUwufRDaNKQpLg4Cq4FBz8Wqw4uzro6uAqC4AeIm5uToouU+L+k0CLGg+N+vLv3uHsHCPUyU82OcUDVLCMVj4nZ3IoYeEUPhhDCMKISM/VEeiEDz/F1Dx9f76I8y/vcn6NXyZsM8InEs0w3LOJ14ulNS+e8TxxmJUkhPiceM+iCxI9cl11+41x0WOCZYSOTmiMOE4vFNpbbmJUMlXiKOKKoGuULWZcVzluc1XKVNe/JXxjMa8tprtMcRByLSCAJETKq2EAZFqK0aqSYSNF+zMM/4PiT5JLJtQFGjnlUoEJy/OB/8LtbszA54SYFY0Dni21/jACBXaBRs+3vY9tunAD+Z+BKa/krdWDmk/RaS4scAaFt4OK6pcl7wOUO0P+kS4bkSH6aQqEAvJ/RN+WAvluge9XtrbmP0wcgQ10t3QAHh8BokbLXPN7d1d7bv2ea/f0A3i5y0gUAnskAAAAGYktHRAAAAAAAAPlDu38AAAAJcEhZcwAALiMAAC4jAXilP3YAAABRSURBVAjXbc3BDUBAAAXRZ6MUKqAGDWhjFaAOLlqhEqEXLiuRzf7LJH8OU4VNaU8onBeURIMhF0viETAjpiNihRojOpxJTl+jx4090T/eZvQC8cgK4AcVCPIAAAAASUVORK5CYII=)}
 input[type=text][pattern]:invalid:not(input[type=text]:placeholder-shown){background-image:url(data:image/gif;base64,R0lGODlhBgAIAKECAAQAAJkCAAAAAAAAACH5BAEKAAAALAAAAAAGAAgAAAIMBBJmqJfK4GstrlcAADs=)}
-.gridHA:not(.gridVA):not(.gridVB):not(.gridboxstretch),.gridHB:not(.gridVA):not(.gridVB):not(.gridboxstretch){white-space:nowrap}
+.gridHA:not(.gridVA,.gridVB,.gridboxstretch),.gridHB:not(.gridVA,.gridVB,.gridboxstretch){white-space:nowrap}
 .configMatrixLabel,.vrte,.gridbox,.gridboxcheckcell{text-align:center}
 .gridbox{display:grid;grid-template-columns:auto auto auto}
 .gridboxitem,.gridboxcheckcell{height:19px}
@@ -143,7 +143,7 @@ input[type=text][pattern]:invalid:not(input[type=text]:placeholder-shown){backgr
 .gridboxcheckcell>input[type=checkbox],.gridboxcheckcell>input[type=radio],.gridlabel>input[type=checkbox],.gridlabel>input[type=radio]{position:relative;top:1px}
 .gridlabel{display:block;height:100%;width:100%}
 .gridlabel:hover{background-color:rgba(255,255,255,.4);filter:brightness(1.4)}
-.gridHA.vrte,.gridHA:not(.gridVA):not(.gridVB):not(.vrto){background:linear-gradient({90deg},rgba(0,0,0,.125) 0 40%,rgba(0,0,0,0) 80%)}
+.gridHA.vrte,.gridHA:not(.gridVA,.gridVB,.vrto){background:linear-gradient({90deg},rgba(0,0,0,.125) 0 40%,rgba(0,0,0,0) 80%)}
 .gridHA.vrto{background:linear-gradient({90deg},rgba(0,0,0,.125) 0 25%,rgba(0,0,0,0) 50%)}
 .gridHA.gridVA{background-color:rgba(0,0,0,.125)}
 .gridHA.gridVB{background-color:rgba(85,110,127,.3)}
@@ -191,6 +191,6 @@ input[type=button].reset:hover,input[type=button].reset:active{color:#f88}
 .navicon.discussions{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:discussions.svg}{/Base64Encode})}
 .navicon.link{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:link.svg}{/Base64Encode})}
 ::selection{background-color:rgba(0,102,204,.6);color:#fff}
-.txtGn::selection{color:#dfc}
-.txtOe::selection{color:#fec}
-.txtRd::selection{color:#fcc}
+.txtGn::selection,.txtGn>*:not(.txtOe,.txtRd)::selection{color:#dfc}
+.txtOe::selection,.txtOe>*:not(.txtGn,.txtRd)::selection{color:#fec}
+.txtRd::selection,.txtRd>*:not(.txtGn,.txtOe)::selection{color:#fcc}

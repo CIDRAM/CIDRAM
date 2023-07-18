@@ -1,8 +1,8 @@
 # IPv6 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_other.dat
 
-# Version: 2023.195.0
-# Last modified: 2023.07.15
+# Version: 2023.198.0
+# Last modified: 2023.07.18
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -41,15 +41,57 @@ Profile: Tor endpoints here
 Tag: Emerald Onion
 
 
-# Octopusnet VPN (mostly from AS44724, but we'll update via announces instead,
-# because we don't need to block the entire ASN, and there could be stray CIDRs
-# too). Proxy service with a history of spam events.
-# Updated: 2019.12.14 / Checked: 2023.04.06
+# Spamhaus DROPv6 list.
+# https://www.spamhaus.org/drop/drop.txt
+# https://www.spamhaus.org/drop/edrop.txt
+# Spamhaus DROP and Spamhaus EDROP as plain text lists are free for commercial
+# and non-commercial usage. If you want to redistribute one of the plain text
+# feeds please ensure that you name Spamhaus as source of the data. (For
+# example, include the copyright statement at the top of the list).
+# If you adopt the BGPf version of one of these lists or BCL in your network,
+# you are not allowed to redistribute the feed to other networks. The export of
+# these feeds/prefixes to other networks is prohibited.
+# Excerpt from: https://www.spamhaus.org/bgpf/
+# Updated: 2023.07.16
 
-2a04:db80::/32 Deny Proxy
-Origin: RU
-Profile: Infrastructure/Transit
-Tag: Octopusnet VPN
+2401:c580::/32 Deny Spam
+2402:6680::/32 Deny Spam
+2405:b180::/32 Deny Spam
+2405:b480::/32 Deny Spam
+2405:e880::/32 Deny Spam
+2602:ffa0::/36 Deny Spam
+2607:d100::/32 Deny Spam
+2607:f2d0::/32 Deny Spam
+2801:80:c00::/48 Deny Spam
+2803:5380:ffff::/48 Deny Spam
+2803:8700::/32 Deny Spam
+2a00:4c80::/29 Deny Spam
+2a00:55a0::/32 Deny Spam
+2a06:d240::/29 Deny Spam
+2a06:e480::/29 Deny Spam
+2a07:5c0::/29 Deny Spam
+2a07:4180::/29 Deny Spam
+2a07:5780::/29 Deny Spam
+2a07:6800::/29 Deny Spam
+2a07:7700::/29 Deny Spam
+2a07:9b80::/29 Deny Spam
+2a07:b300::/29 Deny Spam
+2a09:ac80::/29 Deny Spam
+2a0a:c00::/29 Deny Spam
+2a0a:36c0::/29 Deny Spam
+2a0a:6240::/29 Deny Spam
+2a0a:a840::/29 Deny Spam
+2a0a:ed80::/29 Deny Spam
+2a0b:3e80::/29 Deny Spam
+2a0b:4ec0::/29 Deny Spam
+2a0b:ae80::/29 Deny Spam
+2a0b:f500::/29 Deny Spam
+2a0b:fdc0::/29 Deny Spam
+2a0d:e7c7:ffff::/48 Deny Spam
+2a0e:fa00::/29 Deny Spam
+2a10:cc45:100::/44 Deny Spam
+Profile: Third-party sourced
+Tag: Spamhaus DROPv6
 
 
 # ASN 208323 ("Foundation for Applied Privacy").

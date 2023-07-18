@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv4_isps.dat
 
-# Version: 2023.193.0
-# Last modified: 2023.07.13
+# Version: 2023.198.0
+# Last modified: 2023.07.18
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -558,69 +558,26 @@ Profile: Domestic ISP
 Tag: TELEBUCARAMANGA
 
 
-# ASN 16322 ("Pars Online PJS").
+# ASNs 16322, 60976 ("Pars Online PJS").
 # Brute-force, DDoS, SSH, XMLRPC, and webapp attacks, port scans, sniffing for
 # vulnerabilities, and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 796.
-# Updated: 2022.06.30 / Modified: 2023.01.29
+# Stop Forum Spam (SFS) listings: 16 (AS16322), 20 (AS60976).
+# Updated: 2023.07.18
 
-31.214.154.199/32 Deny Attacks
-31.214.154.237/32 Deny Attacks
-31.214.168.0/21 Deny Attacks
-31.214.248.0/21 Deny Attacks
-37.228.136.74/32 Deny Attacks
-37.228.138.83/32 Deny Attacks
-37.228.138.150/32 Deny Attacks
-46.41.192.0/18 Deny Attacks
-46.62.160.0/19 Deny Attacks
-46.62.216.74/32 Deny Attacks
-46.62.220.47/32 Deny Attacks
-46.62.220.67/32 Deny Attacks
-46.62.250.197/32 Deny Attacks
-46.167.128.0/19 Deny Attacks
-46.224.192.198/32 Deny Attacks
-46.224.200.254/32 Deny Attacks
-46.224.237.212/32 Deny Attacks
-46.224.237.227/32 Deny Attacks
-46.224.238.84/32 Deny Attacks
-46.224.239.119/32 Deny Attacks
-46.224.240.0/24 Deny Attacks
-46.224.241.103/32 Deny Attacks
-46.224.242.93/32 Deny Attacks
-46.224.243.0/24 Deny Attacks
-46.224.244.27/32 Deny Attacks
-46.251.226.50/32 Deny Attacks
-82.99.203.76/32 Deny Attacks
-82.99.204.99/32 Deny Attacks
-82.99.204.198/32 Deny Attacks
-91.98.8.0/24 Deny Attacks
-91.99.100.173/32 Deny Attacks
-91.99.100.218/32 Deny Attacks
-95.156.233.224/32 Deny Attacks
-95.156.248.112/32 Deny Attacks
-95.156.248.129/32 Deny Attacks
-95.156.248.157/32 Deny Attacks
-109.230.192.119/32 Deny Attacks
-109.230.204.0/22 Deny Attacks
-109.230.242.0/24 Deny Attacks
-109.230.246.0/23 Deny Attacks
-109.230.251.0/24 Deny Attacks
-134.255.196.0/23 Deny Attacks
-134.255.200.58/32 Deny Attacks
-134.255.201.6/32 Deny Attacks
-134.255.202.0/24 Deny Attacks
-134.255.203.13/32 Deny Attacks
-134.255.204.61/32 Deny Attacks
-134.255.204.165/32 Deny Attacks
-134.255.205.20/32 Deny Attacks
-134.255.205.70/32 Deny Attacks
-134.255.205.199/32 Deny Attacks
-134.255.207.108/32 Deny Attacks
-134.255.207.135/32 Deny Attacks
-178.169.0.0/19 Deny Attacks
-185.13.230.77/32 Deny Attacks
-185.13.231.228/32 Deny Attacks
+31.214.171.62/32 Deny Attacks
+31.214.175.10/32 Deny Attacks
+31.214.252.33/32 Deny Attacks
+46.224.200.11/32 Deny Attacks
+46.224.205.37/32 Deny Spam
+46.224.237.118/32 Deny Attacks
+46.224.240.148/32 Deny Attacks
+46.224.245.136/32 Deny Attacks
+82.99.194.30/32 Deny Spam
+91.98.8.184/32 Deny Attacks
+91.98.8.241/32 Deny Attacks
+134.255.200.42/32 Deny Attacks
+185.13.230.146/32 Deny Attacks
 Origin: IR
 Profile: Domestic ISP
 Tag: Pars Online PJS
@@ -13535,36 +13492,49 @@ Tag: MTN SA
 # ASN 12302 ("Vodafone Romania S.A").
 # Romanian mobile provider. Forum spam and other strange traffic sometimes seen
 # from here. Listing just the affected addresses/ranges only.
-# Stop Forum Spam (SFS) listings: 1,145.
-# Updated: 2022.07.03 / Modified: 2023.01.23
+# Stop Forum Spam (SFS) listings: 118,478.
+# Updated: 2023.07.18
 
-46.97.76.230/32 Deny Attacks
-46.97.158.0/24 Deny Attacks
+46.97.127.62/32 Deny Spam
 46.97.168.0/23 Deny Attacks
 46.97.170.0/24 Deny Attacks
+46.97.177.0/24 Deny Attacks
 46.97.198.45/32 Deny Attacks
 46.97.198.48/32 Deny Attacks
-46.97.198.136/32 Deny Attacks
 46.97.219.173/32 Deny Attacks
-46.97.219.194/32 Deny Attacks
+62.121.89.110/32 Deny Attacks
+62.121.89.243/32 Deny Spam
+78.96.77.36/32 Deny Spam
+78.97.8.156/32 Deny Spam
+78.97.8.180/32 Deny Spam
+78.97.9.84/32 Deny Spam
+78.97.23.142/32 Deny Spam
+78.97.23.185/32 Deny Spam
 81.12.157.98/32 Deny Attacks
 81.12.169.254/32 Deny Attacks
-81.12.215.178/32 Deny Spam
-82.208.129.50/32 Deny Spam
-82.208.133.77/32 Deny Attacks
-82.208.133.138/32 Deny Spam
-82.208.133.167/32 Deny Attacks
-83.103.206.56/32 Deny Attacks
-84.117.149.112/32 Deny Attacks
-84.117.149.211/32 Deny Attacks
-89.136.38.194/32 Deny Spam
+82.210.181.53/32 Deny Spam
+82.210.181.114/32 Deny Attacks
+82.210.181.200/32 Deny Spam
+84.117.149.135/32 Deny Spam
+84.117.149.238/32 Deny Spam
+89.38.73.29/32 Deny Spam
+89.38.73.33/32 Deny Spam
+89.38.73.55/32 Deny Spam
+89.38.73.90/32 Deny Spam
+89.136.91.110/32 Deny Spam
+89.136.221.107/32 Deny Spam
+89.136.247.0/24 Deny Attacks
 95.76.2.0/24 Deny Attacks
-95.76.156.203/32 Deny Spam
-95.77.16.29/32 Deny Attacks
-95.77.16.197/32 Deny Attacks
-95.77.104.79/32 Deny Attacks
-95.77.104.104/32 Deny Attacks
-213.233.109.82/32 Deny Spam
+95.76.191.43/32 Deny Spam
+95.77.119.9/32 Deny Spam
+95.77.142.3/32 Deny Attacks
+95.77.142.111/32 Deny Spam
+95.77.175.102/32 Deny Spam
+95.77.175.152/32 Deny Spam
+95.77.221.51/32 Deny Spam
+95.77.221.57/32 Deny Attacks
+136.255.230.40/32 Deny Attacks
+213.233.88.0/24 Deny Attacks
 Origin: RO
 Profile: Mobile ISP
 Tag: Vodafone Romania
@@ -15480,16 +15450,15 @@ Profile: Domestic ISP
 Tag: PUNTONET S.A
 
 
-# ASNs 5524, 21155, 28878, 35470, 49685 ("Signet B.V").
+# ASNs 28878, 35470 ("Signet B.V").
 # Dutch multiplay network. Some spam, XMLRPC, and brute-force attacks detected
 # from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 2 (AS5524), 1 (AS21155), 15 (AS28878), 83 (AS35470).
-# Updated: 2022.09.12
+# Stop Forum Spam (SFS) listings: 82 (AS35470).
+# Updated: 2023.07.18
 
 83.96.213.63/32 Deny Attacks
-217.149.135.21/32 Deny Attacks
 Origin: NL
-Profile: Domestic ISP;Multiplay;Tor endpoints here
+Profile: Domestic ISP;Mobile ISP;Multiplay;Tor endpoints here
 Tag: Signet B.V
 
 
@@ -22714,7 +22683,8 @@ Tag: BLUE ITS BUSINESS SOLUTIONS
 # ASN 29512 ('"TVK" ZJAWIONA ELZBIETA').
 # Polish domestic multiplay ISP. Port scans and hacking detected from here.
 # Listing just the affected ranges/addresses only.
-# Updated: 2022.07.03
+# Stop Forum Spam (SFS) listings: 2.
+# Updated: 2022.07.03 / Checked: 2023.07.18
 
 94.231.237.96/32 Deny Attacks
 Origin: PL

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2023.07.14).
+ * This file: Optional security extras module (last modified: 2023.07.26).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -90,10 +90,10 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             '/(?:_once|able|as(?:c|hes|sert)|c(?:hr|ode|ontents)|e(?:cho|regi|sc' .
             'ape|val)|ex(?:ec|ists)?|f(?:ile|late|unction)|get(?:c|csv|ss?)?|if|' .
             '(?<!context=edit&)include|len(?:gth)?|nt|open|p(?:ress|lace|lode|ut' .
-            's)|print(?:f|_r)?|re(?:ad|place|quire|store)|rot13|s(?:tart|ystem)|' .
-            'w(?:hil|rit)e)["\':(?:\[{<$]/',
+            's)|print(?:f|_r)?|re(?:place|quire|store)|rot13|s(?:tart|ystem)|w(?' .
+            ':hil|rit)e)[(\[{<$]/',
             $QueryNoSpace
-        ), 'Query command injection'); // 2018.05.02 mod 2022.11.08
+        ), 'Query command injection'); // 2018.05.02 mod 2023.07.26
 
         $this->trigger(preg_match(
             '~\$(?:globals|_(?:cookie|env|files|get|post|request|se(?:rver|ssion)))|' .

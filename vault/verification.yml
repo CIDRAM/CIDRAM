@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Verification data (last modified: 2023.04.06).
+# This file: Verification data (last modified: 2023.07.28).
 ##/
 
 # Additional references: https://udger.com/resources/ua-list/crawlers
@@ -52,7 +52,7 @@ Search Engine Verification:
    - ".search.msn.com"
 
  # https://duckduckgo.com/duckduckbot
- # Updated: 2023.01.04
+ # Updated: 2023.01.04 / Checked: 2023.07.28
  DuckDuckBot:
   User Agent Pattern: "~duckduck(?:go-favicons-)?bot~"
   Method: "uaIpMatch"
@@ -196,7 +196,7 @@ Social Media Verification:
  # https://udger.com/resources/ua-list/bot-detail?bot=Twitterbot#id6168
  # https://github.com/CIDRAM/CIDRAM/issues/263
  # https://github.com/CIDRAM/CIDRAM/issues/341
- # Updated: 2022.10.01
+ # Updated: 2022.10.01 / Checked: 2023.07.28
  Twitterbot:
   User Agent Pattern: "~(?<!^telegrambot \(like )(?<!^facebookexternalhit/1\.1 facebot )twitterbot~"
   Method: "dnsReverseForward"

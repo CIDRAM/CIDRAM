@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2023.204.0
-# Last modified: 2023.07.24
+# Version: 2023.209.0
+# Last modified: 2023.07.29
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -404,22 +404,40 @@ Tag: Free SAS
 # ASN 8359 ("MTS PJSC").
 # Caught trying to hack WordPress sites, a significant amount of other
 # unsavoury behaviour detected, and a significant source of spam.
-# Stop Forum Spam (SFS) listings: 10,313.
-# Updated: 2022.07.04
+# Stop Forum Spam (SFS) listings: 2,004.
+# Updated: 2023.07.29
 
 2a00:f00::/32 Deny Spam
-2a00:13fb::/40 Deny Spam
+2a00:13fa::/36 Deny Spam
+2a00:13fb::/36 Deny Spam
+2a00:13fd::/36 Deny Spam
+2a00:1898::/36 Deny Spam
+2a00:1899::/36 Deny Spam
 2a00:189c::/32 Deny Spam
-2a00:189f::/40 Deny Spam
+2a00:189e::/36 Deny Spam
+2a00:189f::/36 Deny Spam
 2a00:1fa0::/29 Deny Spam
+2a00:1fc1::/36 Deny Spam
+2a00:1fc2::/36 Deny Spam
 2a00:8580::/40 Deny Spam
-2a01:8043::/40 Deny Spam
 2a01:8046::/36 Deny Spam
 2a02:28::/29 Deny Spam
 2a02:3f8:7::/48 Deny Spam
-2a03:7203::/40 Deny Spam
+2a02:5f80::/36 Deny Spam
+2a02:5f82::/36 Deny Spam
+2a02:5f85::/36 Deny Spam
+2a02:5f87::/36 Deny Spam
+2a03:6502::/36 Deny Spam
+2a03:6503::/36 Deny Spam
+2a03:6504::/36 Deny Spam
+2a03:6506::/36 Deny Spam
+2a03:7202::/36 Deny Spam
+2a03:db01::/36 Deny Spam
+2a03:db02::/36 Deny Spam
+2a03:db04::/36 Deny Spam
+2a03:db05::/36 Deny Spam
 Origin: RU
-Profile: Domestic ISP;Infrastructure/Transit;Multiplay
+Profile: Domestic ISP;Mobile ISP;Infrastructure/Transit;Multiplay
 Tag: MTS PJSC
 
 
@@ -1473,3 +1491,18 @@ Tag: PT Telekomunikasi Indonesia
 Origin: BR
 Profile: Domestic ISP
 Tag: Click Fibra
+
+
+# ASNs 16135, 34984, 205570 ("TURKCELL ILETISIM HIZMETLERI A.S").
+# Turkish multiplay network, ISP, TV, and mobile data provider.
+# Brute-force, SSH attacks, port scans, hacking, and spam detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 425 (AS16135), 1,604 (AS34984), 13 (AS205570).
+# Updated: 2023.07.27
+
+2a02:e0:5626:8100::/64 Deny Spam
+2a02:e0:b807:6200::/64 Deny Spam
+2a02:4e0:2d94:2bf6::/64 Deny Spam
+Origin: TR
+Profile: Domestic ISP;Mobile ISP;Multiplay
+Tag: TURKCELL ILETISIM HIZMETLERI

@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2023.204.0
-# Last modified: 2023.07.24
+# Version: 2023.209.0
+# Last modified: 2023.07.29
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -1090,11 +1090,18 @@ Tag: CoreSpace, Inc
 
 
 # ASNs 8100, 29761 ("QuadraNet, Inc").
-# Stop Forum Spam (SFS) listings: 40,038 (AS8100).
-# Updated: 2022.11.07
+# Stop Forum Spam (SFS) listings: 4,427 (AS8100).
+# Updated: 2023.07.27
 
+2404:f980:8::/48 Deny Cloud
+Origin: AU
+2804:e6c:5000::/36 Deny Cloud
+Origin: BR
 2a05:b0c6:300::/40 Deny Cloud
 2a07:9944:1a::/48 Deny Cloud
+2a0f:9400:611d::/48 Deny Cloud
+2a0f:9400:6931::/48 Deny Cloud
+2a0f:9400:6933::/48 Deny Cloud
 Origin: GB
 2a04:6ac0::/29 Deny Cloud
 Origin: UA
@@ -9861,10 +9868,14 @@ Tag: RU-CENTER
 
 # ASN 20326 ("TeraSwitch Networks Inc").
 # Some addresses here caught snooping for WordPress vulnerabilities.
-# Stop Forum Spam (SFS) listings: 2.
-# Updated: 2021.03.18 / Checked: 2022.07.03
+# Stop Forum Spam (SFS) listings: 6.
+# Updated: 2023.07.29
 
-2607:fdc0::/32 Deny Cloud
+2607:fdc0::/39 Deny Cloud
+2607:fdc0:200::/40 Deny Cloud
+2607:fdc0:300::/41 Deny Cloud
+2607:fdc0:3c0::/42 Deny Cloud
+2607:fdc0:400::/41 Deny Cloud
 2620:13d:2000::/40 Deny Cloud
 Origin: US
 Profile: Infrastructure/Transit;Webhosting
@@ -11057,6 +11068,19 @@ Profile: Infrastructure/Transit;Webhosting
 Tag: Cloud Computing HK Limited
 
 
+# ASNs 49870, 208911 ("Alsycon B.V").
+# Helpdesk, VPS, and dedicated servers. Brute-force, SSH attacks, port scans,
+# and spam detected from here.
+# Stop Forum Spam (SFS) listings: 1 (AS208911).
+# Updated: 2023.07.29
+
+2a0e:3980::/29 Deny Cloud
+2a11:8280::/29 Deny Cloud
+Origin: NL
+Profile: Commercial;Dedicated;Webhosting
+Tag: Alsycon B.V
+
+
 # ASN 50463 ("Triple C Cloud Computing Ltd").
 # Israeli cloud provider. Port scans, hacking, and spam detected from here.
 # Stop Forum Spam (SFS) listings: 10.
@@ -11403,22 +11427,30 @@ Tag: AbsamHost
 # ASNs 49581, 200482, 213200 ("Ferdinand Zink trading as Tube-Hosting").
 # Brute-force, SSH, DDoS, and webapp attacks, DNS poisoning, port scans,
 # hacking, and spam detected from here. Tor endpoints detected from here.
-# Stop Forum Spam (SFS) listings: 6,734 (AS49581), 28 (AS213200).
-# Updated: 2023.03.20
+# Stop Forum Spam (SFS) listings: 3,622 (AS49581), 3 (AS200482), 28 (AS213200).
+# Updated: 2023.07.29
 
+2a06:de02:6020::/44 Deny Cloud
+Origin: CH
 2a07:4b40::/29 Deny Cloud
 2a0f:5707:aae0::/44 Deny Cloud
 2a12:3e80::/40 Deny Cloud
 2a12:3e80:200::/40 Deny Cloud
+2a12:3e80:401::/48 Deny Cloud
+2a12:3e80:402::/48 Deny Cloud
+2a12:3e80:500::/40 Deny Cloud
 2a12:8640::/29 Deny Cloud
 2a12:89c0::/29 Deny Cloud
 2a12:b180::/29 Deny Cloud
-2a12:b200::/29 Deny Cloud
-2a12:de40::/29 Deny Cloud
+2a12:de40::/31 Deny Cloud
 2a12:eb00::/29 Deny Cloud
 Origin: DE
-2a0f:9400:6164::/48 Deny Cloud
-Origin: GB
+2a05:dfc0::/32 Deny Cloud
+2a06:1287:a800::/39 Deny Cloud
+2a06:9f41::/32 Deny Cloud
+2a0a:6042::/32 Deny Cloud
+2a0d:d901::/32 Deny Cloud
+Origin: US
 Profile: Frequent changes;Tor endpoints here;Webhosting
 Tag: Tube-Hosting
 
@@ -12353,6 +12385,49 @@ Origin: TW
 Origin: US
 Profile: Restricted/Unidentifiable
 Tag: Eons Data
+
+
+# ASN 199959 ("GWY IT PTY LTD").
+# Brute-force attacks and spam detected from here.
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2023.07.27
+
+2a07:efc0:1000::/36 Deny Cloud
+Origin: AU
+2a0b:3c40:50::/48 Deny Cloud
+Origin: NL
+Profile: Dedicated;Webhosting
+Tag: GWY IT PTY LTD
+
+
+# ASN 149020 ("WebHorizon Internet Services").
+# SSH and webapp attacks, port scans, and hacking detected from here.
+# Updated: 2023.07.27
+
+2a0e:97c0:385::/48 Deny Cloud
+Origin: CH
+2403:cfc0:1110::/44 Deny Cloud
+2403:cfc0:1120::/44 Deny Cloud
+Origin: SG
+2a05:dfc1:4000::/40 Deny Cloud
+2a05:dfc1:4200::/39 Deny Cloud
+2a0a:6040:9500::/40 Deny Cloud
+2a0a:6040:9600::/39 Deny Cloud
+Origin: US
+Profile: Webhosting
+Tag: WebHorizon
+
+
+# ASN 400298 ("Madcityservers LLC").
+# Brute-force, SSH attacks, and spam detected from here.
+# Updated: 2023.07.29
+
+2602:fed2:7189::/48 Deny Cloud
+2602:fed2:730e::/48 Deny Cloud
+2602:fed2:7317::/48 Deny Cloud
+Origin: CA
+Profile: Dedicated;Webhosting
+Tag: Madcityservers LLC
 
 
 # ---

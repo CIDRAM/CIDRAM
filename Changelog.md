@@ -272,3 +272,5 @@
 [2023.07.14; Maikuolan]: Added CSS for selection pseudo-element.
 
 [2023.07.14; Bug-fix; Maikuolan]: When needed version information is missing from component metadata, uncaught type errors could potentially occur at the updates page in some cases; Fixed.
+
+[2023.06~07; Maikuolan]: Added L10N for Punjabi.

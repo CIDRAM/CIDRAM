@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2023.06.20).
+ * This file: Front-end functions file (last modified: 2023.08.01).
  */
 
 /**
@@ -3650,6 +3650,10 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
                 $FlagKey = preg_replace('~[^A-Za-z]~', '', $FlagSetName);
                 $UseDefaultState = true;
                 $Options = '';
+                if (isset($FlagSet['Label'])) {
+                    $FlagSetName = $CIDRAM['L10N']->getString($FlagSet['Label']) ?: $FlagSetName;
+                    unset($FlagSet['Label']);
+                }
                 foreach ($FlagSet as $FlagName => $FlagData) {
                     if (empty($Data[$FlagName])) {
                         $Selected = '';
@@ -3661,7 +3665,7 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
                         '<option value="%s"%s>%s</option>',
                         $FlagName,
                         $Selected,
-                        $CIDRAM['L10N']->getString($FlagData['Label']) ?: $FlagName
+                        isset($FlagData['Label']) ? ($CIDRAM['L10N']->getString($FlagData['Label']) ?: $FlagName) : $FlagName
                     );
                 }
                 $Options = sprintf(
@@ -3855,7 +3859,7 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
                 if (!is_array($FlagData) || empty($FlagData['Label'])) {
                     continue;
                 }
-                $Label = $CIDRAM['L10N']->getString($FlagData['Label']) ?: $FlagData['Label'];
+                $Label = isset($FlagData['Label']) ? ($CIDRAM['L10N']->getString($FlagData['Label']) ?: $FlagData['Label']) : $FlagData['Label'];
                 if (!empty($Data[$FlagName])) {
                     $Flags[] = $Label;
                 }

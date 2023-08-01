@@ -1,14 +1,14 @@
 CIDRAM Core:
  Name: "CIDRAM Core"
- Version: "3.3.0"
+ Version: "3.4.0-DEV+232120"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Front-End: "Latest"
   Common Classes Package: "^2.9.6"
-  l10n/core/{lang}: ">=2023.22"
-  l10n/frontend/{lang}: ">=2023.83"
+  l10n/core/{lang}: ">=2023.212"
+  l10n/frontend/{lang}: ">=2023.212"
  Changelog: "https://github.com/CIDRAM/CIDRAM/blob/v3/Changelog.md"
- Release Notes For: ["3.2.0", "3.2.1", "3.3.0"]
+ Release Notes For: ["3.2.0", "3.2.1", "3.3.0", "3.4.0"]
  When Update Succeeds:
   - "wpVer"
   - "foreach {Components.RemoteMeta.CIDRAM Core.Release Notes For} as Key => Value if {Components.Meta.CIDRAM Core.Version}<{Value}&&{Components.RemoteMeta.CIDRAM Core.Version}>={Value} then queue message response_release_notes https://github.com/CIDRAM/CIDRAM/releases/tag/v{Value} CIDRAM v{Value}"
@@ -49,7 +49,7 @@ CIDRAM Core:
    Checksum: "cb4c4d6024c88bf11cbe1c1ed987c0931af1cef3d359ff2eda322563350606e0:3796"
   events/default.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/events/default.php"
-   Checksum: "a459589cdcdc818d2392f29bdcec22fd0b6a5e1f299f4228d6760462a2ca524a:11683"
+   Checksum: "a938d29356a28ff222d33db814542bb6b89088e097a9e31aabc01a216ed00951:11825"
   channels.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/channels.yml"
    Checksum: "b62c0cf1deeb97c7ee15638f0a4102292a6bab6f0b6b1ee3a1dec7fa485c2e05:1352"

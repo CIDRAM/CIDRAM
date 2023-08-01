@@ -274,3 +274,7 @@
 [2023.07.14; Bug-fix; Maikuolan]: When needed version information is missing from component metadata, uncaught type errors could potentially occur at the updates page in some cases; Fixed.
 
 [2023.06~07; Maikuolan]: Added L10N for Punjabi.
+
+### v3.4.0
+
+[2023.08.01; Maikuolan]: Report logging entries now include whether the submission was okay or failed.

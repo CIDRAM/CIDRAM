@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used for auxiliary rules (last modified: 2023.06.13).
+ * This file: Methods used for auxiliary rules (last modified: 2023.08.01).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -305,6 +305,10 @@ trait AuxiliaryRules
                     $FlagKey = preg_replace('~[^A-Za-z]~', '', $FlagSetName);
                     $UseDefaultState = true;
                     $Options = '';
+                    if (isset($FlagSet['Label'])) {
+                        $FlagSetName = $this->L10N->getString($FlagSet['Label']) ?: $FlagSetName;
+                        unset($FlagSet['Label']);
+                    }
                     foreach ($FlagSet as $FlagName => $FlagData) {
                         if (empty($Data[$FlagName])) {
                             $Selected = '';
@@ -316,7 +320,7 @@ trait AuxiliaryRules
                             '<option value="%s"%s>%s</option>',
                             $FlagName,
                             $Selected,
-                            $this->L10N->getString($FlagData['Label']) ?: $FlagName
+                            isset($FlagData['Label']) ? ($this->L10N->getString($FlagData['Label']) ?: $FlagName) : $FlagName
                         );
                     }
                     $Options = sprintf(
@@ -518,7 +522,7 @@ trait AuxiliaryRules
                     if (!is_array($FlagData) || empty($FlagData['Label'])) {
                         continue;
                     }
-                    $Label = $this->L10N->getString($FlagData['Label']) ?: $FlagData['Label'];
+                    $Label = isset($FlagData['Label']) ? ($this->L10N->getString($FlagData['Label']) ?: $FlagData['Label']) : $FlagData['Label'];
                     if (!empty($Data[$FlagName])) {
                         $Flags[] = $Label;
                     }

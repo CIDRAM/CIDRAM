@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.07.14).
+ * This file: The CIDRAM front-end (last modified: 2023.08.01).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -4690,6 +4690,10 @@ class FrontEnd extends Core
                 foreach ($this->CIDRAM['Provide']['Auxiliary Rules']['Flags'] as $FlagSetName => $FlagSetValue) {
                     $FlagKey = preg_replace('~[^A-Za-z]~', '', $FlagSetName);
                     $Options = sprintf('<select name="%s" class="auto"><option value="Default State" selected>%s</option>', $FlagKey, $this->L10N->getString('label_aux_special_default_state'));
+                    if (isset($FlagSetValue['Label'])) {
+                        $FlagSetName = $this->L10N->getString($FlagSetValue['Label']) ?: $FlagSetName;
+                        unset($FlagSetValue['Label']);
+                    }
                     foreach ($FlagSetValue as $FlagName => $FlagData) {
                         $Options .= sprintf('<option value="%s">%s</option>', $FlagName, isset($FlagData['Label']) ? ($this->L10N->getString($FlagData['Label']) ?: $FlagName) : $FlagName);
                     }

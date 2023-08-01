@@ -277,4 +277,4 @@
 
 ### v3.4.0
 
-[2023.08.01; Maikuolan]: Report logging entries now include whether the submission was okay or failed.
+[2023.08.01; Maikuolan]: Report logging entries now include whether the submission was okay or failed. Improved the labelling L10N at the auxiliary rules page.

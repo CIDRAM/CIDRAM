@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2023.06.11).
+# This file: Configuration defaults file (last modified: 2023.08.01).
 ##/
 
 Config Defaults:
@@ -830,16 +830,19 @@ Provide:
       Config:
        hcaptcha: {usemode: 0, forcibly_disabled: true}
    Output template:
+    Label: "label_aux_special_suppress"
     Suppress output template:
      Label: "label_aux_special_suppress"
      Sets:
       Suppress output template: true
    Logging:
+    Label: "label_aux_special_suppress_logging"
     Suppress logging:
      Label: "label_aux_special_suppress_logging"
      Sets:
       Suppress logging: true
    IP Tracking:
+    Label: "link_ip_tracking"
     Forcibly enable IP tracking:
      Label: "label_aux_special_ip_tracking_enable"
      Sets:
@@ -848,7 +851,8 @@ Provide:
      Label: "label_aux_special_ip_tracking_disable"
      Sets:
       Trackable: false
-   Values for IP Tracking:
+   Values for IP tracking:
+    Label: "label_values_for_ip_tracking"
     Enforce extended IP tracking options:
      Label: "label_aux_special_tracking_extended"
      Sets:
@@ -858,6 +862,7 @@ Provide:
      Sets:
       Tracking options override: "default"
    Disable this rule:
+    Label: "label_aux_special_disable"
     Disable this rule:
      Label: "label_aux_special_disable"
 Links:

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2023.07.14).
+ * This file: Front-end handler (last modified: 2023.08.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -4857,6 +4857,10 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
         foreach ($CIDRAM['Config']['Provide']['Auxiliary Rules']['Flags'] as $CIDRAM['FlagSetName'] => $CIDRAM['FlagSet']) {
             $CIDRAM['FlagKey'] = preg_replace('~[^A-Za-z]~', '', $CIDRAM['FlagSetName']);
             $CIDRAM['Options'] = sprintf('<select name="%s" class="auto"><option value="Default State" selected>%s</option>', $CIDRAM['FlagKey'], $CIDRAM['L10N']->getString('label_aux_special_default_state'));
+            if (isset($CIDRAM['FlagSet']['Label'])) {
+                $CIDRAM['FlagSetName'] = $CIDRAM['L10N']->getString($CIDRAM['FlagSet']['Label']) ?: $CIDRAM['FlagSetName'];
+                unset($CIDRAM['FlagSet']['Label']);
+            }
             foreach ($CIDRAM['FlagSet'] as $CIDRAM['FlagName'] => $CIDRAM['FlagData']) {
                 $CIDRAM['Options'] .= sprintf(
                     '<option value="%s">%s</option>',

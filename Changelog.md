@@ -280,3 +280,5 @@
 [2023.08.01; Maikuolan]: Report logging entries now include whether the submission was okay or failed. Improved the labelling L10N at the auxiliary rules page.
 
 [2023.08.02; New Feature; Maikuolan]: Statistics can now be tracked for how many times an auxiliary rule is triggered and when (#374).
+
+[2023.08.02; Maikuolan]: The statistics page start date now includes relative time.

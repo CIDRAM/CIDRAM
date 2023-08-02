@@ -4409,7 +4409,7 @@ class FrontEnd extends Core
                     $Since = $this->Now;
                     $this->Cache->setEntry('Statistics-Since', $Since, 0);
                 }
-                $this->FE['Other-Since'] = $this->timeFormat($Since, $this->Configuration['general']['time_format']);
+                $this->FE['Other-Since'] = $this->timeFormat($Since, $this->Configuration['general']['time_format']) . ' (' . $this->relativeTime($Since) . ')';
                 unset($Since);
             } else {
                 $this->FE['Other-Since'] = '-';

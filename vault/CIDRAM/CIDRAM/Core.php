@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2023.06.16).
+ * This file: The CIDRAM core (last modified: 2023.08.02).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -122,7 +122,7 @@ class Core
     /**
      * @var string CIDRAM version number (SemVer).
      */
-    public $ScriptVersion = '3.3.0';
+    public $ScriptVersion = '3.4.0';
 
     /**
      * @var string CIDRAM version identifier (complete notation).
@@ -2182,6 +2182,12 @@ class Core
                     $Property = $SetData;
                 }
             }
+        }
+
+        /** Rule statistics. */
+        if (!empty($Flags['Track this rule'])) {
+            $this->Cache->incEntry('Statistics-Aux-' . $Name);
+            $this->Cache->setEntry('Statistics-Aux-' . $Name . '-Most-Recent', $this->Now, 0);
         }
 
         $RunExitCode = 0;

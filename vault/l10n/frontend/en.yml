@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2023.08.01).
+# This file: English language data for the front-end (last modified: 2023.08.02).
 ##/
 
 Extended Description AbuseIPDB module: "Blocks requests from IPs listed at AbuseIPDB."
@@ -352,6 +352,7 @@ field_whitelisted_requests: "Whitelisted requests"
 field_your_version: "Your version"
 header_login: "Please log in to continue."
 hints_asnlookup: "** Requires ASN lookup functionality (e.g., via the IP-API or BGPView module)."
+hints_aux_stats: "Note: Whether to track statistics for auxiliary rules can be controlled from the auxiliary rules page."
 hints_cause_fp: "*!! High likelihood of causing false positives due to %s."
 hints_client_honour: "No matter how we instruct the client, it's important to remember that we ultimately have no control over what the client chooses to do, and there's zero guarantee that the client will honour our instructions."
 hints_default_dns:
@@ -490,6 +491,7 @@ label_aux_special_ip_tracking_disable: "Forcibly disable IP tracking"
 label_aux_special_ip_tracking_enable: "Forcibly enable IP tracking"
 label_aux_special_recaptcha_disable: "Forcibly disable reCAPTCHA"
 label_aux_special_recaptcha_mark: "Mark for use with reCAPTCHA"
+label_aux_special_statistics: "Track this rule"
 label_aux_special_suppress: "Suppress output template"
 label_aux_special_suppress_logging: "Suppress logging"
 label_aux_special_tracking_default: "Enforce default IP tracking options"
@@ -555,6 +557,7 @@ label_is_available: "%s is available (%s)."
 label_is_available_class: "%s is available."
 label_is_not_available: "%s is not available."
 label_lookup_strategy: "Which requests should lookups be performed for?"
+label_most_recent: "Most recent"
 label_netmask: "Netmask"
 label_never: "Never"
 label_next: "Next:"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2023.08.01).
+# This file: Defaults file (last modified: 2023.08.02).
 ##/
 
 Config Defaults:
@@ -504,6 +504,7 @@ Config Defaults:
     Reported-IPv4-Failed: "{label_reported} – IPv4 – {response_failed}"
     Reported-IPv6-OK: "{label_reported} – IPv6 – {field_ok}"
     Reported-IPv6-Failed: "{label_reported} – IPv6 – {response_failed}"
+   hints: "hints_aux_stats"
   force_hostname_lookup:
    type: "bool"
    default: false
@@ -1220,6 +1221,10 @@ Provide:
      Label: "label_aux_special_tracking_default"
      Sets:
       CIDRAM: {Tracking options override: "default"}
+   Statistics:
+    Label: "link_statistics"
+    Track this rule:
+     Label: "label_aux_special_statistics"
    Disable this rule:
     Label: "label_aux_special_disable"
     Disable this rule:

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.08.01).
+ * This file: The CIDRAM front-end (last modified: 2023.08.02).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -4456,6 +4456,58 @@ class FrontEnd extends Core
                     $this->FE[$TheseStats[0]] .= ' – ' . $this->L10N->getString('field_not_tracking');
                 }
             }
+
+            /** Attempt to parse the auxiliary rules file. */
+            if (!isset($this->CIDRAM['AuxData'])) {
+                $this->CIDRAM['AuxData'] = [];
+                $this->YAML->process($this->readFile($this->Vault . 'auxiliary.yml'), $this->CIDRAM['AuxData']);
+            }
+
+            $AuxRulesTracked = [];
+
+            /** Determine whether statistics for any auxiliary rules are being tracked. */
+            foreach ($this->CIDRAM['AuxData'] as $AuxRuleName => $AuxRuleData) {
+                if (empty($AuxRuleData['Track this rule'])) {
+                    continue;
+                }
+                $AuxRulesTracked[] = $AuxRuleName;
+            }
+
+            /** Process auxiliary rules statistics. */
+            if (count($AuxRulesTracked) === 0) {
+                $this->FE['AuxStats'] = '';
+            } else {
+                $AuxRulesTotal = 0;
+                $this->FE['AuxStats'] = sprintf(
+                    "\n      <tr><td class=\"center h4f\" colspan=\"2\"><div class=\"s\">%s</div></td></tr>",
+                    $this->L10N->getString('label_aux_triggered')
+                );
+                $MostRecent = $this->L10N->getString('label_most_recent') . $this->L10N->getString('pair_separator');
+                foreach ($AuxRulesTracked as $AuxRuleName) {
+                    $Try = $this->Cache->getEntry('Statistics-Aux-' . $AuxRuleName);
+                    if (!is_int($Try) || $Try < 1) {
+                        $Try = (int)$Try;
+                    }
+                    $AuxRulesTotal += $Try;
+                    $Date = $this->Cache->getEntry('Statistics-Aux-' . $AuxRuleName . '-Most-Recent');
+                    if (!is_int($Date) || $Date < 1) {
+                        $Date = (int)$Date;
+                    }
+                    $this->FE['AuxStats'] .= sprintf(
+                        "\n      <tr>\n        <td class=\"h3\"><div class=\"s\">%s</div></td>\n        <td class=\"h3f\"><div class=\"s\">%s%s</div></td>\n      </tr>",
+                        $AuxRuleName,
+                        $this->NumberFormatter->format($Try),
+                        $Try === 0 ? '' : '<br />' . $MostRecent . $this->timeFormat($Date, $this->Configuration['general']['time_format']) . ' (' . $this->relativeTime($Date) . ')'
+                    );
+                }
+                $AuxRulesTotal = $this->NumberFormatter->format($AuxRulesTotal);
+                $this->FE['AuxStats'] .= sprintf(
+                    "\n      <tr>\n        <td class=\"h3\"><div class=\"s\">%s</div></td>\n        <td class=\"h3f\"><div class=\"s\">%s</div></td>\n      </tr>",
+                    $this->L10N->getString('label_total'),
+                    $AuxRulesTotal
+                );
+            }
+            unset($AuxRulesTotal, $AuxRuleData, $AuxRuleName, $AuxRulesTracked);
 
             /** Fetch and process totals. */
             foreach (['Blocked-Total', 'Banned-Total', 'Passed-Total', 'CAPTCHAs-Total', 'Reported-Total'] as $TheseStats) {

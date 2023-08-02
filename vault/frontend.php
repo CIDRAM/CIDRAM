@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2023.08.01).
+ * This file: Front-end handler (last modified: 2023.08.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -4568,7 +4568,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'statistics' && $CIDRAM['FE']['P
     $CIDRAM['FE']['Other-Since'] = empty($CIDRAM['Statistics']['Other-Since']) ? '-' : $CIDRAM['TimeFormat'](
         $CIDRAM['Statistics']['Other-Since'],
         $CIDRAM['Config']['general']['timeFormat']
-    );
+    ) . ' (' . $CIDRAM['RelativeTime']($CIDRAM['Statistics']['Other-Since']) . ')';
 
     /** Fetch and process various statistics. */
     foreach ([

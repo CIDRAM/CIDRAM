@@ -1,7 +1,7 @@
 ---
 CIDRAM Core:
  Name: "CIDRAM Core"
- Version: "2.13.1-DEV+232140"
+ Version: "2.13.1-DEV+232141"
  Dependencies:
   PHP: "^7.2|^8"
   Common Classes Package: "^2.9.6"
@@ -14,7 +14,6 @@ CIDRAM Core:
   From:
    - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/captcha_default.html"
    - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/channels.yaml"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/classes/Aggregator.php"
    - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/classes/Captcha.php"
    - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/classes/Constants.php"
    - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/classes/HCaptcha.php"
@@ -32,7 +31,6 @@ CIDRAM Core:
   To:
    - "captcha_default.html"
    - "channels.yaml"
-   - "classes/Aggregator.php"
    - "classes/Captcha.php"
    - "classes/Constants.php"
    - "classes/HCaptcha.php"
@@ -50,7 +48,6 @@ CIDRAM Core:
   Checksum:
    - "90ee5477f0d027589dbc3b85689c750d95b3a6202d95eefef58af08a891a95d5:1947"
    - "b62c0cf1deeb97c7ee15638f0a4102292a6bab6f0b6b1ee3a1dec7fa485c2e05:1352"
-   - "e33d3f768f718b4c62573ddd139978fdf7013aa90c330af718f61cade8c5eedd:15619"
    - "5d5d1d7be885d34f881e05ab31103089f1bd7d09eb5df367222daecf4c0d161a:3913"
    - "654cf394783825bf4196b51bb351246f3a783110f36f5220a18eea41a9989617:999"
    - "f64dc686483c02f21c8608d5ee10c952c2eb6f1e5ea05d60ed19a9dca9ebfbde:15223"
@@ -68,7 +65,7 @@ CIDRAM Core:
  Reannotate: "components.dat"
 CIDRAM Front-End:
  Name: "CIDRAM Front-End"
- Version: "2.13.1-DEV+232140"
+ Version: "2.13.1-DEV+232141"
  Dependencies:
   PHP: "^7.2|^8"
   Common Classes Package: "^2.9"
@@ -78,6 +75,7 @@ CIDRAM Front-End:
  Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat"
  Files:
   From:
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/classes/Aggregator.php"
    - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/fe_assets/_2fa.html"
    - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/fe_assets/_accounts.html"
    - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/fe_assets/_accounts_row.html"
@@ -129,6 +127,7 @@ CIDRAM Front-End:
    - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/frontend.php"
    - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/frontend_functions.php"
   To:
+   - "classes/Aggregator.php"
    - "fe_assets/_2fa.html"
    - "fe_assets/_accounts.html"
    - "fe_assets/_accounts_row.html"
@@ -180,6 +179,7 @@ CIDRAM Front-End:
    - "frontend.php"
    - "frontend_functions.php"
   Checksum:
+   - "8b6d3dfccc75ca39ac181e541b0a877217c723b68b6fa06ad1479303ddd462ba:15617"
    - "cdb91aefd05a3a7fb5d51a81888b4cffab18ce9bb9ede0bb49451f95c2be5e07:528"
    - "dd925fa21d11fdd4eb99f52fde1293d459b79321fcb8ef298a6c58a07dcd7046:2061"
    - "118d87af74811f8363216ea792c4eee6711d466dd9e760ee32dae28c6005115d:1454"

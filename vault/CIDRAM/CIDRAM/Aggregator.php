@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The aggregator (last modified: 2022.07.09).
+ * This file: The aggregator (last modified: 2023.08.03).
  */
 
 namespace CIDRAM\CIDRAM;

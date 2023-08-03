@@ -284,3 +284,5 @@
 [2023.08.02; Maikuolan]: The statistics page start date now includes relative time.
 
 [2023.08.03; Bug-fix; Maikuolan]: When the names of auxiliary rules, cache entries, or statistic entries contained certain kinds of characters, JavaScript which used those names could sometimes break due to insufficient escaping; Fixed.
+
+[2023.08.03; Bug-fix; neufeind]: The aggregator's constructTables method was constructing the wrong IPv6 netmask for last hextet; Fixed.

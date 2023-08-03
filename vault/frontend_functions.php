@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2023.08.01).
+ * This file: Front-end functions file (last modified: 2023.08.03).
  */
 
 /**
@@ -3158,8 +3158,7 @@ $CIDRAM['FileManager-IsLogFile'] = function (string $File, string &$Normalised =
  * @return string The JavaScript snippet.
  */
 $CIDRAM['GenerateConfirm'] = function (string $Action, string $Form) use (&$CIDRAM): string {
-    $Confirm = str_replace(["'", '"'], ["\'", '\x22'], sprintf($CIDRAM['L10N']->getString('confirm_action'), $Action));
-    return 'javascript:confirm(\'' . $Confirm . '\')&&document.getElementById(\'' . $Form . '\').submit()';
+    return 'javascript:confirm(\'' . $CIDRAM['escapeJsInHTML'](sprintf($CIDRAM['L10N']->getString('confirm_action'), $Action)) . '\')&&document.getElementById(\'' . $Form . '\').submit()';
 };
 
 /**
@@ -3372,7 +3371,7 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
     $Count = count($CIDRAM['AuxData']);
 
     /** Make entries safe for display at the front-end. */
-    $CIDRAM['RecursiveReplace']($CIDRAM['AuxData'], ['<', '>', '"'], ['&lt;', '&gt;', '&quot;']);
+    $CIDRAM['RecursiveReplace']($CIDRAM['AuxData'], ['<', '>', '"'], ['&lt;', '&gt;', '&#34;']);
 
     if ($Mode) {
         /** Append empty rule if editing. */
@@ -3684,7 +3683,7 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
         }
 
         /** Figure out which options are available for the rule (view mode). */
-        $Options = ['(<span style="cursor:pointer" onclick="javascript:%s(\'' . addslashes($Name) . '\',\'' . $RuleClass . '\')"><code class="s">%s</code></span>)'];
+        $Options = ['(<span style="cursor:pointer" onclick="javascript:%s(\'' . $CIDRAM['escapeJsInHTML']($Name) . '\',\'' . $RuleClass . '\')"><code class="s">%s</code></span>)'];
         if (empty($Data['Disable this rule'])) {
             $Options['disableRule'] = sprintf($Options[0], 'disableRule', '<span style="position:relative;top:-2px" class="txtRd">⏸</span>' . $CIDRAM['L10N']->getString('label_aux_special_disable'));
         } else {
@@ -3707,12 +3706,12 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
         unset($Options[0]);
         $Options['exportRule'] = sprintf(
             '(<span style="cursor:pointer" onclick="javascript:{document.getElementById(\'xprtName\').value=\'%s\';document.getElementById(\'xprtForm\').submit()}"><code class="s">%s</code></span>)',
-            addslashes($Name),
+            $CIDRAM['escapeJsInHTML']($Name),
             $CIDRAM['L10N']->getString('label_export')
         );
         $Options['delRule'] = sprintf(
-            '(<span style="cursor:pointer" onclick="javascript:confirm(\'%s\')&&delRule(\'' . addslashes($Name) . '\',\'' . $RuleClass . '\')"><code class="s"><span class="txtRd">⌧</span>%s</code></span>)',
-            str_replace(["'", '"'], ["\'", '\x22'], sprintf($CIDRAM['L10N']->getString('confirm_delete'), $Name)),
+            '(<span style="cursor:pointer" onclick="javascript:confirm(\'%s\')&&delRule(\'' . $CIDRAM['escapeJsInHTML']($Name) . '\',\'' . $RuleClass . '\')"><code class="s"><span class="txtRd">⌧</span>%s</code></span>)',
+            $CIDRAM['escapeJsInHTML'](sprintf($CIDRAM['L10N']->getString('confirm_delete'), $Name)),
             $CIDRAM['L10N']->getString('field_delete')
         );
         $Options = implode(' ', $Options);
@@ -3987,7 +3986,7 @@ $CIDRAM['ArrayToClickableList'] = function (array $Arr = [], string $DeleteKey =
         if (is_string($Value) && !$CIDRAM['Demojibakefier']->checkConformity($Value)) {
             continue;
         }
-        $Delete = ($Depth === 0) ? ' – (<span style="cursor:pointer" onclick="javascript:' . $DeleteKey . '(\'' . addslashes($Key) . '\')"><code class="s"><span class="txtRd">⌧</span>' . $CIDRAM['L10N']->getString('field_delete') . '</code></span>)' : '';
+        $Delete = ($Depth === 0) ? ' – (<span style="cursor:pointer" onclick="javascript:' . $DeleteKey . '(\'' . $CIDRAM['escapeJsInHTML']($Key) . '\')"><code class="s"><span class="txtRd">⌧</span>' . $CIDRAM['L10N']->getString('field_delete') . '</code></span>)' : '';
         $Output .= ($Depth === 0 ? '<span id="' . $Key . $Prefix . 'Container">' : '') . '<li>';
         if (is_string($Value)) {
             if (substr($Value, 0, 2) === '{"' && substr($Value, -2) === '"}') {
@@ -5260,4 +5259,14 @@ $CIDRAM['arrayReplaceKeys'] = function (array $Arr, callable $Perform): array {
         }
     }
     return $Out;
+};
+
+/**
+ * Better escaping for JavaScript inside HTML.
+ *
+ * @param string $In What to escape.
+ * @return string Escaped string.
+ */
+$CIDRAM['escapeJsInHTML'] = function (string $In): string {
+    return str_replace(['"', '<', '>'], ['&#34;', '&lt;', '&gt;'], addslashes($In));
 };

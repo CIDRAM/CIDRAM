@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2023.212.0
-# Last modified: 2023.08.01
+# Version: 2023.214.0
+# Last modified: 2023.08.03
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -607,7 +607,7 @@ Tag: Aerotek Bilisim
 # ASNs 34360, 41079, 43758, 48760, 198414 ("Cyber_Folks S.A").
 # Webhosting company based in Poland as well as a source of forum spam and
 # other unwanted activity.
-# Updated: 2022.07.11
+# Updated: 2022.07.11 / Checked: 2023.08.03
 
 2001:67c:2e0::/48 Deny Cloud
 2a01:4660::/32 Deny Cloud
@@ -5048,8 +5048,8 @@ Tag: Panamaserver.com
 
 # ASN 19624 ("Data Room, Inc").
 # Server farm and a source of spam, probing, etc.
-# Stop Forum Spam (SFS) listings: 18.
-# Updated: 2022.07.11
+# Stop Forum Spam (SFS) listings: 8.
+# Updated: 2023.08.02
 
 2a01:4ce0::/32 Deny Cloud
 Origin: RO
@@ -5057,6 +5057,7 @@ Origin: RO
 2607:f710:47::/48 Deny Cloud
 2607:f710:60::/48 Deny Cloud
 2607:f710:85::/48 Deny Cloud
+2607:f710:1000::/48 Deny Cloud
 Origin: US
 Profile: Infrastructure/Transit
 Tag: Data Room, Inc
@@ -5300,8 +5301,8 @@ Tag: Cloudie Limited
 
 # ASN 31727 ("Node4 Limited").
 # British webhosting, SaaS, and data services provider.
-# Stop Forum Spam (SFS) listings: 25.
-# Updated: 2022.07.11
+# Stop Forum Spam (SFS) listings: 16.
+# Updated: 2022.07.11 / Checked: 2023.08.02
 
 2a00:5600::/32 Deny Cloud
 2a00:f9c0::/32 Deny Cloud
@@ -5760,8 +5761,7 @@ Tag: Selectel Ltd
 
 # ASN 60592 ("Gransy s.r.o").
 # Occasional brute-force, SSH attacks, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 25.
-# Updated: 2019.05.02 / Checked: 2022.07.06
+# Updated: 2019.05.02 / Checked: 2023.08.02
 
 2a00:a160::/32 Deny Cloud
 2a00:fea0::/32 Deny Cloud
@@ -7028,12 +7028,15 @@ Tag: HugeServer Networks
 
 # ASN 50926 ("AXARNET COMUNICACIONES, S.L").
 # Webhosting company caught hosting spambots, targeting honeypots.
-# Stop Forum Spam (SFS) listings: 98.
-# Updated: 2022.07.11
+# Stop Forum Spam (SFS) listings: 92.
+# Updated: 2023.08.02
 
-2a00:5ac0:100::/40 Deny Cloud
-2a0a:680::/29 Deny Cloud
+2a00:5ac0::/44 Deny Cloud
+2a00:5ac0:100::/48 Deny Cloud
+2a01:4b80::/32 Deny Cloud
 Origin: ES
+2a0b:8f80:202::/48 Deny Cloud
+Origin: NL
 Profile: Infrastructure/Transit;Webhosting
 Tag: Infortelecom Hosting S.L
 
@@ -7100,8 +7103,8 @@ Tag: Fast Serv Networks
 
 # ASN 24768 ("ALMOUROLTEC SERVICOS DE INFORMATICA E INTERNET LDA").
 # Significant source of spam.
-# Stop Forum Spam (SFS) listings: 340.
-# Updated: 2021.09.23 / Checked: 2022.07.06
+# Stop Forum Spam (SFS) listings: 1,414.
+# Updated: 2021.09.23 / Checked: 2023.08.02
 
 2a00:1650::/32 Deny Cloud
 Origin: PT
@@ -7558,10 +7561,11 @@ Tag: Blacknight
 
 # ASNs 23522, 32181 ("GigeNET").
 # Spam detected from here.
-# Stop Forum Spam (SFS) listings: 5,288 (AS32181).
-# Updated: 2021.09.23 / Checked: 2022.07.06
+# Stop Forum Spam (SFS) listings: 900 (AS32181).
+# Updated: 2023.08.02
 
 2001:1850::/32 Deny Cloud
+2602:fd24::/40 Deny Cloud
 2602:fea7:e00::/40 Deny Cloud
 2604:2700::/32 Deny Cloud
 Origin: US
@@ -9431,10 +9435,10 @@ Tag: Lanset
 
 # ASN 206728 ("Media Land LLC").
 # Used for toxic domains at SFS and a source of spam.
-# Updated: 2021.09.23 / Checked: 2022.07.06
+# Stop Forum Spam (SFS) listings: 6,921.
+# Updated: 2023.08.02
 
 2a0b:7ec0::/29 Deny Cloud
-2a0b:88c0::/29 Deny Cloud
 Origin: RU
 Profile: Webhosting
 Tag: Media Land LLC
@@ -9456,8 +9460,8 @@ Tag: Meverywhere
 
 # ASN 213373 ("IP Connect Inc").
 # Email harvestors and brute-force attacks detected from here.
-# Stop Forum Spam (SFS) listings: 3,042.
-# Updated: 2021.02.05 / Checked: 2022.07.06
+# Stop Forum Spam (SFS) listings: 476.
+# Updated: 2021.02.05 / Checked: 2023.08.02
 
 2a10:5fc0::/29 Deny Cloud
 Origin: SC
@@ -11478,8 +11482,8 @@ Tag: NetInformatik Inc
 # ASN 55688 ("PT. Beon Intermedia").
 # Indonesian dedicated webhosting provider. Brute-force and SSH attacks, web
 # scraping, port scans, and hacking detected from here.
-# Stop Forum Spam (SFS) listings: 2.
-# Updated: 2022.07.17
+# Stop Forum Spam (SFS) listings: 11.
+# Updated: 2022.07.17 / Checked: 2023.08.03
 
 2001:df4:3b00::/48 Deny Cloud
 2406:a040:ff01::/48 Deny Cloud

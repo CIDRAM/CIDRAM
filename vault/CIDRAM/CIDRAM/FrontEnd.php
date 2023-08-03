@@ -1829,7 +1829,7 @@ class FrontEnd extends Core
                 $this->FE['CacheData'] .= sprintf(
                     '<div class="ng1" id="__Container"><span class="s">%s – (<span style="cursor:pointer" onclick="javascript:confirm(\'%s\')&&cdd(\'__\')"><code class="s">%s</code></span>)</span><br /><br /><ul class="pieul">%s</ul></div>',
                     $PreferredSource,
-                    str_replace(["'", '"'], ["\'", '\x22'], sprintf(
+                    $this->escapeJsInHTML(sprintf(
                         $this->L10N->getString('confirm_action'),
                         $this->L10N->getString('field_clear_all')
                     ) . '\n' . $this->L10N->getString('warning_will_log_out_all_users')),
@@ -4514,7 +4514,7 @@ class FrontEnd extends Core
                     $this->L10N->getString('label_total'),
                     $AuxRulesTotal
                 );
-                $this->FE['AuxStatsForClipboard'] = str_replace(["'", '"'], ['\\\'', '\&#34;'], $this->FE['AuxStatsForClipboard']) . '\n';
+                $this->FE['AuxStatsForClipboard'] = $this->escapeJsInHTML($this->FE['AuxStatsForClipboard']) . '\n';
             }
             unset($AuxRulesTotal, $AuxRuleData, $AuxRuleName, $AuxRulesTracked);
 

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used for auxiliary rules (last modified: 2023.08.01).
+ * This file: Methods used for auxiliary rules (last modified: 2023.08.03).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -42,7 +42,7 @@ trait AuxiliaryRules
         $Count = count($this->CIDRAM['AuxData']);
 
         /** Make entries safe for display at the front-end. */
-        $this->recursiveReplace($this->CIDRAM['AuxData'], ['<', '>', '"'], ['&lt;', '&gt;', '&quot;']);
+        $this->recursiveReplace($this->CIDRAM['AuxData'], ['<', '>', '"'], ['&lt;', '&gt;', '&#34;']);
 
         if ($Mode) {
             /** Append empty rule if editing. */
@@ -354,7 +354,7 @@ trait AuxiliaryRules
             }
 
             /** Figure out which options are available for the rule (view mode). */
-            $Options = ['(<span style="cursor:pointer" onclick="javascript:%s(\'' . addslashes($Name) . '\',\'' . $RuleClass . '\')"><code class="s">%s</code></span>)'];
+            $Options = ['(<span style="cursor:pointer" onclick="javascript:%s(\'' . $this->escapeJsInHTML($Name) . '\',\'' . $RuleClass . '\')"><code class="s">%s</code></span>)'];
             if (empty($Data['Disable this rule'])) {
                 $Options['disableRule'] = sprintf($Options[0], 'disableRule', '<span style="position:relative;top:-2px" class="txtRd">⏸</span>' . $this->L10N->getString('label_aux_special_disable'));
             } else {
@@ -377,12 +377,12 @@ trait AuxiliaryRules
             unset($Options[0]);
             $Options['exportRule'] = sprintf(
                 '(<span style="cursor:pointer" onclick="javascript:{document.getElementById(\'xprtName\').value=\'%s\';document.getElementById(\'xprtForm\').submit()}"><code class="s">%s</code></span>)',
-                addslashes($Name),
+                $this->escapeJsInHTML($Name),
                 $this->L10N->getString('label_export')
             );
             $Options['delRule'] = sprintf(
-                '(<span style="cursor:pointer" onclick="javascript:confirm(\'%s\')&&delRule(\'' . addslashes($Name) . '\',\'' . $RuleClass . '\')"><code class="s"><span class="txtRd">⌧</span>%s</code></span>)',
-                str_replace(["'", '"'], ["\'", '\x22'], sprintf($this->L10N->getString('confirm_delete'), $Name)),
+                '(<span style="cursor:pointer" onclick="javascript:confirm(\'%s\')&&delRule(\'' . $this->escapeJsInHTML($Name) . '\',\'' . $RuleClass . '\')"><code class="s"><span class="txtRd">⌧</span>%s</code></span>)',
+                $this->escapeJsInHTML(sprintf($this->L10N->getString('confirm_delete'), $Name)),
                 $this->L10N->getString('field_delete')
             );
             $Options = implode(' ', $Options);

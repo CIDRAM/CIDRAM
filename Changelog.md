@@ -282,3 +282,5 @@
 [2023.08.02; New Feature; Maikuolan]: Statistics can now be tracked for how many times an auxiliary rule is triggered and when (#374).
 
 [2023.08.02; Maikuolan]: The statistics page start date now includes relative time.
+
+[2023.08.03; Bug-fix; Maikuolan]: When the names of auxiliary rules, cache entries, or statistic entries contained certain kinds of characters, JavaScript which used those names could sometimes break due to insufficient escaping; Fixed.

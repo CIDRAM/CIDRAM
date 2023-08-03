@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2023.06.16).
+ * This file: General methods used by the front-end (last modified: 2023.08.03).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -653,8 +653,7 @@ trait FrontEndMethods
      */
     private function generateConfirmation(string $Action, string $Form): string
     {
-        $Confirm = str_replace(["'", '"'], ["\'", '\x22'], sprintf($this->L10N->getString('confirm_action'), $Action));
-        return 'javascript:confirm(\'' . $Confirm . '\')&&document.getElementById(\'' . $Form . '\').submit()';
+        return 'javascript:confirm(\'' . $this->escapeJsInHTML(sprintf($this->L10N->getString('confirm_action'), $Action)) . '\')&&document.getElementById(\'' . $Form . '\').submit()';
     }
 
     /**
@@ -743,18 +742,18 @@ trait FrontEndMethods
                 $Delete = sprintf(
                     ' – (<span style="cursor:pointer" onclick="javascript:%s(\'%s\')"><code class="s"><span class="txtRd">⌧</span>%s</code></span>)',
                     $DeleteKey,
-                    addslashes($ParentKey . '-' . $Key),
+                    $this->escapeJsInHTML($ParentKey . '-' . $Key),
                     $this->L10N->getString('field_delete')
                 );
-                $Output .= '<span id="' . $ParentKey . '-' . $Key . 'Container">';
+                $Output .= '<span id="' . $this->escapeJsInHTML($ParentKey . '-' . $Key) . 'Container">';
             } elseif ($Depth === 0) {
                 $Delete = sprintf(
                     ' – (<span style="cursor:pointer" onclick="javascript:%s(\'%s\')"><code class="s"><span class="txtRd">⌧</span>%s</code></span>)',
                     $DeleteKey,
-                    (isset($this->CIDRAM['ListGroups'][$Key]) ? '^' : '') . addslashes($Key),
+                    (isset($this->CIDRAM['ListGroups'][$Key]) ? '^' : '') . $this->escapeJsInHTML($Key),
                     $this->L10N->getString('field_delete')
                 );
-                $Output .= '<span id="' . $Key . 'Container">';
+                $Output .= '<span id="' . $this->escapeJsInHTML($Key) . 'Container">';
             } else {
                 $Delete = '';
             }
@@ -1471,5 +1470,16 @@ trait FrontEndMethods
             return;
         }
         $this->CIDRAM['Warnings'][] = $this->discern($Message);
+    }
+
+    /**
+     * Better escaping for JavaScript inside HTML.
+     *
+     * @param string $In What to escape.
+     * @return string Escaped string.
+     */
+    private function escapeJsInHTML(string $In): string
+    {
+        return str_replace(['"', '<', '>'], ['&#34;', '&lt;', '&gt;'], addslashes($In));
     }
 }

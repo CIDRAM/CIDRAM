@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.08.02).
+ * This file: The CIDRAM front-end (last modified: 2023.08.03).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -4494,7 +4494,7 @@ class FrontEnd extends Core
                         $Date = (int)$Date;
                     }
                     $this->FE['AuxStats'] .= sprintf(
-                        "\n      <tr>\n        <td class=\"h3\"><div class=\"s\">%s</div></td>\n        <td class=\"h3f\"><div class=\"s\">%s%s</div></td>\n      </tr>",
+                        "\n      <tr>\n        <td class=\"h3\"><div class=\"s\">%s</div></td>\n        <td class=\"h3f\"><div class=\"s canBreak\">%s%s</div></td>\n      </tr>",
                         $AuxRuleName,
                         $this->NumberFormatter->format($Try),
                         $Try === 0 ? '' : '<br />' . $MostRecent . $this->timeFormat($Date, $this->Configuration['general']['time_format']) . ' (' . $this->relativeTime($Date) . ')'

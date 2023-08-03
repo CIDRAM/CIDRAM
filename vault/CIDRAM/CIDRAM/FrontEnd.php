@@ -4476,12 +4476,14 @@ class FrontEnd extends Core
             /** Process auxiliary rules statistics. */
             if (count($AuxRulesTracked) === 0) {
                 $this->FE['AuxStats'] = '';
+                $this->FE['AuxStatsForClipboard'] = '';
             } else {
                 $AuxRulesTotal = 0;
                 $this->FE['AuxStats'] = sprintf(
                     "\n      <tr><td class=\"center h4f\" colspan=\"2\"><div class=\"s\">%s</div></td></tr>",
                     $this->L10N->getString('label_aux_triggered')
                 );
+                $this->FE['AuxStatsForClipboard'] = $this->L10N->getString('label_aux_triggered') . '\n';
                 $MostRecent = $this->L10N->getString('label_most_recent') . $this->L10N->getString('pair_separator');
                 foreach ($AuxRulesTracked as $AuxRuleName) {
                     $Try = $this->Cache->getEntry('Statistics-Aux-' . $AuxRuleName);
@@ -4493,12 +4495,18 @@ class FrontEnd extends Core
                     if (!is_int($Date) || $Date < 1) {
                         $Date = (int)$Date;
                     }
+                    $Date = $MostRecent . $this->timeFormat($Date, $this->Configuration['general']['time_format']) . ' (' . $this->relativeTime($Date) . ')';
                     $this->FE['AuxStats'] .= sprintf(
                         "\n      <tr>\n        <td class=\"h3\"><div class=\"s\">%s</div></td>\n        <td class=\"h3f\"><div class=\"s canBreak\">%s%s</div></td>\n      </tr>",
-                        $AuxRuleName,
+                        str_replace(['<', '>'], ['&lt;', '&gt;'], $AuxRuleName),
                         $this->NumberFormatter->format($Try),
-                        $Try === 0 ? '' : '<br />' . $MostRecent . $this->timeFormat($Date, $this->Configuration['general']['time_format']) . ' (' . $this->relativeTime($Date) . ')'
+                        $Try === 0 ? '' : '<br />' . $Date
                     );
+                    $this->FE['AuxStatsForClipboard'] .= $AuxRuleName . ' – ' . $this->NumberFormatter->format($Try);
+                    if ($Try !== 0) {
+                        $this->FE['AuxStatsForClipboard'] .= ' – ' . $Date;
+                    }
+                    $this->FE['AuxStatsForClipboard'] .= '\n';
                 }
                 $AuxRulesTotal = $this->NumberFormatter->format($AuxRulesTotal);
                 $this->FE['AuxStats'] .= sprintf(
@@ -4506,6 +4514,7 @@ class FrontEnd extends Core
                     $this->L10N->getString('label_total'),
                     $AuxRulesTotal
                 );
+                $this->FE['AuxStatsForClipboard'] = str_replace(["'", '"'], ['\\\'', '\&#34;'], $this->FE['AuxStatsForClipboard']) . '\n';
             }
             unset($AuxRulesTotal, $AuxRuleData, $AuxRuleName, $AuxRulesTracked);
 

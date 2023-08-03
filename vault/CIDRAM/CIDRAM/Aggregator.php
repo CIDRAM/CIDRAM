@@ -195,7 +195,7 @@ class Aggregator
         $CIDR = 128;
         for ($Octet = 8; $Octet > 0; $Octet--) {
             $Base = str_repeat('ffff:', $Octet - 1);
-            $End = ($Octet === 8) ? ':0' : '::';
+            $End = ($Octet === 8) ? '' : '::';
             for ($Addresses = 1, $Iterate = 0; $Iterate < 16; $Iterate++, $Addresses *= 2, $CIDR--) {
                 $Netmask = $Base . (dechex(65536 - $Addresses)) . $End;
                 $this->TableNetmaskIPv6[$CIDR] = $Netmask;

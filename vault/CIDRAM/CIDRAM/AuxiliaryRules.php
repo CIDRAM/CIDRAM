@@ -354,7 +354,7 @@ trait AuxiliaryRules
             }
 
             /** Figure out which options are available for the rule (view mode). */
-            $Options = ['(<span style="cursor:pointer" onclick="javascript:%s(\'' . $this->escapeJsInHTML($Name) . '\',\'' . $RuleClass . '\')"><code class="s">%s</code></span>)'];
+            $Options = ['(<span onclick="javascript:%s(\'' . $this->escapeJsInHTML($Name) . '\',\'' . $RuleClass . '\')"><code class="s">%s</code></span>)'];
             if (empty($Data['Disable this rule'])) {
                 $Options['disableRule'] = sprintf($Options[0], 'disableRule', '<span style="position:relative;top:-2px" class="txtRd">⏸</span>' . $this->L10N->getString('label_aux_special_disable'));
             } else {
@@ -376,19 +376,19 @@ trait AuxiliaryRules
             }
             unset($Options[0]);
             $Options['exportRule'] = sprintf(
-                '(<span style="cursor:pointer" onclick="javascript:{document.getElementById(\'xprtName\').value=\'%s\';document.getElementById(\'xprtForm\').submit()}"><code class="s">%s</code></span>)',
+                '(<span onclick="javascript:{document.getElementById(\'xprtName\').value=\'%s\';document.getElementById(\'xprtForm\').submit()}"><code class="s">%s</code></span>)',
                 $this->escapeJsInHTML($Name),
                 $this->L10N->getString('label_export')
             );
             $Options['delRule'] = sprintf(
-                '(<span style="cursor:pointer" onclick="javascript:confirm(\'%s\')&&delRule(\'' . $this->escapeJsInHTML($Name) . '\',\'' . $RuleClass . '\')"><code class="s"><span class="txtRd">⌧</span>%s</code></span>)',
+                '(<span onclick="javascript:confirm(\'%s\')&&delRule(\'' . $this->escapeJsInHTML($Name) . '\',\'' . $RuleClass . '\')"><code class="s"><span class="txtRd">⌧</span>%s</code></span>)',
                 $this->escapeJsInHTML(sprintf($this->L10N->getString('confirm_delete'), $Name)),
                 $this->L10N->getString('field_delete')
             );
             $Options = implode(' ', $Options);
             if (substr($Options, 0, 1) === '(' && substr($Options, -1) === ')') {
                 $Options = sprintf(
-                    '<span style="display:inline-block">(<span style="cursor:pointer" id="heaven%1$s" class="scaleXToOne" onclick="javascript:heavenToggle(\'%1$s\')"><code style="s">☰</code></span><span id="hidden%1$s" class="scaleXToZero">%2$s</span>)</span>',
+                    '<span style="display:inline-block">(<span id="heaven%1$s" class="scaleXToOne" onclick="javascript:heavenToggle(\'%1$s\')"><code style="s">☰</code></span><span id="hidden%1$s" class="scaleXToZero">%2$s</span>)</span>',
                     $RuleClass,
                     substr($Options, 1, -1)
                 );

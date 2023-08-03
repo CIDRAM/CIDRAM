@@ -1827,7 +1827,7 @@ class FrontEnd extends Core
 
                 /** Process all cache items. */
                 $this->FE['CacheData'] .= sprintf(
-                    '<div class="ng1" id="__Container"><span class="s">%s – (<span style="cursor:pointer" onclick="javascript:confirm(\'%s\')&&cdd(\'__\')"><code class="s">%s</code></span>)</span><br /><br /><ul class="pieul">%s</ul></div>',
+                    '<div class="ng1" id="__Container"><span class="s">%s – (<span onclick="javascript:confirm(\'%s\')&&cdd(\'__\')"><code class="s">%s</code></span>)</span><br /><br /><ul class="pieul">%s</ul></div>',
                     $PreferredSource,
                     $this->escapeJsInHTML(sprintf(
                         $this->L10N->getString('confirm_action'),

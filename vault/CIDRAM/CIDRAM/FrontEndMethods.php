@@ -740,7 +740,7 @@ trait FrontEndMethods
             }
             if ($Depth === 1 && isset($this->CIDRAM['ListGroups'][$ParentKey])) {
                 $Delete = sprintf(
-                    ' – (<span style="cursor:pointer" onclick="javascript:%s(\'%s\')"><code class="s"><span class="txtRd">⌧</span>%s</code></span>)',
+                    ' – (<span onclick="javascript:%s(\'%s\')"><code class="s"><span class="txtRd">⌧</span>%s</code></span>)',
                     $DeleteKey,
                     $this->escapeJsInHTML($ParentKey . '-' . $Key),
                     $this->L10N->getString('field_delete')
@@ -748,7 +748,7 @@ trait FrontEndMethods
                 $Output .= '<span id="' . $this->escapeJsInHTML($ParentKey . '-' . $Key) . 'Container">';
             } elseif ($Depth === 0) {
                 $Delete = sprintf(
-                    ' – (<span style="cursor:pointer" onclick="javascript:%s(\'%s\')"><code class="s"><span class="txtRd">⌧</span>%s</code></span>)',
+                    ' – (<span onclick="javascript:%s(\'%s\')"><code class="s"><span class="txtRd">⌧</span>%s</code></span>)',
                     $DeleteKey,
                     (isset($this->CIDRAM['ListGroups'][$Key]) ? '^' : '') . $this->escapeJsInHTML($Key),
                     $this->L10N->getString('field_delete')
@@ -796,7 +796,7 @@ trait FrontEndMethods
                 }
                 $Class = ($Key === $this->L10N->getString('field_size') || $Key === $this->L10N->getString('label_expires')) ? 'txtRd' : 's';
                 $Text = ($Count === 1 && $Key === 0) ? $Value : $Key . ($Class === 's' ? ' => ' : ' ') . $Value;
-                $Output .= '<code class="' . $Class . '" style="word-wrap:break-word;word-break:break-all">' . $this->ltrInRtf(
+                $Output .= '<code class="' . $Class . ' canBreak">' . $this->ltrInRtf(
                     str_replace(['<', '>'], ['&lt;', '&gt;'], $Text)
                 ) . '</code>' . $Delete;
             }

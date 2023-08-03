@@ -194,4 +194,6 @@ input[type=button].reset:hover,input[type=button].reset:active{color:#f88}
 .txtGn::selection,.txtGn>*:not(.txtOe,.txtRd)::selection{color:#dfc}
 .txtOe::selection,.txtOe>*:not(.txtGn,.txtRd)::selection{color:#fec}
 .txtRd::selection,.txtRd>*:not(.txtGn,.txtOe)::selection{color:#fcc}
-.canBreak{white-space:normal;overflow-wrap:break-word}
+.canBreak{white-space:normal;overflow-wrap:break-word;word-break:break-all}
+input[type=button],input[type=checkbox],input[type=checkbox]+label,input[type=radio],input[type=radio]+label,input[type=reset],input[type=submit],span>span[onclick],li>span[onclick]{cursor:pointer}
+input[disabled],input[disabled]+label{cursor:not-allowed}

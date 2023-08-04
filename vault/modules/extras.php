@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2023.07.26).
+ * This file: Optional security extras module (last modified: 2023.08.04).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -311,6 +311,8 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $this->Reporter->report([15], ['Query global variable hack attempt detected.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'Query script injection') !== false) {
             $this->Reporter->report([15], ['Query script injection attempt detected.'], $this->BlockInfo['IPAddr']);
+        } elseif (strpos($this->BlockInfo['WhyReason'], 'POST RFI') !== false) {
+            $this->Reporter->report([15], ['POST RFI detected.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'Shell upload attempt') !== false) {
             $this->Reporter->report([15], ['Shell upload attempt detected.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'Spam attempt') !== false) {

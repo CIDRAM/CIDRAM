@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.08.03).
+ * This file: The CIDRAM front-end (last modified: 2023.08.06).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -4575,6 +4575,8 @@ class FrontEnd extends Core
                     $this->CIDRAM['AuxData'][$_POST['ruleName']]['Method'] = 'RegEx';
                 } elseif ($_POST['mtd'] === 'mtdWin') {
                     $this->CIDRAM['AuxData'][$_POST['ruleName']]['Method'] = 'WinEx';
+                } elseif ($_POST['mtd'] === 'mtdDMA') {
+                    $this->CIDRAM['AuxData'][$_POST['ruleName']]['Method'] = 'Auto';
                 }
 
                 /** Construct new rule notes. */
@@ -4847,6 +4849,8 @@ class FrontEnd extends Core
                             $NewAuxArr[$_POST['ruleName'][$Iterant]]['Method'] = 'RegEx';
                         } elseif ($_POST['mtd'][$Iterant] === 'mtdWin') {
                             $NewAuxArr[$_POST['ruleName'][$Iterant]]['Method'] = 'WinEx';
+                        } elseif ($_POST['mtd'][$Iterant] === 'mtdDMA') {
+                            $NewAuxArr[$_POST['ruleName'][$Iterant]]['Method'] = 'Auto';
                         }
                     }
                     if (!empty($_POST['Notes'][$Iterant])) {

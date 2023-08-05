@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used for auxiliary rules (last modified: 2023.08.03).
+ * This file: Methods used for auxiliary rules (last modified: 2023.08.05).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -264,23 +264,27 @@ trait AuxiliaryRules
 
                 /** Match method. */
                 if (empty($Data['Method'])) {
-                    $MethodData = [' selected', '', ''];
+                    $MethodData = [' selected', '', '', ''];
                 } elseif ($Data['Method'] === 'RegEx') {
-                    $MethodData = ['', ' selected', ''];
+                    $MethodData = ['', ' selected', '', ''];
                 } elseif ($Data['Method'] === 'WinEx') {
-                    $MethodData = ['', '', ' selected'];
+                    $MethodData = ['', '', ' selected', ''];
+                } elseif ($Data['Method'] === 'Auto') {
+                    $MethodData = ['', '', '', ' selected'];
                 } else {
-                    $MethodData = ['', '', ''];
+                    $MethodData = ['', '', '', ''];
                 }
                 $Output .= sprintf(
-                    '<div class="iCntr"><div class="iLabl"><select name="mtd[%1$s]" class="auto"><option value="mtdStr"%5$s>%2$s</option><option value="mtdReg"%6$s>%3$s</option><option value="mtdWin"%7$s>%4$s</option></select></div></div>',
+                    '<div class="iCntr"><div class="iLabl"><select name="mtd[%s]" class="auto"><option value="mtdStr"%s>%s</option><option value="mtdReg"%s>%s</option><option value="mtdWin"%s>%s</option><option value="mtdDMA"%s>%s</option></select></div></div>',
                     $Current,
-                    $this->FE['optMtdStr'],
-                    $this->FE['optMtdReg'],
-                    $this->FE['optMtdWin'],
                     $MethodData[0],
+                    $this->FE['optMtdStr'],
                     $MethodData[1],
-                    $MethodData[2]
+                    $this->FE['optMtdReg'],
+                    $MethodData[2],
+                    $this->FE['optMtdWin'],
+                    $MethodData[3],
+                    $this->FE['optMtdDMA']
                 );
 
                 /** Match logic. */
@@ -474,12 +478,26 @@ trait AuxiliaryRules
                             if ($Value === '') {
                                 $Value = '&nbsp;';
                             }
-                            if (isset($Data['Method']) && $Data['Method'] === 'WinEx') {
+                            if (!isset($Data['Method'])) {
+                                $Operator = $this->operatorFromAuxValue($Value, true);
+                            } elseif ($Data['Method'] === 'RegEx') {
+                                $Operator = '≇';
+                            } elseif ($Data['Method'] === 'WinEx') {
                                 $Operator = strpos($Value, '*') === false ? '≠' : '≉';
+                            } elseif ($Data['Method'] === 'Auto') {
+                                $Boundary = substr($Value, 0, 1);
+                                if (
+                                    !preg_match('~^[\0-\x20\dA-Za-z\xC0-\xFF]$~', $Boundary) &&
+                                    preg_match($Boundary === '~' ? '/^' . $Boundary . '.+' . $Boundary . 'i?m?s?x?A?D?S?U?u?n?$/' : '~^' . $Boundary . '.*' . $Boundary . 'i?m?s?x?A?D?S?U?u?n?$~', $Value)
+                                ) {
+                                    $Operator = '≇';
+                                } else {
+                                    $Operator = strpos($Value, '*') === false ? '≠' : '≉';
+                                }
                             } else {
                                 $Operator = $this->operatorFromAuxValue($Value, true);
                             }
-                            $Output .= "\n              <div class=\"iCntn\"><span style=\"float:" . $this->FE['FE_Align'] . '">' . $ThisSource . '&nbsp;' . $Operator . '&nbsp;</span><code>' . $Value . '</code></div>';
+                            $Output .= "\n              <div class=\"iCntn\"><span>" . $ThisSource . '</span> ' . $Operator . ' <code>' . $Value . '</code></div>';
                         }
                     }
                 }
@@ -496,12 +514,26 @@ trait AuxiliaryRules
                             if ($Value === '') {
                                 $Value = '&nbsp;';
                             }
-                            if (isset($Data['Method']) && $Data['Method'] === 'WinEx') {
+                            if (!isset($Data['Method'])) {
+                                $Operator = $this->operatorFromAuxValue($Value);
+                            } elseif ($Data['Method'] === 'RegEx') {
+                                $Operator = '≅';
+                            } elseif ($Data['Method'] === 'WinEx') {
                                 $Operator = strpos($Value, '*') === false ? '=' : '≈';
+                            } elseif ($Data['Method'] === 'Auto') {
+                                $Boundary = substr($Value, 0, 1);
+                                if (
+                                    !preg_match('~^[\0-\x20\dA-Za-z\xC0-\xFF]$~', $Boundary) &&
+                                    preg_match($Boundary === '~' ? '/^' . $Boundary . '.+' . $Boundary . 'i?m?s?x?A?D?S?U?u?n?$/' : '~^' . $Boundary . '.*' . $Boundary . 'i?m?s?x?A?D?S?U?u?n?$~', $Value)
+                                ) {
+                                    $Operator = '≅';
+                                } else {
+                                    $Operator = strpos($Value, '*') === false ? '=' : '≈';
+                                }
                             } else {
                                 $Operator = $this->operatorFromAuxValue($Value);
                             }
-                            $Output .= "\n              <div class=\"iCntn\"><span style=\"float:" . $this->FE['FE_Align'] . '">' . $ThisSource . '&nbsp;' . $Operator . '&nbsp;</span><code>' . $Value . '</code></div>';
+                            $Output .= "\n              <div class=\"iCntn\"><span>" . $ThisSource . '</span> ' . $Operator . ' <code>' . $Value . '</code></div>';
                         }
                     }
                 }
@@ -533,11 +565,19 @@ trait AuxiliaryRules
             }
 
             /** Show the method to be used. */
-            $Output .= "\n          <li><div class=\"iCntr\"><div class=\"iLabl\"><em>" . (isset($Data['Method']) ? (
-                $Data['Method'] === 'RegEx' ? $this->FE['optMtdReg'] : (
-                    $Data['Method'] === 'WinEx' ? $this->FE['optMtdWin'] : $this->FE['optMtdStr']
-                )
-            ) : $this->FE['optMtdStr']) . '</em></div></div></li>';
+            $Output .= "\n          <li><div class=\"iCntr\"><div class=\"iLabl\"><em>";
+            if (!isset($Data['Method'])) {
+                $Output .= $this->FE['optMtdStr'];
+            } elseif ($Data['Method'] === 'RegEx') {
+                $Output .= $this->FE['optMtdReg'];
+            } elseif ($Data['Method'] === 'WinEx') {
+                $Output .= $this->FE['optMtdWin'];
+            } elseif ($Data['Method'] === 'Auto') {
+                $Output .= $this->FE['optMtdDMA'];
+            } else {
+                $Output .= $this->FE['optMtdStr'];
+            }
+            $Output .= '</em></div></div></li>';
 
             /** Describe matching logic used. */
             $Output .= "\n          <li><div class=\"iCntr\"><div class=\"iLabl\"><em>" . $this->L10N->getString(
@@ -626,6 +666,7 @@ trait AuxiliaryRules
         $this->FE['optMtdStr'] = sprintf($this->L10N->getString('label_aux_menu_method'), $this->L10N->getString('label_aux_mtdStr'));
         $this->FE['optMtdReg'] = sprintf($this->L10N->getString('label_aux_menu_method'), $this->L10N->getString('label_aux_mtdReg'));
         $this->FE['optMtdWin'] = sprintf($this->L10N->getString('label_aux_menu_method'), $this->L10N->getString('label_aux_mtdWin'));
+        $this->FE['optMtdDMA'] = $this->L10N->getString('label_aux_mtdDMA');
 
         /** Populate actions. */
         $this->FE['optActWhl'] = sprintf($this->L10N->getString('label_aux_menu_action'), $this->L10N->getString('label_aux_actWhl'));

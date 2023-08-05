@@ -285,4 +285,6 @@
 
 [2023.08.03; Bug-fix; Maikuolan]: When the names of auxiliary rules, cache entries, or statistic entries contained certain kinds of characters, JavaScript which used those names could sometimes break due to insufficient escaping; Fixed.
 
-[2023.08.03; Bug-fix; neufeind]: The aggregator's constructTables method was constructing the wrong IPv6 netmask for last hextet; Fixed.
+[2023.08.03; Bug-fix; neufeind]: The aggregator's constructTables method was constructing the wrong IPv6 netmask for the last octet; Fixed.
+
+[2023.08.06; New Feature; Maikuolan]: Added the ability to instruct CIDRAM to detect the method for testing auxiliary rules conditions automatically.

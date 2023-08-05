@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2023.08.02).
+ * This file: The CIDRAM core (last modified: 2023.08.06).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -2060,41 +2060,49 @@ class Core
             $Criteria = [$Criteria];
         }
 
-        /** Perform a match using regular expressions. */
-        if ($Method === 'RegEx') {
-            $Operator = $Negate ? '≠' : '=';
-            foreach ($Criteria as $TestCase) {
+        $ActualType = gettype($Actual);
+
+        /** Iterate conditions. */
+        foreach ($Criteria as $TestCase) {
+            if ($Method === 'Auto') {
+                $Boundary = substr($TestCase, 0, 1);
+                if (
+                    !preg_match('~^[\0-\x20\dA-Za-z\xC0-\xFF]$~', $Boundary) &&
+                    preg_match($Boundary === '~' ? '/^' . $Boundary . '.+' . $Boundary . 'i?m?s?x?A?D?S?U?u?n?$/' : '~^' . $Boundary . '.*' . $Boundary . 'i?m?s?x?A?D?S?U?u?n?$~', $TestCase)
+                ) {
+                    $Operator = $Negate ? '≇' : '≅';
+                } else {
+                    $Operator = strpos($TestCase, '*') === false ? ($Negate ? '≠' : '=') : ($Negate ? '≉' : '≈');
+                }
+            } elseif ($Method === 'RegEx') {
+                $Operator = $Negate ? '≇' : '≅';
+            } elseif ($Method === 'WinEx') {
+                $Operator = strpos($TestCase, '*') === false ? ($Negate ? '≠' : '=') : ($Negate ? '≉' : '≈');
+            } else {
+                $Operator = $this->operatorFromAuxValue($TestCase, $Negate);
+            }
+
+            /** Perform a match using regular expressions. */
+            if ($Operator === '≇' || $Operator === '≅') {
                 if (preg_match($TestCase, $Actual)) {
                     $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response_not_satisfied' : 'response_satisfied'));
                     return true;
                 }
                 $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response_satisfied' : 'response_not_satisfied'));
+                continue;
             }
-            return false;
-        }
 
-        /** Perform a match using Windows-style wildcards. */
-        if ($Method === 'WinEx') {
-            foreach ($Criteria as $TestCase) {
-                if ($Negate) {
-                    $Operator = strpos($TestCase, '*') === false ? '≠' : '≉';
-                } else {
-                    $Operator = strpos($TestCase, '*') === false ? '=' : '≈';
-                }
+            /** Perform a match using Windows-style wildcards. */
+            if ($Operator === '≉' || $Operator === '≈') {
                 if (preg_match('~^' . str_replace('\*', '.*', preg_quote($TestCase, '~')) . '$~', $Actual)) {
                     $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response_not_satisfied' : 'response_satisfied'));
                     return true;
                 }
                 $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response_satisfied' : 'response_not_satisfied'));
+                continue;
             }
-            return false;
-        }
 
-        $ActualType = gettype($Actual);
-
-        /** Perform a match using direct string comparison. */
-        foreach ($Criteria as $TestCase) {
-            $Operator = $this->operatorFromAuxValue($TestCase, $Negate);
+            /** Perform a match using direct string comparison. */
             if ($Operator === '≠' || $Operator === '=') {
                 if ($ActualType !== gettype($TestCase)) {
                     if ($ActualType === 'integer') {
@@ -2110,26 +2118,42 @@ class Core
                     return true;
                 }
                 $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response_satisfied' : 'response_not_satisfied'));
-            } elseif ($Operator === '≯' || $Operator === '>') {
-                if ($this->auxIntFromString($Actual) > $this->auxIntFromString($TestCase)) {
+                continue;
+            }
+
+            /** Greater than. */
+            if ($Operator === '≯' || $Operator === '>') {
+                if ($this->auxTestCaseToNumeric($Actual) > $this->auxTestCaseToNumeric($TestCase)) {
                     $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response_not_satisfied' : 'response_satisfied'));
                     return true;
                 }
                 $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response_satisfied' : 'response_not_satisfied'));
-            } elseif ($Operator === '≱' || $Operator === '≥') {
-                if ($this->auxIntFromString($Actual) >= $this->auxIntFromString($TestCase)) {
+                continue;
+            }
+
+            /** Greater than or equal to. */
+            if ($Operator === '≱' || $Operator === '≥') {
+                if ($this->auxTestCaseToNumeric($Actual) >= $this->auxTestCaseToNumeric($TestCase)) {
                     $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response_not_satisfied' : 'response_satisfied'));
                     return true;
                 }
                 $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response_satisfied' : 'response_not_satisfied'));
-            } elseif ($Operator === '≮' || $Operator === '<') {
-                if ($this->auxIntFromString($Actual) < $this->auxIntFromString($TestCase)) {
+                continue;
+            }
+
+            /** Less than. */
+            if ($Operator === '≮' || $Operator === '<') {
+                if ($this->auxTestCaseToNumeric($Actual) < $this->auxTestCaseToNumeric($TestCase)) {
                     $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response_not_satisfied' : 'response_satisfied'));
                     return true;
                 }
                 $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response_satisfied' : 'response_not_satisfied'));
-            } elseif ($Operator === '≰' || $Operator === '≤') {
-                if ($this->auxIntFromString($Actual) <= $this->auxIntFromString($TestCase)) {
+                continue;
+            }
+
+            /** Less than or equal to. */
+            if ($Operator === '≰' || $Operator === '≤') {
+                if ($this->auxTestCaseToNumeric($Actual) <= $this->auxTestCaseToNumeric($TestCase)) {
                     $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response_not_satisfied' : 'response_satisfied'));
                     return true;
                 }
@@ -2507,20 +2531,28 @@ class Core
     }
 
     /**
-     * Attempt to discern an integer from a supplied string (useful in case the
-     * related functionality needs to be expanded in the future, which can be done
-     * as/when needed, and to align the behaviour of the auxiliary rules methods
-     * with user expectations).
+     * Discern numeric value from the supplied input.
      *
-     * @param string $Value The supplied string.
-     * @return int An integer.
+     * @param mixed $Value The supplied input.
+     * @return int|float A numeric value.
      */
-    public function auxIntFromString(string $Value): int
+    public function auxTestCaseToNumeric($Value)
     {
-        /**
-         * Did the user want to match an IPv4 address? (Matching is intentionally
-         * loose and lazy here).
-         */
+        /** Already numeric. */
+        if (is_int($Value) || is_float($Value)) {
+            return $Value;
+        }
+
+        /** Guard against non-scalar values which could break the process. */
+        if (!is_scalar($Value)) {
+            return 0;
+        }
+
+        if (!is_string($Value)) {
+            $Value = (string)$Value;
+        }
+
+        /** Convert IPv4 address to numeric value. */
         if (preg_match('~^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$~', $Value)) {
             $Value = explode('.', $Value);
             return ($Value[0] * 16777216) + ($Value[1] * 65536) + ($Value[2] * 256) + $Value[3];

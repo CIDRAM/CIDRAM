@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2023.08.02).
+ * This file: Front-end handler (last modified: 2023.08.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -4680,6 +4680,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
             $CIDRAM['AuxData'][$_POST['ruleName']]['Method'] = 'RegEx';
         } elseif ($_POST['mtd'] === 'mtdWin') {
             $CIDRAM['AuxData'][$_POST['ruleName']]['Method'] = 'WinEx';
+        } elseif ($_POST['mtd'] === 'mtdDMA') {
+            $CIDRAM['AuxData'][$_POST['ruleName']]['Method'] = 'Auto';
         }
 
         /** Construct new rule notes. */
@@ -4960,6 +4962,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux-edit' && $CIDRAM['FE']['Per
                     $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]]['Method'] = 'RegEx';
                 } elseif ($_POST['mtd'][$CIDRAM['Iterant']] === 'mtdWin') {
                     $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]]['Method'] = 'WinEx';
+                } elseif ($_POST['mtd'][$CIDRAM['Iterant']] === 'mtdDMA') {
+                    $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]]['Method'] = 'Auto';
                 }
             }
             if (!empty($_POST['Notes'][$CIDRAM['Iterant']])) {

@@ -22,7 +22,10 @@ Detailed version release guidelines for CIDRAM can be found at:
   escaping; Fixed.
 
 - [2023.08.03; Bug-fix; neufeind]: The aggregator's constructTables method was
-  constructing the wrong IPv6 netmask for last hextet; Fixed.
+  constructing the wrong IPv6 netmask for the last octet; Fixed.
+
+- [2023.08.06; New Feature; Maikuolan]: Added the ability to instruct CIDRAM to
+  detect the method for testing auxiliary rules conditions automatically.
 
 === Version/Release 2.13.0 ===
 MINOR RELEASE.

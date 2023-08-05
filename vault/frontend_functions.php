@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2023.08.03).
+ * This file: Front-end functions file (last modified: 2023.08.05).
  */
 
 /**
@@ -3593,23 +3593,27 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
 
             /** Match method. */
             if (empty($Data['Method'])) {
-                $MethodData = [' selected', '', ''];
+                $MethodData = [' selected', '', '', ''];
             } elseif ($Data['Method'] === 'RegEx') {
-                $MethodData = ['', ' selected', ''];
+                $MethodData = ['', ' selected', '', ''];
             } elseif ($Data['Method'] === 'WinEx') {
-                $MethodData = ['', '', ' selected'];
+                $MethodData = ['', '', ' selected', ''];
+            } elseif ($Data['Method'] === 'Auto') {
+                $MethodData = ['', '', '', ' selected'];
             } else {
-                $MethodData = ['', '', ''];
+                $MethodData = ['', '', '', ''];
             }
             $Output .= sprintf(
-                '<div class="iCntr"><div class="iLabl"><select name="mtd[%1$s]" class="auto"><option value="mtdStr"%5$s>%2$s</option><option value="mtdReg"%6$s>%3$s</option><option value="mtdWin"%7$s>%4$s</option></select></div></div>',
+                '<div class="iCntr"><div class="iLabl"><select name="mtd[%s]" class="auto"><option value="mtdStr"%s>%s</option><option value="mtdReg"%s>%s</option><option value="mtdWin"%s>%s</option><option value="mtdDMA"%s>%s</option></select></div></div>',
                 $Current,
-                $CIDRAM['FE']['optMtdStr'],
-                $CIDRAM['FE']['optMtdReg'],
-                $CIDRAM['FE']['optMtdWin'],
                 $MethodData[0],
+                $CIDRAM['FE']['optMtdStr'],
                 $MethodData[1],
-                $MethodData[2]
+                $CIDRAM['FE']['optMtdReg'],
+                $MethodData[2],
+                $CIDRAM['FE']['optMtdWin'],
+                $MethodData[3],
+                $CIDRAM['FE']['optMtdDMA']
             );
 
             /** Match logic. */
@@ -3803,8 +3807,26 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
                         if ($Value === '') {
                             $Value = '&nbsp;';
                         }
-                        $Operator = $CIDRAM['OperatorFromAuxValue']($Value, true);
-                        $Output .= "\n              <div class=\"iCntn\"><span style=\"float:" . $CIDRAM['FE']['FE_Align'] . '">' . $ThisSource . '&nbsp;' . $Operator . '&nbsp;</span><code>' . $Value . '</code></div>';
+                        if (!isset($Data['Method'])) {
+                            $Operator = $CIDRAM['OperatorFromAuxValue']($Value, true);
+                        } elseif ($Data['Method'] === 'RegEx') {
+                            $Operator = '≇';
+                        } elseif ($Data['Method'] === 'WinEx') {
+                            $Operator = strpos($Value, '*') === false ? '≠' : '≉';
+                        } elseif ($Data['Method'] === 'Auto') {
+                            $Boundary = substr($Value, 0, 1);
+                            if (
+                                !preg_match('~^[\0-\x20\dA-Za-z\xC0-\xFF]$~', $Boundary) &&
+                                preg_match($Boundary === '~' ? '/^' . $Boundary . '.+' . $Boundary . 'i?m?s?x?A?D?S?U?u?n?$/' : '~^' . $Boundary . '.*' . $Boundary . 'i?m?s?x?A?D?S?U?u?n?$~', $Value)
+                            ) {
+                                $Operator = '≇';
+                            } else {
+                                $Operator = strpos($Value, '*') === false ? '≠' : '≉';
+                            }
+                        } else {
+                            $Operator = $CIDRAM['OperatorFromAuxValue']($Value, true);
+                        }
+                        $Output .= "\n              <div class=\"iCntn\"><span>" . $ThisSource . '</span> ' . $Operator . ' <code>' . $Value . '</code></div>';
                     }
                 }
             }
@@ -3821,8 +3843,26 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
                         if ($Value === '') {
                             $Value = '&nbsp;';
                         }
-                        $Operator = $CIDRAM['OperatorFromAuxValue']($Value);
-                        $Output .= "\n              <div class=\"iCntn\"><span style=\"float:" . $CIDRAM['FE']['FE_Align'] . '">' . $ThisSource . '&nbsp;' . $Operator . '&nbsp;</span><code>' . $Value . '</code></div>';
+                        if (!isset($Data['Method'])) {
+                            $Operator = $CIDRAM['OperatorFromAuxValue']($Value);
+                        } elseif ($Data['Method'] === 'RegEx') {
+                            $Operator = '≅';
+                        } elseif ($Data['Method'] === 'WinEx') {
+                            $Operator = strpos($Value, '*') === false ? '=' : '≈';
+                        } elseif ($Data['Method'] === 'Auto') {
+                            $Boundary = substr($Value, 0, 1);
+                            if (
+                                !preg_match('~^[\0-\x20\dA-Za-z\xC0-\xFF]$~', $Boundary) &&
+                                preg_match($Boundary === '~' ? '/^' . $Boundary . '.+' . $Boundary . 'i?m?s?x?A?D?S?U?u?n?$/' : '~^' . $Boundary . '.*' . $Boundary . 'i?m?s?x?A?D?S?U?u?n?$~', $Value)
+                            ) {
+                                $Operator = '≅';
+                            } else {
+                                $Operator = strpos($Value, '*') === false ? '=' : '≈';
+                            }
+                        } else {
+                            $Operator = $CIDRAM['OperatorFromAuxValue']($Value);
+                        }
+                        $Output .= "\n              <div class=\"iCntn\"><span>" . $ThisSource . '</span> ' . $Operator . ' <code>' . $Value . '</code></div>';
                     }
                 }
             }
@@ -3854,11 +3894,19 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
         }
 
         /** Show the method to be used. */
-        $Output .= "\n          <li><div class=\"iCntr\"><div class=\"iLabl\"><em>" . (isset($Data['Method']) ? (
-            $Data['Method'] === 'RegEx' ? $CIDRAM['FE']['optMtdReg'] : (
-                $Data['Method'] === 'WinEx' ? $CIDRAM['FE']['optMtdWin'] : $CIDRAM['FE']['optMtdStr']
-            )
-        ) : $CIDRAM['FE']['optMtdStr']) . '</em></div></div></li>';
+        $Output .= "\n          <li><div class=\"iCntr\"><div class=\"iLabl\"><em>";
+        if (!isset($Data['Method'])) {
+            $Output .= $CIDRAM['FE']['optMtdStr'];
+        } elseif ($Data['Method'] === 'RegEx') {
+            $Output .= $CIDRAM['FE']['optMtdReg'];
+        } elseif ($Data['Method'] === 'WinEx') {
+            $Output .= $CIDRAM['FE']['optMtdWin'];
+        } elseif ($Data['Method'] === 'Auto') {
+            $Output .= $CIDRAM['FE']['optMtdDMA'];
+        } else {
+            $Output .= $CIDRAM['FE']['optMtdStr'];
+        }
+        $Output .= '</em></div></div></li>';
 
         /** Describe matching logic used. */
         $Output .= "\n          <li><div class=\"iCntr\"><div class=\"iLabl\"><em>" . $CIDRAM['L10N']->getString(
@@ -3951,6 +3999,7 @@ $CIDRAM['PopulateMethodsActions'] = function () use (&$CIDRAM): void {
     $CIDRAM['FE']['optMtdStr'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_method'), $CIDRAM['L10N']->getString('label_aux_mtdStr'));
     $CIDRAM['FE']['optMtdReg'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_method'), $CIDRAM['L10N']->getString('label_aux_mtdReg'));
     $CIDRAM['FE']['optMtdWin'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_method'), $CIDRAM['L10N']->getString('label_aux_mtdWin'));
+    $CIDRAM['FE']['optMtdDMA'] = $CIDRAM['L10N']->getString('label_aux_mtdDMA');
 
     /** Populate actions. */
     $CIDRAM['FE']['optActWhl'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actWhl'));

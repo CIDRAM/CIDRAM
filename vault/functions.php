@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2023.06.11).
+ * This file: Functions file (last modified: 2023.08.06).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -1902,31 +1902,45 @@ $CIDRAM['AuxMatch'] = function ($Criteria, $Actual, string $Method = '') use (&$
         $Criteria = [$Criteria];
     }
 
-    /** Perform a match using regular expressions. */
-    if ($Method === 'RegEx') {
-        foreach ($Criteria as $TestCase) {
+    $ActualType = gettype($Actual);
+
+    /** Iterate conditions. */
+    foreach ($Criteria as $TestCase) {
+        if ($Method === 'Auto') {
+            $Boundary = substr($TestCase, 0, 1);
+            if (
+                !preg_match('~^[\0-\x20\dA-Za-z\xC0-\xFF]$~', $Boundary) &&
+                preg_match($Boundary === '~' ? '/^' . $Boundary . '.+' . $Boundary . 'i?m?s?x?A?D?S?U?u?n?$/' : '~^' . $Boundary . '.*' . $Boundary . 'i?m?s?x?A?D?S?U?u?n?$~', $TestCase)
+            ) {
+                $Operator = '≅';
+            } else {
+                $Operator = strpos($TestCase, '*') === false ? '=' : '≈';
+            }
+        } elseif ($Method === 'RegEx') {
+            $Operator = '≅';
+        } elseif ($Method === 'WinEx') {
+            $Operator = strpos($TestCase, '*') === false ? '=' : '≈';
+        } else {
+            $Operator = $CIDRAM['OperatorFromAuxValue']($TestCase);
+        }
+
+        /** Perform a match using regular expressions. */
+        if ($Operator === '≅') {
             if (preg_match($TestCase, $Actual)) {
                 return true;
             }
+            continue;
         }
-        return false;
-    }
 
-    /** Perform a match using Windows-style wildcards. */
-    if ($Method === 'WinEx') {
-        foreach ($Criteria as $TestCase) {
+        /** Perform a match using Windows-style wildcards. */
+        if ($Operator === '≈') {
             if (preg_match('~^' . str_replace('\*', '.*', preg_quote($TestCase, '~')) . '$~', $Actual)) {
                 return true;
             }
+            continue;
         }
-        return false;
-    }
 
-    $ActualType = gettype($Actual);
-
-    /** Perform a match using direct string comparison. */
-    foreach ($Criteria as $TestCase) {
-        $Operator = $CIDRAM['OperatorFromAuxValue']($TestCase);
+        /** Perform a match using direct string comparison. */
         if ($Operator === '=') {
             if ($ActualType !== gettype($TestCase)) {
                 if ($ActualType === 'integer') {
@@ -1940,20 +1954,36 @@ $CIDRAM['AuxMatch'] = function ($Criteria, $Actual, string $Method = '') use (&$
             if ($Actual === $TestCase) {
                 return true;
             }
-        } elseif ($Operator === '>') {
-            if ($CIDRAM['AuxIntFromString']($Actual) > $CIDRAM['AuxIntFromString']($TestCase)) {
+            continue;
+        }
+
+        /** Greater than. */
+        if ($Operator === '>') {
+            if ($CIDRAM['AuxTestCaseToNumeric']($Actual) > $CIDRAM['AuxTestCaseToNumeric']($TestCase)) {
                 return true;
             }
-        } elseif ($Operator === '≥') {
-            if ($CIDRAM['AuxIntFromString']($Actual) >= $CIDRAM['AuxIntFromString']($TestCase)) {
+            continue;
+        }
+
+        /** Greater than or equal to. */
+        if ($Operator === '≥') {
+            if ($CIDRAM['AuxTestCaseToNumeric']($Actual) >= $CIDRAM['AuxTestCaseToNumeric']($TestCase)) {
                 return true;
             }
-        } elseif ($Operator === '<') {
-            if ($CIDRAM['AuxIntFromString']($Actual) < $CIDRAM['AuxIntFromString']($TestCase)) {
+            continue;
+        }
+
+        /** Less than. */
+        if ($Operator === '<') {
+            if ($CIDRAM['AuxTestCaseToNumeric']($Actual) < $CIDRAM['AuxTestCaseToNumeric']($TestCase)) {
                 return true;
             }
-        } elseif ($Operator === '≤') {
-            if ($CIDRAM['AuxIntFromString']($Actual) <= $CIDRAM['AuxIntFromString']($TestCase)) {
+            continue;
+        }
+
+        /** Less than or equal to. */
+        if ($Operator === '≤') {
+            if ($CIDRAM['AuxTestCaseToNumeric']($Actual) <= $CIDRAM['AuxTestCaseToNumeric']($TestCase)) {
                 return true;
             }
         }
@@ -2313,19 +2343,27 @@ $CIDRAM['OperatorFromAuxValue'] = function (string &$Value, bool $Negate = false
 };
 
 /**
- * Attempt to discern an integer from a supplied string (useful in case the
- * related functionality needs to be expanded in the future, which can be done
- * as/when needed, and to align the behaviour of the auxiliary rules closures
- * with user expectations).
+ * Discern numeric value from the supplied input.
  *
- * @param string $Value The supplied string.
- * @return int An integer.
+ * @param mixed $Value The supplied input.
+ * @return int|float A numeric value.
  */
-$CIDRAM['AuxIntFromString'] = function (string $Value): int {
-    /**
-     * Did the user want to match an IPv4 address? (Matching is intentionally
-     * loose and lazy here).
-     */
+$CIDRAM['AuxTestCaseToNumeric'] = function ($Value) {
+    /** Already numeric. */
+    if (is_int($Value) || is_float($Value)) {
+        return $Value;
+    }
+
+    /** Guard against non-scalar values which could break the process. */
+    if (!is_scalar($Value)) {
+        return 0;
+    }
+
+    if (!is_string($Value)) {
+        $Value = (string)$Value;
+    }
+
+    /** Convert IPv4 address to numeric value. */
     if (preg_match('~^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$~', $Value)) {
         $Value = explode('.', $Value);
         return ($Value[0] * 16777216) + ($Value[1] * 65536) + ($Value[2] * 256) + $Value[3];

@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2023.214.0
-# Last modified: 2023.08.03
+# Version: 2023.218.0
+# Last modified: 2023.08.07
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -835,16 +835,29 @@ Tag: OVH Systems
 # Thai transit provider and domestic ISP. Brute-force, SSH, and
 # WordPress/XMLRPC attacks, port scans, hacking, and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 498 (AS45430), 27,481 (AS133481).
-# Updated: 2022.08.05
+# Stop Forum Spam (SFS) listings: 41,680 (AS45430), 10,633 (AS133481).
+# Updated: 2023.08.07
 
-2405:9800:b510:6150::/64 Deny Spam
-2405:9800:b511:85a2::/64 Deny Spam
-2405:9800:b921:b835::/64 Deny Spam
-2405:9800:b930:ffb3::/64 Deny Spam
+2405:9800:b861:1f73::/64 Deny Spam
+2405:9800:b930:f6e::/64 Deny Spam
+2405:9800:b930:4440::/64 Deny Spam
+2405:9800:b930:69a4::/64 Deny Spam
+2405:9800:b930:6cd9::/64 Deny Spam
 Origin: TH
 Profile: Domestic ISP;Infrastructure/Transit;Multiplay
 Tag: Phaholyothin Rd
+
+
+# ASN 852 ("TELUS Communications Inc").
+# Canadian domestic ISP. Brute-force, webapp attacks, port scans, and spam
+# detected from here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 754.
+# Updated: 2023.08.06
+
+2001:56a:79ae:2a00::/64 Deny Spam
+Origin: CA
+Profile: Domestic ISP
+Tag: TELUS Communications Inc
 
 
 # ASN 34757 ("Sibirskie Seti Ltd").
@@ -877,20 +890,16 @@ Tag: MEO
 # ASNs 45820, 134674 ("TATA SKY BROADBAND PRIVATE LIMITED").
 # Indian domestic ISP. WordPress attacks, hacking, port scans, and spam
 # detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 2,161 (AS45820), 939 (AS134674).
-# Updated: 2022.07.17
+# Stop Forum Spam (SFS) listings: 2,715 (AS45820), 761 (AS134674).
+# Updated: 2023.08.05
 
-2402:e280:224b:14b::/64 Deny Spam
-2402:e280:2308:8e::/64 Deny Spam
-2402:e280:230d:4af::/64 Deny Spam
-2402:e280:230e:76::/64 Deny Spam
-2402:e280:230e:2a2::/64 Deny Spam
-2402:e280:2314:5c::/64 Deny Spam
-2402:e280:2315:85::/64 Deny Spam
-2402:e280:231f:12a::/64 Deny Spam
-2402:e280:3d66:1be::/64 Deny Spam
-2402:e280:3e2f:28d::/64 Deny Spam
-2402:e280:3e64:148::/64 Deny Spam
+2402:e280:2147:181::/64 Deny Spam
+2402:e280:230c:72d::/64 Deny Spam
+2402:e280:230e:114::/64 Deny Spam
+2402:e280:2319:a2::/64 Deny Spam
+2402:e280:2321:42f::/64 Deny Spam
+2402:e280:3e15:3ac::/64 Deny Spam
+2402:e280:4116:479::/64 Deny Spam
 Origin: IN
 Profile: Domestic ISP
 Tag: TATA SKY BROADBAND PRIVATE LIMITED
@@ -924,20 +933,6 @@ Tag: Vodafone Deutschland GmbH
 Origin: FR
 Profile: Domestic ISP;Mobile ISP
 Tag: Orange S.A
-
-
-# ASN 680 ("Verein zur Foerderung eines Deutschen Forschungsnetzes e.V").
-# German National Research and Education Network (DFN). A very large number of
-# universities in Europe route through this ASN, with mostly human endpoints.
-# Spam, port scans, hack attempts, brute-force, and SSH attacks detected from
-# here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,519.
-# Updated: 2021.05.20 / Checked: 2022.07.17
-
-2a00:5ba0:10:2242::/64 Deny Attacks
-Origin: DE
-Profile: Infrastructure/Transit;Tor endpoints here;University
-Tag: DFN
 
 
 # ASN 5410 ("Bouygues Telecom SA").
@@ -1045,19 +1040,6 @@ Profile: Domestic ISP
 Tag: Vodafone Libertel
 
 
-# ASN 7029 ("Windstream Communications LLC").
-# US digital TV, internet, phone provider. Brute-force, webapp attacks, port
-# scans, hacking, and spam detected from here.
-# Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 555.
-# Updated: 2022.08.01
-
-2604:cb00:301:a000::/64 Deny Spam
-Origin: US
-Profile: Domestic ISP;Infrastructure/Transit;Multiplay;University
-Tag: Windstream
-
-
 # ASN 27887 ("WIND Telecom S.A").
 # Dominican domestic ISP. Port scans, hacking, and spam detected from here.
 # Manually checked all ranges; All ranges affected.
@@ -1088,13 +1070,11 @@ Tag: STAYNET
 # Canadian domestic ISP. Brute-force, XMLRPC/WordPress, SQLi, manifest, and
 # webapp attacks, port scans, hacking, and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,585.
-# Updated: 2022.11.05
+# Stop Forum Spam (SFS) listings: 631.
+# Updated: 2023.08.06
 
-2607:9880:2a78:4b::/64 Deny Spam
-2607:fea8:562:a500::/64 Deny Spam
-2607:fea8:28c1:8d00::/64 Deny Spam
-2607:fea8:6940:2470::/64 Deny Spam
+2607:fea8:7b9d:7300::/64 Deny Spam
+2607:fea8:e9a3:a200::/64 Deny Spam
 Origin: CA
 Profile: Domestic ISP
 Tag: Rogers

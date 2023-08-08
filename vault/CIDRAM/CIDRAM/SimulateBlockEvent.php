@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used to simulate block events (last modified: 2023.06.13).
+ * This file: Methods used to simulate block events (last modified: 2023.08.08).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -94,6 +94,9 @@ trait SimulateBlockEvent
             $this->BlockInfo['rURI'] .= '?' . $this->FE['custom-query'];
         }
 
+        /** Instantiate report orchestrator (used by some modules). */
+        $this->Reporter = new Reporter($this->Events);
+
         if ($Tests && $Addr !== '') {
             $this->Stage = 'Tests';
 
@@ -150,9 +153,6 @@ trait SimulateBlockEvent
         if ($this->Configuration['general']['force_hostname_lookup']) {
             $this->CIDRAM['Hostname'] = $this->dnsReverse($this->BlockInfo['IPAddrResolved'] ?: $this->BlockInfo['IPAddr']);
         }
-
-        /** Instantiate report orchestrator (used by some modules). */
-        $this->Reporter = new Reporter($this->Events);
 
         /** Execute modules, if any have been enabled. */
         if ($Modules && $this->Configuration['components']['modules'] && empty($this->CIDRAM['Whitelisted'])) {

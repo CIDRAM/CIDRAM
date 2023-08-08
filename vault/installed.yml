@@ -1,6 +1,6 @@
 CIDRAM Core:
  Name: "CIDRAM Core"
- Version: "3.4.0-DEV+232170"
+ Version: "3.4.0-DEV+232190"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Front-End: "Latest"
@@ -40,13 +40,13 @@ CIDRAM Core:
    Checksum: "d27710669427e8f88fb849161517d7c7afc4635c29688141ca90af490b84b85d:15275"
   CIDRAM/CIDRAM/Protect.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Protect.php"
-   Checksum: "fce4c8fd83cbead7854c499d060cec1ae20256963d7449f3463087929d277d8c:58188"
+   Checksum: "f750c253e6db6f44f08c212764f5790598a7be8b6d970a8682fc4e465dcf1a6a:58503"
   CIDRAM/CIDRAM/ReCaptcha.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/ReCaptcha.php"
    Checksum: "e4aa4bdddb2d087ee09c83a9c5a48845a8f3d0b12b222bfd5c9f584b51c8913c:14733"
   CIDRAM/CIDRAM/Reporter.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Reporter.php"
-   Checksum: "cb4c4d6024c88bf11cbe1c1ed987c0931af1cef3d359ff2eda322563350606e0:3796"
+   Checksum: "0b2bcfdc89f22712c347caddd47f36b2c8003f4ef752b19c18ec9258f661b20e:3907"
   events/default.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/events/default.php"
    Checksum: "a938d29356a28ff222d33db814542bb6b89088e097a9e31aabc01a216ed00951:11825"
@@ -64,7 +64,7 @@ CIDRAM Core:
    Checksum: "cda677baa4134687fc986f60e25687b64981b9217d659ced85f3fa959b7f2260:7316"
 CIDRAM Front-End:
  Name: "CIDRAM Front-End"
- Version: "3.4.0-DEV+232171"
+ Version: "3.4.0-DEV+232190"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "Latest"
@@ -403,7 +403,7 @@ CIDRAM Front-End:
    Checksum: "8a813d7db234c11fa45944cb91ecd8b26f7b568c8927ed029bef4e77f627744a:39326"
   CIDRAM/CIDRAM/SimulateBlockEvent.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/SimulateBlockEvent.php"
-   Checksum: "05fcf88a5bda7fa2ad506dd88831b1aaa7428a58b9b1d544c65ea6cc429015c9:14910"
+   Checksum: "5ca8d25c1731af68fd5e801ab68309e31fbc4e8bacccfab082e0cf8f96aaa4eb:14910"
   CIDRAM/CIDRAM/Updater.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Updater.php"
    Checksum: "0871c8c49c5fe869410290802daddc7b02a41412757dd2dd5684d047767b3c71:66523"
@@ -1175,11 +1175,11 @@ Stop Forum Spam module:
    Used with: "modules"
 Tor blocker module:
  False Positive Risk: "Low"
- Version: "2022.309.0"
+ Version: "2023.219.0"
  Files:
   modules/tor.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/tor.php"
-   Checksum: "fee67d42b3a4265f947eac9dcfd0770ebeb2d0fc00048ea4c11c412be50ee785:4045"
+   Checksum: "a909d330bf0ccc31f8b74351023005f06ecd8aa87ff6d93fa73b7b4459a2835b:3936"
    Used with: "modules"
 BOBUAM:
  Extended Description: >

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Report orchestrator (last modified: 2023.03.24).
+ * This file: Report orchestrator (last modified: 2023.08.08).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -75,6 +75,9 @@ class Reporter
             $Comments = [$Comments];
         }
         foreach ($Comments as $Comment) {
+            if (!is_string($Comment) || $Comment === '') {
+                continue;
+            }
             $this->Reports[$IP]['Comments'][] = $Comment;
         }
     }
@@ -103,7 +106,7 @@ class Reporter
             /** Iterate through queued reports. */
             foreach ($this->Reports as $Report) {
                 /** Guard. */
-                if (empty($Report['Categories']) || empty($Report['Comments']) || empty($Report['IP'])) {
+                if (count($Report['Categories']) === 0 || count($Report['Comments']) === 0 || $Report['IP'] === '') {
                     continue;
                 }
 

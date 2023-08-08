@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2023.06.16).
+ * This file: Protect traits (last modified: 2023.08.08).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -127,6 +127,9 @@ trait Protect
             'captcha_div_include' => '',
         ];
 
+        /** Instantiate report orchestrator (used by some modules). */
+        $this->Reporter = new Reporter($this->Events);
+
         /** The normal blocking procedures should occur. */
         if (isset($this->Stages['Tests:Enable'])) {
             $this->Stage = 'Tests';
@@ -198,14 +201,6 @@ trait Protect
             $this->CIDRAM['Hostname'] = $this->dnsReverse($this->BlockInfo['IPAddrResolved'] ?: $this->BlockInfo['IPAddr']);
         }
 
-        /** Instantiate report orchestrator (used by some modules). */
-        $this->Reporter = new Reporter($this->Events);
-
-        /** Identify proxy connections (conjunctive reporting element). */
-        if (strpos($this->BlockInfo['WhyReason'], $this->L10N->getString('Short_Proxy')) !== false) {
-            $this->Reporter->report([9, 13], [], $this->BlockInfo['IPAddr']);
-        }
-
         /** Execute modules, if any have been enabled. */
         if (empty($this->CIDRAM['Whitelisted']) && $this->Configuration['components']['modules'] && isset($this->Stages['Modules:Enable'])) {
             $this->Stage = 'Modules';
@@ -275,6 +270,19 @@ trait Protect
                 $this->BlockInfo['Infractions'] += $this->BlockInfo['SignatureCount'] - $Before;
             }
             unset($Before);
+        }
+
+        /** Identify proxy connections (conjunctive reporting element). */
+        if (
+            strpos($this->BlockInfo['WhyReason'], $this->L10N->getString('Short_Proxy')) !== false ||
+            $this->hasProfile(['Open Proxy', 'Proxy', 'Tor endpoints here'])
+        ) {
+            $this->Reporter->report([9], [], $this->BlockInfo['IPAddr']);
+        }
+
+        /** Identify VPN connections (conjunctive reporting element). */
+        if ($this->hasProfile(['VPN IP', 'VPNs here'])) {
+            $this->Reporter->report([13], [], $this->BlockInfo['IPAddr']);
         }
 
         /** Process all reports (if any exist, and if not whitelisted), and then destroy the reporter. */

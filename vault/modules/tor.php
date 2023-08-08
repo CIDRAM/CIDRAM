@@ -10,7 +10,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Tor blocker module (last modified: 2022.11.06).
+ * This file: Tor blocker module (last modified: 2023.08.08).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -92,9 +92,6 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     if ($IsTor) {
         /** Profiling. */
         $this->addProfileEntry('Tor endpoints here');
-
-        /** Conjunctive reporting. */
-        $this->Reporter->report([9], [], $this->BlockInfo['IPAddr']);
 
         /** Disable CAPTCHAs. */
         $this->Configuration['hcaptcha']['usemode'] = 0;

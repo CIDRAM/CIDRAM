@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2023.218.0
-# Last modified: 2023.08.07
+# Version: 2023.219.0
+# Last modified: 2023.08.08
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -4194,7 +4194,7 @@ Origin: TW
 2a01:578::/32 Run bypasses.php
 2a0b:b87:ffb0::/48 Run bypasses.php
 Origin: US
-Profile: Commercial;Infrastructure/Transit;Third-party sourced;Webhosting
+Profile: Content Delivery Network;Infrastructure/Transit;Third-party sourced;Webhosting
 Tag: Amazon.com, Inc
 
 
@@ -4644,7 +4644,7 @@ Origin: CN
 Origin: SG
 2a02:e0:3138::/48 Run bypasses.php
 Origin: TR
-Profile: Commercial;Infrastructure/Transit;Webhosting
+Profile: Content Delivery Network;Infrastructure/Transit;Webhosting
 Tag: Huawei Cloud Service
 
 
@@ -5977,7 +5977,7 @@ Origin: NL
 2a0a:e200:1c00::/39 Deny Cloud
 2a10:1140::/29 Deny Cloud
 Origin: US
-Profile: Frequent changes;Infrastructure/Transit;Webhosting
+Profile: Content Delivery Network;Frequent changes;Infrastructure/Transit;Webhosting
 Tag: StackPath LLC
 
 
@@ -8263,7 +8263,7 @@ Origin: SG
 2a04:4e42::/32 Deny Cloud
 2a04:4e47::/46 Deny Cloud
 Origin: US
-Profile: Dedicated;Webhosting
+Profile: Content Delivery Network;Dedicated;Webhosting
 Tag: Fastly
 
 
@@ -8361,7 +8361,7 @@ Origin: GB
 Origin: LT
 2a0a:6040:8700::/44 Deny Cloud
 Origin: US
-Profile: Infrastructure/Transit
+Profile: Content Delivery Network;Infrastructure/Transit
 Tag: CDN77
 
 
@@ -8390,16 +8390,13 @@ Tag: Leibniz-Rechenzentrum
 
 
 # ASN 11831 ("eSecureData").
-# Data center, webhosting provider, and a source of spam. Some VPNs/proxies
-# mixed in with them, so may want to bypass/ignore for some users, but can't
-# easily distinguish between the two, so marking the whole lot as cloud.
 # Stop Forum Spam (SFS) listings: 289.
 # Updated: 2023.02.05
 
 2605:80::/32 Deny Cloud
 2a11:840:31::/48 Deny Cloud
 Origin: CA
-Profile: Webhosting
+Profile: Dedicated;Infrastructure/Transit;VPNs here;Webhosting
 Tag: eSecureData
 
 
@@ -9829,14 +9826,12 @@ Tag: G-Core Labs S.A
 
 
 # ASN 57271 ("BitWeb LLC").
-# Fraudulent Russian ISP running predominantly VPNs, proxies, etc.
-# Refer scamalytics.com/ip/isp/bitweb-llc
 # Stop Forum Spam (SFS) listings: 517.
 # Updated: 2022.09.19
 
 2a01:48a0:4001::/48 Deny Cloud
 Origin: RU
-Profile: Commercial;Restricted/Unidentifiable;Tor endpoints here
+Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: BitWeb LLC
 
 
@@ -9949,7 +9944,7 @@ Tag: World4You
 
 2404:82c0::/42 Deny Cloud
 Origin: HK
-Profile: Infrastructure/Transit;Webhosting
+Profile: Content Delivery Network;Webhosting
 Tag: UCLOUD
 
 
@@ -10406,7 +10401,6 @@ Tag: Simcentric Solutions
 
 
 # ASNs 11572, 39239, 50389, 57872, 60558, 207134, 210266 ("PHOENIX NAP, LLC").
-# Dedicated server/VPN/VPS provider. Also serves proxies.
 # Updated: 2021.06.24 / Checked: 2023.03.18
 
 2a01:b960:2307::/48 Deny Cloud
@@ -10420,7 +10414,7 @@ Origin: NL
 2a00:8860:700::/40 Deny Cloud
 2a00:8860:b00::/40 Deny Cloud
 Origin: US
-Profile: Commercial;Dedicated;Infrastructure/Transit;Webhosting
+Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: PHOENIX NAP, LLC
 
 
@@ -11551,7 +11545,7 @@ Tag: Host-Telecom
 2a10:4340::/29 Deny Cloud
 2a10:5c40::/29 Deny Cloud
 Origin: IR
-Profile: Infrastructure/Transit;Webhosting
+Profile: Content Delivery Network;Webhosting
 Tag: HostIran
 
 
@@ -13145,5 +13139,5 @@ Origin: DE
 2a01:111:f100:a004::/64 Run bypasses.php
 2a01:111:f403::/48 Run bypasses.php
 Origin: US
-Profile: Commercial;Infrastructure/Transit;Third-party sourced;Tor endpoints here;Webhosting
+Profile: Content Delivery Network;Infrastructure/Transit;Third-party sourced;Tor endpoints here;Webhosting
 Tag: Azure

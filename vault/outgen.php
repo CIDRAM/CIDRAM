@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2023.06.13).
+ * This file: Output generator (last modified: 2023.08.08).
  */
 
 /** Initialise cache. */
@@ -189,11 +189,6 @@ if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode'] && e
     /** Instantiate report orchestrator (used by some modules). */
     $CIDRAM['Reporter'] = new \CIDRAM\Core\Reporter();
 
-    /** Identify proxy connections (conjunctive reporting element). */
-    if (strpos($CIDRAM['BlockInfo']['WhyReason'], $CIDRAM['L10N']->getString('Short_Proxy')) !== false) {
-        $CIDRAM['Reporter']->report([9, 13], [], $CIDRAM['BlockInfo']['IPAddr']);
-    }
-
     /** Execute modules, if any have been enabled. */
     if (empty($CIDRAM['Whitelisted']) && $CIDRAM['Config']['signatures']['modules']) {
         $CIDRAM['Stage'] = 'Modules';
@@ -259,6 +254,19 @@ if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode'] && e
     if (empty($CIDRAM['Whitelisted'])) {
         $CIDRAM['Stage'] = 'Aux';
         $CIDRAM['Aux']();
+    }
+
+    /** Identify proxy connections (conjunctive reporting element). */
+    if (
+        strpos($CIDRAM['BlockInfo']['WhyReason'], $CIDRAM['L10N']->getString('Short_Proxy')) !== false ||
+        in_array(['Open Proxy', 'Proxy', 'Tor endpoints here'], $CIDRAM['Profile'], true)
+    ) {
+        $CIDRAM['Reporter']->report([9], [], $CIDRAM['BlockInfo']['IPAddr']);
+    }
+
+    /** Identify VPN connections (conjunctive reporting element). */
+    if (in_array(['VPN IP', 'VPNs here'], $CIDRAM['Profile'], true)) {
+        $CIDRAM['Reporter']->report([13], [], $CIDRAM['BlockInfo']['IPAddr']);
     }
 
     /** Process all reports (if any exist, and if not whitelisted), and then destroy the reporter. */

@@ -1,8 +1,8 @@
 # IPv4 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv4.dat
 
-# Version: 2023.218.0
-# Last modified: 2023.08.07
+# Version: 2023.219.0
+# Last modified: 2023.08.08
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -13052,7 +13052,7 @@ Origin: UA
 223.71.71.96/27 Run bypasses.php
 223.71.71.128/25 Run bypasses.php
 Origin: US
-Profile: Commercial;Infrastructure/Transit;Third-party sourced;Webhosting
+Profile: Content Delivery Network;Infrastructure/Transit;Third-party sourced;Webhosting
 Tag: Amazon.com, Inc
 
 
@@ -14988,7 +14988,7 @@ Origin: SC
 190.92.192.0/18 Run bypasses.php
 202.170.88.0/21 Run bypasses.php
 Origin: SG
-Profile: Commercial;Infrastructure/Transit;Webhosting
+Profile: Content Delivery Network;Infrastructure/Transit;Webhosting
 Tag: Huawei Cloud Service
 
 
@@ -24230,7 +24230,7 @@ Origin: NL
 209.234.240.0/20 Deny Cloud
 216.151.176.0/20 Deny Cloud
 Origin: US
-Profile: Frequent changes;Infrastructure/Transit;Webhosting
+Profile: Content Delivery Network;Frequent changes;Infrastructure/Transit;Webhosting
 Tag: StackPath LLC
 
 
@@ -31137,7 +31137,7 @@ Origin: NZ
 199.36.158.0/24 Deny Cloud
 199.232.0.0/16 Deny Cloud
 Origin: US
-Profile: Dedicated;Webhosting
+Profile: Content Delivery Network;Dedicated;Webhosting
 Tag: Fastly
 
 
@@ -31956,7 +31956,7 @@ Origin: US
 192.142.226.0/23 Deny Cloud
 192.142.228.0/24 Deny Cloud
 Origin: ZA
-Profile: Infrastructure/Transit
+Profile: Content Delivery Network;Infrastructure/Transit
 Tag: CDN77
 
 
@@ -32124,9 +32124,6 @@ Tag: Leibniz-Rechenzentrum
 
 
 # ASN 11831 ("eSecureData").
-# Data center, webhosting provider, and a source of spam. Some VPNs/proxies
-# mixed in with them, so may want to bypass/ignore for some users, but can't
-# easily distinguish between the two, so marking the whole lot as cloud.
 # Stop Forum Spam (SFS) listings: 289.
 # Updated: 2023.02.05
 
@@ -32145,7 +32142,7 @@ Tag: Leibniz-Rechenzentrum
 209.139.208.0/23 Deny Cloud
 216.18.20.0/22 Deny Cloud
 Origin: CA
-Profile: Webhosting
+Profile: Dedicated;Infrastructure/Transit;VPNs here;Webhosting
 Tag: eSecureData
 
 
@@ -37380,8 +37377,6 @@ Tag: G-Core Labs S.A
 
 
 # ASN 57271 ("BitWeb LLC").
-# Fraudulent Russian ISP running predominantly VPNs, proxies, etc.
-# Refer scamalytics.com/ip/isp/bitweb-llc
 # Stop Forum Spam (SFS) listings: 517.
 # Updated: 2022.09.19
 
@@ -37404,7 +37399,7 @@ Tag: G-Core Labs S.A
 185.234.11.0/24 Deny Cloud
 192.144.18.0/24 Deny Cloud
 Origin: RU
-Profile: Commercial;Restricted/Unidentifiable;Tor endpoints here
+Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: BitWeb LLC
 
 
@@ -38014,7 +38009,7 @@ Origin: SG
 Origin: US
 192.142.106.0/24 Deny Cloud
 Origin: ZA
-Profile: Infrastructure/Transit;Webhosting
+Profile: Content Delivery Network;Webhosting
 Tag: UCLOUD
 
 
@@ -39964,7 +39959,6 @@ Tag: Simcentric Solutions
 
 
 # ASNs 11572, 39239, 50389, 57872, 60558, 207134, 210266 ("PHOENIX NAP, LLC").
-# Dedicated server/VPN/VPS provider. Also serves proxies.
 # Updated: 2023.03.18
 
 83.150.216.0/24 Deny Cloud
@@ -40011,7 +40005,7 @@ Origin: NL
 204.217.128.0/22 Deny Cloud
 206.232.0.0/22 Deny Cloud
 Origin: US
-Profile: Commercial;Dedicated;Infrastructure/Transit;Webhosting
+Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: PHOENIX NAP, LLC
 
 
@@ -43456,7 +43450,7 @@ Tag: ServTech LTD
 208.127.243.0/24 Run bypasses.php
 209.85.214.0/24 Run bypasses.php
 Origin: US
-Profile: Commercial;Dedicated;Infrastructure/Transit;Search engine;Webhosting
+Profile: Content Delivery Network;Dedicated;Infrastructure/Transit;Search engine;Webhosting
 Tag: Google LLC
 
 
@@ -43937,7 +43931,7 @@ Tag: Host-Telecom
 193.3.231.0/24 Deny Cloud
 193.162.129.0/24 Deny Cloud
 Origin: IR
-Profile: Infrastructure/Transit;Webhosting
+Profile: Content Delivery Network;Webhosting
 Tag: HostIran
 
 
@@ -49068,5 +49062,5 @@ Origin: DE
 213.199.180.192/27 Run bypasses.php
 213.199.183.0/24 Run bypasses.php
 Origin: US
-Profile: Commercial;Infrastructure/Transit;Third-party sourced;Tor endpoints here;Webhosting
+Profile: Content Delivery Network;Infrastructure/Transit;Third-party sourced;Tor endpoints here;Webhosting
 Tag: Azure

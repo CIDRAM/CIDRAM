@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2023.08.05).
+ * This file: Front-end functions file (last modified: 2023.08.08).
  */
 
 /**
@@ -905,6 +905,9 @@ $CIDRAM['SimulateBlockEvent'] = function ($Addr, $Modules = false, $Aux = false,
         $CIDRAM['BlockInfo']['rURI'] .= '?' . $CIDRAM['FE']['custom-query'];
     }
 
+    /** Instantiate report orchestrator (used by some modules). */
+    $CIDRAM['Reporter'] = new \CIDRAM\Core\Reporter();
+
     if (strlen($Addr)) {
         $CIDRAM['Stage'] = 'Tests';
 
@@ -940,9 +943,6 @@ $CIDRAM['SimulateBlockEvent'] = function ($Addr, $Modules = false, $Aux = false,
     if ($CIDRAM['Config']['general']['force_hostname_lookup']) {
         $CIDRAM['Hostname'] = $CIDRAM['DNS-Reverse']($CIDRAM['BlockInfo']['IPAddrResolved'] ?: $CIDRAM['BlockInfo']['IPAddr']);
     }
-
-    /** Instantiate report orchestrator (used by some modules). */
-    $CIDRAM['Reporter'] = new \CIDRAM\Core\Reporter();
 
     /** Execute modules, if any have been enabled. */
     if ($Modules && $CIDRAM['Config']['signatures']['modules'] && empty($CIDRAM['Whitelisted'])) {

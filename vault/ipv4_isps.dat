@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv4_isps.dat
 
-# Version: 2023.218.0
-# Last modified: 2023.08.07
+# Version: 2023.219.0
+# Last modified: 2023.08.08
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -1798,7 +1798,7 @@ Tag: Kyivstar
 178.151.238.148/32 Deny Attacks
 178.151.238.171/32 Deny Spam
 Origin: UA
-Profile: Infrastructure/Transit
+Profile: Domestic ISP;Mobile ISP;Multiplay
 Tag: TRIOLAN
 
 
@@ -18695,21 +18695,6 @@ Profile: Domestic ISP
 Tag: GLOBAL WEB GROUP LLC
 
 
-# ASN 397540 ("Windscribe").
-# Canadian VPN provider (not formally an ISP, but used for internet access by
-# some users and as a proxy nonetheless). Caught probing for "wlwmanifest.xml".
-# Brute-force, XMLRPC, and webapp attacks, hacking (particularly against
-# WordPress websites) and spam detected from here. Listing just the affected
-# ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 716.
-# Updated: 2022.08.01
-
-149.57.28.0/24 Deny Attacks
-Origin: US
-Profile: Infrastructure/Transit
-Tag: Windscribe
-
-
 # ASN 50835 ("EANCENTER TELECOM LLC").
 # Conflicting evidence about what this network *is* (German/Romanian broadband
 # provider? Brazilian marketing firm/agency? E-Commerce provider? I'm not
@@ -19734,20 +19719,6 @@ Tag: bnet-bd
 Origin: RU
 Profile: Domestic ISP;Multiplay
 Tag: Inforoom Ltd
-
-
-# ASN 16652 ("Riseup Networks").
-# Webmail and VPN provider. Port scans and other unusual traffic detected from
-# some specific addresses here. Listing just the affected addresses only.
-# Stop Forum Spam (SFS) listings: 36.
-# Updated: 2023.04.24
-
-198.252.153.28/32 Deny Attacks
-198.252.153.109/32 Deny Spam
-198.252.153.129/32 Deny Attacks
-Origin: US
-Profile: Infrastructure/Transit;Tor endpoints here
-Tag: Riseup Networks
 
 
 # ASN 3301 ("Telia Company AB").

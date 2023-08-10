@@ -422,7 +422,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     /**
      * @link https://github.com/CIDRAM/CIDRAM/issues/494
      */
-    $this->trigger(preg_match('~anthropic-ai|%(?:client|forward|host|method|name|referrer|time|ua|uri)~', $UANoSpace), 'Unauthorised AI scanner'); // 2023.08.10
+    $this->trigger(preg_match('~anthropic-ai~', $UANoSpace), 'Unauthorised AI scanner'); // 2023.08.10
 };
 
 /** Execute closure. */

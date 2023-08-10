@@ -291,4 +291,4 @@
 
 [2023.08.08; Maikuolan]: Conjunctive reporting and profiling improved.
 
-[2023.08.10; Maikuolan]: Profile when successfully verified.
+[2023.08.10; Maikuolan]: Successfully verified requests are now profiled. Numerous additional webshells and backdoors are now blocked. Some modules refactored. Slightly adjusted the favicon again. Added support for verifying (or blocking) ChatGPT-User and GPTBot.

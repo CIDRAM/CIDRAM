@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2023.08.02).
+# This file: Defaults file (last modified: 2023.08.10).
 ##/
 
 Config Defaults:
@@ -813,6 +813,8 @@ Config Defaults:
     AmazonAdBot:BlockNegatives
     AmazonAdBot:SingleHitBypass
     AmazonAdBot:UntrackPositives
+    ChatGPT-User:BlockNonVerified
+    GPTBot:BlockNonVerified
     Grapeshot:Verify
     Grapeshot:BlockNegatives
     Grapeshot:UntrackPositives
@@ -825,10 +827,13 @@ Config Defaults:
    choices:
     AdSense: "AdSense"
     AmazonAdBot: "* AmazonAdBot"
+    ChatGPT-User: "!! ChatGPT-User"
+    GPTBot: "!! GPTBot"
     Grapeshot: "* Oracle Data Cloud Crawler (Grapeshot)"
    hints:
     - "hints_verification"
     - "hints_has_bypass"
+    - "hints_want_to_block"
   adjust:
    type: "checkbox"
    default: |

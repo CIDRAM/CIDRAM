@@ -418,6 +418,11 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         $this->Reporter->report([15, 19, 20, 21], ['User agent cited by various attack tools, rootkits, backdoors, webshells, and malware detected.'], $this->BlockInfo['IPAddr']);
         $this->CIDRAM['Tracking options override'] = 'extended';
     }
+
+    /**
+     * @link https://github.com/CIDRAM/CIDRAM/issues/494
+     */
+    $this->trigger(preg_match('~anthropic-ai|%(?:client|forward|host|method|name|referrer|time|ua|uri)~', $UANoSpace), 'Unauthorised AI scanner'); // 2023.08.10
 };
 
 /** Execute closure. */

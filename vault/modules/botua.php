@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bot user agents module (last modified: 2023.06.16).
+ * This file: Bot user agents module (last modified: 2023.08.10).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -362,7 +362,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         if (strpos($this->BlockInfo['WhyReason'], 'Spam UA') !== false) {
             $this->Reporter->report([12, 19], ['Spambot detected.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'Malware UA') !== false) {
-            $this->Reporter->report([19, 20], ['User agent cited by malware detected at this address.'], $this->BlockInfo['IPAddr']);
+            $this->Reporter->report([19, 20], ['User agent cited by malware detected.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'UAEX') !== false) {
             $this->Reporter->report([15, 19], ['Detected command execution via user agent header.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'bittorrent') !== false) {
@@ -396,9 +396,9 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         } elseif (strpos($this->BlockInfo['WhyReason'], 'XSS attack') !== false) {
             $this->Reporter->report([15], ['Attempted to push XSS via user agent header.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'Banned UA') !== false) {
-            $this->Reporter->report([19], ['Misbehaving bot detected at this address.'], $this->BlockInfo['IPAddr']);
+            $this->Reporter->report([19], ['Misbehaving bot detected.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'Scraper UA') !== false) {
-            $this->Reporter->report([19], ['Scraper detected at this address.'], $this->BlockInfo['IPAddr']);
+            $this->Reporter->report([19], ['Scraper detected.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'Fake UA') !== false) {
             $this->Reporter->report([19], ['Faked user agent detected.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'Attempting to expose honeypots') !== false) {
@@ -406,6 +406,17 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         } elseif (strpos($this->BlockInfo['WhyReason'], 'Hack attempt') !== false) {
             $this->Reporter->report([15, 19, 21], ['Hack attempt detected.'], $this->BlockInfo['IPAddr']);
         }
+    }
+
+    /**
+     * @link https://github.com/CIDRAM/CIDRAM/issues/493
+     * @link https://trunc.org/learning/the-mozlila-user-agent-bot
+     */
+    if (
+        $this->trigger(strpos($UANoSpace, 'mozlila') !== false, 'Attack UA') // 2023.08.10
+    ) {
+        $this->Reporter->report([15, 19, 20, 21], ['User agent cited by various attack tools, rootkits, backdoors, webshells, and malware detected.'], $this->BlockInfo['IPAddr']);
+        $this->CIDRAM['Tracking options override'] = 'extended';
     }
 };
 

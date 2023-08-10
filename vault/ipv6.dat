@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2023.219.0
-# Last modified: 2023.08.08
+# Version: 2023.221.0
+# Last modified: 2023.08.10
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -5730,13 +5730,15 @@ Tag: DATAPRO
 
 
 # ASN 51765 ("Oy Creanova Hosting Solutions Ltd").
-# Stop Forum Spam (SFS) listings: 3,416.
-# Updated: 2022.08.02
+# Stop Forum Spam (SFS) listings: 3,454.
+# Updated: 2023.08.10
 
 2a11:840:21::/48 Deny Cloud
 Origin: CA
 2a0c:f040::/48 Deny Cloud
 Origin: FI
+2a0b:ab00::/29 Deny Cloud
+Origin: RU
 Profile: Webhosting
 Tag: Oy Creanova Hosting
 
@@ -12501,6 +12503,16 @@ Tag: uPress Inc
 Origin: DK
 Profile: Dedicated;Webhosting
 Tag: Adeo
+
+
+# ASN 209622 ("Kingsoft cloud corporation limited").
+# Port scans and SSH attacks detected from here.
+# Updated: 2023.08.09
+
+2402:47c0::/32 Deny Cloud
+Origin: HK
+Profile: Commercial
+Tag: Kingsoft
 
 
 # ---

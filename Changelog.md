@@ -290,3 +290,5 @@
 [2023.08.06; New Feature; Maikuolan]: Added the ability to instruct CIDRAM to detect the method for testing auxiliary rules conditions automatically.
 
 [2023.08.08; Maikuolan]: Conjunctive reporting and profiling improved.
+
+[2023.08.10; Maikuolan]: Profile when successfully verified.

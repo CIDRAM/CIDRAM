@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2023.08.06).
+ * This file: The CIDRAM core (last modified: 2023.08.10).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1277,6 +1277,7 @@ class Core
                 /** Populate "verified" field. */
                 if (isset($this->BlockInfo['Verified'])) {
                     $this->BlockInfo['Verified'] = $Friendly;
+                    $this->addProfileEntry('Verified');
                 }
 
                 /** Single-hit bypass. */
@@ -1314,6 +1315,7 @@ class Core
                 /** Populate "verified" field. */
                 if (isset($this->BlockInfo['Verified'])) {
                     $this->BlockInfo['Verified'] = $Friendly;
+                    $this->addProfileEntry('Verified');
                 }
 
                 /** Single-hit bypass. */
@@ -3094,6 +3096,7 @@ class Core
                 /** Populate "verified" field. */
                 if (isset($this->BlockInfo['Verified'])) {
                     $this->BlockInfo['Verified'] = $Friendly;
+                    $this->addProfileEntry('Verified');
                 }
 
                 /** Single-hit bypass. */

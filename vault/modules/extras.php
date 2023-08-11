@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2023.08.10).
+ * This file: Optional security extras module (last modified: 2023.08.11).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -73,7 +73,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             '991176|' .
             'admin-heade\d*|adminfuns|alfa(?:-rex|ioxi|new)\d*|anjas|apismtp|' .
             'bak|bala|' .
-            'c(?:9|10)\d+|classsmtps|css/(?:moon|newgolden|radio|well-known)|' .
+            'c(?:9|10)\d+|(?:cgi-bin|css)/(?:moon|newgolden|radio|uploader|well-known|wp-login)|classsmtps|colors/blue/uploader|' .
             'gh[0o]st|glab-rare|gzismexv|' .
             'h6ss|hehehe|' .
             'icesword|indoxploit|ir7szrsouep|itsec|' .
@@ -83,6 +83,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             'session91|shell\d*|shrift|silic|' .
             't62|themes/universal-news/www|tinymce/langs/about|tk(?:_dencode_\d+)?|topxoh/drsx|' .
             'upfile(?:_\(\d\))?|' .
+            'vzlateam|' .
             'w0rdpr3ssnew|walker-nva|webshell-[a-z\d]+|widgets-nva|wloymzuk|wp-(?:2019|22|(?:admin|content|includes)/repeater|conflg|setups|sigunq|p)|wso(?:yanz)?[\d.]*|wwdv|' .
             'xiaom|x+l(?:\d+|eet(?:-shell)?x?)|xmrlpc|xw|' .
             'yanz|' .

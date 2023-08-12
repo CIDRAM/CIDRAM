@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bad hosts blocker module (last modified: 2023.03.09).
+ * This file: Bad hosts blocker module (last modified: 2023.08.12).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -165,12 +165,9 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         $this->addProfileEntry('Webhosting');
     }
 
-    if ($this->trigger(preg_match(
-        '/(?:\.oroxy|anonine)\.com$|thefreevpn|vpn(?:999\.com|gate)|public-net/',
-        $HN
-    ), 'Risky/Proxy/VPN Host')) {
-        $this->addProfileEntry('Tor endpoints here');
-    } // 2021.03.18
+    if ($this->trigger(preg_match('/anonine\.com$|thefreevpn\.org$|vpn(?:999\.com|gate)/', $HN), 'Risky VPN Host')) {
+        $this->addProfileEntry('VPNs here');
+    } // 2023.08.12
 
     $this->trigger(preg_match(
         '~(?:(?:criminalip|dimenoc|dumpyourbitch|hostenko|internetserviceteam|ipr' .

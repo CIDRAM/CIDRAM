@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2023.220.0
-# Last modified: 2023.08.09
+# Version: 2023.223.0
+# Last modified: 2023.08.12
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -63,6 +63,20 @@ Origin: CA
 Origin: TR
 Profile: Commercial;Dedicated;Domestic ISP;Infrastructure/Transit;Multiplay;Webhosting
 Tag: DGN TEKNOLOJI
+
+
+# ASN 38731 ("Vietel - CHT Compamy Ltd").
+# One of Vietnam's largest domestic ISPs, but also a source of forum and blog
+# spam, and occasionally sometimes other kinds of unwanted traffic. Their
+# network consists of a number of different ASNs, but only this specific ASN is
+# included here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 137.
+# Updated: 2023.08.12
+
+2401:5f80:3000:2::/64 Deny Attacks
+Origin: VN
+Profile: Domestic ISP;Tor endpoints here
+Tag: Vietel
 
 
 # ASNs 6876, 41544, 48239 ("TeNeT Scientific Production Enterprise LLC",

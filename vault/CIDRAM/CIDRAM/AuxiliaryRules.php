@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used for auxiliary rules (last modified: 2023.08.05).
+ * This file: Methods used for auxiliary rules (last modified: 2023.08.13).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -488,6 +488,7 @@ trait AuxiliaryRules
                                 $Boundary = substr($Value, 0, 1);
                                 if (
                                     !preg_match('~^[\0-\x20\dA-Za-z\xC0-\xFF]$~', $Boundary) &&
+                                    ($Boundary = preg_quote($Boundary) || true) &&
                                     preg_match($Boundary === '~' ? '/^' . $Boundary . '.+' . $Boundary . 'i?m?s?x?A?D?S?U?u?n?$/' : '~^' . $Boundary . '.*' . $Boundary . 'i?m?s?x?A?D?S?U?u?n?$~', $Value)
                                 ) {
                                     $Operator = '≇';
@@ -524,6 +525,7 @@ trait AuxiliaryRules
                                 $Boundary = substr($Value, 0, 1);
                                 if (
                                     !preg_match('~^[\0-\x20\dA-Za-z\xC0-\xFF]$~', $Boundary) &&
+                                    ($Boundary = preg_quote($Boundary) || true) &&
                                     preg_match($Boundary === '~' ? '/^' . $Boundary . '.+' . $Boundary . 'i?m?s?x?A?D?S?U?u?n?$/' : '~^' . $Boundary . '.*' . $Boundary . 'i?m?s?x?A?D?S?U?u?n?$~', $Value)
                                 ) {
                                     $Operator = '≅';

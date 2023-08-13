@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2023.08.08).
+ * This file: Front-end functions file (last modified: 2023.08.13).
  */
 
 /**
@@ -3832,6 +3832,7 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
                             $Boundary = substr($Value, 0, 1);
                             if (
                                 !preg_match('~^[\0-\x20\dA-Za-z\xC0-\xFF]$~', $Boundary) &&
+                                ($Boundary = preg_quote($Boundary) || true) &&
                                 preg_match($Boundary === '~' ? '/^' . $Boundary . '.+' . $Boundary . 'i?m?s?x?A?D?S?U?u?n?$/' : '~^' . $Boundary . '.*' . $Boundary . 'i?m?s?x?A?D?S?U?u?n?$~', $Value)
                             ) {
                                 $Operator = '≇';
@@ -3868,6 +3869,7 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
                             $Boundary = substr($Value, 0, 1);
                             if (
                                 !preg_match('~^[\0-\x20\dA-Za-z\xC0-\xFF]$~', $Boundary) &&
+                                ($Boundary = preg_quote($Boundary) || true) &&
                                 preg_match($Boundary === '~' ? '/^' . $Boundary . '.+' . $Boundary . 'i?m?s?x?A?D?S?U?u?n?$/' : '~^' . $Boundary . '.*' . $Boundary . 'i?m?s?x?A?D?S?U?u?n?$~', $Value)
                             ) {
                                 $Operator = '≅';

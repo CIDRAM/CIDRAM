@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2023.08.11).
+ * This file: Optional security extras module (last modified: 2023.08.13).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -62,30 +62,47 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
         $this->trigger(strpos($LCNrURI, 'wp-print.php?script=1') !== false, 'WP hack attempt'); // 2017.10.07 mod 2023.08.10
 
-        $this->trigger(preg_match('~\.(?:bak|cgi|php)\.suspected~i', $LCNrURI), 'Accessing quarantined files not allowed'); // 2017.03.22
+        /** Probing for quarantined files. */
+        if ($this->trigger(preg_match('~\.[\da-z]{2,4}\.suspected(?:$|[/?])~', $LCNrURI), 'Probing for quarantined files')) {
+            $this->Reporter->report([15], ['Caught probing for quarantined files.'], $this->BlockInfo['IPAddr']);
+        } // 2017.03.22 mod 2023.08.13
+
+        /** Probing for unsecured backup files. */
+        if ($this->trigger(preg_match(
+            '~(?:backup|(?:backup|docroot|htdocs|public_html|site|www)\.(?:gz|rar|tar(?:\.gz)?|zip)|d(?:atabase|b|ump)\.sql)(?:$|[/?])~',
+            $LCNrURI
+        ), 'Probing for unsecured backup files not allowed')) {
+            $this->Reporter->report([15], ['Caught probing for unsecured backup files.'], $this->BlockInfo['IPAddr']);
+        } // 2023.08.13
 
         /** Probing for webshells/backdoors. */
         if ($this->trigger(preg_match(
             '~old/wp-admin/install\.php|shell\?cd|' .
             'test/wp-includes/wlwmanifest\.xml|' .
             '(?:' .
+            '\+theme\+/(?:error|index)|' .
             '\.w(?:ell-known|p-cli)/.*(?:about|install|moon|wp-login)|' .
-            '991176|' .
-            'admin-heade\d*|adminfuns|alfa(?:-rex|ioxi|new)\d*|anjas|apismtp|' .
+            '0byte|0x|\d{3,5}[a-z]{3,5}|10+|991176|' .
+            'admin-heade\d*|adminfuns|alfa(?:-rex|ioxi|new)\d*|anjas|apismtp|axx|' .
             'bak|bala|' .
-            'c(?:9|10)\d+|(?:cgi-bin|css)/(?:moon|newgolden|radio|uploader|well-known|wp-login)|classsmtps|colors/blue/uploader|' .
+            'c(?:9|10)\d+|casper[\da-z]+|(?:cgi-bin|css)/(?:moon|newgolden|radio|uploader|well-known|wp-login)|classsmtps|colors/blue/uploader|' .
+            'd7|deadcode\d*|dkiz|' .
+            'ee|' .
+            'fddqradz|' .
             'gh[0o]st|glab-rare|gzismexv|' .
-            'h6ss|hehehe|' .
-            'icesword|indoxploit|ir7szrsouep|itsec|' .
-            'lock360|lufix(?:-shell)?|' .
+            'h[4a]x+[0o]r|h6ss|hanna1337|hehehe|htmlawedtest|' .
+            'i\d{3,}[a-z]{2,}|icesword|indoxploit|ir7szrsouep|itsec|' .
+            'lock0?360|lufix(?:-shell)?|' .
             'miin|my1|' .
-            'php(?:1|_niu_\d+)|poison|' .
-            'session91|shell\d*|shrift|silic|' .
-            't62|themes/universal-news/www|tinymce/langs/about|tk(?:_dencode_\d+)?|topxoh/drsx|' .
-            'upfile(?:_\(\d\))?|' .
+            'orvx(?:-shell)?|' .
+            'php(?:1|_niu_\d+)|poison|priv8|pzaiihfi|' .
+            'rxr(?:_[\da-z]+)?|' .
+            'session91|sh[3e]llx?\d*|shrift|sidwso|silic|skipper(?:shell)?|spammervip|sonarxleetxd|' .
+            't62|themes/(?:finley/min|universal-news/www)|tinymce/langs/about|tk(?:_dencode_\d+)?|(?:tmp|wp-content)/vuln|topxoh/(?:drsx|wdr)|' .
+            'unisibfu|upfile(?:_\(\d\))?|uploader_by_cloud7_agath|utchiha(?:_uploader)?|' .
             'vzlateam|' .
-            'w0rdpr3ssnew|walker-nva|webshell-[a-z\d]+|widgets-nva|wloymzuk|wp-(?:2019|22|(?:admin|content|includes)/repeater|conflg|setups|sigunq|p)|wso(?:yanz)?[\d.]*|wwdv|' .
-            'xiaom|x+l(?:\d+|eet(?:-shell)?x?)|xmrlpc|xw|' .
+            'w0rdpr3ssnew|walker-nva|webshell-[a-z\d]+|widgets-nva|widwsisw|wloymzuk|wp-(?:2019|22|(?:admin|content|includes)/(?:cong|dropdown|repeater)|conflg|filemanager|setups|sigunq|p)|ws[ou](?:yanz)?(?:[\d.]*|[\da-z]{4,})|wwdv|' .
+            'x{3,}|xiaom|xichang/x|x+l(?:\d+|eet(?:mailer|-shell)?x?)|xm(?:lrpcs|lrpz|rlpc)|xw|' .
             'yanz|' .
             'zone_hackbar(?:_beutify_other)?|' .
             '/src/util/php/(?:eval-stdin|kill)|' .
@@ -94,7 +111,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $LCNrURI
         ), 'Probing for webshells/backdoors')) {
             $this->Reporter->report([15, 20, 21], ['Caught probing for webshells/backdoors. Host might be compromised.'], $this->BlockInfo['IPAddr']);
-        } // 2023.08.10
+        } // 2023.08.13
 
         /** Probing for exposed Git data. */
         if ($this->trigger(preg_match('~\.git(?:$|\W)~i', $LCNrURI), 'Probing for exposed git data')) {
@@ -321,9 +338,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
     /** Reporting. */
     if (!empty($this->BlockInfo['IPAddr'])) {
-        if (strpos($this->BlockInfo['WhyReason'], 'Accessing quarantined files not allowed') !== false) {
-            $this->Reporter->report([15], ['Unauthorised attempt to access quarantined files detected.'], $this->BlockInfo['IPAddr']);
-        } elseif (strpos($this->BlockInfo['WhyReason'], 'Compromised API key') !== false) {
+        if (strpos($this->BlockInfo['WhyReason'], 'Compromised API key') !== false) {
             $this->Reporter->report([15], ['Unauthorised use of known compromised API key detected.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'FancyBox exploit attempt') !== false) {
             $this->Reporter->report([15, 21], ['FancyBox hack attempt detected.'], $this->BlockInfo['IPAddr']);

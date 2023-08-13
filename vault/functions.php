@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2023.08.06).
+ * This file: Functions file (last modified: 2023.08.13).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -1910,6 +1910,7 @@ $CIDRAM['AuxMatch'] = function ($Criteria, $Actual, string $Method = '') use (&$
             $Boundary = substr($TestCase, 0, 1);
             if (
                 !preg_match('~^[\0-\x20\dA-Za-z\xC0-\xFF]$~', $Boundary) &&
+                ($Boundary = preg_quote($Boundary) || true) &&
                 preg_match($Boundary === '~' ? '/^' . $Boundary . '.+' . $Boundary . 'i?m?s?x?A?D?S?U?u?n?$/' : '~^' . $Boundary . '.*' . $Boundary . 'i?m?s?x?A?D?S?U?u?n?$~', $TestCase)
             ) {
                 $Operator = '≅';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Default signature bypasses (last modified: 2023.04.10).
+ * This file: Default signature bypasses (last modified: 2023.08.14).
  */
 
 /** Prevents execution from outside of the checkFactors method. */
@@ -175,6 +175,7 @@ $this->CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [
                 preg_match('~^msnbot-\d+-\d+-\d+-\d+\.search\.msn\.com$~i', $this->CIDRAM['Hostname']) ||
                 preg_match('~(?:msn|bing)bot|bingpreview~', $this->BlockInfo['UALC'])
             ) {
+                $this->addProfileEntry('Bypass flagged');
                 $this->CIDRAM['Flag-Bypass-Bingbot-Check'] = true;
                 return 4;
             }

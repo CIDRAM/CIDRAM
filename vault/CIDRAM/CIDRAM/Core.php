@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2023.08.13).
+ * This file: The CIDRAM core (last modified: 2023.08.14).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1334,10 +1334,10 @@ class Core
         if (isset($this->CIDRAM['VPermissions'][$Friendly . ':BlockNegatives'])) {
             $this->trigger(true, sprintf($this->L10N->getString('Short_Fake_UA'), $Friendly));
             $this->addProfileEntry('Blocked Negative');
-        }
 
-        /** Reporting. */
-        $this->Reporter->report([19], ['Caught masquerading as ' . $Friendly . '.'], $this->BlockInfo['IPAddr']);
+            /** Reporting. */
+            $this->Reporter->report([19], ['Caught masquerading as ' . $Friendly . '.'], $this->BlockInfo['IPAddr']);
+        }
     }
 
     /**
@@ -3116,10 +3116,10 @@ class Core
         if (isset($this->CIDRAM['VPermissions'][$Friendly . ':BlockNegatives'])) {
             $this->trigger(true, sprintf($this->L10N->getString('Short_Fake_UA'), $Friendly));
             $this->addProfileEntry('Blocked Negative');
-        }
 
-        /** Reporting. */
-        $this->Reporter->report([19], ['Caught masquerading as ' . $Friendly . '.'], $this->BlockInfo['IPAddr']);
+            /** Reporting. */
+            $this->Reporter->report([19], ['Caught masquerading as ' . $Friendly . '.'], $this->BlockInfo['IPAddr']);
+        }
     }
 
     /**

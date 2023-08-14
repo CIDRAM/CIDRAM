@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2023.08.13).
+ * This file: Optional security extras module (last modified: 2023.08.14).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -77,11 +77,12 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
         /** Probing for webshells/backdoors. */
         if ($this->trigger(preg_match(
-            '~old/wp-admin/install\.php|shell\?cd|' .
+            '~(?:^|[/?])(?:' .
+            'old/wp-admin/install\.php|shell\?cd|' .
             'test/wp-includes/wlwmanifest\.xml|' .
             '(?:' .
             '\+theme\+/(?:error|index)|' .
-            '\.w(?:ell-known|p-cli)/.*(?:about|install|moon|wp-login)|' .
+            '\.w(?:ell-known|p-cli)/.*(?:about|install|moon|wp-login)|\.?rxr(?:_[\da-z]+)?|' .
             '0byte|0x|\d{3,5}[a-z]{3,5}|10+|991176|' .
             'admin-heade\d*|adminfuns|alfa(?:-rex|ioxi|new)\d*|anjas|apismtp|axx|' .
             'bak|bala|' .
@@ -96,8 +97,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             'miin|my1|' .
             'orvx(?:-shell)?|' .
             'php(?:1|_niu_\d+)|poison|priv8|pzaiihfi|' .
-            'rxr(?:_[\da-z]+)?|' .
-            'session91|sh[3e]llx?\d*|shrift|sidwso|silic|skipper(?:shell)?|spammervip|sonarxleetxd|' .
+            'session91|sh[3e]llx?\d*|shrift|sidwso|silic|skipper(?:shell)?|sonarxleetxd|spammervip|src/util/php/(?:eval(?:-stdin)?|kill)|' .
             't62|themes/(?:finley/min|universal-news/www)|tinymce/langs/about|tk(?:_dencode_\d+)?|(?:tmp|wp-content)/vuln|topxoh/(?:drsx|wdr)|' .
             'unisibfu|upfile(?:_\(\d\))?|uploader_by_cloud7_agath|utchiha(?:_uploader)?|' .
             'vzlateam|' .
@@ -105,13 +105,12 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             'x{3,}|xiaom|xichang/x|x+l(?:\d+|eet(?:mailer|-shell)?x?)|xm(?:lrpcs|lrpz|rlpc)|xw|' .
             'yanz|' .
             'zone_hackbar(?:_beutify_other)?|' .
-            '/src/util/php/(?:eval-stdin|kill)|' .
             '版iisspy|大马|一句话(?:木马|扫描脚本程序)?' .
-            ')\.php[57]?(?:$|[/?])~',
+            '))\.php[57]?(?:$|[/?])~',
             $LCNrURI
         ), 'Probing for webshells/backdoors')) {
             $this->Reporter->report([15, 20, 21], ['Caught probing for webshells/backdoors. Host might be compromised.'], $this->BlockInfo['IPAddr']);
-        } // 2023.08.13
+        } // 2023.08.13 mod 2023.10.14
 
         /** Probing for exposed Git data. */
         if ($this->trigger(preg_match('~\.git(?:$|\W)~i', $LCNrURI), 'Probing for exposed git data')) {

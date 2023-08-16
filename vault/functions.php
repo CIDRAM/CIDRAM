@@ -304,6 +304,10 @@ $CIDRAM['CheckFactors'] = function (array $Files, array $Factors) use (&$CIDRAM)
         } else {
             $SigFormat = 'DAT';
         }
+        $Files[$FileIndex] = (
+            strpos($Files[$FileIndex], "\r\n") !== false
+        ) ? str_replace("\r", '', $Files[$FileIndex]) : str_replace("\r", "\n", $Files[$FileIndex]);
+        $Files[$FileIndex] = "\n" . $Files[$FileIndex] . "\n";
         if ($Counts['Factors'] === 32) {
             if ($SigFormat === 'CSV') {
                 $NoCIDR = ',' . substr($Factors[31], 0, -3) . ',';
@@ -344,10 +348,6 @@ $CIDRAM['CheckFactors'] = function (array $Files, array $Factors) use (&$CIDRAM)
             }
             continue;
         }
-        $Files[$FileIndex] = (
-            strpos($Files[$FileIndex], "\r\n") !== false
-        ) ? str_replace("\r", '', $Files[$FileIndex]) : str_replace("\r", "\n", $Files[$FileIndex]);
-        $Files[$FileIndex] = "\n" . $Files[$FileIndex] . "\n";
         for ($FactorIndex = 0; $FactorIndex < $Counts['Factors']; $FactorIndex++) {
             $PosB = -1;
             while (true) {

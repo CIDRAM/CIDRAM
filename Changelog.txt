@@ -29,6 +29,11 @@ Detailed version release guidelines for CIDRAM can be found at:
 
 - [2023.08.08; Maikuolan]: Conjunctive reporting and profiling improved.
 
+- [2023.08.16; Bug-fix; Maikuolan]: When at the very beginning of a signature
+  file, without any preceding linebreaks, signatures based on IP addresses
+  rather than CIDRs (i.e., without a CIDR block size specified) weren't being
+  correctly recognised by CIDRAM; Fixed (#499).
+
 === Version/Release 1.26.0 ===
 MINOR RELEASE.
 

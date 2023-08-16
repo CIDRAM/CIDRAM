@@ -1834,7 +1834,7 @@ $CIDRAM['LogRotation'] = function (string $Pattern) use (&$CIDRAM): bool {
  */
 $CIDRAM['Pseudonymise-IP'] = function (string $IP): string {
     if (($CPos = strpos($IP, ':')) !== false) {
-        $Parts = [(substr($IP, 0, $CPos) ?: ''), (substr($IP, $CPos +1) ?: '')];
+        $Parts = [(substr($IP, 0, $CPos) ?: ''), (substr($IP, $CPos + 1) ?: '')];
         if (($CPos = strpos($Parts[1], ':')) !== false) {
             $Parts[1] = substr($Parts[1], 0, $CPos) ?: '';
         }

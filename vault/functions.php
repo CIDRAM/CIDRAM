@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2023.08.13).
+ * This file: Functions file (last modified: 2023.08.16).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -334,12 +334,9 @@ $CIDRAM['CheckFactors'] = function (array $Files, array $Factors) use (&$CIDRAM)
             }
             continue;
         }
-        if (strpos($Files[$FileIndex], "\r") !== false) {
-            $Files[$FileIndex] =
-                (strpos($Files[$FileIndex], "\r\n")) ?
-                str_replace("\r", '', $Files[$FileIndex]) :
-                str_replace("\r", "\n", $Files[$FileIndex]);
-        }
+        $Files[$FileIndex] = (
+            strpos($Files[$FileIndex], "\r\n") !== false
+        ) ? str_replace("\r", '', $Files[$FileIndex]) : str_replace("\r", "\n", $Files[$FileIndex]);
         $Files[$FileIndex] = "\n" . $Files[$FileIndex] . "\n";
         for ($FactorIndex = 0; $FactorIndex < $Counts['Factors']; $FactorIndex++) {
             $PosB = -1;

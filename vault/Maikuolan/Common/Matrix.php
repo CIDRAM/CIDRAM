@@ -1,6 +1,6 @@
 <?php
 /**
- * Matrix handler (last modified: 2023.03.24).
+ * Matrix handler (last modified: 2023.08.16).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -42,7 +42,7 @@ class Matrix
      *      be needed by some implementations to ensure compatibility).
      * @link https://github.com/Maikuolan/Common/tags
      */
-    public const VERSION = '2.9.6';
+    public const VERSION = '2.9.7';
 
     /**
      * Create the matrix.

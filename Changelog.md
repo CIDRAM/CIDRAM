@@ -294,3 +294,5 @@
 [2023.08.10; Maikuolan]: Successfully verified requests are now profiled. Numerous additional webshells and backdoors are now blocked. Some modules refactored. Slightly adjusted the favicon again. Added support for verifying (or blocking) ChatGPT-User and GPTBot.
 
 [2023.08.12; Maikuolan]: Updated the flags CSS.
+
+[2023.08.16; Bug-fix; Maikuolan]: When at the very beginning of a signature file, without any preceding linebreaks, signatures based on IP addresses rather than CIDRs (i.e., without a CIDR block size specified) weren't being correctly recognised by CIDRAM; Fixed (#499).

@@ -1,6 +1,6 @@
 <?php
 /**
- * Delayed file IO class (last modified: 2023.03.24).
+ * Delayed file IO class (last modified: 2023.08.16).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -47,7 +47,7 @@ class DelayedIO
      *      be needed by some implementations to ensure compatibility).
      * @link https://github.com/Maikuolan/Common/tags
      */
-    const VERSION = '1.9.6';
+    const VERSION = '1.9.7';
 
     /**
      * All pending modified files are written at object destruction.

@@ -1,6 +1,6 @@
 <?php
 /**
- * Operation handler (last modified: 2023.03.24).
+ * Operation handler (last modified: 2023.08.16).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -27,7 +27,7 @@ class Operation
      *      be needed by some implementations to ensure compatibility).
      * @link https://github.com/Maikuolan/Common/tags
      */
-    const VERSION = '1.9.6';
+    const VERSION = '1.9.7';
 
     /**
      * Operators for version numbers.
@@ -279,7 +279,7 @@ class Operation
             $IfString = substr($IfString, 0, $ThenPos);
             if (substr($ThenString, 0, 1) === '{') {
                 if (substr($ThenString, -1) === '}') {
-                    $ThenString = substr($ThenString, 1 -1);
+                    $ThenString = substr($ThenString, 1, -1);
                 } elseif (substr($ElseString, 0, 1) !== '{' && substr($ElseString, -1) === '}') {
                     $ThenString = substr($ThenString, 1) . ' else' . substr($ElseString, 0, -1);
                     $ElseString = '';
@@ -287,7 +287,7 @@ class Operation
             }
         }
         if (substr($ElseString, 0, 1) === '{' && substr($ElseString, -1) === '}') {
-            $ElseString = substr($ElseString, 1 -1);
+            $ElseString = substr($ElseString, 1, -1);
         }
 
         /** Process condition. */

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2023.08.14).
+ * This file: Optional security extras module (last modified: 2023.08.16).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -86,7 +86,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             '0byte|0x|\d{3,5}[a-z]{3,5}|10+|991176|' .
             'admin-heade\d*|adminfuns|alfa(?:-rex|ioxi|new)\d*|anjas|apismtp|axx|' .
             'bak|bala|' .
-            'c(?:9|10)\d+|casper[\da-z]+|(?:cgi-bin|css)/(?:moon|newgolden|radio|uploader|well-known|wp-login)|classsmtps|colors/blue/uploader|' .
+            'c(?:9|10)\d+|casper[\da-z]+|(?:cgi-bin|css)/(?:moon|newgolden|radio|uploader|well-known|wp-login)|cjfuns|classsmtps|colors/blue/uploader|' .
             'd7|deadcode\d*|dkiz|' .
             'ee|' .
             'fddqradz|' .
@@ -110,7 +110,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $LCNrURI
         ), 'Probing for webshells/backdoors')) {
             $this->Reporter->report([15, 20, 21], ['Caught probing for webshells/backdoors. Host might be compromised.'], $this->BlockInfo['IPAddr']);
-        } // 2023.08.13 mod 2023.10.14
+        } // 2023.08.16
 
         /** Probing for exposed Git data. */
         if ($this->trigger(preg_match('~\.git(?:$|\W)~i', $LCNrURI), 'Probing for exposed git data')) {

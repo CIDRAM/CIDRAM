@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2023.08.13).
+ * This file: Front-end functions file (last modified: 2023.08.17).
  */
 
 /**
@@ -5105,7 +5105,7 @@ $CIDRAM['ArrayFromL10NDataToArray'] = function ($References) use (&$CIDRAM): arr
         }
         if ($Try === '') {
             if (($SPos = strpos($Reference, ' ')) !== '') {
-                $Try = (($TryFrom = $CIDRAM['L10N']->getString(substr($Reference, 0, $SPos))) !== '' && strpos($TryFrom, '%s') !== '') ? sprintf($TryFrom, substr($Reference, $SPos + 1)) : $Reference;
+                $Try = (($TryFrom = $CIDRAM['L10N']->getString(substr($Reference, 0, $SPos))) !== '' && strpos($TryFrom, '%s') !== false) ? sprintf($TryFrom, substr($Reference, $SPos + 1)) : $Reference;
             } else {
                 $Try = $Reference;
             }

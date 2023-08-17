@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2023.223.0
-# Last modified: 2023.08.12
+# Version: 2023.228.0
+# Last modified: 2023.08.17
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -618,7 +618,7 @@ Tag: H88 S.A
 
 
 # ASN 47846 ("Sedo Domain Parking").
-# Updated: 2021.01.02 / Checked: 2022.07.11
+# Updated: 2021.01.02 / Checked: 2023.08.14
 
 2001:67c:64c::/48 Deny Cloud
 Origin: DE
@@ -2371,7 +2371,7 @@ Tag: POWER HOST E.I.R.L
 # ASN 29141 ("Bradler & Krantz GmbH & Co. KG").
 # Managed webhosting and cloud provider. Occasional brute-force attacks
 # detected from here.
-# Updated: 2021.10.01 / Checked: 2022.07.14
+# Updated: 2021.10.01 / Checked: 2023.08.17
 
 2a02:e00::/32 Deny Cloud
 Origin: DE
@@ -4834,29 +4834,34 @@ Tag: ScaleUp Technologies
 
 
 # ASN 13213 ("UK-2 Limited").
-# Stop Forum Spam (SFS) listings: 4,458.
-# Updated: 2022.11.18
+# Stop Forum Spam (SFS) listings: 2,826.
+# Updated: 2023.08.13
 
 2a02:2498::/47 Deny Cloud
 2a02:2498:4::/47 Deny Cloud
 2a02:2498:6::/48 Deny Cloud
 2a02:2498:55::/48 Deny Cloud
 2a02:2498:295::/48 Deny Cloud
+2a02:2498:1000::/36 Deny Cloud
 2a02:2498:257b::/48 Deny Cloud
 2a02:2498:53aa::/48 Deny Cloud
 2a02:2498:6d7b::/48 Deny Cloud
 2a02:2498:9000::/36 Deny Cloud
+2a02:2498:a000::/35 Deny Cloud
 2a02:2498:e000::/36 Deny Cloud
 2a02:2498:f000::/47 Deny Cloud
 Origin: GB
 2a04:76c7:200::/48 Deny Cloud
 Origin: NL
 2602:ff84::/48 Deny Cloud
-2602:ffb0:30::/48 Deny Cloud
+2602:ffb0:28::/48 Deny Cloud
+2602:ffb0:30::/47 Deny Cloud
 2605:a80:1::/48 Deny Cloud
-2606:2e00:1::/48 Deny Cloud
+2606:2e00:0:c5::/64 Deny Cloud
+2606:2e00:8000::/47 Deny Cloud
 2606:2e00:8027::/48 Deny Cloud
 2606:2e00:8028::/47 Deny Cloud
+2607:740:45::/48 Deny Cloud
 2607:6b80:3c::/48 Deny Cloud
 2607:6b80:41::/48 Deny Cloud
 2607:6b80:42::/47 Deny Cloud
@@ -5263,8 +5268,8 @@ Tag: Affinity Internet, Inc
 
 
 # ASNs 52048, 60567, 202920, 203557 ("DataClub S.A").
-# Stop Forum Spam (SFS) listings: 17,330 (AS52048), 40 (AS60567), 4 (AS203557).
-# Updated: 2021.02.10 / Checked: 2022.07.11
+# Stop Forum Spam (SFS) listings: 298 (AS52048), 172 (AS60567), 293 (AS203557).
+# Updated: 2021.02.10 / Checked: 2023.08.17
 
 2a02:4840::/47 Deny Cloud
 2a02:4840:2::/48 Deny Cloud
@@ -5498,17 +5503,15 @@ Profile: Commercial;Infrastructure/Transit
 Tag: NetSource
 
 
-# ASNs 197226, 213010 ('"SPRINT" S.A', "GigaHostingServices OU").
+# ASN 197226 ('"SPRINT" S.A').
 # Brute-force, SSH, and webapp attacks, port scans, and spam detected here.
-# Stop Forum Spam (SFS) listings: 2,192 (AS197226), 1,399 (AS213010).
-# Updated: 2020.12.29 / Checked: 2022.07.03
+# Stop Forum Spam (SFS) listings: 530.
+# Updated: 2023.08.14
 
 2a03:7940::/32 Deny Cloud
 2a0c:5840::/32 Deny Cloud
 Origin: PL
-2a0d:c740:3c::/48 Deny Cloud
-Origin: US
-Profile: Dedicated;Frequent changes;Infrastructure/Transit;Webhosting
+Profile: Dedicated;Frequent changes;Webhosting
 Tag: SPRINT
 
 
@@ -5619,9 +5622,11 @@ Tag: UK Dedicated Servers
 
 
 # ASN 30900 ("Sternforth Ltd").
-# Stop Forum Spam (SFS) listings: 8,057.
-# Updated: 2019.10.02 / Checked: 2022.07.11
+# Stop Forum Spam (SFS) listings: 30.
+# Updated: 2023.08.17
 
+2a11:840:27::/48 Deny Cloud
+Origin: CA
 2a01:6280::/32 Deny Cloud
 Origin: IE
 Profile: Dedicated;Infrastructure/Transit;Webhosting
@@ -5704,10 +5709,9 @@ Tag: netcup GmbH
 
 
 # ASNs 19531, 43755 ("Nodes Direct").
-# Brute-force attacks and hack attempts directed from this network (refer to
-# AbuseIPDB reports for more information).
-# Stop Forum Spam (SFS) listings: 1 (AS19531).
-# Updated: 2018.09.14 / Checked: 2022.07.03
+# Brute-force attacks and hacking detected from here.
+# Clean at last check. Will remove at the next update if no change.
+# Updated: 2018.09.14 / Checked: 2023.08.14
 
 2604:4600::/28 Deny Cloud
 Origin: US
@@ -7213,8 +7217,8 @@ Tag: Quintex
 
 # ASN 29889 ("Fast Serv Networks, LLC").
 # Dedicated host; evidence of unauthorised access attempts; spam events.
-# Stop Forum Spam (SFS) listings: 323.
-# Updated: 2019.06.10 / Checked: 2022.07.17
+# Stop Forum Spam (SFS) listings: 42.
+# Updated: 2019.06.10 / Checked: 2023.08.17
 
 2602:fffa::/36 Deny Cloud
 2620:100:5007::/48 Deny Cloud
@@ -7470,8 +7474,8 @@ Tag: Business Network Ltd
 
 # ASNs 47172, 209829 ("Greenhost BV").
 # Dedicated webhosting provider caught spamming forums.
-# Stop Forum Spam (SFS) listings: 22 (AS47172), 30 (AS209829).
-# Updated: 2019.09.30 / Checked: 2022.07.14
+# Stop Forum Spam (SFS) listings: 376 (AS47172), 21 (AS209829).
+# Updated: 2019.09.30 / Checked: 2023.08.17
 
 2a00:c6c0::/48 Deny Cloud
 Origin: NL
@@ -8686,13 +8690,14 @@ Profile: Commercial;Dedicated;Webhosting
 Tag: OOO Patent-Media
 
 
-# ASN 20052 ("Arbor Networks, Inc").
+# ASNs 10690, 20052 ("Arbor Networks, Inc").
 # Vulnerability scanner + unwanted traffic.
-# Updated: 2020.06.22 / Checked: 2022.07.17
+# Updated: 2023.08.14
 
+2602:811:10e3::/48 Deny Cloud
 2620:11e:1000::/48 Deny Cloud
 Origin: US
-Profile: Infrastructure/Transit
+Profile: Commercial;Infrastructure/Transit
 Tag: Arbor Networks, Inc
 
 
@@ -8845,13 +8850,12 @@ Tag: Beijing Qihu
 # ASN 55803 ("Hostopia Australia Web Pty Ltd").
 # Dedicated cloud provider. SQLi, XMLRPC/WordPress, and webapp attacks
 # persistently detected from here.
-# Stop Forum Spam (SFS) listings: 4.
-# Updated: 2021.09.16 / Checked: 2022.07.03
+# Stop Forum Spam (SFS) listings: 7.
+# Updated: 2023.08.14
 
 2400:a600::/32 Deny Cloud
 2401:fc00::/32 Deny Cloud
 2402:9400::/32 Deny Cloud
-2407:7800::/32 Deny Cloud
 Origin: AU
 Profile: Dedicated;Webhosting
 Tag: Digital Pacific AU
@@ -9602,8 +9606,8 @@ Tag: HOSTWAY LLC
 # ASN 35048 ("Biterika Group LLC").
 # Refer scamalytics.com/ip/isp/biterika-group-llc
 # Russian webhosting provider. Also a *MASSIVE* source of spam !!
-# Stop Forum Spam (SFS) listings: 558,535.
-# Updated: 2021.10.01 / Checked: 2022.07.14
+# Stop Forum Spam (SFS) listings: 44,453.
+# Updated: 2021.10.01 / Checked: 2023.08.14
 
 2a06:d647::/32 Deny Cloud
 2a0a:5680::/29 Deny Cloud
@@ -11265,12 +11269,11 @@ Tag: LLC VK
 
 # ASN 35112 ("GBN group Ltd").
 # Russian VPS provider. Brute-force, SQLi, and webapp attacks, port scans,
-# hacking, and spam detected from here. Manually checked all ranges; All ranges
-# affected.
-# Stop Forum Spam (SFS) listings: 283.
-# Updated: 2022.04.15 / Checked: 2023.04.06
+# hacking, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 276.
+# Updated: 2023.08.13
 
-2a0e:7200::/40 Deny Attacks
+2a0e:7200::/40 Deny Cloud
 Origin: RU
 Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: GBN group Ltd
@@ -11279,11 +11282,10 @@ Tag: GBN group Ltd
 # ASNs 54990, 210558 ("1337 Services GmbH").
 # Tor and anonymous cloud services provider. Brute-force, SSH, and mail server
 # attacks, port scans, hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 18,370 (AS210558).
-# Updated: 2023.04.10
+# Stop Forum Spam (SFS) listings: 15,295 (AS210558).
+# Updated: 2023.08.13
 
 2a12:a800:1::/48 Deny Cloud
-2a12:a800:3::/48 Deny Cloud
 Origin: DE
 2001:67c:235c::/48 Deny Cloud
 Origin: FI
@@ -11330,18 +11332,6 @@ Tag: Beecloud
 Origin: RU
 Profile: Webhosting
 Tag: Lancom Ltd
-
-
-# ASN 50214 ("QWARTA LLC").
-# Brute-force, webapp, and log4shell attacks, RCE attempts, port scans,
-# hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 168.
-# Updated: 2022.05.12 / Checked: 2022.07.06
-
-2a11:5bc0::/29 Deny Cloud
-Origin: RU
-Profile: Webhosting
-Tag: QWARTA LLC
 
 
 # ASN 62005 ("BlueVPS OU").
@@ -12644,6 +12634,17 @@ Tag: Kingsoft
 Origin: BR
 Profile: Infrastructure/Transit;Webhosting
 Tag: Saveincloud
+
+
+# ASN 395956 ("Devicom Inc").
+# Brute-force, WordPress/XMLRPC, and webapp attacks, ports scans, and hacking
+# detected from here.
+# Updated: 2023.08.14
+
+2620:32:4000::/48 Deny Cloud
+Origin: CA
+Profile: Commercial;Infrastructure/Transit
+Tag: Devicom Inc
 
 
 # ---

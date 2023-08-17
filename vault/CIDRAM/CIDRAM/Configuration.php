@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used by the configuration page and configuration filters (last modified: 2023.04.10).
+ * This file: Methods used by the configuration page and configuration filters (last modified: 2023.08.17).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -109,7 +109,7 @@ trait Configuration
             }
             if ($Try === '') {
                 if (($SPos = strpos($Reference, ' ')) !== '') {
-                    $Try = (($TryFrom = $this->L10N->getString(substr($Reference, 0, $SPos))) !== '' && strpos($TryFrom, '%s') !== '') ? sprintf($TryFrom, substr($Reference, $SPos + 1)) : $Reference;
+                    $Try = (($TryFrom = $this->L10N->getString(substr($Reference, 0, $SPos))) !== '' && strpos($TryFrom, '%s') !== false) ? sprintf($TryFrom, substr($Reference, $SPos + 1)) : $Reference;
                 } else {
                     $Try = $Reference;
                 }

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2023.08.03).
+ * This file: General methods used by the front-end (last modified: 2023.08.17).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1447,7 +1447,7 @@ trait FrontEndMethods
                 } elseif ($FC > 1) {
                     $SC = substr_count($Params, ' ');
                     if ($SC + 1 === $FC) {
-                        $Try = sprintf($Try, explode(' ', $Params));
+                        $Try = sprintf($Try, ...explode(' ', $Params));
                     } elseif ($SC >= $FC) {
                         $Try = sprintf($Try, ...explode(' ', $Params, $FC));
                     }

@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2023.223.0
-# Last modified: 2023.08.12
+# Version: 2023.225.0
+# Last modified: 2023.08.14
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -305,7 +305,7 @@ Tag: UARNet
 # attempts, port scans, and spam detected from here. Listing just the affected
 # ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 40 (AS18101), 119,233 (AS55836).
-# Updated: 2023.05.23
+# Updated: 2023.05.23 / Modified: 2023.08.14
 
 2405:201:2004:e004::/64 Deny Spam
 2405:201:200c:9087::/64 Deny Spam
@@ -332,6 +332,7 @@ Tag: UARNet
 2405:204:140d:8950::/64 Deny Spam
 2405:204:1487:dbd4::/64 Deny Spam
 2405:204:1489:d8bc::/64 Deny Spam
+2405:204:148d:ec4e::/64 Deny Attacks
 2405:204:300a:4076::/64 Deny Spam
 2405:204:300f:cc97::/64 Deny Spam
 2405:204:3017:fae7::/64 Deny Spam
@@ -1222,14 +1223,13 @@ Tag: Deutsche Telekom AG
 
 
 # ASN 701 ("Verizon Business/UUnet").
-# US domestic ISP. Honeypot attacks, tor endpoints, port scans, malware, and
-# spam detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 3,591.
-# Updated: 2022.08.29
+# US domestic ISP. Honeypot attacks, port scans, malware, and spam detected
+# from here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 2,037.
+# Updated: 2023.08.13
 
-2600:4040:1e97:800::/64 Deny Spam
-2600:4040:4457:9c00::/64 Deny Spam
-2600:4040:ac0d:7700::/64 Deny Spam
+2600:4040:b8cd:7d00::/64 Deny Spam
+2600:4041:5f5a:e700::/64 Deny Spam
 Origin: US
 Profile: Domestic ISP;Tor endpoints here
 Tag: Verizon Business/UUnet

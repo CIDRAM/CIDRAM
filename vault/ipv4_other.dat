@@ -1,8 +1,8 @@
 # IPv4 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv4_other.dat
 
-# Version: 2023.219.0
-# Last modified: 2023.08.08
+# Version: 2023.231.0
+# Last modified: 2023.08.20
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -1629,3 +1629,14 @@ Tag: Riseup Networks
 Origin: US
 Profile: VPNs here
 Tag: Windscribe
+
+
+# ASN 208476 ("Danilenko, Artyom").
+# VPN and tor provider. Hacking and brute-force attacks detected from here.
+# Listing just the affected ranges/addresses only.
+# Updated: 2023.08.20
+
+194.147.140.0/24 Deny Attacks
+Origin: IR
+Profile: Tor endpoints here;VPNs here
+Tag: privacyfirst.digital

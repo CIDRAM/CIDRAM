@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used for auxiliary rules (last modified: 2023.08.13).
+ * This file: Methods used for auxiliary rules (last modified: 2023.08.20).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -498,6 +498,7 @@ trait AuxiliaryRules
                             } else {
                                 $Operator = $this->operatorFromAuxValue($Value, true);
                             }
+                            $Operator = '<span class="toolTip" title="' . $this->L10N->getString('operator_' . $Operator) . '">' . $Operator . '</span>';
                             $Output .= "\n              <div class=\"iCntn\"><span>" . $ThisSource . '</span> ' . $Operator . ' <code>' . $Value . '</code></div>';
                         }
                     }
@@ -535,6 +536,7 @@ trait AuxiliaryRules
                             } else {
                                 $Operator = $this->operatorFromAuxValue($Value);
                             }
+                            $Operator = '<span class="toolTip" title="' . $this->L10N->getString('operator_' . $Operator) . '">' . $Operator . '</span>';
                             $Output .= "\n              <div class=\"iCntn\"><span>" . $ThisSource . '</span> ' . $Operator . ' <code>' . $Value . '</code></div>';
                         }
                     }

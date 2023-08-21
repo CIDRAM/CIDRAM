@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2023.08.10).
+# This file: English language data for the front-end (last modified: 2023.08.20).
 ##/
 
 Extended Description AbuseIPDB module: "Blocks requests from IPs listed at AbuseIPDB."
@@ -679,6 +679,20 @@ msg_template_2fa: |
  <h1>%s</h1>
  <p>This code expires in 10 minutes.</p></center>
 notice_new_major_version: "Notice: %s is now available (you are using %s). You meet this version's minimum PHP requirement. However, some manual steps are required to update."
+operator_<: "Must be less than (numeric comparison)."
+operator_=: "Must be an exact match (direct string comparison)."
+operator_>: "Must be greater than (numeric comparison)."
+operator_≅: "Regular expression must match."
+operator_≇: "Regular expression must not match."
+operator_≈: "Must be an approximate match (using Windows-style wildcards)."
+operator_≉: "Must be not an approximate match (using Windows-style wildcards)."
+operator_≠: "Must be not an exact match (direct string comparison)."
+operator_≤: "Must be less than or equal to (numeric comparison)."
+operator_≥: "Must be greater than or equal to (numeric comparison)."
+operator_≮: "Must be not less than (numeric comparison)."
+operator_≯: "Must be not greater than (numeric comparison)."
+operator_≰: "Must be not less than nor equal to (numeric comparison)."
+operator_≱: "Must be not greater than nor equal to (numeric comparison)."
 previewer_days: "Days"
 previewer_hours: "Hours"
 previewer_minutes: "Minutes"

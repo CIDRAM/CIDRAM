@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2023.08.10).
+# This file: Polish language data for the front-end (last modified: 2023.08.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -493,7 +493,7 @@ label_aux_move_down: "Padnij"
 label_aux_move_top: "Przenieś regułę na górę"
 label_aux_move_up: "Podnieść"
 label_aux_mtdReg: "wyrażenia regularne"
-label_aux_mtdStr: "bezpośrednie porównanie ciągów znaków"
+label_aux_mtdStr: "bezpośrednie porównanie ciągów"
 label_aux_mtdWin: "symbole wieloznaczne w stylu systemie Windows"
 label_aux_mtdDMA: "Automatycznie wykryj metodę testowania warunków."
 label_aux_name: "Nazwa nowej reguły:"
@@ -702,6 +702,20 @@ msg_template_2fa: |
  <h1>%s</h1>
  <p>Ten kod wygasa za 10 minut.</p></center>
 notice_new_major_version: "Ogłoszenie: %s jest już dostępny (używasz %s). Spełniasz minimalne wymagania PHP dla tej wersji. Jednak do zaktualizowania wymagane są ręczne kroki."
+operator_<: "Musi być mniejszy niż (porównanie numeryczne)."
+operator_=: "Musi być dopasowanie dokładne (bezpośrednie porównanie ciągów)."
+operator_>: "Musi być większy niż (porównanie numeryczne)."
+operator_≅: "Wyrażenie regularne musi być dopasowanie."
+operator_≇: "Wyrażenie regularne nie może być dopasowanie."
+operator_≈: "Musi być dopasowanie przybliżone (przy użyciu symboli wieloznacznych w stylu systemu Windows)."
+operator_≉: "Nie może być dopasowanie przybliżone (przy użyciu symboli wieloznacznych w stylu systemu Windows)."
+operator_≠: "Nie może być dopasowanie dokładne (bezpośrednie porównanie ciągów)."
+operator_≤: "Musi być mniejszy lub równy (porównanie numeryczne)."
+operator_≥: "Musi być większy lub równy (porównanie numeryczne)."
+operator_≮: "Nie może być mniejszy niż (porównanie numeryczne)."
+operator_≯: "Nie może być większy niż (porównanie numeryczne)."
+operator_≰: "Nie może być mniejszy ani równy (porównanie numeryczne)."
+operator_≱: "Nie może być większy ani równy (porównanie numeryczne)."
 previewer_days: "Dni"
 previewer_hours: "Godziny"
 previewer_minutes: "Minuty"

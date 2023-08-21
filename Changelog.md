@@ -296,3 +296,5 @@
 [2023.08.12; Maikuolan]: Updated the flags CSS.
 
 [2023.08.16; Bug-fix; Maikuolan]: When at the very beginning of a signature file, without any preceding linebreaks, signatures based on IP addresses rather than CIDRs (i.e., without a CIDR block size specified) weren't being correctly recognised by CIDRAM; Fixed (#499).
+
+[2023.08.20; Maikuolan]: Added operator hints to the auxiliary rules page.

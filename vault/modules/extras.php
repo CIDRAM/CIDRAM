@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2023.08.18).
+ * This file: Optional security extras module (last modified: 2023.08.21).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -69,11 +69,11 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
         /** Probing for unsecured backup files. */
         if ($this->trigger(preg_match(
-            '~(?:backup|(?:backup|docroot|htdocs|public_html|site|www)\.(?:gz|rar|tar(?:\.gz)?|zip)|d(?:atabase|b|ump)\.sql)(?:$|[/?])~',
+            '~(?:/backup|(?:backup|docroot|htdocs|public_html|site|www)\.(?:gz|rar|tar(?:\.gz)?|zip)|d(?:atabase|b|ump)\.sql)(?:$|[/?])~',
             $LCNrURI
         ), 'Probing for unsecured backup files not allowed')) {
             $this->Reporter->report([15], ['Caught probing for unsecured backup files.'], $this->BlockInfo['IPAddr']);
-        } // 2023.08.13
+        } // 2023.08.13 mod 2023.08.21
 
         /** Probing for webshells/backdoors. */
         if ($this->trigger(preg_match(

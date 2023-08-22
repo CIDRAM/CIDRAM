@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2023.08.10).
+# This file: Japanese language data for the front-end (last modified: 2023.08.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -100,7 +100,7 @@ config_general: "全般的な設定（他のカテゴリに属さないの設定
 config_general_allow_gethostbyaddr_lookup: "ＵＤＰが利用できない場合、gethostbyaddrルックアップを許可しますか？ True = はい（Default/デフォルルト）。 False = いいえ。"
 config_general_ban_override: "「infraction_limit」を超えたときに「forbid_on_block」を上書きしますか？​上書きするとき：ブロックされたリクエストは空白のページを返します（テンプレートファイルは使用されません）。​２００ = 上書きしない（Default/デフォルルト）。​他の値は、「forbid_on_block」の利用可能な値と同じです。"
 config_general_config_imports: "CIDRAMのデフォルト・コンフィグレーションにインポートするファイルのコンマ区切りリスト。​通常、コンポーネントをアクティブ化するときに、アップデート・ページによって必要に応じて入力されます。​ほとんどの場合、それを無視することができます。"
-config_general_default_algo: "将来のすべてのパスワードとセッションに使用するアルゴリズムを定義します。​オプション：​PASSWORD_DEFAULT（Default/デフォルルト）、PASSWORD_BCRYPT、PASSWORD_ARGON2I、PASSWORD_ARGON2ID （ＰＨＰ &gt;= 7.3.0 が必要）。"
+config_general_default_algo: "将来のすべてのパスワードとセッションに使用するアルゴリズムを定義します。​オプション：​PASSWORD_DEFAULT（Default/デフォルルト）、PASSWORD_BCRYPT、PASSWORD_ARGON2I、PASSWORD_ARGON2ID （ＰＨＰ &gt;= 7.3.0 が必要です）。"
 config_general_default_dns: "ホスト名検索に使用する、ＤＮＳ（ドメイン・ネーム・システム）サーバーのカンマ区切りリスト。​Default（デフォルルト） = "8.8.8.8,8.8.4.4" （Google DNS）。​注意：あなたが何をしているのか、分からない限り、これを変更しないでください。"
 config_general_default_timeout: "外部リクエストに使用するデフォルトのタイムアウト？ Default/デフォルルト = １２秒。"
 config_general_disable_frontend: "フロントエンドへのアクセスを無効にするか？​フロントエンドへのアクセスは、CIDRAMをより管理しやすくすることができます。​前記、それはまた、潜在的なセキュリティリスクになる可能性があります。​バックエンドを経由して管理することをお勧めします、しかし、これが不可能な場合、フロントエンドへのアクセスが提供され。​あなたがそれを必要としない限り、それを無効にします。​<code>false</code>（偽） = フロントエンドへのアクセスを有効にします；​<code>true</code>（真） = フロントエンドへのアクセスを無効にします（Default/デフォルルト）。"
@@ -371,7 +371,7 @@ label_aux_move_down: "降りる"
 label_aux_move_top: "ルールを最初の場所に移動"
 label_aux_move_up: "上がる"
 label_aux_mtdReg: "正規表現"
-label_aux_mtdStr: "直接の文字列比較"
+label_aux_mtdStr: "文字列の直接比較"
 label_aux_mtdWin: "Windowsスタイルのワイルドカード"
 label_aux_mtdDMA: "条件をテストする方法を自動的に検出します。"
 label_aux_name: "新しいルールの名前："
@@ -662,7 +662,7 @@ time_years_from_now: "今から%s年"
 tip_2fa_sent: "２ＦＡコードを含むＥメールがあなたのＥメール・アドレスに送信されました。​フロントエンドにアクセスするには、このコードを確認してください。​このＥメールを受信しなかった場合は、新しいコードを含む新しい電子Ｅメールを受け取るために、ログアウトして、１０分待ってからもう一度ログインしてください。"
 tip_accounts: "こんにちは、{username}。​<br />アカウント・ページは、CIDRAMフロントエンドにアクセスできるユーザーを制御できます。"
 tip_aux: "こんにちは、{username}。<br />このページを使用して、CIDRAMの補助ルールを作成、削除、および変更することができます。"
-tip_aux_operators: "ヒント：条件に別の種類の演算子が必要な場合は、それを値の最初に追加できます（直接の文字列比較が必要）。"
+tip_aux_operators: "ヒント：条件に別の種類の演算子が必要な場合は、それを値の最初に追加できます（文字列の直接比較が必要です）。"
 tip_aux_priority: "優先（最高➡(等しい🔄同等)➡最低）："
 tip_aux_webhooks: "ルールがトリガーされると、CIDRAMは接続されているすべてのWebhookにイベントについて通知しようとします。"
 tip_backup: "こんにちは、{username}。<br />このページを利用して、コンフィギュレーション、補助ルール、などをインポートとエクスポートできます。​これは、異なるインストールまたは異なるメジャー・バージョン間でデータを移行する必要がある場合に役立ちます。"

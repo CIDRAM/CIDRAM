@@ -287,7 +287,7 @@
 
 [2023.08.03; Bug-fix; neufeind]: The aggregator's constructTables method was constructing the wrong IPv6 netmask for the last octet; Fixed.
 
-[2023.08.06; New Feature; Maikuolan]: Added the ability to instruct CIDRAM to detect the method for testing auxiliary rules conditions automatically.
+[2023.08.06; New Feature; Maikuolan]: Added the ability to instruct CIDRAM to detect the method for testing auxiliary rules conditions automatically (#371).
 
 [2023.08.08; Maikuolan]: Conjunctive reporting and profiling improved.
 
@@ -298,3 +298,5 @@
 [2023.08.16; Bug-fix; Maikuolan]: When at the very beginning of a signature file, without any preceding linebreaks, signatures based on IP addresses rather than CIDRs (i.e., without a CIDR block size specified) weren't being correctly recognised by CIDRAM; Fixed (#499).
 
 [2023.08.20; Maikuolan]: Added operator hints to the auxiliary rules page.
+
+[2023.08.22; New Feature; Maikuolan]: The front-end backup page can now import/export statistics and IP tracking data (#500).

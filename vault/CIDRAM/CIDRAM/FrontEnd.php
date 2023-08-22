@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.08.06).
+ * This file: The CIDRAM front-end (last modified: 2023.08.23).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -2533,6 +2533,16 @@ class FrontEnd extends Core
                         $Export['Components'] = array_keys($Arr);
                     }
 
+                    /** Export IP tracking data. */
+                    if (isset($_POST['doTracking']) && $_POST['doTracking'] === 'on') {
+                        $Export['IP Tracking'] = $this->Cache->getAllEntriesWhere('~^Tracking-(.+)$~', '\1');
+                    }
+
+                    /** Export statistics. */
+                    if (isset($_POST['doStatistics']) && $_POST['doStatistics'] === 'on') {
+                        $Export['Statistics'] = $this->Cache->getAllEntriesWhere('~^Statistics-(.+)$~', '\1');
+                    }
+
                     /** Build output. */
                     $Export = $this->YAML->reconstruct($Export);
                     $Filename = 'CIDRAM-v' . $this->ScriptVersion . '-Exported-' . date('Y-m-d-H-i-s', $this->Now) . '.yml';
@@ -2767,6 +2777,56 @@ class FrontEnd extends Core
                                     }
                                 } else {
                                     $this->FE['state_msg'] .= $this->L10N->getString('response_failed_to_install') . '<br />';
+                                }
+                            }
+
+                            /** Import IP tracking data. */
+                            if (isset($_POST['doTracking']) && $_POST['doTracking'] === 'on') {
+                                if ($this->CIDRAM['Operation']->singleCompare($Import['CIDRAM Version'], '<3.3')) {
+                                    $this->FE['state_msg'] .= sprintf(
+                                        $this->L10N->getString('response_import_bad_version'),
+                                        $Import['CIDRAM Version']
+                                    ) . ' ' . $this->L10N->getString('response_failed_to_update_tracking') . '<br />';
+                                } elseif (isset($Import['IP Tracking']) && is_array($Import['IP Tracking'])) {
+                                    $Success = false;
+                                    $Response = $this->L10N->getString('response_tracking_added');
+                                    foreach ($Import['IP Tracking'] as $Key => $Values) {
+                                        if (!isset($Values['Data'], $Values['Time']) || $Values['Time'] < $this->Now) {
+                                            continue;
+                                        }
+                                        if ($this->Cache->setEntry('Tracking-' . $Key, $Values['Data'], $Values['Time'] - $this->Now)) {
+                                            $Success = true;
+                                            if (substr($Key, -12) !== '-MinimumTime') {
+                                                $this->FE['state_msg'] .= sprintf($Response, $Key) . '<br />';
+                                            }
+                                        }
+                                    }
+                                    if (!$Success) {
+                                        $this->FE['state_msg'] .= $this->L10N->getString('response_failed_to_update_tracking') . '<br />';
+                                    }
+                                } else {
+                                    $this->FE['state_msg'] .= $this->L10N->getString('response_failed_to_update_tracking') . '<br />';
+                                }
+                            }
+
+                            /** Import statistics. */
+                            if (isset($_POST['doStatistics']) && $_POST['doStatistics'] === 'on') {
+                                if ($this->CIDRAM['Operation']->singleCompare($Import['CIDRAM Version'], '<3.3')) {
+                                    $this->FE['state_msg'] .= sprintf(
+                                        $this->L10N->getString('response_import_bad_version'),
+                                        $Import['CIDRAM Version']
+                                    ) . ' ' . $this->L10N->getString('response_failed_to_update_statistics') . '<br />';
+                                } elseif (isset($Import['Statistics']) && is_array($Import['Statistics'])) {
+                                    $Success = false;
+                                    foreach ($Import['Statistics'] as $Key => $Value) {
+                                        if (!$this->Cache->setEntry('Statistics-' . $Key, $Value, 0)) {
+                                            continue;
+                                        }
+                                        $Success = true;
+                                    }
+                                    $this->FE['state_msg'] .= $this->L10N->getString($Success ? 'response_statistics_updated' : 'response_failed_to_update_statistics') . '<br />';
+                                } else {
+                                    $this->FE['state_msg'] .= $this->L10N->getString('response_failed_to_update_statistics') . '<br />';
                                 }
                             }
                         }

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2023.08.10).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2023.08.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -681,6 +681,20 @@ msg_template_2fa: |
  <h1>%s</h1>
  <p>此代碼將在10分鐘後到期。</p></center>
 notice_new_major_version: "通知：%s現在可用（您正在使用%s）。​您滿足此版本的最低PHP要求。​但是，需要一些手動步驟來更新。"
+operator_<: "必須是小於（數值比較）。"
+operator_=: "必須是完全匹配（直接字符串比較）。"
+operator_>: "必須是大於（數值比較）。"
+operator_≅: "正則表達式必須匹配。"
+operator_≇: "正則表達式不能匹配。"
+operator_≈: "必須是近似匹配（使用Windows風格的通配符）。"
+operator_≉: "必須不是近似匹配（使用Windows風格的通配符）。"
+operator_≠: "必須不是完全匹配（直接字符串比較）。"
+operator_≤: "必須是小於或等於（數值比較）。"
+operator_≥: "必須是大於或等於（數值比較）。"
+operator_≮: "必須不是小於（數值比較）。"
+operator_≯: "必須不是大於（數值比較）。"
+operator_≰: "必須不是小於也不是等於（數值比較）。"
+operator_≱: "必須不是大於也不是等於（數值比較）。"
 previewer_days: "天"
 previewer_hours: "小時"
 previewer_minutes: "分"
@@ -728,6 +742,8 @@ response_failed_to_execute: "無法執行！"
 response_failed_to_import: "導入失敗！"
 response_failed_to_install: "無法安裝！"
 response_failed_to_update: "無法更新！"
+response_failed_to_update_statistics: "更新統計失敗！"
+response_failed_to_update_tracking: "更新跟踪失敗！"
 response_file_deleted: "文件成功刪除！"
 response_file_edited: "文件成功改性！"
 response_file_renamed: "文件成功改名！"
@@ -753,6 +769,7 @@ response_sanity_1: "文件包含意外的內容！​文件拒絕！"
 response_signatures_updated: "簽名文件已更新（%s）。"
 response_skipped: "跳過了"
 response_statistics_cleared: "統計刪除。"
+response_statistics_updated: "統計成功更新。"
 response_tracking_added: "在跟踪中添加了%s。"
 response_tracking_cleared: "已撤消跟踪。"
 response_tracking_removed: "從跟踪中刪除了%s。"

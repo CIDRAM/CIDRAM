@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hebrew language data for the front-end (last modified: 2023.08.10).
+# This file: Hebrew language data for the front-end (last modified: 2023.08.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -690,6 +690,20 @@ msg_template_2fa: |
  <h1>%s</h1>
  <p>קוד זה יפוג בעוד 10 דקות.</p></center>
 notice_new_major_version: "הערה: %s זמין כעת (אתה משתמש ב-%s). אתה עומד בדרישת ה-PHP המינימלית של גרסה זו. עם זאת, נדרשים כמה שלבים ידניים לעדכון."
+operator_<: "חייב להיות פחות מ (השוואה מספרית)."
+operator_=: "חייבת להיות התאמה מדויקת (השוואת מיתרים ישירה)."
+operator_>: "חייב להיות גדול מ (השוואה מספרית)."
+operator_≅: "הביטוי הרגולרי חייב להתאים."
+operator_≇: "הביטוי הרגולרי לא יכול להתאים."
+operator_≈: "חייבת להיות התאמה משוערת (באמצעות תווים כלליים בסגנון Windows)."
+operator_≉: "לא יכולה להיות התאמה משוערת (באמצעות תווים כלליים בסגנון Windows)."
+operator_≠: "לא יכולה להיות התאמה מדויקת (השוואת מיתרים ישירה)."
+operator_≤: "חייב להיות קטן או שווה ל (השוואה מספרית)."
+operator_≥: "חייב להיות גדול או שווה ל (השוואה מספרית)."
+operator_≮: "לא יכול להיות פחות מ (השוואה מספרית)."
+operator_≯: "לא יכול להיות גדול מ (השוואה מספרית)."
+operator_≰: "לא יכול להיות פחות או שווה ל (השוואה מספרית)."
+operator_≱: "לא יכול להיות גדול או שווה ל (השוואה מספרית)."
 previewer_days: "יומיים"
 previewer_hours: "שעות"
 previewer_minutes: "דקות"
@@ -737,6 +751,8 @@ response_failed_to_execute: "נכשל בביצוע!"
 response_failed_to_import: "היבוא נכשל!"
 response_failed_to_install: "ההתקנה נכשל!"
 response_failed_to_update: "העדכון נכשל!"
+response_failed_to_update_statistics: "עדכון הסטטיסטיקה נכשל!"
+response_failed_to_update_tracking: "עדכון המעקב נכשל!"
 response_file_deleted: "הקובץ נמחק בהצלחה!"
 response_file_edited: "הקובץ השתנה בהצלחה!"
 response_file_renamed: "שם הקובץ שונה בהצלחה!"
@@ -762,6 +778,7 @@ response_sanity_1: "הקובץ מכיל תוכן בלתי צפוי! הקובץ �
 response_signatures_updated: "קבצי החתימה עודכנו (%s)."
 response_skipped: "דילג"
 response_statistics_cleared: "הסטטיסטיקה נמחקה."
+response_statistics_updated: "הסטטיסטיקה עודכנה."
 response_tracking_added: "נוסף %s למעקב."
 response_tracking_cleared: "המעקב נוקה."
 response_tracking_removed: "הוסר %s מהמעקב."

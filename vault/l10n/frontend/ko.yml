@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2023.08.10).
+# This file: Korean language data for the front-end (last modified: 2023.08.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -684,6 +684,20 @@ msg_template_2fa: |
  <h1>%s</h1>
  <p>이 코드는 10 분 후에 만료됩니다.</p></center>
 notice_new_major_version: "주의\_: %s를 사용할 수 있습니다 (당신은 %s를 사용하고 있습니다). 당신은 이 버전의 최소 PHP 요구 사항을 충족합니다. 그러나, 업데이트하려면 일부 수동 단계가 필요합니다."
+operator_<: "미만이어야 합니다 (숫자 비교)."
+operator_=: "정확히 일치해야 합니다 (직접 문자열 비교)."
+operator_>: "보다 커야 합니다 (숫자 비교)."
+operator_≅: "정규 표현식은 일치해야 합니다."
+operator_≇: "정규 표현식은 일치하지 않아야 함."
+operator_≈: "대략 일치해야 합니다 (Windows 스타일 와일드 카드 사용)."
+operator_≉: "대략 일치하지 않아야 함 (Windows 스타일 와일드 카드 사용)."
+operator_≠: "정확히 일치하지 않아야 함 (직접 문자열 비교)."
+operator_≤: "다음보다 작거나 같아야 합니다 (숫자 비교)."
+operator_≥: "다음보다 크거나 같아야 합니다 (숫자 비교)."
+operator_≮: "미만 수 없습니다 (숫자 비교)."
+operator_≯: "보다 커야 수 없습니다 (숫자 비교)."
+operator_≰: "다음보다 작거나 수 없습니다 (숫자 비교)."
+operator_≱: "다음보다 크거나 수 없습니다 (숫자 비교)."
 previewer_days: "일"
 previewer_hours: "시간"
 previewer_minutes: "의사록"
@@ -731,6 +745,8 @@ response_failed_to_execute: "실행에 실패했습니다!"
 response_failed_to_import: "가져오기에 실패했습니다!"
 response_failed_to_install: "설치하지 못했습니다!"
 response_failed_to_update: "업데이트하지 못했습니다!"
+response_failed_to_update_statistics: "통계를 업데이트하지 못했습니다!"
+response_failed_to_update_tracking: "추적을 업데이트하지 못했습니다!"
 response_file_deleted: "파일 삭제가 성공했습니다!"
 response_file_edited: "파일이 성공적으로 변경되었습니다!"
 response_file_renamed: "파일 이름이 변경되었습니다!"
@@ -756,6 +772,7 @@ response_sanity_1: "파일에 예상치 못한 내용이 포함되어 있습니�
 response_signatures_updated: "서명 파일이 업데이트되었습니다 (%s)."
 response_skipped: "확인하지 않았다"
 response_statistics_cleared: "통계가 삭제되었습니다."
+response_statistics_updated: "통계가 업데이트되었습니다."
 response_tracking_added: "추적에 %s를 추가했습니다."
 response_tracking_cleared: "추적이 취소되었습니다."
 response_tracking_removed: "추적에서 %s를 제거했습니다."

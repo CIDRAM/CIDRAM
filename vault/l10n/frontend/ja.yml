@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2023.08.10).
+# This file: Japanese language data for the front-end (last modified: 2023.08.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -490,7 +490,7 @@ label_aux_move_down: "降りる"
 label_aux_move_top: "ルールを最初の場所に移動"
 label_aux_move_up: "上がる"
 label_aux_mtdReg: "正規表現"
-label_aux_mtdStr: "直接の文字列比較"
+label_aux_mtdStr: "文字列の直接比較"
 label_aux_mtdWin: "Windowsスタイルのワイルドカード"
 label_aux_mtdDMA: "条件をテストする方法を自動的に検出します。"
 label_aux_name: "新しいルールの名前："
@@ -687,6 +687,20 @@ msg_template_2fa: |
  <h1>%s</h1>
  <p>このコードの有効期限は１０分です。</p></center>
 notice_new_major_version: "通知：%sが利用可能になりました（あなたは%sを使用しています）。​あなたはこのバージョンの最小ＰＨＰ要件を満たされています。​ただし、更新するにはいくつかの手動手順が必要です。"
+operator_<: "未満である必要があります（数値比較）。"
+operator_=: "完全に一致する必要があります（文字列の直接比較）。"
+operator_>: "より大きい必要があります（数値比較）。"
+operator_≅: "正規表現は一致する必要があります。"
+operator_≇: "正規表現は一致してはならない。"
+operator_≈: "近似一致する必要があります（Windowsスタイルのワイルドカードを使用する）。"
+operator_≉: "近似一致であってはなりません（Windowsスタイルのワイルドカードを使用する）。"
+operator_≠: "完全一致であってはなりません（文字列の直接比較）。"
+operator_≤: "以下である必要があります（数値比較）。"
+operator_≥: "以上である必要があります（数値比較）。"
+operator_≮: "以下にすることはできません（数値比較）。"
+operator_≯: "以上にすることはできません（数値比較）。"
+operator_≰: "以下にすることはできません（数値比較）。"
+operator_≱: "以上にすることはできません（数値比較）。"
 previewer_days: "日"
 previewer_hours: "時"
 previewer_minutes: "分"
@@ -734,6 +748,8 @@ response_failed_to_execute: "実行に失敗しました！"
 response_failed_to_import: "インポートに失敗しました！"
 response_failed_to_install: "インストールに失敗しました！"
 response_failed_to_update: "アップデートに失敗しました！"
+response_failed_to_update_statistics: "統計のアップデートに失敗しました！"
+response_failed_to_update_tracking: "トラッキング・アップデートに失敗しました！"
 response_file_deleted: "ファイルを削除が成功しました！"
 response_file_edited: "ファイルは正常に変更されました！"
 response_file_renamed: "ファイルの名前が変更されました！"
@@ -759,6 +775,7 @@ response_sanity_1: "ファイルに予期しないコンテンツがあります
 response_signatures_updated: "シグネチャ・ファイルが更新されました（%s）。"
 response_skipped: "スキップしました"
 response_statistics_cleared: "統計はクリアされました。"
+response_statistics_updated: "統計が更新されました。"
 response_tracking_added: "追跡に「%s」を追加しました。"
 response_tracking_cleared: "トラッキングがキャンセルされました。"
 response_tracking_removed: "追跡から「%s」を削除しました。"
@@ -839,7 +856,7 @@ tip_2fa_sent: "２ＦＡコードを含むＥメールがあなたのＥメー�
 tip_accounts: "こんにちは、{username}。​<br />アカウント・ページは、CIDRAMフロントエンドにアクセスできるユーザーを制御できます。"
 tip_aggregator: "こんにちは、{username}。​<br />アグリゲータを使用すると、最小限の方法でＩＰとＣＩＤＲとネットマスクを表現できます。​集計するデータを入力し、「ＯＫ」を押します。"
 tip_aux: "こんにちは、{username}。<br />このページを使用して、CIDRAMの補助ルールを作成、削除、および変更することができます。"
-tip_aux_operators: "ヒント：条件に別の種類の演算子が必要な場合は、それを値の最初に追加できます（直接の文字列比較が必要）。"
+tip_aux_operators: "ヒント：条件に別の種類の演算子が必要な場合は、それを値の最初に追加できます（文字列の直接比較が必要です）。"
 tip_aux_priority: "優先（最高➡(等しい🔄同等)➡最低）："
 tip_aux_webhooks: "ルールがトリガーされると、CIDRAMは接続されているすべてのWebhookにイベントについて通知しようとします。"
 tip_backup: "こんにちは、{username}。<br />このページを利用して、コンフィギュレーション、補助ルール、などをインポートとエクスポートできます。​これは、異なるインストールまたは異なるメジャー・バージョン間でデータを移行する必要がある場合に役立ちます。"

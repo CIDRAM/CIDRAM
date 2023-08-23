@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2023.08.06).
+ * This file: Front-end handler (last modified: 2023.08.24).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2859,6 +2859,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'backup' && $CIDRAM['FE']['Permi
                             } else {
                                 $CIDRAM['FE']['state_msg'] .= $CIDRAM['L10N']->getString('response_aux_update_failed') . '<br />';
                             }
+                            unset($CIDRAM['Handle'], $CIDRAM['NewAuxData']);
                         } else {
                             $CIDRAM['FE']['state_msg'] .= $CIDRAM['L10N']->getString('response_aux_update_failed') . '<br />';
                         }

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2023.08.08).
+ * This file: Output generator (last modified: 2023.08.23).
  */
 
 /** Initialise cache. */
@@ -367,6 +367,7 @@ if ($CIDRAM['RL_Active'] && isset($CIDRAM['Factors']) && (!$CIDRAM['Config']['ra
                 $CIDRAM['Config']['hcaptcha']['usemode'] = 0;
                 $CIDRAM['Config']['hcaptcha']['enabled'] = false;
                 $CIDRAM['RL_Status'] = $CIDRAM['GetStatusHTTP'](429);
+                $CIDRAM['Events']->fireEvent('rateLimited');
             }
             unset($CIDRAM['RL_Usage'], $CIDRAM['RL_Oldest'], $CIDRAM['RL_Expired']);
         }

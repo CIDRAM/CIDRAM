@@ -272,45 +272,6 @@ trait Protect
             unset($Before);
         }
 
-        /** Identify proxy connections (conjunctive reporting element). */
-        if (
-            strpos($this->BlockInfo['WhyReason'], $this->L10N->getString('Short_Proxy')) !== false ||
-            $this->hasProfile(['Open Proxy', 'Proxy', 'Tor endpoints here'])
-        ) {
-            $this->Reporter->report([9], [], $this->BlockInfo['IPAddr']);
-        }
-
-        /** Identify VPN connections (conjunctive reporting element). */
-        if ($this->hasProfile(['VPN IP', 'VPNs here'])) {
-            $this->Reporter->report([13], [], $this->BlockInfo['IPAddr']);
-        }
-
-        /** Process all reports (if any exist, and if not whitelisted), and then destroy the reporter. */
-        if (empty($this->CIDRAM['Whitelisted']) && isset($this->Stages['Reporting:Enable'])) {
-            $this->Stage = 'Reporting';
-            $this->Reporter->process();
-            if (isset($this->CIDRAM['LastTestIP'])) {
-                if ($this->CIDRAM['LastTestIP'] === 4) {
-                    if (isset($this->CIDRAM['Report OK']) && $this->CIDRAM['Report OK'] > 0 && isset($this->StatisticsTracked['Reported-IPv4-OK'])) {
-                        $this->Cache->incEntry('Statistics-Reported-IPv4-OK', $this->CIDRAM['Report OK']);
-                    }
-                    if (isset($this->CIDRAM['Report Failed']) && $this->CIDRAM['Report Failed'] > 0 && isset($this->StatisticsTracked['Reported-IPv4-Failed'])) {
-                        $this->Cache->incEntry('Statistics-Reported-IPv4-Failed', $this->CIDRAM['Report Failed']);
-                    }
-                } elseif ($this->CIDRAM['LastTestIP'] === 6) {
-                    if (isset($this->CIDRAM['Report OK']) && $this->CIDRAM['Report OK'] > 0 && isset($this->StatisticsTracked['Reported-IPv6-OK'])) {
-                        $this->Cache->incEntry('Statistics-Reported-IPv6-OK', $this->CIDRAM['Report OK']);
-                    }
-                    if (isset($this->CIDRAM['Report Failed']) && $this->CIDRAM['Report Failed'] > 0 && isset($this->StatisticsTracked['Reported-IPv6-Failed'])) {
-                        $this->Cache->incEntry('Statistics-Reported-IPv6-Failed', $this->CIDRAM['Report Failed']);
-                    }
-                }
-            }
-        }
-
-        /** Cleanup. */
-        $this->Reporter = null;
-
         /** Process tracking information for the inbound IP. */
         if (!empty($this->CIDRAM['TestResults']) && (
             (isset($this->CIDRAM['Trackable']) && $this->CIDRAM['Trackable'] === true) ||
@@ -503,6 +464,45 @@ trait Protect
                 $CaptchaDone = new HCaptcha($this);
             }
         }
+
+        /** Identify proxy connections (conjunctive reporting element). */
+        if (
+            strpos($this->BlockInfo['WhyReason'], $this->L10N->getString('Short_Proxy')) !== false ||
+            $this->hasProfile(['Open Proxy', 'Proxy', 'Tor endpoints here'])
+        ) {
+            $this->Reporter->report([9], [], $this->BlockInfo['IPAddr']);
+        }
+
+        /** Identify VPN connections (conjunctive reporting element). */
+        if ($this->hasProfile(['VPN IP', 'VPNs here'])) {
+            $this->Reporter->report([13], [], $this->BlockInfo['IPAddr']);
+        }
+
+        /** Process all reports (if any exist, and if not whitelisted), and then destroy the reporter. */
+        if (empty($this->CIDRAM['Whitelisted']) && isset($this->Stages['Reporting:Enable'])) {
+            $this->Stage = 'Reporting';
+            $this->Reporter->process();
+            if (isset($this->CIDRAM['LastTestIP'])) {
+                if ($this->CIDRAM['LastTestIP'] === 4) {
+                    if (isset($this->CIDRAM['Report OK']) && $this->CIDRAM['Report OK'] > 0 && isset($this->StatisticsTracked['Reported-IPv4-OK'])) {
+                        $this->Cache->incEntry('Statistics-Reported-IPv4-OK', $this->CIDRAM['Report OK']);
+                    }
+                    if (isset($this->CIDRAM['Report Failed']) && $this->CIDRAM['Report Failed'] > 0 && isset($this->StatisticsTracked['Reported-IPv4-Failed'])) {
+                        $this->Cache->incEntry('Statistics-Reported-IPv4-Failed', $this->CIDRAM['Report Failed']);
+                    }
+                } elseif ($this->CIDRAM['LastTestIP'] === 6) {
+                    if (isset($this->CIDRAM['Report OK']) && $this->CIDRAM['Report OK'] > 0 && isset($this->StatisticsTracked['Reported-IPv6-OK'])) {
+                        $this->Cache->incEntry('Statistics-Reported-IPv6-OK', $this->CIDRAM['Report OK']);
+                    }
+                    if (isset($this->CIDRAM['Report Failed']) && $this->CIDRAM['Report Failed'] > 0 && isset($this->StatisticsTracked['Reported-IPv6-Failed'])) {
+                        $this->Cache->incEntry('Statistics-Reported-IPv6-Failed', $this->CIDRAM['Report Failed']);
+                    }
+                }
+            }
+        }
+
+        /** Cleanup. */
+        $this->Reporter = null;
 
         /** Update statistics if necessary. */
         if (isset($this->Stages['Statistics:Enable'])) {

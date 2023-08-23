@@ -301,4 +301,4 @@
 
 [2023.08.22; New Feature; Maikuolan]: The front-end backup page can now import/export statistics and IP tracking data (#500).
 
-[2023.08.23; Maikuolan]: Added rateLimited event trigger to rate limiting.
+[2023.08.23; Maikuolan]: Added rateLimited event trigger to rate limiting. Pushed the reporting stage of the execution chain down to after CAPTCHAs but before statistics.

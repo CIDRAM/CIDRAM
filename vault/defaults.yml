@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2023.08.10).
+# This file: Defaults file (last modified: 2023.08.23).
 ##/
 
 Config Defaults:
@@ -32,14 +32,14 @@ Config Defaults:
     Aux:Enable
     Aux:LogErrors
     Aux:Tracking
-    Reporting:Enable
-    Reporting:LogErrors
     Tracking:Enable
     Tracking:LogErrors
     RL:Enable
     RL:LogErrors
     CAPTCHA:Enable
     CAPTCHA:LogErrors
+    Reporting:Enable
+    Reporting:LogErrors
     Statistics:Enable
     Statistics:LogErrors
     Webhooks:Enable
@@ -67,10 +67,10 @@ Config Defaults:
     SocialMediaVerification: "stage_smv"
     OtherVerification: "stage_ov"
     Aux: "stage_aux"
-    Reporting: "stage_reporting"
     Tracking: "stage_tracking"
     RL: "stage_rl"
     CAPTCHA: "stage_captcha"
+    Reporting: "stage_reporting"
     Statistics: "stage_statistics"
     Webhooks: "stage_webhooks"
     PrepareFields: "stage_preparefields"
@@ -80,10 +80,10 @@ Config Defaults:
     AuxRedirect: "stage_auxredirect"
     NonBlockedCAPTCHA: "stage_nonblockedcaptcha"
    nonsense: |
-    Reporting:Tracking
     Tracking:Tracking
     RL:Tracking
     CAPTCHA:Tracking
+    Reporting:Tracking
     Statistics:Tracking
     Webhooks:Tracking
     PrepareFields:Tracking

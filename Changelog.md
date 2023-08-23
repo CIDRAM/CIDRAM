@@ -301,4 +301,4 @@
 
 [2023.08.22; New Feature; Maikuolan]: The front-end backup page can now import/export statistics and IP tracking data (#500).
 
-[2023.08.23; Maikuolan]: Added rateLimited event trigger to rate limiting. Pushed the reporting stage of the execution chain down to after CAPTCHAs but before statistics.
+[2023.08.23; Maikuolan]: Added rateLimited event trigger to rate limiting. Pushed the reporting stage of the execution chain down to after CAPTCHAs but before statistics. The AbuseIPDB module's report_back directive has been changed from a boolean to an integer, and reporting behaviour can now be configured to account for whether the request is blocked (previously, reports would be processed as long as report_back was set to true and some reports existed in the queue, which could be arguably described as a bug, but may possibly be desirable to some users).

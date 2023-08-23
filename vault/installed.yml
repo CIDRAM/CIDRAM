@@ -548,7 +548,7 @@ Bypasses:
  Version: "2023.225.0"
  Dependencies:
   PHP: "^7.2|^8"
-  CIDRAM Core: "^3.0.0-DEV"
+  CIDRAM Core: "^3"
  When Update Succeeds:
   - "if {Components.Meta.Bypasses.Version}<2023.98&&{Components.RemoteMeta.Bypasses.Version}>=2023.98 then queue message <span dir="ltr" lang="en-AU">A recent signatures update may affect search engine verification, and new bypasses have been added accordingly. Reviewing your configuration (in particular, <code class="s">bypasses➡used</code>) is strongly recommended.</span>"
  Files:
@@ -843,7 +843,7 @@ l10n/frontend/en:
    Checksum: "326cea323978b90f8d13451e66be55a4a1ddb82cf3290f59ec643316d2b2dc29:76742"
 l10n/frontend/en-US:
  Extended Description: "English (US) localization"
- Version: "2023.222.0"
+ Version: "2023.234.0"
  Files:
   l10n/frontend/en-US.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/en-US.yml"
@@ -1039,16 +1039,18 @@ l10n/frontend/zh-TW:
    Checksum: "3c9b7fc28b9d1fb59bcfe1a7d32b6f353513f6c0648a9804a915dc4e52746841:72475"
 AbuseIPDB module:
  False Positive Risk: "Medium"
- Version: "2023.165.0"
+ Version: "2023.234.0"
+ Dependencies:
+  l10n/frontend/{lang}: ">=2023.234"
  When Install Succeeds: ["queue message response_please_check_config"]
  Files:
   imports/abuseipdb.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/imports/abuseipdb.yml"
-   Checksum: "b221df12c492a3bb8ce943cfd5cd7fa52dfe8fea8a0206b248f1ef1d9a2faf5d:1302"
+   Checksum: "83b3b72e5a902f1722126164c71e985dd599333fc40363a7a2642c87146c7c90:1427"
    Used with: "imports"
   modules/abuseipdb.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/abuseipdb.php"
-   Checksum: "4947b48cbf11716fd309ccc85645fbf769f72aca297117c9e3456153fc6589f4:8464"
+   Checksum: "33026e3503ca0a1fa8c8fe31519437d9ef9cbb9e08006c772ff01d6a9a515177:8600"
    Used with: "modules"
 Bad hosts blocker module:
  False Positive Risk: "Medium"
@@ -1207,8 +1209,8 @@ theme/bluemetal:
  Extended Description: "<img src="https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/themes/preview-bluemetal.png" alt="Preview" />"
  Version: "2023.232.0"
  Dependencies:
-  CIDRAM Core: "^3.0.0-DEV"
-  CIDRAM Front-End: "^3.0.0-DEV"
+  CIDRAM Core: "^3"
+  CIDRAM Front-End: "^3"
  Files:
   assets/core/captcha_bluemetal.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/core/captcha_bluemetal.html"
@@ -1227,8 +1229,8 @@ theme/fullmoon:
  Extended Description: "<img src="https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/themes/preview-fullmoon.png" alt="Preview" />"
  Version: "2023.234.0"
  Dependencies:
-  CIDRAM Core: "^3.0.0-DEV"
-  CIDRAM Front-End: "^3.0.0-DEV"
+  CIDRAM Core: "^3"
+  CIDRAM Front-End: "^3"
   l10n/frontend/{lang}: ">=2022.309"
  Files:
   assets/core/captcha_fullmoon.html:
@@ -1329,8 +1331,8 @@ theme/moss:
  Extended Description: "<img src="https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/themes/preview-moss.png" alt="Preview" />"
  Version: "2023.232.0"
  Dependencies:
-  CIDRAM Core: "^3.0.0-DEV"
-  CIDRAM Front-End: "^3.0.0-DEV"
+  CIDRAM Core: "^3"
+  CIDRAM Front-End: "^3"
  Files:
   assets/core/captcha_moss.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/core/captcha_moss.html"
@@ -1355,7 +1357,7 @@ theme/primer:
  Extended Description: "<img src="https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/themes/preview-primer.png" alt="Preview" />"
  Version: "2023.232.0"
  Dependencies:
-  CIDRAM Core: "^3.0.0-DEV"
+  CIDRAM Core: "^3"
   CIDRAM Front-End: "^3.1"
   l10n/frontend/{lang}: ">=2022.309"
  Files:
@@ -1382,7 +1384,7 @@ theme/primerdark:
  Extended Description: "<img src="https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/themes/preview-primerdark.png" alt="Preview" />"
  Version: "2023.232.0"
  Dependencies:
-  CIDRAM Core: "^3.0.0-DEV"
+  CIDRAM Core: "^3"
   CIDRAM Front-End: "^3.1"
   l10n/frontend/{lang}: ">=2022.309"
  Files:
@@ -1409,8 +1411,8 @@ theme/rbi:
  Extended Description: "<img src="https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/themes/preview-rbi.png" alt="Preview" />"
  Version: "2023.232.0"
  Dependencies:
-  CIDRAM Core: "^3.0.0-DEV"
-  CIDRAM Front-End: "^3.0.0-DEV"
+  CIDRAM Core: "^3"
+  CIDRAM Front-End: "^3"
  Files:
   assets/core/captcha_rbi.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/core/captcha_rbi.html"
@@ -1426,8 +1428,8 @@ theme/slate:
  Extended Description: "<img src="https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/themes/preview-slate.png" alt="Preview" />"
  Version: "2023.232.0"
  Dependencies:
-  CIDRAM Core: "^3.0.0-DEV"
-  CIDRAM Front-End: "^3.0.0-DEV"
+  CIDRAM Core: "^3"
+  CIDRAM Front-End: "^3"
  Files:
   assets/core/captcha_slate.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/core/captcha_slate.html"

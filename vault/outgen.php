@@ -255,28 +255,6 @@ if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode'] && e
         $CIDRAM['Stage'] = 'Aux';
         $CIDRAM['Aux']();
     }
-
-    /** Identify proxy connections (conjunctive reporting element). */
-    if (
-        strpos($CIDRAM['BlockInfo']['WhyReason'], $CIDRAM['L10N']->getString('Short_Proxy')) !== false ||
-        in_array(['Open Proxy', 'Proxy', 'Tor endpoints here'], $CIDRAM['Profile'], true)
-    ) {
-        $CIDRAM['Reporter']->report([9], [], $CIDRAM['BlockInfo']['IPAddr']);
-    }
-
-    /** Identify VPN connections (conjunctive reporting element). */
-    if (in_array(['VPN IP', 'VPNs here'], $CIDRAM['Profile'], true)) {
-        $CIDRAM['Reporter']->report([13], [], $CIDRAM['BlockInfo']['IPAddr']);
-    }
-
-    /** Process all reports (if any exist, and if not whitelisted), and then destroy the reporter. */
-    if (empty($CIDRAM['Whitelisted'])) {
-        $CIDRAM['Stage'] = 'Reporting';
-        $CIDRAM['Reporter']->process();
-    }
-
-    /** Cleanup. */
-    unset($CIDRAM['Reporter']);
 }
 
 /** Process tracking information for the inbound IP. */
@@ -440,6 +418,31 @@ if (
         /** Execute the HCaptcha class. */
         $CIDRAM['CaptchaDone'] = new \CIDRAM\Core\HCaptcha($CIDRAM);
     }
+}
+
+/** Executed only if maintenance mode is disabled. */
+if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode'] && empty($CIDRAM['Whitelisted']) && $CIDRAM['Reporter'] instanceof \CIDRAM\Core\Reporter) {
+    /** Identify proxy connections (conjunctive reporting element). */
+    if (
+        strpos($CIDRAM['BlockInfo']['WhyReason'], $CIDRAM['L10N']->getString('Short_Proxy')) !== false ||
+        in_array(['Open Proxy', 'Proxy', 'Tor endpoints here'], $CIDRAM['Profile'], true)
+    ) {
+        $CIDRAM['Reporter']->report([9], [], $CIDRAM['BlockInfo']['IPAddr']);
+    }
+
+    /** Identify VPN connections (conjunctive reporting element). */
+    if (in_array(['VPN IP', 'VPNs here'], $CIDRAM['Profile'], true)) {
+        $CIDRAM['Reporter']->report([13], [], $CIDRAM['BlockInfo']['IPAddr']);
+    }
+
+    /** Process all reports (if any exist, and if not whitelisted), and then destroy the reporter. */
+    if (empty($CIDRAM['Whitelisted'])) {
+        $CIDRAM['Stage'] = 'Reporting';
+        $CIDRAM['Reporter']->process();
+    }
+
+    /** Cleanup. */
+    unset($CIDRAM['Reporter']);
 }
 
 /** Update statistics if necessary. */

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CIDRAM CLI mode (last modified: 2023.05.10).
+ * This file: CIDRAM CLI mode (last modified: 2023.08.23).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -386,7 +386,7 @@ trait CLI
                     if ($Results['Parse'] !== 0) {
                         $Memory = memory_get_usage();
                         $this->formatFileSize($Memory);
-                        echo "\rParse " . $this->NumberFormatter->format($Results['Parse']) . ' ... ' . $this->NumberFormatter->format(100, 2) . '% (' . $this->timeFormat(time(), $this->Configuration['general']['time_format']) . ') <RAM: ' . $Memory . '>';
+                        echo "\r" . $this->L10N->getString('response_cli_parse') . ' ' . $this->NumberFormatter->format($Results['Parse']) . ' ... ' . $this->NumberFormatter->format(100, 2) . '% (' . $this->timeFormat(time(), $this->Configuration['general']['time_format']) . ') <RAM: ' . $Memory . '>';
                     }
                     echo "\n";
                     $Results['Parse']++;
@@ -403,13 +403,13 @@ trait CLI
                     if ($Results['Timer'] > 25) {
                         $Results['Timer'] = 0;
                         $Percent = $this->NumberFormatter->format(($Results['Tick'] / $Results['Measure']) * 100, 2);
-                        echo "\rParse " . $this->NumberFormatter->format($Results['Parse']) . ' ... ' . $Percent . '%';
+                        echo "\r" . $this->L10N->getString('response_cli_parse') . ' ' . $this->NumberFormatter->format($Results['Parse']) . ' ... ' . $Percent . '%';
                     }
                 };
                 $Data = $this->CIDRAM['Aggregator']->aggregate($Data);
                 $Results['Memory'] = memory_get_usage();
                 $this->formatFileSize($Results['Memory']);
-                echo "\rParse " . $this->NumberFormatter->format($Results['Parse']) . ' ... ' . $this->NumberFormatter->format(100, 2) . '% (' . $this->timeFormat(time(), $this->Configuration['general']['time_format']) . ') <RAM: ' . $Results['Memory'] . ">\n\n";
+                echo "\r" . $this->L10N->getString('response_cli_parse') . ' ' . $this->NumberFormatter->format($Results['Parse']) . ' ... ' . $this->NumberFormatter->format(100, 2) . '% (' . $this->timeFormat(time(), $this->Configuration['general']['time_format']) . ') <RAM: ' . $Results['Memory'] . ">\n\n";
                 echo sprintf(
                     $this->L10N->getString('label_results'),
                     $this->NumberFormatter->format($this->CIDRAM['Aggregator']->NumberEntered),
@@ -465,7 +465,7 @@ trait CLI
                     if ($Fixer['Parse'] !== 0) {
                         $Memory = memory_get_usage();
                         $this->formatFileSize($Memory);
-                        echo "\rParse " . $this->NumberFormatter->format($Fixer['Parse']) . ' ... ' . $this->NumberFormatter->format(100, 2) . '% (' . $this->timeFormat(time(), $this->Configuration['general']['time_format']) . ') <RAM: ' . $Memory . '>';
+                        echo "\r" . $this->L10N->getString('response_cli_parse') . ' ' . $this->NumberFormatter->format($Fixer['Parse']) . ' ... ' . $this->NumberFormatter->format(100, 2) . '% (' . $this->timeFormat(time(), $this->Configuration['general']['time_format']) . ') <RAM: ' . $Memory . '>';
                     }
                     echo "\n";
                     $Fixer['Parse']++;
@@ -482,7 +482,7 @@ trait CLI
                     if ($Fixer['Timer'] > 25) {
                         $Fixer['Timer'] = 0;
                         $Percent = $this->NumberFormatter->format(($Fixer['Tick'] / $Fixer['Measure']) * 100, 2);
-                        echo "\rParse " . $this->NumberFormatter->format($Fixer['Parse']) . ' ... ' . $Percent . '%';
+                        echo "\r" . $this->L10N->getString('response_cli_parse') . ' ' . $this->NumberFormatter->format($Fixer['Parse']) . ' ... ' . $Percent . '%';
                     }
                 };
                 if (strpos($Data, "\r") !== false) {
@@ -552,7 +552,7 @@ trait CLI
                 }, true);
                 $Fixer['Memory'] = memory_get_usage();
                 $this->formatFileSize($Fixer['Memory']);
-                echo "\rParse " . $this->NumberFormatter->format($Fixer['Parse']) . ' ... ' . $this->NumberFormatter->format(100, 2) . '% (' . $this->timeFormat(time(), $this->Configuration['general']['time_format']) . ') <RAM: ' . $Fixer['Memory'] . ">\n\n";
+                echo "\r" . $this->L10N->getString('response_cli_parse') . ' ' . $this->NumberFormatter->format($Fixer['Parse']) . ' ... ' . $this->NumberFormatter->format(100, 2) . '% (' . $this->timeFormat(time(), $this->Configuration['general']['time_format']) . ') <RAM: ' . $Fixer['Memory'] . ">\n\n";
                 $Data = trim($Fixer['StrObject']->recompile()) . "\n";
                 $Fixer['After'] = hash('sha256', $Data) . ':' . strlen($Data);
                 echo sprintf(

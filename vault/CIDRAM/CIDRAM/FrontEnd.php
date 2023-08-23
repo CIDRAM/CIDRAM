@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.08.23).
+ * This file: The CIDRAM front-end (last modified: 2023.08.24).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -2725,6 +2725,7 @@ class FrontEnd extends Core
                                     } else {
                                         $this->FE['state_msg'] .= $this->L10N->getString('response_aux_update_failed') . '<br />';
                                     }
+                                    unset($Handle, $NewAuxData);
                                 } else {
                                     $this->FE['state_msg'] .= $this->L10N->getString('response_aux_update_failed') . '<br />';
                                 }
@@ -2830,6 +2831,7 @@ class FrontEnd extends Core
                                 }
                             }
                         }
+                        unset($Response, $Success, $Component, $Try, $Import);
                         $this->restoreErrorHandler();
                     } else {
                         $this->FE['state_msg'] .= $this->L10N->getString('response_upload_error') . '<br />';

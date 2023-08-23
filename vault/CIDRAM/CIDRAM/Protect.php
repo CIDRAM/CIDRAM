@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2023.08.08).
+ * This file: Protect traits (last modified: 2023.08.23).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -432,6 +432,7 @@ trait Protect
                             $this->Configuration['hcaptcha']['usemode'] = 0;
                             $this->Configuration['hcaptcha']['enabled'] = false;
                             $this->CIDRAM['RL_Status'] = $this->getStatusHTTP(429);
+                            $this->Events->fireEvent('rateLimited');
                         }
                         unset($this->CIDRAM['RL_Usage'], $this->CIDRAM['RL_Oldest'], $this->CIDRAM['RL_Expired']);
                     }

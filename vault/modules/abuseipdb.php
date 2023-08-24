@@ -242,6 +242,9 @@ if ($this->Configuration['abuseipdb']['report_back']) {
                 $Keep .= $Line . '||';
                 continue;
             }
+            if ($Ago > 604800) {
+                continue;
+            }
             $Count++;
             if ($Count > 9999) {
                 $Keep .= $Line . '||';
@@ -249,6 +252,7 @@ if ($this->Configuration['abuseipdb']['report_back']) {
             }
             $Try[] = $Entry;
             $this->Cache->setEntry('AbuseIPDB-Recently Reported-' . $Entry[1], true, 900);
+            $this->CIDRAM['AbuseIPDB-Recently Reported-' . $Entry[1]] = true;
         }
         if ($Keep !== $this->CIDRAM['AbuseIPDB-Report Queue']) {
             $this->CIDRAM['AbuseIPDB-Report Queue'] = $Keep;

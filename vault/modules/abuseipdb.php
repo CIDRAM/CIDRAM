@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: AbuseIPDB module (last modified: 2023.08.23).
+ * This file: AbuseIPDB module (last modified: 2023.08.24).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -155,11 +155,11 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 /** Add AbuseIPDB report handler. */
 if ($this->Configuration['abuseipdb']['report_back']) {
     $this->Reporter->addHandler(function ($Report) {
-        if (
-            isset($this->CIDRAM['AbuseIPDB-Recently Reported-' . $Report['IP']]) ||
-            ($this->Configuration['abuseipdb']['report_back'] === 2 && $this->BlockInfo['SignatureCount'] < 1)
-        ) {
+        if ($this->Configuration['abuseipdb']['report_back'] === 2 && $this->BlockInfo['SignatureCount'] < 1) {
             return;
+        }
+        if (!isset($this->CIDRAM['AbuseIPDB-Recently Reported-' . $Report['IP']])) {
+            $this->CIDRAM['AbuseIPDB-Recently Reported-' . $Report['IP']] = $this->Cache->getEntry('AbuseIPDB-Recently Reported-' . $Report['IP']);
         }
         $Categories = [];
         foreach ($Report['Categories'] as $Category) {
@@ -171,27 +171,152 @@ if ($this->Configuration['abuseipdb']['report_back']) {
             return;
         }
         $Categories = implode(',', $Categories);
-        $Status = $this->Request->request('https://api.abuseipdb.com/api/v2/report', [
-            'ip' => $Report['IP'],
-            'categories' => $Categories,
-            'comment' => $Report['Comments']
-        ], $this->Configuration['abuseipdb']['timeout_limit'], [
-            'Key: ' . $this->Configuration['abuseipdb']['api_key'],
-            'Accept: application/json'
-        ]);
-        $this->Cache->setEntry('AbuseIPDB-Recently Reported-' . $Report['IP'], true, 900);
-        $this->CIDRAM['AbuseIPDB-Recently Reported-' . $Report['IP']] = true;
-        if (strpos($Status, '"ipAddress":"' . $Report['IP'] . '"') !== false && strpos($Status, '"errors":') === false) {
-            if (!isset($this->CIDRAM['Report OK'])) {
-                $this->CIDRAM['Report OK'] = 0;
+        $Queue = true;
+        if ($this->CIDRAM['AbuseIPDB-Recently Reported-' . $Report['IP']] === false) {
+            $Status = $this->Request->request('https://api.abuseipdb.com/api/v2/report', [
+                'ip' => $Report['IP'],
+                'categories' => $Categories,
+                'comment' => $Report['Comments']
+            ], $this->Configuration['abuseipdb']['timeout_limit'], [
+                'Key: ' . $this->Configuration['abuseipdb']['api_key'],
+                'Accept: application/json'
+            ]);
+            $this->Cache->setEntry('AbuseIPDB-Recently Reported-' . $Report['IP'], true, 900);
+            $this->CIDRAM['AbuseIPDB-Recently Reported-' . $Report['IP']] = true;
+            if (strpos($Status, '"ipAddress":"' . $Report['IP'] . '"') !== false && strpos($Status, '"errors":') === false) {
+                if (!isset($this->CIDRAM['Report OK'])) {
+                    $this->CIDRAM['Report OK'] = 0;
+                }
+                $this->CIDRAM['Report OK']++;
+                $Queue = false;
+            } else {
+                if (!isset($this->CIDRAM['Report Failed'])) {
+                    $this->CIDRAM['Report Failed'] = 0;
+                }
+                $this->CIDRAM['Report Failed']++;
             }
-            $this->CIDRAM['Report OK']++;
-        } else {
+        }
+        if ($Queue) {
+            if (!isset($this->CIDRAM['AbuseIPDB-Report Queue'])) {
+                $this->CIDRAM['AbuseIPDB-Report Queue'] = $this->Cache->getEntry('AbuseIPDB-Report Queue');
+            }
+            if (!is_string($this->CIDRAM['AbuseIPDB-Report Queue'])) {
+                $this->CIDRAM['AbuseIPDB-Report Queue'] = '';
+            }
+            $this->CIDRAM['AbuseIPDB-Report Queue'] .= $this->Now . '|' . $Report['IP'] . '|' . $Categories . '|' . $Report['Comments'] . '||';
+            $this->Events->addHandler('final', function (): bool {
+                if (!isset($this->CIDRAM['AbuseIPDB-Report Queue'])) {
+                    return false;
+                }
+                $this->Cache->setEntry('AbuseIPDB-Report Queue', $this->CIDRAM['AbuseIPDB-Report Queue'], 604800);
+                unset($this->CIDRAM['AbuseIPDB-Report Queue']);
+                return true;
+            });
+        }
+    });
+
+    /** Bulk reporting. */
+    $this->Events->addHandler('reporterFinished', function (): bool {
+        if (!isset($this->CIDRAM['AbuseIPDB-Report Queue'])) {
+            $this->CIDRAM['AbuseIPDB-Report Queue'] = $this->Cache->getEntry('AbuseIPDB-Report Queue');
+        }
+        if ($this->CIDRAM['AbuseIPDB-Report Queue'] === false) {
+            return false;
+        }
+        $First = true;
+        $Keep = '';
+        $Try = [];
+        $Count = 0;
+        foreach (explode('||', $this->CIDRAM['AbuseIPDB-Report Queue']) as $Line) {
+            if ($Line === '') {
+                continue;
+            }
+            $Entry = explode('|', $Line, 4);
+            if (count($Entry) !== 4) {
+                continue;
+            }
+            $Ago = $this->Now - $Entry[0];
+            if ($First) {
+                if ($Ago < 21600) {
+                    $Keep = $this->CIDRAM['AbuseIPDB-Report Queue'];
+                    break;
+                }
+                $First = false;
+            }
+            if (!isset($this->CIDRAM['AbuseIPDB-Recently Reported-' . $Entry[1]])) {
+                $this->CIDRAM['AbuseIPDB-Recently Reported-' . $Entry[1]] = $this->Cache->getEntry('AbuseIPDB-Recently Reported-' . $Entry[1]);
+            }
+            if ($Ago < 900 || $this->CIDRAM['AbuseIPDB-Recently Reported-' . $Entry[1]] !== false) {
+                $Keep .= $Line . '||';
+                continue;
+            }
+            $Count++;
+            if ($Count > 9999) {
+                $Keep .= $Line . '||';
+                continue;
+            }
+            $Try[] = $Entry;
+            $this->Cache->setEntry('AbuseIPDB-Recently Reported-' . $Entry[1], true, 900);
+        }
+        if ($Keep !== $this->CIDRAM['AbuseIPDB-Report Queue']) {
+            $this->CIDRAM['AbuseIPDB-Report Queue'] = $Keep;
+        }
+        unset($Ago, $Keep, $First);
+        $Count = count($Try);
+        if ($Count === 0) {
+            return false;
+        }
+        $OK = false;
+        if ($Count > 1 && class_exists('\CURLStringFile')) {
+            $Bulk = "IP,Categories,ReportDate,Comment\n";
+            foreach ($Try as $Entry) {
+                $Bulk .= $Entry[1] . ',"' . $Entry[2] . '",' . $this->timeFormat($Entry[0], '{yyyy}-{mm}-{dd}T{hh}:{ii}:{ss}{t:z}') . ',"' . $Entry[3] . "\"\n";
+            }
+            $Bulk = new \CURLStringFile($Bulk, 'report.csv', 'text/csv');
+            $Status = $this->Request->request('https://api.abuseipdb.com/api/v2/bulk-report', ['csv' => $Bulk], $this->Configuration['abuseipdb']['timeout_limit'], [
+                'Key: ' . $this->Configuration['abuseipdb']['api_key'],
+                'Accept: application/json'
+            ]);
+            if (preg_match('~"savedReports":(\d+)~', $Status, $Success) && isset($Success[1])) {
+                if ($Success[1] > 0) {
+                    $OK = true;
+                }
+                if (!isset($this->CIDRAM['Report OK'])) {
+                    $this->CIDRAM['Report OK'] = 0;
+                }
+                $this->CIDRAM['Report OK'] += $Success[1];
+            }
+            if (($Failure = substr_count($Status, '"error":')) > 0) {
+                if (!isset($this->CIDRAM['Report Failed'])) {
+                    $this->CIDRAM['Report Failed'] = 0;
+                }
+                $this->CIDRAM['Report Failed'] += $Failure;
+            }
+            return $OK;
+        }
+        foreach ($Try as $Entry) {
+            $Status = $this->Request->request('https://api.abuseipdb.com/api/v2/report', [
+                'ip' => $Entry[1],
+                'categories' => $Entry[2],
+                'comment' => $Entry[3]
+            ], $this->Configuration['abuseipdb']['timeout_limit'], [
+                'Key: ' . $this->Configuration['abuseipdb']['api_key'],
+                'Accept: application/json'
+            ]);
+            if (strpos($Status, '"ipAddress":"' . $Report['IP'] . '"') !== false && strpos($Status, '"errors":') === false) {
+                if (!isset($this->CIDRAM['Report OK'])) {
+                    $this->CIDRAM['Report OK'] = 0;
+                }
+                $this->CIDRAM['Report OK']++;
+                $OK = true;
+                continue;
+            }
             if (!isset($this->CIDRAM['Report Failed'])) {
                 $this->CIDRAM['Report Failed'] = 0;
             }
             $this->CIDRAM['Report Failed']++;
         }
+        return $OK;
     });
 }
 

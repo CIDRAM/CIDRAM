@@ -1,6 +1,6 @@
 CIDRAM Core:
  Name: "CIDRAM Core"
- Version: "3.4.0-DEV+232340"
+ Version: "3.4.0-DEV+232350"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Front-End: "Latest"
@@ -40,7 +40,7 @@ CIDRAM Core:
    Checksum: "d27710669427e8f88fb849161517d7c7afc4635c29688141ca90af490b84b85d:15275"
   CIDRAM/CIDRAM/Protect.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Protect.php"
-   Checksum: "ce4b8b1824ace3f45d6e3051e1469220f2a7d5da1dd92a819dc6cbb57445dc8e:58572"
+   Checksum: "6b51b54a01c4a22eb58bfb840a4c89d73394c702eeea6fb720ec12374903ac92:58630"
   CIDRAM/CIDRAM/ReCaptcha.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/ReCaptcha.php"
    Checksum: "e4aa4bdddb2d087ee09c83a9c5a48845a8f3d0b12b222bfd5c9f584b51c8913c:14733"
@@ -64,7 +64,7 @@ CIDRAM Core:
    Checksum: "2e1620a380818985aa8eb7bbb549b2ded5ca65a82c4eb2f5d858d3b8dcc6c823:7838"
 CIDRAM Front-End:
  Name: "CIDRAM Front-End"
- Version: "3.4.0-DEV+232340"
+ Version: "3.4.0-DEV+232350"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "Latest"
@@ -1039,7 +1039,7 @@ l10n/frontend/zh-TW:
    Checksum: "fdcc5a3e845f52224dfd3218562807b74efac05963b1b85a79e6f0f4bfa34c44:72646"
 AbuseIPDB module:
  False Positive Risk: "Medium"
- Version: "2023.234.0"
+ Version: "2023.235.0"
  Dependencies:
   l10n/frontend/{lang}: ">=2023.234"
  When Install Succeeds: ["queue message response_please_check_config"]
@@ -1050,7 +1050,7 @@ AbuseIPDB module:
    Used with: "imports"
   modules/abuseipdb.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/abuseipdb.php"
-   Checksum: "33026e3503ca0a1fa8c8fe31519437d9ef9cbb9e08006c772ff01d6a9a515177:8600"
+   Checksum: "90555f3e6c82d64da03ad617637a6cae0a990badea2337bdf729af106c232f01:14298"
    Used with: "modules"
 Bad hosts blocker module:
  False Positive Risk: "Medium"

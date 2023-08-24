@@ -153,7 +153,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 };
 
 /** Add AbuseIPDB report handler. */
-if ($this->Configuration['abuseipdb']['report_back']) {
+if ($this->Configuration['abuseipdb']['report_back'] && $this->Configuration['abuseipdb']['api_key'] !== '') {
     $this->Reporter->addHandler(function ($Report) {
         if ($this->Configuration['abuseipdb']['report_back'] === 2 && $this->BlockInfo['SignatureCount'] < 1) {
             return;

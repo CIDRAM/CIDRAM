@@ -204,14 +204,6 @@ if ($this->Configuration['abuseipdb']['report_back']) {
                 $this->CIDRAM['AbuseIPDB-Report Queue'] = '';
             }
             $this->CIDRAM['AbuseIPDB-Report Queue'] .= $this->Now . '|' . $Report['IP'] . '|' . $Categories . '|' . $Report['Comments'] . '||';
-            $this->Events->addHandler('final', function (): bool {
-                if (!isset($this->CIDRAM['AbuseIPDB-Report Queue'])) {
-                    return false;
-                }
-                $this->Cache->setEntry('AbuseIPDB-Report Queue', $this->CIDRAM['AbuseIPDB-Report Queue'], 604800);
-                unset($this->CIDRAM['AbuseIPDB-Report Queue']);
-                return true;
-            });
         }
     });
 
@@ -317,6 +309,16 @@ if ($this->Configuration['abuseipdb']['report_back']) {
             $this->CIDRAM['Report Failed']++;
         }
         return $OK;
+    });
+
+    /** Cache the report queue. */
+    $this->Events->addHandler('final', function (): bool {
+        if (!isset($this->CIDRAM['AbuseIPDB-Report Queue'])) {
+            return false;
+        }
+        $this->Cache->setEntry('AbuseIPDB-Report Queue', $this->CIDRAM['AbuseIPDB-Report Queue'], 604800);
+        unset($this->CIDRAM['AbuseIPDB-Report Queue']);
+        return true;
     });
 }
 

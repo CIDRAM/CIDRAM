@@ -106,7 +106,7 @@ config_abuseipdb_max_age_in_days: "Tuổi tối đa tính theo ngày mà các b�
 config_abuseipdb_max_cs_for_captcha: "Điểm tin cậy tối đa cho phép CAPTCHA được phân phát (phải là một số từ 0 đến 100). Mặc định = 10."
 config_abuseipdb_minimum_confidence_score: "Điểm tin cậy tối thiểu bắt buộc để CIDRAM chặn địa chỉ IP (phải là một số từ 0 đến 100). Mặc định = 50."
 config_abuseipdb_minimum_total_reports: "Cần có tổng số báo cáo tối thiểu để CIDRAM chặn địa chỉ IP. Mặc định = 1."
-config_abuseipdb_report_back: "Cho phép CIDRAM báo cáo hành vi xấu đã phát hiện trở lại AbuseIPDB bằng cách sử dụng khóa API của bạn? Mặc định = False."
+config_abuseipdb_report_back: "Cho phép CIDRAM báo cáo hành vi xấu đã phát hiện trở lại AbuseIPDB bằng cách sử dụng khóa API của bạn?"
 config_bgpview: "Cấu hình cho mô-đun BGPView (cung cấp cơ sở tra cứu cho ASN và mã quốc gia cho CIDRAM)."
 config_bgpview_blocked_asns: &ConfigBlockedASNs "Danh sách các ASN sẽ bị chặn khi được đối sánh bởi mô-đun."
 config_bgpview_blocked_ccs: &ConfigBlockedCCs "Danh sách các quốc gia (được xác định bằng mã quốc gia 2 chữ số {{Links.ISO.3166}} của họ) bị chặn khi được đối sánh bởi mô-đun."

@@ -106,7 +106,7 @@ config_abuseipdb_max_age_in_days: "লুকআপ করার সময় র
 config_abuseipdb_max_cs_for_captcha: "ক্যাপচা পরিবেশন করার জন্য অনুমোদিত সর্বোচ্চ আত্মবিশ্বাসের স্কোর (0 এবং 100 এর মধ্যে একটি সংখ্যা হতে হবে). ডিফল্ট = 10।"
 config_abuseipdb_minimum_confidence_score: "একটি আইপি ঠিকানা ব্লক করতে CIDRAM-এর জন্য ন্যূনতম আত্মবিশ্বাসের স্কোর প্রয়োজন (0 এবং 100 এর মধ্যে একটি সংখ্যা হতে হবে). ডিফল্ট = 50।"
 config_abuseipdb_minimum_total_reports: "একটি আইপি ঠিকানা ব্লক করতে CIDRAM-এর জন্য মোট রিপোর্টের ন্যূনতম সংখ্যা প্রয়োজন। ডিফল্ট = 1।"
-config_abuseipdb_report_back: "CIDRAM কে আপনার API কী ব্যবহার করে সনাক্ত করা খারাপ আচরণকে AbuseIPDB-তে রিপোর্ট করার অনুমতি দেবেন? ডিফল্ট = False।"
+config_abuseipdb_report_back: "CIDRAM কে আপনার API কী ব্যবহার করে সনাক্ত করা খারাপ আচরণকে AbuseIPDB-তে রিপোর্ট করার অনুমতি দেবেন?"
 config_bgpview: "BGPView মডিউলের জন্য কনফিগারেশন (CIDRAM-এর জন্য একটি ASN এবং কান্ট্রি কোড লুকআপ সুবিধা প্রদান করে)।"
 config_bgpview_blocked_asns: &ConfigBlockedASNs "মডিউলের সাথে মিলে গেলে ব্লক করা ASN-এর একটি তালিকা।"
 config_bgpview_blocked_ccs: &ConfigBlockedCCs "মডিউলের সাথে মিলে গেলে ব্লক করা দেশগুলির একটি তালিকা৷ (তাদের {{Links.ISO.3166}} 2-সংখ্যার দেশের কোড দ্বারা চিহ্নিত করা হয়)।"

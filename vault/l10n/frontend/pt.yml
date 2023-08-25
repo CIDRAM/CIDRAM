@@ -106,7 +106,7 @@ config_abuseipdb_max_age_in_days: "A idade máxima em dias para a qual os relat�
 config_abuseipdb_max_cs_for_captcha: "A pontuação máxima de confiança permitida para que os CAPTCHAs sejam veiculados (deve ser um número entre 0 e 100). Padrão = 10."
 config_abuseipdb_minimum_confidence_score: "A pontuação mínima de confiança necessária para que o CIDRAM bloqueie um endereço IP (deve ser um número entre 0 e 100). Padrão = 50."
 config_abuseipdb_minimum_total_reports: "O número mínimo de relatórios totais necessários para que o CIDRAM bloqueie um endereço IP. Padrão = 1."
-config_abuseipdb_report_back: "Permitir que o CIDRAM relate o mau comportamento detectado de volta ao AbuseIPDB usando sua chave de API? Padrão = False."
+config_abuseipdb_report_back: "Permitir que o CIDRAM relate o mau comportamento detectado de volta ao AbuseIPDB usando sua chave de API?"
 config_bgpview: "Configuração para o módulo BGPView (fornece um recurso de pesquisa de código de país e ASN para CIDRAM)."
 config_bgpview_blocked_asns: &ConfigBlockedASNs "Uma lista de ASNs a serem bloqueados quando correspondidos pelo módulo."
 config_bgpview_blocked_ccs: &ConfigBlockedCCs "Uma lista de países (identificados por seus códigos de país de 2 dígitos {{Links.ISO.3166}}) a serem bloqueados quando correspondidos pelo módulo."

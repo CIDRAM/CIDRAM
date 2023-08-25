@@ -106,7 +106,7 @@ config_abuseipdb_max_age_in_days: "الحد الأقصى للعمر بالأيا
 config_abuseipdb_max_cs_for_captcha: "الحد الأقصى لدرجة الثقة المسموح به للحصول على اختبار CAPTCHA (يجب أن يكون رقمًا بين 0 و 100). افتراضي = 10."
 config_abuseipdb_minimum_confidence_score: "الحد الأدنى لدرجة الثقة المطلوبة لكي يحظر CIDRAM عنوان IP (يجب أن يكون رقمًا بين 0 و 100). افتراضي = 50."
 config_abuseipdb_minimum_total_reports: "الحد الأدنى لعدد التقارير الإجمالية المطلوبة من أجل CIDRAM لحظر عنوان IP. افتراضي = 1."
-config_abuseipdb_report_back: "هل تسمح لـ CIDRAM بالإبلاغ عن السلوك السيئ الذي تم اكتشافه إلى AbuseIPDB باستخدام مفتاح API الخاص بك؟ افتراضي = False."
+config_abuseipdb_report_back: "هل تسمح لـ CIDRAM بالإبلاغ عن السلوك السيئ الذي تم اكتشافه إلى AbuseIPDB باستخدام مفتاح API الخاص بك؟"
 config_bgpview: "التكوين لوحدة BGPView (يوفر مرفق بحث ASN ورمز البلد لـ CIDRAM)."
 config_bgpview_blocked_asns: &ConfigBlockedASNs "قائمة ASNs التي سيتم حظرها عند مطابقتها مع وحدة."
 config_bgpview_blocked_ccs: &ConfigBlockedCCs "قائمة البلدان (التي تم تحديدها من خلال رموز البلدان المكونة من رقمين {{Links.ISO.3166}}) التي سيتم حظرها عند مطابقتها مع وحدة."

@@ -106,7 +106,7 @@ config_abuseipdb_max_age_in_days: "Maksimālais vecums dienās, kad pārskati j�
 config_abuseipdb_max_cs_for_captcha: "Maksimālais uzticamības rādītājs, kas atļauts, lai saņemtu CAPTCHA (jābūt skaitlim no 0 līdz 100). Noklusējuma = 10."
 config_abuseipdb_minimum_confidence_score: "Minimālais ticamības rādītājs, kas nepieciešams, lai CIDRAM bloķētu IP adresi (jābūt skaitlim no 0 līdz 100). Noklusējuma = 50."
 config_abuseipdb_minimum_total_reports: "Minimālais kopējais pārskatu skaits, kas nepieciešams, lai CIDRAM bloķētu IP adresi. Noklusējuma = 1."
-config_abuseipdb_report_back: "Vai atļaut CIDRAM ziņot par konstatēto sliktu darbību atpakaļ AbuseIPDB, izmantojot jūsu API atslēgu? Noklusējuma = False."
+config_abuseipdb_report_back: "Vai atļaut CIDRAM ziņot par konstatēto sliktu darbību atpakaļ AbuseIPDB, izmantojot jūsu API atslēgu?"
 config_bgpview: "BGPView moduļa konfigurācija (nodrošina ASN un valsts koda uzmeklēšanas iespēju CIDRAM)."
 config_bgpview_blocked_asns: &ConfigBlockedASNs "To ASN saraksts, kuras jābloķē, ja tos saskaņo modulis."
 config_bgpview_blocked_ccs: &ConfigBlockedCCs "To valstu saraksts (identificē ar to {{Links.ISO.3166}} 2-ciparu valsts kodiem), kuras jābloķē, ja tos saskaņo modulis."

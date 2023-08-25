@@ -106,7 +106,7 @@ config_abuseipdb_max_age_in_days: "Максимальний вік у днях, 
 config_abuseipdb_max_cs_for_captcha: "Максимальний оцінка впевненості, дозволений для надання CAPTCHA (має бути числом від 0 до 100). Стандарт = 10."
 config_abuseipdb_minimum_confidence_score: "Мінімальна оцінка впевненості, необхідна для того, щоб CIDRAM заблокувала IP-адресу (має бути числом від 0 до 100). Стандарт = 50."
 config_abuseipdb_minimum_total_reports: "Мінімальна загальна кількість звітів, необхідних для того, щоб CIDRAM заблокувала IP-адресу. Стандарт = 1."
-config_abuseipdb_report_back: "Дозволити CIDRAM повідомляти про виявлену погану поведінку назад до AbuseIPDB за допомогою вашого ключа API? Стандарт = False."
+config_abuseipdb_report_back: "Дозволити CIDRAM повідомляти про виявлену погану поведінку назад до AbuseIPDB за допомогою вашого ключа API?"
 config_bgpview: "Конфігурація для модуля BGPView (забезпечує ASN і засіб пошуку коду країни для CIDRAM)."
 config_bgpview_blocked_asns: &ConfigBlockedASNs "Список ASN, які будуть заблоковані за відповідності модулю."
 config_bgpview_blocked_ccs: &ConfigBlockedCCs "Список країн (ідентифікуються 2-значним кодом країни {{Links.ISO.3166}}), які будуть заблоковані, якщо їх знайде модуль."

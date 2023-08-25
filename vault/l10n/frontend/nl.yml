@@ -106,7 +106,7 @@ config_abuseipdb_max_age_in_days: "De maximale leeftijd in dagen waarvoor rappor
 config_abuseipdb_max_cs_for_captcha: "De maximale betrouwbaarheidsscore die is toegestaan voor een CAPTCHA (moet een getal zijn tussen 0 en 100). Standaard = 10."
 config_abuseipdb_minimum_confidence_score: "De minimale betrouwbaarheidsscore die vereist is om CIDRAM een IP-adres te blokkeren (moet een getal zijn tussen 0 en 100). Standaard = 50."
 config_abuseipdb_minimum_total_reports: "Het minimale totale aantal rapporten dat nodig is om CIDRAM een IP-adres te blokkeren. Standaard = 1."
-config_abuseipdb_report_back: "Sta CIDRAM toe om gedetecteerd slecht gedrag te melden terug aan AbuseIPDB met behulp van uw API-sleutel? Standaard = False."
+config_abuseipdb_report_back: "Sta CIDRAM toe om gedetecteerd slecht gedrag te melden terug aan AbuseIPDB met behulp van uw API-sleutel?"
 config_bgpview: "Configuratie voor de BGPView-module (biedt een zoekfunctie voor ASN en landcodes voor CIDRAM)."
 config_bgpview_blocked_asns: &ConfigBlockedASNs "Een lijst met ASN's die moeten worden geblokkeerd wanneer ze worden gekoppeld mit de module."
 config_bgpview_blocked_ccs: &ConfigBlockedCCs "Een lijst met landen (geïdentificeerd door hun {{Links.ISO.3166}} 2-cijferige landcodes) die moeten worden geblokkeerd wanneer ze worden gekoppeld mit de module."

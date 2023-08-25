@@ -106,7 +106,7 @@ config_abuseipdb_max_age_in_days: "ਦਿਨਾਂ ਵਿੱਚ ਵੱਧ ਤੋ
 config_abuseipdb_max_cs_for_captcha: "ਕੈਪਟਚਾ ਪਰੋਸਣ ਲਈ ਅਧਿਕਤਮ ਭਰੋਸੇ ਦਾ ਸਕੋਰ (0 ਅਤੇ 100 ਵਿਚਕਾਰ ਕੋਈ ਸੰਖਿਆ ਹੋਣੀ ਚਾਹੀਦੀ ਹੈ). ਡਿਫਾਲਟ = 10."
 config_abuseipdb_minimum_confidence_score: "CIDRAM ਦੁਆਰਾ ਇੱਕ IP ਪਤੇ ਨੂੰ ਬਲੌਕ ਕਰਨ ਲਈ ਘੱਟੋ-ਘੱਟ ਭਰੋਸੇ ਦਾ ਸਕੋਰ ਲੋੜੀਂਦਾ ਹੈ (0 ਅਤੇ 100 ਵਿਚਕਾਰ ਕੋਈ ਸੰਖਿਆ ਹੋਣੀ ਚਾਹੀਦੀ ਹੈ). ਡਿਫਾਲਟ = 50."
 config_abuseipdb_minimum_total_reports: "CIDRAM ਦੁਆਰਾ ਇੱਕ IP ਪਤੇ ਨੂੰ ਬਲੌਕ ਕਰਨ ਲਈ ਲੋੜੀਂਦੀਆਂ ਕੁੱਲ ਰਿਪੋਰਟਾਂ ਦੀ ਘੱਟੋ-ਘੱਟ ਸੰਖਿਆ। ਡਿਫਾਲਟ = 1."
-config_abuseipdb_report_back: "ਕੀ CIDRAM ਨੂੰ ਤੁਹਾਡੀ API ਕੁੰਜੀ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਖੋਜੇ ਗਏ ਮਾੜੇ ਵਿਵਹਾਰ ਦੀ AbuseIPDB ਨੂੰ ਰਿਪੋਰਟ ਕਰਨ ਦੀ ਇਜਾਜ਼ਤ ਦੇਣੀ ਹੈ? ਡਿਫਾਲਟ = False."
+config_abuseipdb_report_back: "ਕੀ CIDRAM ਨੂੰ ਤੁਹਾਡੀ API ਕੁੰਜੀ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਖੋਜੇ ਗਏ ਮਾੜੇ ਵਿਵਹਾਰ ਦੀ AbuseIPDB ਨੂੰ ਰਿਪੋਰਟ ਕਰਨ ਦੀ ਇਜਾਜ਼ਤ ਦੇਣੀ ਹੈ?"
 config_bgpview: "BGPView ਮੋਡੀਊਲ ਲਈ ਕੌਂਫਿਗਰੇਸ਼ਨ (CIDRAM ਲਈ ਇੱਕ ASN ਅਤੇ ਦੇਸ਼ ਕੋਡ ਖੋਜ ਸਹੂਲਤ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ)।"
 config_bgpview_blocked_asns: &ConfigBlockedASNs "ਮੋਡੀਊਲ ਦੁਆਰਾ ਮੇਲ ਕੀਤੇ ਜਾਣ 'ਤੇ ਬਲੌਕ ਕੀਤੇ ਜਾਣ ਵਾਲੇ ASN ਦੀ ਸੂਚੀ।"
 config_bgpview_blocked_ccs: &ConfigBlockedCCs "ਮੌਡਿਊਲ ਦੁਆਰਾ ਮੇਲ ਖਾਂਦਾ ਹੋਣ 'ਤੇ ਬਲੌਕ ਕੀਤੇ ਜਾਣ ਵਾਲੇ ਦੇਸ਼ਾਂ ਦੀ ਸੂਚੀ (ਉਹਨਾਂ ਦੇ {{Links.ISO.3166}} 2-ਅੰਕ ਵਾਲੇ ਦੇਸ਼ ਕੋਡ ਦੁਆਰਾ ਪਛਾਣਿਆ ਜਾਂਦਾ ਹੈ)।"

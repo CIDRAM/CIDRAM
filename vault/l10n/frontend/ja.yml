@@ -106,7 +106,7 @@ config_abuseipdb_max_age_in_days: "ルックアップを実行するときに考
 config_abuseipdb_max_cs_for_captcha: "キャプチャを提供できるに許可された最大の信頼スコア（０から１００までの数値である必要があります）。​Default/デフォルルト = 10。"
 config_abuseipdb_minimum_confidence_score: "CIDRAMがＩＰアドレスをブロックするために必要な最小信頼スコア（０から１００までの数値である必要があります）。​Default/デフォルルト = 50。"
 config_abuseipdb_minimum_total_reports: "CIDRAMがＩＰアドレスをブロックするために必要な合計レポートの最小数。​Default/デフォルルト = 1。"
-config_abuseipdb_report_back: "CIDRAMがＡＰＩキーを使用して、検出された不正な動作をAbuseIPDBに報告できるようにしますか？​Default/デフォルルト = False。"
+config_abuseipdb_report_back: "CIDRAMがＡＰＩキーを使用して、検出された不正な動作をAbuseIPDBに報告できるようにしますか？"
 config_bgpview: "BGPViewモジュールの設定（CIDRAMにASNおよび国コード検索機能を提供します）。"
 config_bgpview_blocked_asns: &ConfigBlockedASNs "モジュールによってブロックされるＡＳＮのリスト。"
 config_bgpview_blocked_ccs: &ConfigBlockedCCs "モジュールによってブロックされる国（{{Links.ISO.3166}}二桁の国コードで識別）のリスト。"

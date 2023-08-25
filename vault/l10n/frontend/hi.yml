@@ -106,7 +106,7 @@ config_abuseipdb_max_age_in_days: "लुकअप करते समय रि
 config_abuseipdb_max_cs_for_captcha: "कैप्चा परोसने के लिए अधिकतम विश्वास स्कोर की अनुमति है (0 और 100 के बीच की कोई संख्या होनी चाहिए)। डिफ़ॉल्ट = 10।"
 config_abuseipdb_minimum_confidence_score: "CIDRAM के लिए IP पते को अवरुद्ध करने के लिए आवश्यक न्यूनतम आत्मविश्वास स्कोर (0 और 100 के बीच की कोई संख्या होनी चाहिए)। डिफ़ॉल्ट = 50।"
 config_abuseipdb_minimum_total_reports: "CIDRAM के लिए IP पते को ब्लॉक करने के लिए आवश्यक कुल रिपोर्ट की न्यूनतम संख्या। डिफ़ॉल्ट = 1।"
-config_abuseipdb_report_back: "CIDRAM को आपकी API कुंजी का उपयोग करके गलत व्यवहार का पता लगाने के लिए वापस AbuseIPDB को रिपोर्ट करने की अनुमति दें? डिफ़ॉल्ट = False।"
+config_abuseipdb_report_back: "CIDRAM को आपकी API कुंजी का उपयोग करके गलत व्यवहार का पता लगाने के लिए वापस AbuseIPDB को रिपोर्ट करने की अनुमति दें?"
 config_bgpview: "BGPView मॉड्यूल के लिए कॉन्फ़िगरेशन (CIDRAM के लिए ASN और देश कोड देखने की सुविधा प्रदान करता है)।"
 config_bgpview_blocked_asns: &ConfigBlockedASNs "मॉड्यूल द्वारा मिलान किए जाने पर अवरुद्ध किए जाने वाले ASN की सूची।"
 config_bgpview_blocked_ccs: &ConfigBlockedCCs "मॉड्यूल द्वारा मिलान किए जाने पर अवरोधित किए जाने वाले देशों की सूची (उनके {{Links.ISO.3166}} 2-अंकीय देश कोड द्वारा पहचाना जाता है)।"

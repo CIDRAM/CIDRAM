@@ -106,7 +106,7 @@ config_abuseipdb_max_age_in_days: "执行查找时将考虑报告的最长天数
 config_abuseipdb_max_cs_for_captcha: "为了提供CAPTCHA的目的最大置信度分数（必须是0到100之间的数字）。标准=10。"
 config_abuseipdb_minimum_confidence_score: "为了让CIDRAM阻止IP地址所需的最低置信度分数（必须是0到100之间的数字）。标准=50。"
 config_abuseipdb_minimum_total_reports: "为了让CIDRAM阻止IP地址所需的最小总报告数。标准=1。"
-config_abuseipdb_report_back: "允许CIDRAM使用您的API密钥将检测到的不良行为报告回AbuseIPDB马？标准=False。"
+config_abuseipdb_report_back: "允许CIDRAM使用您的API密钥将检测到的不良行为报告回AbuseIPDB马？"
 config_bgpview: "BGPView模块的配置（为CIDRAM提供ASN和国家代码查找工具）。"
 config_bgpview_blocked_asns: &ConfigBlockedASNs "被模块匹配时要阻止的ASN列表。"
 config_bgpview_blocked_ccs: &ConfigBlockedCCs "由模块匹配时要阻止的国家列表（由其{{Links.ISO.3166}}两个字母的国家代码标识）。"

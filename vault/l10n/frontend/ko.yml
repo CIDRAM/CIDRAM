@@ -106,7 +106,7 @@ config_abuseipdb_max_age_in_days: "조회를 수행할 때 보고서가 고려�
 config_abuseipdb_max_cs_for_captcha: "CAPTCHA 제공에 허용되는 최대 신뢰도 점수입니다 (0에서 100 사이의 숫자여야 합니다). Default (기본 설정) = 10."
 config_abuseipdb_minimum_confidence_score: "CIDRAM이 IP 주소를 차단하는 데 필요한 최소 신뢰도 점수 (0에서 100 사이의 숫자여야 합니다). Default (기본 설정) = 50."
 config_abuseipdb_minimum_total_reports: "CIDRAM이 IP 주소를 차단하는 데 필요한 최소 총보고서 수입니다. Default (기본 설정) = 1."
-config_abuseipdb_report_back: "CIDRAM이 API 키를 사용하여 감지된 나쁜 동작을 AbuseIPDB에 다시 보고하도록 허용하시겠습니까? Default (기본 설정) = False."
+config_abuseipdb_report_back: "CIDRAM이 API 키를 사용하여 감지된 나쁜 동작을 AbuseIPDB에 다시 보고하도록 허용하시겠습니까?"
 config_bgpview: "BGPView 모듈 구성 (CIDRAM에 대한 ASN 및 국가 코드 조회 기능을 제공합니다)."
 config_bgpview_blocked_asns: &ConfigBlockedASNs "모듈에서 차단할 ASN 목록입니다."
 config_bgpview_blocked_ccs: &ConfigBlockedCCs "모듈에서 차단할 국가 목록 ({{Links.ISO.3166}} 2자리 국가 코드로 식별) 목록입니다."

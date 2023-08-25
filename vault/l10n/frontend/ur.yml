@@ -106,7 +106,7 @@ config_abuseipdb_max_age_in_days: "تلاش کرتے وقت رپورٹس کو م
 config_abuseipdb_max_cs_for_captcha: "زیادہ سے زیادہ اعتماد کا سکور جو کیپچا کو پیش کرنے کی اجازت ہے (0 اور 100 کے درمیان نمبر ہونا چاہیے). پہلے سے طے شدہ = 10."
 config_abuseipdb_minimum_confidence_score: "IP ایڈریس کو بلاک کرنے کے لیے CIDRAM کے لیے کم از کم اعتماد کا اسکور درکار ہے (0 اور 100 کے درمیان نمبر ہونا چاہیے). پہلے سے طے شدہ = 50."
 config_abuseipdb_minimum_total_reports: "CIDRAM کے IP ایڈریس کو بلاک کرنے کے لیے مطلوبہ کل رپورٹس کی کم از کم تعداد. پہلے سے طے شدہ = 1."
-config_abuseipdb_report_back: "CIDRAM کو آپ کی API کلید کا استعمال کرتے ہوئے پتہ چلنے والے خراب رویے کی واپس AbuseIPDB کو رپورٹ کرنے کی اجازت دیں؟ پہلے سے طے شدہ = False."
+config_abuseipdb_report_back: "CIDRAM کو آپ کی API کلید کا استعمال کرتے ہوئے پتہ چلنے والے خراب رویے کی واپس AbuseIPDB کو رپورٹ کرنے کی اجازت دیں؟"
 config_bgpview: "BGPView ماڈیول کے لیے کنفیگریشن (CIDRAM کے لیے ASN اور کنٹری کوڈ تلاش کرنے کی سہولت فراہم کرتا ہے)."
 config_bgpview_blocked_asns: &ConfigBlockedASNs "ماڈیول کے ذریعے بلاک کیے جانے والے ASNیں کی فہرست."
 config_bgpview_blocked_ccs: &ConfigBlockedCCs "ماڈیول کے ذریعے بلاک کیے جانے والے ممالک کی فہرست (ان کے {{Links.ISO.3166}} دو حرفی کنٹری کوڈز سے شناخت کی گئی ہے)."

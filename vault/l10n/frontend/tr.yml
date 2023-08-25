@@ -106,7 +106,7 @@ config_abuseipdb_max_age_in_days: "Aramalar yapılırken raporların dikkate al�
 config_abuseipdb_max_cs_for_captcha: "CAPTCHA'ların sunulmasına izin verilen maksimum güven puanı (0 ile 100 arasında bir sayı olmalıdır). Varsayılan = 10."
 config_abuseipdb_minimum_confidence_score: "CIDRAM'ın bir IP adresini engellemesi için gereken minimum güven puanı (0 ile 100 arasında bir sayı olmalıdır). Varsayılan = 50."
 config_abuseipdb_minimum_total_reports: "CIDRAM'ın bir IP adresini engellemesi için gereken minimum toplam rapor sayısı. Varsayılan = 1."
-config_abuseipdb_report_back: "CIDRAM'ın API anahtarınızı kullanarak algılanan kötü davranışı AbuseIPDB'ye geri bildirmesine izin verilsin mi? Varsayılan = False."
+config_abuseipdb_report_back: "CIDRAM'ın API anahtarınızı kullanarak algılanan kötü davranışı AbuseIPDB'ye geri bildirmesine izin verilsin mi?"
 config_bgpview: "BGPView modülü için yapılandırma (CIDRAM için bir ASN ve ülke kodu arama olanağı sağlar)."
 config_bgpview_blocked_asns: &ConfigBlockedASNs "Modülü tarafından eşleştirildiğinde engellenecek ASN'lerin listesi."
 config_bgpview_blocked_ccs: &ConfigBlockedCCs "Modülü tarafından eşleştirildiğinde engellenecek ülkelerin listesi ({{Links.ISO.3166}} 2-haneli ülke kodlarıyla tanımlanır)."

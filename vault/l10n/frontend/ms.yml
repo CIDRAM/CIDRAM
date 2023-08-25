@@ -106,7 +106,7 @@ config_abuseipdb_max_age_in_days: "Umur maksimum dalam hari yang laporan akan di
 config_abuseipdb_max_cs_for_captcha: "Skor keyakinan maksimum yang dibenarkan untuk CAPTCHA dihidangkan (mestilah nombor antara 0 dan 100). Lalai = 10."
 config_abuseipdb_minimum_confidence_score: "Skor keyakinan minimum diperlukan untuk CIDRAM menyekat alamat IP (mestilah nombor antara 0 dan 100). Lalai = 50."
 config_abuseipdb_minimum_total_reports: "Jumlah kuantiti minimum laporan yang diperlukan untuk CIDRAM menyekat alamat IP. Lalai = 1."
-config_abuseipdb_report_back: "Benarkan CIDRAM melaporkan tingkah laku buruk yang dikesan kembali kepada AbuseIPDB menggunakan kunci API anda? Lalai = False."
+config_abuseipdb_report_back: "Benarkan CIDRAM melaporkan tingkah laku buruk yang dikesan kembali kepada AbuseIPDB menggunakan kunci API anda?"
 config_bgpview: "Konfigurasi untuk modul BGPView (menyediakan kemudahan carian ASN dan kod negara untuk CIDRAM)."
 config_bgpview_blocked_asns: &ConfigBlockedASNs "Senarai ASN yang akan disekat apabila dipadankan oleh modul."
 config_bgpview_blocked_ccs: &ConfigBlockedCCs "Senarai negara (dikenal oleh kod negara 2 digit {{Links.ISO.3166}} mereka) yang akan disekat apabila dipadankan oleh modul."

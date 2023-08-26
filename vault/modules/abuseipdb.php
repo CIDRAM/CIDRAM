@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: AbuseIPDB module (last modified: 2023.08.25).
+ * This file: AbuseIPDB module (last modified: 2023.08.26).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -238,11 +238,11 @@ if ($this->Configuration['abuseipdb']['report_back'] && $this->Configuration['ab
             if (!isset($this->CIDRAM['AbuseIPDB-Recently Reported-' . $Entry[1]])) {
                 $this->CIDRAM['AbuseIPDB-Recently Reported-' . $Entry[1]] = $this->Cache->getEntry('AbuseIPDB-Recently Reported-' . $Entry[1]);
             }
-            if ($Ago < 900 || $this->CIDRAM['AbuseIPDB-Recently Reported-' . $Entry[1]] !== false) {
+            if ($Ago < 901 || $this->CIDRAM['AbuseIPDB-Recently Reported-' . $Entry[1]] !== false) {
                 $Keep .= $Line . '||';
                 continue;
             }
-            if ($Ago > 604800) {
+            if ($Ago > 259200) {
                 continue;
             }
             $Count++;
@@ -263,7 +263,17 @@ if ($this->Configuration['abuseipdb']['report_back'] && $this->Configuration['ab
             return false;
         }
         $OK = false;
-        if ($Count > 1 && class_exists('\CURLStringFile')) {
+        $TryBulk = false;
+        if ($Count > 4 && class_exists('\CURLStringFile')) {
+            if (!isset($this->CIDRAM['AbuseIPDB-Daily Bulk Quota'])) {
+                $this->CIDRAM['AbuseIPDB-Daily Bulk Quota'] = $this->Cache->getEntry('AbuseIPDB-Daily Bulk Quota');
+            }
+            if ($this->CIDRAM['AbuseIPDB-Daily Bulk Quota'] < 3) {
+                $TryBulk = true;
+            }
+        }
+        if ($TryBulk) {
+            $this->Cache->incEntry('AbuseIPDB-Daily Bulk Quota', 1, 86400);
             $Bulk = "IP,Categories,ReportDate,Comment\n";
             foreach ($Try as $Entry) {
                 $Bulk .= $Entry[1] . ',"' . $Entry[2] . '",' . $this->timeFormat($Entry[0], '{yyyy}-{mm}-{dd}T{hh}:{ii}:{ss}{t:z}') . ',"' . $Entry[3] . "\"\n";

@@ -35,8 +35,7 @@ a:hover,a:active,a:focus{color:#866}
 .ci,.co,.gen,.center{margin:auto}
 .ci,.co,.ng1,.ng2{width:calc(100% - 32px)}
 .idx{width:calc(100% - 10px)}
-.ci{background-color:rgba(192,240,160,.6);border-style:solid;border-width:1px;border-color:#604848;text-align:{FE_Align};border-top-{FE_Align_Reverse}-radius:24px}
-.ci{padding:12px}
+.ci{background-color:rgba(192,240,160,.6);border-style:solid;border-width:1px;border-color:#604848;text-align:{FE_Align};border-top-{FE_Align_Reverse}-radius:24px;padding:12px}
 .co,body,.center{text-align:center}
 .co,body{padding:0}
 .dt,.s,.tip,.txtBl,.txtGn,.txtOe,.txtRd{display:inline}
@@ -118,7 +117,6 @@ a:hover>.navicon,a:active>.navicon,a:focus>.navicon{filter:invert(40%) sepia(6%)
 select+input[type=submit],select+input[type=button]{height:20px;margin-{FE_Align}:-3px;border-bottom-{FE_Align}-radius:0;border-top-{FE_Align}-radius:0;padding-{FE_Align}:3px}
 select,input[type=submit],input[type=reset],input[type=button],input[type=text],input[type=password],input[type=number],input[type=date],input[type=time],button{box-sizing:border-box;height:20px;padding-top:0;padding-bottom:0}
 select[class=auto]+select[class=auto]{margin-{FE_Align}:-3px;margin-{FE_Align_Reverse}:0}
-select+input[type=text][class=f400]{margin-{FE_Align}:-1px;margin-{FE_Align_Reverse}:0}
 #pgrad{width:16px;height:16px;display:inline-block;border-radius:16px;filter:blur(2px)}
 td code~input,td code~select{vertical-align:middle}
 .trEase{transition:all .5s ease-out}
@@ -193,3 +191,5 @@ input[type=button].reset:hover,input[type=button].reset:active{color:#b77}
 input[type=button],input[type=checkbox],input[type=checkbox]+label,input[type=radio],input[type=radio]+label,input[type=reset],input[type=submit],span>span[onclick],li>span[onclick]{cursor:pointer}
 input[disabled],input[disabled]+label{cursor:not-allowed}
 .toolTip{cursor:help}
+.flexrow{display:flex}
+.flexin{margin-{FE_Align}:-1px;margin-{FE_Align_Reverse}:1px;width:auto;flex-grow:1}

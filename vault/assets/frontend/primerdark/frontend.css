@@ -24,8 +24,7 @@ a:hover{color:#fc0;text-decoration:underline}
 .ci,.co,.gen,.center{margin:auto}
 .ci,.co,.ng1,.ng2,.ci>.bNav:first-child{width:calc(100% - 32px)}
 .idx{width:calc(100% - 10px)}
-.ci{padding:12px}
-.ci{text-align:{FE_Align}}
+.ci{padding:12px;text-align:{FE_Align}}
 .co,body,.center{text-align:center}
 .co,body,input,select{padding:0}
 .dt,.s,.tip,.txtBl,.txtGn,.txtOe,.txtRd{display:inline}
@@ -200,3 +199,5 @@ input[type=button].reset:hover,input[type=button].reset:active{color:#eaa}
 input[type=button],input[type=checkbox],input[type=checkbox]+label,input[type=radio],input[type=radio]+label,input[type=reset],input[type=submit],span>span[onclick],li>span[onclick]{cursor:pointer}
 input[disabled],input[disabled]+label{cursor:not-allowed}
 .toolTip{cursor:help}
+.flexrow{display:flex}
+.flexin{margin-{FE_Align}:-1px;margin-{FE_Align_Reverse}:1px;width:auto;flex-grow:1}

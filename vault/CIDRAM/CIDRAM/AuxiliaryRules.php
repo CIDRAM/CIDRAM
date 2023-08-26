@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used for auxiliary rules (last modified: 2023.08.20).
+ * This file: Methods used for auxiliary rules (last modified: 2023.08.26).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -211,11 +211,10 @@ trait AuxiliaryRules
                 /** Populate conditions. */
                 if ($ConditionsFrom && is_array($Data[$ConditionsFrom])) {
                     $Iteration = 0;
-                    $ConditionFormTemplate =
-                        "\n<div>" .
-                        '<select name="conSourceType[%1$s][%2$s]" class="auto">%3$s</select>' .
+                    $ConditionFormTemplate = "\n" .
+                        '<div class="flexrow"><select name="conSourceType[%1$s][%2$s]" class="auto">%3$s</select>' .
                         '<select name="conIfOrNot[%1$s][%2$s]" class="auto"><option value="If"%6$s>=</option><option value="Not"%7$s>≠</option></select>' .
-                        '<input type="text" name="conSourceValue[%1$s][%2$s]" placeholder="%4$s" class="f400" value="%5$s" /></div>';
+                        '<input type="text" name="conSourceValue[%1$s][%2$s]" placeholder="%4$s" class="flexin" value="%5$s" /></div>';
                     foreach ([['If matches', ' selected', ''], ['But not if matches', '', ' selected']] as $ModeSet) {
                         if (isset($Data[$ConditionsFrom][$ModeSet[0]]) && is_array($Data[$ConditionsFrom][$ModeSet[0]])) {
                             foreach ($Data[$ConditionsFrom][$ModeSet[0]] as $Key => $Values) {

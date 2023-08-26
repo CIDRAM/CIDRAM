@@ -113,6 +113,7 @@ function addCondition(p) {
   conId = 'condition'+conIter,
   t = document.createElement('div');
   t.setAttribute('id', conId),
+  t.setAttribute('class', 'flexrow'),
   t.setAttribute('style', 'opacity:0;animation:xAux 2s ease 0s 1 normal'),
   document.getElementById(p+'conditions').appendChild(t),
   (t = document.createElement('select')).setAttribute('name', 'conSourceType'+namePart),
@@ -131,7 +132,7 @@ function addCondition(p) {
   document.getElementById(conId).appendChild(t),
   (t = document.createElement('input')).setAttribute('name', 'conSourceValue'+namePart),
   t.setAttribute('placeholder', '{tip_condition_placeholder}'),
-  t.setAttribute('class', 'f400'),
+  t.setAttribute('class', 'flexin'),
   t.setAttribute('type', 'text'),
   document.getElementById(conId).appendChild(t),
   setTimeout(function() {

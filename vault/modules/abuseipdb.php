@@ -215,6 +215,7 @@ if ($this->Configuration['abuseipdb']['report_back'] && $this->Configuration['ab
             $this->CIDRAM['AbuseIPDB-Report Queue'] = $this->Cache->getEntry('AbuseIPDB-Report Queue');
         }
         if ($this->CIDRAM['AbuseIPDB-Report Queue'] === false) {
+            unset($this->CIDRAM['AbuseIPDB-Report Queue']);
             return false;
         }
         $First = true;

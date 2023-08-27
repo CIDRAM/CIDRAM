@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: AbuseIPDB module (last modified: 2023.08.26).
+ * This file: AbuseIPDB module (last modified: 2023.08.27).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -203,7 +203,9 @@ if ($this->Configuration['abuseipdb']['report_back'] && $this->Configuration['ab
             if (!is_string($this->CIDRAM['AbuseIPDB-Report Queue'])) {
                 $this->CIDRAM['AbuseIPDB-Report Queue'] = '';
             }
-            $this->CIDRAM['AbuseIPDB-Report Queue'] .= $this->Now . '|' . $Report['IP'] . '|' . $Categories . '|' . $Report['Comments'] . '||';
+            if (substr_count($this->CIDRAM['AbuseIPDB-Report Queue'], '|' . $Report['IP'] . '|') < 10) {
+                $this->CIDRAM['AbuseIPDB-Report Queue'] .= $this->Now . '|' . $Report['IP'] . '|' . $Categories . '|' . $Report['Comments'] . '||';
+            }
         }
     });
 
@@ -342,7 +344,7 @@ if ($this->Configuration['abuseipdb']['report_back'] && $this->Configuration['ab
         if (!isset($this->CIDRAM['AbuseIPDB-Report Queue'])) {
             return false;
         }
-        $this->Cache->setEntry('AbuseIPDB-Report Queue', $this->CIDRAM['AbuseIPDB-Report Queue'], 604800);
+        $this->Cache->setEntry('AbuseIPDB-Report Queue', $this->CIDRAM['AbuseIPDB-Report Queue'], 259200);
         unset($this->CIDRAM['AbuseIPDB-Report Queue']);
         return true;
     });

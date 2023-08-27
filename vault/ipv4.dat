@@ -1,8 +1,8 @@
 # IPv4 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv4.dat
 
-# Version: 2023.234.0
-# Last modified: 2023.08.23
+# Version: 2023.238.0
+# Last modified: 2023.08.27
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -6992,11 +6992,10 @@ Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: HZ Hosting Ltd
 
 
-# ASNs 4213, 11051, 18672, 32940, 35908, 64262 ("Krypt Technologies").
-# Dedicated server farm, webhosting, and tor endpoints here. Spam and other
-# unwanted traffic detected from here.
-# Stop Forum Spam (SFS) listings: 110 (AS4213), 3 (AS11051), 1,112 (AS35908).
-# Updated: 2022.08.25
+# ASNs 4213, 18672, 32940, 35908 ("Krypt Technologies", "Evocative, Inc").
+# Spam and other unwanted traffic detected from here.
+# Stop Forum Spam (SFS) listings: 10 (AS4213), 1 (AS18672), 95 (AS35908).
+# Updated: 2023.08.27
 
 110.34.128.0/17 Deny Cloud
 Origin: TH
@@ -7007,8 +7006,7 @@ Origin: TH
 66.211.96.0/20 Deny Cloud
 67.198.128.0/17 Deny Cloud
 67.229.0.0/16 Deny Cloud
-69.194.0.0/23 Deny Cloud
-69.194.2.0/24 Deny Cloud
+69.194.0.0/22 Deny Cloud
 72.172.81.0/24 Deny Cloud
 72.172.82.0/23 Deny Cloud
 72.172.84.0/24 Deny Cloud
@@ -7029,12 +7027,13 @@ Origin: TH
 184.164.192.0/19 Deny Cloud
 192.240.148.0/23 Deny Cloud
 206.126.228.0/24 Deny Cloud
+207.181.189.0/24 Deny Cloud
 208.66.58.0/24 Deny Cloud
 209.11.240.0/20 Deny Cloud
 209.151.224.0/19 Deny Cloud
 216.176.192.0/20 Deny Cloud
 Origin: US
-Profile: Dedicated;Tor endpoints here;Webhosting
+Profile: Dedicated;Infrastructure/Transit;Tor endpoints here;Webhosting
 Tag: Krypt Technologies
 
 
@@ -30509,27 +30508,37 @@ Tag: IT-GRAD NL B.V
 # ASNs 4136, 11767, 17018, 20141, 26978, 29748, 40107, 40606, 40913, 46742,
 # 53907, 394968 ("Quality Technology Services, LLC").
 # Caught hitting honeypots. A regular source of brute-force and SSH attacks.
-# Updated: 2022.08.25
+# Updated: 2023.08.27
 
+191.96.90.0/24 Deny Cloud
+Origin: AE
 62.192.185.0/24 Deny Cloud
 62.192.186.0/24 Deny Cloud
 Origin: GB
-103.245.28.0/23 Deny Cloud
-103.245.30.0/24 Deny Cloud
+103.245.28.0/22 Deny Cloud
 Origin: HK
+91.221.233.0/24 Deny Cloud
+Origin: IR
+45.149.103.0/24 Deny Cloud
+Origin: LT
 45.158.166.0/24 Deny Cloud
 64.27.248.0/23 Deny Cloud
 64.57.240.0/20 Deny Cloud
 64.88.160.0/19 Deny Cloud
 65.74.128.0/18 Deny Cloud
-65.82.149.0/24 Deny Cloud
-65.82.150.0/24 Deny Cloud
 66.94.32.0/22 Deny Cloud
 66.94.36.0/23 Deny Cloud
 66.94.38.0/24 Deny Cloud
 66.94.40.0/21 Deny Cloud
 66.117.32.0/19 Deny Cloud
-66.197.0.0/17 Deny Cloud
+66.194.233.0/24 Deny Cloud
+66.197.0.0/18 Deny Cloud
+66.197.64.0/19 Deny Cloud
+66.197.96.0/20 Deny Cloud
+66.197.112.0/24 Deny Cloud
+66.197.115.0/24 Deny Cloud
+66.197.116.0/22 Deny Cloud
+66.197.122.0/23 Deny Cloud
 66.235.224.0/19 Deny Cloud
 67.220.96.0/19 Deny Cloud
 68.70.124.0/23 Deny Cloud
@@ -30575,20 +30584,17 @@ Origin: HK
 174.140.142.0/24 Deny Cloud
 174.140.144.0/20 Deny Cloud
 192.30.249.0/24 Deny Cloud
-192.64.0.0/24 Deny Cloud
-192.69.100.0/24 Deny Cloud
 192.132.58.0/24 Deny Cloud
 192.156.245.0/24 Deny Cloud
 192.156.247.0/24 Deny Cloud
+192.159.83.0/24 Deny Cloud
 192.189.27.0/24 Deny Cloud
-198.27.9.0/24 Deny Cloud
 199.101.138.0/23 Deny Cloud
 199.164.28.0/24 Deny Cloud
 199.167.176.0/22 Deny Cloud
 199.175.44.0/22 Deny Cloud
 199.193.31.0/24 Deny Cloud
-199.204.156.0/23 Deny Cloud
-199.204.159.0/24 Deny Cloud
+199.204.157.0/24 Deny Cloud
 204.128.252.0/24 Deny Cloud
 204.138.190.0/24 Deny Cloud
 204.156.179.0/24 Deny Cloud
@@ -30622,6 +30628,7 @@ Origin: HK
 216.234.0.0/19 Deny Cloud
 Origin: US
 102.165.49.0/24 Deny Cloud
+154.16.15.0/24 Deny Cloud
 Origin: ZA
 Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: QTS LLC
@@ -34578,14 +34585,15 @@ Tag: Leonet srl
 
 # ASNs 398324, 398705, 398722 ("Censys, Inc").
 # Caught port scanning and probing for vulnerabilities.
-# Stop Forum Spam (SFS) listings: 3 (AS398324).
-# Updated: 2021.11.01 / Checked: 2022.08.25
+# Stop Forum Spam (SFS) listings: 50 (AS398324), 39 (AS398722).
+# Updated: 2023.08.27
 
-162.142.125.0/24 Deny Attacks
-167.94.138.0/24 Deny Attacks
-167.94.145.0/24 Deny Attacks
-167.94.146.0/24 Deny Attacks
-167.248.133.0/24 Deny Attacks
+162.142.125.0/24 Deny Cloud
+167.94.138.0/24 Deny Cloud
+167.94.145.0/24 Deny Cloud
+167.94.146.0/24 Deny Cloud
+167.248.133.0/24 Deny Cloud
+199.45.154.0/23 Deny Cloud
 Origin: US
 Profile: Commercial
 Tag: Censys, Inc
@@ -37324,8 +37332,8 @@ Tag: Corporacion Laceibanetsociety
 
 # ASN 197922 ("Techcrea Solutions SAS").
 # French webhosting company and a source of spam.
-# Stop Forum Spam (SFS) listings: 28.
-# Updated: 2022.08.28
+# Stop Forum Spam (SFS) listings: 5.
+# Updated: 2023.08.24
 
 45.81.84.0/22 Deny Cloud
 86.104.252.0/23 Deny Cloud
@@ -37348,6 +37356,8 @@ Tag: Corporacion Laceibanetsociety
 188.213.140.0/22 Deny Cloud
 188.214.25.0/24 Deny Cloud
 Origin: FR
+44.31.138.0/23 Deny Cloud
+Origin: US
 Profile: Webhosting
 Tag: Techcrea Solutions SAS
 
@@ -37381,12 +37391,10 @@ Tag: Cloud Networks SIA
 
 # ASN 202297 ("Skylon Solutions Limited").
 # Dedicated webhosting provider caught hacking.
-# Updated: 2022.08.27
+# Updated: 2023.08.24
 
 109.248.43.0/24 Deny Cloud
 Origin: CZ
-185.165.153.0/24 Deny Cloud
-Origin: NL
 Profile: Dedicated;Webhosting
 Tag: Skylon Solutions Limited
 
@@ -41393,10 +41401,10 @@ Tag: INVITE Systems SRL
 
 # ASN 210228 ("Web Hosted Group Ltd").
 # Brute-force attacks detected from here.
-# Stop Forum Spam (SFS) listings: 15.
-# Updated: 2021.10.20 / Checked: 2022.08.13
+# Stop Forum Spam (SFS) listings: 159.
+# Updated: 2023.08.24
 
-193.56.29.0/24 Deny Cloud
+193.56.28.0/23 Deny Cloud
 Origin: GB
 Profile: Webhosting
 Tag: Web Hosted Group Ltd
@@ -44305,10 +44313,10 @@ Tag: HostIran
 
 # ASN 49157 ("Star Network and Promotion LTD").
 # Webhosting provider. Brute-force attacks detected from here.
-# Stop Forum Spam (SFS) listings: 2.
-# Updated: 2022.08.28
+# Updated: 2023.08.24
 
 83.136.237.0/24 Deny Cloud
+103.95.118.0/23 Deny Cloud
 185.131.176.0/22 Deny Cloud
 185.151.199.0/24 Deny Cloud
 Origin: IL

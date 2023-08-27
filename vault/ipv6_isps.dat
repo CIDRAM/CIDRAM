@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2023.225.0
-# Last modified: 2023.08.14
+# Version: 2023.238.0
+# Last modified: 2023.08.27
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -145,20 +145,6 @@ Tag: Kyivstar
 Origin: UA
 Profile: Domestic ISP;Mobile ISP;Multiplay
 Tag: TRIOLAN
-
-
-# ASNs 7552, 24086, 37620, 38623, 133606, 140659, 262210, 327799, 327885 ("Viettel Corporation").
-# Vietnamese ISP also serving Cameroon, Cambodia, East Timor, Peru, Burundi,
-# and Tanzania. Brute-force and SSH attacks, port scans, hacking, and spam
-# detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 14,076 (AS7552), 2,888 (AS24086),
-# 46 (AS37620), 77 (AS262210), 46 (AS327799), 18 (AS327885).
-# Updated: 2022.08.13
-
-2401:d800:fb58:383::/64 Deny Spam
-Origin: VN
-Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Tor endpoints here
-Tag: Viettel Corporation
 
 
 # ASNs 9498, 9730, 24560, 37140, 45609, 132045 ("Bharti Airtel").
@@ -505,19 +491,15 @@ Tag: Comcast Spam IPs
 # Peering exchange provider in the United States. Spamming, scraping,
 # brute-force and SSH attacks, hack attempts, and other unwanted traffic
 # detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 23,378.
-# Updated: 2022.08.29
+# Stop Forum Spam (SFS) listings: 2,407.
+# Updated: 2023.08.27
 
-2001:579:8d0:e10::/64 Deny Spam
-2600:8800:7004:5e00::/64 Deny Spam
-2600:8801:2b0b:e200::/64 Deny Spam
-2600:8801:db0b:1200::/64 Deny Spam
-2600:8803:5a02:6800::/64 Deny Spam
-2600:8806:4:2100::/64 Deny Spam
-2600:8807:84c6:100::/64 Deny Spam
-2600:8807:bc08:b600::/64 Deny Spam
+2600:8800:b0a:fd00::/64 Deny Spam
+2600:8800:2a0c:f800::/64 Deny Spam
+2600:8802:2400:b0::/64 Deny Spam
+2600:8807:c147:6f00::/64 Deny Spam
 Origin: US
-Profile: Commercial;Domestic ISP;Infrastructure/Transit;Multiplay;Tor endpoints here;University;Webhosting
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Tor endpoints here;University;Webhosting
 Tag: Cox Spam IPs
 
 
@@ -705,20 +687,17 @@ Tag: Telstra Corporation
 # ASN 5607 ("Sky UK Limited").
 # UK domestic ISP / broadband provider. Spam and Mirai detected here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 3,215.
-# Updated: 2022.08.29
+# Stop Forum Spam (SFS) listings: 1,061.
+# Updated: 2023.08.27
 
-2a02:c7c:5ade:2f00::/64 Deny Spam
-2a02:c7c:70c2:5200::/64 Deny Spam
-2a02:c7c:be88:4b00::/64 Deny Spam
-2a02:c7e:651:7b00::/64 Deny Spam
-2a02:c7e:1caa:8200::/64 Deny Spam
-2a02:c7e:4d76:f500::/64 Deny Spam
-2a02:c7e:574b:b100::/64 Deny Spam
-2a02:c7f:1989:7300::/64 Deny Spam
-2a02:c7f:4170:2000::/64 Deny Spam
-2a02:c7f:a099:3b00::/64 Deny Spam
-2a02:c7f:cb2c:ed00::/64 Deny Spam
+2a02:c7c:36e5:b000::/64 Deny Spam
+2a02:c7c:708d:c400::/64 Deny Spam
+2a02:c7c:cb4f:f600::/64 Deny Spam
+2a02:c7e:a13:7a00::/64 Deny Spam
+2a02:c7f:127c:da00::/64 Deny Spam
+2a02:c7f:18e5:4900::/64 Deny Spam
+2a02:c7f:2cd4:7100::/64 Deny Spam
+2a02:c7f:5c35:dd00::/64 Deny Spam
 Origin: GB
 Profile: Domestic ISP
 Tag: Sky UK Limited
@@ -953,11 +932,10 @@ Tag: Orange S.A
 # ASN 5410 ("Bouygues Telecom SA").
 # French domestic ISP and mobile provider. Spam and hack attempts detected from
 # here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 674.
-# Updated: 2022.08.27
+# Stop Forum Spam (SFS) listings: 463.
+# Updated: 2023.08.27
 
-2001:861:39c0:afe0::/64 Deny Spam
-2001:861:5e53:a870::/64 Deny Spam
+2a04:cec0:11ae:ba81::/64 Deny Spam
 Origin: FR
 Profile: Domestic ISP;Mobile ISP
 Tag: Bouygues Telecom SA
@@ -1207,19 +1185,6 @@ Tag: Fastweb SpA
 Origin: BE
 Profile: Domestic ISP;Mobile ISP
 Tag: Proximus NV
-
-
-# ASN 3320 ("Deutsche Telekom AG").
-# German domestic ISP. Caught sniffing for unprotected etc/passwd files. Spam
-# also detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 5,546.
-# Updated: 2022.08.27
-
-2003:c9:672c:b700::/64 Deny Spam
-2003:df:d74a:7500::/64 Deny Spam
-Origin: DE
-Profile: Domestic ISP
-Tag: Deutsche Telekom AG
 
 
 # ASN 701 ("Verizon Business/UUnet").

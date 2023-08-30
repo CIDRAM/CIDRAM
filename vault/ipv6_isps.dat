@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2023.238.0
-# Last modified: 2023.08.27
+# Version: 2023.241.0
+# Last modified: 2023.08.30
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -790,6 +790,19 @@ Tag: T-Mobile USA, Inc
 Origin: UA
 Profile: Domestic ISP;Multiplay
 Tag: LLC Renome-Service
+
+
+# ASN 133480 ("Intergrid Group Pty Ltd").
+# Australian multiplay network. Brute-force and webapp attacks, port scans,
+# hacking, and spam detected from here.
+# Listing just the offending ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 656.
+# Updated: 2023.08.30
+
+2400:fa80:5:4::/64 Deny Spam
+Origin: AU
+Profile: Domestic ISP;Multiplay
+Tag: Intergrid Group Pty Ltd
 
 
 # ASN 577 ("Bell Canada").

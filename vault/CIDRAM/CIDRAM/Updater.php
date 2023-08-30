@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods for updating CIDRAM components (last modified: 2023.05.06).
+ * This file: Methods for updating CIDRAM components (last modified: 2023.08.30).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -407,9 +407,10 @@ trait Updater
      * Updates plugin version cited in the WordPress plugins dashboard, if this
      * copy of CIDRAM is running as a WordPress plugin.
      *
+     * @param string $Versions Stable, minimum required, and tested against versions.
      * @return void
      */
-    private function wpVer(): void
+    private function wpVer(string $Versions = ''): void
     {
         if (
             empty($this->Components['RemoteMeta']['CIDRAM Core']['Version']) ||
@@ -432,6 +433,22 @@ trait Updater
                 fclose($Handle);
             }
         }
+        if (
+            ($ThisData = $this->CIDRAM['Updater-IO']->readFile($this->Vault . '../readme.txt')) === '' ||
+            substr($ThisData, 0, 14) !== '=== CIDRAM ==='
+        ) {
+            return;
+        }
+        $Versions = explode(' ', $Versions, 4);
+        $Labels = ['Requires at least', 'Tested up to', 'Stable tag', 'Requires PHP'];
+        foreach ($Versions as $Version) {
+            if (!preg_match('~^\d+\.\d+(?:\.\d+)?$~', $Version)) {
+                return;
+            }
+            $Label = array_shift($Labels);
+            $ThisData = preg_replace('~([\r\n]' . $Label . ':) [^\r\n]+([\r\n])~', '\1 ' . $Version . '\2', $ThisData, 1);
+        }
+        $this->CIDRAM['Updater-IO']->writeFile($this->Vault . '../readme.txt', $ThisData);
     }
 
     /**

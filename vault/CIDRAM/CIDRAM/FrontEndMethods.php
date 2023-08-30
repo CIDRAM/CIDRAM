@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2023.08.17).
+ * This file: General methods used by the front-end (last modified: 2023.08.28).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1400,7 +1400,7 @@ trait FrontEndMethods
 
             /** Foreach looping. */
             if (preg_match('~^foreach \{(.+?)\} as ([^ ]+?) => ([^ ]+?) (.*)$~i', $Method, $Tokens)) {
-                $Iterable = $this->CIDRAM['Operation']->dataTraverse($this, $Tokens[1], true);
+                $Iterable = $this->CIDRAM['Operation']->dataTraverse($this, $Tokens[1], true, true);
                 if (!is_iterable($Iterable)) {
                     continue;
                 }
@@ -1413,7 +1413,7 @@ trait FrontEndMethods
             }
 
             /** All logic, data traversal, dot notation, etc handled here. */
-            $Method = $this->CIDRAM['Operation']->ifCompare($this, $Method);
+            $Method = $this->CIDRAM['Operation']->ifCompare($this, $Method, true);
 
             if (method_exists($this, $Method)) {
                 $this->{$Method}($BytesRemoved, $BytesAdded);
@@ -1421,7 +1421,7 @@ trait FrontEndMethods
                 $Params = substr($Method, $Pos + 1);
                 $Method = substr($Method, 0, $Pos);
                 if (method_exists($this, $Method)) {
-                    $Params = $this->CIDRAM['Operation']->ifCompare($this, $Params);
+                    $Params = $this->CIDRAM['Operation']->ifCompare($this, $Params, true);
                     $this->{$Method}($Params, $BytesRemoved, $BytesAdded);
                 }
             }

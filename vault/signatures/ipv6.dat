@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2023.238.0
-# Last modified: 2023.08.27
+# Version: 2023.241.0
+# Last modified: 2023.08.30
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -5946,8 +5946,8 @@ Tag: Nagravision SA
 
 
 # ASN 63956 ("Colocation Australia Pty Ltd").
-# Stop Forum Spam (SFS) listings: 943.
-# Updated: 2020.09.01 / Checked: 2022.08.27
+# Stop Forum Spam (SFS) listings: 1,891.
+# Updated: 2020.09.01 / Checked: 2023.08.28
 
 2402:1b80::/32 Deny Cloud
 2402:2f80:4::/48 Deny Cloud
@@ -5955,7 +5955,7 @@ Tag: Nagravision SA
 Origin: AU
 2403:4f00:6000::/36 Deny Cloud
 Origin: NZ
-Profile: Commercial;Dedicated;Infrastructure/Transit;Webhosting
+Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: Colocation Australia
 
 
@@ -6365,15 +6365,14 @@ Tag: Server Plus Ltd
 # ASN 198605 ("AVAST Software s.r.o").
 # Brute-force, SSH, webapp, and WordPress attacks, scraping attempts, and spam
 # detected from here.
-# Stop Forum Spam (SFS) listings: 58,462.
-# Updated: 2021.04.30 / Checked: 2022.11.04
+# Stop Forum Spam (SFS) listings: 25,558.
+# Updated: 2023.08.30
 
 2001:67c:284::/48 Deny Cloud
 2a0b:e181::/40 Deny Cloud
 2a0b:e181:400::/39 Deny Cloud
 2a0b:e181:600::/40 Deny Cloud
 2a0b:e182:100::/40 Deny Cloud
-2a0b:e182:200::/45 Deny Cloud
 Origin: CZ
 Profile: Commercial
 Tag: AVAST Software
@@ -12664,6 +12663,31 @@ Tag: Saveincloud
 Origin: CA
 Profile: Commercial;Infrastructure/Transit
 Tag: Devicom Inc
+
+
+# ASNs 57193, 210079 ("RUWEB-NN LLC", "EuroByte LLC").
+# Brute-force, SSH, and webapp attacks, hacking, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 229 (AS210079).
+# Updated: 2023.08.28
+
+2a03:80c0::/47 Deny Cloud
+2a03:80c0:abba::/48 Deny Cloud
+2a03:c980:db::/48 Deny Cloud
+2a03:c980:e5::/48 Deny Cloud
+2a03:c980:5fb5::/48 Deny Cloud
+2a03:c980:5fb7::/48 Deny Cloud
+2a03:c980:b239::/48 Deny Cloud
+2a03:c980:b916::/48 Deny Cloud
+2a03:c980:b957::/48 Deny Cloud
+2a03:c980:beef::/48 Deny Cloud
+2a03:c980:d990::/48 Deny Cloud
+2a03:c980:dead::/48 Deny Cloud
+2a06:78c0:db::/48 Deny Cloud
+2a09:c140:3::/48 Deny Cloud
+2a09:c140:db::/48 Deny Cloud
+Origin: RU
+Profile: Webhosting
+Tag: EuroByte LLC
 
 
 # ---

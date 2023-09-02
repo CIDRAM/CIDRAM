@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2023.08.30).
+ * This file: Optional security extras module (last modified: 2023.09.02).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -75,6 +75,14 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $this->Reporter->report([15], ['Caught probing for unsecured backup files.'], $this->BlockInfo['IPAddr']);
         } // 2023.08.13 mod 2023.08.21
 
+        /** Probing for unsecured WordPress configuration files. */
+        if ($this->trigger(preg_match(
+            '~(?:^|[/?.]|\._)wp-config\.php(?:\.(?:bak\d*|bkp|conf|dist|dump|inc|new|old|orig|sw.|tar|te?mp|txt|[\d~#_]+|)|[-.]backup)(?:$|[/?])~',
+            $LCNrURI
+        ), 'Probing for unsecured WordPress configuration files not allowed')) {
+            $this->Reporter->report([15, 20, 21], ['Caught probing for unsecured WordPress configuration files.'], $this->BlockInfo['IPAddr']);
+        } // 2023.09.02
+
         /** Probing for webshells/backdoors. */
         if ($this->trigger(preg_match(
             '~(?:^|[/?])(?:' .
@@ -83,7 +91,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             '(?:' .
             '\+theme\+/(?:error|index)|' .
             '\.w(?:ell-known|p-cli)/.*(?:about|install|moon|wp-login)|\.?rxr(?:_[\da-z]+)?|' .
-            '0byte|0x|\d{3,5}[a-z]{3,5}|10+|991176|' .
+            '\d{3,5}[a-z]{3,5}|\d+-?backdoor|0byte|0x|10+|991176|' .
             'admin-heade\d*|adminfuns|ahhygskn|alfa(?:-rex|_data|a?cgiapi|ioxi|new)?\d*|anjas|apismtp|axx|' .
             'bak|bala|' .
             'c(?:9|10)\d+|casper[\da-z]+|(?:cgi-bin|css)/(?:moon|newgolden|radio|uploader|well-known|wp-login)|cjfuns|classsmtps|colors/blue/uploader|' .
@@ -92,17 +100,17 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             'fddqradz|' .
             'gh[0o]st|glab-rare|gzismexv|' .
             'h[4a]x+[0o]r|h6ss|hanna1337|hehehe|htmlawedtest|' .
-            'i\d{3,}[a-z]{2,}|icesword|indoxploit|ir7szrsouep|itsec|' .
+            'i\d{3,}[a-z]{2,}|icesword|indoxploit|ioptimize|ir7szrsouep|itsec|' .
             'lock0?360|lufix(?:-shell)?|' .
             'miin|my1|' .
             'orvx(?:-shell)?|' .
-            'perl\.alfa|php(?:1|_niu_\d+)|poison|priv8|pzaiihfi|' .
+            'perl\.alfa|php(?:1|_niu_\d+)|(?:plugins|themes)/(?:ccx|ioptimization)|poison|priv8|pzaiihfi|' .
             'session91|sh[3e]llx?\d*|shrift|sidwso|silic|skipper(?:shell)?|sonarxleetxd|spammervip|src/util/php/(?:eval(?:-stdin)?|kill)|' .
-            't62|themes/(?:finley/min|universal-news/www)|tinymce/langs/about|tk(?:_dencode_\d+)?|(?:tmp|wp-content)/vuln|topxoh/(?:drsx|wdr)|' .
+            't62|themes/(?:finley/min|pridmag/db|universal-news/www)|tinymce/langs/about|tk(?:_dencode_\d+)?|(?:tmp|wp-content)/vuln|topxoh/(?:drsx|wdr)|' .
             'unisibfu|upfile(?:_\(\d\))?|uploader_by_cloud7_agath|utchiha(?:_uploader)?|' .
             'vzlateam|' .
             'w0rdpr3ssnew|walker-nva|webshell-[a-z\d]+|widgets-nva|widwsisw|wloymzuk|' .
-            'wp-(?:2019|22|(?:admin|content|css(?:/colors)?|includes(?:/ixr|/customize|/pomo)?|js(?:/widgets)?|network)/(?:cong|dropdown|repeater|simple)|conflg|content/plugins/(?:contus-hd-flv-player/uploadvideo|dzs-zoomsounds/savepng)|filemanager|setups|sigunq|p)|' .
+            'wp[-_](?:2019|22|(?:admin|content|css(?:/colors)?|includes(?:/ixr|/customize|/pomo)?|js(?:/widgets)?|network)/(?:cong|dropdown|repeater|simple)|conflg|content/plugins/(?:contus-hd-flv-player/uploadvideo|dzs-zoomsounds/savepng)|filemanager|setups|sigunq|p)|' .
             'ws[ou](?:yanz)?(?:[\d.]*|[\da-z]{4,})|wwdv|' .
             'x{3,}|xiaom|xichang/x|x+l(?:\d+|eet(?:mailer|-shell)?x?)|xm(?:lrpcs|lrpz|rlpc)|xw|' .
             'yanz|' .
@@ -112,7 +120,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $LCNrURI
         ), 'Probing for webshells/backdoors')) {
             $this->Reporter->report([15, 20, 21], ['Caught probing for webshells/backdoors. Host might be compromised.'], $this->BlockInfo['IPAddr']);
-        } // 2023.08.18
+        } // 2023.08.18 mod 2023.09.02
 
         /** Probing for exposed Git data. */
         if ($this->trigger(preg_match('~\.git(?:$|\W)~i', $LCNrURI), 'Probing for exposed git data')) {
@@ -250,7 +258,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         ), 'Query SQLi'); // 2017.03.01 mod 2023.08.30
 
         $this->trigger(preg_match('/cpis_.*i0seclab@intermal\.com/', $QueryNoSpace), 'Hack attempt'); // 2018.02.20
-        $this->trigger(preg_match('/^3[Xx]=3[Xx]/', $this->BlockInfo['Query']), 'Hack attempt'); // 2023.07.13
+        $this->trigger(preg_match('/^(?:3x=3x|of=1&a=1)/i', $this->BlockInfo['Query']), 'Hack attempt'); // 2023.07.13 mod 2023.09.02
 
         /** These signatures can set extended tracking options. */
         if (

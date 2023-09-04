@@ -123,14 +123,19 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         } // 2023.08.18 mod 2023.09.02
 
         /** Probing for exposed Git data. */
-        if ($this->trigger(preg_match('~\.git(?:$|\W)~i', $LCNrURI), 'Probing for exposed git data')) {
+        if ($this->trigger(preg_match('~\.git(?:$|\W)~', $LCNrURI), 'Probing for exposed git data')) {
             $this->Reporter->report([15, 21], ['Caught probing for exposed git data.'], $this->BlockInfo['IPAddr']);
-        } // 2022.06.05
+        } // 2022.06.05 mod 2023.09.04
 
         /** Probing for exposed SSH data. */
-        if ($this->trigger(preg_match('~^\.ssh(?:$|\W)~i', $LCNrURI), 'Probing for exposed SSH data')) {
+        if ($this->trigger(preg_match('~(?:^|[/?])\.ssh(?:$|\W)~', $LCNrURI), 'Probing for exposed SSH data')) {
             $this->Reporter->report([15, 22], ['Caught probing for exposed SSH data.'], $this->BlockInfo['IPAddr']);
-        } // 2022.06.05
+        } // 2022.06.05 mod 2023.09.04
+
+        /** Probing for exposed AWS credentials. */
+        if ($this->trigger(preg_match('~(?:^|[/?])\.aws/credentials(?:$|\W)~', $LCNrURI), 'Probing for exposed AWS credentials')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed AWS credentials.'], $this->BlockInfo['IPAddr']);
+        } // 2023.09.04
 
         /** Probing for vulnerable routers. */
         if ($this->trigger(preg_match('~(?:^|\W)HNAP1~i', $LCNrURI), 'Probing for vulnerable routers')) {

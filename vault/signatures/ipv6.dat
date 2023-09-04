@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2023.241.0
-# Last modified: 2023.08.30
+# Version: 2023.246.0
+# Last modified: 2023.09.04
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -5407,13 +5407,12 @@ Tag: Accelerated IT
 
 
 # ASN 20278 ("Nexeon Technologies, Inc").
-# Stop Forum Spam (SFS) listings: 3,891.
-# Updated: 2021.11.03 / Checked: 2022.09.04
+# Stop Forum Spam (SFS) listings: 1,046.
+# Updated: 2023.09.04
 
 2602:fc41::/40 Deny Cloud
 2602:ffc8::/32 Deny Cloud
-2a0d:f802::/32 Deny Cloud
-2a0d:f803:8f00::/40 Deny Cloud
+2a0d:f800::/29 Deny Cloud
 Origin: US
 Profile: Dedicated;Infrastructure/Transit;Tor endpoints here;Webhosting
 Tag: Nexeon Technologies
@@ -6141,25 +6140,6 @@ Profile: Content Delivery Network;Frequent changes;Infrastructure/Transit;Webhos
 Tag: StackPath LLC
 
 
-# ASN 62 ("CyrusOne LLC").
-# Cloud service provider. Probing for database dumps, SSH and brute-force
-# attacks detected from here. (Just blocking this ASN; Not the others).
-# Very few listings at last check; Possible candidate for future removal.
-# Updated: 2023.02.11
-
-2605:9600::/32 Deny Cloud
-2607:ff70::/32 Deny Cloud
-2610:190::/38 Deny Cloud
-2610:190:1c00::/38 Deny Cloud
-2610:190:5e00::/39 Deny Cloud
-2610:190:6000::/39 Deny Cloud
-2610:190:8000::/39 Deny Cloud
-2610:190:df00::/40 Deny Cloud
-Origin: US
-Profile: Commercial;Infrastructure/Transit
-Tag: CyrusOne LLC
-
-
 # Announcing as: "WEBSITEWELCOME".
 # Various ASNs; Sourced from HE.
 # Updated: 2017.09.25 / Checked: 2023.06.20
@@ -6590,10 +6570,12 @@ Tag: TODAS LAS REDES SA
 
 
 # ASN 197071 ("Dennis Rainer Warnholz trading as active-servers.com").
-# Stop Forum Spam (SFS) listings: 75.
-# Updated: 2022.09.04
+# Stop Forum Spam (SFS) listings: 81.
+# Updated: 2023.09.03
 
 2a0e:97c0:3e2::/48 Deny Cloud
+2a0e:97c0:3e4::/48 Deny Cloud
+2a10:cc40:230::/47 Deny Cloud
 Origin: CH
 2a02:d40:3::/48 Deny Cloud
 2a02:d40:7::/48 Deny Cloud
@@ -8544,8 +8526,8 @@ Tag: eSecureData
 # ASNs 21396, 31708 ("NetConnex Broadband Ltd", "Coreix Ltd").
 # Data center and webhosting provider. IPs from their networks caught trying to
 # hack WordPress sites, brute-force logins, perform XMLRPC attacks, etc.
-# Stop Forum Spam (SFS) listings: 49 (AS21396), 83 (AS31708).
-# Updated: 2022.09.04
+# Stop Forum Spam (SFS) listings: 12 (AS21396), 88 (AS31708).
+# Updated: 2022.09.04 / Checked: 2023.09.03
 
 2a00:d680::/32 Deny Cloud
 2a01:c0::/32 Deny Cloud
@@ -10816,8 +10798,7 @@ Tag: INVITE Systems SRL
 
 
 # ASN 41011 ("CH-NET S.R.L").
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2021.11.10 / Checked: 2022.09.04
+# Updated: 2021.11.10 / Checked: 2023.09.03
 
 2001:67c:2100::/48 Deny Cloud
 2a06:afc0::/48 Deny Cloud

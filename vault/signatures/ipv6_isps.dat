@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2023.241.0
-# Last modified: 2023.08.30
+# Version: 2023.246.0
+# Last modified: 2023.09.04
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -882,13 +882,10 @@ Tag: Sibirskie Seti Ltd
 # ASNs 3243, 15525, 42863 ("MEO - SERVICOS DE COMUNICACOES E MULTIMEDIA S.A").
 # Portuguese domestic ISP. Caught by honeypots. Port scans and hack attempts
 # detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,185 (AS3243), 47 (AS15525), 48 (AS42863).
-# Updated: 2022.09.12
+# Stop Forum Spam (SFS) listings: 218 (AS3243), 21 (AS15525), 25 (AS42863).
+# Updated: 2023.09.04
 
-2001:8a0:6057:9b00::/64 Deny Spam
-2001:8a0:6a0d:d600::/64 Deny Spam
-2001:8a0:6a7e:ae00::/64 Deny Spam
-2001:8a0:e7c2:ba00::/64 Deny Spam
+2001:8a0:6380:ad00::/64 Deny Spam
 Origin: PT
 Profile: Domestic ISP
 Tag: MEO
@@ -1176,18 +1173,6 @@ Profile: Commercial;Domestic ISP;Infrastructure/Transit
 Tag: Smartlink Solutions
 
 
-# ASN 12874 ("Fastweb SpA").
-# Italian multiplay provider. Port scans, hacking, webapp attacks, and spam
-# detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 539.
-# Updated: 2023.06.01
-
-2001:b07:a5a:200c::/64 Deny Spam
-Origin: IT
-Profile: Domestic ISP;Mobile ISP;Multiplay
-Tag: Fastweb SpA
-
-
 # ASN 5432 ("Proximus NV").
 # Belgian mobile and ISP. Brute-force attacks, port scans, hacking, and spam
 # detected from here. Listing just the affected ranges/addresses only.
@@ -1211,20 +1196,6 @@ Tag: Proximus NV
 Origin: US
 Profile: Domestic ISP;Tor endpoints here
 Tag: Verizon Business/UUnet
-
-
-# ASN 28649 ("Desktop Sigmanet Comunicaï¿½ï¿½o Multimï¿½dia SA").
-# Brazilian multiplay provider. Brute-force, SSH, and webapp attacks, port
-# scans, hacking, and spam detected from here. Listing just the affected
-# ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 84.
-# Updated: 2022.09.04
-
-2804:868:d041:2895::/64 Deny Spam
-2804:868:d042:480d::/64 Deny Spam
-Origin: BR
-Profile: Domestic ISP;Multiplay
-Tag: Desktop Sigmanet
 
 
 # ASN 4787 ("PT Cyberindo Aditama").

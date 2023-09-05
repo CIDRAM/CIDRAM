@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2023.08.23).
+# This file: Swedish language data for the front-end (last modified: 2023.09.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -47,7 +47,7 @@ Extended Description IPv6-Other: *ExtDesOther
 Extended Description Optional security extras module: "Ger vissa begränsade skydd mot olika angreppsvektorer som vanligen används i förfrågningar."
 Extended Description PHPMailer: "Krävs för att använda någon funktionalitet som involverar att skicka e-post.<br />{{Links.PHPMailer.PHPMailer}} är tillgängligt via {{Links.PHPMailer.License}}-licensen."
 Extended Description Project Honeypot module: "Blockerar förfrågningar från IP-adresser som listas på Project Honeypot."
-Extended Description Protocol blocker module: "Ger möjlighet att blockera specifika begärandeprotokoll via konfigurationen (t.ex., HTTP/0.9, HTTP/1.1, SPDY/3.0, etc). Obs: Kommer inte ha någon effekt för de webbplatser som dirigerar genom tjänster som skriver om förfrågningar till att alla använder exakt samma protokoll, sådan som Cloudflare."
+Extended Description Protocol blocker module: "Ger möjlighet att blockera specifika begärandeprotokoll via konfigurationen (t.ex., HTTP/0.9, HTTP/1.1, SPDY/3.0, osv). Obs: Kommer inte ha någon effekt för de webbplatser som dirigerar genom tjänster som skriver om förfrågningar till att alla använder exakt samma protokoll, sådan som Cloudflare."
 Extended Description Referrer spam module: "Blockering baserat på referensspam ger i allmänhet ingen meningsfull säkerhetsfördel, men i vissa fall kan det vara användbart för vissa användare, för att samla in mer information om förfrågningar och för att kunna rapportera det.<br />Genom att installera den här modulen installeras också Symfony polyfyllningar för {{Links.Symfony.Intl/Idn}} (eftersom den här modulen kräver Idn-funktionalitet, som inte alla PHP-installationer tillhandahåller som standard), tillgängliga via {{Links.MIT}}-licensen."
 Extended Description Stop Forum Spam module: "Skyddar registrerings och inloggningssidor mot IP-adresser som listas av SFS."
 Extended Description Tor blocker module: "Förbjuder åtkomst från Tor-utgångsnoder genom DNSEL-uppslagningar (stöder både IPv4 och IPv6)."
@@ -253,7 +253,7 @@ config_recaptcha_signature_limit: *CaptchaSignatureLimit
 config_recaptcha_sitekey: *CaptchaDashboard
 config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Konfiguration för modulen Stop Forum Spam."
-config_sfs_offer_captcha: "När förfrågningar blockeras av denna modul kan CAPTCHAer utfärdas. Standard = True. Obs: Åsidosätter inte andra direktiv. För att CAPTCHAer ska kunna utfärdas måste alla direktiv överensstämma, nödvändiga nycklar konfigurerade, etc. I händelse av att CAPTCHAer normalt skulle tillåtas att utfärdas, inställning av detta direktiv till false ger ett sätt att förhindra att CAPTCHAer utfärdas för förfrågningar som specifikt blockeras av denna modul."
+config_sfs_offer_captcha: "När förfrågningar blockeras av denna modul kan CAPTCHAer utfärdas. Standard = True. Obs: Åsidosätter inte andra direktiv. För att CAPTCHAer ska kunna utfärdas måste alla direktiv överensstämma, nödvändiga nycklar konfigurerade, osv. I händelse av att CAPTCHAer normalt skulle tillåtas att utfärdas, inställning av detta direktiv till false ger ett sätt att förhindra att CAPTCHAer utfärdas för förfrågningar som specifikt blockeras av denna modul."
 config_signatures: "Konfiguration för signaturer, signaturfiler, moduler, osv."
 config_signatures_default_tracktime: "Varaktigheten som IP-adresser ska spåras för. Standard = 7d0°0′0″ (1 vecka)."
 config_signatures_infraction_limit: "Maximalt antal infraktions som en IP får medföra innan den är förbjuden av IP-spårning. Standard = 10."
@@ -602,7 +602,7 @@ label_remember: "Ihåg"
 label_reported: "Förfrågningar som rapporteras till externa APIer"
 label_requests_all: "Varje förfrågan.\nMer strängt och noggrant, men också mer sannolikt att gränser och kvoter uppfylls mycket snabbare, vilket kan leda till att man blir utelåst från tjänsten när det som bäst behövs. Även om sökresultat alltid cachelagras oavsett, det kan ändå påverka webbplatsens prestanda negativt i vissa fall. Kan vara nödvändigt i vissa fall, men generellt rekommenderas inte."
 label_requests_none: "Ingen.\nOm du vill använda modulen endast för rapporteringsändamål, utan att slå upp något, använd denna."
-label_requests_sensitive_pages: "Förfrågningar endast för känsliga sidor (t.ex., inloggningssidor, registreringsformulär, etc).\nMindre stränga och noggranna, men mer konservativa när det gäller kvoter och gränser, och mindre sannolikt att det påverkar resultatet negativt. Den rekommenderade strategin i de flesta fall."
+label_requests_sensitive_pages: "Förfrågningar endast för känsliga sidor (t.ex., inloggningssidor, registreringsformulär, osv).\nMindre stränga och noggranna, men mer konservativa när det gäller kvoter och gränser, och mindre sannolikt att det påverkar resultatet negativt. Den rekommenderade strategin i de flesta fall."
 label_reporting_allow: "Tillåt."
 label_reporting_allow_blocked: "Tillåt, men bara när den också är blockerad."
 label_reporting_deny: "Förneka."

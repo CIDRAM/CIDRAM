@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2023.246.0
-# Last modified: 2023.09.04
+# Version: 2023.249.0
+# Last modified: 2023.09.07
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -656,12 +656,21 @@ Tag: Uninet
 # European international 5G and fibre provider. Brute-force, WordPress, and
 # webapp attacks, port scans, email harvestors, and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,457.
-# Updated: 2022.09.16
+# Stop Forum Spam (SFS) listings: 945.
+# Updated: 2023.09.07
 
-2a02:ab04:241:2900::/64 Deny Spam
-2a02:ab04:2b44:ce00::/64 Deny Spam
-Origin: SK
+2a02:8084:4262:d180::/64 Deny Spam
+Origin: IE
+2a02:a310:8345:cd00::/64 Deny Spam
+2a02:a311:a23d:8800::/64 Deny Spam
+2a02:a311:c43f:bd00::/64 Deny Spam
+2a02:a317:2348:8180::/64 Deny Spam
+2a02:a318:a03a:8c00::/64 Deny Spam
+2a02:a318:a03e:3a00::/64 Deny Spam
+2a02:a31a:a33c:d880::/64 Deny Spam
+2a02:a31a:e142:a80::/64 Deny Spam
+2a02:a31a:e145:ae00::/64 Deny Spam
+Origin: PL
 Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Tor endpoints here
 Tag: Liberty Global
 

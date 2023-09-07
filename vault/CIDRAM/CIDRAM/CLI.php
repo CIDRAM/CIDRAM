@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CIDRAM CLI mode (last modified: 2023.08.23).
+ * This file: CIDRAM CLI mode (last modified: 2023.09.04).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -44,21 +44,21 @@ trait CLI
 
         /** Show basic information. */
         echo sprintf(
-            "\r\033[0;41m%s\033[0m\n\n\033[0;33m%s\n\033[0;32m>>\033[0m test xxx.xxx.xxx.xxx\n\n" .
-            "\033[0;33m%s\n\033[0;32m>>\033[0m cidrs xxx.xxx.xxx.xxx\n\n" .
-            "\033[0;33m%s\n\033[0;32m>>\033[0m test \"xxx.xxx.xxx.xxx\n\033[0;32m>>\033[0m yyy.yyy.yyy.yyy\n" .
-            "\033[0;32m>>\033[0m 2002::1\n\033[0;32m>>\033[0m zzz.zzz.zzz.zzz\"\n\n" .
-            "\033[0;33m%s\n\033[0;32m>>\033[0m test xxx.xxx.xxx.xxx,yyy.yyy.yyy.yyy,2002::1,zzz.zzz.zzz.zzz\n\n" .
-            "\033[0;33m%s\n\033[0;32m>>\033[0m test \"aaa.aaa.aaa.aaa --no-mod\n\033[0;32m>>\033[0m bbb.bbb.bbb.bbb --no-aux\n\033[0;32m>>\033[0m ccc.ccc.ccc.ccc --no-sev --no-smv --no-ov\n" .
-            "\033[0;32m>>\033[0m ddd.ddd.ddd.ddd --no-mod --no-aux --no-sev --no-smv --no-ov\"\n\n" .
-            "\033[0;33m%s\n\033[0;32m>>\033[0m fread \"file1.dat\n\033[0;32m>>\033[0m file2.dat\n\033[0;32m>>\033[0m file3.dat\"\n\n" .
-            "\033[0;33m%s\n\033[0;32m>>\033[0m fwrite=file.dat\n\n" .
-            "\033[0;33m%s\n\033[0;32m>>\033[0m aggregate \"1.2.3.4/32\n\033[0;32m>>\033[0m 1.2.3.5/32\n\033[0;32m>>\033[0m 1.2.3.6/32\n\033[0;32m>>\033[0m 1.2.3.7/32\"\n\n" .
-            "\033[0;33m%s\n\033[0;32m>>\033[0m aggregate=netmasks \"1.2.3.4/32\n\033[0;32m>>\033[0m 1.2.3.5/32\"\n\n" .
-            "\033[0;33m%s\n\033[0;32m>>\033[0m fread>aggregate>fwrite=output.dat \"input1.dat\n\033[0;32m>>\033[0m input2.dat\n\033[0;32m>>\033[0m input3.dat\"\n\n" .
-            "\033[0;33m%s\n\033[0;32m>>\033[0m fwrite=output.dat<aggregate<fread \"input1.dat\n\033[0;32m>>\033[0m input2.dat\n\033[0;32m>>\033[0m input3.dat\"\n\n" .
-            "\033[0;33m%s\n\033[0;32m>>\033[0m fread>aggregate>fwrite=output.dat input1.dat,input2.dat,input3.dat\n\n" .
-            "\033[0;33m%s\n\033[0;32m>>\033[0m print Hello World\n\n\033[0;33m%s\n\033[0;32m>>\033[0m fread>fix>fwrite=fixed.dat broken.dat\n\n\033[0;33m%s\n\n",
+            "\r\033[0;41m%s\033[0m\n\n\033[0;33m%s\n\033[0;92m>>\033[0m test xxx.xxx.xxx.xxx\n\n" .
+            "\033[0;33m%s\n\033[0;92m>>\033[0m cidrs xxx.xxx.xxx.xxx\n\n" .
+            "\033[0;33m%s\n\033[0;92m>>\033[0m test \"xxx.xxx.xxx.xxx\n\033[0;92m>>\033[0m yyy.yyy.yyy.yyy\n" .
+            "\033[0;92m>>\033[0m 2002::1\n\033[0;92m>>\033[0m zzz.zzz.zzz.zzz\"\n\n" .
+            "\033[0;33m%s\n\033[0;92m>>\033[0m test xxx.xxx.xxx.xxx,yyy.yyy.yyy.yyy,2002::1,zzz.zzz.zzz.zzz\n\n" .
+            "\033[0;33m%s\n\033[0;92m>>\033[0m test \"aaa.aaa.aaa.aaa --no-mod\n\033[0;92m>>\033[0m bbb.bbb.bbb.bbb --no-aux\n\033[0;92m>>\033[0m ccc.ccc.ccc.ccc --no-sev --no-smv --no-ov\n" .
+            "\033[0;92m>>\033[0m ddd.ddd.ddd.ddd --no-mod --no-aux --no-sev --no-smv --no-ov\"\n\n" .
+            "\033[0;33m%s\n\033[0;92m>>\033[0m fread \"file1.dat\n\033[0;92m>>\033[0m file2.dat\n\033[0;92m>>\033[0m file3.dat\"\n\n" .
+            "\033[0;33m%s\n\033[0;92m>>\033[0m fwrite=file.dat\n\n" .
+            "\033[0;33m%s\n\033[0;92m>>\033[0m aggregate \"1.2.3.4/32\n\033[0;92m>>\033[0m 1.2.3.5/32\n\033[0;92m>>\033[0m 1.2.3.6/32\n\033[0;92m>>\033[0m 1.2.3.7/32\"\n\n" .
+            "\033[0;33m%s\n\033[0;92m>>\033[0m aggregate=netmasks \"1.2.3.4/32\n\033[0;92m>>\033[0m 1.2.3.5/32\"\n\n" .
+            "\033[0;33m%s\n\033[0;92m>>\033[0m fread>aggregate>fwrite=output.dat \"input1.dat\n\033[0;92m>>\033[0m input2.dat\n\033[0;92m>>\033[0m input3.dat\"\n\n" .
+            "\033[0;33m%s\n\033[0;92m>>\033[0m fwrite=output.dat<aggregate<fread \"input1.dat\n\033[0;92m>>\033[0m input2.dat\n\033[0;92m>>\033[0m input3.dat\"\n\n" .
+            "\033[0;33m%s\n\033[0;92m>>\033[0m fread>aggregate>fwrite=output.dat input1.dat,input2.dat,input3.dat\n\n" .
+            "\033[0;33m%s\n\033[0;92m>>\033[0m print Hello World\n\n\033[0;33m%s\n\033[0;92m>>\033[0m fread>fix>fwrite=fixed.dat broken.dat\n\n\033[0;33m%s\n\n",
             $this->L10N->getString('info_cli_cidram_cli_mod'),
             $this->L10N->getString('info_cli_to_test_whethe'),
             $this->L10N->getString('info_cli_to_calculate_c'),
@@ -89,7 +89,7 @@ trait CLI
 
             /** Echo the CLI-mode prompt. */
             if (!$Chain) {
-                echo "\033[0;32m>> \033[0m";
+                echo "\033[0;92m>> \033[0m";
             }
 
             /** Wait for user input or assume it from chaining. */

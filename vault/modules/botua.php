@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bot user agents module (last modified: 2023.08.12).
+ * This file: Bot user agents module (last modified: 2023.09.08).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -277,6 +277,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     $this->trigger(strpos($UA, 'mozilla/4.76 [ru] (x11; U; sunos 5.7 sun4u)') !== false, 'Bot UA'); // 2017.02.25
     $this->trigger(strpos($UA, 'php /') !== false, 'Bot UA'); // 2017.02.25
     $this->trigger($UANoSpace === 'chorme', 'Bot UA'); // 2021.04.16
+    $this->trigger(strpos($UA, '\(windows nt 10.0\; win64\; x64\)') !== false || strpos($UA, '\(khtml, like gecko\)') !== false, 'Bot UA'); // 2023.09.08
 
     $this->trigger(preg_match(
         '/(?:drop ?table|(_table|assert|co(de|ntents)|dotnet_load|e(cho|regi' .

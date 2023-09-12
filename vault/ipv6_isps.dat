@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2023.249.0
-# Last modified: 2023.09.07
+# Version: 2023.254.0
+# Last modified: 2023.09.12
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -122,11 +122,11 @@ Profile: Domestic ISP;Mobile ISP
 Tag: Idea Cellular Ltd
 
 
-# ASNs 12530, 15895, 35081 ('"Kyivstar" PJSC').
+# ASN 15895 ('"Kyivstar" PJSC').
 # Absolutely **INSANE** levels of spam coming from this network!! Shouldn't
 # ever, ever let them through, if at all possible.
-# Stop Forum Spam (SFS) listings: 16,357 (AS12530), 24,966 (AS15895).
-# Updated: 2022.09.27
+# Stop Forum Spam (SFS) listings: 37,688.
+# Updated: 2022.09.27 / Checked: 2023.09.12
 
 2a02:8a8::/32 Deny Spam
 2a02:2378::/32 Deny Spam
@@ -506,44 +506,32 @@ Tag: Cox Spam IPs
 # ASNs 7843, 10796, 11351, 11426, 11427, 12271, 20001, 20115, 33363 ("Charter
 # Communications"). US domestic ISP. Honeypot probes, port scans, and spam
 # detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 23 (AS7843), 1,234 (AS10796), 865 (AS11351),
-# 1,382 (AS11426), 1,183 (AS11427), 715 (AS12271), 1,368 (AS20001),
-# 3,065 (AS20115), 1,039 (AS33363).
-# Updated: 2022.10.22
+# Stop Forum Spam (SFS) listings: 12 (AS7843), 1,060 (AS10796), 564 (AS11351),
+# 704 (AS11426), 756 (AS11427), 259 (AS12271), 1,182 (AS20001),
+# 1,890 (AS20115), 837 (AS33363).
+# Updated: 2023.09.12
 
-2600:6c40:1900:2a3::/64 Deny Spam
-2600:6c40:4400:127e::/64 Deny Spam
-2600:6c42:6600:806::/64 Deny Spam
-2600:6c44:437f:6fd0::/64 Deny Spam
-2600:6c46:4100:1481::/64 Deny Spam
-2600:6c47:a100:95::/64 Deny Spam
-2600:6c58:607f:dd4c::/64 Deny Spam
-2600:6c5d:6200:c73::/64 Deny Spam
-2600:6c5e:5a7f:49f::/64 Deny Spam
-2600:6c60:577f:f8f0::/64 Deny Spam
-2603:6000:9702:f4a0::/64 Deny Spam
-2603:6010:2f02:f8bd::/64 Deny Spam
-2603:6011:7d00:afac::/64 Deny Spam
+2600:6c40:44f0:8870::/64 Deny Spam
+2600:6c52:44f0:880::/64 Deny Spam
+2600:6c58:67f:8b6a::/64 Deny Spam
+2600:6c5e:513f:efa3::/64 Deny Spam
+2600:6c5e:5b3f:2192::/64 Deny Spam
+2603:6000:a740:b846::/64 Deny Spam
+2603:6010:2600:ad1c::/64 Deny Spam
+2603:6010:2b00:7ab::/64 Deny Spam
+2603:6011:7c02:fd0a::/64 Deny Spam
+2603:6012:9a40:5::/64 Deny Spam
 2603:6080:5f06:f1d0::/64 Deny Spam
-2603:6080:820b:d400::/64 Deny Spam
-2603:6080:8c00:f096::/64 Deny Spam
-2603:6080:e904:494d::/64 Deny Spam
-2603:6081:1340:3f67::/64 Deny Spam
-2603:6081:2c02:7f4e::/64 Deny Spam
-2603:7000:b503:9c8d::/64 Deny Spam
-2603:7000:c801:9c5a::/64 Deny Spam
-2603:7081:1400:ffbe::/64 Deny Spam
-2603:8000:702:242d::/64 Deny Spam
-2603:8000:6201:97d1::/64 Deny Spam
-2603:8001:1602:b981::/64 Deny Spam
-2603:8080:f201:8c54::/64 Deny Spam
-2603:8081:8d03:9894::/64 Deny Spam
-2603:8090:608:ab66::/64 Deny Spam
-2603:9000:8300:33b9::/64 Deny Spam
-2603:9000:f07f:2f00::/64 Deny Spam
-2603:9001:3505:180c::/64 Deny Spam
-2603:9001:3608:888::/64 Deny Spam
-2603:9001:4d09:fad4::/64 Deny Spam
+2603:6081:6300:66f8::/64 Deny Spam
+2603:7000:1403:afee::/64 Deny Spam
+2603:7000:5f05:dc5e::/64 Deny Spam
+2603:7000:6c3b:4ec7::/64 Deny Spam
+2603:7000:8f00:d74::/64 Deny Spam
+2603:8000:9300:4763::/64 Deny Spam
+2603:8001:2e01:560e::/64 Deny Spam
+2603:8081:2301:3e0c::/64 Deny Spam
+2603:8081:2407:197c::/64 Deny Spam
+2603:9001:1306:a3::/64 Deny Spam
 Origin: US
 Profile: Domestic ISP;University
 Tag: Charter Communications
@@ -1211,25 +1199,15 @@ Tag: Verizon Business/UUnet
 # Indonesian fibre provider. Brute-force, SMTP, and webapp attacks, port scans,
 # credential stuffing, hacking, and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 520.
-# Updated: 2022.09.16
+# Stop Forum Spam (SFS) listings: 930.
+# Updated: 2023.09.11
 
-2405:8180:203:d960::/64 Deny Attacks
+2405:8180:203:96ff::/64 Deny Spam
+2405:8180:301:a39e::/64 Deny Spam
+2405:8180:a01:d86::/64 Deny Spam
 Origin: ID
 Profile: Domestic ISP;Multiplay
 Tag: PT Cyberindo Aditama
-
-
-# ASN 21246 ("IPKO Telecommunications LLC").
-# Albanian domestic ISP. Port scans, hacking, and spam detected from here.
-# Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 429.
-# Updated: 2022.09.21
-
-2a03:4b80:b71f:da90::/64 Deny Spam
-Origin: AL
-Profile: Domestic ISP;Mobile ISP
-Tag: IPKO
 
 
 # ASN 263744 ("Udasha S.A").

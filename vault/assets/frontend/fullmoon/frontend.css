@@ -151,8 +151,8 @@ input[type=checkbox]+label,input[type=radio]+label,input[type=radio]+label,.grid
 input[type=button].reset{background:none;cursor:pointer;border:none;padding:0 12px 0 12px;margin:0;width:auto;color:#e7ab7d}
 input[type=button].reset:hover,input[type=button].reset:active{color:#fcefcf}
 .tablend{margin-top:-2px}
-.scaleXToZero{display:inline-block;overflow:hidden;transform:scaleX(0);transform-origin:{FE_Align};opacity:0;max-height:16px;max-width:0;transition:all .2s ease-out}
-.scaleXToOne{display:inline-block;overflow:hidden;transform:scaleX(1);transform-origin:{FE_Align};opacity:1;max-height:16px;max-width:auto;transition:all .2s ease-in}
+.scaleXToZero{display:inline-block;overflow:hidden;transform:scaleX(0);transform-origin:{FE_Align};opacity:0;max-height:16px;max-width:0;transition:all .3s ease-out}
+.scaleXToOne{display:inline-block;overflow:hidden;transform:scaleX(1);transform-origin:{FE_Align};opacity:1;max-height:16px;max-width:auto;transition:all .3s ease-in}
 #logsTA{position:relative;top:-2px}
 ::selection{background-color:rgba(204,102,102,.5);color:#fff}
 .txtGn::selection,.txtGn>*:not(.txtOe,.txtRd)::selection{color:#dfc}
@@ -164,3 +164,6 @@ input[disabled],input[disabled]+label{cursor:not-allowed}
 .toolTip{cursor:help}
 .flexrow{display:flex}
 .flexin{margin-{FE_Align}:-1px;margin-{FE_Align_Reverse}:1px;width:auto;flex-grow:1}
+.navicon.heaven{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:heaven.svg}{/Base64Encode})}
+.hoverglow{display:inline-block;filter:invert(79%) sepia(28%) saturate(328%) hue-rotate(13deg) brightness(90%) contrast(89%);position:relative;top:1px;width:16px;height:16px}
+.hoverglow:hover,.hoverglow:active,.hoverglow:focus{filter:invert(95%) sepia(12%) saturate(882%) hue-rotate(-24deg) brightness(104%) contrast(95%)}

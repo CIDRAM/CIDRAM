@@ -113,7 +113,7 @@ blockquote.comSub{margin:-2px 0 0 0;padding:0 0 0 0}
 @keyframes forRotate{0%{transform:rotate(0)}100%{transform:rotate({45deg})}}
 @keyframes revRotate{0%{transform:rotate({45deg})}100%{transform:rotate(0)}}
 .navicon{display:inline-block;filter:invert(78%) sepia(74%) saturate(2174%) brightness(105%) contrast(104%);position:relative;top:1px;width:16px;height:16px}
-a:hover>.navicon,a:active>.navicon,a:focus>.navicon{filter:invert(82%) sepia(42%) saturate(2345%) hue-rotate(353deg) brightness(101%) contrast(111%)}
+a:hover>.navicon,a:active>.navicon,a:focus>.navicon{filter:invert(82%) sepia(42%) saturate(2345%) hue-rotate(-7deg) brightness(101%) contrast(111%)}
 p{margin-top:0;margin-bottom:10px}
 small{font-size:.9em}
 sub,sup{font-size:.7em;line-height:0;position:relative;vertical-align:baseline}
@@ -168,8 +168,8 @@ input[type=text][pattern]:invalid:not(input[type=text]:placeholder-shown){backgr
 input[type=button].reset{box-shadow:none;background:none;cursor:pointer;border:none;padding:0 12px 0 12px;margin:0;width:auto;color:#c99}
 input[type=button].reset:hover,input[type=button].reset:active{color:#eaa}
 .tablend{margin-top:-2px}
-.scaleXToZero{display:inline-block;overflow:hidden;transform:scaleX(0);transform-origin:{FE_Align};opacity:0;max-height:16px;max-width:0;transition:all .2s ease-out}
-.scaleXToOne{display:inline-block;overflow:hidden;transform:scaleX(1);transform-origin:{FE_Align};opacity:1;max-height:16px;max-width:auto;transition:all .2s ease-in}
+.scaleXToZero{display:inline-block;overflow:hidden;transform:scaleX(0);transform-origin:{FE_Align};opacity:0;max-height:16px;max-width:0;transition:all .3s ease-out}
+.scaleXToOne{display:inline-block;overflow:hidden;transform:scaleX(1);transform-origin:{FE_Align};opacity:1;max-height:16px;max-width:auto;transition:all .3s ease-in}
 #logsTA{position:relative;top:-2px}
 .navicon.accounts{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:accounts.svg}{/Base64Encode})}
 .navicon.aggregator{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:aggregator.svg}{/Base64Encode})}
@@ -181,6 +181,7 @@ input[type=button].reset:hover,input[type=button].reset:active{color:#eaa}
 .navicon.discussions{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:discussions.svg}{/Base64Encode})}
 .navicon.documentation{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:documentation.svg}{/Base64Encode})}
 .navicon.folder{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:folder.svg}{/Base64Encode})}
+.navicon.heaven{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:heaven.svg}{/Base64Encode})}
 .navicon.home{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:home.svg}{/Base64Encode})}
 .navicon.intersector{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:intersector.svg}{/Base64Encode})}
 .navicon.link{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:link.svg}{/Base64Encode})}
@@ -203,3 +204,5 @@ input[disabled],input[disabled]+label{cursor:not-allowed}
 .toolTip{cursor:help}
 .flexrow{display:flex}
 .flexin{margin-{FE_Align}:-1px;margin-{FE_Align_Reverse}:1px;width:auto;flex-grow:1}
+.hoverglow{filter:invert(86%) sepia(2%) saturate(693%) hue-rotate(192deg) brightness(114%) contrast(84%)}
+.hoverglow:hover,.hoverglow:active,.hoverglow:focus{filter:invert(75%) sepia(22%) saturate(513%) hue-rotate(-3deg) brightness(95%) contrast(100%)}

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bot user agents module (last modified: 2023.09.08).
+ * This file: Bot user agents module (last modified: 2023.09.15).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -228,28 +228,33 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     ), 'Malware UA'); // 2017.04.23
 
     $this->trigger(preg_match(
-        '~\.buzz|(?<!amazona)dbot/|^m$|(?:\W|^)(?:cu|pe)rl(?:\W|$)|gtbdfffgtb.?$|^(?!linkedinbot).*http-?(?:agent|client)|' .
-        'a(?:bonti|ccserver|cme.spider|nyevent-http|ppengine)|' .
+        '~\.buzz|(?<!amazona)dbot/|^m$|(?:\W|^)(?:cu|pe)rl(?:\W|$)|^(?!linkedinbot).*http-?(?:agent|client)|' .
+        'a(?:bonti|ccserver|cme.spider|dreview/\d|nyevent-http|ppengine)|' .
         'b(?:abbar\.tech|igbozz|lackbird|logsearch|logbot|salsa)|' .
-        'c(?:astlebot|atexplorador|lickagy|liqzbot|ontextad|orporama|rowsnest|yberpatrol)|' .
+        'c(?:astlebot|atexplorador|lickagy|liqzbot|ontextad|orporama|ortex/\d|rowsnest|yberpatrol)|' .
         'd(?:le_spider|nbcrawler|omainappender|umprendertree)|' .
+        'expanse|' .
         'flightdeckreportsbot|fluid/|' .
-        'g(?:atheranalyzeprovide|dnplus|imme60|ooglebenjojo)|' .
+        'g(?:atheranalyzeprovide|dnplus|imme60|lobalipv[46]space|ooglebenjojo|tbdfffgtb.?$)|' .
         'internetcensus|ips-agent|isitwp|' .
         'k2spider|kemvi|' .
         'leak\.info|lexxebot|livelapbot|lwp|' .
-        'macinroyprivacyauditors|masscan|metaintelligence|' .
+        'm(?:acinroyprivacyauditors|asscan|etaintelligence|ultipletimes)|' .
         'n(?:etcraft|ettrapport|icebot|mapscriptingengine|rsbot)|' .
-        'p(?:4bot|4load|acrawler|ageglimpse|arsijoo|egasusmonitoring|hantomjs|hpcrawl|ingdom|rlog)|' .
+        'ontheinternet|' .
+        'p(?:4bot|4load|acrawler|ageglimpse|aloalto(?:company|network)|arsijoo|egasusmonitoring|hantomjs|hpcrawl|ingdom|rlog)|' .
         'r(?:arelyused|obo(?:cop|spider)|yze)|' .
-        's(?:can\.lol|creener|itedomain|mut|nap(?:preview)?bot|oapclient|ocial(?:ayer|searcher)|oso|pyglass|quider|treetbot|ynapse)|' .
+        's(?:can\.lol|caninfo|creener|eekport|itedomain|mut|nap(?:preview)?bot|oapclient|ocial(?:ayer|searcher)|oso|pyglass|quider|treetbot|ynapse)|' .
         't(?:impi|omba|weezler)|' .
-        'urlappendbot|' .
+        'urlappendbot|urltest|' .
         'w(?:asalive|atchmouse|eb(?:-monitoring|bot|masteraid|money|pros|thumbnail)|hatweb|ikiapiary|in(?:http|inet)|maid\.com|sr-agent|wwtype)|' .
         'xenu|xovi|' .
         'zibber|zurichfinancialservices~',
         $UANoSpace
-    ), 'Unauthorised'); // 2023.06.16
+    ) || preg_match(
+        '~^Mozilla/5\.0( [A-Za-z]{2,5}/0\..)?$~',
+        $this->BlockInfo['UA']
+    ), 'Unauthorised'); // 2023.09.15
 
     $this->trigger(preg_match(
         '~^(?:bot|java|msie|windows-live-social-object-extractor)|\((?:java|\w:\d{2,})~',
@@ -299,12 +304,6 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     $this->trigger(preg_match('~^python/|aiohttp/|\.post0~', $UANoSpace), 'Bad context (Python/AIO clients not permitted here)'); // 2021.05.18
 
     /**
-     * First detected originating from Facebook's servers, but haven't been
-     * able to determine their identity or purpose.
-     */
-    $this->trigger(preg_match('~(?:adreview|cortex)/\d~', $UANoSpace), 'Unauthorised'); // 2021.10.15
-
-    /**
      * @link https://gist.github.com/paralax/6de9968e989c292781b2df167a1fb4ce
      */
     $this->trigger(strpos($UANoSpace, 'gbrmss/') !== false, 'Gebriano webshell detected'); // 2022.02.23
@@ -313,11 +312,6 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
      * @link https://isc.sans.edu/forums/diary/MGLNDD+Scans/28458/
      */
     $this->trigger(preg_match('~^MGLNDD_~i', $UANoSpace), 'Attempting to expose honeypots'); // 2022.05.08
-
-    /**
-     * @link https://github.com/CIDRAM/CIDRAM/issues/315
-     */
-    $this->trigger(strpos($UANoSpace, 'seekport') !== false, 'Unauthorised'); // 2022.06.16
 
     $this->trigger(strpos($UANoSpace, 'orbbot') !== false, 'Scraper UA'); // 2023.02.28
 

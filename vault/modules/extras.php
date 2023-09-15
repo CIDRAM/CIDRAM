@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2023.09.08).
+ * This file: Optional security extras module (last modified: 2023.09.15).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -143,9 +143,30 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         } // 2022.06.05
 
         /** Probing for vulnerable webapps. */
-        if ($this->trigger(preg_match('~cgi-bin/(?:web)?login\.cgi(?:$|\?)~i', $LCNrURI), 'Probing for vulnerable webapps')) {
+        if ($this->trigger(preg_match('~cgi-bin/(?:get_status|(?:web)?login)\.cgi(?:$|\?)|manager/text/list~i', $LCNrURI), 'Probing for vulnerable webapps')) {
             $this->Reporter->report([15, 21], ['Caught probing for vulnerable webapps.'], $this->BlockInfo['IPAddr']);
-        } // 2022.06.05
+        } // 2022.06.05 mod 2023.09.15
+
+        /** CONNECT-based signatures. */
+        if (true || $this->BlockInfo['Request_Method'] === 'CONNECT') {
+            $Port = (isset($_SERVER['SERVER_PORT']) && is_scalar($_SERVER['SERVER_PORT'])) ? (int)$_SERVER['SERVER_PORT'] : 0;
+            if ($this->trigger(strpos($LCNrURI, 'shadowserver.org') !== false, 'Probing for vulnerabilities and attempting unauthorised proxy tunnel; Botnet-like activity')) {
+                $this->Reporter->report([9, 15, 19, 20], ['Caught probing for vulnerabilities and attempting unauthorised proxy tunnel; Botnet-like activity.'], $this->BlockInfo['IPAddr']);
+                if ($this->trigger($Port !== 0 && $Port !== 80, 'Port scanning')) {
+                    $this->Reporter->report([14], ['Caught port scanning.'], $this->BlockInfo['IPAddr']);
+                } // 2023.09.15
+            } // 2023.09.15
+            if ($this->trigger(($Port === 443 || strpos($LCNrURI, ':443') !== false) && (
+                (!empty($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] !== 'https') ||
+                (!empty($_SERVER['HTTP_X_FORWARDED_SSL']) && $_SERVER['HTTP_X_FORWARDED_SSL'] !== 'on') ||
+                (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'off')
+            ), 'Attempted proxy tunnel to an SSH port via a non-SSH connection')) {
+                $this->Reporter->report([22], ['Attempted proxy tunnel to an SSH port via a non-SSH connection detected.'], $this->BlockInfo['IPAddr']);
+            } // 2023.09.15
+            if ($this->trigger($Port === 20 || $Port === 21 || $Port === 22 || $Port === 69 || $Port === 115, 'Attempted proxy tunnel to an FTP port via a non-FTP connection')) {
+                $this->Reporter->report([5], ['Attempted proxy tunnel to an FTP port via a non-FTP connection detected.'], $this->BlockInfo['IPAddr']);
+            } // 2023.09.15
+        }
     }
 
     /**

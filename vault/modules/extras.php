@@ -148,7 +148,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         } // 2022.06.05 mod 2023.09.15
 
         /** CONNECT-based signatures. */
-        if (true || $this->BlockInfo['Request_Method'] === 'CONNECT') {
+        if ($this->BlockInfo['Request_Method'] === 'CONNECT') {
             $Port = (isset($_SERVER['SERVER_PORT']) && is_scalar($_SERVER['SERVER_PORT'])) ? (int)$_SERVER['SERVER_PORT'] : 0;
             if ($this->trigger(strpos($LCNrURI, 'shadowserver.org') !== false, 'Probing for vulnerabilities and attempting unauthorised proxy tunnel; Botnet-like activity')) {
                 $this->Reporter->report([9, 15, 19, 20], ['Caught probing for vulnerabilities and attempting unauthorised proxy tunnel; Botnet-like activity.'], $this->BlockInfo['IPAddr']);

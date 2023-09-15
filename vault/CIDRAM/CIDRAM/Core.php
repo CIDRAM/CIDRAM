@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2023.09.05).
+ * This file: The CIDRAM core (last modified: 2023.09.15).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -2072,7 +2072,7 @@ class Core
                 ) {
                     $Operator = $Negate ? '≇' : '≅';
                 } else {
-                    $Operator = strpos($TestCase, '*') === false ? ($Negate ? '≠' : '=') : ($Negate ? '≉' : '≈');
+                    $Operator = strpos($TestCase, '*') === false ? $this->operatorFromAuxValue($TestCase, $Negate) : ($Negate ? '≉' : '≈');
                 }
             } elseif ($Method === 'RegEx') {
                 $Operator = $Negate ? '≇' : '≅';

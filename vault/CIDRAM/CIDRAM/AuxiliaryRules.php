@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used for auxiliary rules (last modified: 2023.09.14).
+ * This file: Methods used for auxiliary rules (last modified: 2023.09.15).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -492,7 +492,7 @@ trait AuxiliaryRules
                                 ) {
                                     $Operator = '≇';
                                 } else {
-                                    $Operator = strpos($Value, '*') === false ? '≠' : '≉';
+                                    $Operator = strpos($Value, '*') === false ? $this->operatorFromAuxValue($Value, true) : '≉';
                                 }
                             } else {
                                 $Operator = $this->operatorFromAuxValue($Value, true);
@@ -530,7 +530,7 @@ trait AuxiliaryRules
                                 ) {
                                     $Operator = '≅';
                                 } else {
-                                    $Operator = strpos($Value, '*') === false ? '=' : '≈';
+                                    $Operator = strpos($Value, '*') === false ? $this->operatorFromAuxValue($Value) : '≈';
                                 }
                             } else {
                                 $Operator = $this->operatorFromAuxValue($Value);

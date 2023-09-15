@@ -306,3 +306,7 @@
 [2023.08.24; Maikuolan]: Added support for bulk reporting to the AbuseIPDB module.
 
 [2023.08.26; Maikuolan]: Better flexible widths for the condition text inputs on the front-end auxiliary rules page (#505).
+
+### v3.4.1
+
+[2023.09.15; Bug-fix; Maikuolan]: Auxiliary rules automatic method detection failed to detect for numeric comparison; Fixed.

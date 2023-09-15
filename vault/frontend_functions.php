@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2023.08.26).
+ * This file: Front-end functions file (last modified: 2023.09.15).
  */
 
 /**
@@ -3821,7 +3821,7 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
                             ) {
                                 $Operator = '≇';
                             } else {
-                                $Operator = strpos($Value, '*') === false ? '≠' : '≉';
+                                $Operator = strpos($Value, '*') === false ? $CIDRAM['OperatorFromAuxValue']($Value, true) : '≉';
                             }
                         } else {
                             $Operator = $CIDRAM['OperatorFromAuxValue']($Value, true);
@@ -3858,7 +3858,7 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
                             ) {
                                 $Operator = '≅';
                             } else {
-                                $Operator = strpos($Value, '*') === false ? '=' : '≈';
+                                $Operator = strpos($Value, '*') === false ? $CIDRAM['OperatorFromAuxValue']($Value) : '≈';
                             }
                         } else {
                             $Operator = $CIDRAM['OperatorFromAuxValue']($Value);

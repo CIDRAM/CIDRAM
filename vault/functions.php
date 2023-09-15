@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2023.08.16).
+ * This file: Functions file (last modified: 2023.09.15).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -1912,7 +1912,7 @@ $CIDRAM['AuxMatch'] = function ($Criteria, $Actual, string $Method = '') use (&$
             ) {
                 $Operator = '≅';
             } else {
-                $Operator = strpos($TestCase, '*') === false ? '=' : '≈';
+                $Operator = strpos($TestCase, '*') === false ? $CIDRAM['OperatorFromAuxValue']($TestCase) : '≈';
             }
         } elseif ($Method === 'RegEx') {
             $Operator = '≅';

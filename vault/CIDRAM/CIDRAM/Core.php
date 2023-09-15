@@ -2488,43 +2488,67 @@ class Core
      */
     public function operatorFromAuxValue(string &$Value, bool $Negate = false): string
     {
-        $Stub = substr($Value, 0, 1);
+        $Try = $Value;
+        $Stub = substr($Try, 0, 1);
         if ($Stub === '&') {
-            if (substr($Value, 0, 4) === '&lt;') {
+            if (substr($Try, 0, 4) === '&lt;') {
                 $Stub = '<';
-                $Value = substr($Value, 3);
-            } elseif (substr($Value, 0, 4) === '&gt;') {
+                $Try = substr($Try, 3);
+            } elseif (substr($Try, 0, 4) === '&gt;') {
                 $Stub = '>';
-                $Value = substr($Value, 3);
+                $Try = substr($Try, 3);
             }
         }
         if ($Stub === '>') {
-            $Value = substr($Value, 1);
-            $Stub = substr($Value, 0, 1);
+            $Try = substr($Try, 1);
+            $Stub = substr($Try, 0, 1);
             if ($Stub === '=') {
-                $Value = substr($Value, 1);
-                return $Negate ? '≱' : '≥';
+                $Try = substr($Try, 1);
+                if (is_numeric($Try)) {
+                    $Value = $Try;
+                    return $Negate ? '≱' : '≥';
+                }
+                return $Negate ? '≠' : '=';
             }
-            return $Negate ? '≯' : '>';
+            if (is_numeric($Try)) {
+                $Value = $Try;
+                return $Negate ? '≯' : '>';
+            }
+            return $Negate ? '≠' : '=';
         }
         if ($Stub === '<') {
-            $Value = substr($Value, 1);
-            $Stub = substr($Value, 0, 1);
+            $Try = substr($Try, 1);
+            $Stub = substr($Try, 0, 1);
             if ($Stub === '=') {
-                $Value = substr($Value, 1);
-                return $Negate ? '≰' : '≤';
+                $Try = substr($Try, 1);
+                if (is_numeric($Try)) {
+                    $Value = $Try;
+                    return $Negate ? '≰' : '≤';
+                }
+                return $Negate ? '≠' : '=';
             }
-            return $Negate ? '≮' : '<';
+            if (is_numeric($Try)) {
+                $Value = $Try;
+                return $Negate ? '≮' : '<';
+            }
+            return $Negate ? '≠' : '=';
         }
-        if ($Stub === "\xE2") {
-            $Stub = substr($Value, 1, 2);
-            if ($Stub === "\x89\xA5") {
-                $Value = substr($Value, 3);
-                return $Negate ? '≱' : '≥';
+        if ($Stub === "\xe2") {
+            $Stub = substr($Try, 1, 2);
+            if ($Stub === "\x89\xa5") {
+                $Try = substr($Try, 3);
+                if (is_numeric($Try)) {
+                    $Value = $Try;
+                    return $Negate ? '≱' : '≥';
+                }
+                return $Negate ? '≠' : '=';
             }
-            if ($Stub === "\x89\xA4") {
-                $Value = substr($Value, 3);
-                return $Negate ? '≰' : '≤';
+            if ($Stub === "\x89\xa4") {
+                $Try = substr($Try, 3);
+                if (is_numeric($Try)) {
+                    $Value = $Try;
+                    return $Negate ? '≰' : '≤';
+                }
             }
         }
         return $Negate ? '≠' : '=';

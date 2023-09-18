@@ -1,6 +1,6 @@
 <?php
 /**
- * Events orchestrator (last modified: 2023.08.16).
+ * Events orchestrator (last modified: 2023.09.18).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -32,7 +32,7 @@ class Events
      *      be needed by some implementations to ensure compatibility).
      * @link https://github.com/Maikuolan/Common/tags
      */
-    const VERSION = '1.9.7';
+    const VERSION = '1.9.8';
 
     /**
      * Adds a new event handler.
@@ -99,12 +99,14 @@ class Events
      */
     public function fireEvent($Event, $Data = '')
     {
-        if (!isset($this->Handlers[$Event], $this->Status[$Event])) {
+        if (!isset($this->Handlers[$Event], $this->Status[$Event]) || isset($this->Status[$Event]['In Progress'])) {
             return false;
         }
+        $this->Status[$Event]['In Progress'] = true;
         foreach ($this->Handlers[$Event] as $Handler) {
             $Handler($Data);
         }
+        unset($this->Status[$Event]['In Progress']);
         return true;
     }
 

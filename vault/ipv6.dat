@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2023.257.0
-# Last modified: 2023.09.15
+# Version: 2023.260.0
+# Last modified: 2023.09.18
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -1914,11 +1914,12 @@ Tag: HZ Hosting Ltd
 
 
 # ASN 53264 ("SBA Edge, LLC").
-# Updated: 2017.07.23 / Checked: 2022.10.03
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2017.07.23 / Checked: 2023.09.18
 
 2607:ff50::/32 Deny Cloud
 Origin: US
-Profile: Webhosting
+Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: Continuum
 
 
@@ -2436,14 +2437,14 @@ Tag: Comvive Servidores
 
 # ASN 34971 ("Prometeus di Daniela Agro").
 # Brute-force and SSH attacks detected from here.
-# Stop Forum Spam (SFS) listings: 3.
-# Updated: 2022.10.03
+# Updated: 2023.09.18
 
 2a00:dcc0::/32 Deny Cloud
+2a00:dcc7:d000::/38 Deny Cloud
 Origin: IT
 2a06:fdc0::/32 Deny Cloud
 Origin: US
-Profile: Webhosting
+Profile: Content Delivery Network;Dedicated;Infrastructure/Transit;Webhosting
 Tag: Daniela Agro
 
 
@@ -6452,11 +6453,12 @@ Tag: Brandwatch
 
 # ASN 63018 ("Dedicated.com").
 # Server farm and infrastructure provider.
-# Stop Forum Spam (SFS) listings: 193.
-# Updated: 2022.10.03
+# Stop Forum Spam (SFS) listings: 330.
+# Updated: 2023.09.18
 
 2a11:840:33::/48 Deny Cloud
 Origin: CA
+2602:fafd:f0e::/48 Deny Cloud
 2605:9f80::/32 Deny Cloud
 Origin: US
 Profile: Dedicated;Infrastructure/Transit;Tor endpoints here
@@ -6787,8 +6789,8 @@ Tag: ICME LIMITED
 
 # ASN 49855 ("PLUTEX GmbH").
 # Tor exit node + webhosting company. A source of forum spam.
-# Stop Forum Spam (SFS) listings: 1,723.
-# Updated: 2021.11.21 / Checked: 2022.09.19
+# Stop Forum Spam (SFS) listings: 1,896.
+# Updated: 2021.11.21 / Checked: 2023.09.17
 
 2001:678:3b4::/48 Deny Cloud
 2001:67c:18e8::/48 Deny Cloud
@@ -9014,8 +9016,8 @@ Tag: SKB Enterprise B.V
 
 # ASN 30860 ("Virtual Systems LLC").
 # Server farm and a source of spam.
-# Stop Forum Spam (SFS) listings: 4,053.
-# Updated: 2021.12.06 / Checked: 2022.10.03
+# Stop Forum Spam (SFS) listings: 4,215.
+# Updated: 2021.12.06 / Checked: 2023.09.18
 
 2a09:2dc0::/29 Deny Cloud
 Origin: UA
@@ -10179,15 +10181,16 @@ Tag: Brasil Site Informatica LTDA
 
 # ASN 51559 ("Server Internet Bilisim ve Bilgisayar Hizmetleri").
 # Webhosting provider and a source of unwanted traffic.
-# Stop Forum Spam (SFS) listings: 502.
-# Updated: 2022.10.03
+# Stop Forum Spam (SFS) listings: 170.
+# Updated: 2023.09.18
 
-2a03:2100::/43 Deny Cloud
-2a03:2100:20::/44 Deny Cloud
+2a03:2100::/44 Deny Cloud
+2a03:2100:10::/48 Deny Cloud
 2a03:2100:32::/47 Deny Cloud
 2a03:2100:34::/46 Deny Cloud
 2a03:2100:38::/45 Deny Cloud
 2a03:2100:40::/48 Deny Cloud
+2a03:2102:1::/48 Deny Cloud
 2a06:41c0::/48 Deny Cloud
 2a06:c400::/44 Deny Cloud
 2a0a:db00::/44 Deny Cloud

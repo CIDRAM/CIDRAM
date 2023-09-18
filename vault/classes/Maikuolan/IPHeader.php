@@ -1,6 +1,6 @@
 <?php
 /**
- * IP header class (last modified: 2023.08.16).
+ * IP header class (last modified: 2023.09.14).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -15,7 +15,7 @@
 
 namespace Maikuolan\Common;
 
-class IPHeader
+class IPHeader extends CommonAbstract
 {
     /**
      * @var string The IP address resolved by the instance.
@@ -31,13 +31,6 @@ class IPHeader
      * @var int The address type for the last valid address checked (4 or 6).
      */
     public $Type = 0;
-
-    /**
-     * @var string The tag/release the version of this file belongs to (might
-     *      be needed by some implementations to ensure compatibility).
-     * @link https://github.com/Maikuolan/Common/tags
-     */
-    public const VERSION = '2.9.7';
 
     /**
      * Constructor.

@@ -1,6 +1,6 @@
 <?php
 /**
- * L10N handler (last modified: 2023.08.16).
+ * L10N handler (last modified: 2023.09.14).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -15,7 +15,7 @@
 
 namespace Maikuolan\Common;
 
-class L10N
+class L10N extends CommonAbstract
 {
     /**
      * @var array All relevant L10N data.
@@ -56,13 +56,6 @@ class L10N
      * @var string The pluralisation rule to use for fractions for the fallback.
      */
     private $FallbackFractionRule = 'int1';
-
-    /**
-     * @var string The tag/release the version of this file belongs to (might
-     *      be needed by some implementations to ensure compatibility).
-     * @link https://github.com/Maikuolan/Common/tags
-     */
-    public const VERSION = '2.9.7';
 
     /**
      * Constructor.
@@ -118,18 +111,34 @@ class L10N
      */
     public function getPlural($Number, string $String): string
     {
-        if (isset($this->Data[$String])) {
-            $Choices = $this->Data[$String];
-            $IntegerRule = $this->IntegerRule;
-            $FractionRule = $this->FractionRule;
-        } elseif ($this->Fallback instanceof \Maikuolan\Common\L10N) {
-            return $this->Fallback->getPlural($Number, $String);
-        } elseif (is_array($this->Fallback) && isset($this->Fallback[$String])) {
-            $Choices = $this->Fallback[$String];
-            $IntegerRule = $this->FallbackIntegerRule;
-            $FractionRule = $this->FallbackFractionRule;
+        if (strpos($String, '.') === false) {
+            if (isset($this->Data[$String])) {
+                $Choices = $this->Data[$String];
+                $IntegerRule = $this->IntegerRule;
+                $FractionRule = $this->FractionRule;
+            } elseif ($this->Fallback instanceof \Maikuolan\Common\L10N) {
+                return $this->Fallback->getPlural($Number, $String);
+            } elseif (isset($this->Fallback[$String])) {
+                $Choices = $this->Fallback[$String];
+                $IntegerRule = $this->FallbackIntegerRule;
+                $FractionRule = $this->FallbackFractionRule;
+            } else {
+                return '';
+            }
         } else {
-            return '';
+            if (($Try = $this->dataTraverse($this->Data, $String, true)) !== '') {
+                $Choices = $Try;
+                $IntegerRule = $this->IntegerRule;
+                $FractionRule = $this->FractionRule;
+            } elseif ($this->Fallback instanceof \Maikuolan\Common\L10N) {
+                return $this->Fallback->getPlural($Number, $String);
+            } elseif (($Try = $this->dataTraverse($this->Fallback, $String, true)) !== '') {
+                $Choices = $Try;
+                $IntegerRule = $this->FallbackIntegerRule;
+                $FractionRule = $this->FallbackFractionRule;
+            } else {
+                return '';
+            }
         }
         if (!is_array($Choices)) {
             return $Choices;
@@ -155,13 +164,30 @@ class L10N
      */
     public function getString(string $String): string
     {
-        if (isset($this->Data[$String])) {
-            return $this->Data[$String];
+        if (strpos($String, '.') === false) {
+            if (isset($this->Data[$String]) && is_string($this->Data[$String])) {
+                return $this->Data[$String];
+            }
+            if ($this->Fallback instanceof \Maikuolan\Common\L10N) {
+                return $this->Fallback->getString($String);
+            }
+            if (isset($this->Fallback[$String]) && is_string($this->Fallback[$String])) {
+                return $this->Fallback[$String];
+            }
+            return '';
+        }
+        $Try = $this->dataTraverse($this->Data, $String);
+        if ($Try !== '' && is_string($Try)) {
+            return $Try;
         }
         if ($this->Fallback instanceof \Maikuolan\Common\L10N) {
             return $this->Fallback->getString($String);
         }
-        return $this->Fallback[$String] ?? '';
+        $Try = $this->dataTraverse($this->Fallback, $String);
+        if ($Try !== '' && is_string($Try)) {
+            return $Try;
+        }
+        return '';
     }
 
     /**

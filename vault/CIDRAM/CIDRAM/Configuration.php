@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used by the configuration page and configuration filters (last modified: 2023.08.17).
+ * This file: Methods used by the configuration page and configuration filters (last modified: 2023.09.16).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -72,7 +72,7 @@ trait Configuration
      */
     private function replaceLabelWithL10n(string &$Label): void
     {
-        foreach (['', 'response_', 'label_', 'field_'] as $Prefix) {
+        foreach (['', 'response.', 'label.', 'field.'] as $Prefix) {
             if (($Try = $this->L10N->getString($Prefix . $Label)) !== '') {
                 $Label = $Try;
                 return;

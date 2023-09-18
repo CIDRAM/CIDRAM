@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2023.09.15).
+ * This file: The CIDRAM core (last modified: 2023.09.17).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -452,7 +452,7 @@ class Core
         if ($Haystack === '') {
             return '';
         }
-        if ($L10N && preg_match_all('~\{([A-Za-z\d_ -]+)\}~', $Haystack, $Matches)) {
+        if ($L10N && preg_match_all('~\{([.,%_ ?!\dA-Za-z()-]+)\}~', $Haystack, $Matches)) {
             foreach (array_unique($Matches[1]) as $Key) {
                 if (($Value = $this->L10N->getString($Key)) !== '') {
                     $Haystack = str_replace('{' . $Key . '}', $Value, $Haystack);
@@ -2966,10 +2966,10 @@ class Core
         /** Instantiate the L10N object, or append to the instance if it already exists. */
         if ($this->L10N instanceof \Maikuolan\Common\L10N && is_array($this->L10N->Data)) {
             if (!empty($Primary) && is_array($this->L10N->Data)) {
-                $this->L10N->Data = array_merge($this->L10N->Data, $Primary);
+                $this->L10N->Data = array_merge_recursive($this->L10N->Data, $Primary);
             }
             if (!empty($Fallback) && is_array($this->L10N->Fallback)) {
-                $this->L10N->Fallback = array_merge($this->L10N->Fallback, $Fallback);
+                $this->L10N->Fallback = array_merge_recursive($this->L10N->Fallback, $Fallback);
             }
         } else {
             $this->L10N = new \Maikuolan\Common\L10N($Primary, $Fallback);
@@ -3029,7 +3029,7 @@ class Core
                 }
                 $this->YAML->process($Primary, $Arr);
                 if ($this->ClientL10N instanceof \Maikuolan\Common\L10N && is_array($this->ClientL10N->Data)) {
-                    $this->ClientL10N->Data = array_merge($this->ClientL10N->Data, $Arr);
+                    $this->ClientL10N->Data = array_merge_recursive($this->ClientL10N->Data, $Arr);
                 } else {
                     $this->ClientL10N = new \Maikuolan\Common\L10N($Arr, $this->L10N);
                     $this->ClientL10N->autoAssignRules($Accepted);

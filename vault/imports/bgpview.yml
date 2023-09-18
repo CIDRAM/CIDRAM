@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: BGPView defaults file (last modified: 2023.05.22).
+# This file: BGPView defaults file (last modified: 2023.09.18).
 ##/
 
 Config Defaults:
@@ -28,8 +28,8 @@ Config Defaults:
    type: "int"
    default: 1
    choices:
-    1: "label_requests_all"
-    2: "label_requests_sensitive_pages"
+    1: "label.Every request"
+    2: "label.Requests for sensitive pages only"
    style: "radio"
   timeout_limit:
    type: "int"

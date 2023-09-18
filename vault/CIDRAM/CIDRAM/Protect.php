@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2023.08.24).
+ * This file: Protect traits (last modified: 2023.09.16).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -695,31 +695,31 @@ trait Protect
                 }
 
                 /** Build fields. */
-                $this->addField('ID', 'field_id', $this->BlockInfo['ID']);
-                $this->addField('ScriptIdent', 'field_scriptversion', $this->BlockInfo['ScriptIdent']);
-                $this->addField('DateTime', 'field_datetime', $this->BlockInfo['DateTime']);
-                $this->addField('IPAddr', 'field_ipaddr', $this->BlockInfo['IPAddr']);
-                $this->addField('IPAddrResolved', 'field_ipaddr_resolved', $this->BlockInfo['IPAddrResolved']);
-                $this->addField('Query', 'field_query', $this->BlockInfo['Query'], true);
-                $this->addField('Referrer', 'field_referrer', $this->BlockInfo['Referrer'], true);
-                $this->addField('UA', 'field_ua', $this->BlockInfo['UA'], true);
-                $this->addField('UALC', 'field_ualc', $this->BlockInfo['UALC'], true);
-                $this->addField('SignatureCount', 'field_sigcount', $this->NumberFormatter->format($this->BlockInfo['SignatureCount']));
-                $this->addField('Signatures', 'field_sigref', $this->BlockInfo['Signatures']);
-                $this->addField('WhyReason', 'field_whyreason', $this->BlockInfo['WhyReason'] . '!');
-                $this->addField('ReasonMessage', 'field_reasonmessage', $this->BlockInfo['ReasonMessage'], false, false);
-                $this->addField('rURI', 'field_rURI', $this->BlockInfo['rURI'], true);
-                $this->addField('Infractions', 'field_infractions', $this->NumberFormatter->format($this->BlockInfo['Infractions']));
-                $this->addField('ASNLookup', 'field_asnlookup', $this->BlockInfo['ASNLookup'], true);
-                $this->addField('CCLookup', 'field_cclookup', $this->BlockInfo['CCLookup'], true);
-                $this->addField('Verified', 'field_verified', $this->BlockInfo['Verified']);
+                $this->addField('ID', 'field.ID', $this->BlockInfo['ID']);
+                $this->addField('ScriptIdent', 'field.Script version', $this->BlockInfo['ScriptIdent']);
+                $this->addField('DateTime', 'field.DateTime', $this->BlockInfo['DateTime']);
+                $this->addField('IPAddr', 'field.IP address', $this->BlockInfo['IPAddr']);
+                $this->addField('IPAddrResolved', 'field.IP address (resolved)', $this->BlockInfo['IPAddrResolved']);
+                $this->addField('Query', 'field.Query', $this->BlockInfo['Query'], true);
+                $this->addField('Referrer', 'field.Referrer', $this->BlockInfo['Referrer'], true);
+                $this->addField('UA', 'field.User agent', $this->BlockInfo['UA'], true);
+                $this->addField('UALC', 'field.User agent (lower-case)', $this->BlockInfo['UALC'], true);
+                $this->addField('SignatureCount', 'field.Signatures count', $this->NumberFormatter->format($this->BlockInfo['SignatureCount']));
+                $this->addField('Signatures', 'field.Signatures reference', $this->BlockInfo['Signatures']);
+                $this->addField('WhyReason', 'field.Why blocked', $this->BlockInfo['WhyReason'] . '!');
+                $this->addField('ReasonMessage', 'field.Why blocked (detailed)', $this->BlockInfo['ReasonMessage'], false, false);
+                $this->addField('rURI', 'field.Reconstructed URI', $this->BlockInfo['rURI'], true);
+                $this->addField('Infractions', 'field.Infractions', $this->NumberFormatter->format($this->BlockInfo['Infractions']));
+                $this->addField('ASNLookup', 'field.ASN lookup', $this->BlockInfo['ASNLookup'], true);
+                $this->addField('CCLookup', 'field.Country code lookup', $this->BlockInfo['CCLookup'], true);
+                $this->addField('Verified', 'field.Verified identity', $this->BlockInfo['Verified']);
                 $this->addField('Expired', 'state_expired', $this->BlockInfo['Expired']);
                 $this->addField('Ignored', 'state_ignored', $this->BlockInfo['Ignored']);
-                $this->addField('Request_Method', 'field_request_method', $this->BlockInfo['Request_Method'], true);
-                $this->addField('Protocol', 'field_protocol', $this->BlockInfo['Protocol'], true);
-                $this->addField('Inspection', 'field_inspection', $this->BlockInfo['Inspection'], false, false);
-                $this->addField('Hostname', 'field_hostname', $this->BlockInfo['Hostname'], true);
-                $this->addField('CAPTCHA', 'field_captcha', $this->BlockInfo['CAPTCHA']);
+                $this->addField('Request_Method', 'field.Request method', $this->BlockInfo['Request_Method'], true);
+                $this->addField('Protocol', 'field.Protocol', $this->BlockInfo['Protocol'], true);
+                $this->addField('Inspection', 'field.Conditions inspection', $this->BlockInfo['Inspection'], false, false);
+                $this->addField('Hostname', 'field.Hostname', $this->BlockInfo['Hostname'], true);
+                $this->addField('CAPTCHA', 'field.CAPTCHA state', $this->BlockInfo['CAPTCHA']);
             }
 
             if (isset($this->Stages['Output:Enable'])) {
@@ -785,7 +785,7 @@ trait Protect
 
                 /** Pull relevant client-specified L10N data first. */
                 if (!empty($this->CIDRAM['L10N-Lang-Attache'])) {
-                    foreach (['denied', 'captcha_cookie_warning', 'captcha_message', 'captcha_message_invisible', 'label_submit'] as $PullThis) {
+                    foreach (['denied', 'captcha_cookie_warning', 'captcha_message', 'captcha_message_invisible', 'label.submit'] as $PullThis) {
                         if (($Try = $this->ClientL10N->getString($PullThis)) !== '') {
                             $this->CIDRAM['Parsables'][$PullThis] = $Try;
                         }
@@ -975,7 +975,7 @@ trait Protect
 
                     /** Pull relevant client-specified L10N data first. */
                     if (!empty($this->CIDRAM['L10N-Lang-Attache'])) {
-                        foreach (['captcha_cookie_warning', 'captcha_message_automated_traffic', 'captcha_message', 'captcha_message_invisible', 'label_submit'] as $PullThis) {
+                        foreach (['captcha_cookie_warning', 'captcha_message_automated_traffic', 'captcha_message', 'captcha_message_invisible', 'label.submit'] as $PullThis) {
                             if (($Try = $this->ClientL10N->getString($PullThis)) !== '') {
                                 $this->CIDRAM['Parsables'][$PullThis] = $Try;
                             }

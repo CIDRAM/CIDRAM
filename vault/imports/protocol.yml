@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Protocol blocker defaults file (last modified: 2023.01.12).
+# This file: Protocol blocker defaults file (last modified: 2023.09.17).
 ##/
 
 Config Defaults:
@@ -27,26 +27,26 @@ Config Defaults:
     Other
    choices:
     HTTP/0.9: "HTTP/0.9"
-    HTTP/0.x: "HTTP/0.x ({label_other})"
+    HTTP/0.x: "HTTP/0.x ({label.Other})"
     HTTP/1.0: "HTTP/1.0"
     HTTP/1.1: "HTTP/1.1"
     HTTP/1.2: "HTTP/1.2"
     HTTP/1.3: "HTTP/1.3"
-    HTTP/1.x: "HTTP/1.x ({label_other})"
+    HTTP/1.x: "HTTP/1.x ({label.Other})"
     HTTP/2.0: "HTTP/2.0"
-    HTTP/2.x: "HTTP/2.x ({label_other})"
+    HTTP/2.x: "HTTP/2.x ({label.Other})"
     HTTP/3.0: "HTTP/3.0"
-    HTTP/3.x: "HTTP/3.x ({label_other})"
-    HTTP/x.x: "HTTP/x.x ({label_other})"
+    HTTP/3.x: "HTTP/3.x ({label.Other})"
+    HTTP/x.x: "HTTP/x.x ({label.Other})"
     SHTTP/1.3: "SHTTP/1.3"
-    SHTTP/x.x: "SHTTP/x.x ({label_other})"
+    SHTTP/x.x: "SHTTP/x.x ({label.Other})"
     SPDY/3.0: "SPDY/3.0"
     SPDY/3.1: "SPDY/3.1"
-    SPDY/x.x: "SPDY/x.x ({label_other})"
+    SPDY/x.x: "SPDY/x.x ({label.Other})"
     IRC/6.9: "IRC/6.9"
-    IRC/x.x: "IRC/x.x ({label_other})"
+    IRC/x.x: "IRC/x.x ({label.Other})"
     RTA/x11: "RTA/x11"
-    Other: "label_empty_unfamiliar"
+    Other: "label.Empty, unfamiliar, and others"
   reason_message:
    type: "string"
    default: "protocol_denied_long"

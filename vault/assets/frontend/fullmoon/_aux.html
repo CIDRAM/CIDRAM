@@ -1,7 +1,7 @@
 <div class="nav">{nav}</div>
 <hr />
 <div class="s" id="stateMsg">{state_msg}</div>
-<div class="ng1 center"><a href="?cidram-page=aux">{label_aux_mode_view}</a> – <a href="?cidram-page=aux-edit">{label_aux_mode_edit}</a></div>
+<div class="ng1 center"><a href="?cidram-page=aux">{label.aux_mode_view}</a> – <a href="?cidram-page=aux-edit">{label.aux_mode_edit}</a></div>
 <div class="ng1"><ul class="pieul">{Data}
 </ul>
 <form enctype="multipart/form-data" id="xprtForm" action="?cidram-page=backup" method="POST" style="display:none">
@@ -10,11 +10,11 @@
 <form id="auxForm" action="?cidram-page=aux" method="POST">
 <hr />
 <ul class="pieul">
-  <li><span class="comCat s">{label_aux_create_new_rule}</span>
+  <li><span class="comCat s">{label.aux_create_new_rule}</span>
     <ul class="comSub">
       <li>
         <div class="iCntr">
-          <div class="iLabl s"><label for="ruleName">{label_aux_name}</label></div>
+          <div class="iLabl s"><label for="ruleName">{label.aux_name}</label></div>
           <div class="iCntn" id="ruleNameDd">
             <input type="text" id="ruleName" name="ruleName" class="f400" />
           </div>
@@ -22,7 +22,7 @@
       </li>
       <li>
         <div class="iCntr">
-          <div id="ruleReasonDt" class="iLabl s"><label for="ruleReason">{label_aux_reason}</label></div>
+          <div id="ruleReasonDt" class="iLabl s"><label for="ruleReason">{label.aux_reason}</label></div>
           <div class="iCntn" id="ruleReasonDd">
             <input type="text" id="ruleReason" name="ruleReason" class="f400" />
           </div>
@@ -30,7 +30,7 @@
       </li>
       <li>
         <div class="iCntr">
-          <div id="ruleTargetDt" class="iLabl s" style="text-decoration:line-through"><label for="ruleTarget">{label_aux_target}</label></div>
+          <div id="ruleTargetDt" class="iLabl s" style="text-decoration:line-through"><label for="ruleTarget">{label.aux_target}</label></div>
           <div class="iCntn" id="ruleTargetDd" style="filter:grayscale(80%) brightness(80%)">
             <input type="text" id="ruleTarget" name="ruleTarget" class="f400" />
           </div>
@@ -38,7 +38,7 @@
       </li>
       <li>
         <div class="iCntr">
-          <div id="ruleRunDt" class="iLabl s" style="text-decoration:line-through"><label for="ruleRun">{label_aux_run}</label></div>
+          <div id="ruleRunDt" class="iLabl s" style="text-decoration:line-through"><label for="ruleRun">{label.aux_run}</label></div>
           <div class="iCntn" id="ruleRunDd" style="filter:grayscale(80%) brightness(80%)">
             <input type="text" id="ruleRun" name="ruleRun" class="f400" />
           </div>
@@ -46,7 +46,7 @@
       </li>
       <li>
         <div class="iCntr">
-          <div id="fromDt" class="iLabl s"><label for="from">{label_aux_from}</label></div>
+          <div id="fromDt" class="iLabl s"><label for="from">{label.aux_from}</label></div>
           <div class="iCntn" id="fromDd">
             <input type="date" id="from" name="from" class="f400" min="{Y-m-d}" />
           </div>
@@ -54,7 +54,7 @@
       </li>
       <li>
         <div class="iCntr">
-          <div id="expiryDt" class="iLabl s"><label for="expiry">{label_aux_expiry}</label></div>
+          <div id="expiryDt" class="iLabl s"><label for="expiry">{label.aux_expiry}</label></div>
           <div class="iCntn" id="expiryDd">
             <input type="date" id="expiry" name="expiry" class="f400" min="{Y-m-d}" />
           </div>
@@ -62,7 +62,7 @@
       </li>
       <li>
         <div class="iCntr">
-          <div class="iLabl s"><label for="statusCode">{label_aux_http_status_code_override}</label></div>
+          <div class="iLabl s"><label for="statusCode">{label.aux_http_status_code_override}</label></div>
           <div class="iCntn">
             <span id="statGroupX" class="statGroup">
               <input type="radio" class="auto" id="statusCodeX" name="statusCode" value="0" checked="true" /><label for="statusCodeX">🗙</label>
@@ -95,7 +95,7 @@
               <option value="actRdr">{optActRdr}</option>
               <option value="actRun">{optActRun}</option>
               <option value="actPro">{optActPro}</option>
-            </select><input type="button" onclick="javascript:addCondition('')" value="{field_add_more_conditions} [1]" class="auto" accesskey="1" />
+            </select><input type="button" onclick="javascript:addCondition('')" value="{field.Add more conditions} [1]" class="auto" accesskey="1" />
           </div>
           <div class="iCntn" id="conditions">
             <div class="flexrow"><select name="conSourceType[]" class="auto">{conSources}</select><select name="conIfOrNot[]" class="auto"><option value="If">=</option><option value="Not">≠</option></select><input type="text" name="conSourceValue[]" placeholder="{tip_condition_placeholder}" class="flexin" /></div>
@@ -109,7 +109,7 @@
       <li>
         <div class="iCntr">
           <div class="iLabl s">
-            <input type="button" onclick="javascript:addWebhook('')" value="{field_add_webhook} [0]" class="auto" accesskey="0" />
+            <input type="button" onclick="javascript:addWebhook('')" value="{field.Add webhook} [0]" class="auto" accesskey="0" />
           </div>
           <div class="iCntn" id="webhooks"></div>
         </div>
@@ -133,22 +133,22 @@
         <div class="iCntr">
           <div class="iLabl s">
             <select id="logic" name="logic" class="flong">
-              <option value="Any">{label_aux_logic_any}</option>
-              <option value="All">{label_aux_logic_all}</option>
+              <option value="Any">{label.aux_logic_any}</option>
+              <option value="All">{label.aux_logic_all}</option>
             </select>
           </div>
         </div>
       </li>{AuxFlagsProvides}
       <li>
         <div class="iCntr">
-          <div class="iLabl s"><label for="Notes">{label_aux_notes}</label></div>
+          <div class="iLabl s"><label for="Notes">{label.aux_notes}</label></div>
           <div class="iCntn"><textarea name="Notes" class="half"></textarea></div>
         </div>
       </li>
       <li>
         <div class="iCntr">
           <div class="iLabl s">
-            <input onclick="javascript:createNewRule()" type="button" value="{label_aux_create_new_rule} [2]" class="auto" accesskey="2" />
+            <input onclick="javascript:createNewRule()" type="button" value="{label.aux_create_new_rule} [2]" class="auto" accesskey="2" />
           </div>
         </div>
       </li>
@@ -161,7 +161,7 @@
               <div class="iCntn" style="text-transform:capitalize">{Priority_Aux}</div>
             </div>
             <div class="iCntr">
-              <div class="iLabl s">{field_status} <span dir="ltr">(HTTP/x.x xxx)</span></div>
+              <div class="iLabl s">{field.Status} <span dir="ltr">(HTTP/x.x xxx)</span></div>
               <div class="iCntn">{Priority_Status_Codes}</div>
             </div>
           </div>

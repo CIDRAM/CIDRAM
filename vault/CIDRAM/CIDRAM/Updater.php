@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods for updating CIDRAM components (last modified: 2023.08.30).
+ * This file: Methods for updating CIDRAM components (last modified: 2023.09.18).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -357,7 +357,7 @@ trait Updater
      */
     private function prepareExtendedDescription(array &$Arr, string $Key = ''): void
     {
-        $Key = 'Extended Description ' . $Key;
+        $Key = 'Extended Description.' . $Key;
         if (($Try = $this->L10N->getString($Key)) !== '') {
             $Arr['Extended Description'] = $Try;
         } elseif (!isset($Arr['Extended Description'])) {
@@ -378,7 +378,7 @@ trait Updater
             }
             $Arr['Extended Description'] .= sprintf(
                 '<br /><em>%s <span class="%s">%s</span></em>',
-                $this->L10N->getString('label_false_positive_risk'),
+                $this->L10N->getString('label.False positive risk'),
                 $Class,
                 $State
             );
@@ -682,9 +682,9 @@ trait Updater
                                     $ThisTarget,
                                     $FileName,
                                     $this->L10N->getString('response_checksum_error'),
-                                    $this->L10N->getString('label_actual'),
+                                    $this->L10N->getString('label.Actual'),
                                     $Actual,
-                                    $this->L10N->getString('label_expected'),
+                                    $this->L10N->getString('label.Expected'),
                                     $FileMeta['Checksum']
                                 );
                                 if (!empty($this->Components['RemoteMeta'][$ThisTarget]['On Checksum Error'])) {
@@ -1292,14 +1292,14 @@ trait Updater
                 $Table .= sprintf(
                     '<code>%1$s</code> – %7$s %8$s – %9$s %10$s<br />%2$s – <code class="%6$s">%3$s</code><br />%4$s – <code class="%6$s">%5$s</code><hr />',
                     $ThisFile,
-                    $this->L10N->getString('label_actual'),
+                    $this->L10N->getString('label.Actual'),
                     $Actual ?: '?',
-                    $this->L10N->getString('label_expected'),
+                    $this->L10N->getString('label.Expected'),
                     $Checksum ?: '?',
                     $Class,
-                    $this->L10N->getString('label_integrity_check'),
+                    $this->L10N->getString('label.Integrity check'),
                     $Integrity,
-                    $this->L10N->getString('label_sanity_check'),
+                    $this->L10N->getString('label.Sanity check'),
                     $Sanity
                 );
             }
@@ -1390,7 +1390,7 @@ trait Updater
         if ($ThisComponent['Dependency Status']) {
             $ThisComponent['Dependency Status'] = sprintf(
                 '<hr /><small><span class="s">%s</span><br />%s</small>',
-                $this->L10N->getString('label_dependencies'),
+                $this->L10N->getString('label.Dependencies'),
                 $ThisComponent['Dependency Status']
             );
         }

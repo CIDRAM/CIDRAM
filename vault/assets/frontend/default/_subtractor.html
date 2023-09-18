@@ -24,14 +24,14 @@
           </td>
           <td class="h3f">
             <div class="center">
-              <input type="submit" value="{field_ok}" />
+              <input type="submit" value="{field.OK}" />
             </div>
           </td>
         </tr><!-- Output Begin -->
         <tr>
           <td colspan="2" class="h4f">
             <div class="center">
-              <span class="s">{label_difference} (A-B)<br /></span><textarea id="rangeOutput" readonly>{Subtractor_AB}</textarea><br />
+              <span class="s">{label.Difference} (A-B)<br /></span><textarea id="rangeOutput" readonly>{Subtractor_AB}</textarea><br />
             </div>
             <div class="s" style="display:block;margin:16px"><span id="rangeSvg" onclick="javascript:if(navigator.clipboard){navigator.clipboard.writeText(getElementById('rangeOutput').value);getElementById('rangeSvg_copied').className='sFade'}else{getElementById('rangeSvg_failed').style.className='sFade'}"><script type="text/javascript">copySvg('rangeSvg');</script></span><span id="rangeSvg_copied" class="sHide" onanimationend="javascript:this.className='sHide'">✔️ {response_copied}</span><span id="rangeSvg_failed" class="sHide" onanimationend="javascript:this.className='sHide'">❌ {response_failed}</span></div>
           </td>

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: HCaptcha class (last modified: 2023.01.26).
+ * This file: HCaptcha class (last modified: 2023.09.16).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -202,11 +202,11 @@ class HCaptcha extends Captcha
         $WriteMode = (!file_exists($Filename) || $Truncate > 0 && filesize($Filename) >= $Truncate) ? 'wb' : 'ab';
         $Data = sprintf(
             '%1$s%7$s%2$s - %3$s%7$s%4$s - %5$s%7$s%6$s',
-            $this->CIDRAM->L10N->getString('field_ipaddr'),
+            $this->CIDRAM->L10N->getString('field.IP address'),
             $this->CIDRAM->Configuration['legal']['pseudonymise_ip_addresses'] ? $this->CIDRAM->pseudonymiseIp($this->CIDRAM->ipAddr) : $this->CIDRAM->ipAddr,
-            $this->CIDRAM->L10N->getString('field_datetime'),
+            $this->CIDRAM->L10N->getString('field.DateTime'),
             $this->CIDRAM->BlockInfo['DateTime'],
-            $this->CIDRAM->L10N->getString('field_captcha'),
+            $this->CIDRAM->L10N->getString('field.CAPTCHA state'),
             $this->CIDRAM->BlockInfo['CAPTCHA'],
             $this->CIDRAM->L10N->getString('pair_separator')
         ) . "\n";
@@ -261,7 +261,7 @@ class HCaptcha extends Captcha
             '<form method="POST" action="" class="gForm">' .
                 '<input id="rData" type="hidden" name="hc-response" value="" />' .
                 '<div id="hcform" data-theme="%s" data-callback="onSubmitCallback"></div>' .
-                '<div>%s<input type="submit" value="{label_submit}" /></div>' .
+                '<div>%s<input type="submit" value="{label.submit}" /></div>' .
             "</form>\n" .
             "<script type=\"text/javascript\">function onSubmitCallback(token){document.getElementById('rData').value=hcaptcha.getResponse(window.document.hcwidget)}</script>\n",
             $this->CIDRAM->CIDRAM['L10N-Lang-Attache'],

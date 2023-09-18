@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: BunnyCDN compatibility defaults file (last modified: 2022.06.15).
+# This file: BunnyCDN compatibility defaults file (last modified: 2023.09.17).
 ##/
 
 Config Defaults:
@@ -16,7 +16,7 @@ Config Defaults:
    type: "string"
    default: "bypass"
    choices:
-    bypass: "label_bypass_the_request"
-    greylist: "label_greylist_the_request"
-    whitelist: "label_whitelist_the_request"
+    bypass: "label.Trigger a bypass"
+    greylist: "label.Greylist the request"
+    whitelist: "label.Whitelist the request"
    style: "radio"

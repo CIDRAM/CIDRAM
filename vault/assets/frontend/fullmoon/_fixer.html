@@ -2,7 +2,7 @@
 <hr />
 <div class="ng1">
   <form action="?cidram-page=fixer" method="POST">
-    <span class="s">{label_preferred_source}</span><br />
+    <span class="s">{label.Preferred source}</span><br />
     {PreferredSource}
     <div id="preferredSourceListDiv"{styleList}>
       <hr />{ActiveSignatureFiles}
@@ -10,6 +10,6 @@
     <div id="preferredSourceInputDiv"{styleInput}>
       <hr /><textarea name="DirectInput" placeholder="{tip_enter_input_here}">{DirectInput}</textarea><br />
     </div>
-    <input id="submitButton" type="submit" value="{field_ok}" {submitButtonVisibility}/>
+    <input id="submitButton" type="submit" value="{field.OK}" {submitButtonVisibility}/>
   </form>{FixerOutput}
 </div>

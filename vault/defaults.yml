@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2023.09.05).
+# This file: Defaults file (last modified: 2023.09.18).
 ##/
 
 Config Defaults:
@@ -150,31 +150,31 @@ Config Defaults:
     ShowInPageOutput: "checkbox_label_fields_page_output"
     OmitIfEmpty: "checkbox_label_fields_omit"
    choices:
-    ID: "field_id"
-    ScriptIdent: "field_scriptversion"
-    DateTime: "field_datetime"
-    IPAddr: "field_ipaddr"
-    IPAddrResolved: "field_ipaddr_resolved"
-    Query: "field_query"
-    Referrer: "field_referrer"
-    UA: "field_ua"
-    UALC: "field_ualc"
-    SignatureCount: "field_sigcount"
-    Signatures: "field_sigref"
-    WhyReason: "field_whyreason"
-    ReasonMessage: "field_reasonmessage"
-    rURI: "field_rURI"
-    Infractions: "field_infractions"
-    ASNLookup: "** {field_asnlookup}"
-    CCLookup: "** {field_cclookup}"
-    Verified: "field_verified"
+    ID: "field.ID"
+    ScriptIdent: "field.Script version"
+    DateTime: "field.DateTime"
+    IPAddr: "field.IP address"
+    IPAddrResolved: "field.IP address (resolved)"
+    Query: "field.Query"
+    Referrer: "field.Referrer"
+    UA: "field.User agent"
+    UALC: "field.User agent (lower-case)"
+    SignatureCount: "field.Signatures count"
+    Signatures: "field.Signatures reference"
+    WhyReason: "field.Why blocked"
+    ReasonMessage: "field.Why blocked (detailed)"
+    rURI: "field.Reconstructed URI"
+    Infractions: "field.Infractions"
+    ASNLookup: "** {field.ASN lookup}"
+    CCLookup: "** {field.Country code lookup}"
+    Verified: "field.Verified identity"
     Expired: "state_expired"
     Ignored: "state_ignored"
-    Request_Method: "field_request_method"
-    Protocol: "field_protocol"
-    Hostname: "field_hostname"
-    CAPTCHA: "field_captcha"
-    Inspection: "* {field_inspection}"
+    Request_Method: "field.Request method"
+    Protocol: "field.Protocol"
+    Hostname: "field.Hostname"
+    CAPTCHA: "field.CAPTCHA state"
+    Inspection: "* {field.Conditions inspection}"
    nonsense: |
     ID:OmitIfEmpty
     ScriptIdent:OmitIfEmpty
@@ -281,7 +281,7 @@ Config Defaults:
     HTTP_X_FORWARDED_FOR: "HTTP_X_FORWARDED_FOR (Cloudbric)"
     X-Forwarded-For: "X-Forwarded-For (Squid)"
     Forwarded: "Forwarded"
-    REMOTE_ADDR: "REMOTE_ADDR ({label_default})"
+    REMOTE_ADDR: "REMOTE_ADDR ({label.Default})"
    See also:
     "NGINX Reverse Proxy": "https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/"
     "Squid configuration directive forwarded_for": "http://www.squid-cache.org/Doc/config/forwarded_for/"
@@ -290,12 +290,12 @@ Config Defaults:
    type: "int"
    default: 403
    choices:
-    200: &200 "label_http_response_header_code_200"
-    403: &403 "label_http_response_header_code_403"
-    410: &410 "label_http_response_header_code_410"
-    418: &418 "label_http_response_header_code_418"
-    451: &451 "label_http_response_header_code_451"
-    503: &503 "label_http_response_header_code_503"
+    200: &200 "label.200 OK"
+    403: &403 "label.403 Forbidden"
+    410: &410 "label.410 Gone"
+    418: &418 "label.418 I_m a teapot"
+    451: &451 "label.451 Unavailable For Legal Reasons"
+    503: &503 "label.503 Service Unavailable"
    style: "radio"
   silent_mode:
    type: "url"
@@ -305,10 +305,10 @@ Config Defaults:
    type: "int"
    default: 301
    choices:
-    301: &301 "label_silent_mode_response_header_code_301"
-    302: &302 "label_silent_mode_response_header_code_302"
-    307: &307 "label_silent_mode_response_header_code_307"
-    308: &308 "label_silent_mode_response_header_code_308"
+    301: &301 "label.301 Moved Permanently"
+    302: &302 "label.302 Found"
+    307: &307 "label.307 Temporary Redirect"
+    308: &308 "label.308 Permanent Redirect"
    style: "radio"
    hints: "hints_client_honour"
   lang:
@@ -449,8 +449,8 @@ Config Defaults:
    type: "string"
    default: "default"
    choices:
-    default: "field_clickable_link"
-    noclick: "field_nonclickable_text"
+    default: "field.Clickable link"
+    noclick: "field.Non-clickable text"
   ban_override:
    type: "int"
    default: 200
@@ -492,20 +492,20 @@ Config Defaults:
     Reported-IPv6-OK
     Reported-IPv6-Failed
    choices:
-    Blocked-IPv4: "{label_blocked} – IPv4"
-    Blocked-IPv6: "{label_blocked} – IPv6"
-    Blocked-Other: "{label_blocked} – {label_other}"
-    Banned-IPv4: "{label_banned} – IPv4"
-    Banned-IPv6: "{label_banned} – IPv6"
-    Passed-IPv4: "{label_passed} – IPv4"
-    Passed-IPv6: "{label_passed} – IPv6"
-    Passed-Other: "{label_passed} – {label_other}"
-    CAPTCHAs-Failed: "{label_captcha} – {state_failed}"
-    CAPTCHAs-Passed: "{label_captcha} – {state_passed}"
-    Reported-IPv4-OK: "{label_reported} – IPv4 – {field_ok}"
-    Reported-IPv4-Failed: "{label_reported} – IPv4 – {response_failed}"
-    Reported-IPv6-OK: "{label_reported} – IPv6 – {field_ok}"
-    Reported-IPv6-Failed: "{label_reported} – IPv6 – {response_failed}"
+    Blocked-IPv4: "{label.Requests blocked} – IPv4"
+    Blocked-IPv6: "{label.Requests blocked} – IPv6"
+    Blocked-Other: "{label.Requests blocked} – {label.Other}"
+    Banned-IPv4: "{label.Requests banned} – IPv4"
+    Banned-IPv6: "{label.Requests banned} – IPv6"
+    Passed-IPv4: "{label.Requests passed} – IPv4"
+    Passed-IPv6: "{label.Requests passed} – IPv6"
+    Passed-Other: "{label.Requests passed} – {label.Other}"
+    CAPTCHAs-Failed: "{label.CAPTCHA attempts} – {state_failed}"
+    CAPTCHAs-Passed: "{label.CAPTCHA attempts} – {state_passed}"
+    Reported-IPv4-OK: "{label.Requests reported to external APIs} – IPv4 – {field.OK}"
+    Reported-IPv4-Failed: "{label.Requests reported to external APIs} – IPv4 – {response_failed}"
+    Reported-IPv6-OK: "{label.Requests reported to external APIs} – IPv6 – {field.OK}"
+    Reported-IPv6-Failed: "{label.Requests reported to external APIs} – IPv6 – {response_failed}"
    hints: "hints_aux_stats"
   force_hostname_lookup:
    type: "bool"
@@ -586,8 +586,8 @@ Config Defaults:
    type: "string"
    default: "Delete"
    choices:
-    Delete: "field_log_rotation_delete"
-    Archive: "field_log_rotation_archive"
+    Delete: "field.log_rotation_delete"
+    Archive: "field.log_rotation_archive"
    style: "radio"
   log_banned_ips:
    type: "bool"
@@ -676,7 +676,7 @@ Config Defaults:
     Banned: "³ {Short_Banned}"
     BadIP: "³ {Short_BadIP}"
     RL: "³ {Short_RL}"
-    Other: "⁴ {label_other}"
+    Other: "⁴ {label.Other}"
    nonsense: |
     Banned:Block
     Banned:Profile
@@ -854,12 +854,12 @@ Config Defaults:
    type: "int"
    default: 0
    choices:
-    0: "{label_never} !!!"
-    1: "{label_usemode_blkd}"
-    2: "{label_usemode_blkd_mrkd}"
-    3: "{label_usemode_any}"
-    4: "{label_usemode_not_blkd}"
-    5: "{label_usemode_not_blkd_mrkd}"
+    0: "{label.Never} !!!"
+    1: "{label.usemode_blkd}"
+    2: "{label.usemode_blkd_mrkd}"
+    3: "{label.usemode_any}"
+    4: "{label.usemode_not_blkd}"
+    5: "{label.usemode_not_blkd_mrkd}"
    style: "radio"
   lockip:
    type: "bool"
@@ -896,8 +896,8 @@ Config Defaults:
    type: "string"
    default: "V2"
    choices:
-    V2: "V2 ({label_checkbox})"
-    Invisible: "V2 ({label_invisible})"
+    V2: "V2 ({label.Checkbox})"
+    Invisible: "V2 ({label.Invisible})"
   show_cookie_warning:
    type: "bool"
    default: true
@@ -911,7 +911,7 @@ Config Defaults:
     200: *200
     403: *403
     418: *418
-    429: &429 "label_http_response_header_code_429"
+    429: &429 "label.429 Too Many Requests"
     451: *451
    style: "radio"
  hcaptcha:
@@ -919,12 +919,12 @@ Config Defaults:
    type: "int"
    default: 0
    choices:
-    0: "{label_never} !!!"
-    1: "{label_usemode_blkd}"
-    2: "{label_usemode_blkd_mrkd}"
-    3: "{label_usemode_any}"
-    4: "{label_usemode_not_blkd}"
-    5: "{label_usemode_not_blkd_mrkd}"
+    0: "{label.Never} !!!"
+    1: "{label.usemode_blkd}"
+    2: "{label.usemode_blkd_mrkd}"
+    3: "{label.usemode_any}"
+    4: "{label.usemode_not_blkd}"
+    5: "{label.usemode_not_blkd_mrkd}"
    style: "radio"
   lockip:
    type: "bool"
@@ -958,7 +958,7 @@ Config Defaults:
    default: "V1"
    choices:
     V1: "V1"
-    Invisible: "V1 ({label_invisible})"
+    Invisible: "V1 ({label.Invisible})"
   show_cookie_warning:
    type: "bool"
    default: true
@@ -1061,9 +1061,9 @@ Config Defaults:
    type: "checkbox"
    default: "FE"
    choices:
-    Whitelisted: "field_whitelisted_requests"
-    Verified: "field_verified_requests"
-    FE: "field_fe_requests"
+    Whitelisted: "field.Whitelisted requests"
+    Verified: "field.Verified identity search engine and social media requests"
+    FE: "field.Requests to the CIDRAM front-end"
   segregate:
    type: "bool"
    default: false
@@ -1150,92 +1150,92 @@ Provide:
    - "Profile"
   Sources:
    BlockInfo:
-    IPAddr: "field_ipaddr"
-    IPAddrResolved: "field_ipaddr_resolved"
-    Query: "field_query"
-    Referrer: "field_referrer"
-    UA: "field_ua"
-    UALC: "field_ualc"
-    SignatureCount: "field_sigcount"
-    Signatures: "field_sigref"
-    WhyReason: "field_whyreason"
-    ReasonMessage: "field_reasonmessage"
-    rURI: "field_rURI"
-    Infractions: "field_infractions"
-    ASNLookup: "field_asnlookup"
-    CCLookup: "field_cclookup"
-    Verified: "field_verified"
+    IPAddr: "field.IP address"
+    IPAddrResolved: "field.IP address (resolved)"
+    Query: "field.Query"
+    Referrer: "field.Referrer"
+    UA: "field.User agent"
+    UALC: "field.User agent (lower-case)"
+    SignatureCount: "field.Signatures count"
+    Signatures: "field.Signatures reference"
+    WhyReason: "field.Why blocked"
+    ReasonMessage: "field.Why blocked (detailed)"
+    rURI: "field.Reconstructed URI"
+    Infractions: "field.Infractions"
+    ASNLookup: "field.ASN lookup"
+    CCLookup: "field.Country code lookup"
+    Verified: "field.Verified identity"
     Expired: "state_expired"
     Ignored: "state_ignored"
-    Request_Method: "field_request_method"
-    Protocol: "field_protocol"
-   Profiles: "field_profile"
+    Request_Method: "field.Request method"
+    Protocol: "field.Protocol"
+   Profiles: "field.Profile"
    CIDRAM:
-    Hostname: "field_hostname"
+    Hostname: "field.Hostname"
     Factors: "CIDR"
   Flags:
    reCAPTCHA:
     Mark for use with reCAPTCHA:
-     Label: "label_aux_special_recaptcha_mark"
+     Label: "label.aux_special_recaptcha_mark"
      Sets:
       Configuration:
        recaptcha: {enabled: true}
     Forcibly disable reCAPTCHA:
-     Label: "label_aux_special_recaptcha_disable"
+     Label: "label.aux_special_recaptcha_disable"
      Sets:
       Configuration:
        recaptcha: {usemode: 0, forcibly_disabled: true}
    HCaptcha:
     Mark for use with HCaptcha:
-     Label: "label_aux_special_hcaptcha_mark"
+     Label: "label.aux_special_hcaptcha_mark"
      Sets:
       Configuration:
        hcaptcha: {enabled: true}
     Forcibly disable HCaptcha:
-     Label: "label_aux_special_hcaptcha_disable"
+     Label: "label.aux_special_hcaptcha_disable"
      Sets:
       Configuration:
        hcaptcha: {usemode: 0, forcibly_disabled: true}
    Output template:
-    Label: "label_aux_special_suppress"
+    Label: "label.aux_special_suppress"
     Suppress output template:
-     Label: "label_aux_special_suppress"
+     Label: "label.aux_special_suppress"
      Sets:
       CIDRAM: {Suppress output template: true}
    Logging:
-    Label: "label_aux_special_suppress_logging"
+    Label: "label.aux_special_suppress_logging"
     Suppress logging:
-     Label: "label_aux_special_suppress_logging"
+     Label: "label.aux_special_suppress_logging"
      Sets:
       CIDRAM: {Suppress logging: true}
    IP Tracking:
     Label: "link_ip_tracking"
     Forcibly enable IP tracking:
-     Label: "label_aux_special_ip_tracking_enable"
+     Label: "label.aux_special_ip_tracking_enable"
      Sets:
       CIDRAM: {Trackable: true}
     Forcibly disable IP tracking:
-     Label: "label_aux_special_ip_tracking_disable"
+     Label: "label.aux_special_ip_tracking_disable"
      Sets:
       CIDRAM: {Trackable: false}
    Values for IP tracking:
-    Label: "label_values_for_ip_tracking"
+    Label: "label.Values for IP tracking"
     Enforce extended IP tracking options:
-     Label: "label_aux_special_tracking_extended"
+     Label: "label.aux_special_tracking_extended"
      Sets:
       CIDRAM: {Tracking options override: "extended"}
     Enforce default IP tracking options:
-     Label: "label_aux_special_tracking_default"
+     Label: "label.aux_special_tracking_default"
      Sets:
       CIDRAM: {Tracking options override: "default"}
    Statistics:
     Label: "link_statistics"
     Track this rule:
-     Label: "label_aux_special_statistics"
+     Label: "label.aux_special_statistics"
    Disable this rule:
-    Label: "label_aux_special_disable"
+    Label: "label.aux_special_disable"
     Disable this rule:
-     Label: "label_aux_special_disable"
+     Label: "label.aux_special_disable"
 Links:
  AbuseIPDB: "<a href="https://abuseipdb.com/" dir="ltr" hreflang="en-US" rel="noopener noreferrer external">AbuseIPDB</a>"
  BGPView: "<a href="https://bgpview.io/" dir="ltr" hreflang="en-US" rel="noopener noreferrer external">BGPView</a>"
@@ -1251,7 +1251,7 @@ Links:
  ISO:
   3166: "<a href="https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes" dir="ltr" hreflang="en-US" rel="nofollow noopener noreferrer external" target="_blank">ISO-3166</a>"
  MIT: "<a href="https://opensource.org/licenses/MIT" dir="ltr" hreflang="en-US" rel="noopener noreferrer external">MIT</a>"
- PHP:
+ PHP version used:
   Earth:
    Facebook: "<a href="https://www.facebook.com/groups/2204685680/" dir="ltr" rel="noopener noreferrer external">PHP.earth@Facebook</a>"
    Website: "<a href="https://php.earth/" dir="ltr" hreflang="en" rel="noopener noreferrer external">PHP.earth</a>"

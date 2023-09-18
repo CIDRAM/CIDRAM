@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: AbuseIPDB defaults file (last modified: 2023.08.23).
+# This file: AbuseIPDB defaults file (last modified: 2023.09.18).
 ##/
 
 Config Defaults:
@@ -40,17 +40,17 @@ Config Defaults:
    type: "int"
    default: 0
    choices:
-    0: "label_reporting_deny"
-    1: "label_reporting_allow"
-    2: "label_reporting_allow_blocked"
+    0: "label.Deny"
+    1: "label.Allow"
+    2: "label.Allow, but only when also blocked"
    style: "radio"
   lookup_strategy:
    type: "int"
    default: 2
    choices:
-    0: "label_requests_none"
-    1: "label_requests_all"
-    2: "label_requests_sensitive_pages"
+    0: "label.None"
+    1: "label.Every request"
+    2: "label.Requests for sensitive pages only"
    style: "radio"
   timeout_limit:
    type: "int"

@@ -6,19 +6,19 @@
     <hr />
     {info_some_useful_links}
     <hr />
-    {label_backup_location}<ul>
+    {label.Repository backup locations}<ul>
       <li>{BackupLocations}</li>
     </ul>
     <hr />
-    {label_sysinfo}<br />
+    {label.System information}<br />
     <ul class="pieul">
-      <li><span class="comCat">{label_cidram} <code>{ScriptVersion}</code></span>
-        <ul class="comSub"><li class="branchline"><small>{label_branch} <code>{info_cidram_branch}</code> – {label_stable} <code>{info_cidram_stable}</code> – {label_unstable} <code>{info_cidram_unstable}</code></small></li></ul>
+      <li><span class="comCat">{label.CIDRAM version used} <code>{ScriptVersion}</code></span>
+        <ul class="comSub"><li class="branchline"><small>{label.Branch latest stable} <code>{info_cidram_branch}</code> – {label.Latest stable} <code>{info_cidram_stable}</code> – {label.Latest unstable} <code>{info_cidram_unstable}</code></small></li></ul>
       </li>
-      <li><span class="comCat">{label_php} <code>{info_php}</code></span>
+      <li><span class="comCat">{label.PHP version used} <code>{info_php}</code></span>
         <ul class="comSub">
-          <li><small>{label_branch} <code>{info_php_branch}</code> – {label_stable} <code>{info_php_stable}</code> – {label_unstable} <code>{info_php_unstable}</code></small></li>
-          <li class="branchline"><small>{label_sapi} <code>{info_sapi}</code></small></li>
+          <li><small>{label.Branch latest stable} <code>{info_php_branch}</code> – {label.Latest stable} <code>{info_php_stable}</code> – {label.Latest unstable} <code>{info_php_unstable}</code></small></li>
+          <li class="branchline"><small>{label.SAPI used} <code>{info_sapi}</code></small></li>
         </ul>
       </li>
       <li><span class="comCat normalHeight">{ExtensionIsAvailable}</span>
@@ -26,14 +26,14 @@
 {Extensions}
         </ul>
       </li>
-      <li><br />{label_os} <code>{info_os}</code></li>
+      <li><br />{label.Operating system used} <code>{info_os}</code></li>
     </ul>
     <hr />
-    {label_clientinfo}<br />
+    {label.Client information}<br />
     <ul>
       <li>
-        {label_your_ip} <code>{YourIP}</code><br />
-        <small>{label_your_ua} <code>{UA}</code></small>
+        {label.Your IP} <code>{YourIP}</code><br />
+        <small>{label.Your UA} <code>{UA}</code></small>
       </li>
     </ul>
     <hr />

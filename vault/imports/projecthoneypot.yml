@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Project Honeypot defaults file (last modified: 2023.04.18).
+# This file: Project Honeypot defaults file (last modified: 2023.09.18).
 ##/
 
 Config Defaults:
@@ -37,9 +37,9 @@ Config Defaults:
    type: "int"
    default: 2
    choices:
-    0: "label_requests_none"
-    1: "label_requests_all"
-    2: "label_requests_sensitive_pages"
+    0: "label.None"
+    1: "label.Every request"
+    2: "label.Requests for sensitive pages only"
    style: "radio"
   timeout_limit:
    type: "int"
@@ -62,11 +62,11 @@ Config Defaults:
     Block: "checkbox_label_block_it"
     Profile: "checkbox_label_profile_it"
    choices:
-    SearchEngine: "label_phvt_search_engine"
-    Suspicious: "label_phvt_suspicious"
-    Harvester: "label_phvt_harvester"
-    CommentSpammer: "label_phvt_comment_spammer"
-    Other: "label_other"
+    SearchEngine: "label.Search Engine"
+    Suspicious: "label.Suspicious"
+    Harvester: "label.Harvester"
+    CommentSpammer: "label.Comment Spammer"
+    Other: "label.Other"
    nonsense: |
     Other:Profile
 Cache Prefetch:

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Default event handlers (last modified: 2023.08.01).
+ * This file: Default event handlers (last modified: 2023.09.16).
  */
 
 /**
@@ -288,14 +288,14 @@ $this->Events->addHandler('writeToReportLog', function (string $Data, array $Mis
 
     $Data = sprintf(
         '%1$s%3$s%8$s%2$s%3$s%4$s%5$s%3$s%6$s%7$s%3$s%9$s',
-        $this->L10N->getString('label_report_log'),
-        $this->L10N->getString('field_datetime'),
+        $this->L10N->getString('label.report_log'),
+        $this->L10N->getString('field.DateTime'),
         $this->L10N->getString('pair_separator'),
         date('c', time()) . "\n",
-        $this->L10N->getString('field_ipaddr'),
+        $this->L10N->getString('field.IP address'),
         $Misc[0] . "\n",
-        $this->L10N->getString('field_comments'),
-        $this->L10N->getString(isset($this->CIDRAM['Report OK']) && $this->CIDRAM['Report OK'] > 0 ? 'field_ok' : 'response_failed') . "\n",
+        $this->L10N->getString('field.Comments'),
+        $this->L10N->getString(isset($this->CIDRAM['Report OK']) && $this->CIDRAM['Report OK'] > 0 ? 'field.OK' : 'response_failed') . "\n",
         $Data
     ) . "\n\n";
 

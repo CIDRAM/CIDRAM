@@ -8,19 +8,19 @@
       <form action="?{TrackingFilter}" method="POST" name="SelectorForm">
         <select name="FilterSelector" class="ufts">
           {TrackingFilterControls}
-        </select><input type="submit" value="{field_ok}" class="auto" />
+        </select><input type="submit" value="{field.OK}" class="auto" />
       </form><hr />
       <form id="trackForm" action="?{TrackingFilter}" method="POST">
         <input name="IPAddr" type="hidden" value="*" />
-        <input onclick="{Confirm-ClearAll}" type="button" value="{field_clear_all}" class="auto" />
+        <input onclick="{Confirm-ClearAll}" type="button" value="{field.Clear all}" class="auto" />
       </form>
     </td></tr></table>
     <table class="tablend">
     <tr>
-      <td class="h2"><div class="s">{field_ipaddr}</div></td>
-      <td class="h2 big"><div class="s">{field_status} – {field_infractions}</div></td>
-      <td class="h2 big"><div class="s">{field_expiry}</div></td>
-      <td class="h2f"><div class="s">{field_options}</div></td>
+      <td class="h2"><div class="s">{field.IP address}</div></td>
+      <td class="h2 big"><div class="s">{field.Status} – {field.Infractions}</div></td>
+      <td class="h2 big"><div class="s">{field.Expiry}</div></td>
+      <td class="h2f"><div class="s">{field.Options}</div></td>
     </tr>
     <tr id="addRow"><form id="addNewForm" action="?{TrackingFilter}" method="POST">
       <td class="h1"><input type="text" class="txtf" name="addNewAddress" placeholder="{tip_enter_ip_here}" autocomplete="off" pattern="^([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])$|^((([\dA-Fa-f]{1,4}:){7}[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){6}:[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){5}:([\dA-Fa-f]{1,4}:)?[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){4}:([\dA-Fa-f]{1,4}:){0,2}[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){3}:([\dA-Fa-f]{1,4}:){0,3}[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){2}:([\dA-Fa-f]{1,4}:){0,4}[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){6}((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b).){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|(([\dA-Fa-f]{1,4}:){0,5}:((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b).){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|(::([\dA-Fa-f]{1,4}:){0,5}((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b).){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|([\dA-Fa-f]{1,4}::([\dA-Fa-f]{1,4}:){0,5}[\dA-Fa-f]{1,4})|(::([\dA-Fa-f]{1,4}:){0,6}[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){1,7}:))$" required /></td>
@@ -29,7 +29,7 @@
         <select class="auto" name="addNewExpiryMenu" id="addNewExpiryMenu" onchange="javascript:addNewExpiryMenuFunction();" onkeyup="javascript:addNewExpiryMenuFunction();">
           <option value="Normal">{NormalExpiry}</option>
           <option value="Extended">{ExtendedExpiry}</option>
-          <option value="Other" onselect>{label_other}</option>
+          <option value="Other" onselect>{label.Other}</option>
         </select>
         <datalist id="otherExpirySuggests">
           <option value="3600">{1HourLabel}</option>
@@ -41,7 +41,7 @@
         <input list="otherExpirySuggests" type="number" class="txtf" id="addNewExpiryOther" name="addNewExpiryOther" placeholder="{tip_expiry_placeholder}" inputmode="numeric" />
         <script type="text/javascript">function addNewExpiryMenuFunction(){var e=document.getElementById?document.getElementById('addNewExpiryMenu').value:document.all&&!document.getElementById?document.all.addNewExpiryMenu.value:'';e=='Other'?(showid('addNewExpiryOther'),hideid('addNewExpiryMenu')):(hideid('addNewExpiryOther'),showid('addNewExpiryMenu'))};hideid('addNewExpiryOther');</script>
       </td>
-      <td class="h1f"><input type="submit" value="{field_add_to_tracking}" class="auto" /></td>
+      <td class="h1f"><input type="submit" value="{field.Add to tracking}" class="auto" /></td>
     </form></tr>
 {TrackingData}
     </table>

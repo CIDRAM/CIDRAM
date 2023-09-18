@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CIDRAM CLI mode (last modified: 2023.09.04).
+ * This file: CIDRAM CLI mode (last modified: 2023.09.18).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -210,7 +210,7 @@ trait CLI
                 $MemoryUsage = memory_get_usage();
                 $this->formatFileSize($MemoryUsage);
                 $this->formatFileSize($FileSize);
-                echo sprintf($this->L10N->getString('response_cli_finished_writing'), $WriteTo) . ' <' . $this->L10N->getString('field_file') . ': ' . $FileSize . '> <RAM: ' . $MemoryUsage . ">\n\n";
+                echo sprintf($this->L10N->getString('response_cli_finished_writing'), $WriteTo) . ' <' . $this->L10N->getString('field.File') . ': ' . $FileSize . '> <RAM: ' . $MemoryUsage . ">\n\n";
                 unset($WriteTo, $Handle, $BlocksToDo, $ThisBlock, $MemoryUsage, $FileSize);
                 continue;
             }
@@ -244,7 +244,7 @@ trait CLI
                     echo sprintf(
                         $this->L10N->getString('response_finished_reading_from') . " <%s: %s> <RAM: %s>\n",
                         $ThisItem,
-                        $this->L10N->getString('field_file'),
+                        $this->L10N->getString('field.File'),
                         $FileSize,
                         $MemoryUsage
                     );
@@ -258,7 +258,7 @@ trait CLI
             if ($Cmd === 'test') {
                 echo "\033[0;33m";
                 if (!$Chain) {
-                    echo $this->L10N->getString('field_ipaddr') . ' – ' . $this->L10N->getString('field_blocked') . "\n===\n";
+                    echo $this->L10N->getString('field.IP address') . ' – ' . $this->L10N->getString('field.Blocked') . "\n===\n";
                 }
                 foreach ($Data as $ThisItem) {
                     $this->CIDRAM['Caught'] = false;
@@ -338,7 +338,7 @@ trait CLI
             if ($Cmd === 'cidrs') {
                 echo "\033[0;33m";
                 if (!$Chain) {
-                    echo $this->L10N->getString('field_range') . "\n===\n";
+                    echo $this->L10N->getString('field.Range (First Last)') . "\n===\n";
                 }
                 foreach ($Data as $ThisItem) {
                     if (($ThisItem = preg_replace('~[^\da-f:./]~i', '', $ThisItem)) !== '') {
@@ -411,7 +411,7 @@ trait CLI
                 $this->formatFileSize($Results['Memory']);
                 echo "\r" . $this->L10N->getString('response_cli_parse') . ' ' . $this->NumberFormatter->format($Results['Parse']) . ' ... ' . $this->NumberFormatter->format(100, 2) . '% (' . $this->timeFormat(time(), $this->Configuration['general']['time_format']) . ') <RAM: ' . $Results['Memory'] . ">\n\n";
                 echo sprintf(
-                    $this->L10N->getString('label_results'),
+                    $this->L10N->getString('label.results'),
                     $this->NumberFormatter->format($this->CIDRAM['Aggregator']->NumberEntered),
                     $this->NumberFormatter->format($this->CIDRAM['Aggregator']->NumberRejected),
                     $this->NumberFormatter->format($this->CIDRAM['Aggregator']->NumberAccepted),
@@ -557,8 +557,8 @@ trait CLI
                 $Fixer['After'] = hash('sha256', $Data) . ':' . strlen($Data);
                 echo sprintf(
                     "%1\$s%3\$s%4\$s\n%2\$s%3\$s%5\$s\n\n",
-                    $this->L10N->getString('label_checksum_before'),
-                    $this->L10N->getString('label_checksum_after'),
+                    $this->L10N->getString('label.Checksum before'),
+                    $this->L10N->getString('label.Checksum after'),
                     $this->L10N->getString('pair_separator'),
                     $Fixer['Before'],
                     $Fixer['After']

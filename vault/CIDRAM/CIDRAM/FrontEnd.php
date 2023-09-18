@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.08.24).
+ * This file: The CIDRAM front-end (last modified: 2023.09.18).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -842,28 +842,28 @@ class FrontEnd extends Core
             }
             $this->FE['Extensions'] = implode("\n", $this->FE['Extensions']);
             $this->FE['ExtensionIsAvailable'] = $this->ltrInRtf(
-                $this->L10N->getString('label_extension') . '➡' . $this->L10N->getString('label_installed_available')
+                $this->L10N->getString('label.Extension') . '➡' . $this->L10N->getString('label.Installed Available')
             );
             unset($this->CIDRAM['ExtVer'], $this->CIDRAM['ThisResponse'], $this->CIDRAM['ThisExtension']);
 
             /** Build clipboard data. */
             $this->FE['HomeCopyData'] = sprintf(
                 '%1$s\n\n- %2$s %3$s\n- %4$s %5$s\n- %6$s %7$s\n- %8$s %9$s\n\n- %10$s %11$s\n- %4$s %12$s\n- %6$s %13$s\n- %8$s %14$s\n- %15$s %16$s\n\n%17$s\n%18$s',
-                $this->L10N->getString('label_sysinfo'),
-                $this->L10N->getString('label_cidram'),
+                $this->L10N->getString('label.System information'),
+                $this->L10N->getString('label.CIDRAM version used'),
                 $this->FE['ScriptVersion'],
-                $this->L10N->getString('label_branch'),
+                $this->L10N->getString('label.Branch latest stable'),
                 $this->FE['info_cidram_branch'],
-                $this->L10N->getString('label_stable'),
+                $this->L10N->getString('label.Latest stable'),
                 $this->FE['info_cidram_stable'],
-                $this->L10N->getString('label_unstable'),
+                $this->L10N->getString('label.Latest unstable'),
                 $this->FE['info_cidram_unstable'],
-                $this->L10N->getString('label_php'),
+                $this->L10N->getString('label.PHP version used'),
                 $this->FE['info_php'],
                 $this->FE['info_php_branch'],
                 $this->FE['info_php_stable'],
                 $this->FE['info_php_unstable'],
-                $this->L10N->getString('label_sapi'),
+                $this->L10N->getString('label.SAPI used'),
                 $this->FE['info_sapi'],
                 $this->FE['ExtensionIsAvailable'],
                 $ExtensionsCopyData
@@ -1098,7 +1098,7 @@ class FrontEnd extends Core
                 if (!is_array($CatValue)) {
                     continue;
                 }
-                if ($CatInfo = $this->L10N->getString('config_' . $CatKey)) {
+                if ($CatInfo = $this->L10N->getString('config.' . $CatKey)) {
                     $CatInfo = '<br /><em>' . $CatInfo . '</em>';
                 }
                 $this->FE['ConfigFields'] .= sprintf(
@@ -1118,7 +1118,7 @@ class FrontEnd extends Core
                     $ThisDir['DirLangKey'] = 'config_' . $CatKey . '_' . $DirKey;
                     $ThisDir['DirLangKeyOther'] = $ThisDir['DirLangKey'] . '_other';
                     $ThisDir['DirName'] = '<span class="normalHeight">' . $this->ltrInRtf($CatKey . '➡' . $DirKey) . ':</span>';
-                    $ThisDir['Friendly'] = $this->L10N->getString($ThisDir['DirLangKey'] . '_label') ?: $DirKey;
+                    $ThisDir['Friendly'] = $this->L10N->getString('config.' . $CatKey . '_' . $DirKey . '_label') ?: $DirKey;
                     $CatData .= sprintf(
                         '<li><a onclick="javascript:toggleconfigNav(\'%1$sRow\',\'%1$sShowLink\')" href="#%2$s">%3$s</a></li>',
                         $CatKey,
@@ -1126,12 +1126,12 @@ class FrontEnd extends Core
                         $ThisDir['Friendly']
                     );
                     $ThisDir['DirLang'] =
-                        $this->L10N->getString($ThisDir['DirLangKey']) ?:
-                        $this->L10N->getString('label_' . $DirKey) ?:
-                        $this->L10N->getString('config_' . $CatKey) ?:
+                        $this->L10N->getString('config.' . $CatKey . '_' . $DirKey) ?:
+                        $this->L10N->getString('label.' . $DirKey) ?:
+                        $this->L10N->getString('config.' . $CatKey) ?:
                         $this->L10N->getString('response_error');
                     if (!empty($DirValue['experimental'])) {
-                        $ThisDir['DirLang'] = '<code class="exp">' . $this->L10N->getString('config_experimental') . '</code> ' . $ThisDir['DirLang'];
+                        $ThisDir['DirLang'] = '<code class="exp">' . $this->L10N->getString('config.experimental') . '</code> ' . $ThisDir['DirLang'];
                     }
                     $ThisDir['autocomplete'] = empty($DirValue['autocomplete']) ? '' : sprintf(
                         ' autocomplete="%s"',
@@ -1356,18 +1356,18 @@ class FrontEnd extends Core
                             'p;%8$s?%8$s(\'%1$s_preview\').innerHTML=t:%9$s&&!%8$s?%9$s.%1$s_preview.inne' .
                             'rHTML=t:\'\';};%1$s_function();</script>',
                             $ThisDir['DirLangKey'],
-                            $this->L10N->getPlural(0, 'field_size_bytes'),
-                            $this->L10N->getString('field_size_KB'),
-                            $this->L10N->getString('field_size_MB'),
-                            $this->L10N->getString('field_size_GB'),
-                            $this->L10N->getString('field_size_TB'),
-                            $this->L10N->getString('field_size_PB'),
+                            $this->L10N->getPlural(0, 'field.size.bytes'),
+                            $this->L10N->getString('field.size.KB'),
+                            $this->L10N->getString('field.size.MB'),
+                            $this->L10N->getString('field.size.GB'),
+                            $this->L10N->getString('field.size.TB'),
+                            $this->L10N->getString('field.size.PB'),
                             'document.getElementById',
                             'document.all'
                         );
                     }
                     if ($DirValue['type'] === 'timezone') {
-                        $DirValue['choices'] = ['SYSTEM' => $this->L10N->getString('field_system_timezone')];
+                        $DirValue['choices'] = ['SYSTEM' => $this->L10N->getString('field.Use system default timezone')];
                         foreach (array_unique(\DateTimeZone::listIdentifiers()) as $DirValue['ChoiceValue']) {
                             $DirValue['choices'][$DirValue['ChoiceValue']] = $DirValue['ChoiceValue'];
                         }
@@ -1549,7 +1549,7 @@ class FrontEnd extends Core
                             $ThisDir['FieldOut'] .= empty($DirValue['allow_other']) ? '</select>' : sprintf(
                                 '<option value="Other"%1$s>%2$s</option></select><input type="text"%3$s class="auto" name="%4$s" id="%4$s_field" value="%5$s" />',
                                 $ThisDir['SelectOther'] ? ' selected' : '',
-                                $this->L10N->getString('label_other'),
+                                $this->L10N->getString('label.Other'),
                                 $ThisDir['SelectOther'] ? '' : ' style="display:none"',
                                 $ThisDir['DirLangKeyOther'],
                                 $this->Configuration[$CatKey][$DirKey]
@@ -1560,8 +1560,8 @@ class FrontEnd extends Core
                             '<select class="auto" name="%1$s" id="%1$s_field"%2$s><option value="true"%5$s>%3$s</option><option value="false"%6$s>%4$s</option></select>',
                             $ThisDir['DirLangKey'],
                             $ThisDir['Trigger'],
-                            $this->L10N->getString('field_true'),
-                            $this->L10N->getString('field_false'),
+                            $this->L10N->getString('field.True (True)'),
+                            $this->L10N->getString('field.False (False)'),
                             ($this->Configuration[$CatKey][$DirKey] ? ' selected' : ''),
                             ($this->Configuration[$CatKey][$DirKey] ? '' : ' selected')
                         );
@@ -1660,19 +1660,19 @@ class FrontEnd extends Core
                             }
                             if (substr($DirValue['Requirement'], 0, 1) === "\\") {
                                 $ReqsLookupCache[$DirValue['Requirement']] = '<br /><span class="txtGn">✔️ ' . sprintf(
-                                    $this->L10N->getString('label_is_available_class'),
+                                    $this->L10N->getString('label.%s is available'),
                                     $DirValue['Friendly']
                                 ) . '</span>';
                             } elseif (extension_loaded($DirValue['Requirement'])) {
                                 $DirValue['ReqVersion'] = (new \ReflectionExtension($DirValue['Requirement']))->getVersion();
                                 $ReqsLookupCache[$DirValue['Requirement']] = '<br /><span class="txtGn">✔️ ' . sprintf(
-                                    $this->L10N->getString('label_is_available'),
+                                    $this->L10N->getString('label.%s is available (%s)'),
                                     $DirValue['Friendly'],
                                     $DirValue['ReqVersion']
                                 ) . '</span>';
                             } else {
                                 $ReqsLookupCache[$DirValue['Requirement']] = '<br /><span class="txtRd">❌ ' . sprintf(
-                                    $this->L10N->getString('label_is_not_available'),
+                                    $this->L10N->getString('label.%s is not available'),
                                     $DirValue['Friendly']
                                 ) . '</span>';
                             }
@@ -1704,7 +1704,7 @@ class FrontEnd extends Core
 
                     /** Provide additional information, useful for users to better understand the directive at hand. */
                     if (!empty($DirValue['See also']) && is_array($DirValue['See also'])) {
-                        $ThisDir['FieldOut'] .= sprintf("\n<br /><br />%s<ul>\n", $this->L10N->getString('label_see_also'));
+                        $ThisDir['FieldOut'] .= sprintf("\n<br /><br />%s<ul>\n", $this->L10N->getString('label.See also'));
                         foreach ($DirValue['See also'] as $DirValue['Ref key'] => $DirValue['Ref link']) {
                             $ThisDir['FieldOut'] .= sprintf(
                                 '<li><a dir="ltr" href="%s">%s</a></li>',
@@ -1727,7 +1727,7 @@ class FrontEnd extends Core
                         $ThisDir['FieldOut'] .= sprintf(
                             '<br /><br /><input type="button" class="reset" onclick="javascript:%s" value="↺ %s" />',
                             $ThisDir['Reset'],
-                            $this->L10N->getString('field_reset')
+                            $this->L10N->getString('field.Reset')
                         );
                     }
 
@@ -1742,7 +1742,7 @@ class FrontEnd extends Core
                         $NewConfig[$CatKey][$DirKey] = $this->Configuration[$CatKey][$DirKey];
                     }
                 }
-                $CatKeyFriendly = $this->L10N->getString('config_' . $CatKey . '_label') ?: $CatKey;
+                $CatKeyFriendly = $this->L10N->getString('config.' . $CatKey . '_label') ?: $CatKey;
                 $this->FE['Indexes'] .= sprintf(
                     '<li><span class="comCat">%s</span><ul class="comSub">%s</ul></li>',
                     $CatKeyFriendly,
@@ -1830,10 +1830,10 @@ class FrontEnd extends Core
                     '<div class="ng1" id="__Container"><span class="s">%s – (<span onclick="javascript:confirm(\'%s\')&&cdd(\'__\')"><code class="s">%s</code></span>)</span><br /><br /><ul class="pieul">%s</ul></div>',
                     $PreferredSource,
                     $this->escapeJsInHTML(sprintf(
-                        $this->L10N->getString('confirm_action'),
-                        $this->L10N->getString('field_clear_all')
+                        $this->L10N->getString('confirm.Action'),
+                        $this->L10N->getString('field.Clear all')
                     ) . '\n' . $this->L10N->getString('warning_will_log_out_all_users')),
-                    $this->L10N->getString('field_clear_all'),
+                    $this->L10N->getString('field.Clear all'),
                     $this->arrayToClickableList($CacheArray, 'cdd', 0, $PreferredSource)
                 );
                 unset($PreferredSource, $CacheArray);
@@ -1958,7 +1958,7 @@ class FrontEnd extends Core
             /** Prepare installed component metadata and options for display. */
             foreach ($this->Components['Meta'] as $Key => &$this->Components['ThisComponent']) {
                 /** Fall back to component key if the component's name isn't defined. */
-                if (empty($this->Components['ThisComponent']['Name']) && !$this->L10N->getString('Name ' . $Key)) {
+                if (empty($this->Components['ThisComponent']['Name']) && $this->L10N->getString('Name.' . $Key) === '') {
                     $this->Components['ThisComponent']['Name'] = $Key;
                 }
 
@@ -2036,7 +2036,7 @@ class FrontEnd extends Core
                         $this->Components['ThisComponent']['StatusOptions'] = $this->L10N->getString('response_updates_outdated');
                         if (!empty($this->Components['ThisComponent']['Remote All Constraints Met'])) {
                             $this->Components['ThisComponent']['Options'] .=
-                                '<option value="update-component">' . $this->L10N->getString('field_update') . '</option>';
+                                '<option value="update-component">' . $this->L10N->getString('field.Update') . '</option>';
                         }
                     } else {
                         $this->Components['ThisComponent']['StatClass'] = 'txtGn';
@@ -2045,7 +2045,7 @@ class FrontEnd extends Core
                             serialize($this->Components['RemoteMeta'][$Key]['Files']) === serialize($this->Components['ThisComponent']['Files'])
                         )) {
                             $this->Components['Repairable'][] = $Key;
-                            $this->Components['ThisComponent']['Options'] .= '<option value="repair-component">' . $this->L10N->getString('field_repair') . '</option>';
+                            $this->Components['ThisComponent']['Options'] .= '<option value="repair-component">' . $this->L10N->getString('field.Repair') . '</option>';
                         }
                     }
                 }
@@ -2071,22 +2071,22 @@ class FrontEnd extends Core
                             );
                         }
                         if ($Activable) {
-                            $this->Components['ThisComponent']['Options'] .= '<option value="deactivate-component">' . $this->L10N->getString('field_deactivate') . '</option>';
+                            $this->Components['ThisComponent']['Options'] .= '<option value="deactivate-component">' . $this->L10N->getString('field.Deactivate') . '</option>';
                             if (!isset($this->Components['ThisComponent']['Uninstallable']) || $this->Components['ThisComponent']['Uninstallable'] !== false) {
                                 $this->Components['ThisComponent']['Options'] .=
                                     '<option value="deactivate-and-uninstall-component">' .
-                                    $this->L10N->getString('field_deactivate') . ' + ' . $this->L10N->getString('field_uninstall') .
+                                    $this->L10N->getString('field.Deactivate') . ' + ' . $this->L10N->getString('field.Uninstall') .
                                     '</option>';
                             }
                         }
                     } else {
                         if ($Activable) {
                             $this->Components['ThisComponent']['Options'] .=
-                                '<option value="activate-component">' . $this->L10N->getString('field_activate') . '</option>';
+                                '<option value="activate-component">' . $this->L10N->getString('field.Activate') . '</option>';
                         }
                         if (!isset($this->Components['ThisComponent']['Uninstallable']) || $this->Components['ThisComponent']['Uninstallable'] !== false) {
                             $this->Components['ThisComponent']['Options'] .=
-                                '<option value="uninstall-component">' . $this->L10N->getString('field_uninstall') . '</option>';
+                                '<option value="uninstall-component">' . $this->L10N->getString('field.Uninstall') . '</option>';
                         }
                         if (
                             !empty($this->Components['ThisComponent']['Provisional']) ||
@@ -2108,7 +2108,7 @@ class FrontEnd extends Core
                 }
                 $this->Components['ThisComponent']['VersionSize'] = 0;
                 $this->Components['ThisComponent']['Options'] .=
-                    '<option value="verify-component" selected>' . $this->L10N->getString('field_verify') . '</option>';
+                    '<option value="verify-component" selected>' . $this->L10N->getString('field.Verify') . '</option>';
                 $this->Components['Verify'][] = $Key;
                 if (isset($this->Components['ThisComponent']['Files'])) {
                     foreach ($this->Components['ThisComponent']['Files'] as $ThisFile) {
@@ -2123,7 +2123,7 @@ class FrontEnd extends Core
                     $this->formatFileSize($this->Components['ThisComponent']['VersionSize']);
                     $this->Components['ThisComponent']['VersionSize'] = sprintf(
                         '<br />%s %s',
-                        $this->L10N->getString('field_size'),
+                        $this->L10N->getString('field.size.Total size'),
                         $this->Components['ThisComponent']['VersionSize']
                     );
                 } else {
@@ -2143,7 +2143,7 @@ class FrontEnd extends Core
                     $this->formatFileSize($this->Components['ThisComponent']['LatestSize']);
                     $this->Components['ThisComponent']['LatestSize'] = sprintf(
                         '<br />%s %s',
-                        $this->L10N->getString('field_size'),
+                        $this->L10N->getString('field.size.Total size'),
                         $this->Components['ThisComponent']['LatestSize']
                     );
                 } else {
@@ -2154,7 +2154,7 @@ class FrontEnd extends Core
                         $this->Components['ThisComponent']['StatusOptions'],
                         '<hr />',
                         '<select name="do" class="auto">' . $this->Components['ThisComponent']['Options'] .
-                        '</select><input type="submit" value="' . $this->L10N->getString('field_ok') . '" class="auto" />'
+                        '</select><input type="submit" value="' . $this->L10N->getString('field.OK') . '" class="auto" />'
                     );
                     $this->Components['ThisComponent']['Options'] = '';
                 }
@@ -2168,13 +2168,13 @@ class FrontEnd extends Core
                 $this->Components['ThisComponent']['Filename'] = (
                     empty($this->Components['ThisComponent']['Files']) ||
                     count($this->Components['ThisComponent']['Files']) !== 1
-                ) ? '' : '<br />' . $this->L10N->getString('field_filename') . ' ' . key($this->Components['ThisComponent']['Files']);
+                ) ? '' : '<br />' . $this->L10N->getString('field.Filename') . ' ' . key($this->Components['ThisComponent']['Files']);
 
                 /** Append filename (upstream). */
                 $this->Components['ThisComponent']['RemoteFilename'] = (
                     empty($this->Components['RemoteMeta'][$Key]['Files']) ||
                     count($this->Components['RemoteMeta'][$Key]['Files']) !== 1
-                ) ? '' : '<br />' . $this->L10N->getString('field_filename') . ' ' . key($this->Components['RemoteMeta'][$Key]['Files']);
+                ) ? '' : '<br />' . $this->L10N->getString('field.Filename') . ' ' . key($this->Components['RemoteMeta'][$Key]['Files']);
 
                 /** Finalise entry. */
                 if (
@@ -2263,7 +2263,7 @@ class FrontEnd extends Core
                 }
 
                 /** Fall back to component key if the component's name isn't defined. */
-                if (empty($this->Components['ThisComponent']['Name']) && !$this->L10N->getString('Name ' . $Key)) {
+                if (empty($this->Components['ThisComponent']['Name']) && $this->L10N->getString('Name.' . $Key) === '') {
                     $this->Components['ThisComponent']['Name'] = $Key;
                 }
 
@@ -2304,7 +2304,7 @@ class FrontEnd extends Core
                     $this->formatFileSize($this->Components['ThisComponent']['LatestSize']);
                     $this->Components['ThisComponent']['LatestSize'] = sprintf(
                         '<br />%s %s',
-                        $this->L10N->getString('field_size'),
+                        $this->L10N->getString('field.size.Total size'),
                         $this->Components['ThisComponent']['LatestSize']
                     );
                 } else {
@@ -2313,14 +2313,14 @@ class FrontEnd extends Core
                 $this->Components['ThisComponent']['StatusOptions'] = $this->L10N->getString('response_updates_not_installed');
                 if (!empty($this->Components['ThisComponent']['Remote All Constraints Met'])) {
                     $this->Components['ThisComponent']['StatusOptions'] .= '<br /><select name="do" class="auto">' .
-                        '<option value="update-component">' . $this->L10N->getString('field_install') . '</option>';
+                        '<option value="update-component">' . $this->L10N->getString('field.Install') . '</option>';
                     if ($this->isActivable($this->Components['ThisComponent'])) {
                         $this->Components['ThisComponent']['StatusOptions'] .=
                             '<option value="update-and-activate-component">' .
-                            $this->L10N->getString('field_install') . ' + ' . $this->L10N->getString('field_activate') .
+                            $this->L10N->getString('field.Install') . ' + ' . $this->L10N->getString('field.Activate') .
                             '</option>';
                     }
-                    $this->Components['ThisComponent']['StatusOptions'] .= '</select><input type="submit" value="' . $this->L10N->getString('field_ok') . '" class="auto" />';
+                    $this->Components['ThisComponent']['StatusOptions'] .= '</select><input type="submit" value="' . $this->L10N->getString('field.OK') . '" class="auto" />';
                 }
 
                 /** Append changelog. */
@@ -2335,7 +2335,7 @@ class FrontEnd extends Core
                 $this->Components['ThisComponent']['RemoteFilename'] = (
                     empty($this->Components['ThisComponent']['Files']) ||
                     count($this->Components['ThisComponent']['Files']) !== 1
-                ) ? '' : '<br />' . $this->L10N->getString('field_filename') . ' ' . key($this->Components['ThisComponent']['Files']);
+                ) ? '' : '<br />' . $this->L10N->getString('field.Filename') . ' ' . key($this->Components['ThisComponent']['Files']);
 
                 /** Finalise entry. */
                 if (!$this->FE['hide-unused']) {
@@ -2387,7 +2387,7 @@ class FrontEnd extends Core
                 foreach ($this->Components['OutdatedSignatureFiles'] as $this->Components['ThisOutdated']) {
                     $this->FE['UpdateAll'] .= '<input name="ID[]" type="hidden" value="' . $this->Components['ThisOutdated'] . '" />';
                 }
-                $this->FE['UpdateAll'] .= '<input type="submit" value="' . $this->L10N->getString('field_update_signatures_files') . '" class="auto" /></form>';
+                $this->FE['UpdateAll'] .= '<input type="submit" value="' . $this->L10N->getString('field.Update signature files') . '" class="auto" /></form>';
             }
 
             /** Instructions to update everything at once. */
@@ -2396,7 +2396,7 @@ class FrontEnd extends Core
                 foreach ($this->Components['Outdated'] as $this->Components['ThisOutdated']) {
                     $this->FE['UpdateAll'] .= '<input name="ID[]" type="hidden" value="' . $this->Components['ThisOutdated'] . '" />';
                 }
-                $this->FE['UpdateAll'] .= '<input type="submit" value="' . $this->L10N->getString('field_update_all') . '" class="auto" /></form>';
+                $this->FE['UpdateAll'] .= '<input type="submit" value="' . $this->L10N->getString('field.Update all') . '" class="auto" /></form>';
             }
 
             /** Instructions to repair everything at once. */
@@ -2405,7 +2405,7 @@ class FrontEnd extends Core
                 foreach ($this->Components['Repairable'] as $this->Components['ThisRepairable']) {
                     $this->FE['UpdateAll'] .= '<input name="ID[]" type="hidden" value="' . $this->Components['ThisRepairable'] . '" />';
                 }
-                $this->FE['UpdateAll'] .= '<input type="submit" value="' . $this->L10N->getString('field_repair_all') . '" class="auto" /></form>';
+                $this->FE['UpdateAll'] .= '<input type="submit" value="' . $this->L10N->getString('field.Repair all') . '" class="auto" /></form>';
             }
 
             /** Instructions to verify everything at once. */
@@ -2414,7 +2414,7 @@ class FrontEnd extends Core
                 foreach ($this->Components['Verify'] as $this->Components['ThisVerify']) {
                     $this->FE['UpdateAll'] .= '<input name="ID[]" type="hidden" value="' . $this->Components['ThisVerify'] . '" />';
                 }
-                $this->FE['UpdateAll'] .= '<input type="submit" value="' . $this->L10N->getString('field_verify_all') . '" class="auto" /></form>';
+                $this->FE['UpdateAll'] .= '<input type="submit" value="' . $this->L10N->getString('field.Verify all') . '" class="auto" /></form>';
             }
 
             $this->FE['Macros'] = '';
@@ -2427,7 +2427,7 @@ class FrontEnd extends Core
                 $MacroData['Key'] = $Key;
                 $MacroData['Name'] = $this->L10N->getString('macro_name_' . $Key) ?: $Key;
                 $MacroData['Description'] = $this->L10N->getString('macro_description_' . $Key);
-                $MacroData['Options'] = '<input type="submit" value="' . $this->L10N->getString('field_execute') . '" class="auto" />';
+                $MacroData['Options'] = '<input type="submit" value="' . $this->L10N->getString('field.Execute') . '" class="auto" />';
                 $this->FE['Macros'] .= $this->parseVars($this->arrayFlatten($MacroData), $this->FE['MacrosRow']);
             }
             unset($MacrosData, $Key);
@@ -2869,9 +2869,9 @@ class FrontEnd extends Core
                 '%1$sList" value="List"%2$s %7$s%6$spreferredSourceList">%3$s</label><br />%1$sInput" value="Input"%4$s %7$s%6$spreferredSourceInput">%5$s</label>',
                 '<input type="radio" class="auto" name="preferredSource" id="preferredSource',
                 $PreferredSource === 'List' ? ' checked' : '',
-                $this->L10N->getString('field_preferred_list'),
+                $this->L10N->getString('field.Currently active signature files'),
                 $PreferredSource === 'Input' ? ' checked' : '',
-                $this->L10N->getString('field_preferred_direct_input'),
+                $this->L10N->getString('field.Direct input'),
                 ' /><label class="s" for="',
                 'onchange="javascript:{hideid(\'preferredSourceListDiv\');hideid(\'preferredSourceInputDiv\');showid(this.id+\'Div\');showid(\'submitButton\');}"'
             );
@@ -3071,10 +3071,10 @@ class FrontEnd extends Core
             /** Show/hide doughnuts link and etc. */
             if (!$DoughnutFile) {
                 $this->FE['FMgrFormTarget'] = 'cidram-page=file-manager';
-                $this->FE['ShowHideLink'] = '<a href="?cidram-page=file-manager&show=true">' . $this->L10N->getString('label_show') . '</a>';
+                $this->FE['ShowHideLink'] = '<a href="?cidram-page=file-manager&show=true">' . $this->L10N->getString('label.Show') . '</a>';
             } else {
                 $this->FE['FMgrFormTarget'] = 'cidram-page=file-manager&show=true';
-                $this->FE['ShowHideLink'] = '<a href="?cidram-page=file-manager">' . $this->L10N->getString('label_hide') . '</a>';
+                $this->FE['ShowHideLink'] = '<a href="?cidram-page=file-manager">' . $this->L10N->getString('label.Hide') . '</a>';
             }
 
             /** Fetch components metadata. */
@@ -3210,7 +3210,7 @@ class FrontEnd extends Core
                             $this->FE['state_msg'] = $this->L10N->getString('response_rename_error');
                         }
                     } else {
-                        $this->FE['FE_Title'] .= ' – ' . $this->L10N->getString('field_rename_file') . ' – ' . $_POST['filename'];
+                        $this->FE['FE_Title'] .= ' – ' . $this->L10N->getString('field.Rename') . ' – ' . $_POST['filename'];
                         $this->FE['filename'] = $_POST['filename'];
 
                         /** Parse output. */
@@ -3375,19 +3375,19 @@ class FrontEnd extends Core
                 $Base = '<option value="%s"%s>%s</option>';
                 $ThisFile['ThisOptions'] = '';
                 if (!$ThisFile['Directory'] || $this->isDirEmpty($this->Vault . $ThisFile['Filename'])) {
-                    $ThisFile['ThisOptions'] .= sprintf($Base, 'delete-file', ' class="txtRd"', $this->L10N->getString('field_delete'));
-                    $ThisFile['ThisOptions'] .= sprintf($Base, 'rename-file', $ThisFile['Directory'] && !$ThisFile['CanEdit'] ? ' selected' : '', $this->L10N->getString('field_rename_file'));
+                    $ThisFile['ThisOptions'] .= sprintf($Base, 'delete-file', ' class="txtRd"', $this->L10N->getString('field.Delete'));
+                    $ThisFile['ThisOptions'] .= sprintf($Base, 'rename-file', $ThisFile['Directory'] && !$ThisFile['CanEdit'] ? ' selected' : '', $this->L10N->getString('field.Rename'));
                 }
                 if ($ThisFile['CanEdit']) {
-                    $ThisFile['ThisOptions'] .= sprintf($Base, 'edit-file', ' selected', $this->L10N->getString('field_edit'));
+                    $ThisFile['ThisOptions'] .= sprintf($Base, 'edit-file', ' selected', $this->L10N->getString('field.Edit'));
                 }
                 if (!$ThisFile['Directory']) {
-                    $ThisFile['ThisOptions'] .= sprintf($Base, 'download-file', $ThisFile['CanEdit'] ? '' : ' selected', $this->L10N->getString('field_download_file'));
+                    $ThisFile['ThisOptions'] .= sprintf($Base, 'download-file', $ThisFile['CanEdit'] ? '' : ' selected', $this->L10N->getString('field.Download'));
                 }
                 if ($ThisFile['ThisOptions']) {
                     $ThisFile['ThisOptions'] =
                         '<select name="do">' . $ThisFile['ThisOptions'] . '</select>' .
-                        '<input type="submit" value="' . $this->L10N->getString('field_ok') . '" class="auto" />';
+                        '<input type="submit" value="' . $this->L10N->getString('field.OK') . '" class="auto" />';
                 }
                 $this->FE['FilesData'] .= $this->parseVars($this->FE + $ThisFile, $this->FE['FilesRow'], true);
             });
@@ -3447,15 +3447,15 @@ class FrontEnd extends Core
 
                 if (count($Entries) === 0) {
                     /** Default message to display if there aren't any rate limiting records currently available. */
-                    $this->FE['Entries'] .= "\n" . sprintf('<tr><td class="center h4f" colspan="2"><div class="s">%s</div></td></tr>', $this->L10N->getString('label_no_data_available'));
+                    $this->FE['Entries'] .= "\n" . sprintf('<tr><td class="center h4f" colspan="2"><div class="s">%s</div></td></tr>', $this->L10N->getString('label.No data available'));
                 } else {
                     /** Process all entries. */
                     foreach ($Entries as $EntryName => $EntryData) {
                         if ($EntryName === 'rl') {
-                            $this->FE['Entries'] .= "\n" . sprintf('<tr><td class="center h4f" colspan="2"><div class="s">%s</div></td></tr>', $this->L10N->getString('label_current_data'));
+                            $this->FE['Entries'] .= "\n" . sprintf('<tr><td class="center h4f" colspan="2"><div class="s">%s</div></td></tr>', $this->L10N->getString('label.Current data'));
                         } elseif (substr($EntryName, 0, 3) === 'rl-') {
                             $this->FE['Entries'] .= "\n" . sprintf('<tr><td class="center h4f" colspan="2"><div class="s">%s</div></td></tr>', sprintf(
-                                $this->L10N->getString('label_current_data_for'),
+                                $this->L10N->getString('label.Current data for %s'),
                                 substr($EntryName, 3)
                             ));
                         }
@@ -3463,7 +3463,7 @@ class FrontEnd extends Core
                         if (count($EntryData) === 0) {
                             $this->FE['Entries'] .= "\n" . sprintf(
                                 '<tr><td class="h3f" colspan="2"><div class="s">%s</div></td></tr>',
-                                $this->L10N->getString('label_no_data_available')
+                                $this->L10N->getString('label.No data available')
                             );
                         }
                         foreach ($EntryData as $Address => $EntryDetails) {
@@ -3483,7 +3483,7 @@ class FrontEnd extends Core
                             $EntryDetails['Bandwidth'] = $RLMaxBandwidth > 0 ? sprintf(
                                 '%s.<br /><meter min="0" max="%d" low="%d" high="%d" optimum="0" value="%d" style="width:100%%"></meter><br /><br />',
                                 sprintf(
-                                    $this->L10N->getString('label_rl_bandwidth'),
+                                    $this->L10N->getString('label.Bandwidth'),
                                     $EntryDetails['BandwidthUsed'],
                                     $EntryDetails['BandwidthAvailable']
                                 ),
@@ -3499,7 +3499,7 @@ class FrontEnd extends Core
                             $EntryDetails['Requests'] = $this->Configuration['rate_limiting']['max_requests'] > 0 ? sprintf(
                                 '%s.<br /><meter min="0" max="%d" low="%d" high="%d" optimum="0" value="%d" style="width:100%%"></meter><br /><br />',
                                 sprintf(
-                                    $this->L10N->getString('label_rl_requests'),
+                                    $this->L10N->getString('label.rl_requests'),
                                     $this->NumberFormatter->format($EntryDetails['Requests']),
                                     $this->NumberFormatter->format($EntryDetails['RequestsAvailable'])
                                 ),
@@ -3514,7 +3514,7 @@ class FrontEnd extends Core
                                 $EntryDetails['Bandwidth'],
                                 $EntryDetails['Requests'],
                                 sprintf(
-                                    $this->L10N->getString('label_rl_when'),
+                                    $this->L10N->getString('label.rl_when'),
                                     $this->relativeTime($EntryDetails['Newest']),
                                     $this->relativeTime($EntryDetails['Newest'] + $this->Configuration['rate_limiting']['allowance_period']->getAsSeconds()),
                                     $this->relativeTime($EntryDetails['Oldest']),
@@ -3682,9 +3682,9 @@ class FrontEnd extends Core
                 '%1$sCIDR" value="CIDR"%2$s%6$sformatCIDR">%3$s</label><br />%1$sNetmask" value="Netmask"%4$s%6$sformatNetmask">%5$s</label>',
                 '<input type="radio" class="auto" name="format" id="format',
                 $OutputFormat !== 1 ? ' checked' : '',
-                $this->L10N->getString('field_cidr'),
+                $this->L10N->getString('field.Generate output as CIDRs'),
                 $OutputFormat === 1 ? ' checked' : '',
-                $this->L10N->getString('field_netmask'),
+                $this->L10N->getString('field.Generate output as netmasks'),
                 ' /><label class="s" for="'
             );
 
@@ -3757,9 +3757,9 @@ class FrontEnd extends Core
                 '%1$sCIDR" value="CIDR"%2$s%6$sformatCIDR">%3$s</label><br />%1$sNetmask" value="Netmask"%4$s%6$sformatNetmask">%5$s</label>',
                 '<input type="radio" class="auto" name="format" id="format',
                 $OutputFormat !== 1 ? ' checked' : '',
-                $this->L10N->getString('field_cidr'),
+                $this->L10N->getString('field.Generate output as CIDRs'),
                 $OutputFormat === 1 ? ' checked' : '',
-                $this->L10N->getString('field_netmask'),
+                $this->L10N->getString('field.Generate output as netmasks'),
                 ' /><label class="s" for="'
             );
 
@@ -3837,12 +3837,12 @@ class FrontEnd extends Core
                 '%1$sCIDR" value="CIDR"%2$s%6$sformatCIDR">%3$s</label><br />%1$sNetmask" value="Netmask"%4$s%6$sformatNetmask">%5$s</label><br /><input type="checkbox" class="auto" name="preserve" id="preserve"%7$s%6$spreserve">%8$s</label>',
                 '<input type="radio" class="auto" name="format" id="format',
                 $OutputFormat !== 1 ? ' checked' : '',
-                $this->L10N->getString('field_cidr'),
+                $this->L10N->getString('field.Generate output as CIDRs'),
                 $OutputFormat === 1 ? ' checked' : '',
-                $this->L10N->getString('field_netmask'),
+                $this->L10N->getString('field.Generate output as netmasks'),
                 ' /><label class="s" for="',
                 $Preserve === 1 ? ' checked' : '',
-                $this->L10N->getString('field_preserve')
+                $this->L10N->getString('field.Preserve tags and comments')
             );
 
             /** Data was submitted for aggregation. */
@@ -3866,7 +3866,7 @@ class FrontEnd extends Core
                     $this->FE['output'] = $this->CIDRAM['Aggregator']->aggregate($this->FE['input']);
                 }
                 $this->FE['ResultLine'] = sprintf(
-                    $this->L10N->getString('label_results'),
+                    $this->L10N->getString('label.results'),
                     '<span class="txtRd">' . $this->NumberFormatter->format($this->CIDRAM['Aggregator']->NumberEntered) . '</span>',
                     '<span class="txtRd">' . $this->NumberFormatter->format($this->CIDRAM['Aggregator']->NumberRejected) . '</span>',
                     '<span class="txtRd">' . $this->NumberFormatter->format($this->CIDRAM['Aggregator']->NumberAccepted) . '</span>',
@@ -3950,10 +3950,10 @@ class FrontEnd extends Core
 
             /** Set field label. */
             if (!empty($_POST['ip-addr']) || empty($_POST['custom-ua'])) {
-                $this->FE['TestItemLabel'] = $this->L10N->getString('field_ipaddr');
+                $this->FE['TestItemLabel'] = $this->L10N->getString('field.IP address');
                 $this->FE['TestMode'] = 1;
             } else {
-                $this->FE['TestItemLabel'] = $this->L10N->getString('field_ua');
+                $this->FE['TestItemLabel'] = $this->L10N->getString('field.User agent');
                 $this->FE['TestMode'] = 2;
             }
 
@@ -3990,7 +3990,7 @@ class FrontEnd extends Core
                         !empty($this->CIDRAM['ModuleErrors']) ||
                         !empty($this->CIDRAM['AuxErrors'])
                     ) {
-                        $this->CIDRAM['ThisIP']['YesNo'] = $this->L10N->getString('field_blocked') . $this->L10N->getString('pair_separator') . $this->L10N->getString('response_error');
+                        $this->CIDRAM['ThisIP']['YesNo'] = $this->L10N->getString('field.Blocked') . $this->L10N->getString('pair_separator') . $this->L10N->getString('response_error');
                         $this->CIDRAM['ThisIP']['StatClass'] = 'txtOe';
                         if (!empty($this->CIDRAM['AuxErrors'])) {
                             $this->CIDRAM['AuxErrorCounts'] = [];
@@ -4058,7 +4058,7 @@ class FrontEnd extends Core
                         }
                     } elseif ($this->BlockInfo['SignatureCount']) {
                         $this->BlockInfo['WhyReason'] = preg_replace('~(?<=</span>\),|]\),)( )(?=[\dA-Za-z])~', '<br />', $this->BlockInfo['WhyReason']);
-                        $this->CIDRAM['ThisIP']['YesNo'] = $this->L10N->getString('field_blocked') . $this->L10N->getString('pair_separator') . $this->L10N->getString('response_yes') . ' – ' . $this->BlockInfo['WhyReason'];
+                        $this->CIDRAM['ThisIP']['YesNo'] = $this->L10N->getString('field.Blocked') . $this->L10N->getString('pair_separator') . $this->L10N->getString('response_yes') . ' – ' . $this->BlockInfo['WhyReason'];
                         $this->CIDRAM['ThisIP']['StatClass'] = 'txtRd';
                         if (
                             $this->FE['Flags'] &&
@@ -4081,13 +4081,13 @@ class FrontEnd extends Core
                             );
                         }
                     } elseif ($this->BlockInfo['Ignored']) {
-                        $this->CIDRAM['ThisIP']['YesNo'] = $this->L10N->getString('field_blocked') . $this->L10N->getString('pair_separator') . $this->L10N->getString('response_no') . ' (' . $this->L10N->getString('state_ignored') . ') ' . $this->BlockInfo['Ignored'];
+                        $this->CIDRAM['ThisIP']['YesNo'] = $this->L10N->getString('field.Blocked') . $this->L10N->getString('pair_separator') . $this->L10N->getString('response_no') . ' (' . $this->L10N->getString('state_ignored') . ') ' . $this->BlockInfo['Ignored'];
                         $this->CIDRAM['ThisIP']['StatClass'] = 'txtOe';
                     } elseif (!empty($this->CIDRAM['Aux Redirect']) && !empty($this->CIDRAM['Aux Status Code'])) {
-                        $this->CIDRAM['ThisIP']['YesNo'] = $this->L10N->getString('field_blocked') . $this->L10N->getString('pair_separator') . $this->L10N->getString('response_no') . ' (' . $this->L10N->getString('response_redirected') . ')';
+                        $this->CIDRAM['ThisIP']['YesNo'] = $this->L10N->getString('field.Blocked') . $this->L10N->getString('pair_separator') . $this->L10N->getString('response_no') . ' (' . $this->L10N->getString('response_redirected') . ')';
                         $this->CIDRAM['ThisIP']['StatClass'] = 'txtOe';
                     } else {
-                        $this->CIDRAM['ThisIP']['YesNo'] = $this->L10N->getString('field_blocked') . $this->L10N->getString('pair_separator') . $this->L10N->getString('response_no');
+                        $this->CIDRAM['ThisIP']['YesNo'] = $this->L10N->getString('field.Blocked') . $this->L10N->getString('pair_separator') . $this->L10N->getString('response_no');
                         $this->CIDRAM['ThisIP']['StatClass'] = 'txtGn';
                     }
                     if ($this->CIDRAM['Aux Redirect'] && $this->CIDRAM['Aux Status Code']) {
@@ -4102,12 +4102,12 @@ class FrontEnd extends Core
                             $this->L10N->getString('response_redirected') . ' <' . $this->Configuration['general']['silent_mode_response_header_code'] . '> ➡ <code>' . $this->Configuration['general']['silent_mode'] . '</code>'
                         );
                     }
-                    $this->CIDRAM['ThisIP']['YesNo'] .= '<br />' . $this->L10N->getString('field_tracking') . $this->L10N->getString('pair_separator');
+                    $this->CIDRAM['ThisIP']['YesNo'] .= '<br />' . $this->L10N->getString('field.Tracking') . $this->L10N->getString('pair_separator');
                     if (isset($this->CIDRAM['Trackable'])) {
                         if ($this->CIDRAM['Trackable']) {
-                            $this->CIDRAM['ThisIP']['YesNo'] .= $this->L10N->getString('response_yes') . ' (++' . $this->L10N->getString('label_aux_special_ip_tracking_enable') . ')';
+                            $this->CIDRAM['ThisIP']['YesNo'] .= $this->L10N->getString('response_yes') . ' (++' . $this->L10N->getString('label.aux_special_ip_tracking_enable') . ')';
                         } else {
-                            $this->CIDRAM['ThisIP']['YesNo'] .= $this->L10N->getString('response_no') . ' (++' . $this->L10N->getString('label_aux_special_ip_tracking_disable') . ')';
+                            $this->CIDRAM['ThisIP']['YesNo'] .= $this->L10N->getString('response_no') . ' (++' . $this->L10N->getString('label.aux_special_ip_tracking_disable') . ')';
                         }
                     } else {
                         $this->CIDRAM['ThisIP']['YesNo'] .= $this->L10N->getString((
@@ -4117,34 +4117,34 @@ class FrontEnd extends Core
                         ) ? 'response_yes' : 'response_no');
                     }
                     if ($this->FE['TestMode'] === 1) {
-                        $this->CIDRAM['ThisIP']['YesNo'] .= '<br />' . $this->L10N->getString('field_banned') . $this->L10N->getString('pair_separator') . $this->L10N->getString($this->CIDRAM['Banned'] ? 'response_yes' : 'response_no');
+                        $this->CIDRAM['ThisIP']['YesNo'] .= '<br />' . $this->L10N->getString('field.Banned') . $this->L10N->getString('pair_separator') . $this->L10N->getString($this->CIDRAM['Banned'] ? 'response_yes' : 'response_no');
                     }
                     if (isset($this->CIDRAM['ThisStatusHTTP'])) {
-                        $this->CIDRAM['ThisIP']['YesNo'] .= '<br />' . $this->L10N->getString('field_status_code') . $this->L10N->getString('pair_separator') . $this->CIDRAM['ThisStatusHTTP'];
+                        $this->CIDRAM['ThisIP']['YesNo'] .= '<br />' . $this->L10N->getString('field.Status code') . $this->L10N->getString('pair_separator') . $this->CIDRAM['ThisStatusHTTP'];
                     }
                     if (!empty($this->Configuration['recaptcha']['enabled'])) {
-                        $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label_aux_special_recaptcha_mark');
+                        $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label.aux_special_recaptcha_mark');
                     }
                     if (!empty($this->Configuration['recaptcha']['forcibly_disabled'])) {
-                        $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label_aux_special_recaptcha_disable');
+                        $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label.aux_special_recaptcha_disable');
                     }
                     if (!empty($this->Configuration['hcaptcha']['enabled'])) {
-                        $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label_aux_special_hcaptcha_mark');
+                        $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label.aux_special_hcaptcha_mark');
                     }
                     if (!empty($this->Configuration['hcaptcha']['forcibly_disabled'])) {
-                        $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label_aux_special_hcaptcha_disable');
+                        $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label.aux_special_hcaptcha_disable');
                     }
                     if (!empty($this->CIDRAM['Suppress output template'])) {
-                        $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label_aux_special_suppress');
+                        $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label.aux_special_suppress');
                     }
                     if (!empty($this->CIDRAM['Suppress logging'])) {
-                        $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label_aux_special_suppress_logging');
+                        $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label.aux_special_suppress_logging');
                     }
                     if (isset($this->CIDRAM['Tracking options override'])) {
                         if ($this->CIDRAM['Tracking options override'] === 'extended') {
-                            $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label_aux_special_tracking_extended');
+                            $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label.aux_special_tracking_extended');
                         } elseif ($this->CIDRAM['Tracking options override'] === 'default') {
-                            $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label_aux_special_tracking_default');
+                            $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label.aux_special_tracking_default');
                         }
                     }
                     if (is_array($this->Profiles) && count($this->Profiles)) {
@@ -4223,7 +4223,7 @@ class FrontEnd extends Core
             $this->FE['1YearLabel'] = $this->relativeTime($this->Now + 31557600);
 
             /** Generate confirm button. */
-            $this->FE['Confirm-ClearAll'] = $this->generateConfirmation($this->L10N->getString('field_clear_all'), 'trackForm');
+            $this->FE['Confirm-ClearAll'] = $this->generateConfirmation($this->L10N->getString('field.Clear all'), 'trackForm');
 
             /** Clear, or remove an IP address from tracking. */
             if (isset($_POST['IPAddr'])) {
@@ -4322,12 +4322,12 @@ class FrontEnd extends Core
                         $ThisTracking['IPAddr'],
                         $this->L10N->getString('state_loading'),
                         $ThisTracking['IPID'],
-                        $this->L10N->getString('field_clear')
+                        $this->L10N->getString('field.Clear')
                     );
 
                     /** When the entry expires. */
                     if (!is_numeric($ThisTrackingArray['Time']) || $ThisTrackingArray['Time'] < 1) {
-                        $ThisTracking['Expiry'] = $this->L10N->getString('label_no_data_available');
+                        $ThisTracking['Expiry'] = $this->L10N->getString('label.No data available');
                     } else {
                         $ThisTracking['Expiry'] = $this->timeFormat(
                             $ThisTrackingArray['Time'],
@@ -4337,17 +4337,17 @@ class FrontEnd extends Core
 
                     if ($ThisTrackingArray['Data'] >= $this->Configuration['signatures']['infraction_limit']) {
                         $ThisTracking['StatClass'] = 'txtRd';
-                        $ThisTracking['Status'] = $this->L10N->getString('field_banned');
+                        $ThisTracking['Status'] = $this->L10N->getString('field.Banned');
                     } elseif ($ThisTrackingArray['Data'] >= ($this->Configuration['signatures']['infraction_limit'] / 2)) {
                         $ThisTracking['StatClass'] = 'txtOe';
-                        $ThisTracking['Status'] = $this->L10N->getString('field_tracking');
+                        $ThisTracking['Status'] = $this->L10N->getString('field.Tracking');
                     } else {
                         $ThisTracking['StatClass'] = 's';
-                        $ThisTracking['Status'] = $this->L10N->getString('field_tracking');
+                        $ThisTracking['Status'] = $this->L10N->getString('field.Tracking');
                     }
                     if ($ThisTracking['Blocked']) {
                         $ThisTracking['StatClass'] = 'txtRd';
-                        $ThisTracking['Status'] .= '/' . $this->L10N->getString('field_blocked');
+                        $ThisTracking['Status'] .= '/' . $this->L10N->getString('field.Blocked');
                     }
                     $ThisTracking['Status'] .= ' – ' . $this->NumberFormatter->format($ThisTrackingArray['Data'], 0);
                     $ThisTracking['TrackingFilter'] = $this->FE['TrackingFilter'];
@@ -4481,7 +4481,7 @@ class FrontEnd extends Core
             }
 
             /** Generate confirm button. */
-            $this->FE['Confirm-ClearAll'] = $this->generateConfirmation($this->L10N->getString('field_clear_all'), 'statForm');
+            $this->FE['Confirm-ClearAll'] = $this->generateConfirmation($this->L10N->getString('field.Clear all'), 'statForm');
 
             /** Clear statistics. */
             if (!empty($_POST['ClearStats']) && $this->Cache->deleteAllEntriesWhere('~^Statistics-~')) {
@@ -4515,7 +4515,7 @@ class FrontEnd extends Core
                 $this->FE[$TheseStats[1]] += $Try;
                 $this->FE[$TheseStats[0]] = $this->NumberFormatter->format($Try);
                 if (!isset($this->Stages['Statistics:Enable'], $this->StatisticsTracked[$TheseStats[0]])) {
-                    $this->FE[$TheseStats[0]] .= ' – ' . $this->L10N->getString('field_not_tracking');
+                    $this->FE[$TheseStats[0]] .= ' – ' . $this->L10N->getString('field.Not tracking');
                 }
             }
 
@@ -4543,10 +4543,10 @@ class FrontEnd extends Core
                 $AuxRulesTotal = 0;
                 $this->FE['AuxStats'] = sprintf(
                     "\n      <tr><td class=\"center h4f\" colspan=\"2\"><div class=\"s\">%s</div></td></tr>",
-                    $this->L10N->getString('label_aux_triggered')
+                    $this->L10N->getString('label.aux_triggered')
                 );
-                $this->FE['AuxStatsForClipboard'] = $this->L10N->getString('label_aux_triggered') . '\n';
-                $MostRecent = $this->L10N->getString('label_most_recent') . $this->L10N->getString('pair_separator');
+                $this->FE['AuxStatsForClipboard'] = $this->L10N->getString('label.aux_triggered') . '\n';
+                $MostRecent = $this->L10N->getString('label.Most recent') . $this->L10N->getString('pair_separator');
                 foreach ($AuxRulesTracked as $AuxRuleName) {
                     $Try = $this->Cache->getEntry('Statistics-Aux-' . $AuxRuleName);
                     if (!is_int($Try) || $Try < 1) {
@@ -4573,7 +4573,7 @@ class FrontEnd extends Core
                 $AuxRulesTotal = $this->NumberFormatter->format($AuxRulesTotal);
                 $this->FE['AuxStats'] .= sprintf(
                     "\n      <tr>\n        <td class=\"h3\"><div class=\"s\">%s</div></td>\n        <td class=\"h3f\"><div class=\"s\">%s</div></td>\n      </tr>",
-                    $this->L10N->getString('label_total'),
+                    $this->L10N->getString('label.Total'),
                     $AuxRulesTotal
                 );
                 $this->FE['AuxStatsForClipboard'] = $this->escapeJsInHTML($this->FE['AuxStatsForClipboard']) . '\n';
@@ -4786,14 +4786,14 @@ class FrontEnd extends Core
                 $this->FE['Priority_Aux'] = sprintf(
                     '%2$s%1$s%8$s%1$s(%9$s🔄%3$s🔄%4$s🔄%5$s🔄%6$s)%1$s%7$s',
                     $this->L10N->Directionality !== 'rtl' ? '➡' : '⬅',
-                    $this->L10N->getString('label_aux_actWhl'),
-                    $this->L10N->getString('label_aux_actGrl'),
-                    $this->L10N->getString('label_aux_actBlk'),
-                    $this->L10N->getString('label_aux_actByp'),
-                    $this->L10N->getString('label_aux_actLog'),
-                    $this->L10N->getString('label_aux_actRdr'),
-                    $this->L10N->getString('label_aux_actRun') . '…',
-                    $this->L10N->getString('label_aux_actPro')
+                    $this->L10N->getString('label.aux_actWhl'),
+                    $this->L10N->getString('label.aux_actGrl'),
+                    $this->L10N->getString('label.aux_actBlk'),
+                    $this->L10N->getString('label.aux_actByp'),
+                    $this->L10N->getString('label.aux_actLog'),
+                    $this->L10N->getString('label.aux_actRdr'),
+                    $this->L10N->getString('label.aux_actRun') . '…',
+                    $this->L10N->getString('label.aux_actPro')
                 );
 
                 /** Priority information about status codes. */
@@ -4807,14 +4807,14 @@ class FrontEnd extends Core
                     '<code dir="ltr">http_response_header_code(4xx🔄5xx)</code>',
                     $this->L10N->getString('link_aux') . '<code dir="ltr">(30x)</code>',
                     '<code dir="ltr">nonblocked_status_code(4xx)</code>',
-                    $this->L10N->getString('label_other')
+                    $this->L10N->getString('label.Other')
                 );
 
                 /** Provides the "other options and special flags" to the default view mode new rule creation. */
                 $this->FE['AuxFlagsProvides'] = '';
                 foreach ($this->CIDRAM['Provide']['Auxiliary Rules']['Flags'] as $FlagSetName => $FlagSetValue) {
                     $FlagKey = preg_replace('~[^A-Za-z]~', '', $FlagSetName);
-                    $Options = sprintf('<select name="%s" class="auto"><option value="Default State" selected>%s</option>', $FlagKey, $this->L10N->getString('label_aux_special_default_state'));
+                    $Options = sprintf('<select name="%s" class="auto"><option value="Default State" selected>%s</option>', $FlagKey, $this->L10N->getString('label.aux_special_default_state'));
                     if (isset($FlagSetValue['Label'])) {
                         $FlagSetName = $this->L10N->getString($FlagSetValue['Label']) ?: $FlagSetName;
                         unset($FlagSetValue['Label']);
@@ -5267,7 +5267,7 @@ class FrontEnd extends Core
                             $this->FE['EstAft'] = $TryRange - $this->FE['EntryCountBefore'];
                         }
                         $this->FE['SearchInfo'] = '<br />' . sprintf(
-                            $this->L10N->getPlural($this->FE['EntryCountBefore'], 'label_displaying_that_cite'),
+                            $this->L10N->getPlural($this->FE['EntryCountBefore'], 'label.Displaying %s entry that cites %s'),
                             '<span class="txtRd">' . $this->NumberFormatter->format($this->FE['EstAft'] + 1) .
                             '-' . $this->NumberFormatter->format($TryRange) . '</span>' .
                             '<span class="txtBl">(</span><span class="txtRd">' . $this->NumberFormatter->format($this->FE['EntryCountPaginated']) . '</span><span class="txtBl">)/</span>' .
@@ -5276,14 +5276,14 @@ class FrontEnd extends Core
                         );
                         if ($this->FE['From']) {
                             $this->FE['SearchInfo'] .= '<br />' . sprintf(
-                                $this->L10N->getString('label_starting_from'),
+                                $this->L10N->getString('label.Starting from %s'),
                                 '<span class="txtRd">' . $this->FE['From'] . '</span>'
                             );
                             if ($this->FE['Previous']) {
-                                $this->paginationFromLink('label_previous', $this->FE['Previous']);
+                                $this->paginationFromLink('label.Previous', $this->FE['Previous']);
                             }
                             if ($this->FE['Next']) {
-                                $this->paginationFromLink('label_next', $this->FE['Next']);
+                                $this->paginationFromLink('label.Next', $this->FE['Next']);
                             }
                             if (isset($this->FE['EstAft'])) {
                                 $this->FE['EstWidth'] = floor((($TryRange - $this->FE['EstAft']) / ($this->FE['EntryCountBefore'] ?: 1)) * 10000) / 100;
@@ -5303,7 +5303,7 @@ class FrontEnd extends Core
                         }
                     } else {
                         $this->FE['SearchInfo'] = '<br />' . sprintf(
-                            $this->L10N->getPlural($this->FE['EntryCountBefore'], 'label_displaying_that_cite'),
+                            $this->L10N->getPlural($this->FE['EntryCountBefore'], 'label.Displaying %s entry that cites %s'),
                             '<span class="txtRd">' . $this->NumberFormatter->format($this->FE['EntryCountBefore']) . '</span>',
                             $this->FE['SearchInfoRender']
                         );
@@ -5356,7 +5356,7 @@ class FrontEnd extends Core
                             $this->FE['EstAft'] = $TryRange - $this->FE['EntryCountBefore'];
                         }
                         $this->FE['SearchInfo'] = '<br />' . sprintf(
-                            $this->L10N->getPlural($this->FE['EntryCountBefore'], 'label_displaying'),
+                            $this->L10N->getPlural($this->FE['EntryCountBefore'], 'label.Displaying %s entry'),
                             '<span class="txtRd">' . $this->NumberFormatter->format($this->FE['EstAft'] + 1) .
                             '-' . $this->NumberFormatter->format($TryRange) . '</span>' .
                             '<span class="txtBl">(</span><span class="txtRd">' . $this->NumberFormatter->format($this->FE['EntryCount']) . '</span><span class="txtBl">)/</span>' .
@@ -5364,14 +5364,14 @@ class FrontEnd extends Core
                         );
                         if ($this->FE['From']) {
                             $this->FE['SearchInfo'] .= '<br />' . sprintf(
-                                $this->L10N->getString('label_starting_from'),
+                                $this->L10N->getString('label.Starting from %s'),
                                 '<span class="txtRd">' . $this->FE['From'] . '</span>'
                             );
                             if ($this->FE['Previous']) {
-                                $this->paginationFromLink('label_previous', $this->FE['Previous']);
+                                $this->paginationFromLink('label.Previous', $this->FE['Previous']);
                             }
                             if ($this->FE['Next']) {
-                                $this->paginationFromLink('label_next', $this->FE['Next']);
+                                $this->paginationFromLink('label.Next', $this->FE['Next']);
                             }
                             if (isset($this->FE['EstAft'])) {
                                 $this->FE['EstWidth'] = floor((($TryRange - $this->FE['EstAft']) / ($this->FE['EntryCountBefore'] ?: 1)) * 10000) / 100;
@@ -5391,7 +5391,7 @@ class FrontEnd extends Core
                         }
                     } else {
                         $this->FE['SearchInfo'] = '<br />' . sprintf(
-                            $this->L10N->getPlural($this->FE['EntryCount'], 'label_displaying'),
+                            $this->L10N->getPlural($this->FE['EntryCount'], 'label.Displaying %s entry'),
                             '<span class="txtRd">' . $this->NumberFormatter->format($this->FE['EntryCount']) . '</span>'
                         );
                     }
@@ -5430,24 +5430,24 @@ class FrontEnd extends Core
                 '<input type="checkbox" name="remember" class="auto" id="remember"%12$s /><label for="remember">%13$s</label><br />' .
                 '<input type="hidden" name="logfile" value="%14$s" /><input type="submit" value="%15$s" />' .
                 '</span></td>',
-                $this->L10N->getString('label_textmode'),
+                $this->L10N->getString('label.Text formatting'),
                 $this->FE['TextModeLinks'] === 'simple' ? ' selected' : '',
-                $this->L10N->getString('label_textmode_simple'),
+                $this->L10N->getString('label.Simple'),
                 $this->FE['TextModeLinks'] === 'fancy' ? ' selected' : '',
-                $this->L10N->getString('label_textmode_fancy'),
+                $this->L10N->getString('label.Fancy'),
                 $this->FE['TextModeLinks'] === 'tally' ? ' selected' : '',
-                $this->L10N->getString('label_textmode_tally'),
+                $this->L10N->getString('label.Tally'),
                 $this->FE['SortOrder'] === 'ascending' ? ' checked' : '',
                 $this->L10N->getString('switch-descending-order-set-false'),
                 $this->FE['SortOrder'] === 'descending' ? ' checked' : '',
                 $this->L10N->getString('switch-descending-order-set-true'),
                 $this->FE['Remember'] ? ' checked' : '',
-                $this->L10N->getString('label_remember'),
+                $this->L10N->getString('label.Remember'),
                 $this->CIDRAM['QueryVars']['logfile'] ?? '',
-                $this->L10N->getString('field_ok'),
+                $this->L10N->getString('field.OK'),
                 $this->FE['Paginate'] ? ' checked' : '',
-                $this->L10N->getString('label_paginate'),
-                $this->L10N->getString('label_entries_per_page'),
+                $this->L10N->getString('label.Paginate'),
+                $this->L10N->getString('label.Entries per page'),
                 $this->FE['PerPage']
             );
 
@@ -5458,7 +5458,7 @@ class FrontEnd extends Core
                 $this->FE['logfileData'] = $this->tally(
                     $this->FE['logfileData'],
                     $this->FE['BlockLink'],
-                    [$this->L10N->getString('field_id'), $this->L10N->getString('field_datetime')]
+                    [$this->L10N->getString('field.ID'), $this->L10N->getString('field.DateTime')]
                 );
             } else {
                 $this->FE['logfileData'] = '<textarea id="logsTA" readonly>' . trim($this->FE['logfileData']) . '</textarea>';

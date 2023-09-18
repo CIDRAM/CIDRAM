@@ -4,21 +4,21 @@
 <table><tr><td class="spanner">
   <form action="?{UpdatesFormTarget}" method="POST" name="ufts"><input name="cidram-form-target" type="hidden" value="updates" /><select name="FilterSelector" class="ufts">
     {UpdatesFormTargetControls}
-  </select><input type="submit" value="{field_ok}" class="auto" /></form>{UpdateAll}
+  </select><input type="submit" value="{field.OK}" class="auto" /></form>{UpdateAll}
 </td></tr></table>
 <table class="tablend">
 <tr>
-  <td class="h2"><div class="s">{field_component}</div></td>
-  <td class="h2 big"><div class="s">{field_your_version}</div></td>
-  <td class="h2 big"><div class="s">{field_latest_version}</div></td>
-  <td class="h2f"><div class="s">{field_status} | {field_options}</div></td>
+  <td class="h2"><div class="s">{field.Component}</div></td>
+  <td class="h2 big"><div class="s">{field.Your version}</div></td>
+  <td class="h2 big"><div class="s">{field.Latest version}</div></td>
+  <td class="h2f"><div class="s">{field.Status} | {field.Options}</div></td>
 </tr>
 {Components}
 </table>
 <table class="tablend">
 <tr>
-  <td class="h4"><div class="s">{field_macro}</div></td>
-  <td class="h4f"><div class="s">{field_options}</div></td>
+  <td class="h4"><div class="s">{field.Macro}</div></td>
+  <td class="h4f"><div class="s">{field.Options}</div></td>
 </tr>
 {Macros}
 </table>

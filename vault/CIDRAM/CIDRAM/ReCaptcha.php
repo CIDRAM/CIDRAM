@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: ReCaptcha class (last modified: 2023.01.26).
+ * This file: ReCaptcha class (last modified: 2023.09.16).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -202,11 +202,11 @@ class ReCaptcha extends Captcha
         $WriteMode = (!file_exists($Filename) || $Truncate > 0 && filesize($Filename) >= $Truncate) ? 'wb' : 'ab';
         $Data = sprintf(
             '%1$s%7$s%2$s - %3$s%7$s%4$s - %5$s%7$s%6$s',
-            $this->CIDRAM->L10N->getString('field_ipaddr'),
+            $this->CIDRAM->L10N->getString('field.IP address'),
             $this->CIDRAM->Configuration['legal']['pseudonymise_ip_addresses'] ? $this->CIDRAM->pseudonymiseIp($this->CIDRAM->ipAddr) : $this->CIDRAM->ipAddr,
-            $this->CIDRAM->L10N->getString('field_datetime'),
+            $this->CIDRAM->L10N->getString('field.DateTime'),
             $this->CIDRAM->BlockInfo['DateTime'],
-            $this->CIDRAM->L10N->getString('field_captcha'),
+            $this->CIDRAM->L10N->getString('field.CAPTCHA state'),
             $this->CIDRAM->BlockInfo['CAPTCHA'],
             $this->CIDRAM->L10N->getString('pair_separator')
         ) . "\n";
@@ -255,7 +255,7 @@ class ReCaptcha extends Captcha
         ) . $Script . "\n" : sprintf(
             "\n<hr />\n<p class=\"detected\"%s>%s%s<br /></p>\n" .
             '<form method="POST" action="" class="gForm" onsubmit="javascript:grecaptcha.execute()">' .
-                '<div id="gForm" data-theme="%s"></div><div>%s<input type="submit" value="{label_submit}" /></div>' .
+                '<div id="gForm" data-theme="%s"></div><div>%s<input type="submit" value="{label.submit}" /></div>' .
             "</form>\n",
             $this->CIDRAM->CIDRAM['L10N-Lang-Attache'],
             $ApiMessage ? '{captcha_message}' : '',

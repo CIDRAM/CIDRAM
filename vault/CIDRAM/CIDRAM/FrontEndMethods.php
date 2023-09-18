@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2023.08.28).
+ * This file: General methods used by the front-end (last modified: 2023.09.18).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -23,7 +23,7 @@ trait FrontEndMethods
      */
     private function formatFileSize(int &$Filesize): void
     {
-        $Scale = ['field_size_bytes', 'field_size_KB', 'field_size_MB', 'field_size_GB', 'field_size_TB', 'field_size_PB'];
+        $Scale = ['field.size.bytes', 'field.size.KB', 'field.size.MB', 'field.size.GB', 'field.size.TB', 'field.size.PB'];
         $Iterate = 0;
         while ($Filesize > 1024) {
             $Filesize /= 1024;
@@ -58,22 +58,22 @@ trait FrontEndMethods
             if (is_dir($Item)) {
                 $Arr[$Key]['Directory'] = true;
                 $Arr[$Key]['Filesize'] = 0;
-                $Arr[$Key]['Filetype'] = $this->L10N->getString('field_filetype_directory');
+                $Arr[$Key]['Filetype'] = $this->L10N->getString('field.Directory');
                 $Arr[$Key]['Icon'] = 'icon=directory';
             } elseif (is_file($Item)) {
                 $Arr[$Key]['Directory'] = false;
                 $Arr[$Key]['Filesize'] = filesize($Item);
-                $Arr[$Key]['Filetype'] = $this->L10N->getString('field_filetype_unknown');
+                $Arr[$Key]['Filetype'] = $this->L10N->getString('field.Unknown');
                 $Arr[$Key]['Icon'] = 'icon=text';
                 if (isset($this->FE['TotalSize'])) {
                     $this->FE['TotalSize'] += $Arr[$Key]['Filesize'];
                 }
                 if (isset($this->Components['Components'])) {
-                    $Component = $this->L10N->getString('field_filetype_unknown');
+                    $Component = $this->L10N->getString('field.Unknown');
                     if (isset($this->Components['Files'][$Arr[$Key]['Filename']])) {
                         $Component = $this->Components['Names'][$this->Components['Files'][$Arr[$Key]['Filename']]] ?? $this->Components['Files'][$Arr[$Key]['Filename']];
                     } elseif (preg_match('~(?:[^|/]\.ht|\.safety$|^salt\.dat$)~i', $Arr[$Key]['Filename'])) {
-                        $Component = $this->L10N->getString('label_fmgr_safety');
+                        $Component = $this->L10N->getString('label.Safety mechanisms');
                     } elseif (preg_match('~config\.yml$~i', $Arr[$Key]['Filename'])) {
                         $Component = $this->L10N->getString('link_config');
                     } elseif ($this->isLogFile($Arr[$Key]['Filename'])) {
@@ -81,11 +81,11 @@ trait FrontEndMethods
                     } elseif ($Arr[$Key]['Filename'] === 'auxiliary.yml') {
                         $Component = $this->L10N->getString('link_aux');
                     } elseif (preg_match('/(?:^ignore\.dat|_custom\.dat|\.sig|\.inc)$/i', $Arr[$Key]['Filename'])) {
-                        $Component = $this->L10N->getString('label_fmgr_other_sig');
+                        $Component = $this->L10N->getString('label.Other rules, signature files, etc');
                     } elseif (preg_match('~(?:\.tmp|\.rollback|^(?:cache|hashes|ipbypass|rl)\.dat)$~i', $Arr[$Key]['Filename'])) {
-                        $Component = $this->L10N->getString('label_fmgr_cache_data');
+                        $Component = $this->L10N->getString('label.Cache data and temporary files');
                     } elseif ($Arr[$Key]['Filename'] === 'installed.yml') {
-                        $Component = $this->L10N->getString('label_fmgr_updates_metadata');
+                        $Component = $this->L10N->getString('label.Component updates metadata');
                     }
                     if (!isset($this->Components['Components'][$Component])) {
                         $this->Components['Components'][$Component] = 0;
@@ -102,7 +102,7 @@ trait FrontEndMethods
                         $this->formatFileSize($Arr[$Key]['Filesize']);
                         continue;
                     }
-                    $Arr[$Key]['Filetype'] = sprintf($this->L10N->getString('field_filetype_info'), $Ext);
+                    $Arr[$Key]['Filetype'] = sprintf($this->L10N->getString('field.%s File'), $Ext);
                     if ($Ext === 'ICO') {
                         $Arr[$Key]['Icon'] = 'file=' . urlencode($Arr[$Key]['Filename']);
                         $this->formatFileSize($Arr[$Key]['Filesize']);
@@ -260,8 +260,7 @@ trait FrontEndMethods
      */
     private function prepareName(array &$Arr, string $Key = ''): void
     {
-        $Key = 'Name ' . $Key;
-        if (($Try = $this->L10N->getString($Key)) !== '') {
+        if (($Try = $this->L10N->getString('Name.' . $Key)) !== '') {
             $Arr['Name'] = $Try;
         } elseif (!isset($Arr['Name'])) {
             $Arr['Name'] = '';
@@ -471,9 +470,9 @@ trait FrontEndMethods
             $ThisCount = $SignaturesCount[$Section] ?? 0;
             $ThisFiles = isset($FilesCount[$Section]) ? count($FilesCount[$Section]) : 0;
             $ThisCount = sprintf(
-                $this->L10N->getPlural($ThisFiles, 'label_sections_across_x_files'),
+                $this->L10N->getPlural($ThisFiles, 'label.%s across %s file'),
                 sprintf(
-                    $this->L10N->getPlural($ThisCount, 'label_sections_x_signatures'),
+                    $this->L10N->getPlural($ThisCount, 'label.%s signature'),
                     '<span class="txtRd">' . $this->NumberFormatter->format($ThisCount) . '</span>'
                 ),
                 '<span class="txtRd">' . $this->NumberFormatter->format($ThisFiles) . '</span>'
@@ -487,7 +486,7 @@ trait FrontEndMethods
                 $State = !empty($SectionsForIgnore[$Section . ':' . $Origin]);
                 $OriginSafe = $SectionSafe . preg_replace('~[^A-Z]~', '', $Origin);
                 $Quantity = sprintf(
-                    $this->L10N->getPlural($Quantity, 'label_sections_x_signatures'),
+                    $this->L10N->getPlural($Quantity, 'label.%s signature'),
                     $this->NumberFormatter->format($Quantity)
                 );
                 $OriginDisplay = '<code>' . $Origin . '</code>' . ($this->FE['Flags'] ? ' – <span class="flag ' . $Origin . '"></span>' : '');
@@ -499,7 +498,7 @@ trait FrontEndMethods
                     '',
                     $Section,
                     $Origin,
-                    'ignore\',\'sectionControlNotIgnored' . $OriginSafe . '\',\'sectionControlIgnored' . $OriginSafe . '\')">' . $this->L10N->getString('label_ignore')
+                    'ignore\',\'sectionControlNotIgnored' . $OriginSafe . '\',\'sectionControlIgnored' . $OriginSafe . '\')">' . $this->L10N->getString('label.Ignore this')
                 ) . sprintf(
                     '<div class="sectionControlIgnored%s">%s – %s – %s<a href="javascript:void()" onclick="javascript:slx(\'%s:%s\',\'%s</a></div>',
                     $OriginSafe . '" style="transform:skew(-18deg);filter:grayscale(75%) contrast(50%)' . ($State ? ';display:none' : ''),
@@ -508,7 +507,7 @@ trait FrontEndMethods
                     $this->L10N->getString('state_ignored') . ' – ',
                     $Section,
                     $Origin,
-                    'unignore\',\'sectionControlIgnored' . $OriginSafe . '\',\'sectionControlNotIgnored' . $OriginSafe . '\')">' . $this->L10N->getString('label_unignore')
+                    'unignore\',\'sectionControlIgnored' . $OriginSafe . '\',\'sectionControlNotIgnored' . $OriginSafe . '\')">' . $this->L10N->getString('label.Unignore this')
                 );
             }
             $State = !empty($SectionsForIgnore[$Section]);
@@ -517,14 +516,14 @@ trait FrontEndMethods
                 $Class,
                 $State ? $SectionSafe : $SectionSafe . '" style="display:none',
                 $SectionLabel,
-                ' – <a href="javascript:void()" onclick="javascript:slx(\'' . $Section . '\',\'ignore\',\'sectionControlNotIgnored' . $SectionSafe . '\',\'sectionControlIgnored' . $SectionSafe . '\')">' . $this->L10N->getString('label_ignore') . '</a>',
+                ' – <a href="javascript:void()" onclick="javascript:slx(\'' . $Section . '\',\'ignore\',\'sectionControlNotIgnored' . $SectionSafe . '\',\'sectionControlIgnored' . $SectionSafe . '\')">' . $this->L10N->getString('label.Ignore this') . '</a>',
                 $OriginOut
             ) . sprintf(
                 '<div class="%s sectionControlIgnored%s"><strong>%s%s</strong><br />%s</div>',
                 $Class,
                 $SectionSafe . '" style="filter:grayscale(50%) contrast(50%)' . ($State ? ';display:none' : ''),
                 $SectionLabel . ' – ' . $this->L10N->getString('state_ignored'),
-                ' – <a href="javascript:void()" onclick="javascript:slx(\'' . $Section . '\',\'unignore\',\'sectionControlIgnored' . $SectionSafe . '\',\'sectionControlNotIgnored' . $SectionSafe . '\')">' . $this->L10N->getString('label_unignore') . '</a>',
+                ' – <a href="javascript:void()" onclick="javascript:slx(\'' . $Section . '\',\'unignore\',\'sectionControlIgnored' . $SectionSafe . '\',\'sectionControlNotIgnored' . $SectionSafe . '\')">' . $this->L10N->getString('label.Unignore this') . '</a>',
                 $OriginOut
             );
         }
@@ -653,7 +652,7 @@ trait FrontEndMethods
      */
     private function generateConfirmation(string $Action, string $Form): string
     {
-        return 'javascript:confirm(\'' . $this->escapeJsInHTML(sprintf($this->L10N->getString('confirm_action'), $Action)) . '\')&&document.getElementById(\'' . $Form . '\').submit()';
+        return 'javascript:confirm(\'' . $this->escapeJsInHTML(sprintf($this->L10N->getString('confirm.Action'), $Action)) . '\')&&document.getElementById(\'' . $Form . '\').submit()';
     }
 
     /**
@@ -743,7 +742,7 @@ trait FrontEndMethods
                     ' – (<span onclick="javascript:%s(\'%s\')"><code class="s"><span class="txtRd">⌧</span>%s</code></span>)',
                     $DeleteKey,
                     $this->escapeJsInHTML($ParentKey . '-' . $Key),
-                    $this->L10N->getString('field_delete')
+                    $this->L10N->getString('field.Delete')
                 );
                 $Output .= '<span id="' . $this->escapeJsInHTML($ParentKey . '-' . $Key) . 'Container">';
             } elseif ($Depth === 0) {
@@ -751,7 +750,7 @@ trait FrontEndMethods
                     ' – (<span onclick="javascript:%s(\'%s\')"><code class="s"><span class="txtRd">⌧</span>%s</code></span>)',
                     $DeleteKey,
                     (isset($this->CIDRAM['ListGroups'][$Key]) ? '^' : '') . $this->escapeJsInHTML($Key),
-                    $this->L10N->getString('field_delete')
+                    $this->L10N->getString('field.Delete')
                 );
                 $Output .= '<span id="' . $this->escapeJsInHTML($Key) . 'Container">';
             } else {
@@ -778,7 +777,7 @@ trait FrontEndMethods
             }
             if (is_array($Value)) {
                 if ($Depth === 0 || ($Depth === 1 && isset($this->CIDRAM['ListGroups'][$ParentKey]))) {
-                    $SizeField = $this->L10N->getString('field_size') ?: 'Size';
+                    $SizeField = $this->L10N->getString('field.size.Total size') ?: 'Size';
                     $Size = isset($Value['Data']) && is_string($Value['Data']) ? strlen($Value['Data']) : (
                         isset($Value[0]) && is_string($Value[0]) ? strlen($Value[0]) : false
                     );
@@ -791,10 +790,10 @@ trait FrontEndMethods
                 $Output .= $this->arrayToClickableList($Value, $DeleteKey, $Depth + 1, $Key) . '</ul>';
             } else {
                 if ($Key === 'Time' && preg_match('~^\d+$~', $Value)) {
-                    $Key = $this->L10N->getString('label_expires');
+                    $Key = $this->L10N->getString('label.Expires');
                     $Value = $this->timeFormat($Value, $this->Configuration['general']['time_format']);
                 }
-                $Class = ($Key === $this->L10N->getString('field_size') || $Key === $this->L10N->getString('label_expires')) ? 'txtRd' : 's';
+                $Class = ($Key === $this->L10N->getString('field.size.Total size') || $Key === $this->L10N->getString('label.Expires')) ? 'txtRd' : 's';
                 $Text = ($Count === 1 && $Key === 0) ? $Value : $Key . ($Class === 's' ? ' => ' : ' ') . $Value;
                 $Output .= '<code class="' . $Class . ' canBreak">' . $this->ltrInRtf(
                     str_replace(['<', '>'], ['&lt;', '&gt;'], $Text)

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Default event handlers (last modified: 2023.09.16).
+ * This file: Default event handlers (last modified: 2023.09.18).
  */
 
 /**
@@ -31,7 +31,10 @@ $this->Events->addHandler('writeToLog', function (): bool {
     $WriteMode = !empty($Data) ? 'wb' : 'ab';
     $Data .= $this->parseVars($this->CIDRAM['Parsables'], $this->CIDRAM['FieldTemplates']['Logs'] . "\n");
 
-    $File = fopen($Filename, $WriteMode);
+    if (!is_resource($File = fopen($Filename, $WriteMode))) {
+        trigger_error('The "writeToLog" event failed to open "' . $Filename . '" for writing.');
+        return false;
+    }
     fwrite($File, $Data);
     fclose($File);
     if ($WriteMode === 'wb') {
@@ -71,7 +74,10 @@ $this->Events->addHandler('writeToLog', function (): bool {
     $Truncate = $this->readBytes($this->Configuration['logging']['truncate']);
     $WriteMode = !file_exists($Filename) || $Truncate > 0 && filesize($Filename) >= $Truncate ? 'wb' : 'ab';
 
-    $File = fopen($Filename, $WriteMode);
+    if (!is_resource($File = fopen($Filename, $WriteMode))) {
+        trigger_error('The "writeToLog" event failed to open "' . $Filename . '" for writing.');
+        return false;
+    }
     fwrite($File, $Data);
     fclose($File);
     if ($WriteMode === 'wb') {
@@ -107,7 +113,10 @@ $this->Events->addHandler('writeToLog', function (): bool {
     $Truncate = $this->readBytes($this->Configuration['logging']['truncate']);
     $WriteMode = !file_exists($Filename) || $Truncate > 0 && filesize($Filename) >= $Truncate ? 'wb' : 'ab';
 
-    $File = fopen($Filename, $WriteMode);
+    if (!is_resource($File = fopen($Filename, $WriteMode))) {
+        trigger_error('The "writeToLog" event failed to open "' . $Filename . '" for writing.');
+        return false;
+    }
     fwrite($File, serialize($BlockInfo) . "\n");
     fclose($File);
     if ($WriteMode === 'wb') {
@@ -188,7 +197,9 @@ $this->Events->addHandler('final', function (): bool {
         $Data = $this->CIDRAM['Pending-Error-Log-Data'];
     }
 
-    $Handle = fopen($File, $WriteMode);
+    if (!is_resource($Handle = fopen($File, $WriteMode))) {
+        return false;
+    }
     fwrite($Handle, $Data);
     fclose($Handle);
     if ($WriteMode === 'wb') {
@@ -221,7 +232,10 @@ $this->Events->addHandler('writeToSignaturesUpdateEventLog', function (string $D
 
     $Truncate = $this->readBytes($this->Configuration['logging']['truncate']);
     $WriteMode = (!file_exists($UpdatesLog) || $Truncate > 0 && filesize($UpdatesLog) >= $Truncate) ? 'wb' : 'ab';
-    $Handle = fopen($UpdatesLog, $WriteMode);
+    if (!is_resource($Handle = fopen($UpdatesLog, $WriteMode))) {
+        trigger_error('The "writeToSignaturesUpdateEventLog" event failed to open "' . $UpdatesLog . '" for writing.');
+        return false;
+    }
     fwrite($Handle, $Data);
     fclose($Handle);
     if ($WriteMode === 'wb') {
@@ -301,7 +315,10 @@ $this->Events->addHandler('writeToReportLog', function (string $Data, array $Mis
 
     $Truncate = $this->readBytes($this->Configuration['logging']['truncate']);
     $WriteMode = (!file_exists($Filename) || $Truncate > 0 && filesize($Filename) >= $Truncate) ? 'wb' : 'ab';
-    $File = fopen($Filename, $WriteMode);
+    if (!is_resource($File = fopen($Filename, $WriteMode))) {
+        trigger_error('The "writeToReportLog" event failed to open "' . $Filename . '" for writing.');
+        return false;
+    }
     fwrite($File, $Data);
     fclose($File);
     if ($WriteMode === 'wb') {

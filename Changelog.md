@@ -312,3 +312,5 @@
 [2023.09.15; Bug-fixes; Maikuolan]: Auxiliary rules automatic method detection failed to detect for numeric comparison; Fixed. Auxiliary rules numeric comparison could accept non-numeric values under certain conditions; Fixed.
 
 [2023.09.16~18; Maikuolan]: Significantly refactored all L10N data.
+
+[2023.09.18; Maikuolan]: Better resource guarding (#516).

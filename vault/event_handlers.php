@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Event handlers file (last modified: 2023.05.22).
+ * This file: Event handlers file (last modified: 2023.09.18).
  */
 
 /**
@@ -31,7 +31,10 @@ $CIDRAM['Events']->addHandler('writeToLog', function () use (&$CIDRAM) {
     $WriteMode = !empty($Data) ? 'wb' : 'ab';
     $Data .= $CIDRAM['ParseVars']($CIDRAM['Parsables'], $CIDRAM['FieldTemplates']['Logs'] . "\n");
 
-    $File = fopen($Filename, $WriteMode);
+    if (!is_resource($File = fopen($Filename, $WriteMode))) {
+        trigger_error('The "writeToLog" event failed to open "' . $Filename . '" for writing.');
+        return false;
+    }
     fwrite($File, $Data);
     fclose($File);
     if ($WriteMode === 'wb') {
@@ -71,7 +74,10 @@ $CIDRAM['Events']->addHandler('writeToLog', function () use (&$CIDRAM) {
     $Truncate = $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate']);
     $WriteMode = !file_exists($Filename) || $Truncate > 0 && filesize($Filename) >= $Truncate ? 'wb' : 'ab';
 
-    $File = fopen($Filename, $WriteMode);
+    if (!is_resource($File = fopen($Filename, $WriteMode))) {
+        trigger_error('The "writeToLog" event failed to open "' . $Filename . '" for writing.');
+        return false;
+    }
     fwrite($File, $Data);
     fclose($File);
     if ($WriteMode === 'wb') {
@@ -107,7 +113,10 @@ $CIDRAM['Events']->addHandler('writeToLog', function () use (&$CIDRAM) {
     $Truncate = $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate']);
     $WriteMode = !file_exists($Filename) || $Truncate > 0 && filesize($Filename) >= $Truncate ? 'wb' : 'ab';
 
-    $File = fopen($Filename, $WriteMode);
+    if (!is_resource($File = fopen($Filename, $WriteMode))) {
+        trigger_error('The "writeToLog" event failed to open "' . $Filename . '" for writing.');
+        return false;
+    }
     fwrite($File, serialize($BlockInfo) . "\n");
     fclose($File);
     if ($WriteMode === 'wb') {
@@ -189,7 +198,9 @@ $CIDRAM['Events']->addHandler('final', function () use (&$CIDRAM) {
         $Data = $CIDRAM['Pending-Error-Log-Data'];
     }
 
-    $Handle = fopen($File, $WriteMode);
+    if (!is_resource($Handle = fopen($File, $WriteMode))) {
+        return false;
+    }
     fwrite($Handle, $Data);
     fclose($Handle);
     if ($WriteMode === 'wb') {
@@ -215,7 +226,10 @@ $CIDRAM['Events']->addHandler('writeToPHPMailerEventLog', function ($Data) use (
 
     $Truncate = $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate']);
     $WriteMode = (!file_exists($EventLog) || $Truncate > 0 && filesize($EventLog) >= $Truncate) ? 'wb' : 'ab';
-    $Handle = fopen($EventLog, $WriteMode);
+    if (!is_resource($Handle = fopen($EventLog, $WriteMode))) {
+        trigger_error('The "writeToPHPMailerEventLog" event failed to open "' . $EventLog . '" for writing.');
+        return false;
+    }
     fwrite($Handle, $Data);
     fclose($Handle);
     if ($WriteMode === 'wb') {
@@ -248,7 +262,10 @@ $CIDRAM['Events']->addHandler('writeToSignaturesUpdateEventLog', function ($Data
 
     $Truncate = $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate']);
     $WriteMode = (!file_exists($UpdatesLog) || $Truncate > 0 && filesize($UpdatesLog) >= $Truncate) ? 'wb' : 'ab';
-    $Handle = fopen($UpdatesLog, $WriteMode);
+    if (!is_resource($Handle = fopen($UpdatesLog, $WriteMode))) {
+        trigger_error('The "writeToSignaturesUpdateEventLog" event failed to open "' . $UpdatesLog . '" for writing.');
+        return false;
+    }
     fwrite($Handle, $Data);
     fclose($Handle);
     if ($WriteMode === 'wb') {

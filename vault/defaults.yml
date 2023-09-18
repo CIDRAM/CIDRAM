@@ -1037,7 +1037,7 @@ Config Defaults:
   custom_footer:
    type: "string"
    default: ""
- rate_limiting:
+ Rate Limiting:
   max_bandwidth:
    type: "kb"
    default: "0KB"
@@ -1209,7 +1209,7 @@ Provide:
      Sets:
       CIDRAM: {Suppress logging: true}
    IP Tracking:
-    Label: "link_ip_tracking"
+    Label: "link.IP Tracking"
     Forcibly enable IP tracking:
      Label: "label.aux_special_ip_tracking_enable"
      Sets:
@@ -1229,7 +1229,7 @@ Provide:
      Sets:
       CIDRAM: {Tracking options override: "default"}
    Statistics:
-    Label: "link_statistics"
+    Label: "link.Statistics"
     Track this rule:
      Label: "label.aux_special_statistics"
    Disable this rule:

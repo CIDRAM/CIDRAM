@@ -75,11 +75,11 @@ trait FrontEndMethods
                     } elseif (preg_match('~(?:[^|/]\.ht|\.safety$|^salt\.dat$)~i', $Arr[$Key]['Filename'])) {
                         $Component = $this->L10N->getString('label.Safety mechanisms');
                     } elseif (preg_match('~config\.yml$~i', $Arr[$Key]['Filename'])) {
-                        $Component = $this->L10N->getString('link_config');
+                        $Component = $this->L10N->getString('link.Configuration');
                     } elseif ($this->isLogFile($Arr[$Key]['Filename'])) {
-                        $Component = $this->L10N->getString('link_logs');
+                        $Component = $this->L10N->getString('link.Logs');
                     } elseif ($Arr[$Key]['Filename'] === 'auxiliary.yml') {
-                        $Component = $this->L10N->getString('link_aux');
+                        $Component = $this->L10N->getString('link.Auxiliary Rules');
                     } elseif (preg_match('/(?:^ignore\.dat|_custom\.dat|\.sig|\.inc)$/i', $Arr[$Key]['Filename'])) {
                         $Component = $this->L10N->getString('label.Other rules, signature files, etc');
                     } elseif (preg_match('~(?:\.tmp|\.rollback|^(?:cache|hashes|ipbypass|rl)\.dat)$~i', $Arr[$Key]['Filename'])) {

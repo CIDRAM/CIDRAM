@@ -376,7 +376,7 @@ trait CLI
 
             /** Aggregate IPs/CIDRs. */
             if ($Cmd === 'aggregate' || substr($Cmd, 0, 10) === 'aggregate=') {
-                echo "\033[0;33m" . $this->L10N->getString('link_ip_aggregator') . "\n===\n";
+                echo "\033[0;33m" . $this->L10N->getString('link.ip_aggregator') . "\n===\n";
                 $this->CIDRAM['Aggregator'] = new Aggregator(substr($Cmd, 10) === 'netmasks' ? 1 : 0);
                 $this->CIDRAM['Aggregator']->Results = true;
                 $Data = implode("\n", $Data);
@@ -451,7 +451,7 @@ trait CLI
 
             /** Signature file fixer. */
             if ($Cmd === 'fix') {
-                echo "\033[0;33m" . $this->L10N->getString('link_fixer') . "\n===\n";
+                echo "\033[0;33m" . $this->L10N->getString('link.Signature File Fixer') . "\n===\n";
                 $Data = implode("\n", $Data);
                 $Fixer = [
                     'Aggregator' => new Aggregator(),

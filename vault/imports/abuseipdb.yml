@@ -17,7 +17,7 @@ Config Defaults:
    default: ""
    See also:
     Register - AbuseIPDB: "https://www.abuseipdb.com/register"
-    link_get_api_key: "https://www.abuseipdb.com/account/api"
+    link.Get API key: "https://www.abuseipdb.com/account/api"
   max_age_in_days:
    type: "int"
    default: 365
@@ -64,4 +64,4 @@ Config Defaults:
 Cache Prefetch:
  AbuseIPDB-429: ""
 Problems:
- - "if {CIDRAM.Cache Prefetch.AbuseIPDB-429}==1 then warn warning_rate_limited_api AbuseIPDB"
+ - "if {CIDRAM.Cache Prefetch.AbuseIPDB-429}==1 then warn warning.API_Rate_Limited AbuseIPDB"

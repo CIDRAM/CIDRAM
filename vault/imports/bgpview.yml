@@ -40,4 +40,4 @@ Config Defaults:
 Cache Prefetch:
  BGPView-429: ""
 Problems:
- - "if {CIDRAM.Cache Prefetch.BGPView-429}==1 then warn warning_rate_limited_api BGPView"
+ - "if {CIDRAM.Cache Prefetch.BGPView-429}==1 then warn warning.API_Rate_Limited BGPView"

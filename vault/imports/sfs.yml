@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Stop Forum Spam defaults file (last modified: 2023.04.18).
+# This file: Stop Forum Spam defaults file (last modified: 2023.09.18).
 ##/
 
 Config Defaults:
@@ -24,4 +24,4 @@ Config Defaults:
 Cache Prefetch:
  SFS-429: ""
 Problems:
- - "if {CIDRAM.Cache Prefetch.SFS-429}==1 then warn warning_rate_limited_api Stop Forum Spam"
+ - "if {CIDRAM.Cache Prefetch.SFS-429}==1 then warn warning.API_Rate_Limited Stop Forum Spam"

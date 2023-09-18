@@ -159,13 +159,13 @@ class FrontEnd extends Core
                 '<form action="?cidram-page=logout" method="POST" style="display:inline">%s%s<input type="submit" id="logoutbutton" value="%s" class="auto" /></form>',
                 '<input name="hostname" id="hostnameoverride" type="hidden" value="" />',
                 '<script type="text/javascript">document.getElementById(\'hostnameoverride\').value=window.location.hostname;</script>',
-                $this->L10N->getString('link_log_out')
+                $this->L10N->getString('link.Log Out')
             ),
 
             /** Used to return home. */
             'HomeButton' => sprintf(
                 '<form action="" method="GET" style="display:inline"><input type="hidden" name="cidram-page" value="" /><input type="submit" id="homebutton" value="%s" class="auto" /></form>',
-                $this->L10N->getString('link_home')
+                $this->L10N->getString('link.Home')
             ),
 
             /** State reflecting whether the current request is cronable. */
@@ -250,7 +250,7 @@ class FrontEnd extends Core
                 $this->Stages['WriteLogs:Enable']
             )) {
                 /** Dry run mode. */
-                $this->CIDRAM['Warnings'][] = $this->L10N->getString('warning_dry_run_mode');
+                $this->CIDRAM['Warnings'][] = $this->L10N->getString('warning.Operating in dry run mode');
             } elseif (
                 !isset($this->Stages['Tests:Enable']) &&
                 !isset($this->Stages['Modules:Enable']) &&
@@ -271,10 +271,10 @@ class FrontEnd extends Core
                 !isset($this->Stages['NonBlockedCAPTCHA:Enable'])
             ) {
                 /** Maintenance mode. */
-                $this->CIDRAM['Warnings'][] = $this->L10N->getString('warning_maintenance_mode');
+                $this->CIDRAM['Warnings'][] = $this->L10N->getString('warning.Operating in maintenance mode');
             } else {
                 /** Termination disabled. */
-                $this->CIDRAM['Warnings'][] = $this->L10N->getString('warning_termination_disabled');
+                $this->CIDRAM['Warnings'][] = $this->L10N->getString('warning.Page termination is disabled');
             }
         } else {
             if (isset($this->Stages['Tests:Enable'])) {
@@ -283,23 +283,23 @@ class FrontEnd extends Core
                     $this->Configuration['components']['ipv6'] === ''
                 ) {
                     /** No active signature files. */
-                    $this->CIDRAM['Warnings'][] = $this->L10N->getString('warning_no_active_signature_files');
+                    $this->CIDRAM['Warnings'][] = $this->L10N->getString('warning.No signature files are active');
                 }
             } elseif (
                 $this->Configuration['components']['ipv4'] === '' &&
                 $this->Configuration['components']['ipv6'] === ''
             ) {
                 /** IP tests disabled. */
-                $this->CIDRAM['Warnings'][] = $this->L10N->getString('warning_ip_tests_disabled');
+                $this->CIDRAM['Warnings'][] = $this->L10N->getString('warning.IP tests are disabled');
             }
             if (isset($this->Stages['Modules:Enable'])) {
                 if ($this->Configuration['components']['modules'] === '') {
                     /** No active modules. */
-                    $this->CIDRAM['Warnings'][] = $this->L10N->getString('warning_no_active_modules');
+                    $this->CIDRAM['Warnings'][] = $this->L10N->getString('warning.No modules are active');
                 }
             } elseif ($this->Configuration['components']['modules'] === '') {
                 /** Modules disabled. */
-                $this->CIDRAM['Warnings'][] = $this->L10N->getString('warning_modules_disabled');
+                $this->CIDRAM['Warnings'][] = $this->L10N->getString('warning.Modules are disabled');
             }
         }
 
@@ -784,7 +784,7 @@ class FrontEnd extends Core
          */
         elseif ($this->CIDRAM['QueryVars']['cidram-page'] === '' && $this->FE['CronMode'] === '') {
             /** Page initial prepwork. */
-            $this->initialPrepwork($this->L10N->getString('link_home'), $this->L10N->getString('tip_home'), false);
+            $this->initialPrepwork($this->L10N->getString('link.Home'), $this->L10N->getString('tip_home'), false);
 
             /** CIDRAM version used. */
             $this->FE['ScriptVersion'] = $this->ScriptVersion;
@@ -971,7 +971,7 @@ class FrontEnd extends Core
 
             if (!$this->FE['ASYNC']) {
                 /** Page initial prepwork. */
-                $this->initialPrepwork($this->L10N->getString('link_accounts'), $this->L10N->getString('tip_accounts'));
+                $this->initialPrepwork($this->L10N->getString('link.Accounts'), $this->L10N->getString('tip_accounts'));
 
                 /** Append async globals. */
                 $this->FE['JS'] .= sprintf(
@@ -990,70 +990,70 @@ class FrontEnd extends Core
                 $this->FE['AccountsRow'] = $this->readFile($this->getAssetPath('_accounts_row.html'));
                 $this->FE['Accounts'] = '';
 
-                $this->FE['LI'] = ['Possible' => []];
-                foreach ($this->Cache->getAllEntries() as $this->FE['LI']['KeyName'] => $this->FE['LI']['KeyData']) {
-                    if (isset($this->FE['LI']['KeyData']['Time']) && $this->FE['LI']['KeyData']['Time'] > 0 && $this->FE['LI']['KeyData']['Time'] < $this->Now) {
+                $LI = ['Possible' => []];
+                foreach ($this->Cache->getAllEntries() as $LI['KeyName'] => $LI['KeyData']) {
+                    if (isset($LI['KeyData']['Time']) && $LI['KeyData']['Time'] > 0 && $LI['KeyData']['Time'] < $this->Now) {
                         continue;
                     }
-                    if (strlen($this->FE['LI']['KeyName']) > 64) {
-                        $this->FE['LI']['Try'] = substr($this->FE['LI']['KeyName'], 0, -64);
-                        if (isset($this->Configuration['user.' . $this->FE['LI']['Try']])) {
-                            $this->FE['LI']['Possible'][$this->FE['LI']['Try']] = true;
+                    if (strlen($LI['KeyName']) > 64) {
+                        $LI['Try'] = substr($LI['KeyName'], 0, -64);
+                        if (isset($this->Configuration['user.' . $LI['Try']])) {
+                            $LI['Possible'][$LI['Try']] = true;
                         }
                     }
                 }
-                $this->FE['LI'] = $this->FE['LI']['Possible'];
+                $LI = $LI['Possible'];
 
                 foreach ($this->Configuration as $CatKey => $this->CIDRAM['CatValues']) {
                     if (substr($CatKey, 0, 5) !== 'user.' || !is_array($this->CIDRAM['CatValues'])) {
                         continue;
                     }
-                    $this->CIDRAM['RowInfo'] = [
+                    $RowInfo = [
                         'AccUsername' => substr($CatKey, 5),
                         'AccPassword' => $this->CIDRAM['CatValues']['password'] ?? '',
                         'AccPermissions' => $this->CIDRAM['CatValues']['permissions'] ?? 0,
                         'AccWarnings' => ''
                     ];
-                    if ($this->CIDRAM['RowInfo']['AccPermissions'] === 1) {
-                        $this->CIDRAM['RowInfo']['AccPermissions'] = $this->L10N->getString('state_complete_access');
-                    } elseif ($this->CIDRAM['RowInfo']['AccPermissions'] === 2) {
-                        $this->CIDRAM['RowInfo']['AccPermissions'] = $this->L10N->getString('state_logs_access_only');
-                    } elseif ($this->CIDRAM['RowInfo']['AccPermissions'] === 3) {
-                        $this->CIDRAM['RowInfo']['AccPermissions'] = 'Cronable';
+                    if ($RowInfo['AccPermissions'] === 1) {
+                        $RowInfo['AccPermissions'] = $this->L10N->getString('state_complete_access');
+                    } elseif ($RowInfo['AccPermissions'] === 2) {
+                        $RowInfo['AccPermissions'] = $this->L10N->getString('state_logs_access_only');
+                    } elseif ($RowInfo['AccPermissions'] === 3) {
+                        $RowInfo['AccPermissions'] = 'Cronable';
                     } else {
-                        $this->CIDRAM['RowInfo']['AccPermissions'] = $this->L10N->getString('response_error');
+                        $RowInfo['AccPermissions'] = $this->L10N->getString('response_error');
                     }
 
                     /** Account password warnings. */
-                    if ($this->CIDRAM['RowInfo']['AccPassword'] === $this->FE['DefaultPassword']) {
-                        $this->CIDRAM['RowInfo']['AccWarnings'] .= '<br /><div class="txtRd">' . $this->L10N->getString('warning_default_password') . '</div>';
+                    if ($RowInfo['AccPassword'] === $this->FE['DefaultPassword']) {
+                        $RowInfo['AccWarnings'] .= '<br /><div class="txtRd">' . $this->L10N->getString('warning.Using the default password') . '</div>';
                     } elseif ((
-                        strlen($this->CIDRAM['RowInfo']['AccPassword']) !== 60 &&
-                        strlen($this->CIDRAM['RowInfo']['AccPassword']) !== 96 &&
-                        strlen($this->CIDRAM['RowInfo']['AccPassword']) !== 97
+                        strlen($RowInfo['AccPassword']) !== 60 &&
+                        strlen($RowInfo['AccPassword']) !== 96 &&
+                        strlen($RowInfo['AccPassword']) !== 97
                     ) || (
-                        strlen($this->CIDRAM['RowInfo']['AccPassword']) === 60 &&
-                        !preg_match('/^\$2.\$\d\d\$/', $this->CIDRAM['RowInfo']['AccPassword'])
+                        strlen($RowInfo['AccPassword']) === 60 &&
+                        !preg_match('/^\$2.\$\d\d\$/', $RowInfo['AccPassword'])
                     ) || (
-                        strlen($this->CIDRAM['RowInfo']['AccPassword']) === 96 &&
-                        !preg_match('/^\$argon2i\$/', $this->CIDRAM['RowInfo']['AccPassword'])
+                        strlen($RowInfo['AccPassword']) === 96 &&
+                        !preg_match('/^\$argon2i\$/', $RowInfo['AccPassword'])
                     ) || (
-                        strlen($this->CIDRAM['RowInfo']['AccPassword']) === 97 &&
-                        !preg_match('/^\$argon2id\$/', $this->CIDRAM['RowInfo']['AccPassword'])
+                        strlen($RowInfo['AccPassword']) === 97 &&
+                        !preg_match('/^\$argon2id\$/', $RowInfo['AccPassword'])
                     )) {
-                        $this->CIDRAM['RowInfo']['AccWarnings'] .= '<br /><div class="txtRd">' . $this->L10N->getString('warning_password_not_valid') . '</div>';
+                        $RowInfo['AccWarnings'] .= '<br /><div class="txtRd">' . $this->L10N->getString('warning.This account is not using a valid password') . '</div>';
                     }
 
                     /** Logged in notice. */
-                    if (isset($this->FE['LI'][$this->CIDRAM['RowInfo']['AccUsername']])) {
-                        $this->CIDRAM['RowInfo']['AccWarnings'] .= '<br /><div class="txtGn">' . $this->L10N->getString('state_logged_in') . '</div>';
+                    if (isset($LI[$RowInfo['AccUsername']])) {
+                        $RowInfo['AccWarnings'] .= '<br /><div class="txtGn">' . $this->L10N->getString('state_logged_in') . '</div>';
                     }
 
-                    $this->CIDRAM['RowInfo']['AccID'] = bin2hex($this->CIDRAM['RowInfo']['AccUsername']);
-                    $this->CIDRAM['RowInfo']['AccUsername'] = htmlentities($this->CIDRAM['RowInfo']['AccUsername']);
-                    $this->FE['Accounts'] .= $this->parseVars($this->CIDRAM['RowInfo'], $this->FE['AccountsRow'], true);
+                    $RowInfo['AccID'] = bin2hex($RowInfo['AccUsername']);
+                    $RowInfo['AccUsername'] = htmlentities($RowInfo['AccUsername']);
+                    $this->FE['Accounts'] .= $this->parseVars($RowInfo, $this->FE['AccountsRow'], true);
                 }
-                unset($this->CIDRAM['RowInfo'], $this->CIDRAM['CatValues'], $CatKey, $this->FE['LI']);
+                unset($RowInfo, $this->CIDRAM['CatValues'], $CatKey, $LI);
             }
 
             if ($this->FE['ASYNC']) {
@@ -1071,7 +1071,7 @@ class FrontEnd extends Core
         /** Configuration. */
         elseif ($this->CIDRAM['QueryVars']['cidram-page'] === 'config' && $this->FE['Permissions'] === 1) {
             /** Page initial prepwork. */
-            $this->initialPrepwork($this->L10N->getString('link_config'), $this->L10N->getString('tip_config'));
+            $this->initialPrepwork($this->L10N->getString('link.Configuration'), $this->L10N->getString('tip_config'));
 
             /** Append number localisation JS. */
             $this->FE['JS'] .= $this->numberL10nJs() . "\n";
@@ -1217,13 +1217,13 @@ class FrontEnd extends Core
                                 'eview\').innerHTML=a:%10$s&&!%9$s?%10$s.%1$s_preview.innerHTML=a:\'\'}' .
                                 '%1$s_function();</script>',
                                 $ThisDir['DirLangKey'],
-                                $this->L10N->getString('previewer_years'),
-                                $this->L10N->getString('previewer_months'),
-                                $this->L10N->getString('previewer_weeks'),
-                                $this->L10N->getString('previewer_days'),
-                                $this->L10N->getString('previewer_hours'),
-                                $this->L10N->getString('previewer_minutes'),
-                                $this->L10N->getString('previewer_seconds'),
+                                $this->L10N->getString('previewer.Years'),
+                                $this->L10N->getString('previewer.Months'),
+                                $this->L10N->getString('previewer.Weeks'),
+                                $this->L10N->getString('previewer.Days'),
+                                $this->L10N->getString('previewer.Hours'),
+                                $this->L10N->getString('previewer.Minutes'),
+                                $this->L10N->getString('previewer.Seconds'),
                                 'document.getElementById',
                                 'document.all'
                             );
@@ -1241,13 +1241,13 @@ class FrontEnd extends Core
                                 'TML=a:%10$s&&!%9$s?%10$s.%1$s_preview.innerHTML=a:\'\'}%1$s_function();<' .
                                 '/script>',
                                 $ThisDir['DirLangKey'],
-                                $this->L10N->getString('previewer_years'),
-                                $this->L10N->getString('previewer_months'),
-                                $this->L10N->getString('previewer_weeks'),
-                                $this->L10N->getString('previewer_days'),
-                                $this->L10N->getString('previewer_hours'),
-                                $this->L10N->getString('previewer_minutes'),
-                                $this->L10N->getString('previewer_seconds'),
+                                $this->L10N->getString('previewer.Years'),
+                                $this->L10N->getString('previewer.Months'),
+                                $this->L10N->getString('previewer.Weeks'),
+                                $this->L10N->getString('previewer.Days'),
+                                $this->L10N->getString('previewer.Hours'),
+                                $this->L10N->getString('previewer.Minutes'),
+                                $this->L10N->getString('previewer.Seconds'),
                                 'document.getElementById',
                                 'document.all'
                             );
@@ -1264,13 +1264,13 @@ class FrontEnd extends Core
                                 'nft(f.toString())+\' %8$s\';%9$s?%9$s(\'%1$s_preview\').innerHTML=a:' .
                                 '%10$s&&!%9$s?%10$s.%1$s_preview.innerHTML=a:\'\'}%1$s_function();</script>',
                                 $ThisDir['DirLangKey'],
-                                $this->L10N->getString('previewer_years'),
-                                $this->L10N->getString('previewer_months'),
-                                $this->L10N->getString('previewer_weeks'),
-                                $this->L10N->getString('previewer_days'),
-                                $this->L10N->getString('previewer_hours'),
-                                $this->L10N->getString('previewer_minutes'),
-                                $this->L10N->getString('previewer_seconds'),
+                                $this->L10N->getString('previewer.Years'),
+                                $this->L10N->getString('previewer.Months'),
+                                $this->L10N->getString('previewer.Weeks'),
+                                $this->L10N->getString('previewer.Days'),
+                                $this->L10N->getString('previewer.Hours'),
+                                $this->L10N->getString('previewer.Minutes'),
+                                $this->L10N->getString('previewer.Seconds'),
                                 'document.getElementById',
                                 'document.all'
                             );
@@ -1326,13 +1326,13 @@ class FrontEnd extends Core
                             'review\').innerHTML=a:%10$s&&!%9$s?%10$s.%1$s_preview.innerHTML=a:\'\';}%1$s' .
                             '_function();</script>',
                             $ThisDir['DirLangKey'],
-                            $this->L10N->getString('previewer_years'),
-                            $this->L10N->getString('previewer_months'),
-                            $this->L10N->getString('previewer_weeks'),
-                            $this->L10N->getString('previewer_days'),
-                            $this->L10N->getString('previewer_hours'),
-                            $this->L10N->getString('previewer_minutes'),
-                            $this->L10N->getString('previewer_seconds'),
+                            $this->L10N->getString('previewer.Years'),
+                            $this->L10N->getString('previewer.Months'),
+                            $this->L10N->getString('previewer.Weeks'),
+                            $this->L10N->getString('previewer.Days'),
+                            $this->L10N->getString('previewer.Hours'),
+                            $this->L10N->getString('previewer.Minutes'),
+                            $this->L10N->getString('previewer.Seconds'),
                             'document.getElementById',
                             'document.all'
                         );
@@ -1785,7 +1785,7 @@ class FrontEnd extends Core
         /** Cache data. */
         elseif ($this->CIDRAM['QueryVars']['cidram-page'] === 'cache-data' && $this->FE['Permissions'] === 1) {
             /** Page initial prepwork. */
-            $this->initialPrepwork($this->L10N->getString('link_cache_data'), $this->L10N->getString('tip_cache_data'));
+            $this->initialPrepwork($this->L10N->getString('link.Cache Data'), $this->L10N->getString('tip_cache_data'));
 
             if ($this->FE['ASYNC']) {
                 /** Delete a cache entry. */
@@ -1832,7 +1832,7 @@ class FrontEnd extends Core
                     $this->escapeJsInHTML(sprintf(
                         $this->L10N->getString('confirm.Action'),
                         $this->L10N->getString('field.Clear all')
-                    ) . '\n' . $this->L10N->getString('warning_will_log_out_all_users')),
+                    ) . '\n' . $this->L10N->getString('warning.Proceeding will log out all users')),
                     $this->L10N->getString('field.Clear all'),
                     $this->arrayToClickableList($CacheArray, 'cdd', 0, $PreferredSource)
                 );
@@ -1950,7 +1950,7 @@ class FrontEnd extends Core
             }
 
             /** Page initial prepwork. */
-            $this->initialPrepwork($this->L10N->getString('link_updates'), $this->L10N->getString('tip_updates'));
+            $this->initialPrepwork($this->L10N->getString('link.Updates'), $this->L10N->getString('tip_updates'));
 
             $this->FE['UpdatesRow'] = $this->readFile($this->getAssetPath('_updates_row.html'));
             $this->FE['MacrosRow'] = $this->parseVars(['UpdatesFormTarget' => $this->FE['UpdatesFormTarget']], $this->readFile($this->getAssetPath('_updates_macro.html')));
@@ -2490,7 +2490,7 @@ class FrontEnd extends Core
         /** Backup. */
         elseif ($this->CIDRAM['QueryVars']['cidram-page'] === 'backup' && $this->FE['Permissions'] === 1) {
             /** Page initial prepwork. */
-            $this->initialPrepwork($this->L10N->getString('link_backup'), $this->L10N->getString('tip_backup'));
+            $this->initialPrepwork($this->L10N->getString('link.Backup'), $this->L10N->getString('tip_backup'));
 
             $this->FE['size_config'] = filesize($this->FE['ActiveConfigFile']) ?: 0;
             $this->FE['size_aux'] = filesize($this->Vault . 'auxiliary.yml') ?: 0;
@@ -2856,7 +2856,7 @@ class FrontEnd extends Core
         /** Signature file fixer. */
         elseif ($this->CIDRAM['QueryVars']['cidram-page'] === 'fixer' && $this->FE['Permissions'] === 1) {
             /** Page initial prepwork. */
-            $this->initialPrepwork($this->L10N->getString('link_fixer'), $this->L10N->getString('tip_fixer'));
+            $this->initialPrepwork($this->L10N->getString('link.Signature File Fixer'), $this->L10N->getString('tip_fixer'));
 
             /** Preferred source. */
             $PreferredSource = $_POST['preferredSource'] ?? '';
@@ -3043,7 +3043,7 @@ class FrontEnd extends Core
         /** File Manager. */
         elseif ($this->CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $this->FE['Permissions'] === 1) {
             /** Page initial prepwork. */
-            $this->initialPrepwork($this->L10N->getString('link_file_manager'), $this->L10N->getString('tip_file_manager'));
+            $this->initialPrepwork($this->L10N->getString('link.File Manager'), $this->L10N->getString('tip_file_manager'));
 
             /** Load doughnut template file upon request. */
             if (empty($this->CIDRAM['QueryVars']['show'])) {
@@ -3244,7 +3244,7 @@ class FrontEnd extends Core
                         /** Component update file overwrite warning. */
                         if (isset($this->Components['Files'][$_POST['filename']])) {
                             $this->FE['state_msg'] = sprintf(
-                                $this->L10N->getString('warning_file_overwritten'),
+                                $this->L10N->getString('warning.Likely to be overwritten'),
                                 $this->Components['Files'][$_POST['filename']]
                             );
                         }
@@ -3255,11 +3255,11 @@ class FrontEnd extends Core
                             if ($this->FE['state_msg'] !== '') {
                                 $this->FE['state_msg'] .= '<br />';
                             }
-                            $this->FE['state_msg'] .= $this->L10N->getString('warning_file_php');
+                            $this->FE['state_msg'] .= $this->L10N->getString('warning.Editing PHP files');
                         } else {
                             $this->FE['JS'] .= "\nfunction wfp(d){d.includes('<?php')?showid('wfps'):hideid('wfps')};";
                             $this->FE['state_msg'] .= $this->FE['state_msg'] !== '' ? '<span id="wfps"><br />' : '<span id="wfps">';
-                            $this->FE['state_msg'] .= $this->L10N->getString('warning_file_php') . '</span>';
+                            $this->FE['state_msg'] .= $this->L10N->getString('warning.Editing PHP files') . '</span>';
                         }
 
                         /** Parse output. */
@@ -3415,7 +3415,7 @@ class FrontEnd extends Core
         /** Rate limiting. */
         elseif ($this->CIDRAM['QueryVars']['cidram-page'] === 'rl' && $this->FE['Permissions'] === 1) {
             /** Page initial prepwork. */
-            $this->initialPrepwork($this->L10N->getString('link_rate_limiting'), $this->L10N->getString('tip_rate_limiting'));
+            $this->initialPrepwork($this->L10N->getString('link.Rate Limiting'), $this->L10N->getString('tip_rate_limiting'));
 
             /** Maximum bandwidth for rate limiting. */
             $RLMaxBandwidth = $this->readBytes($this->Configuration['rate_limiting']['max_bandwidth']);
@@ -3549,7 +3549,7 @@ class FrontEnd extends Core
         elseif ($this->CIDRAM['QueryVars']['cidram-page'] === 'sections' && $this->FE['Permissions'] === 1) {
             if (!$this->FE['ASYNC']) {
                 /** Page initial prepwork. */
-                $this->initialPrepwork($this->L10N->getString('link_sections_list'), $this->L10N->getString('tip_sections_list'));
+                $this->initialPrepwork($this->L10N->getString('link.Sections List'), $this->L10N->getString('tip_sections_list'));
 
                 /** Append async globals. */
                 $this->FE['JS'] .=
@@ -3565,7 +3565,7 @@ class FrontEnd extends Core
                 $this->FE['Data'] = (
                     strlen($this->Configuration['components']['ipv4']) === 0 &&
                     strlen($this->Configuration['components']['ipv6']) === 0
-                ) ? '    <div class="txtRd">' . $this->L10N->getString('warning_no_active_signature_files') . "</div>\n" : $this->sectionsHandler(
+                ) ? '    <div class="txtRd">' . $this->L10N->getString('warning.No signature files are active') . "</div>\n" : $this->sectionsHandler(
                     array_unique(explode("\n", $this->Configuration['components']['ipv4'] . "\n" . $this->Configuration['components']['ipv6']))
                 );
 
@@ -3620,7 +3620,7 @@ class FrontEnd extends Core
         /** Range Tables. */
         elseif ($this->CIDRAM['QueryVars']['cidram-page'] === 'range' && $this->FE['Permissions'] === 1) {
             /** Page initial prepwork. */
-            $this->initialPrepwork($this->L10N->getString('link_range'), $this->L10N->getString('tip_range'));
+            $this->initialPrepwork($this->L10N->getString('link.Range Tables'), $this->L10N->getString('tip_range'));
 
             /** Append number localisation JS. */
             $this->FE['JS'] .= $this->numberL10nJs() . "\n";
@@ -3672,7 +3672,7 @@ class FrontEnd extends Core
         /** Intersector. */
         elseif ($this->CIDRAM['QueryVars']['cidram-page'] === 'intersector' && $this->FE['Permissions'] === 1) {
             /** Page initial prepwork. */
-            $this->initialPrepwork($this->L10N->getString('link_intersector'), $this->L10N->getString('tip_intersector'));
+            $this->initialPrepwork($this->L10N->getString('link.Intersector'), $this->L10N->getString('tip_intersector'));
 
             /** Output format. */
             $OutputFormat = (isset($_POST['format']) && $_POST['format'] === 'Netmask') ? 1 : 0;
@@ -3747,7 +3747,7 @@ class FrontEnd extends Core
         /** Subtractor. */
         elseif ($this->CIDRAM['QueryVars']['cidram-page'] === 'subtractor' && $this->FE['Permissions'] === 1) {
             /** Page initial prepwork. */
-            $this->initialPrepwork($this->L10N->getString('link_subtractor'), $this->L10N->getString('tip_subtractor'));
+            $this->initialPrepwork($this->L10N->getString('link.Subtractor'), $this->L10N->getString('tip_subtractor'));
 
             /** Output format. */
             $OutputFormat = (isset($_POST['format']) && $_POST['format'] === 'Netmask') ? 1 : 0;
@@ -3824,7 +3824,7 @@ class FrontEnd extends Core
         /** Aggregator. */
         elseif ($this->CIDRAM['QueryVars']['cidram-page'] === 'aggregator' && $this->FE['Permissions'] === 1) {
             /** Page initial prepwork. */
-            $this->initialPrepwork($this->L10N->getString('link_aggregator'), $this->L10N->getString('tip_aggregator'));
+            $this->initialPrepwork($this->L10N->getString('link.Aggregator'), $this->L10N->getString('tip_aggregator'));
 
             /** Output format. */
             $OutputFormat = (isset($_POST['format']) && $_POST['format'] === 'Netmask') ? 1 : 0;
@@ -3904,7 +3904,7 @@ class FrontEnd extends Core
         /** IP Testing. */
         elseif ($this->CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $this->FE['Permissions'] === 1) {
             /** Page initial prepwork. */
-            $this->initialPrepwork($this->L10N->getString('link_ip_test'), $this->L10N->getString('tip_ip_test'));
+            $this->initialPrepwork($this->L10N->getString('link.IP Testing'), $this->L10N->getString('tip_ip_test'));
 
             /** Add flags CSS. */
             if ($this->FE['Flags'] = file_exists($this->AssetsPath . 'frontend/flags.css')) {
@@ -4200,7 +4200,7 @@ class FrontEnd extends Core
 
             if (!$this->FE['ASYNC']) {
                 /** Page initial prepwork. */
-                $this->initialPrepwork($this->L10N->getString('link_ip_tracking'), $this->L10N->getString('tip_ip_tracking'));
+                $this->initialPrepwork($this->L10N->getString('link.IP Tracking'), $this->L10N->getString('tip_ip_tracking'));
 
                 /** Add flags CSS. */
                 if ($this->FE['Flags'] = file_exists($this->AssetsPath . 'frontend/flags.css')) {
@@ -4414,7 +4414,7 @@ class FrontEnd extends Core
         /** Calculator. */
         elseif ($this->CIDRAM['QueryVars']['cidram-page'] === 'calculator' && $this->FE['Permissions'] === 1) {
             /** Page initial prepwork. */
-            $this->initialPrepwork($this->L10N->getString('link_calculator'), $this->L10N->getString('tip_calculator'));
+            $this->initialPrepwork($this->L10N->getString('link.Calculator'), $this->L10N->getString('tip_calculator'));
 
             /** Template for result rows. */
             $this->FE['CalcRow'] = $this->parseVars([], $this->readFile($this->getAssetPath('_calculator_row.html')), true);
@@ -4463,7 +4463,7 @@ class FrontEnd extends Core
         /** Statistics. */
         elseif ($this->CIDRAM['QueryVars']['cidram-page'] === 'statistics' && $this->FE['Permissions'] === 1) {
             /** Page initial prepwork. */
-            $this->initialPrepwork($this->L10N->getString('link_statistics'), $this->L10N->getString('tip_statistics'), false);
+            $this->initialPrepwork($this->L10N->getString('link.Statistics'), $this->L10N->getString('tip_statistics'), false);
 
             if (isset($this->Stages['Statistics:Enable'])) {
                 /** Statistics have been counted since... */
@@ -4770,7 +4770,7 @@ class FrontEnd extends Core
             /** Prepare data for display. */
             if (!$this->FE['ASYNC']) {
                 /** Page initial prepwork. */
-                $this->initialPrepwork($this->L10N->getString('link_aux'), $this->L10N->getString('tip_aux'));
+                $this->initialPrepwork($this->L10N->getString('link.Auxiliary Rules'), $this->L10N->getString('tip_aux'));
 
                 /** Populate methods and actions. */
                 $this->populateMethodsActions();
@@ -4803,9 +4803,9 @@ class FrontEnd extends Core
                     '<code dir="ltr">silent_mode(30x)</code>',
                     '<code dir="ltr">ban_override(4xx🔄5xx)</code>',
                     '<code dir="ltr">rate_limiting(429)</code>',
-                    $this->L10N->getString('link_aux') . '<code dir="ltr">(4xx🔄5xx)</code>',
+                    $this->L10N->getString('link.Auxiliary Rules') . '<code dir="ltr">(4xx🔄5xx)</code>',
                     '<code dir="ltr">http_response_header_code(4xx🔄5xx)</code>',
-                    $this->L10N->getString('link_aux') . '<code dir="ltr">(30x)</code>',
+                    $this->L10N->getString('link.Auxiliary Rules') . '<code dir="ltr">(30x)</code>',
                     '<code dir="ltr">nonblocked_status_code(4xx)</code>',
                     $this->L10N->getString('label.Other')
                 );
@@ -4886,7 +4886,7 @@ class FrontEnd extends Core
         /** Auxiliary rules (edit mode). */
         elseif ($this->CIDRAM['QueryVars']['cidram-page'] === 'aux-edit' && $this->FE['Permissions'] === 1) {
             /** Page initial prepwork. */
-            $this->initialPrepwork($this->L10N->getString('link_aux'), $this->L10N->getString('tip_aux'));
+            $this->initialPrepwork($this->L10N->getString('link.Auxiliary Rules'), $this->L10N->getString('tip_aux'));
 
             /** Populate methods and actions. */
             $this->populateMethodsActions();
@@ -5051,7 +5051,7 @@ class FrontEnd extends Core
         /** Logs. */
         elseif ($this->CIDRAM['QueryVars']['cidram-page'] === 'logs' && $this->FE['Permissions'] > 0) {
             /** Page initial prepwork. */
-            $this->initialPrepwork($this->L10N->getString('link_logs'), $this->L10N->getString('tip_logs'), false);
+            $this->initialPrepwork($this->L10N->getString('link.Logs'), $this->L10N->getString('tip_logs'), false);
 
             /** Parse output. */
             $this->FE['FE_Content'] = $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_logs.html')), true);

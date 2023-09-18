@@ -17,7 +17,7 @@ Config Defaults:
    default: ""
    See also:
     Project Honeypot Terms of Service.: "https://www.projecthoneypot.org/terms_of_service_use.php"
-    link_get_api_key: "https://www.projecthoneypot.org/httpbl_configure.php"
+    link.Get API key: "https://www.projecthoneypot.org/httpbl_configure.php"
   max_age_in_days:
    type: "int"
    default: 365
@@ -72,4 +72,4 @@ Config Defaults:
 Cache Prefetch:
  Project Honeypot-429: ""
 Problems:
- - "if {CIDRAM.Cache Prefetch.Project Honeypot-429}==1 then warn warning_rate_limited_api Project Honeypot"
+ - "if {CIDRAM.Cache Prefetch.Project Honeypot-429}==1 then warn warning.API_Rate_Limited Project Honeypot"

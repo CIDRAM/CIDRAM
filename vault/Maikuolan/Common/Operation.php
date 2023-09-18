@@ -1,6 +1,6 @@
 <?php
 /**
- * Operation handler (last modified: 2023.08.16).
+ * Operation handler (last modified: 2023.09.14).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -15,19 +15,12 @@
 
 namespace Maikuolan\Common;
 
-class Operation
+class Operation extends CommonAbstract
 {
     /**
      * @var array Caching to optimise operations.
      */
     private $Cache = [];
-
-    /**
-     * @var string The tag/release the version of this file belongs to (might
-     *      be needed by some implementations to ensure compatibility).
-     * @link https://github.com/Maikuolan/Common/tags
-     */
-    public const VERSION = '2.9.7';
 
     /**
      * Operators for version numbers.
@@ -211,46 +204,14 @@ class Operation
     }
 
     /**
-     * Traverse data path.
-     *
-     * @param mixed $Data The data to traverse.
-     * @param string|array $Path The path to traverse.
-     * @param bool $AllowNonScalar Whether to allow non-scalar returns.
-     * @return mixed The traversed data, or an empty string on failure.
-     */
-    public function dataTraverse(&$Data, $Path = [], bool $AllowNonScalar = false)
-    {
-        if (!is_array($Path)) {
-            $Path = preg_split('~(?<!\\\)\.~', $Path) ?: [];
-        }
-        $Segment = array_shift($Path);
-        if ($Segment === null || strlen($Segment) === 0) {
-            return $AllowNonScalar || is_scalar($Data) ? $Data : '';
-        }
-        $Segment = str_replace('\.', '.', $Segment);
-        if (is_array($Data) && isset($Data[$Segment])) {
-            return $this->dataTraverse($Data[$Segment], $Path, $AllowNonScalar);
-        }
-        if (is_object($Data) && property_exists($Data, $Segment)) {
-            return $this->dataTraverse($Data->$Segment, $Path, $AllowNonScalar);
-        }
-        if (is_string($Data)) {
-            if (preg_match('~^(?:trim|str(?:tolower|toupper|len))\(\)~i', $Segment)) {
-                $Segment = substr($Segment, 0, -2);
-                $Data = $Segment($Data);
-            }
-        }
-        return $this->dataTraverse($Data, $Path, $AllowNonScalar);
-    }
-
-    /**
      * If compare operation.
      *
      * @param mixed $Data The data to traverse.
      * @param string $IfString The if string.
+     * @param bool $AllowMethodCalls Whether to allow method calls.
      * @return string The results of the operation (or an empty string on failure).
      */
-    public function ifCompare(&$Data, string $IfString): string
+    public function ifCompare(&$Data, string $IfString, bool $AllowMethodCalls = false): string
     {
         $LCIfString = strtolower($IfString);
 
@@ -258,7 +219,7 @@ class Operation
         if (substr($LCIfString, 0, 3) !== 'if ') {
             $IfString = trim($IfString);
             if (substr($IfString, 0, 1) === '{' && substr($IfString, -1) === '}') {
-                $IfString = $this->dataTraverse($Data, substr($IfString, 1, -1));
+                $IfString = $this->dataTraverse($Data, substr($IfString, 1, -1), false, $AllowMethodCalls);
             }
             return $IfString;
         }
@@ -298,7 +259,7 @@ class Operation
                 foreach ($Parts as &$Part) {
                     $Part = trim($Part);
                     if (substr($Part, 0, 1) === '{' && substr($Part, -1) === '}') {
-                        $Part = $this->dataTraverse($Data, substr($Part, 1, -1));
+                        $Part = $this->dataTraverse($Data, substr($Part, 1, -1), false, $AllowMethodCalls);
                     }
                 }
                 $CParts = count($Parts);
@@ -338,10 +299,10 @@ class Operation
         }
 
         if ($IfPass) {
-            return $this->ifCompare($Data, $ThenString);
+            return $this->ifCompare($Data, $ThenString, $AllowMethodCalls);
         }
         if ($ElseString) {
-            return $this->ifCompare($Data, $ElseString);
+            return $this->ifCompare($Data, $ElseString, $AllowMethodCalls);
         }
         return '';
     }

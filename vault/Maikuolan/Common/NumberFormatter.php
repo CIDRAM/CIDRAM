@@ -1,6 +1,6 @@
 <?php
 /**
- * Number formatter (last modified: 2023.08.16).
+ * Number formatter (last modified: 2023.09.14).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -15,7 +15,7 @@
 
 namespace Maikuolan\Common;
 
-class NumberFormatter
+class NumberFormatter extends CommonAbstract
 {
     /**
      * @var string Identifies the conversion set to use.
@@ -1062,13 +1062,6 @@ class NumberFormatter
         'y' => '34',
         'z' => '35'
     ];
-
-    /**
-     * @var string The tag/release the version of this file belongs to (might
-     *      be needed by some implementations to ensure compatibility).
-     * @link https://github.com/Maikuolan/Common/tags
-     */
-    public const VERSION = '2.9.7';
 
     /**
      * Constructor.

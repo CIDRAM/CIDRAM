@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2023.08.23).
+# This file: German language data for the front-end (last modified: 2023.09.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -703,7 +703,6 @@ time_years_from_now:
 tip_2fa_sent: "Eine E-Mail mit einem Zwei-Faktor-Authentifizierungscode wurde an Ihre E-Mail-Adresse gesendet. Bitte bestätigen Sie diesen Code, um Zugang zum Frontend zu erhalten. Wenn Sie diese E-Mail nicht erhalten haben, versuchen Sie sich auszuloggen, warten Sie 10 Minuten, und melden Sie sich einzuloggen, um eine neue E-Mail mit einem neuen Code zu erhalten."
 tip_accounts: "Hallo, {username}.<br />Das Kontenseite macht es möglich zu kontrollieren, wer kann Zugriff auf der CIDRAM Frontend haben."
 tip_aux: "Hallo, {username}.<br />Sie können diese Seite verwenden, um Hilfsregeln für CIDRAM zu erstellen, zu löschen und zu ändern."
-tip_aux_operators: "Hinweis: Wenn eine Bedingung eine andere Art von Operator benötigt, Sie können es an den Anfang seines Wertes setzen (erfordert einen direkter String-Vergleich)."
 tip_aux_priority: "Priorität (höchste➡(gleich🔄äquivalent)➡niedrigste):"
 tip_aux_webhooks: "Wenn eine Regel ausgelöst wird, CIDRAM versucht, alle Webhooks verbundenen über das Ereignis zu informieren."
 tip_backup: "Hallo, {username}.<br />Auf dieser Seite können Sie Ihre Konfiguration, Hilfsregeln, u.s.w. importieren/exportieren. Dies kann nützlich sein wenn Sie Daten zwischen verschiedenen Installationen oder verschiedenen Hauptversionen migrieren müssen."
@@ -729,6 +728,7 @@ tip_ip_test_switches: "(Wenn nicht ausgewählt, werden nur die Signaturdateien g
 tip_ip_tracking: "Hallo, {username}.<br />Auf der Seite IP-Tracking können Sie den Tracking-Status für IP-Adressen überprüfen, welche von ihnen verbannt wurden, und Sie können das Tracking für sie widerrufen, wenn Sie dies tun möchten."
 tip_logs: "Hallo, {username}.<br />Wählen Sie eine Protokolldatei aus der folgenden Liste um den Inhalt dieser Protokolldatei anzuzeigen."
 tip_number_of_infractions: "Wie viele Verstöße zu gelten."
+tip_numeric_comparison: "Um den numerischen Vergleich zu verwenden, wählen Sie den direkten String-Vergleich oder die automatische Methodenerkennung aus, stellen Sie sicher, dass der Wert der Bedingung numerisch ist, und stellen Sie ihm den gewünschten Operator voran.<br />z.B., für „gleich“ Bedingungen, &gt;=2 ergibt ≥2, &lt;=2 ergibt ≤2, für „nicht gleich“ Bedingungen, &gt;=2 ergibt ≱2, &lt;=2 ergibt ≰2, u.s.w."
 tip_range: "Hallo, {username}.<br />Diese Seite enthält einige grundlegende statistische Informationen zu den IP-Bereichen, die von den derzeit aktiven Signaturdateien abgedeckt werden."
 tip_range_intersector: "Hallo, {username}.<br />Der Durchschnittwerkzeug kann verwendet werden, um die gemeinsamen Faktoren aus zwei Sätzen von Bereichen zu bestimmen."
 tip_range_subtractor: "Hallo, {username}.<br />Der Subtrahierer kann verwendet werden, um einen Bereich von IPs/CIDRs von einem anderen zu subtrahieren."

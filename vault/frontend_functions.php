@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2023.09.15).
+ * This file: Front-end functions file (last modified: 2023.09.19).
  */
 
 /**
@@ -3618,7 +3618,7 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
                 $MethodData = ['', '', '', ''];
             }
             $Output .= sprintf(
-                '<div class="iCntr"><div class="iLabl"><select name="mtd[%s]" class="auto"><option value="mtdStr"%s>%s</option><option value="mtdReg"%s>%s</option><option value="mtdWin"%s>%s</option><option value="mtdDMA"%s>%s</option></select></div></div>',
+                '<div class="iCntr"><div class="iLabl"><select name="mtd[%s]" class="auto"><option value="mtdStr"%s>%s</option><option value="mtdReg"%s>%s</option><option value="mtdWin"%s>%s</option><option value="mtdDMA"%s>%s</option></select><br /></div></div><div class="iCntr"><div class="iLabl"><em>%s</em></div></div>',
                 $Current,
                 $MethodData[0],
                 $CIDRAM['FE']['optMtdStr'],
@@ -3627,7 +3627,8 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
                 $MethodData[2],
                 $CIDRAM['FE']['optMtdWin'],
                 $MethodData[3],
-                $CIDRAM['FE']['optMtdDMA']
+                $CIDRAM['FE']['optMtdDMA'],
+                $CIDRAM['L10N']->getString('tip_numeric_comparison')
             );
 
             /** Match logic. */

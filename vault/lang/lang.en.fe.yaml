@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2023.08.23).
+# This file: English language data for the front-end (last modified: 2023.09.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -702,7 +702,6 @@ time_years_from_now:
 tip_2fa_sent: "An email containing a two-factor authentication code has been sent to your email address. Please confirm this code below to gain access to the front-end. If you didn't receive this email, try logging out, waiting for 10 minutes, and logging in again to receive a new email containing a new code."
 tip_accounts: "Hello, {username}.<br />The accounts page allows you to control who can access the CIDRAM front-end."
 tip_aux: "Hello, {username}.<br />You can use this page to create, delete, and modify auxiliary rules for CIDRAM."
-tip_aux_operators: "Tip: If a condition needs a different kind of operator, you can add it to the start of its value (requires direct string comparison)."
 tip_aux_priority: "Priority (highest➡(equal🔄equivalent)➡lowest):"
 tip_aux_webhooks: "When a rule is triggered, CIDRAM will attempt to notify any connected webhooks about the event."
 tip_backup: "Hello, {username}.<br />This page can be used to import/export your configuration, auxiliary rules, etc. This can be useful if you need to migrate data across different installations or different major versions."
@@ -728,6 +727,7 @@ tip_ip_test_switches: "(When not selected, only the signature files will be test
 tip_ip_tracking: "Hello, {username}.<br />The IP tracking page allows you to check the tracking status of IP addresses, to check which of them have been banned, and to unban/untrack them if you want to do so."
 tip_logs: "Hello, {username}.<br />Select a logfile from the list below to view the contents of that logfile."
 tip_number_of_infractions: "How many infractions to incur."
+tip_numeric_comparison: "To use numeric comparison, select direct string comparison or automatic method detection, ensure the condition's value is numeric, and prefix it with the desired operator.<br />E.g., for "equals" conditions, &gt;=2 provides ≥2, &lt;=2 provides ≤2, for "not equals" conditions, &gt;=2 provides ≱2, &lt;=2 provides ≰2, etc."
 tip_range: "Hello, {username}.<br />This page shows some basic statistical information about the IP ranges covered by the currently active signature files."
 tip_range_intersector: "Hello, {username}.<br />The range intersector can be used to determine the common factors from two sets of ranges."
 tip_range_subtractor: "Hello, {username}.<br />The range subtractor can be used to subtract one range of IPs/CIDRs from another."

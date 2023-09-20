@@ -57,12 +57,13 @@ trait SimulateBlockEvent
 
         if (isset($this->CIDRAM['TestMode']) && $this->CIDRAM['TestMode'] === 2) {
             $UA = $Addr;
-            $Addr = $this->FE['ip-addr-focus'] ?? '';
+            $Addr = isset($this->FE['ip-addr-focus']) ? preg_replace('~[^\da-f:./]~i', '', $this->FE['ip-addr-focus']) : '';
         } elseif (empty($this->FE['custom-ua'])) {
             $UA = empty($this->FE['custom-ua-focus']) ? 'SimulateBlockEvent' : $this->FE['custom-ua-focus'];
         } else {
             $UA = $this->FE['custom-ua'];
         }
+        $UA = str_replace(['&quot;', '&gt;', '&lt;', '&amp;'], ['"', '>', '<', '&'], $UA);
 
         /** Populate BlockInfo. */
         $this->BlockInfo = [

@@ -3944,7 +3944,7 @@ class FrontEnd extends Core
 
             /** Fetch and repopulate all fields. */
             foreach (['ip-addr', 'ip-addr-focus', 'custom-query', 'custom-referrer', 'custom-ua', 'custom-ua-focus'] as $Field) {
-                $this->FE[$Field] = $_POST[$Field] ?? '';
+                $this->FE[$Field] = isset($_POST[$Field]) ? str_replace(['&', '<', '>', '"'], ['&amp;', '&lt;', '&gt;', '&quot;'], $_POST[$Field]) : '';
             }
             unset($Field);
 

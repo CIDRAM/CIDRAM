@@ -316,3 +316,5 @@
 [2023.09.18; Maikuolan]: Better resource guarding (#516).
 
 [2023.09.19~20; Maikuolan]: BunnyCDN and IP-API modules can now populate profiles.
+
+[2023.09.20; Maikuolan]: The front-end IP testing interface can now switch between focusing primarily on IP addresses versus focusing primarily on user agents.

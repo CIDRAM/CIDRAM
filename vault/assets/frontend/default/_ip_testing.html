@@ -8,8 +8,10 @@
     <tr><form action="?cidram-page=ip-test" method="POST">
       <td class="h3">
         <div class="center">
-          <textarea name="ip-addr" placeholder="{tip.Enter IPs here}">{ip-addr}</textarea><br />
-          <input type="text" name="custom-ua" placeholder="{tip.Enter user agent here (optional)}" value="{custom-ua}" class="txtf" /><br />
+          <span id="IPAddrSwitch"><textarea name="ip-addr" id="IPAddrTextArea" placeholder="{tip.Enter IPs here}">{ip-addr}</textarea><br /></span>
+          <span id="IPAddrFocusSwitch"><input type="text" name="ip-addr-focus" id="IPAddrInput" placeholder="{tip.Enter IP here}" value="{ip-addr-focus}" class="txtf" /><br /></span>
+          <span id="UAFocusSwitch"><textarea name="custom-ua-focus" id="UATextArea" placeholder="{tip.Enter user agents here (optional)}">{custom-ua-focus}</textarea><br /></span>
+          <span id="UASwitch"><input type="text" name="custom-ua" id="UAInput" placeholder="{tip.Enter user agent here (optional)}" value="{custom-ua}" class="txtf" /><br /></span>
           <input type="text" name="custom-query" placeholder="{tip.Enter query here (optional)}" value="{custom-query}" class="txtf" /><br />
           <input type="text" name="custom-referrer" placeholder="{tip.Enter referrer here (optional)}" value="{custom-referrer}" class="txtf" />
         </div>
@@ -23,10 +25,12 @@
           <div class="gridboxitem gridHA"><span class="s gridlabel"><input type="checkbox" class="auto" name="OVSwitch" id="OVSwitch"{OVSwitch} /><label for="OVSwitch">{stage_ov}</label></span></div>
           <div class="gridboxitem gridHB"><span class="s gridlabel"><input type="checkbox" class="auto" name="AuxSwitch" id="AuxSwitch"{AuxSwitch} /><label for="AuxSwitch">{stage_aux}</label></span></div>
           <div class="gridboxitem gridHA"><span class="s gridlabel"><input type="checkbox" class="auto" name="SensitiveSwitch" id="SensitiveSwitch"{SensitiveSwitch} /><label for="SensitiveSwitch">{checkbox.Test as sensitive request}</label></span></div>
+          <div class="gridboxitem gridHB"><span class="s gridlabel"><span style="vertical-align:-2px">{label.Focus}</span>
+            <input type="radio" class="auto" id="FocusSwitchIPAddress" name="FocusSwitch" value="IPAddress" onchange="javascript:showid('IPAddrSwitch');showid('UASwitch');hideid('IPAddrFocusSwitch');hideid('UAFocusSwitch');if (document.getElementById('IPAddrInput').value!==''){document.getElementById('IPAddrTextArea').value=document.getElementById('IPAddrInput').value};if (document.getElementById('UATextArea').value!==''){document.getElementById('UAInput').value=document.getElementById('UATextArea').value};"{FocusSwitchIPAddress} /><label for="FocusSwitchIPAddress">{field.IP address}</label>
+            <input type="radio" class="auto" id="FocusSwitchUserAgent" name="FocusSwitch" value="UserAgent" onchange="javascript:showid('IPAddrFocusSwitch');showid('UAFocusSwitch');hideid('IPAddrSwitch');hideid('UASwitch');if (document.getElementById('IPAddrTextArea').value!==''){document.getElementById('IPAddrInput').value=document.getElementById('IPAddrTextArea').value};if (document.getElementById('UAInput').value!==''){document.getElementById('UATextArea').value=document.getElementById('UAInput').value};"{FocusSwitchUserAgent} /><label for="FocusSwitchUserAgent">{field.User agent}</label>
+          </span></div>
         </div>
-        <div class="center">
-          <input type="submit" value="{field.OK}" />
-        </div>
+        <div class="center"><input type="submit" value="{field.OK}" /></div>{IPTestScripting}
       </td>
     </form></tr>
     <tr>

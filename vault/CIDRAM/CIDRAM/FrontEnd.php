@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.09.19).
+ * This file: The CIDRAM front-end (last modified: 2023.09.20).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -3942,28 +3942,59 @@ class FrontEnd extends Core
             $this->CIDRAM['isSensitive'] = !empty($_POST['SensitiveSwitch']);
             $this->FE['SensitiveSwitch'] = $this->CIDRAM['isSensitive'] ? ' checked' : '';
 
-            /** Fetch custom fields if specified. */
-            foreach (['custom-query', 'custom-referrer', 'custom-ua'] as $Field) {
+            /** Fetch and repopulate all fields. */
+            foreach (['ip-addr', 'ip-addr-focus', 'custom-query', 'custom-referrer', 'custom-ua', 'custom-ua-focus'] as $Field) {
                 $this->FE[$Field] = $_POST[$Field] ?? '';
             }
             unset($Field);
 
-            /** Set field label. */
-            if (!empty($_POST['ip-addr']) || empty($_POST['custom-ua'])) {
-                $this->FE['TestItemLabel'] = $this->L10N->getString('field.IP address');
-                $this->FE['TestMode'] = 1;
+            /** Determine the focus. */
+            if (isset($_POST['FocusSwitch']) && $_POST['FocusSwitch'] === 'UserAgent') {
+                $this->FE['FocusSwitchIPAddress'] = '';
+                $this->FE['FocusSwitchUserAgent'] = ' checked="true"';
+                $this->FE['IPTestScripting'] = '<script type="text/javascript">hideid(\'IPAddrSwitch\');hideid(\'UASwitch\');</script>';
+                $this->FE['ip-addr'] = '';
+                $this->FE['custom-ua'] = '';
+                $ForceUAFocus = true;
             } else {
-                $this->FE['TestItemLabel'] = $this->L10N->getString('field.User agent');
-                $this->FE['TestMode'] = 2;
+                $this->FE['FocusSwitchIPAddress'] = ' checked="true"';
+                $this->FE['FocusSwitchUserAgent'] = '';
+                $this->FE['IPTestScripting'] = '<script type="text/javascript">hideid(\'IPAddrFocusSwitch\');hideid(\'UAFocusSwitch\');</script>';
+                $this->FE['ip-addr-focus'] = '';
+                $this->FE['custom-ua-focus'] = '';
+                $ForceUAFocus = false;
             }
 
-            /** IPs were submitted for testing. */
+            /** Set field label and ascertain the mode of testing. */
+            if (!$ForceUAFocus && ($this->FE['ip-addr'] !== '' || $this->FE['ip-addr-focus'] !== '' || ($this->FE['custom-ua'] === '' && $this->FE['custom-ua-focus'] === ''))) {
+                $this->FE['TestItemLabel'] = $this->L10N->getString('field.IP address');
+                $this->CIDRAM['TestMode'] = 1;
+            } else {
+                $this->FE['TestItemLabel'] = $this->L10N->getString('field.User agent');
+                $this->CIDRAM['TestMode'] = 2;
+            }
+            unset($ForceUAFocus);
+
+            /** Data has been submitted for testing. */
             if (isset($_POST['ip-addr'])) {
-                $this->FE['ip-addr'] = $_POST['ip-addr'];
-                $_POST['ip-addr'] = array_unique(array_map(function ($IP) {
-                    return preg_replace('~[^\da-f:./]~i', '', $IP);
-                }, explode("\n", $_POST['ip-addr'])));
-                natsort($_POST['ip-addr']);
+                if ($this->CIDRAM['TestMode'] === 1) {
+                    if ($this->FE['ip-addr'] === '') {
+                        $Working = $this->FE['ip-addr-focus'] === '' ? [] : $this->FE['ip-addr-focus'];
+                    } else {
+                        $Working = $this->FE['ip-addr'];
+                    }
+                    $Working = array_unique(array_map(function ($IP) {
+                        return preg_replace('~[^\da-f:./]~i', '', $IP);
+                    }, explode("\n", str_replace("\r", '', $Working))));
+                } else {
+                    if ($this->FE['custom-ua'] === '') {
+                        $Working = $this->FE['custom-ua-focus'] === '' ? [] : $this->FE['custom-ua-focus'];
+                    } else {
+                        $Working = $this->FE['custom-ua'];
+                    }
+                    $Working = explode("\n", str_replace("\r", '', $Working));
+                }
+                natsort($Working);
                 $this->CIDRAM['ThisIP'] = [];
 
                 /** Initialise stages. */
@@ -3973,19 +4004,14 @@ class FrontEnd extends Core
                 $this->Shorthand = array_flip(explode("\n", $this->Configuration['signatures']['shorthand']));
 
                 /** Iterate through the addresses given to test. */
-                foreach ($_POST['ip-addr'] as $this->CIDRAM['ThisIP']['IPAddress']) {
-                    if ($this->FE['TestMode'] === 1) {
-                        if ($this->CIDRAM['ThisIP']['IPAddress'] === '') {
-                            continue;
-                        }
-                        $this->simulateBlockEvent($this->CIDRAM['ThisIP']['IPAddress'], $TestsSwitch, $ModuleSwitch, $SEVSwitch, $SMVSwitch, $OVSwitch, $AuxSwitch);
-                    } elseif ($this->FE['TestMode'] === 2) {
-                        $this->simulateBlockEvent('', $TestsSwitch, $ModuleSwitch, $SEVSwitch, $SMVSwitch, $OVSwitch, $AuxSwitch);
-                        $this->CIDRAM['ThisIP']['IPAddress'] = $this->FE['custom-ua'];
+                foreach ($Working as $this->CIDRAM['ThisIP']['IPAddress']) {
+                    if ($this->CIDRAM['ThisIP']['IPAddress'] === '') {
+                        continue;
                     }
+                    $this->simulateBlockEvent($this->CIDRAM['ThisIP']['IPAddress'], $TestsSwitch, $ModuleSwitch, $SEVSwitch, $SMVSwitch, $OVSwitch, $AuxSwitch);
                     if (
                         !empty($this->CIDRAM['Caught']) ||
-                        ($this->FE['TestMode'] === 1 && $TestsSwitch && (empty($this->CIDRAM['LastTestIP']) || empty($this->CIDRAM['TestResults']))) ||
+                        ($this->CIDRAM['TestMode'] === 1 && $TestsSwitch && (empty($this->CIDRAM['LastTestIP']) || empty($this->CIDRAM['TestResults']))) ||
                         !empty($this->CIDRAM['RunErrors']) ||
                         !empty($this->CIDRAM['ModuleErrors']) ||
                         !empty($this->CIDRAM['AuxErrors'])
@@ -4116,7 +4142,7 @@ class FrontEnd extends Core
                             $this->BlockInfo['SignatureCount'] > 0
                         ) ? 'response._Yes' : 'response._No');
                     }
-                    if ($this->FE['TestMode'] === 1) {
+                    if ($this->CIDRAM['TestMode'] === 1) {
                         $this->CIDRAM['ThisIP']['YesNo'] .= '<br />' . $this->L10N->getString('field.Banned') . $this->L10N->getString('pair_separator') . $this->L10N->getString($this->CIDRAM['Banned'] ? 'response._Yes' : 'response._No');
                     }
                     if (isset($this->CIDRAM['ThisStatusHTTP'])) {
@@ -4161,9 +4187,7 @@ class FrontEnd extends Core
                     ) : $this->CIDRAM['ThisIP']['IPAddress'];
                     $this->FE['IPTestResults'] .= $this->parseVars($this->CIDRAM['ThisIP'], $this->FE['IPTestRow'], true);
                 }
-                unset($this->CIDRAM['ThisIP']);
-            } else {
-                $this->FE['ip-addr'] = '';
+                unset($this->CIDRAM['ThisIP'], $Working, $this->CIDRAM['TestMode']);
             }
 
             /** Calculate page load time (useful for debugging). */

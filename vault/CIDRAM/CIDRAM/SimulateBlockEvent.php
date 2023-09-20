@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used to simulate block events (last modified: 2023.08.08).
+ * This file: Methods used to simulate block events (last modified: 2023.09.20).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -55,6 +55,15 @@ trait SimulateBlockEvent
         /** Reset factors. */
         $this->CIDRAM['Factors'] = [];
 
+        if (isset($this->CIDRAM['TestMode']) && $this->CIDRAM['TestMode'] === 2) {
+            $UA = $Addr;
+            $Addr = $this->FE['ip-addr-focus'] ?? '';
+        } elseif (empty($this->FE['custom-ua'])) {
+            $UA = empty($this->FE['custom-ua-focus']) ? 'SimulateBlockEvent' : $this->FE['custom-ua-focus'];
+        } else {
+            $UA = $this->FE['custom-ua'];
+        }
+
         /** Populate BlockInfo. */
         $this->BlockInfo = [
             'ID' => $this->generateId(),
@@ -64,7 +73,8 @@ trait SimulateBlockEvent
             'IPAddrResolved' => $this->resolve6to4($Addr),
             'Query' => !empty($this->FE['custom-query']) ? $this->FE['custom-query'] : 'SimulateBlockEvent',
             'Referrer' => !empty($this->FE['custom-referrer']) ? $this->FE['custom-referrer'] : 'SimulateBlockEvent',
-            'UA' => !empty($this->FE['custom-ua']) ? $this->FE['custom-ua'] : 'SimulateBlockEvent',
+            'UA' => $UA,
+            'UALC' => strtolower($UA),
             'SignatureCount' => 0,
             'Signatures' => '',
             'WhyReason' => '',
@@ -87,7 +97,6 @@ trait SimulateBlockEvent
         } else {
             $this->BlockInfo['Infractions'] = $Try;
         }
-        $this->BlockInfo['UALC'] = strtolower($this->BlockInfo['UA']);
 
         /** Appending query onto the reconstructed URI. */
         if (!empty($this->FE['custom-query'])) {

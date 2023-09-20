@@ -314,3 +314,5 @@
 [2023.09.16~18; Maikuolan]: Significantly refactored all L10N data.
 
 [2023.09.18; Maikuolan]: Better resource guarding (#516).
+
+[2023.09.19~20; Maikuolan]: BunnyCDN and IP-API modules can now populate profiles.

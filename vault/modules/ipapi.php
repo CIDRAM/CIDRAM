@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: IP-API module (last modified: 2023.05.22).
+ * This file: IP-API module (last modified: 2023.09.20).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -81,7 +81,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     /** Prepare to perform a new lookup if none for this origin have been cached yet. */
     if (!$InCache) {
         $Lookup = $this->Request->request(
-            'http://ip-api.com/json/' . $this->BlockInfo['IPAddr'] . '?fields=status,countryCode,as',
+            'http://ip-api.com/json/' . $this->BlockInfo['IPAddr'] . '?fields=status,countryCode,as,mobile,proxy,hosting',
             [],
             $this->Configuration['ipapi']['timeout_limit'] ?? 12
         );
@@ -97,6 +97,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         $CC = 'XX';
         $ASN = 0;
         $Expiry = 3600;
+        $Profiles = [];
 
         if (is_array($Lookup)) {
             if (isset($Lookup['countryCode'])) {
@@ -109,11 +110,20 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
                 }
                 $ASN = (int)$ASN;
             }
+            if (!empty($Lookup['mobile'])) {
+                $Profiles[] = 'Mobile ISP';
+            }
+            if (!empty($Lookup['proxy'])) {
+                $Profiles[] = 'Proxy';
+            }
+            if (!empty($Lookup['hosting'])) {
+                $Profiles[] = 'Webhosting';
+            }
             $Expiry = 604800;
         }
 
-        $this->Cache->setEntry('IPAPI-' . $ToCheck, ['ASN' => $ASN, 'CC' => $CC], $Expiry);
-        $this->CIDRAM['IPAPI-' . $ToCheck] = ['ASN' => $ASN, 'CC' => $CC];
+        $this->Cache->setEntry('IPAPI-' . $ToCheck, ['ASN' => $ASN, 'CC' => $CC, 'Profiles' => $Profiles], $Expiry);
+        $this->CIDRAM['IPAPI-' . $ToCheck] = ['ASN' => $ASN, 'CC' => $CC, 'Profiles' => $Profiles];
         $InCache = true;
     }
 
@@ -177,6 +187,13 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             }
             $this->BlockInfo['Signatures'] .= $ToCheck;
             $this->BlockInfo['SignatureCount']++;
+        }
+    }
+
+    /** Profiling. */
+    if (isset($this->CIDRAM['IPAPI-' . $ToCheck]['Profiles'])) {
+        foreach ($this->CIDRAM['IPAPI-' . $ToCheck]['Profiles'] as $Profile) {
+            $this->addProfileEntry($Profile);
         }
     }
 };

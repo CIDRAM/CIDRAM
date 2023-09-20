@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2023.08.24).
+ * This file: Front-end handler (last modified: 2023.09.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -4029,7 +4029,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
 
     /** Fetch custom fields if specified. */
     foreach (['custom-query', 'custom-referrer', 'custom-ua'] as $CIDRAM['ThisField']) {
-        $CIDRAM['FE'][$CIDRAM['ThisField']] = empty($_POST[$CIDRAM['ThisField']]) ? '' : $_POST[$CIDRAM['ThisField']];
+        $CIDRAM['FE'][$CIDRAM['ThisField']] = isset($_POST[$CIDRAM['ThisField']]) ? str_replace(['&', '<', '>', '"'], ['&amp;', '&lt;', '&gt;', '&quot;'], $_POST[$CIDRAM['ThisField']]) : '';
     }
     unset($CIDRAM['ThisField']);
 

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used for auxiliary rules (last modified: 2023.09.18).
+ * This file: Methods used for auxiliary rules (last modified: 2023.09.19).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -225,7 +225,7 @@ trait AuxiliaryRules
                                         $Current,
                                         $Iteration,
                                         $ThisSources,
-                                        $this->L10N->getString('tip_condition_placeholder'),
+                                        $this->L10N->getString('tip.Specify a value, or leave blank to disregard'),
                                         $Condition,
                                         $ModeSet[1],
                                         $ModeSet[2]
@@ -253,7 +253,7 @@ trait AuxiliaryRules
                             '<input type="text" name="webhooks[%1$s][%2$s]" placeholder="%3$s" class="f400" value="%4$s" />',
                             $Current,
                             $Iteration,
-                            $this->L10N->getString('tip_condition_placeholder'),
+                            $this->L10N->getString('tip.Specify a value, or leave blank to disregard'),
                             $Webhook
                         );
                         $Iteration++;
@@ -274,7 +274,7 @@ trait AuxiliaryRules
                     $MethodData = ['', '', '', ''];
                 }
                 $Output .= sprintf(
-                    '<div class="iCntr"><div class="iLabl"><select name="mtd[%s]" class="auto"><option value="mtdStr"%s>%s</option><option value="mtdReg"%s>%s</option><option value="mtdWin"%s>%s</option><option value="mtdDMA"%s>%s</option></select></div></div>',
+                    '<div class="iCntr"><div class="iLabl"><select name="mtd[%s]" class="auto"><option value="mtdStr"%s>%s</option><option value="mtdReg"%s>%s</option><option value="mtdWin"%s>%s</option><option value="mtdDMA"%s>%s</option></select><br /></div></div><div class="iCntr"><div class="iLabl"><em>%s</em></div></div>',
                     $Current,
                     $MethodData[0],
                     $this->FE['optMtdStr'],
@@ -283,7 +283,8 @@ trait AuxiliaryRules
                     $MethodData[2],
                     $this->FE['optMtdWin'],
                     $MethodData[3],
-                    $this->FE['optMtdDMA']
+                    $this->FE['optMtdDMA'],
+                    $this->L10N->getString('tip.Numeric Comparison')
                 );
 
                 /** Match logic. */
@@ -661,7 +662,7 @@ trait AuxiliaryRules
     {
         /** Append JavaScript specific to the auxiliary rules page. */
         $this->FE['JS'] .= $this->parseVars(
-            ['tip_condition_placeholder' => $this->L10N->getString('tip_condition_placeholder')],
+            ['tip.Specify a value, or leave blank to disregard' => $this->L10N->getString('tip.Specify a value, or leave blank to disregard')],
             $this->readFile($this->getAssetPath('auxiliary.js'))
         );
 

@@ -1,10 +1,10 @@
 <div class="login">
 <form action="?" method="POST" style="text-align:center">
   <h1>{label.Please log in to continue}</h1>
-  <div class="txtRd"><small>{tip_2fa_sent}</small><br /><br />{state_msg}{2fa_status_spacer}</div>
+  <div class="txtRd"><small>{tip.2FA Sent}</small><br /><br />{state_msg}{2fa_status_spacer}</div>
   <input id="2fa" name="2fa" type="text" placeholder="{field.2FA code}" autocomplete="one-time-code" />
   <input name="cidram-form-target" type="hidden" value="2fa" /><br />
   <input type="submit" value="{field.Confirm}" class="auto" /><br /><br />
-  <div class="txtRd"><small>{tip_fe_cookie_warning}</small></div>
+  <div class="txtRd"><small>{warning.Cookies}</small></div>
 </form>
 </div>

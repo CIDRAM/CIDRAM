@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2023.09.17).
+ * This file: The CIDRAM core (last modified: 2023.09.19).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -2085,20 +2085,20 @@ class Core
             /** Perform a match using regular expressions. */
             if ($Operator === '≇' || $Operator === '≅') {
                 if (preg_match($TestCase, $Actual)) {
-                    $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response_not_satisfied' : 'response_satisfied'));
+                    $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response.Not satisfied' : 'response.Satisfied'));
                     return true;
                 }
-                $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response_satisfied' : 'response_not_satisfied'));
+                $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response.Satisfied' : 'response.Not satisfied'));
                 continue;
             }
 
             /** Perform a match using Windows-style wildcards. */
             if ($Operator === '≉' || $Operator === '≈') {
                 if (preg_match('~^' . str_replace('\*', '.*', preg_quote($TestCase, '~')) . '$~', $Actual)) {
-                    $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response_not_satisfied' : 'response_satisfied'));
+                    $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response.Not satisfied' : 'response.Satisfied'));
                     return true;
                 }
-                $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response_satisfied' : 'response_not_satisfied'));
+                $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response.Satisfied' : 'response.Not satisfied'));
                 continue;
             }
 
@@ -2114,50 +2114,50 @@ class Core
                     }
                 }
                 if ($Actual === $TestCase) {
-                    $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response_not_satisfied' : 'response_satisfied'));
+                    $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response.Not satisfied' : 'response.Satisfied'));
                     return true;
                 }
-                $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response_satisfied' : 'response_not_satisfied'));
+                $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response.Satisfied' : 'response.Not satisfied'));
                 continue;
             }
 
             /** Greater than. */
             if ($Operator === '≯' || $Operator === '>') {
                 if ($this->auxTestCaseToNumeric($Actual) > $this->auxTestCaseToNumeric($TestCase)) {
-                    $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response_not_satisfied' : 'response_satisfied'));
+                    $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response.Not satisfied' : 'response.Satisfied'));
                     return true;
                 }
-                $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response_satisfied' : 'response_not_satisfied'));
+                $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response.Satisfied' : 'response.Not satisfied'));
                 continue;
             }
 
             /** Greater than or equal to. */
             if ($Operator === '≱' || $Operator === '≥') {
                 if ($this->auxTestCaseToNumeric($Actual) >= $this->auxTestCaseToNumeric($TestCase)) {
-                    $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response_not_satisfied' : 'response_satisfied'));
+                    $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response.Not satisfied' : 'response.Satisfied'));
                     return true;
                 }
-                $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response_satisfied' : 'response_not_satisfied'));
+                $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response.Satisfied' : 'response.Not satisfied'));
                 continue;
             }
 
             /** Less than. */
             if ($Operator === '≮' || $Operator === '<') {
                 if ($this->auxTestCaseToNumeric($Actual) < $this->auxTestCaseToNumeric($TestCase)) {
-                    $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response_not_satisfied' : 'response_satisfied'));
+                    $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response.Not satisfied' : 'response.Satisfied'));
                     return true;
                 }
-                $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response_satisfied' : 'response_not_satisfied'));
+                $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response.Satisfied' : 'response.Not satisfied'));
                 continue;
             }
 
             /** Less than or equal to. */
             if ($Operator === '≰' || $Operator === '≤') {
                 if ($this->auxTestCaseToNumeric($Actual) <= $this->auxTestCaseToNumeric($TestCase)) {
-                    $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response_not_satisfied' : 'response_satisfied'));
+                    $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response.Not satisfied' : 'response.Satisfied'));
                     return true;
                 }
-                $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response_satisfied' : 'response_not_satisfied'));
+                $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response.Satisfied' : 'response.Not satisfied'));
             }
         }
 

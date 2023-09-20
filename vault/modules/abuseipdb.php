@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: AbuseIPDB module (last modified: 2023.08.27).
+ * This file: AbuseIPDB module (last modified: 2023.09.19).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -302,7 +302,7 @@ if ($this->Configuration['abuseipdb']['report_back'] && $this->Configuration['ab
                 $this->CIDRAM['Report Failed'] += $Failure;
             }
             if ($this->Events->assigned('writeToReportLog')) {
-                $ToLog = $this->L10N->getString('response_bulk_reporting');
+                $ToLog = $this->L10N->getString('response.Multiple IP addresses (bulk reporting)');
                 $this->Events->fireEvent('writeToReportLog', $ToLog, $ToLog);
             }
             return $OK;
@@ -331,7 +331,7 @@ if ($this->Configuration['abuseipdb']['report_back'] && $this->Configuration['ab
         }
         if ($this->Events->assigned('writeToReportLog')) {
             if ($Count > 1) {
-                $ToLog = $this->L10N->getString('response_bulk_reporting');
+                $ToLog = $this->L10N->getString('response.Multiple IP addresses (bulk reporting)');
                 $this->Events->fireEvent('writeToReportLog', $ToLog, $ToLog);
             } else {
                 $this->Events->fireEvent('writeToReportLog', $Entry[3], $Entry[1]);

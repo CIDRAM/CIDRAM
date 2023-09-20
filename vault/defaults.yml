@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2023.09.18).
+# This file: Defaults file (last modified: 2023.09.19).
 ##/
 
 Config Defaults:
@@ -57,9 +57,9 @@ Config Defaults:
     NonBlockedCAPTCHA:Enable
     NonBlockedCAPTCHA:LogErrors
    labels:
-    Enable: "checkbox_label_stage_enable"
-    LogErrors: "checkbox_label_stage_log_errors"
-    Tracking: "checkbox_label_stage_infractions"
+    Enable: "checkbox.Enable this stage"
+    LogErrors: "checkbox.Log any errors generated during this stage"
+    Tracking: "checkbox.Should infractions generated during this stage count towards IP tracking"
    choices:
     Tests: "stage_tests"
     Modules: "stage_modules"
@@ -146,9 +146,9 @@ Config Defaults:
     CAPTCHA:OmitIfEmpty
     Inspection:OmitIfEmpty
    labels:
-    ShowInLogs: "checkbox_label_fields_logs"
-    ShowInPageOutput: "checkbox_label_fields_page_output"
-    OmitIfEmpty: "checkbox_label_fields_omit"
+    ShowInLogs: "checkbox.Should this field appear in log entries"
+    ShowInPageOutput: "checkbox.Should this field appear on the access denied page"
+    OmitIfEmpty: "checkbox.Omit this field when it_s empty"
    choices:
     ID: "field.ID"
     ScriptIdent: "field.Script version"
@@ -503,9 +503,9 @@ Config Defaults:
     CAPTCHAs-Failed: "{label.CAPTCHA attempts} – {state_failed}"
     CAPTCHAs-Passed: "{label.CAPTCHA attempts} – {state_passed}"
     Reported-IPv4-OK: "{label.Requests reported to external APIs} – IPv4 – {field.OK}"
-    Reported-IPv4-Failed: "{label.Requests reported to external APIs} – IPv4 – {response_failed}"
+    Reported-IPv4-Failed: "{label.Requests reported to external APIs} – IPv4 – {response.Failed}"
     Reported-IPv6-OK: "{label.Requests reported to external APIs} – IPv6 – {field.OK}"
-    Reported-IPv6-Failed: "{label.Requests reported to external APIs} – IPv6 – {response_failed}"
+    Reported-IPv6-Failed: "{label.Requests reported to external APIs} – IPv6 – {response.Failed}"
    hints: "hints_aux_stats"
   force_hostname_lookup:
    type: "bool"
@@ -661,9 +661,9 @@ Config Defaults:
     Other:Block
     Other:Profile
    labels:
-    Block: "checkbox_label_block_it"
-    Profile: "checkbox_label_profile_it"
-    Suppress: "checkbox_label_suppress"
+    Block: "checkbox.Block it"
+    Profile: "checkbox.Profile it"
+    Suppress: "checkbox.When blocked, suppress output template"
    choices:
     Attacks: "Short_Attacks"
     Bogon: "⁰ {Short_Bogon}"
@@ -748,11 +748,11 @@ Config Defaults:
     YoudaoBot:BlockNegatives
     YoudaoBot:UntrackPositives
    labels:
-    Verify: "checkbox_label_verify"
-    BlockNegatives: "checkbox_label_block_negatives"
-    BlockNonVerified: "checkbox_label_block_nonverified"
-    SingleHitBypass: "checkbox_label_single_hit_bypass"
-    UntrackPositives: "checkbox_label_untrack_positives"
+    Verify: "checkbox.Attempt to verify"
+    BlockNegatives: "checkbox.Block negatives"
+    BlockNonVerified: "checkbox.Block non-verified requests"
+    SingleHitBypass: "checkbox.Allow single-hit bypasses"
+    UntrackPositives: "checkbox.Untrack positives"
    choices:
     Amazonbot: "Amazonbot"
     Applebot: "Applebot"
@@ -788,11 +788,11 @@ Config Defaults:
     Snapchat:UntrackPositives
     Twitterbot:UntrackPositives
    labels:
-    Verify: "checkbox_label_verify"
-    BlockNegatives: "checkbox_label_block_negatives"
-    BlockNonVerified: "checkbox_label_block_nonverified"
-    SingleHitBypass: "checkbox_label_single_hit_bypass"
-    UntrackPositives: "checkbox_label_untrack_positives"
+    Verify: "checkbox.Attempt to verify"
+    BlockNegatives: "checkbox.Block negatives"
+    BlockNonVerified: "checkbox.Block non-verified requests"
+    SingleHitBypass: "checkbox.Allow single-hit bypasses"
+    UntrackPositives: "checkbox.Untrack positives"
    choices:
     Embedly: "* Embedly"
     Facebook: "** Facebook"
@@ -821,11 +821,11 @@ Config Defaults:
     Grapeshot:BlockNegatives
     Grapeshot:UntrackPositives
    labels:
-    Verify: "checkbox_label_verify"
-    BlockNegatives: "checkbox_label_block_negatives"
-    BlockNonVerified: "checkbox_label_block_nonverified"
-    SingleHitBypass: "checkbox_label_single_hit_bypass"
-    UntrackPositives: "checkbox_label_untrack_positives"
+    Verify: "checkbox.Attempt to verify"
+    BlockNegatives: "checkbox.Block negatives"
+    BlockNonVerified: "checkbox.Block non-verified requests"
+    SingleHitBypass: "checkbox.Allow single-hit bypasses"
+    UntrackPositives: "checkbox.Untrack positives"
    choices:
     AdSense: "AdSense"
     AmazonAdBot: "* AmazonAdBot"
@@ -844,11 +844,11 @@ Config Defaults:
     NonVerified:ReCaptcha
     NonVerified:HCaptcha
    labels:
-    ReCaptcha: "checkbox_label_suppress_recaptcha"
-    HCaptcha: "checkbox_label_suppress_hcaptcha"
+    ReCaptcha: "checkbox.Suppress ReCaptcha"
+    HCaptcha: "checkbox.Suppress HCaptcha"
    choices:
-    Negatives: "checkbox_choice_negatives"
-    NonVerified: "checkbox_choice_nonverified"
+    Negatives: "checkbox.Blocked negatives"
+    NonVerified: "checkbox.Blocked non-verified"
  recaptcha:
   usemode:
    type: "int"
@@ -1037,7 +1037,7 @@ Config Defaults:
   custom_footer:
    type: "string"
    default: ""
- Rate Limiting:
+ rate_limiting:
   max_bandwidth:
    type: "kb"
    default: "0KB"
@@ -1062,7 +1062,7 @@ Config Defaults:
    default: "FE"
    choices:
     Whitelisted: "field.Whitelisted requests"
-    Verified: "field.Verified identity search engine and social media requests"
+    Verified: "field.Verified search engine and social media requests"
     FE: "field.Requests to the CIDRAM front-end"
   segregate:
    type: "bool"
@@ -1251,7 +1251,7 @@ Links:
  ISO:
   3166: "<a href="https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes" dir="ltr" hreflang="en-US" rel="nofollow noopener noreferrer external" target="_blank">ISO-3166</a>"
  MIT: "<a href="https://opensource.org/licenses/MIT" dir="ltr" hreflang="en-US" rel="noopener noreferrer external">MIT</a>"
- PHP version used:
+ PHP:
   Earth:
    Facebook: "<a href="https://www.facebook.com/groups/2204685680/" dir="ltr" rel="noopener noreferrer external">PHP.earth@Facebook</a>"
    Website: "<a href="https://php.earth/" dir="ltr" hreflang="en" rel="noopener noreferrer external">PHP.earth</a>"

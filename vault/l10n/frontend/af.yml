@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Afrikaans language data for the front-end (last modified: 2023.09.18).
+# This file: Afrikaans language data for the front-end (last modified: 2023.09.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -30,7 +30,7 @@ Extended Description:
  Bad TLDs blocker module: "Blokkeer gashere wat aan TLD's behoort wat gereeld deur spammers, kuberkrakers, en ander onheilspellende entiteite gebruik word."
  Bad hosts blocker module: "Blokkeer gashere wat gereeld deur spammers, kuberkrakers, en ander onheilspellende entiteite gebruik word."
  Bot user agents module: "Blokkeer gebruikersagente wat verband hou met ongewenste bots en onheilspellende aktiwiteite."
- Bypasses: "Die verstek handtekening omseil lêers wat gewoonlik by die hoofpakket ingesluit is."
+ Bypasses: "Die verstek handtekening omleiding lêers wat gewoonlik by die hoofpakket ingesluit is."
  Chart.js: "Stel die front-end in staat om doughnut-kaarte te genereer.<br />{{Links.Chart.js}} is beskikbaar via die {{Links.MIT}}-lisensie."
  Cookie scanner module: "Bied beperkte beskerming teen gevaarlike koekies."
  HTTP version checker module: "Maak dit moontlik om spesifieke protokolle en HTTP-weergawes te blokkeer deur die CIDRAM-konfigurasie."
@@ -60,7 +60,7 @@ Name:
  Bad hosts blocker module: "Slegte gashere blokker module."
  Bot user agents module: "Bot gebruikersagente module."
  BunnyCDN compatibility module: "BunnyCDN versoenbaarheidsmodule."
- Bypasses: "Verstek handtekening omseil."
+ Bypasses: "Verstek handtekening omleidings."
  Cookie scanner module: "Opsionele koekie skandeerder module."
  HTTP version checker module: "HTTP weergawe kontroleerder module."
  IP-API module: "IP-API module."
@@ -81,26 +81,27 @@ Name:
  Stop Forum Spam module: "Stop Forum Spam module."
  Tor blocker module: "Tor-blokker module."
 bobuam_hint_default_value: "Wanneer dit op 0 gestel is, sal die module uitstel na die tans aanbevole waarde."
-checkbox_choice_negatives: "Geblokkeerde negatiewe"
-checkbox_choice_nonverified: "Geblokkeerde nie-geverifieer"
-checkbox_delete_orphaned_values: "Vee onverbonde waardes uit."
-checkbox_label_block_it: "Blokkeer dit."
-checkbox_label_block_negatives: "Blokkeer negatiewe?"
-checkbox_label_block_nonverified: "Blokkeer nie-geverifieerde versoeke?"
-checkbox_label_fields_logs: "Moet hierdie veld in loginskrywings verskyn?"
-checkbox_label_fields_omit: "Laat hierdie veld weg wanneer dit leeg is?"
-checkbox_label_fields_page_output: "Moet hierdie veld op die "toegang geweier"-bladsy verskyn?"
-checkbox_label_profile_it: "Profileer dit."
-checkbox_label_sensitive: "Toets as sensitiewe versoek"
-checkbox_label_single_hit_bypass: "Laat enkeltreffer-omleidings toe?"
-checkbox_label_stage_enable: "Aktiveer hierdie stadium?"
-checkbox_label_stage_infractions: "Moet oortredings wat tydens hierdie stadium gegenereer word, tel vir IP-nasporing?"
-checkbox_label_stage_log_errors: "Meld enige foute wat tydens hierdie stadium gegenereer is aan?"
-checkbox_label_suppress: "As dit geblokkeer is, onderdruk uitsetsjabloon."
-checkbox_label_suppress_hcaptcha: "Onderdruk HCaptcha"
-checkbox_label_suppress_recaptcha: "Onderdruk ReCaptcha"
-checkbox_label_untrack_positives: "Ontspoor positiewe?"
-checkbox_label_verify: "Poging om te verifieer?"
+checkbox:
+ Allow single-hit bypasses: "Laat enkeltreffer-omleidings toe?"
+ Attempt to verify: "Poging om te verifieer?"
+ Block it: "Blokkeer dit."
+ Block negatives: "Blokkeer negatiewe?"
+ Block non-verified requests: "Blokkeer nie-geverifieerde versoeke?"
+ Blocked negatives: "Geblokkeerde negatiewe"
+ Blocked non-verified: "Geblokkeerde nie-geverifieer"
+ Delete orphaned values: "Vee onverbonde waardes uit."
+ Enable this stage: "Aktiveer hierdie stadium?"
+ Log any errors generated during this stage: "Meld enige foute wat tydens hierdie stadium gegenereer is aan?"
+ Omit this field when it_s empty: "Laat hierdie veld weg wanneer dit leeg is?"
+ Profile it: "Profileer dit."
+ Should infractions generated during this stage count towards IP tracking: "Moet oortredings wat tydens hierdie stadium gegenereer word, tel vir IP-nasporing?"
+ Should this field appear in log entries: "Moet hierdie veld in loginskrywings verskyn?"
+ Should this field appear on the access denied page: "Moet hierdie veld op die "toegang geweier"-bladsy verskyn?"
+ Suppress HCaptcha: "Onderdruk HCaptcha"
+ Suppress ReCaptcha: "Onderdruk ReCaptcha"
+ Test as sensitive request: "Toets as sensitiewe versoek"
+ Untrack positives: "Ontspoor positiewe?"
+ When blocked, suppress output template: "As dit geblokkeer is, onderdruk uitsetsjabloon."
 config:
  abuseipdb: "Konfigurasie vir die AbuseIPDB module."
  abuseipdb_api_key: &EnterAPIKey "Voer jou API-sleutel hier in."
@@ -234,7 +235,7 @@ config:
  protocol: "Konfigurasie vir die protokol-blokker module."
  protocol_blocked: "Geselekteerde protokolle sal geblokkeer word. Kennis neem: Sal geen effek hê vir daardie webwerwe wat deur dienste stuur wat versoeke herskryf om almal presies dieselfde protokol te gebruik nie, soos Cloudflare."
  protocol_reason_message: "Die redeboodskap wat vertoon word wanneer sulke versoeke geblokkeer word."
- Rate Limiting: "Konfigurasie vir tariefbeperking (nie aanbeveel vir algemene gebruik nie)."
+ rate_limiting: "Konfigurasie vir tariefbeperking (nie aanbeveel vir algemene gebruik nie)."
  rate_limiting_allowance_period: "Die tydsduur om gebruik na te spoor. Verstek = 0°0′0″."
  rate_limiting_exceptions: "Uitsonderings (d.w.s., versoeke wat nie tariefbeperk behoort te word nie). Slegs relevant wanneer tariefbeperking geaktiveer is."
  rate_limiting_max_bandwidth: "Die maksimum hoeveelheid bandwydte wat toegelaat word binne die toegelate tydperk voordat toekomstige versoeke tariefbeperk word. 0 deaktiveer hierdie tipe tariefbeperking. Verstek = 0KB."
@@ -370,9 +371,68 @@ hints_cause_fp: "*!! Hoë waarskynlikheid om vals positiewe te veroorsaak as gev
 hints_client_honour: "Ongeag hoe ons die kliënt opdrag gee, is dit belangrik om te onthou dat ons uiteindelik geen beheer het oor wat die kliënt kies om te doen nie, en daar is geen waarborg dat die kliënt ons instruksies sal nakom nie."
 hints_default_dns:
  Gereelde vrae.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#what-can-i-use-for-default_dns" hreflang="en-AU">Wat kan ek gebruik vir "default_dns"?</a></em>"
-title_login: "Inteken"
+hints_duration:
+ SI.: "Tydsduur kan beskryf word deur die "Internasionale Stelsel van Eenhede" te gebruik. Bv., <strong>1d2h3min4s</strong> of <strong>1d 2h 3min 4s</strong> vir een dag, twee uur, drie minute, vier sekondes, of <strong>5min</strong> vir net vyf minute."
+ Boogtyd.: "Tydsduur kan beskryf word met behulp van boogtyd-notasie. Bv., <strong>1d2°3′4″</strong> vir een dag, twee uur, drie minute, vier sekondes, of <strong>5″</strong> vir net vyf sekondes."
+ Gewone Engels.: "Tydsduur kan beskryf word deur die eenhede in gewone Engels te skryf. Bv., <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> vir een week, twee dae, drie uur, vier minute, vyf sekondes."
+ Beperkings.: "Notasie kan gemeng word, maar eenhede moet altyd beskryf word van die grootste tot die kleinste, en kan nie herhaal word nie. Bv., <strong>1 week 2 days 3′4″</strong> is <span class="txtGn">geldig</span> en sal korrek verstaan word, maar <strong>3′4″ 1 week 2 days</strong> en <strong>3 hours 3h 3°</strong> is <span class="txtRd">ongeldig</span>. CIDRAM gee nie om of jy spasiëring gebruik of nie. Getalle moet eenvoudig en ongeformateer wees. Vir praktiese toepassing is die grootste ondersteunde eenheid 'n week. Wanneer konfigurasie opgedateer word, normaliseer CIDRAM duurs na boogtyd."
+hints_has_bypass: "* Hierdie opsie het 'n ooreenstemmende omleiding onder <code class="s">bypasses➡used</code>. Dit word aanbeveel om seker te maak dat die merkblokkie vir die ooreenstemmende omleiding gemerk is op dieselfde manier as die merkblokkie om hierdie opsie te probeer verifieer."
+hints_inspection: "* Slegs bedoel vir ontfouting van bykomende reëls. Word nie aan geblokkeerde gebruikers gewys nie."
+hints_ipv6_on_32bit: "Kennis neem: IPv6-soektogte werk dalk nie korrek op sommige 32-bis stelsels nie."
+hints_pdo_dsn:
+ Gereelde vrae.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">Wat is 'n "PDO DSN"? Hoe kan ek PDO met CIDRAM gebruik?</a></em>"
+hints_shorthand:
+ 0.: "As jou webwerf toegang via LAN of localhost benodig, moenie dit blokkeer nie. Andersins kan jy dit egter blokkeer."
+ 1.: "Nie een van die verstekhandtekeninglêers gebruik dit nie, maar dit word nietemin ondersteun ingeval dit vir sommige gebruikers nuttig kan wees."
+ 2.: "As jy nodig het dat gebruikers toegang tot jou webwerf kan kry via gevolmagtigdes, moenie dit blokkeer nie. Andersins kan jy dit egter blokkeer."
+ 3.: "Direkte gebruik in handtekeninge word nie ondersteun nie, maar dit kan in spesifieke omstandighede op ander maniere opgeroep word."
+ 4.: "Verwys na gevalle waar snelskrifwoorde glad nie gebruik word nie, of nie deur CIDRAM herken word nie."
+ Een per handtekening.: "Handtekeninge kan veelvuldige profiele oproep, maar kan slegs een snelskrifwoord gebruik. Dit is moontlik dat veelvuldige snelskrifwoorde geskik kan wees, maar aangesien slegs een gebruik kan word, streef ons daarna om altyd net die geskikste te gebruik."
+ Prioriteit.: "Geselekteerde opsies geniet altyd prioriteit bo nie-geselekteerde opsies. Bv., as veelvuldige snelskrifwoorde in die spel is, maar slegs een van hulle is gestel as geblokkeer, sal die versoek steeds geblokkeer word."
+ Menslike eindpunte en wolkdienste.: "Wolkdiens kan verwys na webgasheerverskaffers, bedienerplase, datasentrums, of enige aantal ander dinge. Menslike eindpunt verwys na die manier waarop 'n mens toegang tot die internet verkry, soos deur middel van 'n internetdiensverskaffer. Netwerke verskaf gewoonlik net die een of die ander, maar kan soms albei voorsien. Ons poog om nooit potensiële menslike eindpunte as wolkdienste te identifiseer nie. Daarom kan 'n wolkdiens as iets anders geïdentifiseer word as sy reeks deur bekende menslike eindpunte gedeel word. Omgekeerd streef ons daarna om wolkdienste, waarvan die reekse nie deur enige bekende menslike eindpunte gedeel word nie, altyd as wolkdienste te identifiseer. Daarom, wanneer 'n versoek uitdruklik as 'n wolkdiens geïdentifiseer word, dit waarskynlik deel nie sy reeks met enige bekende menslike eindpunte nie. Eweneens, wanneer 'n versoek uitdruklik deur aanvalle of strooipos geïdentifiseer word, dit deel hulle waarskynlik wel. Die internet is egter altyd in 'n toestand van vloed, die doeleindes van netwerke verander met verloop van tyd, en reekse word altyd gekoop of verkoop, so bly bewus en waaksaam met betrekking tot vals positiewes."
+hints_verification:
+ "Wat is "positiewe" en "negatiewe"?": "Wanneer die identiteit wat deur 'n versoek aangebied word geverifieer word, kan 'n suksesvolle uitkoms beskryf word as "positief" of "negatief". In die geval dat die identiteit wat aangebied word as die ware identiteit bevestig word, sal dit as "positief" beskryf word. In die geval dat bevestig word dat die identiteit wat aangebied is vervals is, sal dit as "negatief" beskryf word. Onsuksesvolle uitkomste (bv., verifikasie misluk, of die waarheid van die identiteit wat aangebied word kan nie bepaal word nie) sal egter nie as "positief" of "negatief" beskryf word nie. In plaas daarvan sal onsuksesvolle uitkomste bloot as nie-geverifieer beskryf word. Wanneer geen poging aangewend word om die identiteit wat deur 'n versoek aangebied word te verifieer nie, sal die versoek eweneens as nie-geverifieer beskryf word. Die terme maak slegs sin in die konteks waar die identiteit wat deur 'n versoek aangebied word erken word, en dus waar verifikasie moontlik is. In gevalle waar die identiteit wat aangebied word nie ooreenstem met die opsies hierbo verskaf nie, of waar geen identiteit aangebied word nie, word die opsies hierbo verskaf irrelevant."
+ "Wat is "enkeltreffer-omleidings"?": "In sommige gevalle kan 'n positief-geverifieerde versoek steeds geblokkeer word as gevolg van die handtekeninglêers, modules, of ander voorwaardes van die versoek, en omleidings kan nodig wees om vals positiewe te vermy. In die geval waar 'n omleiding bedoel is om presies een oortreding te hanteer, nie meer of nie minder nie, kan so 'n omleiding beskryf word as 'n "enkeltreffer-omleiding"."
+hints_want_to_block: "!! Die meeste gebruikers sal waarskynlik wil hê dit moet geblokkeer word, ongeag of dit werklik of vervals is. Dit kan bereik word deur "poging om te verifieer" nie gekies te word nie en "blokkeer nie-geverifieerde versoeke" te kies. Maar, omdat sommige gebruikers dalk wil hê dat sulke versoeke geverifieer moet word (om negatiewes te blokkeer terwyl positiewes toegelaat word), in plaas daarvan om sulke versoeke via modules te blokkeer, word opsies vir die hantering van sulke versoeke hier verskaf."
+info_cli_by_default_ips: |
+ IP's word standaard getoets teen alle handtekeninglêers, alle modules, alle
+ bykomende reëls, *en* teen verifikasie vir sosiale media en soekenjins.
+ --no-sig    Voorkom toetsing teen handtekeninglêers.
+ --no-mod    Voorkom toetsing teen modules.
+ --no-sev    Voorkom verifikasie van soekenjins.
+ --no-smv    Voorkom verifikasie van sosiale media.
+ --no-ov     Voorkom ander verifikasie.
+ --no-aux    Voorkom toetsing teen bykomende reëls.
+info_cli_cidram_cli_mod: "CIDRAM CLI-modus."
+info_cli_ipv4_ipv6_are_: |
+ IPv4/IPv6 word albei ondersteun. Multilyn-invoer is moontlik vir *alle*
+ CLI-modus-bewerkings (bv., om verskeie IP-adresse in 'n enkele bewerking te
+ toets) deur aanhalings te gebruik, soos so:
+info_cli_or_depending_o: |
+ Of, afhangende van of jy verkies om eerste tot laaste, of laaste tot eerste te
+ ketting:
+info_cli_or_to_aggregat: "Of, om hulle as netmaskers saam te aggregeer:"
+info_cli_or_using_comma: "Of, om kommas in plaas van multilyne te gebruik (doen presies dieselfde ding):"
+info_cli_the_signature_: "Die handtekeningregstelling kan ook via CLI gebruik word:"
+info_cli_to_calculate_c: "Om CIDR's vanaf 'n IP-adres te bereken:"
+info_cli_to_test_whethe: "Om te toets of 'n IP-adres deur CIDRAM geblokkeer word:"
+info_cli_to_quit_type_q: "Om uit te gaan, tik "q", "quit", of "exit", en druk dan enter."
+info_cli_you_can_also_a: "Jy kan ook IP's en CIDR's aggregeer soos so:"
+info_cli_you_can_also_c: |
+ Jy kan ook opdragte ketting (die voorbeeld lees uit sommige lêers, aggregeer
+ hul inhoud, en skryf dan die geaggregeerde data na output.dat):
+info_cli_you_can_also_r: "Jy kan ook lees uit lêers soos so:"
+info_cli_you_can_also_u: |
+ Jy kan ook eerder kommas gebruik as jy wil (dit word dieselfde behandel as om
+ multilyne te gebruik, maar jy hoef nie aanhalingstekens te gebruik nie, en
+ moenie albei saam meng nie):
+info_cli_you_can_also_w: "Jy kan ook na lêers skryf soos so:"
+info_cli_you_can_print_: |
+ Jy kan data na die skerm druk soos so (soms nuttig wanneer opdragte geketting
+ word):
 warning:
  API_Rate_Limited: "Waarskuwing: Toegang tot die %s API blyk tans tariefbeperk te wees."
+ Cookies: "Kennis neem: CIDRAM gebruik 'n koekie vir die verifikasie van aanmeldings. Deur aan te meld, gee jy jou toestemming dat 'n koekie deur jou blaaier geskep en gestoor word."
  Editing PHP files: "Waarskuwing: Dit is bekend dat sommige sekuriteitsoplossings vir webgasheer outomaties IP-adresse verbied wanneer PHP-etikette binne versoeke opgespoor word (bv., wanneer jy probeer om PHP-lêers deur 'n blaaier te wysig). CIDRAM het geen manier om te weet of jou webgasheerdiens so 'n sekuriteitsoplossing gebruik nie. Om sulke probleme te vermy, word dit aanbeveel om nie PHP-lêers op so 'n manier te redigeer wanneer moontlik nie."
  IP tests are disabled: "Waarskuwing: IP-toetse is gedeaktiveer! Handtekeninglêers kan nie gebruik word voordat dit opgelos is nie."
  JavaScript required: "Waarskuwing: Sommige front-end funksionaliteit vereis JavaScript. Om te verseker dat die hele front-end optree soos verwag, word dit aanbeveel om JavaScript te aktiveer."

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CIDRAM CLI mode (last modified: 2023.09.18).
+ * This file: CIDRAM CLI mode (last modified: 2023.09.19).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -145,7 +145,7 @@ trait CLI
 
             /** Set CLI process title with "working" notice. */
             if (function_exists('cli_set_process_title')) {
-                cli_set_process_title($this->ScriptIdent . ' - ' . $this->L10N->getString('state_loading'));
+                cli_set_process_title($this->ScriptIdent . ' - ' . $this->L10N->getString('label.Loading_'));
             }
 
             /** Don't execute any commands when receiving multiline input. */
@@ -162,7 +162,7 @@ trait CLI
             if ($Cmd === 'print') {
                 echo "\033[0;33m";
                 if (empty($Data) || (count($Data) === 1 && empty($Data[0]))) {
-                    echo $this->L10N->getString('response_cli_no_print') . "\n\n";
+                    echo $this->L10N->getString('response.There_s nothing to print, sorry') . "\n\n";
                     continue;
                 }
                 if (!$Chain) {
@@ -173,7 +173,7 @@ trait CLI
                     continue;
                 }
                 $Chain = '';
-                echo sprintf($this->L10N->getString('response_cli_bad_chain'), 'print') . "\n\n";
+                echo sprintf($this->L10N->getString('response.The %s command can_t be chained in that way, sorry'), 'print') . "\n\n";
                 continue;
             }
 
@@ -181,16 +181,16 @@ trait CLI
             if (substr($Cmd, 0, 7) === 'fwrite=') {
                 echo "\033[0;33m";
                 if (empty($Data) || (count($Data) === 1 && empty($Data[0]))) {
-                    echo $this->L10N->getString('response_cli_no_write') . "\n\n";
+                    echo $this->L10N->getString('response.There_s nothing to write, sorry') . "\n\n";
                     continue;
                 }
                 if ($Chain !== '') {
-                    echo sprintf($this->L10N->getString('response_cli_bad_chain'), 'fwrite') . "\n\n";
+                    echo sprintf($this->L10N->getString('response.The %s command can_t be chained in that way, sorry'), 'fwrite') . "\n\n";
                     continue;
                 }
                 $WriteTo = substr($Cmd, 7);
                 if (is_dir($this->Vault . $WriteTo) || !is_writable($this->Vault)) {
-                    echo sprintf($this->L10N->getString('response_cli_cant_write'), $WriteTo) . "\n\n";
+                    echo sprintf($this->L10N->getString('response.I can_t write to %s, sorry'), $WriteTo) . "\n\n";
                     continue;
                 }
                 $Handle = fopen($this->Vault . $WriteTo, 'wb');
@@ -210,7 +210,7 @@ trait CLI
                 $MemoryUsage = memory_get_usage();
                 $this->formatFileSize($MemoryUsage);
                 $this->formatFileSize($FileSize);
-                echo sprintf($this->L10N->getString('response_cli_finished_writing'), $WriteTo) . ' <' . $this->L10N->getString('field.File') . ': ' . $FileSize . '> <RAM: ' . $MemoryUsage . ">\n\n";
+                echo sprintf($this->L10N->getString('response.Finished writing to %s'), $WriteTo) . ' <' . $this->L10N->getString('field.File') . ': ' . $FileSize . '> <RAM: ' . $MemoryUsage . ">\n\n";
                 unset($WriteTo, $Handle, $BlocksToDo, $ThisBlock, $MemoryUsage, $FileSize);
                 continue;
             }
@@ -219,7 +219,7 @@ trait CLI
             if ($Cmd === 'fread') {
                 echo "\033[0;33m";
                 if ($Chain === '') {
-                    echo $this->L10N->getString('response_cli_what_to_do') . "\n\n";
+                    echo $this->L10N->getString('response.Don_t know what to do with the data after reading it') . "\n\n";
                     continue;
                 }
                 foreach ($Data as $ThisItem) {
@@ -227,7 +227,7 @@ trait CLI
                     if (!is_file($ThisItemTry) || !is_readable($ThisItemTry)) {
                         $ThisItemTry = $ThisItem;
                         if (!is_file($ThisItemTry) || !is_readable($ThisItemTry)) {
-                            echo sprintf($this->L10N->getString('response_failed_to_access'), $ThisItem) . "\n";
+                            echo sprintf($this->L10N->getString('response.Failed to access %s'), $ThisItem) . "\n";
                             continue;
                         }
                     }
@@ -235,14 +235,14 @@ trait CLI
                     $FileSize = $ThisItemSize;
                     $this->formatFileSize($FileSize);
                     if ($ThisItemSize <= 0) {
-                        echo sprintf($this->L10N->getString('response_failed_to_access'), $ThisItem) . "\n";
+                        echo sprintf($this->L10N->getString('response.Failed to access %s'), $ThisItem) . "\n";
                         continue;
                     }
                     $Chain .= $this->readFile($ThisItemTry);
                     $MemoryUsage = memory_get_usage();
                     $this->formatFileSize($MemoryUsage);
                     echo sprintf(
-                        $this->L10N->getString('response_finished_reading_from') . " <%s: %s> <RAM: %s>\n",
+                        $this->L10N->getString('response.Finished reading from %s') . " <%s: %s> <RAM: %s>\n",
                         $ThisItem,
                         $this->L10N->getString('field.File'),
                         $FileSize,
@@ -283,7 +283,7 @@ trait CLI
                         !empty($this->CIDRAM['ModuleErrors']) ||
                         !empty($this->CIDRAM['AuxErrors'])
                     ) {
-                        $Results['YesNo'] = $this->L10N->getString('response_error');
+                        $Results['YesNo'] = $this->L10N->getString('response.Error');
                         if (!empty($this->CIDRAM['AuxErrors'])) {
                             $Results['YesNo'] .= sprintf(
                                 ' – auxiliary.yaml (%s)',
@@ -310,9 +310,9 @@ trait CLI
                             unset($ModuleName, $ModuleError, $ModuleErrorCounts);
                         }
                     } elseif ($this->BlockInfo['SignatureCount']) {
-                        $Results['YesNo'] = $this->L10N->getString('response_yes') . ' – ' . $this->BlockInfo['WhyReason'];
+                        $Results['YesNo'] = $this->L10N->getString('response._Yes') . ' – ' . $this->BlockInfo['WhyReason'];
                     } else {
-                        $Results['YesNo'] = $this->L10N->getString('response_no');
+                        $Results['YesNo'] = $this->L10N->getString('response._No');
                     }
                     $Results['NegateFlags'] = '';
                     if (!empty($this->CIDRAM['Suppress logging'])) {
@@ -360,7 +360,7 @@ trait CLI
                                 } elseif ($Factors === 128) {
                                     $Last = $this->ipv6GetLast($First, $Key + 1);
                                 } else {
-                                    $Last = $this->L10N->getString('response_error');
+                                    $Last = $this->L10N->getString('response.Error');
                                 }
                                 echo $CIDR . ' (' . $First . ' – ' . $Last . ")\n";
                             }
@@ -376,7 +376,7 @@ trait CLI
 
             /** Aggregate IPs/CIDRs. */
             if ($Cmd === 'aggregate' || substr($Cmd, 0, 10) === 'aggregate=') {
-                echo "\033[0;33m" . $this->L10N->getString('link.ip_aggregator') . "\n===\n";
+                echo "\033[0;33m" . $this->L10N->getString('link.Aggregator') . "\n===\n";
                 $this->CIDRAM['Aggregator'] = new Aggregator(substr($Cmd, 10) === 'netmasks' ? 1 : 0);
                 $this->CIDRAM['Aggregator']->Results = true;
                 $Data = implode("\n", $Data);
@@ -386,7 +386,7 @@ trait CLI
                     if ($Results['Parse'] !== 0) {
                         $Memory = memory_get_usage();
                         $this->formatFileSize($Memory);
-                        echo "\r" . $this->L10N->getString('response_cli_parse') . ' ' . $this->NumberFormatter->format($Results['Parse']) . ' ... ' . $this->NumberFormatter->format(100, 2) . '% (' . $this->timeFormat(time(), $this->Configuration['general']['time_format']) . ') <RAM: ' . $Memory . '>';
+                        echo "\r" . $this->L10N->getString('response.Parse') . ' ' . $this->NumberFormatter->format($Results['Parse']) . ' ... ' . $this->NumberFormatter->format(100, 2) . '% (' . $this->timeFormat(time(), $this->Configuration['general']['time_format']) . ') <RAM: ' . $Memory . '>';
                     }
                     echo "\n";
                     $Results['Parse']++;
@@ -403,13 +403,13 @@ trait CLI
                     if ($Results['Timer'] > 25) {
                         $Results['Timer'] = 0;
                         $Percent = $this->NumberFormatter->format(($Results['Tick'] / $Results['Measure']) * 100, 2);
-                        echo "\r" . $this->L10N->getString('response_cli_parse') . ' ' . $this->NumberFormatter->format($Results['Parse']) . ' ... ' . $Percent . '%';
+                        echo "\r" . $this->L10N->getString('response.Parse') . ' ' . $this->NumberFormatter->format($Results['Parse']) . ' ... ' . $Percent . '%';
                     }
                 };
                 $Data = $this->CIDRAM['Aggregator']->aggregate($Data);
                 $Results['Memory'] = memory_get_usage();
                 $this->formatFileSize($Results['Memory']);
-                echo "\r" . $this->L10N->getString('response_cli_parse') . ' ' . $this->NumberFormatter->format($Results['Parse']) . ' ... ' . $this->NumberFormatter->format(100, 2) . '% (' . $this->timeFormat(time(), $this->Configuration['general']['time_format']) . ') <RAM: ' . $Results['Memory'] . ">\n\n";
+                echo "\r" . $this->L10N->getString('response.Parse') . ' ' . $this->NumberFormatter->format($Results['Parse']) . ' ... ' . $this->NumberFormatter->format(100, 2) . '% (' . $this->timeFormat(time(), $this->Configuration['general']['time_format']) . ') <RAM: ' . $Results['Memory'] . ">\n\n";
                 echo sprintf(
                     $this->L10N->getString('label.results'),
                     $this->NumberFormatter->format($this->CIDRAM['Aggregator']->NumberEntered),
@@ -431,16 +431,16 @@ trait CLI
             if (class_exists('\Maikuolan\Common\Matrix') && function_exists('imagecreatetruecolor') && substr($Cmd, 0, 7) === 'matrix=') {
                 echo "\033[0;33m";
                 if (empty($Data) || (count($Data) === 1 && empty($Data[0]))) {
-                    echo $this->L10N->getString('response_cli_no_analyse') . "\n\n";
+                    echo $this->L10N->getString('response.There_s nothing to analyse, sorry') . "\n\n";
                     continue;
                 }
                 if ($Chain) {
-                    echo sprintf($this->L10N->getString('response_cli_bad_chain'), 'matrix') . "\n\n";
+                    echo sprintf($this->L10N->getString('response.The %s command can_t be chained in that way, sorry'), 'matrix') . "\n\n";
                     continue;
                 }
                 $WriteTo = substr($Cmd, 7);
                 if (is_dir($this->Vault . $WriteTo) || !is_writable($this->Vault)) {
-                    echo sprintf($this->L10N->getString('response_cli_cant_write'), $WriteTo) . "\n\n";
+                    echo sprintf($this->L10N->getString('response.I can_t write to %s, sorry'), $WriteTo) . "\n\n";
                     continue;
                 }
                 $Data = implode("\n", $Data);
@@ -465,7 +465,7 @@ trait CLI
                     if ($Fixer['Parse'] !== 0) {
                         $Memory = memory_get_usage();
                         $this->formatFileSize($Memory);
-                        echo "\r" . $this->L10N->getString('response_cli_parse') . ' ' . $this->NumberFormatter->format($Fixer['Parse']) . ' ... ' . $this->NumberFormatter->format(100, 2) . '% (' . $this->timeFormat(time(), $this->Configuration['general']['time_format']) . ') <RAM: ' . $Memory . '>';
+                        echo "\r" . $this->L10N->getString('response.Parse') . ' ' . $this->NumberFormatter->format($Fixer['Parse']) . ' ... ' . $this->NumberFormatter->format(100, 2) . '% (' . $this->timeFormat(time(), $this->Configuration['general']['time_format']) . ') <RAM: ' . $Memory . '>';
                     }
                     echo "\n";
                     $Fixer['Parse']++;
@@ -482,7 +482,7 @@ trait CLI
                     if ($Fixer['Timer'] > 25) {
                         $Fixer['Timer'] = 0;
                         $Percent = $this->NumberFormatter->format(($Fixer['Tick'] / $Fixer['Measure']) * 100, 2);
-                        echo "\r" . $this->L10N->getString('response_cli_parse') . ' ' . $this->NumberFormatter->format($Fixer['Parse']) . ' ... ' . $Percent . '%';
+                        echo "\r" . $this->L10N->getString('response.Parse') . ' ' . $this->NumberFormatter->format($Fixer['Parse']) . ' ... ' . $Percent . '%';
                     }
                 };
                 if (strpos($Data, "\r") !== false) {
@@ -552,7 +552,7 @@ trait CLI
                 }, true);
                 $Fixer['Memory'] = memory_get_usage();
                 $this->formatFileSize($Fixer['Memory']);
-                echo "\r" . $this->L10N->getString('response_cli_parse') . ' ' . $this->NumberFormatter->format($Fixer['Parse']) . ' ... ' . $this->NumberFormatter->format(100, 2) . '% (' . $this->timeFormat(time(), $this->Configuration['general']['time_format']) . ') <RAM: ' . $Fixer['Memory'] . ">\n\n";
+                echo "\r" . $this->L10N->getString('response.Parse') . ' ' . $this->NumberFormatter->format($Fixer['Parse']) . ' ... ' . $this->NumberFormatter->format(100, 2) . '% (' . $this->timeFormat(time(), $this->Configuration['general']['time_format']) . ') <RAM: ' . $Fixer['Memory'] . ">\n\n";
                 $Data = trim($Fixer['StrObject']->recompile()) . "\n";
                 $Fixer['After'] = hash('sha256', $Data) . ':' . strlen($Data);
                 echo sprintf(
@@ -576,7 +576,7 @@ trait CLI
             $Chain = '';
 
             /** Let the user know that the current command isn't valid. */
-            echo "\033[0;33m" . $this->L10N->getString('response_cli_bad_command') . "\n\n";
+            echo "\033[0;33m" . $this->L10N->getString('response.I don_t understand that command, sorry') . "\n\n";
         }
         die;
     }

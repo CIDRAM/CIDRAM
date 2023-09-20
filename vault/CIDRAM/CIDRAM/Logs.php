@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used by the logs page (last modified: 2023.06.20).
+ * This file: Methods used by the logs page (last modified: 2023.09.19).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -125,7 +125,7 @@ trait Logs
             }
 
             /** Make satisfied red. */
-            $Section = preg_replace('~(?<=' . $FieldSeparator . ')' . $this->L10N->getString('response_satisfied') . '(?=\n|<br />| <a href)~', '<span class="txtRd">' . $this->L10N->getString('response_satisfied') . '</span>', $Section);
+            $Section = preg_replace('~(?<=' . $FieldSeparator . ')' . $this->L10N->getString('response.Satisfied') . '(?=\n|<br />| <a href)~', '<span class="txtRd">' . $this->L10N->getString('response.Satisfied') . '</span>', $Section);
 
             /** Add pair styles. */
             if (preg_match_all('~\n((?:<span class="textLabel">.*|(?!：)[^\n:]+)' . $FieldSeparator . '(?:(?!<br />)[^\n])+)~i', $Section, $Parts) && count($Parts[1])) {

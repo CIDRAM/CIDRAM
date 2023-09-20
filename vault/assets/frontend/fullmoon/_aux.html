@@ -98,13 +98,9 @@
             </select><input type="button" onclick="javascript:addCondition('')" value="{field.Add more conditions} [1]" class="auto" accesskey="1" />
           </div>
           <div class="iCntn" id="conditions">
-            <div class="flexrow"><select name="conSourceType[]" class="auto">{conSources}</select><select name="conIfOrNot[]" class="auto"><option value="If">=</option><option value="Not">≠</option></select><input type="text" name="conSourceValue[]" placeholder="{tip_condition_placeholder}" class="flexin" /></div>
+            <div class="flexrow"><select name="conSourceType[]" class="auto">{conSources}</select><select name="conIfOrNot[]" class="auto"><option value="If">=</option><option value="Not">≠</option></select><input type="text" name="conSourceValue[]" placeholder="{tip.Specify a value, or leave blank to disregard}" class="flexin" /></div>
           </div>
         </div>
-      </li>
-      <li>
-        <em>{tip_aux_operators}</em><br />
-        <code>={&gt;…&gt;, &gt;=…≥, &lt;…&lt;, &lt;=…≤, …=}, ≠{&gt;…≯, &gt;=…≱, &lt;…≮, &lt;=…≰, …≠}</code>
       </li>
       <li>
         <div class="iCntr">
@@ -115,7 +111,7 @@
         </div>
       </li>
       <li>
-        <em>{tip_aux_webhooks}</em>
+        <em>{tip.Auxiliary Rules Webhooks}</em>
       </li>
       <li>
         <div class="iCntr">
@@ -129,6 +125,7 @@
           </div>
         </div>
       </li>
+      <li><div class="iCntr"><div class="iLabl"><em>{tip.Numeric comparison}</em></div></div></li>
       <li>
         <div class="iCntr">
           <div class="iLabl s">
@@ -154,7 +151,7 @@
       </li>
       <li>
         <div class="iCntr">
-          <div class="iLabl s">{tip_aux_priority}</div>
+          <div class="iLabl s">{tip.Auxiliary Rules Priority}</div>
           <div class="iCntn">
             <div class="iCntr">
               <div class="iLabl s">{link.Auxiliary Rules}</div>

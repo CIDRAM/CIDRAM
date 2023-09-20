@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used by the range tables page (last modified: 2023.09.17).
+ * This file: Methods used by the range tables page (last modified: 2023.09.19).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -396,13 +396,13 @@ trait RangeTables
                                 $Out[$Label[0]] .= '<span style="display:none" class="' . $Class . ' s">-</span>';
                             }
                         }
-                        $ThisArr = ['RangeType' => $Label[1], 'NumOfCIDRs' => $Out[$Label[0]], 'state_loading' => $this->L10N->getString('state_loading')];
+                        $ThisArr = ['RangeType' => $Label[1], 'NumOfCIDRs' => $Out[$Label[0]], 'label.Loading_' => $this->L10N->getString('label.Loading_')];
                         $this->FE['RangeRows'] .= $this->parseVars($ThisArr, $this->FE['RangeRow']);
                     }
                 }
             }
         }
-        $Loading = $this->L10N->getString('state_loading');
+        $Loading = $this->L10N->getString('label.Loading_');
         foreach ([
             ['', $this->L10N->getString('label.Total')],
             ['-Ignored', $this->L10N->getString('label.Total') . ' (' . $this->L10N->getString('state_ignored') . ')'],
@@ -434,7 +434,7 @@ trait RangeTables
             $this->FE['RangeRows'] .= $this->parseVars([
                 'RangeType' => $Label[1],
                 'NumOfCIDRs' => $ThisRight,
-                'state_loading' => $Loading
+                'label.Loading_' => $Loading
             ], $this->FE['RangeRow']);
         }
         return $JS;

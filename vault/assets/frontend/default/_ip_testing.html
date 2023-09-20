@@ -8,10 +8,10 @@
     <tr><form action="?cidram-page=ip-test" method="POST">
       <td class="h3">
         <div class="center">
-          <textarea name="ip-addr" placeholder="{tip_enter_ips_here}">{ip-addr}</textarea><br />
-          <input type="text" name="custom-ua" placeholder="{tip_custom_ua}" value="{custom-ua}" class="txtf" /><br />
-          <input type="text" name="custom-query" placeholder="{tip_custom_query}" value="{custom-query}" class="txtf" /><br />
-          <input type="text" name="custom-referrer" placeholder="{tip_custom_referrer}" value="{custom-referrer}" class="txtf" />
+          <textarea name="ip-addr" placeholder="{tip.Enter IPs here}">{ip-addr}</textarea><br />
+          <input type="text" name="custom-ua" placeholder="{tip.Enter user agent here (optional)}" value="{custom-ua}" class="txtf" /><br />
+          <input type="text" name="custom-query" placeholder="{tip.Enter query here (optional)}" value="{custom-query}" class="txtf" /><br />
+          <input type="text" name="custom-referrer" placeholder="{tip.Enter referrer here (optional)}" value="{custom-referrer}" class="txtf" />
         </div>
       </td>
       <td class="h3f">
@@ -22,7 +22,7 @@
           <div class="gridboxitem gridHB"><span class="s gridlabel"><input type="checkbox" class="auto" name="SMVSwitch" id="SMVSwitch"{SMVSwitch} /><label for="SMVSwitch">{stage_smv}</label></span></div>
           <div class="gridboxitem gridHA"><span class="s gridlabel"><input type="checkbox" class="auto" name="OVSwitch" id="OVSwitch"{OVSwitch} /><label for="OVSwitch">{stage_ov}</label></span></div>
           <div class="gridboxitem gridHB"><span class="s gridlabel"><input type="checkbox" class="auto" name="AuxSwitch" id="AuxSwitch"{AuxSwitch} /><label for="AuxSwitch">{stage_aux}</label></span></div>
-          <div class="gridboxitem gridHA"><span class="s gridlabel"><input type="checkbox" class="auto" name="SensitiveSwitch" id="SensitiveSwitch"{SensitiveSwitch} /><label for="SensitiveSwitch">{checkbox_label_sensitive}</label></span></div>
+          <div class="gridboxitem gridHA"><span class="s gridlabel"><input type="checkbox" class="auto" name="SensitiveSwitch" id="SensitiveSwitch"{SensitiveSwitch} /><label for="SensitiveSwitch">{checkbox.Test as sensitive request}</label></span></div>
         </div>
         <div class="center">
           <input type="submit" value="{field.OK}" />

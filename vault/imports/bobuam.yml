@@ -11,17 +11,17 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: BOBUAM defaults file (last modified: 2023.06.10).
+# This file: BOBUAM defaults file (last modified: 2023.09.19).
 ##/
 
 Config Defaults:
  bobuam:
   sanity_check:
    type: "string"
-   default: "response_yes"
+   default: "response._Yes"
    choices:
-    yes: "response_yes"
-    no: "response_no"
+    yes: "response._Yes"
+    no: "response._No"
   reason_ambiguous:
    type: "string"
    default: "denied"
@@ -45,10 +45,10 @@ Config Defaults:
    allow_other: true
   block_bots:
    type: "string"
-   default: "response_yes"
+   default: "response._Yes"
    choices:
-    yes: "response_yes"
-    no: "response_no"
+    yes: "response._Yes"
+    no: "response._No"
   reason_bot:
    type: "string"
    default: "denied"
@@ -58,10 +58,10 @@ Config Defaults:
    allow_other: true
   block_eol_browsers:
    type: "string"
-   default: "response_yes"
+   default: "response._Yes"
    choices:
-    yes: "response_yes"
-    no: "response_no"
+    yes: "response._Yes"
+    no: "response._No"
   chrome:
    type: "int"
    default: 0

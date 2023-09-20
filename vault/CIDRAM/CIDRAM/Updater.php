@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods for updating CIDRAM components (last modified: 2023.09.18).
+ * This file: Methods for updating CIDRAM components (last modified: 2023.09.19).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -365,13 +365,13 @@ trait Updater
         }
         if (!empty($Arr['False Positive Risk'])) {
             if ($Arr['False Positive Risk'] === 'Low') {
-                $State = $this->L10N->getString('state_risk_low');
+                $State = $this->L10N->getString('label.risk.Low');
                 $Class = 'txtGn';
             } elseif ($Arr['False Positive Risk'] === 'Medium') {
-                $State = $this->L10N->getString('state_risk_medium');
+                $State = $this->L10N->getString('label.risk.Medium');
                 $Class = 'txtOe';
             } elseif ($Arr['False Positive Risk'] === 'High') {
-                $State = $this->L10N->getString('state_risk_high');
+                $State = $this->L10N->getString('label.risk.High');
                 $Class = 'txtRd';
             } else {
                 return;
@@ -681,7 +681,7 @@ trait Updater
                                     '<code>%s</code> – <code>%s</code> – %s<br />%s – <code class="txtRd">%s</code><br />%s – <code class="txtRd">%s</code><br />',
                                     $ThisTarget,
                                     $FileName,
-                                    $this->L10N->getString('response_checksum_error'),
+                                    $this->L10N->getString('response.Checksum error'),
                                     $this->L10N->getString('label.Actual'),
                                     $Actual,
                                     $this->L10N->getString('label.Expected'),
@@ -702,7 +702,7 @@ trait Updater
                                 '<code>%s</code> – <code>%s</code> – %s<br />',
                                 $ThisTarget,
                                 $FileName,
-                                $this->L10N->getString('response_sanity_1')
+                                $this->L10N->getString('response.File contains unexpected content')
                             );
                             if (!empty($this->Components['RemoteMeta'][$ThisTarget]['On Sanity Error'])) {
                                 $this->executor($this->Components['RemoteMeta'][$ThisTarget]['On Sanity Error'], $BytesRemoved, $BytesAdded);
@@ -776,12 +776,12 @@ trait Updater
                         empty($this->Components['Meta'][$ThisTarget]['Version']) &&
                         empty($this->Components['Meta'][$ThisTarget]['Files'])
                     ) {
-                        $this->FE['state_msg'] .= $this->L10N->getString('response_component_successfully_installed');
+                        $this->FE['state_msg'] .= $this->L10N->getString('response.Component successfully installed');
                         if (!empty($this->Components['RemoteMeta'][$ThisTarget]['When Install Succeeds'])) {
                             $this->executor($this->Components['RemoteMeta'][$ThisTarget]['When Install Succeeds'], $BytesRemoved, $BytesAdded);
                         }
                     } else {
-                        $this->FE['state_msg'] .= $this->L10N->getString('response_component_successfully_updated');
+                        $this->FE['state_msg'] .= $this->L10N->getString('response.Component successfully updated');
                         if (!empty($this->Components['RemoteMeta'][$ThisTarget]['When Update Succeeds'])) {
                             $this->executor($this->Components['RemoteMeta'][$ThisTarget]['When Update Succeeds'], $BytesRemoved, $BytesAdded);
                         }
@@ -807,12 +807,12 @@ trait Updater
                     empty($this->Components['Meta'][$ThisTarget]['Version']) &&
                     empty($this->Components['Meta'][$ThisTarget]['Files'])
                 ) {
-                    $this->FE['state_msg'] .= $this->L10N->getString('response_failed_to_install');
+                    $this->FE['state_msg'] .= $this->L10N->getString('response.Failed to install');
                     if (!empty($this->Components['RemoteMeta'][$ThisTarget]['When Install Fails'])) {
                         $this->executor($this->Components['RemoteMeta'][$ThisTarget]['When Install Fails'], $BytesRemoved, $BytesAdded);
                     }
                 } else {
-                    $this->FE['state_msg'] .= $this->L10N->getString('response_failed_to_update');
+                    $this->FE['state_msg'] .= $this->L10N->getString('response.Failed to update');
                     if (!empty($this->Components['RemoteMeta'][$ThisTarget]['When Update Fails'])) {
                         $this->executor($this->Components['RemoteMeta'][$ThisTarget]['When Update Fails'], $BytesRemoved, $BytesAdded);
                     }
@@ -873,7 +873,7 @@ trait Updater
                 $this->deleteDirectory($FileName);
             }
 
-            $this->FE['state_msg'] .= $this->L10N->getString('response_component_successfully_uninstalled');
+            $this->FE['state_msg'] .= $this->L10N->getString('response.Component successfully uninstalled');
             if (!empty($this->Components['Meta'][$ID]['When Uninstall Succeeds'])) {
                 $this->executor($this->Components['Meta'][$ID]['When Uninstall Succeeds'], $BytesRemoved);
             }
@@ -884,7 +884,7 @@ trait Updater
             /** Update the component metadata file. */
             $this->updateComponentMetadataFile($this->Components['Meta'], $BytesRemoved);
         } else {
-            $this->FE['state_msg'] .= $this->L10N->getString('response_component_uninstall_error');
+            $this->FE['state_msg'] .= $this->L10N->getString('response.An error occurred while attempting to uninstall the component');
             if (!empty($this->Components['Meta'][$ID]['When Uninstall Fails'])) {
                 $this->executor($this->Components['Meta'][$ID]['When Uninstall Fails'], $BytesRemoved);
             }
@@ -959,7 +959,7 @@ trait Updater
             }
         }
         if (!$Activation['Modified']) {
-            $this->FE['state_msg'] .= $this->L10N->getString('response_activation_failed') . '<br />';
+            $this->FE['state_msg'] .= $this->L10N->getString('response.Failed to activate') . '<br />';
             if (!empty($this->Components['Meta'][$ID]['When Activation Fails'])) {
                 $this->executor($this->Components['Meta'][$ID]['When Activation Fails']);
             }
@@ -970,13 +970,13 @@ trait Updater
             $this->Configuration['components']['imports'] = $Activation['imports'];
             $this->Configuration['components']['events'] = $Activation['events'];
             if ($this->updateConfiguration()) {
-                $this->FE['state_msg'] .= $this->L10N->getString('response_activated') . '<br />';
+                $this->FE['state_msg'] .= $this->L10N->getString('response.Successfully activated') . '<br />';
                 if (!empty($this->Components['Meta'][$ID]['When Activation Succeeds'])) {
                     $this->executor($this->Components['Meta'][$ID]['When Activation Succeeds']);
                 }
                 $Success = true;
             } else {
-                $this->FE['state_msg'] .= $this->L10N->getString('response_activation_failed') . '<br />';
+                $this->FE['state_msg'] .= $this->L10N->getString('response.Failed to activate') . '<br />';
                 if (!empty($this->Components['Meta'][$ID]['When Activation Fails'])) {
                     $this->executor($this->Components['Meta'][$ID]['When Activation Fails']);
                 }
@@ -1070,7 +1070,7 @@ trait Updater
             $this->CIDRAM['Deactivation']['Modified'] = true;
         }
         if (!$this->CIDRAM['Deactivation']['Modified']) {
-            $this->FE['state_msg'] .= $this->L10N->getString('response_deactivation_failed') . '<br />';
+            $this->FE['state_msg'] .= $this->L10N->getString('response.Failed to deactivate') . '<br />';
             if (!empty($this->Components['Meta'][$ID]['When Deactivation Fails'])) {
                 $this->executor($this->Components['Meta'][$ID]['When Deactivation Fails']);
             }
@@ -1081,13 +1081,13 @@ trait Updater
             $this->Configuration['components']['imports'] = $this->CIDRAM['Deactivation']['imports'];
             $this->Configuration['components']['events'] = $this->CIDRAM['Deactivation']['events'];
             if ($this->updateConfiguration()) {
-                $this->FE['state_msg'] .= $this->L10N->getString('response_deactivated') . '<br />';
+                $this->FE['state_msg'] .= $this->L10N->getString('response.Successfully deactivated') . '<br />';
                 if (!empty($this->Components['Meta'][$ID]['When Deactivation Succeeds'])) {
                     $this->executor($this->Components['Meta'][$ID]['When Deactivation Succeeds']);
                 }
                 $Success = true;
             } else {
-                $this->FE['state_msg'] .= $this->L10N->getString('response_deactivation_failed') . '<br />';
+                $this->FE['state_msg'] .= $this->L10N->getString('response.Failed to deactivate') . '<br />';
                 if (!empty($this->Components['Meta'][$ID]['When Deactivation Fails'])) {
                     $this->executor($this->Components['Meta'][$ID]['When Deactivation Fails']);
                 }
@@ -1206,7 +1206,7 @@ trait Updater
                 $this->updateComponentMetadataFile($this->Components['Meta'], $BytesRemoved, $BytesAdded);
 
                 /** Repair operation succeeded. */
-                $this->FE['state_msg'] .= $this->L10N->getString('response_repair_process_completed');
+                $this->FE['state_msg'] .= $this->L10N->getString('response.Repair process completed');
                 if (!empty($this->Components['Meta'][$ThisTarget]['When Repair Succeeds'])) {
                     $this->executor($this->Components['Meta'][$ThisTarget]['When Repair Succeeds'], $BytesRemoved, $BytesAdded);
                 }
@@ -1214,7 +1214,7 @@ trait Updater
                 $RepairFailed = true;
 
                 /** Repair operation failed. */
-                $this->FE['state_msg'] .= $this->L10N->getString('response_repair_process_failed');
+                $this->FE['state_msg'] .= $this->L10N->getString('response.Repair process failed');
                 if (!empty($this->Components['Meta'][$ThisTarget]['When Repair Fails'])) {
                     $this->executor($this->Components['Meta'][$ThisTarget]['When Repair Fails'], $BytesRemoved, $BytesAdded);
                 }
@@ -1258,13 +1258,13 @@ trait Updater
                 if (preg_match('~\.(?:css|dat|gif|png|ya?ml)$~i', $ThisFile)) {
                     $Class = $this->sanityCheck($ThisFile, $ThisFileData) ? 'txtGn' : 'txtRd';
                     $Sanity = sprintf('<span class="%s">%s</span>', $Class, $this->L10N->getString(
-                        $Class === 'txtGn' ? 'response_passed' : 'response_failed'
+                        $Class === 'txtGn' ? 'response.Passed' : 'response.Failed'
                     ));
                     if ($Class === 'txtRd') {
                         $Passed = false;
                     }
                 } else {
-                    $Sanity = sprintf('<span class="txtOe">%s</span>', $this->L10N->getString('response_skipped'));
+                    $Sanity = sprintf('<span class="txtOe">%s</span>', $this->L10N->getString('response.Skipped'));
                 }
 
                 $Checksum = $Metadata['Checksum'] ?? '';
@@ -1281,11 +1281,11 @@ trait Updater
                         $Class = 'txtGn';
                     }
                     $Integrity = sprintf('<span class="%s">%s</span>', $Class, $this->L10N->getString(
-                        $Class === 'txtGn' ? 'response_passed' : 'response_failed'
+                        $Class === 'txtGn' ? 'response.Passed' : 'response.Failed'
                     ));
                 } else {
                     $Class = 's';
-                    $Integrity = sprintf('<span class="txtOe">%s</span>', $this->L10N->getString('response_skipped'));
+                    $Integrity = sprintf('<span class="txtOe">%s</span>', $this->L10N->getString('response.Skipped'));
                 }
 
                 /** Append results. */
@@ -1308,7 +1308,7 @@ trait Updater
                 '<div><span class="comCat" style="cursor:pointer"><code>%s</code> – <span class="%s">%s</span></span>%s</div>',
                 $ThisID,
                 ($Passed ? 's' : 'txtRd'),
-                $this->L10N->getString($Passed ? 'response_verification_success' : 'response_verification_failed'),
+                $this->L10N->getString($Passed ? 'response.Verification success' : 'response.Verification failed'),
                 $Table
             );
         }
@@ -1346,7 +1346,7 @@ trait Updater
                 $ThisComponent['Dependency Status'] .= sprintf(
                     '<span class="txtRd">%s – %s</span><br />',
                     $Dependency,
-                    $this->L10N->getString('response_not_satisfied')
+                    $this->L10N->getString('response.Not satisfied')
                 );
             } elseif ((
                 isset($this->Components['Installed Versions'][$Dependency]) &&
@@ -1360,7 +1360,7 @@ trait Updater
                     '<span class="txtGn">%s%s – %s</span><br />',
                     $Dependency,
                     $Constraints === '*' ? '' : ' (' . $Constraints . ')',
-                    $this->L10N->getString('response_satisfied')
+                    $this->L10N->getString('response.Satisfied')
                 );
             } elseif (
                 $Source &&
@@ -1371,7 +1371,7 @@ trait Updater
                     '<span class="txtOe">%s%s – %s</span><br />',
                     $Dependency,
                     $Constraints === '*' ? '' : ' (' . $Constraints . ')',
-                    $this->L10N->getString('response_ready_to_install')
+                    $this->L10N->getString('response.Ready to install')
                 );
                 if (!isset($ThisComponent['Install Together'])) {
                     $ThisComponent['Install Together'] = [];
@@ -1383,7 +1383,7 @@ trait Updater
                     '<span class="txtRd">%s%s – %s</span><br />',
                     $Dependency,
                     $Constraints === '*' ? '' : ' (' . $Constraints . ')',
-                    $this->L10N->getString('response_not_satisfied')
+                    $this->L10N->getString('response.Not satisfied')
                 );
             }
         }

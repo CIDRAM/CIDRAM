@@ -58,10 +58,8 @@ trait SimulateBlockEvent
         if (isset($this->CIDRAM['TestMode']) && $this->CIDRAM['TestMode'] === 2) {
             $UA = $Addr;
             $Addr = isset($this->FE['ip-addr-focus']) ? preg_replace('~[^\da-f:./]~i', '', $this->FE['ip-addr-focus']) : '';
-        } elseif (empty($this->FE['custom-ua'])) {
-            $UA = empty($this->FE['custom-ua-focus']) ? 'SimulateBlockEvent' : $this->FE['custom-ua-focus'];
         } else {
-            $UA = $this->FE['custom-ua'];
+            $UA = $this->FE['custom-ua-focus'] ?: $this->FE['custom-ua'] ?: 'SimulateBlockEvent';
         }
         $UA = str_replace(['&quot;', '&gt;', '&lt;', '&amp;'], ['"', '>', '<', '&'], $UA);
 
@@ -72,8 +70,8 @@ trait SimulateBlockEvent
             'DateTime' => $this->FE['DateTime'],
             'IPAddr' => $Addr,
             'IPAddrResolved' => $this->resolve6to4($Addr),
-            'Query' => !empty($this->FE['custom-query']) ? $this->FE['custom-query'] : 'SimulateBlockEvent',
-            'Referrer' => !empty($this->FE['custom-referrer']) ? $this->FE['custom-referrer'] : 'SimulateBlockEvent',
+            'Query' => str_replace(['&quot;', '&gt;', '&lt;', '&amp;'], ['"', '>', '<', '&'], $this->FE['custom-query']) ?: 'SimulateBlockEvent',
+            'Referrer' => str_replace(['&quot;', '&gt;', '&lt;', '&amp;'], ['"', '>', '<', '&'], $this->FE['custom-referrer']) ?: 'SimulateBlockEvent',
             'UA' => $UA,
             'UALC' => strtolower($UA),
             'SignatureCount' => 0,

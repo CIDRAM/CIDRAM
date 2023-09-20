@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2023.09.16).
+# This file: Spanish language data for the front-end (last modified: 2023.09.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -703,7 +703,6 @@ time_years_from_now:
 tip_2fa_sent: "Se ha enviado un correo electrónico con un código de autenticación de dos factores a su dirección de correo electrónico. Confirme este código a continuación para obtener acceso al front-end. Si no recibió este correo electrónico, intente cerrar la sesión, espere 10 minutos, y vuelva a iniciar sesión para recibir un nuevo correo electrónico que contenga un nuevo código."
 tip_accounts: "Hola, {username}.<br />La página de cuentas permite controlar controlar quién puede acceder al CIDRAM front-end."
 tip_aux: "Hola, {username}.<br />Puede usar esta página para crear, eliminar, y modificar reglas auxiliares para CIDRAM."
-tip_aux_operators: "Nota: Si una condición necesita un tipo de operador diferente, puedes agregarlo al inicio de su valor (requiere comparación directa de cadenas)."
 tip_aux_priority: "Prioridad (mas alta➡(igual🔄equivalente)➡mas baja):"
 tip_aux_webhooks: "Cuando se cumple una regla, CIDRAM intentará notificar a los webhooks conectados sobre el evento."
 tip_backup: "Hola, {username}.<br />Esta página se puede utilizar para importar/exportar su configuración, reglas auxiliares, etc. Esto puede ser útil si necesita migrar datos entre diferentes instalaciones o diferentes versiones principales."
@@ -729,6 +728,7 @@ tip_ip_test_switches: "(Cuando no se selecciona, solo los archivos de firma se p
 tip_ip_tracking: "Hola, {username}.<br />La página de rastreo IP le permite comprobar el estado de seguimiento de las direcciones IP, para comprobar cuál de ellos ha sido prohibido, y anular el seguimiento de ellos si desea hacerlo."
 tip_logs: "Hola, {username}.<br />Seleccionar un archivo de registro de la lista siguiente para ver el contenido de ese archivo de registro."
 tip_number_of_infractions: "Cuantas infracciones incurrir."
+tip_numeric_comparison: "Para utilizar la comparación numérica, seleccione la comparación directa de cadenas o la detección automática del método, asegúrese de que el valor de la condición sea numérico, y anteponga el operador deseado.<br />P.ej., para condiciones "iguales", &gt;=2 proporciona ≥2, &lt;=2 proporciona ≤2, para condiciones "no iguales", &gt;=2 proporciona ≱2, &lt;=2 proporciona ≰2, etc."
 tip_range: "Hola, {username}.<br />Esta página muestra información estadística básica sobre los rangos de IP cubiertos por los archivos de firma actualmente activos."
 tip_range_intersector: "Hola, {username}.<br />El intersector de rangos se puede utilizar para determinar los factores comunes de dos conjuntos de rangos."
 tip_range_subtractor: "Hola, {username}.<br />El sustractor de rango se puede usar para restar un rango de IP/CIDR de otro."

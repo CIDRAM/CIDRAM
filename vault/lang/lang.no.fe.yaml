@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2023.09.16).
+# This file: Norwegian language data for the front-end (last modified: 2023.09.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -373,7 +373,7 @@ label_aux_move_up: "Flytt opp"
 label_aux_mtdReg: "regelmessig uttrykkene"
 label_aux_mtdStr: "direkte streng sammenligning"
 label_aux_mtdWin: "Windows-stil jokertegn"
-label_aux_mtdDMA: "Oppdag metoden for å teste forholdene automatisk."
+label_aux_mtdDMA: "Oppdag metoden for å teste betingelsene automatisk."
 label_aux_name: "Et navn på den nye regelen:"
 label_aux_notes: "Merknader (vises bare på denne siden, og påvirker ikke regelen):"
 label_aux_reason: "Årsaken til brukeren når den er blokkert:"
@@ -433,7 +433,7 @@ label_fmgr_total_space: "Totalt diskplass:"
 label_fmgr_updates_metadata: "Komponentoppdateringsmetadata"
 label_hide: "Gjem"
 label_http_response_header_code_200: "200 OK\nStandardverdi. Minst robust, men mest brukervennlig. Automatiserte forespørsler vil mest sannsynlig tolke dette svaret som en indikasjon på at forespørselen var vellykket."
-label_http_response_header_code_403: "403 Forbidden (Forbudt)\nMer robust, men mindre brukervennlig. Anbefalt for de fleste generelle forhold."
+label_http_response_header_code_403: "403 Forbidden (Forbudt)\nMer robust, men mindre brukervennlig. Anbefalt for de fleste generelle betingelser."
 label_http_response_header_code_410: "410 Gone (Borte)\nKan forårsake problemer når du løser falske positiver, fordi noen nettlesere vil bufre denne statusmeldingen og ikke sende påfølgende forespørsler, selv etter å ha blitt opphevet blokkeringen. Kan være den mest foretrukne i noen sammenhenger, for visse typer trafikk."
 label_http_response_header_code_418: "418 I'm a teapot (Jeg er en tekanne)\nRefererer til en aprilsnarr ({{Links.RFC2324}}). Svært usannsynlig å bli forstått av noen klient, bot, nettleser, eller annet. Tilbys for underholdning og bekvemmelighet, men anbefales ikke generelt."
 label_http_response_header_code_429: "429 Too Many Requests (For mange forespørsler)\nAnbefalt for hastighetsbegrensning, ved håndtering av DDoS-angrep, og for forebygging av flom. Anbefales ikke i andre sammenhenger."
@@ -697,7 +697,6 @@ time_years_from_now: "%s år fra nå"
 tip_2fa_sent: "En e-post som inneholder en 2FA-kode, er sendt til e-postadressen din. Vennligst bekreft denne koden nedenfor for å få tilgang til frontenden. Hvis du ikke mottok denne e-posten, kan du prøve å logge ut, vente i 10 minutter og logge på igjen for å motta en ny e-post som inneholder en ny kode."
 tip_accounts: "Hallo, {username}.<br />Du kan kontrollere hvem som kan få tilgang til CIDRAM-frontenden ved hjelp av kontosiden."
 tip_aux: "Hallo, {username}.<br />Du kan bruke denne siden til å opprette, slette og endre tilleggsregler for CIDRAM."
-tip_aux_operators: "Hint: Hvis en tilstand trenger en annen type operatør, du kan legge den til i begynnelsen av verdien (krever direkte streng sammenligning)."
 tip_aux_priority: "Prioritet (høyeste➡(lik🔄tilsvarende)➡lavest):"
 tip_aux_webhooks: "Når en regel utløses, CIDRAM vil prøve å varsle eventuelle tilkoblede nettkroker om hendelsen."
 tip_backup: "Hallo, {username}.<br />Denne siden kan brukes til å importere/eksportere konfigurasjonen din, tilleggsregler din, osv. Dette kan være nyttig hvis du trenger å migrere data på tvers av forskjellige installasjoner eller forskjellige hovedversjoner."
@@ -723,6 +722,7 @@ tip_ip_test_switches: "(Når ikke valgt, blir bare signaturfiler testet mot)."
 tip_ip_tracking: "Hallo, {username}.<br />IP-sporing-siden lar deg sjekke sporingsstatus for IP-adresser, for å sjekke hvilken av dem som er blitt utestengt, og å oppheve utestengt status eller slutte å spore hvis du vil gjøre det."
 tip_logs: "Hallo, {username}.<br />Velg en loggfil fra listen nedenfor for å se innholdet i den loggfilen."
 tip_number_of_infractions: "Hvor mange overtredelser å pådra."
+tip_numeric_comparison: "For å bruke numerisk sammenligning, velg direkte streng sammenligning eller automatisk metodedeteksjon, sørg for at betingelsens verdi er numerisk, og prefiks den med ønsket operator.<br />F.eks., for «likeverdige» betingelser, &gt;=2 gir ≥2, &lt;=2 gir ≤2, for «ikke likeverdige» betingelser, &gt;=2 gir ≱2, &lt;=2 gir ≰2, osv."
 tip_range: "Hallo, {username}.<br />Denne siden viser noen grunnleggende statistiske opplysninger om signaturene som dekkes av de aktive signaturfilene."
 tip_range_intersector: "Hallo, {username}.<br />Kryssverktøy kan brukes til å bestemme de vanlige faktorene fra to sett med områder."
 tip_range_subtractor: "Hallo, {username}.<br />Subtraktoren kan brukes til å trekke fra et område med IPer/CIDRer fra et annet."

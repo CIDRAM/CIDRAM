@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2023.08.23).
+# This file: Portuguese language data for the front-end (last modified: 2023.09.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -703,7 +703,6 @@ time_years_from_now:
 tip_2fa_sent: "Um e-mail contendo um código de autenticação de dois fatores foi enviado para o seu endereço de e-mail. Por favor, confirme este código abaixo para obter acesso ao front-end. Se você não recebeu este e-mail, tente fazer logout, aguarde 10 minutos, e faça login novamente para receber um novo e-mail contendo um novo código."
 tip_accounts: "Olá, {username}.<br />A página de contas permite que você controle quem pode acessar o CIDRAM front-end."
 tip_aux: "Olá, {username}.<br />Você pode usar esta página para criar, deletar e modificar regras auxiliares para o CIDRAM."
-tip_aux_operators: "Dica: Se uma condição precisar de um tipo de operador diferente, você pode adicioná-lo ao início de seu valor (requer comparação direta de string)."
 tip_aux_priority: "Prioridade (altíssima➡(igual🔄equivalente)➡baixíssima):"
 tip_aux_webhooks: "Quando uma regra é acionada, o CIDRAM tentará notificar quaisquer webhooks conectados sobre o evento."
 tip_backup: "Olá, {username}.<br />Esta página pode ser usada para importar/exportar sua configuração, regras auxiliares, etc. Isso pode ser útil se você precisar migrar dados entre diferentes instalações ou diferentes versões principais."
@@ -729,6 +728,7 @@ tip_ip_test_switches: "(Quando não selecionado, somente os arquivos de assinatu
 tip_ip_tracking: "Olá, {username}.<br />A página de monitoração IP permite verificar o status de monitoração de endereços IP, para verificar quais deles foram banidos, e para cancelar monitoração para eles se você quiser fazê-lo."
 tip_logs: "Olá, {username}.<br />Selecionar um arquivo de log da lista abaixo para visualizar o conteúdo desse arquivo de log."
 tip_number_of_infractions: "Quantas infrações incorrer."
+tip_numeric_comparison: "Para usar a comparação numérica, selecione comparação direta de strings ou detecção automática de método, certifique-se de que o valor da condição seja numérico, e prefixe-o com o operador desejado.<br />Por exemplo, para condições "iguais", &gt;=2 fornece ≥2, &lt;=2 fornece ≤2, para condições "não iguais", &gt;=2 fornece ≱2, &lt;=2 fornece ≰2, etc."
 tip_range: "Olá, {username}.<br />Esta página mostra algumas informações estatísticas básicas sobre os IPs abrangidos pelos arquivos de assinatura ativos no momento."
 tip_range_intersector: "Olá, {username}.<br />O intersetor de alcance pode ser usado para determinar os fatores comuns de dois conjuntos de alcances."
 tip_range_subtractor: "Olá, {username}.<br />O subtrator de alcance pode ser usado para subtrair um alcance de IPs/CIDRs de outro."

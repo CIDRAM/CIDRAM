@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2023.08.23).
+# This file: Polish language data for the front-end (last modified: 2023.09.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -722,7 +722,6 @@ time_years_from_now:
 tip_2fa_sent: "Na twój adres e-mail została wysłana wiadomość e-mail zawierająca dwuskładnikowy kod uwierzytelniający. Potwierdź poniższy kod, aby uzyskać dostęp do interfejsu użytkownika. Jeśli nie otrzymałeś tego e-maila, spróbuj się wylogować, poczekać 10 minut i zalogować się ponownie, aby otrzymać nowy e-mail zawierający nowy kod."
 tip_accounts: "Witaj, {username}.<br />Strona kont pozwala kontrolować, kto może uzyskać dostęp do interfejsu użytkownika CIDRAM."
 tip_aux: "Witaj, {username}.<br />Za pomocą tej strony można tworzyć, usuwać i modyfikować reguły pomocnicze dla CIDRAM."
-tip_aux_operators: "Wskazówka: Jeśli warunki wymaga innego rodzaju operatora, możesz dodać go na początku jego wartości (wymaga bezpośredniego porównania ciągów)."
 tip_aux_priority: "Priorytet (najwyższy➡(równy🔄odpowiednik)➡najniższy):"
 tip_aux_webhooks: "Gdy reguła jest spełniona, CIDRAM podejmie próbę powiadomienia wszystkich podłączonych haczyków internetowych o zdarzeniu."
 tip_backup: "Witaj, {username}.<br />Ta strona może służyć do importowania/eksportowania konfiguracji, reguł pomocniczych, itp. To może być przydatne, jeśli trzeba przeprowadzić migrację danych między różnymi instalacjami lub różnymi głównymi wersjami."
@@ -748,6 +747,7 @@ tip_ip_test_switches: "(Jeśli ta opcja nie jest zaznaczona, tylko pliki podpis 
 tip_ip_tracking: "Witaj, {username}.<br />Strona śledzenia IP pozwala sprawdzić status śledzenia adresów IP, sprawdzić, które z nich zostały zbanowane, a także odblokować/wyśledzić je, jeśli chcesz to zrobić."
 tip_logs: "Witaj, {username}.<br />Wybierz plik dziennika z poniższej listy, aby wyświetlić zawartość tego pliku dziennika."
 tip_number_of_infractions: "Ile wykroczeń ponieść."
+tip_numeric_comparison: "Aby użyć porównania numerycznego, wybierz bezpośrednie porównanie ciągów lub automatyczne wykrywanie metody, upewnij się, że wartość warunku jest liczbowa, i poprzedź ją żądanym operatorem.<br />Np., dla „równych” warunków, &gt;=2 daje ≥2, &lt;=2 daje ≤2, dla „nie równych” warunków, &gt;=2 daje ≱2, &lt;=2 daje ≰2, itp."
 tip_range: "Witaj, {username}.<br />Ta strona pokazuje podstawowe informacje statystyczne o zakresach adresów IP objętych obecnie aktywnymi plikami podpis."
 tip_range_intersector: "Witaj, {username}.<br />Narzędzie do przecinania zakresów może służyć do określenia wspólnych czynników z dwóch zestawów zakresów."
 tip_range_subtractor: "Witaj, {username}.<br />Subtraktora zakresu można użyć do odjęcia jednego zakresu adresów IP/CIDR od drugiego."

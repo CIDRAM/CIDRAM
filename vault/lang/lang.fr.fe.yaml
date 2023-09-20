@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2023.08.23).
+# This file: French language data for the front-end (last modified: 2023.09.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -362,7 +362,7 @@ label_aux_expiry: "Quand la règle doit expirer (optionnelle)\_:"
 label_aux_from: "Quand la règle doit commencer (optionnelle)\_:"
 label_aux_http_status_code_override: "Remplacement du code d'état HTTP\_:"
 label_aux_logic_all: "Pour déclencher la règle, toutes les conditions doivent être remplies."
-label_aux_logic_any: "Toute condition "égal" (=) peut déclencher la règle, tant que toutes les conditions "non égal" (≠) sont également remplies."
+label_aux_logic_any: "Toute condition «\_égal\_» (=) peut déclencher la règle, tant que toutes les conditions «\_inégales\_» (≠) sont également remplies."
 label_aux_menu_action: "Si les conditions suivantes sont remplies, %s la requête."
 label_aux_menu_method: "Utilisez %s pour tester les conditions."
 label_aux_mode_edit: "Mode d'édition"
@@ -703,7 +703,6 @@ time_years_from_now:
 tip_2fa_sent: "Un e-mail contenant un code d'authentification à deux facteurs a été envoyé à votre adresse e-mail. Veuillez confirmer ce code ci-dessous pour obtenir un accès frontal. Si vous n'avez pas reçu cet e-mail, essayez de vous déconnecter, d'attendre 10 minutes, et de vous reconnecter pour recevoir un nouvel e-mail contenant un nouveau code."
 tip_accounts: "Bonjour, {username}.<br />La page des comptes vous permet de contrôler qui peut accéder l'accès frontal de CIDRAM."
 tip_aux: "Bonjour, {username}.<br />Vous pouvez utiliser cette page pour créer, supprimer et modifier des règles auxiliaires pour CIDRAM."
-tip_aux_operators: "Remarque\_: Si une condition a besoin d'un autre type d'opérateur, vous pouvez l'ajouter au début de sa valeur (nécessite une comparaison directe de chaînes)."
 tip_aux_priority: "Priorité (plus haut➡(égale🔄équivalent)➡plus bas)\_:"
 tip_aux_webhooks: "Lorsqu'une règle est déclenchée, CIDRAM tentera d'informer tous les webhooks connectés de l'événement."
 tip_backup: "Bonjour, {username}.<br />Cette page peut être utilisé pour importer/exporter votre configuration, des règles auxiliaires, etc. Cela peut être utile si vous devez migrer des données entre différentes installations ou différentes versions majeures."
@@ -729,6 +728,7 @@ tip_ip_test_switches: "(Lorsque cette option n'est pas sélectionnée, seuls les
 tip_ip_tracking: "Bonjour, {username}.<br />La page de surveillance IP vous permet de vérifier l'état de surveillance des adresses IP, pour vérifier lesquels d'entre eux ont été interdits, et d'annuler la surveillance si vous voulez le faire."
 tip_logs: "Bonjour, {username}.<br />Sélectionnez un fichier journal dans la liste ci-dessous pour afficher le contenu de ce fichier journal."
 tip_number_of_infractions: "Combien d'infractions encourir."
+tip_numeric_comparison: "Pour utiliser la comparaison numérique, sélectionnez la comparaison directe de chaînes ou la détection automatique de méthode, assurez-vous que la valeur de la condition est numérique, et préfixez-la avec l'opérateur souhaité.<br />Par exemple, pour les conditions «\_égales\_», &gt;=2 fournit ≥2, &lt;=2 fournit ≤2, pour les conditions «\_inégales\_», &gt;=2 fournit ≱2, &lt;=2 fournit ≰2, etc."
 tip_range: "Bonjour, {username}.<br />Cette page affiche des informations statistiques sur les plages IP couvertes par les fichiers de signatures actuellement actifs."
 tip_range_intersector: "Bonjour, {username}.<br />L'intersecteur de gamme peut être utilisé pour déterminer les facteurs communs à partir de deux ensembles de gammes."
 tip_range_subtractor: "Bonjour, {username}.<br />Le soustracteur de gamme peut être utilisé pour soustraire une gamme d'IP/d'CIDR d'une autre."

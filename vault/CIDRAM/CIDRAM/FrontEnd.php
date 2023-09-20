@@ -3978,21 +3978,11 @@ class FrontEnd extends Core
             /** Data has been submitted for testing. */
             if (isset($_POST['ip-addr'])) {
                 if ($this->CIDRAM['TestMode'] === 1) {
-                    if ($this->FE['ip-addr'] === '') {
-                        $Working = $this->FE['ip-addr-focus'] === '' ? [] : $this->FE['ip-addr-focus'];
-                    } else {
-                        $Working = $this->FE['ip-addr'];
-                    }
                     $Working = array_unique(array_map(function ($IP) {
                         return preg_replace('~[^\da-f:./]~i', '', $IP);
-                    }, explode("\n", str_replace("\r", '', $Working))));
+                    }, explode("\n", str_replace("\r", '', $this->FE['ip-addr'] ?: $this->FE['ip-addr-focus']))));
                 } else {
-                    if ($this->FE['custom-ua'] === '') {
-                        $Working = $this->FE['custom-ua-focus'] === '' ? [] : $this->FE['custom-ua-focus'];
-                    } else {
-                        $Working = $this->FE['custom-ua'];
-                    }
-                    $Working = explode("\n", str_replace("\r", '', $Working));
+                    $Working = explode("\n", str_replace("\r", '', $this->FE['custom-ua'] ?: $this->FE['custom-ua-focus']));
                 }
                 natsort($Working);
                 $this->CIDRAM['ThisIP'] = [];

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Romanian language data for the front-end (last modified: 2023.09.04).
+# This file: Romanian language data for the front-end (last modified: 2023.09.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -23,3 +23,32 @@
 # know which, and I can delete it. If you're not sure how to perform pull
 # requests, ask. I can help.
 ##/
+
+Extended Description:
+ AbuseIPDB module: "Blochează solicitările de la IP-uri listate la AbuseIPDB."
+ BGPView module: "Utilizează {{Links.BGPView}} API pentru a oferi o facilitate de căutare ASN și cod de țară pentru CIDRAM, permițând blocarea sau înscrierea în lista albă a ASN-urilor și a țărilor prin configurația CIDRAM, și oferind un mijloc de verificare a rețelelor sociale pentru a verifica solicitările Facebook. (Dacă utilizați acest modul, nu va trebui să utilizați modulul IP-API, deoarece au același scop)."
+ Bad TLDs blocker module: "Blochează gazdele aparținând TLD-urilor utilizate frecvent de spammeri, hackeri, și alte entități nefaste."
+ Bad hosts blocker module: "Blochează gazdele utilizate frecvent de spammeri, hackeri, și alte entități nefaste."
+ Bot user agents module: "Blochează agenții utilizatori asociați cu roboți nedoriți și cu activități nefaste."
+ Bypasses: "Fișierele implicite de ocolire a semnăturii incluse în mod normal în pachetul principal."
+ Chart.js: "Permite front-end-ului să genereze diagrame donut.<br />{{Links.Chart.js}} este disponibil prin licența {{Links.MIT}}."
+ Cookie scanner module: "Oferă unele protecții limitate împotriva cookie-urilor periculoase."
+ HTTP version checker module: "Face posibilă blocarea anumitor protocoale și versiuni HTTP prin configurația CIDRAM."
+ IP-API module: "Utilizează {{Links.IP-API}} API pentru a oferi o facilitate de căutare ASN și cod de țară pentru CIDRAM, permițând blocarea sau înscrierea în lista albă a ASN-urilor și a țărilor prin configurația CIDRAM, și oferind un mijloc de verificare a rețelelor sociale pentru a verifica solicitările Facebook. (Dacă utilizați acest modul, nu va trebui să utilizați modulul BGPView, deoarece au același scop)."
+ IPv4: &ExtDesCloud "Blochează serviciile cloud nedorite și punctele finale non-umane."
+ IPv4-Bogons: &ExtDesBogons "Blochează CIDR-urile bogon/martian."
+ IPv4-ISPs: &ExtDesISPs "Blochează ISP-urile periculoase și spam (include rețele multiplay, care pot conține atât puncte finale umane, cât și non-umane)."
+ IPv4-Nonblocking: &ExtDesNonblocking "Util pentru profilare, dar nu blochează nimic în sine."
+ IPv4-Other: &ExtDesOther "Blochează CIDR-urile pentru proxy-uri, VPN-uri, și alte servicii diverse nedorite."
+ IPv6: *ExtDesCloud
+ IPv6-Bogons: *ExtDesBogons
+ IPv6-ISPs: *ExtDesISPs
+ IPv6-Nonblocking: *ExtDesNonblocking
+ IPv6-Other: *ExtDesOther
+ Optional security extras module: "Oferă unele protecții limitate împotriva diferiților vectori de atac utilizați în mod obișnuit în solicitări."
+ PHPMailer: "Necesar pentru utilizarea oricărei funcționalități care implică trimiterea de e-mailuri.<br />{{Links.PHPMailer.PHPMailer}} este disponibil prin licența {{Links.PHPMailer.License}}."
+ Project Honeypot module: "Blochează solicitările de la IP-uri listate la Project Honeypot."
+ Protocol blocker module: "Oferă posibilitatea de a bloca anumite protocoale de solicitare prin intermediul configurației (de exemplu, HTTP/0.9, HTTP/1.1, SPDY/3.0, etc). Notă: Nu va avea niciun efect pentru acele site-uri web de rutare prin servicii care rescriu solicitările pentru a folosi exact același protocol, cum ar fi Cloudflare."
+ Referrer spam module: "Blocarea bazată pe spam de referință nu va oferi, în general, niciun beneficiu semnificativ de securitate, dar în unele cazuri, ar putea fi utilă pentru unii utilizatori, pentru a colecta mai multe informații despre solicitări și pentru a le putea raporta.<br />Instalarea acestui modul instalează și polifillurile Symfony pentru {{Links.Symfony.Intl/Idn}} (deoarece acest modul necesită funcționalitate Idn, pe care nu toate instalările PHP o oferă implicit), disponibil prin licența {{Links.MIT}}."
+ Stop Forum Spam module: "Protejează paginile de înregistrare și autentificare împotriva IP-urilor enumerate de SFS."
+ Tor blocker module: "Interzice accesul de la nodurile de ieșire Tor prin căutări DNSEL (acceptă atât IPv4, cât și IPv6)."

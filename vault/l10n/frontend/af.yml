@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Afrikaans language data for the front-end (last modified: 2023.09.19).
+# This file: Afrikaans language data for the front-end (last modified: 2023.09.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -430,6 +430,121 @@ info_cli_you_can_also_w: "Jy kan ook na lêers skryf soos so:"
 info_cli_you_can_print_: |
  Jy kan data na die skerm druk soos so (soms nuttig wanneer opdragte geketting
  word):
+Some useful links: |
+ Nuttige skakels:<br />
+     <ul class="pieul">
+       <li><span class="comCat">Gereedskap, hulpbronne, ens vir CIDRAM.</span>
+         <ul class="comSub">
+           <li>{{Links.CIDRAM.Issues}} – Kwessies bladsy vir CIDRAM (ondersteuning, bystand, ens).</li>
+           <li>{{Links.CIDRAM.WordPress}} – WordPress-uitbreiding vir CIDRAM.</li>
+           <li>{{Links.CIDRAM.Extras}} – Verskeie ekstras.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Groepe, forums, gemeenskappe, ens.</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Facebook}} – PHP leerhulpbronne en bespreking.</li>
+           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Forum@Stop Forum Spam</a> – Nuttige besprekingsforum oor die stop van spam.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Ander nuttige gereedskap, hulpbronne, dienste, ens.</span>
+         <ul class="comSub">
+           <li>{{Links.SFS}} – Onderhou 'n databasis van bekende forum spammers. Nuttig om webwerwe en forums teen spammers te beskerm.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Gereedskapstel</a> – Kry CIDR's van ASN'e, bepaal ASN-verwantskappe, ontdek ASN's gebaseer op netwerkname, ens.</li>
+           <li>{{Links.BGPView}} – Kry CIDR's van ASN'e, bepaal ASN-verwantskappe, ontdek ASN's gebaseer op netwerkname, ens.</li>
+           <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar deur Qrator</a> – Nuttige hulpmiddel om die konnektiwiteit van ASN'e na te gaan, asook vir verskeie ander inligting oor ASN'e.</li>
+           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Die Spamhaus Projek</a> – Vertoon verslae oor botnet-infeksiekoerse vir ASN'e.</li>
+           <li>{{Links.AbuseIPDB}} – Onderhou 'n databasis van bekende beledigende IP's; Verskaf 'n API om IP's na te gaan en aan te meld.</li>
+           <li>{{Links.IP-API}} – Kry inligting oor IP-adresse of gasheername soos landkode, streeknaam, lengtegraad, breedtegraad, organisasienaam, ens.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Inligtings en leerhulpbronne.</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Website}} – PHP leerhulpbronne en bespreking.</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Kwesbaarheidskaarte</a> – Lys veilige/onveilige weergawes van verskeie pakkette (HHVM, PHP, phpMyAdmin, Python, ens).</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Verenigbaarheidskaarte</a> – Lys versoenbaarheidsinligting vir verskeie pakkette (CIDRAM, phpMussel, ens).</li>
+         </ul>
+       </li>
+     </ul>
+
+label:
+ %s across %s file:
+  - "%s oor %s lêer"
+  - "%s oor %s lêers"
+ %s is available (%s): "%s beskikbaar is (%s)."
+ %s is available: "%s beskikbaar is."
+ %s is not available: "%s is nie beskikbaar nie."
+ %s signature:
+  - "%s handtekening"
+  - "%s handtekeninge"
+ 200 OK: "200 OK\nMinste robuust, maar mees gebruikersvriendelik. Outomatiese versoeke sal heel waarskynlik hierdie reaksie interpreteer as 'n aanduiding dat die versoek suksesvol was."
+ 301 Moved Permanently: "301 Permanent Verskuif\nGee die kliënt opdrag dat die herleiding PERMANENT is, en dat die versoekmetode wat vir die herleiding gebruik word, anders MAG wees as die versoekmetode wat vir die aanvanklike versoek gebruik is."
+ 302 Found: "302 Gevind\nGee die kliënt opdrag dat die herleiding TYDELIK is, en dat die versoekmetode wat vir die herleiding gebruik word, anders MAG wees as die versoekmetode wat vir die aanvanklike versoek gebruik is."
+ 307 Temporary Redirect: "307 Tydelike Herleiding\nGee die kliënt opdrag dat die herleiding TYDELIK is, en dat die versoekmetode wat vir die herleiding gebruik word, NIE anders mag wees as die versoekmetode wat vir die aanvanklike versoek gebruik is nie."
+ 308 Permanent Redirect: "308 Permanente Herleiding\nGee die kliënt opdrag dat die herleiding PERMANENT is, en dat die versoekmetode wat vir die herleiding gebruik word, NIE anders mag wees as die versoekmetode wat vir die aanvanklike versoek gebruik is nie."
+ 403 Forbidden: "403 Verbied\nMeer robuust, maar minder gebruikersvriendelik. Aanbeveel vir die meeste algemene omstandighede."
+ 410 Gone: "410 Weg\nKan probleme veroorsaak wanneer vals positiewes opgelos te word, omdat sommige blaaiers hierdie statusboodskap sal kas en nie daaropvolgende versoeke sal stuur nie, selfs nadat dit gedeblokkeer is. Kan in sommige kontekste die verkieslikste wees vir sekere soorte verkeer."
+ 418 I_m a teapot: "418 Ek is 'n teepot\nVerwys na 'n Aprilgrap ({{Links.RFC2324}}). Dit is baie onwaarskynlik om deur enige kliënt, bot, blaaier, of andersins verstaan te word. Verskaf vir vermaak en gerief, maar word nie algemeen aanbeveel nie."
+ 429 Too Many Requests: "429 Te veel versoeke\nAanbeveel vir tariefbeperking, wanneer DDoS-aanvalle hanteer word, en vir vloedvoorkoming. Word nie in ander kontekste aanbeveel nie."
+ 451 Unavailable For Legal Reasons: "451 Onbeskikbaar vir regsredes\nAanbeveel wanneer blokkeer hoofsaaklik om regsredes. Word nie in ander kontekste aanbeveel nie."
+ 503 Service Unavailable: "503 Diens Onbeskikbaar\nMees robuust, maar die minste gebruikersvriendelik. Aanbeveel vir wanneer onder aanval, of vir die hantering van uiters aanhoudende ongewenste verkeer."
+ Active IPv4 signature files: "Aktiewe IPv4-handtekeninglêers"
+ Active IPv6 signature files: "Aktiewe IPv6-handtekeninglêers"
+ Active configuration file: "Aktiewe konfigurasielêer:"
+ Active events: "Aktiewe geleenthede"
+ Active imports: "Aktiewe invoere"
+ Active modules: "Aktiewe modules"
+ Actual: "Werklike"
+ Allow, but only when also blocked: "Laat dit toe, maar slegs wanneer dit ook geblokkeer is."
+ Allow: "Laat dit toe."
+ Bandwidth: "Bandwydte gebruik: %s – Bandwydte beskikbaar: %s"
+ Branch latest stable: "Tak nuutste stal:"
+ CAPTCHA attempts: "CAPTCHA-pogings"
+ CIDRAM disk usage: "CIDRAM skyf gebruik:"
+ CIDRAM version used: "CIDRAM weergawe gebruik:"
+ Cache data and temporary files: "Kas data en tydelike lêers"
+ Checkbox: "Merkblokkie"
+ Checksum after: "Kontrolesom na"
+ Checksum before: "Kontrolesom voor"
+ Client information: "Kliënt inligting:"
+ Comment Spammer: "Kommentaar Spammer"
+ Complete access: "Volledige toegang"
+ Component is active: "Komponent is aktief."
+ Component is inactive: "Komponent is onaktief."
+ Component is partially active: "Komponent is gedeeltelik aktief."
+ Component is provisional: "Komponent is voorlopig."
+ Component updates metadata: "Komponent opdateringsmetadata"
+ Compress: "Druk saam"
+ Current data for %s: "Huidige data vir "%s"."
+ Current data: "Huidige data."
+ Default: "Verstek"
+ Deny: "Ontken dit."
+ Dependencies: "Afhanklikhede:"
+ Difference: "Verskil"
+ Displaying %s entry that cites %s:
+  - "Wys %s inskrywing wat "%s" aanhaal."
+  - "Wys %s inskrywings wat "%s" aanhaal."
+ Displaying %s entry:
+  - "Wys %s inskrywing."
+  - "Wys %s inskrywings."
+ Empty, unfamiliar, and others: "Leë, onbekende, en ander."
+ Entries per page: "Inskrywings per bladsy:"
+ Every request: "Elke versoek.\nMeer streng en deeglik, maar ook meer geneig om te lei dat limiete en kwotas baie vinniger nagekom word, wat moontlik tot gevolg kan hê dat die diens uitgesluit word wanneer dit die nodigste is. Ook, alhoewel opsoekresultate altyd in die kas gestoor word, kan dit nog steeds webwerfprestasie in sommige gevalle negatief beïnvloed. Mag in sommige gevalle nodig wees, maar word nie algemeen aanbeveel nie."
+ Expected: "Verwagte"
+ Expires: "Verstryking:"
+ Export: "Uitvoer"
+ Extension: "Uitbreiding"
+ External: "Ekstern"
+ False positive risk: "Vals positiewe risiko:"
+ Fancy: "Fancy"
+ Focus: "Fokus:"
+ Free disk space: "Vrye skyfspasie:"
+ Greylist the request: "Gryslys die versoek.\nStel die aantal handtekeninge terug, maar gaan voort om die versoek te verwerk. Aanbeveel wanneer jy nie die versoek wil witlys nie, maar iets aansienliker benodig as om 'n omleiding."
+ Harvester: "Stroper"
+ Hide: "Versteek"
+ Ignore this: "Ignoreer dit"
+ Import: "Invoer"
+ Installed Available: "Geïnstalleer/Beskikbaar"
+ Integrity check: "Integriteitskontrole:"
 warning:
  API_Rate_Limited: "Waarskuwing: Toegang tot die %s API blyk tans tariefbeperk te wees."
  Cookies: "Kennis neem: CIDRAM gebruik 'n koekie vir die verifikasie van aanmeldings. Deur aan te meld, gee jy jou toestemming dat 'n koekie deur jou blaaier geskep en gestoor word."

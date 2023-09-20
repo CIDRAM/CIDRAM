@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2023.09.19).
+ * This file: Front-end functions file (last modified: 2023.09.20).
  */
 
 /**
@@ -877,7 +877,7 @@ $CIDRAM['SimulateBlockEvent'] = function (string $Addr, bool $Modules = false, b
         'IPAddrResolved' => $CIDRAM['Resolve6to4']($Addr),
         'Query' => !empty($CIDRAM['FE']['custom-query']) ? $CIDRAM['FE']['custom-query'] : 'SimulateBlockEvent',
         'Referrer' => !empty($CIDRAM['FE']['custom-referrer']) ? $CIDRAM['FE']['custom-referrer'] : 'SimulateBlockEvent',
-        'UA' => !empty($CIDRAM['FE']['custom-ua']) ? $CIDRAM['FE']['custom-ua'] : 'SimulateBlockEvent',
+        'UA' => isset($CIDRAM['FE']['custom-ua']) ? str_replace(['&quot;', '&gt;', '&lt;', '&amp;'], ['"', '>', '<', '&'], $CIDRAM['FE']['custom-ua']) : 'SimulateBlockEvent',
         'ReasonMessage' => '',
         'SignatureCount' => 0,
         'Signatures' => '',

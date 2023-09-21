@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used for auxiliary rules (last modified: 2023.09.19).
+ * This file: Methods used for auxiliary rules (last modified: 2023.09.21).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -358,34 +358,34 @@ trait AuxiliaryRules
             }
 
             /** Figure out which options are available for the rule (view mode). */
-            $Options = ['(<span onclick="javascript:%s(\'' . $this->escapeJsInHTML($Name) . '\',\'' . $RuleClass . '\')"><code class="s">%s</code></span>)'];
+            $Options = ['(<span onclick="javascript:%s(\'' . $this->escapeJsInHTML($Name) . '\',\'' . $RuleClass . '\')"><code><span class="auxicon %s" title="%s"></span><span class="s auxicontxt">%s</span></code></span>)'];
             if (empty($Data['Disable this rule'])) {
-                $Options['disableRule'] = sprintf($Options[0], 'disableRule', '<span style="position:relative;top:-2px" class="txtRd">⏸</span>' . $this->L10N->getString('label.aux_special_disable'));
+                $Options['disableRule'] = sprintf($Options[0], 'disableRule', 'auxbl pause', '⏸', $this->L10N->getString('label.aux_special_disable'));
             } else {
-                $Options['enableRule'] = sprintf($Options[0], 'enableRule', '<span style="position:relative;top:-3px" class="txtGn">▶</span>' . $this->L10N->getString('label.aux_special_enable'));
+                $Options['enableRule'] = sprintf($Options[0], 'enableRule', 'auxgn play', '▶', $this->L10N->getString('label.aux_special_enable'));
             }
             if ($Count > 1) {
                 if ($Current !== 1) {
                     if ($Current !== 2) {
-                        $Options['moveUp'] = sprintf($Options[0], 'moveUp', '<span class="txtBl">↑</span>' . $this->L10N->getString('label.aux_move_up'));
+                        $Options['moveUp'] = sprintf($Options[0], 'moveUp', 'auxbl up1', '↑', $this->L10N->getString('label.aux_move_up'));
                     }
-                    $Options['moveToTop'] = sprintf($Options[0], 'moveToTop', '<span class="txtBl">↑↑</span>' . $this->L10N->getString('label.aux_move_top'));
+                    $Options['moveToTop'] = sprintf($Options[0], 'moveToTop', 'auxbl up2', '↑↑', $this->L10N->getString('label.aux_move_top'));
                 }
                 if ($Current !== $Count) {
                     if ($Current !== ($Count - 1)) {
-                        $Options['moveDown'] = sprintf($Options[0], 'moveDown', '<span class="txtBl">↓</span>' . $this->L10N->getString('label.aux_move_down'));
+                        $Options['moveDown'] = sprintf($Options[0], 'moveDown', 'auxbl down1', '↓', $this->L10N->getString('label.aux_move_down'));
                     }
-                    $Options['moveToBottom'] = sprintf($Options[0], 'moveToBottom', '<span class="txtBl">↓↓</span>' . $this->L10N->getString('label.aux_move_bottom'));
+                    $Options['moveToBottom'] = sprintf($Options[0], 'moveToBottom', 'auxbl down2', '↓↓', $this->L10N->getString('label.aux_move_bottom'));
                 }
             }
             unset($Options[0]);
             $Options['exportRule'] = sprintf(
-                '(<span onclick="javascript:{document.getElementById(\'xprtName\').value=\'%s\';document.getElementById(\'xprtForm\').submit()}"><code class="s">%s</code></span>)',
+                '(<span onclick="javascript:{document.getElementById(\'xprtName\').value=\'%s\';document.getElementById(\'xprtForm\').submit()}"><code><span class="auxicon auxbl export"></span><span class="s auxicontxt">%s</span></code></span>)',
                 $this->escapeJsInHTML($Name),
                 $this->L10N->getString('label.Export')
             );
             $Options['delRule'] = sprintf(
-                '(<span onclick="javascript:confirm(\'%s\')&&delRule(\'' . $this->escapeJsInHTML($Name) . '\',\'' . $RuleClass . '\')"><code class="s"><span class="txtRd">⌧</span>%s</code></span>)',
+                '(<span onclick="javascript:confirm(\'%s\')&&delRule(\'' . $this->escapeJsInHTML($Name) . '\',\'' . $RuleClass . '\')"><code><span class="auxicon auxrd delete" title="⌧"></span><span class="s auxicontxt">%s</span></code></span>)',
                 $this->escapeJsInHTML(sprintf($this->L10N->getString('confirm.Delete'), $Name)),
                 $this->L10N->getString('field.Delete')
             );

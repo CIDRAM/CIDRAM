@@ -113,8 +113,11 @@ blockquote.comSub{margin:-2px 0 0 0;padding:0 0 0 0}
 @keyframes forRotate{0%{transform:rotate(0)}100%{transform:rotate({45deg})}}
 @keyframes revRotate{0%{transform:rotate({45deg})}100%{transform:rotate(0)}}
 .navicon{display:inline-block;filter:invert(85%) saturate(1074%) hue-rotate(-154deg) brightness(100%) contrast(87%);position:relative;top:1px;width:16px;height:16px}
-.hoverglow{filter:invert(90%) sepia(8%) saturate(574%) hue-rotate(174deg) brightness(98%) contrast(90%)}
+.auxicon{display:inline-block;position:relative;top:1px;width:12px;height:12px}
+.auxbl,.hoverglow{filter:invert(90%) sepia(8%) saturate(574%) hue-rotate(174deg) brightness(98%) contrast(90%)}
 a:hover>.navicon,a:active>.navicon,a:focus>.navicon,.hoverglow:hover,.hoverglow:active,.hoverglow:focus{filter:invert(91%) sepia(87%) saturate(611%) hue-rotate(298deg) brightness(100%) contrast(109%)}
+.auxgn{filter:invert(76%) sepia(43%) saturate(368%) hue-rotate(52deg) brightness(92%) contrast(88%)}
+.auxrd{filter:invert(76%) sepia(43%) saturate(275%) hue-rotate(-25deg) brightness(101%) contrast(102%)}
 select+input[type=submit],select+input[type=button]{height:20px;margin-{FE_Align}:-3px;border-bottom-{FE_Align}-radius:0;border-top-{FE_Align}-radius:0;padding-{FE_Align}:3px}
 select,input[type=submit],input[type=reset],input[type=button],input[type=text],input[type=password],input[type=number],input[type=date],input[type=time],button{box-sizing:border-box;height:20px;padding-top:0;padding-bottom:0}
 select[class=auto]+select[class=auto]{margin-{FE_Align}:-3px;margin-{FE_Align_Reverse}:0}
@@ -198,3 +201,12 @@ input[disabled],input[disabled]+label{cursor:not-allowed}
 .flexrow{display:flex}
 .flexin{margin-{FE_Align}:-1px;margin-{FE_Align_Reverse}:1px;width:auto;flex-grow:1}
 .xscroller{overflow-x:auto}
+.auxicon.delete{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxdelete.svg}{/Base64Encode})}
+.auxicon.down1{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxdown1.svg}{/Base64Encode})}
+.auxicon.down2{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxdown2.svg}{/Base64Encode})}
+.auxicon.export{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxexport.svg}{/Base64Encode})}
+.auxicon.pause{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxpause.svg}{/Base64Encode})}
+.auxicon.play{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxplay.svg}{/Base64Encode})}
+.auxicon.up1{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxup1.svg}{/Base64Encode})}
+.auxicon.up2{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxup2.svg}{/Base64Encode})}
+.auxicontxt{padding:0 3px 0 3px}

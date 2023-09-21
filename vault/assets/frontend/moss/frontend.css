@@ -197,6 +197,18 @@ input[disabled],input[disabled]+label{cursor:not-allowed}
 .toolTip{cursor:help}
 .flexrow{display:flex}
 .flexin{margin-{FE_Align}:-1px;margin-{FE_Align_Reverse}:1px;width:auto;flex-grow:1}
-.hoverglow{filter:invert(17%) sepia(44%) saturate(408%) hue-rotate(47deg) brightness(97%) contrast(89%)}
+.auxicon{display:inline-block;position:relative;top:1px;width:12px;height:12px}
+.auxbl,.hoverglow{filter:invert(17%) sepia(44%) saturate(408%) hue-rotate(47deg) brightness(97%) contrast(89%)}
 .hoverglow:hover,.hoverglow:active,.hoverglow:focus{filter:invert(41%) sepia(7%) saturate(1254%) hue-rotate(22deg) brightness(99%) contrast(81%)}
+.auxgn{filter:invert(49%) sepia(79%) saturate(353%) hue-rotate(70deg) brightness(93%) contrast(87%)}
+.auxrd{filter:invert(39%) sepia(9%) saturate(3390%) hue-rotate(-46deg) brightness(87%) contrast(88%)}
 .xscroller{overflow-x:auto}
+.auxicon.delete{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxdelete.svg}{/Base64Encode})}
+.auxicon.down1{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxdown1.svg}{/Base64Encode})}
+.auxicon.down2{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxdown2.svg}{/Base64Encode})}
+.auxicon.export{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxexport.svg}{/Base64Encode})}
+.auxicon.pause{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxpause.svg}{/Base64Encode})}
+.auxicon.play{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxplay.svg}{/Base64Encode})}
+.auxicon.up1{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxup1.svg}{/Base64Encode})}
+.auxicon.up2{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxup2.svg}{/Base64Encode})}
+.auxicontxt{padding:0 3px 0 3px}

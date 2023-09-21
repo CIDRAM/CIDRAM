@@ -166,6 +166,18 @@ input[disabled],input[disabled]+label{cursor:not-allowed}
 .flexrow{display:flex}
 .flexin{margin-{FE_Align}:-1px;margin-{FE_Align_Reverse}:1px;width:auto;flex-grow:1}
 .navicon.heaven{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:heaven.svg}{/Base64Encode})}
-.hoverglow{display:inline-block;filter:invert(79%) sepia(28%) saturate(328%) hue-rotate(13deg) brightness(90%) contrast(89%);position:relative;top:1px;width:16px;height:16px}
+.auxicon{display:inline-block;position:relative;top:1px;width:12px;height:12px}
+.auxbl,.hoverglow{display:inline-block;filter:invert(79%) sepia(28%) saturate(328%) hue-rotate(13deg) brightness(90%) contrast(89%);position:relative;top:1px;width:16px;height:16px}
 .hoverglow:hover,.hoverglow:active,.hoverglow:focus{filter:invert(95%) sepia(12%) saturate(882%) hue-rotate(-24deg) brightness(104%) contrast(95%)}
+.auxgn{filter:invert(91%) sepia(88%) saturate(358%) hue-rotate(26deg) brightness(89%) contrast(94%)}
+.auxrd{filter:invert(90%) sepia(63%) saturate(4751%) hue-rotate(-59deg) brightness(96%) contrast(87%)}
 .xscroller{overflow-x:auto}
+.auxicon.delete{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxdelete.svg}{/Base64Encode})}
+.auxicon.down1{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxdown1.svg}{/Base64Encode})}
+.auxicon.down2{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxdown2.svg}{/Base64Encode})}
+.auxicon.export{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxexport.svg}{/Base64Encode})}
+.auxicon.pause{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxpause.svg}{/Base64Encode})}
+.auxicon.play{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxplay.svg}{/Base64Encode})}
+.auxicon.up1{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxup1.svg}{/Base64Encode})}
+.auxicon.up2{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxup2.svg}{/Base64Encode})}
+.auxicontxt{padding:0 3px 0 3px}

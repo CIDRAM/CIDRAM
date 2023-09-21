@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2023.257.0
-# Last modified: 2023.09.15
+# Version: 2023.263.0
+# Last modified: 2023.09.21
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -95,28 +95,23 @@ Tag: TeNeT
 # Indian mobile and internet provider. Brute-force, SSH, and webapp attacks,
 # port scans, hacking, and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 4,576.
-# Updated: 2022.10.03
+# Stop Forum Spam (SFS) listings: 1,722.
+# Updated: 2023.09.21
 
-2402:8100:200e:8ec3::/64 Deny Spam
-2402:8100:200e:acbc::/64 Deny Spam
-2402:8100:200e:c821::/64 Deny Spam
-2402:8100:200e:da9e::/64 Deny Spam
-2402:8100:200f:427e::/64 Deny Spam
-2402:8100:200f:a896::/64 Deny Spam
-2402:8100:2010:8f5a::/64 Deny Spam
-2402:8100:2011:c9a7::/64 Deny Spam
-2402:8100:2028:fad2::/64 Deny Spam
-2402:8100:22ae:e95f::/64 Deny Spam
-2402:8100:26c8:35f6::/64 Deny Spam
-2402:8100:26ca:6e5::/64 Deny Spam
-2402:8100:27e1:9253::/64 Deny Spam
-2402:8100:27e8:9b41::/64 Deny Spam
-2402:8100:27f8:d1b1::/64 Deny Spam
-2402:8100:27f9:ac81::/64 Deny Spam
-2402:8100:30ad:8351::/64 Deny Spam
-2402:8100:31d0:ac3a::/64 Deny Spam
-2402:8100:31d9:fc5e::/64 Deny Spam
+2402:8100:200f:5691::/64 Deny Spam
+2402:8100:206a:3aef::/64 Deny Spam
+2402:8100:2165:f1d3::/64 Deny Spam
+2402:8100:2243:2a1d::/64 Deny Spam
+2402:8100:24cd:a488::/64 Deny Spam
+2402:8100:24ea:73b8::/64 Deny Spam
+2402:8100:24ea:e956::/64 Deny Spam
+2402:8100:258a:c9e3::/64 Deny Spam
+2402:8100:26c1:2e36::/64 Deny Spam
+2402:8100:26c2:80d4::/64 Deny Spam
+2402:8100:27e0:35b::/64 Deny Spam
+2402:8100:27f0:8fcb::/64 Deny Spam
+2402:8100:31db:2b9b::/64 Deny Spam
+2402:8100:3997:c5ff::/64 Deny Spam
 Origin: IN
 Profile: Domestic ISP;Mobile ISP
 Tag: Idea Cellular Ltd
@@ -537,20 +532,6 @@ Profile: Domestic ISP;University
 Tag: Charter Communications
 
 
-# ASNs 17072, 22884 ("TOTAL PLAY TELECOMUNICACIONES SA DE CV").
-# Mexican domestic ISP. Brute-force, SSH attacks, and spam detected from here.
-# Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 287 (AS17072), 744 (AS22884).
-# Updated: 2022.10.03
-
-2806:2f0:7040:cf14::/64 Deny Spam
-2806:2f0:7060:350a::/64 Deny Spam
-2806:2f0:9161:57e4::/64 Deny Spam
-Origin: MX
-Profile: Domestic ISP
-Tag: TOTAL PLAY TELECOMUNICACIONES
-
-
 # ASN 135763 ("GAYATRI COMMUNICATIONS").
 # Indian domestic ISP. Brute-force and SSH attacks, port scans, and spam
 # detected from here. No clean ranges here.
@@ -722,23 +703,20 @@ Tag: British Telecom PLC
 # Major US domestic ISP. DDoS, SQLi, brute-force and WordPress/XMLRPC attacks,
 # credential stuffing, port scans, and spam detected from here.
 # Listed just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 5,549.
-# Updated: 2023.04.09
+# Stop Forum Spam (SFS) listings: 7,398.
+# Updated: 2023.09.21
 
-2600:1700:1c20:8900::/64 Deny Spam
-2600:1700:3040:b230::/64 Deny Spam
-2600:1700:4494:2000::/64 Deny Spam
-2600:1700:6830:50e0::/64 Deny Spam
-2600:1700:72a0:3260::/64 Deny Spam
-2600:1700:82f0:83d0::/64 Deny Spam
-2600:1700:8ab8:8000::/64 Deny Spam
-2600:1700:a640:2010::/64 Deny Spam
-2600:1700:a882:2530::/64 Deny Spam
-2600:1700:c970:6bb0::/64 Deny Spam
-2600:1700:d820:1ad0::/64 Deny Spam
+2600:1700:9b0:65f0::/64 Deny Spam
+2600:1700:1430:d430::/64 Deny Spam
+2600:1700:15f1:1050::/64 Deny Spam
+2600:1700:40a0:7630::/64 Deny Spam
+2600:1700:47d3:a000::/64 Deny Spam
+2600:1700:5441:1000::/64 Deny Spam
+2600:1700:5f68:3210::/64 Deny Spam
+2600:1700:d620:ec90::/64 Deny Spam
 2600:1700:fe20:e670::/64 Deny Spam
-2600:1702:14b0:3950::/64 Deny Spam
-2600:1702:4610:1020::/64 Deny Spam
+2600:1702:190:14b0::/64 Deny Spam
+2600:1702:2d60:5280::/64 Deny Spam
 Origin: US
 Profile: Domestic ISP;Tor endpoints here
 Tag: AT&T Services, Inc

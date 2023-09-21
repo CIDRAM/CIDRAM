@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2023.09.18).
+ * This file: General methods used by the front-end (last modified: 2023.09.21).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -739,7 +739,7 @@ trait FrontEndMethods
             }
             if ($Depth === 1 && isset($this->CIDRAM['ListGroups'][$ParentKey])) {
                 $Delete = sprintf(
-                    ' – (<span onclick="javascript:%s(\'%s\')"><code class="s"><span class="txtRd">⌧</span>%s</code></span>)',
+                    ' – (<span onclick="javascript:%s(\'%s\')"><code><span class="auxicon auxrd delete" title="⌧"></span><span class="s auxicontxt">%s</span></code></span>)',
                     $DeleteKey,
                     $this->escapeJsInHTML($ParentKey . '-' . $Key),
                     $this->L10N->getString('field.Delete')
@@ -747,7 +747,7 @@ trait FrontEndMethods
                 $Output .= '<span id="' . $this->escapeJsInHTML($ParentKey . '-' . $Key) . 'Container">';
             } elseif ($Depth === 0) {
                 $Delete = sprintf(
-                    ' – (<span onclick="javascript:%s(\'%s\')"><code class="s"><span class="txtRd">⌧</span>%s</code></span>)',
+                    ' – (<span onclick="javascript:%s(\'%s\')"><code><span class="auxicon auxrd delete" title="⌧"></span><span class="s auxicontxt">%s</span></code></span>)',
                     $DeleteKey,
                     (isset($this->CIDRAM['ListGroups'][$Key]) ? '^' : '') . $this->escapeJsInHTML($Key),
                     $this->L10N->getString('field.Delete')

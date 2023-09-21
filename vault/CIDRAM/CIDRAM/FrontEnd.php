@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.09.20).
+ * This file: The CIDRAM front-end (last modified: 2023.09.21).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -2490,7 +2490,7 @@ class FrontEnd extends Core
         /** Backup. */
         elseif ($this->CIDRAM['QueryVars']['cidram-page'] === 'backup' && $this->FE['Permissions'] === 1) {
             /** Page initial prepwork. */
-            $this->initialPrepwork($this->L10N->getString('link.Backup'), $this->L10N->getString('tip.backup'));
+            $this->initialPrepwork($this->L10N->getString('link.Backup'), $this->L10N->getString('tip.Backup'));
 
             $this->FE['size_config'] = filesize($this->FE['ActiveConfigFile']) ?: 0;
             $this->FE['size_aux'] = filesize($this->Vault . 'auxiliary.yml') ?: 0;

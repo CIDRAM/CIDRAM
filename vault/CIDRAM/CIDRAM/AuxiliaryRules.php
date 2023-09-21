@@ -284,7 +284,7 @@ trait AuxiliaryRules
                     $this->FE['optMtdWin'],
                     $MethodData[3],
                     $this->FE['optMtdDMA'],
-                    $this->L10N->getString('tip.Numeric Comparison')
+                    $this->L10N->getString('tip.Numeric comparison')
                 );
 
                 /** Match logic. */

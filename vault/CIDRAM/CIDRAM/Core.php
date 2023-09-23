@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2023.09.19).
+ * This file: The CIDRAM core (last modified: 2023.09.23).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -701,7 +701,7 @@ class Core
                             require_once $this->Vault . $Signature;
                         } else {
                             $this->CIDRAM['ExtraErrorInfo'] = $Signature;
-                            trigger_error($this->L10N->getString('Error_MissingRequire'), E_USER_WARNING);
+                            trigger_error($this->L10N->getString('response.Required files are missing'), E_USER_WARNING);
                         }
                     }
                     if ($RunExitCode === 4) {
@@ -1669,7 +1669,7 @@ class Core
             $this->Events->fireEvent('final');
             if ($this->Cache->Using === 'FF') {
                 header('Content-Type: text/plain');
-                die('[CIDRAM] ' . $this->L10N->getString('Error_WriteCache'));
+                die('[CIDRAM] ' . $this->L10N->getString('response.Unable to write to the cache'));
             } else {
                 $Status = $this->getStatusHTTP(503);
                 header('HTTP/1.0 503 ' . $Status);
@@ -2224,7 +2224,7 @@ class Core
             } elseif (file_exists($this->Vault . $Run)) {
                 require_once $this->Vault . $Run;
             } else {
-                trigger_error($this->L10N->getString('Error_MissingRequire'), E_USER_WARNING);
+                trigger_error($this->L10N->getString('response.Required files are missing'), E_USER_WARNING);
             }
         }
 

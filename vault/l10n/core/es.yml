@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data (last modified: 2023.09.19).
+# This file: Spanish language data (last modified: 2023.09.23).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,8 +24,6 @@
 # requests, ask. I can help.
 ##/
 
-Error_MissingRequire: "¡Faltan los archivos necesarios! No puede continuar!"
-Error_WriteCache: "¡No se puede escribir a la caché! Compruebe sus CHMOD permisos!"
 PrivacyPolicy: "Política de Privacidad"
 ReasonMessage_Attacks: "Su acceso a esta página se negó debido a un tráfico anormal detectado previamente desde su dirección IP o red."
 ReasonMessage_BadIP: "Su acceso a esta página se negó porque ha intentado acceder esta página utilizando una dirección IP no válida."
@@ -108,7 +106,9 @@ response:
  Failed: "Fallado"
  Multiple IP addresses (bulk reporting): "Múltiples direcciones IP (informes masivos)."
  Not satisfied: "No satisfecho."
+ Required files are missing: "¡Faltan los archivos necesarios! No puede continuar!"
  Satisfied: "Satisfecho."
+ Unable to write to the cache: "¡No se puede escribir a la caché! Compruebe sus CHMOD permisos!"
 state_disabled: "Desactivado."
 state_email_sent: "Correo electrónico enviado con éxito a "%s"."
 state_enabled: "Activado."

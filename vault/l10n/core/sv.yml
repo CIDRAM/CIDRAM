@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data (last modified: 2023.09.19).
+# This file: Swedish language data (last modified: 2023.09.23).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,8 +24,6 @@
 # requests, ask. I can help.
 ##/
 
-Error_MissingRequire: "Obligatoriska filer saknas! Kan inte fortsätta!"
-Error_WriteCache: "Det går inte att skriva till cacheminnet! Kontrollera dina CHMOD-filbehörigheter!"
 PrivacyPolicy: "Integritetspolicy"
 ReasonMessage_Attacks: "Din tillgång till den här sidan nekades på grund av onormal trafik som upptäcktes tidigare från din IP-adress eller nätverk."
 ReasonMessage_BadIP: "Din tillgång till den här sidan nekades eftersom du försökte komma åt den här sidan med en ogiltig IP-adress."
@@ -108,7 +106,9 @@ response:
  Failed: "Misslyckades"
  Multiple IP addresses (bulk reporting): "Flera IP-adresser (bulkrapportering)."
  Not satisfied: "Inte nöjda."
+ Required files are missing: "Obligatoriska filer saknas! Kan inte fortsätta!"
  Satisfied: "Nöjda."
+ Unable to write to the cache: "Det går inte att skriva till cacheminnet! Kontrollera dina CHMOD-filbehörigheter!"
 state_disabled: "Inaktiverad."
 state_email_sent: "E-post skickades framgångsrikt till "%s"."
 state_enabled: "Aktiverad."

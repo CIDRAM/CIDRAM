@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data (last modified: 2023.09.19).
+# This file: Chinese (traditional) language data (last modified: 2023.09.23).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,8 +24,6 @@
 # requests, ask. I can help.
 ##/
 
-Error_MissingRequire: "缺少必需的文件！不能繼續！"
-Error_WriteCache: "無法寫入緩存！​請檢查您的CHMOD文件的權限！"
 PrivacyPolicy: "隱私政策"
 ReasonMessage_Attacks: "您的訪問這個頁面被拒絕由於之前從您的IP地址或網絡檢測到流量異常。"
 ReasonMessage_BadIP: "您的訪問這個頁面被拒絕因為您試圖訪問該頁面使用一個無效的IP地址。"
@@ -108,7 +106,9 @@ response:
  Failed: "失敗"
  Multiple IP addresses (bulk reporting): "多個IP地址（批量報告）。"
  Not satisfied: "不滿意。"
+ Required files are missing: "缺少必需的文件！不能繼續！"
  Satisfied: "滿意。"
+ Unable to write to the cache: "無法寫入緩存！​請檢查您的CHMOD文件的權限！"
 state_disabled: "關掉。"
 state_email_sent: "電子郵件已成功發送至『%s』。"
 state_enabled: "打開。"

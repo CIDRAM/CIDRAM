@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data (last modified: 2023.09.19).
+# This file: Dutch language data (last modified: 2023.09.23).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,8 +24,6 @@
 # requests, ask. I can help.
 ##/
 
-Error_MissingRequire: "Vereiste bestanden ontbreken! Kan niet doorgaan!"
-Error_WriteCache: "Kan niet naar de cache schrijven! Controleer uw CHMOD permissies!"
 PrivacyPolicy: "Privacybeleid"
 ReasonMessage_Attacks: "Uw toegang tot deze pagina is geweigerd vanwege abnormaal verkeer dat eerder is gedetecteerd vanaf uw adres of netwerk."
 ReasonMessage_BadIP: "Uw toegang tot deze pagina is geweigerd omdat u heeft geprobeerd om deze pagina te openen met een geblackliste IP adres."
@@ -108,7 +106,9 @@ response:
  Failed: "Mislukt"
  Multiple IP addresses (bulk reporting): "Meerdere IP-adressen (bulkrapportage)."
  Not satisfied: "Niet tevreden."
+ Required files are missing: "Vereiste bestanden ontbreken! Kan niet doorgaan!"
  Satisfied: "Tevreden."
+ Unable to write to the cache: "Kan niet naar de cache schrijven! Controleer uw CHMOD permissies!"
 state_disabled: "Gedeactiveerd."
 state_email_sent: "E-mail succesvol verzonden naar "%s"."
 state_enabled: "Geactiveerd."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2023.09.20).
+# This file: Dutch language data for the front-end (last modified: 2023.09.23).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -173,7 +173,7 @@ config:
  general_lang_override: "Waar mogelijk lokaliseren volgens HTTP_ACCEPT_LANGUAGE? True = Ja [Standaard]; False = Nee."
  general_numbers: "Hoe verkiest u nummers die worden weergegeven? Selecteer het voorbeeld dat het meest correct voor u lijkt."
  general_sensitive: "Een lijst met paden die als gevoelige pagina's moeten worden beschouwd. Elk vermeld pad wordt indien nodig gecontroleerd aan de hand van de gereconstrueerde URI. Een pad dat begint met een schuine streep naar voren wordt behandeld als een letterlijke waarde en wordt gematcht vanaf de padcomponent van het verzoek. Anders wordt een pad dat begint met een niet-alfanumeriek teken en eindigt met datzelfde teken (of datzelfde teken plus een optionele "i"-vlag) behandeld als een reguliere expressie. Elk ander pad wordt behandeld als een letterlijk pad en kan overeenkomen met elk deel van de URI. Of een pad als een gevoelige pagina wordt beschouwd, kan van invloed zijn op het gedrag van sommige modules, maar heeft verder geen effect."
- general_silent_mode: "Moet CIDRAM stilletjes redirect geblokkeerd toegang pogingen in plaats van het weergeven van de "toegang geweigerd" pagina? Als ja, geef de locatie te redirect geblokkeerd toegang pogingen. Als nee, verlaat deze variabele leeg."
+ general_silent_mode: "Moet CIDRAM stilletjes omleiden geblokkeerd toegang pogingen in plaats van het weergeven van de "toegang geweigerd" pagina? Als ja, geef de locatie te omleiden geblokkeerd toegang pogingen. Als nee, verlaat deze variabele leeg."
  general_silent_mode_response_header_code: "Welk HTTP-statusbericht moet CIDRAM verzenden bij het stilzwijgend omleiden van geblokkeerde toegangspogingen?"
  general_stages: "Controles voor de fasen van de uitvoeringsketen (of ingeschakeld, of fouten worden geregistreerd, enz)."
  general_statistics: "Bepaalt welke statistische informatie moet worden bijgehouden."
@@ -513,6 +513,7 @@ label:
  Component updates metadata: "Component updates metadata"
  Compress: "Comprimeren"
  Current data for %s: "Huidige gegevens voor "%s"."
+ Copy to clipboard: "Kopieer naar klembord"
  Current data: "Huidige gegevens."
  Default: "Standaard"
  Deny: "Ontken."
@@ -608,7 +609,7 @@ label:
  aux_actGrl: "beschouwen als op de grijze lijst"
  aux_actLog: "log niet"
  aux_actPro: "profileer"
- aux_actRdr: "redirect (zonder te blokkeren)"
+ aux_actRdr: "omleiden (zonder te blokkeren)"
  aux_actRun: "met behulp van een bestand, behandel het"
  aux_actWhl: "beschouwen als op de witte lijst"
  aux_create_new_rule: "Maak een nieuwe regel"
@@ -649,7 +650,7 @@ label:
  aux_special_suppress_logging: "Onderdrukken logboekregistratie"
  aux_special_tracking_default: "Dwing standaard IP-trackingopties af"
  aux_special_tracking_extended: "Dwing uitgebreide IP-trackingopties af"
- aux_target: "Waar te redirect het verzoek:"
+ aux_target: "Waar te omleiden het verzoek:"
  aux_triggered: "Aanvullende regels getriggerde"
  aux_webhooks: "Webhooks die moeten worden toegepast wanneer aan de regelvereisten wordt voldaan:"
  lookup_strategy: "Voor welke verzoeken moeten zoekopdrachten worden uitgevoerd?"
@@ -675,7 +676,6 @@ link:
  Cache Data: "Cachegegevens"
  Calculator: "Calculator"
  Configuration: "Configuratie"
- Copy to clipboard: "Kopieer naar klembord"
  Discussions: "Discussies"
  Documentation: "Documentatie"
  File Manager: "Bestandsbeheer"
@@ -823,7 +823,7 @@ response:
  Verification success: "Verificatie succes! Geen problemen gevonden."
  Wrong endpoint: "Verkeerd eindpunt!"
  _No: "Nee"
- _Yes: "Ja" 
+ _Yes: "Ja"
  please_check_config: "Controleer uw configuratie om er zeker van te zijn dat de nieuw geïnstalleerde module zich zal gedragen zoals u wilt."
  release_notes: "<a href="%s"><span class="navicon link"></span>Releaseopmerkingen voor %s.</a>"
 stage_aux: "Voer aanvullende regels"

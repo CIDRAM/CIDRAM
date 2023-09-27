@@ -64,7 +64,7 @@ CIDRAM Core:
    Checksum: "2e1620a380818985aa8eb7bbb549b2ded5ca65a82c4eb2f5d858d3b8dcc6c823:7838"
 CIDRAM Front-End:
  Name: "CIDRAM Front-End"
- Version: "3.4.1-DEV+232650"
+ Version: "3.4.1-DEV+232690"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "Latest"
@@ -151,10 +151,10 @@ CIDRAM Front-End:
    Checksum: "8d909e4030e26eca62b7e35cf1503b4422a37e59e310f539709786c12cb1a97c:487"
   assets/frontend/default/_nav_complete_access.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/default/_nav_complete_access.html"
-   Checksum: "f43467f7ece4e506f00a3e8fc9ae9885b95925888c793dcd58b41c1cb0667318:2860"
+   Checksum: "264868384a3d9179a61926c6b3fd6dd670519db8c1627462270de8fefa34a913:2871"
   assets/frontend/default/_nav_logs_access_only.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/default/_nav_logs_access_only.html"
-   Checksum: "d98cb39a761809ecb085faff4092db5c2e7604b6f81402a1a481d84de99de7ea:783"
+   Checksum: "97e005910d0cd35ed105e0c9ffa365ebd03d87f69c539bd7754c8abb56420bb7:794"
   assets/frontend/default/_range.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/default/_range.html"
    Checksum: "3502740115a56b7e7fd3e82ce9dabd458b6b86cfdfd8e26d9aa6af0288ca8d33:790"
@@ -638,6 +638,8 @@ l10n/core/en:
  Extended Description: "English (AU/GB/NZ) localisation"
  Version: "2023.265.0"
  Uninstallable: false
+ When Update Succeeds:
+  - "if {Components.Meta.l10n/core/en.Version}<2023.265&&{Components.RemoteMeta.l10n/core/en.Version}>=2023.265&&{Components.Meta.PHPMailer.Version}>0&&{Components.Meta.PHPMailer.Version}==={Components.RemoteMeta.PHPMailer.Version} then updatesHandlerRepair PHPMailer"
  Files:
   l10n/core/en.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/en.yml"
@@ -1290,7 +1292,7 @@ theme/bluemetal:
 theme/fullmoon:
  Name: "Theme: Full Moon"
  Extended Description: "<img src="https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/themes/preview-fullmoon.png" alt="Preview" />"
- Version: "2023.265.0"
+ Version: "2023.269.0"
  Dependencies:
   CIDRAM Core: "^3"
   CIDRAM Front-End: "^3"
@@ -1355,10 +1357,10 @@ theme/fullmoon:
    Checksum: "cf7095ea62cc4151e04bc4bf5f95f81c0d78f2aaa39d854433388c878fa93fc1:311"
   assets/frontend/fullmoon/_nav_complete_access.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/fullmoon/_nav_complete_access.html"
-   Checksum: "7b39848775cae5fc3f7fb6c5494812cc1ac096de881d9c5a165bd314d0d47546:1298"
+   Checksum: "5aa2328edcf96fed1b5a4fd521d4299b9e1a1ec065dc4c4e69902371913276cc:1311"
   assets/frontend/fullmoon/_nav_logs_access_only.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/fullmoon/_nav_logs_access_only.html"
-   Checksum: "b04a5610bd6b856256e6099df2db8d1a6cb6f291a5fbae44f97c40b15f51b155:268"
+   Checksum: "37548c2ae5eac094a3de0f7475bf67fcd7672e5cee883f816afc8f9e0dfea05e:281"
   assets/frontend/fullmoon/_range.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/fullmoon/_range.html"
    Checksum: "ce0de2e43ca894b1996ec367cd7ba236d51a9555a3babd8f78be6864eee05036:657"
@@ -1418,7 +1420,7 @@ theme/moss:
 theme/primer:
  Name: "Theme: Primer"
  Extended Description: "<img src="https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/themes/preview-primer.png" alt="Preview" />"
- Version: "2023.263.0"
+ Version: "2023.269.0"
  Dependencies:
   CIDRAM Core: "^3"
   CIDRAM Front-End: "^3.1"
@@ -1432,10 +1434,10 @@ theme/primer:
    Checksum: "337527f9650d6f64fb55ab314adc706f8ed8c1c542763d1312ede1d5ccd65fcd:3346"
   assets/frontend/primer/_nav_complete_access.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/primer/_nav_complete_access.html"
-   Checksum: "fd193d799c21a432c16cdf51bf9b274365c2b11bf89845b7bbfed265270d929b:2711"
+   Checksum: "2d705406a221530693835e225bac2ce4ea6de1e5102d2b4762e2ad296aff174f:2722"
   assets/frontend/primer/_nav_logs_access_only.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/primer/_nav_logs_access_only.html"
-   Checksum: "666e8f8a003e12ffbb60425a6af194ea6d75139de3ff0872ed899c911673a3e4:718"
+   Checksum: "055f13f99b44346ce989159011c6f8fc610d0ce5c0effb3a414cbbe1c85d8173:729"
   assets/frontend/primer/frontend.css:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/primer/frontend.css"
    Checksum: "64fda2044189103459d0a48633a8240f3650d3e94adeced184a06be730dda0dd:17156"
@@ -1445,7 +1447,7 @@ theme/primer:
 theme/primerdark:
  Name: "Theme: Primer Dark"
  Extended Description: "<img src="https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/themes/preview-primerdark.png" alt="Preview" />"
- Version: "2023.263.0"
+ Version: "2023.269.0"
  Dependencies:
   CIDRAM Core: "^3"
   CIDRAM Front-End: "^3.1"
@@ -1459,10 +1461,10 @@ theme/primerdark:
    Checksum: "ae066fd053b54fdc0d4799f376082854fe061ea5d198478ae60ec8b7d118dc32:3327"
   assets/frontend/primerdark/_nav_complete_access.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/primerdark/_nav_complete_access.html"
-   Checksum: "fd193d799c21a432c16cdf51bf9b274365c2b11bf89845b7bbfed265270d929b:2711"
+   Checksum: "2d705406a221530693835e225bac2ce4ea6de1e5102d2b4762e2ad296aff174f:2722"
   assets/frontend/primerdark/_nav_logs_access_only.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/primerdark/_nav_logs_access_only.html"
-   Checksum: "666e8f8a003e12ffbb60425a6af194ea6d75139de3ff0872ed899c911673a3e4:718"
+   Checksum: "055f13f99b44346ce989159011c6f8fc610d0ce5c0effb3a414cbbe1c85d8173:729"
   assets/frontend/primerdark/frontend.css:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/primerdark/frontend.css"
    Checksum: "713e7ae8527c8436b43b42a041d2dd2113fe6198ced91b5503e3b9b3fd0b38da:17021"

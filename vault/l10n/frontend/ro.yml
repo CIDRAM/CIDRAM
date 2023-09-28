@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Romanian language data for the front-end (last modified: 2023.09.24).
+# This file: Romanian language data for the front-end (last modified: 2023.09.28).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -105,11 +105,11 @@ checkbox:
 config:
  abuseipdb: "Configurare pentru modulul AbuseIPDB."
  abuseipdb_api_key: &EnterAPIKey "Vă rugăm să introduceți aici cheia dvs. API."
- abuseipdb_build_profiles_from_usage_type: "Creați profiluri folosind tipul de utilizare returnat de API? False = Nu. True = Da. Valoare implicită = True."
- abuseipdb_max_age_in_days: "Vârsta maximă în zile pentru care vor fi luate în considerare rapoartele atunci când se efectuează căutări (trebuie să fie un număr între 1 și 365). Valoare implicită = 365."
- abuseipdb_max_cs_for_captcha: "Scorul maxim de încredere permis pentru a primi un CAPTCHA (trebuie să fie un număr între 0 și 100). Valoare implicită = 10."
- abuseipdb_minimum_confidence_score: "Scorul minim de încredere necesar pentru ca CIDRAM să blocheze o adresă IP (trebuie să fie un număr între 0 și 100). Valoare implicită = 50."
- abuseipdb_minimum_total_reports: "Numărul minim de rapoarte totale necesare pentru ca CIDRAM să blocheze o adresă IP. Valoare implicită = 1."
+ abuseipdb_build_profiles_from_usage_type: "Creați profiluri folosind tipul de utilizare returnat de API? False = Nu. True = Da. Implicit = True."
+ abuseipdb_max_age_in_days: "Vârsta maximă în zile pentru care vor fi luate în considerare rapoartele atunci când se efectuează căutări (trebuie să fie un număr între 1 și 365). Implicit = 365."
+ abuseipdb_max_cs_for_captcha: "Scorul maxim de încredere permis pentru a primi un CAPTCHA (trebuie să fie un număr între 0 și 100). Implicit = 10."
+ abuseipdb_minimum_confidence_score: "Scorul minim de încredere necesar pentru ca CIDRAM să blocheze o adresă IP (trebuie să fie un număr între 0 și 100). Implicit = 50."
+ abuseipdb_minimum_total_reports: "Numărul minim de rapoarte totale necesare pentru ca CIDRAM să blocheze o adresă IP. Implicit = 1."
  abuseipdb_report_back: "Permiteți CIDRAM să raporteze comportamentul rău detectat înapoi către AbuseIPDB folosind cheia dvs. API?"
  bgpview: "Configurare pentru modulul BGPView (oferă o facilitate de căutare ASN și cod de țară pentru CIDRAM)."
  bgpview_blocked_asns: &ConfigBlockedASNs "O listă de ASN-uri care urmează să fie blocate atunci când se potrivesc de către modul."
@@ -130,3 +130,31 @@ config:
  bobuam_safari: "Cea mai scăzută versiune permisă a simbolului „Versiune” Safari. Recomandat: {{BOBUAM Token.Safari}}."
  bobuam_sanity_check: "Blocați browserele care afișează șiruri de agent de utilizator ambigue sau clar malformate?"
  bunnycdn: "Configurarea modulului de compatibilitate BunnyCDN."
+ bunnycdn_positive_action: "Ce acțiune ar trebui să efectueze CIDRAM atunci când întâlnește o solicitare de la BunnyCDN? Acțiune implicită = Bypass."
+ bypasses: "Configurația pentru ocolirea semnăturii implicite."
+ bypasses_used: "Ce bypass-uri ar trebui folosite?"
+ components: "Configurare pentru activarea si dezactivarea componentelor utilizate de CIDRAM. De obicei populat de pagina de actualizări, dar poate fi gestionat și de aici pentru un control mai fin și pentru componente personalizate nerecunoscute de pagina de actualizări."
+ components_events: "Manageri de evenimente. Utilizat de obicei pentru a modifica modul în care CIDRAM se comportă intern sau pentru a oferi funcționalități suplimentare."
+ components_imports: "Importurile. Utilizat de obicei pentru a furniza informații de configurare a unei componente către CIDRAM."
+ components_ipv4: "Fișiere de semnătură IPv4."
+ components_ipv6: "Fișiere de semnătură IPv6."
+ components_modules: "Module."
+ experimental: "Instabil/Experimental!"
+ extras: "Configurare pentru modulul suplimentar de securitate opțional."
+ extras_signatures: "Ce tipuri de semnături ar trebui onorate?"
+ extras_signatures_empty_ua: "Agenți utilizatori goli."
+ extras_signatures_query: "Semnături bazate pe solicitări."
+ extras_signatures_raw: "Semnături bazate pe cererea brută."
+ extras_signatures_ruri: "Semnături bazate pe URI reconstruite."
+ frontend: "Configurație pentru front-end."
+ frontend_custom_footer: "Inserat ca HTML chiar la sfârşitul tuturor paginilor front-end. Acest lucru ar putea fi util în cazul în care doriți să includeți o notificare legală, un link de contact, informații despre companie, sau similare în toate aceste pagini."
+ frontend_custom_header: "Inserat ca HTML chiar la începutul tuturor paginilor front-end. Acest lucru ar putea fi util în cazul în care doriți să includeți un logo al site-ului web, un antet personalizat, scripturi, sau similare în toate aceste pagini."
+ frontend_enable_two_factor: "Această directivă stabilește dacă se utilizează 2FA pentru conturile front-end."
+ frontend_frontend_log: "Fișier pentru înregistrarea încercărilor de conectare front-end. Specificați un nume de fișier, sau lăsați necompletat pentru a dezactiva."
+ frontend_magnification: &MagnifDesc "Mărirea fontului. Implicit = 1."
+ frontend_max_login_attempts: "Numărul maxim de încercări de conectare front-end. Implicit = 5."
+ frontend_remotes: "O listă a adreselor utilizate de actualizator pentru a prelua metadatele componente. Poate fi necesar să fie ajustat atunci când faceți upgrade la o nouă versiune majoră sau când achiziționați o nouă sursă pentru actualizări, dar în circumstanțe normale ar trebui lăsat în pace."
+ frontend_signatures_update_event_log: "Un fișier pentru înregistrare atunci când semnăturile sunt actualizate prin intermediul front-end-ului. Specificați un nume de fișier, sau lăsați necompletat pentru a dezactiva."
+ frontend_theme: "Tema implicită de utilizat pentru front-end."
+ general: "Configurație generală (orice configurație de bază care nu aparține altor categorii)."
+ general_allow_gethostbyaddr_lookup: "Permiteți căutările gethostbyaddr când UDP nu este disponibil? True = Da [Implicit]; False = Nu."

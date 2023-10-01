@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2023.263.0
-# Last modified: 2023.09.21
+# Version: 2023.273.0
+# Last modified: 2023.10.01
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -887,15 +887,11 @@ Tag: TATA SKY BROADBAND PRIVATE LIMITED
 # ASNs 3209, 31334 ("Vodafone Deutschland GmbH").
 # German multiplay network. Brute-force and webapp attacks, hacking, and spam
 # detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,767 (AS3209).
-# Updated: 2022.10.30
+# Stop Forum Spam (SFS) listings: 1,358 (AS3209).
+# Updated: 2023.09.28
 
-2a02:908:4d11:85e0::/64 Deny Spam
-2a02:8070:c1b3:1d00::/64 Deny Spam
+2a02:8070:d281:f5e0::/64 Deny Spam
 2a02:8071:2286:dac0::/64 Deny Spam
-2a02:8071:8187:2780::/64 Deny Spam
-2a02:8108:2640:1708::/64 Deny Spam
-2a02:810d:8cc0:1cbc::/64 Deny Spam
 Origin: DE
 Profile: Domestic ISP;Mobile ISP;Multiplay
 Tag: Vodafone Deutschland GmbH
@@ -924,18 +920,6 @@ Tag: Orange S.A
 Origin: FR
 Profile: Domestic ISP;Mobile ISP
 Tag: Bouygues Telecom SA
-
-
-# ASNs 60339, 206067 ("Hutchison 3G UK Limited").
-# UK mobile provider. Brute-force, SSH attacks, spam, and DNS poisoning
-# detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 599 (AS206067).
-# Updated: 2022.11.03
-
-2a04:4a43:524f:e3d6::/64 Deny Spam
-Origin: GB
-Profile: Mobile ISP
-Tag: Hutchison 3G UK Limited
 
 
 # ASN 15557 ("SFR SA").

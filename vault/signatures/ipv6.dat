@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2023.266.0
-# Last modified: 2023.09.24
+# Version: 2023.273.0
+# Last modified: 2023.10.01
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -560,8 +560,8 @@ Tag: IT Park
 
 # ASN 12555 ("Data-center IMAQLIQ Ltd").
 # Port scanning and probing for vulnerabilities.
-# Stop Forum Spam (SFS) listings: 98.
-# Updated: 2022.10.27
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2022.10.27 / Checked: 2023.09.28
 
 2a00:f2a0::/32 Deny Cloud
 2a0e:8f40::/29 Deny Cloud
@@ -4766,8 +4766,8 @@ Tag: NForce Entertainment
 # ASNs 55990, 63655, 131444, 136907, 140723, 141180, 200756, 206204, 206798
 # ("Huawei Cloud Service data center", "Huawei Technologies Co., Ltd", "HUAWEI
 # CLOUDS").
-# Stop Forum Spam (SFS) listings: 423 (AS55990), 1,374 (AS136907).
-# Updated: 2023.05.28
+# Stop Forum Spam (SFS) listings: 179 (AS55990), 224 (AS136907), 2 (AS206204).
+# Updated: 2023.09.26
 
 2407:c080::/36 Run bypasses.php
 2407:c080:1000::/37 Run bypasses.php
@@ -4781,6 +4781,7 @@ Origin: CN
 2405:f080:400::/39 Run bypasses.php
 2405:f080:600::/48 Run bypasses.php
 2405:f080:800::/40 Run bypasses.php
+2405:f080:9ff::/48 Run bypasses.php
 2405:f080:a00::/39 Run bypasses.php
 2405:f080:e00::/45 Run bypasses.php
 2405:f080:e0e::/47 Run bypasses.php
@@ -4801,6 +4802,7 @@ Origin: CN
 2405:f080:2800::/48 Run bypasses.php
 2405:f080:2a00::/48 Run bypasses.php
 2405:f080:2e00::/47 Run bypasses.php
+2405:f080:3000::/38 Run bypasses.php
 Origin: SG
 2a02:e0:3138::/48 Run bypasses.php
 Origin: TR
@@ -5335,7 +5337,8 @@ Tag: DataClub S.A
 
 
 # ASN 30962 ("comtrance GmbH").
-# Updated: 2021.12.13 / Checked: 2022.10.27
+# Stop Forum Spam (SFS) listings: 10.
+# Updated: 2021.12.13 / Checked: 2023.09.28
 
 2001:678:94c::/48 Deny Cloud
 2001:67c:208::/48 Deny Cloud
@@ -7007,8 +7010,9 @@ Tag: Host Universal Pty Ltd
 
 # ASN 15083 ("Infolink Global Corporation").
 # Stop Forum Spam (SFS) listings: 25.
-# Updated: 2022.10.27
+# Updated: 2023.09.28
 
+2607:1680::/32 Deny Cloud
 2607:feb8::/32 Deny Cloud
 2a06:8e40::/29 Deny Cloud
 Origin: US
@@ -7317,25 +7321,46 @@ Tag: Serverfield
 # Listing here due to reports from some users of spam events, brute-force
 # attempts, probing, etc. Example: abuseipdb.com/check/129.213.67.237
 # But, listing only the ASNs directly connected to current reports.
-# Stop Forum Spam (SFS) listings: 10,591.
-# Updated: 2023.01.12
+# Stop Forum Spam (SFS) listings: 3,777.
+# Updated: 2023.10.01
 
+2407:30c0:200::/44 Run bypasses.php
+Origin: AU
+2a0e:97c0:aba::/48 Run bypasses.php
+Origin: CH
+2001:1a30:c000::/48 Run bypasses.php
+2a0e:46c4:24a1::/48 Run bypasses.php
+Origin: DE
+2001:67c:1104::/48 Run bypasses.php
+Origin: FI
 2a09:a447:ac1e::/48 Run bypasses.php
+2a12:bec0:230::/44 Run bypasses.php
 2a12:dd47:8047::/48 Run bypasses.php
 Origin: GB
 2600:2000:2100::/42 Run bypasses.php
 2600:2000:2200::/42 Run bypasses.php
 2600:2000:2240::/43 Run bypasses.php
 2600:2003::/48 Run bypasses.php
+2602:fc8b:a1::/48 Run bypasses.php
 2602:fdaa:20::/48 Run bypasses.php
 2603:c000::/35 Run bypasses.php
-2603:c000:2000::/39 Run bypasses.php
+2603:c000:2000::/38 Run bypasses.php
+2603:c000:2400::/39 Run bypasses.php
 2603:c001::/34 Run bypasses.php
-2603:c001:4000::/38 Run bypasses.php
+2603:c001:4000::/37 Run bypasses.php
+2603:c001:4800::/38 Run bypasses.php
 2603:c002::/35 Run bypasses.php
 2603:c002:2000::/39 Run bypasses.php
+2603:c002:2200::/40 Run bypasses.php
+2603:c002:2300::/43 Run bypasses.php
+2603:c002:2400::/43 Run bypasses.php
+2603:c002:2500::/43 Run bypasses.php
 2603:c002:8000::/35 Run bypasses.php
 2603:c002:a000::/39 Run bypasses.php
+2603:c002:a200::/43 Run bypasses.php
+2603:c002:a300::/43 Run bypasses.php
+2603:c002:a400::/40 Run bypasses.php
+2603:c002:a500::/43 Run bypasses.php
 2603:c010::/36 Run bypasses.php
 2603:c010:2000::/36 Run bypasses.php
 2603:c010:4000::/36 Run bypasses.php
@@ -7370,6 +7395,10 @@ Origin: GB
 2603:c013:e000::/36 Run bypasses.php
 2603:c014::/36 Run bypasses.php
 2603:c014:2000::/36 Run bypasses.php
+2603:c015:2000::/36 Run bypasses.php
+2603:c016:2000::/36 Run bypasses.php
+2603:c017:2000::/36 Run bypasses.php
+2603:c018:2000::/36 Run bypasses.php
 2603:c020::/35 Run bypasses.php
 2603:c020:4000::/35 Run bypasses.php
 2603:c020:8000::/35 Run bypasses.php
@@ -7404,9 +7433,14 @@ Origin: GB
 2603:c027:c000::/35 Run bypasses.php
 2603:c028::/35 Run bypasses.php
 2603:c028:4000::/35 Run bypasses.php
+2603:c028:8000::/35 Run bypasses.php
+2603:c029:4000::/35 Run bypasses.php
+2603:c029:8000::/35 Run bypasses.php
+2603:c02a:8000::/35 Run bypasses.php
 2606:b400:8012::/48 Run bypasses.php
 2620:123:208b::/48 Run bypasses.php
 2620:123:208c::/48 Run bypasses.php
+2a06:1285:ad55::/48 Run bypasses.php
 Origin: US
 Profile: Commercial;Infrastructure/Transit;Tor endpoints here
 Tag: Oracle Corporation
@@ -7466,8 +7500,8 @@ Tag: VooServers Ltd
 # ASN 12406 ("Business Network Ltd").
 # Belarus network, unknown purpose. Some spam and other unwanted traffic
 # detected from here.
-# Stop Forum Spam (SFS) listings: 25.
-# Updated: 2022.10.27
+# Stop Forum Spam (SFS) listings: 16.
+# Updated: 2022.10.27 / Checked: 2023.09.28
 
 2a00:6440::/32 Deny Cloud
 Origin: BY

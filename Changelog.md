@@ -323,4 +323,6 @@
 
 [2023.09.20; Security; Maikuolan]: Self-inflicted XSS was possible at the front-end IP testing page when user agents, queries, or referrers which contain valid HTML tags (e.g., JavaScript) were entered for testing; Fixed.
 
-[2023.09.21; Maikuolan]: Replaced all emoji at the auxiliary rules page with SVGs.
+[2023.09.21; Maikuolan]: Replaced all emoji at the auxiliary rules page with SVGs. Replaced the delete emoji at the cache data page with an SVG.
+
+[2023.10.05; Bug-fix; Maikuolan]: Stop Forum Spam module found to have been broken since v3.0; Fixed.

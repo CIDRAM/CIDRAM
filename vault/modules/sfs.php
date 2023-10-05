@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Stop Forum Spam module (last modified: 2023.03.28).
+ * This file: Stop Forum Spam module (last modified: 2023.10.05).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -83,11 +83,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
             /** Generate local SFS cache entry. */
             if ((strpos($Lookup, 's:7:"success";') !== false) && (strpos($Lookup, 's:2:"ip";') !== false)) {
-                if (preg_match('~"frequency";i:(\d+);"~i', $Lookup, $Frequency)) {
-                    $Frequency = (int)$Frequency;
-                } else {
-                    $Frequency = 0;
-                }
+                $Frequency = preg_match('~"frequency";i:(\d+);~', $Lookup, $Frequency) ? (int)$Frequency[1] : 0;
                 $this->CIDRAM['SFS-' . $this->BlockInfo['IPAddr']] = $Frequency;
                 $Expiry = 604800;
             } else {
@@ -108,7 +104,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     $this->trigger(
         (
             isset($this->CIDRAM['SFS-' . $this->BlockInfo['IPAddr']]) &&
-            is_int($this->CIDRAM['SFS-' . $this->BlockInfo['IPAddr']]) &&
+            is_numeric($this->CIDRAM['SFS-' . $this->BlockInfo['IPAddr']]) &&
             $this->CIDRAM['SFS-' . $this->BlockInfo['IPAddr']] > 0
         ),
         'SFS Lookup',

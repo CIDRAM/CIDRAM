@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2023.09.15).
+ * This file: Optional security extras module (last modified: 2023.10.06).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -180,11 +180,11 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         $this->trigger(!$is_WP_plugin && preg_match(
             '/(?:_once|able|as(?:c|hes|sert)|c(?:hr|ode|ontents)|e(?:cho|regi|sc' .
             'ape|val)|ex(?:ec|ists)?|f(?:ile|late|unction)|get(?:c|csv|ss?)?|if|' .
-            '(?<!context=edit&)include|len(?:gth)?|nt|open|p(?:ress|lace|lode|ut' .
-            's)|print(?:f|_r)?|re(?:place|quire|store)|rot13|s(?:tart|ystem)|w(?' .
-            ':hil|rit)e)[(\[{<$]/',
+            '(?<!context=edit&)include(?!\[\d+\]=\d+&)|len(?:gth)?|nt|open|p(?:r' .
+            'ess|lace|lode|uts)|print(?:f|_r)?|re(?:place|quire|store)|rot13|s(?' .
+            ':tart|ystem)|w(?:hil|rit)e)[(\[{<$]/',
             $QueryNoSpace
-        ), 'Query command injection'); // 2018.05.02 mod 2023.07.26
+        ), 'Query command injection'); // 2018.05.02 mod 2023.10.06
 
         $this->trigger(preg_match(
             '~\$(?:globals|_(?:cookie|env|files|get|post|request|se(?:rver|ssion)))|' .

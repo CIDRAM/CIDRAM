@@ -326,3 +326,5 @@
 [2023.09.21; Maikuolan]: Replaced all emoji at the auxiliary rules page with SVGs. Replaced the delete emoji at the cache data page with an SVG.
 
 [2023.10.05; Bug-fix; Maikuolan]: Stop Forum Spam module found to have been broken since v3.0; Fixed.
+
+[2023.09~10; Maikuolan]: Added L10N for Afrikaans and Romanian.

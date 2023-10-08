@@ -10,6 +10,11 @@ Detailed version release guidelines for CIDRAM can be found at:
 
 === Changes made since last versioned release ===
 
+(none)
+
+=== Version/Release 1.27.1 ===
+PATCH RELEASE.
+
 - [2023.09.15; Bug-fixes; Maikuolan]: Auxiliary rules automatic method
   detection failed to detect for numeric comparison; Fixed. Auxiliary rules
   numeric comparison could accept non-numeric values under certain conditions;
@@ -24,6 +29,9 @@ Detailed version release guidelines for CIDRAM can be found at:
 - [2023.09.20; Security; Maikuolan]: Self-inflicted XSS was possible at the
   front-end IP testing page when user agents, queries, or referrers which
   contain valid HTML tags (e.g., JavaScript) were entered for testing; Fixed.
+
+Caleb M (Maikuolan),
+October 8, 2023.
 
 === Version/Release 1.27.0 ===
 MINOR RELEASE.

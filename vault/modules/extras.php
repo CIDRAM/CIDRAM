@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2023.10.06).
+ * This file: Optional security extras module (last modified: 2023.10.10).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -286,6 +286,13 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         $this->trigger(preg_match('/cpis_.*i0seclab@intermal\.com/', $QueryNoSpace), 'Hack attempt'); // 2018.02.20
         $this->trigger(preg_match('/^(?:3x=3x|of=1&a=1)/i', $this->BlockInfo['Query']), 'Hack attempt'); // 2023.07.13 mod 2023.09.02
 
+        $this->trigger(strpos($QueryNoSpace, 'u=ahr0cdovl3nolnrozwjlc3rjb2rllnrvcc90zxh0l3rlehrfmy50ehrz'), 'Compromised credential in brute-force attacks'); // 2023.10.10
+
+        $this->trigger(preg_match(
+            '~pw=(?:o(?:dvlmgnkc|tjmmdu1)|n(?:zrlnjnl|tk2m2i5)|mzllmwnh|yti4ngu2)~',
+            $QueryNoSpace
+        ), 'Compromised password used in brute-force attacks'); // 2023.10.10
+
         /** These signatures can set extended tracking options. */
         if (
             $this->trigger(strpos($QueryNoSpace, '$_' . '[$' . '__') !== false, 'Shell upload attempt') || // 2017.03.01
@@ -347,21 +354,11 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $RawInputSafe
         ), 'Plesk hack'); // 2017.03.01
 
-        $this->trigger(preg_match('~(?:6\D*1\D*6\D*6\D*9\D*4\D*7\D*8\D*5)~i', $RawInput), 'Spam attempt'); // 2017.03.01
         $this->trigger(preg_match('~//dail' . 'ydigita' . 'ldeals' . '\.info/~i', $RawInput), 'Spam attempt'); // 2017.03.01
-
-        $this->trigger(preg_match(
-            '~C[46][iy]1F[12]EA7217PB(?:DF|TL)[15]FlcH(?:77|98)s[0O]pf[0O](?:%2f' .
-            '|.)[Sr]1[Zt](?:15|76)(?:%2f|.)(?:13ga|OKFae)~',
-            $RawInput
-        ), 'Compromised API key used in brute-force attacks'); // 2020.08.08
-
-        $this->trigger(preg_match('~streaming\.live365\.com/~i', $RawInput), 'Spamvertised domain'); // 2020.03.02
+        $this->trigger(preg_match('~streaming\.live365\.com/~i', $RawInput), 'Spam attempt'); // 2020.03.02 mod 2023.10.10
 
         /** These signatures can set extended tracking options. */
         if (
-            $this->trigger(preg_match('~/â\\x80¦x\.php~i', $RawInput), 'Probe attempt') || // 2017.03.01
-            $this->trigger(preg_match('~\([\'"](?:zwnobyai|awyoznvu)~', $RawInputSafe), 'Injection attempt') || // 2017.03.01
             $this->trigger(preg_match('~^/\?-~', $RawInput), 'Hack attempt') || // 2017.03.01
             $this->trigger(strpos($RawInputSafe, '$_' . '[$' . '__') !== false, 'Shell upload attempt') || // 2017.03.01
             $this->trigger(strpos($RawInputSafe, '@$' . '_[' . ']=' . '@!' . '+_') !== false, 'Shell upload attempt') || // 2017.03.01
@@ -373,8 +370,10 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
     /** Reporting. */
     if (!empty($this->BlockInfo['IPAddr'])) {
-        if (strpos($this->BlockInfo['WhyReason'], 'Compromised API key') !== false) {
-            $this->Reporter->report([15], ['Unauthorised use of known compromised API key detected.'], $this->BlockInfo['IPAddr']);
+        if (strpos($this->BlockInfo['WhyReason'], 'Compromised credential') !== false) {
+            $this->Reporter->report([15, 18], ['Unauthorised use of known compromised credential detected.'], $this->BlockInfo['IPAddr']);
+        } elseif (strpos($this->BlockInfo['WhyReason'], 'Compromised password') !== false) {
+            $this->Reporter->report([15, 18], ['Unauthorised use of known compromised password detected.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'FancyBox exploit attempt') !== false) {
             $this->Reporter->report([15, 21], ['FancyBox hack attempt detected.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'Hack attempt') !== false) {
@@ -406,9 +405,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         } elseif (strpos($this->BlockInfo['WhyReason'], 'Shell upload attempt') !== false) {
             $this->Reporter->report([15], ['Shell upload attempt detected.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'Spam attempt') !== false) {
-            $this->Reporter->report([10], ['Detected a spambot attempting to drop its payload.'], $this->BlockInfo['IPAddr']);
-        } elseif (strpos($this->BlockInfo['WhyReason'], 'Spam attempt') !== false) {
-            $this->Reporter->report([10, 19], ['Detected a spambot attempting to drop its payload.'], $this->BlockInfo['IPAddr']);
+            $this->Reporter->report([10, 19], ['Spam attempt detected.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'WP hack attempt') !== false) {
             $this->Reporter->report([15, 21], ['WordPress hack attempt detected.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'Traversal attack') !== false) {

@@ -1,10 +1,10 @@
 ---
 CIDRAM Core:
  Name: "CIDRAM Core"
- Version: "2.14.1"
+ Version: "2.14.2-DEV+232840"
  Dependencies:
   PHP: "^7.2|^8"
-  Common Classes Package: "^2.10"
+  Common Classes Package: "^2.11-DEV"
   CIDRAM Front-End: "Latest"
   l10n/{lang}: ">=2023.258"
  Changelog: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/Changelog.txt"
@@ -65,10 +65,10 @@ CIDRAM Core:
  Reannotate: "components.dat"
 CIDRAM Front-End:
  Name: "CIDRAM Front-End"
- Version: "2.14.1"
+ Version: "2.14.2-DEV+232840"
  Dependencies:
   PHP: "^7.2|^8"
-  Common Classes Package: "^2.10"
+  Common Classes Package: "^2.11-DEV"
   CIDRAM Core: "Latest"
   l10n/{lang}: ">=2023.258"
  Changelog: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/Changelog.txt"
@@ -228,12 +228,12 @@ CIDRAM Front-End:
    - "3bc42724fbf0651e7225d54e1761948c1d624c1d853549aa0809721abf700a07:722"
    - "828d6cb0f53f3ff440d9901f295f8c6a0eefb295998445b81436158e94b40f2e:1391"
    - "9acc8e42f33d79379bfa11e2d0c88685286f4548811d70bcb1f3151e68e18cf1:2303"
-   - "75d8734ba1f2461ecd2e08a7d68b04ca8ae8df32d93143499a9c44abef977e96:312234"
-   - "5467d2e66051da89c9d3641786587b2a60792c8f2913ed47229245ba0ad03394:235608"
+   - "542808b43636b6fe0cfabb42c8dc8e9181607f780a615ec791062b74bc29a445:312236"
+   - "175f2abd121162ab0ce6decb1a341a047b28985496f47535f07f5a43fb289e27:234360"
  Reannotate: "components.dat"
 Common Classes Package:
  Name: "Common Classes Package"
- Version: "2.10.0"
+ Version: "2.11.0-DEV+232840"
  Dependencies:
   PHP: "^7.2|^8"
  Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat"
@@ -268,13 +268,13 @@ Common Classes Package:
    - "classes/Maikuolan/YAML.php"
   Checksum:
    - "b27713c467a2b64b4f2f1376d473ec842deba6420ee836ffb6b5f01b7d053d99:42206"
-   - "80e4b59785cf7f464a7d3a39e959d653d1471c2da4fa2dc67d9738e3b8f9bd3e:2380"
+   - "4d240d6a8970ca78f2f4f33556354da7e12f5ac1f1a5929f3988f7ff6fccfc7d:2384"
    - "823edaec75178e8c56ad0accec030cbee543e6ad1a36340a2e2a12c2e2106fbb:3872"
    - "c2c8f79e3d85b9c9e08b89a516724e0b9db23688ba7be5132e720faa85534d83:4900"
    - "c59d3b9d21c0a7aee52b55c5da5febbac8477a4fc389dab35a01692236746dfe:30476"
    - "4bf94fb1c03a573468f2ec05a02b0c721f143edfeee7b5b43688b6c14b2e51c2:3827"
    - "529467267f77ef2bc5e89436a27485191070dcc2fe3c07625365d9aa8f58e8ad:5822"
-   - "711c450a452cc6bfb47cca756cd2696a86bbd2db65528d130e7f70b145ba4839:28947"
+   - "e9bea21c2c5e03f7aa870c41e74967002b05eac25c408506d72a2ba705ea1a12:31495"
    - "f61e7356587eab6c30a1d97f97b836abda7b90562e2bcb662f360e16aecd5f5e:9024"
    - "f8739de80b63b35236bfcd482f1e206b0cfd34a089b8eb19182f7f6a939c8c02:38226"
    - "ed6e285278fda8f08ae7e5865081cdf0f6a9cbce47cda7278a037d25a0d7b13a:11300"
@@ -763,7 +763,7 @@ l10n/pl:
 l10n/pt:
  Name: "L10N: Português"
  Extended Description: "Linguagem dados Português"
- Version: "2023.262.0"
+ Version: "2023.284.0"
  Dependencies:
   CIDRAM Core: "^2"
  Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat"
@@ -776,7 +776,7 @@ l10n/pt:
    - "lang/lang.pt.fe.yaml"
    - "lang/lang.pt.yaml"
   Checksum:
-   - "69c1154dbe636feafc2237770606ec13afa309b69c2c41c31b07a6a26ee9d149:64512"
+   - "5f926f2f1d10db7998210cb915505acbae43ede05b5688134671263be86e1ace:64404"
    - "0110303b67ab316589737d112e22931e538e34d58e140f779cc8e839ff65035e:5753"
  Reannotate: "components.dat"
 l10n/ru:

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods for updating CIDRAM components (last modified: 2023.10.12).
+ * This file: Methods for updating CIDRAM components (last modified: 2023.10.13).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -398,7 +398,6 @@ trait Updater
         if (empty($this->Components['Meta'][$Target]['Files'])) {
             return 0;
         }
-        $this->prepareExtendedDescription($this->Components['Meta'][$Target]);
         $this->arrayify($this->Components['Meta'][$Target]['Files']);
         return $this->isInUse($this->Components['Meta'][$Target]);
     }

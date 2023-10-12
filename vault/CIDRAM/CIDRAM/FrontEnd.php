@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.10.12).
+ * This file: The CIDRAM front-end (last modified: 2023.10.13).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -2358,8 +2358,7 @@ class FrontEnd extends Core
                     );
                     $this->Components['Out'][$this->Components['ThisComponent']['SortKey']] = $this->parseVars(
                         $this->arrayFlatten($this->Components['ThisComponent']) + $this->arrayFlatten($this->FE),
-                        $this->FE['UpdatesRow'],
-                        true
+                        $this->FE['UpdatesRow']
                     );
                 }
             }

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2023.09.20).
+ * This file: Front-end functions file (last modified: 2023.10.12).
  */
 
 /**
@@ -4815,44 +4815,6 @@ $CIDRAM['ReplaceLabelWithL10N'] = function (&$Label) use (&$CIDRAM) {
             return;
         }
     }
-};
-
-/**
- * Parses an array of L10N data references from L10N data to an array.
- *
- * @param string|array $References The L10N data references.
- * @return array An array of L10N data.
- */
-$CIDRAM['ArrayFromL10NDataToArray'] = function ($References) use (&$CIDRAM) {
-    if (!is_array($References)) {
-        $References = [$References];
-    }
-    $Out = [];
-    foreach ($References as $Reference) {
-        $Try = '';
-        if (isset($CIDRAM['L10N']->Data[$Reference])) {
-            $Try = $CIDRAM['L10N']->Data[$Reference];
-        }
-        if ($Try === '') {
-            if (($SPos = strpos($Reference, ' ')) !== '') {
-                $Try = (($TryFrom = $CIDRAM['L10N']->getString(substr($Reference, 0, $SPos))) !== '' && strpos($TryFrom, '%s') !== false) ? sprintf($TryFrom, substr($Reference, $SPos + 1)) : $Reference;
-            } else {
-                $Try = $Reference;
-            }
-        }
-        $Reference = $Try;
-        if (!is_array($Reference)) {
-            $Reference = [$Reference];
-        }
-        foreach ($Reference as $Key => $Value) {
-            if (is_int($Key)) {
-                $Out[] = $Value;
-                continue;
-            }
-            $Out[$Key] = $Value;
-        }
-    }
-    return $Out;
 };
 
 /**

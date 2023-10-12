@@ -1,6 +1,6 @@
 <?php
 /**
- * Operation handler (last modified: 2023.09.18).
+ * Operation handler (last modified: 2023.10.12).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -228,8 +228,8 @@ class Operation
             return $AllowNonScalar || is_scalar($Data) ? $Data : '';
         }
         $Segment = str_replace('\.', '.', $Segment);
-        if (is_array($Data) && isset($Data[$Segment])) {
-            return $this->dataTraverse($Data[$Segment], $Path, $AllowNonScalar);
+        if (is_array($Data)) {
+            return isset($Data[$Segment]) ? $this->dataTraverse($Data[$Segment], $Path, $AllowNonScalar) : '';
         }
         if (is_object($Data) && property_exists($Data, $Segment)) {
             return $this->dataTraverse($Data->$Segment, $Path, $AllowNonScalar);

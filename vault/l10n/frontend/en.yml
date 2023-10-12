@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2023.09.23).
+# This file: English language data for the front-end (last modified: 2023.10.12).
 ##/
 
 Extended Description:
@@ -17,7 +17,9 @@ Extended Description:
  Bad hosts blocker module: "Blocks hosts frequently used by spammers, hackers, and other nefarious entities."
  Bot user agents module: "Blocks user agents associated with unwanted bots and nefarious activity."
  Bypasses: "The default signature bypass files normally included with the main package."
- Chart.js: "Enables the front-end to generate doughnut charts.<br />{{Links.Chart.js}} is available via the {{Links.MIT}} licence."
+ Chart.js:
+  en-AU: "Enables the front-end to generate doughnut charts.<br />{{Links.Chart.js}} is available via the {{Links.MIT}} licence."
+  en-US: "Enables the front-end to generate doughnut charts.<br />{{Links.Chart.js}} is available via the {{Links.MIT}} license."
  Cookie scanner module: "Provides some limited protections against dangerous cookies."
  HTTP version checker module: "Makes it possible to block specific protocols and HTTP versions through the CIDRAM configuration."
  IP-API module: "Leverages the {{Links.IP-API}} API to provide an ASN and country code lookup facility for CIDRAM, enabling ASNs and countries to be blocked or whitelisted via the CIDRAM configuration, and providing a means for social networking verification to verify Facebook requests. (If you use this module, you won't need to use the BGPView module, as they serve the same purpose)."
@@ -32,7 +34,9 @@ Extended Description:
  IPv6-Nonblocking: *ExtDesNonblocking
  IPv6-Other: *ExtDesOther
  Optional security extras module: "Provides some limited protections against various attack vectors commonly used in requests."
- PHPMailer: "Required for using any functionality that involves sending email.<br />{{Links.PHPMailer.PHPMailer}} is available via the {{Links.PHPMailer.License}} licence."
+ PHPMailer:
+  en-AU: "Required for using any functionality that involves sending email.<br />{{Links.PHPMailer.PHPMailer}} is available via the {{Links.PHPMailer.License}} licence."
+  en-US: "Required for using any functionality that involves sending email.<br />{{Links.PHPMailer.PHPMailer}} is available via the {{Links.PHPMailer.License}} license."
  Project Honeypot module: "Blocks requests from IPs listed at Project Honeypot."
  Protocol blocker module: "Provides the ability to block specific request protocols via the configuration (e.g., HTTP/0.9, HTTP/1.1, SPDY/3.0, etc). Note: Won't have any effect for those websites routing through services which rewrite requests to all use the exact same protocol, such as Cloudflare."
  Referrer spam module: "Blocking based on referrer spam won't generally provide any meaningful security benefit, but in some cases, could be useful for some users, for gathering more information about requests, and for being able to report it.<br />Installing this module also installs the Symfony polyfills for {{Links.Symfony.Intl/Idn}} (because this module requires Idn functionality, which not all PHP installations provide by default), available via the {{Links.MIT}} licence."
@@ -96,14 +100,18 @@ config:
  abuseipdb_max_cs_for_captcha: "The maximum confidence score allowed for being served a CAPTCHA (must be a number between 0 and 100). Default = 10."
  abuseipdb_minimum_confidence_score: "The minimum confidence score required in order for CIDRAM to block an IP address (must be a number between 0 and 100). Default = 50."
  abuseipdb_minimum_total_reports: "The minimum number of total reports required in order for CIDRAM to block an IP address. Default = 1."
- abuseipdb_report_back: "Allow CIDRAM to report detected bad behaviour back to AbuseIPDB using your API key?"
+ abuseipdb_report_back:
+  en-AU: "Allow CIDRAM to report detected bad behaviour back to AbuseIPDB using your API key?"
+  en-US: "Allow CIDRAM to report detected bad behavior back to AbuseIPDB using your API key?"
  bgpview: "Configuration for the BGPView module (provides an ASN and country code lookup facility for CIDRAM)."
  bgpview_blocked_asns: &ConfigBlockedASNs "A list of ASNs to be blocked when matched by the module."
  bgpview_blocked_ccs: &ConfigBlockedCCs "A list of countries (identified by their {{Links.ISO.3166}} 2-digit country codes) to be blocked when matched by the module."
  bgpview_whitelisted_asns: &ConfigWhitelistedASNs "A list of ASNs to be whitelisted when matched by the module."
  bgpview_whitelisted_ccs: &ConfigWhitelistedCCs "A list of countries (identified by their {{Links.ISO.3166}} 2-digit country codes) to be whitelisted when matched by the module."
  bobuam: "Configuration for the optional "bot or browser user agents module", which detects unwanted bots, old browsers, and performs some sanity checks."
- bobuam_block_bots: "Block bots recognised as malicious or unwanted?"
+ bobuam_block_bots:
+  en-AU: "Block bots recognised as malicious or unwanted?"
+  en-US: "Block bots recognized as malicious or unwanted?"
  bobuam_block_eol_browsers: "Block browsers that've reached end of life? (Set versions below)."
  bobuam_chrome: "Lowest allowed version of the "Chrome/Chromium" token. Recommended: {{BOBUAM Token.Chrome}}."
  bobuam_firefox: "Lowest allowed version of the "Firefox" token. Recommended: {{BOBUAM Token.Firefox}}."
@@ -119,7 +127,10 @@ config:
  bunnycdn_positive_action: "Which action should CIDRAM perform when it encounters a request from BunnyCDN? Default action = Bypass."
  bypasses: "Default signature bypasses configuration."
  bypasses_used: "Which bypasses should be used?"
- components: "Configuration for the activation and the deactivation of the components used by CIDRAM. Typically populated by the updates page, but can also be managed from here for finer control and for custom components not recognised by the updates page."
+ components:
+  en-AU: "Configuration for the activation and the deactivation of the components used by CIDRAM. Typically populated by the updates page, but can also be managed from here for finer control and for custom components not recognised by the updates page."
+  en-CA: &cp "Configuration for the activation and the deactivation of the components used by CIDRAM. Typically populated by the updates page, but can also be managed from here for finer control and for custom components not recognized by the updates page."
+  en-US: *cp
  components_events: "Event handlers. Typically used to modify the way CIDRAM behaves internally or to provide additional functionality."
  components_imports: "Imports. Typically used to supply a component's configuration information to CIDRAM."
  components_ipv4: "IPv4 signature files."
@@ -127,14 +138,19 @@ config:
  components_modules: "Modules."
  experimental: "Unstable/Experimental!"
  extras: "Optional security extras module configuration."
- extras_signatures: "Which types of signatures should be honoured?"
+ extras_signatures:
+  en-AU: "Which types of signatures should be honoured?"
+  en-US: "Which types of signatures should be honored?"
  extras_signatures_empty_ua: "Empty user agents."
  extras_signatures_query: "Signatures based on request queries."
  extras_signatures_raw: "Signatures based on raw request input."
  extras_signatures_ruri: "Signatures based on reconstructed URIs."
  frontend: "Configuration for the front-end."
  frontend_custom_footer: "Inserted as HTML at the very bottom of all front-end pages. This could be useful in case you want to include a legal notice, contact link, business information, or similar at all such pages."
- frontend_custom_header: "Inserted as HTML at the very beginning of all front-end pages. This could be useful in case you want to include a website logo, personalised header, scripts, or similar at all such pages."
+ frontend_custom_header:
+  en-AU: "Inserted as HTML at the very beginning of all front-end pages. This could be useful in case you want to include a website logo, personalised header, scripts, or similar at all such pages."
+  en-CA: &cp "Inserted as HTML at the very beginning of all front-end pages. This could be useful in case you want to include a website logo, personalized header, scripts, or similar at all such pages."
+  en-US: *cp
  frontend_enable_two_factor: "This directive determines whether to use 2FA for front-end accounts."
  frontend_frontend_log: "File for logging front-end login attempts. Specify a filename, or leave blank to disable."
  frontend_magnification: &MagnifDesc "Font magnification. Default = 1."
@@ -156,7 +172,10 @@ config:
  general_http_response_header_code: "Which HTTP status message should CIDRAM send when blocking requests?"
  general_ipaddr: "Where to find the IP address of connecting requests? (Useful for services such as Cloudflare and the likes). Default = REMOTE_ADDR. WARNING: Don't change this unless you know what you're doing!"
  general_lang: "Specify the default language for CIDRAM."
- general_lang_override: "Localise according to HTTP_ACCEPT_LANGUAGE whenever possible? True = Yes [Default]; False = No."
+ general_lang_override:
+  en-AU: "Localise according to HTTP_ACCEPT_LANGUAGE whenever possible? True = Yes [Default]; False = No."
+  en-CA: &cp "Localize according to HTTP_ACCEPT_LANGUAGE whenever possible? True = Yes [Default]; False = No."
+  en-US: *cp
  general_numbers: "How do you prefer numbers to be displayed? Select the example that looks the most correct to you."
  general_sensitive: "A list of paths to regard as sensitive pages. Each path listed will be checked against the reconstructed URI when needed. A path which begins with a forward slash will be treated as a literal, and matched from the path component of the request onward. Otherwise, a path which begins with a non-alphanumeric character, and ends with that same character (or that same character plus an optional "i" flag) will be treated as a regular expression. Any other kind of path will be treated as a literal, and can match from any part of the URI. Whether a path is regarded as a sensitive page may affect how some modules behave, but doesn't have any effect otherwise."
  general_silent_mode: "Should CIDRAM silently redirect blocked access attempts instead of displaying the "access denied" page? If yes, specify the location to redirect blocked access attempts to. If no, leave this variable blank."
@@ -186,17 +205,26 @@ config:
  ipapi_whitelisted_ccs: *ConfigWhitelistedCCs
  legal: "Configuration for legal requirements."
  legal_privacy_policy: "The address of a relevant privacy policy to be displayed in the footer of any generated pages. Specify a URL, or leave blank to disable."
- legal_pseudonymise_ip_addresses: "Pseudonymise IP addresses when logging? True = Yes [Default]; False = No."
+ legal_pseudonymise_ip_addresses:
+  en-AU: "Pseudonymise IP addresses when logging? True = Yes [Default]; False = No."
+  en-CA: &cp "Pseudonymize IP addresses when logging? True = Yes [Default]; False = No."
+  en-US: *cp
  logging: "Configuration related to logging (excluding that applicable to other categories)."
  logging_apache_style_log: "Apache-style file for logging all blocked access attempts. Specify a filename, or leave blank to disable."
  logging_error_log: "A file for logging any non-fatal errors detected. Specify a filename, or leave blank to disable."
  logging_log_banned_ips: "Include blocked requests from banned IPs in logs? True = Yes [Default]; False = No."
  logging_log_rotation_action: "Log rotation limits the number of log files that should exist at any one time. When new log files are created, if the total number of log files exceeds the specified limit, the specified action will be performed. You can specify the desired action here."
  logging_log_rotation_limit: "Log rotation limits the number of log files that should exist at any one time. When new log files are created, if the total number of log files exceeds the specified limit, the specified action will be performed. You can specify the desired limit here. A value of 0 will disable log rotation."
- logging_log_sanitisation: "When using the front-end logs page to view log data, CIDRAM sanitises the log data before displaying it, to protect users from XSS attacks and other potential threats that log data could contain. However, by default, data isn't sanitised during logging. This is to ensure that log data is preserved accurately, to aid any heuristic or forensic analysis that might be necessary in the future. However, in the event that a user attempts to read log data using external tools, and if those external tools don't perform their own sanitisation process, the user could be exposed to XSS attacks. If necessary, you can change the default behaviour using this configuration directive. True = Sanitise data when logging it (data is preserved less accurately, but XSS risk is lower). False = Don't sanitise data when logging it (data is preserved more accurately, but XSS risk is higher) [Default]."
+ logging_log_sanitisation:
+  en-AU: "When using the front-end logs page to view log data, CIDRAM sanitises the log data before displaying it, to protect users from XSS attacks and other potential threats that log data could contain. However, by default, data isn't sanitised during logging. This is to ensure that log data is preserved accurately, to aid any heuristic or forensic analysis that might be necessary in the future. However, in the event that a user attempts to read log data using external tools, and if those external tools don't perform their own sanitisation process, the user could be exposed to XSS attacks. If necessary, you can change the default behaviour using this configuration directive. True = Sanitise data when logging it (data is preserved less accurately, but XSS risk is lower). False = Don't sanitise data when logging it (data is preserved more accurately, but XSS risk is higher) [Default]."
+  en-CA: "When using the front-end logs page to view log data, CIDRAM sanitizes the log data before displaying it, to protect users from XSS attacks and other potential threats that log data could contain. However, by default, data isn't sanitized during logging. This is to ensure that log data is preserved accurately, to aid any heuristic or forensic analysis that might be necessary in the future. However, in the event that a user attempts to read log data using external tools, and if those external tools don't perform their own sanitisation process, the user could be exposed to XSS attacks. If necessary, you can change the default behaviour using this configuration directive. True = Sanitize data when logging it (data is preserved less accurately, but XSS risk is lower). False = Don't sanitize data when logging it (data is preserved more accurately, but XSS risk is higher) [Default]."
+  en-US: "When using the front-end logs page to view log data, CIDRAM sanitizes the log data before displaying it, to protect users from XSS attacks and other potential threats that log data could contain. However, by default, data isn't sanitized during logging. This is to ensure that log data is preserved accurately, to aid any heuristic or forensic analysis that might be necessary in the future. However, in the event that a user attempts to read log data using external tools, and if those external tools don't perform their own sanitisation process, the user could be exposed to XSS attacks. If necessary, you can change the default behavior using this configuration directive. True = Sanitize data when logging it (data is preserved less accurately, but XSS risk is lower). False = Don't sanitize data when logging it (data is preserved more accurately, but XSS risk is higher) [Default]."
  logging_outbound_request_log: "A file for logging the results of any outbound requests. Specify a filename, or leave blank to disable."
  logging_report_log: "A file for logging any reports sent to external APIs. Specify a filename, or leave blank to disable."
- logging_serialised_log: "Serialised file for logging all blocked access attempts. Specify a filename, or leave blank to disable."
+ logging_serialised_log:
+  en-AU: "Serialised file for logging all blocked access attempts. Specify a filename, or leave blank to disable."
+  en-CA: &cp "Serialized file for logging all blocked access attempts. Specify a filename, or leave blank to disable."
+  en-US: *cp
  logging_standard_log: "Human-readable file for logging all blocked access attempts. Specify a filename, or leave blank to disable."
  logging_truncate: "Truncate log files when they reach a certain size? Value is the maximum size in B/KB/MB/GB/TB that a log file may grow to before being truncated. The default value of 0KB disables truncation (log files can grow indefinitely). Note: Applies to individual log files! The size of log files is not considered collectively."
  phpmailer: "Configuration for PHPMailer (used for two-factor authentication)."
@@ -247,7 +275,10 @@ config:
  signatures: "Configuration for signatures, signature files, modules, etc."
  signatures_default_tracktime: "The duration that IP addresses should be tracked for. Default = 7d0°0′0″ (1 week)."
  signatures_infraction_limit: "Maximum number of infractions an IP is allowed to incur before it is banned by IP tracking. Default = 10."
- signatures_shorthand: "Controls for what to do with a request when there's a positive match against a signature which utilises the given shorthand words."
+ signatures_shorthand:
+  en-AU: "Controls for what to do with a request when there's a positive match against a signature which utilises the given shorthand words."
+  en-CA: &cp "Controls for what to do with a request when there's a positive match against a signature which utilizes the given shorthand words."
+  en-US: *cp
  signatures_tracking_override: "Allow modules to override tracking options? True = Yes [Default]; False = No."
  supplementary_cache_options: "Supplementary cache options. Note: Changing these values may potentially log you out."
  supplementary_cache_options_enable_apcu: "Specifies whether to try using APCu for caching. Default = True."
@@ -268,7 +299,10 @@ config:
  template_data_captcha_title: "The page title to display for CAPTCHA requests."
  template_data_css_url: "CSS file URL for custom themes."
  template_data_custom_footer: "Inserted as HTML at the very bottom of all "access denied" pages. This could be useful in case you want to include a legal notice, contact link, business information, or similar at all such pages."
- template_data_custom_header: "Inserted as HTML at the very beginning of all "access denied" pages. This could be useful in case you want to include a website logo, personalised header, scripts, or similar at all such pages."
+ template_data_custom_header:
+  en-AU: "Inserted as HTML at the very beginning of all "access denied" pages. This could be useful in case you want to include a website logo, personalised header, scripts, or similar at all such pages."
+  en-CA: &cp "Inserted as HTML at the very beginning of all "access denied" pages. This could be useful in case you want to include a website logo, personalized header, scripts, or similar at all such pages."
+  en-US: *cp
  template_data_magnification: *MagnifDesc
  template_data_theme: "The default theme to use for CIDRAM."
  verification: "Configuration for verifying where requests originate from."
@@ -359,7 +393,9 @@ field:
 hints_asnlookup: "** Requires ASN lookup functionality (e.g., via the IP-API or BGPView module)."
 hints_aux_stats: "Note: Whether to track statistics for auxiliary rules can be controlled from the auxiliary rules page."
 hints_cause_fp: "*!! High likelihood of causing false positives due to %s."
-hints_client_honour: "No matter how we instruct the client, it's important to remember that we ultimately have no control over what the client chooses to do, and there's zero guarantee that the client will honour our instructions."
+hints_client_honour:
+ en-AU: "No matter how we instruct the client, it's important to remember that we ultimately have no control over what the client chooses to do, and there's zero guarantee that the client will honour our instructions."
+ en-US: "No matter how we instruct the client, it's important to remember that we ultimately have no control over what the client chooses to do, and there's zero guarantee that the client will honor our instructions."
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#what-can-i-use-for-default_dns" hreflang="en-AU">What can I use for "default_dns"?</a></em>"
 hints_duration:
@@ -377,12 +413,20 @@ hints_shorthand:
  1.: "None of the default signature files use this, but it's supported nonetheless in case it might be useful for some users."
  2.: "If you need users to be able to access your website via proxies, don't block this. Otherwise though, you can block this."
  3.: "Direct usage in signatures isn't supported, but it may be invoked by other means in particular circumstances."
- 4.: "Refers to cases where shorthand words aren't used at all, or aren't recognised by CIDRAM."
+ 4.:
+  en-AU: "Refers to cases where shorthand words aren't used at all, or aren't recognised by CIDRAM."
+  en-CA: &cp "Refers to cases where shorthand words aren't used at all, or aren't recognized by CIDRAM."
+  en-US: *cp
  One per signature.: "A signature may invoke multiple profiles, but can use only one shorthand word. It's possible that multiple shorthand words may be suitable, but as only one can be used, we aim to always use only the most suitable."
  Priority.: "An option selected always takes priority over an option not selected. E.g., if multiple shorthand words are in play but only one of them is set as being blocked, the request will still be blocked."
- Human endpoints and cloud services.: "Cloud service may refer to webhosting providers, server farms, data centres, or any number of other things. Human endpoint refers to the means by which a human accesses the internet, such as by way of an internet service provider. A network usually provides just one or the other, but may sometimes provide both. We aim to never identify potential human endpoints as cloud services. Therefore, a cloud service may be identified as something else if its range is shared by known human endpoints. Conversely, we aim to always identify cloud services, whose ranges are not shared by any known human endpoints, as cloud services. Therefore, a request identified explicitly as a cloud service probably doesn't share its range with any known human endpoints. Likewise, a request identified explicitly by attacks or spam probably does. However, the internet is always in flux, the purposes of networks changes over time, and ranges are always being bought or sold, so remain cognisant and vigilant in regards to false positives."
+ Human endpoints and cloud services.:
+  en-AU: "Cloud service may refer to webhosting providers, server farms, data centres, or any number of other things. Human endpoint refers to the means by which a human accesses the internet, such as by way of an internet service provider. A network usually provides just one or the other, but may sometimes provide both. We aim to never identify potential human endpoints as cloud services. Therefore, a cloud service may be identified as something else if its range is shared by known human endpoints. Conversely, we aim to always identify cloud services, whose ranges are not shared by any known human endpoints, as cloud services. Therefore, a request identified explicitly as a cloud service probably doesn't share its range with any known human endpoints. Likewise, a request identified explicitly by attacks or spam probably does. However, the internet is always in flux, the purposes of networks changes over time, and ranges are always being bought or sold, so remain cognisant and vigilant in regards to false positives."
+  en-US: "Cloud service may refer to webhosting providers, server farms, data centers, or any number of other things. Human endpoint refers to the means by which a human accesses the internet, such as by way of an internet service provider. A network usually provides just one or the other, but may sometimes provide both. We aim to never identify potential human endpoints as cloud services. Therefore, a cloud service may be identified as something else if its range is shared by known human endpoints. Conversely, we aim to always identify cloud services, whose ranges are not shared by any known human endpoints, as cloud services. Therefore, a request identified explicitly as a cloud service probably doesn't share its range with any known human endpoints. Likewise, a request identified explicitly by attacks or spam probably does. However, the internet is always in flux, the purposes of networks changes over time, and ranges are always being bought or sold, so remain cognizant and vigilant in regards to false positives."
 hints_verification:
- "What are "positives" and "negatives"?": "When verifying the identity presented by a request, a successful outcome could be described as "positive" or "negative". In the case that the identity presented is confirmed to be the true identity, it would be described as "positive". In the case that the identity presented is confirmed to be falsified, it would be described as "negative". However, an unsuccessful outcome (e.g., verification fails, or the veracity of the identity presented isn't able to be determined) would not be described as "positive" or "negative". Instead, an unsuccessful outcome would be described simply as non-verified. When no attempt to verify the identity presented by a request is made, the request would likewise be described as non-verified. The terms make sense only in the context where the identity presented by a request is recognised, and therefore, where verification is possible. In cases where the identity presented doesn't match the options provided above, or where no identity is presented, the options provided above become irrelevant."
+ "What are "positives" and "negatives"?":
+  en-AU: "When verifying the identity presented by a request, a successful outcome could be described as "positive" or "negative". In the case that the identity presented is confirmed to be the true identity, it would be described as "positive". In the case that the identity presented is confirmed to be falsified, it would be described as "negative". However, an unsuccessful outcome (e.g., verification fails, or the veracity of the identity presented isn't able to be determined) would not be described as "positive" or "negative". Instead, an unsuccessful outcome would be described simply as non-verified. When no attempt to verify the identity presented by a request is made, the request would likewise be described as non-verified. The terms make sense only in the context where the identity presented by a request is recognised, and therefore, where verification is possible. In cases where the identity presented doesn't match the options provided above, or where no identity is presented, the options provided above become irrelevant."
+  en-CA: &cp "When verifying the identity presented by a request, a successful outcome could be described as "positive" or "negative". In the case that the identity presented is confirmed to be the true identity, it would be described as "positive". In the case that the identity presented is confirmed to be falsified, it would be described as "negative". However, an unsuccessful outcome (e.g., verification fails, or the veracity of the identity presented isn't able to be determined) would not be described as "positive" or "negative". Instead, an unsuccessful outcome would be described simply as non-verified. When no attempt to verify the identity presented by a request is made, the request would likewise be described as non-verified. The terms make sense only in the context where the identity presented by a request is recognized, and therefore, where verification is possible. In cases where the identity presented doesn't match the options provided above, or where no identity is presented, the options provided above become irrelevant."
+  en-US: *cp
  "What are "single-hit bypasses"?": "In some cases, a positive-verified request may still blocked as a result of the signature files, modules, or other conditions of the request, and bypasses may be necessary in order to avoid false positives. In the case where a bypass is intended to deal with exactly one infraction, no more and no less, such a bypass could be described as a "single-hit bypass"."
 hints_want_to_block: "!! Most users will likely want this to be blocked, regardless of whether it's real or falsified. That can be achieved by having "attempt to verify" be not selected and "block non-verified requests" be selected. However, because some users may want to be able to verify such requests (in order to block negatives while allowing positives), instead of blocking such requests via modules, options for handling such requests are provided here."
 info_cli_by_default_ips: |
@@ -442,7 +486,7 @@ Some useful links: |
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar by Qrator</a> – Useful tool for checking the connectivity of ASNs as well as for various other information about ASNs.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">The Spamhaus Project</a> – Displays reports regarding botnet infection rates for ASNs.</li>
            <li>{{Links.AbuseIPDB}} – Maintains a database of known abusive IPs; Provides an API for checking and reporting IPs.</li>
-           <li>{{Links.IP-API}} – Get information about IP addresses or hostnames such as country code, region name, longitude, latitude, organisation name, etc.</li>
+           <li>{{Links.IP-API}} – Get information about IP addresses or hostnames such as country code, region name, longitude, latitude, etc.</li>
          </ul>
        </li>
        <li><span class="comCat">Informational and learning resources.</span>
@@ -802,7 +846,10 @@ response:
  That account doesn_t exist: "That account doesn't exist."
  The %s command can_t be chained in that way, sorry: "The %s command can't be chained in that way, sorry."
  There aren_t currently any auxiliary rules: "There aren't currently any auxiliary rules."
- There_s nothing to analyse, sorry: "There's nothing to analyse, sorry."
+ There_s nothing to analyse, sorry:
+  en-AU: "There's nothing to analyse, sorry."
+  en-CA: &cp "There's nothing to analyze, sorry."
+  en-US: *cp
  There_s nothing to print, sorry: "There's nothing to print, sorry."
  There_s nothing to write, sorry: "There's nothing to write, sorry."
  Tracking cleared: "Tracking cleared."

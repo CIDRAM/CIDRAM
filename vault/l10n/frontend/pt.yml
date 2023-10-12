@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese (Brazil) language data for the front-end (last modified: 2023.09.23).
+# This file: Portuguese language data for the front-end (last modified: 2023.10.12).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -26,15 +26,21 @@
 
 Extended Description:
  AbuseIPDB module: "Bloqueia solicitações de IPs listados no AbuseIPDB."
- BGPView module: "Aproveita a API {{Links.BGPView}} para fornecer funcionalidade de pesquisa para ASNs e códigos de país para o CIDRAM, permitindo que ASNs e países sejam bloqueados ou incluídos na lista branca por meio da configuração da CIDRAM, e fornecer um meio de verificação de rede social para verificar solicitações do Facebook. (Se você usar este módulo, não precisará usar o módulo IP-API, pois eles têm a mesma propósito)."
+ BGPView module:
+  pt-BR: "Aproveita a API {{Links.BGPView}} para fornecer funcionalidade de pesquisa para ASNs e códigos de país para o CIDRAM, permitindo que ASNs e países sejam bloqueados ou incluídos na lista branca por meio da configuração da CIDRAM, e fornecer um meio de verificação de rede social para verificar solicitações do Facebook. (Se você usar este módulo, não precisará usar o módulo IP-API, pois eles têm a mesma propósito)."
+  pt-PT: "Aproveita a API {{Links.BGPView}} para fornecer funcionalidade de pesquisa para ASNs e códigos de país para o CIDRAM, a permitir que ASNs e países sejam bloqueados ou incluídos na lista branca por meio da configuração da CIDRAM, e fornecer um meio de verificação de rede social para verificar solicitações do Facebook. (Se você usar este módulo, não precisará usar o módulo IP-API, pois eles têm a mesma propósito)."
  Bad TLDs blocker module: "Bloqueia hosts pertencentes a ISPs freqüentemente usados por spammers, hackers e outras entidades nefastas."
  Bad hosts blocker module: "Bloqueia hosts frequentemente usados por spammers, hackers e outras entidades nefastas."
- Bot user agents module: "Bloqueia os agentes do usuário associados a bots indesejados e atividades nefastas."
+ Bot user agents module:
+  pt-BR: "Bloqueia os agentes do usuário associados a bots indesejados e atividades nefastas."
+  pt-PT: "Bloqueia os agentes do utilizador associados a bots indesejados e atividades nefastas."
  Bypasses: "Os arquivos para bypass das assinaturas padrão normalmente incluído com o pacote principal."
  Chart.js: "Permite que o front-end gere gráficos de pizza.<br />{{Links.Chart.js}} está disponível através da licença {{Links.MIT}}."
  Cookie scanner module: "Fornece algumas proteções limitadas contra cookies perigosos."
  HTTP version checker module: "Possibilita o bloqueio de protocolos específicos e versões HTTP por meio da configuração CIDRAM."
- IP-API module: "Aproveita a API {{Links.IP-API}} para fornecer funcionalidade de pesquisa para ASNs e códigos de país para o CIDRAM, permitindo que ASNs e países sejam bloqueados ou incluídos na lista branca por meio da configuração da CIDRAM, e fornecer um meio de verificação de rede social para verificar solicitações do Facebook. (Se você usar este módulo, não precisará usar o módulo BGPView, pois eles têm a mesma propósito)."
+ IP-API module:
+  pt-BR: "Aproveita a API {{Links.IP-API}} para fornecer funcionalidade de pesquisa para ASNs e códigos de país para o CIDRAM, permitindo que ASNs e países sejam bloqueados ou incluídos na lista branca por meio da configuração da CIDRAM, e fornecer um meio de verificação de rede social para verificar solicitações do Facebook. (Se você usar este módulo, não precisará usar o módulo BGPView, pois eles têm a mesma propósito)."
+  pt-PT: "Aproveita a API {{Links.IP-API}} para fornecer funcionalidade de pesquisa para ASNs e códigos de país para o CIDRAM, a permitir que ASNs e países sejam bloqueados ou incluídos na lista branca por meio da configuração da CIDRAM, e fornecer um meio de verificação de rede social para verificar solicitações do Facebook. (Se você usar este módulo, não precisará usar o módulo BGPView, pois eles têm a mesma propósito)."
  IPv4: &ExtDesCloud "Bloqueia serviços em nuvem indesejados e pontos de extremidade não-humanos."
  IPv4-Bogons: &ExtDesBogons "Bloqueia bogon/marciano CIDRs."
  IPv4-ISPs: &ExtDesISPs "Bloqueia ISPs perigosos e propensos a spam (inclui redes multijogos, que podem conter endpoints humanos e não humanos)."
@@ -49,16 +55,22 @@ Extended Description:
  PHPMailer: "Necessário para usar qualquer funcionalidade que envolva o envio de email.<br />{{Links.PHPMailer.PHPMailer}} está disponível através do licença {{Links.PHPMailer.License}}."
  Project Honeypot module: "Bloqueia solicitações de IPs listados no Project Honeypot."
  Protocol blocker module: "Fornece a capacidade de bloquear protocolos de solicitação específicos por meio da configuração (por exemplo, HTTP/0.9, HTTP/1.1, SPDY/3.0, etc). Observação: Não terá nenhum efeito para os sites que roteiam por meio de serviços que reescrevem solicitações para usar exatamente o mesmo protocolo, como Cloudflare."
- Referrer spam module: "O bloqueio baseado em spam de referência geralmente não fornece nenhum benefício de segurança significativoBloqueio baseado em spam de referência geralmente não fornece nenhum benefício de segurança significativo, mas, em alguns casos, pode ser útil para alguns usuários, para reunir mais informações sobre solicitações e para relatá-las.<br />A instalação deste módulo também instala os polyfills do Symfony para {{Links.Symfony.Intl/Idn}} (porque este módulo requer a funcionalidade Idn, que nem todas as instalações PHP fornecem por padrão), disponível através da licença {{Links.MIT}}."
+ Referrer spam module:
+  pt-BR: "O bloqueio baseado em spam de referência geralmente não fornece nenhum benefício de segurança significativo, mas, em alguns casos, pode ser útil para alguns usuários, para coletar mais informações sobre solicitações e para relatá-las.<br />A instalação deste módulo também instala os polyfills do Symfony para {{Links.Symfony.Intl/Idn}} (porque este módulo requer a funcionalidade Idn, que nem todas as instalações PHP fornecem por padrão), disponível através da licença {{Links.MIT}}."
+  pt-PT: "O bloqueio baseado em spam de referência geralmente não fornece nenhum benefício de segurança significativo, mas, em alguns casos, pode ser útil para alguns utilizadores, para coletar mais informações sobre solicitações e para relatá-las.<br />A instalação deste módulo também instala os polyfills do Symfony para {{Links.Symfony.Intl/Idn}} (porque este módulo requer a funcionalidade Idn, que nem todas as instalações PHP fornecem por padrão), disponível através da licença {{Links.MIT}}."
  Stop Forum Spam module: "Protege as páginas de registro e login contra IPs listados pelo SFS."
  Tor blocker module: "Proíbe o acesso de nós de saída do Tor por meio de pesquisas DNSEL (suporta IPv4 e IPv6 ambas)."
 Name:
  AbuseIPDB module: "Módulo AbuseIPDB."
  BGPView module: "Módulo BGPView."
- BOBUAM: "Módulo para agentes do usuário de bot ou navegador (BOBUAM)."
+ BOBUAM:
+  pt-BR: "Módulo para agentes do usuário de bot ou navegador (BOBUAM)."
+  pt-PT: "Módulo para agentes do utilizador de bot ou navegador (BOBUAM)."
  Bad TLDs blocker module: "Módulo bloqueador de TLDs perigosos."
  Bad hosts blocker module: "Módulo bloqueador de hosts perigosos."
- Bot user agents module: "Módulo de agentes do usuário de bot."
+ Bot user agents module:
+  pt-BR: "Módulo de agentes do usuário de bot."
+  pt-PT: "Módulo de agentes do utilizador de bot."
  BunnyCDN compatibility module: "BunnyCDN módulo de compatibilidade."
  Bypasses: "Bypasses das assinaturas padrão."
  Cookie scanner module: "Módulo opcional para análise de cookies."
@@ -116,19 +128,29 @@ config:
  bgpview_blocked_ccs: &ConfigBlockedCCs "Uma lista de países (identificados por seus códigos de país de 2 dígitos {{Links.ISO.3166}}) a serem bloqueados quando correspondidos pelo módulo."
  bgpview_whitelisted_asns: &ConfigWhitelistedASNs "Uma lista de ASNs a serem incluídos na lista branca quando correspondidos pelo módulo."
  bgpview_whitelisted_ccs: &ConfigWhitelistedCCs "Uma lista de países (identificados por seus códigos de país de 2 dígitos {{Links.ISO.3166}}) a serem incluídos na lista branca quando correspondidos pelo módulo."
- bobuam: "Configuração para o "módulo para agentes do usuário de bot ou navegador" opcional, que detecta bots indesejados, navegadores antigos, e executa algumas verificações de sanidade."
+ bobuam:
+  pt-BR: "Configuração para o "módulo para agentes do usuário de bot ou navegador" opcional, que detecta bots indesejados, navegadores antigos, e executa algumas verificações de sanidade."
+  pt-PT: "Configuração para o "módulo para agentes do utilizador de bot ou navegador" opcional, que detecta bots indesejados, navegadores antigos, e executa algumas verificações de sanidade."
  bobuam_block_bots: "Bloquear bots reconhecidos como maliciosos ou indesejados?"
  bobuam_block_eol_browsers: "Bloquear navegadores que atingiram o fim da vida útil? (Defina as versões abaixo)."
  bobuam_chrome: "Versão mais baixa permitida do token "Chrome/Chromium". Recomendado: {{BOBUAM Token.Chrome}}."
  bobuam_firefox: "Versão mais baixa permitida do token "Firefox". Recomendado: {{BOBUAM Token.Firefox}}."
  bobuam_firefox_esr: "Versão permitida do token "Firefox" para a versão ESR. Recomendado: {{BOBUAM Token.Firefox ESR}}."
- bobuam_reason_ambiguous: "O motivo do bloqueio mostrado quando um agente de usuário ambígua é detectado."
+ bobuam_reason_ambiguous:
+  pt-BR: "O motivo do bloqueio mostrado quando um agente de usuário ambígua é detectado."
+  pt-PT: "O motivo do bloqueio mostrado quando um agente de utilizador ambígua é detectado."
  bobuam_reason_bot: "O motivo do bloqueio mostrado quando os bots são bloqueados."
  bobuam_reason_browser: "O motivo do bloqueio mostrado quando um navegador muito antigo é bloqueado."
- bobuam_reason_malformed: "O motivo do bloqueio mostrado quando um agente de usuário malformado é detectado."
- bobuam_reason_masquerade: "O motivo do bloqueio mostrado quando um agente do usuário tenta se disfarçar de outra coisa."
+ bobuam_reason_malformed:
+  pt-BR: "O motivo do bloqueio mostrado quando um agente de usuário malformado é detectado."
+  pt-PT: "O motivo do bloqueio mostrado quando um agente de utilizador malformado é detectado."
+ bobuam_reason_masquerade:
+  pt-BR: "O motivo do bloqueio mostrado quando um agente do usuário tenta se disfarçar de outra coisa."
+  pt-PT: "O motivo do bloqueio mostrado quando um agente do utilizador tenta se disfarçar de outra coisa."
  bobuam_safari: "Versão mais baixa permitida do token "Version" do Safari. Recomendado: {{BOBUAM Token.Safari}}."
- bobuam_sanity_check: "Bloquear navegadores que mostram agentes de usuário ambíguos ou claramente malformados?"
+ bobuam_sanity_check:
+  pt-BR: "Bloquear navegadores que mostram agentes de usuário ambíguos ou claramente malformados?"
+  pt-PT: "Bloquear navegadores que mostram agentes de utilizador ambíguos ou claramente malformados?"
  bunnycdn: "Configuração para o módulo de compatibilidade BunnyCDN."
  bunnycdn_positive_action: "Qual ação o CIDRAM deve executar quando encontrar uma solicitação do BunnyCDN? Ação padrão = Contornar."
  bypasses: "Configuração para o bypass das assinaturas padrão."
@@ -142,12 +164,16 @@ config:
  experimental: "Instável/Experimental!"
  extras: "Configuração para o módulo de extras de segurança opcionais."
  extras_signatures: "Que tipos de assinaturas devem ser honradas?"
- extras_signatures_empty_ua: "Agentes de usuário vazios."
+ extras_signatures_empty_ua:
+  pt-BR: "Agentes de usuário vazios."
+  pt-PT: "Agentes de utilizador vazios."
  extras_signatures_query: "Assinaturas baseadas em consultas de solicitação."
  extras_signatures_raw: "Assinaturas baseadas na entrada de solicitação bruta."
  extras_signatures_ruri: "Assinaturas baseadas em URIs reconstruídas."
  frontend: "Configuração para o front-end."
- frontend_custom_footer: "Inserido como HTML no final de todas as páginas do front-end. Isso pode ser útil caso você queira incluir um aviso legal, link de contato, informações comerciais, ou similares em todas essas páginas."
+ frontend_custom_footer:
+  pt-BR: "Inserido como HTML no final de todas as páginas do front-end. Isso pode ser útil caso você queira incluir um aviso legal, link de contato, informações comerciais, ou similares em todas essas páginas."
+  pt-PT: "Inserido como HTML no final de todas as páginas do front-end. Isso pode ser útil caso você queira incluir um aviso legal, link de contacto, informações comerciais, ou similares em todas essas páginas."
  frontend_custom_header: "Inserido como HTML no início de todas as páginas do front-end. Isso pode ser útil caso você queira incluir um logotipo de site, cabeçalho personalizado, scripts, ou similares em todas essas páginas."
  frontend_enable_two_factor: "Esta diretiva determina se deve usar 2FA para contas front-end."
  frontend_frontend_log: "Arquivo para registrar tentativas de login ao front-end. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
@@ -160,15 +186,23 @@ config:
  general_allow_gethostbyaddr_lookup: "Permitir pesquisas gethostbyaddr quando o UDP não está disponível? True = Sim [Padrão]; False = Não."
  general_ban_override: "Sobrepor "http_response_header_code" quando "infraction_limit" é excedido? 200 = Não sobrepor [Padrão]. Outros valores são os mesmos que os valores disponíveis para "http_response_header_code"."
  general_default_algo: "Define qual algoritmo usar para todas as futuras senhas e sessões."
- general_default_dns: "Uma lista de servidores DNS a serem usados para pesquisas de nomes de host. ATENÇÃO: Não mude isso a menos que você saiba o que está fazendo!"
+ general_default_dns:
+  pt-BR: "Uma lista de servidores DNS a serem usados para pesquisas de nomes de host. ATENÇÃO: Não mude isso a menos que você saiba o que está fazendo!"
+  pt-PT: "Uma lista de servidores DNS a serem usados para pesquisas de nomes de host. ATENÇÃO: Não mude isso a menos que você saiba o que está a fazer!"
  general_default_timeout: "Tempo limite padrão a ser usado para solicitações externas? Padrão = 12 segundos."
  general_disabled_channels: "Isso pode ser usado para impedir que o CIDRAM use canais específicos ao enviar solicitações (por exemplo, ao atualizar, ao buscar metadados de componentes, etc)."
- general_emailaddr: "Se você desejar, você pode fornecer um endereço de e-mail aqui a ser dado para os usuários quando eles estão bloqueadas, para eles para usar como um ponto de contato para suporte e/ou assistência no caso de eles sendo bloqueado por engano ou em erro. AVISO: Qualquer endereço de e-mail que você fornecer aqui certamente vai ser adquirido por spambots e raspadores/scrapers durante o curso de seu ser usada aqui, e assim, é fortemente recomendado que, se você optar por fornecer um endereço de e-mail aqui, que você garantir que o endereço de email você fornecer aqui é um endereço descartável e/ou um endereço que você não é importante (em outras palavras, você provavelmente não quer usar seu pessoal principal ou negócio principal endereço de e-mail)."
- general_emailaddr_display_style: "Como você prefere que o endereço de e-mail seja apresentado aos usuários?"
+ general_emailaddr:
+  pt-BR: "Se você desejar, você pode fornecer um endereço de e-mail aqui a ser dado para os usuários quando eles estão bloqueadas, para eles para usar como um ponto de contato para suporte e/ou assistência no caso de eles sendo bloqueado por engano ou em erro. AVISO: Qualquer endereço de e-mail que você fornecer aqui certamente vai ser adquirido por spambots e raspadores/scrapers durante o curso de seu ser usada aqui, e assim, é fortemente recomendado que, se você optar por fornecer um endereço de e-mail aqui, que você garantir que o endereço de email você fornecer aqui é um endereço descartável e/ou um endereço que você não é importante (em outras palavras, você provavelmente não quer usar seu pessoal principal ou negócio principal endereço de e-mail)."
+  pt-PT: "Se você desejar, você pode fornecer um endereço de e-mail aqui a ser dado para os utilizadores quando eles estão bloqueadas, para eles para usar como um ponto de contacto para suporte e/ou assistência no caso de eles sendo bloqueado por engano ou em erro. AVISO: Qualquer endereço de e-mail que você fornecer aqui certamente vai ser adquirido por spambots e raspadores/scrapers durante o curso de seu ser usada aqui, e assim, é fortemente recomendado que, se você optar por fornecer um endereço de e-mail aqui, que você garantir que o endereço de email você fornecer aqui é um endereço descartável e/ou um endereço que você não é importante (em outras palavras, você provavelmente não quer usar seu pessoal principal ou negócio principal endereço de e-mail)."
+ general_emailaddr_display_style:
+  pt-BR: "Como você prefere que o endereço de e-mail seja apresentado aos usuários?"
+  pt-PT: "Como você prefere que o endereço de e-mail seja apresentado aos utilizadores?"
  general_fields: "Controles para os campos durante eventos de bloco (quando uma solicitação é bloqueada)."
  general_force_hostname_lookup: "Forçar pesquisas de nome de anfitrião? True = Sim; False = Não [Padrão]. As pesquisas de nome de anfitrião normalmente são realizadas com base na necessidade, mas pode ser forçado para todos os solicitações. Isso pode ser útil como forma de fornecer informações mais detalhadas nos arquivos de log, mas também pode ter um efeito ligeiramente negativo sobre o desempenho."
  general_http_response_header_code: "Qual mensagem de status HTTP deve enviar o CIDRAM ao bloquear solicitações?"
- general_ipaddr: "Onde encontrar o IP endereço das solicitações? (Útil por serviços como o Cloudflare e tal). Padrão = REMOTE_ADDR. ATENÇÃO: Não mude isso a menos que você saiba o que está fazendo!"
+ general_ipaddr:
+  pt-BR: "Onde encontrar o IP endereço das solicitações? (Útil por serviços como o Cloudflare e tal). Padrão = REMOTE_ADDR. ATENÇÃO: Não mude isso a menos que você saiba o que está fazendo!"
+  pt-PT: "Onde encontrar o IP endereço das solicitações? (Útil por serviços como o Cloudflare e tal). Padrão = REMOTE_ADDR. ATENÇÃO: Não mude isso a menos que você saiba o que está a fazer!"
  general_lang: "Especificar o padrão da linguagem por CIDRAM."
  general_lang_override: "Localizar de acordo com HTTP_ACCEPT_LANGUAGE sempre que possível? True = Sim [Padrão]; False = Não."
  general_numbers: "Como você prefere que os números sejam exibidos? Selecione o exemplo que parece mais correto para você."
@@ -185,7 +219,7 @@ config:
  hcaptcha_expiry: &CaptchaExpiry "Número de horas para lembrar instâncias CAPTCHA. Padrão = 720 (1 mês)."
  hcaptcha_hcaptcha_log: &CaptchaLogFile "Registrar todas as tentativas de CAPTCHA? Se sim, especificar o nome a ser usado para o arquivo de log. Se não, deixe esta variável em branco."
  hcaptcha_lockip: &CaptchaLockIP "Ligar CAPTCHA para IPs?"
- hcaptcha_lockuser: &CaptchaLockUser "Ligar CAPTCHA para os usuários?"
+ hcaptcha_lockuser: &CaptchaLockUser {"pt-BR": "Ligar CAPTCHA para os usuários?", "pt-PT": "Ligar CAPTCHA para os utilizadores?"}
  hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "Qual código de status deve ser usado ao exibir CAPTCHAs para solicitações não bloqueadas?"
  hcaptcha_secret: &CaptchaDashboard "Esse valor pode ser encontrado no painel de seu serviço de CAPTCHA."
  hcaptcha_show_api_message: &ShowAPIMessage "Mostrar mensagem API? True = Sim [Padrão]; False = Não."
@@ -207,7 +241,9 @@ config:
  logging_log_banned_ips: "Incluir solicitações bloqueadas de IPs banidas nos arquivos de log? True = Sim [Padrão]; False = Não."
  logging_log_rotation_action: "A rotação de log limita o número de arquivos de log que devem existir a qualquer momento. Quando novos arquivos de log são criados, se o número total de arquivos de log exceder o limite especificado, a ação especificada será executada. Você pode especificar a ação desejada aqui."
  logging_log_rotation_limit: "A rotação de log limita o número de arquivos de log que devem existir a qualquer momento. Quando novos arquivos de log são criados, se o número total de arquivos de log exceder o limite especificado, a ação especificada será executada. Você pode especificar o limite desejado aqui. Um valor de 0 desativará a rotação de log."
- logging_log_sanitisation: "Ao usar o front-end página para os arquivos de log para exibir dados de log, o CIDRAM sanitiza os dados de log antes de exibi-los, para proteger os usuários contra ataques XSS e outras ameaças potenciais que os dados de log podem conter. No entanto, por padrão, os dados não são sanitizados durante o registro. Isso é para assegurar que os dados de log sejam preservados com precisão, para auxiliar qualquer análise heurística ou forense que possa ser necessária no futuro. No entanto, no caso de um usuário tentar ler dados de log usando ferramentas externas, e se essas ferramentas externas não realizarem seu próprio processo de sanitização, o usuário pode estar exposto a ataques XSS. Se necessário, você pode alterar o comportamento padrão usando esta diretiva de configuração. True = Sanitize dados ao registrá-lo (os dados são preservados com menos precisão, mas o risco de XSS é menor). False = Não sanitize dados ao registrá-lo (os dados são preservados com mais precisão, mas o risco de XSS é maior) [Padrão]."
+ logging_log_sanitisation:
+  pt-BR: "Ao usar o front-end página para os arquivos de log para exibir dados de log, o CIDRAM sanitiza os dados de log antes de exibi-los, para proteger os usuários contra ataques XSS e outras ameaças potenciais que os dados de log podem conter. No entanto, por padrão, os dados não são sanitizados durante o registro. Isso é para assegurar que os dados de log sejam preservados com precisão, para auxiliar qualquer análise heurística ou forense que possa ser necessária no futuro. No entanto, no caso de um usuário tentar ler dados de log usando ferramentas externas, e se essas ferramentas externas não realizarem seu próprio processo de sanitização, o usuário pode estar exposto a ataques XSS. Se necessário, você pode alterar o comportamento padrão usando esta diretiva de configuração. True = Sanitize dados ao registrá-lo (os dados são preservados com menos precisão, mas o risco de XSS é menor). False = Não sanitize dados ao registrá-lo (os dados são preservados com mais precisão, mas o risco de XSS é maior) [Padrão]."
+  pt-PT: "Ao usar o front-end página para os arquivos de log para exibir dados de log, o CIDRAM sanitiza os dados de log antes de exibi-los, para proteger os utilizadores contra ataques XSS e outras ameaças potenciais que os dados de log podem conter. No entanto, por padrão, os dados não são sanitizados durante o registro. Isso é para assegurar que os dados de log sejam preservados com precisão, para auxiliar qualquer análise heurística ou forense que possa ser necessária no futuro. No entanto, no caso de um utilizador tentar ler dados de log usando ferramentas externas, e se essas ferramentas externas não realizarem seu próprio processo de sanitização, o usuário pode estar exposto a ataques XSS. Se necessário, você pode alterar o comportamento padrão usando esta diretiva de configuração. True = Sanitize dados ao registrá-lo (os dados são preservados com menos precisão, mas o risco de XSS é menor). False = Não sanitize dados ao registrá-lo (os dados são preservados com mais precisão, mas o risco de XSS é maior) [Padrão]."
  logging_outbound_request_log: "Um arquivo para registrar os resultados de quaisquer solicitações de saída. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
  logging_report_log: "Um arquivo para registrar quaisquer relatórios enviados para APIs externas. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
  logging_serialised_log: "Um arquivo serializado para registrar todas as tentativas de acesso bloqueadas. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
@@ -225,7 +261,9 @@ config:
  phpmailer_skip_auth_process: "Definir essa diretiva como <code>true</code> instrui o PHPMailer a ignorar o processo de autenticação que normalmente ocorre ao enviar e-mail via SMTP. Isso deve ser evitado, porque ignorar esse processo pode expor o e-mail de saída a ataques MITM, mas pode ser necessário nos casos em que esse processo impedir que o PHPMailer se conecte a um servidor SMTP."
  phpmailer_smtp_auth: "Esta diretiva determina se autenticar sessões SMTP (geralmente deve ser deixado em paz)."
  phpmailer_smtp_secure: "O protocolo a ser usado ao enviar e-mail via SMTP (TLS ou SSL)."
- phpmailer_username: "O nome de usuário a ser usada ao enviar e-mail via SMTP."
+ phpmailer_username:
+  pt-BR: "O nome de usuário a ser usada ao enviar e-mail via SMTP."
+  pt-PT: "O nome de utilizador a ser usada ao enviar e-mail via SMTP."
  projecthoneypot: "Configuração para o módulo Project Honeypot."
  projecthoneypot_api_key: *EnterAPIKey
  projecthoneypot_max_age_in_days: "A idade máxima em dias para a qual os relatórios serão considerados ao realizar pesquisas. Padrão = 365."
@@ -272,7 +310,9 @@ config:
  supplementary_cache_options_memcached_port: "Valor da porta do Memcached. Padrão = "11211"."
  supplementary_cache_options_pdo_dsn: "Valor DSN do PDO. Padrão = "mysql:dbname=cidram;host=localhost;port=3306"."
  supplementary_cache_options_pdo_password: "A senha do PDO."
- supplementary_cache_options_pdo_username: "O nome de usuário do PDO."
+ supplementary_cache_options_pdo_username:
+  pt-BR: "O nome de usuário do PDO."
+  pt-PT: "O nome de utilizador do PDO."
  supplementary_cache_options_prefix: "O valor especificado aqui será adicionado ao começo das chaves para todas as entradas de cache. Padrão = "CIDRAM_". Quando existem várias instalações no mesmo servidor, isso pode ser útil para manter seus caches separados uns dos outros."
  supplementary_cache_options_redis_host: "Valor da host do Redis. Padrão = "localhost"."
  supplementary_cache_options_redis_port: "Valor da porta do Redis. Padrão = "6379"."
@@ -281,7 +321,9 @@ config:
  template_data_block_event_title: "O título da página a ser exibido para eventos de bloco."
  template_data_captcha_title: "O título da página a ser exibido para solicitações CAPTCHA."
  template_data_css_url: "URL de arquivo CSS para temas personalizados."
- template_data_custom_footer: "Inserido como HTML no final de todas as páginas de "acesso negado". Isso pode ser útil caso você queira incluir um aviso legal, link de contato, informações comerciais, ou similares em todas essas páginas."
+ template_data_custom_footer:
+  pt-BR: "Inserido como HTML no final de todas as páginas de "acesso negado". Isso pode ser útil caso você queira incluir um aviso legal, link de contato, informações comerciais, ou similares em todas essas páginas."
+  pt-PT: "Inserido como HTML no final de todas as páginas de "acesso negado". Isso pode ser útil caso você queira incluir um aviso legal, link de contacto, informações comerciais, ou similares em todas essas páginas."
  template_data_custom_header: "Inserido como HTML no início de todas as páginas de "acesso negado". Isso pode ser útil caso você queira incluir um logotipo de site, cabeçalho personalizado, scripts, ou similares em todas essas páginas."
  template_data_magnification: *MagnifDesc
  template_data_theme: "Tema padrão a ser usado para CIDRAM."
@@ -289,7 +331,9 @@ config:
  verification_adjust: "Controles para ajustar outros recursos no contexto de verificação."
  verification_other: "Controles para verificar outros tipos de solicitações sempre que possível."
  verification_search_engines: "Controles para verificar solicitações de mecanismos de pesquisa."
- verification_social_media: "Controles para verificar solicitações de plataformas de mídia social."
+ verification_social_media:
+  pt-BR: "Controles para verificar solicitações de plataformas de mídia social."
+  pt-PT: "Controles para verificar solicitações de plataformas de media social."
 confirm:
  Action: "Você tem certeza de que deseja "%s"?"
  Delete: "Você tem certeza de que deseja deletar "%s"?"
@@ -352,16 +396,17 @@ field:
  Update: "Atualizar"
  Upload new file: "Carregar um novo ficheiro"
  Use system default timezone: "Usar o fuso horário padrão do sistema."
- Username: "Nome de usuário"
- Verified search engine and social media requests: "Solicitações verificadas de mecanismos de pesquisa e mídias sociais"
+ Username: {"pt-BR": "Nome de usuário", "pt-PT": "Nome de utilizador"}
+ Verified search engine and social media requests:
+  pt-BR: "Solicitações verificadas de mecanismos de pesquisa e mídias sociais"
+  pt-PT: "Solicitações verificadas de mecanismos de pesquisa e medias sociais"
  Verify all: "Verifique tudo"
  Verify: "Verifique isso"
  Whitelisted requests: "Solicitações marcadas como na lista branca"
  Your version: "Sua versão"
  log_rotation_archive: "Primeiramente arquivar, e então deletar os arquivos de log mais antigos, até o limite não seja mais excedido."
  log_rotation_delete: "Deletar os arquivos de log mais antigos, até o limite não seja mais excedido."
- size:
-  Total size: "Tamanho total:"
+ size: {"Total size": "Tamanho total:"}
 hints_asnlookup: "** Requer funcionalidade de pesquisa ASN (por exemplo, através do módulo IP-API ou BGPView)."
 hints_aux_stats: "Nota: O rastreamento de estatísticas para regras auxiliares pode ser controlado na página de regras auxiliares."
 hints_cause_fp: "*!! Alta probabilidade de causar falsos positivos devido a %s."
@@ -374,14 +419,20 @@ hints_duration:
  Inglês simples.: "A duração pode ser descrita escrevendo as unidades em inglês simples. Por exemplo, <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> por uma semana, dois dias, três horas, quatro minutos, cinco segundos."
  Restrições.: "A notação pode ser mista, mas as unidades devem sempre ser descritas da maior para a menor, e não podem ser repetidas. Por exemplo, <strong>1 week 2 days 3′4″</strong> é <span class="txtGn">válido</span> e será entendido corretamente, mas <strong>3′4″ 1 week 2 days</strong> e <strong>3 hours 3h 3°</strong> são <span class="txtRd">inválidos</span>. O CIDRAM não se importa se você está usando espaçamento ou não. Os números devem ser simples e não formatados. Por praticidade, a maior unidade suportada é uma semana. Quando a configuração é atualizada, o CIDRAM normaliza as durações para o tempo de arco."
 hints_has_bypass: "* Esta opção tem um bypass correspondente em <code class="s">bypasses➡used</code>. É recomendável que a caixa de seleção para o bypass correspondente esteja marcado da mesma forma que a caixa de seleção para tentar verificar esta opção."
-hints_inspection: "* Destina-se apenas à depuração de regras auxiliares. Não exibido para usuários bloqueados."
+hints_inspection:
+ pt-BR: "* Destina-se apenas à depuração de regras auxiliares. Não exibido para usuários bloqueados."
+ pt-PT: "* Destina-se apenas à depuração de regras auxiliares. Não exibido para utilizadores bloqueados."
 hints_ipv6_on_32bit: "Nota: As pesquisas de IPv6 podem não funcionar corretamente em alguns sistemas de 32 bits."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.pt.md\#user-content-HOW_TO_USE_PDO" hreflang="pt">O que é um "PDO DSN"? Como posso usar o PDO com o CIDRAM?</a></em>"
 hints_shorthand:
  0.: "Se o seu site precisar de acesso via LAN ou localhost, não bloqueie isso. Caso contrário, você pode bloquear isso."
- 1.: "Nenhum dos arquivos de assinatura padrão usa isso, mas é suportado mesmo assim, caso possa ser útil para alguns usuários."
- 2.: "Se você precisar que os usuários possam acessar seu site por meio de proxies, não bloqueie isso. Caso contrário, você pode bloquear isso."
+ 1.:
+  pt-BR: "Nenhum dos arquivos de assinatura padrão usa isso, mas é suportado mesmo assim, caso possa ser útil para alguns usuários."
+  pt-PT: "Nenhum dos arquivos de assinatura padrão usa isso, mas é suportado mesmo assim, caso possa ser útil para alguns utilizadores."
+ 2.:
+  pt-BR: "Se você precisar que os usuários possam acessar seu site por meio de proxies, não bloqueie isso. Caso contrário, você pode bloquear isso."
+  pt-PT: "Se você precisar que os utilizadores possam acessar seu site por meio de proxies, não bloqueie isso. Caso contrário, você pode bloquear isso."
  3.: "O uso direto em assinaturas não é suportado, mas pode ser invocado por outros meios em circunstâncias específicas."
  4.: "Refere-se aos casos em que as palavras curtas não são usadas, ou não são reconhecidas pelo CIDRAM."
  Um por assinatura.: "Uma assinatura pode invocar vários perfis, mas pode usar apenas uma palavra curta. É possível que várias palavras curtas podem ser adequadas, mas como apenas uma pode ser usada, procuramos sempre usar apenas a mais adequada."
@@ -390,17 +441,30 @@ hints_shorthand:
 hints_verification:
  "O que são "positivos" e "negativos"?": "Quando verificando a identidade apresentada por uma solicitação, um resultado bem-sucedido pode ser descrito como "positivo" ou "negativo". Quando a identidade apresentada for confirmada como sendo a verdadeira identidade, ela será descrita como "positiva". Quando a identidade apresentada for confirmada como falsificada, ela será descrita como "negativa". No entanto, um resultado malsucedido (por exemplo, falha na verificação, ou a veracidade da identidade apresentada não pode ser determinada) não seria descrito como "positivo" ou "negativo". Em vez disso, um resultado malsucedido seria descrito simplesmente como não verificado. Quando não for feita nenhuma tentativa de verificar a identidade apresentada por uma solicitação, a solicitação também será descrita como não verificado. Os termos fazem sentido apenas no contexto em que a identidade apresentada por uma solicitação é reconhecida e, portanto, onde a verificação é possível. Nos casos em que a identidade apresentada não corresponde às opções fornecidas acima, ou onde nenhuma identidade é apresentada, as opções fornecidas acima tornam-se irrelevantes."
  "O que são "bypasses de acerto único"?": "Em alguns casos, uma solicitação com verificação positiva ainda pode ser bloqueada como resultado dos arquivos de assinatura, módulos, ou outras condições da solicitação, e bypasses podem ser necessários para evitar falsos positivos. No caso em que um bypass se destina a lidar com exatamente uma infração, nem mais nem menos, tal bypass pode ser descrito como um "bypass de acerto único"."
-hints_want_to_block: "!! A maioria dos usuários provavelmente deseja que isso seja bloqueado, independentemente de ser real ou falsificado. Ao não selecionar "tente verificar" e selecionar "bloquear solicitações não verificados", isso pode ser alcançado. Mas, devido alguns usuários podem querer verificar tais solicitações (a fim de bloquear os negativos enquanto permitem os positivos), em vez de bloquear tais solicitações por meio de módulos, as opções para lidar com essas solicitações são fornecidas aqui."
-info_cli_by_default_ips: |
- Por padrão, os IPs são testados contras todos os arquivos de assinatura, todos
- os módulos, todas as regras auxiliares, bem como a verificação de mídia social
- e mecanismo de pesquisa.
- --no-sig    Evita testes contra os arquivos de assinatura.
- --no-mod    Evita testes contra os módulos.
- --no-sev    Evita a verificação do mecanismo de pesquisa.
- --no-smv    Evita a verificação de mídia social.
- --no-ov     Evita outra verificação.
- --no-aux    Evita testes contra regras auxiliares.
+hints_want_to_block:
+ pt-BR: "!! A maioria dos usuários provavelmente deseja que isso seja bloqueado, independentemente de ser real ou falsificado. Ao não selecionar "tente verificar" e selecionar "bloquear solicitações não verificados", isso pode ser alcançado. Mas, devido alguns usuários podem querer verificar tais solicitações (a fim de bloquear os negativos enquanto permitem os positivos), em vez de bloquear tais solicitações por meio de módulos, as opções para lidar com essas solicitações são fornecidas aqui."
+ pt-PT: "!! A maioria dos utilizadores provavelmente deseja que isso seja bloqueado, independentemente de ser real ou falsificado. Ao não selecionar "tente verificar" e selecionar "bloquear solicitações não verificados", isso pode ser alcançado. Mas, devido alguns utilizadores podem querer verificar tais solicitações (a fim de bloquear os negativos enquanto permitem os positivos), em vez de bloquear tais solicitações por meio de módulos, as opções para lidar com essas solicitações são fornecidas aqui."
+info_cli_by_default_ips:
+ pt-BR: |
+  Por padrão, os IPs são testados contras todos os arquivos de assinatura, todos
+  os módulos, todas as regras auxiliares, bem como a verificação de mídia social
+  e mecanismo de pesquisa.
+  --no-sig    Evita testes contra os arquivos de assinatura.
+  --no-mod    Evita testes contra os módulos.
+  --no-sev    Evita a verificação do mecanismo de pesquisa.
+  --no-smv    Evita a verificação de mídia social.
+  --no-ov     Evita outra verificação.
+  --no-aux    Evita testes contra regras auxiliares.
+ pt-PT: |
+  Por padrão, os IPs são testados contras todos os arquivos de assinatura, todos
+  os módulos, todas as regras auxiliares, bem como a verificação de media social
+  e mecanismo de pesquisa.
+  --no-sig    Evita testes contra os arquivos de assinatura.
+  --no-mod    Evita testes contra os módulos.
+  --no-sev    Evita a verificação do mecanismo de pesquisa.
+  --no-smv    Evita a verificação de media social.
+  --no-ov     Evita outra verificação.
+  --no-aux    Evita testes contra regras auxiliares.
 info_cli_cidram_cli_mod: "CIDRAM modo CLI."
 info_cli_ipv4_ipv6_are_: |
  IPv4/IPv6 são ambos suportados. A entrada multilinha é possível para todas as
@@ -424,7 +488,9 @@ info_cli_you_can_also_u: |
  Você também pode usar vírgulas se quiser (isso é tratado da mesma forma que
  usar várias linhas, mas você não precisará usar aspas, e não misturar os dois):
 info_cli_you_can_also_w: "Você também pode gravar em arquivos:"
-info_cli_you_can_print_: "Você pode imprimir dados na tela (às vezes útil ao encadear comandos):"
+info_cli_you_can_print_:
+ pt-BR: "Você pode imprimir dados na tela (às vezes útil ao encadear comandos):"
+ pt-PT: "Você pode imprimir dados na ecrã (às vezes útil ao encadear comandos):"
 Some useful links: |
  Alguns links úteis:<br />
      <ul class="pieul">
@@ -541,7 +607,7 @@ label:
  Import: "Importar"
  Installed Available: "Instalado/Disponível"
  Integrity check: "Verificação de integridade:"
- Intersect: "A interseção dos dois conjuntos"
+ Intersect: {"pt-BR": "A interseção dos dois conjuntos", "pt-PT": "A intersecção dos dois conjuntos"}
  Invisible: "Invisível"
  Latest stable: "Mais novo de estável:"
  Latest unstable: "Mais novo de instável:"
@@ -570,7 +636,9 @@ label:
  Previous: "Anterior:"
  Range tools: "Ferramentas de alcances"
  Remember: "Lembrar"
- Repository backup locations: "Locais de backup do repositório (em caso de emergência, ou se tudo o mais falhar):"
+ Repository backup locations:
+  pt-BR: "Locais de backup do repositório (em caso de emergência, ou se tudo o mais falhar):"
+  pt-PT: "Locais da cópia de segurança do repositório (em caso de emergência, ou se tudo o mais falhar):"
  Requests banned: "Solicitações banidas"
  Requests blocked: "Solicitações bloqueadas"
  Requests for sensitive pages only: "Solicitações apenas para páginas confidenciais (por exemplo, páginas de login, formulários de registro, etc).\nMenos rigoroso e completo, mas mais conservador em termos de cotas e limites, e menos propenso a afetar negativamente o desempenho do site. A estratégia recomendada na maioria dos casos."
@@ -630,7 +698,9 @@ label:
  aux_mtdWin: "curingas no estilo do Windows"
  aux_name: "Um nome para a nova regra:"
  aux_notes: "Notas (mostrado apenas nesta página, e não afeta a regra):"
- aux_reason: "O motivo dado ao usuário quando bloqueado:"
+ aux_reason:
+  pt-BR: "O motivo dado ao usuário quando bloqueado:"
+  pt-PT: "O motivo dado ao utilizador quando bloqueado:"
  aux_run: "O nome do arquivo a ser executado:"
  aux_special: "Outras opções e bandeiras especiais:"
  aux_special_default_state: "Deixe como está (não defina nada)"
@@ -669,7 +739,7 @@ link:
  Accounts: "Contas"
  Aggregator: "Agregador"
  Auxiliary Rules: "Regras auxiliares"
- Backup: "Backup"
+ Backup: {"pt-BR": "Backup", "pt-PT": "Cópia de segurança"}
  Cache Data: "Dados de cache"
  Calculator: "Calculadora"
  Configuration: "Configuração"
@@ -685,7 +755,7 @@ link:
  Logs: "Arquivos de log"
  Range Tables: "Tabelas de alcance"
  Rate Limiting: "Limitação de taxa"
- Sections List: "Lista de seções"
+ Sections List: {"pt-BR": "Lista de seções", "pt-PT": "Lista de secções"}
  Signature File Fixer: "Fixador para os arquivos de assinatura"
  Statistics: "Estatisticas"
  Subtractor: "Subtrator"
@@ -693,7 +763,7 @@ link:
 macro:
  Description:
   activate_modules: &MayImpactPerformance "Geralmente não é recomendado, pois é provável que haja alguns de que você não precisa. Instalar e ativar componentes quando não são necessários pode afetar negativamente o desempenho."
-  install_l10n_core: &RecommendKeepingCore "Quando a diretiva de configuração <code>lang_override</code> está habilitada, se o navegador de um usuário especifica uma preferência de idioma em particular, contanto que os dados L10N core para esse idioma estejam instalados, o CIDRAM é capaz de exibir a página "acesso negado" nesse idioma especificado. Como tal, é recomendável manter todos os dados do L10N core instalados."
+  install_l10n_core: &RecommendKeepingCore {"pt-BR": "Quando a diretiva de configuração <code>lang_override</code> está habilitada, se o navegador de um usuário especifica uma preferência de idioma em particular, contanto que os dados L10N core para esse idioma estejam instalados, o CIDRAM é capaz de exibir a página "acesso negado" nesse idioma especificado. Como tal, é recomendável manter todos os dados do L10N core instalados.", "pt-PT": "Quando a diretiva de configuração <code>lang_override</code> está habilitada, se o navegador de um utilizador especifica uma preferência de idioma em particular, contanto que os dados L10N core para esse idioma estejam instalados, o CIDRAM é capaz de exibir a página "acesso negado" nesse idioma especificado. Como tal, é recomendável manter todos os dados do L10N core instalados."}
   install_l10n_fe: &RecommendFEOnlyNeeded "Seu idioma preferido pode ser especificado por meio da diretiva de configuração <code>lang</code>. Uma vez feito isso, é improvável que você precise de quaisquer dados do L10N front-end além do seu idioma preferido e pode querer removê-los para liberar um pouco do espaço disponível em disco. Porém, se você optar por removê-lo ou mantê-lo, de qualquer forma, não deve causar nenhum dano."
   install_modules: *MayImpactPerformance
   uninstall_l10n_core: *RecommendKeepingCore
@@ -814,7 +884,9 @@ response:
  There_s nothing to write, sorry: "Não há nada para escrever, desculpe."
  Tracking cleared: "Monitoração cancelado."
  Unable to determine: "Não foi possível determinar."
- Username doesn_t exist: "Falha no login! Esse usuário não existe!"
+ Username doesn_t exist:
+  pt-BR: "Falha no login! Esse usuário não existe!"
+  pt-PT: "Falha no login! Esse utilizador não existe!"
  Username field empty: "Entrada de nome de usuário vazio!"
  Verification failed: "Verificação falhada! Componente pode estar corrompido."
  Verification success: "Verificação sucesso! Não foram encontrados problemas."
@@ -834,7 +906,9 @@ stage_preparefields: "Preparar campos para saída e logs"
 stage_reporting: "Executar relatórios"
 stage_rl: "Executar a limitação de taxa"
 stage_sev: "Executar verificação dos motores de busca"
-stage_smv: "Executar verificação de mídia social"
+stage_smv:
+ pt-BR: "Executar verificação de mídia social"
+ pt-PT: "Executar verificação de media social"
 stage_statistics: "Atualizar estatísticas"
 stage_terminate: "Encerrar a solicitação (solicitações bloqueadas)"
 stage_tests: "Executar testes para os arquivos de assinatura"
@@ -846,7 +920,9 @@ state_fixer_changed:
  - "Fez %s alteração"
  - "Fez %s alterações"
 state_fixer_seconds: "em %s segundos"
-state_sl_totals: "Totais (Assinaturas: %s – Seções de assinatura: %s – Arquivos de assinatura: %s – Etiquetas de seção único: %s)."
+state_sl_totals:
+ pt-BR: "Totais (Assinaturas: %s – Seções de assinatura: %s – Arquivos de assinatura: %s – Etiquetas de seção único: %s)."
+ pt-PT: "Totais (Assinaturas: %s – Secções de assinatura: %s – Arquivos de assinatura: %s – Etiquetas de secção único: %s)."
 state_tracking:
  - "Atualmente monitorando %s IP."
  - "Atualmente monitorando %s IPs."
@@ -917,8 +993,12 @@ tip:
  Enter input here: "Insira a entrada aqui."
  Enter query here (optional): "Insira a query aqui (opcional)."
  Enter referrer here (optional): "Insira o referenciador aqui (opcional)."
- Enter user agent here (optional): "Insira o agente do usuário aqui (opcional)."
- Enter user agents here (optional): "Insira os agentes do usuário aqui (opcional)."
+ Enter user agent here (optional):
+  pt-BR: "Insira o agente do usuário aqui (opcional)."
+  pt-PT: "Insira o agente do utilizador aqui (opcional)."
+ Enter user agents here (optional):
+  pt-BR: "Insira os agentes do usuário aqui (opcional)."
+  pt-PT: "Insira os agentes do utilizador aqui (opcional)."
  File Manager: "Olá, {username}.<br />O gerenciador de arquivos permite deletar, editar, carregar e descarregar arquivos. Use com cuidado (você poderia quebrar sua instalação com este)."
  Home: "Olá, {username}.<br />Esta é a página principal do CIDRAM front-end. Selecione um link no menu de navegação à esquerda para continuar."
  How many infractions to incur: "Quantas infrações incorrer."
@@ -927,11 +1007,15 @@ tip:
  Intersector: "Olá, {username}.<br />O intersetor pode ser usado para determinar os fatores comuns de dois conjuntos de alcances."
  Logs: "Olá, {username}.<br />Selecionar um arquivo de log da lista abaixo para visualizar o conteúdo desse arquivo de log."
  Number of seconds until it expires: "Número de segundos até expirar."
- Numeric comparison: "Para usar a comparação numérica, selecione comparação direta de strings ou detecção automática de método, certifique-se de que o valor da condição seja numérico, e prefixe-o com o operador desejado.<br />Por exemplo, para condições "iguais", &gt;=2 fornece ≥2, &lt;=2 fornece ≤2, para condições "não iguais", &gt;=2 fornece ≱2, &lt;=2 fornece ≰2, etc."
+ Numeric comparison:
+  pt-BR: "Para usar a comparação numérica, selecione comparação direta de strings ou detecção automática de método, certifique-se de que o valor da condição seja numérico, e prefixe-o com o operador desejado.<br />Por exemplo, para condições "iguais", &gt;=2 fornece ≥2, &lt;=2 fornece ≤2, para condições "não iguais", &gt;=2 fornece ≱2, &lt;=2 fornece ≰2, etc."
+  pt-PT: "Para usar a comparação numérica, selecione comparação direta de strings ou deteção automática de método, certifique-se de que o valor da condição seja numérico, e prefixe-o com o operador desejado.<br />Por exemplo, para condições "iguais", &gt;=2 fornece ≥2, &lt;=2 fornece ≤2, para condições "não iguais", &gt;=2 fornece ≱2, &lt;=2 fornece ≰2, etc."
  Range Tables: "Olá, {username}.<br />Esta página mostra algumas informações estatísticas básicas sobre os IPs abrangidos pelos arquivos de assinatura ativos no momento."
  Rate Limiting: "Olá, {username}.<br />Esta página mostra o uso e a disponibilidade da cota atual em relação à limitação de taxa."
  Rate limiting is currently disabled: "Nota: A limitação de taxa está desativado atualmente, mas pode ser ativado através da página de configuração."
- Sections List: "Olá, {username}.<br />Esta página lista quais seções existem nos arquivos de assinatura atualmente ativos."
+ Sections List:
+  pt-BR: "Olá, {username}.<br />Esta página lista quais seções existem nos arquivos de assinatura atualmente ativos."
+  pt-PT: "Olá, {username}.<br />Esta página lista quais secções existem nos arquivos de assinatura atualmente ativos."
  See the documentation: "Consulte a <a href="https://github.com/CIDRAM/Docs/blob/master/readme.pt.md\#user-content-SECTION5" hreflang="pt" rel="noopener external">documentação</a> para obter informações sobre as várias diretrizes de configuração e seus objetivos."
  Signature File Fixer: "Olá, {username}.<br />O fixador para os arquivos de assinatura fornece uma maneira de detectar e corrigir possíveis problemas em arquivos de assinatura."
  Specify a value, or leave blank to disregard: "Especifique um valor, ou deixe em branco para desconsiderar."
@@ -945,13 +1029,19 @@ warning:
  Editing PHP files: "Atenção: Algumas soluções de segurança de hospedagem na web são conhecidas por banir automaticamente endereços IP ao detectar tags PHP em solicitações (por exemplo, ao modificar arquivos PHP por meio de um navegador). O CIDRAM não tem como saber se o seu serviço de hospedagem na web usa tal solução de segurança. Para evitar tais problemas, é recomendado não editar arquivos PHP dessa forma quando possível."
  IP tests are disabled: "Atenção: Os testes de IP estão desabilitados! Os arquivos de assinatura não podem ser utilizados até que isso seja resolvido."
  JavaScript required: "Atenção: Algumas funcionalidades do front-end requerem JavaScript. Para garantir que todo o front-end se comporte conforme o esperado, é recomendável ativar o JavaScript."
- Likely to be overwritten: "Atenção: O arquivo que você está editando no momento pertence ao componente "%s". Quaisquer alterações feitas neste arquivo provavelmente serão sobrescritas na próxima vez que o componente for atualizado."
+ Likely to be overwritten:
+  pt-BR: "Atenção: O arquivo que você está editando no momento pertence ao componente "%s". Quaisquer alterações feitas neste arquivo provavelmente serão sobrescritas na próxima vez que o componente for atualizado."
+  pt-PT: "Atenção: O arquivo que você está a editar no momento pertence ao componente "%s". Quaisquer alterações feitas neste arquivo provavelmente serão sobrescritas na próxima vez que o componente for atualizado."
  Modules are disabled: "Atenção: Os módulos estão desabilitados! Os módulos não podem ser utilizados até que isso seja resolvido."
  No modules are active: "Atenção: Nenhum módulo está ativo! Os módulos podem ser ativados usando as páginas de configuração ou atualizações."
  No signature files are active: "Atenção: Nenhum arquivo de assinatura está ativo! Os arquivos de assinatura podem ser ativados usando as páginas de configuração ou atualizações."
  Operating in dry run mode: "Atenção: Operando no modo de seco! Enquanto no modo de seco, as solicitações ainda são verificados e registrados como eventos de bloqueio como de costume, mas nada é bloqueado."
  Operating in maintenance mode: "Atenção: Operando em modo de manutenção! Enquanto no modo de manutenção, nada é verificado, registrado, ou bloqueado."
  Page termination is disabled: "Atenção: O encerramento da página está desativado! As solicitações não podem ser bloqueadas corretamente até que isso seja resolvido."
- Proceeding will log out all users: "Atenção: Todos os usuários serão saíram se você continuar."
- This account is not using a valid password: "Atenção: Esta conta não está usando uma senha válida!"
+ Proceeding will log out all users:
+  pt-BR: "Atenção: Todos os usuários serão saíram se você continuar."
+  pt-PT: "Atenção: Todos os utilizadores serão saíram se você continuar."
+ This account is not using a valid password:
+  pt-BR: "Atenção: Esta conta não está usando uma senha válida!"
+  pt-PT: "Atenção: Esta conta não usa uma senha válida!"
  Using the default password: "Atenção: Usando a senha padrão!"

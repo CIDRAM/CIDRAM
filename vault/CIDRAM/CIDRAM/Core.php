@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2023.09.23).
+ * This file: The CIDRAM core (last modified: 2023.10.12).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -122,7 +122,7 @@ class Core
     /**
      * @var string CIDRAM version number (SemVer).
      */
-    public $ScriptVersion = '3.4.1';
+    public $ScriptVersion = '3.4.2';
 
     /**
      * @var string CIDRAM version identifier (complete notation).
@@ -2978,6 +2978,7 @@ class Core
             } else {
                 $this->L10N->autoAssignRules($this->L10NAccepted, 'en-AU');
             }
+            $this->L10N->PreferredVariant = $this->L10NAccepted;
         }
 
         /** Load client-specified L10N data if possible. */
@@ -3043,6 +3044,7 @@ class Core
         /** Fallback for missing accepted client L10N choice. */
         if ($this->ClientL10NAccepted === '') {
             $this->ClientL10NAccepted = $this->L10NAccepted;
+            $this->ClientL10N->PreferredVariant = $this->L10NAccepted;
         }
     }
 

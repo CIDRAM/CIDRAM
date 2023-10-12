@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese (Brazil) language data (last modified: 2023.09.27).
+# This file: Portuguese language data (last modified: 2023.10.12).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -26,14 +26,22 @@
 
 PrivacyPolicy: "Política de Privacidade"
 ReasonMessage_Attacks: "O seu acesso a esta página foi negado devido a tráfego anormal detectado anteriormente em seu endereço IP ou rede."
-ReasonMessage_BadIP: "O seu acesso a esta página foi negado porque você tentou acessar a página usando um endereço IP inválido."
+ReasonMessage_BadIP:
+ pt-BR: "O seu acesso a esta página foi negado porque você tentou acessar a página usando um endereço IP inválido."
+ pt-PT: "O seu acesso a esta página foi negado porque você tentou acessar a página com o uso de um endereço IP inválido."
 ReasonMessage_Banned: "O seu acesso a esta página foi negado devido ao mau comportamento anterior do seu endereço IP."
-ReasonMessage_Bogon: "O seu acesso a esta página foi negado porque seu endereço IP é reconhecida como um endereço bogon, e conectando a partir de bogons a este site não é permitido pelo dono do site."
-ReasonMessage_Cloud: "O seu acesso a esta página foi negado porque seu endereço IP é reconhecida como pertencente a um serviço de nuvem, e conectando a partir de serviços em nuvem a este site não é permitido pelo dono do site."
+ReasonMessage_Bogon:
+ pt-BR: "O seu acesso a esta página foi negado porque seu endereço IP é reconhecida como um endereço bogon, e conectando a partir de bogons a este site não é permitido pelo dono do site."
+ pt-PT: "O seu acesso a esta página foi negado porque seu endereço IP é reconhecida como um endereço bogon, e a conexão de bogons a este site não é permitido pelo dono do site."
+ReasonMessage_Cloud:
+ pt-BR: "O seu acesso a esta página foi negado porque seu endereço IP é reconhecida como pertencente a um serviço de nuvem, e conectando a partir de serviços em nuvem a este site não é permitido pelo dono do site."
+ pt-PT: "O seu acesso a esta página foi negado porque seu endereço IP é reconhecida como pertencente a um serviço de nuvem, e a conexão de serviços em nuvem a este site não é permitido pelo dono do site."
 ReasonMessage_Generic: "O seu acesso a esta página foi negado porque seu endereço IP pertence a uma rede listados numa lista negra usada por este site."
 ReasonMessage_Legal: "O seu acesso a esta página foi negado devido a obrigações legais."
 ReasonMessage_Malware: "O seu acesso a esta página foi negado devido a preocupações com malware relacionadas ao seu endereço IP."
-ReasonMessage_Proxy: "O seu acesso a esta página foi negado porque seu endereço IP é reconhecida como pertencente a um serviço de proxy, e conectando a partir de um serviço de proxy a este site não é permitido pelo dono do site."
+ReasonMessage_Proxy:
+ pt-BR: "O seu acesso a esta página foi negado porque seu endereço IP é reconhecida como pertencente a um serviço de proxy, e conectando a partir de um serviço de proxy a este site não é permitido pelo dono do site."
+ pt-PT: "O seu acesso a esta página foi negado porque seu endereço IP é reconhecida como pertencente a um serviço de proxy, e a conexão de um serviço de proxy a este site não é permitido pelo dono do site."
 ReasonMessage_Spam: "O seu acesso a esta página foi negado porque seu endereço IP pertence a uma rede considerado de alto risco de spam."
 Short_Attacks: "Ataques"
 Short_BadIP: "IP inválido"
@@ -52,14 +60,20 @@ Support_Email: "Se você acredita que isso é um erro, ou a procurar assistênci
 Support_Email_2: "Se você acredita que isso é um erro, envie um e-mail para {EmailAddr} para procurar ajuda."
 bobuam_ambiguous: "ID do navegador ambíguo"
 bobuam_bot: "Suspeito bot ou sonda raspadora"
-bobuam_malformed: "Agente de usuário malformado"
+bobuam_malformed:
+ pt-BR: "Agente de usuário malformado"
+ pt-PT: "Agente de utilizador malformado"
 bobuam_masquerade: "Tentativa de mascaramento"
 bobuam_outdated_long: "Seu navegador é identificado como desatualizado e, como tal, constitui um risco à segurança. Atualize para a versão atual antes de acessar este site."
 bobuam_outdated_short: "Navegador desatualizado"
-captcha_cookie_warning: "Nota: CIDRAM usa um cookie para lembrar quando os usuários completar o CAPTCHA. Ao completar o CAPTCHA, você dá o seu consentimento para um cookie para ser criado e armazenado pelo seu navegador."
+captcha_cookie_warning:
+ pt-BR: "Nota: CIDRAM usa um cookie para lembrar quando os usuários completar o CAPTCHA. Ao completar o CAPTCHA, você dá o seu consentimento para um cookie para ser criado e armazenado pelo seu navegador."
+ pt-PT: "Nota: CIDRAM usa um cookie para lembrar quando os utilizadores completar o CAPTCHA. Ao completar o CAPTCHA, você dá o seu consentimento para um cookie para ser criado e armazenado pelo seu navegador."
 captcha_message: "A fim de recuperar o acesso a esta página, por favor preencha o CAPTCHA fornecido abaixo e pressione o botão enviar."
 captcha_message_automated_traffic: "Este site usa CAPTCHAs para ajudar a prevenir o tráfego automatizado."
-captcha_message_invisible: "Para a maioria dos usuários, a página deve recarregar e restaurar o acesso normal. Em alguns casos, você pode ser obrigado a completar um desafio CAPTCHA."
+captcha_message_invisible:
+ pt-BR: "Para a maioria dos usuários, a página deve recarregar e restaurar o acesso normal. Em alguns casos, você pode ser obrigado a completar um desafio CAPTCHA."
+ pt-PT: "Para a maioria dos utilizadores, a página deve recarregar e restaurar o acesso normal. Em alguns casos, você pode ser obrigado a completar um desafio CAPTCHA."
 click_here: "clique aqui"
 denied: "Acesso negado!"
 error_log_header: "Se algum dos seguintes erros persistir, para reportá-los ou buscar apoio, crie um novo issue na página de issues do CIDRAM no GitHub quando tiver um momento livre, com os erros em questão, juntamente com outras informações pertinentes anexadas. Obrigado."
@@ -86,8 +100,12 @@ field:
  Signatures count: "Contagem da assinaturas"
  Signatures reference: "Assinaturas referência"
  Status code: "Código de status"
- User agent (lower-case): "Agente do usuário (minúscula)"
- User agent: "Agente do usuário"
+ User agent (lower-case):
+  pt-BR: "Agente do usuário (minúscula)"
+  pt-PT: "Agente do utilizador (minúscula)"
+ User agent:
+  pt-BR: "Agente do usuário"
+  pt-PT: "Agente do utilizador"
  Verified identity: "Identidade verificada"
  Why blocked (detailed): "Razão bloqueada (detalhado)"
  Why blocked: "Razão bloqueada"

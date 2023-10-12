@@ -1,10 +1,10 @@
 CIDRAM Core:
  Name: "CIDRAM Core"
- Version: "3.4.1"
+ Version: "3.4.2-DEV+232840"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Front-End: "Latest"
-  Common Classes Package: "^2.10"
+  Common Classes Package: "^2.11-DEV"
   l10n/core/{lang}: ">=2023.262"
   l10n/frontend/{lang}: ">=2023.262"
  Changelog: "https://github.com/CIDRAM/CIDRAM/blob/v3/Changelog.md"
@@ -28,7 +28,7 @@ CIDRAM Core:
    Checksum: "8bfa4d8f80d7adef8670529cd229de10682a538ae139b9af972d2cfe803476e2:4843"
   CIDRAM/CIDRAM/Core.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Core.php"
-   Checksum: "396d4b76cf269ea879bbea2b8e2062c1a3f4c0346f75270b5587f1ecd441d5c2:132362"
+   Checksum: "ee8956483988cb14ab69471355cdae96cec572248533639673b412f6669b075c:132498"
   CIDRAM/CIDRAM/Duration.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Duration.php"
    Checksum: "f7ea95b8ef317359a166dcc4b228701b23702ede5e6df7dcf09ed8fe2a32d2ec:11666"
@@ -55,7 +55,7 @@ CIDRAM Core:
    Checksum: "b62c0cf1deeb97c7ee15638f0a4102292a6bab6f0b6b1ee3a1dec7fa485c2e05:1352"
   defaults.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/defaults.yml"
-   Checksum: "0a28cce03eb9402931d630231d8101ad585363c6a65f3b471704e5573c75c4ca:36821"
+   Checksum: "d5a2c86625e3af8d87d8aced9a11754230197528912232add5e0fca66ec7c22d:36822"
   loader.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/loader.php"
    Checksum: "2024a633fae0edeff14119bd2308d9599a8651bd1fc877838e3901b72afffdc0:1312"
@@ -64,11 +64,11 @@ CIDRAM Core:
    Checksum: "2e1620a380818985aa8eb7bbb549b2ded5ca65a82c4eb2f5d858d3b8dcc6c823:7838"
 CIDRAM Front-End:
  Name: "CIDRAM Front-End"
- Version: "3.4.1"
+ Version: "3.4.2-DEV+232840"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "Latest"
-  Common Classes Package: "^2.10"
+  Common Classes Package: "^2.11-DEV"
   l10n/core/{lang}: ">=2023.262"
   l10n/frontend/{lang}: ">=2023.262"
  Changelog: "https://github.com/CIDRAM/CIDRAM/blob/v3/Changelog.md"
@@ -418,10 +418,10 @@ CIDRAM Front-End:
    Checksum: "1d94ca2fb4ba393dec6f3fd4a90906e803b553e70bdb85638f35e07090388bc8:29851"
   CIDRAM/CIDRAM/Configuration.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Configuration.php"
-   Checksum: "aa9e968696de4274d61d333606e49ea6d5951e743df3cf41b38e543fc1a3ce0f:4550"
+   Checksum: "0fc748720337d415531c2e8caedbf061b7dd5d046372725e28cec8c7671069ff:2029"
   CIDRAM/CIDRAM/FrontEnd.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/FrontEnd.php"
-   Checksum: "e7559a5b6c68e1cc19b23ec32ee414b3946e182bc83639c63e9ee5ea42f7322a:334642"
+   Checksum: "7c959d8b9751a2fd429570e330d79536c74395fee691e6c4705e1c68dcdd6411:334648"
   CIDRAM/CIDRAM/FrontEndMethods.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/FrontEndMethods.php"
    Checksum: "e20dab7fe0c00bfb0ae29efbb7669d2db35dede4b785dc15cba06572259106be:62761"
@@ -436,16 +436,16 @@ CIDRAM Front-End:
    Checksum: "4dfb33b988b5f0dc005be919f60911e6af9195896239561d1ef5d255cb100628:15324"
   CIDRAM/CIDRAM/Updater.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Updater.php"
-   Checksum: "2b67211e4743b110cf2686f9471ab27fe034b6c0ecab54c6af2e499446b0e8ba:67488"
+   Checksum: "2d9a4e3e1b24b128780fa391eed4481d06c8a8dd83359fc89adb0a92b3b6420f:67554"
   macros.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/macros.yml"
    Checksum: "05461026927df4913773fa4d080d698921c94c946f9b8a1a6a9cd12f00f49358:3489"
 Common Classes Package:
  Name: "Common Classes Package"
- Version: "2.10.0"
+ Version: "2.11.0-DEV+232840"
  Dependencies:
   PHP: "^7.2|^8"
- Release Notes For: ["2.9.7", "2.10.0"]
+ Release Notes For: ["2.9.7", "2.10.0", "2.11.0"]
  When Update Succeeds:
   - "foreach {Components.RemoteMeta.Common Classes Package.Release Notes For} as Key => Value if {Components.Meta.Common Classes Package.Version}<{Value}&&{Components.RemoteMeta.Common Classes Package.Version}>={Value} then queue message response.release_notes https://github.com/Maikuolan/Common/releases/tag/v{Value} Common Classes Package v{Value}"
  Uninstallable: false
@@ -455,7 +455,7 @@ Common Classes Package:
    Checksum: "b27713c467a2b64b4f2f1376d473ec842deba6420ee836ffb6b5f01b7d053d99:42206"
   Maikuolan/Common/CommonAbstract.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/Maikuolan/Common/CommonAbstract.php"
-   Checksum: "80e4b59785cf7f464a7d3a39e959d653d1471c2da4fa2dc67d9738e3b8f9bd3e:2380"
+   Checksum: "4d240d6a8970ca78f2f4f33556354da7e12f5ac1f1a5929f3988f7ff6fccfc7d:2384"
   Maikuolan/Common/ComplexStringHandler.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/Maikuolan/Common/ComplexStringHandler.php"
    Checksum: "823edaec75178e8c56ad0accec030cbee543e6ad1a36340a2e2a12c2e2106fbb:3872"
@@ -473,7 +473,7 @@ Common Classes Package:
    Checksum: "529467267f77ef2bc5e89436a27485191070dcc2fe3c07625365d9aa8f58e8ad:5822"
   Maikuolan/Common/L10N.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/Maikuolan/Common/L10N.php"
-   Checksum: "711c450a452cc6bfb47cca756cd2696a86bbd2db65528d130e7f70b145ba4839:28947"
+   Checksum: "e9bea21c2c5e03f7aa870c41e74967002b05eac25c408506d72a2ba705ea1a12:31495"
   Maikuolan/Common/Matrix.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/Maikuolan/Common/Matrix.php"
    Checksum: "f61e7356587eab6c30a1d97f97b836abda7b90562e2bcb662f360e16aecd5f5e:9024"
@@ -635,22 +635,17 @@ l10n/core/de:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/de.yml"
    Checksum: "974e8d7ce3312101d2442f54404cbe82d7da06e7bd1b6f4e1ad9a2f8b6258d18:7718"
 l10n/core/en:
- Extended Description: "English (AU/GB/NZ) localisation"
- Version: "2023.269.0"
- Uninstallable: false
+ Extended Description: "English localisation"
+ Version: "2023.284.0"
  When Update Succeeds:
   - "if {Components.Meta.l10n/core/en.Version}<2023.269&&{Components.RemoteMeta.l10n/core/en.Version}>=2023.269&&{Components.Meta.PHPMailer.Version}>0&&{Components.Meta.PHPMailer.Version}==={Components.RemoteMeta.PHPMailer.Version} then updatesHandlerRepair PHPMailer"
+  - "if {Components.Meta.l10n/core/en-US.Version}>0 then queue message The components l10n/core/en and l10n/core/en-US have been merged."
+  - "if {Components.Meta.l10n/core/en-US.Version}>0 then updatesHandlerUninstall l10n/core/en-US"
+ Uninstallable: false
  Files:
   l10n/core/en.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/en.yml"
-   Checksum: "019d78dc49696d9bfe1d1124f99420e1aca9d5c641a8ee3bcb56679c70a9ff0a:6004"
-l10n/core/en-US:
- Extended Description: "English (US) localization"
- Version: "2023.262.0"
- Files:
-  l10n/core/en-US.yml:
-   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/en-US.yml"
-   Checksum: "80a1dabb2bfea85c52df2920d649b188f371cf262fd902bdbc41f2d5e13094f4:1339"
+   Checksum: "a937969156a649e2427b17d9630073800b5df2571d3cb7cc4b4ad7e8b3433713:6793"
 l10n/core/es:
  Extended Description: "Localización en Español"
  Version: "2023.269.0"
@@ -757,19 +752,15 @@ l10n/core/pl:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/pl.yml"
    Checksum: "e7cdf7049ae17b7a049b61c8987ecaabfe40da776f542ac1b574de1bac4bbf0e:7794"
 l10n/core/pt:
- Extended Description: "Localização em português brasileiro"
- Version: "2023.269.0"
+ Extended Description: "Localização em português"
+ Version: "2023.284.0"
+ When Update Succeeds:
+  - "if {Components.Meta.l10n/core/pt-PT.Version}>0 then queue message Os componentes l10n/core/pt e l10n/core/pt-PT foram mesclados."
+  - "if {Components.Meta.l10n/core/pt-PT.Version}>0 then updatesHandlerUninstall l10n/core/pt-PT"
  Files:
   l10n/core/pt.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/pt.yml"
-   Checksum: "ae0d39ff070503b2acf2217ef12c5d95e841ed17f71f54118a0dc2d66cb25130:7467"
-l10n/core/pt-PT:
- Extended Description: "Localização em português europeu"
- Version: "2023.269.0"
- Files:
-  l10n/core/pt-PT.yml:
-   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/pt-PT.yml"
-   Checksum: "e9b150e71054c753c6e9e177626c653d1a5ef9899979a5e3a14a89e3b6171d2c:7458"
+   Checksum: "65db0a8bac588182c144a2f20b42a024ae4952dfbe0be2a867e99276ce6bb9e1:8774"
 l10n/core/ro:
  Extended Description: "Localizare romaneasca"
  Version: "2023.279.0"
@@ -884,33 +875,29 @@ l10n/frontend/cs:
    Checksum: "4ea93630ccfc42369827478d87b3c1803a87e893fe635aa6a7b333b4b70f0c79:84132"
 l10n/frontend/de:
  Extended Description: "Deutsche Lokalisierung"
- Version: "2023.265.0"
+ Version: "2023.284.0"
  Files:
   l10n/frontend/de.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/de.yml"
-   Checksum: "0e62f3e84cb8a063c57d127e1c241f5f72110ed45d1a18ffab991c7dbab43cb1:85896"
+   Checksum: "2f61ddaf086c3eba26db73b9f574fc63c27883b645b6ee4619b146fef68875ad:85898"
 l10n/frontend/en:
- Extended Description: "English (AU/GB/NZ) localisation"
- Version: "2023.265.0"
+ Extended Description: "English localisation"
+ Version: "2023.284.0"
+ When Update Succeeds:
+  - "if {Components.Meta.l10n/frontend/en-US.Version}>0 then queue message The components l10n/frontend/en and l10n/frontend/en-US have been merged."
+  - "if {Components.Meta.l10n/frontend/en-US.Version}>0 then updatesHandlerUninstall l10n/frontend/en-US"
  Uninstallable: false
  Files:
   l10n/frontend/en.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/en.yml"
-   Checksum: "03d528ca8c458658352e556f315ab900b1a1bd7b4a7134c26c90d2daae292fa4:74191"
-l10n/frontend/en-US:
- Extended Description: "English (US) localization"
- Version: "2023.262.0"
- Files:
-  l10n/frontend/en-US.yml:
-   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/en-US.yml"
-   Checksum: "2d6b9901cdad9c3afdb970c9f4e39972980171604062f798ab1bbbf8ccf7c5f9:10071"
+   Checksum: "2edea824a072d2fd5693761f936af25e1eda0c255a12300f5be165af13312ae1:80363"
 l10n/frontend/es:
  Extended Description: "Localización en Español"
- Version: "2023.265.0"
+ Version: "2023.284.0"
  Files:
   l10n/frontend/es.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/es.yml"
-   Checksum: "c37bfdb619c855ebcdf0aed8fd69df8d09b9d6d7a79c6ac9ef45ca172d942c58:85662"
+   Checksum: "7285cbc4c98faa530e9aad9268bbc0073679df66aa626fb9494020dceaa4d8a9:85664"
 l10n/frontend/fa:
  Extended Description: "بومی سازی در فارسی"
  Version: "2023.265.0"
@@ -983,11 +970,11 @@ l10n/frontend/ms:
    Checksum: "aa9ce95d2851e72123f5fbf1abd4bfa7115ec6a4913677fb172e1e5722fda2f3:80809"
 l10n/frontend/nl:
  Extended Description: "Nederlandse lokalisatie"
- Version: "2023.265.0"
+ Version: "2023.284.0"
  Files:
   l10n/frontend/nl.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/nl.yml"
-   Checksum: "a7003fbc4347d920f3c82a79493ce8832743f86c43eb99a748b46dbd90ef8ff5:82969"
+   Checksum: "08581997fcd1e77f6ae8499b9724f96f36c5157076020391eaa842064c9d8592:82971"
 l10n/frontend/no:
  Extended Description: "Norsk lokalisering"
  Version: "2023.265.0"
@@ -1010,19 +997,15 @@ l10n/frontend/pl:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/pl.yml"
    Checksum: "601386f2f50daec5eef89115a9f9a9072dc854f4c433c80f175b37381148d171:84766"
 l10n/frontend/pt:
- Extended Description: "Localização em português brasileiro"
- Version: "2023.265.0"
+ Extended Description: "Localização em português"
+ Version: "2023.284.0"
+ When Update Succeeds:
+  - "if {Components.Meta.l10n/frontend/pt-PT.Version}>0 then queue message Os componentes l10n/frontend/pt e l10n/frontend/pt-PT foram mesclados."
+  - "if {Components.Meta.l10n/frontend/pt-PT.Version}>0 then updatesHandlerUninstall l10n/frontend/pt-PT"
  Files:
   l10n/frontend/pt.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/pt.yml"
-   Checksum: "37a00e224325520779ccaf46812ce8901285d860655a0cb893b89fe26955f152:83861"
-l10n/frontend/pt-PT:
- Extended Description: "Localização em português europeu"
- Version: "2023.265.0"
- Files:
-  l10n/frontend/pt-PT.yml:
-   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/pt-PT.yml"
-   Checksum: "40c8afce71380e82e2c161ebb7dec6a901fc62e746fad1cd5b3e99a6d7bd5a7e:83953"
+   Checksum: "a0bbfd55e8331b957c49ccb11fb0e4d59883d52e6a8118a165d135bb161eba55:93019"
 l10n/frontend/ro:
  Extended Description: "Localizare romaneasca"
  Version: "2023.279.0"

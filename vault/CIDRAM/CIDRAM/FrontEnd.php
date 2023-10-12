@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.09.21).
+ * This file: The CIDRAM front-end (last modified: 2023.10.12).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1688,7 +1688,7 @@ class FrontEnd extends Core
 
                     /** Provide hints, useful for users to better understand the directive at hand. */
                     if (!empty($DirValue['hints'])) {
-                        $ThisDir['Hints'] = $this->arrayFromL10nToArray($DirValue['hints']);
+                        $ThisDir['Hints'] = $this->L10N->arrayFromL10nToArray($DirValue['hints']);
                         foreach ($ThisDir['Hints'] as $ThisDir['HintKey'] => $ThisDir['HintValue']) {
                             if (is_int($ThisDir['HintKey'])) {
                                 $ThisDir['FieldOut'] .= sprintf("\n<br /><br />%s", $ThisDir['HintValue']);

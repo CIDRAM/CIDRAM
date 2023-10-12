@@ -1,6 +1,6 @@
 <?php
 /**
- * Common abstract for the common classes package (last modified: 2023.09.14).
+ * Common abstract for the common classes package (last modified: 2023.10.12).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -20,7 +20,7 @@ abstract class CommonAbstract
      * @var string Common Classes Package tag/release version.
      * @link https://github.com/Maikuolan/Common/tags
      */
-    public const VERSION = '2.10.0';
+    public const VERSION = '2.11.0';
 
     /**
      * Traverse data path.
@@ -41,8 +41,8 @@ abstract class CommonAbstract
             return $AllowNonScalar || is_scalar($Data) ? $Data : '';
         }
         $Segment = str_replace('\.', '.', $Segment);
-        if (is_array($Data) && isset($Data[$Segment])) {
-            return $this->dataTraverse($Data[$Segment], $Path, $AllowNonScalar, $AllowMethodCalls);
+        if (is_array($Data)) {
+            return isset($Data[$Segment]) ? $this->dataTraverse($Data[$Segment], $Path, $AllowNonScalar, $AllowMethodCalls) : '';
         }
         if (is_object($Data)) {
             if (property_exists($Data, $Segment)) {

@@ -8,26 +8,13 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used by the configuration page and configuration filters (last modified: 2023.09.16).
+ * This file: Methods used by the configuration page and configuration filters (last modified: 2023.10.12).
  */
 
 namespace CIDRAM\CIDRAM;
 
 trait Configuration
 {
-    /**
-     * Filter the available language options provided by the configuration page
-     * on the basis of the availability of the corresponding language files.
-     *
-     * @param string $ChoiceKey Language code.
-     * @return bool Valid/Invalid.
-     */
-    private function filterL10N(string $ChoiceKey): bool
-    {
-        $FrontEnd = $this->Vault . 'l10n' . DIRECTORY_SEPARATOR . 'frontend' . DIRECTORY_SEPARATOR . $ChoiceKey;
-        return is_readable($FrontEnd . '.yml') && is_file($FrontEnd . '.yml');
-    }
-
     /**
      * Filter the available hash algorithms provided by the configuration page
      * on the basis of availability.
@@ -78,54 +65,5 @@ trait Configuration
                 return;
             }
         }
-    }
-
-    /**
-     * Parses an array of L10N data references from L10N data to an array.
-     *
-     * @param string|array $References The L10N data references.
-     * @return array An array of L10N data.
-     */
-    private function arrayFromL10nToArray($References): array
-    {
-        if (!is_array($References)) {
-            $References = [$References];
-        }
-        $Out = [];
-        foreach ($References as $Reference) {
-            $Try = '';
-            if (isset($this->L10N->Data[$Reference])) {
-                $Try = $this->L10N->Data[$Reference];
-            } elseif (is_array($this->L10N->Fallback)) {
-                if (isset($this->L10N->Fallback[$Reference])) {
-                    $Try = $this->L10N->Fallback[$Reference];
-                }
-            } elseif ($this->L10N->Fallback instanceof \Maikuolan\Common\L10N) {
-                if (isset($this->L10N->Fallback->Data[$Reference])) {
-                    $Try = $this->L10N->Fallback->Data[$Reference];
-                } elseif (is_array($this->L10N->Fallback->Fallback) && isset($this->L10N->Fallback->Fallback[$Reference])) {
-                    $Try = $this->L10N->Fallback->Fallback[$Reference];
-                }
-            }
-            if ($Try === '') {
-                if (($SPos = strpos($Reference, ' ')) !== '') {
-                    $Try = (($TryFrom = $this->L10N->getString(substr($Reference, 0, $SPos))) !== '' && strpos($TryFrom, '%s') !== false) ? sprintf($TryFrom, substr($Reference, $SPos + 1)) : $Reference;
-                } else {
-                    $Try = $Reference;
-                }
-            }
-            $Reference = $Try;
-            if (!is_array($Reference)) {
-                $Reference = [$Reference];
-            }
-            foreach ($Reference as $Key => $Value) {
-                if (is_int($Key)) {
-                    $Out[] = $Value;
-                    continue;
-                }
-                $Out[$Key] = $Value;
-            }
-        }
-        return $Out;
     }
 }

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods for updating CIDRAM components (last modified: 2023.09.19).
+ * This file: Methods for updating CIDRAM components (last modified: 2023.10.12).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -265,7 +265,7 @@ trait Updater
      */
     private function isInUse(array $Component): int
     {
-        if (isset($Component['Name']) && preg_match('~^l10n/(?:core|frontend)/' . $this->Configuration['general']['lang'] . '$~', $Component['Name'])) {
+        if (isset($Component['Name']) && preg_match('~^l10n/(?:core|frontend)/(?:' . $this->Configuration['general']['lang'] . '|' . substr($this->Configuration['general']['lang'], 0, 2) . ')$~', $Component['Name'])) {
             return 1;
         }
         $Files = $Component['Files'] ?? [];

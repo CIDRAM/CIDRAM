@@ -8,9 +8,9 @@ CIDRAM Core:
   l10n/core/{lang}: ">=2023.262"
   l10n/frontend/{lang}: ">=2023.262"
  Changelog: "https://github.com/CIDRAM/CIDRAM/blob/v3/Changelog.md"
- Release Notes For: ["3.2.0", "3.2.1", "3.3.0", "3.4.0", "3.4.1"]
+ Release Notes For: ["3.2.0", "3.2.1", "3.3.0", "3.4.0", "3.4.1", "3.4.2"]
  When Update Succeeds:
-  - "wpVer 4.8.0 6.3.1 3.4.0 7.2"
+  - "wpVer 4.8.0 6.3.2 3.4.2 7.2"
   - "foreach {Components.RemoteMeta.CIDRAM Core.Release Notes For} as Key => Value if {Components.Meta.CIDRAM Core.Version}<{Value}&&{Components.RemoteMeta.CIDRAM Core.Version}>={Value} then queue message response.release_notes https://github.com/CIDRAM/CIDRAM/releases/tag/v{Value} CIDRAM v{Value}"
  Uninstallable: false
  Files:

@@ -687,7 +687,7 @@ trait Updater
                                     $FileMeta['Checksum']
                                 );
                                 if (!empty($this->Components['RemoteMeta'][$ThisTarget]['On Checksum Error'])) {
-                                    $this->executor($this->Components['RemoteMeta'][$ThisTarget]['On Checksum Error'], $BytesRemoved, $BytesAdded);
+                                    $this->executor($this->Components['RemoteMeta'][$ThisTarget]['On Checksum Error'], false, $BytesRemoved, $BytesAdded);
                                 }
                                 $Rollback = true;
                                 continue 2;
@@ -704,7 +704,7 @@ trait Updater
                                 $this->L10N->getString('response.File contains unexpected content')
                             );
                             if (!empty($this->Components['RemoteMeta'][$ThisTarget]['On Sanity Error'])) {
-                                $this->executor($this->Components['RemoteMeta'][$ThisTarget]['On Sanity Error'], $BytesRemoved, $BytesAdded);
+                                $this->executor($this->Components['RemoteMeta'][$ThisTarget]['On Sanity Error'], false, $BytesRemoved, $BytesAdded);
                             }
                             $Rollback = true;
                             continue 2;
@@ -777,12 +777,12 @@ trait Updater
                     ) {
                         $this->FE['state_msg'] .= $this->L10N->getString('response.Component successfully installed');
                         if (!empty($this->Components['RemoteMeta'][$ThisTarget]['When Install Succeeds'])) {
-                            $this->executor($this->Components['RemoteMeta'][$ThisTarget]['When Install Succeeds'], $BytesRemoved, $BytesAdded);
+                            $this->executor($this->Components['RemoteMeta'][$ThisTarget]['When Install Succeeds'], false, $BytesRemoved, $BytesAdded);
                         }
                     } else {
                         $this->FE['state_msg'] .= $this->L10N->getString('response.Component successfully updated');
                         if (!empty($this->Components['RemoteMeta'][$ThisTarget]['When Update Succeeds'])) {
-                            $this->executor($this->Components['RemoteMeta'][$ThisTarget]['When Update Succeeds'], $BytesRemoved, $BytesAdded);
+                            $this->executor($this->Components['RemoteMeta'][$ThisTarget]['When Update Succeeds'], false, $BytesRemoved, $BytesAdded);
                         }
                     }
 
@@ -808,12 +808,12 @@ trait Updater
                 ) {
                     $this->FE['state_msg'] .= $this->L10N->getString('response.Failed to install');
                     if (!empty($this->Components['RemoteMeta'][$ThisTarget]['When Install Fails'])) {
-                        $this->executor($this->Components['RemoteMeta'][$ThisTarget]['When Install Fails'], $BytesRemoved, $BytesAdded);
+                        $this->executor($this->Components['RemoteMeta'][$ThisTarget]['When Install Fails'], false, $BytesRemoved, $BytesAdded);
                     }
                 } else {
                     $this->FE['state_msg'] .= $this->L10N->getString('response.Failed to update');
                     if (!empty($this->Components['RemoteMeta'][$ThisTarget]['When Update Fails'])) {
-                        $this->executor($this->Components['RemoteMeta'][$ThisTarget]['When Update Fails'], $BytesRemoved, $BytesAdded);
+                        $this->executor($this->Components['RemoteMeta'][$ThisTarget]['When Update Fails'], false, $BytesRemoved, $BytesAdded);
                     }
                 }
             }
@@ -874,7 +874,7 @@ trait Updater
 
             $this->FE['state_msg'] .= $this->L10N->getString('response.Component successfully uninstalled');
             if (!empty($this->Components['Meta'][$ID]['When Uninstall Succeeds'])) {
-                $this->executor($this->Components['Meta'][$ID]['When Uninstall Succeeds'], $BytesRemoved);
+                $this->executor($this->Components['Meta'][$ID]['When Uninstall Succeeds'], false, $BytesRemoved);
             }
 
             /** Remove downstream meta. */
@@ -885,7 +885,7 @@ trait Updater
         } else {
             $this->FE['state_msg'] .= $this->L10N->getString('response.An error occurred while attempting to uninstall the component');
             if (!empty($this->Components['Meta'][$ID]['When Uninstall Fails'])) {
-                $this->executor($this->Components['Meta'][$ID]['When Uninstall Fails'], $BytesRemoved);
+                $this->executor($this->Components['Meta'][$ID]['When Uninstall Fails'], false, $BytesRemoved);
             }
         }
         $this->formatFileSize($BytesRemoved);
@@ -1207,7 +1207,7 @@ trait Updater
                 /** Repair operation succeeded. */
                 $this->FE['state_msg'] .= $this->L10N->getString('response.Repair process completed');
                 if (!empty($this->Components['Meta'][$ThisTarget]['When Repair Succeeds'])) {
-                    $this->executor($this->Components['Meta'][$ThisTarget]['When Repair Succeeds'], $BytesRemoved, $BytesAdded);
+                    $this->executor($this->Components['Meta'][$ThisTarget]['When Repair Succeeds'], false, $BytesRemoved, $BytesAdded);
                 }
             } else {
                 $RepairFailed = true;
@@ -1215,7 +1215,7 @@ trait Updater
                 /** Repair operation failed. */
                 $this->FE['state_msg'] .= $this->L10N->getString('response.Repair process failed');
                 if (!empty($this->Components['Meta'][$ThisTarget]['When Repair Fails'])) {
-                    $this->executor($this->Components['Meta'][$ThisTarget]['When Repair Fails'], $BytesRemoved, $BytesAdded);
+                    $this->executor($this->Components['Meta'][$ThisTarget]['When Repair Fails'], false, $BytesRemoved, $BytesAdded);
                 }
             }
             $this->formatFileSize($BytesAdded);

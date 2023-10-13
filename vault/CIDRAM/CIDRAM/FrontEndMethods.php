@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2023.09.21).
+ * This file: General methods used by the front-end (last modified: 2023.10.13).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1357,7 +1357,7 @@ trait FrontEndMethods
     {
         if ($Queue && $Methods !== '') {
             /** Guard. */
-            if (empty($this->CIDRAM['ExecutorQueue']) || !is_array($this->CIDRAM['ExecutorQueue'])) {
+            if (!isset($this->CIDRAM['ExecutorQueue']) || !is_array($this->CIDRAM['ExecutorQueue'])) {
                 $this->CIDRAM['ExecutorQueue'] = [];
             }
 
@@ -1371,7 +1371,7 @@ trait FrontEndMethods
         }
 
         if ($Methods === '') {
-            if (!empty($this->CIDRAM['ExecutorQueue']) && is_array($this->CIDRAM['ExecutorQueue'])) {
+            if (isset($this->CIDRAM['ExecutorQueue']) && is_array($this->CIDRAM['ExecutorQueue'])) {
                 /** We'll iterate an array from the local scope to guard against infinite loops. */
                 $Items = $this->CIDRAM['ExecutorQueue'];
 

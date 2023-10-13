@@ -328,3 +328,7 @@
 [2023.10.05; Bug-fix; Maikuolan]: Stop Forum Spam module found to have been broken since v3.0; Fixed.
 
 [2023.09~10; Maikuolan]: Added L10N for Afrikaans and Romanian.
+
+### v3.4.2
+
+[2023.10.13; Bug-fix; Maikuolan]: Some calls to the executor were missing a necessary parameter, and when to engage queuing wasn't always being decided correctly; Fixed.

@@ -172,11 +172,11 @@ input[type=button].reset:hover,input[type=button].reset:active{color:#f88}
 #logsTA{position:relative;top:-2px}
 .navicon.accounts{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:accounts.svg}{/Base64Encode})}
 .navicon.aggregator{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:aggregator.svg}{/Base64Encode})}
-.navicon.auxiliary{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxiliary.svg}{/Base64Encode})}
+.navicon.auxiliary,.bckpicon.auxiliary{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxiliary.svg}{/Base64Encode})}
 .navicon.backup{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:backup.svg}{/Base64Encode})}
 .navicon.cache{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:cache.svg}{/Base64Encode})}
 .navicon.calculator{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:calculator.svg}{/Base64Encode})}
-.navicon.configuration{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:configuration.svg}{/Base64Encode})}
+.navicon.configuration,.bckpicon.configuration{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:configuration.svg}{/Base64Encode})}
 .navicon.discussions{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:discussions.svg}{/Base64Encode})}
 .navicon.documentation{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:documentation.svg}{/Base64Encode})}
 .navicon.folder{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:folder.svg}{/Base64Encode})}
@@ -188,11 +188,11 @@ input[type=button].reset:hover,input[type=button].reset:active{color:#f88}
 .navicon.range{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:range.svg}{/Base64Encode})}
 .navicon.rl{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:rl.svg}{/Base64Encode})}
 .navicon.sections{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:sections.svg}{/Base64Encode})}
-.navicon.statistics{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:statistics.svg}{/Base64Encode})}
+.navicon.statistics,.bckpicon.statistics{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:statistics.svg}{/Base64Encode})}
 .navicon.subtractor{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:subtractor.svg}{/Base64Encode})}
 .navicon.test{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:test.svg}{/Base64Encode})}
-.navicon.tracking{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:tracking.svg}{/Base64Encode})}
-.navicon.updates{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:updates.svg}{/Base64Encode})}
+.navicon.tracking,.bckpicon.tracking{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:tracking.svg}{/Base64Encode})}
+.navicon.updates,.bckpicon.updates{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:updates.svg}{/Base64Encode})}
 ::selection{background-color:rgba(0,102,204,.6);color:#fff}
 .txtGn::selection,.txtGn>*:not(.txtOe,.txtRd)::selection{color:#dfc}
 .txtOe::selection,.txtOe>*:not(.txtGn,.txtRd)::selection{color:#fec}
@@ -218,3 +218,7 @@ input[disabled],input[disabled]+label{cursor:not-allowed}
 .auxicon.up1{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxup1.svg}{/Base64Encode})}
 .auxicon.up2{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxup2.svg}{/Base64Encode})}
 .auxicontxt{padding:0 3px 0 3px}
+.bckpicon{display:inline-block;width:16px;height:16px}
+.bckpicon.import{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:import.svg}{/Base64Encode})}
+.bckpicon.export{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:export.svg}{/Base64Encode})}
+.bckpicon.compress{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:compress.svg}{/Base64Encode})}

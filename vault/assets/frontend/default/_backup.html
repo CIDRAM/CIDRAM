@@ -6,20 +6,20 @@
     <div class="s" id="stateMsg">{state_msg}</div>
     <div class="ng1">
       <form enctype="multipart/form-data" id="bckpForm" action="?cidram-page=backup" method="POST">
-        <input type="radio" class="auto" name="bckpAct" id="doImport" value="import" onchange="javascript:this.checked?(hide('forExport'),show('forImport')):(hide('forImport'),show('forExport'))" checked /> <label class="s" for="doImport">{label.Import}</label>
+        <input type="radio" class="auto" name="bckpAct" id="doImport" value="import" onchange="javascript:this.checked?(hide('forExport'),show('forImport')):(hide('forImport'),show('forExport'))" checked /> <label class="s" for="doImport"><span class="bckpicon auxbl import"></span>{label.Import}</label>
         <span class="forImport" style="float:{FE_Align_Reverse}">
           <input type="file" name="importFile" class="auto" />
         </span><br /><br />
-        <input type="radio" class="auto" name="bckpAct" id="doExport" value="export" onchange="javascript:this.checked?(show('forExport'),hide('forImport')):(show('forImport'),hide('forExport'))" /> <label class="s" for="doExport">{label.Export}</label>
+        <input type="radio" class="auto" name="bckpAct" id="doExport" value="export" onchange="javascript:this.checked?(show('forExport'),hide('forImport')):(show('forImport'),hide('forExport'))" /> <label class="s" for="doExport"><span class="bckpicon auxbl export"></span>{label.Export}</label>
         <span class="forExport" style="float:{FE_Align_Reverse}">
-          <span class="s"><input type="checkbox" name="doCompress" id="doCompress" class="auto" checked /> <label for="doCompress">{label.Compress}</label></span>
+          <span class="s"><input type="checkbox" name="doCompress" id="doCompress" class="auto" checked /> <label for="doCompress"><span class="bckpicon auxbl compress"></span>{label.Compress}</label></span>
         </span><hr />
         <div style="display:grid;margin:38px min(38px, 1vw * 1.6);grid-template-columns:auto;contain:paint">
-          <div class="gridboxitem gridHA"><span class="s gridlabel"><input type="checkbox" name="doConfig" id="doConfig" class="auto" /> <label for="doConfig">{link.Configuration}<span class="forExport"> ({size_config})</span></label></span></div>
-          <div class="gridboxitem gridHB"><span class="s gridlabel"><input type="checkbox" name="doAux" id="doAux" class="auto" /> <label for="doAux">{link.Auxiliary Rules}<span class="forExport"> ({size_aux})</span></label></span></div>
-          <div class="gridboxitem gridHA"><span class="s gridlabel"><input type="checkbox" name="doMetadata" id="doMetadata" class="auto" /> <label for="doMetadata">{label.Component updates metadata}<span class="forExport"> ({size_metadata})</span></label></span></div>
-          <div class="gridboxitem gridHB"><span class="s gridlabel"><input type="checkbox" name="doTracking" id="doTracking" class="auto" /> <label for="doTracking">{link.IP Tracking}</label></span></div>
-          <div class="gridboxitem gridHA"><span class="s gridlabel"><input type="checkbox" name="doStatistics" id="doStatistics" class="auto" /> <label for="doStatistics">{link.Statistics}</label></span></div>
+          <div class="gridboxitem gridHA"><span class="s gridlabel"><input type="checkbox" name="doConfig" id="doConfig" class="auto" /> <label for="doConfig"><span class="bckpicon auxbl configuration"></span>{link.Configuration}<span class="forExport"> ({size_config})</span></label></span></div>
+          <div class="gridboxitem gridHB"><span class="s gridlabel"><input type="checkbox" name="doAux" id="doAux" class="auto" /> <label for="doAux"><span class="bckpicon auxbl auxiliary"></span>{link.Auxiliary Rules}<span class="forExport"> ({size_aux})</span></label></span></div>
+          <div class="gridboxitem gridHA"><span class="s gridlabel"><input type="checkbox" name="doMetadata" id="doMetadata" class="auto" /> <label for="doMetadata"><span class="bckpicon auxbl updates"></span>{label.Component updates metadata}<span class="forExport"> ({size_metadata})</span></label></span></div>
+          <div class="gridboxitem gridHB"><span class="s gridlabel"><input type="checkbox" name="doTracking" id="doTracking" class="auto" /> <label for="doTracking"><span class="bckpicon auxbl tracking"></span>{link.IP Tracking}</label></span></div>
+          <div class="gridboxitem gridHA"><span class="s gridlabel"><input type="checkbox" name="doStatistics" id="doStatistics" class="auto" /> <label for="doStatistics"><span class="bckpicon auxbl statistics"></span>{link.Statistics}</label></span></div>
         </div>
         <input type="submit" value="{field.OK}" />
       </form>

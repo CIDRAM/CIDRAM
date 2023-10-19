@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2023.273.0
-# Last modified: 2023.10.01
+# Version: 2023.291.0
+# Last modified: 2023.10.19
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -252,18 +252,21 @@ Tag: SKYBROADBAND
 
 
 # ASN 12389 ("PJSC Rostelecom").
-# Russian domestic ISP. Continuation of previous signatures section.
-# Listing this particular ASN in its entirety.
-# Stop Forum Spam (SFS) listings: 40,776.
-# Updated: 2022.11.18
+# Russian domestic ISP. Listing this particular ASN in its entirety.
+# Stop Forum Spam (SFS) listings: 28,449.
+# Updated: 2023.10.15
 
-2a00:1640::/32 Deny Spam
-2a00:1e88::/32 Deny Spam
-2a00:62c0::/32 Deny Spam
-2a00:b440::/32 Deny Spam
-2a01:540::/32 Deny Spam
-2a01:620::/32 Deny Spam
-2a02:ad8::/32 Deny Spam
+2a00:1640::/32 Deny Attacks
+2a00:1e88::/32 Deny Attacks
+2a00:56c0:200::/39 Deny Attacks
+2a00:56c0:800::/38 Deny Attacks
+2a00:56c0:4140::/46 Deny Attacks
+2a00:56c0:4180::/46 Deny Attacks
+2a00:62c0::/32 Deny Attacks
+2a00:b440::/32 Deny Attacks
+2a01:540::/32 Deny Attacks
+2a01:620::/32 Deny Attacks
+2a02:ad8::/32 Deny Attacks
 Origin: RU
 Profile: Domestic ISP;Tor endpoints here
 Tag: PJSC Rostelecom
@@ -588,22 +591,6 @@ Tag: Atria Convergence
 Origin: GR
 Profile: Domestic ISP
 Tag: Ote SA
-
-
-# ASNs 11664, 19037, 22085, 28573 ("Techtel LMDS Comunicaciones Interactivas S.A",
-# "AMX Argentina S.A", "CLARO S.A").
-# A South American ISP caught performing brute-force and webapp attacks, port
-# scans, and spamming. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 359 (AS11664), 16 (AS19037), 1,526 (AS28573).
-# Updated: 2022.11.22 / Modified: 2022.12.25
-
-2803:9800:908f:80a0::/64 Deny Spam
-Origin: AR
-2804:14d:3291:4e99::/64 Deny Spam
-2804:14d:c883:88b6::/64 Deny Malware
-Origin: BR
-Profile: Domestic ISP
-Tag: CLARO S.A
 
 
 # ASNs 6332, 8151 ("Uninet S.A. de C.V").

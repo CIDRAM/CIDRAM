@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: HCaptcha class (last modified: 2023.09.18).
+ * This file: HCaptcha class (last modified: 2023.10.21).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -261,14 +261,15 @@ class HCaptcha extends Captcha
             '<form method="POST" action="" class="gForm">' .
                 '<input id="rData" type="hidden" name="hc-response" value="" />' .
                 '<div id="hcform" data-theme="%s" data-callback="onSubmitCallback"></div>' .
-                '<div>%s<input type="submit" value="{label.Submit}" /></div>' .
+                '<div>%s<input type="submit" value="%s" /></div>' .
             "</form>\n" .
             "<script type=\"text/javascript\">function onSubmitCallback(token){document.getElementById('rData').value=hcaptcha.getResponse(window.document.hcwidget)}</script>\n",
             $this->CIDRAM->CIDRAM['L10N-Lang-Attache'],
             $ApiMessage ? '{captcha_message}' : '',
             $CookieWarn ? '<br />{captcha_cookie_warning}' : '',
             $this->determineTheme(),
-            $this->TemplateInsert
+            $this->TemplateInsert,
+            $this->CIDRAM->ClientL10N->getString('label.Submit') ?: $this->CIDRAM->L10N->getString('label.Submit')
         ) . $Script;
     }
 

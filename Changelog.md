@@ -334,3 +334,5 @@
 [2023.10.13; Bug-fix; Maikuolan]: Some calls to the executor were missing a necessary parameter, and when to engage queuing wasn't always being decided correctly; Fixed.
 
 [2023.10.16; Maikuolan]: Added decorative SVGs to the front-end backup page.
+
+[2023.10.21; Bug-fix; Maikuolan]: The label for the CAPTCHA submit button wasn't rendering properly; Fixed (#526).

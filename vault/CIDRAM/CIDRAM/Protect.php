@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2023.09.19).
+ * This file: Protect traits (last modified: 2023.10.21).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -785,7 +785,7 @@ trait Protect
 
                 /** Pull relevant client-specified L10N data first. */
                 if (!empty($this->CIDRAM['L10N-Lang-Attache'])) {
-                    foreach (['denied', 'captcha_cookie_warning', 'captcha_message', 'captcha_message_invisible', 'label.Submit'] as $PullThis) {
+                    foreach (['denied', 'captcha_cookie_warning', 'captcha_message', 'captcha_message_invisible'] as $PullThis) {
                         if (($Try = $this->ClientL10N->getString($PullThis)) !== '') {
                             $this->CIDRAM['Parsables'][$PullThis] = $Try;
                         }
@@ -975,7 +975,7 @@ trait Protect
 
                     /** Pull relevant client-specified L10N data first. */
                     if (!empty($this->CIDRAM['L10N-Lang-Attache'])) {
-                        foreach (['captcha_cookie_warning', 'captcha_message_automated_traffic', 'captcha_message', 'captcha_message_invisible', 'label.Submit'] as $PullThis) {
+                        foreach (['captcha_cookie_warning', 'captcha_message_automated_traffic', 'captcha_message', 'captcha_message_invisible'] as $PullThis) {
                             if (($Try = $this->ClientL10N->getString($PullThis)) !== '') {
                                 $this->CIDRAM['Parsables'][$PullThis] = $Try;
                             }

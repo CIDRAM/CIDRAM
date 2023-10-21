@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: ReCaptcha class (last modified: 2023.09.18).
+ * This file: ReCaptcha class (last modified: 2023.10.21).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -255,13 +255,14 @@ class ReCaptcha extends Captcha
         ) . $Script . "\n" : sprintf(
             "\n<hr />\n<p class=\"detected\"%s>%s%s<br /></p>\n" .
             '<form method="POST" action="" class="gForm" onsubmit="javascript:grecaptcha.execute()">' .
-                '<div id="gForm" data-theme="%s"></div><div>%s<input type="submit" value="{label.Submit}" /></div>' .
+                '<div id="gForm" data-theme="%s"></div><div>%s<input type="submit" value="%s" /></div>' .
             "</form>\n",
             $this->CIDRAM->CIDRAM['L10N-Lang-Attache'],
             $ApiMessage ? '{captcha_message}' : '',
             $CookieWarn ? '<br />{captcha_cookie_warning}' : '',
             $this->determineTheme(),
-            $this->TemplateInsert
+            $this->TemplateInsert,
+            $this->CIDRAM->ClientL10N->getString('label.Submit') ?: $this->CIDRAM->L10N->getString('label.Submit')
         ) . $Script;
     }
 

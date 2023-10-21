@@ -1,6 +1,6 @@
 <?php
 /**
- * This file is an optional extension of the CIDRAM package.
+ * This file is a part of the CIDRAM package.
  * Homepage: https://cidram.github.io/
  *
  * CIDRAM COPYRIGHT 2016 and beyond by Caleb Mazalevskis (Maikuolan).
@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used to expand CIDRs (last modified: 2022.05.20).
+ * This file: Methods used to expand CIDRs (last modified: 2023.10.21).
  */
 
 namespace CIDRAM\CIDRAM;

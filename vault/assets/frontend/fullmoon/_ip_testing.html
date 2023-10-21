@@ -15,12 +15,12 @@
   </td>
   <td class="h3f">
     <div style="display:grid;margin:auto min(38px, 1vw * 1.6);grid-template-columns:auto;contain:paint">
-      <div class="gridboxitem gridHA"><span class="s gridlabel"><input type="checkbox" class="auto" name="TestsSwitch" id="TestsSwitch"{TestsSwitch} /><label for="TestsSwitch">{stage_tests}</label></span></div>
-      <div class="gridboxitem gridHB"><span class="s gridlabel"><input type="checkbox" class="auto" name="ModuleSwitch" id="ModuleSwitch"{ModuleSwitch} /><label for="ModuleSwitch">{stage_modules}</label></span></div>
-      <div class="gridboxitem gridHA"><span class="s gridlabel"><input type="checkbox" class="auto" name="SEVSwitch" id="SEVSwitch"{SEVSwitch} /><label for="SEVSwitch">{stage_sev}</label></span></div>
-      <div class="gridboxitem gridHB"><span class="s gridlabel"><input type="checkbox" class="auto" name="SMVSwitch" id="SMVSwitch"{SMVSwitch} /><label for="SMVSwitch">{stage_smv}</label></span></div>
-      <div class="gridboxitem gridHA"><span class="s gridlabel"><input type="checkbox" class="auto" name="OVSwitch" id="OVSwitch"{OVSwitch} /><label for="OVSwitch">{stage_ov}</label></span></div>
-      <div class="gridboxitem gridHB"><span class="s gridlabel"><input type="checkbox" class="auto" name="AuxSwitch" id="AuxSwitch"{AuxSwitch} /><label for="AuxSwitch">{stage_aux}</label></span></div>
+      <div class="gridboxitem gridHA"><span class="s gridlabel"><input type="checkbox" class="auto" name="TestsSwitch" id="TestsSwitch"{TestsSwitch} /><label for="TestsSwitch">{stages.Execute signature files tests}</label></span></div>
+      <div class="gridboxitem gridHB"><span class="s gridlabel"><input type="checkbox" class="auto" name="ModuleSwitch" id="ModuleSwitch"{ModuleSwitch} /><label for="ModuleSwitch">{stages.Execute modules}</label></span></div>
+      <div class="gridboxitem gridHA"><span class="s gridlabel"><input type="checkbox" class="auto" name="SEVSwitch" id="SEVSwitch"{SEVSwitch} /><label for="SEVSwitch">{stages.Execute search engine verification}</label></span></div>
+      <div class="gridboxitem gridHB"><span class="s gridlabel"><input type="checkbox" class="auto" name="SMVSwitch" id="SMVSwitch"{SMVSwitch} /><label for="SMVSwitch">{stages.Execute social media verification}</label></span></div>
+      <div class="gridboxitem gridHA"><span class="s gridlabel"><input type="checkbox" class="auto" name="OVSwitch" id="OVSwitch"{OVSwitch} /><label for="OVSwitch">{stages.Execute other verification}</label></span></div>
+      <div class="gridboxitem gridHB"><span class="s gridlabel"><input type="checkbox" class="auto" name="AuxSwitch" id="AuxSwitch"{AuxSwitch} /><label for="AuxSwitch">{stages.Execute auxiliary rules}</label></span></div>
       <div class="gridboxitem gridHA"><span class="s gridlabel"><input type="checkbox" class="auto" name="SensitiveSwitch" id="SensitiveSwitch"{SensitiveSwitch} /><label for="SensitiveSwitch">{checkbox.Test as sensitive request}</label></span></div>
       <div class="gridboxitem gridHB"><span class="s gridlabel"><span style="vertical-align:-2px">{label.Focus}</span>
         <input type="radio" class="auto" id="FocusSwitchIPAddress" name="FocusSwitch" value="IPAddress" onchange="javascript:showid('IPAddrSwitch');showid('UASwitch');hideid('IPAddrFocusSwitch');hideid('UAFocusSwitch');if (document.getElementById('IPAddrInput').value!==''){document.getElementById('IPAddrTextArea').value=document.getElementById('IPAddrInput').value};if (document.getElementById('UATextArea').value!==''){document.getElementById('UAInput').value=document.getElementById('UATextArea').value};"{FocusSwitchIPAddress} /><label for="FocusSwitchIPAddress">{field.IP address}</label>

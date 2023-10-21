@@ -785,12 +785,7 @@ trait Protect
 
                 /** Pull relevant client-specified L10N data first. */
                 if (!empty($this->CIDRAM['L10N-Lang-Attache'])) {
-                    foreach (['denied', 'captcha_cookie_warning', 'captcha_message', 'captcha_message_invisible'] as $PullThis) {
-                        if (($Try = $this->ClientL10N->getString($PullThis)) !== '') {
-                            $this->CIDRAM['Parsables'][$PullThis] = $Try;
-                        }
-                    }
-                    unset($Try, $PullThis);
+                    $this->CIDRAM['Parsables']['denied'] = $this->ClientL10N->getString('denied');
                 }
 
                 /** Append default L10N data. */
@@ -975,12 +970,7 @@ trait Protect
 
                     /** Pull relevant client-specified L10N data first. */
                     if (!empty($this->CIDRAM['L10N-Lang-Attache'])) {
-                        foreach (['captcha_cookie_warning', 'captcha_message_automated_traffic', 'captcha_message', 'captcha_message_invisible'] as $PullThis) {
-                            if (($Try = $this->ClientL10N->getString($PullThis)) !== '') {
-                                $this->CIDRAM['Parsables'][$PullThis] = $Try;
-                            }
-                        }
-                        unset($Try, $PullThis);
+                        $this->CIDRAM['Parsables']['captcha_message_automated_traffic'] = $this->ClientL10N->getString('captcha_message_automated_traffic');
                     }
 
                     /** Append default L10N data. */

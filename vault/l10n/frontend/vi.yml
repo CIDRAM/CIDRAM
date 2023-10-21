@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2023.09.23).
+# This file: Vietnamese language data for the front-end (last modified: 2023.10.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -820,24 +820,25 @@ response:
  _Yes: "Vâng"
  please_check_config: "Vui lòng kiểm tra cấu hình của bạn để đảm bảo rằng mô-đun mới được cài đặt sẽ hoạt động như bạn dự định."
  release_notes: "<a href="%s"><span class="navicon link"></span>Ghi chú phát hành cho %s.</a>"
-stage_aux: "Thực hiện quy tắc phụ trợ"
-stage_auxredirect: "Chuyển hướng theo các quy tắc phụ trợ"
-stage_captcha: "Triển khai CAPTCHA (yêu cầu bị chặn)"
-stage_modules: "Thực hiện mô-đun"
-stage_nonblockedcaptcha: "Triển khai CAPTCHA (yêu cầu không bị chặn)"
-stage_output: "Tạo đầu ra (yêu cầu bị chặn)"
-stage_ov: "Thực hiện xác minh khác"
-stage_preparefields: "Chuẩn bị các trường cho đầu ra và nhật ký"
-stage_reporting: "Thực hiện báo cáo"
-stage_rl: "Thực hiện giới hạn tốc độ"
-stage_sev: "Thực hiện xác minh của máy tìm kiếm"
-stage_smv: "Thực hiện xác minh của truyền thông xã hội"
-stage_statistics: "Cập nhật số liệu thống kê"
-stage_terminate: "Chấm dứt yêu cầu (yêu cầu bị chặn)"
-stage_tests: "Thực hiện kiểm tra tập tin chữ ký"
-stage_tracking: "Thực hiện giám sát IP"
-stage_webhooks: "Thực hiện webhook"
-stage_writelogs: "Ghi vào nhật ký (yêu cầu bị chặn)"
+stages:
+ Deploy CAPTCHAs (blocked requests): "Triển khai CAPTCHA (yêu cầu bị chặn)"
+ Deploy CAPTCHAs (non-blocked requests): "Triển khai CAPTCHA (yêu cầu không bị chặn)"
+ Execute IP tracking: "Thực hiện giám sát IP"
+ Execute auxiliary rules: "Thực hiện quy tắc phụ trợ"
+ Execute modules: "Thực hiện mô-đun"
+ Execute other verification: "Thực hiện xác minh khác"
+ Execute rate limiting: "Thực hiện giới hạn tốc độ"
+ Execute reporting: "Thực hiện báo cáo"
+ Execute search engine verification: "Thực hiện xác minh của máy tìm kiếm"
+ Execute signature files tests: "Thực hiện kiểm tra tập tin chữ ký"
+ Execute social media verification: "Thực hiện xác minh của truyền thông xã hội"
+ Execute webhooks: "Thực hiện webhook"
+ Generate output (blocked requests): "Tạo đầu ra (yêu cầu bị chặn)"
+ Prepare fields for output and logs: "Chuẩn bị các trường cho đầu ra và nhật ký"
+ Redirect according to auxiliary rules: "Chuyển hướng theo các quy tắc phụ trợ"
+ Terminate the request (blocked requests): "Chấm dứt yêu cầu (yêu cầu bị chặn)"
+ Update statistics: "Cập nhật số liệu thống kê"
+ Write to logs (blocked requests): "Ghi vào nhật ký (yêu cầu bị chặn)"
 state_fixer: "%s %s."
 state_fixer_changed: "Thực hiện %s thay đổi"
 state_fixer_seconds: "trong %s giây"

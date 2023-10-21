@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2023.09.23).
+# This file: French language data for the front-end (last modified: 2023.10.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -834,24 +834,25 @@ response:
  _Yes: "Oui"
  please_check_config: "Vérifier votre configuration afin d'assurer que le module nouvellement installé se comportera comme vous le souhaitez."
  release_notes: "<a href="%s"><span class="navicon link"></span>Notes de version pour %s.</a>"
-stage_aux: "Exécuter les règles auxiliaires"
-stage_auxredirect: "Rediriger selon les règles auxiliaires"
-stage_captcha: "Déployer les CAPTCHAs (requêtes bloquées)"
-stage_modules: "Exécuter les modules"
-stage_nonblockedcaptcha: "Déployer les CAPTCHAs (requêtes non bloquées)"
-stage_output: "Générer une sortie (requêtes bloquées)"
-stage_ov: "Exécuter une autre vérification"
-stage_preparefields: "Préparer les champs pour la sortie et les journaux"
-stage_reporting: "Traiter les rapports"
-stage_rl: "Exécuter la limitation du débit"
-stage_sev: "Exécuter la vérification des moteurs de recherche"
-stage_smv: "Exécuter la vérification des médias sociaux"
-stage_statistics: "Mettre à jour les statistiques"
-stage_terminate: "Terminer la requête (requêtes bloquées)"
-stage_tests: "Exécuter les tests des fichiers de signature"
-stage_tracking: "Exécuter le surveillance d'IP"
-stage_webhooks: "Exécuter des webhooks"
-stage_writelogs: "Enregistrer dans les journaux (requêtes bloquées)"
+stages:
+ Deploy CAPTCHAs (blocked requests): "Déployer les CAPTCHAs (requêtes bloquées)"
+ Deploy CAPTCHAs (non-blocked requests): "Déployer les CAPTCHAs (requêtes non bloquées)"
+ Execute IP tracking: "Exécuter le surveillance d'IP"
+ Execute auxiliary rules: "Exécuter les règles auxiliaires"
+ Execute modules: "Exécuter les modules"
+ Execute other verification: "Exécuter une autre vérification"
+ Execute rate limiting: "Exécuter la limitation du débit"
+ Execute reporting: "Traiter les rapports"
+ Execute search engine verification: "Exécuter la vérification des moteurs de recherche"
+ Execute signature files tests: "Exécuter les tests des fichiers de signature"
+ Execute social media verification: "Exécuter la vérification des médias sociaux"
+ Execute webhooks: "Exécuter des webhooks"
+ Generate output (blocked requests): "Générer une sortie (requêtes bloquées)"
+ Prepare fields for output and logs: "Préparer les champs pour la sortie et les journaux"
+ Redirect according to auxiliary rules: "Rediriger selon les règles auxiliaires"
+ Terminate the request (blocked requests): "Terminer la requête (requêtes bloquées)"
+ Update statistics: "Mettre à jour les statistiques"
+ Write to logs (blocked requests): "Enregistrer dans les journaux (requêtes bloquées)"
 state_fixer: "%s %s."
 state_fixer_changed:
  - "Fait %s changement"

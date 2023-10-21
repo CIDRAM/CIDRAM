@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2023.09.23).
+# This file: Turkish language data for the front-end (last modified: 2023.10.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -823,24 +823,25 @@ response:
  _Yes: "Evet"
  please_check_config: "Yeni kurulan modülün istediğiniz gibi davrandığından emin olmak için lütfen yapılandırmanızı kontrol edin."
  release_notes: "<a href="%s"><span class="navicon link"></span>%s için sürüm notları.</a>"
-stage_aux: "Yardımcı kuralları yürütün"
-stage_auxredirect: "Yardımcı kurallara göre yönlendirme"
-stage_captcha: "CAPTCHA'ları göster (engellenen istekler)"
-stage_modules: "Modülleri yürütün"
-stage_nonblockedcaptcha: "CAPTCHA'ları göster (engellenmeyen istekler)"
-stage_output: "Çıktı oluştur (engellenen istekler)"
-stage_ov: "Diğer doğrulamasını yürütün"
-stage_preparefields: "Çıktı ve günlükler için alanları hazırlayın"
-stage_reporting: "Raporlamayı yürütün"
-stage_rl: "Hız sınırlamasını yürütün"
-stage_sev: "Arama motoru doğrulamasını yürütün"
-stage_smv: "Sosyal medya doğrulamasını yürütün"
-stage_statistics: "İstatistikleri güncelle"
-stage_terminate: "İsteği sonlandır (engellenen istekler)"
-stage_tests: "İmza dosyaları testlerini yürütün"
-stage_tracking: "IP izlemeyi yürütün"
-stage_webhooks: "Web kancalarını yürütün"
-stage_writelogs: "Günlüklere yaz (engellenen istekler)"
+stages:
+ Deploy CAPTCHAs (blocked requests): "CAPTCHA'ları göster (engellenen istekler)"
+ Deploy CAPTCHAs (non-blocked requests): "CAPTCHA'ları göster (engellenmeyen istekler)"
+ Execute IP tracking: "IP izlemeyi yürütün"
+ Execute auxiliary rules: "Yardımcı kuralları yürütün"
+ Execute modules: "Modülleri yürütün"
+ Execute other verification: "Diğer doğrulamasını yürütün"
+ Execute rate limiting: "Hız sınırlamasını yürütün"
+ Execute reporting: "Raporlamayı yürütün"
+ Execute search engine verification: "Arama motoru doğrulamasını yürütün"
+ Execute signature files tests: "İmza dosyaları testlerini yürütün"
+ Execute social media verification: "Sosyal medya doğrulamasını yürütün"
+ Execute webhooks: "Web kancalarını yürütün"
+ Generate output (blocked requests): "Çıktı oluştur (engellenen istekler)"
+ Prepare fields for output and logs: "Çıktı ve günlükler için alanları hazırlayın"
+ Redirect according to auxiliary rules: "Yardımcı kurallara göre yönlendirme"
+ Terminate the request (blocked requests): "İsteği sonlandır (engellenen istekler)"
+ Update statistics: "İstatistikleri güncelle"
+ Write to logs (blocked requests): "Günlüklere yaz (engellenen istekler)"
 state_fixer: "$2%s $1%s."
 state_fixer_changed: "%s değişiklik yaptı"
 state_fixer_seconds: "%s saniyede"

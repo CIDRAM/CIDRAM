@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2023.10.12).
+# This file: Defaults file (last modified: 2023.10.21).
 ##/
 
 Config Defaults:
@@ -61,24 +61,24 @@ Config Defaults:
     LogErrors: "checkbox.Log any errors generated during this stage"
     Tracking: "checkbox.Should infractions generated during this stage count towards IP tracking"
    choices:
-    Tests: "stage_tests"
-    Modules: "stage_modules"
-    SearchEngineVerification: "stage_sev"
-    SocialMediaVerification: "stage_smv"
-    OtherVerification: "stage_ov"
-    Aux: "stage_aux"
-    Tracking: "stage_tracking"
-    RL: "stage_rl"
-    CAPTCHA: "stage_captcha"
-    Reporting: "stage_reporting"
-    Statistics: "stage_statistics"
-    Webhooks: "stage_webhooks"
-    PrepareFields: "stage_preparefields"
-    Output: "stage_output"
-    WriteLogs: "stage_writelogs"
-    Terminate: "stage_terminate"
-    AuxRedirect: "stage_auxredirect"
-    NonBlockedCAPTCHA: "stage_nonblockedcaptcha"
+    Tests: "stages.Execute signature files tests"
+    Modules: "stages.Execute modules"
+    SearchEngineVerification: "stages.Execute search engine verification"
+    SocialMediaVerification: "stages.Execute social media verification"
+    OtherVerification: "stages.Execute other verification"
+    Aux: "stages.Execute auxiliary rules"
+    Tracking: "stages.Execute IP tracking"
+    RL: "stages.Execute rate limiting"
+    CAPTCHA: "stages.Deploy CAPTCHAs (blocked requests)"
+    Reporting: "stages.Execute reporting"
+    Statistics: "stages.Update statistics"
+    Webhooks: "stages.Execute webhooks"
+    PrepareFields: "stages.Prepare fields for output and logs"
+    Output: "stages.Generate output (blocked requests)"
+    WriteLogs: "stages.Write to logs (blocked requests)"
+    Terminate: "stages.Terminate the request (blocked requests)"
+    AuxRedirect: "stages.Redirect according to auxiliary rules"
+    NonBlockedCAPTCHA: "stages.Deploy CAPTCHAs (non-blocked requests)"
    nonsense: |
     Tracking:Tracking
     RL:Tracking

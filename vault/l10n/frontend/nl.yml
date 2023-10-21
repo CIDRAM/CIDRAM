@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2023.10.12).
+# This file: Dutch language data for the front-end (last modified: 2023.10.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -825,24 +825,25 @@ response:
  _Yes: "Ja"
  please_check_config: "Controleer uw configuratie om er zeker van te zijn dat de nieuw geïnstalleerde module zich zal gedragen zoals u wilt."
  release_notes: "<a href="%s"><span class="navicon link"></span>Releaseopmerkingen voor %s.</a>"
-stage_aux: "Voer aanvullende regels"
-stage_auxredirect: "Omleiden volgens aanvullende regels"
-stage_captcha: "Voeg CAPTCHA's (geblokkeerde verzoeken)"
-stage_modules: "Voer de modules"
-stage_nonblockedcaptcha: "Voeg CAPTCHA's (niet-geblokkeerde verzoeken)"
-stage_output: "Genereren uitvoer (geblokkeerde verzoeken)"
-stage_ov: "Voer andere verificatie"
-stage_preparefields: "Voorbereiden velden voor uitvoer en logs"
-stage_reporting: "Voer rapportage"
-stage_rl: "Voer tarieflimiet"
-stage_sev: "Voer zoekmachine verificatie"
-stage_smv: "Voer sociale media verificatie"
-stage_statistics: "Bijwerk statistieken"
-stage_terminate: "Beëindig het verzoek (geblokkeerde verzoeken)"
-stage_tests: "Voer de signatuurbestandentests"
-stage_tracking: "Voer IP-tracking"
-stage_webhooks: "Voer webhooks"
-stage_writelogs: "Schrijf naar logs (geblokkeerde verzoeken)"
+stages:
+ Deploy CAPTCHAs (blocked requests): "Voeg CAPTCHA's (geblokkeerde verzoeken)"
+ Deploy CAPTCHAs (non-blocked requests): "Voeg CAPTCHA's (niet-geblokkeerde verzoeken)"
+ Execute IP tracking: "Voer IP-tracking"
+ Execute auxiliary rules: "Voer aanvullende regels"
+ Execute modules: "Voer de modules"
+ Execute other verification: "Voer andere verificatie"
+ Execute rate limiting: "Voer tarieflimiet"
+ Execute reporting: "Voer rapportage"
+ Execute search engine verification: "Voer zoekmachine verificatie"
+ Execute signature files tests: "Voer de signatuurbestandentests"
+ Execute social media verification: "Voer sociale media verificatie"
+ Execute webhooks: "Voer webhooks"
+ Generate output (blocked requests): "Genereren uitvoer (geblokkeerde verzoeken)"
+ Prepare fields for output and logs: "Voorbereiden velden voor uitvoer en logs"
+ Redirect according to auxiliary rules: "Omleiden volgens aanvullende regels"
+ Terminate the request (blocked requests): "Beëindig het verzoek (geblokkeerde verzoeken)"
+ Update statistics: "Bijwerk statistieken"
+ Write to logs (blocked requests): "Schrijf naar logs (geblokkeerde verzoeken)"
 state_fixer: "%s %s."
 state_fixer_changed:
  - "Er is %s wijziging aangebracht"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2023.09.23).
+# This file: Russian language data for the front-end (last modified: 2023.10.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -840,24 +840,25 @@ response:
  _Yes: "Да"
  please_check_config: "Пожалуйста, проверьте свою конфигурацию, чтобы убедиться, что вновь установленный модуль будет вести себя должным образом."
  release_notes: "<a href="%s"><span class="navicon link"></span>Примечания к выпуску для %s.</a>"
-stage_aux: "Выполнить вспомогательные правила"
-stage_auxredirect: "Редирект по вспомогательным правилам"
-stage_captcha: "Развертывание CAPTCHA (заблокированные запросы)"
-stage_modules: "Выполнить модули"
-stage_nonblockedcaptcha: "Развертывание CAPTCHA (незаблокированные запросы)"
-stage_output: "Генерация выводных (заблокированные запросы)"
-stage_ov: "Выполнить другую проверку"
-stage_preparefields: "Подготовить поля для вывода и журналов"
-stage_reporting: "Выполнить отчетность"
-stage_rl: "Выполнить ограничения скорости"
-stage_sev: "Выполнить проверку поисковой системы"
-stage_smv: "Выполнить проверку в социальных сетях"
-stage_statistics: "Обновить статистику"
-stage_terminate: "Прекращать запрос (заблокированные запросы)"
-stage_tests: "Выполнить тестов файлов сигнатур"
-stage_tracking: "Выполнить отслеживание IP"
-stage_webhooks: "Выполнить веб-крючков"
-stage_writelogs: "Запись в журналы (заблокированные запросы)"
+stages:
+ Deploy CAPTCHAs (blocked requests): "Развертывание CAPTCHA (заблокированные запросы)"
+ Deploy CAPTCHAs (non-blocked requests): "Развертывание CAPTCHA (незаблокированные запросы)"
+ Execute IP tracking: "Выполнить отслеживание IP"
+ Execute auxiliary rules: "Выполнить вспомогательные правила"
+ Execute modules: "Выполнить модули"
+ Execute other verification: "Выполнить другую проверку"
+ Execute rate limiting: "Выполнить ограничения скорости"
+ Execute reporting: "Выполнить отчетность"
+ Execute search engine verification: "Выполнить проверку поисковой системы"
+ Execute signature files tests: "Выполнить тестов файлов сигнатур"
+ Execute social media verification: "Выполнить проверку в социальных сетях"
+ Execute webhooks: "Выполнить веб-крючков"
+ Generate output (blocked requests): "Генерация выводных (заблокированные запросы)"
+ Prepare fields for output and logs: "Подготовить поля для вывода и журналов"
+ Redirect according to auxiliary rules: "Редирект по вспомогательным правилам"
+ Terminate the request (blocked requests): "Прекращать запрос (заблокированные запросы)"
+ Update statistics: "Обновить статистику"
+ Write to logs (blocked requests): "Запись в журналы (заблокированные запросы)"
 state_fixer: "%s %s."
 state_fixer_changed:
  - "Сделано %s изменение"

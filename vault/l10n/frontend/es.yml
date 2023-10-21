@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2023.10.12).
+# This file: Spanish language data for the front-end (last modified: 2023.10.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -276,7 +276,7 @@ config:
  supplementary_cache_options_prefix: "El valor especificado aquí se antepondrá a las claves de todas las entradas de la caché. Predefinido = "CIDRAM_". Cuando existen varias instalaciones en el mismo servidor, esto puede ser útil para mantener sus cachés separados entre sí."
  supplementary_cache_options_redis_host: "Valor del host de Redis. Predefinido = "localhost"."
  supplementary_cache_options_redis_port: "Valor del puerto de Redis. Predefinido = "6379"."
- supplementary_cache_options_redis_timeout: "Valor de tiempo de espera de Redis. Predefinido = "2.5"."
+ supplementary_cache_options_redis_timeout: "Valor del tiempo de espera de Redis. Predefinido = "2.5"."
  template_data: "Configuración para plantillas y temas."
  template_data_block_event_title: "El título de la página que se mostrará para los eventos de bloque."
  template_data_captcha_title: "El título de la página que se mostrará para las solicitudes de CAPTCHA."
@@ -825,24 +825,25 @@ response:
  _Yes: "Sí"
  please_check_config: "Verifique su configuración para asegurarse de que el módulo recién instalado se comportará como lo desea."
  release_notes: "<a href="%s"><span class="navicon link"></span>Notas de la versión para %s.</a>"
-stage_aux: "Ejecutar reglas auxiliares"
-stage_auxredirect: "Redirigir según reglas auxiliares"
-stage_captcha: "Desplegar CAPTCHAs (solicitudes bloqueadas)"
-stage_modules: "Ejecutar módulos"
-stage_nonblockedcaptcha: "Desplegar CAPTCHAs (solicitudes no bloqueadas)"
-stage_output: "Generar salida (solicitudes bloqueadas)"
-stage_ov: "Ejecutar otra verificación"
-stage_preparefields: "Preparar campos para salida y registros"
-stage_reporting: "Ejecutar informes"
-stage_rl: "Ejecutar la limitación de tasa"
-stage_sev: "Ejecutar la verificación del motor de búsqueda"
-stage_smv: "Ejecutar la verificación de las redes sociales"
-stage_statistics: "Actualizar estadísticas"
-stage_terminate: "Terminar la solicitud (solicitudes bloqueadas)"
-stage_tests: "Ejecutar pruebas de los archivos de firma"
-stage_tracking: "Ejecutar seguimiento de IP"
-stage_webhooks: "Ejecutar webhooks"
-stage_writelogs: "Escribir en registros (solicitudes bloqueadas)"
+stages:
+ Deploy CAPTCHAs (blocked requests): "Desplegar CAPTCHAs (solicitudes bloqueadas)"
+ Deploy CAPTCHAs (non-blocked requests): "Desplegar CAPTCHAs (solicitudes no bloqueadas)"
+ Execute IP tracking: "Ejecutar seguimiento de IP"
+ Execute auxiliary rules: "Ejecutar reglas auxiliares"
+ Execute modules: "Ejecutar módulos"
+ Execute other verification: "Ejecutar otra verificación"
+ Execute rate limiting: "Ejecutar la limitación de tasa"
+ Execute reporting: "Ejecutar informes"
+ Execute search engine verification: "Ejecutar la verificación del motor de búsqueda"
+ Execute signature files tests: "Ejecutar pruebas de los archivos de firma"
+ Execute social media verification: "Ejecutar la verificación de las redes sociales"
+ Execute webhooks: "Ejecutar webhooks"
+ Generate output (blocked requests): "Generar salida (solicitudes bloqueadas)"
+ Prepare fields for output and logs: "Preparar campos para salida y registros"
+ Redirect according to auxiliary rules: "Redirigir según reglas auxiliares"
+ Terminate the request (blocked requests): "Terminar la solicitud (solicitudes bloqueadas)"
+ Update statistics: "Actualizar estadísticas"
+ Write to logs (blocked requests): "Escribir en registros (solicitudes bloqueadas)"
 state_fixer: "%s %s."
 state_fixer_changed:
  - "Hizo %s cambio"

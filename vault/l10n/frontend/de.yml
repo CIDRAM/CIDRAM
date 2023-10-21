@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2023.10.12).
+# This file: German language data for the front-end (last modified: 2023.10.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -828,24 +828,25 @@ response:
  _Yes: "Ja"
  please_check_config: "Bitte überprüfen Sie Ihre Konfiguration um sicherzustellen dass das neu installierte Modul wie gewünscht verhält."
  release_notes: "<a href="%s"><span class="navicon link"></span>Versionshinweise für %s.</a>"
-stage_aux: "Hilfsregeln ausführen"
-stage_auxredirect: "Umleitung nach Hilfsregeln"
-stage_captcha: "Richten die CAPTCHAs ein (blockierte Anfragen)"
-stage_modules: "Module ausführen"
-stage_nonblockedcaptcha: "Richten die CAPTCHAs ein (non-blockierte Anfragen)"
-stage_output: "Ausgabe generieren (blockierte Anfragen)"
-stage_ov: "Andere Verifizierung ausführen"
-stage_preparefields: "Bereiten Felder für Ausgabe und Protokolle"
-stage_reporting: "Berichterstattung ausführen"
-stage_rl: "Ratenbegrenzung ausführen"
-stage_sev: "Suchmaschinenverifizierung ausführen"
-stage_smv: "Social-Media-Verifizierung ausführen"
-stage_statistics: "Statistiken aktualisieren"
-stage_terminate: "Die Anfrage beenden (blockierte Anfragen)"
-stage_tests: "Signaturdatei-Tests ausführen"
-stage_tracking: "IP-Tracking ausführen"
-stage_webhooks: "Webhooks ausführen"
-stage_writelogs: "In Protokolle schreiben (blockierte Anfragen)"
+stages:
+ Deploy CAPTCHAs (blocked requests): "Richten die CAPTCHAs ein (blockierte Anfragen)"
+ Deploy CAPTCHAs (non-blocked requests): "Richten die CAPTCHAs ein (non-blockierte Anfragen)"
+ Execute IP tracking: "IP-Tracking ausführen"
+ Execute auxiliary rules: "Hilfsregeln ausführen"
+ Execute modules: "Module ausführen"
+ Execute other verification: "Andere Verifizierung ausführen"
+ Execute rate limiting: "Ratenbegrenzung ausführen"
+ Execute reporting: "Berichterstattung ausführen"
+ Execute search engine verification: "Suchmaschinenverifizierung ausführen"
+ Execute signature files tests: "Signaturdatei-Tests ausführen"
+ Execute social media verification: "Social-Media-Verifizierung ausführen"
+ Execute webhooks: "Webhooks ausführen"
+ Generate output (blocked requests): "Ausgabe generieren (blockierte Anfragen)"
+ Prepare fields for output and logs: "Bereiten Felder für Ausgabe und Protokolle"
+ Redirect according to auxiliary rules: "Umleitung nach Hilfsregeln"
+ Terminate the request (blocked requests): "Die Anfrage beenden (blockierte Anfragen)"
+ Update statistics: "Statistiken aktualisieren"
+ Write to logs (blocked requests): "In Protokolle schreiben (blockierte Anfragen)"
 state_fixer: "%s %s."
 state_fixer_changed:
  - "%s Änderung"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2023.09.23).
+# This file: Norwegian language data for the front-end (last modified: 2023.10.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -827,24 +827,25 @@ response:
  _Yes: "Ja"
  please_check_config: "Kontroller konfigurasjonen for å sikre at den nylig installerte modulen vil oppføre seg slik du har tenkt deg."
  release_notes: "<a href="%s"><span class="navicon link"></span>Utgivelsesnotater for %s.</a>"
-stage_aux: "Utfør tilleggsregler"
-stage_auxredirect: "Omdirigere i henhold til tilleggsregler"
-stage_captcha: "Vis CAPTCHA (blokkerte forespørsler)"
-stage_modules: "Utfør modulene"
-stage_nonblockedcaptcha: "Vis CAPTCHA (ikke-blokkerte forespørsler)"
-stage_output: "Generer utgang (blokkerte forespørsler)"
-stage_ov: "Utfør annen verifisering"
-stage_preparefields: "Klargjør felt for utgang og logger"
-stage_reporting: "Utfør rapportering"
-stage_rl: "Utfør hastighetsbegrensning"
-stage_sev: "Utfør søkemotorverifisering"
-stage_smv: "Utfør sosiale medier verifisering"
-stage_statistics: "Oppdater statistikk"
-stage_terminate: "Avslutt forespørselen (blokkerte forespørsler)"
-stage_tests: "Utfør signaturfiltestene"
-stage_tracking: "Utfør IP-sporing"
-stage_webhooks: "Utfør webhooks"
-stage_writelogs: "Skriv til logger (blokkerte forespørsler)"
+stages:
+ Deploy CAPTCHAs (blocked requests): "Vis CAPTCHA (blokkerte forespørsler)"
+ Deploy CAPTCHAs (non-blocked requests): "Vis CAPTCHA (ikke-blokkerte forespørsler)"
+ Execute IP tracking: "Utfør IP-sporing"
+ Execute auxiliary rules: "Utfør tilleggsregler"
+ Execute modules: "Utfør modulene"
+ Execute other verification: "Utfør annen verifisering"
+ Execute rate limiting: "Utfør hastighetsbegrensning"
+ Execute reporting: "Utfør rapportering"
+ Execute search engine verification: "Utfør søkemotorverifisering"
+ Execute signature files tests: "Utfør signaturfiltestene"
+ Execute social media verification: "Utfør sosiale medier verifisering"
+ Execute webhooks: "Utfør webhooks"
+ Generate output (blocked requests): "Generer utgang (blokkerte forespørsler)"
+ Prepare fields for output and logs: "Klargjør felt for utgang og logger"
+ Redirect according to auxiliary rules: "Omdirigere i henhold til tilleggsregler"
+ Terminate the request (blocked requests): "Avslutt forespørselen (blokkerte forespørsler)"
+ Update statistics: "Oppdater statistikk"
+ Write to logs (blocked requests): "Skriv til logger (blokkerte forespørsler)"
 state_fixer: "%s %s."
 state_fixer_changed:
  - "Gjort %s endring"

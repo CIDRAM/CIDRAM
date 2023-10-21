@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bulgarian language data for the front-end (last modified: 2023.09.23).
+# This file: Bulgarian language data for the front-end (last modified: 2023.10.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -835,24 +835,25 @@ response:
  _Yes: "Да"
  please_check_config: "Моля, проверете вашата конфигурация, за да се уверите, че новоинсталираният модул ще се държи според вашите намерения."
  release_notes: "<a href="%s"><span class="navicon link"></span>Бележки по изданието за %s.</a>"
-stage_aux: "Изпълнете спомагателни правила"
-stage_auxredirect: "Пренасочване според спомагателни правила"
-stage_captcha: "Разположете CAPTCHA (блокирани заявки)"
-stage_modules: "Изпълнете модулите"
-stage_nonblockedcaptcha: "Разположете CAPTCHA (неблокирани заявки)"
-stage_output: "Генериране на изход (блокирани заявки)"
-stage_ov: "Изпълнете друга проверка"
-stage_preparefields: "Подгответе полета за изход и регистрационни файлове"
-stage_reporting: "Изпълнете отчет"
-stage_rl: "Изпълнете ограничаването на скоростта"
-stage_sev: "Изпълнете проверка на търсачката"
-stage_smv: "Изпълнете проверка в социалните медии"
-stage_statistics: "Актуализирайте статистиката"
-stage_terminate: "Прекратете заявката (блокирани заявки)"
-stage_tests: "Изпълнете тестове за файлове със сигнатури"
-stage_tracking: "Изпълнете IP проследяване"
-stage_webhooks: "Изпълнете уеб кукички"
-stage_writelogs: "Пишете в регистрационните файлове (блокирани заявки)"
+stages:
+ Deploy CAPTCHAs (blocked requests): "Разположете CAPTCHA (блокирани заявки)"
+ Deploy CAPTCHAs (non-blocked requests): "Разположете CAPTCHA (неблокирани заявки)"
+ Execute IP tracking: "Изпълнете IP проследяване"
+ Execute auxiliary rules: "Изпълнете спомагателни правила"
+ Execute modules: "Изпълнете модулите"
+ Execute other verification: "Изпълнете друга проверка"
+ Execute rate limiting: "Изпълнете ограничаването на скоростта"
+ Execute reporting: "Изпълнете отчет"
+ Execute search engine verification: "Изпълнете проверка на търсачката"
+ Execute signature files tests: "Изпълнете тестове за файлове със сигнатури"
+ Execute social media verification: "Изпълнете проверка в социалните медии"
+ Execute webhooks: "Изпълнете уеб кукички"
+ Generate output (blocked requests): "Генериране на изход (блокирани заявки)"
+ Prepare fields for output and logs: "Подгответе полета за изход и регистрационни файлове"
+ Redirect according to auxiliary rules: "Пренасочване според спомагателни правила"
+ Terminate the request (blocked requests): "Прекратете заявката (блокирани заявки)"
+ Update statistics: "Актуализирайте статистиката"
+ Write to logs (blocked requests): "Пишете в регистрационните файлове (блокирани заявки)"
 state_fixer: "%s %s."
 state_fixer_changed:
  - "Извършена е %s промяна"

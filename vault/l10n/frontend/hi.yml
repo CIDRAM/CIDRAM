@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data for the front-end (last modified: 2023.09.23).
+# This file: Hindi language data for the front-end (last modified: 2023.10.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -827,24 +827,25 @@ response:
  _Yes: "हाँ"
  please_check_config: "कृपया यह सुनिश्चित करने के लिए अपने कॉन्फ़िगरेशन की जांच करें कि नया स्थापित मॉड्यूल आपकी इच्छा के अनुसार व्यवहार करेगा।"
  release_notes: "<a href="%s"><span class="navicon link"></span>%s के लिए रिलीज नोट्स।</a>"
-stage_aux: "सहायक नियम निष्पादित करें"
-stage_auxredirect: "सहायक नियमों के अनुसार पुनर्निर्देशित करें"
-stage_captcha: "कैप्चा तैनात करें (अनुरोधों के लिए जो अवरुद्ध हैं)"
-stage_modules: "मॉड्यूल निष्पादित करें"
-stage_nonblockedcaptcha: "कैप्चा तैनात करें (अनुरोधों के लिए जो अवरुद्ध नहीं हैं)"
-stage_output: "आउटपुट उत्पन्न करें (अनुरोधों के लिए जो अवरुद्ध हैं)"
-stage_ov: "अन्य सत्यापन निष्पादित करें"
-stage_preparefields: "आउटपुट और लॉग के लिए फ़ील्ड तैयार करें"
-stage_reporting: "रिपोर्टिंग निष्पादित करें"
-stage_rl: "दर सीमित निष्पादित करें"
-stage_sev: "खोज इंजन सत्यापन निष्पादित करें"
-stage_smv: "सोशल मीडिया सत्यापन निष्पादित करें"
-stage_statistics: "सांख्यिकी अपडेट करें"
-stage_terminate: "अनुरोध समाप्त करें (अनुरोधों के लिए जो अवरुद्ध हैं)"
-stage_tests: "हस्ताक्षर फ़ाइलें परीक्षण निष्पादित करें"
-stage_tracking: "IP ट्रैकिंग निष्पादित करें"
-stage_webhooks: "Webhook निष्पादित करें"
-stage_writelogs: "लॉग को लिखें (अनुरोधों के लिए जो अवरुद्ध हैं)"
+stages:
+ Deploy CAPTCHAs (blocked requests): "कैप्चा तैनात करें (अनुरोधों के लिए जो अवरुद्ध हैं)"
+ Deploy CAPTCHAs (non-blocked requests): "कैप्चा तैनात करें (अनुरोधों के लिए जो अवरुद्ध नहीं हैं)"
+ Execute IP tracking: "IP ट्रैकिंग निष्पादित करें"
+ Execute auxiliary rules: "सहायक नियम निष्पादित करें"
+ Execute modules: "मॉड्यूल निष्पादित करें"
+ Execute other verification: "अन्य सत्यापन निष्पादित करें"
+ Execute rate limiting: "दर सीमित निष्पादित करें"
+ Execute reporting: "रिपोर्टिंग निष्पादित करें"
+ Execute search engine verification: "खोज इंजन सत्यापन निष्पादित करें"
+ Execute signature files tests: "हस्ताक्षर फ़ाइलें परीक्षण निष्पादित करें"
+ Execute social media verification: "सोशल मीडिया सत्यापन निष्पादित करें"
+ Execute webhooks: "Webhook निष्पादित करें"
+ Generate output (blocked requests): "आउटपुट उत्पन्न करें (अनुरोधों के लिए जो अवरुद्ध हैं)"
+ Prepare fields for output and logs: "आउटपुट और लॉग के लिए फ़ील्ड तैयार करें"
+ Redirect according to auxiliary rules: "सहायक नियमों के अनुसार पुनर्निर्देशित करें"
+ Terminate the request (blocked requests): "अनुरोध समाप्त करें (अनुरोधों के लिए जो अवरुद्ध हैं)"
+ Update statistics: "सांख्यिकी अपडेट करें"
+ Write to logs (blocked requests): "लॉग को लिखें (अनुरोधों के लिए जो अवरुद्ध हैं)"
 state_fixer: "%2$s %1$s।"
 state_fixer_changed:
  - "%s बदलाव किया गया"

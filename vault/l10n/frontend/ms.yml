@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malay language data for the front-end (last modified: 2023.09.23).
+# This file: Malay language data for the front-end (last modified: 2023.10.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -821,24 +821,25 @@ response:
  _Yes: "Ya"
  please_check_config: "Sila semak konfigurasi anda untuk memastikan bahawa modul yang baru dipasang akan berfungsi seperti yang anda mahukan."
  release_notes: "<a href="%s"><span class="navicon link"></span>Nota keluaran untuk %s.</a>"
-stage_aux: "Laksanakan peraturan tambahan"
-stage_auxredirect: "Ubah hala mengikut peraturan tambahan"
-stage_captcha: "Paparkan CAPTCHA (permintaan yang disekat)"
-stage_modules: "Laksanakan modul"
-stage_nonblockedcaptcha: "Paparkan CAPTCHA (permintaan yang tidak disekat)"
-stage_output: "Hasilkan output (permintaan yang disekat)"
-stage_ov: "Laksanakan pengesahan lain"
-stage_preparefields: "Sediakan medan untuk output dan log"
-stage_reporting: "Jalankan pelaporan"
-stage_rl: "Jalankan pengehadan kadar"
-stage_sev: "Jalankan pengesahan enjin carian"
-stage_smv: "Jalankan pengesahan media sosial"
-stage_statistics: "Kemas kini statistik"
-stage_terminate: "Tamatkan permintaan (permintaan yang disekat)"
-stage_tests: "Jalankan ujian untuk fail tandatangan"
-stage_tracking: "Jalankan penjejakan IP"
-stage_webhooks: "Jalankan webhook"
-stage_writelogs: "Tulis pada log (permintaan yang disekat)"
+stages:
+ Deploy CAPTCHAs (blocked requests): "Paparkan CAPTCHA (permintaan yang disekat)"
+ Deploy CAPTCHAs (non-blocked requests): "Paparkan CAPTCHA (permintaan yang tidak disekat)"
+ Execute IP tracking: "Jalankan penjejakan IP"
+ Execute auxiliary rules: "Laksanakan peraturan tambahan"
+ Execute modules: "Laksanakan modul"
+ Execute other verification: "Laksanakan pengesahan lain"
+ Execute rate limiting: "Jalankan pengehadan kadar"
+ Execute reporting: "Jalankan pelaporan"
+ Execute search engine verification: "Jalankan pengesahan enjin carian"
+ Execute signature files tests: "Jalankan ujian untuk fail tandatangan"
+ Execute social media verification: "Jalankan pengesahan media sosial"
+ Execute webhooks: "Jalankan webhook"
+ Generate output (blocked requests): "Hasilkan output (permintaan yang disekat)"
+ Prepare fields for output and logs: "Sediakan medan untuk output dan log"
+ Redirect according to auxiliary rules: "Ubah hala mengikut peraturan tambahan"
+ Terminate the request (blocked requests): "Tamatkan permintaan (permintaan yang disekat)"
+ Update statistics: "Kemas kini statistik"
+ Write to logs (blocked requests): "Tulis pada log (permintaan yang disekat)"
 state_fixer: "%s %s."
 state_fixer_changed: "%s perubahan dilakukan"
 state_fixer_seconds: "dalam %s saat"

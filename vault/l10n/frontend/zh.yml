@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2023.09.23).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2023.10.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -813,24 +813,25 @@ response:
  _Yes: "是"
  please_check_config: "请检查您的配置，以确保新安装的模块按您的意愿运行。"
  release_notes: "<a href="%s"><span class="navicon link"></span>%s的发行说明。</a>"
-stage_aux: "执行辅助规则"
-stage_auxredirect: "根据辅助规则重定向"
-stage_captcha: "部署验证码（被阻止的请求）"
-stage_modules: "执行模块"
-stage_nonblockedcaptcha: "部署验证码（非阻止的请求）"
-stage_output: "生成输出（被阻止的请求）"
-stage_ov: "执行其他验证"
-stage_preparefields: "为输出和日志准备字段"
-stage_reporting: "执行报告"
-stage_rl: "执行速率限制"
-stage_sev: "执行搜索引擎验证"
-stage_smv: "执行社交媒体验证"
-stage_statistics: "更新统计"
-stage_terminate: "终止请求（被阻止的请求）"
-stage_tests: "执行签名文件测试"
-stage_tracking: "执行IP跟踪"
-stage_webhooks: "执行webhook"
-stage_writelogs: "写入日志（被阻止的请求）"
+stages:
+ Deploy CAPTCHAs (blocked requests): "部署验证码（被阻止的请求）"
+ Deploy CAPTCHAs (non-blocked requests): "部署验证码（非阻止的请求）"
+ Execute IP tracking: "执行IP跟踪"
+ Execute auxiliary rules: "执行辅助规则"
+ Execute modules: "执行模块"
+ Execute other verification: "执行其他验证"
+ Execute rate limiting: "执行速率限制"
+ Execute reporting: "执行报告"
+ Execute search engine verification: "执行搜索引擎验证"
+ Execute signature files tests: "执行签名文件测试"
+ Execute social media verification: "执行社交媒体验证"
+ Execute webhooks: "执行webhook"
+ Generate output (blocked requests): "生成输出（被阻止的请求）"
+ Prepare fields for output and logs: "为输出和日志准备字段"
+ Redirect according to auxiliary rules: "根据辅助规则重定向"
+ Terminate the request (blocked requests): "终止请求（被阻止的请求）"
+ Update statistics: "更新统计"
+ Write to logs (blocked requests): "写入日志（被阻止的请求）"
 state_fixer: "%2$s%1$s。"
 state_fixer_changed: "进行了%s次更改"
 state_fixer_seconds: "在%s秒内"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Tamil language data for the front-end (last modified: 2023.09.23).
+# This file: Tamil language data for the front-end (last modified: 2023.10.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -830,24 +830,25 @@ response:
  _Yes: "ஆம்"
  please_check_config: "புதிதாக நிறுவப்பட்ட தொகுதி நீங்கள் நினைத்தபடி செயல்படும் என்பதை உறுதிப்படுத்த உங்கள் உள்ளமைவை சரிபார்க்கவும்."
  release_notes: "<a href="%s"><span class="navicon link"></span>%s க்கான வெளியீட்டு குறிப்புகள்.</a>"
-stage_aux: "துணை விதிகளை இயக்கவும்"
-stage_auxredirect: "துணை விதிகளின்படி திருப்பிவிடவும்"
-stage_captcha: "CAPTCHAகளை பயன்படுத்தவும் (கோரிக்கைகள் தடுக்கப்பட்டன)"
-stage_modules: "தொகுதியை இயக்கவும்"
-stage_nonblockedcaptcha: "CAPTCHAகளை பயன்படுத்தவும் (கோரிக்கைகள் தடுக்கப்படவில்லை)"
-stage_output: "வெளியீட்டை உருவாக்கவும் (கோரிக்கைகள் தடுக்கப்பட்டன)"
-stage_ov: "மற்ற சரிபார்ப்பை இயக்கவும்"
-stage_preparefields: "வெளியீடு மற்றும் பதிவுகளுக்கான புலங்களைத் தயாரிக்கவும்"
-stage_reporting: "அறிக்கையை இயக்கவும்"
-stage_rl: "வீத வரம்புக்கு இயக்கவும்"
-stage_sev: "தேடுபொறி சரிபார்ப்பை இயக்கவும்"
-stage_smv: "சமூக ஊடக சரிபார்ப்பை இயக்கவும்"
-stage_statistics: "புள்ளியியல் புதுப்பிக்கவும்"
-stage_terminate: "கோரிக்கையை நிறுத்துவதை (கோரிக்கைகள் தடுக்கப்பட்டன)"
-stage_tests: "கையொப்பம் கோப்பு சோதனைகளைச் இயக்கவும்"
-stage_tracking: "ஐபி கண்காணிப்பை இயக்கவும்"
-stage_webhooks: "வெப்ஹூக்குகளை இயக்கவும்"
-stage_writelogs: "பதிவுகளுக்கு எழுதுங்கள் (கோரிக்கைகள் தடுக்கப்பட்டன)"
+stages:
+ Deploy CAPTCHAs (blocked requests): "CAPTCHAகளை பயன்படுத்தவும் (கோரிக்கைகள் தடுக்கப்பட்டன)"
+ Deploy CAPTCHAs (non-blocked requests): "CAPTCHAகளை பயன்படுத்தவும் (கோரிக்கைகள் தடுக்கப்படவில்லை)"
+ Execute IP tracking: "ஐபி கண்காணிப்பை இயக்கவும்"
+ Execute auxiliary rules: "துணை விதிகளை இயக்கவும்"
+ Execute modules: "தொகுதியை இயக்கவும்"
+ Execute other verification: "மற்ற சரிபார்ப்பை இயக்கவும்"
+ Execute rate limiting: "வீத வரம்புக்கு இயக்கவும்"
+ Execute reporting: "அறிக்கையை இயக்கவும்"
+ Execute search engine verification: "தேடுபொறி சரிபார்ப்பை இயக்கவும்"
+ Execute signature files tests: "கையொப்பம் கோப்பு சோதனைகளைச் இயக்கவும்"
+ Execute social media verification: "சமூக ஊடக சரிபார்ப்பை இயக்கவும்"
+ Execute webhooks: "வெப்ஹூக்குகளை இயக்கவும்"
+ Generate output (blocked requests): "வெளியீட்டை உருவாக்கவும் (கோரிக்கைகள் தடுக்கப்பட்டன)"
+ Prepare fields for output and logs: "வெளியீடு மற்றும் பதிவுகளுக்கான புலங்களைத் தயாரிக்கவும்"
+ Redirect according to auxiliary rules: "துணை விதிகளின்படி திருப்பிவிடவும்"
+ Terminate the request (blocked requests): "கோரிக்கையை நிறுத்துவதை (கோரிக்கைகள் தடுக்கப்பட்டன)"
+ Update statistics: "புள்ளியியல் புதுப்பிக்கவும்"
+ Write to logs (blocked requests): "பதிவுகளுக்கு எழுதுங்கள் (கோரிக்கைகள் தடுக்கப்பட்டன)"
 state_fixer: "%s %s."
 state_fixer_changed:
  - "%s மாற்றம் செய்தார்"

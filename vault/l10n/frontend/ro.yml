@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Romanian language data for the front-end (last modified: 2023.10.07).
+# This file: Romanian language data for the front-end (last modified: 2023.10.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -838,24 +838,25 @@ response:
  _Yes: "Da"
  please_check_config: "Vă rugăm să vă verificați configurația pentru a vă asigura că modulul nou instalat se va comporta așa cum doriți."
  release_notes: "<a href="%s"><span class="navicon link"></span>Note de lansare pentru %s.</a>"
-stage_aux: "Executați regulile auxiliare"
-stage_auxredirect: "Redirecționează conform regulilor auxiliare"
-stage_captcha: "Implementați CAPTCHA (solicitări blocate)"
-stage_modules: "Executați module"
-stage_nonblockedcaptcha: "Implementați CAPTCHA (solicitări neblocate)"
-stage_output: "Generați ieșire (solicitări blocate)"
-stage_ov: "Executați alte verificări"
-stage_preparefields: "Pregătiți câmpurile pentru ieșire și jurnalele"
-stage_reporting: "Executați raportarea"
-stage_rl: "Executați limitarea ratei"
-stage_sev: "Executați verificarea motorului de căutare"
-stage_smv: "Executați verificarea rețelelor sociale"
-stage_statistics: "Actualizați statisticile"
-stage_terminate: "Terminați solicitărea (solicitări blocate)"
-stage_tests: "Executați teste de fișiere de semnătură"
-stage_tracking: "Executați urmărirea IP"
-stage_webhooks: "Executați webhook-uri"
-stage_writelogs: "Scrieți în jurnale (solicitări blocate)"
+stages:
+ Deploy CAPTCHAs (blocked requests): "Implementați CAPTCHA (solicitări blocate)"
+ Deploy CAPTCHAs (non-blocked requests): "Implementați CAPTCHA (solicitări neblocate)"
+ Execute IP tracking: "Executați urmărirea IP"
+ Execute auxiliary rules: "Executați regulile auxiliare"
+ Execute modules: "Executați module"
+ Execute other verification: "Executați alte verificări"
+ Execute rate limiting: "Executați limitarea ratei"
+ Execute reporting: "Executați raportarea"
+ Execute search engine verification: "Executați verificarea motorului de căutare"
+ Execute signature files tests: "Executați teste de fișiere de semnătură"
+ Execute social media verification: "Executați verificarea rețelelor sociale"
+ Execute webhooks: "Executați webhook-uri"
+ Generate output (blocked requests): "Generați ieșire (solicitări blocate)"
+ Prepare fields for output and logs: "Pregătiți câmpurile pentru ieșire și jurnalele"
+ Redirect according to auxiliary rules: "Redirecționează conform regulilor auxiliare"
+ Terminate the request (blocked requests): "Terminați solicitărea (solicitări blocate)"
+ Update statistics: "Actualizați statisticile"
+ Write to logs (blocked requests): "Scrieți în jurnale (solicitări blocate)"
 state_fixer: "%s %s."
 state_fixer_changed:
  - "A făcut %s modificare"

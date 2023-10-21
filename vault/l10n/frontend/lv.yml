@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2023.09.23).
+# This file: Latvian language data for the front-end (last modified: 2023.10.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -827,24 +827,25 @@ response:
  _Yes: "Jā"
  please_check_config: "Lūdzu, pārbaudiet konfigurāciju, lai pārliecinātos, ka tikko instalētais modulis rīkosies atbilstoši iecerētajam."
  release_notes: "<a href="%s"><span class="navicon link"></span>Piezīmes par %s.</a>"
-stage_aux: "Izpildīt palīgnoteikumus"
-stage_auxredirect: "Pāradresēt saskaņā ar palīgnoteikumiem"
-stage_captcha: "Izvietojiet CAPTCHA (bloķēti pieprasījumi)"
-stage_modules: "Izpildīt moduļus"
-stage_nonblockedcaptcha: "Izvietojiet CAPTCHA (nebloķēti pieprasījumi)"
-stage_output: "Ģenerēt izvadi (bloķēti pieprasījumi)"
-stage_ov: "Izpildīt citu verifikāciju"
-stage_preparefields: "Sagatavojiet laukus izvadei un žurnāliem"
-stage_reporting: "Izpildīt atskaites"
-stage_rl: "Izpildīt likmes ierobežošanu"
-stage_sev: "Izpildīt meklētājprogrammas verifikāciju"
-stage_smv: "Izpildīt sociālo mediju verifikāciju"
-stage_statistics: "Atjaunināt statistiku"
-stage_terminate: "Pārtrauciet pieprasījumu (bloķēti pieprasījumi)"
-stage_tests: "Izpildīt paraksta failu testus"
-stage_tracking: "Izpildīt IP izsekošanu"
-stage_webhooks: "Izpildīt tīmekļa āķis"
-stage_writelogs: "Rakstiet žurnālos (bloķēti pieprasījumi)"
+stages:
+ Deploy CAPTCHAs (blocked requests): "Izvietojiet CAPTCHA (bloķēti pieprasījumi)"
+ Deploy CAPTCHAs (non-blocked requests): "Izvietojiet CAPTCHA (nebloķēti pieprasījumi)"
+ Execute IP tracking: "Izpildīt IP izsekošanu"
+ Execute auxiliary rules: "Izpildīt palīgnoteikumus"
+ Execute modules: "Izpildīt moduļus"
+ Execute other verification: "Izpildīt citu verifikāciju"
+ Execute rate limiting: "Izpildīt likmes ierobežošanu"
+ Execute reporting: "Izpildīt atskaites"
+ Execute search engine verification: "Izpildīt meklētājprogrammas verifikāciju"
+ Execute signature files tests: "Izpildīt paraksta failu testus"
+ Execute social media verification: "Izpildīt sociālo mediju verifikāciju"
+ Execute webhooks: "Izpildīt tīmekļa āķis"
+ Generate output (blocked requests): "Ģenerēt izvadi (bloķēti pieprasījumi)"
+ Prepare fields for output and logs: "Sagatavojiet laukus izvadei un žurnāliem"
+ Redirect according to auxiliary rules: "Pāradresēt saskaņā ar palīgnoteikumiem"
+ Terminate the request (blocked requests): "Pārtrauciet pieprasījumu (bloķēti pieprasījumi)"
+ Update statistics: "Atjaunināt statistiku"
+ Write to logs (blocked requests): "Rakstiet žurnālos (bloķēti pieprasījumi)"
 state_fixer: "%s %s."
 state_fixer_changed:
  - "Veica %s izmaiņu"

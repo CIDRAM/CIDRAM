@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hebrew language data for the front-end (last modified: 2023.09.23).
+# This file: Hebrew language data for the front-end (last modified: 2023.10.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -822,24 +822,25 @@ response:
  _Yes: "כן"
  please_check_config: "אנא בדוק את התצורה שלך כדי להבטיח שהמודול שהותקן לאחרונה יתנהג כפי שאתה מתכוון."
  release_notes: "<a href="%s"><span class="navicon link"></span>הערות שחרור עבור %s.</a>"
-stage_aux: "להפעיל כללי עזר"
-stage_auxredirect: "הפנה מחדש לפי כללי עזר"
-stage_captcha: "פרוס CAPTCHA (בקשות חסומות)"
-stage_modules: "להפעיל את המודולים"
-stage_nonblockedcaptcha: "פרוס CAPTCHA (בקשות לא חסומות)"
-stage_output: "ליצור את פלט העמוד (בקשות חסומות)"
-stage_ov: "להפעיל אימות אחר"
-stage_preparefields: "הכן שדות לפלט ויומנים"
-stage_reporting: "להפעיל דיווח"
-stage_rl: "להפעיל הגבלת שיעור"
-stage_sev: "להפעיל אימות מנוע חיפוש"
-stage_smv: "להפעיל אימות מדיה חברתית"
-stage_statistics: "עדכן סטטיסטיקה"
-stage_terminate: "לסיים הבקשה (בקשות חסומות)"
-stage_tests: "להפעיל בדיקות קבצי חתימה"
-stage_tracking: "להפעיל מעקב IP"
-stage_webhooks: "להפעיל webhooks"
-stage_writelogs: "כתוב ליומנים (בקשות חסומות)"
+stages:
+ Deploy CAPTCHAs (blocked requests): "פרוס CAPTCHA (בקשות חסומות)"
+ Deploy CAPTCHAs (non-blocked requests): "פרוס CAPTCHA (בקשות לא חסומות)"
+ Execute IP tracking: "להפעיל מעקב IP"
+ Execute auxiliary rules: "להפעיל כללי עזר"
+ Execute modules: "להפעיל את המודולים"
+ Execute other verification: "להפעיל אימות אחר"
+ Execute rate limiting: "להפעיל הגבלת שיעור"
+ Execute reporting: "להפעיל דיווח"
+ Execute search engine verification: "להפעיל אימות מנוע חיפוש"
+ Execute signature files tests: "להפעיל בדיקות קבצי חתימה"
+ Execute social media verification: "להפעיל אימות מדיה חברתית"
+ Execute webhooks: "להפעיל webhooks"
+ Generate output (blocked requests): "ליצור את פלט העמוד (בקשות חסומות)"
+ Prepare fields for output and logs: "הכן שדות לפלט ויומנים"
+ Redirect according to auxiliary rules: "הפנה מחדש לפי כללי עזר"
+ Terminate the request (blocked requests): "לסיים הבקשה (בקשות חסומות)"
+ Update statistics: "עדכן סטטיסטיקה"
+ Write to logs (blocked requests): "כתוב ליומנים (בקשות חסומות)"
 state_fixer: "%s %s."
 state_fixer_changed:
  - "ביצעו %s שינוי"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data for the front-end (last modified: 2023.09.23).
+# This file: Bangla language data for the front-end (last modified: 2023.10.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -817,24 +817,25 @@ response:
  _Yes: "হাঁ"
  please_check_config: "সদ্য ইনস্টল করা মডিউলটি আপনার ইচ্ছা অনুসারে আচরণ করবে তা নিশ্চিত করার জন্য দয়া করে আপনার কনফিগারেশনটি পরীক্ষা করুন।"
  release_notes: "<a href="%s"><span class="navicon link"></span>%s এর জন্য নোট রিলিজ।</a>"
-stage_aux: "অক্সিলিয়ারি নিয়মগুলি চালান"
-stage_auxredirect: "অক্সিলিয়ারি নিয়মগুলি অনুযায়ী পুনর্নির্দেশ"
-stage_captcha: "ক্যাপচা স্থাপন করুন (অবরুদ্ধ অনুরোধের জন্য)"
-stage_modules: "মডিউল চালান"
-stage_nonblockedcaptcha: "ক্যাপচা স্থাপন করুন (অ-অবরুদ্ধ অনুরোধের জন্য)"
-stage_output: "আউটপুট তৈরি করুন (অবরুদ্ধ অনুরোধের জন্য)"
-stage_ov: "অন্যান্য যাচাইকরণ চালান"
-stage_preparefields: "আউটপুট এবং লগের জন্য ক্ষেত্র প্রস্তুত করুন"
-stage_reporting: "রিপোর্টিং চালান"
-stage_rl: "হার সীমিত চালান"
-stage_sev: "সার্চ ইঞ্জিন যাচাইকরণ চালান"
-stage_smv: "সোশ্যাল মিডিয়া যাচাইকরণ চালান"
-stage_statistics: "পরিসংখ্যান আপডেট করুন"
-stage_terminate: "অনুরোধটি বন্ধ করুন (অবরুদ্ধ অনুরোধের জন্য)"
-stage_tests: "স্বাক্ষর ফাইল পরীক্ষা চালান"
-stage_tracking: "আইপি ট্র্যাকিং চালান"
-stage_webhooks: "ওয়েবহুক চালান"
-stage_writelogs: "লগগুলিতে লিখুন (অবরুদ্ধ অনুরোধের জন্য)"
+stages:
+ Deploy CAPTCHAs (blocked requests): "ক্যাপচা স্থাপন করুন (অবরুদ্ধ অনুরোধের জন্য)"
+ Deploy CAPTCHAs (non-blocked requests): "ক্যাপচা স্থাপন করুন (অ-অবরুদ্ধ অনুরোধের জন্য)"
+ Execute IP tracking: "আইপি ট্র্যাকিং চালান"
+ Execute auxiliary rules: "অক্সিলিয়ারি নিয়মগুলি চালান"
+ Execute modules: "মডিউল চালান"
+ Execute other verification: "অন্যান্য যাচাইকরণ চালান"
+ Execute rate limiting: "হার সীমিত চালান"
+ Execute reporting: "রিপোর্টিং চালান"
+ Execute search engine verification: "সার্চ ইঞ্জিন যাচাইকরণ চালান"
+ Execute signature files tests: "স্বাক্ষর ফাইল পরীক্ষা চালান"
+ Execute social media verification: "সোশ্যাল মিডিয়া যাচাইকরণ চালান"
+ Execute webhooks: "ওয়েবহুক চালান"
+ Generate output (blocked requests): "আউটপুট তৈরি করুন (অবরুদ্ধ অনুরোধের জন্য)"
+ Prepare fields for output and logs: "আউটপুট এবং লগের জন্য ক্ষেত্র প্রস্তুত করুন"
+ Redirect according to auxiliary rules: "অক্সিলিয়ারি নিয়মগুলি অনুযায়ী পুনর্নির্দেশ"
+ Terminate the request (blocked requests): "অনুরোধটি বন্ধ করুন (অবরুদ্ধ অনুরোধের জন্য)"
+ Update statistics: "পরিসংখ্যান আপডেট করুন"
+ Write to logs (blocked requests): "লগগুলিতে লিখুন (অবরুদ্ধ অনুরোধের জন্য)"
 state_fixer: "%2$s %1$s।"
 state_fixer_changed: "%s পরিবর্তন করা হয়েছে"
 state_fixer_seconds: "%s সেকেন্ডের মধ্যে"

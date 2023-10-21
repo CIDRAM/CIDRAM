@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Ukrainian language data for the front-end (last modified: 2023.09.23).
+# This file: Ukrainian language data for the front-end (last modified: 2023.10.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -839,24 +839,25 @@ response:
  _Yes: "Так"
  please_check_config: "Будь ласка, перевірте свою конфігурацію, щоб переконатися, що нещодавно встановлений модуль працюватиме так, як ви бажаєте."
  release_notes: "<a href="%s"><span class="navicon link"></span>Примітки до випуску для %s.</a>"
-stage_aux: "Виконати допоміжні правила"
-stage_auxredirect: "Перенаправлення за допоміжними правилами"
-stage_captcha: "Показати CAPTCHA (запити які заблоковані)"
-stage_modules: "Виконати модулі"
-stage_nonblockedcaptcha: "Показати CAPTCHA (запити які не заблоковані)"
-stage_output: "Згенерувати вихід (запити які заблоковані)"
-stage_ov: "Виконайте іншу перевірку"
-stage_preparefields: "Підготувати поля для виведення та журнали"
-stage_reporting: "Виконувати звітність"
-stage_rl: "Виконайте обмеження швидкості"
-stage_sev: "Виконайте перевірку пошукової системи"
-stage_smv: "Виконайте перевірку в соціальних мережах"
-stage_statistics: "Оновити статистику"
-stage_terminate: "Припиніть запит (запити які заблоковані)"
-stage_tests: "Виконайте перевірки файлів сигнатур"
-stage_tracking: "Виконайте відстеження IP"
-stage_webhooks: "Виконайте веб-хуки"
-stage_writelogs: "Записати в журнали (запити які заблоковані)"
+stages:
+ Deploy CAPTCHAs (blocked requests): "Показати CAPTCHA (запити які заблоковані)"
+ Deploy CAPTCHAs (non-blocked requests): "Показати CAPTCHA (запити які не заблоковані)"
+ Execute IP tracking: "Виконайте відстеження IP"
+ Execute auxiliary rules: "Виконати допоміжні правила"
+ Execute modules: "Виконати модулі"
+ Execute other verification: "Виконайте іншу перевірку"
+ Execute rate limiting: "Виконайте обмеження швидкості"
+ Execute reporting: "Виконувати звітність"
+ Execute search engine verification: "Виконайте перевірку пошукової системи"
+ Execute signature files tests: "Виконайте перевірки файлів сигнатур"
+ Execute social media verification: "Виконайте перевірку в соціальних мережах"
+ Execute webhooks: "Виконайте веб-хуки"
+ Generate output (blocked requests): "Згенерувати вихід (запити які заблоковані)"
+ Prepare fields for output and logs: "Підготувати поля для виведення та журнали"
+ Redirect according to auxiliary rules: "Перенаправлення за допоміжними правилами"
+ Terminate the request (blocked requests): "Припиніть запит (запити які заблоковані)"
+ Update statistics: "Оновити статистику"
+ Write to logs (blocked requests): "Записати в журнали (запити які заблоковані)"
 state_fixer: "%s %s."
 state_fixer_changed:
  - "Виконали %s зміну"

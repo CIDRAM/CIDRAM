@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2023.09.23).
+# This file: Japanese language data for the front-end (last modified: 2023.10.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -819,24 +819,25 @@ response:
  _Yes: "はい"
  please_check_config: "新しくインストールされたモジュールが意図したとおりに動作することを確認するために、コンフィギュレーションを確認してください。"
  release_notes: "<a href="%s"><span class="navicon link"></span>%s のリリース・ノート。</a>"
-stage_aux: "補助ルールを実行する"
-stage_auxredirect: "補助ルールに従ってリダイレクトする"
-stage_captcha: "キャプチャを展開する（ブロックされたリクエスト）"
-stage_modules: "モジュールを実行する"
-stage_nonblockedcaptcha: "キャプチャを展開する（ブロックされていないリクエスト）"
-stage_output: "出力を生成する（ブロックされたリクエスト）"
-stage_ov: "その他の検証を実行する"
-stage_preparefields: "出力とログ用のフィールドを準備する"
-stage_reporting: "レポートを実行する"
-stage_rl: "レート制限を実行する"
-stage_sev: "検索エンジンの検証を実行する"
-stage_smv: "ソーシャル・メディア検証を実行する"
-stage_statistics: "統計をアップデートする"
-stage_terminate: "リクエストを終了する（ブロックされたリクエスト）"
-stage_tests: "シグネチャ・ファイル・テストを実行する"
-stage_tracking: "ＩＰトラッキングを実行する"
-stage_webhooks: "Webhookを実行する"
-stage_writelogs: "ログへの書き込み（ブロックされたリクエスト）"
+stages:
+ Deploy CAPTCHAs (blocked requests): "キャプチャを展開する（ブロックされたリクエスト）"
+ Deploy CAPTCHAs (non-blocked requests): "キャプチャを展開する（ブロックされていないリクエスト）"
+ Execute IP tracking: "ＩＰトラッキングを実行する"
+ Execute auxiliary rules: "補助ルールを実行する"
+ Execute modules: "モジュールを実行する"
+ Execute other verification: "その他の検証を実行する"
+ Execute rate limiting: "レート制限を実行する"
+ Execute reporting: "レポートを実行する"
+ Execute search engine verification: "検索エンジンの検証を実行する"
+ Execute signature files tests: "シグネチャ・ファイル・テストを実行する"
+ Execute social media verification: "ソーシャル・メディア検証を実行する"
+ Execute webhooks: "Webhookを実行する"
+ Generate output (blocked requests): "出力を生成する（ブロックされたリクエスト）"
+ Prepare fields for output and logs: "出力とログ用のフィールドを準備する"
+ Redirect according to auxiliary rules: "補助ルールに従ってリダイレクトする"
+ Terminate the request (blocked requests): "リクエストを終了する（ブロックされたリクエスト）"
+ Update statistics: "統計をアップデートする"
+ Write to logs (blocked requests): "ログへの書き込み（ブロックされたリクエスト）"
 state_fixer: "%2$s%1$s。"
 state_fixer_changed: "%sつの変更が行われました"
 state_fixer_seconds: "%s秒で"

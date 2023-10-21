@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Czech language data for the front-end (last modified: 2023.09.23).
+# This file: Czech language data for the front-end (last modified: 2023.10.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -832,24 +832,25 @@ response:
  _Yes: "Ano"
  please_check_config: "Zkontrolujte prosím svou konfiguraci, abyste se ujistili že se nově nainstalovaný modul bude chovat tak, jak zamýšlíte."
  release_notes: "<a href="%s"><span class="navicon link"></span>Poznámky k vydání pro %s.</a>"
-stage_aux: "Proveďte pomocná pravidla"
-stage_auxredirect: "Přesměrování podle pomocných pravidel"
-stage_captcha: "Nasaďte CAPTCHA (zablokované požadavky)"
-stage_modules: "Proveďte moduly"
-stage_nonblockedcaptcha: "Nasaďte CAPTCHA (neblokované požadavky)"
-stage_output: "Generovat výstup (zablokované požadavky)"
-stage_ov: "Proveďte další ověření"
-stage_preparefields: "Připravte pole pro výstup a protokoly"
-stage_reporting: "Proveďte reportaci"
-stage_rl: "Proveďte omezení rychlosti"
-stage_sev: "Proveďte ověření vyhledávače"
-stage_smv: "Proveďte ověření na sociálních sítích"
-stage_statistics: "Aktualizujte statistiky"
-stage_terminate: "Ukončete požadavek (zablokované požadavky)"
-stage_tests: "Proveďte testy souborů podpisů"
-stage_tracking: "Proveďte sledování IP"
-stage_webhooks: "Proveďte webhooky"
-stage_writelogs: "Napište pro protokolům (zablokované požadavky)"
+stages:
+ Deploy CAPTCHAs (blocked requests): "Nasaďte CAPTCHA (zablokované požadavky)"
+ Deploy CAPTCHAs (non-blocked requests): "Nasaďte CAPTCHA (neblokované požadavky)"
+ Execute IP tracking: "Proveďte sledování IP"
+ Execute auxiliary rules: "Proveďte pomocná pravidla"
+ Execute modules: "Proveďte moduly"
+ Execute other verification: "Proveďte další ověření"
+ Execute rate limiting: "Proveďte omezení rychlosti"
+ Execute reporting: "Proveďte reportaci"
+ Execute search engine verification: "Proveďte ověření vyhledávače"
+ Execute signature files tests: "Proveďte testy souborů podpisů"
+ Execute social media verification: "Proveďte ověření na sociálních sítích"
+ Execute webhooks: "Proveďte webhooky"
+ Generate output (blocked requests): "Generovat výstup (zablokované požadavky)"
+ Prepare fields for output and logs: "Připravte pole pro výstup a protokoly"
+ Redirect according to auxiliary rules: "Přesměrování podle pomocných pravidel"
+ Terminate the request (blocked requests): "Ukončete požadavek (zablokované požadavky)"
+ Update statistics: "Aktualizujte statistiky"
+ Write to logs (blocked requests): "Napište pro protokolům (zablokované požadavky)"
 state_fixer: "%s %s."
 state_fixer_changed:
  - "Provedena %s změna"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2023.10.12).
+# This file: English language data for the front-end (last modified: 2023.10.21).
 ##/
 
 Extended Description:
@@ -863,24 +863,25 @@ response:
  _Yes: "Yes"
  please_check_config: "Please check your configuration in order to ensure that the newly installed module will behave as you intend."
  release_notes: "<a href="%s"><span class="navicon link"></span>Release notes for %s.</a>"
-stage_aux: "Execute auxiliary rules"
-stage_auxredirect: "Redirect according to auxiliary rules"
-stage_captcha: "Deploy CAPTCHAs (blocked requests)"
-stage_modules: "Execute modules"
-stage_nonblockedcaptcha: "Deploy CAPTCHAs (non-blocked requests)"
-stage_output: "Generate output (blocked requests)"
-stage_ov: "Execute other verification"
-stage_preparefields: "Prepare fields for output and logs"
-stage_reporting: "Execute reporting"
-stage_rl: "Execute rate limiting"
-stage_sev: "Execute search engine verification"
-stage_smv: "Execute social media verification"
-stage_statistics: "Update statistics"
-stage_terminate: "Terminate the request (blocked requests)"
-stage_tests: "Execute signature files tests"
-stage_tracking: "Execute IP tracking"
-stage_webhooks: "Execute webhooks"
-stage_writelogs: "Write to logs (blocked requests)"
+stages:
+ Deploy CAPTCHAs (blocked requests): "Deploy CAPTCHAs (blocked requests)"
+ Deploy CAPTCHAs (non-blocked requests): "Deploy CAPTCHAs (non-blocked requests)"
+ Execute IP tracking: "Execute IP tracking"
+ Execute auxiliary rules: "Execute auxiliary rules"
+ Execute modules: "Execute modules"
+ Execute other verification: "Execute other verification"
+ Execute rate limiting: "Execute rate limiting"
+ Execute reporting: "Execute reporting"
+ Execute search engine verification: "Execute search engine verification"
+ Execute signature files tests: "Execute signature files tests"
+ Execute social media verification: "Execute social media verification"
+ Execute webhooks: "Execute webhooks"
+ Generate output (blocked requests): "Generate output (blocked requests)"
+ Prepare fields for output and logs: "Prepare fields for output and logs"
+ Redirect according to auxiliary rules: "Redirect according to auxiliary rules"
+ Terminate the request (blocked requests): "Terminate the request (blocked requests)"
+ Update statistics: "Update statistics"
+ Write to logs (blocked requests): "Write to logs (blocked requests)"
 state_fixer: "%s %s."
 state_fixer_changed:
  - "Made %s change"

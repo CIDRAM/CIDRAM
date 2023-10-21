@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Farsi language data for the front (last modified: 2023.09.23).
+# This file: Farsi language data for the front (last modified: 2023.10.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -822,24 +822,25 @@ response:
  _Yes: "آره"
  please_check_config: "لطفاً پیکربندی خود را بررسی کنید تا مطمئن شوید که ماژول تازه نصب شده همانطور که می خواهید رفتار می کند."
  release_notes: "<a href="%s"><span class="navicon link"></span>یادداشت های انتشار برای %s.</a>"
-stage_aux: "قوانین کمکی را اجرا کنید"
-stage_auxredirect: "تغییر مسیر طبق قوانین کمکی"
-stage_captcha: "CAPTCHA ها را نشان دهید (درخواست های مسدود شده)"
-stage_modules: "ماژول ها را اجرا کنید"
-stage_nonblockedcaptcha: "CAPTCHA ها را نشان دهید (درخواست های غیر مسدود)"
-stage_output: "خروجی را تولید کند (درخواست های مسدود شده)"
-stage_ov: "تأیید دیگر را اجرا کنید"
-stage_preparefields: "فیلدها را برای خروجی و گزارش ها آماده کنید"
-stage_reporting: "گزارش نویسی را اجرا کنید"
-stage_rl: "محدودیت های نرخ را اجرا کنید"
-stage_sev: "تأیید موتور جستجو را اجرا کنید"
-stage_smv: "تأیید رسانه های اجتماعی را اجرا کنید"
-stage_statistics: "آمار را به روز کنید"
-stage_terminate: "درخواست را خاتمه دهید (درخواست های مسدود شده)"
-stage_tests: "آزمایش فایل های امضا را اجرا کنید"
-stage_tracking: "ردیابی IP را اجرا کنید"
-stage_webhooks: "وب هوک ها را اجرا کنید"
-stage_writelogs: "به گزارش ها بنویسید (درخواست های مسدود شده)"
+stages:
+ Deploy CAPTCHAs (blocked requests): "CAPTCHA ها را نشان دهید (درخواست های مسدود شده)"
+ Deploy CAPTCHAs (non-blocked requests): "CAPTCHA ها را نشان دهید (درخواست های غیر مسدود)"
+ Execute IP tracking: "ردیابی IP را اجرا کنید"
+ Execute auxiliary rules: "قوانین کمکی را اجرا کنید"
+ Execute modules: "ماژول ها را اجرا کنید"
+ Execute other verification: "تأیید دیگر را اجرا کنید"
+ Execute rate limiting: "محدودیت های نرخ را اجرا کنید"
+ Execute reporting: "گزارش نویسی را اجرا کنید"
+ Execute search engine verification: "تأیید موتور جستجو را اجرا کنید"
+ Execute signature files tests: "آزمایش فایل های امضا را اجرا کنید"
+ Execute social media verification: "تأیید رسانه های اجتماعی را اجرا کنید"
+ Execute webhooks: "وب هوک ها را اجرا کنید"
+ Generate output (blocked requests): "خروجی را تولید کند (درخواست های مسدود شده)"
+ Prepare fields for output and logs: "فیلدها را برای خروجی و گزارش ها آماده کنید"
+ Redirect according to auxiliary rules: "تغییر مسیر طبق قوانین کمکی"
+ Terminate the request (blocked requests): "درخواست را خاتمه دهید (درخواست های مسدود شده)"
+ Update statistics: "آمار را به روز کنید"
+ Write to logs (blocked requests): "به گزارش ها بنویسید (درخواست های مسدود شده)"
 state_fixer: "%s %s انجام داد."
 state_fixer_changed: "%s تغییر"
 state_fixer_seconds: "در %s ثانیه"

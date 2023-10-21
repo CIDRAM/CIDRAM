@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2023.09.23).
+# This file: Italian language data for the front-end (last modified: 2023.10.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -827,24 +827,25 @@ response:
  _Yes: "Sì"
  please_check_config: "Si prega di controllare la configurazione per assicurarsi che il modulo appena installato si comporti come previsto."
  release_notes: "<a href="%s"><span class="navicon link"></span>Note di rilascio per %s.</a>"
-stage_aux: "Esegui regole ausiliarie"
-stage_auxredirect: "Reindirizzamento secondo regole ausiliarie"
-stage_captcha: "Presenta i CAPTCHA (richieste bloccate)"
-stage_modules: "Esegui moduli"
-stage_nonblockedcaptcha: "Presenta i CAPTCHA (richieste non bloccate)"
-stage_output: "Genera output (richieste bloccate)"
-stage_ov: "Esegui un'altra verifica"
-stage_preparefields: "Preparare i campi per l'output e i registri"
-stage_reporting: "Esegui segnalazione"
-stage_rl: "Esegui la limitazione della velocità"
-stage_sev: "Esegui la verifica dei motori di ricerca"
-stage_smv: "Esegui la verifica dei social media"
-stage_statistics: "Aggiorna le statistiche"
-stage_terminate: "Termina la richiesta (richieste bloccate)"
-stage_tests: "Esegui test sui file di firma"
-stage_tracking: "Esegui il tracciamento IP"
-stage_webhooks: "Esegui webhook"
-stage_writelogs: "Scrivi nei file di log (richieste bloccate)"
+stages:
+ Deploy CAPTCHAs (blocked requests): "Presenta i CAPTCHA (richieste bloccate)"
+ Deploy CAPTCHAs (non-blocked requests): "Presenta i CAPTCHA (richieste non bloccate)"
+ Execute IP tracking: "Esegui il tracciamento IP"
+ Execute auxiliary rules: "Esegui regole ausiliarie"
+ Execute modules: "Esegui moduli"
+ Execute other verification: "Esegui un'altra verifica"
+ Execute rate limiting: "Esegui la limitazione della velocità"
+ Execute reporting: "Esegui segnalazione"
+ Execute search engine verification: "Esegui la verifica dei motori di ricerca"
+ Execute signature files tests: "Esegui test sui file di firma"
+ Execute social media verification: "Esegui la verifica dei social media"
+ Execute webhooks: "Esegui webhook"
+ Generate output (blocked requests): "Genera output (richieste bloccate)"
+ Prepare fields for output and logs: "Preparare i campi per l'output e i registri"
+ Redirect according to auxiliary rules: "Reindirizzamento secondo regole ausiliarie"
+ Terminate the request (blocked requests): "Termina la richiesta (richieste bloccate)"
+ Update statistics: "Aggiorna le statistiche"
+ Write to logs (blocked requests): "Scrivi nei file di log (richieste bloccate)"
 state_fixer: "%s %s."
 state_fixer_changed:
  - "Fatto %s cambiamento"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2023.09.23).
+# This file: Arabic language data for the front-end (last modified: 2023.10.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -820,24 +820,25 @@ response:
  _Yes: "نعم"
  please_check_config: "يرجى التحقق من التكوين الخاص بك للتأكد من أن الوحدة المثبتة حديثًا سوف تعمل بالشكل الذي تريده."
  release_notes: "<a href="%s"><span class="navicon link"></span>ملاحظات إصدار %s.</a>"
-stage_aux: "تنفيذ القواعد المساعدة"
-stage_auxredirect: "إعادة التوجيه وفقًا للقواعد المساعدة"
-stage_captcha: "انشر الكابتشا (الطلبات المحظورة)"
-stage_modules: "تنفيذ الوحدات"
-stage_nonblockedcaptcha: "انشر الكابتشا (الطلبات غير المحظورة)"
-stage_output: "توليد الإخراج (الطلبات المحظورة)"
-stage_ov: "تنفيذ التحقق الآخر"
-stage_preparefields: "تحضير الحقول للإخراج والسجلات"
-stage_reporting: "تنفيذ التقارير"
-stage_rl: "تنفيذ تحديد معدل"
-stage_sev: "تنفيذ التحقق من محرك البحث"
-stage_smv: "تنفيذ التحقق من وسائل التواصل الاجتماعي"
-stage_statistics: "تحديث الإحصائيات"
-stage_terminate: "قم بإنهاء الطلب (الطلبات المحظورة)"
-stage_tests: "تنفيذ اختبارات ملفات التوقيع"
-stage_tracking: "تنفيذ تتبع IP"
-stage_webhooks: "تنفيذ الخطافات على الويب"
-stage_writelogs: "الكتابة إلى السجلات (الطلبات المحظورة)"
+stages:
+ Deploy CAPTCHAs (blocked requests): "انشر الكابتشا (الطلبات المحظورة)"
+ Deploy CAPTCHAs (non-blocked requests): "انشر الكابتشا (الطلبات غير المحظورة)"
+ Execute IP tracking: "تنفيذ تتبع IP"
+ Execute auxiliary rules: "تنفيذ القواعد المساعدة"
+ Execute modules: "تنفيذ الوحدات"
+ Execute other verification: "تنفيذ التحقق الآخر"
+ Execute rate limiting: "تنفيذ تحديد معدل"
+ Execute reporting: "تنفيذ التقارير"
+ Execute search engine verification: "تنفيذ التحقق من محرك البحث"
+ Execute signature files tests: "تنفيذ اختبارات ملفات التوقيع"
+ Execute social media verification: "تنفيذ التحقق من وسائل التواصل الاجتماعي"
+ Execute webhooks: "تنفيذ الخطافات على الويب"
+ Generate output (blocked requests): "توليد الإخراج (الطلبات المحظورة)"
+ Prepare fields for output and logs: "تحضير الحقول للإخراج والسجلات"
+ Redirect according to auxiliary rules: "إعادة التوجيه وفقًا للقواعد المساعدة"
+ Terminate the request (blocked requests): "قم بإنهاء الطلب (الطلبات المحظورة)"
+ Update statistics: "تحديث الإحصائيات"
+ Write to logs (blocked requests): "الكتابة إلى السجلات (الطلبات المحظورة)"
 state_fixer: "%s %s."
 state_fixer_changed:
  - "قدم %s التغيير"

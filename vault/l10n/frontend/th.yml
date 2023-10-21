@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2023.09.23).
+# This file: Thai language data for the front-end (last modified: 2023.10.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -812,24 +812,25 @@ response:
  _Yes: "ใช่แล้ว"
  please_check_config: "ตรวจสอบการกำหนดค่าของคุณเพื่อให้แน่ใจว่าโมดูลที่ติดตั้งใหม่จะทำงานตามที่ตั้งใจไว้."
  release_notes: "<a href="%s"><span class="navicon link"></span>บันทึกประจำรุ่นสำหรับ %s.</a>"
-stage_aux: "ดำเนินการกฎเสริม"
-stage_auxredirect: "เปลี่ยนเส้นทางตามกฎเสริม"
-stage_captcha: "ปรับใช้ CAPTCHAs (คำขอที่ถูกบล็อก)"
-stage_modules: "ดำเนินการโมดูล"
-stage_nonblockedcaptcha: "ปรับใช้ CAPTCHAs (คำขอที่ไม่ถูกบล็อก)"
-stage_output: "สร้างผลลัพธ์ของหน้า (คำขอที่ถูกบล็อก)"
-stage_ov: "ดำเนินการตรวจสอบอื่น ๆ"
-stage_preparefields: "เตรียมฟิลด์สำหรับเอาต์พุตและบันทึก"
-stage_reporting: "ดำเนินการรายงาน"
-stage_rl: "ดำเนินการ การจำกัดอัตรา"
-stage_sev: "ดำเนินการตรวจสอบเครื่องมือค้นหา"
-stage_smv: "ดำเนินการตรวจสอบโซเชียลมีเดีย"
-stage_statistics: "อัพเดทสถิติ"
-stage_terminate: "ยุติการร้องขอ (คำขอที่ถูกบล็อก)"
-stage_tests: "ดำเนินการทดสอบไฟล์ลายเซ็น"
-stage_tracking: "ดำเนินการติดตาม IP"
-stage_webhooks: "ดำเนินการเว็บฮุค"
-stage_writelogs: "เขียนลงบันทึก (คำขอที่ถูกบล็อก)"
+stages:
+ Deploy CAPTCHAs (blocked requests): "ปรับใช้ CAPTCHAs (คำขอที่ถูกบล็อก)"
+ Deploy CAPTCHAs (non-blocked requests): "ปรับใช้ CAPTCHAs (คำขอที่ไม่ถูกบล็อก)"
+ Execute IP tracking: "ดำเนินการติดตาม IP"
+ Execute auxiliary rules: "ดำเนินการกฎเสริม"
+ Execute modules: "ดำเนินการโมดูล"
+ Execute other verification: "ดำเนินการตรวจสอบอื่น ๆ"
+ Execute rate limiting: "ดำเนินการ การจำกัดอัตรา"
+ Execute reporting: "ดำเนินการรายงาน"
+ Execute search engine verification: "ดำเนินการตรวจสอบเครื่องมือค้นหา"
+ Execute signature files tests: "ดำเนินการทดสอบไฟล์ลายเซ็น"
+ Execute social media verification: "ดำเนินการตรวจสอบโซเชียลมีเดีย"
+ Execute webhooks: "ดำเนินการเว็บฮุค"
+ Generate output (blocked requests): "สร้างผลลัพธ์ของหน้า (คำขอที่ถูกบล็อก)"
+ Prepare fields for output and logs: "เตรียมฟิลด์สำหรับเอาต์พุตและบันทึก"
+ Redirect according to auxiliary rules: "เปลี่ยนเส้นทางตามกฎเสริม"
+ Terminate the request (blocked requests): "ยุติการร้องขอ (คำขอที่ถูกบล็อก)"
+ Update statistics: "อัพเดทสถิติ"
+ Write to logs (blocked requests): "เขียนลงบันทึก (คำขอที่ถูกบล็อก)"
 state_fixer: "%s %s."
 state_fixer_changed: "มีการเปลี่ยนแปลง %s"
 state_fixer_seconds: "ครั้งใน %s วินาที"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2023.09.23).
+# This file: Swedish language data for the front-end (last modified: 2023.10.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -829,24 +829,25 @@ response:
  _Yes: "Ja"
  please_check_config: "Kontrollera din konfiguration för att säkerställa att den nyligen installerade modulen fungerar som du tänker."
  release_notes: "<a href="%s"><span class="navicon link"></span>Utgivningsinformation för %s.</a>"
-stage_aux: "Utför hjälpregler"
-stage_auxredirect: "Omdirigera enligt hjälpregler"
-stage_captcha: "Visa CAPTCHAs (blockerade förfrågningar)"
-stage_modules: "Utför moduler"
-stage_nonblockedcaptcha: "Visa CAPTCHAs (icke-blockerade förfrågningar)"
-stage_output: "Generera utdata (blockerade förfrågningar)"
-stage_ov: "Utför annan verifiering"
-stage_preparefields: "Förbered fält för utdata och loggar"
-stage_reporting: "Utför rapportering"
-stage_rl: "Utför hastighetsbegränsning"
-stage_sev: "Utför verifiering av sökmotorer"
-stage_smv: "Utför verifiering av sociala medier"
-stage_statistics: "Uppdatera statistik"
-stage_terminate: "Avsluta begäran (blockerade förfrågningar)"
-stage_tests: "Utför signaturfilstester"
-stage_tracking: "Utför IP-spårning"
-stage_webhooks: "Utför webhooks"
-stage_writelogs: "Skriv till loggar (blockerade förfrågningar)"
+stages:
+ Deploy CAPTCHAs (blocked requests): "Visa CAPTCHAs (blockerade förfrågningar)"
+ Deploy CAPTCHAs (non-blocked requests): "Visa CAPTCHAs (icke-blockerade förfrågningar)"
+ Execute IP tracking: "Utför IP-spårning"
+ Execute auxiliary rules: "Utför hjälpregler"
+ Execute modules: "Utför moduler"
+ Execute other verification: "Utför annan verifiering"
+ Execute rate limiting: "Utför hastighetsbegränsning"
+ Execute reporting: "Utför rapportering"
+ Execute search engine verification: "Utför verifiering av sökmotorer"
+ Execute signature files tests: "Utför signaturfilstester"
+ Execute social media verification: "Utför verifiering av sociala medier"
+ Execute webhooks: "Utför webhooks"
+ Generate output (blocked requests): "Generera utdata (blockerade förfrågningar)"
+ Prepare fields for output and logs: "Förbered fält för utdata och loggar"
+ Redirect according to auxiliary rules: "Omdirigera enligt hjälpregler"
+ Terminate the request (blocked requests): "Avsluta begäran (blockerade förfrågningar)"
+ Update statistics: "Uppdatera statistik"
+ Write to logs (blocked requests): "Skriv till loggar (blockerade förfrågningar)"
 state_fixer: "%s %s."
 state_fixer_changed:
  - "Gjorde %s förändring"

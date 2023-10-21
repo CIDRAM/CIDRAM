@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2023.09.23).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2023.10.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -813,24 +813,25 @@ response:
  _Yes: "是"
  please_check_config: "請檢查您的配置，以確保新安裝的模塊按您的意願運行。"
  release_notes: "<a href="%s"><span class="navicon link"></span>%s的發行說明。</a>"
-stage_aux: "執行輔助規則"
-stage_auxredirect: "根據輔助規則重定向"
-stage_captcha: "部署驗證碼（被阻止的請求）"
-stage_modules: "執行模塊"
-stage_nonblockedcaptcha: "部署驗證碼（非阻止的請求）"
-stage_output: "生成輸出（被阻止的請求）"
-stage_ov: "執行其他驗證"
-stage_preparefields: "為輸出和日誌準備字段"
-stage_reporting: "執行報告"
-stage_rl: "執行速率限制"
-stage_sev: "執行搜索引擎驗證"
-stage_smv: "執行社交媒體驗證"
-stage_statistics: "更新統計"
-stage_terminate: "終止請求（被阻止的請求）"
-stage_tests: "執行簽名文件測試"
-stage_tracking: "執行IP跟踪"
-stage_webhooks: "執行webhook"
-stage_writelogs: "寫入日誌（被阻止的請求）"
+stages:
+ Deploy CAPTCHAs (blocked requests): "部署驗證碼（被阻止的請求）"
+ Deploy CAPTCHAs (non-blocked requests): "部署驗證碼（非阻止的請求）"
+ Execute IP tracking: "執行IP跟踪"
+ Execute auxiliary rules: "執行輔助規則"
+ Execute modules: "執行模塊"
+ Execute other verification: "執行其他驗證"
+ Execute rate limiting: "執行速率限制"
+ Execute reporting: "執行報告"
+ Execute search engine verification: "執行搜索引擎驗證"
+ Execute signature files tests: "執行簽名文件測試"
+ Execute social media verification: "執行社交媒體驗證"
+ Execute webhooks: "執行webhook"
+ Generate output (blocked requests): "生成輸出（被阻止的請求）"
+ Prepare fields for output and logs: "為輸出和日誌準備字段"
+ Redirect according to auxiliary rules: "根據輔助規則重定向"
+ Terminate the request (blocked requests): "終止請求（被阻止的請求）"
+ Update statistics: "更新統計"
+ Write to logs (blocked requests): "寫入日誌（被阻止的請求）"
 state_fixer: "%2$s%1$s。"
 state_fixer_changed: "進行了%s次更改"
 state_fixer_seconds: "在%s秒內"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2023.09.23).
+# This file: Polish language data for the front-end (last modified: 2023.10.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -834,24 +834,25 @@ response:
  _Yes: "Tak"
  please_check_config: "Sprawdź swoją konfigurację, aby upewnić się, że nowo zainstalowany moduł będzie zachowywał się zgodnie z przeznaczeniem."
  release_notes: "<a href="%s"><span class="navicon link"></span>Informacje o wersji dla %s.</a>"
-stage_aux: "Wykonać reguły pomocnicze"
-stage_auxredirect: "Przekieruj według reguły pomocniczych"
-stage_captcha: "Wdróż CAPTCHAs (zablokowane żądania)"
-stage_modules: "Wykonaj moduły"
-stage_nonblockedcaptcha: "Wdróż CAPTCHAs (niezablokowane żądania)"
-stage_output: "Generuj dane wyjściowe (zablokowane żądania)"
-stage_ov: "Przeprowadź inną weryfikację"
-stage_preparefields: "Przygotuj pola na dane wyjściowe i logi"
-stage_reporting: "Wykonaj raportowanie"
-stage_rl: "Wykonaj ograniczenie"
-stage_sev: "Przeprowadź weryfikację w wyszukiwarkach"
-stage_smv: "Przeprowadź weryfikację w mediach społecznościowych"
-stage_statistics: "Zaktualizuj statystyki"
-stage_terminate: "Zatrzymać żądanie (zablokowane żądania)"
-stage_tests: "Wykonać testy pliku podpis"
-stage_tracking: "Wykonaj śledzenie IP"
-stage_webhooks: "Wykonaj haczyki internetowe"
-stage_writelogs: "Napisz do dzienników (zablokowane żądania)"
+stages:
+ Deploy CAPTCHAs (blocked requests): "Wdróż CAPTCHAs (zablokowane żądania)"
+ Deploy CAPTCHAs (non-blocked requests): "Wdróż CAPTCHAs (niezablokowane żądania)"
+ Execute IP tracking: "Wykonaj śledzenie IP"
+ Execute auxiliary rules: "Wykonać reguły pomocnicze"
+ Execute modules: "Wykonaj moduły"
+ Execute other verification: "Przeprowadź inną weryfikację"
+ Execute rate limiting: "Wykonaj ograniczenie"
+ Execute reporting: "Wykonaj raportowanie"
+ Execute search engine verification: "Przeprowadź weryfikację w wyszukiwarkach"
+ Execute signature files tests: "Wykonać testy pliku podpis"
+ Execute social media verification: "Przeprowadź weryfikację w mediach społecznościowych"
+ Execute webhooks: "Wykonaj haczyki internetowe"
+ Generate output (blocked requests): "Generuj dane wyjściowe (zablokowane żądania)"
+ Prepare fields for output and logs: "Przygotuj pola na dane wyjściowe i logi"
+ Redirect according to auxiliary rules: "Przekieruj według reguły pomocniczych"
+ Terminate the request (blocked requests): "Zatrzymać żądanie (zablokowane żądania)"
+ Update statistics: "Zaktualizuj statystyki"
+ Write to logs (blocked requests): "Napisz do dzienników (zablokowane żądania)"
 state_fixer: "%s %s."
 state_fixer_changed:
  - "Dokonał %s zmiana"

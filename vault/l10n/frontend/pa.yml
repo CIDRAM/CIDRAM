@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Punjabi language data for the front-end (last modified: 2023.09.23).
+# This file: Punjabi language data for the front-end (last modified: 2023.10.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -828,24 +828,25 @@ response:
  _Yes: "ਹਾਂ"
  please_check_config: "ਕਿਰਪਾ ਕਰਕੇ ਇਹ ਯਕੀਨੀ ਬਣਾਉਣ ਲਈ ਆਪਣੀ ਕੌਂਫਿਗਰੇਸ਼ਨ ਦੀ ਜਾਂਚ ਕਰੋ ਕਿ ਨਵਾਂ ਇੰਸਟਾਲ ਕੀਤਾ ਮੋਡੀਊਲ ਤੁਹਾਡੇ ਇਰਾਦੇ ਅਨੁਸਾਰ ਵਿਹਾਰ ਕਰੇਗਾ।"
  release_notes: "<a href="%s"><span class="navicon link"></span>%s ਲਈ ਰੀਲੀਜ਼ ਨੋਟਸ।</a>"
-stage_aux: "ਸਹਾਇਕ ਨਿਯਮਾਂ ਨੂੰ ਲਾਗੂ ਕਰੋ"
-stage_auxredirect: "ਸਹਾਇਕ ਨਿਯਮਾਂ ਅਨੁਸਾਰ ਰੀਡਾਇਰੈਕਟ ਕਰੋ"
-stage_captcha: "ਕੈਪਟਚਾ ਤੈਨਾਤ ਕਰੋ (ਬਲੌਕ ਕੀਤੀਆਂ ਬੇਨਤੀਆਂ)"
-stage_modules: "ਮੋਡੀਊਲ ਚਲਾਓ"
-stage_nonblockedcaptcha: "ਕੈਪਟਚਾ ਤੈਨਾਤ ਕਰੋ (ਗੈਰ-ਬਲੌਕ ਕੀਤੀਆਂ ਬੇਨਤੀਆਂ)"
-stage_output: "ਆਉਟਪੁੱਟ ਤਿਆਰ ਕਰੋ (ਬਲੌਕ ਕੀਤੀਆਂ ਬੇਨਤੀਆਂ)"
-stage_ov: "ਹੋਰ ਪੁਸ਼ਟੀਕਰਨ ਚਲਾਓ"
-stage_preparefields: "ਆਉਟਪੁੱਟ ਅਤੇ ਲੌਗਸ ਲਈ ਖੇਤਰ ਤਿਆਰ ਕਰੋ"
-stage_reporting: "ਰਿਪੋਰਟਿੰਗ ਚਲਾਓ"
-stage_rl: "ਸੀਮਤ ਦਰ ਨੂੰ ਲਾਗੂ ਕਰੋ"
-stage_sev: "ਖੋਜ ਇੰਜਣ ਤਸਦੀਕ ਨੂੰ ਚਲਾਓ"
-stage_smv: "ਸੋਸ਼ਲ ਮੀਡੀਆ ਤਸਦੀਕ ਨੂੰ ਚਲਾਓ"
-stage_statistics: "ਅੰਕੜੇ ਅੱਪਡੇਟ ਕਰੋ"
-stage_terminate: "ਬੇਨਤੀ ਨੂੰ ਖਤਮ ਕਰੋ (ਬਲੌਕ ਕੀਤੀਆਂ ਬੇਨਤੀਆਂ)"
-stage_tests: "ਦਸਤਖਤ ਫਾਈਲਾਂ ਦੇ ਟੈਸਟ ਚਲਾਓ"
-stage_tracking: "IP ਟਰੈਕਿੰਗ ਚਲਾਓ"
-stage_webhooks: "ਵੈਬਹੁੱਕ ਚਲਾਓ"
-stage_writelogs: "ਲੌਗਸ ਵਿੱਚ ਲਿਖੋ (ਬਲੌਕ ਕੀਤੀਆਂ ਬੇਨਤੀਆਂ)"
+stages:
+ Deploy CAPTCHAs (blocked requests): "ਕੈਪਟਚਾ ਤੈਨਾਤ ਕਰੋ (ਬਲੌਕ ਕੀਤੀਆਂ ਬੇਨਤੀਆਂ)"
+ Deploy CAPTCHAs (non-blocked requests): "ਕੈਪਟਚਾ ਤੈਨਾਤ ਕਰੋ (ਗੈਰ-ਬਲੌਕ ਕੀਤੀਆਂ ਬੇਨਤੀਆਂ)"
+ Execute IP tracking: "IP ਟਰੈਕਿੰਗ ਚਲਾਓ"
+ Execute auxiliary rules: "ਸਹਾਇਕ ਨਿਯਮਾਂ ਨੂੰ ਲਾਗੂ ਕਰੋ"
+ Execute modules: "ਮੋਡੀਊਲ ਚਲਾਓ"
+ Execute other verification: "ਹੋਰ ਪੁਸ਼ਟੀਕਰਨ ਚਲਾਓ"
+ Execute rate limiting: "ਸੀਮਤ ਦਰ ਨੂੰ ਲਾਗੂ ਕਰੋ"
+ Execute reporting: "ਰਿਪੋਰਟਿੰਗ ਚਲਾਓ"
+ Execute search engine verification: "ਖੋਜ ਇੰਜਣ ਤਸਦੀਕ ਨੂੰ ਚਲਾਓ"
+ Execute signature files tests: "ਦਸਤਖਤ ਫਾਈਲਾਂ ਦੇ ਟੈਸਟ ਚਲਾਓ"
+ Execute social media verification: "ਸੋਸ਼ਲ ਮੀਡੀਆ ਤਸਦੀਕ ਨੂੰ ਚਲਾਓ"
+ Execute webhooks: "ਵੈਬਹੁੱਕ ਚਲਾਓ"
+ Generate output (blocked requests): "ਆਉਟਪੁੱਟ ਤਿਆਰ ਕਰੋ (ਬਲੌਕ ਕੀਤੀਆਂ ਬੇਨਤੀਆਂ)"
+ Prepare fields for output and logs: "ਆਉਟਪੁੱਟ ਅਤੇ ਲੌਗਸ ਲਈ ਖੇਤਰ ਤਿਆਰ ਕਰੋ"
+ Redirect according to auxiliary rules: "ਸਹਾਇਕ ਨਿਯਮਾਂ ਅਨੁਸਾਰ ਰੀਡਾਇਰੈਕਟ ਕਰੋ"
+ Terminate the request (blocked requests): "ਬੇਨਤੀ ਨੂੰ ਖਤਮ ਕਰੋ (ਬਲੌਕ ਕੀਤੀਆਂ ਬੇਨਤੀਆਂ)"
+ Update statistics: "ਅੰਕੜੇ ਅੱਪਡੇਟ ਕਰੋ"
+ Write to logs (blocked requests): "ਲੌਗਸ ਵਿੱਚ ਲਿਖੋ (ਬਲੌਕ ਕੀਤੀਆਂ ਬੇਨਤੀਆਂ)"
 state_fixer: "%2$s %1$s।"
 state_fixer_changed:
  - "%s ਬਦਲਾਅ ਕੀਤਾ"

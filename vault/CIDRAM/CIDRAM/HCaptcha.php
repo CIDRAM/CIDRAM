@@ -241,6 +241,7 @@ class HCaptcha extends Captcha
         ));
         $Script = '<script src="https://hcaptcha.com/1/api.js?onload=onloadCallback&render=explicit" async defer></script>';
         $Script .= '<script type="text/javascript">document.getElementById(\'hostnameoverride\').value=window.location.hostname;</script>';
+        $MsgCookieWarning = $this->CIDRAM->ClientL10N->getString('captcha_cookie_warning') ?: $this->CIDRAM->L10N->getString('captcha_cookie_warning');
         return $API === 'Invisible' ? sprintf(
             "\n<hr />\n<p class=\"detected\"%s>%s%s<br /></p>\n" .
             '<div class="gForm">' .
@@ -251,8 +252,8 @@ class HCaptcha extends Captcha
             "</form>\n" .
             "<script type=\"text/javascript\">function onSubmitCallback(token){document.getElementById('rData').value=hcaptcha.getResponse(window.document.hcwidget);document.getElementById('gF').submit()}</script>\n",
             $this->CIDRAM->CIDRAM['L10N-Lang-Attache'],
-            $ApiMessage ? '{captcha_message_invisible}' : '',
-            $CookieWarn ? '<br />{captcha_cookie_warning}' : '',
+            $ApiMessage ? ($this->CIDRAM->ClientL10N->getString('captcha_message_invisible') ?: $this->CIDRAM->L10N->getString('captcha_message_invisible')) : '',
+            $CookieWarn ? '<br />' . $MsgCookieWarning : '',
             $SiteKey,
             $this->determineTheme(),
             $this->TemplateInsert
@@ -265,8 +266,8 @@ class HCaptcha extends Captcha
             "</form>\n" .
             "<script type=\"text/javascript\">function onSubmitCallback(token){document.getElementById('rData').value=hcaptcha.getResponse(window.document.hcwidget)}</script>\n",
             $this->CIDRAM->CIDRAM['L10N-Lang-Attache'],
-            $ApiMessage ? '{captcha_message}' : '',
-            $CookieWarn ? '<br />{captcha_cookie_warning}' : '',
+            $ApiMessage ? ($this->CIDRAM->ClientL10N->getString('captcha_message') ?: $this->CIDRAM->L10N->getString('captcha_message')) : '',
+            $CookieWarn ? '<br />' . $MsgCookieWarning : '',
             $this->determineTheme(),
             $this->TemplateInsert,
             $this->CIDRAM->ClientL10N->getString('label.Submit') ?: $this->CIDRAM->L10N->getString('label.Submit')

@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2023.291.0
-# Last modified: 2023.10.19
+# Version: 2023.301.0
+# Last modified: 2023.10.29
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -925,10 +925,10 @@ Tag: SFR SA
 # Russian domestic ISP. Relative to the size of the network, a *HUGE* amount of
 # spam has been detected from here. Port scans, and webapp, brute-force, and
 # SSH attacks also detected from here.
-# Stop Forum Spam (SFS) listings: 6,023.
-# Updated: 2021.05.20 / Checked: 2022.11.23
+# Stop Forum Spam (SFS) listings: 1,467.
+# Updated: 2023.10.29
 
-2a00:f440:c::/48 Deny Spam
+2a13:8e40:1000::/36 Deny Spam
 Origin: RU
 Profile: Domestic ISP
 Tag: NPF SOFTVIDEO Ltd

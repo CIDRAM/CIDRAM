@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2023.295.0
-# Last modified: 2023.10.23
+# Version: 2023.301.0
+# Last modified: 2023.10.29
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -123,8 +123,8 @@ Tag: PEG TECH INC
 
 
 # ASN 26347 ("New Dream Network, LLC").
-# Stop Forum Spam (SFS) listings: 114.
-# Updated: 2022.12.11
+# Stop Forum Spam (SFS) listings: 1,316.
+# Updated: 2022.12.11 / Checked: 2023.10.29
 
 2607:f298:5::/48 Deny Cloud
 2607:f298:6::/48 Deny Cloud
@@ -188,8 +188,8 @@ Tag: home.pl
 
 
 # ASN 25532 ("Masterhost").
-# Stop Forum Spam (SFS) listings: 2.
-# Updated: 2016.04.18 / Checked: 2022.11.23
+# Stop Forum Spam (SFS) listings: 15.
+# Updated: 2016.04.18 / Checked: 2023.10.29
 
 2a00:15f8::/32 Deny Cloud
 Origin: RU
@@ -968,8 +968,8 @@ Tag: InfoRelay Online
 
 
 # ASN 29854 ("WestHost, Inc").
-# Stop Forum Spam (SFS) listings: 93.
-# Updated: 2021.12.31 / Checked: 2022.12.04
+# Stop Forum Spam (SFS) listings: 57.
+# Updated: 2021.12.31 / Checked: 2023.10.28
 
 2a0c:4180::/29 Deny Cloud
 Origin: RU
@@ -1143,8 +1143,7 @@ Tag: QuadraNet, Inc
 
 
 # ASN 11282 ("SERVERYOU INC").
-# Stop Forum Spam (SFS) listings: 17.
-# Updated: 2022.12.11
+# Updated: 2022.12.11 / Checked: 2023.10.29
 
 2001:470:e3::/48 Deny Cloud
 2605:b0c0::/32 Deny Cloud
@@ -2927,8 +2926,8 @@ Tag: WebNX, Inc
 
 
 # ASN 198068 ("P.A.G.M. OU").
-# Stop Forum Spam (SFS) listings: 94.
-# Updated: 2020.01.30 / Checked: 2022.10.31
+# Stop Forum Spam (SFS) listings: 2.
+# Updated: 2020.01.30 / Checked: 2023.10.28
 
 2a03:f480:1::/48 Deny Cloud
 2a03:f480:2::/47 Deny Cloud
@@ -5761,8 +5760,8 @@ Tag: Sternforth Ltd
 
 
 # ASN 24806 ("INTERNET CZ, a.s").
-# Stop Forum Spam (SFS) listings: 545.
-# Updated: 2017.01.23 / Checked: 2022.10.27
+# Stop Forum Spam (SFS) listings: 107.
+# Updated: 2017.01.23 / Checked: 2023.10.28
 
 2001:15e8::/32 Deny Cloud
 Origin: CZ
@@ -5772,7 +5771,7 @@ Tag: INTERNET CZ, a.s
 
 # ASN 51859 ("Mainstream doo").
 # Caught repeatedly hitting honeypots and attempting to brute-force logins.
-# Updated: 2019.05.02 / Checked: 2022.12.11
+# Updated: 2019.05.02 / Checked: 2023.10.29
 
 2a04:2e40::/29 Deny Cloud
 Origin: RS
@@ -6028,13 +6027,14 @@ Tag: Gransy s.r.o
 
 # ASNs 42570, 200584, 201365, 207161 ("Nagravision SA", A.K.A. "Kudelski Group").
 # Caught hitting protected honeypot pages and port scanning.
-# Stop Forum Spam (SFS) listings: 2 (AS201365).
-# Updated: 2022.12.09
+# Stop Forum Spam (SFS) listings: 1 (AS201365).
+# Updated: 2023.10.28
 
 2a04:5c80::/32 Deny Cloud
 2a04:5c85::/35 Deny Cloud
 2a04:5c85:4000::/36 Deny Cloud
 2a04:5c85:f000::/47 Deny Cloud
+2a04:5c87::/32 Deny Cloud
 Origin: CH
 Profile: Commercial
 Tag: Nagravision SA
@@ -6564,8 +6564,8 @@ Tag: CloudSol
 
 
 # ASN 132839 ("POWER LINE DATACENTER").
-# Stop Forum Spam (SFS) listings: 168.
-# Updated: 2021.05.27 / Checked: 2022.11.23
+# Stop Forum Spam (SFS) listings: 8.
+# Updated: 2021.05.27 / Checked: 2023.10.29
 
 2401:f940::/32 Deny Cloud
 Origin: HK
@@ -7067,10 +7067,10 @@ Tag: TORAT Private Enterprise
 # ASN 34867 ("Cosmonova LLC").
 # Video processing and IT consulting firm.
 # Caught spamming while pretending to be Google.
-# Stop Forum Spam (SFS) listings: 98.
-# Updated: 2019.02.07 / Checked: 2022.10.27
+# Stop Forum Spam (SFS) listings: 36.
+# Updated: 2023.10.28
 
-2a00:17a0::/32 Deny Cloud
+2a00:17a0::/29 Deny Cloud
 Origin: UA
 Profile: Commercial
 Tag: Cosmonova LLC
@@ -7251,14 +7251,13 @@ Tag: DediPath
 
 
 # ASN 13830 ("Nexril").
-# Stop Forum Spam (SFS) listings: 35.
-# Updated: 2022.12.04
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2023.10.28
 
 2a0c:9a40:8084::/48 Deny Cloud
 Origin: CH
 2a0f:5707:ab2d::/48 Deny Cloud
 Origin: DE
-2602:fb34:1::/48 Deny Cloud
 2604:4d40:4000::/36 Deny Cloud
 2604:4d40:8000::/36 Deny Cloud
 2604:fbc0::/36 Deny Cloud
@@ -7627,7 +7626,7 @@ Tag: Kazi Sazzad Hossain
 
 # ASNs 39535, 62217 ("VooServers Ltd").
 # Cloud provider; Source of spam and other unwanted traffic.
-# Updated: 2022.12.09
+# Updated: 2022.12.09 / Checked: 2023.10.28
 
 2a0b:4040::/29 Deny Cloud
 Origin: CA
@@ -7851,8 +7850,8 @@ Tag: Alestra
 
 # ASN 56322 ("ServerAstra Kft").
 # Source of forum spam and caught attempting to hack WordPress sites.
-# Stop Forum Spam (SFS) listings: 6,240.
-# Updated: 2021.12.30 / Checked: 2022.12.04
+# Stop Forum Spam (SFS) listings: 3,174.
+# Updated: 2021.12.30 / Checked: 2023.10.28
 
 2a10:c800::/47 Deny Cloud
 Origin: HU
@@ -9046,8 +9045,8 @@ Tag: UKFAST.NET LIMITED
 
 # ASNs 6188, 32244, 36444, 40819, 52924, 53824, 201682, 202521 ("Liquid Web, L.L.C").
 # WordPress/XMLRPC and brute-force attacks detected from this network.
-# Stop Forum Spam (SFS) listings: 51 (AS32244), 5 (AS36444), 1 (AS53824).
-# Updated: 2021.12.31 / Checked: 2022.12.04
+# Stop Forum Spam (SFS) listings: 45 (AS32244), 4 (AS36444), 2 (AS40819).
+# Updated: 2021.12.31 / Checked: 2023.10.29
 
 2804:36e8::/32 Deny Cloud
 Origin: BR
@@ -10496,8 +10495,8 @@ Tag: Shinjiru/Verdina
 
 # ASN 199118 ("Heinlein-Support GmbH").
 # Webhosting company. Phishing and spam detected from here.
-# Stop Forum Spam (SFS) listings: 22.
-# Updated: 2022.12.09
+# Stop Forum Spam (SFS) listings: 14.
+# Updated: 2022.12.09 / Checked: 2023.10.28
 
 2001:67c:2050::/48 Deny Cloud
 Origin: DE
@@ -10543,8 +10542,7 @@ Tag: Optitrust GmbH
 
 # ASN 44133 ("IPAX OG").
 # Austrian webhosting provider. Hacking and brute-force attacks detected here.
-# Stop Forum Spam (SFS) listings: 7.
-# Updated: 2022.12.09
+# Updated: 2022.12.09 / Checked: 2023.10.28
 
 2a00:63c0::/29 Deny Cloud
 2a0f:8000::/29 Deny Cloud
@@ -11147,8 +11145,8 @@ Tag: ALEXHOST SRL
 
 
 # ASN 212441 ("Cloud assets LLC").
-# Stop Forum Spam (SFS) listings: 15,525.
-# Updated: 2021.12.31 / Checked: 2022.12.04
+# Stop Forum Spam (SFS) listings: 8,929.
+# Updated: 2021.12.31 / Checked: 2023.10.28
 
 2a10:9200::/47 Deny Cloud
 Origin: RU

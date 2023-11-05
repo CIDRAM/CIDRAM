@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2023.301.0
-# Last modified: 2023.10.29
+# Version: 2023.308.0
+# Last modified: 2023.11.05
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -1134,10 +1134,12 @@ Tag: Proximus NV
 # ASN 701 ("Verizon Business/UUnet").
 # US domestic ISP. Honeypot attacks, port scans, malware, and spam detected
 # from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 2,037.
-# Updated: 2023.08.13
+# Stop Forum Spam (SFS) listings: 1,966.
+# Updated: 2023.11.05
 
-2600:4040:b8cd:7d00::/64 Deny Spam
+2600:4041:5340:f000::/64 Deny Spam
+2600:4041:54c1:d000::/64 Deny Spam
+2600:4041:5c2c:dc00::/64 Deny Spam
 2600:4041:5f5a:e700::/64 Deny Spam
 Origin: US
 Profile: Domestic ISP;Tor endpoints here

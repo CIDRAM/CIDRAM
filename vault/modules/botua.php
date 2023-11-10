@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bot user agents module (last modified: 2023.10.15).
+ * This file: Bot user agents module (last modified: 2023.11.10).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -160,12 +160,12 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         'mrbot|ntegromedb|p-?web-?crawler|rcsearch|rgrabber)|jadynavebot|komodiab' .
         'ot|linguee|linkpad|m(?:ajestic12|agnet|auibot|eanpath|entormate|fibot|ig' .
         'nify|j12)|nutch|omgilibot|p(?:ackrat|cbrowser|lukkie|surf)|reaper|rsync|' .
-        's(?:aidwot|alad|cspider|ees\.co|hai|iteexplorer|[iy]phon|truct\.it|uppor' .
-        't\.wordpress\.com|ystemscrawler)|takeout|tasapspider|tweetmeme|user-agen' .
-        't|visaduhoc|vonchimpenfurlr|webtarantula|wolf|y(?:acy|isouspider|[ry]spi' .
-        'der|unrang|unyun)|zoominfobot~',
+        's(?:aidwot|alad|cspider|ees\.co|hai|[iy]phon|truct\.it|upport\.wordpress' .
+        '\.com|ystemscrawler)|takeout|tasapspider|tweetmeme|user-agent|visaduhoc|' .
+        'vonchimpenfurlr|webtarantula|wolf|y(?:acy|isouspider|[ry]spider|unrang|u' .
+        'nyun)|zoominfobot~',
         $UANoSpace
-    ), 'Banned UA'); // 2021.07.08
+    ), 'Banned UA'); // 2021.07.08 mod 2023.11.10
 
     $this->trigger(preg_match(
         '/^wp-iphone$/',

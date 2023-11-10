@@ -336,3 +336,5 @@
 [2023.10.16; Maikuolan]: Added decorative SVGs to the front-end backup page.
 
 [2023.10.21; Bug-fix; Maikuolan]: The label for the CAPTCHA submit button wasn't rendering properly; Fixed (#526).
+
+[2023.11.10; Maikuolan]: Better missing class guarding.

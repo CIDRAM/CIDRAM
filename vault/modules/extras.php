@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2023.10.10).
+ * This file: Optional security extras module (last modified: 2023.11.10).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -277,7 +277,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         $this->trigger(strpos($this->BlockInfo['Query'], ',0x') !== false, 'Bad query'); // 2017.02.25
         $this->trigger(strpos($this->BlockInfo['Query'], ',\'\',') !== false, 'Bad query'); // 2017.02.25
 
-        $this->trigger(preg_match('/id=.*(?:benchmark\(|id[xy]=|sleep\()/', $QueryNoSpace), 'Query SQLi'); // 2017.03.01
+        $this->trigger(preg_match('/(?<![a-z])id=.*(?:benchmark\(|id[xy]=|sleep\()/', $QueryNoSpace), 'Query SQLi'); // 2017.03.01 mod 2023.11.10
         $this->trigger(preg_match(
             '~(?:from|union|where).*select|then.*else|(?:o[nr]|where).*isnull|(?:inner|left|outer|right)join~',
             $QueryNoSpace

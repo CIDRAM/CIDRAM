@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2023.10.12).
+ * This file: Front-end functions file (last modified: 2023.11.10).
  */
 
 /**
@@ -1416,7 +1416,7 @@ $CIDRAM['WP-Ver'] = function () use (&$CIDRAM) {
             $PlugHeadEnd = strpos($ThisData, "\n", 45);
             $CIDRAM['Updater-IO']->writeFile(
                 $CIDRAM['Vault'] . '../cidram.php',
-                $PlugHead . $CIDRAM['Components']['RemoteMeta']['CIDRAM Core']['Version'] . substr($ThisData, $PlugHeadEnd)
+                $PlugHead . $CIDRAM['Components']['RemoteMeta']['CIDRAM']['Version'] . substr($ThisData, $PlugHeadEnd)
             );
         }
     }

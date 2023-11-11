@@ -1,8 +1,8 @@
 # IPv6 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_other.dat
 
-# Version: 2023.198.0
-# Last modified: 2023.07.18
+# Version: 2023.314.0
+# Last modified: 2023.11.11
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -15,8 +15,8 @@
 # DDoS, and phishing attacks, hacking, port scans, sniffing for
 # vulnerabilities, IMAP flooding, and spam detected from here.
 # Caught masquerading as Baidu while sniffing for vulnerabilities.
-# Stop Forum Spam (SFS) listings: 94,706.
-# Updated: 2021.08.26 / Modified: 2022.07.22 / Checked: 2023.04.06
+# Stop Forum Spam (SFS) listings: 59,865.
+# Updated: 2021.08.26 / Modified: 2022.07.22 / Checked: 2023.11.11
 
 2a0b:f4c0::/40 Deny Attacks
 2a0b:f4c0:100::/48 Deny Attacks
@@ -42,8 +42,7 @@ Tag: Emerald Onion
 
 
 # Spamhaus DROPv6 list.
-# https://www.spamhaus.org/drop/drop.txt
-# https://www.spamhaus.org/drop/edrop.txt
+# https://www.spamhaus.org/drop/dropv6.txt
 # Spamhaus DROP and Spamhaus EDROP as plain text lists are free for commercial
 # and non-commercial usage. If you want to redistribute one of the plain text
 # feeds please ensure that you name Spamhaus as source of the data. (For
@@ -52,19 +51,31 @@ Tag: Emerald Onion
 # you are not allowed to redistribute the feed to other networks. The export of
 # these feeds/prefixes to other networks is prohibited.
 # Excerpt from: https://www.spamhaus.org/bgpf/
-# Updated: 2023.07.16
+# Updated: 2023.11.11
 
+2001:678:6c4::/48 Deny Spam
+2001:678:724::/48 Deny Spam
+2001:678:73c::/48 Deny Spam
+2001:678:754::/48 Deny Spam
+2001:678:758::/48 Deny Spam
+2001:678:770::/48 Deny Spam
+2001:678:780::/48 Deny Spam
+2001:678:788::/48 Deny Spam
+2001:678:e38::/48 Deny Spam
+2001:678:e4c::/48 Deny Spam
 2401:c580::/32 Deny Spam
 2402:6680::/32 Deny Spam
 2405:b180::/32 Deny Spam
 2405:b480::/32 Deny Spam
 2405:e880::/32 Deny Spam
 2602:ffa0::/36 Deny Spam
+2606:3f40::/32 Deny Spam
 2607:d100::/32 Deny Spam
 2607:f2d0::/32 Deny Spam
 2801:80:c00::/48 Deny Spam
 2803:5380:ffff::/48 Deny Spam
 2803:8700::/32 Deny Spam
+2804:73b0::/32 Deny Spam
 2a00:4c80::/29 Deny Spam
 2a00:55a0::/32 Deny Spam
 2a06:d240::/29 Deny Spam
@@ -87,8 +98,10 @@ Tag: Emerald Onion
 2a0b:ae80::/29 Deny Spam
 2a0b:f500::/29 Deny Spam
 2a0b:fdc0::/29 Deny Spam
+2a0c:b641:880::/44 Deny Spam
 2a0d:e7c7:ffff::/48 Deny Spam
-2a0e:fa00::/29 Deny Spam
+2a0e:d601:7220::/48 Deny Spam
+2a10:1440::/29 Deny Spam
 2a10:cc45:100::/44 Deny Spam
 Profile: Third-party sourced
 Tag: Spamhaus DROPv6

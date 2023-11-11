@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2023.308.0
-# Last modified: 2023.11.05
+# Version: 2023.313.0
+# Last modified: 2023.11.10
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -907,18 +907,6 @@ Tag: Orange S.A
 Origin: FR
 Profile: Domestic ISP;Mobile ISP
 Tag: Bouygues Telecom SA
-
-
-# ASN 15557 ("SFR SA").
-# French fibre network. Spam, hacking, webapp, DDoS, and brute-force attacks
-# detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,100.
-# Updated: 2022.12.28
-
-2a02:8428:129b:c01::/64 Deny Spam
-Origin: FR
-Profile: Domestic ISP;Infrastructure/Transit;Multiplay
-Tag: SFR SA
 
 
 # ASN 57712 ("NPF SOFTVIDEO Ltd").

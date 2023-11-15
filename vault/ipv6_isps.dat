@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2023.313.0
-# Last modified: 2023.11.10
+# Version: 2023.318.0
+# Last modified: 2023.11.15
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -275,10 +275,11 @@ Tag: PJSC Rostelecom
 # ASN 3255 (State Enterprise Scientific and Telecommunication Centre "Ukrainian
 # Academic and Research Network" of the Institute for Condensed Matter Physics
 # of the National Academy of Science of Ukraine / UARNet).
-# Stop Forum Spam (SFS) listings: 507.
-# Updated: 2017.07.08 / Checked: 2023.01.04
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 684.
+# Updated: 2023.11.15
 
-2a00:fc00::/32 Deny Spam
+2a00:fc00:e000:98::/64 Deny Attacks
 Origin: UA
 Profile: Domestic ISP;Government
 Tag: UARNet
@@ -1151,8 +1152,8 @@ Tag: PT Cyberindo Aditama
 
 # ASN 263744 ("Udasha S.A").
 # Honduran domestic ISP. Significant source of spam and other strange traffic.
-# Stop Forum Spam (SFS) listings: 4,551.
-# Updated: 2023.01.12
+# Stop Forum Spam (SFS) listings: 1,762.
+# Updated: 2023.01.12 / Checked: 2023.11.15
 
 2803:5380::/32 Deny Attacks
 Origin: HN

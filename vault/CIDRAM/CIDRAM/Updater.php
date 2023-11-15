@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods for updating CIDRAM components (last modified: 2023.10.21).
+ * This file: Methods for updating CIDRAM components (last modified: 2023.11.15).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -788,6 +788,7 @@ trait Updater
 
                     /** Assign updated component meta. */
                     $this->Components['Meta'][$ThisTarget] = $this->Components['RemoteMeta'][$ThisTarget];
+                    $this->settleMagic($this->Components['Meta'][$ThisTarget]);
 
                     /** Update the component metadata file. */
                     $this->updateComponentMetadataFile($this->Components['Meta'], $BytesRemoved, $BytesAdded);
@@ -1200,6 +1201,7 @@ trait Updater
             if (!$RepairFailed && is_writable($this->Vault . 'installed.yml')) {
                 /** Replace downstream meta with upstream meta. */
                 $this->Components['Meta'][$ThisTarget] = $this->Components['RemoteMeta'][$ThisTarget];
+                $this->settleMagic($this->Components['Meta'][$ThisTarget]);
 
                 /** Update the component metadata file. */
                 $this->updateComponentMetadataFile($this->Components['Meta'], $BytesRemoved, $BytesAdded);
@@ -1333,11 +1335,16 @@ trait Updater
         )) {
             return;
         }
+        if (!isset($ThisComponent['Magic'])) {
+            $ThisComponent['Magic'] = [];
+        }
+        $ThisComponent['Magic']['Dependencies'] = $ThisComponent['Dependencies'];
         foreach ($ThisComponent['Dependencies'] as $Dependency => $Constraints) {
             $Dependency = str_replace('{lang}', $this->Configuration['general']['lang'], $Dependency);
             if ($Constraints === 'Latest') {
                 if (isset($this->Components['Available Versions'][$Dependency])) {
                     $Constraints = '>=' . $this->Components['Available Versions'][$Dependency];
+                    $ThisComponent['Magic']['Dependencies'][$Dependency] = $Constraints;
                 }
             }
             if ($Constraints === 'Latest' || strlen($Constraints) < 1) {
@@ -1490,6 +1497,7 @@ trait Updater
                 continue;
             }
             unset(
+                $Data['Magic'],
                 $Data['All Constraints Met'],
                 $Data['ChangelogFormatted'],
                 $Data['Dependency Status'],
@@ -1534,5 +1542,21 @@ trait Updater
 
         /** Write to the file. */
         $this->CIDRAM['Updater-IO']->writeFile($this->Vault . 'installed.yml', $Metadata);
+    }
+
+    /**
+     * Settles dynamic components metadata values (if any exist).
+     *
+     * @param array $Metadata The metadata array to work with.
+     * @return void
+     */
+    private function settleMagic(array &$Metadata): void
+    {
+        if (!isset($Metadata['Magic']) || !is_array($Metadata['Magic'])) {
+            return;
+        }
+        foreach ($Metadata['Magic'] as $Key => $Values) {
+            $Metadata[$Key] = $Values;
+        }
     }
 }

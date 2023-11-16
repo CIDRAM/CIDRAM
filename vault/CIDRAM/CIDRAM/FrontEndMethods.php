@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2023.10.21).
+ * This file: General methods used by the front-end (last modified: 2023.11.16).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -555,7 +555,7 @@ trait FrontEndMethods
         $this->FE['FE_Tip'] = $this->parseVars(['username' => $Username], $Tips);
 
         /** Load main front-end JavaScript data. */
-        $this->FE['JS'] = $JS ? $this->readFile($this->getAssetPath('scripts.js')) : '';
+        $this->FE['JS'] = $JS ? $this->parseVars([], $this->readFile($this->getAssetPath('scripts.js')), true) : '';
     }
 
     /**

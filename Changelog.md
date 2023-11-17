@@ -338,3 +338,5 @@
 [2023.10.21; Bug-fix; Maikuolan]: The label for the CAPTCHA submit button wasn't rendering properly; Fixed (#526).
 
 [2023.11.10; Maikuolan]: Better missing class guarding.
+
+[2023.11.17; Maikuolan]: Added an icon for entries at the IP tracking page to go directly to the AbuseIPDB reporting page for those entries.

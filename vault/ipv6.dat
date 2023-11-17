@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2023.318.0
-# Last modified: 2023.11.15
+# Version: 2023.320.0
+# Last modified: 2023.11.17
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -508,8 +508,8 @@ Tag: GorillaServers, Inc
 
 # ASN 17439 ("Netmagic Datacenter Mumbai").
 # A source of SSH and brute-force attacks.
-# Stop Forum Spam (SFS) listings: 20.
-# Updated: 2023.01.17
+# Stop Forum Spam (SFS) listings: 2.
+# Updated: 2023.01.17 / Checked: 2023.11.17
 
 2001:df0:411::/48 Deny Cloud
 2001:df0:3a00::/48 Deny Cloud
@@ -538,10 +538,10 @@ Tag: Netmagic Datacenter Mumbai
 # A source of SSH, SQLi, and brute-force attacks. A possible staging point for
 # social engineering and extortion campaigns, according to some reports found
 # via AbuseIPDB (unverified/unconfirmed).
-# Stop Forum Spam (SFS) listings: 13.
-# Updated: 2023.01.17
+# Updated: 2023.11.17
 
 2404:7e80:1000::/36 Deny Cloud
+2404:7e80:3000::/36 Deny Cloud
 2404:7e80:4000::/36 Deny Cloud
 Origin: IN
 Profile: Webhosting
@@ -4710,8 +4710,8 @@ Tag: 23Media GmbH
 # ASN 49544 ("i3d B.V").
 # Infrastructure provider focused on low-latency (e.g., for gaming).
 # Spam detected from here.
-# Stop Forum Spam (SFS) listings: 439.
-# Updated: 2023.01.17
+# Stop Forum Spam (SFS) listings: 10.
+# Updated: 2023.11.17
 
 2a06:7a00::/48 Deny Cloud
 Origin: AT
@@ -4723,21 +4723,29 @@ Origin: AU
 Origin: BE
 2406:d140:8000::/34 Deny Cloud
 Origin: CN
+2a04:7141::/36 Deny Cloud
+Origin: FR
 2403:fa40:1::/48 Deny Cloud
 2a00:1630::/29 Deny Cloud
 2a00:1708::/32 Deny Cloud
-2a00:1d20::/29 Deny Cloud
-2a01:9580::/33 Deny Cloud
-2a01:9580:8000::/34 Deny Cloud
+2a00:1d21::/32 Deny Cloud
+2a00:1d22::/31 Deny Cloud
+2a00:1d24::/30 Deny Cloud
+2a00:1e29::/32 Deny Cloud
+2a01:9580::/32 Deny Cloud
 2a03:3a60::/32 Deny Cloud
 2a04:c600::/29 Deny Cloud
 2a05:6440::/29 Deny Cloud
+2a0a:2140::/29 Deny Cloud
 2a0a:5980::/29 Deny Cloud
 2a0b:1b00::/29 Deny Cloud
 2a0b:d9c0:164::/47 Deny Cloud
 2a0b:d9c0:166::/48 Deny Cloud
 2a0b:f380::/48 Deny Cloud
 2a0b:f380:3e8::/48 Deny Cloud
+2a0f:e382::/32 Deny Cloud
+2a13:3ec0::/29 Deny Cloud
+2a13:d780::/29 Deny Cloud
 Origin: NL
 2402:b180:9000::/36 Deny Cloud
 Origin: SG
@@ -5089,9 +5097,8 @@ Tag: Cyber Wurx LLC
 
 
 # ASN 60117 ("Host Sailor Ltd").
-# Webhosting provider. DE ranges as proxy; The rest as cloud.
-# Stop Forum Spam (SFS) listings: 54.
-# Updated: 2023.01.17
+# Stop Forum Spam (SFS) listings: 3.
+# Updated: 2023.01.17 / Checked: 2023.11.17
 
 2a03:660::/32 Deny Cloud
 2a04:dd00::/31 Deny Cloud
@@ -8115,10 +8122,11 @@ Tag: Root Level Technology
 
 # ASNs 48282, 207651 ("Hosting technology LTD").
 # Dedicated webhosting provider and a significant source of spam.
-# Stop Forum Spam (SFS) listings: 181,256, 46,247 (AS207651).
-# Updated: 2023.10.08
+# Stop Forum Spam (SFS) listings: 204,659 (AS48282), 44,430 (AS207651).
+# Updated: 2023.11.16
 
 2a06:7740::/48 Deny Cloud
+Origin: AE
 2a0d:8480::/46 Deny Cloud
 Origin: RU
 Profile: Dedicated;Webhosting
@@ -11271,8 +11279,8 @@ Tag: Cloud Computing Corporation
 # ASN 12876 ("ONLINE S.A.S").
 # Caught trying to DDoS SFS, and hacking honeypots. Spam and other unwanted
 # traffic detected here.
-# Stop Forum Spam (SFS) listings: 29,593.
-# Updated: 2022.01.18 / Checked: 2023.01.17
+# Stop Forum Spam (SFS) listings: 13,732.
+# Updated: 2022.01.18 / Checked: 2023.11.17
 
 2001:bc8::/32 Deny Cloud
 Origin: FR
@@ -11282,8 +11290,8 @@ Tag: ONLINE S.A.S
 
 # ASNs 21159, 24875 ("NovoServe B.V").
 # Brute-force attacks, hacking, port scans, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 1 (AS21159), 11 (AS24875).
-# Updated: 2022.01.20 / Checked: 2023.01.19
+# Stop Forum Spam (SFS) listings: 36 (AS24875).
+# Updated: 2022.01.20 / Checked: 2023.11.17
 
 2a0a:e680::/29 Deny Cloud
 Origin: DE
@@ -11297,8 +11305,8 @@ Tag: NovoServe B.V
 
 # ASN 15493 ('"Russian company" LLC').
 # Port scans, hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 157.
-# Updated: 2022.01.20 / Checked: 2023.01.19
+# Stop Forum Spam (SFS) listings: 13.
+# Updated: 2022.01.20 / Checked: 2023.11.17
 
 2a02:dc00:1::/48 Deny Cloud
 2a02:dc00:2::/48 Deny Cloud

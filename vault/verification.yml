@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Verification data (last modified: 2023.08.10).
+# This file: Verification data (last modified: 2023.11.17).
 ##/
 
 # Additional references: https://udger.com/resources/ua-list/crawlers
@@ -52,21 +52,30 @@ Search Engine Verification:
    - ".search.msn.com"
 
  # https://duckduckgo.com/duckduckbot
- # Updated: 2023.01.04 / Checked: 2023.07.28
+ # Updated: 2023.11.17
  DuckDuckBot:
   User Agent Pattern: "~duckduck(?:go-favicons-)?bot~"
   Method: "uaIpMatch"
   Valid domains:
+   - "20.12.141.99"
+   - "20.40.133.240"
+   - "20.49.136.28"
+   - "20.50.168.91"
    - "20.185.79.15"
    - "20.185.79.47"
    - "20.191.45.212"
+   - "20.193.45.113"
    - "40.76.162.191"
    - "40.76.162.208"
    - "40.76.162.247"
    - "40.76.163.7"
    - "40.76.163.23"
    - "40.76.173.151"
+   - "40.80.242.63"
    - "40.88.21.235"
+   - "51.107.40.209"
+   - "51.116.131.221"
+   - "51.120.48.122"
    - "52.142.24.149"
    - "52.142.26.175"
 
@@ -175,7 +184,7 @@ Social Media Verification:
  # https://developers.facebook.com/docs/sharing/webmasters/crawler/
  # https://github.com/CIDRAM/CIDRAM/issues/170
  # https://github.com/CIDRAM/CIDRAM/issues/263
- # Updated: 2022.02.18
+ # Updated: 2022.02.18 / Checked: 2023.11.17
  Facebook external hit:
   User Agent Pattern: "~facebook(?:catalog|externalhit)/(?!1\.1 facebot twitterbot/1\.0)~"
   Method: "uaAsnMatch"
@@ -185,7 +194,7 @@ Social Media Verification:
  # https://github.com/CIDRAM/CIDRAM/issues/253
  # https://github.com/CIDRAM/CIDRAM/issues/322
  # https://help.pinterest.com/en/business/article/pinterest-crawler
- # Updated: 2020.02.07 / Checked: 2022.07.01
+ # Updated: 2020.02.07 / Checked: 2023.11.17
  Pinterest:
   User Agent: "pinterest"
   Method: "dnsReverseForward"
@@ -257,7 +266,7 @@ Other Verification:
    - "40.83.2.64/28"
 
  # https://www.oracle.com/corporate/acquisitions/grapeshot/crawler.html
- # Updated: 2021.03.13 / Checked: 2023.04.06
+ # Updated: 2021.03.13 / Checked: 2023.11.17
  Grapeshot:
   User Agent: "grapeshot"
   Method: "uaCidrMatch"

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bot user agents module (last modified: 2023.11.10).
+ * This file: Bot user agents module (last modified: 2023.11.17).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -314,7 +314,13 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
      */
     $this->trigger(preg_match('~^MGLNDD_~i', $UANoSpace), 'Attempting to expose honeypots'); // 2022.05.08
 
-    $this->trigger(strpos($UANoSpace, 'orbbot') !== false, 'Scraper UA'); // 2023.02.28
+    $this->trigger(preg_match(
+        '~anonymous-?coward|banana-?bot|bot-?test|brands-?bot|clark-?crawler' .
+        '|fidget-?spinner-?bot|friendly-?spider|jaddjabot|keys-?so-?bot|orbb' .
+        'ot|storm-?crawler|test-?bot|thesis-?research-?bot|thinkchaos|tiny-?' .
+        'bot|tiny-?test|whatstuffwherebot|zephuli-?bot~',
+        $UANoSpace
+    ), 'Scraper UA'); // 2023.11.17
 
     /** These signatures can set extended tracking options. */
     if (

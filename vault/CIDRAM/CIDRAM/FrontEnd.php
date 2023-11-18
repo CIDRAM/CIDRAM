@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.10.21).
+ * This file: The CIDRAM front-end (last modified: 2023.11.18).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -3020,9 +3020,9 @@ class FrontEnd extends Core
                     '<span id="fxOS" onclick="javascript:if(navigator.clipboard){navigator.cl' .
                     'ipboard.writeText(getElementById(\'fixerOutput\').value);getElementById(' .
                     '\'fxOS_copied\').className=\'sFade\'}else{getElementById(\'fxOS_failed\'' .
-                    ').style.className=\'sFade\'}"><script type="text/javascript">copySvg(\'f' .
-                    'xOS\');</script></span><span id="fxOS_copied"%1$s">✔️ %2$s</span><span id' .
-                    '="fxOS_failed"%1$s">❌ %3$s</span>',
+                    ').style.className=\'sFade\'}"><script type="text/javascript">copySvg();<' .
+                    '/script></span><span id="fxOS_copied"%1$s">✔️ %2$s</span><span id="fxOS_' .
+                    'failed"%1$s">❌ %3$s</span>',
                     ' class="sHide" onanimationend="javascript:this.className=\'sHide\'',
                     $this->L10N->getString('response.Copied'),
                     $this->L10N->getString('response.Failed')
@@ -5064,7 +5064,7 @@ class FrontEnd extends Core
         /** Logs. */
         elseif ($this->CIDRAM['QueryVars']['cidram-page'] === 'logs' && $this->FE['Permissions'] > 0) {
             /** Page initial prepwork. */
-            $this->initialPrepwork($this->L10N->getString('link.Logs'), $this->L10N->getString('tip.Logs'), false);
+            $this->initialPrepwork($this->L10N->getString('link.Logs'), $this->L10N->getString('tip.Logs'));
 
             /** Parse output. */
             $this->FE['FE_Content'] = $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_logs.html')), true);

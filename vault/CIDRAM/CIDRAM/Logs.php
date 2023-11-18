@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used by the logs page (last modified: 2023.10.21).
+ * This file: Methods used by the logs page (last modified: 2023.11.18).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -45,7 +45,7 @@ trait Logs
     }
 
     /**
-     * Attempt to perform some simple formatting for the log data.
+     * Attempt to perform some simple formatting for the log data (the "fancy" view).
      *
      * @param string $In The log data to be formatted.
      * @param string $BlockLink Used as the basis for links inserted into displayed log data used for searching related log data.
@@ -101,16 +101,23 @@ trait Logs
             /** Fix bad encoding and add block info search links. */
             if (isset($Parts[2]) && is_array($Parts[2]) && count($Parts[2]) && $BlockSeparatorLen === 14) {
                 $Parts[2] = array_unique($Parts[2]);
+                $IPTestingLabel = $this->L10N->getString('link.IP Testing');
                 foreach ($Parts[2] as $ThisPart) {
                     $ThisPartUnsafe = str_replace(['&gt;', '&lt;'], ['>', '<'], $ThisPart);
                     $TestString = $this->Demojibakefier->guard($ThisPartUnsafe);
+                    $IPSVGs = ($this->expandIpv4($ThisPart, true) || $this->expandIpv6($ThisPart, true)) ?
+                        ' <a target="newReportingTab" href="https://www.abuseipdb.com/report?ip=' . $ThisPart . '"><script type="text/javascript">abuseIpdbSvg();</script></a>' .
+                        '<span onclick="javascript:{document.getElementById(\'ipTestFormInput\').value=\'' . $ThisPart . '\';document.getElementById(\'ipTestForm\').submit()}" title="' . $IPTestingLabel . '" class="translateIcon navicon test"></span>' : ' ';
                     $Alternate = (
                         $TestString !== $ThisPartUnsafe && $this->Demojibakefier->Last
                     ) ? '<code dir="ltr">🔁' . $this->Demojibakefier->Last . '➡️UTF-8' . $FieldSeparator . '</code>' . str_replace(['<', '>'], ['&lt;', '&gt;'], $TestString) . "<br />\n" : '';
-                    if (!$ThisPart || $ThisPart === $Current) {
+                    if ($ThisPart === '' || $ThisPart === $Current) {
+                        if ($ThisPart === '') {
+                            $IPSVGs = '';
+                        }
                         $Section = str_replace(
                             $FieldSeparator . $ThisPart . "<br />\n",
-                            $FieldSeparator . $ThisPart . "<br />\n" . $Alternate,
+                            $FieldSeparator . $ThisPart . $IPSVGs . "<br />\n" . $Alternate,
                             $Section
                         );
                         continue;
@@ -118,7 +125,7 @@ trait Logs
                     $Enc = str_replace('=', '_', base64_encode($ThisPart));
                     $Section = str_replace(
                         $FieldSeparator . $ThisPart . "<br />\n",
-                        $FieldSeparator . $ThisPart . ' <a href="' . $this->paginationRemoveFrom($BlockLink) . '&search=' . $Enc . '">»</a>' . "<br />\n" . $Alternate,
+                        $FieldSeparator . $ThisPart . $IPSVGs . '<a href="' . $this->paginationRemoveFrom($BlockLink) . '&search=' . $Enc . '">»</a>' . "<br />\n" . $Alternate,
                         $Section
                     );
                 }
@@ -252,9 +259,13 @@ trait Logs
             } else {
                 asort($Entries, SORT_NUMERIC);
             }
+            $IPTestingLabel = $this->L10N->getString('link.IP Testing');
             foreach ($Entries as $Entry => $Count) {
                 if (!(substr($Entry, 0, 1) === '[' && substr($Entry, 3, 1) === ']')) {
-                    $Entry .= ' <a href="' . $this->paginationRemoveFrom($BlockLink) . '&search=' . str_replace('=', '_', base64_encode($Entry)) . '">»</a>';
+                    $IPSVGs = ($this->expandIpv4($Entry, true) || $this->expandIpv6($Entry, true)) ?
+                        '<a target="newReportingTab" href="https://www.abuseipdb.com/report?ip=' . $Entry . '"><script type="text/javascript">abuseIpdbSvg();</script></a>' .
+                        '<span onclick="javascript:{document.getElementById(\'ipTestFormInput\').value=\'' . $Entry . '\';document.getElementById(\'ipTestForm\').submit()}" title="' . $IPTestingLabel . '" class="translateIcon navicon test"></span>' : '';
+                    $Entry .= ' ' . $IPSVGs . '<a href="' . $this->paginationRemoveFrom($BlockLink) . '&search=' . str_replace('=', '_', base64_encode($Entry)) . '">»</a>';
                 }
                 preg_match_all('~\("([^()"]+)", L~', $Entry, $Parts);
                 if (count($Parts[1])) {

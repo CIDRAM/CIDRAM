@@ -28,7 +28,7 @@
           {ResultLine}<br />
           <hr />
           <textarea id="rangeOutput" readonly>{output}</textarea><br />
-          <div class="s" style="display:block;margin:16px"><span id="rangeSvg" onclick="javascript:if(navigator.clipboard){navigator.clipboard.writeText(getElementById('rangeOutput').value);getElementById('rangeSvg_copied').className='sFade'}else{getElementById('rangeSvg_failed').style.className='sFade'}"><script type="text/javascript">copySvg('rangeSvg');</script></span><span id="rangeSvg_copied" class="sHide" onanimationend="javascript:this.className='sHide'">✔️ {response.Copied}</span><span id="rangeSvg_failed" class="sHide" onanimationend="javascript:this.className='sHide'">❌ {response.Failed}</span></div>
+          <div class="s" style="display:block;margin:16px"><span onclick="javascript:if(navigator.clipboard){navigator.clipboard.writeText(getElementById('rangeOutput').value);getElementById('rangeSvg_copied').className='sFade'}else{getElementById('rangeSvg_failed').style.className='sFade'}"><script type="text/javascript">copySvg();</script></span><span id="rangeSvg_copied" class="sHide" onanimationend="javascript:this.className='sHide'">✔️ {response.Copied}</span><span id="rangeSvg_failed" class="sHide" onanimationend="javascript:this.className='sHide'">❌ {response.Failed}</span></div>
         </div>
       </td>
     </tr><!-- Output End -->

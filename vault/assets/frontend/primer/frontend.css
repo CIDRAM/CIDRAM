@@ -110,8 +110,8 @@ blockquote.comSub{margin:-2px 0 0 0;padding:0 0 0 0}
 }
 @keyframes forRotate{0%{transform:rotate(0)}100%{transform:rotate({45deg})}}
 @keyframes revRotate{0%{transform:rotate({45deg})}100%{transform:rotate(0)}}
-.navicon{display:inline-block;filter:invert(23%) sepia(82%) saturate(2401%) hue-rotate(-158deg) brightness(97%) contrast(98%);position:relative;top:1px;width:16px;height:16px}
-a:hover>.navicon,a:active>.navicon,a:focus>.navicon{filter:invert(44%) sepia(95%) saturate(1184%) hue-rotate(-26deg) brightness(105%) contrast(102%)}
+.navicon{display:inline-block;background-repeat:no-repeat;filter:invert(23%) sepia(82%) saturate(2401%) hue-rotate(-158deg) brightness(97%) contrast(98%);position:relative;top:1px;width:16px;height:16px}
+a:hover>.navicon,a:active>.navicon,a:focus>.navicon,.navicon[onclick]:hover,.navicon[onclick]:active,.navicon[onclick]:focus{filter:invert(44%) sepia(95%) saturate(1184%) hue-rotate(-26deg) brightness(105%) contrast(102%)}
 p{margin-top:0;margin-bottom:10px}
 small{font-size:.9em}
 sub,sup{font-size:.7em;line-height:0;position:relative;vertical-align:baseline}
@@ -151,11 +151,11 @@ input[type=text][pattern]:invalid:not(input[type=text]:placeholder-shown){backgr
 .configMatrixLabel.gridVB{background:linear-gradient(0deg,rgba(127,191,251,.35),rgba(0,0,0,0))}
 .warning::before,.warning::after{content:"⚠️";font-size:24px;display:inline;line-height:100%;position:relative;top:2px}
 .warning{display:inline-block;margin:4px;font-weight:700;color:#cb2431;background:linear-gradient({90deg},rgba(255,192,0,0) 0,rgba(255,192,0,.8) 20% 80%,rgba(255,192,0,0) 100%);line-height:100%}
-.gridlabel,.copySvg,.detailedSvgIcon{transition:all .2s ease-out}
-.copySvg,.detailedSvgIcon{transform:translate3d(-1px,-3px,-1px)}
-.copySvg{stroke-width:1px;stroke-linecap:round}
+.gridlabel,.detailedSvgIcon{transition:all .2s ease-out}
+.detailedSvgIcon{width:18px;height:19px}
+.detailedSvgIcon,.translateIcon{transform:translate3d(-1px,-3px,-1px)}
+.detailedSvgIcon:hover{filter:brightness(1.7) contrast(.8);cursor:pointer}
 .copySvg:hover{filter:brightness(1.2);cursor:pointer}
-.detailedSvgIcon:hover{filter:brightness(1.3);cursor:pointer}
 .copyHind,.copyFore,.copyLine{stroke:#24292e;fill:#f6f8fa}
 @keyframes sFadeFrames{0%{opacity:1}100%{opacity:0}}
 .sHide{display:none}
@@ -200,12 +200,12 @@ input[type=button].reset:hover,input[type=button].reset:active{color:#f88}
 .txtOe::selection,.txtOe>*:not(.txtGn,.txtRd)::selection{color:#fec}
 .txtRd::selection,.txtRd>*:not(.txtGn,.txtOe)::selection{color:#fcc}
 .canBreak{white-space:normal;overflow-wrap:break-word;word-break:break-all}
-input[type=button],input[type=checkbox],input[type=checkbox]+label,input[type=radio],input[type=radio]+label,input[type=reset],input[type=submit],span>span[onclick],li>span[onclick]{cursor:pointer}
+input[type=button],input[type=checkbox],input[type=checkbox]+label,input[type=radio],input[type=radio]+label,input[type=reset],input[type=submit],span>span[onclick],li>span[onclick],.navicon[onclick]{cursor:pointer}
 input[disabled],input[disabled]+label{cursor:not-allowed}
 .toolTip{cursor:help}
 .flexrow{display:flex}
 .flexin{margin-{FE_Align}:-1px;margin-{FE_Align_Reverse}:1px;width:auto;flex-grow:1}
-.auxicon{display:inline-block;position:relative;top:1px;width:12px;height:12px}
+.auxicon{display:inline-block;background-repeat:no-repeat;position:relative;top:1px;width:12px;height:12px}
 .auxbl,.hoverglow{filter:invert(13%) sepia(5%) saturate(1453%) hue-rotate(169deg) brightness(97%) contrast(92%)}
 .hoverglow:hover,.hoverglow:active,.hoverglow:focus{filter:invert(70%) sepia(7%) saturate(1499%) hue-rotate(131deg) brightness(80%) contrast(88%)}
 .auxgn{filter:invert(28%) sepia(96%) saturate(3118%) hue-rotate(129deg) brightness(88%) contrast(73%)}

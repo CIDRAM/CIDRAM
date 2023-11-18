@@ -33,7 +33,7 @@
             <div class="center">
               <span class="s">{label.Intersect} (A∩B)<br /></span><textarea id="rangeOutput" readonly>{Intersector_AB}</textarea><br />
             </div>
-            <div class="s" style="display:block;margin:16px"><span id="rangeSvg" onclick="javascript:if(navigator.clipboard){navigator.clipboard.writeText(getElementById('rangeOutput').value);getElementById('rangeSvg_copied').className='sFade'}else{getElementById('rangeSvg_failed').style.className='sFade'}"><script type="text/javascript">copySvg('rangeSvg');</script></span><span id="rangeSvg_copied" class="sHide" onanimationend="javascript:this.className='sHide'">✔️ {response.Copied}</span><span id="rangeSvg_failed" class="sHide" onanimationend="javascript:this.className='sHide'">❌ {response.Failed}</span></div>
+            <div class="s" style="display:block;margin:16px"><span onclick="javascript:if(navigator.clipboard){navigator.clipboard.writeText(getElementById('rangeOutput').value);getElementById('rangeSvg_copied').className='sFade'}else{getElementById('rangeSvg_failed').style.className='sFade'}"><script type="text/javascript">copySvg();</script></span><span id="rangeSvg_copied" class="sHide" onanimationend="javascript:this.className='sHide'">✔️ {response.Copied}</span><span id="rangeSvg_failed" class="sHide" onanimationend="javascript:this.className='sHide'">❌ {response.Failed}</span></div>
           </td>
         </tr><!-- Output End -->
       </form>

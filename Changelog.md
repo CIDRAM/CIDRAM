@@ -340,3 +340,5 @@
 [2023.11.10; Maikuolan]: Better missing class guarding.
 
 [2023.11.17; Maikuolan]: Added an icon for entries at the IP tracking page to go directly to the AbuseIPDB reporting page for those entries.
+
+[2023.11.18; Maikuolan]: Improved dynamic icons, extended the AbuseIPDB reporting page icon to the logs page, and added an IP testing page icon to IP tracking and logs page entries.

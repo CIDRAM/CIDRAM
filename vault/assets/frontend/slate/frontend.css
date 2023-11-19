@@ -5,18 +5,19 @@ body{font-family:sans-serif,'Tahoma','Verdana','Arial';letter-spacing:1px;text-d
 code{vertical-align:0;display:inline-block;height:calc(1em + 2px)}
 hr{border-style:solid none none;border-width:1px;margin:5px 2px 0;padding:2px;color:#999}
 img.ico{width:16px;height:16px;border:0;filter:grayscale(60%) hue-rotate(45deg) brightness(.8)}
-select,input,textarea{background:linear-gradient({45deg},rgba(47,47,47,1),rgba(255,255,255,.1));border:1px solid #999;color:#ccc;margin:2px;padding:2px;transition:all .3s ease-out}
+input[type=file]{margin:0;padding:0;border:none;background:none;width:auto}
+select,input,input[type="file"]::file-selector-button,textarea{background:linear-gradient({45deg},rgba(47,47,47,1),rgba(255,255,255,.1));border:1px solid #999;color:#ccc;margin:2px;padding:2px;transition:all .3s ease-out}
 option{background-color:#2f2f2f}
 input,select{width:150px;background-repeat:no-repeat;background-position:top {FE_Align_Reverse}}
 input[type=submit]:not(.auto),input[type=button]:not(.auto){width:auto;min-width:150px}
-input.auto,select.auto{width:auto;padding-left:10px;padding-right:10px}
+input.auto,input[type="file"]::file-selector-button,select.auto{width:auto;padding-left:10px;padding-right:10px}
 input[type=image]{width:inherit;border:inherit}
 input[type=password]{background-image:url(data:image/gif;base64,{Base64Encode}{Asset:pip_key_silver.gif}{/Base64Encode})}
 input[type=text]{background-image:url(data:image/gif;base64,{Base64Encode}{Asset:pip_{Text Direction}_silver.gif}{/Base64Encode})}
 input[type=text][pattern]:valid:not(input[type=text]:placeholder-shown){background-image:url(data:image/gif;base64,{Base64Encode}{Asset:pip_{Text Direction}_silver_valid.gif}{/Base64Encode})}
 input[type=text][pattern]:invalid:not(input[type=text]:placeholder-shown){background-image:url(data:image/gif;base64,{Base64Encode}{Asset:pip_{Text Direction}_silver_invalid.gif}{/Base64Encode})}
 input{border-radius:0}
-input[type=button],input[type=submit],input[type=reset]{border-radius:18px;transition:all .3s ease-out}
+input[type=button],input[type="file"]::file-selector-button,input[type=submit],input[type=reset]{border-radius:18px;transition:all .3s ease-out}
 select,option,textarea,input{filter:brightness(.94)}
 select:active,textarea:active:not([readonly]),input:active{filter:brightness(1)}
 select:disabled,textarea:disabled,input:disabled{filter:brightness(.5)}
@@ -33,7 +34,7 @@ a:link,a:visited{color:#f90}
 a:hover,a:active,a:focus{color:#fc6}
 .bNav,.gen,.spanner{text-align:{FE_Align_Reverse}}
 .bNav{height:64px}
-.cat,.exp,.bNav,.gen,.nav,.s,.tip,.txtGn,.txtOe,.txtRd,.spanner,a,input,select,textarea{font-weight:700}
+.cat,.exp,.bNav,.gen,.nav,.s,.tip,.txtGn,.txtOe,.txtRd,.spanner,a,input,input[type="file"]::file-selector-button,select,textarea{font-weight:700}
 .ci,.co,.gen,.center{margin:auto}
 .ci,.co,.ng1,.ng2{width:calc(100% - 32px)}
 .idx{width:calc(100% - 10px)}
@@ -117,7 +118,7 @@ blockquote.comSub{margin:-2px 0 0 0;padding:0 0 0 0}
 .navicon{display:inline-block;background-repeat:no-repeat;filter:invert(63%) sepia(44%) saturate(3371%) hue-rotate(1deg) brightness(104%) contrast(104%);position:relative;top:1px;width:16px;height:16px}
 a:hover>.navicon,a:active>.navicon,a:focus>.navicon,.hoverglow:hover,.hoverglow:active,.hoverglow:focus,.navicon[onclick]:hover,.navicon[onclick]:active,.navicon[onclick]:focus{filter:invert(77%) sepia(50%) saturate(469%) hue-rotate(-13deg) brightness(100%) contrast(102%)}
 select+input[type=submit],select+input[type=button]{margin-{FE_Align}:-3px;border-bottom-{FE_Align}-radius:0;border-top-{FE_Align}-radius:0;padding-{FE_Align}:3px}
-select,input[type=submit],input[type=reset],input[type=button],input[type=text],input[type=password],input[type=number],input[type=date],input[type=time],button{box-sizing:border-box;height:20px;padding-top:0;padding-bottom:0}
+select,input[type=submit],input[type=reset],input[type=button],input[type="file"]::file-selector-button,input[type=text],input[type=password],input[type=number],input[type=date],input[type=time],button{box-sizing:border-box;height:20px;padding-top:0;padding-bottom:0}
 select[class=auto]+select[class=auto]{margin-{FE_Align}:-3px;margin-{FE_Align_Reverse}:0}
 #pgrad{width:16px;height:16px;display:inline-block;border-radius:16px;filter:blur(2px)}
 td code~input,td code~select{vertical-align:middle}
@@ -176,7 +177,7 @@ input[type=button].reset:hover,input[type=button].reset:active{color:#fa7}
 .navicon.configuration,.bckpicon.configuration{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:configuration.svg}{/Base64Encode})}
 .navicon.discussions{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:discussions.svg}{/Base64Encode})}
 .navicon.documentation{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:documentation.svg}{/Base64Encode})}
-.navicon.folder{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:folder.svg}{/Base64Encode})}
+.navicon.folder,input[type="file"]::file-selector-button{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:folder.svg}{/Base64Encode})}
 .navicon.heaven{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:heaven.svg}{/Base64Encode})}
 .navicon.home{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:home.svg}{/Base64Encode})}
 .navicon.intersector{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:intersector.svg}{/Base64Encode})}
@@ -195,7 +196,7 @@ input[type=button].reset:hover,input[type=button].reset:active{color:#fa7}
 .txtOe::selection,.txtOe>*:not(.txtGn,.txtRd)::selection{color:#fec}
 .txtRd::selection,.txtRd>*:not(.txtGn,.txtOe)::selection{color:#fcc}
 .canBreak{white-space:normal;overflow-wrap:break-word;word-break:break-all}
-input[type=button],input[type=checkbox],input[type=checkbox]+label,input[type=radio],input[type=radio]+label,input[type=reset],input[type=submit],span>span[onclick],li>span[onclick],.navicon[onclick]{cursor:pointer}
+input[type=button],input[type="file"]::file-selector-button,input[type=checkbox],input[type=checkbox]+label,input[type=radio],input[type=radio]+label,input[type=reset],input[type=submit],span>span[onclick],li>span[onclick],.navicon[onclick]{cursor:pointer}
 input[disabled],input[disabled]+label{cursor:not-allowed}
 .toolTip{cursor:help}
 .flexrow{display:flex}
@@ -219,3 +220,4 @@ input[disabled],input[disabled]+label{cursor:not-allowed}
 .bckpicon.export{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:export.svg}{/Base64Encode})}
 .bckpicon.compress{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:compress.svg}{/Base64Encode})}
 .bckpicon.statistics{position:relative;top:-1px}
+input[type="file"]::file-selector-button{padding-{FE_Align}:20px;background-repeat:no-repeat;background-position:top 1px {FE_Align} 4px}

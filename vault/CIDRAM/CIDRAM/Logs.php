@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used by the logs page (last modified: 2023.11.18).
+ * This file: Methods used by the logs page (last modified: 2023.11.20).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -106,7 +106,7 @@ trait Logs
                     $ThisPartUnsafe = str_replace(['&gt;', '&lt;'], ['>', '<'], $ThisPart);
                     $TestString = $this->Demojibakefier->guard($ThisPartUnsafe);
                     $IPSVGs = ($this->expandIpv4($ThisPart, true) || $this->expandIpv6($ThisPart, true)) ?
-                        ' <a target="newReportingTab" href="https://www.abuseipdb.com/report?ip=' . $ThisPart . '"><script type="text/javascript">abuseIpdbSvg();</script></a>' .
+                        ' <a target="newReportingTab" href="https://www.abuseipdb.com/report?ip=' . $ThisPart . '" rel="noopener noreferrer external"><script type="text/javascript">abuseIpdbSvg();</script></a>' .
                         '<span onclick="javascript:{document.getElementById(\'ipTestFormInput\').value=\'' . $ThisPart . '\';document.getElementById(\'ipTestForm\').submit()}" title="' . $IPTestingLabel . '" class="translateIcon navicon test"></span>' : ' ';
                     $Alternate = (
                         $TestString !== $ThisPartUnsafe && $this->Demojibakefier->Last
@@ -263,7 +263,7 @@ trait Logs
             foreach ($Entries as $Entry => $Count) {
                 if (!(substr($Entry, 0, 1) === '[' && substr($Entry, 3, 1) === ']')) {
                     $IPSVGs = ($this->expandIpv4($Entry, true) || $this->expandIpv6($Entry, true)) ?
-                        '<a target="newReportingTab" href="https://www.abuseipdb.com/report?ip=' . $Entry . '"><script type="text/javascript">abuseIpdbSvg();</script></a>' .
+                        '<a target="newReportingTab" href="https://www.abuseipdb.com/report?ip=' . $Entry . '" rel="noopener noreferrer external"><script type="text/javascript">abuseIpdbSvg();</script></a>' .
                         '<span onclick="javascript:{document.getElementById(\'ipTestFormInput\').value=\'' . $Entry . '\';document.getElementById(\'ipTestForm\').submit()}" title="' . $IPTestingLabel . '" class="translateIcon navicon test"></span>' : '';
                     $Entry .= ' ' . $IPSVGs . '<a href="' . $this->paginationRemoveFrom($BlockLink) . '&search=' . str_replace('=', '_', base64_encode($Entry)) . '">»</a>';
                 }

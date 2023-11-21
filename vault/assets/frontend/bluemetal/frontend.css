@@ -6,17 +6,17 @@ code{background-color:rgba(85,85,85,.5);color:#eee;vertical-align:0;display:inli
 hr{border-style:solid none none;border-width:1px;margin:5px 2px 0;padding:2px;color:#89b}
 img.ico{width:16px;height:16px;border:0;filter:hue-rotate(180deg) brightness(.8)}
 input[type=file]{margin:0;padding:0;border:none;background:none;width:auto}
-input,input[type="file"]::file-selector-button,select,option,textarea{background-color:#345;border:none;color:#ccc;margin:2px;padding:2px}
+input,input[type=file]::file-selector-button,select,option,textarea{background-color:#345;border:none;color:#ccc;margin:2px;padding:2px}
 input,select{width:150px;background-repeat:no-repeat;background-position:top {FE_Align_Reverse}}
 input[type=submit]:not(.auto),input[type=button]:not(.auto){width:auto;min-width:150px}
-input.auto,input[type="file"]::file-selector-button,select.auto{width:auto;padding-left:10px;padding-right:10px}
+input.auto,input[type=file]::file-selector-button,select.auto{width:auto;padding-left:10px;padding-right:10px}
 input[type=image]{width:inherit;border:inherit}
 input[type=password]{background-image:url(data:image/gif;base64,{Base64Encode}{Asset:pip_key_blue.gif}{/Base64Encode})}
 input[type=text]{background-image:url(data:image/gif;base64,{Base64Encode}{Asset:pip_{Text Direction}_blue.gif}{/Base64Encode})}
 input[type=text][pattern]:valid:not(input[type=text]:placeholder-shown){background-image:url(data:image/gif;base64,{Base64Encode}{Asset:pip_{Text Direction}_blue_valid.gif}{/Base64Encode})}
 input[type=text][pattern]:invalid:not(input[type=text]:placeholder-shown){background-image:url(data:image/gif;base64,{Base64Encode}{Asset:pip_{Text Direction}_blue_invalid.gif}{/Base64Encode})}
 input{border-radius:0}
-input[type=button],input[type="file"]::file-selector-button,input[type=submit],input[type=reset]{border-radius:18px;transition:all .3s ease-out}
+input[type=button],input[type=file]::file-selector-button,input[type=submit],input[type=reset]{border-radius:18px;transition:all .3s ease-out}
 select,option,input,textarea{filter:grayscale(.1) brightness(.94)}
 select:active,textarea:active:not([readonly]),input:active{filter:grayscale(0) brightness(1)}
 select:disabled,textarea:disabled,input:disabled{filter:grayscale(1) brightness(.5)}
@@ -33,7 +33,7 @@ a:link,a:visited{color:#def}
 a:hover,a:active,a:focus,.txtRd{color:#fca}
 .bNav,.gen,.spanner{text-align:{FE_Align_Reverse}}
 .bNav{height:64px}
-.cat,.exp,.bNav,.gen,.nav,.s,.tip,.txtGn,.txtOe,.txtRd,.spanner,a,input,input[type="file"]::file-selector-button,select,textarea{font-weight:700}
+.cat,.exp,.bNav,.gen,.nav,.s,.tip,.txtGn,.txtOe,.txtRd,.spanner,a,input,input[type=file]::file-selector-button,select,textarea{font-weight:700}
 .ci,.co,.gen,.center{margin:auto}
 .ci,.co,.ng1,.ng2{width:calc(100% - 32px)}
 .idx{width:calc(100% - 10px)}
@@ -120,7 +120,7 @@ a:hover>.navicon,a:active>.navicon,a:focus>.navicon,.hoverglow:hover,.hoverglow:
 .auxgn{filter:invert(76%) sepia(43%) saturate(368%) hue-rotate(52deg) brightness(92%) contrast(88%)}
 .auxrd{filter:invert(76%) sepia(43%) saturate(275%) hue-rotate(-25deg) brightness(101%) contrast(102%)}
 select+input[type=submit],select+input[type=button]{height:20px;margin-{FE_Align}:-3px;border-bottom-{FE_Align}-radius:0;border-top-{FE_Align}-radius:0;padding-{FE_Align}:3px}
-select,input[type=submit],input[type=reset],input[type=button],input[type="file"]::file-selector-button,input[type=text],input[type=password],input[type=number],input[type=date],input[type=time],button{box-sizing:border-box;height:20px;padding-top:0;padding-bottom:0}
+select,input[type=submit],input[type=reset],input[type=button],input[type=file]::file-selector-button,input[type=text],input[type=password],input[type=number],input[type=date],input[type=time],button{box-sizing:border-box;height:20px;padding-top:0;padding-bottom:0}
 select[class=auto]+select[class=auto]{margin-{FE_Align}:-3px;margin-{FE_Align_Reverse}:0}
 #pgrad{width:16px;height:16px;display:inline-block;border-radius:16px;filter:blur(2px)}
 td code~input,td code~select{vertical-align:middle}
@@ -198,7 +198,7 @@ input[type=button].reset:hover,input[type=button].reset:active{color:#ffc}
 .txtOe::selection,.txtOe>*:not(.txtGn,.txtRd)::selection{color:#fec}
 .txtRd::selection,.txtRd>*:not(.txtGn,.txtOe)::selection{color:#fcc}
 .canBreak{white-space:normal;overflow-wrap:break-word;word-break:break-all}
-input[type=button],input[type="file"]::file-selector-button,input[type=checkbox],input[type=checkbox]+label,input[type=radio],input[type=radio]+label,input[type=reset],input[type=submit],span>span[onclick],li>span[onclick],.navicon[onclick]{cursor:pointer}
+input[type=button],input[type=file]::file-selector-button,input[type=checkbox],input[type=checkbox]+label,input[type=radio],input[type=radio]+label,input[type=reset],input[type=submit],span>span[onclick],li>span[onclick],.navicon[onclick]{cursor:pointer}
 input[disabled],input[disabled]+label{cursor:not-allowed}
 .toolTip{cursor:help}
 .flexrow{display:flex}

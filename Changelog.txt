@@ -12,6 +12,10 @@ Detailed version release guidelines for CIDRAM can be found at:
 
 - [2023.11.19; Maikuolan]: Restyled file inputs.
 
+- [2023.11.21; Bug-fix; Maikuolan]: The YAML handler's unescape method wasn't
+  unescaping correctly when escaped backslashes preceded other escapable
+  symbols; Fixed (#532).
+
 === Version/Release 2.14.1 ===
 PATCH RELEASE.
 

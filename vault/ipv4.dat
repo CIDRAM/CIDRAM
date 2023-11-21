@@ -1,8 +1,8 @@
 # IPv4 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv4.dat
 
-# Version: 2023.320.0
-# Last modified: 2023.11.17
+# Version: 2023.324.0
+# Last modified: 2023.11.21
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -3664,23 +3664,24 @@ Tag: Tzulo Inc
 
 
 # ASN 17139 ("Corporate Colocation Inc").
-# Stop Forum Spam (SFS) listings: 155.
-# Updated: 2023.01.23
+# Stop Forum Spam (SFS) listings: 19.
+# Updated: 2023.11.19
 
 8.48.84.0/24 Deny Cloud
 38.17.48.0/21 Deny Cloud
+66.117.1.0/24 Deny Cloud
 66.117.2.0/24 Deny Cloud
 66.117.6.0/23 Deny Cloud
-66.117.8.0/23 Deny Cloud
+66.117.12.0/23 Deny Cloud
 68.64.160.0/22 Deny Cloud
 68.64.164.0/23 Deny Cloud
 68.64.166.0/24 Deny Cloud
-68.64.168.0/24 Deny Cloud
+68.64.168.0/23 Deny Cloud
+68.64.170.0/24 Deny Cloud
 68.64.172.0/24 Deny Cloud
 68.64.174.0/23 Deny Cloud
 74.124.199.0/24 Deny Cloud
 74.124.205.0/24 Deny Cloud
-74.124.206.0/24 Deny Cloud
 173.247.225.0/24 Deny Cloud
 173.247.226.0/23 Deny Cloud
 173.247.228.0/22 Deny Cloud
@@ -5779,18 +5780,17 @@ Tag: VolumeDrive
 # ASNs 20473, 46407 ("Choopa, LLC").
 # Dedicated webhosting provider. A source of spam and other unwanted traffic.
 # Subtract 44.0.0.0/9, 44.128.0.0/10 (clean).
-# Stop Forum Spam (SFS) listings: 11,708 (AS20473).
-# Updated: 2023.01.24
+# Stop Forum Spam (SFS) listings: 6,007 (AS20473).
+# Updated: 2023.11.19
 
-45.95.23.0/24 Deny Cloud
-179.61.203.0/24 Deny Cloud
 181.215.26.0/24 Deny Cloud
 181.215.70.0/24 Deny Cloud
-191.96.245.0/24 Deny Cloud
+181.215.202.0/24 Deny Cloud
+191.96.58.0/24 Deny Cloud
+191.96.64.0/24 Deny Cloud
+191.101.58.0/24 Deny Cloud
 Origin: AE
-45.85.192.0/24 Deny Cloud
 185.120.23.0/24 Deny Cloud
-213.190.23.0/24 Deny Cloud
 Origin: AT
 45.114.190.0/24 Deny Cloud
 103.82.155.0/24 Deny Cloud
@@ -5802,61 +5802,61 @@ Origin: AU
 194.56.222.0/23 Deny Cloud
 Origin: BE
 5.182.22.0/23 Deny Cloud
-193.37.47.0/24 Deny Cloud
-195.178.110.0/23 Deny Cloud
+45.8.94.0/24 Deny Cloud
+195.178.111.0/24 Deny Cloud
 Origin: BG
-181.233.188.0/24 Deny Cloud
-Origin: BR
+98.142.241.0/24 Deny Cloud
 104.234.193.0/24 Deny Cloud
-104.234.194.0/24 Deny Cloud
 104.234.242.0/24 Deny Cloud
-172.98.54.0/23 Deny Cloud
 185.199.227.0/24 Deny Cloud
 198.252.96.0/23 Deny Cloud
-206.12.153.0/24 Deny Cloud
+206.53.50.0/24 Deny Cloud
+206.53.56.0/24 Deny Cloud
 Origin: CA
+45.148.116.0/22 Deny Cloud
 89.35.39.0/24 Deny Cloud
-138.124.179.0/24 Deny Cloud
 185.211.148.0/24 Deny Cloud
+194.50.111.0/24 Deny Cloud
 Origin: CH
-103.151.4.0/24 Deny Cloud
-Origin: CN
 193.32.92.0/24 Deny Cloud
 193.124.89.0/24 Deny Cloud
 Origin: CZ
 45.80.194.0/23 Deny Cloud
-45.86.155.0/24 Deny Cloud
 45.131.110.0/24 Deny Cloud
 85.117.240.0/24 Deny Cloud
 91.208.61.0/24 Deny Cloud
 176.97.215.0/24 Deny Cloud
 185.93.174.0/24 Deny Cloud
 185.193.16.0/24 Deny Cloud
-188.116.50.0/23 Deny Cloud
 192.145.83.0/24 Deny Cloud
 193.34.50.0/24 Deny Cloud
 194.147.57.0/24 Deny Cloud
 195.68.242.0/23 Deny Cloud
 Origin: DE
-2.59.180.0/24 Deny Cloud
+45.156.147.0/24 Deny Cloud
 Origin: DK
-185.132.186.0/24 Deny Cloud
-185.194.178.0/24 Deny Cloud
-185.225.2.0/24 Deny Cloud
-185.228.72.0/24 Deny Cloud
+185.194.177.0/24 Deny Cloud
+185.209.73.0/24 Deny Cloud
+185.218.101.0/24 Deny Cloud
+185.222.29.0/24 Deny Cloud
+185.226.153.0/24 Deny Cloud
+185.246.112.0/24 Deny Cloud
+193.58.146.0/24 Deny Cloud
 Origin: ES
 93.177.84.0/22 Deny Cloud
 141.11.70.0/24 Deny Cloud
-141.11.80.0/23 Deny Cloud
+141.11.154.0/23 Deny Cloud
+141.11.236.0/23 Deny Cloud
+163.5.86.0/24 Deny Cloud
+163.5.97.0/24 Deny Cloud
 Origin: FR
-45.152.91.0/24 Deny Cloud
 62.67.42.0/24 Deny Cloud
+81.5.189.0/24 Deny Cloud
+82.152.49.0/24 Deny Cloud
+82.153.65.0/24 Deny Cloud
 89.167.134.0/24 Deny Cloud
 91.206.48.0/24 Deny Cloud
-91.243.177.0/24 Deny Cloud
-176.118.162.0/24 Deny Cloud
-185.203.91.0/24 Deny Cloud
-185.253.56.0/24 Deny Cloud
+193.106.197.0/24 Deny Cloud
 195.122.134.0/23 Deny Cloud
 212.187.208.0/23 Deny Cloud
 212.187.246.0/23 Deny Cloud
@@ -5865,43 +5865,20 @@ Origin: FR
 217.163.28.0/23 Deny Cloud
 217.163.30.0/24 Deny Cloud
 Origin: GB
-45.249.221.0/24 Deny Cloud
-Origin: ID
-103.185.210.0/23 Deny Cloud
-103.187.202.0/23 Deny Cloud
-103.187.204.0/23 Deny Cloud
-103.188.2.0/23 Deny Cloud
-103.188.4.0/22 Deny Cloud
-103.188.8.0/23 Deny Cloud
-103.188.24.0/22 Deny Cloud
-103.188.28.0/23 Deny Cloud
-103.188.58.0/23 Deny Cloud
-103.188.60.0/22 Deny Cloud
-103.188.66.0/24 Deny Cloud
-103.188.76.0/24 Deny Cloud
-103.188.100.0/22 Deny Cloud
-103.188.104.0/22 Deny Cloud
-103.188.108.0/23 Deny Cloud
-103.188.110.0/24 Deny Cloud
-103.188.112.0/23 Deny Cloud
-103.188.152.0/21 Deny Cloud
-103.188.184.0/21 Deny Cloud
-103.188.192.0/23 Deny Cloud
-103.188.216.0/23 Deny Cloud
-103.188.222.0/23 Deny Cloud
-103.188.224.0/22 Deny Cloud
-103.188.228.0/23 Deny Cloud
-103.188.238.0/23 Deny Cloud
-103.188.240.0/23 Deny Cloud
-103.189.24.0/21 Deny Cloud
-103.189.32.0/23 Deny Cloud
-103.189.36.0/22 Deny Cloud
-103.189.42.0/23 Deny Cloud
-103.189.50.0/23 Deny Cloud
-103.189.52.0/23 Deny Cloud
+103.231.58.0/24 Deny Cloud
+Origin: HK
+88.209.216.0/24 Deny Cloud
+Origin: HU
+103.181.194.0/24 Deny Cloud
 Origin: IN
-193.106.197.0/24 Deny Cloud
-Origin: IQ
+91.221.232.0/24 Deny Cloud
+91.238.93.0/24 Deny Cloud
+95.214.176.0/24 Deny Cloud
+185.177.24.0/24 Deny Cloud
+212.115.126.0/24 Deny Cloud
+Origin: IR
+62.72.167.0/24 Deny Cloud
+Origin: JO
 43.224.32.0/22 Deny Cloud
 103.43.72.0/22 Deny Cloud
 141.164.32.0/19 Deny Cloud
@@ -5909,46 +5886,60 @@ Origin: IQ
 Origin: JP
 103.49.42.0/24 Deny Cloud
 Origin: KH
-84.32.7.0/24 Deny Cloud
-84.32.236.0/23 Deny Cloud
-185.202.110.0/24 Deny Cloud
+45.91.139.0/24 Deny Cloud
+45.152.242.0/24 Deny Cloud
+89.107.9.0/24 Deny Cloud
+91.199.172.0/24 Deny Cloud
+193.176.54.0/24 Deny Cloud
+194.26.215.0/24 Deny Cloud
+194.104.158.0/24 Deny Cloud
+194.147.4.0/24 Deny Cloud
 Origin: LT
+45.194.116.0/22 Deny Cloud
 45.200.121.0/24 Deny Cloud
-45.202.11.0/24 Deny Cloud
-45.207.6.0/24 Deny Cloud
+154.127.56.0/24 Deny Cloud
 Origin: MU
+103.100.154.0/24 Deny Cloud
+Origin: MY
 45.83.28.0/24 Deny Cloud
 84.54.33.0/24 Deny Cloud
+88.218.42.0/24 Deny Cloud
 185.64.78.0/24 Deny Cloud
 185.103.200.0/24 Deny Cloud
 185.103.202.0/23 Deny Cloud
 193.218.34.0/24 Deny Cloud
 Origin: NL
-185.249.252.0/24 Deny Cloud
-Origin: NO
-103.112.2.0/23 Deny Cloud
+103.112.3.0/24 Deny Cloud
 Origin: PK
 185.235.32.0/24 Deny Cloud
 Origin: PL
-185.101.171.0/24 Deny Cloud
+77.81.138.0/24 Deny Cloud
+89.42.87.0/24 Deny Cloud
+93.119.106.0/24 Deny Cloud
 Origin: RO
 212.69.1.0/24 Deny Cloud
 Origin: RS
 45.156.1.0/24 Deny Cloud
-145.249.108.0/24 Deny Cloud
-185.175.156.0/24 Deny Cloud
 Origin: RU
 154.197.32.0/24 Deny Cloud
+156.229.44.0/23 Deny Cloud
 156.236.77.0/24 Deny Cloud
 156.236.78.0/23 Deny Cloud
+156.240.96.0/22 Deny Cloud
 Origin: SC
 192.121.195.0/24 Deny Cloud
 Origin: SE
-103.122.126.0/24 Deny Cloud
+45.141.170.0/23 Deny Cloud
+Origin: SI
+103.122.124.0/22 Deny Cloud
 103.129.147.0/24 Deny Cloud
 103.136.224.0/23 Deny Cloud
-103.160.250.0/24 Deny Cloud
+103.160.251.0/24 Deny Cloud
 Origin: TW
+146.19.204.0/24 Deny Cloud
+188.191.104.0/24 Deny Cloud
+212.23.206.0/24 Deny Cloud
+Origin: UA
 8.3.29.0/24 Deny Cloud
 8.6.8.0/24 Deny Cloud
 8.6.193.0/24 Deny Cloud
@@ -5963,24 +5954,24 @@ Origin: TW
 8.12.16.0/23 Deny Cloud
 8.12.18.0/24 Deny Cloud
 8.12.22.0/24 Deny Cloud
-8.18.93.0/24 Deny Cloud
-23.26.243.0/24 Deny Cloud
-23.27.1.0/24 Deny Cloud
 23.139.0.0/24 Deny Cloud
+23.158.88.0/24 Deny Cloud
+23.163.56.0/24 Deny Cloud
 45.32.0.0/16 Deny Cloud
-45.63.0.0/17 Deny Cloud
+45.38.59.0/24 Deny Cloud
+45.63.0.0/19 Deny Cloud
+45.63.32.0/21 Deny Cloud
+45.63.40.0/22 Deny Cloud
+45.63.44.0/24 Deny Cloud
+45.63.46.0/23 Deny Cloud
+45.63.48.0/20 Deny Cloud
+45.63.64.0/18 Deny Cloud
 45.76.0.0/15 Deny Cloud
-45.115.62.0/24 Deny Cloud
-45.117.52.0/24 Deny Cloud
-45.117.54.0/24 Deny Cloud
-45.123.147.0/24 Deny Cloud
 45.135.161.0/24 Deny Cloud
-45.153.124.0/24 Deny Cloud
-50.21.0.0/20 Deny Cloud
+45.150.175.0/24 Deny Cloud
 50.114.65.0/24 Deny Cloud
 50.114.90.0/24 Deny Cloud
 50.114.95.0/24 Deny Cloud
-50.114.100.0/24 Deny Cloud
 63.133.218.0/24 Deny Cloud
 63.209.32.0/23 Deny Cloud
 63.209.35.0/24 Deny Cloud
@@ -5991,9 +5982,8 @@ Origin: TW
 64.156.14.0/24 Deny Cloud
 64.176.0.0/18 Deny Cloud
 64.176.64.0/19 Deny Cloud
-64.176.96.0/20 Deny Cloud
-64.176.112.0/21 Deny Cloud
-64.176.128.0/19 Deny Cloud
+64.176.160.0/19 Deny Cloud
+64.176.192.0/18 Deny Cloud
 64.237.32.0/19 Deny Cloud
 65.20.64.0/18 Deny Cloud
 66.42.32.0/19 Deny Cloud
@@ -6007,19 +5997,16 @@ Origin: TW
 68.232.184.0/22 Deny Cloud
 68.232.188.0/23 Deny Cloud
 68.232.191.0/24 Deny Cloud
-69.12.25.0/24 Deny Cloud
 70.34.192.0/19 Deny Cloud
 70.34.240.0/20 Deny Cloud
 78.141.192.0/18 Deny Cloud
 80.240.16.0/20 Deny Cloud
-85.202.161.0/24 Deny Cloud
 95.179.128.0/17 Deny Cloud
 96.30.192.0/19 Deny Cloud
-103.24.232.0/22 Deny Cloud
-103.65.229.0/24 Deny Cloud
-103.65.230.0/23 Deny Cloud
-103.228.84.0/22 Deny Cloud
 104.156.224.0/19 Deny Cloud
+104.165.3.0/24 Deny Cloud
+104.165.19.0/24 Deny Cloud
+104.171.16.0/24 Deny Cloud
 104.171.20.0/23 Deny Cloud
 104.207.128.0/19 Deny Cloud
 104.237.8.0/24 Deny Cloud
@@ -6031,7 +6018,6 @@ Origin: TW
 108.61.100.0/23 Deny Cloud
 108.61.103.0/24 Deny Cloud
 108.61.104.0/23 Deny Cloud
-108.61.107.0/24 Deny Cloud
 108.61.108.0/22 Deny Cloud
 108.61.112.0/20 Deny Cloud
 108.61.128.0/18 Deny Cloud
@@ -6042,23 +6028,22 @@ Origin: TW
 108.61.246.0/23 Deny Cloud
 108.61.248.0/21 Deny Cloud
 108.160.128.0/20 Deny Cloud
-108.165.201.0/24 Deny Cloud
+108.165.150.0/24 Deny Cloud
 108.165.245.0/24 Deny Cloud
 108.165.247.0/24 Deny Cloud
-115.42.46.0/24 Deny Cloud
+131.226.41.0/24 Deny Cloud
 136.244.64.0/18 Deny Cloud
 137.220.32.0/19 Deny Cloud
-139.5.21.0/24 Deny Cloud
 139.84.128.0/18 Deny Cloud
 139.84.192.0/20 Deny Cloud
 139.84.224.0/19 Deny Cloud
 139.180.128.0/18 Deny Cloud
 139.180.192.0/19 Deny Cloud
 140.82.0.0/18 Deny Cloud
-144.168.0.0/23 Deny Cloud
-144.168.2.0/24 Deny Cloud
 144.202.0.0/17 Deny Cloud
-147.189.153.0/24 Deny Cloud
+147.189.152.0/23 Deny Cloud
+149.18.64.0/23 Deny Cloud
+149.19.199.0/24 Deny Cloud
 149.19.225.0/24 Deny Cloud
 149.19.226.0/23 Deny Cloud
 149.19.228.0/22 Deny Cloud
@@ -6074,33 +6059,39 @@ Origin: TW
 155.138.128.0/17 Deny Cloud
 161.129.160.0/20 Deny Cloud
 162.43.224.0/19 Deny Cloud
-162.253.176.0/24 Deny Cloud
-166.0.176.0/24 Deny Cloud
+166.0.239.0/24 Deny Cloud
+166.0.250.0/24 Deny Cloud
 167.179.64.0/18 Deny Cloud
 168.151.29.0/24 Deny Cloud
 173.46.83.0/24 Deny Cloud
-173.199.64.0/23 Deny Cloud
+173.199.64.0/24 Deny Cloud
 173.199.66.0/24 Deny Cloud
 173.199.70.0/23 Deny Cloud
 173.199.72.0/21 Deny Cloud
 173.199.80.0/20 Deny Cloud
-173.199.96.0/19 Deny Cloud
+173.199.96.0/21 Deny Cloud
+173.199.104.0/22 Deny Cloud
+173.199.110.0/23 Deny Cloud
+173.199.112.0/20 Deny Cloud
 173.211.12.0/24 Deny Cloud
 173.239.209.0/24 Deny Cloud
+173.249.188.0/22 Deny Cloud
 176.103.218.0/24 Deny Cloud
 185.92.220.0/22 Deny Cloud
-192.55.122.0/23 Deny Cloud
 192.84.9.0/24 Deny Cloud
+192.132.59.0/24 Deny Cloud
 192.136.64.0/24 Deny Cloud
 192.153.64.0/21 Deny Cloud
 192.195.68.0/24 Deny Cloud
 192.206.23.0/24 Deny Cloud
+192.231.186.0/24 Deny Cloud
 192.248.128.0/18 Deny Cloud
 198.13.32.0/19 Deny Cloud
 198.17.215.0/24 Deny Cloud
 198.51.98.0/24 Deny Cloud
 198.89.85.0/24 Deny Cloud
 198.147.203.0/24 Deny Cloud
+198.202.254.0/24 Deny Cloud
 199.5.133.0/24 Deny Cloud
 199.184.245.0/24 Deny Cloud
 199.242.242.0/24 Deny Cloud
@@ -6108,7 +6099,9 @@ Origin: TW
 199.255.208.0/24 Deny Cloud
 202.182.96.0/19 Deny Cloud
 203.166.144.0/22 Deny Cloud
+204.62.182.0/24 Deny Cloud
 204.80.128.0/24 Deny Cloud
+204.80.221.0/24 Deny Cloud
 204.107.90.0/24 Deny Cloud
 204.107.223.0/24 Deny Cloud
 204.107.246.0/24 Deny Cloud
@@ -6116,7 +6109,6 @@ Origin: TW
 205.234.161.0/24 Deny Cloud
 207.148.0.0/19 Deny Cloud
 207.148.64.0/18 Deny Cloud
-207.167.133.0/24 Deny Cloud
 207.246.64.0/18 Deny Cloud
 208.72.152.0/22 Deny Cloud
 208.76.220.0/22 Deny Cloud
@@ -6127,14 +6119,25 @@ Origin: TW
 209.246.143.0/24 Deny Cloud
 209.250.224.0/19 Deny Cloud
 216.24.209.0/24 Deny Cloud
-216.128.128.0/18 Deny Cloud
+216.74.109.0/24 Deny Cloud
+216.128.128.0/19 Deny Cloud
+216.128.176.0/20 Deny Cloud
 216.155.128.0/19 Deny Cloud
+216.211.208.0/22 Deny Cloud
 216.238.64.0/18 Deny Cloud
 217.69.0.0/20 Deny Cloud
 Origin: US
 190.112.202.0/24 Deny Cloud
 200.35.153.0/24 Deny Cloud
 Origin: UY
+102.129.136.0/24 Deny Cloud
+102.129.150.0/24 Deny Cloud
+102.129.207.0/24 Deny Cloud
+102.216.159.0/24 Deny Cloud
+154.16.10.0/24 Deny Cloud
+154.16.33.0/24 Deny Cloud
+154.16.89.0/24 Deny Cloud
+154.16.91.0/24 Deny Cloud
 192.142.229.0/24 Deny Cloud
 Origin: ZA
 Profile: Dedicated;Frequent changes;Infrastructure/Transit;Tor endpoints here;Webhosting
@@ -6169,10 +6172,10 @@ Profile: Infrastructure/Transit;Tor endpoints here
 Tag: UOL DIVEO S.A
 
 
-# ASNs 20093, 22384, 46562, 54856 ("Performive LLC").
+# ASN 46562 ("Performive LLC").
 # Data center, server and cloud management platform, server farm.
-# Stop Forum Spam (SFS) listings: 1,223 (AS20093), 51,241 (AS46562).
-# Updated: 2023.01.30
+# Stop Forum Spam (SFS) listings: 53,775.
+# Updated: 2023.11.21
 
 45.95.37.0/24 Deny Cloud
 179.61.206.0/24 Deny Cloud
@@ -6183,6 +6186,7 @@ Tag: UOL DIVEO S.A
 181.214.195.0/24 Deny Cloud
 181.214.247.0/24 Deny Cloud
 191.96.215.0/24 Deny Cloud
+191.96.230.0/24 Deny Cloud
 191.96.236.0/23 Deny Cloud
 191.96.238.0/24 Deny Cloud
 191.101.237.0/24 Deny Cloud
@@ -6191,17 +6195,9 @@ Origin: AE
 82.115.28.0/23 Deny Cloud
 185.231.172.0/22 Deny Cloud
 Origin: AU
-66.154.97.0/24 Deny Cloud
-66.154.98.0/24 Deny Cloud
-66.154.111.0/24 Deny Cloud
-209.200.224.0/23 Deny Cloud
-209.200.227.0/24 Deny Cloud
-209.200.228.0/24 Deny Cloud
-209.200.231.0/24 Deny Cloud
-209.200.235.0/24 Deny Cloud
-209.200.247.0/24 Deny Cloud
-216.97.225.0/24 Deny Cloud
-Origin: CA
+185.230.222.0/24 Deny Cloud
+Origin: GB
+45.156.220.0/24 Deny Cloud
 103.140.154.0/24 Deny Cloud
 103.163.132.0/23 Deny Cloud
 185.235.167.0/24 Deny Cloud
@@ -6209,12 +6205,14 @@ Origin: HK
 103.208.220.0/22 Deny Cloud
 137.59.252.0/22 Deny Cloud
 Origin: JP
+193.37.199.0/24 Deny Cloud
+Origin: LT
 122.254.120.0/21 Deny Cloud
 Origin: MN
-46.243.239.0/24 Deny Cloud
-Origin: NL
 103.105.165.0/24 Deny Cloud
 Origin: PK
+85.122.229.0/24 Deny Cloud
+85.122.230.0/23 Deny Cloud
 176.113.98.0/24 Deny Cloud
 188.74.180.0/24 Deny Cloud
 Origin: RO
@@ -6222,39 +6220,40 @@ Origin: RO
 45.61.50.0/23 Deny Cloud
 45.61.52.0/24 Deny Cloud
 45.61.54.0/23 Deny Cloud
-45.135.160.0/24 Deny Cloud
-50.114.63.0/24 Deny Cloud
-63.141.50.0/24 Deny Cloud
+45.67.141.0/24 Deny Cloud
+45.74.1.0/24 Deny Cloud
 66.71.240.0/20 Deny Cloud
 66.115.128.0/18 Deny Cloud
 67.201.32.0/21 Deny Cloud
 67.201.56.0/21 Deny Cloud
-68.68.240.0/20 Deny Cloud
 68.71.240.0/20 Deny Cloud
 69.50.128.0/20 Deny Cloud
 72.37.216.0/23 Deny Cloud
 74.116.0.0/22 Deny Cloud
 74.119.144.0/22 Deny Cloud
-91.238.71.0/24 Deny Cloud
-96.126.68.0/24 Deny Cloud
 98.142.208.0/20 Deny Cloud
 104.37.132.0/22 Deny Cloud
-104.153.72.0/22 Deny Cloud
+104.153.72.0/23 Deny Cloud
+104.153.74.0/24 Deny Cloud
 104.200.129.0/24 Deny Cloud
 104.200.130.0/23 Deny Cloud
 104.200.132.0/22 Deny Cloud
-104.200.136.0/21 Deny Cloud
-104.200.144.0/21 Deny Cloud
+104.200.137.0/24 Deny Cloud
+104.200.138.0/23 Deny Cloud
+104.200.140.0/22 Deny Cloud
+104.200.144.0/22 Deny Cloud
+104.200.148.0/24 Deny Cloud
+104.200.150.0/23 Deny Cloud
 104.200.152.0/22 Deny Cloud
 104.200.156.0/24 Deny Cloud
 104.200.159.0/24 Deny Cloud
-104.232.36.0/24 Deny Cloud
-104.250.104.0/24 Deny Cloud
+104.224.87.0/24 Deny Cloud
 107.152.96.0/20 Deny Cloud
 107.181.161.0/24 Deny Cloud
 107.181.162.0/23 Deny Cloud
 107.181.164.0/22 Deny Cloud
-107.181.168.0/22 Deny Cloud
+107.181.168.0/23 Deny Cloud
+107.181.170.0/24 Deny Cloud
 107.181.172.0/23 Deny Cloud
 107.181.175.0/24 Deny Cloud
 107.181.176.0/20 Deny Cloud
@@ -6266,8 +6265,6 @@ Origin: RO
 162.220.48.0/22 Deny Cloud
 162.253.68.0/22 Deny Cloud
 172.83.40.0/21 Deny Cloud
-172.94.34.0/24 Deny Cloud
-172.94.116.0/24 Deny Cloud
 172.98.64.0/23 Deny Cloud
 172.98.66.0/24 Deny Cloud
 172.98.68.0/24 Deny Cloud
@@ -6279,9 +6276,11 @@ Origin: RO
 172.98.89.0/24 Deny Cloud
 172.98.91.0/24 Deny Cloud
 172.98.92.0/22 Deny Cloud
-172.111.180.0/24 Deny Cloud
 173.0.64.0/20 Deny Cloud
-173.45.160.0/20 Deny Cloud
+173.45.160.0/21 Deny Cloud
+173.45.168.0/23 Deny Cloud
+173.45.171.0/24 Deny Cloud
+173.45.172.0/23 Deny Cloud
 173.239.232.0/24 Deny Cloud
 173.244.195.0/24 Deny Cloud
 184.170.240.0/20 Deny Cloud
@@ -6292,13 +6291,21 @@ Origin: RO
 192.111.140.0/24 Deny Cloud
 192.111.142.0/23 Deny Cloud
 192.223.10.0/23 Deny Cloud
-192.252.208.0/20 Deny Cloud
-198.8.80.0/20 Deny Cloud
+192.252.208.0/21 Deny Cloud
+192.252.216.0/22 Deny Cloud
+192.252.220.0/24 Deny Cloud
+192.252.222.0/23 Deny Cloud
+198.8.80.0/22 Deny Cloud
+198.8.84.0/23 Deny Cloud
+198.8.86.0/24 Deny Cloud
+198.8.89.0/24 Deny Cloud
+198.8.90.0/23 Deny Cloud
+198.8.92.0/22 Deny Cloud
 198.145.237.0/24 Deny Cloud
-198.147.20.0/22 Deny Cloud
+198.147.21.0/24 Deny Cloud
+198.147.22.0/23 Deny Cloud
 199.36.220.0/22 Deny Cloud
 199.58.184.0/22 Deny Cloud
-199.58.255.0/24 Deny Cloud
 199.87.208.0/24 Deny Cloud
 199.102.104.0/22 Deny Cloud
 199.116.112.0/21 Deny Cloud
@@ -6320,8 +6327,6 @@ Origin: RO
 216.119.156.0/24 Deny Cloud
 216.119.159.0/24 Deny Cloud
 216.201.80.0/20 Deny Cloud
-216.235.80.0/24 Deny Cloud
-216.235.91.0/24 Deny Cloud
 Origin: US
 102.129.158.0/24 Deny Cloud
 102.165.42.0/24 Deny Cloud
@@ -6329,7 +6334,6 @@ Origin: US
 154.16.175.0/24 Deny Cloud
 154.16.178.0/24 Deny Cloud
 154.16.196.0/24 Deny Cloud
-192.142.130.0/23 Deny Cloud
 195.123.126.0/23 Deny Cloud
 Origin: ZA
 Profile: Frequent changes;Infrastructure/Transit;Tor endpoints here;Webhosting
@@ -8336,20 +8340,20 @@ Tag: Datacenter IP, LLC
 
 # ASN 43578 ("MBA DATACENTERS S.L").
 # Colo provider and server farm.
-# Stop Forum Spam (SFS) listings: 11.
-# Updated: 2023.01.23
+# Stop Forum Spam (SFS) listings: 2.
+# Updated: 2023.11.21
 
 5.226.168.0/24 Deny Cloud
 5.226.172.0/24 Deny Cloud
 77.246.176.0/24 Deny Cloud
 77.246.179.0/24 Deny Cloud
 77.246.180.0/22 Deny Cloud
+77.246.184.0/24 Deny Cloud
 77.246.186.0/23 Deny Cloud
 77.246.190.0/23 Deny Cloud
+160.214.127.0/24 Deny Cloud
 185.74.80.0/23 Deny Cloud
 Origin: ES
-188.241.60.0/23 Deny Cloud
-Origin: IN
 Profile: Commercial;Infrastructure/Transit;Webhosting
 Tag: MBA DATACENTERS S.L
 
@@ -19930,8 +19934,8 @@ Tag: GarantiServer
 
 # ASN 44565 ("VITAL TEKNOLOJI TELEKOMUNIKASYON BILGISAYAR HIZMETLERI VE SANAYI TICARET LTD SIRKETI").
 # A source of brute-force and SSH attacks.
-# Stop Forum Spam (SFS) listings: 4.
-# Updated: 2023.01.31
+# Stop Forum Spam (SFS) listings: 6.
+# Updated: 2023.11.21
 
 79.171.16.0/22 Deny Cloud
 79.171.20.0/23 Deny Cloud
@@ -19939,16 +19943,17 @@ Tag: GarantiServer
 93.186.120.0/22 Deny Cloud
 93.186.124.0/24 Deny Cloud
 93.186.127.0/24 Deny Cloud
-188.124.0.0/21 Deny Cloud
+188.124.0.0/23 Deny Cloud
+188.124.2.0/24 Deny Cloud
+188.124.4.0/24 Deny Cloud
+188.124.6.0/23 Deny Cloud
 188.124.8.0/22 Deny Cloud
 188.124.12.0/24 Deny Cloud
 188.124.14.0/23 Deny Cloud
 188.124.16.0/24 Deny Cloud
 188.124.18.0/23 Deny Cloud
 188.124.20.0/22 Deny Cloud
-188.124.24.0/24 Deny Cloud
-188.124.26.0/23 Deny Cloud
-188.124.28.0/22 Deny Cloud
+188.124.24.0/21 Deny Cloud
 Origin: TR
 Profile: Dedicated;Infrastructure/Transit
 Tag: VITAL TEKNOLOJI
@@ -21645,13 +21650,14 @@ Tag: CloudSRV Limited
 
 # ASN 42831 ("UK Dedicated Servers Limited").
 # Dedicated hosting and server lease and a significant source of spam.
-# Stop Forum Spam (SFS) listings: 2,622.
-# Updated: 2023.08.19
+# Stop Forum Spam (SFS) listings: 2,358.
+# Updated: 2023.11.19
 
 5.181.124.0/24 Deny Cloud
 5.252.78.0/24 Deny Cloud
 37.143.61.0/24 Deny Cloud
 45.137.28.0/23 Deny Cloud
+77.83.105.0/24 Deny Cloud
 181.215.25.0/24 Deny Cloud
 181.215.226.0/24 Deny Cloud
 181.215.229.0/24 Deny Cloud
@@ -21675,11 +21681,11 @@ Origin: BG
 Origin: BZ
 185.242.156.0/22 Deny Cloud
 Origin: CZ
-192.144.33.0/24 Deny Cloud
-Origin: DE
 45.157.210.0/24 Deny Cloud
 185.199.149.0/24 Deny Cloud
 Origin: ES
+141.11.214.0/23 Deny Cloud
+Origin: FR
 5.101.136.0/21 Deny Cloud
 5.101.144.0/21 Deny Cloud
 5.101.168.0/21 Deny Cloud
@@ -21692,35 +21698,41 @@ Origin: ES
 77.75.120.0/21 Deny Cloud
 78.110.160.0/20 Deny Cloud
 78.157.192.0/19 Deny Cloud
-80.93.193.0/24 Deny Cloud
+80.93.192.0/21 Deny Cloud
+80.93.201.0/24 Deny Cloud
+80.93.202.0/23 Deny Cloud
+80.93.204.0/22 Deny Cloud
+82.152.110.0/24 Deny Cloud
+82.153.66.0/24 Deny Cloud
 82.153.246.0/24 Deny Cloud
 89.213.131.0/24 Deny Cloud
 89.213.191.0/24 Deny Cloud
 91.224.108.0/24 Deny Cloud
 91.243.177.0/24 Deny Cloud
 93.114.61.0/24 Deny Cloud
+94.136.168.0/22 Deny Cloud
 94.229.64.0/20 Deny Cloud
 109.176.253.0/24 Deny Cloud
+176.123.62.0/24 Deny Cloud
 178.159.0.0/20 Deny Cloud
 178.216.244.0/24 Deny Cloud
 185.17.24.0/22 Deny Cloud
 185.54.84.0/22 Deny Cloud
+185.75.20.0/23 Deny Cloud
 185.92.45.0/24 Deny Cloud
 185.103.96.0/22 Deny Cloud
 185.113.128.0/23 Deny Cloud
 192.31.26.0/24 Deny Cloud
 192.35.198.0/24 Deny Cloud
 193.200.158.0/24 Deny Cloud
-193.203.116.0/23 Deny Cloud
 193.223.79.0/24 Deny Cloud
 194.32.164.0/24 Deny Cloud
 194.33.58.0/24 Deny Cloud
 194.169.80.0/23 Deny Cloud
 Origin: GB
-
+89.116.148.0/24 Deny Cloud
 Origin: LT
 45.207.20.0/24 Deny Cloud
-89.116.148.0/24 Deny Cloud
 Origin: MU
 45.86.203.0/24 Deny Cloud
 45.128.223.0/24 Deny Cloud
@@ -21729,8 +21741,12 @@ Origin: MU
 185.192.70.0/24 Deny Cloud
 194.32.120.0/24 Deny Cloud
 Origin: NL
+103.244.227.0/24 Deny Cloud
+Origin: NZ
 185.72.150.0/24 Deny Cloud
 Origin: PA
+139.190.44.0/22 Deny Cloud
+Origin: PK
 5.157.128.0/24 Deny Cloud
 Origin: RO
 196.17.114.0/23 Deny Cloud
@@ -21739,13 +21755,12 @@ Origin: SC
 92.114.4.0/24 Deny Cloud
 212.2.238.0/24 Deny Cloud
 Origin: SE
-5.105.8.0/23 Deny Cloud
+194.1.132.0/22 Deny Cloud
+194.1.136.0/22 Deny Cloud
+Origin: SK
 5.105.11.0/24 Deny Cloud
-5.105.61.0/24 Deny Cloud
-5.105.67.0/24 Deny Cloud
-5.105.73.0/24 Deny Cloud
-5.105.83.0/24 Deny Cloud
-5.105.152.0/22 Deny Cloud
+5.105.153.0/24 Deny Cloud
+5.105.154.0/23 Deny Cloud
 Origin: UA
 5.8.251.0/24 Deny Cloud
 23.26.114.0/24 Deny Cloud
@@ -21767,9 +21782,8 @@ Origin: UA
 96.9.214.0/23 Deny Cloud
 104.128.190.0/24 Deny Cloud
 149.18.92.0/22 Deny Cloud
-149.18.108.0/22 Deny Cloud
 154.6.52.0/22 Deny Cloud
-154.6.196.0/22 Deny Cloud
+154.6.72.0/21 Deny Cloud
 154.29.1.0/24 Deny Cloud
 154.37.73.0/24 Deny Cloud
 168.91.96.0/22 Deny Cloud
@@ -21785,9 +21799,10 @@ Origin: UA
 Origin: US
 102.165.56.0/24 Deny Cloud
 154.16.7.0/24 Deny Cloud
+154.70.152.0/24 Deny Cloud
 192.142.100.0/23 Deny Cloud
 Origin: ZA
-Profile: Dedicated;Tor endpoints here;Webhosting
+Profile: Dedicated;Frequent changes;Tor endpoints here;Webhosting
 Tag: UK Dedicated Servers
 
 
@@ -25229,18 +25244,19 @@ Profile: Infrastructure/Transit
 Tag: PleskLogin Net
 
 
-# ASN 43317 ("FNK LLC").
+# ASN 43317 ("SIA VEESP").
 # Caught spamming while pretending to be Google.
-# Stop Forum Spam (SFS) listings: 740.
-# Updated: 2023.01.25
+# Stop Forum Spam (SFS) listings: 82.
+# Updated: 2023.11.21
 
 91.209.70.0/24 Deny Cloud
 Origin: BZ
 77.73.64.0/21 Deny Cloud
+94.242.48.0/20 Deny Cloud
 185.22.172.0/22 Deny Cloud
-185.242.104.0/22 Deny Cloud
 Origin: LV
-94.242.0.0/18 Deny Cloud
+94.242.0.0/19 Deny Cloud
+94.242.32.0/20 Deny Cloud
 Origin: RU
 Profile: Dedicated;Webhosting
 Tag: Fishnet
@@ -26986,8 +27002,8 @@ Tag: Flokinet Ltd
 
 # ASN 42237 ("w1n ltd").
 # SSH and brute-force attacks detected originating from this network.
-# Stop Forum Spam (SFS) listings: 606.
-# Updated: 2023.01.24
+# Stop Forum Spam (SFS) listings: 555.
+# Updated: 2023.11.19
 
 179.60.146.0/24 Deny Cloud
 Origin: BZ
@@ -26998,8 +27014,6 @@ Origin: BZ
 185.246.130.0/24 Deny Cloud
 193.105.134.0/24 Deny Cloud
 Origin: GB
-185.142.237.0/24 Deny Cloud
-Origin: SC
 Profile: Dedicated;Tor endpoints here
 Tag: ICME LIMITED
 
@@ -28594,20 +28608,19 @@ Profile: Dedicated
 Tag: Nexril
 
 
-# ASNs 208673, 212370, 213371 ("ESTOXY OU", "PEENQ.NL", "ABC Consultancy").
+# ASNs 208673, 213371 ("ESTOXY OU", "ABC Consultancy").
 # Honeypot attacks, SQLi attacks, hacking, and spam detected from here.
 # Gebriano detected from here.
-# Stop Forum Spam (SFS) listings: 3 (AS208673), 11 (AS213371).
-# Updated: 2023.01.24
+# Stop Forum Spam (SFS) listings: 10 (AS208673), 5 (AS213371).
+# Updated: 2023.11.21
 
 37.49.224.0/23 Deny Cloud
-37.49.226.0/24 Deny Cloud
-37.49.228.0/22 Deny Cloud
+37.49.229.0/24 Deny Cloud
+37.49.230.0/23 Deny Cloud
 45.143.220.0/24 Deny Cloud
 45.143.222.0/23 Deny Cloud
-77.247.108.0/23 Deny Cloud
-77.247.111.0/24 Deny Cloud
-185.53.88.0/22 Deny Cloud
+77.247.109.0/24 Deny Cloud
+185.53.88.0/23 Deny Cloud
 185.209.15.0/24 Deny Cloud
 Origin: BZ
 103.145.12.0/23 Deny Cloud
@@ -31053,8 +31066,8 @@ Tag: Majestic Hosting
 
 # ASN 54113 ("Fastly").
 # CDN, cloud provider, and also a source of spam.
-# Stop Forum Spam (SFS) listings: 21.
-# Updated: 2023.01.25
+# Stop Forum Spam (SFS) listings: 75.
+# Updated: 2023.11.19
 
 103.245.222.0/24 Deny Cloud
 Origin: AU
@@ -31070,7 +31083,6 @@ Origin: NZ
 23.235.32.0/23 Deny Cloud
 23.235.35.0/24 Deny Cloud
 23.235.36.0/23 Deny Cloud
-23.235.39.0/24 Deny Cloud
 23.235.45.0/24 Deny Cloud
 104.156.80.0/21 Deny Cloud
 104.156.89.0/24 Deny Cloud
@@ -31084,9 +31096,10 @@ Origin: NZ
 140.248.72.0/22 Deny Cloud
 140.248.77.0/24 Deny Cloud
 140.248.78.0/23 Deny Cloud
-140.248.83.0/24 Deny Cloud
-140.248.85.0/24 Deny Cloud
-140.248.86.0/24 Deny Cloud
+140.248.80.0/24 Deny Cloud
+140.248.82.0/23 Deny Cloud
+140.248.84.0/22 Deny Cloud
+140.248.88.0/23 Deny Cloud
 140.248.128.0/17 Deny Cloud
 146.75.0.0/16 Deny Cloud
 151.101.0.0/16 Deny Cloud
@@ -31095,44 +31108,44 @@ Origin: NZ
 157.52.69.0/24 Deny Cloud
 157.52.70.0/23 Deny Cloud
 157.52.74.0/24 Deny Cloud
-157.52.76.0/24 Deny Cloud
 157.52.78.0/24 Deny Cloud
 157.52.80.0/22 Deny Cloud
 157.52.84.0/23 Deny Cloud
 157.52.87.0/24 Deny Cloud
 157.52.91.0/24 Deny Cloud
+157.52.93.0/24 Deny Cloud
 157.52.94.0/23 Deny Cloud
 157.52.96.0/23 Deny Cloud
 157.52.101.0/24 Deny Cloud
-157.52.104.0/23 Deny Cloud
+157.52.104.0/24 Deny Cloud
 157.52.106.0/24 Deny Cloud
 157.52.108.0/24 Deny Cloud
 157.52.110.0/23 Deny Cloud
-157.52.112.0/24 Deny Cloud
 157.52.115.0/24 Deny Cloud
 157.52.116.0/22 Deny Cloud
-157.52.120.0/22 Deny Cloud
+157.52.120.0/24 Deny Cloud
+157.52.122.0/23 Deny Cloud
 157.52.124.0/23 Deny Cloud
-157.52.126.0/24 Deny Cloud
 162.219.224.0/22 Deny Cloud
 162.247.243.0/24 Deny Cloud
 167.82.0.0/17 Deny Cloud
-167.82.131.0/24 Deny Cloud
 167.82.132.0/24 Deny Cloud
 167.82.134.0/23 Deny Cloud
-167.82.136.0/21 Deny Cloud
-167.82.160.0/24 Deny Cloud
+167.82.136.0/24 Deny Cloud
+167.82.138.0/23 Deny Cloud
+167.82.140.0/22 Deny Cloud
 167.82.163.0/24 Deny Cloud
 167.82.166.0/23 Deny Cloud
 167.82.168.0/22 Deny Cloud
 167.82.172.0/23 Deny Cloud
 167.82.174.0/24 Deny Cloud
-167.82.229.0/24 Deny Cloud
+167.82.224.0/24 Deny Cloud
 167.82.230.0/23 Deny Cloud
 167.82.232.0/21 Deny Cloud
 172.111.64.0/18 Deny Cloud
 185.31.16.0/24 Deny Cloud
 185.199.108.0/22 Deny Cloud
+198.54.216.0/24 Deny Cloud
 198.202.211.0/24 Deny Cloud
 199.27.74.0/23 Deny Cloud
 199.27.76.0/23 Deny Cloud
@@ -44719,8 +44732,8 @@ Tag: NETBUDUR
 
 # ASN 40244 ("Turnkey Internet Inc").
 # Brute-force, webapp attacks, port scans, hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 112.
-# Updated: 2023.01.25
+# Stop Forum Spam (SFS) listings: 50.
+# Updated: 2023.11.19
 
 181.214.149.0/24 Deny Cloud
 Origin: AE
@@ -44743,17 +44756,18 @@ Origin: AE
 96.47.6.0/24 Deny Cloud
 96.47.8.0/23 Deny Cloud
 104.129.168.0/22 Deny Cloud
+147.124.201.0/24 Deny Cloud
 162.213.120.0/22 Deny Cloud
 162.250.200.0/22 Deny Cloud
 163.182.168.0/21 Deny Cloud
 173.198.192.0/18 Deny Cloud
 173.233.64.0/19 Deny Cloud
+192.80.49.0/24 Deny Cloud
 192.111.37.0/24 Deny Cloud
 192.154.248.0/24 Deny Cloud
 198.48.48.0/20 Deny Cloud
 199.16.50.0/23 Deny Cloud
 199.16.52.0/22 Deny Cloud
-199.103.22.0/24 Deny Cloud
 199.223.252.0/22 Deny Cloud
 208.72.236.0/23 Deny Cloud
 208.78.32.0/23 Deny Cloud
@@ -44773,8 +44787,8 @@ Tag: Turnkey Internet Inc
 # ASN 63996 ("Mazeda Networks Limited").
 # Caught XRumer operating from here. Bangladesh dedicated corporate colo, CCTV,
 # and infrastructure provider.
-# Stop Forum Spam (SFS) listings: 54.
-# Updated: 2023.01.26
+# Stop Forum Spam (SFS) listings: 61.
+# Updated: 2023.01.26 / Checked: 2023.11.19
 
 45.120.112.0/22 Deny Cloud
 103.60.172.0/22 Deny Cloud
@@ -44836,26 +44850,50 @@ Tag: Akari Networks
 
 # ASN 210542 ("NPO G-net").
 # Brute-force, FTP, SSH, and webapp attacks, hacking, and spam detected here.
-# Stop Forum Spam (SFS) listings: 234.
-# Updated: 2023.01.29
+# Stop Forum Spam (SFS) listings: 202.
+# Updated: 2023.11.19
 
-45.142.106.0/24 Deny Cloud
+191.101.223.0/24 Deny Cloud
+Origin: AE
+37.128.250.0/23 Deny Cloud
+176.221.16.0/22 Deny Cloud
+Origin: AU
+103.151.40.0/24 Deny Cloud
+Origin: BD
+103.232.214.0/23 Deny Cloud
+Origin: CN
+45.8.11.0/24 Deny Cloud
+Origin: CY
+45.89.150.0/23 Deny Cloud
+213.145.94.0/24 Deny Cloud
 Origin: DE
-91.229.114.0/24 Deny Cloud
+141.11.134.0/23 Deny Cloud
+Origin: FR
+185.217.5.0/24 Deny Cloud
+Origin: GB
+36.255.94.0/23 Deny Cloud
+Origin: HR
+84.32.21.0/24 Deny Cloud
 Origin: LT
+149.126.92.0/22 Deny Cloud
+Origin: PS
+80.83.88.0/23 Deny Cloud
 185.140.53.0/24 Deny Cloud
 Origin: SE
+188.64.104.0/22 Deny Cloud
+Origin: SI
 Profile: Restricted/Unidentifiable
 Tag: NPO G-net
 
 
 # ASNs 58854, 138915 ("Kaopu Cloud HK Limited").
 # Brute-force, FTP, SSH, and webapp attacks, hacking, and spam detected here.
-# Stop Forum Spam (SFS) listings: 241 (AS138915).
-# Updated: 2023.01.31
+# Stop Forum Spam (SFS) listings: 265 (AS138915).
+# Updated: 2023.11.19
 
 27.0.132.0/22 Deny Cloud
 103.27.4.0/22 Deny Cloud
+103.118.250.0/24 Deny Cloud
 103.145.73.0/24 Deny Cloud
 103.151.138.0/23 Deny Cloud
 103.152.14.0/23 Deny Cloud
@@ -44872,7 +44910,7 @@ Origin: CN
 45.158.180.0/23 Deny Cloud
 45.158.182.0/24 Deny Cloud
 59.153.156.0/22 Deny Cloud
-103.84.109.0/24 Deny Cloud
+103.84.111.0/24 Deny Cloud
 103.136.248.0/22 Deny Cloud
 103.198.200.0/23 Deny Cloud
 103.198.202.0/24 Deny Cloud
@@ -44883,55 +44921,92 @@ Origin: CN
 Origin: HK
 102.217.238.0/24 Deny Cloud
 Origin: NG
+139.135.127.0/24 Deny Cloud
+Origin: PH
+154.90.32.0/21 Deny Cloud
+154.90.40.0/22 Deny Cloud
+154.90.48.0/20 Deny Cloud
+154.93.32.0/19 Deny Cloud
 154.206.12.0/24 Deny Cloud
+154.223.16.0/22 Deny Cloud
+154.223.20.0/23 Deny Cloud
+154.223.32.0/22 Deny Cloud
+154.223.37.0/24 Deny Cloud
+154.223.40.0/21 Deny Cloud
+154.223.48.0/23 Deny Cloud
+154.223.51.0/24 Deny Cloud
+154.223.52.0/22 Deny Cloud
+154.223.56.0/21 Deny Cloud
+154.223.64.0/20 Deny Cloud
 Origin: SC
+43.152.163.0/24 Deny Cloud
 103.191.48.0/24 Deny Cloud
 Origin: SG
-49.229.95.0/24 Deny Cloud
 119.46.51.0/24 Deny Cloud
 Origin: TH
 43.224.20.0/24 Deny Cloud
 150.116.117.0/24 Deny Cloud
 Origin: TW
-38.54.1.0/24 Deny Cloud
-38.54.2.0/23 Deny Cloud
-38.54.4.0/22 Deny Cloud
-38.54.8.0/21 Deny Cloud
-38.54.16.0/23 Deny Cloud
+8.242.22.0/24 Deny Cloud
+38.54.0.0/20 Deny Cloud
+38.54.16.0/22 Deny Cloud
+38.54.20.0/23 Deny Cloud
 38.54.23.0/24 Deny Cloud
 38.54.24.0/22 Deny Cloud
 38.54.28.0/23 Deny Cloud
-38.54.32.0/20 Deny Cloud
-38.54.48.0/22 Deny Cloud
-38.54.54.0/23 Deny Cloud
+38.54.32.0/21 Deny Cloud
+38.54.40.0/22 Deny Cloud
+38.54.44.0/23 Deny Cloud
+38.54.47.0/24 Deny Cloud
+38.54.49.0/24 Deny Cloud
+38.54.50.0/23 Deny Cloud
+38.54.52.0/22 Deny Cloud
 38.54.56.0/21 Deny Cloud
-38.54.64.0/24 Deny Cloud
-38.54.66.0/23 Deny Cloud
-38.54.68.0/22 Deny Cloud
-38.54.72.0/21 Deny Cloud
+38.54.64.0/20 Deny Cloud
 38.54.80.0/21 Deny Cloud
 38.54.88.0/23 Deny Cloud
 38.54.93.0/24 Deny Cloud
 38.54.94.0/23 Deny Cloud
-38.54.96.0/22 Deny Cloud
-38.54.101.0/24 Deny Cloud
-38.54.102.0/24 Deny Cloud
-38.54.104.0/21 Deny Cloud
+38.54.96.0/20 Deny Cloud
 38.54.112.0/23 Deny Cloud
 38.54.114.0/24 Deny Cloud
 38.54.116.0/22 Deny Cloud
-38.54.122.0/23 Deny Cloud
-38.54.124.0/22 Deny Cloud
-38.60.128.0/21 Deny Cloud
-38.60.136.0/23 Deny Cloud
+38.54.120.0/21 Deny Cloud
+38.60.128.0/20 Deny Cloud
+38.60.144.0/22 Deny Cloud
+38.60.148.0/24 Deny Cloud
+38.60.150.0/23 Deny Cloud
+38.60.152.0/22 Deny Cloud
+38.60.158.0/23 Deny Cloud
+38.60.160.0/21 Deny Cloud
+38.60.168.0/23 Deny Cloud
+38.60.171.0/24 Deny Cloud
+38.60.174.0/23 Deny Cloud
+38.60.176.0/23 Deny Cloud
+38.60.179.0/24 Deny Cloud
+38.60.180.0/22 Deny Cloud
+38.60.184.0/23 Deny Cloud
+38.60.186.0/24 Deny Cloud
+38.60.190.0/23 Deny Cloud
 38.60.192.0/21 Deny Cloud
+38.60.200.0/24 Deny Cloud
 38.60.202.0/23 Deny Cloud
 38.60.204.0/22 Deny Cloud
-38.60.209.0/24 Deny Cloud
-38.60.210.0/23 Deny Cloud
+38.60.208.0/22 Deny Cloud
 38.60.212.0/24 Deny Cloud
 38.60.214.0/23 Deny Cloud
-38.60.216.0/23 Deny Cloud
+38.60.216.0/21 Deny Cloud
+38.60.224.0/23 Deny Cloud
+38.60.245.0/24 Deny Cloud
+38.60.246.0/23 Deny Cloud
+38.60.248.0/22 Deny Cloud
+38.60.253.0/24 Deny Cloud
+38.60.254.0/23 Deny Cloud
+149.104.112.0/23 Deny Cloud
+149.104.114.0/24 Deny Cloud
+149.104.116.0/22 Deny Cloud
+149.104.120.0/24 Deny Cloud
+149.104.122.0/24 Deny Cloud
 Origin: US
 Profile: Restricted/Unidentifiable
 Tag: Kaopu Cloud
@@ -48452,6 +48527,122 @@ Profile: Webhosting
 Tag: SERVERS TECH FZCO
 
 
+# ASN 400175 ("Microtronix ESolutions, LLC").
+# Hacking detected from here.
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2023.11.19
+
+88.216.2.0/24 Deny Cloud
+Origin: LT
+23.26.138.0/24 Deny Cloud
+45.135.163.0/24 Deny Cloud
+45.141.15.0/24 Deny Cloud
+93.177.109.0/24 Deny Cloud
+193.221.195.0/24 Deny Cloud
+Origin: US
+Profile: Dedicated;Webhosting
+Tag: Microtronix
+
+
+# ASN 211183 ("AdminVPS OOO").
+# VPS provider. Brute-force and SSH attacks detected from here.
+# Updated: 2023.11.19
+
+5.253.62.0/24 Deny Cloud
+37.140.241.0/24 Deny Cloud
+79.133.181.0/24 Deny Cloud
+79.133.182.0/23 Deny Cloud
+91.200.84.0/24 Deny Cloud
+94.154.11.0/24 Deny Cloud
+185.240.103.0/24 Deny Cloud
+185.244.51.0/24 Deny Cloud
+185.250.44.0/24 Deny Cloud
+185.250.46.0/24 Deny Cloud
+193.187.96.0/24 Deny Cloud
+195.93.252.0/24 Deny Cloud
+Origin: RU
+Profile: Infrastructure/Transit;Webhosting
+Tag: AdminVPS OOO
+
+
+# ASN 270564 ("MASTER DA WEB DATACENTER LTDA").
+# Unauthorised remote MSSQL connections attempts detected from here.
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2023.11.19
+
+181.41.200.0/24 Deny Cloud
+Origin: AE
+24.152.36.0/22 Deny Cloud
+Origin: BR
+185.228.72.0/24 Deny Cloud
+Origin: ES
+89.213.142.0/24 Deny Cloud
+Origin: GB
+45.40.96.0/24 Deny Cloud
+50.114.32.0/24 Deny Cloud
+Origin: US
+Profile: Webhosting
+Tag: MASTER DA WEB
+
+
+# ASN 142111 ("Zhejiang Aiyun Network Technology Co Ltd").
+# Brute-force, SSH attacks, hacking, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 50.
+# Updated: 2023.11.21
+
+194.50.1.0/24 Deny Cloud
+Origin: AE
+103.158.74.0/24 Deny Cloud
+Origin: CN
+45.86.73.0/24 Deny Cloud
+45.89.104.0/24 Deny Cloud
+Origin: CY
+185.39.51.0/24 Deny Cloud
+Origin: DE
+2.59.182.0/24 Deny Cloud
+Origin: DK
+163.5.79.0/24 Deny Cloud
+Origin: FR
+46.37.112.0/24 Deny Cloud
+87.254.9.0/24 Deny Cloud
+87.254.18.0/23 Deny Cloud
+89.213.144.0/24 Deny Cloud
+195.242.242.0/24 Deny Cloud
+Origin: GB
+80.91.218.0/24 Deny Cloud
+Origin: IR
+2.58.86.0/23 Deny Cloud
+45.12.82.0/24 Deny Cloud
+45.137.97.0/24 Deny Cloud
+45.146.82.0/24 Deny Cloud
+45.158.11.0/24 Deny Cloud
+89.116.144.0/24 Deny Cloud
+89.117.67.0/24 Deny Cloud
+146.19.53.0/24 Deny Cloud
+146.19.167.0/24 Deny Cloud
+152.89.250.0/24 Deny Cloud
+176.126.105.0/24 Deny Cloud
+Origin: LT
+23.26.98.0/24 Deny Cloud
+23.26.239.0/24 Deny Cloud
+38.46.0.0/21 Deny Cloud
+38.95.112.0/24 Deny Cloud
+38.95.232.0/23 Deny Cloud
+38.102.232.0/22 Deny Cloud
+38.105.24.0/21 Deny Cloud
+50.114.63.0/24 Deny Cloud
+50.114.121.0/24 Deny Cloud
+50.114.243.0/24 Deny Cloud
+108.165.168.0/24 Deny Cloud
+108.165.240.0/24 Deny Cloud
+136.0.92.0/24 Deny Cloud
+157.254.231.0/24 Deny Cloud
+204.14.76.0/24 Deny Cloud
+Origin: US
+Profile: Webhosting
+Tag: Zhejiang Aiyun
+
+
 # ---
 # Orphaned from any current BGP records (should be dead!), but still
 # nonetheless seeing current reports for inbound brute-force attacks from these
@@ -48462,25 +48653,6 @@ Tag: SERVERS TECH FZCO
 Origin: CN
 Profile: Webhosting;Orphaned
 Tag: Orphaned/China/Attacks
-
-# Updated: 2023.05.28 / Modified: 2023.07.11
-5.253.247.0/24 Deny Attacks
-134.119.47.0/24 Deny Attacks
-134.119.92.0/24 Deny Attacks
-181.214.1.0/24 Deny Attacks
-Origin: DE
-Profile: Webhosting;Orphaned
-Tag: Orphaned/Germany/Attacks
-
-# Updated: 2023.05.23 / Modified: 2023.07.11
-45.80.30.0/24 Deny Attacks
-91.222.236.0/24 Deny Attacks
-91.222.239.0/24 Deny Attacks
-185.250.44.0/22 Deny Attacks
-212.60.20.0/23 Deny Attacks
-Origin: GB
-Profile: Webhosting;Orphaned
-Tag: Orphaned/Britain/Attacks
 
 # Updated: 2022.06.08 / Checked: 2023.08.28
 5.34.205.0/24 Deny Attacks

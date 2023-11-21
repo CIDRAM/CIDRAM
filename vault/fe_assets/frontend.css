@@ -6,17 +6,17 @@ code{vertical-align:0;display:inline-block;height:calc(1em + 2px)}
 hr{border-style:solid none none;border-width:1px;margin:5px 2px 0;padding:2px;color:rgba(153,0,0,.6)}
 img.ico{width:16px;height:16px;border:0}
 input[type=file]{margin:0;padding:0;border:none;background:none;width:auto}
-input,input[type="file"]::file-selector-button,select,option,textarea{background-color:#ffe;border:1px solid #900;color:#033;margin:2px;padding:2px}
+input,input[type=file]::file-selector-button,select,option,textarea{background-color:#ffe;border:1px solid #900;color:#033;margin:2px;padding:2px}
 input,select{width:150px;background-repeat:no-repeat;background-position:top {FE_Align_Reverse}}
 input[type=submit]:not(.auto),input[type=button]:not(.auto){width:auto;min-width:150px}
-input.auto,input[type="file"]::file-selector-button,select.auto{width:auto;padding-left:10px;padding-right:10px}
+input.auto,input[type=file]::file-selector-button,select.auto{width:auto;padding-left:10px;padding-right:10px}
 input[type=image]{width:inherit;border:inherit}
 input[type=password]{background-image:url(data:image/gif;base64,{PIP_Key})}
 input[type=text]{background-image:url(data:image/gif;base64,{PIP_Input})}
 input[type=text][pattern]:valid:not(input[type=text]:placeholder-shown){background-image:url(data:image/gif;base64,{PIP_Input_Valid})}
 input[type=text][pattern]:invalid:not(input[type=text]:placeholder-shown){background-image:url(data:image/gif;base64,{PIP_Input_Invalid})}
 input{border-radius:0}
-input[type=button],input[type="file"]::file-selector-button,input[type=submit],input[type=reset]{border-radius:18px;transition:all .3s ease-out}
+input[type=button],input[type=file]::file-selector-button,input[type=submit],input[type=reset]{border-radius:18px;transition:all .3s ease-out}
 select,option,input,textarea{filter:grayscale(.1) brightness(.94)}
 select:active,textarea:active:not([readonly]),input:active{filter:grayscale(0) brightness(1)}
 select:disabled,textarea:disabled,input:disabled{filter:grayscale(1) brightness(.5)}
@@ -34,7 +34,7 @@ a:hover{color:#46f}
 a:active,a:focus{color:red}
 .bNav,.gen,.spanner{text-align:{FE_Align_Reverse}}
 .bNav{height:64px}
-.cat,.exp,.bNav,.gen,.nav,.s,.tip,.txtGn,.txtOe,.txtRd,.spanner,a,input,input[type="file"]::file-selector-button,select,textarea{font-weight:700}
+.cat,.exp,.bNav,.gen,.nav,.s,.tip,.txtGn,.txtOe,.txtRd,.spanner,a,input,input[type=file]::file-selector-button,select,textarea{font-weight:700}
 .ci,.co,.gen,.center{margin:auto}
 .ci,.co,.ng1,.ng2{width:calc(100% - 32px)}
 .idx{width:calc(100% - 10px)}
@@ -100,7 +100,7 @@ input[id=homebutton]{border-top-{FE_Align_Reverse}-radius:0;border-bottom-{FE_Al
 .fW{word-break:break-all}
 .exp{color:#ff0;background-color:#f00}
 .pieul{list-style-type:none;margin:0;padding:0}
-li>span.comCat:first-child,input[type="file"]::file-selector-button{cursor:pointer}
+li>span.comCat:first-child,input[type=file]::file-selector-button{cursor:pointer}
 .comCat::before{content:"➖";display:inline-block;margin-{FE_Align_Reverse}:6px;line-height:100%;cursor:pointer}
 .caret-down::before{animation:forRotate .2s linear 1;animation-fill-mode:both}
 .caret-up::before{animation:revRotate .2s linear 1;animation-fill-mode:both}
@@ -131,7 +131,7 @@ blockquote.comSub{margin:-2px 0 0 0;padding:0 0 0 0}
 #websitelink::before{content:"🔗"}
 .navicon{filter:invert(12%) sepia(91%) saturate(1979%) hue-rotate(222deg) brightness(107%) contrast(94%);position:relative;top:1px;width:16px;height:16px}
 select+input[type=submit],select+input[type=button]{margin-{FE_Align}:-3px;border-bottom-{FE_Align}-radius:0;border-top-{FE_Align}-radius:0;padding-{FE_Align}:3px}
-select,input[type=submit],input[type=reset],input[type=button],input[type="file"]::file-selector-button,input[type=text],input[type=password],input[type=number],input[type=date],input[type=time],button{box-sizing:border-box;height:20px;padding-top:0;padding-bottom:0}
+select,input[type=submit],input[type=reset],input[type=button],input[type=file]::file-selector-button,input[type=text],input[type=password],input[type=number],input[type=date],input[type=time],button{box-sizing:border-box;height:20px;padding-top:0;padding-bottom:0}
 select[class=auto]+select[class=auto]{margin-{FE_Align}:-3px;margin-{FE_Align_Reverse}:0}
 #pgrad{width:16px;height:16px;display:inline-block;border-radius:16px;filter:blur(2px)}
 td code~input,td code~select{vertical-align:middle}

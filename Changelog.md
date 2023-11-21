@@ -344,3 +344,5 @@
 [2023.11.18; Maikuolan]: Improved dynamic icons, extended the AbuseIPDB reporting page icon to the logs page, and added an IP testing page icon to IP tracking and logs page entries.
 
 [2023.11.19; Maikuolan]: Restyled file inputs.
+
+[2023.11.21; Bug-fix; Maikuolan]: The YAML handler's unescape method wasn't unescaping correctly when escaped backslashes preceded other escapable symbols; Fixed (#532).

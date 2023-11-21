@@ -1,6 +1,6 @@
 <?php
 /**
- * YAML handler (last modified: 2023.10.12).
+ * YAML handler (last modified: 2023.11.21).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -901,52 +901,46 @@ class YAML
     private function unescape($Value = '', $Style = '"')
     {
         if ($Style === '"' || $Style === "\xe2\x80\x9c" || $Style === "\x91") {
-            $Value = str_replace(
-                ['\#', '\0', '\a', '\b', '\t', '\n', '\v', '\f', '\r', '\e', '\"', '\/', '\N', '\_', '\L', '\P', "\\\\"],
-                ['#', "\0", "\x07", "\x08", "\t", "\n", "\x0B", "\x0C", "\x0D", "\x1B", '"', '/', "\xC2\x85", "\xC2\xA0", "\xE2\x80\xA8", "\xE2\x80\xA9", "\\"],
-                $Value
-            );
-            $Captured = [];
-            if (preg_match_all('~\\\\x([\dA-Fa-f]{2})~', $Value, $Captured)) {
-                $Captured = array_unique($Captured[1]);
-                foreach ($Captured as $Bytes) {
-                    $Value = str_replace('\\x' . $Bytes, hex2bin($Bytes), $Value);
+            set_error_handler(function ($errno) {
+                return;
+            });
+            $Value = preg_replace([
+                '~(?<!\\\\)\\\\((?:\\\\{2})*)#~',
+                '~(?<!\\\\)\\\\((?:\\\\{2})*)0~',
+                '~(?<!\\\\)\\\\((?:\\\\{2})*)a~',
+                '~(?<!\\\\)\\\\((?:\\\\{2})*)b~',
+                '~(?<!\\\\)\\\\((?:\\\\{2})*)t~',
+                '~(?<!\\\\)\\\\((?:\\\\{2})*)n~',
+                '~(?<!\\\\)\\\\((?:\\\\{2})*)v~',
+                '~(?<!\\\\)\\\\((?:\\\\{2})*)f~',
+                '~(?<!\\\\)\\\\((?:\\\\{2})*)r~',
+                '~(?<!\\\\)\\\\((?:\\\\{2})*)e~',
+                '~(?<!\\\\)\\\\((?:\\\\{2})*)"~',
+                '~(?<!\\\\)\\\\((?:\\\\{2})*)/~',
+                '~(?<!\\\\)\\\\((?:\\\\{2})*)N~',
+                '~(?<!\\\\)\\\\((?:\\\\{2})*)_~',
+                '~(?<!\\\\)\\\\((?:\\\\{2})*)L~',
+                '~(?<!\\\\)\\\\((?:\\\\{2})*)P~'
+            ], ['#', "\0", "\7", "\x08", "\t", "\n", "\x0B", "\x0C", "\x0D", "\x1B", '"', '/', "\xC2\x85", "\xC2\xA0", "\xE2\x80\xA8", "\xE2\x80\xA9"], $Value);
+            $Value = preg_replace_callback('~(?<!\\\\)\\\\((?:\\\\{2})*)x([\dA-Fa-f]{2})~', function($Captured) {
+                return ($Decoded = hex2bin($Captured[2])) === false ? $Captured[0] : $Captured[1] . $Decoded;
+            }, $Value);
+            $Value = preg_replace_callback('~(?<!\\\\)\\\\((?:\\\\{2})*)u([\dA-Fa-f]{4})~', function($Captured) {
+                if (($Decoded = hex2bin($Captured[2])) === false) {
+                    return $Captured[0];
                 }
-            }
-            $Captured = [];
-            if (preg_match_all('~\\\\u([\dA-Fa-f]{4})~', $Value, $Captured)) {
-                set_error_handler(function ($errno) {
-                    return;
-                });
-                $Captured = array_unique($Captured[1]);
-                foreach ($Captured as $Bytes) {
-                    $Decoded = hex2bin($Bytes);
-                    $Attempt = iconv('UTF-16BE', 'UTF-8', $Decoded);
-                    $Reversed = $Attempt === false ? '' : iconv('UTF-8', 'UTF-16BE', $Attempt);
-                    if ($Attempt !== false && strcmp($Reversed, $Decoded) === 0) {
-                        $Decoded = $Attempt;
-                    }
-                    $Value = str_replace('\\u' . $Bytes, $Decoded, $Value);
+                $Reversed = ($Attempt = iconv('UTF-16BE', 'UTF-8', $Decoded)) === false ? '' : iconv('UTF-8', 'UTF-16BE', $Attempt);
+                return $Captured[1] . (($Attempt !== false && strcmp($Reversed, $Decoded) === 0) ? $Attempt : $Decoded);
+            }, $Value);
+            $Value = preg_replace_callback('~(?<!\\\\)\\\\((?:\\\\{2})*)U([\dA-Fa-f]{8})~', function($Captured) {
+                if (($Decoded = hex2bin($Captured[2])) === false) {
+                    return $Captured[0];
                 }
-                restore_error_handler();
-            }
-            $Captured = [];
-            if (preg_match_all('~\\\\U([\dA-Fa-f]{8})~', $Value, $Captured)) {
-                set_error_handler(function ($errno) {
-                    return;
-                });
-                $Captured = array_unique($Captured[1]);
-                foreach ($Captured as $Bytes) {
-                    $Decoded = hex2bin($Bytes);
-                    $Attempt = iconv('UTF-32BE', 'UTF-8', $Decoded);
-                    $Reversed = $Attempt === false ? '' : iconv('UTF-8', 'UTF-32BE', $Attempt);
-                    if ($Attempt !== false && strcmp($Reversed, $Decoded) === 0) {
-                        $Decoded = $Attempt;
-                    }
-                    $Value = str_replace('\\U' . $Bytes, $Decoded, $Value);
-                }
-                restore_error_handler();
-            }
+                $Reversed = ($Attempt = iconv('UTF-32BE', 'UTF-8', $Decoded)) === false ? '' : iconv('UTF-8', 'UTF-32BE', $Attempt);
+                return $Captured[1] . (($Attempt !== false && strcmp($Reversed, $Decoded) === 0) ? $Attempt : $Decoded);
+            }, $Value);
+            $Value = str_replace('\\\\', '\\', $Value);
+            restore_error_handler();
             return $Value;
         }
         if ($Style === "'" || $Style === "\xe2\x80\x98" || $Style === "\x93") {

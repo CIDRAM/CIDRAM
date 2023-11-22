@@ -1,6 +1,6 @@
 <?php
 /**
- * YAML handler (last modified: 2023.11.21).
+ * YAML handler (last modified: 2023.11.22).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -132,7 +132,7 @@ class YAML
      *      be needed by some implementations to ensure compatibility).
      * @link https://github.com/Maikuolan/Common/tags
      */
-    const VERSION = '1.9.8';
+    const VERSION = '1.10.0';
 
     /**
      * Can optionally begin processing data as soon as the object is
@@ -922,17 +922,17 @@ class YAML
                 '~(?<!\\\\)\\\\((?:\\\\{2})*)L~',
                 '~(?<!\\\\)\\\\((?:\\\\{2})*)P~'
             ], ['#', "\0", "\7", "\x08", "\t", "\n", "\x0B", "\x0C", "\x0D", "\x1B", '"', '/', "\xC2\x85", "\xC2\xA0", "\xE2\x80\xA8", "\xE2\x80\xA9"], $Value);
-            $Value = preg_replace_callback('~(?<!\\\\)\\\\((?:\\\\{2})*)x([\dA-Fa-f]{2})~', function($Captured) {
+            $Value = preg_replace_callback('~(?<!\\\\)\\\\((?:\\\\{2})*)x([\dA-Fa-f]{2})~', function ($Captured) {
                 return ($Decoded = hex2bin($Captured[2])) === false ? $Captured[0] : $Captured[1] . $Decoded;
             }, $Value);
-            $Value = preg_replace_callback('~(?<!\\\\)\\\\((?:\\\\{2})*)u([\dA-Fa-f]{4})~', function($Captured) {
+            $Value = preg_replace_callback('~(?<!\\\\)\\\\((?:\\\\{2})*)u([\dA-Fa-f]{4})~', function ($Captured) {
                 if (($Decoded = hex2bin($Captured[2])) === false) {
                     return $Captured[0];
                 }
                 $Reversed = ($Attempt = iconv('UTF-16BE', 'UTF-8', $Decoded)) === false ? '' : iconv('UTF-8', 'UTF-16BE', $Attempt);
                 return $Captured[1] . (($Attempt !== false && strcmp($Reversed, $Decoded) === 0) ? $Attempt : $Decoded);
             }, $Value);
-            $Value = preg_replace_callback('~(?<!\\\\)\\\\((?:\\\\{2})*)U([\dA-Fa-f]{8})~', function($Captured) {
+            $Value = preg_replace_callback('~(?<!\\\\)\\\\((?:\\\\{2})*)U([\dA-Fa-f]{8})~', function ($Captured) {
                 if (($Decoded = hex2bin($Captured[2])) === false) {
                     return $Captured[0];
                 }

@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2023.322.0
-# Last modified: 2023.11.19
+# Version: 2023.327.0
+# Last modified: 2023.11.24
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -772,8 +772,8 @@ Tag: Bell Canada
 # limited ADSL connectivity also provided. A significant source of spam here,
 # caught trying to hack honeypots, brute-force, SSH, and webapp attacks, and
 # unauthorised WordPress vulnerability scanners detected from here.
-# Stop Forum Spam (SFS) listings: 566,385 (AS16276), 30 (AS35540).
-# Updated: 2021.01.27 / Checked: 2023.01.23
+# Stop Forum Spam (SFS) listings: 566,521 (AS16276), 14 (AS35540).
+# Updated: 2021.01.27 / Checked: 2023.11.24
 
 2607:5300::/32 Run bypasses.php
 Origin: CA
@@ -1029,18 +1029,6 @@ Tag: CONNECTLINK TECH
 Origin: MY
 Profile: Domestic ISP
 Tag: Binariang Berhad
-
-
-# ASN 132116 ("Ani Network Pvt Ltd").
-# Indian multiplay network. Ongoing spam campaigns, SSH, and brute-force
-# attacks. Huge source of spam, increasing over time.
-# Stop Forum Spam (SFS) listings: 26,145.
-# Updated: 2022.03.23 / Checked: 2023.01.28
-
-2405:e100::/43 Deny Attacks
-Origin: IN
-Profile: Domestic ISP;Multiplay
-Tag: Ani Network Pvt Ltd
 
 
 # ASN 55430 ("Starhub Ltd").

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.11.18).
+ * This file: The CIDRAM front-end (last modified: 2023.11.26).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -2042,7 +2042,7 @@ class FrontEnd extends Core
                         $this->Components['ThisComponent']['StatClass'] = 'txtGn';
                         $this->Components['ThisComponent']['StatusOptions'] = $this->L10N->getString('response.Already up-to-date');
                         if (isset($this->Components['RemoteMeta'][$Key]['Files'], $this->Components['ThisComponent']['Files']) && (
-                            serialize($this->Components['RemoteMeta'][$Key]['Files']) === serialize($this->Components['ThisComponent']['Files'])
+                            serialize(array_keys($this->Components['RemoteMeta'][$Key]['Files'])) === serialize(array_keys($this->Components['ThisComponent']['Files']))
                         )) {
                             $this->Components['Repairable'][] = $Key;
                             $this->Components['ThisComponent']['Options'] .= '<option value="repair-component">' . $this->L10N->getString('field.Repair') . '</option>';

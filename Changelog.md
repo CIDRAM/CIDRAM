@@ -346,3 +346,5 @@
 [2023.11.19; Maikuolan]: Restyled file inputs.
 
 [2023.11.21; Bug-fix; Maikuolan]: The YAML handler's unescape method wasn't unescaping correctly when escaped backslashes preceded other escapable symbols; Fixed (#532).
+
+[2023.11.26; Bug-fix; Maikuolan]: The repair option at the updates page sometimes not offered when it should be; Fixed.

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2023.10.21).
+ * This file: The CIDRAM core (last modified: 2023.11.27).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -2905,7 +2905,7 @@ class Core
                 if ($Try === substr($PathOnly, 0, strlen($Try))) {
                     return $this->CIDRAM['isSensitive'] = true;
                 }
-            } elseif (($First === substr($Try, -1) || $First === substr($Try, -2, 1) . 'i') && !preg_match('~^[\dA-Za-z]$~', $First)) {
+            } elseif (!preg_match('~^[\dA-Za-z]$~', $First) && $First === substr(preg_replace('~[a-z]+$~', '', $Try), -1)) {
                 if (preg_match($Try, $URI)) {
                     return $this->CIDRAM['isSensitive'] = true;
                 }

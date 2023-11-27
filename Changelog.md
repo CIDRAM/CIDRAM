@@ -348,3 +348,5 @@
 [2023.11.21; Bug-fix; Maikuolan]: The YAML handler's unescape method wasn't unescaping correctly when escaped backslashes preceded other escapable symbols; Fixed (#532).
 
 [2023.11.26; Bug-fix; Maikuolan]: The repair option at the updates page sometimes not offered when it should be; Fixed.
+
+[2023.11.27; Bug-fix; Maikuolan]: The isSensitive method would sometimes fail to correctly identify regular expressions; Fixed.

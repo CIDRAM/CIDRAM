@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2023.11.10).
+ * This file: Protect traits (last modified: 2023.11.27).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -937,7 +937,13 @@ trait Protect
                     $this->Configuration['recaptcha']['sitekey'] !== '' &&
                     $this->Configuration['recaptcha']['secret'] !== '' &&
                     class_exists('\CIDRAM\CIDRAM\ReCaptcha') &&
-                    ($this->Configuration['recaptcha']['usemode'] >= 3 && $this->Configuration['recaptcha']['usemode'] <= 5)
+                    (
+                        ($this->Configuration['recaptcha']['usemode'] >= 3 && $this->Configuration['recaptcha']['usemode'] <= 5) ||
+                        ($this->Configuration['recaptcha']['usemode'] === 6 && (
+                            isset($this->BlockInfo['rURI']) &&
+                            $this->isSensitive(preg_replace('/\s/', '', strtolower($this->BlockInfo['rURI'])))
+                        ))
+                    )
                 ) {
                     /** Execute the ReCaptcha class. */
                     $CaptchaDone = new ReCaptcha($this);
@@ -947,7 +953,13 @@ trait Protect
                     $this->Configuration['hcaptcha']['sitekey'] !== '' &&
                     $this->Configuration['hcaptcha']['secret'] !== '' &&
                     class_exists('\CIDRAM\CIDRAM\HCaptcha') &&
-                    ($this->Configuration['hcaptcha']['usemode'] >= 3 && $this->Configuration['hcaptcha']['usemode'] <= 5)
+                    (
+                        ($this->Configuration['hcaptcha']['usemode'] >= 3 && $this->Configuration['hcaptcha']['usemode'] <= 5) ||
+                        ($this->Configuration['hcaptcha']['usemode'] === 6 && (
+                            isset($this->BlockInfo['rURI']) &&
+                            $this->isSensitive(preg_replace('/\s/', '', strtolower($this->BlockInfo['rURI'])))
+                        ))
+                    )
                 ) {
                     /** Execute the HCaptcha class. */
                     $CaptchaDone = new HCaptcha($this);

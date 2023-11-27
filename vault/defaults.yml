@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2023.10.21).
+# This file: Defaults file (last modified: 2023.11.26).
 ##/
 
 Config Defaults:
@@ -855,11 +855,12 @@ Config Defaults:
    default: 0
    choices:
     0: "{label.Never} !!!"
-    1: "{label.usemode_blkd}"
-    2: "{label.usemode_blkd_mrkd}"
-    3: "{label.usemode_any}"
-    4: "{label.usemode_not_blkd}"
-    5: "{label.usemode_not_blkd_mrkd}"
+    1: "label.Only when blocked, within the signature limit, and not banned"
+    2: "label.Only when blocked, specially marked for use, within the signature limit, and not banned"
+    3: "label.Only when within the signature limit, and not banned (regardless of whether blocked)"
+    4: "label.Only when not blocked"
+    5: "label.Only when not blocked, or when specially marked for use, within the signature limit, and not banned"
+    6: "label.Only when not blocked, at sensitive page requests"
    style: "radio"
   lockip:
    type: "bool"
@@ -920,11 +921,12 @@ Config Defaults:
    default: 0
    choices:
     0: "{label.Never} !!!"
-    1: "{label.usemode_blkd}"
-    2: "{label.usemode_blkd_mrkd}"
-    3: "{label.usemode_any}"
-    4: "{label.usemode_not_blkd}"
-    5: "{label.usemode_not_blkd_mrkd}"
+    1: "label.Only when blocked, within the signature limit, and not banned"
+    2: "label.Only when blocked, specially marked for use, within the signature limit, and not banned"
+    3: "label.Only when within the signature limit, and not banned (regardless of whether blocked)"
+    4: "label.Only when not blocked"
+    5: "label.Only when not blocked, or when specially marked for use, within the signature limit, and not banned"
+    6: "label.Only when not blocked, at sensitive page requests"
    style: "radio"
   lockip:
    type: "bool"

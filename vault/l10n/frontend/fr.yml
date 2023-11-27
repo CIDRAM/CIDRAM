@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2023.11.17).
+# This file: French language data for the front-end (last modified: 2023.11.27).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -561,6 +561,10 @@ label:
  Invisible: "Invisible"
  Latest stable: "Dernier stable\_:"
  Latest unstable: "Dernier instable\_:"
+ Loading_: "Chargement..."
+ Logged in, 2FA pending: "Connecté, 2FA en attente."
+ Logged in: "Connecté."
+ Logged out: "Déconnecté."
  Login: "Connexion"
  Logs access only: "Accès aux fichiers journaux seulement"
  Most recent: "Le plus récent"
@@ -571,10 +575,19 @@ label:
  No log file selected: "Aucun fichier journal sélectionné."
  No log files available: "Aucun fichiers journaux disponibles."
  None: "Aucun.\nSi vous souhaitez utiliser le module seulement à des fins de création de rapports, sans rien rechercher, utilisez ceci."
+ Only when blocked, specially marked for use, within the signature limit, and not banned: "Seulement lorsqu'il est bloqué, spécialement marqué pour l'utilisation, dans la limite de signatures, et non interdit."
+ Only when blocked, within the signature limit, and not banned: "Seulement lorsqu'il est bloqué, dans la limite de signatures, et non interdit."
+ Only when not blocked, at sensitive page requests: "Seulement lorsqu'il n'est pas bloqué, lors de requêtes de pages sensibles."
+ Only when not blocked, or when specially marked for use, within the signature limit, and not banned: "Seulement lorsqu'il n'est pas bloqué, ou lorsqu'il sont spécialement marqué pour l'utilisation, dans la limite de signatures, et non interdit."
+ Only when not blocked: "Seulement lorsqu'il n'est pas bloqué."
+ Only when within the signature limit, and not banned (regardless of whether blocked): "Seulement dans la limite de signatures, et non interdite (qu'elle soit bloquée ou non)."
  Operating system used: "Système opérateur utilisée\_:"
  Other rules, signature files, etc: "Autres règles, fichiers de signature, etc"
  Other: "Autres"
  PHP version used: "Version PHP utilisée\_:"
+ Page request completed in %s seconds:
+  - "Requête de page complétée en %s seconde."
+  - "Requête de page complétée en %s secondes."
  Paginate: "Paginer"
  Please log in to continue: "Merci de vous connecter pour continuer."
  Preferred source: "Source préférée\_:"
@@ -672,11 +685,6 @@ label:
   Medium: "Moyen"
  timeout_limit: "Ce module effectue des requêtes externes. Ici, vous pouvez spécifier le délai d'attente de ces requêtes (en secondes)."
  timeout_rl: "Le temps nécessaire avant de reprendre les requêtes externes après avoir été limité en débit."
- usemode_any: "Seulement dans la limite de signatures, et non interdite (qu'elle soit bloquée ou non)."
- usemode_blkd: "Seulement lorsqu'il est bloqué, dans la limite de signatures, et non interdit."
- usemode_blkd_mrkd: "Seulement lorsqu'il est bloqué, spécialement marqué pour l'utilisation, dans la limite de signatures, et non interdit."
- usemode_not_blkd: "Seulement lorsqu'il n'est pas bloqué."
- usemode_not_blkd_mrkd: "Seulement lorsqu'il n'est pas bloqué, ou lorsqu'il sont spécialement marqué pour l'utilisation, dans la limite de signatures, et non interdit."
 link:
  Accounts: "Comptes"
  Aggregator: "Agrégateur"
@@ -861,13 +869,6 @@ state_fixer_changed:
 state_fixer_seconds:
  - "en %s seconde"
  - "en %s secondes"
-label.Loading_: "Chargement..."
-label.Page request completed in %s seconds:
- - "Requête de page complétée en %s seconde."
- - "Requête de page complétée en %s secondes."
-label.Logged in: "Connecté."
-label.label.Logged in, 2FA pending: "Connecté, 2FA en attente."
-label.Logged out: "Déconnecté."
 state_sl_totals: "Totaux (Signatures\_: %s – Sections de signature\_: %s – Fichiers de signature\_: %s – Étiquettes de section uniques\_: %s)."
 state_tracking:
  - "Actuellement en cours de surveillance de %s adresse IP."

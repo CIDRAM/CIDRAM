@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2023.11.27).
+# This file: English language data for the front-end (last modified: 2023.12.01).
 ##/
 
 Extended Description:
@@ -39,7 +39,7 @@ Extended Description:
   en-US: "Required for using any functionality that involves sending email.<br />{{Links.PHPMailer.PHPMailer}} is available via the {{Links.PHPMailer.License}} license."
  Project Honeypot module: "Blocks requests from IPs listed at Project Honeypot."
  Protocol blocker module: "Provides the ability to block specific request protocols via the configuration (e.g., HTTP/0.9, HTTP/1.1, SPDY/3.0, etc). Note: Won't have any effect for those websites routing through services which rewrite requests to all use the exact same protocol, such as Cloudflare."
- Referrer spam module: "Blocking based on referrer spam won't generally provide any meaningful security benefit, but in some cases, could be useful for some users, for gathering more information about requests, and for being able to report it.<br />Installing this module also installs the Symfony polyfills for {{Links.Symfony.Intl/Idn}} (because this module requires Idn functionality, which not all PHP installations provide by default), available via the {{Links.MIT}} licence."
+ Referrer spam module: "Blocking based on referrer spam won't generally provide any meaningful security benefit, but in some cases, could be useful for some users, for gathering more information about requests, and for being able to report it."
  Stop Forum Spam module: "Protects registration and login pages against IPs listed by SFS."
  Tor blocker module: "Prohibits access from Tor exit nodes through DNSEL lookups (supports both IPv4 and IPv6)."
 Name:

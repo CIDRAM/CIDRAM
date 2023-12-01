@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2023.10.12).
+ * This file: Front-end handler (last modified: 2023.12.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1694,7 +1694,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                         $CIDRAM['ThisDir']['FieldOut'] .= $CIDRAM['ReqsLookupCache'][$CIDRAM['DirValue']['Requirement']];
                         continue;
                     }
-                    if (substr($CIDRAM['DirValue']['Requirement'], 0, 1) === "\\") {
+                    if (substr($CIDRAM['DirValue']['Requirement'], 0, 1) === '\\') {
                         $CIDRAM['ReqsLookupCache'][$CIDRAM['DirValue']['Requirement']] = '<br /><span class="txtGn">✔️ ' . sprintf(
                             $CIDRAM['L10N']->getString('label_is_available_class'),
                             $CIDRAM['DirValue']['Friendly']
@@ -3095,7 +3095,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
     }
 
     /** Set vault path for doughnut display. */
-    $CIDRAM['FE']['VaultPath'] = str_replace("\\", '/', $CIDRAM['Vault']) . '*';
+    $CIDRAM['FE']['VaultPath'] = str_replace('\\', '/', $CIDRAM['Vault']) . '*';
 
     /** Prepare components metadata working array. */
     $CIDRAM['Components'] = ['Files' => [], 'Components' => [], 'ComponentFiles' => [], 'Names' => []];
@@ -3117,7 +3117,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
         if (!empty($CIDRAM['Components']['ThisData']['Files']['To'])) {
             $CIDRAM['Arrayify']($CIDRAM['Components']['ThisData']['Files']['To']);
             foreach ($CIDRAM['Components']['ThisData']['Files']['To'] as $CIDRAM['Components']['ThisFile']) {
-                $CIDRAM['Components']['ThisFile'] = str_replace("\\", '/', $CIDRAM['Components']['ThisFile']);
+                $CIDRAM['Components']['ThisFile'] = str_replace('\\', '/', $CIDRAM['Components']['ThisFile']);
                 $CIDRAM['Components']['Files'][$CIDRAM['Components']['ThisFile']] = $CIDRAM['Components']['ThisName'];
             }
         }
@@ -4143,7 +4143,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
                     unset($CIDRAM['RunName'], $CIDRAM['RunError'], $CIDRAM['RunErrorCounts'], $CIDRAM['RunErrors']);
                 }
             } elseif ($CIDRAM['BlockInfo']['SignatureCount']) {
-                $CIDRAM['BlockInfo']['WhyReason'] = preg_replace('~(?<=</span>\),|]\),)( )(?=[\dA-Za-z])~', '<br />', $CIDRAM['BlockInfo']['WhyReason']);
+                $CIDRAM['BlockInfo']['WhyReason'] = preg_replace('~(?<=</span>\\),|]\\),)( )(?=[\dA-Za-z])~', '<br />', $CIDRAM['BlockInfo']['WhyReason']);
                 $CIDRAM['ThisIP']['YesNo'] = $CIDRAM['L10N']->getString('response_yes') . ' – ' . $CIDRAM['BlockInfo']['WhyReason'];
                 $CIDRAM['ThisIP']['StatClass'] = 'txtRd';
                 if (

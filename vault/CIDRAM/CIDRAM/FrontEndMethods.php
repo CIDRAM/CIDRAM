@@ -1479,6 +1479,6 @@ trait FrontEndMethods
      */
     private function escapeJsInHTML(string $In): string
     {
-        return str_replace(['"', '<', '>'], ['&#34;', '&lt;', '&gt;'], addslashes($In));
+        return str_replace(['"', '<', '>', '\\\\n'], ['&#34;', '&lt;', '&gt;', '\\n'], addslashes($In));
     }
 }

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2023.11.10).
+ * This file: Front-end functions file (last modified: 2023.12.01).
  */
 
 /**
@@ -4368,7 +4368,7 @@ $CIDRAM['CheckConstraints'] = function (array &$ThisComponent, $Source = false, 
         $Dependency = str_replace('{lang}', $CIDRAM['Config']['general']['lang'], $Dependency);
         if ($Constraints === 'Latest') {
             if (isset($CIDRAM['Components']['Available Versions'][$Dependency])) {
-                $Constraints = '>=' . $CIDRAM['Components']['Available Versions'][$Dependency];
+                $Constraints = '^' . $CIDRAM['Components']['Available Versions'][$Dependency];
             }
         }
         if ($Constraints === 'Latest' || strlen($Constraints) < 1) {

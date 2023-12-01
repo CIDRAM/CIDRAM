@@ -355,4 +355,4 @@
 
 ### v3.5.0
 
-[2023.12.01; Maikuolan]: Improve escaping.
+[2023.12.01; Maikuolan]: Improved escaping. Added support for specifying a Redis database number to the supplementary cache options.

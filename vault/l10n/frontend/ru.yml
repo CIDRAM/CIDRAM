@@ -274,6 +274,7 @@ config:
  supplementary_cache_options_pdo_password: "Пароль PDO."
  supplementary_cache_options_pdo_username: "Имя пользователя PDO."
  supplementary_cache_options_prefix: "Указанное здесь значение будет добавлено в начало всех ключей записи кэша. Стандарт = «CIDRAM_». Когда на одном сервере существует несколько установок, это может быть полезно для хранения их кэшей отдельно."
+ supplementary_cache_options_redis_database_number: "Номер базы данных Redis. Стандарт = 0. Примечание: В Redis Cluster нельзя использовать значения, отличные от 0."
  supplementary_cache_options_redis_host: "Значение хоста Redis. Стандарт = «localhost»."
  supplementary_cache_options_redis_port: "Значение порта Redis. Стандарт = «6379»."
  supplementary_cache_options_redis_timeout: "Значение тайм-аута Redis. Стандарт = «2.5»."

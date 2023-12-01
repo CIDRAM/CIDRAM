@@ -274,6 +274,7 @@ config:
  supplementary_cache_options_pdo_password: "PDO পাসওয়ার্ড।"
  supplementary_cache_options_pdo_username: "PDO ব্যবহারকারীর নাম।"
  supplementary_cache_options_prefix: "এখানে উল্লিখিত মানটি সমস্ত ক্যাশে এন্ট্রি কীগুলিতে প্রিপেন্ড করা হবে। ডিফল্ট = "CIDRAM_"। যখন একই সার্ভারে একাধিক ইনস্টলেশন বিদ্যমান, এটি তাদের ক্যাশে একে অপরের থেকে আলাদা রাখার জন্য কার্যকর হতে পারে।"
+ supplementary_cache_options_redis_database_number: "ডাটাবেস নম্বর Redis. ডিফল্ট = "0"। দ্রষ্টব্য: Redis Cluster সাথে 0 ছাড়া অন্য মান ব্যবহার করা যাবে না।"
  supplementary_cache_options_redis_host: "Redis হোস্ট মান। ডিফল্ট = "localhost"।"
  supplementary_cache_options_redis_port: "Redis পোর্ট মান। ডিফল্ট = "6379"।"
  supplementary_cache_options_redis_timeout: "Redis সময়সীমা মান। ডিফল্ট = "2.5"।"

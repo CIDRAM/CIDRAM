@@ -314,6 +314,7 @@ config:
   pt-BR: "O nome de usuário do PDO."
   pt-PT: "O nome de utilizador do PDO."
  supplementary_cache_options_prefix: "O valor especificado aqui será adicionado ao começo das chaves para todas as entradas de cache. Padrão = "CIDRAM_". Quando existem várias instalações no mesmo servidor, isso pode ser útil para manter seus caches separados uns dos outros."
+ supplementary_cache_options_redis_database_number: "Número do banco de dados Redis. Padrão = 0. Observação: Não é possível usar valores diferentes de 0 com Redis Cluster."
  supplementary_cache_options_redis_host: "Valor da host do Redis. Padrão = "localhost"."
  supplementary_cache_options_redis_port: "Valor da porta do Redis. Padrão = "6379"."
  supplementary_cache_options_redis_timeout: "Valor de tempo limite do Redis. Padrão = "2.5"."

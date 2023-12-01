@@ -274,6 +274,7 @@ config:
  supplementary_cache_options_pdo_password: "Contraseña de PDO."
  supplementary_cache_options_pdo_username: "Nombre del usuario de PDO."
  supplementary_cache_options_prefix: "El valor especificado aquí se antepondrá a las claves de todas las entradas de la caché. Predefinido = "CIDRAM_". Cuando existen varias instalaciones en el mismo servidor, esto puede ser útil para mantener sus cachés separados entre sí."
+ supplementary_cache_options_redis_database_number: "Número de base de datos de Redis. Predefinido = 0. Nota: No se pueden utilizar valores distintos de 0 con Redis Cluster."
  supplementary_cache_options_redis_host: "Valor del host de Redis. Predefinido = "localhost"."
  supplementary_cache_options_redis_port: "Valor del puerto de Redis. Predefinido = "6379"."
  supplementary_cache_options_redis_timeout: "Valor del tiempo de espera de Redis. Predefinido = "2.5"."

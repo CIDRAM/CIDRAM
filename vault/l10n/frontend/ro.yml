@@ -274,6 +274,7 @@ config:
  supplementary_cache_options_pdo_password: "Parola pentru PDO."
  supplementary_cache_options_pdo_username: "Numele de utilizator pentru PDO."
  supplementary_cache_options_prefix: "Valoarea specificată aici va fi adăugată înaintea tuturor cheilor de intrare în cache. Implicit = „CIDRAM_”. Când există mai multe instalări pe același server, acest lucru poate fi util pentru a-și păstra cache-urile separate unele de altele."
+ supplementary_cache_options_redis_database_number: "Numărul bazei de date Redis. Implicit = 0. Notă: Nu se pot folosi alte valori decât 0 cu Redis Cluster."
  supplementary_cache_options_redis_host: "Valoarea gazdei Redis. Implicit = „localhost”."
  supplementary_cache_options_redis_port: "Valoarea portului Redis. Implicit = „6379”."
  supplementary_cache_options_redis_timeout: "Valoarea timeout Redis. Implicit = „2.5”."

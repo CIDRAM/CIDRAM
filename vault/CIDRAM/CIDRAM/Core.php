@@ -1660,6 +1660,7 @@ class Core
         $this->Cache->RedisHost = $this->Configuration['supplementary_cache_options']['redis_host'];
         $this->Cache->RedisPort = $this->Configuration['supplementary_cache_options']['redis_port'];
         $this->Cache->RedisTimeout = $this->Configuration['supplementary_cache_options']['redis_timeout'];
+        $this->Cache->RedisDatabaseNumber = $this->Configuration['supplementary_cache_options']['redis_database_number'];
         $this->Cache->PDOdsn = $this->Configuration['supplementary_cache_options']['pdo_dsn'];
         $this->Cache->PDOusername = $this->Configuration['supplementary_cache_options']['pdo_username'];
         $this->Cache->PDOpassword = $this->Configuration['supplementary_cache_options']['pdo_password'];

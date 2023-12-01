@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6_isps.dat
 
-# Version: 2023.330.0
-# Last modified: 2023.11.27
+# Version: 2023.334.0
+# Last modified: 2023.12.01
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -28,41 +28,6 @@ Origin: GB
 Origin: RU
 Profile: Domestic ISP
 Tag: PIN-AS
-
-
-# ASN 43260 ("DGN TEKNOLOJI BILISIM YAYINCILIK SANAYI VE LIMITED SIRKETI").
-# Turkish multiplay network (webhosting provider, domestic ISP, data center,
-# plus others). Caught trying to DDoS SFS. Brute-force, DDoS, phishing attacks,
-# port scans, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 491.
-# Updated: 2023.02.05
-
-2a11:840:24::/48 Deny Attacks
-Origin: CA
-2a04:4280:10::/48 Deny Attacks
-2a04:4280:20::/48 Deny Attacks
-2a04:4280:30::/48 Deny Attacks
-2a04:4280:100::/48 Deny Attacks
-2a04:4280:200::/48 Deny Attacks
-2a04:8340::/29 Deny Attacks
-2a05:abc0::/29 Deny Attacks
-2a05:bf00::/29 Deny Attacks
-2a05:f7c0::/29 Deny Attacks
-2a07:21c0::/29 Deny Attacks
-2a07:cd00::/48 Deny Attacks
-2a07:e700::/29 Deny Attacks
-2a09:2340::/29 Deny Attacks
-2a0b:2780::/29 Deny Attacks
-2a0c:1340::/29 Deny Attacks
-2a0c:89c0::/29 Deny Attacks
-2a0c:8dc7::/32 Deny Attacks
-2a0c:acc0::/29 Deny Attacks
-2a0d:2bc0::/48 Deny Attacks
-2a0d:49c0::/29 Deny Attacks
-2a12:7740::/29 Deny Attacks
-Origin: TR
-Profile: Commercial;Dedicated;Domestic ISP;Infrastructure/Transit;Multiplay;Webhosting
-Tag: DGN TEKNOLOJI
 
 
 # ASN 38731 ("Vietel - CHT Compamy Ltd").
@@ -699,32 +664,12 @@ Tag: AT&T Services, Inc
 # ASN 21928 ("T-Mobile USA, Inc").
 # US mobile provider. Spam, brute-force, and SSH attacks detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 3,246.
-# Updated: 2023.02.04
+# Stop Forum Spam (SFS) listings: 3,430.
+# Updated: 2023.12.01
 
-2607:fb90:1bd1:447d::/64 Deny Spam
-2607:fb90:1cd6:4cf6::/64 Deny Spam
-2607:fb90:1cdb:5818::/64 Deny Spam
-2607:fb90:25d4:2532::/64 Deny Spam
-2607:fb90:4555:9918::/64 Deny Spam
-2607:fb90:7594:5d27::/64 Deny Spam
-2607:fb90:8a43:69a5::/64 Deny Spam
-2607:fb90:8a86:150d::/64 Deny Spam
-2607:fb90:8d02:5298::/64 Deny Spam
-2607:fb90:9b97:483::/64 Deny Spam
-2607:fb90:a900:6688::/64 Deny Spam
-2607:fb90:b7aa:746::/64 Deny Spam
-2607:fb90:c985:4b82::/64 Deny Spam
-2607:fb90:cf8e:f28b::/64 Deny Spam
-2607:fb90:ea0d:99da::/64 Deny Spam
 2607:fb91:123:4c6::/64 Deny Spam
-2607:fb91:18f:b69::/64 Deny Spam
-2607:fb91:1cb:5644::/64 Deny Spam
-2607:fb91:2caa:5991::/64 Deny Spam
-2607:fb91:2d0d:428f::/64 Deny Spam
-2607:fb91:2d10:cee4::/64 Deny Spam
-2607:fb91:bd12:1f01::/64 Deny Spam
-2607:fb91:bdae:40fc::/64 Deny Spam
+2607:fb91:14d4:164c::/64 Deny Spam
+2607:fb91:79af:d65c::/64 Deny Spam
 Origin: US
 Profile: Domestic ISP;Mobile ISP;Multiplay
 Tag: T-Mobile USA, Inc

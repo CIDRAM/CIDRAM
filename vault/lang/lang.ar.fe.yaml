@@ -207,6 +207,7 @@ config_supplementary_cache_options_pdo_dsn: "قيمة PDO DSN. افتراضي = 
 config_supplementary_cache_options_pdo_password: "PDO كلمه السر."
 config_supplementary_cache_options_pdo_username: "PDO اسم المستخدم."
 config_supplementary_cache_options_prefix: "سيتم إضافة القيمة المحددة هنا إلى جميع مفاتيح إدخال ذاكرة التخزين المؤقت. فارغ بشكل افتراضي. عند وجود عدة عمليات تثبيت على نفس الخادم، يمكن أن يكون ذلك مفيدًا للحفاظ على ذاكرة التخزين المؤقت منفصلة عن بعضها البعض."
+config_supplementary_cache_options_redis_database_number: "رقم قاعدة بيانات Redis. افتراضي = 0. ملاحظة: لا يمكن استخدام قيم غير 0 مع Redis Cluster."
 config_supplementary_cache_options_redis_host: "قيمة المضيف Redis. افتراضي = "localhost"."
 config_supplementary_cache_options_redis_port: "قيمة منفذ Redis. افتراضي = "6379"."
 config_supplementary_cache_options_redis_timeout: "Redis قيمة المهلة. افتراضي = "2.5"."

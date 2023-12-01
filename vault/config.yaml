@@ -751,6 +751,11 @@ Config Defaults:
    type: "float"
    step: "any"
    default: 2.5
+  redis_database_number:
+   type: "int"
+   default: 0
+   min: 0
+   max: 9999
   pdo_dsn:
    type: "string"
    default: "mysql:dbname=cidram;host=localhost;port=3306"

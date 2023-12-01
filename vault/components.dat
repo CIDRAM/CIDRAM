@@ -54,9 +54,9 @@ CIDRAM Core:
    - "b55e54f0d41f7c17f2d9919ffed9ad9e5cb067eb59f021407e8e2b65d5558055:14677"
    - "a0a0389c14928a11bb5a78323ae80dae35d759f6b483df329455706da1266d48:3038"
    - "b1c85fe0889dfbccf660858a4051a31b133f81747b39f901f032d6f05bb023ae:7854"
-   - "db1b76d3428f59b1c5b1444c321e604cef1d888a3278fa3fd3d896741fdb5138:25605"
+   - "03013a05eb525245bb8f33aba2cd9e408660d4a29967a8d67d86fd26d6f62099:25682"
    - "b1dc2bb73e579630013904ae4567d19acdf7b709ad38e92cb5ec850dca6e3c76:10063"
-   - "f0add4817a2ef08408f592c97c9811bf0a4da4761ce0ff95b85e9f3be0aac2d7:104011"
+   - "4e53edd3de7b474a2ce239cbc4e1321d4029ce6201b522d443158120a7e3eec1:104130"
    - "8821191af5f524203f75ca81024cf0317c6629c3de6ac41634f665085361e319:5641"
    - "99c99ddcbf89ce7d3e1d762d629868765581b4ae05b818cdd49d3a335a48bb96:45447"
    - "e48dc4d8b942bc26580caebdfc7ff79bfbb3807003c918c739c9e7dfdb61bf5e:1204"
@@ -229,11 +229,11 @@ CIDRAM Front-End:
    - "828d6cb0f53f3ff440d9901f295f8c6a0eefb295998445b81436158e94b40f2e:1391"
    - "9acc8e42f33d79379bfa11e2d0c88685286f4548811d70bcb1f3151e68e18cf1:2303"
    - "5d92a78ec26a5feec97ae4bf74d0a7e336e4ddc524eabf32bf50be21c3dad3b3:312238"
-   - "7da26aab226e9ebe07df27e8ef7dee087b35f071fb8c8f2ce06809305e724cdf:234361"
+   - "496ff1b5587db08432b6495851cda79080037bcc76dc4a56a5b12e5ef9b4d32f:234377"
  Reannotate: "components.dat"
 Common Classes Package:
  Name: "Common Classes Package"
- Version: "2.11.0"
+ Version: "2.12.0-DEV+233340"
  Dependencies:
   PHP: "^7.2|^8"
  Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat"
@@ -267,7 +267,7 @@ Common Classes Package:
    - "classes/Maikuolan/Request.php"
    - "classes/Maikuolan/YAML.php"
   Checksum:
-   - "b27713c467a2b64b4f2f1376d473ec842deba6420ee836ffb6b5f01b7d053d99:42206"
+   - "ed25528c5fc23ccfa257b4edf9ba005ea446aa431275f37402f532aecab41c97:42689"
    - "4d240d6a8970ca78f2f4f33556354da7e12f5ac1f1a5929f3988f7ff6fccfc7d:2384"
    - "823edaec75178e8c56ad0accec030cbee543e6ad1a36340a2e2a12c2e2106fbb:3872"
    - "c2c8f79e3d85b9c9e08b89a516724e0b9db23688ba7be5132e720faa85534d83:4900"
@@ -479,7 +479,7 @@ Bypasses:
 l10n/en:
  Name: "L10N: English"
  Extended Description: "English language data"
- Version: "2023.262.0"
+ Version: "2023.335.0"
  Dependencies:
   CIDRAM Core: "^2"
  Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat"
@@ -491,13 +491,13 @@ l10n/en:
    - "lang/lang.en.fe.yaml"
    - "lang/lang.en.yaml"
   Checksum:
-   - "a6d36b3cf1697721ec788d68db972f899fe759827c2766667770c4d13148ddf6:57773"
+   - "be4fbf5e970e69c4eff41437164611b40c98d1a134541a2887f4fa9eb819a9b2:57641"
    - "1536f950e7693cf98bbe3f79c9836d17223a533ce93230a9c52e1a61d3955f37:5438"
  Reannotate: "components.dat"
 l10n/ar:
  Name: "L10N: العربية"
  Extended Description: "ملفات اللغة العربية"
- Version: "2023.330.0"
+ Version: "2023.335.0"
  Dependencies:
   CIDRAM Core: "^2"
  Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat"
@@ -510,13 +510,13 @@ l10n/ar:
    - "lang/lang.ar.fe.yaml"
    - "lang/lang.ar.yaml"
   Checksum:
-   - "aa036f22ab8372c4f07c728f596fe00c1780ca2db17b25f0de42716f7f4f0d57:78580"
+   - "2afe345528e8852f7d739f28a740ae8bdbcb769ea3542f6b276fca2f4f8cef34:78400"
    - "4db3fe34d02f7d039bab6320e5f676bb7f3899f999da5f673bfdcb2bd071eef3:5765"
  Reannotate: "components.dat"
 l10n/bn:
  Name: "L10N: বাংলা"
  Extended Description: "বাংলা ভাষার তথ্য"
- Version: "2023.262.0"
+ Version: "2023.335.0"
  Dependencies:
   CIDRAM Core: "^2"
  Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat"
@@ -529,13 +529,13 @@ l10n/bn:
    - "lang/lang.bn.fe.yaml"
    - "lang/lang.bn.yaml"
   Checksum:
-   - "765d920abbf509310b014fd5e6c08797226e01d70a5953076edccfbdbbba147a:116027"
+   - "3617d6e9b1a99789e9a73b84b15350d4837ec904bed096e2bd6b6bc6897671de:115755"
    - "47cae89e8b3b5cd5188ce0395f9a7fba091eb9932c48941c0d6634d355afd717:10793"
  Reannotate: "components.dat"
 l10n/de:
  Name: "L10N: Deutsche"
  Extended Description: "Deutsche Sprachdateien"
- Version: "2023.262.0"
+ Version: "2023.335.0"
  Dependencies:
   CIDRAM Core: "^2"
  Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat"
@@ -548,13 +548,13 @@ l10n/de:
    - "lang/lang.de.fe.yaml"
    - "lang/lang.de.yaml"
   Checksum:
-   - "64949b22a6f8614cc46f73c90056261e8641af20ff8e5b0e097b98c57e2fdc55:65893"
+   - "8a5ce023c2008e2db5c4295589855e0a0e87e85a438e93683dd310bffb0856cd:65758"
    - "ba87f5b97c25400d82b3c1bc5cf5f6e0c3d5df6d2833b496c38dad5094c193fe:6015"
  Reannotate: "components.dat"
 l10n/es:
  Name: "L10N: Español"
  Extended Description: "Lingüísticos datos Español"
- Version: "2023.330.0"
+ Version: "2023.335.0"
  Dependencies:
   CIDRAM Core: "^2"
  Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat"
@@ -567,13 +567,13 @@ l10n/es:
    - "lang/lang.es.fe.yaml"
    - "lang/lang.es.yaml"
   Checksum:
-   - "2317801f8760a28c77bf979a9c257d7fcfd8ce40c1dafbf17269681d6f4900cb:66479"
+   - "c01a98448a68ca77483dcbde78a3f5456e89ca530e5cdbdcda0ca2b057bac787:66322"
    - "7ea49973eabc2ebcadf26fb91ba42c4697f21bd227ca7e141173692f5b12f87a:5828"
  Reannotate: "components.dat"
 l10n/fr:
  Name: "L10N: Français"
  Extended Description: "Linguistiques données en Français"
- Version: "2023.262.0"
+ Version: "2023.335.0"
  Dependencies:
   CIDRAM Core: "^2"
  Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat"
@@ -586,13 +586,13 @@ l10n/fr:
    - "lang/lang.fr.fe.yaml"
    - "lang/lang.fr.yaml"
   Checksum:
-   - "31aa5d6c4501571d1e58c6dd52e24ca39e803825e6cc5ff919a83cd804cd1ec3:68072"
+   - "a252f2bbf220408c03004aa206088d5da4557b2bddcdae1a740b9a4216626f42:67946"
    - "23ff100a7f9f0873e2e5d08455d31f235aaba5bc2f63d9b0ea597420d6621110:6124"
  Reannotate: "components.dat"
 l10n/hi:
  Name: "L10N: हिंदी"
  Extended Description: "हिंदी भाषा डाटा"
- Version: "2023.262.0"
+ Version: "2023.335.0"
  Dependencies:
   CIDRAM Core: "^2"
  Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat"
@@ -605,13 +605,13 @@ l10n/hi:
    - "lang/lang.hi.fe.yaml"
    - "lang/lang.hi.yaml"
   Checksum:
-   - "7eadb6cabde2697961425eda507294e33e0851cf9d796614b82bb182e4aa8def:116979"
+   - "edc4820fbfbbca49afc993f36be37146c66d03c8e72451cd0389a42b0d480346:116640"
    - "dfe504c23f705e992fb6e40a99911e0f0bfb8670cd59a04dcff8e267829ec944:9717"
  Reannotate: "components.dat"
 l10n/id:
  Name: "L10N: Bahasa Indonesia"
  Extended Description: "File Bahasa Indonesia"
- Version: "2023.262.0"
+ Version: "2023.335.0"
  Dependencies:
   CIDRAM Core: "^2"
  Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat"
@@ -624,13 +624,13 @@ l10n/id:
    - "lang/lang.id.fe.yaml"
    - "lang/lang.id.yaml"
   Checksum:
-   - "56b965489adcd02db65e98bec0cdc784a7b8f60940c3611348be8e76f61bf3c2:61663"
+   - "1af12206a2b90b359c0a449d08e228238e94fe28e9837c30f5761247dea4b86d:61549"
    - "658ad01914c40c96573c2fd0ed6b0721980fba7daa1bbaf211d33f48c9ba4f9b:5699"
  Reannotate: "components.dat"
 l10n/it:
  Name: "L10N: Italiana"
  Extended Description: "Linguistici dati Italiana"
- Version: "2023.262.0"
+ Version: "2023.335.0"
  Dependencies:
   CIDRAM Core: "^2"
  Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat"
@@ -643,13 +643,13 @@ l10n/it:
    - "lang/lang.it.fe.yaml"
    - "lang/lang.it.yaml"
   Checksum:
-   - "5c035e3ea21995c94022a2d7b6e56bddfed530e5255b925c593023dd602735a8:64797"
+   - "ebca39587ac2822ea07772d6b4722f5bb4a3e9cdffab9bf7acfed19228a8db18:64647"
    - "7439ac060136e3ccc8098dde9d88ec830a483bb8011a7586c37fef5bb42e998a:5970"
  Reannotate: "components.dat"
 l10n/ja:
  Name: "L10N: 日本語"
  Extended Description: "日本語言語データ"
- Version: "2023.262.0"
+ Version: "2023.335.0"
  Dependencies:
   CIDRAM Core: "^2"
  Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat"
@@ -662,13 +662,13 @@ l10n/ja:
    - "lang/lang.ja.fe.yaml"
    - "lang/lang.ja.yaml"
   Checksum:
-   - "9de03eb41bfeada07c1ab92547fe34ba2dd20072d06c5baea9b7c1061936c334:79690"
+   - "97e1dee20a742cdf79045d57df82985f83967c38673cd654410c8e5d01e4a7c7:79467"
    - "434f2d5c29a946bff497b30e85f87d1f49b532a1b3e0e9f5a2735a4dd12a7fe6:6626"
  Reannotate: "components.dat"
 l10n/ko:
  Name: "L10N: 한국어"
  Extended Description: "한국어 언어 데이터"
- Version: "2023.262.0"
+ Version: "2023.335.0"
  Dependencies:
   CIDRAM Core: "^2"
  Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat"
@@ -681,13 +681,13 @@ l10n/ko:
    - "lang/lang.ko.fe.yaml"
    - "lang/lang.ko.yaml"
   Checksum:
-   - "8ffe3f34661fd686fafe32b0dc3df0405811ca236b57bcdb1e23a5ac1d124e00:66357"
+   - "4eb845e3649042972a42c583eb06c9c02efb7f37b30bc77ab0213c3eb2df1aef:66228"
    - "c16e53ecf216ad5106cf167d0e3dbe6bdcd4c570b3c16291ffcbed6f02ba2349:5584"
  Reannotate: "components.dat"
 l10n/lv:
  Name: "L10N: Latviešu"
  Extended Description: "Latviešu valodas dati"
- Version: "2023.262.0"
+ Version: "2023.335.0"
  Dependencies:
   CIDRAM Core: "^2"
  Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat"
@@ -700,13 +700,13 @@ l10n/lv:
    - "lang/lang.lv.fe.yaml"
    - "lang/lang.lv.yaml"
   Checksum:
-   - "b0cffb6c2b1598fe240d2c864b6c3b5dd9b18ded958fb2fae28131d7150d3d26:64413"
+   - "7a55e4c6205802b411ef30a5897ed79337612683f824855bc88d02cae5dd22ed:64296"
    - "8654ed3acc2e07f3f12a3cabc56d365059b05ebbf670c2cd99086bef92373517:5845"
  Reannotate: "components.dat"
 l10n/nl:
  Name: "L10N: Nederlandse"
  Extended Description: "Nederlandse lokalisatie"
- Version: "2023.269.0"
+ Version: "2023.335.0"
  Dependencies:
   CIDRAM Core: "^2"
  Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat"
@@ -719,13 +719,13 @@ l10n/nl:
    - "lang/lang.nl.fe.yaml"
    - "lang/lang.nl.yaml"
   Checksum:
-   - "d5e7d60cec251d068bdf2db72dc6e2189650c4d739ada5333e41034242683114:63572"
+   - "7735967f640471c2ba55c2577f2c51228ae9f2b944344bdbe8ee29731e81dc25:63436"
    - "edd88c586022c00407dfe10342f497de9bf7ee4909055eeeaa600661a2582be5:5777"
  Reannotate: "components.dat"
 l10n/no:
  Name: "L10N: Norsk"
  Extended Description: "Norsk språkdata"
- Version: "2023.262.0"
+ Version: "2023.335.0"
  Dependencies:
   CIDRAM Core: "^2"
  Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat"
@@ -738,13 +738,13 @@ l10n/no:
    - "lang/lang.no.fe.yaml"
    - "lang/lang.no.yaml"
   Checksum:
-   - "b119297681bf111e5572f9b0628cf23d44a38c612823c4b2e2a92f0d5edb9f5e:60449"
+   - "cdf7e30ebd0fe6d9291628a4b2aa8704f8efd8e30fe5724c1885ac96eed44596:60315"
    - "28b7faa7947af04695586555da5ea56f08f6cdc4cbba043151af41ee3c27d948:5668"
  Reannotate: "components.dat"
 l10n/pl:
  Name: "L10N: Polski"
  Extended Description: "Dane języku polskim"
- Version: "2023.262.0"
+ Version: "2023.335.0"
  Dependencies:
   CIDRAM Core: "^2"
  Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat"
@@ -757,13 +757,13 @@ l10n/pl:
    - "lang/lang.pl.fe.yaml"
    - "lang/lang.pl.yaml"
   Checksum:
-   - "8b87bb89b83d8ec51abd0ff5bb3c3f153cc087c7a5f29cb34bce87b36e6d431d:65269"
+   - "6f5439ed1e68461233286bda37365856b64a525219b0f213950864da824c0afc:65110"
    - "41f4353c29c31aa9c46766f09d5968d1a45a689041f80cd351841579a3316f0f:6022"
  Reannotate: "components.dat"
 l10n/pt:
  Name: "L10N: Português"
  Extended Description: "Linguagem dados Português"
- Version: "2023.284.0"
+ Version: "2023.335.0"
  Dependencies:
   CIDRAM Core: "^2"
  Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat"
@@ -776,13 +776,13 @@ l10n/pt:
    - "lang/lang.pt.fe.yaml"
    - "lang/lang.pt.yaml"
   Checksum:
-   - "5f926f2f1d10db7998210cb915505acbae43ede05b5688134671263be86e1ace:64404"
+   - "3a4e4874c7e7c59279c38fa254073073b296e648edd95c73f5c1ceeb5dd9a86e:64281"
    - "0110303b67ab316589737d112e22931e538e34d58e140f779cc8e839ff65035e:5753"
  Reannotate: "components.dat"
 l10n/ru:
  Name: "L10N: Русский"
  Extended Description: "Русском языковые файлы"
- Version: "2023.262.0"
+ Version: "2023.335.0"
  Dependencies:
   CIDRAM Core: "^2"
  Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat"
@@ -795,13 +795,13 @@ l10n/ru:
    - "lang/lang.ru.fe.yaml"
    - "lang/lang.ru.yaml"
   Checksum:
-   - "7383e13eab4ba311f8a9351edd0b20832552ec9cf62808764954ce38c696889f:95166"
+   - "71fb3b7ed3ffa7c28158d1b37bd00696d470f6a99c6a99178a510015bf5d0a4a:94947"
    - "918cf60c7b4b0a664328a163f06b930ad4b540e68a5beb3ea5016624603d06ea:8398"
  Reannotate: "components.dat"
 l10n/sv:
  Name: "L10N: Svenska"
  Extended Description: "Svenska språkdata"
- Version: "2023.262.0"
+ Version: "2023.335.0"
  Dependencies:
   CIDRAM Core: "^2"
  Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat"
@@ -814,13 +814,13 @@ l10n/sv:
    - "lang/lang.sv.fe.yaml"
    - "lang/lang.sv.yaml"
   Checksum:
-   - "5e3dde9f7155a2e1fc33fc06ed0c1975e702ef4c22ca498ba958fa0c0dba7129:61828"
+   - "befb8d8b4c52a8e8890a57b290176ba19b2e4c22842b05eb4e44f5c8534bd2c8:61664"
    - "14e728c8c5741c9dbcfc84a9d688fec534ca0da011b4b3e82babe9a7ab95feed:5739"
  Reannotate: "components.dat"
 l10n/ta:
  Name: "L10N: தமிழ்"
  Extended Description: "தமிழ் மொழி தரவு"
- Version: "2023.262.0"
+ Version: "2023.335.0"
  Dependencies:
   CIDRAM Core: "^2"
  Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat"
@@ -833,13 +833,13 @@ l10n/ta:
    - "lang/lang.ta.fe.yaml"
    - "lang/lang.ta.yaml"
   Checksum:
-   - "708f4b0ae3b05495d35ab29163902c4566c3bb122001a37bfd51cf08682d25d2:136410"
+   - "10298ac05bfdc1cbe93b674578241a03d4c4d7b065b65c81be778c437b41698e:136085"
    - "b77fdc3e39aa1fdd5daa7226ea35f0132211491853214ce45748214337bf8988:11743"
  Reannotate: "components.dat"
 l10n/th:
  Name: "L10N: ภาษาไทย"
  Extended Description: "ข้อมูลภาษาไทย"
- Version: "2023.262.0"
+ Version: "2023.335.0"
  Dependencies:
   CIDRAM Core: "^2"
  Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat"
@@ -852,13 +852,13 @@ l10n/th:
    - "lang/lang.th.fe.yaml"
    - "lang/lang.th.yaml"
   Checksum:
-   - "3655cee8069ad23d2760784de92edd3a3ccf185aef59533f5e8fbd3aa98f9f23:107672"
+   - "1aff725425423d175bafa7f41f9f856112680a4c1ecff9a05b8bff60d5410989:107396"
    - "d5d7a5fb5711b8d0dc9e76d998bb1407bd8a0223e35609adf2cd2d8cda2d4737:9534"
  Reannotate: "components.dat"
 l10n/tr:
  Name: "L10N: Türkçe"
  Extended Description: "Türkçe dili verileri"
- Version: "2023.262.0"
+ Version: "2023.335.0"
  Dependencies:
   CIDRAM Core: "^2"
  Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat"
@@ -871,13 +871,13 @@ l10n/tr:
    - "lang/lang.tr.fe.yaml"
    - "lang/lang.tr.yaml"
   Checksum:
-   - "5761b3e6ba109949c63619c81cd9e99957a7ecfc9dae58b32990318ec9f6c62c:63974"
+   - "766ade1036b673d43e08c1d104a594d5e9da893f2e06fc91009e247493bb5ad4:63836"
    - "a99b429369ec012b00cc2802d70c5b4be0b27d23787e78907a31c63ae03f04b5:5905"
  Reannotate: "components.dat"
 l10n/ur:
  Name: "L10N: اردو"
  Extended Description: "اردو زبان فائلوں"
- Version: "2023.262.0"
+ Version: "2023.335.0"
  Dependencies:
   CIDRAM Core: "^2"
  Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat"
@@ -890,13 +890,13 @@ l10n/ur:
    - "lang/lang.ur.fe.yaml"
    - "lang/lang.ur.yaml"
   Checksum:
-   - "e7d885ce298634eb801c7e9b671a95fa92b6f0f6a8e3a226f52800ed24e14b4f:85859"
+   - "be4a2fff68cf6bb8a6f741bf09fca7cf2541cc83d012c3428937dfba67ab7cb9:85625"
    - "d990105d633ee78f7cd50dd1bd8527e0f82e564ac0a3e4ee79247b84a3eba327:7820"
  Reannotate: "components.dat"
 l10n/vi:
  Name: "L10N: Tiếng Việt"
  Extended Description: "Dữ liệu tiếng Việt"
- Version: "2023.262.0"
+ Version: "2023.335.0"
  Dependencies:
   CIDRAM Core: "^2"
  Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat"
@@ -909,13 +909,13 @@ l10n/vi:
    - "lang/lang.vi.fe.yaml"
    - "lang/lang.vi.yaml"
   Checksum:
-   - "38fc73132bcc717af9cab3232d8f6aa072f5786ebf39323b751279afa7bc3493:72750"
+   - "e18dc05eb318d4c63e0849b45d2dbbf93f10f0c9cd001d107730ed6aa2ae5681:72573"
    - "fba5c3c6e2b7efbf6013e5665a900f8c3932bab8be87838c5063cbbf28ff5eb0:6937"
  Reannotate: "components.dat"
 l10n/zh-TW:
  Name: "L10N: 中文（傳統）"
  Extended Description: "中文（傳統）語言數據"
- Version: "2023.262.0"
+ Version: "2023.335.0"
  Dependencies:
   CIDRAM Core: "^2"
  Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat"
@@ -928,13 +928,13 @@ l10n/zh-TW:
    - "lang/lang.zh-tw.fe.yaml"
    - "lang/lang.zh-tw.yaml"
   Checksum:
-   - "ecd032035ce0ae7f61a2593bac0a75e9870b35dcd7600e1aa3bd05f0731784ce:55205"
+   - "1cd326d89e0429a59e9025bc900a7458a8c9724752e7453d705abcff15ee58b5:55071"
    - "26372f8b022655fa7046096d6ba5f8d1baed2572ea80373f6dc98bc91162ebee:5124"
  Reannotate: "components.dat"
 l10n/zh:
  Name: "L10N: 中文（简体）"
  Extended Description: "中文（简体）语言数据"
- Version: "2023.262.0"
+ Version: "2023.335.0"
  Dependencies:
   CIDRAM Core: "^2"
  Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat"
@@ -947,6 +947,6 @@ l10n/zh:
    - "lang/lang.zh.fe.yaml"
    - "lang/lang.zh.yaml"
   Checksum:
-   - "57a162ba68021c990865c2bc975f4551d6fc20d09048d65e0d796e969c28e8c8:55202"
+   - "e4441f8ee18cc661d1e11d09179b70eb9860c44ba7a489f5e0e5bac8cd5b4b18:55068"
    - "d8bc342c6bd893865e9ee135bf18b7c54e7e5d6e73829744d9ef943d9c3d9bf2:5120"
  Reannotate: "components.dat"

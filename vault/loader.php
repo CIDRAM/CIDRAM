@@ -8,13 +8,13 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2022.05.18).
+ * This file: The loader (last modified: 2023.12.01).
  */
 
 /** Blocks direct access (must be accessed through a hook instead). */
 if (
     !isset($_SERVER['SCRIPT_FILENAME']) ||
-    str_replace("\\", '/', strtolower(realpath($_SERVER['SCRIPT_FILENAME']))) === str_replace("\\", '/', strtolower(__FILE__))
+    str_replace('\\', '/', strtolower(realpath($_SERVER['SCRIPT_FILENAME']))) === str_replace('\\', '/', strtolower(__FILE__))
 ) {
     header('HTTP/1.0 403 Forbidden');
     header('HTTP/1.1 403 Forbidden');
@@ -30,7 +30,7 @@ if (!version_compare(PHP_VERSION, '7.2.0', '>=')) {
 
 /** CIDRAM class autoloader. */
 spl_autoload_register(function ($Class) {
-    $Path = preg_split('~[\\\/]~', $Class, -1, PREG_SPLIT_NO_EMPTY);
+    $Path = preg_split('~[\\\\/]~', $Class, -1, PREG_SPLIT_NO_EMPTY);
     if (count($Path) > 3) {
         $Path = [$Path[0], $Path[1], array_pop($Path)];
     }

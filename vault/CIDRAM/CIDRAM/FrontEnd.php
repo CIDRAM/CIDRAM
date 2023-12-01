@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.11.26).
+ * This file: The CIDRAM front-end (last modified: 2023.12.01).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1658,7 +1658,7 @@ class FrontEnd extends Core
                                 $ThisDir['FieldOut'] .= $ReqsLookupCache[$DirValue['Requirement']];
                                 continue;
                             }
-                            if (substr($DirValue['Requirement'], 0, 1) === "\\") {
+                            if (substr($DirValue['Requirement'], 0, 1) === '\\') {
                                 $ReqsLookupCache[$DirValue['Requirement']] = '<br /><span class="txtGn">✔️ ' . sprintf(
                                     $this->L10N->getString('label.%s is available'),
                                     $DirValue['Friendly']
@@ -3062,7 +3062,7 @@ class FrontEnd extends Core
             }
 
             /** Set vault path for doughnut display. */
-            $this->FE['VaultPath'] = str_replace("\\", '/', $this->Vault) . '*';
+            $this->FE['VaultPath'] = str_replace('\\', '/', $this->Vault) . '*';
 
             /** Prepare components metadata working array. */
             $this->Components = ['Files' => [], 'Components' => [], 'ComponentFiles' => [], 'Names' => []];
@@ -4072,7 +4072,7 @@ class FrontEnd extends Core
                             unset($this->CIDRAM['RunName'], $this->CIDRAM['RunError'], $this->CIDRAM['RunErrorCounts'], $this->CIDRAM['RunErrors']);
                         }
                     } elseif ($this->BlockInfo['SignatureCount']) {
-                        $this->BlockInfo['WhyReason'] = preg_replace('~(?<=</span>\),|]\),)( )(?=[\dA-Za-z])~', '<br />', $this->BlockInfo['WhyReason']);
+                        $this->BlockInfo['WhyReason'] = preg_replace('~(?<=</span>\\),|]\\),)( )(?=[\dA-Za-z])~', '<br />', $this->BlockInfo['WhyReason']);
                         $this->CIDRAM['ThisIP']['YesNo'] = $this->L10N->getString('field.Blocked') . $this->L10N->getString('pair_separator') . $this->L10N->getString('response._Yes') . ' – ' . $this->BlockInfo['WhyReason'];
                         $this->CIDRAM['ThisIP']['StatClass'] = 'txtRd';
                         if (

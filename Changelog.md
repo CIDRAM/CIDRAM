@@ -352,3 +352,7 @@
 [2023.11.27; Bug-fix; Maikuolan]: The isSensitive method would sometimes fail to correctly identify regular expressions; Fixed.
 
 [2023.11.27; Maikuolan]: Added a new option for the usemode configuration directives: To offer CAPTCHAs only when not blocked, at sensitive page requests.
+
+### v3.5.0
+
+[2023.12.01; Maikuolan]: Improve escaping.

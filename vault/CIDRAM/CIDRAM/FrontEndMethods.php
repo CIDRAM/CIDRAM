@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2023.11.16).
+ * This file: General methods used by the front-end (last modified: 2023.12.01).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -51,7 +51,7 @@ trait FrontEndMethods
         foreach ($List as $Item => $List) {
             $Key++;
             $ThisName = substr($Item, $Offset);
-            if (preg_match('~^(?:/\.\.|./\.|\.{3})$~', str_replace("\\", '/', substr($Item, -3)))) {
+            if (preg_match('~^(?:/\.\.|./\.|\.{3})$~', str_replace('\\', '/', substr($Item, -3)))) {
                 continue;
             }
             $Arr[$Key] = ['Filename' => $this->canonical($ThisName), 'CanEdit' => false];
@@ -163,10 +163,10 @@ trait FrontEndMethods
      */
     private function pathSecurityCheck(string $Path): bool
     {
-        $Path = str_replace("\\", '/', $Path);
+        $Path = str_replace('\\', '/', $Path);
         if (
             preg_match('~(?://|[^!\d\w\._-]$)~i', $Path) ||
-            preg_match('~^(?:/\.\.|./\.|\.{3})$~', str_replace("\\", '/', substr($Path, -3)))
+            preg_match('~^(?:/\.\.|./\.|\.{3})$~', str_replace('\\', '/', substr($Path, -3)))
         ) {
             return false;
         }

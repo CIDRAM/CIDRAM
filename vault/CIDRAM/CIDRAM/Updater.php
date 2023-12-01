@@ -460,7 +460,7 @@ trait Updater
     {
         return !preg_match(
             '~(?://|(?<![\da-z])\.\.(?![\da-z])|/\.(?![\da-z])|(?<![\da-z])\./|[\x01-\x1F\[-^`?*$])~i',
-            str_replace("\\", '/', $Path)
+            str_replace('\\', '/', $Path)
         );
     }
 

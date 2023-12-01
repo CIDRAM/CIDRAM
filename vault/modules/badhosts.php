@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bad hosts blocker module (last modified: 2023.09.15).
+ * This file: Bad hosts blocker module (last modified: 2023.12.01).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -48,8 +48,8 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     }
 
     /** Signatures start here. */
-    $HN = preg_replace('/\s/', '', str_replace("\\", '/', strtolower(urldecode($this->CIDRAM['Hostname']))));
-    $UA = str_replace("\\", '/', strtolower(urldecode($this->BlockInfo['UA'])));
+    $HN = preg_replace('/\s/', '', str_replace('\\', '/', strtolower(urldecode($this->CIDRAM['Hostname']))));
+    $UA = str_replace('\\', '/', strtolower(urldecode($this->BlockInfo['UA'])));
     $UANoSpace = preg_replace('/\s/', '', $UA);
 
     $this->trigger(preg_match(

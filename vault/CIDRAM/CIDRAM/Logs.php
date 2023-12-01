@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used by the logs page (last modified: 2023.11.20).
+ * This file: Methods used by the logs page (last modified: 2023.12.01).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -28,7 +28,7 @@ trait Logs
         $Arr = [];
         $List = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($Base), \RecursiveIteratorIterator::SELF_FIRST);
         foreach ($List as $Item => $List) {
-            $ThisName = str_replace("\\", '/', substr($Item, strlen($Base)));
+            $ThisName = str_replace('\\', '/', substr($Item, strlen($Base)));
             $Normalised = $ThisName;
             if (!is_file($Item) || !is_readable($Item) || is_dir($Item) || !$this->isLogFile($ThisName, $Normalised)) {
                 continue;
@@ -142,7 +142,7 @@ trait Logs
             }
 
             /** Add signature section name search links. */
-            if (preg_match_all('~\("([^()"]+)", L~', $Section, $Parts) && count($Parts[1])) {
+            if (preg_match_all('~\\("([^()"]+)", L~', $Section, $Parts) && count($Parts[1])) {
                 $Parts[1] = array_unique($Parts[1]);
                 foreach ($Parts[1] as $ThisPart) {
                     $Section = str_replace(
@@ -267,7 +267,7 @@ trait Logs
                         '<span onclick="javascript:{document.getElementById(\'ipTestFormInput\').value=\'' . $Entry . '\';document.getElementById(\'ipTestForm\').submit()}" title="' . $IPTestingLabel . '" class="translateIcon navicon test"></span>' : '';
                     $Entry .= ' ' . $IPSVGs . '<a href="' . $this->paginationRemoveFrom($BlockLink) . '&search=' . str_replace('=', '_', base64_encode($Entry)) . '">»</a>';
                 }
-                preg_match_all('~\("([^()"]+)", L~', $Entry, $Parts);
+                preg_match_all('~\\("([^()"]+)", L~', $Entry, $Parts);
                 if (count($Parts[1])) {
                     foreach ($Parts[1] as $ThisPart) {
                         $Entry = str_replace(

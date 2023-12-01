@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2023.11.10).
+ * This file: Optional security extras module (last modified: 2023.12.01).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -29,7 +29,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     $this->trigger(count($_REQUEST) >= 500, 'Hack attempt', 'Too many request variables sent!'); // 2017.01.01
 
     /** Needed for some bypasses specific to WordPress (detects whether we're running as a WordPress plugin). */
-    $is_WP_plugin = (defined('ABSPATH') || strtolower(str_replace("\\", '/', substr(__DIR__, -31))) === 'wp-content/plugins/cidram/vault');
+    $is_WP_plugin = (defined('ABSPATH') || strtolower(str_replace('\\', '/', substr(__DIR__, -31))) === 'wp-content/plugins/cidram/vault');
 
     /** If enabled, block empty user agents. */
     if ($this->CIDRAM['ExtrasHonoured']['empty_ua']) {
@@ -41,7 +41,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
      * Please report all false positives to https://github.com/CIDRAM/CIDRAM/issues
      */
     if ($this->CIDRAM['ExtrasHonoured']['ruri'] && $this->BlockInfo['rURI']) {
-        $LCNrURI = str_replace("\\", '/', strtolower($this->BlockInfo['rURI']));
+        $LCNrURI = str_replace('\\', '/', strtolower($this->BlockInfo['rURI']));
 
         /** Directory traversal protection. */
         $this->trigger(preg_match('~(?:/|%5[cf])\.{2,}(?:/|%5[cf])~i', $LCNrURI), 'Traversal attack'); // 2017.01.13
@@ -107,7 +107,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             'perl\.alfa|php(?:1|_niu_\d+)|(?:plugins|themes)/(?:ccx|ioptimization|yyobang)|poison|priv8|pzaiihfi|' .
             'session91|sh[3e]llx?\d*|shrift|sidwso|silic|skipper(?:shell)?|sonarxleetxd|spammervip|src/util/php/(?:eval(?:-stdin)?|kill)|' .
             't62|themes/(?:finley/min|pridmag/db|universal-news/www)|tinymce/langs/about|tk(?:_dencode_\d+)?|(?:tmp|wp-content)/vuln|topxoh/(?:drsx|wdr)|' .
-            'unisibfu|upfile(?:_\(\d\))?|uploader_by_cloud7_agath|utchiha(?:_uploader)?|' .
+            'unisibfu|upfile(?:_\\(\d\\))?|uploader_by_cloud7_agath|utchiha(?:_uploader)?|' .
             'vzlateam|' .
             'w0rdpr3ssnew|walker-nva|webshell-[a-z\d]+|widgets-nva|widwsisw|wloymzuk|' .
             'wp[-_](?:2019|22|(?:admin|content|css(?:/colors)?|includes(?:/ixr|/customize|/pomo)?|js(?:/widgets)?|network)/(?:cong|dropdown|repeater|simple)|conflg|content/plugins/(?:contus-hd-flv-player/uploadvideo|dzs-zoomsounds/savepng)|filemanager|setups|sigunq|p)|' .
@@ -174,7 +174,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
      * Please report all false positives to https://github.com/CIDRAM/CIDRAM/issues
      */
     if ($this->CIDRAM['ExtrasHonoured']['query'] && !empty($this->BlockInfo['Query'])) {
-        $Query = str_replace("\\", '/', strtolower(urldecode($this->BlockInfo['Query'])));
+        $Query = str_replace('\\', '/', strtolower(urldecode($this->BlockInfo['Query'])));
         $QueryNoSpace = preg_replace('/\s/', '', $Query);
 
         $this->trigger(!$is_WP_plugin && preg_match(
@@ -221,7 +221,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         $this->trigger(substr($this->BlockInfo['Query'], -5) === '%0000', 'Null truncation attempt'); // 2016.12.31
 
         $this->trigger(preg_match('/%(?:20\'|25[01u]|[46]1%[46]e%[46]4)/', $this->BlockInfo['Query']), 'Hack attempt'); // 2017.01.05
-        $this->trigger(preg_match('/&arrs[12]\[\]=/', $QueryNoSpace), 'Hack attempt'); // 2017.02.25
+        $this->trigger(preg_match('/&arrs[12]\\[\\]=/', $QueryNoSpace), 'Hack attempt'); // 2017.02.25
         $this->trigger(preg_match('/p(?:ath|ull)\[?\]/', $QueryNoSpace), 'Hack attempt'); // 2017.01.06
         $this->trigger(preg_match('/user_login,\w{4},user_(?:pass|email|activation_key)/', $QueryNoSpace), 'WP hack attempt'); // 2017.02.18
         $this->trigger(preg_match('/\'%2[05]/', $this->BlockInfo['Query']), 'Hack attempt'); // 2017.01.05
@@ -277,7 +277,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         $this->trigger(strpos($this->BlockInfo['Query'], ',0x') !== false, 'Bad query'); // 2017.02.25
         $this->trigger(strpos($this->BlockInfo['Query'], ',\'\',') !== false, 'Bad query'); // 2017.02.25
 
-        $this->trigger(preg_match('/(?<![a-z])id=.*(?:benchmark\(|id[xy]=|sleep\()/', $QueryNoSpace), 'Query SQLi'); // 2017.03.01 mod 2023.11.10
+        $this->trigger(preg_match('/(?<![a-z])id=.*(?:benchmark\\(|id[xy]=|sleep\\()/', $QueryNoSpace), 'Query SQLi'); // 2017.03.01 mod 2023.11.10
         $this->trigger(preg_match(
             '~(?:from|union|where).*select|then.*else|(?:o[nr]|where).*isnull|(?:inner|left|outer|right)join~',
             $QueryNoSpace
@@ -321,7 +321,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     if ($this->CIDRAM['ExtrasHonoured']['raw'] && $RawInput) {
         $RawInputSafe = strtolower(preg_replace('/[\s\x00-\x1f\x7f-\xff]/', '', $RawInput));
 
-        $this->trigger(preg_match('/charcode\(88,83,83\)/', $RawInputSafe), 'Hack attempt'); // 2017.03.01
+        $this->trigger(preg_match('/charcode\\(88,83,83\\)/', $RawInputSafe), 'Hack attempt'); // 2017.03.01
         $this->trigger((
             strpos($RawInputSafe, '<?xml') !== false &&
             strpos($RawInputSafe, '<!doctype') !== false &&

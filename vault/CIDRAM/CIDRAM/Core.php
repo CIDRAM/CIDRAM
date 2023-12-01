@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2023.11.27).
+ * This file: The CIDRAM core (last modified: 2023.12.01).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1079,7 +1079,7 @@ class Core
                     $Lookup
                 );
             }
-            $Lookup = strrev(preg_replace(['/\:/', '/(.)/'], ['', "\\1\1"], $Lookup)) . "\3ip6\4arpa\0\0\x0c\0\1";
+            $Lookup = strrev(preg_replace(['/:/', '/(.)/'], ['', "\\1\1"], $Lookup)) . "\3ip6\4arpa\0\0\x0c\0\1";
         }
 
         /** The IP address is.. wrong. Let's exit the method. */
@@ -1788,7 +1788,7 @@ class Core
         $Restrictions = strlen(ini_get('open_basedir')) > 0;
 
         /** Split path into steps. */
-        $Steps = preg_split('~[\\\/]~', $Path, -1, PREG_SPLIT_NO_EMPTY);
+        $Steps = preg_split('~[\\\\/]~', $Path, -1, PREG_SPLIT_NO_EMPTY);
 
         /** Separate file from path. */
         $File = $PointsToFile ? array_pop($Steps) : '';
@@ -1796,7 +1796,7 @@ class Core
         /** Build directories. */
         foreach ($Steps as $Step) {
             if (!isset($Rebuilt)) {
-                $Rebuilt = preg_match('~^[\\\/]~', $Path) ? DIRECTORY_SEPARATOR . $Step : $Step;
+                $Rebuilt = preg_match('~^[\\\\/]~', $Path) ? DIRECTORY_SEPARATOR . $Step : $Step;
             } else {
                 $Rebuilt .= DIRECTORY_SEPARATOR . $Step;
             }
@@ -1846,8 +1846,8 @@ class Core
      */
     public function deleteDirectory(string $Dir): void
     {
-        while (strrpos($Dir, '/') !== false || strrpos($Dir, "\\") !== false) {
-            $Separator = (strrpos($Dir, '/') !== false) ? '/' : "\\";
+        while (strrpos($Dir, '/') !== false || strrpos($Dir, '\\') !== false) {
+            $Separator = (strrpos($Dir, '/') !== false) ? '/' : '\\';
             $Dir = substr($Dir, 0, strrpos($Dir, $Separator));
             if (!is_dir($this->Vault . $Dir) || !$this->isDirEmpty($this->Vault . $Dir)) {
                 break;
@@ -1866,22 +1866,22 @@ class Core
     public function buildLogPattern(string $Str, bool $GZ = false): string
     {
         return '~^' . preg_replace(
-            ['~\\\{(?:d|m|h|i|s)\\\}~i', '~\\\{(?:dd|mm|yy|hh|ii|ss)\\\}~i', '~\\\{yyyy\\\}~i', '~\\\{(?:Day|Mon)\\\}~i', '~\\\{tz\\\}~i', '~\\\{t\\\:z\\\}~i'],
+            ['~\\{(?:d|m|h|i|s)\\}~i', '~\\{(?:dd|mm|yy|hh|ii|ss)\\}~i', '~\\{yyyy\\}~i', '~\\{(?:Day|Mon)\\}~i', '~\\{tz\\}~i', '~\\{t:z\\}~i'],
             ['\d{1,2}', '\d{2}', '\d{4}', '\w{3}', '.{1,2}\d{4}', '.{1,2}\d{2}:\d{2}'],
             preg_replace([
-                '~\\\{yyyy\\\}~i',
-                '~\\\{yy\\\}~i',
-                '~\\\{mm\\\}~i',
-                '~\\\{m\\\}~i',
-                '~\\\{dd\\\}~i',
-                '~\\\{d\\\}~i',
-                '~\\\{hh\\\}~i',
-                '~\\\{h\\\}~i',
-                '~\\\{ii\\\}~i',
-                '~\\\{i\\\}~i',
-                '~\\\{ss\\\}~i',
-                '~\\\{s\\\}~i',
-                '~\\\{Mon\\\}~i'
+                '~\\\\{yyyy\\\\}~i',
+                '~\\\\{yy\\\\}~i',
+                '~\\\\{mm\\\\}~i',
+                '~\\\\{m\\\\}~i',
+                '~\\\\{dd\\\\}~i',
+                '~\\\\{d\\\\}~i',
+                '~\\\\{hh\\\\}~i',
+                '~\\\\{h\\\\}~i',
+                '~\\\\{ii\\\\}~i',
+                '~\\\\{i\\\\}~i',
+                '~\\\\{ss\\\\}~i',
+                '~\\\\{s\\\\}~i',
+                '~\\\\{Mon\\\\}~i'
             ], [
                 '(?<yyyy>\d{4})',
                 '(?<yy>\d{2})',
@@ -1896,7 +1896,7 @@ class Core
                 '(?<ss>\d{2})',
                 '(?<s>\d{1,2})',
                 '(?<Mon>\w{3})'
-            ], preg_quote(str_replace("\\", '/', $Str)), 1)
+            ], preg_quote(str_replace('\\', '/', $Str)), 1)
         ) . ($GZ ? '(?:\.gz)?' : '') . '$~i';
     }
 
@@ -1950,7 +1950,7 @@ class Core
         $Offset = strlen($this->Vault);
         $List = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($this->Vault), \RecursiveIteratorIterator::SELF_FIRST);
         foreach ($List as $Item => $List) {
-            $ItemFixed = str_replace("\\", '/', substr($Item, $Offset));
+            $ItemFixed = str_replace('\\', '/', substr($Item, $Offset));
             if ($ItemFixed && preg_match($Pattern, $ItemFixed) && is_readable($Item)) {
                 $Arr[$ItemFixed] = filemtime($Item);
             }
@@ -2732,7 +2732,7 @@ class Core
             $VaultLen = strlen($this->Vault);
             if (
                 strlen($errfile) > $VaultLen &&
-                str_replace("\\", '/', substr($errfile, 0, $VaultLen)) === str_replace("\\", '/', $this->Vault)
+                str_replace('\\', '/', substr($errfile, 0, $VaultLen)) === str_replace('\\', '/', $this->Vault)
             ) {
                 $errfile = substr($errfile, $VaultLen);
             }
@@ -3084,7 +3084,7 @@ class Core
      */
     public function canonical(string $Path): string
     {
-        $Path = str_replace("\\", '/', $Path);
+        $Path = str_replace('\\', '/', $Path);
         while (preg_match('~/[^/]+/\.\./|/\./|/{2,}~', $Path)) {
             $Path = preg_replace('~/[^/]+/\.\./|/\./|/{2,}~', '/', $Path);
         }

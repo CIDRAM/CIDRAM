@@ -5281,5 +5281,5 @@ $CIDRAM['arrayReplaceKeys'] = function (array $Arr, callable $Perform): array {
  * @return string Escaped string.
  */
 $CIDRAM['escapeJsInHTML'] = function (string $In): string {
-    return str_replace(['"', '<', '>'], ['&#34;', '&lt;', '&gt;'], addslashes($In));
+    return str_replace(['"', '<', '>', '\\\\n'], ['&#34;', '&lt;', '&gt;', '\\n'], addslashes($In));
 };

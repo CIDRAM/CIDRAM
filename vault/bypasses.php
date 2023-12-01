@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Default signature bypasses (last modified: 2023.04.10).
+ * This file: Default signature bypasses (last modified: 2023.12.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -287,7 +287,7 @@ $CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [], $Fa
          */
         if (
             $CIDRAM['Request']->inCsv('WordPress REST API', $CIDRAM['Config']['bypasses']['used']) &&
-            (defined('ABSPATH') || strtolower(str_replace("\\", '/', substr(__DIR__, -31))) === 'wp-content/plugins/cidram/vault')
+            (defined('ABSPATH') || strtolower(str_replace('\\', '/', substr(__DIR__, -31))) === 'wp-content/plugins/cidram/vault')
         ) {
             return;
         }

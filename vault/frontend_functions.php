@@ -334,7 +334,7 @@ $CIDRAM['FileManager-RecursiveList'] = function ($Base) use (&$CIDRAM) {
     foreach ($List as $Item => $List) {
         $Key++;
         $ThisName = substr($Item, $Offset);
-        if (preg_match('~^(?:/\.\.|./\.|\.{3})$~', str_replace("\\", '/', substr($Item, -3)))) {
+        if (preg_match('~^(?:/\.\.|./\.|\.{3})$~', str_replace('\\', '/', substr($Item, -3)))) {
             continue;
         }
         $Arr[$Key] = ['Filename' => $ThisName, 'CanEdit' => false];
@@ -353,7 +353,7 @@ $CIDRAM['FileManager-RecursiveList'] = function ($Base) use (&$CIDRAM) {
             }
             if (isset($CIDRAM['Components']['Components'])) {
                 $Component = $CIDRAM['L10N']->getString('field_filetype_unknown');
-                $ThisNameFixed = str_replace("\\", '/', $ThisName);
+                $ThisNameFixed = str_replace('\\', '/', $ThisName);
                 if (isset($CIDRAM['Components']['Files'][$ThisNameFixed])) {
                     if (!empty($CIDRAM['Components']['Names'][$CIDRAM['Components']['Files'][$ThisNameFixed]])) {
                         $Component = $CIDRAM['Components']['Names'][$CIDRAM['Components']['Files'][$ThisNameFixed]];
@@ -472,10 +472,10 @@ $CIDRAM['FetchComponentsLists'] = function ($Base, array &$Arr) use (&$CIDRAM) {
  *      are detected, and true otherwise.
  */
 $CIDRAM['FileManager-PathSecurityCheck'] = function ($Path) {
-    $Path = str_replace("\\", '/', $Path);
+    $Path = str_replace('\\', '/', $Path);
     if (
         preg_match('~(?://|[^!\d\w\._-]$)~i', $Path) ||
-        preg_match('~^(?:/\.\.|./\.|\.{3})$~', str_replace("\\", '/', substr($Path, -3)))
+        preg_match('~^(?:/\.\.|./\.|\.{3})$~', str_replace('\\', '/', substr($Path, -3)))
     ) {
         return false;
     }
@@ -501,7 +501,7 @@ $CIDRAM['Logs-RecursiveList'] = function ($Base, $Order = 'ascending') use (&$CI
     $Arr = [];
     $List = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($Base, \RecursiveDirectoryIterator::FOLLOW_SYMLINKS), \RecursiveIteratorIterator::SELF_FIRST);
     foreach ($List as $Item => $List) {
-        $ThisName = str_replace("\\", '/', substr($Item, strlen($Base)));
+        $ThisName = str_replace('\\', '/', substr($Item, strlen($Base)));
         $Normalised = $ThisName;
         if (!is_file($Item) || !is_readable($Item) || is_dir($Item) || !$CIDRAM['FileManager-IsLogFile']($ThisName, $Normalised)) {
             continue;
@@ -1153,7 +1153,7 @@ $CIDRAM['Formatter'] = function (&$In, $BlockLink = '', $Current = '', $FieldSep
                 $Section = str_replace("\n" . $ThisPart . "<br />\n", "\n<span class=\"s\">" . $ThisPart . "</span><br />\n", $Section);
             }
         }
-        preg_match_all('~\("([^()"]+)", L~', $Section, $Parts);
+        preg_match_all('~\\("([^()"]+)", L~', $Section, $Parts);
         if (count($Parts[1])) {
             $Parts[1] = array_unique($Parts[1]);
             foreach ($Parts[1] as $ThisPart) {
@@ -1272,7 +1272,7 @@ $CIDRAM['Tally'] = function ($In, $BlockLink, array $Exclusions = []) use (&$CID
             if (!(substr($Entry, 0, 1) === '[' && substr($Entry, 3, 1) === ']')) {
                 $Entry .= ' <a href="' . $CIDRAM['PaginationRemoveFrom']($BlockLink) . '&search=' . str_replace('=', '_', base64_encode($Entry)) . '">»</a>';
             }
-            preg_match_all('~\("([^()"]+)", L~', $Entry, $Parts);
+            preg_match_all('~\\("([^()"]+)", L~', $Entry, $Parts);
             if (count($Parts[1])) {
                 foreach ($Parts[1] as $ThisPart) {
                     $Entry = str_replace(
@@ -1497,7 +1497,7 @@ $CIDRAM['FilterSwitch'] = function (array $Switches, $Selector, &$StateModified,
 $CIDRAM['Traverse'] = function ($Path) {
     return !preg_match(
         '~(?://|(?<![\da-z])\.\.(?![\da-z])|/\.(?![\da-z])|(?<![\da-z])\./|[\x01-\x1F\[-^`?*$])~i',
-        str_replace("\\", '/', $Path)
+        str_replace('\\', '/', $Path)
     );
 };
 

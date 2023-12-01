@@ -209,6 +209,7 @@ config_supplementary_cache_options_pdo_dsn: "Giá trị DSN PDO. Mặc định =
 config_supplementary_cache_options_pdo_password: "Mật khẩu PDO."
 config_supplementary_cache_options_pdo_username: "Tên người dùng PDO."
 config_supplementary_cache_options_prefix: "Giá trị được chỉ định ở đây sẽ được thêm vào trước tất cả các khóa mục nhập bộ nhớ cache. Trống theo mặc định. Khi nhiều bản cài đặt tồn tại trên cùng một máy chủ, điều này có thể hữu ích để giữ các bộ nhớ cache của chúng tách biệt với nhau."
+config_supplementary_cache_options_redis_database_number: "Số cơ sở dữ liệu Redis. Mặc định = 0. Lưu ý: Không thể sử dụng các giá trị khác 0 với Redis Cluster."
 config_supplementary_cache_options_redis_host: "Giá trị máy chủ Redis. Mặc định = "localhost"."
 config_supplementary_cache_options_redis_port: "Giá trị cổng Redis. Mặc định = "6379"."
 config_supplementary_cache_options_redis_timeout: "Giá trị thời gian chờ Redis. Mặc định = "2.5"."

@@ -1,6 +1,6 @@
 <?php
 /**
- * A simple, unified cache handler (last modified: 2023.11.22).
+ * A simple, unified cache handler (last modified: 2023.12.01).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -61,6 +61,12 @@ class Cache
      * @var int|float The timeout for Redis to try using.
      */
     public $RedisTimeout = 2.5;
+
+    /**
+     * @var int Which database number Redis should select.
+     * @link https://redis.io/commands/select/
+     */
+    public $RedisDatabaseNumber = 0;
 
     /**
      * @var string The DSN to use for PDO connections.
@@ -281,6 +287,12 @@ class Cache
                 $this->WorkingData = new \Redis();
                 if ($this->WorkingData->connect($this->RedisHost, $this->RedisPort, $this->RedisTimeout)) {
                     $this->Using = 'Redis';
+                    if ($this->RedisDatabaseNumber !== 0) {
+                        $this->WorkingData->select($this->RedisDatabaseNumber);
+                        if ($this->WorkingData->getDbNum() !== $this->RedisDatabaseNumber) {
+                            return false;
+                        }
+                    }
                     return true;
                 }
                 $this->WorkingData = null;

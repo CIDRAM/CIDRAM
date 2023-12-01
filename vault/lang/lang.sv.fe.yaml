@@ -209,6 +209,7 @@ config_supplementary_cache_options_pdo_dsn: "PDO DSN-värde. Standard = "mysql:d
 config_supplementary_cache_options_pdo_password: "PDO lösenord."
 config_supplementary_cache_options_pdo_username: "PDO användarnamn."
 config_supplementary_cache_options_prefix: "Värdet som anges här kommer att läggas till i början av nycklarna för alla cacheposter. Tom som standard. När flera installationer finns på samma server, detta kan vara användbart för att hålla sina cachar åtskilda från varandra."
+config_supplementary_cache_options_redis_database_number: "Redis databasnummer. Standard = 0. Notera: Kan inte använda andra värden än 0 med Redis Cluster."
 config_supplementary_cache_options_redis_host: "Redis värdvärde. Standard = "localhost"."
 config_supplementary_cache_options_redis_port: "Redis portvärde. Standard = "6379"."
 config_supplementary_cache_options_redis_timeout: "Redis timeout-värde. Standard = "2.5"."

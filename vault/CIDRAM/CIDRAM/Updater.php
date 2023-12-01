@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods for updating CIDRAM components (last modified: 2023.11.15).
+ * This file: Methods for updating CIDRAM components (last modified: 2023.12.01).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1343,7 +1343,7 @@ trait Updater
             $Dependency = str_replace('{lang}', $this->Configuration['general']['lang'], $Dependency);
             if ($Constraints === 'Latest') {
                 if (isset($this->Components['Available Versions'][$Dependency])) {
-                    $Constraints = '>=' . $this->Components['Available Versions'][$Dependency];
+                    $Constraints = '^' . $this->Components['Available Versions'][$Dependency];
                     $ThisComponent['Magic']['Dependencies'][$Dependency] = $Constraints;
                 }
             }

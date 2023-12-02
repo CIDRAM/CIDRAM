@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.12.01).
+ * This file: The CIDRAM front-end (last modified: 2023.12.02).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -451,24 +451,22 @@ class FrontEnd extends Core
                                         $this->FE['LP']['TwoFactorState']['Name'] = trim($_POST['username']);
                                         $this->FE['LP']['TwoFactorState']['Address'] = $this->FE['LP']['TwoFactorState']['Name'];
                                     }
-                                    $this->Events->fireEvent(
-                                        'sendEmail',
-                                        '',
-                                        [[
-                                            'Name' => $this->FE['LP']['TwoFactorState']['Name'],
-                                            'Address' => $this->FE['LP']['TwoFactorState']['Address']
-                                        ]],
+                                    $EventData = [
+                                        [['Name' => $this->FE['LP']['TwoFactorState']['Name'], 'Address' => $this->FE['LP']['TwoFactorState']['Address']]],
                                         $this->FE['LP']['TwoFactorSubject'],
                                         $this->FE['LP']['TwoFactorState']['Template'],
-                                        strip_tags($this->FE['LP']['TwoFactorState']['Template'])
-                                    );
+                                        strip_tags($this->FE['LP']['TwoFactorState']['Template']),
+                                        ''
+                                    ];
+                                    $this->Events->fireEvent('sendEmail', '', ...$EventData);
+                                    unset($EventData);
                                     $this->FE['UserState'] = 2;
                                 } else {
                                     $this->FE['UserState'] = 1;
                                 }
 
                                 /** Need to set a cache item to correspond with the cookie value. */
-                                if ($this->FE['UserState'] === 1) {
+                                if ($this->FE['UserState'] === 1 || $this->FE['UserState'] === 2) {
                                     $this->Cache->setEntry($this->FE['Cookie'], $this->FE['ThisSession'], 604800);
                                 } else {
                                     $this->FE['Permissions'] = 0;

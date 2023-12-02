@@ -355,4 +355,6 @@
 
 ### v3.5.0
 
-[2023.12.01; Maikuolan]: Improved escaping. Added support for specifying a Redis database number to the supplementary cache options.
+[2023.12.01; Maikuolan]: Improved escaping. Added support for specifying a Redis database number to the supplementary cache options (#540).
+
+[2023.12.02; Bug-fix; Maikuolan]: Two-factor authentication found to be broken (not sure since exactly when, but probably since an earlier v3 release, as I was actively using it prior to that myself and confirm it had worked in the past at that time); Fixed.

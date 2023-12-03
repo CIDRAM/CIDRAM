@@ -11,7 +11,12 @@ Detailed version release guidelines for CIDRAM can be found at:
 === Changes made since last versioned release ===
 
 - [2023.12.01; Maikuolan]: Improved escaping. Added support for specifying a
-  Redis database number to the supplementary cache options.
+  Redis database number to the supplementary cache options (#540).
+
+- [2023.12.03; Bug-fix; Maikuolan]: When an installed component was outdated,
+  but the version constraints of the update's dependencies weren't met, the
+  update shouldn't be being included in the list of outdated components for
+  updating all at once, but was; Fixed.
 
 === Version/Release 2.14.2 ===
 PATCH RELEASE.

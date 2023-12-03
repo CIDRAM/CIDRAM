@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2023.12.01).
+ * This file: Front-end handler (last modified: 2023.12.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2138,20 +2138,20 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
                 '<' . $CIDRAM['Components']['ThisComponent']['Latest']
             )) {
                 $CIDRAM['Components']['ThisComponent']['Outdated'] = true;
-                $CIDRAM['Components']['Outdated'][] = $CIDRAM['Components']['Key'];
-                if ((
-                    !empty($CIDRAM['Components']['ThisComponent']['Used with']) &&
-                    $CIDRAM['Has']($CIDRAM['Components']['ThisComponent']['Used with'], ['ipv4', 'ipv6'])
-                ) || (
-                    !empty($CIDRAM['Components']['ThisComponent']['Extended Description']) &&
-                    strpos($CIDRAM['Components']['ThisComponent']['Extended Description'], 'signatures-&gt;ipv') !== false
-                )) {
-                    $CIDRAM['Components']['OutdatedSignatureFiles'][] = $CIDRAM['Components']['Key'];
-                }
                 $CIDRAM['Components']['ThisComponent']['RowClass'] = 'r';
                 $CIDRAM['Components']['ThisComponent']['StatClass'] = 'txtRd';
                 $CIDRAM['Components']['ThisComponent']['StatusOptions'] = $CIDRAM['L10N']->getString('response_updates_outdated');
                 if (!empty($CIDRAM['Components']['ThisComponent']['Remote All Constraints Met'])) {
+                    $CIDRAM['Components']['Outdated'][] = $CIDRAM['Components']['Key'];
+                    if ((
+                        !empty($CIDRAM['Components']['ThisComponent']['Used with']) &&
+                        $CIDRAM['Has']($CIDRAM['Components']['ThisComponent']['Used with'], ['ipv4', 'ipv6'])
+                    ) || (
+                        !empty($CIDRAM['Components']['ThisComponent']['Extended Description']) &&
+                        strpos($CIDRAM['Components']['ThisComponent']['Extended Description'], 'signatures-&gt;ipv') !== false
+                    )) {
+                        $CIDRAM['Components']['OutdatedSignatureFiles'][] = $CIDRAM['Components']['Key'];
+                    }
                     $CIDRAM['Components']['ThisComponent']['Options'] .=
                         '<option value="update-component">' . $CIDRAM['L10N']->getString('field_update') . '</option>';
                 }

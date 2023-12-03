@@ -72,6 +72,8 @@ CIDRAM Front-End:
   l10n/core/{lang}: ">=2023.262"
   l10n/frontend/{lang}: ">=2023.293"
  Changelog: "https://github.com/CIDRAM/CIDRAM/blob/v3/Changelog.md"
+ When Update Succeeds:
+  - "if {Components.Meta.CIDRAM Front-End.Version}<3.5.0-DEV+233360&&{Components.RemoteMeta.CIDRAM Front-End.Version}>=3.5.0-DEV+233360&&{Components.Meta.PHPMailer.Version}===6.9.1&&{Components.RemoteMeta.PHPMailer.Version}===6.9.1 then updatesHandlerRepair PHPMailer"
  Uninstallable: false
  Files:
   assets/frontend/default/_2fa.html:
@@ -647,7 +649,7 @@ l10n/core/en:
  Extended Description: "English localisation"
  Version: "2023.284.0"
  When Update Succeeds:
-  - "if {Components.Meta.l10n/core/en-US.Version}>0 then queue message The components l10n/core/en and l10n/core/en-US have been merged."
+  - "if {Components.Meta.l10n/core/en-US.Version}>0 then queue message <span dir="ltr" lang="en-AU">The components l10n/core/en and l10n/core/en-US have been merged.</span>"
   - "if {Components.Meta.l10n/core/en-US.Version}>0 then updatesHandlerUninstall l10n/core/en-US"
  Uninstallable: false
  Files:
@@ -763,7 +765,7 @@ l10n/core/pt:
  Extended Description: "Localização em português"
  Version: "2023.284.0"
  When Update Succeeds:
-  - "if {Components.Meta.l10n/core/pt-PT.Version}>0 then queue message Os componentes l10n/core/pt e l10n/core/pt-PT foram mesclados."
+  - "if {Components.Meta.l10n/core/pt-PT.Version}>0 then queue message <span dir="ltr" lang="pt-BR">Os componentes l10n/core/pt e l10n/core/pt-PT foram mesclados.</span>"
   - "if {Components.Meta.l10n/core/pt-PT.Version}>0 then updatesHandlerUninstall l10n/core/pt-PT"
  Files:
   l10n/core/pt.yml:
@@ -892,7 +894,7 @@ l10n/frontend/en:
  Extended Description: "English localisation"
  Version: "2023.335.0"
  When Update Succeeds:
-  - "if {Components.Meta.l10n/frontend/en-US.Version}>0 then queue message The components l10n/frontend/en and l10n/frontend/en-US have been merged."
+  - "if {Components.Meta.l10n/frontend/en-US.Version}>0 then queue message <span dir="ltr" lang="en-AU">The components l10n/frontend/en and l10n/frontend/en-US have been merged.</span>"
   - "if {Components.Meta.l10n/frontend/en-US.Version}>0 then updatesHandlerUninstall l10n/frontend/en-US"
  Uninstallable: false
  Files:
@@ -1008,7 +1010,7 @@ l10n/frontend/pt:
  Extended Description: "Localização em português"
  Version: "2023.335.0"
  When Update Succeeds:
-  - "if {Components.Meta.l10n/frontend/pt-PT.Version}>0 then queue message Os componentes l10n/frontend/pt e l10n/frontend/pt-PT foram mesclados."
+  - "if {Components.Meta.l10n/frontend/pt-PT.Version}>0 then queue message <span dir="ltr" lang="pt-BR">Os componentes l10n/frontend/pt e l10n/frontend/pt-PT foram mesclados.</span>"
   - "if {Components.Meta.l10n/frontend/pt-PT.Version}>0 then updatesHandlerUninstall l10n/frontend/pt-PT"
  Files:
   l10n/frontend/pt.yml:

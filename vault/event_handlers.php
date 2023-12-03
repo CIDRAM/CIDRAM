@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Event handlers file (last modified: 2023.09.18).
+ * This file: Event handlers file (last modified: 2023.12.03).
  */
 
 /**
@@ -218,8 +218,8 @@ $CIDRAM['Events']->addHandler('final', function () use (&$CIDRAM) {
 $CIDRAM['Events']->addHandler('writeToPHPMailerEventLog', function ($Data) use (&$CIDRAM) {
     /** Guard. */
     if (
-        $CIDRAM['Config']['PHPMailer']['event_log'] === '' ||
-        !($EventLog = $CIDRAM['BuildPath']($CIDRAM['Vault'] . $CIDRAM['Config']['PHPMailer']['event_log']))
+        $CIDRAM['Config']['PHPMailer']['EventLog'] === '' ||
+        !($EventLog = $CIDRAM['BuildPath']($CIDRAM['Vault'] . $CIDRAM['Config']['PHPMailer']['EventLog']))
     ) {
         return false;
     }

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.12.02).
+ * This file: The CIDRAM front-end (last modified: 2023.12.03).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -2025,14 +2025,14 @@ class FrontEnd extends Core
                         '<' . $this->Components['ThisComponent']['Latest']
                     )) {
                         $this->Components['ThisComponent']['Outdated'] = true;
-                        $this->Components['Outdated'][] = $Key;
-                        if ($this->Components['ThisComponent']['Has Signatures'] === true) {
-                            $this->Components['OutdatedSignatureFiles'][] = $Key;
-                        }
                         $this->Components['ThisComponent']['RowClass'] = 'r';
                         $this->Components['ThisComponent']['StatClass'] = 'txtRd';
                         $this->Components['ThisComponent']['StatusOptions'] = $this->L10N->getString('response.Outdated');
                         if (!empty($this->Components['ThisComponent']['Remote All Constraints Met'])) {
+                            $this->Components['Outdated'][] = $Key;
+                            if ($this->Components['ThisComponent']['Has Signatures'] === true) {
+                                $this->Components['OutdatedSignatureFiles'][] = $Key;
+                            }
                             $this->Components['ThisComponent']['Options'] .=
                                 '<option value="update-component">' . $this->L10N->getString('field.Update') . '</option>';
                         }

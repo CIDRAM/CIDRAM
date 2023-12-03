@@ -357,4 +357,6 @@
 
 [2023.12.01; Maikuolan]: Improved escaping. Added support for specifying a Redis database number to the supplementary cache options (#540).
 
-[2023.12.02; Bug-fix; Maikuolan]: Two-factor authentication found to be broken (not sure since exactly when, but probably since an earlier v3 release, as I was actively using it prior to that myself and confirm it had worked in the past at that time); Fixed.
+[2023.12.02; Bug-fix; Maikuolan]: Two-factor authentication found to be broken since v3.0.0-beta1; Fixed.
+
+[2023.12.03; Bug-fix; Maikuolan]: When an installed component was outdated, but the version constraints of the update's dependencies weren't met, the update shouldn't be being included in the list of outdated components for updating all at once, but was; Fixed.

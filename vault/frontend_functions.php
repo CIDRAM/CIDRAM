@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2023.12.01).
+ * This file: Front-end functions file (last modified: 2023.12.03).
  */
 
 /**
@@ -3077,7 +3077,7 @@ $CIDRAM['SendOutput'] = function () use (&$CIDRAM): string {
     } else {
         $Segments[] = 'WebFont';
     }
-    if (isset($CIDRAM['FE']['UserState']) && $CIDRAM['FE']['UserState'] === 1) {
+    if (isset($CIDRAM['FE']['UserState']) && ($CIDRAM['FE']['UserState'] === 1 || $CIDRAM['FE']['UserState'] === 2)) {
         $Labels[] = 'Logged In';
         $Segments[] = 'Logged Out';
     } else {

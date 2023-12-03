@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2023.12.01).
+ * This file: General methods used by the front-end (last modified: 2023.12.03).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -571,7 +571,7 @@ trait FrontEndMethods
         $Template = $this->FE['Template'];
         $Labels = [];
         $Segments = [];
-        if (isset($this->FE['UserState']) && $this->FE['UserState'] === 1) {
+        if (isset($this->FE['UserState']) && ($this->FE['UserState'] === 1 || $this->FE['UserState'] === 2)) {
             $Labels[] = 'Logged In';
             $Segments[] = 'Logged Out';
         } else {

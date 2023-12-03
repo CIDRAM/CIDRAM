@@ -359,4 +359,4 @@
 
 [2023.12.02; Bug-fix; Maikuolan]: Two-factor authentication found to be broken since v3.0.0-beta1; Fixed.
 
-[2023.12.03; Bug-fix; Maikuolan]: When an installed component was outdated, but the version constraints of the update's dependencies weren't met, the update shouldn't be being included in the list of outdated components for updating all at once, but was; Fixed.
+[2023.12.03; Bug-fixes; Maikuolan]: When an installed component was outdated, but the version constraints of the update's dependencies weren't met, the update shouldn't be being included in the list of outdated components for updating all at once, but was; Fixed. At the page for entering a 2FA code when logging into a 2FA-enabled account, no logout button was displayed, preventing the user from logging out easily, which may be needed in the event of not receiving any 2FA code; Fixed.

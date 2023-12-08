@@ -21,6 +21,13 @@ Detailed version release guidelines for CIDRAM can be found at:
   preventing the user from logging out easily, which may be needed in the event
   of not receiving any 2FA code; Fixed.
 
+- [2023.12.08; Bug-fix; Maikuolan]: Not escaping keys when reconstructing YAML
+  data could prevent successful reprocessing of those keys if said keys
+  contained any hashes or backslashes. The solution is to enforce escaping of
+  keys when such bytes are detected, regardless of how the property for quoting
+  keys is defined. Accordingly, that's been done, and a new method added for
+  that purpose (#547).
+
 === Version/Release 2.14.2 ===
 PATCH RELEASE.
 

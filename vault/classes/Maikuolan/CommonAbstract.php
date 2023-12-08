@@ -1,6 +1,6 @@
 <?php
 /**
- * Common abstract for the common classes package (last modified: 2023.10.12).
+ * Common abstract for the common classes package (last modified: 2023.12.01).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -20,7 +20,7 @@ abstract class CommonAbstract
      * @var string Common Classes Package tag/release version.
      * @link https://github.com/Maikuolan/Common/tags
      */
-    public const VERSION = '2.11.0';
+    public const VERSION = '2.12.0';
 
     /**
      * Traverse data path.
@@ -34,7 +34,7 @@ abstract class CommonAbstract
     public function dataTraverse(&$Data, $Path = [], bool $AllowNonScalar = false, bool $AllowMethodCalls = false)
     {
         if (!is_array($Path)) {
-            $Path = preg_split('~(?<!\\\)\.~', $Path) ?: [];
+            $Path = preg_split('~(?<!\\\\)\\.~', $Path) ?: [];
         }
         $Segment = array_shift($Path);
         if ($Segment === null || strlen($Segment) === 0) {
@@ -54,7 +54,7 @@ abstract class CommonAbstract
             }
         }
         if (is_string($Data)) {
-            if (preg_match('~^(?:trim|str(?:tolower|toupper|len))\(\)~i', $Segment)) {
+            if (preg_match('~^(?:trim|str(?:tolower|toupper|len))\\(\\)~i', $Segment)) {
                 $Segment = substr($Segment, 0, -2);
                 $Data = $Segment($Data);
             }

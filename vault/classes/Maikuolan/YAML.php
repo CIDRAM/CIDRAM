@@ -1,6 +1,6 @@
 <?php
 /**
- * YAML handler (last modified: 2023.11.22).
+ * YAML handler (last modified: 2023.12.08).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -275,7 +275,7 @@ class YAML
             $SoL = ($EoL === false) ? false : $EoL + 1;
 
             /** Strip comments and whitespace. */
-            if (!($ThisLine = preg_replace(['/(?<!\\\)#.*$/', '/\s+$/'], '', $ThisLine))) {
+            if (!($ThisLine = preg_replace(['/(?<!\\\\)#.*$/', '/\s+$/'], '', $ThisLine))) {
                 /** Line preservation for multiline and folded blocks. .*/
                 if (($this->MultiLine || $this->MultiLineFolded) && strlen($SendTo)) {
                     $SendTo .= "\n";
@@ -459,7 +459,7 @@ class YAML
     public function dataTraverse(&$Data, $Path = [], $AllowNonScalar = false)
     {
         if (!is_array($Path)) {
-            $Path = preg_split('~(?<!\\\)\.~', $Path) ?: [];
+            $Path = preg_split('~(?<!\\\\)\\.~', $Path) ?: [];
         }
         $Segment = array_shift($Path);
         if ($Segment === null || strlen($Segment) === 0) {
@@ -473,7 +473,7 @@ class YAML
             return $this->dataTraverse($Data->$Segment, $Path, $AllowNonScalar);
         }
         if (is_string($Data)) {
-            if (preg_match('~^(?:trim|str(?:tolower|toupper|len))\(\)~i', $Segment)) {
+            if (preg_match('~^(?:trim|str(?:tolower|toupper|len))\\(\\)~i', $Segment)) {
                 $Segment = substr($Segment, 0, -2);
                 $Data = $Segment($Data);
             }
@@ -755,7 +755,7 @@ class YAML
                     $Out .= ',';
                 }
                 if (!$Sequential) {
-                    $Out .= ($this->QuoteKeys ? $this->scalarToString($Key) : $Key) . ':';
+                    $Out .= ($this->QuoteKeys ? $this->scalarToString($Key) : $this->escapeKey($Key)) . ':';
                 }
                 if (is_array($Value)) {
                     $this->processInner($Value, $Out, $Depth + 1);
@@ -795,9 +795,9 @@ class YAML
             $ThisDepth = str_repeat($this->Indent, $Depth);
             if ($NullSet && !$Sequential) {
                 $Out .= $ThisDepth . '?';
-                $Value = $Key;
+                $Value = $this->escapeKey($Key);
             } else {
-                $Out .= $ThisDepth . ($Sequential ? '-' : ($this->QuoteKeys ? $this->scalarToString($Key) : $Key) . ':');
+                $Out .= $ThisDepth . ($Sequential ? '-' : ($this->QuoteKeys ? $this->scalarToString($Key) : $this->escapeKey($Key)) . ':');
             }
             if (is_array($Value)) {
                 if ($Depth < $this->FlowRebuildDepth - 1) {
@@ -855,12 +855,12 @@ class YAML
     private function escape($Value = '', $Newlines = true)
     {
         if ($this->Quotes === "'") {
-            return str_replace("'", "''", $Value);
+            return str_replace(['\\', '#', "'"], ['\\\\', '\#', "''"], $Value);
         }
         if ($this->Quotes !== '"') {
-            return $Value;
+            return str_replace(['\\', '#'], ['\\\\', '\#'], $Value);
         }
-        $Value = str_replace("\\", "\\\\", $Value);
+        $Value = str_replace('\\', '\\\\', $Value);
         if ($Newlines) {
             $Value = str_replace("\n", '\n', $Value);
         }
@@ -889,6 +889,23 @@ class YAML
             $Value = str_replace(['"', '/'], ['\"', '\/'], $Value);
         }
         return $Value;
+    }
+
+    /**
+     * Escape keys if necessary (or else there could be problems with hashes).
+     *
+     * @param string $Key The key to escape.
+     * @return string The escaped key.
+     */
+    private function escapeKey($Key = '')
+    {
+        if (!is_string($Key)) {
+            return '';
+        }
+        if (strpos($Key, '#') === false && strpos($Key, '\\') === false) {
+            return $Key;
+        }
+        return '"' . str_replace(['\\', '#'], ['\\\\', '\#'], $Key) . '"';
     }
 
     /**
@@ -921,7 +938,7 @@ class YAML
                 '~(?<!\\\\)\\\\((?:\\\\{2})*)_~',
                 '~(?<!\\\\)\\\\((?:\\\\{2})*)L~',
                 '~(?<!\\\\)\\\\((?:\\\\{2})*)P~'
-            ], ['#', "\0", "\7", "\x08", "\t", "\n", "\x0B", "\x0C", "\x0D", "\x1B", '"', '/', "\xC2\x85", "\xC2\xA0", "\xE2\x80\xA8", "\xE2\x80\xA9"], $Value);
+            ], ['\1#', "\\1\0", "\\1\7", "\\1\x08", "\\1\t", "\\1\n", "\\1\x0B", "\\1\x0C", "\\1\x0D", "\\1\x1B", '\1"', '\1/', "\\1\xC2\x85", "\\1\xC2\xA0", "\\1\xE2\x80\xA8", "\\1\xE2\x80\xA9"], $Value);
             $Value = preg_replace_callback('~(?<!\\\\)\\\\((?:\\\\{2})*)x([\dA-Fa-f]{2})~', function ($Captured) {
                 return ($Decoded = hex2bin($Captured[2])) === false ? $Captured[0] : $Captured[1] . $Decoded;
             }, $Value);
@@ -944,9 +961,9 @@ class YAML
             return $Value;
         }
         if ($Style === "'" || $Style === "\xe2\x80\x98" || $Style === "\x93") {
-            return str_replace("''", "'", $Value);
+            return str_replace(["''", '\#', '\\\\'], ["'", '#', '\\'], $Value);
         }
-        return $Value;
+        return str_replace(['\#', '\\\\'], ['#', '\\'], $Value);
     }
 
     /**

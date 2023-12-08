@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.12.03).
+ * This file: The CIDRAM front-end (last modified: 2023.12.08).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -4761,21 +4761,27 @@ class FrontEnd extends Core
                     unset($this->CIDRAM['AuxData'][$_POST['ruleName']][$Action]['But not if matches']);
                 }
 
+                $Success = false;
+
                 /** Reconstruct and update auxiliary rules data. */
                 if ($NewAuxData = $this->YAML->reconstruct($this->CIDRAM['AuxData'])) {
                     $Handle = fopen($this->Vault . 'auxiliary.yml', 'wb');
-                    fwrite($Handle, $NewAuxData);
-                    fclose($Handle);
+                    if (is_resource($Handle)) {
+                        if (fwrite($Handle, $NewAuxData) !== false) {
+                            $Success = true;
+                        }
+                        fclose($Handle);
+                    }
                 }
 
-                /** Cleanup. */
-                unset($NewAuxData, $ConstructInto, $Iteration, $AuxConditions, $Action);
-
                 /** Update state message. */
-                $this->FE['state_msg'] = sprintf(
+                $this->FE['state_msg'] = $Success ? sprintf(
                     $this->L10N->getString('response.New auxiliary rule, %s, created successfully'),
                     $_POST['ruleName']
-                ) . '<br />';
+                ) . '<br />' : $this->L10N->getString('response.Failed to update auxiliary rules') . '<br />';
+
+                /** Cleanup. */
+                unset($NewAuxData, $Success, $ConstructInto, $Iteration, $AuxConditions, $Action);
             }
 
             /** Prepare data for display. */
@@ -5034,12 +5040,17 @@ class FrontEnd extends Core
 
                 /** Reconstruct and update auxiliary rules data. */
                 if ($NewAuxArr = $this->YAML->reconstruct($NewAuxArr)) {
+                    $Success = false;
                     $Handle = fopen($this->Vault . 'auxiliary.yml', 'wb');
-                    fwrite($Handle, $NewAuxArr);
-                    fclose($Handle);
-                    $this->FE['state_msg'] = $this->L10N->getString('response.Auxiliary rules successfully updated') . '<br />';
+                    if (is_resource($Handle)) {
+                        if (fwrite($Handle, $NewAuxArr) !== false) {
+                            $Success = true;
+                        }
+                        fclose($Handle);
+                    }
+                    $this->FE['state_msg'] = $this->L10N->getString($Success ? 'response.Auxiliary rules successfully updated' : 'response.Failed to update auxiliary rules') . '<br />';
                 }
-                unset($ThisAuxData, $DataInner, $Iterant, $IterantInner, $NewAuxArr, $Priority);
+                unset($Success, $ThisAuxData, $DataInner, $Iterant, $IterantInner, $NewAuxArr, $Priority);
             }
 
             /** Process auxiliary rules. */

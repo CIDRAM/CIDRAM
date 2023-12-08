@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv4_isps.dat
 
-# Version: 2023.338.0
-# Last modified: 2023.12.05
+# Version: 2023.341.0
+# Last modified: 2023.12.08
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -20564,21 +20564,6 @@ Profile: Domestic ISP
 Tag: OpenNet ISP Cambodia
 
 
-# ASN 31514 ("OOO Trivon Networks").
-# Russian multiplay and domestic ISP. Port scans, hacking, and spam detected
-# from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 25.
-# Updated: 2023.11.17
-
-5.35.33.0/24 Deny Attacks
-5.35.34.70/32 Deny Attacks
-5.35.34.166/32 Deny Attacks
-5.35.34.199/32 Deny Attacks
-Origin: RU
-Profile: Domestic ISP
-Tag: OOO Trivon Networks
-
-
 # ASN 265291 ("MP NET").
 # Port scans, hacking, and spam detected from here.
 # Listing just the affected ranges/addresses only.
@@ -24835,16 +24820,13 @@ Tag: WiMAX
 # ASN 5391 ("Hrvatski Telekom d.d").
 # Croatian domestic ISP. Port scans, hacking, and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 171.
-# Updated: 2023.05.11
+# Stop Forum Spam (SFS) listings: 142.
+# Updated: 2023.12.08
 
-78.0.160.62/32 Deny Spam
-83.131.159.201/32 Deny Spam
-89.172.161.241/32 Deny Spam
-89.172.164.101/32 Deny Spam
-93.140.241.236/32 Deny Attacks
-93.140.244.60/32 Deny Spam
-93.142.240.69/32 Deny Spam
+31.217.15.191/32 Deny Spam
+93.140.5.9/32 Deny Attacks
+93.140.5.169/32 Deny Attacks
+93.143.58.174/32 Deny Spam
 Origin: HR
 Profile: Domestic ISP
 Tag: Hrvatski Telekom d.d

@@ -362,3 +362,5 @@
 [2023.12.03; Bug-fixes; Maikuolan]: When an installed component was outdated, but the version constraints of the update's dependencies weren't met, the update shouldn't be being included in the list of outdated components for updating all at once, but was; Fixed. At the page for entering a 2FA code when logging into a 2FA-enabled account, no logout button was displayed, preventing the user from logging out easily, which may be needed in the event of not receiving any 2FA code; Fixed.
 
 [2023.12.08; Maikuolan]: Improved resource guards for the auxiliary rules file.
+
+[2023.12.08; Bug-fix; Maikuolan]: Not escaping keys when reconstructing YAML data could prevent successful reprocessing of those keys if said keys contained any hashes or backslashes. The solution is to enforce escaping of keys when such bytes are detected, regardless of how the property for quoting keys is defined. Accordingly, that's been done, and a new method added for that purpose (#547).

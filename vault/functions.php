@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2023.12.01).
+ * This file: Functions file (last modified: 2023.12.12).
  */
 
 /**
@@ -276,7 +276,7 @@ $CIDRAM['CheckFactors'] = function (array $Files, array $Factors) use (&$CIDRAM)
         $Files[$FileIndex] = (
             strpos($Files[$FileIndex], ':') === false
         ) ? $Files[$FileIndex] : substr($Files[$FileIndex], strpos($Files[$FileIndex], ':') + 1);
-        if (!$Files[$FileIndex]) {
+        if ($Files[$FileIndex] === '' || $CIDRAM['isReserved']($Files[$FileIndex])) {
             continue;
         }
         if ($Counts['Factors'] === 32) {
@@ -430,7 +430,7 @@ $CIDRAM['CheckFactors'] = function (array $Files, array $Factors) use (&$CIDRAM)
                     }
                     if (isset($CIDRAM['RunParamResCache'][$Signature]) && is_object($CIDRAM['RunParamResCache'][$Signature])) {
                         $RunExitCode = $CIDRAM['RunParamResCache'][$Signature]($Factors, $FactorIndex, $LN, $Tag);
-                    } elseif (file_exists($CIDRAM['Vault'] . $Signature)) {
+                    } elseif (!$CIDRAM['isReserved']($Signature) && is_readable($CIDRAM['Vault'] . $Signature)) {
                         require_once $CIDRAM['Vault'] . $Signature;
                     } else {
                         $CIDRAM['ExtraErrorInfo'] = $Signature;
@@ -2078,7 +2078,7 @@ $CIDRAM['AuxAction'] = function ($Action, $Name, $Reason = '', $Target = '', $St
         }
         if (isset($CIDRAM['AuxRunResCache'][$Run]) && is_object($CIDRAM['AuxRunResCache'][$Run])) {
             $RunExitCode = $CIDRAM['AuxRunResCache'][$Run]();
-        } elseif (file_exists($CIDRAM['Vault'] . $Run)) {
+        } elseif (!$CIDRAM['isReserved']($Run) && is_readable($CIDRAM['Vault'] . $Run)) {
             require_once $CIDRAM['Vault'] . $Run;
         } else {
             trigger_error($CIDRAM['L10N']->getString('Error_MissingRequire'), E_USER_WARNING);
@@ -2728,6 +2728,18 @@ $CIDRAM['IsSensitive'] = function ($URI) use (&$CIDRAM) {
     );
 };
 
+/**
+ * Check whether a name is reserved. Important, because attempting to read
+ * from, write to, or otherwise work with names reserved at the file system can
+ * result in unexpected behaviour and potential security risks.
+ *
+ * @param string $Name The name to check.
+ * @return bool True if reserved; False if not.
+ */
+$CIDRAM['isReserved'] = function ($Name) {
+    return preg_match('~(?:^|\\\\|/)(?:\.{1,3}|aux|com(?:\d+|¹|²|³)|con|lpt(?:\d+|¹|²|³)|nul|prn)(?:(?:\..*)?$|\\\\|/)|[ .]$~i', $Name);
+};
+
 /** Make sure the vault is defined so that tests don't break. */
 if (isset($CIDRAM['Vault'])) {
     /** Load all default event handlers. */
@@ -2739,6 +2751,7 @@ if (isset($CIDRAM['Vault'])) {
             if (
                 strlen($CIDRAM['LoadThis']) > 0 &&
                 substr($CIDRAM['LoadThis'], -4) === '.php' &&
+                !$CIDRAM['isReserved']($CIDRAM['LoadThis']) &&
                 is_readable($CIDRAM['Vault'] . $CIDRAM['LoadThis'])
             ) {
                 require $CIDRAM['Vault'] . $CIDRAM['LoadThis'];

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2023.12.03).
+ * This file: Front-end functions file (last modified: 2023.12.12).
  */
 
 /**
@@ -971,7 +971,7 @@ $CIDRAM['SimulateBlockEvent'] = function ($Addr, $Modules = false, $Aux = false,
             $Infractions = $CIDRAM['BlockInfo']['SignatureCount'];
             if (isset($CIDRAM['ModuleResCache'][$Module]) && is_object($CIDRAM['ModuleResCache'][$Module])) {
                 $CIDRAM['ModuleResCache'][$Module]($Infractions);
-            } elseif (file_exists($CIDRAM['Vault'] . $Module) && is_readable($CIDRAM['Vault'] . $Module)) {
+            } elseif (!$CIDRAM['isReserved']($Module) && is_readable($CIDRAM['Vault'] . $Module)) {
                 require $CIDRAM['Vault'] . $Module;
             }
         });
@@ -2475,6 +2475,9 @@ $CIDRAM['SectionsHandler'] = function (array $Files) use (&$CIDRAM) {
     $SectionMeta = [];
     $ThisSectionMeta = [];
     foreach ($Files as $File) {
+        if ($File === '' || $CIDRAM['isReserved']($File)) {
+            continue;
+        }
         $Data = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $File);
         if (!$Data) {
             continue;
@@ -2727,9 +2730,12 @@ $CIDRAM['RangeTablesIterateFiles'] = function (array &$Arr, array $Files, array 
         $CIDRAM['Ignore'] = $CIDRAM['FetchIgnores']();
     }
     foreach ($Files as $File) {
+        if ($File === '' || $CIDRAM['isReserved']($File)) {
+            continue;
+        }
         $File = (strpos($File, ':') === false) ? $File : substr($File, strpos($File, ':') + 1);
         $Data = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $File);
-        if (!$Data) {
+        if (strlen($Data) === 0) {
             continue;
         }
         $CIDRAM['NormaliseLinebreaks']($Data);

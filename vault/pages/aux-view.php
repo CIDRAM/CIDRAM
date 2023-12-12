@@ -240,7 +240,7 @@ if (!$this->FE['ASYNC']) {
     );
 
     /** Parse output. */
-    $this->FE['FE_Content'] = $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_aux.html')), true) . $this->CIDRAM['MenuToggle'];
+    $this->FE['FE_Content'] = $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_aux_view.html')), true) . $this->CIDRAM['MenuToggle'];
 
     /** Send output. */
     echo $this->sendOutput();

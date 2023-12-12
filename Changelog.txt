@@ -28,6 +28,20 @@ Detailed version release guidelines for CIDRAM can be found at:
   keys is defined. Accordingly, that's been done, and a new method added for
   that purpose (#547).
 
+- [2023.12.12; Security; Maikuolan]: Added a method to check whether a name is
+  reserved, and applied it as a guard at the points where signature files,
+  modules, and events are read in, and where files are required via Run
+  commands. Attempting to perform file operations on reserved names under
+  Windows and some other operating systems could cause the underlying file
+  system to attempt to communicate with a serial port instead of the intended
+  file. PHP is likely to then wait indefinitely for a response it's unlikely to
+  ever receive, thus locking up the process and preventing further requests
+  unless the process is restarted. Although it's infinitesimally unlikely that
+  a user would actually want to use a reserved name for one of their signature
+  files, modules, events, or run commands, as the solution is exceedingly
+  simple, with no particular performance impact, I've implemented it
+  accordingly.
+
 === Version/Release 2.14.2 ===
 PATCH RELEASE.
 

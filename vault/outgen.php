@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2023.08.23).
+ * This file: Output generator (last modified: 2023.12.12).
  */
 
 /** Initialise cache. */
@@ -215,7 +215,7 @@ if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode'] && e
             $Infractions = $CIDRAM['BlockInfo']['SignatureCount'];
             if (isset($CIDRAM['ModuleResCache'][$Module]) && is_object($CIDRAM['ModuleResCache'][$Module])) {
                 $CIDRAM['ModuleResCache'][$Module]($Infractions);
-            } elseif (file_exists($CIDRAM['Vault'] . $Module) && is_readable($CIDRAM['Vault'] . $Module)) {
+            } elseif (!$CIDRAM['isReserved']($Module) && is_readable($CIDRAM['Vault'] . $Module)) {
                 require $CIDRAM['Vault'] . $Module;
             }
             $CIDRAM['Trackable'] = $CIDRAM['Trackable'] ?: ($CIDRAM['BlockInfo']['SignatureCount'] - $Infractions) > 0;

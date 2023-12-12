@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2023.12.01).
+ * This file: The CIDRAM core (last modified: 2023.12.12).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -348,7 +348,7 @@ class Core
         /** Load any other configured event handlers. */
         if (!empty($this->Configuration['components']['events'])) {
             foreach (array_unique(explode("\n", $this->Configuration['components']['events'])) as $LoadThis) {
-                if (strlen($LoadThis) > 0 && substr($LoadThis, -4) === '.php' && is_readable($this->EventsPath . $LoadThis)) {
+                if (strlen($LoadThis) > 0 && substr($LoadThis, -4) === '.php' && !$this->isReserved($LoadThis) && is_readable($this->EventsPath . $LoadThis)) {
                     require $this->EventsPath . $LoadThis;
                 }
             }
@@ -545,7 +545,7 @@ class Core
             $Files[$FileIndex] = (
                 strpos($Files[$FileIndex], ':') === false
             ) ? $Files[$FileIndex] : substr($Files[$FileIndex], strpos($Files[$FileIndex], ':') + 1);
-            if (strlen($Files[$FileIndex]) === 0) {
+            if ($Files[$FileIndex] === '' || $this->isReserved($Files[$FileIndex])) {
                 continue;
             }
             if ($Counts['Factors'] === 32) {
@@ -697,7 +697,7 @@ class Core
                         }
                         if (isset($this->CIDRAM['RunParamResCache'][$Signature]) && is_object($this->CIDRAM['RunParamResCache'][$Signature])) {
                             $RunExitCode = $this->CIDRAM['RunParamResCache'][$Signature]($Factors, $FactorIndex, $LN, $Tag);
-                        } elseif (file_exists($this->Vault . $Signature)) {
+                        } elseif (!$this->isReserved($Signature) && is_readable($this->Vault . $Signature)) {
                             require_once $this->Vault . $Signature;
                         } else {
                             $this->CIDRAM['ExtraErrorInfo'] = $Signature;
@@ -2222,7 +2222,7 @@ class Core
             }
             if (isset($this->CIDRAM['AuxRunResCache'][$Run]) && is_object($this->CIDRAM['AuxRunResCache'][$Run])) {
                 $RunExitCode = $this->CIDRAM['AuxRunResCache'][$Run]();
-            } elseif (file_exists($this->Vault . $Run)) {
+            } elseif (!$this->isReserved($Run) && is_readable($this->Vault . $Run)) {
                 require_once $this->Vault . $Run;
             } else {
                 trigger_error($this->L10N->getString('response.Required files are missing'), E_USER_WARNING);
@@ -3090,6 +3090,19 @@ class Core
             $Path = preg_replace('~/[^/]+/\.\./|/\./|/{2,}~', '/', $Path);
         }
         return $Path;
+    }
+
+    /**
+     * Check whether a name is reserved. Important, because attempting to read
+     * from, write to, or otherwise work with names reserved at the file system
+     * can result in unexpected behaviour and potential security risks.
+     *
+     * @param string $Name The name to check.
+     * @return bool True if reserved; False if not.
+     */
+    public function isReserved(string $Name): bool
+    {
+        return preg_match('~(?:^|\\\\|/)(?:\.{1,3}|aux|com(?:\d+|¹|²|³)|con|lpt(?:\d+|¹|²|³)|nul|prn)(?:(?:\..*)?$|\\\\|/)|[ .]$~i', $Name);
     }
 
     /**

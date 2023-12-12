@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2023.12.03).
+ * This file: General methods used by the front-end (last modified: 2023.12.12).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -389,6 +389,9 @@ trait FrontEndMethods
         $SectionMeta = [];
         $ThisSectionMeta = [];
         foreach ($Files as $File) {
+            if ($File === '' || $this->isReserved($File)) {
+                continue;
+            }
             $Data = $this->readFile($this->SignaturesPath . $File);
             if (strlen($Data) === 0) {
                 continue;

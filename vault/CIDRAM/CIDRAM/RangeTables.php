@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used by the range tables page (last modified: 2023.10.21).
+ * This file: Methods used by the range tables page (last modified: 2023.12.12).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -130,6 +130,9 @@ trait RangeTables
             $this->CIDRAM['Ignore'] = $this->fetchIgnores();
         }
         foreach ($Files as $File) {
+            if ($File === '' || $this->isReserved($File)) {
+                continue;
+            }
             $File = (strpos($File, ':') === false) ? $File : substr($File, strpos($File, ':') + 1);
             $Data = $this->readFile($this->SignaturesPath . $File);
             if (strlen($Data) === 0) {

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2023.11.27).
+ * This file: Protect traits (last modified: 2023.12.12).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -224,7 +224,7 @@ trait Protect
                 $Before = $this->BlockInfo['SignatureCount'];
                 if (isset($this->CIDRAM['ModuleResCache'][$Module]) && is_object($this->CIDRAM['ModuleResCache'][$Module])) {
                     $this->CIDRAM['ModuleResCache'][$Module]();
-                } elseif (file_exists($this->ModulesPath . $Module) && is_readable($this->ModulesPath . $Module)) {
+                } elseif (!$this->isReserved($Module) && is_readable($this->ModulesPath . $Module)) {
                     require $this->ModulesPath . $Module;
                 }
                 if (isset($this->Stages['Modules:Tracking']) && $this->BlockInfo['SignatureCount'] !== $Before) {

@@ -8,8 +8,10 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The updates page (last modified: 2023.12.12).
+ * This file: The updates page (last modified: 2023.12.13).
  */
+
+namespace CIDRAM\CIDRAM;
 
 if (!isset($this->FE['Permissions'], $this->CIDRAM['QueryVars']['cidram-page']) || $this->CIDRAM['QueryVars']['cidram-page'] !== 'updates' || !($this->FE['Permissions'] === 1 || ($this->FE['Permissions'] === 3 && $this->FE['CronMode'] !== ''))) {
     die;

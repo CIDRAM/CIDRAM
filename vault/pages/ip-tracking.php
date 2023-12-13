@@ -8,8 +8,10 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The IP tracking page (last modified: 2023.12.12).
+ * This file: The IP tracking page (last modified: 2023.12.13).
  */
+
+namespace CIDRAM\CIDRAM;
 
 if (!isset($this->FE['Permissions'], $this->CIDRAM['QueryVars']['cidram-page']) || $this->CIDRAM['QueryVars']['cidram-page'] !== 'ip-tracking' || $this->FE['Permissions'] !== 1) {
     die;
@@ -42,6 +44,15 @@ if (!$this->FE['ASYNC']) {
 
     /** Template for result rows. */
     $this->FE['TrackingRow'] = $this->readFile($this->getAssetPath('_ip_tracking_row.html'));
+
+    $this->FE['ExtraSvgIcons'] = '';
+    if (isset($this->CIDRAM['Extra SVG Icons']) && is_array($this->CIDRAM['Extra SVG Icons'])) {
+        foreach ($this->CIDRAM['Extra SVG Icons'] as $ExtraSvgIcon) {
+            $this->FE['ExtraSvgIcons'] .= sprintf($ExtraSvgIcon, '{IPAddr}');
+        }
+        unset($ExtraSvgIcon);
+    }
+    $this->FE['TrackingRow'] = str_replace('{ExtraSvgIcons}', $this->FE['ExtraSvgIcons'], $this->FE['TrackingRow']);
 }
 
 /** Initialise variables. */

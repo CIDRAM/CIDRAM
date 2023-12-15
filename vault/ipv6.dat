@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6.dat
 
-# Version: 2023.341.0
-# Last modified: 2023.12.08
+# Version: 2023.348.0
+# Last modified: 2023.12.15
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -134,8 +134,8 @@ Tag: New Dream Network
 
 
 # ASN 33182 ("HostDime.com, Inc").
-# Stop Forum Spam (SFS) listings: 3,050.
-# Updated: 2023.02.11
+# Stop Forum Spam (SFS) listings: 154.
+# Updated: 2023.02.11 / Checked: 2023.12.15
 
 2804:9c4::/32 Deny Cloud
 Origin: BR
@@ -452,8 +452,7 @@ Tag: eServer.ru
 
 
 # ASN 42244 ("Hosting Operator eServer.ru Ltd").
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2019.03.19 / Checked: 2023.01.01
+# Updated: 2019.03.19 / Checked: 2023.12.13
 
 2a0a:2540::/29 Deny Cloud
 Origin: RU
@@ -1033,7 +1032,7 @@ Tag: Ready Server
 
 # ASN 42655 ("ON-LINE Ltd").
 # Stop Forum Spam (SFS) listings: 1.
-# Updated: 2016.01.21 / Checked: 2023.01.01
+# Updated: 2016.01.21 / Checked: 2023.12.13
 
 2001:67c:2224::/48 Deny Cloud
 Origin: UA
@@ -1205,8 +1204,8 @@ Tag: eUKhost LTD
 # ASN 12703 ("Pulsant (Scotland) Ltd").
 # Brute-force, WordPress/XMLRPC, DoS, and webapp attacks, plus spam detected
 # from here.
-# Stop Forum Spam (SFS) listings: 8.
-# Updated: 2023.02.18
+# Stop Forum Spam (SFS) listings: 2.
+# Updated: 2023.02.18 / Checked: 2023.12.15
 
 2001:4dc0::/32 Deny Cloud
 2a00:85a0::/32 Deny Cloud
@@ -2762,8 +2761,8 @@ Tag: Hostwinds LLC
 
 # ASN 8342 ("JSC RTComm.RU").
 # Dedicated server farm + an ongoing source of spam and other unwanted traffic.
-# Stop Forum Spam (SFS) listings: 102.
-# Updated: 2016.04.23 / Checked: 2023.07.15
+# Stop Forum Spam (SFS) listings: 335.
+# Updated: 2016.04.23 / Checked: 2023.12.12
 
 2001:1bb0::/32 Deny Cloud
 Origin: RU
@@ -4470,8 +4469,8 @@ Tag: Shenzhen Tencent
 
 
 # ASN 39572 ("DataWeb Global Group B.V").
-# Stop Forum Spam (SFS) listings: 305.
-# Updated: 2023.02.11
+# Stop Forum Spam (SFS) listings: 12.
+# Updated: 2023.02.11 / Checked: 2023.12.15
 
 2a02:b48::/30 Deny Cloud
 2a02:b4c::/32 Deny Cloud
@@ -5986,11 +5985,10 @@ Tag: Lunavi, Inc
 # with uptime monitoring service "InternetSeer.com". Users of this service
 # should list this section in their ignore.dat file. I won't be mainlining a
 # bypass for them though due to abuse reports from some users.
-# Stop Forum Spam (SFS) listings: 20.
-# Updated: 2018.08.05 / Checked: 2023.01.01
+# Stop Forum Spam (SFS) listings: 17.
+# Updated: 2023.12.13
 
 2600:1300::/32 Deny Cloud
-2600:1304::/32 Deny Cloud
 2600:1308::/32 Deny Cloud
 2600:130c::/32 Deny Cloud
 Origin: US
@@ -6515,7 +6513,7 @@ Tag: Gigabit Hosting
 # Trademark protection organisation; Scans websites looking for potential
 # infringements in order to send legal notices on behalf of clients. Serves no
 # benefit to the websites being scanned.
-# Updated: 2018.02.25 / Checked: 2023.01.01
+# Updated: 2018.02.25 / Checked: 2023.12.13
 
 2a00:77e0::/32 Deny Cloud
 Origin: GB
@@ -6883,16 +6881,6 @@ Tag: PLUTEX GmbH
 Origin: GB
 Profile: Webhosting
 Tag: Gyron Internet Ltd
-
-
-# ASN 55229 ("White Sands Hosting").
-# Stop Forum Spam (SFS) listings: 23.
-# Updated: 2018.09.01 / Checked: 2023.01.01
-
-2606:3980::/48 Deny Cloud
-Origin: US
-Profile: Webhosting
-Tag: White Sands Hosting
 
 
 # ASN 64267 ("Sprious LLC").
@@ -8035,7 +8023,7 @@ Tag: HOSTING.CL
 
 # ASN 209737 ("Muhammet Meric trading as Meric Hosting").
 # Dedicated webhosting provider and an occasional source of spam.
-# Updated: 2019.12.27 / Checked: 2023.02.18
+# Updated: 2019.12.27 / Checked: 2023.12.15
 
 2a09:8780::/29 Deny Cloud
 Origin: TR
@@ -10528,10 +10516,10 @@ Tag: Alviva Holding Limited
 
 # ASN 45045 ("FOP Kazakov Oleksandr Oleksandrovich").
 # Hacking, brute-force, webapp attacks, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 714.
-# Updated: 2021.05.11 / Checked: 2023.01.04
+# Stop Forum Spam (SFS) listings: 375.
+# Updated: 2021.05.11 / Checked: 2023.12.13
 
-2001:67c:25f4::/48 Deny Attacks
+2001:67c:25f4::/48 Deny Cloud
 Origin: UA
 Profile: Tor endpoints here;Webhosting
 Tag: Oleksandrovich
@@ -10563,16 +10551,6 @@ Tag: Sergeevich/Nedilskyi
 Origin: IR
 Profile: Commercial;Infrastructure/Transit;Webhosting
 Tag: Sefroyek Pardaz Engineering
-
-
-# ASN 30968 ("INFOBOX").
-# Stop Forum Spam (SFS) listings: 48.
-# Updated: 2021.05.26 / Checked: 2023.02.10
-
-2a02:440::/32 Deny Cloud
-Origin: RU
-Profile: Infrastructure/Transit;Webhosting
-Tag: INFOBOX
 
 
 # ASN 12859 ("BIT BV").
@@ -11284,6 +11262,17 @@ Origin: RU
 Origin: SC
 Profile: Dedicated;Frequent changes;Infrastructure/Transit;Webhosting
 Tag: AEZA GROUP Ltd
+
+
+# ASN 132420 ("282, Sector 19").
+# Brute-force, SSH, webapp attacks, and port scans detected from here.
+# Stop Forum Spam (SFS) listings: 67.
+# Updated: 2023.12.15
+
+2406:69c0:2000::/36 Deny Cloud
+Origin: IN
+Profile: Webhosting
+Tag: 282, Sector 19
 
 
 # ASN 41909 ("PINVDS OU").
@@ -12180,12 +12169,11 @@ Tag: PENTECH BILISIM
 
 # ASN 48024 ("NEROCLOUD LTD").
 # Brute-force, FTP, and SSH attacks, hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 623.
-# Updated: 2023.02.18
+# Stop Forum Spam (SFS) listings: 178.
+# Updated: 2023.12.15
 
 2403:3d80::/32 Deny Cloud
 Origin: CN
-2a02:7080:3000::/36 Deny Cloud
 2a0f:9400:6225::/48 Deny Cloud
 2a0f:9400:6228::/48 Deny Cloud
 Origin: GB
@@ -12194,14 +12182,17 @@ Origin: GB
 Origin: HK
 2405:2040:1202::/47 Deny Cloud
 2405:2040:2302::/48 Deny Cloud
+2405:2040:3e80::/44 Deny Cloud
 Origin: JP
 2404:92c0:233::/48 Deny Cloud
+2404:92c0:3e80::/44 Deny Cloud
 Origin: SG
 2404:73c0::/32 Deny Cloud
 Origin: TW
-2a0b:4340:3320::/48 Deny Cloud
 2a0b:4340:3330::/48 Deny Cloud
-2a0e:6906::/32 Deny Cloud
+2a0e:6906:2400::/47 Deny Cloud
+2a0e:6906:2402::/48 Deny Cloud
+2a0e:6906:aaaa::/48 Deny Cloud
 Origin: US
 Profile: Webhosting
 Tag: NEROCLOUD LTD
@@ -13209,6 +13200,16 @@ Origin: NL
 Origin: US
 Profile: Webhosting
 Tag: RoyaleHosting BV
+
+
+# ASN 269070 ("Hostzone Tecnologia LTDA").
+# Port scans detected from here.
+# Updated: 2023.12.12
+
+2804:5f00::/32 Deny Cloud
+Origin: BR
+Profile: Webhosting
+Tag: Hostzone Tecnologia LTDA
 
 
 # ---

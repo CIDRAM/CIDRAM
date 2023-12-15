@@ -22,7 +22,7 @@
  * William "Bill" Minozzi.
  * @link https://www.stopbadbots.com/
  *
- * This file: Bot Or Browser User Agent Module (last modified: 2023.12.01).
+ * This file: Bot Or Browser User Agent Module (last modified: 2023.12.15).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -125,7 +125,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         $this->trigger(preg_match('%t(?:6labs|AkeOut\/|a(?:boola|gSeoBot|ptubot)|bot-nutch|e(?:lnet0|mnos\.|st)|h(?:e(?:internetrules|oldreader)|ie(?:f|ves)|umbshots)|i(?:gerbot|mboBot)|ldstat|o(?:Crawl(\/)?UrlDispatcher|p(?:bloglog\.|icblogs|ster)|quo\.es|uche)|r(?:endictionbot|ivial|o(?:ovziBot|v(?:ator\.|itBot))|uwoGPS)|uringos\/|we(?:etedtimes|nga))%', $this->BlockInfo['UA']), $Bot[0], $Bot[1]);
         $this->trigger(preg_match('%u(?:12Bot\/|MBot|bermetrics|classify\.|ipbot|nchaos_crawler|pdated|rl(?:ck\/\d|fan-bot|resolver)|securio\.)%', $this->BlockInfo['UA']), $Bot[0], $Bot[1]);
         $this->trigger(preg_match('%v(?:BSEO(?:\/|_)|URL Online|e(?:bidoobot|rs(?:ellie\.|us crawler))|i(?:sionutils|talbox1@hotmail)|kShare|o(?:ltron|yager))%', $this->BlockInfo['UA']), $Bot[0], $Bot[1]);
-        $this->trigger(preg_match('%w(?:3(?:af|dt\.net)|angling|eb(?:-capture|\/snippet|Mirror|Pluck|c(?:eo\.|ollage|rawl\.net)|eaver\.|i(?:natorbot|s )|kit2png|layers\/|mastercoffee|numbrFetcher|reaper|screenie|sitepulse|walk\/)|f(?:84|_crawler)|i(?:bbitz\.|kiwix-bot|red-digital-newsbot\/|se-guys|sponbot|thknown\.)|khtmlto|mtips\.|o(?:nderbot\/|obot|riobot)|pspydr\.|s(?:Analyzer\/|check)|wscheck.com|ww(?:\.(?:adressendeutschland|express-soft|freeloader|iir|osaicbt|otway|vinn\.com)\.|ster))%', $this->BlockInfo['UA']), $Bot[0], $Bot[1]);
+        $this->trigger(preg_match('%w(?:3(?:af|dt\.net)|angling|eb(?:-capture|Mirror|Pluck|c(?:eo\.|ollage|rawl\.net)|eaver\.|i(?:natorbot|s )|kit2png|layers\/|mastercoffee|numbrFetcher|reaper|screenie|sitepulse|walk\/)|f(?:84|_crawler)|i(?:bbitz\.|kiwix-bot|red-digital-newsbot\/|se-guys|sponbot|thknown\.)|khtmlto|mtips\.|o(?:nderbot\/|obot|riobot)|pspydr\.|s(?:Analyzer\/|check)|wscheck.com|ww(?:\.(?:adressendeutschland|express-soft|freeloader|iir|osaicbt|otway|vinn\.com)\.|ster))%', $this->BlockInfo['UA']), $Bot[0], $Bot[1]);
         $this->trigger(preg_match('%x(?:100Bot\/|28-job-bot|USAx|ing\.|irq|pymep)%', $this->BlockInfo['UA']), $Bot[0], $Bot[1]);
         $this->trigger(preg_match('%y(?:acy|e(?:lpspider|s\/)|napse|o(?:o(?:gliFetchAgent|zBot)|ur(?:-search-bot|eputation\.|ls)))%', $this->BlockInfo['UA']), $Bot[0], $Bot[1]);
         $this->trigger(preg_match('%z(?:eef\.|grab|itebot|ootycoon\.)%', $this->BlockInfo['UA']), $Bot[0], $Bot[1]);

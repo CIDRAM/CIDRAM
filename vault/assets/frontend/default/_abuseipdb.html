@@ -1,0 +1,57 @@
+<table>
+<tr>
+  <td class="nav big">
+{nav}  </td>
+  <td class="right extend">
+    <form action="?cidram-page=abuseipdb" method="POST">
+      <div class="s">{state_msg}</div>
+      <label class="s">
+        <div class="ng1">
+          {field.IP address}{pair_separator}<br />
+          <blockquote><input type="text" name="address" value="{address}" placeholder="{tip.Enter IP here}" autocomplete="off" pattern="^([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])$|^((([\dA-Fa-f]{1,4}:){7}[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){6}:[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){5}:([\dA-Fa-f]{1,4}:)?[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){4}:([\dA-Fa-f]{1,4}:){0,2}[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){3}:([\dA-Fa-f]{1,4}:){0,3}[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){2}:([\dA-Fa-f]{1,4}:){0,4}[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){6}((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b).){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|(([\dA-Fa-f]{1,4}:){0,5}:((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b).){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|(::([\dA-Fa-f]{1,4}:){0,5}((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b).){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|([\dA-Fa-f]{1,4}::([\dA-Fa-f]{1,4}:){0,5}[\dA-Fa-f]{1,4})|(::([\dA-Fa-f]{1,4}:){0,6}[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){1,7}:))$" /></blockquote>
+        </div>
+      </label>
+      <div class="ng2">
+        <span class="s">{Abuse category.Categories (at least one is required)}{pair_separator}<br /><br /></span>
+        <div style="display:grid;margin:auto min(38px, 1vw * 1.6);grid-template-columns:auto;contain:paint">
+          <div class="gridboxitem gridHA"><span class="s gridlabel"><input type="checkbox" class="auto" name="CatSwitch1" id="CatSwitch1"{CatSwitch1} /><label for="CatSwitch1">{Abuse category.DNS compromise}</label></span></div>
+          <div class="gridboxitem gridHB"><span class="s gridlabel"><input type="checkbox" class="auto" name="CatSwitch2" id="CatSwitch2"{CatSwitch2} /><label for="CatSwitch2">{Abuse category.DNS poisoning}</label></span></div>
+          <div class="gridboxitem gridHA"><span class="s gridlabel"><input type="checkbox" class="auto" name="CatSwitch3" id="CatSwitch3"{CatSwitch3} /><label for="CatSwitch3">{Abuse category.Fraudulent orders}</label></span></div>
+          <div class="gridboxitem gridHB"><span class="s gridlabel"><input type="checkbox" class="auto" name="CatSwitch4" id="CatSwitch4"{CatSwitch4} /><label for="CatSwitch4">{Abuse category.DDoS attacks}</label></span></div>
+          <div class="gridboxitem gridHA"><span class="s gridlabel"><input type="checkbox" class="auto" name="CatSwitch5" id="CatSwitch5"{CatSwitch5} /><label for="CatSwitch5">{Abuse category.FTP brute-force attacks}</label></span></div>
+          <div class="gridboxitem gridHB"><span class="s gridlabel"><input type="checkbox" class="auto" name="CatSwitch6" id="CatSwitch6"{CatSwitch6} /><label for="CatSwitch6">{Abuse category.Ping of death}</label></span></div>
+          <div class="gridboxitem gridHA"><span class="s gridlabel"><input type="checkbox" class="auto" name="CatSwitch7" id="CatSwitch7"{CatSwitch7} /><label for="CatSwitch7">{Abuse category.Phishing}</label></span></div>
+          <div class="gridboxitem gridHB"><span class="s gridlabel"><input type="checkbox" class="auto" name="CatSwitch8" id="CatSwitch8"{CatSwitch8} /><label for="CatSwitch8">{Abuse category.Fraudulent VoIP}</label></span></div>
+          <div class="gridboxitem gridHA"><span class="s gridlabel"><input type="checkbox" class="auto" name="CatSwitch9" id="CatSwitch9"{CatSwitch9} /><label for="CatSwitch9">* {Abuse category.Open proxy, open relay, or tor endpoint}</label></span></div>
+          <div class="gridboxitem gridHB"><span class="s gridlabel"><input type="checkbox" class="auto" name="CatSwitch10" id="CatSwitch10"{CatSwitch10} /><label for="CatSwitch10">{Abuse category.Web spam}</label></span></div>
+          <div class="gridboxitem gridHA"><span class="s gridlabel"><input type="checkbox" class="auto" name="CatSwitch11" id="CatSwitch11"{CatSwitch11} /><label for="CatSwitch11">{Abuse category.Email spam}</label></span></div>
+          <div class="gridboxitem gridHB"><span class="s gridlabel"><input type="checkbox" class="auto" name="CatSwitch12" id="CatSwitch12"{CatSwitch12} /><label for="CatSwitch12">{Abuse category.CMS blog comment spam}</label></span></div>
+          <div class="gridboxitem gridHA"><span class="s gridlabel"><input type="checkbox" class="auto" name="CatSwitch13" id="CatSwitch13"{CatSwitch13} /><label for="CatSwitch13">* {Abuse category.VPN IP}</label></span></div>
+          <div class="gridboxitem gridHB"><span class="s gridlabel"><input type="checkbox" class="auto" name="CatSwitch14" id="CatSwitch14"{CatSwitch14} /><label for="CatSwitch14">{Abuse category.Port scans}</label></span></div>
+          <div class="gridboxitem gridHA"><span class="s gridlabel"><input type="checkbox" class="auto" name="CatSwitch15" id="CatSwitch15"{CatSwitch15} /><label for="CatSwitch15">{Abuse category.Hacking}</label></span></div>
+          <div class="gridboxitem gridHB"><span class="s gridlabel"><input type="checkbox" class="auto" name="CatSwitch16" id="CatSwitch16"{CatSwitch16} /><label for="CatSwitch16">{Abuse category.SQL injection}</label></span></div>
+          <div class="gridboxitem gridHA"><span class="s gridlabel"><input type="checkbox" class="auto" name="CatSwitch17" id="CatSwitch17"{CatSwitch17} /><label for="CatSwitch17">{Abuse category.Email sender spoofing}</label></span></div>
+          <div class="gridboxitem gridHB"><span class="s gridlabel"><input type="checkbox" class="auto" name="CatSwitch18" id="CatSwitch18"{CatSwitch18} /><label for="CatSwitch18">{Abuse category.Brute-force attacks}</label></span></div>
+          <div class="gridboxitem gridHA"><span class="s gridlabel"><input type="checkbox" class="auto" name="CatSwitch19" id="CatSwitch19"{CatSwitch19} /><label for="CatSwitch19">{Abuse category.Bad web bot}</label></span></div>
+          <div class="gridboxitem gridHB"><span class="s gridlabel"><input type="checkbox" class="auto" name="CatSwitch20" id="CatSwitch20"{CatSwitch20} /><label for="CatSwitch20">{Abuse category.Exploited host}</label></span></div>
+          <div class="gridboxitem gridHA"><span class="s gridlabel"><input type="checkbox" class="auto" name="CatSwitch21" id="CatSwitch21"{CatSwitch21} /><label for="CatSwitch21">{Abuse category.Webapp attacks}</label></span></div>
+          <div class="gridboxitem gridHB"><span class="s gridlabel"><input type="checkbox" class="auto" name="CatSwitch22" id="CatSwitch22"{CatSwitch22} /><label for="CatSwitch22">* {Abuse category.SSH abuse}</label></span></div>
+          <div class="gridboxitem gridHA"><span class="s gridlabel"><input type="checkbox" class="auto" name="CatSwitch23" id="CatSwitch23"{CatSwitch23} /><label for="CatSwitch23">{Abuse category.IoT targeted}</label></span></div>
+        </div><br /><br />
+        * {Abuse category.Conjunctive category}
+      </div>
+      <label class="s">
+        <div class="ng1">
+          {field.Comments}{pair_separator}<br /><br />
+          <textarea name="comments" class="half" autocomplete="off"></textarea>
+        </div>
+      </label>
+      <div class="ng2">
+        <input type="submit" value="{label.Report to AbuseIPDB}" /><br />
+        <br />
+        <em>{label.Please abide by the AbuseIPDB reporting policy}</em>
+      </div>
+    </form>
+  </td>
+</tr>
+</table>

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Afrikaans language data for the front-end (last modified: 2023.12.01).
+# This file: Afrikaans language data for the front-end (last modified: 2023.12.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,6 +24,32 @@
 # requests, ask. I can help.
 ##/
 
+Abuse category:
+ Bad web bot: "Slegte webbot (skraap vir e-posadresse, inhoud, deurkruipers wat nie robots.txt eerbiedig nie, oormatige versoeke, spoofing van gebruikersagente, ens)."
+ Brute-force attacks: "Brute-force aanvalle (geloofwaardige brute-force aanvalle op webbladaanmeldings, SMTP, RDP, ens)."
+ Categories (at least one is required): "Kategorieë (ten minste een word vereis)"
+ CMS blog comment spam: "CMS blog opmerking strooipos."
+ Conjunctive category: "Konjunktiewe kategorie (gebruik in kombinasie met ander, meer spesifieke kategorieë)."
+ DDoS attacks: "DDoS aanvalle (gewoonlik deel van 'n botnet)."
+ DNS compromise: "DNS kompromie (verandering van DNS-rekords wat lei tot onbehoorlike herleiding)."
+ DNS poisoning: "DNS vergiftiging."
+ Email sender spoofing: "E-pos sender spoofing."
+ Email spam: "E-pos strooipos (strooipos e-pos inhoud, besmette aanhegsels, uitvissing-e-posse, ens)."
+ Exploited host: "Ontginde gasheer (gasheer is waarskynlik met wanware besmet en word vir ander aanvalle gebruik of om kwaadwillige inhoud te huisves)."
+ FTP brute-force attacks: "FTP brute-force aanvalle."
+ Fraudulent VoIP: "Bedrieglike VoIP."
+ Fraudulent orders: "Bedrieglike bestellings."
+ Hacking: "Hacking."
+ IoT targeted: "IoT-geteikende misbruik. Sluit inligting in oor watter tipe toestel geteiken is in die opmerkings."
+ Open proxy, open relay, or tor endpoint: "Oop instaanbediener, oop aflos, of tor eindpunt."
+ Phishing: "Uitvissing-webwerwe en/of e-pos."
+ Ping of death: "Ping van die dood (groot IP-pakkie)."
+ Port scans: "Poortskanderings (skandering vir oop poorte en kwesbare dienste)."
+ SQL injection: "SQL-inspuiting."
+ SSH abuse: "SSH misbruik."
+ VPN IP: "VPN IP."
+ Web spam: "Web strooipos (kommentaar/forum-strooipos, HTTP-verwyser-strooipos, of ander CMS-strooipos)."
+ Webapp attacks: "Webapp aanvalle (ondersoek vir kwesbaarhede of uitbuiting, of probeer om geïnstalleerde webtoepassings, CMS, of e-handelsoplossings te ontgin, bv., WordPress, Drupal, phpMyAdmin, ens)."
 Extended Description:
  AbuseIPDB module: "Blokkeer versoeke van IP's wat by AbuseIPDB gelys word."
  BGPView module: "Gebruik die {{Links.BGPView}}-API om 'n ASN en landkode opsoekfasiliteit vir CIDRAM te verskaf, wat dit moontlik maak om ASN'e en lande via die CIDRAM-konfigurasie geblokkeer of gewitlys te word, en die verskaffing van 'n manier om versoeke van Facebook en ander sosiale versoeke te verifieer. (As jy hierdie module gebruik, hoef jy nie die IP-API-module te gebruik nie, aangesien dit dieselfde doel dien)."
@@ -942,6 +968,7 @@ tip:
  Rate limiting is currently disabled: "Kennis neem: Tariefbeperking is tans gedeaktiveer, maar kan via die konfigurasiebladsy geaktiveer word."
  Sections List: "Hallo, {username}.<br />Hierdie bladsy lys watter afdelings bestaan in die tans aktiewe handtekeninglêers."
  See the documentation: "Sien die <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external">dokumentasie</a> vir inligting oor die verskillende konfigurasie-opsies en hul doeleindes."
+ Server log snippets, abuse details, etc: "Bedienerlogbrokkies, misbruikbesonderhede, ens."
  Signature File Fixer: "Hallo, {username}.<br />Die handtekeninglêer hersteller bied 'n manier om potensiële probleme in handtekeninglêers op te spoor en op te los."
  Specify a value, or leave blank to disregard: "Spesifiseer 'n waarde, of laat leeg om te ignoreer."
  Statistics tracking is currently disabled: "Kennis neem: Statistieknasporing is tans gedeaktiveer, maar kan via die konfigurasiebladsy geaktiveer word."

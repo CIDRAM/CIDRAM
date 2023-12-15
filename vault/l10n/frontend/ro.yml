@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Romanian language data for the front-end (last modified: 2023.12.01).
+# This file: Romanian language data for the front-end (last modified: 2023.12.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,6 +24,32 @@
 # requests, ask. I can help.
 ##/
 
+Abuse category:
+ Bad web bot: "Bot web rău (caută adrese de e-mail, conținut, crawler-uri care nu onorează robots.txt, solicitări excesive, falsificarea agentului de utilizator, etc)."
+ Brute-force attacks: "Atacurile cu forță brută (atacuri cu forță brută de acreditări asupra autentificărilor pe paginile web, SMTP, RDP, etc)."
+ Categories (at least one is required): "Categorii (cel puțin una este necesară)"
+ CMS blog comment spam: "Spam de comentarii pe blogul CMS."
+ Conjunctive category: "Categoria conjunctivă (utilizați în combinație cu alte categorii mai specifice)."
+ DDoS attacks: "Atacurile DDoS (de obicei parte a unei rețele bot)."
+ DNS compromise: "Compromis DNS (modificarea înregistrărilor DNS având ca rezultat o redirecționare necorespunzătoare)."
+ DNS poisoning: "Otrăvirea DNS."
+ Email sender spoofing: "Falsificarea expeditorului de e-mail."
+ Email spam: "Spam prin e-mail (conținut de e-mail spam, atașamente infectate, e-mailuri de phishing, etc)."
+ Exploited host: "Gazdă exploatată (gazda este probabil infectată cu programe malware și este folosită pentru alte atacuri sau pentru a găzdui conținut rău intenționat)."
+ FTP brute-force attacks: "Atacurile FTP cu forță brută."
+ Fraudulent VoIP: "VoIP frauduloase."
+ Fraudulent orders: "Comenzi frauduloase."
+ Hacking: "Hacking."
+ IoT targeted: "Abuzul vizat de IoT. Includeți informații despre tipul de dispozitiv vizat în comentarii."
+ Open proxy, open relay, or tor endpoint: "Proxy deschis, releu deschis, sau un punct final tor."
+ Phishing: "Site-uri web și/sau e-mail de phishing."
+ Ping of death: "Ping de moarte (pachet IP supradimensionat)."
+ Port scans: "Scanări de porturi (scanarea pentru porturi deschise și servicii vulnerabile)."
+ SQL injection: "Injecție SQL."
+ SSH abuse: "Abuz de SSH."
+ VPN IP: "IP VPN."
+ Web spam: "Spam web (spam de comentarii/forum, spam de referință HTTP, sau alt spam CMS)."
+ Webapp attacks: "Atacurile aplicațiilor web (sondarea vulnerabilităților sau exploatărilor, sau încercarea de a exploata aplicațiile web, CMS, sau soluții de comerț electronic instalate, de exemplu, WordPress, Drupal, phpMyAdmin, etc)."
 Extended Description:
  AbuseIPDB module: "Blochează solicitările de la IP-uri listate la AbuseIPDB."
  BGPView module: "Utilizează {{Links.BGPView}} API pentru a oferi o facilitate de căutare ASN și cod de țară pentru CIDRAM, permițând blocarea sau înscrierea în lista albă a ASN-urilor și a țărilor prin configurația CIDRAM, și oferind un mijloc de verificare a rețelelor sociale pentru a verifica solicitările Facebook. (Dacă utilizați acest modul, nu va trebui să utilizați modulul IP-API, deoarece au același scop)."
@@ -966,6 +992,7 @@ tip:
  Rate limiting is currently disabled: "Notă: Limitarea ratei este în prezent dezactivată, dar poate fi activată prin pagina de configurare."
  Sections List: "Buna ziua, {username}.<br />Această pagină listează ce secțiuni există în fișierele de semnătură active în prezent."
  See the documentation: "Consultați <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external">documentația</a> pentru informații despre diferitele directive de configurare și scopurile acestora."
+ Server log snippets, abuse details, etc: "Fragmente de jurnal de server, detalii despre abuz, etc."
  Signature File Fixer: "Buna ziua, {username}.<br />Fixatorul fișierelor de semnătură oferă o modalitate de a detecta și remedia potențialele probleme în fișierele de semnătură."
  Specify a value, or leave blank to disregard: "Specificați o valoare, sau lăsați necompletat pentru a o ignora."
  Statistics tracking is currently disabled: "Notă: Urmărirea statisticilor este în prezent dezactivată, dar poate fi activată prin pagina de configurare."

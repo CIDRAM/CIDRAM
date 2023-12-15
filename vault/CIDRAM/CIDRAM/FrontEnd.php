@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.12.12).
+ * This file: The CIDRAM front-end (last modified: 2023.12.15).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -352,6 +352,9 @@ class FrontEnd extends Core
 
         /** Set the current request's form target. */
         $this->FE['FormTarget'] = $_POST['cidram-form-target'] ?? '';
+
+        /** Form data for SVG buttons. */
+        $this->FE['SVGsFormData'] = isset($this->CIDRAM['SVGs form data']) && is_array($this->CIDRAM['SVGs form data']) ? implode('', $this->CIDRAM['SVGs form data']) : '';
 
         /** Initialise cache. */
         $this->initialiseCache();

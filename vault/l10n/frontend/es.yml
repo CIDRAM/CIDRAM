@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2023.12.01).
+# This file: Spanish language data for the front-end (last modified: 2023.12.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,6 +24,32 @@
 # requests, ask. I can help.
 ##/
 
+Abuse category:
+ Bad web bot: "Mal robot web (búsqueda de direcciones de correo electrónico, contenido, rastreadores que no respetan robots.txt, solicitudes excesivas, suplantación de agentes de usuario, etc)."
+ Brute-force attacks: "Ataques de fuerza bruta (ataques de fuerza bruta a credenciales en logins de páginas web, SMTP, RDP, etc)."
+ Categories (at least one is required): "Categorías (se requiere al menos una)"
+ CMS blog comment spam: "Spam de comentarios de blogs de CMS."
+ Conjunctive category: "Categoría conjuntiva (uso en combinación con otras categorías más específicas)."
+ DDoS attacks: "Ataques DDoS (normalmente parte de una botnet)."
+ DNS compromise: "Compromiso de DNS (alterar los registros DNS dando como resultado una redirección incorrecta)."
+ DNS poisoning: "Envenenamiento de DNS."
+ Email sender spoofing: "Falsificación del remitente de correo electrónico."
+ Email spam: "Correo electrónico de spam (contenido de correo electrónico de spam, archivos adjuntos infectados, correos electrónicos de phishing, etc)."
+ Exploited host: "Host explotado (es probable que el host esté infectado con malware y se esté utilizando para otros ataques o para alojar contenido malicioso)."
+ FTP brute-force attacks: "Ataques de fuerza bruta FTP."
+ Fraudulent VoIP: "VoIP fraudulenta."
+ Fraudulent orders: "Órdenes fraudulentas."
+ Hacking: "Hacking."
+ IoT targeted: "Abuso dirigido a IoT. Incluya información sobre qué tipo de dispositivo fue el objetivo en los comentarios."
+ Open proxy, open relay, or tor endpoint: "Proxy abierto, retransmisión abierta, o punto final tor."
+ Phishing: "Sitios web y/o correo electrónico de phishing."
+ Ping of death: "Ping de la muerte (paquete IP de gran tamaño)."
+ Port scans: "Escaneos de puertos (escaneo en busca de puertos abiertos y servicios vulnerables)."
+ SQL injection: "Inyección SQL."
+ SSH abuse: "Abuso de SSH."
+ VPN IP: "IP VPN."
+ Web spam: "Spam web (spam de comentarios/foros, spam de referencia HTTP, u otro spam de CMS)."
+ Webapp attacks: "Ataques a aplicaciones web (buscar vulnerabilidades o exploits, o intentar explotar aplicaciones web, CMS, o soluciones de comercio electrónico instalados, por ejemplo, WordPress, Drupal, phpMyAdmin, etc)."
 Extended Description:
  AbuseIPDB module: "Bloquea las solicitudes de los IP listados en AbuseIPDB."
  BGPView module: "Aprovecha la {{Links.BGPView}} API para proporcionar un servicio para buscar códigos de país y ASN para CIDRAM, permitiendo que los ASN y los países se bloqueen o incluyan en la lista blanca a través de la configuración CIDRAM, y proporcionando un medio para la verificación de redes sociales para verificar las solicitudes de Facebook. (Si usa este módulo, no necesitará usar el módulo IP-API, ya que tienen el mismo propósito)."
@@ -939,6 +965,7 @@ tip:
  Rate limiting is currently disabled: "Nota: La limitación de tasa está actualmente deshabilitada, pero se puede habilitar a través de la página de configuración."
  Sections List: "Hola, {username}.<br />Esta página enumera qué secciones existen en los archivos de firma actualmente activos."
  See the documentation: "Ver la <a href="https://github.com/CIDRAM/Docs/blob/master/readme.es.md\#user-content-SECTION5" hreflang="es-ES" rel="noopener external">documentación</a> para obtener información sobre las distintas directivas de la configuración y sus propósitos."
+ Server log snippets, abuse details, etc: "Fragmentos de registro del servidor, detalles de abuso, etc."
  Signature File Fixer: "Hola, {username}.<br />El fijador de archivos de firmas proporciona una manera de detectar y solucionar problemas potenciales en los archivos de firmas."
  Specify a value, or leave blank to disregard: "Especifique un valor, o déjelo en blanco para descartarlo."
  Statistics tracking is currently disabled: "Nota: El seguimiento de estadísticas está actualmente deshabilitado, pero se puede habilitar a través de la página de configuración."

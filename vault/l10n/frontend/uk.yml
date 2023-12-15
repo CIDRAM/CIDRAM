@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Ukrainian language data for the front-end (last modified: 2023.12.01).
+# This file: Ukrainian language data for the front-end (last modified: 2023.12.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,6 +24,32 @@
 # requests, ask. I can help.
 ##/
 
+Abuse category:
+ Bad web bot: "Поганий веб-бот (сканування адрес електронної пошти, вмісту, сканерів, які не поважають robots.txt, надмірних запитів, підробки агента користувача, тощо)."
+ Brute-force attacks: "Атаки грубою силою (атаки грубої сили на логіни веб-сторінок, SMTP, RDP, тощо)."
+ Categories (at least one is required): "Категорії (потрібна принаймні одна)"
+ CMS blog comment spam: "Спам у коментарях блогу CMS."
+ Conjunctive category: "Категорія сполучника (використання в поєднанні з іншими, більш конкретними категоріями)."
+ DDoS attacks: "DDoS атаки (зазвичай є частиною ботнету)."
+ DNS compromise: "DNS компрометація (зміна записів DNS, що призводить до неправильного перенаправлення)."
+ DNS poisoning: "DNS отруєння."
+ Email sender spoofing: "Підробка відправника електронної пошти."
+ Email spam: "Спам в електронній пошті (вміст спаму, заражені вкладення, фішингові пошти, тощо)."
+ Exploited host: "Експлуатований хост (хост, ймовірно, заражений зловмисним програмним забезпеченням і використовується для інших атак або розміщення шкідливого вмісту)."
+ FTP brute-force attacks: "FTP атаки грубої сили."
+ Fraudulent VoIP: "Шахрайський VoIP."
+ Fraudulent orders: "Шахрайські замовлення."
+ Hacking: "Хакерство."
+ IoT targeted: "Цільове зловживання IoT. Додайте в коментарях інформацію про те, який тип пристрою був націлений."
+ Open proxy, open relay, or tor endpoint: "Відкритий проксі, відкритий ретранслятор, або кінцева точка tor."
+ Phishing: "Фішингові веб-сайти та/або електронна пошта."
+ Ping of death: "Пінг смерті (надмірний IP-пакет)."
+ Port scans: "Сканування портів (сканування відкритих портів і вразливих служб)."
+ SQL injection: "SQL ін'єкція."
+ SSH abuse: "Зловживання SSH."
+ VPN IP: "VPN IP."
+ Web spam: "Веб-спам (спам у коментарях/форумах, спам у реферері HTTP, або інший спам CMS)."
+ Webapp attacks: "Атаки веб-додатків (перевірка вразливостей або експлойтів для використання проти встановлених веб-додатків, CMS, або рішень для електронної комерції, наприклад, WordPress, Drupal, phpMyAdmin, тощо)."
 Extended Description:
  AbuseIPDB module: "Блокує запити від IP-адрес, указаних у AbuseIPDB."
  BGPView module: "Використовує {{Links.BGPView}} API щоб надати можливість пошуку за ASN і кодами країни для CIDRAM, таким чином дозволяючи ASN і країни бути заблокованими або додавати в білий список через конфігурацію CIDRAM, і надаючи засоби перевірки соціальних мереж для перевірки запитів Facebook. (Якщо ви використовуєте цей модуль, вам не потрібно буде використовувати модуль IP-API, оскільки вони служать тій самій меті)."
@@ -967,6 +993,7 @@ tip:
  Rate limiting is currently disabled: "Зауважте: Обмеження швидкості наразі вимкнено, але його можна ввімкнути на сторінці конфігурації."
  Sections List: "Привіт, {username}.<br />На цій сторінці вказано, які розділи існують у поточних активних файлах сигнатур."
  See the documentation: "Перегляньте <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external">документацію</a> для отримання інформації про різні директиви конфігурації та їх призначення."
+ Server log snippets, abuse details, etc: "Фрагменти журналу сервера, деталі зловживань, тощо."
  Signature File Fixer: "Привіт, {username}.<br />Засіб виправлення файлів сигнатур надає спосіб виявлення та усунення потенційних проблем у файлах сигнатури."
  Specify a value, or leave blank to disregard: "Укажіть значення, або залиште порожнім щоб не враховувати."
  Statistics tracking is currently disabled: "Зауважте: Відстеження статистики наразі вимкнено, але його можна ввімкнути на сторінці конфігурації."

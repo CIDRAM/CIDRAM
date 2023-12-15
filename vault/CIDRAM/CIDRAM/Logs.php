@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used by the logs page (last modified: 2023.12.01).
+ * This file: Methods used by the logs page (last modified: 2023.12.15).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -101,13 +101,18 @@ trait Logs
             /** Fix bad encoding and add block info search links. */
             if (isset($Parts[2]) && is_array($Parts[2]) && count($Parts[2]) && $BlockSeparatorLen === 14) {
                 $Parts[2] = array_unique($Parts[2]);
-                $IPTestingLabel = $this->L10N->getString('link.IP Testing');
                 foreach ($Parts[2] as $ThisPart) {
                     $ThisPartUnsafe = str_replace(['&gt;', '&lt;'], ['>', '<'], $ThisPart);
                     $TestString = $this->Demojibakefier->guard($ThisPartUnsafe);
-                    $IPSVGs = ($this->expandIpv4($ThisPart, true) || $this->expandIpv6($ThisPart, true)) ?
-                        ' <a target="newReportingTab" href="https://www.abuseipdb.com/report?ip=' . $ThisPart . '" rel="noopener noreferrer external"><script type="text/javascript">abuseIpdbSvg();</script></a>' .
-                        '<span onclick="javascript:{document.getElementById(\'ipTestFormInput\').value=\'' . $ThisPart . '\';document.getElementById(\'ipTestForm\').submit()}" title="' . $IPTestingLabel . '" class="translateIcon navicon test"></span>' : ' ';
+                    $IPSVGs = ' ';
+                    if ($this->expandIpv4($ThisPart, true) || $this->expandIpv6($ThisPart, true)) {
+                        if (isset($this->CIDRAM['Extra SVG Icons']) && is_array($this->CIDRAM['Extra SVG Icons'])) {
+                            foreach ($this->CIDRAM['Extra SVG Icons'] as $ExtraSvgIcon) {
+                                $IPSVGs .= sprintf($ExtraSvgIcon, $ThisPart);
+                            }
+                            $IPSVGs = $this->parseVars([], $IPSVGs, true);
+                        }
+                    }
                     $Alternate = (
                         $TestString !== $ThisPartUnsafe && $this->Demojibakefier->Last
                     ) ? '<code dir="ltr">🔁' . $this->Demojibakefier->Last . '➡️UTF-8' . $FieldSeparator . '</code>' . str_replace(['<', '>'], ['&lt;', '&gt;'], $TestString) . "<br />\n" : '';
@@ -259,12 +264,17 @@ trait Logs
             } else {
                 asort($Entries, SORT_NUMERIC);
             }
-            $IPTestingLabel = $this->L10N->getString('link.IP Testing');
             foreach ($Entries as $Entry => $Count) {
                 if (!(substr($Entry, 0, 1) === '[' && substr($Entry, 3, 1) === ']')) {
-                    $IPSVGs = ($this->expandIpv4($Entry, true) || $this->expandIpv6($Entry, true)) ?
-                        '<a target="newReportingTab" href="https://www.abuseipdb.com/report?ip=' . $Entry . '" rel="noopener noreferrer external"><script type="text/javascript">abuseIpdbSvg();</script></a>' .
-                        '<span onclick="javascript:{document.getElementById(\'ipTestFormInput\').value=\'' . $Entry . '\';document.getElementById(\'ipTestForm\').submit()}" title="' . $IPTestingLabel . '" class="translateIcon navicon test"></span>' : '';
+                    $IPSVGs = '';
+                    if ($this->expandIpv4($Entry, true) || $this->expandIpv6($Entry, true)) {
+                        if (isset($this->CIDRAM['Extra SVG Icons']) && is_array($this->CIDRAM['Extra SVG Icons'])) {
+                            foreach ($this->CIDRAM['Extra SVG Icons'] as $ExtraSvgIcon) {
+                                $IPSVGs .= sprintf($ExtraSvgIcon, $Entry);
+                            }
+                            $IPSVGs = $this->parseVars([], $IPSVGs, true);
+                        }
+                    }
                     $Entry .= ' ' . $IPSVGs . '<a href="' . $this->paginationRemoveFrom($BlockLink) . '&search=' . str_replace('=', '_', base64_encode($Entry)) . '">»</a>';
                 }
                 preg_match_all('~\\("([^()"]+)", L~', $Entry, $Parts);

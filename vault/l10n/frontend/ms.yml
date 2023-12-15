@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malay language data for the front-end (last modified: 2023.12.01).
+# This file: Malay language data for the front-end (last modified: 2023.12.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,6 +24,32 @@
 # requests, ask. I can help.
 ##/
 
+Abuse category:
+ Bad web bot: "Bot web buruk (mengikis alamat e-mel, kandungan, perangkak yang tidak menghormati robots.txt, permintaan yang berlebihan, penipuan ejen pengguna, dsb)."
+ Brute-force attacks: "Serangan brute-force (serangan brute-force bukti kelayakan pada log masuk halaman web, SMTP, RDP, dsb)."
+ Categories (at least one is required): "Kategori (sekurang-kurangnya satu diperlukan)"
+ CMS blog comment spam: "Spam komen blog CMS."
+ Conjunctive category: "Kategori konjungsi (gunakan dalam kombinasi dengan kategori lain yang lebih khusus)."
+ DDoS attacks: "Serangan DDoS (biasanya sebahagian daripada botnet)."
+ DNS compromise: "Kompromi DNS (mengubah rekod DNS yang mengakibatkan pengalihan yang tidak betul)."
+ DNS poisoning: "Keracunan DNS."
+ Email sender spoofing: "Penipuan penghantar e-mel."
+ Email spam: "Spam e-mel (kandungan spam e-mel, lampiran yang dijangkiti, pancingan e-mel, dsb)."
+ Exploited host: "Hos yang dieksploitasi (hos berkemungkinan dijangkiti perisian hasad dan digunakan untuk serangan lain atau untuk mengehoskan kandungan berniat jahat)."
+ FTP brute-force attacks: "Serangan brute-force FTP."
+ Fraudulent VoIP: "VoIP penipu."
+ Fraudulent orders: "Pesanan penipu."
+ Hacking: "Penggodaman."
+ IoT targeted: "Penyalahgunaan disasarkan IoT. Sertakan maklumat tentang jenis peranti yang disasarkan dalam ulasan."
+ Open proxy, open relay, or tor endpoint: "Proksi terbuka, geganti terbuka, atau titik akhir tor."
+ Phishing: "Tapak web pancingan dan/atau e-mel."
+ Ping of death: "Ping kematian (paket IP bersaiz besar)."
+ Port scans: "Imbasan port (mengimbas untuk port terbuka dan perkhidmatan yang terdedah)."
+ SQL injection: "Suntikan SQL."
+ SSH abuse: "Penyalahgunaan SSH."
+ VPN IP: "IP VPN."
+ Web spam: "Spam web (spam komen/forum, spam perujuk HTTP, atau spam CMS lain)."
+ Webapp attacks: "Serangan aplikasi web (meneliti kelemahan atau eksploitasi, atau cuba mengeksploitasi aplikasi web, CMS, atau penyelesaian e-dagang yang dipasang, cth., WordPress, Drupal, phpMyAdmin, dsb)."
 Extended Description:
  AbuseIPDB module: "Menyekat permintaan daripada IP yang disenaraikan oleh AbuseIPDB."
  BGPView module: "Memanfaatkan {{Links.BGPView}} API untuk menyediakan kemudahan carian ASN dan kod negara untuk CIDRAM, membolehkan ASN dan negara untuk disekat atau disenarai putih melalui konfigurasi CIDRAM, dan menyediakan cara untuk pengesahan rangkaian sosial untuk mengesahkan permintaan Facebook. (Jika anda menggunakan modul ini, anda tidak perlu menggunakan modul IP-API, kerana mereka mempunyai tujuan yang sama)."
@@ -907,6 +933,7 @@ tip:
  Rate limiting is currently disabled: "Nota: Pengehadan kadar kini dinyahaktifkan, tetapi boleh diaktifkan melalui halaman konfigurasi."
  Sections List: "Salam, {username}.<br />Halaman ini menyenaraikan bahagian mana yang wujud dalam fail tandatangan yang sedang aktif."
  See the documentation: "Lihat <a href="https://github.com/CIDRAM/Docs/blob/master/readme.id.md\#user-content-SECTION5" hreflang="id-ID" rel="noopener external">dokumentasi</a> untuk mendapatkan maklumat tentang pelbagai arahan konfigurasi dan tujuannya."
+ Server log snippets, abuse details, etc: "Log pelayan, butiran penyalahgunaan, dsb."
  Signature File Fixer: "Salam, {username}.<br />Pembetul fail tandatangan menyediakan cara untuk mengesan dan menyelesaikan masalah yang berpotensi dalam fail tandatangan."
  Specify a value, or leave blank to disregard: "Tentukan nilai, atau biarkan kosong untuk mengabaikannya."
  Statistics tracking is currently disabled: "Nota: Penjejakan statistik kini dinyahaktifkan, tetapi boleh diaktifkan melalui halaman konfigurasi."

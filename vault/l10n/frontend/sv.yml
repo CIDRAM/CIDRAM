@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2023.12.01).
+# This file: Swedish language data for the front-end (last modified: 2023.12.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,6 +24,32 @@
 # requests, ask. I can help.
 ##/
 
+Abuse category:
+ Bad web bot: "Dålig webbbot (skrapa efter e-postadresser, innehåll, sökrobotar som inte respekterar robots.txt, överdrivna förfrågningar, förfalskning av användaragenter, osv)."
+ Brute-force attacks: "Brute-force attacker (brute-force attacker på webbsidors inloggningar, SMTP, RDP, osv)."
+ Categories (at least one is required): "Kategorier (minst en krävs)"
+ CMS blog comment spam: "CMS bloggkommentar spam."
+ Conjunctive category: "Konjunktiv kategori (användning i kombination med andra, mer specifika kategorier)."
+ DDoS attacks: "DDoS attacker (vanligtvis en del av ett botnät)."
+ DNS compromise: "DNS kompromiss (ändra DNS-poster vilket resulterar i felaktig omdirigering)."
+ DNS poisoning: "DNS förgiftning."
+ Email sender spoofing: "Förfalskning av e-postavsändare."
+ Email spam: "E-post spam (spam-e-postinnehåll, infekterade bilagor, nätfiske-e-postmeddelanden, osv)."
+ Exploited host: "Exploaterad värd (värd är sannolikt infekterad med skadlig programvara och används för andra attacker eller för att vara värd för skadligt innehåll)."
+ FTP brute-force attacks: "FTP brute-force attacker."
+ Fraudulent VoIP: "Bedräglig VoIP."
+ Fraudulent orders: "Bedrägliga order."
+ Hacking: "Hackning."
+ IoT targeted: "IoT-riktat missbruk. Inkludera information om vilken typ av enhet som riktades mot i kommentarerna."
+ Open proxy, open relay, or tor endpoint: "Öppen proxy, öppen relä, eller tor-ändpunkt."
+ Phishing: "Nätfiskewebbplatser och/eller e-post."
+ Ping of death: "Ping of death (överdimensionerat IP-paket)."
+ Port scans: "Port skannar (skanna efter öppna portar och sårbara tjänster)."
+ SQL injection: "SQL-injektion."
+ SSH abuse: "SSH missbruk."
+ VPN IP: "VPN IP."
+ Web spam: "Webbspam (kommentar/forum-spam, HTTP-hänvisningsspam, eller annan CMS-spam)."
+ Webapp attacks: "Webapp attacker (söka efter sårbarheter eller utnyttjande, eller försöka utnyttja installerade webbappar, CMS, eller e-handelslösningar, t.ex., WordPress, Drupal, phpMyAdmin, osv)."
 Extended Description:
  AbuseIPDB module: "Blockerar förfrågningar från IP-adresser som listas på AbuseIPDB."
  BGPView module: "Utnyttjar {{Links.BGPView}} API för att tillhandahålla sökfunktioner för ASNer och landskoder för CIDRAM, så att ASNer och länder kan blockeras eller listas med vitlista via CIDRAM-konfigurationen, och tillhandahålla ett sätt för verifiering av socialt nätverk för att verifiera Facebook-förfrågningar. (Om du använder den här modulen, du inte behöver använda IP-API-modulen, eftersom de tjänar samma syfte)."
@@ -939,6 +965,7 @@ tip:
  Rate limiting is currently disabled: "Notera: Hastighetsbegränsning är för närvarande inaktiverad, men kan aktiveras via konfigurationssidan."
  Sections List: "Hallå, {username}.<br />Den här sidan visar vilka sektioner som finns i de aktuella aktiva signaturfilerna."
  See the documentation: "Se <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external">dokumentationen</a> för information om de olika konfigurationsdirektiven och deras ändamål."
+ Server log snippets, abuse details, etc: "Utdrag från serverlogg, missbruksdetaljer, osv."
  Signature File Fixer: "Hallå, {username}.<br />Signaturfilfixaren ger ett sätt att upptäcka och åtgärda eventuella problem i signaturfiler."
  Specify a value, or leave blank to disregard: "Ange ett värde, eller lämna tomma för att bortse från."
  Statistics tracking is currently disabled: "Notera: Statistikspårning är för närvarande inaktiverad, men kan aktiveras via konfigurationssidan."

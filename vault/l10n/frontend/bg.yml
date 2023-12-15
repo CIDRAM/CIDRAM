@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bulgarian language data for the front-end (last modified: 2023.12.01).
+# This file: Bulgarian language data for the front-end (last modified: 2023.12.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,6 +24,32 @@
 # requests, ask. I can help.
 ##/
 
+Abuse category:
+ Bad web bot: "Лош уеб бот (сканиране за имейл адреси, съдържание, роботи, които не зачитат robots.txt, прекомерни заявки, спуфинг на потребителски агент, и т.н)."
+ Brute-force attacks: "Атаки с груба сила (груба сила на идентификационни данни при влизане в уеб страници, SMTP, RDP, и т.н)."
+ Categories (at least one is required): "Категории (необходима е поне една)"
+ CMS blog comment spam: "CMS блог коментар спам."
+ Conjunctive category: "Конюнктивна категория (използване в комбинация с други, по-специфични категории)."
+ DDoS attacks: "DDoS атаки (обикновено част от ботнет)."
+ DNS compromise: "DNS компромис (промяна на DNS записи, което води до неправилно пренасочване)."
+ DNS poisoning: "DNS отравяне."
+ Email sender spoofing: "Спуфинг на изпращача на имейл."
+ Email spam: "Спам по имейл (спам съдържание на имейли, заразени прикачени файлове, фишинг имейли, и т.н)."
+ Exploited host: "Експлоатиран хост (хостът вероятно е заразен със зловреден софтуер и се използва за други атаки или за хостване на злонамерено съдържание)."
+ FTP brute-force attacks: "FTP атаки с груба сила."
+ Fraudulent VoIP: "Измамно VoIP."
+ Fraudulent orders: "Измамни поръчки."
+ Hacking: "Хакване."
+ IoT targeted: "IoT насочена злоупотреба. Включете информация за това какъв тип устройство е насочено към коментарите."
+ Open proxy, open relay, or tor endpoint: "Отворено прокси, отворено препредаване, или крайна точка tor."
+ Phishing: "Фишинг уебсайтове и/или имейл."
+ Ping of death: "Пинг на смъртта (прекалено голям IP пакет)."
+ Port scans: "Сканиране на портове (сканиране за отворени портове и уязвими услуги)."
+ SQL injection: "SQL инжекция."
+ SSH abuse: "Злоупотреба с SSH."
+ VPN IP: "VPN IP."
+ Web spam: "Уеб спам (спам за коментари/форуми, спам за HTTP препратки, или друг спам за CMS)."
+ Webapp attacks: "Атаки на уеб приложения (сондиране за уязвимости или експлойти за използване срещу инсталирани уеб приложения, CMS, или решения за електронна търговия, напр., WordPress, Drupal, phpMyAdmin, и т.н)."
 Extended Description:
  AbuseIPDB module: "Блокира заявки от IP адреси, изброени в AbuseIPDB."
  BGPView module: "Използва {{Links.BGPView}} API, за да предостави средство за търсене на ASN и код на държава за CIDRAM, позволявайки ASN и държави да бъдат блокирани или включени в белия списък чрез конфигурацията на CIDRAM и предоставя средство за проверка на социалните мрежи за проверка на заявки във Facebook. (Ако използвате този модул, няма да е необходимо да използвате IP-API модула, тъй като те служат за същата цел)."
@@ -949,6 +975,7 @@ tip:
  Rate limiting is currently disabled: "Забележка: Ограничаването на скоростта в момента е деактивирано, но може да се активира чрез страницата за конфигурация."
  Sections List: "Здравейте, {username}.<br />Тази страница изброява кои секции съществуват в текущо активните файлове за сигнатури."
  See the documentation: "Вижте <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external">документацията</a> за информация относно различните директиви за конфигурация и техните цели."
+ Server log snippets, abuse details, etc: "Фрагменти от регистрационния файл на сървъра, подробности за злоупотреба, и т.н."
  Signature File Fixer: "Здравейте, {username}.<br />Инструментът за коригиране на файлове за сигнатури предоставя начин за откриване и коригиране на потенциални проблеми във файловете за сигнатури."
  Specify a value, or leave blank to disregard: "Посочете стойност, или оставете празно, за да пренебрегнете."
  Statistics tracking is currently disabled: "Забележка: Проследяването на статистика в момента е деактивирано, но може да се активира чрез страницата за конфигурация."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2023.12.01).
+# This file: Russian language data for the front-end (last modified: 2023.12.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,6 +24,32 @@
 # requests, ask. I can help.
 ##/
 
+Abuse category:
+ Bad web bot: "Плохой веб-бот (поиск адресов электронной почты, контента, сканеров, которые не учитывают robots.txt, чрезмерных запросов, подмены пользовательского агента, и т.д.)."
+ Brute-force attacks: "Атаки грубой силы (атаки грубой силы на вход на веб-страницу, SMTP, RDP, и т.д.)."
+ Categories (at least one is required): "Категории (нужна хотя бы одна)"
+ CMS blog comment spam: "Спам в комментариях в блогах CMS."
+ Conjunctive category: "Конъюнктивная категория (использовать в сочетании с другими, более конкретными категориями)."
+ DDoS attacks: "DDoS атаки (обычно часть ботнета)."
+ DNS compromise: "Компромисс DNS (изменение записей DNS, приводящее к неправильному перенаправлению)."
+ DNS poisoning: "Отравление DNS."
+ Email sender spoofing: "Подмена отправителя электронной почты."
+ Email spam: "Спам по электронной почте (спам по электронной почты, зараженные вложения, фишинговые электронные письма, и т.д.)."
+ Exploited host: "Эксплуатируемый хост (хост, вероятно, заражен вредоносным ПО и используется для других атак или для размещения вредоносного контента)."
+ FTP brute-force attacks: "FTP атаки грубой силы."
+ Fraudulent VoIP: "Мошеннический VoIP."
+ Fraudulent orders: "Мошеннические заказы."
+ Hacking: "Взлом."
+ IoT targeted: "Целенаправленное злоупотребление интернетом вещей. Включите в комментарии информацию о том, какой тип устройства был атакован."
+ Open proxy, open relay, or tor endpoint: "Открытый прокси, открытый ретранслятор, или конечная точка tor."
+ Phishing: "Фишинговые веб-сайты и/или электронная почта."
+ Ping of death: "Пинг смерти (слишком большой IP-пакет)."
+ Port scans: "Сканирование портов (сканирование открытых портов и уязвимых сервисов)."
+ SQL injection: "SQL инъекция."
+ SSH abuse: "Злоупотребление SSH."
+ VPN IP: "IP VPN."
+ Web spam: "Веб-спам (спам в комментариях/форуме, спам HTTP-реферера, или другой спам CMS)."
+ Webapp attacks: "Атаки через веб-приложение (поиск уязвимостей или эксплойтов для использования против установленных веб-приложений, CMS, или решений для электронной коммерции, например, WordPress, Drupal, phpMyAdmin, и т.д.)."
 Extended Description:
  AbuseIPDB module: "Блокирует запросы от IP-адресов, перечисленных в AbuseIPDB."
  BGPView module: "Использует API {{Links.BGPView}} для предоставления средства поиска для ASN и коды страны для CIDRAM, таким образом, позволяя блокировать или вносить белый список ASN и стран через конфигурацию CIDRAM, и предоставление средств для проверки в социальных сетях для проверки запросов Facebook. (Если вы используете этот модуль, вам не нужно будет использовать модуль IP-API, так как они служат той же цели)."
@@ -968,6 +994,7 @@ tip:
  Rate limiting is currently disabled: "Заметка: Ограничение скорости в настоящее время отключено, но может быть включено через страницу конфигурации."
  Sections List: "Привет, {username}.<br />На этой странице перечислены секций, которые существуют в активных файлах сигнатур."
  See the documentation: "Просмотреть <a href="https://github.com/CIDRAM/Docs/blob/master/readme.ru.md\#user-content-SECTION5" hreflang="ru-RU" rel="noopener external">документации</a> для получения информации о различных директив конфигурации и их целей."
+ Server log snippets, abuse details, etc: "Фрагменты журналов сервера, сведения о злоупотреблениях, и т.д."
  Signature File Fixer: "Привет, {username}.<br />Закрепитель файла сигнатуры позволяет обнаруживать и устранять потенциальные проблемы в файлах сигнатуры."
  Specify a value, or leave blank to disregard: "Укажите значение, или оставьте пустым, чтобы игнорировать."
  Statistics tracking is currently disabled: "Заметка: Отслеживание статистики в настоящее время отключено, но может быть включено через страницу конфигурации."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2023.12.01).
+# This file: Indonesian language data for the front-end (last modified: 2023.12.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,6 +24,32 @@
 # requests, ask. I can help.
 ##/
 
+Abuse category:
+ Bad web bot: "Bot web yang buruk (mencari alamat email, konten, perayap yang tidak mengikuti robots.txt, permintaan berlebihan, pemalsuan agen pengguna, dll)."
+ Brute-force attacks: "Serangan brute-force (serangan brute-force kredensial pada login halaman web, SMTP, RDP, dll)."
+ Categories (at least one is required): "Kategori (setidaknya satu diperlukan)"
+ CMS blog comment spam: "Spam komentar blog CMS."
+ Conjunctive category: "Kategori konjungtif (digunakan dalam kombinasi dengan kategori lain yang lebih spesifik)."
+ DDoS attacks: "Serangan DDoS (biasanya bagian dari botnet)."
+ DNS compromise: "Kompromi DNS (mengubah catatan DNS yang mengakibatkan pengalihan yang tidak tepat)."
+ DNS poisoning: "Keracunan DNS."
+ Email sender spoofing: "Pemalsuan pengirim email."
+ Email spam: "Spam email (konten spam email, lampiran yang terinfeksi, phishing email, dll)."
+ Exploited host: "Host yang dieksploitasi (host kemungkinan besar terinfeksi malware dan digunakan untuk serangan lain atau untuk menghosting konten berbahaya)."
+ FTP brute-force attacks: "Serangan brute-force FTP."
+ Fraudulent VoIP: "VoIP penipuan."
+ Fraudulent orders: "Perintah penipuan."
+ Hacking: "Peretasan."
+ IoT targeted: "Penyalahgunaan yang ditargetkan pada IoT. Sertakan informasi tentang jenis perangkat apa yang menjadi sasaran di komentar."
+ Open proxy, open relay, or tor endpoint: "Proksi terbuka, relai terbuka, atau titik akhir tor."
+ Phishing: "Situs web dan/atau phishing email."
+ Ping of death: "Ping kematian (paket IP yang terlalu besar)."
+ Port scans: "Pemindaian port (memindai port terbuka dan layanan yang rentan)."
+ SQL injection: "Injeksi SQL."
+ SSH abuse: "Penyalahgunaan SSH."
+ VPN IP: "IP VPN."
+ Web spam: "Spam web (spam komentar/forum, spam perujuk HTTP, atau spam CMS lainnya)."
+ Webapp attacks: "Serangan aplikasi web (menyelidiki kerentanan atau eksploitasi, atau mencoba mengeksploitasi aplikasi web, CMS, atau solusi e-niaga yang diinstal, misalnya, WordPress, Drupal, phpMyAdmin, dll)."
 Extended Description:
  AbuseIPDB module: "Memblokir permintaan dari IP yang terdaftar oleh AbuseIPDB."
  BGPView module: "Memanfaatkan {{Links.BGPView}} API untuk menyediakan fasilitas pencarian untuk ASN dan kode negara untuk CIDRAM, memungkinkan ASN dan negara untuk diblokir atau masuk daftar putih melalui konfigurasi CIDRAM, dan menyediakan sarana untuk verifikasi media sosial untuk memverifikasi permintaan Facebook. (Jika Anda menggunakan modul ini, Anda tidak perlu menggunakan modul IP-API, karena mereka memiliki tujuan yang sama)."
@@ -904,6 +930,7 @@ tip:
  Rate limiting is currently disabled: "Catat: Pembatasan laju saat ini dinonaktifkan, namun dapat diaktifkan melalui halaman konfigurasi."
  Sections List: "Salam, {username}.<br />Halaman ini mencantumkan bagian yang ada di file tanda tangan yang aktif saat ini."
  See the documentation: "Lihat <a href="https://github.com/CIDRAM/Docs/blob/master/readme.id.md\#user-content-SECTION5" hreflang="id-ID" rel="noopener external">dokumentasi</a> untuk informasi tentang berbagai direktif konfigurasi dan tujuan mereka."
+ Server log snippets, abuse details, etc: "Cuplikan log server, detail penyalahgunaan, dll."
  Signature File Fixer: "Salam, {username}.<br />Alat perbaikan file tanda tangan menyediakan cara untuk mendeteksi dan memperbaiki potensi masalah dalam file tanda tangan."
  Specify a value, or leave blank to disregard: "Tentukan nilai, atau biarkan kosong untuk mengabaikannya."
  Statistics tracking is currently disabled: "Catat: Pelacakan statistik saat ini dinonaktifkan, namun dapat diaktifkan melalui halaman konfigurasi."

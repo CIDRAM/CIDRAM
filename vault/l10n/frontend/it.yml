@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2023.12.01).
+# This file: Italian language data for the front-end (last modified: 2023.12.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,6 +24,32 @@
 # requests, ask. I can help.
 ##/
 
+Abuse category:
+ Bad web bot: "Bot web pessimo (ricerca di indirizzi posta elettronica, contenuti, crawler che non rispettano robots.txt, richieste eccessive, spoofing dello agente utente, ecc)."
+ Brute-force attacks: "Attacchi di forza bruta (attacchi di forza bruta alle credenziali sugli accessi alle pagine web, SMTP, RDP, ecc)."
+ Categories (at least one is required): "Categorie (almeno una è obbligatoria)"
+ CMS blog comment spam: "Spam nei commenti del blog CMS."
+ Conjunctive category: "Categoria congiuntiva (utilizzare in combinazione con altre categorie più specifiche)."
+ DDoS attacks: "Attacchi DDoS (solitamente parte di una botnet)."
+ DNS compromise: "Compromissione DNS (alterazione dei record DNS con conseguente reindirizzamento improprio)."
+ DNS poisoning: "Avvelenamento DNS."
+ Email sender spoofing: "Spoofing del mittente della posta elettronica."
+ Email spam: "Posta elettronica di spam (contenuto di posta elettronica di spam, allegati infetti, posta elettronica di phishing, ecc)."
+ Exploited host: "Host sfruttato (host è probabilmente infetto da malware e viene utilizzato per altri attacchi o per ospitare contenuti dannosi)."
+ FTP brute-force attacks: "Attacchi di forza bruta FTP."
+ Fraudulent VoIP: "VoIP fraudolento."
+ Fraudulent orders: "Ordini fraudolenti."
+ Hacking: "Hacking."
+ IoT targeted: "Abuso mirato dell'IoT. Includi informazioni su quale tipo di dispositivo è stato preso di mira nei commenti."
+ Open proxy, open relay, or tor endpoint: "Proxy aperto, inoltro aperto, o endpoint tor."
+ Phishing: "Siti web e/o posta elettronica di phishing."
+ Ping of death: "Ping della morte (pacchetto IP sovradimensionato)."
+ Port scans: "Scansioni delle porte (scansione per porte aperte e servizi vulnerabili)."
+ SQL injection: "SQL iniezione."
+ SSH abuse: "Abuso di SSH."
+ VPN IP: "IP VPN."
+ Web spam: "Spam sul web (spam nei commenti/forum, spam nei referrer HTTP, o altro spam di CMS)."
+ Webapp attacks: "Attacchi webapp (sondare per vulnerabilità o exploit, o tentare di sfruttare webapp, CMS, o soluzioni di e-commerce installati, ad esempio, WordPress, Drupal, phpMyAdmin, ecc)."
 Extended Description:
  AbuseIPDB module: "Blocca le richieste dagli IP elencati in AbuseIPDB."
  BGPView module: "Sfrutta l'API {{Links.BGPView}} per fornire funzionalità di ricerca di ASN e codici paese per CIDRAM, abilitando a ASN e paesi di essere bloccati o autorizzati nella configurazione CIDRAM, e fornire un mezzo per la verifica dei social network per verificare le richieste di Facebook. (Se utilizzi questo modulo, non avrai bisogno di utilizzare il modulo IP-API, poiché hanno lo stesso scopo)."
@@ -939,6 +965,7 @@ tip:
  Rate limiting is currently disabled: "Nota: La limitazione della velocità è attualmente disattivato, ma può essere attivato tramite la pagina di configurazione."
  Sections List: "Salve, {username}.<br />Questa pagina elenca le sezioni presenti nei file di firma attualmente attivi."
  See the documentation: "Vedere la <a href="https://github.com/CIDRAM/Docs/blob/master/readme.it.md\#user-content-SECTION5" hreflang="it-IT" rel="noopener external">documentazione</a> per informazioni sulle varie direttive di configurazione ed i loro scopi."
+ Server log snippets, abuse details, etc: "Estratti del registro del server, dettagli sugli abusi, ecc."
  Signature File Fixer: "Salve, {username}.<br />Il fissatore per i file di firme fornisce un modo per rilevare e risolvere potenziali problemi nei file di firme."
  Specify a value, or leave blank to disregard: "Specificare un valore, o lasciare vuoto per ignorare."
  Statistics tracking is currently disabled: "Nota: Il monitoraggio delle statistiche è attualmente disattivato, ma può essere attivato tramite la pagina di configurazione."

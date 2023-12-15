@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Czech language data for the front-end (last modified: 2023.12.01).
+# This file: Czech language data for the front-end (last modified: 2023.12.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,6 +24,32 @@
 # requests, ask. I can help.
 ##/
 
+Abuse category:
+ Bad web bot: "Špatný webový robot (vyhledávání e-mailových adres, obsahu, prohledávače, které nerespektují soubor robots.txt, nadměrné požadavky, falšování uživatelských agentů, atd)."
+ Brute-force attacks: "Útoky hrubou silou (útoky hrubou silou na přihlášení na webové stránky, SMTP, RDP, atd)."
+ Categories (at least one is required): "Kategorie (alespoň jedna je povinná)"
+ CMS blog comment spam: "Spam v komentářích na blogu CMS."
+ Conjunctive category: "Konjunktivní kategorie (použití v kombinaci s jinými, specifičtějšími kategoriemi)."
+ DDoS attacks: "DDoS útoky (obvykle součástí botnetu)."
+ DNS compromise: "DNS kompromis (pozměňování DNS záznamů, které má za následek nesprávné přesměrování)."
+ DNS poisoning: "DNS otrava."
+ Email sender spoofing: "Falšování odesílatele e-mailu."
+ Email spam: "E-mailový spam (spamový obsah e-mailů, infikované přílohy, phishingové e-maily, atd)."
+ Exploited host: "Využitý hostitel (hostitel je pravděpodobně infikován malwarem a používá se k jiným útokům nebo k hostování škodlivého obsahu)."
+ FTP brute-force attacks: "FTP útoky hrubou silou."
+ Fraudulent VoIP: "Podvodné VoIP."
+ Fraudulent orders: "Podvodné objednávky."
+ Hacking: "Hackování."
+ IoT targeted: "IoT cílené zneužívání. Do komentářů uveďte informace o tom, na jaký typ zařízení se cílilo."
+ Open proxy, open relay, or tor endpoint: "Otevřený proxy, otevřený přenos, nebo koncový bod tor."
+ Phishing: "Phishingové webové stránky a/nebo e-mail."
+ Ping of death: "Ping smrti (nadrozměrný IP paket)."
+ Port scans: "Skenování portů (skenování otevřených portů a zranitelných služeb)."
+ SQL injection: "SQL injekce."
+ SSH abuse: "Zneužívání SSH."
+ VPN IP: "IP VPN."
+ Web spam: "Webový spam (spam v komentářích/fórech, spam v odkazu HTTP, nebo jiný spam CMS)."
+ Webapp attacks: "Útoky na webové aplikace (hledání zranitelností nebo zneužití, nebo pokus o zneužití nainstalovaných webových aplikací, CMS, nebo řešení elektronického obchodu, např., WordPress, Drupal, phpMyAdmin, atd)."
 Extended Description:
  AbuseIPDB module: "Blokuje požadavky z IP adres uvedených na AbuseIPDB."
  BGPView module: "Využívá {{Links.BGPView}} API k poskytování zařízení pro vyhledávání ASN a kódu země pro CIDRAM, umožňující blokování nebo whitelistaci ASN a zemí prostřednictvím konfigurace CIDRAM a poskytuje prostředky pro ověření sociálních sítí pro ověření požadavků Facebooku. (Pokud použijete tento modul, nebudete muset používat modul IP-API, protože slouží stejnému účelu)."
@@ -960,6 +986,7 @@ tip:
  Rate limiting is currently disabled: "Poznámka: Omezení rychlosti je aktuálně deaktivováno, ale lze jej aktivovat prostřednictvím konfigurační stránky."
  Sections List: "Ahoj, {username}.<br />Tato stránka uvádí, které sekce existují v aktuálně aktivních souborech podpisů."
  See the documentation: "Informace o různých konfiguračních direktivách a jejich účelech najdete v <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external">dokumentaci</a>."
+ Server log snippets, abuse details, etc: "Úryvky protokolu serveru, podrobnosti o zneužití, atd."
  Signature File Fixer: "Ahoj, {username}.<br />Opravovač podpisových souborů poskytuje způsob, jak zjistit a opravit potenciální problémy v souborech podpisů."
  Specify a value, or leave blank to disregard: "Zadejte hodnotu nebo ponechte prázdné, aby se to ignorovalo."
  Statistics tracking is currently disabled: "Poznámka: Sledování statistik je aktuálně deaktivováno, ale lze jej aktivovat prostřednictvím konfigurační stránky."

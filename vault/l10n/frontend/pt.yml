@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2023.12.01).
+# This file: Portuguese language data for the front-end (last modified: 2023.12.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,6 +24,34 @@
 # requests, ask. I can help.
 ##/
 
+Abuse category:
+ Bad web bot:
+  pt-BR: "Bot web ruim (busca de endereços de e-mail, conteúdo, rastreadores que não respeitam robots.txt, solicitações excessivas, falsificação de agente de usuário, etc)."
+  pt-PT: "Bot web ruim (busca de endereços de e-mail, conteúdo, rastreadores que não respeitam robots.txt, solicitações excessivas, falsificação de agente de utilizador, etc)."
+ Brute-force attacks: "Ataques de força bruta (ataques de força bruta de credenciais em logins de páginas da web, SMTP, RDP, etc)."
+ Categories (at least one is required): "Categorias (pelo menos uma é obrigatória)"
+ CMS blog comment spam: "Spam de comentários do blog CMS."
+ Conjunctive category: "Categoria conjuntiva (usar em combinação com outras categorias mais específicas)."
+ DDoS attacks: "Ataques DDoS (usualmente parte de uma botnet)."
+ DNS compromise: "Comprometimento de DNS (alteração de registros DNS resultando em redirecionamento indevido)."
+ DNS poisoning: "Envenenamento de DNS."
+ Email sender spoofing: "Falsificação de remetente de e-mail."
+ Email spam: "Spam de e-mail (conteúdo de e-mail de spam, anexos infectados, e-mails de phishing, etc)."
+ Exploited host: "Host explorado (o host provavelmente está infectado com malware e sendo usado para outros ataques ou para hospedar conteúdo malicioso)."
+ FTP brute-force attacks: "Ataques de força bruta FTP."
+ Fraudulent VoIP: "VoIP fraudulento."
+ Fraudulent orders: "Encomendas fraudulentas."
+ Hacking: "Hacking."
+ IoT targeted: "Abuso direcionado à IoT. Inclua informações sobre o tipo de dispositivo alvo nos comentários."
+ Open proxy, open relay, or tor endpoint: "Proxy aberto, retransmissão aberta, ou endpoint tor."
+ Phishing: "Sites e/ou e-mail de phishing."
+ Ping of death: "Ping da morte (pacote IP superdimensionado)."
+ Port scans: "Varreduras de portas (procurando por portas abertas e serviços vulneráveis)."
+ SQL injection: "Injeção SQL."
+ SSH abuse: "Abuso de SSH."
+ VPN IP: "IP VPN."
+ Web spam: "Spam da web (spam de comentários/fórum, spam de referência HTTP, ou outro spam de CMS)."
+ Webapp attacks: "Ataques de aplicativos da web (sondar vulnerabilidades ou explorações, ou tentar explorar aplicativos da web, CMS, ou soluções de comércio eletrônico instalados, por exemplo, WordPress, Drupal, phpMyAdmin, etc)."
 Extended Description:
  AbuseIPDB module: "Bloqueia solicitações de IPs listados no AbuseIPDB."
  BGPView module:
@@ -52,7 +80,7 @@ Extended Description:
  IPv6-Nonblocking: *ExtDesNonblocking
  IPv6-Other: *ExtDesOther
  Optional security extras module: "Fornece algumas proteções limitadas contra vários vectores de ataque comumente usado em solicitações."
- PHPMailer: "Necessário para usar qualquer funcionalidade que envolva o envio de email.<br />{{Links.PHPMailer.PHPMailer}} está disponível através do licença {{Links.PHPMailer.License}}."
+ PHPMailer: "Necessário para usar qualquer funcionalidade que envolva o envio de e-mail.<br />{{Links.PHPMailer.PHPMailer}} está disponível através do licença {{Links.PHPMailer.License}}."
  Project Honeypot module: "Bloqueia solicitações de IPs listados no Project Honeypot."
  Protocol blocker module: "Fornece a capacidade de bloquear protocolos de solicitação específicos por meio da configuração (por exemplo, HTTP/0.9, HTTP/1.1, SPDY/3.0, etc). Observação: Não terá nenhum efeito para os sites que roteiam por meio de serviços que reescrevem solicitações para usar exatamente o mesmo protocolo, como Cloudflare."
  Referrer spam module:
@@ -192,8 +220,8 @@ config:
  general_default_timeout: "Tempo limite padrão a ser usado para solicitações externas? Padrão = 12 segundos."
  general_disabled_channels: "Isso pode ser usado para impedir que o CIDRAM use canais específicos ao enviar solicitações (por exemplo, ao atualizar, ao buscar metadados de componentes, etc)."
  general_emailaddr:
-  pt-BR: "Se você desejar, você pode fornecer um endereço de e-mail aqui a ser dado para os usuários quando eles estão bloqueadas, para eles para usar como um ponto de contato para suporte e/ou assistência no caso de eles sendo bloqueado por engano ou em erro. AVISO: Qualquer endereço de e-mail que você fornecer aqui certamente vai ser adquirido por spambots e raspadores/scrapers durante o curso de seu ser usada aqui, e assim, é fortemente recomendado que, se você optar por fornecer um endereço de e-mail aqui, que você garantir que o endereço de email você fornecer aqui é um endereço descartável e/ou um endereço que você não é importante (em outras palavras, você provavelmente não quer usar seu pessoal principal ou negócio principal endereço de e-mail)."
-  pt-PT: "Se você desejar, você pode fornecer um endereço de e-mail aqui a ser dado para os utilizadores quando eles estão bloqueadas, para eles para usar como um ponto de contacto para suporte e/ou assistência no caso de eles sendo bloqueado por engano ou em erro. AVISO: Qualquer endereço de e-mail que você fornecer aqui certamente vai ser adquirido por spambots e raspadores/scrapers durante o curso de seu ser usada aqui, e assim, é fortemente recomendado que, se você optar por fornecer um endereço de e-mail aqui, que você garantir que o endereço de email você fornecer aqui é um endereço descartável e/ou um endereço que você não é importante (em outras palavras, você provavelmente não quer usar seu pessoal principal ou negócio principal endereço de e-mail)."
+  pt-BR: "Se você desejar, você pode fornecer um endereço de e-mail aqui a ser dado para os usuários quando eles estão bloqueadas, para eles para usar como um ponto de contato para suporte e/ou assistência no caso de eles sendo bloqueado por engano ou em erro. AVISO: Qualquer endereço de e-mail que você fornecer aqui certamente vai ser adquirido por spambots e raspadores/scrapers durante o curso de seu ser usada aqui, e assim, é fortemente recomendado que, se você optar por fornecer um endereço de e-mail aqui, que você garantir que o endereço de e-mail você fornecer aqui é um endereço descartável e/ou um endereço que você não é importante (em outras palavras, você provavelmente não quer usar seu pessoal principal ou negócio principal endereço de e-mail)."
+  pt-PT: "Se você desejar, você pode fornecer um endereço de e-mail aqui a ser dado para os utilizadores quando eles estão bloqueadas, para eles para usar como um ponto de contacto para suporte e/ou assistência no caso de eles sendo bloqueado por engano ou em erro. AVISO: Qualquer endereço de e-mail que você fornecer aqui certamente vai ser adquirido por spambots e raspadores/scrapers durante o curso de seu ser usada aqui, e assim, é fortemente recomendado que, se você optar por fornecer um endereço de e-mail aqui, que você garantir que o endereço de e-mail você fornecer aqui é um endereço descartável e/ou um endereço que você não é importante (em outras palavras, você provavelmente não quer usar seu pessoal principal ou negócio principal endereço de e-mail)."
  general_emailaddr_display_style:
   pt-BR: "Como você prefere que o endereço de e-mail seja apresentado aos usuários?"
   pt-PT: "Como você prefere que o endereço de e-mail seja apresentado aos utilizadores?"
@@ -1019,6 +1047,7 @@ tip:
   pt-BR: "Olá, {username}.<br />Esta página lista quais seções existem nos arquivos de assinatura atualmente ativos."
   pt-PT: "Olá, {username}.<br />Esta página lista quais secções existem nos arquivos de assinatura atualmente ativos."
  See the documentation: "Consulte a <a href="https://github.com/CIDRAM/Docs/blob/master/readme.pt.md\#user-content-SECTION5" hreflang="pt" rel="noopener external">documentação</a> para obter informações sobre as várias diretrizes de configuração e seus objetivos."
+ Server log snippets, abuse details, etc: "Trechos de log do servidor, detalhes de abuso, etc."
  Signature File Fixer: "Olá, {username}.<br />O fixador para os arquivos de assinatura fornece uma maneira de detectar e corrigir possíveis problemas em arquivos de assinatura."
  Specify a value, or leave blank to disregard: "Especifique um valor, ou deixe em branco para desconsiderar."
  Statistics tracking is currently disabled: "Nota: O monitoramento de estatísticas está desativado atualmente, mas pode ser ativado através da página de configuração."

@@ -7,9 +7,37 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2023.12.01).
+# This file: English language data for the front-end (last modified: 2023.12.13).
 ##/
 
+Abuse category:
+ Bad web bot:
+  en-AU: "Bad web bot (scraping for email addresses, content, crawlers that don't honour robots.txt, excessive requests, user agent spoofing, etc)."
+  en-US: "Bad web bot (scraping for email addresses, content, crawlers that don't honor robots.txt, excessive requests, user agent spoofing, etc)."
+ Brute-force attacks: "Brute-force attacks (credential brute-force attacks on webpage logins, SMTP, RDP, etc)."
+ Categories (at least one is required): "Categories (at least one is required)"
+ CMS blog comment spam: "CMS blog comment spam."
+ Conjunctive category: "Conjunctive category (use in combination with other, more specific categories)."
+ DDoS attacks: "DDoS attacks (usually part of a botnet)."
+ DNS compromise: "DNS compromise (altering DNS records resulting in improper redirection)."
+ DNS poisoning: "DNS poisoning."
+ Email sender spoofing: "Email sender spoofing."
+ Email spam: "Email spam (spam email content, infected attachments, phishing emails, etc)."
+ Exploited host: "Exploited host (host is likely infected with malware and being used for other attacks or to host malicious content)."
+ FTP brute-force attacks: "FTP brute-force attacks."
+ Fraudulent VoIP: "Fraudulent VoIP."
+ Fraudulent orders: "Fraudulent orders."
+ Hacking: "Hacking."
+ IoT targeted: "IoT targeted abuse. Include information about what type of device was targeted in the comments."
+ Open proxy, open relay, or tor endpoint: "Open proxy, open relay, or tor endpoint."
+ Phishing: "Phishing websites and/or email."
+ Ping of death: "Ping of death (oversized IP packet)."
+ Port scans: "Port scans (scanning for open ports and vulnerable services)."
+ SQL injection: "SQL injection."
+ SSH abuse: "SSH abuse."
+ VPN IP: "VPN IP."
+ Web spam: "Web spam (comment/forum spam, HTTP referrer spam, or other CMS spam)."
+ Webapp attacks: "Webapp attacks (probing for vulnerabilities or exploits, or attempting to exploit installed webapps, CMS, or e-commerce solutions, e.g., WordPress, Drupal, phpMyAdmin, etc)."
 Extended Description:
  AbuseIPDB module: "Blocks requests from IPs listed at AbuseIPDB."
  BGPView module: "Leverages the {{Links.BGPView}} API to provide an ASN and country code lookup facility for CIDRAM, enabling ASNs and countries to be blocked or whitelisted via the CIDRAM configuration, and providing a means for social networking verification to verify Facebook requests. (If you use this module, you won't need to use the IP-API module, as they serve the same purpose)."
@@ -609,6 +637,7 @@ label:
  PHP version used: "PHP version used:"
  Page request completed in %s seconds: "Page request completed in %s seconds."
  Paginate: "Paginate"
+ Please abide by the AbuseIPDB reporting policy: "Please abide by the AbuseIPDB <a target="reporting-policy" hreflang="en-US" href="https://www.abuseipdb.com/reporting-policy">reporting policy</a>."
  Please log in to continue: "Please log in to continue."
  Preferred source: "Preferred source:"
  Previous: "Previous:"
@@ -977,6 +1006,7 @@ tip:
  Rate limiting is currently disabled: "Note: Rate limiting is currently disabled, but can be enabled via the configuration page."
  Sections List: "Hello, {username}.<br />This page lists which sections exist in the currently active signature files."
  See the documentation: "See the <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external">documentation</a> for information about the various configuration directives and their purposes."
+ Server log snippets, abuse details, etc: "Server log snippets, abuse details, etc."
  Signature File Fixer: "Hello, {username}.<br />The signature file fixer provides a way to detect and fix potential problems in signature files."
  Specify a value, or leave blank to disregard: "Specify a value, or leave blank to disregard."
  Statistics tracking is currently disabled: "Note: Statistics tracking is currently disabled, but can be enabled via the configuration page."

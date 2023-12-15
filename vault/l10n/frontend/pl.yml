@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2023.12.01).
+# This file: Polish language data for the front-end (last modified: 2023.12.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,6 +24,32 @@
 # requests, ask. I can help.
 ##/
 
+Abuse category:
+ Bad web bot: "Zły bot (szuka adresów e-mail, treści, robotów indeksujących, które nie honorują pliku robots.txt, nadmiernych żądań, fałszowania agenta użytkownika, itp)."
+ Brute-force attacks: "Ataki brutalną siłą (ataki brutalną siłą na loginy stron internetowych, SMTP, RDP, itp)."
+ Categories (at least one is required): "Kategorie (przynajmniej jedna jest wymagana)"
+ CMS blog comment spam: "Spam w komentarzach na blogu CMS."
+ Conjunctive category: "Kategoria spójnik (używać w połączeniu z innymi, bardziej szczegółowymi kategoriami)."
+ DDoS attacks: "Ataki DDoS (zazwyczaj część botnetu)."
+ DNS compromise: "Kompromis DNS (zmiana rekordów DNS skutkująca nieprawidłowym przekierowaniem)."
+ DNS poisoning: "Zatrucie DNS."
+ Email sender spoofing: "Fałszowanie nadawcy wiadomości e-mail."
+ Email spam: "Spam e-mailowy (zawartość spamu, zainfekowane załączniki, wiadomości phishingowe, itp)."
+ Exploited host: "Eksploatowany host (host jest prawdopodobnie zainfekowany złośliwym oprogramowaniem i używany do innych ataków lub do przechowywania złośliwej zawartości)."
+ FTP brute-force attacks: "Ataki brutalną siłą na FTP."
+ Fraudulent VoIP: "Oszukańczy VoIP."
+ Fraudulent orders: "Oszukańcze zamówienia."
+ Hacking: "Hackowanie."
+ IoT targeted: "Nadużycia ukierunkowane na IoT. W komentarzach zawrzyj informację o rodzaju urządzenia, które było celem."
+ Open proxy, open relay, or tor endpoint: "Otwarty serwer proxy, otwarty przekaźnik, lub punkt końcowy tora."
+ Phishing: "Witryny i/lub poczta e-mail phishingowe."
+ Ping of death: "Ping śmierci (zbyt duży pakiet IP)."
+ Port scans: "Skanowanie portów (skanowanie w poszukiwaniu otwartych portów i wrażliwych usług)."
+ SQL injection: "Wstrzyknięcie SQL."
+ SSH abuse: "Nadużycie SSH."
+ VPN IP: "IP VPN."
+ Web spam: "Spam internetowy (spam w komentarzach/forach, spam w witrynie odsyłającej HTTP, lub inny spam CMS)."
+ Webapp attacks: "Ataki na aplikacje internetowe (szuka luk lub exploitów do wykorzystania w zainstalowanych aplikacjach internetowych, CMS, lub rozwiązaniach e-commerce, np., WordPress, Drupal, phpMyAdmin, itp)."
 Extended Description:
  AbuseIPDB module: "Blokuje żądania z adresów IP wymienionych w witrynie AbuseIPDB."
  BGPView module: "Wykorzystuje API {{Links.BGPView}} do zapewnienia dla CIDRAM funkcjonalności wyszukiwania dla ASN i kodu kraju, który umożliwia blokowanie ASN i krajów lub umieszczanie ich na białej liście za pomocą konfiguracji CIDRAM oraz zapewnia sposób weryfikacji żądań z sieci społecznościowych, takich jak Facebook. (Jeśli używasz tego modułu, nie będziesz musiał używać modułu IP-API, ponieważ służą one temu samemu celowi)."
@@ -962,6 +988,7 @@ tip:
  Rate limiting is currently disabled: "Uwaga: Ograniczenie szybkości jest obecnie wyłączone, ale można je włączyć na stronie konfiguracji."
  Sections List: "Witaj, {username}.<br />Ta strona zawiera listę sekcji, które istnieją w aktualnie aktywnych plikach podpis."
  See the documentation: "Informacje na temat różnych dyrektyw konfiguracyjnych i ich celów można znaleźć w <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external">dokumentacji</a>."
+ Server log snippets, abuse details, etc: "Fragmenty dziennika serwera, szczegóły nadużyć, itp."
  Signature File Fixer: "Witaj, {username}.<br />Narzędzie do naprawy plików podpis umożliwia wykrywanie i naprawianie potencjalnych problemów w plikach podpis."
  Specify a value, or leave blank to disregard: "Podaj wartość lub pozostaw puste aby zignorować."
  Statistics tracking is currently disabled: "Uwaga: Śledzenie statystyk jest obecnie wyłączone, ale można je włączyć na stronie konfiguracji."

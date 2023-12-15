@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2023.12.01).
+# This file: Latvian language data for the front-end (last modified: 2023.12.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,6 +24,32 @@
 # requests, ask. I can help.
 ##/
 
+Abuse category:
+ Bad web bot: "Slikts tīmekļa robots (e-pasta adrešu un satura nokasīšana, rāpuļprogrammas, kas neievēro robots.txt, pārmērīgi pieprasījumi, lietotāju aģentu viltošana, utt)."
+ Brute-force attacks: "Brutāla spēka uzbrukumi (akreditācijas brutāla spēka uzbrukumi tīmekļa lapu pieteikumiem, SMTP, RDP, utt)."
+ Categories (at least one is required): "Kategorijas (nepieciešama vismaz viena)"
+ CMS blog comment spam: "CMS emuāra komentāru surogātpasts."
+ Conjunctive category: "Konjunktīva kategorija (izmantot kopā ar citām specifiskākām kategorijām)."
+ DDoS attacks: "DDoS uzbrukumi (parasti ir daļa no robottīkla)."
+ DNS compromise: "DNS kompromiss (DNS ierakstu maiņa, kā rezultātā notiek nepareiza novirzīšana)."
+ DNS poisoning: "DNS saindēšanās."
+ Email sender spoofing: "E-pasta sūtītāja viltošana."
+ Email spam: "E-pasta surogātpasts (surogātpasta e-pasta saturs, inficēti pielikumi, pikšķerēšanas e-pasta ziņojumi, utt)."
+ Exploited host: "Ekspluatēts resursdators (resursdators, visticamāk, ir inficēts ar ļaunprātīgu programmatūru un tiek izmantots citiem uzbrukumiem vai ļaunprātīga satura mitināšanai)."
+ FTP brute-force attacks: "FTP brutāla spēka uzbrukumi."
+ Fraudulent VoIP: "Krāpniecisks VoIP."
+ Fraudulent orders: "Krāpnieciski pasūtījumi."
+ Hacking: "Datorurķēšana."
+ IoT targeted: "IoT mērķtiecīga ļaunprātīga izmantošana. Komentāros iekļaujiet informāciju par to, kāda veida ierīce tika atlasīta."
+ Open proxy, open relay, or tor endpoint: "Atvērts starpniekserveris, atvērts relejs, vai tor galapunkts."
+ Phishing: "Pikšķerēšanas vietnes un/vai e-pasts."
+ Ping of death: "Nāves ping (liela izmēra IP pakete)."
+ Port scans: "Portu skenēšana (atvērtu portu un neaizsargātu pakalpojumu skenēšana)."
+ SQL injection: "SQL injekcija."
+ SSH abuse: "SSH ļaunprātīga izmantošana."
+ VPN IP: "VPN IP."
+ Web spam: "Tīmekļa surogātpasts (komentāru/foruma surogātpasts, HTTP novirzītāja surogātpasts, vai cits CMS surogātpasts)."
+ Webapp attacks: "Tīmekļa lietotņu uzbrukumi (ievainojamības vai ekspluatācijas meklēšana, ko izmantot pret instalētajām tīmekļa lietotnēm, CMS, vai e-komercijas risinājumiem, piemēram, WordPress, Drupal, phpMyAdmin, utt)."
 Extended Description:
  AbuseIPDB module: "Bloķē pieprasījumus no IP, kas uzskaitīti vietnē AbuseIPDB."
  BGPView module: "Izmanto {{Links.BGPView}} API, lai nodrošinātu ASN un valsts koda meklēšanas iespēju CIDRAM, tādējādi dodot iespēju bloķēt vai iekļaut baltajā sarakstā ASN un valstis, izmantojot CIDRAM konfigurāciju, un sociālo mediju verifikācijas līdzekļu nodrošināšana, lai pārbaudītu Facebook pieprasījumus. (Ja izmantojat šo moduli, jums nebūs jāizmanto IP-API modulis, jo tie kalpo vienam un tam pašam mērķim)."
@@ -941,6 +967,7 @@ tip:
  Rate limiting is currently disabled: "Piezīme: Likmes ierobežošana pašlaik ir atspējota, taču to var iespējot konfigurācijas lapā."
  Sections List: "Sveiki, {username}.<br />Šajā lapā ir uzskaitītas sadaļas, kas atrodas pašlaik aktīvajos paraksta failos."
  See the documentation: "Skatiet <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external">dokumentāciju</a>, lai iegūtu informāciju par dažādām konfigurācijas direktīvām un to mērķiem."
+ Server log snippets, abuse details, etc: "Servera žurnāla fragmenti, informācija par ļaunprātīgu izmantošanu, utt."
  Signature File Fixer: "Sveiki, {username}.<br />Paraksta faila fiksētājs nodrošina veidu, kā atklāt un novērst parakstu failu iespējamās problēmas."
  Specify a value, or leave blank to disregard: "Norādiet vērtību vai atstājiet tukšu lai neievērotu."
  Statistics tracking is currently disabled: "Piezīme: Statistikas izsekošana pašlaik ir atspējota, taču to var iespējot konfigurācijas lapā."

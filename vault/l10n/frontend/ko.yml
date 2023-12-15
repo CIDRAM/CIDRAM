@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2023.12.01).
+# This file: Korean language data for the front-end (last modified: 2023.12.15).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,6 +24,32 @@
 # requests, ask. I can help.
 ##/
 
+Abuse category:
+ Bad web bot: "나쁜 웹봇 (이메일 주소와 콘텐츠를 찾으려면, robots.txt를 무시하는 크롤러, 과도한 요청, 사용자 에이전트 스푸핑, 등등)."
+ Brute-force attacks: "무차별 공격 (웹페이지 로그인, SMTP, RDP, 등에 대한 자격 증명 무차별 대입 공격)."
+ Categories (at least one is required): "카테고리 (하나 이상 필수)"
+ CMS blog comment spam: "CMS 블로그 댓글 스팸."
+ Conjunctive category: "접속사 카테고리 (다른 보다 구체적인 카테고리와 결합하여 사용)."
+ DDoS attacks: "DDoS 공격 (일반적으로 봇넷의 일부)."
+ DNS compromise: "DNS 손상 (부적절한 리디렉션을 초래하는 DNS 레코드 변경)."
+ DNS poisoning: "DNS 중독."
+ Email sender spoofing: "이메일 발신자 스푸핑."
+ Email spam: "이메일 스팸 (스팸 이메일 내용, 감염된 첨부 파일, 피싱 이메일, 등등)."
+ Exploited host: "악용된 호스트 (호스트가 맬웨어에 감염되어 다른 공격에 사용되거나 악성 콘텐츠를 호스팅하는 데 사용될 가능성이 높습니다)."
+ FTP brute-force attacks: "FTP 무차별 공격."
+ Fraudulent VoIP: "사기성 VoIP."
+ Fraudulent orders: "사기 주문."
+ Hacking: "해킹."
+ IoT targeted: "IoT 표적 남용. 댓글에 어떤 유형의 장치가 대상이 되었는지에 대한 정보를 포함하세요."
+ Open proxy, open relay, or tor endpoint: "개방형 프록시, 개방형 릴레이, 또는 Tor 엔드포인트."
+ Phishing: "피싱 웹사이트 및/또는 이메일."
+ Ping of death: "죽음의 핑 (너무 큰 IP 패킷)."
+ Port scans: "포트 스캔 (열린 포트 및 취약한 서비스 검색)."
+ SQL injection: "SQL 주입."
+ SSH abuse: "SSH 남용."
+ VPN IP: "VPN IP."
+ Web spam: "웹 스팸 (댓글/포럼 스팸, HTTP 리퍼러 스팸, 또는 기타 CMS 스팸)."
+ Webapp attacks: "웹앱 공격 (취약점이나 악용을 조사하거나 설치된 웹앱, CMS «예\_: WordPress, Drupal, phpMyAdmin, 등등», 또는 전자상거래 솔루션을 악용하려는 시도)."
 Extended Description:
  AbuseIPDB module: "AbuseIPDB에 나열된 IP의 요청을 차단합니다."
  BGPView module: "{{Links.BGPView}} API를 활용하여 CIDRAM에 대한 ASN 및 국가 코드 조회 기능 제공. CIDRAM 구성을 통해 ASN 및 국가를 차단 또는 허용 할 수 있습니다. Facebook 요청을 확인하기 위한 소셜 네트워킹 확인 수단 제공. (이 모듈을 사용하는 경우, 동일한 용도로 사용되므로, IP-API 모듈을 사용할 필요가 없습니다)."
@@ -297,6 +323,7 @@ confirm:
 field:
  %s File: "%s 파일"
  2FA code: "2FA 코드"
+ API key: "API 키"
  Activate: "활성화"
  Add more conditions: "조건 추가"
  Add to tracking: "추적에 추가"
@@ -565,6 +592,7 @@ label:
  PHP version used: "사용된 PHP 버전\_:"
  Page request completed in %s seconds: "페이지 요청이 %s 초 후에 완료되었습니다."
  Paginate: "페이지 매김"
+ Please abide by the AbuseIPDB reporting policy: "AbuseIPDB <a target="reporting-policy" hreflang="en-US" href="https://www.abuseipdb.com/reporting-policy">신고 정책을</a> 준수하시기를 바랍니다."
  Please log in to continue: "계속하려면 로그인하십시오."
  Preferred source: "선호하는 출처\_:"
  Previous: "이전\_:"
@@ -902,6 +930,7 @@ tip:
  Rate limiting is currently disabled: "노트\_: 속도 제한은 현재 비활성화되어, 있지만 구성 페이지를 통해 활성화할 수 있습니다."
  Sections List: "안녕하세요, {username}.<br />이 페이지는 현재 활성화 된 서명 파일에 존재하는 섹션을 나열합니다."
  See the documentation: "설정 지시어에 대한 자세한 내용은 <a href="https://github.com/CIDRAM/Docs/blob/master/readme.ko.md\#user-content-SECTION5" hreflang="ko-KR" rel="noopener external">문서를</a> 참조하십시오."
+ Server log snippets, abuse details, etc: "서버 로그 조각, 남용 세부정보, 등등"
  Signature File Fixer: "안녕하세요, {username}.<br />서명 파일 해결 프로그램은 서명 파일의 잠재적인 문제를 감지하고 수정하는 방법을 제공합니다."
  Specify a value, or leave blank to disregard: "무시할 값을 지정하거나 공백으로 두십시오."
  Statistics tracking is currently disabled: "노트\_: 통계 추적은 현재 비활성화되어, 있지만 구성 페이지를 통해 활성화할 수 있습니다."

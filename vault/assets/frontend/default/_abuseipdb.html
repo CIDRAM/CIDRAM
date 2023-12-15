@@ -43,10 +43,16 @@
       <label class="s">
         <div class="ng1">
           {field.Comments}{pair_separator}<br /><br />
-          <textarea name="comments" class="half" autocomplete="off"></textarea>
+          <textarea name="comments" class="half" autocomplete="off" placeholder="{tip.Server log snippets, abuse details, etc}">{comments}</textarea>
         </div>
       </label>
-      <div class="ng2">
+      <label class="s">
+        <div class="ng2">
+          {field.API key}{pair_separator}<br /><br />
+          <textarea name="apikey" class="half" autocomplete="off" placeholder="{config.abuseipdb_api_key}">{apikey}</textarea>
+        </div>
+      </label>
+      <div class="ng1">
         <input type="submit" value="{label.Report to AbuseIPDB}" /><br />
         <br />
         <em>{label.Please abide by the AbuseIPDB reporting policy}</em>

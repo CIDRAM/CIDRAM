@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Report to AbuseIPDB page (last modified: 2023.12.13).
+ * This file: Report to AbuseIPDB page (last modified: 2023.12.15).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -20,7 +20,10 @@ if (!isset($this->FE['Permissions'], $this->CIDRAM['QueryVars']['cidram-page']) 
 /** Page initial prepwork. */
 $this->initialPrepwork($this->L10N->getString('label.Report to AbuseIPDB'), 'This page is still under construction and won\'t work properly yet.', false);
 
-foreach (['address'] as $Field) {
+if (!isset($_POST['apikey']) && isset($this->Configuration['abuseipdb']['api_key'])) {
+    $_POST['apikey'] = $this->Configuration['abuseipdb']['api_key'];
+}
+foreach (['address', 'comments', 'apikey'] as $Field) {
     $this->FE[$Field] = isset($_POST[$Field]) ? str_replace(['&', '<', '>', '"'], ['&amp;', '&lt;', '&gt;', '&quot;'], $_POST[$Field]) : '';
 }
 for ($Iterator = 1; $Iterator < 24; $Iterator++) {

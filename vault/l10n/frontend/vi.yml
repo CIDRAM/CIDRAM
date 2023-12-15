@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2023.12.01).
+# This file: Vietnamese language data for the front-end (last modified: 2023.12.15).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,6 +24,32 @@
 # requests, ask. I can help.
 ##/
 
+Abuse category:
+ Bad web bot: "Bot web xấu (tìm kiếm địa chỉ email, nội dung, trình thu thập thông tin không tôn trọng robots.txt, yêu cầu quá mức, giả mạo đại lý người dùng, vv)."
+ Brute-force attacks: "Tấn công lực lượng vũ phu (các tấn công lực lượng vũ phu vào thông tin đăng nhập trang web, SMTP, RDP, vv)."
+ Categories (at least one is required): "Thể loại (ít nhất một là bắt buộc)"
+ CMS blog comment spam: "Thư rác bình luận blog CMS."
+ Conjunctive category: "Thể loại liên hợp (sử dụng kết hợp với các thể loại khác, cụ thể hơn)."
+ DDoS attacks: "Tấn công DDoS (thường là một phần của mạng botnet)."
+ DNS compromise: "Thỏa hiệp DNS (thay đổi bản ghi DNS dẫn đến chuyển hướng không đúng cách)."
+ DNS poisoning: "Ngộ độc DNS."
+ Email sender spoofing: "Giả mạo người gửi email."
+ Email spam: "Thư rác email (nội dung thư rác email, tập tin đính kèm bị nhiễm độc, email lừa đảo, vv)."
+ Exploited host: "Máy chủ bị khai thác (máy chủ có thể bị nhiễm phần mềm độc hại và đang được sử dụng cho các cuộc tấn công khác hoặc để lưu trữ nội dung độc hại)."
+ FTP brute-force attacks: "Tấn công lực lượng vũ phu FTP."
+ Fraudulent VoIP: "VoIP lừa đảo."
+ Fraudulent orders: "Đơn đặt hàng lừa đảo."
+ Hacking: "Hack."
+ IoT targeted: "Lạm dụng mục tiêu IoT. Bao gồm thông tin về loại thiết bị được nhắm mục tiêu trong bình luận."
+ Open proxy, open relay, or tor endpoint: "Proxy mở, rơle mở, hoặc điểm cuối tor."
+ Phishing: "Các trang web và/hoặc email lừa đảo."
+ Ping of death: "Ping của cái chết (gói IP quá khổ)."
+ Port scans: "Quét cổng (quét các cổng mở và các dịch vụ dễ bị tấn công)."
+ SQL injection: "Tiêm SQL."
+ SSH abuse: "Lạm dụng SSH."
+ VPN IP: "IP VPN."
+ Web spam: "Thư rác trên web (thư rác trong bình luận hay diễn đàn, thư rác giới thiệu HTTP, hoặc thư rác CMS khác)."
+ Webapp attacks: "Tấn công ứng dụng web (thăm dò các lỗ hổng hoặc cách khai thác, hoặc cố gắng khai thác các ứng dụng web, CMS, hoặc giải pháp thương mại điện tử đã cài đặt, ví dụ, WordPress, Drupal, phpMyAdmin, vv)."
 Extended Description:
  AbuseIPDB module: "Chặn các yêu cầu từ IP được liệt kê tại AbuseIPDB."
  BGPView module: "Tận dụng API {{Links.BGPView}} để cung cấp phương tiện tra cứu mã quốc gia và ASN cho CIDRAM, cho phép các ASN và quốc gia bị chặn hay đưa vào danh sách trắng thông qua cấu hình CIDRAM, và cung cấp một phương tiện để xác minh mạng xã hội để xác minh các yêu cầu của Facebook. (Nếu bạn sử dụng mô-đun này, bạn sẽ không cần sử dụng mô-đun IP-API, vì chúng phục vụ cùng một mục đích)."
@@ -297,6 +323,7 @@ confirm:
 field:
  %s File: "Tập Tin %s"
  2FA code: "Mã 2FA"
+ API key: "Khóa API"
  Activate: "Kích hoạt"
  Add more conditions: "Thêm các điều kiện khác"
  Add to tracking: "Thêm vào giám sát"
@@ -569,6 +596,7 @@ label:
  PHP version used: "Phiên bản PHP đang được dùng:"
  Page request completed in %s seconds: "Yêu cầu trang hoàn thành trong %s giây."
  Paginate: "Chia theo trang"
+ Please abide by the AbuseIPDB reporting policy: "Vui lòng tuân thủ <a target="reporting-policy" hreflang="en-US" href="https://www.abuseipdb.com/reporting-policy">chính sách báo cáo</a> AbuseIPDB."
  Please log in to continue: "Vui lòng đăng nhập để tiếp tục."
  Preferred source: "Nguồn ưu tiên:"
  Previous: "Trước:"
@@ -906,6 +934,7 @@ tip:
  Rate limiting is currently disabled: "Lưu ý: Giới hạn tốc độ hiện bị vô hiệu hóa, nhưng có thể được kích hoạt thông qua trang cấu hình."
  Sections List: "Xin chào, {username}.<br />Trang này liệt kê những phần nào tồn tại trong các tập tin chữ ký đang kích hoạt."
  See the documentation: "Xem <a href="https://github.com/CIDRAM/Docs/blob/master/readme.vi.md\#user-content-SECTION5" hreflang="vi-VN" rel="noopener external">tài liệu</a> để biết thông tin về các chỉ thị cấu hình khác nhau và mục đích của họ."
+ Server log snippets, abuse details, etc: "Trích đoạn từ nhật ký máy chủ, chi tiết lạm dụng, vv."
  Signature File Fixer: "Xin chào, {username}.<br />Sửa chữa tập tin chữ ký cung cấp một cách để phát hiện và khắc phục các sự cố tiềm ẩn trong các tập tin chữ ký."
  Specify a value, or leave blank to disregard: "Chỉ định một giá trị, hoặc để trống để bỏ qua."
  Statistics tracking is currently disabled: "Lưu ý: Giám sát thống kê hiện bị vô hiệu hóa, nhưng có thể được kích hoạt thông qua trang cấu hình."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2023.12.01).
+# This file: Japanese language data for the front-end (last modified: 2023.12.15).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,6 +24,32 @@
 # requests, ask. I can help.
 ##/
 
+Abuse category:
+ Bad web bot: "悪質なウェブボット（Ｅメール・アドレスとコンテンツのスクレイピングする、「robots.txt」を無視するクローラー、過剰なリクエスト、ユーザー・エージェントのスプーフィング、など）。"
+ Brute-force attacks: "ブルート・フォース攻撃（ウェブ・ページのログイン、ＳＭＴＰ、ＲＤＰ、などに対する資格情報のブルート・フォース攻撃）。"
+ Categories (at least one is required): "カテゴリ（少なくとも１つは必要です）"
+ CMS blog comment spam: "ＣＭＳブログのコメント・スパム。"
+ Conjunctive category: "接続詞カテゴリ（他のより具体的なカテゴリと組み合わせて使用する）。"
+ DDoS attacks: "ＤＤｏＳ攻撃（通常はボットネットの一部）。"
+ DNS compromise: "ＤＮＳ侵害（ＤＮＳレコードの変更により不適切なリダイレクトが発生する）。"
+ DNS poisoning: "ＤＮＳポイズニング。"
+ Email sender spoofing: "Ｅメール送信者のなりすまし。"
+ Email spam: "Ｅメール・スパム（スパムＥメールの内容、感染した添付ファイル、フィッシングＥメール、など）。"
+ Exploited host: "悪用されたホスト（ホストはマルウェアに感染しており、他の攻撃や悪意のあるコンテンツのホストに使用されている可能性があります）。"
+ FTP brute-force attacks: "ＦＴＰブルート・フォース攻撃。"
+ Fraudulent VoIP: "不正なＶｏＩＰ。"
+ Fraudulent orders: "不正な注文。"
+ Hacking: "ハッキング。"
+ IoT targeted: "ＩｏＴを対象とした虐待。コメントには、どのタイプのデバイスがターゲットになったかに関する情報を含めてください。"
+ Open proxy, open relay, or tor endpoint: "オープン・プロキシ、オープン・リレー、またはｔｏｒエンドポイント。"
+ Phishing: "フィッシング・ウェブサイトやＥメール。"
+ Ping of death: "死のピング（特大のＩＰパケット）。"
+ Port scans: "ポート・スキャン（開いているポートと脆弱なサービスをスキャンする）。"
+ SQL injection: "ＳＱＬインジェクション。"
+ SSH abuse: "ＳＳＨの悪用。"
+ VPN IP: "ＶＰＮ ＩＰ。"
+ Web spam: "ウェブ・スパム（コメントおよびフォーラムのスパム、ＨＴＴＰリファラーのスパム、またはその他のＣＭＳスパム）。"
+ Webapp attacks: "ウェブ・アプリ攻撃（脆弱性や悪用を調査する、またはインストールされているウェブ・アプリ、ＣＭＳ「例: WordPress、Drupal、phpMyAdmin、など」、または電子商取引ソリューションを悪用しようとする）。"
 Extended Description:
  AbuseIPDB module: "AbuseIPDBにリストされているＩＰからの要求をブロックします。"
  BGPView module: "{{Links.BGPView}}のＡＰＩを活用して、ＣＩＤＲＡＭのためにＡＳＮおよび国コード検索機能を提供します。​ＣＩＤＲＡＭコンフィギュレーションを介して、ＡＳＮと国をブロックまたはホワイトリストに登録できます。​Facebookリクエストを検証する、ソーシャル・メディア・ベリフィケーションの手段を提供します。 （このモジュールを使用する場合、同じ目的を果たすため、IP-APIモジュールを使用する必要はありません）。"
@@ -297,6 +323,7 @@ confirm:
 field:
  %s File: "%sファイル"
  2FA code: "２ＦＡコード"
+ API key: "ＡＰＩキー"
  Activate: "アクティブにする"
  Add more conditions: "条件を追加"
  Add to tracking: "トラッキングに追加"
@@ -568,6 +595,7 @@ label:
  PHP version used: "使用されたPHPバージョン："
  Page request completed in %s seconds: "ページ要求は%s秒後に完了しました。"
  Paginate: "ページ付けして"
+ Please abide by the AbuseIPDB reporting policy: "AbuseIPDB <a target="reporting-policy" hreflang="en-US" href="https://www.abuseipdb.com/reporting-policy">報告ポリシー</a>に従ってください。"
  Please log in to continue: "継続するには、ログインしてください。"
  Preferred source: "優先ソース："
  Previous: "前："
@@ -905,6 +933,7 @@ tip:
  Rate limiting is currently disabled: "注意：レート制限は現在オフラインですが、コンフィギュレーション・ページで有効にすることができます。"
  Sections List: "こんにちは、{username}。<br />このページには、現在アクティブなシグネチャ・ファイルに存在するセクションが一覧表示されます。"
  See the documentation: "コンフィギュレーション・ディレクティブの詳細については、<a href="https://github.com/CIDRAM/Docs/blob/master/readme.ja.md\#user-content-SECTION5" hreflang="ja-JP" rel="noopener external">ドキュメント</a>を参照してください。"
+ Server log snippets, abuse details, etc: "サーバーログのスニペット、不正行為の詳細、など。"
  Signature File Fixer: "こんにちは、{username}。<br />シグネチャ・ファイルのフィクサーは、シグネチャ・ファイルの潜在的な問題を検出して修正する方法を提供します。"
  Specify a value, or leave blank to disregard: "値を指定するか、無視する場合は空白のままにします。"
  Statistics tracking is currently disabled: "注意：統計トラッキングは現在オフラインですが、コンフィギュレーション・ページで有効にすることができます。"

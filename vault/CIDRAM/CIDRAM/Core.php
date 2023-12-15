@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2023.12.12).
+ * This file: The CIDRAM core (last modified: 2023.12.15).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -2064,6 +2064,7 @@ class Core
 
         /** Iterate conditions. */
         foreach ($Criteria as $TestCase) {
+            $this->CIDRAM['Last aux regex matches'] = [];
             if ($Method === 'Auto') {
                 $Boundary = substr($TestCase, 0, 1);
                 if (
@@ -2085,7 +2086,9 @@ class Core
 
             /** Perform a match using regular expressions. */
             if ($Operator === '≇' || $Operator === '≅') {
-                if (preg_match($TestCase, $Actual)) {
+                $Matches = [];
+                if (preg_match($TestCase, $Actual, $Matches)) {
+                    $this->CIDRAM['Last aux regex matches'] = $Matches;
                     $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response.Not satisfied' : 'response.Satisfied'));
                     return true;
                 }
@@ -2436,6 +2439,22 @@ class Core
                                         if ($Logic === 'All') {
                                             continue;
                                         }
+                                        if (preg_match_all('~\\\\(\d+)~', $Name, $Counts) && isset($Counts[1], $this->CIDRAM['Last aux regex matches'][1])) {
+                                            $Counts = array_unique($Counts[1]);
+                                            foreach ($Counts as $Iterator) {
+                                                if (isset($this->CIDRAM['Last aux regex matches'][$Iterator])) {
+                                                    $Name = str_replace('\\' . $Iterator, $this->CIDRAM['Last aux regex matches'][$Iterator], $Name);
+                                                }
+                                            }
+                                        }
+                                        if (preg_match_all('~\\\\(\d+)~', $Reason, $Counts) && isset($Counts[1], $this->CIDRAM['Last aux regex matches'][1])) {
+                                            $Counts = array_unique($Counts[1]);
+                                            foreach ($Counts as $Iterator) {
+                                                if (isset($this->CIDRAM['Last aux regex matches'][$Iterator])) {
+                                                    $Reason = str_replace('\\' . $Iterator, $this->CIDRAM['Last aux regex matches'][$Iterator], $Reason);
+                                                }
+                                            }
+                                        }
                                         if ($this->auxAction($Mode, $Name, $Reason, $Target, $StatusCode, $Webhooks, $Flags, $Run)) {
                                             return;
                                         }
@@ -2460,6 +2479,22 @@ class Core
                                 $Matched = true;
                                 if ($Logic === 'All') {
                                     continue;
+                                }
+                                if (preg_match_all('~\\\\(\d+)~', $Name, $Counts) && isset($Counts[1], $this->CIDRAM['Last aux regex matches'][1])) {
+                                    $Counts = array_unique($Counts[1]);
+                                    foreach ($Counts as $Iterator) {
+                                        if (isset($this->CIDRAM['Last aux regex matches'][$Iterator])) {
+                                            $Name = str_replace('\\' . $Iterator, $this->CIDRAM['Last aux regex matches'][$Iterator], $Name);
+                                        }
+                                    }
+                                }
+                                if (preg_match_all('~\\\\(\d+)~', $Reason, $Counts) && isset($Counts[1], $this->CIDRAM['Last aux regex matches'][1])) {
+                                    $Counts = array_unique($Counts[1]);
+                                    foreach ($Counts as $Iterator) {
+                                        if (isset($this->CIDRAM['Last aux regex matches'][$Iterator])) {
+                                            $Reason = str_replace('\\' . $Iterator, $this->CIDRAM['Last aux regex matches'][$Iterator], $Reason);
+                                        }
+                                    }
                                 }
                                 if ($this->auxAction($Mode, $Name, $Reason, $Target, $StatusCode, $Webhooks, $Flags, $Run)) {
                                     return;

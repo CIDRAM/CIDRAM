@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Verification data (last modified: 2023.11.17).
+# This file: Verification data (last modified: 2023.12.17).
 ##/
 
 # Additional references: https://udger.com/resources/ua-list/crawlers
@@ -243,27 +243,27 @@ Other Verification:
    - ".amazonadbot.com"
 
  # https://platform.openai.com/docs/plugins/bot
- # Updated: 2023.08.10
+ # Updated: 2023.08.10 / Checked: 2023.12.17
  ChatGPT-User:
   User Agent: "chatgpt-user"
   Method: "uaCidrMatch"
   Valid domains:
    - "23.98.142.176/28"
 
- # https://platform.openai.com/docs/gptbot
  # https://openai.com/gptbot-ranges.txt
- # Updated: 2023.08.10
+ # https://platform.openai.com/docs/gptbot
+ # https://platform.openai.com/docs/plugins/production
+ # Updated: 2023.12.17
  GPTBot:
   User Agent: "gptbot"
   Method: "uaCidrMatch"
   Valid domains:
-   - "20.15.240.64/27"
-   - "20.15.240.96/28"
-   - "20.15.240.176/28"
-   - "20.15.241.0/28"
-   - "20.15.242.128/27"
-   - "20.15.242.192/28"
-   - "40.83.2.64/28"
+   - "13.66.11.96/28"
+   - "23.98.142.176/28"
+   - "23.102.140.112/28"
+   - "40.84.180.224/28"
+   - "52.230.152.0/24"
+   - "52.233.106.0/24"
 
  # https://www.oracle.com/corporate/acquisitions/grapeshot/crawler.html
  # Updated: 2021.03.13 / Checked: 2023.11.17

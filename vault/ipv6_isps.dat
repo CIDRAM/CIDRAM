@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6_isps.dat
 
-# Version: 2023.348.0
-# Last modified: 2023.12.15
+# Version: 2023.350.0
+# Last modified: 2023.12.17
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -836,18 +836,6 @@ Tag: NPF SOFTVIDEO Ltd
 Origin: RU
 Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Tor endpoints here;Webhosting
 Tag: OOO TimeWeb
-
-
-# ASN 35047 ("Abissnet sh.a").
-# Albanian domestic ISP. Spam, port scans, CGI hacks, brute-force, and SSH
-# attacks detected from here. Huge listings across entire ASN.
-# Stop Forum Spam (SFS) listings: 49.
-# Updated: 2021.05.29 / Checked: 2023.01.31
-
-2a01:4f00::/32 Deny Attacks
-Origin: AL
-Profile: Domestic ISP
-Tag: Abissnet
 
 
 # ASN 1136 ("KPN B.V").

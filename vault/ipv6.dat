@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6.dat
 
-# Version: 2023.348.0
-# Last modified: 2023.12.15
+# Version: 2023.350.0
+# Last modified: 2023.12.17
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -729,7 +729,7 @@ Tag: HOSTKEY B.V
 #   44716, 45187, 54636, 58683.
 # Subtract when updating:
 # - 162.13.83.46/32 (used by "googlealert.com", "gigaalert.com", "copyscape.com").
-# Updated: 2022.02.26 / Checked: 2023.02.10
+# Updated: 2023.12.19
 
 2a0b:440::/32 Deny Cloud
 Origin: DE
@@ -739,12 +739,6 @@ Origin: GB
 Origin: HK
 2001:4800::/31 Deny Cloud
 2001:4802::/32 Deny Cloud
-2607:f9f0:220:20::/64 Deny Cloud
-2607:f9f0:220:701::/64 Deny Cloud
-2607:f9f0:220:702::/63 Deny Cloud
-2607:f9f0:220:704::/63 Deny Cloud
-2620:103::/47 Deny Cloud
-2620:103:2::/48 Deny Cloud
 Origin: US
 Profile: Commercial;Dedicated;Infrastructure/Transit;Tor endpoints here;Webhosting
 Tag: Rackspace Hosting
@@ -859,8 +853,7 @@ Tag: Digital Ocean, Inc
 
 
 # ASN 5577 ("Root SA").
-# Stop Forum Spam (SFS) listings: 13.
-# Updated: 2020.05.01 / Checked: 2023.02.17
+# Updated: 2020.05.01 / Checked: 2023.12.19
 
 2001:67c:15a3::/48 Deny Cloud
 Origin: CZ
@@ -1009,8 +1002,8 @@ Tag: WholeSale Internet
 # ASN 33387 ("Nocix, LLC").
 # Colo/commercial/cloud provider, server farm/leaser, etc. Massive source of
 # spam, port scans, brute-force attacks and other kinds of unwanted traffic.
-# Stop Forum Spam (SFS) listings: 93,634.
-# Updated: 2022.03.06 / Checked: 2023.02.18
+# Stop Forum Spam (SFS) listings: 3,335.
+# Updated: 2022.03.06 / Checked: 2023.12.19
 
 2604:4300::/32 Deny Cloud
 2606:6680:27::/48 Deny Cloud
@@ -4421,8 +4414,8 @@ Tag: Alibaba
 
 # ASN 37963 ("Hangzhou Alibaba Advertising Co.,Ltd.").
 # Dedicated server farm and a consistent source of forum and blog spam.
-# Stop Forum Spam (SFS) listings: 6,398.
-# Updated: 2018.10.14 / Checked: 2023.02.18
+# Stop Forum Spam (SFS) listings: 819.
+# Updated: 2018.10.14 / Checked: 2023.12.19
 
 2400:3200::/32 Deny Cloud
 2400:b200::/32 Deny Cloud
@@ -6930,10 +6923,11 @@ Tag: YISP B.V
 # Caught trying to hack WordPress sites, caught performing unauthorised port
 # scans, caught brute-forcing, probing for vulnerabilities, plus other
 # nefarious activity.
-# Stop Forum Spam (SFS) listings: 2 (AS3267), 260 (AS48693).
-# Updated: 2019.03.27 / Checked: 2023.02.18
+# Stop Forum Spam (SFS) listings: 2 (AS3267), 53 (AS48693).
+# Updated: 2023.12.19
 
 2001:b08::/32 Deny Cloud
+2a00:db8::/32 Deny Cloud
 2a07:a6c0::/29 Deny Cloud
 Origin: RU
 Profile: Infrastructure/Transit;University
@@ -7356,11 +7350,11 @@ Tag: 4D Data
 
 # ASN 134094 ("Serverfield Co., Ltd").
 # Dedicated webhosting company and a significant source of spam.
-# Stop Forum Spam (SFS) listings: 21.
-# Updated: 2021.10.16 / Checked: 2023.08.20
+# Stop Forum Spam (SFS) listings: 11.
+# Updated: 2023.12.19
 
 2401:f540:1::/48 Deny Cloud
-2401:f540:2::/48 Deny Cloud
+2401:f540:2::/47 Deny Cloud
 2401:f540:4::/48 Deny Cloud
 2401:f540:6::/47 Deny Cloud
 Origin: TW
@@ -9196,8 +9190,8 @@ Tag: TekTonic
 # ASN 13768 ("Aptum Technologies").
 # Hybrid cloud services provider. Spam and other kinds of unwanted traffic
 # detected from here.
-# Stop Forum Spam (SFS) listings: 337.
-# Updated: 2022.03.06 / Checked: 2023.02.18
+# Stop Forum Spam (SFS) listings: 331.
+# Updated: 2023.12.17
 
 2001:1978:202::/48 Deny Cloud
 2001:1978:1000::/39 Deny Cloud
@@ -9216,7 +9210,6 @@ Tag: TekTonic
 2607:d500:300::/40 Deny Cloud
 2607:d500:600::/40 Deny Cloud
 2607:d500:d00::/40 Deny Cloud
-2620:11c:c001::/48 Deny Cloud
 Origin: CA
 2a03:8a00::/36 Deny Cloud
 Origin: GB
@@ -9228,15 +9221,15 @@ Profile: Commercial;Infrastructure/Transit;Webhosting
 Tag: Aptum Technologies
 
 
-# ASNs 45012, 45031, 57739 ("dogado GmbH").
+# ASNs 45012, 45031 ("dogado GmbH").
 # Dedicated cloud hosting data center and also a source of unwanted traffic.
-# Stop Forum Spam (SFS) listings: 153 (AS45012), 43 (AS45031).
-# Updated: 2022.03.06 / Checked: 2023.02.18
+# Stop Forum Spam (SFS) listings: 16 (AS45012), 1 (AS45031).
+# Updated: 2023.12.17
 
 2a00:5300::/32 Deny Cloud
 2a00:fa40::/32 Deny Cloud
 2a01:64c0::/32 Deny Cloud
-2a02:a60::/32 Deny Cloud
+2a02:a60::/33 Deny Cloud
 2a02:2b80::/47 Deny Cloud
 2a02:2b80:101::/48 Deny Cloud
 2a02:2b80:393::/48 Deny Cloud
@@ -11319,8 +11312,8 @@ Tag: Web Werks India
 # Hong Kong cloud and webhosting provider. Brute-force, SSH, DDoS,
 # XMLRPC/WordPress, and webapp attacks, port scans, scraping, hacking, and spam
 # detected from here.
-# Stop Forum Spam (SFS) listings: 42.
-# Updated: 2023.02.28
+# Stop Forum Spam (SFS) listings: 12.
+# Updated: 2023.02.28 / Checked: 2023.12.21
 
 2402:e7c0:c00::/38 Deny Cloud
 Origin: CN

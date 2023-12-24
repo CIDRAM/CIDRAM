@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The backup page (last modified: 2023.12.13).
+ * This file: The backup page (last modified: 2023.12.24).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -83,6 +83,7 @@ if (isset($_POST['bckpAct'])) {
         header('Content-disposition: attachment; filename="' . $Filename . '"');
         echo $Export;
         $this->restoreErrorHandler();
+        $this->Events->fireEvent('final');
         die;
     }
 

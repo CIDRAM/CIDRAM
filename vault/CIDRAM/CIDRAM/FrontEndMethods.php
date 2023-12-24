@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2023.12.12).
+ * This file: General methods used by the front-end (last modified: 2023.12.24).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1263,6 +1263,7 @@ trait FrontEndMethods
      */
     private function eTaggable(string $Asset, ?callable $Callback = null): void
     {
+        $this->Events->fireEvent('final');
         header_remove('Cache-Control');
         if ($this->pathSecurityCheck($Asset) && !preg_match('~[^\da-z._]~i', $Asset)) {
             $ThisAsset = $this->getAssetPath($Asset, true);

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.12.15).
+ * This file: The CIDRAM front-end (last modified: 2023.12.24).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -600,6 +600,7 @@ class FrontEnd extends Core
 
         /** The user is attempting an asynchronous request without adequate permissions. */
         if ($this->FE['UserState'] !== 1 && $this->FE['ASYNC']) {
+            $this->Events->fireEvent('final');
             header('HTTP/1.0 403 Forbidden');
             header('HTTP/1.1 403 Forbidden');
             header('Status: 403 Forbidden');
@@ -926,6 +927,9 @@ class FrontEnd extends Core
                 echo json_encode(['state_msg' => $this->FE['state_msg']]);
             }
         }
+
+        /** Final event before we exit. */
+        $this->Events->fireEvent('final');
 
         /** Exit front-end. */
         if (empty($this->Alternate) && $this->FE['CronType'] !== 'localUpdate') {

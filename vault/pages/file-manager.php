@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The file manager page (last modified: 2023.12.13).
+ * This file: The file manager page (last modified: 2023.12.24).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -193,6 +193,7 @@ elseif (
 
             /** Send output. */
             echo $this->sendOutput();
+            $this->Events->fireEvent('final');
             die;
         }
     }
@@ -242,12 +243,14 @@ elseif (
 
             /** Send output. */
             echo $this->sendOutput();
+            $this->Events->fireEvent('final');
             die;
         }
     }
 
     /** Download a file. */
     if ($_POST['do'] === 'download-file') {
+        $this->Events->fireEvent('final');
         header('Content-Type: application/octet-stream');
         header('Content-Transfer-Encoding: Binary');
         header('Content-disposition: attachment; filename="' . basename($_POST['filename']) . '"');

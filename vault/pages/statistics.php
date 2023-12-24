@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The statistics page (last modified: 2023.12.13).
+ * This file: The statistics page (last modified: 2023.12.24).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -87,7 +87,15 @@ foreach ($this->CIDRAM['AuxData'] as $AuxRuleName => $AuxRuleData) {
     if (empty($AuxRuleData['Track this rule'])) {
         continue;
     }
-    $AuxRulesTracked[] = $AuxRuleName;
+    if (preg_match('~\\\\(\d+)~', $AuxRuleName)) {
+        $Try = $this->Cache->getAllEntriesWhere('^Statistics-Aux-(' . preg_replace('~\\\\\\\\(\d+)~', '.*', preg_quote($AuxRuleName)). ')(?<!-Most-Recent)$~', '\1');
+        foreach ($Try as $AuxRuleName => $EntryData) {
+            $AuxRulesTracked[] = $AuxRuleName;
+        }
+        unset($EntryData);
+    } else {
+        $AuxRulesTracked[] = $AuxRuleName;
+    }
 }
 
 /** Process auxiliary rules statistics. */
@@ -133,7 +141,7 @@ if (count($AuxRulesTracked) === 0) {
     );
     $this->FE['AuxStatsForClipboard'] = $this->escapeJsInHTML($this->FE['AuxStatsForClipboard']) . '\n';
 }
-unset($AuxRulesTotal, $AuxRuleData, $AuxRuleName, $AuxRulesTracked);
+unset($Try, $AuxRulesTotal, $AuxRuleData, $AuxRuleName, $AuxRulesTracked);
 
 /** Fetch and process totals. */
 foreach (['Blocked-Total', 'Banned-Total', 'Passed-Total', 'CAPTCHAs-Total', 'Reported-Total'] as $TheseStats) {
@@ -171,4 +179,4 @@ $this->FE['FE_Content'] = $this->parseVars($this->FE, $this->readFile($this->get
 echo $this->sendOutput();
 
 /** Cleanup. */
-unset($Path, $StatWorking, $Try, $TheseStats);
+unset($Path, $StatWorking, $TheseStats);

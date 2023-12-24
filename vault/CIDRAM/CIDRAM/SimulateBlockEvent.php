@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used to simulate block events (last modified: 2023.12.12).
+ * This file: Methods used to simulate block events (last modified: 2023.12.21).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -58,8 +58,12 @@ trait SimulateBlockEvent
         if (isset($this->CIDRAM['TestMode']) && $this->CIDRAM['TestMode'] === 2) {
             $UA = $Addr;
             $Addr = isset($this->FE['ip-addr-focus']) ? preg_replace('~[^\da-f:./]~i', '', $this->FE['ip-addr-focus']) : '';
+        } elseif (isset($this->FE['custom-ua-focus']) && $this->FE['custom-ua-focus'] !== '') {
+            $UA = $this->FE['custom-ua-focus'];
+        } elseif (isset($this->FE['custom-ua']) && $this->FE['custom-ua'] !== '') {
+            $UA = $this->FE['custom-ua'];
         } else {
-            $UA = $this->FE['custom-ua-focus'] ?: $this->FE['custom-ua'] ?: 'SimulateBlockEvent';
+            $UA = 'SimulateBlockEvent';
         }
         $UA = str_replace(['&quot;', '&gt;', '&lt;', '&amp;'], ['"', '>', '<', '&'], $UA);
 
@@ -70,8 +74,8 @@ trait SimulateBlockEvent
             'DateTime' => $this->FE['DateTime'],
             'IPAddr' => $Addr,
             'IPAddrResolved' => $this->resolve6to4($Addr),
-            'Query' => str_replace(['&quot;', '&gt;', '&lt;', '&amp;'], ['"', '>', '<', '&'], $this->FE['custom-query']) ?: 'SimulateBlockEvent',
-            'Referrer' => str_replace(['&quot;', '&gt;', '&lt;', '&amp;'], ['"', '>', '<', '&'], $this->FE['custom-referrer']) ?: 'SimulateBlockEvent',
+            'Query' => str_replace(['&quot;', '&gt;', '&lt;', '&amp;'], ['"', '>', '<', '&'], $this->FE['custom-query'] ?? '') ?: 'SimulateBlockEvent',
+            'Referrer' => str_replace(['&quot;', '&gt;', '&lt;', '&amp;'], ['"', '>', '<', '&'], $this->FE['custom-referrer'] ?? '') ?: 'SimulateBlockEvent',
             'UA' => $UA,
             'UALC' => strtolower($UA),
             'SignatureCount' => 0,

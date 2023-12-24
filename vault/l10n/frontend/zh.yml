@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2023.12.01).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2023.12.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,6 +24,32 @@
 # requests, ask. I can help.
 ##/
 
+Abuse category:
+ Bad web bot: "糟糕的网络机器人（抓取电子邮件地址、内容、不尊重 robots.txt、过多的请求、用户代理欺骗、等等）。"
+ Brute-force attacks: "暴力攻击（针对网页登录、SMTP、RDP 等的凭证暴力攻击）。"
+ Categories (at least one is required): "类别（至少需要一个）"
+ CMS blog comment spam: "CMS博客评论垃圾邮件。"
+ Conjunctive category: "连词类别（与其他更具体的类别结合使用）。"
+ DDoS attacks: "DDoS攻击（通常是僵尸网络的一部分）。"
+ DNS compromise: "DNS妥协（更改DNS记录导致不正确的重定向）。"
+ DNS poisoning: "DNS中毒。"
+ Email sender spoofing: "电子邮件发件人欺骗。"
+ Email spam: "垃圾邮件（垃圾邮件内容、受感染的附件、网络钓鱼电子邮件、等等）。"
+ Exploited host: "被利用的主机（主机可能感染了恶意软件并被用于其他攻击或托管恶意内容）。"
+ FTP brute-force attacks: "FTP暴力攻击。"
+ Fraudulent VoIP: "欺诈性VoIP。"
+ Fraudulent orders: "欺诈订单。"
+ Hacking: "黑客攻击。"
+ IoT targeted: "物联网有针对性的滥用。在评论中包含有关目标设备类型的信息。"
+ Open proxy, open relay, or tor endpoint: "开放代理、开放中继、或 tor 端点。"
+ Phishing: "网络钓鱼网站和/或电子邮件。"
+ Ping of death: "死亡之平（超大IP数据包）。"
+ Port scans: "端口扫描（扫描开放端口和易受攻击的服务）。"
+ SQL injection: "SQL注入。"
+ SSH abuse: "SSH滥用。"
+ VPN IP: "VPN IP。"
+ Web spam: "网络垃圾邮件（评论/论坛垃圾邮件、HTTP引荐来源网址垃圾邮件、或其他CMS垃圾邮件）。"
+ Webapp attacks: "网络应用程序攻击（探测漏洞用于对抗网络应用程序、CMS、电子商务，例如，WordPress、Drupal、phpMyAdmin、等等）。"
 Extended Description:
  AbuseIPDB module: "阻止来自AbuseIPDB列出的IP的请求。"
  BGPView module: "利用{{Links.BGPView}} API为CIDRAM提供ASN和国家代码查找功能，提供通过CIDRAM配置一种ASN和国家被阻止或列入白名单的方法，并提供一种用于社交媒体验证的方式来验证Facebook请求。 （如果您使用此模块，则无需使用IP-API模块，因为它们的用途相同）。"
@@ -297,6 +323,7 @@ confirm:
 field:
  %s File: "%s文件"
  2FA code: "2FA代码"
+ API key: "API密钥"
  Activate: "启用"
  Add more conditions: "添加更多条件"
  Add to tracking: "添加到跟踪"
@@ -492,6 +519,7 @@ label:
  CIDRAM disk usage: "CIDRAM使用的磁盘空间："
  CIDRAM version used: "目前使用CIDRAM版本："
  Cache data and temporary files: "缓存数据和临时文件"
+ Characters left: "剩余字符数"
  Checkbox: "选框"
  Checksum after: "之后的校验和"
  Checksum before: "之前的校验和"
@@ -562,6 +590,7 @@ label:
  PHP version used: "目前使用PHP版本："
  Page request completed in %s seconds: "页面请求在%s秒内完成。"
  Paginate: "分页"
+ Please abide by the AbuseIPDB reporting policy: "请遵守 AbuseIPDB <a target="reporting-policy" hreflang="en-US" href="https://www.abuseipdb.com/reporting-policy">报告政策</a>。"
  Please log in to continue: "请登录以继续。"
  Preferred source: "首选来源："
  Previous: "以前的："
@@ -762,6 +791,7 @@ response:
  Failed to import: "导入失败！"
  Failed to install: "无法安装！"
  Failed to rename: "无法改名！"
+ Failed to report the IP address, %s: "无法报告IP地址，%s！"
  Failed to update auxiliary rules: "辅助规则更新失败！"
  Failed to update configuration: "配置更新失败！"
  Failed to update statistics: "更新统计失败！"
@@ -778,6 +808,7 @@ response:
  I can_t write to %s, sorry: "我不能写信给“%s”，对不起。"
  I don_t understand that command, sorry: "我不明白的命令，对不起。"
  Incorrect 2FA code entered: "输入了错误的2FA代码。验证失败。"
+ Invalid API key: "API密钥无效！"
  Invalid password: "登录失败！​密码无效！"
  New auxiliary rule, %s, created successfully: "新辅助规则“%s”创建成功。"
  Not available at the upstream: "在上游找不到。"
@@ -787,6 +818,7 @@ response:
  Password field empty: "密码输入是空的！"
  Password successfully updated: "密码成功更新！"
  Permissions not adequate to perform asynchronous requests:: "权限不足以执行异步请求。尝试再次登录。"
+ Please select at least one category: "请至少选择一个类别！"
  Ready to install: "准备安装。"
  Redirected: "重定向"
  Removed %s from tracking: "从跟踪中删除了%s。"
@@ -801,6 +833,10 @@ response:
  Successfully deactivated: "已成功停用。"
  That account doesn_t exist: "那个帐户不存在。"
  The %s command can_t be chained in that way, sorry: "%s命令不能以这种方式链接，对不起。"
+ The IP address is invalid: "IP地址无效！"
+ The IP address, %s, successfully reported: "IP地址%s已成功报告！"
+ The report has not been enqueued: "该报告不在队列中。"
+ The same IP address can be reported only once every 15 minutes: "同一IP地址每15分钟只能报告一次。​该报告在队列中，CIDRAM将稍后尝试提交该报告。"
  There aren_t currently any auxiliary rules: "目前没有任何辅助规则。"
  There_s nothing to analyse, sorry: "没有什么可分析的，对不起。"
  There_s nothing to print, sorry: "没有什么可打印的，对不起。"
@@ -899,6 +935,7 @@ tip:
  Rate limiting is currently disabled: "注意：速率限制目前已被禁用，但可以通过配置页面启用。"
  Sections List: "你好，{username}。<br />此页面列出当前活动签名文件中存在哪些章节。"
  See the documentation: "请参阅<a href="https://github.com/CIDRAM/Docs/blob/master/readme.zh.md\#user-content-SECTION5" hreflang="zh-CN" rel="noopener external">文档</a>以获取有关各种配置指令的信息和他们的目的。"
+ Server log snippets, abuse details, etc: "服务器日志片段、滥用详细信息、等等。"
  Signature File Fixer: "你好，{username}。<br />签名文件修复工具提供了一种检测和修复签名文件中潜在问题的方法。"
  Specify a value, or leave blank to disregard: "指定一个值，或留空以忽略。"
  Statistics tracking is currently disabled: "注意：统计跟踪目前已被禁用，但可以通过配置页面启用。"

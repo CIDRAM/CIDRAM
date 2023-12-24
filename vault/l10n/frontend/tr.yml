@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2023.12.01).
+# This file: Turkish language data for the front-end (last modified: 2023.12.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,6 +24,32 @@
 # requests, ask. I can help.
 ##/
 
+Abuse category:
+ Bad web bot: "Kötü web botu (e-posta adresleri veya içerik için kazıma, robots.txt'yi dikkate almayan tarayıcılar, aşırı istekler, kullanıcı aracısı sahteciliği, vb)."
+ Brute-force attacks: "Kaba kuvvet saldırıları (web sayfası oturum açma işlemleri, SMTP, RDP, vb üzerinde kimlik bilgisi kaba kuvvet saldırıları)."
+ Categories (at least one is required): "Kategoriler (en az bir tanesi gereklidir)"
+ CMS blog comment spam: "CMS blog yorumu spam'i."
+ Conjunctive category: "Bağlaç kategorisi (diğer, daha spesifik kategorilerle birlikte kullanın)."
+ DDoS attacks: "DDoS saldırıları (genellikle bir botnet'in parçası)."
+ DNS compromise: "DNS ihlali (yanlış yönlendirmeyle sonuçlanan DNS kayıtlarını değiştirmek)."
+ DNS poisoning: "DNS zehirlenmesi."
+ Email sender spoofing: "E-posta gönderen sahtekarlığı."
+ Email spam: "Spam e-posta (spam e-posta içeriği, virüslü ekler, kimlik avı e-postaları, vb)."
+ Exploited host: "İstismar edilen ana bilgisayar (ana makineye muhtemelen kötü amaçlı yazılım bulaşmış ve başka saldırılar için ya da kötü amaçlı içerik barındırmak için kullanılıyor)."
+ FTP brute-force attacks: "FTP kaba kuvvet saldırıları."
+ Fraudulent VoIP: "Sahte VoIP."
+ Fraudulent orders: "Sahte siparişler."
+ Hacking: "Hacklemek."
+ IoT targeted: "Nesnelerin İnterneti hedefli kötüye kullanım. Yorumlara ne tür cihazın hedeflendiğine ilişkin bilgileri ekleyin."
+ Open proxy, open relay, or tor endpoint: "Açık vekil, açık geçiş, veya tor uç noktası."
+ Phishing: "Kimlik avı web siteleri ve/veya e-posta."
+ Ping of death: "Ölüm pingi (büyük boyutlu IP paketi)."
+ Port scans: "Bağlantı noktası taramaları (açık bağlantı noktalarını ve savunmasız hizmetleri taramak)."
+ SQL injection: "SQL enjeksiyonu."
+ SSH abuse: "SSH'nin kötüye kullanılması."
+ VPN IP: "VPN IP'si."
+ Web spam: "Web spam'ı (yorum/forum spam'ı, HTTP yönlendiren spam'ı, veya diğer CMS spam'ı)."
+ Webapp attacks: "Web uygulaması saldırıları (yüklü web uygulamalarına, CMS'ye, veya e-ticaret çözümlerine karşı kullanılacak güvenlik açıklarını veya istismarları araştırmak, örneğin, WordPress, Drupal, phpMyAdmin, vb)."
 Extended Description:
  AbuseIPDB module: "AbuseIPDB'de listelenen IP'lerden gelen istekleri engeller."
  BGPView module: "CIDRAM için ASN ve ülke kodu arama olanağı sağlamak için {{Links.BGPView}} API'den yararlanır, ASN'lerin ve ülkelerin CIDRAM yapılandırması aracılığıyla engellenmesini veya beyaz listeye eklenmesini sağlamak, ve Facebook isteklerini doğrulamak için sosyal ağ doğrulaması için bir araç sağlamak. (Bu modülü kullanırsanız, aynı amaca hizmet ettikleri için IP-API modülünü kullanmanıza gerek kalmaz)."
@@ -297,6 +323,7 @@ confirm:
 field:
  %s File: "%s Dosya"
  2FA code: "2FA kodu"
+ API key: "API anahtarı"
  Activate: "Etkinleştir"
  Add more conditions: "Daha fazla koşul ekle"
  Add to tracking: "İzlemeye ekle"
@@ -498,6 +525,7 @@ label:
  CIDRAM disk usage: "CIDRAM disk kullanımı:"
  CIDRAM version used: "Kullanılan CIDRAM sürümü:"
  Cache data and temporary files: "Önbellek verileri ve geçici dosyalar"
+ Characters left: "Kalan karakterler"
  Checkbox: "Onay kutusu"
  Checksum after: "Sonra sağlama toplamı"
  Checksum before: "Önce sağlama toplamı"
@@ -572,6 +600,7 @@ label:
  PHP version used: "Kullanılan PHP sürümü:"
  Page request completed in %s seconds: "Sayfa isteği %s saniye içinde tamamlandı."
  Paginate: "Sayfalandır"
+ Please abide by the AbuseIPDB reporting policy: "Lütfen AbuseIPDB <a target="reporting-policy" hreflang="en-US" href="https://www.abuseipdb.com/reporting-policy">raporlama politikasına</a> uyun."
  Please log in to continue: "Devam etmek için lütfen giriş yapınız."
  Preferred source: "Tercih edilen kaynak:"
  Previous: "Önceki:"
@@ -772,6 +801,7 @@ response:
  Failed to import: "İçe aktarılamadı!"
  Failed to install: "Yükleme başarısız!"
  Failed to rename: "Yeniden adlandırılamadı!"
+ Failed to report the IP address, %s: "IP adresi %s bildirilemedi!"
  Failed to update auxiliary rules: "Yardımcı kurallar güncellenemedi!"
  Failed to update configuration: "Yapılandırma güncellenemedi!"
  Failed to update statistics: "İstatistikler güncellenemedi!"
@@ -788,6 +818,7 @@ response:
  I can_t write to %s, sorry: ""%s" e yazamıyorum, üzgünüm."
  I don_t understand that command, sorry: "Bu komutu anlamıyorum, üzgünüm."
  Incorrect 2FA code entered: "Yanlış 2FA kodu girildi. Kimlik doğrulama başarısız oldu."
+ Invalid API key: "Geçersiz API anahtarı!"
  Invalid password: "Giriş başarısız! Geçersiz parola!"
  New auxiliary rule, %s, created successfully: "Yeni yardımcı kural, "%s", başarıyla oluşturuldu."
  Not available at the upstream: "Yukarı akışta bulunamadı."
@@ -797,6 +828,7 @@ response:
  Password field empty: "Parola alanı boş!"
  Password successfully updated: "Şifre başarıyla güncellendi!"
  Permissions not adequate to perform asynchronous requests:: "İzinleriniz uyumsuz eşzamansız istekler gerçekleştirmek için yeterli değil. Tekrar giriş yapmayı deneyin."
+ Please select at least one category: "Lütfen en az bir kategori seçin!"
  Ready to install: "Yüklemeye hazır."
  Redirected: "Yönlendirildi"
  Removed %s from tracking: "İzlemeden %s kaldırıldı."
@@ -811,6 +843,10 @@ response:
  Successfully deactivated: "Başarıyla devre dışı bırakıldı."
  That account doesn_t exist: "Bu hesap mevcut değil."
  The %s command can_t be chained in that way, sorry: "%s komutu bu şekilde zincirlenemez, üzgünüm."
+ The IP address is invalid: "IP adresi geçersiz!"
+ The IP address, %s, successfully reported: "IP adresi, %s, başarıyla bildirildi!"
+ The report has not been enqueued: "Rapor kuyruğa alınmadı."
+ The same IP address can be reported only once every 15 minutes: "Aynı IP adresi yalnızca 15 dakikada bir bildirilebilir. Rapor kuyruğa alındı ve CIDRAM raporu daha sonra göndermeyi deneyecek."
  There aren_t currently any auxiliary rules: "Şu anda herhangi bir yardımcı kural bulunmamaktadır."
  There_s nothing to analyse, sorry: "Analiz edilecek bir şey yok, üzgünüm."
  There_s nothing to print, sorry: "Yazdırılacak bir şey yok, üzgünüm."
@@ -909,6 +945,7 @@ tip:
  Rate limiting is currently disabled: "Not: Hız sınırlaması şu anda devre dışı, ancak yapılandırma sayfası aracılığıyla etkinleştirilebilir."
  Sections List: "Merhaba, {username}.<br />Bu sayfa şu anda etkin olan imza dosyalarında hangi bölümlerin bulunduğunu listeler."
  See the documentation: "Çeşitli yapılandırma yönergeleri ve amaçlarıyla ilgili bilgi için <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external">belgelere</a> bakın."
+ Server log snippets, abuse details, etc: "Sunucu günlüğü alıntıları, kötüye kullanım ayrıntıları, vb."
  Signature File Fixer: "Merhaba, {username}.<br />İmza dosya tamircisi, imza dosyalarındaki olası sorunları tespit etmek ve çözmek için bir yol sağlar."
  Specify a value, or leave blank to disregard: "Bir değer belirtin veya göz ardı etmek için boş bırakın."
  Statistics tracking is currently disabled: "Not: İstatistik izleme şu anda devre dışı, ancak yapılandırma sayfası aracılığıyla etkinleştirilebilir."

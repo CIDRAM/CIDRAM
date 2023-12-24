@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2023.12.15).
+# This file: Italian language data for the front-end (last modified: 2023.12.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -75,7 +75,7 @@ Extended Description:
  PHPMailer: "Richiesto per l'utilizzo di qualsiasi funzionalità che implica l'invio di posta elettronica.<br />{{Links.PHPMailer.PHPMailer}} è disponibile tramite la licenza {{Links.PHPMailer.License}}."
  Project Honeypot module: "Blocca le richieste dagli IP elencati in Project Honeypot."
  Protocol blocker module: "Fornisce la possibilità di bloccare specifici protocolli di richiesta tramite la configurazione (per esempio, HTTP/0.9, HTTP/1.1, SPDY/3.0, ecc). Nota: Non avrà alcun effetto per quei siti Web che instradano attraverso servizi che riscrivono le richieste in modo che tutti utilizzino esattamente lo stesso protocollo, come Cloudflare."
- Referrer spam module: "Il blocco basato sullo spam dei referrer in genere non offre alcun vantaggio significativo in termini di sicurezza, ma in alcuni casi potrebbe essere utile per alcuni utenti, per raccogliere maggiori informazioni sulle richieste e per poterle segnalare."
+ Referrer spam module: "Il blocco basato sullo spam dei referrer in genere non offre alcun vantaggio significativo in termini di sicurezza, ma in alcuni casi potrebbe essere utile per alcuni utenti, per raccogliere maggiori informazioni sulle richieste e per poterle rapporta."
  Stop Forum Spam module: "Protegge le pagine di registrazione e di accesso agli IP elencati da SFS."
  Tor blocker module: "Proibisce l'accesso dai nodi di uscita Tor tramite ricerche DNSEL (supporta sia IPv4 che IPv6)."
 Name:
@@ -482,7 +482,7 @@ Some useful links: |
            <li>{{Links.BGPView}} – Ottenere CIDRs da ASNs, determinare le relazioni di ASNs, scopri ASNs basata su nomi di rete, ecc.</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar da Qrator</a> – Strumento utile per verificare la connettività di ASN nonché per varie altre informazioni utili riguardo ASNs.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Il progetto Spamhaus</a> – Visualizza i rapporti per quanto riguarda ai tassi di infezione di botnet per ASN.</li>
-           <li>{{Links.AbuseIPDB}} – Mantiene un database di conosciuti indirizzi IP abusivi; Fornisce una API per il controllo e la segnalazione di IP.</li>
+           <li>{{Links.AbuseIPDB}} – Mantiene un database di conosciuti indirizzi IP abusivi; Fornisce un API per il controllo e la rapporta di IP.</li>
            <li>{{Links.IP-API}} – Ottieni informazioni su indirizzi IP o nomi host come codice paese, nome regione, longitudine, latitudine, nome organizzazione, ecc.</li>
          </ul>
        </li>
@@ -529,6 +529,7 @@ label:
  CIDRAM disk usage: "Utilizzo del disco da parte di CIDRAM:"
  CIDRAM version used: "Versione CIDRAM utilizzata:"
  Cache data and temporary files: "Dati di cache e file temporanei"
+ Characters left: "Caratteri rimanenti"
  Checkbox: "Casella di controllo"
  Checksum after: "Checksum dopo"
  Checksum before: "Checksum prima"
@@ -603,19 +604,19 @@ label:
  PHP version used: "Versione PHP utilizzata:"
  Page request completed in %s seconds: "Richiesta di pagina completata in %s secondi."
  Paginate: "Impaginare"
- Please abide by the AbuseIPDB reporting policy: "Si prega di rispettare la <a target="reporting-policy" hreflang="en-US" href="https://www.abuseipdb.com/reporting-policy">politica di segnalazione</a> di AbuseIPDB."
+ Please abide by the AbuseIPDB reporting policy: "Si prega di rispettare la <a target="reporting-policy" hreflang="en-US" href="https://www.abuseipdb.com/reporting-policy">politica di rapportazione</a> di AbuseIPDB."
  Please log in to continue: "Per favore accedi per continuare."
  Preferred source: "Fonte preferita:"
  Previous: "Precedente:"
  Range tools: "Strumenti per le gamme"
  Remember: "Ricorda"
- Report to AbuseIPDB: "Segnala ad AbuseIPDB"
+ Report to AbuseIPDB: "Rapportala ad AbuseIPDB"
  Repository backup locations: "Posizioni di backup del repository (in caso di emergenza, o se tutto il resto fallisce):"
  Requests banned: "Richieste vietate"
  Requests blocked: "Richieste bloccate"
  Requests for sensitive pages only: "Richieste solo per pagine sensibili (ad es., pagine di accesso, moduli di registrazione, ecc).\nMeno rigoroso e completo, ma più prudente in termini di quote e limiti, e meno probabile che incida negativamente sulla performance. La strategia consigliata nella maggior parte dei casi."
  Requests passed: "Richieste accettate"
- Requests reported to external APIs: "Richieste segnalate ad API esterne"
+ Requests reported to external APIs: "Richieste rapportate ad API esterne"
  SAPI used: "SAPI utilizzata:"
  Safety mechanisms: "Meccanismi di sicurezza"
  Sanity check: "Controllo sanitario:"
@@ -799,11 +800,12 @@ response:
  Failed to access %s: "Impossibile accedere a "%s"!"
  Failed to activate: "Non poteva essere attivato!"
  Failed to deactivate: "Non poteva essere disattivato!"
- Failed to delete: "Non riuscito a eliminare!"
+ Failed to delete: "Non riuscito ad eliminare!"
  Failed to execute: "Non è riuscito ad eseguire!"
  Failed to import: "Non è riuscito ad importare!"
  Failed to install: "Non è riuscito ad installare!"
  Failed to rename: "Non riuscito a rinominare!"
+ Failed to report the IP address, %s: "Non è riuscito a rapportare l'indirizzo IP, %s!"
  Failed to update auxiliary rules: "Non è riuscito ad aggiornare le regole ausiliarie!"
  Failed to update configuration: "Non è riuscito ad aggiornare la configurazione!"
  Failed to update statistics: "Non è riuscito ad aggiornare le statistiche!"
@@ -820,6 +822,7 @@ response:
  I can_t write to %s, sorry: "Non posso scrivere a "%s", mi dispiace."
  I don_t understand that command, sorry: "Non capisco quel comando, mi dispiace."
  Incorrect 2FA code entered: "Codice 2FA errato inserito. Autenticazione fallita."
+ Invalid API key: "Chiave API non valida!"
  Invalid password: "Accedi non riuscito! Password non valida!"
  New auxiliary rule, %s, created successfully: "Nuova regola ausiliaria, "%s", creata con successo."
  Not available at the upstream: "Non disponibile a monte."
@@ -829,6 +832,7 @@ response:
  Password field empty: "L'input password era vuoto!"
  Password successfully updated: "Password aggiornato con successo!"
  Permissions not adequate to perform asynchronous requests:: "Autorizzazioni non adeguate per eseguire richieste asincrone. Prova ad accedere di nuovo."
+ Please select at least one category: "Per favore, seleziona almeno una categoria!"
  Ready to install: "Pronto a installare."
  Redirected: "Reindirizzato"
  Removed %s from tracking: "Rimosso %s dal tracciamento."
@@ -843,6 +847,10 @@ response:
  Successfully deactivated: "Disattivato con successo."
  That account doesn_t exist: "Questo account non esiste."
  The %s command can_t be chained in that way, sorry: "Il comando %s non può essere concatenato in questo modo, mi dispiace."
+ The IP address is invalid: "L'indirizzo IP non è valido!"
+ The IP address, %s, successfully reported: "L'indirizzo IP, %s, è stato rapportato con successo!"
+ The report has not been enqueued: "Il rapporto non è stato accodato."
+ The same IP address can be reported only once every 15 minutes: "Lo stesso indirizzo IP può essere rapportato solo una volta ogni 15 minuti. Il rapporto è stato accodato, e CIDRAM tenterà di inviare il rapporto in un'altra volta."
  There aren_t currently any auxiliary rules: "Al momento non ci sono regole ausiliarie."
  There_s nothing to analyse, sorry: "Non c'è niente da analizzare, mi dispiace."
  There_s nothing to print, sorry: "Non c'è niente da stampare, mi dispiace."
@@ -866,7 +874,7 @@ stages:
  Execute modules: "Esegui moduli"
  Execute other verification: "Esegui un'altra verifica"
  Execute rate limiting: "Esegui la limitazione della velocità"
- Execute reporting: "Esegui segnalazione"
+ Execute reporting: "Esegui rapporti"
  Execute search engine verification: "Esegui la verifica dei motori di ricerca"
  Execute signature files tests: "Esegui test sui file di firma"
  Execute social media verification: "Esegui la verifica dei social media"

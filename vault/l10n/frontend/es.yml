@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2023.12.15).
+# This file: Spanish language data for the front-end (last modified: 2023.12.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -132,11 +132,11 @@ config:
  abuseipdb: "Configuración para el módulo AbuseIPDB."
  abuseipdb_api_key: &EnterAPIKey "Ingrese su clave API aquí."
  abuseipdb_build_profiles_from_usage_type: "¿Crear perfiles utilizando el tipo de uso devuelto por la API? False = No. True = Sí. Predefinido = True."
- abuseipdb_max_age_in_days: "La antigüedad máxima en días para la que se tendrán en cuenta los informes al realizar búsquedas (debe ser un número entre 1 y 365). Predefinido = 365."
+ abuseipdb_max_age_in_days: "La antigüedad máxima en días para la que se tendrán en cuenta los reportes al realizar búsquedas (debe ser un número entre 1 y 365). Predefinido = 365."
  abuseipdb_max_cs_for_captcha: "La puntuación de confianza máxima permitida para que se sirvan los CAPTCHA (debe ser un número entre 0 y 100). Predefinido = 10."
  abuseipdb_minimum_confidence_score: "La puntuación de confianza mínimo requerido para que CIDRAM bloquee una dirección IP (debe ser un número entre 0 y 100). Predefinido = 50."
- abuseipdb_minimum_total_reports: "El número mínimo de informes totales necesarios para que CIDRAM bloquee una dirección IP. Predefinido = 1."
- abuseipdb_report_back: "¿Permitir que CIDRAM informe el mal comportamiento detectado a AbuseIPDB usando su clave API?"
+ abuseipdb_minimum_total_reports: "El número mínimo de reportes totales necesarios para que CIDRAM bloquee una dirección IP. Predefinido = 1."
+ abuseipdb_report_back: "¿Permitir que CIDRAM reportar el mal comportamiento detectado a AbuseIPDB usando su clave API?"
  bgpview: "Configuración para el módulo BGPView (proporciona una funcionalidad de búsqueda de ASNs y códigos de país para CIDRAM)."
  bgpview_blocked_asns: &ConfigBlockedASNs "Una lista de ASN que serán bloqueados por el módulo."
  bgpview_blocked_ccs: &ConfigBlockedCCs "Una lista de países (identificados por sus códigos de país {{Links.ISO.3166}} 2 dígitos) que serán bloqueados por el módulo."
@@ -235,7 +235,7 @@ config:
  logging_log_rotation_limit: "La rotación de registros limita la cantidad de archivos de registro que deberían existir al mismo tiempo. Cuando se crean nuevos archivos de registro, si la cantidad total de archivos de registro excede el límite especificado, se realizará la acción especificada. Puede especificar el límite deseado aquí. Un valor de 0 deshabilitará la rotación de registros."
  logging_log_sanitisation: "Cuando se utiliza el front-end página de los archivos de registro para ver los datos de registro, CIDRAM sanea los datos de registro antes de mostrarlos, para proteger a los usuarios de los ataques XSS y otras amenazas potenciales que podrían estar contenido dentro de los datos de registro. Pero, de forma predefinida, los datos no se sanean durante el registro. Esto es para asegurar que los datos de registro se conserven con precisión, para ayudar a cualquier análisis heurístico o forense que pueda ser necesario en el futuro. Pero, en el caso de que un usuario intente leer los datos de registro utilizando herramientas externas, y si esas herramientas externas no realizan su propio proceso de saneamiento, el usuario podría estar expuesto a ataques XSS. Si es necesario, puede cambiar el comportamiento predefinido utilizando esta directiva de configuración. True = Sanear datos al registrarlo (los datos se conservan con menos precisión, pero el riesgo de XSS es menor). False = No sanear datos al registrarlo (los datos se conservan con mayor precisión, pero el riesgo de XSS es mayor) [Predefinido]."
  logging_outbound_request_log: "Un archivo para registrar los resultados de cualquier solicitud saliente. Especificar el nombre del archivo, o dejar en blanco para desactivar."
- logging_report_log: "Un archivo para registrar cualquier informe enviado a las API externas. Especificar el nombre del archivo, o dejar en blanco para desactivar."
+ logging_report_log: "Un archivo para registrar cualquier reportes enviados a las API externas. Especificar el nombre del archivo, o dejar en blanco para desactivar."
  logging_serialised_log: "Un archivo serializado para el registro de todos los intentos de acceso bloqueados. Especificar el nombre del archivo, o dejar en blanco para desactivar."
  logging_standard_log: "Un archivo legible por humanos para el registro de todos los intentos de acceso bloqueados. Especificar el nombre del archivo, o dejar en blanco para desactivar."
  logging_truncate: "¿Truncar archivos de registro cuando alcanzan cierto tamaño? Valor es el tamaño máximo en B/KB/MB/GB/TB que un archivo de registro puede crecer antes de ser truncado. El valor predeterminado de 0KB deshabilita el truncamiento (archivos de registro pueden crecer indefinidamente). Nota: ¡Se aplica a archivos de registro individuales! El tamaño de los archivos de registro no se considera colectivamente."
@@ -254,7 +254,7 @@ config:
  phpmailer_username: "El nombre de usuario a usar cuando se envía un correo electrónico a través de SMTP."
  projecthoneypot: "Configuración para el módulo Project Honeypot."
  projecthoneypot_api_key: *EnterAPIKey
- projecthoneypot_max_age_in_days: "La antigüedad máxima en días para la que se tendrán en cuenta los informes al realizar búsquedas. Predefinido = 365."
+ projecthoneypot_max_age_in_days: "La antigüedad máxima en días para la que se tendrán en cuenta los reportes al realizar búsquedas. Predefinido = 365."
  projecthoneypot_max_ts_for_captcha: "La puntuación de amenaza máxima permitida para recibir un CAPTCHA (debe ser un número entre 1 y 100). Predefinido = 10."
  projecthoneypot_minimum_threat_score: "La puntuación mínimo de amenaza requerido para que CIDRAM bloquee una dirección IP (debe ser un número entre 1 y 100). Predefinido = 10."
  projecthoneypot_type_of_visitor: "Controles para bloquear o perfilar según el tipo de visitante según lo determine Project Honeypot."
@@ -477,8 +477,8 @@ Some useful links: |
            <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Obtener CIDRs de ASNs, Determinar las relaciones de las ASNs, Descubre los ASNs basados en nombres de redes, etc.</li>
            <li>{{Links.BGPView}} – Obtener CIDRs de ASNs, Determinar las relaciones de las ASNs, Descubre los ASNs basados en nombres de redes, etc.</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar por Qrator</a> – Útil herramienta para comprobar la conectividad de los ASNs así como para otras informaciones sobre los ASNs.</li>
-           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">El Proyecto Spamhaus</a> – Muestra informes sobre las tasas de infección por botnets para los ASNs.</li>
-           <li>{{Links.AbuseIPDB}} – Mantiene una base de datos de IPs abusivos conocidos; Proporciona una API para comprobar e informar IPs.</li>
+           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">El Proyecto Spamhaus</a> – Muestra reportes sobre las tasas de infección por botnets para los ASNs.</li>
+           <li>{{Links.AbuseIPDB}} – Mantiene una base de datos de IPs abusivos conocidos; Proporciona una API para comprobar e reportar IPs.</li>
            <li>{{Links.IP-API}} – Obtener información sobre direcciones IP o nombres de host, como código de país, nombre de región, longitud, latitud, nombre de organización, etc.</li>
          </ul>
        </li>
@@ -527,6 +527,7 @@ label:
  CIDRAM disk usage: "Uso del disco por CIDRAM:"
  CIDRAM version used: "Versión CIDRAM utilizada:"
  Cache data and temporary files: "Datos de caché y archivos temporales"
+ Characters left: "Caracteres restantes"
  Checkbox: "Casilla de verificación"
  Checksum after: "La suma de comprobación después"
  Checksum before: "La suma de comprobación antes"
@@ -588,7 +589,7 @@ label:
  No data available: "Datos no disponibles."
  No log file selected: "Ningún archivo de registro seleccionado."
  No log files available: "Ningún archivos de registro disponibles."
- None: "Ninguno.\nSi desea utilizar el módulo solo con fines informes, sin buscar nada, utilícelo."
+ None: "Ninguno.\nSi desea utilizar el módulo solo con fines reportes, sin buscar nada, utilícelo."
  Only when blocked, specially marked for use, within the signature limit, and not banned: "Solo cuando está bloqueado, marcado especialmente para su uso, dentro del límite de firmas y no está prohibido."
  Only when blocked, within the signature limit, and not banned: "Solo cuando está bloqueado, dentro del límite de firmas y no está prohibido."
  Only when not blocked, at sensitive page requests: "Solo cuando no está bloqueado, en solicitudes de páginas sensibles."
@@ -601,7 +602,7 @@ label:
  PHP version used: "Versión PHP utilizada:"
  Page request completed in %s seconds: "Solicitud de página completada en %s segundos."
  Paginate: "Paginar"
- Please abide by the AbuseIPDB reporting policy: "Por favor, cumpla con la <a target="reporting-policy" hreflang="en-US" href="https://www.abuseipdb.com/reporting-policy">política de informes</a> de AbuseIPDB."
+ Please abide by the AbuseIPDB reporting policy: "Por favor, cumpla con la <a target="reporting-policy" hreflang="en-US" href="https://www.abuseipdb.com/reporting-policy">política de reportes</a> de AbuseIPDB."
  Please log in to continue: "Por favor iniciar sesión para continuar."
  Preferred source: "Fuente preferida:"
  Previous: "Previa:"
@@ -802,6 +803,7 @@ response:
  Failed to import: "¡No se pudo importar!"
  Failed to install: "¡No se pudo instalar!"
  Failed to rename: "¡No se pudo cambiar el nombre!"
+ Failed to report the IP address, %s: "¡No se pudo reportar la dirección IP %s!"
  Failed to update auxiliary rules: "¡Error al actualizar las reglas auxiliares!"
  Failed to update configuration: "¡Error al actualizar la configuración!"
  Failed to update statistics: "¡No se pudo actualizar las estadísticas!"
@@ -818,6 +820,7 @@ response:
  I can_t write to %s, sorry: "No puedo escribir a "%s", lo siento."
  I don_t understand that command, sorry: "No entiendo ese comando, lo siento."
  Incorrect 2FA code entered: "Código de 2FA incorrecto ingresado. Autenticación fallida."
+ Invalid API key: "¡Clave API invalida!"
  Invalid password: "¡Error al iniciar sesión – Contraseña invalida!"
  New auxiliary rule, %s, created successfully: "Nueva regla auxiliar, "%s", creada con éxito."
  Not available at the upstream: "No disponible en el upstream."
@@ -827,6 +830,7 @@ response:
  Password field empty: "¡La entrada de contraseña estaba vacío!"
  Password successfully updated: "¡Contraseña actualizado con éxito!"
  Permissions not adequate to perform asynchronous requests:: "Permisos no adecuados para realizar solicitudes asincrónicas. Intenta iniciar sesión de nuevo."
+ Please select at least one category: "¡Por favor, seleccione al menos una categoría!"
  Ready to install: "Listo para instalar."
  Redirected: "Redirigido"
  Removed %s from tracking: "Eliminado %s del seguimiento."
@@ -841,6 +845,10 @@ response:
  Successfully deactivated: "Se ha desactivado correctamente."
  That account doesn_t exist: "Esa cuenta no existe."
  The %s command can_t be chained in that way, sorry: "El comando %s no se puede encadenar de esa manera, lo siento."
+ The IP address is invalid: "¡La dirección IP no es válida!"
+ The IP address, %s, successfully reported: "¡La dirección IP, %s, reportada con éxito!"
+ The report has not been enqueued: "El reporte no se ha puesto en cola."
+ The same IP address can be reported only once every 15 minutes: "La misma dirección IP solo se puede reportar una vez cada 15 minutos. El reporte se ha puesto en cola y CIDRAM intentará enviarlo más adelante."
  There aren_t currently any auxiliary rules: "Actualmente no hay ninguna reglas auxiliares."
  There_s nothing to analyse, sorry: "No hay nada que analizar, lo siento."
  There_s nothing to print, sorry: "No hay nada que imprimir, lo siento."
@@ -864,7 +872,7 @@ stages:
  Execute modules: "Ejecutar módulos"
  Execute other verification: "Ejecutar otra verificación"
  Execute rate limiting: "Ejecutar la limitación de tasa"
- Execute reporting: "Ejecutar informes"
+ Execute reporting: "Ejecutar reportes"
  Execute search engine verification: "Ejecutar la verificación del motor de búsqueda"
  Execute signature files tests: "Ejecutar pruebas de los archivos de firma"
  Execute social media verification: "Ejecutar la verificación de las redes sociales"

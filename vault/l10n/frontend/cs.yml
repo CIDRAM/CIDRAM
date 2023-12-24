@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Czech language data for the front-end (last modified: 2023.12.15).
+# This file: Czech language data for the front-end (last modified: 2023.12.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -532,6 +532,7 @@ label:
  CIDRAM disk usage: "Využití disku CIDRAM:"
  CIDRAM version used: "Použitá verze CIDRAM:"
  Cache data and temporary files: "Mezipaměť dat a dočasné soubory"
+ Characters left: "Zbývá znaků"
  Checkbox: "Zaškrtávací políčko"
  Checksum after: "Kontrolní součet po"
  Checksum before: "Kontrolní součet předtím"
@@ -809,6 +810,7 @@ response:
  Failed to import: "Importace se nezdařila!"
  Failed to install: "Instalace se nezdařila!"
  Failed to rename: "Přejmenování se nezdařilo!"
+ Failed to report the IP address, %s: "Nepodařilo se nahlásit IP adresu, %s!"
  Failed to update auxiliary rules: "Aktualizace pomocných pravidel se nezdařila!"
  Failed to update configuration: "Aktualizace konfigurace se nezdařila!"
  Failed to update statistics: "Aktualizace statistik se nezdařila!"
@@ -825,6 +827,7 @@ response:
  I can_t write to %s, sorry: "Nemohu zapisovat do „%s“, omlouvám se."
  I don_t understand that command, sorry: "Nerozumím tomu příkazu, omlouvám se."
  Incorrect 2FA code entered: "Zadali jste nesprávný kód 2FA. Autentizace se nezdařila."
+ Invalid API key: "Neplatný klíč API!"
  Invalid password: "Přihlášení se nezdařilo! Neplatné heslo!"
  New auxiliary rule, %s, created successfully: "Nové pomocné pravidlo „%s“ bylo úspěšně vytvořeno."
  Not available at the upstream: "Není k dispozici u zdroje."
@@ -834,6 +837,7 @@ response:
  Password field empty: "Pole hesla prázdné!"
  Password successfully updated: "Heslo bylo úspěšně aktualizováno!"
  Permissions not adequate to perform asynchronous requests:: "Oprávnění nejsou dostatečná pro provádění asynchronních požadavků. Zkuste se znovu přihlásit."
+ Please select at least one category: "Vyberte prosím alespoň jednu kategorii!"
  Ready to install: "Připraveno k instalaci."
  Redirected: "Přesměrováno"
  Removed %s from tracking: "Odebráno %s ze sledování."
@@ -848,6 +852,10 @@ response:
  Successfully deactivated: "Úspěšně deaktivováno."
  That account doesn_t exist: "Ten účet neexistuje."
  The %s command can_t be chained in that way, sorry: "Příkaz %s nelze tímto způsobem zřetězit, omlouvám se."
+ The IP address is invalid: "IP adresa je neplatná!"
+ The IP address, %s, successfully reported: "IP adresa %s byla úspěšně nahlášena!"
+ The report has not been enqueued: "Reporty nebyla zařazena do fronty."
+ The same IP address can be reported only once every 15 minutes: "Stejnou IP adresu lze nahlásit pouze jednou za 15 minut. Reporty byla zařazena do fronty a CIDRAM se pokusí odeslat reporty později."
  There aren_t currently any auxiliary rules: "V současné době neexistují žádná pomocná pravidla."
  There_s nothing to analyse, sorry: "Není co analyzovat, omlouvám se."
  There_s nothing to print, sorry: "Není co tisknout, omlouvám se."

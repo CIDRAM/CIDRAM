@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Tamil language data for the front-end (last modified: 2023.12.01).
+# This file: Tamil language data for the front-end (last modified: 2023.12.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,6 +24,32 @@
 # requests, ask. I can help.
 ##/
 
+Abuse category:
+ Bad web bot: "மோசமான வலை போட் (மின்னஞ்சல் முகவரிகள் மற்றும் உள்ளடக்கத்தைத் தேடுகிறது, robots.txt ஐ மதிக்காத கிராலர்கள், அதிகப்படியான கோரிக்கைகள், பயனர் முகவர் ஏமாற்றுதல், போன்றவை)."
+ Brute-force attacks: "ப்ரூட்-ஃபோர்ஸ் தாக்குதல்கள் (வலைப்பக்க உள்நுழைவுகள், SMTP, RDP, போன்றவற்றின் மீதான தாக்குதல்கள்)."
+ Categories (at least one is required): "வகைகள் (குறைந்தது ஒன்று தேவை)"
+ CMS blog comment spam: "CMS வலைப்பதிவு கருத்து ஸ்பேம்."
+ Conjunctive category: "இணைந்த வகை (மற்ற குறிப்பிட்ட வகைகளுடன் இணைந்து பயன்படுத்தவும்)."
+ DDoS attacks: "DDoS தாக்குதல்கள் (பொதுவாக ஒரு பாட்நெட்டின் ஒரு பகுதி)."
+ DNS compromise: "DNS சமரசம் (DNS பதிவுகளை மாற்றுவது தவறான திசைதிருப்பலுக்கு வழிவகுக்கும்)."
+ DNS poisoning: "DNS விஷம்."
+ Email sender spoofing: "மின்னஞ்சல் அனுப்புநரை ஏமாற்றுதல்."
+ Email spam: "மின்னஞ்சல் ஸ்பேம் (ஸ்பேம் மின்னஞ்சல் உள்ளடக்கம், பாதிக்கப்பட்ட இணைப்புகள், ஃபிஷிங் மின்னஞ்சல்கள், போன்றவை)."
+ Exploited host: "சுரண்டப்பட்ட ஹோஸ்ட் (ஹோஸ்ட் தீம்பொருளால் பாதிக்கப்பட்டு மற்ற தாக்குதல்களுக்கு அல்லது தீங்கிழைக்கும் உள்ளடக்கத்தை ஹோஸ்ட் செய்ய பயன்படுத்தப்படலாம்)."
+ FTP brute-force attacks: "FTP ப்ரூட்-ஃபோர்ஸ் தாக்குதல்கள்."
+ Fraudulent VoIP: "மோசடி VoIP."
+ Fraudulent orders: "மோசடி உத்தரவுகள்."
+ Hacking: "ஹேக்கிங்."
+ IoT targeted: "IoT துஷ்பிரயோகம். கருத்துகளில் எந்த வகையான சாதனம் இலக்கு வைக்கப்பட்டது என்பது பற்றிய தகவலைச் சேர்க்கவும்."
+ Open proxy, open relay, or tor endpoint: "திறந்த ப்ராக்ஸி, திறந்த ரிலே, அல்லது tor இறுதிப்புள்ளி."
+ Phishing: "ஃபிஷிங் இணையதளங்கள் மற்றும்/அல்லது மின்னஞ்சல்."
+ Ping of death: "மரணத்தின் பிங் (பெரிய ஐபி பாக்கெட்)."
+ Port scans: "போர்ட் ஸ்கேன் (திறந்த போர்ட்கள் மற்றும் பாதிக்கப்படக்கூடிய சேவைகளை ஸ்கேன் செய்கிறது)."
+ SQL injection: "SQL ஊசி."
+ SSH abuse: "SSH துஷ்பிரயோகம்."
+ VPN IP: "VPN ஐபி."
+ Web spam: "வலை ஸ்பேம் (கருத்து/ஃபோரம் ஸ்பேம், HTTP பரிந்துரையாளர் ஸ்பேம், அல்லது பிற CMS ஸ்பேம்)."
+ Webapp attacks: "வெப் ஆப் தாக்குதல்கள் (நிறுவப்பட்ட இணைய பயன்பாடுகள், CMS, அல்லது ஈ-காமர்ஸ் தீர்வுகளுக்கு, எ.கா., WordPress, Drupal, phpMyAdmin, போன்றவை, எதிராகப் பயன்படுத்தக்கூடிய பாதிப்புகள் அல்லது சுரண்டல்களைத் தேடுகிறது)."
 Extended Description:
  AbuseIPDB module: "AbuseIPDBஇல் பட்டியலிடப்பட்ட ஐபி முகவரிகளிடமிருந்து கோரிக்கைகளைத் தடுக்கிறது."
  BGPView module: "CIDRAMகான ASN மற்றும் நாட்டு குறியீடு தேடல் வசதியை வழங்க {{Links.BGPView}} APIக் கட்டுப்படுத்துகிறது. இது ASN மற்றும் நாடுகளை CIDRAM உள்ளமைவு வழியாக தடுக்க அல்லது அனுமதிப்பட்டியல் செய்ய உதவுகிறது, மேலும் Facebook கோரிக்கைகளை சரிபார்க்க ஒரு வழிமுறையை வழங்குகிறது. (நீங்கள் இந்தத் தொகுதியைப் பயன்படுத்தினால், IP-API தொகுதியைப் பயன்படுத்த வேண்டிய அவசியமில்லை, ஏனெனில் அவை ஒரே நோக்கத்திற்காகச் செயல்படுகின்றன)."
@@ -297,6 +323,7 @@ confirm:
 field:
  %s File: "%s கோப்பு"
  2FA code: "2FA குறியீடு"
+ API key: "API விசை"
  Activate: "செயல்படுத்தவும்"
  Add more conditions: "மேலும் நிபந்தனைகளைச் சேர்க்கவும்"
  Add to tracking: "கண்காணிப்பில் சேர்க்கவும்"
@@ -505,6 +532,7 @@ label:
  CIDRAM disk usage: "CIDRAM வட்டு பயன்பாடு:"
  CIDRAM version used: "பயன்படுத்தப்படும் CIDRAM பதிப்பு:"
  Cache data and temporary files: "தற்காலிக சேமிப்பு தரவு மற்றும் தற்காலிக கோப்புகள்"
+ Characters left: "விடுபட்ட எழுத்துக்கள்"
  Checkbox: "தேர்வுப்பெட்டி"
  Checksum after: "பிறகு செக்சம்"
  Checksum before: "முன்பு செக்சம்"
@@ -579,6 +607,7 @@ label:
  PHP version used: "பயன்படுத்தப்படும் PHP பதிப்பு:"
  Page request completed in %s seconds: "பக்க கோரிக்கை %s வினாடிகளில் முடிந்தது."
  Paginate: "பக்கம் பிரித்து"
+ Please abide by the AbuseIPDB reporting policy: "தயவுசெய்து AbuseIPDB <a target="reporting-policy" hreflang="en-US" href="https://www.abuseipdb.com/reporting-policy">அறிக்கையிடல் கொள்கைக்கு</a> இணங்கவும்."
  Please log in to continue: "தொடர உள்நுழைக."
  Preferred source: "விருப்பமான மூல:"
  Previous: "முந்தைய:"
@@ -779,6 +808,7 @@ response:
  Failed to import: "இறக்குமதி செய்ய முடியவில்லை!"
  Failed to install: "நிறுவுவதில் தோல்வி!"
  Failed to rename: "மறுபெயரிடுவதில் தோல்வியுற்றது!"
+ Failed to report the IP address, %s: "%s ஐபி முகவரியைப் புகாரளிப்பதில் தோல்வி!"
  Failed to update auxiliary rules: "துணை விதிகளைப் புதுப்பிக்க முடியவில்லை!"
  Failed to update configuration: "உள்ளமைவைப் புதுப்பிக்க முடியவில்லை!"
  Failed to update statistics: "புள்ளிவிவரங்களைப் புதுப்பிக்க முடியவில்லை!"
@@ -795,6 +825,7 @@ response:
  I can_t write to %s, sorry: "என்னால் "%s" க்கு எழுத முடியவில்லை, மன்னிக்கவும்."
  I don_t understand that command, sorry: "இந்த கட்டளை எனக்கு புரியவில்லை, மன்னிக்கவும்."
  Incorrect 2FA code entered: "தவறான 2FA குறியீடு உள்ளிடப்பட்டது. அங்கீகரிப்பு தோல்வியுற்றது."
+ Invalid API key: "தவறான API விசை!"
  Invalid password: "உள்நுழைவு தோல்வி! தவறான கடவுச்சொல்!"
  New auxiliary rule, %s, created successfully: "புதிய துணை விதி, "%s", வெற்றிகரமாக உருவாக்கப்பட்டது."
  Not available at the upstream: "அப்ஸ்ட்ரீமில் கிடைக்கவில்லை."
@@ -804,6 +835,7 @@ response:
  Password field empty: "கடவுச்சொல் புலம் காலியாக உள்ளது!"
  Password successfully updated: "கடவுச்சொல் வெற்றிகரமாக புதுப்பிக்கப்பட்டது!"
  Permissions not adequate to perform asynchronous requests:: "ஒத்திசைவற்ற கோரிக்கைகளைச் செய்ய அனுமதிகள் போதுமானதாக இல்லை. மீண்டும் உள்நுழைய முயற்சிக்கவும்."
+ Please select at least one category: "தயவு செய்து குறைந்தது ஒரு வகையைத் தேர்ந்தெடுக்கவும்!"
  Ready to install: "நிறுவ தயாராக உள்ளது."
  Redirected: "திருப்பிவிடப்பட்டது"
  Removed %s from tracking: "கண்காணிப்பிலிருந்து %s அகற்றப்பட்டது."
@@ -818,6 +850,10 @@ response:
  Successfully deactivated: "வெற்றிகரமாக செயலிழக்க செய்யப்பட்டது."
  That account doesn_t exist: "அந்த கணக்கு இல்லை."
  The %s command can_t be chained in that way, sorry: "%s கட்டளையை அந்த வகையில் சங்கிலியால் பிணைக்க முடியாது, மன்னிக்கவும்."
+ The IP address is invalid: "ஐபி முகவரி தவறானது!"
+ The IP address, %s, successfully reported: "ஐபி முகவரி, %s, வெற்றிகரமாக தெரிவிக்கப்பட்டது!"
+ The report has not been enqueued: "அறிக்கை வரிசையில் இல்லை."
+ The same IP address can be reported only once every 15 minutes: "அதே ஐபி முகவரியை 15 நிமிடங்களுக்கு ஒருமுறை மட்டுமே தெரிவிக்க முடியும். அறிக்கை வரிசைப்படுத்தப்பட்டுள்ளது, பின்னர் CIDRAM அறிக்கையை சமர்ப்பிக்க முயற்சிக்கும்."
  There aren_t currently any auxiliary rules: "தற்போது எந்த துணை விதிகளும் இல்லை."
  There_s nothing to analyse, sorry: "பகுப்பாய்வு செய்ய எதுவும் இல்லை, மன்னிக்கவும்."
  There_s nothing to print, sorry: "அச்சிட எதுவும் இல்லை, மன்னிக்கவும்."
@@ -940,6 +976,7 @@ tip:
  Rate limiting is currently disabled: "குறிப்பு: விகித வரம்பு தற்போது முடக்கப்பட்டுள்ளது, ஆனால் உள்ளமைவு பக்கம் வழியாக இயக்க முடியும்."
  Sections List: "வணக்கம், {username}.<br />தற்போது செயலில் உள்ள கையொப்பக் கோப்புகளில் எந்த பிரிவுகள் உள்ளன என்பதை இந்தப் பக்கம் பட்டியலிடுகிறது."
  See the documentation: "பல்வேறு உள்ளமைவு வழிமுறைகள் மற்றும் அவற்றின் நோக்கங்கள் பற்றிய தகவல்களுக்கு <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external">ஆவணங்களைக்</a> காண்க."
+ Server log snippets, abuse details, etc: "சேவையக பதிவு துணுக்குகள், முறைகேடு விவரங்கள், போன்றவை."
  Signature File Fixer: "வணக்கம், {username}.<br />கையொப்பக் கோப்பு சரிசெய்தல் கையொப்பக் கோப்புகளில் உள்ள சிக்கல்களைக் கண்டறிந்து சரிசெய்ய ஒரு வழியை வழங்குகிறது."
  Specify a value, or leave blank to disregard: "மதிப்பைக் குறிப்பிடவும் அல்லது புறக்கணிக்க காலியாக விடவும்."
  Statistics tracking is currently disabled: "குறிப்பு: புள்ளிவிவர கண்காணிப்பு தற்போது முடக்கப்பட்டுள்ளது, ஆனால் உள்ளமைவு பக்கம் வழியாக இயக்க முடியும்."

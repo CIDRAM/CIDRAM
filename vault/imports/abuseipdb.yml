@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: AbuseIPDB defaults file (last modified: 2023.12.15).
+# This file: AbuseIPDB defaults file (last modified: 2023.12.21).
 ##/
 
 Config Defaults:
@@ -66,6 +66,6 @@ Cache Prefetch:
 Extra SVG Icons:
  AbuseIPDB: "<span onclick="javascript:{document.getElementById('abuseIPDBFormInput').value='%s';document.getElementById('abuseIPDBForm').submit()}" title="{label.Report to AbuseIPDB}" class="translateIcon"><script type="text/javascript">abuseIpdbSvg();</script></span>"
 SVGs form data:
- AbuseIPDB: "<form id="abuseIPDBForm" action="?cidram-page=abuseipdb" method="POST" style="display:none"><input type="hidden" name="address" id="abuseIPDBFormInput" /></form>"
+ AbuseIPDB: "<form id="abuseIPDBForm" action="?cidram-page=abuseipdb" method="POST" style="display:none"><input type="hidden" name="address" id="abuseIPDBFormInput" /><input type="hidden" name="populate" value="yes" /></form>"
 Problems:
  - "if {CIDRAM.Cache Prefetch.AbuseIPDB-429}==1 then warn warning.API_Rate_Limited AbuseIPDB"

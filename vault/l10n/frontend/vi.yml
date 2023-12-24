@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2023.12.15).
+# This file: Vietnamese language data for the front-end (last modified: 2023.12.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -42,7 +42,7 @@ Abuse category:
  Hacking: "Hack."
  IoT targeted: "Lạm dụng mục tiêu IoT. Bao gồm thông tin về loại thiết bị được nhắm mục tiêu trong bình luận."
  Open proxy, open relay, or tor endpoint: "Proxy mở, rơle mở, hoặc điểm cuối tor."
- Phishing: "Các trang web và/hoặc email lừa đảo."
+ Phishing: "Trang web hay email lừa đảo."
  Ping of death: "Ping của cái chết (gói IP quá khổ)."
  Port scans: "Quét cổng (quét các cổng mở và các dịch vụ dễ bị tấn công)."
  SQL injection: "Tiêm SQL."
@@ -526,6 +526,7 @@ label:
  CIDRAM disk usage: "Số lượng sử dụng đĩa bởi CIDRAM:"
  CIDRAM version used: "Phiên bản CIDRAM đang được dùng:"
  Cache data and temporary files: "Dữ liệu bộ nhớ cache và các tập tin tạm thời"
+ Characters left: "Ký tự còn lại"
  Checkbox: "Hộp kiểm"
  Checksum after: "Tổng kiểm tra sau khi"
  Checksum before: "Tổng kiểm tra trước đây"
@@ -797,6 +798,7 @@ response:
  Failed to import: "Nhập không thành công!"
  Failed to install: "Cài đặt không thành công!"
  Failed to rename: "Không thể đổi tên!"
+ Failed to report the IP address, %s: "Không thể báo cáo các địa chỉ IP, %s!"
  Failed to update auxiliary rules: "Không thể cập nhật các quy tắc phụ trợ!"
  Failed to update configuration: "Không thể cập nhật cấu hình!"
  Failed to update statistics: "Cập nhật thống kê không thành công!"
@@ -813,6 +815,7 @@ response:
  I can_t write to %s, sorry: "Xin lỗi, tôi không thể viết thư cho "%s"."
  I don_t understand that command, sorry: "Xin lỗi, tôi không hiểu câu lệnh này."
  Incorrect 2FA code entered: "Đã nhập mã 2FA không chính xác. Quá trình xác thực đã thất bại."
+ Invalid API key: "Khóa API không hợp lệ!"
  Invalid password: "Thất bại đăng nhập! Mật khẩu không hợp lệ!"
  New auxiliary rule, %s, created successfully: "Quy tắc phụ trợ mới, "%s", đã được tạo thành công."
  Not available at the upstream: "Không có sẵn ở thượng nguồn."
@@ -822,6 +825,7 @@ response:
  Password field empty: "Mật khẩu là trống!"
  Password successfully updated: "Mật khẩu cập nhật thành công!"
  Permissions not adequate to perform asynchronous requests:: "Quyền không đủ để thực hiện các yêu cầu không đồng bộ. Hãy thử đăng nhập lại."
+ Please select at least one category: "Vui lòng chọn ít nhất một danh mục!"
  Ready to install: "Sẵn sàng để cài đặt."
  Redirected: "Chuyển hướng"
  Removed %s from tracking: "Đã xóa %s khỏi giám sát."
@@ -836,6 +840,10 @@ response:
  Successfully deactivated: "Vô hiệu hóa thành công."
  That account doesn_t exist: "Tài khoản này không tồn tại."
  The %s command can_t be chained in that way, sorry: "Xin lỗi, lệnh %s không thể được xâu chuỗi theo cách đó."
+ The IP address is invalid: "Địa chỉ IP không hợp lệ!"
+ The IP address, %s, successfully reported: "Địa chỉ IP %s đã được báo cáo thành công!"
+ The report has not been enqueued: "Báo cáo chưa được xếp hàng đợi."
+ The same IP address can be reported only once every 15 minutes: "Một địa chỉ IP chỉ có thể được báo cáo 15 phút một lần. Báo cáo đã được xếp vào hàng đợi và CIDRAM sẽ cố gắng gửi báo cáo sau đó."
  There aren_t currently any auxiliary rules: "Hiện tại không có bất kỳ quy tắc phụ nào."
  There_s nothing to analyse, sorry: "Xin lỗi, không có gì để phân tích."
  There_s nothing to print, sorry: "Xin lỗi, không có gì để in."

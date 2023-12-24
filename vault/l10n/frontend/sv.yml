@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2023.12.15).
+# This file: Swedish language data for the front-end (last modified: 2023.12.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -531,6 +531,7 @@ label:
  CIDRAM disk usage: "CIDRAM-diskanvändning:"
  CIDRAM version used: "CIDRAM-version som används:"
  Cache data and temporary files: "Cacherdata och tillfälliga filer"
+ Characters left: "Tecken kvar"
  Checkbox: "Kryssruta"
  Checksum after: "Kontrollsumma efter"
  Checksum before: "Kontrollsumma innan"
@@ -806,6 +807,7 @@ response:
  Failed to import: "Det gick inte att importera!"
  Failed to install: "Misslyckades med att installera!"
  Failed to rename: "Misslyckades med att byta namn!"
+ Failed to report the IP address, %s: "Det gick inte att rapportera IP-adressen, %s!"
  Failed to update auxiliary rules: "Det gick inte att uppdatera hjälpreglerna!"
  Failed to update configuration: "Det gick inte att uppdatera konfigurationen!"
  Failed to update statistics: "Statistikuppdatering misslyckades!"
@@ -822,6 +824,7 @@ response:
  I can_t write to %s, sorry: "Jag kan inte skriva till "%s", ursäkta."
  I don_t understand that command, sorry: "Jag förstår inte det kommandot, ursäkta."
  Incorrect 2FA code entered: "Felaktig 2FA-kod inmatad. Autentisering misslyckades."
+ Invalid API key: "Ogiltig API-nyckel!"
  Invalid password: "Inloggningsfel! Felaktigt lösenord!"
  New auxiliary rule, %s, created successfully: "Ny hjälpregel, "%s", skapades framgångsrikt."
  Not available at the upstream: "Inte tillgängligt uppströms."
@@ -831,6 +834,7 @@ response:
  Password field empty: "Lösenord fältet tomt!"
  Password successfully updated: "Lösenordet har uppdaterats framgångsrikt!"
  Permissions not adequate to perform asynchronous requests:: "Behörigheter är inte tillräckliga för att utföra asynkrona förfrågningar. Försök logga in igen."
+ Please select at least one category: "Vänligen välj minst en kategori!"
  Ready to install: "Redo att installeras."
  Redirected: "Omdirigerad"
  Removed %s from tracking: "Tog bort %s från spårning."
@@ -845,6 +849,10 @@ response:
  Successfully deactivated: "Inaktiverad framgångsrikt."
  That account doesn_t exist: "Det kontot existerar inte."
  The %s command can_t be chained in that way, sorry: "Kommandot %s kan inte kedjan på det sättet, ursäkta."
+ The IP address is invalid: "IP-adressen är ogiltig!"
+ The IP address, %s, successfully reported: "IP-adressen, %s, har rapporterats!"
+ The report has not been enqueued: "Rapporten har inte ställts i kö."
+ The same IP address can be reported only once every 15 minutes: "Samma IP-adress kan endast rapporteras en gång var 15e minut. Rapporten har ställts i kö, och CIDRAM kommer att försöka skicka in rapporten vid ett senare tillfälle."
  There aren_t currently any auxiliary rules: "Det finns för närvarande inga hjälpregler."
  There_s nothing to analyse, sorry: "Det finns inget att analysera, ursäkta."
  There_s nothing to print, sorry: "Det finns inget att skriva ut på skärmen, ursäkta."

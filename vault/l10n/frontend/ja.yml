@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2023.12.15).
+# This file: Japanese language data for the front-end (last modified: 2023.12.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -525,6 +525,7 @@ label:
  CIDRAM disk usage: "CIDRAMディスク使用量："
  CIDRAM version used: "使用されたCIDRAMバージョン："
  Cache data and temporary files: "キャッシュ・データとテンポラリ・ファイル"
+ Characters left: "残りの文字"
  Checkbox: "チェックボックス"
  Checksum after: "後のチェックサム"
  Checksum before: "前のチェックサム"
@@ -796,6 +797,7 @@ response:
  Failed to import: "インポートに失敗しました！"
  Failed to install: "インストールに失敗しました！"
  Failed to rename: "名前を変更できませんでした！"
+ Failed to report the IP address, %s: "ＩＰアドレス「%s」を報告できませんでした！"
  Failed to update auxiliary rules: "補助ルールの更新に失敗しました！"
  Failed to update configuration: "コンフィギュレーションの更新に失敗しました！"
  Failed to update statistics: "統計のアップデートに失敗しました！"
@@ -812,6 +814,7 @@ response:
  I can_t write to %s, sorry: "「%s」には書き込めません、ごめんなさい。"
  I don_t understand that command, sorry: "コマンドが理解できません、ごめんなさい。"
  Incorrect 2FA code entered: "間違った２ＦＡコードが入力されました。認証に失敗しました。"
+ Invalid API key: "ＡＰＩキーが無効です!"
  Invalid password: "ログイン失敗！​無効なパスワード！"
  New auxiliary rule, %s, created successfully: "新しい補助ルール、「%s」が、作成されました。"
  Not available at the upstream: "アップストリームでは見つかりません。"
@@ -821,6 +824,7 @@ response:
  Password field empty: "パスワード入力は空です！"
  Password successfully updated: "パスワードの更新が成功しました！"
  Permissions not adequate to perform asynchronous requests:: "あなたのパーミッションは、非同期要求を実行するのに十分ではありません。​もう一度ログインしてみてください。"
+ Please select at least one category: "カテゴリを少なくとも１つ選択してください！"
  Ready to install: "インストールの準備ができました。"
  Redirected: "リダイレクトされました"
  Removed %s from tracking: "追跡から「%s」を削除しました。"
@@ -835,6 +839,10 @@ response:
  Successfully deactivated: "非アクティブにしました。"
  That account doesn_t exist: "そのアカウントは存在しません。"
  The %s command can_t be chained in that way, sorry: "%sコマンドは、このように連鎖することはできません、ごめんなさい。"
+ The IP address is invalid: "ＩＰアドレスが無効です!"
+ The IP address, %s, successfully reported: "ＩＰアドレス「%s」は正常に報告されました！"
+ The report has not been enqueued: "レポートはキューに登録されていません。"
+ The same IP address can be reported only once every 15 minutes: "同じＩＰアドレスを報告できるのは１５分に１回だけです。​レポートはキューに入っています。​CIDRAMは後でレポートの送信を試みます。"
  There aren_t currently any auxiliary rules: "現在、補助ルールはありません。"
  There_s nothing to analyse, sorry: "分析するものは何もありません、ごめんなさい。"
  There_s nothing to print, sorry: "印刷するものは何もありません、ごめんなさい。"

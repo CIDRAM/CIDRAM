@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data for the front-end (last modified: 2023.12.01).
+# This file: Hindi language data for the front-end (last modified: 2023.12.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,6 +24,32 @@
 # requests, ask. I can help.
 ##/
 
+Abuse category:
+ Bad web bot: "ख़राब वेब बॉट (ईमेल पते और सामग्री के लिए स्क्रैपिंग, ऐसे क्रॉलर जो robots.txt का सम्मान नहीं करते, अत्यधिक अनुरोध, उपयोगकर्ता एजेंट स्पूफिंग, इत्यादि)।"
+ Brute-force attacks: "ब्रूट-फोर्स हमले (वेबपेज लॉगिन, SMTP, RDP, इत्यादि पर क्रेडेंशियल ब्रूट-फोर्स हमले)।"
+ Categories (at least one is required): "श्रेणियाँ (कम से कम एक आवश्यक है)"
+ CMS blog comment spam: "CMS ब्लॉग टिप्पणी स्पैम।"
+ Conjunctive category: "संयोजक श्रेणी (अन्य, अधिक विशिष्ट श्रेणियों के साथ संयोजन में उपयोग करें)।"
+ DDoS attacks: "DDoS हमले (आमतौर पर एक बॉटनेट का हिस्सा)।"
+ DNS compromise: "DNS समझौता (DNS रिकॉर्ड्स को बदलने से अनुचित पुनर्निर्देशन होता है)।"
+ DNS poisoning: "DNS विषाक्तता।"
+ Email sender spoofing: "ईमेल भेजने वाले की स्पूफिंग।"
+ Email spam: "ईमेल स्पैम (स्पैम ईमेल सामग्री, संक्रमित अटैचमेंट, फ़िशिंग ईमेल, इत्यादि)।"
+ Exploited host: "शोषित होस्ट (संभवतः मैलवेयर से संक्रमित है, और इसका उपयोग अन्य हमलों या दुर्भावनापूर्ण सामग्री को होस्ट करने के लिए किया जा रहा है)।"
+ FTP brute-force attacks: "FTP ब्रूट-फोर्स हमले।"
+ Fraudulent VoIP: "कपटपूर्ण VoIP।"
+ Fraudulent orders: "कपटपूर्ण आदेश."
+ Hacking: "हैकिंग।"
+ IoT targeted: "IoT लक्षित दुरुपयोग। किस प्रकार के उपकरण को लक्षित किया गया था, इसकी जानकारी टिप्पणियों में शामिल करें।"
+ Open proxy, open relay, or tor endpoint: "खुला प्रॉक्सी, खुला रिले, या tor समापन बिंदु।"
+ Phishing: "फ़िशिंग वेबसाइटें और/या ईमेल।"
+ Ping of death: "मौत की चिंगारी (बड़े आकार का IP पैकेट)।"
+ Port scans: "पोर्ट स्कैन (खुले पोर्ट और कमजोर सेवाओं के लिए स्कैनिंग)।"
+ SQL injection: "SQL इंजेक्षन।"
+ SSH abuse: "SSH का दुरुपयोग।"
+ VPN IP: "VPN IP."
+ Web spam: "वेब स्पैम (टिप्पणी/फोरम स्पैम, HTTP रेफरर स्पैम, या अन्य CMS स्पैम)।"
+ Webapp attacks: "वेबऐप पर हमला (इंस्टॉल किए गए वेबऐप, CMS, या ई-कॉमर्स समाधानों, जैसे WordPress, Drupal, phpMyAdmin, आदि, के विरुद्ध उपयोग करने के लिए कमजोरियों या कारनामों की तलाश करना)।"
 Extended Description:
  AbuseIPDB module: "AbuseIPDB पर सूचीबद्ध IP से अनुरोध ब्लॉक करता है।"
  BGPView module: "CIDRAM के लिए ASN और देश कोड लुकअप सुविधा प्रदान करने के लिए {{Links.BGPView}} का उपयोग करता है। यह ASN और देशों को CIDRAM कॉन्फ़िगरेशन के माध्यम से अवरुद्ध या श्वेतसूची में सक्षम बनाता है, और Facebook अनुरोधों को सत्यापित करने के लिए सामाजिक नेटवर्किंग सत्यापन के लिए एक साधन प्रदान करता है। (यदि आप इस मॉड्यूल का उपयोग करते हैं, तो आपको IP-API मॉड्यूल का उपयोग करने की आवश्यकता नहीं होगी, क्योंकि वे एक ही उद्देश्य को पूरा करते हैं)।"
@@ -297,6 +323,7 @@ confirm:
 field:
  %s File: "%s फाइल"
  2FA code: "2FA कोड"
+ API key: "API कुंजी"
  Activate: "सक्रिय करें"
  Add more conditions: "और शर्तें जोड़ें"
  Add to tracking: "ट्रैकिंग में जोड़ें"
@@ -502,6 +529,7 @@ label:
  CIDRAM disk usage: "CIDRAM डिस्क उपयोग:"
  CIDRAM version used: "CIDRAM संस्करण का उपयोग:"
  Cache data and temporary files: "कैश डेटा और अस्थायी फ़ाइलें"
+ Characters left: "शेष वर्ण"
  Checkbox: "चेक बॉक्स"
  Checksum after: "चेकसम के बाद"
  Checksum before: "चेकसम पहले"
@@ -576,6 +604,7 @@ label:
  PHP version used: "PHP संस्करण का इस्तेमाल किया:"
  Page request completed in %s seconds: "पृष्ठ अनुरोध %s सेकंड में पूरा हुआ।"
  Paginate: "पृष्ठ द्वारा विभाजित"
+ Please abide by the AbuseIPDB reporting policy: "कृपया AbuseIPDB <a target="reporting-policy" hreflang="en-US" href="https://www.abuseipdb.com/reporting-policy">रिपोर्टिंग नीति</a> का पालन करें।"
  Please log in to continue: "जारी रखने के लिए कृपया लॉग इन करें।"
  Preferred source: "पसंदीदा स्रोत:"
  Previous: "पहले का:"
@@ -776,6 +805,7 @@ response:
  Failed to import: "आयात करने में विफल!"
  Failed to install: "इंस्टॉल करने में विफल!"
  Failed to rename: "नाम बदलने में विफल!"
+ Failed to report the IP address, %s: "IP पता, %s, रिपोर्ट करने में विफल!"
  Failed to update auxiliary rules: "सहायक नियम अपडेट करने में विफल!"
  Failed to update configuration: "कॉन्फ़िगरेशन अपडेट करने में विफल!"
  Failed to update statistics: "सांख्यिकी अपडेट करने में विफल!"
@@ -792,6 +822,7 @@ response:
  I can_t write to %s, sorry: "मैं "%s" को नहीं लिख सकता, क्षमा करें।"
  I don_t understand that command, sorry: "मुझे यह आज्ञा नहीं समझती, क्षमा करें।"
  Incorrect 2FA code entered: "गलत 2FA कोड दर्ज किया गया। प्रमाणीकरण विफल होना।"
+ Invalid API key: "अमान्य API कुंजी!"
  Invalid password: "लॉगिन विफलता! अवैध पासवर्ड!"
  New auxiliary rule, %s, created successfully: "नया सहायक नियम, "%s", सफलतापूर्वक बनाया गया।"
  Not available at the upstream: "अपस्ट्रीम में उपलब्ध नहीं है।"
@@ -801,6 +832,7 @@ response:
  Password field empty: "पासवर्ड फ़ील्ड खाली है!"
  Password successfully updated: "पासवर्ड सफलतापूर्वक अपडेट किया गया!"
  Permissions not adequate to perform asynchronous requests:: "अनुमतियाँ अतुल्यकालिक अनुरोध करने के लिए पर्याप्त नहीं हैं। फिर से लॉग इन करने का प्रयास करें"
+ Please select at least one category: "कृपया कम से कम एक श्रेणी चुनें!"
  Ready to install: "स्थापित करने के लिये तैयार।"
  Redirected: "रीडायरेक्ट किया"
  Removed %s from tracking: "ट्रैकिंग से %s को हटा दिया गया।"
@@ -815,6 +847,10 @@ response:
  Successfully deactivated: "सफलतापूर्वक निष्क्रिय।"
  That account doesn_t exist: "वह खाता मौजूद नहीं है।"
  The %s command can_t be chained in that way, sorry: "%s कमांड को इस तरह से जंजीर में नहीं बांधा जा सकता है, क्षमा करें।"
+ The IP address is invalid: "API पता अमान्य है!"
+ The IP address, %s, successfully reported: "IP पता, %s, सफलतापूर्वक रिपोर्ट किया गया!"
+ The report has not been enqueued: "रिपोर्ट को कतारबद्ध नहीं किया गया है।"
+ The same IP address can be reported only once every 15 minutes: "एक IP ​पता की रिपोर्ट हर 15 मिनट में केवल एक बार की जा सकती है। रिपोर्ट कतारबद्ध कर दी गई है, और CIDRAM बाद में रिपोर्ट प्रस्तुत करने का प्रयास करेगा।"
  There aren_t currently any auxiliary rules: "वर्तमान में कोई सहायक नियम नहीं हैं।"
  There_s nothing to analyse, sorry: "विश्लेषण करने के लिए कुछ भी नहीं है, क्षमा करें।"
  There_s nothing to print, sorry: "प्रिंट करने के लिए कुछ भी नहीं है, क्षमा करें।"
@@ -917,6 +953,7 @@ tip:
  Rate limiting is currently disabled: "नोट: दर सीमित वर्तमान में अक्षम है, लेकिन कॉन्फ़िगरेशन पृष्ठ के माध्यम से सक्षम किया जा।"
  Sections List: "नमस्ते, {username}।<br />यह पृष्ठ वर्तमान सक्रिय हस्ताक्षर फाइलों में मौजूद अनुभागों को सूचीबद्ध करता है।"
  See the documentation: "विभिन्न कॉन्फ़िगरेशन निर्देशों और उनके उद्देश्यों के बारे में जानकारी के लिए <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external">डॉक्यूमेंटेशन</a> देखें।"
+ Server log snippets, abuse details, etc: "सर्वर लॉग स्निपेट, दुरुपयोग विवरण, आदि।"
  Signature File Fixer: "नमस्ते, {username}।<br />यहां आप हस्ताक्षर फाइलों में संभावित समस्याओं का पता लगा सकते हैं और उन्हें ठीक कर सकते हैं।"
  Specify a value, or leave blank to disregard: "एक मान निर्दिष्ट करें, या उपेक्षा करने के लिए खाली छोड़ दें।"
  Statistics tracking is currently disabled: "नोट: सांख्यिकी ट्रैकिंग वर्तमान में अक्षम है, लेकिन कॉन्फ़िगरेशन पृष्ठ के माध्यम से सक्षम किया जा।"

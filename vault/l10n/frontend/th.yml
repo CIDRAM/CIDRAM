@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2023.12.01).
+# This file: Thai language data for the front-end (last modified: 2023.12.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,6 +24,32 @@
 # requests, ask. I can help.
 ##/
 
+Abuse category:
+ Bad web bot: "เว็บบอทที่ไม่ดี (การคัดลอกที่อยู่อีเมลและเนื้อหา โปรแกรมรวบรวมข้อมูลที่ไม่ปฏิบัติตาม robots.txt คำขอที่มากเกินไป การปลอมแปลงตัวแทนผู้ใช้ ฯลฯ)."
+ Brute-force attacks: "การโจมตีด้วยกำลังดุร้าย (การโจมตีข้อมูลประจำด้วยกำลังดุร้ายในการเข้าสู่ระบบหน้าเว็บ SMTP RDP ฯลฯ)."
+ Categories (at least one is required): "หมวดหมู่ (ต้องมีอย่างน้อยหนึ่งรายการ)"
+ CMS blog comment spam: "สแปมความคิดเห็นในบล็อก CMS."
+ Conjunctive category: "หมวดหมู่ที่เชื่อมต่อกัน (ใช้ร่วมกับหมวดหมู่อื่นที่เฉพาะเจาะจงมากขึ้น)."
+ DDoS attacks: "การโจมตีแบบ DDoS (มักจะเป็นส่วนหนึ่งของบอตเน็ต)."
+ DNS compromise: "การประนีประนอม DNS (การเปลี่ยนแปลงบันทึก DNS ส่งผลให้เกิดการเปลี่ยนเส้นทางที่ไม่เหมาะสม)."
+ DNS poisoning: "การเป็นพิษของ DNS."
+ Email sender spoofing: "การปลอมแปลงผู้ส่งอีเมล."
+ Email spam: "อีเมลขยะ (เนื้อหาอีเมลสแปม ไฟล์แนบที่ติดเชื้อ อีเมลฟิชชิ่ง ฯลฯ)."
+ Exploited host: "โฮสต์ที่ถูกเอาเปรียบ (โฮสต์อาจติดเชื้อมัลแวร์และใช้สำหรับการโจมตีอื่น ๆ หรือเพื่อโฮสต์เนื้อหาที่เป็นอันตราย)."
+ FTP brute-force attacks: "การโจมตีด้วยกำลังดุร้าย FTP."
+ Fraudulent VoIP: "VoIP ที่ฉ้อโกง."
+ Fraudulent orders: "คำสั่งที่ฉ้อโกง."
+ Hacking: "การแฮก."
+ IoT targeted: "การละเมิดต่อ IoT. รวมข้อมูลเกี่ยวกับประเภทของอุปกรณ์ที่เป็นเป้าหมายในความคิดเห็น."
+ Open proxy, open relay, or tor endpoint: "พร็อกซีแบบเปิด รีเลย์แบบเปิด หรือจุดสิ้นสุดของ tor."
+ Phishing: "เว็บไซต์ฟิชชิ่งและ/หรืออีเมล"
+ Ping of death: "ปิงแห่งความตาย (แพ็กเก็ต IP ขนาดใหญ่)."
+ Port scans: "การสแกนพอร์ต (การสแกนหาพอร์ตที่เปิดอยู่และบริการที่มีช่องโหว่)."
+ SQL injection: "การฉีด SQL."
+ SSH abuse: "การละเมิด SSH."
+ VPN IP: "VPN IP."
+ Web spam: "เว็บสแปม (สแปมความคิดเห็น/ฟอรัม สแปมผู้อ้างอิง HTTP หรือสแปม CMS อื่นๆ)."
+ Webapp attacks: "การโจมตีผ่านเว็บแอป (มองหาช่องโหว่ที่จะใช้กับเว็บแอป CMS หรือโซลูชันอีคอมเมิร์ซ เช่น WordPress, Drupal, phpMyAdmin เป็นต้น)."
 Extended Description:
  AbuseIPDB module: "บล็อกคำขอจาก IP ที่แสดงรายการไว้ที่ AbuseIPDB."
  BGPView module: "ใช้ {{Links.BGPView}} เพื่อจัดเตรียมความสามารถในการค้นหา ASN และรหัสประเทศสำหรับ CIDRAM การเปิดใช้งาน ASN และประเทศต่างๆให้ถูกบล็อกหรืออนุญาตผ่านการกำหนดค่า CIDRAM และจัดหาวิธีสำหรับการตรวจสอบเครือข่ายสังคมออนไลน์เพื่อยืนยันคำขอ Facebook. (หากคุณใช้โมดูลนี้ คุณไม่จำเป็นต้องใช้โมดูล IP-API เนื่องจากมีจุดประสงค์เดียวกัน)."
@@ -297,6 +323,7 @@ confirm:
 field:
  %s File: "ไฟล์ %s"
  2FA code: "โค้ด 2FA"
+ API key: "คีย์ API"
  Activate: "เปิดใช้งาน"
  Add more conditions: "เพิ่มเงื่อนไขเพิ่มเติม"
  Add to tracking: "เพิ่มในการติดตาม"
@@ -491,6 +518,7 @@ label:
  CIDRAM disk usage: "เนื้อที่ดิสก์ที่ CIDRAM ใช้:"
  CIDRAM version used: "รุ่น CIDRAM ในการใช้งาน:"
  Cache data and temporary files: "ข้อมูลแคชและไฟล์ชั่วคราว"
+ Characters left: "อักขระที่เหลืออยู่"
  Checkbox: "ช่องทำเครื่องหมาย"
  Checksum after: "เช็คซัมหลัง"
  Checksum before: "เช็คซัมก่อน"
@@ -561,6 +589,7 @@ label:
  PHP version used: "รุ่น PHP ในการใช้งาน:"
  Page request completed in %s seconds: "คำขอหน้าเสร็จสิ้นภายใน %s วินาที."
  Paginate: "แยกตามหน้า"
+ Please abide by the AbuseIPDB reporting policy: "โปรดปฏิบัติตาม<a target="reporting-policy" hreflang="en-US" href="https://www.abuseipdb.com/reporting-policy">นโยบายการรายงาน</a> AbuseIPDB."
  Please log in to continue: "เข้าสู่ระบบเพื่อดำเนินการต่อ."
  Preferred source: "แหล่งที่ต้องการ:"
  Previous: "ก่อนหน้า:"
@@ -761,6 +790,7 @@ response:
  Failed to import: "นำเข้าไม่สำเร็จ!"
  Failed to install: "การติดตั้งล้มเหลว!"
  Failed to rename: "ล้มเหลวเปลี่ยนชื่อ!"
+ Failed to report the IP address, %s: "ไม่สามารถรายงานที่อยู่ IP %s!"
  Failed to update auxiliary rules: "การอัปเดตกฎเสริมล้มเหลว!"
  Failed to update configuration: "การอัปเดตการกำหนดค่าล้มเหลว!"
  Failed to update statistics: "อัปเดตสถิติไม่สำเร็จ!"
@@ -777,6 +807,7 @@ response:
  I can_t write to %s, sorry: "ฉันไม่สามารถเขียนถึง "%s" ได้ ขออภัย."
  I don_t understand that command, sorry: "ฉันไม่เข้าใจคำสั่งนั้น ขออภัย."
  Incorrect 2FA code entered: "ป้อนรหัส 2FA ไม่ถูกต้อง รับรองความถูกต้องล้มเหลว."
+ Invalid API key: "คีย์ API ไม่ถูกต้อง!"
  Invalid password: "ความล้มเหลวในการเข้าสู่ระบบ! รหัสผ่านไม่ถูกต้อง!"
  New auxiliary rule, %s, created successfully: "กฎเสริมใหม่ "%s" ถูกสร้าง."
  Not available at the upstream: "ไม่พบที่ต้นน้ำ."
@@ -786,6 +817,7 @@ response:
  Password field empty: "รหัสผ่านฟิลด์ว่างเปล่า!"
  Password successfully updated: "รหัสผ่านสำเร็จแล้วอัปเดต!"
  Permissions not adequate to perform asynchronous requests:: "สิทธิ์ไม่เพียงพอที่จะดำเนินการคำขอแบบอะซิงโครนัส. ลองเข้าสู่ระบบอีกครั้ง."
+ Please select at least one category: "กรุณาเลือกอย่างน้อยหนึ่งหมวดหมู่!"
  Ready to install: "พร้อมติดตั้ง."
  Redirected: "เปลี่ยนเส้นทาง"
  Removed %s from tracking: "%s ถูกลบออกจากการติดตาม."
@@ -800,6 +832,10 @@ response:
  Successfully deactivated: "สำเร็จแล้วปิดใช้งาน."
  That account doesn_t exist: "บัญชีไม่มีอยู่จริง."
  The %s command can_t be chained in that way, sorry: "คำสั่ง %s ไม่สามารถโยงแบบนั้นได้ ขออภัย."
+ The IP address is invalid: "ที่อยู่ IP ไม่ถูกต้อง!"
+ The IP address, %s, successfully reported: "รายงานที่อยู่ IP %s สำเร็จแล้ว!"
+ The report has not been enqueued: "รายงานยังไม่ได้รับการจัดคิว."
+ The same IP address can be reported only once every 15 minutes: "ที่อยู่ IP เดียวกันสามารถรายงานได้ทุกๆ 15 นาทีเท่านั้น. รายงานได้รับการจัดคิวแล้ว และ CIDRAM จะพยายามส่งรายงานในภายหลัง."
  There aren_t currently any auxiliary rules: "ขณะนี้ยังไม่มีกฎเสริมใด ๆ."
  There_s nothing to analyse, sorry: "ไม่มีอะไรต้องวิเคราะห์ ขออภัย."
  There_s nothing to print, sorry: "ไม่มีอะไรจะพิมพ์ ขออภัย."
@@ -898,6 +934,7 @@ tip:
  Rate limiting is currently disabled: "บันทึก: การจำกัดอัตราถูกปิดใช้งานอยู่ในขณะนี้ แต่สามารถเปิดใช้งานได้ผ่านทางหน้าการกำหนดค่า."
  Sections List: "สวัสดี {username}.<br />หน้านี้แสดงรายการส่วนที่มีอยู่ในไฟล์ลายเซ็นที่ใช้งานอยู่ในปัจจุบัน."
  See the documentation: "ดูที่<a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external">เอกสาร</a>สำหรับข้อมูลเกี่ยวกับคำสั่งการกำหนดค่าต่างๆและวัตถุประสงค์ของพวกเขา."
+ Server log snippets, abuse details, etc: "ข้อความที่ตัดตอนมาจากบันทึกเซิร์ฟเวอร์ รายละเอียดการละเมิด ฯลฯ."
  Signature File Fixer: "สวัสดี {username}.<br />เครื่องมือซ่อมแซมไฟล์ลายเซ็นเป็นวิธีการตรวจจับและแก้ไขปัญหาที่อาจเกิดขึ้นในไฟล์ลายเซ็น."
  Specify a value, or leave blank to disregard: "ระบุค่าหรือเว้นว่างไว้เพื่อไม่สนใจ."
  Statistics tracking is currently disabled: "บันทึก: ขณะนี้การติดตามผลสถิติถูกปิดใช้งาน แต่สามารถเปิดใช้งานได้ผ่านทางหน้าการกำหนดค่า."

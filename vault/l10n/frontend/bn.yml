@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data for the front-end (last modified: 2023.12.01).
+# This file: Bangla language data for the front-end (last modified: 2023.12.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,6 +24,32 @@
 # requests, ask. I can help.
 ##/
 
+Abuse category:
+ Bad web bot: "খারাপ ওয়েব বট (ইমেল ঠিকানা এবং সামগ্রীর জন্য স্ক্র্যাপিং, ক্রলার যারা robots.txt, অত্যধিক অনুরোধ, ব্যবহারকারী এজেন্ট স্পুফিং ইত্যাদিকে সম্মান করে না)।"
+ Brute-force attacks: "ব্রুট-ফোর্স আক্রমণ (ওয়েবপেজ লগইন, SMTP, RDP, ইত্যাদির উপর ক্রেডেনশিয়াল ব্রুট-ফোর্স আক্রমণ)।"
+ Categories (at least one is required): "বিভাগ (অন্তত একটি প্রয়োজন)"
+ CMS blog comment spam: "CMS ব্লগ মন্তব্য স্প্যাম।"
+ Conjunctive category: "সংযোজক বিভাগ (অন্যান্য, আরও নির্দিষ্ট বিভাগের সাথে সংমিশ্রণে ব্যবহার করুন)।"
+ DDoS attacks: "DDoS আক্রমণ (সাধারণত বটনেটের অংশ)।"
+ DNS compromise: "DNS আপস (DNS রেকর্ড পরিবর্তন করার ফলে অনুপযুক্ত পুনঃনির্দেশ)।"
+ DNS poisoning: "DNS বিষক্রিয়া।"
+ Email sender spoofing: "ইমেল প্রেরক স্পুফিং।"
+ Email spam: "ইমেল স্প্যাম (স্প্যাম ইমেল সামগ্রী, সংক্রামিত সংযুক্তি, ফিশিং ইমেল, ইত্যাদি)।"
+ Exploited host: "শোষিত হোস্ট (হোস্ট সম্ভবত ম্যালওয়্যার দ্বারা সংক্রামিত এবং অন্যান্য আক্রমণের জন্য বা ক্ষতিকারক সামগ্রী হোস্ট করার জন্য ব্যবহার করা হচ্ছে৷)।"
+ FTP brute-force attacks: "FTP ব্রুট-ফোর্স আক্রমণ।"
+ Fraudulent VoIP: "প্রতারণামূলক VoIP।"
+ Fraudulent orders: "প্রতারণামূলক আদেশ।"
+ Hacking: "হ্যাকিং।"
+ IoT targeted: "IoT-লক্ষ্যযুক্ত অপব্যবহার। মন্তব্যে লক্ষ্যযুক্ত ডিভাইস সম্পর্কে তথ্য অন্তর্ভুক্ত করুন।"
+ Open proxy, open relay, or tor endpoint: "ওপেন প্রক্সি, ওপেন রিলে, বা tor এন্ডপয়েন্ট।"
+ Phishing: "ফিশিং ওয়েবসাইট এবং/অথবা ইমেল।"
+ Ping of death: "মৃত্যুর পিং (বড় আকারের আইপি প্যাকেট)।"
+ Port scans: "পোর্ট স্ক্যান (খোলা বন্দর এবং দুর্বল পরিষেবাগুলির জন্য স্ক্যানিং)।"
+ SQL injection: "SQL ইনজেকশন."
+ SSH abuse: "SSH অপব্যবহার।"
+ VPN IP: "ভিপিএন আইপি।"
+ Web spam: "ওয়েব স্প্যাম (মন্তব্য/ফোরাম স্প্যাম, HTTP রেফারার স্প্যাম, বা অন্যান্য CMS স্প্যাম৷)।"
+ Webapp attacks: "ওয়েব অ্যাপ আক্রমণ (ইনস্টল করা ওয়েবঅ্যাপ, CMS, বা ই-কমার্স সমাধানের, যেমন, WordPress, Drupal, phpMyAdmin, ইত্যাদি, বিরুদ্ধে ব্যবহার করার জন্য দুর্বলতা বা শোষণের সন্ধান করছেন)।"
 Extended Description:
  AbuseIPDB module: "AbuseIPDB এ তালিকাভুক্ত আইপিগুলির থেকে ব্লক অনুরোধ।"
  BGPView module: "{{Links.BGPView}}, CIDRAM জন্য একটি ASN এবং দেশ কোড পরিষেবা সরবরাহ করে, CIDRAM কনফিগারেশনের মাধ্যমে ASN এবং দেশগুলিকে অবরুদ্ধ বা শ্বেত তালিকাভুক্ত করতে সক্ষম করে, এবং Facebook অনুরোধগুলি যাচাই করার জন্য একটি উপায় সরবরাহ করে। (আপনি যদি এই মডিউলটি ব্যবহার করেন, তাহলে আপনাকে IP-API মডিউল ব্যবহার করতে হবে না, কারণ তারা একই উদ্দেশ্যে কাজ করে)।"
@@ -49,7 +75,7 @@ Extended Description:
  PHPMailer: "ইমেল কার্যকারিতা পাঠানোর জন্য প্রয়োজনীয়।<br />{{Links.PHPMailer.PHPMailer}} {{Links.PHPMailer.License}} লাইসেন্সের মাধ্যমে উপলব্ধ।"
  Project Honeypot module: "Project Honeypot এ তালিকাভুক্ত আইপিগুলির থেকে ব্লক অনুরোধ।"
  Protocol blocker module: "কনফিগারেশনের মাধ্যমে নির্দিষ্ট অনুরোধ প্রোটোকল ব্লক করার ক্ষমতা প্রদান করে (যেমন, HTTP/0.9, HTTP/1.1, SPDY/3.0, ইত্যাদি). দ্রষ্টব্য: ওয়েবসাইটগুলিকে প্রভাবিত করবে না যা পরিষেবাগুলির মাধ্যমে রুট করে (যেমন, Cloudflare) যা একই প্রোটোকল ব্যবহার করে সকলের কাছে অনুরোধগুলি পুনর্লিখন করে৷।"
- Referrer spam module: "রেফারার স্প্যামের উপর ভিত্তি করে ব্লক করা সাধারণত কোনও অর্থবহ সুরক্ষা সুবিধা দেয় না, তবে কিছু ক্ষেত্রে এটি কিছু ব্যবহারকারীর পক্ষে কার্যকর হতে পারে, অনুরোধ সম্পর্কে আরও তথ্য সংগ্রহ করার জন্য, এবং এটি প্রতিবেদন করতে সক্ষম হওয়ার জন্য।"
+ Referrer spam module: "রেফারার স্প্যামের উপর ভিত্তি করে ব্লক করা সাধারণত কোনও অর্থবহ সুরক্ষা সুবিধা দেয় না, তবে কিছু ক্ষেত্রে এটি কিছু ব্যবহারকারীর পক্ষে কার্যকর হতে পারে, অনুরোধ সম্পর্কে আরও তথ্য সংগ্রহ করার জন্য, এবং এটি রিপোর্ট করতে সক্ষম হওয়ার জন্য।"
  Stop Forum Spam module: "SFS দ্বারা তালিকাভুক্ত আইপিগুলির বিরুদ্ধে রেজিস্ট্রেশন এবং লগইন পেজ রক্ষা করে।"
  Tor blocker module: "DNSEL লুকআপের মাধ্যমে টর এক্সিট নোড থেকে অ্যাক্সেস নিষিদ্ধ করে (IPv4 এবং IPv6 উভয় সমর্থন করে)।"
 Name:
@@ -297,6 +323,7 @@ confirm:
 field:
  %s File: "%s ফাইল"
  2FA code: "2FA কোড"
+ API key: "API কী"
  Activate: "সক্রিয় করা"
  Add more conditions: "আরো শর্ত যোগ করুন"
  Add to tracking: "ট্র্যাকিং যোগ করুন"
@@ -450,7 +477,7 @@ Some useful links: |
            <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP টুলকিট</a> – ASNগুলি থেকে CIDRগুলি পান, ASN সম্পর্কগুলি নির্ধারণ করুন, নেটওয়ার্ক নাম উপর ভিত্তি করে ASNগুলি আবিষ্কার, ইত্যাদি।</li>
            <li>{{Links.BGPView}} – ASNগুলি থেকে CIDRগুলি পান, ASN সম্পর্কগুলি নির্ধারণ করুন, নেটওয়ার্ক নাম উপর ভিত্তি করে ASNগুলি আবিষ্কার, ইত্যাদি।</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Qrator Radar</a> – দরকারী ASN সংযোগ পরীক্ষা সরঞ্জাম।</li>
-           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">The Spamhaus Project</a> – ASNগুলি এর জন্য ম্যালওয়ার সংক্রমণের হার সংক্রান্ত প্রতিবেদনগুলি প্রদর্শন করে।</li>
+           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">The Spamhaus Project</a> – ASNগুলি এর জন্য ম্যালওয়ার সংক্রমণের হার সংক্রান্ত রিপোর্টগুলি প্রদর্শন করে।</li>
            <li>{{Links.AbuseIPDB}} – একটি পরিচিত অপমানজনক আইপিগুলি ডাটাবেস বজায় রাখে; আইপিগুলি চেক এবং রিপোর্ট করার জন্য একটি API উপলব্ধ করে।</li>
            <li>{{Links.IP-API}} – দেশের কোড, অঞ্চলের নাম, দ্রাঘিমাংশ, অক্ষাংশ, প্রতিষ্ঠানের নাম, ইত্যাদির মতো আইপি ঠিকানা বা হোস্টনাম সম্পর্কে তথ্য পান।</li>
          </ul>
@@ -496,6 +523,7 @@ label:
  CIDRAM disk usage: "CIDRAM ডিস্ক ব্যবহার:"
  CIDRAM version used: "CIDRAM সংস্করণ ব্যবহৃত:"
  Cache data and temporary files: "ক্যাশ ডেটা এবং অস্থায়ী ফাইল"
+ Characters left: "অক্ষর বাকি"
  Checkbox: "চেকবাক্স"
  Checksum after: "চেকসাম পরে"
  Checksum before: "চেকসাম আগেই"
@@ -566,6 +594,7 @@ label:
  PHP version used: "PHP সংস্করণ ব্যবহৃত:"
  Page request completed in %s seconds: "পৃষ্ঠা অনুরোধ সম্পন্ন %s সেকেন্ড।"
  Paginate: "পেজিনেট"
+ Please abide by the AbuseIPDB reporting policy: "অনুগ্রহ করে AbuseIPDB <a target="reporting-policy" hreflang="en-US" href="https://www.abuseipdb.com/reporting-policy">রিপোর্টিং নীতি</a> মেনে চলুন।"
  Please log in to continue: "চালিয়ে যেতে দয়া করে লগ ইন করুন।"
  Preferred source: "পছন্দের উৎস:"
  Previous: "আগে:"
@@ -766,6 +795,7 @@ response:
  Failed to import: "আমদানি করতে ব্যর্থ হয়েছে!"
  Failed to install: "ইনস্টল করতে ব্যর্থ হয়েছে!"
  Failed to rename: "নামান্তর করতে ব্যর্থ হয়েছে!"
+ Failed to report the IP address, %s: "আইপি ঠিকানা, %s, রিপোর্ট করতে ব্যর্থ!"
  Failed to update auxiliary rules: "অক্সিলিয়ারি নিয়ম আপডেট করতে ব্যর্থ হয়েছে!"
  Failed to update configuration: "কনফিগারেশন আপডেট করতে ব্যর্থ হয়েছে!"
  Failed to update statistics: "পরিসংখ্যান আপডেট করতে ব্যর্থ হয়েছে!"
@@ -782,6 +812,7 @@ response:
  I can_t write to %s, sorry: "আমি "%s" এ লিখতে পারছি না, দুঃখিত।"
  I don_t understand that command, sorry: "আমি এই কমান্ড বুঝতে পারছিনা, দুঃখিত।"
  Incorrect 2FA code entered: "ভুল 2FA কোড প্রবেশ করানো হয়েছে। প্রমাণীকরণ ব্যর্থ হয়েছে।"
+ Invalid API key: "অবৈধ API কী৷"
  Invalid password: "লগইন ব্যর্থতা! অবৈধ পাসওয়ার্ড!"
  New auxiliary rule, %s, created successfully: "নতুন অক্সিলিয়ারি নিয়ম, "%s", সফলভাবে তৈরি।"
  Not available at the upstream: "উজানে পাওয়া যায় না।"
@@ -791,6 +822,7 @@ response:
  Password field empty: "পাসওয়ার্ড ক্ষেত্র খালি!"
  Password successfully updated: "পাসওয়ার্ড সফলভাবে আপডেট করা হয়েছে!"
  Permissions not adequate to perform asynchronous requests:: "অনুমতিগুলি অ্যাসিঙ্ক্রোনাস অনুরোধগুলি সঞ্চালনের পর্যাপ্ত নয়। আবার চেষ্টা করুন লগ ইন।"
+ Please select at least one category: "অন্তত একটি বিভাগ নির্বাচন করুন!"
  Ready to install: "ইনস্টল করার জন্য প্রস্তুত."
  Redirected: "পুনর্নির্দেশিত"
  Removed %s from tracking: "ট্র্যাকিং থেকে %s সরানো হয়েছে।"
@@ -805,6 +837,10 @@ response:
  Successfully deactivated: "সফলভাবে নিষ্ক্রিয়।"
  That account doesn_t exist: "সেই অ্যাকাউন্টটি বিদ্যমান নেই।"
  The %s command can_t be chained in that way, sorry: "%s কমান্ডটি সেভাবে শৃঙ্খলিত করা যাবে না, দুঃখিত।"
+ The IP address is invalid: "আইপি ঠিকানাটি অবৈধ!"
+ The IP address, %s, successfully reported: "আইপি ঠিকানা, %s, সফলভাবে রিপোর্ট করা হয়েছে!"
+ The report has not been enqueued: "রিপোর্ট সারিতে রাখা হয়নি।"
+ The same IP address can be reported only once every 15 minutes: "একই IP ঠিকানা প্রতি 15 মিনিটে একবার রিপোর্ট করা যেতে পারে। রিপোর্ট সারিবদ্ধ করা হয়েছে, এবং CIDRAM পরবর্তী সময়ে প্রতিবেদন জমা দেওয়ার চেষ্টা করবে।"
  There aren_t currently any auxiliary rules: "বর্তমানে কোন অক্সিলিয়ারি নিয়ম নেই।"
  There_s nothing to analyse, sorry: "বিশ্লেষণ করার কিছু নেই, দুঃখিত।"
  There_s nothing to print, sorry: "প্রিন্ট করার কিছু নেই, দুঃখিত।"
@@ -903,6 +939,7 @@ tip:
  Rate limiting is currently disabled: "নোট: হার সীমিত বর্তমানে অক্ষম আছে, তবে কনফিগারেশন পৃষ্ঠার মাধ্যমে সক্ষম করা যেতে পারে।"
  Sections List: "হ্যালো, {username}।<br />এই পৃষ্ঠাটি বর্তমানে সক্রিয় স্বাক্ষর ফাইলগুলির মধ্যে কোন অংশগুলি বিদ্যমান।"
  See the documentation: "বিভিন্ন কনফিগারেশন নির্দেশাবলী এবং তাদের উদ্দেশ্য সম্পর্কে আরও তথ্যের জন্য <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external">ডকুমেন্টেশনটি</a> দেখুন।"
+ Server log snippets, abuse details, etc: "সার্ভার লগ স্নিপেট, অপব্যবহারের বিবরণ, ইত্যাদি।"
  Signature File Fixer: "হ্যালো, {username}।<br />এখানে আপনি স্বাক্ষর ফাইল সম্ভাব্য সমস্যা সনাক্ত এবং ঠিক করতে পারেন।"
  Specify a value, or leave blank to disregard: "একটি মান উল্লেখ করুন, অথবা উপেক্ষা করতে ফাঁকা ছেড়ে।"
  Statistics tracking is currently disabled: "নোট: পরিসংখ্যান ট্র্যাকিং বর্তমানে অক্ষম আছে, তবে কনফিগারেশন পৃষ্ঠার মাধ্যমে সক্ষম করা যেতে পারে।"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2023.12.01).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2023.12.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,6 +24,32 @@
 # requests, ask. I can help.
 ##/
 
+Abuse category:
+ Bad web bot: "糟糕的網路機器人（抓取電子郵件地址、內容、不尊重 robots.txt、過多的請求、用戶代理欺騙、等等）。"
+ Brute-force attacks: "暴力攻擊（針對網頁登入、SMTP、RDP 等的憑證暴力攻擊）。"
+ Categories (at least one is required): "類別（至少需要一個）"
+ CMS blog comment spam: "CMS部落格評論垃圾郵件。"
+ Conjunctive category: "連接詞類別（與其他更具體的類別結合使用）。"
+ DDoS attacks: "DDoS攻擊（通常是殭屍網路的一部分）。"
+ DNS compromise: "DNS妥協（更改DNS記錄導致不正確的重定向）。"
+ DNS poisoning: "DNS中毒。"
+ Email sender spoofing: "電子郵件寄件者欺騙。"
+ Email spam: "垃圾郵件（垃圾郵件內容、受感染的附件、網路釣魚電子郵件、等等）。"
+ Exploited host: "被利用的主機（主機可能感染了惡意軟體並被用於其他攻擊或託管惡意內容）。"
+ FTP brute-force attacks: "FTP暴力攻擊。"
+ Fraudulent VoIP: "欺詐性VoIP。"
+ Fraudulent orders: "詐欺訂單。"
+ Hacking: "黑客攻擊。"
+ IoT targeted: "物聯網有針對性的濫用。在評論中包含有關目標設備類型的信息。"
+ Open proxy, open relay, or tor endpoint: "開放代理、開放中繼、或 tor 端點。"
+ Phishing: "網路釣魚網站和/或電子郵件。"
+ Ping of death: "死亡之平（超大IP封包）。"
+ Port scans: "連接埠掃描（掃描開放連接埠和易受攻擊的服務）。"
+ SQL injection: "SQL注入。"
+ SSH abuse: "SSH濫用。"
+ VPN IP: "VPN IP。"
+ Web spam: "網路垃圾郵件（評論/論壇垃圾郵件、HTTP引薦來源網址垃圾郵件、或其他CMS垃圾郵件）。"
+ Webapp attacks: "網路應用程式攻擊（探測漏洞用於對抗網路應用程式、CMS、電子商務，例如，WordPress、Drupal、phpMyAdmin、等等）。"
 Extended Description:
  AbuseIPDB module: "阻止來自AbuseIPDB列出的IP的請求。"
  BGPView module: "利用{{Links.BGPView}} API為CIDRAM提供ASN和國家代碼查找功能，提供通過CIDRAM配置一種ASN和國家被阻止或列入白名單的方法，並提供一種用於社交媒體驗證的方式來驗證Facebook請求。 （如果您使用此模塊，則無需使用IP-API模塊，因為它們的用途相同）。"
@@ -104,13 +130,13 @@ checkbox:
  When blocked, suppress output template: "被阻止時，禁止輸出模板。"
 config:
  abuseipdb: "AbuseIPDB模塊的配置。"
- abuseipdb_api_key: &EnterAPIKey "請在此處輸入您的API密鑰。"
+ abuseipdb_api_key: &EnterAPIKey "請在此處輸入您的API金鑰。"
  abuseipdb_build_profiles_from_usage_type: "使用API返回的使用類型構建分類？ False = 不要使用。 True = 使用。 標準 = True。"
  abuseipdb_max_age_in_days: "執行查找時將考慮報告的最長天數（必須是1到365之間的數字）。標準=365。"
  abuseipdb_max_cs_for_captcha: "為了提供CAPTCHA的目的最大置信度分數（必須是0到100之間的數字）。標準=10。"
  abuseipdb_minimum_confidence_score: "為了讓CIDRAM阻止IP地址所需的最低置信度分數（必須是0到100之間的數字）。標準=50。"
  abuseipdb_minimum_total_reports: "為了讓CIDRAM阻止IP地址所需的最小總報告數。標準=1。"
- abuseipdb_report_back: "允許CIDRAM使用您的API密鑰將檢測到的不良行為報告回AbuseIPDB馬？"
+ abuseipdb_report_back: "允許CIDRAM使用您的API金鑰將檢測到的不良行為報告回AbuseIPDB馬？"
  bgpview: "BGPView模塊的配置（為CIDRAM提供ASN和國家代碼查找工具）。"
  bgpview_blocked_asns: &ConfigBlockedASNs "被模塊匹配時要阻止的ASN列表。"
  bgpview_blocked_ccs: &ConfigBlockedCCs "由模塊匹配時要阻止的國家列表（由其{{Links.ISO.3166}}兩個字母的國家代碼標識）。"
@@ -257,7 +283,7 @@ config:
  recaptcha_sitekey: *CaptchaDashboard
  recaptcha_usemode: *CaptchaUseMode
  sfs: "Stop Forum Spam模塊的配置。"
- sfs_offer_captcha: "當此模塊阻止請求時，可能會提供驗證碼。 標準 = True。​注意：它不會覆蓋其他指令。​要提供驗證碼，所有指令必須一致，必要的密鑰必須配置，等等。​在通常允許提供驗證碼的情況下，將此指令設置為『false』可以防止為該模塊專門阻止的請求提供驗證碼。"
+ sfs_offer_captcha: "當此模塊阻止請求時，可能會提供驗證碼。 標準 = True。​注意：它不會覆蓋其他指令。​要提供驗證碼，所有指令必須一致，必要的金鑰必須配置，等等。​在通常允許提供驗證碼的情況下，將此指令設置為『false』可以防止為該模塊專門阻止的請求提供驗證碼。"
  signatures: "簽名，簽名文件，模塊，等的配置。"
  signatures_default_tracktime: "應跟踪IP地址的持續時間。 標準 = 7d0°0′0″ （1週）。"
  signatures_infraction_limit: "從IP最大允許違規數量之前它被禁止。​標準=10。"
@@ -297,6 +323,7 @@ confirm:
 field:
  %s File: "%s文件"
  2FA code: "2FA代碼"
+ API key: "API金鑰"
  Activate: "啟用"
  Add more conditions: "添加更多條件"
  Add to tracking: "添加到跟踪"
@@ -492,6 +519,7 @@ label:
  CIDRAM disk usage: "CIDRAM使用的磁盤空間："
  CIDRAM version used: "目前使用CIDRAM版本："
  Cache data and temporary files: "緩存數據和臨時文件"
+ Characters left: "剩餘字元數"
  Checkbox: "選框"
  Checksum after: "之後的校驗和"
  Checksum before: "之前的校驗和"
@@ -562,6 +590,7 @@ label:
  PHP version used: "目前使用PHP版本："
  Page request completed in %s seconds: "頁面請求在%s秒內完成。"
  Paginate: "分頁"
+ Please abide by the AbuseIPDB reporting policy: "請遵守 AbuseIPDB <a target="reporting-policy" hreflang="en-US" href="https://www.abuseipdb.com/reporting-policy">報告政策</a>。"
  Please log in to continue: "請登錄以繼續。"
  Preferred source: "首選來源："
  Previous: "以前的："
@@ -669,7 +698,7 @@ link:
  Discussions: "討論"
  Documentation: "文檔"
  File Manager: "文件管理器"
- Get API key: "如果您還沒有API密鑰，請單擊此處獲取。"
+ Get API key: "如果您還沒有API金鑰，請單擊此處獲取。"
  Home: "主頁"
  IP Testing: "IP測試"
  IP Tracking: "IP跟踪"
@@ -762,6 +791,7 @@ response:
  Failed to import: "導入失敗！"
  Failed to install: "無法安裝！"
  Failed to rename: "無法改名！"
+ Failed to report the IP address, %s: "無法報告IP位址，%s！"
  Failed to update auxiliary rules: "輔助規則更新失敗！"
  Failed to update configuration: "配置更新失敗！"
  Failed to update statistics: "更新統計失敗！"
@@ -778,6 +808,7 @@ response:
  I can_t write to %s, sorry: "我不能寫信給『%s』，對不起。"
  I don_t understand that command, sorry: "我不明白的命令，對不起。"
  Incorrect 2FA code entered: "輸入了錯誤的2FA代碼。驗證失敗。"
+ Invalid API key: "API金鑰無效！"
  Invalid password: "登錄失敗！​密碼無效！"
  New auxiliary rule, %s, created successfully: "新輔助規則『%s』創建成功。"
  Not available at the upstream: "在上游找不到。"
@@ -787,6 +818,7 @@ response:
  Password field empty: "密碼輸入是空的！"
  Password successfully updated: "密碼成功更新！"
  Permissions not adequate to perform asynchronous requests:: "權限不足以執行異步請求。嘗試再次登錄。"
+ Please select at least one category: "請至少選擇一個類別！"
  Ready to install: "準備安裝。"
  Redirected: "重定向"
  Removed %s from tracking: "從跟踪中刪除了%s。"
@@ -801,6 +833,10 @@ response:
  Successfully deactivated: "已成功停用。"
  That account doesn_t exist: "那個帳戶不存在。"
  The %s command can_t be chained in that way, sorry: "%s命令不能以這種方式鏈接，對不起。"
+ The IP address is invalid: "IP位址無效！"
+ The IP address, %s, successfully reported: "IP位址%s已成功報告！"
+ The report has not been enqueued: "該報告不在隊列中。"
+ The same IP address can be reported only once every 15 minutes: "同一IP位址每15分鐘只能報告一次。​該報告在佇列中，CIDRAM將稍後嘗試提交該報告。"
  There aren_t currently any auxiliary rules: "目前沒有任何輔助規則。"
  There_s nothing to analyse, sorry: "沒有什麼可分析的，對不起。"
  There_s nothing to print, sorry: "沒有什麼可打印的，對不起。"
@@ -899,6 +935,7 @@ tip:
  Rate limiting is currently disabled: "注意：速率限制目前已被禁用，但可以通過配置頁面啟用。"
  Sections List: "你好，{username}。<br />此頁面列出當前活動簽名文件中存在哪些章節。"
  See the documentation: "請參閱<a href="https://github.com/CIDRAM/Docs/blob/master/readme.zh-TW.md\#user-content-SECTION5" hreflang="zh-TW" rel="noopener external">文檔</a>以獲取有關各種配置指令的信息和他們的目的。"
+ Server log snippets, abuse details, etc: "伺服器日誌片段、濫用詳細資訊、等等。"
  Signature File Fixer: "你好，{username}。<br />簽名文件修復工具提供了一種檢測和修復簽名文件中潛在問題的方法。"
  Specify a value, or leave blank to disregard: "指定一個值，或留空以忽略。"
  Statistics tracking is currently disabled: "注意：統計跟踪目前已被禁用，但可以通過配置頁面啟用。"

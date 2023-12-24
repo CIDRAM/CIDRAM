@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bulgarian language data for the front-end (last modified: 2023.12.15).
+# This file: Bulgarian language data for the front-end (last modified: 2023.12.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -537,6 +537,7 @@ label:
  CIDRAM disk usage: "Дисково използване на CIDRAM:"
  CIDRAM version used: "Използвана версия на CIDRAM:"
  Cache data and temporary files: "Кеширане на данни и временни файлове"
+ Characters left: "Остават знаци"
  Checkbox: "Квадратче за отметка"
  Checksum after: "Контролна сума след"
  Checksum before: "Контролна сума преди"
@@ -812,6 +813,7 @@ response:
  Failed to import: "Неуспешно импортиране!"
  Failed to install: "Неуспешно инсталиране!"
  Failed to rename: "Неуспешно преименуване!"
+ Failed to report the IP address, %s: "Неуспешно докладване на IP адреса, %s!"
  Failed to update auxiliary rules: "Неуспешно актуализиране на спомагателни правила!"
  Failed to update configuration: "Неуспешно актуализиране на конфигурацията!"
  Failed to update statistics: "Неуспешно актуализиране на статистиката!"
@@ -828,6 +830,7 @@ response:
  I can_t write to %s, sorry: "Не мога да пиша на „%s“, съжалявам."
  I don_t understand that command, sorry: "Не разбирам тази команда, съжалявам."
  Incorrect 2FA code entered: "Въведен е неправилен 2FA код. Неуспешно удостоверяване."
+ Invalid API key: "Невалиден API ключ!"
  Invalid password: "Грешка при влизане! Невалидна парола!"
  New auxiliary rule, %s, created successfully: "Ново спомагателно правило, „%s“, създадено успешно."
  Not available at the upstream: "Не е налично нагоре по течението."
@@ -837,6 +840,7 @@ response:
  Password field empty: "Полето за парола е празно!"
  Password successfully updated: "Паролата е актуализирана успешно!"
  Permissions not adequate to perform asynchronous requests:: "Разрешенията не са подходящи за изпълнение на асинхронни заявки. Опитайте да влезете отново."
+ Please select at least one category: "Моля, изберете поне една категория!"
  Ready to install: "Готов да инсталирам."
  Redirected: "Пренасочен"
  Removed %s from tracking: "Премахнато %s от проследяване."
@@ -851,6 +855,10 @@ response:
  Successfully deactivated: "Успешно деактивирано."
  That account doesn_t exist: "Този акаунт не съществува."
  The %s command can_t be chained in that way, sorry: "Командата %s не може да бъде свързана по този начин, съжалявам."
+ The IP address is invalid: "IP адресът е невалиден!"
+ The IP address, %s, successfully reported: "IP адресът %s е докладван успешно!"
+ The report has not been enqueued: "Отчетът не е поставен на опашка."
+ The same IP address can be reported only once every 15 minutes: "IP адрес може да бъде докладван само веднъж на всеки 15 минути. Докладът е поставен в опашка и CIDRAM ще се опита да изпрати доклада по-късно."
  There aren_t currently any auxiliary rules: "В момента няма спомагателни правила."
  There_s nothing to analyse, sorry: "Няма какво да анализираме, съжалявам."
  There_s nothing to print, sorry: "Няма какво да печат, съжалявам."

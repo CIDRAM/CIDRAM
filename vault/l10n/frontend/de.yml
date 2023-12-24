@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2023.12.01).
+# This file: German language data for the front-end (last modified: 2023.12.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,6 +24,32 @@
 # requests, ask. I can help.
 ##/
 
+Abuse category:
+ Bad web bot: "Schlecht Webbot (Scraping nach E-Mail-Adressen und Inhalten, Crawler die die robots.txt nicht berücksichtigen, übermäßige Anfragen, Benutzeragenten-Spoofing, u.s.w.)."
+ Brute-force attacks: "Brute-Force-Angriffe (Credential-Brute-Force-Angriffe auf Webseiten-Logins, SMTP, RDP, u.s.w.)."
+ Categories (at least one is required): "Kategorien (mindestens eine ist erforderlich)"
+ CMS blog comment spam: "CMS-Blog-Kommentar-Spam."
+ Conjunctive category: "Konjunktivkategorie (Verwendung in Kombination mit anderen, spezifischeren Kategorien)."
+ DDoS attacks: "DDoS-Angriffe (normalerweise Teil eines Botnetzes)."
+ DNS compromise: "DNS-Kompromiss (Ändern von DNS-Einträgen, was zu einer fehlerhaften Umleitung führt)."
+ DNS poisoning: "DNS-Vergiftung."
+ Email sender spoofing: "E-Mail-Absender-Spoofing."
+ Email spam: "E-Mail-Spam (Spam-E-Mail-Inhalte, infizierte Anhänge, Phishing-E-Mails, u.s.w.)."
+ Exploited host: "Ausgenutzter Host (der Host ist wahrscheinlich mit Malware infiziert und wird für andere Angriffe oder zum Hosten schädlicher Inhalte verwendet)."
+ FTP brute-force attacks: "FTP-Brute-Force-Angriffe."
+ Fraudulent VoIP: "Betrügerisches VoIP."
+ Fraudulent orders: "Betrügerische Bestellungen."
+ Hacking: "Hacking."
+ IoT targeted: "IoT-gezielter Missbrauch. Geben Sie in den Kommentaren Informationen darüber an, um welchen Gerätetyp es sich handelt."
+ Open proxy, open relay, or tor endpoint: "Offener Proxy, offenes Relay, oder ein Tor-Endpunkt."
+ Phishing: "Phishing-Websites und/oder E-Mails."
+ Ping of death: "Ping des Todes (übergroßes IP-Paket)."
+ Port scans: "Port-Scans (Scannen nach offenen Ports und anfälligen Diensten)."
+ SQL injection: "SQL-Injektion."
+ SSH abuse: "SSH-Missbrauch."
+ VPN IP: "VPN-IP."
+ Web spam: "Web-Spam (Kommentar-/Forum-Spam, HTTP-Referrer-Spam, oder anderer CMS-Spam)."
+ Webapp attacks: "Webapp-Angriffe (die Suche nach Schwachstellen oder Exploits, oder der Versuch die installierte Webapps, CMS, oder E-Commerce-Lösungen auszunutzen, z.B., WordPress, Drupal, phpMyAdmin, u.s.w.)."
 Extended Description:
  AbuseIPDB module: "Blockiert Anfragen von IPs, die bei AbuseIPDB aufgelistet sind."
  BGPView module: "Nutzt die {{Links.BGPView}}-API, um ASN-Suchfunktionalität und Ländercode-Suchfunktionalität für CIDRAM bereitzustellen, um ASNer und Länder über die CIDRAM-Konfiguration zu blockieren oder in die Whitelist aufzulisten werden, und Bereitstellung eines Mittels zur Social-Media-Verifizierung um Facebook-Anfragen zu überprüfen. (Wenn Sie dieses Modul verwenden, müssen Sie das IP-API-Modul nicht verwenden, da sie demselben Zweck dienen)."
@@ -297,6 +323,7 @@ confirm:
 field:
  %s File: "%s-Datei"
  2FA code: "2FA-Code"
+ API key: "API-Schlüssel"
  Activate: "Aktivieren"
  Add more conditions: "Fügen Sie mehr Bedingungen"
  Add to tracking: "Fügen Sie zum Tracking"
@@ -503,6 +530,7 @@ label:
  CIDRAM disk usage: "CIDRAM Speicherplatz verwendet:"
  CIDRAM version used: "CIDRAM-Version verwendet:"
  Cache data and temporary files: "Cache-Daten und temporäre Dateien"
+ Characters left: "Zeichen übrig"
  Checkbox: "Kontrollkästchen"
  Checksum after: "Prüfsumme nach"
  Checksum before: "Prüfsumme vorher"
@@ -577,6 +605,7 @@ label:
  PHP version used: "PHP-Version verwendet:"
  Page request completed in %s seconds: "Seite-Anfrage in %s Sekunden abgeschlossen."
  Paginate: "Paginieren"
+ Please abide by the AbuseIPDB reporting policy: "Bitte halten Sie sich an die <a target="reporting-policy" hreflang="en-US" href="https://www.abuseipdb.com/reporting-policy">Berichtsrichtlinie</a> von AbuseIPDB."
  Please log in to continue: "Bitte einloggen zum Fortfahren."
  Preferred source: "Bevorzugte Quelle:"
  Previous: "Vorherige:"
@@ -777,6 +806,7 @@ response:
  Failed to import: "Import fehlgeschlagen!"
  Failed to install: "Installation fehlgeschlagen!"
  Failed to rename: "Umbenennung-Fehler!"
+ Failed to report the IP address, %s: "Die IP-Adresse %s konnte nicht gemeldet werden!"
  Failed to update auxiliary rules: "Aktualisierung der Hilfsregeln fehlgeschlagen!"
  Failed to update configuration: "Aktualisierung der Konfiguration fehlgeschlagen!"
  Failed to update statistics: "Statistikaktualisierung fehlgeschlagen!"
@@ -793,6 +823,7 @@ response:
  I can_t write to %s, sorry: "Entschuldigung, ich kann an „%s“ schreiben nicht."
  I don_t understand that command, sorry: "Entschuldigung, ich verstehe diesen Befehl nicht."
  Incorrect 2FA code entered: "Falscher 2FA-Code eingegeben. Authentifizierung fehlgeschlagen."
+ Invalid API key: "Ungültiger API-Schlüssel!"
  Invalid password: "Einloggen-Fehler! Ungültiges Passwort!"
  New auxiliary rule, %s, created successfully: "Neue Hilfsregel, „%s“, wurde erfolgreich erstellt."
  Not available at the upstream: "An der Upstream nicht verfügbar."
@@ -802,6 +833,7 @@ response:
  Password field empty: "Passwort-Feld leer!"
  Password successfully updated: "Passwort erfolgreich aktualisiert!"
  Permissions not adequate to perform asynchronous requests:: "Berechtigungen sind nicht ausreichend, um asynchrone Anforderungen auszuführen. Versuchen Sie sich erneut anzumelden."
+ Please select at least one category: "Bitte wählen Sie mindestens eine Kategorie aus!"
  Ready to install: "Bereit zur Installation."
  Redirected: "Umgeleitet"
  Removed %s from tracking: "%s aus dem Tracking entfernt."
@@ -816,6 +848,10 @@ response:
  Successfully deactivated: "Erfolgreich deaktiviert."
  That account doesn_t exist: "Dieses Konto existiert nicht."
  The %s command can_t be chained in that way, sorry: "Entschuldigung, der %s-Befehl kann nicht auf diese Weise verkettet werden."
+ The IP address is invalid: "Die IP-Adresse ist ungültig!"
+ The IP address, %s, successfully reported: "Die IP-Adresse %s wurde erfolgreich gemeldet!"
+ The report has not been enqueued: "Der Bericht wurde nicht in die Warteschlange gestellt."
+ The same IP address can be reported only once every 15 minutes: "Die gleiche IP-Adresse kann nur einmal alle 15 Minuten gemeldet werden. Der Bericht wurde in die Warteschlange gestellt, und CIDRAM wird versuchen, den Bericht zu einem späteren Zeitpunkt einzureichen."
  There aren_t currently any auxiliary rules: "Derzeit gibt es keine Hilfsregeln."
  There_s nothing to analyse, sorry: "Entschuldigung, es nichts zu analysieren."
  There_s nothing to print, sorry: "Entschuldigung, es nichts zu drucken."
@@ -942,6 +978,7 @@ tip:
  Rate limiting is currently disabled: "Hinweis: Die Ratenbegrenzung ist derzeit deaktiviert, aber kann über die Konfigurationsseite aktiviert werden."
  Sections List: "Hallo, {username}.<br />Auf dieser Seite wird aufgelistet, welche Sektionen in den derzeit aktiven Signaturdateien vorhanden sind."
  See the documentation: "Siehe die <a href="https://github.com/CIDRAM/Docs/blob/master/readme.de.md\#user-content-SECTION5" hreflang="de-DE" rel="noopener external">Dokumentation</a> für Informationen über den verschiedenen Konfigurationseinstellungen und ihren Zwecken."
+ Server log snippets, abuse details, etc: "Auszüge aus Serverprotokollen, Missbrauchsdetails, u.s.w."
  Signature File Fixer: "Hallo, {username}.<br />Mit dem Signaturdatei-Fixierer können potenzielle Probleme in Signaturdateien erkannt und behoben werden."
  Specify a value, or leave blank to disregard: "Geben Sie einen Wert an, oder lassen Sie das Feld leer, um es zu ignorieren."
  Statistics tracking is currently disabled: "Hinweis: Die Statistikverfolgung ist derzeit deaktiviert, aber kann über die Konfigurationsseite aktiviert werden."

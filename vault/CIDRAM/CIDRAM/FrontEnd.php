@@ -904,6 +904,7 @@ class FrontEnd extends Core
             $this->eTaggable('flags.css');
         }
 
+        /** Loading the specific requested page. */
         else {
             /** Strip out unexpected bytes here for security. */
             $Page = preg_replace('~[^\dA-Za-z-]~', '', $this->CIDRAM['QueryVars']['cidram-page']);

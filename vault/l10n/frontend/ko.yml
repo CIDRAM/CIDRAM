@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2023.12.15).
+# This file: Korean language data for the front-end (last modified: 2023.12.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -522,6 +522,7 @@ label:
  CIDRAM disk usage: "CIDRAM 디스크 사용\_:"
  CIDRAM version used: "사용된 CIDRAM 버전\_:"
  Cache data and temporary files: "캐시 데이터 및 임시 파일 "
+ Characters left: "남은 문자 수"
  Checkbox: "체크 박스"
  Checksum after: "이후 체크섬"
  Checksum before: "미리 체크섬"
@@ -793,6 +794,7 @@ response:
  Failed to import: "가져오기에 실패했습니다!"
  Failed to install: "설치하지 못했습니다!"
  Failed to rename: "이름을 변경할 수 없습니다!"
+ Failed to report the IP address, %s: "IP 주소 %s를 보고하지 못했습니다!"
  Failed to update auxiliary rules: "보조 규칙을 업데이트하지 못했습니다!"
  Failed to update configuration: "구성을 업데이트하지 못했습니다!"
  Failed to update statistics: "통계를 업데이트하지 못했습니다!"
@@ -809,6 +811,7 @@ response:
  I can_t write to %s, sorry: "미안 해요, "%s"에 쓸 수 없습니다."
  I don_t understand that command, sorry: "미안 해요, 명령을 이해할 수 없습니다."
  Incorrect 2FA code entered: "2FA 코드가 잘못 입력되었습니다. 인증 실패."
+ Invalid API key: "API 키가 유효하지 않습니다!"
  Invalid password: "로그인 실패! 잘못된 암호!"
  New auxiliary rule, %s, created successfully: "새 보조 규칙 "%s"가 성공적으로 작성되었습니다."
  Not available at the upstream: "업스트림에서는 찾을 수 없습니다."
@@ -818,6 +821,7 @@ response:
  Password field empty: "암호가 비어 있습니다!"
  Password successfully updated: "암호 업데이트가 성공했습니다!"
  Permissions not adequate to perform asynchronous requests:: "권한이 비동기 요청을 수행하기에 충분하지 않습니다. 다시 로그인하십시오."
+ Please select at least one category: "카테고리를 하나 이상 선택하세요!"
  Ready to install: "설치할 준비가되었습니다."
  Redirected: "리디렉션됨"
  Removed %s from tracking: "추적에서 %s를 제거했습니다."
@@ -832,6 +836,10 @@ response:
  Successfully deactivated: "비활성화했습니다."
  That account doesn_t exist: "계정이 존재하지 않습니다."
  The %s command can_t be chained in that way, sorry: "미안 해요, %s 명령은 그런 식으로 연결할 수 없습니다."
+ The IP address is invalid: "IP 주소가 유효하지 않습니다!"
+ The IP address, %s, successfully reported: "IP 주소 %s가 성공적으로 보고되었습니다!"
+ The report has not been enqueued: "보고서가 대기열에 추가되지 않았습니다."
+ The same IP address can be reported only once every 15 minutes: "동일한 IP 주소는 15분마다 한 번씩만 보고될 수 있습니다. 보고서가 대기열에 추가되었으며 CIDRAM은 나중에 보고서 제출을 시도합니다."
  There aren_t currently any auxiliary rules: "현재 보조 규칙이 없습니다."
  There_s nothing to analyse, sorry: "미안 해요, 분석할 것이 없습니다."
  There_s nothing to print, sorry: "미안 해요, 인쇄할 내용이 없습니다."

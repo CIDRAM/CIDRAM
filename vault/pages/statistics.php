@@ -88,7 +88,7 @@ foreach ($this->CIDRAM['AuxData'] as $AuxRuleName => $AuxRuleData) {
         continue;
     }
     if (preg_match('~\\\\(\d+)~', $AuxRuleName)) {
-        $Try = $this->Cache->getAllEntriesWhere('^Statistics-Aux-(' . preg_replace('~\\\\\\\\(\d+)~', '.*', preg_quote($AuxRuleName)). ')(?<!-Most-Recent)$~', '\1');
+        $Try = $this->Cache->getAllEntriesWhere('~^Statistics-Aux-(' . preg_replace('~\\\\\\\\(\d+)~', '.*', preg_quote($AuxRuleName)). ')(?<!-Most-Recent)$~', '\1');
         foreach ($Try as $AuxRuleName => $EntryData) {
             $AuxRulesTracked[] = $AuxRuleName;
         }

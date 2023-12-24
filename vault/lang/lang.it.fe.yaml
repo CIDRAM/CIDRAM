@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2023.12.01).
+# This file: Italian language data for the front-end (last modified: 2023.12.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -49,7 +49,7 @@ Extended Description module_cookies.php: "Fornisce alcune protezioni limitate co
 Extended Description module_extras.php: "Fornisce alcune protezioni limitate contro i vari vettori di attacco comunemente usata nelle richieste."
 Extended Description module_httpver.php: "Permette di bloccare protocolli specifici e versioni HTTP tramite la configurazione CIDRAM."
 Extended Description module_projecthoneypot.php: "Blocca le richieste dagli IP elencati in Project Honeypot."
-Extended Description module_refspam.php: "Il blocco basato sullo spam dei referrer in genere non offre alcun vantaggio significativo in termini di sicurezza, ma in alcuni casi potrebbe essere utile per alcuni utenti, per raccogliere maggiori informazioni sulle richieste e per poterle segnalare."
+Extended Description module_refspam.php: "Il blocco basato sullo spam dei referrer in genere non offre alcun vantaggio significativo in termini di sicurezza, ma in alcuni casi potrebbe essere utile per alcuni utenti, per raccogliere maggiori informazioni sulle richieste e per poterle rapporta."
 Extended Description module_sfs.php: "Protegge le pagine di registrazione e di accesso agli IP elencati da SFS."
 Name Bypasses: "I firme predefinite bypass."
 Name CN_cidram.inc: "Lista di blocca IPv4 per la Cina."
@@ -333,7 +333,7 @@ info_some_useful_links: |
            <li>{{Links.BGPView}} – Ottenere CIDRs da ASNs, determinare le relazioni di ASNs, scopri ASNs basata su nomi di rete, ecc.</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar da Qrator</a> – Strumento utile per verificare la connettività di ASN nonché per varie altre informazioni utili riguardo ASNs.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Il progetto Spamhaus</a> – Visualizza i rapporti per quanto riguarda ai tassi di infezione di botnet per ASN.</li>
-           <li>{{Links.AbuseIPDB}} – Mantiene un database di conosciuti indirizzi IP abusivi; Fornisce una API per il controllo e la segnalazione di IP.</li>
+           <li>{{Links.AbuseIPDB}} – Mantiene un database di conosciuti indirizzi IP abusivi; Fornisce un API per il controllo e la rapporta di IP.</li>
            <li>{{Links.IP-API}} – Ottieni informazioni su indirizzi IP o nomi host come codice paese, nome regione, longitudine, latitudine, nome organizzazione, ecc.</li>
          </ul>
        </li>
@@ -464,7 +464,7 @@ label_php: "Versione PHP utilizzata:"
 label_preferred_source: "Fonte preferita:"
 label_previous: "Precedente:"
 label_remember: "Ricorda"
-label_reported: "Richieste segnalate ad API esterne"
+label_reported: "Richieste rapportate ad API esterne"
 label_reporting_allow: "Consenti."
 label_reporting_allow_blocked: "Consenti, ma solo se anche bloccato."
 label_reporting_deny: "Rifiutare."
@@ -572,7 +572,7 @@ response_configuration_updated: "Configurazione aggiornato con successo."
 response_copied: "Copiato"
 response_deactivated: "Disattivato con successo."
 response_deactivation_failed: "Non poteva essere disattivato!"
-response_delete_error: "Non riuscito a eliminare!"
+response_delete_error: "Non riuscito ad eliminare!"
 response_directory_deleted: "Elenco eliminato con successo!"
 response_directory_renamed: "Elenco rinominato con successo!"
 response_error: "Errore"

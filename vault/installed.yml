@@ -1,6 +1,6 @@
 CIDRAM Core:
  Name: "CIDRAM Core"
- Version: "3.5.0-DEV+233500"
+ Version: "3.5.0-DEV+233580"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Front-End: "Latest"
@@ -49,7 +49,7 @@ CIDRAM Core:
    Checksum: "0b2bcfdc89f22712c347caddd47f36b2c8003f4ef752b19c18ec9258f661b20e:3907"
   events/default.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/events/default.php"
-   Checksum: "658ded3688fbbe72faea6da0a22d5f8857f2fc632c9900c63972426a987c9665:12631"
+   Checksum: "79d37a5cbdb1cff11ecccf0535d0e6b534bc3ee7578e4e2ad0c033c4696aa0c2:12172"
   channels.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/channels.yml"
    Checksum: "b62c0cf1deeb97c7ee15638f0a4102292a6bab6f0b6b1ee3a1dec7fa485c2e05:1352"
@@ -513,7 +513,7 @@ CIDRAM Front-End:
    Checksum: "60f96a49000b8aa1e61afcdc84d1bd60109584c4208ca12844013bdf20c56eec:32239"
 Common Classes Package:
  Name: "Common Classes Package"
- Version: "2.12.0-DEV+233410"
+ Version: "2.12.0-DEV+233580"
  Dependencies:
   PHP: "^7.2|^8"
  Release Notes For: ["2.9.7", "2.10.0", "2.11.0", "2.12.0"]
@@ -556,7 +556,7 @@ Common Classes Package:
    Checksum: "ed6e285278fda8f08ae7e5865081cdf0f6a9cbce47cda7278a037d25a0d7b13a:11300"
   Maikuolan/Common/Request.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/Maikuolan/Common/Request.php"
-   Checksum: "251297ed16292b8ebd915bc6740431cf56af049418c475396c22c886f521418f:8681"
+   Checksum: "14bf6e5a1766cc0589936062e834ebfd719e27d2f746ed973d68d54f39d6b834:8988"
   Maikuolan/Common/YAML.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/Maikuolan/Common/YAML.php"
    Checksum: "f40006652b161c1dc159c9fb94940d0664fc75426123393cbfdf9259b199427c:51356"
@@ -781,11 +781,11 @@ l10n/core/ko:
    Checksum: "74d200a6d4bff11d5c3493258dd2de3ec4d71ee7004b2dff48e72c345675239e:7389"
 l10n/core/lv:
  Extended Description: "Latviešu lokalizācija"
- Version: "2023.357.0"
+ Version: "2023.358.0"
  Files:
   l10n/core/lv.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/lv.yml"
-   Checksum: "f2e6df1210993a3ff0fea6addde7b7173c7734907bac10e2337452f489f54ac4:7626"
+   Checksum: "4d27a8297d8a7be31e41d1b090c4fbf47f7d9db317db412c50f49c911b36f5d4:7627"
 l10n/core/ms:
  Extended Description: "Penyetempatan Bahasa Melayu"
  Version: "2023.357.0"
@@ -1155,7 +1155,7 @@ l10n/frontend/zh-TW:
    Checksum: "bc0e0ebf2b985030f98b68f089a047a30f675d01212f36f4f8d4f7bf4bac0d74:73147"
 AbuseIPDB module:
  False Positive Risk: "Medium"
- Version: "2023.357.0"
+ Version: "2023.358.0"
  Dependencies:
   l10n/core/{lang}: ">=2023.357"
   l10n/frontend/{lang}: ">=2023.348"
@@ -1163,18 +1163,22 @@ AbuseIPDB module:
  Files:
   assets/frontend/default/_abuseipdb.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/default/_abuseipdb.html"
-   Checksum: "5073632c5c79c145e138f33e162662619bf576c182b6c6ed365e2b172376db7f:8460"
+   Checksum: "a1d769c8fef752f5f6f2cc720a2eac2fe112a0169bcd8b9b140c6f2381fdd5dc:9403"
+  events/abuseipdb.php:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/events/abuseipdb.php"
+   Checksum: "3c1d7e7ef499c7a415c424144553c243cce7b0e4281bf9cdcff95902f367e7a9:5973"
+   Used with: "events"
   imports/abuseipdb.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/imports/abuseipdb.yml"
    Checksum: "6cc367e76e62901ef0dba209aac79ebc3eabb8c01a13e109b957bacf1350c638:1949"
    Used with: "imports"
   modules/abuseipdb.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/abuseipdb.php"
-   Checksum: "97cca63d415af3bec4a784ad45abd3f7107b58b1b0a0eeaa3c841e27b1d9c1b1:15761"
+   Checksum: "253a31eee7738820f979ab25b3ee6ec9420cdd881afe615aa5122bb3caf41053:9661"
    Used with: "modules"
   pages/abuseipdb.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/pages/abuseipdb.php"
-   Checksum: "fa80e46a1f73fde8799a23292a5de9c35cde0c4c3e03948981adc3d621e8fe82:6444"
+   Checksum: "aa8beaaf4c338bc9916bbc12cc4c7218fc03906652266febecd71e9509cb5ae8:8287"
 Bad hosts blocker module:
  False Positive Risk: "Medium"
  Version: "2023.334.0"

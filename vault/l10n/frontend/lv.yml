@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2023.12.22).
+# This file: Latvian language data for the front-end (last modified: 2023.12.25).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -132,10 +132,10 @@ config:
  abuseipdb: "AbuseIPDB moduļa konfigurācija."
  abuseipdb_api_key: &EnterAPIKey "Lūdzu, ievadiet šeit savu API atslēgu."
  abuseipdb_build_profiles_from_usage_type: "Vai veidot profilus, izmantojot API atgriezto lietošanas veidu? False = Nē. True = Jā. Noklusējuma = True."
- abuseipdb_max_age_in_days: "Maksimālais vecums dienās, kad pārskati jāņem vērā, veicot meklēšanu (jābūt skaitlim no 1 līdz 365). Noklusējuma = 365."
+ abuseipdb_max_age_in_days: "Maksimālais vecums dienās, kad ziņojumi jāņem vērā, veicot meklēšanu (jābūt skaitlim no 1 līdz 365). Noklusējuma = 365."
  abuseipdb_max_cs_for_captcha: "Maksimālais uzticamības rādītājs, kas atļauts, lai saņemtu CAPTCHA (jābūt skaitlim no 0 līdz 100). Noklusējuma = 10."
  abuseipdb_minimum_confidence_score: "Minimālais ticamības rādītājs, kas nepieciešams, lai CIDRAM bloķētu IP adresi (jābūt skaitlim no 0 līdz 100). Noklusējuma = 50."
- abuseipdb_minimum_total_reports: "Minimālais kopējais pārskatu skaits, kas nepieciešams, lai CIDRAM bloķētu IP adresi. Noklusējuma = 1."
+ abuseipdb_minimum_total_reports: "Minimālais kopējais ziņojumu skaits, kas nepieciešams, lai CIDRAM bloķētu IP adresi. Noklusējuma = 1."
  abuseipdb_report_back: "Vai atļaut CIDRAM ziņot par konstatēto sliktu darbību atpakaļ AbuseIPDB, izmantojot jūsu API atslēgu?"
  bgpview: "BGPView moduļa konfigurācija (nodrošina ASN un valsts koda uzmeklēšanas iespēju CIDRAM)."
  bgpview_blocked_asns: &ConfigBlockedASNs "To ASN saraksts, kuras jābloķē, ja tos saskaņo modulis."
@@ -235,7 +235,7 @@ config:
  logging_log_rotation_limit: "Log rotācija ierobežo to logfailu skaitu, kuriem vajadzētu pastāvēt vienlaikus. Veidojot jaunus logfailus, ja kopējais logfailu skaits pārsniedz noteikto limitu, tiks veikta norādītā darbība. Šeit varat norādīt vēlamo ierobežojumu. Ja vērtība ir 0, tiks atspējota log rotācija."
  logging_log_sanitisation: "Izmantojot logs lapu, lai skatītu log datus, CIDRAM pirms to parādīšanas sanitizē log datus, lai aizsargātu lietotājus no XSS uzbrukumiem un citiem iespējamiem draudiem, ko varētu saturēt log dati. Tomēr pēc noklusējuma dati reģistrēšanas laikā netiek sanitizēti. Tas ir paredzēts, lai log dati tiktu saglabāti precīzi, lai palīdzētu veikt heiristisko analīzi, kas varētu būt nepieciešama nākotnē. Tomēr, ja lietotājs mēģina nolasīt log datus izmantojot ārējus rīkus, ja šie ārējie rīki neveic savu sanitizācijas procesu, lietotājs var tikt pakļauts XSS uzbrukumiem. Ja nepieciešams, jūs varat mainīt noklusējuma izturēšanos, izmantojot šo konfigurācijas direktīvu. True (Patiess) = Sanitizēt datus reģistrācijas laikā (dati tiek saglabāti mazāk precīzi, bet XSS risks ir mazāks). False (Nepatiess) = Nesanitizēt datus reģistrācijas laikā (dati tiek saglabāti precīzāk, bet XSS risks ir lielāks) [Noklusējuma]."
  logging_outbound_request_log: "Fails, visu izejošo pieprasījumu rezultātu reģistrēšanai. Norādiet faila nosaukumu, vai atstājiet tukšu, lai to atspējotu."
- logging_report_log: "Fails, lai reģistrētu visus pārskatus, kas nosūtīti uz ārējiem API. Norādiet faila nosaukumu, vai atstājiet tukšu, lai to atspējotu."
+ logging_report_log: "Fails, lai reģistrētu visus ziņojumus, kas nosūtīti uz ārējiem API. Norādiet faila nosaukumu, vai atstājiet tukšu, lai to atspējotu."
  logging_serialised_log: "Sērijveida fails visu bloķēto piekļuves mēģinājumu reģistrēšanai. Norādiet faila nosaukumu, vai atstājiet tukšu, lai to atspējotu."
  logging_standard_log: "Cilvēkam lasāms fails visu bloķēto piekļuves mēģinājumu reģistrēšanai. Norādiet faila nosaukumu, vai atstājiet tukšu, lai to atspējotu."
  logging_truncate: "Saīsināt logfailus, kad tie sasniedz noteiktu lielumu? Vērtība ir maksimālais lielums B/KB/MB/GB/TB, līdz logfailam var izaugt pirms saīsināšanas. Noklusējuma vērtība 0KB atspējo saīsināšanu (logfaili var pieaugt bezgalīgi). Piezīme: Attiecas uz indivīdiem logfailiem! Logfailu lielums netiek skaitīts kolektīvi."
@@ -254,7 +254,7 @@ config:
  phpmailer_username: "Lietotājvārds, kas jāizmanto, nosūtot e-pastu izmantojot SMTP."
  projecthoneypot: "Project Honeypot moduļa konfigurācija."
  projecthoneypot_api_key: *EnterAPIKey
- projecthoneypot_max_age_in_days: "Maksimālais vecums dienās, kad pārskati jāņem vērā, veicot meklēšanu. Noklusējuma = 365."
+ projecthoneypot_max_age_in_days: "Maksimālais vecums dienās, kad ziņojumi jāņem vērā, veicot meklēšanu. Noklusējuma = 365."
  projecthoneypot_max_ts_for_captcha: "Maksimālais apdraudējuma rādītājs, kas atļauts, lai saņemtu CAPTCHA (jābūt skaitlim no 1 līdz 100). Noklusējuma = 10."
  projecthoneypot_minimum_threat_score: "Minimālais apdraudējuma rādītājs, kas nepieciešams, lai CIDRAM bloķētu IP adresi (jābūt skaitlim no 1 līdz 100). Noklusējuma = 10."
  projecthoneypot_type_of_visitor: "Kontrolē, vai bloķēt vai profilēt, pamatojoties uz apmeklētāja veidu, ko nosaka Project Honeypot."
@@ -542,10 +542,11 @@ label:
  Component is provisional: "Komponents ir provizorisku."
  Component updates metadata: "Metadati komponentu atjauninājumiem"
  Compress: "Saspiest"
- Current data for %s: "Pašreizējie dati par "%s"."
  Copy to clipboard: "Kopēt starpliktuvē"
+ Current data for %s: "Pašreizējie dati par "%s"."
  Current data: "Pašreizējie dati."
  Default: "Noklusējuma"
+ Delete previous reports: "Dzēst iepriekšējos ziņojumus"
  Deny: "Noliegt."
  Dependencies: "Atkarības:"
  Difference: "Atšķirība"
@@ -591,7 +592,7 @@ label:
  No data available: "Nav pieejami dati."
  No log file selected: "Nav atlasīts logfails."
  No log files available: "Neviens logfails nav pieejams."
- None: "Neviena.\nJa vēlaties izmantot moduli tikai pārskatu sniegšanai, neko nemeklējot, izmantojiet šo."
+ None: "Neviena.\nJa vēlaties izmantot moduli tikai ziņojumu sniegšanai, neko nemeklējot, izmantojiet šo."
  Only when blocked, specially marked for use, within the signature limit, and not banned: "Tikai tad, kad bloķēts, īpaši marķēts lietošanai, parakstu ierobežojumu robežās, un nav aizliegts."
  Only when blocked, within the signature limit, and not banned: "Tikai tad, kad bloķēts, parakstu ierobežojumu robežās, un nav aizliegts."
  Only when not blocked, at sensitive page requests: "Tikai tad, ja tas nav bloķēts, pēc sensitīviem lapu pieprasījumiem."
@@ -800,6 +801,7 @@ response:
  Failed to access %s: "Neizdevās piekļūt "%s"!"
  Failed to activate: "Aktivizēšana neizdevās!"
  Failed to deactivate: "Deaktivizēšana neizdevās!"
+ Failed to delete any reports for %s: "Neizdevās izdzēst nevienu ziņojumi par %s!"
  Failed to delete: "Direktorija izdzēšana neizdevās!"
  Failed to execute: "Izpildīt neizdevās!"
  Failed to import: "Importēšana neizdevās!"
@@ -845,6 +847,9 @@ response:
  Successfully activated: "Aktivizēšana izdevās."
  Successfully authenticated: "Autentifikācija izdevās."
  Successfully deactivated: "Deaktivizēšana izdevās."
+ Successfully deleted %s reports for %s:
+  - "Veiksmīgi izdzēsts %s ziņojums par %s!"
+  - "Veiksmīgi izdzēsti %s ziņojumi par %s!"
  That account doesn_t exist: "Šis konts nepastāv."
  The %s command can_t be chained in that way, sorry: "Atvainojiet, komandu %s nevar pieķēdēt šādā veidā."
  The IP address is invalid: "IP adrese nav derīga!"

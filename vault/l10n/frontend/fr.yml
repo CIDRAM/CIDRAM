@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2023.12.22).
+# This file: French language data for the front-end (last modified: 2023.12.25).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -554,10 +554,11 @@ label:
  Component is provisional: "Le composant est provisoire."
  Component updates metadata: "Métadonnées pour la mise à jour des composants"
  Compress: "Compresser"
- Current data for %s: "Données actuelles pour «\_%s\_»."
  Copy to clipboard: "Copier dans le presse-papier"
+ Current data for %s: "Données actuelles pour «\_%s\_»."
  Current data: "Données actuelles."
  Default: "Défaut"
+ Delete previous reports: "Supprimer les rapports précédents"
  Deny: "Refuser."
  Dependencies: "Dépendances\_:"
  Difference: "Différence"
@@ -814,7 +815,8 @@ response:
  Failed to access %s: "Impossible d'accéder à «\_%s\_»\_!"
  Failed to activate: "Échec de l'activation\_!"
  Failed to deactivate: "Échec de la désactivation\_!"
- Failed to delete: "Échec du suppriment\_!"
+ Failed to delete any reports for %s: "Échec du supprimer des rapports pour %s\_!"
+ Failed to delete: "Échec du supprimer\_!"
  Failed to execute: "N'a pas réussi à s'exécuter\_!"
  Failed to import: "Échec de l'importation\_!"
  Failed to install: "Échec de l'installation\_!"
@@ -859,6 +861,9 @@ response:
  Successfully activated: "Activé avec succès."
  Successfully authenticated: "Authentifié avec succès."
  Successfully deactivated: "Désactivé avec succès."
+ Successfully deleted %s reports for %s:
+  - "%s rapport a été supprimé avec succès pour %s\_!"
+  - "%s rapports ont été supprimés avec succès pour %s\_!"
  That account doesn_t exist: "Ce compte n'existe pas."
  The %s command can_t be chained in that way, sorry: "La commande %s ne peut pas être enchaîné de cette façon, désolé."
  The IP address is invalid: "L'adresse IP n'est pas valide\_!"

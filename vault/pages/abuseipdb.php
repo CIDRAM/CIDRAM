@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Report to AbuseIPDB page (last modified: 2023.12.22).
+ * This file: Report to AbuseIPDB page (last modified: 2023.12.24).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -29,7 +29,7 @@ if (!isset($_POST['apikey']) && isset($this->Configuration['abuseipdb']['api_key
 }
 
 /** Populate inputs and textareas. */
-foreach (['address', 'comment', 'apikey'] as $Field) {
+foreach (['address', 'comment', 'apikey', 'endpoint'] as $Field) {
     $this->FE[$Field] = isset($_POST[$Field]) ? str_replace(['&', '<', '>', '"'], ['&amp;', '&lt;', '&gt;', '&quot;'], $_POST[$Field]) : '';
 }
 
@@ -59,21 +59,21 @@ if ($this->FE['address'] !== '') {
 
 /** Prepare to submit the report. */
 if (!isset($_POST['populate']) && $this->FE['address'] !== '' && $this->FE['apikey'] !== '' && $this->CIDRAM['TestResults'] !== 0) {
-    if (!isset($this->CIDRAM['AbuseIPDB-Recently Reported-' . $this->FE['address']])) {
-        $this->CIDRAM['AbuseIPDB-Recently Reported-' . $this->FE['address']] = $this->Cache->getEntry('AbuseIPDB-Recently Reported-' . $this->FE['address']);
-    }
-    $Categories = [];
-    for ($Iterator = 1; $Iterator < 24; $Iterator++) {
-        if (isset($_POST['CatSwitch' . $Iterator]) && $_POST['CatSwitch' . $Iterator] === 'on') {
-            $Categories[] = $Iterator;
+    if ($this->FE['endpoint'] === 'report') {
+        if (!isset($this->CIDRAM['AbuseIPDB-Recently Reported-' . $this->FE['address']])) {
+            $this->CIDRAM['AbuseIPDB-Recently Reported-' . $this->FE['address']] = $this->Cache->getEntry('AbuseIPDB-Recently Reported-' . $this->FE['address']);
         }
-    }
-    if (!count($Categories)) {
-        $this->FE['state_msg'] = $this->L10N->getString('response.Please select at least one category');
-    } else {
-        $Categories = implode(',', $Categories);
-        $Queue = true;
-        if ($this->CIDRAM['AbuseIPDB-Recently Reported-' . $this->FE['address']] === false) {
+        $Categories = [];
+        for ($Iterator = 1; $Iterator < 24; $Iterator++) {
+            if (isset($_POST['CatSwitch' . $Iterator]) && $_POST['CatSwitch' . $Iterator] === 'on') {
+                $Categories[] = $Iterator;
+            }
+        }
+        if (!count($Categories)) {
+            $this->FE['state_msg'] = $this->L10N->getString('response.Please select at least one category');
+        } else {
+            $Categories = implode(',', $Categories);
+            $Queue = true;
             $Status = $this->Request->request('https://api.abuseipdb.com/api/v2/report', [
                 'ip' => $this->FE['address'],
                 'categories' => $Categories,
@@ -106,23 +106,48 @@ if (!isset($_POST['populate']) && $this->FE['address'] !== '' && $this->FE['apik
                     $this->Cache->incEntry('Statistics-Reported-IPv6-Failed');
                 }
             }
+            if ($Queue) {
+                if (!isset($this->CIDRAM['AbuseIPDB-Report Queue'])) {
+                    $this->CIDRAM['AbuseIPDB-Report Queue'] = $this->Cache->getEntry('AbuseIPDB-Report Queue');
+                }
+                if (!is_string($this->CIDRAM['AbuseIPDB-Report Queue'])) {
+                    $this->CIDRAM['AbuseIPDB-Report Queue'] = '';
+                }
+                if (substr_count($this->CIDRAM['AbuseIPDB-Report Queue'], '|' . $this->FE['address'] . '|') < 10) {
+                    $this->CIDRAM['AbuseIPDB-Report Queue'] .= $this->Now . '|' . $this->FE['address'] . '|' . $Categories . '|' . $this->FE['comment'] . '||';
+                }
+            }
         }
-        if ($Queue) {
-            if (!isset($this->CIDRAM['AbuseIPDB-Report Queue'])) {
-                $this->CIDRAM['AbuseIPDB-Report Queue'] = $this->Cache->getEntry('AbuseIPDB-Report Queue');
-            }
-            if (!is_string($this->CIDRAM['AbuseIPDB-Report Queue'])) {
-                $this->CIDRAM['AbuseIPDB-Report Queue'] = '';
-            }
-            if (substr_count($this->CIDRAM['AbuseIPDB-Report Queue'], '|' . $this->FE['address'] . '|') < 10) {
-                $this->CIDRAM['AbuseIPDB-Report Queue'] .= $this->Now . '|' . $this->FE['address'] . '|' . $Categories . '|' . $this->FE['comment'] . '||';
-            }
+    } elseif ($this->FE['endpoint'] === 'delete') {
+        $Status = $this->Request->request('https://api.abuseipdb.com/api/v2/clear-address?ipAddress=' . urlencode($this->FE['address']), '', $this->Configuration['abuseipdb']['timeout_limit'], ['Key: ' . $this->FE['apikey'], 'Accept: application/json'], 0, 'DELETE');
+        if (preg_match('~\{"numReportsDeleted":(\d+)\}~', $Status, $Matches)) {
+            $Matches = (int)$Matches[1];
+            $this->FE['state_msg'] = sprintf(
+                $this->L10N->getPlural($Matches, 'response.Successfully deleted %s reports for %s'),
+                '<span class="txtRd">' . $this->NumberFormatter->format($Matches) . '</span>',
+                $this->FE['address']
+            );
+        } else {
+            $this->FE['state_msg'] = sprintf($this->L10N->getString('response.Failed to delete any reports for %s'), $this->FE['address']);
         }
+        $this->Cache->deleteEntry('AbuseIPDB-Recently Reported-' . $this->FE['address']);
+        unset($Matches, $this->CIDRAM['AbuseIPDB-Recently Reported-' . $this->FE['address']]);
+        if (!isset($this->CIDRAM['AbuseIPDB-Report Queue'])) {
+            $this->CIDRAM['AbuseIPDB-Report Queue'] = $this->Cache->getEntry('AbuseIPDB-Report Queue');
+        }
+        if (!is_string($this->CIDRAM['AbuseIPDB-Report Queue'])) {
+            $this->CIDRAM['AbuseIPDB-Report Queue'] = '';
+        }
+        if ($this->CIDRAM['AbuseIPDB-Report Queue'] !== '') {
+            $this->CIDRAM['AbuseIPDB-Report Queue'] = preg_replace('~\d+\|' . preg_quote($this->FE['address']) . '\|[\d,]+\|.*?\|\|~', '', $this->CIDRAM['AbuseIPDB-Report Queue']);
+        }
+    } else {
+        $this->FE['state_msg'] = $this->L10N->getString('response.Wrong endpoint');
     }
 }
 
 /** Cleanup. */
-unset($Iterator, $Field);
+unset($Categories, $Status, $Queue, $Iterator, $Field);
 
 /** Parse output. */
 $this->FE['FE_Content'] = $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_abuseipdb.html')), true);

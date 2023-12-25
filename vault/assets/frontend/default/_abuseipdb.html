@@ -54,7 +54,11 @@
         </div>
       </label>
       <div class="ng1">
-        <input type="submit" value="{label.Report to AbuseIPDB}" /><br />
+        <div style="display:grid;margin:auto min(38px, 1vw * 1.6);grid-template-columns:auto;contain:paint">
+          <div class="gridboxitem gridHA"><span class="s gridlabel"><input type="radio" class="auto" name="endpoint" value="report" onchange="javascript:document.getElementById('reportSubmitButton').value=this.checked?'{label.Report to AbuseIPDB}':'{label.Delete previous reports}'" id="endpointReport" checked /><label for="endpointReport">{label.Report to AbuseIPDB}</label></span></div>
+          <div class="gridboxitem gridHB"><span class="s gridlabel"><input type="radio" class="auto" name="endpoint" value="delete" onchange="javascript:document.getElementById('reportSubmitButton').value=this.checked?'{label.Delete previous reports}':'{label.Report to AbuseIPDB}'" id="endpointDelete" /><label for="endpointDelete">{label.Delete previous reports}</label></span></div>
+        </div><br />
+        <input type="submit" id="reportSubmitButton" value="{label.Report to AbuseIPDB}" class="auto" /><br />
         <br />
         <em>{label.Please abide by the AbuseIPDB reporting policy}</em>
       </div>

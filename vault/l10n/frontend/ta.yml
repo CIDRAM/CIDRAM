@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Tamil language data for the front-end (last modified: 2023.12.22).
+# This file: Tamil language data for the front-end (last modified: 2023.12.25).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -545,10 +545,11 @@ label:
  Component is provisional: "கூறு தற்காலிகமானது."
  Component updates metadata: "கூறு புதுப்பிப்புகள் மெட்டாடேட்டா"
  Compress: "சுருக்கவும்"
- Current data for %s: ""%s"க்கான தற்போதைய தரவு."
  Copy to clipboard: "கிளிப்போர்டுக்கு நகலெடுக்கவும்"
+ Current data for %s: ""%s"க்கான தற்போதைய தரவு."
  Current data: "தற்போதைய தரவு."
  Default: "இயல்புநிலை"
+ Delete previous reports: "முந்தைய அறிக்கைகளை நீக்கவும்"
  Deny: "மறுக்கவும்."
  Dependencies: "சார்புநிலைகள்:"
  Difference: "வேறுபாடு"
@@ -803,6 +804,7 @@ response:
  Failed to access %s: ""%s" ஐ அணுகுவதில் தோல்வி!"
  Failed to activate: "செயல்படுத்தும் தோல்வி!"
  Failed to deactivate: "செயலிழக்க தோல்வி!"
+ Failed to delete any reports for %s: "%s க்கான எந்த அறிக்கையையும் நீக்க முடியவில்லை!"
  Failed to delete: "நீக்குவதில் தோல்வி!"
  Failed to execute: "செயல்படுத்த தோல்வி!"
  Failed to import: "இறக்குமதி செய்ய முடியவில்லை!"
@@ -848,6 +850,9 @@ response:
  Successfully activated: "செயல்படுத்தும் வெற்றி."
  Successfully authenticated: "வெற்றிகரமாக அங்கீகரிக்கப்பட்டது."
  Successfully deactivated: "வெற்றிகரமாக செயலிழக்க செய்யப்பட்டது."
+ Successfully deleted %s reports for %s:
+  - "%2$sக்கான %1$s அறிக்கை வெற்றிகரமாக நீக்கப்பட்டது!"
+  - "%2$sக்கான %1$s அறிக்கைகள் வெற்றிகரமாக நீக்கப்பட்டன!"
  That account doesn_t exist: "அந்த கணக்கு இல்லை."
  The %s command can_t be chained in that way, sorry: "%s கட்டளையை அந்த வகையில் சங்கிலியால் பிணைக்க முடியாது, மன்னிக்கவும்."
  The IP address is invalid: "ஐபி முகவரி தவறானது!"

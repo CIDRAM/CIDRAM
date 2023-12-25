@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hebrew language data for the front-end (last modified: 2023.12.01).
+# This file: Hebrew language data for the front-end (last modified: 2023.12.25).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,6 +24,32 @@
 # requests, ask. I can help.
 ##/
 
+Abuse category:
+ Bad web bot: "בוט אינטרנט גרוע (מחפש כתובות אימייל ותוכן, סורקים שאינם מכבדים את robots.txt, בקשות מוגזמות, זיוף של סוכן משתמש, וכו')."
+ Brute-force attacks: "התקפות בכוח גס (התקפות בכוח גס על כניסות לדפי אינטרנט, SMTP, RDP, וכו')."
+ Categories (at least one is required): "קטגוריות (דרושה לפחות אחת)"
+ CMS blog comment spam: "תגובות ספאם בבלוג CMS."
+ Conjunctive category: "קטגוריית חיבורים (שימוש בשילוב עם קטגוריות אחרות, ספציפיות יותר)."
+ DDoS attacks: "התקפות DDoS (בדרך כלל חלק מרשת בוט)."
+ DNS compromise: "פגיעה ב-DNS (שינוי רשומות DNS וכתוצאה מכך ניתוב מחדש לא תקין)."
+ DNS poisoning: "הרעלת DNS."
+ Email sender spoofing: "זיוף של שולח הדוא"ל."
+ Email spam: "דואר זבל בדוא"ל (תוכן דואר זבל, קבצים מצורפים נגועים, הודעות פישינג, וכו')."
+ Exploited host: "מארח מנוצל (המארח כנראה נגוע בתוכנה זדונית ומשמש להתקפות אחרות או לארח תוכן זדוני)."
+ FTP brute-force attacks: "התקפות FTP בכוח גס."
+ Fraudulent VoIP: "VoIP הונאה."
+ Fraudulent orders: "הזמנה הונאה."
+ Hacking: "פריצה."
+ IoT targeted: "שימוש לרעה ממוקד IoT. כלול מידע על איזה סוג של מכשיר היה ממוקד בהערות."
+ Open proxy, open relay, or tor endpoint: "פרוקסי פתוח, ממסר פתוח, או נקודת קצה tor."
+ Phishing: "אתרי פישינג ו/או אימייל."
+ Ping of death: "פינג של מוות (חבילת IP גדולה מדי)."
+ Port scans: "סריקות יציאות (סריקה לאיתור יציאות פתוחות ושירותים פגיעים)."
+ SQL injection: "הזרקת SQL."
+ SSH abuse: "שימוש לרעה ב-SSH."
+ VPN IP: "VPN IP."
+ Web spam: "ספאם באינטרנט (ספאם של הערות/פורום, דואר זבל מפנה HTTP, או ספאם אחר של CMS)."
+ Webapp attacks: "התקפות של אפליקציות אינטרנט (חיפוש אחר פגיעויות או ניצול, או ניסיון לנצל אפליקציות אינטרנט, CMS, או פתרונות מסחר אלקטרוני מותקנים, למשל, WordPress, Drupal, phpMyAdmin, וכו')."
 Extended Description:
  AbuseIPDB module: "חוסם בקשות מכתובות IP הרשומות ב-AbuseIPDB."
  BGPView module: "מנף את ה-{{Links.BGPView}} API כדי לספק מתקן חיפוש ASN וקוד מדינה עבור CIDRAM, המאפשרת חסימה או אישור של ASN ומדינות באמצעות תצורת CIDRAM, ומספקת אמצעי לאימות רשתות חברתיות לאימות בקשות של פייסבוק. (אם אתה משתמש במודול זה, לא תצטרך להשתמש במודול IP-API, מכיוון שהם משרתים את אותה מטרה)."
@@ -297,6 +323,7 @@ confirm:
 field:
  %s File: "קובץ %s"
  2FA code: "קוד 2FA"
+ API key: "מפתח API"
  Activate: "להפעיל"
  Add more conditions: "הוסף עוד תנאים"
  Add to tracking: "הוסף למעקב"
@@ -497,6 +524,7 @@ label:
  CIDRAM disk usage: "שימוש בדיסק CIDRAM:"
  CIDRAM version used: "גרסת CIDRAM בשימוש:"
  Cache data and temporary files: "מטמון נתונים וקבצים זמניים"
+ Characters left: "נשארו דמויות"
  Checkbox: "תיבת סימון"
  Checksum after: "סכום בדיקה לאחר"
  Checksum before: "סכום בדיקה לפני"
@@ -509,10 +537,11 @@ label:
  Component is provisional: "הרכיב הוא על תנאי."
  Component updates metadata: "רכיב מעדכן מטא נתונים"
  Compress: "לדחוס"
- Current data for %s: "נתונים נוכחיים עבור "%s"."
  Copy to clipboard: "העתק ללוח"
+ Current data for %s: "נתונים נוכחיים עבור "%s"."
  Current data: "נתונים נוכחיים."
  Default: "סטנדרטי"
+ Delete previous reports: "מחק דוחות קודמים"
  Deny: "הכחש."
  Dependencies: "תלות:"
  Difference: "הבדל"
@@ -571,6 +600,7 @@ label:
  PHP version used: "גרסת PHP בשימוש:"
  Page request completed in %s seconds: "בקשת הדף הושלמה תוך %s שניות."
  Paginate: "עמוד בעמודים"
+ Please abide by the AbuseIPDB reporting policy: "נא לציית <a target="reporting-policy" hreflang="en-US" href="https://www.abuseipdb.com/reporting-policy">למדיניות הדיווח</a> של AbuseIPDB."
  Please log in to continue: "אנא התחבר על מנת להמשיך."
  Preferred source: "מקור מועדף:"
  Previous: "קודם:"
@@ -766,11 +796,13 @@ response:
  Failed to access %s: "הגישה ל-"%s" נכשלה!"
  Failed to activate: "ההפעלה נכשלה!"
  Failed to deactivate: "השבתה נכשלה!"
+ Failed to delete any reports for %s: "נכשל מחיקת הדוחות עבור %s!"
  Failed to delete: "המחיקה נכשלה!"
  Failed to execute: "נכשל בביצוע!"
  Failed to import: "היבוא נכשל!"
  Failed to install: "ההתקנה נכשל!"
  Failed to rename: "שינוי השם נכשל!"
+ Failed to report the IP address, %s: "%s (כתובת ה-IP הנתונה), לא דווח!"
  Failed to update auxiliary rules: "עדכון כללי העזר נכשל!"
  Failed to update configuration: "עדכון התצורה נכשל!"
  Failed to update statistics: "עדכון הסטטיסטיקה נכשל!"
@@ -787,6 +819,7 @@ response:
  I can_t write to %s, sorry: "אני לא יכול לכתוב ל"%s", מצטער."
  I don_t understand that command, sorry: "אני לא מבין את הפקודה הזאת, סליחה."
  Incorrect 2FA code entered: "הוזן קוד 2FA שגוי. אימות נכשל."
+ Invalid API key: "מפתח API לא חוקי!"
  Invalid password: "כישלון התחברות! סיסמה שגויה!"
  New auxiliary rule, %s, created successfully: "כלל עזר חדש, "%s", נוצר בהצלחה."
  Not available at the upstream: "לא זמין במעלה הזרם."
@@ -796,6 +829,7 @@ response:
  Password field empty: "שדה הסיסמה ריק!"
  Password successfully updated: "הסיסמה עודכנה בהצלחה!"
  Permissions not adequate to perform asynchronous requests:: "ההרשאות אינן מתאימות לביצוע בקשות אסינכרוניות. נסה להיכנס שוב."
+ Please select at least one category: "אנא בחר לפחות קטגוריה אחת!"
  Ready to install: "מוכן להתקין."
  Redirected: "הופנה מחדש"
  Removed %s from tracking: "הוסר %s מהמעקב."
@@ -808,8 +842,15 @@ response:
  Successfully activated: "הופעל בהצלחה."
  Successfully authenticated: "הצלחת האימות."
  Successfully deactivated: "הושבת בהצלחה."
+ Successfully deleted %s reports for %s:
+  - "נמחק בהצלחה %s דוח עבור %s!"
+  - "נמחקו בהצלחה %s דוחות עבור %s!"
  That account doesn_t exist: "החשבון הזה לא קיים."
  The %s command can_t be chained in that way, sorry: "לא ניתן לשרשר את הפקודה %s בצורה כזו, סליחה."
+ The IP address is invalid: "כתובת ה-IP לא חוקית!"
+ The IP address, %s, successfully reported: "%s (כתובת ה-IP הנתונה) דווח בהצלחה!"
+ The report has not been enqueued: "הדוח לא הועמד בתור."
+ The same IP address can be reported only once every 15 minutes: "ניתן לדווח על אותה כתובת IP רק אחת ל-15 דקות. הדוח הוצב בתור, ו-CIDRAM ינסה להגיש את הדוח במועד מאוחר יותר."
  There aren_t currently any auxiliary rules: "כרגע אין כללי עזר."
  There_s nothing to analyse, sorry: "אין מה לנתח, סליחה."
  There_s nothing to print, sorry: "אין מה להדפיס, סליחה."
@@ -936,6 +977,7 @@ tip:
  Rate limiting is currently disabled: "הערה: הגבלת התעריפים מושבתת כעת, אך ניתן להפעיל אותה דרך דף התצורה."
  Sections List: "שלום, {username}.<br />דף זה מפרט אילו קטעים קיימים בקובצי החתימה הפעילים כעת."
  See the documentation: "עיין <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external">בתיעוד</a> למידע על הנחיות התצורה השונות ומטרותיהן."
+ Server log snippets, abuse details, etc: "קטעי יומן שרת, פרטי שימוש לרעה, וכו'."
  Signature File Fixer: "שלום, {username}.<br />דף זה מספק דרך לזהות ולתקן בעיות פוטנציאליות בקובצי חתימה."
  Specify a value, or leave blank to disregard: "ציין ערך, או השאר ריק כדי להתעלם."
  Statistics tracking is currently disabled: "הערה: מעקב סטטיסטיקה מושבת כעת, אך ניתן להפעילו דרך דף התצורה."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Farsi language data for the front (last modified: 2023.12.01).
+# This file: Farsi language data for the front (last modified: 2023.12.25).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,6 +24,8 @@
 # requests, ask. I can help.
 ##/
 
+Abuse category:
+ Bad web bot: "ربات وب بد (خراش دادن برای آدرس های ایمیل و محتوا، خزنده هایی که به robots.txt احترام نمی گذارند، درخواست های بیش از حد، جعل های عامل کاربر، و غیره)."
 Extended Description:
  AbuseIPDB module: "درخواست های IP های فهرست شده در AbuseIPDB را مسدود می کند."
  BGPView module: "از API {{Links.BGPView}} برای ارائه تسهیلات جستجوی ASN و کد کشور برای CIDRAM استفاده می کند، این امکان را می دهد که ASN ها و کشورها از طریق پیکربندی CIDRAM مسدود یا در لیست سفید قرار گیرند و ابزاری برای تأیید شبکه های اجتماعی برای تأیید درخواست های فیس بوک فراهم شود. (اگر از این ماژول استفاده می‌کنید، نیازی به استفاده از ماژول IP-API نخواهید داشت، زیرا هدف آنها یکسان است)."
@@ -297,6 +299,7 @@ confirm:
 field:
  %s File: "فایل %s"
  2FA code: "کد 2FA"
+ API key: "کلید API"
  Activate: "فعال کنید"
  Add more conditions: "شرایط بیشتری را اضافه کنید"
  Add to tracking: "به ردیابی اضافه کنید"
@@ -501,6 +504,7 @@ label:
  CIDRAM disk usage: "استفاده از دیسک CIDRAM:"
  CIDRAM version used: "نسخه CIDRAM استفاده شده:"
  Cache data and temporary files: "داده های کش و فایل های موقت"
+ Characters left: "کاراکترهای باقی مانده است"
  Checkbox: "چک باکس"
  Checksum after: "چک سام بعد از"
  Checksum before: "چک سام قبل"
@@ -513,10 +517,11 @@ label:
  Component is provisional: "مؤلفه به شرط فعال است."
  Component updates metadata: "متادیتا به روز رسانی مؤلفه"
  Compress: "فشرده کردن"
- Current data for %s: "داده های فعلی برای "%s"."
  Copy to clipboard: "کپی به کلیپ بورد"
+ Current data for %s: "داده های فعلی برای "%s"."
  Current data: "داده های فعلی."
  Default: "پیش فرض"
+ Delete previous reports: "حذف گزارش های قبلی"
  Deny: "تکذیب کرد."
  Dependencies: "وابستگی ها:"
  Difference: "تفاوت"
@@ -571,6 +576,7 @@ label:
  PHP version used: "نسخه PHP استفاده شده:"
  Page request completed in %s seconds: "درخواست صفحه در %s ثانیه تکمیل شد."
  Paginate: "صفحه بندی کنید"
+ Please abide by the AbuseIPDB reporting policy: "لطفاً از <a target="reporting-policy" hreflang="en-US" href="https://www.abuseipdb.com/reporting-policy">خط مشی گزارش دهی</a> AbuseIPDB پیروی کنید."
  Please log in to continue: "لطفا برای ادامه وارد شوید."
  Preferred source: "منبع برگزیده:"
  Previous: "قبلی:"
@@ -766,11 +772,13 @@ response:
  Failed to access %s: "دسترسی به «%s» ناموفق بود!"
  Failed to activate: "فعال ناموفق بود!"
  Failed to deactivate: "غیرفعال کردن ناموفق بود!"
+ Failed to delete any reports for %s: "هیچ گزارشی برای %s حذف نشد!"
  Failed to delete: "حذف ناموفق بود!"
  Failed to execute: "اجرا نشد!"
  Failed to import: "واردات انجام نشد!"
  Failed to install: "نصب ناموفق بود!"
  Failed to rename: "تغییر نام ناموفق بود!"
+ Failed to report the IP address, %s: "%s (آدرس IP داده شده)، گزارش نشد!"
  Failed to update auxiliary rules: "قوانین کمکی به روز نشد!"
  Failed to update configuration: "پیکربندی به روز نشد!"
  Failed to update statistics: "آمار به روز نشد!"
@@ -787,6 +795,7 @@ response:
  I can_t write to %s, sorry: "من نمی توانم برای «%s» بنویسم، متاسفم."
  I don_t understand that command, sorry: "من این دستور را نمی فهمم، متاسفم."
  Incorrect 2FA code entered: "کد 2FA اشتباه وارد شده است. احراز هویت ناموفق بود."
+ Invalid API key: "کلید API نامعتبر است!"
  Invalid password: "ورود ناموفق! رمز عبور نامعتبر!"
  New auxiliary rule, %s, created successfully: "قوانین کمکی جدید، «%s»، با موفقیت ایجاد شد."
  Not available at the upstream: "در بالادست در دسترس نیست."
@@ -796,6 +805,7 @@ response:
  Password field empty: "فیلد رمز عبور خالی است!"
  Password successfully updated: "رمز عبور با موفقیت به روز شد!"
  Permissions not adequate to perform asynchronous requests:: "مجوزها برای انجام درخواست های ناهمزمان کافی نیستند. سعی کنید دوباره وارد سیستم شوید."
+ Please select at least one category: "لطفا حداقل یک دسته را انتخاب کنید!"
  Ready to install: "آماده نصب."
  Redirected: "تغییر مسیر داد"
  Removed %s from tracking: "%s از ردیابی حذف شد."
@@ -808,8 +818,13 @@ response:
  Successfully activated: "با موفقیت فعال شد."
  Successfully authenticated: "با موفقیت احراز هویت شد."
  Successfully deactivated: "با موفقیت غیرفعال شد."
+ Successfully deleted %s reports for %s: "%s گزارش برای %s با موفقیت حذف شد!"
  That account doesn_t exist: "آن حساب وجود ندارد."
  The %s command can_t be chained in that way, sorry: "فرمان %s را نمی توان به این شکل زنجیره ای کرد، متاسفم."
+ The IP address is invalid: "آدرس IP نامعتبر است!"
+ The IP address, %s, successfully reported: "%s (آدرس IP داده شده) با موفقیت گزارش شد!"
+ The report has not been enqueued: "گزارش در صف قرار نمی گیرد."
+ The same IP address can be reported only once every 15 minutes: "آدرس IP یکسان فقط هر 15 دقیقه یک بار قابل گزارش است. گزارش در صف قرار داده شده است و CIDRAM تلاش خواهد کرد تا گزارش را در زمان دیگری ارسال کند."
  There aren_t currently any auxiliary rules: "در حال حاضر هیچ قوانین کمکی وجود ندارد."
  There_s nothing to analyse, sorry: "چیزی برای تجزیه و تحلیل وجود ندارد، متاسفم."
  There_s nothing to print, sorry: "چیزی برای چاپ وجود ندارد، متاسفم."
@@ -908,6 +923,7 @@ tip:
  Rate limiting is currently disabled: "توجه داشته باشید: محدودیت های نرخ در حال حاضر غیرفعال است، اما می توان آن را از طریق صفحه پیکربندی فعال کرد."
  Sections List: "سلام، {username}.<br />این صفحه فهرست می کند که کدام بخش ها در فایل های امضای فعال موجود هستند."
  See the documentation: "برای اطلاعات در مورد دستورالعمل های پیکربندی مختلف و اهداف آنها به <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external">مستندات</a> مراجعه کنید."
+ Server log snippets, abuse details, etc: "تکه‌های گزارش سرور، جزئیات سوء استفاده و غیره."
  Signature File Fixer: "سلام، {username}.<br />ثابت کننده فایل امضا راهی برای شناسایی و رفع مشکلات احتمالی در فایل های امضا ارائه می دهد."
  Specify a value, or leave blank to disregard: "مقداری را مشخص کنید، یا خالی بگذارید تا نادیده گرفته شود."
  Statistics tracking is currently disabled: "توجه داشته باشید: ردیابی آمار در حال حاضر غیرفعال است، اما می توان آن را از طریق صفحه پیکربندی فعال کرد."

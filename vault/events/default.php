@@ -8,22 +8,22 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Default event handlers (last modified: 2023.09.19).
+ * This file: Default event handlers (last modified: 2023.12.24).
  */
 
 /**
  * Writes to the standard log file.
  *
- * @return bool True on success; False on failure.
+ * @return void
  */
-$this->Events->addHandler('writeToLog', function (): bool {
+$this->Events->addHandler('writeToLog', function (): void {
     /** Guard. */
     if (
         $this->Configuration['logging']['standard_log'] === '' ||
         !empty($this->CIDRAM['Suppress logging']) ||
         !($Filename = $this->buildPath($this->Vault . $this->Configuration['logging']['standard_log']))
     ) {
-        return false;
+        return;
     }
 
     $Truncate = $this->readBytes($this->Configuration['logging']['truncate']);
@@ -33,22 +33,21 @@ $this->Events->addHandler('writeToLog', function (): bool {
 
     if (!is_resource($File = fopen($Filename, $WriteMode))) {
         trigger_error('The "writeToLog" event failed to open "' . $Filename . '" for writing.');
-        return false;
+        return;
     }
     fwrite($File, $Data);
     fclose($File);
     if ($WriteMode === 'wb') {
         $this->logRotation($this->Configuration['logging']['standard_log']);
     }
-    return true;
 });
 
 /**
  * Writes to the Apache-style log file.
  *
- * @return bool True on success; False on failure.
+ * @return void
  */
-$this->Events->addHandler('writeToLog', function (): bool {
+$this->Events->addHandler('writeToLog', function (): void {
     /** Guard. */
     if (
         empty($this->BlockInfo) ||
@@ -56,7 +55,7 @@ $this->Events->addHandler('writeToLog', function (): bool {
         !empty($this->CIDRAM['Suppress logging']) ||
         !($Filename = $this->buildPath($this->Vault . $this->Configuration['logging']['apache_style_log']))
     ) {
-        return false;
+        return;
     }
 
     $Data = sprintf(
@@ -76,22 +75,21 @@ $this->Events->addHandler('writeToLog', function (): bool {
 
     if (!is_resource($File = fopen($Filename, $WriteMode))) {
         trigger_error('The "writeToLog" event failed to open "' . $Filename . '" for writing.');
-        return false;
+        return;
     }
     fwrite($File, $Data);
     fclose($File);
     if ($WriteMode === 'wb') {
         $this->logRotation($this->Configuration['logging']['apache_style_log']);
     }
-    return true;
 });
 
 /**
  * Writes to the serialised log file.
  *
- * @return bool True on success; False on failure.
+ * @return void
  */
-$this->Events->addHandler('writeToLog', function (): bool {
+$this->Events->addHandler('writeToLog', function (): void {
     /** Guard. */
     if (
         empty($this->BlockInfo) ||
@@ -99,7 +97,7 @@ $this->Events->addHandler('writeToLog', function (): bool {
         !empty($this->CIDRAM['Suppress logging']) ||
         !($Filename = $this->buildPath($this->Vault . $this->Configuration['logging']['serialised_log']))
     ) {
-        return false;
+        return;
     }
 
     $BlockInfo = $this->BlockInfo;
@@ -115,28 +113,27 @@ $this->Events->addHandler('writeToLog', function (): bool {
 
     if (!is_resource($File = fopen($Filename, $WriteMode))) {
         trigger_error('The "writeToLog" event failed to open "' . $Filename . '" for writing.');
-        return false;
+        return;
     }
     fwrite($File, serialize($BlockInfo) . "\n");
     fclose($File);
     if ($WriteMode === 'wb') {
         $this->logRotation($this->Configuration['logging']['serialised_log']);
     }
-    return true;
 });
 
 /**
  * Prepares any caught errors for writing to the default error log.
  *
- * @return bool True on success; False on failure.
+ * @return void
  */
-$this->Events->addHandler('error', function (string $Data): bool {
+$this->Events->addHandler('error', function (string $Data): void {
     /** Guard. */
     if (
         $this->Configuration['logging']['error_log'] === '' ||
         !isset($this->CIDRAM['Stage'], $this->CIDRAM['Stages'], $this->CIDRAM['Stages'][$this->CIDRAM['Stage'] . ':LogErrors'])
     ) {
-        return false;
+        return;
     }
 
     if (!isset($this->CIDRAM['Pending-Error-Log-Data'])) {
@@ -167,15 +164,14 @@ $this->Events->addHandler('error', function (string $Data): bool {
         $Message .= sprintf(' Eep.. Something went wrong during "%s".', $this->CIDRAM['Stage']);
     }
     $this->CIDRAM['Pending-Error-Log-Data'] .= $Message . "\n";
-    return true;
 });
 
 /**
  * Writes to the default error log.
  *
- * @return bool True on success; False on failure.
+ * @return void
  */
-$this->Events->addHandler('final', function (): bool {
+$this->Events->addHandler('final', function (): void {
     /** Cleanup. */
     unset($this->CIDRAM['Stage']);
 
@@ -185,7 +181,7 @@ $this->Events->addHandler('final', function (): bool {
         $this->Configuration['logging']['error_log'] === '' ||
         !($File = $this->buildPath($this->Vault . $this->Configuration['logging']['error_log']))
     ) {
-        return false;
+        return;
     }
 
     $Truncate = $this->readBytes($this->Configuration['logging']['truncate']);
@@ -198,29 +194,28 @@ $this->Events->addHandler('final', function (): bool {
     }
 
     if (!is_resource($Handle = fopen($File, $WriteMode))) {
-        return false;
+        return;
     }
     fwrite($Handle, $Data);
     fclose($Handle);
     if ($WriteMode === 'wb') {
         $this->logRotation($this->Configuration['logging']['error_log']);
     }
-    return true;
 });
 
 /**
  * Writes to the signatures update event log.
  *
  * @param string $Data What to write.
- * @return bool True on success; False on failure.
+ * @return void
  */
-$this->Events->addHandler('writeToSignaturesUpdateEventLog', function (string $Data): bool {
+$this->Events->addHandler('writeToSignaturesUpdateEventLog', function (string $Data): void {
     /** Guard. */
     if (
         $this->Configuration['frontend']['signatures_update_event_log'] === '' ||
         !($UpdatesLog = $this->buildPath($this->Vault . $this->Configuration['frontend']['signatures_update_event_log']))
     ) {
-        return false;
+        return;
     }
 
     /** Add lines based on whether the path is shared with other logs. */
@@ -234,22 +229,21 @@ $this->Events->addHandler('writeToSignaturesUpdateEventLog', function (string $D
     $WriteMode = (!file_exists($UpdatesLog) || $Truncate > 0 && filesize($UpdatesLog) >= $Truncate) ? 'wb' : 'ab';
     if (!is_resource($Handle = fopen($UpdatesLog, $WriteMode))) {
         trigger_error('The "writeToSignaturesUpdateEventLog" event failed to open "' . $UpdatesLog . '" for writing.');
-        return false;
+        return;
     }
     fwrite($Handle, $Data);
     fclose($Handle);
     if ($WriteMode === 'wb') {
         $this->logRotation($this->Configuration['frontend']['signatures_update_event_log']);
     }
-    return true;
 });
 
 /**
  * Build default log paths.
  *
- * @return true
+ * @return void
  */
-$this->Events->addHandler('isLogFile', function (): bool {
+$this->Events->addHandler('isLogFile', function (): void {
     if (!isset($this->CIDRAM['LogPatterns'])) {
         $this->CIDRAM['LogPatterns'] = [];
     }
@@ -280,7 +274,6 @@ $this->Events->addHandler('isLogFile', function (): bool {
     if ($this->Configuration['hcaptcha']['hcaptcha_log'] !== '') {
         $this->CIDRAM['LogPatterns'][] = $this->buildLogPattern($this->Configuration['hcaptcha']['hcaptcha_log'], true);
     }
-    return true;
 });
 
 /**
@@ -288,16 +281,16 @@ $this->Events->addHandler('isLogFile', function (): bool {
  *
  * @param string $Data What to write.
  * @param array $Misc Other data passed from the events handler.
- * @return bool True on success; False on failure.
+ * @return void
  */
-$this->Events->addHandler('writeToReportLog', function (string $Data, array $Misc): bool {
+$this->Events->addHandler('writeToReportLog', function (string $Data, array $Misc): void {
     /** Guard. */
     if (
         !isset($Misc[0]) ||
         $this->Configuration['logging']['report_log'] === '' ||
         !($Filename = $this->buildPath($this->Vault . $this->Configuration['logging']['report_log']))
     ) {
-        return false;
+        return;
     }
 
     $Data = sprintf(
@@ -317,12 +310,11 @@ $this->Events->addHandler('writeToReportLog', function (string $Data, array $Mis
     $WriteMode = (!file_exists($Filename) || $Truncate > 0 && filesize($Filename) >= $Truncate) ? 'wb' : 'ab';
     if (!is_resource($File = fopen($Filename, $WriteMode))) {
         trigger_error('The "writeToReportLog" event failed to open "' . $Filename . '" for writing.');
-        return false;
+        return;
     }
     fwrite($File, $Data);
     fclose($File);
     if ($WriteMode === 'wb') {
         $this->logRotation($this->Configuration['logging']['report_log']);
     }
-    return true;
 });

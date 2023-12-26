@@ -133,8 +133,8 @@ config:
  abuseipdb_api_key: &EnterAPIKey "Voer jou API-sleutel hier in."
  abuseipdb_build_profiles_from_usage_type: "Bou profiele met die gebruikstipe wat deur die API teruggestuur word? False = Nee. True = Ja. Verstek = True."
  abuseipdb_max_age_in_days: "Die maksimum ouderdom in dae waarvoor verslae oorweeg sal word wanneer opsoek gedoen word (moet 'n getal tussen 1 en 365 wees). Verstek = 365."
- abuseipdb_max_cs_for_captcha: "Die maksimum vertrouetelling wat toegelaat word om 'n CAPTCHA bedien te word (moet 'n getal tussen 0 en 100 wees). Verstek = 10."
- abuseipdb_minimum_confidence_score: "Die minimum vertrouetelling wat vereis word sodat CIDRAM 'n IP-adres kan blokkeer (moet 'n getal tussen 0 en 100 wees). Verstek = 50."
+ abuseipdb_max_cs_for_captcha: "Die maksimum vertroue telling wat toegelaat word om 'n CAPTCHA bedien te word (moet 'n getal tussen 0 en 100 wees). Verstek = 10."
+ abuseipdb_minimum_confidence_score: "Die minimum vertroue telling wat vereis word sodat CIDRAM 'n IP-adres kan blokkeer (moet 'n getal tussen 0 en 100 wees). Verstek = 50."
  abuseipdb_minimum_total_reports: "Die minimum aantal verslae wat vereis word sodat CIDRAM 'n IP-adres kan blokkeer. Verstek = 1."
  abuseipdb_report_back: "Laat CIDRAM toe om bespeurde slegte gedrag terug te rapporteer na AbuseIPDB met jou API-sleutel?"
  bgpview: "Konfigurasie vir die BGPView module (bied 'n ASN en landkode opsoekfasiliteit vir CIDRAM)."
@@ -752,7 +752,7 @@ macro:
 max_login_attempts_exceeded: "Maksimum aantal intekenpogings oorskry; Toegang geweier."
 msg_subject_2fa: "Tweefaktor-verifikasie"
 msg_template_2fa: |
- <center><p><br />
+ <center><p>Hallo, %s.<br /><br />
  Jou tweefaktor-verifikasiekode om by die CIDRAM se front-end in te teken:</p>
  <h1>%s</h1>
  <p>Hierdie kode verval oor 10 minute.</p></center>

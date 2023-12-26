@@ -75,7 +75,7 @@ Extended Description:
  PHPMailer: "Requis pour l'utilisation de toute fonctionnalité impliquant l'envoi d'e-mails.<br />{{Links.PHPMailer.PHPMailer}} est disponible via la licence {{Links.PHPMailer.License}}."
  Project Honeypot module: "Bloque les requêtes des adresses IP répertoriées dans Project Honeypot."
  Protocol blocker module: "Fournit la possibilité de bloquer des protocoles de requête spécifiques via la configuration (par exemple, HTTP/0.9, HTTP/1.1, SPDY/3.0, etc). Remarque\_: N'aura aucun effet pour les sites Web qui acheminent via des services qui réécrivent les requêtes pour tous utiliser exactement le même protocole, tel que Cloudflare."
- Referrer spam module: "Le blocage basé sur le spam référent ne procure généralement aucun avantage de sécurité significatif, mais dans certains cas, cela pourrait être utile à certains utilisateurs pour rassembler plus d'informations sur les requêtes et pour pouvoir les signaler."
+ Referrer spam module: "Le blocage basé sur le spam référent ne procure généralement aucun avantage de sécurité significatif, mais dans certains cas, cela pourrait être utile à certains utilisateurs pour rassembler plus d'informations sur les requêtes et pour pouvoir les rapporter."
  Stop Forum Spam module: "Protège l'enregistrement et les pages de connexion contre les adresses IP répertoriées par SFS."
  Tor blocker module: "Interdit l'accès à partir des nœuds de sortie Tor via les recherches DNSEL (le supporte IPv4 et IPv6)."
 Name:
@@ -492,7 +492,7 @@ Some useful links: |
            <li>{{Links.BGPView}} – Obtenir les CIDR des ASNs, Déterminer les relations entre ASNs, découvrez les ASN basés sur les noms de réseaux, etc.</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar par Qrator</a> – Outil utile pour vérifier la connectivité des ASN ainsi pour diverses autres informations sur les ASNs.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Le projet Spamhaus</a> – Affiche les rapports concernant les taux d'infection par botnet pour les ASN.</li>
-           <li>{{Links.AbuseIPDB}} – Maintient une base de données des IPs abusives connues ; Fournit une API pour vérifier et signaler les IPs.</li>
+           <li>{{Links.AbuseIPDB}} – Maintient une base de données des IPs abusives connues ; Fournit une API pour vérifier et rapporter les IPs.</li>
            <li>{{Links.IP-API}} – Obtenez des informations sur les adresses IP ou les noms d'hôte tels que le code du pays, le nom de la région, la longitude, la latitude, le nom de l'organisation, etc.</li>
          </ul>
        </li>
@@ -619,13 +619,13 @@ label:
   - "Requête de page complétée en %s seconde."
   - "Requête de page complétée en %s secondes."
  Paginate: "Paginer"
- Please abide by the AbuseIPDB reporting policy: "Veuillez respecter la <a target="reporting-policy" hreflang="en-US" href="https://www.abuseipdb.com/reporting-policy">politique de signalement</a> d'AbuseIPDB."
+ Please abide by the AbuseIPDB reporting policy: "Veuillez respecter la <a target="reporting-policy" hreflang="en-US" href="https://www.abuseipdb.com/reporting-policy">politique de rapportement</a> d'AbuseIPDB."
  Please log in to continue: "Merci de vous connecter pour continuer."
  Preferred source: "Source préférée\_:"
  Previous: "Précédente\_:"
  Range tools: "Outils des gammes"
  Remember: "Rappeler"
- Report to AbuseIPDB: "Signalez-le à AbuseIPDB"
+ Report to AbuseIPDB: "Rapportez-le à AbuseIPDB"
  Repository backup locations: "Emplacements de sauvegarde du référentiel (en cas d'urgence, ou si tout le reste échoue)\_:"
  Requests banned: "Requêtes interdites"
  Requests blocked: "Requêtes bloquées"
@@ -992,6 +992,7 @@ tip:
  Range Tables: "Bonjour, {username}.<br />Cette page affiche des informations statistiques sur les plages IP couvertes par les fichiers de signatures actuellement actifs."
  Rate Limiting: "Bonjour, {username}.<br />Cette page affiche l'utilisation et la disponibilité actuelles des quotas en ce qui concerne la limitation du débit."
  Rate limiting is currently disabled: "Remarque\_: La limitation du débit est actuellement désactivé, mais peut être activé via la page de configuration."
+ Report to AbuseIPDB: "Bonjour, {username}.<br />Cette page peut être utilisé pour rapporter des adresses IP à AbuseIPDB, ou pour supprimer des rapports précédents dans le cas où une adresse IP a été rapporté par erreur."
  Sections List: "Bonjour, {username}.<br />Cette page répertorie les sections qui existent dans les fichiers de signatures actuellement actifs."
  See the documentation: "Voir la <a href="https://github.com/CIDRAM/Docs/blob/master/readme.fr.md\#user-content-SECTION5" hreflang="fr-FR" rel="noopener external">documentation</a> pour information sur les différentes directives de la configuration et leurs objectifs."
  Server log snippets, abuse details, etc: "Extraits de journaux du serveur, détails sur les abus, etc."

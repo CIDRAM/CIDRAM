@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Report to AbuseIPDB page (last modified: 2023.12.24).
+ * This file: Report to AbuseIPDB page (last modified: 2023.12.25).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -18,7 +18,7 @@ if (!isset($this->FE['Permissions'], $this->CIDRAM['QueryVars']['cidram-page']) 
 }
 
 /** Page initial prepwork. */
-$this->initialPrepwork($this->L10N->getString('label.Report to AbuseIPDB'), 'This page is still under construction and won\'t work properly yet.');
+$this->initialPrepwork($this->L10N->getString('label.Report to AbuseIPDB'), $this->L10N->getString('tip.Report to AbuseIPDB'));
 
 /** Append number localisation JS. */
 $this->FE['JS'] .= $this->numberL10nJs() . "\n";
@@ -59,6 +59,7 @@ if ($this->FE['address'] !== '') {
 
 /** Prepare to submit the report. */
 if (!isset($_POST['populate']) && $this->FE['address'] !== '' && $this->FE['apikey'] !== '' && $this->CIDRAM['TestResults'] !== 0) {
+    $LookupLink = '<a rel="noopener noreferrer external" hreflang="en-US" href="https://www.abuseipdb.com/check/' . $this->FE['address'] . '">' . $this->FE['address'] . '</a>';
     if ($this->FE['endpoint'] === 'report') {
         if (!isset($this->CIDRAM['AbuseIPDB-Recently Reported-' . $this->FE['address']])) {
             $this->CIDRAM['AbuseIPDB-Recently Reported-' . $this->FE['address']] = $this->Cache->getEntry('AbuseIPDB-Recently Reported-' . $this->FE['address']);
@@ -82,7 +83,7 @@ if (!isset($_POST['populate']) && $this->FE['address'] !== '' && $this->FE['apik
             $this->Cache->setEntry('AbuseIPDB-Recently Reported-' . $this->FE['address'], true, 900);
             $this->CIDRAM['AbuseIPDB-Recently Reported-' . $this->FE['address']] = true;
             if (strpos($Status, '"ipAddress":"' . $this->FE['address'] . '"') !== false && strpos($Status, '"errors":') === false) {
-                $this->FE['state_msg'] = sprintf($this->L10N->getString('response.The IP address, %s, successfully reported'), $this->FE['address']);
+                $this->FE['state_msg'] = sprintf($this->L10N->getString('response.The IP address, %s, successfully reported'), $LookupLink);
                 $Queue = false;
                 if ($this->CIDRAM['LastTestIP'] === 4) {
                     $this->Cache->incEntry('Statistics-Reported-IPv4-OK');
@@ -90,12 +91,15 @@ if (!isset($_POST['populate']) && $this->FE['address'] !== '' && $this->FE['apik
                     $this->Cache->incEntry('Statistics-Reported-IPv6-OK');
                 }
             } else {
-                $this->FE['state_msg'] = sprintf($this->L10N->getString('response.Failed to report the IP address, %s'), $this->FE['address']);
+                $this->FE['state_msg'] = sprintf($this->L10N->getString('response.Failed to report the IP address, %s'), $LookupLink);
                 if (strpos($Status, 'once in 15 minutes') !== false) {
                     $this->FE['state_msg'] .= ' ' . $this->L10N->getString('response.The same IP address can be reported only once every 15 minutes');
-                } elseif (strpos($Status, 'Authentication failed') !== false) {
+                } elseif (strpos($Status, 'Authentication failed') !== false || $this->Request->MostRecentStatusCode === 401) {
                     $Queue = false;
                     $this->FE['state_msg'] .= ' ' . $this->L10N->getString('response.Invalid API key') . ' ' . $this->L10N->getString('response.The report has not been enqueued');
+                } elseif ($this->Request->MostRecentStatusCode === 429) {
+                    $Queue = false;
+                    $this->FE['state_msg'] .= ' ' . $this->L10N->getString('response.The report has not been enqueued') . ' ' . sprintf($this->L10N->getString('warning.API_Rate_Limited'), 'REPORT');
                 } else {
                     $Queue = false;
                     $this->FE['state_msg'] .= ' ' . $this->L10N->getString('response.The report has not been enqueued');
@@ -125,10 +129,15 @@ if (!isset($_POST['populate']) && $this->FE['address'] !== '' && $this->FE['apik
             $this->FE['state_msg'] = sprintf(
                 $this->L10N->getPlural($Matches, 'response.Successfully deleted %s reports for %s'),
                 '<span class="txtRd">' . $this->NumberFormatter->format($Matches) . '</span>',
-                $this->FE['address']
+                $LookupLink
             );
         } else {
-            $this->FE['state_msg'] = sprintf($this->L10N->getString('response.Failed to delete any reports for %s'), $this->FE['address']);
+            $this->FE['state_msg'] = sprintf($this->L10N->getString('response.Failed to delete any reports for %s'), $LookupLink);
+            if (strpos($Status, 'Authentication failed') !== false || $this->Request->MostRecentStatusCode === 401) {
+                $this->FE['state_msg'] .= ' ' . $this->L10N->getString('response.Invalid API key');
+            } elseif ($this->Request->MostRecentStatusCode === 429) {
+                $this->FE['state_msg'] .= ' ' . sprintf($this->L10N->getString('warning.API_Rate_Limited'), 'DELETE');
+            }
         }
         $this->Cache->deleteEntry('AbuseIPDB-Recently Reported-' . $this->FE['address']);
         unset($Matches, $this->CIDRAM['AbuseIPDB-Recently Reported-' . $this->FE['address']]);
@@ -147,7 +156,7 @@ if (!isset($_POST['populate']) && $this->FE['address'] !== '' && $this->FE['apik
 }
 
 /** Cleanup. */
-unset($Categories, $Status, $Queue, $Iterator, $Field);
+unset($LookupLink, $Categories, $Status, $Queue, $Iterator, $Field);
 
 /** Parse output. */
 $this->FE['FE_Content'] = $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_abuseipdb.html')), true);

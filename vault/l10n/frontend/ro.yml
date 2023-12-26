@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Romanian language data for the front-end (last modified: 2023.12.25).
+# This file: Romanian language data for the front-end (last modified: 2023.12.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -762,7 +762,7 @@ macro:
 max_login_attempts_exceeded: "Numărul maxim de încercări de conectare a fost depășit; Acces refuzat."
 msg_subject_2fa: "Autentificare cu doi factori"
 msg_template_2fa: |
- <center><p>Buna ziua, %s.<br /><br />
+ <center><p><br />
  Codul dvs. de autentificare cu doi factori pentru conectarea la front-end CIDRAM:</p>
  <h1>%s</h1>
  <p>Acest cod expiră în 10 minute.</p></center>
@@ -977,16 +977,16 @@ time_years_from_now:
  - "%s de ani de acum încolo"
 tip:
  2FA Sent: "Un e-mail care conține un cod de autentificare cu doi factori a fost trimis la adresa dvs. de e-mail. Vă rugăm să confirmați acest cod mai jos pentru a obține acces la front-end. Dacă nu ați primit acest e-mail, încercați să vă deconectați, așteptați 10 minute, și să vă conectați din nou pentru a primi un nou e-mail care conține un nou cod."
- Accounts: "Buna ziua, {username}.<br />Pagina de conturi vă permite să controlați cine poate accesa front-end-ul CIDRAM."
- Aggregator: "Buna ziua, {username}.<br />Agregatorul vă permite să exprimați IP-uri, CIDR-uri, și măști de rețea în cel mai mic mod posibil. Introduceți datele de agregat și apăsați „OK”."
+ Accounts: "Pagina de conturi vă permite să controlați cine poate accesa front-end-ul CIDRAM."
+ Aggregator: "Agregatorul vă permite să exprimați IP-uri, CIDR-uri, și măști de rețea în cel mai mic mod posibil. Introduceți datele de agregat și apăsați „OK”."
  Auxiliary Rules Priority: "Prioritate (cea mai mare➡(egal🔄echivalent)➡cea mai mică):"
  Auxiliary Rules Webhooks: "Când se declanșează o regulă, CIDRAM va încerca să notifice orice webhook conectat despre eveniment."
- Auxiliary Rules: "Buna ziua, {username}.<br />Puteți folosi această pagină pentru a crea, șterge, și modifica reguli auxiliare pentru CIDRAM."
- Backup: "Buna ziua, {username}.<br />Această pagină poate fi folosită pentru a importa/exporta configurația, regulile auxiliare, etc. Acest lucru poate fi util dacă trebuie să migrați datele în diferite instalări sau în diferite versiuni majore."
- Cache Data: "Buna ziua, {username}.<br />Aici puteți revizui conținutul cache-ului."
- Calculator: "Buna ziua, {username}.<br />Calculatorul vă permite să calculați CIDR și masca de rețea a unei adrese IP."
+ Auxiliary Rules: "Puteți folosi această pagină pentru a crea, șterge, și modifica reguli auxiliare pentru CIDRAM."
+ Backup: "Această pagină poate fi folosită pentru a importa/exporta configurația, regulile auxiliare, etc. Acest lucru poate fi util dacă trebuie să migrați datele în diferite instalări sau în diferite versiuni majore."
+ Cache Data: "Aici puteți revizui conținutul cache-ului."
+ Calculator: "Calculatorul vă permite să calculați CIDR și masca de rețea a unei adrese IP."
  Click the component name for more details: "Faceți clic pe numele componentei pentru mai multe detalii."
- Configuration: "Buna ziua, {username}.<br />Pagina de configurare vă permite să modificați configurația pentru CIDRAM din front-end."
+ Configuration: "Pagina de configurare vă permite să modificați configurația pentru CIDRAM din front-end."
  Enter IP here: "Introduceți adresa IP aici."
  Enter IPs here: "Introduceți adresele IP aici."
  Enter input here: "Introduceți intrarea aici."
@@ -994,28 +994,29 @@ tip:
  Enter referrer here (optional): "Introduceți referitor aici (opțional)."
  Enter user agent here (optional): "Introduceți agentul utilizator aici (opțional)."
  Enter user agents here (optional): "Introduceți agenții utilizator aici (opțional)."
- File Manager: "Buna ziua, {username}.<br />Managerul de fișiere vă permite să ștergeți, editați, încărcați, și descărcați fișiere. Utilizați cu precauție (vă puteți întrerupe instalarea cu asta)."
- Home: "Buna ziua, {username}.<br />Aceasta este pagina principala pentru front-end-ul CIDRAM. Selectați un link din meniul de navigare din stânga pentru a continua."
+ File Manager: "Managerul de fișiere vă permite să ștergeți, editați, încărcați, și descărcați fișiere. Utilizați cu precauție (vă puteți întrerupe instalarea cu asta)."
+ Greeting: "Buna ziua, %s."
+ Home: "Aceasta este pagina principala pentru front-end-ul CIDRAM. Selectați un link din meniul de navigare din stânga pentru a continua."
  How many infractions to incur: "Câte infracțiuni să faci."
- IP Testing: "Buna ziua, {username}.<br />Pagina de testare IP vă permite să testați dacă adresele IP sunt blocate de semnăturile instalate în prezent."
- IP Tracking: "Buna ziua, {username}.<br />Pagina de urmărire IP vă permite să verificați starea de urmărire a adreselor IP, să verificați care dintre ele au fost interzise, și să le dezinterzice/dezurmăriți dacă doriți să faceți acest lucru."
- Intersector: "Buna ziua, {username}.<br />Intersectorul poate fi utilizat pentru a determina factorii comuni din două seturi de intervale."
- Logs: "Buna ziua, {username}.<br />Selectați un fișier jurnal din lista de mai jos pentru a vedea conținutul acelui fișier jurnal."
+ IP Testing: "Pagina de testare IP vă permite să testați dacă adresele IP sunt blocate de semnăturile instalate în prezent."
+ IP Tracking: "Pagina de urmărire IP vă permite să verificați starea de urmărire a adreselor IP, să verificați care dintre ele au fost interzise, și să le dezinterzice/dezurmăriți dacă doriți să faceți acest lucru."
+ Intersector: "Intersectorul poate fi utilizat pentru a determina factorii comuni din două seturi de intervale."
+ Logs: "Selectați un fișier jurnal din lista de mai jos pentru a vedea conținutul acelui fișier jurnal."
  Number of seconds until it expires: "Numărul de secunde până când expiră."
  Numeric comparison: "Pentru a utiliza comparația numerică, selectați compararea directă a șirurilor sau detectarea automată a metodei, asigurați-vă că valoarea condiției este numerică, și prefixați-o cu operatorul dorit.<br />De exemplu, pentru condiții „egale”, &gt;=2 furnizează ≥2, &lt;=2 furnizează ≤2, pentru condiții „nu egale”, &gt;=2 furnizează ≱2, &lt;=2 furnizează ≰2, etc."
- Range Tables: "Buna ziua, {username}.<br />Această pagină prezintă câteva informații statistice de bază despre intervalele IP acoperite de fișierele de semnătură active în prezent."
- Rate Limiting: "Buna ziua, {username}.<br />Această pagină afișează utilizarea și disponibilitatea a cotei actuală în ceea ce privește limitarea ratei."
+ Range Tables: "Această pagină prezintă câteva informații statistice de bază despre intervalele IP acoperite de fișierele de semnătură active în prezent."
+ Rate Limiting: "Această pagină afișează utilizarea și disponibilitatea a cotei actuală în ceea ce privește limitarea ratei."
  Rate limiting is currently disabled: "Notă: Limitarea ratei este în prezent dezactivată, dar poate fi activată prin pagina de configurare."
- Report to AbuseIPDB: "Buna ziua, {username}.<br />Această pagină poate fi utilizată pentru a raporta adrese IP către AbuseIPDB, sau pentru a șterge rapoartele anterioare în cazul în care o adresă IP a fost raportată din greșeală."
- Sections List: "Buna ziua, {username}.<br />Această pagină listează ce secțiuni există în fișierele de semnătură active în prezent."
+ Report to AbuseIPDB: "Această pagină poate fi utilizată pentru a raporta adrese IP către AbuseIPDB, sau pentru a șterge rapoartele anterioare în cazul în care o adresă IP a fost raportată din greșeală."
+ Sections List: "Această pagină listează ce secțiuni există în fișierele de semnătură active în prezent."
  See the documentation: "Consultați <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external">documentația</a> pentru informații despre diferitele directive de configurare și scopurile acestora."
  Server log snippets, abuse details, etc: "Fragmente de jurnal de server, detalii despre abuz, etc."
- Signature File Fixer: "Buna ziua, {username}.<br />Fixatorul fișierelor de semnătură oferă o modalitate de a detecta și remedia potențialele probleme în fișierele de semnătură."
+ Signature File Fixer: "Fixatorul fișierelor de semnătură oferă o modalitate de a detecta și remedia potențialele probleme în fișierele de semnătură."
  Specify a value, or leave blank to disregard: "Specificați o valoare, sau lăsați necompletat pentru a o ignora."
  Statistics tracking is currently disabled: "Notă: Urmărirea statisticilor este în prezent dezactivată, dar poate fi activată prin pagina de configurare."
- Statistics: "Buna ziua, {username}.<br />Această pagină prezintă câteva statistici de utilizare de bază referitoare la instalarea dvs. CIDRAM."
- Subtractor: "Buna ziua, {username}.<br />Scădetorul poate fi folosit pentru a scădea un interval de IP-uri/CIDR-uri/măști de rețea dintr-un altul."
- Updates: "Buna ziua, {username}.<br />Pagina de actualizări vă permite să instalați, să dezinstalați, și să actualizați diferitele componente ale CIDRAM (pachetul de bază, semnături, fișiere L10N, etc)."
+ Statistics: "Această pagină prezintă câteva statistici de utilizare de bază referitoare la instalarea dvs. CIDRAM."
+ Subtractor: "Scădetorul poate fi folosit pentru a scădea un interval de IP-uri/CIDR-uri/măști de rețea dintr-un altul."
+ Updates: "Pagina de actualizări vă permite să instalați, să dezinstalați, și să actualizați diferitele componente ale CIDRAM (pachetul de bază, semnături, fișiere L10N, etc)."
 warning:
  API_Rate_Limited: "Avertizare: Accesul la API-ul %s pare să fie în prezent limitat."
  Cookies: "Notă: CIDRAM folosește un cookie pentru a autentifica conectarea. Conectându-vă, vă dați acordul ca un cookie să fie creat și stocat de browserul dvs."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2023.12.25).
+# This file: English language data for the front-end (last modified: 2023.12.26).
 ##/
 
 Abuse category:
@@ -786,7 +786,7 @@ macro:
 max_login_attempts_exceeded: "Maximum number of login attempts exceeded; Access denied."
 msg_subject_2fa: "Two-Factor Authentication"
 msg_template_2fa: |
- <center><p>Hello, %s.<br /><br />
+ <center><p><br />
  Your two-factor authentication code for logging into the CIDRAM front-end:</p>
  <h1>%s</h1>
  <p>This code expires in 10 minutes.</p></center>
@@ -989,16 +989,16 @@ time_years_from_now:
  - "%s years from now"
 tip:
  2FA Sent: "An email containing a two-factor authentication code has been sent to your email address. Please confirm this code below to gain access to the front-end. If you didn't receive this email, try logging out, waiting for 10 minutes, and logging in again to receive a new email containing a new code."
- Accounts: "Hello, {username}.<br />The accounts page allows you to control who can access the CIDRAM front-end."
- Aggregator: "Hello, {username}.<br />The aggregator allows you to express IPs, CIDRs, and netmasks in the smallest possible way. Enter the data to be aggregated and press "OK"."
+ Accounts: "The accounts page allows you to control who can access the CIDRAM front-end."
+ Aggregator: "The aggregator allows you to express IPs, CIDRs, and netmasks in the smallest possible way. Enter the data to be aggregated and press "OK"."
  Auxiliary Rules Priority: "Priority (highest➡(equal🔄equivalent)➡lowest):"
  Auxiliary Rules Webhooks: "When a rule is triggered, CIDRAM will attempt to notify any connected webhooks about the event."
- Auxiliary Rules: "Hello, {username}.<br />You can use this page to create, delete, and modify auxiliary rules for CIDRAM."
- Backup: "Hello, {username}.<br />This page can be used to import/export your configuration, auxiliary rules, etc. This can be useful if you need to migrate data across different installations or different major versions."
- Cache Data: "Hello, {username}.<br />Here you can review the contents of the cache."
- Calculator: "Hello, {username}.<br />The calculator allows you to calculate the CIDRs and netmasks of an IP address."
+ Auxiliary Rules: "You can use this page to create, delete, and modify auxiliary rules for CIDRAM."
+ Backup: "This page can be used to import/export your configuration, auxiliary rules, etc. This can be useful if you need to migrate data across different installations or different major versions."
+ Cache Data: "Here you can review the contents of the cache."
+ Calculator: "The calculator allows you to calculate the CIDRs and netmasks of an IP address."
  Click the component name for more details: "Click the component name for more details."
- Configuration: "Hello, {username}.<br />The configuration page allows you to modify the configuration for CIDRAM from the front-end."
+ Configuration: "The configuration page allows you to modify the configuration for CIDRAM from the front-end."
  Enter IP here: "Enter IP here."
  Enter IPs here: "Enter IPs here."
  Enter input here: "Enter input here."
@@ -1006,28 +1006,29 @@ tip:
  Enter referrer here (optional): "Enter referrer here (optional)."
  Enter user agent here (optional): "Enter user agent here (optional)."
  Enter user agents here (optional): "Enter user agents here (optional)."
- File Manager: "Hello, {username}.<br />The file manager allows you to delete, edit, upload, and download files. Use with caution (you could break your installation with this)."
- Home: "Hello, {username}.<br />This is the homepage for the CIDRAM front-end. Select a link from the navigation menu on the left to continue."
+ File Manager: "The file manager allows you to delete, edit, upload, and download files. Use with caution (you could break your installation with this)."
+ Greeting: "Hello, %s."
+ Home: "This is the homepage for the CIDRAM front-end. Select a link from the navigation menu on the left to continue."
  How many infractions to incur: "How many infractions to incur."
- IP Testing: "Hello, {username}.<br />The IP testing page allows you to test whether IP addresses are blocked by the currently installed signatures."
- IP Tracking: "Hello, {username}.<br />The IP tracking page allows you to check the tracking status of IP addresses, to check which of them have been banned, and to unban/untrack them if you want to do so."
- Intersector: "Hello, {username}.<br />The intersector can be used to determine the common factors from two sets of ranges."
- Logs: "Hello, {username}.<br />Select a log file from the list below to view the contents of that log file."
+ IP Testing: "The IP testing page allows you to test whether IP addresses are blocked by the currently installed signatures."
+ IP Tracking: "The IP tracking page allows you to check the tracking status of IP addresses, to check which of them have been banned, and to unban/untrack them if you want to do so."
+ Intersector: "The intersector can be used to determine the common factors from two sets of ranges."
+ Logs: "Select a log file from the list below to view the contents of that log file."
  Number of seconds until it expires: "Number of seconds until it expires."
  Numeric comparison: "To use numeric comparison, select direct string comparison or automatic method detection, ensure the condition's value is numeric, and prefix it with the desired operator.<br />E.g., for "equals" conditions, &gt;=2 provides ≥2, &lt;=2 provides ≤2, for "not equals" conditions, &gt;=2 provides ≱2, &lt;=2 provides ≰2, etc."
- Range Tables: "Hello, {username}.<br />This page shows some basic statistical information about the IP ranges covered by the currently active signature files."
- Rate Limiting: "Hello, {username}.<br />This page shows the current quota usage and availability in regards to rate limiting."
+ Range Tables: "This page shows some basic statistical information about the IP ranges covered by the currently active signature files."
+ Rate Limiting: "This page shows the current quota usage and availability in regards to rate limiting."
  Rate limiting is currently disabled: "Note: Rate limiting is currently disabled, but can be enabled via the configuration page."
- Report to AbuseIPDB: "Hello, {username}.<br />This page can be used to report IP addresses to AbuseIPDB, or to delete previous reports in the event that an IP address has been reported in error."
- Sections List: "Hello, {username}.<br />This page lists which sections exist in the currently active signature files."
+ Report to AbuseIPDB: "This page can be used to report IP addresses to AbuseIPDB, or to delete previous reports in the event that an IP address has been reported in error."
+ Sections List: "This page lists which sections exist in the currently active signature files."
  See the documentation: "See the <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external">documentation</a> for information about the various configuration directives and their purposes."
  Server log snippets, abuse details, etc: "Server log snippets, abuse details, etc."
- Signature File Fixer: "Hello, {username}.<br />The signature file fixer provides a way to detect and fix potential problems in signature files."
+ Signature File Fixer: "The signature file fixer provides a way to detect and fix potential problems in signature files."
  Specify a value, or leave blank to disregard: "Specify a value, or leave blank to disregard."
  Statistics tracking is currently disabled: "Note: Statistics tracking is currently disabled, but can be enabled via the configuration page."
- Statistics: "Hello, {username}.<br />This page shows some basic usage statistics regarding your CIDRAM installation."
- Subtractor: "Hello, {username}.<br />The subtractor can be used to subtract one range of IPs/CIDRs/netmasks from another."
- Updates: "Hello, {username}.<br />The updates page allows you to install, uninstall, and update the various components of CIDRAM (the core package, signatures, L10N files, etc)."
+ Statistics: "This page shows some basic usage statistics regarding your CIDRAM installation."
+ Subtractor: "The subtractor can be used to subtract one range of IPs/CIDRs/netmasks from another."
+ Updates: "The updates page allows you to install, uninstall, and update the various components of CIDRAM (the core package, signatures, L10N files, etc)."
 warning:
  API_Rate_Limited: "Warning: Access to the %s API appears to currently be rate limited."
  Cookies: "Note: CIDRAM uses a cookie to authenticate logins. By logging in, you give your consent for a cookie to be created and stored by your browser."

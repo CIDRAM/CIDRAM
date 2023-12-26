@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Afrikaans language data for the front-end (last modified: 2023.12.25).
+# This file: Afrikaans language data for the front-end (last modified: 2023.12.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -752,7 +752,7 @@ macro:
 max_login_attempts_exceeded: "Maksimum aantal intekenpogings oorskry; Toegang geweier."
 msg_subject_2fa: "Tweefaktor-verifikasie"
 msg_template_2fa: |
- <center><p>Hallo, %s.<br /><br />
+ <center><p><br />
  Jou tweefaktor-verifikasiekode om by die CIDRAM se front-end in te teken:</p>
  <h1>%s</h1>
  <p>Hierdie kode verval oor 10 minute.</p></center>
@@ -952,16 +952,16 @@ time_years_from_now:
  - "%s jare van nou af"
 tip:
  2FA Sent: "Ons het 'n e-pos gestuur wat 'n tweefaktor-verifikasiekode bevat na jou e-pos adres. Bevestig asseblief hierdie kode hieronder om toegang tot die front-end te kry. As jy nie hierdie e-pos ontvang nie, probeer om uit te teken, wag vir 10 minute, en weer inteken om 'n nuwe e-pos met 'n nuwe kode te ontvang."
- Accounts: "Hallo, {username}.<br />Jy kan vanaf die rekeninge-bladsy beheer wie toegang tot die CIDRAM front-end het."
- Aggregator: "Hallo, {username}.<br />Jy kan IP's, CIDR's, en netmaskers op die kleinste moontlike manier uitdruk deur die aggregator te gebruik. Voer die data in wat geaggregeerde moet word en druk "OK"."
+ Accounts: "Jy kan vanaf die rekeninge-bladsy beheer wie toegang tot die CIDRAM front-end het."
+ Aggregator: "Jy kan IP's, CIDR's, en netmaskers op die kleinste moontlike manier uitdruk deur die aggregator te gebruik. Voer die data in wat geaggregeerde moet word en druk "OK"."
  Auxiliary Rules Priority: "Prioriteit (hoogste➡(gelyk🔄ekwivalent)➡laagste):"
  Auxiliary Rules Webhooks: "Wanneer aan die reël se voorwaardes nagekom word, CIDRAM sal probeer om enige gekoppelde webhooks oor die gebeurtenis in kennis te stel."
- Auxiliary Rules: "Hallo, {username}.<br />Jy kan hierdie bladsy gebruik om bykomende reëls vir CIDRAM te skep, uit te vee, en te verander."
- Backup: "Hallo, {username}.<br />Hierdie bladsy kan gebruik word om jou konfigurasie, bykomende reëls, ens te invoer/uitvoer. Dit kan nuttig wees as jy data oor verskillende installasies of verskillende hoofweergawes moet migreer."
- Cache Data: "Hallo, {username}.<br />Hier kan jy die inhoud van die kas hersien."
- Calculator: "Hallo, {username}.<br />Die sakrekenaar laat jou toe om die CIDR en netmasker van 'n IP-adres te bereken."
+ Auxiliary Rules: "Jy kan hierdie bladsy gebruik om bykomende reëls vir CIDRAM te skep, uit te vee, en te verander."
+ Backup: "Hierdie bladsy kan gebruik word om jou konfigurasie, bykomende reëls, ens te invoer/uitvoer. Dit kan nuttig wees as jy data oor verskillende installasies of verskillende hoofweergawes moet migreer."
+ Cache Data: "Hier kan jy die inhoud van die kas hersien."
+ Calculator: "Die sakrekenaar laat jou toe om die CIDR en netmasker van 'n IP-adres te bereken."
  Click the component name for more details: "Klik op die komponentnaam vir meer besonderhede."
- Configuration: "Hallo, {username}.<br />Die konfigurasiebladsy laat jou toe om die konfigurasie vir CIDRAM vanaf die front-end te verander."
+ Configuration: "Die konfigurasiebladsy laat jou toe om die konfigurasie vir CIDRAM vanaf die front-end te verander."
  Enter IP here: "Voer IP hier in."
  Enter IPs here: "Voer IP's hier in."
  Enter input here: "Voer invoer hier in."
@@ -969,28 +969,29 @@ tip:
  Enter referrer here (optional): "Voer verwyser hier in (opsioneel)."
  Enter user agent here (optional): "Voer gebruikersagent hier in (opsioneel)."
  Enter user agents here (optional): "Voer gebruikersagente hier in (opsioneel)."
- File Manager: "Hallo, {username}.<br />Die lêerbestuurder laat jou toe om lêers uit te vee, te wysig, op te laai, en af te laai. Gebruik met omsigtigheid (jy kan jou installasie hiermee breek)."
- Home: "Hallo, {username}.<br />Dit is die tuisblad vir CIDRAM se front-end. Kies 'n skakel uit die navigasiekieslys aan die linkerkant om voort te gaan."
+ File Manager: "Die lêerbestuurder laat jou toe om lêers uit te vee, te wysig, op te laai, en af te laai. Gebruik met omsigtigheid (jy kan jou installasie hiermee breek)."
+ Greeting: "Hallo, %s."
+ Home: "Dit is die tuisblad vir CIDRAM se front-end. Kies 'n skakel uit die navigasiekieslys aan die linkerkant om voort te gaan."
  How many infractions to incur: "Hoeveel oortredings om aan te gaan."
- IP Testing: "Hallo, {username}.<br />Die IP-toetsingbladsy laat jou toe om te toets of IP-adresse deur die tans geïnstalleerde handtekeninge geblokkeer word."
- IP Tracking: "Hallo, {username}.<br />Die IP-nasporingsbladsy laat jou toe om die nasporingstatus van IP-adresse na te gaan, om te kyk watter van hulle verban is, en om hulle te ontban/ontspoor as jy dit wil doen."
- Intersector: "Hallo, {username}.<br />Die intersektor kan gebruik word om die gemeenskaplike faktore uit twee stelle reekse te bepaal."
- Logs: "Hallo, {username}.<br />Kies 'n loglêer uit die lys hieronder om die inhoud van daardie loglêer te sien."
+ IP Testing: "Die IP-toetsingbladsy laat jou toe om te toets of IP-adresse deur die tans geïnstalleerde handtekeninge geblokkeer word."
+ IP Tracking: "Die IP-nasporingsbladsy laat jou toe om die nasporingstatus van IP-adresse na te gaan, om te kyk watter van hulle verban is, en om hulle te ontban/ontspoor as jy dit wil doen."
+ Intersector: "Die intersektor kan gebruik word om die gemeenskaplike faktore uit twee stelle reekse te bepaal."
+ Logs: "Kies 'n loglêer uit die lys hieronder om die inhoud van daardie loglêer te sien."
  Number of seconds until it expires: "Aantal sekondes totdat dit verval."
  Numeric comparison: "Om numeriese vergelyking te gebruik, kies direkte stringvergelyking of outomatiese metodebespeuring, maak seker dat die toestand se waarde numeries is, en voeg dit by die verlangde operateur voor.<br />Bv., vir "gelyk" toestande, &gt;=2 gee ≥2, &lt;=2 gee ≤2, vir "nie gelyk" toestande, &gt;=2 gee ≱2, &lt;=2 gee ≰2, ens."
- Range Tables: "Hallo, {username}.<br />Hierdie bladsy wys basiese statistiese inligting oor die IP-reekse wat deur die tans aktiewe handtekeninglêers gedek word."
- Rate Limiting: "Hallo, {username}.<br />Hierdie bladsy wys die huidige kwotagebruik en beskikbaarheid met betrekking tot tariefbeperking."
+ Range Tables: "Hierdie bladsy wys basiese statistiese inligting oor die IP-reekse wat deur die tans aktiewe handtekeninglêers gedek word."
+ Rate Limiting: "Hierdie bladsy wys die huidige kwotagebruik en beskikbaarheid met betrekking tot tariefbeperking."
  Rate limiting is currently disabled: "Kennis neem: Tariefbeperking is tans gedeaktiveer, maar kan via die konfigurasiebladsy geaktiveer word."
- Report to AbuseIPDB: "Hallo, {username}.<br />Hierdie bladsy kan gebruik word om IP-adresse aan AbuseIPDB te rapporteer, of om vorige verslae uit te vee in die geval dat 'n IP-adres foutief gerapporteer is."
- Sections List: "Hallo, {username}.<br />Hierdie bladsy lys watter afdelings bestaan in die tans aktiewe handtekeninglêers."
+ Report to AbuseIPDB: "Hierdie bladsy kan gebruik word om IP-adresse aan AbuseIPDB te rapporteer, of om vorige verslae uit te vee in die geval dat 'n IP-adres foutief gerapporteer is."
+ Sections List: "Hierdie bladsy lys watter afdelings bestaan in die tans aktiewe handtekeninglêers."
  See the documentation: "Sien die <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external">dokumentasie</a> vir inligting oor die verskillende konfigurasie-opsies en hul doeleindes."
  Server log snippets, abuse details, etc: "Bedienerlogbrokkies, misbruikbesonderhede, ens."
- Signature File Fixer: "Hallo, {username}.<br />Die handtekeninglêer hersteller bied 'n manier om potensiële probleme in handtekeninglêers op te spoor en op te los."
+ Signature File Fixer: "Die handtekeninglêer hersteller bied 'n manier om potensiële probleme in handtekeninglêers op te spoor en op te los."
  Specify a value, or leave blank to disregard: "Spesifiseer 'n waarde, of laat leeg om te ignoreer."
  Statistics tracking is currently disabled: "Kennis neem: Statistieknasporing is tans gedeaktiveer, maar kan via die konfigurasiebladsy geaktiveer word."
- Statistics: "Hallo, {username}.<br />Hierdie bladsy wys basiese gebruikstatistieke rakende jou CIDRAM-installasie."
- Subtractor: "Hallo, {username}.<br />Die aftrekker kan gebruik word om een reeks IP's/CIDR's/netmaskers van 'n ander af te trek."
- Updates: "Hallo, {username}.<br />Die opdateringsbladsy laat jou toe om die verskillende komponente van CIDRAM te installeer, te deïnstalleer, en op te dateer (die core-pakket, handtekeninge, L10N-lêers, ens)."
+ Statistics: "Hierdie bladsy wys basiese gebruikstatistieke rakende jou CIDRAM-installasie."
+ Subtractor: "Die aftrekker kan gebruik word om een reeks IP's/CIDR's/netmaskers van 'n ander af te trek."
+ Updates: "Die opdateringsbladsy laat jou toe om die verskillende komponente van CIDRAM te installeer, te deïnstalleer, en op te dateer (die core-pakket, handtekeninge, L10N-lêers, ens)."
 warning:
  API_Rate_Limited: "Waarskuwing: Toegang tot die %s API blyk tans tariefbeperk te wees."
  Cookies: "Kennis neem: CIDRAM gebruik 'n koekie vir die verifikasie van intekeninge. Deur in te teken, gee jy jou toestemming dat 'n koekie deur jou blaaier geskep en gestoor word."

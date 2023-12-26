@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2023.12.25).
+# This file: Italian language data for the front-end (last modified: 2023.12.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -751,7 +751,7 @@ macro:
 max_login_attempts_exceeded: "Numero massimo di tentativi di accesso superato; Accesso negato."
 msg_subject_2fa: "Autenticazione a due fattori"
 msg_template_2fa: |
- <center><p>Salve, %s.<br /><br />
+ <center><p><br />
  Il vostro codice di autenticazione a due fattori per l'accesso al front-end di CIDRAM:</p>
  <h1>%s</h1>
  <p>Questo codice scade tra 10 minuti.</p></center>
@@ -949,16 +949,16 @@ time_years_from_now:
  - "%s anni da adesso"
 tip:
  2FA Sent: "Una posta elettronica contenente un codice di autenticazione a due fattori è stata inviata al tuo indirizzo di posta elettronica. Si prega di confermare questo codice qui sotto per ottenere l'accesso al front-end. Se non hai ricevuto questa posta elettronica, prova a disconnettersi, attendere 10 minuti e accedi di nuovo per ricevere una nuova posta elettronica contenente un nuovo codice."
- Accounts: "Salve, {username}.<br />La pagina di conti permette di controllare chi può accedere il front-end di CIDRAM."
- Aggregator: "Salve, {username}.<br />L'aggregatore consente di esprimere indirizzi IP, CIDR, e maschere di rete nel modo più piccolo possibile. Inserire i dati da aggregare e premere "OK"."
+ Accounts: "La pagina di conti permette di controllare chi può accedere il front-end di CIDRAM."
+ Aggregator: "L'aggregatore consente di esprimere indirizzi IP, CIDR, e maschere di rete nel modo più piccolo possibile. Inserire i dati da aggregare e premere "OK"."
  Auxiliary Rules Priority: "Priorità (massimo➡(pari🔄equivalente)➡minore):"
  Auxiliary Rules Webhooks: "Quando viene attivata una regola, CIDRAM tenterà di notificare eventuali webhook collegati all'evento."
- Auxiliary Rules: "Salve, {username}.<br />Puoi utilizzare questa pagina per creare, eliminare e modificare le regole ausiliarie per CIDRAM."
- Backup: "Salve, {username}.<br />Questa pagina può essere utilizzata per importare/esportare la configurazione, le regole ausiliarie, ecc. Questa può essere utile se è necessario la migrazione dei dati tra installazioni diverse o versioni principali diverse."
- Cache Data: "Salve, {username}.<br />Qui puoi rivedere il contenuto della cache."
- Calculator: "Salve, {username}.<br />La calcolatrice permette di calcolare i CIDR e le maschere di rete di un indirizzo IP."
+ Auxiliary Rules: "Puoi utilizzare questa pagina per creare, eliminare e modificare le regole ausiliarie per CIDRAM."
+ Backup: "Questa pagina può essere utilizzata per importare/esportare la configurazione, le regole ausiliarie, ecc. Questa può essere utile se è necessario la migrazione dei dati tra installazioni diverse o versioni principali diverse."
+ Cache Data: "Qui puoi rivedere il contenuto della cache."
+ Calculator: "La calcolatrice permette di calcolare i CIDR e le maschere di rete di un indirizzo IP."
  Click the component name for more details: "Fare clic sul nome del componente per ulteriori dettagli."
- Configuration: "Salve, {username}.<br />La pagina di configurazione permette di modificare la configurazione per CIDRAM dal front-end."
+ Configuration: "La pagina di configurazione permette di modificare la configurazione per CIDRAM dal front-end."
  Enter IP here: "Inserire IP qui."
  Enter IPs here: "Inserisci IP qui."
  Enter input here: "Inserisci qui l'input."
@@ -966,28 +966,29 @@ tip:
  Enter referrer here (optional): "Inserisci la referente qui (facoltativo)."
  Enter user agent here (optional): "Inserisci l'agente utente qui (facoltativo)."
  Enter user agents here (optional): "Inserisci gli agenti utente qui (facoltativo)."
- File Manager: "Salve, {username}.<br />Il file manager consente di eliminare, modificare, caricare e scaricare file. Usare con cautela (si potrebbe rompere l'installazione di questo)."
- Home: "Salve, {username}.<br />Questa è la pagina principale per il front-end di CIDRAM. Selezionare un collegamento dal menu di navigazione a sinistra per continuare."
+ File Manager: "Il file manager consente di eliminare, modificare, caricare e scaricare file. Usare con cautela (si potrebbe rompere l'installazione di questo)."
+ Greeting: "Salve, %s."
+ Home: "Questa è la pagina principale per il front-end di CIDRAM. Selezionare un collegamento dal menu di navigazione a sinistra per continuare."
  How many infractions to incur: "Quante infrazioni incorrere."
- IP Testing: "Salve, {username}.<br />La pagina di per il test di IP permette di testare se gli indirizzi IP sono bloccati dalle firme attualmente installati."
- IP Tracking: "Salve, {username}.<br />La pagina di tracciamento IP consente di verificare lo stato del tracciamento degli indirizzi IP, per verificare quali di essi sono stati vietati, e di revocare il tracciamento loro se si vuole farlo."
- Intersector: "Salve, {username}.<br />L'intersettore può essere utilizzato per determinare i fattori comuni da due serie di gamme."
- Logs: "Salve, {username}.<br />Selezionare un file di log dall'elenco sottostante per visualizzare il contenuto di tale file di log."
+ IP Testing: "La pagina di per il test di IP permette di testare se gli indirizzi IP sono bloccati dalle firme attualmente installati."
+ IP Tracking: "La pagina di tracciamento IP consente di verificare lo stato del tracciamento degli indirizzi IP, per verificare quali di essi sono stati vietati, e di revocare il tracciamento loro se si vuole farlo."
+ Intersector: "L'intersettore può essere utilizzato per determinare i fattori comuni da due serie di gamme."
+ Logs: "Selezionare un file di log dall'elenco sottostante per visualizzare il contenuto di tale file di log."
  Number of seconds until it expires: "Numero di secondi prima della scadenza."
  Numeric comparison: "Per utilizzare il confronto numerico, seleziona il confronto diretto delle stringhe o il rilevamento automatico del metodo, assicurati che il valore della condizione sia numerico, e anteponilo all'operatore desiderato.<br />Per esempio, per condizioni "uguali", &gt;=2 fornisce ≥2, &lt;=2 fornisce ≤2, per condizioni "non uguali", &gt;=2 fornisce ≱2, &lt;=2 fornisce ≰2, ecc."
- Range Tables: "Salve, {username}.<br />Questa pagina mostra alcune informazioni statistiche sugli gamme IP coperti dai file delle firme attualmente attivi."
- Rate Limiting: "Salve, {username}.<br />Questa pagina mostra l'utilizzo e la disponibilità corrente della quota riguarda la limitazione della velocità."
+ Range Tables: "Questa pagina mostra alcune informazioni statistiche sugli gamme IP coperti dai file delle firme attualmente attivi."
+ Rate Limiting: "Questa pagina mostra l'utilizzo e la disponibilità corrente della quota riguarda la limitazione della velocità."
  Rate limiting is currently disabled: "Nota: La limitazione della velocità è attualmente disattivato, ma può essere attivato tramite la pagina di configurazione."
- Report to AbuseIPDB: "Salve, {username}.<br />Questa pagina può essere utilizzata per rapportare indirizzi IP ad AbuseIPDB, o per eliminare rapporti precedenti nel caso in cui un indirizzo IP sia stato rapportato per errore."
- Sections List: "Salve, {username}.<br />Questa pagina elenca le sezioni presenti nei file di firma attualmente attivi."
+ Report to AbuseIPDB: "Questa pagina può essere utilizzata per rapportare indirizzi IP ad AbuseIPDB, o per eliminare rapporti precedenti nel caso in cui un indirizzo IP sia stato rapportato per errore."
+ Sections List: "Questa pagina elenca le sezioni presenti nei file di firma attualmente attivi."
  See the documentation: "Vedere la <a href="https://github.com/CIDRAM/Docs/blob/master/readme.it.md\#user-content-SECTION5" hreflang="it-IT" rel="noopener external">documentazione</a> per informazioni sulle varie direttive di configurazione ed i loro scopi."
  Server log snippets, abuse details, etc: "Estratti del registro del server, dettagli sugli abusi, ecc."
- Signature File Fixer: "Salve, {username}.<br />Il fissatore per i file di firme fornisce un modo per rilevare e risolvere potenziali problemi nei file di firme."
+ Signature File Fixer: "Il fissatore per i file di firme fornisce un modo per rilevare e risolvere potenziali problemi nei file di firme."
  Specify a value, or leave blank to disregard: "Specificare un valore, o lasciare vuoto per ignorare."
  Statistics tracking is currently disabled: "Nota: Il monitoraggio delle statistiche è attualmente disattivato, ma può essere attivato tramite la pagina di configurazione."
- Statistics: "Salve, {username}.<br />Questa pagina mostra alcune statistiche di utilizzo relative all'installazione di CIDRAM."
- Subtractor: "Salve, {username}.<br />Il sottrattore può essere utilizzato per sottrarre un gamma di IP/CIDR/maschere di rete da un altro."
- Updates: "Salve, {username}.<br />La pagina degli aggiornamenti permette di installare, disinstallare e aggiornare i vari componenti di CIDRAM (il pacchetto di base, le firme, file per L10N, ecc)."
+ Statistics: "Questa pagina mostra alcune statistiche di utilizzo relative all'installazione di CIDRAM."
+ Subtractor: "Il sottrattore può essere utilizzato per sottrarre un gamma di IP/CIDR/maschere di rete da un altro."
+ Updates: "La pagina degli aggiornamenti permette di installare, disinstallare e aggiornare i vari componenti di CIDRAM (il pacchetto di base, le firme, file per L10N, ecc)."
 warning:
  API_Rate_Limited: "Avvertimento: L'accesso all'API %s sembra essere attualmente limitato."
  Cookies: "Nota: CIDRAM utilizza un cookie per autenticare gli accessi. Accedendo, ti dà il tuo consenso per creare e memorizzare un cookie dal tuo browser."

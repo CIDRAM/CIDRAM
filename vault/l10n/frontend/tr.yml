@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2023.12.25).
+# This file: Turkish language data for the front-end (last modified: 2023.12.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -747,7 +747,7 @@ macro:
 max_login_attempts_exceeded: "Maksimum giriş denemesi aşıldı; Erişim reddedildi."
 msg_subject_2fa: "2FA (İki Faktörlü Kimlik Doğrulama)"
 msg_template_2fa: |
- <center><p>Merhaba, %s.<br /><br />
+ <center><p><br />
  CIDRAM ön ucuna giriş yapmak için 2FA kodunuz:</p>
  <h1>%s</h1>
  <p>Bu kod 10 dakika içinde sona eriyor.</p></center>
@@ -919,16 +919,16 @@ time_years_ago: "%s yıl önce"
 time_years_from_now: "%s yıl sonra"
 tip:
  2FA Sent: "E-posta adresinize iki faktörlü bir kimlik doğrulama kodu içeren bir e-posta gönderildi. Ön tarafa erişmek için lütfen aşağıdaki kodu doğrulayın. Bu e-postayı almadıysanız, yeni bir kod içeren yeni bir e-posta almak için, çıkış yapmayı, 10 dakika beklemeyi ve tekrar giriş yapmayı deneyin."
- Accounts: "Merhaba, {username}.<br />Hesaplar sayfası, CIDRAM ön ucuna kimin erişebileceğini kontrol etmenizi mümkün kılar."
- Aggregator: "Merhaba, {username}.<br />Toplayıcı IP'leri, CIDR'leri, ve ağ maskeleri olabildiğince az şekilde ifade etmenizi sağlar. Birleştirilecek verileri girin ve "Tamam" düğmesine basın."
+ Accounts: "Hesaplar sayfası, CIDRAM ön ucuna kimin erişebileceğini kontrol etmenizi mümkün kılar."
+ Aggregator: "Toplayıcı IP'leri, CIDR'leri, ve ağ maskeleri olabildiğince az şekilde ifade etmenizi sağlar. Birleştirilecek verileri girin ve "Tamam" düğmesine basın."
  Auxiliary Rules Priority: "Öncelik (maksimum➡(eşit🔄eşdeğer)➡minimum):"
  Auxiliary Rules Webhooks: "Bir kural tetiklendiğinde, CIDRAM, olayla ilgili bağlı webhookları bildirmeye çalışır."
- Auxiliary Rules: "Merhaba, {username}.<br />CIDRAM için yardımcı kurallar oluşturmak, silmek ve değiştirmek için bu sayfayı kullanabilirsiniz."
- Backup: "Merhaba, {username}.<br />Bu sayfa yapılandırmanızı, yardımcı kurallarınızı, vb. içe/dışa aktarmak için kullanılabilir. Verileri farklı kurulumlar veya farklı ana sürümler arasında taşımanız gerektiğinde bu yararlı olabilir."
- Cache Data: "Merhaba, {username}.<br />Burada önbellek içeriğini inceleyebilirsiniz."
- Calculator: "Merhaba, {username}.<br />Hesaplayıcı, bir IP adresinin CIDR'lerini ve ağ maskelerini hesaplamanıza olanak tanır."
+ Auxiliary Rules: "CIDRAM için yardımcı kurallar oluşturmak, silmek ve değiştirmek için bu sayfayı kullanabilirsiniz."
+ Backup: "Bu sayfa yapılandırmanızı, yardımcı kurallarınızı, vb. içe/dışa aktarmak için kullanılabilir. Verileri farklı kurulumlar veya farklı ana sürümler arasında taşımanız gerektiğinde bu yararlı olabilir."
+ Cache Data: "Burada önbellek içeriğini inceleyebilirsiniz."
+ Calculator: "Hesaplayıcı, bir IP adresinin CIDR'lerini ve ağ maskelerini hesaplamanıza olanak tanır."
  Click the component name for more details: "Daha fazla ayrıntı için bileşen adına tıklayın."
- Configuration: "Merhaba, {username}.<br />Yapılandırma sayfası, CIDRAM için yapılandırmayı ön uçtan değiştirmenizi mümkün kılar."
+ Configuration: "Yapılandırma sayfası, CIDRAM için yapılandırmayı ön uçtan değiştirmenizi mümkün kılar."
  Enter IP here: "IP'yi buraya girin."
  Enter IPs here: "IP'leri buraya girin."
  Enter input here: "Verileri buraya girin."
@@ -936,28 +936,29 @@ tip:
  Enter referrer here (optional): "Buraya yönlendiriciyi girin (isteğe)."
  Enter user agent here (optional): "Buraya kullanıcı aracısını girin (isteğe)."
  Enter user agents here (optional): "Buraya Kullanıcı aracılarını girin (isteğe)."
- File Manager: "Merhaba, {username}.<br />Dosya yöneticisi dosyalarınızı silmenizi, düzenlemenizi, yüklemenizi ve indirmenizi sağlar. Dikkatli kullanın (kurulumunuzu bununla bozabilirsiniz)."
- Home: "Merhaba, {username}.<br />Bu, CIDRAM ön uçunun ana sayfasıdır. Devam etmek için soldaki gezinme menüsünden bir bağlantı seçin."
+ File Manager: "Dosya yöneticisi dosyalarınızı silmenizi, düzenlemenizi, yüklemenizi ve indirmenizi sağlar. Dikkatli kullanın (kurulumunuzu bununla bozabilirsiniz)."
+ Greeting: "Merhaba, %s."
+ Home: "Bu, CIDRAM ön uçunun ana sayfasıdır. Devam etmek için soldaki gezinme menüsünden bir bağlantı seçin."
  How many infractions to incur: "Kaç tane ihlal yapılacak."
- IP Testing: "Merhaba, {username}.<br />IP test sayfası, şu anda yüklü olan imzalarla IP adreslerinin engellenip engellenmediğini test etmenizi sağlar."
- IP Tracking: "Merhaba, {username}.<br />IP izleme sayfası, IP adreslerinin izleme durumunu kontrol etmenizi, hangilerinin yasak olduğunu kontrol etmenizi ve isterseniz bunların yasaklanmasını/izlemensini kaldırmanızı kontrol etmenizi sağlar."
- Intersector: "Merhaba, {username}.<br />Kesişen aracı, iki aralık kümesinden ortak faktörleri belirlemek için kullanılabilir."
- Logs: "Merhaba, {username}.<br />Bu günlük dosyasının içeriğini görüntülemek için aşağıdaki listeden bir günlük dosyası seçin."
+ IP Testing: "IP test sayfası, şu anda yüklü olan imzalarla IP adreslerinin engellenip engellenmediğini test etmenizi sağlar."
+ IP Tracking: "IP izleme sayfası, IP adreslerinin izleme durumunu kontrol etmenizi, hangilerinin yasak olduğunu kontrol etmenizi ve isterseniz bunların yasaklanmasını/izlemensini kaldırmanızı kontrol etmenizi sağlar."
+ Intersector: "Kesişen aracı, iki aralık kümesinden ortak faktörleri belirlemek için kullanılabilir."
+ Logs: "Bu günlük dosyasının içeriğini görüntülemek için aşağıdaki listeden bir günlük dosyası seçin."
  Number of seconds until it expires: "Süresi dolana kadar geçen saniye sayısı."
  Numeric comparison: "Sayısal karşılaştırmayı kullanmak için doğrudan dize karşılaştırmasını veya otomatik yöntem algılamayı seçin, koşulun değerinin sayısal olduğundan emin olun, ve istenen operatörün önüne ekleyin.<br />Örneğin, "eşit" koşulları için, &gt;=2, ≥2'yi sağlar, &lt;=2, ≤2'yi sağlar, "eşit değil" koşulları için, &gt;=2, ≱2'yi sağlar, &lt;=2, ≰2'yi sağlar, vb."
- Range Tables: "Merhaba, {username}.<br />Bu sayfa, şu anda aktif imza dosyalarının kapsadığı IP aralıkları hakkında bazı temel istatistiksel bilgileri göstermektedir."
- Rate Limiting: "Merhaba, {username}.<br />Bu sayfa, hız sınırlamasıyla ilgili olarak mevcut kota kullanımını ve kullanılabilirliğini gösterir."
+ Range Tables: "Bu sayfa, şu anda aktif imza dosyalarının kapsadığı IP aralıkları hakkında bazı temel istatistiksel bilgileri göstermektedir."
+ Rate Limiting: "Bu sayfa, hız sınırlamasıyla ilgili olarak mevcut kota kullanımını ve kullanılabilirliğini gösterir."
  Rate limiting is currently disabled: "Not: Hız sınırlaması şu anda devre dışı, ancak yapılandırma sayfası aracılığıyla etkinleştirilebilir."
- Report to AbuseIPDB: "Merhaba, {username}.<br />Bu sayfa, IP adreslerini AbuseIPDB'ye bildirmek veya bir IP adresinin hatalı olarak bildirilmesi durumunda önceki raporları silmek için kullanılabilir."
- Sections List: "Merhaba, {username}.<br />Bu sayfa şu anda etkin olan imza dosyalarında hangi bölümlerin bulunduğunu listeler."
+ Report to AbuseIPDB: "Bu sayfa, IP adreslerini AbuseIPDB'ye bildirmek veya bir IP adresinin hatalı olarak bildirilmesi durumunda önceki raporları silmek için kullanılabilir."
+ Sections List: "Bu sayfa şu anda etkin olan imza dosyalarında hangi bölümlerin bulunduğunu listeler."
  See the documentation: "Çeşitli yapılandırma yönergeleri ve amaçlarıyla ilgili bilgi için <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external">belgelere</a> bakın."
  Server log snippets, abuse details, etc: "Sunucu günlüğü alıntıları, kötüye kullanım ayrıntıları, vb."
- Signature File Fixer: "Merhaba, {username}.<br />İmza dosya tamircisi, imza dosyalarındaki olası sorunları tespit etmek ve çözmek için bir yol sağlar."
+ Signature File Fixer: "İmza dosya tamircisi, imza dosyalarındaki olası sorunları tespit etmek ve çözmek için bir yol sağlar."
  Specify a value, or leave blank to disregard: "Bir değer belirtin veya göz ardı etmek için boş bırakın."
  Statistics tracking is currently disabled: "Not: İstatistik izleme şu anda devre dışı, ancak yapılandırma sayfası aracılığıyla etkinleştirilebilir."
- Statistics: "Merhaba, {username}.<br />Bu sayfada, CIDRAM kurulumunuzla ilgili bazı temel kullanım istatistikleri gösterilmektedir."
- Subtractor: "Merhaba, {username}.<br />Çıkarıcı, bir IP/CIDR/ağ maskeleri aralığını bir diğerinden çıkarmak için kullanılabilir."
- Updates: "Merhaba, {username}.<br />Güncellemeler sayfası, CIDRAM'ın çeşitli bileşenlerini (çekirdek paket, imzalar, L10N dosyaları, vb) yüklemenizi, kaldırmanızı ve güncellemenizi sağlar."
+ Statistics: "Bu sayfada, CIDRAM kurulumunuzla ilgili bazı temel kullanım istatistikleri gösterilmektedir."
+ Subtractor: "Çıkarıcı, bir IP/CIDR/ağ maskeleri aralığını bir diğerinden çıkarmak için kullanılabilir."
+ Updates: "Güncellemeler sayfası, CIDRAM'ın çeşitli bileşenlerini (çekirdek paket, imzalar, L10N dosyaları, vb) yüklemenizi, kaldırmanızı ve güncellemenizi sağlar."
 warning:
  API_Rate_Limited: "Uyarı: %s API'ye erişimin şu anda hız sınırlaması olduğu görülüyor."
  Cookies: "Not: CIDRAM, oturum açma kimlik doğrulamasında çerez kullanır. Oturum açarak, tarayıcınız tarafından oluşturulacak ve saklanacak bir çerez için onayınızı verirsiniz."

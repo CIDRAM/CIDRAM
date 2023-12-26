@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malay language data for the front-end (last modified: 2023.12.25).
+# This file: Malay language data for the front-end (last modified: 2023.12.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -745,7 +745,7 @@ macro:
 max_login_attempts_exceeded: "Bilangan maksimum percubaan untuk memasuki dicapai; Akses dinafikan."
 msg_subject_2fa: "Pengesahan Dua-Faktor"
 msg_template_2fa: |
- <center><p>Salam, %s.<br /><br />
+ <center><p><br />
  Kod pengesahan dua-faktor anda untuk masuk ke bahagian hadapan CIDRAM:</p>
  <h1>%s</h1>
  <p>Kod ini tamat tempoh dalam masa 10 minit.</p></center>
@@ -915,16 +915,16 @@ time_years_ago: "%s tahun yang lalu"
 time_years_from_now: "%s tahun dari sekarang"
 tip:
  2FA Sent: "E-mel yang mengandungi kod pengesahan dua-faktor telah dihantar ke alamat e-mel anda. Sila sahkan kod ini di bawah untuk mendapatkan akses kepada bahagian hadapan. Jika anda tidak menerima e-mel ini, cuba log keluar, tunggu selama 10 minit, dan log masuk semula untuk menerima e-mel baharu yang mengandungi kod baharu."
- Accounts: "Salam, {username}.<br />Halaman akaun membolehkan anda mengawal siapa yang boleh mengakses bahagian hadapan CIDRAM."
- Aggregator: "Salam, {username}.<br />Agregator membolehkan anda ekspresikan IP, CIDR, dan topeng bersih dengan cara yang paling kecil. Masukkan data yang hendak diagregatkan dan tekan "OK"."
+ Accounts: "Halaman akaun membolehkan anda mengawal siapa yang boleh mengakses bahagian hadapan CIDRAM."
+ Aggregator: "Agregator membolehkan anda ekspresikan IP, CIDR, dan topeng bersih dengan cara yang paling kecil. Masukkan data yang hendak diagregatkan dan tekan "OK"."
  Auxiliary Rules Priority: "Keutamaan (tertinggi➡(sama🔄bersamaan)➡terendah):"
  Auxiliary Rules Webhooks: "Apabila peraturan dicetuskan, CIDRAM akan cuba memberitahu mana-mana webhook yang disambungkan tentang acara tersebut."
- Auxiliary Rules: "Salam, {username}.<br />Anda boleh menggunakan halaman ini untuk membuat, memadam, dan mengubah suai peraturan tambahan untuk CIDRAM."
- Backup: "Salam, {username}.<br />Halaman ini boleh digunakan untuk mengimport/mengeksport konfigurasi anda, peraturan tambahan anda, dsb. Ini boleh berguna jika anda perlu memindahkan data merentas pemasangan atau versi utama yang berbeza."
- Cache Data: "Salam, {username}.<br />Disini anda boleh menyemak kandungan cache."
- Calculator: "Salam, {username}.<br />Kalkulator membolehkan anda mengira CIDR dan netmask daripada alamat IP."
+ Auxiliary Rules: "Anda boleh menggunakan halaman ini untuk membuat, memadam, dan mengubah suai peraturan tambahan untuk CIDRAM."
+ Backup: "Halaman ini boleh digunakan untuk mengimport/mengeksport konfigurasi anda, peraturan tambahan anda, dsb. Ini boleh berguna jika anda perlu memindahkan data merentas pemasangan atau versi utama yang berbeza."
+ Cache Data: "Disini anda boleh menyemak kandungan cache."
+ Calculator: "Kalkulator membolehkan anda mengira CIDR dan netmask daripada alamat IP."
  Click the component name for more details: "Klik nama komponen untuk butiran lanjut."
- Configuration: "Salam, {username}.<br />Halaman konfigurasi membolehkan anda mengubah suai konfigurasi untuk CIDRAM dari bahagian hadapan."
+ Configuration: "Halaman konfigurasi membolehkan anda mengubah suai konfigurasi untuk CIDRAM dari bahagian hadapan."
  Enter IP here: "Masukkan IP disini."
  Enter IPs here: "Masukkan IP disini."
  Enter input here: "Masukkan input disini."
@@ -932,28 +932,29 @@ tip:
  Enter referrer here (optional): "Masukkan perujuk disini (pilihan)."
  Enter user agent here (optional): "Masukkan ejen pengguna disini (pilihan)."
  Enter user agents here (optional): "Masukkan ejen pengguna disini (pilihan)."
- File Manager: "Salam, {username}.<br />Pengurus fail membolehkan anda memadam, mengedit, memuat naik, dan memuat turun fail. Gunakan dengan berhati-hati (anda boleh memecahkan pemasangan anda dengan ini)."
- Home: "Salam, {username}.<br />Ini ialah halaman utama untuk bahagian hadapan CIDRAM. Pilih pautan daripada menu navigasi di sebelah kiri untuk meneruskan."
+ File Manager: "Pengurus fail membolehkan anda memadam, mengedit, memuat naik, dan memuat turun fail. Gunakan dengan berhati-hati (anda boleh memecahkan pemasangan anda dengan ini)."
+ Greeting: "Salam, %s."
+ Home: "Ini ialah halaman utama untuk bahagian hadapan CIDRAM. Pilih pautan daripada menu navigasi di sebelah kiri untuk meneruskan."
  How many infractions to incur: "Berapa banyak pelanggaran yang perlu dilakukan."
- IP Testing: "Salam, {username}.<br />Halaman ujian IP membolehkan anda menguji sama ada alamat IP disekat oleh tandatangan yang sedang dipasang."
- IP Tracking: "Salam, {username}.<br />Halaman penjejakan IP membolehkan anda untuk menyemak status penjejakan alamat IP, untuk menyemak yang mana antara mereka telah diharamkan, dan untuk menyahlarang/menyahjejaknya jika anda mahu berbuat demikian."
- Intersector: "Salam, {username}.<br />Intersektor boleh digunakan untuk menentukan faktor sepunya daripada dua set julat."
- Logs: "Salam, {username}.<br />Pilih fail log daripada senarai di bawah untuk melihat kandungan fail log tersebut."
+ IP Testing: "Halaman ujian IP membolehkan anda menguji sama ada alamat IP disekat oleh tandatangan yang sedang dipasang."
+ IP Tracking: "Halaman penjejakan IP membolehkan anda untuk menyemak status penjejakan alamat IP, untuk menyemak yang mana antara mereka telah diharamkan, dan untuk menyahlarang/menyahjejaknya jika anda mahu berbuat demikian."
+ Intersector: "Intersektor boleh digunakan untuk menentukan faktor sepunya daripada dua set julat."
+ Logs: "Pilih fail log daripada senarai di bawah untuk melihat kandungan fail log tersebut."
  Number of seconds until it expires: "Bilangan saat sehingga tamat tempoh."
  Numeric comparison: "Untuk menggunakan perbandingan angka, pilih perbandingan rentetan langsung atau pengesanan kaedah automatik, pastikan nilai syarat adalah angka, dan awalan dengan operator yang dikehendaki.<br />Cth., untuk syarat "sama", &gt;=2 menyediakan ≥2, &lt;=2 menyediakan ≤2, untuk syarat "tidak sama", &gt;=2 menyediakan ≱2, &lt;=2 menyediakan ≰2, dsb."
- Range Tables: "Salam, {username}.<br />Halaman ini menunjukkan beberapa maklumat statistik asas tentang julat IP yang diliputi oleh fail tandatangan yang sedang aktif."
- Rate Limiting: "Salam, {username}.<br />Halaman ini menunjukkan penggunaan dan ketersediaan kuota semasa berkaitan dengan pengehadan kadar."
+ Range Tables: "Halaman ini menunjukkan beberapa maklumat statistik asas tentang julat IP yang diliputi oleh fail tandatangan yang sedang aktif."
+ Rate Limiting: "Halaman ini menunjukkan penggunaan dan ketersediaan kuota semasa berkaitan dengan pengehadan kadar."
  Rate limiting is currently disabled: "Nota: Pengehadan kadar kini dinyahaktifkan, tetapi boleh diaktifkan melalui halaman konfigurasi."
- Report to AbuseIPDB: "Salam, {username}.<br />Halaman ini boleh digunakan untuk melaporkan alamat IP kepada AbuseIPDB, atau untuk memadam laporan sebelumnya sekiranya alamat IP telah dilaporkan secara tersilap."
- Sections List: "Salam, {username}.<br />Halaman ini menyenaraikan bahagian mana yang wujud dalam fail tandatangan yang sedang aktif."
+ Report to AbuseIPDB: "Halaman ini boleh digunakan untuk melaporkan alamat IP kepada AbuseIPDB, atau untuk memadam laporan sebelumnya sekiranya alamat IP telah dilaporkan secara tersilap."
+ Sections List: "Halaman ini menyenaraikan bahagian mana yang wujud dalam fail tandatangan yang sedang aktif."
  See the documentation: "Lihat <a href="https://github.com/CIDRAM/Docs/blob/master/readme.id.md\#user-content-SECTION5" hreflang="id-ID" rel="noopener external">dokumentasi</a> untuk mendapatkan maklumat tentang pelbagai arahan konfigurasi dan tujuannya."
  Server log snippets, abuse details, etc: "Log pelayan, butiran penyalahgunaan, dsb."
- Signature File Fixer: "Salam, {username}.<br />Pembetul fail tandatangan menyediakan cara untuk mengesan dan menyelesaikan masalah yang berpotensi dalam fail tandatangan."
+ Signature File Fixer: "Pembetul fail tandatangan menyediakan cara untuk mengesan dan menyelesaikan masalah yang berpotensi dalam fail tandatangan."
  Specify a value, or leave blank to disregard: "Tentukan nilai, atau biarkan kosong untuk mengabaikannya."
  Statistics tracking is currently disabled: "Nota: Penjejakan statistik kini dinyahaktifkan, tetapi boleh diaktifkan melalui halaman konfigurasi."
- Statistics: "Salam, {username}.<br />Halaman ini menunjukkan beberapa statistik penggunaan asas mengenai pemasangan CIDRAM anda."
- Subtractor: "Salam, {username}.<br />Penolakan boleh digunakan untuk menolak satu julat IP/CIDR/netmask daripada yang lain."
- Updates: "Salam, {username}.<br />Halaman kemas kini membolehkan anda memasang, menyahpasang, dan mengemas kini pelbagai komponen CIDRAM (pakej teras, tandatangan, fail L10N, dsb)."
+ Statistics: "Halaman ini menunjukkan beberapa statistik penggunaan asas mengenai pemasangan CIDRAM anda."
+ Subtractor: "Penolakan boleh digunakan untuk menolak satu julat IP/CIDR/netmask daripada yang lain."
+ Updates: "Halaman kemas kini membolehkan anda memasang, menyahpasang, dan mengemas kini pelbagai komponen CIDRAM (pakej teras, tandatangan, fail L10N, dsb)."
 warning:
  API_Rate_Limited: "Amaran: Akses kepada %s API nampaknya pada masa ini adalah kadar terhad."
  Cookies: "Nota: CIDRAM menggunakan kuki untuk mengesahkan log masuk. Apabila anda log masuk, anda memberikan persetujuan anda untuk kuki dibuat dan disimpan oleh penyemak imbas anda."

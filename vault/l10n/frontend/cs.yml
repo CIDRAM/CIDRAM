@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Czech language data for the front-end (last modified: 2023.12.25).
+# This file: Czech language data for the front-end (last modified: 2023.12.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -756,7 +756,7 @@ macro:
 max_login_attempts_exceeded: "Byl překročen maximální počet pokusů o přihlášení; Přístup odepřen."
 msg_subject_2fa: "Dvoufaktorová autentizace"
 msg_template_2fa: |
- <center><p>Ahoj, %s.<br /><br />
+ <center><p><br />
  Váš dvoufaktorový autentizační kód pro přihlášení do front-endu CIDRAM:</p>
  <h1>%s</h1>
  <p>Platnost tohoto kódu vyprší za 10 minut.</p></center>
@@ -971,16 +971,16 @@ time_years_from_now:
  - "Za %s let"
 tip:
  2FA Sent: "Na vaši e-mailovou adresu byl odeslán e-mail obsahující dvoufaktorový ověřovací kód. Chcete-li získat přístup k front-endu, potvrďte prosím tento kód níže. Pokud jste tento e-mail neobdrželi, zkuste se odhlásit, počkejte 10 minut, a znovu se přihlaste, abyste dostali nový e-mail obsahující nový kód."
- Accounts: "Ahoj, {username}.<br />Stránka účtů vám umožňuje ovládat, kdo má přístup k front-endu CIDRAM."
- Aggregator: "Ahoj, {username}.<br />Agregátor vám umožňuje vyjadřovat IP, CIDR, a síťové masky nejmenším možným způsobem. Zadejte data, která mají být agregována, a stiskněte „OK“."
+ Accounts: "Stránka účtů vám umožňuje ovládat, kdo má přístup k front-endu CIDRAM."
+ Aggregator: "Agregátor vám umožňuje vyjadřovat IP, CIDR, a síťové masky nejmenším možným způsobem. Zadejte data, která mají být agregována, a stiskněte „OK“."
  Auxiliary Rules Priority: "Prioritou (nejvyšší➡(stejné🔄ekvivalent)➡nejnižší):"
  Auxiliary Rules Webhooks: "Když je pravidlo spuštěno, CIDRAM se pokusí upozornit na událost všechny připojené webhooky."
- Auxiliary Rules: "Ahoj, {username}.<br />Tuto stránku můžete použít k vytvoření, odstranění, a úpravě pomocných pravidel pro CIDRAM."
- Backup: "Ahoj, {username}.<br />Tuto stránku lze použít k importu/exportu vaší konfigurace, pomocných pravidel, atd. To může být užitečné, pokud potřebujete migrovat data mezi různými instalacemi nebo různými hlavními verzemi."
- Cache Data: "Ahoj, {username}.<br />Zde si můžete prohlédnout obsah mezipaměti."
- Calculator: "Ahoj, {username}.<br />Kalkulačka umožňuje vypočítat CIDR a masku sítě IP adresy."
+ Auxiliary Rules: "Tuto stránku můžete použít k vytvoření, odstranění, a úpravě pomocných pravidel pro CIDRAM."
+ Backup: "Tuto stránku lze použít k importu/exportu vaší konfigurace, pomocných pravidel, atd. To může být užitečné, pokud potřebujete migrovat data mezi různými instalacemi nebo různými hlavními verzemi."
+ Cache Data: "Zde si můžete prohlédnout obsah mezipaměti."
+ Calculator: "Kalkulačka umožňuje vypočítat CIDR a masku sítě IP adresy."
  Click the component name for more details: "Kliknutím na název komponent zobrazíte další podrobnosti."
- Configuration: "Ahoj, {username}.<br />Konfigurační stránka vám umožňuje upravit konfiguraci pro CIDRAM z front-endu."
+ Configuration: "Konfigurační stránka vám umožňuje upravit konfiguraci pro CIDRAM z front-endu."
  Enter IP here: "Zde zadejte IP adresu."
  Enter IPs here: "Zde zadejte IP adresy."
  Enter input here: "Zde zadejte vstup."
@@ -988,28 +988,29 @@ tip:
  Enter referrer here (optional): "Zde zadejte referrera (volitelný)."
  Enter user agent here (optional): "Zde zadejte uživatelského agenta (volitelný)."
  Enter user agents here (optional): "Zde zadejte uživatelské agenty (volitelný)."
- File Manager: "Ahoj, {username}.<br />Správce souborů umožňuje mazat, upravovat, nahrávat, a stahovat soubory. Používejte opatrně (můžete tím poškodit instalaci)."
- Home: "Ahoj, {username}.<br />Toto je domovská stránka pro front-end CIDRAM. Pokračovat, vyberte odkaz z navigační nabídky vlevo."
+ File Manager: "Správce souborů umožňuje mazat, upravovat, nahrávat, a stahovat soubory. Používejte opatrně (můžete tím poškodit instalaci)."
+ Greeting: "Ahoj, %s."
+ Home: "Toto je domovská stránka pro front-end CIDRAM. Pokračovat, vyberte odkaz z navigační nabídky vlevo."
  How many infractions to incur: "Kolik přestupků nastat."
- IP Testing: "Ahoj, {username}.<br />Stránka testování IP umožňuje otestovat, zda jsou adresy IP blokovány aktuálně nainstalovanými signaturami."
- IP Tracking: "Ahoj, {username}.<br />Stránka sledování IP vám umožňuje zkontrolovat stav sledování IP adres, zkontrolovat, které z nich byly zakázány, a jej zrušit zákaz nebo zrušit sledování, pokud tak chcete učinit."
- Intersector: "Ahoj, {username}.<br />Mezisektor lze použít k určení společných faktorů ze dvou sad rozsahů."
- Logs: "Ahoj, {username}.<br />Chcete-li zobrazit obsah tohoto souboru protokolu, vyberte soubor protokolu ze seznamu níže."
+ IP Testing: "Stránka testování IP umožňuje otestovat, zda jsou adresy IP blokovány aktuálně nainstalovanými signaturami."
+ IP Tracking: "Stránka sledování IP vám umožňuje zkontrolovat stav sledování IP adres, zkontrolovat, které z nich byly zakázány, a jej zrušit zákaz nebo zrušit sledování, pokud tak chcete učinit."
+ Intersector: "Mezisektor lze použít k určení společných faktorů ze dvou sad rozsahů."
+ Logs: "Chcete-li zobrazit obsah tohoto souboru protokolu, vyberte soubor protokolu ze seznamu níže."
  Number of seconds until it expires: "Počet sekund do vypršení platnosti."
  Numeric comparison: "Chcete-li použít číselné porovnání, vyberte přímé porovnání řetězců nebo automatickou detekci metody, ujistěte se že hodnota podmínky je číselná, a před ní přidejte požadovaný operátor.<br />Např., pro „rovná se“ podmínky, &gt;=2 poskytuje ≥2, &lt;=2 poskytuje ≤2, pro „nerovná se“ podmínky, &gt;=2 poskytuje ≱2, &lt;=2 poskytuje ≰2, atd."
- Range Tables: "Ahoj, {username}.<br />Tato stránka zobrazuje některé základní statistické informace o rozsazích IP pokrytých aktuálně aktivními soubory podpisů."
- Rate Limiting: "Ahoj, {username}.<br />Tato stránka zobrazuje aktuální využití kvóty a dostupnost s ohledem na omezení rychlosti."
+ Range Tables: "Tato stránka zobrazuje některé základní statistické informace o rozsazích IP pokrytých aktuálně aktivními soubory podpisů."
+ Rate Limiting: "Tato stránka zobrazuje aktuální využití kvóty a dostupnost s ohledem na omezení rychlosti."
  Rate limiting is currently disabled: "Poznámka: Omezení rychlosti je aktuálně deaktivováno, ale lze jej aktivovat prostřednictvím konfigurační stránky."
- Report to AbuseIPDB: "Ahoj, {username}.<br />Tuto stránku lze použít k reportovat IP adres AbuseIPDB, nebo k smazat předchozích report v případě, že byla IP adresa nahlášena omylem."
- Sections List: "Ahoj, {username}.<br />Tato stránka uvádí, které sekce existují v aktuálně aktivních souborech podpisů."
+ Report to AbuseIPDB: "Tuto stránku lze použít k reportovat IP adres AbuseIPDB, nebo k smazat předchozích report v případě, že byla IP adresa nahlášena omylem."
+ Sections List: "Tato stránka uvádí, které sekce existují v aktuálně aktivních souborech podpisů."
  See the documentation: "Informace o různých konfiguračních direktivách a jejich účelech najdete v <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external">dokumentaci</a>."
  Server log snippets, abuse details, etc: "Úryvky protokolu serveru, podrobnosti o zneužití, atd."
- Signature File Fixer: "Ahoj, {username}.<br />Opravovač podpisových souborů poskytuje způsob, jak zjistit a opravit potenciální problémy v souborech podpisů."
+ Signature File Fixer: "Opravovač podpisových souborů poskytuje způsob, jak zjistit a opravit potenciální problémy v souborech podpisů."
  Specify a value, or leave blank to disregard: "Zadejte hodnotu nebo ponechte prázdné, aby se to ignorovalo."
  Statistics tracking is currently disabled: "Poznámka: Sledování statistik je aktuálně deaktivováno, ale lze jej aktivovat prostřednictvím konfigurační stránky."
- Statistics: "Ahoj, {username}.<br />Tato stránka zobrazuje některé základní statistiky používání týkající se vaší instalace CIDRAM."
- Subtractor: "Ahoj, {username}.<br />Odečítač lze použít k odečtení jednoho rozsahu IP/CIDR/síťových masek od jiného."
- Updates: "Ahoj, {username}.<br />Stránka aktualizací umožňuje instalovat, odinstalovat, a aktualizovat různé komponenty CIDRAM (základní balíček, podpisy, soubory L10N, atd)."
+ Statistics: "Tato stránka zobrazuje některé základní statistiky používání týkající se vaší instalace CIDRAM."
+ Subtractor: "Odečítač lze použít k odečtení jednoho rozsahu IP/CIDR/síťových masek od jiného."
+ Updates: "Stránka aktualizací umožňuje instalovat, odinstalovat, a aktualizovat různé komponenty CIDRAM (základní balíček, podpisy, soubory L10N, atd)."
 warning:
  API_Rate_Limited: "Varování: Zdá se, že přístup k %s API je v současné době omezen."
  Cookies: "Poznámka: CIDRAM používá cookie k ověření přihlášení. Přihlášením souhlasíte s tím, aby váš prohlížeč vytvořil a uložil soubor cookie."

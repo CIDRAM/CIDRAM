@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2023.12.24).
+ * This file: General methods used by the front-end (last modified: 2023.12.26).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -554,8 +554,11 @@ trait FrontEndMethods
             }
         }
 
+        /** Prepare page greeting. */
+        $this->FE['Greeting'] = sprintf($this->L10N->getString('tip.Greeting'), $Username);
+
         /** Prepare page tooltip/description. */
-        $this->FE['FE_Tip'] = $this->parseVars(['username' => $Username], $Tips);
+        $this->FE['FE_Tip'] = $this->parseVars([], $Tips);
 
         /** Load main front-end JavaScript data. */
         $this->FE['JS'] = $JS ? $this->parseVars([], $this->readFile($this->getAssetPath('scripts.js')), true) : '';

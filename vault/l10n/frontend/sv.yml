@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2023.12.25).
+# This file: Swedish language data for the front-end (last modified: 2023.12.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -753,7 +753,7 @@ macro:
 max_login_attempts_exceeded: "Maximalt antal inloggningsförsök överskreds; Nekat tillgång."
 msg_subject_2fa: "Tvåfaktorsautentisering"
 msg_template_2fa: |
- <center><p>Hallå, %s.<br /><br />
+ <center><p><br />
  Din 2FA-kod för att logga in i CIDRAM front-end:</p>
  <h1>%s</h1>
  <p>Denna kod löper ut om 10 minuter.</p></center>
@@ -949,16 +949,16 @@ time_years_ago: "%s år sedan"
 time_years_from_now: "%s år från nu"
 tip:
  2FA Sent: "Ett email som innehåller en 2FA-kod har skickats till din e-postadress. Vänligen bekräfta den här koden nedan för att få tillgång till front-end. Om du inte fick det här e-postmeddelandet, försöker du logga ut, vänta i 10 minuter, och logga in igen för att få ett nytt e-postmeddelande med en ny kod."
- Accounts: "Hallå, {username}.<br />Du kan styra vem som har tillgång till CIDRAM front-end på kontosidan."
- Aggregator: "Hallå, {username}.<br />Du kan aggregera IP-adresser, subnät, och nätmasker till deras minsta möjliga uttryck med hjälp av aggregatorn. Ange data som ska aggregeras och tryck på "OK"."
+ Accounts: "Du kan styra vem som har tillgång till CIDRAM front-end på kontosidan."
+ Aggregator: "Du kan aggregera IP-adresser, subnät, och nätmasker till deras minsta möjliga uttryck med hjälp av aggregatorn. Ange data som ska aggregeras och tryck på "OK"."
  Auxiliary Rules Priority: "Prioritet (högsta➡(likvärdig🔄ekvivalent)➡lägst):"
  Auxiliary Rules Webhooks: "När en regel utlöses, CIDRAM kommer att försöka meddela alla anslutna webhooks om händelsen."
- Auxiliary Rules: "Hallå, {username}.<br />Du kan använda den här sidan för att skapa, ta bort och ändra hjälpregler för CIDRAM."
- Backup: "Hallå, {username}.<br />Den här sidan kan användas för att importera/exportera din konfiguration, hjälpregler, osv. Detta kan vara användbart om du behöver migrera data över olika installationer eller olika större versioner."
- Cache Data: "Hallå, {username}.<br />Här kan du granska innehållet i cacheminnet."
- Calculator: "Hallå, {username}.<br />Kalkylatorn låter dig beräkna CIDR-er och nätmasker för en IP-adress."
+ Auxiliary Rules: "Du kan använda den här sidan för att skapa, ta bort och ändra hjälpregler för CIDRAM."
+ Backup: "Den här sidan kan användas för att importera/exportera din konfiguration, hjälpregler, osv. Detta kan vara användbart om du behöver migrera data över olika installationer eller olika större versioner."
+ Cache Data: "Här kan du granska innehållet i cacheminnet."
+ Calculator: "Kalkylatorn låter dig beräkna CIDR-er och nätmasker för en IP-adress."
  Click the component name for more details: "Klicka på komponentnamnet för mer information."
- Configuration: "Hallå, {username}.<br />Du kan ändra konfigurationen för CIDRAM från front-enden konfigurationssida."
+ Configuration: "Du kan ändra konfigurationen för CIDRAM från front-enden konfigurationssida."
  Enter IP here: "Ange IP-adress här."
  Enter IPs here: "Ange IP-adresser här."
  Enter input here: "Ange inmatning här."
@@ -966,28 +966,29 @@ tip:
  Enter referrer here (optional): "Ange hänvisningsen här (valfritt)."
  Enter user agent here (optional): "Ange användaragent här (valfritt)."
  Enter user agents here (optional): "Ange användaragenter här (valfritt)."
- File Manager: "Hallå, {username}.<br />Du kan radera, redigera, ladda upp och ladda ner filer med hjälp av filhanteraren. Använd med försiktighet (du kan bryta din installation med detta)."
- Home: "Hallå, {username}.<br />Detta är hemsidan för CIDRAM front-end. Välj en länk från navigeringsmenyn till vänster för att fortsätta."
+ File Manager: "Du kan radera, redigera, ladda upp och ladda ner filer med hjälp av filhanteraren. Använd med försiktighet (du kan bryta din installation med detta)."
+ Greeting: "Hallå, %s."
+ Home: "Detta är hemsidan för CIDRAM front-end. Välj en länk från navigeringsmenyn till vänster för att fortsätta."
  How many infractions to incur: "Hur många överträdelser som ska tillämpas."
- IP Testing: "Hallå, {username}.<br />Du kan testa om IP-adresser blockeras av nuvarande installerade signaturer med hjälp av IP-testsidan."
- IP Tracking: "Hallå, {username}.<br />Med hjälp av IP-spårningssidan, du kan kontrollera vilka IP-adresser som spåras, vilka har blivit förbjudna, och du kan återkalla spårning och förbud om du vill."
- Intersector: "Hallå, {username}.<br />Korsningen kan användas för att bestämma de gemensamma faktorerna från två uppsättningar av intervall."
- Logs: "Hallå, {username}.<br />Välj en loggfil från listan nedan för att se innehållet i den loggfilen."
+ IP Testing: "Du kan testa om IP-adresser blockeras av nuvarande installerade signaturer med hjälp av IP-testsidan."
+ IP Tracking: "Med hjälp av IP-spårningssidan, du kan kontrollera vilka IP-adresser som spåras, vilka har blivit förbjudna, och du kan återkalla spårning och förbud om du vill."
+ Intersector: "Korsningen kan användas för att bestämma de gemensamma faktorerna från två uppsättningar av intervall."
+ Logs: "Välj en loggfil från listan nedan för att se innehållet i den loggfilen."
  Number of seconds until it expires: "Antal sekunder till utgången."
  Numeric comparison: "För att använda numerisk jämförelse, välj direkt strängjämförelse eller automatisk metoddetektering, se till att villkorets värde är numeriskt, och prefix det med önskad operator.<br />T.ex., för "lika" villkor, &gt;=2 ger ≥2, &lt;=2 ger ≤2, för "inte lika" villkor, &gt;=2 ger ≱2, &lt;=2 ger ≰2, osv."
- Range Tables: "Hallå, {username}.<br />Den här sidan visar några grundläggande statistiska uppgifter om de signaturer som omfattas av de aktuella aktiva signaturfilerna."
- Rate Limiting: "Hallå, {username}.<br />Den här sidan visar den aktuella kvotanvändningen och tillgängligheten när det gäller hastighetsbegränsning."
+ Range Tables: "Den här sidan visar några grundläggande statistiska uppgifter om de signaturer som omfattas av de aktuella aktiva signaturfilerna."
+ Rate Limiting: "Den här sidan visar den aktuella kvotanvändningen och tillgängligheten när det gäller hastighetsbegränsning."
  Rate limiting is currently disabled: "Notera: Hastighetsbegränsning är för närvarande inaktiverad, men kan aktiveras via konfigurationssidan."
- Report to AbuseIPDB: "Hallå, {username}.<br />Denna sida kan användas för att rapportera IP-adresser till AbuseIPDB, eller för att radera tidigare rapporter i händelse av att en IP-adress har rapporterats av misstag."
- Sections List: "Hallå, {username}.<br />Den här sidan visar vilka sektioner som finns i de aktuella aktiva signaturfilerna."
+ Report to AbuseIPDB: "Denna sida kan användas för att rapportera IP-adresser till AbuseIPDB, eller för att radera tidigare rapporter i händelse av att en IP-adress har rapporterats av misstag."
+ Sections List: "Den här sidan visar vilka sektioner som finns i de aktuella aktiva signaturfilerna."
  See the documentation: "Se <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external">dokumentationen</a> för information om de olika konfigurationsdirektiven och deras ändamål."
  Server log snippets, abuse details, etc: "Utdrag från serverlogg, missbruksdetaljer, osv."
- Signature File Fixer: "Hallå, {username}.<br />Signaturfilfixaren ger ett sätt att upptäcka och åtgärda eventuella problem i signaturfiler."
+ Signature File Fixer: "Signaturfilfixaren ger ett sätt att upptäcka och åtgärda eventuella problem i signaturfiler."
  Specify a value, or leave blank to disregard: "Ange ett värde, eller lämna tomma för att bortse från."
  Statistics tracking is currently disabled: "Notera: Statistikspårning är för närvarande inaktiverad, men kan aktiveras via konfigurationssidan."
- Statistics: "Hallå, {username}.<br />Den här sidan visar en viss användarstatistik för din CIDRAM-installation."
- Subtractor: "Hallå, {username}.<br />Subtraktoren kan användas för att subtrahera intervaller av IPer/CIDRer/nätmasker från ett annat."
- Updates: "Hallå, {username}.<br />Du kan installera, avinstallera och uppdatera de olika komponenterna i CIDRAM (kärnpaketet, signaturer, L10N-filer, osv) med hjälp av uppdateringssidan."
+ Statistics: "Den här sidan visar en viss användarstatistik för din CIDRAM-installation."
+ Subtractor: "Subtraktoren kan användas för att subtrahera intervaller av IPer/CIDRer/nätmasker från ett annat."
+ Updates: "Du kan installera, avinstallera och uppdatera de olika komponenterna i CIDRAM (kärnpaketet, signaturer, L10N-filer, osv) med hjälp av uppdateringssidan."
 warning:
  API_Rate_Limited: "Varning: Åtkomsten till %s API verkar för närvarande vara begränsad."
  Cookies: "Notera: CIDRAM använder en cookie för att autentisera inloggningar. Genom att logga in, ger du ditt samtycke till att en cookie ska skapas och lagras av din webbläsare."

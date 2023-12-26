@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2023.12.25).
+# This file: Portuguese language data for the front-end (last modified: 2023.12.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -819,7 +819,7 @@ macro:
 max_login_attempts_exceeded: "Número máximo de tentativas de login foi excedido; Acesso negado."
 msg_subject_2fa: "Autenticação de dois fatores"
 msg_template_2fa: |
- <center><p>Olá, %s.<br /><br />
+ <center><p><br />
  Seu código de autenticação de dois fatores para efetuar login no front-end CIDRAM:</p>
  <h1>%s</h1>
  <p>Este código expira em 10 minutos.</p></center>
@@ -1023,16 +1023,16 @@ time_years_from_now:
  - "%s anos a partir de agora"
 tip:
  2FA Sent: "Um e-mail contendo um código de autenticação de dois fatores foi enviado para o seu endereço de e-mail. Por favor, confirme este código abaixo para obter acesso ao front-end. Se você não recebeu este e-mail, tente fazer logout, aguarde 10 minutos, e faça login novamente para receber um novo e-mail contendo um novo código."
- Accounts: "Olá, {username}.<br />A página de contas permite que você controle quem pode acessar o CIDRAM front-end."
- Aggregator: "Olá, {username}.<br />O agregador permite que você expresse IPs, CIDRs, e máscaras de rede da maneira mais pequena possível. Insira os dados a serem agregados e pressione "OK"."
+ Accounts: "A página de contas permite que você controle quem pode acessar o CIDRAM front-end."
+ Aggregator: "O agregador permite que você expresse IPs, CIDRs, e máscaras de rede da maneira mais pequena possível. Insira os dados a serem agregados e pressione "OK"."
  Auxiliary Rules Priority: "Prioridade (altíssima➡(igual🔄equivalente)➡baixíssima):"
  Auxiliary Rules Webhooks: "Quando uma regra é acionada, o CIDRAM tentará notificar quaisquer webhooks conectados sobre o evento."
- Auxiliary Rules: "Olá, {username}.<br />Você pode usar esta página para criar, deletar e modificar regras auxiliares para o CIDRAM."
- Backup: "Olá, {username}.<br />Esta página pode ser usada para importar/exportar sua configuração, regras auxiliares, etc. Isso pode ser útil se você precisar migrar dados entre diferentes instalações ou diferentes versões principais."
- Cache Data: "Olá, {username}.<br />Aqui você pode rever o conteúdo do cache."
- Calculator: "Olá, {username}.<br />A calculadora permite calcular os CIDRs e máscaras de rede de um endereço IP."
+ Auxiliary Rules: "Você pode usar esta página para criar, deletar e modificar regras auxiliares para o CIDRAM."
+ Backup: "Esta página pode ser usada para importar/exportar sua configuração, regras auxiliares, etc. Isso pode ser útil se você precisar migrar dados entre diferentes instalações ou diferentes versões principais."
+ Cache Data: "Aqui você pode rever o conteúdo do cache."
+ Calculator: "A calculadora permite calcular os CIDRs e máscaras de rede de um endereço IP."
  Click the component name for more details: "Clique no nome do componente para mais detalhes."
- Configuration: "Olá, {username}.<br />A página de configuração permite que você modifique a configuração do CIDRAM a partir do front-end."
+ Configuration: "A página de configuração permite que você modifique a configuração do CIDRAM a partir do front-end."
  Enter IP here: "Insira o IP aqui."
  Enter IPs here: "Insira os IPs aqui."
  Enter input here: "Insira a entrada aqui."
@@ -1044,32 +1044,33 @@ tip:
  Enter user agents here (optional):
   pt-BR: "Insira os agentes do usuário aqui (opcional)."
   pt-PT: "Insira os agentes do utilizador aqui (opcional)."
- File Manager: "Olá, {username}.<br />O gerenciador de arquivos permite deletar, editar, carregar e descarregar arquivos. Use com cuidado (você poderia quebrar sua instalação com este)."
- Home: "Olá, {username}.<br />Esta é a página principal do CIDRAM front-end. Selecione um link no menu de navegação à esquerda para continuar."
+ File Manager: "O gerenciador de arquivos permite deletar, editar, carregar e descarregar arquivos. Use com cuidado (você poderia quebrar sua instalação com este)."
+ Greeting: "Olá, %s."
+ Home: "Esta é a página principal do CIDRAM front-end. Selecione um link no menu de navegação à esquerda para continuar."
  How many infractions to incur: "Quantas infrações incorrer."
- IP Testing: "Olá, {username}.<br />A página para teste IP permite que você teste se os endereços IP são bloqueados pelas assinaturas atualmente instaladas."
- IP Tracking: "Olá, {username}.<br />A página de monitoração IP permite verificar o status de monitoração de endereços IP, para verificar quais deles foram banidos, e para cancelar monitoração para eles se você quiser fazê-lo."
- Intersector: "Olá, {username}.<br />O intersetor pode ser usado para determinar os fatores comuns de dois conjuntos de alcances."
- Logs: "Olá, {username}.<br />Selecionar um arquivo de log da lista abaixo para visualizar o conteúdo desse arquivo de log."
+ IP Testing: "A página para teste IP permite que você teste se os endereços IP são bloqueados pelas assinaturas atualmente instaladas."
+ IP Tracking: "A página de monitoração IP permite verificar o status de monitoração de endereços IP, para verificar quais deles foram banidos, e para cancelar monitoração para eles se você quiser fazê-lo."
+ Intersector: "O intersetor pode ser usado para determinar os fatores comuns de dois conjuntos de alcances."
+ Logs: "Selecionar um arquivo de log da lista abaixo para visualizar o conteúdo desse arquivo de log."
  Number of seconds until it expires: "Número de segundos até expirar."
  Numeric comparison:
   pt-BR: "Para usar a comparação numérica, selecione comparação direta de strings ou detecção automática de método, certifique-se de que o valor da condição seja numérico, e prefixe-o com o operador desejado.<br />Por exemplo, para condições "iguais", &gt;=2 fornece ≥2, &lt;=2 fornece ≤2, para condições "não iguais", &gt;=2 fornece ≱2, &lt;=2 fornece ≰2, etc."
   pt-PT: "Para usar a comparação numérica, selecione comparação direta de strings ou deteção automática de método, certifique-se de que o valor da condição seja numérico, e prefixe-o com o operador desejado.<br />Por exemplo, para condições "iguais", &gt;=2 fornece ≥2, &lt;=2 fornece ≤2, para condições "não iguais", &gt;=2 fornece ≱2, &lt;=2 fornece ≰2, etc."
- Range Tables: "Olá, {username}.<br />Esta página mostra algumas informações estatísticas básicas sobre os IPs abrangidos pelos arquivos de assinatura ativos no momento."
- Rate Limiting: "Olá, {username}.<br />Esta página mostra o uso e a disponibilidade da cota atual em relação à limitação de taxa."
+ Range Tables: "Esta página mostra algumas informações estatísticas básicas sobre os IPs abrangidos pelos arquivos de assinatura ativos no momento."
+ Rate Limiting: "Esta página mostra o uso e a disponibilidade da cota atual em relação à limitação de taxa."
  Rate limiting is currently disabled: "Nota: A limitação de taxa está desativado atualmente, mas pode ser ativado através da página de configuração."
- Report to AbuseIPDB: "Olá, {username}.<br />Esta página pode ser usado para relatar endereços IP ao AbuseIPDB, ou para deletar relatórios anteriores caso um endereço IP tenha sido relatado por engano."
+ Report to AbuseIPDB: "Esta página pode ser usado para relatar endereços IP ao AbuseIPDB, ou para deletar relatórios anteriores caso um endereço IP tenha sido relatado por engano."
  Sections List:
-  pt-BR: "Olá, {username}.<br />Esta página lista quais seções existem nos arquivos de assinatura atualmente ativos."
-  pt-PT: "Olá, {username}.<br />Esta página lista quais secções existem nos arquivos de assinatura atualmente ativos."
+  pt-BR: "Esta página lista quais seções existem nos arquivos de assinatura atualmente ativos."
+  pt-PT: "Esta página lista quais secções existem nos arquivos de assinatura atualmente ativos."
  See the documentation: "Consulte a <a href="https://github.com/CIDRAM/Docs/blob/master/readme.pt.md\#user-content-SECTION5" hreflang="pt" rel="noopener external">documentação</a> para obter informações sobre as várias diretrizes de configuração e seus objetivos."
  Server log snippets, abuse details, etc: "Trechos de log do servidor, detalhes de abuso, etc."
- Signature File Fixer: "Olá, {username}.<br />O fixador para os arquivos de assinatura fornece uma maneira de detectar e corrigir possíveis problemas em arquivos de assinatura."
+ Signature File Fixer: "O fixador para os arquivos de assinatura fornece uma maneira de detectar e corrigir possíveis problemas em arquivos de assinatura."
  Specify a value, or leave blank to disregard: "Especifique um valor, ou deixe em branco para desconsiderar."
  Statistics tracking is currently disabled: "Nota: O monitoramento de estatísticas está desativado atualmente, mas pode ser ativado através da página de configuração."
- Statistics: "Olá, {username}.<br />Esta página mostra algumas estatísticas de uso básicas relativas à instalação do CIDRAM."
- Subtractor: "Olá, {username}.<br />O subtrator pode ser usado para subtrair um alcance de IPs/CIDRs/máscaras de rede de outro."
- Updates: "Olá, {username}.<br />A página de atualizações permite que você instale, desinstale, e atualize os vários componentes do CIDRAM (o pacote principal, assinaturas, arquivos de L10N, etc)."
+ Statistics: "Esta página mostra algumas estatísticas de uso básicas relativas à instalação do CIDRAM."
+ Subtractor: "O subtrator pode ser usado para subtrair um alcance de IPs/CIDRs/máscaras de rede de outro."
+ Updates: "A página de atualizações permite que você instale, desinstale, e atualize os vários componentes do CIDRAM (o pacote principal, assinaturas, arquivos de L10N, etc)."
 warning:
  API_Rate_Limited: "Atenção: O acesso à API %s parece ser atualmente limitado por taxa."
  Cookies: "Nota: CIDRAM usa um cookie para autenticar logins. Ao efetuar o login, você dá seu consentimento para que um cookie seja criado e armazenado pelo seu navegador."

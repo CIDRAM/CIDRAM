@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2023.12.25).
+# This file: Korean language data for the front-end (last modified: 2023.12.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -740,7 +740,7 @@ macro:
 max_login_attempts_exceeded: "로그인 시도 횟수를 초과했습니다; 액세스 거부."
 msg_subject_2fa: "2FA (이중 인증)"
 msg_template_2fa: |
- <center><p>안녕하세요, %s.<br /><br />
+ <center><p><br />
  CIDRAM 프런트 엔드에 로그인하기위한 2FA 코드 :</p>
  <h1>%s</h1>
  <p>이 코드는 10 분 후에 만료됩니다.</p></center>
@@ -910,16 +910,16 @@ time_years_ago: "%s년 전"
 time_years_from_now: "지금부터 %s년"
 tip:
  2FA Sent: "2FA 코드가 포함 된 이메일이 귀하의 이메일 주소로 발송되었습니다. 프런트 엔드에 액세스하려면 아래 코드를 확인하십시오. 이 이메일을받지 못한 경우 로그 아웃을 시도하고 10 분을 기다린 후 다시 로그인하여 새 코드가 포함 된 새 이메일을 수신 할 수 있습니다."
- Accounts: "안녕하세요, {username}.<br />계정 페이지는 CIDRAM 프론트 엔드에 액세스 할 수있는 사용자를 제어 할 수 있습니다."
- Aggregator: "안녕하세요, {username}.<br />애그리게이터 가능한 한 가장 작은 방법으로 IP와 CIDR와 넷마스크를 표현할 수 있게 합니다. 집계할 데이터를 입력하고 "확인"을 누릅니다."
+ Accounts: "계정 페이지는 CIDRAM 프론트 엔드에 액세스 할 수있는 사용자를 제어 할 수 있습니다."
+ Aggregator: "애그리게이터 가능한 한 가장 작은 방법으로 IP와 CIDR와 넷마스크를 표현할 수 있게 합니다. 집계할 데이터를 입력하고 "확인"을 누릅니다."
  Auxiliary Rules Priority: "우선 순위 (최고➡(같은🔄동등한)➡최저한의)\_:"
  Auxiliary Rules Webhooks: "규칙이 트리거 되면, CIDRAM은 연결된 웹 훅에 이벤트에 대해 알리려고 시도합니다."
- Auxiliary Rules: "안녕하세요, {username}.<br />이 페이지를 사용하여 CIDRAM에 대한 보조 규칙을 작성, 삭제 및 수정할 수 있습니다."
- Backup: "안녕하세요, {username}.<br />이 페이지는 구성, 보조 규칙, 등을 가져오거나 내보내는 데 사용할 수 있습니다. 이는 다른 설치 또는 다른 주 버전 간에 데이터를 마이그레이션 해야 하는 경우에 유용할 수 있습니다."
- Cache Data: "안녕하세요, {username}.<br />여기서 캐시의 내용을 검토 할 수 있습니다."
- Calculator: "안녕하세요, {username}.<br />계산기를 사용하면 IP 주소의 CIDR 및 넷마스크를 계산할 수 있습니다."
+ Auxiliary Rules: "이 페이지를 사용하여 CIDRAM에 대한 보조 규칙을 작성, 삭제 및 수정할 수 있습니다."
+ Backup: "이 페이지는 구성, 보조 규칙, 등을 가져오거나 내보내는 데 사용할 수 있습니다. 이는 다른 설치 또는 다른 주 버전 간에 데이터를 마이그레이션 해야 하는 경우에 유용할 수 있습니다."
+ Cache Data: "여기서 캐시의 내용을 검토 할 수 있습니다."
+ Calculator: "계산기를 사용하면 IP 주소의 CIDR 및 넷마스크를 계산할 수 있습니다."
  Click the component name for more details: "자세한 내용은 구성 요소 이름을 클릭하십시오."
- Configuration: "안녕하세요, {username}.<br />구성 페이지는 프론트 엔드에서 CIDRAM의 설정을 변경할 수 있습니다."
+ Configuration: "구성 페이지는 프론트 엔드에서 CIDRAM의 설정을 변경할 수 있습니다."
  Enter IP here: "여기에 IP를 입력하십시오."
  Enter IPs here: "여기에 IP를 입력하십시오."
  Enter input here: "여기에 데이터를 입력하십시오."
@@ -927,28 +927,29 @@ tip:
  Enter referrer here (optional): "여기에 추천자를 입력하십시오 (선택 사항이다)."
  Enter user agent here (optional): "여기에 사용자 에이전트를 입력하십시오 (선택 사항이다)."
  Enter user agents here (optional): "여기에 사용자 에이전트를 입력하십시오 (선택 사항이다)."
- File Manager: "안녕하세요, {username}.<br />파일 관리자를 사용하여 파일을 삭제, 편집, 업로드, 다운로드 할 수 있습니다. 신중하게 사용하는 (이것을 사용하여 설치를 끊을 수 있습니다)."
- Home: "안녕하세요, {username}.<br />이것은 CIDRAM 프론트 엔드의 홈페이지입니다. 계속하려면 왼쪽 탐색 메뉴에서 링크를 선택합니다."
+ File Manager: "파일 관리자를 사용하여 파일을 삭제, 편집, 업로드, 다운로드 할 수 있습니다. 신중하게 사용하는 (이것을 사용하여 설치를 끊을 수 있습니다)."
+ Greeting: "안녕하세요, %s."
+ Home: "이것은 CIDRAM 프론트 엔드의 홈페이지입니다. 계속하려면 왼쪽 탐색 메뉴에서 링크를 선택합니다."
  How many infractions to incur: "얼마나 많은 위반이 발생합니다."
- IP Testing: "안녕하세요, {username}.<br />IP 테스트 페이지는 IP 주소가 차단되어 있는지를 테스트 할 수 있습니다."
- IP Tracking: "안녕하세요, {username}.<br />IP 추적 페이지에서 IP 주소 추적 상태를 확인할 수 있습니다. 당신이 금지되어있는 것을 확인 할 수 있으며, 원한다면 당신은 추적을 취소 할 수 있습니다."
- Intersector: "안녕하세요, {username}.<br />교차 섹터는 두 범위 세트에서 공통 인자를 결정하는 데 사용할 수 있습니다."
- Logs: "안녕하세요, {username}.<br />로그의 내용을 보려면 다음 목록에서 로그를 선택합니다."
+ IP Testing: "IP 테스트 페이지는 IP 주소가 차단되어 있는지를 테스트 할 수 있습니다."
+ IP Tracking: "IP 추적 페이지에서 IP 주소 추적 상태를 확인할 수 있습니다. 당신이 금지되어있는 것을 확인 할 수 있으며, 원한다면 당신은 추적을 취소 할 수 있습니다."
+ Intersector: "교차 섹터는 두 범위 세트에서 공통 인자를 결정하는 데 사용할 수 있습니다."
+ Logs: "로그의 내용을 보려면 다음 목록에서 로그를 선택합니다."
  Number of seconds until it expires: "만료까지 남은 시간(초)입니다."
  Numeric comparison: "숫자 비교를 사용하려면, 직접 문자열 비교 또는 자동 방법 감지를 선택하고, 조건 값이 숫자인지 확인하고, 원하는 연산자를 앞에 붙입니다.<br />예로서, "같음" 조건의 경우, &gt;=2는 ≥2를 주고, &lt;=2는 ≤2를 주고, "같지 않음" 조건의 경우, &gt;=2는 ≱2를 주고, &lt;=2는 ≰2를 줍니다 등."
- Range Tables: "안녕하세요, {username}.<br />이 페이지는 현재 활성화 된 서명 파일에서 다루는 IP 범위에 대한 몇 가지 기본 통계 정보를 보여줍니다."
- Rate Limiting: "안녕하세요, {username}.<br />이 페이지는 속도 제한과 관련된 현재 할당량 사용량 및 가용성을 보여줍니다."
+ Range Tables: "이 페이지는 현재 활성화 된 서명 파일에서 다루는 IP 범위에 대한 몇 가지 기본 통계 정보를 보여줍니다."
+ Rate Limiting: "이 페이지는 속도 제한과 관련된 현재 할당량 사용량 및 가용성을 보여줍니다."
  Rate limiting is currently disabled: "노트\_: 속도 제한은 현재 비활성화되어, 있지만 구성 페이지를 통해 활성화할 수 있습니다."
- Report to AbuseIPDB: "안녕하세요, {username}.<br />이 페이지는 IP 주소를 AbuseIPDB에 보고하거나, IP 주소가 잘못 보고된 경우 이전 보고서를 삭제하는 데 사용할 수 있습니다."
- Sections List: "안녕하세요, {username}.<br />이 페이지는 현재 활성화 된 서명 파일에 존재하는 섹션을 나열합니다."
+ Report to AbuseIPDB: "이 페이지는 IP 주소를 AbuseIPDB에 보고하거나, IP 주소가 잘못 보고된 경우 이전 보고서를 삭제하는 데 사용할 수 있습니다."
+ Sections List: "이 페이지는 현재 활성화 된 서명 파일에 존재하는 섹션을 나열합니다."
  See the documentation: "설정 지시어에 대한 자세한 내용은 <a href="https://github.com/CIDRAM/Docs/blob/master/readme.ko.md\#user-content-SECTION5" hreflang="ko-KR" rel="noopener external">문서를</a> 참조하십시오."
  Server log snippets, abuse details, etc: "서버 로그 조각, 남용 세부정보, 등등"
- Signature File Fixer: "안녕하세요, {username}.<br />서명 파일 해결 프로그램은 서명 파일의 잠재적인 문제를 감지하고 수정하는 방법을 제공합니다."
+ Signature File Fixer: "서명 파일 해결 프로그램은 서명 파일의 잠재적인 문제를 감지하고 수정하는 방법을 제공합니다."
  Specify a value, or leave blank to disregard: "무시할 값을 지정하거나 공백으로 두십시오."
  Statistics tracking is currently disabled: "노트\_: 통계 추적은 현재 비활성화되어, 있지만 구성 페이지를 통해 활성화할 수 있습니다."
- Statistics: "안녕하세요, {username}.<br />이 페이지는 CIDRAM 설치와 관련된 몇 가지 기본 사용 통계를 보여줍니다."
- Subtractor: "안녕하세요, {username}.<br />감산기는 한 범위의 IP/CIDR을 다른 범위에서 빼는 데 사용할 수 있습니다."
- Updates: "안녕하세요, {username}.<br />업데이트 페이지는 CIDRAM의 다양한 구성 요소를 설치·제거·업데이트 할 수 있습니다 (코어 패키지, 서명, L10N 파일, 등)."
+ Statistics: "이 페이지는 CIDRAM 설치와 관련된 몇 가지 기본 사용 통계를 보여줍니다."
+ Subtractor: "감산기는 한 범위의 IP/CIDR을 다른 범위에서 빼는 데 사용할 수 있습니다."
+ Updates: "업데이트 페이지는 CIDRAM의 다양한 구성 요소를 설치·제거·업데이트 할 수 있습니다 (코어 패키지, 서명, L10N 파일, 등)."
 warning:
  API_Rate_Limited: "경고\_: %s API에 대한 액세스는 현재 속도가 제한된 것으로 보입니다."
  Cookies: "노트\_: CIDRAM은 쿠키를 사용하여 로그인을 인증합니다. 로그인하면, 브라우저에서 쿠키를 만들고 저장하는 것에 동의하게됩니다."

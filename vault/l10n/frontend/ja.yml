@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2023.12.25).
+# This file: Japanese language data for the front-end (last modified: 2023.12.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -743,7 +743,7 @@ macro:
 max_login_attempts_exceeded: "ログイン試行の最大回数を超えました；アクセス拒否。"
 msg_subject_2fa: "２ＦＡ（二要素認証）"
 msg_template_2fa: |
- <center><p>こんにちは、%s。<br /><br />
+ <center><p><br />
  CIDRAMフロントエンドにログインするための２ＦＡコード：</p>
  <h1>%s</h1>
  <p>このコードの有効期限は１０分です。</p></center>
@@ -913,16 +913,16 @@ time_years_ago: "%s年前"
 time_years_from_now: "今から%s年"
 tip:
  2FA Sent: "２ＦＡコードを含むＥメールがあなたのＥメール・アドレスに送信されました。​フロントエンドにアクセスするには、このコードを確認してください。​このＥメールを受信しなかった場合は、新しいコードを含む新しい電子Ｅメールを受け取るために、ログアウトして、１０分待ってからもう一度ログインしてください。"
- Accounts: "こんにちは、{username}。<br />アカウント・ページは、CIDRAMフロントエンドにアクセスできるユーザーを制御できます。"
- Aggregator: "こんにちは、{username}。<br />アグリゲータを使用すると、最小限の方法でＩＰとＣＩＤＲとネットマスクを表現できます。​集計するデータを入力し、「ＯＫ」を押します。"
+ Accounts: "アカウント・ページは、CIDRAMフロントエンドにアクセスできるユーザーを制御できます。"
+ Aggregator: "アグリゲータを使用すると、最小限の方法でＩＰとＣＩＤＲとネットマスクを表現できます。​集計するデータを入力し、「ＯＫ」を押します。"
  Auxiliary Rules Priority: "優先（最高➡(等しい🔄同等)➡最低）："
  Auxiliary Rules Webhooks: "ルールがトリガーされると、CIDRAMは接続されているすべてのWebhookにイベントについて通知しようとします。"
- Auxiliary Rules: "こんにちは、{username}。<br />このページを使用して、CIDRAMの補助ルールを作成、削除、および変更することができます。"
- Backup: "こんにちは、{username}。<br />このページを利用して、コンフィギュレーション、補助ルール、などをインポートとエクスポートできます。​これは、異なるインストールまたは異なるメジャー・バージョン間でデータを移行する必要がある場合に役立ちます。"
- Cache Data: "こんにちは、{username}。<br />ここでは、キャッシュの内容を確認できます。"
- Calculator: "こんにちは、{username}。<br />計算機を使用すると、ＩＰアドレスのＣＩＤＲとネットマスクを計算できます。"
+ Auxiliary Rules: "このページを使用して、CIDRAMの補助ルールを作成、削除、および変更することができます。"
+ Backup: "このページを利用して、コンフィギュレーション、補助ルール、などをインポートとエクスポートできます。​これは、異なるインストールまたは異なるメジャー・バージョン間でデータを移行する必要がある場合に役立ちます。"
+ Cache Data: "ここでは、キャッシュの内容を確認できます。"
+ Calculator: "計算機を使用すると、ＩＰアドレスのＣＩＤＲとネットマスクを計算できます。"
  Click the component name for more details: "詳細についてはコンポーネント名をクリックしてください。"
- Configuration: "こんにちは、{username}。<br />コンフィギュレーション・ページは、フロントエンドからCIDRAMの設定を変更することができます。"
+ Configuration: "コンフィギュレーション・ページは、フロントエンドからCIDRAMの設定を変更することができます。"
  Enter IP here: "ここにＩＰを入力してください。"
  Enter IPs here: "ここにＩＰを入力してください。"
  Enter input here: "ここにデータを入力してください。"
@@ -930,28 +930,29 @@ tip:
  Enter referrer here (optional): "ここに、リファラーを入力してください（オプションです）。"
  Enter user agent here (optional): "ここに、ユーザー・エージェントを入力してください（オプションです）。"
  Enter user agents here (optional): "ここに、ユーザー・エージェントを入力してください（オプションです）。"
- File Manager: "こんにちは、{username}。<br />ファイル・マネージャを使用する、ファイルを削除、編集、アップロード、ダウンロードができます。​慎重に使用する（これを使って、インストールを壊すことができます）。"
- Home: "こんにちは、{username}。<br />これはCIDRAMフロントエンドのホームページです。​続行するには、左側のナビゲーションメニューからリンクを選択します。"
+ File Manager: "ファイル・マネージャを使用する、ファイルを削除、編集、アップロード、ダウンロードができます。​慎重に使用する（これを使って、インストールを壊すことができます）。"
+ Greeting: "こんにちは、%s。"
+ Home: "これはCIDRAMフロントエンドのホームページです。​続行するには、左側のナビゲーションメニューからリンクを選択します。"
  How many infractions to incur: "発生する違反の数。"
- IP Testing: "こんにちは、{username}。<br />ＩＰテスト・ページは、ＩＰアドレスがブロックされているかどうかをテストできます。"
- IP Tracking: "こんにちは、{username}。<br />ＩＰトラッキング・ページでは、ＩＰアドレスのトラッキングステータスを確認できます。​あなたは禁止されているものを確認することができ、望むならばあなたはトラッキングをキャンセルことができます。"
- Intersector: "こんにちは、{username}。<br />インタセクターは、二セットの範囲から共通因子を決定するために使用できます。"
- Logs: "こんにちは、{username}。<br />そのログの内容を表示するために、次のリストからログを選択します。"
+ IP Testing: "ＩＰテスト・ページは、ＩＰアドレスがブロックされているかどうかをテストできます。"
+ IP Tracking: "ＩＰトラッキング・ページでは、ＩＰアドレスのトラッキングステータスを確認できます。​あなたは禁止されているものを確認することができ、望むならばあなたはトラッキングをキャンセルことができます。"
+ Intersector: "インタセクターは、二セットの範囲から共通因子を決定するために使用できます。"
+ Logs: "そのログの内容を表示するために、次のリストからログを選択します。"
  Number of seconds until it expires: "有効期限までの秒数。"
  Numeric comparison: "数値比較を使用するには、文字列の直接比較または自動メソッド検出を選択し、条件の値が数値であることを確認し、目的の演算子をプレフィックスとして付けます。<br />例えば、「等しい」条件の場合、&gt;=2は≥2を提供し、&lt;=2は≤2を提供し、「等しくない」条件の場合、&gt;=2は≱2を提供し、&lt;=2は≰2を提供し、等。"
- Range Tables: "こんにちは、{username}。<br />このページには、現在アクティブな・シグネチャ・ファイルが対象とするＩＰ範囲に関する基本的な統計情報が表示されます。"
- Rate Limiting: "こんにちは、{username}。<br />このページには、レート制限に関する現在のクォータの使用状況と可用性が表示されます。"
+ Range Tables: "このページには、現在アクティブな・シグネチャ・ファイルが対象とするＩＰ範囲に関する基本的な統計情報が表示されます。"
+ Rate Limiting: "このページには、レート制限に関する現在のクォータの使用状況と可用性が表示されます。"
  Rate limiting is currently disabled: "注意：レート制限は現在オフラインですが、コンフィギュレーション・ページで有効にすることができます。"
- Report to AbuseIPDB: "こんにちは、{username}。<br />このページを使用して、ＩＰアドレスをAbuseIPDBに報告したり、ＩＰアドレスが誤って報告された場合に以前のレポートを削除したりできます。"
- Sections List: "こんにちは、{username}。<br />このページには、現在アクティブなシグネチャ・ファイルに存在するセクションが一覧表示されます。"
+ Report to AbuseIPDB: "このページを使用して、ＩＰアドレスをAbuseIPDBに報告したり、ＩＰアドレスが誤って報告された場合に以前のレポートを削除したりできます。"
+ Sections List: "このページには、現在アクティブなシグネチャ・ファイルに存在するセクションが一覧表示されます。"
  See the documentation: "コンフィギュレーション・ディレクティブの詳細については、<a href="https://github.com/CIDRAM/Docs/blob/master/readme.ja.md\#user-content-SECTION5" hreflang="ja-JP" rel="noopener external">ドキュメント</a>を参照してください。"
  Server log snippets, abuse details, etc: "サーバーログのスニペット、不正行為の詳細、など。"
- Signature File Fixer: "こんにちは、{username}。<br />シグネチャ・ファイルのフィクサーは、シグネチャ・ファイルの潜在的な問題を検出して修正する方法を提供します。"
+ Signature File Fixer: "シグネチャ・ファイルのフィクサーは、シグネチャ・ファイルの潜在的な問題を検出して修正する方法を提供します。"
  Specify a value, or leave blank to disregard: "値を指定するか、無視する場合は空白のままにします。"
  Statistics tracking is currently disabled: "注意：統計トラッキングは現在オフラインですが、コンフィギュレーション・ページで有効にすることができます。"
- Statistics: "こんにちは、{username}。<br />このページには、CIDRAMのインストールに関する基本的な使用状況の統計情報が表示されます。"
- Subtractor: "こんにちは、{username}。<br />ある範囲のＩＰ/ＣＩＤＲ/ネットマスクを別の範囲から減算ために、減算器を使用できます。"
- Updates: "こんにちは、{username}。<br />アップデート・ページは、CIDRAMのさまざまなコンポーネントはインストール、アンインストール、更新が可能です（コアパッケージ、シグネチャ、Ｌ１０Ｎファイル、等）。"
+ Statistics: "このページには、CIDRAMのインストールに関する基本的な使用状況の統計情報が表示されます。"
+ Subtractor: "ある範囲のＩＰ/ＣＩＤＲ/ネットマスクを別の範囲から減算ために、減算器を使用できます。"
+ Updates: "アップデート・ページは、CIDRAMのさまざまなコンポーネントはインストール、アンインストール、更新が可能です（コアパッケージ、シグネチャ、Ｌ１０Ｎファイル、等）。"
 warning:
  API_Rate_Limited: "警告：%s APIへのアクセスは、現在レート制限されているようです。"
  Cookies: "注意：CIDRAMは、Cookieを使用してログインを認証します。​ログインすると、ブラウザでCookieを作成して保存することに同意したことになります。"

@@ -1,6 +1,6 @@
 <?php
 /**
- * Request handler (last modified: 2023.09.14).
+ * Request handler (last modified: 2023.12.24).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -101,9 +101,10 @@ class Request extends CommonAbstract
      * @param int $Timeout An optional timeout limit.
      * @param array $Headers An optional array of headers to send with the request.
      * @param int $Depth Recursion depth of the current closure instance.
+     * @param string $Method The request method to use (if not GET or POST).
      * @return string The results of the request, or an empty string upon failure.
      */
-    public function request(string $URI, $Params = [], int $Timeout = -1, array $Headers = [], int $Depth = 0): string
+    public function request(string $URI, $Params = [], int $Timeout = -1, array $Headers = [], int $Depth = 0, string $Method = ''): string
     {
         /** Test channel triggers. */
         foreach ($this->Channels['Triggers'] as $TriggerName => $TriggerURI) {
@@ -131,7 +132,7 @@ class Request extends CommonAbstract
             }
             if ($this->inCsv($TriggerName, $this->Disabled)) {
                 if (isset($AlternateURI)) {
-                    return $this($AlternateURI, $Params, $Timeout, $Headers, $Depth);
+                    return $this($AlternateURI, $Params, $Timeout, $Headers, $Depth, $Method);
                 }
                 return '';
             }
@@ -166,6 +167,12 @@ class Request extends CommonAbstract
                 isset($Overrides['CURLOPT_SSL_VERIFYPEER']) ? !empty($Overrides['CURLOPT_SSL_VERIFYPEER']) : false
             ));
         }
+        if ($Method !== '') {
+            curl_setopt($Request, CURLOPT_CUSTOMREQUEST, $Method);
+            $DebugMethod = $Method;
+        } else {
+            $DebugMethod = $Post ? 'POST' : 'GET';
+        }
         curl_setopt($Request, CURLOPT_FOLLOWLOCATION, true);
         curl_setopt($Request, CURLOPT_MAXREDIRS, 1);
         curl_setopt($Request, CURLOPT_RETURNTRANSFER, true);
@@ -181,7 +188,7 @@ class Request extends CommonAbstract
 
         /** Check for problems (e.g., resource not found, server errors, etc). */
         if (($Info = curl_getinfo($Request)) && is_array($Info) && isset($Info['http_code'])) {
-            $this->sendMessage(sprintf('%s - %s - %s - %s', $Post ? 'POST' : 'GET', $URI, $Info['http_code'], (floor($Time * 100) / 100) . 's'));
+            $this->sendMessage(sprintf('%s - %s - %s - %s', $DebugMethod, $URI, $Info['http_code'], (floor($Time * 100) / 100) . 's'));
 
             /** Most recent HTTP status code. */
             $this->MostRecentStatusCode = $Info['http_code'];
@@ -189,10 +196,10 @@ class Request extends CommonAbstract
             /** Request failed. Try again using an alternative address. */
             if ($Info['http_code'] >= 400 && isset($AlternateURI) && $Depth < 3) {
                 curl_close($Request);
-                return $this($AlternateURI, $Params, $Timeout, $Headers, $Depth + 1);
+                return $this($AlternateURI, $Params, $Timeout, $Headers, $Depth + 1, $Method);
             }
         } else {
-            $this->sendMessage(sprintf('%s - %s - %s - %s', $Post ? 'POST' : 'GET', $URI, 200, (floor($Time * 100) / 100) . 's'));
+            $this->sendMessage(sprintf('%s - %s - %s - %s', $DebugMethod, $URI, 200, (floor($Time * 100) / 100) . 's'));
 
             /** Most recent HTTP status code. */
             $this->MostRecentStatusCode = 200;

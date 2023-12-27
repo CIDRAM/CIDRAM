@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6_isps.dat
 
-# Version: 2023.350.0
-# Last modified: 2023.12.17
+# Version: 2023.360.0
+# Last modified: 2023.12.27
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -296,8 +296,8 @@ Tag: Reliance Communications
 # ASN 198093 ("Foreningen for digitala fri- och rattigheter").
 # Dangerous tor network with dead homepage. HUGE levels of brute-force and SSH
 # attacks, hacking, port scans, and spam detected from here!
-# Stop Forum Spam (SFS) listings: 10,142.
-# Updated: 2022.02.26 / Checked: 2023.02.08
+# Stop Forum Spam (SFS) listings: 5,945.
+# Updated: 2022.02.26 / Checked: 2023.12.26
 
 2001:67c:16b0::/48 Deny Attacks
 2001:67c:289c::/48 Deny Attacks
@@ -891,17 +891,6 @@ Tag: STAYNET
 Origin: CA
 Profile: Domestic ISP
 Tag: Rogers
-
-
-# ASN 269663 ("CONNECTLINK TECH").
-# Port scans, hacking, and spam detected from here.
-# Manually checked all ranges; All ranges affected.
-# Updated: 2022.03.16 / Checked: 2023.02.11
-
-2804:67fc::/32 Deny Attacks
-Origin: BR
-Profile: Commercial;Restricted/Unidentifiable
-Tag: CONNECTLINK TECH
 
 
 # ASN 9534 ("Binariang Berhad").

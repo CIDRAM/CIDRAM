@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2023.12.12).
+ * This file: Front-end functions file (last modified: 2023.12.29).
  */
 
 /**
@@ -1420,30 +1420,19 @@ $CIDRAM['NumberFormatter'] = new \Maikuolan\Common\NumberFormatter($CIDRAM['Conf
 $CIDRAM['Demojibakefier'] = new \Maikuolan\Common\Demojibakefier();
 
 /**
- * Generates JavaScript code for localising numbers locally.
+ * JavaScript code for localising numbers locally.
  *
  * @return string The JavaScript code.
  */
-$CIDRAM['Number_L10N_JS'] = function () use (&$CIDRAM): string {
-    if ($CIDRAM['NumberFormatter']->ConversionSet === 'Western') {
-        $ConvJS = 'return l10nd';
-    } else {
-        $ConvJS = 'var nls=[' . $CIDRAM['NumberFormatter']->getSetCSV(
-            $CIDRAM['NumberFormatter']->ConversionSet
-        ) . '];return nls[l10nd]||l10nd';
-    }
+$CIDRAM['numberJs'] = function () use (&$CIDRAM): string {
     return sprintf(
-        'function l10nn(l10nd){%4$s};function nft(r){var x=r.indexOf(\'.\')!=-1?' .
-        '\'%1$s\'+r.replace(/^.*\./gi,\'\'):\'\',n=r.replace(/\..*$/gi,\'\').rep' .
-        'lace(/[^0-9]/gi,\'\'),t=n.length;for(e=\'\',b=%5$d,i=1;i<=t;i++){b>%3$d' .
-        '&&(b=1,e=\'%2$s\'+e);var e=l10nn(n.substring(t-i,t-(i-1)))+e;b++}var t=' .
-        'x.length;for(y=\'\',b=1,i=1;i<=t;i++){var y=l10nn(x.substring(t-i,t-(i-' .
-        '1)))+y}return e+y}',
-        $CIDRAM['NumberFormatter']->DecimalSeparator,
+        $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('numberJs.js')),
+        $CIDRAM['NumberFormatter']->getSetJSON($CIDRAM['NumberFormatter']->ConversionSet),
         $CIDRAM['NumberFormatter']->GroupSeparator,
         $CIDRAM['NumberFormatter']->GroupSize,
-        $ConvJS,
-        $CIDRAM['NumberFormatter']->GroupOffset + 1
+        $CIDRAM['NumberFormatter']->GroupOffset,
+        $CIDRAM['NumberFormatter']->DecimalSeparator,
+        $CIDRAM['NumberFormatter']->Base
     );
 };
 
@@ -3063,7 +3052,7 @@ $CIDRAM['InitialPrepwork'] = function (string $Title = '', string $Tips = '', bo
     $CIDRAM['FE']['FE_Tip'] = $CIDRAM['ParseVars'](['username' => $Username], $Tips);
 
     /** Load main front-end JavaScript data. */
-    $CIDRAM['FE']['JS'] = $JS ? $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('scripts.js')) : '';
+    $CIDRAM['FE']['JS'] = $JS ? "\n" . $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('scripts.js')) : '';
 };
 
 /**

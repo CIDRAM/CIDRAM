@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2023.12.03).
+ * This file: Front-end handler (last modified: 2023.12.29).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1137,7 +1137,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
     $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_config'), $CIDRAM['L10N']->getString('tip_config'));
 
     /** Append number localisation JS. */
-    $CIDRAM['FE']['JS'] .= $CIDRAM['Number_L10N_JS']() . "\n";
+    $CIDRAM['FE']['JS'] .= $CIDRAM['numberJs']() . "\n";
 
     /** Directive template. */
     $CIDRAM['FE']['ConfigRow'] = $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_config_row.html'));
@@ -3688,7 +3688,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'range' && $CIDRAM['FE']['Permis
     $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_range'), $CIDRAM['L10N']->getString('tip_range'));
 
     /** Append number localisation JS. */
-    $CIDRAM['FE']['JS'] .= $CIDRAM['Number_L10N_JS']() . "\n";
+    $CIDRAM['FE']['JS'] .= $CIDRAM['numberJs']() . "\n";
 
     /** Add flags CSS. */
     if ($CIDRAM['FE']['Flags'] = file_exists($CIDRAM['Vault'] . 'fe_assets/flags.css')) {

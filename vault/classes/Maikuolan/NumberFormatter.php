@@ -1068,7 +1068,7 @@ class NumberFormatter
      *      be needed by some implementations to ensure compatibility).
      * @link https://github.com/Maikuolan/Common/tags
      */
-    const VERSION = '1.10.0';
+    const VERSION = '1.11.0';
 
     /**
      * Constructor.

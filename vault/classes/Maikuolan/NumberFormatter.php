@@ -1,6 +1,6 @@
 <?php
 /**
- * Number formatter (last modified: 2023.11.22).
+ * Number formatter (last modified: 2023.12.29).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -1372,18 +1372,14 @@ class NumberFormatter
     }
 
     /**
-     * Gets the specified conversion set and returns it as a CSV string.
+     * Gets the specified conversion set and returns it as a JSON string.
      *
      * @param string $Set The specified conversion set.
-     * @return string A CSV string.
+     * @return string A JSON string.
      */
-    public function getSetCSV($Set = '')
+    public function getSetJSON($Set = '')
     {
-        if (!$Set || !isset($this->$Set)) {
-            $Set = $this->ConversionSet;
-        }
-        $CSet = $this->$Set;
-        return "'" . implode("','", $CSet) . "'";
+        return isset($this->{$Set}) ? json_encode($this->{$Set}) : '[]';
     }
 
     /**

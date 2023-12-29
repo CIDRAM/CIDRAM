@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2023.12.26).
+ * This file: General methods used by the front-end (last modified: 2023.12.29).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -293,31 +293,20 @@ trait FrontEndMethods
     }
 
     /**
-     * Generates JavaScript code for localising numbers locally.
+     * JavaScript code for localising numbers locally.
      *
      * @return string The JavaScript code.
      */
-    private function numberL10nJs(): string
+    private function numberJs(): string
     {
-        if ($this->NumberFormatter->ConversionSet === 'Western') {
-            $ConvJS = 'return l10nd';
-        } else {
-            $ConvJS = 'var nls=[' . $this->NumberFormatter->getSetCSV(
-                $this->NumberFormatter->ConversionSet
-            ) . '];return nls[l10nd]||l10nd';
-        }
         return sprintf(
-            'function l10nn(l10nd){%4$s};function nft(r){var x=r.indexOf(\'.\')!=-1?' .
-            '\'%1$s\'+r.replace(/^.*\./gi,\'\'):\'\',n=r.replace(/\..*$/gi,\'\').rep' .
-            'lace(/[^0-9]/gi,\'\'),t=n.length;for(e=\'\',b=%5$d,i=1;i<=t;i++){b>%3$d' .
-            '&&(b=1,e=\'%2$s\'+e);var e=l10nn(n.substring(t-i,t-(i-1)))+e;b++}var t=' .
-            'x.length;for(y=\'\',b=1,i=1;i<=t;i++){var y=l10nn(x.substring(t-i,t-(i-' .
-            '1)))+y}return e+y}',
-            $this->NumberFormatter->DecimalSeparator,
+            $this->readFile($this->getAssetPath('numberJs.js')),
+            $this->NumberFormatter->getSetJSON($this->NumberFormatter->ConversionSet),
             $this->NumberFormatter->GroupSeparator,
             $this->NumberFormatter->GroupSize,
-            $ConvJS,
-            $this->NumberFormatter->GroupOffset + 1
+            $this->NumberFormatter->GroupOffset,
+            $this->NumberFormatter->DecimalSeparator,
+            $this->NumberFormatter->Base
         );
     }
 
@@ -561,7 +550,7 @@ trait FrontEndMethods
         $this->FE['FE_Tip'] = $this->parseVars([], $Tips);
 
         /** Load main front-end JavaScript data. */
-        $this->FE['JS'] = $JS ? $this->parseVars([], $this->readFile($this->getAssetPath('scripts.js')), true) : '';
+        $this->FE['JS'] = $JS ? "\n" . $this->parseVars([], $this->readFile($this->getAssetPath('scripts.js')), true) : '';
     }
 
     /**

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The range tables page (last modified: 2023.12.13).
+ * This file: The range tables page (last modified: 2023.12.29).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -21,7 +21,7 @@ if (!isset($this->FE['Permissions'], $this->CIDRAM['QueryVars']['cidram-page']) 
 $this->initialPrepwork($this->L10N->getString('link.Range Tables'), $this->L10N->getString('tip.Range Tables'));
 
 /** Append number localisation JS. */
-$this->FE['JS'] .= $this->numberL10nJs() . "\n";
+$this->FE['JS'] .= $this->numberJs() . "\n";
 
 /** Add flags CSS. */
 if ($this->FE['Flags'] = file_exists($this->AssetsPath . 'frontend/flags.css')) {

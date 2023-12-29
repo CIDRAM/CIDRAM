@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Report to AbuseIPDB page (last modified: 2023.12.25).
+ * This file: Report to AbuseIPDB page (last modified: 2023.12.29).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -21,7 +21,7 @@ if (!isset($this->FE['Permissions'], $this->CIDRAM['QueryVars']['cidram-page']) 
 $this->initialPrepwork($this->L10N->getString('label.Report to AbuseIPDB'), $this->L10N->getString('tip.Report to AbuseIPDB'));
 
 /** Append number localisation JS. */
-$this->FE['JS'] .= $this->numberL10nJs() . "\n";
+$this->FE['JS'] .= $this->numberJs() . "\n";
 
 /** Use existing configuration value if it's been set. */
 if (!isset($_POST['apikey']) && isset($this->Configuration['abuseipdb']['api_key'])) {

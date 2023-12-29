@@ -374,3 +374,5 @@
 [2023.12.15~26; New Feature; Maikuolan]: Built an integrated reporting page to be able to manually report IP addresses to AbuseIPDB directly from the CIDRAM Front-End, or to be able to delete previous reports in the event that an IP address has been reported in error (#338).
 
 [2023.12.26; Maikuolan]: Refactored the page greeting and some theme assets.
+
+[2023.12.29; Bug-fix; Maikuolan]: Some of the more unusual available number formatting choices (e.g., choices not using base-10 or Arabic numerals) didn't mesh well with the JavaScript code responsible for using them; Fixed.

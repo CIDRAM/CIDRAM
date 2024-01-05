@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6.dat
 
-# Version: 2023.360.0
-# Last modified: 2023.12.27
+# Version: 2024.4.0
+# Last modified: 2024.01.05
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -1331,8 +1331,8 @@ Tag: Psychz Networks
 
 # ASN 27176 ("DataWagon LLC").
 # A source of forum spam.
-# Stop Forum Spam (SFS) listings: 3,918.
-# Updated: 2023.03.08
+# Stop Forum Spam (SFS) listings: 2,864.
+# Updated: 2023.03.08 / Checked: 2024.01.05
 
 2a07:6c80::/29 Deny Cloud
 Origin: LT
@@ -2672,8 +2672,8 @@ Tag: Zenlayer Inc
 # ASN 30475 ("Handy Networks, LLC").
 # Server farm and a source of spam and other unwanted activity.
 # Subtract 44.0.0.0/9, 44.128.0.0/10 (clean).
-# Stop Forum Spam (SFS) listings: 5,306.
-# Updated: 2021.06.21 / Checked: 2023.03.09
+# Stop Forum Spam (SFS) listings: 81.
+# Updated: 2021.06.21 / Checked: 2024.01.05
 
 2602:fff6:d::/48 Deny Cloud
 2606:6680:6::/48 Deny Cloud
@@ -5112,9 +5112,10 @@ Tag: EIG
 # ASN 16397 ("EQUINIX BRASIL SP").
 # Spam, brute-force, and DDoS attacks detected from here.
 # Stop Forum Spam (SFS) listings: 1.
-# Updated: 2020.05.31 / Checked: 2023.03.09
+# Updated: 2024.01.05
 
-2001:12e8::/34 Deny Cloud
+2001:12e8::/36 Deny Cloud
+2001:12e8:2000::/35 Deny Cloud
 Origin: BR
 Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: EQUINIX BRASIL SP
@@ -5614,8 +5615,8 @@ Tag: Mainstream doo
 
 
 # ASNs 3595, 13354, 14313, 16626, 27325, 32952 ("zColo").
-# Stop Forum Spam (SFS) listings: 1 (AS13354).
-# Updated: 2019.04.21 / Checked: 2023.03.09
+# Stop Forum Spam (SFS) listings: 1 (AS3595), 34 (AS13354).
+# Updated: 2019.04.21 / Checked: 2024.01.05
 
 2604:9100:1001::/48 Deny Cloud
 2606:4300:1::/48 Deny Cloud
@@ -6081,8 +6082,8 @@ Tag: WEBSITEWELCOME.COM
 # ASN 18229 ("CtrlS Datacenters Ltd").
 # Dedicated data centers and server farms. Caught probing for database dumps.
 # Webapp attacks, spam, and port scans also detected from here.
-# Stop Forum Spam (SFS) listings: 596.
-# Updated: 2023.03.06
+# Stop Forum Spam (SFS) listings: 224.
+# Updated: 2023.03.06 / Checked: 2024.01.05
 
 2001:df1:58c0::/48 Deny Cloud
 2001:df4:5100::/48 Deny Cloud
@@ -6146,12 +6147,11 @@ Profile: Restricted/Unidentifiable;Tor endpoints here
 Tag: Infium, UAB
 
 
-# ASNs 30548, 31034, 199653, 199883, 200185, 202242, 205727 ("Aruba S.p.A",
-# "Aruba SAS", "ARUBA NETWORKS, INC", "ArubaCloud Limited").
-# Caught attempting to hack honeypots.
-# Stop Forum Spam (SFS) listings: 87 (AS31034), 2 (AS199653), 5 (AS200185),
-# 4 (AS202242), 35 (AS205727).
-# Updated: 2023.03.08
+# ASNs 30548, 31034, 199653, 199883, 200185, 205727 ("Aruba S.p.A",
+# "Aruba SAS", "ARUBA NETWORKS, INC"). Caught attempting to hack honeypots.
+# Stop Forum Spam (SFS) listings: 139 (AS31034), 2 (AS199653), 6 (AS199883),
+# 6 (AS200185), 30 (AS205727).
+# Updated: 2024.01.05
 
 2a03:2c40::/32 Deny Cloud
 2a03:a140::/32 Deny Cloud
@@ -6171,6 +6171,8 @@ Origin: GB
 2a01:5940::/35 Deny Cloud
 2a02:29e1:100::/40 Deny Cloud
 2a02:29e1:200::/39 Deny Cloud
+2a02:29e1:400::/39 Deny Cloud
+2a02:29e1:600::/40 Deny Cloud
 2a02:fd40::/31 Deny Cloud
 2a03:cdc0::/35 Deny Cloud
 2a04:e100::/31 Deny Cloud
@@ -8680,7 +8682,8 @@ Tag: ASERGO
 
 # ASN 42695 ("Cleura AB").
 # Dedicated webhosting provider from Sweden. SSH and brute-force attacks.
-# Updated: 2023.03.08
+# Stop Forum Spam (SFS) listings: 7.
+# Updated: 2023.03.08 / Checked: 2024.01.05
 
 2a00:16d8::/32 Deny Cloud
 2a03:b000:200::/40 Deny Cloud
@@ -10585,8 +10588,8 @@ Tag: combahton GmbH
 
 # ASN 45753 ("Netsec Limited").
 # Brute-force and DDoS attacks detected from here.
-# Stop Forum Spam (SFS) listings: 561.
-# Updated: 2023.03.08
+# Stop Forum Spam (SFS) listings: 241.
+# Updated: 2023.03.08 / Checked: 2024.01.05
 
 2406:8680::/32 Deny Cloud
 Origin: HK
@@ -12159,13 +12162,19 @@ Tag: NEROCLOUD LTD
 # ASN 206216 ("Advin Services LLC").
 # Brute-force, SSH, DDoS, and webapp attacks, port scans, hacking, and spam
 # detected from here.
-# Stop Forum Spam (SFS) listings: 325.
-# Updated: 2023.03.08
+# Stop Forum Spam (SFS) listings: 514.
+# Updated: 2024.01.05
 
-2a12:de40:8::/48 Deny Cloud
-Origin: DE
+2602:fa08:1::/48 Deny Cloud
+2602:fb54::/47 Deny Cloud
+2602:fb54:2::/48 Deny Cloud
 2602:fb54:143::/48 Deny Cloud
-2602:fb54:151::/48 Deny Cloud
+2602:fb54:144::/48 Deny Cloud
+2602:fb54:147::/48 Deny Cloud
+2602:fb54:149::/48 Deny Cloud
+2602:fb54:152::/47 Deny Cloud
+2602:fb54:230::/48 Deny Cloud
+2602:fb54:300::/40 Deny Cloud
 Origin: US
 Profile: Dedicated;Webhosting
 Tag: Advin Services LLC

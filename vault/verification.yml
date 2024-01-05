@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Verification data (last modified: 2023.12.17).
+# This file: Verification data (last modified: 2024.01.05).
 ##/
 
 # Additional references: https://udger.com/resources/ua-list/crawlers
@@ -52,7 +52,7 @@ Search Engine Verification:
    - ".search.msn.com"
 
  # https://duckduckgo.com/duckduckbot
- # Updated: 2023.11.17
+ # Updated: 2023.11.17 / Checked: 2024.01.05
  DuckDuckBot:
   User Agent Pattern: "~duckduck(?:go-favicons-)?bot~"
   Method: "uaIpMatch"
@@ -98,7 +98,7 @@ Search Engine Verification:
    - ".mojeek.com"
 
  # https://neeva.com/neevabot
- # Updated: 2023.02.28
+ # Updated: 2023.02.28 / Checked: 2024.01.05
  Neevabot:
   User Agent: "neevabot"
   Method: "dnsReverseForward"
@@ -225,7 +225,7 @@ Social Media Verification:
 Other Verification:
  # https://developers.google.com/search/docs/advanced/crawling/overview-google-crawlers
  # https://github.com/CIDRAM/CIDRAM/issues/233
- # Updated: 2021.10.01 / Checked: 2022.02.18
+ # Updated: 2021.10.01 / Checked: 2024.01.05
  AdSense:
   User Agent: "mediapartners-google"
   Method: "dnsReverseForward"
@@ -243,17 +243,22 @@ Other Verification:
    - ".amazonadbot.com"
 
  # https://platform.openai.com/docs/plugins/bot
- # Updated: 2023.08.10 / Checked: 2023.12.17
+ # Updated: 2024.01.05
  ChatGPT-User:
   User Agent: "chatgpt-user"
   Method: "uaCidrMatch"
   Valid domains:
+   - "13.66.11.96/28"
    - "23.98.142.176/28"
+   - "23.102.140.112/28"
+   - "40.84.180.224/28"
+   - "52.230.152.0/24"
+   - "52.233.106.0/24"
 
  # https://openai.com/gptbot-ranges.txt
  # https://platform.openai.com/docs/gptbot
  # https://platform.openai.com/docs/plugins/production
- # Updated: 2023.12.17
+ # Updated: 2023.12.17 / Checked: 2024.01.05
  GPTBot:
   User Agent: "gptbot"
   Method: "uaCidrMatch"

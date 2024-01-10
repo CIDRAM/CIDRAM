@@ -65,7 +65,7 @@ CIDRAM Core:
  Reannotate: "components.dat"
 CIDRAM Front-End:
  Name: "CIDRAM Front-End"
- Version: "2.15.0-DEV+233620"
+ Version: "2.15.0-DEV+240041"
  Dependencies:
   PHP: "^7.2|^8"
   Common Classes Package: "^2.11"
@@ -322,7 +322,7 @@ IPv4-Bogons:
 IPv4-ISPs:
  Extended Description: "Default IPv4 signatures normally included with the main package. Blocks dangerous and spammy ISPs."
  False Positive Risk: "Medium"
- Version: "2024.4.0"
+ Version: "2024.9.0"
  Dependencies:
   CIDRAM Core: ">=1"
   Bypasses: ">=2023.95"
@@ -334,7 +334,7 @@ IPv4-ISPs:
   To:
    - "ipv4_isps.dat"
   Checksum:
-   - "8464d587822623e4c16243ae600408df567fdf29de76d873b04d9da28308877c:743795"
+   - "935b7af58fe03f5cd3e2689626fcc9aa2c76546b987af044abcd337c8caf3b94:746471"
  Used with: "ipv4"
  Reannotate: "components.dat"
 IPv4-Nonblocking:
@@ -409,7 +409,7 @@ IPv6-Bogons:
 IPv6-ISPs:
  Extended Description: "Default IPv6 signatures normally included with the main package. Blocks dangerous and spammy ISPs."
  False Positive Risk: "Medium"
- Version: "2023.360.0"
+ Version: "2024.9.0"
  Dependencies:
   CIDRAM Core: ">=1"
   Bypasses: ">=2023.95"
@@ -421,7 +421,7 @@ IPv6-ISPs:
   To:
    - "ipv6_isps.dat"
   Checksum:
-   - "69c76f378018f1f9ad7ab9167aba24aacfd903b24bb0ff08f15aa3f55a2dfe69:38794"
+   - "824c9d89bfe0468dd1152c6701c045b8fa7bdc92fa337966c789793c09bdd501:38589"
  Used with: "ipv6"
  Reannotate: "components.dat"
 IPv6-Nonblocking:

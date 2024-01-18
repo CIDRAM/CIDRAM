@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bot user agents module (last modified: 2023.12.17).
+ * This file: Bot user agents module (last modified: 2024.01.18).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -317,10 +317,10 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     $this->trigger(preg_match(
         '~anonymous-?coward|banana-?bot|bot-?test|brands-?bot|clark-?crawler' .
         '|fidget-?spinner-?bot|friendly-?spider|jaddjabot|keys-?so-?bot|orbb' .
-        'ot|storm-?crawler|test-?bot|thesis-?research-?bot|thinkchaos|tiny-?' .
-        'bot|tiny-?test|whatstuffwherebot|zephuli-?bot~',
+        'ot|phxbot|storm-?crawler|test-?bot|thesis-?research-?bot|thinkchaos' .
+        '|tiny-?bot|tiny-?test|whatstuffwherebot|zephuli-?bot~',
         $UANoSpace
-    ), 'Scraper UA'); // 2023.11.17
+    ), 'Scraper UA'); // 2023.11.17 mod 2024.01.18
 
     /** These signatures can set extended tracking options. */
     if (

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2023.12.01).
+ * This file: Optional security extras module (last modified: 2024.01.19).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -94,7 +94,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             '\d{3,5}[a-z]{3,5}|\d+-?backdoor|0byte|0x|10+|991176|' .
             'admin-heade\d*|adminfuns|ahhygskn|alfa(?:-rex|_data|a?cgiapi|ioxi|new)?\d*|anjas|apismtp|axx|' .
             'b3d2acc621a0|bak|bala|' .
-            'c(?:9|10)\d+|casper[\da-z]+|(?:cgi-bin|css)/(?:moon|newgolden|radio|uploader|well-known|wp-login)|cjfuns|classsmtps|colors/blue/uploader|' .
+            'c(?:9|10)\d+|casper[\da-z]+|cfom[-_]files|(?:cgi-bin|css)/(?:moon|newgolden|radio|uploader|well-known|wp-login)|cjfuns|classsmtps|colors/blue/uploader|' .
             'd7|deadcode\d*|dkiz|' .
             'ee|' .
             'fddqradz|' .

@@ -412,10 +412,11 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
     /**
      * @link https://github.com/CIDRAM/CIDRAM/issues/493
+     * @link https://github.com/CIDRAM/CIDRAM/issues/557
      * @link https://trunc.org/learning/the-mozlila-user-agent-bot
      */
     if (
-        $this->trigger(strpos($UANoSpace, 'mozlila') !== false || strpos($UANoSpace, 'mobliesafari') !== false, 'Attack UA') // 2023.08.10 mod 2023.08.12
+        $this->trigger(strpos($UANoSpace, 'mozlila') !== false || strpos($UANoSpace, 'moblie') !== false, 'Attack UA') // 2023.08.10 mod 2024.01.18
     ) {
         $this->Reporter->report([15, 19, 20, 21], ['User agent cited by various attack tools, rootkits, backdoors, webshells, and malware detected.'], $this->BlockInfo['IPAddr']);
         $this->CIDRAM['Tracking options override'] = 'extended';

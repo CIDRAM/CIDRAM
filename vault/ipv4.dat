@@ -1,8 +1,8 @@
 # IPv4 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv4.dat
 
-# Version: 2024.18.0
-# Last modified: 2024.01.19
+# Version: 2024.27.0
+# Last modified: 2024.01.28
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -46953,16 +46953,24 @@ Tag: NETFACTOR TELEKOMINIKASYON
 
 # ASN 140810 ("Megacore Technology Company Limited").
 # Brute-force, DDoS, and SSH attacks, hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 2,866.
-# Updated: 2023.06.17
+# Stop Forum Spam (SFS) listings: 2,353.
+# Updated: 2024.01.28
 
 103.77.172.0/23 Deny Cloud
+103.77.214.0/23 Deny Cloud
+103.77.240.0/23 Deny Cloud
+103.77.246.0/23 Deny Cloud
+103.78.0.0/23 Deny Cloud
+103.116.38.0/23 Deny Cloud
 103.141.140.0/22 Deny Cloud
 103.155.216.0/23 Deny Cloud
-103.168.53.0/24 Deny Cloud
 103.176.108.0/23 Deny Cloud
 103.178.234.0/23 Deny Cloud
+103.213.218.0/23 Deny Cloud
 103.214.8.0/22 Deny Cloud
+103.238.234.0/23 Deny Cloud
+103.252.136.0/23 Deny Cloud
+223.130.10.0/23 Deny Cloud
 Origin: VN
 Profile: Webhosting
 Tag: Megacore
@@ -49786,6 +49794,47 @@ Profile: Restricted/Unidentifiable
 Tag: SERVISPOSTA
 
 
+# ASN 208621 ("LogicForge Limited").
+# Gaming VPS provider. Brute-force, webapp attacks, probing for exposed Git
+# data, and hacking detected from here.
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2024.01.28
+
+45.92.36.0/22 Deny Cloud
+Origin: GB
+80.64.218.0/23 Deny Cloud
+Origin: NL
+38.101.112.0/24 Deny Cloud
+149.36.41.0/24 Deny Cloud
+Origin: US
+Profile: Dedicated;Infrastructure/Transit;Webhosting
+Tag: LogicForge Limited
+
+
+# ASN 151863 ("PSG JOINT STOCK COMPANY").
+# Brute-force, SSH, SQLi, and webapp attacks detected from here.
+# Updated: 2024.01.28
+
+103.168.53.0/24 Deny Cloud
+103.253.20.0/23 Deny Cloud
+Origin: VN
+Profile: Commercial
+Tag: PSG JOINT STOCK COMPANY
+
+
+# ASN 150862 ("VPSTTT COMPUTER COMPANY LIMITED").
+# Brute-force, webapp attacks, port scans, and hacking detected from here.
+# Updated: 2024.01.28
+
+36.50.134.0/23 Deny Cloud
+157.10.42.0/23 Deny Cloud
+157.10.44.0/23 Deny Cloud
+203.145.46.0/23 Deny Cloud
+Origin: VN
+Profile: Commercial
+Tag: VPSTTT
+
+
 # ---
 # Orphaned from any current BGP records (should be dead!), but still
 # nonetheless seeing current reports for inbound brute-force attacks from these
@@ -49810,7 +49859,7 @@ Tag: Orphaned/Iran/Attacks
 # Refer microsoft.com/en-us/download/details.aspx?id=57062
 # Refer microsoft.com/en-us/download/details.aspx?id=57063
 # Refer microsoft.com/en-us/download/details.aspx?id=57064
-# Updated: 2023.12.08
+# Updated: 2024.01.28
 
 40.72.0.0/18 Run bypasses.php
 40.72.64.0/22 Run bypasses.php
@@ -49849,6 +49898,7 @@ Tag: Orphaned/Iran/Attacks
 40.73.162.0/23 Run bypasses.php
 40.73.168.0/21 Run bypasses.php
 40.73.176.0/20 Run bypasses.php
+40.73.220.0/24 Run bypasses.php
 40.73.224.0/19 Run bypasses.php
 40.125.128.0/17 Run bypasses.php
 40.126.64.0/20 Run bypasses.php
@@ -49953,8 +50003,7 @@ Tag: Orphaned/Iran/Attacks
 139.219.160.0/19 Run bypasses.php
 139.219.192.0/18 Run bypasses.php
 143.64.0.0/17 Run bypasses.php
-143.64.128.0/19 Run bypasses.php
-143.64.160.0/20 Run bypasses.php
+143.64.128.0/18 Run bypasses.php
 159.27.0.0/17 Run bypasses.php
 159.27.128.0/26 Run bypasses.php
 159.27.128.64/28 Run bypasses.php
@@ -50158,6 +50207,8 @@ Origin: DE
 20.31.0.0/16 Run bypasses.php
 20.33.0.0/19 Run bypasses.php
 20.33.32.0/20 Run bypasses.php
+20.33.48.0/21 Run bypasses.php
+20.33.56.0/23 Run bypasses.php
 20.33.128.0/17 Run bypasses.php
 20.34.32.0/20 Run bypasses.php
 20.34.48.0/22 Run bypasses.php
@@ -50167,8 +50218,7 @@ Origin: DE
 20.36.0.0/15 Run bypasses.php
 20.38.0.0/20 Run bypasses.php
 20.38.16.0/21 Run bypasses.php
-20.38.24.0/23 Run bypasses.php
-20.38.26.0/24 Run bypasses.php
+20.38.24.0/22 Run bypasses.php
 20.38.32.0/20 Run bypasses.php
 20.38.64.0/18 Run bypasses.php
 20.38.128.0/18 Run bypasses.php
@@ -50220,7 +50270,10 @@ Origin: DE
 20.95.64.0/19 Run bypasses.php
 20.95.96.0/21 Run bypasses.php
 20.95.104.0/23 Run bypasses.php
+20.95.106.0/24 Run bypasses.php
+20.95.108.0/23 Run bypasses.php
 20.95.128.0/22 Run bypasses.php
+20.95.132.0/23 Run bypasses.php
 20.95.136.0/22 Run bypasses.php
 20.95.140.0/23 Run bypasses.php
 20.95.192.0/21 Run bypasses.php
@@ -50269,6 +50322,8 @@ Origin: DE
 20.143.0.0/18 Run bypasses.php
 20.150.0.0/15 Run bypasses.php
 20.152.0.0/20 Run bypasses.php
+20.152.16.0/21 Run bypasses.php
+20.152.24.0/23 Run bypasses.php
 20.157.0.0/16 Run bypasses.php
 20.158.0.0/17 Run bypasses.php
 20.158.128.0/24 Run bypasses.php
@@ -50279,6 +50334,7 @@ Origin: DE
 20.158.192.0/18 Run bypasses.php
 20.159.0.0/18 Run bypasses.php
 20.159.64.0/20 Run bypasses.php
+20.159.80.0/24 Run bypasses.php
 20.159.96.0/19 Run bypasses.php
 20.159.128.0/18 Run bypasses.php
 20.159.192.0/19 Run bypasses.php
@@ -50302,7 +50358,7 @@ Origin: DE
 20.200.0.0/16 Run bypasses.php
 20.201.0.0/17 Run bypasses.php
 20.201.128.0/19 Run bypasses.php
-20.201.160.0/23 Run bypasses.php
+20.201.160.0/22 Run bypasses.php
 20.201.223.0/24 Run bypasses.php
 20.201.224.0/23 Run bypasses.php
 20.201.231.0/24 Run bypasses.php
@@ -50550,14 +50606,13 @@ Origin: DE
 40.92.1.0/24 Run bypasses.php
 40.92.6.0/24 Run bypasses.php
 40.92.116.0/22 Run bypasses.php
-40.92.120.0/22 Run bypasses.php
+40.92.120.0/21 Run bypasses.php
 40.93.0.0/20 Run bypasses.php
 40.93.16.0/22 Run bypasses.php
 40.93.20.0/24 Run bypasses.php
 40.93.64.0/20 Run bypasses.php
-40.93.80.0/22 Run bypasses.php
-40.93.84.0/23 Run bypasses.php
-40.93.86.0/24 Run bypasses.php
+40.93.80.0/21 Run bypasses.php
+40.93.88.0/24 Run bypasses.php
 40.93.128.0/21 Run bypasses.php
 40.93.136.0/22 Run bypasses.php
 40.93.192.0/20 Run bypasses.php
@@ -50569,7 +50624,7 @@ Origin: DE
 40.95.12.0/24 Run bypasses.php
 40.95.28.0/24 Run bypasses.php
 40.95.118.0/23 Run bypasses.php
-40.95.120.0/22 Run bypasses.php
+40.95.120.0/21 Run bypasses.php
 40.96.46.0/24 Run bypasses.php
 40.96.50.0/24 Run bypasses.php
 40.96.52.0/24 Run bypasses.php
@@ -50629,7 +50684,8 @@ Origin: DE
 40.102.16.0/23 Run bypasses.php
 40.102.18.0/26 Run bypasses.php
 40.107.28.0/22 Run bypasses.php
-40.107.32.0/23 Run bypasses.php
+40.107.32.0/22 Run bypasses.php
+40.107.36.0/23 Run bypasses.php
 40.107.71.0/24 Run bypasses.php
 40.107.78.0/24 Run bypasses.php
 40.107.81.0/24 Run bypasses.php
@@ -50670,18 +50726,29 @@ Origin: DE
 40.120.140.0/25 Run bypasses.php
 40.120.140.128/27 Run bypasses.php
 40.120.140.160/30 Run bypasses.php
+40.120.140.164/31 Run bypasses.php
 40.120.144.0/25 Run bypasses.php
 40.120.144.128/28 Run bypasses.php
 40.120.144.144/29 Run bypasses.php
 40.120.144.152/30 Run bypasses.php
 40.120.144.156/31 Run bypasses.php
-40.120.148.0/26 Run bypasses.php
-40.120.148.64/29 Run bypasses.php
-40.120.148.72/31 Run bypasses.php
+40.120.148.0/25 Run bypasses.php
+40.120.148.128/27 Run bypasses.php
+40.120.148.160/28 Run bypasses.php
+40.120.148.176/29 Run bypasses.php
+40.120.148.184/30 Run bypasses.php
+40.120.148.188/31 Run bypasses.php
+40.120.152.0/27 Run bypasses.php
+40.120.152.32/31 Run bypasses.php
+40.120.156.0/27 Run bypasses.php
+40.120.156.32/28 Run bypasses.php
+40.120.156.48/29 Run bypasses.php
 40.120.160.0/22 Run bypasses.php
-40.120.164.0/29 Run bypasses.php
-40.120.164.8/31 Run bypasses.php
+40.120.164.0/26 Run bypasses.php
+40.120.164.64/29 Run bypasses.php
 40.120.172.0/26 Run bypasses.php
+40.120.172.64/27 Run bypasses.php
+40.120.172.96/31 Run bypasses.php
 40.121.0.0/16 Run bypasses.php
 40.122.0.0/16 Run bypasses.php
 40.123.0.0/17 Run bypasses.php
@@ -50693,15 +50760,12 @@ Origin: DE
 40.123.148.128/26 Run bypasses.php
 40.123.148.192/27 Run bypasses.php
 40.123.148.224/28 Run bypasses.php
-40.123.148.240/31 Run bypasses.php
+40.123.148.240/30 Run bypasses.php
 40.123.152.0/21 Run bypasses.php
 40.123.160.0/22 Run bypasses.php
 40.123.164.0/23 Run bypasses.php
-40.123.166.0/26 Run bypasses.php
-40.123.166.64/27 Run bypasses.php
-40.123.166.96/28 Run bypasses.php
-40.123.166.112/29 Run bypasses.php
-40.123.166.120/31 Run bypasses.php
+40.123.166.0/25 Run bypasses.php
+40.123.166.128/31 Run bypasses.php
 40.123.168.0/22 Run bypasses.php
 40.123.172.0/25 Run bypasses.php
 40.123.172.128/26 Run bypasses.php
@@ -50710,14 +50774,7 @@ Origin: DE
 40.123.172.228/31 Run bypasses.php
 40.123.173.0/24 Run bypasses.php
 40.123.174.0/23 Run bypasses.php
-40.123.176.0/21 Run bypasses.php
-40.123.184.0/23 Run bypasses.php
-40.123.186.0/24 Run bypasses.php
-40.123.187.0/25 Run bypasses.php
-40.123.187.128/26 Run bypasses.php
-40.123.187.192/27 Run bypasses.php
-40.123.187.224/31 Run bypasses.php
-40.123.188.0/22 Run bypasses.php
+40.123.176.0/20 Run bypasses.php
 40.123.192.0/18 Run bypasses.php
 40.124.0.0/16 Run bypasses.php
 40.125.0.0/17 Run bypasses.php
@@ -50770,6 +50827,7 @@ Origin: DE
 51.141.156.0/22 Run bypasses.php
 51.141.160.0/19 Run bypasses.php
 51.141.192.0/18 Run bypasses.php
+51.142.0.0/19 Run bypasses.php
 51.142.40.11/32 Run bypasses.php
 51.142.47.249/32 Run bypasses.php
 51.142.47.252/32 Run bypasses.php
@@ -50788,9 +50846,7 @@ Origin: DE
 52.100.0.0/16 Run bypasses.php
 52.101.0.0/18 Run bypasses.php
 52.101.64.0/19 Run bypasses.php
-52.101.96.0/22 Run bypasses.php
-52.101.100.0/23 Run bypasses.php
-52.101.102.0/24 Run bypasses.php
+52.101.96.0/21 Run bypasses.php
 52.101.108.0/22 Run bypasses.php
 52.101.112.0/20 Run bypasses.php
 52.101.128.0/20 Run bypasses.php
@@ -50808,7 +50864,7 @@ Origin: DE
 52.102.158.0/23 Run bypasses.php
 52.102.160.0/20 Run bypasses.php
 52.102.176.0/21 Run bypasses.php
-52.102.184.0/24 Run bypasses.php
+52.102.184.0/23 Run bypasses.php
 52.102.192.0/21 Run bypasses.php
 52.102.200.0/22 Run bypasses.php
 52.103.0.0/20 Run bypasses.php
@@ -50816,14 +50872,14 @@ Origin: DE
 52.103.20.0/24 Run bypasses.php
 52.103.32.0/20 Run bypasses.php
 52.103.48.0/21 Run bypasses.php
-52.103.56.0/24 Run bypasses.php
+52.103.56.0/23 Run bypasses.php
 52.103.64.0/21 Run bypasses.php
 52.103.72.0/22 Run bypasses.php
 52.103.128.0/20 Run bypasses.php
 52.103.144.0/23 Run bypasses.php
 52.103.160.0/20 Run bypasses.php
 52.103.176.0/21 Run bypasses.php
-52.103.184.0/24 Run bypasses.php
+52.103.184.0/23 Run bypasses.php
 52.103.192.0/21 Run bypasses.php
 52.103.200.0/22 Run bypasses.php
 52.106.0.0/22 Run bypasses.php
@@ -50846,6 +50902,7 @@ Origin: DE
 52.108.136.0/22 Run bypasses.php
 52.108.140.0/24 Run bypasses.php
 52.108.144.0/22 Run bypasses.php
+52.108.148.0/24 Run bypasses.php
 52.108.165.0/24 Run bypasses.php
 52.108.166.0/23 Run bypasses.php
 52.108.168.0/21 Run bypasses.php
@@ -50961,9 +51018,11 @@ Origin: DE
 52.122.192.0/19 Run bypasses.php
 52.122.224.0/20 Run bypasses.php
 52.122.240.0/22 Run bypasses.php
+52.122.244.0/24 Run bypasses.php
 52.123.0.0/20 Run bypasses.php
-52.123.16.0/22 Run bypasses.php
-52.123.20.0/24 Run bypasses.php
+52.123.16.0/21 Run bypasses.php
+52.123.24.0/23 Run bypasses.php
+52.123.26.0/24 Run bypasses.php
 52.123.133.0/24 Run bypasses.php
 52.123.134.0/23 Run bypasses.php
 52.123.136.0/21 Run bypasses.php
@@ -51074,21 +51133,8 @@ Origin: DE
 52.236.0.0/15 Run bypasses.php
 52.238.0.0/16 Run bypasses.php
 52.239.0.0/17 Run bypasses.php
-52.239.128.0/20 Run bypasses.php
-52.239.144.0/22 Run bypasses.php
-52.239.148.0/27 Run bypasses.php
-52.239.148.64/26 Run bypasses.php
-52.239.148.128/25 Run bypasses.php
-52.239.149.0/24 Run bypasses.php
-52.239.150.0/23 Run bypasses.php
-52.239.152.0/21 Run bypasses.php
-52.239.160.0/22 Run bypasses.php
-52.239.164.0/24 Run bypasses.php
-52.239.165.0/26 Run bypasses.php
-52.239.165.160/27 Run bypasses.php
-52.239.165.192/26 Run bypasses.php
-52.239.166.0/23 Run bypasses.php
-52.239.168.0/21 Run bypasses.php
+52.239.128.0/19 Run bypasses.php
+52.239.160.0/20 Run bypasses.php
 52.239.176.0/21 Run bypasses.php
 52.239.184.0/22 Run bypasses.php
 52.239.188.0/23 Run bypasses.php
@@ -51143,6 +51189,12 @@ Origin: DE
 52.253.192.0/19 Run bypasses.php
 52.253.224.0/20 Run bypasses.php
 52.254.0.0/15 Run bypasses.php
+57.150.0.0/20 Run bypasses.php
+57.150.16.0/25 Run bypasses.php
+57.150.16.128/26 Run bypasses.php
+57.151.0.0/17 Run bypasses.php
+57.151.128.0/19 Run bypasses.php
+62.10.0.0/19 Run bypasses.php
 64.4.8.0/24 Run bypasses.php
 64.4.54.0/24 Run bypasses.php
 65.52.0.0/19 Run bypasses.php
@@ -51196,6 +51248,8 @@ Origin: DE
 65.55.218.0/23 Run bypasses.php
 65.55.250.0/24 Run bypasses.php
 65.55.252.0/24 Run bypasses.php
+68.154.0.0/17 Run bypasses.php
+68.155.0.0/17 Run bypasses.php
 68.210.0.0/17 Run bypasses.php
 68.211.0.0/17 Run bypasses.php
 68.218.0.0/17 Run bypasses.php
@@ -51209,6 +51263,11 @@ Origin: DE
 70.37.32.0/19 Run bypasses.php
 70.37.64.0/18 Run bypasses.php
 70.37.160.0/21 Run bypasses.php
+70.153.0.0/17 Run bypasses.php
+70.153.128.0/18 Run bypasses.php
+70.153.192.0/19 Run bypasses.php
+70.156.0.0/17 Run bypasses.php
+70.157.0.0/17 Run bypasses.php
 74.224.0.0/15 Run bypasses.php
 74.226.0.0/16 Run bypasses.php
 74.227.0.0/17 Run bypasses.php
@@ -51278,15 +51337,22 @@ Origin: DE
 104.47.200.0/21 Run bypasses.php
 104.47.208.0/21 Run bypasses.php
 104.47.216.64/26 Run bypasses.php
+104.47.217.71/32 Run bypasses.php
+104.47.217.87/32 Run bypasses.php
+104.47.217.151/32 Run bypasses.php
 104.47.218.0/23 Run bypasses.php
 104.47.220.0/22 Run bypasses.php
 104.47.224.0/20 Run bypasses.php
+104.47.240.167/32 Run bypasses.php
+104.47.240.215/32 Run bypasses.php
 104.208.0.0/16 Run bypasses.php
 104.209.0.0/18 Run bypasses.php
 104.209.64.0/19 Run bypasses.php
 104.209.128.0/17 Run bypasses.php
 104.210.0.0/20 Run bypasses.php
 104.210.16.0/21 Run bypasses.php
+104.210.24.0/24 Run bypasses.php
+104.210.26.0/24 Run bypasses.php
 104.210.32.0/19 Run bypasses.php
 104.210.64.0/18 Run bypasses.php
 104.210.128.0/19 Run bypasses.php
@@ -51452,7 +51518,7 @@ Origin: DE
 157.56.176.0/21 Run bypasses.php
 157.56.216.0/26 Run bypasses.php
 158.23.0.0/16 Run bypasses.php
-167.105.0.0/17 Run bypasses.php
+167.105.0.0/16 Run bypasses.php
 168.61.0.0/17 Run bypasses.php
 168.61.128.0/25 Run bypasses.php
 168.61.128.128/28 Run bypasses.php
@@ -51510,7 +51576,8 @@ Origin: DE
 172.211.0.0/17 Run bypasses.php
 172.212.0.0/16 Run bypasses.php
 172.213.0.0/19 Run bypasses.php
-172.214.0.0/16 Run bypasses.php
+172.213.128.0/17 Run bypasses.php
+172.214.0.0/15 Run bypasses.php
 191.232.16.0/21 Run bypasses.php
 191.232.32.0/19 Run bypasses.php
 191.232.64.0/20 Run bypasses.php
@@ -51567,6 +51634,7 @@ Origin: DE
 191.239.208.0/20 Run bypasses.php
 191.239.224.0/19 Run bypasses.php
 193.149.64.0/19 Run bypasses.php
+195.134.240.0/22 Run bypasses.php
 195.134.252.0/24 Run bypasses.php
 198.180.97.0/24 Run bypasses.php
 199.30.16.0/24 Run bypasses.php
@@ -51623,6 +51691,10 @@ Origin: DE
 209.199.16.0/23 Run bypasses.php
 209.199.18.0/24 Run bypasses.php
 209.199.19.0/26 Run bypasses.php
+209.199.19.64/27 Run bypasses.php
+209.199.19.96/28 Run bypasses.php
+209.199.19.128/25 Run bypasses.php
+209.199.20.0/24 Run bypasses.php
 209.240.212.0/23 Run bypasses.php
 213.199.128.0/20 Run bypasses.php
 213.199.169.0/24 Run bypasses.php

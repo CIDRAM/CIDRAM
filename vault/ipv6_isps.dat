@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6_isps.dat
 
-# Version: 2024.13.0
-# Last modified: 2024.01.14
+# Version: 2024.27.0
+# Last modified: 2024.01.28
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -14,15 +14,17 @@
 # Major domestic ISP from Russia, but also a significant, long-term source of
 # spam, hack attempts, scraping, probing for vulnerabilities, and other kinds
 # of unwanted traffic.
-# Stop Forum Spam (SFS) listings: 1,108,542 (AS34665), 65 (AS44050).
-# Updated: 2023.04.01
+# Stop Forum Spam (SFS) listings: 822,131 (AS34665), 2 (AS44050).
+# Updated: 2024.01.28
 
+2a0d:1ac3::/32 Deny Spam
+Origin: AE
 2a02:c6c1::/48 Deny Spam
 Origin: GB
 2a00:1d78::/32 Deny Spam
 2a0b:d000::/29 Deny Spam
+2a0c:6900::/29 Deny Spam
 2a0c:8700::/29 Deny Spam
-2a0d:1ac3::/32 Deny Spam
 2a0d:8fc0::/29 Deny Spam
 2a0e:e5c0::/29 Deny Spam
 Origin: RU
@@ -786,12 +788,14 @@ Tag: Vodafone Deutschland GmbH
 
 # ASNs 3215, 5511 ("Orange S.A").
 # French domestic/mobile ISP. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,450 (AS3215), 43 (AS5511).
-# Updated: 2023.04.03
+# Stop Forum Spam (SFS) listings: 1,547 (AS3215), 5 (AS5511).
+# Updated: 2024.01.28
 
-2a01:cb00:8065:800::/64 Deny Spam
-2a01:cb04:6de:9b00::/64 Deny Spam
-2a01:cb1d:8966:5200::/64 Deny Spam
+2a01:cb05:f:f400::/64 Deny Spam
+2a01:cb0c:70b:7b01::/64 Deny Spam
+2a01:cb15:211:7800::/64 Deny Spam
+2a01:cb19:8ef5:200::/64 Deny Spam
+2a01:cb1d:a93:3b00::/64 Deny Spam
 Origin: FR
 Profile: Domestic ISP;Mobile ISP
 Tag: Orange S.A
@@ -833,22 +837,6 @@ Tag: NPF SOFTVIDEO Ltd
 Origin: RU
 Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Tor endpoints here;Webhosting
 Tag: OOO TimeWeb
-
-
-# ASN 1136 ("KPN B.V").
-# Dutch domestic ISP and phone provider. Brute-force, SSH, webapp, DDoS, and
-# XMLRPC attacks, hacking, port scans, and spam detected from here. Listing
-# just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 355.
-# Updated: 2023.04.07
-
-2a02:a441:3460:1::/64 Deny Spam
-2a02:a441:8f83:1::/64 Deny Spam
-2a02:a447:7ba1:1::/64 Deny Spam
-2a02:a44d:3a99:1::/64 Deny Spam
-Origin: NL
-Profile: Domestic ISP;Multiplay
-Tag: KPN B.V
 
 
 # ASNs 15480, 33915 ("Vodafone Libertel B.V").
@@ -906,20 +894,6 @@ Profile: Domestic ISP
 Tag: Binariang Berhad
 
 
-# ASN 55430 ("Starhub Ltd").
-# Singaporean mobile provider. Brute-force, SSH, XMLRPC/WordPress, and webapp
-# attacks, port scans, hacking, and spam detected from here.
-# Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 257.
-# Updated: 2023.04.02
-
-2406:3003:2005:183b::/64 Deny Spam
-2406:3003:2064:1a97::/64 Deny Spam
-Origin: SG
-Profile: Mobile ISP
-Tag: Starhub Ltd
-
-
 # ASN 197019 ("WEDOS Internet, a.s").
 # Czech domestic ISP. Brute-force, SSH, env, and webapp attacks, attempting to
 # execute exploits, port scans, hacking, and spam detected from here.
@@ -931,18 +905,6 @@ Tag: Starhub Ltd
 Origin: CZ
 Profile: Domestic ISP
 Tag: WEDOS Internet, a.s
-
-
-# ASN 134319 ("Elyzium Technologies Pvt. Ltd").
-# Indian infrastructure provider. Brute-force attacks, hacking, port scans, and
-# spam detected from here. Manually checked all ranges; All ranges affected.
-# Stop Forum Spam (SFS) listings: 79.
-# Updated: 2022.04.25 / Checked: 2023.04.07
-
-2001:df2:4480::/48 Deny Attacks
-Origin: IN
-Profile: Infrastructure/Transit
-Tag: Elyzium Technologies
 
 
 # ASNs 132761, 134331 ("Smartlink Solutions Pvt. Ltd").

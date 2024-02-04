@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6.dat
 
-# Version: 2024.27.0
-# Last modified: 2024.01.28
+# Version: 2024.34.0
+# Last modified: 2024.02.04
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -1197,8 +1197,8 @@ Tag: SingleHop, Inc
 
 
 # ASN 29550 ("eUKhost LTD").
-# Stop Forum Spam (SFS) listings: 176.
-# Updated: 2017.03.19 / Checked: 2023.03.15
+# Stop Forum Spam (SFS) listings: 14.
+# Updated: 2017.03.19 / Checked: 2024.02.01
 
 2a02:af8::/32 Deny Cloud
 Origin: GB
@@ -2261,8 +2261,8 @@ Tag: Bradler & Krantz
 
 # ASN 34762 ("Combell NV").
 # Dedicated webhosting provider.
-# Stop Forum Spam (SFS) listings: 10.
-# Updated: 2023.04.15
+# Stop Forum Spam (SFS) listings: 15.
+# Updated: 2023.04.15 / Checked: 2024.02.04
 
 2a00:1c98::/32 Deny Cloud
 2a00:7000::/32 Deny Cloud
@@ -4335,8 +4335,8 @@ Tag: InMotion Hosting, Inc
 
 
 # ASN 53755 ("Input Output Flood LLC").
-# Stop Forum Spam (SFS) listings: 765.
-# Updated: 2020.08.11 / Checked: 2023.03.15
+# Stop Forum Spam (SFS) listings: 73.
+# Updated: 2020.08.11 / Checked: 2024.02.01
 
 2a0d:da07::/32 Deny Cloud
 Origin: GB
@@ -5191,8 +5191,8 @@ Tag: Keyweb AG
 
 
 # ASN 10929 ("Netelligent Hosting Services Inc").
-# Stop Forum Spam (SFS) listings: 31.
-# Updated: 2023.04.14
+# Stop Forum Spam (SFS) listings: 2.
+# Updated: 2023.04.14 / Checked: 2024.02.04
 
 2605:9000::/32 Deny Cloud
 Origin: CA
@@ -5462,8 +5462,8 @@ Tag: meerfarbig
 
 # ASNs 38719, 135132 ("Dreamscape Networks Pty Ltd").
 # Dedicated webhosting provider and an occasional source of spam.
-# Stop Forum Spam (SFS) listings: 18 (AS38719), 2 (AS135132).
-# Updated: 2023.04.14
+# Stop Forum Spam (SFS) listings: 30 (AS38719), 4 (AS135132).
+# Updated: 2024.02.04
 
 2a00:fd80::/32 Deny Cloud
 Origin: AE
@@ -5477,9 +5477,10 @@ Origin: AE
 Origin: AU
 2404:3800:f::/48 Deny Cloud
 Origin: NZ
-2400:8240::/32 Deny Cloud
 2405:df80::/32 Deny Cloud
 Origin: PH
+2400:8240::/32 Deny Cloud
+Origin: SG
 Profile: Dedicated;Webhosting
 Tag: Dreamscape Networks
 
@@ -9085,10 +9086,11 @@ Tag: Leonet srl
 
 # ASNs 398324, 398705, 398722 ("Censys, Inc").
 # Caught port scanning and probing for vulnerabilities.
-# Stop Forum Spam (SFS) listings: 50 (AS398324), 39 (AS398722).
-# Updated: 2023.08.27
+# Stop Forum Spam (SFS) listings: 33 (AS398324), 6 (AS398705), 42 (AS398722).
+# Updated: 2024.02.01
 
-2602:80d:1000::/48 Deny Cloud
+2602:80d:1000::/46 Deny Cloud
+2602:80d:1004::/47 Deny Cloud
 2620:96:e000::/48 Deny Cloud
 Origin: US
 Profile: Commercial
@@ -12352,10 +12354,12 @@ Tag: LLC Optima-East
 
 # ASN 50321 ('FOP "Reznichenko Sergey Mykolayovich"').
 # Brute-force attacks and spam detected from here.
-# Stop Forum Spam (SFS) listings: 137.
-# Updated: 2023.04.17
+# Stop Forum Spam (SFS) listings: 239.
+# Updated: 2024.02.04
 
 2a05:541:106::/48 Deny Cloud
+2a05:541:128::/48 Deny Cloud
+2a05:541:130::/48 Deny Cloud
 Origin: RU
 2001:67c:1528::/48 Deny Cloud
 Origin: UA

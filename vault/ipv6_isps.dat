@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6_isps.dat
 
-# Version: 2024.27.0
-# Last modified: 2024.01.28
+# Version: 2024.34.0
+# Last modified: 2024.02.04
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -382,29 +382,15 @@ Tag: PJSC Moscow city
 # Listed here are some specific CIDRs/IPs on their network that pose a major
 # spam risk and/or are known sources of spam and/or other undesirable traffic.
 # Mozi botnet detected from here.
-# Stop Forum Spam (SFS) listings: 10,164 (AS7922).
-# Updated: 2023.04.08
+# Stop Forum Spam (SFS) listings: 2 (AS7015), 6,734 (AS7922).
+# Updated: 2024.02.04
 
-2601:41:4380:c170::/64 Deny Spam
-2601:88:8100:46e4::/64 Deny Spam
-2601:183:c903:10d0::/64 Deny Spam
-2601:19b:4401:9220::/64 Deny Spam
-2601:204:f000:c360::/64 Deny Spam
-2601:285:501:1500::/64 Deny Spam
-2601:2c2:4201:300::/64 Deny Spam
-2601:541:c080:5000::/64 Deny Spam
-2601:547:3:2330::/64 Deny Spam
-2601:582:4800:37e::/64 Deny Spam
-2601:5c0:c200:a10::/64 Deny Spam
-2601:601:8401:f090::/64 Deny Spam
-2601:642:4700:a650::/64 Deny Spam
-2601:642:c100:d150::/64 Deny Spam
-2601:644:0:73::/64 Deny Spam
-2601:802:4100:5e20::/64 Deny Spam
-2601:8c0:801:b3d0::/64 Deny Spam
+2601:18c:500:1060::/64 Deny Spam
+2601:647:667f:dc40::/64 Deny Spam
+2601:980:4200:3d7::/64 Deny Spam
+2601:985:4280:3080::/64 Deny Spam
 2603:3001:1cd2:8100::/64 Deny Spam
-2603:300c:616:c000::/64 Deny Spam
-2603:3024:1930:2000::/64 Deny Spam
+2603:3021:3308:1600::/64 Deny Spam
 Origin: US
 Profile: Domestic ISP
 Tag: Comcast Spam IPs
@@ -516,21 +502,6 @@ Tag: Atria Convergence
 Origin: GR
 Profile: Domestic ISP
 Tag: Ote SA
-
-
-# ASNs 6332, 8151 ("Uninet S.A. de C.V").
-# Mexican domestic ISP. Brute-force attacks, port scans, and spam detected from
-# here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 22 (AS6332), 1,557 (AS8151).
-# Updated: 2023.04.06
-
-2806:1016:a:12f2::/64 Deny Spam
-2806:1016:a:4567::/64 Deny Spam
-2806:107e:f:1944::/64 Deny Spam
-2806:10a6:6:af1b::/64 Deny Spam
-Origin: MX
-Profile: Domestic ISP
-Tag: Uninet
 
 
 # ASN 6830 ("Liberty Global B.V").

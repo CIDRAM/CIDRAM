@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2024.01.19).
+ * This file: Optional security extras module (last modified: 2024.02.08).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -44,10 +44,10 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         $LCNrURI = str_replace('\\', '/', strtolower($this->BlockInfo['rURI']));
 
         /** Directory traversal protection. */
-        $this->trigger(preg_match('~(?:/|%5[cf])\.{2,}(?:/|%5[cf])~i', $LCNrURI), 'Traversal attack'); // 2017.01.13
-
-        /** Detect bad/dangerous/malformed requests. */
-        $this->trigger(preg_match('~(?:(/|%5[cf])\.(/|%5[cf])|(/|%5[cf]){3,}|[\x00-\x1f\x7f])~i', $LCNrURI), 'Bad request'); // 2017.01.13
+        if (!$this->trigger(preg_match('~%5[cf]\.{2,}%5[cf]~', $LCNrURI), 'Traversal attack')) {
+            /** Detect bad/dangerous/malformed requests. */
+            $this->trigger(preg_match('~%5[cf]\.%5[cf]|%5[cf]{3,}|[\x00-\x1f\x7f]~', $LCNrURI), 'Bad request'); // 2017.01.13 mod 2024.02.08
+        } // 2017.01.13 mod 2024.02.08
 
         /** WordPress user enumeration (modified 2022.11.07). */
         if ($this->trigger(preg_match('~\?author=\d+~i', $LCNrURI), 'WordPress user enumeration not allowed')) {
@@ -85,7 +85,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
         /** Probing for webshells/backdoors. */
         if ($this->trigger(preg_match(
-            '~(?:^|[/?])(?:' .
+            '~^/{3,}wp-|(?:^|[/?])(?:' .
             'old/wp-admin/install\.php|shell\?cd|' .
             'test/wp-includes/wlwmanifest\.xml|' .
             '(?:' .
@@ -94,7 +94,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             '\d{3,5}[a-z]{3,5}|\d+-?backdoor|0byte|0x|10+|991176|' .
             'admin-heade\d*|adminfuns|ahhygskn|alfa(?:-rex|_data|a?cgiapi|ioxi|new)?\d*|anjas|apismtp|axx|' .
             'b3d2acc621a0|bak|bala|' .
-            'c(?:9|10)\d+|casper[\da-z]+|cfom[-_]files|(?:cgi-bin|css)/(?:moon|newgolden|radio|uploader|well-known|wp-login)|cjfuns|classsmtps|colors/blue/uploader|' .
+            'c(?:9|10)\d+|casper[\da-z]+|cd(?:.*tmp.*rm-rf|chmod.*\d{3,})|cfom[-_]files|(?:cgi-bin|css)/(?:luci/;|moon|newgolden|radio|stok=/|uploader|well-known|wp-login)|cjfuns|classsmtps|colors/blue/uploader|' .
             'd7|deadcode\d*|dkiz|' .
             'ee|' .
             'fddqradz|' .
@@ -106,11 +106,11 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             'orvx(?:-shell)?|' .
             'perl\.alfa|php(?:1|_niu_\d+)|(?:plugins|themes)/(?:ccx|ioptimization|yyobang)|poison|priv8|pzaiihfi|' .
             'session91|sh[3e]llx?\d*|shrift|sidwso|silic|skipper(?:shell)?|sonarxleetxd|spammervip|src/util/php/(?:eval(?:-stdin)?|kill)|' .
-            't62|themes/(?:finley/min|pridmag/db|universal-news/www)|tinymce/langs/about|tk(?:_dencode_\d+)?|(?:tmp|wp-content)/vuln|topxoh/(?:drsx|wdr)|' .
+            't62|tenda\.sh.*tenda\.sh|themes/(?:finley/min|pridmag/db|universal-news/www)|tinymce/langs/about|tk(?:_dencode_\d+)?|(?:tmp|wp-content)/vuln|topxoh/(?:drsx|wdr)|' .
             'unisibfu|upfile(?:_\\(\d\\))?|uploader_by_cloud7_agath|utchiha(?:_uploader)?|' .
             'vzlateam|' .
             'w0rdpr3ssnew|walker-nva|webshell-[a-z\d]+|widgets-nva|widwsisw|wloymzuk|' .
-            'wp[-_](?:2019|22|(?:admin|content|css(?:/colors)?|includes(?:/ixr|/customize|/pomo)?|js(?:/widgets)?|network)/(?:cong|dropdown|repeater|simple)|conflg|content/plugins/(?:contus-hd-flv-player/uploadvideo|dzs-zoomsounds/savepng)|filemanager|setups|sigunq|p)|' .
+            'wp[-_](?:2019|22|(?:admin|content|css(?:/colors)?|includes(?:/ixr|/customize|/pomo)?|js(?:/widgets)?|network)/(?:cong|dropdown|repeater|simple)|conflg|content/plugins/(?:backup-backup/includes/hro|contus-hd-flv-player/uploadvideo|dzs-zoomsounds/savepng|fix/up)|filemanager|setups|sigunq|p)|' .
             'ws[ou](?:yanz)?(?:[\d.]*|[\da-z]{4,})|wwdv|' .
             'x{3,}|xiaom|xichang/x|x+l(?:\d+|eet(?:mailer|-shell)?x?)|xm(?:lrpcs|lrpz|rlpc)|xw|' .
             'yanz|yyobang/mar|' .
@@ -120,12 +120,17 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $LCNrURI
         ), 'Probing for webshells/backdoors')) {
             $this->Reporter->report([15, 20, 21], ['Caught probing for webshells/backdoors. Host might be compromised.'], $this->BlockInfo['IPAddr']);
-        } // 2023.08.18 mod 2023.09.08
+        } // 2023.08.18 mod 2024.02.08
 
         /** Probing for exposed Git data. */
         if ($this->trigger(preg_match('~\.git(?:$|\W)~', $LCNrURI), 'Probing for exposed git data')) {
             $this->Reporter->report([15, 21], ['Caught probing for exposed git data.'], $this->BlockInfo['IPAddr']);
         } // 2022.06.05 mod 2023.09.04
+
+        /** Probing for exposed VSCode data. */
+        if ($this->trigger(preg_match('~(?:^|[/?])\.vscode(?:$|\W)~', $LCNrURI), 'Probing for exposed VSCode data')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed VSCode data.'], $this->BlockInfo['IPAddr']);
+        } // 2024.02.08
 
         /** Probing for exposed SSH data. */
         if ($this->trigger(preg_match('~(?:^|[/?])\.ssh(?:$|\W)~', $LCNrURI), 'Probing for exposed SSH data')) {

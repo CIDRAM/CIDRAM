@@ -1,8 +1,8 @@
 # IPv4 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv4.dat
 
-# Version: 2024.34.0
-# Last modified: 2024.02.04
+# Version: 2024.43.0
+# Last modified: 2024.02.13
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -41180,33 +41180,39 @@ Tag: EonScope, Inc
 # ASN 138152 ("YISU CLOUD LTD").
 # Hong Kong cloud provider / server farm. SQLi, Brute-force, XMLRPC, and webapp
 # attacks, port scans, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 7.
-# Updated: 2023.04.17
+# Stop Forum Spam (SFS) listings: 44.
+# Updated: 2024.02.13
 
 103.142.86.0/23 Deny Cloud
 103.143.10.0/23 Deny Cloud
 103.143.72.0/23 Deny Cloud
 103.143.230.0/23 Deny Cloud
 103.143.238.0/23 Deny Cloud
-103.143.248.0/23 Deny Cloud
 103.144.2.0/23 Deny Cloud
 103.144.28.0/24 Deny Cloud
-103.144.162.0/23 Deny Cloud
-103.144.238.0/23 Deny Cloud
 103.144.244.0/22 Deny Cloud
 103.145.84.0/23 Deny Cloud
-103.146.14.0/23 Deny Cloud
+103.146.14.0/24 Deny Cloud
 103.146.52.0/23 Deny Cloud
 Origin: HK
 154.92.22.0/23 Deny Cloud
 154.94.4.0/24 Deny Cloud
 154.94.6.0/23 Deny Cloud
+154.211.15.0/24 Deny Cloud
 156.232.6.0/23 Deny Cloud
 156.232.8.0/22 Deny Cloud
 156.232.12.0/23 Deny Cloud
 156.236.73.0/24 Deny Cloud
 156.236.74.0/23 Deny Cloud
 Origin: SC
+23.247.128.0/23 Deny Cloud
+23.247.130.0/24 Deny Cloud
+Origin: US
+103.143.248.0/23 Deny Cloud
+103.144.162.0/23 Deny Cloud
+103.144.238.0/23 Deny Cloud
+103.146.15.0/24 Deny Cloud
+Origin: XP
 Profile: Commercial;Infrastructure/Transit
 Tag: YISU CLOUD LTD
 
@@ -41214,13 +41220,10 @@ Tag: YISU CLOUD LTD
 # ASN 33083 ("AxcelX Technologies LLC").
 # Boston cloud provider / server farm. Brute-force, DDoS, and webapp attacks,
 # port scans, and spam detected from here (substract 44.0.0.0/8 when updating).
-# Stop Forum Spam (SFS) listings: 331.
-# Updated: 2023.04.17
+# Stop Forum Spam (SFS) listings: 123.
+# Updated: 2024.02.13
 
 69.166.8.0/23 Deny Cloud
-88.218.104.0/23 Deny Cloud
-172.98.170.0/24 Deny Cloud
-172.98.178.0/24 Deny Cloud
 184.105.141.0/24 Deny Cloud
 192.34.80.0/21 Deny Cloud
 199.4.152.0/24 Deny Cloud
@@ -43712,8 +43715,8 @@ Tag: VCCL Cloud
 # ASN 63612 ("Shenzhen Qianhai bird cloud computing Co. Ltd").
 # Chinese computing and data center. Brute-force, SSH, RDP, and webapp attacks,
 # port scans, hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 6.
-# Updated: 2022.04.16 / Checked: 2023.04.08
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2022.04.16 / Checked: 2024.02.11
 
 103.45.97.0/24 Deny Cloud
 103.45.98.0/23 Deny Cloud
@@ -46206,19 +46209,19 @@ Tag: Private-Hosting
 
 # ASN 141968 ("PT Industri Kreatif Digital").
 # Brute-force, SSH attacks, port scans, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 6.
-# Updated: 2023.04.26
+# Stop Forum Spam (SFS) listings: 13.
+# Updated: 2024.02.11
 
 98.142.245.0/24 Deny Cloud
 Origin: CA
-45.8.23.0/24 Deny Cloud
-Origin: ES
+45.66.153.0/24 Deny Cloud
+Origin: CY
+103.42.116.0/23 Deny Cloud
 103.167.34.0/23 Deny Cloud
 103.177.94.0/23 Deny Cloud
 103.180.124.0/23 Deny Cloud
 Origin: ID
 45.149.187.0/24 Deny Cloud
-88.216.180.0/24 Deny Cloud
 Origin: LT
 103.76.129.0/24 Deny Cloud
 Origin: NL
@@ -46241,48 +46244,39 @@ Tag: Premium Fast Network
 # ASN 58212 ("dataforest GmbH").
 # Brute-force, SSH, and webapp attacks, port scans, hacking, and spam detected
 # from here.
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2023.04.26
+# Stop Forum Spam (SFS) listings: 74.
+# Updated: 2024.02.11
 
-193.124.18.0/24 Deny Cloud
-193.124.41.0/24 Deny Cloud
-193.124.47.0/24 Deny Cloud
-193.124.205.0/24 Deny Cloud
-194.58.43.0/24 Deny Cloud
-194.58.46.0/24 Deny Cloud
-194.58.155.0/24 Deny Cloud
-194.87.30.0/24 Deny Cloud
-194.87.42.0/24 Deny Cloud
-194.87.64.0/24 Deny Cloud
-194.87.108.0/24 Deny Cloud
-194.87.161.0/24 Deny Cloud
-194.87.163.0/24 Deny Cloud
-194.87.205.0/24 Deny Cloud
-194.87.207.0/24 Deny Cloud
-195.133.12.0/24 Deny Cloud
-212.192.7.0/24 Deny Cloud
-212.192.30.0/24 Deny Cloud
-Origin: CZ
+92.118.160.0/24 Deny Cloud
+Origin: AE
 2.59.132.0/22 Deny Cloud
+37.114.35.0/24 Deny Cloud
+45.140.56.0/24 Deny Cloud
+45.145.40.0/22 Deny Cloud
 45.157.232.0/22 Deny Cloud
 62.192.153.0/24 Deny Cloud
 85.117.243.0/24 Deny Cloud
 94.143.231.0/24 Deny Cloud
 176.96.136.0/22 Deny Cloud
 185.94.29.0/24 Deny Cloud
-185.236.8.0/23 Deny Cloud
+185.219.84.0/24 Deny Cloud
 185.236.11.0/24 Deny Cloud
 185.254.96.0/22 Deny Cloud
-185.255.112.0/24 Deny Cloud
 193.41.226.0/24 Deny Cloud
 193.41.237.0/24 Deny Cloud
 193.42.11.0/24 Deny Cloud
 193.42.12.0/24 Deny Cloud
+194.9.6.0/24 Deny Cloud
 194.48.217.0/24 Deny Cloud
-213.139.66.0/24 Deny Cloud
+194.107.126.0/24 Deny Cloud
+195.178.110.0/24 Deny Cloud
 Origin: DE
-141.11.224.0/22 Deny Cloud
+193.22.129.0/24 Deny Cloud
 Origin: FR
+217.156.22.0/23 Deny Cloud
+Origin: RO
+185.7.82.0/23 Deny Cloud
+Origin: TR
 Profile: Webhosting
 Tag: dataforest GmbH
 
@@ -46290,9 +46284,11 @@ Tag: dataforest GmbH
 # ASN 41745 ("Baykov Ilya Sergeevich").
 # Brute-force, SSH, and FTP attacks, port scans, hacking, and spam detected
 # from here.
-# Stop Forum Spam (SFS) listings: 16.
-# Updated: 2023.04.26
+# Stop Forum Spam (SFS) listings: 7.
+# Updated: 2024.02.11
 
+188.92.28.0/24 Deny Cloud
+Origin: AM
 95.215.8.0/24 Deny Cloud
 193.124.33.0/24 Deny Cloud
 194.87.35.0/24 Deny Cloud
@@ -46305,9 +46301,20 @@ Tag: dataforest GmbH
 195.133.75.0/24 Deny Cloud
 212.192.9.0/24 Deny Cloud
 Origin: CZ
+5.39.249.0/24 Deny Cloud
+45.89.63.0/24 Deny Cloud
+45.144.232.0/22 Deny Cloud
+Origin: GB
+77.105.162.0/24 Deny Cloud
+92.118.169.0/24 Deny Cloud
+92.118.170.0/24 Deny Cloud
+185.65.202.0/24 Deny Cloud
+194.147.35.0/24 Deny Cloud
 194.190.152.0/23 Deny Cloud
 194.226.121.0/24 Deny Cloud
 Origin: RU
+166.1.160.0/24 Deny Cloud
+Origin: US
 Profile: Webhosting
 Tag: B.I.Sergeevich
 
@@ -49823,6 +49830,89 @@ Tag: PSG JOINT STOCK COMPANY
 Origin: VN
 Profile: Commercial
 Tag: VPSTTT
+
+
+# ASN 29470 ('JSC "RetnNet"').
+# Russian server farm. Brute-force, SSH, and FTP attacks, port scans, hacking,
+# and spam detected from here.
+# Stop Forum Spam (SFS) listings: 3.
+# Updated: 2024.02.11
+
+45.8.228.0/23 Deny Cloud
+45.11.26.0/24 Deny Cloud
+45.132.17.0/24 Deny Cloud
+45.135.233.0/24 Deny Cloud
+45.137.152.0/24 Deny Cloud
+45.143.94.0/23 Deny Cloud
+45.151.144.0/24 Deny Cloud
+46.17.248.0/24 Deny Cloud
+87.247.157.0/24 Deny Cloud
+176.113.80.0/23 Deny Cloud
+185.21.142.0/24 Deny Cloud
+188.119.67.0/24 Deny Cloud
+193.42.113.0/24 Deny Cloud
+194.169.163.0/24 Deny Cloud
+213.226.112.0/24 Deny Cloud
+213.226.114.0/24 Deny Cloud
+Origin: AE
+45.82.153.0/24 Deny Cloud
+62.76.228.0/24 Deny Cloud
+193.124.118.0/24 Deny Cloud
+194.87.46.0/24 Deny Cloud
+194.87.57.0/24 Deny Cloud
+194.87.80.0/24 Deny Cloud
+194.87.107.0/24 Deny Cloud
+194.87.206.0/23 Deny Cloud
+194.87.210.0/24 Deny Cloud
+194.87.213.0/24 Deny Cloud
+194.87.244.0/24 Deny Cloud
+194.87.253.0/24 Deny Cloud
+194.87.254.0/24 Deny Cloud
+195.58.51.0/24 Deny Cloud
+195.133.13.0/24 Deny Cloud
+195.133.32.0/24 Deny Cloud
+195.133.45.0/24 Deny Cloud
+195.133.46.0/24 Deny Cloud
+195.133.198.0/23 Deny Cloud
+Origin: CZ
+139.45.216.0/21 Deny Cloud
+Origin: GB
+45.10.244.0/22 Deny Cloud
+46.46.128.0/19 Deny Cloud
+46.46.160.0/20 Deny Cloud
+46.46.176.0/21 Deny Cloud
+46.46.184.0/22 Deny Cloud
+213.178.155.0/24 Deny Cloud
+Origin: RU
+Profile: Infrastructure/Transit;Webhosting
+Tag: RetnNet
+
+
+# ASN 207994 ("Blockchain Creek B.V").
+# Brute-force, SSH, and webapp attacks, port scans, and hacking detected here.
+# Updated: 2024.02.11
+
+5.253.37.0/24 Deny Cloud
+Origin: CY
+193.124.205.0/24 Deny Cloud
+Origin: CZ
+163.5.76.0/24 Deny Cloud
+Origin: FR
+62.72.177.0/24 Deny Cloud
+Origin: JO
+Profile: Infrastructure/Transit;Webhosting
+Tag: Blockchain Creek
+
+
+# ASN 52053 ("REDHEBERG Association declaree").
+# DDoS attacks and DNS poisoning detected from here.
+# Updated: 2024.02.11
+
+185.255.112.0/24 Deny Cloud
+193.38.250.0/24 Deny Cloud
+Origin: DE
+Profile: Restricted/Unidentifiable
+Tag: REDHEBERG
 
 
 # ---

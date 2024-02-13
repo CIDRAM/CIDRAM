@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6.dat
 
-# Version: 2024.34.0
-# Last modified: 2024.02.04
+# Version: 2024.43.0
+# Last modified: 2024.02.13
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -10682,8 +10682,8 @@ Tag: Tier.Net Technologies LLC
 # ASN 33083 ("AxcelX Technologies LLC").
 # Boston cloud provider / server farm. Brute-force, DDoS, and webapp attacks,
 # port scans, and spam detected from here (substract 44.0.0.0/8 when updating).
-# Stop Forum Spam (SFS) listings: 331.
-# Updated: 2021.07.19 / Checked: 2023.04.17
+# Stop Forum Spam (SFS) listings: 123.
+# Updated: 2021.07.19 / Checked: 2024.02.13
 
 2001:4830:c400::/40 Deny Cloud
 2602:ff65::/36 Deny Cloud
@@ -12380,12 +12380,13 @@ Tag: Private-Hosting
 
 # ASN 141968 ("PT Industri Kreatif Digital").
 # Brute-force, SSH attacks, port scans, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 6.
-# Updated: 2023.04.26
+# Stop Forum Spam (SFS) listings: 13.
+# Updated: 2024.02.11
 
 2407:6ac0:1::/48 Deny Cloud
 2407:6ac0:2::/47 Deny Cloud
 2407:6ac0:4::/46 Deny Cloud
+2407:6ac0:8::/48 Deny Cloud
 2407:6ac0:12::/48 Deny Cloud
 Origin: ID
 Profile: Webhosting
@@ -12395,13 +12396,19 @@ Tag: Industri Kreatif Digital
 # ASN 58212 ("dataforest GmbH").
 # Brute-force, SSH, and webapp attacks, port scans, hacking, and spam detected
 # from here.
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2023.04.26
+# Stop Forum Spam (SFS) listings: 74.
+# Updated: 2024.02.11
 
 2a0c:4ac0:1100::/40 Deny Cloud
 2a0c:4ac0:1200::/40 Deny Cloud
 2a0d:5940::/29 Deny Cloud
 Origin: DE
+2a03:5840:fd::/48 Deny Cloud
+Origin: FR
+2a03:403::/32 Deny Cloud
+Origin: TR
+2a05:dfc1:5801::/48 Deny Cloud
+Origin: US
 Profile: Webhosting
 Tag: dataforest GmbH
 
@@ -12409,8 +12416,8 @@ Tag: dataforest GmbH
 # ASN 41745 ("Baykov Ilya Sergeevich").
 # Brute-force, SSH, and FTP attacks, port scans, hacking, and spam detected
 # from here.
-# Stop Forum Spam (SFS) listings: 16.
-# Updated: 2023.04.26
+# Stop Forum Spam (SFS) listings: 7.
+# Updated: 2023.04.26 / Checked: 2024.02.11
 
 2a03:afc0:9::/48 Deny Cloud
 Origin: NL
@@ -13269,6 +13276,38 @@ Tag: Hostzone Tecnologia LTDA
 Origin: GB
 Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: LogicForge Limited
+
+
+# ASN 29470 ('JSC "RetnNet"').
+# Russian server farm. Brute-force, SSH, and FTP attacks, port scans, hacking,
+# and spam detected from here.
+# Stop Forum Spam (SFS) listings: 3.
+# Updated: 2024.02.11
+
+2a02:24b0::/32 Deny Cloud
+Origin: RU
+Profile: Infrastructure/Transit;Webhosting
+Tag: RetnNet
+
+
+# ASN 207994 ("Blockchain Creek B.V").
+# Brute-force, SSH, and webapp attacks, port scans, and hacking detected here.
+# Updated: 2024.02.11
+
+2a10:2f01:219::/48 Deny Cloud
+Origin: TW
+Profile: Infrastructure/Transit;Webhosting
+Tag: Blockchain Creek
+
+
+# ASN 52053 ("REDHEBERG Association declaree").
+# DDoS attacks and DNS poisoning detected from here.
+# Updated: 2024.02.11
+
+2a14:1d00::/44 Deny Cloud
+Origin: FR
+Profile: Restricted/Unidentifiable
+Tag: REDHEBERG
 
 
 # ---

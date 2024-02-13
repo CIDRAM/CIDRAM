@@ -1,8 +1,8 @@
 # IPv4 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv4_other.dat
 
-# Version: 2024.27.0
-# Last modified: 2024.01.28
+# Version: 2024.41.0
+# Last modified: 2024.02.11
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -22,60 +22,6 @@
 Origin: DE
 Profile: Tor endpoints here
 Tag: F3 Netze e.V
-
-
-# ASN 209519 ("Packet Flip, LLC").
-# Proxy service sometimes used by spammmers and other nefarious entities.
-# Updated: 2021.02.02 / Checked: 2023.04.06
-
-31.207.8.0/21 Deny Proxy
-31.207.16.0/20 Deny Proxy
-46.102.148.0/22 Deny Proxy
-74.91.32.0/20 Deny Proxy
-80.240.103.0/24 Deny Proxy
-80.240.108.0/23 Deny Proxy
-80.240.111.0/24 Deny Proxy
-82.97.192.0/23 Deny Proxy
-82.97.196.0/23 Deny Proxy
-82.97.199.0/24 Deny Proxy
-82.97.200.0/24 Deny Proxy
-84.247.32.0/22 Deny Proxy
-86.105.160.0/22 Deny Proxy
-86.106.120.0/24 Deny Proxy
-89.32.184.0/24 Deny Proxy
-89.32.203.0/24 Deny Proxy
-89.35.164.0/22 Deny Proxy
-89.36.232.0/22 Deny Proxy
-89.37.28.0/24 Deny Proxy
-89.38.106.0/23 Deny Proxy
-89.39.150.0/24 Deny Proxy
-89.40.108.0/23 Deny Proxy
-89.42.48.0/23 Deny Proxy
-89.43.51.0/24 Deny Proxy
-89.43.68.0/23 Deny Proxy
-89.44.213.0/24 Deny Proxy
-89.46.132.0/22 Deny Proxy
-89.47.63.0/24 Deny Proxy
-93.114.92.0/22 Deny Proxy
-93.115.48.0/22 Deny Proxy
-93.115.102.0/23 Deny Proxy
-93.118.40.0/22 Deny Proxy
-185.125.64.0/22 Deny Proxy
-188.210.94.0/23 Deny Proxy
-188.212.120.0/24 Deny Proxy
-188.214.40.0/21 Deny Proxy
-188.240.32.0/22 Deny Proxy
-193.107.245.0/24 Deny Proxy
-193.107.246.0/23 Deny Proxy
-193.124.240.0/22 Deny Proxy
-194.58.24.0/22 Deny Proxy
-194.58.216.0/22 Deny Proxy
-194.135.48.0/22 Deny Proxy
-195.189.36.0/22 Deny Proxy
-195.189.132.0/23 Deny Proxy
-Origin: US
-Profile: Infrastructure/Transit
-Tag: Packet Flip
 
 
 # ASN 396507 ("Emerald Onion").
@@ -1382,8 +1328,8 @@ Tag: Octopusnet VPN
 
 
 # ASN 208323 ("Foundation for Applied Privacy").
-# Stop Forum Spam (SFS) listings: 117,309.
-# Updated: 2019.10.02 / Checked: 2023.04.06
+# Stop Forum Spam (SFS) listings: 22,797.
+# Updated: 2019.10.02 / Checked: 2024.02.11
 
 109.70.100.0/24 Deny Proxy
 Origin: AT

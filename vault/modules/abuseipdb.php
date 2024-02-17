@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: AbuseIPDB module (last modified: 2023.12.24).
+ * This file: AbuseIPDB module (last modified: 2024.02.17).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -154,7 +154,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
 /** Add AbuseIPDB report handler. */
 if ($this->Configuration['abuseipdb']['report_back'] && $this->Configuration['abuseipdb']['api_key'] !== '') {
-    $this->Reporter->addHandler(function ($Report) {
+    $this->Reporter->addHandler(function (array $Report, string $DateTime) {
         if ($this->Configuration['abuseipdb']['report_back'] === 2 && $this->BlockInfo['SignatureCount'] < 1) {
             return;
         }
@@ -176,7 +176,8 @@ if ($this->Configuration['abuseipdb']['report_back'] && $this->Configuration['ab
             $Status = $this->Request->request('https://api.abuseipdb.com/api/v2/report', [
                 'ip' => $Report['IP'],
                 'categories' => $Categories,
-                'comment' => $Report['Comments']
+                'comment' => $Report['Comments'],
+                'timestamp' => $DateTime
             ], $this->Configuration['abuseipdb']['timeout_limit'], [
                 'Key: ' . $this->Configuration['abuseipdb']['api_key'],
                 'Accept: application/json'

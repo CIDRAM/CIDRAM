@@ -1,6 +1,6 @@
 CIDRAM Core:
  Name: "CIDRAM Core"
- Version: "3.5.0"
+ Version: "3.5.1-DEV+240470"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Front-End: "Latest"
@@ -10,7 +10,7 @@ CIDRAM Core:
  Changelog: "https://github.com/CIDRAM/CIDRAM/blob/v3/Changelog.md"
  Release Notes For: ["3.2.0", "3.2.1", "3.3.0", "3.4.0", "3.4.1", "3.4.2", "3.5.0"]
  When Update Succeeds:
-  - "wpVer 4.8.0 6.4.2 3.5.0 7.2"
+  - "wpVer 4.8.0 6.4.3 3.5.0 7.2"
   - "foreach {Components.RemoteMeta.CIDRAM Core.Release Notes For} as Key => Value if {Components.Meta.CIDRAM Core.Version}<{Value}&&{Components.RemoteMeta.CIDRAM Core.Version}>={Value} then queue message response.release_notes https://github.com/CIDRAM/CIDRAM/releases/tag/v{Value} CIDRAM v{Value}"
  Uninstallable: false
  Files:
@@ -46,7 +46,7 @@ CIDRAM Core:
    Checksum: "1e2a1b78daddce7bdb7583d6aff68ebe85d93d9b3f7efb4403d5a9f9bbd50225:15183"
   CIDRAM/CIDRAM/Reporter.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Reporter.php"
-   Checksum: "0b2bcfdc89f22712c347caddd47f36b2c8003f4ef752b19c18ec9258f661b20e:3907"
+   Checksum: "b4a4c41f25cb3ed8d6315b207eb58dfe070d01de6cd5fa934f353429c46da74b:3918"
   events/default.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/events/default.php"
    Checksum: "79d37a5cbdb1cff11ecccf0535d0e6b534bc3ee7578e4e2ad0c033c4696aa0c2:12172"
@@ -1158,7 +1158,7 @@ l10n/frontend/zh-TW:
    Checksum: "3261a6693f5e830fba60c5febfacd38fb1015ed53fc3f77ee11874bbe54226ca:72945"
 AbuseIPDB module:
  False Positive Risk: "Medium"
- Version: "2023.362.0"
+ Version: "2024.47.0"
  Dependencies:
   l10n/core/{lang}: ">=2023.357"
   l10n/frontend/{lang}: ">=2023.358"
@@ -1169,7 +1169,7 @@ AbuseIPDB module:
    Checksum: "a1d769c8fef752f5f6f2cc720a2eac2fe112a0169bcd8b9b140c6f2381fdd5dc:9403"
   events/abuseipdb.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/events/abuseipdb.php"
-   Checksum: "3c1d7e7ef499c7a415c424144553c243cce7b0e4281bf9cdcff95902f367e7a9:5973"
+   Checksum: "c2cb34dce021f61d859a1095fbb829e96f5d150b53c8aebc3a9539ff3c578e66:5974"
    Used with: "events"
   imports/abuseipdb.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/imports/abuseipdb.yml"
@@ -1177,7 +1177,7 @@ AbuseIPDB module:
    Used with: "imports"
   modules/abuseipdb.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/abuseipdb.php"
-   Checksum: "253a31eee7738820f979ab25b3ee6ec9420cdd881afe615aa5122bb3caf41053:9661"
+   Checksum: "b941884c71e5fc70fab741cf828bca8a827bcf75c032f48966354859665dc44b:9727"
    Used with: "modules"
   pages/abuseipdb.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/pages/abuseipdb.php"

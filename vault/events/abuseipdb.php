@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: AbuseIPDB event handlers (last modified: 2023.12.24).
+ * This file: AbuseIPDB event handlers (last modified: 2024.02.17).
  */
 
 /**
@@ -88,7 +88,7 @@ $this->Events->addHandler('reporterFinished', function (): void {
         $this->Cache->incEntry('AbuseIPDB-Daily Bulk Quota', 1, 86400);
         $Bulk = "IP,Categories,ReportDate,Comment\n";
         foreach ($Try as $Entry) {
-            $Bulk .= $Entry[1] . ',"' . $Entry[2] . '",' . $this->timeFormat($Entry[0], '{yyyy}-{mm}-{dd}T{hh}:{ii}:{ss}{t:z}') . ',"' . $Entry[3] . "\"\n";
+            $Bulk .= $Entry[1] . ',"' . $Entry[2] . '",' . date('c', $Entry[0]) . ',"' . $Entry[3] . "\"\n";
         }
         $Bulk = new \CURLStringFile($Bulk, 'report.csv', 'text/csv');
         $Status = $this->Request->request('https://api.abuseipdb.com/api/v2/bulk-report', ['csv' => $Bulk], $this->Configuration['abuseipdb']['timeout_limit'], [
@@ -120,7 +120,8 @@ $this->Events->addHandler('reporterFinished', function (): void {
         $Status = $this->Request->request('https://api.abuseipdb.com/api/v2/report', [
             'ip' => $Entry[1],
             'categories' => $Entry[2],
-            'comment' => $Entry[3]
+            'comment' => $Entry[3],
+            'timestamp' => date('c', $Entry[0])
         ], $this->Configuration['abuseipdb']['timeout_limit'], [
             'Key: ' . $this->Configuration['abuseipdb']['api_key'],
             'Accept: application/json'

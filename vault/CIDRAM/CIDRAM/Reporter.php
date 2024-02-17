@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Report orchestrator (last modified: 2023.08.08).
+ * This file: Report orchestrator (last modified: 2024.02.17).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -117,7 +117,7 @@ class Reporter
                 $Report['Comments'] = sprintf('Automated report (%s). %s', $DateTime, implode(' ', $Report['Comments']));
 
                 /** Call handler. */
-                $Handler($Report);
+                $Handler($Report, $DateTime);
             }
         }
 

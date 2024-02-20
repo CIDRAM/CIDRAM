@@ -376,3 +376,7 @@
 [2023.12.26; Maikuolan]: Refactored the page greeting and some theme assets.
 
 [2023.12.29; Bug-fix; Maikuolan]: Some of the more unusual available number formatting choices (e.g., choices not using base-10 or Arabic numerals) didn't mesh well with the JavaScript code responsible for using them; Fixed.
+
+### v3.5.1
+
+[2024.02.20; Maikuolan]: The internal AbuseIPDB reporting page now includes a field to specify the exact time of attack for reports.

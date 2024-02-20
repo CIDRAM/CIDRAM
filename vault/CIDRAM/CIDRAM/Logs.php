@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used by the logs page (last modified: 2023.12.15).
+ * This file: Methods used by the logs page (last modified: 2024.02.20).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -66,6 +66,7 @@ trait Logs
         $Caret = 0;
         $this->CIDRAM['BlockSeparator'] = (strpos($In, "<br />\n<br />\n") !== false) ? "<br />\n<br />\n" : "<br />\n";
         $BlockSeparatorLen = strlen($this->CIDRAM['BlockSeparator']);
+        $Timestamp = date('Y-m-d\TH:i', $this->Now);
         while ($Caret < $Len) {
             $Remainder = $Len - $Caret;
             if ($Remainder < self::MAX_BLOCKSIZE && $Remainder < ini_get('pcre.backtrack_limit')) {
@@ -108,7 +109,7 @@ trait Logs
                     if ($this->expandIpv4($ThisPart, true) || $this->expandIpv6($ThisPart, true)) {
                         if (isset($this->CIDRAM['Extra SVG Icons']) && is_array($this->CIDRAM['Extra SVG Icons'])) {
                             foreach ($this->CIDRAM['Extra SVG Icons'] as $ExtraSvgIcon) {
-                                $IPSVGs .= sprintf($ExtraSvgIcon, $ThisPart);
+                                $IPSVGs .= substr_count($ExtraSvgIcon, '%s') > 1 ? sprintf($ExtraSvgIcon, $ThisPart, $Timestamp) : sprintf($ExtraSvgIcon, $ThisPart);
                             }
                             $IPSVGs = $this->parseVars([], $IPSVGs, true);
                         }
@@ -245,6 +246,7 @@ trait Logs
             }
         }
         $Data['Origin'] = [];
+        $Timestamp = date('Y-m-d\TH:i', $this->Now);
         for ($A = 65; $A < 91; $A++) {
             for ($B = 65; $B < 91; $B++) {
                 $Code = '[' . chr($A) . chr($B) . ']';
@@ -270,7 +272,7 @@ trait Logs
                     if ($this->expandIpv4($Entry, true) || $this->expandIpv6($Entry, true)) {
                         if (isset($this->CIDRAM['Extra SVG Icons']) && is_array($this->CIDRAM['Extra SVG Icons'])) {
                             foreach ($this->CIDRAM['Extra SVG Icons'] as $ExtraSvgIcon) {
-                                $IPSVGs .= sprintf($ExtraSvgIcon, $Entry);
+                                $IPSVGs .= substr_count($ExtraSvgIcon, '%s') > 1 ? sprintf($ExtraSvgIcon, $Entry, $Timestamp) : sprintf($ExtraSvgIcon, $Entry);
                             }
                             $IPSVGs = $this->parseVars([], $IPSVGs, true);
                         }

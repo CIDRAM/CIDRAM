@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The IP tracking page (last modified: 2023.12.13).
+ * This file: The IP tracking page (last modified: 2024.02.20).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -47,10 +47,11 @@ if (!$this->FE['ASYNC']) {
 
     $this->FE['ExtraSvgIcons'] = '';
     if (isset($this->CIDRAM['Extra SVG Icons']) && is_array($this->CIDRAM['Extra SVG Icons'])) {
+        $Timestamp = date('Y-m-d\TH:i', $this->Now);
         foreach ($this->CIDRAM['Extra SVG Icons'] as $ExtraSvgIcon) {
-            $this->FE['ExtraSvgIcons'] .= sprintf($ExtraSvgIcon, '{IPAddr}');
+            $this->FE['ExtraSvgIcons'] .= substr_count($ExtraSvgIcon, '%s') > 1 ? sprintf($ExtraSvgIcon, '{IPAddr}', $Timestamp) : sprintf($ExtraSvgIcon, '{IPAddr}');
         }
-        unset($ExtraSvgIcon);
+        unset($ExtraSvgIcon, $Timestamp);
     }
     $this->FE['TrackingRow'] = str_replace('{ExtraSvgIcons}', $this->FE['ExtraSvgIcons'], $this->FE['TrackingRow']);
 }

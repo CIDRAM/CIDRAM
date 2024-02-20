@@ -53,6 +53,18 @@
           <textarea name="apikey" class="half" autocomplete="off" placeholder="{config.abuseipdb_api_key}" required>{apikey}</textarea>
         </div>
       </label>
+      <label class="s">
+        <div class="ng1">
+          {field.Time of attack (if unknown, use current time)}{pair_separator}<br /><br />
+          <input type="datetime-local" name="timestamp" value="{timestamp}" class="auto" autocomplete="off" />
+        </div>
+      </label>
+      <label class="s">
+        <div class="ng2">
+          {field.Timezone (defaults to your local time)}{pair_separator}<br /><br />
+          <select class="auto" style="text-transform:capitalize" name="timezone">{timezones}</select>
+        </div>
+      </label>
       <div class="ng1">
         <div style="display:grid;margin:auto min(38px, 1vw * 1.6);grid-template-columns:auto;contain:paint">
           <div class="gridboxitem gridHA"><span class="s gridlabel"><input type="radio" class="auto" name="endpoint" value="report" onchange="javascript:document.getElementById('reportSubmitButton').value=this.checked?'{label.Report to AbuseIPDB}':'{label.Delete previous reports}'" id="endpointReport" checked /><label for="endpointReport">{label.Report to AbuseIPDB}</label></span></div>

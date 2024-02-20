@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Report to AbuseIPDB page (last modified: 2023.12.29).
+ * This file: Report to AbuseIPDB page (last modified: 2024.02.20).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -31,6 +31,30 @@ if (!isset($_POST['apikey']) && isset($this->Configuration['abuseipdb']['api_key
 /** Populate inputs and textareas. */
 foreach (['address', 'comment', 'apikey', 'endpoint'] as $Field) {
     $this->FE[$Field] = isset($_POST[$Field]) ? str_replace(['&', '<', '>', '"'], ['&amp;', '&lt;', '&gt;', '&quot;'], $_POST[$Field]) : '';
+}
+
+/** Populate timezones. */
+$this->FE['timezones'] = [];
+foreach (array_unique(\DateTimeZone::listIdentifiers()) as $Timezone) {
+    $this->FE['timezones'][$Timezone] = '<option value="'. $Timezone . '">' . $Timezone . '</option>';
+}
+unset($Timezone);
+if (isset($_POST['timezone'], $this->FE['timezones'][$_POST['timezone']])) {
+    $this->FE['timezone'] = $_POST['timezone'];
+} else {
+    $this->FE['timezone'] = isset($this->Configuration['general']['timezone']) && $this->Configuration['general']['timezone'] !== 'SYSTEM' ? $this->Configuration['general']['timezone'] : date_default_timezone_get();
+}
+$this->FE['timezones'][$this->FE['timezone']] = '<option value="'. $this->FE['timezone'] . '" selected>' . $this->FE['timezone'] . '</option>';
+$this->FE['timezones'] = implode('', $this->FE['timezones']);
+
+/** Prepare the time of attack timestamps. */
+if (isset($_POST['timestamp'])) {
+    $DateTime = new \DateTime($_POST['timestamp'], new \DateTimeZone($this->FE['timezone']));
+    $this->FE['timestamp'] = $DateTime->format('Y-m-d\TH:i');
+    $DateTime = $DateTime->format('c');
+} else {
+    $this->FE['timestamp'] = date('Y-m-d\TH:i', $this->Now);
+    $DateTime = date('c', $this->Now);
 }
 
 /** Populate categories. */
@@ -78,7 +102,8 @@ if (!isset($_POST['populate']) && $this->FE['address'] !== '' && $this->FE['apik
             $Status = $this->Request->request('https://api.abuseipdb.com/api/v2/report', [
                 'ip' => $this->FE['address'],
                 'categories' => $Categories,
-                'comment' => $this->FE['comment']
+                'comment' => $this->FE['comment'],
+                'timestamp' => $DateTime
             ], $this->Configuration['abuseipdb']['timeout_limit'], ['Key: ' . $this->FE['apikey'], 'Accept: application/json']);
             $this->Cache->setEntry('AbuseIPDB-Recently Reported-' . $this->FE['address'], true, 900);
             $this->CIDRAM['AbuseIPDB-Recently Reported-' . $this->FE['address']] = true;
@@ -97,6 +122,9 @@ if (!isset($_POST['populate']) && $this->FE['address'] !== '' && $this->FE['apik
                 } elseif (strpos($Status, 'Authentication failed') !== false || $this->Request->MostRecentStatusCode === 401) {
                     $Queue = false;
                     $this->FE['state_msg'] .= ' ' . $this->L10N->getString('response.Invalid API key') . ' ' . $this->L10N->getString('response.The report has not been enqueued');
+                } elseif (strpos($Status, 'Invalid timestamp') !== false || $this->Request->MostRecentStatusCode === 422) {
+                    $Queue = false;
+                    $this->FE['state_msg'] .= ' ' . $this->L10N->getString('response.Invalid timestamp') . ' ' . $this->L10N->getString('response.The report has not been enqueued');
                 } elseif ($this->Request->MostRecentStatusCode === 429) {
                     $Queue = false;
                     $this->FE['state_msg'] .= ' ' . $this->L10N->getString('response.The report has not been enqueued') . ' ' . sprintf($this->L10N->getString('warning.API_Rate_Limited'), 'REPORT');
@@ -156,7 +184,7 @@ if (!isset($_POST['populate']) && $this->FE['address'] !== '' && $this->FE['apik
 }
 
 /** Cleanup. */
-unset($LookupLink, $Categories, $Status, $Queue, $Iterator, $Field);
+unset($LookupLink, $Categories, $Status, $Queue, $Iterator, $DateTime, $Field);
 
 /** Parse output. */
 $this->FE['FE_Content'] = $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_abuseipdb.html')), true);

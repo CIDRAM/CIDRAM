@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv4_isps.dat
 
-# Version: 2024.51.0
-# Last modified: 2024.02.21
+# Version: 2024.58.0
+# Last modified: 2024.02.28
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -1244,29 +1244,21 @@ Tag: STARNET S.R.L
 # Nigerian fibre optic provider. Brute-force, SSH, webapp, and XMLRPC attacks,
 # port scans, hacking, and spam detected from here. Listing just the affected
 # ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 71.
-# Updated: 2023.05.02
+# Stop Forum Spam (SFS) listings: 67.
+# Updated: 2024.02.25
 
 41.217.46.0/24 Deny Attacks
 41.217.54.0/24 Deny Attacks
-41.217.81.62/32 Deny Attacks
-41.217.81.113/32 Deny Attacks
-41.217.81.220/32 Deny Attacks
-41.217.92.10/32 Deny Attacks
-41.217.92.107/32 Deny Attacks
-41.217.92.234/32 Deny Attacks
+41.217.81.0/24 Deny Attacks
+41.217.92.155/32 Deny Attacks
 41.217.94.0/24 Deny Attacks
-154.118.4.23/32 Deny Attacks
-154.118.4.25/32 Deny Attacks
-154.118.4.251/32 Deny Attacks
+154.118.4.0/24 Deny Attacks
 154.118.16.0/24 Deny Attacks
 154.120.77.0/24 Deny Attacks
 154.120.82.0/24 Deny Attacks
 154.120.98.0/24 Deny Attacks
 154.120.103.0/24 Deny Attacks
 154.120.105.0/24 Deny Attacks
-197.255.162.147/32 Deny Attacks
-197.255.162.178/32 Deny Attacks
 Origin: NG
 Profile: Domestic ISP;Multiplay
 Tag: SPECTRANET LIMITED
@@ -12299,36 +12291,21 @@ Tag: Vodafone Italia
 # ASNs 3269, 20746 ("Telecom Italia S.p.A").
 # Italian domestic ISP and commercial multiplay network. Spam, brute-force, and
 # SSH attacks detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 930 (AS3269), 47 (AS20746).
-# Updated: 2023.08.10 / Modified: 2023.10.22
+# Stop Forum Spam (SFS) listings: 473 (AS3269).
+# Updated: 2024.02.28
 
-62.211.127.151/32 Deny Attacks
-62.211.127.170/32 Deny Attacks
-62.211.128.111/32 Deny Attacks
-78.110.184.52/32 Deny Spam
-78.110.188.231/32 Deny Spam
-78.110.190.148/32 Deny Spam
-79.9.173.181/32 Deny Spam
-79.11.226.146/32 Deny Attacks
+62.211.127.146/32 Deny Attacks
+62.211.127.209/32 Deny Attacks
 79.12.221.103/32 Deny Spam
-79.40.60.161/32 Deny Spam
-79.46.113.142/32 Deny Attacks
-79.50.140.116/32 Deny Attacks
-79.55.24.12/32 Deny Spam
+79.13.52.133/32 Deny Spam
+79.40.123.122/32 Deny Spam
+79.49.14.19/32 Deny Attacks
 79.61.188.252/32 Deny Spam
-82.62.210.48/32 Deny Attacks
-82.62.210.102/32 Deny Attacks
-87.8.101.22/32 Deny Attacks
-87.10.131.25/32 Deny Attacks
-87.16.48.16/32 Deny Spam
-87.19.150.22/32 Deny Spam
 95.229.5.214/32 Deny Attacks
+95.229.5.248/32 Deny Attacks
 95.229.87.15/32 Deny Attacks
-95.229.126.117/32 Deny Attacks
-95.233.24.58/32 Deny Attacks
-95.251.237.64/32 Deny Spam
-156.54.244.180/32 Deny Spam
-188.15.31.38/32 Deny Spam
+95.249.134.67/32 Deny Spam
+194.243.52.182/32 Deny Spam
 Origin: IT
 Profile: Domestic ISP;Mobile ISP;Multiplay
 Tag: Telecom Italia
@@ -14840,22 +14817,28 @@ Tag: Bulsatcom EAD
 # ASN 36926 ("Airtel Networks Kenya Limited").
 # Kenyan domestic ISP. Brute-force, SSH, and WordPress attacks, and spam
 # detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 121.
-# Updated: 2023.05.02
+# Stop Forum Spam (SFS) listings: 159.
+# Updated: 2024.02.25
 
-154.79.242.13/32 Deny Attacks
+102.216.69.146/32 Deny Spam
+102.216.69.202/32 Deny Spam
+154.79.242.78/32 Deny Attacks
 154.79.242.178/32 Deny Attacks
 154.79.242.214/32 Deny Attacks
 154.79.244.0/23 Deny Attacks
-154.79.246.154/32 Deny Attacks
-154.79.246.158/32 Deny Attacks
-154.79.246.190/32 Deny Attacks
+154.79.246.0/24 Deny Attacks
+154.79.247.186/32 Deny Attacks
+154.79.247.194/32 Deny Attacks
+154.79.247.242/32 Deny Attacks
 154.79.248.0/22 Deny Attacks
 154.79.252.0/24 Deny Attacks
-154.79.253.208/32 Deny Attacks
 154.79.254.0/24 Deny Attacks
 154.159.244.0/22 Deny Attacks
-154.159.248.0/23 Deny Attacks
+154.159.248.0/24 Deny Attacks
+154.159.249.44/32 Deny Attacks
+154.159.249.46/32 Deny Attacks
+154.159.249.62/32 Deny Attacks
+154.159.249.96/32 Deny Attacks
 Origin: KE
 Profile: Domestic ISP
 Tag: Airtel Africa
@@ -17869,21 +17852,18 @@ Tag: A1 Bulgaria EAD
 # private limited"). Pakistan domestic ISP with corporate connectivity.
 # Brute-force, SSH, IoT, and SQLi attacks, port scans, hacking, and spam
 # detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 296 (AS38193), 1 (AS135661).
-# Updated: 2023.05.02
+# Stop Forum Spam (SFS) listings: 315 (AS38193), 81 (AS135661).
+# Updated: 2024.02.25
 
 103.62.232.0/23 Deny Attacks
-110.93.203.100/32 Deny Spam
-110.93.205.130/32 Deny Spam
-110.93.209.138/32 Deny Spam
+110.93.203.185/32 Deny Spam
 110.93.222.6/32 Deny Spam
 110.93.222.250/32 Deny Spam
-110.93.250.194/32 Deny Spam
+117.20.31.76/32 Deny Attacks
 117.20.31.98/32 Deny Attacks
-117.20.31.210/32 Deny Spam
-119.63.134.223/32 Deny Spam
-221.132.113.90/32 Deny Attacks
-221.132.113.188/32 Deny Attacks
+117.20.31.210/32 Deny Attacks
+221.132.113.44/32 Deny Attacks
+221.132.113.226/32 Deny Attacks
 Origin: PK
 Profile: Commercial;Domestic ISP
 Tag: Transworld Associates
@@ -17974,48 +17954,24 @@ Tag: KPN B.V
 # ASN 8439 ("JSC AIST").
 # Russian domestic ISP. Webapp and XMLRPC attacks, port scans, and spam
 # detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,177.
-# Updated: 2023.05.02
+# Stop Forum Spam (SFS) listings: 30.
+# Updated: 2024.02.25
 
-37.9.146.37/32 Deny Spam
-37.9.148.171/32 Deny Attacks
-37.9.151.36/32 Deny Spam
-37.9.151.71/32 Deny Attacks
-37.9.153.3/32 Deny Attacks
-37.9.153.174/32 Deny Attacks
-37.9.153.233/32 Deny Spam
-37.9.154.17/32 Deny Spam
-37.9.156.183/32 Deny Spam
-37.9.157.77/32 Deny Attacks
-37.9.157.117/32 Deny Attacks
-37.9.157.202/32 Deny Spam
-37.9.158.182/32 Deny Attacks
-62.106.122.229/32 Deny Spam
-62.106.126.28/32 Deny Spam
-92.240.131.139/32 Deny Spam
-92.240.131.184/32 Deny Spam
-92.240.141.108/32 Deny Spam
-95.128.160.145/32 Deny Attacks
-95.128.160.216/32 Deny Attacks
-95.128.160.234/32 Deny Spam
-95.128.163.156/32 Deny Spam
-95.128.165.15/32 Deny Attacks
-95.128.165.197/32 Deny Attacks
-95.128.167.149/32 Deny Spam
-193.106.240.56/32 Deny Spam
-193.106.241.113/32 Deny Attacks
-193.106.241.139/32 Deny Spam
-193.106.243.82/32 Deny Spam
-193.106.243.188/32 Deny Spam
-213.178.42.151/32 Deny Spam
-213.178.43.37/32 Deny Attacks
-213.178.43.64/32 Deny Attacks
-213.178.43.92/32 Deny Attacks
-213.178.52.0/24 Deny Attacks
-213.178.61.44/32 Deny Attacks
-213.178.61.102/32 Deny Attacks
-213.178.61.131/32 Deny Attacks
-213.178.61.217/32 Deny Attacks
+37.9.148.110/32 Deny Attacks
+37.9.148.143/32 Deny Attacks
+37.9.148.181/32 Deny Attacks
+37.9.148.183/32 Deny Attacks
+37.9.148.246/32 Deny Attacks
+37.9.151.203/32 Deny Attacks
+37.9.151.212/32 Deny Attacks
+37.9.151.218/32 Deny Attacks
+37.9.158.113/32 Deny Attacks
+37.9.158.190/32 Deny Attacks
+95.128.160.248/32 Deny Attacks
+213.178.43.126/32 Deny Attacks
+213.178.43.212/32 Deny Attacks
+213.178.43.231/32 Deny Attacks
+213.178.61.181/32 Deny Attacks
 Origin: RU
 Profile: Domestic ISP
 Tag: JSC AIST
@@ -25396,6 +25352,20 @@ Tag: OOO WestCall Ltd
 Origin: RU
 Profile: Domestic ISP
 Tag: Miranda-Media Ltd
+
+
+# ASN 9326 ("PT Centrin Utama").
+# Indonesian domestic ISP. Brute-force, webapp attacks, and spam detected from
+# here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 20.
+# Updated: 2024.02.25
+
+113.11.138.204/32 Deny Attacks
+124.153.21.218/32 Deny Spam
+202.146.229.74/32 Deny Spam
+Origin: ID
+Profile: Domestic ISP
+Tag: PT Centrin Utama
 
 
 # ---

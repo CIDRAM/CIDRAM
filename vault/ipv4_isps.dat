@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv4_isps.dat
 
-# Version: 2024.58.0
-# Last modified: 2024.02.28
+# Version: 2024.62.0
+# Last modified: 2024.03.03
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -82,19 +82,6 @@ Tag: Sun Network HK
 Origin: HK
 Profile: Commercial;Infrastructure/Transit;Temporary
 Tag: AS18013/AS133178
-
-
-# ASN 48159 ("Telecommunication Infrastructure Company").
-# Iranian transit provider. Port scans, IP theft, email harvesters, and scaping
-# detected from here. Listing just the affected ranges/addresses only.
-# Clean at last check. Will remove at the next update if it stays that way.
-# Stop Forum Spam (SFS) listings: 37.
-# Updated: 2023.10.04
-
-#<redacted>
-Origin: IR
-Profile: Infrastructure/Transit
-Tag: AS48159
 
 
 # ASNs 12880, 58224 ("Information Technology Company (ITC)", "Iran
@@ -953,20 +940,6 @@ Tag: Bezeq International
 Origin: NG
 Profile: Mobile ISP
 Tag: Swift Networks
-
-
-# ASN 51191 ("Xirra GmbH").
-# German multiplay provider including both webhosting and backbone services.
-# Currently listing only the currently known affected ranges/addresses.
-# Updated: 2023.05.07
-
-185.108.216.147/32 Deny Attacks
-185.108.216.151/32 Deny Attacks
-185.108.216.158/32 Deny Attacks
-185.108.216.176/32 Deny Attacks
-Origin: DE
-Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Webhosting
-Tag: Xirra GmbH
 
 
 # ASNs 4515, 4760 ("HKT Limited").
@@ -9649,12 +9622,11 @@ Tag: Triple T
 # Romanian multiplay ISP. Spam, attacks against WordPress sites, and webapp
 # attacks detected from this network. Listing just the affected
 # ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 45.
-# Updated: 2023.05.07
+# Stop Forum Spam (SFS) listings: 52.
+# Updated: 2024.03.03
 
 46.214.153.223/32 Deny Attacks
 188.173.14.99/32 Deny Attacks
-188.173.80.140/32 Deny Attacks
 Origin: RO
 Profile: Domestic ISP;Multiplay
 Tag: NEXTGEN COMMUNICATIONS
@@ -11036,42 +11008,13 @@ Tag: Level 3
 # Algerian domestic ISP. Brute-force, SSH, XMLRPC, and webapp attacks, port
 # scans, hacking, and spam detected from here. Listing just the affected
 # ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,273.
-# Updated: 2023.05.06 / Modified: 2023.07.24
+# Stop Forum Spam (SFS) listings: 1,069.
+# Updated: 2024.03.03
 
-41.96.164.87/32 Deny Spam
-41.97.19.230/32 Deny Spam
-41.99.57.172/32 Deny Spam
-41.105.255.240/32 Deny Spam
-41.108.4.27/32 Deny Spam
+41.98.11.238/32 Deny Spam
 41.111.146.94/32 Deny Attacks
-41.200.21.185/32 Deny Attacks
-105.104.110.111/32 Deny Spam
-105.104.238.127/32 Deny Attacks
-105.108.102.35/32 Deny Spam
-105.110.175.195/32 Deny Spam
-154.242.10.198/32 Deny Spam
-154.242.22.211/32 Deny Attacks
-154.242.22.230/32 Deny Spam
-154.242.45.120/32 Deny Spam
-154.242.108.131/32 Deny Spam
-154.242.168.175/32 Deny Spam
-154.247.137.202/32 Deny Spam
-197.113.16.129/32 Deny Spam
-197.113.77.235/32 Deny Spam
-197.113.143.229/32 Deny Spam
-197.114.14.43/32 Deny Spam
-197.114.14.93/32 Deny Spam
-197.114.22.181/32 Deny Spam
-197.114.27.145/32 Deny Spam
-197.114.81.90/32 Deny Spam
-197.114.99.210/32 Deny Spam
-197.115.108.116/32 Deny Spam
-197.115.126.251/32 Deny Spam
-197.115.158.227/32 Deny Spam
-197.115.238.71/32 Deny Spam
-197.119.47.145/32 Deny Spam
-197.119.237.124/32 Deny Spam
+41.111.146.238/32 Deny Attacks
+41.200.21.37/32 Deny Attacks
 Origin: DZ
 Profile: Domestic ISP
 Tag: Telecom Algeria
@@ -11736,44 +11679,16 @@ Tag: NOVATEL EOOD
 # ASN 6799 ("Ote SA (Hellenic Telecommunications Organisation)").
 # Greek domestic ISP. Brute-force, webapp attacks, and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 3,227.
-# Updated: 2023.05.09 / Modified: 2023.06.11
+# Stop Forum Spam (SFS) listings: 498.
+# Updated: 2024.03.03
 
-2.85.112.107/32 Deny Spam
-2.85.116.100/32 Deny Spam
-2.85.117.133/32 Deny Spam
-2.85.119.126/32 Deny Spam
-2.85.247.119/32 Deny Attacks
-2.85.247.126/32 Deny Attacks
-2.87.26.89/32 Deny Attacks
-2.87.26.185/32 Deny Spam
-2.87.29.29/32 Deny Spam
-2.87.29.203/32 Deny Attacks
-2.87.31.24/32 Deny Spam
-2.87.31.114/32 Deny Spam
-2.87.117.10/32 Deny Attacks
-2.87.117.252/32 Deny Attacks
+2.85.247.133/32 Deny Attacks
+2.87.29.70/32 Deny Attacks
 45.139.214.0/24 Deny Attacks
-62.103.74.22/32 Deny Attacks
-62.103.74.189/32 Deny Attacks
-79.129.121.113/32 Deny Spam
-79.131.203.93/32 Deny Spam
-80.106.136.13/32 Deny Spam
-85.72.232.2/32 Deny Attacks
-85.72.232.65/32 Deny Attacks
-85.72.232.73/32 Deny Attacks
-85.72.234.19/32 Deny Spam
-85.72.234.20/32 Deny Spam
-85.72.235.249/32 Deny Spam
-85.72.238.10/32 Deny Spam
-85.72.238.166/32 Deny Spam
-85.72.239.154/32 Deny Spam
-87.202.0.46/32 Deny Spam
-87.202.2.219/32 Deny Attacks
-87.202.5.7/32 Deny Spam
-87.202.5.20/32 Deny Spam
-87.202.21.201/32 Deny Spam
-87.202.23.115/32 Deny Attacks
+62.103.74.183/32 Deny Attacks
+85.72.232.18/32 Deny Attacks
+85.72.232.63/32 Deny Attacks
+85.73.79.155/32 Deny Spam
 Origin: GR
 Profile: Domestic ISP
 Tag: Ote SA
@@ -12801,19 +12716,22 @@ Tag: Verizon Business/UUnet
 # Dutch domestic ISP and phone provider. Brute-force, SSH attacks, port scans,
 # hacking, and spam detected from here. Listing just the affected
 # ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 28 (AS15480), 710 (AS33915).
-# Updated: 2023.05.09
+# Stop Forum Spam (SFS) listings: 18 (AS15480), 428 (AS33915).
+# Updated: 2024.03.03
 
-77.250.227.202/32 Deny Spam
-82.75.10.129/32 Deny Spam
+77.250.240.52/32 Deny Spam
+80.115.170.67/32 Deny Spam
+83.85.121.29/32 Deny Spam
 83.85.247.106/32 Deny Spam
-84.105.213.144/32 Deny Spam
-92.108.92.147/32 Deny Spam
+84.27.37.243/32 Deny Spam
+94.211.38.220/32 Deny Spam
 109.36.150.0/24 Deny Attacks
-109.38.152.82/32 Deny Attacks
-109.38.152.97/32 Deny Attacks
-109.38.152.113/32 Deny Attacks
-109.38.152.233/32 Deny Attacks
+109.38.151.16/32 Deny Attacks
+109.38.151.159/32 Deny Attacks
+109.38.151.188/32 Deny Attacks
+109.38.151.202/32 Deny Attacks
+109.38.152.0/32 Deny Attacks
+109.38.152.136/32 Deny Attacks
 Origin: NL
 Profile: Domestic ISP
 Tag: Vodafone Libertel
@@ -16348,18 +16266,6 @@ Profile: Domestic ISP
 Tag: Udasha S.A
 
 
-# ASN 55120 ("Tallahatchie Valley Internet Services, LLC").
-# US domestic ISP. Caught by honeypots. Clean at last check.
-# Will remove at the next update if it stays that way.
-# Updated: 2023.07.11
-
-152.86.22.53/32 Deny Spam
-216.245.117.150/32 Deny Spam
-Origin: US
-Profile: Domestic ISP
-Tag: Tallahatchie Valley
-
-
 # ASNs 21367, 212011 ("Wiland Ltd").
 # Russian multiplay network. Spam and webapp attacks detected from here.
 # Listing just the affected ranges/addresses only.
@@ -18012,23 +17918,16 @@ Tag: OTK LLC
 # German IaaS provider. Caught probing for vulnerabilities. Brute-force,
 # XMLRPC, SQLi, and webapp attacks, spoofing, port scans, hacking, and spam
 # detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 893.
-# Updated: 2023.05.06 / Modified: 2023.05.11
+# Stop Forum Spam (SFS) listings: 57.
+# Updated: 2024.03.03
 
-104.255.65.146/32 Deny Attacks
 104.255.66.22/32 Deny Attacks
 104.255.66.139/32 Deny Attacks
 Origin: CA
 62.133.35.246/32 Deny Attacks
 78.142.193.246/32 Deny Attacks
-147.78.177.0/24 Deny Attacks
-Origin: DE
-185.37.253.0/24 Deny Attacks
-Origin: EE
 213.232.112.0/24 Deny Attacks
-Origin: JP
-91.193.75.0/24 Deny Attacks
-Origin: RS
+Origin: DE
 Profile: Infrastructure/Transit
 Tag: xTom GmbH
 
@@ -18316,25 +18215,14 @@ Profile: Domestic ISP
 Tag: Superloop
 
 
-# ASN 199723 ("Janusz Gomolka trading as Strzyzowski.Net").
-# Polish multiplay network. Brute-force, SSH, and webapp attacks, port scans,
-# and spam detected from here. Listing just the affected ranges/addresses only.
-# Clean at last check. Will remove at the next update if it stays that way.
-# Updated: 2023.06.02
-
-#<redacted>
-Origin: PL
-Profile: Domestic ISP;Multiplay
-Tag: Strzyzowski.Net
-
-
 # ASN 12709 ("Melita Limited").
 # Maltese domestic multiplay ISP. Brute-force and webapp attacks, port scans,
 # and spam detected from here. Listing just the affected ranges/addresses only.
-# Clean at last check. Will remove at the next update if it stays that way.
-# Updated: 2023.06.02
+# Stop Forum Spam (SFS) listings: 48.
+# Updated: 2024.03.03
 
-#<redacted>
+92.251.100.26/32 Deny Attacks
+92.251.100.158/32 Deny Spam
 Origin: MT
 Profile: Domestic ISP;Multiplay
 Tag: Melita Limited
@@ -20991,15 +20879,12 @@ Tag: Magyar Telekom plc
 
 # ASN 6461 ("Zayo Bandwidth").
 # US fibre provider. Brute-force and webapp attacks, port scans, hacking, and
-# spam detected from here. Clean at last check.
-# Will remove at the next update if it stays that way.
-# Stop Forum Spam (SFS) listings: 62.
-# Updated: 2023.07.11
+# spam detected from here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 142.
+# Updated: 2024.03.03
 
-95.164.111.15/32 Deny Spam
-193.34.74.18/32 Deny Spam
-199.164.68.213/32 Deny Spam
-Origin: US
+193.34.72.0/22 Deny Attacks
+Origin: UA
 Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Webhosting
 Tag: Zayo Bandwidth
 
@@ -21612,10 +21497,10 @@ Tag: NLS ASTANA LLP
 # ASN 28260 ("ALTA REDE CORPORATE NETWORK TELECOM LTDA - EPP").
 # Brazilian domestic ISP. Port scans, hacking, and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 17.
-# Updated: 2023.05.07
+# Stop Forum Spam (SFS) listings: 27.
+# Updated: 2024.03.03
 
-187.16.255.69/32 Deny Attacks
+187.16.255.0/24 Deny Attacks
 Origin: BR
 Profile: Domestic ISP
 Tag: ALTA REDE
@@ -21624,7 +21509,7 @@ Tag: ALTA REDE
 # ASN 52504 ("Cicomsa S.A").
 # Argentinian domestic ISP. Port scans and hacking detected from here.
 # Manually checked all ranges; All ranges affected.
-# Updated: 2023.05.07
+# Updated: 2023.05.07 / Checked: 2024.03.03
 
 190.180.152.0/21 Deny Attacks
 Origin: AR
@@ -21940,17 +21825,6 @@ Profile: Domestic ISP;Mobile ISP
 Tag: Proximus NV
 
 
-# ASN 44244 ("Iran Cell Service and Communication Company").
-# Iranian mobile and ISP. Port scans, hacking, and spam detected from here.
-# Clean at last check. Will remove at the next update if it stays that way.
-# Updated: 2023.06.01
-
-#<redacted>
-Origin: IR
-Profile: Domestic ISP;Mobile ISP
-Tag: Iran Cell
-
-
 # ASN 56466 ("Pars Fonoun Ofogh Information Technology and Communications Company LTD").
 # Iranian domestic ISP. Brute-force, SSH, and webapp attacks, port scans,
 # hacking, and spam detected from here.
@@ -22183,19 +22057,6 @@ Profile: Domestic ISP
 Tag: MOTTANET SCM
 
 
-# ASN 13999 ("Mega Cable, S.A. de C.V").
-# Suspected Mexican domestic ISP (but homepage isn't available to confirm).
-# Port scans, hacking, and spam detected from here. Clean at last check.
-# Will remove at the next update if it stays that way.
-# Stop Forum Spam (SFS) listings: 260.
-# Updated: 2023.08.03
-
-#<redacted>
-Origin: MX
-Profile: Domestic ISP;Restricted/Unidentifiable
-Tag: Mega Cable
-
-
 # ASN 137316 ("PT. PANCA DUTA UTAMA").
 # Indonesian domestic ISP. Brute-force, WordPress/XMLRPC, Joomla, directory
 # traversal, and various drive-by webapp attacks, port scans, hacking, and spam
@@ -22322,18 +22183,6 @@ Tag: NKN Core Network
 Origin: TW
 Profile: Domestic ISP
 Tag: UNION BROADBAND NETWORK
-
-
-# ASN 40788 ("Start Communications").
-# Canadian multiplay ISP. Port scans, hacking, and spam detected from here.
-# Clean at last check. Will remove at the next update if it stays that way.
-# Stop Forum Spam (SFS) listings: 869.
-# Updated: 2023.08.01
-
-#<redacted>
-Origin: CA
-Profile: Domestic ISP;Multiplay
-Tag: Start Communications
 
 
 # ASN 49889 ("Crystal Telecom Ltd").
@@ -24097,10 +23946,11 @@ Tag: Eastern Telecoms
 # ASN 50010 ("Omani Qatari Telecommunication Company SAOC").
 # Oman mobile ISP. Port scans and hacking detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 23.
-# Updated: 2023.05.06
+# Stop Forum Spam (SFS) listings: 18.
+# Updated: 2024.03.03
 
-37.28.6.70/32 Deny Attacks
+5.162.142.47/32 Deny Spam
+37.28.6.108/32 Deny Attacks
 Origin: OM
 Profile: Mobile ISP
 Tag: Omani Qatari

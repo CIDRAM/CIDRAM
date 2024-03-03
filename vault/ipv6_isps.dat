@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6_isps.dat
 
-# Version: 2024.41.0
-# Last modified: 2024.02.11
+# Version: 2024.62.0
+# Last modified: 2024.03.03
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -491,19 +491,6 @@ Profile: Domestic ISP
 Tag: Atria Convergence
 
 
-# ASN 6799 ("Ote SA (Hellenic Telecommunications Organisation)").
-# Greek domestic ISP. Brute-force, webapp attacks, and spam detected from here.
-# Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 3,227.
-# Updated: 2023.05.09
-
-2a02:587:6a24:3b6e::/64 Deny Spam
-2a02:587:818d:f800::/64 Deny Spam
-Origin: GR
-Profile: Domestic ISP
-Tag: Ote SA
-
-
 # ASN 6830 ("Liberty Global B.V").
 # European international 5G and fibre provider. Brute-force, WordPress, and
 # webapp attacks, port scans, email harvestors, and spam detected from here.
@@ -808,20 +795,6 @@ Tag: NPF SOFTVIDEO Ltd
 Origin: RU
 Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Tor endpoints here;Webhosting
 Tag: OOO TimeWeb
-
-
-# ASNs 15480, 33915 ("Vodafone Libertel B.V").
-# Dutch domestic ISP and phone provider. Brute-force, SSH attacks, port scans,
-# hacking, and spam detected from here. Listing just the affected
-# ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 28 (AS15480), 710 (AS33915).
-# Updated: 2023.05.09
-
-2001:1c00:f1b:dc00::/64 Deny Spam
-2001:1c00:248b:2400::/64 Deny Spam
-Origin: NL
-Profile: Domestic ISP
-Tag: Vodafone Libertel
 
 
 # ASN 264932 ("STAYNET SERVICOS DE INTERNET LTDA - ME").

@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6.dat
 
-# Version: 2024.58.0
-# Last modified: 2024.02.28
+# Version: 2024.62.0
+# Last modified: 2024.03.03
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -3005,8 +3005,8 @@ Tag: Nazwa.pl
 
 # ASN 18450 ("WebNX, Inc").
 # HUGE amounts of spam, port scans, hack attempts, and other unwanted traffic!
-# Stop Forum Spam (SFS) listings: 68.
-# Updated: 2023.05.05
+# Stop Forum Spam (SFS) listings: 11.
+# Updated: 2023.05.05 / Checked: 2024.03.03
 
 2a0e:fd45:2c70::/48 Deny Cloud
 Origin: NL
@@ -5948,21 +5948,12 @@ Profile: Tor endpoints here;Webhosting
 Tag: netcup GmbH
 
 
-# ASNs 19531, 43755 ("Nodes Direct").
-# Brute-force attacks and hacking detected from here.
-# Clean at last check. Will remove at the next update if no change.
-# Updated: 2018.09.14 / Checked: 2023.08.14
-
-2604:4600::/28 Deny Cloud
-Origin: US
-Profile: Commercial;Infrastructure/Transit;Webhosting
-Tag: Nodes Direct
-
-
 # ASN 23352 ("Server Central Network").
-# Updated: 2023.05.05
+# Stop Forum Spam (SFS) listings: 6.
+# Updated: 2024.03.03
 
 2001:1838::/32 Deny Cloud
+2607:4440::/48 Deny Cloud
 2620:7d::/48 Deny Cloud
 Origin: US
 Profile: Infrastructure/Transit;Webhosting
@@ -13601,8 +13592,17 @@ Tag: Optimus IT
 # Refer microsoft.com/en-us/download/details.aspx?id=57062
 # Refer microsoft.com/en-us/download/details.aspx?id=57063
 # Refer microsoft.com/en-us/download/details.aspx?id=57064
-# Updated: 2024.01.28
+# Updated: 2024.03.01
 
+2a01:4180:2000::/40 Run bypasses.php
+2a01:4180:2400::/40 Run bypasses.php
+2a01:4180:4050:400::/64 Run bypasses.php
+2a01:4180:4050:800::/64 Run bypasses.php
+2a01:4180:4051:400::/64 Run bypasses.php
+2a01:4180:4051:800::/64 Run bypasses.php
+2a01:4180:c001:8::/61 Run bypasses.php
+2a01:4180:c003:8::/61 Run bypasses.php
+Origin: DE
 2404:7940::/47 Run bypasses.php
 2404:7940:3::/48 Run bypasses.php
 2404:7940:100::/47 Run bypasses.php
@@ -13639,15 +13639,6 @@ Tag: Optimus IT
 2406:e500:c020::/44 Run bypasses.php
 2406:e500:c120::/44 Run bypasses.php
 Origin: CN
-2a01:4180:2000::/40 Run bypasses.php
-2a01:4180:2400::/40 Run bypasses.php
-2a01:4180:4050:400::/64 Run bypasses.php
-2a01:4180:4050:800::/64 Run bypasses.php
-2a01:4180:4051:400::/64 Run bypasses.php
-2a01:4180:4051:800::/64 Run bypasses.php
-2a01:4180:c001:8::/61 Run bypasses.php
-2a01:4180:c003:8::/61 Run bypasses.php
-Origin: DE
 2001:489a:2102::/62 Run bypasses.php
 2001:489a:2102:8::/62 Run bypasses.php
 2001:489a:2102:1000::/52 Run bypasses.php
@@ -13832,9 +13823,10 @@ Origin: DE
 2603:1030::/45 Run bypasses.php
 2603:1030:8::/48 Run bypasses.php
 2603:1030:9::/54 Run bypasses.php
-2603:1030:9:400::/59 Run bypasses.php
-2603:1030:9:420::/60 Run bypasses.php
-2603:1030:9:430::/63 Run bypasses.php
+2603:1030:9:400::/58 Run bypasses.php
+2603:1030:9:440::/62 Run bypasses.php
+2603:1030:9:444::/63 Run bypasses.php
+2603:1030:9:446::/64 Run bypasses.php
 2603:1030:a::/47 Run bypasses.php
 2603:1030:d::/48 Run bypasses.php
 2603:1030:e::/47 Run bypasses.php
@@ -13863,8 +13855,9 @@ Origin: DE
 2603:1030:401:580::/58 Run bypasses.php
 2603:1030:401:5c0::/59 Run bypasses.php
 2603:1030:401:5e0::/60 Run bypasses.php
-2603:1030:401:5f0::/62 Run bypasses.php
-2603:1030:401:5f4::/64 Run bypasses.php
+2603:1030:401:5f0::/61 Run bypasses.php
+2603:1030:401:5f8::/63 Run bypasses.php
+2603:1030:401:5fa::/64 Run bypasses.php
 2603:1030:402::/47 Run bypasses.php
 2603:1030:405::/48 Run bypasses.php
 2603:1030:406::/47 Run bypasses.php
@@ -13902,6 +13895,9 @@ Origin: DE
 2603:1030:80a::/56 Run bypasses.php
 2603:1030:80b::/48 Run bypasses.php
 2603:1030:80c::/48 Run bypasses.php
+2603:1030:901::/48 Run bypasses.php
+2603:1030:902::/47 Run bypasses.php
+2603:1030:904::/48 Run bypasses.php
 2603:1030:a00::/46 Run bypasses.php
 2603:1030:a04::/48 Run bypasses.php
 2603:1030:a06::/47 Run bypasses.php
@@ -14084,15 +14080,13 @@ Origin: DE
 2603:1061:1000::/46 Run bypasses.php
 2603:1061:1004::/58 Run bypasses.php
 2603:1061:1004:40::/59 Run bypasses.php
-2603:1061:1004:60::/61 Run bypasses.php
-2603:1061:1004:68::/62 Run bypasses.php
-2603:1061:1004:6c::/63 Run bypasses.php
+2603:1061:1004:60::/60 Run bypasses.php
+2603:1061:1004:70::/64 Run bypasses.php
 2603:1061:1005::/59 Run bypasses.php
 2603:1061:1006::/58 Run bypasses.php
 2603:1061:1006:40::/59 Run bypasses.php
-2603:1061:1006:60::/62 Run bypasses.php
-2603:1061:1006:64::/63 Run bypasses.php
-2603:1061:1006:66::/64 Run bypasses.php
+2603:1061:1006:60::/61 Run bypasses.php
+2603:1061:1006:68::/63 Run bypasses.php
 2603:1061:1007::/58 Run bypasses.php
 2603:1061:1007:40::/59 Run bypasses.php
 2603:1061:1007:60::/60 Run bypasses.php
@@ -14103,21 +14097,21 @@ Origin: DE
 2603:1061:1008:42::/64 Run bypasses.php
 2603:1061:1009::/60 Run bypasses.php
 2603:1061:1009:10::/61 Run bypasses.php
-2603:1061:100a::/60 Run bypasses.php
-2603:1061:100a:10::/61 Run bypasses.php
-2603:1061:100a:18::/62 Run bypasses.php
-2603:1061:100a:1c::/63 Run bypasses.php
+2603:1061:100a::/59 Run bypasses.php
+2603:1061:100a:20::/63 Run bypasses.php
 2603:1061:100b::/58 Run bypasses.php
 2603:1061:100b:40::/59 Run bypasses.php
 2603:1061:100b:60::/61 Run bypasses.php
-2603:1061:100b:68::/63 Run bypasses.php
+2603:1061:100b:68::/62 Run bypasses.php
 2603:1061:100c::/58 Run bypasses.php
 2603:1061:100c:40::/62 Run bypasses.php
 2603:1061:100c:44::/63 Run bypasses.php
 2603:1061:100c:46::/64 Run bypasses.php
 2603:1061:100e::/59 Run bypasses.php
-2603:1061:100e:20::/62 Run bypasses.php
-2603:1061:100e:24::/64 Run bypasses.php
+2603:1061:100e:20::/60 Run bypasses.php
+2603:1061:100e:30::/62 Run bypasses.php
+2603:1061:100e:34::/63 Run bypasses.php
+2603:1061:100e:36::/64 Run bypasses.php
 2603:1061:1310::/50 Run bypasses.php
 2603:1061:1310:4000::/52 Run bypasses.php
 2603:1061:1311::/50 Run bypasses.php
@@ -14227,7 +14221,7 @@ Origin: DE
 2603:1063:36::/64 Run bypasses.php
 2603:1063:37::/64 Run bypasses.php
 2603:1063:39::/48 Run bypasses.php
-2603:1063:ff::/117 Run bypasses.php
+2603:1063:ff::/64 Run bypasses.php
 2603:1063:100::/55 Run bypasses.php
 2603:1063:100:200::/56 Run bypasses.php
 2603:1063:101::/55 Run bypasses.php
@@ -14524,6 +14518,7 @@ Origin: DE
 2a01:111:f100:a000::/63 Run bypasses.php
 2a01:111:f100:a002::/64 Run bypasses.php
 2a01:111:f100:a004::/64 Run bypasses.php
+2a01:111:f400::/48 Run bypasses.php
 2a01:111:f403::/48 Run bypasses.php
 Origin: US
 Profile: Content Delivery Network;Infrastructure/Transit;Third-party sourced;Tor endpoints here;Webhosting

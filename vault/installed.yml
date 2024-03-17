@@ -1,6 +1,6 @@
 CIDRAM Core:
  Name: "CIDRAM Core"
- Version: "3.5.1-DEV+240470"
+ Version: "3.5.1-DEV+240740"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Front-End: "Latest"
@@ -8,7 +8,7 @@ CIDRAM Core:
   l10n/core/{lang}: ">=2023.262"
   l10n/frontend/{lang}: ">=2023.262"
  Changelog: "https://github.com/CIDRAM/CIDRAM/blob/v3/Changelog.md"
- Release Notes For: ["3.2.0", "3.2.1", "3.3.0", "3.4.0", "3.4.1", "3.4.2", "3.5.0"]
+ Release Notes For: ["3.2.0", "3.2.1", "3.3.0", "3.4.0", "3.4.1", "3.4.2", "3.5.0", "3.5.1"]
  When Update Succeeds:
   - "wpVer 4.8.0 6.4.3 3.5.0 7.2"
   - "foreach {Components.RemoteMeta.CIDRAM Core.Release Notes For} as Key => Value if {Components.Meta.CIDRAM Core.Version}<{Value}&&{Components.RemoteMeta.CIDRAM Core.Version}>={Value} then queue message response.release_notes https://github.com/CIDRAM/CIDRAM/releases/tag/v{Value} CIDRAM v{Value}"
@@ -55,7 +55,7 @@ CIDRAM Core:
    Checksum: "b62c0cf1deeb97c7ee15638f0a4102292a6bab6f0b6b1ee3a1dec7fa485c2e05:1352"
   defaults.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/defaults.yml"
-   Checksum: "d66efe43316a799c455e07eb4c5fe04deeaa78ce6f3133bfc2e005d1e9b052af:38265"
+   Checksum: "e1d057a815d252169dba26828c99f389e188d88741aefcf058a5b2d14ac896be:38489"
   loader.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/loader.php"
    Checksum: "4d56d0a305ceafab32ade65a0f74ad27efe50964d0e257d787a6ee7056c41880:1313"
@@ -694,6 +694,20 @@ l10n/core/bn:
   l10n/core/bn.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/bn.yml"
    Checksum: "709346d5aa8e0ed36af8839854286715e295e4baebc25200685d18ab3421cc81:13609"
+l10n/core/bs:
+ Extended Description: "Bosanska lokalizacija"
+ Version: "2024.74.0"
+ Files:
+  l10n/core/bs.yml:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/bs.yml"
+   Checksum: "0fde14c90013296f0ef38bb9f7eb388b71ac80385d9a41e3beca25619eea367b:6456"
+l10n/core/ca:
+ Extended Description: "Localització catalana"
+ Version: "2024.74.0"
+ Files:
+  l10n/core/ca.yml:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/ca.yml"
+   Checksum: "5c715d24e391539d5ba455c803730c63e4f451bba331421a4953ecf61cd1cd6d:6692"
 l10n/core/cs:
  Extended Description: "Česká lokalizace"
  Version: "2023.357.0"
@@ -740,6 +754,20 @@ l10n/core/fr:
   l10n/core/fr.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/fr.yml"
    Checksum: "4dab7ad246a98f2decd7a606068629244785ae7865f1cacd070db99c47d5f6f0:7835"
+l10n/core/gl:
+ Extended Description: "Localización galega"
+ Version: "2024.74.0"
+ Files:
+  l10n/core/gl.yml:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/gl.yml"
+   Checksum: "f631ea844dca10d1ae6847105e41254dce9b3a70545c2a57bf6658756600dc25:6552"
+l10n/core/gu:
+ Extended Description: "ગુજરાતી સ્થાનિકીકરણ"
+ Version: "2024.74.0"
+ Files:
+  l10n/core/gu.yml:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/gu.yml"
+   Checksum: "56258e91c76ddd222bf65614708eaffdc9dbc6248c64d9330b7170bac90f9a6d:12226"
 l10n/core/he:
  Extended Description: "לוקליזציה עברית"
  Version: "2023.357.0"
@@ -754,6 +782,13 @@ l10n/core/hi:
   l10n/core/hi.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/hi.yml"
    Checksum: "0442857b3db1fb213b3fd1f7a0a2cf04e9a2f5cf726157c221df58933a11e780:12573"
+l10n/core/hr:
+ Extended Description: "Hrvatska lokalizacija"
+ Version: "2024.74.0"
+ Files:
+  l10n/core/hr.yml:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/hr.yml"
+   Checksum: "6be1695224dba8fc3a5392a272aa7e46d813a94a7a3721ca0a8b52e5e8f19339:6376"
 l10n/core/id:
  Extended Description: "Lokalisasi di Bahasa Indonesia"
  Version: "2023.357.0"
@@ -848,6 +883,13 @@ l10n/core/ru:
   l10n/core/ru.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/ru.yml"
    Checksum: "1f7c60b88a178d45d00cba34fb073a0f286862da1f1b495a3f71aee7e259a262:10860"
+l10n/core/sr:
+ Extended Description: "Српска локализација"
+ Version: "2024.74.0"
+ Files:
+  l10n/core/sr.yml:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/sr.yml"
+   Checksum: "e7fb4d4270839b4347ddf5c8a16163549ae8ecaa8018af10962262fc46db97ea:9603"
 l10n/core/sv:
  Extended Description: "Svensk lokalisering"
  Version: "2023.357.0"

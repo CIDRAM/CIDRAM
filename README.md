@@ -11,7 +11,7 @@ CIDRAM (Classless Inter-Domain Routing Access Manager) is a PHP script designed 
 
 
 ### Features:
-- Licensed as [GNU General Public License version 2.0](https://github.com/CIDRAM/CIDRAM/blob/v2/LICENSE.txt) (GPLv2).
+- Licensed as [GNU General Public License version 2.0](https://github.com/CIDRAM/CIDRAM/blob/v3/LICENSE.txt) (GPLv2).
 - Easy to install, easy to customise, easy to use.
 - Works for any system with PHP+PCRE installed, regardless of OS (PHP+PCRE required).
 - Fully configurable based on your needs.
@@ -46,4 +46,4 @@ CIDRAM (Classless Inter-Domain Routing Access Manager) is a PHP script designed 
 ---
 
 
-Last Updated: 1 March 2022 (2022.03.01).
+Last Updated: 18 March 2024 (2024.03.18).

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used for auxiliary rules (last modified: 2023.10.21).
+ * This file: Methods used for auxiliary rules (last modified: 2024.03.18).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -106,7 +106,7 @@ trait AuxiliaryRules
                 $Output .= sprintf(
                     '<div class="iCntr"><div class="iLabl s" id="%4$sruleReasonDt">%2$s</div><div class="iCntn" id="%4$sruleReasonDd"><input type="text" name="ruleReason[%3$s]" class="f400" value="%1$s" /></div></div>',
                     $Data['Reason'] ?? '',
-                    $this->L10N->getString('label.aux_reason'),
+                    $this->L10N->getString('label.aux.The reason given to the user when blocked'),
                     $Current,
                     $RuleClass
                 );
@@ -115,7 +115,7 @@ trait AuxiliaryRules
                 $Output .= sprintf(
                     '<div class="iCntr"><div class="iLabl s" id="%4$sruleTargetDt">%2$s</div><div class="iCntn" id="%4$sruleTargetDd"><input type="text" name="ruleTarget[%3$s]" class="f400" value="%1$s" /></div></div>',
                     $Data['Target'] ?? '',
-                    $this->L10N->getString('label.aux_target'),
+                    $this->L10N->getString('label.aux.Where to redirect the request'),
                     $Current,
                     $RuleClass
                 );
@@ -124,7 +124,7 @@ trait AuxiliaryRules
                 $Output .= sprintf(
                     '<div class="iCntr"><div class="iLabl s" id="%4$sruleRunDt">%2$s</div><div class="iCntn" id="%4$sruleRunDd"><input type="text" name="ruleRun[%3$s]" class="f400" value="%1$s" /></div></div>',
                     $Data['Run']['File'] ?? '',
-                    $this->L10N->getString('label.aux_run'),
+                    $this->L10N->getString('label.aux.The name of the file to run'),
                     $Current,
                     $RuleClass
                 );
@@ -133,7 +133,7 @@ trait AuxiliaryRules
                 $Output .= sprintf(
                     '<div class="iCntr"><div class="iLabl s" id="%4$sfromDt">%2$s</div><div class="iCntn" id="%4$sfromDd"><input type="date" name="from[%3$s]" class="f400" value="%1$s" min="%5$s" /></div></div>',
                     isset($Data['From']) ? str_replace('.', '-', $Data['From']) : '',
-                    $this->L10N->getString('label.aux_from'),
+                    $this->L10N->getString('label.aux.When the rule should begin (optional)'),
                     $Current,
                     $RuleClass,
                     $this->FE['Y-m-d']
@@ -143,14 +143,14 @@ trait AuxiliaryRules
                 $Output .= sprintf(
                     '<div class="iCntr"><div class="iLabl s" id="%4$sexpiryDt">%2$s</div><div class="iCntn" id="%4$sexpiryDd"><input type="date" name="expiry[%3$s]" class="f400" value="%1$s" min="%5$s" /></div></div>',
                     isset($Data['Expiry']) ? str_replace('.', '-', $Data['Expiry']) : '',
-                    $this->L10N->getString('label.aux_expiry'),
+                    $this->L10N->getString('label.aux.When the rule should expire (optional)'),
                     $Current,
                     $RuleClass,
                     $this->FE['Y-m-d']
                 );
 
                 /** Status code override. */
-                $Output .= sprintf('<div class="iCntr"><div class="iLabl s">%1$s</div><div class="iCntn">', $this->L10N->getString('label.aux_http_status_code_override'));
+                $Output .= sprintf('<div class="iCntr"><div class="iLabl s">%1$s</div><div class="iCntn">', $this->L10N->getString('label.aux.HTTP status code override'));
                 $Output .= sprintf(
                     '<span id="%1$sstatGroupX" class="statGroup"><input type="radio" class="auto" id="%1$sstatusCodeX" name="statusCode[%3$s]" value="0" %2$s/><label for="%1$sstatusCodeX">🗙</label></span>',
                     $RuleClass,
@@ -298,8 +298,8 @@ trait AuxiliaryRules
                 $Output .= sprintf(
                     '<div class="iCntr"><div class="iLabl"><select id="logic[%1$s]" name="logic[%1$s]" class="flong"><option value="Any"%4$s>%2$s</option><option value="All"%5$s>%3$s</option></select></div></div>',
                     $Current,
-                    $this->L10N->getString('label.aux_logic_any'),
-                    $this->L10N->getString('label.aux_logic_all'),
+                    $this->L10N->getString('label.aux.logic_any'),
+                    $this->L10N->getString('label.aux.logic_all'),
                     $LogicData[0],
                     $LogicData[1]
                 );
@@ -332,7 +332,7 @@ trait AuxiliaryRules
                         $FlagKey,
                         $Current,
                         $UseDefaultState ? ' selected' : '',
-                        $this->L10N->getString('label.aux_special_default_state')
+                        $this->L10N->getString('label.aux.Leave it as is (don_t set anything)')
                     ) . $Options . '</select><br /><br />';
                     $Output .= sprintf(
                         '<div class="iLabl s"><label for="%s[%s]">%s</label></div><div class="iCntn">%s</div>',
@@ -346,7 +346,7 @@ trait AuxiliaryRules
                 /** Rule notes. */
                 $Output .= sprintf(
                     '<div class="iCntr"><div class="iLabl s">%1$s</div><div class="iCntn"><textarea id="Notes[%2$s]" name="Notes[%2$s]" class="half">%3$s</textarea></div></div>',
-                    $this->L10N->getString('label.aux_notes'),
+                    $this->L10N->getString('label.aux.Notes'),
                     $Current,
                     $Data['Notes'] ?? ''
                 );
@@ -360,22 +360,22 @@ trait AuxiliaryRules
             /** Figure out which options are available for the rule (view mode). */
             $Options = ['(<span onclick="javascript:%s(\'' . $this->escapeJsInHTML($Name) . '\',\'' . $RuleClass . '\')"><code><span class="auxicon %s" title="%s"></span><span class="s auxicontxt">%s</span></code></span>)'];
             if (empty($Data['Disable this rule'])) {
-                $Options['disableRule'] = sprintf($Options[0], 'disableRule', 'auxbl pause', '⏸', $this->L10N->getString('label.aux_special_disable'));
+                $Options['disableRule'] = sprintf($Options[0], 'disableRule', 'auxbl pause', '⏸', $this->L10N->getString('label.aux.Disable this rule'));
             } else {
-                $Options['enableRule'] = sprintf($Options[0], 'enableRule', 'auxgn play', '▶', $this->L10N->getString('label.aux_special_enable'));
+                $Options['enableRule'] = sprintf($Options[0], 'enableRule', 'auxgn play', '▶', $this->L10N->getString('label.aux.Enable this rule'));
             }
             if ($Count > 1) {
                 if ($Current !== 1) {
                     if ($Current !== 2) {
-                        $Options['moveUp'] = sprintf($Options[0], 'moveUp', 'auxbl up1', '↑', $this->L10N->getString('label.aux_move_up'));
+                        $Options['moveUp'] = sprintf($Options[0], 'moveUp', 'auxbl up1', '↑', $this->L10N->getString('label.aux.Move up'));
                     }
-                    $Options['moveToTop'] = sprintf($Options[0], 'moveToTop', 'auxbl up2', '↑↑', $this->L10N->getString('label.aux_move_top'));
+                    $Options['moveToTop'] = sprintf($Options[0], 'moveToTop', 'auxbl up2', '↑↑', $this->L10N->getString('label.aux.Move to the top'));
                 }
                 if ($Current !== $Count) {
                     if ($Current !== ($Count - 1)) {
-                        $Options['moveDown'] = sprintf($Options[0], 'moveDown', 'auxbl down1', '↓', $this->L10N->getString('label.aux_move_down'));
+                        $Options['moveDown'] = sprintf($Options[0], 'moveDown', 'auxbl down1', '↓', $this->L10N->getString('label.aux.Move down'));
                     }
-                    $Options['moveToBottom'] = sprintf($Options[0], 'moveToBottom', 'auxbl down2', '↓↓', $this->L10N->getString('label.aux_move_bottom'));
+                    $Options['moveToBottom'] = sprintf($Options[0], 'moveToBottom', 'auxbl down2', '↓↓', $this->L10N->getString('label.aux.Move to the bottom'));
                 }
             }
             unset($Options[0]);
@@ -411,9 +411,9 @@ trait AuxiliaryRules
 
             /** Additional details about the rule to print to the page (e.g., detailed block reason). */
             foreach ([
-                ['Reason', 'label.aux_reason'],
-                ['Target', 'label.aux_target'],
-                ['Webhooks', 'label.aux_webhooks']
+                ['Reason', 'label.aux.The reason given to the user when blocked'],
+                ['Target', 'label.aux.Where to redirect the request'],
+                ['Webhooks', 'label.aux.Webhooks to apply when the rule requirements are met']
             ] as $Details) {
                 if (!empty($Data[$Details[0]]) && $Label = $this->L10N->getString($Details[1])) {
                     if (is_array($Data[$Details[0]])) {
@@ -425,8 +425,8 @@ trait AuxiliaryRules
 
             /** Populate from and expiry. */
             foreach ([
-                ['From', 'label.aux_from'],
-                ['Expiry', 'label.aux_expiry']
+                ['From', 'label.aux.When the rule should begin (optional)'],
+                ['Expiry', 'label.aux.When the rule should expire (optional)']
             ] as $Details) {
                 if (!empty($Data[$Details[0]]) && $Label = $this->L10N->getString($Details[1])) {
                     if (preg_match('~^(\d{4})[.-](\d\d)[.-](\d\d)$~', $Data[$Details[0]], $Details[2])) {
@@ -440,7 +440,7 @@ trait AuxiliaryRules
 
             /** Display the status code to be applied. */
             if (!empty($Data['Status Code']) && $Data['Status Code'] > 200 && $StatusCode = $this->getStatusHTTP($Data['Status Code'])) {
-                $Output .= "\n          <li><div class=\"iCntr\"><div class=\"iLabl s\">" . $this->L10N->getString('label.aux_http_status_code_override') . '</div><div class="iCntn">' . $Data['Status Code'] . ' ' . $StatusCode . '</div></div></li>';
+                $Output .= "\n          <li><div class=\"iCntr\"><div class=\"iLabl s\">" . $this->L10N->getString('label.aux.HTTP status code override') . '</div><div class="iCntn">' . $Data['Status Code'] . ' ' . $StatusCode . '</div></div></li>';
             }
 
             /** Iterate through actions. */
@@ -547,7 +547,7 @@ trait AuxiliaryRules
             }
 
             /** Cite the file to run. */
-            if (!empty($Data['Run']['File']) && $Label = $this->L10N->getString('label.aux_run')) {
+            if (!empty($Data['Run']['File']) && $Label = $this->L10N->getString('label.aux.The name of the file to run')) {
                 $Output .= "\n            <li><div class=\"iCntr\"><div class=\"iLabl s\">" . $Label . '</div><div class="iCntn">' . $Data['Run']['File'] . '</div></div></li>';
             }
 
@@ -565,7 +565,7 @@ trait AuxiliaryRules
                 }
             }
             if (count($Flags)) {
-                $Output .= "\n          <li><div class=\"iCntr\"><div class=\"iLabl s\">" . $this->L10N->getString('label.aux_special') . '</div><div class="iCntn">' . implode('<br />', $Flags) . '</div></div></li>';
+                $Output .= "\n          <li><div class=\"iCntr\"><div class=\"iLabl s\">" . $this->L10N->getString('label.aux.Other options and special flags') . '</div><div class="iCntn">' . implode('<br />', $Flags) . '</div></div></li>';
             }
 
             /** Show the method to be used. */
@@ -585,7 +585,7 @@ trait AuxiliaryRules
 
             /** Describe matching logic used. */
             $Output .= "\n          <li><div class=\"iCntr\"><div class=\"iLabl\"><em>" . $this->L10N->getString(
-                (!empty($Data['Logic']) && $Data['Logic'] !== 'Any') ? 'label.aux_logic_all' : 'label.aux_logic_any'
+                (!empty($Data['Logic']) && $Data['Logic'] !== 'Any') ? 'label.aux.logic_all' : 'label.aux.logic_any'
             ) . '</em></div></div></li>';
 
             /** Finish writing new rule. */
@@ -667,20 +667,20 @@ trait AuxiliaryRules
         );
 
         /** Populate methods. */
-        $this->FE['optMtdStr'] = sprintf($this->L10N->getString('label.aux_menu_method'), $this->L10N->getString('label.aux_mtdStr'));
-        $this->FE['optMtdReg'] = sprintf($this->L10N->getString('label.aux_menu_method'), $this->L10N->getString('label.aux_mtdReg'));
-        $this->FE['optMtdWin'] = sprintf($this->L10N->getString('label.aux_menu_method'), $this->L10N->getString('label.aux_mtdWin'));
-        $this->FE['optMtdDMA'] = $this->L10N->getString('label.aux_mtdDMA');
+        $this->FE['optMtdStr'] = sprintf($this->L10N->getString('label.aux.Use %s to test the conditions'), $this->L10N->getString('label.aux.mtdStr'));
+        $this->FE['optMtdReg'] = sprintf($this->L10N->getString('label.aux.Use %s to test the conditions'), $this->L10N->getString('label.aux.mtdReg'));
+        $this->FE['optMtdWin'] = sprintf($this->L10N->getString('label.aux.Use %s to test the conditions'), $this->L10N->getString('label.aux.mtdWin'));
+        $this->FE['optMtdDMA'] = $this->L10N->getString('label.aux.mtdDMA');
 
         /** Populate actions. */
-        $this->FE['optActWhl'] = sprintf($this->L10N->getString('label.aux_menu_action'), $this->L10N->getString('label.aux_actWhl'));
-        $this->FE['optActGrl'] = sprintf($this->L10N->getString('label.aux_menu_action'), $this->L10N->getString('label.aux_actGrl'));
-        $this->FE['optActBlk'] = sprintf($this->L10N->getString('label.aux_menu_action'), $this->L10N->getString('label.aux_actBlk'));
-        $this->FE['optActByp'] = sprintf($this->L10N->getString('label.aux_menu_action'), $this->L10N->getString('label.aux_actByp'));
-        $this->FE['optActLog'] = sprintf($this->L10N->getString('label.aux_menu_action'), $this->L10N->getString('label.aux_actLog'));
-        $this->FE['optActRdr'] = sprintf($this->L10N->getString('label.aux_menu_action'), $this->L10N->getString('label.aux_actRdr'));
-        $this->FE['optActRun'] = sprintf($this->L10N->getString('label.aux_menu_action'), $this->L10N->getString('label.aux_actRun'));
-        $this->FE['optActPro'] = sprintf($this->L10N->getString('label.aux_menu_action'), $this->L10N->getString('label.aux_actPro'));
+        $this->FE['optActWhl'] = sprintf($this->L10N->getString('label.aux.If the following conditions are met, %s the request'), $this->L10N->getString('label.aux.actWhl'));
+        $this->FE['optActGrl'] = sprintf($this->L10N->getString('label.aux.If the following conditions are met, %s the request'), $this->L10N->getString('label.aux.actGrl'));
+        $this->FE['optActBlk'] = sprintf($this->L10N->getString('label.aux.If the following conditions are met, %s the request'), $this->L10N->getString('label.aux.actBlk'));
+        $this->FE['optActByp'] = sprintf($this->L10N->getString('label.aux.If the following conditions are met, %s the request'), $this->L10N->getString('label.aux.actByp'));
+        $this->FE['optActLog'] = sprintf($this->L10N->getString('label.aux.If the following conditions are met, %s the request'), $this->L10N->getString('label.aux.actLog'));
+        $this->FE['optActRdr'] = sprintf($this->L10N->getString('label.aux.If the following conditions are met, %s the request'), $this->L10N->getString('label.aux.actRdr'));
+        $this->FE['optActRun'] = sprintf($this->L10N->getString('label.aux.If the following conditions are met, %s the request'), $this->L10N->getString('label.aux.actRun'));
+        $this->FE['optActPro'] = sprintf($this->L10N->getString('label.aux.If the following conditions are met, %s the request'), $this->L10N->getString('label.aux.actPro'));
 
         /** Populate sources. */
         $this->FE['conSources'] = $this->generateOptions($this->CIDRAM['Provide']['Auxiliary Rules']['Sources']);

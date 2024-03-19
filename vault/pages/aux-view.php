@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The auxiliary rules view mode page (last modified: 2023.12.13).
+ * This file: The auxiliary rules view mode page (last modified: 2024.03.18).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -188,14 +188,14 @@ if (!$this->FE['ASYNC']) {
     $this->FE['Priority_Aux'] = sprintf(
         '%2$s%1$s%8$s%1$s(%9$s🔄%3$s🔄%4$s🔄%5$s🔄%6$s)%1$s%7$s',
         $this->L10N->Directionality !== 'rtl' ? '➡' : '⬅',
-        $this->L10N->getString('label.aux_actWhl'),
-        $this->L10N->getString('label.aux_actGrl'),
-        $this->L10N->getString('label.aux_actBlk'),
-        $this->L10N->getString('label.aux_actByp'),
-        $this->L10N->getString('label.aux_actLog'),
-        $this->L10N->getString('label.aux_actRdr'),
-        $this->L10N->getString('label.aux_actRun') . '…',
-        $this->L10N->getString('label.aux_actPro')
+        $this->L10N->getString('label.aux.actWhl'),
+        $this->L10N->getString('label.aux.actGrl'),
+        $this->L10N->getString('label.aux.actBlk'),
+        $this->L10N->getString('label.aux.actByp'),
+        $this->L10N->getString('label.aux.actLog'),
+        $this->L10N->getString('label.aux.actRdr'),
+        $this->L10N->getString('label.aux.actRun') . '…',
+        $this->L10N->getString('label.aux.actPro')
     );
 
     /** Priority information about status codes. */
@@ -216,7 +216,7 @@ if (!$this->FE['ASYNC']) {
     $this->FE['AuxFlagsProvides'] = '';
     foreach ($this->CIDRAM['Provide']['Auxiliary Rules']['Flags'] as $FlagSetName => $FlagSetValue) {
         $FlagKey = preg_replace('~[^A-Za-z]~', '', $FlagSetName);
-        $Options = sprintf('<select name="%s" class="auto"><option value="Default State" selected>%s</option>', $FlagKey, $this->L10N->getString('label.aux_special_default_state'));
+        $Options = sprintf('<select name="%s" class="auto"><option value="Default State" selected>%s</option>', $FlagKey, $this->L10N->getString('label.aux.Leave it as is (don_t set anything)'));
         if (isset($FlagSetValue['Label'])) {
             $FlagSetName = $this->L10N->getString($FlagSetValue['Label']) ?: $FlagSetName;
             unset($FlagSetValue['Label']);

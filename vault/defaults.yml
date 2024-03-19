@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2024.03.11).
+# This file: Defaults file (last modified: 2024.03.18).
 ##/
 
 Config Defaults:
@@ -1195,66 +1195,66 @@ Provide:
   Flags:
    reCAPTCHA:
     Mark for use with reCAPTCHA:
-     Label: "label.aux_special_recaptcha_mark"
+     Label: "label.aux.Mark for use with reCAPTCHA"
      Sets:
       Configuration:
        recaptcha: {enabled: true}
     Forcibly disable reCAPTCHA:
-     Label: "label.aux_special_recaptcha_disable"
+     Label: "label.aux.Forcibly disable reCAPTCHA"
      Sets:
       Configuration:
        recaptcha: {usemode: 0, forcibly_disabled: true}
    HCaptcha:
     Mark for use with HCaptcha:
-     Label: "label.aux_special_hcaptcha_mark"
+     Label: "label.aux.Mark for use with HCaptcha"
      Sets:
       Configuration:
        hcaptcha: {enabled: true}
     Forcibly disable HCaptcha:
-     Label: "label.aux_special_hcaptcha_disable"
+     Label: "label.aux.Forcibly disable HCaptcha"
      Sets:
       Configuration:
        hcaptcha: {usemode: 0, forcibly_disabled: true}
    Output template:
-    Label: "label.aux_special_suppress"
+    Label: "label.aux.Suppress output template"
     Suppress output template:
-     Label: "label.aux_special_suppress"
+     Label: "label.aux.Suppress output template"
      Sets:
       CIDRAM: {Suppress output template: true}
    Logging:
-    Label: "label.aux_special_suppress_logging"
+    Label: "label.aux.Suppress logging"
     Suppress logging:
-     Label: "label.aux_special_suppress_logging"
+     Label: "label.aux.Suppress logging"
      Sets:
       CIDRAM: {Suppress logging: true}
    IP Tracking:
     Label: "link.IP Tracking"
     Forcibly enable IP tracking:
-     Label: "label.aux_special_ip_tracking_enable"
+     Label: "label.aux.Forcibly enable IP tracking"
      Sets:
       CIDRAM: {Trackable: true}
     Forcibly disable IP tracking:
-     Label: "label.aux_special_ip_tracking_disable"
+     Label: "label.aux.Forcibly disable IP tracking"
      Sets:
       CIDRAM: {Trackable: false}
    Values for IP tracking:
     Label: "label.Values for IP tracking"
     Enforce extended IP tracking options:
-     Label: "label.aux_special_tracking_extended"
+     Label: "label.aux.Enforce extended IP tracking options"
      Sets:
       CIDRAM: {Tracking options override: "extended"}
     Enforce default IP tracking options:
-     Label: "label.aux_special_tracking_default"
+     Label: "label.aux.Enforce default IP tracking options"
      Sets:
       CIDRAM: {Tracking options override: "default"}
    Statistics:
     Label: "link.Statistics"
     Track this rule:
-     Label: "label.aux_special_statistics"
+     Label: "label.aux.Track this rule"
    Disable this rule:
-    Label: "label.aux_special_disable"
+    Label: "label.aux.Disable this rule"
     Disable this rule:
-     Label: "label.aux_special_disable"
+     Label: "label.aux.Disable this rule"
 Links:
  AbuseIPDB: "<a href="https://abuseipdb.com/" dir="ltr" hreflang="en-US" rel="noopener noreferrer external">AbuseIPDB</a>"
  BGPView: "<a href="https://bgpview.io/" dir="ltr" hreflang="en-US" rel="noopener noreferrer external">BGPView</a>"

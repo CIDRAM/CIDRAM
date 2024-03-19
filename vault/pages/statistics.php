@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The statistics page (last modified: 2023.12.24).
+ * This file: The statistics page (last modified: 2024.03.18).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -106,9 +106,9 @@ if (count($AuxRulesTracked) === 0) {
     $AuxRulesTotal = 0;
     $this->FE['AuxStats'] = sprintf(
         "\n      <tr><td class=\"center h4f\" colspan=\"2\"><div class=\"s\">%s</div></td></tr>",
-        $this->L10N->getString('label.aux_triggered')
+        $this->L10N->getString('label.aux.Auxiliary rules triggered')
     );
-    $this->FE['AuxStatsForClipboard'] = $this->L10N->getString('label.aux_triggered') . '\n';
+    $this->FE['AuxStatsForClipboard'] = $this->L10N->getString('label.aux.Auxiliary rules triggered') . '\n';
     $MostRecent = $this->L10N->getString('label.Most recent') . $this->L10N->getString('pair_separator');
     foreach ($AuxRulesTracked as $AuxRuleName) {
         $Try = $this->Cache->getEntry('Statistics-Aux-' . $AuxRuleName);

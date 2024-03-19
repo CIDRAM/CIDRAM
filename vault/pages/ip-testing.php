@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The IP testing page (last modified: 2023.12.13).
+ * This file: The IP testing page (last modified: 2024.03.18).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -235,9 +235,9 @@ if (isset($_POST['ip-addr'])) {
         $this->CIDRAM['ThisIP']['YesNo'] .= '<br />' . $this->L10N->getString('field.Tracking') . $this->L10N->getString('pair_separator');
         if (isset($this->CIDRAM['Trackable'])) {
             if ($this->CIDRAM['Trackable']) {
-                $this->CIDRAM['ThisIP']['YesNo'] .= $this->L10N->getString('response._Yes') . ' (++' . $this->L10N->getString('label.aux_special_ip_tracking_enable') . ')';
+                $this->CIDRAM['ThisIP']['YesNo'] .= $this->L10N->getString('response._Yes') . ' (++' . $this->L10N->getString('label.aux.Forcibly enable IP tracking') . ')';
             } else {
-                $this->CIDRAM['ThisIP']['YesNo'] .= $this->L10N->getString('response._No') . ' (++' . $this->L10N->getString('label.aux_special_ip_tracking_disable') . ')';
+                $this->CIDRAM['ThisIP']['YesNo'] .= $this->L10N->getString('response._No') . ' (++' . $this->L10N->getString('label.aux.Forcibly disable IP tracking') . ')';
             }
         } else {
             $this->CIDRAM['ThisIP']['YesNo'] .= $this->L10N->getString((
@@ -253,28 +253,28 @@ if (isset($_POST['ip-addr'])) {
             $this->CIDRAM['ThisIP']['YesNo'] .= '<br />' . $this->L10N->getString('field.Status code') . $this->L10N->getString('pair_separator') . $this->CIDRAM['ThisStatusHTTP'];
         }
         if (!empty($this->Configuration['recaptcha']['enabled'])) {
-            $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label.aux_special_recaptcha_mark');
+            $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label.aux.Mark for use with reCAPTCHA');
         }
         if (!empty($this->Configuration['recaptcha']['forcibly_disabled'])) {
-            $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label.aux_special_recaptcha_disable');
+            $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label.aux.Forcibly disable reCAPTCHA');
         }
         if (!empty($this->Configuration['hcaptcha']['enabled'])) {
-            $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label.aux_special_hcaptcha_mark');
+            $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label.aux.Mark for use with HCaptcha');
         }
         if (!empty($this->Configuration['hcaptcha']['forcibly_disabled'])) {
-            $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label.aux_special_hcaptcha_disable');
+            $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label.aux.Forcibly disable HCaptcha');
         }
         if (!empty($this->CIDRAM['Suppress output template'])) {
-            $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label.aux_special_suppress');
+            $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label.aux.Suppress output template');
         }
         if (!empty($this->CIDRAM['Suppress logging'])) {
-            $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label.aux_special_suppress_logging');
+            $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label.aux.Suppress logging');
         }
         if (isset($this->CIDRAM['Tracking options override'])) {
             if ($this->CIDRAM['Tracking options override'] === 'extended') {
-                $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label.aux_special_tracking_extended');
+                $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label.aux.Enforce extended IP tracking options');
             } elseif ($this->CIDRAM['Tracking options override'] === 'default') {
-                $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label.aux_special_tracking_default');
+                $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label.aux.Enforce default IP tracking options');
             }
         }
         if (is_array($this->Profiles) && count($this->Profiles)) {

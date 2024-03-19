@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6.dat
 
-# Version: 2024.73.0
-# Last modified: 2024.03.14
+# Version: 2024.78.0
+# Last modified: 2024.03.18
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -673,12 +673,12 @@ Tag: Inter Connects Inc
 # *MAJOR* internet infrastructure/backbone provider! Never block in entirety!
 # SSH, DDoS, brute-force, and webapp attacks, spam, port scans, and hacking
 # detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 526.
-# Updated: 2023.11.11
+# Stop Forum Spam (SFS) listings: 206.
+# Updated: 2024.03.15
 
 2001:470:1::/48 Deny Attacks
-Origin: CA
-Profile: Commercial;Infrastructure/Transit;Tor endpoints here;Webhosting
+Origin: US
+Profile: Commercial;Dedicated;Infrastructure/Transit;Tor endpoints here;Webhosting
 Tag: Hurricane Electric
 
 
@@ -5140,11 +5140,10 @@ Tag: IT7 Networks Inc
 
 
 # ASN 27843 ("OPTICAL TECHNOLOGIES S.A.C").
-# Stop Forum Spam (SFS) listings: 25.
-# Updated: 2023.05.09
+# Stop Forum Spam (SFS) listings: 51.
+# Updated: 2024.03.19
 
 2800:120::/32 Deny Cloud
-2803:19e0::/32 Deny Cloud
 2803:3140::/32 Deny Cloud
 Origin: PE
 Profile: Commercial;Infrastructure/Transit
@@ -6991,8 +6990,8 @@ Tag: REG.RU
 # ASNs 4769, 46015, 55405, 136170 ("Exa Bytes Network Sdn.Bhd").
 # DDoS, hacking, xmlrpc attacks, and brute-force attempts detected originating
 # from this network.
-# Stop Forum Spam (SFS) listings: 4 (AS4769), 76 (AS46015), 258 (AS136170).
-# Updated: 2018.06.19 / Checked: 2023.05.09
+# Stop Forum Spam (SFS) listings: 4 (AS4769), 10 (AS46015), 23 (AS136170).
+# Updated: 2018.06.19 / Checked: 2024.03.19
 
 2402:6c00::/32 Deny Cloud
 Origin: MY
@@ -8188,11 +8187,9 @@ Tag: ReliableSite.Net LLC
 # attacks, port scans, hacking, and spam detected from here. Some domestic ISPs
 # interlaced here (e.g., Windstream Communications). Thus, listing just the
 # affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 17 (AS64200).
-# Updated: 2023.05.09
+# Stop Forum Spam (SFS) listings: 7 (AS64200).
+# Updated: 2024.03.19
 
-2a00:55a0:12::/47 Deny Cloud
-Origin: IL
 2a0b:b7c0::/29 Deny Cloud
 Origin: NL
 Profile: Webhosting
@@ -9006,23 +9003,21 @@ Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: HOSTMAZE INC SRL-D
 
 
-# ASNs 44592, 207959, 212283 ("SkyLink Data Center BV", "XSServer GmbH", "ROZA HOLIDAYS EOOD").
-# Private Russian network. Hack attempts, DDoS, SSH and brute-force attacks
-# reported on a regular basis unending.
-# Stop Forum Spam (SFS) listings: 1,536 (AS44592).
-# Updated: 2023.05.07
+# ASNs 44592, 207959, 212283 ("SkyLink Data Center BV", "XSServer GmbH", "ROZA
+# HOLIDAYS EOOD"). Private Russian network. Brute-force, DDoS, SSH attacks,
+# and hacking reported from here on a regular basis unending.
+# Stop Forum Spam (SFS) listings: 131 (AS44592).
+# Updated: 2024.03.19
 
+2a0e:9640::/29 Deny Cloud
+Origin: AE
 2a0e:97c0:3e0::/48 Deny Cloud
 Origin: CH
 2a02:d40::/32 Deny Cloud
 2a0d:2146:2404::/48 Deny Cloud
 2a0d:c2c0::/29 Deny Cloud
-2a0f:5707:aae0::/44 Deny Cloud
-2a10:ca80::/29 Deny Cloud
-2a12:b200::/29 Deny Cloud
 Origin: DE
 2a07:6d40::/29 Deny Cloud
-2a0e:9640::/29 Deny Cloud
 Origin: NL
 2c0f:f00::/32 Deny Cloud
 Origin: SC
@@ -13681,6 +13676,19 @@ Tag: Roroko Internet
 Origin: DE
 Profile: Dedicated;Webhosting
 Tag: 24fire GmbH
+
+
+# ASN 203446 ("Alexander Fiedler").
+# Colo/transit provider. SSH, DDoS attacks, port scans, hacking, and spam
+# detected from here.
+# Updated: 2024.03.19
+
+2a0e:97c0:3ea::/48 Deny Cloud
+2a0e:97c0:470::/47 Deny Cloud
+2a0e:97c0:472::/48 Deny Cloud
+Origin: CH
+Profile: Infrastructure/Transit
+Tag: Alexander Fiedler
 
 
 # ---

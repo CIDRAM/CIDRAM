@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv4_isps.dat
 
-# Version: 2024.80.0
-# Last modified: 2024.03.21
+# Version: 2024.84.0
+# Last modified: 2024.03.25
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -2307,7 +2307,7 @@ Tag: BSNL
 # probing, etc detected from here. Mozi botnets detected from here.
 # Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 91,208.
-# Updated: 2023.06.28 / Modified: 2024.03.18
+# Updated: 2023.06.28 / Modified: 2024.03.25
 
 1.68.195.97/32 Deny Attacks
 1.68.195.156/32 Deny Attacks
@@ -2748,6 +2748,7 @@ Tag: BSNL
 123.173.86.0/24 Deny Attacks
 123.175.0.0/22 Deny Attacks
 123.175.36.0/22 Deny Attacks
+123.175.97.0/24 Deny Attacks
 123.183.224.0/24 Deny Attacks
 123.245.248.69/32 Deny Spam
 124.234.158.0/24 Deny Attacks
@@ -12242,7 +12243,7 @@ Tag: Vodafone Italia
 # Italian domestic ISP and commercial multiplay network. Spam, brute-force, and
 # SSH attacks detected from here. Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 473 (AS3269).
-# Updated: 2024.02.28 / Modified: 2024.03.14
+# Updated: 2024.02.28 / Modified: 2024.03.25
 
 62.211.127.146/32 Deny Attacks
 62.211.127.209/32 Deny Attacks
@@ -12251,6 +12252,7 @@ Tag: Vodafone Italia
 79.12.221.103/32 Deny Spam
 79.13.52.133/32 Deny Spam
 79.40.123.122/32 Deny Spam
+79.47.41.18/32 Deny Attacks
 79.49.14.19/32 Deny Attacks
 79.61.188.252/32 Deny Spam
 95.229.5.214/32 Deny Attacks
@@ -19842,24 +19844,31 @@ Tag: Mais Norte Telecom
 # ASN 33991 ("Igra-Service LLC").
 # Russian domestic ISP. Port scans, hacking, and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 5.
-# Updated: 2023.09.24
+# Stop Forum Spam (SFS) listings: 15.
+# Updated: 2024.03.25
 
-5.253.144.84/32 Deny Attacks
-5.253.144.89/32 Deny Attacks
 5.253.144.172/32 Deny Attacks
-84.22.136.84/32 Deny Attacks
+5.253.144.175/32 Deny Attacks
+5.253.144.232/32 Deny Attacks
 84.22.136.104/32 Deny Attacks
 84.22.136.158/32 Deny Attacks
 84.22.137.104/32 Deny Attacks
 84.22.137.151/32 Deny Attacks
+84.22.137.248/32 Deny Attacks
 84.22.138.113/32 Deny Attacks
 84.22.138.148/32 Deny Attacks
-84.22.138.231/32 Deny Attacks
 84.22.139.90/32 Deny Attacks
 84.22.139.99/32 Deny Attacks
 84.22.139.137/32 Deny Attacks
-89.22.175.0/24 Deny Attacks
+89.22.175.139/32 Deny Attacks
+89.22.175.142/32 Deny Attacks
+89.22.175.145/32 Deny Attacks
+89.22.175.228/32 Deny Attacks
+178.159.92.149/32 Deny Attacks
+178.159.92.239/32 Deny Attacks
+178.159.93.152/32 Deny Attacks
+178.159.95.130/32 Deny Attacks
+178.159.95.136/32 Deny Attacks
 Origin: RU
 Profile: Domestic ISP
 Tag: Igra-Service LLC

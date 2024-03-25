@@ -7,9 +7,48 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Catalan language data for the front-end (last modified: 2024.03.19).
+# This file: Catalan language data for the front-end (last modified: 2024.03.25).
 ##/
 
+Abuse category:
+ Bad web bot: "Mal web bot (raspat d'adreces de correu electrònic, contingut, rastrejadors que no respecten robots.txt, sol·licituds excessives, falsificació d'agents d'usuari, etc)."
+ Brute-force attacks: "Atacs de força bruta (atacs de força bruta de credencials als inicis de sessió de pàgines web, SMTP, RDP, etc)."
+ Categories (at least one is required): "Categories (cal com a mínim una)"
+ CMS blog comment spam: "Correu brossa de comentaris al bloc de CMS."
+ Conjunctive category: "Categoria conjuntiva (utilitzar en combinació amb altres categories més específiques)."
+ DDoS attacks: "Atacs DDoS (generalment part d'una botnet)."
+ DNS compromise: "Compromís del DNS (alteració dels registres DNS que resulta en una redirecció incorrecta)."
+ DNS poisoning: "Intoxicació per DNS."
+ Email sender spoofing: "Falsificació del remitent de correu electrònic."
+ Email spam: "Correu brossa (contingut de correu brossa, fitxers adjunts infectats, correus electrònics de pesca, etc)."
+ Exploited host: "Amfitrió explotat (és probable que l'amfitrió estigui infectat amb programari maliciós i s'utilitzi per a altres atacs o per allotjar contingut maliciós)."
+ FTP brute-force attacks: "Atacs de força bruta FTP."
+ Fraudulent VoIP: "VoIP fraudulent."
+ Fraudulent orders: "Comandes fraudulentes."
+ Hacking: "Hacking."
+ IoT targeted: "Abús dirigit a IoT. Inclou informació sobre quin tipus de dispositiu s'ha orientat als comentaris."
+ Open proxy, open relay, or tor endpoint: "Un servidor intermediari obert, un relé obert, o un punt final tor."
+ Phishing: "Llocs web i/o correu electrònic de pesca."
+ Ping of death: "Ping de la mort (paquet IP sobredimensionat)."
+ Port scans: "Exploracions de ports (cercant ports oberts i serveis vulnerables)."
+ SQL injection: "Injecció SQL."
+ SSH abuse: "Abús de SSH."
+ VPN IP: "IP VPN."
+ Web spam: "Brossa web (correu brossa de comentaris/fòrums, correu brossa de referència HTTP, o un altre correu brossa de CMS)."
+ Webapp attacks: "Atacs a aplicacions web (cercar vulnerabilitats o exploits, o intentar explotar aplicacions web instal·lades, CMS, o solucions de comerç electrònic, per exemple, WordPress, Drupal, phpMyAdmin, etc)."
+Extended Description:
+ AbuseIPDB module: "Bloqueja les sol·licituds de les IP enumerades a AbuseIPDB."
+ BGPView module: "Aprofita l'API {{Links.BGPView}} per proporcionar una funció de cerca d'ASN i codi de país per a CIDRAM, que permet bloquejar o incloure a la llista blanca ASN i països mitjançant la configuració CIDRAM, i proporciona un mitjà per a la verificació de xarxes socials per verificar les sol·licituds de Facebook. (Si utilitzeu aquest mòdul, no haureu d'utilitzar el mòdul IP-API, ja que tenen el mateix propòsit)."
+ Bad TLDs blocker module: "Bloqueja els amfitrions pertanyents a TLD utilitzats freqüentment per spammers, pirates informàtics, i altres entitats nefastes."
+ Bad hosts blocker module: "Bloqueja els amfitrions utilitzats amb freqüència per spammers, pirates informàtics, i altres entitats nefastes."
+ Bot user agents module: "Bloqueja els agents d'usuari associats amb robots no desitjats i activitats nefastes."
+ Bypasses: "Els fitxers de bypass de signatura estàndard que s'inclouen normalment amb el paquet principal."
+ Chart.js: "Permet que el front-end generi gràfics de donuts.<br />{{Links.Chart.js}} està disponible mitjançant la llicència {{Links.MIT}}."
+ Cookie scanner module: "Ofereix algunes proteccions limitades contra les galetes perilloses."
+ HTTP version checker module: "Permet bloquejar protocols específics i versions HTTP específiques mitjançant la configuració CIDRAM."
+ IP-API module: "Aprofita l'API {{Links.IP-API}} per proporcionar una funció de cerca d'ASN i codi de país per a CIDRAM, que permet bloquejar o incloure a la llista blanca ASN i països mitjançant la configuració CIDRAM, i proporciona un mitjà per a la verificació de xarxes socials per verificar les sol·licituds de Facebook. (Si utilitzeu aquest mòdul, no haureu d'utilitzar el mòdul BGPView, ja que tenen el mateix propòsit)."
+ IPv4: &ExtDesCloud "Bloqueja els serveis al núvol no desitjats i els punts finals no humans."
+ IPv4-Bogons: &ExtDesBogons "Bloqueja els CIDR bogon/martians."
 warning:
  API_Rate_Limited: "Avís: Sembla que actualment l'accés a l'API %s està limitat."
  Cookies: "Nota: CIDRAM utilitza una cookie per autenticar els inicis de sessió. En iniciar sessió, doneu el vostre consentiment perquè el vostre navegador creï i emmagatzemi una cookie."

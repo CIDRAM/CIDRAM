@@ -7,9 +7,48 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Croatian language data for the front-end (last modified: 2024.03.19).
+# This file: Croatian language data for the front-end (last modified: 2024.03.25).
 ##/
 
+Abuse category:
+ Bad web bot: "Loš web bot (traženje adresa e-pošte, sadržaja, alata za indeksiranje koji ne poštuju robots.txt, pretjeranih zahtjeva, lažiranja korisničkog agenta, itd)."
+ Brute-force attacks: "Napadi grubom silom (napadi grubom silom vjerodajnica na prijave na web stranice, SMTP, RDP, itd)."
+ Categories (at least one is required): "Kategorije (potrebna je barem jedna)"
+ CMS blog comment spam: "Spam komentara na CMS blogu."
+ Conjunctive category: "Kategorija veznika (koristiti u kombinaciji s drugim, specifičnijim kategorijama)."
+ DDoS attacks: "DDoS napadi (obično dio botneta)."
+ DNS compromise: "DNS kompromis (izmjena DNS zapisa rezultira neispravnim preusmjeravanjem)."
+ DNS poisoning: "DNS trovanje."
+ Email sender spoofing: "Lažno lažiranje pošiljatelja e-pošte."
+ Email spam: "Spam e-pošte (spam sadržaj e-pošte, zaražene privitke, e-pošte za krađu identiteta, itd)."
+ Exploited host: "Izrabljivani host (host je vjerojatno zaražen zlonamjernim softverom i koristi se za druge napade ili za hostiranje zlonamjernog sadržaja)."
+ FTP brute-force attacks: "FTP napadi grubom silom."
+ Fraudulent VoIP: "Lažni VoIP."
+ Fraudulent orders: "Lažne narudžbe."
+ Hacking: "Hakiranje."
+ IoT targeted: "Zloupotreba usmjerena na IoT. Uključite informacije o tome koja je vrsta uređaja ciljana u komentarima."
+ Open proxy, open relay, or tor endpoint: "Otvoreni proxy, otvoreni relej, ili tor krajnja točka."
+ Phishing: "Web stranice i/ili e-pošte za krađu identiteta."
+ Ping of death: "Ping smrti (preveliki IP paket)."
+ Port scans: "Skeniranja portova (skeniranje otvorenih portova i ranjivih usluga)."
+ SQL injection: "SQL injekcija."
+ SSH abuse: "Zloupotreba SSH-a."
+ VPN IP: "VPN IP."
+ Web spam: "Web spam (neželjeni komentari ili postova na forumu, neželjena pošta HTTP preporuke, ili druga neželjena pošta CMS-a)."
+ Webapp attacks: "Napadi na web aplikacije (traženje ranjivosti ili iskorištavanja, ili pokušaj iskorištavanja instaliranih web aplikacija, CMS-a, ili rješenja za e-trgovinu, npr. WordPress, Drupal, phpMyAdmin, itd)."
+Extended Description:
+ AbuseIPDB module: "Blokira zahtjeve sa IP adresa navedenih na AbuseIPDB."
+ BGPView module: "Iskorištava {{Links.BGPView}} API za pružanje mogućnosti traženja ASN-a i koda zemlje za CIDRAM, omogućavajući blokiranje ASN-ova i zemalja ili stavljanje na bijelu listu putem konfiguracije CIDRAM-a, i pružajući sredstva za provjeru društvenog umrežavanja za provjeru Facebook zahtjeva. (Ako koristite ovaj modul, nećete morati koristiti IP-API modul jer oni služe istoj svrsi)."
+ Bad TLDs blocker module: "Blokira hostove koji pripadaju TLD-ovima koje često koriste spameri, hakeri, i drugi zlobni entiteti."
+ Bad hosts blocker module: "Blokira hostove koje često koriste spameri, hakeri, i drugi zlobni entiteti."
+ Bot user agents module: "Blokira korisničke agente povezane s neželjenim botovima i opakim aktivnostima."
+ Bypasses: "Zadani potpisi zaobilaze datoteke koje su obično uključene u glavni paket."
+ Chart.js: "Omogućuje generiranje prstenastih grafikona na front-end.<br />{{Links.Chart.js}} je dostupan preko {{Links.MIT}} licence."
+ Cookie scanner module: "Pruža neke ograničene zaštite od opasnih kolačića."
+ HTTP version checker module: "Omogućuje blokiranje određenih protokola i HTTP verzija putem CIDRAM konfiguracije."
+ IP-API module: "Iskorištava {{Links.IP-API}} API za pružanje mogućnosti traženja ASN-a i koda zemlje za CIDRAM, omogućavajući blokiranje ASN-ova i zemalja ili stavljanje na bijelu listu putem konfiguracije CIDRAM-a, i pružajući sredstva za provjeru društvenog umrežavanja za provjeru Facebook zahtjeva. (Ako koristite ovaj modul, nećete morati koristiti BGPView modul jer oni služe istoj svrsi)."
+ IPv4: &ExtDesCloud "Blokira neželjene usluge u oblaku i neljudske krajnje točke."
+ IPv4-Bogons: &ExtDesBogons "Blokira bogon/marsovske CIDR-ove."
 warning:
  API_Rate_Limited: "Upozorenje: Čini se da je pristup API-ju %s trenutačno ograničena stopa."
  Cookies: "Bilješka: CIDRAM koristi kolačić za provjeru autentičnosti prijava. Prijavom dajete suglasnost da vaš preglednik kreira i pohranjuje kolačić."

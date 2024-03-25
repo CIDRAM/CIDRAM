@@ -7,9 +7,48 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Galician language data for the front-end (last modified: 2024.03.19).
+# This file: Galician language data for the front-end (last modified: 2024.03.25).
 ##/
 
+Abuse category:
+ Bad web bot: "Mal web bot (raspado de enderezos de correo electrónico, contido, rastreadores que non respectan robots.txt, solicitudes excesivas, suplantación de axentes de usuario, etc)."
+ Brute-force attacks: "Ataques de forza bruta (ataques de forza bruta de credenciais aos inicios de sesión na páxina web, SMTP, RDP, etc)."
+ Categories (at least one is required): "Categorías (requírese polo menos unha)"
+ CMS blog comment spam: "Spam de comentarios do blog do CMS."
+ Conjunctive category: "Categoría conxuntiva (usar en combinación con outras categorías máis específicas)."
+ DDoS attacks: "Ataques DDoS (normalmente parte dunha botnet)."
+ DNS compromise: "Compromiso do DNS (alteración dos rexistros DNS que provoca unha redirección incorrecta)."
+ DNS poisoning: "Intoxicación por DNS."
+ Email sender spoofing: "Falsificación do remitente de correo electrónico."
+ Email spam: "Correo spam (contido de correo electrónico spam, anexos infectados, correos electrónicos de phishing, etc)."
+ Exploited host: "Anfitrión explotado (é probable que o host estea infectado con software malicioso e se use para outros ataques ou para aloxar contido malicioso)."
+ FTP brute-force attacks: "Ataques de forza bruta FTP."
+ Fraudulent VoIP: "VoIP fraudulento."
+ Fraudulent orders: "Pedidos fraudulentos."
+ Hacking: "Hackeo."
+ IoT targeted: "Abuso dirixido a IoT. Inclúe información sobre que tipo de dispositivo foi dirixido nos comentarios."
+ Open proxy, open relay, or tor endpoint: "Un proxy aberto, un relé aberto, ou un punto final tor."
+ Phishing: "Sitios web e/ou correo electrónico de phishing."
+ Ping of death: "Ping da morte (paquete IP de gran tamaño)."
+ Port scans: "Exploracións de portos (buscando portos abertos e servizos vulnerables)."
+ SQL injection: "Inxección SQL."
+ SSH abuse: "Abuso de SSH."
+ VPN IP: "IP VPN."
+ Web spam: "Spam web (spam de comentarios/foros, spam de referencia HTTP, ou outro spam de CMS)."
+ Webapp attacks: "Ataques a aplicacións web (buscar vulnerabilidades ou exploits, ou intentar explotar aplicacións web instaladas, CMS, ou solucións de comercio electrónico, por exemplo, WordPress, Drupal, phpMyAdmin, etc)."
+Extended Description:
+ AbuseIPDB module: "Bloquea solicitudes de IPs listadas en AbuseIPDB."
+ BGPView module: "Aproveita a API {{Links.BGPView}} para proporcionar unha función de busca de códigos de país e ASN para CIDRAM, permitindo que ASNs e países sexan bloqueados ou incluídos na lista branca mediante a configuración CIDRAM, e proporcionando un medio para verificar as redes sociais para verificar as solicitudes de Facebook. (Se usa este módulo, non necesitará utilizar o módulo IP-API, xa que serven para o mesmo propósito)."
+ Bad TLDs blocker module: "Bloquea os hosts pertencentes a TLD usados con frecuencia por spammers, hackers, e outras entidades nefastas."
+ Bad hosts blocker module: "Bloquea os hosts usados con frecuencia por spammers, hackers, e outras entidades nefastas."
+ Bot user agents module: "Bloquea os axentes de usuario asociados con bots non desexados e actividade nefasta."
+ Bypasses: "Os ficheiros de bypass de sinatura estándar que se inclúen normalmente co paquete principal."
+ Chart.js: "Permite que o front-end xere gráficos de rosquillas.<br />{{Links.Chart.js}} está dispoñible a través da licenza {{Links.MIT}}."
+ Cookie scanner module: "Ofrece algunhas proteccións limitadas contra cookies perigosas."
+ HTTP version checker module: "Permite bloquear protocolos específicos e versións HTTP específicas mediante a configuración CIDRAM."
+ IP-API module: "Aproveita a API {{Links.IP-API}} para proporcionar unha función de busca de códigos de país e ASN para CIDRAM, permitindo que ASNs e países sexan bloqueados ou incluídos na lista branca mediante a configuración CIDRAM, e proporcionando un medio para verificar as redes sociais para verificar as solicitudes de Facebook. (Se usa este módulo, non necesitará utilizar o módulo BGPView, xa que serven para o mesmo propósito)."
+ IPv4: &ExtDesCloud "Bloquea servizos na nube non desexados e puntos finais non humanos."
+ IPv4-Bogons: &ExtDesBogons "Bloquea os CIDR bogon/marcianos."
 warning:
  API_Rate_Limited: "Aviso: Parece que o acceso á API %s está actualmente limitado."
  Cookies: "Nota: CIDRAM usa unha cookie para autenticar os inicios de sesión. Ao iniciar sesión, dás o teu consentimento para que o teu navegador cree e almacene unha cookie."

@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6_isps.dat
 
-# Version: 2024.73.0
-# Last modified: 2024.03.14
+# Version: 2024.90.0
+# Last modified: 2024.03.31
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -227,69 +227,41 @@ Tag: UARNet
 # Indian domestic ISP. Brute-force, SSH, and webapp attacks, WordPress hack
 # attempts, port scans, and spam detected from here. Listing just the affected
 # ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 40 (AS18101), 119,233 (AS55836).
-# Updated: 2023.05.23 / Modified: 2023.08.14
+# Stop Forum Spam (SFS) listings: 6 (AS18101), 60,272 (AS55836).
+# Updated: 2024.03.28
 
-2405:201:2004:e004::/64 Deny Spam
 2405:201:200c:9087::/64 Deny Spam
-2405:201:200c:919c::/64 Deny Spam
-2405:201:200d:8f::/64 Deny Spam
-2405:201:201c:4830::/64 Deny Spam
-2405:201:4007:c06a::/64 Deny Spam
-2405:201:4008:1bca::/64 Deny Spam
-2405:201:4041:c812::/64 Deny Spam
-2405:201:5c01:60cc::/64 Deny Spam
-2405:201:5c01:617a::/64 Deny Spam
-2405:201:5c01:61fc::/64 Deny Spam
-2405:201:5c01:6a72::/64 Deny Spam
+2405:201:200c:9906::/64 Deny Spam
+2405:201:200c:9cfc::/64 Deny Spam
+2405:201:200c:a0f0::/64 Deny Spam
+2405:201:200c:f0dd::/64 Deny Spam
+2405:201:201c:4964::/64 Deny Spam
+2405:201:202e:b069::/64 Deny Spam
+2405:201:5015:f80d::/64 Deny Spam
+2405:201:5c01:60be::/64 Deny Spam
+2405:201:5c01:6133::/64 Deny Spam
+2405:201:5c01:613a::/64 Deny Spam
+2405:201:5c01:618c::/64 Deny Spam
+2405:201:5c01:6827::/64 Deny Spam
+2405:201:5c01:6877::/64 Deny Spam
 2405:201:5c01:6b76::/64 Deny Spam
-2405:201:5c01:6bb7::/64 Deny Spam
-2405:201:5c01:6c35::/64 Deny Spam
-2405:201:5c01:6cd9::/64 Deny Spam
 2405:201:5c01:6de9::/64 Deny Spam
-2405:201:5c01:6ed3::/64 Deny Spam
 2405:201:5c09:210c::/64 Deny Spam
-2405:201:5c0c:a0ba::/64 Deny Spam
+2405:201:5c0a:2153::/64 Deny Spam
+2405:201:5c0c:a05d::/64 Deny Spam
 2405:204:128c:b733::/64 Deny Spam
-2405:204:12a3:4316::/64 Deny Spam
-2405:204:140d:8950::/64 Deny Spam
-2405:204:1487:dbd4::/64 Deny Spam
-2405:204:1489:d8bc::/64 Deny Spam
-2405:204:148d:ec4e::/64 Deny Attacks
-2405:204:300a:4076::/64 Deny Spam
-2405:204:300f:cc97::/64 Deny Spam
-2405:204:3017:fae7::/64 Deny Spam
-2405:204:3103:b84f::/64 Deny Spam
-2405:204:310c:29c0::/64 Deny Spam
-2405:204:3115:53b3::/64 Deny Spam
-2405:204:328f:659b::/64 Deny Spam
-2405:204:32a0:7e1f::/64 Deny Spam
-2405:204:338d:8c75::/64 Deny Spam
-2405:204:3397:62f7::/64 Deny Spam
-2405:204:33a6:ea3c::/64 Deny Spam
-2409:4043:192:66fd::/64 Deny Spam
-2409:4050:e09:3eef::/64 Deny Spam
-2409:4050:ebb:cec9::/64 Deny Spam
-2409:4050:ec1:146f::/64 Deny Spam
-2409:4050:2d1d:4526::/64 Deny Spam
-2409:4050:2d41:ec82::/64 Deny Spam
-2409:4050:2db9:4eea::/64 Deny Spam
-2409:4050:2dcc:1d5f::/64 Deny Spam
-2409:4050:2e8e:e6a5::/64 Deny Spam
-2409:4050:2e8f:9033::/64 Deny Spam
-2409:4050:2ebd:2bf0::/64 Deny Spam
-2409:4051:4e14:13a7::/64 Deny Spam
+2405:204:3297:b85e::/64 Deny Spam
+2409:4050:e41:8c61::/64 Deny Spam
+2409:4050:2d95:ac23::/64 Deny Spam
+2409:4050:2d9f:3462::/64 Deny Spam
+2409:4050:2dc1:d75b::/64 Deny Spam
+2409:4051:301:8662::/64 Deny Spam
 2409:4053:2019:4854::/64 Deny Spam
-2409:4053:2d18:fd23::/64 Deny Spam
-2409:4064:2c96:344::/64 Deny Spam
-2409:4081:918d:26d8::/64 Deny Spam
-2409:4081:9b01:62a5::/64 Deny Spam
-2409:4081:9c88:6262::/64 Deny Spam
-2409:4081:9d01:97db::/64 Deny Spam
-2409:4081:9e14:63b3::/64 Deny Spam
-2409:4081:9e14:9d00::/64 Deny Spam
-2409:4081:ad9f:4cca::/64 Deny Spam
-2409:4081:ae0b:57bf::/64 Deny Spam
+2409:4088:be89:7296::/64 Deny Spam
+2409:408d:1e82:10b::/64 Deny Spam
+2409:40d6:4:95e8::/64 Deny Spam
+2409:40d6:1f:5b51::/64 Deny Spam
+2409:40d6:1001:3126::/64 Deny Spam
 Origin: IN
 Profile: Domestic ISP;Infrastructure/Transit
 Tag: Reliance Communications
@@ -627,19 +599,6 @@ Profile: Domestic ISP;Multiplay
 Tag: Intergrid Group Pty Ltd
 
 
-# ASN 577 ("Bell Canada").
-# Canadian domestic ISP. Phishing, webapp attacks, spam, and probing for
-# vulnerabilities detected from here.
-# Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 694.
-# Updated: 2023.05.24
-
-2605:b100:b29:2a86::/64 Deny Spam
-Origin: CA
-Profile: Domestic ISP
-Tag: Bell Canada
-
-
 # ASNs 16276, 35540 ("OVH Systems").
 # French multiplay network. Mostly a cloud provider, server leaser, etc. Some
 # limited ADSL connectivity also provided. A significant source of spam here,
@@ -822,22 +781,6 @@ Profile: Domestic ISP
 Tag: Rogers
 
 
-# ASN 9534 ("Binariang Berhad").
-# Malaysian broadband provider. Port scans, hacking, and spam detected from
-# here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 258.
-# Updated: 2023.05.28
-
-2001:d08:1200:5e36::/64 Deny Spam
-2001:d08:1b8d:b113::/64 Deny Spam
-2001:d08:228b:d1d2::/64 Deny Spam
-2001:d08:2297:89f5::/64 Deny Spam
-2001:d08:229e:2b82::/64 Deny Spam
-Origin: MY
-Profile: Domestic ISP
-Tag: Binariang Berhad
-
-
 # ASN 197019 ("WEDOS Internet, a.s").
 # Czech domestic ISP. Brute-force, SSH, env, and webapp attacks, attempting to
 # execute exploits, port scans, hacking, and spam detected from here.
@@ -854,25 +797,13 @@ Tag: WEDOS Internet, a.s
 # ASNs 132761, 134331 ("Smartlink Solutions Pvt. Ltd").
 # Indian commercial broadband reseller. Port scans, hacking, and spam detected
 # from here. Manually checked all ranges; All ranges affected.
-# Stop Forum Spam (SFS) listings: 31 (AS134331).
-# Updated: 2023.05.28
+# Stop Forum Spam (SFS) listings: 7 (AS134331).
+# Updated: 2023.05.28 / Checked: 2024.03.28
 
 2402:dc40::/32 Deny Attacks
 Origin: IN
 Profile: Commercial;Domestic ISP;Infrastructure/Transit
 Tag: Smartlink Solutions
-
-
-# ASN 5432 ("Proximus NV").
-# Belgian mobile and ISP. Brute-force attacks, port scans, hacking, and spam
-# detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 319.
-# Updated: 2023.06.01
-
-2a02:a03f:e8eb:5400::/64 Deny Spam
-Origin: BE
-Profile: Domestic ISP;Mobile ISP
-Tag: Proximus NV
 
 
 # ASN 701 ("Verizon Business/UUnet").

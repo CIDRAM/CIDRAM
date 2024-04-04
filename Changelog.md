@@ -380,3 +380,5 @@
 ### v3.5.1
 
 [2024.02.20; Maikuolan]: The internal AbuseIPDB reporting page now includes a field to specify the exact time of attack for reports.
+
+[2024.04.04; Bug-fix; Maikuolan]: Removed the minimum parameter from the input fields for the start and expiry dates at the auxiliary rules page, as it inteferred with a user's ability to modify any auxiliary rules when such a field preceded the current date (#572).

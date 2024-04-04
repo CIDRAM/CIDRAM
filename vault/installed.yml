@@ -10,7 +10,7 @@ CIDRAM Core:
  Changelog: "https://github.com/CIDRAM/CIDRAM/blob/v3/Changelog.md"
  Release Notes For: ["3.2.0", "3.2.1", "3.3.0", "3.4.0", "3.4.1", "3.4.2", "3.5.0", "3.5.1"]
  When Update Succeeds:
-  - "wpVer 4.8.0 6.4.3 3.5.0 7.2"
+  - "wpVer 4.8.0 6.4.3 3.5.1 7.2"
   - "foreach {Components.RemoteMeta.CIDRAM Core.Release Notes For} as Key => Value if {Components.Meta.CIDRAM Core.Version}<{Value}&&{Components.RemoteMeta.CIDRAM Core.Version}>={Value} then queue message response.release_notes https://github.com/CIDRAM/CIDRAM/releases/tag/v{Value} CIDRAM v{Value}"
  Uninstallable: false
  Files:
@@ -64,7 +64,7 @@ CIDRAM Core:
    Checksum: "2bb2ac149ab699dbe2eebd933073d5f3837fc51f0944e5bdceb89c4ef5c730fb:8242"
 CIDRAM Front-End:
  Name: "CIDRAM Front-End"
- Version: "3.5.1-DEV+240780"
+ Version: "3.5.1-DEV+240940"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "Latest"
@@ -426,7 +426,7 @@ CIDRAM Front-End:
    Checksum: "2097be84026adcf4fddd43978a1d08ef74d3f47d79b382f0b93e5c2aabb9fd6f:16428"
   CIDRAM/CIDRAM/AuxiliaryRules.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/AuxiliaryRules.php"
-   Checksum: "8ff3e36f5965ae6bb807355e0b65a18fac25b3cf914c3f046896019a7f96f55d:40978"
+   Checksum: "b943c2e733888ae0d7d1bc8518f9707b0fda0a9ae2d5c39d4d338eb8e390524c:40876"
   CIDRAM/CIDRAM/CLI.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/CLI.php"
    Checksum: "f2818591f8f0303d7d291a4784b736e6415de3e5c3fdb12a740fc8171d8a4f4a:29836"
@@ -435,7 +435,7 @@ CIDRAM Front-End:
    Checksum: "875ca4ae24236d3ae9dcc1b395d0c0a8767ad8b6796ab9aee4d71eab2e5ac4f9:2014"
   CIDRAM/CIDRAM/FrontEnd.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/FrontEnd.php"
-   Checksum: "b2985f49d7414392c45a2a0da0ffd77e20e41936fea35a321dba1eb07d2a004a:47831"
+   Checksum: "bf379e714a142289155016d9035f139be9714e15d4f922c647c13921d5dedd82:47709"
   CIDRAM/CIDRAM/FrontEndMethods.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/FrontEndMethods.php"
    Checksum: "2d042ffc6e1b4afa22d83443e4ba6e32faea7fab3ce41ca97bc275855f933ef3:62460"

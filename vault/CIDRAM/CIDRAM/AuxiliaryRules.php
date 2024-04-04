@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used for auxiliary rules (last modified: 2024.03.18).
+ * This file: Methods used for auxiliary rules (last modified: 2024.04.04).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -131,22 +131,20 @@ trait AuxiliaryRules
 
                 /** From. */
                 $Output .= sprintf(
-                    '<div class="iCntr"><div class="iLabl s" id="%4$sfromDt">%2$s</div><div class="iCntn" id="%4$sfromDd"><input type="date" name="from[%3$s]" class="f400" value="%1$s" min="%5$s" /></div></div>',
+                    '<div class="iCntr"><div class="iLabl s" id="%4$sfromDt">%2$s</div><div class="iCntn" id="%4$sfromDd"><input type="date" name="from[%3$s]" class="f400" value="%1$s" /></div></div>',
                     isset($Data['From']) ? str_replace('.', '-', $Data['From']) : '',
                     $this->L10N->getString('label.aux.When the rule should begin (optional)'),
                     $Current,
-                    $RuleClass,
-                    $this->FE['Y-m-d']
+                    $RuleClass
                 );
 
                 /** Expiry. */
                 $Output .= sprintf(
-                    '<div class="iCntr"><div class="iLabl s" id="%4$sexpiryDt">%2$s</div><div class="iCntn" id="%4$sexpiryDd"><input type="date" name="expiry[%3$s]" class="f400" value="%1$s" min="%5$s" /></div></div>',
+                    '<div class="iCntr"><div class="iLabl s" id="%4$sexpiryDt">%2$s</div><div class="iCntn" id="%4$sexpiryDd"><input type="date" name="expiry[%3$s]" class="f400" value="%1$s" /></div></div>',
                     isset($Data['Expiry']) ? str_replace('.', '-', $Data['Expiry']) : '',
                     $this->L10N->getString('label.aux.When the rule should expire (optional)'),
                     $Current,
-                    $RuleClass,
-                    $this->FE['Y-m-d']
+                    $RuleClass
                 );
 
                 /** Status code override. */

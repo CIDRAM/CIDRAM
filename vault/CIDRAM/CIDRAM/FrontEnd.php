@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2023.12.24).
+ * This file: The CIDRAM front-end (last modified: 2024.04.04).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -190,9 +190,6 @@ class FrontEnd extends Core
 
             /** Will be populated by the page title. */
             'FE_Title' => '',
-
-            /** Used by the auxiliary rules from and expiry fields. */
-            'Y-m-d' => date('Y-m-d', $this->Now),
 
             /** Make some of the link references available to the main front-end array. */
             'Links.Discussions' => $this->CIDRAM['Links']['Discussions'],

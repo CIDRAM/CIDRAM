@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2023.12.29).
+ * This file: Front-end handler (last modified: 2024.04.04).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -132,9 +132,6 @@ $CIDRAM['FE'] = [
 
     /** Will be populated by the page title. */
     'FE_Title' => '',
-
-    /** Used by the auxiliary rules from and expiry fields. */
-    'Y-m-d' => date('Y-m-d', $CIDRAM['Now']),
 
     /** Make some of the link references available to the main front-end array. */
     'Links.Discussions' => $CIDRAM['Config']['Links']['Discussions'],

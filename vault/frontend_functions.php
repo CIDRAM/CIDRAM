@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2023.12.29).
+ * This file: Front-end functions file (last modified: 2024.04.04).
  */
 
 /**
@@ -3455,22 +3455,20 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
 
             /** From. */
             $Output .= sprintf(
-                '<div class="iCntr"><div class="iLabl s" id="%4$sfromDt">%2$s</div><div class="iCntn" id="%4$sfromDd"><input type="date" name="from[%3$s]" class="f400" value="%1$s" min="%5$s" /></div></div>',
+                '<div class="iCntr"><div class="iLabl s" id="%4$sfromDt">%2$s</div><div class="iCntn" id="%4$sfromDd"><input type="date" name="from[%3$s]" class="f400" value="%1$s" /></div></div>',
                 isset($Data['From']) ? str_replace('.', '-', $Data['From']) : '',
                 $CIDRAM['L10N']->getString('label_aux_from'),
                 $Current,
-                $RuleClass,
-                $CIDRAM['FE']['Y-m-d']
+                $RuleClass
             );
 
             /** Expiry. */
             $Output .= sprintf(
-                '<div class="iCntr"><div class="iLabl s" id="%4$sexpiryDt">%2$s</div><div class="iCntn" id="%4$sexpiryDd"><input type="date" name="expiry[%3$s]" class="f400" value="%1$s" min="%5$s" /></div></div>',
+                '<div class="iCntr"><div class="iLabl s" id="%4$sexpiryDt">%2$s</div><div class="iCntn" id="%4$sexpiryDd"><input type="date" name="expiry[%3$s]" class="f400" value="%1$s" /></div></div>',
                 isset($Data['Expiry']) ? str_replace('.', '-', $Data['Expiry']) : '',
                 $CIDRAM['L10N']->getString('label_aux_expiry'),
                 $Current,
-                $RuleClass,
-                $CIDRAM['FE']['Y-m-d']
+                $RuleClass
             );
 
             /** Status code override. */

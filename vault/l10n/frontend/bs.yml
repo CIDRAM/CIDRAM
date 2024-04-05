@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bosnian language data for the front-end (last modified: 2024.03.25).
+# This file: Bosnian language data for the front-end (last modified: 2024.04.05).
 ##/
 
 Abuse category:
@@ -49,6 +49,33 @@ Extended Description:
  IP-API module: "Koristi {{Links.IP-API}} API za pružanje mogućnosti traženja ASN-a i koda zemlje za CIDRAM, omogućavajući ASN-ovima i zemljama da budu blokirani ili stavljeni na bijelu listu putem konfiguracije CIDRAM-a, i pruža sredstvo za verifikaciju društvenih mreža za provjeru Facebook zahtjeva. (Ako koristite ovaj modul, nećete morati koristiti BGPView modul, jer oni služe istoj svrsi)."
  IPv4: &ExtDesCloud "Blokira neželjene usluge u oblaku i krajnje tačke koje nisu ljudi."
  IPv4-Bogons: &ExtDesBogons "Blokira bogon/marsovske CIDR-ove."
+ IPv4-ISPs: &ExtDesISPs "Blokira one ISP-ove za koje se smatra da su opasni ili skloni neželjenoj pošti (uključuje multiplay mreže, koje mogu sadržavati ljudske i neljudske krajnje tačke)."
+ IPv4-Nonblocking: &ExtDesNonblocking "Korisno za profilisanje, ali ne blokira ništa samo po sebi."
+ IPv4-Other: &ExtDesOther "Blokira CIDR-ove za proxy servere, VPN-ove, i druge razne neželjene usluge."
+ IPv6: *ExtDesCloud
+ IPv6-Bogons: *ExtDesBogons
+ IPv6-ISPs: *ExtDesISPs
+ IPv6-Nonblocking: *ExtDesNonblocking
+ IPv6-Other: *ExtDesOther
+ Optional security extras module: "Pruža ograničenu zaštitu od različitih vektora napada koji se obično koriste u zahtjevima."
+ PHPMailer: "Potrebno za korištenje funkcionalnost koja šalje e-poštu.<br />{{Links.PHPMailer.PHPMailer}} je dostupan preko {{Links.PHPMailer.License}} licence."
+ Project Honeypot module: "Blokira zahtjeve sa IP adresa navedenih na Project Honeypot."
+ Protocol blocker module: "Pruža mogućnost blokiranja specifičnih protokola zahtjeva putem konfiguracije (npr. HTTP/0.9, HTTP/1.1, SPDY/3.0, itd). Bilješka: Neće imati nikakvog efekta na one web stranice koje usmjeravaju putem servisa koji prepisuju zahtjeve da svi koriste potpuno isti protokol, kao što je Cloudflare."
+ Referrer spam module: "Blokiranje zasnovano na neželjenoj e-pošti preporuke generalno neće pružiti nikakvu značajnu sigurnosnu prednost, ali u nekim slučajevima može biti korisno za neke korisnike, za prikupljanje više informacija o zahtjevima i mogućnost prijaviti."
+config:
+ phpmailer: "Konfiguracija za PHPMailer (koristi se za dvofaktorsku autentifikaciju)."
+ phpmailer_add_reply_to_address: "Adresa za odgovor koju treba navesti prilikom slanja e-pošte putem SMTP-a."
+ phpmailer_add_reply_to_name: "Ime odgovora koje treba navesti prilikom slanja e-pošte putem SMTP-a."
+ phpmailer_event_log: "Datoteka za evidentiranje svih događaja u vezi sa PHPMailerom. Navedite naziv datoteke ili ostavite prazno da biste onemogućili."
+ phpmailer_host: "SMTP host koji se koristi za odlaznu e-poštu."
+ phpmailer_password: "Lozinka za korištenje prilikom slanja e-pošte putem SMTP-a."
+ phpmailer_port: "Broj porta koji se koristi za odlaznu e-poštu. Zadano = 587."
+ phpmailer_set_from_address: "Adresa pošiljaoca koju treba navesti prilikom slanja e-pošte putem SMTP-a."
+ phpmailer_set_from_name: "Ime pošiljaoca koje treba navesti prilikom slanja e-pošte putem SMTP-a."
+ phpmailer_skip_auth_process: "Postavljanje ove direktive na <code>true</code> daje instrukcije PHPMaileru da preskoči normalan proces autentifikacije koji se obično dešava prilikom slanja e-pošte putem SMTP-a. Ovo treba izbegavati, jer preskakanje ovog procesa može izložiti odlaznu e-poštu MITM napadima, ali može biti neophodno u slučajevima kada ovaj proces sprečava PHPMailer da se poveže sa SMTP serverom."
+ phpmailer_smtp_auth: "Ova direktiva određuje da li će se autentifikovati SMTP sesije (obično treba ostaviti na miru)."
+ phpmailer_smtp_secure: "Protokol koji se koristi prilikom slanja e-pošte putem SMTP-a (TLS ili SSL)."
+ phpmailer_username: "Korisničko ime koje se koristi prilikom slanja e-pošte putem SMTP-a."
 warning:
  API_Rate_Limited: "Upozorenje: Čini se da je pristup %s API-ju trenutno ograničen stopom."
  Cookies: "Bilješka: CIDRAM koristi kolačić za provjeru autentičnosti prijava. Prijavom dajete pristanak da vaš pretraživač kreira i pohrani kolačić."

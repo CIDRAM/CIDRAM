@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Galician language data for the front-end (last modified: 2024.03.25).
+# This file: Galician language data for the front-end (last modified: 2024.03.31).
 ##/
 
 Abuse category:
@@ -49,6 +49,43 @@ Extended Description:
  IP-API module: "Aproveita a API {{Links.IP-API}} para proporcionar unha función de busca de códigos de país e ASN para CIDRAM, permitindo que ASNs e países sexan bloqueados ou incluídos na lista branca mediante a configuración CIDRAM, e proporcionando un medio para verificar as redes sociais para verificar as solicitudes de Facebook. (Se usa este módulo, non necesitará utilizar o módulo BGPView, xa que serven para o mesmo propósito)."
  IPv4: &ExtDesCloud "Bloquea servizos na nube non desexados e puntos finais non humanos."
  IPv4-Bogons: &ExtDesBogons "Bloquea os CIDR bogon/marcianos."
+ IPv4-ISPs: &ExtDesISPs "Bloquea os ISP perigosos e propensos ao spam (inclúe redes multiplay, que poden conter puntos finais humanos e non humanos)."
+ IPv4-Nonblocking: &ExtDesNonblocking "Útil para crear perfiles, pero non bloquea nada por si mesmo."
+ IPv4-Other: &ExtDesOther "Bloquea os CIDR para proxies, VPN, e outros servizos non desexados diversos."
+ IPv6: *ExtDesCloud
+ IPv6-Bogons: *ExtDesBogons
+ IPv6-ISPs: *ExtDesISPs
+ IPv6-Nonblocking: *ExtDesNonblocking
+ IPv6-Other: *ExtDesOther
+ Optional security extras module: "Ofrece algunhas proteccións limitadas contra varios vectores de ataque que se usan habitualmente nas solicitudes."
+ PHPMailer: "Necesario para usar calquera funcionalidade que implique o envío de correo electrónico.<br />{{Links.PHPMailer.PHPMailer}} está dispoñible a través da licenza {{Links.PHPMailer.License}}."
+ Project Honeypot module: "Bloquea solicitudes de IPs listadas en Project Honeypot."
+ Protocol blocker module: "Ofrece a posibilidade de bloquear protocolos de solicitude específicos mediante a configuración (por exemplo, HTTP/0.9, HTTP/1.1, SPDY/3.0, etc). Nota: Non terá ningún efecto para aqueles sitios web que enrutan a través de servizos que reescriben solicitudes para usen o mesmo protocolo, como Cloudflare."
+ Referrer spam module: "O bloqueo baseado no spam de referencia xeralmente non proporciona ningún beneficio de seguridade significativo, pero nalgúns casos, pode ser útil para algúns usuarios, para recoller máis información sobre as solicitudes e para poder informar dela."
+ Stop Forum Spam module: "Protexe as páxinas de rexistro e inicio de sesión contra as IP listadas por SFS."
+ Tor blocker module: "Prohibe o acceso desde os nodos de saída de Tor mediante buscas DNSEL (admite tanto IPv4 como IPv6)."
+Name:
+ AbuseIPDB module: "Módulo AbuseIPDB."
+ BGPView module: "Módulo BGPView."
+ BOBUAM: "Módulo de axentes de usuario de bot ou navegador (BOBUAM)."
+ Bad TLDs blocker module: "Módulo bloqueador de TLD indesexables."
+ Bad hosts blocker module: "Módulo bloqueador de hosts indesexables."
+ Bot user agents module: "Módulo de axentes de usuario bot."
+ BunnyCDN compatibility module: "Módulo de compatibilidade BunnyCDN."
+config:
+ phpmailer: "Configuración para PHPMailer (usado para a autenticación de dous factores)."
+ phpmailer_add_reply_to_address: "O enderezo de resposta a citar ao enviar correo electrónico a través de SMTP."
+ phpmailer_add_reply_to_name: "O nome da resposta a citar ao enviar correo electrónico a través de SMTP."
+ phpmailer_event_log: "Un ficheiro para rexistrar todos os eventos relacionados con PHPMailer. Especifique un nome de ficheiro, ou déixeo en branco para desactivalo."
+ phpmailer_host: "O servidor SMTP que se utilizará para o correo electrónico de saída."
+ phpmailer_password: "O contrasinal a utilizar ao enviar correo electrónico a través de SMTP."
+ phpmailer_port: "O número de porto que se utilizará para o correo electrónico de saída. Predeterminado = 587."
+ phpmailer_set_from_address: "O enderezo do remitente a citar ao enviar correo electrónico a través de SMTP."
+ phpmailer_set_from_name: "O nome do remitente a citar ao enviar correo electrónico a través de SMTP."
+ phpmailer_skip_auth_process: "Ao establecer esta directiva en <code>true</code> indícase a PHPMailer que omita o proceso de autenticación normal que se produce normalmente cando se envía correo electrónico a través de SMTP. Isto debe evitarse, porque omitir este proceso pode expoñer o correo electrónico saínte a ataques MITM, pero pode ser necesario nos casos en que este proceso impide que PHPMailer se conecte a un servidor SMTP."
+ phpmailer_smtp_auth: "Esta directiva determina se autenticar sesións SMTP (normalmente debería deixarse só)."
+ phpmailer_smtp_secure: "O protocolo a utilizar ao enviar correo electrónico a través de SMTP (TLS ou SSL)."
+ phpmailer_username: "O nome de usuario que se utilizará ao enviar correo electrónico a través de SMTP."
 warning:
  API_Rate_Limited: "Aviso: Parece que o acceso á API %s está actualmente limitado."
  Cookies: "Nota: CIDRAM usa unha cookie para autenticar os inicios de sesión. Ao iniciar sesión, dás o teu consentimento para que o teu navegador cree e almacene unha cookie."

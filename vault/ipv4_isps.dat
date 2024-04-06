@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv4_isps.dat
 
-# Version: 2024.90.0
-# Last modified: 2024.03.31
+# Version: 2024.96.0
+# Last modified: 2024.04.06
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -11726,10 +11726,9 @@ Tag: Optisprint OOD
 # Bulgarian domestic ISP. Brute-force and SSH attacks, hacking, and spam
 # detected from here. Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 2.
-# Updated: 2022.05.25 / Checked: 2023.05.27
+# Updated: 2024.04.06
 
-89.25.23.210/32 Deny Attacks
-109.121.161.192/32 Deny Attacks
+109.121.161.49/32 Deny Attacks
 Origin: BG
 Profile: Domestic ISP
 Tag: NOVATEL EOOD
@@ -18028,18 +18027,6 @@ Tag: xTom GmbH
 Origin: UZ
 Profile: Domestic ISP
 Tag: Uzbektelekom
-
-
-# ASN 6775 ("Andreas Fink trading as Fink Telecom Services GmbH").
-# Network management and consultancy group. Brute-force, SSH, and SQLi attacks,
-# env hacks, hacking, and spam detected from here.
-# Listing just the affected ranges/addresses only.
-# Updated: 2022.05.03 / Checked: 2023.05.07
-
-79.134.225.0/24 Deny Attacks
-Origin: CH
-Profile: Infrastructure/Transit
-Tag: Fink Telecom
 
 
 # ASN 211468 ('Kadri Haxhiaj trading as "Kadri Haxhiaj B.I."').

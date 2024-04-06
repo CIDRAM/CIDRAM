@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Verification data (last modified: 2024.01.05).
+# This file: Verification data (last modified: 2024.04.06).
 ##/
 
 # Additional references: https://udger.com/resources/ua-list/crawlers
@@ -53,7 +53,7 @@ Search Engine Verification:
   Single hit bypass: true
 
  # https://duckduckgo.com/duckduckbot
- # Updated: 2023.11.17 / Checked: 2024.01.05
+ # Updated: 2023.11.17 / Checked: 2024.04.06
  DuckDuckBot:
   User Agent Pattern: "~duckduck(?:go-favicons-)?bot~"
   Closure: "UA-IP-Match"
@@ -81,8 +81,8 @@ Search Engine Verification:
    - "52.142.26.175"
   Single hit bypass: true
 
- # https://support.google.com/webmasters/answer/80553?hl=en
- # Updated: 2018.07.14 / Checked: 2022.02.18
+ # https://developers.google.com/search/docs/crawling-indexing/verifying-googlebot
+ # Updated: 2018.07.14 / Checked: 2024.04.06
  Googlebot:
   Bypass flag: "Flag-Bypass-Googlebot-Check"
   User Agent: "googlebot"
@@ -93,7 +93,7 @@ Search Engine Verification:
   Single hit bypass: true
 
  # https://www.mojeek.com/bot.html
- # Updated: 2020.02.07 / Checked: 2022.02.18
+ # Updated: 2020.02.07 / Checked: 2024.04.06
  MojeekBot:
   User Agent: "mojeekbot"
   Closure: "DNS-Reverse-Forward"
@@ -122,15 +122,15 @@ Search Engine Verification:
    - ".petalsearch.com"
 
  # https://help.qwant.com/bot/
- # Updated: 2020.02.07 / Checked: 2022.02.18
- Qwantify/Bleriot:
-  User Agent: "qwantify/bleriot"
+ # Updated: 2024.04.06
+ Qwantify:
+  User Agent Pattern: "~qwantify|bleriot~"
   Closure: "DNS-Reverse-Forward"
   Valid domains:
-   - "search.qwant.com"
+   - ".qwant.com"
 
  # https://napoveda.seznam.cz/en/full-text-search/seznambot-crawler/
- # Updated: 2020.02.07 / Checked: 2022.02.18
+ # Updated: 2020.02.07 / Checked: 2024.04.06
  SeznamBot:
   User Agent: "seznambot"
   Closure: "DNS-Reverse-Forward"
@@ -229,7 +229,7 @@ Social Media Verification:
 Other Verification:
  # https://developers.google.com/search/docs/advanced/crawling/overview-google-crawlers
  # https://github.com/CIDRAM/CIDRAM/issues/233
- # Updated: 2021.10.01 / Checked: 2024.01.05
+ # Updated: 2021.10.01 / Checked: 2024.04.06
  AdSense:
   User Agent: "mediapartners-google"
   Closure: "DNS-Reverse-Forward"

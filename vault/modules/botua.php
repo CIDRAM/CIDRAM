@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bot user agents module (last modified: 2024.01.18).
+ * This file: Bot user agents module (last modified: 2024.04.11).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -228,7 +228,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     ), 'Malware UA'); // 2017.04.23
 
     $this->trigger(preg_match(
-        '~\.buzz|(?<!amazona)dbot/|^m$|(?:\W|^)(?:cu|pe)rl(?:\W|$)|^(?!linkedinbot).*http-?(?:agent|client)|' .
+        '~\.buzz|(?<!amazona)dbot/|^m$|(?:\W|^)(?:cu|pe)rl(?:\W|$)|^(?!linkedinbot).*http-?(?:agent|client)|#boss#|' .
         'a(?:bonti|ccserver|cme.spider|dreview/\d|nyevent-http|ppengine)|' .
         'b(?:abbar\.tech|igbozz|lackbird|logsearch|logbot|salsa)|' .
         'c(?:astlebot|atexplorador|lickagy|liqzbot|ontextad|orporama|ortex/\d|rowsnest|yberpatrol)|' .
@@ -254,7 +254,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     ) || preg_match(
         '~^Mozilla/5\.0( [A-Za-z]{2,5}/0\..)?$~',
         $this->BlockInfo['UA']
-    ), 'Unauthorised'); // 2023.09.15 mod 2023.12.17
+    ), 'Unauthorised'); // 2023.09.15 mod 2024.04.11
 
     $this->trigger(preg_match(
         '~^(?:bot|java|msie|windows-live-social-object-extractor)|\\((?:java|\w:\d{2,})~',
@@ -315,12 +315,13 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     $this->trigger(preg_match('~^MGLNDD_~i', $UANoSpace), 'Attempting to expose honeypots'); // 2022.05.08
 
     $this->trigger(preg_match(
-        '~anonymous-?coward|banana-?bot|bot-?test|brands-?bot|clark-?crawler' .
-        '|fidget-?spinner-?bot|friendly-?spider|jaddjabot|keys-?so-?bot|orbb' .
-        'ot|phxbot|storm-?crawler|test-?bot|thesis-?research-?bot|thinkchaos' .
-        '|tiny-?bot|tiny-?test|whatstuffwherebot|zephuli-?bot~',
+        '~adbar|anonymous-?coward|banana-?bot|bot-?test|brands-?bot|' .
+        'clark-?crawler|fidget-?spinner-?bot|friendly-?spider|' .
+        'jaddjabot|keys-?so-?bot|orbbot|phxbot|storm-?crawler|' .
+        'test-?bot|thesis-?research-?bot|thinkchaos|tiny-?bot|tiny-?test|trafilatura|' .
+        'whatstuffwherebot|zephuli-?bot~',
         $UANoSpace
-    ), 'Scraper UA'); // 2023.11.17 mod 2024.01.18
+    ), 'Scraper UA'); // 2023.11.17 mod 2024.04.11
 
     /** These signatures can set extended tracking options. */
     if (

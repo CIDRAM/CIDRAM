@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bot user agents module (last modified: 2024.04.11).
+ * This file: Bot user agents module (last modified: 2024.04.12).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -229,12 +229,12 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
     $this->trigger(preg_match(
         '~\.buzz|(?<!amazona)dbot/|^m$|(?:\W|^)(?:cu|pe)rl(?:\W|$)|^(?!linkedinbot).*http-?(?:agent|client)|#boss#|' .
-        'a(?:bonti|ccserver|cme.spider|dreview/\d|nyevent-http|ppengine)|' .
+        'a(?:bonti|ccserver|cme.spider|dreview/\d|jbaxy|nyevent-http|ppengine)|' .
         'b(?:abbar\.tech|igbozz|lackbird|logsearch|logbot|salsa)|' .
         'c(?:astlebot|atexplorador|lickagy|liqzbot|ontextad|orporama|ortex/\d|rowsnest|yberpatrol)|' .
         'd(?:le_spider|nbcrawler|omainappender|umprendertree)|' .
         'expanse|' .
-        'flightdeckreportsbot|fluid/|' .
+        'f(?:lightdeckreportsbot|luid/|orms\.gle)|' .
         'g(?:atheranalyzeprovide|dnplus|imme60|lobalipv[46]space|ooglebenjojo|tbdfffgtb.?$)|' .
         'infrawatch|internetcensus|ips-agent|isitwp|' .
         'k2spider|kemvi|' .
@@ -247,14 +247,14 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         's(?:can\.lol|caninfo|creener|eekport|itedomain|mut|nap(?:preview)?bot|oapclient|ocial(?:ayer|searcher)|oso|pyglass|quider|treetbot|ynapse)|' .
         't(?:impi|omba|weezler)|' .
         'urlappendbot|urltest|' .
-        'w(?:asalive|atchmouse|eb(?:-monitoring|bot|masteraid|money|pros|thumbnail)|hatweb|ikiapiary|in(?:http|inet)|maid\.com|sr-agent|wwtype)|' .
+        'w(?:asalive|atchmouse|eb(?:-monitoring|bot|masteraid|money|pros|thumbnail)|hatweb|ikiapiary|in(?:http|inet)|maid\.com|pbot/1\.|sr-agent|wwtype)|' .
         'xenu|xovi|' .
         'zibber|zurichfinancialservices~',
         $UANoSpace
     ) || preg_match(
         '~^Mozilla/5\.0( [A-Za-z]{2,5}/0\..)?$~',
         $this->BlockInfo['UA']
-    ), 'Unauthorised'); // 2023.09.15 mod 2024.04.11
+    ), 'Unauthorised'); // 2023.09.15 mod 2024.04.12
 
     $this->trigger(preg_match(
         '~^(?:bot|java|msie|windows-live-social-object-extractor)|\\((?:java|\w:\d{2,})~',

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The auxiliary rules view mode page (last modified: 2024.03.18).
+ * This file: The auxiliary rules view mode page (last modified: 2024.04.11).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -188,14 +188,14 @@ if (!$this->FE['ASYNC']) {
     $this->FE['Priority_Aux'] = sprintf(
         '%2$s%1$s%8$s%1$s(%9$s🔄%3$s🔄%4$s🔄%5$s🔄%6$s)%1$s%7$s',
         $this->L10N->Directionality !== 'rtl' ? '➡' : '⬅',
-        $this->L10N->getString('label.aux.actWhl'),
-        $this->L10N->getString('label.aux.actGrl'),
-        $this->L10N->getString('label.aux.actBlk'),
-        $this->L10N->getString('label.aux.actByp'),
-        $this->L10N->getString('label.aux.actLog'),
-        $this->L10N->getString('label.aux.actRdr'),
-        $this->L10N->getString('label.aux.actRun') . '…',
-        $this->L10N->getString('label.aux.actPro')
+        $this->L10N->getString('label.aux.whitelist the request'),
+        $this->L10N->getString('label.aux.greylist the request'),
+        $this->L10N->getString('label.aux.block the request'),
+        $this->L10N->getString('label.aux.bypass the request'),
+        $this->L10N->getString('label.aux.don_t log the request'),
+        $this->L10N->getString('label.aux.redirect the request (without blocking it)'),
+        $this->L10N->getString('label.aux.run a file to handle the request'),
+        $this->L10N->getString('label.aux.profile the request')
     );
 
     /** Priority information about status codes. */

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bosnian language data for the front-end (last modified: 2024.04.05).
+# This file: Bosnian language data for the front-end (last modified: 2024.04.12).
 ##/
 
 Abuse category:
@@ -42,7 +42,7 @@ Extended Description:
  Bad TLDs blocker module: "Blokira hostove koji pripadaju TLD-ovima koje često koriste spameri, hakeri, i drugi podli entiteti."
  Bad hosts blocker module: "Blokira hostove koje često koriste spameri, hakeri, i drugi podli entiteti."
  Bot user agents module: "Blokira korisničke agente povezane s neželjenim botovima i zlobnim aktivnostima."
- Bypasses: "Zadane datoteke zaobilaženja potpisa koje se obično nalaze u glavnom paketu."
+ Bypasses: "Datoteke za bypassi o zadanom potpisu koji su obično uključeni u glavni paket."
  Chart.js: "Omogućava generiranje krofnih grafikona na front-end.<br />{{Links.Chart.js}} je dostupan preko {{Links.MIT}} licence."
  Cookie scanner module: "Pruža ograničenu zaštitu od opasnih kolačića."
  HTTP version checker module: "Omogućava blokiranje određenih protokola i HTTP verzija kroz CIDRAM konfiguraciju."
@@ -62,6 +62,37 @@ Extended Description:
  Project Honeypot module: "Blokira zahtjeve sa IP adresa navedenih na Project Honeypot."
  Protocol blocker module: "Pruža mogućnost blokiranja specifičnih protokola zahtjeva putem konfiguracije (npr. HTTP/0.9, HTTP/1.1, SPDY/3.0, itd). Bilješka: Neće imati nikakvog efekta na one web stranice koje usmjeravaju putem servisa koji prepisuju zahtjeve da svi koriste potpuno isti protokol, kao što je Cloudflare."
  Referrer spam module: "Blokiranje zasnovano na neželjenoj e-pošti preporuke generalno neće pružiti nikakvu značajnu sigurnosnu prednost, ali u nekim slučajevima može biti korisno za neke korisnike, za prikupljanje više informacija o zahtjevima i mogućnost prijaviti."
+ Stop Forum Spam module: "IP adresama koje navodi SFS biće onemogućen pristup stranicama za prijavu i registraciju."
+ Tor blocker module: "Zabranjuje pristup iz Tor izlaznih čvorova putem DNSEL pretraživanja (IPv4 i IPv6 oba podržana)."
+Name:
+ AbuseIPDB module: "AbuseIPDB modul."
+ BGPView module: "BGPView modul."
+ BOBUAM: "Modul za korisničke agente botova i pretraživača (BOBUAM)."
+ Bad TLDs blocker module: "Modul za blokiranje loših TLD-ova."
+ Bad hosts blocker module: "Modul za blokiranje loših hostova."
+ Bot user agents module: "Modul za bot korisničke agente."
+ BunnyCDN compatibility module: "Modul za BunnyCDN kompatibilnost."
+ Bypasses: "Bypassi za zadane potpise."
+ Cookie scanner module: "Neobavezna modul skenera kolačića."
+ HTTP version checker module: "Modul za provjeru HTTP verzije."
+ IP-API module: "IP-API modul."
+ IPv4: "IPv4 (usluge oblaka i hostinga)."
+ IPv4-Bogons: "IPv4 (bogoni)."
+ IPv4-ISPs: "IPv4 (ISP-ovi skloni slanju neželjene pošte)."
+ IPv4-Nonblocking: "IPv4 potpisi koji ne blokiraju."
+ IPv4-Other: "IPv4 (proksija, VPN-a, itd)."
+ IPv6: "IPv6 (usluge oblaka i hostinga)."
+ IPv6-Bogons: "IPv6 (bogoni)."
+ IPv6-ISPs: "IPv6 (ISP-ovi skloni slanju neželjene pošte)."
+ IPv6-Nonblocking: "IPv6 potpisi koji ne blokiraju."
+ IPv6-Other: "IPv6 (proksija, VPN-a, itd)."
+ Optional security extras module: "Opcijski sigurnosni dodaci modul."
+ Project Honeypot module: "Project Honeypot modul."
+ Protocol blocker module: "Modul za blokiranje protokola."
+ Referrer spam module: "Modul za spam preporuke."
+ Stop Forum Spam module: "Stop Forum Spam modul."
+ Tor blocker module: "Tor bloker modul."
+bobuam_hint_default_value: "Kada se postavi na 0, modul će koristiti trenutno preporučenu vrijednost."
 config:
  phpmailer: "Konfiguracija za PHPMailer (koristi se za dvofaktorsku autentifikaciju)."
  phpmailer_add_reply_to_address: "Adresa za odgovor koju treba navesti prilikom slanja e-pošte putem SMTP-a."

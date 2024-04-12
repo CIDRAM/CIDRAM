@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used for auxiliary rules (last modified: 2024.04.04).
+ * This file: Methods used for auxiliary rules (last modified: 2024.04.11).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -665,20 +665,20 @@ trait AuxiliaryRules
         );
 
         /** Populate methods. */
-        $this->FE['optMtdStr'] = sprintf($this->L10N->getString('label.aux.Use %s to test the conditions'), $this->L10N->getString('label.aux.mtdStr'));
-        $this->FE['optMtdReg'] = sprintf($this->L10N->getString('label.aux.Use %s to test the conditions'), $this->L10N->getString('label.aux.mtdReg'));
-        $this->FE['optMtdWin'] = sprintf($this->L10N->getString('label.aux.Use %s to test the conditions'), $this->L10N->getString('label.aux.mtdWin'));
-        $this->FE['optMtdDMA'] = $this->L10N->getString('label.aux.mtdDMA');
+        $this->FE['optMtdStr'] = $this->L10N->getString('label.aux.Use direct string comparison to test the conditions');
+        $this->FE['optMtdReg'] = $this->L10N->getString('label.aux.Use regular expressions to test the conditions');
+        $this->FE['optMtdWin'] = $this->L10N->getString('label.aux.Use Windows-style wildcards to test the conditions');
+        $this->FE['optMtdDMA'] = $this->L10N->getString('label.aux.Detect the method for testing the conditions automatically');
 
         /** Populate actions. */
-        $this->FE['optActWhl'] = sprintf($this->L10N->getString('label.aux.If the following conditions are met, %s the request'), $this->L10N->getString('label.aux.actWhl'));
-        $this->FE['optActGrl'] = sprintf($this->L10N->getString('label.aux.If the following conditions are met, %s the request'), $this->L10N->getString('label.aux.actGrl'));
-        $this->FE['optActBlk'] = sprintf($this->L10N->getString('label.aux.If the following conditions are met, %s the request'), $this->L10N->getString('label.aux.actBlk'));
-        $this->FE['optActByp'] = sprintf($this->L10N->getString('label.aux.If the following conditions are met, %s the request'), $this->L10N->getString('label.aux.actByp'));
-        $this->FE['optActLog'] = sprintf($this->L10N->getString('label.aux.If the following conditions are met, %s the request'), $this->L10N->getString('label.aux.actLog'));
-        $this->FE['optActRdr'] = sprintf($this->L10N->getString('label.aux.If the following conditions are met, %s the request'), $this->L10N->getString('label.aux.actRdr'));
-        $this->FE['optActRun'] = sprintf($this->L10N->getString('label.aux.If the following conditions are met, %s the request'), $this->L10N->getString('label.aux.actRun'));
-        $this->FE['optActPro'] = sprintf($this->L10N->getString('label.aux.If the following conditions are met, %s the request'), $this->L10N->getString('label.aux.actPro'));
+        $this->FE['optActWhl'] = sprintf($this->L10N->getString('label.aux.If the following conditions are met, %s'), $this->L10N->getString('label.aux.whitelist the request'));
+        $this->FE['optActGrl'] = sprintf($this->L10N->getString('label.aux.If the following conditions are met, %s'), $this->L10N->getString('label.aux.greylist the request'));
+        $this->FE['optActBlk'] = sprintf($this->L10N->getString('label.aux.If the following conditions are met, %s'), $this->L10N->getString('label.aux.block the request'));
+        $this->FE['optActByp'] = sprintf($this->L10N->getString('label.aux.If the following conditions are met, %s'), $this->L10N->getString('label.aux.bypass the request'));
+        $this->FE['optActLog'] = sprintf($this->L10N->getString('label.aux.If the following conditions are met, %s'), $this->L10N->getString('label.aux.don_t log the request'));
+        $this->FE['optActRdr'] = sprintf($this->L10N->getString('label.aux.If the following conditions are met, %s'), $this->L10N->getString('label.aux.redirect the request (without blocking it)'));
+        $this->FE['optActRun'] = sprintf($this->L10N->getString('label.aux.If the following conditions are met, %s'), $this->L10N->getString('label.aux.run a file to handle the request'));
+        $this->FE['optActPro'] = sprintf($this->L10N->getString('label.aux.If the following conditions are met, %s'), $this->L10N->getString('label.aux.profile the request'));
 
         /** Populate sources. */
         $this->FE['conSources'] = $this->generateOptions($this->CIDRAM['Provide']['Auxiliary Rules']['Sources']);

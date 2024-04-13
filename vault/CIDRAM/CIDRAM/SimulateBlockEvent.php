@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used to simulate block events (last modified: 2023.12.21).
+ * This file: Methods used to simulate block events (last modified: 2024.04.13).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -109,13 +109,34 @@ trait SimulateBlockEvent
         /** Instantiate report orchestrator (used by some modules). */
         $this->Reporter = new Reporter($this->Events);
 
+        /** Ban check (will split to its own stage for v4; e.g., 'BanCheck'; keeping as 'Tracking' for now to prevent BC breaks between minor/patch releases). */
+        if ($Addr !== '') {
+            $this->Stage = 'Tracking';
+            $DoBan = false;
+            if ($this->BlockInfo['Infractions'] >= $this->Configuration['signatures']['infraction_limit']) {
+                $DoBan = true;
+            } elseif ($Addr !== $this->BlockInfo['IPAddrResolved']) {
+                $Try = $this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddrResolved']] ?? $this->Cache->getEntry('Tracking-' . $this->BlockInfo['IPAddrResolved']);
+                if ($Try !== false && $Try >= $this->Configuration['signatures']['infraction_limit']) {
+                    $DoBan = true;
+                }
+            }
+            if ($DoBan) {
+                $this->CIDRAM['Banned'] = true;
+                $this->BlockInfo['ReasonMessage'] = $this->L10N->getString('ReasonMessage_Banned');
+                $this->BlockInfo['WhyReason'] = $this->L10N->getString('Short_Banned');
+                $this->BlockInfo['SignatureCount']++;
+            }
+            unset($DoBan);
+            $this->Stage = '';
+        }
+
         if ($Tests && $Addr !== '') {
             $this->Stage = 'Tests';
-
-            /** Catch run errors. */
             $this->initialiseErrorHandler();
+            $Before = $this->BlockInfo['SignatureCount'];
 
-            /** Standard IP check. */
+            /** Execute signature files tests. */
             try {
                 $this->CIDRAM['Caught'] = false;
                 $this->CIDRAM['TestResults'] = $this->runTests($Addr, true);
@@ -123,7 +144,7 @@ trait SimulateBlockEvent
                 $this->CIDRAM['Caught'] = true;
             }
 
-            /** Resolved IP check. */
+            /** Execute for resolved IP address if necessary. */
             if ($this->BlockInfo['IPAddrResolved']) {
                 if (!empty($this->CIDRAM['ThisIP']['IPAddress'])) {
                     $this->CIDRAM['ThisIP']['IPAddress'] .= ' (' . $this->BlockInfo['IPAddrResolved'] . ')';
@@ -135,30 +156,12 @@ trait SimulateBlockEvent
                 }
             }
 
-            /** Prepare run errors. */
+            if (isset($this->Stages['Tests:Tracking']) && $this->BlockInfo['SignatureCount'] !== $Before) {
+                $this->BlockInfo['Infractions'] += $this->BlockInfo['SignatureCount'] - $Before;
+            }
             $this->CIDRAM['RunErrors'] = $this->CIDRAM['Errors'];
             $this->restoreErrorHandler();
-
-            if (!$this->CIDRAM['Caught']) {
-                $DoBan = false;
-                $Try = $this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']] ?? $this->Cache->getEntry('Tracking-' . $this->BlockInfo['IPAddr']);
-                if ($Try !== false && $Try >= $this->Configuration['signatures']['infraction_limit']) {
-                    $DoBan = true;
-                }
-                if (!$DoBan && $this->BlockInfo['IPAddr'] !== $this->BlockInfo['IPAddrResolved']) {
-                    $Try = $this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']] ?? $this->Cache->getEntry('Tracking-' . $this->BlockInfo['IPAddr']);
-                    if ($Try !== false && $Try >= $this->Configuration['signatures']['infraction_limit']) {
-                        $DoBan = true;
-                    }
-                }
-                if ($DoBan) {
-                    $this->CIDRAM['Banned'] = true;
-                }
-            }
-        }
-
-        if (isset($this->Stages['Tests:Tracking']) && $this->BlockInfo['SignatureCount'] > 0) {
-            $this->BlockInfo['Infractions'] += $this->BlockInfo['SignatureCount'];
+            $this->Stage = '';
         }
 
         /** Perform forced hostname lookup if this has been enabled. */
@@ -167,7 +170,7 @@ trait SimulateBlockEvent
         }
 
         /** Execute modules, if any have been enabled. */
-        if ($Modules && $this->Configuration['components']['modules'] && empty($this->CIDRAM['Whitelisted'])) {
+        if ($Modules && $this->Configuration['components']['modules'] !== '' && empty($this->CIDRAM['Whitelisted'])) {
             $this->Stage = 'Modules';
             if (!isset($this->CIDRAM['ModuleResCache'])) {
                 $this->CIDRAM['ModuleResCache'] = [];

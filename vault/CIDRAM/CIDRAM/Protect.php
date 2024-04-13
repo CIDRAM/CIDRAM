@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2023.12.12).
+ * This file: Protect traits (last modified: 2024.04.13).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -130,11 +130,33 @@ trait Protect
         /** Instantiate report orchestrator (used by some modules). */
         $this->Reporter = new Reporter($this->Events);
 
-        /** The normal blocking procedures should occur. */
+        /** Ban check (will split to its own stage for v4; e.g., 'BanCheck'; keeping as 'Tracking' for now to prevent BC breaks between minor/patch releases). */
+        if (isset($this->Stages['Tracking:Enable'])) {
+            $this->Stage = 'Tracking';
+            $DoBan = false;
+            if ($AtRunTimeInfractions >= $this->Configuration['signatures']['infraction_limit']) {
+                $DoBan = true;
+            } elseif ($this->BlockInfo['IPAddr'] !== $this->BlockInfo['IPAddrResolved']) {
+                $Try = $this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddrResolved']] ?? $this->Cache->getEntry('Tracking-' . $this->BlockInfo['IPAddrResolved']);
+                if ($Try !== false && $Try >= $this->Configuration['signatures']['infraction_limit']) {
+                    $DoBan = true;
+                }
+            }
+            if ($DoBan) {
+                $this->CIDRAM['Banned'] = true;
+                $this->BlockInfo['ReasonMessage'] = $this->L10N->getString('ReasonMessage_Banned');
+                $this->BlockInfo['WhyReason'] = $this->L10N->getString('Short_Banned');
+                $this->BlockInfo['SignatureCount']++;
+            }
+            unset($DoBan);
+            $this->Stage = '';
+        }
+
         if (isset($this->Stages['Tests:Enable'])) {
             $this->Stage = 'Tests';
+            $Before = $this->BlockInfo['SignatureCount'];
 
-            /** Run all IPv4/IPv6 tests. */
+            /** Execute signature files tests. */
             try {
                 $this->CIDRAM['TestResults'] = $this->runTests($this->BlockInfo['IPAddr'], true);
             } catch (\Exception $e) {
@@ -142,7 +164,7 @@ trait Protect
                 die($e->getMessage());
             }
 
-            /** Run all IPv4/IPv6 tests for resolved IP address if necessary. */
+            /** Execute for resolved IP address if necessary. */
             if ($this->BlockInfo['IPAddrResolved'] && $this->CIDRAM['TestResults'] && empty($this->CIDRAM['Whitelisted'])) {
                 try {
                     $this->CIDRAM['TestResults'] = $this->runTests($this->BlockInfo['IPAddrResolved'], true);
@@ -152,9 +174,7 @@ trait Protect
                 }
             }
 
-            /**
-             * If all tests fail, report an invalid IP address.
-             */
+            /** If all tests fail, report an invalid IP address. */
             if (!$this->CIDRAM['TestResults']) {
                 $this->BlockInfo['ReasonMessage'] = $this->L10N->getString('ReasonMessage_BadIP');
                 $this->BlockInfo['WhyReason'] = $this->L10N->getString('Short_BadIP');
@@ -165,35 +185,10 @@ trait Protect
                 }
             }
 
-            /**
-             * Check whether we're tracking the IP due to previous instances of bad
-             * behaviour.
-             */
-            elseif (isset($this->Stages['Tracking:Enable'])) {
-                $this->Stage = 'Tracking';
-                $DoBan = false;
-                $Try = $this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']] ?? $this->Cache->getEntry('Tracking-' . $this->BlockInfo['IPAddr']);
-                if ($Try !== false && $Try >= $this->Configuration['signatures']['infraction_limit']) {
-                    $DoBan = true;
-                }
-                if ($this->BlockInfo['IPAddr'] !== $this->BlockInfo['IPAddrResolved']) {
-                    $Try = $this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']] ?? $this->Cache->getEntry('Tracking-' . $this->BlockInfo['IPAddr']);
-                    if ($Try !== false && $Try >= $this->Configuration['signatures']['infraction_limit']) {
-                        $DoBan = true;
-                    }
-                }
-                if ($DoBan) {
-                    $this->CIDRAM['Banned'] = true;
-                    $this->BlockInfo['ReasonMessage'] = $this->L10N->getString('ReasonMessage_Banned');
-                    $this->BlockInfo['WhyReason'] = $this->L10N->getString('Short_Banned');
-                    $this->BlockInfo['SignatureCount']++;
-                }
+            if (isset($this->Stages['Tests:Tracking']) && $this->BlockInfo['SignatureCount'] !== $Before) {
+                $this->BlockInfo['Infractions'] += $this->BlockInfo['SignatureCount'] - $Before;
             }
             $this->Stage = '';
-        }
-
-        if (isset($this->Stages['Tests:Tracking']) && $this->BlockInfo['SignatureCount'] > 0) {
-            $this->BlockInfo['Infractions'] += $this->BlockInfo['SignatureCount'];
         }
 
         /** Perform forced hostname lookup if this has been enabled. */
@@ -202,7 +197,7 @@ trait Protect
         }
 
         /** Execute modules, if any have been enabled. */
-        if (empty($this->CIDRAM['Whitelisted']) && $this->Configuration['components']['modules'] && isset($this->Stages['Modules:Enable'])) {
+        if (empty($this->CIDRAM['Whitelisted']) && $this->Configuration['components']['modules'] !== '' && isset($this->Stages['Modules:Enable'])) {
             $this->Stage = 'Modules';
             if (!isset($this->CIDRAM['ModuleResCache'])) {
                 $this->CIDRAM['ModuleResCache'] = [];
@@ -269,8 +264,8 @@ trait Protect
             if (isset($this->Stages['Aux:Tracking']) && $this->BlockInfo['SignatureCount'] !== $Before) {
                 $this->BlockInfo['Infractions'] += $this->BlockInfo['SignatureCount'] - $Before;
             }
-            unset($Before);
         }
+        unset($Before);
 
         /** Process tracking information for the inbound IP. */
         if (!empty($this->CIDRAM['TestResults']) && (
@@ -300,15 +295,11 @@ trait Protect
                     $TrackCount *= 1000;
                     if ($this->CIDRAM['Banned'] && $TrackCount >= 2000) {
                         $TrackCount -= 1000;
-                        $PreventAmplification = true;
                     }
                 } elseif ($this->CIDRAM['Tracking options override'] === 'default') {
                     $TrackTime = $this->Configuration['signatures']['default_tracktime']->getAsSeconds();
                     $TrackCount = 1;
                 }
-            }
-            if (!isset($PreventAmplification) && $this->CIDRAM['Banned'] && $TrackCount >= 2) {
-                $TrackCount -= 1;
             }
 
             if (isset($this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']])) {

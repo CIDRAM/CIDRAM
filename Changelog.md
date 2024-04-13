@@ -382,3 +382,7 @@
 [2024.02.20; Maikuolan]: The internal AbuseIPDB reporting page now includes a field to specify the exact time of attack for reports.
 
 [2024.04.04; Bug-fix; Maikuolan]: Removed the minimum parameter from the input fields for the start and expiry dates at the auxiliary rules page, as it inteferred with a user's ability to modify any auxiliary rules when such a field preceded the current date (#572).
+
+### v3.6.0
+
+[2024.04.13; Bug-fix; Maikuolan]: The ban check at the beginning of the execution chain would only occur if signature file checks were enabled and the inbound IP address confirmed to be valid. As such, if an IP address had sufficient infractions that it should be banned, but signature file tests were disabled, the IP address wouldn't be treated as banned. Such guarding was useful in the past, back before individual stages of the execution chain could be enabled/disabled via the configuration, but due to various changes made to the codebase since that time, as well as now posing a bug, isn't particularly useful anymore. As such, the ban check has been separated out and pushed to the top of the execution chain, thus fixing the bug. (The ban check currently shares configuration checkboxes with IP tracking in order to avoid BC breaks between minor/patch releases, but will get its own configuration checkboxes with v4). Possibly related to #576.

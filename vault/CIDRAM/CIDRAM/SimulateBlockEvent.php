@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used to simulate block events (last modified: 2024.04.13).
+ * This file: Methods used to simulate block events (last modified: 2024.04.14).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -30,6 +30,37 @@ trait SimulateBlockEvent
     public function simulateBlockEvent(string $Addr, bool $Tests = true, bool $Modules = false, bool $SEV = false, bool $SMV = false, bool $OV = false, bool $Aux = false): void
     {
         $this->Stage = '';
+        $ConfiguredStages = $this->Stages;
+        if ($Tests) {
+            $this->Stages['Tests:Enable'] = true;
+        } else {
+            unset($this->Stages['Tests:Enable']);
+        }
+        if ($Modules) {
+            $this->Stages['Modules:Enable'] = true;
+        } else {
+            unset($this->Stages['Modules:Enable']);
+        }
+        if ($SEV) {
+            $this->Stages['SearchEngineVerification:Enable'] = true;
+        } else {
+            unset($this->Stages['SearchEngineVerification:Enable']);
+        }
+        if ($SMV) {
+            $this->Stages['SocialMediaVerification:Enable'] = true;
+        } else {
+            unset($this->Stages['SocialMediaVerification:Enable']);
+        }
+        if ($OV) {
+            $this->Stages['OtherVerification:Enable'] = true;
+        } else {
+            unset($this->Stages['OtherVerification:Enable']);
+        }
+        if ($Aux) {
+            $this->Stages['Aux:Enable'] = true;
+        } else {
+            unset($this->Stages['Aux:Enable']);
+        }
 
         /** Reset bypass flags (needed to prevent falsing due to search engine verification). */
         $this->resetBypassFlags();
@@ -243,6 +274,9 @@ trait SimulateBlockEvent
             $this->CIDRAM['AuxErrors'] = $this->CIDRAM['Errors'];
             $this->restoreErrorHandler();
         }
+
+        $this->Stages = $ConfiguredStages;
+        unset($ConfiguredStages);
 
         /**
          * Destroying the reporter (we won't process reports in this case, because we're only simulating block events,

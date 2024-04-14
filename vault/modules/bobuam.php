@@ -22,7 +22,7 @@
  * William "Bill" Minozzi.
  * @link https://www.stopbadbots.com/
  *
- * This file: Bot Or Browser User Agent Module (last modified: 2023.12.15).
+ * This file: Bot Or Browser User Agent Module (last modified: 2024.04.14).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -151,7 +151,10 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $this->L10N->getString('bobuam_outdated_short'),
             $this->L10N->getString($this->Configuration['bobuam']['reason_browser']) ?: $this->Configuration['bobuam']['reason_browser'] ?: $this->L10N->getString('denied')
         ];
-        if (preg_match('%(?:^.*(?<!googlebot\.com|google\.com|search\.msn\.com)$|^.*(?<=proxy))%', $this->CIDRAM['Hostname'])) {
+        if (
+            preg_match('%(?:^.*(?<!googlebot\.com|google\.com|search\.msn\.com)$|^.*(?<=proxy))%', $this->CIDRAM['Hostname']) &&
+            !(preg_match('%(?:msn|bing)bot|bingpreview|bing\.com%', $this->BlockInfo['UALC']) && ($this->hasProfile('Bypass flagged') || !isset($this->Stages['Tests:Enable'])))
+        ) {
             $EOLChrome = $this->Configuration['bobuam']['chrome'] ?: (int)$this->CIDRAM['BOBUAM Token']['Chrome'];
             $EOLFirefox = $this->Configuration['bobuam']['firefox'] ?: (int)$this->CIDRAM['BOBUAM Token']['Firefox'];
             $EOLFirefoxESR = $this->Configuration['bobuam']['firefox_esr'] ?: (int)$this->CIDRAM['BOBUAM Token']['Firefox ESR'];

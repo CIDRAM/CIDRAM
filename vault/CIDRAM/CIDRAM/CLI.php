@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CIDRAM CLI mode (last modified: 2023.10.21).
+ * This file: CIDRAM CLI mode (last modified: 2024.04.14).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -278,10 +278,9 @@ trait CLI
                     $this->simulateBlockEvent($ThisItem, ...$Results);
                     if (
                         $this->CIDRAM['Caught'] ||
-                        empty($this->CIDRAM['LastTestIP']) ||
-                        empty($this->CIDRAM['TestResults']) ||
-                        !empty($this->CIDRAM['ModuleErrors']) ||
-                        !empty($this->CIDRAM['AuxErrors'])
+                        ($Results['Tests'] && (!$this->CIDRAM['TestResults'] || $this->CIDRAM['LastTestIP'] === 0)) ||
+                        ($Results['Modules'] && !empty($this->CIDRAM['ModuleErrors'])) ||
+                        ($Results['Aux'] && !empty($this->CIDRAM['AuxErrors']))
                     ) {
                         $Results['YesNo'] = $this->L10N->getString('response.Error');
                         if (!empty($this->CIDRAM['AuxErrors'])) {

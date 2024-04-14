@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: AbuseIPDB module (last modified: 2024.02.17).
+ * This file: AbuseIPDB module (last modified: 2024.04.14).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -131,7 +131,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         (
             !(
                 (isset($this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']]['usageType']) && $this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']]['usageType'] === 'Search Engine Spider') ||
-                $this->hasProfile(['Search Engine', 'Search Engine Spider']) ||
+                $this->hasProfile(['Search Engine', 'Search Engine Spider', 'Search engine']) ||
                 (isset($this->BlockInfo['Verified']) && $this->BlockInfo['Verified'] !== '')
             ) &&
             $this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']]['isWhitelisted'] === false &&

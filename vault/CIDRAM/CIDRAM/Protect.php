@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2024.04.13).
+ * This file: Protect traits (last modified: 2024.04.14).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -428,8 +428,8 @@ trait Protect
                         ) && !empty($this->Configuration['recaptcha']['enabled'])
                     )
                 ) &&
-                (!$this->hasProfile(['Blocked Negative']) || !isset($this->VAdjust['Negatives:ReCaptcha'])) &&
-                (!$this->hasProfile(['Blocked Non-Verified']) || !isset($this->VAdjust['NonVerified:ReCaptcha']))
+                (!$this->hasProfile('Blocked Negative') || !isset($this->VAdjust['Negatives:ReCaptcha'])) &&
+                (!$this->hasProfile('Blocked Non-Verified') || !isset($this->VAdjust['NonVerified:ReCaptcha']))
             ) {
                 /** Execute the ReCaptcha class. */
                 $CaptchaDone = new ReCaptcha($this);
@@ -450,8 +450,8 @@ trait Protect
                         ) && !empty($this->Configuration['hcaptcha']['enabled'])
                     )
                 ) &&
-                (!$this->hasProfile(['Blocked Negative']) || !isset($this->VAdjust['Negatives:HCaptcha'])) &&
-                (!$this->hasProfile(['Blocked Non-Verified']) || !isset($this->VAdjust['NonVerified:HCaptcha']))
+                (!$this->hasProfile('Blocked Negative') || !isset($this->VAdjust['Negatives:HCaptcha'])) &&
+                (!$this->hasProfile('Blocked Non-Verified') || !isset($this->VAdjust['NonVerified:HCaptcha']))
             ) {
                 /** Execute the HCaptcha class. */
                 $CaptchaDone = new HCaptcha($this);

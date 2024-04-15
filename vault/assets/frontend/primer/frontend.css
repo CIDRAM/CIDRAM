@@ -100,8 +100,9 @@ li>span.comCat:first-child{cursor:pointer}
 .comCat::before{content:"➖";display:inline-block;margin-{FE_Align_Reverse}:6px;line-height:100%;cursor:pointer}
 .caret-down::before{animation:forRotate .2s linear 1;animation-fill-mode:both}
 .caret-up::before{animation:revRotate .2s linear 1;animation-fill-mode:both}
-.comSub{overflow:hidden;transform:scaleY(0);transform-origin:top;opacity:0;max-height:0;transition:all .5s ease-out}
+.suggestsInactive,.comSub{overflow:hidden;transform:scaleY(0);transform-origin:top;opacity:0;max-height:0;transition:all .5s ease-out}
 .active{transform:scaleY(1);transform-origin:top;opacity:1;max-height:99999px;transition:all .3s ease-in}
+.suggestsActive{transform:scaleY(1);font-style:italic;font-weight:700;transform-origin:top;opacity:1;max-height:64px;transition:all .3s ease-in}
 blockquote.comSub{margin:-2px 0 0 0;padding:0 0 0 0}
 .iCntr,.iLabl,.iCntn{display:block}
 .iCntr{margin:16px 0 16px 0}

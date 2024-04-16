@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2024.04.12).
+# This file: Japanese language data for the front-end (last modified: 2024.04.16).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -72,7 +72,7 @@ Extended Description:
  IPv6-Nonblocking: *ExtDesNonblocking
  IPv6-Other: *ExtDesOther
  Optional security extras module: "リクエストでよく使用される攻撃経路に対して、いくつかの制限された保護を提供します。"
- PHPMailer: "電子Ｅメールの送信を含む機能の使用に必要です。<br />「{{Links.PHPMailer.PHPMailer}}」は、「{{Links.PHPMailer.License}}」ライセンスを介して利用可能です。"
+ PHPMailer: "Ｅメールの送信を含む機能の使用に必要です。<br />「{{Links.PHPMailer.PHPMailer}}」は、「{{Links.PHPMailer.License}}」ライセンスを介して利用可能です。"
  Project Honeypot module: "Project HoneypotにリストされているＩＰからの要求をブロックします。"
  Protocol blocker module: "コンフィギュレーションを介して特定の要求プロトコルをブロックする機能を提供します（例：HTTP/0.9、HTTP/1.1、SPDY/3.0、など）。​注：すべての要求をまったく同じプロトコルを使用するように書き換えるサービスを（例:Cloudflare）介してルーティングするウェブサイトには影響しません。"
  Referrer spam module: "リファラー・スパムに基づくブロックは、通常、有意義なセキュリティ上の利点を提供しません、ただし、場合によっては、リクエストに関する詳細情報の収集、およびレポートの作成に役立つ可能性があります。"
@@ -189,8 +189,10 @@ config:
  general_default_dns: "ホスト名検索に使用する、ＤＮＳ（ドメイン・ネーム・システム）サーバーのリスト。​注意：あなたが何をしているのか、分からない限り、これを変更しないでください。"
  general_default_timeout: "外部リクエストに使用するデフォルトのタイムアウト？ Default/デフォルルト = １２秒。"
  general_disabled_channels: "これは、要求を送信するときにCIDRAMが特定のチャネルを使用しないようにするために使用できます​（例えば、更新時、コンポーネント・メタデータの取得時、など）。"
- general_emailaddr: "ここにＥメールアドレスを入力して、ユーザーがブロックされているときにユーザーに送信することができます。​これはサポートと支援に使用できます（誤ってブロックされた場合、等）。​警告：​ここに入力された電子Ｅメールアドレスは、おそらくスパムロボットによって取得されます。​ここで提供される電子Ｅメールアドレスは、すべて使い捨てにすることを強く推奨します（例えば、プライマリ個人アドレスまたはビジネスアドレスを使用しない、等）。"
- general_emailaddr_display_style: "ユーザーに電子Ｅメール・アドレスを提示することをどのように希望しますか？"
+ general_email_notification_address: "CIDRAMからＥメールで通知を受け取ることを選択した場合、例えば、特定の補助ルールがトリガーされたとき、ここで、これらの通知の受信者アドレスを指定できます。"
+ general_email_notification_name: "CIDRAMからＥメールで通知を受け取ることを選択した場合、例えば、特定の補助ルールがトリガーされたとき、ここで、これらの通知の受信者名を指定できます。"
+ general_emailaddr: "ここにＥメールアドレスを入力して、ユーザーがブロックされているときにユーザーに送信することができます。​これはサポートと支援に使用できます（誤ってブロックされた場合、等）。​警告：​ここに入力されたＥメールアドレスは、おそらくスパムロボットによって取得されます。​ここで提供されるＥメールアドレスは、すべて使い捨てにすることを強く推奨します（例えば、プライマリ個人アドレスまたはビジネスアドレスを使用しない、等）。"
+ general_emailaddr_display_style: "ユーザーにＥメール・アドレスを提示することをどのように希望しますか？"
  general_fields: "ブロック・イベント中のために、フィールドのコントロールです （リクエストがブロックされたとき）。"
  general_force_hostname_lookup: "ホスト名検索を強制しますか？ True = はい。 False = いいえ（Default/デフォルルト）。​ホスト名検索は、通常、「必要に応じて」実行されますが、すべてのリクエストに対して強制することができます。​これは、より詳細な情報をログ・ファイルに提供する手段として有用ですが、パフォーマンスに多少の悪影響を及ぼすこともあります。"
  general_http_response_header_code: "リクエストをブロックするときに、CIDRAMが送信するＨＴＴＰステータス・メッセージはどれですか？"
@@ -240,18 +242,18 @@ config:
  logging_standard_log: "アクセス試行阻止の記録、人間によって読み取り可能。​ファイル名指定するか、無効にしたい場合は空白のままにして下さい。"
  logging_truncate: "ログ・ファイルが一定のサイズに達したら切り詰めますか？​値は、ログ・ファイルが切り捨てられる前に大きくなる可能性があるＢ/ＫＢ/ＭＢ/ＧＢ/ＴＢ単位の最大サイズです。​デフォルト値の０ＫＢは切り捨てを無効にします （ログ・ファイルは無期限に拡張できます）。​注：個々のログ・ファイルに適用されます。​ログ・ファイルのサイズは一括して考慮されません。"
  phpmailer: "PHPMailerの設定（二要素認証に使用されます）。"
- phpmailer_add_reply_to_address: "ＳＭＴＰ経由で電子Ｅメールを送信するときに引用する返信アドレス。"
- phpmailer_add_reply_to_name: "ＳＭＴＰ経由で電子Ｅメールを送信するときに引用する返信名。"
+ phpmailer_add_reply_to_address: "ＳＭＴＰ経由でＥメールを送信するときに引用する返信アドレス。"
+ phpmailer_add_reply_to_name: "ＳＭＴＰ経由でＥメールを送信するときに引用する返信名。"
  phpmailer_event_log: "PHPMailerに関連してすべてのイベントを記録するためのファイル。​ファイル名指定するか、無効にしたい場合は空白のままにして下さい。"
  phpmailer_host: "送信Ｅメールに使用するＳＭＴＰホスト。"
- phpmailer_password: "ＳＭＴＰ経由で電子Ｅメールを送信するときに使用するパスワード。"
+ phpmailer_password: "ＳＭＴＰ経由でＥメールを送信するときに使用するパスワード。"
  phpmailer_port: "送信Ｅメールに使用するポート番号。​Default/デフォルルト = 587。"
- phpmailer_set_from_address: "ＳＭＴＰ経由で電子Ｅメールを送信するときに引用する送信者アドレス。"
- phpmailer_set_from_name: "ＳＭＴＰ経由で電子Ｅメールを送信するときに引用する送信者名。"
- phpmailer_skip_auth_process: "このディレクティブを<code>true</code>に設定すると、PHPMailerはSMTP経由で電子Ｅメールを送信する際に通常発生する認証プロセスをスキップします。​このプロセスをスキップすると、送信ＥメールがＭＩＴＭ攻撃にさらされる可能性があるため、これは避けるべきです。​しかし、PHPMailerがSMTPサーバに接続できない場合、このプロセスが必要な場合があります。"
+ phpmailer_set_from_address: "ＳＭＴＰ経由でＥメールを送信するときに引用する送信者アドレス。"
+ phpmailer_set_from_name: "ＳＭＴＰ経由でＥメールを送信するときに引用する送信者名。"
+ phpmailer_skip_auth_process: "このディレクティブを<code>true</code>に設定すると、PHPMailerはSMTP経由でＥメールを送信する際に通常発生する認証プロセスをスキップします。​このプロセスをスキップすると、送信ＥメールがＭＩＴＭ攻撃にさらされる可能性があるため、これは避けるべきです。​しかし、PHPMailerがSMTPサーバに接続できない場合、このプロセスが必要な場合があります。"
  phpmailer_smtp_auth: "このディレクティブは、ＳＭＴＰセッションを認証するかどうかを決定します（通常はそれをそのまま残すべきです）。"
- phpmailer_smtp_secure: "ＳＭＴＰ経由で電子Ｅメールを送信するときに使用するプロトコル（ＴＬＳまたはＳＳＬ）。"
- phpmailer_username: "ＳＭＴＰ経由で電子Ｅメールを送信するときに使用するユーザー名。"
+ phpmailer_smtp_secure: "ＳＭＴＰ経由でＥメールを送信するときに使用するプロトコル（ＴＬＳまたはＳＳＬ）。"
+ phpmailer_username: "ＳＭＴＰ経由でＥメールを送信するときに使用するユーザー名。"
  projecthoneypot: "Project Honeypotモジュールの設定。"
  projecthoneypot_api_key: *EnterAPIKey
  projecthoneypot_max_age_in_days: "ルックアップを実行するときに考慮されるレポートの最大経過日数。​Default/デフォルルト = 365。"
@@ -623,6 +625,7 @@ label:
  Simple: "シンプル"
  Start date: "開始日"
  Starting from %s: "「%s」から始まります。"
+ Suggestions: "提案"
  Suspicious: "疑わしい"
  System information: "システムインフォメーション："
  Tally: "集計"
@@ -916,7 +919,7 @@ time_seconds_from_now: "今から%s秒"
 time_years_ago: "%s年前"
 time_years_from_now: "今から%s年"
 tip:
- 2FA Sent: "２ＦＡコードを含むＥメールがあなたのＥメール・アドレスに送信されました。​フロントエンドにアクセスするには、このコードを確認してください。​このＥメールを受信しなかった場合は、新しいコードを含む新しい電子Ｅメールを受け取るために、ログアウトして、１０分待ってからもう一度ログインしてください。"
+ 2FA Sent: "２ＦＡコードを含むＥメールがあなたのＥメール・アドレスに送信されました。​フロントエンドにアクセスするには、このコードを確認してください。​このＥメールを受信しなかった場合は、新しいコードを含む新しいＥメールを受け取るために、ログアウトして、１０分待ってからもう一度ログインしてください。"
  Accounts: "アカウント・ページは、CIDRAMフロントエンドにアクセスできるユーザーを制御できます。"
  Aggregator: "アグリゲータを使用すると、最小限の方法でＩＰとＣＩＤＲとネットマスクを表現できます。​集計するデータを入力し、「ＯＫ」を押します。"
  Auxiliary Rules Priority: "優先（最高➡(等しい🔄同等)➡最低）："

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2024.04.12).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2024.04.16).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -189,6 +189,8 @@ config:
  general_default_dns: "DNS服務器列表，​用於主機名查找。​警告：不要修改此除非您知道什麼您做著！"
  general_default_timeout: "用於外部請求的默認超時？ 標準 = 12秒。"
  general_disabled_channels: "這可用於防止CIDRAM在發送請求時使用特定通道（例如，在更新時，在獲取組件元數據時，等等）。"
+ general_email_notification_address: "如果您選擇透過電子郵件接收CIDRAM的通知，例如，當特定的輔助規則被觸發時，您可以在此指定這些通知的收件者位址。"
+ general_email_notification_name: "如果您選擇透過電子郵件接收CIDRAM的通知，例如，當特定的輔助規則被觸發時，您可以在此指定這些通知的收件者姓名。"
  general_emailaddr: "如果您希望，​您可以提供電子郵件地址這裡要給予用戶當他們被阻止，​他們使用作為接觸點為支持和/或幫助在的情況下他們錯誤地阻止。​警告:您提供的任何電子郵件地址，​它肯定會被獲得通過垃圾郵件機器人和鏟運機，​所以，​它強烈推薦如果選擇提供一個電子郵件地址這裡，​您保證它是一次性的和/或不是很重要（換一種說法，​您可能不希望使用您的主電子郵件地址或您的企業電子郵件地址）。"
  general_emailaddr_display_style: "您希望如何將電子郵件地址呈現給用戶？"
  general_fields: "用於阻止事件的字段控件（當請求被阻止時）。"
@@ -617,6 +619,7 @@ label:
  Simple: "簡單"
  Start date: "開始日期"
  Starting from %s: "從『%s』開始。"
+ Suggestions: "建議"
  Suspicious: "可疑的"
  System information: "系統信息："
  Tally: "理貨"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2024.04.12).
+# This file: English language data for the front-end (last modified: 2024.04.16).
 ##/
 
 Abuse category:
@@ -193,6 +193,8 @@ config:
  general_default_dns: "A list of DNS servers to use for hostname lookups. WARNING: Don't change this unless you know what you're doing!"
  general_default_timeout: "Default timeout to use for external requests? Default = 12 seconds."
  general_disabled_channels: "This can be used to prevent CIDRAM from using particular channels when sending requests (e.g., when updating, when fetching component metadata, etc)."
+ general_email_notification_address: "If you've opted to receive notifications from CIDRAM via email, e.g., when specific auxiliary rules are triggered, you can specify the recipient address for those notifications here."
+ general_email_notification_name: "If you've opted to receive notifications from CIDRAM via email, e.g., when specific auxiliary rules are triggered, you can specify the recipient name for those notifications here."
  general_emailaddr: "If you wish, you can supply an email address here to be given to users when they're blocked, for them to use as a point of contact for support and/or assistance for in the event of them being blocked mistakenly or in error. WARNING: Whatever email address you supply here will most certainly be acquired by spambots and scrapers during the course of its being used here, and so, it's strongly recommended that if you choose to supply an email address here, that you ensure that the email address you supply here is a disposable address and/or an address that you don't mind being spammed (in other words, you probably don't want to use your primary personal or primary business email addresses)."
  general_emailaddr_display_style: "How would you prefer the email address to be presented to users?"
  general_fields: "Controls for the fields during block events (when a request is blocked)."
@@ -666,6 +668,7 @@ label:
  Simple: "Simple"
  Start date: "Start date"
  Starting from %s: "Starting from "%s"."
+ Suggestions: "Suggestions"
  Suspicious: "Suspicious"
  System information: "System information:"
  Tally: "Tally"

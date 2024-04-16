@@ -101,7 +101,7 @@
                 </select><input type="button" onclick="javascript:addCondition('')" value="{field.Add more conditions} [1]" class="auto" accesskey="1" />
               </div>
               <div class="iCntn" id="conditions">
-                <div class="flexrow"><select name="conSourceType[]" class="auto" onchange="javascript:inputConstraintsBasedOnSource(this.nextElementSibling.nextElementSibling);">{conSources}</select><select name="conIfOrNot[]" class="auto" onfocus="javascript:inputConstraintsBasedOnSourceFromSource(this);"><option value="If">=</option><option value="Not">≠</option></select><input type="text" name="conSourceValue[]" placeholder="{tip.Specify a value, or leave blank to disregard}" class="flexin" onfocus="javascript:inputConstraintsBasedOnSource(this);" /></div><div class="suggestsInactive s"></div>
+                <div class="flexrow"><select name="conSourceType[]" class="auto" onchange="javascript:getInputSuggestions(this)">{conSources}</select><select name="conIfOrNot[]" class="auto"><option value="If">=</option><option value="Not">≠</option></select><input type="text" name="conSourceValue[]" placeholder="{tip.Specify a value, or leave blank to disregard}" class="flexin" onfocus="javascript:getInputSuggestions(this.previousElementSibling.previousElementSibling)" /></div><div class="suggestsInactive s"></div>
               </div>
             </div>
           </li>

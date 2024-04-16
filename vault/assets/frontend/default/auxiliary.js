@@ -118,7 +118,7 @@ function addCondition(p) {
   document.getElementById(p+'conditions').appendChild(t),
   (t = document.createElement('select')).setAttribute('name', 'conSourceType'+namePart),
   t.setAttribute('class', 'auto'),{conSourcesJS}
-  t.setAttribute('onchange', 'javascript:inputConstraintsBasedOnSource(this.nextElementSibling.nextElementSibling);'),
+  t.setAttribute('onchange', 'javascript:getInputSuggestions(this)'),
   document.getElementById(conId).appendChild(t),
   (t = document.createElement('select')).setAttribute('name', 'conIfOrNot'+namePart),
   t.setAttribute('class', 'auto'),
@@ -135,7 +135,7 @@ function addCondition(p) {
   t.setAttribute('placeholder', '{tip.Specify a value, or leave blank to disregard}'),
   t.setAttribute('class', 'flexin'),
   t.setAttribute('type', 'text'),
-  t.setAttribute('onfocus', 'javascript:inputConstraintsBasedOnSource(this);'),
+  t.setAttribute('onfocus', 'javascript:getInputSuggestions(this.previousElementSibling.previousElementSibling)'),
   document.getElementById(conId).appendChild(t),
   setTimeout(function() {
     document.getElementById(conId).style.opacity = '1'
@@ -190,11 +190,11 @@ function heavenToggle(c) {
 var profileSuggestions = ['Advertiser','Bogon','Commercial','Content Delivery Network','Dedicated','Domestic ISP','Frequent changes','Government','Has WordPress Bypasses','Infrastructure/Transit','Mobile ISP','Multiplay','Restricted/Unidentifiable','Search engine','Temporary','Third-party sourced','Tor endpoints here','University','Usenet','VPNs here','Webhosting','6to4','Amateur Radio','ISATAP','Multicast','Orphaned','Teredo','Blocked Negative','Blocked Non-Verified','Organization','Military','University/College/School','Library','Fixed Line ISP','Data Center/Web Hosting/Transit','Search Engine Spider','Reserved'].map((e)=>'<span style="cursor:pointer" onclick="javascript:this.parentElement.parentElement.previousElementSibling.lastChild.value=\''+e+'\'">'+e+'</span>').join(', ');
 var methodSuggestions = ['GET','POST','HEAD','CONNECT','DELETE','OPTIONS','PATCH','PUT','TRACE'].map((e)=>'<span style="cursor:pointer" onclick="javascript:this.parentElement.parentElement.previousElementSibling.lastChild.value=\''+e+'\'">'+e+'</span>').join(', ');
 
-function inputConstraintsBasedOnSource(e) {
-  if (e.previousElementSibling.previousElementSibling.value=='Profiles') {
+function getInputSuggestions(e) {
+  if (e.value=='Profiles') {
     e.parentElement.nextElementSibling.innerHTML='<small>{label.Suggestions}{pair_separator}'+profileSuggestions+'</small>';
     e.parentElement.nextElementSibling.className='suggestsActive';
-  } else if (e.previousElementSibling.previousElementSibling.value=='Request_Method') {
+  } else if (e.value=='Request_Method') {
     e.parentElement.nextElementSibling.innerHTML='<small>{label.Suggestions}{pair_separator}'+methodSuggestions+'</small>';
     e.parentElement.nextElementSibling.className='suggestsActive';
   } else {

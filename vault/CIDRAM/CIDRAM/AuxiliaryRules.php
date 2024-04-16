@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used for auxiliary rules (last modified: 2024.04.15).
+ * This file: Methods used for auxiliary rules (last modified: 2024.04.16).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -210,9 +210,9 @@ trait AuxiliaryRules
                 if ($ConditionsFrom && is_array($Data[$ConditionsFrom])) {
                     $Iteration = 0;
                     $ConditionFormTemplate = "\n" .
-                        '<div class="flexrow"><select name="conSourceType[%1$s][%2$s]" class="auto" onchange="javascript:inputConstraintsBasedOnSource(this.nextElementSibling.nextElementSibling);">%3$s</select>' .
+                        '<div class="flexrow"><select name="conSourceType[%1$s][%2$s]" class="auto" onchange="javascript:getInputSuggestions(this)">%3$s</select>' .
                         '<select name="conIfOrNot[%1$s][%2$s]" class="auto"><option value="If"%6$s>=</option><option value="Not"%7$s>≠</option></select>' .
-                        '<input type="text" name="conSourceValue[%1$s][%2$s]" placeholder="%4$s" class="flexin" value="%5$s" onfocus="javascript:inputConstraintsBasedOnSource(this);" /></div><div class="suggestsInactive s"></div>';
+                        '<input type="text" name="conSourceValue[%1$s][%2$s]" placeholder="%4$s" class="flexin" value="%5$s" onfocus="javascript:getInputSuggestions(this.previousElementSibling.previousElementSibling)" /></div><div class="suggestsInactive s"></div>';
                     foreach ([['If matches', ' selected', ''], ['But not if matches', '', ' selected']] as $ModeSet) {
                         if (isset($Data[$ConditionsFrom][$ModeSet[0]]) && is_array($Data[$ConditionsFrom][$ModeSet[0]])) {
                             foreach ($Data[$ConditionsFrom][$ModeSet[0]] as $Key => $Values) {

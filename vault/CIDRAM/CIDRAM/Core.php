@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2024.03.21).
+ * This file: The CIDRAM core (last modified: 2024.04.16).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -2508,8 +2508,26 @@ class Core
                 }
 
                 /** Perform action for matching rules requiring all conditions to be met. */
-                if ($Logic === 'All' && $Matched && $this->auxAction($Mode, $Name, $Reason, $Target, $StatusCode, $Webhooks, $Flags, $Run)) {
-                    return;
+                if ($Logic === 'All' && $Matched) {
+                    if (preg_match_all('~\\\\(\d+)~', $Name, $Counts) && isset($Counts[1], $this->CIDRAM['Last aux regex matches'][1])) {
+                        $Counts = array_unique($Counts[1]);
+                        foreach ($Counts as $Iterator) {
+                            if (isset($this->CIDRAM['Last aux regex matches'][$Iterator])) {
+                                $Name = str_replace('\\' . $Iterator, $this->CIDRAM['Last aux regex matches'][$Iterator], $Name);
+                            }
+                        }
+                    }
+                    if (preg_match_all('~\\\\(\d+)~', $Reason, $Counts) && isset($Counts[1], $this->CIDRAM['Last aux regex matches'][1])) {
+                        $Counts = array_unique($Counts[1]);
+                        foreach ($Counts as $Iterator) {
+                            if (isset($this->CIDRAM['Last aux regex matches'][$Iterator])) {
+                                $Reason = str_replace('\\' . $Iterator, $this->CIDRAM['Last aux regex matches'][$Iterator], $Reason);
+                            }
+                        }
+                    }
+                    if ($this->auxAction($Mode, $Name, $Reason, $Target, $StatusCode, $Webhooks, $Flags, $Run)) {
+                        return;
+                    }
                 }
             }
         }

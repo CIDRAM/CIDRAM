@@ -392,3 +392,5 @@
 [2024.04.14; Maikuolan]: The simulateBlockEvent method now temporarily overrides the stages configuration in order to more accurately convey results where affected by signature files, modules, or auxiliary rules using logic which leverages that configuration, reverting it when the test process finishes.
 
 [2024.04.15; New Feature; Maikuolan]: When selecting profiles or request method as a condition's input source at the auxiliary rules page, suggestions for the condition's value will be offered.
+
+[2024.04.16; Bug-fix; Maikuolan]: The auxiliary rules' \1 switch sometimes wouldn't populate correctly for the statistics under certain conditions (#570).

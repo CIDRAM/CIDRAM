@@ -394,3 +394,5 @@
 [2024.04.15; New Feature; Maikuolan]: When selecting profiles or request method as a condition's input source at the auxiliary rules page, suggestions for the condition's value will be offered.
 
 [2024.04.16; Bug-fix; Maikuolan]: The auxiliary rules' \1 switch sometimes wouldn't populate correctly for the statistics under certain conditions (#570).
+
+[2024.04.18; Maikuolan]: Added flexrow for dropdown menus with included input fields for other values at the configuration page.

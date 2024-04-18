@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The configuration page (last modified: 2023.12.29).
+ * This file: The configuration page (last modified: 2024.04.18).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -355,6 +355,9 @@ foreach ($this->CIDRAM['Config Defaults'] as $CatKey => $CatValue) {
                     $ThisDir['DirLangKey'],
                     $ThisDir['Trigger']
                 );
+                if (!empty($DirValue['allow_other'])) {
+                    $ThisDir['FieldOut'] = '<div class="flexrow">' . $ThisDir['FieldOut'];
+                }
             }
             $DirValue['gridH'] = 'gridHB';
             foreach ($DirValue['choices'] as $ChoiceKey => $ChoiceValue) {
@@ -494,7 +497,7 @@ foreach ($this->CIDRAM['Config Defaults'] as $CatKey => $CatValue) {
             } else {
                 $ThisDir['SelectOther'] = !isset($DirValue['choices'][$this->Configuration[$CatKey][$DirKey]]);
                 $ThisDir['FieldOut'] .= empty($DirValue['allow_other']) ? '</select>' : sprintf(
-                    '<option value="Other"%1$s>%2$s</option></select><input type="text"%3$s class="auto" name="%4$s" id="%4$s_field" value="%5$s" />',
+                    '<option value="Other"%1$s>%2$s</option></select><input type="text"%3$s class="flexin" name="%4$s" id="%4$s_field" value="%5$s" /></div>',
                     $ThisDir['SelectOther'] ? ' selected' : '',
                     $this->L10N->getString('label.Other'),
                     $ThisDir['SelectOther'] ? '' : ' style="display:none"',

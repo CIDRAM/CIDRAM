@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2024.02.18).
+ * This file: Optional security extras module (last modified: 2024.04.18).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -110,7 +110,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             'unisibfu|upfile(?:_\\(\d\\))?|uploader_by_cloud7_agath|utchiha(?:_uploader)?|' .
             'vzlateam|' .
             'w0rdpr3ssnew|walker-nva|webshell-[a-z\d]+|widgets-nva|widwsisw|wloymzuk|' .
-            'wp[-_](?:2019|22|(?:admin|content|css(?:/colors)?|includes(?:/ixr|/customize|/pomo)?|js(?:/widgets)?|network)/(?:cong|dropdown|repeater|simple)|conflg|content/plugins/(?:backup-backup/includes/hro|contus-hd-flv-player/uploadvideo|dzs-zoomsounds/savepng|fix/up|wordpresscore/include|wp-file-manager/lib/php/connector\.minimal)|filemanager|setups|sigunq|p)|' .
+            'wp[-_](?:2019|22|(?:admin|content|css(?:/colors)?|includes(?:/ixr|/customize|/pomo)?|js(?:/widgets)?|network)/(?:cong|dropdown|r(?:andom_compat/class_api|equests/class_api|epeater|themes/hello-element/footer)|simple)|conflg|content/plugins/(?:backup-backup/includes/hro|contus-hd-flv-player/uploadvideo|dzs-zoomsounds/savepng|fix/up|wordpresscore/include|wp-file-manager/lib/php/connector\.minimal)|filemanager|setups|sigunq|p)|' .
             'ws[ou](?:yanz)?(?:[\d.]*|[\da-z]{4,})|wwdv|' .
             'x{3,}|xiaom|xichang/x|x+l(?:\d+|eet(?:mailer|-shell)?x?)|xm(?:lrpcs|lrpz|rlpc)|xw|' .
             'yanz|yyobang/mar|' .
@@ -120,7 +120,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $LCNrURI
         ), 'Probing for webshells/backdoors')) {
             $this->Reporter->report([15, 20, 21], ['Caught probing for webshells/backdoors. Host might be compromised.'], $this->BlockInfo['IPAddr']);
-        } // 2023.08.18 mod 2024.02.18
+        } // 2023.08.18 mod 2024.04.18
 
         /** Probing for webshells/backdoors. */
         if ($this->trigger(preg_match(

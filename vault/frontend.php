@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2024.04.04).
+ * This file: Front-end handler (last modified: 2024.04.18).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1455,6 +1455,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                         $CIDRAM['ThisDir']['DirLangKey'],
                         $CIDRAM['ThisDir']['Trigger']
                     );
+                    if (!empty($CIDRAM['DirValue']['allow_other'])) {
+                        $CIDRAM['ThisDir']['FieldOut'] = '<div class="flexrow">' . $CIDRAM['ThisDir']['FieldOut'];
+                    }
                 }
                 $CIDRAM['DirValue']['gridH'] = 'gridHB';
                 foreach ($CIDRAM['DirValue']['choices'] as $CIDRAM['ChoiceKey'] => $CIDRAM['ChoiceValue']) {
@@ -1586,7 +1589,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                 } else {
                     $CIDRAM['ThisDir']['SelectOther'] = !isset($CIDRAM['DirValue']['choices'][$CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']]]);
                     $CIDRAM['ThisDir']['FieldOut'] .= empty($CIDRAM['DirValue']['allow_other']) ? '</select>' : sprintf(
-                        '<option value="Other"%1$s>%2$s</option></select><input type="text"%3$s class="auto" name="%4$s" id="%4$s_field" value="%5$s" />',
+                        '<option value="Other"%1$s>%2$s</option></select><input type="text"%3$s class="flexin" name="%4$s" id="%4$s_field" value="%5$s" /></div>',
                         $CIDRAM['ThisDir']['SelectOther'] ? ' selected' : '',
                         $CIDRAM['L10N']->getString('label_other'),
                         $CIDRAM['ThisDir']['SelectOther'] ? '' : ' style="display:none"',

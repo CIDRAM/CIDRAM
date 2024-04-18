@@ -1,8 +1,8 @@
 # IPv4 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv4_other.dat
 
-# Version: 2024.41.0
-# Last modified: 2024.02.11
+# Version: 2024.107.0
+# Last modified: 2024.04.17
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -1579,13 +1579,29 @@ Tag: Surfshark Ltd
 # ASN 398355 ("Data Ideas llc").
 # Tor provider. Brute-force and webapp attacks, port scans, hacking, and spam
 # detected from here.
-# Stop Forum Spam (SFS) listings: 29,636.
-# Updated: 2023.06.10
+# Stop Forum Spam (SFS) listings: 248.
+# Updated: 2024.04.17
 
+104.234.208.0/23 Deny Proxy
+Origin: CA
+80.240.86.0/24 Deny Proxy
+Origin: GB
+45.146.107.0/24 Deny Proxy
+Origin: SE
+185.193.166.0/24 Deny Proxy
+Origin: TR
+23.26.251.0/24 Deny Proxy
 38.81.163.0/24 Deny Proxy
 38.87.162.0/24 Deny Proxy
+64.112.124.0/24 Deny Proxy
 104.167.240.0/22 Deny Proxy
-144.172.118.0/23 Deny Attacks
+140.99.209.0/24 Deny Proxy
+144.172.118.0/23 Deny Proxy
+146.103.22.0/24 Deny Proxy
+166.0.248.0/24 Deny Proxy
+206.168.212.0/22 Deny Proxy
+207.2.123.0/24 Deny Proxy
+216.247.96.0/23 Deny Proxy
 Origin: US
 Profile: Tor endpoints here
 Tag: Data Ideas llc
@@ -1595,10 +1611,9 @@ Tag: Data Ideas llc
 # Colo and webhosting provider which hosts Tor services.
 # Brute-force, SSH, DDoS, WordPress/XMLRPC, and webapp attacks, port scans,
 # hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 98.
-# Updated: 2023.06.10
+# Stop Forum Spam (SFS) listings: 658.
+# Updated: 2024.04.17
 
-23.128.248.0/24 Deny Attacks
 24.155.145.0/24 Deny Proxy
 104.202.252.0/24 Deny Proxy
 205.166.246.0/24 Deny Proxy

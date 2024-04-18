@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6_isps.dat
 
-# Version: 2024.90.0
-# Last modified: 2024.03.31
+# Version: 2024.107.0
+# Last modified: 2024.04.17
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -416,18 +416,6 @@ Tag: Cox Spam IPs
 Origin: US
 Profile: Domestic ISP;University
 Tag: Charter Communications
-
-
-# ASN 135763 ("GAYATRI COMMUNICATIONS").
-# Indian domestic ISP. Brute-force and SSH attacks, port scans, and spam
-# detected from here. No clean ranges here.
-# Stop Forum Spam (SFS) listings: 76.
-# Updated: 2023.06.03
-
-2400:ec20::/32 Deny Attacks
-Origin: IN
-Profile: Domestic ISP
-Tag: GAYATRI COMMUNICATIONS
 
 
 # ASNs 18209, 24309, 55577, 131269 ("Atria Convergence Technologies Pvt. Ltd.

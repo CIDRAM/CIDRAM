@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv4_isps.dat
 
-# Version: 2024.100.0
-# Last modified: 2024.04.10
+# Version: 2024.108.0
+# Last modified: 2024.04.18
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -2307,7 +2307,7 @@ Tag: BSNL
 # probing, etc detected from here. Mozi botnets detected from here.
 # Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 91,208.
-# Updated: 2023.06.28 / Modified: 2024.04.10
+# Updated: 2023.06.28 / Modified: 2024.04.17
 
 1.68.195.97/32 Deny Attacks
 1.68.195.156/32 Deny Attacks
@@ -2607,6 +2607,7 @@ Tag: BSNL
 114.221.221.45/32 Deny Attacks
 114.221.221.235/32 Deny Attacks
 114.226.109.0/24 Deny Attacks
+114.227.3.20/32 Deny Attacks
 114.227.27.0/24 Deny Attacks
 114.227.28.0/24 Deny Attacks
 114.227.84.0/24 Deny Attacks
@@ -8666,24 +8667,24 @@ Tag: COLT Technology SGL
 # Malawi domestic ISP. Brute-force, SSH, and XMLRPC attacks, various bots, port
 # scans, and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 20.
-# Updated: 2023.06.01
+# Stop Forum Spam (SFS) listings: 9.
+# Updated: 2024.04.17
 
-41.75.112.0/24 Deny Attacks
-41.75.122.17/32 Deny Attacks
-41.75.122.24/32 Deny Attacks
-41.75.123.61/32 Deny Attacks
+41.75.112.113/32 Deny Attacks
+41.75.122.27/32 Deny Attacks
+41.75.123.15/32 Deny Attacks
+41.75.123.117/32 Deny Attacks
 41.190.92.187/32 Deny Attacks
-41.190.92.188/32 Deny Attacks
 41.190.93.254/32 Deny Attacks
-41.190.94.139/32 Deny Attacks
-41.190.95.93/32 Deny Attacks
+41.190.94.43/32 Deny Attacks
+41.190.94.78/32 Deny Attacks
 41.217.216.57/32 Deny Attacks
-41.217.217.27/32 Deny Attacks
+41.217.217.4/32 Deny Attacks
+41.217.217.202/32 Deny Attacks
+41.217.218.63/32 Deny Attacks
 41.217.218.146/32 Deny Attacks
+41.217.218.188/32 Deny Attacks
 41.217.218.233/32 Deny Attacks
-41.217.218.242/32 Deny Attacks
-41.217.219.4/32 Deny Attacks
 41.217.219.19/32 Deny Attacks
 197.211.115.0/24 Deny Attacks
 Origin: MW
@@ -11305,9 +11306,9 @@ Tag: TOTAL PLAY TELECOMUNICACIONES
 
 # ASN 135763 ("GAYATRI COMMUNICATIONS").
 # Indian domestic ISP. Brute-force and SSH attacks, port scans, and spam
-# detected from here. No clean ranges here.
-# Stop Forum Spam (SFS) listings: 76.
-# Updated: 2021.09.09 / Checked: 2023.06.03
+# detected from here. No clean IPv4 ranges here.
+# Stop Forum Spam (SFS) listings: 64.
+# Updated: 2021.09.09 / Checked: 2024.04.17
 
 103.70.152.0/22 Deny Attacks
 103.146.156.0/23 Deny Attacks
@@ -21480,17 +21481,15 @@ Tag: Cicomsa S.A
 # Korean domestic ISP. Brute-force, SSH, and webapp attacks, Mozi botnets, port
 # scans, hacking, and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 6.
-# Updated: 2023.06.01
+# Stop Forum Spam (SFS) listings: 27.
+# Updated: 2024.04.17
 
-49.142.205.92/32 Deny Attacks
+49.142.205.60/32 Deny Attacks
 49.142.208.0/24 Deny Attacks
 49.143.32.6/32 Deny Attacks
-49.143.32.36/32 Deny Attacks
-49.143.32.38/32 Deny Attacks
-49.143.32.41/32 Deny Attacks
+112.72.145.37/32 Deny Attacks
 112.72.218.187/32 Deny Attacks
-112.72.253.26/32 Deny Attacks
+112.72.253.90/32 Deny Attacks
 112.72.253.154/32 Deny Attacks
 Origin: KR
 Profile: Domestic ISP
@@ -25357,6 +25356,17 @@ Tag: CHINANET SHAANXI Cloud Base
 Origin: SI
 Profile: Domestic ISP
 Tag: Telekom Slovenije
+
+
+# ASN 204384 ('LLC "OTT UKRAINE"').
+# Ukrainian domestic ISP. Port scans and hacking detected from here.
+# Listing just the affected ranges/addresses only.
+# Updated: 2024.04.18
+
+5.105.4.127/32 Deny Attacks
+Origin: UA
+Profile: Domestic ISP
+Tag: OTT UKRAINE
 
 
 # ---

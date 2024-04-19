@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used for auxiliary rules (last modified: 2024.04.16).
+ * This file: Methods used for auxiliary rules (last modified: 2024.04.19).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -311,6 +311,14 @@ trait AuxiliaryRules
                         $FlagSetName = $this->L10N->getString($FlagSet['Label']) ?: $FlagSetName;
                         unset($FlagSet['Label']);
                     }
+                    if (isset($FlagSet['Hint'])) {
+                        if (($Hint = $this->parseVars([], $FlagSet['Hint'], true)) !== '') {
+                            $Hint = '<br /><span class="suggestsActive s"><small>' . $Hint . '</small></span>';
+                        }
+                        unset($FlagSet['Hint']);
+                    } else {
+                        $Hint = '';
+                    }
                     foreach ($FlagSet as $FlagName => $FlagData) {
                         if (empty($Data[$FlagName])) {
                             $Selected = '';
@@ -331,7 +339,7 @@ trait AuxiliaryRules
                         $Current,
                         $UseDefaultState ? ' selected' : '',
                         $this->L10N->getString('label.aux.Leave it as is (don_t set anything)')
-                    ) . $Options . '</select><br /><br />';
+                    ) . $Options . '</select>' . $Hint . '<br /><br />';
                     $Output .= sprintf(
                         '<div class="iLabl s"><label for="%s[%s]">%s</label></div><div class="iCntn">%s</div>',
                         $FlagKey,

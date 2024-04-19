@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2024.03.18).
+# This file: Defaults file (last modified: 2024.04.19).
 ##/
 
 Config Defaults:
@@ -1194,6 +1194,7 @@ Provide:
     Factors: "CIDR"
   Flags:
    reCAPTCHA:
+    Hint: "{label.aux.When forcibly disabled, marking for use won_t have any effect} {label.See also} <code>recaptcha➡usemode</code>"
     Mark for use with reCAPTCHA:
      Label: "label.aux.Mark for use with reCAPTCHA"
      Sets:
@@ -1205,6 +1206,7 @@ Provide:
       Configuration:
        recaptcha: {usemode: 0, forcibly_disabled: true}
    HCaptcha:
+    Hint: "{label.aux.When forcibly disabled, marking for use won_t have any effect} {label.See also} <code>hcaptcha➡usemode</code>"
     Mark for use with HCaptcha:
      Label: "label.aux.Mark for use with HCaptcha"
      Sets:

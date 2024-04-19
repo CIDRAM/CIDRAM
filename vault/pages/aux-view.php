@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The auxiliary rules view mode page (last modified: 2024.04.11).
+ * This file: The auxiliary rules view mode page (last modified: 2024.04.19).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -221,10 +221,18 @@ if (!$this->FE['ASYNC']) {
             $FlagSetName = $this->L10N->getString($FlagSetValue['Label']) ?: $FlagSetName;
             unset($FlagSetValue['Label']);
         }
+        if (isset($FlagSetValue['Hint'])) {
+            if (($Hint = $this->parseVars([], $FlagSetValue['Hint'], true)) !== '') {
+                $Hint = '<br /><span class="suggestsActive s"><small>' . $Hint . '</small></span>';
+            }
+            unset($FlagSetValue['Hint']);
+        } else {
+            $Hint = '';
+        }
         foreach ($FlagSetValue as $FlagName => $FlagData) {
             $Options .= sprintf('<option value="%s">%s</option>', $FlagName, isset($FlagData['Label']) ? ($this->L10N->getString($FlagData['Label']) ?: $FlagName) : $FlagName);
         }
-        $Options .= '</select>';
+        $Options .= '</select>' . $Hint;
         $this->FE['AuxFlagsProvides'] .= sprintf(
             "\n          <li>\n            <div class=\"iCntr\">\n              <div class=\"iLabl s\"><label for=\"%s\">%s</label></div><div class=\"iCntn\">%s</div>\n            </div>\n          </li>",
             $FlagKey,
@@ -232,7 +240,7 @@ if (!$this->FE['ASYNC']) {
             $Options
         );
     }
-    unset($FlagData, $FlagName, $Options, $FlagKey, $FlagSetValue, $FlagSetName);
+    unset($FlagData, $FlagName, $Hint, $Options, $FlagKey, $FlagSetValue, $FlagSetName);
 
     /** Calculate page load time (useful for debugging). */
     $this->FE['ProcessTime'] = microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];

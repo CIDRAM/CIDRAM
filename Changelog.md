@@ -396,3 +396,5 @@
 [2024.04.16; Bug-fix; Maikuolan]: The auxiliary rules' \1 switch sometimes wouldn't populate correctly for the statistics under certain conditions (#570).
 
 [2024.04.18; Maikuolan]: Added flexrow for dropdown menus with included input fields for other values at the configuration page.
+
+[2024.04.19; Maikuolan]: Hints added for some of the other options and special flags at the auxiliary rules page.

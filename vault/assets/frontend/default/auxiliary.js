@@ -156,7 +156,7 @@ function addWebhook(p) {
   document.getElementById(p+'webhooks').appendChild(t),
   (t = document.createElement('input')).setAttribute('name', 'webhooks'+namePart),
   t.setAttribute('placeholder', '{tip.Specify a value, or leave blank to disregard}'),
-  t.setAttribute('class', 'f500'),
+  t.setAttribute('class', 'txtf'),
   t.setAttribute('type', 'text'),
   document.getElementById(whId).appendChild(t),
   setTimeout(function() {

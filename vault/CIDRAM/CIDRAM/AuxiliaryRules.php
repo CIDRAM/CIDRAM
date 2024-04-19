@@ -238,9 +238,10 @@ trait AuxiliaryRules
 
                 /** Webhook button. */
                 $Output .= sprintf(
-                    '<div class="iCntr"><div class="iLabl"><input type="button" onclick="javascript:addWebhook(\'%1$s\')" value="%2$s" class="auto" /></div><div class="iCntn" id="%1$swebhooks">',
+                    '<div class="iCntr"><div class="iLabl"><input type="button" onclick="javascript:addWebhook(\'%1$s\')" value="%2$s" class="auto" /><br /><span class="suggestsActive"><small>%3$s</small></span></div><div class="iCntn" id="%1$swebhooks">',
                     $Current,
-                    $this->L10N->getString('field.Add webhook')
+                    $this->L10N->getString('field.Add webhook'),
+                    $this->L10N->getString('tip.Auxiliary Rules Webhooks')
                 );
 
                 /** Populate webhooks. */
@@ -248,7 +249,7 @@ trait AuxiliaryRules
                     $Iteration = 0;
                     foreach ($Data['Webhooks'] as $Webhook) {
                         $Output .= sprintf(
-                            '<input type="text" name="webhooks[%1$s][%2$s]" placeholder="%3$s" class="f400" value="%4$s" />',
+                            '<input type="text" name="webhooks[%1$s][%2$s]" placeholder="%3$s" class="txtf" value="%4$s" />',
                             $Current,
                             $Iteration,
                             $this->L10N->getString('tip.Specify a value, or leave blank to disregard'),
@@ -272,7 +273,7 @@ trait AuxiliaryRules
                     $MethodData = ['', '', '', ''];
                 }
                 $Output .= sprintf(
-                    '<div class="iCntr"><div class="iLabl"><select name="mtd[%s]" class="auto"><option value="mtdStr"%s>%s</option><option value="mtdReg"%s>%s</option><option value="mtdWin"%s>%s</option><option value="mtdDMA"%s>%s</option></select><br /></div></div><div class="iCntr"><div class="iLabl"><em>%s</em></div></div>',
+                    '<div class="iCntr"><div class="iLabl"><select name="mtd[%s]" class="auto"><option value="mtdStr"%s>%s</option><option value="mtdReg"%s>%s</option><option value="mtdWin"%s>%s</option><option value="mtdDMA"%s>%s</option></select><br /><span class="suggestsActive"><small>%s</small></span></div></div>',
                     $Current,
                     $MethodData[0],
                     $this->FE['optMtdStr'],

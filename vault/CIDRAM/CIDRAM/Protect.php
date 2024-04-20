@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2024.04.14).
+ * This file: Protect traits (last modified: 2024.04.19).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -638,6 +638,59 @@ trait Protect
             );
         }
 
+        /** Process email trigger notification queue (will be assigned its own stage configuration for v4; delaying to prevent BC breaks between minor/patch releases). */
+        if (isset($this->CIDRAM['Trigger notifications']) && $this->Events->assigned('sendEmail')) {
+            $this->Stage = 'TriggerNotifications';
+            $Recipient = [
+                'Name' => trim($this->Configuration['general']['email_notification_name']),
+                'Address' => trim($this->Configuration['general']['email_notification_address'])
+            ];
+            if ($Recipient['Name'] !== '' && $Recipient['Address'] !== '') {
+                $ParsedToEmail = [
+                    $this->L10N->getString('field.ID') => $this->BlockInfo['ID'],
+                    $this->L10N->getString('field.DateTime') => $this->BlockInfo['DateTime'],
+                    $this->L10N->getString('field.IP address') => $this->BlockInfo['IPAddr'],
+                    $this->L10N->getString('field.User agent') => $this->BlockInfo['UA'],
+                    $this->L10N->getString('field.Reconstructed URI') => $this->BlockInfo['rURI'],
+                    $this->L10N->getString('field.Why blocked') => $this->BlockInfo['WhyReason'],
+                    $this->L10N->getString('field.Why blocked (detailed)') => $this->BlockInfo['ReasonMessage'],
+                    $this->L10N->getString('field.Signatures count') => $this->NumberFormatter->format($this->BlockInfo['SignatureCount'])
+                ];
+                $BlockInfoForEmailBody = '';
+                $this->CIDRAM['Fields'] = array_flip(explode("\n", $this->Configuration['general']['fields']));
+
+                foreach ($ParsedToEmail as $FieldName => &$FieldData) {
+                    /** Prevent dangerous HTML in outbound email. */
+                    $FieldData = str_replace(
+                        ['<', '>', "\r", "\n"],
+                        ['&lt;', '&gt;', '&#13;', '&#10;'],
+                        $FieldData
+                    );
+
+                    if ($FieldData === '') {
+                        $FieldData = '-';
+                    }
+                    $BlockInfoForEmailBody .= $FieldName . ($this->L10N->getString('pair_separator') ?: ': ') . $FieldData . "<br />\n";
+                }
+                unset($FieldData, $FieldName, $ParsedToEmail);
+
+                /** Prepare message body. */
+                $Body = sprintf(
+                    $this->L10N->getString('Trigger notification.Template'),
+                    $Recipient['Name'],
+                    '"' . implode('"<br />"', $this->CIDRAM['Trigger notifications']) . '"<br /><br />' . $BlockInfoForEmailBody
+                );
+
+                /** Prepare event data. */
+                $EventData = [[$Recipient], $this->L10N->getString('Trigger notification.Subject'), $Body, strip_tags($Body), ''];
+
+                /** Send the email. */
+                $this->Events->fireEvent('sendEmail', '', ...$EventData);
+                unset($EventData);
+            }
+            unset($EventData, $Body, $BlockInfoForEmailBody, $Recipient);
+        }
+
         /** Clearing because intermediary. */
         $this->Stage = '';
 
@@ -675,7 +728,9 @@ trait Protect
                 }
 
                 /** Initialise fields. */
-                $this->CIDRAM['Fields'] = array_flip(explode("\n", $this->Configuration['general']['fields']));
+                if (!isset($this->CIDRAM['Fields'])) {
+                    $this->CIDRAM['Fields'] = array_flip(explode("\n", $this->Configuration['general']['fields']));
+                }
 
                 $this->BlockInfo['Infractions'] = 0;
                 if (isset($this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']])) {

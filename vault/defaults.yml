@@ -540,6 +540,12 @@ Config Defaults:
   sensitive:
    type: "string"
    default: "~/(?:comprofiler|user)/(?:login|register)|[/=](?:activate|contact|login|regist(?:er|ration)|signup)|act(?:ion)?=(?:edit|reg)|(?:activate|con(?:firm|tact)|login|newuser|reg(?:ist(?:er|ration))?|signin|signup)(?:\.php|[/=])|special:userlogin&|verifyemail|wp-comments-post~i"
+  email_notification_address:
+   type: "string"
+   default: ""
+  email_notification_name:
+   type: "string"
+   default: ""
  components:
   ipv4:
    type: "string"
@@ -1253,6 +1259,11 @@ Provide:
     Label: "link.Statistics"
     Track this rule:
      Label: "label.aux.Track this rule"
+   Email:
+    Label: "label.aux.Email"
+    Hint: "{label.aux.Requires PHPMailer} {label.See also} <code>general➡email_notification_address</code>, <code>general➡email_notification_name</code>"
+    Email:
+     Label: "label.aux.Send trigger notification to the configured email notification address"
    Disable this rule:
     Label: "label.aux.Disable this rule"
     Disable this rule:

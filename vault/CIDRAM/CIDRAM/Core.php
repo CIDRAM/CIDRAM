@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2024.04.16).
+ * This file: The CIDRAM core (last modified: 2024.04.19).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -122,7 +122,7 @@ class Core
     /**
      * @var string CIDRAM version number (SemVer).
      */
-    public $ScriptVersion = '3.5.1';
+    public $ScriptVersion = '3.6.0';
 
     /**
      * @var string CIDRAM version identifier (complete notation).
@@ -2216,6 +2216,14 @@ class Core
         if (!empty($Flags['Track this rule'])) {
             $this->Cache->incEntry('Statistics-Aux-' . $Name);
             $this->Cache->setEntry('Statistics-Aux-' . $Name . '-Most-Recent', $this->Now, 0);
+        }
+
+        /** Enqueue email trigger notification. */
+        if (!empty($Flags['Email'])) {
+            if (isset($this->CIDRAM['Trigger notifications'])) {
+                $this->CIDRAM['Trigger notifications'] = [];
+            }
+            $this->CIDRAM['Trigger notifications'][] = $Name;
         }
 
         $RunExitCode = 0;

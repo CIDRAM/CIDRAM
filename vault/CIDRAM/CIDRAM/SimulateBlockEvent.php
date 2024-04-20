@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used to simulate block events (last modified: 2024.04.14).
+ * This file: Methods used to simulate block events (last modified: 2024.04.19).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -285,6 +285,9 @@ trait SimulateBlockEvent
         $this->Stage = 'Reporting';
         $this->Reporter = null;
         $this->Stage = '';
+
+        /** Clear to prevent potential interference with later execution within the same request. */
+        unset($this->CIDRAM['Trigger notifications']);
 
         /**
          * Determine HTTP status code. Priority (from highest to lowest):

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2024.04.16).
+# This file: Portuguese language data for the front-end (last modified: 2024.04.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -219,8 +219,8 @@ config:
   pt-PT: "Uma lista de servidores DNS a serem usados para pesquisas de nomes de host. ATENÇÃO: Não mude isso a menos que você saiba o que está a fazer!"
  general_default_timeout: "Tempo limite padrão a ser usado para solicitações externas? Padrão = 12 segundos."
  general_disabled_channels: "Isso pode ser usado para impedir que o CIDRAM use canais específicos ao enviar solicitações (por exemplo, ao atualizar, ao buscar metadados de componentes, etc)."
- general_email_notification_address: "Se você optou por receber notificações do CIDRAM por e-mail, por exemplo, quando regras auxiliares específicas são acionadas, você pode especificar o endereço do destinatário dessas notificações aqui."
- general_email_notification_name: "Se você optou por receber notificações do CIDRAM por e-mail, por exemplo, quando regras auxiliares específicas são acionadas, você pode especificar o nome do destinatário dessas notificações aqui."
+ general_email_notification_address: "Se você optou por receber notificações do CIDRAM por e-mail, por exemplo, quando regras auxiliares específicas são desencadeadas, você pode especificar o endereço do destinatário dessas notificações aqui."
+ general_email_notification_name: "Se você optou por receber notificações do CIDRAM por e-mail, por exemplo, quando regras auxiliares específicas são desencadeadas, você pode especificar o nome do destinatário dessas notificações aqui."
  general_emailaddr:
   pt-BR: "Se você desejar, você pode fornecer um endereço de e-mail aqui a ser dado para os usuários quando eles estão bloqueadas, para eles para usar como um ponto de contato para suporte e/ou assistência no caso de eles sendo bloqueado por engano ou em erro. AVISO: Qualquer endereço de e-mail que você fornecer aqui certamente vai ser adquirido por spambots e raspadores/scrapers durante o curso de seu ser usada aqui, e assim, é fortemente recomendado que, se você optar por fornecer um endereço de e-mail aqui, que você garantir que o endereço de e-mail você fornecer aqui é um endereço descartável e/ou um endereço que você não é importante (em outras palavras, você provavelmente não quer usar seu pessoal principal ou negócio principal endereço de e-mail)."
   pt-PT: "Se você desejar, você pode fornecer um endereço de e-mail aqui a ser dado para os utilizadores quando eles estão bloqueadas, para eles para usar como um ponto de contacto para suporte e/ou assistência no caso de eles sendo bloqueado por engano ou em erro. AVISO: Qualquer endereço de e-mail que você fornecer aqui certamente vai ser adquirido por spambots e raspadores/scrapers durante o curso de seu ser usada aqui, e assim, é fortemente recomendado que, se você optar por fornecer um endereço de e-mail aqui, que você garantir que o endereço de e-mail você fornecer aqui é um endereço descartável e/ou um endereço que você não é importante (em outras palavras, você provavelmente não quer usar seu pessoal principal ou negócio principal endereço de e-mail)."
@@ -279,7 +279,7 @@ config:
  logging_serialised_log: "Um arquivo serializado para registrar todas as tentativas de acesso bloqueadas. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
  logging_standard_log: "Um arquivo legível por humanos para registrar todas as tentativas de acesso bloqueadas. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
  logging_truncate: "Truncar arquivos de log quando atingem um determinado tamanho? Valor é o tamanho máximo em B/KB/MB/GB/TB que um arquivo de log pode crescer antes de ser truncado. O valor padrão de 0KB desativa o truncamento (arquivos de log podem crescer indefinidamente). Nota: Aplica-se a arquivos de log individuais! O tamanho dos arquivos de log não é considerado coletivamente."
- phpmailer: "Configuração para PHPMailer (usado para autenticação de dois fatores)."
+ phpmailer: "Configuração para PHPMailer (usado para autenticação de dois fatores e para notificações por e-mail)."
  phpmailer_add_reply_to_address: "O endereço de resposta a ser citado ao enviar e-mail via SMTP."
  phpmailer_add_reply_to_name: "O nome da resposta a ser citado ao enviar e-mail via SMTP."
  phpmailer_event_log: "Um arquivo para registrar todos os eventos em relação ao PHPMailer. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
@@ -740,6 +740,8 @@ label:
   Move up: "Mover subir"
   Notes: "Notas (mostrado apenas nesta página, e não afeta a regra):"
   Other options and special flags: "Outras opções e bandeiras especiais:"
+  Requires PHPMailer: "Requer PHPMailer."
+  Send trigger notification to the configured email notification address: "Envie notificação de desencadeamento para o endereço de e-mail configurado para notificações"
   Suppress logging: "Suprimir o registro"
   Suppress output template: "Suprime o modelo de saída"
   The name of the file to run: "O nome do arquivo a ser executado:"
@@ -751,6 +753,7 @@ label:
   Use direct string comparison to test the conditions: "Use comparação direta de string para testar as condições."
   Use regular expressions to test the conditions: "Use expressões regulares para testar as condições."
   Webhooks to apply when the rule requirements are met: "Webhooks a serem aplicados quando os requisitos da regra forem atendidos:"
+  When forcibly disabled, marking for use won_t have any effect: "Nota: Quando desativado à força, a marcação para uso não terá nenhum efeito."
   When the rule should begin (optional): "Quando a regra deve começar (opcional):"
   When the rule should expire (optional): "Quando a regra deve expirar (opcional):"
   Where to redirect the request: "Onde redirecionar a solicitação:"
@@ -1033,7 +1036,7 @@ tip:
  Accounts: "A página de contas permite que você controle quem pode acessar o CIDRAM front-end."
  Aggregator: "O agregador permite que você expresse IPs, CIDRs, e máscaras de rede da maneira mais pequena possível. Insira os dados a serem agregados e pressione "OK"."
  Auxiliary Rules Priority: "Prioridade (altíssima➡(igual🔄equivalente)➡baixíssima):"
- Auxiliary Rules Webhooks: "Quando uma regra é acionada, o CIDRAM tentará notificar quaisquer webhooks conectados sobre o evento."
+ Auxiliary Rules Webhooks: "Quando uma regra é desencadeada, o CIDRAM tentará notificar quaisquer webhooks conectados sobre o evento."
  Auxiliary Rules: "Você pode usar esta página para criar, deletar e modificar regras auxiliares para o CIDRAM."
  Backup: "Esta página pode ser usada para importar/exportar sua configuração, regras auxiliares, etc. Isso pode ser útil se você precisar migrar dados entre diferentes instalações ou diferentes versões principais."
  Cache Data: "Aqui você pode rever o conteúdo do cache."

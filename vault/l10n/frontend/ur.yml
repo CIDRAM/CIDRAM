@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2024.04.16).
+# This file: Urdu language data for the front-end (last modified: 2024.04.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -241,7 +241,7 @@ config:
  logging_serialised_log: "تمام بلاک کر تک رسائی کی کوششوں کو لاگ ان کرنے کے لئے serialized کی فائل. ایک فائل کا نام کی وضاحت کریں، یا غیر فعال کرنے کو خالی چھوڑ."
  logging_standard_log: "تمام بلاک کر تک رسائی کی کوششوں کو لاگ ان کرنے کے لئے انسانی قابل مطالعہ فائل. ایک فائل کا نام کی وضاحت کریں، یا غیر فعال کرنے کو خالی چھوڑ."
  logging_truncate: "وہ ایک خاص سائز تک پہنچنے میں جب صاف لاگ مسلیں؟ ویلیو میں B/KB/MB/GB/TB زیادہ سے زیادہ سائز ہے. جب 0KB، وہ غیر معینہ مدت تک ترقی کر سکتا ہے (پہلے سے طے). نوٹ: واحد فائلوں پر لاگو ہوتا ہے! فائلیں اجتماعی غور نہیں کر رہے ہیں."
- phpmailer: "PHPMailer کی ترتیبات (دو عنصر کی توثیق کے لئے استعمال کیا جاتا ہےn)."
+ phpmailer: "PHPMailer کی ترتیبات (دو عنصر کی توثیق اور ای میل اطلاعات کے لیے استعمال کیا جاتا ہے)."
  phpmailer_add_reply_to_address: "ای میل بھیجنے پر جواب کا پتہ."
  phpmailer_add_reply_to_name: "ای میل بھیجنے پر جواب کا نام."
  phpmailer_event_log: "PHPMailer کے سلسلے میں تمام واقعات کو لاگ ان کرنے کے لئے ایک فائل. ایک فائل کا نام کی وضاحت کریں، یا غیر فعال کرنے کو خالی چھوڑ."
@@ -669,6 +669,8 @@ label:
   Move up: "آگے ہو جاو"
   Notes: "نوٹ (صرف اس صفحے پر دکھایا گیا ہے، اور قواعد کو متاثر نہیں کرتا ہے):"
   Other options and special flags: "دوسرے اختیارات اور خصوصی جھنڈے:"
+  Requires PHPMailer: "PHPMailer کی ضرورت ہے."
+  Send trigger notification to the configured email notification address: "ترتیب شدہ ای میل اطلاع پتے پر ٹرگر نوٹیفکیشن بھیجیں"
   Suppress logging: "لاگنگ کو دبانا"
   Suppress output template: "آؤٹ پٹ ٹیمپلیٹ کا استعمال نہ کریں"
   The name of the file to run: "پھانسی دینے والی فائل کا نام:"
@@ -678,6 +680,7 @@ label:
   Use direct string comparison to test the conditions: "شرائط کی جانچ کرنے کیلئے براہ راست سٹرنگ موازنہ استعمال کریں."
   Use regular expressions to test the conditions: "شرائط کی جانچ کرنے کیلئے باقاعدگی سے اظہار استعمال کریں."
   Webhooks to apply when the rule requirements are met: "ویب ہکس انی کی ضروریات پوری ہوجائیں تو لاگو ہونے والی ویب کتابیں:"
+  When forcibly disabled, marking for use won_t have any effect: "نوٹ: زبردستی غیر فعال ہونے پر، استعمال کے لیے نشان زد کرنے کا کوئی اثر نہیں پڑے گا."
   When the rule should begin (optional): "جب قاعدہ شروع ہونا چاہئے (اختیاری):"
   When the rule should expire (optional): "جب قاعدہ ختم ہو جائے (اختیاری):"
   Where to redirect the request: "جہاں درخواست کو ری ڈائریکٹ کریں:"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data (last modified: 2023.12.22).
+# This file: English language data (last modified: 2024.04.19).
 ##/
 
 PrivacyPolicy: "Privacy Policy"
@@ -47,6 +47,12 @@ Short_Spam: "Spam risk"
 Short_Unverified_UA: "Unverified %s"
 Support_Email: "If you believe this is in error, or to seek assistance, {ClickHereLink} to send an email support ticket to the webmaster of this website (please don't change the preamble or subject line of the email)."
 Support_Email_2: "If you believe this is in error, send an email to {EmailAddr} to seek assistance."
+Trigger notification:
+ Subject: "Trigger notification"
+ Template: |
+  <center><p>Hello, %s.<br /><br />
+  This email is to notify you that the following CIDRAM rules were triggered:<br /><br />
+  %s</p></center>
 bobuam_ambiguous: "Ambiguous browser ID"
 bobuam_bot: "Suspected bot or scraper probe"
 bobuam_malformed: "Malformed UA"

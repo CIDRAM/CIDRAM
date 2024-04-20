@@ -7,7 +7,21 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Gujarati language data for the front-end (last modified: 2024.04.16).
+# This file: Gujarati language data for the front-end (last modified: 2024.04.19).
+#
+# Regarding translations: My native language is English. Because this is a free
+# and open-source hobby project which generates zero income, and translatable
+# content is likely to change as the features and functionality supported by
+# the project changes, it doesn't make sense for me to spend money for
+# translations. Because I'm the sole author/developer/maintainer for the
+# project and I'm not a ployglot, any translations I produce are very likely to
+# contain errors. Sorry, but realistically, that won't ever change. If you find
+# any such errors/typos/mistakes/etc, your assistance to correct them would be
+# very much appreciated. Pull requests are invited and encouraged. Otherwise,
+# if you find these errors too much to handle, just stick with the original
+# English source. If a translation is irredeemably incomprehensible, let me
+# know which, and I can delete it. If you're not sure how to perform pull
+# requests, ask. I can help.
 ##/
 
 Abuse category:
@@ -159,8 +173,8 @@ config:
  extras_signatures_raw: "કાચા વિનંતી ઇનપુટ પર આધારિત સિગ્નેચર."
  extras_signatures_ruri: "પુનઃનિર્માણ URI પર આધારિત સિગ્નેચર."
  frontend: "ફ્રન્ટ-એન્ડ માટે રૂપરેખાંકન."
- frontend_custom_footer: "બધા ફ્રન્ટ-એન્ડ પૃષ્ઠોની ખૂબ જ નીચે HTML તરીકે દાખલ કરવામાં આવે છે. જો તમે આવા તમામ પૃષ્ઠો પર કાનૂની સૂચના, સંપર્ક લિંક, વ્યવસાયની માહિતી, અથવા સમાન સમાવવા માંગતા હો તો આ ઉપયોગી થઈ શકે છે."
- frontend_custom_header: "બધા ફ્રન્ટ-એન્ડ પૃષ્ઠોની શરૂઆતમાં HTML તરીકે દાખલ કરવામાં આવે છે. જો તમે આવા તમામ પૃષ્ઠો પર વેબસાઈટનો લોગો, વ્યક્તિગત હેડર, સ્ક્રિપ્ટો, અથવા સમાન સમાવવા માંગતા હો તો આ ઉપયોગી થઈ શકે છે."
+ frontend_custom_footer: "બધા ફ્રન્ટ-એન્ડ પૃષ્ઠોની ખૂબ જ નીચે HTML તરીકે દાખલ કરેલ છે. જો તમે આવા તમામ પૃષ્ઠો પર કાનૂની સૂચના, સંપર્ક લિંક, વ્યવસાયની માહિતી, અથવા સમાન સમાવવા માંગતા હો તો આ ઉપયોગી થઈ શકે છે."
+ frontend_custom_header: "બધા ફ્રન્ટ-એન્ડ પૃષ્ઠોની શરૂઆતમાં HTML તરીકે દાખલ કરેલ છે. જો તમે આવા તમામ પૃષ્ઠો પર વેબસાઈટનો લોગો, વ્યક્તિગત હેડર, સ્ક્રિપ્ટો, અથવા સમાન સમાવવા માંગતા હો તો આ ઉપયોગી થઈ શકે છે."
  frontend_enable_two_factor: "આ નિર્દેશ નક્કી કરે છે કે ફ્રન્ટ-એન્ડ એકાઉન્ટ્સ માટે 2FA નો ઉપયોગ કરવો કે નહીં."
  frontend_frontend_log: "ફ્રન્ટ-એન્ડ લૉગિન પ્રયાસોને લૉગ કરવા માટેની ફાઇલ. ફાઇલનામનો ઉલ્લેખ કરો, અથવા અક્ષમ કરવા માટે ખાલી છોડી દો."
  frontend_magnification: &MagnifDesc "ફોન્ટ મેગ્નિફિકેશન. ડિફૉલ્ટ = 1."
@@ -227,7 +241,7 @@ config:
  logging_serialised_log: "તમામ અવરોધિત ઍક્સેસ પ્રયાસોને લોગ કરવા માટે સીરીયલાઇઝ્ડ ફાઇલ. ફાઇલનામનો ઉલ્લેખ કરો, અથવા અક્ષમ કરવા માટે ખાલી છોડી દો."
  logging_standard_log: "તમામ અવરોધિત ઍક્સેસ પ્રયાસોને લૉગ કરવા માટે માનવ વાંચી શકાય તેવી ફાઇલ. ફાઇલનામનો ઉલ્લેખ કરો, અથવા અક્ષમ કરવા માટે ખાલી છોડી દો."
  logging_truncate: "લૉગ ફાઇલો જ્યારે ચોક્કસ કદ સુધી પહોંચે ત્યારે તેને કાપી નાખો? મૂલ્ય એ B/KB/MB/GB/TB માં મહત્તમ કદ છે જે કાપવામાં આવે તે પહેલાં લોગ ફાઇલ વધી શકે છે. 0KB નું ડિફૉલ્ટ મૂલ્ય ટ્રંકેશનને અક્ષમ કરે છે (લોગ ફાઇલો અનિશ્ચિત રીતે વધી શકે છે). નૉૅધ: અલગ લૉગ ફાઇલો પર લાગુ થાય છે! લોગ ફાઇલોનું કદ સામૂહિક રીતે ગણવામાં આવતું નથી."
- phpmailer: "PHPMailer માટે રૂપરેખાંકન (દ્વિ-પરિબળ પ્રમાણીકરણ માટે વપરાય છે)."
+ phpmailer: "PHPMailer માટે રૂપરેખાંકન (દ્વિ-પરિબળ પ્રમાણીકરણ અને ઇમેઇલ સૂચનાઓ માટે વપરાય છે)."
  phpmailer_add_reply_to_address: "SMTP દ્વારા ઈમેઈલ મોકલતી વખતે ટાંકવાનું જવાબ સરનામું."
  phpmailer_add_reply_to_name: "SMTP દ્વારા ઈમેઈલ મોકલતી વખતે ટાંકવા માટેનું જવાબ નામ."
  phpmailer_event_log: "PHPMailer ના સંબંધમાં બધી ઇવેન્ટ્સને લૉગ કરવા માટેની ફાઇલ. ફાઇલનામનો ઉલ્લેખ કરો, અથવા અક્ષમ કરવા માટે ખાલી છોડી દો."
@@ -272,6 +286,39 @@ config:
  recaptcha_usemode: *CaptchaUseMode
  sfs: "Stop Forum Spam મોડ્યુલ માટે રૂપરેખાંકન."
  sfs_offer_captcha: "જ્યારે આ મોડ્યુલ દ્વારા વિનંતીઓને અવરોધિત કરવામાં આવે છે, ત્યારે કેપ્ચા આપવામાં આવી શકે છે. ડિફૉલ્ટ = True. નૉૅધ: અન્ય નિર્દેશોને ઓવરરાઇડ કરતું નથી. કેપ્ચા સર્વ કરવા માટે, બધા નિર્દેશો સંમત હોવા જોઈએ, જરૂરી કી ગોઠવેલી હોવી જોઈએ, વગેરે. સામાન્ય રીતે કેપ્ચાને સર્વ કરવાની પરવાનગી આપવામાં આવશે તેવા સંજોગોમાં, આ નિર્દેશને ખોટા પર સેટ કરવાથી કેપ્ચા આ મોડ્યુલ દ્વારા ખાસ કરીને અવરોધિત વિનંતીઓ માટે સેવા આપતા અટકાવવાનો માર્ગ પૂરો પાડે છે."
+ signatures: "સિગ્નેચર, સિગ્નેચર ફાઇલો, મોડ્યુલો, વગેરે માટે રૂપરેખાંકન."
+ signatures_default_tracktime: "જે સમયગાળો IP સરનામાંને ટ્રેક કરવો જોઈએ. ડિફૉલ્ટ = 7d0°0′0″ (1 અઠવાડિયું)."
+ signatures_infraction_limit: "IP ટ્રેકિંગ દ્વારા પ્રતિબંધિત કરવામાં આવે તે પહેલાં IP ને મહત્તમ સંખ્યામાં ઉલ્લંઘન કરવાની મંજૂરી છે. ડિફૉલ્ટ = 10."
+ signatures_shorthand: "આપેલ શૉર્ટહેન્ડ શબ્દોનો ઉપયોગ કરતી હસ્તાક્ષર સામે સકારાત્મક મેળ હોય ત્યારે વિનંતી સાથે શું કરવું તેનું નિયંત્રણ કરે છે."
+ signatures_tracking_override: "મોડ્યુલોને ટ્રેકિંગ વિકલ્પોને ઓવરરાઇડ કરવાની મંજૂરી આપીએ? True/સાચું = હા [ડિફૉલ્ટ]; False/ખોટા = ના."
+ supplementary_cache_options: "પૂરક કેશ વિકલ્પો. નૉૅધ: આ મૂલ્યો બદલવાથી તમે સંભવિતપણે લૉગ આઉટ થઈ શકો છો."
+ supplementary_cache_options_enable_apcu: "કેશીંગ માટે APCu નો ઉપયોગ કરવાનો પ્રયાસ કરવો કે કેમ. ડિફૉલ્ટ = True."
+ supplementary_cache_options_enable_memcached: "કેશીંગ માટે Memcached નો ઉપયોગ કરવાનો પ્રયાસ કરવો કે કેમ. ડિફૉલ્ટ = False."
+ supplementary_cache_options_enable_pdo: "કેશીંગ માટે APCu નો ઉપયોગ કરવાનો પ્રયાસ કરવો કે કેમ. ડિફૉલ્ટ = False."
+ supplementary_cache_options_enable_redis: "કેશીંગ માટે Redis નો ઉપયોગ કરવાનો પ્રયાસ કરવો કે કેમ. ડિફૉલ્ટ = False."
+ supplementary_cache_options_memcached_host: "Memcached હોસ્ટ મૂલ્ય. ડિફૉલ્ટ = "localhost"."
+ supplementary_cache_options_memcached_port: "Memcached પોર્ટ મૂલ્ય. ડિફૉલ્ટ = "11211"."
+ supplementary_cache_options_pdo_dsn: "PDO DSN મૂલ્ય. ડિફૉલ્ટ = "mysql:dbname=cidram;host=localhost;port=3306"."
+ supplementary_cache_options_pdo_password: "PDO પાસવર્ડ."
+ supplementary_cache_options_pdo_username: "PDO વપરાશકર્તા નામ."
+ supplementary_cache_options_prefix: "અહીં ઉલ્લેખિત મૂલ્ય બધી કેશ એન્ટ્રી કીમાં આગળ મૂકવામાં આવશે. ડિફૉલ્ટ = "CIDRAM_". જ્યારે એક જ સર્વર પર બહુવિધ સ્થાપનો અસ્તિત્વ ધરાવે છે, ત્યારે આ તેમના કેશને એકબીજાથી અલગ રાખવા માટે ઉપયોગી થઈ શકે છે."
+ supplementary_cache_options_redis_database_number: "Redis ડેટાબેઝ નંબર. ડિફૉલ્ટ = 0. નૉૅધ: Redis ક્લસ્ટર સાથે 0 કરતાં અન્ય મૂલ્યોનો ઉપયોગ કરી શકાતો નથી."
+ supplementary_cache_options_redis_host: "Redis હોસ્ટ મૂલ્ય. ડિફૉલ્ટ = "localhost"."
+ supplementary_cache_options_redis_port: "Redis પોર્ટ મૂલ્ય. ડિફૉલ્ટ = "6379"."
+ supplementary_cache_options_redis_timeout: "Redis સમય સમાપ્તિ મૂલ્ય. ડિફૉલ્ટ = "2.5"."
+ template_data: "નમૂનાઓ અને થીમ્સ માટે રૂપરેખાંકન."
+ template_data_block_event_title: "બ્લોક ઇવેન્ટ્સ માટે પ્રદર્શિત કરવા માટેનું પૃષ્ઠ શીર્ષક."
+ template_data_captcha_title: "કેપ્ચા વિનંતીઓ માટે પ્રદર્શિત કરવા માટેનું પૃષ્ઠ શીર્ષક."
+ template_data_css_url: "કસ્ટમ થીમ્સ માટે CSS ફાઇલ URL."
+ template_data_custom_footer: "બધા "ઍક્સેસ નકારી છે" પૃષ્ઠોની ખૂબ જ નીચે HTML તરીકે દાખલ કરેલ છે. જો તમે આવા તમામ પૃષ્ઠો પર કાનૂની સૂચના, સંપર્ક લિંક, વ્યવસાયની માહિતી, અથવા સમાન સમાવવા માંગતા હો તો આ ઉપયોગી થઈ શકે છે."
+ template_data_custom_header: "બધા "ઍક્સેસ નકારી છે" પૃષ્ઠોની શરૂઆતમાં HTML તરીકે દાખલ કરેલ છે. જો તમે આવા તમામ પૃષ્ઠો પર વેબસાઈટનો લોગો, વ્યક્તિગત હેડર, સ્ક્રિપ્ટો, અથવા સમાન સમાવવા માંગતા હો તો આ ઉપયોગી થઈ શકે છે."
+ template_data_magnification: *MagnifDesc
+ template_data_theme: "CIDRAM માટે વાપરવા માટેની મૂળભૂત થીમ."
+ verification: "વિનંતીઓ ક્યાંથી આવે છે તે ચકાસવા માટેનું રૂપરેખાંકન."
+ verification_adjust: "જ્યારે ચકાસણીના સંદર્ભમાં હોય ત્યારે અન્ય સુવિધાઓને સમાયોજિત કરવા માટેના નિયંત્રણો."
+ verification_other: "જ્યાં શક્ય હોય ત્યાં અન્ય પ્રકારની વિનંતીઓ ચકાસવા માટેના નિયંત્રણો."
+ verification_search_engines: "સર્ચ એન્જિનો તરફથી વિનંતીઓ ચકાસવા માટેના નિયંત્રણો."
+ verification_social_media: "સોશિયલ મીડિયા પ્લેટફોર્મ પરથી વિનંતીઓ ચકાસવા માટેના નિયંત્રણો."
 warning:
  API_Rate_Limited: "ચેતવણી: %s API ની ઍક્સેસ હાલમાં મર્યાદિત દરે લાગે છે."
  Cookies: "નૉૅધ: CIDRAM લૉગિનને પ્રમાણિત કરવા માટે કૂકીનો ઉપયોગ કરે છે. લૉગ ઇન કરીને, તમે તમારા બ્રાઉઝર દ્વારા કૂકી બનાવવા અને સંગ્રહિત કરવા માટે તમારી સંમતિ આપો છો."

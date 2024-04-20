@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Punjabi language data for the front-end (last modified: 2024.04.16).
+# This file: Punjabi language data for the front-end (last modified: 2024.04.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -241,7 +241,7 @@ config:
  logging_serialised_log: "ਸਾਰੀਆਂ ਬਲੌਕ ਕੀਤੀਆਂ ਪਹੁੰਚ ਕੋਸ਼ਿਸ਼ਾਂ ਨੂੰ ਲੌਗ ਕਰਨ ਲਈ ਸੀਰੀਅਲ ਕੀਤੀ ਫਾਈਲ। ਇੱਕ ਫਾਈਲ ਨਾਮ ਦਿਓ, ਜਾਂ ਅਯੋਗ ਕਰਨ ਲਈ ਖਾਲੀ ਛੱਡੋ।"
  logging_standard_log: "ਸਾਰੀਆਂ ਬਲੌਕ ਕੀਤੀਆਂ ਪਹੁੰਚ ਕੋਸ਼ਿਸ਼ਾਂ ਨੂੰ ਲੌਗ ਕਰਨ ਲਈ ਮਨੁੱਖੀ-ਪੜ੍ਹਨਯੋਗ ਫਾਈਲ। ਇੱਕ ਫਾਈਲ ਨਾਮ ਦਿਓ, ਜਾਂ ਅਯੋਗ ਕਰਨ ਲਈ ਖਾਲੀ ਛੱਡੋ।"
  logging_truncate: "ਲੌਗ ਫਾਈਲਾਂ ਨੂੰ ਕੱਟਣਾ ਹੈ ਜਦੋਂ ਉਹ ਇੱਕ ਖਾਸ ਆਕਾਰ ਤੱਕ ਪਹੁੰਚਦੀਆਂ ਹਨ? ਮੁੱਲ B/KB/MB/GB/TB ਵਿੱਚ ਅਧਿਕਤਮ ਆਕਾਰ ਹੈ ਜਿਸਨੂੰ ਕੱਟੇ ਜਾਣ ਤੋਂ ਪਹਿਲਾਂ ਇੱਕ ਲੌਗ ਫਾਈਲ ਵੱਧ ਸਕਦੀ ਹੈ। 0KB ਦਾ ਡਿਫੌਲਟ ਮੁੱਲ ਕਟੌਤੀ ਨੂੰ ਅਯੋਗ ਕਰਦਾ ਹੈ (ਲੌਗ ਫਾਈਲਾਂ ਅਣਮਿੱਥੇ ਸਮੇਂ ਲਈ ਵਧ ਸਕਦੀਆਂ ਹਨ)। ਨੋਟ: ਵਿਅਕਤੀਗਤ ਲੌਗ ਫਾਈਲਾਂ 'ਤੇ ਲਾਗੂ ਹੁੰਦਾ ਹੈ! ਲੌਗ ਫਾਈਲਾਂ ਦੇ ਆਕਾਰ ਨੂੰ ਸਮੂਹਿਕ ਤੌਰ 'ਤੇ ਨਹੀਂ ਮੰਨਿਆ ਜਾਂਦਾ ਹੈ।"
- phpmailer: "PHPMailer ਲਈ ਕੌਂਫਿਗਰੇਸ਼ਨ (ਦੋ-ਕਾਰਕ ਪ੍ਰਮਾਣਿਕਤਾ ਲਈ ਵਰਤਿਆ ਜਾਂਦਾ ਹੈ)।"
+ phpmailer: "PHPMailer ਲਈ ਕੌਂਫਿਗਰੇਸ਼ਨ (ਦੋ-ਕਾਰਕ ਪ੍ਰਮਾਣਿਕਤਾ ਅਤੇ ਈਮੇਲ ਸੂਚਨਾਵਾਂ ਲਈ ਵਰਤਿਆ ਜਾਂਦਾ ਹੈ)।"
  phpmailer_add_reply_to_address: "SMTP ਰਾਹੀਂ ਈਮੇਲ ਭੇਜਣ ਵੇਲੇ ਹਵਾਲਾ ਦੇਣ ਲਈ ਜਵਾਬ ਦਾ ਪਤਾ।"
  phpmailer_add_reply_to_name: "SMTP ਰਾਹੀਂ ਈਮੇਲ ਭੇਜਣ ਵੇਲੇ ਹਵਾਲਾ ਦੇਣ ਲਈ ਜਵਾਬ ਦਾ ਨਾਮ।"
  phpmailer_event_log: "PHPMailer ਦੇ ਸਬੰਧ ਵਿੱਚ ਸਾਰੀਆਂ ਘਟਨਾਵਾਂ ਨੂੰ ਲੌਗ ਕਰਨ ਲਈ ਇੱਕ ਫਾਈਲ। ਇੱਕ ਫਾਈਲ ਨਾਮ ਦਿਓ, ਜਾਂ ਅਯੋਗ ਕਰਨ ਲਈ ਖਾਲੀ ਛੱਡੋ।"
@@ -675,6 +675,8 @@ label:
   Move up: "ਉੱਪਰ ਵੱਲ ਸ਼ਿਫਟ ਕਰੋ"
   Notes: "ਨੋਟਸ (ਸਿਰਫ ਇਸ ਪੰਨੇ 'ਤੇ ਦਿਖਾਇਆ ਗਿਆ ਹੈ, ਅਤੇ ਨਿਯਮ ਨੂੰ ਪ੍ਰਭਾਵਿਤ ਨਹੀਂ ਕਰਦਾ):"
   Other options and special flags: "ਹੋਰ ਵਿਕਲਪ ਅਤੇ ਵਿਸ਼ੇਸ਼ ਝੰਡੇ:"
+  Requires PHPMailer: "PHPMailer ਦੀ ਲੋੜ ਹੈ।"
+  Send trigger notification to the configured email notification address: "ਕੌਂਫਿਗਰ ਕੀਤੇ ਈਮੇਲ ਸੂਚਨਾ ਪਤੇ 'ਤੇ ਟਰਿੱਗਰ ਸੂਚਨਾ ਭੇਜੋ"
   Suppress logging: "ਲੌਗਿੰਗ ਦੀ ਵਰਤੋਂ ਨਾ ਕਰੋ"
   Suppress output template: "ਆਉਟਪੁੱਟ ਟੈਂਪਲੇਟ ਦੀ ਵਰਤੋਂ ਨਾ ਕਰੋ"
   The name of the file to run: "ਚਲਾਉਣ ਲਈ ਫਾਈਲ ਦਾ ਨਾਮ:"
@@ -684,6 +686,7 @@ label:
   Use direct string comparison to test the conditions: "ਸ਼ਰਤਾਂ ਦੀ ਜਾਂਚ ਕਰਨ ਲਈ ਸਿੱਧੀ ਸਟ੍ਰਿੰਗ ਤੁਲਨਾ ਦੀ ਵਰਤੋਂ ਕਰੋ।"
   Use regular expressions to test the conditions: "ਸ਼ਰਤਾਂ ਦੀ ਜਾਂਚ ਕਰਨ ਲਈ ਨਿਯਮਤ ਸਮੀਕਰਨਾਂ ਦੀ ਵਰਤੋਂ ਕਰੋ।"
   Webhooks to apply when the rule requirements are met: "ਨਿਯਮ ਲੋੜਾਂ ਪੂਰੀਆਂ ਹੋਣ 'ਤੇ ਲਾਗੂ ਕਰਨ ਲਈ ਵੈਬਹੁੱਕ:"
+  When forcibly disabled, marking for use won_t have any effect: "ਨੋਟ: ਜਦੋਂ ਜ਼ਬਰਦਸਤੀ ਅਕਿਰਿਆਸ਼ੀਲ ਜਾਂਦਾ ਹੈ, ਤਾਂ ਵਰਤੋਂ ਲਈ ਮਾਰਕ ਕਰਨ ਦਾ ਕੋਈ ਪ੍ਰਭਾਵ ਨਹੀਂ ਹੋਵੇਗਾ।"
   When the rule should begin (optional): "ਨਿਯਮ ਦੀ ਸ਼ੁਰੂਆਤੀ ਮਿਤੀ (ਵਿਕਲਪਿਕ)"
   When the rule should expire (optional): "ਨਿਯਮ ਦੀ ਮਿਆਦ ਪੁੱਗਣ ਦੀ ਮਿਤੀ (ਵਿਕਲਪਿਕ):"
   Where to redirect the request: "ਬੇਨਤੀ ਨੂੰ ਕਿੱਥੇ ਰੀਡਾਇਰੈਕਟ ਕਰਨਾ ਹੈ:"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2024.04.16).
+# This file: French language data for the front-end (last modified: 2024.04.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -241,7 +241,7 @@ config:
  logging_serialised_log: "Un fichier sérialisé pour enregistrement de toutes les tentatives d'accès bloquées. Spécifier un fichier, ou laisser vide à désactiver."
  logging_standard_log: "Un fichier lisible par l'homme pour enregistrement de toutes les tentatives d'accès bloquées. Spécifier un fichier, ou laisser vide à désactiver."
  logging_truncate: "Tronquer les fichiers journaux lorsqu'ils atteignent une certaine taille\_? La valeur est la taille maximale en o/Ko/Mo/Go/To qu'un fichier journal peut croître avant d'être tronqué. La valeur par défaut de 0Ko désactive la troncature (les fichiers journaux peuvent croître indéfiniment). Remarque\_: S'applique aux fichiers journaux individuels\_! La taille des fichiers journaux n'est pas considérée collectivement."
- phpmailer: "Configuration pour PHPMailer (utilisé pour l'authentification à deux facteurs)."
+ phpmailer: "Configuration pour PHPMailer (utilisé pour l'authentification à deux facteurs et pour les notifications par e-mail)."
  phpmailer_add_reply_to_address: "L'adresse de réponse à citer lors de l'envoi d'e-mail via SMTP."
  phpmailer_add_reply_to_name: "Le nom pour répondre à citer lors de l'envoi d'e-mail via SMTP."
  phpmailer_event_log: "Fichier pour l'enregistrement de tous les événements relatifs à PHPMailer. Spécifier un fichier, ou laisser vide à désactiver."
@@ -688,6 +688,8 @@ label:
   Move up: "Ascendre la règle"
   Notes: "Remarques (apparaît seulement sur cette page, et n'affecte pas la règle)\_:"
   Other options and special flags: "Autres options et drapeaux spéciaux\_:"
+  Requires PHPMailer: "Nécessite PHPMailer."
+  Send trigger notification to the configured email notification address: "Envoyez une notification de déclenchement à l'adresse e-mail configurée pour les notifications"
   Suppress logging: "Supprimer la journalisation"
   Suppress output template: "Supprime le modèle de sortie"
   The name of the file to run: "Le nom du fichier à exécuter\_:"
@@ -697,6 +699,7 @@ label:
   Use direct string comparison to test the conditions: "Utilisez la comparaison directe de chaînes pour tester les conditions."
   Use regular expressions to test the conditions: "Utilisez des expressions régulières pour tester les conditions."
   Webhooks to apply when the rule requirements are met: "Webhooks à appliquer lorsque les exigences de la règle sont remplies\_:"
+  When forcibly disabled, marking for use won_t have any effect: "Remarque\_: Lorsqu'il est désactivé de force, le marquage d'utilisation n'aura aucun effet."
   When the rule should begin (optional): "Quand la règle doit commencer (optionnelle)\_:"
   When the rule should expire (optional): "Quand la règle doit expirer (optionnelle)\_:"
   Where to redirect the request: "Où rediriger la requête\_:"

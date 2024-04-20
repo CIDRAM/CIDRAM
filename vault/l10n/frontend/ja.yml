@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2024.04.16).
+# This file: Japanese language data for the front-end (last modified: 2024.04.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -241,7 +241,7 @@ config:
  logging_serialised_log: "アクセス試行阻止の記録、シリアル化されました。​ファイル名指定するか、無効にしたい場合は空白のままにして下さい。"
  logging_standard_log: "アクセス試行阻止の記録、人間によって読み取り可能。​ファイル名指定するか、無効にしたい場合は空白のままにして下さい。"
  logging_truncate: "ログ・ファイルが一定のサイズに達したら切り詰めますか？​値は、ログ・ファイルが切り捨てられる前に大きくなる可能性があるＢ/ＫＢ/ＭＢ/ＧＢ/ＴＢ単位の最大サイズです。​デフォルト値の０ＫＢは切り捨てを無効にします （ログ・ファイルは無期限に拡張できます）。​注：個々のログ・ファイルに適用されます。​ログ・ファイルのサイズは一括して考慮されません。"
- phpmailer: "PHPMailerの設定（二要素認証に使用されます）。"
+ phpmailer: "PHPMailerの設定（二要素認証とＥメール通知に使用されます）。"
  phpmailer_add_reply_to_address: "ＳＭＴＰ経由でＥメールを送信するときに引用する返信アドレス。"
  phpmailer_add_reply_to_name: "ＳＭＴＰ経由でＥメールを送信するときに引用する返信名。"
  phpmailer_event_log: "PHPMailerに関連してすべてのイベントを記録するためのファイル。​ファイル名指定するか、無効にしたい場合は空白のままにして下さい。"
@@ -666,6 +666,8 @@ label:
   Move up: "上がる"
   Notes: "注（このページにのみ表示され、ルールには影響しません）："
   Other options and special flags: "その他のオプションと特別なフラグ："
+  Requires PHPMailer: "PHPMailerが必要です。"
+  Send trigger notification to the configured email notification address: "設定されたＥメール通知アドレスにトリガー通知を送信します"
   Suppress logging: "ロギングを抑制します"
   Suppress output template: "出力テンプレートを抑制します"
   The name of the file to run: "実行するファイルの名前："
@@ -675,6 +677,7 @@ label:
   Use direct string comparison to test the conditions: "文字列の直接比較を使用して条件をテストします。"
   Use regular expressions to test the conditions: "正規表現を使用して条件をテストします。"
   Webhooks to apply when the rule requirements are met: "ルール要件が満たされたときに適用するwebhook："
+  When forcibly disabled, marking for use won_t have any effect: "注意：強制的に無効化した場合、使用のマークは効果がありません。"
   When the rule should begin (optional): "ルールが開始するき時（オプション）："
   When the rule should expire (optional): "ルールが切れる時期（オプション）："
   Where to redirect the request: "リクエストをリダイレクトする場所："

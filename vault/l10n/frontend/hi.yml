@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data for the front-end (last modified: 2024.04.16).
+# This file: Hindi language data for the front-end (last modified: 2024.04.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -241,7 +241,7 @@ config:
  logging_serialised_log: "सभी अवरुद्ध पहुँच प्रयासों को लॉग इन करने के लिए धारावाहिक फाइल। एक फाइल नाम निर्दिष्ट करें, या निष्क्रिय करने के लिए खाली छोड़।"
  logging_standard_log: "सभी अवरुद्ध पहुँच प्रयासों को लॉग इन करने के लिए मानव पठनीय फाइल। एक फाइल नाम निर्दिष्ट करें, या निष्क्रिय करने के लिए खाली छोड़।"
  logging_truncate: "वह एक विशेष आकार तक पहुँचने में जब साफ प्रवेश फाइलें? मूल्य में B/KB/MB/GB/TB अधिकतम आकार है। जब 0KB, वे अनिश्चित काल तक बढ़ सकता है (डिफ़ॉल्ट)। नोट: एकल फाइल पर लागू होता है! फाइलें सामूहिक विचार नहीं कर रहे हैं।"
- phpmailer: "PHPMailer के लिए कॉन्फ़िगरेशन (दो-कारक प्रमाणीकरण के लिए उपयोग किया जाता है)।"
+ phpmailer: "PHPMailer के लिए कॉन्फ़िगरेशन (दो-कारक प्रमाणीकरण और ईमेल सूचनाओं के लिए उपयोग किया जाता है)।"
  phpmailer_add_reply_to_address: "ईमेल भेजने के लिए उत्तर पता।"
  phpmailer_add_reply_to_name: "ईमेल भेजने के लिए उत्तर का नाम।"
  phpmailer_event_log: "PHPMailer के संबंध में सभी घटनाओं को लॉग इन करने के लिए एक फ़ाइल। एक फाइल नाम निर्दिष्ट करें, या निष्क्रिय करने के लिए खाली छोड़।"
@@ -674,6 +674,8 @@ label:
   Move up: "ऊपर जाना"
   Notes: "टिप्पणियाँ (केवल इस पृष्ठ पर दिखाया गया है, और नियम को प्रभावित नहीं करता है):"
   Other options and special flags: "अन्य विकल्प और विशेष झंडे:"
+  Requires PHPMailer: "PHPMailer की आवश्यकता है।"
+  Send trigger notification to the configured email notification address: "कॉन्फ़िगर किए गए ईमेल अधिसूचना पते पर ट्रिगर अधिसूचना भेजें"
   Suppress logging: "लॉगिंग का दमन"
   Suppress output template: "आउटपुट टेम्पलेट का दमन"
   The name of the file to run: "निष्पादित करने के लिए फ़ाइल का नाम:"
@@ -683,6 +685,7 @@ label:
   Use direct string comparison to test the conditions: "स्थितियां का परीक्षण करने के लिए प्रत्यक्ष स्ट्रिंग तुलना का प्रयोग करें।"
   Use regular expressions to test the conditions: "स्थितियां का परीक्षण करने के लिए नियमित अभिव्यक्ति का प्रयोग करें।"
   Webhooks to apply when the rule requirements are met: "नियम की आवश्यकताएं पूरी होने पर आवेदन करने के लिए webhooks:"
+  When forcibly disabled, marking for use won_t have any effect: "नोट: जब जबरन अक्षम कर दिया गया, उपयोग के लिए चिह्नित करने पर कोई प्रभाव नहीं पड़ेगा।"
   When the rule should begin (optional): "जब नियम शुरू होना चाहिए (वैकल्पिक):"
   When the rule should expire (optional): "जब नियम समाप्त हो जाना चाहिए (वैकल्पिक):"
   Where to redirect the request: "अनुरोध कहां पुनर्निर्देशित करें:"

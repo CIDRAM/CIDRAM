@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2024.04.16).
+# This file: Swedish language data for the front-end (last modified: 2024.04.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -241,7 +241,7 @@ config:
  logging_serialised_log: "Serialiserad fil för att logga alla blockerade åtkomstförsök. Ange ett filnamn, eller lämna tomt för att inaktivera."
  logging_standard_log: "Mänsklig läsbar fil för att logga in alla blockerade åtkomstförsök. Ange ett filnamn, eller lämna tomt för att inaktivera."
  logging_truncate: "Avkorta loggfiler när de når en viss storlek? Värdet är den maximala storleken i B/KB/MB/GB/TB som en loggfil kan växa till innan den trunkeras. Standardvärdet på 0KB inaktiverar avkortning (loggfiler kan växa i obestämd tid). Notera: Gäller enskilda loggfiler! Loggfiler storlek anses inte kollektivt."
- phpmailer: "Konfiguration för PHPMailer (används för tvåfaktorautentisering)."
+ phpmailer: "Konfiguration för PHPMailer (används för tvåfaktorsautentisering och för e-postmeddelanden)."
  phpmailer_add_reply_to_address: "Svaradressen att citera när du skickar e-post via SMTP."
  phpmailer_add_reply_to_name: "Svarnamnet att citera när du skickar e-post via SMTP."
  phpmailer_event_log: "En fil för att logga alla händelser i förhållande till PHPMailer. Ange ett filnamn, eller lämna tomt för att inaktivera."
@@ -676,6 +676,8 @@ label:
   Move up: "Flytta upp"
   Notes: "Anteckningar (visas bara på den här sidan, och påverkar inte regeln):"
   Other options and special flags: "Andra alternativ och specialflaggor:"
+  Requires PHPMailer: "Kräver PHPMailer."
+  Send trigger notification to the configured email notification address: "Skicka ett notifiering om utlösande till den konfigurerade e-postmeddelandeadressen"
   Suppress logging: "Undertryck loggning"
   Suppress output template: "Undertryck utmatningsmallen"
   The name of the file to run: "Namnet på filen som ska köras:"
@@ -685,6 +687,7 @@ label:
   Use direct string comparison to test the conditions: "Använd direkt strängjämförelse för att testa villkoren."
   Use regular expressions to test the conditions: "Använd regelbunden uttryck för att testa villkoren."
   Webhooks to apply when the rule requirements are met: "Webhooks som ska tillämpas när regelkraven är uppfyllda:"
+  When forcibly disabled, marking for use won_t have any effect: "Notera: När den är inaktiverad med våld, kommer märkning för användning inte att ha någon effekt."
   When the rule should begin (optional): "När regeln ska börja (det är valfritt):"
   When the rule should expire (optional): "När regeln ska upphöra (det är valfritt):"
   Where to redirect the request: "Var ska omdirigera begäran:"

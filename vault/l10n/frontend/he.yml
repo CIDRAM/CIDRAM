@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hebrew language data for the front-end (last modified: 2024.04.16).
+# This file: Hebrew language data for the front-end (last modified: 2024.04.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -241,7 +241,7 @@ config:
  logging_serialised_log: "קובץ סידורי לרישום כל ניסיונות הגישה החסומים. ציין שם קובץ, או השאר ריק כדי להשבית."
  logging_standard_log: "קובץ קריא לאדם לרישום כל ניסיונות הגישה החסומים. ציין שם קובץ, או השאר ריק כדי להשבית."
  logging_truncate: "לקצץ קובצי יומן כשהם מגיעים לגודל מסוים? הערך הוא הגודל המקסימלי ב-B/KB/MB/GB/TB שקובץ יומן עשוי לגדול אליו לפני קיצוץ. הערך הסטנדרטי של 0KB משבית חיתוך (קבצי יומן יכולים לגדול ללא הגבלת). הערה: חל על קבצי יומן בודדים! הגודל של קובצי יומן לא נחשב באופן קולקטיבי."
- phpmailer: "תצורה עבור PHPMailer (משמש לאימות דו-גורמי)."
+ phpmailer: "תצורה עבור PHPMailer (משמש לאימות דו-גורמי ולהתראות באימייל)."
  phpmailer_add_reply_to_address: "כתובת השולח בעת שליחת אימייל באמצעות SMTP."
  phpmailer_add_reply_to_name: "שם השולח בעת שליחת אימייל באמצעות SMTP."
  phpmailer_event_log: "קובץ לרישום כל האירועים ביחס ל-PHPMailer. ציין שם קובץ, או השאר ריק כדי להשבית."
@@ -669,6 +669,8 @@ label:
   Move up: "לזוז למעלה"
   Notes: "הערות (מוצגות בדף זה בלבד ואינן משפיעות על הכלל):"
   Other options and special flags: "אפשרויות נוספות ודגלים מיוחדים:"
+  Requires PHPMailer: "דורש PHPMailer."
+  Send trigger notification to the configured email notification address: "שלח הודעת טריגר לכתובת ההתראות שהוגדרה אימייל"
   Suppress logging: "השמט רישום"
   Suppress output template: "השמט תבנית פלט"
   The name of the file to run: "שם הקובץ להרצה:"
@@ -678,6 +680,7 @@ label:
   Use direct string comparison to test the conditions: "השתמש בהשוואת מחרוזת ישירה כדי לבדוק את התנאים."
   Use regular expressions to test the conditions: "השתמש בביטויים רגולריים כדי לבדוק את התנאים."
   Webhooks to apply when the rule requirements are met: "Webhooks ליישום כאשר דרישות הכלל מתקיימות:"
+  When forcibly disabled, marking for use won_t have any effect: "הערה: כאשר מושבת בכוח, לסימון לשימוש לא תהיה כל השפעה."
   When the rule should begin (optional): "מתי הכלל אמור להתחיל (אופציונלי):"
   When the rule should expire (optional): "מתי הכלל אמור לפוג (אופציונלי):"
   Where to redirect the request: "לאן להפנות את הבקשה:"

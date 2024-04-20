@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Afrikaans language data (last modified: 2023.12.22).
+# This file: Afrikaans language data (last modified: 2024.04.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -50,9 +50,15 @@ Short_Spam: "Strooipos risiko"
 Short_Unverified_UA: "Ongeverifieerde %s"
 Support_Email: "As jy glo dat dit 'n fout is, of om hulp te soek, {ClickHereLink} om 'n ondersteuningskaartjie per e-pos aan die webmeester van hierdie webwerf te stuur (moet asseblief nie die aanhef of onderwerpreël van die e-pos verander nie)."
 Support_Email_2: "As jy glo dat dit 'n fout is, stuur 'n e-pos aan {EmailAddr} om hulp te soek."
+Trigger notification:
+ Subject: "Aktiveringskennisgewing"
+ Template: |
+  <center><p>Hallo, %s.<br /><br />
+  Hierdie e-pos is om jou in kennis te stel dat die volgende CIDRAM-reëls geaktiveer is:<br /><br />
+  %s</p></center>
 bobuam_ambiguous: "Dubbelsinnige blaaier-ID"
 bobuam_bot: "Vermeende bot of skrapersonde"
-bobuam_malformed: "Misvormde gebruikeragent"
+bobuam_malformed: "Wanvormde gebruikeragent"
 bobuam_masquerade: "Maskerpoging"
 bobuam_outdated_long: "Jou blaaier identifiseer as verouderd en vorm as sodanig 'n veiligheidsrisiko. Asseblief opdateer na die huidige weergawe voordat u toegang tot hierdie webwerf verkry."
 bobuam_outdated_short: "Verouderde blaaier"

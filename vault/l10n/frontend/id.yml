@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2024.04.16).
+# This file: Indonesian language data for the front-end (last modified: 2024.04.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -241,7 +241,7 @@ config:
  logging_serialised_log: "File serial untuk mencatat semua upaya akses diblokir. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
  logging_standard_log: "File yang dapat dibaca oleh manusia untuk mencatat semua upaya akses diblokir. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
  logging_truncate: "Memotong file log ketika mereka mencapai ukuran tertentu? Nilai adalah ukuran maksimum dalam B/KB/MB/GB/TB yang bisa ditambahkan untuk file log sebelum dipotong. Nilai default 0KB menonaktifkan pemotongan (file log dapat tumbuh tanpa batas waktu). Catat: Berlaku untuk file log individu! Ukuran file log tidak dianggap secara kolektif."
- phpmailer: "Konfigurasi untuk PHPMailer (digunakan untuk otentikasi dua-faktor)."
+ phpmailer: "Konfigurasi untuk PHPMailer (digunakan untuk otentikasi dua-faktor dan untuk pemberitahuan email)."
  phpmailer_add_reply_to_address: "Alamat balasan yang dikutip saat mengirim email melalui SMTP."
  phpmailer_add_reply_to_name: "Nama balasan yang dikutip saat mengirim email melalui SMTP."
  phpmailer_event_log: "File untuk mencatat semua kejadian yang terkait dengan PHPMailer. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
@@ -665,6 +665,8 @@ label:
   Move up: "Naik"
   Notes: "Catatan (hanya ditampilkan di halaman ini, dan tidak memengaruhi aturan):"
   Other options and special flags: "Opsi lain dan bendera khusus:"
+  Requires PHPMailer: "Membutuhkan PHPMailer."
+  Send trigger notification to the configured email notification address: "Kirim pemberitahuan pemicu ke alamat pemberitahuan email yang dikonfigurasi"
   Suppress logging: "Menekan catatan"
   Suppress output template: "Menekan template output"
   The name of the file to run: "Nama file yang akan dieksekusi:"
@@ -674,6 +676,7 @@ label:
   Use direct string comparison to test the conditions: "Gunakan perbandingan string langsung untuk menguji kondisi."
   Use regular expressions to test the conditions: "Gunakan ekspresi reguler untuk menguji kondisi."
   Webhooks to apply when the rule requirements are met: "Webhook untuk diterapkan ketika persyaratan aturan dipenuhi:"
+  When forcibly disabled, marking for use won_t have any effect: "Catat: Jika dinonaktifkan secara paksa, penandaan untuk digunakan tidak akan berpengaruh apapun."
   When the rule should begin (optional): "Kapan aturan harus dimulai (opsional):"
   When the rule should expire (optional): "Kapan aturan harus kedaluwarsa (opsional):"
   Where to redirect the request: "Dimana mengarahkan permintaan:"

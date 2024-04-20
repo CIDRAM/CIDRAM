@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Farsi language data for the front (last modified: 2024.04.16).
+# This file: Farsi language data for the front (last modified: 2024.04.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -241,7 +241,7 @@ config:
  logging_serialised_log: "فایل سریالی شده برای ثبت تمام تلاش های دسترسی مسدود شده. نام فایل را مشخص کنید، یا برای غیرفعال کردن آن را خالی بگذارید."
  logging_standard_log: "فایل قابل خواندن توسط انسان برای ثبت تمام تلاش های دسترسی مسدود شده. نام فایل را مشخص کنید، یا برای غیرفعال کردن آن را خالی بگذارید."
  logging_truncate: "وقتی فایل های گزارش به اندازه معینی رسیدند کوتاه شوند؟ مقدار حداکثر اندازه B/KB/MB/GB/TB است که یک فایل گزارش ممکن است قبل از کوتاه شدن به آن برسد. مقدار پیش‌فرض 0KB برش را غیرفعال می‌کند (فایل‌های ورود به سیستم می‌توانند به طور نامحدود رشد کنند). توجه: برای فایل های لاگ فردی اعمال می شود! اندازه فایل های گزارش به طور جمعی در نظر گرفته نمی شود."
- phpmailer: "پیکربندی برای PHPMailer (برای احراز هویت دو مرحله ای استفاده می شود)."
+ phpmailer: "پیکربندی برای PHPMailer (برای احراز هویت دو مرحله ای و برای اعلان های ایمیل استفاده می شود)."
  phpmailer_add_reply_to_address: "آدرس پاسخی که هنگام ارسال ایمیل از طریق SMTP ذکر شود."
  phpmailer_add_reply_to_name: "نام پاسخی که باید هنگام ارسال ایمیل از طریق SMTP ذکر شود."
  phpmailer_event_log: "فایلی برای ثبت همه رویدادها در رابطه با PHPMailer. نام فایل را مشخص کنید، یا برای غیرفعال کردن آن را خالی بگذارید."
@@ -669,6 +669,8 @@ label:
   Move up: "حرکت به بالا"
   Notes: "یادداشت ها (فقط در این صفحه نشان داده شده است و بر قوانین تأثیر نمی گذارد):"
   Other options and special flags: "سایر گزینه ها و پرچم های ویژه:"
+  Requires PHPMailer: "به PHPMailer نیاز دارد."
+  Send trigger notification to the configured email notification address: "اعلان ماشه را به آدرس ایمیل پیکربندی شده اعلان ارسال کنید"
   Suppress logging: "سرکوب رکوردها"
   Suppress output template: "سرکوب قالب خروجی"
   The name of the file to run: "نام فایلی که باید اجرا شود:"
@@ -678,6 +680,7 @@ label:
   Use direct string comparison to test the conditions: "برای آزمایش شرایط از از مقایسه مستقیم رشته استفاده کنید."
   Use regular expressions to test the conditions: "برای آزمایش شرایط از از عبارات منظم استفاده کنید."
   Webhooks to apply when the rule requirements are met: "هوک‌هایی که در صورت برآورده شدن الزامات قوانین اعمال می‌شوند:"
+  When forcibly disabled, marking for use won_t have any effect: "توجه داشته باشید: هنگامی که به اجبار غیرفعال می شود، علامت گذاری برای استفاده هیچ تاثیری نخواهد داشت."
   When the rule should begin (optional): "زمانی که قوانین باید شروع شود (اختیاری):"
   When the rule should expire (optional): "زمانی که قوانین باید منقضی شود (اختیاری):"
   Where to redirect the request: "کجا درخواست را تغییر مسیر دهیم:"

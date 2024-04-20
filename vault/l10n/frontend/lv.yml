@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2024.04.16).
+# This file: Latvian language data for the front-end (last modified: 2024.04.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -241,7 +241,7 @@ config:
  logging_serialised_log: "Sērijveida fails visu bloķēto piekļuves mēģinājumu reģistrēšanai. Norādiet faila nosaukumu, vai atstājiet tukšu, lai to atspējotu."
  logging_standard_log: "Cilvēkam lasāms fails visu bloķēto piekļuves mēģinājumu reģistrēšanai. Norādiet faila nosaukumu, vai atstājiet tukšu, lai to atspējotu."
  logging_truncate: "Saīsināt logfailus, kad tie sasniedz noteiktu lielumu? Vērtība ir maksimālais lielums B/KB/MB/GB/TB, līdz logfailam var izaugt pirms saīsināšanas. Noklusējuma vērtība 0KB atspējo saīsināšanu (logfaili var pieaugt bezgalīgi). Piezīme: Attiecas uz indivīdiem logfailiem! Logfailu lielums netiek skaitīts kolektīvi."
- phpmailer: "PHPMailer konfigurācija (izmanto divu faktoru autentifikācijai)."
+ phpmailer: "PHPMailer konfigurācija (izmanto divu faktoru autentifikācijai un e-pasta paziņojumiem)."
  phpmailer_add_reply_to_address: "Respondenta adrese, ko citēt, nosūtot e-pastu izmantojot SMTP."
  phpmailer_add_reply_to_name: "Respondenta vārds, ko citēt, nosūtot e-pastu izmantojot SMTP."
  phpmailer_event_log: "Visu ar PHPMailer saistīto notikumu reģistrēšanai fails. Norādiet faila nosaukumu, vai atstājiet tukšu, lai to atspējotu."
@@ -674,6 +674,8 @@ label:
   Move up: "Ej augšā"
   Notes: "Piezīmes (redzams tikai šajā lapā, un neietekmē palīgnoteikumu):"
   Other options and special flags: "Citas iespējas un īpašie karodziņi:"
+  Requires PHPMailer: "Nepieciešams PHPMailer."
+  Send trigger notification to the configured email notification address: "Nosūtiet aktivizētāja paziņojumu uz konfigurēt e-pasta paziņojumu adresi"
   Suppress logging: "Apspiest reģistrēšanu"
   Suppress output template: "Apspiest izvades veidni"
   The name of the file to run: "Izpildāmā faila nosaukums:"
@@ -683,6 +685,7 @@ label:
   Use direct string comparison to test the conditions: "Izmantojiet tiešs stīgu salīdzinājums, lai pārbaudītu nosacījumi."
   Use regular expressions to test the conditions: "Izmantojiet regulāras izteiksmes, lai pārbaudītu nosacījumi."
   Webhooks to apply when the rule requirements are met: "Tīmekļa āķi, kas jāpiemēro, ja ir izpildītas kārtulu prasības:"
+  When forcibly disabled, marking for use won_t have any effect: "Piezīme: Kad tas ir piespiedu kārtā atspējots, marķēšanai lietošanai nebūs nekādas ietekmes."
   When the rule should begin (optional): "Kad noteikumam jāsākas (neobligāti):"
   When the rule should expire (optional): "Kad noteikumam jābeidzas (neobligāti):"
   Where to redirect the request: "Kur pāradresēt pieprasījumu:"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2024.04.16).
+# This file: Spanish language data for the front-end (last modified: 2024.04.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -241,7 +241,7 @@ config:
  logging_serialised_log: "Un archivo serializado para el registro de todos los intentos de acceso bloqueados. Especificar el nombre del archivo, o dejar en blanco para desactivar."
  logging_standard_log: "Un archivo legible por humanos para el registro de todos los intentos de acceso bloqueados. Especificar el nombre del archivo, o dejar en blanco para desactivar."
  logging_truncate: "¿Truncar archivos de registro cuando alcanzan cierto tamaño? Valor es el tamaño máximo en B/KB/MB/GB/TB que un archivo de registro puede crecer antes de ser truncado. El valor predeterminado de 0KB deshabilita el truncamiento (archivos de registro pueden crecer indefinidamente). Nota: ¡Se aplica a archivos de registro individuales! El tamaño de los archivos de registro no se considera colectivamente."
- phpmailer: "Configuración para PHPMailer (utilizado para la autenticación de dos factores)."
+ phpmailer: "Configuración para PHPMailer (se utiliza para la autenticación de dos factores y para notificaciones por correo electrónico)."
  phpmailer_add_reply_to_address: "La dirección de la respuesta para citar cuando se envía un correo electrónico a través de SMTP."
  phpmailer_add_reply_to_name: "El nombre de la respuesta para citar cuando se envía un correo electrónico a través de SMTP."
  phpmailer_event_log: "Un archivo para registrar todos los eventos en relación con PHPMailer. Especificar el nombre del archivo, o dejar en blanco para desactivar."
@@ -672,6 +672,8 @@ label:
   Move up: "Mueve la regla subir"
   Notes: "Notas (solo se muestra en esta página, y no afecta la regla):"
   Other options and special flags: "Otras opciones y banderas especiales:"
+  Requires PHPMailer: "Requiere PHPMailer."
+  Send trigger notification to the configured email notification address: "Envíe una notificación de desencadenar a la dirección de notificación por correo electrónico configurada"
   Suppress logging: "Suprimir registro"
   Suppress output template: "Suprime la plantilla de salida"
   The name of the file to run: "El nombre del archivo a ejecutar:"
@@ -681,6 +683,7 @@ label:
   Use direct string comparison to test the conditions: "Usa la comparación directa de cadenas para probar las condiciones."
   Use regular expressions to test the conditions: "Usa expresiones regulares para probar las condiciones."
   Webhooks to apply when the rule requirements are met: "Webhooks para aplicar cuando se cumplen los requisitos de la regla:"
+  When forcibly disabled, marking for use won_t have any effect: "Nota: Cuando se desactiva por la fuerza, marcar para uso no tendrá ningún efecto."
   When the rule should begin (optional): "Cuando la regla debe comenzar (opcional):"
   When the rule should expire (optional): "Cuándo la regla debe expirar (opcional):"
   Where to redirect the request: "Dónde redireccionar la solicitud:"

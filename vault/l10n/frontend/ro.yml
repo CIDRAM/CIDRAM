@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Romanian language data for the front-end (last modified: 2024.04.16).
+# This file: Romanian language data for the front-end (last modified: 2024.04.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -241,7 +241,7 @@ config:
  logging_serialised_log: "Fișier serializat pentru înregistrarea tuturor solicitărilor blocate. Specificați un nume de fișier, sau lăsați necompletat pentru a dezactiva."
  logging_standard_log: "Fișier care poate fi citit de om pentru înregistrarea tuturor solicitărilor blocate. Specificați un nume de fișier, sau lăsați necompletat pentru a dezactiva."
  logging_truncate: "Trunchiați fișierele jurnal când ating o anumită dimensiune? Valoarea este dimensiunea maximă în B/KB/MB/GB/TB la care poate crește un fișier jurnal înainte de a fi trunchiat. Valoarea implicită de 0KB dezactivează trunchierea (fișierele jurnal pot crește la infinit). Notă: Se aplică fișierelor jurnal individuale! Dimensiunea fișierelor jurnal nu este luată în considerare în mod colectiv."
- phpmailer: "Configurare pentru PHPMailer (folosit pentru autentificarea cu doi factori)."
+ phpmailer: "Configurare pentru PHPMailer (utilizat pentru autentificarea cu doi factori și pentru notificările prin e-mail)."
  phpmailer_add_reply_to_address: "Adresa de răspuns de citat atunci când trimiteți e-mail prin SMTP."
  phpmailer_add_reply_to_name: "Numele de răspuns de citat atunci când trimiteți e-mail prin SMTP."
  phpmailer_event_log: "Un fișier pentru înregistrarea tuturor evenimentelor în legătură cu PHPMailer. Specificați un nume de fișier, sau lăsați necompletat pentru a dezactiva."
@@ -670,9 +670,9 @@ label:
   Enforce default IP tracking options: "Aplicați opțiunile de urmărire IP implicite"
   Enforce extended IP tracking options: "Aplicați opțiunile de urmărire IP extinse"
   Forcibly disable HCaptcha: "Dezactivați forțat HCaptcha"
-  Forcibly disable IP tracking: "Dezactivați forțat urmărirea IP."
+  Forcibly disable IP tracking: "Dezactivați forțat urmărirea IP"
   Forcibly disable reCAPTCHA: "Dezactivați forțat reCAPTCHA"
-  Forcibly enable IP tracking: "Activați forțat urmărirea IP."
+  Forcibly enable IP tracking: "Activați forțat urmărirea IP"
   HTTP status code override: "Modificarea codului de stare HTTP:"
   If the following conditions are met, %s: "Dacă sunt îndeplinite următoarele condiții, %s."
   Leave it as is (don_t set anything): "Lăsați-l așa cum este (nu setați nimic)"
@@ -685,6 +685,8 @@ label:
   Move up: "Mutați asta în sus"
   Notes: "Note (este afișat doar pe această pagină, și nu afectează regula):"
   Other options and special flags: "Alte opțiuni și steaguri speciale:"
+  Requires PHPMailer: "Necesită PHPMailer."
+  Send trigger notification to the configured email notification address: "Trimiteți notificarea de declanșare la adresa de e-mail configurată de notificare"
   Suppress logging: "Suprimați înregistrarea"
   Suppress output template: "Suprimați șablonul de ieșire"
   The name of the file to run: "Numele fișierului de rulat:"
@@ -694,6 +696,7 @@ label:
   Use direct string comparison to test the conditions: "Utilizați compararea directă a șirurilor pentru a testa condițiile."
   Use regular expressions to test the conditions: "Utilizați expresii regulate pentru a testa condițiile."
   Webhooks to apply when the rule requirements are met: "Webhooks de aplicat atunci când cerințele regulilor sunt îndeplinite:"
+  When forcibly disabled, marking for use won_t have any effect: "Notă: Când este dezactivată forțat, marcarea pentru utilizare nu va avea niciun efect."
   When the rule should begin (optional): "Când regula ar trebui să înceapă (opțional):"
   When the rule should expire (optional): "Când regula ar trebui să expire (opțional):"
   Where to redirect the request: "Unde să redirecționați solicitarea:"

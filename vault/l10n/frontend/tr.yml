@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2024.04.16).
+# This file: Turkish language data for the front-end (last modified: 2024.04.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -241,7 +241,7 @@ config:
  logging_serialised_log: "Engellenen tüm erişim girişimlerini kaydetmek için seri haline getirilmiş dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
  logging_standard_log: "Engellenen tüm erişim girişimlerini kaydetmek için insanlar tarafından okunabilir dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
  logging_truncate: "Belirli bir boyuta ulaştığında günlük dosyalarını kesin? Değer, bir günlük dosyasının kesilmeden önce büyüyebileceği B/KB/MB/GB/TB cinsinden maksimum boyuttur. Varsayılan 0KB değeri, kesmeyi devre dışı bırakır (günlük dosyaları sınırsız büyüyebilir). Not: Tek tek kayıt dosyaları için geçerlidir! Günlük dosyalarının boyutu toplam olarak alınmaz."
- phpmailer: "PHPMailer için yapılandırma (iki faktörlü kimlik doğrulama için kullanılır)."
+ phpmailer: "PHPMailer için yapılandırma (iki faktörlü kimlik doğrulama ve e-posta bildirimleri için kullanılır)."
  phpmailer_add_reply_to_address: "SMTP ile e-posta gönderirken kullanılacak cevap adresi."
  phpmailer_add_reply_to_name: "SMTP ile e-posta gönderirken kullanılacak cevap ismi."
  phpmailer_event_log: "PHPMailer ile ilgili tüm olayları günlüğe kaydetmek için bir dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
@@ -670,6 +670,8 @@ label:
   Move up: "Yukarı taşı"
   Notes: "Notlar (yalnızca bu sayfada gösterilir, ve kuralı etkilemez):"
   Other options and special flags: "Diğer seçenekler ve özel bayraklar:"
+  Requires PHPMailer: "PHPMailer gerektirir."
+  Send trigger notification to the configured email notification address: "Yapılandırılmış e-posta bildirim adresine tetikleyici bildirimi gönderin"
   Suppress logging: "Günlüğe kaydetmeyi bastırmak"
   Suppress output template: "Çıktı şablonunu bastırmak"
   The name of the file to run: "Yürütülecek dosyanın adı:"
@@ -679,6 +681,7 @@ label:
   Use direct string comparison to test the conditions: "Koşulları test etmek için direkt dizi karşılaştırması kullanın."
   Use regular expressions to test the conditions: "Koşulları test etmek için düzenli ifadeler kullanın."
   Webhooks to apply when the rule requirements are met: "Kural gereksinimleri karşılandığında uygulanacak web kancaları:"
+  When forcibly disabled, marking for use won_t have any effect: "Not: Zorunlu olarak devre dışı bırakıldığında, kullanım için işaretlemenin herhangi bir etkisi olmayacaktır."
   When the rule should begin (optional): "Kural ne zaman başlamalı (isteğe):"
   When the rule should expire (optional): "Kural ne zaman sona ermeli (isteğe):"
   Where to redirect the request: "İsteğin nereye yönlendirileceği:"

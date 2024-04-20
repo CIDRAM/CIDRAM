@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data (last modified: 2023.12.22).
+# This file: Italian language data (last modified: 2024.04.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -50,6 +50,12 @@ Short_Spam: "Rischio per lo spam"
 Short_Unverified_UA: "%s non verificato"
 Support_Email: "Se credi che questo è in errore, o per cercare assistenza, {ClickHereLink} per inviare una richiesta di assistenza tramite di posta elettronica per il webmaster di questo sito (si prega di non modificare il preambolo o linea oggetto della posta elettronica)."
 Support_Email_2: "Se credi che questo è in errore, invia una posta elettronica a {EmailAddr} per richiedere assistenza."
+Trigger notification:
+ Subject: "Notifica di innescare"
+ Template: |
+  <center><p>Salve, %s.<br /><br />
+  Questa posta elettronica ti informa che sono state innescate le seguenti regole di CIDRAM:<br /><br />
+  %s</p></center>
 bobuam_ambiguous: "ID del browser ambiguo"
 bobuam_bot: "Bot o sonda scraper sospetto"
 bobuam_malformed: "Agente utente malformato"

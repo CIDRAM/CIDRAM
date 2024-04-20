@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data (last modified: 2024.04.11).
+# This file: Portuguese language data (last modified: 2024.04.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -58,6 +58,12 @@ Short_Spam: "Risco de spam"
 Short_Unverified_UA: "%s não verificado"
 Support_Email: "Se você acredita que isso é um erro, ou a procurar assistência, {ClickHereLink} para enviar um e-mail ticket de suporte para o webmaster deste site (por favor, não alterar o preâmbulo ou linha de assunto do e-mail)."
 Support_Email_2: "Se você acredita que isso é um erro, envie um e-mail para {EmailAddr} para procurar ajuda."
+Trigger notification:
+ Subject: "Notificação de desencadeamento"
+ Template: |
+  <center><p>Olá, %s.<br /><br />
+  Este e-mail serve para notificá-lo de que as seguintes regras do CIDRAM foram desencadeadas:<br /><br />
+  %s</p></center>
 bobuam_ambiguous: "ID do navegador ambíguo"
 bobuam_bot: "Suspeito bot ou sonda raspadora"
 bobuam_malformed:

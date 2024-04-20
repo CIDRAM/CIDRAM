@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data for the front-end (last modified: 2024.04.16).
+# This file: Bangla language data for the front-end (last modified: 2024.04.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -241,7 +241,7 @@ config:
  logging_serialised_log: "সব অবরুদ্ধ অ্যাক্সেস প্রচেষ্টা রেকর্ড করার জন্য serialized ফাইল। ফাইলের নাম উল্লেখ করুন, অথবা নিষ্ক্রিয় করতে ফাঁকা রাখুন।"
  logging_standard_log: "সব অবরুদ্ধ অ্যাক্সেস প্রচেষ্টা রেকর্ড করার জন্য মানব পাঠযোগ্য ফাইল। ফাইলের নাম উল্লেখ করুন, অথবা নিষ্ক্রিয় করতে ফাঁকা রাখুন।"
  logging_truncate: "একটি নির্দিষ্ট আকারে পৌঁছানোর সময় লগ ফাইলগুলি কেটে ফেলা হবে? লগ ফাইলগুলির জন্য B/KB/MB/GB/TB এ মান সর্বাধিক অনুমোদিত আকার (এই আকারের বাইরে, লগ ফাইলগুলি ছোট করা হবে)। ডিফল্ট মান 0KB ট্রুনাকশন নিষ্ক্রিয় করবে (লগ ফাইলগুলি অনির্দিষ্টকালের জন্য বাড়তে পারে)। দয়া করে নোট করুন: এটি স্বতন্ত্র লগ ফাইলগুলিতে প্রযোজ্য! লগ ফাইলের আকার সমষ্টিগতভাবে বিবেচনা করা হয় না।"
- phpmailer: "PHPMailer জন্য কনফিগারেশন (দ্বি-গুণক প্রমাণীকরণ জন্য ব্যবহৃত)।"
+ phpmailer: "PHPMailer জন্য কনফিগারেশন (দ্বি-ফ্যাক্টর প্রমাণীকরণ এবং ইমেইল বিজ্ঞপ্তির জন্য ব্যবহৃত হয়।"
  phpmailer_add_reply_to_address: "SMTP এর মাধ্যমে ইমেইল পাঠানোর সময় ব্যবহারের জন্য উত্তর ঠিকানা।"
  phpmailer_add_reply_to_name: "SMTP এর মাধ্যমে ইমেইল পাঠানোর সময় ব্যবহারের জন্য উত্তর নাম।"
  phpmailer_event_log: "PHPMailer সম্পর্কিত সকল ঘটনা লগইন করার জন্য একটি ফাইল। ফাইলের নাম উল্লেখ করুন, অথবা নিষ্ক্রিয় করতে ফাঁকা রাখুন।"
@@ -664,6 +664,8 @@ label:
   Move up: "আরোহণ করা"
   Notes: "মন্তব্য (কেবলমাত্র এই পৃষ্ঠায় দেখানো হয়েছে, এবং নিয়মটি প্রভাবিত করে না):"
   Other options and special flags: "অন্যান্য বিকল্প এবং বিশেষ পতাকা:"
+  Requires PHPMailer: "PHPMailer প্রয়োজন।"
+  Send trigger notification to the configured email notification address: "কনফিগার করা ইমেইল বিজ্ঞপ্তি ঠিকানায় ট্রিগার বিজ্ঞপ্তি পাঠান"
   Suppress logging: "লগিং দমন করুন"
   Suppress output template: "আউটপুট টেমপ্লেট দমন করুন"
   The name of the file to run: "কার্যকর করতে ফাইলের নাম:"
@@ -673,6 +675,7 @@ label:
   Use direct string comparison to test the conditions: "শর্ত পরীক্ষা করার জন্য সরাসরি স্ট্রিং তুলনা ব্যবহার করুন।"
   Use regular expressions to test the conditions: "শর্ত পরীক্ষা করার জন্য নিয়মিত অভিব্যক্তি ব্যবহার করুন।"
   Webhooks to apply when the rule requirements are met: "নিয়মের প্রয়োজনীয়তা পূরণ হলে ওয়েবহুকগুলি প্রয়োগ করতে হবে:"
+  When forcibly disabled, marking for use won_t have any effect: "নোট: যখন জোরপূর্বক অক্ষম করা হয়, ব্যবহারের জন্য চিহ্নিত করা কোন প্রভাব ফেলবে না।"
   When the rule should begin (optional): "যখন নিয়ম শুরু করা উচিত (ঐচ্ছিক):"
   When the rule should expire (optional): "যখন নিয়ম মেয়াদ শেষ হওয়া উচিত (ঐচ্ছিক):"
   Where to redirect the request: "কোথায় অনুরোধ পুনর্নির্দেশ:"

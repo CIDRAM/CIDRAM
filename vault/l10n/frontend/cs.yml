@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Czech language data for the front-end (last modified: 2024.04.16).
+# This file: Czech language data for the front-end (last modified: 2024.04.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -241,7 +241,7 @@ config:
  logging_serialised_log: "Serializovaný soubor pro protokolování všech zablokovaných pokusů o přístup. Zadejte název souboru nebo ponechejte prázdné, chcete-li jej deaktivovat."
  logging_standard_log: "Lidsky čitelný soubor pro protokolování všech zablokovaných pokusů o přístup. Zadejte název souboru nebo ponechejte prázdné, chcete-li jej deaktivovat."
  logging_truncate: "Zkrátit soubory protokolu, když dosáhnou určité velikosti? Hodnota je maximální velikost v B/KB/MB/GB/TB, na kterou může soubor protokolu narůst, než bude zkrácen. Standardní hodnota 0KB zakáže zkrácení (soubory protokolu se mohou neomezeně zvětšovat). Poznámka: Platí pro jednotlivé soubory protokolu! Velikost souborů protokolu se nebere v úvahu společně."
- phpmailer: "Konfigurace pro PHPMailer (používá se pro dvoufaktorovou autentizaci)."
+ phpmailer: "Konfigurace pro PHPMailer (používá se pro dvoufaktorovou autentizaci a pro e-mailová upozornění)."
  phpmailer_add_reply_to_address: "Adresa pro odpověď, která se má citovat při odesílání e-mailu přes SMTP."
  phpmailer_add_reply_to_name: "Název odpovědi, který se má citovat při odesílání e-mailu přes SMTP."
  phpmailer_event_log: "Soubor pro protokolování všech událostí ve vztahu k PHPMailer. Zadejte název souboru nebo ponechejte prázdné, chcete-li jej deaktivovat."
@@ -679,6 +679,8 @@ label:
   Move up: "Přesuňte to nahoru"
   Notes: "Poznámky (zobrazeno pouze na této stránce a neovlivňuje pravidlo):"
   Other options and special flags: "Další možnosti a speciální příznaky:"
+  Requires PHPMailer: "Vyžaduje PHPMailer."
+  Send trigger notification to the configured email notification address: "Odešlete oznámení o aktivaci na nakonfigurovanou e-mailovou adresu pro oznámení"
   Suppress logging: "Potlačit protokolování"
   Suppress output template: "Potlačit výstupní šablonu"
   The name of the file to run: "Název souboru, který se má spustit:"
@@ -688,6 +690,7 @@ label:
   Use direct string comparison to test the conditions: "K testování podmínek použijte přímé porovnání řetězců."
   Use regular expressions to test the conditions: "K testování podmínek použijte regulární výrazy."
   Webhooks to apply when the rule requirements are met: "Webhooky, které se použijí, když jsou splněny požadavky pravidel:"
+  When forcibly disabled, marking for use won_t have any effect: "Poznámka: Při nuceném zakázání, označení pro použití nebude mít žádný účinek."
   When the rule should begin (optional): "Kdy by mělo pravidlo začít (volitelné):"
   When the rule should expire (optional): "Kdy by mělo pravidlo vypršet (volitelné):"
   Where to redirect the request: "Kam přesměrovat požadavek:"

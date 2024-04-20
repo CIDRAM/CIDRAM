@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Czech language data (last modified: 2023.12.22).
+# This file: Czech language data (last modified: 2024.04.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -50,6 +50,12 @@ Short_Spam: "Riziko spamu"
 Short_Unverified_UA: "Neověřený %s"
 Support_Email: "Pokud se domníváte, že jde o omyl, nebo chcete-li požádat o pomoc, {ClickHereLink} a odešlete e-mailovou žádost o podporu webmasterovi tohoto webu (neměňte prosím preambuli ani předmět e-mailu)."
 Support_Email_2: "Pokud se domníváte, že jde o omyl, pošlete e-mail na adresu {EmailAddr} a požádejte o pomoc."
+Trigger notification:
+ Subject: "Spustit oznámení"
+ Template: |
+  <center><p>Ahoj, %s.<br /><br />
+  Tímto e-mailem vám oznamujeme, že byla spuštěna následující pravidla CIDRAM:<br /><br />
+  %s</p></center>
 bobuam_ambiguous: "Nejednoznačné ID prohlížeče"
 bobuam_bot: "Podezřelý robot nebo škrabací sonda"
 bobuam_malformed: "Poškozené UA"

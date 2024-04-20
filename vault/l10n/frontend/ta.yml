@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Tamil language data for the front-end (last modified: 2024.04.16).
+# This file: Tamil language data for the front-end (last modified: 2024.04.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -241,7 +241,7 @@ config:
  logging_serialised_log: "தடுக்கப்பட்ட அனைத்து அணுகல் முயற்சிகளையும் பதிவு செய்வதற்கான வரிசைப்படுத்தப்பட்ட கோப்பு. கோப்பு பெயரைக் குறிப்பிடவும் அல்லது முடக்க காலியாக விடவும்."
  logging_standard_log: "தடுக்கப்பட்ட அனைத்து அணுகல் முயற்சிகளையும் பதிவு செய்வதற்கான மனித படிக்கக்கூடிய கோப்பு. கோப்பு பெயரைக் குறிப்பிடவும் அல்லது முடக்க காலியாக விடவும்."
  logging_truncate: "பதிவுகள் ஒரு குறிப்பிட்ட அளவை எட்டும்போது அவற்றை நீக்கவா? B/KB/MB/GB/TB இல் உள்ள அதிகபட்ச அளவு மதிப்பு, நீக்குவதற்கு முன்பு ஒரு பதிவு கோப்பு வளரக்கூடும். இதை முடக்க 0KB [இயல்புநிலை மதிப்பு] ஐக் குறிப்பிடவும் (எல்லையற்ற அளவில் வளரலாம்). குறிப்பு: ஒற்றை கோப்புகளுக்கு மட்டுமே பொருந்தும்! அனைத்து பதிவு கோப்புகளின் அளவும் ஒன்றாக கருதப்படவில்லை."
- phpmailer: "PHPMailerக்கான உள்ளமைவு (இரண்டு காரணி அங்கீகாரத்திற்கு பயன்படுத்தப்படுகிறது)."
+ phpmailer: "PHPMailerக்கான உள்ளமைவு (இரண்டு காரணி அங்கீகாரத்திற்கும் மின்னஞ்சல் அறிவிப்புகளுக்கும் பயன்படுத்தப்படுகிறது)."
  phpmailer_add_reply_to_address: "SMTP வழியாக மின்னஞ்சல் அனுப்பும்போது மேற்கோள் காட்ட வேண்டிய பதில் முகவரி."
  phpmailer_add_reply_to_name: "SMTP வழியாக மின்னஞ்சல் அனுப்பும்போது மேற்கோள் காட்ட வேண்டிய பதில் பெயர்."
  phpmailer_event_log: "அனைத்து PHPMailer நிகழ்வுகளையும் பதிவு செய்வதற்கான கோப்பு. கோப்பு பெயரைக் குறிப்பிடவும் அல்லது முடக்க காலியாக விடவும்."
@@ -677,6 +677,8 @@ label:
   Move up: "மேலே நகர்த்து"
   Notes: "குறிப்புகள் (இந்த பக்கத்தில் மட்டுமே காட்டப்பட்டுள்ளது, மேலும் விதியை பாதிக்காது):"
   Other options and special flags: "பிற விருப்பங்கள் மற்றும் சிறப்புக் கொடிகள்:"
+  Requires PHPMailer: "PHPMailer தேவை."
+  Send trigger notification to the configured email notification address: "உள்ளமைக்கப்பட்ட மின்னஞ்சல் அறிவிப்பு முகவரிக்கு அறிவிப்பை அனுப்பவும்"
   Suppress logging: "பதிவு செய்வதை அடக்கு"
   Suppress output template: "வெளியீட்டு வார்ப்புருவை அடக்கு"
   The name of the file to run: "இயக்க வேண்டிய கோப்பின் பெயர்:"
@@ -686,6 +688,7 @@ label:
   Use direct string comparison to test the conditions: "நிலைமைகளை சோதிக்க நேரடி சரம் ஒப்பீடு ஐப் பயன்படுத்தவும்."
   Use regular expressions to test the conditions: "நிலைமைகளை சோதிக்க வழக்கமான வெளிப்பாடுகள் ஐப் பயன்படுத்தவும்."
   Webhooks to apply when the rule requirements are met: "விதி தேவைகள் பூர்த்தி செய்யப்படும்போது விண்ணப்பிக்க வெப்ஹூக்குகள்:"
+  When forcibly disabled, marking for use won_t have any effect: "குறிப்பு: வலுக்கட்டாயமாக முடக்கப்பட்டால், பயன்பாட்டிற்காக குறிக்கும் எந்த விளைவையும் ஏற்படுத்தாது."
   When the rule should begin (optional): "விதி எப்போது தொடங்க வேண்டும் (விருப்பமானது):"
   When the rule should expire (optional): "விதி எப்போது காலாவதியாக வேண்டும் (விருப்பமானது):"
   Where to redirect the request: "கோரிக்கையை திருப்பிவிட வேண்டிய இடம்:"

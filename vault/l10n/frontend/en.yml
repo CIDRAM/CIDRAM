@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2024.04.16).
+# This file: English language data for the front-end (last modified: 2024.04.19).
 ##/
 
 Abuse category:
@@ -257,7 +257,7 @@ config:
   en-US: *cp
  logging_standard_log: "Human-readable file for logging all blocked access attempts. Specify a filename, or leave blank to disable."
  logging_truncate: "Truncate log files when they reach a certain size? Value is the maximum size in B/KB/MB/GB/TB that a log file may grow to before being truncated. The default value of 0KB disables truncation (log files can grow indefinitely). Note: Applies to individual log files! The size of log files is not considered collectively."
- phpmailer: "Configuration for PHPMailer (used for two-factor authentication)."
+ phpmailer: "Configuration for PHPMailer (used for two-factor authentication and for email notifications)."
  phpmailer_add_reply_to_address: "The reply address to cite when sending email via SMTP."
  phpmailer_add_reply_to_name: "The reply name to cite when sending email via SMTP."
  phpmailer_event_log: "A file for logging all events in relation to PHPMailer. Specify a filename, or leave blank to disable."
@@ -709,6 +709,8 @@ label:
   Move up: "Move up"
   Notes: "Notes (only shown at this page, and doesn't affect the rule):"
   Other options and special flags: "Other options and special flags:"
+  Requires PHPMailer: "Requires PHPMailer."
+  Send trigger notification to the configured email notification address: "Send trigger notification to the configured email notification address"
   Suppress logging: "Suppress logging"
   Suppress output template: "Suppress output template"
   The name of the file to run: "The name of the file to run:"
@@ -718,6 +720,7 @@ label:
   Use direct string comparison to test the conditions: "Use direct string comparison to test the conditions."
   Use regular expressions to test the conditions: "Use regular expressions to test the conditions."
   Webhooks to apply when the rule requirements are met: "Webhooks to apply when the rule requirements are met:"
+  When forcibly disabled, marking for use won_t have any effect: "Note: When forcibly disabled, marking for use won't have any effect."
   When the rule should begin (optional): "When the rule should begin (optional):"
   When the rule should expire (optional): "When the rule should expire (optional):"
   Where to redirect the request: "Where to redirect the request:"

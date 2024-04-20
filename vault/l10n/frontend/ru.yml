@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2024.04.16).
+# This file: Russian language data for the front-end (last modified: 2024.04.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -241,7 +241,7 @@ config:
  logging_serialised_log: "Сериализованная файл для регистрации всех заблокированных попыток несанкционированного доступа. Задайте имя файлу, или оставьте пустым чтобы деактивировать опцию."
  logging_standard_log: "Файл разборчивыми для людей, для регистрации всех заблокированных попыток несанкционированного доступа. Задайте имя файлу, или оставьте пустым чтобы деактивировать опцию."
  logging_truncate: "Усекать лог-файлы, когда они достигают определенного размера? Значение это максимальный размер в Б/КБ/МБ/ГБ/ТБ, до которого файл журнала может увеличиться до усечения. Стандартное значение 0КБ отключает усечение (лог-файлы может расти неограниченно). Примечание: относится к отдельным лог-файлы! Размер файлов журнала не учитывается совместно."
- phpmailer: "Конфигурация для PHPMailer (используется для двухфакторной аутентификации)."
+ phpmailer: "Конфигурация для PHPMailer (используется для двухфакторной аутентификации и для уведомлений по электронной почте)."
  phpmailer_add_reply_to_address: "Адрес ответа для отправки электронной почты через SMTP."
  phpmailer_add_reply_to_name: "Имя ответа для отправки электронной почты через SMTP."
  phpmailer_event_log: "Файл для регистрации всех событий в отношении PHPMailer. Задайте имя файлу, или оставьте пустым чтобы деактивировать опцию."
@@ -687,6 +687,8 @@ label:
   Move up: "Двигаться вверх"
   Notes: "Заметки (отображается только на этой странице, и не влияет на правило):"
   Other options and special flags: "Другие опции и специальные флаги:"
+  Requires PHPMailer: "Требуется PHPMailer."
+  Send trigger notification to the configured email notification address: "Отправьте триггерное уведомление на настроенный адрес электронной почты для уведомлений"
   Suppress logging: "Подавить ведение журнала"
   Suppress output template: "Подавить выходной шаблон"
   The name of the file to run: "Имя файла для выполнения:"
@@ -696,6 +698,7 @@ label:
   Use direct string comparison to test the conditions: "Используйте прямых сравнение строк для проверки условий."
   Use regular expressions to test the conditions: "Используйте регулярное выражения для проверки условий."
   Webhooks to apply when the rule requirements are met: "Веб-крючки, применяемые при соблюдении требований правила:"
+  When forcibly disabled, marking for use won_t have any effect: "Заметка: При принудительном отключении, пометка для использования не будет иметь никакого эффекта."
   When the rule should begin (optional): "Когда должно начаться правило (необязательно):"
   When the rule should expire (optional): "Когда должно истечь правило (необязательно):"
   Where to redirect the request: "Куда перенаправить запрос:"

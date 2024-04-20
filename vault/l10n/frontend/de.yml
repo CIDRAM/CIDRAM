@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2024.04.16).
+# This file: German language data for the front-end (last modified: 2024.04.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -241,7 +241,7 @@ config:
  logging_serialised_log: "Name einer Datei zu protokollieren alle blockierten Zugriffsversuche (Format ist serialisiert). Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer."
  logging_standard_log: "Name einer Datei in welcher Menschenlesbar alle blockierten zugriffsversuche protokolliert werden. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer."
  logging_truncate: "Protokolldateien kürzen wenn diese eine bestimmte Größe erreichen? Wert ist die maximale Größe in B/KB/MB/GB/TB, die eine Protokolldatei erreichen kann, bevor sie gekürtzt wird. Der Standardwert von 0KB deaktiviert die Kürzung (Protokolldateien können unbegrenzt wachsen). Beachten: Gilt für einzelne Protokolldateien! Die Größe der Protokolldateien gilt nicht in der Summe aller Protokolldateien."
- phpmailer: "Konfiguration für PHPMailer (für Zwei-Faktor-Authentifizierung verwendet)."
+ phpmailer: "Konfiguration für PHPMailer (wird für die Zwei-Faktor-Authentifizierung und für E-Mail-Benachrichtigungen verwendet)."
  phpmailer_add_reply_to_address: "Die Antwortadresse, die beim Senden von E-Mails über SMTP verwendet werden soll."
  phpmailer_add_reply_to_name: "Der Name für der Antwort, die beim Senden von E-Mails über SMTP verwendet werden soll."
  phpmailer_event_log: "Eine Datei zum Protokollieren aller Ereignisse in Bezug auf PHPMailer. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer."
@@ -675,6 +675,8 @@ label:
   Move up: "Verschieben nach oben"
   Notes: "Anmerkungen (nur auf dieser Seite angezeigt, und hat keinen Einfluss auf die Regel):"
   Other options and special flags: "Weitere Optionen und spezielle Flaggen:"
+  Requires PHPMailer: "Erfordert PHPMailer."
+  Send trigger notification to the configured email notification address: "Auslöserbenachrichtigung an die konfigurierte E-Mail-Benachrichtigungsadresse senden"
   Suppress logging: "Protokollierung unterdrücken"
   Suppress output template: "Ausgabevorlage unterdrücken"
   The name of the file to run: "Der Name der auszuführenden Datei:"
@@ -684,6 +686,7 @@ label:
   Use direct string comparison to test the conditions: "Verwenden Sie direkter String-Vergleich, um die Bedingungen zu testen."
   Use regular expressions to test the conditions: "Verwenden Sie Reguläre Ausdrücke, um die Bedingungen zu testen."
   Webhooks to apply when the rule requirements are met: "Webhooks für wenn die Regelanforderungen erfüllt sind:"
+  When forcibly disabled, marking for use won_t have any effect: "Hinweis: Wenn es gewaltsam deaktiviert wird, hat die Markierung zur Verwendung keine Auswirkung."
   When the rule should begin (optional): "Wann die Regel beginnen soll (optional):"
   When the rule should expire (optional): "Wann die Regel ablaufen soll (optional):"
   Where to redirect the request: "Wo die Anfrage umleiten:"

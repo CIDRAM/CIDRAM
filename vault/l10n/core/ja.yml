@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data (last modified: 2024.04.11).
+# This file: Japanese language data (last modified: 2024.04.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -49,7 +49,13 @@ Short_RL: "レート制限は達しました"
 Short_Spam: "スパム・リスク"
 Short_Unverified_UA: "%sは検証されていません"
 Support_Email: "Ｅメールサポートチケットを送信については、または、支援については、{ClickHereLink}してください（プリアンブルを変更しないでください）。"
-Support_Email_2: "これが間違っていると思われる場合は、{EmailAddr}に電子Ｅメールを送信して支援を求めてください。"
+Support_Email_2: "これが間違っていると思われる場合は、{EmailAddr}にＥメールを送信して支援を求めてください："
+Trigger notification:
+ Subject: "トリガー通知"
+ Template: |
+  <center><p>こんにちは、%s。<br /><br />
+  このＥメールは、次のCIDRAMルールがトリガーされたことを通知するものです。<br /><br />
+  %s</p></center>
 bobuam_ambiguous: "あいまいなブラウザＩＤ"
 bobuam_bot: "疑わしいボットまたはスクレイパー・プローブ"
 bobuam_malformed: "不正なユーザーエージェント"

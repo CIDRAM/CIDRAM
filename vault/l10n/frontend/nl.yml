@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2024.04.16).
+# This file: Dutch language data for the front-end (last modified: 2024.04.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -241,7 +241,7 @@ config:
  logging_serialised_log: "Geserialiseerd bestand om alle geblokkeerde toegang pogingen te loggen. Geef een bestandsnaam, of laat leeg om uit te schakelen."
  logging_standard_log: "Mensen leesbare bestand om alle geblokkeerde toegang pogingen te loggen. Geef een bestandsnaam, of laat leeg om uit te schakelen."
  logging_truncate: "Trunceren logbestanden wanneer ze een bepaalde grootte bereiken? Waarde is de maximale grootte in B/KB/MB/GB/TB dat een logbestand kan groeien tot voordat het wordt getrunceerd. De standaardwaarde van 0KB schakelt truncatie uit (logbestanden kunnen onbepaald groeien). Notitie: Van toepassing op individuele logbestanden! De grootte van de logbestanden wordt niet collectief beschouwd."
- phpmailer: "Configuratie voor PHPMailer (gebruikt voor tweefactorauthenticatie)."
+ phpmailer: "Configuratie voor PHPMailer (gebruikt voor tweefactorauthenticatie en voor e-mailmeldingen)."
  phpmailer_add_reply_to_address: "Het antwoordadres voor het verzenden van e-mail via SMTP."
  phpmailer_add_reply_to_name: "De antwoordnaam voor het verzenden van e-mail via SMTP."
  phpmailer_event_log: "Een bestand voor het loggen van alle evenementen met betrekking tot PHPMailer. Geef een bestandsnaam, of laat leeg om uit te schakelen."
@@ -672,6 +672,8 @@ label:
   Move up: "Omhoog gaan"
   Notes: "Opmerkingen (wordt alleen op deze pagina weergegeven, en heeft geen invloed op de regel):"
   Other options and special flags: "Andere opties en speciale vlaggen:"
+  Requires PHPMailer: "Vereist PHPMailer."
+  Send trigger notification to the configured email notification address: "Stuur een triggermelding naar het geconfigureerde e-mailmeldingsadres"
   Suppress logging: "Onderdrukken logboekregistratie"
   Suppress output template: "Onderdrukken de uitvoersjabloon"
   The name of the file to run: "Het bestand dat wordt uitgevoerd:"
@@ -681,6 +683,7 @@ label:
   Use direct string comparison to test the conditions: "Gebruik directe stringvergelijking om de voorwaarden te testen."
   Use regular expressions to test the conditions: "Gebruik reguliere expressies om de voorwaarden te testen."
   Webhooks to apply when the rule requirements are met: "Webhooks die moeten worden toegepast wanneer aan de regelvereisten wordt voldaan:"
+  When forcibly disabled, marking for use won_t have any effect: "Notitie: Wanneer het geforceerd wordt uitgeschakeld, heeft het markeren voor gebruik geen enkel effect."
   When the rule should begin (optional): "Wanneer de regel moet beginnen (optioneel):"
   When the rule should expire (optional): "Wanneer de regel moet verlopen (optioneel):"
   Where to redirect the request: "Waar te omleiden het verzoek:"

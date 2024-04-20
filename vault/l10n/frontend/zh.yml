@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2024.04.16).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2024.04.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -241,7 +241,7 @@ config:
  logging_serialised_log: "连载的文件用于记录所有被拦截的访问。​指定一个文件名，​或留空以禁用。"
  logging_standard_log: "人类可读文件用于记录所有被拦截的访问。​指定一个文件名，​或留空以禁用。"
  logging_truncate: "截断日志文件当他们达到一定的大小吗？​值是在B/KB/MB/GB/TB，​是日志文件允许的最大大小直到它被截断。​默认值为“0KB”将禁用截断（日志文件可以无限成长）。​注意：适用于单个日志文件！​日志文件大小不被算集体的。"
- phpmailer: "PHPMailer的配置（用于双因素身份验证）。"
+ phpmailer: "PHPMailer的配置（用于双因素身份验证和电子邮件通知）。"
  phpmailer_add_reply_to_address: "通过SMTP发送电子邮件时引用的回复地址。"
  phpmailer_add_reply_to_name: "通过SMTP发送电子邮件时引用的回复姓名。"
  phpmailer_event_log: "用于记录与PHPMailer相关的所有事件的文件。​指定一个文件名，​或留空以禁用。"
@@ -660,6 +660,8 @@ label:
   Move up: "上移"
   Notes: "注释（仅在此页面上显示，并且不影响规则）："
   Other options and special flags: "其他选项和特殊标志："
+  Requires PHPMailer: "需要PHPMailer。"
+  Send trigger notification to the configured email notification address: "向配置的电子邮件通知地址发送触发通知"
   Suppress logging: "禁止日志记录"
   Suppress output template: "禁止输出模板"
   The name of the file to run: "要运行的文件名："
@@ -669,6 +671,7 @@ label:
   Use direct string comparison to test the conditions: "使用直接字符串比较来测试条件。"
   Use regular expressions to test the conditions: "使用正则表达式来测试条件。"
   Webhooks to apply when the rule requirements are met: "满足规则要求时要应用的webhooks："
+  When forcibly disabled, marking for use won_t have any effect: "注意：当强制禁用时，标记为使用不会产生任何效果。"
   When the rule should begin (optional): "规则何时开始（可选）："
   When the rule should expire (optional): "规则何时到期（可选）："
   Where to redirect the request: "重定向请求的位置："

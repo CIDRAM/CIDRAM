@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2024.04.16).
+# This file: Polish language data for the front-end (last modified: 2024.04.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -241,7 +241,7 @@ config:
  logging_serialised_log: "Plik szeregowy do rejestrowania wszystkich zablokowanych prób dostępu. Podaj nazwę pliku lub pozostaw puste, aby wyłączyć."
  logging_standard_log: "Plik czytelny dla człowieka do rejestrowania wszystkich zablokowanych prób dostępu. Podaj nazwę pliku lub pozostaw puste, aby wyłączyć."
  logging_truncate: "Obciąć pliki dziennika, gdy osiągną określony rozmiar? Wartość to maksymalny rozmiar w B/KB/MB/GB/TB, do którego plik dziennika może się powiększyć, zanim zostanie obcięty. Domyślna wartość 0KB wyłącza obcinanie (pliki dziennika mogą rosnąć w nieskończoność). Uwaga: Dotyczy pojedynczych plików dziennika! Rozmiar plików dziennika nie jest rozpatrywany łącznie."
- phpmailer: "Konfiguracja dla PHPMailer (używane do uwierzytelniania dwuskładnikowego)."
+ phpmailer: "Konfiguracja dla PHPMailer (używany do uwierzytelniania dwuskładnikowego i powiadomień e-mail)."
  phpmailer_add_reply_to_address: "Adres zwrotny do cytowania podczas wysyłania wiadomości e-mail przez SMTP."
  phpmailer_add_reply_to_name: "Nazwa odpowiedzi, którą należy podać podczas wysyłania wiadomości e-mail przez SMTP."
  phpmailer_event_log: "Plik do rejestrowania wszystkich zdarzeń w związku z PHPMailer. Podaj nazwę pliku lub pozostaw puste, aby wyłączyć."
@@ -681,6 +681,8 @@ label:
   Move up: "Podnieść"
   Notes: "Uwagi (wyświetlane tylko na tej stronie, i nie ma wpływu na regułę):"
   Other options and special flags: "Inne opcje i specjalne flagi:"
+  Requires PHPMailer: "Wymaga PHPMailera."
+  Send trigger notification to the configured email notification address: "Wyślij powiadomienie wyzwalające na skonfigurowany adres e-mail powiadomienia"
   Suppress logging: "Pomiń rejestrowanie"
   Suppress output template: "Pomiń szablon wyjściowy"
   The name of the file to run: "Nazwa pliku do wykonania:"
@@ -690,6 +692,7 @@ label:
   Use direct string comparison to test the conditions: "Użyj bezpośrednie porównanie ciągów, aby przetestować warunki."
   Use regular expressions to test the conditions: "Użyj wyrażenia regularne, aby przetestować warunki."
   Webhooks to apply when the rule requirements are met: "Haczyki internetowe do zastosowania po spełnieniu wymagań reguły:"
+  When forcibly disabled, marking for use won_t have any effect: "Uwaga: Kiedy wymuszone wyłączenie, oznaczenie do użytku nie będzie miało żadnego efektu."
   When the rule should begin (optional): "Kiedy reguła powinna się zacząć (opcjonalny):"
   When the rule should expire (optional): "Kiedy reguła powinna wygasnąć (opcjonalny):"
   Where to redirect the request: "Gdzie przekierować żądanie:"

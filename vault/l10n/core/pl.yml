@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data (last modified: 2023.12.22).
+# This file: Polish language data (last modified: 2024.04.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -50,6 +50,12 @@ Short_Spam: "Ryzyko spamu"
 Short_Unverified_UA: "Niezweryfikowane %s"
 Support_Email: "Jeśli uważasz, że to pomyłka, lub w celu uzyskania pomocy, {ClickHereLink}, aby wysłać e-mail z prośbę o wsparcie do webmastera tej witryny (proszę nie zmieniać preambuły ani tematu wiadomości e-mail)."
 Support_Email_2: "Jeśli uważasz, że to pomyłka, wyślij wiadomość e-mail na {EmailAddr}, aby uzyskać pomoc."
+Trigger notification:
+ Subject: "Powiadomienie o uruchomieniu"
+ Template: |
+  <center><p>Witaj, %s.<br /><br />
+  Ten e-mail ma na celu powiadomienie cię o uruchomieniu następujących reguł CIDRAM:<br /><br />
+  %s</p></center>
 bobuam_ambiguous: "Niejednoznaczny identyfikator przeglądarki"
 bobuam_bot: "Podejrzany bot lub sonda skrobaka"
 bobuam_malformed: "Zniekształcony agent użytkownika"

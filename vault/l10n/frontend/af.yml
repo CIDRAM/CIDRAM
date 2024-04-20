@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Afrikaans language data for the front-end (last modified: 2024.04.16).
+# This file: Afrikaans language data for the front-end (last modified: 2024.04.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -241,7 +241,7 @@ config:
  logging_serialised_log: "Geserialiseerde lêer om alle geblokkeerde toegangspogings aan te teken. Spesifiseer 'n lêernaam, of laat leeg om te deaktiveer."
  logging_standard_log: "Mensleesbare lêer om alle geblokkeerde toegangspogings aan te teken. Spesifiseer 'n lêernaam, of laat leeg om te deaktiveer."
  logging_truncate: "Knip loglêers af wanneer hulle 'n sekere grootte bereik? Waarde is die maksimum grootte in B/KB/MB/GB/TB waartoe 'n loglêer kan groei voordat dit afgekap word. Die verstekwaarde van 0KB deaktiveer afkapping (loglêers kan onbepaald groei). Kennis neem: Van toepassing op individuele loglêers! Die grootte van loglêers word nie gesamentlik oorweeg nie."
- phpmailer: "Konfigurasie vir PHPMailer (gebruik vir tweefaktor-verifikasie)."
+ phpmailer: "Konfigurasie vir PHPMailer (gebruik vir tweefaktor-verifikasie en vir e-poskennisgewings)."
  phpmailer_add_reply_to_address: "Die antwoordadres om aan te haal wanneer e-pos via SMTP gestuur word."
  phpmailer_add_reply_to_name: "Die antwoordnaam om aan te haal wanneer e-pos via SMTP gestuur word."
  phpmailer_event_log: "Lêer om alle gebeurtenisse met betrekking tot PHPMailer aan te teken. Spesifiseer 'n lêernaam, of laat leeg om te deaktiveer."
@@ -675,6 +675,8 @@ label:
   Move up: "Beweeg op"
   Notes: "Notas (word slegs op hierdie bladsy gewys en beïnvloed nie die reël nie):"
   Other options and special flags: "Ander opsies en spesiale vlae:"
+  Requires PHPMailer: "Vereis PHPMailer."
+  Send trigger notification to the configured email notification address: "Stuur 'n aktiveringskennisgewing na die gekonfigureerde e-poskennisgewingadres"
   Suppress logging: "Onderdruk aantekening"
   Suppress output template: "Onderdruk uitset sjabloon"
   The name of the file to run: "Die naam van die lêer wat uitgevoer moet word:"
@@ -684,6 +686,7 @@ label:
   Use direct string comparison to test the conditions: "Gebruik direkte stringvergelyking om die toestande te toets."
   Use regular expressions to test the conditions: "Gebruik gereelde uitdrukkings om die toestande te toets."
   Webhooks to apply when the rule requirements are met: "Webhooks om toe te pas wanneer aan die reëlvereistes nagekom word:"
+  When forcibly disabled, marking for use won_t have any effect: "Kennis neem: Wanneer dit gedwing word om gedeaktiveer te word, om dit vir gebruik te merk sal geen effek hê nie."
   When the rule should begin (optional): "Wanneer die reël moet begin (opsioneel):"
   When the rule should expire (optional): "Wanneer die reël moet verval (opsioneel):"
   Where to redirect the request: "Waarheen om die versoek te herlei:"

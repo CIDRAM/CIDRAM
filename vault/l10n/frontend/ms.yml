@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malay language data for the front-end (last modified: 2024.04.16).
+# This file: Malay language data for the front-end (last modified: 2024.04.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -241,7 +241,7 @@ config:
  logging_serialised_log: "Fail bersiri untuk mengelog semua percubaan akses yang disekat. Tentukan nama fail, atau biarkan kosong untuk nyahaktifkan."
  logging_standard_log: "Fail yang boleh dibaca oleh manusia untuk mengelog semua percubaan akses yang disekat. Tentukan nama fail, atau biarkan kosong untuk nyahaktifkan."
  logging_truncate: "Memotong fail log apabila ia mencapai saiz tertentu? Nilai ialah saiz maksimum dalam B/KB/MB/GB/TB yang fail log boleh berkembang sebelum dipotong. Nilai lalai 0KB nyahaktifkan pemotongan (fail log boleh berkembang selama-lamanya). Perhatikan: Terpakai pada fail log individu! Saiz fail log tidak dipertimbangkan secara kolektif."
- phpmailer: "Konfigurasi untuk PHPMailer (digunakan untuk pengesahan dua faktor)."
+ phpmailer: "Konfigurasi untuk PHPMailer (digunakan untuk pengesahan dua faktor dan untuk pemberitahuan e-mel)."
  phpmailer_add_reply_to_address: "Alamat balasan yang dipetik semasa menghantar e-mel melalui SMTP."
  phpmailer_add_reply_to_name: "Nama balasan yang dipetik semasa menghantar e-mel melalui SMTP."
  phpmailer_event_log: "Fail untuk mengelog semua acara berkaitan dengan PHPMailer. Tentukan nama fail, atau biarkan kosong untuk nyahaktifkan."
@@ -668,6 +668,8 @@ label:
   Move up: "Bergerak ke atas"
   Notes: "Nota (hanya ditunjukkan di halaman ini, dan tidak menjejaskan peraturan):"
   Other options and special flags: "Pilihan lain dan bendera khas:"
+  Requires PHPMailer: "Memerlukan PHPMailer."
+  Send trigger notification to the configured email notification address: "Hantar pemberitahuan pencetus ke alamat pemberitahuan e-mel yang dikonfigurasikan"
   Suppress logging: "Menindas pengelogan"
   Suppress output template: "Menindas templat output"
   The name of the file to run: "Nama fail yang akan dilaksanakan:"
@@ -677,6 +679,7 @@ label:
   Use direct string comparison to test the conditions: "Gunakan perbandingan rentetan langsung untuk menguji syarat."
   Use regular expressions to test the conditions: "Gunakan ekspresi biasa untuk menguji syarat."
   Webhooks to apply when the rule requirements are met: "Webhook untuk diaplikasikan apabila keperluan peraturan dipenuhi:"
+  When forcibly disabled, marking for use won_t have any effect: "Nota: Apabila dinyahaktifkan secara paksa, penandaan untuk digunakan tidak akan mempunyai sebarang kesan."
   When the rule should begin (optional): "Apabila peraturan ini harus bermula (pilihan):"
   When the rule should expire (optional): "Apabila peraturan ini akan tamat tempoh (pilihan):"
   Where to redirect the request: "Tempat untuk mengubah hala permintaan:"

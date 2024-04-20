@@ -7,7 +7,21 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bosnian language data (last modified: 2024.03.15).
+# This file: Bosnian language data (last modified: 2024.04.19).
+#
+# Regarding translations: My native language is English. Because this is a free
+# and open-source hobby project which generates zero income, and translatable
+# content is likely to change as the features and functionality supported by
+# the project changes, it doesn't make sense for me to spend money for
+# translations. Because I'm the sole author/developer/maintainer for the
+# project and I'm not a ployglot, any translations I produce are very likely to
+# contain errors. Sorry, but realistically, that won't ever change. If you find
+# any such errors/typos/mistakes/etc, your assistance to correct them would be
+# very much appreciated. Pull requests are invited and encouraged. Otherwise,
+# if you find these errors too much to handle, just stick with the original
+# English source. If a translation is irredeemably incomprehensible, let me
+# know which, and I can delete it. If you're not sure how to perform pull
+# requests, ask. I can help.
 ##/
 
 PrivacyPolicy: "Politika privatnosti"
@@ -36,6 +50,12 @@ Short_Spam: "Rizik od neželjene pošte"
 Short_Unverified_UA: "Neprovjereni %s"
 Support_Email: "Ako smatrate da je ovo greška ili da tražite pomoć, {ClickHereLink} da pošaljete tiket za podršku putem e-pošte webmasteru ove web stranice (molimo nemojte mijenjati preambulu ili naslov e-pošte)."
 Support_Email_2: "Ako smatrate da je ovo greška, pošaljite e-poštu na {EmailAddr} da zatražite pomoć."
+Trigger notification:
+ Subject: "Obavijest o okidaču"
+ Template: |
+  <center><p>Zdravo, %s.<br /><br />
+  Ovom e-porukom vas obavještavamo da su aktivirana sljedeća CIDRAM pravila:<br /><br />
+  %s</p></center>
 bobuam_ambiguous: "Dvosmislen ID pretraživača"
 bobuam_bot: "Sumnja na bot ili sonda za struganje"
 bobuam_malformed: "Pogrešan korisnički agent"

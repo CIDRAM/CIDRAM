@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bulgarian language data for the front-end (last modified: 2024.04.16).
+# This file: Bulgarian language data for the front-end (last modified: 2024.04.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -241,7 +241,7 @@ config:
  logging_serialised_log: "Сериализиран файл за регистриране на всички блокирани опити за достъп. Посочете име на файл, или за да го деактивирате, оставете го празно."
  logging_standard_log: "Четим от човека файл за регистриране на всички блокирани опити за достъп. Посочете име на файл, или за да го деактивирате, оставете го празно."
  logging_truncate: "Съкращаване на регистрационни файлове, когато достигнат определен размер? Стойността е максималният размер в Б/КБ/МБ/ГБ/ТБ, до който може да нарасне регистрационният файл, преди да бъде съкратен. Стандартната стойност от 0KB деактивира съкращаване (регистрационните файлове могат да растат за неопределено време). Забележка: Отнася се за отделни регистрационните файлове! Размерът на регистрационните файлове не се разглежда колективно."
- phpmailer: "Конфигурация за PHPMailer (използвани за двуфакторно удостоверяване)."
+ phpmailer: "Конфигурация за PHPMailer (използва се за двуфакторно удостоверяване и за известия по имейл)."
  phpmailer_add_reply_to_address: "Адресът за отговор, когато изпращате имейл чрез SMTP."
  phpmailer_add_reply_to_name: "Името на отговора, когато изпращате имейл чрез SMTP."
  phpmailer_event_log: "Файл за регистриране на всички събития във връзка с PHPMailer. Посочете име на файл, или за да го деактивирате, оставете го празно."
@@ -682,6 +682,8 @@ label:
   Move up: "Преместете нагоре"
   Notes: "Бележки (се показва само на тази страница и не засяга правилото):"
   Other options and special flags: "Други опции и специални флагове:"
+  Requires PHPMailer: "Изисква PHPMailer."
+  Send trigger notification to the configured email notification address: "Изпратете известие за задействане до конфигурирания имейл адрес за известяване"
   Suppress logging: "Потискане на регистриране"
   Suppress output template: "Потискане на изходния шаблон"
   The name of the file to run: "Името на файла за изпълнение:"
@@ -691,6 +693,7 @@ label:
   Use direct string comparison to test the conditions: "Използвайте директно сравнение на низове, за да тествате условията."
   Use regular expressions to test the conditions: "Използвайте регулярни изрази, за да тествате условията."
   Webhooks to apply when the rule requirements are met: "Уеб кукички за прилагане, когато са изпълнени изискванията на правилото:"
+  When forcibly disabled, marking for use won_t have any effect: "Забележка: Когато е принудително деактивирано, маркирането за използване няма да има ефект."
   When the rule should begin (optional): "Кога правилото трябва да започне (по избор):"
   When the rule should expire (optional): "Кога правилото трябва да изтече (по избор):"
   Where to redirect the request: "Къде да пренасоча заявката:"

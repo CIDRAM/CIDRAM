@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2024.04.16).
+# This file: Arabic language data for the front-end (last modified: 2024.04.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -241,7 +241,7 @@ config:
  logging_serialised_log: "ملف تسلسل لتسجيل كل محاولات الوصول سدت. تحديد اسم الملف، أو اتركه فارغا لتعطيل."
  logging_standard_log: "ملف يمكن قراءته بالعين لتسجيل كل محاولات الوصول سدت. تحديد اسم الملف، أو اتركه فارغا لتعطيل."
  logging_truncate: "اقتطاع ملفات السجل عندما تصل إلى حجم معين؟ القيمة هي الحجم الأقصى في بايت/كيلوبايت/ميغابايت/غيغابايت/تيرابايت الذي قد ينمو ملفات السجل إلى قبل اقتطاعه. القيمة الافتراضية 0KB تعطيل اقتطاع (ملفات السجل يمكن أن تنمو إلى أجل غير مسمى). ملاحظة: ينطبق على ملفات السجل الفردية! ولا يعتبر حجمها جماعيا."
- phpmailer: "التكوين ل PHPMailer (تستخدم لمصادقة ثنائية العامل)."
+ phpmailer: "التكوين ل PHPMailer (يستخدم للمصادقة الثنائية ولإشعارات البريد الإلكتروني)."
  phpmailer_add_reply_to_address: "عنوان الرد للاستشهاد عند إرسال البريد الإلكتروني عبر SMTP."
  phpmailer_add_reply_to_name: "اسم الرد للاستشهاد عند إرسال البريد الإلكتروني عبر SMTP."
  phpmailer_event_log: "ملف لتسجيل جميع الأحداث المتعلقة ب PHPMailer. تحديد اسم الملف، أو اتركه فارغا لتعطيل."
@@ -667,6 +667,8 @@ label:
   Move up: "اذهب للأعلى"
   Notes: "ملاحظات (تظهر فقط في هذه الصفحة، ولا تؤثر على القواعد):"
   Other options and special flags: "خيارات أخرى وأعلام خاصة:"
+  Requires PHPMailer: "يتطلب PHPMailer."
+  Send trigger notification to the configured email notification address: "أرسل إشعار التشغيل إلى عنوان إشعار البريد الإلكتروني الذي تم تكوينه"
   Suppress logging: "قمع تسجيل"
   Suppress output template: "قم بإيقاف قالب الإخراج"
   The name of the file to run: "اسم الملف المراد تنفيذه:"
@@ -676,6 +678,7 @@ label:
   Use direct string comparison to test the conditions: "استخدم المقارنة المباشرة للسلسلة لاختبار الشروط."
   Use regular expressions to test the conditions: "استخدم التعبيرات العادية لاختبار الشروط."
   Webhooks to apply when the rule requirements are met: "تطبيق webhooks للتطبيق عند استيفاء متطلبات القاعدة:"
+  When forcibly disabled, marking for use won_t have any effect: "ملاحظة: عند التعطيل القسري، لن يكون لوضع العلامات للاستخدام أي تأثير."
   When the rule should begin (optional): "متى يجب أن تبدأ القاعدة (اختياري):"
   When the rule should expire (optional): "متى يجب أن تنتهي صلاحية القاعدة (اختياري):"
   Where to redirect the request: "مكان إعادة توجيه الطلب:"

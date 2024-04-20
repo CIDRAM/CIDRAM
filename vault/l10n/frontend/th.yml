@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2024.04.16).
+# This file: Thai language data for the front-end (last modified: 2024.04.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -241,7 +241,7 @@ config:
  logging_serialised_log: "ไฟล์รูปแบบอนุกรมสำหรับบันทึกทั้งหมดของพยายามเข้าถึงที่ถูกบล็อก. ระบุชื่อไฟล์หรือเว้นว่างไว้เพื่อปิดใช้งาน."
  logging_standard_log: "ไฟล์มนุษย์สามารถอ่านได้สำหรับบันทึกทั้งหมดของพยายามเข้าถึงที่ถูกบล็อก. ระบุชื่อไฟล์หรือเว้นว่างไว้เพื่อปิดใช้งาน."
  logging_truncate: "ตัดทอนแฟ้มบันทึกเมื่อถึงขนาดที่กำหนดหรือไม่? ค่ามีขนาดสูงสุดในรูปแบบ B/KB/MB/GB/TB ที่แฟ้มบันทึกอาจโตขึ้นก่อนที่จะถูกตัดทอน. ค่าเริ่มต้นของ 0KB ปิดการตัดทอน (แฟ้มบันทึกสามารถเติบโตไปเรื่อย). หมายเหตุ: ถูกใช้ด้วยกับล็อกไฟล์แต่ละไฟล์! ขนาดของไฟล์บันทึกไม่ถือเป็นการรวมกัน."
- phpmailer: "การกำหนดค่าสำหรับ PHPMailer (ใช้สำหรับการรับรองความถูกต้องด้วยสองปัจจัย)."
+ phpmailer: "การกำหนดค่าสำหรับ PHPMailer (ใช้สำหรับการรับรองความถูกต้องด้วยสองปัจจัยและสำหรับการแจ้งเตือนทางอีเมล)."
  phpmailer_add_reply_to_address: "ที่อยู่ตอบกลับสำหรับเมื่อส่งอีเมล."
  phpmailer_add_reply_to_name: "ชื่อตอบกลับสำหรับเมื่อส่งอีเมล."
  phpmailer_event_log: "ไฟล์สำหรับบันทึกเหตุการณ์ทั้งหมดที่เกี่ยวข้องกับ PHPMailer. ระบุชื่อไฟล์หรือเว้นว่างไว้เพื่อปิดใช้งาน."
@@ -659,6 +659,8 @@ label:
   Move up: "ขยับขึ้น"
   Notes: "หมายเหตุ (แสดงเฉพาะในหน้านี้ และไม่มีผลต่อกฎ):"
   Other options and special flags: "ตัวเลือกอื่น ๆ และธงพิเศษ:"
+  Requires PHPMailer: "ต้องใช้ PHPMailer."
+  Send trigger notification to the configured email notification address: "ส่งการแจ้งเตือนทริกเกอร์ไปยังที่อยู่อีเมลแจ้งเตือนที่กำหนดค่าไว้"
   Suppress logging: "อย่าบันทึก"
   Suppress output template: "ไม่แสดงเทมเพลตเอาต์พุต"
   The name of the file to run: "ชื่อของไฟล์ที่จะดำเนินการ:"
@@ -668,6 +670,7 @@ label:
   Use direct string comparison to test the conditions: "ใช้การเปรียบเทียบสตริงโดยตรงเพื่อทดสอบเงื่อนไข."
   Use regular expressions to test the conditions: "ใช้นิพจน์ปกติเพื่อทดสอบเงื่อนไข."
   Webhooks to apply when the rule requirements are met: "Webhooks ที่จะใช้เมื่อตรงตามข้อกำหนดของกฎ:"
+  When forcibly disabled, marking for use won_t have any effect: "บันทึก: เมื่อถูกบังคับให้ปิดใช้งาน การทำเครื่องหมายเพื่อใช้งานจะไม่มีผลใดๆ."
   When the rule should begin (optional): "เมื่อกฎควรเริ่มต้น (ไม่จำเป็น):"
   When the rule should expire (optional): "เมื่อกฎควรหมดอายุ (ไม่จำเป็น):"
   Where to redirect the request: "จะขอเปลี่ยนเส้นทางที่ไหน:"

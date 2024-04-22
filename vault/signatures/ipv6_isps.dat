@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6_isps.dat
 
-# Version: 2024.107.0
-# Last modified: 2024.04.17
+# Version: 2024.112.0
+# Last modified: 2024.04.22
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -863,18 +863,6 @@ Profile: Domestic ISP;Infrastructure/Transit;Multiplay
 Tag: CFPT
 
 
-# ASNs 65539, 140849 ("Pan M Tech Limited").
-# Bangladesh domestic ISP. Brute-force, SSH, and webapp attacks, port scans,
-# and spam detected from here. No clean ranges here.
-# Stop Forum Spam (SFS) listings: 9 (AS140849).
-# Updated: 2023.06.02
-
-2404:4e40:2::/48 Deny Attacks
-Origin: BD
-Profile: Domestic ISP
-Tag: Pan M Tech Limited
-
-
 # ASNs 7643, 45899, 135905, 135967 ("VietNam Post and Telecom Corporation").
 # A *major* Vietnamese domestic ISP, but also a significant source of spam,
 # hack attempts, probing, etc. Listing just the affected ranges/addresses only.
@@ -903,8 +891,8 @@ Tag: VNPT Corp
 # WordPress/XMLRPC, SQLi, XSS, and webapp attacks, port scans, hacking, and
 # spam detected from here, caught faking as Googlebot, and caught sniffing for
 # vulnerabilities to exploit. Significant source of unwanted traffic.
-# Stop Forum Spam (SFS) listings: 31,630 (AS4224), 211,765 (AS60729).
-# Updated: 2023.06.19
+# Stop Forum Spam (SFS) listings: 2,738 (AS4224), 16,571 (AS60729).
+# Updated: 2023.06.19 / Checked: 2024.04.21
 
 2a0a:4587:2010::/46 Deny Attacks
 2a0b:f4c1:2::/48 Deny Attacks
@@ -914,18 +902,6 @@ Origin: DE
 Origin: US
 Profile: Mobile ISP;Tor endpoints here;Webhosting
 Tag: Calyx/Zwiebelfreunde
-
-
-# ASN 29465 ("MTN NIGERIA Communication limited").
-# Nigerian multiplay ISP. Brute-force, SSH attacks, and spam detected from here.
-# Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 3,349.
-# Updated: 2023.06.20
-
-2c0f:f5c0:424:ad6f::/64 Deny Spam
-Origin: NG
-Profile: Domestic ISP;Multiplay
-Tag: MTN NIGERIA
 
 
 # ASN 7713 ("PT Telekomunikasi Indonesia").

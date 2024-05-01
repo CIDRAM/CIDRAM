@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Afrikaans language data for the front-end (last modified: 2024.04.19).
+# This file: Afrikaans language data for the front-end (last modified: 2024.04.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -411,6 +411,7 @@ hints_duration:
 hints_has_bypass: "* Hierdie opsie het 'n ooreenstemmende omleiding onder <code class="s">bypasses➡used</code>. Dit word aanbeveel om seker te maak dat die merkblokkie vir die ooreenstemmende omleiding gemerk is op dieselfde manier as die merkblokkie om hierdie opsie te probeer verifieer."
 hints_inspection: "* Slegs bedoel vir ontfouting van bykomende reëls. Word nie aan geblokkeerde gebruikers gewys nie."
 hints_ipv6_on_32bit: "Kennis neem: IPv6-soektogte werk dalk nie korrek op sommige 32-bis stelsels nie."
+hints_logging_datetime: "Nuttige wenk: Jy kan datum/tyd inligting aan die name van loglêers heg deur tydformaat plekhouers te gebruik. Beskikbare tydformaat plekhouers word by {{Links.ConfigRef.time_format}} vertoon."
 hints_pdo_dsn:
  Gereelde vrae.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">Wat is 'n "PDO DSN"? Hoe kan ek PDO met CIDRAM gebruik?</a></em>"
 hints_shorthand:
@@ -422,6 +423,24 @@ hints_shorthand:
  Een per handtekening.: "Handtekeninge kan veelvuldige profiele oproep, maar kan slegs een snelskrifwoord gebruik. Dit is moontlik dat veelvuldige snelskrifwoorde geskik kan wees, maar aangesien slegs een gebruik kan word, streef ons daarna om altyd net die geskikste te gebruik."
  Prioriteit.: "Geselekteerde opsies geniet altyd prioriteit bo nie-geselekteerde opsies. Bv., as veelvuldige snelskrifwoorde in die spel is, maar slegs een van hulle is gestel as geblokkeer, sal die versoek steeds geblokkeer word."
  Menslike eindpunte en wolkdienste.: "Wolkdiens kan verwys na webgasheerverskaffers, bedienerplase, datasentrums, of enige aantal ander dinge. Menslike eindpunt verwys na die manier waarop 'n mens toegang tot die internet verkry, soos deur middel van 'n internetdiensverskaffer. Netwerke verskaf gewoonlik net die een of die ander, maar kan soms albei voorsien. Ons poog om nooit potensiële menslike eindpunte as wolkdienste te identifiseer nie. Daarom kan 'n wolkdiens as iets anders geïdentifiseer word as sy reeks deur bekende menslike eindpunte gedeel word. Omgekeerd streef ons daarna om wolkdienste, waarvan die reekse nie deur enige bekende menslike eindpunte gedeel word nie, altyd as wolkdienste te identifiseer. Daarom, wanneer 'n versoek uitdruklik as 'n wolkdiens geïdentifiseer word, dit waarskynlik deel nie sy reeks met enige bekende menslike eindpunte nie. Eweneens, wanneer 'n versoek uitdruklik deur aanvalle of strooipos geïdentifiseer word, dit deel hulle waarskynlik wel. Die internet is egter altyd in 'n toestand van vloed, die doeleindes van netwerke verander met verloop van tyd, en reekse word altyd gekoop of verkoop, so bly bewus en waaksaam met betrekking tot vals positiewes."
+hints_time_format: |
+ <strong><em>Plekhouer – Verduideliking – Voorbeeld gebaseer op 2024-04-30T18:27:49+08:00.</em></strong><br />
+ <code class="s">{yyyy}</code> – Die jaartal – Bv., 2024.<br />
+ <code class="s">{yy}</code> – Die verkorte jaartal – Bv., 24.<br />
+ <code class="s">{Mon}</code> – Die verkorte naam van die maand (in Engels) – Bv., Apr.<br />
+ <code class="s">{mm}</code> – Die maand met voorste nulle – Bv., 04.<br />
+ <code class="s">{m}</code> – Die maand – Bv., 4.<br />
+ <code class="s">{Day}</code> – Die verkorte naam van die dag (in Engels) – Bv., Tue.<br />
+ <code class="s">{dd}</code> – Die dag met voorste nulle – Bv., 30.<br />
+ <code class="s">{d}</code> – Die dag – Bv., 30.<br />
+ <code class="s">{hh}</code> – Die uur met voorste nulle (gebruik 24-uur tyd) – Bv., 18.<br />
+ <code class="s">{h}</code> – Die uur (gebruik 24-uur tyd) – Bv., 18.<br />
+ <code class="s">{ii}</code> – Die minuut met voorste nulle – Bv., 27.<br />
+ <code class="s">{i}</code> – Die minuut – Bv., 27.<br />
+ <code class="s">{ss}</code> – Die sekonde met voorste nulle – Bv., 49.<br />
+ <code class="s">{s}</code> – Die sekonde – Bv., 49.<br />
+ <code class="s">{tz}</code> – Die tydsone (sonder dubbelpunt) – Bv., +0800.<br />
+ <code class="s">{t:z}</code> – Die tydsone (met dubbelpunt) – Bv., +08:00.
 hints_verification:
  "Wat is "positiewe" en "negatiewe"?": "Wanneer die identiteit wat deur 'n versoek aangebied word geverifieer word, kan 'n suksesvolle uitkoms beskryf word as "positief" of "negatief". In die geval dat die identiteit wat aangebied word as die ware identiteit bevestig word, sal dit as "positief" beskryf word. In die geval dat bevestig word dat die identiteit wat aangebied is vervals is, sal dit as "negatief" beskryf word. Onsuksesvolle uitkomste (bv., verifikasie misluk, of die waarheid van die identiteit wat aangebied word kan nie bepaal word nie) sal egter nie as "positief" of "negatief" beskryf word nie. In plaas daarvan sal onsuksesvolle uitkomste bloot as nie-geverifieer beskryf word. Wanneer geen poging aangewend word om die identiteit wat deur 'n versoek aangebied word te verifieer nie, sal die versoek eweneens as nie-geverifieer beskryf word. Die terme maak slegs sin in die konteks waar die identiteit wat deur 'n versoek aangebied word erken word, en dus waar verifikasie moontlik is. In gevalle waar die identiteit wat aangebied word nie ooreenstem met die opsies hierbo verskaf nie, of waar geen identiteit aangebied word nie, word die opsies hierbo verskaf irrelevant."
  "Wat is "enkeltreffer-omleidings"?": "In sommige gevalle kan 'n positief-geverifieerde versoek steeds geblokkeer word as gevolg van die handtekeninglêers, modules, of ander voorwaardes van die versoek, en omleidings kan nodig wees om vals positiewe te vermy. In die geval waar 'n omleiding bedoel is om presies een oortreding te hanteer, nie meer of nie minder nie, kan so 'n omleiding beskryf word as 'n "enkeltreffer-omleiding"."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2024.04.19).
+# This file: German language data for the front-end (last modified: 2024.04.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -407,6 +407,7 @@ hints_duration:
 hints_has_bypass: "* Diese Option hat einen entsprechenden Bypass unter <code class="s">bypasses➡used</code>. Es wird empfohlen sicherzustellen dass das Kontrollkästchen für die entsprechende Bypass genauso markiert ist wie das Kontrollkästchen für den Versuch aus diese Option zu überprüfen."
 hints_inspection: "* Nur zum Debuggen von Hilfsregeln vorgesehen. Blockierten Benutzern nicht angezeigt."
 hints_ipv6_on_32bit: "Hinweis: IPv6-Lookups funktionieren auf einigen 32-Bit-Systemen möglicherweise nicht richtig."
+hints_logging_datetime: "Nützlicher Tipp: Sie können den Namen der Protokolldateien Datums-/Uhrzeitinformationen hinzufügen, indem Sie Platzhalter für das Zeitformat verwenden. Verfügbare Platzhalter für Zeitformate werden bei {{Links.ConfigRef.time_format}} angezeigt."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.de.md\#user-content-HOW_TO_USE_PDO" hreflang="de-DE">Was ist ein „PDO DSN“? Wie kann ich PDO mit CIDRAM verwenden?</a></em>"
 hints_shorthand:
@@ -418,6 +419,24 @@ hints_shorthand:
  Eine pro Signature.: "Eine Signatur kann mehrere Profile aufrufen, aber kann nur ein Kurzwort verwenden. Es ist möglich dass mehrere Kurzwörter geeignet sind, aber da nur eines verwendet werden kann, wir bemühen immer nur das geeignetste zu verwenden."
  Priorität.: "Eine ausgewählte Option hat immer Vorrang vor eine nicht ausgewählte Option. Wenn beispielsweise mehrere Kurzwörter im Spiel sind, aber nur eines davon als blockiert festgelegt ist, die Anfrage trotzdem blockiert wird sein."
  Menschliche Endpunkte und Cloud-Service.: "Cloud-Service können sich auf Webhosting-Anbieter, Serverfarmen, Rechenzentren, oder eine Reihe anderer Dinge beziehen. Menschliche Endpunkt bezieht sich auf die Mittel mit denen ein Mensch auf das Internet zugreift, beispielsweise über einen Internetdienstanbieter. Ein Netzwerk bietet normalerweise nur eine oder das andere, aber manchmal bietet beides. Wir bemühen potenzielle menschliche Endpunkte niemals als Cloud-Service zu identifizieren. Daher ein Cloud-Service als etwas anderes identifiziert werden kann wenn sein Bereiche von bekannten menschlichen Endpunkten geteilt wird. Ebenso, wir bemühen immer zum Cloud-Service, deren Bereiche mit keiner bekannten Menschlichen-Endpunkten geteilt werden, als Cloud-Service zu identifizieren. Daher eine Anfrage explizit als Cloud-Service identifizierte, wahrscheinlich ihren Bereich geteilt wird mit keiner bekannten menschlichen Endpunkten. Ebenso, eine Anfrage explizit als Angriffe oder Spam Risiko identifiziert wurde wahrscheinlich ihren Bereich doch teilt. Das Internet ist jedoch ständig in Bewegung, die Zwecke von Netzwerken ändern sich im Laufe der Zeit, und Bereiche werden ständig gekauft oder verkauft, also bleiben Sie aufmerksam und wachsam in Bezug auf Falsch-Positive."
+hints_time_format: |
+ <strong><em>Platzhalter – Erläuterung – Beispiel basierend auf 2024-04-30T18:27:49+08:00.</em></strong><br />
+ <code class="s">{yyyy}</code> – Das Jahr – Z.B., 2024.<br />
+ <code class="s">{yy}</code> – Das abgekürzte Jahr – Z.B., 24.<br />
+ <code class="s">{Mon}</code> – Der abgekürzte Name des Monats (auf Englisch) – Z.B., Apr.<br />
+ <code class="s">{mm}</code> – Der Monat mit führenden Nullen – Z.B., 04.<br />
+ <code class="s">{m}</code> – Der Monat – Z.B., 4.<br />
+ <code class="s">{Day}</code> – Der abgekürzte Name des Tages (auf Englisch) – Z.B., Tue.<br />
+ <code class="s">{dd}</code> – Der Tag mit führenden Nullen – Z.B., 30.<br />
+ <code class="s">{d}</code> – Der Tag – Z.B., 30.<br />
+ <code class="s">{hh}</code> – Die Stunde mit führenden Nullen (verwendet 24-Stunden-Zeit) – Z.B., 18.<br />
+ <code class="s">{h}</code> – Die Stunde (verwendet 24-Stunden-Zeit) – Z.B., 18.<br />
+ <code class="s">{ii}</code> – Die Minute mit führenden Nullen – Z.B., 27.<br />
+ <code class="s">{i}</code> – Die Minute – Z.B., 27.<br />
+ <code class="s">{ss}</code> – Die Sekunde mit führenden Nullen – Z.B., 49.<br />
+ <code class="s">{s}</code> – Die Sekunde – Z.B., 49.<br />
+ <code class="s">{tz}</code> – Die Zeitzone (ohne Doppelpunkt) – Z.B., +0800.<br />
+ <code class="s">{t:z}</code> – Die Zeitzone (mit Doppelpunkt) – Z.B., +08:00.
 hints_verification:
  "Was sind „Positive“ und „Negative“?": "Das erfolgreiche Ergebnis der Verifizierung der durch eine Anfrage präsentierten Identität könnte als „positiv“ oder „negativ“ beschrieben werden. In dem Fall dass die präsentierte Identität als die wahre Identität bestätigt wird, würde sie als „positiv“ bezeichnet werden. In dem Fall dass die präsentierten Identität als gefälscht bestätigt, würde sie als „negativ“ bezeichnet werden. Ein erfolgloses Ergebnis (z.B., die Verifizierung fehlschlägt, oder die Echtheit der präsentierten Identität kann nicht festgestellt werden) würde jedoch nicht als „positiv“ oder „negativ“ beschrieben. Stattdessen würde ein erfolgloses Ergebnis einfach als nicht verifiziert beschrieben. Wenn kein Versuch unternommen wird für die durch eine Anfrage präsentierte Identität zu verifizieren, würde die Anfrage ebenfalls als nicht verifiziert beschrieben. Die Begriffe sind nur in dem Kontext sinnvoll, in dem die durch eine Anfrage präsentierte Identität anerkannt wird und daher der Verifizierung möglich ist. In dem Fall in denen die präsentierte Identität nicht mit den oben bereitgestellten Optionen übereinstimmt, oder wenn keine Identität präsentiert wird, werden die oben bereitgestellten Optionen irrelevant."
  "Was sind „Single-Hit-Bypässe“?": "In einigen Fällen kann eine positiv verifizierte Anfrage aufgrund der Signaturdateien, Module, oder anderer Bedingungen der Anfrage immer noch blockiert werden, und Bypässe können erforderlich sein um Falsch-Positive zu vermeiden. In dem Fall in dem eine Bypass genau einen Verstoß behandeln beabsichtigt ist, nicht mehr und nicht weniger, könnte solche eine Bypass als „Single-Hit-Bypass“ beschrieben werden."

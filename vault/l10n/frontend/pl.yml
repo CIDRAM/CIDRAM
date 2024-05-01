@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2024.04.19).
+# This file: Polish language data for the front-end (last modified: 2024.04.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -188,9 +188,9 @@ config:
  general_default_algo: "Określa, którego algorytmu należy używać dla wszystkich przyszłych haseł i sesji."
  general_default_dns: "Lista serwerów DNS używanych do wyszukiwania nazw hostów. OSTRZEŻENIE: Nie zmieniaj tego, chyba że wiesz, co robisz!"
  general_default_timeout: "Domyślny limit czasu używany dla żądań zewnętrznych? Domyślna = 12 sekund."
- general_disabled_channels: "Można tego użyć, aby zapobiec korzystaniu przez CIDRAM z określonych kanałów podczas wysyłania żądań (n.p., podczas aktualizacji, podczas pobierania metadanych komponentu, itp)."
- general_email_notification_address: "Jeśli zdecydowałeś się otrzymywać powiadomienia z CIDRAM za pośrednictwem e-mail, n.p., gdy zostaną uruchomione określone reguły pomocnicze, możesz tutaj określić adres odbiorcy tych powiadomień."
- general_email_notification_name: "Jeśli zdecydowałeś się otrzymywać powiadomienia z CIDRAM za pośrednictwem e-mail, n.p., gdy zostaną uruchomione określone reguły pomocnicze, możesz tutaj określić nazwę odbiorcy tych powiadomień."
+ general_disabled_channels: "Można tego użyć, aby zapobiec korzystaniu przez CIDRAM z określonych kanałów podczas wysyłania żądań (np., podczas aktualizacji, podczas pobierania metadanych komponentu, itp)."
+ general_email_notification_address: "Jeśli zdecydowałeś się otrzymywać powiadomienia z CIDRAM za pośrednictwem e-mail, np., gdy zostaną uruchomione określone reguły pomocnicze, możesz tutaj określić adres odbiorcy tych powiadomień."
+ general_email_notification_name: "Jeśli zdecydowałeś się otrzymywać powiadomienia z CIDRAM za pośrednictwem e-mail, np., gdy zostaną uruchomione określone reguły pomocnicze, możesz tutaj określić nazwę odbiorcy tych powiadomień."
  general_emailaddr: "Jeśli chcesz, możesz podać tutaj adres e-mail, który zostanie podany użytkownikom, gdy zostaną zablokowani, aby mogli oni używać go jako punktu kontaktowego w celu uzyskania wsparcia i pomocy w przypadku błędu. OSTRZEŻENIE: Każdy podany tutaj adres e-mail z pewnością zostanie pozyskany przez robotów spamujących i skrobaków w trakcie jego używania, dlatego zdecydowanie zaleca się, aby w przypadku podania tutaj adresu e-mail upewnić się, że podany tutaj adres e-mail jest adresem jednorazowym lub adres, który nie przeszkadza być poddane spamem (innymi słowy, prawdopodobnie nie chcesz używać swoich głównych osobistych lub głównych firmowych adresów e-mail)."
  general_emailaddr_display_style: "Jak wolisz, aby adres e-mail był prezentowany użytkownikom?"
  general_fields: "Kontrole na polach podczas imprez blokowych (gdy żądanie jest zablokowane)."
@@ -412,6 +412,7 @@ hints_duration:
 hints_has_bypass: "* Ta opcja ma odpowiednie obejście pod <code class="s">bypasses➡used</code>. Zaleca się upewnienie się, że pole wyboru dla odpowiedniego obejścia jest zaznaczone w taki sam sposób, jak pole wyboru do próby zweryfikowania tej opcji."
 hints_inspection: "* Przeznaczony tylko do debugowania reguł pomocniczych. Nie wyświetla się zablokowanym użytkownikom."
 hints_ipv6_on_32bit: "Uwaga: Wyszukiwania IPv6 mogą nie działać poprawnie w niektórych systemach 32-bitowych."
+hints_logging_datetime: "Przydatna wskazówka: Do nazw plików dziennika można dołączać informacje o dacie/godzinie, używając symboli zastępczych w formacie godziny. Dostępne symbole zastępcze formatu czasu są wyświetlane przy {{Links.ConfigRef.time_format}}."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">Co to jest „PDO DSN”? Jak mogę używać PDO z CIDRAM?</a></em>"
 hints_shorthand:
@@ -423,6 +424,24 @@ hints_shorthand:
  Jeden na podpis.: "Podpis może odwoływać się do wielu profili, ale może używać tylko jednego skróconego słowa. Możliwe, że wiele skróconych słów może być odpowiednich, ale ponieważ można użyć tylko jednego, staramy się zawsze używać tylko najbardziej odpowiednich."
  Priorytet.: "Wybrana opcja zawsze ma pierwszeństwo przed opcją niewybraną. Np., jeśli w grze jest wiele skróconych słów, ale tylko jedno z nich jest ustawione jako zablokowane, żądanie nadal będzie blokowane."
  Ludzkie punkty końcowe i usługi w chmurze.: "Usługa w chmurze może odnosić się do dostawców hostingu, farm serwerów, centrów danych, lub wielu innych rzeczy. Ludzki punkt końcowy odnosi się do sposobu, w jaki człowiek uzyskuje dostęp do Internetu, na przykład za pośrednictwem dostawcy usług internetowych. Sieć zwykle zapewnia tylko jedno lub drugie, ale czasami może zapewniać oba. Staramy się nigdy nie identyfikować potencjalnych ludzkich punktów końcowych jako usług w chmurze. W związku z tym usługa w chmurze może być identyfikowana jako coś innego, jeśli jej zakres jest współdzielony przez znane ludzkie punkty końcowe. Podobnie staramy się zawsze identyfikować usługi w chmurze, których zakresy nie są współdzielone przez żadne znane ludzkie punkty końcowe, jako usługi w chmurze. W związku z tym żądanie zidentyfikowane jawnie jako usługa w chmurze prawdopodobnie nie udostępnia swojego zakresu żadnym znanym ludzkim punktom końcowym. Podobnie żądanie zidentyfikowane w sposób jawny przez ataki lub ryzyko spam prawdopodobnie je udostępnia. Jednak, internet zawsze się zmienia, cele sieci zmieniają się w czasie, a zakresy są zawsze kupowane lub sprzedawane, więc zachowaj ostrożność i czujność w odniesieniu do fałszywych pozytywów."
+hints_time_format: |
+ <strong><em>Symbol zastępczy – Wyjaśnienie – Przykład oparty na 2024-04-30T18:27:49+08:00.</em></strong><br />
+ <code class="s">{yyyy}</code> – Rok – Np., 2024.<br />
+ <code class="s">{yy}</code> – Skrócony rok – Np., 24.<br />
+ <code class="s">{Mon}</code> – Skrócona nazwa miesiąca (w języku angielskim) – Np., Apr.<br />
+ <code class="s">{mm}</code> – Miesiąc z zerami wiodącymi – Np., 04.<br />
+ <code class="s">{m}</code> – Miesiąc – Np., 4.<br />
+ <code class="s">{Day}</code> – Skrócona nazwa dnia (w języku angielskim) – Np., Tue.<br />
+ <code class="s">{dd}</code> – Dzień z zerami wiodącymi – Np., 30.<br />
+ <code class="s">{d}</code> – Dzień – Np., 30.<br />
+ <code class="s">{hh}</code> – Godzina z zerami wiodącymi (używa czasu 24-godzinnego) – Np., 18.<br />
+ <code class="s">{h}</code> – Godzina (używa czasu 24-godzinnego) – Np., 18.<br />
+ <code class="s">{ii}</code> – Minuta z zerami wiodącymi – Np., 27.<br />
+ <code class="s">{i}</code> – Minuta – Np., 27.<br />
+ <code class="s">{ss}</code> – Sekunda z zerami wiodącymi – Np., 49.<br />
+ <code class="s">{s}</code> – Sekunda – Np., 49.<br />
+ <code class="s">{tz}</code> – Strefa czasowa (bez dwukropka) – Np., +0800.<br />
+ <code class="s">{t:z}</code> – Strefa czasowa (z dwukropkiem) – Np., +08:00.
 hints_verification:
  "Czym są „pozytywy” i „negatywy”?": "Podczas weryfikacji tożsamości przedstawionej przez żądanie, pomyślny wynik można określić jako „pozytywny” lub „negatywny”. W przypadku potwierdzenia, że prezentowana tożsamość jest prawdziwą tożsamością, zostanie ona określona jako „pozytywna”. W przypadku potwierdzenia, że przedstawiona tożsamość jest sfałszowana, zostanie ona określona jako „negatywna”. Jednak nieudany wynik (np. weryfikacja nie powiodła się, lub nie można ustalić prawdziwości przedstawionej tożsamości) nie zostanie opisany jako „pozytywny” lub „negatywny”. Zamiast tego nieudany wynik zostałby opisany po prostu jako niezweryfikowany. Gdy nie zostanie podjęta żadna próba weryfikacji tożsamości przedstawionej przez żądanie, żądanie zostanie również opisane jako niezweryfikowane. Terminy mają sens tylko w kontekście, w którym rozpoznawana jest tożsamość przedstawiona w żądaniu, a zatem tam, gdzie możliwa jest weryfikacja. W przypadku, gdy przedstawiona tożsamość nie pasuje do opcji przedstawionych powyżej, lub gdy tożsamość nie jest przedstawiona, opcje podane powyżej stają się nieistotne."
  "Czym są „obejście pojedynczych trafień”?": "W niektórych przypadkach pozytywnie zweryfikowane żądanie może nadal zostać zablokowane z powodu plików podpis, modułów, lub innych warunków żądania, i obejścia mogą być konieczne w celu uniknięcia fałszywych pozytywów. W przypadku, gdy obejście ma na celu zajęcie się dokładnie jednym wykroczeniem, ni mniej, ni więcej, takie obejście można opisać jako „obejście pojedynczego trafienia”."

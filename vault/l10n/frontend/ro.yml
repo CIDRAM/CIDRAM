@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Romanian language data for the front-end (last modified: 2024.04.19).
+# This file: Romanian language data for the front-end (last modified: 2024.04.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -417,6 +417,7 @@ hints_duration:
 hints_has_bypass: "* Această opțiune are un bypass corespunzător sub <code class="s">bypasses➡used</code>. Este recomandat să vă asigurați că caseta de selectare pentru bypass-ul corespunzătoare este bifată în același mod ca și caseta de selectare pentru încercarea de a verifica această opțiune."
 hints_inspection: "* Destinat numai pentru depanarea regulilor auxiliare. Nu este afișat pentru utilizatorii blocați."
 hints_ipv6_on_32bit: "Notă: Căutările IPv6 ar putea să nu funcționeze corect pe unele sisteme pe 32 de biți."
+hints_logging_datetime: "Sfat util: Puteți atașa informații despre dată/ora la numele fișierelor jurnal utilizând substituenți pentru formatul de timp. Substituenții disponibili pentru formatul de timp sunt afișați la {{Links.ConfigRef.time_format}}."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">Ce este un „DSN PDO”? Cum pot folosi PDO cu CIDRAM?</a></em>"
 hints_shorthand:
@@ -428,6 +429,24 @@ hints_shorthand:
  Una pe semnătură.: "O semnătură poate invoca mai multe profiluri, dar poate folosi un singur cuvânt prescurtat. Este posibil ca mai multe cuvinte scurte să fie potrivite, dar deoarece doar unul poate fi folosit, ne propunem să le folosim întotdeauna doar pe cel mai potrivit."
  Prioritate.: "O opțiune selectată are întotdeauna prioritate față de o opțiune neselectată. De exemplu, dacă mai multe cuvinte scurte sunt în joc, dar numai unul dintre ele este setat ca fiind blocat, solicitărea va fi în continuare blocată."
  Puncte finale umane și servicii cloud.: "Serviciul cloud se poate referi la furnizori de găzduire web, ferme de servere, centre de date, sau orice alte lucruri. Punctul final uman se referă la mijloacele prin care un om accesează internetul, cum ar fi prin intermediul unui furnizor de servicii de internet. O rețea oferă de obicei doar una sau alta, dar uneori le poate furniza pe ambele. Ne propunem să nu identificăm niciodată punctele finale umane potențiale ca servicii cloud. Prin urmare, un serviciu cloud poate fi identificat ca altceva dacă intervalul său este partajat de punctele finale umane cunoscute. Pe de altă parte, ne propunem să identificăm întotdeauna serviciile cloud, ale căror intervale nu sunt partajate de niciun punct final uman cunoscut, ca servicii cloud. Prin urmare, o solicitare identificată în mod explicit ca un serviciu cloud probabil nu își împărtășește intervalul cu niciun punct final uman cunoscut. La fel, o solicitare identificată în mod explicit prin atacuri sau spam probabil își împărtășește intervalele. Cu toate acestea, internetul este mereu în flux, scopurile rețelelor se schimbă în timp, iar intervale sunt întotdeauna cumpărate sau vândute, așa că rămâneți conștienți și vigilenți în ceea ce privește falsele pozitive."
+hints_time_format: |
+ <strong><em>Substituent – Explicaţie – Exemplu bazat pe 2024-04-30T18:27:49+08:00.</em></strong><br />
+ <code class="s">{yyyy}</code> – Anul – De exemplu, 2024.<br />
+ <code class="s">{yy}</code> – Anul prescurtat – De exemplu, 24.<br />
+ <code class="s">{Mon}</code> – Numele prescurtat al lunii (în engleză) – De exemplu, Apr.<br />
+ <code class="s">{mm}</code> – Luna cu zerouri la început – De exemplu, 04.<br />
+ <code class="s">{m}</code> – Lună – De exemplu, 4.<br />
+ <code class="s">{Day}</code> – Numele prescurtat al zilei (în engleză) – De exemplu, Tue.<br />
+ <code class="s">{dd}</code> – Ziua cu zerouri la început – De exemplu, 30.<br />
+ <code class="s">{d}</code> – Ziua – De exemplu, 30.<br />
+ <code class="s">{hh}</code> – Ora cu zerouri inițiale (folosește 24 de ore) – De exemplu, 18.<br />
+ <code class="s">{h}</code> – Ora (folosește 24 de ore) – De exemplu, 18.<br />
+ <code class="s">{ii}</code> – Minutul cu zerouri la început – De exemplu, 27.<br />
+ <code class="s">{i}</code> – Minutul – De exemplu, 27.<br />
+ <code class="s">{ss}</code> – Secundă cu zerouri la început – De exemplu, 49.<br />
+ <code class="s">{s}</code> – Secundă – De exemplu, 49.<br />
+ <code class="s">{tz}</code> – Fusul orar (fără două puncte) – De exemplu, +0800.<br />
+ <code class="s">{t:z}</code> – Fusul orar (cu două puncte) – De exemplu, +08:00.
 hints_verification:
  "Ce sunt „pozitive” și „negative”?": "Atunci când se verifică identitatea prezentată de o solicităre, un rezultat de succes poate fi descris drept „pozitiv” sau „negativ”. În cazul în care identitatea prezentată este confirmată a fi adevărata identitate, aceasta ar fi descrisă ca fiind „pozitivă”. În cazul în care se confirmă că identitatea prezentată este falsificată, aceasta ar fi descrisă ca fiind „negativă”. Cu toate acestea, un rezultat nereușit (de exemplu, verificarea eșuează, sau veridicitatea identității prezentate nu poate fi determinată) nu ar fi descris drept „pozitiv” sau „negativ”. În schimb, un rezultat nereușit ar fi descris pur și simplu ca neverificat. Atunci când nu se face nicio încercare de verificare a identității prezentate de o solicitare, solicitărea va fi, de asemenea, descrisă ca neverificată. Termenii au sens numai în contextul în care identitatea prezentată printr-o solicităre este recunoscută și, prin urmare, în care verificarea este posibilă. În cazurile în care identitatea prezentată nu se potrivește cu opțiunile prevăzute mai sus sau în care nu este prezentată nicio identitate, opțiunile furnizate mai sus devin irelevante."
  "Ce sunt „bypass-uri cu o singură lovitură”?": "În unele cazuri, o solicitare verificată pozitiv poate fi blocată în continuare ca urmare a fișierelor de semnătură, modulelor, sau a altor condiții ale solicitării, iar bypass-uri pot fi necesare pentru a evita fals pozitive. În cazul în care o bypass este destinată să rezolve exact o infracțiune, nici mai mult, nici mai puțin, o astfel de bypass ar putea fi descrisă ca o „bypass cu o singură lovitură”."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Czech language data for the front-end (last modified: 2024.04.19).
+# This file: Czech language data for the front-end (last modified: 2024.04.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -412,6 +412,7 @@ hints_duration:
 hints_has_bypass: "* Tato možnost má odpovídající bypass pod <code class="s">bypasses➡used</code>. Doporučuji zajistit, aby zaškrtávací políčko pro odpovídající bypass bylo označeno stejně jako zaškrtávací políčko pro pokus o ověření této možnosti."
 hints_inspection: "* Určeno pouze pro ladění pomocných pravidel. Nezobrazuje se blokovaným uživatelům."
 hints_ipv6_on_32bit: "Poznámka: Vyhledávání IPv6 nemusí na některých 32-bitových systémech fungovat správně."
+hints_logging_datetime: "Užitečný tip: K názvům souborů protokolu můžete připojit informace o datu a čase pomocí zástupných symbolů formátu času. Dostupné zástupné symboly formátu času jsou zobrazeny v {{Links.ConfigRef.time_format}}."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">Co je to „PDO DSN“? Jak mohu používat PDO s CIDRAM?</a></em>"
 hints_shorthand:
@@ -423,6 +424,24 @@ hints_shorthand:
  Jeden za každý podpis.: "Podpis může vyvolat více profilů, ale může používat pouze jedno těsnopisná slovo. Je možné, že se hodí vícenásobné těsnopisných slov, ale protože lze použít pouze jedno, snažíme se vždy použít pouze to nejvhodnější."
  Prioritou.: "Vybraná možnost má vždy přednost před nevybranou možností. Např., pokud je ve hře vícenásobné těsnopisných slov, ale pouze jedno z nich je nastaveno jako blokované, požadavek bude stále blokován."
  Lidské koncové body a cloudové služby.: "Cloudová služba může odkazovat na poskytovatele webhostingu, serverové farmy, datová centra, nebo mnoho dalších věcí. Lidský koncový bod se týká prostředků, kterými člověk přistupuje k internetu, například prostřednictvím poskytovatele internetových služeb. Síť obvykle poskytuje pouze jedno nebo druhé, ale někdy může poskytovat obojí. Snažíme se nikdy neidentifikovat potenciální lidské koncové body jako cloudové služby. Proto může být cloudová služba identifikováno jako něco jiného, pokud je její rozsah sdílen známými lidskými koncovými body. Naopak cloudové služby, jejichž rozsahy nejsou sdíleny žádnými známými lidskými koncovými body, se snažíme vždy identifikovat jako cloudové služby. Požadavek označený explicitně jako cloudová služba proto pravděpodobně nesdílí svůj rozsah s žádnými známými lidskými koncovými body. Stejně tak požadavek identifikovaný explicitně útoky nebo spamem pravděpodobně ano. Internet se však neustále mění, účely sítí se v průběhu času mění, a rozsahy se vždy kupují nebo prodávají, takže zůstaňte pozorní a ostražití, pokud jde o falešně pozitivní."
+hints_time_format: |
+ <strong><em>Zástupný symbol – Vysvětlení – Příklad založený na 2024-04-30T18:27:49+08:00.</em></strong><br />
+ <code class="s">{yyyy}</code> – Rok – Např., 2024.<br />
+ <code class="s">{yy}</code> – Zkrácený rok – Např., 24.<br />
+ <code class="s">{Mon}</code> – Zkrácený název měsíce (v angličtině) – Např., Apr.<br />
+ <code class="s">{mm}</code> – Měsíc s úvodními nulami – Např., 04.<br />
+ <code class="s">{m}</code> – Měsíc – Např., 4.<br />
+ <code class="s">{Day}</code> – Zkrácený název dne (v angličtině) – Např., Tue.<br />
+ <code class="s">{dd}</code> – Den s úvodními nulami – Např., 30.<br />
+ <code class="s">{d}</code> – Den – Např., 30.<br />
+ <code class="s">{hh}</code> – Hodina s úvodními nulami (používá 24hodinový čas) – Např., 18.<br />
+ <code class="s">{h}</code> – Hodina (používá 24hodinový čas) – Např., 18.<br />
+ <code class="s">{ii}</code> – Minuta s úvodními nulami – Např., 27.<br />
+ <code class="s">{i}</code> – Minuta – Např., 27.<br />
+ <code class="s">{ss}</code> – Sekunda s úvodními nulami – Např., 49.<br />
+ <code class="s">{s}</code> – Sekunda – Např., 49.<br />
+ <code class="s">{tz}</code> – Časové pásmo (bez dvojtečky) – Např., +0800.<br />
+ <code class="s">{t:z}</code> – Časové pásmo (s dvojtečkou) – Např., +08:00.
 hints_verification:
  "Co jsou „pozitiva“ a „negativa“?": "Při ověřování identity předložené žádostí lze úspěšný výsledek popsat jako „pozitivní“ nebo „negativní“. Když se potvrdí, že prezentovaná identita je pravou identitou, byla by popsána jako „pozitivní“. Když se potvrdí, že předložená identita je zfalšovaná, bude popsána jako „negativní“. Neúspěšný výsledek (např., selže ověření, nebo nelze určit pravdivost předložené identity) by však nebyl popsán jako „pozitivní“ nebo „negativní“. Místo toho by byl neúspěšný výsledek popsán jednoduše jako neověřený. Pokud nedojde k žádnému pokusu o ověření identity předložené požadavkem, bude požadavek rovněž popsána jako neověřený. Termíny mají smysl pouze v kontextu, kdy je rozpoznána identita předložená žádostí, a tedy tam, kde je možné ověření. Pokud prezentovaná identita neodpovídá výše uvedeným možnostem, nebo pokud není uvedena žádná identita, výše uvedené možnosti se stanou irelevantními."
  "Co jsou „bypassace s jedním zásahem“?": "V některých případech může být pozitivně ověřený požadavek stále blokován v důsledku podpisových souborů, modulů, nebo jiných podmínek požadavku a může být nutné bypassovat, aby se zabránilo falešným poplachům. V případě, kdy má bypassace řešit přesně jeden přestupek, nic více a nic méně, lze takový bypassace označit jako „bypassace s jedním zásahem“."

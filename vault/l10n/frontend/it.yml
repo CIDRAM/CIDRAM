@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2024.04.19).
+# This file: Italian language data for the front-end (last modified: 2024.04.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -409,6 +409,7 @@ hints_duration:
 hints_has_bypass: "* Questa opzione ha un bypass corrispondente sotto <code class="s">bypasses➡used</code>. Si consiglia di assicurarsi che la casella di controllo per il bypass corrispondente sia contrassegnato allo stesso modo della casella di controllo per tentare di verificare questa opzione."
 hints_inspection: "* Destinato solo al debug delle regole ausiliarie. Non mostrato agli utenti bloccati."
 hints_ipv6_on_32bit: "Nota: Le ricerche IPv6 potrebbero non funzionare correttamente su alcuni sistemi a 32 bit."
+hints_logging_datetime: "Consiglio utile: È possibile allegare informazioni su data/ora ai nomi dei file di registro utilizzando i segnaposto del formato ora. I segnaposto del formato ora disponibili vengono visualizzati in {{Links.ConfigRef.time_format}}."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.it.md\#user-content-HOW_TO_USE_PDO" hreflang="it-IT">Che cos'è un "DSN PDO"? Come posso usare PDO con CIDRAM?</a></em>"
 hints_shorthand:
@@ -420,6 +421,24 @@ hints_shorthand:
  Uno per firma.: "Una firma può invocare più profili, ma può utilizzare solo una parola abbreviata. È possibile che più parole abbreviate possano essere adatte, ma poiché solo una può essere utilizzata, miriamo a utilizzare sempre solo le più adatte."
  Priorità.: "Un'opzione selezionata ha sempre la priorità su un'opzione non selezionata. Ad esempio, se sono in gioco più parole abbreviate ma solo una di esse è impostata come bloccata, la richiesta sarà comunque bloccata."
  Punti finali umani e servizi cloud.: "Il servizio cloud può fare riferimento a provider di web hosting, server farm, data center, o una serie di altre cose. Punto finale umano si riferisce ai mezzi con cui un umano accede a internet, ad esempio tramite un provider di servizi internet. Una rete di solito fornisce solo l'uno o l'altro, ma a volte può fornire entrambi. Miriamo a non identificare mai potenziali punti finali umani come servizi cloud. Pertanto, un servizio cloud può essere identificato come qualcos'altro se il suo gamme è condiviso da punti finali umani noti. Allo stesso modo, miriamo a identificare sempre i servizi cloud, i cui gamme non sono condivisi da alcun punto finale umano noto, come servizi cloud. Pertanto, una richiesta identificata esplicitamente come servizio cloud probabilmente non condivide il suo gamme con nessun punto finale umano noto. Allo stesso modo, una richiesta identificata esplicitamente da attacchi o rischio per lo spam probabilmente li condivide. Tuttavia, internet è sempre in evoluzione, gli scopi delle reti cambiano nel tempo, e le gamme vengono sempre acquistate o vendute, quindi rimani consapevole e vigile riguardo ai falsi positivi."
+hints_time_format: |
+ <strong><em>Segnaposto – Spiegazione – Esempio basato sul 2024-04-30T18:27:49+08:00.</em></strong><br />
+ <code class="s">{yyyy}</code> – L'anno – Per esempio, 2024.<br />
+ <code class="s">{yy}</code> – L'anno abbreviato – Per esempio, 24.<br />
+ <code class="s">{Mon}</code> – Il nome abbreviato del mese (in inglese) – Per esempio, Apr.<br />
+ <code class="s">{mm}</code> – Il mese con gli zeri iniziali – Per esempio, 04.<br />
+ <code class="s">{m}</code> – Il mese – Per esempio, 4.<br />
+ <code class="s">{Day}</code> – Il nome abbreviato del giorno (in inglese) – Per esempio, Tue.<br />
+ <code class="s">{dd}</code> – Il giorno con gli zeri iniziali – Per esempio, 30.<br />
+ <code class="s">{d}</code> – Il giorno – Per esempio, 30.<br />
+ <code class="s">{hh}</code> – L'ora con gli zeri iniziali (utilizza il formato 24 ore) – Per esempio, 18.<br />
+ <code class="s">{h}</code> – L'ora (utilizza il formato 24 ore) – Per esempio, 18.<br />
+ <code class="s">{ii}</code> – I minuti con gli zeri iniziali – Per esempio, 27.<br />
+ <code class="s">{i}</code> – I minuti – Per esempio, 27.<br />
+ <code class="s">{ss}</code> – Il secondo con zeri iniziali – Per esempio, 49.<br />
+ <code class="s">{s}</code> – Il secondo – Per esempio, 49.<br />
+ <code class="s">{tz}</code> – Il fuso orario (senza i due punti) – Per esempio, +0800.<br />
+ <code class="s">{t:z}</code> – Il fuso orario (con i due punti) – Per esempio, +08:00.
 hints_verification:
  "Cosa sono "positivi" e "negativi"?": "Nel verificare l'identità presentata da una richiesta, un esito di successo potrebbe essere descritto come "positivo" o "negativo". Nel caso in cui l'identità presentata fosse confermata come la vera identità, sarebbe descritto come "positivo". Nel caso in cui l'identità presentata fosse confermata come falsificata, sarebbe descritto come "negativo". Tuttavia, un esito senza successo (ad esempio, la verifica è fallita, o non è possibile determinare la veridicità dell'identità presentata) non sarebbe descritto come "positivo" o "negativo". Invece, un esito senza successo verrebbe descritto semplicemente come non verificato. Quando non viene effettuato alcun tentativo di verificare l'identità presentata da una richiesta, la richiesta verrebbe ugualmente descritto come non verificato. I termini hanno senso solo nel contesto in cui viene riconosciuta l'identità presentata da una richiesta e, quindi, dove è possibile la verifica. Nei casi in cui l'identità presentata non corrisponda alle opzioni fornite sopra, o in cui non venga presentata alcuna identità, le opzioni sopra fornite diventano irrilevanti."
  "Cosa sono i "bypass a colpo singolo"?": "In alcuni casi, una richiesta verificata positivamente potrebbe comunque essere bloccata a causa dei file di firma, dei moduli, o di altre condizioni della richiesta, e potrebbero essere necessari bypass per evitare falsi positivi. Nel caso in cui un bypass sia destinato a trattare esattamente un'infrazione, né più né meno, tale bypass potrebbe essere descritto come un "bypass a colpo singolo"."

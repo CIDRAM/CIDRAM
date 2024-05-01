@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2024.04.19).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2024.04.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -409,6 +409,7 @@ hints_duration:
 hints_has_bypass: "* 这个选项在<code class="s">bypasses➡used</code>下有相应的绕过。​建议确保相应旁路的复选框标记方式与尝试验证此选项的复选框相同。"
 hints_inspection: "* 仅用于调试辅助规则。​不向被阻止的用户显示。"
 hints_ipv6_on_32bit: "注意：IPv6查找在某些32位系统上可能无法正常工作。"
+hints_logging_datetime: "有用提示：您可以使用时间格式占位符将日期/时间信息附加到日志文件的名称。​可用的时间格式占位符显示在{{Links.ConfigRef.time_format}}处。"
 hints_pdo_dsn:
  常问问题。: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.zh.md\#user-content-HOW_TO_USE_PDO" hreflang="zh-CN">“PDO DSN”是什么？如何能PDO与CIDRAM一起使用？</a></em>"
 hints_shorthand:
@@ -420,6 +421,24 @@ hints_shorthand:
  对于每个签名只有一个。: "签名可以调用多个分类，但只能使用一个速记词。​多个速记词可能是合适的，但由于只能使用一个，我们试图始终只使用最合适的。"
  优先。: "选定的选项始终优先于未选定的选项。​例如，如果多个速记词是生效的，但只有一个被设置为被阻止，则请求仍将被阻止。"
  人类端点和云服务。: "云服务可能是指虚拟主机提供商、服务器场、数据中心、或许多其他事物。​人类端点是指人类访问互联网的方式，例如，通过互联网服务提供商。​网络通常只提供一个或另一个，但有时可能同时提供两者。​我们试图不将潜在的人类端点识别为云服务。​因此，如果云服务的范围由已知的人类端点共享，则可以将其识别为其他东西。​同样，如果范围不被任何已知的人类端点共享，我们会试图始终将云服务识别为云服务。​因此，明确标识为云服务的请求很可能不会与任何已知的人类端点共享其范围。​同样，由攻击或垃圾邮件的风险明确识别的请求很可能共享范围。​然而，互联网总是在不断变化，网络的目的可以改变，范围总是被买卖，所以关于假阳性的保持有意识和警惕。"
+hints_time_format: |
+ <strong><em>占位符 – 解释 – 基于2024-04-30T18:27:49+08:00的示例。</em></strong><br />
+ <code class="s">{yyyy}</code> – 年份 – 例如，2024。<br />
+ <code class="s">{yy}</code> – 缩写年份 – 例如，24。<br />
+ <code class="s">{Mon}</code> – 月份缩写名称（英文） – 例如，Apr。<br />
+ <code class="s">{mm}</code> – 带前导零的月份 – 例如，04。<br />
+ <code class="s">{m}</code> – 月份数 – 例如，4。<br />
+ <code class="s">{Day}</code> – 当天缩写名称（英文） – 例如，Tue。<br />
+ <code class="s">{dd}</code> – 带前导零的天数 – 例如，30。<br />
+ <code class="s">{d}</code> – 天数 – 例如，30。<br />
+ <code class="s">{hh}</code> – 带前导零的小时（使用24小时制） – 例如，18。<br />
+ <code class="s">{h}</code> – 小时（使用24小时制） – 例如，18。<br />
+ <code class="s">{ii}</code> – 带前导零的分钟 – 例如，27。<br />
+ <code class="s">{i}</code> – 分钟 – 例如，27。<br />
+ <code class="s">{ss}</code> – 带前导零的秒 – 例如，49。<br />
+ <code class="s">{s}</code> – 秒 – 例如，49。<br />
+ <code class="s">{tz}</code> – 时区（不带冒号） – 例如，+0800。<br />
+ <code class="s">{t:z}</code> – 时区（带冒号） – 例如，+08:00。
 hints_verification:
  "什么是“阳性”和“阴性”？": "在验证请求提供的身份时，成功的结果可以描述为“阳性”或“阴性”。​当所呈现的身份被确认为真实身份时，将被描述为“阳性”。​当所提供的身份被证实为伪造时，将被描述为“阴性”。​但是，不成功的结果（例如，验证失败，或无法确定所提供身份的真实性）不会被描述为“阳性”或“阴性”。​相反，不成功的结果将被简单地描述为未验证。​当没有尝试验证请求提供的身份时，该请求同样会被描述为未验证。​这些术语仅在请求提供的身份被识别的情况下才有意义，因此，在可以进行验证的情况下。​如果提供的身份与上面提供的选项不匹配，或者没有提供身份，则上面提供的选项变得无关。"
  "什么是“一击绕过”？": "在某些情况下，由于签名文件、模块、或请求的其他条件，可能仍会阻止经过肯定验证的请求，为了避免假阳性，可能需要绕过。​在绕过旨在处理仅一项违规行为的情况下，这样的绕过可以被描述为“一击绕过”。"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2024.04.19).
+# This file: English language data for the front-end (last modified: 2024.04.30).
 ##/
 
 Abuse category:
@@ -440,6 +440,7 @@ hints_duration:
 hints_has_bypass: "* This option has a corresponding bypass under <code class="s">bypasses➡used</code>. It's recommended to ensure that the checkbox for the corresponding bypass is marked the same way as the checkbox for attempting to verify this option."
 hints_inspection: "* Intended only for debugging auxiliary rules. Not displayed to blocked users."
 hints_ipv6_on_32bit: "Note: IPv6 lookups mightn't work correctly on some 32-bit systems."
+hints_logging_datetime: "Useful tip: You can attach date/time information to the names of log files by using time format placeholders. Available time format placeholders are displayed at {{Links.ConfigRef.time_format}}."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">What is a "PDO DSN"? How can I use PDO with CIDRAM?</a></em>"
 hints_shorthand:
@@ -456,6 +457,24 @@ hints_shorthand:
  Human endpoints and cloud services.:
   en-AU: "Cloud service may refer to webhosting providers, server farms, data centres, or any number of other things. Human endpoint refers to the means by which a human accesses the internet, such as by way of an internet service provider. A network usually provides just one or the other, but may sometimes provide both. We aim to never identify potential human endpoints as cloud services. Therefore, a cloud service may be identified as something else if its range is shared by known human endpoints. Conversely, we aim to always identify cloud services, whose ranges are not shared by any known human endpoints, as cloud services. Therefore, a request identified explicitly as a cloud service probably doesn't share its range with any known human endpoints. Likewise, a request identified explicitly by attacks or spam probably does. However, the internet is always in flux, the purposes of networks changes over time, and ranges are always being bought or sold, so remain cognisant and vigilant in regards to false positives."
   en-US: "Cloud service may refer to webhosting providers, server farms, data centers, or any number of other things. Human endpoint refers to the means by which a human accesses the internet, such as by way of an internet service provider. A network usually provides just one or the other, but may sometimes provide both. We aim to never identify potential human endpoints as cloud services. Therefore, a cloud service may be identified as something else if its range is shared by known human endpoints. Conversely, we aim to always identify cloud services, whose ranges are not shared by any known human endpoints, as cloud services. Therefore, a request identified explicitly as a cloud service probably doesn't share its range with any known human endpoints. Likewise, a request identified explicitly by attacks or spam probably does. However, the internet is always in flux, the purposes of networks changes over time, and ranges are always being bought or sold, so remain cognizant and vigilant in regards to false positives."
+hints_time_format: |
+ <strong><em>Placeholder – Explanation – Example based on 2024-04-30T18:27:49+08:00.</em></strong><br />
+ <code class="s">{yyyy}</code> – The year – E.g., 2024.<br />
+ <code class="s">{yy}</code> – The abbreviated year – E.g., 24.<br />
+ <code class="s">{Mon}</code> – The abbreviated name of the month (in English) – E.g., Apr.<br />
+ <code class="s">{mm}</code> – The month with leading zeros – E.g., 04.<br />
+ <code class="s">{m}</code> – The month – E.g., 4.<br />
+ <code class="s">{Day}</code> – The abbreviated name of the day (in English) – E.g., Tue.<br />
+ <code class="s">{dd}</code> – The day with leading zeros – E.g., 30.<br />
+ <code class="s">{d}</code> – The day – E.g., 30.<br />
+ <code class="s">{hh}</code> – The hour with leading zeros (uses 24-hour time) – E.g., 18.<br />
+ <code class="s">{h}</code> – The hour (uses 24-hour time) – E.g., 18.<br />
+ <code class="s">{ii}</code> – The minute with leading zeros – E.g., 27.<br />
+ <code class="s">{i}</code> – The minute – E.g., 27.<br />
+ <code class="s">{ss}</code> – The second with leading zeros – E.g., 49.<br />
+ <code class="s">{s}</code> – The second – E.g., 49.<br />
+ <code class="s">{tz}</code> – The timezone (without colon) – E.g., +0800.<br />
+ <code class="s">{t:z}</code> – The timezone (with colon) – E.g., +08:00.
 hints_verification:
  "What are "positives" and "negatives"?":
   en-AU: "When verifying the identity presented by a request, a successful outcome could be described as "positive" or "negative". In the case that the identity presented is confirmed to be the true identity, it would be described as "positive". In the case that the identity presented is confirmed to be falsified, it would be described as "negative". However, an unsuccessful outcome (e.g., verification fails, or the veracity of the identity presented isn't able to be determined) would not be described as "positive" or "negative". Instead, an unsuccessful outcome would be described simply as non-verified. When no attempt to verify the identity presented by a request is made, the request would likewise be described as non-verified. The terms make sense only in the context where the identity presented by a request is recognised, and therefore, where verification is possible. In cases where the identity presented doesn't match the options provided above, or where no identity is presented, the options provided above become irrelevant."

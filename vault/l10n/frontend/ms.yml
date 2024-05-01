@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malay language data for the front-end (last modified: 2024.04.19).
+# This file: Malay language data for the front-end (last modified: 2024.04.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -409,6 +409,7 @@ hints_duration:
 hints_has_bypass: "* Pilihan ini mempunyai pintasan yang sepadan di bawah <code class="s">bypasses➡used</code>. Disyorkan untuk memastikan bahawa kotak pilihan untuk pintasan yang sepadan ditandakan dengan cara yang sama seperti kotak pilihan untuk cuba mengesahkan pilihan ini."
 hints_inspection: "* Bertujuan hanya untuk menyahpepijat peraturan tambahan. Tidak dipaparkan kepada pengguna yang disekat."
 hints_ipv6_on_32bit: "Nota: Carian IPv6 mungkin tidak berfungsi dengan betul pada sesetengah sistem 32-bit."
+hints_logging_datetime: "Petua berguna: Anda boleh melampirkan maklumat tarikh/masa pada nama fail log dengan menggunakan pemegang tempat format masa. Pemegang tempat format masa yang tersedia dipaparkan pada {{Links.ConfigRef.time_format}}."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.id.md\#user-content-HOW_TO_USE_PDO" hreflang="id-ID">Apakah itu "PDO DSN"? Bagaimanakah saya boleh menggunakan PDO dengan CIDRAM?</a></em>"
 hints_shorthand:
@@ -420,6 +421,24 @@ hints_shorthand:
  Satu setiap tandatangan.: "Tandatangan boleh memanggilkan berbilang profil, tetapi hanya boleh menggunakan satu perkataan pendek. Ada kemungkinan bahawa beberapa perkataan pendek mungkin sesuai, tetapi kerana hanya satu boleh digunakan, kami menyasarkan untuk sentiasa menggunakan yang paling sesuai sahaja."
  Keutamaan.: "Pilihan yang dipilih sentiasa diutamakan daripada pilihan yang tidak dipilih. Cth., jika berbilang perkataan pendek tersedia, tetapi hanya satu daripadanya ditetapkan sebagai disekat, permintaan akan tetap disekat."
  Titik akhir manusia dan perkhidmatan pengkomputeran awan.: "Perkhidmatan pengkomputeran awan mungkin merujuk kepada penyedia pengehosan web, ladang pelayan, pusat data, atau sebarang perkara lain. Titik akhir manusia merujuk kepada cara manusia mengakses internet, seperti melalui penyedia perkhidmatan internet. Rangkaian biasanya menyediakan hanya satu atau lain, tetapi kadangkala mungkin menyediakan kedua-duanya. Kami menyasarkan untuk tidak mengenal pasti titik akhir manusia berpotensi sebagai perkhidmatan pengkomputeran awan. Justeru, perkhidmatan pengkomputeran awan boleh dikenal pasti sebagai sesuatu yang lain jika julatnya dikongsi oleh titik akhir manusia diketahui. Dengan cara yang sama, kami menyasarkan untuk sentiasa mengenal pasti perkhidmatan pengkomputeran awan, yang julatnya tidak dikongsi oleh mana-mana titik akhir manusia diketahui, sebagai perkhidmatan pengkomputeran awan. Akibatnya, permintaan yang dikenal pasti secara eksplisit sebagai perkhidmatan pengkomputeran awan kemungkinan besar tidak berkongsi julatnya dengan mana-mana titik akhir manusia diketahui. Begitu juga, permintaan yang dikenal pasti secara eksplisit oleh serangan atau oleh risiko spam kemungkinan besar berkongsi julatnya. Walau bagaimanapun, internet sentiasa berubah-ubah, tujuan rangkaian berubah dari semasa ke semasa, dan julat sentiasa dibeli atau dijual, jadi kekal sedar dan berwaspada dalam hal positif palsu."
+hints_time_format: |
+ <strong><em>Pemegang tempat – Penjelasan – Contoh berdasarkan 2024-04-30T18:27:49+08:00.</em></strong><br />
+ <code class="s">{yyyy}</code> – Tahun – Cth., 2024.<br />
+ <code class="s">{yy}</code> – Tahun yang disingkatkan – Cth., 24.<br />
+ <code class="s">{Mon}</code> – Nama yang disingkatkan bulan (dalam bahasa Inggeris) – Cth., Apr.<br />
+ <code class="s">{mm}</code> – Bulan dengan sifar pendahuluan – Cth., 04.<br />
+ <code class="s">{m}</code> – Bulan – Cth., 4.<br />
+ <code class="s">{Day}</code> – Nama yang disingkatkan hari (dalam bahasa Inggeris) – Cth., Tue.<br />
+ <code class="s">{dd}</code> – Hari dengan sifar pendahuluan – Cth., 30.<br />
+ <code class="s">{d}</code> – Hari – Cth., 30.<br />
+ <code class="s">{hh}</code> – Jam dengan sifar pendahuluan (menggunakan masa 24 jam) – Cth., 18.<br />
+ <code class="s">{h}</code> – Jam (menggunakan masa 24 jam) – Cth., 18.<br />
+ <code class="s">{ii}</code> – Minit dengan sifar pendahuluan – Cth., 27.<br />
+ <code class="s">{i}</code> – Minit – Cth., 27.<br />
+ <code class="s">{ss}</code> – Saat dengan sifar pendahuluan – Cth., 49.<br />
+ <code class="s">{s}</code> – Saat – Cth., 49.<br />
+ <code class="s">{tz}</code> – Zon waktu (tanpa titik bertindih) – Cth., +0800.<br />
+ <code class="s">{t:z}</code> – Zon waktu (dengan titik bertindih) – Cth., +08:00.
 hints_verification:
  "Apakah "positif" dan "negatif"?": "Apabila mengesahkan identiti yang dibentangkan oleh permintaan, hasil yang berjaya boleh digambarkan sebagai "positif" atau "negatif". Sekiranya identiti yang dibentangkan disahkan sebagai identiti sebenar, ia akan disifatkan sebagai "positif". Sekiranya identiti yang dibentangkan disahkan sebagai dipalsukan, ia akan disifatkan sebagai "negatif". Walau bagaimanapun, hasil yang tidak berjaya (cth., pengesahan gagal, atau kesahihan identiti yang dibentangkan tidak dapat ditentukan) tidak akan digambarkan sebagai "positif" atau "negatif". Sebaliknya, hasil yang tidak berjaya akan digambarkan hanya sebagai tidak disahkan. Apabila tiada percubaan untuk mengesahkan identiti yang dibentangkan oleh permintaan, permintaan tersebut juga akan disifatkan sebagai tidak disahkan. Istilah tersebut masuk akal hanya dalam konteks dimana identiti yang dibentangkan oleh permintaan diiktiraf, dan jadi, dimana pengesahan kemungkinan. Dalam kes dimana identiti yang dibentangkan tidak sepadan dengan pilihan yang disediakan di atas, atau dimana tiada identiti dibentangkan, pilihan yang disediakan di atas menjadi tidak relevan."
  "Apakah "pintasan satu pukulan"?": "Dalam sesetengah kes, permintaan yang disahkan sebagai positif mungkin masih disekat akibat daripada fail tandatangan, modul, atau syarat lain daripada permintaan, dan pintasan mungkin diperlukan untuk mengelakkan positif palsu. Dalam kes dimana pintasan bertujuan menangani tepat satu pelanggaran, tidak lebih dan tidak kurang, pintasan sedemikian boleh digambarkan sebagai "pintasan satu pukulan"."

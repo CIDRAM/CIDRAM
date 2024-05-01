@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2024.04.19).
+# This file: Portuguese language data for the front-end (last modified: 2024.04.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -457,6 +457,7 @@ hints_inspection:
  pt-BR: "* Destina-se apenas à depuração de regras auxiliares. Não exibido para usuários bloqueados."
  pt-PT: "* Destina-se apenas à depuração de regras auxiliares. Não exibido para utilizadores bloqueados."
 hints_ipv6_on_32bit: "Nota: As pesquisas de IPv6 podem não funcionar corretamente em alguns sistemas de 32 bits."
+hints_logging_datetime: "Dica útil: Você pode anexar informações de data/hora aos nomes dos arquivos de log usando espaços reservados de formato de hora. Os espaços reservados para formato de hora disponíveis são exibidos em {{Links.ConfigRef.time_format}}."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.pt.md\#user-content-HOW_TO_USE_PDO" hreflang="pt">O que é um "PDO DSN"? Como posso usar o PDO com o CIDRAM?</a></em>"
 hints_shorthand:
@@ -472,6 +473,24 @@ hints_shorthand:
  Um por assinatura.: "Uma assinatura pode invocar vários perfis, mas pode usar apenas uma palavra curta. É possível que várias palavras curtas podem ser adequadas, mas como apenas uma pode ser usada, procuramos sempre usar apenas a mais adequada."
  Prioridade.: "Uma opção selecionada sempre tem prioridade sobre uma opção não selecionada. Por exemplo, se várias palavras curtas estiverem em jogo, mas apenas uma delas estiver definida como bloqueada, a solicitação ainda será bloqueada."
  Pontos finais humanos e serviços em nuvem.: "O serviço em nuvem pode se referir a provedores de hospedagem na web, farms de servidores, data centers, ou uma série de coisas diferentes. Ponto final humano refere-se ao meio pelo qual um humano acessa a internet, como por meio de um provedor de serviços de internet. Uma rede geralmente fornece apenas um ou outro, mas às vezes pode fornecer ambos. Visamos nunca identificar pontos finais humanos potenciais como serviços em nuvem. Portanto, um serviço de nuvem pode ser identificado como outra coisa se seu alcance for compartilhado por pontos finais humanos conhecidos. Vice versa, visamos sempre identificar serviços em nuvem, cujos alcances não são compartilhados por nenhum ponto final humano conhecido, como serviços em nuvem. Portanto, uma solicitação identificada explicitamente como um serviço de nuvem provavelmente não compartilha seu alcances com nenhum pontos finais humanos conhecidos. Da mesma forma, uma solicitação identificada explicitamente por ataques ou risco de spam provavelmente os compartilha. No entanto, a internet está sempre em fluxo, os propósitos das redes mudam ao longo do tempo, e os alcances estão sempre sendo comprados ou vendidos, portanto, permaneça ciente e vigilante em relação a falsos positivos."
+hints_time_format: |
+ <strong><em>Espaço reservado – Explicação – Exemplo baseado em 2024-04-30T18:27:49+08:00.</em></strong><br />
+ <code class="s">{yyyy}</code> – O ano – Por exemplo, 2024.<br />
+ <code class="s">{yy}</code> – O ano abreviado – Por exemplo, 24.<br />
+ <code class="s">{Mon}</code> – O nome abreviado do mês (em inglês) – Por exemplo, Apr.<br />
+ <code class="s">{mm}</code> – O mês com zeros à esquerda – Por exemplo, 04.<br />
+ <code class="s">{m}</code> – O mês – Por exemplo, 4.<br />
+ <code class="s">{Day}</code> – O nome abreviado do dia (em inglês) – Por exemplo, Tue.<br />
+ <code class="s">{dd}</code> – O dia com zeros à esquerda – Por exemplo, 30.<br />
+ <code class="s">{d}</code> – O dia – Por exemplo, 30.<br />
+ <code class="s">{hh}</code> – A hora com zeros à esquerda (usa o formato de 24 horas) – Por exemplo, 18.<br />
+ <code class="s">{h}</code> – A hora (usa o formato de 24 horas) – Por exemplo, 18.<br />
+ <code class="s">{ii}</code> – O minuto com zeros à esquerda – Por exemplo, 27.<br />
+ <code class="s">{i}</code> – O minuto – Por exemplo, 27.<br />
+ <code class="s">{ss}</code> – O segundo com zeros à esquerda – Por exemplo, 49.<br />
+ <code class="s">{s}</code> – O segundo – Por exemplo, 49.<br />
+ <code class="s">{tz}</code> – O fuso horário (sem dois pontos) – Por exemplo, +0800.<br />
+ <code class="s">{t:z}</code> – O fuso horário (com dois pontos) – Por exemplo, +08:00.
 hints_verification:
  "O que são "positivos" e "negativos"?": "Quando verificando a identidade apresentada por uma solicitação, um resultado bem-sucedido pode ser descrito como "positivo" ou "negativo". Quando a identidade apresentada for confirmada como sendo a verdadeira identidade, ela será descrita como "positiva". Quando a identidade apresentada for confirmada como falsificada, ela será descrita como "negativa". No entanto, um resultado malsucedido (por exemplo, falha na verificação, ou a veracidade da identidade apresentada não pode ser determinada) não seria descrito como "positivo" ou "negativo". Em vez disso, um resultado malsucedido seria descrito simplesmente como não verificado. Quando não for feita nenhuma tentativa de verificar a identidade apresentada por uma solicitação, a solicitação também será descrita como não verificado. Os termos fazem sentido apenas no contexto em que a identidade apresentada por uma solicitação é reconhecida e, portanto, onde a verificação é possível. Nos casos em que a identidade apresentada não corresponde às opções fornecidas acima, ou onde nenhuma identidade é apresentada, as opções fornecidas acima tornam-se irrelevantes."
  "O que são "bypasses de acerto único"?": "Em alguns casos, uma solicitação com verificação positiva ainda pode ser bloqueada como resultado dos arquivos de assinatura, módulos, ou outras condições da solicitação, e bypasses podem ser necessários para evitar falsos positivos. No caso em que um bypass se destina a lidar com exatamente uma infração, nem mais nem menos, tal bypass pode ser descrito como um "bypass de acerto único"."

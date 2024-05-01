@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2024.04.19).
+# This file: Vietnamese language data for the front-end (last modified: 2024.04.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -205,7 +205,7 @@ config:
  general_silent_mode_response_header_code: "Những gì thông báo trạng thái HTTP mà CIDRAM nên gửi khi âm thầm chuyển hướng các nỗ lực truy cập bị chặn?"
  general_stages: "Kiểm soát các giai đoạn của chuỗi thực thi (có được bật hay không, có lỗi được ghi lại hay không, vv)."
  general_statistics: "Kiểm soát thông tin thống kê cần giám sát."
- general_time_format: "Định dạng ngày tháng sử dụng bởi CIDRAM. Các tùy chọn bổ sung có thể được bổ sung theo yêu cầu."
+ general_time_format: "Định dạng ngày/giờ tháng sử dụng bởi CIDRAM. Tùy chọn bổ sung có thể được bổ sung theo yêu cầu."
  general_time_offset: "Múi giờ bù đắp trong phút."
  general_timezone: "Điều này được sử dụng để chỉ định múi giờ sử dụng (ví dụ, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, vv). Chỉ định "SYSTEM" để cho phép PHP tự động xử lý việc này cho bạn."
  hcaptcha: "Cấu hình cho HCaptcha (cung cấp một cách để con người lấy lại quyền truy cập khi bị chặn)."
@@ -409,6 +409,7 @@ hints_duration:
 hints_has_bypass: "* Tùy chọn này có một đường tránh tương ứng dưới <code class="s">bypasses➡used</code>. Bạn nên đảm bảo rằng hộp kiểm cho đường tránh tương ứng được đánh dấu giống như hộp kiểm để cố gắng xác minh tùy chọn này."
 hints_inspection: "* Chỉ dành cho việc gỡ lỗi các quy tắc phụ trợ. Không hiển thị cho người dùng bị chặn."
 hints_ipv6_on_32bit: "Lưu ý: Tra cứu IPv6 có thể không hoạt động chính xác trên một số hệ thống 32 bit."
+hints_logging_datetime: "Lời khuyên hữu ích: Bạn có thể đính kèm thông tin ngày/giờ vào tên của tập tin nhật ký bằng cách sử dụng phần giữ chỗ định dạng thời gian. Phần giữ chỗ định dạng thời gian có sẵn được hiển thị tại {{Links.ConfigRef.time_format}}."
 hints_pdo_dsn:
  Câu hỏi thường gặp.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.vi.md\#user-content-HOW_TO_USE_PDO" hreflang="vi-VN">"PDO DSN" là gì? Làm cách nào tôi có thể sử dụng PDO với CIDRAM?</a></em>"
 hints_shorthand:
@@ -420,6 +421,24 @@ hints_shorthand:
  Chỉ một cho mỗi chữ ký.: "Một chữ ký có thể gọi nhiều hồ sơ, nhưng chỉ có thể sử dụng một từ viết tắt. Có thể nhiều từ viết tắt có thể thích hợp, nhưng vì chỉ một có thể được sử dụng, chúng tôi luôn hướng tới việc chỉ sử dụng thích hợp nhất."
  Ưu tiên.: "Một tùy chọn được chọn luôn được ưu tiên hơn một tùy chọn không được chọn. Ví dụ, nếu nhiều từ viết tắt có hiệu lực nhưng chỉ một trong số chúng được đặt là bị chặn, yêu cầu sẽ vẫn bị chặn."
  Điểm cuối của con người và dịch vụ điện toán đám mây.: "Dịch vụ điện toán đám mây có thể đề cập đến các nhà cung cấp dịch vụ lưu trữ web, trang trại máy chủ, trung tâm dữ liệu, hoặc một số thứ khác. Điểm cuối của con người đề cập đến phương tiện mà con người truy cập internet, chẳng hạn như bằng cách của một nhà cung cấp dịch vụ internet. Một mạng thường chỉ cung cấp cái này hoặc cái kia, nhưng đôi khi có thể cung cấp cả hai. Chúng tôi mong muốn không bao giờ xác định các điểm cuối tiềm năng của con người là các dịch vụ điện toán đám mây. Do đó, một dịch vụ điện toán đám mây có thể được xác định là một thứ khác nếu phạm vi của nó được chia sẻ bởi các điểm cuối của con người đã biết. Tương tự như vậy, chúng tôi luôn hướng tới xác định các dịch vụ điện toán đám mây, có phạm vi không được chia sẻ bởi bất kỳ điểm cuối của con người nào đã biết, là dịch vụ điện toán đám mây. Do đó, một yêu cầu được xác định rõ ràng là một dịch vụ điện toán đám mây rất có lẽ không chia sẻ phạm vi của nó với bất kỳ điểm cuối của con người nào đã biết. Tương tự như vậy, một yêu cầu được xác định rõ ràng bởi các cuộc tấn công hoặc nguy cơ rác là có lẽ chia sẻ chúng. Tuy nhiên, internet luôn ở trạng thái thay đổi, mục đích của các mạng thay đổi theo thời gian, và các phạm vi luôn được mua hay bán, vì vậy hãy luôn nhận thức và cảnh giác có liên quan đến nguy cơ sai tích cực."
+hints_time_format: |
+ <strong><em>Phần giữ chỗ – Giải trình – Ví dụ dựa trên 2024-04-30T18:27:49+08:00.</em></strong><br />
+ <code class="s">{yyyy}</code> – Năm – Ví dụ, 2024.<br />
+ <code class="s">{yy}</code> – Năm viết tắt – Ví dụ, 24.<br />
+ <code class="s">{Mon}</code> – Tên viết tắt của tháng (bằng tiếng Anh) – Ví dụ, Apr.<br />
+ <code class="s">{mm}</code> – Tháng với số 0 đứng đầu – Ví dụ, 04.<br />
+ <code class="s">{m}</code> – Tháng – Ví dụ, 4.<br />
+ <code class="s">{Day}</code> – Tên viết tắt của ngày (bằng tiếng Anh) – Ví dụ, Tue.<br />
+ <code class="s">{dd}</code> – Ngày với số 0 đứng đầu – Ví dụ, 30.<br />
+ <code class="s">{d}</code> – Ngày – Ví dụ, 30.<br />
+ <code class="s">{hh}</code> – Giờ với số 0 đứng đầu (sử dụng thời gian 24 giờ) – Ví dụ, 18.<br />
+ <code class="s">{h}</code> – Giờ (sử dụng thời gian 24 giờ) – Ví dụ, 18.<br />
+ <code class="s">{ii}</code> – Phút với số 0 đứng đầu – Ví dụ, 27.<br />
+ <code class="s">{i}</code> – Phút – Ví dụ, 27.<br />
+ <code class="s">{ss}</code> – Giây với số 0 đứng đầu – Ví dụ, 49.<br />
+ <code class="s">{s}</code> – Giây – Ví dụ, 49.<br />
+ <code class="s">{tz}</code> – Múi giờ (không có dấu hai chấm) – Ví dụ, +0800.<br />
+ <code class="s">{t:z}</code> – Múi giờ (có dấu hai chấm) – Ví dụ, +08:00.
 hints_verification:
  ""Tích cực" và "tiêu cực" là gì?": "Khi xác minh danh tính được trình bày bởi một yêu cầu, kết quả thành công có thể được mô tả là "tích cực" hoặc "tiêu cực". Trong trường hợp danh tính được trình bày được xác nhận là danh tính thực, danh tính đó sẽ được mô tả là "tích cực". Trong trường hợp danh tính được trình bày được xác nhận là giả mạo, danh tính đó sẽ được mô tả là "tiêu cực". Tuy nhiên, kết quả không thành công (ví dụ: xác minh không thành công, hoặc không thể xác định tính xác thực của danh tính được trình bày) sẽ không được mô tả là "tích cực" hoặc "tiêu cực". Thay vào đó, một kết quả không thành công sẽ được mô tả đơn giản là chưa được xác minh. Khi không có nỗ lực xác minh danh tính mà một yêu cầu đưa ra được thực hiện, thì yêu cầu đó cũng sẽ được mô tả là chưa được xác minh. Các điều khoản chỉ có ý nghĩa trong bối cảnh mà danh tính được trình bày bởi một yêu cầu được công nhận và do đó, khi có thể xác minh. Trong trường hợp danh tính được trình bày không khớp với các tùy chọn được cung cấp ở trên, hoặc khi không có danh tính nào được trình bày, các tùy chọn được cung cấp ở trên trở nên không liên quan."
  ""Đường tránh một cú đánh" là gì?": "Trong một số trường hợp, yêu cầu đã được xác minh tích cực vẫn có thể bị chặn do tập tin chữ ký, mô-đun, hoặc các điều kiện khác của yêu cầu, và đường tránh có thể cần thiết để tránh sai tích cực. Trong trường hợp sai tích cực gây ra chính xác một vi phạm, một đường tránh như vậy có thể được mô tả là "đường tránh một cú đánh"."

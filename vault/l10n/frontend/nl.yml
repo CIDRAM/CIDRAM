@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2024.04.19).
+# This file: Dutch language data for the front-end (last modified: 2024.04.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -407,6 +407,7 @@ hints_duration:
 hints_has_bypass: "* Deze optie heeft een bijbehorende bypass onder <code class="s">bypasses➡used</code>. Ongeacht of het selectievakje om te proberen deze optie te verifiëren is ingeschakeld, het wordt aanbevolen om ervoor te zorgen dat het selectievakje voor de corresponderende bypass hetzelfde is."
 hints_inspection: "* Alleen bedoeld voor het debuggen van aanvullende regels. Niet weergegeven voor geblokkeerde gebruikers."
 hints_ipv6_on_32bit: "Opmerking: IPv6-opzoeken mogelijk werken niet correct op sommige 32-bits systemen."
+hints_logging_datetime: "Handige tip: U kunt datum-/tijdinformatie aan de namen van logbestanden toevoegen door tijdelijke aanduidingen voor de tijdnotatie te gebruiken. Beschikbare tijdelijke aanduidingen voor tijdnotatie worden weergegeven bij {{Links.ConfigRef.time_format}}."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.nl.md\#user-content-HOW_TO_USE_PDO" hreflang="nl-NL">Wat is een "PDO DSN"? Hoe kan ik PDO gebruiken met CIDRAM?</a></em>"
 hints_shorthand:
@@ -418,6 +419,24 @@ hints_shorthand:
  Eén per signature.: "Een signature kan meerdere profielen oproepen, maar kan slechts één stenowoord gebruiken. Het is mogelijk dat meerdere stenowoorden geschikt zijn, maar aangezien er maar één kan worden gebruikt, we streven ernaar altijd alleen de meest geschikte te gebruiken."
  Prioriteit.: "Een geselecteerde optie heeft altijd voorrang op een niet geselecteerde optie. B.v., als er meerdere stenowoorden in het spel zijn, maar slechts één ervan als geblokkeerd is ingesteld, wordt het verzoek nog steeds geblokkeerd."
  Menselijke eindpunten en cloud services.: "Cloud service kan verwijzen naar webhosting providers, server farms, data centers of een aantal andere dingen. Menselijk eindpunt verwijst naar de manier waarop een mens toegang krijgt tot internet, b.v., via een internetprovider. Een netwerk biedt meestal slechts een of het ander, maar kan soms beide bieden. We streven ernaar om potentiële menselijke eindpunten nooit als cloudservices te identificeren. Daarom een cloud service kan worden geïdentificeerd als iets anders als het bereik wordt gedeeld door bekende menselijke eindpunten. Evenzo, we streven ernaar om cloud services, waarvan het bereik niet wordt gedeeld door bekende menselijke eindpunten, altijd als cloud services te identificeren. Daarom een aanvraag dat expliciet als een cloud service wordt geïdentificeerd waarschijnlijk niet deelt het bereik met bekende menselijke eindpunten. Evenzo, een verzoek dat expliciet wordt geïdentificeerd door aanvallen of spam risico waarschijnlijk deelt het bereik. Het internet is echter altijd in beweging, de doeleinden van netwerken veranderen in de loop van de tijd, en bereik worden altijd gekocht of verkocht, dus blijf bewust en waakzaam met betrekking tot valse positieven."
+hints_time_format: |
+ <strong><em>Tijdelijke aanduiding – Uitleg – Voorbeeld gebaseerd op 2024-04-30T18:27:49+08:00.</em></strong><br />
+ <code class="s">{yyyy}</code> – Het jaartal – B.v., 2024.<br />
+ <code class="s">{yy}</code> – Het afgekorte jaartal – B.v., 24.<br />
+ <code class="s">{Mon}</code> – De afgekorte naam van de maand (in het Engels) – B.v., Apr.<br />
+ <code class="s">{mm}</code> – De maand met voorloopnullen – B.v., 04.<br />
+ <code class="s">{m}</code> – De maand – B.v., 4.<br />
+ <code class="s">{Day}</code> – De afgekorte naam van de dag (in het Engels) – B.v., Tue.<br />
+ <code class="s">{dd}</code> – De dag met voorloopnullen – B.v., 30.<br />
+ <code class="s">{d}</code> – De dag – B.v., 30.<br />
+ <code class="s">{hh}</code> – Het uur met voorloopnullen (gebruikt 24-uurs tijd) – B.v., 18.<br />
+ <code class="s">{h}</code> – Het uur (gebruikt 24-uurs tijd) – B.v., 18.<br />
+ <code class="s">{ii}</code> – De minuut met voorloopnullen – B.v., 27.<br />
+ <code class="s">{i}</code> – De minuut – B.v., 27.<br />
+ <code class="s">{ss}</code> – De seconde met voorloopnullen – B.v., 49.<br />
+ <code class="s">{s}</code> – De seconde – B.v., 49.<br />
+ <code class="s">{tz}</code> – De tijdzone (zonder dubbele punt) – B.v., +0800.<br />
+ <code class="s">{t:z}</code> – De tijdzone (met dubbele punt) – B.v., +08:00.
 hints_verification:
  "Wat zijn "positieven" en "negatieven"?": "Bij het verifiëren van de identiteit die door een verzoek wordt gepresenteerd, een succesvol resultaat kan worden omschreven als "positief" of "negatief". In het geval dat wordt bevestigd dat de gepresenteerde identiteit de ware identiteit is, deze als "positief" beschreven wordt. In het geval dat wordt bevestigd dat de gepresenteerde identiteit vervalst is, deze als "negatief" beschreven wordt. Een onsuccesvolle uitkomst (b.v., verificatie mislukt, of de juistheid van de gepresenteerde identiteit kan niet worden vastgesteld) wordt echter niet als "positief" of "negatief" beschreven. In plaats daarvan zou een mislukte uitkomst eenvoudigweg als niet-geverifieerd worden beschreven. Als er geen poging wordt gedaan om de identiteit van het verzoek te verifiëren, het verzoek wordt eveneens als niet-geverifieerd beschreven. De termen hebben alleen zin in de context waarin de identiteit van het verzoek wordt herkend, en dus waar verificatie mogelijk is. In gevallen waarin de gepresenteerde identiteit niet overeenkomt met de bovenstaande opties, of waar geen identiteit wordt gepresenteerd, worden de bovenstaande opties irrelevant."
  "Wat zijn "enkele-treffer bypasses"?": "In sommige gevallen kan een positief-geverifieerd verzoek nog steeds worden geblokkeerd als gevolg van de signatuurbestanden, modules, of andere voorwaarden van het verzoek, en bypasses kunnen nodig zijn om valse positieven te voorkomen. In het geval dat een bypass bedoeld is om precies één overtreding af te handelen, niet meer en niet minder, dergelijke een bypass zou kunnen worden omschreven als een "enkele-treffer bypass"."

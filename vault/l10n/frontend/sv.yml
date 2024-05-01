@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2024.04.19).
+# This file: Swedish language data for the front-end (last modified: 2024.04.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -409,6 +409,7 @@ hints_duration:
 hints_has_bypass: "* Detta alternativ har en motsvarande bypass under <code class="s">bypasses➡used</code>. Oavsett om kryssrutan för att försöka verifiera det här alternativet är markerad, rekommenderar vi att du ser till att kryssrutan för motsvarande förbikoppling är densamma."
 hints_inspection: "* Avsedd endast för felsökning av hjälpregler. Visas inte för blockerade användare."
 hints_ipv6_on_32bit: "Obs: IPv6-sökningar kanske inte fungerar korrekt på vissa 32-bitarssystem."
+hints_logging_datetime: "Användbart tips: Du kan bifoga information om datum och tid till namnen på loggfiler genom att använda platshållare i tidsformat. Tillgängliga platshållare för tidsformat visas vid {{Links.ConfigRef.time_format}}."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">Vad är en "PDO DSN"? Hur kan jag använda PDO med CIDRAM?</a></em>"
 hints_shorthand:
@@ -420,6 +421,24 @@ hints_shorthand:
  En per signatur.: "En signatur kan anropa flera profiler, men kan bara använda ett förkortat ord. Det är möjligt att flera förkortningsord kan vara lämpliga, men eftersom endast ett kan användas, vi strävar efter att alltid använda endast de mest lämpliga."
  Prioritet.: "Ett valt alternativ har alltid prioritet framför ett alternativ som inte är valt. T.ex., om flera förkortningsord är i spel men bara ett av dem är satts att vara blockerat, begäran kommer fortfarande att blockeras."
  Mänskliga slutpunkter och molntjänster.: "Molntjänst kan hänvisa till webbhotellleverantörer, serverfarmar, datacenter, eller ett antal andra saker. Mänsklig slutpunkt hänvisar till hur en människa kommer åt internet, till exempel via en internetleverantör. Ett nätverk tillhandahåller vanligtvis bara det ena eller det andra, men kan ibland tillhandahålla båda. Vi strävar efter att aldrig identifiera potentiella mänskliga slutpunkter som molntjänster. Därför en molntjänst kan identifieras som något annat om dess räckvidd delas av kända mänskliga slutpunkter. Likaså, vi strävar efter att alltid identifiera molntjänster, vars räckvidd inte delas av några kända mänskliga slutpunkter, som molntjänster. Därför en begäran som uttryckligen identifieras som en molntjänst förmodligen inte delar sitt räckvidd med några kända mänskliga slutpunkter. Likaså, en begäran som identifieras explicit av attacker eller spam risk förmodligen delar dem. Internet är dock alltid i förändring, syftet med nätverk förändras över tiden, och räckvidd köps eller säljs alltid, så förbli medveten och vaksam när det gäller risken för falska positiva."
+hints_time_format: |
+ <strong><em>Platshållare – Förklaring – Exempel baserat på 2024-04-30T18:27:49+08:00.</em></strong><br />
+ <code class="s">{yyyy}</code> – Året – T.ex., 2024.<br />
+ <code class="s">{yy}</code> – Det förkortade året – T.ex., 24.<br />
+ <code class="s">{Mon}</code> – Månadens förkortade namn (på engelska) – T.ex., Apr.<br />
+ <code class="s">{mm}</code> – Månaden med inledande nollor – T.ex., 04.<br />
+ <code class="s">{m}</code> – Månaden – T.ex., 4.<br />
+ <code class="s">{Day}</code> – Dagens förkortade namn (på engelska) – T.ex., Tue.<br />
+ <code class="s">{dd}</code> – Dagen med inledande nollor – T.ex., 30.<br />
+ <code class="s">{d}</code> – Dagen – T.ex., 30.<br />
+ <code class="s">{hh}</code> – Timmen med inledande nollor (använder 24-timmars tid) – T.ex., 18.<br />
+ <code class="s">{h}</code> – Timmen (använder 24-timmars tid) – T.ex., 18.<br />
+ <code class="s">{ii}</code> – Minuten med inledande nollor – T.ex., 27.<br />
+ <code class="s">{i}</code> – Minuten – T.ex., 27.<br />
+ <code class="s">{ss}</code> – Sekunden med inledande nollor – T.ex., 49.<br />
+ <code class="s">{s}</code> – Sekunden – T.ex., 49.<br />
+ <code class="s">{tz}</code> – Tidszonen (utan kolon) – T.ex., +0800.<br />
+ <code class="s">{t:z}</code> – Tidszonen (med kolon) – T.ex., +08:00.
 hints_verification:
  "Vad är "positiva" och "negativa"?": "När verifiering identiteten som presenteras av en begäran, ett framgångsrikt resultat kan beskrivas som "positiv" eller "negativ". I det fall att den presenterade identiteten bekräftas vara den sanna identiteten, skulle den beskrivas som "positiv". I det fall att den presenterade identiteten bekräftas vara förfalskad, skulle den beskrivas som "negativ". Dock, ett misslyckat resultat (t.ex., verifiering misslyckas, eller det går inte att fastställa sanningshalten i den presenterade identiteten) skulle inte beskrivas som "positiv" eller "negativ". Istället skulle ett misslyckat resultat beskrivas som icke-verifierad. När inget försök att verifiera identiteten som presenteras av en begäran görs, begäran skulle också beskrivas som icke-verifierad. Termerna är meningsfulla endast i det sammanhang där identiteten som presenteras av en begäran erkänns, och därför, där verifiering är möjlig. I de fall där identiteten som presenteras inte matchar alternativen ovan, eller där ingen identitet presenteras, alternativen ovan blir irrelevanta."
  "Vad är "singel-hit bypasser"?": "I vissa fall kan en positivt verifierad begäran fortfarande blockeras som ett resultat av signaturfilerna, modulerna, eller andra villkor för begäran, och bypasser kan vara nödvändiga för att undvika falska positiva resultat. I det fall där en bypass är avsedd att hantera exakt en infraktion, varken mer eller mindre, sådan en bypass kan beskrivas som en "singel-hit bypass"."

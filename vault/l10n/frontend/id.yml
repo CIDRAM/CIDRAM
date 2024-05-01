@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2024.04.19).
+# This file: Indonesian language data for the front-end (last modified: 2024.04.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -409,6 +409,7 @@ hints_duration:
 hints_has_bypass: "* Opsi ini memiliki bypass terkait dibawah <code class="s">bypasses➡used</code>. Direkomendasikan untuk memastikan bahwa kotak centang untuk bypass terkait ditandai dengan cara yang sama seperti kotak centang untuk mencoba memverifikasi opsi ini."
 hints_inspection: "* Dimaksudkan hanya untuk men-debug aturan tambahan. Tidak ditampilkan kepada pengguna yang diblokir."
 hints_ipv6_on_32bit: "Catatan: Pencarian IPv6 mungkin tidak bekerja dengan benar pada beberapa sistem 32-bit."
+hints_logging_datetime: "Kiat yang berguna: Anda dapat melampirkan informasi tanggal/waktu ke nama file log dengan menggunakan placeholder format waktu. Placeholder format waktu yang tersedia ditampilkan di {{Links.ConfigRef.time_format}}."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.id.md\#user-content-HOW_TO_USE_PDO" hreflang="id-ID">Apa itu "PDO DSN"? Bagaimana saya bisa menggunakan PDO dengan CIDRAM?</a></em>"
 hints_shorthand:
@@ -420,6 +421,24 @@ hints_shorthand:
  Satu per tanda tangan.: "Tanda tangan dapat memanggil beberapa profil, tetapi hanya dapat menggunakan satu kata singkat. Ada kemungkinan bahwa beberapa kata singkat mungkin cocok, tetapi karena hanya satu dapat digunakan, kami bertujuan untuk selalu menggunakan hanya yang paling cocok."
  Prioritas.: "Opsi yang dipilih selalu diprioritaskan daripada opsi yang tidak dipilih. Misalnya, jika beberapa kata-kata singkat sedang di tangan, tetapi hanya satu yang disetel sebagai diblokir, permintaan akan tetap diblokir."
  Titik akhir manusia dan layanan komputasi awan.: "Layanan komputasi awan dapat merujuk ke penyedia hosting web, server farm, pusat data, atau sejumlah hal lainnya. Titik akhir manusia mengacu pada cara manusia mengakses internet, seperti melalui penyedia layanan internet. Jaringan biasanya menyediakan hanya satu atau lain, tetapi kadang-kadang dapat menyediakan keduanya. Kami bertujuan untuk tidak pernah mengidentifikasi titik akhir manusia potensial sebagai layanan komputasi awan. Demikian, layanan komputasi awan dapat diidentifikasi sebagai sesuatu lain jika rentangnya dibagi oleh titik akhir manusia yang dikenal. Dengan cara yang sama, kami bertujuan untuk selalu mengidentifikasi layanan cloud, yang rentangnya tidak dibagikan oleh titik akhir manusia yang dikenal, sebagai layanan komputasi awan. Akibatnya, permintaan yang diidentifikasi eksplisit sebagai layanan komputasi awan paling mungkin tidak berbagi rentangnya dengan titik akhir manusia yang diketahui. Demikian juga, permintaan yang diidentifikasi eksplisit oleh serangan atau oleh risiko spam paling mungkin membagikannya. Namun, internet selalu berubah, tujuan jaringan berubah dari waktu ke waktu, dan rentang-rentang selalu dibeli atau dijual, jadi tetaplah sadar dan waspada dalam hal positif palsu."
+hints_time_format: |
+ <strong><em>Placeholder – Penjelasan – Contoh berdasarkan 2024-04-30T18:27:49+08:00.</em></strong><br />
+ <code class="s">{yyyy}</code> – Tahun – Misalnya, 2024.<br />
+ <code class="s">{yy}</code> – Tahun yang disingkat – Misalnya, 24.<br />
+ <code class="s">{Mon}</code> – Nama bulan yang disingkat (dalam bahasa Inggris) – Misalnya, Apr.<br />
+ <code class="s">{mm}</code> – Bulan dengan angka nol di depannya – Misalnya, 04.<br />
+ <code class="s">{m}</code> – Bulan – Misalnya, 4.<br />
+ <code class="s">{Day}</code> – Nama hari yang disingkat (dalam bahasa Inggris) – Misalnya, Tue.<br />
+ <code class="s">{dd}</code> – Hari dengan angka nol di depannya – Misalnya, 30.<br />
+ <code class="s">{d}</code> – Hari – Misalnya, 30.<br />
+ <code class="s">{hh}</code> – Jam dengan angka nol di depannya (menggunakan waktu 24 jam) – Misalnya, 18.<br />
+ <code class="s">{h}</code> – Jam (menggunakan waktu 24 jam) – Misalnya, 18.<br />
+ <code class="s">{ii}</code> – Menit dengan angka nol di depannya – Misalnya, 27.<br />
+ <code class="s">{i}</code> – Menit – Misalnya, 27.<br />
+ <code class="s">{ss}</code> – Detik dengan angka nol di depannya – Misalnya, 49.<br />
+ <code class="s">{s}</code> – Detik – Misalnya, 49.<br />
+ <code class="s">{tz}</code> – Zona waktu (tanpa titik dua) – Misalnya, +0800.<br />
+ <code class="s">{t:z}</code> – Zona waktu (dengan titik dua) – Misalnya, +08:00.
 hints_verification:
  "Apa itu "positif" dan "negatif"?": "Saat memverifikasi identitas yang disajikan oleh permintaan, hasil yang berhasil dapat digambarkan sebagai "positif" atau "negatif". Ketika identitas yang disajikan dikonfirmasi sebagai identitas sebenarnya, itu akan digambarkan sebagai "positif". Ketika identitas yang disajikan dikonfirmasi sebagai dipalsukan, itu akan digambarkan sebagai "negatif". Namun, hasil yang tidak berhasil (misalnya, verifikasi gagal, atau kebenaran identitas yang disajikan tidak dapat ditentukan) tidak akan digambarkan sebagai "positif" atau "negatif". Sebaliknya, hasil yang tidak berhasil akan digambarkan sebagai tidak diverifikasi. Ketika tidak ada upaya untuk memverifikasi identitas yang disajikan oleh permintaan, permintaan tersebut juga akan digambarkan sebagai tidak diverifikasi. Istilah tersebut masuk akal hanya dalam konteks dimana identitas yang disajikan oleh permintaan dikenali, dan jadi, dimana verifikasi dimungkinkan. Jika identitas yang disajikan tidak sesuai dengan opsi yang diberikan di atas, atau jika tidak ada identitas yang disajikan, opsi yang diberikan di atas menjadi tidak relevan."
  "Apa itu "bypass satu pelanggaran"?": "Dalam beberapa kasus, permintaan diverifikasi secara positif mungkin masih diblokir sebagai akibat dari file tanda tangan, modul, atau kondisi permintaan lainnya, dan bypass mungkin diperlukan untuk menghindari positif palsu. Dalam kasus dimana bypass dimaksudkan untuk menangani tepat satu pelanggaran, tidak lebih dan tidak kurang, bypass seperti itu dapat digambarkan sebagai "bypass satu pelanggaran"."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2024.04.19).
+# This file: Turkish language data for the front-end (last modified: 2024.04.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -409,6 +409,7 @@ hints_duration:
 hints_has_bypass: "* Bu seçenek, <code class="s">bypasses➡used</code> altında bir karşılık gelen bypass'a sahiptir. Karşılık gelen bypass'a için onay kutusunun, bu seçeneği doğrulamaya çalışmak için onay kutusuyla aynı şekilde işaretlendiğinden emin olunması önerilir."
 hints_inspection: "* Yalnızca yardımcı kurallarda hata ayıklama amaçlıdır. Engellenen kullanıcılara gösterilmez."
 hints_ipv6_on_32bit: "Not: IPv6 aramaları bazı 32 bit sistemlerde düzgün çalışmayabilir."
+hints_logging_datetime: "Yararlı ipucu: Saat biçimi yer tutucularını kullanarak günlük dosyalarının adlarına tarih/saat bilgilerini ekleyebilirsiniz. Kullanılabilir zaman biçimi yer tutucuları {{Links.ConfigRef.time_format}} yönergesinde görüntülenir."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">"PDO DSN" nedir? PDO'yu CIDRAM ile nasıl kullanabilirim?</a></em>"
 hints_shorthand:
@@ -420,6 +421,24 @@ hints_shorthand:
  İmza başına bir tane.: "Bir imza, birden çok profili çağırabilir, ancak yalnızca bir kısa sözcüğü kullanabilir. Birden fazla kısa sözcüğün uygun olması mümkündür, ancak yalnızca biri kullanılabildiğinden, her zaman yalnızca en uygun olanı kullanmayı amaçlıyoruz."
  Öncelik.: "Seçilmiş bir seçenek her zaman seçilmemiş bir seçenek göre önceliklidir. Örneğin, birden fazla kısa sözcüğü oyundaysa ancak bunlardan yalnızca biri engellenmiş olarak ayarlanmışsa, istek yine de engellenecektir."
  İnsan uç noktaları ve bulut hizmetleri.: "Bulut hizmeti, web barındırma sağlayıcılarına, sunucu çiftliklerine, veri merkezlerine, veya bir dizi başka şeye atıfta bulunabilir. İnsan uç noktası, bir insanın internete (örneğin, bir internet servis sağlayıcısı aracılığıyla) erişmesi anlamına gelir. Bir ağ genellikle yalnızca birini veya diğerini sağlar, ancak bazen ikisini birden sağlayabilir. Potansiyel insan uç noktalarını asla bulut hizmetleri olarak tanımlamamayı hedefliyoruz. Bu nedenle, aralığı bilinen insan uç noktaları tarafından paylaşılıyorsa, bir bulut hizmeti başka bir şey olarak tanımlanabilir. Aynı şekilde, aralıkları bilinen hiçbir insan uç noktası tarafından paylaşılmayan bulut hizmetlerini her zaman bulut hizmetleri olarak tanımlamayı hedefliyoruz. Bu nedenle, bulut hizmeti olarak tanımlanan bir istek, muhtemelen aralığını bilinen herhangi bir insan uç noktasıyla paylaşmaz. Aynı şekilde, saldırılar veya istenmeyen eposta riski tarafından tanımlanan bir istek muhtemelen bunları paylaşır. Bununla birlikte, internet her zaman akış halindedir, ağların amaçları zamanla değişir, ve aralıklar her zaman alınır ve satılır, bu nedenle yanlış pozitifler konusunda bilinçli ve tetikte olun."
+hints_time_format: |
+ <strong><em>Yer tutucu – Açıklama – Örnek 2024-04-30T18:27:49+08:00'e dayanmaktadır.</em></strong><br />
+ <code class="s">{yyyy}</code> – Yıl – Örneğin, 2024.<br />
+ <code class="s">{yy}</code> – Kısaltılmış yıl – Örneğin, 24.<br />
+ <code class="s">{Mon}</code> – Ayın kısaltılmış adı (İngilizce) – Örneğin, Apr.<br />
+ <code class="s">{mm}</code> – Başında sıfırların ay – Örneğin, 04.<br />
+ <code class="s">{m}</code> – Ay – Örneğin, 4.<br />
+ <code class="s">{Day}</code> – Günün kısaltılmış adı (İngilizce) – Örneğin, Tue.<br />
+ <code class="s">{dd}</code> – Başında sıfırların gün – Örneğin, 30.<br />
+ <code class="s">{d}</code> – Gün – Örneğin, 30.<br />
+ <code class="s">{hh}</code> – Başında sıfırların saat (24 saatlik zaman dilimini kullanır) – Örneğin, 18.<br />
+ <code class="s">{h}</code> – Saat (24 saatlik zaman dilimini kullanır) – Örneğin, 18.<br />
+ <code class="s">{ii}</code> – Başında sıfırların dakika – Örneğin, 27.<br />
+ <code class="s">{i}</code> – Dakika – Örneğin, 27.<br />
+ <code class="s">{ss}</code> – Başında sıfırların saniye – Örneğin, 49.<br />
+ <code class="s">{s}</code> – Saniye – Örneğin, 49.<br />
+ <code class="s">{tz}</code> – Saat dilimi (iki nokta üst üste olmadan) – Örneğin, +0800.<br />
+ <code class="s">{t:z}</code> – Saat dilimi (iki nokta üst üste ile) – Örneğin, +08:00.
 hints_verification:
  ""Pozitifleri" ve "negatifleri" nedir?": "Bir talep tarafından sunulan kimliği doğrularken, başarılı bir sonuç "pozitif" veya "negatif" olarak tanımlanabilir. Sunulan kimliğin gerçek kimlik olduğu teyit edildiğinde, "pozitif" olarak tanımlanacaktır. Sunulan kimliğin sahte olduğu onaylandığında, "negatif" olarak tanımlanacaktır. Ancak, başarısız bir sonuç (örneğin, doğrulama başarısız olur, veya sunulan kimliğin doğruluğu belirlenemez) "pozitif" veya "negatif" olarak tanımlanmaz. Bunun yerine, başarısız bir sonuç basitçe doğrulanmamış olarak tanımlanır. Bir talep tarafından sunulan kimliği doğrulamak için hiçbir girişimde bulunulmadığında, talep de aynı şekilde doğrulanmamış olarak tanımlanır. Terimler, yalnızca bir talep tarafından sunulan kimliğin tanındığı ve dolayısıyla doğrulamanın mümkün olduğu bağlamda anlamlıdır. Sunulan kimlik, yukarıda belirtilen seçeneklerle eşleşmiyorsa veya herhangi bir kimlik sunulmuyorsa, yukarıda verilen seçenekler alakasız hale gelir."
  ""Tek vuruşlu bypasslari" nedir?": "Bazı durumlarda, imza dosyaları, modüller, veya isteğin diğer koşulları nedeniyle olumlu doğrulanmış bir istek yine de engellenebilir, ve yanlış pozitifleri önlemek için bypasslar gerekli olabilir. Bir bypass, tam olarak bir ihlalle başa çıkmak için amaçlandığında, ne eksik ne fazla, böyle bir bypass "tek vuruşlu bypass" olarak tanımlanabilir."

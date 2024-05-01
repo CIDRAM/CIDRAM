@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2024.04.19).
+# This file: Latvian language data for the front-end (last modified: 2024.04.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -411,6 +411,7 @@ hints_duration:
 hints_has_bypass: "* Šai opcijai zem <code class="s">bypasses➡used</code> ir atbilstošs apvedceļš. Ieteicams nodrošināt, lai atbilstošā apiešanas izvēles rūtiņa būtu atzīmēta tāpat kā izvēles rūtiņa, lai mēģinātu pārbaudīt šo opciju."
 hints_inspection: "* Paredzēts tikai palīgnoteikumu atkļūdošanai. Netiek rādīts bloķētajiem lietotājiem."
 hints_ipv6_on_32bit: "Piezīme: Dažās 32 bitu sistēmās IPv6 meklēšana var nedarboties pareizi."
+hints_logging_datetime: "Noderīgs padoms: Varat pievienot datuma/laika informāciju žurnālfailu nosaukumiem, izmantojot laika formāta vietturus. Pieejamie laika formāta vietturi tiek parādīti pie {{Links.ConfigRef.time_format}}."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">Kas ir "PDO DSN"? Kā es varu izmantot PDO ar CIDRAM?</a></em>"
 hints_shorthand:
@@ -422,6 +423,24 @@ hints_shorthand:
  Viens par katru parakstu.: "Paraksts var izsaukt vairākus profilus, bet var izmantot tikai vienu īsu vārdu. Iespējams, ka piemēroti var būt vairāki īsie vārdi, taču, jo var izmantot tikai vienu, mēs vienmēr cenšamies izmantot tikai vispiemērotāko."
  Prioritāte.: "Atlasītai opcijai vienmēr ir prioritāte pār neatlasīto opciju. Piemēram, ja ir spēkā vairāki īsie vārdi, bet tikai viens no tiem ir iestatīts kā bloķēts, pieprasījums joprojām tiks bloķēts."
  Cilvēka galapunkti un mākoņpakalpojumi.: "Mākoņpakalpojums var attiekties uz tīmekļa mitināšanas pakalpojumu sniedzējiem, serveru fermām, datu centriem, vai daudzām citām lietām. Cilvēka galapunkts attiecas uz līdzekļiem, ar kuriem cilvēks piekļūst internetam, piemēram, izmantojot interneta pakalpojumu sniedzēju. Tīkls parasti nodrošina tikai vienu vai otru, bet dažreiz var nodrošināt abus. Mēs cenšamies potenciālos cilvēku galapunktus nekad neidentificēt kā mākoņpakalpojumus. Tāpēc mākoņpakalpojumu var identificēt kā kaut ko citu, ja tā diapazons ir kopīgs zināmiem cilvēka galapunktiem. Tāpat mēs cenšamies vienmēr identificēt mākoņpakalpojumus, kuru diapazoni nav kopīgs nevienam zināmam cilvēka galapunktam, kā mākoņpakalpojumus. Tāpēc pieprasījums, kas ir skaidri identificēts kā mākoņpakalpojums, visticamāk, nedala savu diapazonu ar zināmiem cilvēka galapunktiem. Tāpat arī pieprasījums, kas skaidri identificēts ar uzbrukumiem vai surogātpastu risks, visticamāk, tos kopīgo. Tomēr, internets vienmēr mainās, tīklu mērķi laika gaitā mainās, un diapazoni vienmēr tiek pirkti vai pārdoti, tāpēc esiet apzinīgs un modrs attiecībā uz viltus pozitīviem."
+hints_time_format: |
+ <strong><em>Vietturis – Paskaidrojums – Piemērs, kas balstīts uz 2024-04-30T18:27:49+08:00.</em></strong><br />
+ <code class="s">{yyyy}</code> – Gads – Piem., 2024.<br />
+ <code class="s">{yy}</code> – Saīsinātais gads – Piem., 24.<br />
+ <code class="s">{Mon}</code> – Mēneša saīsinātais nosaukums (angļu valodā) – Piem., Apr.<br />
+ <code class="s">{mm}</code> – Mēnesis ar nullēm sākumā – Piem., 04.<br />
+ <code class="s">{m}</code> – Mēnesis – Piem., 4.<br />
+ <code class="s">{Day}</code> – Dienas saīsinātais nosaukums (angļu valodā) – Piem., Tue.<br />
+ <code class="s">{dd}</code> – Diena ar nullēm sākumā – Piem., 30.<br />
+ <code class="s">{d}</code> – Diena – Piem., 30.<br />
+ <code class="s">{hh}</code> – Stunda ar nullēm sākumā (izmanto 24 stundu laiku) – Piem., 18.<br />
+ <code class="s">{h}</code> – Stunda (izmanto 24 stundu laiku) – Piem., 18.<br />
+ <code class="s">{ii}</code> – Minūte ar nullēm sākumā – Piem., 27.<br />
+ <code class="s">{i}</code> – Minūte – Piem., 27.<br />
+ <code class="s">{ss}</code> – Sekunde ar nullēm sākumā – Piem., 49.<br />
+ <code class="s">{s}</code> – Sekunde – Piem., 49.<br />
+ <code class="s">{tz}</code> – Laika josla (bez kolas) – Piem., +0800.<br />
+ <code class="s">{t:z}</code> – Laika josla (ar kolu) – Piem., +08:00.
 hints_verification:
  "Kas ir “pozitīvie” un “negatīvie”?": "Pārbaudot pieprasījuma sniegto identitāti, veiksmīgu rezultātu var raksturot kā “pozitīvu” vai “negatīvu”. Kad uzrādītā identitāte tiek apstiprināta kā patiesā identitāte, tā tiks raksturota kā “pozitīva”. Kad tiek apstiprināts, ka uzrādītā identitāte ir viltota, tā tiks raksturota kā “negatīva”. Tomēr, neveiksmīgs iznākums (piemēram, verifikācija neizdodas, vai uzrādītās identitātes patiesumu nevar noteikt) netiks raksturota kā “pozitīvu” vai “negatīvu”. Tā vietā neveiksmīgs rezultāts tiktu raksturots vienkārši kā nepārbaudīts. Ja netiek mēģināts pārbaudīt pieprasījumā norādīto identitāti, pieprasījums tāpat tiks raksturots kā nepārbaudīts. Terminiem ir jēga tikai kontekstā, kurā tiek atpazīta pieprasījumā norādītā identitāte un līdz ar to, ja ir iespējama pārbaude. Ja uzrādītā identitāte neatbilst iepriekš sniegtajām opcijām, vai ja identitāte nav uzrādīta, iepriekš sniegtās iespējas kļūst nepiemērojams."
  "Kas ir “viena trāpījuma apvedceļi”?": "Dažos gadījumos pozitīvi pārbaudīts pieprasījums joprojām var tikt bloķēts paraksta failu, moduļu, vai citu pieprasījuma nosacījumu dēļ, un var būt nepieciešami apvedceļi, lai izvairītos no viltus pozitīviem rezultātiem. Ja apvedceļš ir paredzēts, lai tiktu galā ar tieši vienu pārkāpumu, ne vairāk un ne mazāk, šādu apvedceļu varētu raksturot kā “viena trāpījuma apvedceļu”."

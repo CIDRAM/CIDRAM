@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2024.04.19).
+# This file: Norwegian language data for the front-end (last modified: 2024.04.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -409,6 +409,7 @@ hints_duration:
 hints_has_bypass: "* Dette alternativet har en tilsvarende bypass under <code class="s">bypasses➡used</code>. Uansett om avmerkingsboksen for å forsøke å bekrefte dette alternativet er valgt, anbefales det å sørge for at avkrysningsboksen for den tilsvarende forbikjøringen er den samme."
 hints_inspection: "* Kun ment for feilsøking av tilleggsregler. Ikke vist for blokkerte brukere."
 hints_ipv6_on_32bit: "Merk: IPv6-oppslag fungerer kanskje ikke riktig på enkelte 32-biters systemer."
+hints_logging_datetime: "Nyttig tips: Du kan legge ved dato-/klokkeslettinformasjon til navnene på loggfilene ved å bruke plassholdere for tidsformat. Tilgjengelige tidsformatplassholdere vises ved {{Links.ConfigRef.time_format}}."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">Hva er en «PDO DSN»? Hvordan kan jeg bruke PDO med CIDRAM?</a></em>"
 hints_shorthand:
@@ -420,6 +421,24 @@ hints_shorthand:
  En per signatur.: "En signatur kan påkalle flere profiler, men kan bare bruke ett stenografiord. Det er mulig at flere stenografiord kan være passende, men sidan bare ett kan brukes, vi sikte å alltid bruke bare de mest passende."
  Prioritet.: "Et valgt alternativ har alltid prioritet over et alternativ som ikke er valgt. F.eks., hvis flere stenografiord er i spill, men bare ett av dem er satt til å være blokkert, forespørselen vil fortsatt bli blokkert."
  Menneskelige endepunkter og skytjenester.: "Skytjeneste kan referere til webhotellleverandører, serverfarmer, datasentre, eller en rekke andre ting. Menneskelig endepunkt refererer til måten et menneske får tilgang til internett, f.eks., ved hjelp av en internettleverandør. Et nettverk gir vanligvis bare det ene eller det andre, men kan noen ganger gir begge. Vi sikte å aldri identifisere potensielle menneskelige endepunkter som skytjenester. Derfor en skytjeneste kan identifiseres som noe annet hvis adressene er deles av kjente menneskelige endepunkter. På samme måte, vi sikte å alltid identifisere skytjenester, hvis adressene ikke deles av noen kjente menneskelige endepunkter, som skytjenester. Derfor en forespørsel som er eksplisitt identifisert som en skytjeneste sannsynligvis ikke deler adresser med noen kjente menneskelige endepunkter. På samme måte, en forespørsel som er eksplisitt identifisert av angrep eller spam risiko sannsynligvis deler dem. Imidlertid, internett er alltid i endring, formålet med nettverk endres over tid, og adresser blir alltid kjøpt eller solgt, så vær bevisst og på vakt med hensyn til falske positiver."
+hints_time_format: |
+ <strong><em>Plassholder – Forklaring – Eksempel basert på 2024-04-30T18:27:49+08:00.</em></strong><br />
+ <code class="s">{yyyy}</code> – Året – F.eks., 2024.<br />
+ <code class="s">{yy}</code> – Det forkortede året – F.eks., 24.<br />
+ <code class="s">{Mon}</code> – Månedens forkortede navn (på engelsk) – F.eks., Apr.<br />
+ <code class="s">{mm}</code> – Måneden med innledende nuller – F.eks., 04.<br />
+ <code class="s">{m}</code> – Måneden – F.eks., 4.<br />
+ <code class="s">{Day}</code> – Dagens forkortede navn (på engelsk) – F.eks., Tue.<br />
+ <code class="s">{dd}</code> – Dagen med innledende nuller – F.eks., 30.<br />
+ <code class="s">{d}</code> – Dagen – F.eks., 30.<br />
+ <code class="s">{hh}</code> – Timen med innledende nuller (bruker 24-timers tid) – F.eks., 18.<br />
+ <code class="s">{h}</code> – Timen (bruker 24-timers tid) – F.eks., 18.<br />
+ <code class="s">{ii}</code> – Minuttet med innledende nuller – F.eks., 27.<br />
+ <code class="s">{i}</code> – Minuttet – F.eks., 27.<br />
+ <code class="s">{ss}</code> – Sekundet med innledende nuller – F.eks., 49.<br />
+ <code class="s">{s}</code> – Sekundet – F.eks., 49.<br />
+ <code class="s">{tz}</code> – Tidssonen (uten kolon) – F.eks., +0800.<br />
+ <code class="s">{t:z}</code> – Tidssonen (med kolon) – F.eks., +08:00.
 hints_verification:
  "Hva er «positive» og «negative»?": "Når identiteten presentert av en forespørsel er verifisert, kan et vellykket resultat beskrives som «positiv» eller «negativ». I tilfelle at identiteten som presenteres bekreftes å være den sanne identiteten, den vil bli beskrevet som «positiv». I tilfelle det bekreftes at identiteten som presenteres er forfalsket, den vil bli beskrevet som «negativ». Imidlertid, et mislykket resultat (f.eks., verifisering mislykkes, eller sannheten til identiteten som presenteres ikke kan fastslås) vil ikke beskrives som «positiv» eller «negativ». I stedet, et mislykket resultat vil ganske enkelt beskrives som ikke-verifisert. Når det ikke gjøres noe forsøk på å bekrefte identiteten som presenteres av en forespørsel, forespørselen vil på samme måte bli beskrevet som ikke-verifisert. Begrepene gir mening bare i konteksten der identiteten som presenteres av en forespørsel gjenkjennes, og derfor der verifisering er mulig. I tilfeller der identiteten som presenteres ikke matchet av alternativene ovenfor, eller der ingen identitet er presentert, alternativene gitt ovenfor blir irrelevante."
  "Hva er «enkelt-hit bypasser»?": "I noen tilfeller kan en positiv bekreftet forespørsel fortsatt blokkeres som et resultat av signaturfilene, modulene, eller andre betingelser i forespørselen, og bypasser kan være nødvendig for å unngå falske positiver. I tilfellet der en bypass er ment å håndtere nøyaktig ett infraksjon, verken mer eller mindre, slik en bypass kan beskrives som en «enkelt-hit bypass»."

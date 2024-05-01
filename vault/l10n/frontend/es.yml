@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2024.04.19).
+# This file: Spanish language data for the front-end (last modified: 2024.04.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -407,6 +407,7 @@ hints_duration:
 hints_has_bypass: "* Esta opción tiene un bypass correspondiente bajo <code class="s">bypasses➡used</code>. Se recomienda asegurarse de que la casilla de verificación para la bypass correspondiente esté marcado de la misma manera que la casilla de verificación para intentar verificar esta opción."
 hints_inspection: "* Destinado solo para reglas auxiliares. No se muestra a los usuarios bloqueados."
 hints_ipv6_on_32bit: "Nota: Es posible que las búsquedas de IPv6 no funcionen correctamente en algunos sistemas de 32 bits."
+hints_logging_datetime: "Consejo útil: Puede adjuntar información de fecha/hora a los nombres de los archivos de registro utilizando marcadores de posición de formato de hora. Los marcadores de posición de formato de hora disponibles se muestran en {{Links.ConfigRef.time_format}}."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.es.md\#user-content-HOW_TO_USE_PDO" hreflang="es-ES">¿Qué es un "PDO DSN"? Cómo puedo usar PDO con CIDRAM?</a></em>"
 hints_shorthand:
@@ -418,6 +419,24 @@ hints_shorthand:
  Uno por firma.: "Una firma puede invocar múltiples perfiles, pero puede usar solo una palabra abreviada. Es posible que varias palabras abreviadas sean adecuadas, pero como solo se puede usar una, apuntamos de usar siempre las más adecuadas."
  Prioridad.: "Una opción seleccionada siempre tiene prioridad sobre una opción no seleccionada. Por ejemplo, si hay varias palabras abreviadas en juego, pero solo una de ellas está configurada como bloqueada, la solicitud seguirá bloqueada."
  Puntos finales humanos y servicios en la nube.: "Servicio en la nube puede referirse a proveedores de alojamiento web, granjas de servidores, centros de datos, o una serie de otras cosas. Punto final humano se refiere a los medios por los cuales un humano accede a internet, por ejemplo, a través de un proveedor de servicios de internet. Una red generalmente proporciona solo uno u otro, pero a veces puede proporcionar ambos. Apuntamos nunca identificar puntos finales humanos potenciales como servicios en la nube. Por lo tanto, un servicio en la nube puede identificarse como algo más si su rango es compartido por puntos finales humanos conocidos. Del mismo modo, apuntamos identificar siempre los servicios en la nube, cuyos rangos no son compartidos por ningún punto final humano conocido, como servicios en la nube. Por lo tanto, una solicitud identificada explícitamente como un servicio en la nube probablemente no comparta su rango con ningún punto final humano conocido. Asimismo, una solicitud identificada explícitamente por ataques o riesgo de spam probablemente los comparta. Sin embargo, internet siempre está en constante cambio, los propósitos de las redes cambian con el tiempo, y los rangos siempre se compran o venden, así que manténgase consciente y vigilante a los falsos positivos."
+hints_time_format: |
+ <strong><em>Marcador de posición – Explicación – Ejemplo basado en 2024-04-30T18:27:49+08:00.</em></strong><br />
+ <code class="s">{yyyy}</code> – El año – P.ej. 2024.<br />
+ <code class="s">{yy}</code> – El año abreviado – P.ej. 24.<br />
+ <code class="s">{Mon}</code> – El nombre abreviado del mes (en inglés) – P.ej. Apr.<br />
+ <code class="s">{mm}</code> – El mes con ceros a la izquierda – P.ej. 04.<br />
+ <code class="s">{m}</code> – El mes – P.ej. 4.<br />
+ <code class="s">{Day}</code> – El nombre abreviado del día (en inglés) – P.ej. Tue.<br />
+ <code class="s">{dd}</code> – El día con ceros a la izquierda – P.ej. 30.<br />
+ <code class="s">{d}</code> – El día – P.ej. 30.<br />
+ <code class="s">{hh}</code> – La hora con ceros a la izquierda (utiliza el formato de 24 horas) – P.ej. 18.<br />
+ <code class="s">{h}</code> – La hora (utiliza el formato de 24 horas) – P.ej. 18.<br />
+ <code class="s">{ii}</code> – El minuto con ceros a la izquierda – P.ej. 27.<br />
+ <code class="s">{i}</code> – El minuto – P.ej. 27.<br />
+ <code class="s">{ss}</code> – El segundo con ceros a la izquierda – P.ej. 49.<br />
+ <code class="s">{s}</code> – El segundo – P.ej. 49.<br />
+ <code class="s">{tz}</code> – La zona horaria (sin dos puntos) – P.ej. +0800.<br />
+ <code class="s">{t:z}</code> – La zona horaria (con dos puntos) – P.ej. +08:00.
 hints_verification:
  "¿Qué son "positivos" y "negativos"?": "Cuando verificando la identidad presentada por una solicitud, un resultado exitoso podría describirse como "positivo" o "negativo". Cuando se confirma que la identidad presentada es la verdadera identidad, se describiría como "positiva". Cuando se confirma que la identidad presentada es falsa, se describirá como "negativa". Sin embargo, un resultado fallido (por ejemplo, la verificación falló, o no se puede determinar la veracidad de la identidad presentada) no se describiría como "positivo" o "negativo". En cambio, un resultado fallido se describiría simplemente como no verificado. Cuando no se intenta verificar la identidad presentada por una solicitud, la solicitud también se describiría como no verificado. Los términos tienen sentido solo en el contexto en el que se reconoce la identidad presentada por una solicitud y, por lo tanto, donde la verificación es posible. En los casos en que la identidad presentada no coincida con las opciones proporcionadas anteriormente, o cuando no se presente ninguna identidad, las opciones proporcionadas anteriormente se vuelven irrelevantes."
  "¿Qué son los "bypasses de un solo golpe"?": "En algunos casos, una solicitud con verificación positiva aún puede bloquearse como resultado de los archivos de firma, módulos, u otras condiciones de la solicitud, y las bypasses pueden ser necesarias para evitar falsos positivos. En el caso de que una bypass esté destinada a tratar exactamente una infracción, ni más ni menos, dicha bypass podría describirse como una "bypass de un solo golpe"."

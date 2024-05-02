@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6.dat
 
-# Version: 2024.118.0
-# Last modified: 2024.04.28
+# Version: 2024.122.0
+# Last modified: 2024.05.02
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -4621,8 +4621,8 @@ Tag: Interserver, Inc
 
 
 # ASNs 59349, 131392, 135161 ("GMO-Z.com USA, INC").
-# Stop Forum Spam (SFS) listings: 16 (AS131392), 11 (AS135161).
-# Updated: 2023.06.24
+# Stop Forum Spam (SFS) listings: 18 (AS131392), 40 (AS135161).
+# Updated: 2023.06.24 / Checked: 2024.05.02
 
 2001:df6:b800::/48 Deny Cloud
 2404:8680:1000::/36 Deny Cloud
@@ -5806,8 +5806,8 @@ Tag: SOFTplus
 
 
 # ASN 263735 ("SOCIEDAD BUENA HOSTING, S.A").
-# Stop Forum Spam (SFS) listings: 13,846.
-# Updated: 2023.06.24
+# Stop Forum Spam (SFS) listings: 3,489.
+# Updated: 2023.06.24 / Checked: 2024.05.02
 
 2803:9f80::/32 Deny Cloud
 Origin: HN
@@ -8990,8 +8990,8 @@ Tag: HostSlick
 # ASN 16578 ("Lanset America Corporation").
 # US cloud service provider. Email harvestors, spam campaigns, and webapp
 # attacks detected from this network.
-# Stop Forum Spam (SFS) listings: 6.
-# Updated: 2023.06.20
+# Stop Forum Spam (SFS) listings: 9.
+# Updated: 2023.06.20 / Checked: 2024.05.02
 
 2607:fea0:1::/48 Deny Cloud
 2607:fea0:2::/48 Deny Cloud
@@ -10996,13 +10996,12 @@ Tag: MacStadium, Inc
 
 # ASN 36113 ("Netopia").
 # Scraping and flooding detected from here.
-# Updated: 2023.06.20
+# Updated: 2024.05.02
 
-2a0e:c80:4::/48 Deny Cloud
-Origin: GB
 2602:fbc3::/36 Deny Cloud
 2606:6680:41::/48 Deny Cloud
 2606:6680:42::/48 Deny Cloud
+2a0e:c80:4::/48 Deny Cloud
 2a0f:9980:7::/48 Deny Cloud
 Origin: US
 Profile: Webhosting
@@ -11011,8 +11010,8 @@ Tag: Netopia
 
 # ASN 269098 ("AbsamHost Internet Data Center").
 # Brute-force, SSH, FTP, and webapp attacks, port scans, hacking, and spam
-# detected from here. Listing just the affected ranges/addresses only.
-# Updated: 2023.06.20
+# detected from here.
+# Updated: 2023.06.20 / Checked: 2024.05.02
 
 2804:5f6c::/32 Deny Cloud
 Origin: BR

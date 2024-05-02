@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6_isps.dat
 
-# Version: 2024.118.0
-# Last modified: 2024.04.28
+# Version: 2024.122.0
+# Last modified: 2024.05.02
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -561,17 +561,6 @@ Tag: AT&T Services, Inc
 Origin: US
 Profile: Domestic ISP;Mobile ISP;Multiplay
 Tag: T-Mobile USA, Inc
-
-
-# ASNs 31593, 34187 ("LLC Renome-Service").
-# Ukrainian TV cable provider and a significant source of spam.
-# Stop Forum Spam (SFS) listings: 47 (AS31593), 64 (AS34187).
-# Updated: 2020.11.21 / Checked: 2023.06.03
-
-2a03:1240::/48 Deny Spam
-Origin: UA
-Profile: Domestic ISP;Multiplay
-Tag: LLC Renome-Service
 
 
 # ASN 133480 ("Intergrid Group Pty Ltd").

@@ -1,8 +1,8 @@
 # IPv4 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv4.dat
 
-# Version: 2024.118.0
-# Last modified: 2024.04.28
+# Version: 2024.122.0
+# Last modified: 2024.05.02
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -18935,8 +18935,8 @@ Tag: Interserver, Inc
 
 
 # ASNs 59349, 131392, 135161 ("GMO-Z.com USA, INC").
-# Stop Forum Spam (SFS) listings: 16 (AS131392), 11 (AS135161).
-# Updated: 2023.06.24
+# Stop Forum Spam (SFS) listings: 18 (AS131392), 40 (AS135161).
+# Updated: 2023.06.24 / Checked: 2024.05.02
 
 103.234.170.0/23 Deny Cloud
 118.27.128.0/19 Deny Cloud
@@ -25085,8 +25085,8 @@ Tag: SOFTplus
 
 
 # ASN 263735 ("SOCIEDAD BUENA HOSTING, S.A").
-# Stop Forum Spam (SFS) listings: 13,846.
-# Updated: 2018.04.06 / Checked: 2023.06.24
+# Stop Forum Spam (SFS) listings: 3,489.
+# Updated: 2018.04.06 / Checked: 2024.05.02
 
 181.177.64.0/18 Deny Cloud
 Origin: BZ
@@ -26856,7 +26856,8 @@ Tag: BelCloud
 # ASN 200052 ("Feral.io Ltd").
 # Port scans, brute-force attacks, and faking as Googlebot detected from here.
 # Webhosting provider also used as a traffic rerouter.
-# Updated: 2023.06.19
+# Stop Forum Spam (SFS) listings: 4.
+# Updated: 2023.06.19 / Checked: 2024.04.29
 
 185.21.216.0/22 Deny Cloud
 Origin: GB
@@ -30589,64 +30590,31 @@ Tag: Sundance International
 
 # ASN 208485 ("Nese Mala").
 # Caught spamming and probing for vulnerabilities.
-# Stop Forum Spam (SFS) listings: 308.
-# Updated: 2023.06.12
+# Updated: 2024.04.29
 
-77.81.65.0/24 Deny Cloud
-91.132.48.0/22 Deny Cloud
-Origin: AE
-202.148.132.0/22 Deny Cloud
-203.147.228.0/22 Deny Cloud
-203.147.232.0/22 Deny Cloud
-Origin: AU
-103.85.200.0/22 Deny Cloud
-110.44.108.0/22 Deny Cloud
-Origin: BD
-93.89.211.0/24 Deny Cloud
-Origin: EE
-176.97.219.0/24 Deny Cloud
-194.9.180.0/24 Deny Cloud
-194.26.230.0/24 Deny Cloud
-Origin: GE
-180.178.162.0/24 Deny Cloud
-180.178.185.0/24 Deny Cloud
-180.178.187.0/24 Deny Cloud
-Origin: PK
-89.44.209.0/24 Deny Cloud
+77.90.145.0/24 Deny Cloud
+77.90.188.0/24 Deny Cloud
+185.230.14.0/23 Deny Cloud
+Origin: DE
+89.45.34.0/24 Deny Cloud
+93.114.187.0/24 Deny Cloud
+188.215.72.0/24 Deny Cloud
 Origin: RO
-185.192.20.0/23 Deny Cloud
-Origin: RU
-5.249.184.0/22 Deny Cloud
-Origin: SI
-37.140.253.0/24 Deny Cloud
-146.19.199.0/24 Deny Cloud
-185.148.241.0/24 Deny Cloud
 185.148.243.0/24 Deny Cloud
-188.244.119.0/24 Deny Cloud
-193.162.132.0/24 Deny Cloud
-194.99.158.0/24 Deny Cloud
+185.174.20.0/24 Deny Cloud
 Origin: TR
-45.9.30.0/24 Deny Cloud
 45.132.180.0/24 Deny Cloud
-94.154.37.0/24 Deny Cloud
+77.47.178.0/24 Deny Cloud
+77.47.242.0/23 Deny Cloud
+91.228.12.0/24 Deny Cloud
+94.154.32.0/24 Deny Cloud
+94.154.43.0/24 Deny Cloud
+195.62.24.0/24 Deny Cloud
+195.178.140.0/23 Deny Cloud
+195.178.146.0/24 Deny Cloud
+212.111.207.0/24 Deny Cloud
+212.111.216.0/23 Deny Cloud
 Origin: UA
-103.4.250.0/23 Deny Cloud
-103.65.229.0/24 Deny Cloud
-103.65.230.0/23 Deny Cloud
-103.71.60.0/24 Deny Cloud
-103.196.11.0/24 Deny Cloud
-103.216.0.0/24 Deny Cloud
-103.216.2.0/23 Deny Cloud
-103.228.84.0/23 Deny Cloud
-103.228.87.0/24 Deny Cloud
-103.251.25.0/24 Deny Cloud
-103.251.26.0/24 Deny Cloud
-137.59.63.0/24 Deny Cloud
-139.5.20.0/24 Deny Cloud
-163.53.213.0/24 Deny Cloud
-166.1.145.0/24 Deny Cloud
-205.234.232.0/22 Deny Cloud
-Origin: US
 Profile: Restricted/Unidentifiable
 Tag: Nese Mala
 
@@ -35407,8 +35375,8 @@ Tag: HostSlick
 # ASN 16578 ("Lanset America Corporation").
 # US cloud service provider. Email harvestors, spam campaigns, and webapp
 # attacks detected from this network.
-# Stop Forum Spam (SFS) listings: 6.
-# Updated: 2021.09.09 / Checked: 2023.06.20
+# Stop Forum Spam (SFS) listings: 9.
+# Updated: 2021.09.09 / Checked: 2024.05.02
 
 63.80.88.0/23 Deny Cloud
 63.80.184.0/21 Deny Cloud
@@ -43989,19 +43957,21 @@ Tag: MacStadium, Inc
 
 # ASN 36113 ("Netopia").
 # Scraping and flooding detected from here.
-# Updated: 2023.06.20
+# Updated: 2024.05.02
 
-45.141.13.0/24 Deny Cloud
-Origin: RU
+104.234.88.0/24 Deny Cloud
+Origin: CA
+188.191.111.0/24 Deny Cloud
+Origin: UA
 8.9.16.0/24 Deny Cloud
 8.24.138.0/24 Deny Cloud
 8.24.140.0/23 Deny Cloud
 38.45.80.0/22 Deny Cloud
 38.79.140.0/22 Deny Cloud
 38.143.180.0/22 Deny Cloud
+45.141.13.0/24 Deny Cloud
 63.133.220.0/24 Deny Cloud
 65.97.60.0/22 Deny Cloud
-66.55.74.0/24 Deny Cloud
 176.111.216.0/24 Deny Cloud
 Origin: US
 Profile: Webhosting
@@ -44010,13 +43980,11 @@ Tag: Netopia
 
 # ASN 269098 ("AbsamHost Internet Data Center").
 # Brute-force, SSH, FTP, and webapp attacks, port scans, hacking, and spam
-# detected from here. Listing just the affected ranges/addresses only.
-# Updated: 2023.06.20
+# detected from here.
+# Updated: 2024.05.02
 
-45.165.116.0/22 Deny Cloud
 45.178.180.0/22 Deny Cloud
 Origin: BR
-50.114.48.0/24 Deny Cloud
 216.185.39.0/24 Deny Cloud
 Origin: US
 Profile: Webhosting
@@ -49648,17 +49616,17 @@ Tag: Karolio IT UAB
 
 # ASN 149242 ("ANANYA COMPUTERS").
 # Dead homepage. Brute-force and SSH attacks detected from here.
-# Updated: 2023.12.27
+# Updated: 2024.04.29
 
-103.177.238.0/23 Deny Cloud
+103.188.76.0/23 Deny Cloud
 Origin: IN
+45.115.61.0/24 Deny Cloud
 45.115.62.0/24 Deny Cloud
-45.123.144.0/24 Deny Cloud
 103.71.60.0/24 Deny Cloud
 103.76.255.0/24 Deny Cloud
-103.228.84.0/24 Deny Cloud
 103.228.87.0/24 Deny Cloud
 116.206.97.0/24 Deny Cloud
+116.206.98.0/24 Deny Cloud
 Origin: US
 Profile: Restricted/Unidentifiable
 Tag: ANANYA COMPUTERS
@@ -50655,6 +50623,21 @@ Origin: GB
 Origin: US
 Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: Servervy B.V
+
+
+# ASN 139180 ("Shandong eshinton Network Technology Co., Ltd").
+# DDoS, brute-force, and webapp attacks, port scans, hacking, and UDP flooding
+# detected from here.
+# Updated: 2024.05.02
+
+43.249.192.0/22 Deny Cloud
+45.125.44.0/22 Deny Cloud
+103.91.208.0/22 Deny Cloud
+202.189.4.0/22 Deny Cloud
+202.189.8.0/21 Deny Cloud
+Origin: CN
+Profile: Infrastructure/Transit
+Tag: eshinton
 
 
 # ---

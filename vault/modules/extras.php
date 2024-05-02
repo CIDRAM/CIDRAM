@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2024.04.18).
+ * This file: Optional security extras module (last modified: 2024.05.02).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -180,6 +180,11 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
                 $this->Reporter->report([5], ['Attempted proxy tunnel to an FTP port via a non-FTP connection detected.'], $this->BlockInfo['IPAddr']);
             } // 2023.09.15
         }
+
+        /** Probing for sendgrid env file. */
+        if ($this->trigger(preg_match('~/sendgrid\.env(?:$|[/?])~i', $LCNrURI), 'Probing for sendgrid env file')) {
+            $this->Reporter->report([15, 21], ['Caught probing for sendgrid env file.'], $this->BlockInfo['IPAddr']);
+        } // 2024.05.02
     }
 
     /**

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods for updating CIDRAM components (last modified: 2023.12.01).
+ * This file: Methods for updating CIDRAM components (last modified: 2024.05.03).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -718,10 +718,11 @@ trait Updater
                             rename($this->Vault . $FileName, $this->Vault . $FileName . '.rollback');
                         }
                         $BytesAdded += strlen($ThisFile);
-                        $Handle = fopen($this->Vault . $FileName, 'wb');
-                        $RemoteFiles[$FileName] = fwrite($Handle, $ThisFile);
+                        if (($Handle = fopen($this->Vault . $FileName, 'wb')) !== false) {
+                            fwrite($Handle, $ThisFile);
+                            fclose($Handle);
+                        }
                         $RemoteFiles[$FileName] = true;
-                        fclose($Handle);
                         if (
                             isset($FileMeta['Used with']) &&
                             ($FileMeta['Used with'] === 'ipv4' || $FileMeta['Used with'] === 'ipv6')

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2024.04.04).
+ * This file: Front-end functions file (last modified: 2024.05.03).
  */
 
 /**
@@ -1775,10 +1775,11 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
                     rename($CIDRAM['Vault'] . $ThisFileName, $CIDRAM['Vault'] . $ThisFileName . '.rollback');
                 }
                 $BytesAdded += strlen($ThisFile);
-                $Handle = fopen($CIDRAM['Vault'] . $ThisFileName, 'wb');
-                $CIDRAM['RemoteFiles'][$ThisFileName] = fwrite($Handle, $ThisFile);
+                if (($Handle = fopen($CIDRAM['Vault'] . $ThisFileName, 'wb')) !== false) {
+                    fwrite($Handle, $ThisFile);
+                    fclose($Handle);
+                }
                 $CIDRAM['RemoteFiles'][$ThisFileName] = ($CIDRAM['RemoteFiles'][$ThisFileName] !== false);
-                fclose($Handle);
                 $ThisFile = '';
             }
             if ($Rollback) {

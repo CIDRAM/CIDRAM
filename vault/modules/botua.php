@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bot user agents module (last modified: 2024.05.03).
+ * This file: Bot user agents module (last modified: 2024.05.05).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -244,8 +244,8 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         'ontheinternet|' .
         'p(?:4bot|4load|acrawler|ageglimpse|aloalto(?:company|network)|arsijoo|egasusmonitoring|hantomjs|hpcrawl|ingdom|rlog)|' .
         'r(?:arelyused|obo(?:cop|spider)|yze)|' .
-        's(?:can\.lol|caninfo|creener|eekport|itedomain|mut|nap(?:preview)?bot|oapclient|ocial(?:ayer|searcher)|oso|pyglass|quider|treetbot|ynapse)|' .
-        't(?:impi|omba|weezler)|' .
+        's(?:/got|can\.lol|caninfo|creener|eekport|itedomain|mut|nap(?:preview)?bot|oapclient|ocial(?:ayer|searcher)|oso|pyglass|quider|treetbot|ynapse)|' .
+        't(?:impi|omba|weezler|ryghost)|' .
         'urlappendbot|urltest|' .
         'w(?:asalive|atchmouse|eb(?:-monitoring|bot|masteraid|money|pros|thumbnail)|hatweb|ikiapiary|in(?:http|inet)|maid\.com|pbot/1\.|sr-agent|wwtype)|' .
         'xenu|xovi|' .
@@ -254,7 +254,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     ) || preg_match(
         '~^Mozilla/5\.0( [A-Za-z]{2,5}/0\..)?$~',
         $this->BlockInfo['UA']
-    ), 'Unauthorised'); // 2023.09.15 mod 2024.05.03
+    ), 'Unauthorised'); // 2023.09.15 mod 2024.05.05
 
     $this->trigger(preg_match(
         '~^(?:bot|java|msie|windows-live-social-object-extractor)|\\((?:java|\w:\d{2,})~',

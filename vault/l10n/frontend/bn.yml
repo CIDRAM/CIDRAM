@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data for the front-end (last modified: 2024.04.30).
+# This file: Bangla language data for the front-end (last modified: 2024.05.04).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -516,9 +516,9 @@ Some useful links: |
 
 label:
  %s across %s file: "%2$s টি ফাইল জুড়ে %1$s"
- %s is available (%s): "%s পাওয়া যায় (%s)।"
- %s is available: "%s পাওয়া যায়।"
- %s is not available: "%s পাওয়া যায় না।"
+ %s is available (%s): "%s উপলব্ধ (%s)।"
+ %s is available: "%s উপলব্ধ।"
+ %s is not available: "%s উপলব্ধ নয়।"
  %s signature: "%s স্বাক্ষর"
  200 OK: "200 OK (ঠিক আছে)\nসর্বনিম্ন শক্তিশালী, কিন্তু সবচেয়ে ব্যবহারকারী-বান্ধব। স্বয়ংক্রিয় অনুরোধগুলি সম্ভবত এই প্রতিক্রিয়াটিকে ইঙ্গিত হিসাবে ব্যাখ্যা করবে যে অনুরোধটি সফল হয়েছে৷।"
  301 Moved Permanently: "301 Moved Permanently (স্থায়ীভাবে স্থানান্তরিত)\nক্লায়েন্টকে নির্দেশ দেয় যে পুনর্নির্দেশটি স্থায়ী, এবং পুনঃনির্দেশের জন্য ব্যবহৃত অনুরোধ পদ্ধতিটি প্রাথমিক অনুরোধের জন্য ব্যবহৃত অনুরোধ পদ্ধতির থেকে ভিন্ন হতে পারে।"
@@ -805,8 +805,9 @@ response:
  An error occurred while attempting to uninstall the component: "কম্পোনেন্ট আনইনস্টল করার চেষ্টা করার সময় একটি ত্রুটি ঘটেছে।"
  Auxiliary rule, %s, deleted successfully: "অক্সিলিয়ারি নিয়ম, "%s", সফলভাবে মুছে ফেলা হয়েছে।"
  Auxiliary rules successfully updated: "অক্সিলিয়ারি নিয়ম সফলভাবে আপডেট হয়েছে।"
+ Can_t fetch the file: "ফাইল আনা যাবে না"
  Can_t import from v%s data: "v%s ডেটা থেকে আমদানি করা যাবে না!"
- Checksum error: "চেকসাম ত্রুটি! ফাইল প্রত্যাখ্যাত!"
+ Checksum error: "চেকসাম ত্রুটি!"
  Component not installed: "কম্পোনেন্ট ইনস্টল করা নেই!"
  Component successfully installed: "কম্পোনেন্ট সফলভাবে ইনস্টল।"
  Component successfully uninstalled: "কম্পোনেন্ট সফলভাবে আনইনস্টল।"
@@ -816,6 +817,7 @@ response:
  Directory successfully deleted: "ডিরেক্টরি সফলভাবে মুছে ফেলা!"
  Directory successfully renamed: "ডিরেক্টরি সফলভাবে পুনরায় নামকরণ করা হয়েছে!"
  Don_t know what to do with the data after reading it: "এটি পড়ার পরে ডেটা নিয়ে কী করবেন তা জানেন না।\nএটিকে অন্য কমান্ডে চেইন করার কথা বিবেচনা করুন। ধন্যবাদ।"
+ Error at the upstream: "আপস্ট্রিম এ ত্রুটি!"
  Failed to access %s: ""%s" অ্যাক্সেস করতে ব্যর্থ হয়েছে!"
  Failed to activate: "সক্রিয় করতে ব্যর্থ হয়েছে!"
  Failed to deactivate: "নিষ্ক্রিয় করতে ব্যর্থ হয়েছে!"
@@ -833,6 +835,7 @@ response:
  Failed to update: "আপডেট করতে ব্যর্থ হয়েছে!"
  Failed to upload: "আপলোড করতে ব্যর্থ হয়েছে!"
  File contains unexpected content: "ফাইলটিতে অপ্রত্যাশিত সামগ্রী রয়েছে! ফাইল প্রত্যাখ্যাত!"
+ File rejected: "ফাইল প্রত্যাখ্যাত"
  File successfully deleted: "ফাইল সফলভাবে মোছা হয়েছে!"
  File successfully modified: "ফাইল সফলভাবে সম্পাদিত!"
  File successfully renamed: "ফাইল সফলভাবে পুনরায় নামকরণ করা হয়েছে!"
@@ -846,14 +849,17 @@ response:
  Invalid password: "লগইন ব্যর্থতা! অবৈধ পাসওয়ার্ড!"
  Invalid timestamp: "অবৈধ টাইমস্ট্যাম্প!"
  New auxiliary rule, %s, created successfully: "নতুন অক্সিলিয়ারি নিয়ম, "%s", সফলভাবে তৈরি।"
- Not available at the upstream: "উজানে পাওয়া যায় না।"
+ Not available at the upstream for legal reasons: "আইনি কারণে আপস্ট্রিম এ উপলব্ধ নয়।"
+ Not available at the upstream: "আপস্ট্রিম এ উপলব্ধ নয়।"
  Outdated: "আউটডেটেড!"
  Parse: "পার্স"
  Passed: "গৃহীত হয়েছে"
  Password field empty: "পাসওয়ার্ড ক্ষেত্র খালি!"
  Password successfully updated: "পাসওয়ার্ড সফলভাবে আপডেট করা হয়েছে!"
- Permissions not adequate to perform asynchronous requests:: "অনুমতিগুলি অ্যাসিঙ্ক্রোনাস অনুরোধগুলি সঞ্চালনের পর্যাপ্ত নয়। আবার চেষ্টা করুন লগ ইন।"
+ Payment required at the upstream: "আপস্ট্রিম এ পেমেন্ট প্রয়োজন।"
+ Permissions not adequate to perform asynchronous requests: "অনুমতিগুলি অ্যাসিঙ্ক্রোনাস অনুরোধগুলি সঞ্চালনের পর্যাপ্ত নয়। আবার চেষ্টা করুন লগ ইন।"
  Please select at least one category: "অন্তত একটি বিভাগ নির্বাচন করুন!"
+ Rate limited by the upstream: "আপস্ট্রিম দ্বারা সীমিত হার।"
  Ready to install: "ইনস্টল করার জন্য প্রস্তুত."
  Redirected: "পুনর্নির্দেশিত"
  Removed %s from tracking: "ট্র্যাকিং থেকে %s সরানো হয়েছে।"
@@ -861,6 +867,7 @@ response:
  Repair process failed: "মেরামত প্রক্রিয়া ব্যর্থ হয়েছে।"
  Signature files have been updated (%s): "স্বাক্ষর ফাইল আপডেট করা হয়েছে (%s)।"
  Skipped: "এড়ানো হয়েছে"
+ Source not specified: "উৎস উল্লেখ করা হয়নি!"
  Statistics cleared: "পরিসংখ্যান পরিস্কার।"
  Statistics updated: "পরিসংখ্যান আপডেট করা হয়েছে।"
  Successfully activated: "সফলভাবে সক্রিয়।"
@@ -879,6 +886,7 @@ response:
  There_s nothing to write, sorry: "লেখার কিছু নেই, দুঃখিত।"
  Tracking cleared: "ট্র্যাকিং মুছে ফেলা হয়েছে।"
  Unable to determine: "নির্ধারণ করতে অক্ষম।"
+ Unknown error: "অজানা ত্রুটি!"
  Username doesn_t exist: "লগইন ব্যর্থতা! ব্যবহারকারীর নাম অস্তিত্বহীন!"
  Username field empty: "ব্যবহারকারীর নাম ক্ষেত্র খালি!"
  Verification failed: "যাচাইয়ের ব্যর্থ হয়েছে! কম্পোনেন্ট ভাঙ্গা হতে পারে।"

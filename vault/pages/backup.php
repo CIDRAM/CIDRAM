@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The backup page (last modified: 2023.12.24).
+ * This file: The backup page (last modified: 2024.05.04).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -280,7 +280,7 @@ if (isset($_POST['bckpAct'])) {
                                 continue;
                             }
                             if (!isset($this->Components['Available Versions'][$Component])) {
-                                $this->FE['state_msg'] .= '<code>' . $Component . '</code> – ' . $this->L10N->getString('response._Not available at the upstream') . '<br />';
+                                $this->FE['state_msg'] .= '<code>' . $Component . '</code> – ' . $this->L10N->getString('response.Not available at the upstream') . '<br />';
                             } elseif (!isset($this->Components['Installed Versions'][$Component]) || $this->CIDRAM['Operation']->singleCompare(
                                 $this->Components['Installed Versions'][$Component],
                                 '<' . $this->Components['Available Versions'][$Component]

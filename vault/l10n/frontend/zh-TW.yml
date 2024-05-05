@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2024.04.30).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2024.05.04).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -715,7 +715,7 @@ label:
   Low: "低"
   Medium: "中等"
  timeout_limit: "該模塊執行外部請求。​您可以在此處指定這些請求的超時限制（以秒為單位）。"
- timeout_rl: "在速率受限後恢復外部請求之前所需的時間量。"
+ timeout_rl: "在速率有限後恢復外部請求之前所需的時間量。"
 link:
  Accounts: "帳戶"
  Aggregator: "聚合器"
@@ -801,8 +801,9 @@ response:
  An error occurred while attempting to uninstall the component: "一個錯誤發生當嘗試卸載組件。"
  Auxiliary rule, %s, deleted successfully: "輔助規則『%s』刪除成功。"
  Auxiliary rules successfully updated: "輔助規則已成功更新。"
+ Can_t fetch the file: "無法取得文件"
  Can_t import from v%s data: "無法從v%s數據導入！"
- Checksum error: "校驗和錯誤！​文件拒絕！"
+ Checksum error: "校驗和錯誤！"
  Component not installed: "組件不安裝！"
  Component successfully installed: "組件成功安裝。"
  Component successfully uninstalled: "組件成功卸載。"
@@ -812,6 +813,7 @@ response:
  Directory successfully deleted: "文件夾成功刪除！"
  Directory successfully renamed: "文件夾成功改名！"
  Don_t know what to do with the data after reading it: "讀取數據後不知道如何處理。\n考慮將其鏈接到另一個命令。謝謝。"
+ Error at the upstream: "上游錯誤！"
  Failed to access %s: "無法訪問『%s』！"
  Failed to activate: "無法啟用！"
  Failed to deactivate: "無法停用！"
@@ -829,6 +831,7 @@ response:
  Failed to update: "無法更新！"
  Failed to upload: "無法上傳！"
  File contains unexpected content: "文件包含意外的內容！​文件拒絕！"
+ File rejected: "文件拒絕"
  File successfully deleted: "文件成功刪除！"
  File successfully modified: "文件成功改性！"
  File successfully renamed: "文件成功改名！"
@@ -842,14 +845,17 @@ response:
  Invalid password: "登錄失敗！​密碼無效！"
  Invalid timestamp: "時間戳無效！"
  New auxiliary rule, %s, created successfully: "新輔助規則『%s』創建成功。"
- Not available at the upstream: "在上游找不到。"
+ Not available at the upstream for legal reasons: "由於法律原因在上游不可用。"
+ Not available at the upstream: "在上游不可用。"
  Outdated: "過時！"
  Parse: "解析"
  Passed: "成功"
  Password field empty: "密碼輸入是空的！"
  Password successfully updated: "密碼成功更新！"
- Permissions not adequate to perform asynchronous requests:: "權限不足以執行異步請求。嘗試再次登錄。"
+ Payment required at the upstream: "在上游需要付款。"
+ Permissions not adequate to perform asynchronous requests: "權限不足以執行異步請求。嘗試再次登錄。"
  Please select at least one category: "請至少選擇一個類別！"
+ Rate limited by the upstream: "速率有限由上游。"
  Ready to install: "準備安裝。"
  Redirected: "重定向"
  Removed %s from tracking: "從跟踪中刪除了%s。"
@@ -857,6 +863,7 @@ response:
  Repair process failed: "修復過程失敗。"
  Signature files have been updated (%s): "簽名文件已更新（%s）。"
  Skipped: "跳過了"
+ Source not specified: "未註明來源！"
  Statistics cleared: "統計刪除。"
  Statistics updated: "統計成功更新。"
  Successfully activated: "已成功啟用。"
@@ -875,6 +882,7 @@ response:
  There_s nothing to write, sorry: "沒有什麼可寫的，對不起。"
  Tracking cleared: "已撤消跟踪。"
  Unable to determine: "無法確定。"
+ Unknown error: "未知錯誤！"
  Username doesn_t exist: "登錄失敗！​用戶名不存在！"
  Username field empty: "用戶名輸入是空的！"
  Verification failed: "驗證失敗！組件可能已損壞。"

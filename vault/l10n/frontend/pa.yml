@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Punjabi language data for the front-end (last modified: 2024.04.30).
+# This file: Punjabi language data for the front-end (last modified: 2024.05.04).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -378,7 +378,7 @@ field:
  Tracking: "ਟਰੈਕਿੰਗ"
  True (True): "True (ਬੁਲੀਅਨ ਸੱਚ)"
  Uninstall: "ਅਣਇੰਸਟੌਲ ਕਰੋ"
- Unknown: "ਅਗਿਆਤ"
+ Unknown: "ਅਣਜਾਣ"
  Update all: "ਸਭ ਦੀ ਅੱਪਡੇਟ ਕਰੋ"
  Update signature files: "ਦਸਤਖਤ ਫਾਈਲਾਂ ਨੂੰ ਅਪਡੇਟ ਕਰੋ"
  Update: "ਅੱਪਡੇਟ ਕਰੋ"
@@ -667,7 +667,7 @@ label:
  Values for IP tracking: "IP ਟਰੈਕਿੰਗ ਲਈ ਮੁੱਲ"
  Whitelist the request: "ਬੇਨਤੀ ਨੂੰ ਵ੍ਹਾਈਟਲਿਸਟ ਕਰੋ।\nਸ਼ੁਰੂ ਕੀਤੇ ਦਸਤਖਤਾਂ ਦੀ ਸੰਖਿਆ ਨੂੰ ਰੀਸੈੱਟ ਕਰਦਾ ਹੈ, ਅਤੇ ਬੇਨਤੀ ਦੀ ਕਿਸੇ ਵੀ ਹੋਰ ਪ੍ਰਕਿਰਿਆ ਨੂੰ ਅਧੂਰਾ ਛੱਡ ਦਿੰਦਾ ਹੈ। ਗਾਰੰਟੀ ਦਿੰਦਾ ਹੈ ਕਿ CIDRAM ਕਦੇ ਵੀ ਬੇਨਤੀ ਨੂੰ ਬਲੌਕ ਨਹੀਂ ਕਰੇਗਾ।"
  Your IP: "ਤੁਹਾਡਾ IP:"
- Your UA: "ਤੁਹਾਡਾ ਉਪਭੋਗਤਾ ਏਜੰਟ::"
+ Your UA: "ਤੁਹਾਡਾ ਉਪਭੋਗਤਾ ਏਜੰਟ:"
  aux:
   A name for the new rule: "ਨਵੇਂ ਨਿਯਮ ਲਈ ਇੱਕ ਨਾਮ:"
   Auxiliary rules triggered: "ਟ੍ਰਿਗਰ ਕੀਤੇ ਸਹਾਇਕ ਨਿਯਮ"
@@ -816,8 +816,9 @@ response:
  An error occurred while attempting to uninstall the component: "ਕੰਪੋਨੈਂਟ ਨੂੰ ਅਣਇੰਸਟੌਲ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰਦੇ ਸਮੇਂ ਇੱਕ ਗਲਤੀ ਆਈ ਹੈ।"
  Auxiliary rule, %s, deleted successfully: "ਸਹਾਇਕ ਨਿਯਮ, "%s", ਸਫਲਤਾਪੂਰਵਕ ਮਿਟਾਇਆ ਗਿਆ।"
  Auxiliary rules successfully updated: "ਸਹਾਇਕ ਨਿਯਮ ਸਫਲਤਾਪੂਰਵਕ ਅੱਪਡੇਟ ਕੀਤੇ ਗਏ।"
+ Can_t fetch the file: "ਫ਼ਾਈਲ ਪ੍ਰਾਪਤ ਨਹੀਂ ਕੀਤੀ ਜਾ ਸਕਦੀ"
  Can_t import from v%s data: "v%s ਡੇਟਾ ਤੋਂ ਆਯਾਤ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ!"
- Checksum error: "ਚੈੱਕਸਮ ਗਲਤੀ! ਫਾਈਲ ਅਸਵੀਕਾਰ ਕੀਤੀ ਗਈ!"
+ Checksum error: "ਚੈੱਕਸਮ ਗਲਤੀ!"
  Component not installed: "ਕੰਪੋਨੈਂਟ ਇੰਸਟਾਲ ਨਹੀਂ ਹੈ!"
  Component successfully installed: "ਕੰਪੋਨੈਂਟ ਸਫਲਤਾਪੂਰਵਕ ਇੰਸਟਾਲ ਕੀਤਾ ਗਿਆ।"
  Component successfully uninstalled: "ਕੰਪੋਨੈਂਟ ਸਫਲਤਾਪੂਰਵਕ ਅਣਇੰਸਟੌਲ ਕੀਤਾ ਗਿਆ।"
@@ -827,6 +828,7 @@ response:
  Directory successfully deleted: "ਡਾਇਰੈਕਟਰੀ ਸਫਲਤਾਪੂਰਵਕ ਮਿਟਾਈ ਗਈ!"
  Directory successfully renamed: "ਡਾਇਰੈਕਟਰੀ ਦਾ ਨਾਮ ਸਫਲਤਾਪੂਰਵਕ ਬਦਲਿਆ ਗਿਆ!"
  Don_t know what to do with the data after reading it: "ਪਤਾ ਨਹੀਂ ਇਸ ਨੂੰ ਪੜ੍ਹਨ ਤੋਂ ਬਾਅਦ ਡੇਟਾ ਦਾ ਕੀ ਕਰਨਾ ਹੈ।\nਇਸ ਨੂੰ ਕਿਸੇ ਹੋਰ ਕਮਾਂਡ ਨਾਲ ਜੋੜਨ 'ਤੇ ਵਿਚਾਰ ਕਰੋ। ਧੰਨਵਾਦ।"
+ Error at the upstream: "ਅੱਪਸਟ੍ਰੀਮ 'ਤੇ ਗਲਤੀ!"
  Failed to access %s: ""%s" ਤੱਕ ਪਹੁੰਚ ਕਰਨ ਵਿੱਚ ਅਸਫਲ!"
  Failed to activate: "ਕਿਰਿਆਸ਼ੀਲ ਕਰਨ ਵਿੱਚ ਅਸਫਲ!"
  Failed to deactivate: "ਅਕਿਰਿਆਸ਼ੀਲ ਕਰਨ ਵਿੱਚ ਅਸਫਲ!"
@@ -844,6 +846,7 @@ response:
  Failed to update: "ਅੱਪਡੇਟ ਕਰਨ ਵਿੱਚ ਅਸਫਲ!"
  Failed to upload: "ਅੱਪਲੋਡ ਕਰਨ ਵਿੱਚ ਅਸਫਲ!"
  File contains unexpected content: "ਫ਼ਾਈਲ ਵਿੱਚ ਅਚਾਨਕ ਸਮੱਗਰੀ ਸ਼ਾਮਲ ਹੈ! ਫਾਈਲ ਅਸਵੀਕਾਰ ਕੀਤੀ ਗਈ!"
+ File rejected: "ਫਾਈਲ ਅਸਵੀਕਾਰ ਕੀਤੀ ਗਈ"
  File successfully deleted: "ਫਾਈਲ ਸਫਲਤਾਪੂਰਵਕ ਮਿਟਾਈ ਗਈ!"
  File successfully modified: "ਫਾਈਲ ਸਫਲਤਾਪੂਰਵਕ ਸੋਧੀ ਗਈ!"
  File successfully renamed: "ਫਾਈਲ ਦਾ ਨਾਮ ਸਫਲਤਾਪੂਰਵਕ ਬਦਲਿਆ ਗਿਆ!"
@@ -857,14 +860,17 @@ response:
  Invalid password: "ਲੌਗਇਨ ਅਸਫਲਤਾ! ਗਲਤ ਪਾਸਵਰਡ!"
  Invalid timestamp: "ਅਵੈਧ ਟਾਈਮਸਟੈਂਪ!"
  New auxiliary rule, %s, created successfully: "ਨਵਾਂ ਸਹਾਇਕ ਨਿਯਮ, "%s", ਸਫਲਤਾਪੂਰਵਕ ਬਣਾਇਆ ਗਿਆ।"
+ Not available at the upstream for legal reasons: "ਕਾਨੂੰਨੀ ਕਾਰਨਾਂ ਕਰਕੇ ਅੱਪਸਟ੍ਰੀਮ 'ਤੇ ਉਪਲਬਧ ਨਹੀਂ ਹੈ।"
  Not available at the upstream: "ਅੱਪਸਟ੍ਰੀਮ 'ਤੇ ਉਪਲਬਧ ਨਹੀਂ ਹੈ।"
  Outdated: "ਪੁਰਾਣੀ!"
  Parse: "ਪਾਰਸ"
  Passed: "ਪਾਸ ਕੀਤਾ"
  Password field empty: "ਪਾਸਵਰਡ ਖੇਤਰ ਖਾਲੀ ਹੈ!"
  Password successfully updated: "ਪਾਸਵਰਡ ਸਫਲਤਾਪੂਰਵਕ ਅੱਪਡੇਟ ਕੀਤਾ ਗਿਆ!"
- Permissions not adequate to perform asynchronous requests:: "ਅਸਿੰਕ੍ਰੋਨਸ ਬੇਨਤੀਆਂ ਕਰਨ ਲਈ ਅਨੁਮਤੀਆਂ ਉਚਿਤ ਨਹੀਂ ਹਨ। ਦੁਬਾਰਾ ਲੌਗਇਨ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
+ Payment required at the upstream: "ਅੱਪਸਟ੍ਰੀਮ 'ਤੇ ਭੁਗਤਾਨ ਦੀ ਲੋੜ ਹੈ।"
+ Permissions not adequate to perform asynchronous requests: "ਅਸਿੰਕ੍ਰੋਨਸ ਬੇਨਤੀਆਂ ਕਰਨ ਲਈ ਅਨੁਮਤੀਆਂ ਉਚਿਤ ਨਹੀਂ ਹਨ। ਦੁਬਾਰਾ ਲੌਗਇਨ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
  Please select at least one category: "ਕਿਰਪਾ ਕਰਕੇ ਘੱਟੋ-ਘੱਟ ਇੱਕ ਸ਼੍ਰੇਣੀ ਚੁਣੋ!"
+ Rate limited by the upstream: "ਅਪਸਟ੍ਰੀਮ ਦੁਆਰਾ ਸੀਮਿਤ ਦਰ।"
  Ready to install: "ਇੰਸਟਾਲ ਕਰਨ ਲਈ ਤਿਆਰ ਹੈ।"
  Redirected: "ਰੀਡਾਇਰੈਕਟ ਕੀਤਾ ਗਿਆ"
  Removed %s from tracking: "%s ਨੂੰ ਟਰੈਕਿੰਗ ਤੋਂ ਹਟਾਇਆ ਗਿਆ।"
@@ -872,6 +878,7 @@ response:
  Repair process failed: "ਮੁਰੰਮਤ ਪ੍ਰਕਿਰਿਆ ਅਸਫਲ ਰਹੀ।"
  Signature files have been updated (%s): "ਦਸਤਖਤ ਫਾਈਲਾਂ ਨੂੰ ਅਪਡੇਟ ਕੀਤਾ ਗਿਆ ਹੈ (%s)।"
  Skipped: "ਛੱਡ ਦਿੱਤਾ"
+ Source not specified: "ਸਰੋਤ ਨਿਰਧਾਰਤ ਨਹੀਂ ਕੀਤਾ ਗਿਆ!"
  Statistics cleared: "ਅੰਕੜੇ ਨੂੰ ਸਾਫ਼ ਕੀਤੇ ਗਏ।"
  Statistics updated: "ਅੰਕੜੇ ਨੂੰ ਅੱਪਡੇਟ ਕੀਤੇ ਗਏ।"
  Successfully activated: "ਸਫਲਤਾਪੂਰਵਕ ਕਿਰਿਆਸ਼ੀਲ ਕੀਤਾ ਗਿਆ।"
@@ -892,6 +899,7 @@ response:
  There_s nothing to write, sorry: "ਲਿਖਣ ਲਈ ਕੁਝ ਨਹੀਂ ਹੈ, ਮਾਫ਼ ਕਰਨਾ।"
  Tracking cleared: "ਟਰੈਕਿੰਗ ਸਾਫ਼ ਕੀਤੀ ਗਈ।"
  Unable to determine: "ਨਿਰਧਾਰਤ ਕਰਨ ਵਿੱਚ ਅਸਮਰੱਥ।"
+ Unknown error: "ਅਣਜਾਣ ਗਲਤੀ!"
  Username doesn_t exist: "ਲੌਗਇਨ ਅਸਫਲਤਾ! ਉਪਭੋਗਤਾ ਨਾਮ ਮੌਜੂਦ ਨਹੀਂ ਹੈ!"
  Username field empty: "ਉਪਭੋਗਤਾ ਨਾਮ ਖੇਤਰ ਖਾਲੀ ਹੈ!"
  Verification failed: "ਪੁਸ਼ਟੀਕਰਨ ਅਸਫਲ ਰਿਹਾ! ਕੰਪੋਨੈਂਟ ਖਰਾਬ ਹੋ ਸਕਦਾ ਹੈ।"

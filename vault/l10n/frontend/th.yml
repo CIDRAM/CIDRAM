@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2024.04.30).
+# This file: Thai language data for the front-end (last modified: 2024.05.04).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -800,8 +800,9 @@ response:
  An error occurred while attempting to uninstall the component: "เกิดขึ้นผิดพลาดขณะพยายามถอนการติดตั้งคอมโพเนนต์."
  Auxiliary rule, %s, deleted successfully: "กฎเสริม "%s" ถูกลบแล้ว."
  Auxiliary rules successfully updated: "อัปเดตกฎเสริมสำเร็จแล้ว."
+ Can_t fetch the file: "ไม่สามารถดึงไฟล์ได้"
  Can_t import from v%s data: "ไม่สามารถนำเข้าจากข้อมูล v%s!
- Checksum error: "ข้อผิดพลาดเช็คซัม! ไฟล์ถูกปฏิเสธ!"
+ Checksum error: "ข้อผิดพลาดเช็คซัม!"
  Component not installed: "คอมโพเนนต์ไม่ได้ติดตั้ง!"
  Component successfully installed: "คอมโพเนนต์สำเร็จแล้วในการติดตั้ง."
  Component successfully uninstalled: "คอมโพเนนต์สำเร็จแล้วถอนการติดตั้ง."
@@ -811,6 +812,7 @@ response:
  Directory successfully deleted: "ไดเรกทอรีสำเร็จแล้วลบ!"
  Directory successfully renamed: "ไดเรกทอรีสำเร็จแล้วเปลี่ยนชื่อ!"
  Don_t know what to do with the data after reading it: "ไม่รู้จะทำอย่างไรกับข้อมูลหลังจากอ่านแล้ว.\nพิจารณาผูกมัดกับคำสั่งอื่น. ขอบคุณ."
+ Error at the upstream: "เกิดข้อผิดพลาดที่ต้นน้ำ!"
  Failed to access %s: "ไม่สามารถเข้าถึง "%s"!"
  Failed to activate: "ล้มเหลวเปิดใช้งาน!"
  Failed to deactivate: "ล้มเหลวปิดใช้งาน!"
@@ -828,6 +830,7 @@ response:
  Failed to update: "การอัพเดทล้มเหลว!"
  Failed to upload: "ล้มเหลวอัปโหลด!"
  File contains unexpected content: "ไฟล์มีเนื้อหาที่ไม่คาดคิด! ไฟล์ถูกปฏิเสธ!"
+ File rejected: "ไฟล์ถูกปฏิเสธ"
  File successfully deleted: "ไฟล์สำเร็จแล้วลบ!"
  File successfully modified: "ไฟล์สำเร็จแล้วเปลี่ยนแปลง!"
  File successfully renamed: "ไฟล์สำเร็จแล้วเปลี่ยนชื่อ!"
@@ -841,14 +844,17 @@ response:
  Invalid password: "ความล้มเหลวในการเข้าสู่ระบบ! รหัสผ่านไม่ถูกต้อง!"
  Invalid timestamp: "การประทับเวลาไม่ถูกต้อง!"
  New auxiliary rule, %s, created successfully: "กฎเสริมใหม่ "%s" ถูกสร้าง."
- Not available at the upstream: "ไม่พบที่ต้นน้ำ."
+ Not available at the upstream for legal reasons: "ไม่มีให้บริการที่ต้นน้ำด้วยเหตุผลทางกฎหมาย."
+ Not available at the upstream: "ไม่มีให้บริการที่ต้นน้ำ."
  Outdated: "ล้าสมัยแล้ว!"
  Parse: "แยกวิเคราะห์"
  Passed: "ความสำเร็จ"
  Password field empty: "รหัสผ่านฟิลด์ว่างเปล่า!"
  Password successfully updated: "รหัสผ่านสำเร็จแล้วอัปเดต!"
- Permissions not adequate to perform asynchronous requests:: "สิทธิ์ไม่เพียงพอที่จะดำเนินการคำขอแบบอะซิงโครนัส. ลองเข้าสู่ระบบอีกครั้ง."
+ Payment required at the upstream: "ต้องชำระเงินที่ต้นน้ำ."
+ Permissions not adequate to perform asynchronous requests: "สิทธิ์ไม่เพียงพอที่จะดำเนินการคำขอแบบอะซิงโครนัส. ลองเข้าสู่ระบบอีกครั้ง."
  Please select at least one category: "กรุณาเลือกอย่างน้อยหนึ่งหมวดหมู่!"
+ Rate limited by the upstream: "อัตราจำกัดโดยต้นน้ำ."
  Ready to install: "พร้อมติดตั้ง."
  Redirected: "เปลี่ยนเส้นทาง"
  Removed %s from tracking: "%s ถูกลบออกจากการติดตาม."
@@ -856,6 +862,7 @@ response:
  Repair process failed: "กระบวนการซ่อมแซมล้มเหลว."
  Signature files have been updated (%s): "ไฟล์ลายเซ็นได้รับการอัปเดต (%s)."
  Skipped: "ความละเว้น"
+ Source not specified: "ไม่ระบุที่มา!"
  Statistics cleared: "สถิติลบแล้ว."
  Statistics updated: "อัปเดตสถิติแล้ว."
  Successfully activated: "สำเร็จแล้วเปิดใช้งาน."
@@ -874,6 +881,7 @@ response:
  There_s nothing to write, sorry: "ไม่มีอะไรจะเขียน ขออภัย."
  Tracking cleared: "การติดตามถูกล้าง."
  Unable to determine: "ไม่สามารถกำหนดได้."
+ Unknown error: "ข้อผิดพลาดที่ไม่รู้จัก!"
  Username doesn_t exist: "ความล้มเหลวในการเข้าสู่ระบบ! ชื่อผู้ใช้ไม่มีอยู่จริง!"
  Username field empty: "ชื่อผู้ใช้ฟิลด์ว่างเปล่า!"
  Verification failed: "การตรวจสอบล้มเหลว! คอมโพเนนต์อาจเสียหาย."

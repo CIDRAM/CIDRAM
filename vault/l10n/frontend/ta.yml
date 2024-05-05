@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Tamil language data for the front-end (last modified: 2024.04.30).
+# This file: Tamil language data for the front-end (last modified: 2024.05.04).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -818,8 +818,9 @@ response:
  An error occurred while attempting to uninstall the component: "கூறுகளை நிறுவல் நீக்க முயற்சிக்கும்போது பிழை ஏற்பட்டது."
  Auxiliary rule, %s, deleted successfully: "துணை விதி, "%s", வெற்றிகரமாக நீக்கப்பட்டது"
  Auxiliary rules successfully updated: "துணை விதிகள் வெற்றிகரமாக புதுப்பிக்கப்பட்டன."
+ Can_t fetch the file: "கோப்பை எடுக்க முடியவில்லை"
  Can_t import from v%s data: "v%s தரவிலிருந்து இறக்குமதி செய்ய முடியாது!"
- Checksum error: "செக்சம் பிழை! கோப்பு நிராகரிக்கப்பட்டது!"
+ Checksum error: "செக்சம் பிழை!"
  Component not installed: "கூறு நிறுவப்படவில்லை!"
  Component successfully installed: "கூறு வெற்றிகரமாக நிறுவப்பட்டது."
  Component successfully uninstalled: "கூறு வெற்றிகரமாக நிறுவல் நீக்கப்பட்டது."
@@ -829,6 +830,7 @@ response:
  Directory successfully deleted: "அடைவு வெற்றிகரமாக நீக்கப்பட்டது!"
  Directory successfully renamed: "அடைவு வெற்றிகரமாக மறுபெயரிடப்பட்டது!"
  Don_t know what to do with the data after reading it: "படித்த பிறகு தரவை என்ன செய்வது என்று தெரியவில்லை.\nஅதை மற்றொரு கட்டளையுடன் இணைக்கவும். நன்றி."
+ Error at the upstream: "அப்ஸ்ட்ரீமில் பிழை!"
  Failed to access %s: ""%s" ஐ அணுகுவதில் தோல்வி!"
  Failed to activate: "செயல்படுத்தும் தோல்வி!"
  Failed to deactivate: "செயலிழக்க தோல்வி!"
@@ -846,6 +848,7 @@ response:
  Failed to update: "புதுப்பிப்பதில் தோல்வி!"
  Failed to upload: "பதிவேற்றுவது தோல்வியுற்றது!"
  File contains unexpected content: "கோப்பில் எதிர்பாராத உள்ளடக்கம் உள்ளது! கோப்பு நிராகரிக்கப்பட்டது!"
+ File rejected: "கோப்பு நிராகரிக்கப்பட்டது"
  File successfully deleted: "கோப்பு வெற்றிகரமாக நீக்கப்பட்டது!"
  File successfully modified: "கோப்பு வெற்றிகரமாக மாற்றப்பட்டது!"
  File successfully renamed: "கோப்பு வெற்றிகரமாக மறுபெயரிடப்பட்டது!"
@@ -859,14 +862,17 @@ response:
  Invalid password: "உள்நுழைவு தோல்வி! தவறான கடவுச்சொல்!"
  Invalid timestamp: "தவறான நேர முத்திரை!"
  New auxiliary rule, %s, created successfully: "புதிய துணை விதி, "%s", வெற்றிகரமாக உருவாக்கப்பட்டது."
+ Not available at the upstream for legal reasons: "சட்ட காரணங்களுக்காக அப்ஸ்ட்ரீமில் கிடைக்கவில்லை."
  Not available at the upstream: "அப்ஸ்ட்ரீமில் கிடைக்கவில்லை."
  Outdated: "காலாவதியான!"
  Parse: "பாகுபடுத்துதல்"
  Passed: "தேர்ச்சி பெற்றார்"
  Password field empty: "கடவுச்சொல் புலம் காலியாக உள்ளது!"
  Password successfully updated: "கடவுச்சொல் வெற்றிகரமாக புதுப்பிக்கப்பட்டது!"
- Permissions not adequate to perform asynchronous requests:: "ஒத்திசைவற்ற கோரிக்கைகளைச் செய்ய அனுமதிகள் போதுமானதாக இல்லை. மீண்டும் உள்நுழைய முயற்சிக்கவும்."
+ Payment required at the upstream: "அப்ஸ்ட்ரீமில் கட்டணம் செலுத்த வேண்டும்."
+ Permissions not adequate to perform asynchronous requests: "ஒத்திசைவற்ற கோரிக்கைகளைச் செய்ய அனுமதிகள் போதுமானதாக இல்லை. மீண்டும் உள்நுழைய முயற்சிக்கவும்."
  Please select at least one category: "தயவு செய்து குறைந்தது ஒரு வகையைத் தேர்ந்தெடுக்கவும்!"
+ Rate limited by the upstream: "அப்ஸ்ட்ரீம் மூலம் விகிதம் வரையறுக்கப்பட்டுள்ளது."
  Ready to install: "நிறுவ தயாராக உள்ளது."
  Redirected: "திருப்பிவிடப்பட்டது"
  Removed %s from tracking: "கண்காணிப்பிலிருந்து %s அகற்றப்பட்டது."
@@ -874,6 +880,7 @@ response:
  Repair process failed: "பழுது தோல்வியுற்றது."
  Signature files have been updated (%s): "கையொப்பக் கோப்புகள் புதுப்பிக்கப்பட்டுள்ளன (%s)."
  Skipped: "தவிர்த்தார்"
+ Source not specified: "ஆதாரம் குறிப்பிடப்படவில்லை!"
  Statistics cleared: "புள்ளிவிவரங்கள் அழிக்கப்பட்டது."
  Statistics updated: "புள்ளிவிவரங்கள் புதுப்பிக்கப்பட்டன."
  Successfully activated: "செயல்படுத்தும் வெற்றி."
@@ -894,6 +901,7 @@ response:
  There_s nothing to write, sorry: "எழுதுவதற்கு எதுவும் இல்லை, மன்னிக்கவும்."
  Tracking cleared: "கண்காணிப்பு அழிக்கப்பட்டது."
  Unable to determine: "தீர்மானிக்க முடியவில்லை."
+ Unknown error: "அறியப்படாத பிழை!"
  Username doesn_t exist: "உள்நுழைவு தோல்வி! தவறான பயனர்பெயர்!"
  Username field empty: "பயனர்பெயர் புலம் காலியாக உள்ளது!"
  Verification failed: "சரிபார்ப்பு தோல்வியுற்றது! கூறு சிதைக்கப்படலாம்."

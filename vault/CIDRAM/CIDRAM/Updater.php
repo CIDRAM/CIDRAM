@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods for updating CIDRAM components (last modified: 2024.05.03).
+ * This file: Methods for updating CIDRAM components (last modified: 2024.05.04).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -658,11 +658,28 @@ trait Updater
                             $IgnoredFiles[$FileName] = true;
                             continue;
                         }
-                        if (
-                            !isset($FileMeta['From']) ||
-                            strlen($FileMeta['From']) === 0 ||
-                            strlen($ThisFile = $this->Request->request($FileMeta['From'])) === 0
-                        ) {
+                        if (!isset($FileMeta['From']) || strlen($FileMeta['From']) === 0) {
+                            $this->FE['state_msg'] .= sprintf('<code>%s</code> – <code>%s</code> – %s<br />', $ThisTarget, $FileName, $this->L10N->getString('response.Can_t fetch the file') . $this->L10N->getString('pair_separator') . $this->L10N->getString('response.Source not specified'));
+                            $Rollback = true;
+                            continue 2;
+                        }
+                        if (strlen($ThisFile = $this->Request->request($FileMeta['From'])) === 0 || $this->Request->MostRecentStatusCode !== 200) {
+                            $this->FE['state_msg'] .= sprintf('<code>%s</code> – <code>%s</code> – %s', $ThisTarget, $FileName, $this->L10N->getString('response.Can_t fetch the file') . $this->L10N->getString('pair_separator'));
+                            if ($this->Request->MostRecentStatusCode === 401 || $this->Request->MostRecentStatusCode === 403) {
+                                $this->FE['state_msg'] .= $this->L10N->getString('denied') . '<br />';
+                            } elseif ($this->Request->MostRecentStatusCode === 402) {
+                                $this->FE['state_msg'] .= $this->L10N->getString('response.Payment required at the upstream') . '<br />';
+                            } elseif ($this->Request->MostRecentStatusCode === 404 || $this->Request->MostRecentStatusCode === 410) {
+                                $this->FE['state_msg'] .= $this->L10N->getString('response.Not available at the upstream') . '<br />';
+                            } elseif ($this->Request->MostRecentStatusCode === 429) {
+                                $this->FE['state_msg'] .= $this->L10N->getString('response.Rate limited by the upstream') . '<br />';
+                            } elseif ($this->Request->MostRecentStatusCode === 451) {
+                                $this->FE['state_msg'] .= $this->L10N->getString('response.Not available at the upstream for legal reasons') . '<br />';
+                            } elseif ($this->Request->MostRecentStatusCode >= 500) {
+                                $this->FE['state_msg'] .= $this->L10N->getString('response.Error at the upstream') . '<br />';
+                            } else {
+                                $this->FE['state_msg'] .= $this->L10N->getString('response.Unknown error') . '<br />';
+                            }
                             $Rollback = true;
                             continue 2;
                         }
@@ -680,7 +697,7 @@ trait Updater
                                     '<code>%s</code> – <code>%s</code> – %s<br />%s – <code class="txtRd">%s</code><br />%s – <code class="txtRd">%s</code><br />',
                                     $ThisTarget,
                                     $FileName,
-                                    $this->L10N->getString('response.Checksum error'),
+                                    $this->L10N->getString('response.File rejected') . $this->L10N->getString('pair_separator') . $this->L10N->getString('response.Checksum error'),
                                     $this->L10N->getString('label.Actual'),
                                     $Actual,
                                     $this->L10N->getString('label.Expected'),

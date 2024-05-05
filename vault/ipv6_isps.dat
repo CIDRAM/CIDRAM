@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6_isps.dat
 
-# Version: 2024.122.0
-# Last modified: 2024.05.02
+# Version: 2024.125.0
+# Last modified: 2024.05.05
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -511,16 +511,17 @@ Tag: Sky UK Limited
 # ASN 2856 ("British Telecommunications PLC").
 # UK domestic ISP. Spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 2,053.
-# Updated: 2023.07.03
+# Stop Forum Spam (SFS) listings: 2,426.
+# Updated: 2024.05.05
 
-2a00:23c5:3493:a701::/64 Deny Spam
-2a00:23c5:db2e:b201::/64 Deny Spam
+2a00:23c5:5803:301::/64 Deny Spam
 2a00:23c7:7c11:7e01::/64 Deny Spam
-2a00:23c7:8a9b:3501::/64 Deny Spam
 2a00:23c7:922f:c301::/64 Deny Spam
 2a00:23c7:c601:aa01::/64 Deny Spam
-2a00:23c8:5f1f:c401::/64 Deny Spam
+2a00:23c7:c60c:bd01::/64 Deny Spam
+2a00:23c8:f00:6c01::/64 Deny Spam
+2a00:23c8:c10a:3201::/64 Deny Spam
+2a00:23ee:17c0:191d::/64 Deny Spam
 Origin: GB
 Profile: Domestic ISP
 Tag: British Telecom PLC
@@ -530,20 +531,10 @@ Tag: British Telecom PLC
 # Major US domestic ISP. DDoS, SQLi, brute-force and WordPress/XMLRPC attacks,
 # credential stuffing, port scans, and spam detected from here.
 # Listed just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 7,398.
-# Updated: 2023.09.21
+# Stop Forum Spam (SFS) listings: 5,799.
+# Updated: 2024.05.04
 
-2600:1700:9b0:65f0::/64 Deny Spam
-2600:1700:1430:d430::/64 Deny Spam
-2600:1700:15f1:1050::/64 Deny Spam
-2600:1700:40a0:7630::/64 Deny Spam
-2600:1700:47d3:a000::/64 Deny Spam
-2600:1700:5441:1000::/64 Deny Spam
-2600:1700:5f68:3210::/64 Deny Spam
-2600:1700:d620:ec90::/64 Deny Spam
-2600:1700:fe20:e670::/64 Deny Spam
-2600:1702:190:14b0::/64 Deny Spam
-2600:1702:2d60:5280::/64 Deny Spam
+2600:1700:5c58:3a90::/64 Deny Spam
 Origin: US
 Profile: Domestic ISP;Tor endpoints here
 Tag: AT&T Services, Inc

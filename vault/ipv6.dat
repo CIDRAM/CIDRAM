@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6.dat
 
-# Version: 2024.122.0
-# Last modified: 2024.05.02
+# Version: 2024.125.0
+# Last modified: 2024.05.05
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -6136,12 +6136,12 @@ Profile: Webhosting
 Tag: Gyron Internet Ltd
 
 
-# ASNs 64267, 397630 ("Sprious LLC", "Blazing SEO, LLC").
+# ASNs 54252, 64267, 397630 ("Sprious LLC", "Blazing SEO, LLC").
 # Brute-force, WordPress/XMLRPC, SMTP, env, and webapp attacks, port scans,
 # hacking, probing for vulnerabilities, scraping for email addresses, and spam
 # detected from here.
-# Stop Forum Spam (SFS) listings: 9,086 (AS64267), 7,227 (AS397630).
-# Updated: 2018.09.07 / Checked: 2024.02.28
+# Stop Forum Spam (SFS) listings: 3,261 (AS54252), 8,234 (AS64267), 10,112 (AS397630).
+# Updated: 2018.09.07 / Checked: 2024.05.04
 
 2602:fefa::/32 Deny Cloud
 Origin: US
@@ -7038,10 +7038,17 @@ Tag: INTERRA
 
 # ASN 204490 ("Kontel LLC").
 # Caught trying to hack WordPress sites.
-# Stop Forum Spam (SFS) listings: 512.
-# Updated: 2019.10.05 / Checked: 2023.06.02
+# Stop Forum Spam (SFS) listings: 848.
+# Updated: 2024.05.05
 
+2a06:c680::/29 Deny Cloud
+2a06:d644::/32 Deny Cloud
+2a0d:afc7::/32 Deny Cloud
+2a0d:c102::/32 Deny Cloud
 2a0d:c580::/29 Deny Cloud
+2a0e:7f45::/32 Deny Cloud
+2a11:aac7::/32 Deny Cloud
+2a12:a340::/32 Deny Cloud
 Origin: RU
 Profile: Commercial
 Tag: Kontel LLC

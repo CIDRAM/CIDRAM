@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2024.05.02).
+ * This file: Optional security extras module (last modified: 2024.05.06).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -90,10 +90,10 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             'test/wp-includes/wlwmanifest\.xml|' .
             '(?:' .
             '\+theme\+/(?:error|index)|' .
-            '\.w(?:ell-known|p-cli)/.*(?:about|install|moon|wp-login)|\.?rxr(?:_[\da-z]+)?|' .
+            '\.w(?:ell-known|p-cli)/.*(?:about[\da-z]*|fierza[\da-z]*|install[\da-z]*|moon[\da-z]*|shell[\da-z]*|wp-login[\da-z]*|x)|\.?rxr(?:_[\da-z]+)?|' .
             '\d{3,5}[a-z]{3,5}|\d+-?backdoor|0byte|0x|10+|991176|' .
             'admin-heade\d*|adminfuns|ahhygskn|alfa(?:-rex|_data|a?cgiapi|ioxi|new)?\d*|anjas|apismtp|axx|' .
-            'b3d2acc621a0|bak|bala|' .
+            'b0|b3d2acc621a0|bak|bala|' .
             'c(?:9|10)\d+|casper[\da-z]+|cd(?:.*tmp.*rm-rf|chmod.*\d{3,})|cfom[-_]files|(?:cgi-bin|css)/(?:luci/;|moon|newgolden|radio|stok=/|uploader|well-known|wp-login)|cjfuns|classsmtps|colors/blue/uploader|' .
             'd7|deadcode\d*|dkiz|' .
             'ee|' .
@@ -106,11 +106,11 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             'orvx(?:-shell)?|' .
             'perl\.alfa|php(?:1|_niu_\d+)|(?:plugins|themes)/(?:ccx|ioptimization|yyobang)|poison|priv8|pzaiihfi|' .
             'session91|sh[3e]llx?\d*|shrift|sidwso|silic|skipper(?:shell)?|sonarxleetxd|spammervip|src/util/php/(?:eval(?:-stdin)?|kill)|' .
-            't62|tenda\.sh.*tenda\.sh|themes/(?:finley/min|pridmag/db|universal-news/www)|tinymce/langs/about|tk(?:_dencode_\d+)?|(?:tmp|wp-content)/vuln|topxoh/(?:drsx|wdr)|' .
+            't62|tenda\.sh.*tenda\.sh|themes/(?:finley/min|pridmag/db|universal-news/www)|tinymce/(?:langs/about|plugins/compat3x/css/index)|tk(?:_dencode_\d+)?|(?:tmp|wp-content)/vuln|topxoh/(?:drsx|wdr)|' .
             'unisibfu|upfile(?:_\\(\d\\))?|uploader_by_cloud7_agath|utchiha(?:_uploader)?|' .
             'vzlateam|' .
             'w0rdpr3ssnew|walker-nva|webshell-[a-z\d]+|widgets-nva|widwsisw|wloymzuk|' .
-            'wp[-_](?:2019|22|(?:admin|content|css(?:/colors)?|includes(?:/ixr|/customize|/pomo)?|js(?:/widgets)?|network)/(?:cong|dropdown|r(?:andom_compat/class_api|equests/class_api|epeater|themes/hello-element/footer)|simple)|conflg|content/plugins/(?:backup-backup/includes/hro|contus-hd-flv-player/uploadvideo|dzs-zoomsounds/savepng|fix/up|wordpresscore/include|wp-file-manager/lib/php/connector\.minimal)|filemanager|setups|sigunq|p)|' .
+            'wp[-_](?:2019|22|(?:admin(?:/images)?|content|css(?:/colors)?|includes(?:/ixr|/customize|/pomo)?|js(?:/widgets)?|network)/(?:cong|dropdown|install|r(?:andom_compat/class_api|equests/class_api|epeater)|simple|text/about|themes/hello-element/footer)|conflg|content/plugins/(?:backup-backup/includes/hro|cache/dropdown|contact-form-7/.+styles-rtl|contus-hd-flv-player/uploadvideo|dzs-zoomsounds/savepng|fix/up|wordpresscore/include|wp-file-manager/lib/php/connector\.minimal)|filemanager|setups|sigunq|p)|' .
             'ws[ou](?:yanz)?(?:[\d.]*|[\da-z]{4,})|wwdv|' .
             'x{3,}|xiaom|xichang/x|x+l(?:\d+|eet(?:mailer|-shell)?x?)|xm(?:lrpcs|lrpz|rlpc)|xw|' .
             'yanz|yyobang/mar|' .
@@ -120,7 +120,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $LCNrURI
         ), 'Probing for webshells/backdoors')) {
             $this->Reporter->report([15, 20, 21], ['Caught probing for webshells/backdoors. Host might be compromised.'], $this->BlockInfo['IPAddr']);
-        } // 2023.08.18 mod 2024.04.18
+        } // 2023.08.18 mod 2024.05.06
 
         /** Probing for webshells/backdoors. */
         if ($this->trigger(preg_match(

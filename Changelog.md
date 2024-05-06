@@ -402,3 +402,5 @@
 [2024.04.19; New Feature; Maikuolan]: A new option has been added to the auxiliary rules system, allowing trigger notifications to be sent to a configured email address (#231).
 
 [2024.04.30~05.01; Maikuolan]: Added hints about time placeholders (e.g., `{yyyy}`, `{hh}`, etc) to the various configuration directives for logging.
+
+[2024.05.06; Maikuolan]: Added some new types of executor calls.

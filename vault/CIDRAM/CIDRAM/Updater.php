@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods for updating CIDRAM components (last modified: 2024.05.04).
+ * This file: Methods for updating CIDRAM components (last modified: 2024.05.06).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -667,18 +667,39 @@ trait Updater
                             $this->FE['state_msg'] .= sprintf('<code>%s</code> – <code>%s</code> – %s', $ThisTarget, $FileName, $this->L10N->getString('response.Can_t fetch the file') . $this->L10N->getString('pair_separator'));
                             if ($this->Request->MostRecentStatusCode === 401 || $this->Request->MostRecentStatusCode === 403) {
                                 $this->FE['state_msg'] .= $this->L10N->getString('denied') . '<br />';
+                                if (!empty($this->Components['RemoteMeta'][$ThisTarget]['Upstream Access Denied'])) {
+                                    $this->executor($this->Components['RemoteMeta'][$ThisTarget]['Upstream Access Denied'], false, $BytesRemoved, $BytesAdded);
+                                }
                             } elseif ($this->Request->MostRecentStatusCode === 402) {
                                 $this->FE['state_msg'] .= $this->L10N->getString('response.Payment required at the upstream') . '<br />';
+                                if (!empty($this->Components['RemoteMeta'][$ThisTarget]['Upstream Payment Required'])) {
+                                    $this->executor($this->Components['RemoteMeta'][$ThisTarget]['Upstream Payment Required'], false, $BytesRemoved, $BytesAdded);
+                                }
                             } elseif ($this->Request->MostRecentStatusCode === 404 || $this->Request->MostRecentStatusCode === 410) {
                                 $this->FE['state_msg'] .= $this->L10N->getString('response.Not available at the upstream') . '<br />';
+                                if (!empty($this->Components['RemoteMeta'][$ThisTarget]['Upstream Not Available'])) {
+                                    $this->executor($this->Components['RemoteMeta'][$ThisTarget]['Upstream Not Available'], false, $BytesRemoved, $BytesAdded);
+                                }
                             } elseif ($this->Request->MostRecentStatusCode === 429) {
                                 $this->FE['state_msg'] .= $this->L10N->getString('response.Rate limited by the upstream') . '<br />';
+                                if (!empty($this->Components['RemoteMeta'][$ThisTarget]['Upstream Rate Limited'])) {
+                                    $this->executor($this->Components['RemoteMeta'][$ThisTarget]['Upstream Rate Limited'], false, $BytesRemoved, $BytesAdded);
+                                }
                             } elseif ($this->Request->MostRecentStatusCode === 451) {
                                 $this->FE['state_msg'] .= $this->L10N->getString('response.Not available at the upstream for legal reasons') . '<br />';
+                                if (!empty($this->Components['RemoteMeta'][$ThisTarget]['Upstream Not Available Legal'])) {
+                                    $this->executor($this->Components['RemoteMeta'][$ThisTarget]['Upstream Not Available Legal'], false, $BytesRemoved, $BytesAdded);
+                                }
                             } elseif ($this->Request->MostRecentStatusCode >= 500) {
                                 $this->FE['state_msg'] .= $this->L10N->getString('response.Error at the upstream') . '<br />';
+                                if (!empty($this->Components['RemoteMeta'][$ThisTarget]['Upstream Error'])) {
+                                    $this->executor($this->Components['RemoteMeta'][$ThisTarget]['Upstream Error'], false, $BytesRemoved, $BytesAdded);
+                                }
                             } else {
                                 $this->FE['state_msg'] .= $this->L10N->getString('response.Unknown error') . '<br />';
+                                if (!empty($this->Components['RemoteMeta'][$ThisTarget]['On Unknown Error'])) {
+                                    $this->executor($this->Components['RemoteMeta'][$ThisTarget]['On Unknown Error'], false, $BytesRemoved, $BytesAdded);
+                                }
                             }
                             $Rollback = true;
                             continue 2;

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2024.05.04).
+# This file: Indonesian language data for the front-end (last modified: 2024.05.07).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -74,7 +74,7 @@ Extended Description:
  Optional security extras module: "Menyediakan beberapa perlindungan terbatas terhadap berbagai vektor serangan umum digunakan dalam permintaan."
  PHPMailer: "Diperlukan untuk menggunakan fungsionalitas apapun yang melibatkan pengiriman email.<br />{{Links.PHPMailer.PHPMailer}} tersedia melalui lisensi {{Links.PHPMailer.License}}."
  Project Honeypot module: "Memblokir permintaan dari IP yang terdaftar oleh Project Honeypot."
- Protocol blocker module: "Menyediakan kemampuan untuk memblokir protokol permintaan spesifik melalui konfigurasi (misalnya, HTTP/0.9, HTTP/1.1, SPDY/3.0, dll). Catatan: Tidak akan berpengaruh pada situs web yang merutekan melalui layanan yang menulis ulang permintaan untuk semua menggunakan protokol yang sama persis, seperti Cloudflare."
+ Protocol blocker module: "Menyediakan kemampuan untuk memblokir protokol permintaan spesifik melalui konfigurasi (misalnya, HTTP/0.9, HTTP/1.1, SPDY/3.0, dll). Catat: Tidak akan berpengaruh pada situs web yang merutekan melalui layanan yang menulis ulang permintaan untuk semua menggunakan protokol yang sama persis, seperti Cloudflare."
  Referrer spam module: "Memblokir berdasarkan spam pengarah umumnya tidak akan memberikan manfaat keamanan yang berarti, tetapi dalam beberapa kasus, dapat bermanfaat bagi beberapa pengguna, untuk mengumpulkan lebih banyak informasi tentang permintaan, dan untuk dapat melaporkannya."
  Stop Forum Spam module: "Melindungi halaman pendaftaran dan login terhadap IP yang terdaftar oleh SFS."
  Tor blocker module: "Melarang akses dari simpul keluar Tor melalui pencarian DNSEL (mendukung keduanya IPv4 dan IPv6)."
@@ -211,7 +211,7 @@ config:
  hcaptcha: "Konfigurasi untuk HCaptcha (menyediakan cara bagi manusia untuk mendapatkan kembali akses ketika diblokir)."
  hcaptcha_api: &CaptchaAPI "API mana yang akan digunakan?"
  hcaptcha_expiry: &CaptchaExpiry "Jumlah jam untuk mengingat instansi CAPTCHA. Default = 720 (1 bulan)."
- hcaptcha_hcaptcha_log: &CaptchaLogFile "Mencatat hasil semua instansi CAPTCHA? Jika ya, tentukan nama untuk menggunakan untuk file catatan. Jika tidak, variabel ini harus kosong."
+ hcaptcha_hcaptcha_log: &CaptchaLogFile "Mencatat hasil semua instansi CAPTCHA? Jika ya, tentukan nama untuk menggunakan untuk file pencatatan. Jika tidak, variabel ini harus kosong."
  hcaptcha_lockip: &CaptchaLockIP "Kunci CAPTCHA ke IP?"
  hcaptcha_lockuser: &CaptchaLockUser "Kunci CAPTCHA ke pengguna?"
  hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "Kode status mana yang harus digunakan saat menampilkan CAPTCHA ke permintaan yang tidak diblokir?"
@@ -235,7 +235,7 @@ config:
  logging_log_banned_ips: "Termasuk permintaan diblokir dari IP dilarang dalam file log? True = Ya [Default]; False = Tidak."
  logging_log_rotation_action: "Rotasi log membatasi jumlah file log yang seharusnya ada pada satu waktu. Ketika file log baru dibuat, jika jumlah total file log melebihi batas yang ditentukan, tindakan yang ditentukan akan dilakukan. Anda dapat menentukan tindakan yang diinginkan disini."
  logging_log_rotation_limit: "Rotasi log membatasi jumlah file log yang seharusnya ada pada satu waktu. Ketika file log baru dibuat, jika jumlah total file log melebihi batas yang ditentukan, tindakan yang ditentukan akan dilakukan. Anda dapat menentukan batas yang diinginkan disini. Nilai 0 akan menonaktifkan rotasi log."
- logging_log_sanitisation: "Saat menggunakan halaman log untuk melihat data log, CIDRAM mensanitasikan data log sebelum menampilkannya, untuk melindungi pengguna dari serangan XSS dan potensi ancaman lain yang bisa terkandung dalam data tersebut. Namun, secara default, data tidak disanitasikan selama pencatatan. Ini untuk memastikan bahwa data log dicatatan secara akurat, untuk membantu analisis heuristik atau forensik yang mungkin diperlukan di masa depan. Namun, jika pengguna mencoba membaca data log menggunakan alat eksternal, dan jika alat eksternal itu tidak melakukan proses sanitasi sendiri, pengguna bisa terkena serangan XSS. Jika perlu, Anda dapat mengubah perilaku default menggunakan direktif konfigurasi ini. True = Mensanitasikan data saat mencatatnya (data disimpan kurang akurat, tetapi risiko XSS lebih rendah). False = Jangan mensanitasikan data saat mencatatnya (data disimpan lebih akurat, tetapi risiko XSS lebih tinggi) [Default]."
+ logging_log_sanitisation: "Saat menggunakan halaman log untuk melihat data log, CIDRAM mensanitasikan data log sebelum menampilkannya, untuk melindungi pengguna dari serangan XSS dan potensi ancaman lain yang bisa terkandung dalam data tersebut. Namun, secara default, data tidak disanitasikan selama pencatatan. Ini untuk memastikan bahwa data log dicatat secara akurat, untuk membantu analisis heuristik atau forensik yang mungkin diperlukan di masa depan. Namun, jika pengguna mencoba membaca data log menggunakan alat eksternal, dan jika alat eksternal itu tidak melakukan proses sanitasi sendiri, pengguna bisa terkena serangan XSS. Jika perlu, Anda dapat mengubah perilaku default menggunakan direktif konfigurasi ini. True = Mensanitasikan data saat mencatatnya (data disimpan kurang akurat, tetapi risiko XSS lebih rendah). False = Jangan mensanitasikan data saat mencatatnya (data disimpan lebih akurat, tetapi risiko XSS lebih tinggi) [Default]."
  logging_outbound_request_log: "File untuk mencatat hasil permintaan keluar apapun. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
  logging_report_log: "File untuk mencatat setiap laporan yang dikirim ke API eksternal. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
  logging_serialised_log: "File serial untuk mencatat semua upaya akses diblokir. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
@@ -261,7 +261,7 @@ config:
  projecthoneypot_minimum_threat_score: "Skor ancaman minimum yang diperlukan agar CIDRAM memblokir alamat IP (harus berupa angka diantara 1 dan 100). Default = 10."
  projecthoneypot_type_of_visitor: "Kontrol apakah akan memblokir atau memprofil berdasarkan jenis pengunjung sebagaimana ditentukan oleh Project Honeypot."
  protocol: "Konfigurasi untuk modul pemblokir protokol."
- protocol_blocked: "Protokol yang dipilih akan diblokir. Catatan: Tidak akan berpengaruh pada situs web yang merutekan melalui layanan yang menulis ulang permintaan untuk semua menggunakan protokol yang sama persis, seperti Cloudflare."
+ protocol_blocked: "Protokol yang dipilih akan diblokir. Catat: Tidak akan berpengaruh pada situs web yang merutekan melalui layanan yang menulis ulang permintaan untuk semua menggunakan protokol yang sama persis, seperti Cloudflare."
  protocol_reason_message: "Pesan alasan ditampilkan saat permintaan tersebut diblokir."
  rate_limiting: "Konfigurasi untuk pembatasan laju (tidak direkomendasikan untuk penggunaan umum)."
  rate_limiting_allowance_period: "Durasi untuk melacak penggunaan. Default = 0°0′0″."
@@ -285,13 +285,13 @@ config:
  recaptcha_sitekey: *CaptchaDashboard
  recaptcha_usemode: *CaptchaUseMode
  sfs: "Konfigurasi untuk modul Stop Forum Spam."
- sfs_offer_captcha: "Ketika permintaan diblokir oleh modul ini, CAPTCHA dapat disajikan. Default = True. Catatan: Tidak mengesampingkan direktif lain. Agar CAPTCHA dapat disajikan, semua direktif harus setuju, kunci yang diperlukan harus dikonfigurasi, dll. Jika CAPTCHA biasanya diizinkan untuk disajikan, menyetel direktif ini ke false menyediakan cara untuk mencegah CAPTCHA disajikan untuk permintaan yang diblokir secara khusus oleh modul ini."
+ sfs_offer_captcha: "Ketika permintaan diblokir oleh modul ini, CAPTCHA dapat disajikan. Default = True. Catat: Tidak mengesampingkan direktif lain. Agar CAPTCHA dapat disajikan, semua direktif harus setuju, kunci yang diperlukan harus dikonfigurasi, dll. Jika CAPTCHA biasanya diizinkan untuk disajikan, menyetel direktif ini ke false menyediakan cara untuk mencegah CAPTCHA disajikan untuk permintaan yang diblokir secara khusus oleh modul ini."
  signatures: "Konfigurasi untuk tanda tangan, file tanda tangan, modul, dll."
  signatures_default_tracktime: "Durasi yang alamat IP harus dilacak. Default = 7d0°0′0″ (1 seminggu)."
  signatures_infraction_limit: "Jumlah maksimum pelanggaran IP diperbolehkan untuk dikenakan sebelum dilarang oleh pelacakan IP. Default = 10."
  signatures_shorthand: "Kontrol untuk apa yang harus dilakukan dengan permintaan jika/ketika ada kecocokan yang positif dengan tanda tangan yang menggunakan kata-kata singkat yang diberikan."
  signatures_tracking_override: "Izinkan modul untuk mengganti opsi pelacakan? True = Ya [Default]; False = Tidak."
- supplementary_cache_options: "Opsi cache tambahan. Catatan: Mengubah nilai ini berpotensi membuat Anda keluar."
+ supplementary_cache_options: "Opsi cache tambahan. Catat: Mengubah nilai ini berpotensi membuat Anda keluar."
  supplementary_cache_options_enable_apcu: "Menentukan apakah akan mencoba menggunakan APCu untuk cache. Default = True."
  supplementary_cache_options_enable_memcached: "Menentukan apakah akan mencoba menggunakan Memcached untuk cache. Default = False."
  supplementary_cache_options_enable_pdo: "Menentukan apakah akan mencoba menggunakan PDO untuk cache. Default = False."
@@ -302,7 +302,7 @@ config:
  supplementary_cache_options_pdo_password: "Kata sandi PDO."
  supplementary_cache_options_pdo_username: "Nama pengguna PDO."
  supplementary_cache_options_prefix: "Nilai yang ditentukan disini akan ditambahkan ke awal kunci untuk semua entri di cache. Default = "CIDRAM_". Ketika beberapa instalasi ada di server, ini dapat berguna untuk menjaga cache mereka terpisah."
- supplementary_cache_options_redis_database_number: "Nomor basis data Redis. Default = 0. Catatan: Tidak dapat menggunakan nilai selain 0 dengan Redis Cluster."
+ supplementary_cache_options_redis_database_number: "Nomor basis data Redis. Default = 0. Catat: Tidak dapat menggunakan nilai selain 0 dengan Redis Cluster."
  supplementary_cache_options_redis_host: "Nilai host Redis. Default = "localhost"."
  supplementary_cache_options_redis_port: "Nilai port Redis. Default = "6379"."
  supplementary_cache_options_redis_timeout: "Nilai batas waktu Redis. Default = "2.5"."
@@ -396,7 +396,7 @@ field:
   Total size: "Ukuran total:"
   bytes: "byte"
 hints_asnlookup: "** Memerlukan fungsionalitas pencarian ASN (misalnya, melalui modul IP-API atau BGPView)."
-hints_aux_stats: "Catatan: Apakah akan melacak statistik untuk aturan tambahan dapat dikontrol dari halaman aturan tambahan."
+hints_aux_stats: "Catat: Apakah akan melacak statistik untuk aturan tambahan dapat dikontrol dari halaman aturan tambahan."
 hints_cause_fp: "*!! Kemungkinan tinggi menyebabkan positif palsu karena %s."
 hints_client_honour: "Terlepas dari bagaimana kami menginstruksikan klien, penting untuk diingat bahwa pada akhirnya kami tidak memiliki kendali atas apa yang klien pilih untuk dilakukan, dan tidak ada jaminan bahwa klien akan menghormati instruksi kami."
 hints_default_dns:
@@ -408,10 +408,11 @@ hints_duration:
  Kendala.: "Notasi dapat dicampur, tetapi satuan harus selalu dideskripsikan dari terbesar ke terkecil, dan tidak dapat diulang. Misalnya, <strong>1 week 2 days 3′4″</strong> adalah <span class="txtGn">valid</span> dan akan dipahami dengan benar, tetapi <strong>3′4″ 1 week 2 days</strong> dan <strong>3 hours 3h 3°</strong> adalah <span class="txtRd">tidak valid</span>. CIDRAM tidak peduli apakah Anda menggunakan spasi atau tidak. Nomor harus polos dan tidak diformat. Untuk kepraktisan, satuan didukung yang terbesar adalah seminggu. Saat konfigurasi diperbarui, CIDRAM menormalkan durasi ke waktu busur."
 hints_has_bypass: "* Opsi ini memiliki bypass terkait dibawah <code class="s">bypasses➡used</code>. Direkomendasikan untuk memastikan bahwa kotak centang untuk bypass terkait ditandai dengan cara yang sama seperti kotak centang untuk mencoba memverifikasi opsi ini."
 hints_inspection: "* Dimaksudkan hanya untuk men-debug aturan tambahan. Tidak ditampilkan kepada pengguna yang diblokir."
-hints_ipv6_on_32bit: "Catatan: Pencarian IPv6 mungkin tidak bekerja dengan benar pada beberapa sistem 32-bit."
+hints_ipv6_on_32bit: "Catat: Pencarian IPv6 mungkin tidak bekerja dengan benar pada beberapa sistem 32-bit."
 hints_logging_datetime: "Kiat yang berguna: Anda dapat melampirkan informasi tanggal/waktu ke nama file log dengan menggunakan placeholder format waktu. Placeholder format waktu yang tersedia ditampilkan di {{Links.ConfigRef.time_format}}."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.id.md\#user-content-HOW_TO_USE_PDO" hreflang="id-ID">Apa itu "PDO DSN"? Bagaimana saya bisa menggunakan PDO dengan CIDRAM?</a></em>"
+hints_sensitive_pages: "Catat: Apa yang dimaksud dengan "halaman sensitif" ditentukan oleh {{Links.ConfigRef.sensitive}}."
 hints_shorthand:
  0.: "Jika situs web Anda memerlukan akses melalui LAN atau localhost, jangan blokir ini. Jika tidak memerlukannya, Anda dapat memblokir ini."
  1.: "Tidak ada file tanda tangan default yang menggunakan ini, tapi tetap didukung dalam kasus mungkin berguna untuk beberapa pengguna."

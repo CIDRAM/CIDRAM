@@ -1,6 +1,6 @@
 CIDRAM Core:
  Name: "CIDRAM Core"
- Version: "3.6.0-DEV+241250"
+ Version: "3.6.0-DEV+241270"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Front-End: "Latest"
@@ -55,7 +55,7 @@ CIDRAM Core:
    Checksum: "b62c0cf1deeb97c7ee15638f0a4102292a6bab6f0b6b1ee3a1dec7fa485c2e05:1352"
   defaults.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/defaults.yml"
-   Checksum: "589d30bc9c108b1cc179602dde062a9f2ef783fb7e38533866a0285f3f16fd8f:39789"
+   Checksum: "203cd2af1afad2c2e878c6cddc91cff09c3132e24e80fca40f9844c2bece2073:39957"
   loader.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/loader.php"
    Checksum: "4d56d0a305ceafab32ade65a0f74ad27efe50964d0e257d787a6ee7056c41880:1313"
@@ -1242,7 +1242,7 @@ l10n/frontend/zh-TW:
    Checksum: "d1572ff206cde1bf3e1c6cd1201a296217e8771d37b57d6c8aaa7fd4841a9405:76548"
 AbuseIPDB module:
  False Positive Risk: "Medium"
- Version: "2024.104.0"
+ Version: "2024.127.0"
  Dependencies:
   l10n/core/{lang}: ">=2023.357"
   l10n/frontend/{lang}: ">=2024.50"
@@ -1257,7 +1257,7 @@ AbuseIPDB module:
    Used with: "events"
   imports/abuseipdb.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/imports/abuseipdb.yml"
-   Checksum: "774c0cd51499d1f5be8ad3d9efe96f93d13d32aab3e9f39bb1074c3a3456eee2:2062"
+   Checksum: "f2963cec6e5d423aeac6a01af28f9d32ea53de7376762f05816b6c6d0aa836c7:2096"
    Used with: "imports"
   modules/abuseipdb.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/abuseipdb.php"
@@ -1284,12 +1284,12 @@ Bad TLDs blocker module:
    Used with: "modules"
 BGPView module:
  False Positive Risk: "Low"
- Version: "2023.258.0"
+ Version: "2024.127.0"
  When Install Succeeds: ["queue message response.please_check_config"]
  Files:
   imports/bgpview.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/imports/bgpview.yml"
-   Checksum: "b18c8b51fcac0950615c6b22ee2efd2942af8e45625606183b7133c3ec1a9459:896"
+   Checksum: "9ff2f20058945fc6370c042695a982b242fd89e363d2023a547ffbf6309ac644:930"
    Used with: "imports"
   modules/bgpview.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/bgpview.php"
@@ -1326,12 +1326,12 @@ Cookie scanner module:
    Used with: "modules"
 IP-API module:
  False Positive Risk: "Low"
- Version: "2023.262.0"
+ Version: "2024.127.0"
  When Install Succeeds: ["queue message response.please_check_config"]
  Files:
   imports/ipapi.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/imports/ipapi.yml"
-   Checksum: "7912961a75e8555ed140d7f8543f7cb28f2e7bf871c1c207fed8bb02e1ac994c:888"
+   Checksum: "c58021255e70bc8ff0da3fdf6bd65ff495f7449e5f2a09dfabe36daeb9a77146:922"
    Used with: "imports"
   modules/ipapi.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/ipapi.php"
@@ -1352,14 +1352,14 @@ Optional security extras module:
    Used with: "modules"
 Project Honeypot module:
  False Positive Risk: "Medium"
- Version: "2023.262.0"
+ Version: "2024.127.0"
  Dependencies:
   l10n/frontend/{lang}: ">=2023.262"
  When Install Succeeds: ["queue message response.please_check_config"]
  Files:
   imports/projecthoneypot.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/imports/projecthoneypot.yml"
-   Checksum: "46dec3a32b0deb6a763ff7ecc44353f9195bd252729ba3e1b758dc65b2452d58:1744"
+   Checksum: "03b6611dd1137f7c90762b05c07d65eede62b3af2f9556c18af2cb0ae28a7a24:1778"
    Used with: "imports"
   modules/projecthoneypot.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/projecthoneypot.php"

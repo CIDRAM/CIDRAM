@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: AbuseIPDB defaults file (last modified: 2024.02.20).
+# This file: AbuseIPDB defaults file (last modified: 2024.05.07).
 ##/
 
 Config Defaults:
@@ -52,6 +52,7 @@ Config Defaults:
     1: "label.Every request"
     2: "label.Requests for sensitive pages only"
    style: "radio"
+   hints: "hints_sensitive_pages"
   timeout_limit:
    type: "int"
    default: 12

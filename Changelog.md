@@ -404,3 +404,5 @@
 [2024.04.30~05.01; Maikuolan]: Added hints about time placeholders (e.g., `{yyyy}`, `{hh}`, etc) to the various configuration directives for logging.
 
 [2024.05.06; Maikuolan]: Added some new types of executor calls.
+
+[2024.05.07; Maikuolan]: Added hints to all lookup strategy directives.

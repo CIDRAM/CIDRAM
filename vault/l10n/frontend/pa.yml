@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Punjabi language data for the front-end (last modified: 2024.05.04).
+# This file: Punjabi language data for the front-end (last modified: 2024.05.07).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -99,7 +99,7 @@ Name:
  IPv6-Bogons: "IPv6 (ਬੋਗਨ)।"
  IPv6-ISPs: "IPv6 (ਸਪੈਮੀ ISP)।"
  IPv6-Nonblocking: "IPv6 ਗੈਰ-ਬਲਾਕ ਦਸਤਖਤ।"
- IPv6-Other: "IPv6 (ਪ੍ਰੌਕਸੀ, ਵੀਪੀਐਨ, ਆਦਿ)."
+ IPv6-Other: "IPv6 (ਪ੍ਰੌਕਸੀ, ਵੀਪੀਐਨ, ਆਦਿ)।"
  Optional security extras module: "ਵਿਕਲਪਿਕ ਸੁਰੱਖਿਆ ਵਾਧੂ ਮੋਡੀਊਲ।"
  Project Honeypot module: "Project Honeypot ਮੋਡੀਊਲ।"
  Protocol blocker module: "ਪ੍ਰੋਟੋਕੋਲ ਬਲੌਕਰ ਮੋਡੀਊਲ।"
@@ -412,6 +412,7 @@ hints_ipv6_on_32bit: "ਨੋਟ: ਕੁਝ 32-ਬਿੱਟ ਸਿਸਟਮਾਂ
 hints_logging_datetime: "ਲਾਭਦਾਇਕ ਸੁਝਾਅ: ਤੁਸੀਂ ਸਮਾਂ ਫਾਰਮੈਟ ਪਲੇਸਹੋਲਡਰਾਂ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਲੌਗ ਫਾਈਲਾਂ ਦੇ ਨਾਵਾਂ ਨਾਲ ਮਿਤੀ/ਸਮੇਂ ਦੀ ਜਾਣਕਾਰੀ ਨੱਥੀ ਕਰ ਸਕਦੇ ਹੋ। ਉਪਲਬਧ ਸਮਾਂ ਫਾਰਮੈਟ ਪਲੇਸਹੋਲਡਰ {{Links.ConfigRef.time_format}} 'ਤੇ ਪ੍ਰਦਰਸ਼ਿਤ ਹੁੰਦੇ ਹਨ।"
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">"PDO DSN" ਕੀ ਹੈ? ਮੈਂ CIDRAM ਨਾਲ PDO ਦੀ ਵਰਤੋਂ ਕਿਵੇਂ ਕਰ ਸਕਦਾ ਹਾਂ?</a></em>"
+hints_sensitive_pages: "ਨੋਟ: ਇੱਕ "ਸੰਵੇਦਨਸ਼ੀਲ ਪੰਨਾ" ਕੀ ਬਣਦਾ ਹੈ, {{Links.ConfigRef.sensitive}} ਦੁਆਰਾ ਨਿਰਧਾਰਤ ਕੀਤਾ ਜਾਂਦਾ ਹੈ।"
 hints_shorthand:
  0.: "ਜੇਕਰ ਤੁਹਾਡੀ ਵੈੱਬਸਾਈਟ ਨੂੰ LAN ਜਾਂ localhost ਰਾਹੀਂ ਪਹੁੰਚ ਦੀ ਲੋੜ ਹੈ, ਤਾਂ ਇਸਨੂੰ ਬਲੌਕ ਨਾ ਕਰੋ। ਨਹੀਂ ਤਾਂ, ਤੁਸੀਂ ਇਸ ਨੂੰ ਬਲੌਕ ਕਰ ਸਕਦੇ ਹੋ।"
  1.: "ਕੋਈ ਵੀ ਡਿਫੌਲਟ ਦਸਤਖਤ ਫਾਈਲਾਂ ਇਸਦੀ ਵਰਤੋਂ ਨਹੀਂ ਕਰਦੀਆਂ, ਪਰ ਕਿਸੇ ਵੀ ਉਪਭੋਗਤਾ ਲਈ ਜਿਸਨੂੰ ਇਸਦੀ ਲੋੜ ਹੋ ਸਕਦੀ ਹੈ, ਇਹ ਸਮਰਥਿਤ ਹੈ।"
@@ -448,8 +449,8 @@ info_cli_by_default_ips: |
  ਸਾਰੇ ਸਹਾਇਕ ਨਿਯਮਾਂ, ਅਤੇ ਸੋਸ਼ਲ ਮੀਡੀਆ ਅਤੇ ਖੋਜ ਇੰਜਣ ਤਸਦੀਕ ਦੇ ਵਿਰੁੱਧ ਕੀਤੀ ਜਾਂਦੀ
  ਹੈ।
  --no-sig    ਦਸਤਖਤ ਫਾਈਲਾਂ ਦੇ ਵਿਰੁੱਧ ਜਾਂਚ ਨੂੰ ਰੋਕਦਾ ਹੈ।
- --no-mod    ਮੋਡੀਊਲ ਦੇ ਵਿਰੁੱਧ ਟੈਸਟਿੰਗ ਨੂੰ ਰੋਕਦਾ ਹੈ.
- --no-sev    ਖੋਜ ਇੰਜਣ ਤਸਦੀਕ ਨੂੰ ਰੋਕਦਾ ਹੈ.
+ --no-mod    ਮੋਡੀਊਲ ਦੇ ਵਿਰੁੱਧ ਟੈਸਟਿੰਗ ਨੂੰ ਰੋਕਦਾ ਹੈ।
+ --no-sev    ਖੋਜ ਇੰਜਣ ਤਸਦੀਕ ਨੂੰ ਰੋਕਦਾ ਹੈ।
  --no-smv    ਸੋਸ਼ਲ ਮੀਡੀਆ ਪੁਸ਼ਟੀਕਰਨ ਨੂੰ ਰੋਕਦਾ ਹੈ।
  --no-ov     ਹੋਰ ਪੁਸ਼ਟੀਕਰਨ ਨੂੰ ਰੋਕਦਾ ਹੈ।
  --no-aux    ਸਹਾਇਕ ਨਿਯਮਾਂ ਦੇ ਵਿਰੁੱਧ ਜਾਂਚ ਨੂੰ ਰੋਕਦਾ ਹੈ।

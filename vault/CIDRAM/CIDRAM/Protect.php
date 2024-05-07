@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2024.04.19).
+ * This file: Protect traits (last modified: 2024.05.07).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -90,6 +90,7 @@ trait Protect
             'Request_Method' => $_SERVER['REQUEST_METHOD'] ?? '',
             'Protocol' => $_SERVER['SERVER_PROTOCOL'] ?? '',
             'Inspection' => '',
+            'ClientL10NAccepted' => $this->ClientL10NAccepted,
             'xmlLang' => $this->L10NAccepted
         ];
         if (isset($this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']])) {
@@ -765,9 +766,10 @@ trait Protect
                 $this->addField('Ignored', 'state_ignored', $this->BlockInfo['Ignored']);
                 $this->addField('Request_Method', 'field.Request method', $this->BlockInfo['Request_Method'], true);
                 $this->addField('Protocol', 'field.Protocol', $this->BlockInfo['Protocol'], true);
-                $this->addField('Inspection', 'field.Conditions inspection', $this->BlockInfo['Inspection'], false, false);
                 $this->addField('Hostname', 'field.Hostname', $this->BlockInfo['Hostname'], true);
                 $this->addField('CAPTCHA', 'field.CAPTCHA state', $this->BlockInfo['CAPTCHA']);
+                $this->addField('Inspection', 'field.Conditions inspection', $this->BlockInfo['Inspection'], false, false);
+                $this->addField('ClientL10NAccepted', 'field.Language resolution', $this->ClientL10NAccepted, false, false);
             }
 
             if (isset($this->Stages['Output:Enable'])) {

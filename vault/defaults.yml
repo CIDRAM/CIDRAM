@@ -175,6 +175,7 @@ Config Defaults:
     Hostname: "field.Hostname"
     CAPTCHA: "field.CAPTCHA state"
     Inspection: "* {field.Conditions inspection}"
+    ClientL10NAccepted: "field.Language resolution"
    nonsense: |
     ID:OmitIfEmpty
     ScriptIdent:OmitIfEmpty
@@ -182,6 +183,8 @@ Config Defaults:
     SignatureCount:OmitIfEmpty
     Infractions:OmitIfEmpty
     Inspection:ShowInPageOutput
+    ClientL10NAccepted:ShowInPageOutput
+    ClientL10NAccepted:OmitIfEmpty
    hints:
     - "hints_inspection"
     - "hints_asnlookup"
@@ -1209,6 +1212,7 @@ Provide:
    CIDRAM:
     Hostname: "field.Hostname"
     Factors: "CIDR"
+   ClientL10NAccepted: "field.Language resolution"
   Flags:
    reCAPTCHA:
     Hint: "{label.aux.When forcibly disabled, marking for use won_t have any effect} {label.See also} <code>recaptcha➡usemode</code>"

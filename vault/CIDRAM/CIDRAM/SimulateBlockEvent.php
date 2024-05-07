@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used to simulate block events (last modified: 2024.04.19).
+ * This file: Methods used to simulate block events (last modified: 2024.05.07).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -122,6 +122,7 @@ trait SimulateBlockEvent
             'Request_Method' => 'SimulateBlockEvent',
             'Protocol' => 'SimulateBlockEvent',
             'Inspection' => '',
+            'ClientL10NAccepted' => $this->ClientL10NAccepted,
             'xmlLang' => $this->L10NAccepted
         ];
         if (isset($this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']])) {

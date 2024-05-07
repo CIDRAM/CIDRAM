@@ -406,3 +406,5 @@
 [2024.05.06; Maikuolan]: Added some new types of executor calls.
 
 [2024.05.07; Maikuolan]: Added hints to all lookup strategy directives.
+
+[2024.05.07; New Feature; Maikuolan]: Language resolution (ClientL10NAccepted) added as a block event field and a source for auxiliary rules.

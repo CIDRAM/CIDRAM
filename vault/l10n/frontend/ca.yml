@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Catalan language data for the front-end (last modified: 2024.05.04).
+# This file: Catalan language data for the front-end (last modified: 2024.05.10).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -173,11 +173,78 @@ config:
  extras_signatures_raw: "Signatures basades en l'entrada de sol·licitud sense processar."
  extras_signatures_ruri: "Signatures basades en URIs reconstruïts."
  frontend: "Configuració per al front-end."
+ frontend_custom_footer: "Inserir com a HTML a la part inferior de totes les pàgines del front-end. Això pot ser útil en cas que vulgueu incloure un avís legal, un enllaç de contacte, informació comercial, o similar a totes aquestes pàgines."
+ frontend_custom_header: "Inserir com a HTML al principi de totes les pàgines del front-end. Això pot ser útil en cas que vulgueu incloure un logotip de lloc web, una capçalera personalitzada, scripts, o similar a totes aquestes pàgines."
+ frontend_enable_two_factor: "Aquesta directiva determina si s'ha d'utilitzar 2FA per als comptes de front-end."
+ frontend_frontend_log: "Fitxer per registrar tots els intents d'iniciar sessió al front-end. Especifiqueu un nom de fitxer, o deixeu-lo en blanc per desactivar-lo."
+ frontend_magnification: &MagnifDesc "Ampliació de la font. Predeterminat = 1."
+ frontend_max_login_attempts: "Nombre màxim d'intents d'iniciar sessió al front-end. Predeterminat = 5."
+ frontend_remotes: "Una llista de les adreces utilitzades per l'actualitzador per obtenir les metadades dels components. És possible que s'hagi d'ajustar quan s'actualitzi a una versió principal nova, o quan s'adquireixi una font nova per a actualitzacions, però en circumstàncies normals s'ha de deixar sol."
+ frontend_signatures_update_event_log: "Un fitxer per registrar quan les signatures s'actualitzen a través del front-end. Especifiqueu un nom de fitxer, o deixeu-lo en blanc per desactivar-lo."
+ frontend_theme: "El tema predeterminat que s'utilitza per a la front-end."
  general: "Configuració general (qualsevol configuració bàsica que no pertanyi a altres categories)."
+ general_allow_gethostbyaddr_lookup: "Permetre cerques mitjançant gethostbyaddr quan UDP no està disponible? True/Cert = Sí [Predeterminat]; False/Fals = No."
+ general_ban_override: "Substituïu "http_response_header_code" quan se superi "infraction_limit"? 200 = No substituïu [Predeterminat]. Altres valors són els mateixos que els valors disponibles per a "http_response_header_code"."
+ general_default_algo: "Defineix quin algorisme utilitzar per a totes les contrasenyes i sessions futures."
+ general_default_dns: "Una llista de servidors DNS que s'utilitzen per a les cerques de noms d'amfitrió. ADVERTIMENT: No canvieu això tret que sàpigues què estàs fent!"
+ general_default_timeout: "Temps d'espera predeterminat per utilitzar per a sol·licituds externes? Predeterminat = 12 segons."
+ general_disabled_channels: "Això es pot utilitzar per evitar que CIDRAM utilitzi canals concrets quan s'envien sol·licituds (per exemple, en actualitzar, en obtenir metadades de components, etc)."
+ general_email_notification_address: "Si heu optat per rebre notificacions de CIDRAM per correu electrònic, per exemple, quan es desencadenen regles auxiliars específiques, podeu especificar l'adreça del destinatari d'aquestes notificacions aquí."
+ general_email_notification_name: "Si heu optat per rebre notificacions de CIDRAM per correu electrònic, per exemple, quan es desencadenen regles auxiliars específiques, podeu especificar el nom del destinatari d'aquestes notificacions aquí."
+ general_emailaddr: "Si ho desitgeu, podeu proporcionar una adreça de correu electrònic aquí per donar-la als usuaris quan estiguin bloquejats, per ser utilitzat com a punt de contacte de suport i/o assistència en cas de bloqueig per error. ADVERTIMENT: Qualsevol adreça de correu electrònic que proporcioneu aquí, segurament serà adquirida pels robots de correu brossa i els scrapers durant el seu ús aquí, i per tant, si trieu proporcionar una adreça de correu electrònic aquí, us recomanem que us assegureu que l'adreça de correu electrònic proporcionada aquí és d'un sol ús o una adreça que no t'importa que estigui sotmesa a correu brossa (és a dir, és probable que no vulgueu utilitzar les vostres adreces de correu electrònic personals o empresarials principals)."
+ general_emailaddr_display_style: "Com preferiries que es presentés l'adreça de correu electrònic als usuaris?"
+ general_fields: "Controls dels camps durant els esdeveniments de bloqueig (quan es bloqueja una sol·licitud)."
+ general_force_hostname_lookup: "Forçar les cerques de noms d'amfitrió? True/Cert = Sí; False/Fals = No [Predeterminat]. Les cerques de noms d'amfitrió normalment es realitzen "segons sigui necessari", però es poden forçar per a totes les sol·licituds. Fer-ho pot ser útil com a mitjà per proporcionar informació més detallada als fitxers de registre, però també pot tenir un efecte lleugerament negatiu en el rendiment."
+ general_http_response_header_code: "Quin missatge d'estat HTTP hauria d'enviar CIDRAM quan es bloquegen les sol·licituds?"
+ general_ipaddr: "On trobar l'adreça IP de les sol·licituds de connexió? (Útil per a serveis com Cloudflare i similars). Predeterminat = REMOTE_ADDR. ADVERTIMENT: No canvieu això tret que sàpigues què estàs fent!"
+ general_lang: "Especifiqueu l'idioma predeterminat per a CIDRAM."
+ general_lang_override: "Localitzar segons HTTP_ACCEPT_LANGUAGE sempre que sigui possible? True/Cert = Sí [Predeterminat]; False/Fals = No."
+ general_numbers: "Com prefereixes que es mostrin els números? Seleccioneu l'exemple que us sembli més correcte."
+ general_sensitive: "Una llista de camins a considerar com a pàgines sensibles. Cada camí llistat es comprovarà amb l'URI reconstruït quan sigui necessari. Un camí que comença amb una barra inclinada es tractarà com un literal, i es farà coincidir a partir del component del camí de la sol·licitud. En cas contrari, un camí que comença amb un caràcter no alfanumèric i acaba amb el mateix caràcter (o el mateix caràcter més un indicador "i" opcional) es tractarà com una expressió regular. Qualsevol altre tipus de camí es tractarà com a literal, i pot coincidir amb qualsevol part de l'URI. El fet que un camí es consideri una pàgina sensible pot afectar el comportament d'alguns mòduls, però no té cap efecte en cas contrari."
+ general_silent_mode: "CIDRAM hauria de redirigir en silenci els intents d'accés bloquejats en lloc de mostrar la pàgina "accés denegat"? En cas afirmatiu, especifiqueu la ubicació a la qual redirigir els intents d'accés bloquejats. Si no, deixeu aquesta variable en blanc."
+ general_silent_mode_response_header_code: "Quin missatge d'estat HTTP hauria d'enviar CIDRAM quan redirigeixi silenciosament els intents d'accés bloquejat?"
+ general_stages: "Controls per a les etapes de la cadena d'execució (si estan habilitades, si es registren errors, etc)."
+ general_statistics: "Controla quina informació estadística cal fer el seguiment."
+ general_time_format: "El format de notació de data/hora utilitzat per CIDRAM. Es poden afegir opcions addicionals a petició."
+ general_time_offset: "Desplaçament de la zona horària en minuts."
+ general_timezone: "S'utilitza per especificar la zona horària a utilitzar (per exemple, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, etc). Especifiqueu "SYSTEM" per tal que PHP ho gestioni automàticament."
+ hcaptcha: "Configuració per a HCaptcha (proporciona una manera perquè els humans recuperin l'accés quan estan bloquejats)."
+ hcaptcha_api: &CaptchaAPI "Quina API utilitzar?"
+ hcaptcha_expiry: &CaptchaExpiry "Nombre d'hores per recordar instàncies de CAPTCHA. Predeterminat = 720 (1 mes)."
+ hcaptcha_hcaptcha_log: &CaptchaLogFile "Registrar tots els intents de CAPTCHA? En cas afirmatiu, especifiqueu el nom que voleu utilitzar per al fitxer de registre. Si no, deixeu aquesta variable en blanc."
+ hcaptcha_lockip: &CaptchaLockIP "Lligar els CAPTCHA a les adreces IP?"
+ hcaptcha_lockuser: &CaptchaLockUser "Lligar els CAPTCHA als usuaris?"
+ hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "Quin codi d'estat s'ha d'utilitzar quan es mostren CAPTCHA a sol·licituds no bloquejades?"
+ hcaptcha_secret: &CaptchaDashboard "Aquest valor es pot trobar al tauler del vostre servei CAPTCHA."
+ hcaptcha_show_api_message: &ShowAPIMessage "Mostra el missatge de l'API? True/Cert = Sí [Predeterminat]; False/Fals = No."
+ hcaptcha_show_cookie_warning: &ShowCookieWarning "Mostra l'advertència de galetes? True/Cert = Sí [Predeterminat]; False/Fals = No."
+ hcaptcha_signature_limit: &CaptchaSignatureLimit "Nombre màxim de signatures permeses abans de la retirada de l'oferta CAPTCHA. Predeterminat = 1."
+ hcaptcha_sitekey: *CaptchaDashboard
+ hcaptcha_usemode: &CaptchaUseMode "Quan s'ha d'oferir el CAPTCHA? Nota: Les sol·licituds a la llista blanca o verificades i no bloquejades no necessiten mai completar un CAPTCHA. També tingueu en compte: Els CAPTCHA poden proporcionar una capa addicional de protecció útil contra els robots i diversos tipus de sol·licituds automatitzades malicioses, però no proporcionaran cap protecció contra un humà maliciós."
+ ipapi: "Configuració del mòdul IP-API (proporciona una funció de cerca d'ASN i codi de país per a CIDRAM)."
+ ipapi_blocked_asns: *ConfigBlockedASNs
+ ipapi_blocked_ccs: *ConfigBlockedCCs
+ ipapi_whitelisted_asns: *ConfigWhitelistedASNs
+ ipapi_whitelisted_ccs: *ConfigWhitelistedCCs
+ legal: "Configuració per requisits legals."
+ legal_privacy_policy: "L'adreça d'una política de privadesa rellevant que es mostrarà al peu de qualsevol pàgina generada. Especifiqueu un URL, o deixeu-lo en blanc per desactivar-lo."
+ legal_pseudonymise_ip_addresses: "Pseudonimitzar les adreces IP en registrar dades? True/Cert = Sí [Predeterminat]; False/Fals = No."
+ logging: "Configuració relacionada amb el registre (exclosa la aplicable a altres categories)."
+ logging_apache_style_log: "Fitxer d'estil Apache per registrar tots els intents d'accés bloquejats. Especifiqueu un nom de fitxer, o deixeu-lo en blanc per desactivar-lo."
+ logging_error_log: "Un fitxer per registrar qualsevol error no fatal detectat. Especifiqueu un nom de fitxer, o deixeu-lo en blanc per desactivar-lo."
+ logging_log_banned_ips: "Inclou les sol·licituds bloquejades d'adreces IP prohibides als registres? True/Cert = Sí [Predeterminat]; False/Fals = No."
+ logging_log_rotation_action: "La rotació del registre limita el nombre de fitxers de registre que haurien d'existir en un moment determinat. Quan es creen fitxers de registre nous, si el nombre total de fitxers de registre supera el límit especificat, es realitzarà l'acció especificada. Aquí podeu especificar l'acció desitjada."
+ logging_log_rotation_limit: "La rotació del registre limita el nombre de fitxers de registre que haurien d'existir en un moment determinat. Quan es creen fitxers de registre nous, si el nombre total de fitxers de registre supera el límit especificat, es realitzarà l'acció especificada. Aquí podeu especificar el límit desitjat. Un valor de 0 desactivarà la rotació del registre."
+ logging_log_sanitisation: "Quan s'utilitza la pàgina de registres per veure les dades de registre, CIDRAM desinfecta les dades de registre abans de mostrar-les, per protegir els usuaris dels atacs XSS i altres amenaces potencials que podrien contenir les dades de registre. Tanmateix, de manera predeterminada, les dades no es desinfecten durant el registre. Això és per garantir que les dades de registre es conserven amb precisió, per ajudar a qualsevol anàlisi heurística o forense que pugui ser necessària en el futur. Tanmateix, en el cas que un usuari intenti llegir dades de registre mitjançant eines externes, i si aquestes eines externes no realitzen el seu propi procés de desinfecció, l'usuari podria estar exposat a atacs XSS. Si cal, podeu canviar el comportament predeterminada mitjançant aquesta directiva de configuració. True/Cert = Desinfecteu les dades quan les registreu (les dades es conserven amb menys precisió, però el risc de XSS és menor). False/Fals = No desinfecteu les dades quan les registreu (les dades es conserven amb més precisió, però el risc de XSS és més gran) [Predeterminat]."
+ logging_outbound_request_log: "Un fitxer per registrar els resultats de qualsevol sol·licitud de sortida. Especifiqueu un nom de fitxer, o deixeu-lo en blanc per desactivar-lo."
+ logging_report_log: "Un fitxer per registrar qualsevol informe enviat a API externes. Especifiqueu un nom de fitxer, o deixeu-lo en blanc per desactivar-lo."
+ logging_serialised_log: "Fitxer serialitzat per registrar tots els intents d'accés bloquejats. Especifiqueu un nom de fitxer, o deixeu-lo en blanc per desactivar-lo."
+ logging_standard_log: "Fitxer llegible per humans per registrar tots els intents d'accés bloquejats. Especifiqueu un nom de fitxer, o deixeu-lo en blanc per desactivar-lo."
+ logging_truncate: "Tronqueu els fitxers de registre quan arribin a una mida determinada? El valor és la mida màxima en B/KB/MB/GB/TB que pot créixer un fitxer de registre abans de ser truncat. El valor predeterminat de 0KB desactiva el truncament (els fitxers de registre poden créixer indefinidament). Nota: S'aplica als fitxers de registre individuals! La mida dels fitxers de registre no es considera col·lectivament."
  phpmailer: "Configuració per a PHPMailer (s'utilitza per a l'autenticació de dos factors i per a les notificacions per correu electrònic)."
  phpmailer_add_reply_to_address: "L'adreça de resposta a citar quan s'envia un correu electrònic mitjançant SMTP."
  phpmailer_add_reply_to_name: "El nom de resposta a citar quan s'envia un correu electrònic mitjançant SMTP."
- phpmailer_event_log: "Un fitxer per registrar tots els esdeveniments relacionats amb PHPMailer. Especifiqueu un nom de fitxer o deixeu-lo en blanc per desactivar-lo."
+ phpmailer_event_log: "Un fitxer per registrar tots els esdeveniments relacionats amb PHPMailer. Especifiqueu un nom de fitxer, o deixeu-lo en blanc per desactivar-lo."
  phpmailer_host: "L'amfitrió SMTP que cal utilitzar per al correu electrònic de sortida."
  phpmailer_password: "La contrasenya que s'ha d'utilitzar per enviar correu electrònic mitjançant SMTP."
  phpmailer_port: "El número de port que cal utilitzar per al correu electrònic de sortida. Predeterminat = 587."
@@ -187,6 +254,37 @@ config:
  phpmailer_smtp_auth: "Aquesta directiva determina si s'han d'autenticar les sessions SMTP (normalment s'ha de deixar sol)."
  phpmailer_smtp_secure: "El protocol que s'ha d'utilitzar per enviar correu electrònic mitjançant SMTP (TLS o SSL)."
  phpmailer_username: "El nom d'usuari que s'ha d'utilitzar per enviar correu electrònic mitjançant SMTP."
+ projecthoneypot: "Configuració del mòdul Project Honeypot."
+ projecthoneypot_api_key: *EnterAPIKey
+ projecthoneypot_max_age_in_days: "L'edat màxima en dies per a la qual es tindran en compte els informes a l'hora de realitzar cerques. Predeterminat = 365."
+ projecthoneypot_max_ts_for_captcha: "La puntuació màxima d'amenaça permesa per rebre un CAPTCHA (ha de ser un nombre entre 1 i 100). Predeterminat = 10."
+ projecthoneypot_minimum_threat_score: "La puntuació mínima d'amenaça necessària perquè CIDRAM bloqueja una adreça IP (ha de ser un nombre entre 1 i 100). Predeterminat = 10."
+ projecthoneypot_type_of_visitor: "Controls per bloquejar o perfilar en funció del tipus de visitant determinat pel Project Honeypot."
+ protocol: "Configuració del mòdul bloquejador de protocols."
+ protocol_blocked: "Els protocols seleccionats seran bloquejats. Nota: No tindrà cap efecte per a aquells llocs web que s'enruten a través de serveis que reescriguin les sol·licituds per utilitzen exactament el mateix protocol, com ara Cloudflare."
+ protocol_reason_message: "El missatge del motiu que es mostra quan es bloquegen aquestes sol·licituds."
+ rate_limiting: "Configuració per a la limitació de la tarifa (no recomanada per a ús general)."
+ rate_limiting_allowance_period: "La durada per fer el seguiment de l'ús. Predeterminat = 0°0′0″."
+ rate_limiting_exceptions: "Excepcions (és a dir, sol·licituds que no s'han de limitar). Rellevant només quan la limitació de la tarifa està activada."
+ rate_limiting_max_bandwidth: "La quantitat màxima d'ample de banda permesa dins del període d'autorització abans de la limitació de les sol·licituds futures. Un valor de 0 desactiva aquest tipus de limitació de la tarifa. Predeterminat = 0KB."
+ rate_limiting_max_requests: "El nombre màxim de sol·licituds permeses dins del període d'autorització abans de la limitació de les sol·licituds futures. Un valor de 0 desactiva aquest tipus de limitació de la tarifa. Predeterminat = 0."
+ rate_limiting_precision_ipv4: "La precisió a utilitzar per fer el seguiment de l'ús d'IPv4. El valor reflecteix la mida del bloc CIDR. Establiu a 32 per obtenir la millor precisió. Predeterminat = 32."
+ rate_limiting_precision_ipv6: "La precisió a utilitzar per fer el seguiment de l'ús d'IPv6. El valor reflecteix la mida del bloc CIDR. Establiu a 128 per obtenir la millor precisió. Predeterminat = 128."
+ rate_limiting_segregate: "Les quotes per a diferents dominis i amfitrions s'han de separar o compartir? True/Cert = Les quotes estaran separades. False/Fals = Les quotes estaran compartit [Predeterminat]."
+ recaptcha: "Configuració per a ReCaptcha (proporciona una manera perquè els humans recuperin l'accés quan estan bloquejats)."
+ recaptcha_api: *CaptchaAPI
+ recaptcha_expiry: *CaptchaExpiry
+ recaptcha_lockip: *CaptchaLockIP
+ recaptcha_lockuser: *CaptchaLockUser
+ recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
+ recaptcha_recaptcha_log: *CaptchaLogFile
+ recaptcha_secret: *CaptchaDashboard
+ recaptcha_show_api_message: *ShowAPIMessage
+ recaptcha_show_cookie_warning: *ShowCookieWarning
+ recaptcha_signature_limit: *CaptchaSignatureLimit
+ recaptcha_sitekey: *CaptchaDashboard
+ recaptcha_usemode: *CaptchaUseMode
+ sfs: "Configuració del mòdul Stop Forum Spam."
 warning:
  API_Rate_Limited: "Avís: Sembla que actualment l'accés a l'API %s està limitat."
  Cookies: "Nota: CIDRAM utilitza una cookie per autenticar els inicis de sessió. En iniciar sessió, doneu el vostre consentiment perquè el vostre navegador creï i emmagatzemi una cookie."

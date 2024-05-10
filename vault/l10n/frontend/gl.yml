@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Galician language data for the front-end (last modified: 2024.05.04).
+# This file: Galician language data for the front-end (last modified: 2024.05.10).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -173,7 +173,74 @@ config:
  extras_signatures_raw: "Sinaturas baseadas na entrada de solicitude sen procesar."
  extras_signatures_ruri: "Sinaturas baseadas en URI reconstruídos."
  frontend: "Configuración para o front-end."
+ frontend_custom_footer: "Inseriuse como HTML na parte inferior de todas as páxinas do front-end. Isto pode ser útil no caso de que queiras incluír un aviso legal, ligazón de contacto, información comercial, ou similares en todas esas páxinas."
+ frontend_custom_header: "Inseriuse como HTML ao comezo de todas as páxinas do front-end. Isto pode ser útil no caso de que queiras incluír un logotipo do sitio web, un encabezado personalizado, guións, ou similares en todas esas páxinas."
+ frontend_enable_two_factor: "Esta directiva determina se se debe usar 2FA para as contas front-end."
+ frontend_frontend_log: "Ficheiro para rexistrar todos os intentos de iniciar sesión na front-end. Especifique un nome de ficheiro, ou déixeo en branco para desactivalo."
+ frontend_magnification: &MagnifDesc "Ampliación da fonte. Predeterminado = 1."
+ frontend_max_login_attempts: "Número máximo de intentos para iniciar sesión na front-end. Predeterminado = 5."
+ frontend_remotes: "Unha lista dos enderezos utilizados polo actualizador para obter metadatos de compoñentes. É posible que teña que axustarse cando se actualice a unha nova versión principal, ou cando se adquira unha nova fonte de actualizacións, pero en circunstancias normais debe deixarse ​​só."
+ frontend_signatures_update_event_log: "Un ficheiro para rexistrar cando se actualizan as sinaturas a través do front-end. Especifique un nome de ficheiro, ou déixeo en branco para desactivalo."
+ frontend_theme: "O tema predeterminado a usar para o front-end."
  general: "Configuración xeral (calquera configuración básica non pertencente a outras categorías)."
+ general_allow_gethostbyaddr_lookup: "Permitir buscas mediante gethostbyaddr cando UDP non estea dispoñible? True/Verdadeiro = Si [Predeterminado]; False/Falso = Non."
+ general_ban_override: "Substitúe "http_response_header_code" cando se supere "infraction_limit"? 200 = Non substituír [Predeterminado]. Outros valores son os mesmos que os valores dispoñibles para "http_response_header_code"."
+ general_default_algo: "Define que algoritmo usar para todos os contrasinais e sesións futuras."
+ general_default_dns: "Unha lista de servidores DNS para usar para buscar nomes de host. AVISO: Non cambies isto a menos que saibas o que estás facendo!"
+ general_default_timeout: "Tempo de espera predeterminado para usar para solicitudes externas? Predeterminado = 12 segundos."
+ general_disabled_channels: "Pódese usar para evitar que CIDRAM use determinadas canles ao enviar solicitudes (por exemplo, ao actualizar, ao obter metadatos de compoñentes, etc)."
+ general_email_notification_address: "Se optou por recibir notificacións de CIDRAM por correo electrónico, por exemplo, cando se desencadean regras auxiliares específicas, pode especificar aquí o enderezo do destinatario para esas notificacións."
+ general_email_notification_name: "Se optou por recibir notificacións de CIDRAM por correo electrónico, por exemplo, cando se desencadean regras auxiliares específicas, pode especificar aquí o nome do destinatario para esas notificacións."
+ general_emailaddr: "Se o desexa, pode proporcionar aquí un enderezo de correo electrónico para que se lle proporcione aos usuarios cando estean bloqueados, para ser utilizado como punto de contacto de apoio e/ou asistencia en caso de que sexan bloqueados por erro. AVISO: Calquera que sexa o enderezo de correo electrónico que proporciones aquí, seguramente será adquirido por spambots e scrapers durante o seu uso aquí e, por conseguinte, se decides proporcionar un enderezo de correo electrónico aquí, recoméndase encarecidamente que te asegures de que o enderezo de correo electrónico proporcionado aquí sexa desbotable ou un enderezo que non lle importa que sexa obxecto de spam (noutras palabras, probablemente non queira utilizar os seus enderezos de correo electrónico persoais ou empresariais principais)."
+ general_emailaddr_display_style: "Como preferirías que se lles presentase o enderezo de correo electrónico aos usuarios?"
+ general_fields: "Controis para os campos durante eventos de bloqueo (cando se bloquea unha solicitude)."
+ general_force_hostname_lookup: "Forzar buscas de nomes de host? True/Verdadeiro = Si; False/Falso = Non [Predeterminado]. As buscas de nomes de host normalmente realízanse "según sexa necesario", pero pódense forzar para todas as solicitudes. Facelo pode ser útil como medio para proporcionar información máis detallada nos ficheiros de rexistro, pero tamén pode ter un efecto lixeiramente negativo no rendemento."
+ general_http_response_header_code: "Que mensaxe de estado HTTP debe enviar CIDRAM ao bloquear solicitudes?"
+ general_ipaddr: "Onde atopar o enderezo IP das solicitudes de conexión? (Útil para servizos como Cloudflare e similares). Predeterminado = REMOTE_ADDR. AVISO: Non cambies isto a menos que saibas o que estás facendo!"
+ general_lang: "Especifique o idioma predeterminado para CIDRAM."
+ general_lang_override: "Localizar segundo HTTP_ACCEPT_LANGUAGE sempre que sexa posible? True/Verdadeiro = Si [Predeterminado]; False/Falso = Non."
+ general_numbers: "Como prefires que se mostren os números? Selecciona o exemplo que che pareza máis correcto."
+ general_sensitive: "Unha lista de camiños para considerar páxinas sensibles. Cada camiño listada comprobarase co URI reconstruído cando sexa necesario. Un camiño que comeza cunha barra inclinada será tratado como un literal, e corresponderá a partir do compoñente de camiño da solicitude. En caso contrario, un camiño que comeza cun carácter non alfanumérico e remata con ese mesmo carácter (ou ese mesmo carácter máis unha marca "i" opcional) tratarase como unha expresión regular. Calquera outro tipo de camiño tratarase como un literal, e pode coincidir con calquera parte do URI. Se un camiño é considerado como unha páxina sensible pode afectar o comportamento dalgúns módulos, pero non ten ningún efecto doutro xeito."
+ general_silent_mode: "Debería CIDRAM redirixir silenciosamente os intentos de acceso bloqueados en lugar de mostrar a páxina "acceso denegado"? Se si, especifique a localización á que redirixir os intentos de acceso bloqueado. Se non, deixe esta variable en branco."
+ general_silent_mode_response_header_code: "Que mensaxe de estado HTTP debe enviar CIDRAM cando redirecciona silenciosamente os intentos de acceso bloqueado?"
+ general_stages: "Controis para as fases da cadea de execución (se está activada, se se rexistran erros, etc)."
+ general_statistics: "Controla que información estatística debe facer un seguimento."
+ general_time_format: "O formato de notación de data/hora utilizado por CIDRAM. Pódense engadir opcións adicionais previa solicitude."
+ general_time_offset: "Desfase de fuso horario en minutos."
+ general_timezone: "Utilízase para especificar a zona horaria a utilizar (por exemplo, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, etc). Especifique "SYSTEM" para que PHP se ocupe de isto automaticamente."
+ hcaptcha: "Configuración para HCaptcha (ofrece unha forma de que os humanos recuperen o acceso cando se bloquean)."
+ hcaptcha_api: &CaptchaAPI "Que API usar?"
+ hcaptcha_expiry: &CaptchaExpiry "Número de horas para lembrar instancias de CAPTCHA. Predeterminado = 720 (1 mes)."
+ hcaptcha_hcaptcha_log: &CaptchaLogFile "Rexistrar todos os intentos de CAPTCHA? Se si, especifique o nome a usar para o ficheiro de rexistro. Se non, deixe esta variable en branco."
+ hcaptcha_lockip: &CaptchaLockIP "Vincular os CAPTCHA aos enderezos IP?"
+ hcaptcha_lockuser: &CaptchaLockUser "Vincular os CAPTCHA aos usuarios?"
+ hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "Que código de estado se debe usar cando se mostran CAPTCHA a solicitudes non bloqueadas?"
+ hcaptcha_secret: &CaptchaDashboard "Este valor pódese atopar no panel do teu servizo CAPTCHA."
+ hcaptcha_show_api_message: &ShowAPIMessage "Mostrar a mensaxe da API? True/Verdadeiro = Si [Predeterminado]; False/Falso = Non."
+ hcaptcha_show_cookie_warning: &ShowCookieWarning "Mostrar aviso de cookies? True/Verdadeiro = Si [Predeterminado]; False/Falso = Non."
+ hcaptcha_signature_limit: &CaptchaSignatureLimit "Número máximo de sinaturas permitido antes de que se retire a oferta CAPTCHA. Predeterminado = 1."
+ hcaptcha_sitekey: *CaptchaDashboard
+ hcaptcha_usemode: &CaptchaUseMode "Cando se debe ofrecer o CAPTCHA? Nota: As solicitudes na lista branca ou verificadas e non bloqueadas nunca precisan completar un CAPTCHA. Teña en conta tamén: Os CAPTCHA poden proporcionar unha capa adicional útil de protección contra bots e varios tipos de solicitudes automatizadas maliciosas, pero non proporcionarán ningunha protección contra un humano malintencionado."
+ ipapi: "Configuración para o módulo IP-API (ofrece unha función de busca de código de país e ASN para CIDRAM)."
+ ipapi_blocked_asns: *ConfigBlockedASNs
+ ipapi_blocked_ccs: *ConfigBlockedCCs
+ ipapi_whitelisted_asns: *ConfigWhitelistedASNs
+ ipapi_whitelisted_ccs: *ConfigWhitelistedCCs
+ legal: "Configuración para requisitos legais."
+ legal_privacy_policy: "O enderezo dunha política de privacidade relevante que se mostrará no pé de calquera páxina xerada. Especifique un URL, ou déixao en branco para desactivalo."
+ legal_pseudonymise_ip_addresses: "Pseudonimizar enderezos IP ao rexistrar datos? True/Verdadeiro = Si [Predeterminado]; False/Falso = Non."
+ logging: "Configuración relacionada co rexistro (excluída a aplicable a outras categorías)."
+ logging_apache_style_log: "Ficheiro estilo Apache para rexistrar todos os intentos de acceso bloqueado. Especifique un nome de ficheiro, ou déixeo en branco para desactivalo."
+ logging_error_log: "Un ficheiro para rexistrar os erros non graves detectados. Especifique un nome de ficheiro, ou déixeo en branco para desactivalo."
+ logging_log_banned_ips: "Incluír solicitudes bloqueadas de enderezos IP prohibidos nos rexistros? True/Verdadeiro = Si [Predeterminado]; False/Falso = Non."
+ logging_log_rotation_action: "A rotación do rexistro limita o número de ficheiros de rexistro que deberían existir en cada momento. Cando se crean novos ficheiros de rexistro, se o número total de ficheiros de rexistro supera o límite especificado, realizarase a acción especificada. Podes especificar a acción desexada aquí."
+ logging_log_rotation_limit: "A rotación do rexistro limita o número de ficheiros de rexistro que deberían existir en cada momento. Cando se crean novos ficheiros de rexistro, se o número total de ficheiros de rexistro supera o límite especificado, realizarase a acción especificada. Podes especificar o límite desexado aquí. Un valor de 0 desactivará a rotación do rexistro."
+ logging_log_sanitisation: "Cando se utiliza a páxina de rexistros para ver os datos de rexistro, CIDRAM depura os datos de rexistro antes de mostralos, para protexer aos usuarios dos ataques XSS e doutras ameazas potenciais que poidan conter os datos de rexistro. Dito isto, como estándar, os datos non se desinfectan durante o rexistro. Isto é para garantir que os datos de rexistro se conserven con precisión, para axudar a calquera análise heurística ou forense que poida ser necesaria no futuro. Non obstante, no caso de que un usuario intente ler os datos de rexistro mediante ferramentas externas, e se esas ferramentas externas non realizan o seu propio proceso de desinfección, o usuario podería estar exposto a ataques XSS. Se é necesario, pode cambiar o comportamento predeterminado usando esta directiva de configuración. True/Verdadeiro = Desinfecte os datos ao rexistralos (os datos consérvanse con menos precisión, pero o risco de XSS é menor). False/Falso = Non desinfecte os datos ao rexistralos (os datos consérvanse con máis precisión, pero o risco de XSS é maior) [Predeterminado]."
+ logging_outbound_request_log: "Un ficheiro para rexistrar os resultados de calquera solicitude de saída. Especifique un nome de ficheiro, ou déixeo en branco para desactivalo."
+ logging_report_log: "Un ficheiro para rexistrar os informes enviados a API externas. Especifique un nome de ficheiro, ou déixeo en branco para desactivalo."
+ logging_serialised_log: "Ficheiro serializado para rexistrar todos os intentos de acceso bloqueados. Especifique un nome de ficheiro, ou déixeo en branco para desactivalo."
+ logging_standard_log: "Ficheiro lexible por humanos para rexistrar todos os intentos de acceso bloqueados. Especifique un nome de ficheiro, ou déixeo en branco para desactivalo."
+ logging_truncate: "Truncar os ficheiros de rexistro cando alcanzan un determinado tamaño? O valor é o tamaño máximo en B/KB/MB/GB/TB ao que pode crecer un ficheiro de rexistro antes de ser truncado. O valor predeterminado de 0KB desactiva o truncamento (os ficheiros de rexistro poden crecer indefinidamente). Nota: Aplícase aos ficheiros de rexistro individuais! O tamaño dos ficheiros de rexistro non se considera colectivamente."
  phpmailer: "Configuración para PHPMailer (usado para a autenticación de dous factores e para as notificacións por correo electrónico)."
  phpmailer_add_reply_to_address: "O enderezo de resposta a citar ao enviar correo electrónico a través de SMTP."
  phpmailer_add_reply_to_name: "O nome da resposta a citar ao enviar correo electrónico a través de SMTP."
@@ -187,6 +254,37 @@ config:
  phpmailer_smtp_auth: "Esta directiva determina se autenticar sesións SMTP (normalmente debería deixarse só)."
  phpmailer_smtp_secure: "O protocolo a utilizar ao enviar correo electrónico a través de SMTP (TLS ou SSL)."
  phpmailer_username: "O nome de usuario que se utilizará ao enviar correo electrónico a través de SMTP."
+ projecthoneypot: "Configuración para o módulo Project Honeypot."
+ projecthoneypot_api_key: *EnterAPIKey
+ projecthoneypot_max_age_in_days: "A idade máxima en días para a que se terán en conta os informes ao realizar buscas. Predeterminado = 365."
+ projecthoneypot_max_ts_for_captcha: "A puntuación máxima de ameaza permitida para recibir un CAPTCHA (debe ser un número entre 1 e 100). Predeterminado = 10."
+ projecthoneypot_minimum_threat_score: "A puntuación mínima de ameaza necesaria para que CIDRAM bloquee un enderezo IP (debe ser un número entre 1 e 100). Predeterminado = 10."
+ projecthoneypot_type_of_visitor: "Controis para bloquear ou perfilar en función do tipo de visitante determinado polo Project Honeypot."
+ protocol: "Configuración para o módulo bloqueador de protocolos."
+ protocol_blocked: "Bloquearanse os protocolos seleccionados. Nota: Non terá ningún efecto para aqueles sitios web que enrutan a través de servizos que reescriben solicitudes para usen o mesmo protocolo, como Cloudflare."
+ protocol_reason_message: "A mensaxe de motivo que se mostra cando se bloquean tales solicitudes."
+ rate_limiting: "Configuración para a limitación da taxa (non recomendada para uso xeral)."
+ rate_limiting_allowance_period: "A duración para rastrexar o uso. Predeterminado = 0°0′0″."
+ rate_limiting_exceptions: "Excepcións (é dicir, solicitudes que non deben limitarse). Relevante só cando a limitación da taxa está activada."
+ rate_limiting_max_bandwidth: "A cantidade máxima de ancho de banda permitida dentro do período autorizado antes de limitar as solicitudes futuras. Un valor de 0 desactiva este tipo de limitación de taxa. Predeterminado = 0KB."
+ rate_limiting_max_requests: "O número máximo de solicitudes permitidas dentro do período autorizado antes de limitar as solicitudes futuras. Un valor de 0 desactiva este tipo de limitación de taxa. Predeterminado = 0."
+ rate_limiting_precision_ipv4: "A precisión a usar para rastrexar o uso de IPv4. O valor reflicte o tamaño do bloque CIDR. Establécese en 32 para obter a mellor precisión. Predeterminado = 32."
+ rate_limiting_precision_ipv6: "A precisión a usar para rastrexar o uso de IPv6. O valor reflicte o tamaño do bloque CIDR. Establécese en 128 para obter a mellor precisión. Predeterminado = 128."
+ rate_limiting_segregate: "Débense segregar ou compartir as cotas para diferentes dominios e servidores? True/Verdadeiro = As cotas serán segregadas. False/Falso = As cotas serán compartidas [Predeterminado]."
+ recaptcha: "Configuración para ReCaptcha (ofrece unha forma de que os humanos recuperen o acceso cando se bloquean)."
+ recaptcha_api: *CaptchaAPI
+ recaptcha_expiry: *CaptchaExpiry
+ recaptcha_lockip: *CaptchaLockIP
+ recaptcha_lockuser: *CaptchaLockUser
+ recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
+ recaptcha_recaptcha_log: *CaptchaLogFile
+ recaptcha_secret: *CaptchaDashboard
+ recaptcha_show_api_message: *ShowAPIMessage
+ recaptcha_show_cookie_warning: *ShowCookieWarning
+ recaptcha_signature_limit: *CaptchaSignatureLimit
+ recaptcha_sitekey: *CaptchaDashboard
+ recaptcha_usemode: *CaptchaUseMode
+ sfs: "Configuración para o módulo Stop Forum Spam."
 warning:
  API_Rate_Limited: "Aviso: Parece que o acceso á API %s está actualmente limitado."
  Cookies: "Nota: CIDRAM usa unha cookie para autenticar os inicios de sesión. Ao iniciar sesión, dás o teu consentimento para que o teu navegador cree e almacene unha cookie."

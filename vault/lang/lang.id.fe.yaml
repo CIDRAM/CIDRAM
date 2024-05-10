@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2024.05.04).
+# This file: Indonesian language data for the front-end (last modified: 2024.05.07).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -122,7 +122,7 @@ config_general_lang_override: "Melokalisasikan sesuai dengan HTTP_ACCEPT_LANGUAG
 config_general_log_banned_ips: "Termasuk permintaan diblokir dari IP dilarang dalam file log? True = Ya [Default]; False = Tidak."
 config_general_log_rotation_action: "Rotasi log membatasi jumlah file log yang seharusnya ada pada satu waktu. Ketika file log baru dibuat, jika jumlah total file log melebihi batas yang ditentukan, tindakan yang ditentukan akan dilakukan. Anda dapat menentukan tindakan yang diinginkan disini."
 config_general_log_rotation_limit: "Rotasi log membatasi jumlah file log yang seharusnya ada pada satu waktu. Ketika file log baru dibuat, jika jumlah total file log melebihi batas yang ditentukan, tindakan yang ditentukan akan dilakukan. Anda dapat menentukan batas yang diinginkan disini. Nilai 0 akan menonaktifkan rotasi log."
-config_general_log_sanitisation: "Saat menggunakan halaman log untuk melihat data log, CIDRAM mensanitasikan data log sebelum menampilkannya, untuk melindungi pengguna dari serangan XSS dan potensi ancaman lain yang bisa terkandung dalam data tersebut. Namun, secara default, data tidak disanitasikan selama pencatatan. Ini untuk memastikan bahwa data log dicatatan secara akurat, untuk membantu analisis heuristik atau forensik yang mungkin diperlukan di masa depan. Namun, jika pengguna mencoba membaca data log menggunakan alat eksternal, dan jika alat eksternal itu tidak melakukan proses sanitasi sendiri, pengguna bisa terkena serangan XSS. Jika perlu, Anda dapat mengubah perilaku default menggunakan direktif konfigurasi ini. True = Mensanitasikan data saat mencatatnya (data disimpan kurang akurat, tetapi risiko XSS lebih rendah). False = Jangan mensanitasikan data saat mencatatnya (data disimpan lebih akurat, tetapi risiko XSS lebih tinggi) [Default]."
+config_general_log_sanitisation: "Saat menggunakan halaman log untuk melihat data log, CIDRAM mensanitasikan data log sebelum menampilkannya, untuk melindungi pengguna dari serangan XSS dan potensi ancaman lain yang bisa terkandung dalam data tersebut. Namun, secara default, data tidak disanitasikan selama pencatatan. Ini untuk memastikan bahwa data log dicatat secara akurat, untuk membantu analisis heuristik atau forensik yang mungkin diperlukan di masa depan. Namun, jika pengguna mencoba membaca data log menggunakan alat eksternal, dan jika alat eksternal itu tidak melakukan proses sanitasi sendiri, pengguna bisa terkena serangan XSS. Jika perlu, Anda dapat mengubah perilaku default menggunakan direktif konfigurasi ini. True = Mensanitasikan data saat mencatatnya (data disimpan kurang akurat, tetapi risiko XSS lebih rendah). False = Jangan mensanitasikan data saat mencatatnya (data disimpan lebih akurat, tetapi risiko XSS lebih tinggi) [Default]."
 config_general_logfile: "File yang dapat dibaca oleh manusia untuk mencatat semua upaya akses diblokir. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
 config_general_logfileApache: "File yang dalam gaya Apache untuk mencatat semua upaya akses diblokir. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
 config_general_logfileSerialized: "File serial untuk mencatat semua upaya akses diblokir. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
@@ -147,7 +147,7 @@ config_hcaptcha_api: &CaptchaAPI "API mana yang akan digunakan?"
 config_hcaptcha_expiry: &CaptchaExpiry "Jumlah jam untuk mengingat instansi CAPTCHA. Default = 720 (1 bulan)."
 config_hcaptcha_lockip: &CaptchaLockIP "Kunci CAPTCHA ke IP?"
 config_hcaptcha_lockuser: &CaptchaLockUser "Kunci CAPTCHA ke pengguna?"
-config_hcaptcha_logfile: &CaptchaLogfile "Mencatat hasil semua instansi CAPTCHA? Jika ya, tentukan nama yang akan digunakan untuk file catatan. Jika tidak, variabel ini harus kosong."
+config_hcaptcha_logfile: &CaptchaLogfile "Mencatat hasil semua instansi CAPTCHA? Jika ya, tentukan nama yang akan digunakan untuk file pencatatan. Jika tidak, variabel ini harus kosong."
 config_hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "Kode status mana yang harus digunakan saat menampilkan CAPTCHA ke permintaan yang tidak diblokir?"
 config_hcaptcha_secret: &CaptchaDashboard "Nilai ini dapat ditemukan di dashboard untuk layanan CAPTCHA Anda."
 config_hcaptcha_show_api_message: &ShowAPIMessage "Tampilkan pesan API? True = Ya [Default]; False = Tidak."
@@ -209,7 +209,7 @@ config_supplementary_cache_options_pdo_dsn: "Nilai DSN PDO. Default = "mysql:dbn
 config_supplementary_cache_options_pdo_password: "Kata sandi PDO."
 config_supplementary_cache_options_pdo_username: "Nama pengguna PDO."
 config_supplementary_cache_options_prefix: "Nilai yang ditentukan disini akan ditambahkan ke awal kunci untuk semua entri di cache. Kosong secara default. Ketika beberapa instalasi ada di server, ini dapat berguna untuk menjaga cache mereka terpisah."
-config_supplementary_cache_options_redis_database_number: "Nomor basis data Redis. Default = 0. Catatan: Tidak dapat menggunakan nilai selain 0 dengan Redis Cluster."
+config_supplementary_cache_options_redis_database_number: "Nomor basis data Redis. Default = 0. Catat: Tidak dapat menggunakan nilai selain 0 dengan Redis Cluster."
 config_supplementary_cache_options_redis_host: "Nilai host Redis. Default = "localhost"."
 config_supplementary_cache_options_redis_port: "Nilai port Redis. Default = "6379"."
 config_supplementary_cache_options_redis_timeout: "Nilai batas waktu Redis. Default = "2.5"."
@@ -307,7 +307,7 @@ header_login: "Silakan masuk untuk melanjutkan."
 hints_client_honour: "Terlepas dari bagaimana kami menginstruksikan klien, penting untuk diingat bahwa pada akhirnya kami tidak memiliki kendali atas apa yang klien pilih untuk dilakukan, dan tidak ada jaminan bahwa klien akan menghormati instruksi kami."
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.id.md\#user-content-apa-yang-bisa-saya-gunakan-untuk-default_dns" hreflang="id-ID">Apa yang bisa saya gunakan untuk "default_dns"?</a></em>"
-hints_ipv6_on_32bit: "Catatan: Pencarian IPv6 mungkin tidak bekerja dengan benar pada beberapa sistem 32-bit."
+hints_ipv6_on_32bit: "Catat: Pencarian IPv6 mungkin tidak bekerja dengan benar pada beberapa sistem 32-bit."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.id.md\#user-content-HOW_TO_USE_PDO" hreflang="id-ID">Apa itu "PDO DSN"? Bagaimana saya bisa menggunakan PDO dengan CIDRAM?</a></em>"
 info_some_useful_links: |

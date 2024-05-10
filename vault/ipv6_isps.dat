@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6_isps.dat
 
-# Version: 2024.125.0
-# Last modified: 2024.05.05
+# Version: 2024.130.0
+# Last modified: 2024.05.10
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -387,32 +387,14 @@ Tag: Cox Spam IPs
 # ASNs 7843, 10796, 11351, 11426, 11427, 12271, 20001, 20115, 33363 ("Charter
 # Communications"). US domestic ISP. Honeypot probes, port scans, and spam
 # detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 12 (AS7843), 1,060 (AS10796), 564 (AS11351),
-# 704 (AS11426), 756 (AS11427), 259 (AS12271), 1,182 (AS20001),
-# 1,890 (AS20115), 837 (AS33363).
-# Updated: 2023.09.12
+# Stop Forum Spam (SFS) listings: 5 (AS7843), 808 (AS10796), 441 (AS11351),
+# 719 (AS11426), 642 (AS11427), 360 (AS12271), 962 (AS20001), 1,439 (AS20115),
+# 822 (AS33363).
+# Updated: 2024.05.06
 
-2600:6c40:44f0:8870::/64 Deny Spam
-2600:6c52:44f0:880::/64 Deny Spam
-2600:6c58:67f:8b6a::/64 Deny Spam
-2600:6c5e:513f:efa3::/64 Deny Spam
-2600:6c5e:5b3f:2192::/64 Deny Spam
-2603:6000:a740:b846::/64 Deny Spam
-2603:6010:2600:ad1c::/64 Deny Spam
-2603:6010:2b00:7ab::/64 Deny Spam
-2603:6011:7c02:fd0a::/64 Deny Spam
-2603:6012:9a40:5::/64 Deny Spam
-2603:6080:5f06:f1d0::/64 Deny Spam
-2603:6081:6300:66f8::/64 Deny Spam
-2603:7000:1403:afee::/64 Deny Spam
-2603:7000:5f05:dc5e::/64 Deny Spam
-2603:7000:6c3b:4ec7::/64 Deny Spam
+2603:6080:5f01:7cbc::/64 Deny Spam
+2603:6080:9005:8b12::/64 Deny Spam
 2603:7000:8f00:d74::/64 Deny Spam
-2603:8000:9300:4763::/64 Deny Spam
-2603:8001:2e01:560e::/64 Deny Spam
-2603:8081:2301:3e0c::/64 Deny Spam
-2603:8081:2407:197c::/64 Deny Spam
-2603:9001:1306:a3::/64 Deny Spam
 Origin: US
 Profile: Domestic ISP;University
 Tag: Charter Communications
@@ -846,20 +828,20 @@ Tag: CFPT
 # ASNs 7643, 45899, 135905, 135967 ("VietNam Post and Telecom Corporation").
 # A *major* Vietnamese domestic ISP, but also a significant source of spam,
 # hack attempts, probing, etc. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 10,063 (AS7643), 21,440 (AS45899),
-# 397 (AS135905), 7,078 (AS135967).
-# Updated: 2023.06.17
+# Stop Forum Spam (SFS) listings: 39 (AS7643), 16,391 (AS45899),
+# 638 (AS135905), 1,805 (AS135967).
+# Updated: 2024.05.10
 
-2001:df7:c600:4::/64 Deny Spam
-2001:ee0:4141:fe7d::/64 Deny Spam
-2001:ee0:4253:ddd0::/64 Deny Spam
 2001:ee0:4269:f4a0::/64 Deny Spam
-2001:ee0:4959:5250::/64 Deny Spam
-2001:ee0:497d:b150::/64 Deny Spam
-2001:ee0:4f84:3e70::/64 Deny Spam
+2001:ee0:435b:480::/64 Deny Spam
 2001:ee0:4fcc:9550::/64 Deny Spam
-2001:ee0:53cd:950::/64 Deny Spam
-2001:ee0:566b:eba0::/64 Deny Spam
+2001:ee0:55da:8a60::/64 Deny Spam
+2403:6a40:0:40::/64 Deny Spam
+2403:6a40:0:143::/64 Deny Spam
+2403:6a40:0:246::/64 Deny Spam
+2403:6a40:2::/48 Deny Attacks
+2403:6a40:2000::/48 Deny Attacks
+2403:6a40:3000::/48 Deny Attacks
 Origin: VN
 Profile: Domestic ISP;Infrastructure/Transit;Tor endpoints here
 Tag: VNPT Corp

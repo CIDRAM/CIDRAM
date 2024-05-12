@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2024.05.06).
+ * This file: Optional security extras module (last modified: 2024.05.12).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -74,6 +74,14 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         ), 'Probing for unsecured backup files not allowed')) {
             $this->Reporter->report([15], ['Caught probing for unsecured backup files.'], $this->BlockInfo['IPAddr']);
         } // 2023.08.13 mod 2023.08.21
+
+        /** Probing for unsecured SQL dumps. */
+        if ($this->trigger(preg_match(
+            '~^[^?]*[^/?]+\.sql(?:\.(?:b[ac]k|bz|new|old|t?gz|7?zip|[rt]ar))?(?:$|[/?])~',
+            $LCNrURI
+        ), 'Probing for unsecured SQL dumps not allowed')) {
+            $this->Reporter->report([15], ['Caught probing for unsecured SQL dumps.'], $this->BlockInfo['IPAddr']);
+        } // 2024.05.12
 
         /** Probing for unsecured WordPress configuration files. */
         if ($this->trigger(preg_match(

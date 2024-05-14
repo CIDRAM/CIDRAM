@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2024.05.12).
+ * This file: Optional security extras module (last modified: 2024.05.14).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -154,9 +154,9 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         } // 2022.06.05 mod 2023.09.04
 
         /** Probing for exposed AWS credentials. */
-        if ($this->trigger(preg_match('~(?:^|[/?])\.aws/credentials(?:$|\W)~', $LCNrURI), 'Probing for exposed AWS credentials')) {
+        if ($this->trigger(preg_match('~(?:^|[/?])(?:\.aws/credentials?|aws\.yml)(?:$|\W)~', $LCNrURI), 'Probing for exposed AWS credentials')) {
             $this->Reporter->report([15, 21], ['Caught probing for exposed AWS credentials.'], $this->BlockInfo['IPAddr']);
-        } // 2023.09.04
+        } // 2023.09.04 mod 2024.05.14
 
         /** Probing for vulnerable routers. */
         if ($this->trigger(preg_match('~(?:^|\W)HNAP1~i', $LCNrURI), 'Probing for vulnerable routers')) {

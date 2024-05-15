@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6.dat
 
-# Version: 2024.130.0
-# Last modified: 2024.05.10
+# Version: 2024.135.0
+# Last modified: 2024.05.15
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -4451,8 +4451,7 @@ Tag: Atlantic.net, Inc
 
 # ASN 52284 ("Panamaserver.com").
 # Caught faking as Googlebot.
-# Stop Forum Spam (SFS) listings: 59.
-# Updated: 2016.07.10 / Checked: 2023.06.20
+# Updated: 2016.07.10 / Checked: 2024.05.12
 
 2803:200::/32 Deny Cloud
 Origin: PA
@@ -4502,7 +4501,7 @@ Tag: Netelligent Hosting
 
 # ASN 9925 ("Powerbase DataCenter Services (HK) Ltd").
 # Some records of attempted DoS'ing exist at AbuseIPDB from this network.
-# Updated: 2016.08.19 / Checked: 2023.06.20
+# Updated: 2016.08.19 / Checked: 2024.05.12
 
 2401:9f00::/32 Deny Cloud
 Origin: HK
@@ -6211,11 +6210,11 @@ Tag: BelCloud
 # ASN 204601 ("Zomro B.V").
 # Malware indicators, hacktools, and brute-force attempts detected via
 # honeypots at this network.
-# Stop Forum Spam (SFS) listings: 26,371.
-# Updated: 2023.07.05
+# Stop Forum Spam (SFS) listings: 2,651.
+# Updated: 2024.05.15
 
 2a07:5980::/29 Deny Cloud
-Origin: UA
+Origin: NL
 Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: TORAT Private Enterprise
 
@@ -8062,7 +8061,7 @@ Tag: acens Technologies
 # ASN 41075 ("ATW Internet Kft").
 # DDoS and brute-force attacks detected from here.
 # Stop Forum Spam (SFS) listings: 9.
-# Updated: 2022.06.22 / Checked: 2023.07.02
+# Updated: 2022.06.22 / Checked: 2024.05.15
 
 2a00:e300::/32 Deny Cloud
 2a01:270::/32 Deny Cloud
@@ -9878,11 +9877,9 @@ Profile: Commercial;Infrastructure/Transit
 Tag: AxcelX Technologies LLC
 
 
-# ASN 208091 ("XHOST INTERNET SOLUTIONS LP").
-# Webhosting provider and server farm. Caught repeatedly trying to hack into
-# RDP. Caught trying to hack into honeypots.
-# Stop Forum Spam (SFS) listings: 2.
-# Updated: 2024.02.21
+# ASNs 208091, 209559 ("XHOST INTERNET SOLUTIONS LP").
+# Caught repeatedly trying to hack into RDP and honeypots.
+# Updated: 2024.02.21 / Checked: 2024.05.11
 
 2a0d:65c0::/29 Deny Cloud
 Origin: RU
@@ -10748,8 +10745,7 @@ Tag: ITP-Solutions
 # ASN 34240 ("manitu GmbH").
 # German webhosting provider. Brute-force, WordPress/XMLRPC, and webapp attacks
 # detected from here.
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2022.06.21 / Checked: 2023.06.14
+# Updated: 2022.06.21 / Checked: 2024.05.12
 
 2a00:1828::/32 Deny Cloud
 Origin: DE
@@ -10788,10 +10784,8 @@ Tag: LUMASERV
 
 
 # ASN 264400 ("VIDEOSAT SERVICOS DE INFORMATICA LTDA").
-# Brazilian webhosting provider. Dead homepage. Port scans, hacking, and spam
-# detected from here.
-# Stop Forum Spam (SFS) listings: 7.
-# Updated: 2022.06.21 / Checked: 2023.06.14
+# Dead homepage. Port scans, hacking, and spam detected from here.
+# Updated: 2022.06.21 / Checked: 2024.05.12
 
 2804:1de0::/32 Deny Cloud
 Origin: BR
@@ -11925,8 +11919,8 @@ Tag: Network Solutions, LLC
 
 # ASNs 9087, 142617, 211936, 398465, 399296 ("Rackdog, LLC").
 # DDoS, webapp attacks, hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 31 (AS398465), 12 (AS399296).
-# Updated: 2023.07.02
+# Stop Forum Spam (SFS) listings: 9 (AS211936), 21 (AS398465).
+# Updated: 2023.07.02 / Checked: 2024.05.15
 
 2602:fd15::/36 Deny Cloud
 2a0c:c880::/29 Deny Cloud
@@ -12888,6 +12882,26 @@ Tag: Chroot Network SRL
 Origin: NL
 Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: Servervy B.V
+
+
+# ASN 202662 ("Hytron Network Services Limited").
+# Port scans and spam detected from here.
+# Stop Forum Spam (SFS) listings: 159.
+# Updated: 2024.05.13
+
+2001:df2:7cc0::/48 Deny Cloud
+2401:b60::/46 Deny Cloud
+2401:b60:4::/47 Deny Cloud
+2401:b60:8::/47 Deny Cloud
+2401:b60:10::/46 Deny Cloud
+2401:b60:15::/48 Deny Cloud
+2401:b60:16::/47 Deny Cloud
+2401:b60:18::/48 Deny Cloud
+Origin: HK
+2a0e:aa07:e04d::/48 Deny Cloud
+Origin: US
+Profile: Infrastructure/Transit;Multiplay;Webhosting
+Tag: Hytron
 
 
 # ---

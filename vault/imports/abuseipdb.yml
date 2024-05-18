@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: AbuseIPDB defaults file (last modified: 2024.05.07).
+# This file: AbuseIPDB defaults file (last modified: 2024.05.18).
 ##/
 
 Config Defaults:
@@ -62,6 +62,14 @@ Config Defaults:
   build_profiles_from_usage_type:
    type: "bool"
    default: true
+  options:
+   type: "checkbox"
+   default: ""
+   choices:
+    MarkForUseWithReCAPTCHA: "label.aux.Mark for use with reCAPTCHA"
+    ForciblyDisableReCAPTCHA: "label.aux.Forcibly disable reCAPTCHA"
+    MarkForUseWithHCaptcha: "label.aux.Mark for use with HCaptcha"
+    ForciblyDisableHCaptcha: "label.aux.Forcibly disable HCaptcha"
 Cache Prefetch:
  AbuseIPDB-429: ""
 Extra SVG Icons:

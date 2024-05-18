@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: IP-API module (last modified: 2023.09.20).
+ * This file: IP-API module (last modified: 2024.05.18).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -43,6 +43,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     }
 
     $InCache = false;
+    $DoOpt = false;
 
     /** Check whether the lookup limit has been exceeded. */
     if (!isset($this->CIDRAM['IPAPI-429'])) {
@@ -156,6 +157,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             }
             $this->BlockInfo['Signatures'] .= $ToCheck;
             $this->BlockInfo['SignatureCount']++;
+            $DoOpt = true;
         }
     }
 
@@ -187,6 +189,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             }
             $this->BlockInfo['Signatures'] .= $ToCheck;
             $this->BlockInfo['SignatureCount']++;
+            $DoOpt = true;
         }
     }
 
@@ -194,6 +197,25 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     if (isset($this->CIDRAM['IPAPI-' . $ToCheck]['Profiles'])) {
         foreach ($this->CIDRAM['IPAPI-' . $ToCheck]['Profiles'] as $Profile) {
             $this->addProfileEntry($Profile);
+        }
+    }
+
+    /** Fetch options. */
+    if ($DoOpt) {
+        $Options = array_flip(explode("\n", $this->Configuration['ipapi']['options']));
+        if (isset($Options['MarkForUseWithReCAPTCHA'])) {
+            $this->Configuration['recaptcha']['enabled'] = true;
+        }
+        if (isset($Options['ForciblyDisableReCAPTCHA'])) {
+            $this->Configuration['recaptcha']['usemode'] = 0;
+            $this->Configuration['recaptcha']['forcibly_disabled'] = true;
+        }
+        if (isset($Options['MarkForUseWithHCAPTCHA'])) {
+            $this->Configuration['hcaptcha']['enabled'] = true;
+        }
+        if (isset($Options['ForciblyDisableHCAPTCHA'])) {
+            $this->Configuration['hcaptcha']['usemode'] = 0;
+            $this->Configuration['hcaptcha']['forcibly_disabled'] = true;
         }
     }
 };

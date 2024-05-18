@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: AbuseIPDB module (last modified: 2024.04.14).
+ * This file: AbuseIPDB module (last modified: 2024.05.18).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -64,9 +64,6 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     ) {
         return;
     }
-
-    /** Marks for use with reCAPTCHA and hCAPTCHA. */
-    $EnableCaptcha = ['recaptcha' => ['enabled' => true], 'hcaptcha' => ['enabled' => true]];
 
     /** Executed if there aren't any cache entries corresponding to the IP of the request. */
     if (
@@ -127,7 +124,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     }
 
     /** Block the request if the IP is listed by AbuseIPDB. */
-    $this->trigger(
+    if ($this->trigger(
         (
             !(
                 (isset($this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']]['usageType']) && $this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']]['usageType'] === 'Search Engine Spider') ||
@@ -139,9 +136,25 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']]['totalReports'] >= $this->Configuration['abuseipdb']['minimum_total_reports']
         ),
         'AbuseIPDB Lookup',
-        $this->L10N->getString('ReasonMessage_Generic') . '<br />' . sprintf($this->L10N->getString('request_removal'), 'https://www.abuseipdb.com/check/' . $this->BlockInfo['IPAddr']),
-        $this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']]['abuseConfidenceScore'] <= $this->Configuration['abuseipdb']['max_cs_for_captcha'] ? $EnableCaptcha : []
-    );
+        $this->L10N->getString('ReasonMessage_Generic') . '<br />' . sprintf($this->L10N->getString('request_removal'), 'https://www.abuseipdb.com/check/' . $this->BlockInfo['IPAddr'])
+    )) {
+        /** Fetch options. */
+        $Options = array_flip(explode("\n", $this->Configuration['abuseipdb']['options']));
+        if (isset($Options['MarkForUseWithReCAPTCHA'])) {
+            $this->Configuration['recaptcha']['enabled'] = true;
+        }
+        if (isset($Options['ForciblyDisableReCAPTCHA'])) {
+            $this->Configuration['recaptcha']['usemode'] = 0;
+            $this->Configuration['recaptcha']['forcibly_disabled'] = true;
+        }
+        if (isset($Options['MarkForUseWithHCAPTCHA'])) {
+            $this->Configuration['hcaptcha']['enabled'] = true;
+        }
+        if (isset($Options['ForciblyDisableHCAPTCHA'])) {
+            $this->Configuration['hcaptcha']['usemode'] = 0;
+            $this->Configuration['hcaptcha']['forcibly_disabled'] = true;
+        }
+    }
 
     /** Build profiles. */
     if (

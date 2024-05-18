@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: IP-API defaults file (last modified: 2024.05.07).
+# This file: IP-API defaults file (last modified: 2024.05.18).
 ##/
 
 Config Defaults:
@@ -38,6 +38,14 @@ Config Defaults:
   timeout_rl:
    type: "duration"
    default: "4°0′0″"
+  options:
+   type: "checkbox"
+   default: ""
+   choices:
+    MarkForUseWithReCAPTCHA: "label.aux.Mark for use with reCAPTCHA"
+    ForciblyDisableReCAPTCHA: "label.aux.Forcibly disable reCAPTCHA"
+    MarkForUseWithHCaptcha: "label.aux.Mark for use with HCaptcha"
+    ForciblyDisableHCaptcha: "label.aux.Forcibly disable HCaptcha"
 Cache Prefetch:
  IPAPI-429: ""
 Problems:

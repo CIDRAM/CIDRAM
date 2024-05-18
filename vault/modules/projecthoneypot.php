@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Project Honeypot module (last modified: 2023.03.28).
+ * This file: Project Honeypot module (last modified: 2024.05.18).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -76,9 +76,6 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     ) {
         return;
     }
-
-    /** Marks for use with reCAPTCHA and hCAPTCHA. */
-    $EnableCaptcha = ['recaptcha' => ['enabled' => true], 'hcaptcha' => ['enabled' => true]];
 
     /** Executed if there aren't any cache entries corresponding to the IP of the request. */
     if (
@@ -170,7 +167,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     }
 
     /** Block the request if the IP is listed by Project Honeypot and fits the constraints configured. */
-    $this->trigger(
+    if ($this->trigger(
         (
             $this->CIDRAM['Project Honeypot-' . $this->BlockInfo['IPAddr']]['Threat score'] >= $this->Configuration['projecthoneypot']['minimum_threat_score'] &&
             $this->CIDRAM['Project Honeypot-' . $this->BlockInfo['IPAddr']]['Days since last activity'] <= $this->Configuration['projecthoneypot']['max_age_in_days'] &&
@@ -186,9 +183,24 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         $this->L10N->getString('ReasonMessage_Generic') . '<br />' . sprintf(
             $this->L10N->getString('request_removal'),
             'https://www.projecthoneypot.org/ip_' . $this->BlockInfo['IPAddr']
-        ),
-        $this->CIDRAM['Project Honeypot-' . $this->BlockInfo['IPAddr']]['Threat score'] <= $this->Configuration['projecthoneypot']['max_ts_for_captcha'] ? $EnableCaptcha : []
-    );
+        ))) {
+        /** Fetch options. */
+        $Options = array_flip(explode("\n", $this->Configuration['projecthoneypot']['options']));
+        if (isset($Options['MarkForUseWithReCAPTCHA'])) {
+            $this->Configuration['recaptcha']['enabled'] = true;
+        }
+        if (isset($Options['ForciblyDisableReCAPTCHA'])) {
+            $this->Configuration['recaptcha']['usemode'] = 0;
+            $this->Configuration['recaptcha']['forcibly_disabled'] = true;
+        }
+        if (isset($Options['MarkForUseWithHCAPTCHA'])) {
+            $this->Configuration['hcaptcha']['enabled'] = true;
+        }
+        if (isset($Options['ForciblyDisableHCAPTCHA'])) {
+            $this->Configuration['hcaptcha']['usemode'] = 0;
+            $this->Configuration['hcaptcha']['forcibly_disabled'] = true;
+        }
+    }
 };
 
 /** Execute closure. */

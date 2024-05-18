@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Stop Forum Spam module (last modified: 2023.10.05).
+ * This file: Stop Forum Spam module (last modified: 2024.05.18).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -57,9 +57,6 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         return;
     }
 
-    /** Marks for use with reCAPTCHA and hCAPTCHA. */
-    $EnableCaptcha = ['recaptcha' => ['enabled' => true], 'hcaptcha' => ['enabled' => true]];
-
     /** Executed if there aren't any cache entries corresponding to the IP of the request. */
     if (
         !isset($this->CIDRAM['SFS-' . $this->BlockInfo['IPAddr']]) ||
@@ -101,16 +98,32 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     }
 
     /** Block the request if the IP is listed by SFS. */
-    $this->trigger(
+    if ($this->trigger(
         (
             isset($this->CIDRAM['SFS-' . $this->BlockInfo['IPAddr']]) &&
             is_numeric($this->CIDRAM['SFS-' . $this->BlockInfo['IPAddr']]) &&
             $this->CIDRAM['SFS-' . $this->BlockInfo['IPAddr']] > 0
         ),
         'SFS Lookup',
-        $this->L10N->getString('ReasonMessage_Generic') . '<br />' . sprintf($this->L10N->getString('request_removal'), 'https://www.stopforumspam.com/removal'),
-        $this->Configuration['sfs']['offer_captcha'] ? $EnableCaptcha : []
-    );
+        $this->L10N->getString('ReasonMessage_Generic') . '<br />' . sprintf($this->L10N->getString('request_removal'), 'https://www.stopforumspam.com/removal')
+    )) {
+        /** Fetch options. */
+        $Options = array_flip(explode("\n", $this->Configuration['sfs']['options']));
+        if (isset($Options['MarkForUseWithReCAPTCHA'])) {
+            $this->Configuration['recaptcha']['enabled'] = true;
+        }
+        if (isset($Options['ForciblyDisableReCAPTCHA'])) {
+            $this->Configuration['recaptcha']['usemode'] = 0;
+            $this->Configuration['recaptcha']['forcibly_disabled'] = true;
+        }
+        if (isset($Options['MarkForUseWithHCAPTCHA'])) {
+            $this->Configuration['hcaptcha']['enabled'] = true;
+        }
+        if (isset($Options['ForciblyDisableHCAPTCHA'])) {
+            $this->Configuration['hcaptcha']['usemode'] = 0;
+            $this->Configuration['hcaptcha']['forcibly_disabled'] = true;
+        }
+    }
 };
 
 /** Execute closure. */

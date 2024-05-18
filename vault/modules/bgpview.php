@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: BGPView module (last modified: 2023.05.22).
+ * This file: BGPView module (last modified: 2024.05.18).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -43,6 +43,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     }
 
     $InCache = false;
+    $DoOpt = false;
 
     /** Check whether the lookup limit has been exceeded. */
     if (!isset($this->CIDRAM['BGPView-429'])) {
@@ -180,6 +181,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
                     }
                     $this->BlockInfo['Signatures'] .= $Factor;
                     $this->BlockInfo['SignatureCount']++;
+                    $DoOpt = true;
                 }
             }
 
@@ -212,8 +214,28 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
                     }
                     $this->BlockInfo['Signatures'] .= $Factor;
                     $this->BlockInfo['SignatureCount']++;
+                    $DoOpt = true;
                 }
             }
+        }
+    }
+
+    /** Fetch options. */
+    if ($DoOpt) {
+        $Options = array_flip(explode("\n", $this->Configuration['bgpview']['options']));
+        if (isset($Options['MarkForUseWithReCAPTCHA'])) {
+            $this->Configuration['recaptcha']['enabled'] = true;
+        }
+        if (isset($Options['ForciblyDisableReCAPTCHA'])) {
+            $this->Configuration['recaptcha']['usemode'] = 0;
+            $this->Configuration['recaptcha']['forcibly_disabled'] = true;
+        }
+        if (isset($Options['MarkForUseWithHCAPTCHA'])) {
+            $this->Configuration['hcaptcha']['enabled'] = true;
+        }
+        if (isset($Options['ForciblyDisableHCAPTCHA'])) {
+            $this->Configuration['hcaptcha']['usemode'] = 0;
+            $this->Configuration['hcaptcha']['forcibly_disabled'] = true;
         }
     }
 };

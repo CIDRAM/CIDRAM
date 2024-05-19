@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2024.05.07).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2024.05.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -285,7 +285,6 @@ config:
  recaptcha_sitekey: *CaptchaDashboard
  recaptcha_usemode: *CaptchaUseMode
  sfs: "Stop Forum Spam模塊的配置。"
- sfs_offer_captcha: "當此模塊阻止請求時，可能會提供驗證碼。 標準 = True。​注意：它不會覆蓋其他指令。​要提供驗證碼，所有指令必須一致，必要的金鑰必須配置，等等。​在通常允許提供驗證碼的情況下，將此指令設置為『false』可以防止為該模塊專門阻止的請求提供驗證碼。"
  signatures: "簽名，簽名文件，模塊，等的配置。"
  signatures_default_tracktime: "應跟踪IP地址的持續時間。 標準 = 7d0°0′0″ （1週）。"
  signatures_infraction_limit: "從IP最大允許違規數量之前它被禁止。​標準=10。"
@@ -314,6 +313,7 @@ config:
  template_data_custom_header: "在所有『拒絕訪問』頁面的開頭作為HTML插入。​如果您想在所有此類頁面中包含網站徽標、個性化標題、腳本、或類似，這可能會很有用。"
  template_data_magnification: *MagnifDesc
  template_data_theme: "用於CIDRAM的默認主題。"
+ tor: "Tor阻塞模塊的配置。"
  verification: "請求來源驗證配置。"
  verification_adjust: "在驗證上下文中調整其他功能的控件。"
  verification_other: "用於在可能的情況下，驗證其他類型的請求的控件。"
@@ -707,7 +707,10 @@ label:
   redirect the request (without blocking it): "重定向該請求（不阻止它）"
   run a file to handle the request: "運行一個文件來處理該請求"
   whitelist the request: "白名單該請求"
+ expire_bad: "從創造的時候，該模塊緩存的不良數據的可能會在它到期之前生存的時間量。"
+ expire_good: "從創造的時候，該模塊緩存的好數據的可能會在它到期之前生存的時間量。"
  lookup_strategy: "應該為哪些請求執行查找？"
+ options: "當此模組觸發簽章或阻止事件時要製定的選項。"
  results: "結果 （%s 輸入 – %s 拒絕 – %s 公認 – %s 合併 – %s 產量）："
  rl_requests: "發送的請求： %s – 可用請求： %s"
  rl_when: "最新記錄： %s （過期： %s）。<br />最早記錄： %s （過期： %s）。"

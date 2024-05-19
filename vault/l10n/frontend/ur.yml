@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2024.05.07).
+# This file: Urdu language data for the front-end (last modified: 2024.05.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -285,7 +285,6 @@ config:
  recaptcha_sitekey: *CaptchaDashboard
  recaptcha_usemode: *CaptchaUseMode
  sfs: "Stop Forum Spam ماڈیول کے لیے ترتیب."
- sfs_offer_captcha: "جب درخواستیں اس ماڈیول کے ذریعے بلاک کر دی جاتی ہیں تو CAPTCHA پیش کیے جا سکتے ہیں. پہلے سے طے شدہ = True. نوٹ: دیگر ہدایات کو اوور رائڈ نہیں کرتا ہے. CAPTCHA پیش کیے جانے کے لیے، تمام ہدایات کا متفق ہونا ضروری ہے، ضروری کلیدیں ترتیب دی گئی ہیں، وغیرہ. ایسی صورت میں جب CAPTCHA کو عام طور پر پیش کیے جانے کی اجازت ہو، اس ہدایت کو false پر سیٹ کرنا اس ماڈیول کے ذریعے خاص طور پر مسدود کردہ درخواستوں کے لیے CAPTCHA کو پیش کیے جانے سے روکنے کا ایک طریقہ فراہم کرتا ہے."
  signatures: "دستخطوں، دستخط فائلوں، ماڈیولز، وغیرہ کے لئے تشکیل."
  signatures_default_tracktime: "وہ دورانیہ جس کے لیے IP پتوں کو ٹریک کیا جانا چاہیے. پہلے سے طے شدہ = 7d0°0′0″ (1 ہفتہ)."
  signatures_infraction_limit: "خلاف ورزی کی زیادہ سے زیادہ تعداد ایک IP اس سے پہلے کیا جاتا ہے IP باخبر رہنے کے کی طرف سے پابندی کا اطلاق کرنے کی اجازت ہے. پہلے سے طے شدہ = 10."
@@ -314,6 +313,7 @@ config:
  template_data_custom_header: "تمام "رسائی مسترد کر دی" صفحات کے شروع میں بطور HTML داخل کیا گیا. اگر آپ ویب سائٹ کا لوگو، پرسنلائزڈ ہیڈر، اسکرپٹس، وغیرہ شامل کرنا چاہتے ہیں، تو یہ مفید ہو سکتا ہے."
  template_data_magnification: *MagnifDesc
  template_data_theme: "CIDRAM لئے استعمال کرنے کے لئے مرکزی خیال، موضوع پہلے سے طے شدہ."
+ tor: "ٹور بلاکر ماڈیول کے لیے کنفیگریشن."
  verification: "اس بات کی تصدیق کے لیے کنفیگریشن کہ درخواستیں کہاں سے آتی ہیں."
  verification_adjust: "تصدیق کے تناظر میں دیگر خصوصیات کو ایڈجسٹ کرنے کے کنٹرولز."
  verification_other: "جہاں ممکن ہو دوسری قسم کی درخواستوں کی تصدیق کے لیے کنٹرولز."
@@ -716,7 +716,10 @@ label:
   redirect the request (without blocking it): "تو درخواست کو ری ڈائریکٹ کریں (اسے بلاک کیے بغیر)"
   run a file to handle the request: "درخواست کو سنبھالنے کے لیے فائل چلائیں"
   whitelist the request: "درخواست کو وائٹ لسٹ کریں"
+ expire_bad: "اس کی تخلیق کے وقت سے، اس ماڈیول کے ذریعے کیش کردہ خراب ڈیٹا کی میعاد ختم ہونے سے پہلے زندہ رہ سکتا ہے."
+ expire_good: "اس کی تخلیق کے وقت سے، اس ماڈیول کے ذریعے کیش کردہ اچھا ڈیٹا کی میعاد ختم ہونے سے پہلے زندہ رہ سکتا ہے."
  lookup_strategy: "کن درخواستوں کے لیے تلاش کی جانی چاہیے؟"
+ options: "جب اس ماڈیول کے ذریعہ دستخط یا بلاک ایونٹس کو متحرک کیا جائے تو اختیارات کو نافذ کیا جائے."
  results: "نتائج (%s ان پٹ – %s مسترد – %s قبول – %s مل گیا – %s پیداوار):"
  rl_requests: "بھیجی گئی درخواستیں: %s – دستیاب درخواستیں: %s"
  rl_when: "تازہ ترین ریکارڈ: %s (میعاد ختم: %s).<br />قدیم ترین ریکارڈ: %s (میعاد ختم: %s)."

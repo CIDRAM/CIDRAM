@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2024.05.07).
+# This file: Portuguese language data for the front-end (last modified: 2024.05.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -227,7 +227,7 @@ config:
  general_emailaddr_display_style:
   pt-BR: "Como você prefere que o endereço de e-mail seja apresentado aos usuários?"
   pt-PT: "Como você prefere que o endereço de e-mail seja apresentado aos utilizadores?"
- general_fields: "Controles para os campos durante eventos de bloco (quando uma solicitação é bloqueada)."
+ general_fields: "Controles para os campos durante eventos de bloqueio (quando uma solicitação é bloqueada)."
  general_force_hostname_lookup: "Forçar pesquisas de nome de anfitrião? True = Sim; False = Não [Padrão]. As pesquisas de nome de anfitrião normalmente são realizadas com base na necessidade, mas pode ser forçado para todos os solicitações. Isso pode ser útil como forma de fornecer informações mais detalhadas nos arquivos de log, mas também pode ter um efeito ligeiramente negativo sobre o desempenho."
  general_http_response_header_code: "Qual mensagem de status HTTP deve enviar o CIDRAM ao bloquear solicitações?"
  general_ipaddr:
@@ -325,7 +325,6 @@ config:
  recaptcha_sitekey: *CaptchaDashboard
  recaptcha_usemode: *CaptchaUseMode
  sfs: "Configuração para o módulo Stop Forum Spam."
- sfs_offer_captcha: "Quando as solicitações são bloqueadas por este módulo, CAPTCHAs podem ser emitidos. Padrão = True. Nota: Não substitui outras diretivas. Para que os CAPTCHAs sejam emitidos, todas as diretivas devem estar de acordo, as chaves necessárias configuradas, etc. No caso de CAPTCHAs normalmente tenham permissão para serem emitidos, definir essa diretiva como false fornece uma maneira de impedir que os CAPTCHAs sejam emitidos para solicitações bloqueadas especificamente por este módulo."
  signatures: "Configuração para assinaturas, arquivos de assinatura, módulos, etc."
  signatures_default_tracktime: "A duração pela qual os endereços IP devem ser rastreados. Padrão = 7d0°0′0″ (1 semana)."
  signatures_infraction_limit: "Número máximo de infrações que um IP pode incorrer antes de ser banido por monitoração IP. Padrão = 10."
@@ -349,7 +348,7 @@ config:
  supplementary_cache_options_redis_port: "Valor da porta do Redis. Padrão = "6379"."
  supplementary_cache_options_redis_timeout: "Valor de tempo limite do Redis. Padrão = "2.5"."
  template_data: "Configuração para modelos e temas."
- template_data_block_event_title: "O título da página a ser exibido para eventos de bloco."
+ template_data_block_event_title: "O título da página a ser exibido para eventos de bloqueio."
  template_data_captcha_title: "O título da página a ser exibido para solicitações CAPTCHA."
  template_data_css_url: "URL de arquivo CSS para temas personalizados."
  template_data_custom_footer:
@@ -358,6 +357,7 @@ config:
  template_data_custom_header: "Inserido como HTML no início de todas as páginas de "acesso negado". Isso pode ser útil caso você queira incluir um logotipo de site, cabeçalho personalizado, scripts, ou similares em todas essas páginas."
  template_data_magnification: *MagnifDesc
  template_data_theme: "Tema padrão a ser usado para CIDRAM."
+ tor: "Configuração para o módulo bloqueador do Tor."
  verification: "Configuração para verificar a origem das solicitações."
  verification_adjust: "Controles para ajustar outros recursos no contexto de verificação."
  verification_other: "Controles para verificar outros tipos de solicitações sempre que possível."
@@ -789,7 +789,10 @@ label:
   redirect the request (without blocking it): "redirecionar a solicitação (sem bloqueá-la)"
   run a file to handle the request: "execute um arquivo para lidar com a solicitação"
   whitelist the request: "coloque a solicitação na lista branca"
+ expire_bad: "Desde o momento de sua criação, o período de tempo que os dados inválidos armazenados em cache por este módulo podem permanecer antes de expirarem."
+ expire_good: "Desde o momento de sua criação, o período de tempo que os dados válidos armazenados em cache por este módulo podem permanecer antes de expirarem."
  lookup_strategy: "Para quais solicitações as pesquisas devem ser realizadas?"
+ options: "Opções a serem ativadas quando assinaturas ou eventos de bloqueio são desencadeados por este módulo."
  results: "Resultados (%s entrada – %s rejeitado – %s aceito – %s mesclado – %s saída):"
  rl_requests: "Solicitações enviadas: %s – Solicitações disponíveis: %s"
  rl_when: "Registro mais recente: %s (Expira: %s).<br />Registro mais antigo: %s (Expira: %s)."

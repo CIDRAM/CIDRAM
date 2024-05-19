@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2024.05.07).
+# This file: Arabic language data for the front-end (last modified: 2024.05.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -285,7 +285,6 @@ config:
  recaptcha_sitekey: *CaptchaDashboard
  recaptcha_usemode: *CaptchaUseMode
  sfs: "التكوين للوحدة Stop Forum Spam."
- sfs_offer_captcha: "عندما يتم حظر الطلبات بواسطة هذه الوحدة، قد يتم تقديم كابتشا. افتراضي = True. ملاحظة: لا يتم تجاوز التوجيهات الأخرى. لكي يتم تقديم اختبارات كابتشا، يجب أن توافق جميع التوجيهات، ويتم تكوين المفاتيح الضرورية، وما إلى ذلك. في حالة السماح عادةً بتقديم اختبارات كابتشا، فإن تعيين هذا التوجيه على false يوفر طريقة لمنع تقديم كابتشا للطلبات المحظورة على وجه التحديد بواسطة هذه الوحدة."
  signatures: "التكوين للتوقيعات، ملفات التوقيع، الوحدات النمطية، إلخ."
  signatures_default_tracktime: "المدة التي يجب أن يتم تتبع عناوين IP لها. افتراضي = 7d0°0′0″ (1 أسبوع)."
  signatures_infraction_limit: "يسمح الحد الأقصى لعدد المخالفات IP يمكن أن تتكبد قبل أن يتم حظره من قبل تتبع IP. افتراضي = 10."
@@ -314,6 +313,7 @@ config:
  template_data_custom_header: "تم إدراجها بتنسيق HTML في بداية كافة صفحات "تم رفض الوصول". قد يكون هذا مفيدًا في حالة رغبتك في تضمين شعار موقع ويب أو رأس مخصص أو نصوص أو ما شابه ذلك في جميع هذه الصفحات."
  template_data_magnification: *MagnifDesc
  template_data_theme: "الموضوع الافتراضي لاستخدام CIDRAM."
+ tor: "التكوين لوحدة مانع Tor."
  verification: "التكوين للتحقق من مصدر الطلبات."
  verification_adjust: "آلية لضبط الميزات الأخرى عندما تكون في سياق التحقق."
  verification_other: "آلية الرقابة للتحقق من أنواع الطلبات الأخرى حيثما أمكن ذلك."
@@ -461,7 +461,7 @@ info_cli_ipv4_ipv6_are_: |
  الاقتباس:
 info_cli_or_depending_o: |
  اعتمادًا على ما إذا كنت تفضل إجراء سلسلة من الأول إلى الأخير أو من الأخير إلى
- الأول:"
+ الأول:
 info_cli_or_to_aggregat: "لتجميعها كأقنعة شبكية:"
 info_cli_or_using_comma: "باستخدام الفواصل بدلاً من الخطوط المتعددة (يفعل نفس الشيء):"
 info_cli_the_signature_: "يمكن استخدام مثبت التوقيع عبر CLI:"
@@ -714,7 +714,10 @@ label:
   redirect the request (without blocking it): "إعادة توجيه الطلب (دون حظره)"
   run a file to handle the request: "تنفيذ ملف للتعامل مع الطلب"
   whitelist the request: "القائمة البيضاء الطلب"
+ expire_bad: "من وقت إنشائها، مقدار الوقت الذي قد تبقى فيه البيانات السيئة المخزنة مؤقتًا بواسطة هذه الوحدة قبل انتهاء صلاحيتها."
+ expire_good: "من وقت إنشائها، مقدار الوقت الذي قد تبقى فيه البيانات الجيدة المخزنة مؤقتًا بواسطة هذه الوحدة قبل انتهاء صلاحيتها."
  lookup_strategy: "ما الطلبات التي يجب إجراء عمليات البحث عنها؟"
+ options: "الخيارات التي سيتم تفعيلها عند تشغيل التوقيعات أو أحداث الحظر بواسطة هذه الوحدة."
  results: "النتائج (%s في – %s مرفوض – %s قبلت – %s اندمجت – %s خارج):"
  rl_requests: "الطلبات المرسلة: %s – الطلبات المتاحة: %s"
  rl_when: "أحدث سجل: %s (انتهاء الصلاحية: %s).<br />أقدم سجل: %s (انتهاء الصلاحية: %s)."

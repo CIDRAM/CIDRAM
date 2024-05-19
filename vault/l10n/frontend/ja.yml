@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2024.05.07).
+# This file: Japanese language data for the front-end (last modified: 2024.05.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -285,7 +285,6 @@ config:
  recaptcha_sitekey: *CaptchaDashboard
  recaptcha_usemode: *CaptchaUseMode
  sfs: "Stop Forum Spam モジュールの設定。"
- sfs_offer_captcha: "このモジュールによってリクエストがブロックされた場合、CAPTCHAを提供できます。 Default（デフォルト設定） = True。 注：他のディレクティブをオーバーライドしません。 CAPTCHAを提供するには、すべてのディレクティブが同意し、必要なキーが構成されている必要があります。 CAPTCHAの提供が通常許可される場合、このディレクティブをfalseに設定すると、このモジュールによって特別にブロックされたリクエストに対してCAPTCHAが提供されないようにする方法が提供されます。"
  signatures: "シグネチャ、シグネチャ・ファイル、モジュール、などのコンフィギュレーション。"
  signatures_default_tracktime: "ＩＰアドレスを追跡する期間。​Default（デフォルト設定） = 「7d0°0′0″」 （１週間）。"
  signatures_infraction_limit: "ＩＰがＩＰトラッキングによって禁止される前に発生することが、許される違反の最大数。​Default（デフォルト設定） = １０。"
@@ -314,6 +313,7 @@ config:
  template_data_custom_header: "すべての「アクセス拒否」ページの最初にＨＴＭＬとして挿入されます。​ウェブサイトのロゴ、パーソナライズされたヘッダー、スクリプト、などに役立ちます。"
  template_data_magnification: *MagnifDesc
  template_data_theme: "CIDRAMに使用するデフォルト・テーマ。"
+ tor: "Ｔｏｒブロッカー・モジュールの設定。"
  verification: "リクエストの発信元を確認するためコンフィギュレーション。"
  verification_adjust: "検証のコンテキストで他の機能を調整するためのコントロール。"
  verification_other: "可能な場合は、他の種類のリクエストを検証するためのコントロール。"
@@ -713,7 +713,10 @@ label:
   redirect the request (without blocking it): "リクエストを（ブロックせずに）リダイレクトします"
   run a file to handle the request: "リクエストを処理するファイルを実行します"
   whitelist the request: "リクエストをホワイトリストに登録します"
+ expire_bad: "その創造時から、このモジュールによってキャッシュされた悪いデータの有効期限が切れる前に生きることができる時間。"
+ expire_good: "その創造時から、このモジュールによってキャッシュされた良いデータの有効期限が切れる前に生きることができる時間。"
  lookup_strategy: "どのリクエストに対してルックアップを実行する必要がありますか？"
+ options: "このモジュールによってシグネチャまたはブロック・イベントがトリガーされたときに実行されるオプション。"
  results: "結果 （%s が入力された – %s が拒否された – %s が受け入れられた – %s が合併した – %s 出力された）："
  rl_requests: "送信されたリクエスト： %s – 利用可能なリクエスト： %s"
  rl_when: "最新記録： %s （有効期限： %s）。<br />最も古い記録： %s （有効期限： %s）。"

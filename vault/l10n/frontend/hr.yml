@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Croatian language data for the front-end (last modified: 2024.05.07).
+# This file: Croatian language data for the front-end (last modified: 2024.05.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -121,7 +121,22 @@ checkbox:
  Omit this field when it_s empty: "Izostaviti ovo polje kada je prazno?"
  Profile it: "Profiliraj to."
  Should infractions generated during this stage count towards IP tracking: "Trebaju li se prekršaji generirani tijekom ove faze računati u IP praćenje?"
+ Should this field appear in log entries: "Treba li se ovo polje pojaviti u unosima dnevnika?"
+ Should this field appear on the access denied page: "Treba li se ovo polje pojaviti na stranici "pristup odbijen"?"
+ Suppress HCaptcha: "Potisnuti HCaptcha"
+ Suppress ReCaptcha: "Potisnuti ReCaptcha"
+ Test as sensitive request: "Testiraj kao osjetljiv zahtjev"
+ Untrack positives: "Poništiti praćenje pozitivnih?"
+ When blocked, suppress output template: "Kada je blokiran, potisnite izlazni predložak."
 config:
+ abuseipdb: "Konfiguracija za AbuseIPDB modul."
+ abuseipdb_api_key: &EnterAPIKey "Ovdje unesite svoj API ključ."
+ abuseipdb_build_profiles_from_usage_type: "Izgraditi profile pomoću vrste upotrebe koju vraća API? False/Lažno = Ne. True/Istinito = Da. Zadano = True."
+ abuseipdb_max_age_in_days: "Maksimalna dob u danima za koju će se izvješća razmatrati prilikom traženja (mora biti broj između 1 i 365). Zadano = 365."
+ abuseipdb_max_cs_for_captcha: "Maksimalni dopušteni rezultat pouzdanosti za posluživanje CAPTCHA (mora biti broj između 0 i 100). Zadano = 10."
+ abuseipdb_minimum_confidence_score: "Minimalni rezultat pouzdanosti potreban da bi CIDRAM blokirao IP adresu (mora biti broj između 0 i 100). Zadano = 50."
+ abuseipdb_minimum_total_reports: "Minimalni broj ukupnih izvješća potrebnih kako bi CIDRAM blokirao IP adresu. Zadano = 1."
+ abuseipdb_report_back: "Dopustiti CIDRAM-u da prijavi otkriveno loše ponašanje natrag u AbuseIPDB koristeći vaš API ključ?"
  phpmailer: "Konfiguracija za PHPMailer (koristi se za autentifikaciju u dva faktora i za obavijesti e-poštom)."
  phpmailer_add_reply_to_address: "Adresa za odgovor koju treba navesti prilikom slanja e-pošte putem SMTP-a."
  phpmailer_add_reply_to_name: "Ime odgovora koje treba navesti prilikom slanja e-pošte putem SMTP-a."

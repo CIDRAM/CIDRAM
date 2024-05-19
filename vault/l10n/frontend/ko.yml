@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2024.05.07).
+# This file: Korean language data for the front-end (last modified: 2024.05.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -285,7 +285,6 @@ config:
  recaptcha_sitekey: *CaptchaDashboard
  recaptcha_usemode: *CaptchaUseMode
  sfs: "Stop Forum Spam 모듈에 대한 구성입니다."
- sfs_offer_captcha: "이 모듈에 의해 요청이 차단되면, 보안 문자가 제공될 수 있습니다. Default (기본값) = True. 참고\_: 다른 지시문을 무시하지 않습니다. CAPTCHA가 제공되려면, 모든 지시문이 동의해야 하고, 필요한 키가 구성되어야 합니다. CAPTCHA가 제공되도록 허용되는 경우, 이 지시문을 false로 설정하면 이 모듈에서 특별히 차단된 요청에 대해 CAPTCHA가 제공되지 않도록 방지할 수 있습니다."
  signatures: "서명, 서명 파일, 모듈, 등의 설정."
  signatures_default_tracktime: "IP 주소를 추적해야 하는 기간입니다. Default (기본값) = 7d0°0′0″ (1 주)."
  signatures_infraction_limit: "IP가 IP 추적에 의해 금지되기 전에 발생하는 것이 허용된다 위반의 최대 수. Default (기본값) = 10."
@@ -314,6 +313,7 @@ config:
  template_data_custom_header: "모든 "액세스 거부" 페이지의 맨 처음에 HTML로 삽입됩니다. 웹사이트 로고, 개인화된 헤더, 스크립트, 등에 유용합니다."
  template_data_magnification: *MagnifDesc
  template_data_theme: "CIDRAM에 사용할 기본 테마."
+ tor: "Tor 차단기 모듈에 대한 설정."
  verification: "요청의 출처를 확인하기 위한 구성."
  verification_adjust: "검증과 관련하여 다른 기능을 조정하는 컨트롤입니다."
  verification_other: "가능한 경우 다른 종류의 요청을 확인하기 위한 제어입니다."
@@ -710,7 +710,10 @@ label:
   redirect the request (without blocking it): "요청을 리디렉션하세요 (차단하지 않고)."
   run a file to handle the request: "요청을 처리하기 위해 파일을 실행"
   whitelist the request: "요청을 화이트리스트에 올리세요"
+ expire_bad: "창설 당시부터, 만료되기 전까지 이 모듈에 의해 캐시된 나쁜 데이터 지속될 수 있는 시간입니다."
+ expire_good: "창설 당시부터, 만료되기 전까지 이 모듈에 의해 캐시된 좋은 데이터 지속될 수 있는 시간입니다."
  lookup_strategy: "어떤 요청에 대해 조회를 수행해야 합니까?"
+ options: "이 모듈에 의해 서명 또는 차단 이벤트가 트리거될 때 실행되는 옵션입니다."
  results: "결과 (%s 입력된 – %s 거부된 – %s 받아 들인 – %s 합병된 – %s 출력된)\_:"
  rl_requests: "보낸 요청\_: %s – 사용 가능한 요청\_: %s"
  rl_when: "최신 기록\_: %s (만료\_: %s).<br />가장 오래된 기록\_: %s (만료\_: %s)."

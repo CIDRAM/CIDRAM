@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Farsi language data for the front (last modified: 2024.05.07).
+# This file: Farsi language data for the front (last modified: 2024.05.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -285,7 +285,6 @@ config:
  recaptcha_sitekey: *CaptchaDashboard
  recaptcha_usemode: *CaptchaUseMode
  sfs: "پیکربندی ماژول Stop Forum Spam."
- sfs_offer_captcha: "وقتی درخواست‌ها توسط این ماژول مسدود می‌شوند، CAPTCHA ممکن است ارائه شود. پیش فرض = True. توجه داشته باشید: جایگزین دستورالعمل های دیگر نمی شود. برای استفاده از CAPTCHA ها، باید همه دستورالعمل ها موافق باشند، کلیدهای لازم پیکربندی شوند و غیره. در صورتی که CAPTCHA ها به طور معمول مجاز به ارائه خدمات باشند، تنظیم این دستورالعمل روی false راهی برای جلوگیری از ارائه CAPTCHA برای درخواست هایی که به طور خاص توسط این ماژول مسدود شده اند، فراهم می کند."
  signatures: "پیکربندی برای امضاها، فایل های امضا، ماژول ها و غیره."
  signatures_default_tracktime: "مدت زمانی که آدرس های IP باید برای آن ردیابی شوند. پیش فرض = 7d0°0′0″ (1 هفته)."
  signatures_infraction_limit: "حداکثر تعداد تخلفاتی که یک IP مجاز است قبل از اینکه توسط ردیابی IP ممنوع شود، انجام دهد. پیش فرض = 10."
@@ -314,6 +313,7 @@ config:
  template_data_custom_header: "به عنوان HTML در همان ابتدای همه صفحات «دسترسی ممنوع» درج می شود. در صورتی که می خواهید لوگوی وب سایت، هدر شخصی، اسکریپت ها و غیره را اضافه کنید، این می تواند مفید باشد."
  template_data_magnification: *MagnifDesc
  template_data_theme: "طرح زمینه پیش‌فرض برای استفاده برای CIDRAM."
+ tor: "پیکربندی برای ماژول مسدود کننده Tor."
  verification: "پیکربندی برای تأیید اینکه درخواست ها از کجا سرچشمه می گیرند."
  verification_adjust: "کنترل‌هایی برای سایر ویژگی ها را تنظیم کنید در رابطه با تأیید."
  verification_other: "کنترل‌هایی برای تأیید انواع دیگر درخواست ها در صورت امکان."
@@ -716,7 +716,10 @@ label:
   redirect the request (without blocking it): "درخواست را تغییر مسیر کنید (بدون مسدود کردن)"
   run a file to handle the request: "یک فایل را برای رسیدگی به درخواست اجرا کنید"
   whitelist the request: "درخواست را به لیست سفید کنید"
+ expire_bad: "از زمان ایجاد آن، داده های بد ذخیره شده توسط این ماژول مدت زمانی که ممکن است قبل از انقضا زنده بماند."
+ expire_good: "از زمان ایجاد آن، داده های خوب ذخیره شده توسط این ماژول مدت زمانی که ممکن است قبل از انقضا زنده بماند."
  lookup_strategy: "جستجو برای کدام درخواست ها باید انجام شود؟"
+ options: "گزینه‌هایی که باید زمانی که امضاها یا رویدادهای مسدود شده توسط این ماژول فعال می‌شوند اعمال شوند."
  results: "نتایج (%s وارد شد – %s رد شد – %s پذیرفته شد – %s ادغام شد – %s پس داده شد):"
  rl_requests: "درخواست های ارسال شده: %s – درخواست های موجود: %s"
  rl_when: "جدیدترین رکورد: %s (منقضی می شود: %s).<br />قدیمی ترین رکورد: %s (منقضی می شود: %s)."

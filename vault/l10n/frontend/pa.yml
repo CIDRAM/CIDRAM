@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Punjabi language data for the front-end (last modified: 2024.05.07).
+# This file: Punjabi language data for the front-end (last modified: 2024.05.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -285,7 +285,6 @@ config:
  recaptcha_sitekey: *CaptchaDashboard
  recaptcha_usemode: *CaptchaUseMode
  sfs: "Stop Forum Spam (ਸਟਾਪ ਫੋਰਮ ਸਪੈਮ) ਮੋਡੀਊਲ ਲਈ ਕੌਂਫਿਗਰੇਸ਼ਨ।"
- sfs_offer_captcha: "ਜਦੋਂ ਬੇਨਤੀਆਂ ਨੂੰ ਇਸ ਮੋਡੀਊਲ ਦੁਆਰਾ ਬਲੌਕ ਕੀਤਾ ਜਾਂਦਾ ਹੈ, ਤਾਂ ਕੈਪਟਚਾ ਦੀ ਸੇਵਾ ਕੀਤੀ ਜਾ ਸਕਦੀ ਹੈ। ਡਿਫਾਲਟ = True. ਨੋਟ: ਹੋਰ ਨਿਰਦੇਸ਼ਾਂ ਨੂੰ ਓਵਰਰਾਈਡ ਨਹੀਂ ਕਰਦਾ। ਕੈਪਟਚਾ ਦੀ ਸੇਵਾ ਲਈ, ਸਾਰੇ ਨਿਰਦੇਸ਼ਾਂ ਦਾ ਸਹਿਮਤ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ, ਲੋੜੀਂਦੀਆਂ ਕੁੰਜੀਆਂ ਕੌਂਫਿਗਰ ਕੀਤੀਆਂ ਜਾਣੀਆਂ ਚਾਹੀਦੀਆਂ ਹਨ, ਆਦਿ। ਜੇਕਰ ਕੈਪਟਚਾ ਨੂੰ ਆਮ ਤੌਰ 'ਤੇ ਪਰੋਸਣ ਦੀ ਇਜਾਜ਼ਤ ਦਿੱਤੀ ਜਾਂਦੀ ਹੈ, ਤਾਂ ਇਸ ਨਿਰਦੇਸ਼ ਨੂੰ false 'ਤੇ ਸੈੱਟ ਕਰਨਾ ਇਸ ਮੋਡੀਊਲ ਦੁਆਰਾ ਖਾਸ ਤੌਰ 'ਤੇ ਬਲੌਕ ਕੀਤੀਆਂ ਬੇਨਤੀਆਂ ਲਈ ਕੈਪਟਚਾ ਦੀ ਸੇਵਾ ਨੂੰ ਰੋਕਣ ਦਾ ਇੱਕ ਤਰੀਕਾ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ।"
  signatures: "ਦਸਤਖਤਾਂ, ਦਸਤਖਤ ਫਾਈਲਾਂ, ਮੋਡੀਊਲ, ਆਦਿ ਲਈ ਕੌਂਫਿਗਰੇਸ਼ਨ।"
  signatures_default_tracktime: "ਉਹ ਮਿਆਦ ਜਿਸ ਲਈ IP ਪਤਿਆਂ ਨੂੰ ਟਰੈਕ ਕੀਤਾ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ। ਡਿਫਾਲਟ = 7d0°0′0″ (1 ਹਫ਼ਤਾ)।"
  signatures_infraction_limit: "IP ਟਰੈਕਿੰਗ ਦੁਆਰਾ ਪਾਬੰਦੀਸ਼ੁਦਾ ਹੋਣ ਤੋਂ ਪਹਿਲਾਂ ਇੱਕ IP ਨੂੰ ਵੱਧ ਤੋਂ ਵੱਧ ਉਲੰਘਣਾ ਕਰਨ ਦੀ ਇਜਾਜ਼ਤ ਦਿੱਤੀ ਜਾਂਦੀ ਹੈ। ਡਿਫਾਲਟ = 10."
@@ -314,6 +313,7 @@ config:
  template_data_custom_header: "ਸਾਰੇ "ਪਹੁੰਚ ਇਨਕਾਰ" ਪੰਨਿਆਂ ਦੇ ਸ਼ੁਰੂ ਵਿੱਚ HTML ਦੇ ਰੂਪ ਵਿੱਚ ਸ਼ਾਮਲ ਕੀਤਾ ਗਿਆ। ਇਹ ਉਪਯੋਗੀ ਹੋ ਸਕਦਾ ਹੈ ਜੇਕਰ ਤੁਸੀਂ ਅਜਿਹੇ ਸਾਰੇ ਪੰਨਿਆਂ 'ਤੇ ਇੱਕ ਵੈਬਸਾਈਟ ਲੋਗੋ, ਵਿਅਕਤੀਗਤ ਸਿਰਲੇਖ, ਸਕ੍ਰਿਪਟਾਂ, ਜਾਂ ਸਮਾਨ ਸ਼ਾਮਲ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ।"
  template_data_magnification: *MagnifDesc
  template_data_theme: "CIDRAM ਲਈ ਵਰਤਣ ਲਈ ਡਿਫਾਲਟ ਥੀਮ।"
+ tor: "Tor ਬਲੌਕਰ ਮੋਡੀਊਲ ਲਈ ਕੌਂਫਿਗਰੇਸ਼ਨ।"
  verification: "ਬੇਨਤੀਆਂ ਕਿੱਥੋਂ ਆਉਂਦੀਆਂ ਹਨ, ਇਸਦੀ ਪੁਸ਼ਟੀ ਕਰਨ ਲਈ ਕੌਂਫਿਗਰੇਸ਼ਨ।"
  verification_adjust: "ਪੁਸ਼ਟੀਕਰਨ ਦੇ ਸੰਦਰਭ ਵਿੱਚ ਹੋਰ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ ਨੂੰ ਵਿਵਸਥਿਤ ਕਰਨ ਲਈ ਨਿਯੰਤਰਣ।"
  verification_other: "ਜਿੱਥੇ ਵੀ ਸੰਭਵ ਹੋਵੇ, ਹੋਰ ਕਿਸਮ ਦੀਆਂ ਬੇਨਤੀਆਂ ਦੀ ਪੁਸ਼ਟੀ ਕਰਨ ਲਈ ਨਿਯੰਤਰਣ।"
@@ -722,7 +722,10 @@ label:
   redirect the request (without blocking it): "ਬੇਨਤੀ ਨੂੰ ਰੀਡਾਇਰੈਕਟ ਕਰੋ (ਇਸ ਨੂੰ ਬਲੌਕ ਕੀਤੇ ਬਿਨਾਂ)"
   run a file to handle the request: "ਬੇਨਤੀ ਨੂੰ ਸੰਭਾਲਣ ਲਈ ਇੱਕ ਫਾਈਲ ਚਲਾਓ"
   whitelist the request: "ਬੇਨਤੀ ਨੂੰ ਵ੍ਹਾਈਟਲਿਸਟ ਕਰੋ"
+ expire_bad: "ਇਸ ਦੀ ਸਿਰਜਣਾ ਦੇ ਸਮੇਂ ਤੋਂ, ਇਸ ਮੋਡੀਊਲ ਦੁਆਰਾ ਕੈਸ਼ ਕੀਤਾ ਖਰਾਬ ਡਾਟਾ ਨੂੰ ਮਿਆਦ ਪੁੱਗਣ ਤੋਂ ਪਹਿਲਾਂ ਕਿੰਨਾ ਸਮਾਂ ਪਹਿਲਾਂ।"
+ expire_good: "ਇਸ ਦੀ ਸਿਰਜਣਾ ਦੇ ਸਮੇਂ ਤੋਂ, ਇਸ ਮੋਡੀਊਲ ਦੁਆਰਾ ਕੈਸ਼ ਕੀਤਾ ਚੰਗਾ ਡਾਟਾ ਨੂੰ ਮਿਆਦ ਪੁੱਗਣ ਤੋਂ ਪਹਿਲਾਂ ਕਿੰਨਾ ਸਮਾਂ ਪਹਿਲਾਂ।"
  lookup_strategy: "ਕਿਹੜੀਆਂ ਬੇਨਤੀਆਂ ਲਈ ਖੋਜ ਕੀਤੀ ਜਾਣੀ ਚਾਹੀਦੀ ਹੈ?"
+ options: "ਇਸ ਮੋਡੀਊਲ ਦੁਆਰਾ ਦਸਤਖਤਾਂ ਜਾਂ ਬਲਾਕ ਇਵੈਂਟਾਂ ਨੂੰ ਚਾਲੂ ਕਰਨ 'ਤੇ ਲਾਗੂ ਕੀਤੇ ਜਾਣ ਵਾਲੇ ਵਿਕਲਪ।"
  results: "ਨਤੀਜੇ (%s ਵਿੱਚ – %s ਰੱਦ ਕਰ ਦਿੱਤਾ – %s ਸਵੀਕਾਰ ਕੀਤਾ – %s ਮਿਲਾ ਦਿੱਤਾ ਗਿਆ – %s ਬਾਹਰ):"
  rl_requests: "ਭੇਜੀਆਂ ਗਈਆਂ ਬੇਨਤੀਆਂ: %s – ਉਪਲਬਧ ਬੇਨਤੀਆਂ: %s"
  rl_when: "ਨਵੀਨਤਮ ਰਿਕਾਰਡ: %s (ਮਿਆਦ ਪੁੱਗਦੀ ਹੈ: %s)।<br />ਸਭ ਤੋਂ ਪੁਰਾਣਾ ਰਿਕਾਰਡ: %s (ਮਿਆਦ ਪੁੱਗਦੀ ਹੈ: %s)।"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2024.05.07).
+# This file: Turkish language data for the front-end (last modified: 2024.05.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -285,7 +285,6 @@ config:
  recaptcha_sitekey: *CaptchaDashboard
  recaptcha_usemode: *CaptchaUseMode
  sfs: "Stop Forum Spam modülü için yapılandırma."
- sfs_offer_captcha: "İstekler bu modül tarafından engellendiğinde, CAPTCHA'lar sunulabilir. Varsayılan = True. Not: Diğer yönergeleri geçersiz kılmaz. CAPTCHA'ların sunulması için tüm yönergeler kabul edilmeli, gerekli anahtarlar yapılandırılmalıdır, vb. Normalde CAPTCHA'ların sunulmasına izin verilmesi durumunda, bu yönergeyi false olarak ayarlamak, özellikle bu modül tarafından engellenen istekler için CAPTCHA'ların sunulmasını önlemenin bir yolunu sağlar."
  signatures: "İmzalar, imza dosyaları, modüller, vb. için yapılandırma."
  signatures_default_tracktime: "IP adreslerinin izlenmesi gereken süre. Varsayılan = 7d0°0′0″ (1 hafta)."
  signatures_infraction_limit: "IP izlemesi tarafından yasaklanmadan önce bir IPnin uğrayacağı maksimum ihlal sayısı. Varsayılan = 10."
@@ -314,6 +313,7 @@ config:
  template_data_custom_header: "Tüm "erişim reddedildi" sayfalarının başına HTML olarak eklenir. Bu tür tüm sayfalara bir web sitesi logosu, kişiselleştirilmiş başlık, komut dosyaları, veya benzerlerini eklemek istediğinizde kullanışlıdır."
  template_data_magnification: *MagnifDesc
  template_data_theme: "CIDRAM için kullanılacak varsayılan tema."
+ tor: "Tor engelleyici modülü için yapılandırma."
  verification: "İsteklerin nereden geldiğini doğrulamak için yapılandırma."
  verification_adjust: "Doğrulama bağlamındayken diğer özellikleri ayarlamak için kontroller."
  verification_other: "Mümkün olduğunda diğer türdeki istekleri doğrulamak için kontroller."
@@ -717,7 +717,10 @@ label:
   redirect the request (without blocking it): "isteği yönlendirin (engellemeden)"
   run a file to handle the request: "isteği işlemek için bir dosya çalıştırın"
   whitelist the request: "isteği beyaz listeye ekleyin"
+ expire_bad: "Yaratılışından beri, bu modül tarafından önbelleğe alınan kötü verilerin sona ermeden önce yaşayabileceği zaman."
+ expire_good: "Yaratılışından beri, bu modül tarafından önbelleğe alınan iyi verilerin sona ermeden önce yaşayabileceği zaman."
  lookup_strategy: "Hangi istekler için arama yapılmalıdır?"
+ options: "Bu modül tarafından imzalar veya blok olayları tetiklendiğinde etkinleştirilecek seçenekler."
  results: "Sonuçlar (%s giriş – %s reddedildi – %s kabul edildi – %s birleşti – %s çıktı):"
  rl_requests: "Gönderilen istekler: %s – Mevcut istekler: %s"
  rl_when: "En yeni kayıt: %s (Son: %s).<br />En eski kayıt: %s (Son: %s)."

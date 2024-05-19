@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Catalan language data for the front-end (last modified: 2024.05.10).
+# This file: Catalan language data for the front-end (last modified: 2024.05.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -105,11 +105,11 @@ Name:
  Protocol blocker module: "Mòdul bloquejador de protocols."
  Referrer spam module: "Mòdul de correu brossa de referència."
  Stop Forum Spam module: "Mòdul Stop Forum Spam."
- Tor blocker module: "Mòdul bloquejador Tor."
+ Tor blocker module: "Mòdul bloquejador de Tor."
 bobuam_hint_default_value: "Quan s'estableix a 0, el mòdul es deferirà al valor recomanat actualment."
 checkbox:
  Allow single-hit bypasses: "Permetre els bypasses d'un sol cop?"
- Attempt to verify: "Intenteu verificar?"
+ Attempt to verify: "Intentar verificar?"
  Block it: "Bloqueja'l."
  Block negatives: "Bloquejar els negatius?"
  Block non-verified requests: "Bloquejar les sol·licituds no verificades?"
@@ -285,6 +285,183 @@ config:
  recaptcha_sitekey: *CaptchaDashboard
  recaptcha_usemode: *CaptchaUseMode
  sfs: "Configuració del mòdul Stop Forum Spam."
+ signatures: "Configuració per a les signatures, fitxers de signatura, mòduls, etc."
+ signatures_default_tracktime: "La durada per fer el seguiment de les adreces IP. Predeterminat = 7d0°0′0″ (1 setmana)."
+ signatures_infraction_limit: "Nombre màxim d'infraccions que pot incórrer en una IP abans que sigui prohibida pel seguiment de la IP. Predeterminat = 10."
+ signatures_shorthand: "Controla què fer amb una sol·licitud quan hi ha una coincidència positiva amb una signatura que utilitza les paraules taquigrafies donades."
+ signatures_tracking_override: "Permetre que els mòduls anul·lin les opcions de seguiment? True/Cert = Sí [Predeterminat]; False/Fals = No."
+ supplementary_cache_options: "Opcions de memòria addicionals. Nota: Si canvieu aquests valors, és possible que tanqueu la sessió."
+ supplementary_cache_options_enable_apcu: "Especifica si s'ha de provar d'utilitzar la memòria cau de APCu. Predeterminat = True."
+ supplementary_cache_options_enable_memcached: "Especifica si s'ha de provar d'utilitzar la memòria cau de Memcached. Predeterminat = False."
+ supplementary_cache_options_enable_pdo: "Especifica si s'ha de provar d'utilitzar PDO per gestionar la memòria cau. Predeterminat = False."
+ supplementary_cache_options_enable_redis: "Especifica si s'ha de provar d'utilitzar la memòria cau de Redis. Predeterminat = False."
+ supplementary_cache_options_memcached_host: "Valor de l'amfitrió de Memcached. Predeterminat = "localhost"."
+ supplementary_cache_options_memcached_port: "Valor del port de Memcached. Predeterminat = "11211"."
+ supplementary_cache_options_pdo_dsn: "Valor DSN PDO. Predeterminat = "mysql:dbname=cidram;host=localhost;port=3306"."
+ supplementary_cache_options_pdo_password: "Contrasenya PDO."
+ supplementary_cache_options_pdo_username: "Nom d'usuari PDO."
+ supplementary_cache_options_prefix: "El valor especificat aquí s'afegirà davant de totes les claus d'entrada de la memòria cau. Predeterminat = "CIDRAM_". Quan hi ha diverses instal·lacions al mateix servidor, això pot ser útil per mantenir les seves memòries cau separades les unes de les altres."
+ supplementary_cache_options_redis_database_number: "Número de base de dades Redis. Predeterminat = 0. Nota: No es poden utilitzar valors diferents de 0 amb Redis Cluster."
+ supplementary_cache_options_redis_host: "Valor de l'amfitrió de Redis. Predeterminat = "localhost"."
+ supplementary_cache_options_redis_port: "Valor del port de Redis. Predeterminat = "6379"."
+ supplementary_cache_options_redis_timeout: "Valor de temps d'espera de Redis. Predeterminat = "2.5"."
+ template_data: "Configuració de plantilles i temes."
+ template_data_block_event_title: "El títol de la pàgina que es mostrarà per als esdeveniments de bloqueig."
+ template_data_captcha_title: "El títol de la pàgina que es mostrarà per a les sol·licituds de CAPTCHA."
+ template_data_css_url: "URL del fitxer CSS per a temes personalitzats."
+ template_data_custom_footer: "Inserir com a HTML a la part inferior de totes les pàgines d'accés denegat. Això pot ser útil en cas que vulgueu incloure un avís legal, un enllaç de contacte, informació comercial, o similar a totes aquestes pàgines."
+ template_data_custom_header: "Inserir com a HTML al principi de totes les pàgines d'accés denegat. Això pot ser útil en cas que vulgueu incloure un logotip de lloc web, una capçalera personalitzada, scripts, o similar a totes aquestes pàgines."
+ template_data_magnification: *MagnifDesc
+ template_data_theme: "El tema predeterminat que s'utilitza per a CIDRAM."
+ tor: "Configuració del mòdul bloquejador de Tor."
+ verification: "Configuració per verificar d'on provenen les sol·licituds."
+ verification_adjust: "Controls per ajustar altres funcions en el context de la verificació."
+ verification_other: "Controls per verificar altres tipus de sol·licituds sempre que sigui possible."
+ verification_search_engines: "Controls per verificar les sol·licituds dels motors de cerca."
+ verification_social_media: "Controls per verificar les sol·licituds de les plataformes de xarxes socials."
+confirm:
+ Action: "Esteu segur que voleu "%s"?"
+ Delete: "Esteu segur que voleu suprimir "%s"?"
+field:
+ %s File: "Fitxer %s"
+ 2FA code: "Codi 2FA"
+ API key: "Clau API"
+ Activate: "Activar"
+ Add more conditions: "Afegeix més condicions"
+ Add to tracking: "Afegeix al seguiment"
+ Add webhook: "Afegeix un webhook"
+ Banned: "Prohibit"
+ Blocked: "Bloquejat"
+ Clear all: "Esborra-ho tot"
+ Clear: "Esborra-ho"
+ Clickable link: "Enllaç clicable"
+ Component: "Component"
+ Confirm: "Confirmeu"
+ Create new account: "Crear un nou compte"
+ Currently active signature files: "Fitxers de signatura actius actualment"
+ Deactivate: "Desactivar"
+ Delete account: "Suprimeix el compte"
+ Delete: "Suprimeix"
+ Direct input: "Entrada directa"
+ Directory: "Directori"
+ Download: "Descarregar"
+ Edit: "Editeu"
+ Execute: "Executar"
+ Execution order: "Ordre d'execució:"
+ Expiry: "Caducitat"
+ False (False): "False (Fals)"
+ File: "Fitxer"
+ Filename: "Nom del fitxer:"
+ Generate output as CIDRs: "Generar sortida com a CIDR"
+ Generate output as netmasks: "Generar sortida com a màscares de xarxa"
+ Install: "Instal·leu"
+ Latest version: "Última versió"
+ Log In: "Iniciar sessió"
+ Macro: "Macro"
+ New name: "Nom nou:"
+ Non-clickable text: "Text que no es clicable"
+ Not tracking: "No s'està fent un seguiment."
+ Options: "Opcions"
+ Password: "Contrasenya"
+ Permissions: "Permisos"
+ Preserve tags and comments: "Conserva les etiquetes i els comentaris"
+ Range (First Last): "Rang (El primer – L'últim)"
+ Rename: "Canvia el nom"
+ Repair all: "Repara-ho tot"
+ Repair: "Repara-ho"
+ Requests to the CIDRAM front-end: "Sol·licituds al front-end del CIDRAM"
+ Reset: "Restableix"
+ Set new password: "Estableix una nova contrasenya"
+ Status: "Estat"
+ Time of attack (if unknown, use current time): "Hora de l'atac (si es desconeix, utilitzeu l'hora actual)"
+ Timezone (defaults to your local time): "Zona horària (la vostra hora local com a estàndard)"
+ Tracking: "Seguiment"
+ True (True): "True (Cert)"
+ Uninstall: "Desinstal·leu"
+ Unknown: "Desconegut"
+ Update all: "Actualitza-ho tot"
+ Update signature files: "Actualitzar els fitxers de signatura"
+ Update: "Actualitzeu-lo"
+ Upload new file: "Carrega un fitxer nou"
+ Use system default timezone: "Utilitzeu la zona horària predeterminada del sistema."
+ Username: "Nom d'usuari"
+ Verified search engine and social media requests: "Sol·licituds verificades de motors de cerca i xarxes socials"
+ Verify all: "Verifica-ho tot"
+ Verify: "Verifica-ho"
+ Whitelisted requests: "Sol·licituds a la llista blanca"
+ Your version: "El vostre versió"
+ log_rotation_archive: "Primer arxiveu i, a continuació, suprimiu els fitxers de registre més antics, fins que ja no es superi el límit."
+ log_rotation_delete: "Suprimeix els fitxers de registre més antics, fins que ja no es superi el límit."
+ size:
+  Total size: "Mida total:"
+  GB: "GB"
+  KB: "KB"
+  MB: "MB"
+  PB: "PB"
+  TB: "TB"
+  bytes:
+   - "byte"
+   - "bytes"
+hints_asnlookup: "** Requereix la funcionalitat de cerca d'ASN (per exemple, mitjançant el mòdul IP-API o BGPView)."
+hints_aux_stats: "Nota: Es pot controlar si cal fer un seguiment de les estadístiques de les regles auxiliars des de la pàgina de regles auxiliars."
+hints_cause_fp: "*!! Alta probabilitat de provocar falsos positius a causa de %s."
+hints_client_honour: "Independentment de com donem instruccions al client, és important recordar que, en definitiva, no tenim control sobre el que el client decideix fer, i no hi ha cap garantia que el client compleixi les nostres instruccions."
+hints_default_dns:
+ FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#what-can-i-use-for-default_dns" hreflang="en-AU">Què puc utilitzar per a "default_dns"?</a></em>"
+hints_duration:
+ SI.: "La durada es pot descriure mitjançant el "Sistema Internacional d'Unitats". Per exemple, <strong>1d2h3min4s</strong> o <strong>1d 2h 3min 4s</strong> per significar un dia, dues hores, tres minuts, quatre segons, o <strong>5min</strong> per significar només cinc minuts."
+ Temps d'arc.: "La durada es pot descriure mitjançant la notació de temps d'arc. Per exemple, <strong>1d2°3′4″</strong> per significar un dia, dues hores, tres minuts, quatre segons, o <strong>5″</strong> per significar només 5 segons."
+ Anglès senzill.: "La durada es pot descriure escrivint les unitats en anglès senzill. Per exemple, <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> per significar una setmana, dos dies, tres hores, quatre minuts, cinc segons."
+ Restriccions.: "La notació es pot barrejar, però les unitats sempre s'han de descriure de més gran a més petita, i no es poden repetir. Per exemple, <strong>1 week 2 days 3′4″</strong> és <span class="txtGn">vàlida</span> i s'entendrà correctament, però <strong>3′4″ 1 week 2 days</strong> i <strong>3 hours 3h 3°</strong> <span class="txtRd">no</span> són vàlids. A CIDRAM no li importa si feu servir l'espaiat o no. Els números han de ser senzills i sense format. Per aspectes pràctics, la unitat compatible més gran és una setmana. Quan s'actualitza la configuració, CIDRAM normalitza les durades a temps d'arc."
+hints_has_bypass: "* Aquesta opció té un bypass corresponent sota <code class="s">bypasses➡used</code>. Es recomana assegurar-se que la casella de verificació del bypass corresponent estigui marcada de la mateixa manera que la casella de verificació per intentar verificar aquesta opció."
+hints_inspection: "* Dissenyat només per depurar regles auxiliars. No es mostra als usuaris bloquejats."
+hints_ipv6_on_32bit: "Nota: És possible que les cerques IPv6 no funcionin correctament en alguns sistemes de 32 bits."
+hints_logging_datetime: "Consell útil: Podeu adjuntar informació de data/hora als noms dels fitxers de registre utilitzant marcadors de posició de format d'hora. Els marcadors de posició de format d'hora disponibles es mostren a {{Links.ConfigRef.time_format}}."
+hints_pdo_dsn:
+ FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">Què és un "PDO DSN"? Com puc utilitzar PDO amb CIDRAM?</a></em>"
+hints_sensitive_pages: "Nota: El que constitueix una "pàgina sensible" està determinat per {{Links.ConfigRef.sensitive}}."
+hints_shorthand:
+ 0.: "Si el vostre lloc web necessita accés mitjançant LAN o localhost, no bloquegeu això. En cas contrari, podeu bloquejar-ho."
+ 1.: "Cap dels fitxers de signatura predeterminats ho fa servir, però no obstant això es proporciona per si pot ser útil per a alguns usuaris."
+ 2.: "Si necessiteu que els usuaris puguin accedir al vostre lloc web mitjançant servidors intermediaris, no bloquegeu això. En cas contrari, podeu bloquejar-ho."
+ 3.: "L'ús directe de les signatures no és possible, però es pot invocar per altres mitjans en circumstàncies particulars."
+ 4.: "Es refereix als casos en què les paraules taquigrafies no s'utilitzen en absolut o no són reconegudes pel CIDRAM."
+ Un per signatura.: "Una signatura pot invocar diversos perfils, però només pot utilitzar una paraula taquigràfica. És possible que diverses paraules taquigrafies siguin adequades, però com que només es pot utilitzar una, intentem utilitzar sempre només la més adequada."
+ Prioritat.: "Una opció seleccionada sempre té prioritat sobre una opció no seleccionada. Per exemple, si hi ha diverses paraules taquigrafies en joc però només una d'elles està establerta com a bloquejada, la sol·licitud encara es bloquejarà."
+ Punts finals humans i serveis al núvol.: "El servei al núvol pot fer referència a proveïdors d'allotjament web, granges de servidors, centres de dades, o qualsevol altra quantitat de coses. El punt final humà es refereix als mitjans pels quals un humà accedeix a internet, com ara a través d'un proveïdor de serveis d'internet. Una xarxa sol proporcionar només un o l'altre, però de vegades pot proporcionar tots dos. Intentem mai identificar els punts finals humans potencials com a serveis al núvol. Per tant, un servei al núvol es pot identificar com una altra cosa si el seu abast és compartit per punts finals humans coneguts. Per contra, intentem identificar sempre els serveis al núvol, els rangs dels quals no són compartits per cap punt final humà conegut, com a serveis al núvol. Per tant, una sol·licitud identificada explícitament com a servei al núvol probablement no comparteix el seu rang amb cap punt final humà conegut. De la mateixa manera, una sol·licitud identificada explícitament per atacs o correu brossa probablement comparteix els seus rangs. Dit això, l'internet sempre està en moviment, els propòsits de les xarxes canvien amb el temps, i sempre es compren o venen gammes, així que sigueu conscients i vigilants respecte als falsos positius."
+hints_time_format: |
+ <strong><em>Marcador de posició – Explicació – Exemple basat en 2024-04-30T18:27:49+08:00.</em></strong><br />
+ <code class="s">{yyyy}</code> – L'any – Per exemple, 2024.<br />
+ <code class="s">{yy}</code> – L'any abreujat – Per exemple, 24.<br />
+ <code class="s">{Mon}</code> – El nom abreujat del mes (en anglès) – Per exemple, Apr.<br />
+ <code class="s">{mm}</code> – El mes amb zeros inicials – Per exemple, 04.<br />
+ <code class="s">{m}</code> – El mes – Per exemple, 4.<br />
+ <code class="s">{Day}</code> – El nom abreujat del dia (en anglès) – Per exemple, Tue.<br />
+ <code class="s">{dd}</code> – El dia amb zeros inicials – Per exemple, 30.<br />
+ <code class="s">{d}</code> – El dia – Per exemple, 30.<br />
+ <code class="s">{hh}</code> – L'hora amb zeros inicials (utilitza el temps de 24 hores) – Per exemple, 18.<br />
+ <code class="s">{h}</code> – L'hora (utilitza el temps de 24 hores) – Per exemple, 18.<br />
+ <code class="s">{ii}</code> – El minut amb zeros inicials – Per exemple, 27.<br />
+ <code class="s">{i}</code> – El minut – Per exemple, 27.<br />
+ <code class="s">{ss}</code> – El segon amb zeros inicials – Per exemple, 49.<br />
+ <code class="s">{s}</code> – El segon – Per exemple, 49.<br />
+ <code class="s">{tz}</code> – La zona horària (sense dos punts) – Per exemple, +0800.<br />
+ <code class="s">{t:z}</code> – La zona horària (amb dos punts) – Per exemple, +08:00.
+hints_verification:
+ "Què són els "positius" i els "negatius"?": "Quan es verifica la identitat presentada per una sol·licitud, un resultat exitós es podria descriure com a "positiu" o "negatiu". En el cas que es confirmi que la identitat presentada és la veritable identitat, es descriuria com a "positiu". En el cas que es confirmi que la identitat presentada està falsificada, es descriuria com a "negatiu". D'altra banda, un resultat sense èxit (per exemple, la verificació falla, o no es pot determinar la veracitat de la identitat presentada) no es descriuria com a "positiu" o "negatiu". En canvi, un resultat sense èxit es descriuria simplement com a no verificat. Quan no s'intenta verificar la identitat presentada per una sol·licitud, la sol·licitud també es descriuria como a no verificada. Els termes només tenen sentit en el context on es reconeix la identitat presentada per una sol·licitud i, per tant, on la verificació és possible. En els casos en què la identitat presentada no coincideix amb les opcions proporcionades anteriorment, o en què no es presenta cap identitat, les opcions proporcionades anteriorment seran irrellevants."
+ "Què són els "bypasses d'un sol cop"?": "En alguns casos, una sol·licitud verificada positivament encara es pot bloquejar com a resultat dels fitxers de signatura, mòduls, o altres condicions de la sol·licitud, i pot ser que calgui els bypasses per evitar falsos positius. En el cas que un bypass tracti exactament d'una infracció, ni més ni menys, aquest bypass es podria descriure com un "bypass d'un sol cop"."
+hints_want_to_block: "!! És probable que la majoria dels usuaris vulguin que es bloquegi, independentment de si és real o falsificat. Això es pot aconseguir si no se selecciona "intentar verificar" i es selecciona "bloquejar les sol·licituds no verificades". Tanmateix, com que alguns usuaris volen poder verificar aquestes sol·licituds (per tal de bloquejar els negatius alhora que permeten els positius), en comptes de bloquejar aquestes sol·licituds mitjançant mòduls, aquí es proporcionen opcions per gestionar aquestes sol·licituds."
+info_cli_by_default_ips: |
+ Normalment, les adreces IP es comproven amb tots els fitxers de signatura,
+ tots els mòduls, totes les regles auxiliars, i amb la verificació de les
+ xarxes socials i del motor de cerca.
+ --no-sig    Impedeix les proves amb fitxers de signatura.
+ --no-mod    Impedeix les proves amb mòduls.
+ --no-sev    Impedeix la verificació dels motors de cerca.
+ --no-smv    Impedeix la verificació de les xarxes socials.
+ --no-ov     Impedeix altres verificacions.
+ --no-aux    Impedeix les proves amb regles auxiliars.
+info_cli_cidram_cli_mod: "Mode CLI de CIDRAM."
 warning:
  API_Rate_Limited: "Avís: Sembla que actualment l'accés a l'API %s està limitat."
  Cookies: "Nota: CIDRAM utilitza una cookie per autenticar els inicis de sessió. En iniciar sessió, doneu el vostre consentiment perquè el vostre navegador creï i emmagatzemi una cookie."

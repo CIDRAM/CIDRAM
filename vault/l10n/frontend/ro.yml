@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Romanian language data for the front-end (last modified: 2024.05.07).
+# This file: Romanian language data for the front-end (last modified: 2024.05.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -285,7 +285,6 @@ config:
  recaptcha_sitekey: *CaptchaDashboard
  recaptcha_usemode: *CaptchaUseMode
  sfs: "Configurare pentru modulul Stop Forum Spam."
- sfs_offer_captcha: "Când solicitările sunt blocate de acest modul, pot fi difuzate CAPTCHA. Implicit = True. Notă: Nu anulează alte directive. Pentru ca CAPTCHA să fie difuzate, toate directivele trebuie să fie de acord, cheile necesare configurate, etc. În cazul în care în mod normal li se permite difuzarea CAPTCHA-urilor, setarea acestei directive la false oferă o modalitate de a preveni difuzarea CAPTCHA-urilor pentru solicitări blocate în mod special de acest modul."
  signatures: "Configurare pentru semnături, fișiere de semnătură, module, etc."
  signatures_default_tracktime: "Durata pentru care trebuie urmărite adresele IP. Implicit = 7d0°0′0″ (1 săptămână)."
  signatures_infraction_limit: "Numărul maxim de infracțiuni pe care un IP este permis să obțină înainte de a fi interzis prin urmărirea IP. Implicit = 10."
@@ -314,6 +313,7 @@ config:
  template_data_custom_header: "Inserat ca HTML chiar la începutul tuturor paginilor „acces refuzat”. Acest lucru ar putea fi util în cazul în care doriți să includeți un logo al site-ului web, un antet personalizat, scripturi, sau similare în toate aceste pagini."
  template_data_magnification: *MagnifDesc
  template_data_theme: "Tema implicită de utilizat pentru CIDRAM."
+ tor: "Configurare pentru modulul de blocare Tor."
  verification: "Configurație pentru verificarea de unde provin solicitările."
  verification_adjust: "Controale pentru ajustarea altor funcții în contextul verificării."
  verification_other: "Controale pentru verificarea altor tipuri de solicitări acolo unde este posibil."
@@ -732,7 +732,10 @@ label:
   redirect the request (without blocking it): "redirecționează solicitarea (fără a o bloca)"
   run a file to handle the request: "rulați un fișier pentru a gestiona solicitarea"
   whitelist the request: "lista albă a solicitărea"
+ expire_bad: "Din momentul creării sale, perioada de timp pe care datele proaste în cache de acest modul pot trăi înainte de a expira."
+ expire_good: "Din momentul creării sale, perioada de timp în care datele bune în cache de acest modul pot trăi înainte de a expira."
  lookup_strategy: "Pentru ce solicitări ar trebui efectuate căutări?"
+ options: "Opțiuni care trebuie activate atunci când semnăturile sau evenimentele de blocare sunt declanșate de acest modul."
  results: "Rezultate (%s in – %s respinse – %s acceptate – %s combinate – %s iesite):"
  rl_requests: "Solicitări trimise: %s – Solicitări disponibile: %s"
  rl_when: "Cel mai nou record: %s (Expiră: %s).<br />Cea mai veche înregistrare: %s (Expiră: %s)."

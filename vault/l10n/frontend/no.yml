@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2024.05.07).
+# This file: Norwegian language data for the front-end (last modified: 2024.05.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -285,7 +285,6 @@ config:
  recaptcha_sitekey: *CaptchaDashboard
  recaptcha_usemode: *CaptchaUseMode
  sfs: "Konfigurasjon for Stop Forum Spam modulen."
- sfs_offer_captcha: "Når forespørsler blokkeres av denne modulen, CAPTCHA-er kan bli servert. Standardverdi = True. Merk: Overstyrer ikke andre direktiver. For at CAPTCHA-er skal kunne betjenes, må alle direktiver stemme overens, nødvendige nøkler konfigurert, osv. I tilfelle CAPTCHA-er normalt vil tillates å bli servert, gir det å sette dette direktivet til false en måte å forhindre at CAPTCHA-er blir servert for forespørsler som er blokkert spesifikt av denne modulen."
  signatures: "Konfigurasjon for signaturer, signaturfiler, moduler, osv."
  signatures_default_tracktime: "Varigheten som IP-adresser skal spores for. Standardverdi = 7d0°0′0″ (1 uke)."
  signatures_infraction_limit: "Maks antall infraksjoner som en IP har lov til å pådra seg før den er utestengt av IP-sporing. Standardverdi = 10."
@@ -314,6 +313,7 @@ config:
  template_data_custom_header: "Sett inn som HTML helt i begynnelsen av alle «tilgang nektet»-sider. Dette kan være nyttig i tilfelle du ønsker å inkludere en nettsidelogo, personlig overskrift, skript, eller lignende på alle slike sider."
  template_data_magnification: *MagnifDesc
  template_data_theme: "Standard tema som skal brukes til CIDRAM."
+ tor: "Konfigurasjon for Tor-blokkeringsmodulen."
  verification: "Konfigurasjon for å bekrefte hvor forespørsler kommer fra."
  verification_adjust: "Kontroller for å justere andre funksjoner i forbindelse med verifisering."
  verification_other: "Kontroller for å verifisere andre typer forespørsler der det er mulig."
@@ -721,7 +721,10 @@ label:
   redirect the request (without blocking it): "omdirigere forespørselen (uten å blokkere den)"
   run a file to handle the request: "kjør en fil for å håndtere forespørselen"
   whitelist the request: "hvitliste forespørselen"
+ expire_bad: "Fra tidspunktet for opprettelsen, hvor lang tid dårlig data som er bufret av denne modulen kan leve før den utløper."
+ expire_good: "Fra tidspunktet for opprettelsen, hvor lang tid god data som er bufret av denne modulen kan leve før den utløper."
  lookup_strategy: "Hvilke forespørsler skal oppslag utføres for?"
+ options: "Alternativer som skal vedtas når signaturer eller blokkeringshendelser utløses av denne modulen."
  results: "Resultater (%s i – %s avvist – %s akseptert – %s sammensmeltet – %s ut):"
  rl_requests: "Sendte forespørsler: %s – Tilgjengelig forespørsler: %s"
  rl_when: "Nyeste rekord: %s (Utløper: %s).<br />Eldste rekord: %s (Utløper: %s)."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Galician language data for the front-end (last modified: 2024.05.10).
+# This file: Galician language data for the front-end (last modified: 2024.05.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -105,11 +105,11 @@ Name:
  Protocol blocker module: "Módulo bloqueador de protocolos."
  Referrer spam module: "Módulo de spam de referencia."
  Stop Forum Spam module: "Módulo Stop Forum Spam."
- Tor blocker module: "Módulo bloqueador Tor."
+ Tor blocker module: "Módulo bloqueador de Tor."
 bobuam_hint_default_value: "Cando se establece en 0, o módulo diferirá ao valor recomendado actualmente."
 checkbox:
  Allow single-hit bypasses: "Permitir as bypasses dun só golpe?"
- Attempt to verify: "Intentas verificar?"
+ Attempt to verify: "Tentar verificar?"
  Block it: "Bloquealo."
  Block negatives: "Bloquear negativos?"
  Block non-verified requests: "Bloquear solicitudes non verificadas?"
@@ -207,7 +207,7 @@ config:
  general_statistics: "Controla que información estatística debe facer un seguimento."
  general_time_format: "O formato de notación de data/hora utilizado por CIDRAM. Pódense engadir opcións adicionais previa solicitude."
  general_time_offset: "Desfase de fuso horario en minutos."
- general_timezone: "Utilízase para especificar a zona horaria a utilizar (por exemplo, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, etc). Especifique "SYSTEM" para que PHP se ocupe de isto automaticamente."
+ general_timezone: "Utilízase para especificar o fuso horario a utilizar (por exemplo, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, etc). Especifique "SYSTEM" para que PHP se ocupe de isto automaticamente."
  hcaptcha: "Configuración para HCaptcha (ofrece unha forma de que os humanos recuperen o acceso cando se bloquean)."
  hcaptcha_api: &CaptchaAPI "Que API usar?"
  hcaptcha_expiry: &CaptchaExpiry "Número de horas para lembrar instancias de CAPTCHA. Predeterminado = 720 (1 mes)."
@@ -285,6 +285,183 @@ config:
  recaptcha_sitekey: *CaptchaDashboard
  recaptcha_usemode: *CaptchaUseMode
  sfs: "Configuración para o módulo Stop Forum Spam."
+ signatures: "Configuración para as sinaturas, ficheiros de sinatura, módulos, etc."
+ signatures_default_tracktime: "A duración para rastrexar os enderezos IP. Predeterminado = 7d0°0′0″ (1 semana)."
+ signatures_infraction_limit: "Número máximo de infraccións nas que se permite incorrer nunha IP antes de ser prohibida polo seguimento de IP. Predeterminado = 10."
+ signatures_shorthand: "Controla que facer cunha solicitude cando hai unha coincidencia positiva cunha sinatura que utiliza as palabras abreviadas indicadas."
+ signatures_tracking_override: "Permitir que os módulos anulen as opcións de seguimento? True/Verdadeiro = Si [Predeterminado]; False/Falso = Non."
+ supplementary_cache_options: "Opcións de caché suplementarias. Nota: Se cambias estes valores, posiblemente estea pechado a sesión."
+ supplementary_cache_options_enable_apcu: "Especifica se tentar usar a caché de APCu. Predeterminado = True."
+ supplementary_cache_options_enable_memcached: "Especifica se tentar usar o caché de Memcached. Predeterminado = False."
+ supplementary_cache_options_enable_pdo: "Especifica se tentar usar PDO para xestionar o caché. Predeterminado = False."
+ supplementary_cache_options_enable_redis: "Especifica se tentar usar a caché de Redis. Predeterminado = False."
+ supplementary_cache_options_memcached_host: "Valor do host de Memcached. Predeterminado = "localhost"."
+ supplementary_cache_options_memcached_port: "Valor do porto de Memcached. Predeterminado = "11211"."
+ supplementary_cache_options_pdo_dsn: "Valor DSN PDO. Predeterminado = "mysql:dbname=cidram;host=localhost;port=3306"."
+ supplementary_cache_options_pdo_password: "Contrasinal PDO."
+ supplementary_cache_options_pdo_username: "Nome de usuario PDO."
+ supplementary_cache_options_prefix: "O valor especificado aquí antepoñerase a todas as claves de entrada da caché. Predeterminado = "CIDRAM_". Cando existen varias instalacións no mesmo servidor, isto pode ser útil para manter as súas cachés separadas entre si."
+ supplementary_cache_options_redis_database_number: "Número de base de datos Redis. Predeterminado = 0. Nota: Non se poden usar valores distintos de 0 con Redis Cluster."
+ supplementary_cache_options_redis_host: "Valor do host de Redis. Predeterminado = "localhost"."
+ supplementary_cache_options_redis_port: "Valor do porto de Redis. Predeterminado = "6379"."
+ supplementary_cache_options_redis_timeout: "Valor de tempo de espera de Redis. Predeterminado = "2.5"."
+ template_data: "Configuración de modelos e temas."
+ template_data_block_event_title: "O título da páxina que se mostrará para eventos de bloque."
+ template_data_captcha_title: "O título da páxina que se mostrará para as solicitudes de CAPTCHA."
+ template_data_css_url: "URL do ficheiro CSS para temas personalizados."
+ template_data_custom_footer: "Inseriuse como HTML na parte inferior de todas as páxinas de "acceso denegado". Isto pode ser útil no caso de que queiras incluír un aviso legal, ligazón de contacto, información comercial, ou similares en todas esas páxinas."
+ template_data_custom_header: "Inseriuse como HTML ao comezo de todas as páxinas de "acceso denegado". Isto pode ser útil no caso de que queiras incluír un logotipo do sitio web, un encabezado personalizado, guións, ou similares en todas esas páxinas."
+ template_data_magnification: *MagnifDesc
+ template_data_theme: "O tema predeterminado a usar para CIDRAM."
+ tor: "Configuración para o módulo bloqueador de Tor."
+ verification: "Configuración para verificar de onde se orixinan as solicitudes."
+ verification_adjust: "Controis para axustar outras funcións no contexto da verificación."
+ verification_other: "Controis para verificar outro tipo de solicitudes sempre que sexa posible."
+ verification_search_engines: "Controis para verificar solicitudes dos buscadores."
+ verification_social_media: "Controis para verificar solicitudes das plataformas de redes sociais."
+confirm:
+ Action: "Estás seguro de que queres "%s"?"
+ Delete: "Estás seguro de que queres eliminar "%s"?"
+field:
+ %s File: "Ficheiro %s"
+ 2FA code: "Código 2FA"
+ API key: "Chave API"
+ Activate: "Activar"
+ Add more conditions: "Engade máis condicións"
+ Add to tracking: "Engadir ao seguimento"
+ Add webhook: "Engade un webhook"
+ Banned: "Prohibido"
+ Blocked: "Bloqueado"
+ Clear all: "Borrar todo"
+ Clear: "Borrar"
+ Clickable link: "Ligazón clicable"
+ Component: "Compoñente"
+ Confirm: "Confirmar"
+ Create new account: "Crear unha nova conta"
+ Currently active signature files: "Ficheiros de sinatura activos actualmente"
+ Deactivate: "Desactivar"
+ Delete account: "Eliminar conta"
+ Delete: "Eliminar"
+ Direct input: "Entrada directa"
+ Directory: "Directorio"
+ Download: "Descargar"
+ Edit: "Editar"
+ Execute: "Executar"
+ Execution order: "Orde de execución:"
+ Expiry: "Caducidade"
+ False (False): "False (Falso)"
+ File: "Ficheiro"
+ Filename: "Nome do ficheiro:"
+ Generate output as CIDRs: "Xerar saída como CIDR"
+ Generate output as netmasks: "Xerar saída como máscaras de rede"
+ Install: "Instalar"
+ Latest version: "Última versión"
+ Log In: "Acceder"
+ Macro: "Macro"
+ New name: "Novo nome:"
+ Non-clickable text: "Texto que non se pode clic"
+ Not tracking: "Non se está rastrexando."
+ Options: "Opcións"
+ Password: "Contrasinal"
+ Permissions: "Permisos"
+ Preserve tags and comments: "Conserva etiquetas e comentarios"
+ Range (First Last): "Rango (Primeiro – Último)"
+ Rename: "Cambiar o nome"
+ Repair all: "Repara todo"
+ Repair: "Repara"
+ Requests to the CIDRAM front-end: "Solicitudes ao front-end do CIDRAM"
+ Reset: "Restablecer"
+ Set new password: "Establece un novo contrasinal"
+ Status: "Estado"
+ Time of attack (if unknown, use current time): "Hora do ataque (se non se coñece, use a hora actual)"
+ Timezone (defaults to your local time): "Fuso horario (a túa hora local como estándar)"
+ Tracking: "Seguimento"
+ True (True): "True (Verdadeiro)"
+ Uninstall: "Desinstalar"
+ Unknown: "Descoñecido"
+ Update all: "Actualiza todo"
+ Update signature files: "Actualizar ficheiros de sinatura"
+ Update: "Actualizalo"
+ Upload new file: "Cargar ficheiro novo"
+ Use system default timezone: "Usa o fuso horario predeterminada do sistema."
+ Username: "Nome de usuario"
+ Verified search engine and social media requests: "Solicitudes verificadas de buscadores e redes sociais"
+ Verify all: "Verifica todo"
+ Verify: "Verificalo"
+ Whitelisted requests: "Solicitudes incluídas na lista branca"
+ Your version: "O teu versión"
+ log_rotation_archive: "Primeiro arquiva, e despois elimina os ficheiros de rexistro máis antigos, ata que non se supere o límite."
+ log_rotation_delete: "Elimina os ficheiros de rexistro máis antigos, ata que non se supere o límite."
+ size:
+  Total size: "Tamaño total:"
+  GB: "GB"
+  KB: "KB"
+  MB: "MB"
+  PB: "PB"
+  TB: "TB"
+  bytes:
+   - "byte"
+   - "bytes"
+hints_asnlookup: "** Require a funcionalidade de busca de ASN (por exemplo, a través do módulo IP-API ou BGPView)."
+hints_aux_stats: "Nota: Pódese controlar se se deben realizar un seguimento das estatísticas das regras auxiliares desde a páxina de regras auxiliares."
+hints_cause_fp: "*!! Alta probabilidade de provocar falsos positivos debido a %s."
+hints_client_honour: "Non importa como instruímos ao cliente, é importante lembrar que, en última instancia, non temos control sobre o que elixe facer o cliente e non hai ningunha garantía de que o cliente cumpra as nosas instrucións."
+hints_default_dns:
+ FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#what-can-i-use-for-default_dns" hreflang="en-AU">Que podo usar para "default_dns"?</a></em>"
+hints_duration:
+ SI.: "A duración pódese describir mediante o "Sistema Internacional de Unidades". Por exemplo, <strong>1d2h3min4s</strong> ou <strong>1d 2h 3min 4s</strong> para significar un día, dúas horas, tres minutos, catro segundos, ou <strong>5min</strong> para significar só cinco minutos."
+ Tempo de arco.: "A duración pódese describir usando a notación de tempo de arco. Por exemplo, <strong>1d2°3′4″</strong> para significar un día, dúas horas, tres minutos, catro segundos, ou <strong>5″</strong> para significar só 5 segundos."
+ Inglés sinxelo.: "A duración pódese describir escribindo as unidades en inglés sinxelo. Por exemplo, <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> para significar unha semana, dous días, tres horas, catro minutos, cinco segundos."
+ Restricións.: "A notación pódese mesturar, pero as unidades sempre deben describirse de maior a menor, e non se poden repetir. Por exemplo, <strong>1 week 2 days 3′4″</strong> é <span class="txtGn">válido</span> e entenderase correctamente, pero <strong>3′4″ 1 week 2 days</strong> e <strong>3 hours 3h 3°</strong> <span class="txtRd">non</span> son válidos. A CIDRAM non lle importa se utilizas espazos ou non. Os números deben ser sinxelos e sen formato. Por motivos prácticos, a unidade compatible máis grande é unha semana. Cando se actualiza a configuración, CIDRAM normaliza as duracións a tempo de arco."
+hints_has_bypass: "* Esta opción ten un bypass correspondente baixo <code class="s">bypasses➡used</code>. Recoméndase asegurarse de que a caixa de verificación do bypass correspondente estea marcada do mesmo xeito que a caixa de verificación para tentar verificar esta opción."
+hints_inspection: "* Destinado só para depurar regras auxiliares. Non se mostra aos usuarios bloqueados."
+hints_ipv6_on_32bit: "Nota: É posible que as buscas IPv6 non funcionen correctamente nalgúns sistemas de 32 bits."
+hints_logging_datetime: "Consello útil: Podes anexar información de data/hora aos nomes dos ficheiros de rexistro mediante os marcadores de posición do formato de hora. Os marcadores de posición do formato de hora dispoñibles móstranse en {{Links.ConfigRef.time_format}}."
+hints_pdo_dsn:
+ FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">Que é un "PDO DSN"? Como podo usar PDO con CIDRAM?</a></em>"
+hints_sensitive_pages: "Nota: O que constitúe unha "páxina sensible" está determinado por {{Links.ConfigRef.sensitive}}."
+hints_shorthand:
+ 0.: "Se o teu sitio web necesita acceso a través da LAN ou localhost, non o bloquees. En caso contrario, podes bloquealo."
+ 1.: "Ningún dos ficheiros de sinatura predeterminados usa isto, pero ofrécese no caso de que poida ser útil para algúns usuarios."
+ 2.: "Se precisas que os usuarios poidan acceder ao teu sitio web mediante proxies, non o bloquees. En caso contrario, podes bloquealo."
+ 3.: "O uso directo nas sinaturas non é posible, pero pode ser invocado por outros medios en circunstancias particulares."
+ 4.: "Refírese a casos nos que as palabras abreviadas non se usan en absoluto ou non son recoñecidas polo CIDRAM."
+ Un por sinatura.: "Unha sinatura pode invocar varios perfís, pero só pode usar unha palabra abreviada. É posible que varias palabras taquigráficas sexan axeitadas, pero como só se pode usar unha, tentamos utilizar sempre só as máis adecuadas."
+ Prioridade.: "Unha opción seleccionada sempre ten prioridade sobre unha opción non seleccionada. Por exemplo, se hai varias palabras taquigráficas en xogo pero só unha delas se define como bloqueada, a solicitude seguirá bloqueada."
+ Puntos finais humanos e servizos na nube.: "O servizo na nube pode referirse a provedores de aloxamento web, granxas de servidores, centros de datos, ou calquera outra cantidade de cousas. O punto final humano refírese aos medios polos que un humano accede a internet, como a través dun provedor de servizos de internet. Unha rede adoita ofrecer só un ou outro, pero ás veces pode proporcionar ambos. Tentamos nunca identificar os puntos finais humanos potenciais como servizos na nube. Polo tanto, un servizo na nube pode identificarse como outra cousa se o seu alcance é compartido por puntos finais humanos coñecidos. Pola contra, tentamos identificar sempre os servizos na nube, cuxos rangos non son compartidos por ningún punto final humano coñecido, como servizos na nube. Polo tanto, unha solicitude identificada explícitamente como un servizo na nube probablemente non comparta o seu rango con ningún punto final humano coñecido. Así mesmo, unha solicitude identificada explícitamente por ataques ou spam probablemente comparta os seus rangos. Dito isto, internet sempre está en constante cambio, os propósitos das redes cambian co paso do tempo, e as gamas sempre se compran ou venden, polo que permanece consciente e atento aos falsos positivos."
+hints_time_format: |
+ <strong><em>Marcador de posición – Explicación – Exemplo baseado en 2024-04-30T18:27:49+08:00.</em></strong><br />
+ <code class="s">{yyyy}</code> – O ano – Por exemplo, 2024.<br />
+ <code class="s">{yy}</code> – O ano abreviado – Por exemplo, 24.<br />
+ <code class="s">{Mon}</code> – O nome abreviado do mes (en inglés) – Por exemplo, Apr.<br />
+ <code class="s">{mm}</code> – O mes con ceros ao principio – Por exemplo, 04.<br />
+ <code class="s">{m}</code> – O mes – Por exemplo, 4.<br />
+ <code class="s">{Day}</code> – O nome abreviado do día (en inglés) – Por exemplo, Tue.<br />
+ <code class="s">{dd}</code> – O día con ceros ao principio – Por exemplo, 30.<br />
+ <code class="s">{d}</code> – O día – Por exemplo, 30.<br />
+ <code class="s">{hh}</code> – A hora con ceros ao principio (utiliza o tempo de 24 horas) – Por exemplo, 18.<br />
+ <code class="s">{h}</code> – A hora (utiliza o tempo de 24 horas) – Por exemplo, 18.<br />
+ <code class="s">{ii}</code> – O minuto con ceros ao principio – Por exemplo, 27.<br />
+ <code class="s">{i}</code> – O minuto – Por exemplo, 27.<br />
+ <code class="s">{ss}</code> – O segundo con ceros ao principio – Por exemplo, 49.<br />
+ <code class="s">{s}</code> – O segundo – Por exemplo, 49.<br />
+ <code class="s">{tz}</code> – O fuso horario (sen dous puntos) – Por exemplo, +0800.<br />
+ <code class="s">{t:z}</code> – O fuso horario (con dous puntos) – Por exemplo, +08:00.
+hints_verification:
+ "Que son "positivos" e "negativos"?": "Ao verificar a identidade presentada por unha solicitude, un resultado exitoso podería describirse como "positivo" ou "negativo". No caso de que se confirme que a identidade presentada é a verdadeira identidade, se describiría como "positiva". No caso de que se confirme que a identidade presentada está falsificada, se describiría como "negativa". Por outra banda, un resultado infructuoso (por exemplo, a verificación falla, ou non se pode determinar a veracidade da identidade presentada) non se describiría como "positivo" ou "negativo". En cambio, un resultado infructuoso describiríase simplemente como non verificado. Cando non se realice ningún intento de verificar a identidade presentada por unha solicitude, a solicitude tamén se describiría como non verificada. Os termos só teñen sentido no contexto onde se recoñece a identidade presentada por unha solicitude e, polo tanto, onde a verificación é posible. Nos casos en que a identidade presentada non coincide coas opcións indicadas anteriormente, ou nos que non se presenta ningunha identidade, as opcións indicadas anteriormente non serán relevantes."
+ "Que son os "bypasses dun só golpe"?": "Nalgúns casos, unha solicitude verificada positivamente aínda pode bloquearse como resultado dos ficheiros de sinatura, módulos, ou outras condicións da solicitude, e é posible que poden ser necesarios bypasses para evitar falsos positivos. No caso de que un bypass teña como finalidade tratar exactamente unha infracción, nin máis nin menos, tal bypass poderíase describir como un "bypass dun só golpe"."
+hints_want_to_block: "!! Probablemente, a maioría dos usuarios queren que se bloquee isto, independentemente de se é real ou falsificado. Isto pódese conseguir por non seleccionar "tentar verificar" e seleccionar "bloquear solicitudes non verificadas". Non obstante, debido a que algúns usuarios poden querer verificar tales solicitudes (para bloquear os negativos mentres se permiten os positivos), en lugar de bloquealas mediante módulos, aquí ofrécense opcións para xestionar tales solicitudes."
+info_cli_by_default_ips: |
+ Os enderezos IP adoitan probarse con todos os ficheiros de sinatura, todos
+ os módulos, todas as regras auxiliares, e a verificación de redes sociais
+ e buscadores.
+ --no-sig    Evita as probas con ficheiros de sinatura.
+ --no-mod    Evita as probas con módulos.
+ --no-sev    Evita a verificación dos buscadores.
+ --no-smv    Evita a verificación das redes sociais.
+ --no-ov     Evita outras verificacións.
+ --no-aux    Evita as probas con regras auxiliares.
+info_cli_cidram_cli_mod: "Modo CLI de CIDRAM."
 warning:
  API_Rate_Limited: "Aviso: Parece que o acceso á API %s está actualmente limitado."
  Cookies: "Nota: CIDRAM usa unha cookie para autenticar os inicios de sesión. Ao iniciar sesión, dás o teu consentimento para que o teu navegador cree e almacene unha cookie."

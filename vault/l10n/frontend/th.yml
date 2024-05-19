@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2024.05.07).
+# This file: Thai language data for the front-end (last modified: 2024.05.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -285,7 +285,6 @@ config:
  recaptcha_sitekey: *CaptchaDashboard
  recaptcha_usemode: *CaptchaUseMode
  sfs: "การกำหนดค่าสำหรับโมดูล Stop Forum Spam."
- sfs_offer_captcha: "เมื่อคำขอถูกบล็อกโดยโมดูลนี้ อาจให้บริการ CAPTCHA. ค่าเริ่มต้น = True. หมายเหตุ: ไม่แทนที่คำสั่งอื่นๆ. เพื่อให้ใช้ CAPTCHA ได้ การกำหนดค่าทั้งหมดต้องยอมรับ กำหนดค่าคีย์ที่จำเป็น ฯลฯ. การตั้งค่าคำสั่งนี้เป็น false จะเป็นวิธีการป้องกันไม่ให้ CAPTCHA ถูกให้บริการสำหรับคำขอที่ถูกบล็อกโดยโมดูลนี้โดยเฉพาะ."
  signatures: "การกำหนดค่าสำหรับลายเซ็น, ไฟล์ลายเซ็น, โมดูล, ฯลฯ."
  signatures_default_tracktime: "ระยะเวลาที่ควรติดตามที่อยู่ IP. ค่าเริ่มต้น = 7d0°0′0″ (1 สัปดาห์)."
  signatures_infraction_limit: "จำนวนสูงสุดของการละเมิดที่ IP ได้รับอนุญาตให้เกิดขึ้นก่อนที่จะถูกห้ามโดยการติดตาม IP. ค่าเริ่มต้น = 10."
@@ -314,6 +313,7 @@ config:
  template_data_custom_header: "เพิ่ม HTML ที่จุดเริ่มต้นของหน้า "ปฏิเสธการเข้าใช้". หากคุณต้องการใส่โลโก้เว็บไซต์ ส่วนหัวส่วนบุคคล สคริปต์ ฯลฯ สิ่งนี้อาจเป็นประโยชน์."
  template_data_magnification: *MagnifDesc
  template_data_theme: "ธีมเริ่มต้นที่จะใช้สำหรับ CIDRAM."
+ tor: "การกำหนดค่าสำหรับโมดูลตัวบล็อก Tor."
  verification: "การกำหนดค่าสำหรับตรวจสอบว่าคำขอมาจากที่ใด."
  verification_adjust: "การควบคุมเพื่อปรับคุณสมบัติอื่นๆ เมื่ออยู่ในบริบทของการตรวจสอบ."
  verification_other: "การควบคุมสำหรับสอบคำขอประเภทอื่นๆ ที่เป็นไปได้."
@@ -706,7 +706,10 @@ label:
   redirect the request (without blocking it): "เปลี่ยนเส้นทางคำขอ (โดยไม่ปิดกั้น)"
   run a file to handle the request: "เรียกใช้ไฟล์เพื่อจัดการคำขอ"
   whitelist the request: "ให้ทำรายการขาวของคำขอ"
+ expire_bad: "นับตั้งแต่เวลาที่สร้างมันขึ้นมา ระยะเวลาที่ข้อมูลที่ไม่ดีที่แคชไว้โดยโมดูลนี้อาจคงอยู่ก่อนที่จะหมดอายุ."
+ expire_good: "นับตั้งแต่เวลาที่สร้างมันขึ้นมา ระยะเวลาที่ข้อมูลที่ดีที่แคชไว้โดยโมดูลนี้อาจคงอยู่ก่อนที่จะหมดอายุ."
  lookup_strategy: "คำขอใดควรทำการค้นหา?"
+ options: "ตัวเลือกที่จะนำมาใช้เมื่อมีการทริกเกอร์ลายเซ็นหรือเหตุการณ์บล็อกโดยโมดูลนี้."
  results: "ผล (%s ใน – %s ปฏิเสธ – %s ได้รับการยอมรับ – %s รวม – %s ออก):"
  rl_requests: "ส่งคำขอแล้ว: %s – คำขอใช้ได้: %s"
  rl_when: "บันทึกล่าสุด: %s (หมดอายุ: %s).<br />บันทึกที่เก่าที่สุด: %s (หมดอายุ: %s)."

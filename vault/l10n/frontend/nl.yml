@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2024.05.07).
+# This file: Dutch language data for the front-end (last modified: 2024.05.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -285,7 +285,6 @@ config:
  recaptcha_sitekey: *CaptchaDashboard
  recaptcha_usemode: *CaptchaUseMode
  sfs: "Configuratie voor de Stop Forum Spam module."
- sfs_offer_captcha: "Wanneer verzoeken door deze module worden geblokkeerd, CAPTCHA's kunnen worden geleverd. Standaard = True. Opmerking: Heeft geen voorrang op andere richtlijnen. Om CAPTCHA's te kunnen bedienen, moeten alle richtlijnen overeenkomen, de benodigde sleutels zijn geconfigureerd, enz. In het geval dat CAPTCHA's normaal zouden mogen worden geleverd, biedt het instellen van deze richtlijn op false een manier om te voorkomen dat CAPTCHA's worden geleverd voor verzoeken die specifiek door deze module worden geblokkeerd."
  signatures: "Configuratie voor signatures, signatuurbestanden, modules, enz."
  signatures_default_tracktime: "De duur dat IP-adressen moeten worden gevolgd. Standaard = 7d0°0′0″ (1 week)."
  signatures_infraction_limit: "Maximum aantal overtredingen een IP mag worden gesteld voordat hij wordt verbannen door IP-tracking. Standaard = 10."
@@ -314,6 +313,7 @@ config:
  template_data_custom_header: "Ingevoegd als HTML aan het begin van alle "toegang geweigerd" pagina's. Dit kan handig zijn als u op al dergelijke pagina's een websitelogo, gepersonaliseerde koptekst, scripts, of iets dergelijks wilt opnemen."
  template_data_magnification: *MagnifDesc
  template_data_theme: "Standaard thema om te gebruiken voor CIDRAM."
+ tor: "Configuratie voor de Tor blokkeringsmodule."
  verification: "Configuratie om te verifiëren waar verzoeken vandaan komen."
  verification_adjust: "Controles om andere functionaliteit aan te passen in de context van verificatie."
  verification_other: "Controles voor het verifiëren van andere soorten verzoeken waar mogelijk."
@@ -719,7 +719,10 @@ label:
   redirect the request (without blocking it): "omleiden het verzoek (zonder het te blokkeren)"
   run a file to handle the request: "voer een bestand uit om het verzoek af te handelen"
   whitelist the request: "zet het verzoek op de witte lijst"
+ expire_bad: "Vanaf het moment van zijn creatie, de hoeveelheid tijd dat slechte gegevens die door deze module in de cache zijn opgeslagen, kunnen leven voordat deze verlopen."
+ expire_good: "Vanaf het moment van zijn creatie, de hoeveelheid tijd dat goede gegevens die door deze module in de cache zijn opgeslagen, kunnen leven voordat deze verlopen."
  lookup_strategy: "Voor welke verzoeken moeten zoekopdrachten worden uitgevoerd?"
+ options: "Opties die moeten worden geactiveerd wanneer signatures of blokgebeurtenissen door deze module worden getriggerd."
  results: "Resultaten (%s in – %s verworpen – %s aanvaard – %s samengevoegd – %s uit):"
  rl_requests: "Verzonden verzoeken: %s – Verzoeken beschikbaar: %s"
  rl_when: "Nieuwste vermelding: %s (Verloopt: %s).<br />Oudste vermelding: %s (Verloopt: %s)."

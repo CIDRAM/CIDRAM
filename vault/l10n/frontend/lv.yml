@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2024.05.07).
+# This file: Latvian language data for the front-end (last modified: 2024.05.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -285,7 +285,6 @@ config:
  recaptcha_sitekey: *CaptchaDashboard
  recaptcha_usemode: *CaptchaUseMode
  sfs: "Stop Forum Spam moduļa konfigurācija."
- sfs_offer_captcha: "Ja pieprasījumus bloķē šis modulis, var tikt izdot CAPTCHA. Noklusējuma = True. Piezīme: Neaizstāj citas direktīvas. Lai izdotu CAPTCHA, ir jāsakrīt visām direktīvām, jākonfigurē nepieciešamās atslēgas, utt. Gadījumā, ja parasti ir atļauts izsniegt CAPTCHA, šīs direktīvas iestatīšana uz false nodrošina veidu, kā novērst CAPTCHA izdošanu pieprasījumiem, kurus īpaši bloķē šis modulis."
  signatures: "Parakstu, parakstu failu, moduļu, utt konfigurācija."
  signatures_default_tracktime: "IP adrešu izsekošanas ilgums. Noklusējuma = 7d0°0′0″ (1 nedēļa)."
  signatures_infraction_limit: "Maksimālais IP pieļaujamo pārkāpumu skaits, pirms tas tiek aizliegts ar IP izsekošanu. Noklusējuma = 10."
@@ -314,6 +313,7 @@ config:
  template_data_custom_header: "Ievietots kā HTML visu lapu "piekļuve liegta" pašā sākumā. Tas varētu būt noderīgi, ja vēlaties visās šādās lapās iekļaut vietnes logotipu, personalizētu galveni, skriptus, vai līdzīgu informāciju."
  template_data_magnification: *MagnifDesc
  template_data_theme: "Noklusējuma tēma, kas jāizmanto CIDRAM."
+ tor: "Tor bloķētāja moduļa konfigurācija."
  verification: "Konfigurācija, lai pārbaudītu, no kurienes tiek saņemti pieprasījumi."
  verification_adjust: "Kontroles, lai pielāgotu citas funkcionalitāte verifikācijas kontekstā."
  verification_other: "Kontroles cita veida pieprasījumu pārbaudei, ja iespējams."
@@ -721,7 +721,10 @@ label:
   redirect the request (without blocking it): "pāradresējiet pieprasījumu (nebloķējot to)"
   run a file to handle the request: "palaidiet failu, lai apstrādātu pieprasījumu"
   whitelist the request: "iekļaujiet pieprasījumu baltajā sarakstā"
+ expire_bad: "No tā radīšanas brīža, laika, kas slikti dati, kas ir kešatmiņā ar šo moduli, var dzīvot pirms tā termiņa beigām."
+ expire_good: "No tā radīšanas brīža, laika, kas labi dati, kas ir kešatmiņā ar šo moduli, var dzīvot pirms tā termiņa beigām."
  lookup_strategy: "Kuriem pieprasījumiem ir jāveic meklēšana?"
+ options: "Opcijas, kas jāievieš, kad šis modulis aktivizē parakstus vai bloķēšanas notikumus."
  results: "Rezultāti (%s ievadīti – %s noraidīti – %s pieņemti – %s apvienoti – %s atdoti):"
  rl_requests: "Pieprasījumi nosūtīti: %s – Pieejamie pieprasījumi: %s"
  rl_when: "Jaunākais ieraksts: %s (Derīguma termiņš beidzas: %s).<br />Vecākais ieraksts: %s (Derīguma termiņš beidzas: %s)."

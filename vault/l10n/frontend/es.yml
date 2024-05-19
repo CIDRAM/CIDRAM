@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2024.05.07).
+# This file: Spanish language data for the front-end (last modified: 2024.05.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -105,7 +105,7 @@ Name:
  Protocol blocker module: "Módulo bloqueador de protocolos."
  Referrer spam module: "Módulo de spam de referencia."
  Stop Forum Spam module: "Módulo Stop Forum Spam."
- Tor blocker module: "Módulo bloqueador Tor."
+ Tor blocker module: "Módulo bloqueador de Tor."
 bobuam_hint_default_value: "Cuando se establece en 0, el módulo deferirá al valor recomendado actualmente."
 checkbox:
  Allow single-hit bypasses: "¿Permitir bypasses de un solo golpe?"
@@ -285,7 +285,6 @@ config:
  recaptcha_sitekey: *CaptchaDashboard
  recaptcha_usemode: *CaptchaUseMode
  sfs: "Configuración para el módulo Stop Forum Spam."
- sfs_offer_captcha: "Cuando las solicitudes están bloqueadas por este módulo, se pueden servir CAPTCHA. Predefinido = True. Nota: No reemplaza otras directivas. Para que se sirvan los CAPTCHA, todas las directivas deben estar de acuerdo, las claves necesarias configuradas, etc. En el caso de que normalmente se permite CAPTCHA, establecer esta directiva en false proporciona una forma de evitar que se entreguen CAPTCHA para solicitudes bloqueadas específicamente por este módulo."
  signatures: "Configuración para firmas, archivos de firma, módulos, etc."
  signatures_default_tracktime: "La duración que se deben seguir las direcciones IP. Predefinido = 7d0°0′0″ (1 semana)."
  signatures_infraction_limit: "Número máximo de infracciones a las que un IP puede incurrir antes de ser prohibido por el rastreo IP. Predefinido = 10."
@@ -314,6 +313,7 @@ config:
  template_data_custom_header: "Insertado como HTML al principio de todas las páginas "acceso denegado". Esto podría ser útil en caso de que desee incluir un logotipo de sitio web, un encabezado personalizado, scripts, o similar en todas dichas páginas."
  template_data_magnification: *MagnifDesc
  template_data_theme: "Tema predefinido a utilizar para CIDRAM."
+ tor: "Configuración para el módulo bloqueador de Tor."
  verification: "Configuración para verificar de dónde se originan las solicitudes."
  verification_adjust: "Controles para ajustar otras funciones en el contexto de la verificación."
  verification_other: "Controles para verificar otros tipos de solicitudes cuando sea posible."
@@ -719,7 +719,10 @@ label:
   redirect the request (without blocking it): "redireccionar la solicitud (sin bloquearla)"
   run a file to handle the request: "ejecutar un archivo para manejar la solicitud"
   whitelist the request: "incluir la solicitud en la lista blanca"
+ expire_bad: "Desde el momento de su creación, la cantidad de tiempo que los datos malos almacenados en caché por este módulo pueden vivir antes de que caduque."
+ expire_good: "Desde el momento de su creación, la cantidad de tiempo que los datos buenos almacenados en caché por este módulo pueden vivir antes de que caduque."
  lookup_strategy: "¿Para qué solicitudes se deben realizar búsquedas?"
+ options: "Opciones que se implementarán cuando este módulo se desencadena firmas o eventos de bloqueo."
  results: "Resultados (%s en – %s rechazado – %s aceptado – %s fusionado – %s fuera):"
  rl_requests: "Solicitudes enviadas: %s – Solicitudes disponibles: %s"
  rl_when: "Registro más reciente: %s (Caduca: %s).<br />Registro más antiguo: %s (Caduca: %s)."

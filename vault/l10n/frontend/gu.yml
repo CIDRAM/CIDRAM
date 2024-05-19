@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Gujarati language data for the front-end (last modified: 2024.05.08).
+# This file: Gujarati language data for the front-end (last modified: 2024.05.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -151,7 +151,7 @@ config:
  bobuam_reason_ambiguous: "જ્યારે કોઈ અસ્પષ્ટ વપરાશકર્તા એજન્ટ સ્ટ્રિંગ મળી આવે ત્યારે બ્લોકનું કારણ બતાવવામાં આવે છે."
  bobuam_reason_bot: "બૉટ બ્લોક્સ માટે બ્લૉકનું કારણ બતાવવામાં આવ્યું છે."
  bobuam_reason_browser: "જ્યારે બહુ જૂનું બ્રાઉઝર બ્લૉક થઈ જાય ત્યારે બ્લૉકનું કારણ બતાવવામાં આવે છે."
- bobuam_reason_malformed: "જ્યારે દૂષિત વપરાશકર્તા એજન્ટ સ્ટ્રિંગ મળી આવે ત્યારે બ્લોકનું કારણ બતાવવામાં આવે છે.
+ bobuam_reason_malformed: "જ્યારે દૂષિત વપરાશકર્તા એજન્ટ સ્ટ્રિંગ મળી આવે ત્યારે બ્લોકનું કારણ બતાવવામાં આવે છે."
  bobuam_reason_masquerade: "જ્યારે વપરાશકર્તા એજન્ટ કંઈક બીજું માસ્કરેડ કરવાનો પ્રયાસ કરે છે ત્યારે બ્લોકનું કારણ બતાવવામાં આવે છે."
  bobuam_safari: "Safariના "Version" ટોકનનું સૌથી ઓછું માન્ય સંસ્કરણ. ભલામણ કરેલ: {{BOBUAM Token.Safari}}."
  bobuam_sanity_check: "શું બ્રાઉઝર્સ કે જે અસ્પષ્ટ અથવા સ્પષ્ટ રીતે દૂષિત વપરાશકર્તા એજન્ટ સ્ટ્રીંગ્સ દર્શાવે છે તેને અવરોધિત કરવા જોઈએ?"
@@ -285,7 +285,6 @@ config:
  recaptcha_sitekey: *CaptchaDashboard
  recaptcha_usemode: *CaptchaUseMode
  sfs: "Stop Forum Spam મોડ્યુલ માટે રૂપરેખાંકન."
- sfs_offer_captcha: "જ્યારે આ મોડ્યુલ દ્વારા વિનંતીઓને અવરોધિત કરવામાં આવે છે, ત્યારે કેપ્ચા આપવામાં આવી શકે છે. ડિફૉલ્ટ = True. નૉૅધ: અન્ય નિર્દેશોને ઓવરરાઇડ કરતું નથી. કેપ્ચા સર્વ કરવા માટે, બધા નિર્દેશો સંમત હોવા જોઈએ, જરૂરી કી ગોઠવેલી હોવી જોઈએ, વગેરે. સામાન્ય રીતે કેપ્ચાને સર્વ કરવાની પરવાનગી આપવામાં આવશે તેવા સંજોગોમાં, આ નિર્દેશને ખોટા પર સેટ કરવાથી કેપ્ચા આ મોડ્યુલ દ્વારા ખાસ કરીને અવરોધિત વિનંતીઓ માટે સેવા આપતા અટકાવવાનો માર્ગ પૂરો પાડે છે."
  signatures: "સિગ્નેચર, સિગ્નેચર ફાઇલો, મોડ્યુલો, વગેરે માટે રૂપરેખાંકન."
  signatures_default_tracktime: "જે સમયગાળો IP સરનામાંને ટ્રેક કરવો જોઈએ. ડિફૉલ્ટ = 7d0°0′0″ (1 અઠવાડિયું)."
  signatures_infraction_limit: "IP ટ્રેકિંગ દ્વારા પ્રતિબંધિત કરવામાં આવે તે પહેલાં IP ને મહત્તમ સંખ્યામાં ઉલ્લંઘન કરવાની મંજૂરી છે. ડિફૉલ્ટ = 10."
@@ -314,6 +313,7 @@ config:
  template_data_custom_header: "બધા "ઍક્સેસ નકારી છે" પૃષ્ઠોની શરૂઆતમાં HTML તરીકે દાખલ કરેલ છે. જો તમે આવા તમામ પૃષ્ઠો પર વેબસાઈટનો લોગો, વ્યક્તિગત હેડર, સ્ક્રિપ્ટો, અથવા સમાન સમાવવા માંગતા હો તો આ ઉપયોગી થઈ શકે છે."
  template_data_magnification: *MagnifDesc
  template_data_theme: "CIDRAM માટે વાપરવા માટેની મૂળભૂત થીમ."
+ tor: "ટોર બ્લોકર મોડ્યુલ માટે રૂપરેખાંકન."
  verification: "વિનંતીઓ ક્યાંથી આવે છે તે ચકાસવા માટેનું રૂપરેખાંકન."
  verification_adjust: "જ્યારે ચકાસણીના સંદર્ભમાં હોય ત્યારે અન્ય સુવિધાઓને સમાયોજિત કરવા માટેના નિયંત્રણો."
  verification_other: "જ્યાં શક્ય હોય ત્યાં અન્ય પ્રકારની વિનંતીઓ ચકાસવા માટેના નિયંત્રણો."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hebrew language data for the front-end (last modified: 2024.05.07).
+# This file: Hebrew language data for the front-end (last modified: 2024.05.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -285,7 +285,6 @@ config:
  recaptcha_sitekey: *CaptchaDashboard
  recaptcha_usemode: *CaptchaUseMode
  sfs: "תצורה עבור מודול Stop Forum Spam."
- sfs_offer_captcha: "כאשר בקשות חסומות על ידי מודול זה, ייתכן שיוגשו CAPTCHA. סטנדרטי = True. הערה: לא עוקף הנחיות אחרות. כדי להגיש CAPTCHA, כל ההנחיות חייבות להסכים, להגדיר את המפתחות הדרושים, וכו'. במקרה ש-CAPTCHA יוגשו בדרך כלל, הגדרת הוראה זו ל-false מספקת דרך למנוע הגשת CAPTCHA עבור בקשות שנחסמו במיוחד על ידי מודול זה."
  signatures: "תצורה של חתימות, קבצי חתימה, מודולים, וכו'."
  signatures_default_tracktime: "משך הזמן שעבורו יש לעקוב אחר כתובות IP. סטנדרטי = 7d0°0′0″ (שבוע 1)."
  signatures_infraction_limit: "המספר המרבי של הפרות ש-IP מותר לספוג לפני שהוא נאסר על ידי מעקב IP. סטנדרטי = 10."
@@ -314,6 +313,7 @@ config:
  template_data_custom_header: "הוכנס כ-HTML ממש בתחילת כל דפי "הגישה נדחתה". זה יכול להיות שימושי למקרה שתרצה לכלול לוגו של אתר אינטרנט, כותרת עליונה אישית, סקריפטים, או דומה בכל הדפים הללו."
  template_data_magnification: *MagnifDesc
  template_data_theme: "ערכת הנושא הסטנדרטית לשימוש עבור CIDRAM."
+ tor: "תצורה עבור מודול חוסם Tor."
  verification: "תצורה לאימות מהיכן מגיעות הבקשות."
  verification_adjust: "בקרות להתאמת תכונות אחרות בהקשר של אימות."
  verification_other: "בקרות לאימות סוגים אחרים של בקשות במידת האפשר."
@@ -716,7 +716,10 @@ label:
   redirect the request (without blocking it): "הפנה מחדש את הבקשה (מבלי לחסום אותה)"
   run a file to handle the request: "להפעיל קובץ כדי לטפל הבקשה"
   whitelist the request: "הבקשה תופיע ברשימה רשימה הלבן"
+ expire_bad: "מזמן יצירתו, משך הזמן שבו נתונים גרועים המאוחסנים במטמון על ידי מודול זה עשויים לחיות לפני שתוקפו יפוג."
+ expire_good: "מזמן יצירתו, משך הזמן שבו נתונים טובים המאוחסנים במטמון על ידי מודול זה עשויים לחיות לפני שתוקפו יפוג."
  lookup_strategy: "עבור אילו בקשות יש לבצע חיפושים?"
+ options: "אפשרויות שיש להפעיל כאשר חתימות או אירועי חסימה מופעלים על ידי מודול זה."
  results: "תוצאות (%s הוכנסו – %s נדחו – %s התקבלו – %s התמזגו – %s יצאו):"
  rl_requests: "בקשות שנשלחו: %s – בקשות זמינות: %s"
  rl_when: "השיא החדש ביותר: %s (פג תוקף: %s).<br />הרשומה העתיקה ביותר: %s (פג תוקף: %s)."

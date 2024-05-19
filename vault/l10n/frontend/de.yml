@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2024.05.07).
+# This file: German language data for the front-end (last modified: 2024.05.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -285,7 +285,6 @@ config:
  recaptcha_sitekey: *CaptchaDashboard
  recaptcha_usemode: *CaptchaUseMode
  sfs: "Konfiguration für das Stop Forum Spam Modul."
- sfs_offer_captcha: "Wenn Anfragen von diesem Modul blockiert werden, können CAPTCHAs bereitgestellt werden. Standardeinstellung = True. Hinweis: Überschreibt keine anderen Direktiven. Damit CAPTCHAs geliefert werden können, müssen alle Direktiven übereinstimmen, erforderliche Schlüssel konfiguriert sein, u.s.w. In dem Fall dass CAPTCHAs normalerweise zugelassen würden, die Einsetzung dieser Direktive auf „false“ bietet eine Möglichkeit für CAPTCHAs verhindert werden für den Anfragen die speziell von diesem Modul blockiert werden."
  signatures: "Konfiguration für Signaturen, Signaturdateien, Module, u.s.w."
  signatures_default_tracktime: "Die Dauer für die IP-Adressen getrackt werden sollen. Standardeinstellung = 7d0°0′0″ (1 Woche)."
  signatures_infraction_limit: "Maximale Anzahl von Verstöße, die eine IP zulassen darf, bevor sie durch IP-Tracking verbannt ist. Standardeinstellung = 10."
@@ -314,6 +313,7 @@ config:
  template_data_custom_header: "Als HTML ganz am Anfang aller "Zugriff verweigert"-Seiten eingefügt. Dies kann nützlich sein, wenn Sie auf allen solchen Seiten ein Website-Logo, einen personalisierten Header, Skripte, oder ähnliches einfügen möchten."
  template_data_magnification: *MagnifDesc
  template_data_theme: "Standard-Thema für CIDRAM zu verwenden."
+ tor: "Konfiguration für das Tor-Blocker-Modul."
  verification: "Konfiguration zur Verifizierung woher Anfragen stammen."
  verification_adjust: "Kontrollen zum Anpassen anderer Funktionen im Zusammenhang mit der Verifizierung."
  verification_other: "Kontrollen für die Verifizierung die anderer Arten von Anfragen sofern möglich."
@@ -722,7 +722,10 @@ label:
   redirect the request (without blocking it): "umleiten Sie die Anfrage (ohne zu blockieren)"
   run a file to handle the request: "durch Ausführen einer Datei Bearbeiten"
   whitelist the request: "setzen Sie die Anfrage auf die weiße Liste"
+ expire_bad: "Ab der Zeit seiner Schöpfung, die Zeit, in der schlechte Daten, die von diesem Modul zwischengespeichert wurden, kann leben bevor es abläuft."
+ expire_good: "Ab der Zeit seiner Schöpfung, die Zeit, in der gute Daten, die von diesem Modul zwischengespeichert wurden, kann leben bevor es abläuft."
  lookup_strategy: "Für welche Anfragen sollen Lookups durchgeführt werden?"
+ options: "Optionen, die umgesetzt werden sollen, wenn Signaturen oder Blockereignisse von diesem Modul ausgelöst werden."
  results: "Ergebnisse (%s eingegeben – %s abgelehnt – %s akzeptiert – %s fusionierte – %s ausgegeben):"
  rl_requests: "Gesendete Anfragen: %s – Verfügbare Anfragen: %s"
  rl_when: "Neuester Rekord: %s (Läuft ab: %s).<br />Ältester Rekord: %s (Läuft ab: %s)."

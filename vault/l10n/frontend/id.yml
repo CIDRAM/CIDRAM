@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2024.05.07).
+# This file: Indonesian language data for the front-end (last modified: 2024.05.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -285,7 +285,6 @@ config:
  recaptcha_sitekey: *CaptchaDashboard
  recaptcha_usemode: *CaptchaUseMode
  sfs: "Konfigurasi untuk modul Stop Forum Spam."
- sfs_offer_captcha: "Ketika permintaan diblokir oleh modul ini, CAPTCHA dapat disajikan. Default = True. Catat: Tidak mengesampingkan direktif lain. Agar CAPTCHA dapat disajikan, semua direktif harus setuju, kunci yang diperlukan harus dikonfigurasi, dll. Jika CAPTCHA biasanya diizinkan untuk disajikan, menyetel direktif ini ke false menyediakan cara untuk mencegah CAPTCHA disajikan untuk permintaan yang diblokir secara khusus oleh modul ini."
  signatures: "Konfigurasi untuk tanda tangan, file tanda tangan, modul, dll."
  signatures_default_tracktime: "Durasi yang alamat IP harus dilacak. Default = 7d0°0′0″ (1 seminggu)."
  signatures_infraction_limit: "Jumlah maksimum pelanggaran IP diperbolehkan untuk dikenakan sebelum dilarang oleh pelacakan IP. Default = 10."
@@ -314,6 +313,7 @@ config:
  template_data_custom_header: "Disisipkan sebagai HTML di awal semua halaman "akses ditolak". Ini dapat berguna jika Anda ingin menyertakan logo situs web, header yang dipersonalisasi, skrip, atau sejenisnya di semua halaman tersebut."
  template_data_magnification: *MagnifDesc
  template_data_theme: "Tema default yang digunakan untuk CIDRAM."
+ tor: "Konfigurasi untuk modul pemblokir Tor."
  verification: "Konfigurasi untuk memverifikasi dari mana permintaan berasal."
  verification_adjust: "Kontrol untuk menyesuaikan fitur lain saat dalam konteks verifikasi."
  verification_other: "Kontrol untuk memverifikasi jenis permintaan lain jika/bila memungkinkan."
@@ -712,7 +712,10 @@ label:
   redirect the request (without blocking it): "mengarahkan permintaan (tanpa memblokirnya)"
   run a file to handle the request: "mengeksekusi file untuk menangani permintaan"
   whitelist the request: "mendaftar putih permintaannya"
+ expire_bad: "Dari saat penciptaannya, jumlah waktu yang data yang buruk yang dimasukkan ke dalam cache oleh modul ini dapat hidup sebelum kedaluwarsa."
+ expire_good: "Dari saat penciptaannya, jumlah waktu yang data yang baik yang dimasukkan ke dalam cache oleh modul ini dapat hidup sebelum kedaluwarsa."
  lookup_strategy: "Untuk permintaan mana pencarian harus dilakukan?"
+ options: "Opsi untuk diberlakukan ketika tanda tangan atau acara blok dipicu oleh modul ini."
  results: "Hasil (%s dimasukkan – %s ditolak – %s diterima – %s digabungkan – %s keluaran):"
  rl_requests: "Permintaan dikirim: %s – Permintaan yang tersedia: %s"
  rl_when: "Rekor terbaru: %s (Kedaluwarsa: %s).<br />Rekor tertua: %s (Kedaluwarsa: %s)."

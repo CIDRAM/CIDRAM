@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malay language data for the front-end (last modified: 2024.05.07).
+# This file: Malay language data for the front-end (last modified: 2024.05.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -285,7 +285,6 @@ config:
  recaptcha_sitekey: *CaptchaDashboard
  recaptcha_usemode: *CaptchaUseMode
  sfs: "Konfigurasi untuk modul Stop Forum Spam."
- sfs_offer_captcha: "Apabila permintaan disekat oleh modul ini, CAPTCHA boleh disampaikan. Lalai = True. Nota: Tidak mengatasi arahan lain. Agar CAPTCHA boleh disampaikan, semua arahan mesti bersetuju, kunci yang diperlukan dikonfigurasikan, dsb. Sekiranya CAPTCHA biasanya dibenarkan untuk disampaikan, menetapkan arahan ini kepada false menyediakan cara untuk menghalang CAPTCHA disampaikan untuk permintaan yang disekat secara khusus oleh modul ini."
  signatures: "Konfigurasi untuk tandatangan, fail tandatangan, modul, dsb."
  signatures_default_tracktime: "Tempoh yang alamat IP harus dijejaki. Lalai = 7d0°0′0″ (1 minggu)."
  signatures_infraction_limit: "Jumlah maksimum pelanggaran IP dibenarkan untuk ditanggung sebelum ia dilarang oleh penjejakan IP. Lalai = 10."
@@ -314,6 +313,7 @@ config:
  template_data_custom_header: "Disisipkan sebagai HTML pada permulaan semua halaman "akses dinafikan". Ini mungkin berguna sekiranya anda ingin menyertakan logo tapak web, pengepala diperibadikan, skrip, dsb pada semua halaman tersebut."
  template_data_magnification: *MagnifDesc
  template_data_theme: "Tema lalai yang digunakan untuk CIDRAM."
+ tor: "Konfigurasi untuk modul penyekat Tor."
  verification: "Konfigurasi untuk mengesahkan dari mana permintaan berasal."
  verification_adjust: "Kawalan untuk melaraskan ciri lain apabila dalam konteks pengesahan."
  verification_other: "Kawalan untuk mengesahkan jenis permintaan lain jika boleh."
@@ -715,7 +715,10 @@ label:
   redirect the request (without blocking it): "mengubah hala permintaan (tanpa menyekatnya)"
   run a file to handle the request: "laksanakan fail untuk mengendalikan permintaan"
   whitelist the request: "senaraikan putih permintaan"
+ expire_bad: "Dari masa penciptaannya, jumlah masa yang data yang buruk yang dimasukkan ke dalam cache oleh modul ini mungkin hidup sebelum ia tamat."
+ expire_good: "Dari masa penciptaannya, jumlah masa yang data yang baik yang dimasukkan ke dalam cache oleh modul ini mungkin hidup sebelum ia tamat."
  lookup_strategy: "Untuk pertanyaan manakah carian harus dijalankan?"
+ options: "Pilihan untuk digubal apabila tandatangan atau acara sekat dicetuskan oleh modul ini."
  results: "Keputusan (%s dimasukkan – %s ditolak – %s diterima – %s digabungkan – %s keluaran):"
  rl_requests: "Permintaan dihantar: %s – Permintaan tersedia: %s"
  rl_when: "Rekod terbaru: %s (Tamat tempoh: %s).<br />Rekod tertua: %s (Tamat tempoh: %s)."

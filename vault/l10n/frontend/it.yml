@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2024.05.07).
+# This file: Italian language data for the front-end (last modified: 2024.05.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -260,7 +260,7 @@ config:
  projecthoneypot_max_ts_for_captcha: "Il punteggio massimo di minaccia consentito per ricevere un CAPTCHA (deve essere un numero compreso tra 1 e 100). Predefinito = 10."
  projecthoneypot_minimum_threat_score: "Il punteggio minimo di minaccia richiesto affinché CIDRAM blocca un indirizzo IP (deve essere un numero compreso tra 1 e 100). Predefinito = 10."
  projecthoneypot_type_of_visitor: "Controlla se bloccare o profilare in base al tipo di visitatore come determinato da Project Honeypot."
- protocol: "Configurazione per il modulo di blocco del protocollo."
+ protocol: "Configurazione per il modulo bloccante dei protocolli."
  protocol_blocked: "I protocolli selezionati verranno bloccati. Nota: Non avrà alcun effetto per quei siti Web che instradano attraverso servizi che riscrivono le richieste in modo che tutti utilizzino esattamente lo stesso protocollo, come Cloudflare."
  protocol_reason_message: "Il messaggio di motivo visualizzato quando tali richieste vengono bloccate."
  rate_limiting: "Configurazione per la limitazione della velocità (non raccomandato per uso generale)."
@@ -285,7 +285,6 @@ config:
  recaptcha_sitekey: *CaptchaDashboard
  recaptcha_usemode: *CaptchaUseMode
  sfs: "Configurazione per il modulo Stop Forum Spam."
- sfs_offer_captcha: "Quando le richieste vengono bloccate da questo modulo, possono essere serviti CAPTCHA. Predefinito = True. Nota: Non sovrascrive altre direttive. Affinché i CAPTCHA vengano serviti, tutte le direttive devono essere d'accordo, le chiavi necessarie configurate, ecc. Nel caso in cui i CAPTCHA possano essere normalmente serviti, l'impostazione di questa direttiva su false fornisce un modo per impedire che i CAPTCHA vengano serviti per richieste bloccate specificamente da questo modulo."
  signatures: "Configurazione per firme, file di firma, moduli, ecc."
  signatures_default_tracktime: "La durata per la quale devono essere tracciati gli indirizzi IP. Predefinito = 7d0°0′0″ (1 settimana)."
  signatures_infraction_limit: "Numero massimo di infrazioni un IP è permesso di incorrere prima di essere vietato dalle tracciamento IP. Predefinito = 10."
@@ -314,6 +313,7 @@ config:
  template_data_custom_header: "Inserito come HTML all'inizio di tutte le pagine di "accesso negato". Questo potrebbe essere utile nel caso in cui desideri includere il logo di un sito web, un'intestazione personalizzata, script, o simili in tutte queste pagine."
  template_data_magnification: *MagnifDesc
  template_data_theme: "Tema predefinito da utilizzare per CIDRAM."
+ tor: "Configurazione per il modulo bloccante di Tor."
  verification: "Configurazione per verificare da dove provengono le richieste."
  verification_adjust: "Controlli per regolare altre funzionalità nel contesto della verifica."
  verification_other: "Controlli per la verifica di altri tipi di richieste ove possibile."
@@ -721,7 +721,10 @@ label:
   redirect the request (without blocking it): "reindirizzare la richiesta (senza bloccarla)"
   run a file to handle the request: "eseguire un file per gestire la richiesta"
   whitelist the request: "inserire nella lista bianca la richiesta"
+ expire_bad: "Dal momento della sua creazione, il periodo di tempo in cui i dati errati memorizzati nella cache da questo modulo possono vivere prima della loro scadenza."
+ expire_good: "Dal momento della sua creazione, il periodo di tempo in cui i dati validi memorizzati nella cache da questo modulo possono vivere prima della loro scadenza."
  lookup_strategy: "Per quali richieste devono essere eseguite le ricerche?"
+ options: "Opzioni da attivare quando le firme o gli eventi di blocco vengono innescate ​​da questo modulo."
  results: "Risultati (%s in – %s rifiutato – %s accettato – %s combinato – %s su):"
  rl_requests: "Richieste inviate: %s – Richieste disponibili: %s"
  rl_when: "Record più recente: %s (Scade: %s).<br />Record più vecchio: %s (Scade: %s)."

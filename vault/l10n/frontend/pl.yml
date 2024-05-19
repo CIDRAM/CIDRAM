@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2024.05.07).
+# This file: Polish language data for the front-end (last modified: 2024.05.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -285,7 +285,6 @@ config:
  recaptcha_sitekey: *CaptchaDashboard
  recaptcha_usemode: *CaptchaUseMode
  sfs: "Konfiguracja modułu Stop Forum Spam."
- sfs_offer_captcha: "Gdy żądania są blokowane przez ten moduł, mogą zostać wystawione kody CAPTCHA. Domyślna = True. Uwaga: Nie zastępuje innych dyrektyw. Aby można było wystawić CAPTCHA, wszystkie dyrektywy muszą być zgodne, konieczne skonfigurowane klucze, itp. W przypadku, gdyby normalnie zezwalano na wystawianie kodów CAPTCHA, ustawienie tej dyrektywy na wartość false umożliwia zapobieganie wystawianiu kodów CAPTCHA dla żądań zablokowanych specjalnie przez ten moduł."
  signatures: "Konfiguracja podpisów, plików podpisów, modułów, itp."
  signatures_default_tracktime: "Czas, przez jaki adresy IP powinny być śledzone. Domyślna = 7d0°0′0″ (1 tydzień)."
  signatures_infraction_limit: "Maksymalna liczba wykroczeń, które może ponieść IP, zanim zostanie zablokowane przez śledzenie IP. Domyślna = 10."
@@ -314,6 +313,7 @@ config:
  template_data_custom_header: "Wstawiany jako HTML na początku wszystkich stron z „dostęp zabroniony”. Może to być przydatne w przypadku, gdy chcesz umieścić logo witryny, spersonalizowany nagłówek, skrypty, itp. na wszystkich takich stronach."
  template_data_magnification: *MagnifDesc
  template_data_theme: "Domyślny motyw do użycia dla CIDRAM."
+ tor: "Konfiguracja modułu blokowania Tor."
  verification: "Konfiguracja do weryfikacji skąd pochodzą żądania."
  verification_adjust: "Kontrolki umożliwiające dostosowanie innych funkcjonalność w kontekście weryfikacji."
  verification_other: "Kontrolki do weryfikacji innych rodzajów żądań tam, gdzie to możliwe."
@@ -728,7 +728,10 @@ label:
   redirect the request (without blocking it): "przekierować żądanie (bez blokowania)"
   run a file to handle the request: "uruchom plik do obsługi żądania"
   whitelist the request: "dodaj żądanie do białej listy"
+ expire_bad: "Od chwili jego kreacja, ilość czasu, przez jaki złe dane przechowywane w pamięci podręcznej przez ten moduł mogą przetrwać, zanim wygasną."
+ expire_good: "Od chwili jego kreacja, ilość czasu, przez jaki dobre dane przechowywane w pamięci podręcznej przez ten moduł mogą przetrwać, zanim wygasną."
  lookup_strategy: "Dla jakich żądań należy wykonać wyszukiwania?"
+ options: "Opcje, które mają zostać włączone, gdy wyzwalane są sygnatury lub zdarzenia blokujące przez ten moduł."
  results: "Rezultat (%s dostarczone – %s odrzucone – %s zaakceptowane – %s połączone – %s zwrócone):"
  rl_requests: "Wysłane wnioski: %s – Dostępne wnioski: %s"
  rl_when: "Najnowszy rekord: %s (Wygasa: %s).<br />Najstarszy rekord: %s (Wygasa: %s)."

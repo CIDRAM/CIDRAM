@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Ukrainian language data for the front-end (last modified: 2024.05.07).
+# This file: Ukrainian language data for the front-end (last modified: 2024.05.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -285,7 +285,6 @@ config:
  recaptcha_sitekey: *CaptchaDashboard
  recaptcha_usemode: *CaptchaUseMode
  sfs: "Конфігурація для модуля Stop Forum Spam."
- sfs_offer_captcha: "Коли запити блокуються цим модулем, можуть обслуговуватися CAPTCHA. Стандарт = True. Зауважте: Не скасовує інші директиви. Щоб обслуговувати CAPTCHA, усі директиви мають бути узгоджені, необхідні ключі налаштовані, тощо. У випадку якщо зазвичай дозволено обслуговувати CAPTCHA, встановлення цієї директиви на false дає спосіб запобігти обслуговуванню CAPTCHA для запитів заблокованих саме цим модулем."
  signatures: "Конфігурація для сигнатур, файлів сигнатур, модулів, тощо."
  signatures_default_tracktime: "Час протягом якого потрібно відстежувати IP-адреси. Стандарт = 7d0°0′0″ (1 тиждень)."
  signatures_infraction_limit: "Максимальна кількість порушень, яких може зазнати IP-адреса, перш ніж її буде заборонено відстеженням IP-адреси. Стандарт = 10."
@@ -314,6 +313,7 @@ config:
  template_data_custom_header: "Вставляється як HTML на початку всіх сторінок «доступ заборонено». Це може бути корисним, якщо ви хочете включити логотип веб-сайту, персоналізований заголовок, сценарії, тощо на всі такі сторінки."
  template_data_magnification: *MagnifDesc
  template_data_theme: "Стандартна тема для CIDRAM."
+ tor: "Конфігурація для модуля блокування Tor."
  verification: "Конфігурація для перевірки джерела вхідні запитів."
  verification_adjust: "Елементи керування для налаштування інших функціональність у контексті перевірки."
  verification_other: "Елементи керування для перевірки інших видів запитів, де це можливо."
@@ -733,7 +733,10 @@ label:
   redirect the request (without blocking it): "перенаправити запит (без блокуючи)"
   run a file to handle the request: "запустіть файл для обробки запиту"
   whitelist the request: "занесіть запит у білого список"
+ expire_bad: "З часу створення, кількість часу, протягом якого погані дані, кешовані цим модулем, можуть існувати до закінчення терміну їх дії."
+ expire_good: "З часу створення, кількість часу, протягом якого хороші дані, кешовані цим модулем, можуть існувати до закінчення терміну їх дії."
  lookup_strategy: "Для яких запитів слід виконувати пошук?"
+ options: "Параметри, які слід прийняти, коли сигнатури або події блокування тригеровані цим модулем."
  results: "Результати (%s введено – %s відхилено – %s прийнято – %s об'єднано – %s вийшов):"
  rl_requests: "Надіслано запити: %s – Доступні запити: %s"
  rl_when: "Найновіший запис: %s (Термін дії: %s).<br />Найстаріший запис: %s (Термін дії: %s)."

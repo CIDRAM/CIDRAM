@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2024.05.07).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2024.05.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -285,7 +285,6 @@ config:
  recaptcha_sitekey: *CaptchaDashboard
  recaptcha_usemode: *CaptchaUseMode
  sfs: "Stop Forum Spam模块的配置。"
- sfs_offer_captcha: "当此模块阻止请求时，可能会提供验证码。 标准 = True。​注意：它不会覆盖其他指令。​要提供验证码，所有指令必须一致，必要的密钥必须配置，等等。​在通常允许提供验证码的情况下，将此指令设置为“false”可以防止为该模块专门阻止的请求提供验证码。"
  signatures: "签名，签名文件，模块，等的配置。"
  signatures_default_tracktime: "应跟踪IP地址的持续时间。 标准 = 7d0°0′0″ （1周）。"
  signatures_infraction_limit: "从IP最大允许违规数量之前它被禁止。​标准=10。"
@@ -314,6 +313,7 @@ config:
  template_data_custom_header: "在所有“拒绝访问”页面的开头作为HTML插入。​如果您想在所有此类页面中包含网站徽标、个性化标题、脚本、或类似，这可能会很有用。"
  template_data_magnification: *MagnifDesc
  template_data_theme: "用于CIDRAM的默认主题。"
+ tor: "Tor阻塞模块的配置。"
  verification: "请求来源验证配置。"
  verification_adjust: "在验证上下文中调整其他功能的控件。"
  verification_other: "用于在可能的情况下，验证其他类型的请求的控件。"
@@ -707,7 +707,10 @@ label:
   redirect the request (without blocking it): "重定向该请求（不阻止它）"
   run a file to handle the request: "运行一个文件来处理该请求"
   whitelist the request: "白名单该请求"
+ expire_bad: "从创造的时候，该模块缓存的不良数据的可能会在它到期之前生存的时间量。"
+ expire_good: "从创造的时候，该模块缓存的好数据的可能会在它到期之前生存的时间量。"
  lookup_strategy: "应该为哪些请求执行查找？"
+ options: "当此模块触发签名或阻止事件时要制定的选项。"
  results: "结果 （%s 输入 – %s 拒绝 – %s 公认 – %s 合并 – %s 产量）："
  rl_requests: "发送的请求： %s – 可用请求： %s"
  rl_when: "最新记录： %s （过期： %s）。<br />最早记录： %s （过期： %s）。"

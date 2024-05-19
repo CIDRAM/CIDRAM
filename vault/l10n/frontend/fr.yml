@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2024.05.07).
+# This file: French language data for the front-end (last modified: 2024.05.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -105,7 +105,7 @@ Name:
  Protocol blocker module: "Module bloqueur de protocoles."
  Referrer spam module: "Module spam référent."
  Stop Forum Spam module: "Module Stop Forum Spam."
- Tor blocker module: "Module de blocage Tor."
+ Tor blocker module: "Module bloqueur de Tor."
 bobuam_hint_default_value: "Lorsqu'il est réglé sur 0, le module prendra la valeur actuellement recommandé."
 checkbox:
  Allow single-hit bypasses: "Autoriser les contournements en un seul coup\_?"
@@ -285,7 +285,6 @@ config:
  recaptcha_sitekey: *CaptchaDashboard
  recaptcha_usemode: *CaptchaUseMode
  sfs: "Configuration du module Stop Forum Spam."
- sfs_offer_captcha: "Lorsque les requêtes sont bloquées par ce module, des CAPTCHA peuvent être servis. Défaut = True. Remarque\_: Ne remplace pas les autres directives. Pour que les CAPTCHA soient servis, toutes les directives doivent être d'accord, les clés nécessaires configurées, etc. Dans le cas où les CAPTCHA seraient normalement autorisés à être servis, définir cette directive sur false fournit un moyen d'empêcher les CAPTCHA d'être servis pour les requêtes bloquées spécifiquement par ce module."
  signatures: "Configuration pour les signatures, fichiers de signatures, modules, etc."
  signatures_default_tracktime: "La durée pendant laquelle les adresses IP doivent être suivies. Défaut = 7d0°0′0″ (1 semaine)."
  signatures_infraction_limit: "Nombre maximal d'infractions qu'une IP est autorisée à engager avant d'être interdite par la surveillance des IPs. Défaut = 10."
@@ -314,6 +313,7 @@ config:
  template_data_custom_header: "Inséré en tant que HTML au tout début de toutes les pages «\_accès refusé\_». Cela peut être utile si vous souhaitez inclure un logo de site Web, un en-tête personnalisé, des scripts, ou similaires sur toutes ces pages."
  template_data_magnification: *MagnifDesc
  template_data_theme: "Le thème à utiliser par défaut pour CIDRAM."
+ tor: "Configuration pour le module bloqueur de Tor."
  verification: "Configuration pour vérifier d'où proviennent les requêtes."
  verification_adjust: "Contrôles pour ajuster d'autres fonctionnalités dans le contexte de la vérification."
  verification_other: "Contrôles pour vérifier d'autres types de requêtes lorsque cela est possible."
@@ -428,7 +428,7 @@ hints_shorthand:
  4.: "Fait référence aux cas où les mots abrégés ne sont pas du tout utilisés, ou ne sont pas reconnus par le CIDRAM."
  Un par signature.: "Une signature peut invoquer plusieurs profils, mais ne peut utiliser qu'un seul mot abrégé. Il est possible que plusieurs mots abrégés sont appropriés, mais comme un seul peut être utilisé, nous efforçons de toujours n'utiliser que le plus approprié."
  Priorité.: "Une option sélectionnée est toujours prioritaire sur une option non sélectionnée. Par exemple, si plusieurs mots abrégés sont en jeu mais qu'un seul d'entre eux est défini comme étant bloqué, la demande sera toujours bloqué."
- Points de terminaison humains et services de cloud.: "Service de cloud peut faire référence aux fournisseurs d'hébergement Web, aux fermes de serveurs, aux centres de données, ou à un certain nombre d'autres choses. Point de terminaison humain fait référence aux moyens par lesquels un humain accède à Internet, par exemple, par le biais d'un fournisseur de services internet. Un réseau ne fournit généralement que l'un ou l'autre, mais peut parfois fournir les deux. Nous visons à ne jamais identifier les points de terminaison humains potentiels comme des services de cloud. Par conséquent, un service de cloud peut être identifié comme autre chose si sa gamme est partagé par des points de terminaison humains connus. À l'inverse, nous visons à toujours identifier les services de cloud, dont les gammes ne sont partagés par aucun point de terminaison humain connu, comme des services de cloud. Par conséquent, une requête identifié explicitement comme un service de cloud ne partage probablement pas sa gamme avec des points de terminaison humains connus. De même, une requête identifié explicitement par des attaques ou des spam risque les partage probablement. Cela dit, l'internet est toujours en mouvement, les objectifs des réseaux changent avec le temps, et les gammes sont toujours achetés ou vendues, alors restez conscient et vigilant en ce qui concerne les faux positifs."
+ Points de terminaison humains et services de cloud.: "Service de cloud peut faire référence aux fournisseurs d'hébergement Web, aux fermes de serveurs, aux centres de données, ou à un certain nombre d'autres choses. Point de terminaison humain fait référence aux moyens par lesquels un humain accède à internet, par exemple, par le biais d'un fournisseur de services internet. Un réseau ne fournit généralement que l'un ou l'autre, mais peut parfois fournir les deux. Nous visons à ne jamais identifier les points de terminaison humains potentiels comme des services de cloud. Par conséquent, un service de cloud peut être identifié comme autre chose si sa gamme est partagé par des points de terminaison humains connus. À l'inverse, nous visons à toujours identifier les services de cloud, dont les gammes ne sont partagés par aucun point de terminaison humain connu, comme des services de cloud. Par conséquent, une requête identifié explicitement comme un service de cloud ne partage probablement pas sa gamme avec des points de terminaison humains connus. De même, une requête identifié explicitement par des attaques ou des spam risque les partage probablement. Cela dit, l'internet est toujours en mouvement, les objectifs des réseaux changent avec le temps, et les gammes sont toujours achetés ou vendues, alors restez conscient et vigilant en ce qui concerne les faux positifs."
 hints_time_format: |
  <strong><em>Espace réservé – Explication – Exemple basé sur 2024-04-30T18:27:49+08:00.</em></strong><br />
  <code class="s">{yyyy}</code> – L'année – Par exemple, 2024.<br />
@@ -735,7 +735,10 @@ label:
   redirect the request (without blocking it): "rediriger la requête (sans la bloquer)"
   run a file to handle the request: "exécuter un fichier pour gérer la requête"
   whitelist the request: "mettre la requête sur la liste blanche"
+ expire_bad: "À partir du moment de sa création, la durée pendant laquelle les mauvaises données mises en cache par ce module peuvent durer avant d'expirer."
+ expire_good: "À partir du moment de sa création, la durée pendant laquelle les bonnes données mises en cache par ce module peuvent durer avant d'expirer."
  lookup_strategy: "Pour quelles requêtes les recherches doivent-elles être effectuées\_?"
+ options: "Options à activer lorsque des signatures ou des événements de blocage sont déclenchés par ce module."
  results: "Résultats (%s entré – %s rejeté – %s accepté – %s fusionné – %s sortie)\_:"
  rl_requests: "Requêtes envoyés\_: %s – Requêtes disponibles\_: %s"
  rl_when: "Le plus récent enregistrement\_: %s (Expire\_: %s).<br />Le plus ancien enregistrement\_: %s (Expire\_: %s)."

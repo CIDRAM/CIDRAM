@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Czech language data for the front-end (last modified: 2024.05.07).
+# This file: Czech language data for the front-end (last modified: 2024.05.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -285,7 +285,6 @@ config:
  recaptcha_sitekey: *CaptchaDashboard
  recaptcha_usemode: *CaptchaUseMode
  sfs: "Konfigurace pro modul Stop Forum Spam."
- sfs_offer_captcha: "Pokud jsou požadavky tímto modulem blokovány, mohou být obsluhovány CAPTCHA. Standardní = True. Poznámka: Nepřepisuje ostatní direktivy. Aby bylo možné obsluhovat CAPTCHA, musí souhlasit všechny direktivy, nakonfigurovány potřebné klíče, atd. V případě že by normálně bylo povoleno doručovat CAPTCHA, nastavení této direktivy na false poskytuje způsob, jak zabránit obsluhování CAPTCHA pro požadavky blokované konkrétně tímto modulem."
  signatures: "Konfigurace pro podpisy, soubory podpisů, moduly, atd."
  signatures_default_tracktime: "Doba, po kterou by měly být IP adresy sledovány. Standardní = 7d0°0′0″ (1 týden)."
  signatures_infraction_limit: "Maximální počet přestupků, kterých se IP může vyskytnout, než bude zakázána sledováním IP. Standardní = 10."
@@ -314,6 +313,7 @@ config:
  template_data_custom_header: "Bude vložen jako HTML na začátku všech „přístup odepřen“ stránek. To by mohlo být užitečné v případě, že chcete na všechny takové stránky zahrnout logo webové stránky, personalizované záhlaví, skripty nebo podobné."
  template_data_magnification: *MagnifDesc
  template_data_theme: "Standardní téma pro CIDRAM."
+ tor: "Konfigurace pro modul pro blokování Tor."
  verification: "Konfigurace pro ověření, odkud požadavky pocházejí."
  verification_adjust: "Ovládací prvky pro úpravu dalších funkcí v kontextu ověřování."
  verification_other: "Ovládací prvky pro ověřování jiných druhů požadavků."
@@ -726,7 +726,10 @@ label:
   redirect the request (without blocking it): "přesměrujte požadavek (bez blokování)"
   run a file to handle the request: "spustit soubor pro zpracování požadavku"
   whitelist the request: "whitelistujte požadavek"
+ expire_bad: "Od doby vytvořen, dobu, po kterou mohou špatná data uložená v mezipaměti tohoto modulu žít, než vyprší."
+ expire_good: "Od doby vytvořen, dobu, po kterou mohou dobrá data uložená v mezipaměti tohoto modulu žít, než vyprší."
  lookup_strategy: "Které požadavky by se měly provádět vyhledávání?"
+ options: "Možnosti, které se aktivují, když jsou tímto modulem spuštěny podpisů nebo blokové události."
  results: "Výsledek (%s zadáno – %s zamítnuto – %s přijato – %s sloučeny – %s vydáno):"
  rl_requests: "Odeslané požadavky: %s – Dostupné požadavky: %s"
  rl_when: "Nejnovější záznam: %s (Platnost vyprší: %s).<br />Nejstarší záznam: %s (Platnost vyprší: %s)."

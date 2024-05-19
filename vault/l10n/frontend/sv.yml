@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2024.05.07).
+# This file: Swedish language data for the front-end (last modified: 2024.05.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -285,7 +285,6 @@ config:
  recaptcha_sitekey: *CaptchaDashboard
  recaptcha_usemode: *CaptchaUseMode
  sfs: "Konfiguration för modulen Stop Forum Spam."
- sfs_offer_captcha: "När förfrågningar blockeras av denna modul kan CAPTCHAer utfärdas. Standard = True. Obs: Åsidosätter inte andra direktiv. För att CAPTCHAer ska kunna utfärdas måste alla direktiv överensstämma, nödvändiga nycklar konfigurerade, osv. I händelse av att CAPTCHAer normalt skulle tillåtas att utfärdas, inställning av detta direktiv till false ger ett sätt att förhindra att CAPTCHAer utfärdas för förfrågningar som specifikt blockeras av denna modul."
  signatures: "Konfiguration för signaturer, signaturfiler, moduler, osv."
  signatures_default_tracktime: "Varaktigheten som IP-adresser ska spåras för. Standard = 7d0°0′0″ (1 vecka)."
  signatures_infraction_limit: "Maximalt antal infraktions som en IP får medföra innan den är förbjuden av IP-spårning. Standard = 10."
@@ -314,6 +313,7 @@ config:
  template_data_custom_header: "Infogas som HTML i början av alla "nekat tillgång"-sidor. Detta kan vara användbart om du vill inkludera en webbplatslogotyp, personlig rubrik, skript, eller liknande på alla sådana sidor."
  template_data_magnification: *MagnifDesc
  template_data_theme: "Standardtemat som ska användas för CIDRAM."
+ tor: "Konfiguration för Tor-blockeringsmodulen."
  verification: "Konfiguration för att verifiera var förfrågningar kommer ifrån."
  verification_adjust: "Kontroller för att justera andra funktioner i samband med verifiering."
  verification_other: "Kontroller för att verifiera andra typer av förfrågningar där det är möjligt."
@@ -723,7 +723,10 @@ label:
   redirect the request (without blocking it): "omdirigera begäran (utan att blockera den)"
   run a file to handle the request: "kör en fil för att hantera begäran"
   whitelist the request: "vitlista begäran"
+ expire_bad: "Från tiden för dess skapelse, hur lång tid dålig data som cachelagrats av denna modul kan leva innan den löper ut."
+ expire_good: "Från tiden för dess skapelse, hur lång tid bra data som cachelagrats av denna modul kan leva innan den löper ut."
  lookup_strategy: "Vilka förfrågningar ska sökningar utföras för?"
+ options: "Alternativ som ska aktiveras när signaturer eller blockhändelser utlöses av denna modul."
  results: "Resultat (%s i – %s avvisade – %s accepterad – %s kombinerad – %s ut):"
  rl_requests: "Förfrågningar skickade: %s – Förfrågningar tillgängliga: %s"
  rl_when: "Nyaste rekordet: %s (Upphörande: %s).<br />Äldsta rekordet: %s (Upphörande: %s)."

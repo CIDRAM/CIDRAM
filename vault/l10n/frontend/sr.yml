@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Serbian language data for the front-end (last modified: 2024.05.07).
+# This file: Serbian language data for the front-end (last modified: 2024.05.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -120,7 +120,23 @@ checkbox:
  Log any errors generated during this stage: "Забележите све грешке настале током ове фазе?"
  Omit this field when it_s empty: "Изоставити ово поље када је празно?"
  Profile it: "Профилирај то."
+ Should infractions generated during this stage count towards IP tracking: "Да ли прекршаји генерисани током ове фазе треба да се рачунају у праћење ИП адреса?"
+ Should this field appear in log entries: "Да ли ово поље треба да се појављује у записима у дневнику?"
+ Should this field appear on the access denied page: "Да ли ово поље треба да се појави на страници „приступ забрањен“?"
+ Suppress HCaptcha: "Потисне HCaptcha"
+ Suppress ReCaptcha: "Потисне ReCaptcha"
+ Test as sensitive request: "Тестирајте као осетљив захтев"
+ Untrack positives: "Опозовете праћење позитивних?"
+ When blocked, suppress output template: "Када је блокиран, потисните излазни шаблон."
 config:
+ abuseipdb: "Конфигурација за АбусеИПДБ модул."
+ abuseipdb_api_key: &EnterAPIKey "Унесите свој АПИ кључ овде."
+ abuseipdb_build_profiles_from_usage_type: "Правите профиле користећи тип употребе који враћа АПИ? Лажно = Не. Истинито = Да. Подразумевано = True."
+ abuseipdb_max_age_in_days: "Максимална старост у данима за које ће се извештаји узети у обзир приликом вршења прегледа (мора бити број између 1 и 365). Подразумевано = 365."
+ abuseipdb_max_cs_for_captcha: "Максимални резултат поверења који је дозвољен за уручивање ЦАПТЦХА (мора бити број између 0 и 100). Подразумевано = 10."
+ abuseipdb_minimum_confidence_score: "Минимална резултат поверења потребна да би ЦИДРАМ блокирао ИП адресу (мора бити број између 0 и 100). Подразумевано = 50."
+ abuseipdb_minimum_total_reports: "Минимални број укупних извештаја потребних да би ЦИДРАМ блокирао ИП адресу. Подразумевано = 1."
+ abuseipdb_report_back: "Дозволити ЦИДРАМ-у да пријави откривено лоше понашање назад АбусеИПДБ користећи ваш АПИ кључ?"
  phpmailer: "Конфигурација за ПХПМаилер (користи се за двофакторску аутентификацију и за обавештења путем е-поште)."
  phpmailer_add_reply_to_address: "Адреса за одговор коју треба навести приликом слања е-поште путем СМТП-а."
  phpmailer_add_reply_to_name: "Име одговора које треба навести приликом слања е-поште путем СМТП-а."

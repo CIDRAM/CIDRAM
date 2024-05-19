@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Afrikaans language data for the front-end (last modified: 2024.05.07).
+# This file: Afrikaans language data for the front-end (last modified: 2024.05.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -285,7 +285,6 @@ config:
  recaptcha_sitekey: *CaptchaDashboard
  recaptcha_usemode: *CaptchaUseMode
  sfs: "Konfigurasie vir die Stop Forum Spam module."
- sfs_offer_captcha: "Wanneer versoeke deur hierdie module geblokkeer word, kan CAPTCHA's bedien word. Verstek = True. Kennis neem: Vervang nie ander opsies nie. Vir CAPTCHA's om bedien te word, moet alle voorskrifte ooreenkom, nodige sleutels gekonfigureer, ens. In die geval dat CAPTCHA's normaalweg toegelaat sou word om bedien te word, bied die stel van hierdie opsie op false 'n manier om te verhoed dat CAPTCHA's bedien word vir versoeke wat spesifiek deur hierdie module geblokkeer word."
  signatures: "Konfigurasie vir handtekeninge, handtekeninglêers, modules, ens."
  signatures_default_tracktime: "Die tydsduur waarvoor IP-adresse nagespoor moet word. Verstek = 7d0°0′0″ (1 week)."
  signatures_infraction_limit: "Maksimum aantal oortredings wat 'n IP toegelaat word om aan te gaan voordat dit deur IP-nasporing verbied word. Verstek = 10."
@@ -314,6 +313,7 @@ config:
  template_data_custom_header: "Ingevoeg as HTML heel aan die begin van alle "toegang geweier" bladsye. Dit kan nuttig wees indien u 'n webwerf-logo, gepersonaliseerde kopskrif, skrifte, of soortgelyke by al sulke bladsye wil insluit."
  template_data_magnification: *MagnifDesc
  template_data_theme: "Die verstektema om vir CIDRAM te gebruik."
+ tor: "Konfigurasie vir die Tor-blokker module."
  verification: "Konfigurasie om te verifieer waar versoeke vandaan kom."
  verification_adjust: "Kontroles om ander kenmerke aan te pas wanneer dit in die konteks van verifikasie is."
  verification_other: "Kontroles om ander soorte versoeke waar moontlik te verifieer."
@@ -722,7 +722,10 @@ label:
   redirect the request (without blocking it): "herlei die versoek (sonder om dit te blokkeer)"
   run a file to handle the request: "hardloop 'n lêer om die versoek te hanteer"
   whitelist the request: "witlys die versoek"
+ expire_bad: "Vanaf die tyd van die skepping daarvan, die hoeveelheid tyd wat slegte data wat deur hierdie module gekas is, kan leef voordat dit verval."
+ expire_good: "Vanaf die tyd van die skepping daarvan, die hoeveelheid tyd wat goeie data wat deur hierdie module gekas is, kan leef voordat dit verval."
  lookup_strategy: "Vir watter versoeke moet opsoek gedoen word?"
+ options: "Opsies wat in werking gestel moet word wanneer handtekeninge of blokgebeurtenisse deur hierdie module geaktiveer word."
  results: "Resultate (%s in – %s verwerp – %s aanvaar – %s saamgesmelt – %s uit):"
  rl_requests: "Versoeke gestuur: %s – Versoeke beskikbaar: %s"
  rl_when: "Nuutste rekord: %s (Verstryking: %s).<br />Oudste rekord: %s (Verstryking: %s)."

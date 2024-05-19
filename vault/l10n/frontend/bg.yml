@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bulgarian language data for the front-end (last modified: 2024.05.07).
+# This file: Bulgarian language data for the front-end (last modified: 2024.05.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -285,7 +285,6 @@ config:
  recaptcha_sitekey: *CaptchaDashboard
  recaptcha_usemode: *CaptchaUseMode
  sfs: "Конфигурация за модула Stop Forum Spam."
- sfs_offer_captcha: "Когато заявките са блокирани от този модул, може да се сервират CAPTCHA. Стандарт = True. Забележка: Не отменя други директиви. За да бъдат обслужвани CAPTCHA, всички директиви трябва да са съгласувани, необходимите ключове да са конфигурирани, и т.н. В случай, че обикновено е разрешено да се обслужват CAPTCHA, настройката на тази директива на false осигурява начин да се предотврати обслужването на CAPTCHA за заявки, блокирани конкретно от този модул."
  signatures: "Конфигурация за сигнатури, файлове за сигнатури, модули, и т.н."
  signatures_default_tracktime: "Продължителността, за която трябва да се проследяват IP адресите. Стандарт = 7d0°0′0″ (1 седмица)."
  signatures_infraction_limit: "Максимален брой нарушения, които IP може да извърши, преди да бъде забранен от проследяването на IP. Стандарт = 10."
@@ -314,6 +313,7 @@ config:
  template_data_custom_header: "Вмъква се като HTML в самото начало на всички страници „отказан достъп“. Това може да бъде полезно, в случай че искате да включите лого на уебсайт, персонализирана заглавка, скриптове, или подобни на всички подобни страници."
  template_data_magnification: *MagnifDesc
  template_data_theme: "Стандартната тема за използване за CIDRAM."
+ tor: "Конфигурация за модула за блокиране на Tor."
  verification: "Конфигурация за проверка откъде идват заявките."
  verification_adjust: "Контроли за коригиране на други функции в контекста на проверка."
  verification_other: "Контроли за проверка на други видове заявки, където е възможно."
@@ -729,7 +729,10 @@ label:
   redirect the request (without blocking it): "пренасочете заявката (без да я блокирате)"
   run a file to handle the request: "стартирайте файл, за да обработите заявката"
   whitelist the request: "поставете заявката в белия списък"
+ expire_bad: "От момента на създаването му, времето, което лошите данни са кеширани от този модул, могат да живеят, преди да изтече."
+ expire_good: "От момента на създаването му, времето, което добрите данни са кеширани от този модул, могат да живеят, преди да изтече."
  lookup_strategy: "За кои заявки трябва да се извършват търсения?"
+ options: "Опции, които трябва да бъдат въведени, когато сигнатури или блокиращи събития се задействат от този модул."
  results: "Резултати (%s въведени – %s отхвърлени – %s приети – %s обединени – %s изведени):"
  rl_requests: "Заявките са изпратени: %s – Налични заявки: %s"
  rl_when: "Най-новият запис: %s (Изтича: %s).<br />Най-стар запис: %s (Изтича: %s)."

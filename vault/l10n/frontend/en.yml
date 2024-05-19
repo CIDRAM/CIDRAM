@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2024.05.07).
+# This file: English language data for the front-end (last modified: 2024.05.18).
 ##/
 
 Abuse category:
@@ -301,7 +301,6 @@ config:
  recaptcha_sitekey: *CaptchaDashboard
  recaptcha_usemode: *CaptchaUseMode
  sfs: "Configuration for the Stop Forum Spam module."
- sfs_offer_captcha: "When requests are blocked by this module, CAPTCHAs may be served. Default = True. Note: Doesn't override other directives. For CAPTCHAs to be served, all directives must agree, necessary keys configured, etc. In the event that CAPTCHAs would normally be permitted to be served, setting this directive to false provides a way to prevent CAPTCHAs being served for requests blocked specifically by this module."
  signatures: "Configuration for signatures, signature files, modules, etc."
  signatures_default_tracktime: "The duration that IP addresses should be tracked for. Default = 7d0°0′0″ (1 week)."
  signatures_infraction_limit: "Maximum number of infractions an IP is allowed to incur before it is banned by IP tracking. Default = 10."
@@ -336,6 +335,7 @@ config:
   en-US: *cp
  template_data_magnification: *MagnifDesc
  template_data_theme: "The default theme to use for CIDRAM."
+ tor: "Configuration for the Tor blocker module."
  verification: "Configuration for verifying where requests originate from."
  verification_adjust: "Controls to adjust other features when in the context of verification."
  verification_other: "Controls for verifying other kinds of requests where possible."
@@ -756,7 +756,10 @@ label:
   redirect the request (without blocking it): "redirect the request (without blocking it)"
   run a file to handle the request: "run a file to handle the request"
   whitelist the request: "whitelist the request"
+ expire_bad: "From the time of its creation, the amount of time that bad data cached by this module may live before it expires."
+ expire_good: "From the time of its creation, the amount of time that good data cached by this module may live before it expires."
  lookup_strategy: "Which requests should lookups be performed for?"
+ options: "Options to be enacted when signatures or block events are triggered by this module."
  results: "Results (%s in – %s rejected – %s accepted – %s merged – %s out):"
  rl_requests: "Requests sent: %s – Requests available: %s"
  rl_when: "Newest record: %s (Expires: %s).<br />Oldest record: %s (Expires: %s)."

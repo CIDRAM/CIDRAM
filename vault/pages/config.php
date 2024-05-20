@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The configuration page (last modified: 2024.04.18).
+ * This file: The configuration page (last modified: 2024.05.20).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -632,7 +632,7 @@ foreach ($this->CIDRAM['Config Defaults'] as $CatKey => $CatValue) {
         }
 
         /** Automatic duration hinting. */
-        if ($DirValue['type'] === 'duration' && !isset($DirValue['hints'])) {
+        if ($DirValue['type'] === 'duration' && !isset($DirValue['hints']) && $DirKey !== 'expire_good' && $DirKey !== 'expire_bad') {
             $DirValue['hints'] = 'hints_duration';
         }
 

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Stop Forum Spam module (last modified: 2024.05.18).
+ * This file: Stop Forum Spam module (last modified: 2024.05.20).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -82,10 +82,10 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             if ((strpos($Lookup, 's:7:"success";') !== false) && (strpos($Lookup, 's:2:"ip";') !== false)) {
                 $Frequency = preg_match('~"frequency";i:(\d+);~', $Lookup, $Frequency) ? (int)$Frequency[1] : 0;
                 $this->CIDRAM['SFS-' . $this->BlockInfo['IPAddr']] = $Frequency;
-                $Expiry = 604800;
+                $Expiry = $this->Configuration['sfs']['expire_good']->getAsSeconds();
             } else {
                 $this->CIDRAM['SFS-' . $this->BlockInfo['IPAddr']] = 0;
-                $Expiry = 3600;
+                $Expiry = $this->Configuration['sfs']['expire_bad']->getAsSeconds();
             }
 
             /** Update cache. */

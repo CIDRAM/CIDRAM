@@ -1242,12 +1242,14 @@ l10n/frontend/zh-TW:
    Checksum: "22d61f456cc54fa955873b82ba06b678476ec955eb77e9795256634e25c756b3:76625"
 AbuseIPDB module:
  False Positive Risk: "Medium"
- Version: "2024.138.0"
+ Version: "2024.140.0"
  Dependencies:
   l10n/core/{lang}: ">=2023.357"
   l10n/frontend/{lang}: ">=2024.138"
  When Install Succeeds: ["queue message response.please_check_config"]
- When Update Succeeds: ["if {Components.Meta.AbuseIPDB module.Version}<2024.138&&{Components.RemoteMeta.AbuseIPDB module.Version}>=2024.138 then queue message <span dir="ltr" lang="en-AU">New configuration directive introduced with this update, <code>abuseipdb➡options</code></span>."]
+ When Update Succeeds:
+  - "if {Components.Meta.AbuseIPDB module.Version}<2024.138&&{Components.RemoteMeta.AbuseIPDB module.Version}>=2024.138 then queue message <span dir="ltr" lang="en-AU">New configuration directive introduced with this update, <code>abuseipdb➡options</code></span>."
+  - "if {Components.Meta.AbuseIPDB module.Version}<2024.140&&{Components.RemoteMeta.AbuseIPDB module.Version}>=2024.140 then queue message <span dir="ltr" lang="en-AU">New configuration directives introduced with this update, <code>abuseipdb➡expire_good</code> and <code>abuseipdb➡expire_bad</code></span>."
  Files:
   assets/frontend/default/_abuseipdb.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/default/_abuseipdb.html"
@@ -1258,11 +1260,11 @@ AbuseIPDB module:
    Used with: "events"
   imports/abuseipdb.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/imports/abuseipdb.yml"
-   Checksum: "4f67f61f556140ed09a60945bdbe2de45e9cc99423153f3e1e6c8ccfa9d5175f:2426"
+   Checksum: "f245cc98e9e69812f7356e8a612a2c372965ef95108dbc8795972d1af7d0701e:2549"
    Used with: "imports"
   modules/abuseipdb.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/abuseipdb.php"
-   Checksum: "760c8e0ca202d1cae2b7987c50ff396b31fc582d0d8c82fa802e737a19027aee:10231"
+   Checksum: "0f32755ef9c74aeb60d8e19bcebb7a4408c9717a0e1932f97cde936cf520304a:10332"
    Used with: "modules"
   pages/abuseipdb.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/pages/abuseipdb.php"
@@ -1285,19 +1287,21 @@ Bad TLDs blocker module:
    Used with: "modules"
 BGPView module:
  False Positive Risk: "Low"
- Version: "2024.138.0"
+ Version: "2024.140.0"
  Dependencies:
   l10n/frontend/{lang}: ">=2024.138"
  When Install Succeeds: ["queue message response.please_check_config"]
- When Update Succeeds: ["if {Components.Meta.BGPView module.Version}<2024.138&&{Components.RemoteMeta.BGPView module.Version}>=2024.138 then queue message <span dir="ltr" lang="en-AU">New configuration directive introduced with this update, <code>bgpview➡options</code></span>."]
+ When Update Succeeds:
+  - "if {Components.Meta.BGPView module.Version}<2024.138&&{Components.RemoteMeta.BGPView module.Version}>=2024.138 then queue message <span dir="ltr" lang="en-AU">New configuration directive introduced with this update, <code>bgpview➡options</code></span>."
+  - "if {Components.Meta.BGPView module.Version}<2024.140&&{Components.RemoteMeta.BGPView module.Version}>=2024.140 then queue message <span dir="ltr" lang="en-AU">New configuration directives introduced with this update, <code>bgpview➡expire_good</code> and <code>bgpview➡expire_bad</code></span>."
  Files:
   imports/bgpview.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/imports/bgpview.yml"
-   Checksum: "8f3ec739352ab1e91f1a28561aebb371ba2b7523105dc08773cb6dc7c81cbfa7:1260"
+   Checksum: "891ceba3e5de679dfec96af7134a2e38905f9810af17dec65ff473bcccbe2380:1386"
    Used with: "imports"
   modules/bgpview.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/bgpview.php"
-   Checksum: "fe8c9b7009e95fc1884206dba4d844b9a077931559fa3655153d4aeb51f2d305:10478"
+   Checksum: "8377ce959b2c22ca8c59b1711e20ba6c4248f0481814d4e164ce37374139ef83:10685"
    Used with: "modules"
 Bot user agents module:
  False Positive Risk: "Medium"
@@ -1330,19 +1334,21 @@ Cookie scanner module:
    Used with: "modules"
 IP-API module:
  False Positive Risk: "Low"
- Version: "2024.138.0"
+ Version: "2024.140.0"
  Dependencies:
   l10n/frontend/{lang}: ">=2024.138"
  When Install Succeeds: ["queue message response.please_check_config"]
- When Update Succeeds: ["if {Components.Meta.IP-API module.Version}<2024.138&&{Components.RemoteMeta.IP-API module.Version}>=2024.138 then queue message <span dir="ltr" lang="en-AU">New configuration directive introduced with this update, <code>ipapi➡options</code></span>."]
+ When Update Succeeds:
+  - "if {Components.Meta.IP-API module.Version}<2024.138&&{Components.RemoteMeta.IP-API module.Version}>=2024.138 then queue message <span dir="ltr" lang="en-AU">New configuration directive introduced with this update, <code>ipapi➡options</code></span>."
+  - "if {Components.Meta.IP-API module.Version}<2024.140&&{Components.RemoteMeta.IP-API module.Version}>=2024.140 then queue message <span dir="ltr" lang="en-AU">New configuration directives introduced with this update, <code>ipapi➡expire_good</code> and <code>ipapi➡expire_bad</code></span>."
  Files:
   imports/ipapi.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/imports/ipapi.yml"
-   Checksum: "bc99bf07cf0cf88930d3f0793695900df9fa930499647bd0693c9b873519af05:1252"
+   Checksum: "1dba6a57c26325c2326bdb1e6e8e65467c2d2d4cd133fdaf0b5bc96b869a4a06:1376"
    Used with: "imports"
   modules/ipapi.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/ipapi.php"
-   Checksum: "81b391ac66f91e8a382c7c051eeae3ded38ceea867f8327769f1abb9f48d4362:8860"
+   Checksum: "cfc866e4d4668b9492832d666af2271ba8e65c6f5636d62212aa0520ea345f7f:8990"
    Used with: "modules"
 Optional security extras module:
  False Positive Risk: "Medium"
@@ -1359,19 +1365,21 @@ Optional security extras module:
    Used with: "modules"
 Project Honeypot module:
  False Positive Risk: "Medium"
- Version: "2024.138.0"
+ Version: "2024.140.0"
  Dependencies:
   l10n/frontend/{lang}: ">=2024.138"
  When Install Succeeds: ["queue message response.please_check_config"]
- When Update Succeeds: ["if {Components.Meta.Project Honeypot module.Version}<2024.138&&{Components.RemoteMeta.Project Honeypot module.Version}>=2024.138 then queue message <span dir="ltr" lang="en-AU">New configuration directive introduced with this update, <code>projecthoneypot➡options</code></span>."]
+ When Update Succeeds:
+  - "if {Components.Meta.Project Honeypot module.Version}<2024.138&&{Components.RemoteMeta.Project Honeypot module.Version}>=2024.138 then queue message <span dir="ltr" lang="en-AU">New configuration directive introduced with this update, <code>projecthoneypot➡options</code></span>."
+  - "if {Components.Meta.Project Honeypot module.Version}<2024.140&&{Components.RemoteMeta.Project Honeypot module.Version}>=2024.140 then queue message <span dir="ltr" lang="en-AU">New configuration directives introduced with this update, <code>projecthoneypot➡expire_good</code> and <code>projecthoneypot➡expire_bad</code></span>."
  Files:
   imports/projecthoneypot.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/imports/projecthoneypot.yml"
-   Checksum: "2845f8d2982e72d5cb6f4cd8d5dd10476f5270790c64e55ffda44ee079990a88:2108"
+   Checksum: "40dd03000f1f8379926501848ae625001cb9ddef9aaedaf592b366cd41a786bc:2231"
    Used with: "imports"
   modules/projecthoneypot.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/projecthoneypot.php"
-   Checksum: "852f321832ff7f0fd67a2c322fc33f7e9c51096a7183b9a047313d9e7e01698f:8767"
+   Checksum: "b4930cd824e53c8dac9eec253995001584bf30b989b6587059da116a4a9756c0:8896"
    Used with: "modules"
 Protocol blocker module:
  False Positive Risk: "Low"
@@ -1388,19 +1396,21 @@ Protocol blocker module:
    Used with: "modules"
 Stop Forum Spam module:
  False Positive Risk: "Low"
- Version: "2024.138.0"
+ Version: "2024.140.0"
  Dependencies:
   l10n/frontend/{lang}: ">=2024.138"
  When Install Succeeds: ["queue message response.please_check_config"]
- When Update Succeeds: ["if {Components.Meta.BGPView module.Version}<2024.138&&{Components.RemoteMeta.BGPView module.Version}>=2024.138 then queue message <span dir="ltr" lang="en-AU">Configuration directive <code>sfs➡offer_captcha</code> removed with this update, replaced by the newly added <code>sfs➡options</code></span>."]
+ When Update Succeeds:
+  - "if {Components.Meta.Stop Forum Spam module.Version}<2024.138&&{Components.RemoteMeta.Stop Forum Spam module.Version}>=2024.138 then queue message <span dir="ltr" lang="en-AU">Configuration directive <code>sfs➡offer_captcha</code> removed with this update, replaced by the newly added <code>sfs➡options</code></span>."
+  - "if {Components.Meta.Stop Forum Spam module.Version}<2024.140&&{Components.RemoteMeta.Stop Forum Spam module.Version}>=2024.140 then queue message <span dir="ltr" lang="en-AU">New configuration directives introduced with this update, <code>sfs➡expire_good</code> and <code>sfs➡expire_bad</code></span>."
  Files:
   imports/sfs.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/imports/sfs.yml"
-   Checksum: "c2d1d43f14508f0b8d1be1eacb1cd500b1232e80433fe20b6e4f60c1abdf4448:873"
+   Checksum: "467d9b8db534ea12311e7aabf80b5333e082f978fde8fcde696aa28620fc04e6:996"
    Used with: "imports"
   modules/sfs.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/sfs.php"
-   Checksum: "9097b45ab78aee821641fd9086281ca445b6646f2f34beec602a48c1b34a6648:5007"
+   Checksum: "60ec2926de501654b5de835e7b5b9392c3840c532f136b6bc5b624b6d5f00742:5112"
    Used with: "modules"
 Tor blocker module:
  False Positive Risk: "Low"

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: BGPView module (last modified: 2024.05.18).
+ * This file: BGPView module (last modified: 2024.05.20).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -106,7 +106,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             substr($Lookup, -2) === '}}'
         ) ? json_decode($Lookup, true) : false;
         $Low = strpos($this->BlockInfo['IPAddr'], ':') !== false ? 128 : 32;
-        $this->Cache->setEntry('BGPView-' . $this->BlockInfo['IPAddr'] . '/' . $Low, ['ASN' => 0, 'CC' => 'XX'], 604800);
+        $this->Cache->setEntry('BGPView-' . $this->BlockInfo['IPAddr'] . '/' . $Low, ['ASN' => 0, 'CC' => 'XX'], $this->Configuration['bgpview']['expire_bad']->getAsSeconds());
 
         /** Lookup failed. */
         if (!is_array($Lookup) || !isset($Lookup['data'])) {
@@ -129,13 +129,13 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
                         $TryForRir = '';
                     }
                     $this->CIDRAM['BGPView-' . $Factor] = ['ASN' => $ASN, 'CC' => $CC];
-                    $this->Cache->setEntry('BGPView-' . $Factor, ['ASN' => $ASN, 'CC' => $CC], 604800);
+                    $this->Cache->setEntry('BGPView-' . $Factor, ['ASN' => $ASN, 'CC' => $CC], $this->Configuration['bgpview'][(!$ASN || $CC === 'XX') ? 'expire_bad' : 'expire_good']->getAsSeconds());
                 }
             }
         }
         if ($TryForRir !== '') {
             $this->CIDRAM['BGPView-' . $TryForRir] = ['CC' => $Lookup['data']['rir_allocation']['country_code'] ?? 'XX'];
-            $this->Cache->setEntry('BGPView-' . $TryForRir, $this->CIDRAM['BGPView-' . $TryForRir], 604800);
+            $this->Cache->setEntry('BGPView-' . $TryForRir, $this->CIDRAM['BGPView-' . $TryForRir], $this->Configuration['bgpview']['expire_bad']->getAsSeconds());
         }
     }
 

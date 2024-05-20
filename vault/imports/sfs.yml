@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Stop Forum Spam defaults file (last modified: 2024.05.18).
+# This file: Stop Forum Spam defaults file (last modified: 2024.05.20).
 ##/
 
 Config Defaults:
@@ -26,6 +26,12 @@ Config Defaults:
     ForciblyDisableReCAPTCHA: "label.aux.Forcibly disable reCAPTCHA"
     MarkForUseWithHCaptcha: "label.aux.Mark for use with HCaptcha"
     ForciblyDisableHCaptcha: "label.aux.Forcibly disable HCaptcha"
+  expire_good:
+   type: "duration"
+   default: "7d0°0′0″"
+  expire_bad:
+   type: "duration"
+   default: "1°0′0″"
 Cache Prefetch:
  SFS-429: ""
 Problems:

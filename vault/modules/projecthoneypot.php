@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Project Honeypot module (last modified: 2024.05.18).
+ * This file: Project Honeypot module (last modified: 2024.05.20).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -116,7 +116,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
                 $this->Cache->setEntry(
                     'Project Honeypot-' . $this->BlockInfo['IPAddr'],
                     $this->CIDRAM['Project Honeypot-' . $this->BlockInfo['IPAddr']],
-                    604800
+                    $this->Configuration['projecthoneypot']['expire_good']->getAsSeconds()
                 );
             } else {
                 $this->CIDRAM['Project Honeypot-' . $this->BlockInfo['IPAddr']] = [
@@ -127,7 +127,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
                 $this->Cache->setEntry(
                     'Project Honeypot-' . $this->BlockInfo['IPAddr'],
                     $this->CIDRAM['Project Honeypot-' . $this->BlockInfo['IPAddr']],
-                    3600
+                    $this->Configuration['projecthoneypot']['expire_bad']->getAsSeconds()
                 );
             }
         }

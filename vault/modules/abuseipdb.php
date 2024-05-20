@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: AbuseIPDB module (last modified: 2024.05.18).
+ * This file: AbuseIPDB module (last modified: 2024.05.20).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -91,7 +91,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $Lookup = strpos($Lookup, '"abuseConfidenceScore":') !== false ? (json_decode($Lookup, true) ?: []) : [];
 
             /** Generate local AbuseIPDB cache entry. */
-            $this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']] = $Lookup['data'];
+            $this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']] = $Lookup['data'] ?? [];
 
             /** Ensure confidence score. */
             if (!isset($this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']]['abuseConfidenceScore'])) {
@@ -110,7 +110,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $this->Cache->setEntry(
                 'AbuseIPDB-' . $this->BlockInfo['IPAddr'],
                 $this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']],
-                $this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']]['abuseConfidenceScore'] < 1 ? 3600 : 604800
+                $this->Configuration['abuseipdb'][(!isset($Lookup['data']) || $this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']]['abuseConfidenceScore'] < 1) ? 'expire_bad' : 'expire_good']->getAsSeconds()
             );
         }
     }

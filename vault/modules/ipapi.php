@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: IP-API module (last modified: 2024.05.18).
+ * This file: IP-API module (last modified: 2024.05.20).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -97,7 +97,6 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         $Lookup = (substr($Lookup, 0, 21) === '{"status":"success","' && substr($Lookup, -1) === '}') ? json_decode($Lookup, true) : false;
         $CC = 'XX';
         $ASN = 0;
-        $Expiry = 3600;
         $Profiles = [];
 
         if (is_array($Lookup)) {
@@ -120,7 +119,9 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             if (!empty($Lookup['hosting'])) {
                 $Profiles[] = 'Webhosting';
             }
-            $Expiry = 604800;
+            $Expiry = $this->Configuration['ipapi']['expire_good']->getAsSeconds();
+        } else {
+            $Expiry = $this->Configuration['ipapi']['expire_bad']->getAsSeconds();
         }
 
         $this->Cache->setEntry('IPAPI-' . $ToCheck, ['ASN' => $ASN, 'CC' => $CC, 'Profiles' => $Profiles], $Expiry);

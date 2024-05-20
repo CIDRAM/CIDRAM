@@ -183,7 +183,8 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         $this->L10N->getString('ReasonMessage_Generic') . '<br />' . sprintf(
             $this->L10N->getString('request_removal'),
             'https://www.projecthoneypot.org/ip_' . $this->BlockInfo['IPAddr']
-        ))) {
+        )
+    )) {
         /** Fetch options. */
         $Options = array_flip(explode("\n", $this->Configuration['projecthoneypot']['options']));
         if (isset($Options['MarkForUseWithReCAPTCHA'])) {

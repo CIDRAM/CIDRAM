@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bot user agents module (last modified: 2024.05.12).
+ * This file: Bot user agents module (last modified: 2024.05.21).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -228,7 +228,8 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     ), 'Malware UA'); // 2017.04.23
 
     $this->trigger(preg_match(
-        '~\.buzz|(?<!amazona)dbot/|^m$|(?:\W|^)(?:cu|pe)rl(?:\W|$)|^(?!linkedinbot).*http-?(?:agent|client)|#boss#|' .
+        '~\.buzz|(?<!amazona)dbot/|(?:\W|^)(?:cu|pe)rl(?:\W|$)|#boss#|' .
+        '^(?:[aim]$|(?!linkedinbot).*http-?(?:agent|client))|' .
         'a(?:bonti|ccserver|cme.spider|dreview/\d|jbaxy|nthill$|nyevent-http|ppengine)|' .
         'b(?:abbar\.tech|igbozz|lackbird|logsearch|logbot|salsa)|' .
         'c(?:astlebot|atexplorador|lickagy|liqzbot|ontextad|orporama|ortex/\d|rowsnest|yberpatrol)|' .
@@ -254,7 +255,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     ) || preg_match(
         '~^Mozilla/5\.0( [A-Za-z]{2,5}/0\..)?$~',
         $this->BlockInfo['UA']
-    ), 'Unauthorised'); // 2023.09.15 mod 2024.05.12
+    ), 'Unauthorised'); // 2023.09.15 mod 2024.05.21
 
     $this->trigger(preg_match(
         '~^(?:bot|java|msie|windows-live-social-object-extractor)|\\((?:java|\w:\d{2,})~',

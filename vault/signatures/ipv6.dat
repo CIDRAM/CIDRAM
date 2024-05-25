@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6.dat
 
-# Version: 2024.140.0
-# Last modified: 2024.05.20
+# Version: 2024.145.0
+# Last modified: 2024.05.25
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -32,16 +32,15 @@ Tag: Voxility LLC
 
 # ASN 46844 ("Sharktech").
 # Source of forum spam and malware.
-# Stop Forum Spam (SFS) listings: 1,777.
-# Updated: 2023.08.01
+# Stop Forum Spam (SFS) listings: 380.
+# Updated: 2024.05.25
 
 2a00:c2c0:ffff::/48 Deny Cloud
 Origin: NL
-2a04:ac01:1::/48 Deny Cloud
 2a0c:c181::/32 Deny Cloud
 Origin: RU
-2607:9000:3000::/36 Deny Cloud
 2610:150::/32 Deny Cloud
+2610:151::/34 Deny Cloud
 Origin: US
 Profile: Dedicated;Frequent changes;Infrastructure/Transit;Webhosting
 Tag: Sharktech
@@ -1305,8 +1304,8 @@ Tag: Private Layer INC
 
 
 # ASN 40676 ("Psychz Networks").
-# Stop Forum Spam (SFS) listings: 6,322.
-# Updated: 2023.07.13
+# Stop Forum Spam (SFS) listings: 1,621.
+# Updated: 2024.05.25
 
 2402:2f80:a::/48 Deny Cloud
 2404:f980:3::/48 Deny Cloud
@@ -1324,18 +1323,18 @@ Origin: DE
 2a0b:ae47:3::/48 Deny Cloud
 2a0b:ae47:4::/48 Deny Cloud
 2a0f:9400:6950::/44 Deny Cloud
-2a0f:9400:a000::/40 Deny Cloud
 2a12:bec0:161::/48 Deny Cloud
 Origin: GB
 2403:ad80:1000::/48 Deny Cloud
 Origin: HK
 2a10:17c0::/29 Deny Cloud
 Origin: LT
-2a0f:dec0::/29 Deny Cloud
-2a0f:e7c1::/36 Deny Cloud
-2a0f:e7c1:1000::/39 Deny Cloud
-2a0f:e7c1:1300::/40 Deny Cloud
-2a0f:e7c1:1400::/38 Deny Cloud
+2a0f:e7c1::/40 Deny Cloud
+2a0f:e7c1:200::/39 Deny Cloud
+2a0f:e7c1:400::/39 Deny Cloud
+2a0f:e7c1:600::/40 Deny Cloud
+2a0f:e7c1:800::/37 Deny Cloud
+2a0f:e7c1:1000::/37 Deny Cloud
 2a0f:e7c1:1800::/38 Deny Cloud
 2a0f:e7c1:1c00::/39 Deny Cloud
 Origin: SC
@@ -1345,16 +1344,15 @@ Origin: SC
 2406:4f40:10::/45 Deny Cloud
 2406:b2c0::/32 Deny Cloud
 2602:2c5:1::/48 Deny Cloud
-2602:2e6::/48 Deny Cloud
+2602:fb0f::/40 Deny Cloud
 2602:fd92:efe::/48 Deny Cloud
 2602:fdba::/36 Deny Cloud
-2602:fe13:e00::/40 Deny Cloud
 2602:fea6::/36 Deny Cloud
 2602:ff96:5::/48 Deny Cloud
 2602:ff96:9::/48 Deny Cloud
 2602:ff96:12::/48 Deny Cloud
 2602:ff96:15::/48 Deny Cloud
-2602:ff96:16::/48 Deny Cloud
+2602:ff96:16::/47 Deny Cloud
 2602:ff96:1a::/48 Deny Cloud
 2602:ff96:1f::/48 Deny Cloud
 2602:ff96:81::/48 Deny Cloud
@@ -1363,7 +1361,6 @@ Origin: SC
 2602:ffb0:11::/48 Deny Cloud
 2602:ffb0:ffe::/48 Deny Cloud
 2602:ffb0:cafe::/48 Deny Cloud
-2602:ffc5:158::/48 Deny Cloud
 2604:980:1::/48 Deny Cloud
 2604:6600::/32 Deny Cloud
 2605:6c80:8000::/33 Deny Cloud
@@ -1386,8 +1383,16 @@ Origin: SC
 2606:6680:4000::/35 Deny Cloud
 2606:6680:6000::/36 Deny Cloud
 2607:6b80:68::/48 Deny Cloud
+2a05:dfc3::/32 Deny Cloud
+2a06:9f40::/32 Deny Cloud
+2a06:9f46::/32 Deny Cloud
 2a06:a000:101::/48 Deny Cloud
 2a06:a000:150::/44 Deny Cloud
+2a09:54c1::/32 Deny Cloud
+2a09:54c3::/32 Deny Cloud
+2a09:54c7::/32 Deny Cloud
+2a0a:6041::/32 Deny Cloud
+2a0a:6047::/32 Deny Cloud
 2a0a:6700::/45 Deny Cloud
 2a0e:c80:3::/48 Deny Cloud
 2a0e:c80:323::/48 Deny Cloud
@@ -4090,8 +4095,9 @@ Tag: RouteLabel V.O.F
 
 
 # ASN 42632 ("MnogoByte LLC").
-# Updated: 2023.07.11
+# Updated: 2024.05.21
 
+2a02:28:1:2::5f:7d/128 Deny Cloud
 2a02:878:1::/48 Deny Cloud
 2a02:878:2::/48 Deny Cloud
 2a02:878:a::/48 Deny Cloud
@@ -7076,12 +7082,12 @@ Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: GigeNET
 
 
-# ASNs 7489, 25926, 398395 ("HostUS", "Dot-Tech LLC").
+# ASNs 7489, 398395 ("HostUS", "Dot-Tech LLC").
 # Owns IPs associated with a Spamhaus top 10 worst offender listing (Nov 2019).
 # Dedicated webhosting provider with spam records at SFS and elsewhere.
 # Subtract 44.0.0.0/9, 44.128.0.0/10 (clean).
-# Stop Forum Spam (SFS) listings: 3,779 (AS7489), 18 (AS398395).
-# Updated: 2023.10.02
+# Stop Forum Spam (SFS) listings: 82 (AS7489), 13 (AS398395).
+# Updated: 2024.05.21
 
 2403:5680::/48 Deny Cloud
 Origin: AU
@@ -7098,6 +7104,7 @@ Origin: GB
 Origin: HK
 2a0e:fd45:40fa::/48 Deny Cloud
 Origin: NL
+2402:e380:33c::/48 Deny Cloud
 2602:fb54:146::/48 Deny Cloud
 2602:ffc5::/48 Deny Cloud
 2602:ffc5:10::/44 Deny Cloud
@@ -7111,27 +7118,12 @@ Origin: NL
 2602:ffc5:109::/48 Deny Cloud
 2602:ffc5:10d::/48 Deny Cloud
 2602:ffc5:152::/47 Deny Cloud
-2602:ffc5:190::/47 Deny Cloud
-2602:ffc5:192::/48 Deny Cloud
-2602:ffc5:400::/40 Deny Cloud
 2602:ffc5:d10::/44 Deny Cloud
 2602:ffc5:da0::/44 Deny Cloud
 2606:fc40::/41 Deny Cloud
-2606:fc40:80::/42 Deny Cloud
 2a0b:7080:10::/48 Deny Cloud
 2a0b:7080:20::/48 Deny Cloud
 2a0b:7080:30::/48 Deny Cloud
-2a0d:77c7::/48 Deny Cloud
-2a0d:77c7:a4d::/48 Deny Cloud
-2a0d:77c7:2240::/48 Deny Cloud
-2a0d:77c7:33c5::/48 Deny Cloud
-2a0d:77c7:792c::/48 Deny Cloud
-2a0d:77c7:88e2::/48 Deny Cloud
-2a0d:77c7:d794::/48 Deny Cloud
-2a0d:77c7:de23::/48 Deny Cloud
-2a0d:77c7:e907::/48 Deny Cloud
-2a0d:77c7:f1e4::/48 Deny Cloud
-2a0d:77c7:f6cd::/48 Deny Cloud
 Origin: US
 Profile: Dedicated;Tor endpoints here;Webhosting
 Tag: HostUS
@@ -8217,10 +8209,12 @@ Tag: ITL-Bulgaria Ltd
 # Infrastructure and cloud provider; Drive-by WordPress hack attempts,
 # brute-force attacks, XMLRPC attacks, and webapp attacks detected originating
 # from this network.
-# Updated: 2020.07.05 / Checked: 2023.07.11
+# Stop Forum Spam (SFS) listings: 3.
+# Updated: 2024.05.21
 
 2a05:4540::/29 Deny Cloud
 2a06:1000::/29 Deny Cloud
+2a0f:8e80::/47 Deny Cloud
 Origin: SE
 Profile: Infrastructure/Transit
 Tag: Binero AB
@@ -9503,8 +9497,8 @@ Tag: Obehosting AB
 
 # ASNs 45839, 201133 ("Shinjiru Technology Sdn Bhd", "Verdina Ltd").
 # Webhosting provider. Spam and tor endpoints detected here.
-# Stop Forum Spam (SFS) listings: 294 (AS45839), 5 (AS201133).
-# Updated: 2021.04.11 / Checked: 2023.07.11
+# Stop Forum Spam (SFS) listings: 133 (AS45839), 18 (AS201133).
+# Updated: 2021.04.11 / Checked: 2024.05.21
 
 2407:6c00:18::/48 Deny Cloud
 Origin: MY
@@ -11954,47 +11948,29 @@ Profile: Restricted/Unidentifiable
 Tag: Fifth Dog
 
 
-# ASN 211760 ("Suisse Limited").
-# Webapp attacks, trolling campaigns, malware, C&Cs, port scans, hacking, and
-# spam detected from here.
-# Stop Forum Spam (SFS) listings: 592.
-# Updated: 2023.07.13
-
-2a10:cc45:100::/44 Deny Cloud
-Origin: CH
-Profile: Commercial
-Tag: Suisse Limited
-
-
-# ASN 202685 ("Aggros Operations Ltd").
-# Brute-force, SSH, and webapp attacks, port scans, hacking, tor endpoints, and
-# spam detected from here.
-# Stop Forum Spam (SFS) listings: 285.
-# Updated: 2023.07.13
-
-2a0e:46c4:28c2::/48 Deny Cloud
-Origin: DE
-2a12:dd47:8500::/40 Deny Cloud
-Origin: GB
-2a05:dfc7:4000::/39 Deny Cloud
-2a06:1287:d000::/37 Deny Cloud
-Origin: US
-Profile: Commercial;Tor endpoints here
-Tag: Aggros Operations Ltd
-
-
 # ASN 212872 ("Serverio technologijos MB").
 # DDoS attacks and spam detected from here.
-# Stop Forum Spam (SFS) listings: 371.
-# Updated: 2023.07.13
+# Stop Forum Spam (SFS) listings: 6.
+# Updated: 2024.05.25
 
 2001:67c:1688::/48 Deny Cloud
 2a05:5940::/29 Deny Cloud
-2a0e:9100::/29 Deny Cloud
 2a0e:a240::/29 Deny Cloud
 Origin: RU
 Profile: Webhosting
 Tag: Serverio technologijos MB
+
+
+# ASN 208393 ("Dedcloud Network Ltd").
+# Port scans detected from here.
+# Updated: 2024.05.25
+
+2a05:4741:f::/48 Deny Cloud
+Origin: CH
+2a0f:9400:8004::/48 Deny Cloud
+Origin: GB
+Profile: Dedicated
+Tag: Dedcloud Network Ltd
 
 
 # ASN 204914 ("LABIXE LTD").
@@ -12927,6 +12903,26 @@ Tag: Hytron
 Origin: UA
 Profile: Restricted/Unidentifiable
 Tag: Hornostay
+
+
+# ASN 212913 ("Shandong Deju Information Technology Co Ltd").
+# Brute-force, SSH attacks, and port scans detected from here.
+# Updated: 2024.05.21
+
+2406:840:fed5::/48 Deny Cloud
+Origin: CN
+Profile: Restricted/Unidentifiable
+Tag: Shandong Deju
+
+
+# ASN 53225 ("IPGLOBE INTERNET LTDA").
+# Brute-force, webapp attacks, port scans, and hacking detected from here.
+# Updated: 2024.05.25
+
+2804:644::/32 Deny Cloud
+Origin: BR
+Profile: Infrastructure/Transit;Multiplay;Webhosting
+Tag: IPGLOBE INTERNET LTDA
 
 
 # ---

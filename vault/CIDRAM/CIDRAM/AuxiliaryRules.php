@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used for auxiliary rules (last modified: 2024.04.19).
+ * This file: Methods used for auxiliary rules (last modified: 2024.05.25).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -670,6 +670,8 @@ trait AuxiliaryRules
         /** Append JavaScript specific to the auxiliary rules page. */
         $this->FE['JS'] .= $this->parseVars([
             'tip.Specify a value, or leave blank to disregard' => $this->L10N->getString('tip.Specify a value, or leave blank to disregard'),
+            'hints_asnlookup' => $this->L10N->getString('hints_asnlookup'),
+            'hints_cclookup' => $this->L10N->getString('hints_cclookup'),
             'label.Suggestions' => $this->L10N->getString('label.Suggestions'),
             'pair_separator' => $this->L10N->getString('pair_separator'),
         ], $this->readFile($this->getAssetPath('auxiliary.js')));

@@ -187,15 +187,29 @@ function heavenToggle(c) {
   document.getElementById('hidden'+c).classList.toggle('scaleXToOne');
 }
 
-var profileSuggestions = ['Advertiser','Bogon','Commercial','Content Delivery Network','Dedicated','Domestic ISP','Frequent changes','Government','Has WordPress Bypasses','Infrastructure/Transit','Mobile ISP','Multiplay','Restricted/Unidentifiable','Search engine','Temporary','Third-party sourced','Tor endpoints here','University','Usenet','VPNs here','Webhosting','6to4','Amateur Radio','ISATAP','Multicast','Orphaned','Teredo','Blocked Negative','Blocked Non-Verified','Organization','Military','University/College/School','Library','Fixed Line ISP','Data Center/Web Hosting/Transit','Search Engine Spider','Reserved'].map((e)=>'<span style="cursor:pointer" onclick="javascript:this.parentElement.parentElement.previousElementSibling.lastChild.value=\''+e+'\'">'+e+'</span>').join(', ');
 var methodSuggestions = ['GET','POST','HEAD','CONNECT','DELETE','OPTIONS','PATCH','PUT','TRACE'].map((e)=>'<span style="cursor:pointer" onclick="javascript:this.parentElement.parentElement.previousElementSibling.lastChild.value=\''+e+'\'">'+e+'</span>').join(', ');
+var profileSuggestions = ['Advertiser','Bogon','Commercial','Content Delivery Network','Dedicated','Domestic ISP','Frequent changes','Government','Has WordPress Bypasses','Infrastructure/Transit','Mobile ISP','Multiplay','Restricted/Unidentifiable','Search engine','Temporary','Third-party sourced','Tor endpoints here','University','Usenet','VPNs here','Webhosting','6to4','Amateur Radio','ISATAP','Multicast','Orphaned','Teredo','Blocked Negative','Blocked Non-Verified','Organization','Military','University/College/School','Library','Fixed Line ISP','Data Center/Web Hosting/Transit','Search Engine Spider','Reserved'].map((e)=>'<span style="cursor:pointer" onclick="javascript:this.parentElement.parentElement.previousElementSibling.lastChild.value=\''+e+'\'">'+e+'</span>').join(', ');
+var protocolSuggestions = ['HTTP/1.0','HTTP/1.1','HTTP/1.2','HTTP/1.3','HTTP/2.0'].map((e)=>'<span style="cursor:pointer" onclick="javascript:this.parentElement.parentElement.previousElementSibling.lastChild.value=\''+e+'\'">'+e+'</span>').join(', ');
+var verifiedSuggestions = ['AdSense','AmazonAdBot','Amazonbot','Applebot','Baidu','Bingbot','ChatGPT-User','DuckDuckBot','Embedly','Facebook external hit','GPTBot','Googlebot','Grapeshot','MojeekBot','Neevabot','PetalBot','Pinterest','Qwantify','SeznamBot','Snapchat','Sogou','Twitterbot','Yahoo','Yandex','YoudaoBot'].map((e)=>'<span style="cursor:pointer" onclick="javascript:this.parentElement.parentElement.previousElementSibling.lastChild.value=\''+e+'\'">'+e+'</span>').join(', ');
 
 function getInputSuggestions(e) {
-  if (e.value=='Profiles') {
-    e.parentElement.nextElementSibling.innerHTML='<small>{label.Suggestions}{pair_separator}'+profileSuggestions+'</small>';
+  if (e.value=='ASNLookup') {
+    e.parentElement.nextElementSibling.innerHTML='<small>{hints_asnlookup}</small>';
+    e.parentElement.nextElementSibling.className='suggestsActive';
+  } else if (e.value=='CCLookup') {
+    e.parentElement.nextElementSibling.innerHTML='<small>{hints_cclookup}</small>';
     e.parentElement.nextElementSibling.className='suggestsActive';
   } else if (e.value=='Request_Method') {
     e.parentElement.nextElementSibling.innerHTML='<small>{label.Suggestions}{pair_separator}'+methodSuggestions+'</small>';
+    e.parentElement.nextElementSibling.className='suggestsActive';
+  } else if (e.value=='Profiles') {
+    e.parentElement.nextElementSibling.innerHTML='<small>{label.Suggestions}{pair_separator}'+profileSuggestions+'</small>';
+    e.parentElement.nextElementSibling.className='suggestsActive';
+  } else if (e.value=='Protocol') {
+    e.parentElement.nextElementSibling.innerHTML='<small>{label.Suggestions}{pair_separator}'+protocolSuggestions+'</small>';
+    e.parentElement.nextElementSibling.className='suggestsActive';
+  } else if (e.value=='Verified') {
+    e.parentElement.nextElementSibling.innerHTML='<small>{label.Suggestions}{pair_separator}'+verifiedSuggestions+'</small>';
     e.parentElement.nextElementSibling.className='suggestsActive';
   } else {
     e.parentElement.nextElementSibling.innerHTML='';

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Galician language data for the front-end (last modified: 2024.05.19).
+# This file: Galician language data for the front-end (last modified: 2024.05.25).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -405,6 +405,7 @@ field:
 hints_asnlookup: "** Require a funcionalidade de busca de ASN (por exemplo, a través do módulo IP-API ou BGPView)."
 hints_aux_stats: "Nota: Pódese controlar se se deben realizar un seguimento das estatísticas das regras auxiliares desde a páxina de regras auxiliares."
 hints_cause_fp: "*!! Alta probabilidade de provocar falsos positivos debido a %s."
+hints_cclookup: "** Require a funcionalidade de busca de códigos do país (por exemplo, a través do módulo IP-API ou BGPView)."
 hints_client_honour: "Non importa como instruímos ao cliente, é importante lembrar que, en última instancia, non temos control sobre o que elixe facer o cliente e non hai ningunha garantía de que o cliente cumpra as nosas instrucións."
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#what-can-i-use-for-default_dns" hreflang="en-AU">Que podo usar para "default_dns"?</a></em>"
@@ -462,6 +463,97 @@ info_cli_by_default_ips: |
  --no-ov     Evita outras verificacións.
  --no-aux    Evita as probas con regras auxiliares.
 info_cli_cidram_cli_mod: "Modo CLI de CIDRAM."
+info_cli_ipv4_ipv6_are_: |
+ Pódese usar IPv4 ou IPv6. A entrada multiliña é posible para *todas* as
+ operacións do modo CLI (por exemplo, para probar varios enderezos IP nunha
+ única operación) usando comiñas, así:
+info_cli_or_depending_o: |
+ Ou, dependendo de se prefires encadear o primeiro ao último ou o último ao
+ primeiro:
+info_cli_or_to_aggregat: "Ou, para agregalos como máscaras de rede:"
+info_cli_or_using_comma: "Ou, usando comas en lugar de multiliñas (fai exactamente o mesmo):"
+info_cli_the_signature_: "O fixador de sinatura tamén se pode usar a través da CLI:"
+info_cli_to_calculate_c: "Para calcular CIDR a partir dun enderezo IP:"
+info_cli_to_test_whethe: "Para probar se un enderezo IP está bloqueado por CIDRAM:"
+info_cli_to_quit_type_q: "Para saír, escriba "q", "quit", ou "exit" e, a continuación, prema Intro."
+info_cli_you_can_also_a: "Tamén podes agregar IPs e CIDRs así:"
+info_cli_you_can_also_c: |
+ Tamén pode encadear comandos xuntos (o exemplo le dalgúns ficheiros, agrega o
+ seu contido, e despois escribe os datos agregados en output.dat):
+info_cli_you_can_also_r: "Tamén podes ler desde ficheiros así:"
+info_cli_you_can_also_u: |
+ Tamén podes usar comas no seu lugar se queres (isto trátase do mesmo xeito que
+ usar multiliñas, pero non necesitarás usar comiñas, e non mesturar ambos
+ xuntos):
+info_cli_you_can_also_w: "Tamén podes escribir nos ficheiros así:"
+info_cli_you_can_print_: "Podes imprimir datos na pantalla así (ás veces é útil ao encadear comandos):"
+Some useful links: |
+ Algunhas ligazóns útiles:<br />
+     <ul class="pieul">
+       <li><span class="comCat">Ferramentas, recursos, etc para CIDRAM.</span>
+         <ul class="comSub">
+           <li>{{Links.CIDRAM.Issues}} – Páxina de problemas para CIDRAM (soporte, asistencia, etc).</li>
+           <li>{{Links.CIDRAM.WordPress}} – Plugin de WordPress para CIDRAM.</li>
+           <li>{{Links.CIDRAM.Extras}} – Varios extras.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Grupos, foros, comunidades, etc.</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Facebook}} – Recursos de aprendizaxe e discusión de PHP.</li>
+           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Foro@Stop Forum Spam</a> – Foro de discusión útil sobre como deter o spam do foro.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Outras ferramentas, recursos, servizos útiles, etc.</span>
+         <ul class="comSub">
+           <li>{{Links.SFS}} – Mantén unha base de datos de spammers dos foros coñecidos. Útil para protexer sitios web e foros contra spammers.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Obtén CIDR de ASN, determina as relacións de ASN, descubre ASN en función dos nomes de rede, etc.</li>
+           <li>{{Links.BGPView}} – Obtén CIDR de ASN, determina as relacións de ASN, descubre ASN en función dos nomes de rede, etc.</li>
+           <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Qrator દ્વારા Radar</a> – Ferramenta útil para comprobar a conectividade dos ASN, así como para obter outra información sobre os ASN.</li>
+           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">O Proxecto Spamhaus</a> – Mostra informes sobre as taxas de infección de botnets para ASN.</li>
+           <li>{{Links.AbuseIPDB}} – Mantén unha base de datos de enderezos IP abusivos coñecidos; Ofrece unha API para comprobar e informar de enderezos IP.</li>
+           <li>{{Links.IP-API}} – Obtén información sobre enderezos IP ou nomes de host, como código de país, nome da rexión, lonxitude, latitude, etc.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Recursos informativos e de aprendizaxe.</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Website}} – Recursos de aprendizaxe e discusión de PHP.</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Táboas de vulnerabilidade</a> – Lista versións seguras e non seguras de varios paquetes (HHVM, PHP, phpMyAdmin, Python, etc).</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Táboas de compatibilidade</a> – Lista información de compatibilidade para varios paquetes (CIDRAM, phpMussel, etc).</li>
+         </ul>
+       </li>
+     </ul>
+
+label:
+ %s across %s file:
+  - "%s en %s ficheiro"
+  - "%s en %s ficheiros"
+ %s is available (%s): "%s está dispoñible (%s)."
+ %s is available: "%s está dispoñible."
+ %s is not available: "%s non está dispoñible."
+ %s signature:
+  - "%s sinatura"
+  - "%s sinaturas"
+ 200 OK: "200 OK\nO menos robusto, pero o máis fácil de usar. As solicitudes automatizadas probablemente interpretarán esta resposta como unha indicación de que a solicitude foi exitosa."
+ 301 Moved Permanently: "301 Moved Permanently (Trasladouse permanentemente)\nIndícalle ao cliente que a redirección é PERMANENTE, e que o método de solicitude utilizado para a redirección PODE ser diferente do método de solicitude utilizado para a solicitude inicial."
+ 302 Found: "302 Found (Atopados)\nIndícalle ao cliente que a redirección é TEMPORAL, e que o método de solicitude utilizado para a redirección PODE ser diferente do método de solicitude utilizado para a solicitude inicial."
+ 307 Temporary Redirect: "307 Temporary Redirect (Redirección temporal)\nIndícalle ao cliente que a redirección é TEMPORAL, e que o método de solicitude utilizado para a redirección NON pode ser diferente do método de solicitude utilizado para a solicitude inicial."
+ 308 Permanent Redirect: "308 Permanent Redirect (Redirección permanente)\nIndícalle ao cliente que a redirección é PERMANENTE, e que o método de solicitude utilizado para a redirección NON pode ser diferente do método de solicitude utilizado para a solicitude inicial."
+ 403 Forbidden: "403 Forbidden (Prohibido)\nMáis robusto, pero menos fácil de usar. Recomendado para a maioría das circunstancias xerais."
+ 410 Gone: "410 Gone (Desaparecido)\nPodería causar problemas ao resolver os falsos positivos, porque algúns navegadores almacenarán esta mensaxe de estado na caché e non enviarán solicitudes posteriores, mesmo despois de ser desbloqueado. Pode ser o máis preferible nalgúns contextos, para certos tipos de tráfico."
+ 418 I_m a teapot: "418 I'm a teapot (Son unha tetera)\nReferencias a unha broma de April Fools ({{Links.RFC2324}}). É moi pouco probable que o entenda ningún cliente, bot, navegador, ou doutro xeito. Proporcionado para diversión e comodidade, pero xeralmente non recomendado."
+ 429 Too Many Requests: "429 Too Many Requests (Demasiadas solicitudes)\nRecomendado para os límites de taxas, cando se trata de ataques DDoS, e para a prevención de inundacións. Non recomendado noutros contextos."
+ 451 Unavailable For Legal Reasons: "451 Unavailable For Legal Reasons (Non dispoñible por motivos legais)\nRecoméndase cando se bloquea principalmente por motivos legais. Non recomendado noutros contextos."
+ 503 Service Unavailable: "503 Service Unavailable (Servizo non dispoñíbel)\nO máis robusto, pero o menos fácil de usar. Recomendado para ser atacado, ou para tratar con tráfico non desexado extremadamente persistente."
+ Active IPv4 signature files: "Ficheiros de sinatura IPv4 activos"
+ Active IPv6 signature files: "Ficheiros de sinatura IPv6 activos"
+ Active configuration file: "Ficheiro de configuración activo:"
+ Active events: "Eventos activos"
+ Active imports: "Importacións activas"
+ Active modules: "Módulos activos"
+ Actual: "Real"
+ Allow, but only when also blocked: "Permitir, pero só cando tamén está bloqueado."
+ Allow: "Permitir."
+ Bandwidth: "Ancho de banda utilizado: %s – Ancho de banda dispoñible: %s"
 warning:
  API_Rate_Limited: "Aviso: Parece que o acceso á API %s está actualmente limitado."
  Cookies: "Nota: CIDRAM usa unha cookie para autenticar os inicios de sesión. Ao iniciar sesión, dás o teu consentimento para que o teu navegador cree e almacene unha cookie."

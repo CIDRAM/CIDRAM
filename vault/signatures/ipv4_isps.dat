@@ -26514,7 +26514,35 @@ Tag: Bredband2 AB
 186.56.83.238/32 Deny Attacks
 Origin: AR
 Profile: Domestic ISP;Mobile ISP;Multiplay
-Tag: Bredband2 AB
+Tag: Telefonica de Argentina
+
+
+# ASN 14232 ("Cooperativa Telefónica Pinamar Ltda").
+# Argentinian domestic ISP. Port scans detected from here.
+# Listing just the affected ranges/addresses only.
+# Updated: 2024.05.30
+
+179.51.82.0/24 Deny Attacks
+201.219.69.0/24 Deny Attacks
+201.219.76.0/24 Deny Attacks
+201.219.109.0/24 Deny Attacks
+201.219.111.13/32 Deny Attacks
+201.219.111.126/32 Deny Attacks
+201.219.111.146/32 Deny Attacks
+Origin: AR
+Profile: Domestic ISP;Mobile ISP
+Tag: Pinamar
+
+
+# ASN 134420 ("Chongqing Telecom").
+# Chinese domestic ISP. Brute-force, webapp attacks, port scans, and hacking
+# detected from here. Listing just the affected ranges/addresses only.
+# Updated: 2024.05.30
+
+219.153.113.0/24 Deny Attacks
+Origin: CN
+Profile: Domestic ISP
+Tag: Chongqing Telecom
 
 
 # ---
@@ -26529,37 +26557,15 @@ Origin: BD
 Profile: Domestic ISP;Orphaned
 Tag: Orphaned/Bangladesh/Attacks
 
-# Updated: 2023.12.01
-144.168.213.0/24 Deny Attacks
-Origin: CA
-Profile: Domestic ISP;Orphaned
-Tag: Orphaned/Canada/Attacks
-
-# Updated: 2023.11.22
+# Updated: 2023.11.22 / Checked: 2024.05.30
 103.79.112.0/24 Deny Attacks
 Origin: IN
 Profile: Domestic ISP;Orphaned
 Tag: Orphaned/India/Attacks
 
-# Updated: 2024.02.21
-85.202.194.0/23 Deny Attacks
-91.243.191.0/24 Deny Attacks
-94.158.22.0/23 Deny Attacks
-212.115.51.0/24 Deny Attacks
-Origin: RU
-Profile: Domestic ISP;Orphaned
-Tag: Orphaned/Russia/Attacks
+# Updated: 2024.05.30
 45.9.20.0/24 Deny Attacks
-Origin: RU
-Profile: Domestic ISP
-Tag: Intem LLC
 193.106.191.0/24 Deny Attacks
 Origin: RU
-Profile: Restricted/Unidentifiable
-Tag: Kanzas LLC
-
-# Updated: 2024.02.18
-45.93.82.119/32 Deny Attacks
-Origin: GE
-Profile: Domestic ISP;Orphaned
-Tag: Orphaned/Georgia/Attacks
+Profile: Domestic ISP;Restricted/Unidentifiable
+Tag: Orphaned/Russia/Attacks

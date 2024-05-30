@@ -1,6 +1,6 @@
 <?php
 /**
- * A simple, unified cache handler (last modified: 2023.12.29).
+ * A simple, unified cache handler (last modified: 2024.05.30).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -194,7 +194,7 @@ class Cache
      * @param array|null $WorkingData An optional array of default cache data.
      * @return void
      */
-    public function __construct(array $WorkingData = null)
+    public function __construct($WorkingData = null)
     {
         if (is_array($WorkingData)) {
             $this->WorkingData = $WorkingData;

@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6.dat
 
-# Version: 2024.145.0
-# Last modified: 2024.05.25
+# Version: 2024.150.0
+# Last modified: 2024.05.30
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -4680,9 +4680,9 @@ Tag: OOO IT-Grad
 # Combines several different networks due to heavy interlacing. Significant
 # levels of unwanted traffic (e.g., spam, hacking, probing for vulnerabilities,
 # etc) detected throughout the included networks.
-# Stop Forum Spam (SFS) listings: 72 (AS55933), 45 (AS133731), 5 (AS134176),
-# 43 (AS134196), 4 (AS138968).
-# Updated: 2023.10.19
+# Stop Forum Spam (SFS) listings: 44 (AS55933), 51 (AS133731), 1 (AS134176),
+# 37 (AS134196), 4 (AS138968).
+# Updated: 2024.05.29
 
 2403:3a40::/32 Deny Cloud
 2403:3b40::/32 Deny Cloud
@@ -4697,6 +4697,8 @@ Origin: HK
 2404:b8c0::/32 Deny Cloud
 2a0f:6700::/29 Deny Cloud
 Origin: JP
+2404:7c40::/32 Deny Cloud
+Origin: KH
 2a0b:4340:82::/47 Deny Cloud
 Origin: US
 Profile: Commercial;Frequent changes;Infrastructure/Transit;Webhosting
@@ -9203,8 +9205,8 @@ Tag: BitWeb LLC
 # ASN 202425 ("IP Volume inc").
 # Brute-force, SSH, and webapp attacks, spam, and malware detected from here.
 # Also flagged by honeypots.
-# Stop Forum Spam (SFS) listings: 259.
-# Updated: 2023.05.14 / Checked: 2024.03.21
+# Stop Forum Spam (SFS) listings: 149.
+# Updated: 2023.05.14 / Checked: 2024.05.29
 
 2a02:6c8:8000::/33 Deny Cloud
 Origin: NL
@@ -10517,8 +10519,8 @@ Tag: Cloud Computing HK Limited
 # ASNs 49870, 208911 ("Alsycon B.V").
 # Helpdesk, VPS, and dedicated servers. Brute-force, SSH attacks, port scans,
 # and spam detected from here.
-# Stop Forum Spam (SFS) listings: 1 (AS208911).
-# Updated: 2023.07.29
+# Stop Forum Spam (SFS) listings: 6 (AS49870).
+# Updated: 2023.07.29 / Checked: 2024.05.29
 
 2a0e:3980::/29 Deny Cloud
 2a11:8280::/29 Deny Cloud
@@ -11447,8 +11449,8 @@ Tag: Probe Networks
 
 # ASN 202468 ("Noyan Abr Arvan Co. ( Private Joint Stock)").
 # Stock company. Brute-force, SSH attacks, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 15.
-# Updated: 2024.01.11
+# Stop Forum Spam (SFS) listings: 20.
+# Updated: 2024.01.11 / Checked: 2024.05.30
 
 2a07:3900::/29 Deny Cloud
 2a0c:a7c0::/29 Deny Cloud
@@ -12923,6 +12925,46 @@ Tag: Shandong Deju
 Origin: BR
 Profile: Infrastructure/Transit;Multiplay;Webhosting
 Tag: IPGLOBE INTERNET LTDA
+
+
+# ASN 51396 ("Pfcloud UG").
+# Brute-force attacks, port scans, hacking, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 456.
+# Updated: 2024.05.29
+
+2a05:b0c6:a000::/38 Deny Cloud
+2a05:b0c7:6000::/36 Deny Cloud
+2a12:dd47:8500::/40 Deny Cloud
+2a13:df80:a800::/38 Deny Cloud
+2a13:df84::/32 Deny Cloud
+Origin: GB
+2a14:7c0:2800::/38 Deny Cloud
+2a14:7c2::/31 Deny Cloud
+Origin: IL
+2a12:2640::/29 Deny Cloud
+Origin: LB
+2a06:b440::/29 Deny Cloud
+2a12:6740::/29 Deny Cloud
+2a12:8ec0::/29 Deny Cloud
+2a12:ccc0::/29 Deny Cloud
+2a12:e240::/29 Deny Cloud
+Origin: UA
+2602:f915:1::/48 Deny Cloud
+Origin: US
+Profile: Dedicated;Infrastructure/Transit;Webhosting
+Tag: Pfcloud UG
+
+
+# ASN 215987 ("Taylan Gueler trading as Soliaweb").
+# Brute-force, SSH, DDoS, webapp, and XMLRPC/WordPress attacks, port scans,
+# hacking, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 4.
+# Updated: 2024.05.29
+
+2a0f:9400:7389::/48 Deny Cloud
+Origin: GB
+Profile: Dedicated;Infrastructure/Transit;Webhosting
+Tag: Soliaweb
 
 
 # ---

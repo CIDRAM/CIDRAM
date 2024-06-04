@@ -10,7 +10,7 @@ CIDRAM Core:
  Changelog: "https://github.com/CIDRAM/CIDRAM/blob/v3/Changelog.md"
  Release Notes For: ["3.2.0", "3.2.1", "3.3.0", "3.4.0", "3.4.1", "3.4.2", "3.5.0", "3.5.1", "3.6.0"]
  When Update Succeeds:
-  - "wpVer 4.8.0 6.5.2 3.5.1 7.2"
+  - "wpVer 4.8.0 6.5.3 3.5.1 7.2"
   - "foreach {Components.RemoteMeta.CIDRAM Core.Release Notes For} as Key => Value if {Components.Meta.CIDRAM Core.Version}<{Value}&&{Components.RemoteMeta.CIDRAM Core.Version}>={Value} then queue message response.release_notes https://github.com/CIDRAM/CIDRAM/releases/tag/v{Value} CIDRAM v{Value}"
  Uninstallable: false
  Files:
@@ -1352,7 +1352,7 @@ IP-API module:
    Used with: "modules"
 Optional security extras module:
  False Positive Risk: "Medium"
- Version: "2024.141.0"
+ Version: "2024.155.0"
  When Install Succeeds: ["queue message response.please_check_config"]
  Files:
   imports/extras.yml:
@@ -1361,7 +1361,7 @@ Optional security extras module:
    Used with: "imports"
   modules/extras.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/extras.php"
-   Checksum: "9c0c60ebf498f39766435cde80f20eefeb1a932d66663d71321c3e76d7687dd9:29587"
+   Checksum: "3359f9fb547c0218fa33dec77b9328388fff53dcc0563636dca8ff44b53ee20d:29780"
    Used with: "modules"
 Project Honeypot module:
  False Positive Risk: "Medium"

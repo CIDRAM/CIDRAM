@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Serbian language data for the front-end (last modified: 2024.05.18).
+# This file: Serbian language data for the front-end (last modified: 2024.06.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -137,6 +137,8 @@ config:
  abuseipdb_minimum_confidence_score: "Минимална резултат поверења потребна да би ЦИДРАМ блокирао ИП адресу (мора бити број између 0 и 100). Подразумевано = 50."
  abuseipdb_minimum_total_reports: "Минимални број укупних извештаја потребних да би ЦИДРАМ блокирао ИП адресу. Подразумевано = 1."
  abuseipdb_report_back: "Дозволити ЦИДРАМ-у да пријави откривено лоше понашање назад АбусеИПДБ користећи ваш АПИ кључ?"
+ bgpview: "Конфигурација за БГПВиев модул (пружа могућност тражења АСН-а и кода земље за ЦИДРАМ)."
+ bgpview_blocked_asns: &ConfigBlockedASNs "Листа АСН-ова које треба блокирати када их модул подудара."
  phpmailer: "Конфигурација за ПХПМаилер (користи се за двофакторску аутентификацију и за обавештења путем е-поште)."
  phpmailer_add_reply_to_address: "Адреса за одговор коју треба навести приликом слања е-поште путем СМТП-а."
  phpmailer_add_reply_to_name: "Име одговора које треба навести приликом слања е-поште путем СМТП-а."

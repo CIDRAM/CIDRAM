@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods for updating CIDRAM components (last modified: 2024.05.06).
+ * This file: Methods for updating CIDRAM components (last modified: 2024.06.06).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -311,11 +311,31 @@ trait Updater
             $RemoteData = $this->Cache->getEntry($ThisRemote);
             if ($RemoteData === false) {
                 $RemoteData = $this->Request->request($ThisRemote);
-                if (strtolower(substr($ThisRemote, -2)) === 'gz' && substr($RemoteData, 0, 2) === "\x1F\x8B") {
-                    $RemoteData = gzdecode($RemoteData);
-                }
-                if (empty($RemoteData)) {
+                if ($this->Request->MostRecentStatusCode !== 200) {
+                    $this->FE['state_msg'] .= $this->L10N->getString('response.Can_t fetch metadata') . ' <code>&lt;' . $ThisRemote . '&gt;</code>' . $this->L10N->getString('pair_separator');
+                    if ($this->Request->MostRecentStatusCode === 401 || $this->Request->MostRecentStatusCode === 403) {
+                        $this->FE['state_msg'] .= $this->L10N->getString('denied') . '<br />';
+                    } elseif ($this->Request->MostRecentStatusCode === 402) {
+                        $this->FE['state_msg'] .= $this->L10N->getString('response.Payment required at the upstream') . '<br />';
+                    } elseif ($this->Request->MostRecentStatusCode === 404 || $this->Request->MostRecentStatusCode === 410) {
+                        $this->FE['state_msg'] .= $this->L10N->getString('response.Not available at the upstream') . '<br />';
+                    } elseif ($this->Request->MostRecentStatusCode === 429) {
+                        $this->FE['state_msg'] .= $this->L10N->getString('response.Rate limited by the upstream') . '<br />';
+                    } elseif ($this->Request->MostRecentStatusCode === 451) {
+                        $this->FE['state_msg'] .= $this->L10N->getString('response.Not available at the upstream for legal reasons') . '<br />';
+                    } elseif ($this->Request->MostRecentStatusCode >= 500) {
+                        $this->FE['state_msg'] .= $this->L10N->getString('response.Error at the upstream') . '<br />';
+                    } else {
+                        $this->FE['state_msg'] .= $this->L10N->getString('response.Unknown error') . '<br />';
+                    }
                     $RemoteData = '-';
+                } else {
+                    if (strtolower(substr($ThisRemote, -2)) === 'gz' && substr($RemoteData, 0, 2) === "\x1F\x8B") {
+                        $RemoteData = gzdecode($RemoteData);
+                    }
+                    if (empty($RemoteData)) {
+                        $RemoteData = '-';
+                    }
                 }
                 $this->Cache->setEntry($ThisRemote, $RemoteData, 3600);
             }

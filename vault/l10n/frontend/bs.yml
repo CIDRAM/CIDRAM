@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bosnian language data for the front-end (last modified: 2024.05.18).
+# This file: Bosnian language data for the front-end (last modified: 2024.06.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -137,6 +137,8 @@ config:
  abuseipdb_minimum_confidence_score: "Minimalni rezultat pouzdanosti potreban da bi CIDRAM blokirao IP adresu (mora biti broj između 0 i 100). Zadano = 50."
  abuseipdb_minimum_total_reports: "Minimalni broj ukupnih izvještaja potrebnih da bi CIDRAM blokirao IP adresu. Zadano = 1."
  abuseipdb_report_back: "Dozvoliti CIDRAM-u da prijavi otkriveno loše ponašanje nazad AbuseIPDB koristeći vaš API ključ?"
+ bgpview: "Konfiguracija za BGPView modul (pruža mogućnost pretraživanja ASN-a i koda zemlje za CIDRAM)."
+ bgpview_blocked_asns: &ConfigBlockedASNs "Lista ASN-a koja će biti blokirana kada se podudara sa modulom."
  phpmailer: "Konfiguracija za PHPMailer (koristi se za dvofaktorsku autentifikaciju i za obavještenja putem e-pošte)."
  phpmailer_add_reply_to_address: "Adresa za odgovor koju treba navesti prilikom slanja e-pošte putem SMTP-a."
  phpmailer_add_reply_to_name: "Ime odgovora koje treba navesti prilikom slanja e-pošte putem SMTP-a."

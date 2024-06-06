@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv4_isps.dat
 
-# Version: 2024.150.0
-# Last modified: 2024.05.30
+# Version: 2024.157.0
+# Last modified: 2024.06.06
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -4430,7 +4430,7 @@ Tag: DCBG
 # hack attempts, probing, etc. Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 39 (AS7643), 16,391 (AS45899),
 # 638 (AS135905), 1,805 (AS135967).
-# Updated: 2024.05.10
+# Updated: 2024.05.10 / Modified: 2024.06.06
 
 14.160.23.0/24 Deny Attacks
 14.160.26.0/24 Deny Attacks
@@ -4552,6 +4552,8 @@ Tag: DCBG
 14.226.242.238/32 Deny Attacks
 14.226.244.0/22 Deny Attacks
 14.226.248.0/21 Deny Attacks
+14.230.173.6/32 Deny Attacks
+14.230.173.210/32 Deny Attacks
 14.231.47.64/32 Deny Attacks
 14.231.51.0/24 Deny Attacks
 14.231.58.105/32 Deny Attacks
@@ -14716,24 +14718,28 @@ Profile: Domestic ISP;Mobile ISP
 Tag: Orange S.A
 
 
-# ASN 34224 ("Neterra Ltd").
+# ASNs 34224, 212580 ("Neterra Ltd", "cupaco GmbH").
 # Bulgarian TV and internet provider. DDoS attacks, open proxies, hacking,
 # SQLi, brute-force, SSH, and webapp attacks, port scans, and spam detected
 # from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 408.
-# Updated: 2023.07.13 / Modified: 2023.07.19
+# Stop Forum Spam (SFS) listings: 96.
+# Updated: 2024.05.31
 
-31.13.195.0/24 Deny Attacks
-87.120.8.0/24 Deny Attacks
-87.120.37.0/24 Deny Attacks
+31.13.195.94/32 Deny Attacks
+31.13.195.183/32 Deny Attacks
+87.120.37.78/32 Deny Attacks
+87.120.37.222/32 Deny Attacks
 87.120.254.0/24 Deny Attacks
-87.121.52.0/24 Deny Attacks
-91.92.109.0/24 Deny Attacks
-93.123.12.0/24 Deny Attacks
-94.156.100.249/32 Deny Spam
+87.121.52.70/32 Deny Attacks
+87.121.52.182/32 Deny Attacks
+87.121.52.208/32 Deny Attacks
+91.92.109.43/32 Deny Attacks
+91.92.109.126/32 Deny Attacks
+93.123.12.73/32 Deny Attacks
+93.123.12.112/32 Deny Attacks
+93.123.12.245/32 Deny Attacks
+171.22.28.0/24 Deny Attacks
 Origin: BG
-94.103.124.0/24 Deny Attacks
-Origin: US
 Profile: Commercial;Domestic ISP;Multiplay;Tor endpoints here
 Tag: Neterra Ltd
 

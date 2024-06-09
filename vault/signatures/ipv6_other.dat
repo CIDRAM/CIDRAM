@@ -1,8 +1,8 @@
 # IPv6 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6_other.dat
 
-# Version: 2024.122.0
-# Last modified: 2024.05.02
+# Version: 2024.160.0
+# Last modified: 2024.06.09
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -126,6 +126,17 @@ Profile: Third-party sourced
 Tag: Spamhaus DROPv6
 
 
+# Octopusnet VPN (mostly from AS44724, but we'll update via announces instead,
+# because we don't need to block the entire ASN, and there could be stray CIDRs
+# too). Proxy service with a history of spam events.
+# Updated: 2024.06.09
+
+2a04:db80::/32 Deny Proxy
+Origin: RU
+Profile: VPNs here
+Tag: Octopusnet VPN
+
+
 # ASN 208323 ("Foundation for Applied Privacy").
 # Stop Forum Spam (SFS) listings: 22,797.
 # Updated: 2019.10.02 / Checked: 2024.02.11
@@ -139,11 +150,12 @@ Tag: Applied Privacy
 # ASNs 50495, 62874, 199438, 204646 ("Web2Objects LLC").
 # Provides anonymous proxy services. Spam, hacking, probing for
 # vulnerabilities, and other kinds of unwanted traffic detected from here.
-# Stop Forum Spam (SFS) listings: 407 (AS50495), 1,831 (AS62874).
-# Updated: 2022.10.03 / Checked: 2023.07.15
+# Stop Forum Spam (SFS) listings: 768 (AS50495), 4,062 (AS62874).
+# Updated: 2024.06.07
 
 2a00:f826:11::/48 Deny Proxy
 2a06:ef40::/32 Deny Proxy
+2a09:2c00::/29 Deny Proxy
 2a0c:4444::/48 Deny Proxy
 2a0c:4445::/48 Deny Proxy
 2a0d:2080::/29 Deny Proxy
@@ -157,6 +169,17 @@ Origin: DE
 Origin: US
 Profile: Commercial;Tor endpoints here
 Tag: Web2Objects LLC
+
+
+# ASN 209854 ("Cyberzone S.A").
+# A paid VPN provider. Brute-force and SSH attacks detected from here.
+# Stop Forum Spam (SFS) listings: 1,749.
+# Updated: 2024.06.09
+
+2a09:a700::/29 Deny Attacks
+Origin: PA
+Profile: VPNs here
+Tag: Surfshark Ltd
 
 
 # ASN 398355 ("Data Ideas llc").
@@ -194,10 +217,11 @@ Tag: Thin-nology, LLC
 # ASN 1004 ("Ambyre LLC").
 # Tor provider. Brute-force, WordPress/XMLRPC, SSH, router exploit, and webapp
 # attacks, port scans, hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2023.07.15
+# Stop Forum Spam (SFS) listings: 32.
+# Updated: 2024.06.07
 
-2602:fba3:400::/47 Deny Proxy
+2602:fba3:401::/48 Deny Proxy
+2602:fba3:402::/48 Deny Proxy
 Origin: US
 Profile: Tor endpoints here
 Tag: Ambyre LLC

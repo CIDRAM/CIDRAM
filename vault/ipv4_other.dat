@@ -1,8 +1,8 @@
 # IPv4 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv4_other.dat
 
-# Version: 2024.122.0
-# Last modified: 2024.05.02
+# Version: 2024.160.0
+# Last modified: 2024.06.09
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -1384,7 +1384,7 @@ Tag: Spamhaus DROP/EDROP
 # Octopusnet VPN (mostly from AS44724, but we'll update via announces instead,
 # because we don't need to block the entire ASN, and there could be stray CIDRs
 # too). Proxy service with a history of spam events.
-# Updated: 2023.07.18
+# Updated: 2024.06.09
 
 46.46.0.0/20 Deny Proxy
 46.46.17.0/24 Deny Proxy
@@ -1393,13 +1393,14 @@ Tag: Spamhaus DROP/EDROP
 83.217.28.0/22 Deny Proxy
 95.154.64.0/19 Deny Proxy
 95.154.96.0/20 Deny Proxy
-95.154.112.0/22 Deny Proxy
-95.154.116.0/23 Deny Proxy
-95.154.119.0/24 Deny Proxy
-95.154.120.0/21 Deny Proxy
+95.154.112.0/23 Deny Proxy
+95.154.114.0/24 Deny Proxy
+95.154.116.0/22 Deny Proxy
+95.154.120.0/22 Deny Proxy
+95.154.124.0/23 Deny Proxy
+95.154.127.0/24 Deny Proxy
 185.57.28.0/22 Deny Proxy
 213.5.16.0/22 Deny Proxy
-2a04:db80::/32 Deny Proxy
 Origin: RU
 Profile: VPNs here
 Tag: Octopusnet VPN
@@ -1418,21 +1419,33 @@ Tag: Applied Privacy
 # ASNs 50495, 62874, 199438, 204646 ("Web2Objects LLC").
 # Provides anonymous proxy services. Spam, hacking, probing for
 # vulnerabilities, and other kinds of unwanted traffic detected from here.
-# Stop Forum Spam (SFS) listings: 407 (AS50495), 1,831 (AS62874).
-# Updated: 2023.07.15
+# Stop Forum Spam (SFS) listings: 768 (AS50495), 4,062 (AS62874).
+# Updated: 2024.06.07
 
 2.58.12.0/23 Deny Proxy
+5.253.240.0/22 Deny Proxy
 45.10.234.0/23 Deny Proxy
 45.80.164.0/22 Deny Proxy
+45.82.222.0/24 Deny Proxy
 45.86.160.0/23 Deny Proxy
+45.87.69.0/24 Deny Proxy
+45.87.70.0/24 Deny Proxy
 45.89.210.0/23 Deny Proxy
 45.93.97.0/24 Deny Proxy
 45.93.98.0/23 Deny Proxy
 45.135.16.0/22 Deny Proxy
+45.138.116.0/22 Deny Proxy
 45.142.80.0/22 Deny Proxy
+45.146.28.0/22 Deny Proxy
+45.146.204.0/22 Deny Proxy
+45.147.184.0/22 Deny Proxy
+45.150.176.0/22 Deny Proxy
+45.151.160.0/22 Deny Proxy
 45.153.40.0/22 Deny Proxy
+45.159.52.0/22 Deny Proxy
 77.83.232.0/22 Deny Proxy
 83.136.221.0/24 Deny Proxy
+85.208.32.0/22 Deny Proxy
 91.223.99.0/24 Deny Proxy
 91.223.102.0/24 Deny Proxy
 91.223.126.0/24 Deny Proxy
@@ -1444,8 +1457,16 @@ Tag: Applied Privacy
 185.244.10.0/24 Deny Proxy
 185.247.188.0/22 Deny Proxy
 185.253.196.0/22 Deny Proxy
+193.160.236.0/23 Deny Proxy
+193.161.2.0/23 Deny Proxy
 194.5.224.0/22 Deny Proxy
 194.39.32.0/22 Deny Proxy
+194.113.112.0/23 Deny Proxy
+194.113.118.0/23 Deny Proxy
+194.213.13.0/24 Deny Proxy
+194.213.15.0/24 Deny Proxy
+194.213.17.0/24 Deny Proxy
+194.213.20.0/24 Deny Proxy
 195.234.99.0/24 Deny Proxy
 212.103.42.0/23 Deny Proxy
 Origin: DE
@@ -1477,7 +1498,6 @@ Origin: SE
 104.200.76.0/22 Deny Proxy
 104.232.194.0/23 Deny Proxy
 104.232.196.0/22 Deny Proxy
-104.232.200.0/21 Deny Proxy
 104.232.212.0/22 Deny Proxy
 104.232.218.0/23 Deny Proxy
 104.232.220.0/22 Deny Proxy
@@ -1490,6 +1510,7 @@ Origin: SE
 162.249.164.0/22 Deny Proxy
 167.160.32.0/20 Deny Proxy
 167.160.48.0/22 Deny Proxy
+167.160.56.0/21 Deny Proxy
 Origin: US
 Profile: Commercial;Tor endpoints here
 Tag: Web2Objects LLC
@@ -1497,21 +1518,49 @@ Tag: Web2Objects LLC
 
 # ASN 209854 ("Cyberzone S.A").
 # A paid VPN provider. Brute-force and SSH attacks detected from here.
-# Stop Forum Spam (SFS) listings: 1,670.
-# Updated: 2023.11.27
+# Stop Forum Spam (SFS) listings: 1,749.
+# Updated: 2024.06.09
 
-31.169.120.0/23 Deny Attacks
-31.169.123.0/24 Deny Attacks
+203.21.66.0/24 Deny Attacks
+203.32.7.0/24 Deny Attacks
+Origin: AU
+45.141.232.0/24 Deny Attacks
+45.141.235.0/24 Deny Attacks
+85.11.190.0/24 Deny Attacks
+85.239.148.0/24 Deny Attacks
+91.92.47.0/24 Deny Attacks
+93.152.205.0/24 Deny Attacks
+93.152.206.0/24 Deny Attacks
+93.152.209.0/24 Deny Attacks
+93.152.210.0/23 Deny Attacks
+93.152.213.0/24 Deny Attacks
+93.152.214.0/23 Deny Attacks
+93.152.216.0/24 Deny Attacks
+93.152.220.0/24 Deny Attacks
+185.95.157.0/24 Deny Attacks
+185.95.158.0/24 Deny Attacks
+Origin: BG
+31.169.120.0/22 Deny Attacks
+77.78.70.0/23 Deny Attacks
 83.97.112.0/24 Deny Attacks
-83.97.115.0/24 Deny Attacks
+83.97.114.0/23 Deny Attacks
+92.118.62.0/24 Deny Attacks
+155.133.64.0/24 Deny Attacks
+155.133.70.0/24 Deny Attacks
 176.227.240.0/23 Deny Attacks
+185.196.0.0/24 Deny Attacks
+185.202.237.0/24 Deny Attacks
+194.60.86.0/24 Deny Attacks
+194.156.227.0/24 Deny Attacks
 Origin: DE
+2.59.202.0/23 Deny Attacks
 46.102.177.0/24 Deny Attacks
 46.102.178.0/24 Deny Attacks
 77.81.90.0/23 Deny Attacks
 85.209.4.0/24 Deny Attacks
 85.209.6.0/23 Deny Attacks
-86.104.0.0/23 Deny Attacks
+86.104.2.0/24 Deny Attacks
+86.104.213.0/24 Deny Attacks
 86.106.116.0/24 Deny Attacks
 88.218.150.0/23 Deny Attacks
 89.37.93.0/24 Deny Attacks
@@ -1526,6 +1575,7 @@ Origin: DE
 185.200.204.0/22 Deny Attacks
 185.204.92.0/24 Deny Attacks
 185.218.220.0/23 Deny Attacks
+185.230.230.0/23 Deny Attacks
 185.239.189.0/24 Deny Attacks
 188.208.220.0/23 Deny Attacks
 188.208.223.0/24 Deny Attacks
@@ -1535,10 +1585,14 @@ Origin: GB
 196.44.118.0/24 Deny Attacks
 Origin: GH
 103.210.244.0/23 Deny Attacks
+118.99.2.0/24 Deny Attacks
 Origin: HK
+89.117.40.0/23 Deny Attacks
+Origin: LT
+159.148.58.0/24 Deny Attacks
+Origin: LV
 45.95.242.0/24 Deny Attacks
 45.130.137.0/24 Deny Attacks
-45.135.184.0/24 Deny Attacks
 45.139.252.0/23 Deny Attacks
 45.144.227.0/24 Deny Attacks
 45.149.3.0/24 Deny Attacks
@@ -1555,10 +1609,10 @@ Origin: HK
 194.26.131.0/24 Deny Attacks
 194.169.168.0/22 Deny Attacks
 212.119.32.0/23 Deny Attacks
+212.119.34.0/24 Deny Attacks
 213.109.151.0/24 Deny Attacks
 Origin: NL
-92.249.36.0/23 Deny Attacks
-92.249.38.0/24 Deny Attacks
+92.249.36.0/22 Deny Attacks
 Origin: PA
 113.203.221.0/24 Deny Attacks
 Origin: PK
@@ -1569,10 +1623,13 @@ Origin: PK
 146.66.210.0/24 Deny Attacks
 178.157.109.0/24 Deny Attacks
 188.74.130.0/23 Deny Attacks
+188.119.160.0/23 Deny Attacks
 192.162.184.0/23 Deny Attacks
 193.36.203.0/24 Deny Attacks
 Origin: RO
+23.27.28.0/24 Deny Attacks
 23.27.114.0/24 Deny Attacks
+23.27.216.0/24 Deny Attacks
 23.230.89.0/24 Deny Attacks
 23.230.141.0/24 Deny Attacks
 23.230.151.0/24 Deny Attacks
@@ -1581,6 +1638,7 @@ Origin: RO
 31.42.131.0/24 Deny Attacks
 31.42.144.0/23 Deny Attacks
 31.42.153.0/24 Deny Attacks
+31.130.244.0/23 Deny Attacks
 45.38.41.0/24 Deny Attacks
 45.38.61.0/24 Deny Attacks
 45.38.198.0/24 Deny Attacks
@@ -1588,8 +1646,13 @@ Origin: RO
 45.39.33.0/24 Deny Attacks
 45.39.68.0/24 Deny Attacks
 45.39.89.0/24 Deny Attacks
-45.39.191.0/24 Deny Attacks
+45.39.98.0/24 Deny Attacks
+45.39.107.0/24 Deny Attacks
+45.39.108.0/24 Deny Attacks
+45.39.180.0/24 Deny Attacks
+45.39.190.0/23 Deny Attacks
 45.39.193.0/24 Deny Attacks
+45.39.203.0/24 Deny Attacks
 45.39.220.0/24 Deny Attacks
 45.39.228.0/24 Deny Attacks
 45.39.230.0/24 Deny Attacks
@@ -1614,11 +1677,13 @@ Origin: RO
 104.252.110.0/24 Deny Attacks
 104.252.155.0/24 Deny Attacks
 104.252.175.0/24 Deny Attacks
+104.253.21.0/24 Deny Attacks
 104.253.38.0/24 Deny Attacks
 104.253.51.0/24 Deny Attacks
 104.253.60.0/24 Deny Attacks
 104.253.62.0/24 Deny Attacks
 104.253.72.0/24 Deny Attacks
+104.253.79.0/24 Deny Attacks
 104.253.97.0/24 Deny Attacks
 104.253.104.0/24 Deny Attacks
 104.253.138.0/24 Deny Attacks
@@ -1633,22 +1698,27 @@ Origin: RO
 104.253.202.0/24 Deny Attacks
 104.253.204.0/24 Deny Attacks
 104.253.215.0/24 Deny Attacks
+107.164.50.0/24 Deny Attacks
 107.164.58.0/24 Deny Attacks
-107.164.101.0/24 Deny Attacks
-107.164.124.0/24 Deny Attacks
-107.164.148.0/24 Deny Attacks
+107.164.106.0/24 Deny Attacks
+107.164.142.0/24 Deny Attacks
 136.0.58.0/24 Deny Attacks
 142.111.235.0/24 Deny Attacks
-142.252.2.0/24 Deny Attacks
+142.252.199.0/24 Deny Attacks
 142.252.208.0/24 Deny Attacks
-142.252.213.0/24 Deny Attacks
+142.252.215.0/24 Deny Attacks
+171.22.60.0/23 Deny Attacks
+172.120.227.0/24 Deny Attacks
+172.121.107.0/24 Deny Attacks
+172.121.130.0/24 Deny Attacks
 172.252.89.0/24 Deny Attacks
 172.252.123.0/24 Deny Attacks
 172.252.129.0/24 Deny Attacks
 172.252.131.0/24 Deny Attacks
 185.180.195.0/24 Deny Attacks
 185.206.58.0/23 Deny Attacks
-192.177.44.0/24 Deny Attacks
+192.177.59.0/24 Deny Attacks
+207.230.125.0/24 Deny Attacks
 Origin: US
 Profile: VPNs here
 Tag: Surfshark Ltd
@@ -1704,8 +1774,8 @@ Tag: Thin-nology, LLC
 # ASN 1004 ("Ambyre LLC").
 # Tor provider. Brute-force, WordPress/XMLRPC, SSH, router exploit, and webapp
 # attacks, port scans, hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2023.07.15
+# Stop Forum Spam (SFS) listings: 32.
+# Updated: 2023.07.15 / Checked: 2024.06.07
 
 2.56.164.0/24 Deny Proxy
 Origin: US
@@ -1716,11 +1786,9 @@ Tag: Ambyre LLC
 # ASN 16652 ("Riseup Networks").
 # Webmail and VPN provider. Port scans and other unusual traffic detected from
 # some specific addresses here. Listing just the affected addresses only.
-# Stop Forum Spam (SFS) listings: 2.
-# Updated: 2023.08.08
+# Updated: 2024.06.09
 
 198.252.153.28/32 Deny Attacks
-198.252.153.129/32 Deny Attacks
 Origin: US
 Profile: VPNs here
 Tag: Riseup Networks
@@ -1743,10 +1811,12 @@ Tag: Windscribe
 
 # ASN 208476 ("Danilenko, Artyom").
 # VPN and tor provider. Hacking and brute-force attacks detected from here.
-# Listing just the affected ranges/addresses only.
-# Updated: 2023.08.20
+# Updated: 2024.06.09
 
 194.147.140.0/24 Deny Attacks
 Origin: IR
+185.244.31.31/32 Deny Attacks
+185.244.31.251/32 Deny Attacks
+Origin: NL
 Profile: Tor endpoints here;VPNs here
 Tag: privacyfirst.digital

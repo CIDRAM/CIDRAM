@@ -406,12 +406,32 @@ trait AuxiliaryRules
             }
             $Options = ' – ' . $Options;
 
+            $FromAndExpiry = '';
+            $Expired = false;
+
+            /** Determine from and expiry information. */
+            foreach ([
+                ['From', 'label.aux.When the rule should begin (optional)'],
+                ['Expiry', 'label.aux.When the rule should expire (optional)', 'Expired']
+            ] as $Details) {
+                if (!empty($Data[$Details[0]]) && $Label = $this->L10N->getString($Details[1])) {
+                    if (preg_match('~^(\d{4})[.-](\d\d)[.-](\d\d)$~', $Data[$Details[0]], $Time)) {
+                        $Time = mktime(0, 0, 0, (int)$Time[2], (int)$Time[3], (int)$Time[1]);
+                        if (isset($Details[2])) {
+                            ${$Details[2]} = $Time < $this->Now;
+                        }
+                        $Data[$Details[0]] .= ' (' . $this->relativeTime($Time) . ')';
+                    }
+                    $FromAndExpiry .= "\n          <li><div class=\"iCntr\"><div class=\"iLabl s\">" . $Label . '</div><div class="iCntn">' . $Data[$Details[0]] . '</div></div></li>';
+                }
+            }
+
             /** Begin generating rule output. */
             $Output .= sprintf(
                 '%1$s<li class="%2$s"><span class="comCat s">%3$s</span>%4$s%5$s%1$s  <ul class="comSub">',
                 "\n      ",
                 $RuleClass . (empty($Data['Disable this rule']) ? '' : ' hB fBlur"'),
-                $Name,
+                $Expired ? '<em class="txtRd">' . $Name . ' (' . $this->L10N->getString('state_expired') . ')</em>' : $Name,
                 $Options,
                 isset($Data['Notes']) ? '<div class="iCntn"><em>' . str_replace(['<', '>', "\n"], ['&lt;', '&gt;', "<br />\n"], $Data['Notes']) . '</em></div>' : ''
             );
@@ -430,20 +450,8 @@ trait AuxiliaryRules
                 }
             }
 
-            /** Populate from and expiry. */
-            foreach ([
-                ['From', 'label.aux.When the rule should begin (optional)'],
-                ['Expiry', 'label.aux.When the rule should expire (optional)']
-            ] as $Details) {
-                if (!empty($Data[$Details[0]]) && $Label = $this->L10N->getString($Details[1])) {
-                    if (preg_match('~^(\d{4})[.-](\d\d)[.-](\d\d)$~', $Data[$Details[0]], $Details[2])) {
-                        $Data[$Details[0]] .= ' (' . $this->relativeTime(
-                            mktime(0, 0, 0, (int)$Details[2][2], (int)$Details[2][3], (int)$Details[2][1])
-                        ) . ')';
-                    }
-                    $Output .= "\n          <li><div class=\"iCntr\"><div class=\"iLabl s\">" . $Label . '</div><div class="iCntn">' . $Data[$Details[0]] . '</div></div></li>';
-                }
-            }
+            /** Append from and expiry information. */
+            $Output .= $FromAndExpiry;
 
             /** Display the status code to be applied. */
             if (!empty($Data['Status Code']) && $Data['Status Code'] > 200 && $StatusCode = $this->getStatusHTTP($Data['Status Code'])) {

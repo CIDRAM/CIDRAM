@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The auxiliary rules view mode page (last modified: 2024.04.19).
+ * This file: The auxiliary rules view mode page (last modified: 2024.06.06).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -125,15 +125,11 @@ if (isset($_POST['ruleName'], $_POST['conSourceType'], $_POST['conIfOrNot'], $_P
         if (!isset($this->CIDRAM['AuxData'][$_POST['ruleName']][$Action][$ConstructInto][
             $_POST['conSourceType'][$Iteration]
         ])) {
-            $this->CIDRAM['AuxData'][$_POST['ruleName']][$Action][$ConstructInto][
-                $_POST['conSourceType'][$Iteration]
-            ] = [];
+            $this->CIDRAM['AuxData'][$_POST['ruleName']][$Action][$ConstructInto][$_POST['conSourceType'][$Iteration]] = [];
         }
 
         /** Construct expected condition values. */
-        $this->CIDRAM['AuxData'][$_POST['ruleName']][$Action][$ConstructInto][
-            $_POST['conSourceType'][$Iteration]
-        ][] = $_POST['conSourceValue'][$Iteration];
+        $this->CIDRAM['AuxData'][$_POST['ruleName']][$Action][$ConstructInto][$_POST['conSourceType'][$Iteration]][] = $_POST['conSourceValue'][$Iteration];
     }
 
     /** Remove possible empty array. */

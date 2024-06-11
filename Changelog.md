@@ -412,3 +412,5 @@
 [2024.05.18; Maikuolan]: The `sfs➡offer_captcha` configuration directive didn't always behave as expected, didn't distinguish between ReCaptcha and HCaptcha, and its description wasn't entirely clear, so I've replaced it with a new configuration directive, `sfs➡options`, which is described more concisely, distinguishes between ReCaptcha and HCaptcha, and works better. I've also added comparable configuration directives to several other modules. Because this change concerns modules, but not the CIDRAM core, and because what's being replaced didn't always behave as expected, I don't regard this change as BC-breaking.
 
 [2024.05.20; Maikuolan]: Added two new configuration directives, `expire_good` and `expire_bad`, to the AbuseIPDB, BGPView, IP-API, Project Honeypot, and Stop Forum Spam modules, making it possible to configure the expiry times for the data cached by these modules (#589).
+
+[2024.06.11; Maikuolan]: Added two new configuration directives, `edge` and `options`, to the BOBUAM (#601). Expired auxiliary rules will now be marked as expired when displayed at the auxiliary rules view mode page (#595).

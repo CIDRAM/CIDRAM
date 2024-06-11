@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Tamil language data for the front-end (last modified: 2024.06.06).
+# This file: Tamil language data for the front-end (last modified: 2024.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -146,6 +146,7 @@ config:
  bobuam_block_bots: "தீங்கிழைக்கும் அல்லது தேவையற்றதாக அங்கீகரிக்கப்பட்ட போட்களைத் தடுக்கவா?"
  bobuam_block_eol_browsers: "ஆயுட்காலம் முடிந்துவிட்ட உலாவிகளைத் தடுக்கவா? (கீழே பதிப்புகளை அமைக்கவும்)."
  bobuam_chrome: ""Chrome/Chromium" டோக்கனின் குறைந்த அனுமதிக்கப்பட்ட பதிப்பு. பரிந்துரைக்கப்படுகிறது: {{BOBUAM Token.Chrome}}."
+ bobuam_edge: ""Edg/Edge" டோக்கனின் குறைந்த அனுமதிக்கப்பட்ட பதிப்பு. பரிந்துரைக்கப்படுகிறது: {{BOBUAM Token.Edge}}."
  bobuam_firefox: ""Firefox" டோக்கனின் குறைந்த அனுமதிக்கப்பட்ட பதிப்பு. பரிந்துரைக்கப்படுகிறது: {{BOBUAM Token.Firefox}}."
  bobuam_firefox_esr: "ESR பதிப்பிற்கான "Firefox" டோக்கனின் அனுமதிக்கப்பட்ட பதிப்பு. பரிந்துரைக்கப்படுகிறது: {{BOBUAM Token.Firefox ESR}}."
  bobuam_reason_ambiguous: "தெளிவற்ற பயனர் ஏஜென்ட் சரம் கண்டறியப்பட்டால், தடுப்பதற்கான காரணம் காட்டப்பட்டுள்ளது."
@@ -784,7 +785,6 @@ macro:
   uninstall_l10n_fe: "அனைத்து செயலற்ற முன்-இறுதி L10N ஐ நிறுவல் நீக்கவும்."
   uninstall_modules: "அனைத்து செயலற்ற தொகுதிகளையும் நிறுவல் நீக்கவும்."
   uninstall_signatures: "அனைத்து செயலற்ற கையொப்ப கோப்புகளையும் நிறுவல் நீக்கவும்."
-max_login_attempts_exceeded: "உள்நுழைவு முயற்சிகளின் அதிகபட்ச எண்ணிக்கை மீறியது; அணுகல் மறுக்கப்பட்டது."
 msg_subject_2fa: "இரண்டு காரணி அங்கீகார"
 msg_template_2fa: |
  <center><p>வணக்கம், %s.<br /><br />
@@ -867,6 +867,7 @@ response:
  Invalid API key: "தவறான API விசை!"
  Invalid password: "உள்நுழைவு தோல்வி! தவறான கடவுச்சொல்!"
  Invalid timestamp: "தவறான நேர முத்திரை!"
+ Maximum number of login attempts exceeded: "உள்நுழைவு முயற்சிகளின் அதிகபட்ச எண்ணிக்கை மீறியது; அணுகல் மறுக்கப்பட்டது."
  New auxiliary rule, %s, created successfully: "புதிய துணை விதி, "%s", வெற்றிகரமாக உருவாக்கப்பட்டது."
  Not available at the upstream for legal reasons: "சட்ட காரணங்களுக்காக அப்ஸ்ட்ரீமில் கிடைக்கவில்லை."
  Not available at the upstream: "அப்ஸ்ட்ரீமில் கிடைக்கவில்லை."

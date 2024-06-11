@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2024.04.04).
+ * This file: The CIDRAM front-end (last modified: 2024.06.09).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -384,22 +384,16 @@ class FrontEnd extends Core
         /** Initialise statistics tracked. */
         $this->StatisticsTracked = array_flip(explode("\n", $this->Configuration['general']['statistics']));
 
-        /** Brute-force security check. */
-        if (
+        /** Brute-force protection. */
+        if ((
             ($this->CIDRAM['LoginAttempts'] = (int)$this->Cache->getEntry('LoginAttempts' . $this->ipAddr)) &&
             ($this->CIDRAM['LoginAttempts'] >= $this->Configuration['frontend']['max_login_attempts'])
-        ) {
-            header('Content-Type: text/plain');
-            die('[CIDRAM] ' . $this->L10N->getString('max_login_attempts_exceeded'));
-        }
-
-        /** Brute-force security check (2FA). */
-        if (
+        ) || (
             ($this->CIDRAM['Failed2FA'] = (int)$this->Cache->getEntry('Failed2FA' . $this->ipAddr)) &&
             ($this->CIDRAM['Failed2FA'] >= $this->Configuration['frontend']['max_login_attempts'])
-        ) {
+        )) {
             header('Content-Type: text/plain');
-            die('[CIDRAM] ' . $this->L10N->getString('max_login_attempts_exceeded'));
+            die('[CIDRAM] ' . $this->L10N->getString('response.Maximum number of login attempts exceeded'));
         }
 
         /** Attempt to log in the user. */

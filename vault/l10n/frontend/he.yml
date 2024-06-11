@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hebrew language data for the front-end (last modified: 2024.06.06).
+# This file: Hebrew language data for the front-end (last modified: 2024.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -146,6 +146,7 @@ config:
  bobuam_block_bots: "לחסום בוטים שזוהו כזדוניים או לא רצויים?"
  bobuam_block_eol_browsers: "לחסום דפדפנים שהגיעו לסוף החיים? (הגדר גרסאות למטה)."
  bobuam_chrome: "הגרסה הנמוכה ביותר המותרת של האסימון "Chrome/Chromium". מומלץ: {{BOBUAM Token.Chrome}}."
+ bobuam_edge: "הגרסה הנמוכה ביותר המותרת של האסימון "Edg/Edge". מומלץ: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "הגרסה הנמוכה ביותר המותרת של האסימון "Firefox". מומלץ: {{BOBUAM Token.Firefox}}."
  bobuam_firefox_esr: "גרסה מותרת של אסימון "Firefox" עבור גרסת ESR. מומלץ: {{BOBUAM Token.Firefox ESR}}."
  bobuam_reason_ambiguous: "סיבת החסימה המוצגת כאשר מזוהה מחרוזת סוכן משתמש מעורפלת."
@@ -776,7 +777,6 @@ macro:
   uninstall_l10n_fe: "הסר את כל הקצה הקדמי L10N הלא פעילים."
   uninstall_modules: "הסר את כל המודולים הלא פעילים."
   uninstall_signatures: "הסר את כל קבצי החתימה הלא פעילים."
-max_login_attempts_exceeded: "חרג מהמספר המרבי של ניסיונות התחברות; גישה נדחתה."
 msg_subject_2fa: "אימות דו-גורמי"
 msg_template_2fa: |
  <center><p>שלום, %s.<br /><br />
@@ -859,6 +859,7 @@ response:
  Invalid API key: "מפתח API לא חוקי!"
  Invalid password: "כישלון התחברות! סיסמה שגויה!"
  Invalid timestamp: "חותמת זמן לא חוקית!"
+ Maximum number of login attempts exceeded: "חרג מהמספר המרבי של ניסיונות התחברות; גישה נדחתה."
  New auxiliary rule, %s, created successfully: "כלל עזר חדש, "%s", נוצר בהצלחה."
  Not available at the upstream for legal reasons: "לא זמין במעלה הזרם מסיבות משפטיות."
  Not available at the upstream: "לא זמין במעלה הזרם."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Afrikaans language data for the front-end (last modified: 2024.06.06).
+# This file: Afrikaans language data for the front-end (last modified: 2024.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -146,6 +146,7 @@ config:
  bobuam_block_bots: "Blokkeer bots wat as kwaadwillig of ongewens erken word?"
  bobuam_block_eol_browsers: "Blokkeer blaaiers wat die einde van die lewe bereik het? (Stel weergawes hieronder)."
  bobuam_chrome: "Laagste toegelate weergawe van die "Chrome/Chromium"-token. Aanbeveel: {{BOBUAM Token.Chrome}}."
+ bobuam_edge: "Laagste toegelate weergawe van die "Edg/Edge"-token. Aanbeveel: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "Laagste toegelate weergawe van die "Firefox"-token. Aanbeveel: {{BOBUAM Token.Firefox}}."
  bobuam_firefox_esr: "Toegelate weergawe van die "Firefox"-token vir die ESR-weergawe. Aanbeveel: {{BOBUAM Token.Firefox ESR}}."
  bobuam_reason_ambiguous: "Blokrede wat gewys word wanneer 'n dubbelsinnige gebruikeragentstring bespeur word."
@@ -782,7 +783,6 @@ macro:
   uninstall_l10n_fe: "Deïnstalleer alle onaktiewe front-end L10N."
   uninstall_modules: "Deïnstalleer alle onaktiewe modules."
   uninstall_signatures: "Deïnstalleer alle onaktiewe handtekeninglêers."
-max_login_attempts_exceeded: "Maksimum aantal intekenpogings oorskry; Toegang geweier."
 msg_subject_2fa: "Tweefaktor-verifikasie"
 msg_template_2fa: |
  <center><p>Hallo, %s.<br /><br />
@@ -865,6 +865,7 @@ response:
  Invalid API key: "Ongeldige API-sleutel!"
  Invalid password: "Intekening misluk! Ongeldige wagwoord!"
  Invalid timestamp: "Ongeldige tydstempel!"
+ Maximum number of login attempts exceeded: "Maksimum aantal intekenpogings oorskry; Toegang geweier."
  New auxiliary rule, %s, created successfully: "Nuwe bykomende reël, "%s", suksesvol geskep."
  Not available at the upstream for legal reasons: "Nie beskikbaar by die stroomop om regsredes nie."
  Not available at the upstream: "Nie beskikbaar by die stroomop nie."

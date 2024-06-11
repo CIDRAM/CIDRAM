@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2024.06.06).
+# This file: Latvian language data for the front-end (last modified: 2024.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -146,6 +146,7 @@ config:
  bobuam_block_bots: "Bloķēt robotprogrammatūras, kas atzītas par ļaunprātīgām vai nevēlamām?"
  bobuam_block_eol_browsers: "Bloķēt pārlūkprogrammas, kuru darbības laiks ir beidzies? (Iestatiet tālāk versijas)."
  bobuam_chrome: "Zemākā atļautā "Chrome/Chromium" marķiera versija. Ieteicams: {{BOBUAM Token.Chrome}}."
+ bobuam_edge: "Zemākā atļautā "Edg/Edge" marķiera versija. Ieteicams: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "Zemākā atļautā "Firefox" marķiera versija. Ieteicams: {{BOBUAM Token.Firefox}}."
  bobuam_firefox_esr: "Atļautā "Firefox" marķiera versija ESR versijai. Ieteicams: {{BOBUAM Token.Firefox ESR}}."
  bobuam_reason_ambiguous: "Bloķēšanas iemesls, kas tiek parādīts, kad tiek konstatēta neskaidra lietotāja aģenta virkne."
@@ -781,7 +782,6 @@ macro:
   uninstall_l10n_fe: "Atinstalējiet visu neaktīvo front-end L10N."
   uninstall_modules: "Atinstalējiet visus neaktīvos moduļus."
   uninstall_signatures: "Atinstalējiet visus neaktīvos paraksta failus."
-max_login_attempts_exceeded: "Pārsniegts maksimālais ielogošanās mēģinājumu skaits; Piekļuve liegta."
 msg_subject_2fa: "Divu-Faktoru Autentifikācija"
 msg_template_2fa: |
  <center><p>Sveiks, %s.<br /><br />
@@ -864,6 +864,7 @@ response:
  Invalid API key: "Nederīga API atslēga!"
  Invalid password: "Ielogošanās neizdevās! Nepareiza parole!"
  Invalid timestamp: "Nederīgs laikspiedols!"
+ Maximum number of login attempts exceeded: "Pārsniegts maksimālais ielogošanās mēģinājumu skaits; Piekļuve liegta."
  New auxiliary rule, %s, created successfully: "Jauns palīgnoteikums "%s" ir izveidots."
  Not available at the upstream for legal reasons: "Nav pieejams augštecē juridisku iemeslu dēļ."
  Not available at the upstream: "Nav pieejams augštecē."

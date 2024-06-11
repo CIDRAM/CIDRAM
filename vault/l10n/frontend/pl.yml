@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2024.06.06).
+# This file: Polish language data for the front-end (last modified: 2024.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -146,6 +146,7 @@ config:
  bobuam_block_bots: "Zablokować boty rozpoznane jako złośliwe lub niechciane?"
  bobuam_block_eol_browsers: "Zablokować przeglądarki, których żywotność dobiegła końca? (Ustaw wersje poniżej)."
  bobuam_chrome: "Najniższa dozwolona wersja tokena „Chrome/Chromium”. Zalecana: {{BOBUAM Token.Chrome}}."
+ bobuam_edge: "Najniższa dozwolona wersja tokena „Edg/Edge”. Zalecana: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "Najniższa dozwolona wersja tokena „Firefox”. Zalecana: {{BOBUAM Token.Firefox}}."
  bobuam_firefox_esr: "Dozwolona wersja tokena „Firefox” dla wersji ESR. Zalecana: {{BOBUAM Token.Firefox ESR}}."
  bobuam_reason_ambiguous: "Przyczyna blokady wyświetlana po wykryciu niejednoznacznego ciągu agenta użytkownika."
@@ -788,7 +789,6 @@ macro:
   uninstall_l10n_fe: "Odinstaluj wszystkie nieaktywne front-end L10N."
   uninstall_modules: "Odinstaluj wszystkie nieaktywne moduły."
   uninstall_signatures: "Odinstaluj wszystkie nieaktywne pliki podpisów."
-max_login_attempts_exceeded: "Przekroczono maksymalną liczbę prób logowania; Dostęp zabroniony."
 msg_subject_2fa: "Uwierzytelnianie Dwuskładnikowe"
 msg_template_2fa: |
  <center><p>Cześć, %s.<br /><br />
@@ -871,6 +871,7 @@ response:
  Invalid API key: "Nieprawidłowy klucz API!"
  Invalid password: "Logowanie nieudane! Nieprawidłowe hasło!"
  Invalid timestamp: "Nieprawidłowy znacznik czasu!"
+ Maximum number of login attempts exceeded: "Przekroczono maksymalną liczbę prób logowania; Dostęp zabroniony."
  New auxiliary rule, %s, created successfully: "Sukces tworzenia nowej reguły pomocniczej „%s”."
  Not available at the upstream for legal reasons: "Niedostępne u źródła ze względów prawnych."
  Not available at the upstream: "Niedostępne u źródła."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bulgarian language data for the front-end (last modified: 2024.06.06).
+# This file: Bulgarian language data for the front-end (last modified: 2024.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -146,6 +146,7 @@ config:
  bobuam_block_bots: "Блокиране на ботове, разпознати като злонамерени или нежелани?"
  bobuam_block_eol_browsers: "Блокиране на браузъри, които са достигнали края на живота си? (Задайте версии по-долу)."
  bobuam_chrome: "Най-ниската разрешена версия на токена „Chrome/Chromium“. Препоръка: {{BOBUAM Token.Chrome}}."
+ bobuam_edge: "Най-ниската разрешена версия на токена „Edg/Edge“. Препоръка: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "Най-ниската разрешена версия на токена „Firefox“. Препоръка: {{BOBUAM Token.Firefox}}."
  bobuam_firefox_esr: "Разрешена версия на токена „Firefox“ за версията ESR. Препоръка: {{BOBUAM Token.Firefox ESR}}."
  bobuam_reason_ambiguous: "Причината за блокиране се показва, когато бъде открит двусмислен низ на потребителски агент."
@@ -789,7 +790,6 @@ macro:
   uninstall_l10n_fe: "Деинсталирайте всички неактивни фронтенд L10N."
   uninstall_modules: "Деинсталирайте всички неактивни модули."
   uninstall_signatures: "Деинсталирайте всички неактивни файлове за сигнатури."
-max_login_attempts_exceeded: "Превишен е максималният брой опити за влизане; Отказан достъп."
 msg_subject_2fa: "Двуфакторно удостоверяване"
 msg_template_2fa: |
  <center><p>Здравейте, %s.<br /><br />
@@ -872,6 +872,7 @@ response:
  Invalid API key: "Невалиден API ключ!"
  Invalid password: "Грешка при влизане! Невалидна парола!"
  Invalid timestamp: "Невалидно времево клеймо!"
+ Maximum number of login attempts exceeded: "Превишен е максималният брой опити за влизане; Отказан достъп."
  New auxiliary rule, %s, created successfully: "Ново спомагателно правило, „%s“, създадено успешно."
  Not available at the upstream for legal reasons: "Не е налично при източника по правни причини."
  Not available at the upstream: "Не е налично при източника."

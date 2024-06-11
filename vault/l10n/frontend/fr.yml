@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2024.06.06).
+# This file: French language data for the front-end (last modified: 2024.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -146,6 +146,7 @@ config:
  bobuam_block_bots: "Bloquer les bots reconnus comme malveillants ou indésirables\_?"
  bobuam_block_eol_browsers: "Bloquer les navigateurs en fin de vie\_? (Définir les versions ci-dessous)."
  bobuam_chrome: "Version la plus basse autorisé du jeton «\_Chrome/Chromium\_». Recommandé\_: {{BOBUAM Token.Chrome}}."
+ bobuam_edge: "Version la plus basse autorisé du jeton «\_Edg/Edge\_». Recommandé\_: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "Version la plus basse autorisé du jeton «\_Firefox\_». Recommandé\_: {{BOBUAM Token.Firefox}}."
  bobuam_firefox_esr: "Version autorisé du jeton «\_Firefox\_» pour la version ESR. Recommandé\_: {{BOBUAM Token.Firefox ESR}}."
  bobuam_reason_ambiguous: "La raison du blocage affiché lorsqu'une chaîne d'agent utilisateur ambiguë est détecté."
@@ -795,7 +796,6 @@ macro:
   uninstall_l10n_fe: "Désinstallez tous les L10N de frontales inactifs."
   uninstall_modules: "Désinstallez tous les modules inactifs."
   uninstall_signatures: "Désinstallez tous les fichiers de signature inactifs."
-max_login_attempts_exceeded: "Nombre maximal de tentatives de connexion excédée\_; Accès refusé."
 msg_subject_2fa: "Authentification à deux facteurs"
 msg_template_2fa: |
  <center><p>Bonjour, %s.<br /><br />
@@ -878,6 +878,7 @@ response:
  Invalid API key: "La clé API n'est pas valide\_!"
  Invalid password: "Erreur de connexion\_! Mot de passe incorrect\_!"
  Invalid timestamp: "L'horodatage n'est pas valide\_!"
+ Maximum number of login attempts exceeded: "Nombre maximal de tentatives de connexion excédée\_; Accès refusé."
  New auxiliary rule, %s, created successfully: "Nouvelle règle auxiliaire, «\_%s\_», créée avec succès."
  Not available at the upstream for legal reasons: "Non disponible en amont pour des raisons légales."
  Not available at the upstream: "Non disponible en amont."

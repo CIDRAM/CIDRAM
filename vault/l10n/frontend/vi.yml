@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2024.06.06).
+# This file: Vietnamese language data for the front-end (last modified: 2024.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -146,6 +146,7 @@ config:
  bobuam_block_bots: "Chặn các bot được nhận dạng là độc hại hoặc không mong muốn?"
  bobuam_block_eol_browsers: "Chặn các trình duyệt đã hết tuổi thọ? (Đặt các phiên bản bên dưới)."
  bobuam_chrome: "Phiên bản thấp nhất được phép của mã thông báo "Chrome/Chromium". Khuyến khích: {{BOBUAM Token.Chrome}}."
+ bobuam_edge: "Phiên bản thấp nhất được phép của mã thông báo "Edg/Edge". Khuyến khích: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "Phiên bản thấp nhất được phép của mã thông báo "Firefox". Khuyến khích: {{BOBUAM Token.Firefox}}."
  bobuam_firefox_esr: "Phiên bản được phép của mã thông báo "Firefox" cho phiên bản ESR. Khuyến khích: {{BOBUAM Token.Firefox ESR}}."
  bobuam_reason_ambiguous: "Lý do chặn được hiển thị khi phát hiện chuỗi đại lý người dùng không rõ ràng."
@@ -774,7 +775,6 @@ macro:
   uninstall_l10n_fe: "Gỡ bỏ cài đặt tất cả L10N front-end không kích hoạt."
   uninstall_modules: "Gỡ bỏ cài đặt tất cả các mô-đun không kích hoạt."
   uninstall_signatures: "Gỡ bỏ cài đặt tất cả các tập tin chữ ký không kích hoạt."
-max_login_attempts_exceeded: "Số lượng tối đa cố gắng đăng nhập đã bị vượt quá; Truy cập đã bị từ chối."
 msg_subject_2fa: "2FA (Xác thực hai yếu tố)"
 msg_template_2fa: |
  <center><p>Xin chào, %s.<br /><br />
@@ -857,6 +857,7 @@ response:
  Invalid API key: "Khóa API không hợp lệ!"
  Invalid password: "Thất bại đăng nhập! Mật khẩu không hợp lệ!"
  Invalid timestamp: "Dấu thời gian không hợp lệ!"
+ Maximum number of login attempts exceeded: "Số lượng tối đa cố gắng đăng nhập đã bị vượt quá; Truy cập đã bị từ chối."
  New auxiliary rule, %s, created successfully: "Quy tắc phụ trợ mới, "%s", đã được tạo thành công."
  Not available at the upstream for legal reasons: "Không có sẵn ở thượng nguồn vì lý do pháp lý."
  Not available at the upstream: "Không có sẵn ở thượng nguồn."

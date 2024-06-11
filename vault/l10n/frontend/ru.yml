@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2024.06.06).
+# This file: Russian language data for the front-end (last modified: 2024.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -146,6 +146,7 @@ config:
  bobuam_block_bots: "Блокировать ботов, признанных вредоносными или нежелательными?"
  bobuam_block_eol_browsers: "Блокировать браузеры, срок службы которых истек? (Установить версии ниже)."
  bobuam_chrome: "Самая низкая разрешенная версия токена «Chrome/Chromium». Рекомендуемые: {{BOBUAM Token.Chrome}}."
+ bobuam_edge: "Самая низкая разрешенная версия токена «Edg/Edge». Рекомендуемые: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "Самая низкая разрешенная версия токена «Firefox». Рекомендуемые: {{BOBUAM Token.Firefox}}."
  bobuam_firefox_esr: "Разрешенная версия токена «Firefox» для версии ESR. Рекомендуемые: {{BOBUAM Token.Firefox ESR}}."
  bobuam_reason_ambiguous: "Причина блокировки, отображаемая при обнаружении неоднозначной строки пользовательского агента."
@@ -794,7 +795,6 @@ macro:
   uninstall_l10n_fe: "Удалите все неактивные фронтенд L10N."
   uninstall_modules: "Удалите все неактивные модули."
   uninstall_signatures: "Удалите все неактивные файлы сигнатуры."
-max_login_attempts_exceeded: "Максимальное количество попыток входа в систему был превышен; Доступ закрыт."
 msg_subject_2fa: "Двухфакторная аутентификация"
 msg_template_2fa: |
  <center><p>Привет, %s.<br /><br />
@@ -877,6 +877,7 @@ response:
  Invalid API key: "Неверный ключ API!"
  Invalid password: "Войти провал! Неверный пароль!"
  Invalid timestamp: "Неверная временная метка!"
+ Maximum number of login attempts exceeded: "Максимальное количество попыток входа в систему был превышен; Доступ закрыт."
  New auxiliary rule, %s, created successfully: "Новое вспомогательное правило, «%s», создано успешно."
  Not available at the upstream for legal reasons: "Недоступно в источнике по юридическим причинам."
  Not available at the upstream: "Недоступно в источнике."

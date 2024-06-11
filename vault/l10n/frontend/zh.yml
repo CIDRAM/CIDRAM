@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2024.06.06).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2024.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -146,6 +146,7 @@ config:
  bobuam_block_bots: "阻止被认为是恶意或不需要的机器人？"
  bobuam_block_eol_browsers: "阻止已经过时的浏览器？（下面设置版本）。"
  bobuam_chrome: "“Chrome/Chromium”令牌的最低允许版本。 推荐的：“{{BOBUAM Token.Chrome}}”。"
+ bobuam_edge: "“Edg/Edge”令牌的最低允许版本。 推荐的：“{{BOBUAM Token.Edge}}”。"
  bobuam_firefox: "“Firefox”令牌的最低允许版本。 推荐的：“{{BOBUAM Token.Firefox}}”。"
  bobuam_firefox_esr: "ESR版本的“Firefox”令牌的允许版本。 推荐的：“{{BOBUAM Token.Firefox ESR}}”。"
  bobuam_reason_ambiguous: "检测到模糊的用户代理字符串时显示的阻止原因。"
@@ -767,7 +768,6 @@ macro:
   uninstall_l10n_fe: "卸载所有非活动前端L10N。"
   uninstall_modules: "卸载所有非活动模块。"
   uninstall_signatures: "卸载所有非活动签名文件。"
-max_login_attempts_exceeded: "最大登录尝试次数已经超过；拒绝访问。"
 msg_subject_2fa: "2FA（双因素身份验证）"
 msg_template_2fa: |
  <center><p>你好，%s。<br /><br />
@@ -850,6 +850,7 @@ response:
  Invalid API key: "API密钥无效！"
  Invalid password: "登录失败！​密码无效！"
  Invalid timestamp: "时间戳无效！"
+ Maximum number of login attempts exceeded: "最大登录尝试次数已经超过；拒绝访问。"
  New auxiliary rule, %s, created successfully: "新辅助规则“%s”创建成功。"
  Not available at the upstream for legal reasons: "由于法律原因在上游不可用。"
  Not available at the upstream: "在上游不可用。"

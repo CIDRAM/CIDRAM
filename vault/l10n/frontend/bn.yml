@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data for the front-end (last modified: 2024.06.06).
+# This file: Bangla language data for the front-end (last modified: 2024.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -146,6 +146,7 @@ config:
  bobuam_block_bots: "ব্লক বট দূষিত বা অবাঞ্ছিত হিসাবে স্বীকৃত?"
  bobuam_block_eol_browsers: "জীবনের শেষ পর্যন্ত পৌঁছেছেন যে ব্রাউজার ব্লক? (নীচে সংস্করণ সেট করুন)।"
  bobuam_chrome: ""Chrome/Chromium" টোকেনের সর্বনিম্ন অনুমোদিত সংস্করণ। প্রস্তাবিত: "{{BOBUAM Token.Chrome}}"।"
+ bobuam_edge: ""Edg/Edge" টোকেনের সর্বনিম্ন অনুমোদিত সংস্করণ। প্রস্তাবিত: "{{BOBUAM Token.Edge}}"।"
  bobuam_firefox: ""Firefox" টোকেনের সর্বনিম্ন অনুমোদিত সংস্করণ। প্রস্তাবিত: "{{BOBUAM Token.Firefox}}"।"
  bobuam_firefox_esr: "ESR সংস্করণের জন্য "Firefox" টোকেনের অনুমোদিত সংস্করণ। প্রস্তাবিত: "{{BOBUAM Token.Firefox ESR}}"।"
  bobuam_reason_ambiguous: "একটি অস্পষ্ট ব্যবহারকারী এজেন্ট স্ট্রিং সনাক্ত করা হলে ব্লকের কারণ দেখানো হয়েছে।"
@@ -771,7 +772,6 @@ macro:
   uninstall_l10n_fe: "সমস্ত নিষ্ক্রিয় ফ্রন্ট-এন্ড L10N আনইনস্টল করুন।"
   uninstall_modules: "সমস্ত নিষ্ক্রিয় মডিউল আনইনস্টল করুন।"
   uninstall_signatures: "সমস্ত নিষ্ক্রিয় স্বাক্ষর ফাইল আনইনস্টল করুন।"
-max_login_attempts_exceeded: "লগইন প্রচেষ্টা সর্বাধিক সংখ্যা অতিক্রম করেছে; অ্যাক্সেস অস্বীকার।"
 msg_subject_2fa: "দুই-ফ্যাক্টর প্রমাণীকরণ"
 msg_template_2fa: |
  <center><p>হ্যালো, %s।<br /><br />
@@ -854,6 +854,7 @@ response:
  Invalid API key: "অবৈধ API কী৷"
  Invalid password: "লগইন ব্যর্থতা! অবৈধ পাসওয়ার্ড!"
  Invalid timestamp: "অবৈধ টাইমস্ট্যাম্প!"
+ Maximum number of login attempts exceeded: "লগইন প্রচেষ্টা সর্বাধিক সংখ্যা অতিক্রম করেছে; অ্যাক্সেস অস্বীকার।"
  New auxiliary rule, %s, created successfully: "নতুন অক্সিলিয়ারি নিয়ম, "%s", সফলভাবে তৈরি।"
  Not available at the upstream for legal reasons: "আইনি কারণে আপস্ট্রিম এ উপলব্ধ নয়।"
  Not available at the upstream: "আপস্ট্রিম এ উপলব্ধ নয়।"

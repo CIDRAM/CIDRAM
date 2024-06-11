@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2024.06.06).
+# This file: Arabic language data for the front-end (last modified: 2024.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -146,6 +146,7 @@ config:
  bobuam_block_bots: "حظر الروبوتات المعترف بها على أنها ضارة أو غير مرغوب فيها؟"
  bobuam_block_eol_browsers: "حظر المتصفحات التي وصلت إلى نهاية العمر الافتراضي؟ (تعيين الإصدارات أدناه)."
  bobuam_chrome: "أقل إصدار مسموح به من الرمز المميز "Chrome/Chromium". مُستَحسَن: {{BOBUAM Token.Chrome}}."
+ bobuam_edge: "أقل إصدار مسموح به من الرمز المميز "Edg/Edge". مُستَحسَن: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "أقل إصدار مسموح به من الرمز المميز "Firefox". مُستَحسَن: {{BOBUAM Token.Firefox}}."
  bobuam_firefox_esr: "الإصدار المسموح بها من رمز "Firefox" لإصدار ESR. مُستَحسَن: {{BOBUAM Token.Firefox ESR}}."
  bobuam_reason_ambiguous: "السبب المقدم عند اكتشاف وكيل مستخدم غامض وحظره."
@@ -774,7 +775,6 @@ macro:
   uninstall_l10n_fe: "قم بإلغاء تثبيت جميع L10N الأمامية غير النشطة."
   uninstall_modules: "قم بإلغاء تثبيت جميع الوحدات غير النشطة."
   uninstall_signatures: "قم بإلغاء تثبيت جميع ملفات التوقيع غير النشطة."
-max_login_attempts_exceeded: "تجاوز الحد الأقصى لعدد محاولات تسجيل الدخول؛ تم رفض الوصول."
 msg_subject_2fa: "2FA"
 msg_template_2fa: |
  <center><p>مرحبا، %s.<br /><br />
@@ -857,6 +857,7 @@ response:
  Invalid API key: "مفتاح API غير صالح!"
  Invalid password: "فشل تسجيل الدخول! كلمة السر غير صالحة!"
  Invalid timestamp: "الطابع الزمني غير صالح!"
+ Maximum number of login attempts exceeded: "تجاوز الحد الأقصى لعدد محاولات تسجيل الدخول؛ تم رفض الوصول."
  New auxiliary rule, %s, created successfully: "تم إنشاء قاعدة مساعدة جديدة "%s" بنجاح."
  Not available at the upstream for legal reasons: "غير متوفر في المنبع لأسباب قانونية."
  Not available at the upstream: "غير متوفر في المنبع."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2024.06.06).
+# This file: Dutch language data for the front-end (last modified: 2024.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -146,6 +146,7 @@ config:
  bobuam_block_bots: "Bots blokkeren die worden herkend als kwaadaardig of ongewenst?"
  bobuam_block_eol_browsers: "De browsers blokkeren die het einde van hun levensduur hebben bereikt? (Stel hieronder versies in)."
  bobuam_chrome: "Laagst toegestane versie van het "Chrome/Chromium"-token. Aanbevolen: {{BOBUAM Token.Chrome}}."
+ bobuam_edge: "Laagst toegestane versie van het "Edg/Edge"-token. Aanbevolen: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "Laagst toegestane versie van het "Firefox"-token. Aanbevolen: {{BOBUAM Token.Firefox}}."
  bobuam_firefox_esr: "Toegestane versie van het "Firefox"-token voor de ESR-versie. Aanbevolen: {{BOBUAM Token.Firefox ESR}}."
  bobuam_reason_ambiguous: "De blokkeringsreden die wordt weergegeven wanneer een onduidelijke tekenreeks van de gebruikersagent wordt gedetecteerd."
@@ -779,7 +780,6 @@ macro:
   uninstall_l10n_fe: "Verwijder alle inactieve front-end L10N."
   uninstall_modules: "Verwijder alle inactieve modules."
   uninstall_signatures: "Verwijder alle inactieve signatuurbestanden."
-max_login_attempts_exceeded: "Maximum aantal inlogpogingen overschreden; Toegang geweigerd."
 msg_subject_2fa: "2FA (Twee-Factor Authenticatie)"
 msg_template_2fa: |
  <center><p>Hallo, %s.<br /><br />
@@ -862,6 +862,7 @@ response:
  Invalid API key: "Ongeldige API-sleutel!"
  Invalid password: "Inloggen mislukt! Ongeldig wachtwoord!"
  Invalid timestamp: "Ongeldige tijdstempel!"
+ Maximum number of login attempts exceeded: "Maximum aantal inlogpogingen overschreden; Toegang geweigerd."
  New auxiliary rule, %s, created successfully: "Nieuwe aanvullende regel, "%s", succesvol aangemaakt."
  Not available at the upstream for legal reasons: "Om juridische redenen aan de upstream niet gevonden."
  Not available at the upstream: "Aan de upstream niet gevonden."

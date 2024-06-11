@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2024.06.06).
+# This file: English language data for the front-end (last modified: 2024.06.11).
 ##/
 
 Abuse category:
@@ -142,6 +142,7 @@ config:
   en-US: "Block bots recognized as malicious or unwanted?"
  bobuam_block_eol_browsers: "Block browsers that've reached end of life? (Set versions below)."
  bobuam_chrome: "Lowest allowed version of the "Chrome/Chromium" token. Recommended: {{BOBUAM Token.Chrome}}."
+ bobuam_edge: "Lowest allowed version of the "Edg/Edge" token. Recommended: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "Lowest allowed version of the "Firefox" token. Recommended: {{BOBUAM Token.Firefox}}."
  bobuam_firefox_esr: "Allowed version of the "Firefox" token for the ESR version. Recommended: {{BOBUAM Token.Firefox ESR}}."
  bobuam_reason_ambiguous: "Block reason shown when an ambiguous user agent string is detected."
@@ -816,7 +817,6 @@ macro:
   uninstall_l10n_fe: "Uninstall all inactive front-end L10N."
   uninstall_modules: "Uninstall all inactive modules."
   uninstall_signatures: "Uninstall all inactive signature files."
-max_login_attempts_exceeded: "Maximum number of login attempts exceeded; Access denied."
 msg_subject_2fa: "Two-Factor Authentication"
 msg_template_2fa: |
  <center><p>Hello, %s.<br /><br />
@@ -899,6 +899,7 @@ response:
  Invalid API key: "Invalid API key!"
  Invalid password: "Login failure! Invalid password!"
  Invalid timestamp: "Invalid timestamp!"
+ Maximum number of login attempts exceeded: "Maximum number of login attempts exceeded; Access denied."
  New auxiliary rule, %s, created successfully: "New auxiliary rule, "%s", created successfully."
  Not available at the upstream for legal reasons: "Not available at the upstream for legal reasons."
  Not available at the upstream: "Not available at the upstream."

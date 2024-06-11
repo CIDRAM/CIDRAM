@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2024.06.06).
+# This file: Japanese language data for the front-end (last modified: 2024.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -146,6 +146,7 @@ config:
  bobuam_block_bots: "悪意のあるまたは望ましくないと認識されたボットをブロックしますか？"
  bobuam_block_eol_browsers: "サポートが終了したブラウザーをブロックしますか？​（以下のバージョンを設定して）。"
  bobuam_chrome: "「Chrome/Chromium」トークンの許可されている最低バージョン。 おすすめされた： {{BOBUAM Token.Chrome}}。"
+ bobuam_edge: "「Edg/Edge」トークンの許可されている最低バージョン。 おすすめされた： {{BOBUAM Token.Edge}}。"
  bobuam_firefox: "「Firefox」トークンの許可されている最低バージョン。 おすすめされた： {{BOBUAM Token.Firefox}}。"
  bobuam_firefox_esr: "ＥＳＲため「Firefox」トークンの許可されたバージョン。 おすすめされた： {{BOBUAM Token.Firefox ESR}}。"
  bobuam_reason_ambiguous: "あいまいなユーザー・エージェント文字列が検出されたときに表示されるブロックの理由。"
@@ -773,7 +774,6 @@ macro:
   uninstall_l10n_fe: "すべての非アクティブなフロントエンドＬ１０Ｎをアンインストールして。"
   uninstall_modules: "すべての非アクティブなモジュールをアンインストールして。"
   uninstall_signatures: "すべての非アクティブなシグネチャ・ファイルをアンインストールして。"
-max_login_attempts_exceeded: "ログイン試行の最大回数を超えました；アクセス拒否。"
 msg_subject_2fa: "２ＦＡ（二要素認証）"
 msg_template_2fa: |
  <center><p>こんにちは、%s。<br /><br />
@@ -856,6 +856,7 @@ response:
  Invalid API key: "ＡＰＩキーが無効です!"
  Invalid password: "ログイン失敗！​無効なパスワード！"
  Invalid timestamp: "タイムスタンプが無効です！"
+ Maximum number of login attempts exceeded: "ログイン試行の最大回数を超えました；アクセス拒否。"
  New auxiliary rule, %s, created successfully: "新しい補助ルール、「%s」が、作成されました。"
  Not available at the upstream for legal reasons: "法的な理由により、アップストリームでは利用できません。"
  Not available at the upstream: "アップストリームでは利用できません。"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bosnian language data for the front-end (last modified: 2024.06.06).
+# This file: Bosnian language data for the front-end (last modified: 2024.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -139,6 +139,9 @@ config:
  abuseipdb_report_back: "Dozvoliti CIDRAM-u da prijavi otkriveno loše ponašanje nazad AbuseIPDB koristeći vaš API ključ?"
  bgpview: "Konfiguracija za BGPView modul (pruža mogućnost pretraživanja ASN-a i koda zemlje za CIDRAM)."
  bgpview_blocked_asns: &ConfigBlockedASNs "Lista ASN-a koja će biti blokirana kada se podudara sa modulom."
+ bgpview_blocked_ccs: &ConfigBlockedCCs "Lista zemalja (identificirani prema njihovim {{Links.ISO.3166}} dvocifrenim kodovima zemalja) koja će biti blokirana kada se podudara sa modulom."
+ bgpview_whitelisted_asns: &ConfigWhitelistedASNs "Lista ASN-ova koji se stavljaju na bijelu listu kada se podudara sa modulom."
+ bgpview_whitelisted_ccs: &ConfigWhitelistedCCs "Lista zemalja (identificirani prema njihovim {{Links.ISO.3166}} dvocifrenim kodovima zemalja) koji se stavljaju na bijelu listu kada se podudara sa modulom."
  phpmailer: "Konfiguracija za PHPMailer (koristi se za dvofaktorsku autentifikaciju i za obavještenja putem e-pošte)."
  phpmailer_add_reply_to_address: "Adresa za odgovor koju treba navesti prilikom slanja e-pošte putem SMTP-a."
  phpmailer_add_reply_to_name: "Ime odgovora koje treba navesti prilikom slanja e-pošte putem SMTP-a."

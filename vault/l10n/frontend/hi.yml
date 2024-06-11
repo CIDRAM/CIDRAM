@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data for the front-end (last modified: 2024.06.06).
+# This file: Hindi language data for the front-end (last modified: 2024.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -146,6 +146,7 @@ config:
  bobuam_block_bots: "दुर्भावनापूर्ण या अवांछित के रूप में पहचाने गए बॉट्स को ब्लॉक करें?"
  bobuam_block_eol_browsers: "उन ब्राउज़रों को अवरोधित करें जो समाप्ति तिथि पर पहुंच गए हैं? (नीचे संस्करण सेट करें)।"
  bobuam_chrome: ""Chrome/Chromium" टोकन का निम्नतम अनुमत संस्करण। अनुशंसित: "{{BOBUAM Token.Chrome}}"।"
+ bobuam_edge: ""Edg/Edge" टोकन का निम्नतम अनुमत संस्करण। अनुशंसित: "{{BOBUAM Token.Edge}}"।"
  bobuam_firefox: ""Firefox" टोकन का निम्नतम अनुमत संस्करण। अनुशंसित: "{{BOBUAM Token.Firefox}}"।"
  bobuam_firefox_esr: "ESR संस्करण के लिए "Firefox" टोकन का अनुमत संस्करण। अनुशंसित: "{{BOBUAM Token.Firefox ESR}}"।"
  bobuam_reason_ambiguous: "अस्पष्ट उपयोगकर्ता एजेंट स्ट्रिंग का पता चलने पर दिखाया गया ब्लॉक कारण।"
@@ -781,7 +782,6 @@ macro:
   uninstall_l10n_fe: "सभी निष्क्रिय फ्रंट-एंड L10N को अनइंस्टॉल करें।"
   uninstall_modules: "सभी निष्क्रिय मॉड्यूल को अनइंस्टॉल करें।"
   uninstall_signatures: "सभी निष्क्रिय हस्ताक्षर फ़ाइलें को अनइंस्टॉल करें।"
-max_login_attempts_exceeded: "लॉगिन प्रयासों की अधिकतम संख्या पार हो गई; पहुंच अस्वीकृत।"
 msg_subject_2fa: "दो तरीकों से प्रमाणीकरण"
 msg_template_2fa: |
  <center><p>नमस्ते, %s।<br /><br />
@@ -864,6 +864,7 @@ response:
  Invalid API key: "अमान्य API कुंजी!"
  Invalid password: "लॉगिन विफलता! अवैध पासवर्ड!"
  Invalid timestamp: "अमान्य टाइमस्टैम्प!"
+ Maximum number of login attempts exceeded: "लॉगिन प्रयासों की अधिकतम संख्या पार हो गई; पहुंच अस्वीकृत।"
  New auxiliary rule, %s, created successfully: "नया सहायक नियम, "%s", सफलतापूर्वक बनाया गया।"
  Not available at the upstream for legal reasons: "कानूनी कारणों से अपस्ट्रीम पर उपलब्ध नहीं है।"
  Not available at the upstream: "अपस्ट्रीम पर उपलब्ध नहीं है।"

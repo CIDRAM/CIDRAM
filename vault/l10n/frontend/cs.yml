@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Czech language data for the front-end (last modified: 2024.06.06).
+# This file: Czech language data for the front-end (last modified: 2024.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -146,6 +146,7 @@ config:
  bobuam_block_bots: "Blokovat roboty rozpoznané jako škodlivé nebo nežádoucí?"
  bobuam_block_eol_browsers: "Blokovat prohlížeče, které dosáhly konce životnosti? (Níže nastavte verze)."
  bobuam_chrome: "Nejnižší povolená verze tokenu „Chrome/Chromium“. Doporučeno: {{BOBUAM Token.Chrome}}."
+ bobuam_edge: "Nejnižší povolená verze tokenu „Edg/Edge“. Doporučeno: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "Nejnižší povolená verze tokenu „Firefox“. Doporučeno: {{BOBUAM Token.Firefox}}."
  bobuam_firefox_esr: "Povolená verze tokenu „Firefox“ pro verzi ESR. Doporučeno: {{BOBUAM Token.Firefox ESR}}."
  bobuam_reason_ambiguous: "Důvod blokování se zobrazí, když je detekován nejednoznačný řetězec uživatelského agenta."
@@ -786,7 +787,6 @@ macro:
   uninstall_l10n_fe: "Odinstalujte všechna neaktivní data front-endu L10N."
   uninstall_modules: "Odinstalujte všechny neaktivní moduly."
   uninstall_signatures: "Odinstalujte všechny neaktivní soubory podpisů."
-max_login_attempts_exceeded: "Byl překročen maximální počet pokusů o přihlášení; Přístup odepřen."
 msg_subject_2fa: "Dvoufaktorová autentizace"
 msg_template_2fa: |
  <center><p>Ahoj, %s.<br /><br />
@@ -869,6 +869,7 @@ response:
  Invalid API key: "Neplatný klíč API!"
  Invalid password: "Přihlášení se nezdařilo! Neplatné heslo!"
  Invalid timestamp: "Neplatné časové razítko!"
+ Maximum number of login attempts exceeded: "Byl překročen maximální počet pokusů o přihlášení; Přístup odepřen."
  New auxiliary rule, %s, created successfully: "Nové pomocné pravidlo „%s“ bylo úspěšně vytvořeno."
  Not available at the upstream for legal reasons: "Není k dispozici na upstreamu z právních důvodů."
  Not available at the upstream: "Není k dispozici na upstreamu."

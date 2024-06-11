@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2024.06.06).
+# This file: Indonesian language data for the front-end (last modified: 2024.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -146,6 +146,7 @@ config:
  bobuam_block_bots: "Blokir bot yang dianggap berbahaya atau tidak diinginkan?"
  bobuam_block_eol_browsers: "Blokir browser yang telah mencapai akhir masa pakainya? (Tetapkan versi dibawah)."
  bobuam_chrome: "Versi token "Chrome/Chromium" terendah yang diizinkan. Direkomendasikan: {{BOBUAM Token.Chrome}}."
+ bobuam_edge: "Versi token "Edg/Edge" terendah yang diizinkan. Direkomendasikan: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "Versi token "Firefox" terendah yang diizinkan. Direkomendasikan: {{BOBUAM Token.Firefox}}."
  bobuam_firefox_esr: "Versi token "Firefox" yang diizinkan untuk versi ESR. Direkomendasikan: {{BOBUAM Token.Firefox ESR}}."
  bobuam_reason_ambiguous: "Alasan pemblokiran ditampilkan saat string agen pengguna yang ambigu terdeteksi."
@@ -772,7 +773,6 @@ macro:
   uninstall_l10n_fe: "Uninstal semua L10N front-end yang tidak aktif."
   uninstall_modules: "Uninstal semua modul yang tidak aktif."
   uninstall_signatures: "Uninstal semua file tanda tangan yang tidak aktif."
-max_login_attempts_exceeded: "Jumlah maksimum upaya untuk memasukkan tercapai; Akses ditolak."
 msg_subject_2fa: "Otentikasi Dua-Faktor"
 msg_template_2fa: |
  <center><p>Salam, %s.<br /><br />
@@ -855,6 +855,7 @@ response:
  Invalid API key: "Kunci API tidak valid!"
  Invalid password: "Kegagalan masuk! Kata sandi salah!"
  Invalid timestamp: "Stempel waktu tidak valid!"
+ Maximum number of login attempts exceeded: "Jumlah maksimum upaya untuk memasukkan tercapai; Akses ditolak."
  New auxiliary rule, %s, created successfully: "Aturan tambahan baru, "%s", berhasil dibuat."
  Not available at the upstream for legal reasons: "Tidak tersedia di hulu karena alasan hukum."
  Not available at the upstream: "Tidak tersedia di hulu."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2024.06.06).
+# This file: Korean language data for the front-end (last modified: 2024.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -146,6 +146,7 @@ config:
  bobuam_block_bots: "악성 또는 원치 않는 것으로 인식되는 봇을 차단하시겠습니까?"
  bobuam_block_eol_browsers: "수명이 다한 브라우저를 차단하시겠습니까? (아래 버전 설정)."
  bobuam_chrome: ""Chrome/Chromium" 토큰의 가장 낮은 허용 버전입니다. 추천\_: {{BOBUAM Token.Chrome}}."
+ bobuam_edge: ""Edg/Edge" 토큰의 가장 낮은 허용 버전입니다. 추천\_: {{BOBUAM Token.Edge}}."
  bobuam_firefox: ""Firefox" 토큰의 가장 낮은 허용 버전입니다. 추천\_: {{BOBUAM Token.Firefox}}."
  bobuam_firefox_esr: "ESR 버전에 허용되는 "Firefox" 토큰 버전입니다. 추천\_: {{BOBUAM Token.Firefox ESR}}."
  bobuam_reason_ambiguous: "모호한 사용자 에이전트 문자열이 감지될 때 표시되는 차단 이유입니다."
@@ -770,7 +771,6 @@ macro:
   uninstall_l10n_fe: "모든 비활성 프런트 엔드 L10N을 제거합니다."
   uninstall_modules: "모든 비활성 모듈을 제거합니다."
   uninstall_signatures: "모든 비활성 서명 파일을 제거합니다."
-max_login_attempts_exceeded: "로그인 시도 횟수를 초과했습니다; 액세스 거부."
 msg_subject_2fa: "2FA (이중 인증)"
 msg_template_2fa: |
  <center><p>안녕하세요, %s.<br /><br />
@@ -853,6 +853,7 @@ response:
  Invalid API key: "API 키가 유효하지 않습니다!"
  Invalid password: "로그인 실패! 잘못된 암호!"
  Invalid timestamp: "타임스탬프가 잘못되었습니다!"
+ Maximum number of login attempts exceeded: "로그인 시도 횟수를 초과했습니다; 액세스 거부."
  New auxiliary rule, %s, created successfully: "새 보조 규칙 "%s"가 성공적으로 작성되었습니다."
  Not available at the upstream for legal reasons: "법적인 이유로 업스트림에서는 찾을 수 없습니다."
  Not available at the upstream: "업스트림에서는 찾을 수 없습니다."

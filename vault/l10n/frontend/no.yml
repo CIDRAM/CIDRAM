@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2024.06.06).
+# This file: Norwegian language data for the front-end (last modified: 2024.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -146,6 +146,7 @@ config:
  bobuam_block_bots: "Blokkere roboter gjenkjent som ondsinnet eller uønsket?"
  bobuam_block_eol_browsers: "Blokkere nettlesere som har nådd slutten av livet? (Angi versjonene nedenfor)."
  bobuam_chrome: "Laveste tillatte versjon av «Chrome/Chromium»-tokenet. Anbefalt: {{BOBUAM Token.Chrome}}."
+ bobuam_edge: "Laveste tillatte versjon av «Edg/Edge»-tokenet. Anbefalt: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "Laveste tillatte versjon av «Firefox»-tokenet. Anbefalt: {{BOBUAM Token.Firefox}}."
  bobuam_firefox_esr: "Tillatt versjon av «Firefox»-tokenet for ESR-versjonen. Anbefalt: {{BOBUAM Token.Firefox ESR}}."
  bobuam_reason_ambiguous: "Årsaken til blokkering vises når en tvetydig brukeragentstreng oppdages."
@@ -781,7 +782,6 @@ macro:
   uninstall_l10n_fe: "Avinstaller all inaktiv front-end L10N."
   uninstall_modules: "Avinstaller alle inaktive moduler."
   uninstall_signatures: "Avinstaller alle inaktive signaturfiler."
-max_login_attempts_exceeded: "Maks antall påloggingsforsøk er overskredet; Tilgang nektet."
 msg_subject_2fa: "2FA (2-Faktorautentisering)"
 msg_template_2fa: |
  <center><p>Hallo, %s.<br /><br />
@@ -864,6 +864,7 @@ response:
  Invalid API key: "Ugyldig API-nøkkel!"
  Invalid password: "Innlogging mislyktes! Ugyldig passord!"
  Invalid timestamp: "Ugyldig tidsstempel!"
+ Maximum number of login attempts exceeded: "Maks antall påloggingsforsøk er overskredet; Tilgang nektet."
  New auxiliary rule, %s, created successfully: "Ny tilleggsregel, «%s», opprettet vellykket."
  Not available at the upstream for legal reasons: "Ikke tilgjengelig ved oppstrøms av juridiske årsaker."
  Not available at the upstream: "Ikke tilgjengelig ved oppstrøms."

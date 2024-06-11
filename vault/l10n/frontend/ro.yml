@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Romanian language data for the front-end (last modified: 2024.06.06).
+# This file: Romanian language data for the front-end (last modified: 2024.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -146,6 +146,7 @@ config:
  bobuam_block_bots: "Blocați roboții recunoscuți ca fiind rău intenționați sau nedoriți?"
  bobuam_block_eol_browsers: "Blocați browserele care au ajuns la sfârșitul vieții? (Setați versiunile mai jos)."
  bobuam_chrome: "Cea mai scăzută versiune permisă a simbolului „Chrome/Chromium”. Recomandat: {{BOBUAM Token.Chrome}}."
+ bobuam_edge: "Cea mai scăzută versiune permisă a simbolului „Edg/Edge”. Recomandat: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "Cea mai scăzută versiune permisă a simbolului „Firefox”. Recomandat: {{BOBUAM Token.Firefox}}."
  bobuam_firefox_esr: "Versiunea permisă a simbolului „Firefox” pentru versiunea ESR. Recomandat: {{BOBUAM Token.Firefox ESR}}."
  bobuam_reason_ambiguous: "Motivul blocării afișat atunci când este detectat un șir ambiguu de agent de utilizator."
@@ -792,7 +793,6 @@ macro:
   uninstall_l10n_fe: "Dezinstalați toate L10N inactive pentru front-end."
   uninstall_modules: "Dezinstalați toate modulele inactive."
   uninstall_signatures: "Dezinstalați toate fișierele de semnătură inactive."
-max_login_attempts_exceeded: "Numărul maxim de încercări de conectare a fost depășit; Acces refuzat."
 msg_subject_2fa: "Autentificare cu doi factori"
 msg_template_2fa: |
  <center><p>Buna ziua, %s.<br /><br />
@@ -875,6 +875,7 @@ response:
  Invalid API key: "Cheie API invalidă!"
  Invalid password: "Conectare a eșuat! Parolă invalidă!"
  Invalid timestamp: "Marca temporală invalidă!"
+ Maximum number of login attempts exceeded: "Numărul maxim de încercări de conectare a fost depășit; Acces refuzat."
  New auxiliary rule, %s, created successfully: "Regulă auxiliară nouă, „%s”, creată cu succes."
  Not available at the upstream for legal reasons: "Nu este disponibil în amonte din motive legale."
  Not available at the upstream: "Nu este disponibil în amonte."

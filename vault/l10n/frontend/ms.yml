@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malay language data for the front-end (last modified: 2024.06.06).
+# This file: Malay language data for the front-end (last modified: 2024.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -146,6 +146,7 @@ config:
  bobuam_block_bots: "Sekat bot yang diiktiraf sebagai berniat jahat atau tidak diingini?"
  bobuam_block_eol_browsers: "Sekat penyemak imbas yang telah mencapai akhir hayat? (Tetapkan versi di bawah)."
  bobuam_chrome: "Versi token "Chrome/Chromium" paling rendah dibenarkan. Disyorkan: {{BOBUAM Token.Chrome}}."
+ bobuam_edge: "Versi token "Edg/Edge" paling rendah dibenarkan. Disyorkan: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "Versi token "Firefox" paling rendah dibenarkan. Disyorkan: {{BOBUAM Token.Firefox}}."
  bobuam_firefox_esr: "Versi token "Firefox" yang dibenarkan untuk versi ESR. Disyorkan: {{BOBUAM Token.Firefox ESR}}."
  bobuam_reason_ambiguous: "Sebab sekat ditunjukkan apabila rentetan ejen pengguna yang tidak jelas dikesan."
@@ -775,7 +776,6 @@ macro:
   uninstall_l10n_fe: "Nyahpasang semua L10N bahagian hadapan yang tidak aktif."
   uninstall_modules: "Nyahpasang semua modul yang tidak aktif."
   uninstall_signatures: "Nyahpasang semua fail tandatangan yang tidak aktif."
-max_login_attempts_exceeded: "Bilangan maksimum percubaan untuk memasuki dicapai; Akses dinafikan."
 msg_subject_2fa: "Pengesahan Dua-Faktor"
 msg_template_2fa: |
  <center><p>Salam, %s.<br /><br />
@@ -858,6 +858,7 @@ response:
  Invalid API key: "Kunci API tidak sah!"
  Invalid password: "Kegagalan masuk! Kata laluan tidak sah!"
  Invalid timestamp: "Cap masa tidak sah!"
+ Maximum number of login attempts exceeded: "Bilangan maksimum percubaan untuk memasuki dicapai; Akses dinafikan."
  New auxiliary rule, %s, created successfully: "Peraturan tambahan baharu, "%s", berjaya dibuat."
  Not available at the upstream for legal reasons: "Tidak tersedia di hulu atas sebab undang-undang."
  Not available at the upstream: "Tidak tersedia di hulu."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2024.06.06).
+# This file: Thai language data for the front-end (last modified: 2024.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -146,6 +146,7 @@ config:
  bobuam_block_bots: "บล็อกบอทที่รู้ว่าเป็นอันตรายหรือไม่พึงประสงค์?"
  bobuam_block_eol_browsers: "บล็อกเบราว์เซอร์ที่หมดอายุแล้วหรือไม่? (ตั้งค่าเวอร์ชันด้านล่าง)."
  bobuam_chrome: "โทเค็น "Chrome/Chromium" เวอร์ชันต่ำสุดที่อนุญาต. ที่แนะนำ: {{BOBUAM Token.Chrome}}."
+ bobuam_edge: "โทเค็น "Edg/Edge" เวอร์ชันต่ำสุดที่อนุญาต. ที่แนะนำ: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "โทเค็น "Firefox" เวอร์ชันต่ำสุดที่อนุญาต. ที่แนะนำ: {{BOBUAM Token.Firefox}}."
  bobuam_firefox_esr: "โทเค็น "Firefox" เวอร์ชันที่อนุญาตสำหรับเวอร์ชัน ESR. ที่แนะนำ: {{BOBUAM Token.Firefox ESR}}."
  bobuam_reason_ambiguous: "เหตุผลในการบล็อกที่แสดงเมื่อตรวจพบสตริงตัวแทนผู้ใช้ที่ไม่ชัดเจน."
@@ -766,7 +767,6 @@ macro:
   uninstall_l10n_fe: "ถอนการติดตั้ง L10N ฟรอนต์เอนด์ที่ไม่ได้ใช้งานทั้งหมด."
   uninstall_modules: "ถอนการติดตั้งโมดูลที่ไม่ได้ใช้งานทั้งหมด."
   uninstall_signatures: "ถอนการติดตั้งไฟล์ลายเซ็นที่ไม่ได้ใช้งานทั้งหมด."
-max_login_attempts_exceeded: "จำนวนสูงสุดความพยายามเข้าสู่ระบบเกิน; ปฏิเสธการเข้าใช้."
 msg_subject_2fa: "2FA"
 msg_template_2fa: |
  <center><p>สวัสดี %s.<br /><br />
@@ -849,6 +849,7 @@ response:
  Invalid API key: "คีย์ API ไม่ถูกต้อง!"
  Invalid password: "ความล้มเหลวในการเข้าสู่ระบบ! รหัสผ่านไม่ถูกต้อง!"
  Invalid timestamp: "การประทับเวลาไม่ถูกต้อง!"
+ Maximum number of login attempts exceeded: "จำนวนสูงสุดความพยายามเข้าสู่ระบบเกิน; ปฏิเสธการเข้าใช้."
  New auxiliary rule, %s, created successfully: "กฎเสริมใหม่ "%s" ถูกสร้าง."
  Not available at the upstream for legal reasons: "ไม่มีให้บริการที่ต้นน้ำด้วยเหตุผลทางกฎหมาย."
  Not available at the upstream: "ไม่มีให้บริการที่ต้นน้ำ."

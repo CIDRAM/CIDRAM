@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Punjabi language data for the front-end (last modified: 2024.06.06).
+# This file: Punjabi language data for the front-end (last modified: 2024.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -146,6 +146,7 @@ config:
  bobuam_block_bots: "ਬਲੌਕ ਬੋਟਾਂ ਨੂੰ ਖਤਰਨਾਕ ਜਾਂ ਅਣਚਾਹੇ ਵਜੋਂ ਮਾਨਤਾ ਦਿੱਤੀ ਗਈ ਹੈ?"
  bobuam_block_eol_browsers: "ਉਹਨਾਂ ਬ੍ਰਾਊਜ਼ਰਾਂ ਨੂੰ ਬਲੌਕ ਕਰੋ ਜੋ ਜੀਵਨ ਦੇ ਅੰਤ ਤੱਕ ਪਹੁੰਚ ਗਏ ਹਨ? (ਹੇਠਾਂ ਸੰਸਕਰਣ ਸੈੱਟ ਕਰੋ)।"
  bobuam_chrome: ""Chrome/Chromium" ਟੋਕਨ ਦਾ ਸਭ ਤੋਂ ਘੱਟ ਮਨਜ਼ੂਰ ਸੰਸਕਰਣ। ਸਿਫਾਰਸ਼ੀ: {{BOBUAM Token.Chrome}}."
+ bobuam_edge: ""Edg/Edge" ਟੋਕਨ ਦਾ ਸਭ ਤੋਂ ਘੱਟ ਮਨਜ਼ੂਰ ਸੰਸਕਰਣ। ਸਿਫਾਰਸ਼ੀ: {{BOBUAM Token.Edge}}."
  bobuam_firefox: ""Firefox" ਟੋਕਨ ਦਾ ਸਭ ਤੋਂ ਘੱਟ ਮਨਜ਼ੂਰ ਸੰਸਕਰਣ। ਸਿਫਾਰਸ਼ੀ: {{BOBUAM Token.Firefox}}."
  bobuam_firefox_esr: "ESR ਸੰਸਕਰਣ ਲਈ "Firefox" ਟੋਕਨ ਦਾ ਮਨਜ਼ੂਰ ਸੰਸਕਰਣ। ਸਿਫਾਰਸ਼ੀ: {{BOBUAM Token.Firefox ESR}}."
  bobuam_reason_ambiguous: "ਇੱਕ ਅਸਪਸ਼ਟ ਉਪਭੋਗਤਾ ਏਜੰਟ ਸਤਰ ਦਾ ਪਤਾ ਲੱਗਣ 'ਤੇ ਬਲਾਕ ਕਾਰਨ ਦਿਖਾਇਆ ਗਿਆ ਹੈ।"
@@ -782,7 +783,6 @@ macro:
   uninstall_l10n_fe: "ਸਾਰੇ ਅਕਿਰਿਆਸ਼ੀਲ ਫਰੰਟ-ਐਂਡ L10N ਨੂੰ ਅਣਇੰਸਟੌਲ ਕਰੋ।"
   uninstall_modules: "ਸਾਰੇ ਅਕਿਰਿਆਸ਼ੀਲ ਮੋਡੀਊਲ ਅਣਇੰਸਟੌਲ ਕਰੋ।"
   uninstall_signatures: "ਸਾਰੀਆਂ ਅਕਿਰਿਆਸ਼ੀਲ ਦਸਤਖਤ ਫਾਈਲਾਂ ਨੂੰ ਅਣਇੰਸਟੌਲ ਕਰੋ।"
-max_login_attempts_exceeded: "ਲੌਗਇਨ ਕੋਸ਼ਿਸ਼ਾਂ ਦੀ ਅਧਿਕਤਮ ਸੰਖਿਆ ਵੱਧ ਗਈ ਹੈ; ਪਹੁੰਚ ਇਨਕਾਰ।"
 msg_subject_2fa: "ਦੋ-ਕਾਰਕ ਪ੍ਰਮਾਣਿਕਤਾ"
 msg_template_2fa: |
  <center><p>ਸਤਿ ਸ਼੍ਰੀ ਅਕਾਲ, %s।<br /><br />
@@ -865,6 +865,7 @@ response:
  Invalid API key: "ਅਵੈਧ API ਕੁੰਜੀ!"
  Invalid password: "ਲੌਗਇਨ ਅਸਫਲਤਾ! ਗਲਤ ਪਾਸਵਰਡ!"
  Invalid timestamp: "ਅਵੈਧ ਟਾਈਮਸਟੈਂਪ!"
+ Maximum number of login attempts exceeded: "ਲੌਗਇਨ ਕੋਸ਼ਿਸ਼ਾਂ ਦੀ ਅਧਿਕਤਮ ਸੰਖਿਆ ਵੱਧ ਗਈ ਹੈ; ਪਹੁੰਚ ਇਨਕਾਰ।"
  New auxiliary rule, %s, created successfully: "ਨਵਾਂ ਸਹਾਇਕ ਨਿਯਮ, "%s", ਸਫਲਤਾਪੂਰਵਕ ਬਣਾਇਆ ਗਿਆ।"
  Not available at the upstream for legal reasons: "ਕਾਨੂੰਨੀ ਕਾਰਨਾਂ ਕਰਕੇ ਅੱਪਸਟ੍ਰੀਮ 'ਤੇ ਉਪਲਬਧ ਨਹੀਂ ਹੈ।"
  Not available at the upstream: "ਅੱਪਸਟ੍ਰੀਮ 'ਤੇ ਉਪਲਬਧ ਨਹੀਂ ਹੈ।"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2024.06.06).
+# This file: Turkish language data for the front-end (last modified: 2024.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -146,6 +146,7 @@ config:
  bobuam_block_bots: "Kötü amaçlı veya istenmeyen olarak tanınan botlar engelleniyor mu?"
  bobuam_block_eol_browsers: "Kullanım ömrünün sonuna ulaşan tarayıcılar engellensin mi? (Aşağıda sürümleri ayarlayın)."
  bobuam_chrome: ""Chrome/Chromium" belirtecinin izin verilen en düşük sürümü. Önerilen: {{BOBUAM Token.Chrome}}."
+ bobuam_edge: ""Edg/Edge" belirtecinin izin verilen en düşük sürümü. Önerilen: {{BOBUAM Token.Edge}}."
  bobuam_firefox: ""Firefox" belirtecinin izin verilen en düşük sürümü. Önerilen: {{BOBUAM Token.Firefox}}."
  bobuam_firefox_esr: "ESR sürümü için "Firefox" belirtecinin izin verilen sürümü. Önerilen: {{BOBUAM Token.Firefox ESR}}."
  bobuam_reason_ambiguous: "Belirsiz bir kullanıcı aracısı dizesi algılandığında gösterilen engelleme nedeni."
@@ -777,7 +778,6 @@ macro:
   uninstall_l10n_fe: "Etkin olmayan tüm ön uç L10N'yi kaldırın."
   uninstall_modules: "Etkin olmayan tüm modülleri kaldırın."
   uninstall_signatures: "Etkin olmayan tüm imza dosyalarını kaldırın."
-max_login_attempts_exceeded: "Maksimum giriş denemesi aşıldı; Erişim reddedildi."
 msg_subject_2fa: "2FA (İki Faktörlü Kimlik Doğrulama)"
 msg_template_2fa: |
  <center><p>Merhaba, %s.<br /><br />
@@ -860,6 +860,7 @@ response:
  Invalid API key: "Geçersiz API anahtarı!"
  Invalid password: "Giriş başarısız! Geçersiz parola!"
  Invalid timestamp: "Geçersiz zaman damgası!"
+ Maximum number of login attempts exceeded: "Maksimum giriş denemesi aşıldı; Erişim reddedildi."
  New auxiliary rule, %s, created successfully: "Yeni yardımcı kural, "%s", başarıyla oluşturuldu."
  Not available at the upstream for legal reasons: "Yasal nedenlerden dolayı kaynakta mevcut değil."
  Not available at the upstream: "Kaynakta mevcut değil."

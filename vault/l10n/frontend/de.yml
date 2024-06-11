@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2024.06.06).
+# This file: German language data for the front-end (last modified: 2024.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -146,6 +146,7 @@ config:
  bobuam_block_bots: "Als bösartig oder unerwünscht erkannte Bots blockieren?"
  bobuam_block_eol_browsers: "Browser blockieren, die das Ende ihrer Lebensdauer erreicht haben? (Stellen Sie die Versionen unten ein)."
  bobuam_chrome: "Niedrigste zulässige Version des „Chrome/Chromium“-Tokens. Empfohlen: {{BOBUAM Token.Chrome}}."
+ bobuam_edge: "Niedrigste zulässige Version des „Edg/Edge“-Tokens. Empfohlen: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "Niedrigste zulässige Version des „Firefox“-Tokens. Empfohlen: {{BOBUAM Token.Firefox}}."
  bobuam_firefox_esr: "Zulässige Version des „Firefox“-Tokens für die ESR-Version. Empfohlen: {{BOBUAM Token.Firefox ESR}}."
  bobuam_reason_ambiguous: "Der Blockierungsgrund der angezeigt wird wenn eine mehrdeutige Benutzeragenten erkannt wird."
@@ -782,7 +783,6 @@ macro:
   uninstall_l10n_fe: "Deinstallieren Sie alle inaktiven Front-End-L10N."
   uninstall_modules: "Deinstallieren Sie alle inaktiven Module."
   uninstall_signatures: "Deinstallieren Sie alle inaktiven Signaturdateien."
-max_login_attempts_exceeded: "Maximale Anzahl der Versucht zu einloggen überschritten; Zugriff verweigert."
 msg_subject_2fa: "Zwei-Faktor-Authentifizierung"
 msg_template_2fa: |
  <center><p>Hallo, %s.<br /><br />
@@ -865,6 +865,7 @@ response:
  Invalid API key: "Ungültiger API-Schlüssel!"
  Invalid password: "Einloggen-Fehler! Ungültiges Passwort!"
  Invalid timestamp: "Ungültiger Zeitstempel!"
+ Maximum number of login attempts exceeded: "Maximale Anzahl der Versucht zu einloggen überschritten; Zugriff verweigert."
  New auxiliary rule, %s, created successfully: "Neue Hilfsregel, „%s“, wurde erfolgreich erstellt."
  Not available at the upstream for legal reasons: "Aus rechtlichen Gründen an der Upstream nicht verfügbar."
  Not available at the upstream: "An der Upstream nicht verfügbar."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2024.06.06).
+# This file: Urdu language data for the front-end (last modified: 2024.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -146,6 +146,7 @@ config:
  bobuam_block_bots: "بدنیتی پر مبنی یا ناپسندیدہ کے طور پر پہچانے گئے بوٹس کو مسدود کریں؟"
  bobuam_block_eol_browsers: "ان براؤزرز کو مسدود کریں جو زندگی کے اختتام کو پہنچ چکے ہیں؟ (ذیل میں ورژن سیٹ کریں)."
  bobuam_chrome: ""Chrome/Chromium" ٹوکن کا سب سے کم اجازت شدہ ورژن. تجویز کردہ: {{BOBUAM Token.Chrome}}."
+ bobuam_edge: ""Edg/Edge" ٹوکن کا سب سے کم اجازت شدہ ورژن. تجویز کردہ: {{BOBUAM Token.Edge}}."
  bobuam_firefox: ""Firefox" ٹوکن کا سب سے کم اجازت شدہ ورژن. تجویز کردہ: {{BOBUAM Token.Firefox}}."
  bobuam_firefox_esr: "ESR ورژن کے لیے "Firefox" ٹوکن کا مجاز ورژن. تجویز کردہ: {{BOBUAM Token.Firefox ESR}}."
  bobuam_reason_ambiguous: "ایک مبہم صارف ایجنٹ سٹرنگ کا پتہ چلنے پر بلاک کی وجہ دکھائی گئی."
@@ -776,7 +777,6 @@ macro:
   uninstall_l10n_fe: "تمام غیر فعال فرنٹ اینڈ L10N کو اَن انسٹال کریں."
   uninstall_modules: "تمام غیر فعال ماڈیولز کو ان انسٹال کریں."
   uninstall_signatures: "تمام غیر فعال دستخطی فائلوں کو ان انسٹال کریں."
-max_login_attempts_exceeded: "لاگ ان کوششوں کی زیادہ سے زیادہ تعداد سے تجاوز کر گئی. رسائی مسترد کر دی."
 msg_subject_2fa: "2FA"
 msg_template_2fa: |
  <center><p>ہیلو، %s.<br /><br />
@@ -859,6 +859,7 @@ response:
  Invalid API key: "غلط API کلید!"
  Invalid password: "لاگ ان ناکامی! غلط پاسورڈ!"
  Invalid timestamp: "غلط ٹائم اسٹیمپ!"
+ Maximum number of login attempts exceeded: "لاگ ان کوششوں کی زیادہ سے زیادہ تعداد سے تجاوز کر گئی. رسائی مسترد کر دی."
  New auxiliary rule, %s, created successfully: "نئے اضافی قاعدہ "%s" تشکیل دیا."
  Not available at the upstream for legal reasons: "قانونی وجوہات کی بنا پر اپ اسٹریم پر دستیاب نہیں ہے."
  Not available at the upstream: "اپ اسٹریم پر دستیاب نہیں ہے."

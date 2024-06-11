@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2024.06.06).
+# This file: Portuguese language data for the front-end (last modified: 2024.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -162,6 +162,7 @@ config:
  bobuam_block_bots: "Bloquear bots reconhecidos como maliciosos ou indesejados?"
  bobuam_block_eol_browsers: "Bloquear navegadores que atingiram o fim da vida útil? (Defina as versões abaixo)."
  bobuam_chrome: "Versão mais baixa permitida do token "Chrome/Chromium". Recomendado: {{BOBUAM Token.Chrome}}."
+ bobuam_edge: "Versão mais baixa permitida do token "Edg/Edge". Recomendado: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "Versão mais baixa permitida do token "Firefox". Recomendado: {{BOBUAM Token.Firefox}}."
  bobuam_firefox_esr: "Versão permitida do token "Firefox" para a versão ESR. Recomendado: {{BOBUAM Token.Firefox ESR}}."
  bobuam_reason_ambiguous:
@@ -657,7 +658,7 @@ label:
  Fancy: "Chique"
  Focus: "Foco:"
  Free disk space: "Espaço livre no disco:"
- Greylist the request: "Trate a solicitação como na lista cinza.\nRedefine o número de assinaturas desencadeadas, mas continua processando a solicitação. Recomendado quando você não deseja Trate a solicitação como na lista branca, mas precisa de algo mais substancial do que desencadear um bypass."
+ Greylist the request: "Trate a solicitação como na lista cinza.\nRedefine o número de assinaturas desencadeadas, mas continua processando a solicitação. Recomendado quando você não deseja tratar a solicitação como na lista branca, mas precisa de algo mais substancial do que desencadear um bypass."
  Harvester: "Coletor"
  Hide: "Ocultar"
  Ignore this: "Ignore isso"
@@ -849,7 +850,6 @@ macro:
   uninstall_l10n_fe: "Desinstale todos os L10N front-end inativos."
   uninstall_modules: "Desinstale todos os módulos inativos."
   uninstall_signatures: "Desinstale todos os arquivos de assinatura inativos."
-max_login_attempts_exceeded: "Número máximo de tentativas de login foi excedido; Acesso negado."
 msg_subject_2fa: "Autenticação de dois fatores"
 msg_template_2fa: |
  <center><p>Olá, %s.<br /><br />
@@ -932,6 +932,7 @@ response:
  Invalid API key: "Chave de API inválida!"
  Invalid password: "Falha no login! Senha inválida!"
  Invalid timestamp: "Carimbo de data/hora inválido!"
+ Maximum number of login attempts exceeded: "Número máximo de tentativas de login foi excedido; Acesso negado."
  New auxiliary rule, %s, created successfully: "Nova regra auxiliar, "%s", criada com sucesso."
  Not available at the upstream for legal reasons: "Não disponível no upstream por motivos legais."
  Not available at the upstream: "Não disponível no upstream."

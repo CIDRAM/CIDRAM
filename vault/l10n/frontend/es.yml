@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2024.06.06).
+# This file: Spanish language data for the front-end (last modified: 2024.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -146,6 +146,7 @@ config:
  bobuam_block_bots: "¿Bloquear bots reconocidos como maliciosos o no deseados?"
  bobuam_block_eol_browsers: "¿Bloquear los navegadores que han llegado al final de su vida útil? (Establecer las versiones a continuación)."
  bobuam_chrome: "La versión más baja permitida del token "Chrome/Chromium". Recomendado: {{BOBUAM Token.Chrome}}."
+ bobuam_edge: "La versión más baja permitida del token "Edg/Edge". Recomendado: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "La versión más baja permitida del token "Firefox". Recomendado: {{BOBUAM Token.Firefox}}."
  bobuam_firefox_esr: "La versión permitida del token "Firefox" para la versión ESR. Recomendado: {{BOBUAM Token.Firefox ESR}}."
  bobuam_reason_ambiguous: "El motivo del bloqueo que se muestra cuando se detecta una cadena de agente de usuario ambigua."
@@ -779,7 +780,6 @@ macro:
   uninstall_l10n_fe: "Desinstale todos los L10N front-end inactivos."
   uninstall_modules: "Desinstale todos los módulos inactivos."
   uninstall_signatures: "Desinstale todos los archivos de firma inactivos."
-max_login_attempts_exceeded: "Número máximo de intentos de login excedido; Acceso denegado."
 msg_subject_2fa: "Autenticación de dos factores"
 msg_template_2fa: |
  <center><p>Hola, %s.<br /><br />
@@ -862,6 +862,7 @@ response:
  Invalid API key: "¡Clave API invalida!"
  Invalid password: "¡Error al iniciar sesión – Contraseña invalida!"
  Invalid timestamp: "¡Marca de tiempo invalida!"
+ Maximum number of login attempts exceeded: "Número máximo de intentos de login excedido; Acceso denegado."
  New auxiliary rule, %s, created successfully: "Nueva regla auxiliar, "%s", creada con éxito."
  Not available at the upstream for legal reasons: "No disponible en el upstream por razones legales."
  Not available at the upstream: "No disponible en el upstream."

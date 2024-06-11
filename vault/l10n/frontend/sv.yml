@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2024.06.06).
+# This file: Swedish language data for the front-end (last modified: 2024.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -146,6 +146,7 @@ config:
  bobuam_block_bots: "Blockera bots som identifierats som skadliga eller oönskade?"
  bobuam_block_eol_browsers: "Blockera webbläsare som har nått slutet på livet? (Ställ in versionerna nedan)."
  bobuam_chrome: "Lägsta tillåtna version av "Chrome/Chromium"-token. Rekommenderad: {{BOBUAM Token.Chrome}}."
+ bobuam_edge: "Lägsta tillåtna version av "Edg/Edge"-token. Rekommenderad: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "Lägsta tillåtna version av "Firefox"-token. Rekommenderad: {{BOBUAM Token.Firefox}}."
  bobuam_firefox_esr: "Tillåten version av "Firefox"-token för ESR-versionen. Rekommenderad: {{BOBUAM Token.Firefox ESR}}."
  bobuam_reason_ambiguous: "Blockorsaken som visas när en tvetydig användaragentsträng upptäcks."
@@ -783,7 +784,6 @@ macro:
   uninstall_l10n_fe: "Avinstallera alla inaktiva front-end L10N."
   uninstall_modules: "Avinstallera alla inaktiva moduler."
   uninstall_signatures: "Avinstallera alla inaktiva signaturfiler."
-max_login_attempts_exceeded: "Maximalt antal inloggningsförsök överskreds; Nekat tillgång."
 msg_subject_2fa: "Tvåfaktorsautentisering"
 msg_template_2fa: |
  <center><p>Hallå, %s.<br /><br />
@@ -866,6 +866,7 @@ response:
  Invalid API key: "Ogiltig API-nyckel!"
  Invalid password: "Inloggningsfel! Felaktigt lösenord!"
  Invalid timestamp: "Ogiltig tidsstämpel!"
+ Maximum number of login attempts exceeded: "Maximalt antal inloggningsförsök överskreds; Nekat tillgång."
  New auxiliary rule, %s, created successfully: "Ny hjälpregel, "%s", skapades framgångsrikt."
  Not available at the upstream for legal reasons: "Inte tillgängligt uppströms av juridiska skäl."
  Not available at the upstream: "Inte tillgängligt uppströms."

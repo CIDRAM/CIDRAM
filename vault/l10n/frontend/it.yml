@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2024.06.06).
+# This file: Italian language data for the front-end (last modified: 2024.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -146,6 +146,7 @@ config:
  bobuam_block_bots: "Blocca i bot riconosciuti come dannosi o indesiderati?"
  bobuam_block_eol_browsers: "Blocca i browser che hanno raggiunto la fine del ciclo di vita? (Imposta le versioni di seguito)."
  bobuam_chrome: "Versione minima consentita del token "Chrome/Chromium". Consigliato: {{BOBUAM Token.Chrome}}."
+ bobuam_edge: "Versione minima consentita del token "Edg/Edge". Consigliato: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "Versione minima consentita del token "Firefox". Consigliato: {{BOBUAM Token.Firefox}}."
  bobuam_firefox_esr: "Versione consentita del token "Firefox" per la versione ESR. Consigliato: {{BOBUAM Token.Firefox ESR}}."
  bobuam_reason_ambiguous: "Il motivo del blocco mostrato quando viene rilevata una stringa agente utente ambigua."
@@ -781,7 +782,6 @@ macro:
   uninstall_l10n_fe: "Disinstalla tutti i L10N di front-end inattivi."
   uninstall_modules: "Disinstalla tutti i moduli inattivi."
   uninstall_signatures: "Disinstalla tutti i file di firma inattivi."
-max_login_attempts_exceeded: "Numero massimo di tentativi di accesso superato; Accesso negato."
 msg_subject_2fa: "Autenticazione a due fattori"
 msg_template_2fa: |
  <center><p>Salve, %s.<br /><br />
@@ -864,6 +864,7 @@ response:
  Invalid API key: "Chiave API non valida!"
  Invalid password: "Accedi non riuscito! Password non valida!"
  Invalid timestamp: "Timestamp non valido!"
+ Maximum number of login attempts exceeded: "Numero massimo di tentativi di accesso superato; Accesso negato."
  New auxiliary rule, %s, created successfully: "Nuova regola ausiliaria, "%s", creata con successo."
  Not available at the upstream for legal reasons: "Non disponibile a monte per motivi legali."
  Not available at the upstream: "Non disponibile a monte."

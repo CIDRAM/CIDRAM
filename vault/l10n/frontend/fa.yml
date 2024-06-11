@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Farsi language data for the front (last modified: 2024.06.06).
+# This file: Farsi language data for the front (last modified: 2024.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -146,6 +146,7 @@ config:
  bobuam_block_bots: "ربات های مخرب یا ناخواسته را مسدود کنید؟"
  bobuam_block_eol_browsers: "مرورگرهایی را که به پایان عمرشان رسیده‌اند مسدود کنید؟ (نسخه های را زیر تنظیم کنید)."
  bobuam_chrome: "پایین‌ترین نسخهی مجاز توکن «Chrome/Chromium». توصیه شده: {{BOBUAM Token.Chrome}}."
+ bobuam_edge: "پایین‌ترین نسخهی مجاز توکن «Edg/Edge». توصیه شده: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "پایین‌ترین نسخهی مجاز توکن «Firefox». توصیه شده: {{BOBUAM Token.Firefox}}."
  bobuam_firefox_esr: "نسخهی مجاز توکن «Firefox» را برای نسخهی ESR. توصیه شده: {{BOBUAM Token.Firefox ESR}}."
  bobuam_reason_ambiguous: "دلیل مسدود کردن زمانی که یک رشته عامل کاربر مبهم شناسایی می شود نشان داده می شود."
@@ -776,7 +777,6 @@ macro:
   uninstall_l10n_fe: "همه L10N جلویی غیرفعال را حذف نصب کنید."
   uninstall_modules: "همه ماژول های غیرفعال را حذف نصب کنید."
   uninstall_signatures: "همه فایل های امضای غیرفعال را حذف نصب کنید."
-max_login_attempts_exceeded: "از حداکثر تعداد تلاش برای ورود به سیستم بیشتر شد؛ دسترسی رد شد."
 msg_subject_2fa: "احراز هویت دو مرحله ای"
 msg_template_2fa: |
  <center><p>سلام، %s.<br /><br />
@@ -859,6 +859,7 @@ response:
  Invalid API key: "کلید API نامعتبر است!"
  Invalid password: "ورود ناموفق! رمز عبور نامعتبر!"
  Invalid timestamp: "مهر زمانی نامعتبر است!"
+ Maximum number of login attempts exceeded: "از حداکثر تعداد تلاش برای ورود به سیستم بیشتر شد؛ دسترسی رد شد."
  New auxiliary rule, %s, created successfully: "قوانین کمکی جدید، «%s»، با موفقیت ایجاد شد."
  Not available at the upstream for legal reasons: "به دلایل قانونی در بالادست در دسترس نیست."
  Not available at the upstream: "در بالادست در دسترس نیست."

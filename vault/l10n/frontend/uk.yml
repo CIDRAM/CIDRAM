@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Ukrainian language data for the front-end (last modified: 2024.06.06).
+# This file: Ukrainian language data for the front-end (last modified: 2024.06.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -146,6 +146,7 @@ config:
  bobuam_block_bots: "Блокувати ботів, визнаних шкідливими чи небажаними?"
  bobuam_block_eol_browsers: "Блокувати браузери, термін служби яких закінчився? (Встановіть версії нижче)."
  bobuam_chrome: "Найнижча дозволена версія токена «Chrome/Chromium». Рекомендовано: {{BOBUAM Token.Chrome}}."
+ bobuam_edge: "Найнижча дозволена версія токена «Edg/Edge». Рекомендовано: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "Найнижча дозволена версія токена «Firefox». Рекомендовано: {{BOBUAM Token.Firefox}}."
  bobuam_reason_ambiguous: "Причина блокування, яка відображається, коли виявлено неоднозначний рядок агента користувача."
  bobuam_firefox_esr: "Дозволена версія токена «Firefox» для версії ESR. Рекомендовано: {{BOBUAM Token.Firefox ESR}}."
@@ -793,7 +794,6 @@ macro:
   uninstall_l10n_fe: "Видалити всі неактивні фронтенді L10N."
   uninstall_modules: "Видалити всі неактивні модулі."
   uninstall_signatures: "Видалити всі неактивні файли сигнатурів."
-max_login_attempts_exceeded: "Перевищено максимальну кількість спроб входу; Доступ заборонено."
 msg_subject_2fa: "Двофакторна автентифікація"
 msg_template_2fa: |
  <center><p>Привіт, %s.<br /><br />
@@ -876,6 +876,7 @@ response:
  Invalid API key: "Недійсний ключ API!"
  Invalid password: "Помилка входу! Невірний пароль!"
  Invalid timestamp: "Недійсна позначка часу!"
+ Maximum number of login attempts exceeded: "Перевищено максимальну кількість спроб входу; Доступ заборонено."
  New auxiliary rule, %s, created successfully: "Нове допоміжне правило, «%s», успішно створено."
  Not available at the upstream for legal reasons: "Недоступно на апстрім з юридичних причин."
  Not available at the upstream: "Недоступно на апстрім."

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: AbuseIPDB module (last modified: 2024.05.20).
+ * This file: AbuseIPDB module (last modified: 2024.06.11).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -139,21 +139,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         $this->L10N->getString('ReasonMessage_Generic') . '<br />' . sprintf($this->L10N->getString('request_removal'), 'https://www.abuseipdb.com/check/' . $this->BlockInfo['IPAddr'])
     )) {
         /** Fetch options. */
-        $Options = array_flip(explode("\n", $this->Configuration['abuseipdb']['options']));
-        if (isset($Options['MarkForUseWithReCAPTCHA'])) {
-            $this->Configuration['recaptcha']['enabled'] = true;
-        }
-        if (isset($Options['ForciblyDisableReCAPTCHA'])) {
-            $this->Configuration['recaptcha']['usemode'] = 0;
-            $this->Configuration['recaptcha']['forcibly_disabled'] = true;
-        }
-        if (isset($Options['MarkForUseWithHCAPTCHA'])) {
-            $this->Configuration['hcaptcha']['enabled'] = true;
-        }
-        if (isset($Options['ForciblyDisableHCAPTCHA'])) {
-            $this->Configuration['hcaptcha']['usemode'] = 0;
-            $this->Configuration['hcaptcha']['forcibly_disabled'] = true;
-        }
+        $this->enactOptions('', array_flip(explode("\n", $this->Configuration['abuseipdb']['options'])));
     }
 
     /** Build profiles. */

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bot user agents module (last modified: 2024.05.21).
+ * This file: Bot user agents module (last modified: 2024.06.11).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -29,7 +29,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     }
 
     /** Unmarks for use with reCAPTCHA and hCAPTCHA. */
-    $UnmarkCaptcha = ['recaptcha' => ['enabled' => false], 'hcaptcha' => ['enabled' => false]];
+    $UnmarkCaptcha = ['recaptcha' => ['usemode' => 0, 'forcibly_disabled' => true], 'hcaptcha' => ['usemode' => 0, 'forcibly_disabled' => true]];
 
     $UA = str_replace('\\', '/', strtolower(urldecode($this->BlockInfo['UA'])));
     $UANoSpace = preg_replace('/\s/', '', $UA);
@@ -285,6 +285,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     $this->trigger($UANoSpace === 'chorme', 'Bot UA'); // 2021.04.16
     $this->trigger(strpos($UA, '\(windows nt 10.0\; win64\; x64\)') !== false || strpos($UA, '\(khtml, like gecko\)') !== false, 'Bot UA'); // 2023.09.08
     $this->trigger(substr($this->BlockInfo['UA'], 0, 2) === '\x', 'Bot UA'); // 2023.10.15
+    $this->trigger(strpos($UA, ';;') !== false, 'Bot UA'); // 2024.06.11
 
     $this->trigger(preg_match(
         '/(?:drop ?table|(_table|assert|co(de|ntents)|dotnet_load|e(cho|regi' .
@@ -363,6 +364,10 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
     /** Reporting. */
     if (!empty($this->BlockInfo['IPAddr'])) {
+        if (strpos($this->BlockInfo['WhyReason'], 'Bot UA') !== false) {
+            $this->Reporter->report([19], ['Bad web bot detected.'], $this->BlockInfo['IPAddr']);
+        }
+
         if (strpos($this->BlockInfo['WhyReason'], 'Spam UA') !== false) {
             $this->Reporter->report([12, 19], ['Spambot detected.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'Malware UA') !== false) {

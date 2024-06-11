@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2024.04.19).
+ * This file: The CIDRAM core (last modified: 2024.06.11).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1506,6 +1506,31 @@ class Core
             $this->Events->fireEvent('bypassed', $Source);
         }
         return true;
+    }
+
+    /**
+     * Enact some options (used by some modules).
+     *
+     * @param string $Prefix The prefix for the options (in case of working with labels).
+     * @param array $Options The options to enact.
+     * @return void
+     */
+    public function enactOptions(string $Prefix = '', array $Options = []): void
+    {
+        if (isset($Options[$Prefix . 'MarkForUseWithReCAPTCHA'])) {
+            $this->Configuration['recaptcha']['enabled'] = true;
+        }
+        if (isset($Options[$Prefix . 'ForciblyDisableReCAPTCHA'])) {
+            $this->Configuration['recaptcha']['usemode'] = 0;
+            $this->Configuration['recaptcha']['forcibly_disabled'] = true;
+        }
+        if (isset($Options[$Prefix . 'MarkForUseWithHCAPTCHA'])) {
+            $this->Configuration['hcaptcha']['enabled'] = true;
+        }
+        if (isset($Options[$Prefix . 'ForciblyDisableHCAPTCHA'])) {
+            $this->Configuration['hcaptcha']['usemode'] = 0;
+            $this->Configuration['hcaptcha']['forcibly_disabled'] = true;
+        }
     }
 
     /**

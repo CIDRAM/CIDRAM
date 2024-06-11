@@ -11,14 +11,14 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: BOBUAM defaults file (last modified: 2023.09.19).
+# This file: BOBUAM defaults file (last modified: 2024.06.11).
 ##/
 
 Config Defaults:
  bobuam:
   sanity_check:
    type: "string"
-   default: "response._Yes"
+   default: "yes"
    choices:
     yes: "response._Yes"
     no: "response._No"
@@ -45,7 +45,7 @@ Config Defaults:
    allow_other: true
   block_bots:
    type: "string"
-   default: "response._Yes"
+   default: "yes"
    choices:
     yes: "response._Yes"
     no: "response._No"
@@ -58,11 +58,15 @@ Config Defaults:
    allow_other: true
   block_eol_browsers:
    type: "string"
-   default: "response._Yes"
+   default: "yes"
    choices:
     yes: "response._Yes"
     no: "response._No"
   chrome:
+   type: "int"
+   default: 0
+   hints: "bobuam_hint_default_value"
+  edge:
    type: "int"
    default: 0
    hints: "bobuam_hint_default_value"
@@ -86,8 +90,37 @@ Config Defaults:
     denied: "denied"
    preview: "allow_other"
    allow_other: true
+  options:
+   type: "checkbox"
+   default: |
+    Masquerade:ForciblyDisableReCAPTCHA
+    Masquerade:ForciblyDisableHCaptcha
+    Chrome:MarkForUseWithReCAPTCHA
+    Chrome:MarkForUseWithHCaptcha
+    Edge:MarkForUseWithReCAPTCHA
+    Edge:MarkForUseWithHCaptcha
+    Firefox:MarkForUseWithReCAPTCHA
+    Firefox:MarkForUseWithHCaptcha
+    Safari:MarkForUseWithReCAPTCHA
+    Safari:MarkForUseWithHCaptcha
+   labels:
+    MarkForUseWithReCAPTCHA: "label.aux.Mark for use with reCAPTCHA"
+    ForciblyDisableReCAPTCHA: "label.aux.Forcibly disable reCAPTCHA"
+    MarkForUseWithHCaptcha: "label.aux.Mark for use with HCaptcha"
+    ForciblyDisableHCaptcha: "label.aux.Forcibly disable HCaptcha"
+   choices:
+    Ambiguous: "bobuam_ambiguous"
+    Malformed: "bobuam_malformed"
+    Masquerade: "bobuam_masquerade"
+    SuspectedBot: "bobuam_bot"
+    Chrome: "{bobuam_outdated_short} (Chrome/Chromium)"
+    Edge: "{bobuam_outdated_short} (Edge)"
+    Firefox: "{bobuam_outdated_short} (Firefox)"
+    Safari: "{bobuam_outdated_short} (Safari)"
+    Other: "{bobuam_outdated_short} ({label.Other})"
 BOBUAM Token:
- Chrome: "108"
- Firefox: "108"
+ Chrome: "115"
+ Edge: "115"
+ Firefox: "115"
  Firefox ESR: "102"
- Safari: "14"
+ Safari: "15"

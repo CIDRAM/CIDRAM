@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2024.05.07).
+ * This file: Protect traits (last modified: 2024.06.11).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -380,10 +380,7 @@ trait Protect
                             ($RLMaxBandwidth > 0 && $this->CIDRAM['RL_Usage']['Bytes'] >= $RLMaxBandwidth) ||
                             ($this->Configuration['rate_limiting']['max_requests'] > 0 && $this->CIDRAM['RL_Usage']['Requests'] >= $this->Configuration['rate_limiting']['max_requests'])
                         ), $this->L10N->getString('Short_RL'))) {
-                            $this->Configuration['recaptcha']['usemode'] = 0;
-                            $this->Configuration['recaptcha']['enabled'] = false;
-                            $this->Configuration['hcaptcha']['usemode'] = 0;
-                            $this->Configuration['hcaptcha']['enabled'] = false;
+                            $this->enactOptions('', ['ForciblyDisableReCAPTCHA' => true, 'ForciblyDisableHCAPTCHA' => true]);
                             $this->CIDRAM['RL_Status'] = $this->getStatusHTTP(429);
                             $this->Events->fireEvent('rateLimited');
                         }

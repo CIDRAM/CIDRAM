@@ -1,6 +1,6 @@
 CIDRAM Core:
  Name: "CIDRAM Core"
- Version: "3.6.0-DEV+241270"
+ Version: "3.6.0-DEV+241620"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Front-End: "Latest"
@@ -28,7 +28,7 @@ CIDRAM Core:
    Checksum: "8bfa4d8f80d7adef8670529cd229de10682a538ae139b9af972d2cfe803476e2:4843"
   CIDRAM/CIDRAM/Core.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Core.php"
-   Checksum: "6c55227cc88c7bf198470b17ddfa3624c8c7f5723d2cd75e8d6692c1df35285a:137688"
+   Checksum: "5a5d80ea3d55fb11a38ac949aac4902cbd58bdbe132da0367a9d211f4959339d:138729"
   CIDRAM/CIDRAM/Duration.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Duration.php"
    Checksum: "2407aa5cd6fa8f1bfd789d4d8e4cd37cba050dc7bb1ecc9c8387f75f14049c7c:11651"
@@ -40,7 +40,7 @@ CIDRAM Core:
    Checksum: "f9db3c4a9fc6e55a8da6cdf8a766c4d417a9641b48bd7505ed10c8a7dea6355a:15725"
   CIDRAM/CIDRAM/Protect.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Protect.php"
-   Checksum: "876bd4c762066905c3d7be5883f626044f318df8bf718defa6a2f58939d95fb0:61959"
+   Checksum: "92f1bd9d013e6b3793c305921b546345af15bde680abf56b86d0340c2b4e82d4:61767"
   CIDRAM/CIDRAM/ReCaptcha.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/ReCaptcha.php"
    Checksum: "1e2a1b78daddce7bdb7583d6aff68ebe85d93d9b3f7efb4403d5a9f9bbd50225:15183"
@@ -1242,7 +1242,7 @@ l10n/frontend/zh-TW:
    Checksum: "079511497d815ebbfc0e48e273aabc5b9da50ee3bc381f1ebc7a13cb50370dc3:76889"
 AbuseIPDB module:
  False Positive Risk: "Medium"
- Version: "2024.140.0"
+ Version: "2024.162.0"
  Dependencies:
   l10n/core/{lang}: ">=2023.357"
   l10n/frontend/{lang}: ">=2024.138"
@@ -1264,7 +1264,7 @@ AbuseIPDB module:
    Used with: "imports"
   modules/abuseipdb.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/abuseipdb.php"
-   Checksum: "0f32755ef9c74aeb60d8e19bcebb7a4408c9717a0e1932f97cde936cf520304a:10332"
+   Checksum: "78ba93a62319e71d990ce4bc7cf365c8e57bf4de970ba955d98108da3a574a7f:9673"
    Used with: "modules"
   pages/abuseipdb.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/pages/abuseipdb.php"
@@ -1287,7 +1287,7 @@ Bad TLDs blocker module:
    Used with: "modules"
 BGPView module:
  False Positive Risk: "Low"
- Version: "2024.140.0"
+ Version: "2024.162.0"
  Dependencies:
   l10n/frontend/{lang}: ">=2024.138"
  When Install Succeeds: ["queue message response.please_check_config"]
@@ -1301,7 +1301,7 @@ BGPView module:
    Used with: "imports"
   modules/bgpview.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/bgpview.php"
-   Checksum: "8377ce959b2c22ca8c59b1711e20ba6c4248f0481814d4e164ce37374139ef83:10685"
+   Checksum: "9710d015e29fb6925900803d4f5cef35f40930569ca980b8fbed8583dbd0b2b7:10026"
    Used with: "modules"
 Bot user agents module:
  False Positive Risk: "Medium"
@@ -1309,7 +1309,7 @@ Bot user agents module:
  Files:
   modules/botua.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/botua.php"
-   Checksum: "a82d90b2a9438c083918e7fdce64686d5a1518732ba552f3a939569b5f7e23ca:26442"
+   Checksum: "66ed1b211b454aac429769d4d8bcd8b8e5d68c0976e0672460e02ba14c4e9c98:26492"
    Used with: "modules"
 BunnyCDN compatibility module:
  False Positive Risk: "Low"
@@ -1334,7 +1334,7 @@ Cookie scanner module:
    Used with: "modules"
 IP-API module:
  False Positive Risk: "Low"
- Version: "2024.140.0"
+ Version: "2024.162.0"
  Dependencies:
   l10n/frontend/{lang}: ">=2024.138"
  When Install Succeeds: ["queue message response.please_check_config"]
@@ -1348,7 +1348,7 @@ IP-API module:
    Used with: "imports"
   modules/ipapi.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/ipapi.php"
-   Checksum: "cfc866e4d4668b9492832d666af2271ba8e65c6f5636d62212aa0520ea345f7f:8990"
+   Checksum: "cf18f1372eca5cb70f157b59b9f5e7976a60bd5f9fda59721bbaa6029c8bb874:8331"
    Used with: "modules"
 Optional security extras module:
  False Positive Risk: "Medium"
@@ -1365,7 +1365,7 @@ Optional security extras module:
    Used with: "modules"
 Project Honeypot module:
  False Positive Risk: "Medium"
- Version: "2024.140.1"
+ Version: "2024.162.0"
  Dependencies:
   l10n/frontend/{lang}: ">=2024.138"
  When Install Succeeds: ["queue message response.please_check_config"]
@@ -1379,11 +1379,11 @@ Project Honeypot module:
    Used with: "imports"
   modules/projecthoneypot.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/projecthoneypot.php"
-   Checksum: "62ed5c7d40608311248c083d9c4dbf5cda87c5b0103f054916d6f293c93e1d1f:8901"
+   Checksum: "c8960ad209ea8ad5106e301b6a35f2015abf2d1f13ca3fb2e6a9de8c1a4f110a:8242"
    Used with: "modules"
 Protocol blocker module:
  False Positive Risk: "Low"
- Version: "2023.258.0"
+ Version: "2024.162.0"
  When Install Succeeds: ["queue message response.please_check_config"]
  Files:
   imports/protocol.yml:
@@ -1392,11 +1392,11 @@ Protocol blocker module:
    Used with: "imports"
   modules/protocol.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/protocol.php"
-   Checksum: "a9354f420d8659d353e9ddec5edacf093f7e43ee9dc2111c72678639a19ea1b2:6019"
+   Checksum: "66149fe0c570b9175f787910d9cd1233ff2a39e79bc0e508d84a157fdc4f09f5:5887"
    Used with: "modules"
 Stop Forum Spam module:
  False Positive Risk: "Low"
- Version: "2024.140.0"
+ Version: "2024.162.0"
  Dependencies:
   l10n/frontend/{lang}: ">=2024.138"
  When Install Succeeds: ["queue message response.please_check_config"]
@@ -1410,11 +1410,11 @@ Stop Forum Spam module:
    Used with: "imports"
   modules/sfs.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/sfs.php"
-   Checksum: "60ec2926de501654b5de835e7b5b9392c3840c532f136b6bc5b624b6d5f00742:5112"
+   Checksum: "063e982355553ff2e8fe56601100c3c55e40d4f51e98bf3f92b88a61e2b367ba:4453"
    Used with: "modules"
 Tor blocker module:
  False Positive Risk: "Low"
- Version: "2024.138.0"
+ Version: "2024.162.0"
  Dependencies:
   l10n/frontend/{lang}: ">=2024.138"
  When Install Succeeds: ["queue message response.please_check_config"]
@@ -1426,7 +1426,7 @@ Tor blocker module:
    Used with: "imports"
   modules/tor.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/tor.php"
-   Checksum: "495311718875c14af38fc6405834b51cd64eda17cf17031d8d162102bd31c3df:4454"
+   Checksum: "fdb3e79302c8a69903324d0d1d088318e857e720fc8429227e0d42c762c3a5a4:3795"
    Used with: "modules"
 BOBUAM:
  Extended Description: >
@@ -1445,11 +1445,11 @@ BOBUAM:
  Files:
   imports/bobuam.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/imports/bobuam.yml"
-   Checksum: "d8758425a3fd6799ec929218ae9f802a20453f5447e89461ce0c327ce8a6529b:2099"
+   Checksum: "db12d594b4d766ac37e625ba337d8eecc6c123d105b0f6edcef0e416c46e0684:3145"
    Used with: "imports"
   modules/bobuam.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/bobuam.php"
-   Checksum: "770bd756273ee6b5733510777e8c1f7c813191593225380990bcee65ec149866:43349"
+   Checksum: "4813789c87d1e59133b728340d34908e41191508f47829ef1d0a3735c6186f89:44631"
    Used with: "modules"
 theme/bluemetal:
  Name: "Theme: Blue Metal"

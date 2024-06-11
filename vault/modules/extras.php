@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2024.06.04).
+ * This file: Optional security extras module (last modified: 2024.06.11).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -340,6 +340,8 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         $Handle = fopen('php://input', 'rb');
         $RawInput = fread($Handle, 1048576);
         fclose($Handle);
+    } else {
+        $RawInput = '';
     }
 
     /**
@@ -404,6 +406,8 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $this->Reporter->report([15, 18], ['Unauthorised use of known compromised password detected.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'FancyBox exploit attempt') !== false) {
             $this->Reporter->report([15, 21], ['FancyBox hack attempt detected.'], $this->BlockInfo['IPAddr']);
+        } elseif (strpos($this->BlockInfo['WhyReason'], 'WP hack attempt') !== false) {
+            $this->Reporter->report([15, 21], ['WordPress hack attempt detected.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'Hack attempt') !== false) {
             $this->Reporter->report([15], ['Hack attempt detected.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'Nesting attack') !== false) {
@@ -434,8 +438,6 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $this->Reporter->report([15], ['Shell upload attempt detected.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'Spam attempt') !== false) {
             $this->Reporter->report([10, 19], ['Spam attempt detected.'], $this->BlockInfo['IPAddr']);
-        } elseif (strpos($this->BlockInfo['WhyReason'], 'WP hack attempt') !== false) {
-            $this->Reporter->report([15, 21], ['WordPress hack attempt detected.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'Traversal attack') !== false) {
             $this->Reporter->report([15, 21], ['Traversal attack detected.'], $this->BlockInfo['IPAddr']);
         }

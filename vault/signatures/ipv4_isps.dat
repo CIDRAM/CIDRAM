@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv4_isps.dat
 
-# Version: 2024.163.0
-# Last modified: 2024.06.12
+# Version: 2024.167.0
+# Last modified: 2024.06.16
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -12465,7 +12465,7 @@ Tag: Atria Convergence
 # Romanian multiplay network. Hacking, port scans, and spam detected from here.
 # Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 161.
-# Updated: 2024.06.10
+# Updated: 2024.06.10 / Modified: 2024.06.16
 
 82.153.138.182/32 Deny Spam
 86.34.49.160/32 Deny Attacks
@@ -12473,6 +12473,7 @@ Tag: Atria Convergence
 92.81.47.254/32 Deny Attacks
 92.84.56.38/32 Deny Attacks
 92.86.92.126/32 Deny Attacks
+94.177.106.0/24 Deny Attacks
 109.96.180.132/32 Deny Attacks
 109.98.208.9/32 Deny Attacks
 109.98.208.42/32 Deny Attacks
@@ -18127,7 +18128,7 @@ Tag: flexnetworks
 # hacking, port scans, and spam detected from here.
 # Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 1,128.
-# Updated: 2024.04.28
+# Updated: 2024.04.28 / Modified: 2024.06.15
 
 81.31.244.56/32 Deny Attacks
 81.31.244.100/32 Deny Attacks
@@ -18191,6 +18192,7 @@ Origin: KZ
 90.156.230.36/32 Deny Attacks
 90.156.230.47/32 Deny Attacks
 90.156.230.134/32 Deny Attacks
+91.198.220.0/24 Deny Attacks
 91.200.151.243/32 Deny Attacks
 91.200.151.250/32 Deny Attacks
 91.222.236.48/32 Deny Attacks
@@ -19190,12 +19192,14 @@ Tag: xTom GmbH
 # Uzbek domestic ISP. Brute-force attacks, port scans, hacking, and spam
 # detected from here. Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 227.
-# Updated: 2024.03.14
+# Updated: 2024.03.14 / Modified: 2024.06.16
 
 5.133.120.0/24 Deny Attacks
 5.133.122.87/32 Deny Attacks
 5.133.122.215/32 Deny Attacks
 5.133.122.242/32 Deny Attacks
+45.150.24.0/23 Deny Attacks
+45.150.26.0/24 Deny Attacks
 83.222.6.0/23 Deny Attacks
 84.54.64.51/32 Deny Attacks
 84.54.66.0/24 Deny Attacks
@@ -23435,19 +23439,24 @@ Tag: LANTA Ltd
 # ASN 60840 ("OJSC Telecom-Service").
 # Russian domestic ISP. Webapp attacks and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 85.
-# Updated: 2023.08.20
+# Stop Forum Spam (SFS) listings: 25.
+# Updated: 2024.06.16
 
-45.150.24.0/24 Deny Attacks
-45.150.26.178/32 Deny Attacks
-45.150.26.181/32 Deny Attacks
-45.150.27.33/32 Deny Attacks
-185.23.80.41/32 Deny Attacks
+80.64.31.0/24 Deny Attacks
+194.32.230.0/24 Deny Attacks
+Origin: AE
+185.201.31.0/24 Deny Attacks
+193.228.130.0/24 Deny Attacks
+Origin: HK
+84.21.165.18/32 Deny Attacks
+84.21.167.0/24 Deny Attacks
 185.23.81.5/32 Deny Attacks
-185.23.82.24/32 Deny Attacks
-194.5.61.94/32 Deny Spam
-195.54.166.206/32 Deny Spam
-195.54.167.0/24 Deny Attacks
+185.23.82.10/32 Deny Attacks
+185.23.82.61/32 Deny Attacks
+185.23.82.207/32 Deny Attacks
+185.23.83.251/32 Deny Attacks
+194.5.60.0/23 Deny Attacks
+213.217.1.0/24 Deny Attacks
 Origin: RU
 Profile: Domestic ISP
 Tag: OJSC Telecom-Service
@@ -26542,9 +26551,13 @@ Tag: Telekom Slovenije
 # ASN 204384 ('LLC "OTT UKRAINE"').
 # Ukrainian domestic ISP. Port scans and hacking detected from here.
 # Listing just the affected ranges/addresses only.
-# Updated: 2024.06.09
+# Updated: 2024.06.09 / Modified: 2024.06.16
 
 5.105.4.127/32 Deny Attacks
+5.105.139.31/32 Deny Attacks
+5.105.139.80/32 Deny Attacks
+5.105.139.97/32 Deny Attacks
+5.105.139.167/32 Deny Attacks
 5.105.178.27/32 Deny Attacks
 Origin: UA
 Profile: Domestic ISP

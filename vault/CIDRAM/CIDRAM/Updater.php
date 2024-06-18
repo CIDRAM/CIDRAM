@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods for updating CIDRAM components (last modified: 2024.06.06).
+ * This file: Methods for updating CIDRAM components (last modified: 2024.06.17).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -759,7 +759,7 @@ trait Updater
                                 '<code>%s</code> – <code>%s</code> – %s<br />',
                                 $ThisTarget,
                                 $FileName,
-                                $this->L10N->getString('response.File contains unexpected content')
+                                $this->L10N->getString('response.File rejected') . $this->L10N->getString('pair_separator') . $this->L10N->getString('response.File contains unexpected content')
                             );
                             if (!empty($this->Components['RemoteMeta'][$ThisTarget]['On Sanity Error'])) {
                                 $this->executor($this->Components['RemoteMeta'][$ThisTarget]['On Sanity Error'], false, $BytesRemoved, $BytesAdded);

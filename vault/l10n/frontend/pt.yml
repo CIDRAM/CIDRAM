@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2024.06.11).
+# This file: Portuguese language data for the front-end (last modified: 2024.06.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -856,7 +856,9 @@ msg_template_2fa: |
  Seu código de autenticação de dois fatores para efetuar login no front-end CIDRAM:</p>
  <h1>%s</h1>
  <p>Este código expira em 10 minutos.</p></center>
-notice_new_major_version: "Aviso: O %s está agora disponível (você está usando o %s). Você atende aos requisitos mínimos de PHP desta versão. No entanto, algumas etapas manuais são necessárias para atualizar."
+notice_new_major_version:
+ pt-BR: "Aviso: %s está agora disponível (você está usando %s). Você atende aos requisitos mínimos de PHP desta versão. No entanto, algumas etapas manuais são necessárias para atualizar."
+ pt-PT: "Aviso: %s está agora disponível (você usa %s). Você atende aos requisitos mínimos de PHP desta versão. No entanto, algumas etapas manuais são necessárias para atualizar."
 operator_<: "Deve ser menor que (comparação numérica)."
 operator_=: "Deve ser uma correspondência exata (comparação direta de string)."
 operator_>: "Deve ser maior que (comparação numérica)."
@@ -904,6 +906,7 @@ response:
  Error at the upstream: "Erro no upstream!"
  Failed to access %s: "Falha ao acessar "%s"!"
  Failed to activate: "Falha ao ativar!"
+ Failed to create: "Criação falhada!"
  Failed to deactivate: "Falha ao desativar!"
  Failed to delete any reports for %s: "Falha ao deletar relatórios de %s!"
  Failed to delete: "Falha ao deletar!"
@@ -918,14 +921,14 @@ response:
  Failed to update tracking: "Falha ao atualizar o rastreamento!"
  Failed to update: "Atualização falhada!"
  Failed to upload: "Falha ao carregar!"
- File contains unexpected content: "Arquivo contém conteúdo inesperado! Arquivo rejeitado!"
+ File contains unexpected content: "Arquivo contém conteúdo inesperado!"
  File rejected: "Arquivo rejeitado"
  File successfully deleted: "Arquivo deletado com sucesso!"
  File successfully modified: "Arquivo modificado com sucesso!"
  File successfully renamed: "Arquivo renomeado com sucesso!"
  File successfully uploaded: "Arquivo carregado com sucesso!"
  Finished reading from %s: "Leitura de "%s" é feita."
- Finished writing to %s: "Gravação concluída em %s."
+ Finished writing to %s: "Gravação concluída em "%s"."
  I can_t write to %s, sorry: "Não consigo escrever para "%s", desculpe."
  I don_t understand that command, sorry: "Eu não entendo esse comando, desculpe."
  Incorrect 2FA code entered: "Código 2FA incorreto inserido. Autenticação falhou."

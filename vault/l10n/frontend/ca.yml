@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Catalan language data for the front-end (last modified: 2024.06.11).
+# This file: Catalan language data for the front-end (last modified: 2024.06.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -629,7 +629,7 @@ label:
  Only when not blocked: "Només quan no està bloquejat."
  Only when within the signature limit, and not banned (regardless of whether blocked): "Només quan està dins del límit de signatura, i no prohibit (independentment de si està bloquejat)."
  Operating system used: "Sistema operatiu utilitzat:"
- Other rules, signature files, etc: "Altres normes, fitxers de signatura, etc"
+ Other rules, signature files, etc: "Altres regles, fitxers de signatura, etc"
  Other: "Altres"
  PHP version used: "Versió PHP utilitzada:"
  Page request completed in %s seconds: "La sol·licitud de pàgina s'ha completat en %s segons."
@@ -742,7 +742,7 @@ label:
 link:
  Accounts: "Comptes"
  Aggregator: "Agregador"
- Auxiliary Rules: "Normes auxiliars"
+ Auxiliary Rules: "Regles auxiliars"
  Backup: "Còpia de seguretat"
  Cache Data: "Dades de la memòria cau"
  Calculator: "Calculadora"
@@ -767,12 +767,45 @@ link:
 macro:
  Description:
   activate_modules: &MayImpactPerformance "En general no es recomana, ja que és probable que n'hi hagi que no necessitis. Instal·lar i activar components quan no són necessaris podria afectar negativament el rendiment."
+  install_l10n_core: &RecommendKeepingCore "Quan la directiva de configuració <code>lang_override</code> està habilitada, si el navegador d'un usuari especifica una preferència d'idioma particular, sempre que s'instal·lin les dades bàsiques de L10N per a aquest idioma, CIDRAM pot mostrar la pàgina "accés denegat" en aquest idioma especificat. En conseqüència, es recomana tenir instal·lades totes les dades bàsiques de L10N."
+  install_l10n_fe: &RecommendFEOnlyNeeded "El vostre idioma preferit es pot especificar mitjançant la directiva de configuració <code>lang</code>. Un cop fet això, és poc probable que necessiteu dades de l'L10N de front-end que no siguin per al vostre idioma preferit, i és possible que vulgueu eliminar-les per alliberar marginalment una mica d'espai disponible al disc. No obstant això, tant si trieu eliminar-lo com si el conserveu, de qualsevol manera, no hauria de fer cap mal."
+  install_modules: *MayImpactPerformance
+  uninstall_l10n_core: *RecommendKeepingCore
+  uninstall_l10n_fe: *RecommendFEOnlyNeeded
+ Name:
+  activate_modules: "Activa tots els mòduls."
+  activate_signatures: "Activa tots els fitxers de signatura."
+  deactivate_modules: "Desactiva tots els mòduls."
+  deactivate_signatures: "Desactiva tots els fitxers de signatura."
+  install_l10n_core: "Instal·leu tots els L10N bàsics disponibles."
+  install_l10n_fe: "Instal·leu tots els front-end L10N disponibles."
+  install_modules: "Instal·leu tots els mòduls disponibles."
+  install_signatures: "Instal·leu tots els fitxers de signatura disponibles."
+  uninstall_l10n_core: "Desinstal·leu tots els L10N bàsics inactius."
+  uninstall_l10n_fe: "Desinstal·leu tots els front-end L10N inactius."
+  uninstall_modules: "Desinstal·leu tots els mòduls inactius."
+  uninstall_signatures: "Desinstal·leu tots els fitxers de signatura inactius."
 msg_subject_2fa: "Autenticació de dos factors"
 msg_template_2fa: |
  <center><p>Hola, %s.<br /><br />
  El vostre codi d'autenticació de dos factors per iniciar sessió al front-end de CIDRAM:</p>
  <h1>%s</h1>
  <p>Aquest codi caduca en 10 minuts.</p></center>
+notice_new_major_version: "Avís: %s ara està disponible (esteu utilitzant %s). Es compleix el requisit mínim de PHP d'aquesta versió. Tanmateix, calen alguns passos manuals per actualitzar."
+operator_<: "Ha de ser inferior a (comparació numèrica)."
+operator_=: "Ha de ser una coincidència exacta (comparació directa de cadenes)."
+operator_>: "Ha de ser superior a (comparació numèrica)."
+operator_≅: "L'expressió regular ha de coincidir."
+operator_≇: "L'expressió regular ha de no coincidir."
+operator_≈: "Ha de ser una coincidència aproximada (utilitzant comodins d'estil Windows)."
+operator_≉: "Ha de ser no una coincidència aproximada (utilitzant comodins d'estil Windows)."
+operator_≠: "Ha de ser no una coincidència exacta (comparació directa de cadenes)."
+operator_≤: "Ha de ser inferior o igual a (comparació numèrica)."
+operator_≥: "Ha de ser superior o igual a (comparació numèrica)."
+operator_≮: "Ha de ser no inferior a (comparació numèrica)."
+operator_≯: "Ha de ser no superior a (comparació numèrica)."
+operator_≰: "Ha de ser no inferior ni igual a (comparació numèrica)."
+operator_≱: "Ha de ser no superior ni igual a (comparació numèrica)."
 previewer:
  Days: "Dies"
  Hours: "Hores"
@@ -781,6 +814,58 @@ previewer:
  Seconds: "Segons"
  Weeks: "Setmanes"
  Years: "Anys"
+response:
+ Account successfully created: "Compte creat amb èxit!"
+ Account successfully deleted: "Compte suprimit amb èxit!"
+ Added %s to tracking: "Afegit %s al seguiment."
+ Already up-to-date: "Ja està al dia."
+ An account with that username already exists: "Ja existeix un compte amb aquest nom d'usuari!"
+ An error occurred while attempting to uninstall the component: "S'ha produït un error en intentar desinstal·lar el component."
+ Auxiliary rule, %s, deleted successfully: "La regla auxiliar, "%s", s'ha suprimit amb èxit."
+ Auxiliary rules successfully updated: "Les regles auxiliars actualitzat amb èxit."
+ Can_t fetch metadata: "No es poden obtenir metadades"
+ Can_t fetch the file: "No es pot obtenir el fitxer"
+ Can_t import from v%s data: "No es poden importar dades de la v%s!"
+ Checksum error: "Error de suma de control!"
+ Component not installed: "Component no instal·lat!"
+ Component successfully installed: "Component instal·lat amb èxit."
+ Component successfully uninstalled: "Component desinstal·lat amb èxit."
+ Component successfully updated: "Component actualitzat amb èxit."
+ Configuration successfully updated: "Configuració actualitzat amb èxit."
+ Copied: "Copiat"
+ Directory successfully deleted: "El directori s'ha suprimit amb èxit!"
+ Directory successfully renamed: "El nom del directori ha canviat amb èxit!"
+ Don_t know what to do with the data after reading it: "No sé què fer amb les dades després de llegir-les.\nPenseu en encadenar-lo a una altra ordre. Gràcies."
+ Error at the upstream: "Error a la upstream!"
+ Failed to access %s: "No s'ha pogut accedir a "%s"!"
+ Failed to activate: "L'activació ha fallat!"
+ Failed to create: "La creació ha fallat!"
+ Failed to deactivate: "La desactivació ha fallat!"
+ Failed to delete any reports for %s: "No s'ha pogut suprimir cap informe per a %s!"
+ Failed to delete: "L'eliminació ha fallat!"
+ Failed to execute: "L'execució ha fallat!"
+ Failed to import: "La importació ha fallat!"
+ Failed to install: "La instal·lació ha fallat!"
+ Failed to rename: "No s'ha pogut canviar el nom!"
+ Failed to report the IP address, %s: "No s'ha pogut informar de l'adreça IP, %s!"
+ Failed to update auxiliary rules: "L'actualització de les regles auxiliars ha fallat!"
+ Failed to update configuration: "L'actualització de la configuració ha fallat!"
+ Failed to update statistics: "L'actualització de les estadístiques ha fallat!"
+ Failed to update tracking: "L'actualització de seguiment ha fallat!"
+ Failed to update: "L'actualització ha fallat!"
+ Failed to upload: "La càrrega ha fallat!"
+ File contains unexpected content: "El fitxer conté contingut inesperat!"
+ File rejected: "Fitxer rebutjat"
+ File successfully deleted: "Fitxer suprimit amb èxit!"
+ File successfully modified: "Fitxer modificat amb èxit!"
+ File successfully renamed: "Canviat el nom del fitxer amb èxit!"
+ File successfully uploaded: "Fitxer carregat amb èxit!"
+ Finished reading from %s: "S'ha acabat la lectura de "%s"."
+ Finished writing to %s: "S'ha acabat d'escriure a "%s"."
+ I can_t write to %s, sorry: "No puc escriure a "%s", perdó."
+ I don_t understand that command, sorry: "No entenc aquesta ordre, perdó."
+ Incorrect 2FA code entered: "Introduït un codi 2FA incorrecte. L'autenticació ha fallat."
+ Invalid API key: "Clau API no vàlida!"
 warning:
  API_Rate_Limited: "Avís: Sembla que actualment l'accés a l'API %s està limitat."
  Cookies: "Nota: CIDRAM utilitza una cookie per autenticar els inicis de sessió. En iniciar sessió, doneu el vostre consentiment perquè el vostre navegador creï i emmagatzemi una cookie."

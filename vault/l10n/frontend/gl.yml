@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Galician language data for the front-end (last modified: 2024.06.11).
+# This file: Galician language data for the front-end (last modified: 2024.06.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -631,7 +631,7 @@ label:
  Only when not blocked: "Só cando non está bloqueado."
  Only when within the signature limit, and not banned (regardless of whether blocked): "Só cando está dentro do límite de sinatura, e non prohibido (sen importar se está bloqueado)."
  Operating system used: "Sistema operativo utilizado:"
- Other rules, signature files, etc: "Outras normas, ficheiros de sinatura, etc"
+ Other rules, signature files, etc: "Outras regras, ficheiros de sinatura, etc"
  Other: "Outra"
  PHP version used: "Versión PHP utilizada:"
  Page request completed in %s seconds: "Solicitude de páxina completada en %s segundos."
@@ -744,7 +744,7 @@ label:
 link:
  Accounts: "Contas"
  Aggregator: "Agregador"
- Auxiliary Rules: "Normas auxiliares"
+ Auxiliary Rules: "Regras auxiliares"
  Backup: "Copia de seguranza"
  Cache Data: "Datos da caché"
  Calculator: "Calculadora"
@@ -769,12 +769,45 @@ link:
 macro:
  Description:
   activate_modules: &MayImpactPerformance "Xeralmente non recomendado, xa que é probable que haxa algúns que non necesites. Instalar e activar compoñentes cando non son necesarios pode afectar negativamente o rendemento."
+  install_l10n_core: &RecommendKeepingCore "Cando a directiva de configuración <code>lang_override</code> está activada, se o navegador dun usuario especifica unha preferencia de idioma particular, sempre que estean instalados os datos básicos de L10N para ese idioma, CIDRAM poderá mostrar a páxina de "acceso denegado" nese idioma especificado. En consecuencia, recoméndase ter instalados todos os datos básicos de L10N."
+  install_l10n_fe: &RecommendFEOnlyNeeded "O seu idioma preferido pódese especificar mediante a directiva de configuración <code>lang</code>. Unha vez feito isto, é improbable que necesites ningún dato do front-end L10N que non sexa o para o teu idioma preferido, e é posible que queiras eliminalos para liberar marxinalmente espazo no disco dispoñible. Non obstante, se decide eliminalo ou mantelo, de calquera xeito, non debería facer ningún dano."
+  install_modules: *MayImpactPerformance
+  uninstall_l10n_core: *RecommendKeepingCore
+  uninstall_l10n_fe: *RecommendFEOnlyNeeded
+ Name:
+  activate_modules: "Activa todos os módulos."
+  activate_signatures: "Activa todos os ficheiros de sinatura."
+  deactivate_modules: "Desactiva todos os módulos."
+  deactivate_signatures: "Desactiva todos os ficheiros de sinatura."
+  install_l10n_core: "Instala todos os L10N básicos dispoñibles."
+  install_l10n_fe: "Instala todos os front-end L10N dispoñibles."
+  install_modules: "Instala todos os módulos dispoñibles."
+  install_signatures: "Instala todos os ficheiros de sinatura dispoñibles."
+  uninstall_l10n_core: "Instala todos os L10N básicos inactivos."
+  uninstall_l10n_fe: "Desinstala todos os front-end L10N inactivos."
+  uninstall_modules: "Desinstala todos os módulos inactivos."
+  uninstall_signatures: "Desinstala todos os ficheiros de sinatura inactivos."
 msg_subject_2fa: "Autenticación de dous factores"
 msg_template_2fa: |
  <center><p>Ola, %s.<br /><br />
  O teu código de autenticación de dous factores para iniciar sesión na front-end de CIDRAM:</p>
  <h1>%s</h1>
  <p>Este código caduca en 10 minutos.</p></center>
+notice_new_major_version: "Aviso: %s agora está dispoñible (está a usar %s). Cúmprese o requisito mínimo de PHP desta versión. Non obstante, son necesarios algúns pasos manuais para actualizar."
+operator_<: "Debe ser menor que (comparación numérica)."
+operator_=: "Debe ser unha coincidencia exacta (comparación directa de cadeas)."
+operator_>: "Debe ser maior que (comparación numérica)."
+operator_≅: "A expresión regular debe coincidir."
+operator_≇: "A expresión regular debe non coincidir."
+operator_≈: "Debe ser unha coincidencia aproximada (usando comodíns ao estilo de Windows)."
+operator_≉: "Debe ser non unha coincidencia aproximada (usando comodíns ao estilo de Windows)."
+operator_≠: "Debe ser non unha coincidencia exacta (comparación directa de cadeas)."
+operator_≤: "Debe ser menor ou igual a (comparación numérica)."
+operator_≥: "Debe ser maior ou igual a (comparación numérica)."
+operator_≮: "Debe ser non menor que (comparación numérica)."
+operator_≯: "Debe ser non maior que (comparación numérica)."
+operator_≰: "Debe ser non menor nin igual a (comparación numérica)."
+operator_≱: "Debe ser non maior nin igual a (comparación numérica)."
 previewer:
  Days: "Días"
  Hours: "Horas"
@@ -783,6 +816,58 @@ previewer:
  Seconds: "Segundos"
  Weeks: "Semanas"
  Years: "Anos"
+response:
+ Account successfully created: "Conta creada con éxito!"
+ Account successfully deleted: "Conta eliminouse con éxito!"
+ Added %s to tracking: "Engadiuse %s ao seguimento."
+ Already up-to-date: "Xa actualizado."
+ An account with that username already exists: "Xa existe unha conta con ese nome de usuario!"
+ An error occurred while attempting to uninstall the component: "Produciuse un erro ao tentar desinstalar o compoñente."
+ Auxiliary rule, %s, deleted successfully: "A regra auxiliar, "%s", eliminouse con éxito."
+ Auxiliary rules successfully updated: "As regras auxiliares actualizáronse con éxito."
+ Can_t fetch metadata: "Non se poden obter metadatos"
+ Can_t fetch the file: "Non se pode obter o ficheiro"
+ Can_t import from v%s data: "Non se poden importar datos desde v%s!"
+ Checksum error: "Erro de suma de verificación!"
+ Component not installed: "Compoñente non instalado!"
+ Component successfully installed: "Compoñente instalouse con éxito."
+ Component successfully uninstalled: "Compoñente desinstalouse con éxito."
+ Component successfully updated: "Compoñente actualizouse con éxito."
+ Configuration successfully updated: "Configuración actualizouse con éxito."
+ Copied: "Copiouse"
+ Directory successfully deleted: "Eliminouse o directorio con éxito!"
+ Directory successfully renamed: "O nome do directorio cambiou con éxito!"
+ Don_t know what to do with the data after reading it: "Non sei que facer cos datos despois de lelos.\nConsidera encadealo a outro comando. Grazas."
+ Error at the upstream: "Erro na upstream!"
+ Failed to access %s: "Non se puido acceder a "%s"!"
+ Failed to activate: "Fallou a activación!"
+ Failed to create: "Fallou a creación!"
+ Failed to deactivate: "Fallou a desactivación!"
+ Failed to delete any reports for %s: "Non se puido eliminar ningún informe de %s!"
+ Failed to delete: "Fallou a eliminación!"
+ Failed to execute: "Fallou a execución!"
+ Failed to import: "Fallou a importación!"
+ Failed to install: "Fallou a instalación!"
+ Failed to rename: "Non se puido cambiar o nome!"
+ Failed to report the IP address, %s: "Non se puido informar do enderezo IP, %s!"
+ Failed to update auxiliary rules: "Fallou a actualización das regras auxiliares!"
+ Failed to update configuration: "Fallou a actualización da configuración!"
+ Failed to update statistics: "Fallou a actualización das estatísticas!"
+ Failed to update tracking: "Fallou a actualización de seguimento!"
+ Failed to update: "Fallou a actualización!"
+ Failed to upload: "Fallou a carga!"
+ File contains unexpected content: "O ficheiro contén contido inesperado!"
+ File rejected: "Ficheiro rexeitado"
+ File successfully deleted: "O ficheiro eliminouse con éxito!"
+ File successfully modified: "O ficheiro modificouse con éxito!"
+ File successfully renamed: "Cambiouse o nome do ficheiro con éxito!"
+ File successfully uploaded: "O ficheiro cargouse con éxito!"
+ Finished reading from %s: "Rematou a lectura de "%s"."
+ Finished writing to %s: "Rematou de escribir en "%s"."
+ I can_t write to %s, sorry: "Non podo escribir en "%s", perdón."
+ I don_t understand that command, sorry: "Non entendo esa orde, perdón."
+ Incorrect 2FA code entered: "Introduciuse un código 2FA incorrecto. Fallou a autenticación."
+ Invalid API key: "Chave API non válida!"
 warning:
  API_Rate_Limited: "Aviso: Parece que o acceso á API %s está actualmente limitado."
  Cookies: "Nota: CIDRAM usa unha cookie para autenticar os inicios de sesión. Ao iniciar sesión, dás o teu consentimento para que o teu navegador cree e almacene unha cookie."

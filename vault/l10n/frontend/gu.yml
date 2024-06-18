@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Gujarati language data for the front-end (last modified: 2024.06.11).
+# This file: Gujarati language data for the front-end (last modified: 2024.06.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -768,12 +768,45 @@ link:
 macro:
  Description:
   activate_modules: &MayImpactPerformance "સામાન્ય રીતે ભલામણ કરવામાં આવતી નથી, કારણ કે તમને જરૂર ન હોય તેવા કેટલાક હોવાની શક્યતા છે. જ્યારે જરૂરી ન હોય ત્યારે ઘટકોને ઇન્સ્ટોલ અને સક્રિય કરવાથી પ્રભાવને નકારાત્મક અસર થઈ શકે છે."
+  install_l10n_core: &RecommendKeepingCore "જ્યારે <code>lang_override</code> રૂપરેખાંકન ડાયરેક્ટિવ સક્રિય થયેલ હોય, જો વપરાશકર્તાનું બ્રાઉઝર કોઈ ચોક્કસ ભાષાની પસંદગીનો ઉલ્લેખ કરે છે, જ્યાં સુધી તે ભાષા માટેનો કોર L10N ડેટા ઇન્સ્ટોલ કરેલ હોય, તો CIDRAM તે સ્પષ્ટ ભાષામાં "ઍક્સેસ નકારી છે" પૃષ્ઠ પ્રદર્શિત કરવામાં સક્ષમ છે. તદનુસાર, તમામ કોર L10N ડેટા ઇન્સ્ટોલ રહેવાની ભલામણ કરવામાં આવે છે."
+  install_l10n_fe: &RecommendFEOnlyNeeded "તમારી પસંદગીની ભાષા <code>lang</code> રૂપરેખાંકન નિર્દેશ દ્વારા સ્પષ્ટ કરી શકાય છે. એકવાર આ થઈ ગયા પછી, તમારે તમારી પસંદીદા ભાષા માટે તે સિવાયના કોઈપણ ફ્રન્ટ-એન્ડ L10N ડેટાની જરૂર પડવાની શક્યતા નથી, અને કેટલીક ઉપલબ્ધ ડિસ્ક જગ્યાને નજીવી રીતે ખાલી કરવા ખાતર તમે તેને દૂર કરવા માગી શકો છો. જો કે, તમે તેને દૂર કરવાનું પસંદ કરો છો અથવા તેને રાખવાનું પસંદ કરો છો, કોઈપણ રીતે, કોઈ નુકસાન ન કરવું જોઈએ."
+  install_modules: *MayImpactPerformance
+  uninstall_l10n_core: *RecommendKeepingCore
+  uninstall_l10n_fe: *RecommendFEOnlyNeeded
+ Name:
+  activate_modules: "બધા મોડ્યુલો સક્રિય કરો."
+  activate_signatures: "બધી સિગ્નેચર ફાઇલોને સક્રિય કરો."
+  deactivate_modules: "બધા મોડ્યુલો નિષ્ક્રિય કરો."
+  deactivate_signatures: "બધી સિગ્નેચર ફાઇલોને નિષ્ક્રિય કરો."
+  install_l10n_core: "બધા ઉપલબ્ધ કોર L10N ઇન્સ્ટોલ કરો."
+  install_l10n_fe: "બધા ઉપલબ્ધ ફ્રન્ટ-એન્ડ L10N ઇન્સ્ટોલ કરો."
+  install_modules: "બધા ઉપલબ્ધ મોડ્યુલો ઇન્સ્ટોલ કરો."
+  install_signatures: "બધી ઉપલબ્ધ સિગ્નેચર ફાઇલો ઇન્સ્ટોલ કરો."
+  uninstall_l10n_core: "બધા નિષ્ક્રિય કોર L10N ને અનઇન્સ્ટોલ કરો."
+  uninstall_l10n_fe: "બધા નિષ્ક્રિય ફ્રન્ટ-એન્ડ L10N ને અનઇન્સ્ટોલ કરો."
+  uninstall_modules: "બધા નિષ્ક્રિય મોડ્યુલોને અનઇન્સ્ટોલ કરો."
+  uninstall_signatures: "બધી નિષ્ક્રિય સિગ્નેચર ફાઇલોને અનઇન્સ્ટોલ કરો."
 msg_subject_2fa: "બે-પરિબળ પ્રમાણીકરણ"
 msg_template_2fa: |
  <center><p>નમસ્તે, %s.<br /><br />
  CIDRAM ફ્રન્ટ-એન્ડમાં લૉગ ઇન કરવા માટે તમારો બે-પરિબળ પ્રમાણીકરણ કોડ:</p>
  <h1>%s</h1>
  <p>આ કોડ 10 મિનિટમાં સમાપ્ત થાય છે.</p></center>
+notice_new_major_version: "સૂચના: %s હવે ઉપલબ્ધ છે (તમે %s નો ઉપયોગ કરી રહ્યા છો). આ સંસ્કરણની ન્યૂનતમ PHP આવશ્યકતાઓ પૂર્ણ થઈ છે. જો કે, અપડેટ કરવા માટે કેટલાક મેન્યુઅલ પગલાં જરૂરી છે."
+operator_<: "કરતાં ઓછી હોવી જોઈએ (સંખ્યાત્મક સરખામણી)."
+operator_=: "ચોક્કસ મેળ હોવો જોઈએ (સીધી સ્ટ્રિંગ સરખામણી)."
+operator_>: "કરતાં વધુ હોવી જોઈએ (સંખ્યાત્મક સરખામણી)."
+operator_≅: "નિયમિત અભિવ્યક્તિ મેળ ખાતી હોવી જોઈએ."
+operator_≇: "નિયમિત અભિવ્યક્તિ મેળ ખાતી હોવી જોઈએ નહીં."
+operator_≈: "અંદાજિત મેળ હોવો જોઈએ (વિન્ડોઝ-શૈલીના વાઇલ્ડકાર્ડ્સનો ઉપયોગ કરીને)."
+operator_≉: "અંદાજિત મેળ ન હોવો જોઈએ (વિન્ડોઝ-શૈલીના વાઇલ્ડકાર્ડ્સનો ઉપયોગ કરીને)."
+operator_≠: "ચોક્કસ મેળ ન હોવો જોઈએ (સીધી સ્ટ્રિંગ સરખામણી)."
+operator_≤: "કરતાં ઓછી અથવા સમાન હોવી જોઈએ (સંખ્યાત્મક સરખામણી)."
+operator_≥: "કરતા વધારે અથવા તેની સમાન હોવી જોઈએ (સંખ્યાત્મક સરખામણી)."
+operator_≮: "કરતાં ઓછી ન હોવી જોઈએ (સંખ્યાત્મક સરખામણી)."
+operator_≯: "કરતાં વધુ ન હોવી જોઈએ (સંખ્યાત્મક સરખામણી)."
+operator_≰: "કરતાં ઓછું અથવા તેની બરાબર ન હોવી જોઈએ (સંખ્યાત્મક સરખામણી)."
+operator_≱: "કરતાં વધુ અથવા તેની બરાબર ન હોવી જોઈએ (સંખ્યાત્મક સરખામણી)."
 previewer:
  Days: "દિવસ"
  Hours: "કલાક"
@@ -782,6 +815,58 @@ previewer:
  Seconds: "સેકન્ડ"
  Weeks: "અઠવાડિયા"
  Years: "વર્ષ"
+response:
+ Account successfully created: "એકાઉન્ટ સફળતાપૂર્વક બનાવ્યું!"
+ Account successfully deleted: "એકાઉન્ટ સફળતાપૂર્વક કાઢી નાખ્યું!"
+ Added %s to tracking: "ટ્રેકિંગમાં %s ઉમેર્યું."
+ Already up-to-date: "પહેલેથી જ અપ-ટૂ-ડેટ."
+ An account with that username already exists: "તે વપરાશકર્તાનામ સાથેનું એકાઉન્ટ પહેલેથી અસ્તિત્વમાં છે!"
+ An error occurred while attempting to uninstall the component: "ઘટકને અનઇન્સ્ટોલ કરવાનો પ્રયાસ કરતી વખતે એક ભૂલ આવી."
+ Auxiliary rule, %s, deleted successfully: "સહાયક નિયમ, "%s", સફળતાપૂર્વક કાઢી નાખ્યો."
+ Auxiliary rules successfully updated: "સહાયક નિયમો સફળતાપૂર્વક અપડેટ થયા."
+ Can_t fetch metadata: "મેટાડેટા મેળવી શકતાં નથી"
+ Can_t fetch the file: "ફાઇલનું મેળવી શકતાં નથી"
+ Can_t import from v%s data: "v%s ડેટામાંથી આયાત કરી શકાતું નથી!"
+ Checksum error: "ચેકસમ ભૂલ!"
+ Component not installed: "ઘટક ઇન્સ્ટોલ કરેલ નથી!"
+ Component successfully installed: "ઘટક સફળતાપૂર્વક ઇન્સ્ટોલ કર્યું."
+ Component successfully uninstalled: "ઘટક સફળતાપૂર્વક અનઇન્સ્ટોલ કર્યું."
+ Component successfully updated: "ઘટક સફળતાપૂર્વક અપડેટ થયું."
+ Configuration successfully updated: "રૂપરેખાંકન સફળતાપૂર્વક અપડેટ થયું."
+ Copied: "નકલ કરી"
+ Directory successfully deleted: "ડિરેક્ટરી સફળતાપૂર્વક કાઢી નાખી!"
+ Directory successfully renamed: "ડિરેક્ટરીનું સફળતાપૂર્વક નામ બદલ્યું!"
+ Don_t know what to do with the data after reading it: "ડેટા વાંચ્યા પછી તેનું શું કરવું તે ખબર નથી.\nતેને બીજા આદેશ સાથે સાંકળવાનું વિચારો. આભાર."
+ Error at the upstream: "અપસ્ટ્રીમ પર ભૂલ!"
+ Failed to access %s: ""%s" ને ઍક્સેસ કરવામાં નિષ્ફળ!"
+ Failed to activate: "સક્રિય કરવામાં નિષ્ફળ!"
+ Failed to create: "બનાવવામાં નિષ્ફળ!"
+ Failed to deactivate: "નિષ્ક્રિય કરવામાં નિષ્ફળ!"
+ Failed to delete any reports for %s: "%s માટે કોઈપણ અહેવાલો કાઢી નાખવામાં નિષ્ફળ!"
+ Failed to delete: "કાઢી નાખવામાં નિષ્ફળ!"
+ Failed to execute: "ચલાવવામાં નિષ્ફળ!"
+ Failed to import: "આયાત કરવામાં નિષ્ફળ!"
+ Failed to install: "ઇન્સ્ટોલ કરવામાં નિષ્ફળ!"
+ Failed to rename: "નામ બદલવામાં નિષ્ફળ!"
+ Failed to report the IP address, %s: "IP સરનામાની, %s, જાણ કરવામાં નિષ્ફળ!"
+ Failed to update auxiliary rules: "સહાયક નિયમો અપડેટ કરવામાં નિષ્ફળ!"
+ Failed to update configuration: "રૂપરેખાંકન અપડેટ કરવામાં નિષ્ફળ!"
+ Failed to update statistics: "આંકડા અપડેટ કરવામાં નિષ્ફળ!"
+ Failed to update tracking: "ટ્રેકિંગ અપડેટ કરવામાં નિષ્ફળ!"
+ Failed to update: "અપડેટ કરવામાં નિષ્ફળ!"
+ Failed to upload: "અપલોડ કરવામાં નિષ્ફળ!"
+ File contains unexpected content: "ફાઇલમાં અનપેક્ષિત સામગ્રી છે!"
+ File rejected: "ફાઇલ નકારી"
+ File successfully deleted: "ફાઇલ સફળતાપૂર્વક કાઢી નાખી!"
+ File successfully modified: "ફાઇલ સફળતાપૂર્વક સંશોધિત થઈ!"
+ File successfully renamed: "ફાઇલનું નામ સફળતાપૂર્વક બદલાયું!"
+ File successfully uploaded: "ફાઇલ સફળતાપૂર્વક અપલોડ થઈ!"
+ Finished reading from %s: ""%s" માંથી વાંચન સમાપ્ત."
+ Finished writing to %s: ""%s" પર લખવાનું સમાપ્ત કર્યું."
+ I can_t write to %s, sorry: "હું "%s" પર લખી શકતો નથી, માફ કરશો."
+ I don_t understand that command, sorry: "મને તે આદેશ સમજાયો નથી, માફ કરશો."
+ Incorrect 2FA code entered: "ખોટો 2FA કોડ દાખલ કર્યો. પ્રમાણીકરણ નિષ્ફળ થયું."
+ Invalid API key: "અમાન્ય API કી!"
 warning:
  API_Rate_Limited: "ચેતવણી: %s API ની ઍક્સેસ હાલમાં મર્યાદિત દરે લાગે છે."
  Cookies: "નૉૅધ: CIDRAM લૉગિનને પ્રમાણિત કરવા માટે કૂકીનો ઉપયોગ કરે છે. લૉગ ઇન કરીને, તમે તમારા બ્રાઉઝર દ્વારા કૂકી બનાવવા અને સંગ્રહિત કરવા માટે તમારી સંમતિ આપો છો."

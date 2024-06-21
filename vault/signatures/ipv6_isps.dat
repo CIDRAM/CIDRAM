@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6_isps.dat
 
-# Version: 2024.150.0
-# Last modified: 2024.05.30
+# Version: 2024.172.0
+# Last modified: 2024.06.21
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -242,23 +242,6 @@ Tag: Reliance Communications
 Origin: SE
 Profile: Restricted/Unidentifiable;Tor endpoints here
 Tag: Foreningen
-
-
-# ASN 8708 ("RCS & RDS SA").
-# Romanian domestic ISP. Brute-force, DDoS, XMLRPC, and webapp attacks, port
-# scans, hacking, and spam detected from here.
-# Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,375.
-# Updated: 2023.07.24
-
-2a02:2f01:7014:1900::/64 Deny Spam
-2a02:2f04:40c:8400::/64 Deny Spam
-2a02:2f05:850c:3a00::/64 Deny Spam
-2a02:2f0a:1308:3c00::/64 Deny Spam
-2a02:2f0d:a14:9f00::/64 Deny Spam
-Origin: RO
-Profile: Domestic ISP;Tor endpoints here
-Tag: RCS & RDS SA
 
 
 # ASN 8359 ("MTS PJSC").
@@ -833,8 +816,7 @@ Tag: PT Telekomunikasi Indonesia
 # ASN 263433 ("Click Fibra").
 # Brazilian fibre provider. Brute-force, SSH attacks, port scans, hacking, and
 # spam detected from here. This whole ASN appears to be affected.
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2023.07.24
+# Updated: 2023.07.24 / Checked: 2024.06.21
 
 2804:11b4::/32 Deny Attacks
 Origin: BR
@@ -842,16 +824,28 @@ Profile: Domestic ISP
 Tag: Click Fibra
 
 
+# ASN 9329 ("Sri Lanka Telecom Internet").
+# Sri Lankan telco. Brute-force, SSH, SQLi, and webapp attacks, port scans,
+# hacking, and spam detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 530.
+# Updated: 2024.06.21
+
+2402:d000:8104:3db9::/64 Deny Spam
+Origin: LK
+Profile: Domestic ISP;Mobile ISP;Multiplay
+Tag: Sri Lanka Telecom
+
+
 # ASNs 16135, 34984, 205570 ("TURKCELL ILETISIM HIZMETLERI A.S").
 # Turkish multiplay network, ISP, TV, and mobile data provider.
 # Brute-force, SSH attacks, port scans, hacking, and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 425 (AS16135), 1,604 (AS34984), 13 (AS205570).
-# Updated: 2023.07.27
+# Stop Forum Spam (SFS) listings: 391 (AS16135), 1,170 (AS34984).
+# Updated: 2024.06.21
 
-2a02:e0:5626:8100::/64 Deny Spam
-2a02:e0:b807:6200::/64 Deny Spam
-2a02:4e0:2d94:2bf6::/64 Deny Spam
+2a02:4e0:2d4c:101f::/64 Deny Spam
+2a02:4e0:2da1:df2::/64 Deny Spam
 Origin: TR
 Profile: Domestic ISP;Mobile ISP;Multiplay
 Tag: TURKCELL ILETISIM HIZMETLERI

@@ -416,3 +416,5 @@
 [2024.06.11; Maikuolan]: Added two new configuration directives, `edge` and `options`, to the BOBUAM (#601). Expired auxiliary rules will now be marked as expired when displayed at the auxiliary rules view mode page (#595).
 
 [2024.06.18; Maikuolan]: Added some missing L10N data.
+
+[2024.06.22; Maikuolan]: Singular if operations can now trigger multiple method executions.

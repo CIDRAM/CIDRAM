@@ -1,6 +1,6 @@
 CIDRAM Core:
  Name: "CIDRAM Core"
- Version: "3.6.0-DEV+241620"
+ Version: "3.6.0-DEV+241730"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Front-End: "Latest"
@@ -10,7 +10,7 @@ CIDRAM Core:
  Changelog: "https://github.com/CIDRAM/CIDRAM/blob/v3/Changelog.md"
  Release Notes For: ["3.2.0", "3.2.1", "3.3.0", "3.4.0", "3.4.1", "3.4.2", "3.5.0", "3.5.1", "3.6.0"]
  When Update Succeeds:
-  - "wpVer 4.8.0 6.5.3 3.5.1 7.2"
+  - "wpVer 4.8.0 6.5.4 3.5.1 7.2"
   - "foreach {Components.RemoteMeta.CIDRAM Core.Release Notes For} as Key => Value if {Components.Meta.CIDRAM Core.Version}<{Value}&&{Components.RemoteMeta.CIDRAM Core.Version}>={Value} then queue message response.release_notes https://github.com/CIDRAM/CIDRAM/releases/tag/v{Value} CIDRAM v{Value}"
  Uninstallable: false
  Files:
@@ -64,7 +64,7 @@ CIDRAM Core:
    Checksum: "a664eda3d3d2d8f8228acf9a67321d682d5278e7ad0dd21ae430abecfa8194d5:8247"
 CIDRAM Front-End:
  Name: "CIDRAM Front-End"
- Version: "3.6.0-DEV+241690"
+ Version: "3.6.0-DEV+241730"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "Latest"
@@ -438,7 +438,7 @@ CIDRAM Front-End:
    Checksum: "a82eba0ae5c4191f956f2ae348d839cabc18393db4d1e18ae0cda28b2d0216ca:47526"
   CIDRAM/CIDRAM/FrontEndMethods.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/FrontEndMethods.php"
-   Checksum: "2d042ffc6e1b4afa22d83443e4ba6e32faea7fab3ce41ca97bc275855f933ef3:62460"
+   Checksum: "6b4b88adf06e52c3be3a68045282368b7b4441b2b66fcd4558c911aa0dd2ae94:62671"
   CIDRAM/CIDRAM/Logs.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Logs.php"
    Checksum: "f6fda0d424624319fd6e4e1b04bdfa33612ea5670b8850f3059c4a9ca0d27ef0:21327"
@@ -726,8 +726,7 @@ l10n/core/en:
  Extended Description: "English localisation"
  Version: "2024.127.0"
  When Update Succeeds:
-  - "if {Components.Meta.l10n/core/en-US.Version}>0 then queue message <span dir="ltr" lang="en-AU">The components l10n/core/en and l10n/core/en-US have been merged.</span>"
-  - "if {Components.Meta.l10n/core/en-US.Version}>0 then updatesHandlerUninstall l10n/core/en-US"
+  - "if {Components.Meta.l10n/core/en-US.Version}>0 then updatesHandlerUninstall l10n/core/en-US;queue message <span dir="ltr" lang="en-AU">The components l10n/core/en and l10n/core/en-US have been merged.</span>"
  Uninstallable: false
  Files:
   l10n/core/en.yml:
@@ -863,8 +862,7 @@ l10n/core/pt:
  Extended Description: "Localização em português"
  Version: "2024.127.0"
  When Update Succeeds:
-  - "if {Components.Meta.l10n/core/pt-PT.Version}>0 then queue message <span dir="ltr" lang="pt-BR">Os componentes l10n/core/pt e l10n/core/pt-PT foram mesclados.</span>"
-  - "if {Components.Meta.l10n/core/pt-PT.Version}>0 then updatesHandlerUninstall l10n/core/pt-PT"
+  - "if {Components.Meta.l10n/core/pt-PT.Version}>0 then updatesHandlerUninstall l10n/core/pt-PT;queue message <span dir="ltr" lang="pt-BR">Os componentes l10n/core/pt e l10n/core/pt-PT foram mesclados.</span>"
  Files:
   l10n/core/pt.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/pt.yml"
@@ -1013,8 +1011,7 @@ l10n/frontend/en:
  Extended Description: "English localisation"
  Version: "2024.169.0"
  When Update Succeeds:
-  - "if {Components.Meta.l10n/frontend/en-US.Version}>0 then queue message <span dir="ltr" lang="en-AU">The components l10n/frontend/en and l10n/frontend/en-US have been merged.</span>"
-  - "if {Components.Meta.l10n/frontend/en-US.Version}>0 then updatesHandlerUninstall l10n/frontend/en-US"
+  - "if {Components.Meta.l10n/frontend/en-US.Version}>0 then updatesHandlerUninstall l10n/frontend/en-US;queue message <span dir="ltr" lang="en-AU">The components l10n/frontend/en and l10n/frontend/en-US have been merged.</span>"
  Uninstallable: false
  Files:
   l10n/frontend/en.yml:
@@ -1150,8 +1147,7 @@ l10n/frontend/pt:
  Extended Description: "Localização em português"
  Version: "2024.169.0"
  When Update Succeeds:
-  - "if {Components.Meta.l10n/frontend/pt-PT.Version}>0 then queue message <span dir="ltr" lang="pt-BR">Os componentes l10n/frontend/pt e l10n/frontend/pt-PT foram mesclados.</span>"
-  - "if {Components.Meta.l10n/frontend/pt-PT.Version}>0 then updatesHandlerUninstall l10n/frontend/pt-PT"
+  - "if {Components.Meta.l10n/frontend/pt-PT.Version}>0 then updatesHandlerUninstall l10n/frontend/pt-PT;queue message <span dir="ltr" lang="pt-BR">Os componentes l10n/frontend/pt e l10n/frontend/pt-PT foram mesclados.</span>"
  Files:
   l10n/frontend/pt.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/pt.yml"

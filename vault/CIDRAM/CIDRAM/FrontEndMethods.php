@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2023.12.29).
+ * This file: General methods used by the front-end (last modified: 2024.06.22).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1410,14 +1410,19 @@ trait FrontEndMethods
             /** All logic, data traversal, dot notation, etc handled here. */
             $Method = $this->CIDRAM['Operation']->ifCompare($this, $Method, true);
 
-            if (method_exists($this, $Method)) {
-                $this->{$Method}($BytesRemoved, $BytesAdded);
-            } elseif (($Pos = strpos($Method, ' ')) !== false) {
-                $Params = substr($Method, $Pos + 1);
-                $Method = substr($Method, 0, $Pos);
+            foreach (preg_split('~(?<!\\\\);~', $Method) as $Method) {
+                if ($Method === '') {
+                    continue;
+                }
                 if (method_exists($this, $Method)) {
-                    $Params = $this->CIDRAM['Operation']->ifCompare($this, $Params, true);
-                    $this->{$Method}($Params, $BytesRemoved, $BytesAdded);
+                    $this->{$Method}($BytesRemoved, $BytesAdded);
+                } elseif (($Pos = strpos($Method, ' ')) !== false) {
+                    $Params = substr($Method, $Pos + 1);
+                    $Method = substr($Method, 0, $Pos);
+                    if (method_exists($this, $Method)) {
+                        $Params = $this->CIDRAM['Operation']->ifCompare($this, $Params, true);
+                        $this->{$Method}($Params, $BytesRemoved, $BytesAdded);
+                    }
                 }
             }
         }

@@ -418,3 +418,5 @@
 [2024.06.18; Maikuolan]: Added some missing L10N data.
 
 [2024.06.22; Maikuolan]: Singular if operations can now trigger multiple method executions.
+
+[2024.06.23; Bug-fix; Maikuolan]: The file manager would sometimes list empty, duplicated components; Fixed.

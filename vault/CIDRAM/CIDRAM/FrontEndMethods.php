@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2024.06.22).
+ * This file: General methods used by the front-end (last modified: 2024.06.23).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -68,10 +68,10 @@ trait FrontEndMethods
                 if (isset($this->FE['TotalSize'])) {
                     $this->FE['TotalSize'] += $Arr[$Key]['Filesize'];
                 }
-                if (isset($this->Components['Components'])) {
+                if (isset($this->Components['Files'])) {
                     $Component = $this->L10N->getString('field.Unknown');
                     if (isset($this->Components['Files'][$Arr[$Key]['Filename']])) {
-                        $Component = $this->Components['Names'][$this->Components['Files'][$Arr[$Key]['Filename']]] ?? $this->Components['Files'][$Arr[$Key]['Filename']];
+                        $Component = $this->Components['Files'][$Arr[$Key]['Filename']];
                     } elseif (preg_match('~(?:[^|/]\.ht|\.safety$|^salt\.dat$)~i', $Arr[$Key]['Filename'])) {
                         $Component = $this->L10N->getString('label.Safety mechanisms');
                     } elseif (preg_match('~config\.yml$~i', $Arr[$Key]['Filename'])) {
@@ -87,7 +87,7 @@ trait FrontEndMethods
                     } elseif ($Arr[$Key]['Filename'] === 'installed.yml') {
                         $Component = $this->L10N->getString('label.Component updates metadata');
                     }
-                    if (!isset($this->Components['Components'][$Component])) {
+                    if (!isset($this->Components['Components'][$Component]) || !is_int($this->Components['Components'][$Component])) {
                         $this->Components['Components'][$Component] = 0;
                     }
                     $this->Components['Components'][$Component] += $Arr[$Key]['Filesize'];

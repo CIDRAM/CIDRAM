@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The file manager page (last modified: 2023.12.24).
+ * This file: The file manager page (last modified: 2024.06.23).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -25,16 +25,8 @@ if (empty($this->CIDRAM['QueryVars']['show'])) {
     $this->FE['ChartJSPath'] = '';
     $DoughnutFile = '';
 } else {
-    if (file_exists($this->AssetsPath . 'frontend/_chartjs.html')) {
-        $DoughnutFile = $this->readFile($this->AssetsPath . 'frontend/_chartjs.html');
-    } else {
-        $DoughnutFile = '<tr><td class="h4f" colspan="2"><div class="s">{DoughnutHTML}</div></td></tr>';
-    }
-    if (file_exists($this->AssetsPath . 'frontend/chart.min.js')) {
-        $this->FE['ChartJSPath'] = '?cidram-asset=chart.min.js';
-    } else {
-        $this->FE['ChartJSPath'] = '';
-    }
+    $this->FE['ChartJSPath'] = file_exists($this->AssetsPath . 'frontend/chart.min.js') ? '?cidram-asset=chart.min.js' : '';
+    $DoughnutFile = $this->readFile($this->AssetsPath . 'frontend/_chartjs.html') ?: '<tr><td class="h4f" colspan="2"><div class="s">{DoughnutHTML}</div></td></tr>';
 }
 
 /** Set vault path for doughnut display. */
@@ -56,18 +48,22 @@ if (!$DoughnutFile) {
 $this->readInstalledMetadata($this->Components['Components']);
 
 /** Identifying file component correlations. */
-foreach ($this->Components['Components'] as $ComponentName => &$ComponentData) {
+foreach ($this->Components['Components'] as $ComponentName => $ComponentData) {
+    $this->prepareName($ComponentData, $ComponentName);
+
+    /** Prevent empty, duplicated component listings. */
+    if (isset($ComponentData['Name']) && $ComponentData['Name'] !== '') {
+        if ($ComponentData['Name'] !== $ComponentName) {
+            unset($this->Components['Components'][$ComponentName]);
+        }
+    }
+
     if (isset($ComponentData['Files']) && is_array($ComponentData['Files'])) {
         foreach ($ComponentData['Files'] as $ThisFile => $FileData) {
             $ThisFile = $this->canonical($ThisFile);
-            $this->Components['Files'][$ThisFile] = $ComponentName;
+            $this->Components['Files'][$ThisFile] = $ComponentData['Name'] ?: $ComponentName;
         }
     }
-    $this->prepareName($ComponentData, $ComponentName);
-    if (isset($ComponentData['Name']) && strlen($ComponentData['Name'])) {
-        $this->Components['Names'][$ComponentName] = $ComponentData['Name'];
-    }
-    $ComponentData = 0;
 }
 
 /** Upload a new file. */
@@ -303,11 +299,7 @@ if (!$DoughnutFile) {
             $Listed .= '<ul class="comSub">';
             foreach ($ThisComponentFiles as $ThisFile => $ThisFileSize) {
                 $this->formatFileSize($ThisFileSize);
-                $Listed .= sprintf(
-                    '<li><span class="txtBl" style="font-size:0.9em">%s – %s</span></li>',
-                    $ThisFile,
-                    $ThisFileSize
-                );
+                $Listed .= sprintf('<li><span class="txtBl" style="font-size:0.9em">%s – %s</span></li>', $ThisFile, $ThisFileSize);
             }
             $Listed .= '</ul>';
         }

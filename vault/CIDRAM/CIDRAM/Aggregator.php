@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The aggregator (last modified: 2023.08.03).
+ * This file: The aggregator (last modified: 2024.06.25).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -224,13 +224,13 @@ class Aggregator
         }
         unset($InCount);
         $In = array_filter(array_unique(array_map(function ($Line) {
-            $Line = preg_replace(['~^(?:#| \*|/\*).*~', '~^[^\da-f:./]*~i', '~[ \t].*$~', '~[^\da-f:./]*$~i'], '', $Line);
+            $Line = preg_replace('~^(?:(?:#| \*|/\*).*|[^\dA-Fa-f:./]*)|(?:[ \t].*|[^\dA-Fa-f:./]*)$~', '', $Line);
             if (isset($this->callbacks['newTick']) && is_callable($this->callbacks['newTick'])) {
                 $this->callbacks['newTick']();
             }
-            return (!$Line || !preg_match('~[\da-f:./]+~i', $Line) || preg_match('~[^\da-f:./]+~i', $Line)) ? '' : $Line;
+            return ($Line === '' || preg_match('~[^\da-f:./]+~i', $Line)) ? '' : $Line;
         }, $In)));
-        usort($In, function ($A, $B) {
+        usort($In, function (string $A, string $B) {
             if (($Pos = strpos($A, '/')) !== false) {
                 $ASize = substr($A, $Pos + 1);
                 $A = substr($A, 0, $Pos);

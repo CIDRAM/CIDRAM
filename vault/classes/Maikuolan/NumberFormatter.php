@@ -1364,7 +1364,7 @@ class NumberFormatter
                     if (isset($CSet['-' . $Key])) {
                         $Digit = $CSet['-' . $Key];
                     } else {
-                        $Digit = $CSet[$Key] ?? $Key;
+                        $Digit = isset($CSet[$Key]) ? $CSet[$Key] : $Key;
                     }
                     if (isset($CSet['^-' . $Pos])) {
                         $Power = $CSet['^-' . $Pos];

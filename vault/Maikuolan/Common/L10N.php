@@ -1,6 +1,6 @@
 <?php
 /**
- * L10N handler (last modified: 2023.10.12).
+ * L10N handler (last modified: 2024.06.22).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -752,7 +752,7 @@ class L10N extends CommonAbstract
      * ISO 639-1/639-2 language code.
      * @link https://www.loc.gov/standards/iso639-2/php/code_list.php
      * @link https://cldr.unicode.org/index/cldr-spec/plural-rules
-     * @link https://www.unicode.org/cldr/charts/43/supplemental/language_plural_rules.html
+     * @link https://www.unicode.org/cldr/charts/46/supplemental/language_plural_rules.html
      *
      * @param string $Code An ISO 639-1/639-2 language code.
      * @return string An appropriate integer rule to use.

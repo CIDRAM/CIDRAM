@@ -1,6 +1,6 @@
 <?php
 /**
- * IP header class (last modified: 2023.09.14).
+ * IP header class (last modified: 2024.03.21).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -116,7 +116,7 @@ class IPHeader extends CommonAbstract
     public function trySource(string $Source): string
     {
         /** Fail immediately if the source isn't available. */
-        if (!isset($_SERVER[$Source]) || strlen($_SERVER[$Source]) === 0) {
+        if (!isset($_SERVER[$Source]) || !is_string($_SERVER[$Source]) || strlen($_SERVER[$Source]) === 0) {
             return '';
         }
 
@@ -126,6 +126,9 @@ class IPHeader extends CommonAbstract
         /** Ensure that we're working with a string. */
         if (is_array($Try)) {
             $Try = array_shift($Try);
+            if (!is_string($Try)) {
+                return '';
+            }
         }
 
         /**

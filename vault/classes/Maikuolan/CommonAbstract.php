@@ -1,6 +1,6 @@
 <?php
 /**
- * Common abstract for the common classes package (last modified: 2023.12.01).
+ * Common abstract for the common classes package (last modified: 2024.06.26).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -20,7 +20,7 @@ abstract class CommonAbstract
      * @var string Common Classes Package tag/release version.
      * @link https://github.com/Maikuolan/Common/tags
      */
-    public const VERSION = '2.12.0';
+    public const VERSION = '2.12.1';
 
     /**
      * Traverse data path.

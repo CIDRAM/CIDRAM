@@ -46,13 +46,19 @@ function nft(Number, Decimals = 0) {
   } else {
     WholeLen = Number.length;
   }
-  let ThouPos = GroupOffset;
-  for (let Unit = 0, Pos = WholeLen - 1; Pos > -1; Pos--, Unit++) {
+  for (let OddEven = 'o', Unit = 0, Pos = WholeLen - 1, ThouPos = GroupOffset; Pos > -1; Pos--, Unit++, OddEven = OddEven === 'o' ? 'e' : 'o') {
     if (ThouPos >= GroupSize) {
       ThouPos = 1;
       Formatted = GroupSeparator + Formatted;
     } else {
       ThouPos++;
+    }
+    if (Unit === 0) {
+        var Myriads = false;
+        var Hundreds = false;
+    } else {
+        var Myriads = (Unit %% 4) === 0;
+        var Hundreds = Myriads === false && (Unit %% 2) === 0;
     }
     var Key = Number.substring(Pos, Pos + 1);
     var Double = (Pos > 0) ? Number.substring(Pos - 1, Pos) + Key : '';
@@ -65,9 +71,17 @@ function nft(Number, Decimals = 0) {
     } else if (typeof ConversionSet['+' + Key] != 'undefined') {
       Digit = ConversionSet['+' + Key];
     } else {
-      Digit = (typeof ConversionSet[Key] != 'undefined') ? ConversionSet[Key] : Key;
-      if (typeof ConversionSet['^' + Unit + '*' + Key] != 'undefined') {
-        Power = ConversionSet['^' + Unit + '*' + Key];
+      Digit = (typeof ConversionSet[OddEven + Key] != 'undefined') ? ConversionSet[OddEven + Key] : (typeof ConversionSet[Key] != 'undefined') ? ConversionSet[Key] : Key;
+      if (Myriads === true && (typeof ConversionSet['Myriads'] != 'undefined')) {
+          Power = ConversionSet['Myriads'];
+          if (typeof ConversionSet['Myriads+' + Key] != 'undefined') {
+              Digit = ConversionSet['Myriads+' + Key];
+          }
+      } else if (Hundreds === true && (typeof ConversionSet['Hundreds'] != 'undefined')) {
+          Power = ConversionSet['Hundreds'];
+          if (typeof ConversionSet['Hundreds+' + Key] != 'undefined') {
+              Digit = ConversionSet['Hundreds+' + Key];
+          }
       } else if (typeof ConversionSet['^' + Unit] != 'undefined') {
         Power = ConversionSet['^' + Unit];
       }
@@ -90,9 +104,7 @@ function nft(Number, Decimals = 0) {
         } else {
           Digit = (typeof ConversionSet[Key] != 'undefined') ? ConversionSet[Key] : Key;
         }
-        if (typeof ConversionSet['^-' + Pos + '*' + Key] != 'undefined') {
-          Power = ConversionSet['^-' + Pos + '*' + Key];
-        } else if (typeof ConversionSet['^-' + Pos] != 'undefined') {
+        if (typeof ConversionSet['^-' + Pos] != 'undefined') {
           Power = ConversionSet['^-' + Pos];
         }
       }

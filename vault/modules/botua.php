@@ -239,7 +239,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         'g(?:atheranalyzeprovide|enomecrawler|dnplus|imme60|lobalipv[46]space|ooglebenjojo|tbdfffgtb.?$)|' .
         'infrawatch|internetcensus|ips-agent|isitwp|' .
         'k2spider|kemvi|' .
-        'leak\.info|lexxebot|livelapbot|lwp|' .
+        'l(?:9scan|eak(?:\.info|ix)|exxebot|ivelapbot|wp)|' .
         'm(?:acinroyprivacyauditors|asscan|etaintelligence|ultipletimes)|' .
         'n(?:etcraft|ettrapport|icebot|mapscriptingengine|rsbot)|' .
         'ontheinternet|' .
@@ -255,7 +255,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     ) || preg_match(
         '~^Mozilla/5\.0( [A-Za-z]{2,5}/0\..)?$~',
         $this->BlockInfo['UA']
-    ), 'Unauthorised'); // 2023.09.15 mod 2024.05.21
+    ), 'Unauthorised'); // 2023.09.15 mod 2024.06.27
 
     $this->trigger(preg_match(
         '~^(?:bot|java|msie|windows-live-social-object-extractor)|\\((?:java|\w:\d{2,})~',

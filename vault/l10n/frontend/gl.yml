@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Galician language data for the front-end (last modified: 2024.06.24).
+# This file: Galician language data for the front-end (last modified: 2024.06.28).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -287,7 +287,7 @@ config:
  recaptcha_usemode: *CaptchaUseMode
  sfs: "Configuración para o módulo Stop Forum Spam."
  signatures: "Configuración para as sinaturas, ficheiros de sinatura, módulos, etc."
- signatures_default_tracktime: "A duración para rastrexar os enderezos IP. Predeterminado = 7d0°0′0″ (1 semana)."
+ signatures_default_tracktime: "A duración na que se deben seguir os enderezos IP. Predeterminado = 7d0°0′0″ (1 semana)."
  signatures_infraction_limit: "Número máximo de infraccións nas que se permite incorrer nunha IP antes de ser prohibida polo seguimento IP. Predeterminado = 10."
  signatures_shorthand: "Controla que facer cunha solicitude cando hai unha coincidencia positiva cunha sinatura que utiliza as palabras abreviadas indicadas."
  signatures_tracking_override: "Permitir que os módulos anulen as opcións de seguimento? True/Verdadeiro = Si [Predeterminado]; False/Falso = Non."
@@ -361,7 +361,7 @@ field:
  Macro: "Macro"
  New name: "Novo nome:"
  Non-clickable text: "Texto que non se pode clic"
- Not tracking: "Non se está rastrexando."
+ Not tracking: "Non sendo seguido."
  Options: "Opcións"
  Password: "Contrasinal"
  Permissions: "Permisos"
@@ -421,7 +421,7 @@ hints_shorthand:
  4.: "Refírese a casos nos que as palabras abreviadas non se usan en absoluto ou non son recoñecidas polo CIDRAM."
  Un por sinatura.: "Unha sinatura pode invocar varios perfís, pero só pode usar unha palabra abreviada. É posible que varias palabras taquigráficas sexan axeitadas, pero como só se pode usar unha, tentamos utilizar sempre só as máis adecuadas."
  Prioridade.: "Unha opción seleccionada sempre ten prioridade sobre unha opción non seleccionada. Por exemplo, se hai varias palabras taquigráficas en xogo pero só unha delas se define como bloqueada, a solicitude seguirá bloqueada."
- Puntos finais humanos e servizos na nube.: "O servizo na nube pode referirse a provedores de aloxamento web, granxas de servidores, centros de datos, ou calquera outra cantidade de cousas. O punto final humano refírese aos medios polos que un humano accede a internet, como a través dun provedor de servizos de internet. Unha rede adoita ofrecer só un ou outro, pero ás veces pode proporcionar ambos. Tentamos nunca identificar os puntos finais humanos potenciais como servizos na nube. Polo tanto, un servizo na nube pode identificarse como outra cousa se o seu alcance é compartido por puntos finais humanos coñecidos. Pola contra, tentamos identificar sempre os servizos na nube, cuxos rangos non son compartidos por ningún punto final humano coñecido, como servizos na nube. Polo tanto, unha solicitude identificada explícitamente como un servizo na nube probablemente non comparta o seu rango con ningún punto final humano coñecido. Así mesmo, unha solicitude identificada explícitamente por ataques ou spam probablemente comparta os seus rangos. Dito isto, internet sempre está en constante cambio, os propósitos das redes cambian co paso do tempo, e as gamas sempre se compran ou venden, polo que permanece consciente e atento aos falsos positivos."
+ Puntos finais humanos e servizos na nube.: "O servizo na nube pode referirse a provedores de aloxamento web, granxas de servidores, centros de datos, ou calquera outra cantidade de cousas. O punto final humano refírese aos medios polos que un humano accede a internet, como a través dun provedor de servizos de internet. Unha rede adoita ofrecer só un ou outro, pero ás veces pode proporcionar ambos. Tentamos nunca identificar os puntos finais humanos potenciais como servizos na nube. Polo tanto, un servizo na nube pode identificarse como outra cousa se o seu alcance é compartido por puntos finais humanos coñecidos. Pola contra, tentamos identificar sempre os servizos na nube, cuxos rangos non son compartidos por ningún punto final humano coñecido, como servizos na nube. Polo tanto, unha solicitude identificada explícitamente como un servizo na nube probablemente non comparta o seu rango con ningún punto final humano coñecido. Así mesmo, unha solicitude identificada explícitamente por ataques ou spam probablemente comparta os seus rangos. Dito isto, internet sempre está en constante cambio, os propósitos das redes cambian co paso do tempo, e os rangos sempre se compran ou venden, polo que permanece consciente e atento aos falsos positivos."
 hints_time_format: |
  <strong><em>Marcador de posición – Explicación – Exemplo baseado en 2024-04-30T18:27:49+08:00.</em></strong><br />
  <code class="s">{yyyy}</code> – O ano – Por exemplo, 2024.<br />
@@ -631,7 +631,7 @@ label:
  Please log in to continue: "Inicia sesión para continuar."
  Preferred source: "Fonte preferida:"
  Previous: "Anterior:"
- Range tools: "Ferramentas de rango"
+ Range tools: "Ferramentas de rangos"
  Remember: "Lembra"
  Report to AbuseIPDB: "Informe a AbuseIPDB"
  Repository backup locations: "Localizacións de copia de seguranza do repositorio (en caso de emerxencia ou se todo falla):"
@@ -698,7 +698,7 @@ label:
   Suppress output template: "Desactiva o modelo de saída"
   The name of the file to run: "O nome do ficheiro a executar:"
   The reason given to the user when blocked: "O motivo indicado ao usuario cando está bloqueado:"
-  Track this rule: "Rastrexa esta regra"
+  Track this rule: "Seguir esta regra"
   Use Windows-style wildcards to test the conditions: "Use comodíns ao estilo de Windows para probar as condicións."
   Use direct string comparison to test the conditions: "Use a comparación directa de cadeas para probar as condicións."
   Use regular expressions to test the conditions: "Usa expresións regulares para probar as condicións."
@@ -731,7 +731,7 @@ label:
   Low: "Baixo"
   Medium: "Medio"
  timeout_limit: "Este módulo realiza solicitudes externas. Aquí podes especificar o límite de tempo de espera para esas solicitudes (en segundos)."
- timeout_rl: "O tempo necesario para retomar as solicitudes externas despois de limitarse a tarifa."
+ timeout_rl: "O tempo necesario para retomar as solicitudes externas despois de limitarse a taxa."
 link:
  Accounts: "Contas"
  Aggregator: "Agregador"
@@ -942,6 +942,96 @@ state_tracking:
  - "Actualmente seguindo %s enderezos IP."
 switch-descending-order-set-false: "Ordenar en orde ascendente"
 switch-descending-order-set-true: "Ordenar en orde descendente"
+switch-hide-non-outdated-set-false: "Non ocultar os non desactualizados"
+switch-hide-non-outdated-set-true: "Ocultar os non desactualizados"
+switch-hide-unused-set-false: "Non ocultar os non utilizados"
+switch-hide-unused-set-true: "Ocultar os non utilizados"
+switch-sort-by-name-set-false: "Ordenar por ID"
+switch-sort-by-name-set-true: "Ordenar por nome"
+switch-tracking-aux-set-false: "Non comprobar con regras auxiliares"
+switch-tracking-aux-set-true: "Comprobar con regras auxiliares"
+switch-tracking-blocked-already-set-false: "Non comprobar os ficheiros de sinatura"
+switch-tracking-blocked-already-set-true: "Comprobar os ficheiros de sinatura"
+switch-tracking-hide-banned-blocked-set-false: "Non ocultar IPs prohibidas/bloqueadas"
+switch-tracking-hide-banned-blocked-set-true: "Ocultar IPs prohibidas/bloqueadas"
+time_days_ago:
+ - "Hai %s día"
+ - "Hai %s días"
+time_days_from_now:
+ - "Dentro de %s día"
+ - "Dentro de %s días"
+time_hours_ago:
+ - "Hai %s hora"
+ - "Hai %s horas"
+time_hours_from_now:
+ - "Dentro de %s hora"
+ - "Dentro de %s horas"
+time_minutes_ago:
+ - "Hai %s minuto"
+ - "Hai %s minutos"
+time_minutes_from_now:
+ - "Dentro de %s minuto"
+ - "Dentro de %s minutos"
+time_months_ago:
+ - "Hai %s mes"
+ - "Hai %s meses"
+time_months_from_now:
+ - "Dentro de %s mes"
+ - "Dentro de %s meses"
+time_seconds_ago:
+ - "Hai %s segundo"
+ - "Hai %s segundos"
+time_seconds_from_now:
+ - "Dentro de %s segundo"
+ - "Dentro de %s segundos"
+time_years_ago:
+ - "Hai %s ano"
+ - "Hai %s anos"
+time_years_from_now:
+ - "Dentro de %s ano"
+ - "Dentro de %s anos"
+tip:
+ 2FA Sent: "Enviouse un correo electrónico que contén un código de autenticación de dous factores ao teu enderezo de correo electrónico. Confirma este código a continuación para acceder ao front-end. Se non recibiches este correo electrónico, proba a pechar sesión, agardar 10 minutos, e iniciar sesión de novo para recibir un novo correo electrónico que conteña un novo código."
+ Accounts: "A páxina de contas permítelle controlar quen pode acceder ao front-end de CIDRAM."
+ Aggregator: "O agregador permítelle expresar enderezos IP, CIDR, e máscaras de rede da forma máis pequena posible. Introduza os datos a agregar e prema "OK"."
+ Auxiliary Rules Priority: "Prioridade (máis alto➡(igual🔄equivalente)➡máis baixo):"
+ Auxiliary Rules Webhooks: "Cando se desencadea unha regra, CIDRAM tentará notificar a calquera webhook conectado sobre o evento."
+ Auxiliary Rules: "Podes usar esta páxina para crear, eliminar, e modificar regras auxiliares para CIDRAM."
+ Backup: "Esta páxina pódese usar para importar/exportar a súa configuración, regras auxiliares, etc. Isto pode ser útil se precisa migrar os datos entre instalacións diferentes ou versións principais diferentes."
+ Cache Data: "Aquí podes revisar o contido da caché."
+ Calculator: "A calculadora permítelle calcular os CIDR e as máscaras de rede dun enderezo IP."
+ Click the component name for more details: "Fai clic no nome do compoñente para obter máis detalles."
+ Configuration: "A páxina de configuración permítelle modificar a configuración de CIDRAM desde o front-end."
+ Enter IP here: "Introduza aquí o enderezo IP."
+ Enter IPs here: "Introduza aquí os enderezos IP."
+ Enter input here: "Introduza aquí a entrada."
+ Enter query here (optional): "Introduza a consulta aquí (opcional)."
+ Enter referrer here (optional): "Introduza o referente aquí (opcional)."
+ Enter user agent here (optional): "Introduza aquí o axente de usuario (opcional)."
+ Enter user agents here (optional): "Introduza aquí os axentes de usuario (opcional)."
+ File Manager: "O xestor de ficheiros permítelle eliminar, editar, cargar, e descargar ficheiros. Use con precaución (podería romper a súa instalación con isto)."
+ Greeting: "Ola, %s."
+ Home: "Esta é a páxina de inicio do front-end de CIDRAM. Selecciona unha ligazón no menú de navegación da esquerda para continuar."
+ How many infractions to incur: "Cantas infraccións incorrer."
+ IP Testing: "A páxina de proba de IP permítelle comprobar se os enderezos IP están bloqueados polas sinaturas instaladas actualmente."
+ IP Tracking: "A páxina de seguimento IP permítelle comprobar o estado de seguimento dos enderezos IP, para comprobar cales delas foron prohibidas, e para desprohibilas/desseguilas se queres facelo."
+ Intersector: "O intersector pódese usar para determinar os factores comúns de dous conxuntos de rangos."
+ Logs: "Seleccione un ficheiro de rexistro da lista a continuación para ver o contido dese ficheiro de rexistro."
+ Number of seconds until it expires: "Número de segundos ata que expira."
+ Numeric comparison: "Para usar a comparación numérica, seleccione a comparación directa de cadeas ou a detección automática de métodos, asegúrese de que o valor da condición sexa numérico, e prefixo co operador desexado.<br />Por exemplo, para condicións "iguais", &gt;=2 proporciona ≥2, &lt;=2 proporciona ≤2, para condicións "non iguais", &gt;=2 proporciona ≱2, &lt;=2 proporciona ≰2, etc."
+ Range Tables: "Esta páxina mostra información estatística básica sobre os rangos de IP cubertos polos ficheiros de sinatura activos actualmente."
+ Rate Limiting: "Esta páxina mostra o uso actual da cota e a dispoñibilidade no que respecta á limitación da taxa."
+ Rate limiting is currently disabled: "Nota: A limitación de taxas está actualmente desactivada, pero pódese activar a través da páxina de configuración."
+ Report to AbuseIPDB: "Esta páxina pódese usar para informar de enderezos IP a AbuseIPDB, ou para eliminar informes anteriores no caso de que se informe dun enderezo IP por erro."
+ Sections List: "Esta páxina enumera as seccións que existen nos ficheiros de sinatura activos actualmente."
+ See the documentation: "Consulte a <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external">documentación</a> para obter información sobre as distintas directivas de configuración e os seus propósitos."
+ Server log snippets, abuse details, etc: "Fragmentos de rexistro do servidor, detalles de abusos, etc."
+ Signature File Fixer: "O fixador de ficheiros de sinatura ofrece unha forma de detectar e solucionar problemas potenciais nos ficheiros de sinatura."
+ Specify a value, or leave blank to disregard: "Especifique un valor, ou déixeo en branco para ignoralo."
+ Statistics tracking is currently disabled: "Nota: O seguimento das estatísticas está actualmente desactivado, pero pódese activar a través da páxina de configuración."
+ Statistics: "Esta páxina mostra algunhas estatísticas básicas de uso sobre a súa instalación de CIDRAM."
+ Subtractor: "O restador pódese usar para restar un rango de IP/CIDR/máscara de rede doutro."
+ Updates: "A páxina de actualizacións permítelle instalar, desinstalar, e actualizar os distintos compoñentes de CIDRAM (o paquete principal, sinaturas, ficheiros de L10N, etc)."
 warning:
  API_Rate_Limited: "Aviso: Parece que o acceso á API %s está actualmente limitado."
  Cookies: "Nota: CIDRAM usa unha cookie para autenticar os inicios de sesión. Ao iniciar sesión, dás o teu consentimento para que o teu navegador cree e almacene unha cookie."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2024.06.18).
+# This file: Portuguese language data for the front-end (last modified: 2024.06.28).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -252,7 +252,7 @@ config:
  hcaptcha_lockip: &CaptchaLockIP "Ligar CAPTCHA para IPs?"
  hcaptcha_lockuser: &CaptchaLockUser {"pt-BR": "Ligar CAPTCHA para os usuários?", "pt-PT": "Ligar CAPTCHA para os utilizadores?"}
  hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "Qual código de status deve ser usado ao exibir CAPTCHAs para solicitações não bloqueadas?"
- hcaptcha_secret: &CaptchaDashboard "Esse valor pode ser encontrado no painel de seu serviço de CAPTCHA."
+ hcaptcha_secret: &CaptchaDashboard "Este valor pode ser encontrado no painel do seu serviço CAPTCHA."
  hcaptcha_show_api_message: &ShowAPIMessage "Mostrar mensagem API? True = Sim [Padrão]; False = Não."
  hcaptcha_show_cookie_warning: &ShowCookieWarning "Mostrar aviso de cookie? True = Sim [Padrão]; False = Não."
  hcaptcha_signature_limit: &CaptchaSignatureLimit "O número máximo de assinaturas permitidas antes que o CAPTCHA seja retirado. Padrão = 1."
@@ -274,7 +274,7 @@ config:
  logging_log_rotation_limit: "A rotação de log limita o número de arquivos de log que devem existir a qualquer momento. Quando novos arquivos de log são criados, se o número total de arquivos de log exceder o limite especificado, a ação especificada será executada. Você pode especificar o limite desejado aqui. Um valor de 0 desativará a rotação de log."
  logging_log_sanitisation:
   pt-BR: "Ao usar o front-end página para os arquivos de log para exibir dados de log, o CIDRAM sanitiza os dados de log antes de exibi-los, para proteger os usuários contra ataques XSS e outras ameaças potenciais que os dados de log podem conter. No entanto, por padrão, os dados não são sanitizados durante o registro. Isso é para assegurar que os dados de log sejam preservados com precisão, para auxiliar qualquer análise heurística ou forense que possa ser necessária no futuro. No entanto, no caso de um usuário tentar ler dados de log usando ferramentas externas, e se essas ferramentas externas não realizarem seu próprio processo de sanitização, o usuário pode estar exposto a ataques XSS. Se necessário, você pode alterar o comportamento padrão usando esta diretiva de configuração. True = Sanitize dados ao registrá-lo (os dados são preservados com menos precisão, mas o risco de XSS é menor). False = Não sanitize dados ao registrá-lo (os dados são preservados com mais precisão, mas o risco de XSS é maior) [Padrão]."
-  pt-PT: "Ao usar o front-end página para os arquivos de log para exibir dados de log, o CIDRAM sanitiza os dados de log antes de exibi-los, para proteger os utilizadores contra ataques XSS e outras ameaças potenciais que os dados de log podem conter. No entanto, por padrão, os dados não são sanitizados durante o registro. Isso é para assegurar que os dados de log sejam preservados com precisão, para auxiliar qualquer análise heurística ou forense que possa ser necessária no futuro. No entanto, no caso de um utilizador tentar ler dados de log usando ferramentas externas, e se essas ferramentas externas não realizarem seu próprio processo de sanitização, o usuário pode estar exposto a ataques XSS. Se necessário, você pode alterar o comportamento padrão usando esta diretiva de configuração. True = Sanitize dados ao registrá-lo (os dados são preservados com menos precisão, mas o risco de XSS é menor). False = Não sanitize dados ao registrá-lo (os dados são preservados com mais precisão, mas o risco de XSS é maior) [Padrão]."
+  pt-PT: "Ao usar o front-end página para os arquivos de log para exibir dados de log, o CIDRAM sanitiza os dados de log antes de exibi-los, para proteger os utilizadores contra ataques XSS e outras ameaças potenciais que os dados de log podem conter. No entanto, por padrão, os dados não são sanitizados durante o registro. Isso é para assegurar que os dados de log sejam preservados com precisão, para auxiliar qualquer análise heurística ou forense que possa ser necessária no futuro. No entanto, no caso de um utilizador tentar ler dados de log usando ferramentas externas, e se essas ferramentas externas não realizarem o seu próprio processo de sanitização, o usuário pode estar exposto a ataques XSS. Se necessário, você pode alterar o comportamento padrão usando esta diretiva de configuração. True = Sanitize dados ao registrá-lo (os dados são preservados com menos precisão, mas o risco de XSS é menor). False = Não sanitize dados ao registrá-lo (os dados são preservados com mais precisão, mas o risco de XSS é maior) [Padrão]."
  logging_outbound_request_log: "Um arquivo para registrar os resultados de quaisquer solicitações de saída. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
  logging_report_log: "Um arquivo para registrar quaisquer relatórios enviados para APIs externas. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
  logging_serialised_log: "Um arquivo serializado para registrar todas as tentativas de acesso bloqueadas. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
@@ -384,10 +384,10 @@ field:
  Clickable link: "Link clicável"
  Component: "Componente"
  Confirm: "Confirme"
- Create new account: "Criar Nova Conta"
+ Create new account: "Criar nova conta"
  Currently active signature files: "Arquivos de assinatura atualmente ativos"
  Deactivate: "Desativar"
- Delete account: "Deletar Conta"
+ Delete account: "Deletar conta"
  Delete: "Deletar"
  Direct input: "Insira os dados diretamente"
  Directory: "Diretório"
@@ -429,7 +429,7 @@ field:
  Update all: "Atualizar tudo"
  Update signature files: "Atualizar arquivos de assinaturas"
  Update: "Atualizar"
- Upload new file: "Carregar um novo ficheiro"
+ Upload new file: "Carregar um novo arquivo"
  Use system default timezone: "Usar o fuso horário padrão do sistema."
  Username: {"pt-BR": "Nome de usuário", "pt-PT": "Nome de utilizador"}
  Verified search engine and social media requests:
@@ -464,18 +464,22 @@ hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.pt.md\#user-content-HOW_TO_USE_PDO" hreflang="pt">O que é um "PDO DSN"? Como posso usar o PDO com o CIDRAM?</a></em>"
 hints_sensitive_pages: "Nota: O que constitui uma "página confidencial" é determinado por {{Links.ConfigRef.sensitive}}."
 hints_shorthand:
- 0.: "Se o seu site precisar de acesso via LAN ou localhost, não bloqueie isso. Caso contrário, você pode bloquear isso."
+ 0.:
+  pt-BR: "Se seu site precisar de acesso via LAN ou localhost, não bloqueie isso. Caso contrário, você pode bloquear isso."
+  pt-PT: "Se o seu site precisar de acesso via LAN ou localhost, não bloqueie isso. Caso contrário, você pode bloquear isso."
  1.:
   pt-BR: "Nenhum dos arquivos de assinatura padrão usa isso, mas é suportado mesmo assim, caso possa ser útil para alguns usuários."
   pt-PT: "Nenhum dos arquivos de assinatura padrão usa isso, mas é suportado mesmo assim, caso possa ser útil para alguns utilizadores."
  2.:
   pt-BR: "Se você precisar que os usuários possam acessar seu site por meio de proxies, não bloqueie isso. Caso contrário, você pode bloquear isso."
-  pt-PT: "Se você precisar que os utilizadores possam acessar seu site por meio de proxies, não bloqueie isso. Caso contrário, você pode bloquear isso."
+  pt-PT: "Se você precisar que os utilizadores possam acessar o seu site por meio de proxies, não bloqueie isso. Caso contrário, você pode bloquear isso."
  3.: "O uso direto em assinaturas não é suportado, mas pode ser invocado por outros meios em circunstâncias específicas."
  4.: "Refere-se aos casos em que as palavras curtas não são usadas, ou não são reconhecidas pelo CIDRAM."
  Um por assinatura.: "Uma assinatura pode invocar vários perfis, mas pode usar apenas uma palavra curta. É possível que várias palavras curtas podem ser adequadas, mas como apenas uma pode ser usada, procuramos sempre usar apenas a mais adequada."
  Prioridade.: "Uma opção selecionada sempre tem prioridade sobre uma opção não selecionada. Por exemplo, se várias palavras curtas estiverem em jogo, mas apenas uma delas estiver definida como bloqueada, a solicitação ainda será bloqueada."
- Pontos finais humanos e serviços em nuvem.: "O serviço em nuvem pode se referir a provedores de hospedagem na web, farms de servidores, data centers, ou uma série de coisas diferentes. Ponto final humano refere-se ao meio pelo qual um humano acessa a internet, como por meio de um provedor de serviços de internet. Uma rede geralmente fornece apenas um ou outro, mas às vezes pode fornecer ambos. Visamos nunca identificar pontos finais humanos potenciais como serviços em nuvem. Portanto, um serviço de nuvem pode ser identificado como outra coisa se seu alcance for compartilhado por pontos finais humanos conhecidos. Vice versa, visamos sempre identificar serviços em nuvem, cujos alcances não são compartilhados por nenhum ponto final humano conhecido, como serviços em nuvem. Portanto, uma solicitação identificada explicitamente como um serviço de nuvem provavelmente não compartilha seu alcances com nenhum pontos finais humanos conhecidos. Da mesma forma, uma solicitação identificada explicitamente por ataques ou risco de spam provavelmente os compartilha. No entanto, a internet está sempre em fluxo, os propósitos das redes mudam ao longo do tempo, e os alcances estão sempre sendo comprados ou vendidos, portanto, permaneça ciente e vigilante em relação a falsos positivos."
+ Pontos finais humanos e serviços em nuvem.:
+  pt-BR: "O serviço em nuvem pode se referir a provedores de hospedagem na web, farms de servidores, data centers, ou uma série de coisas diferentes. Ponto final humano refere-se ao meio pelo qual um humano acessa a internet, como por meio de um provedor de serviços de internet. Uma rede geralmente fornece apenas um ou outro, mas às vezes pode fornecer ambos. Visamos nunca identificar pontos finais humanos potenciais como serviços em nuvem. Portanto, um serviço de nuvem pode ser identificado como outra coisa se seu alcance for compartilhado por pontos finais humanos conhecidos. Vice versa, visamos sempre identificar serviços em nuvem, cujos alcances não são compartilhados por nenhum ponto final humano conhecido, como serviços em nuvem. Portanto, uma solicitação identificada explicitamente como um serviço de nuvem provavelmente não compartilha seu alcances com nenhum pontos finais humanos conhecidos. Da mesma forma, uma solicitação identificada explicitamente por ataques ou risco de spam provavelmente os compartilha. No entanto, a internet está sempre em fluxo, os propósitos das redes mudam ao longo do tempo, e os alcances estão sempre sendo comprados ou vendidos, portanto, permaneça ciente e vigilante em relação a falsos positivos."
+  pt-PT: "O serviço em nuvem pode se referir a provedores de hospedagem na web, farms de servidores, data centers, ou uma série de coisas diferentes. Ponto final humano refere-se ao meio pelo qual um humano acessa a internet, como por meio de um provedor de serviços de internet. Uma rede geralmente fornece apenas um ou outro, mas às vezes pode fornecer ambos. Visamos nunca identificar pontos finais humanos potenciais como serviços em nuvem. Portanto, um serviço de nuvem pode ser identificado como outra coisa se o seu alcance for compartilhado por pontos finais humanos conhecidos. Vice versa, visamos sempre identificar serviços em nuvem, cujos alcances não são compartilhados por nenhum ponto final humano conhecido, como serviços em nuvem. Portanto, uma solicitação identificada explicitamente como um serviço de nuvem provavelmente não compartilha o seu alcances com nenhum pontos finais humanos conhecidos. Da mesma forma, uma solicitação identificada explicitamente por ataques ou risco de spam provavelmente os compartilha. No entanto, a internet está sempre em fluxo, os propósitos das redes mudam ao longo do tempo, e os alcances estão sempre sendo comprados ou vendidos, portanto, permaneça ciente e vigilante em relação a falsos positivos."
 hints_time_format: |
  <strong><em>Espaço reservado – Explicação – Exemplo baseado em 2024-04-30T18:27:49+08:00.</em></strong><br />
  <code class="s">{yyyy}</code> – O ano – Por exemplo, 2024.<br />
@@ -522,10 +526,15 @@ info_cli_by_default_ips:
   --no-ov     Evita outra verificação.
   --no-aux    Evita testes contra regras auxiliares.
 info_cli_cidram_cli_mod: "CIDRAM modo CLI."
-info_cli_ipv4_ipv6_are_: |
- IPv4/IPv6 são ambos suportados. A entrada multilinha é possível para todas as
- operações do modo CLI (por exemplo, para testar vários endereços IP numa única
- operação) usando aspas, como segue:
+info_cli_ipv4_ipv6_are_:
+ pt-BR: |
+  IPv4/IPv6 são ambos suportados. A entrada multilinha é possível para todas as
+  operações do modo CLI (por exemplo, para testar vários endereços IP em uma
+  única operação) usando aspas, como segue:
+ pt-PT: |
+  IPv4/IPv6 são ambos suportados. A entrada multilinha é possível para todas as
+  operações do modo CLI (por exemplo, para testar vários endereços IP numa única
+  operação) usando aspas, como segue:
 info_cli_or_depending_o: |
  Ou, dependendo se você prefere encadear do primeiro ao último, ou do último ao
  primeiro:
@@ -536,9 +545,13 @@ info_cli_to_calculate_c: "Para calcular CIDRs de um endereço IP:"
 info_cli_to_test_whethe: "Para testar se um endereço IP está bloqueado pelo CIDRAM:"
 info_cli_to_quit_type_q: "Para sair, digite "q", "quit", ou "exit", e pressione enter."
 info_cli_you_can_also_a: "Você também pode agregar IPs e CIDRs:"
-info_cli_you_can_also_c: |
- Você também pode encadear comandos juntos (o exemplo lê alguns arquivos,
- agrega seu conteúdo, e grava os dados agregados em output.dat):
+info_cli_you_can_also_c:
+ pt-BR: |
+  Você também pode encadear comandos juntos (o exemplo lê alguns arquivos,
+  agrega seu conteúdo, e grava os dados agregados em output.dat):
+ pt-PT: |
+  Você também pode encadear comandos juntos (o exemplo lê alguns arquivos,
+  agrega o seu conteúdo, e grava os dados agregados em output.dat):
 info_cli_you_can_also_r: "Você também pode ler a partir de arquivos:"
 info_cli_you_can_also_u: |
  Você também pode usar vírgulas se quiser (isso é tratado da mesma forma que
@@ -734,8 +747,8 @@ label:
  Unignore this: "Não ignore isso"
  Values for IP tracking: "Valores para monitoração IP"
  Whitelist the request: "Trate a solicitação como na lista branca.\nRedefine o número de assinaturas desencadeadas, e aborta qualquer processamento adicional da solicitação."
- Your IP: "Seu IP:"
- Your UA: "Seu UA:"
+ Your IP: {"pt-BR": "Seu IP:", "pt-PT": "O seu IP:"}
+ Your UA: {"pt-BR": "Seu agente de usuário:", "pt-PT": "O seu agente de utilizador:"}
  aux:
   A name for the new rule: "Um nome para a nova regra:"
   Auxiliary rules triggered: "Regras auxiliares desencadeadas"
@@ -851,11 +864,17 @@ macro:
   uninstall_modules: "Desinstale todos os módulos inativos."
   uninstall_signatures: "Desinstale todos os arquivos de assinatura inativos."
 msg_subject_2fa: "Autenticação de dois fatores"
-msg_template_2fa: |
- <center><p>Olá, %s.<br /><br />
- Seu código de autenticação de dois fatores para efetuar login no front-end CIDRAM:</p>
- <h1>%s</h1>
- <p>Este código expira em 10 minutos.</p></center>
+msg_template_2fa:
+ pt-BR: |
+  <center><p>Olá, %s.<br /><br />
+  Seu código de autenticação de dois fatores para efetuar login no front-end CIDRAM:</p>
+  <h1>%s</h1>
+  <p>Este código expira em 10 minutos.</p></center>
+ pt-PT: |
+  <center><p>Olá, %s.<br /><br />
+  O seu código de autenticação de dois fatores para efetuar login no front-end CIDRAM:</p>
+  <h1>%s</h1>
+  <p>Este código expira em 10 minutos.</p></center>
 notice_new_major_version:
  pt-BR: "Aviso: %s está agora disponível (você está usando %s). Você atende aos requisitos mínimos de PHP desta versão. No entanto, algumas etapas manuais são necessárias para atualizar."
  pt-PT: "Aviso: %s está agora disponível (você usa %s). Você atende aos requisitos mínimos de PHP desta versão. No entanto, algumas etapas manuais são necessárias para atualizar."

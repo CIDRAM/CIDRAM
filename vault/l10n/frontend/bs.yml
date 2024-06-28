@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bosnian language data for the front-end (last modified: 2024.06.11).
+# This file: Bosnian language data for the front-end (last modified: 2024.06.28).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -142,6 +142,9 @@ config:
  bgpview_blocked_ccs: &ConfigBlockedCCs "Lista zemalja (identificirani prema njihovim {{Links.ISO.3166}} dvocifrenim kodovima zemalja) koja će biti blokirana kada se podudara sa modulom."
  bgpview_whitelisted_asns: &ConfigWhitelistedASNs "Lista ASN-ova koji se stavljaju na bijelu listu kada se podudara sa modulom."
  bgpview_whitelisted_ccs: &ConfigWhitelistedCCs "Lista zemalja (identificirani prema njihovim {{Links.ISO.3166}} dvocifrenim kodovima zemalja) koji se stavljaju na bijelu listu kada se podudara sa modulom."
+ bobuam: "Konfiguracija za opcioni "modul za korisničke agente botova i pretraživača", koji otkriva neželjene botove, stare pretraživače, i vrši neke provjere ispravnosti."
+ bobuam_block_bots: "Blokirati botovi prepoznati kao zlonamjerni ili neželjeni?"
+ bobuam_block_eol_browsers: "Blokirati pretraživače koji su došli do kraja života? (Postavite verzije ispod)."
  phpmailer: "Konfiguracija za PHPMailer (koristi se za dvofaktorsku autentifikaciju i za obavještenja putem e-pošte)."
  phpmailer_add_reply_to_address: "Adresa za odgovor koju treba navesti prilikom slanja e-pošte putem SMTP-a."
  phpmailer_add_reply_to_name: "Ime odgovora koje treba navesti prilikom slanja e-pošte putem SMTP-a."

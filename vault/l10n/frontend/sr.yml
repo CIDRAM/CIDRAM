@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Serbian language data for the front-end (last modified: 2024.06.11).
+# This file: Serbian language data for the front-end (last modified: 2024.06.28).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -142,6 +142,9 @@ config:
  bgpview_blocked_ccs: &ConfigBlockedCCs "Листа земаља (идентификоване по њиховим {{Links.ISO.3166}} двоцифреним кодовима земаља) које треба блокирати када их модул подудара."
  bgpview_whitelisted_asns: &ConfigWhitelistedASNs "Листа АСН-ова који се стављају на белу листу када их модул подудара."
  bgpview_whitelisted_ccs: &ConfigWhitelistedCCs "Листа земаља (идентификоване по њиховим {{Links.ISO.3166}} двоцифреним кодовима земаља) који се стављају на белу листу када их модул подудара."
+ bobuam: "Конфигурација за опциони „модул за корисничке агенте ботова и претраживача“, који открива нежељене ботове, старе претраживаче, и врши неке провере исправности."
+ bobuam_block_bots: "Блокирајте ботове препознате као злонамерне или нежељене?"
+ bobuam_block_eol_browsers: "Блокирати прегледаче који су завршили свој животни век? (Подесите верзије испод)."
  phpmailer: "Конфигурација за ПХПМаилер (користи се за двофакторску аутентификацију и за обавештења путем е-поште)."
  phpmailer_add_reply_to_address: "Адреса за одговор коју треба навести приликом слања е-поште путем СМТП-а."
  phpmailer_add_reply_to_name: "Име одговора које треба навести приликом слања е-поште путем СМТП-а."

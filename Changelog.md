@@ -422,3 +422,7 @@
 [2024.06.23; Bug-fix; Maikuolan]: The file manager would sometimes list empty, duplicated components; Fixed.
 
 [2024.06.25; Maikuolan]: A very minor performance improvement for the aggregator.
+
+[2024.06.26; Maikuolan]: Common classes package update.
+
+[2024.04~06; Maikuolan]: Added L10N for Catalan, Galician, and Gujarati.

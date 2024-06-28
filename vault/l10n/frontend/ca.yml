@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Catalan language data for the front-end (last modified: 2024.06.24).
+# This file: Catalan language data for the front-end (last modified: 2024.06.28).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -629,7 +629,7 @@ label:
  Please log in to continue: "Inicieu sessió per continuar."
  Preferred source: "Font preferida:"
  Previous: "Anterior:"
- Range tools: "Eines de gamma"
+ Range tools: "Eines de rangs"
  Remember: "Recordeu"
  Report to AbuseIPDB: "Informa a AbuseIPDB"
  Repository backup locations: "Ubicacions de còpia de seguretat del repositori (en cas d'emergència o si falla tota la resta):"
@@ -940,6 +940,96 @@ state_tracking:
  - "Actualment seguint %s adreces IP."
 switch-descending-order-set-false: "Ordena en ordre ascendent"
 switch-descending-order-set-true: "Ordena en ordre descendent"
+switch-hide-non-outdated-set-false: "No amagueu no antiquat"
+switch-hide-non-outdated-set-true: "Amagueu no antiquat"
+switch-hide-unused-set-false: "No amagueu no utilitzat"
+switch-hide-unused-set-true: "Amagueu no utilitzat"
+switch-sort-by-name-set-false: "Ordena per ID"
+switch-sort-by-name-set-true: "Ordena per nom"
+switch-tracking-aux-set-false: "No comproveu les regles auxiliars"
+switch-tracking-aux-set-true: "Comproveu les regles auxiliars"
+switch-tracking-blocked-already-set-false: "No comproveu els fitxers de signatura"
+switch-tracking-blocked-already-set-true: "Comproveu els fitxers de signatura"
+switch-tracking-hide-banned-blocked-set-false: "No amagueu IPs prohibides/bloquejades"
+switch-tracking-hide-banned-blocked-set-true: "Amagueu IPs prohibides/bloquejades"
+time_days_ago:
+ - "Fa %s dia"
+ - "Fa %s dies"
+time_days_from_now:
+ - "D'aquí a %s dia"
+ - "D'aquí a %s dies"
+time_hours_ago:
+ - "Fa %s hora"
+ - "Fa %s hores"
+time_hours_from_now:
+ - "D'aquí a %s hora"
+ - "D'aquí a %s hores"
+time_minutes_ago:
+ - "Fa %s minut"
+ - "Fa %s minuts"
+time_minutes_from_now:
+ - "D'aquí a %s minut"
+ - "D'aquí a %s minuts"
+time_months_ago:
+ - "Fa %s mes"
+ - "Fa %s mesos"
+time_months_from_now:
+ - "D'aquí a %s mes"
+ - "D'aquí a %s mesos"
+time_seconds_ago:
+ - "Fa %s segon"
+ - "Fa %s segons"
+time_seconds_from_now:
+ - "D'aquí a %s segon"
+ - "D'aquí a %s segons"
+time_years_ago:
+ - "Fa %s any"
+ - "Fa %s anys"
+time_years_from_now:
+ - "D'aquí a %s any"
+ - "D'aquí a %s anys"
+tip:
+ 2FA Sent: "S'ha enviat un correu electrònic que conté un codi d'autenticació de dos factors a la vostra adreça de correu electrònic. Si us plau, confirmeu aquest codi a continuació per accedir al front-end. Si no heu rebut aquest correu electrònic, proveu de tancar la sessió, espereu 10 minuts, i torneu a iniciar sessió per rebre un correu electrònic nou que contingui un codi nou."
+ Accounts: "La pàgina de comptes us permet controlar qui pot accedir al front-end de CIDRAM."
+ Aggregator: "L'agregador us permet expressar adreces IP, CIDR, i màscares de xarxa de la manera més petita possible. Introduïu les dades que voleu agregar i premeu "D'acord"."
+ Auxiliary Rules Priority: "Prioritat (més alt➡(igual🔄equivalent)➡més baix):"
+ Auxiliary Rules Webhooks: "Quan es desencadenen una regla, CIDRAM intentarà notificar qualsevol webhook connectat sobre l'esdeveniment."
+ Auxiliary Rules: "Podeu utilitzar aquesta pàgina per crear, suprimir, i modificar regles auxiliars per a CIDRAM."
+ Backup: "Aquesta pàgina es pot utilitzar per importar/exportar la vostra configuració, regles auxiliars, etc. Això pot ser útil si necessiteu migrar dades a diferents instal·lacions o diferents versions principals."
+ Cache Data: "Aquí podeu revisar el contingut de la memòria cau."
+ Calculator: "La calculadora us permet calcular els CIDR i les màscares de xarxa d'una adreça IP."
+ Click the component name for more details: "Feu clic al nom del component per obtenir més informació."
+ Configuration: "La pàgina de configuració us permet modificar la configuració de CIDRAM des del front-end."
+ Enter IP here: "Introduïu aquí l'adreça IP."
+ Enter IPs here: "Introduïu aquí les adreces IP."
+ Enter input here: "Introduïu aquí l'entrada."
+ Enter query here (optional): "Introduïu la consulta aquí (opcional)."
+ Enter referrer here (optional): "Introduïu el referent aquí (opcional)."
+ Enter user agent here (optional): "Introduïu l'agent d'usuari aquí (opcional)."
+ Enter user agents here (optional): "Introduïu els agents d'usuari aquí (opcional)."
+ File Manager: "El gestor de fitxers us permet suprimir, editar, carregar, i descarregar fitxers. Feu servir amb precaució (podeu trencar la vostra instal·lació amb això)."
+ Greeting: "Hola, %s."
+ Home: "Aquesta és la pàgina d'inici del front-end de CIDRAM. Seleccioneu un enllaç al menú de navegació de l'esquerra per continuar."
+ How many infractions to incur: "En quantes infraccions incórrer."
+ IP Testing: "La pàgina de proves d'IP us permet comprovar si les adreces IP estan bloquejades per les signatures instal·lades actualment."
+ IP Tracking: "La pàgina de seguiment d'IP us permet comprovar l'estat de seguiment de les adreces IP, per comprovar quins d'ells s'han prohibit, i per desprohibir-los/des·seguir-los si ho voleu fer."
+ Intersector: "La intersector es pot utilitzar per determinar els factors comuns de dos conjunts d'rangs."
+ Logs: "Seleccioneu un fitxer de registre de la llista següent per veure el contingut d'aquest fitxer de registre."
+ Number of seconds until it expires: "Nombre de segons fins que caduqui."
+ Numeric comparison: "Per utilitzar la comparació numèrica, seleccioneu la comparació directa de cadenes o la detecció automàtica de mètodes, assegureu-vos que el valor de la condició sigui numèric, i prefixeu-lo amb l'operador desitjat.<br />Per exemple, per a condicions "iguals", &gt;=2 proporciona ≥2, &lt;=2 proporciona ≤2, per a condicions "no iguals", &gt;=2 proporciona ≱2, &lt;=2 proporciona ≰2, etc."
+ Range Tables: "Aquesta pàgina mostra informació estadística bàsica sobre els rangs d'IP coberts pels fitxers de signatura actius actualment."
+ Rate Limiting: "Aquesta pàgina mostra l'ús actual de la quota i la disponibilitat pel que fa a la limitació de tarifes."
+ Rate limiting is currently disabled: "Nota: Actualment, la limitació de tarifes està desactivada, però es pot activar mitjançant la pàgina de configuració."
+ Report to AbuseIPDB: "Aquesta pàgina es pot utilitzar per informar d'adreces IP a AbuseIPDB, o per eliminar informes anteriors en cas que s'hagi informat d'una adreça IP per error."
+ Sections List: "Aquesta pàgina enumera quines seccions existeixen als fitxers de signatura actius actualment."
+ See the documentation: "Consulteu la <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external">documentació</a> per obtenir informació sobre les diferents directives de configuració i els seus propòsits."
+ Server log snippets, abuse details, etc: "Fragments de registre del servidor, detalls d'abús, etc."
+ Signature File Fixer: "El fixador de fitxers de signatura proporciona una manera de detectar i solucionar problemes potencials als fitxers de signatura."
+ Specify a value, or leave blank to disregard: "Especifiqueu un valor, o deixeu-lo en blanc per ignorar-lo."
+ Statistics tracking is currently disabled: "Nota: Actualment, el seguiment d'estadístiques està desactivat, però es pot activar mitjançant la pàgina de configuració."
+ Statistics: "Aquesta pàgina mostra algunes estadístiques bàsiques d'ús relacionades amb la vostra instal·lació de CIDRAM."
+ Subtractor: "El restador es pot utilitzar per restar un rang d'IP/CIDR/màscares de xarxa d'un altre."
+ Updates: "La pàgina d'actualitzacions us permet instal·lar, desinstal·lar, i actualitzar els diferents components de CIDRAM (el paquet bàsic, signatures, fitxers de L10N, etc)."
 warning:
  API_Rate_Limited: "Avís: Sembla que actualment l'accés a l'API %s està limitat."
  Cookies: "Nota: CIDRAM utilitza una cookie per autenticar els inicis de sessió. En iniciar sessió, doneu el vostre consentiment perquè el vostre navegador creï i emmagatzemi una cookie."

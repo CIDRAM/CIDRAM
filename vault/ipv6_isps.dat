@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6_isps.dat
 
-# Version: 2024.172.0
-# Last modified: 2024.06.21
+# Version: 2024.180.0
+# Last modified: 2024.06.29
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -242,46 +242,6 @@ Tag: Reliance Communications
 Origin: SE
 Profile: Restricted/Unidentifiable;Tor endpoints here
 Tag: Foreningen
-
-
-# ASN 8359 ("MTS PJSC").
-# Caught trying to hack WordPress sites, a significant amount of other
-# unsavoury behaviour detected, and a significant source of spam.
-# Stop Forum Spam (SFS) listings: 2,004.
-# Updated: 2023.07.29
-
-2a00:f00::/32 Deny Spam
-2a00:13fa::/36 Deny Spam
-2a00:13fb::/36 Deny Spam
-2a00:13fd::/36 Deny Spam
-2a00:1898::/36 Deny Spam
-2a00:1899::/36 Deny Spam
-2a00:189c::/32 Deny Spam
-2a00:189e::/36 Deny Spam
-2a00:189f::/36 Deny Spam
-2a00:1fa0::/29 Deny Spam
-2a00:1fc1::/36 Deny Spam
-2a00:1fc2::/36 Deny Spam
-2a00:8580::/40 Deny Spam
-2a01:8046::/36 Deny Spam
-2a02:28::/29 Deny Spam
-2a02:3f8:7::/48 Deny Spam
-2a02:5f80::/36 Deny Spam
-2a02:5f82::/36 Deny Spam
-2a02:5f85::/36 Deny Spam
-2a02:5f87::/36 Deny Spam
-2a03:6502::/36 Deny Spam
-2a03:6503::/36 Deny Spam
-2a03:6504::/36 Deny Spam
-2a03:6506::/36 Deny Spam
-2a03:7202::/36 Deny Spam
-2a03:db01::/36 Deny Spam
-2a03:db02::/36 Deny Spam
-2a03:db04::/36 Deny Spam
-2a03:db05::/36 Deny Spam
-Origin: RU
-Profile: Domestic ISP;Mobile ISP;Infrastructure/Transit;Multiplay
-Tag: MTS PJSC
 
 
 # ASN 25513 ("PJSC Moscow city telephone network").

@@ -1,16 +1,16 @@
 CIDRAM Core:
  Name: "CIDRAM Core"
- Version: "3.6.0-DEV+241770"
+ Version: "3.6.0"
  Dependencies:
   PHP: "^7.2|^8"
-  CIDRAM Front-End: "Latest"
+  CIDRAM Front-End: "^3.6"
   Common Classes Package: "^2.11"
   l10n/core/{lang}: ">=2024.127"
   l10n/frontend/{lang}: ">=2024.130"
  Changelog: "https://github.com/CIDRAM/CIDRAM/blob/v3/Changelog.md"
  Release Notes For: ["3.2.0", "3.2.1", "3.3.0", "3.4.0", "3.4.1", "3.4.2", "3.5.0", "3.5.1", "3.6.0"]
  When Update Succeeds:
-  - "wpVer 4.8.0 6.5.4 3.5.1 7.2"
+  - "wpVer 4.8.0 6.5.4 3.6.0 7.2"
   - "foreach {Components.RemoteMeta.CIDRAM Core.Release Notes For} as Key => Value if {Components.Meta.CIDRAM Core.Version}<{Value}&&{Components.RemoteMeta.CIDRAM Core.Version}>={Value} then queue message response.release_notes https://github.com/CIDRAM/CIDRAM/releases/tag/v{Value} CIDRAM v{Value}"
  Uninstallable: false
  Files:
@@ -64,10 +64,10 @@ CIDRAM Core:
    Checksum: "a664eda3d3d2d8f8228acf9a67321d682d5278e7ad0dd21ae430abecfa8194d5:8247"
 CIDRAM Front-End:
  Name: "CIDRAM Front-End"
- Version: "3.6.0-DEV+241770"
+ Version: "3.6.0"
  Dependencies:
   PHP: "^7.2|^8"
-  CIDRAM Core: "Latest"
+  CIDRAM Core: "^3.6"
   Common Classes Package: "^2.11"
   l10n/core/{lang}: ">=2024.127"
   l10n/frontend/{lang}: ">=2024.157"
@@ -732,7 +732,7 @@ l10n/core/en:
  Extended Description: "English localisation"
  Version: "2024.174.0"
  Dependencies:
-  CIDRAM Core: "^3.6.0-DEV+241730"
+  CIDRAM Core: "^3.6"
  When Update Succeeds:
   - "if {Components.Meta.l10n/core/en-US.Version}>0 then updatesHandlerUninstall l10n/core/en-US;queue message <span dir="ltr" lang="en-AU">The components l10n/core/en and l10n/core/en-US have been merged.</span>"
  Uninstallable: false
@@ -876,7 +876,7 @@ l10n/core/pt:
  Extended Description: "Localização em português"
  Version: "2024.179.0"
  Dependencies:
-  CIDRAM Core: "^3.6.0-DEV+241730"
+  CIDRAM Core: "^3.6"
  When Update Succeeds:
   - "if {Components.Meta.l10n/core/pt-PT.Version}>0 then updatesHandlerUninstall l10n/core/pt-PT;queue message <span dir="ltr" lang="pt-BR">Os componentes l10n/core/pt e l10n/core/pt-PT foram mesclados.</span>"
  Files:
@@ -1037,7 +1037,7 @@ l10n/frontend/en:
  Extended Description: "English localisation"
  Version: "2024.174.0"
  Dependencies:
-  CIDRAM Core: "^3.6.0-DEV+241730"
+  CIDRAM Core: "^3.6"
  When Update Succeeds:
   - "if {Components.Meta.l10n/frontend/en-US.Version}>0 then updatesHandlerUninstall l10n/frontend/en-US;queue message <span dir="ltr" lang="en-AU">The components l10n/frontend/en and l10n/frontend/en-US have been merged.</span>"
  Uninstallable: false
@@ -1181,7 +1181,7 @@ l10n/frontend/pt:
  Extended Description: "Localização em português"
  Version: "2024.179.0"
  Dependencies:
-  CIDRAM Core: "^3.6.0-DEV+241730"
+  CIDRAM Core: "^3.6"
  When Update Succeeds:
   - "if {Components.Meta.l10n/frontend/pt-PT.Version}>0 then updatesHandlerUninstall l10n/frontend/pt-PT;queue message <span dir="ltr" lang="pt-BR">Os componentes l10n/frontend/pt e l10n/frontend/pt-PT foram mesclados.</span>"
  Files:
@@ -1281,7 +1281,7 @@ AbuseIPDB module:
  Version: "2024.174.0"
  Dependencies:
   PHP: "^7.2|^8"
-  CIDRAM Core: "^3.6.0-DEV+241620"
+  CIDRAM Core: "^3.6"
   l10n/core/{lang}: ">=2023.357"
   l10n/frontend/{lang}: ">=2024.138"
  When Install Succeeds: ["queue message response.please_check_config"]
@@ -1334,7 +1334,7 @@ BGPView module:
  Version: "2024.174.0"
  Dependencies:
   PHP: "^7.2|^8"
-  CIDRAM Core: "^3.6.0-DEV+241620"
+  CIDRAM Core: "^3.6"
   l10n/frontend/{lang}: ">=2024.138"
  When Install Succeeds: ["queue message response.please_check_config"]
  When Update Succeeds:
@@ -1392,7 +1392,7 @@ IP-API module:
  Version: "2024.174.0"
  Dependencies:
   PHP: "^7.2|^8"
-  CIDRAM Core: "^3.6.0-DEV+241620"
+  CIDRAM Core: "^3.6"
   l10n/frontend/{lang}: ">=2024.138"
  When Install Succeeds: ["queue message response.please_check_config"]
  When Update Succeeds:
@@ -1428,7 +1428,7 @@ Project Honeypot module:
  Version: "2024.174.0"
  Dependencies:
   PHP: "^7.2|^8"
-  CIDRAM Core: "^3.6.0-DEV+241620"
+  CIDRAM Core: "^3.6"
   l10n/frontend/{lang}: ">=2024.138"
  When Install Succeeds: ["queue message response.please_check_config"]
  When Update Succeeds:
@@ -1464,7 +1464,7 @@ Stop Forum Spam module:
  Version: "2024.174.0"
  Dependencies:
   PHP: "^7.2|^8"
-  CIDRAM Core: "^3.6.0-DEV+241620"
+  CIDRAM Core: "^3.6"
   l10n/frontend/{lang}: ">=2024.138"
  When Install Succeeds: ["queue message response.please_check_config"]
  When Update Succeeds:
@@ -1484,7 +1484,7 @@ Tor blocker module:
  Version: "2024.174.0"
  Dependencies:
   PHP: "^7.2|^8"
-  CIDRAM Core: "^3.6.0-DEV+241620"
+  CIDRAM Core: "^3.6"
   l10n/frontend/{lang}: ">=2024.138"
  When Install Succeeds: ["queue message response.please_check_config"]
  When Update Succeeds: ["if {Components.Meta.Tor blocker module.Version}<2024.138&&{Components.RemoteMeta.Tor blocker module.Version}>=2024.138 then queue message <span dir="ltr" lang="en-AU">New configuration directive introduced with this update, <code>tor➡options</code></span>."]
@@ -1505,7 +1505,7 @@ BOBUAM:
  Version: "2024.174.0"
  Dependencies:
   PHP: "^7.2|^8"
-  CIDRAM Core: "^3.6.0-DEV+241620"
+  CIDRAM Core: "^3.6"
   CIDRAM Front-End: "^3"
   l10n/core/{lang}: ">=2023.258"
   l10n/frontend/{lang}: ">=2024.162"

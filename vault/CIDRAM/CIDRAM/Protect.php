@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2024.06.11).
+ * This file: Protect traits (last modified: 2024.07.02).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -89,6 +89,9 @@ trait Protect
             'Ignored' => '',
             'Request_Method' => $_SERVER['REQUEST_METHOD'] ?? '',
             'Protocol' => $_SERVER['SERVER_PROTOCOL'] ?? '',
+            'SEC_CH_UA_PLATFORM' => $_SERVER['HTTP_SEC_CH_UA_PLATFORM'] ?? '',
+            'SEC_CH_UA_MOBILE' => $_SERVER['HTTP_SEC_CH_UA_MOBILE'] ?? '',
+            'SEC_CH_UA' => $_SERVER['HTTP_SEC_CH_UA'] ?? '',
             'Inspection' => '',
             'ClientL10NAccepted' => $this->ClientL10NAccepted,
             'xmlLang' => $this->L10NAccepted
@@ -763,6 +766,9 @@ trait Protect
                 $this->addField('Ignored', 'state_ignored', $this->BlockInfo['Ignored']);
                 $this->addField('Request_Method', 'field.Request method', $this->BlockInfo['Request_Method'], true);
                 $this->addField('Protocol', 'field.Protocol', $this->BlockInfo['Protocol'], true);
+                $this->addField('SEC_CH_UA_PLATFORM', 'SEC_CH_UA_PLATFORM', $this->BlockInfo['SEC_CH_UA_PLATFORM'], true);
+                $this->addField('SEC_CH_UA_MOBILE', 'SEC_CH_UA_MOBILE', $this->BlockInfo['SEC_CH_UA_MOBILE'], true);
+                $this->addField('SEC_CH_UA', 'SEC_CH_UA', $this->BlockInfo['SEC_CH_UA'], true);
                 $this->addField('Hostname', 'field.Hostname', $this->BlockInfo['Hostname'], true);
                 $this->addField('CAPTCHA', 'field.CAPTCHA state', $this->BlockInfo['CAPTCHA']);
                 $this->addField('Inspection', 'field.Conditions inspection', $this->BlockInfo['Inspection'], false, false);

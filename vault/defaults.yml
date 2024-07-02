@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2024.07.01).
+# This file: Defaults file (last modified: 2024.07.02).
 ##/
 
 Config Defaults:
@@ -139,6 +139,12 @@ Config Defaults:
     Ignored:OmitIfEmpty
     Request_Method:ShowInLogs
     Request_Method:OmitIfEmpty
+    SEC_CH_UA_PLATFORM:ShowInLogs
+    SEC_CH_UA_PLATFORM:OmitIfEmpty
+    SEC_CH_UA_MOBILE:ShowInLogs
+    SEC_CH_UA_MOBILE:OmitIfEmpty
+    SEC_CH_UA:ShowInLogs
+    SEC_CH_UA:OmitIfEmpty
     Hostname:ShowInLogs
     Hostname:ShowInPageOutput
     Hostname:OmitIfEmpty
@@ -172,6 +178,9 @@ Config Defaults:
     Ignored: "state_ignored"
     Request_Method: "field.Request method"
     Protocol: "field.Protocol"
+    SEC_CH_UA_PLATFORM: "!! SEC_CH_UA_PLATFORM"
+    SEC_CH_UA_MOBILE: "!! SEC_CH_UA_MOBILE"
+    SEC_CH_UA: "!! SEC_CH_UA"
     Hostname: "field.Hostname"
     CAPTCHA: "field.CAPTCHA state"
     Inspection: "* {field.Conditions inspection}"
@@ -188,6 +197,7 @@ Config Defaults:
    hints:
     - "hints_inspection"
     - "hints_asnlookup"
+    - "hints_client_hints"
   timezone:
    type: "timezone"
    default: "SYSTEM"
@@ -1210,6 +1220,9 @@ Provide:
     Ignored: "state_ignored"
     Request_Method: "field.Request method"
     Protocol: "field.Protocol"
+    SEC_CH_UA_PLATFORM: "SEC_CH_UA_PLATFORM"
+    SEC_CH_UA_MOBILE: "SEC_CH_UA_MOBILE"
+    SEC_CH_UA: "SEC_CH_UA"
    Profiles: "field.Profile"
    CIDRAM:
     Hostname: "field.Hostname"
@@ -1302,6 +1315,8 @@ Links:
  IP-API: "<a href="https://ip-api.com/" dir="ltr" hreflang="en-US" rel="noopener noreferrer external">IP-API</a>"
  ISO:
   3166: "<a href="https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes" dir="ltr" hreflang="en-US" rel="nofollow noopener noreferrer external" target="_blank">ISO-3166</a>"
+ MDN:
+  Client hints: "<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-CH-UA\#browser_compatibility" dir="ltr" hreflang="en-US" rel="noopener noreferrer external">Sec-CH-UA - HTTP | MDN</a>"
  MIT: "<a href="https://opensource.org/licenses/MIT" dir="ltr" hreflang="en-US" rel="noopener noreferrer external">MIT</a>"
  PHP:
   Earth:

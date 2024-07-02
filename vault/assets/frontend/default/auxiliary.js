@@ -211,6 +211,9 @@ function getInputSuggestions(e) {
   } else if (e.value=='Verified') {
     e.parentElement.nextElementSibling.innerHTML='<small>{label.Suggestions}{pair_separator}'+verifiedSuggestions+'</small>';
     e.parentElement.nextElementSibling.className='suggestsActive';
+  } else if (e.value=='SEC_CH_UA_PLATFORM' || e.value=='SEC_CH_UA_MOBILE' || e.value=='SEC_CH_UA') {
+    e.parentElement.nextElementSibling.innerHTML='<small>{hints_client_hints}</small>';
+    e.parentElement.nextElementSibling.className='suggestsActive';
   } else {
     e.parentElement.nextElementSibling.innerHTML='';
     e.parentElement.nextElementSibling.className='suggestsInactive';

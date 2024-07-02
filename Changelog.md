@@ -426,3 +426,7 @@
 [2024.06.26; Maikuolan]: Common classes package update.
 
 [2024.04~06; Maikuolan]: Added L10N for Catalan, Galician, and Gujarati.
+
+### v3.7.0
+
+[2024.07.02; Maikuolan]: Refactored the `loadL10N` method.

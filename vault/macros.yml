@@ -39,10 +39,10 @@ deactivate_signatures:
   - "foreach {Components.Macros.Signature Files} as Key => Value if {Components.Installed Versions.{Value}}>0&&{Components.In Use.{Value}}!=0 then updatesHandlerDeactivate {Value}"
 install_l10n_core:
  On Execute:
-  - "foreach {CIDRAM.Config Defaults.general.lang.choices} as Key => Value if {Components.Available Versions.l10n/core/{Key}}>0&&{Components.Available Versions.l10n/core/{Key}}>{Components.Installed Versions.l10n/core/{Key}} then updatesHandlerUpdate l10n/core/{Key}"
+  - "foreach {CIDRAM.Config Defaults.general.lang.assume} as Key => Value if {Components.Available Versions.l10n/core/{Key}}>0&&{Components.Available Versions.l10n/core/{Key}}>{Components.Installed Versions.l10n/core/{Key}} then updatesHandlerUpdate l10n/core/{Key}"
 install_l10n_fe:
  On Execute:
-  - "foreach {CIDRAM.Config Defaults.general.lang.choices} as Key => Value if {Components.Available Versions.l10n/frontend/{Key}}>0&&{Components.Available Versions.l10n/frontend/{Key}}>{Components.Installed Versions.l10n/frontend/{Key}} then updatesHandlerUpdate l10n/frontend/{Key}"
+  - "foreach {CIDRAM.Config Defaults.general.lang.assume} as Key => Value if {Components.Available Versions.l10n/frontend/{Key}}>0&&{Components.Available Versions.l10n/frontend/{Key}}>{Components.Installed Versions.l10n/frontend/{Key}} then updatesHandlerUpdate l10n/frontend/{Key}"
 install_modules:
  On Execute:
   - "foreach {Components.Macros.Modules} as Key => Value if {Components.Available Versions.{Value}}>0&&{Components.Available Versions.{Value}}>{Components.Installed Versions.{Value}} then updatesHandlerUpdate {Value}"
@@ -51,10 +51,10 @@ install_signatures:
   - "foreach {Components.Macros.Signature Files} as Key => Value if {Components.Available Versions.{Value}}>0&&{Components.Available Versions.{Value}}>{Components.Installed Versions.{Value}} then updatesHandlerUpdate {Value}"
 uninstall_l10n_core:
  On Execute:
-  - "foreach {CIDRAM.Config Defaults.general.lang.choices} as Key => Value if {Components.Installed Versions.l10n/core/{Key}}>0&&{Components.In Use.l10n/core/{Key}}==0&&{Key}!==en then updatesHandlerUninstall l10n/core/{Key}"
+  - "foreach {CIDRAM.Config Defaults.general.lang.assume} as Key => Value if {Components.Installed Versions.l10n/core/{Key}}>0&&{Components.In Use.l10n/core/{Key}}==0&&{Key}!==en then updatesHandlerUninstall l10n/core/{Key}"
 uninstall_l10n_fe:
  On Execute:
-  - "foreach {CIDRAM.Config Defaults.general.lang.choices} as Key => Value if {Components.Installed Versions.l10n/frontend/{Key}}>0&&{Components.In Use.l10n/frontend/{Key}}==0&&{Key}!==en then updatesHandlerUninstall l10n/frontend/{Key}"
+  - "foreach {CIDRAM.Config Defaults.general.lang.assume} as Key => Value if {Components.Installed Versions.l10n/frontend/{Key}}>0&&{Components.In Use.l10n/frontend/{Key}}==0&&{Key}!==en then updatesHandlerUninstall l10n/frontend/{Key}"
 uninstall_modules:
  On Execute:
   - "foreach {Components.Macros.Modules} as Key => Value if {Components.Installed Versions.{Value}}>0&&{Components.In Use.{Value}}==0 then updatesHandlerUninstall {Value}"

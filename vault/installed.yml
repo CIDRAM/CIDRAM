@@ -1,16 +1,16 @@
 CIDRAM Core:
  Name: "CIDRAM Core"
- Version: "3.6.0"
+ Version: "3.7.0+DEV-241830"
  Dependencies:
   PHP: "^7.2|^8"
-  CIDRAM Front-End: "^3.6"
+  CIDRAM Front-End: "Latest"
   Common Classes Package: "^2.11"
   l10n/core/{lang}: ">=2024.127"
   l10n/frontend/{lang}: ">=2024.130"
  Changelog: "https://github.com/CIDRAM/CIDRAM/blob/v3/Changelog.md"
- Release Notes For: ["3.2.0", "3.2.1", "3.3.0", "3.4.0", "3.4.1", "3.4.2", "3.5.0", "3.5.1", "3.6.0"]
+ Release Notes For: ["3.2.0", "3.2.1", "3.3.0", "3.4.0", "3.4.1", "3.4.2", "3.5.0", "3.5.1", "3.6.0", "3.7.0"]
  When Update Succeeds:
-  - "wpVer 4.8.0 6.5.4 3.6.0 7.2"
+  - "wpVer 4.8.0 6.5.5 3.6.0 7.2"
   - "foreach {Components.RemoteMeta.CIDRAM Core.Release Notes For} as Key => Value if {Components.Meta.CIDRAM Core.Version}<{Value}&&{Components.RemoteMeta.CIDRAM Core.Version}>={Value} then queue message response.release_notes https://github.com/CIDRAM/CIDRAM/releases/tag/v{Value} CIDRAM v{Value}"
  Uninstallable: false
  Files:
@@ -28,7 +28,7 @@ CIDRAM Core:
    Checksum: "8bfa4d8f80d7adef8670529cd229de10682a538ae139b9af972d2cfe803476e2:4843"
   CIDRAM/CIDRAM/Core.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Core.php"
-   Checksum: "5a5d80ea3d55fb11a38ac949aac4902cbd58bdbe132da0367a9d211f4959339d:138729"
+   Checksum: "fc4c2a9cea3c7c56b473a5585887c059aecfaa355e1b5fa404cad5642279b65d:139228"
   CIDRAM/CIDRAM/Duration.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Duration.php"
    Checksum: "2407aa5cd6fa8f1bfd789d4d8e4cd37cba050dc7bb1ecc9c8387f75f14049c7c:11651"
@@ -55,7 +55,7 @@ CIDRAM Core:
    Checksum: "b62c0cf1deeb97c7ee15638f0a4102292a6bab6f0b6b1ee3a1dec7fa485c2e05:1352"
   defaults.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/defaults.yml"
-   Checksum: "979af9004561a7893052adb315eb8a9b39d7a98411e6d943cfe128d77b15058f:40175"
+   Checksum: "b9a153f1116e0796c239171617c11d983b94884bb1603535723f8fba7748fc5e:40206"
   loader.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/loader.php"
    Checksum: "4d56d0a305ceafab32ade65a0f74ad27efe50964d0e257d787a6ee7056c41880:1313"
@@ -64,10 +64,10 @@ CIDRAM Core:
    Checksum: "a664eda3d3d2d8f8228acf9a67321d682d5278e7ad0dd21ae430abecfa8194d5:8247"
 CIDRAM Front-End:
  Name: "CIDRAM Front-End"
- Version: "3.6.0"
+ Version: "3.7.0+DEV-241830"
  Dependencies:
   PHP: "^7.2|^8"
-  CIDRAM Core: "^3.6"
+  CIDRAM Core: "Latest"
   Common Classes Package: "^2.11"
   l10n/core/{lang}: ">=2024.127"
   l10n/frontend/{lang}: ">=2024.157"
@@ -453,7 +453,7 @@ CIDRAM Front-End:
    Checksum: "901c35f2af8664582f40744c90b7ef652e27a3dfa07c9868887ace5d9063d575:74843"
   macros.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/macros.yml"
-   Checksum: "05461026927df4913773fa4d080d698921c94c946f9b8a1a6a9cd12f00f49358:3489"
+   Checksum: "f0461d91fb28f18df4e4fa388d47a0f06f8809cfd9d3e346c530d028d66009f0:3485"
   pages/accounts.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/pages/accounts.php"
    Checksum: "9310d72f44a45c4ce9545e680b7c6a4b4c9c42b0e5e634236c21c12ba102f01f:8225"
@@ -477,7 +477,7 @@ CIDRAM Front-End:
    Checksum: "805466c1893799583fddf5d72aad0ee2660d7a49e9ab743cb8ee2e3ed4a28396:2193"
   pages/config.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/pages/config.php"
-   Checksum: "6d31c08f151a6fd568c4daa29e0c5b22ad2f8f77599a6f20f83d253885d480a0:43067"
+   Checksum: "d6443bad4729d17ab05eb4adc9dd3f729ea37e1a8d4c7b75f7a5688fbb184648:43057"
   pages/file-manager.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/pages/file-manager.php"
    Checksum: "6a54b155196d9afc47df40239c8b33d077e94e84f569c7b9a845403cb7a03119:16528"
@@ -516,10 +516,10 @@ CIDRAM Front-End:
    Checksum: "60f96a49000b8aa1e61afcdc84d1bd60109584c4208ca12844013bdf20c56eec:32239"
 Common Classes Package:
  Name: "Common Classes Package"
- Version: "2.12.1"
+ Version: "2.12.2+DEV-241830"
  Dependencies:
   PHP: "^7.2|^8"
- Release Notes For: ["2.10.0", "2.11.0", "2.12.0", "2.12.1"]
+ Release Notes For: ["2.10.0", "2.11.0", "2.12.0", "2.12.1", "2.12.2"]
  When Update Succeeds:
   - "foreach {Components.RemoteMeta.Common Classes Package.Release Notes For} as Key => Value if {Components.Meta.Common Classes Package.Version}<{Value}&&{Components.RemoteMeta.Common Classes Package.Version}>={Value} then queue message response.release_notes https://github.com/Maikuolan/Common/releases/tag/v{Value} Common Classes Package v{Value}"
  Uninstallable: false
@@ -547,7 +547,7 @@ Common Classes Package:
    Checksum: "3b77647c94e3900dff27e1ca0be8952bba33a7f04950ae5320d0ebc706e3c76b:5932"
   Maikuolan/Common/L10N.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/Maikuolan/Common/L10N.php"
-   Checksum: "9a1a20612a809cbeb761661bb79376b358f15231c9fac1fd4d9c939f2bbb4f34:31495"
+   Checksum: "425fe5e7d6ff4b716c34e0e56eea1a17a89c9f1ecd07ce6e06cd760746919ad6:31507"
   Maikuolan/Common/Matrix.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/Maikuolan/Common/Matrix.php"
    Checksum: "f61e7356587eab6c30a1d97f97b836abda7b90562e2bcb662f360e16aecd5f5e:9024"
@@ -958,19 +958,16 @@ l10n/core/vi:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/vi.yml"
    Checksum: "2161cd058bac1bfe381c9e00e91514a2d059524792b2b9cc13d725859a3eea02:9087"
 l10n/core/zh:
- Extended Description: "中文（简体）语言数据"
- Version: "2024.174.0"
+ Extended Description: "中文本地化"
+ Version: "2024.183.0"
+ Dependencies:
+  CIDRAM Core: "^3.6"
+ When Update Succeeds:
+  - "if {Components.Meta.l10n/core/zh-TW.Version}>0 then updatesHandlerUninstall l10n/core/zh-TW;queue message <span dir="ltr"><span lang="en-AU">[en] The components l10n/core/zh and l10n/core/zh-TW have been merged.</span> <span lang="zh-Hant">[zh-Hant] 組件 l10n/core/zh 和 l10n/core/zh-TW 已合併。</span></span>"
  Files:
   l10n/core/zh.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/zh.yml"
-   Checksum: "46c9132e0b5ae4f4425675c329c1d73a3560122f2d301344e7ce50cb91ce70c8:6783"
-l10n/core/zh-TW:
- Extended Description: "中文（傳統）語言數據"
- Version: "2024.174.0"
- Files:
-  l10n/core/zh-TW.yml:
-   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/zh-TW.yml"
-   Checksum: "96f5a385093473fb5716afb5f86eea4025b0737b4c46454fe6d0b57f6335257e:6787"
+   Checksum: "65f8bc840dc1325e6a700c1da6160f2080a1ae8bf028535049aca13b0a161a95:12436"
 l10n/frontend/af:
  Extended Description: "Afrikaanse lokalisering"
  Version: "2024.174.0"
@@ -1263,19 +1260,16 @@ l10n/frontend/vi:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/vi.yml"
    Checksum: "d8c4e63b6d8d7121ab5191b94e479cfb83d74b3500995b6fbbd4b2f3eb3a5fe4:105158"
 l10n/frontend/zh:
- Extended Description: "简体中文本地化"
- Version: "2024.174.0"
+ Extended Description: "中文本地化"
+ Version: "2024.183.0"
+ Dependencies:
+  CIDRAM Core: "^3.6"
+ When Update Succeeds:
+  - "if {Components.Meta.l10n/frontend/zh-TW.Version}>0 then updatesHandlerUninstall l10n/frontend/zh-TW;queue message <span dir="ltr"><span lang="en-AU">[en] The components l10n/frontend/zh and l10n/frontend/zh-TW have been merged.</span> <span lang="zh-Hant">[zh-Hant] 組件 l10n/frontend/zh 和 l10n/frontend/zh-TW 已合併。</span></span>"
  Files:
   l10n/frontend/zh.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/zh.yml"
-   Checksum: "4ffa87a510304168f2e50242c6a8cd60f84fc8cdd3d4f824df38d1f4778fab72:76904"
-l10n/frontend/zh-TW:
- Extended Description: "傳統中文本地化"
- Version: "2024.174.0"
- Files:
-  l10n/frontend/zh-TW.yml:
-   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/zh-TW.yml"
-   Checksum: "1b6db2bc7953e23fb03f1d9ccf91354b2645d4f247bcfa9e4d7bba7c5f648b53:76914"
+   Checksum: "43c92755980a8065300cda7c00c44fff3ec3573cca0f8a9dade1cd2a64dd57ad:149566"
 AbuseIPDB module:
  False Positive Risk: "Medium"
  Version: "2024.174.0"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2024.06.26).
+# This file: Defaults file (last modified: 2024.07.01).
 ##/
 
 Config Defaults:
@@ -360,13 +360,14 @@ Config Defaults:
     uk: "Українська"
     ur: "اردو"
     vi: "Tiếng Việt"
-    zh-CN: "中文（简体）"
-    zh-TW: "中文（傳統）"
+    zh-Hans: "中文（简体）"
+    zh-Hant: "中文（傳統）"
    defer:
     mo: "ro"
     nb: "no"
-    zh-HK: "zh-TW"
-    zh-MO: "zh-TW"
+    zh-HK: "zh-Hant"
+    zh-MO: "zh-Hant"
+    zh-TW: "zh-Hant"
    assume:
     af: "af-ZA"
     bg: "bg-BG"
@@ -407,7 +408,7 @@ Config Defaults:
     uk: "uk-UA"
     ur: "ur-PK"
     vi: "vi-VN"
-    zh: "zh-CN"
+    zh: "zh-Hans"
   lang_override:
    type: "bool"
    default: true

@@ -429,4 +429,4 @@
 
 ### v3.7.0
 
-[2024.07.02; Maikuolan]: Refactored the `loadL10N` method.
+[2024.07.02; Maikuolan]: Refactored the `loadL10N` method. Merged zh and zh-TW L10N, and dropped region designations (e.g., CN, TW) in favour of script designations (e.g., Hans, Hant).

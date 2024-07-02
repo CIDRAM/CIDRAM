@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The configuration page (last modified: 2024.05.20).
+ * This file: The configuration page (last modified: 2024.07.02).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -641,7 +641,7 @@ foreach ($this->CIDRAM['Config Defaults'] as $CatKey => $CatValue) {
             $ThisDir['Hints'] = $this->L10N->arrayFromL10nToArray($DirValue['hints']);
             foreach ($ThisDir['Hints'] as $ThisDir['HintKey'] => $ThisDir['HintValue']) {
                 if (is_int($ThisDir['HintKey'])) {
-                    $ThisDir['FieldOut'] .= sprintf("\n<br /><br />%s", $ThisDir['HintValue']);
+                    $ThisDir['FieldOut'] .= "\n<br /><br />" . $ThisDir['HintValue'];
                     continue;
                 }
                 $ThisDir['FieldOut'] .= sprintf(

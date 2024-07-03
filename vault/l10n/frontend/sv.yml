@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2024.06.18).
+# This file: Swedish language data for the front-end (last modified: 2024.07.02).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -400,6 +400,7 @@ hints_asnlookup: "** Kräver ASN-uppslagsfunktionalitet (t.ex., via IP-API-modul
 hints_aux_stats: "Obs: Om statistik för hjälpregler ska spåras kan styras från sidan för hjälpreglerna."
 hints_cause_fp: "*!! Hög sannolikhet för att orsaka falska positiva resultat på grund av %s."
 hints_cclookup: "** Kräver landskoduppslagsfunktionalitet (t.ex., via IP-API-modulen eller BGPView-modulen)."
+hints_client_hints: "!! Detta är en klienttips med låg entropi. Klienttips är en ny, experimentell webbteknik som ännu inte stöds av alla webbläsare och större klienter. <em>Ser: {{Links.MDN.Client hints}}.</em> Klienttips kan vara användbara för fingeravtryck, men eftersom de inte har allmänt stöd, bör deras närvaro i förfrågningar inte antas eller litas på (d.v.s., att blockera baserat på deras frånvaro är en dålig idé)."
 hints_client_honour: "Oavsett hur vi instruerar kunden är det viktigt att komma ihåg att vi i slutändan inte har någon kontroll över vad kunden väljer att göra, och det finns ingen garanti för att kunden kommer att respektera våra instruktioner."
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#what-can-i-use-for-default_dns" hreflang="en-AU">Vad kan jag använda för "default_dns"?</a></em>"
@@ -485,7 +486,7 @@ info_cli_you_can_also_w: "Du kan också skriva till filer såhär:"
 info_cli_you_can_print_: |
  Du kan skriva ut data till skärmen såhär (ibland användbart när du kopplar
  ihop kommandon):
-Some useful links: |
+Some useful links: |+
  Några användbara länkar:<br />
      <ul class="pieul">
        <li><span class="comCat">Verktyg, resurser, osv för CIDRAM.</span>
@@ -520,7 +521,6 @@ Some useful links: |
          </ul>
        </li>
      </ul>
-
 label:
  %s across %s file:
   - "%s över %s fil"

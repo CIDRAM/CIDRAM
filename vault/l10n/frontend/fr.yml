@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2024.06.18).
+# This file: French language data for the front-end (last modified: 2024.07.02).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -407,6 +407,7 @@ hints_asnlookup: "** La fonctionnalité de recherche ASN est nécessaire (par ex
 hints_aux_stats: "Remarque\_: Le suivi des statistiques pour les règles auxiliaires peut être contrôlé à partir de la page des règles auxiliaires."
 hints_cause_fp: "*!! Forte probabilité de provoquer des faux positifs en raison de %s."
 hints_cclookup: "** La fonctionnalité de recherche de code de pays est nécessaire (par exemple, via le module IP-API ou BGPView)."
+hints_client_hints: "!! Il s'agit d'un indice client à faible entropie. Les indice client sont une nouvelle technologie Web expérimentale qui n'est pas encore largement prise en charge par tous les navigateurs et principaux clients. <em>Voir\_: {{Links.MDN.Client hints}}.</em> Bien que les indices des clients puissent être utiles pour la prise d'empreintes digitales, comme elles ne sont pas largement prises en charge, leur présence dans les requêtes ne doit pas être supposée ni fiable (c'est-à-dire que le blocage en fonction de leur absence est une mauvaise idée)."
 hints_client_honour: "Quelle que soit la manière dont nous donnons des instructions au client, il est important de se rappeler que nous n'avons aucun contrôle sur ce que le client choisit de faire, et qu'il n'y a aucune garantie que le client honorera nos instructions."
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.fr.md\#que-puis-je-utiliser-pour-default_dns" hreflang="fr-FR">Que puis-je utiliser pour «\_default_dns\_»\_?</a></em>"
@@ -495,7 +496,7 @@ info_cli_you_can_also_w: "Vous pouvez également écrire dans des fichiers comme
 info_cli_you_can_print_: |
  Vous pouvez imprimer des données à l'écran comme ceci (parfois utile lors de
  l'enchaînement de commandes) :
-Some useful links: |
+Some useful links: |+
  Quelques liens utiles :<br />
      <ul class="pieul">
        <li><span class="comCat">Outils, ressources, etc. pour CIDRAM.</span>
@@ -530,7 +531,6 @@ Some useful links: |
          </ul>
        </li>
      </ul>
-
 label:
  %s across %s file:
   - "%s sur %s fichier"

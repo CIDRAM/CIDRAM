@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Catalan language data for the front-end (last modified: 2024.06.28).
+# This file: Catalan language data for the front-end (last modified: 2024.07.02).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -398,6 +398,7 @@ hints_asnlookup: "** Requereix la funcionalitat de cerca d'ASN (per exemple, mit
 hints_aux_stats: "Nota: Es pot controlar si cal fer un seguiment de les estadístiques de les regles auxiliars des de la pàgina de regles auxiliars."
 hints_cause_fp: "*!! Alta probabilitat de provocar falsos positius a causa de %s."
 hints_cclookup: "** Requereix la funcionalitat de cerca del codi de país (per exemple, mitjançant el mòdul IP-API o BGPView)."
+hints_client_hints: "!! Aquesta és una suggeriment del client de baixa entropia. Els suggeriments de client són una tecnologia web nova i experimental que encara no és àmpliament compatible amb tots els navegadors i clients principals. <em>Veure: {{Links.MDN.Client hints}}.</em> Els suggeriments dels clients poden ser útils per a la presa d'empremtes digitals, però com que no tenen un gran suport, la seva presència a les sol·licituds no s'ha d'assumir ni confiar en ella (és a dir, bloquejar en funció de la seva absència és una mala idea)."
 hints_client_honour: "Independentment de com donem instruccions al client, és important recordar que, en definitiva, no tenim control sobre el que el client decideix fer, i no hi ha cap garantia que el client compleixi les nostres instruccions."
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#what-can-i-use-for-default_dns" hreflang="en-AU">Què puc utilitzar per a "default_dns"?</a></em>"
@@ -477,7 +478,7 @@ info_cli_you_can_also_u: |
  dos junts):
 info_cli_you_can_also_w: "També podeu escriure als fitxers com aquest:"
 info_cli_you_can_print_: "Podeu imprimir dades a la pantalla així (de vegades útil quan encadeneu ordres):"
-Some useful links: |
+Some useful links: |+
  Alguns enllaços útils:<br />
      <ul class="pieul">
        <li><span class="comCat">Eines, recursos, etc per al CIDRAM.</span>
@@ -512,7 +513,6 @@ Some useful links: |
          </ul>
        </li>
      </ul>
-
 label:
  %s across %s file:
   - "%s en %s fitxer"

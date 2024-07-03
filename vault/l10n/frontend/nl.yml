@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2024.06.18).
+# This file: Dutch language data for the front-end (last modified: 2024.07.02).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -398,6 +398,7 @@ hints_asnlookup: "** Vereist ASN-opzoekfunctionaliteit (b.v., via de IP-API-modu
 hints_aux_stats: "Opmerking: Het bijhouden van statistieken voor aanvullende regels kan worden beheerd vanaf de pagina met aanvullende regels."
 hints_cause_fp: "*!! Grote kans op het veroorzaken van valse positieven vanwege %s."
 hints_cclookup: "** Vereist landcode-opzoekfunctionaliteit (b.v., via de IP-API-module of BGPView-module)."
+hints_client_hints: "!! Dit is een clienthint met een lage entropie. Clienthints zijn een nieuwe, experimentele webtechnologie die nog niet breed wordt ondersteund door alle browsers en grote clients. <em>Zien: {{Links.MDN.Client hints}}.</em> Clienthints kunnen nuttig zijn voor het nemen van vingerafdrukken, maar omdat ze niet breed worden ondersteund, er mag niet van worden uitgegaan of op vertrouwd dat ze aanwezig zullen zijn in verzoeken (d.w.z., blokkeren op basis van hun afwezigheid is een slecht idee)."
 hints_client_honour: "Het maakt niet uit hoe we de klant instrueren, het is belangrijk om te onthouden dat we uiteindelijk geen controle hebben over wat de klant kiest om te doen, en er is geen enkele garantie dat de klant onze instructies zal opvolgen."
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.nl.md\#wat-kan-ik-gebruiken-voor-default_dns" hreflang="nl-NL">Wat kan ik gebruiken voor "default_dns"?</a></em>"
@@ -481,7 +482,7 @@ info_cli_you_can_also_w: "U kunt ook als volgt naar bestanden schrijven:"
 info_cli_you_can_print_: |
  U kunt als volgt gegevens naar het scherm afdrukken (soms handig bij het
  koppelen van commando's):
-Some useful links: |
+Some useful links: |+
  Enkele nuttige links:<br />
      <ul class="pieul">
        <li><span class="comCat">Tools, bronnen, enz. voor CIDRAM.</span>
@@ -516,7 +517,6 @@ Some useful links: |
          </ul>
        </li>
      </ul>
-
 label:
  %s across %s file:
   - "%s over %s bestand"

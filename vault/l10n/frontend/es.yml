@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2024.06.18).
+# This file: Spanish language data for the front-end (last modified: 2024.07.02).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -398,6 +398,7 @@ hints_asnlookup: "** Requiere la funcionalidad de búsqueda de ASN (por ejemplo,
 hints_aux_stats: "Nota: Desde la página de reglas auxiliares se puede controlar si realizar un rastreo de las estadísticas de las reglas auxiliares."
 hints_cause_fp: "*!! Alta probabilidad de causar falsos positivos debido a %s."
 hints_cclookup: "** Requiere la funcionalidad de búsqueda de código de país (por ejemplo, a través del módulo IP-API o BGPView)."
+hints_client_hints: "!! Esta es una sugerencia de cliente de baja entropía. Las sugerencias de cliente son una tecnología web nueva y experimental que aún no es ampliamente compatible con todos los navegadores y clientes principales. <em>Ver: {{Links.MDN.Client hints}}.</em> Aunque las sugerencias de los clientes pueden ser útiles para la toma de huellas digitales, ya que no cuentan con un amplio soporte, no se debe asumir ni confiar en su presencia en las solicitudes (es decir, bloquear en función de su ausencia es una mala idea)."
 hints_client_honour: "Independientemente de como instruimos al cliente, es importante recordar que no tenemos control sobre lo que el cliente elige hacer, y no hay garantía de que el cliente cumplirá con nuestras instrucciones."
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.es.md\#qué-puedo-usar-para-default_dns" hreflang="es-ES">¿Qué puedo usar para "default_dns"?</a></em>"
@@ -481,7 +482,7 @@ info_cli_you_can_also_w: "También puede escribir en archivos como así:"
 info_cli_you_can_print_: |
  Puede imprimir datos en la pantalla como así (a veces útil al encadenar
  comandos):
-Some useful links: |
+Some useful links: |+
  Algunos enlaces útiles:<br />
      <ul class="pieul">
        <li><span class="comCat">Herramientas, recursos, etc. para CIDRAM.</span>
@@ -516,7 +517,6 @@ Some useful links: |
          </ul>
        </li>
      </ul>
-
 label:
  %s across %s file:
   - "%s en %s archivo"

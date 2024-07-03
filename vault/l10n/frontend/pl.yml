@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2024.06.18).
+# This file: Polish language data for the front-end (last modified: 2024.07.02).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -403,6 +403,7 @@ hints_asnlookup: "** Wymaga funkcjonalność wyszukiwania ASN (np., przez moduł
 hints_aux_stats: "Uwaga: Czy śledzić statystyki dla reguł pomocniczych, można określić na stronie reguł pomocniczych."
 hints_cause_fp: "*!! Wysokie prawdopodobieństwo spowodowania fałszywych pozytywów z powodu %s."
 hints_cclookup: "** Wymaga funkcjonalność wyszukiwania kodu kraju (np., przez moduł IP-API lub BGPView)."
+hints_client_hints: "!! To jest podpowiedź klienta o niskiej entropii. Wskazówki klienta to nowa, eksperymentalna technologia internetowa, która nie jest jeszcze powszechnie obsługiwana we wszystkich przeglądarkach i głównych klientach. <em>Widzieć: {{Links.MDN.Client hints}}.</em> Chociaż wskazówki klienta mogą być przydatne do pobierania odcisków palców, ponieważ nie są powszechnie obsługiwane, nie należy zakładać ich obecności w żądaniach ani na nich polegać (tj., blokowanie z powodu ich nieobecności jest złym pomysłem)."
 hints_client_honour: "Niezależnie od tego, jak instruujemy klienta, ważne jest aby pamiętać, że ostatecznie nie mamy kontroli nad tym, co klient zdecyduje się zrobić, i nie ma żadnej gwarancji że klient będzie przestrzegał naszych instrukcji."
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#what-can-i-use-for-default_dns" hreflang="en-AU">Czego mogę użyć dla „default_dns”?</a></em>"
@@ -486,7 +487,7 @@ info_cli_you_can_also_w: "Możesz także pisać do plików, tak jak:"
 info_cli_you_can_print_: |
  Możesz wydrukować dane na ekranie w ten sposób (czasami przydatne podczas
  łączenia poleceń):
-Some useful links: |
+Some useful links: |+
  Kilka przydatnych linków:<br />
      <ul class="pieul">
        <li><span class="comCat">Narzędzia, zasoby, itp dla CIDRAM.</span>
@@ -521,7 +522,6 @@ Some useful links: |
          </ul>
        </li>
      </ul>
-
 label:
  %s across %s file:
   - "%s w %s pliku"

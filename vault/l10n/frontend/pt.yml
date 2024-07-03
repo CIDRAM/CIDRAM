@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2024.06.28).
+# This file: Portuguese language data for the front-end (last modified: 2024.07.02).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -144,13 +144,17 @@ checkbox:
  When blocked, suppress output template: "Quando bloqueado, suprime o modelo de saída."
 config:
  abuseipdb: "Configuração para o módulo AbuseIPDB."
- abuseipdb_api_key: &EnterAPIKey "Insira sua chave de API aqui."
- abuseipdb_build_profiles_from_usage_type: "Construir perfis usando o tipo de uso retornado pela API? False = Não. True = Sim. Padrão = True."
+ abuseipdb_api_key: &EnterAPIKey {"pt-BR": "Por favor, insira sua chave de API aqui.", "pt-PT": "Por favor, insira a sua chave de API aqui."}
+ abuseipdb_build_profiles_from_usage_type:
+  pt-BR: "Construir perfis usando o tipo de uso retornado pela API? False = Não. True = Sim. Padrão = True."
+  pt-PT: "Construir perfis utilizando o tipo de uso retornado pela API? False = Não. True = Sim. Padrão = True."
  abuseipdb_max_age_in_days: "A idade máxima em dias para a qual os relatórios serão considerados ao realizar pesquisas (deve ser um número entre 1 e 365). Padrão = 365."
  abuseipdb_max_cs_for_captcha: "A pontuação máxima de confiança permitida para que os CAPTCHAs sejam veiculados (deve ser um número entre 0 e 100). Padrão = 10."
  abuseipdb_minimum_confidence_score: "A pontuação mínima de confiança necessária para que o CIDRAM bloqueie um endereço IP (deve ser um número entre 0 e 100). Padrão = 50."
  abuseipdb_minimum_total_reports: "O número mínimo de relatórios totais necessários para que o CIDRAM bloqueie um endereço IP. Padrão = 1."
- abuseipdb_report_back: "Permitir que o CIDRAM relate o mau comportamento detectado de volta ao AbuseIPDB usando sua chave de API?"
+ abuseipdb_report_back:
+  pt-BR: "Permitir que o CIDRAM relate o mau comportamento detectado de volta ao AbuseIPDB usando sua chave de API?"
+  pt-PT: "Permitir que o CIDRAM relate o mau comportamento detectado de volta ao AbuseIPDB utilizando a sua chave de API?"
  bgpview: "Configuração para o módulo BGPView (fornece um recurso de pesquisa de código de país e ASN para CIDRAM)."
  bgpview_blocked_asns: &ConfigBlockedASNs "Uma lista de ASNs a serem bloqueados quando correspondidos pelo módulo."
  bgpview_blocked_ccs: &ConfigBlockedCCs "Uma lista de países (identificados por seus códigos de país de 2 dígitos {{Links.ISO.3166}}) a serem bloqueados quando correspondidos pelo módulo."
@@ -274,7 +278,7 @@ config:
  logging_log_rotation_limit: "A rotação de log limita o número de arquivos de log que devem existir a qualquer momento. Quando novos arquivos de log são criados, se o número total de arquivos de log exceder o limite especificado, a ação especificada será executada. Você pode especificar o limite desejado aqui. Um valor de 0 desativará a rotação de log."
  logging_log_sanitisation:
   pt-BR: "Ao usar o front-end página para os arquivos de log para exibir dados de log, o CIDRAM sanitiza os dados de log antes de exibi-los, para proteger os usuários contra ataques XSS e outras ameaças potenciais que os dados de log podem conter. No entanto, por padrão, os dados não são sanitizados durante o registro. Isso é para assegurar que os dados de log sejam preservados com precisão, para auxiliar qualquer análise heurística ou forense que possa ser necessária no futuro. No entanto, no caso de um usuário tentar ler dados de log usando ferramentas externas, e se essas ferramentas externas não realizarem seu próprio processo de sanitização, o usuário pode estar exposto a ataques XSS. Se necessário, você pode alterar o comportamento padrão usando esta diretiva de configuração. True = Sanitize dados ao registrá-lo (os dados são preservados com menos precisão, mas o risco de XSS é menor). False = Não sanitize dados ao registrá-lo (os dados são preservados com mais precisão, mas o risco de XSS é maior) [Padrão]."
-  pt-PT: "Ao usar o front-end página para os arquivos de log para exibir dados de log, o CIDRAM sanitiza os dados de log antes de exibi-los, para proteger os utilizadores contra ataques XSS e outras ameaças potenciais que os dados de log podem conter. No entanto, por padrão, os dados não são sanitizados durante o registro. Isso é para assegurar que os dados de log sejam preservados com precisão, para auxiliar qualquer análise heurística ou forense que possa ser necessária no futuro. No entanto, no caso de um utilizador tentar ler dados de log usando ferramentas externas, e se essas ferramentas externas não realizarem o seu próprio processo de sanitização, o usuário pode estar exposto a ataques XSS. Se necessário, você pode alterar o comportamento padrão usando esta diretiva de configuração. True = Sanitize dados ao registrá-lo (os dados são preservados com menos precisão, mas o risco de XSS é menor). False = Não sanitize dados ao registrá-lo (os dados são preservados com mais precisão, mas o risco de XSS é maior) [Padrão]."
+  pt-PT: "Ao usar o front-end página para os arquivos de log para exibir dados de log, o CIDRAM sanitiza os dados de log antes de exibi-los, para proteger os utilizadores contra ataques XSS e outras ameaças potenciais que os dados de log podem conter. No entanto, por padrão, os dados não são sanitizados durante o registro. Isso é para assegurar que os dados de log sejam preservados com precisão, para auxiliar qualquer análise heurística ou forense que possa ser necessária no futuro. No entanto, no caso de um utilizador tentar ler dados de log utilizando ferramentas externas, e se essas ferramentas externas não realizarem o seu próprio processo de sanitização, o usuário pode estar exposto a ataques XSS. Se necessário, você pode alterar o comportamento padrão utilizando esta diretiva de configuração. True = Sanitize dados ao registrá-lo (os dados são preservados com menos precisão, mas o risco de XSS é menor). False = Não sanitize dados ao registrá-lo (os dados são preservados com mais precisão, mas o risco de XSS é maior) [Padrão]."
  logging_outbound_request_log: "Um arquivo para registrar os resultados de quaisquer solicitações de saída. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
  logging_report_log: "Um arquivo para registrar quaisquer relatórios enviados para APIs externas. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
  logging_serialised_log: "Um arquivo serializado para registrar todas as tentativas de acesso bloqueadas. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
@@ -421,7 +425,9 @@ field:
  Set new password: "Definir nova senha"
  Status: "Estado"
  Time of attack (if unknown, use current time): "A hora do ataque (se desconhecido, use a hora atual)"
- Timezone (defaults to your local time): "Fuso horário (o padrão é sua hora local)"
+ Timezone (defaults to your local time):
+  pt-BR: "Fuso horário (o padrão é sua hora local)"
+  pt-PT: "Fuso horário (o padrão é a sua hora local)"
  Tracking: "Monitoração"
  True (True): "True (Verdadeiro)"
  Uninstall: "Desinstalar"
@@ -438,7 +444,7 @@ field:
  Verify all: "Verifique tudo"
  Verify: "Verifique isso"
  Whitelisted requests: "Solicitações marcadas como na lista branca"
- Your version: "Sua versão"
+ Your version: {"pt-BR": "Sua versão", "pt-PT": "A sua versão"}
  log_rotation_archive: "Primeiramente arquivar, e então deletar os arquivos de log mais antigos, até o limite não seja mais excedido."
  log_rotation_delete: "Deletar os arquivos de log mais antigos, até o limite não seja mais excedido."
  size: {"Total size": "Tamanho total:"}
@@ -446,6 +452,9 @@ hints_asnlookup: "** Requer funcionalidade de pesquisa ASN (por exemplo, atravé
 hints_aux_stats: "Nota: O rastreamento de estatísticas para regras auxiliares pode ser controlado na página de regras auxiliares."
 hints_cause_fp: "*!! Alta probabilidade de causar falsos positivos devido a %s."
 hints_cclookup: "** Requer funcionalidade de pesquisa de código de país (por exemplo, através do módulo IP-API ou BGPView)."
+hints_client_hints:
+ pt-BR: "!! Esta é uma dica do cliente de baixa entropia. As dicas de cliente são uma tecnologia web nova e experimental que ainda não é amplamente suportada em todos os navegadores e principais clientes. <em>Ver: {{Links.MDN.Client hints}}.</em> Embora as dicas do cliente possam ser úteis para impressão digital, já que não são amplamente suportadas, sua presença nas solicitações não deve ser assumida nem confiável. (ou seja, bloquear com base na ausência é uma má ideia)."
+ pt-PT: "!! Esta é uma dica do cliente de baixa entropia. As dicas de cliente são uma tecnologia web nova e experimental que ainda não é amplamente suportada em todos os navegadores e principais clientes. <em>Ver: {{Links.MDN.Client hints}}.</em> Embora as dicas do cliente possam ser úteis para a impressão digital, já que não são amplamente suportadas, a sua presença nos solicitações não deve ser assumida nem confiável. (i.e., bloquear com base na ausência é uma má ideia)."
 hints_client_honour: "Independentemente de como instruímos o cliente, é importante lembrar que não temos controle sobre o que o cliente escolhe fazer, e não há garantia de que o cliente honrará nossas instruções."
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.pt.md\#o-que-posso-usar-para-default_dns" hreflang="pt">O que posso usar para "default_dns"?</a></em>"
@@ -534,7 +543,7 @@ info_cli_ipv4_ipv6_are_:
  pt-PT: |
   IPv4/IPv6 são ambos suportados. A entrada multilinha é possível para todas as
   operações do modo CLI (por exemplo, para testar vários endereços IP numa única
-  operação) usando aspas, como segue:
+  operação) utilizando aspas, como segue:
 info_cli_or_depending_o: |
  Ou, dependendo se você prefere encadear do primeiro ao último, ou do último ao
  primeiro:
@@ -560,7 +569,7 @@ info_cli_you_can_also_w: "Você também pode gravar em arquivos:"
 info_cli_you_can_print_:
  pt-BR: "Você pode imprimir dados na tela (às vezes útil ao encadear comandos):"
  pt-PT: "Você pode imprimir dados na ecrã (às vezes útil ao encadear comandos):"
-Some useful links: |
+Some useful links: |+
  Alguns links úteis:<br />
      <ul class="pieul">
        <li><span class="comCat">Ferramentas, recursos, etc para o CIDRAM.</span>
@@ -595,7 +604,6 @@ Some useful links: |
          </ul>
        </li>
      </ul>
-
 label:
  %s across %s file:
   - "%s em %s arquivo"
@@ -1158,4 +1166,6 @@ warning:
  This account is not using a valid password:
   pt-BR: "Atenção: Esta conta não está usando uma senha válida!"
   pt-PT: "Atenção: Esta conta não usa uma senha válida!"
- Using the default password: "Atenção: Usando a senha padrão!"
+ Using the default password:
+  pt-BR: "Atenção: Usando a senha padrão!"
+  pt-PT: "Atenção: Utilizando a senha padrão!"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2024.06.18).
+# This file: Korean language data for the front-end (last modified: 2024.07.02).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -400,6 +400,7 @@ hints_asnlookup: "** ASN 조회 기능이 필요합니다 (예\_: IP-API 또는 
 hints_aux_stats: "참고\_: 보조 규칙에 대한 통계를 추적할지 여부는 보조 규칙 페이지에서 제어할 수 있습니다."
 hints_cause_fp: "*!! %s로 인해 오탐이 발생할 가능성이 높습니다."
 hints_cclookup: "** 국가 코드 조회 기능이 필요합니다 (예\_: IP-API 또는 BGPView 모듈을 통해)."
+hints_client_hints: "!! 이는 낮은 엔트로피 클라이언트 힌트입니다. 클라이언트 힌트는 새로운 실험적 웹 기술이지만 아직 모든 브라우저와 주요 클라이언트에서 널리 지원되지는 않습니다. <em>보다\_: {{Links.MDN.Client hints}}.</em> 클라이언트 힌트는 핑거프린팅에 유용할 수 있지만 광범위하게 지원되지 않으므로 요청에 클라이언트 힌트가 있다고 가정하거나 의존해서는 안 됩니다 (즉, 부재를 기준으로 차단하는 것은 나쁜 생각입니다)."
 hints_client_honour: "우리가 고객에게 지시하는 방법에 상관없이, 궁극적으로 고객이 선택하는 것을 제어할 수 없으며 고객이 우리의 지시를 존중할 것이라는 보장이 전혀 없다는 점을 기억하는 것이 중요합니다."
 hints_default_dns:
  자주하는 질문.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.ko.md\#default_dns에-사용할-수있는-항목은-무엇입니까" hreflang="ko-KR">"default_dns"에 사용할 수있는 항목은 무엇입니까?</a></em>"
@@ -480,7 +481,7 @@ info_cli_you_can_also_u: |
  마십시오) :
 info_cli_you_can_also_w: "파일에 쓸 수 있습니다\_:"
 info_cli_you_can_print_: "화면에 데이터를 인쇄할 수 있습니다 (때로는 명령을 연결할 때 유용함)\_:"
-Some useful links: |
+Some useful links: |+
  유용한 링크 :<br />
      <ul class="pieul">
        <li><span class="comCat">CIDRAM을위한 도구, 리소스, 등.</span>
@@ -515,7 +516,6 @@ Some useful links: |
          </ul>
        </li>
      </ul>
-
 label:
  %s across %s file: "%2$s 개 파일에 %1$s"
  %s is available (%s): "%s를 사용할 수 있습니다 (%s)."

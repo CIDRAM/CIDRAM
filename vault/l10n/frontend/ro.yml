@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Romanian language data for the front-end (last modified: 2024.06.18).
+# This file: Romanian language data for the front-end (last modified: 2024.07.02).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -408,6 +408,7 @@ hints_asnlookup: "** Necesită funcționalitatea de căutare ASN (de exemplu, pr
 hints_aux_stats: "Notă: Dacă să urmăriți statisticile pentru regulile auxiliare poate fi controlat din pagina cu regulile auxiliare."
 hints_cause_fp: "*!! Probabilitate mare de a provoca fals pozitive din cauza %s."
 hints_cclookup: "** Necesită funcționalitatea de căutare a codului de țară (de exemplu, prin modulele pentru IP-API sau BGPView)."
+hints_client_hints: "!! Acesta este un indiciu de client cu entropie scăzută. Indiciile de clienți sunt o tehnologie web nouă, experimentală, care nu este încă acceptată pe scară largă în toate browserele și clienții majori. <em>Vedea: {{Links.MDN.Client hints}}.</em> Deși indiciile de clienților pot fi utile pentru amprentarea, deoarece nu sunt acceptate pe scară largă, prezența lor în solicitări nu ar trebui să fie presupusă sau bazată pe (adică, blocarea pe baza absenței lor este o idee proastă)."
 hints_client_honour: "Indiferent de modul în care instruim clientul, este important să ne amintim că în cele din urmă nu avem control asupra a ceea ce alege clientul să facă și nu există nicio garanție că clientul va onora instrucțiunile noastre."
 hints_default_dns:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#what-can-i-use-for-default_dns" hreflang="en-AU">Ce pot folosi pentru „default_dns”?</a></em>"
@@ -490,7 +491,7 @@ info_cli_you_can_also_u: |
  amestecați pe amândouă împreună):
 info_cli_you_can_also_w: "De asemenea, puteți scrie în fișiere ca astfel:"
 info_cli_you_can_print_: "Puteți imprima date pe ecran ca astfel (uneori util la înlănțuirea comenzilor):"
-Some useful links: |
+Some useful links: |+
  Link-uri utile:<br />
      <ul class="pieul">
        <li><span class="comCat">Instrumente, resurse, etc pentru CIDRAM.</span>
@@ -525,7 +526,6 @@ Some useful links: |
          </ul>
        </li>
      </ul>
-
 label:
  %s across %s file:
   - "%s în %s fișier"

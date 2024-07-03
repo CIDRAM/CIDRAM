@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2024.06.18).
+# This file: English language data for the front-end (last modified: 2024.07.02).
 ##/
 
 Abuse category:
@@ -429,6 +429,7 @@ hints_asnlookup: "** Requires ASN lookup functionality (e.g., via the IP-API or 
 hints_aux_stats: "Note: Whether to track statistics for auxiliary rules can be controlled from the auxiliary rules page."
 hints_cause_fp: "*!! High likelihood of causing false positives due to %s."
 hints_cclookup: "** Requires country code lookup functionality (e.g., via the IP-API or BGPView module)."
+hints_client_hints: "!! This is a low-entropy client hint. Client hints are a new, experimental web technology which isn't yet widely supported across all browsers and major clients. <em>See: {{Links.MDN.Client hints}}.</em> Though client hints can be useful for fingerprinting, as they aren't widely supported, their presence in requests should not be assumed nor relied upon (i.e., blocking based on their absence is a bad idea)."
 hints_client_honour:
  en-AU: "No matter how we instruct the client, it's important to remember that we ultimately have no control over what the client chooses to do, and there's zero guarantee that the client will honour our instructions."
  en-US: "No matter how we instruct the client, it's important to remember that we ultimately have no control over what the client chooses to do, and there's zero guarantee that the client will honor our instructions."
@@ -518,7 +519,7 @@ info_cli_you_can_also_w: "You can also write to files like so:"
 info_cli_you_can_print_: |
  You can print data to the screen like so (sometimes useful when chaining
  commands):
-Some useful links: |
+Some useful links: |+
  Some useful links:<br />
      <ul class="pieul">
        <li><span class="comCat">Tools, resources, etc for CIDRAM.</span>
@@ -553,7 +554,6 @@ Some useful links: |
          </ul>
        </li>
      </ul>
-
 label:
  %s across %s file:
   - "%s across %s file"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Croatian language data for the front-end (last modified: 2024.06.28).
+# This file: Croatian language data for the front-end (last modified: 2024.07.04).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -145,6 +145,18 @@ config:
  bobuam: "Konfiguracija za dodatni "modul za korisničke agente botova i preglednika", koji otkriva neželjene botove, stare preglednike, i izvodi neke provjere ispravnosti."
  bobuam_block_bots: "Blokirati botove prepoznate kao zlonamjerne ili neželjene?"
  bobuam_block_eol_browsers: "Blokirati preglednike koji su došli do kraja životnog vijeka? (Postavite verzije u nastavku)."
+ bobuam_chrome: "Najniža dopuštena verzija "Chrome/Chromium" tokena. Preporučeno: {{BOBUAM Token.Chrome}}."
+ bobuam_edge: "Najniža dopuštena verzija "Edg/Edge" tokena. Preporučeno: {{BOBUAM Token.Edge}}."
+ bobuam_firefox: "Najniža dopuštena verzija "Firefox" tokena. Preporučeno: {{BOBUAM Token.Firefox}}."
+ bobuam_firefox_esr: "Dopuštena verzija "Firefox" tokena za ESR verziju. Preporučeno: {{BOBUAM Token.Firefox ESR}}."
+ bobuam_reason_ambiguous: "Razlog blokiranja koji se prikazuje kada se otkrije dvosmislen niz korisničkog agenta."
+ bobuam_reason_bot: "Razlog blokiranja prikazan za blokiranje robota."
+ bobuam_reason_browser: "Razlog blokiranja koji se prikazuje kada se blokira preglednik koji je prestar."
+ bobuam_reason_malformed: "Razlog blokiranja koji se prikazuje kada se otkrije neispravan niz korisničkog agenta."
+ bobuam_reason_masquerade: "Razlog blokiranja prikazan kada se korisnički agent pokuša maskirati u nešto drugo."
+ bobuam_safari: "Najniža dopuštena verzija Safarijevog tokena "Version". Preporučeno: {{BOBUAM Token.Safari}}."
+ bobuam_sanity_check: "Blokirati preglednike koji pokazuju dvosmislene ili jasno neispravne nizove korisničkog agenta?"
+ bunnycdn: "Konfiguracija za BunnyCDN modul kompatibilnosti."
  phpmailer: "Konfiguracija za PHPMailer (koristi se za autentifikaciju u dva faktora i za obavijesti e-poštom)."
  phpmailer_add_reply_to_address: "Adresa za odgovor koju treba navesti prilikom slanja e-pošte putem SMTP-a."
  phpmailer_add_reply_to_name: "Ime odgovora koje treba navesti prilikom slanja e-pošte putem SMTP-a."

@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6_isps.dat
 
-# Version: 2024.183.0
-# Last modified: 2024.07.02
+# Version: 2024.188.0
+# Last modified: 2024.07.07
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -480,18 +480,6 @@ Profile: Domestic ISP;Infrastructure/Transit;Multiplay
 Tag: Phaholyothin Rd
 
 
-# ASN 852 ("TELUS Communications Inc").
-# Canadian domestic ISP. Brute-force, webapp attacks, port scans, and spam
-# detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 754.
-# Updated: 2023.08.06
-
-2001:56a:79ae:2a00::/64 Deny Spam
-Origin: CA
-Profile: Domestic ISP
-Tag: TELUS Communications Inc
-
-
 # ASN 34757 ("Sibirskie Seti Ltd").
 # Russian domestic ISP. A frequent source of hacking, brute-force, SSH, and
 # webapp attacks. Listing whole ASN.
@@ -615,11 +603,11 @@ Tag: STAYNET
 # Canadian domestic ISP. Brute-force, XMLRPC/WordPress, SQLi, manifest, and
 # webapp attacks, port scans, hacking, and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 631.
-# Updated: 2023.08.06
+# Stop Forum Spam (SFS) listings: 336.
+# Updated: 2024.07.07
 
-2607:fea8:7b9d:7300::/64 Deny Spam
-2607:fea8:e9a3:a200::/64 Deny Spam
+2607:fea8:281c:f20::/64 Deny Spam
+2607:fea8:5ce1:e400::/64 Deny Spam
 Origin: CA
 Profile: Domestic ISP
 Tag: Rogers
@@ -809,17 +797,3 @@ Tag: Sri Lanka Telecom
 Origin: TR
 Profile: Domestic ISP;Mobile ISP;Multiplay
 Tag: TURKCELL ILETISIM HIZMETLERI
-
-
-# ASNs 17665, 133311 ("ONEOTT INTERTAINMENT LIMITED").
-# Indian domestic ISP. Brute-force, SSH, and webapp attacks, port scans,
-# hacking, and spam detected from here.
-# Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 915 (AS17665), 5 (AS133311).
-# Updated: 2023.08.09
-
-2404:ba00:fd01:d9e::/64 Deny Spam
-2404:ba00:fd01:f5d2::/64 Deny Spam
-Origin: IN
-Profile: Domestic ISP
-Tag: ONEOTT

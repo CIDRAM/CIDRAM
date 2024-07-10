@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6.dat
 
-# Version: 2024.188.0
-# Last modified: 2024.07.07
+# Version: 2024.191.0
+# Last modified: 2024.07.10
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -548,8 +548,8 @@ Tag: svyazy
 
 
 # ASN 35415 ("Webzilla B.V").
-# Stop Forum Spam (SFS) listings: 3.
-# Updated: 2023.08.05
+# Stop Forum Spam (SFS) listings: 5.
+# Updated: 2023.08.05 / Checked: 2024.07.10
 
 2a0f:9640::/29 Deny Cloud
 Origin: CY
@@ -2566,8 +2566,8 @@ Tag: Combell NV
 
 
 # ASN 39020 ("Comvive Servidores S.L").
-# Stop Forum Spam (SFS) listings: 24.
-# Updated: 2023.08.05
+# Stop Forum Spam (SFS) listings: 83.
+# Updated: 2023.08.05 / Checked: 2024.07.10
 
 2a00:1d70::/32 Deny Cloud
 2a07:f7c7:ffff::/48 Deny Cloud
@@ -3939,17 +3939,13 @@ Tag: HostSlim BV
 
 
 # ASN 43350 ("NForce Entertainment B.V").
-# Stop Forum Spam (SFS) listings: 8,352.
-# Updated: 2023.10.10
+# Stop Forum Spam (SFS) listings: 2,603.
+# Updated: 2024.07.08
 
 2a05:840::/47 Deny Cloud
 Origin: BZ
 2a03:3740::/32 Deny Cloud
 Origin: DE
-2a04:b040::/47 Deny Cloud
-2a04:b040:2::/48 Deny Cloud
-2a0b:8400:1::/48 Deny Cloud
-Origin: EE
 2a02:2ca0:10::/48 Deny Cloud
 2a02:2ca0:64::/48 Deny Cloud
 2a02:2ca0:aaa::/48 Deny Cloud
@@ -3957,10 +3953,16 @@ Origin: EE
 Origin: GB
 2a0d:ea80::/29 Deny Cloud
 Origin: IL
+2a0f:2b86:10::/48 Deny Cloud
+Origin: IR
 2a00:1768::/34 Deny Cloud
 2a00:1768:4000::/35 Deny Cloud
 2a00:1768:6000::/36 Deny Cloud
 Origin: NL
+2a04:b040::/47 Deny Cloud
+2a04:b040:2::/48 Deny Cloud
+2a0b:8400:1::/48 Deny Cloud
+Origin: PT
 2001:678:a18::/48 Deny Cloud
 2a06:e80::/36 Deny Cloud
 Origin: SC
@@ -4489,16 +4491,6 @@ Tag: Seeweb S.r.l
 Origin: CH
 Profile: Tor endpoints here;Webhosting
 Tag: Cloud Sigma
-
-
-# ASN 3064 ("Affinity Internet, Inc").
-# Updated: 2023.08.05
-
-2407:2080::/32 Deny Cloud
-2606:7e00:ff00::/40 Deny Cloud
-Origin: US
-Profile: Advertiser;Tor endpoints here
-Tag: Affinity Internet, Inc
 
 
 # ASNs 52048, 60567, 202920, 203557 ("DataClub S.A").
@@ -6435,8 +6427,8 @@ Tag: Next Layer
 # ASN 62744 ("Quintex Alliance Consulting").
 # Caught probing honeypots for vulnerabilities + significant source of spam.
 # Subtract 44.0.0.0/9, 44.128.0.0/10 (clean).
-# Stop Forum Spam (SFS) listings: 37,340.
-# Updated: 2023.08.05
+# Stop Forum Spam (SFS) listings: 1,483.
+# Updated: 2023.08.05 / Checked: 2024.07.10
 
 2620:7:6000::/47 Deny Cloud
 2620:7:6002::/48 Deny Cloud
@@ -13073,6 +13065,27 @@ Origin: AE
 Origin: RU
 Profile: Infrastructure/Transit;Webhosting
 Tag: Webdock.io
+
+
+# ASN 133480 ("5G NETWORK OPERATIONS PTY LTD").
+# Brute-force, webapp attacks, port scans, fraud voip, hacking, and spam
+# detected from here.
+# Stop Forum Spam (SFS) listings: 455.
+# Updated: 2024.07.08
+
+2400:fa80:1::/48 Deny Cloud
+2400:fa80:3::/48 Deny Cloud
+2400:fa80:4::/47 Deny Cloud
+2400:fa80:6::/48 Deny Cloud
+2402:1b80::/32 Deny Cloud
+2407:a080::/32 Deny Cloud
+Origin: AU
+2607:6b80:5e::/47 Deny Cloud
+2607:6b80:60::/47 Deny Cloud
+2607:6b80:62::/48 Deny Cloud
+Origin: US
+Profile: Dedicated;Infrastructure/Transit;Webhosting
+Tag: Intergrid Group Pty Ltd
 
 
 # ---

@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6_isps.dat
 
-# Version: 2024.188.0
-# Last modified: 2024.07.07
+# Version: 2024.191.0
+# Last modified: 2024.07.10
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -37,8 +37,8 @@ Tag: PIN-AS
 # spam, and occasionally sometimes other kinds of unwanted traffic. Their
 # network consists of a number of different ASNs, but only this specific ASN is
 # included here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 137.
-# Updated: 2023.08.12
+# Stop Forum Spam (SFS) listings: 101.
+# Updated: 2023.08.12 / Checked: 2024.07.10
 
 2401:5f80:3000:2::/64 Deny Attacks
 Origin: VN
@@ -275,22 +275,6 @@ Profile: Domestic ISP
 Tag: Comcast Spam IPs
 
 
-# ASN 22773 ("Cox Communications Inc").
-# Peering exchange provider in the United States. Spamming, scraping,
-# brute-force and SSH attacks, hack attempts, and other unwanted traffic
-# detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 2,407.
-# Updated: 2023.08.27
-
-2600:8800:b0a:fd00::/64 Deny Spam
-2600:8800:2a0c:f800::/64 Deny Spam
-2600:8802:2400:b0::/64 Deny Spam
-2600:8807:c147:6f00::/64 Deny Spam
-Origin: US
-Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Tor endpoints here;University;Webhosting
-Tag: Cox Spam IPs
-
-
 # ASNs 7843, 10796, 11351, 11426, 11427, 12271, 20001, 20115, 33363 ("Charter
 # Communications"). US domestic ISP. Honeypot probes, port scans, and spam
 # detected from here. Listing just the affected ranges/addresses only.
@@ -365,25 +349,6 @@ Profile: Domestic ISP;Mobile ISP;Multiplay
 Tag: Telstra Corporation
 
 
-# ASN 5607 ("Sky UK Limited").
-# UK domestic ISP / broadband provider. Spam and Mirai detected here.
-# Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,061.
-# Updated: 2023.08.27
-
-2a02:c7c:36e5:b000::/64 Deny Spam
-2a02:c7c:708d:c400::/64 Deny Spam
-2a02:c7c:cb4f:f600::/64 Deny Spam
-2a02:c7e:a13:7a00::/64 Deny Spam
-2a02:c7f:127c:da00::/64 Deny Spam
-2a02:c7f:18e5:4900::/64 Deny Spam
-2a02:c7f:2cd4:7100::/64 Deny Spam
-2a02:c7f:5c35:dd00::/64 Deny Spam
-Origin: GB
-Profile: Domestic ISP
-Tag: Sky UK Limited
-
-
 # ASN 2856 ("British Telecommunications PLC").
 # UK domestic ISP. Spam detected from here.
 # Listing just the affected ranges/addresses only.
@@ -430,19 +395,6 @@ Profile: Domestic ISP;Mobile ISP;Multiplay
 Tag: T-Mobile USA, Inc
 
 
-# ASN 133480 ("Intergrid Group Pty Ltd").
-# Australian multiplay network. Brute-force and webapp attacks, port scans,
-# hacking, and spam detected from here.
-# Listing just the offending ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 656.
-# Updated: 2023.08.30
-
-2400:fa80:5:4::/64 Deny Spam
-Origin: AU
-Profile: Domestic ISP;Multiplay
-Tag: Intergrid Group Pty Ltd
-
-
 # ASNs 16276, 35540 ("OVH Systems").
 # French multiplay network. Mostly a cloud provider, server leaser, etc. Some
 # limited ADSL connectivity also provided. A significant source of spam here,
@@ -467,14 +419,10 @@ Tag: OVH Systems
 # Thai transit provider and domestic ISP. Brute-force, SSH, and
 # WordPress/XMLRPC attacks, port scans, hacking, and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 41,680 (AS45430), 10,633 (AS133481).
-# Updated: 2023.08.07
+# Stop Forum Spam (SFS) listings: 2,373 (AS45430), 2,245 (AS133481).
+# Updated: 2024.07.10
 
-2405:9800:b861:1f73::/64 Deny Spam
-2405:9800:b930:f6e::/64 Deny Spam
 2405:9800:b930:4440::/64 Deny Spam
-2405:9800:b930:69a4::/64 Deny Spam
-2405:9800:b930:6cd9::/64 Deny Spam
 Origin: TH
 Profile: Domestic ISP;Infrastructure/Transit;Multiplay
 Tag: Phaholyothin Rd
@@ -507,16 +455,12 @@ Tag: MEO
 # ASNs 45820, 134674 ("TATA SKY BROADBAND PRIVATE LIMITED").
 # Indian domestic ISP. WordPress attacks, hacking, port scans, and spam
 # detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 2,715 (AS45820), 761 (AS134674).
-# Updated: 2023.08.05
+# Stop Forum Spam (SFS) listings: 1,526 (AS45820), 745 (AS134674).
+# Updated: 2024.07.10
 
-2402:e280:2147:181::/64 Deny Spam
-2402:e280:230c:72d::/64 Deny Spam
-2402:e280:230e:114::/64 Deny Spam
-2402:e280:2319:a2::/64 Deny Spam
-2402:e280:2321:42f::/64 Deny Spam
-2402:e280:3e15:3ac::/64 Deny Spam
-2402:e280:4116:479::/64 Deny Spam
+2402:e280:2191:389::/64 Deny Spam
+2402:e280:21b5:ce::/64 Deny Spam
+2402:e280:2325:390::/64 Deny Spam
 Origin: IN
 Profile: Domestic ISP
 Tag: TATA SKY BROADBAND PRIVATE LIMITED
@@ -548,18 +492,6 @@ Tag: Vodafone Deutschland GmbH
 Origin: FR
 Profile: Domestic ISP;Mobile ISP
 Tag: Orange S.A
-
-
-# ASN 5410 ("Bouygues Telecom SA").
-# French domestic ISP and mobile provider. Spam and hack attempts detected from
-# here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 463.
-# Updated: 2023.08.27
-
-2a04:cec0:11ae:ba81::/64 Deny Spam
-Origin: FR
-Profile: Domestic ISP;Mobile ISP
-Tag: Bouygues Telecom SA
 
 
 # ASN 57712 ("NPF SOFTVIDEO Ltd").

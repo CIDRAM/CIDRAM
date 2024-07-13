@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods for updating CIDRAM components (last modified: 2024.07.02).
+ * This file: Methods for updating CIDRAM components (last modified: 2024.07.13).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -628,6 +628,7 @@ trait Updater
 
         /** Iterate through all supplied component IDs. */
         foreach (array_unique($ID) as $ThisTarget) {
+            $StateMessage = '';
             $BytesAdded = 0;
             $BytesRemoved = 0;
             $TimeRequired = microtime(true);
@@ -679,44 +680,44 @@ trait Updater
                             continue;
                         }
                         if (!isset($FileMeta['From']) || strlen($FileMeta['From']) === 0) {
-                            $this->FE['state_msg'] .= sprintf('<code>%s</code> – <code>%s</code> – %s<br />', $ThisTarget, $FileName, $this->L10N->getString('response.Can_t fetch the file') . $this->L10N->getString('pair_separator') . $this->L10N->getString('response.Source not specified'));
+                            $StateMessage .= sprintf('<code>%s</code> – <code>%s</code> – %s<br />', $ThisTarget, $FileName, $this->L10N->getString('response.Can_t fetch the file') . $this->L10N->getString('pair_separator') . $this->L10N->getString('response.Source not specified'));
                             $Rollback = true;
                             continue 2;
                         }
                         if (strlen($ThisFile = $this->Request->request($FileMeta['From'])) === 0 || $this->Request->MostRecentStatusCode !== 200) {
-                            $this->FE['state_msg'] .= sprintf('<code>%s</code> – <code>%s</code> – %s', $ThisTarget, $FileName, $this->L10N->getString('response.Can_t fetch the file') . $this->L10N->getString('pair_separator'));
+                            $StateMessage .= sprintf('<code>%s</code> – <code>%s</code> – %s', $ThisTarget, $FileName, $this->L10N->getString('response.Can_t fetch the file') . $this->L10N->getString('pair_separator'));
                             if ($this->Request->MostRecentStatusCode === 401 || $this->Request->MostRecentStatusCode === 403) {
-                                $this->FE['state_msg'] .= $this->L10N->getString('denied') . '<br />';
+                                $StateMessage .= $this->L10N->getString('denied') . '<br />';
                                 if (!empty($this->Components['RemoteMeta'][$ThisTarget]['Upstream Access Denied'])) {
                                     $this->executor($this->Components['RemoteMeta'][$ThisTarget]['Upstream Access Denied'], false, $BytesRemoved, $BytesAdded);
                                 }
                             } elseif ($this->Request->MostRecentStatusCode === 402) {
-                                $this->FE['state_msg'] .= $this->L10N->getString('response.Payment required at the upstream') . '<br />';
+                                $StateMessage .= $this->L10N->getString('response.Payment required at the upstream') . '<br />';
                                 if (!empty($this->Components['RemoteMeta'][$ThisTarget]['Upstream Payment Required'])) {
                                     $this->executor($this->Components['RemoteMeta'][$ThisTarget]['Upstream Payment Required'], false, $BytesRemoved, $BytesAdded);
                                 }
                             } elseif ($this->Request->MostRecentStatusCode === 404 || $this->Request->MostRecentStatusCode === 410) {
-                                $this->FE['state_msg'] .= $this->L10N->getString('response.Not available at the upstream') . '<br />';
+                                $StateMessage .= $this->L10N->getString('response.Not available at the upstream') . '<br />';
                                 if (!empty($this->Components['RemoteMeta'][$ThisTarget]['Upstream Not Available'])) {
                                     $this->executor($this->Components['RemoteMeta'][$ThisTarget]['Upstream Not Available'], false, $BytesRemoved, $BytesAdded);
                                 }
                             } elseif ($this->Request->MostRecentStatusCode === 429) {
-                                $this->FE['state_msg'] .= $this->L10N->getString('response.Rate limited by the upstream') . '<br />';
+                                $StateMessage .= $this->L10N->getString('response.Rate limited by the upstream') . '<br />';
                                 if (!empty($this->Components['RemoteMeta'][$ThisTarget]['Upstream Rate Limited'])) {
                                     $this->executor($this->Components['RemoteMeta'][$ThisTarget]['Upstream Rate Limited'], false, $BytesRemoved, $BytesAdded);
                                 }
                             } elseif ($this->Request->MostRecentStatusCode === 451) {
-                                $this->FE['state_msg'] .= $this->L10N->getString('response.Not available at the upstream for legal reasons') . '<br />';
+                                $StateMessage .= $this->L10N->getString('response.Not available at the upstream for legal reasons') . '<br />';
                                 if (!empty($this->Components['RemoteMeta'][$ThisTarget]['Upstream Not Available Legal'])) {
                                     $this->executor($this->Components['RemoteMeta'][$ThisTarget]['Upstream Not Available Legal'], false, $BytesRemoved, $BytesAdded);
                                 }
                             } elseif ($this->Request->MostRecentStatusCode >= 500) {
-                                $this->FE['state_msg'] .= $this->L10N->getString('response.Error at the upstream') . '<br />';
+                                $StateMessage .= $this->L10N->getString('response.Error at the upstream') . '<br />';
                                 if (!empty($this->Components['RemoteMeta'][$ThisTarget]['Upstream Error'])) {
                                     $this->executor($this->Components['RemoteMeta'][$ThisTarget]['Upstream Error'], false, $BytesRemoved, $BytesAdded);
                                 }
                             } else {
-                                $this->FE['state_msg'] .= $this->L10N->getString('response.Unknown error') . '<br />';
+                                $StateMessage .= $this->L10N->getString('response.Unknown error') . '<br />';
                                 if (!empty($this->Components['RemoteMeta'][$ThisTarget]['On Unknown Error'])) {
                                     $this->executor($this->Components['RemoteMeta'][$ThisTarget]['On Unknown Error'], false, $BytesRemoved, $BytesAdded);
                                 }
@@ -734,7 +735,7 @@ trait Updater
                         if (isset($FileMeta['Checksum']) && strlen($FileMeta['Checksum'])) {
                             $Actual = hash('sha256', $ThisFile) . ':' . strlen($ThisFile);
                             if ($Actual !== $FileMeta['Checksum']) {
-                                $this->FE['state_msg'] .= sprintf(
+                                $StateMessage .= sprintf(
                                     '<code>%s</code> – <code>%s</code> – %s<br />%s – <code class="txtRd">%s</code><br />%s – <code class="txtRd">%s</code><br />',
                                     $ThisTarget,
                                     $FileName,
@@ -755,7 +756,7 @@ trait Updater
                             preg_match('~\.(?:css|dat|gif|png|ya?ml)$~i', $FileName) &&
                             !$this->sanityCheck($FileName, $ThisFile)
                         ) {
-                            $this->FE['state_msg'] .= sprintf(
+                            $StateMessage .= sprintf(
                                 '<code>%s</code> – <code>%s</code> – %s<br />',
                                 $ThisTarget,
                                 $FileName,
@@ -829,17 +830,17 @@ trait Updater
                         }
                     }
 
-                    $this->FE['state_msg'] .= '<code>' . $ThisTarget . '</code> – ';
+                    $StateMessage .= '<code>' . $ThisTarget . '</code> – ';
                     if (
                         empty($this->Components['Meta'][$ThisTarget]['Version']) &&
                         empty($this->Components['Meta'][$ThisTarget]['Files'])
                     ) {
-                        $this->FE['state_msg'] .= $this->L10N->getString('response.Component successfully installed');
+                        $StateMessage .= $this->L10N->getString('response.Component successfully installed');
                         if (!empty($this->Components['RemoteMeta'][$ThisTarget]['When Install Succeeds'])) {
                             $this->executor($this->Components['RemoteMeta'][$ThisTarget]['When Install Succeeds'], false, $BytesRemoved, $BytesAdded);
                         }
                     } else {
-                        $this->FE['state_msg'] .= $this->L10N->getString('response.Component successfully updated');
+                        $StateMessage .= $this->L10N->getString('response.Component successfully updated');
                         if (!empty($this->Components['RemoteMeta'][$ThisTarget]['When Update Succeeds'])) {
                             $this->executor($this->Components['RemoteMeta'][$ThisTarget]['When Update Succeeds'], false, $BytesRemoved, $BytesAdded);
                         }
@@ -861,17 +862,17 @@ trait Updater
                 $UpdateFailed = true;
             }
             if ($UpdateFailed) {
-                $this->FE['state_msg'] .= '<code>' . $ThisTarget . '</code> – ';
+                $StateMessage .= '<code>' . $ThisTarget . '</code> – ';
                 if (
                     empty($this->Components['Meta'][$ThisTarget]['Version']) &&
                     empty($this->Components['Meta'][$ThisTarget]['Files'])
                 ) {
-                    $this->FE['state_msg'] .= $this->L10N->getString('response.Failed to install');
+                    $StateMessage .= $this->L10N->getString('response.Failed to install');
                     if (!empty($this->Components['RemoteMeta'][$ThisTarget]['When Install Fails'])) {
                         $this->executor($this->Components['RemoteMeta'][$ThisTarget]['When Install Fails'], false, $BytesRemoved, $BytesAdded);
                     }
                 } else {
-                    $this->FE['state_msg'] .= $this->L10N->getString('response.Failed to update');
+                    $StateMessage .= $this->L10N->getString('response.Failed to update');
                     if (!empty($this->Components['RemoteMeta'][$ThisTarget]['When Update Fails'])) {
                         $this->executor($this->Components['RemoteMeta'][$ThisTarget]['When Update Fails'], false, $BytesRemoved, $BytesAdded);
                     }
@@ -879,7 +880,7 @@ trait Updater
             }
             $this->formatFileSize($BytesAdded);
             $this->formatFileSize($BytesRemoved);
-            $this->FE['state_msg'] .= sprintf(
+            $this->FE['state_msg'] .= $StateMessage . sprintf(
                 $this->FE['CronMode'] !== '' ? " « +%s | -%s | %s »\n" : ' <code><span class="txtGn">+%s</span> | <span class="txtRd">-%s</span> | <span class="txtOe">%s</span></code><br />',
                 $BytesAdded,
                 $BytesRemoved,
@@ -905,7 +906,7 @@ trait Updater
         $InUse = $this->componentUpdatePrep($ID);
         $BytesRemoved = 0;
         $TimeRequired = microtime(true);
-        $this->FE['state_msg'] .= '<code>' . $ID . '</code> – ';
+        $StateMessage = '<code>' . $ID . '</code> – ';
         if (
             $InUse === 0 &&
             !empty($this->Components['Meta'][$ID]['Files']) &&
@@ -932,7 +933,7 @@ trait Updater
                 $this->deleteDirectory($FileName);
             }
 
-            $this->FE['state_msg'] .= $this->L10N->getString('response.Component successfully uninstalled');
+            $StateMessage .= $this->L10N->getString('response.Component successfully uninstalled');
             if (!empty($this->Components['Meta'][$ID]['When Uninstall Succeeds'])) {
                 $this->executor($this->Components['Meta'][$ID]['When Uninstall Succeeds'], false, $BytesRemoved);
             }
@@ -943,13 +944,13 @@ trait Updater
             /** Update the component metadata file. */
             $this->updateComponentMetadataFile($this->Components['Meta'], $BytesRemoved);
         } else {
-            $this->FE['state_msg'] .= $this->L10N->getString('response.An error occurred while attempting to uninstall the component');
+            $StateMessage .= $this->L10N->getString('response.An error occurred while attempting to uninstall the component');
             if (!empty($this->Components['Meta'][$ID]['When Uninstall Fails'])) {
                 $this->executor($this->Components['Meta'][$ID]['When Uninstall Fails'], false, $BytesRemoved);
             }
         }
         $this->formatFileSize($BytesRemoved);
-        $this->FE['state_msg'] .= sprintf(
+        $this->FE['state_msg'] .= $StateMessage . sprintf(
             $this->FE['CronMode'] !== '' ? " « -%s | %s »\n" : ' <code><span class="txtRd">-%s</span> | <span class="txtOe">%s</span></code><br />',
             $BytesRemoved,
             $this->NumberFormatter->format(microtime(true) - $TimeRequired, 3)
@@ -985,7 +986,7 @@ trait Updater
             ));
         }
         $InUse = $this->componentUpdatePrep($ID);
-        $this->FE['state_msg'] .= '<code>' . $ID . '</code> – ';
+        $StateMessage = '<code>' . $ID . '</code> – ';
         if ($InUse !== 1 && !empty($this->Components['Meta'][$ID]['Files'])) {
             foreach ($this->Components['Meta'][$ID]['Files'] as $FileName => $FileMeta) {
                 if (
@@ -1018,7 +1019,7 @@ trait Updater
             }
         }
         if (!$Activation['Modified']) {
-            $this->FE['state_msg'] .= $this->L10N->getString('response.Failed to activate') . '<br />';
+            $StateMessage .= $this->L10N->getString('response.Failed to activate') . '<br />';
             if (!empty($this->Components['Meta'][$ID]['When Activation Fails'])) {
                 $this->executor($this->Components['Meta'][$ID]['When Activation Fails']);
             }
@@ -1029,18 +1030,19 @@ trait Updater
             $this->Configuration['components']['imports'] = $Activation['imports'];
             $this->Configuration['components']['events'] = $Activation['events'];
             if ($this->updateConfiguration()) {
-                $this->FE['state_msg'] .= $this->L10N->getString('response.Successfully activated') . '<br />';
+                $StateMessage .= $this->L10N->getString('response.Successfully activated') . '<br />';
                 if (!empty($this->Components['Meta'][$ID]['When Activation Succeeds'])) {
                     $this->executor($this->Components['Meta'][$ID]['When Activation Succeeds']);
                 }
                 $Success = true;
             } else {
-                $this->FE['state_msg'] .= $this->L10N->getString('response.Failed to activate') . '<br />';
+                $StateMessage .= $this->L10N->getString('response.Failed to activate') . '<br />';
                 if (!empty($this->Components['Meta'][$ID]['When Activation Fails'])) {
                     $this->executor($this->Components['Meta'][$ID]['When Activation Fails']);
                 }
             }
         }
+        $this->FE['state_msg'] .= $StateMessage;
 
         /** Deal with dependency activation. */
         if (
@@ -1093,7 +1095,7 @@ trait Updater
             }
             $this->CIDRAM['Deactivation'][$Type] = "\n" . implode("\n", $this->CIDRAM['Deactivation'][$Type]) . "\n";
         }
-        $this->FE['state_msg'] .= '<code>' . $ID . '</code> – ';
+        $StateMessage = '<code>' . $ID . '</code> – ';
         if (!empty($this->Components['Meta'][$ID]['Files'])) {
             $this->arrayify($this->Components['Meta'][$ID]['Files']);
             foreach ($this->Components['Meta'][$ID]['Files'] as $FileName => $FileMeta) {
@@ -1129,7 +1131,7 @@ trait Updater
             $this->CIDRAM['Deactivation']['Modified'] = true;
         }
         if (!$this->CIDRAM['Deactivation']['Modified']) {
-            $this->FE['state_msg'] .= $this->L10N->getString('response.Failed to deactivate') . '<br />';
+            $StateMessage .= $this->L10N->getString('response.Failed to deactivate') . '<br />';
             if (!empty($this->Components['Meta'][$ID]['When Deactivation Fails'])) {
                 $this->executor($this->Components['Meta'][$ID]['When Deactivation Fails']);
             }
@@ -1140,18 +1142,19 @@ trait Updater
             $this->Configuration['components']['imports'] = $this->CIDRAM['Deactivation']['imports'];
             $this->Configuration['components']['events'] = $this->CIDRAM['Deactivation']['events'];
             if ($this->updateConfiguration()) {
-                $this->FE['state_msg'] .= $this->L10N->getString('response.Successfully deactivated') . '<br />';
+                $StateMessage .= $this->L10N->getString('response.Successfully deactivated') . '<br />';
                 if (!empty($this->Components['Meta'][$ID]['When Deactivation Succeeds'])) {
                     $this->executor($this->Components['Meta'][$ID]['When Deactivation Succeeds']);
                 }
                 $Success = true;
             } else {
-                $this->FE['state_msg'] .= $this->L10N->getString('response.Failed to deactivate') . '<br />';
+                $StateMessage .= $this->L10N->getString('response.Failed to deactivate') . '<br />';
                 if (!empty($this->Components['Meta'][$ID]['When Deactivation Fails'])) {
                     $this->executor($this->Components['Meta'][$ID]['When Deactivation Fails']);
                 }
             }
         }
+        $this->FE['state_msg'] .= $StateMessage;
 
         /** Cleanup. */
         unset($this->CIDRAM['Deactivation']);
@@ -1189,7 +1192,7 @@ trait Updater
             if ($Reactivate !== 0) {
                 $this->updatesHandlerDeactivate($ThisTarget);
             }
-            $this->FE['state_msg'] .= '<code>' . $ThisTarget . '</code> – ';
+            $StateMessage = '<code>' . $ThisTarget . '</code> – ';
             if (!$RepairFailed) {
                 foreach ($this->Components['RemoteMeta'][$ThisTarget]['Files'] as $FileName => $FileMeta) {
                     if (!isset($FileMeta['From'], $FileMeta['Checksum']) || !$this->freeFromTraversal($this->Vault . $FileName)) {
@@ -1266,7 +1269,7 @@ trait Updater
                 $this->updateComponentMetadataFile($this->Components['Meta'], $BytesRemoved, $BytesAdded);
 
                 /** Repair operation succeeded. */
-                $this->FE['state_msg'] .= $this->L10N->getString('response.Repair process completed');
+                $StateMessage .= $this->L10N->getString('response.Repair process completed');
                 if (!empty($this->Components['Meta'][$ThisTarget]['When Repair Succeeds'])) {
                     $this->executor($this->Components['Meta'][$ThisTarget]['When Repair Succeeds'], false, $BytesRemoved, $BytesAdded);
                 }
@@ -1274,14 +1277,14 @@ trait Updater
                 $RepairFailed = true;
 
                 /** Repair operation failed. */
-                $this->FE['state_msg'] .= $this->L10N->getString('response.Repair process failed');
+                $StateMessage .= $this->L10N->getString('response.Repair process failed');
                 if (!empty($this->Components['Meta'][$ThisTarget]['When Repair Fails'])) {
                     $this->executor($this->Components['Meta'][$ThisTarget]['When Repair Fails'], false, $BytesRemoved, $BytesAdded);
                 }
             }
             $this->formatFileSize($BytesAdded);
             $this->formatFileSize($BytesRemoved);
-            $this->FE['state_msg'] .= sprintf(
+            $this->FE['state_msg'] .= $StateMessage . sprintf(
                 $this->FE['CronMode'] !== '' ? " « +%s | -%s | %s »\n" : ' <code><span class="txtGn">+%s</span> | <span class="txtRd">-%s</span> | <span class="txtOe">%s</span></code><br />',
                 $BytesAdded,
                 $BytesRemoved,

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2024.07.01).
+ * This file: The CIDRAM core (last modified: 2024.07.13).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -3077,25 +3077,27 @@ class Core
                 $Accepted = preg_replace(['~;.*$~', '~[^-A-Za-z]~'], '', $Accepted);
                 $Primary = '';
                 $IsSameAs = false;
-                foreach ([$Accepted, strtolower(preg_replace('~-.*$~', '', $Accepted))] as $Accepted) {
-                    if ($this->L10NAccepted === $Accepted) {
+                if ($this->L10NAccepted === $Accepted) {
+                    $IsSameAs = true;
+                    break;
+                }
+                $Main = strpos($Accepted, '-') === false ? '' : strtolower(preg_replace('~-.*$~', '', $Accepted));
+                if (($Primary = $this->readFile($Path . $Accepted . '.yml')) !== '' || ($Primary = $this->readFile($Path . $Main . '.yml')) !== '') {
+                    break;
+                }
+                foreach ([$Accepted, $Main] as $Accepted) {
+                    if ($Accepted === '' || !isset($this->CIDRAM['Config Defaults']['general']['lang']['defer'][$Accepted])) {
+                        break;
+                    }
+                    if ($this->L10NAccepted === $this->CIDRAM['Config Defaults']['general']['lang']['defer'][$Accepted]) {
                         $IsSameAs = true;
                         break 2;
                     }
-                    if (($Primary = $this->readFile($Path . $Accepted . '.yml')) !== '') {
+                    if (
+                        ($Primary = $this->readFile($Path . $this->CIDRAM['Config Defaults']['general']['lang']['defer'][$Accepted] . '.yml')) !== '' ||
+                        ($Primary = $this->readFile($Path . preg_replace('~-.*$~', '', $this->CIDRAM['Config Defaults']['general']['lang']['defer'][$Accepted]) . '.yml')) !== ''
+                    ) {
                         break 2;
-                    }
-                    if (isset($this->CIDRAM['Config Defaults']['general']['lang']['defer'][$Accepted])) {
-                        if ($this->L10NAccepted === $this->CIDRAM['Config Defaults']['general']['lang']['defer'][$Accepted]) {
-                            $IsSameAs = true;
-                            break 2;
-                        }
-                        if (
-                            ($Primary = $this->readFile($Path . $this->CIDRAM['Config Defaults']['general']['lang']['defer'][$Accepted] . '.yml')) !== '' ||
-                            ($Primary = $this->readFile($Path . preg_replace('~-.*$~', '', $this->CIDRAM['Config Defaults']['general']['lang']['defer'][$Accepted]) . '.yml')) !== ''
-                        ) {
-                            break 2;
-                        }
                     }
                 }
             }
@@ -3124,7 +3126,6 @@ class Core
                 }
             } elseif (!($this->ClientL10N instanceof \Maikuolan\Common\L10N)) {
                 $this->ClientL10N = new \Maikuolan\Common\L10N([], $this->L10N);
-                $this->ClientL10N->autoAssignRules($Accepted);
             }
         }
 

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2024.07.02).
+ * This file: Protect traits (last modified: 2024.07.13).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -696,7 +696,7 @@ trait Protect
         $this->Stage = '';
 
         /** A fix for correctly displaying LTR/RTL text. */
-        if ($this->L10N->Directionality !== 'rtl') {
+        if ($this->ClientL10N->Directionality !== 'rtl') {
             $this->L10N->Data['Text Direction'] = 'ltr';
             $this->CIDRAM['FieldTemplates']['textBlockAlign'] = 'text-align:left;';
             $this->CIDRAM['FieldTemplates']['textBlockFloat'] = '';

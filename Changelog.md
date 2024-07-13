@@ -432,3 +432,5 @@
 [2024.07.02; Maikuolan]: Refactored the `loadL10N` method. Merged zh and zh-TW L10N, and dropped region designations (e.g., CN, TW) in favour of script designations (e.g., Hans, Hant). Added `SEC_CH_UA_PLATFORM`, `SEC_CH_UA_MOBILE`, and `SEC_CH_UA` client hints as block event fields and as sources for auxiliary rules conditions.
 
 [2024.07.13; Bug-fix; Maikuolan]: State messages generated via recursive executor calls at the updates page occasionally appeared out of order; Fixed.
+
+[2024.07.13; Maikuolan]: Verification update.

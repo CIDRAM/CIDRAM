@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2024.06.11).
+ * This file: Optional security extras module (last modified: 2024.07.16).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -117,7 +117,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             'u(?:nisibfu|pfile(?:_\\(\d\\))?|ploader_by_cloud7_agath|tchiha(?:_uploader)?)|' .
             'vzlateam|' .
             'w(?:[0o]rm\d+|0rdpr3ssnew|alker-nva|ebshell-[a-z\d]+|idgets-nva|idwsisw|loymzuk)|' .
-            'wp[-_](?:2019|22|(?:admin(?:/images)?|content|css(?:/colors)?|includes(?:/ixr|/customize|/pomo)?|js(?:/widgets)?|network)/(?:class-wp-page-[\da-z]{5,}|dropdown|fgertreyersd|install|js/privacy-tools\.min|r(?:andom_compat/class_api|equests/class_api|epeater)|simple|text/about|themes/hello-element/footer|uploads/error_log|wp-login)|conflg|content/plugins/(?:backup-backup/includes/hro|cache/dropdown|contact-form-7/.+styles-rtl|contus-hd-flv-player/uploadvideo|dzs-zoomsounds/savepng|fix/up|wordpresscore/include|wp-file-manager/lib/php/connector\.minimal)|filemanager|setups|sigunq|sts|p)|' .
+            'wp[-_](?:2019|22|(?:admin(?:/images)?|content|css(?:/colors)?|includes(?:/ixr|/customize|/pomo)?|js(?:/widgets)?|network)/(?:(?:random_compat/|requests/)?class(?:_api|-wp-page-[\da-z]{5,})|dropdown|fgertreyersd|install|js/privacy-tools\.min|repeater|simple|text/about|themes/hello-element/footer|uploads/error_log|wp-login)|conflg|content/plugins/(?:backup-backup/includes/hro|cache/dropdown|contact-form-7/.+styles-rtl|contus-hd-flv-player/uploadvideo|dzs-zoomsounds/savepng|fix/up|wordpresscore/include|wp-file-manager/lib/php/connector\.minimal)|filemanager|setups|sigunq|sts|p)|' .
             'wp-configs|' .
             'ws[ou](?:yanz)?(?:[\d.]*|[\da-z]{4,})|wwdv|' .
             'x{3,}|xiaom|xichang/x|x+l(?:\d+|eet(?:mailer|-shell)?x?)|xm(?:lrpcs|lrpz|rlpc)|xw|' .
@@ -128,7 +128,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $LCNrURI
         ), 'Probing for webshells/backdoors')) {
             $this->Reporter->report([15, 20, 21], ['Caught probing for webshells/backdoors. Host might be compromised.'], $this->BlockInfo['IPAddr']);
-        } // 2023.08.18 mod 2024.06.04
+        } // 2023.08.18 mod 2024.07.16
 
         /** Probing for webshells/backdoors. */
         if ($this->trigger(preg_match(

@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6.dat
 
-# Version: 2024.195.0
-# Last modified: 2024.07.14
+# Version: 2024.199.0
+# Last modified: 2024.07.18
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -901,22 +901,22 @@ Tag: IOMart
 # ASNs 14061, 46652 ("DigitalOcean, LLC", "ServerStack, Inc").
 # Brute-force, SSH, honeypot, and webapp attacks, port scans, hacking, and spam
 # detected from here.
-# Stop Forum Spam (SFS) listings: 28,208 (AS14061), 7 (AS46652).
-# Updated: 2023.04.09 / Checked: 2023.11.27
+# Stop Forum Spam (SFS) listings: 14,722 (AS14061), 2 (AS46652).
+# Updated: 2024.07.18
 
 2400:6180::/48 Deny Cloud
 2400:6180:10::/48 Deny Cloud
 2400:6180:100::/40 Deny Cloud
 Origin: SG
-2604:a880::/46 Deny Cloud
+2604:a880::/47 Deny Cloud
+2604:a880:2::/48 Deny Cloud
 2604:a880:4::/48 Deny Cloud
 2604:a880:400::/48 Deny Cloud
 2604:a880:800::/48 Deny Cloud
 2604:a880:cad::/48 Deny Cloud
-2604:a880:fffe::/48 Deny Cloud
 2a03:b0c0::/46 Deny Cloud
 2a03:b0c0:fffc::/48 Deny Cloud
-2a03:b0c0:fffe::/47 Deny Cloud
+2a03:b0c0:ffff::/48 Deny Cloud
 Origin: US
 Profile: Commercial;Frequent changes;Infrastructure/Transit;Tor endpoints here;Webhosting
 Tag: Digital Ocean, Inc
@@ -2986,8 +2986,8 @@ Tag: VegasNAP, LLC
 
 
 # ASNs 34702, 34729 ("Aktsiaselts WaveCom").
-# Stop Forum Spam (SFS) listings: 2,025 (AS34702).
-# Updated: 2023.08.07
+# Stop Forum Spam (SFS) listings: 255 (AS34702).
+# Updated: 2023.08.07 / Checked: 2024.07.15
 
 2a01:97a0::/32 Deny Cloud
 Origin: EE
@@ -3881,38 +3881,41 @@ Tag: i3d B.V
 
 
 # ASNs 50673, 208685, 211895 ("Serverius Holding B.V").
-# Stop Forum Spam (SFS) listings: 238 (AS50673), 464 (AS211895).
-# Updated: 2023.08.08
+# Stop Forum Spam (SFS) listings: 99 (AS50673), 54 (AS211895).
+# Updated: 2024.07.15
 
-2a07:e040::/32 Deny Cloud
-Origin: DE
 2a0f:4a80::/48 Deny Cloud
 Origin: IN
+2a06:1700:3:32::/64 Deny Cloud
+Origin: IS
 2a0c:480::/32 Deny Cloud
+2a0d:4480::/29 Deny Cloud
 2a12:5343:1::/48 Deny Cloud
 2a12:5343:2::/48 Deny Cloud
 2a13:36c0::/32 Deny Cloud
 Origin: LT
 2001:67c:b0::/48 Deny Cloud
+2001:67c:21b4::/48 Deny Cloud
+2001:7f8:b7::/48 Deny Cloud
 2a00:1ca8::/32 Deny Cloud
 2a00:1caa::/32 Deny Cloud
 2a00:7143:15::/48 Deny Cloud
 2a00:7143:16::/47 Deny Cloud
 2a00:d640::/32 Deny Cloud
-2a00:dfa0::/32 Deny Cloud
 2a02:1680::/32 Deny Cloud
 2a03:3f40::/32 Deny Cloud
-2a05:e1c0::/29 Deny Cloud
+2a04:52c0:5001::/48 Deny Cloud
 2a06:2ec0::/32 Deny Cloud
 2a06:8000::/29 Deny Cloud
+2a07:52c0::/29 Deny Cloud
 2a09:e40::/32 Deny Cloud
 2a09:aa80::/32 Deny Cloud
-2a0a:6f80::/32 Deny Cloud
 2a0e:c9c0::/29 Deny Cloud
 2a0f:8cc0::/48 Deny Cloud
 Origin: NL
 2a09:4d41::/32 Deny Cloud
 Origin: RU
+100::6:6:6/128 Deny Cloud
 2a0a:3f40::/32 Deny Cloud
 Origin: US
 Profile: Frequent changes;Infrastructure/Transit;Tor endpoints here
@@ -4091,12 +4094,13 @@ Tag: ScaleUp Technologies
 
 
 # ASN 13213 ("UK-2 Limited").
-# Stop Forum Spam (SFS) listings: 2,826.
-# Updated: 2023.08.13
+# Stop Forum Spam (SFS) listings: 1,545.
+# Updated: 2024.07.18
 
 2a02:2498::/47 Deny Cloud
 2a02:2498:4::/47 Deny Cloud
 2a02:2498:6::/48 Deny Cloud
+2a02:2498:16::/48 Deny Cloud
 2a02:2498:55::/48 Deny Cloud
 2a02:2498:295::/48 Deny Cloud
 2a02:2498:1000::/36 Deny Cloud
@@ -4106,34 +4110,30 @@ Tag: ScaleUp Technologies
 2a02:2498:9000::/36 Deny Cloud
 2a02:2498:a000::/35 Deny Cloud
 2a02:2498:e000::/36 Deny Cloud
-2a02:2498:f000::/47 Deny Cloud
+2a02:2498:f000::/48 Deny Cloud
+2a13:9500:3::/48 Deny Cloud
+2a13:9500:24::/46 Deny Cloud
+2a13:9500:28::/48 Deny Cloud
 Origin: GB
 2a04:76c7:200::/48 Deny Cloud
 Origin: NL
+2602:fad4:1::/48 Deny Cloud
+2602:fad4:2::/48 Deny Cloud
+2602:ff62:128::/45 Deny Cloud
+2602:ff62:184::/47 Deny Cloud
 2602:ff84::/48 Deny Cloud
 2602:ffb0:28::/48 Deny Cloud
 2602:ffb0:30::/47 Deny Cloud
-2605:a80:1::/48 Deny Cloud
-2606:2e00:0:c5::/64 Deny Cloud
 2606:2e00:8000::/47 Deny Cloud
 2606:2e00:8027::/48 Deny Cloud
 2606:2e00:8028::/47 Deny Cloud
-2607:740:45::/48 Deny Cloud
-2607:6b80:3c::/48 Deny Cloud
-2607:6b80:41::/48 Deny Cloud
-2607:6b80:42::/47 Deny Cloud
-2607:6b80:44::/46 Deny Cloud
-2607:6b80:48::/48 Deny Cloud
-2607:6b80:4a::/47 Deny Cloud
-2607:6b80:4c::/46 Deny Cloud
-2607:6b80:50::/45 Deny Cloud
-2607:6b80:58::/47 Deny Cloud
-2607:6b80:5b::/48 Deny Cloud
 2a07:23c0::/48 Deny Cloud
 2a07:23c0:8::/47 Deny Cloud
 2a07:4841::/48 Deny Cloud
 2a07:4842::/48 Deny Cloud
 Origin: US
+2605:a80:1::/48 Deny Cloud
+Origin: XR
 Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: UK-2 Limited
 
@@ -5783,10 +5783,12 @@ Tag: Capitalonline
 # Some anonymous reports of malware received from some users, and an occasional
 # source of spam (inclusion here somewhat doubtful, but we'll implement lots of
 # bypasses to ensure a safe balance, ensure WordPress isn't blocked, etc).
-# Stop Forum Spam (SFS) listings: 32.
-# Updated: 2023.08.07
+# Stop Forum Spam (SFS) listings: 2.
+# Updated: 2024.07.15
 
-2403:6b80::/45 Run bypasses.php
+2403:6b80::/46 Run bypasses.php
+2403:6b80:4::/48 Run bypasses.php
+2403:6b80:6::/47 Run bypasses.php
 2403:6b80:8::/47 Run bypasses.php
 2403:6b80:a::/48 Run bypasses.php
 2403:6b80:ffff::/48 Run bypasses.php
@@ -5795,16 +5797,17 @@ Origin: AU
 Origin: BR
 2a04:fa80:2::/47 Run bypasses.php
 2a04:fa80:4::/46 Run bypasses.php
-2a04:fa80:8::/47 Run bypasses.php
-2a04:fa80:a::/48 Run bypasses.php
+2a04:fa80:8::/46 Run bypasses.php
 2a04:fa87:fffd::/48 Run bypasses.php
 2a04:fa87:fffe::/47 Run bypasses.php
 Origin: IE
 2602:fdd7::/47 Run bypasses.php
 2620:115:c000::/48 Run bypasses.php
 2620:115:c002::/47 Run bypasses.php
-2620:115:c004::/46 Run bypasses.php
+2620:115:c004::/47 Run bypasses.php
+2620:115:c007::/48 Run bypasses.php
 2620:115:c008::/45 Run bypasses.php
+2620:115:c010::/46 Run bypasses.php
 Origin: US
 2001:43f8:bf0::/48 Run bypasses.php
 Origin: ZA
@@ -6167,10 +6170,7 @@ Tag: Cosmonova LLC
 # ASNs 36007, 41436, 44709, 54913, 64022, 204548, 210329, 396948, 396949 ("Kamatera
 # Inc"). FTP, brute-force, and webapp attacks, port scans, hacking, and spam
 # detected from here.
-# Stop Forum Spam (SFS) listings: 326 (AS36007), 36 (AS41436), 232 (AS44709),
-# 46 (AS54913), 158 (AS64022), 275 (AS204548), 32 (AS210329), 78 (AS396948),
-# 69 (AS396949).
-# Updated: 2024.05.19
+# Updated: 2024.07.15
 
 2402:da80:100::/48 Deny Cloud
 Origin: HK
@@ -6195,6 +6195,7 @@ Origin: IL
 2606:3a80:800::/48 Deny Cloud
 2606:3a80:1300::/48 Deny Cloud
 2606:3a80:1400::/48 Deny Cloud
+2606:3a80:2400::/48 Deny Cloud
 Origin: US
 Profile: Dedicated;Frequent changes;Infrastructure/Transit;Webhosting
 Tag: Kamatera Inc
@@ -6337,7 +6338,7 @@ Tag: XEMU
 # ASN 14987 ("Rethem Hosting LLC").
 # Domain reseller. Brute-force, SSH, DDoS, and webapp attacks, hacking, and
 # port scans detected from here.
-# Updated: 2019.03.30 / Checked: 2023.08.07
+# Updated: 2019.03.30 / Checked: 2024.07.15
 
 2001:550:101::/48 Deny Cloud
 2607:8500::/32 Deny Cloud
@@ -8618,25 +8619,16 @@ Tag: Des Capital B.V
 # ASN 47869 ("Netrouting B.V").
 # Brute-force attacks, honeypot attacks, port scans, hacking, and spam detected
 # from here.
-# Stop Forum Spam (SFS) listings: 18.
-# Updated: 2023.12.27
+# Stop Forum Spam (SFS) listings: 17.
+# Updated: 2024.07.15
 
 2803:8080::/32 Deny Cloud
 Origin: AR
 2001:678:730::/48 Deny Cloud
 Origin: BE
-2a00:dd0::/32 Deny Cloud
-Origin: NL
-2a0e:1c80:4::/48 Deny Cloud
-2a0e:1c80:c::/47 Deny Cloud
-2a0e:1c80:1b::/48 Deny Cloud
-Origin: SE
-2401:c740::/32 Deny Cloud
-2401:df40:1::/48 Deny Cloud
-2602:fc48:1::/48 Deny Cloud
-2604:bc0:2::/48 Deny Cloud
-2604:bc0:8::/48 Deny Cloud
 2606:ed00::/32 Deny Cloud
+2607:f128:45::/48 Deny Cloud
+2607:f128:400::/38 Deny Cloud
 Origin: US
 Profile: Dedicated;Frequent changes;Tor endpoints here;Webhosting
 Tag: Netrouting B.V
@@ -8658,17 +8650,15 @@ Tag: Trend Micro
 
 # ASN 209181 ("Zenex 5ive Limited").
 # Constant port scanning and occasional spam detected from this network.
-# Stop Forum Spam (SFS) listings: 492.
-# Updated: 2023.07.11 / Checked: 2023.08.08
+# Stop Forum Spam (SFS) listings: 241.
+# Updated: 2024.07.15
 
-2606:f180:5::/48 Deny Cloud
-2606:f180:6::/47 Deny Cloud
-2606:f180:8::/46 Deny Cloud
+2a09:e9c0::/29 Deny Cloud
+Origin: GB
 2607:740:1e::/47 Deny Cloud
 2607:740:20::/47 Deny Cloud
 2607:740:46::/48 Deny Cloud
 2607:6b80:6f::/48 Deny Cloud
-2a09:e9c0::/29 Deny Cloud
 Origin: US
 Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: Zenex 5ive Limited
@@ -9792,9 +9782,9 @@ Profile: Commercial;Infrastructure/Transit
 Tag: AxcelX Technologies LLC
 
 
-# ASNs 208091, 209559 ("XHOST INTERNET SOLUTIONS LP").
+# ASNs 197414, 208091, 209559, 212482 ("XHOST INTERNET SOLUTIONS LP").
 # Caught repeatedly trying to hack into RDP and honeypots.
-# Updated: 2024.02.21 / Checked: 2024.05.11
+# Updated: 2024.02.21 / Checked: 2024.07.15
 
 2a0d:65c0::/29 Deny Cloud
 Origin: RU
@@ -10507,8 +10497,8 @@ Tag: LLC VK
 # ASN 35112 ("GBN group Ltd").
 # Russian VPS provider. Brute-force, SQLi, and webapp attacks, port scans,
 # hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 276.
-# Updated: 2023.08.13
+# Stop Forum Spam (SFS) listings: 7.
+# Updated: 2023.08.13 / Checked: 2024.07.18
 
 2a0e:7200::/40 Deny Cloud
 Origin: RU
@@ -10519,10 +10509,11 @@ Tag: GBN group Ltd
 # ASNs 54990, 210558 ("1337 Services GmbH").
 # Tor and anonymous cloud services provider. Brute-force, SSH, and mail server
 # attacks, port scans, hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 15,295 (AS210558).
-# Updated: 2023.08.13
+# Stop Forum Spam (SFS) listings: 18,709 (AS210558).
+# Updated: 2024.07.18
 
 2a12:a800:1::/48 Deny Cloud
+2a12:a800:7::/48 Deny Cloud
 Origin: DE
 2001:67c:235c::/48 Deny Cloud
 Origin: FI
@@ -10844,8 +10835,8 @@ Tag: CompleteWeb.Net LLC
 # ASNs 202325, 204428 ("4Media Ltd", "SS-Net").
 # Corporate colo and dark fibre provider. Brute-force, SSH, and webapp attacks,
 # port scans, hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 18 (AS202325), 5 (AS204428).
-# Updated: 2023.08.08
+# Stop Forum Spam (SFS) listings: 3 (AS204428).
+# Updated: 2023.08.08 / Checked: 2024.07.15
 
 2001:678:f08::/48 Deny Attacks
 Origin: BG
@@ -10856,8 +10847,8 @@ Tag: 4Media Ltd
 # ASN 200313 ("IT WEB LTD").
 # Russian webhosting provider based in the British Virgin Islands. Brute-force,
 # SSH, and webapp attacks, port scans, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 5.
-# Updated: 2023.08.08
+# Stop Forum Spam (SFS) listings: 188.
+# Updated: 2023.08.08 / Checked: 2024.07.15
 
 2a0d:1640::/32 Deny Cloud
 2a0d:1643::/32 Deny Cloud
@@ -11985,21 +11976,20 @@ Tag: Brownrice
 # ASN 213192 ("NetBase BV").
 # Brute-force, WordPress/XMLRPC, and webapp attacks, hacking, and spam detected
 # from here.
-# Stop Forum Spam (SFS) listings: 4.
-# Updated: 2023.08.08
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2023.08.08 / Checked: 2024.07.15
 
 2a00:d640::/31 Deny Cloud
 Origin: NL
-Profile: Restricted/Unidentifiable;Webhosting
+Profile: Webhosting
 Tag: NetBase BV
 
 
 # ASN 40994 ("Hohl IT e.U").
 # DDoS, WordPress/XMLRPC, and webapp attacks, hacking, and spam detected here.
-# Stop Forum Spam (SFS) listings: 1,628.
-# Updated: 2023.08.08
+# Stop Forum Spam (SFS) listings: 2.
+# Updated: 2024.07.15
 
-2a0d:f301::/48 Deny Cloud
 2a0d:f302::/32 Deny Cloud
 Origin: AT
 Profile: Dedicated;Webhosting
@@ -12008,7 +11998,7 @@ Tag: alwyzon
 
 # ASN 209622 ("uPress Inc").
 # DDoS and WordPress attacks detected from here.
-# Updated: 2023.08.08
+# Updated: 2023.08.08 / Checked: 2024.07.15
 
 2a07:4300:31::/48 Deny Cloud
 2a07:4300:972::/48 Deny Cloud
@@ -12021,8 +12011,8 @@ Tag: uPress Inc
 
 # ASN 202914 ("Adeo Datacenter ApS").
 # Brute-force attacks and spam detected from here.
-# Stop Forum Spam (SFS) listings: 496.
-# Updated: 2023.08.08
+# Stop Forum Spam (SFS) listings: 155.
+# Updated: 2023.08.08 / Checked: 2024.07.15
 
 2a0d:3e80::/29 Deny Cloud
 Origin: DK
@@ -12030,9 +12020,9 @@ Profile: Dedicated;Webhosting
 Tag: Adeo
 
 
-# ASN 209622 ("Kingsoft cloud corporation limited").
+# ASN 137280 ("Kingsoft cloud corporation limited").
 # Port scans and SSH attacks detected from here.
-# Updated: 2023.08.09
+# Updated: 2023.08.09 / Checked: 2024.07.15
 
 2402:47c0::/32 Deny Cloud
 Origin: HK
@@ -12043,9 +12033,9 @@ Tag: Kingsoft
 # ASN 263511 ("Saveincloud Hospedagem na Internet Ltda").
 # Server farm. Brute-force, SQLi, and webapp attacks, and ports scans detected
 # from here.
-# Updated: 2023.08.12
+# Updated: 2024.07.18
 
-2804:1308::/32 Deny Cloud
+2804:1308::/47 Deny Cloud
 Origin: BR
 Profile: Infrastructure/Transit;Webhosting
 Tag: Saveincloud
@@ -12054,11 +12044,12 @@ Tag: Saveincloud
 # ASN 395956 ("Devicom Inc").
 # Brute-force, WordPress/XMLRPC, and webapp attacks, ports scans, and hacking
 # detected from here.
-# Updated: 2023.08.14
+# Stop Forum Spam (SFS) listings: 8.
+# Updated: 2023.08.14 / Checked: 2024.07.18
 
 2620:32:4000::/48 Deny Cloud
 Origin: CA
-Profile: Commercial;Infrastructure/Transit
+Profile: Restricted/Unidentifiable
 Tag: Devicom Inc
 
 
@@ -13104,6 +13095,98 @@ Tag: Intergrid Group Pty Ltd
 Origin: US
 Profile: Dedicated;Webhosting
 Tag: LogicWeb Inc
+
+
+# ASN 35372 ("Mizban Dadeh Iranian Co. (Ltd)").
+# Brute-force, SSH attacks, port scans, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 4.
+# Updated: 2024.07.18
+
+2a0c:b100::/46 Deny Cloud
+Origin: IR
+Profile: Restricted/Unidentifiable
+Tag: Mizban Dadeh
+
+
+# ASN 211056 ("Amir Hosein Maaref").
+# Brute-force attacks detected from here.
+# Updated: 2024.07.18
+
+2a05:9080:3::/48 Deny Cloud
+Origin: IR
+Profile: Restricted/Unidentifiable
+Tag: Amir Hosein Maaref
+
+
+# ASN 215419 ("Karizanta LTD").
+# Brute-force, SSH attacks, DNS poisoning, hacking, and port scans detected
+# from here.
+# Updated: 2024.07.18
+
+2a0f:5840:1::/48 Deny Cloud
+2a13:7b40:40::/48 Deny Cloud
+2a13:7b40:51::/48 Deny Cloud
+Origin: IR
+Profile: Restricted/Unidentifiable
+Tag: Karizanta LTD
+
+
+# ASN 206075 ("Maximilian Jacobsen").
+# Spam detected from here.
+# Updated: 2024.07.18
+
+2a07:e040::/31 Deny Cloud
+2a07:e042::/32 Deny Cloud
+Origin: DE
+Profile: Restricted/Unidentifiable
+Tag: Maximilian Jacobsen
+
+
+# ASN 214995 ("Charged IT Solutions LLC").
+# Brute-force and SSH attacks detected from here.
+# Updated: 2024.07.18
+
+2602:fed2:7300::/48 Deny Cloud
+Origin: CA
+2602:299::/44 Deny Cloud
+Origin: US
+Profile: Dedicated;Infrastructure/Transit;Webhosting
+Tag: Charged IT
+
+
+# ASN 210546 ("Miglovets Egor Andreevich").
+# Brute-force, honeypot attacks, and port scans detected from here.
+# Stop Forum Spam (SFS) listings: 4.
+# Updated: 2024.07.18
+
+2a0f:cdc6:600::/44 Deny Cloud
+Origin: LV
+Profile: Restricted/Unidentifiable
+Tag: M.E.Andreevich
+
+
+# ASN 62429 ('"C.S.T". Ltd').
+# Brute-force, hacking, port scans, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2024.07.18
+
+2a00:db20::/32 Deny Cloud
+Origin: RU
+Profile: Commercial;Infrastructure/Transit
+Tag: C.S.T
+
+
+# ASN 49549 ("Standart AG, LLC").
+# Brute-force attacks, port scans, and hacking detected from here.
+# Updated: 2024.07.18
+
+2a0c:b641:880::/44 Deny Cloud
+Origin: BE
+2a0f:cdc2::/32 Deny Cloud
+2a0f:cdc4::/31 Deny Cloud
+Origin: LV
+Profile: Commercial;Webhosting
+Tag: Standart AG, LLC
 
 
 # ---

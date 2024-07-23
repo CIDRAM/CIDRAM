@@ -434,3 +434,5 @@
 [2024.07.13; Bug-fixes; Maikuolan]: State messages generated via recursive executor calls at the updates page occasionally appeared out of order; Fixed. If the client-specified language was the same as the configured language, the client-specified preferred variant would be ignored, even if it wasn't the same as the configured preferred variant; Fixed.
 
 [2024.07.13; Maikuolan]: Verification update.
+
+[2024.07.23; Bug-fix; Maikuolan]: Fixed a typo in the front-end auxiliary rules source hints code.

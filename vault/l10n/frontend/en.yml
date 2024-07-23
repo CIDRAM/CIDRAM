@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2024.07.02).
+# This file: English language data for the front-end (last modified: 2024.07.23).
 ##/
 
 Abuse category:
@@ -158,8 +158,7 @@ config:
  bypasses_used: "Which bypasses should be used?"
  components:
   en-AU: "Configuration for the activation and the deactivation of the components used by CIDRAM. Typically populated by the updates page, but can also be managed from here for finer control and for custom components not recognised by the updates page."
-  en-CA: &cp "Configuration for the activation and the deactivation of the components used by CIDRAM. Typically populated by the updates page, but can also be managed from here for finer control and for custom components not recognized by the updates page."
-  en-US: *cp
+  [en-CA, en-US]: "Configuration for the activation and the deactivation of the components used by CIDRAM. Typically populated by the updates page, but can also be managed from here for finer control and for custom components not recognized by the updates page."
  components_events: "Event handlers. Typically used to modify the way CIDRAM behaves internally or to provide additional functionality."
  components_imports: "Imports. Typically used to supply a component's configuration information to CIDRAM."
  components_ipv4: "IPv4 signature files."
@@ -178,8 +177,7 @@ config:
  frontend_custom_footer: "Inserted as HTML at the very bottom of all front-end pages. This could be useful in case you want to include a legal notice, contact link, business information, or similar at all such pages."
  frontend_custom_header:
   en-AU: "Inserted as HTML at the very beginning of all front-end pages. This could be useful in case you want to include a website logo, personalised header, scripts, or similar at all such pages."
-  en-CA: &cp "Inserted as HTML at the very beginning of all front-end pages. This could be useful in case you want to include a website logo, personalized header, scripts, or similar at all such pages."
-  en-US: *cp
+  [en-CA, en-US]: "Inserted as HTML at the very beginning of all front-end pages. This could be useful in case you want to include a website logo, personalized header, scripts, or similar at all such pages."
  frontend_enable_two_factor: "This directive determines whether to use 2FA for front-end accounts."
  frontend_frontend_log: "File for logging front-end login attempts. Specify a filename, or leave blank to disable."
  frontend_magnification: &MagnifDesc "Font magnification. Default = 1."
@@ -205,8 +203,7 @@ config:
  general_lang: "Specify the default language for CIDRAM."
  general_lang_override:
   en-AU: "Localise according to HTTP_ACCEPT_LANGUAGE whenever possible? True = Yes [Default]; False = No."
-  en-CA: &cp "Localize according to HTTP_ACCEPT_LANGUAGE whenever possible? True = Yes [Default]; False = No."
-  en-US: *cp
+  [en-CA, en-US]: "Localize according to HTTP_ACCEPT_LANGUAGE whenever possible? True = Yes [Default]; False = No."
  general_numbers: "How do you prefer numbers to be displayed? Select the example that looks the most correct to you."
  general_sensitive: "A list of paths to regard as sensitive pages. Each path listed will be checked against the reconstructed URI when needed. A path which begins with a forward slash will be treated as a literal, and matched from the path component of the request onward. Otherwise, a path which begins with a non-alphanumeric character, and ends with that same character (or that same character plus an optional "i" flag) will be treated as a regular expression. Any other kind of path will be treated as a literal, and can match from any part of the URI. Whether a path is regarded as a sensitive page may affect how some modules behave, but doesn't have any effect otherwise."
  general_silent_mode: "Should CIDRAM silently redirect blocked access attempts instead of displaying the "access denied" page? If yes, specify the location to redirect blocked access attempts to. If no, leave this variable blank."
@@ -238,8 +235,7 @@ config:
  legal_privacy_policy: "The address of a relevant privacy policy to be displayed in the footer of any generated pages. Specify a URL, or leave blank to disable."
  legal_pseudonymise_ip_addresses:
   en-AU: "Pseudonymise IP addresses when logging? True = Yes [Default]; False = No."
-  en-CA: &cp "Pseudonymize IP addresses when logging? True = Yes [Default]; False = No."
-  en-US: *cp
+  [en-CA, en-US]: "Pseudonymize IP addresses when logging? True = Yes [Default]; False = No."
  logging: "Configuration related to logging (excluding that applicable to other categories)."
  logging_apache_style_log: "Apache-style file for logging all blocked access attempts. Specify a filename, or leave blank to disable."
  logging_error_log: "A file for logging any non-fatal errors detected. Specify a filename, or leave blank to disable."
@@ -254,8 +250,7 @@ config:
  logging_report_log: "A file for logging any reports sent to external APIs. Specify a filename, or leave blank to disable."
  logging_serialised_log:
   en-AU: "Serialised file for logging all blocked access attempts. Specify a filename, or leave blank to disable."
-  en-CA: &cp "Serialized file for logging all blocked access attempts. Specify a filename, or leave blank to disable."
-  en-US: *cp
+  [en-CA, en-US]: "Serialized file for logging all blocked access attempts. Specify a filename, or leave blank to disable."
  logging_standard_log: "Human-readable file for logging all blocked access attempts. Specify a filename, or leave blank to disable."
  logging_truncate: "Truncate log files when they reach a certain size? Value is the maximum size in B/KB/MB/GB/TB that a log file may grow to before being truncated. The default value of 0KB disables truncation (log files can grow indefinitely). Note: Applies to individual log files! The size of log files is not considered collectively."
  phpmailer: "Configuration for PHPMailer (used for two-factor authentication and for email notifications)."
@@ -307,8 +302,7 @@ config:
  signatures_infraction_limit: "Maximum number of infractions an IP is allowed to incur before it is banned by IP tracking. Default = 10."
  signatures_shorthand:
   en-AU: "Controls for what to do with a request when there's a positive match against a signature which utilises the given shorthand words."
-  en-CA: &cp "Controls for what to do with a request when there's a positive match against a signature which utilizes the given shorthand words."
-  en-US: *cp
+  [en-CA, en-US]: "Controls for what to do with a request when there's a positive match against a signature which utilizes the given shorthand words."
  signatures_tracking_override: "Allow modules to override tracking options? True = Yes [Default]; False = No."
  supplementary_cache_options: "Supplementary cache options. Note: Changing these values may potentially log you out."
  supplementary_cache_options_enable_apcu: "Specifies whether to try using APCu for caching. Default = True."
@@ -332,8 +326,7 @@ config:
  template_data_custom_footer: "Inserted as HTML at the very bottom of all "access denied" pages. This could be useful in case you want to include a legal notice, contact link, business information, or similar at all such pages."
  template_data_custom_header:
   en-AU: "Inserted as HTML at the very beginning of all "access denied" pages. This could be useful in case you want to include a website logo, personalised header, scripts, or similar at all such pages."
-  en-CA: &cp "Inserted as HTML at the very beginning of all "access denied" pages. This could be useful in case you want to include a website logo, personalized header, scripts, or similar at all such pages."
-  en-US: *cp
+  [en-CA, en-US]: "Inserted as HTML at the very beginning of all "access denied" pages. This could be useful in case you want to include a website logo, personalized header, scripts, or similar at all such pages."
  template_data_magnification: *MagnifDesc
  template_data_theme: "The default theme to use for CIDRAM."
  tor: "Configuration for the Tor blocker module."
@@ -454,8 +447,7 @@ hints_shorthand:
  3.: "Direct usage in signatures isn't supported, but it may be invoked by other means in particular circumstances."
  4.:
   en-AU: "Refers to cases where shorthand words aren't used at all, or aren't recognised by CIDRAM."
-  en-CA: &cp "Refers to cases where shorthand words aren't used at all, or aren't recognized by CIDRAM."
-  en-US: *cp
+  [en-CA, en-US]: "Refers to cases where shorthand words aren't used at all, or aren't recognized by CIDRAM."
  One per signature.: "A signature may invoke multiple profiles, but can use only one shorthand word. It's possible that multiple shorthand words may be suitable, but as only one can be used, we aim to always use only the most suitable."
  Priority.: "An option selected always takes priority over an option not selected. E.g., if multiple shorthand words are in play but only one of them is set as being blocked, the request will still be blocked."
  Human endpoints and cloud services.:
@@ -482,8 +474,7 @@ hints_time_format: |
 hints_verification:
  "What are "positives" and "negatives"?":
   en-AU: "When verifying the identity presented by a request, a successful outcome could be described as "positive" or "negative". In the case that the identity presented is confirmed to be the true identity, it would be described as "positive". In the case that the identity presented is confirmed to be falsified, it would be described as "negative". However, an unsuccessful outcome (e.g., verification fails, or the veracity of the identity presented isn't able to be determined) would not be described as "positive" or "negative". Instead, an unsuccessful outcome would be described simply as non-verified. When no attempt to verify the identity presented by a request is made, the request would likewise be described as non-verified. The terms make sense only in the context where the identity presented by a request is recognised, and therefore, where verification is possible. In cases where the identity presented doesn't match the options provided above, or where no identity is presented, the options provided above become irrelevant."
-  en-CA: &cp "When verifying the identity presented by a request, a successful outcome could be described as "positive" or "negative". In the case that the identity presented is confirmed to be the true identity, it would be described as "positive". In the case that the identity presented is confirmed to be falsified, it would be described as "negative". However, an unsuccessful outcome (e.g., verification fails, or the veracity of the identity presented isn't able to be determined) would not be described as "positive" or "negative". Instead, an unsuccessful outcome would be described simply as non-verified. When no attempt to verify the identity presented by a request is made, the request would likewise be described as non-verified. The terms make sense only in the context where the identity presented by a request is recognized, and therefore, where verification is possible. In cases where the identity presented doesn't match the options provided above, or where no identity is presented, the options provided above become irrelevant."
-  en-US: *cp
+  [en-CA, en-US]: "When verifying the identity presented by a request, a successful outcome could be described as "positive" or "negative". In the case that the identity presented is confirmed to be the true identity, it would be described as "positive". In the case that the identity presented is confirmed to be falsified, it would be described as "negative". However, an unsuccessful outcome (e.g., verification fails, or the veracity of the identity presented isn't able to be determined) would not be described as "positive" or "negative". Instead, an unsuccessful outcome would be described simply as non-verified. When no attempt to verify the identity presented by a request is made, the request would likewise be described as non-verified. The terms make sense only in the context where the identity presented by a request is recognized, and therefore, where verification is possible. In cases where the identity presented doesn't match the options provided above, or where no identity is presented, the options provided above become irrelevant."
  "What are "single-hit bypasses"?": "In some cases, a positive-verified request may still blocked as a result of the signature files, modules, or other conditions of the request, and bypasses may be necessary in order to avoid false positives. In the case where a bypass is intended to deal with exactly one infraction, no more and no less, such a bypass could be described as a "single-hit bypass"."
 hints_want_to_block: "!! Most users will likely want this to be blocked, regardless of whether it's real or falsified. That can be achieved by having "attempt to verify" be not selected and "block non-verified requests" be selected. However, because some users may want to be able to verify such requests (in order to block negatives while allowing positives), instead of blocking such requests via modules, options for handling such requests are provided here."
 info_cli_by_default_ips: |
@@ -549,6 +540,7 @@ Some useful links: |+
        <li><span class="comCat">Informational and learning resources.</span>
          <ul class="comSub">
            <li>{{Links.PHP.Earth.Website}} – PHP learning resources and discussion.</li>
+           <li>{{Links.MDN.Homepage}} – Resources for developers, by developers. A fantastic resource for learning about HTML, CSS, JavaScript, accessibility, and more.</li>
            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Vulnerability Charts</a> – Lists safe/unsafe versions of various packages (HHVM, PHP, phpMyAdmin, Python, etc).</li>
            <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Compatibility Charts</a> – Lists compatibility information for various packages (CIDRAM, phpMussel, etc).</li>
          </ul>
@@ -938,8 +930,7 @@ response:
  There aren_t currently any auxiliary rules: "There aren't currently any auxiliary rules."
  There_s nothing to analyse, sorry:
   en-AU: "There's nothing to analyse, sorry."
-  en-CA: &cp "There's nothing to analyze, sorry."
-  en-US: *cp
+  [en-CA, en-US]: "There's nothing to analyze, sorry."
  There_s nothing to print, sorry: "There's nothing to print, sorry."
  There_s nothing to write, sorry: "There's nothing to write, sorry."
  Tracking cleared: "Tracking cleared."

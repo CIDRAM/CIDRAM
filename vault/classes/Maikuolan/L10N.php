@@ -1,6 +1,6 @@
 <?php
 /**
- * L10N handler (last modified: 2024.06.22).
+ * L10N handler (last modified: 2024.07.02).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -225,7 +225,7 @@ class L10N extends CommonAbstract
                     $Try = $Reference;
                 }
             }
-            $Reference = (!is_array($Try) || preg_match('~^[a-z]{2}(?:-[A-Z]{2})?$~', key($Try))) ? [$Try] : $Try;
+            $Reference = (!is_array($Try) || preg_match('~^[a-z]{2,3}(?:-[A-Z][A-Za-z]{1,3})?$~', key($Try))) ? [$Try] : $Try;
             foreach ($Reference as $Key => $Value) {
                 if (is_array($Value)) {
                     $Value = $this->PreferredVariant !== '' && isset($Value[$this->PreferredVariant]) ? $Value[$this->PreferredVariant] : array_shift($Value);

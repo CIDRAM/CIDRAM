@@ -1,6 +1,6 @@
 <?php
 /**
- * YAML handler (last modified: 2023.12.08).
+ * YAML handler (last modified: 2024.07.16).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -98,7 +98,7 @@ class YAML extends CommonAbstract
     private $MultiLineFolded = false;
 
     /**
-     * @var string Whether to use chomping for the current multiline block.
+     * @var string Whether to use chomping for the current multi-line block.
      */
     private $Chomp = '';
 
@@ -264,7 +264,7 @@ class YAML extends CommonAbstract
 
             /** Strip comments and whitespace. */
             if (!($ThisLine = preg_replace(['/(?<!\\\\)#.*$/', '/\s+$/'], '', $ThisLine))) {
-                /** Line preservation for multiline and folded blocks. .*/
+                /** Line preservation for multi-line and folded blocks. .*/
                 if (($this->MultiLine || $this->MultiLineFolded) && strlen($SendTo)) {
                     $SendTo .= "\n";
                 }
@@ -287,7 +287,7 @@ class YAML extends CommonAbstract
 
             /**
              * Data indented further than the current depth can be gathered to
-             * be processed recursively (e.g., sequences, multiline data, etc).
+             * be processed recursively (e.g., sequences, multi-line data, etc).
              */
             if ($ThisTab > $Depth) {
                 if ($TabLen === 0) {
@@ -637,6 +637,13 @@ class YAML extends CommonAbstract
             $Key = $this->arrayKeyLast($Arr);
         } elseif (($DelPos = strpos($ThisLine, ': ')) !== false) {
             $Key = substr($ThisLine, $ThisTab, $DelPos - $ThisTab);
+            if (substr($Key, 0, 1) === '[' && substr($Key, -1) === ']') {
+                $TryList = [];
+                $this->flowControl($Key, $TryList, '[', true);
+                $TryListCount = count($TryList);
+            } else {
+                $TryListCount = 0;
+            }
             $KeyLen = strlen($Key);
             $this->normaliseValue($Key, true);
             if (!$Key) {
@@ -651,6 +658,17 @@ class YAML extends CommonAbstract
             if ($ValueLen > 0) {
                 if (($this->LastResolvedTag === '!merge' || $Key === '<<') && is_array($Value)) {
                     $Arr += $this->merge($Value);
+                } elseif ($TryListCount !== 0 && (!is_array($Value) || count($Value) === $TryListCount)) {
+                    if (is_array($Value)) {
+                        $Values = $Value;
+                        foreach ($TryList as $Key) {
+                            $Arr[$Key] = array_shift($Values);
+                        }
+                    } else {
+                        foreach ($TryList as $Key) {
+                            $Arr[$Key] = $Value;
+                        }
+                    }
                 } else {
                     $Arr[$Key] = $Value;
                 }
@@ -1184,9 +1202,10 @@ class YAML extends CommonAbstract
      * @param array $Arr Where to process that data.
      * @param string $Brace The type of bracing used (determines whether the
      *      data should be processed as a flow sequence or as flow mappings).
+     * @param bool $SequencesOnly Whether to restrict operation to sequences only.
      * @return bool True for process success. False for process failure.
      */
-    private function flowControl(string $In, array &$Arr, string $Brace): bool
+    private function flowControl(string $In, array &$Arr, string $Brace, bool $SequencesOnly = false): bool
     {
         /** Reset the array where we're processing the data. */
         $Arr = [];
@@ -1219,9 +1238,14 @@ class YAML extends CommonAbstract
             }
 
             foreach ($Arr as &$Working) {
-                $this->normaliseValue($Working);
+                $this->normaliseValue($Working, $SequencesOnly);
             }
             return true;
+        }
+
+        /** Guard. */
+        if ($SequencesOnly) {
+            return false;
         }
 
         /** Flow mappings. */

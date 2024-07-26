@@ -438,3 +438,5 @@
 [2024.07.23; Bug-fix; Maikuolan]: Fixed a typo in the front-end auxiliary rules source hints code.
 
 [2024.07.23; Maikuolan]: Added MDN to the front-end's "useful links".
+
+[2024.07.26; Maikuolan]: Fixed BOBUAM missed detection (#609).

@@ -22,7 +22,7 @@
  * William "Bill" Minozzi.
  * @link https://www.stopbadbots.com/
  *
- * This file: Bot Or Browser User Agent Module (last modified: 2024.06.11).
+ * This file: Bot Or Browser User Agent Module (last modified: 2024.07.26).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -177,7 +177,10 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $EOLFirefox = $this->Configuration['bobuam']['firefox'] ?: (int)$this->CIDRAM['BOBUAM Token']['Firefox'];
             $EOLFirefoxESR = $this->Configuration['bobuam']['firefox_esr'] ?: (int)$this->CIDRAM['BOBUAM Token']['Firefox ESR'];
             $EOLSafari = $this->Configuration['bobuam']['safari'] ?: (int)$this->CIDRAM['BOBUAM Token']['Safari'];
-            if ($Chromium = preg_match('%^(?i)(?!.*edg(?:a|e|ios)\/)(?!.* build\/)(?!.* Favicon).*chrom(?:e|ium)\/(\d+)\.\d+.*$%', $this->BlockInfo['UA'], $rebt)) {
+            if (
+                $Chromium = preg_match('%^(?i)(?!.*edg(?:a|e|ios)\/)(?!.* build\/)(?!.* Favicon).*chrom(?:e|ium)\/(\d+)\.\d+.*$%', $this->BlockInfo['UA'], $rebt) ||
+                $Chromium = preg_match('%^(?i)(?=.*android)(?!.* Favicon).*chrom(?:e|ium)\/(\d+)\.\d+.*$%', $this->BlockInfo['UA'], $rebt)
+            ) {
                 $rebt = (int)$rebt[1];
                 if ($this->trigger(($rebt < $EOLChrome), $Browser[0] . ' (C)', $Browser[1])) {
                     $this->enactOptions('Chrome:', $Options);

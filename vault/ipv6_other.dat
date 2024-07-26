@@ -1,8 +1,8 @@
 # IPv6 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6_other.dat
 
-# Version: 2024.160.0
-# Last modified: 2024.06.09
+# Version: 2024.207.0
+# Last modified: 2024.07.26
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -51,7 +51,7 @@ Tag: Emerald Onion
 # you are not allowed to redistribute the feed to other networks. The export of
 # these feeds/prefixes to other networks is prohibited.
 # Excerpt from: https://www.spamhaus.org/bgpf/
-# Updated: 2024.05.02
+# Updated: 2024.07.26
 
 2001:678:6c4::/48 Deny Spam
 2001:678:724::/48 Deny Spam
@@ -67,9 +67,12 @@ Tag: Emerald Onion
 2001:678:e4c::/48 Deny Spam
 2401:c580::/32 Deny Spam
 2402:6680::/32 Deny Spam
+2405:9fc0:1::/48 Deny Spam
 2405:b180::/32 Deny Spam
 2405:b480::/32 Deny Spam
 2405:e880::/32 Deny Spam
+2602:f915:1::/48 Deny Spam
+2602:f91d::/40 Deny Spam
 2602:ffa0::/36 Deny Spam
 2607:d100::/32 Deny Spam
 2607:f2d0::/32 Deny Spam
@@ -81,6 +84,7 @@ Tag: Emerald Onion
 2a05:b0c6:a000::/38 Deny Spam
 2a05:b0c7:6000::/36 Deny Spam
 2a06:e80:3000::/36 Deny Spam
+2a06:b440::/29 Deny Spam
 2a06:d240::/29 Deny Spam
 2a06:e480::/29 Deny Spam
 2a07:5c0::/29 Deny Spam
@@ -103,6 +107,7 @@ Tag: Emerald Onion
 2a0b:ae80::/29 Deny Spam
 2a0b:f500::/29 Deny Spam
 2a0b:fdc0::/29 Deny Spam
+2a0d:6c2::/32 Deny Spam
 2a0d:c700::/29 Deny Spam
 2a0d:e7c7:ffff::/48 Deny Spam
 2a0e:b107:1572::/48 Deny Spam
@@ -115,13 +120,16 @@ Tag: Emerald Onion
 2a10:9700::/29 Deny Spam
 2a10:cc45:100::/44 Deny Spam
 2a12:2640::/29 Deny Spam
+2a12:6740::/30 Deny Spam
 2a12:dd47:8500::/40 Deny Spam
 2a13:df80:a800::/38 Deny Spam
 2a13:df84::/32 Deny Spam
 2a13:df87:b600::/39 Deny Spam
 2a13:ef45::/32 Deny Spam
 2a14:7c0:1e00::/40 Deny Spam
-2a14:7c3::/32 Deny Spam
+2a14:7c0:3400::/38 Deny Spam
+2a14:7c0:4c00::/40 Deny Spam
+2a14:7c2::/31 Deny Spam
 Profile: Third-party sourced
 Tag: Spamhaus DROPv6
 

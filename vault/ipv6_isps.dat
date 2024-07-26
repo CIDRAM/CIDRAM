@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6_isps.dat
 
-# Version: 2024.191.0
-# Last modified: 2024.07.10
+# Version: 2024.207.0
+# Last modified: 2024.07.26
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -311,29 +311,6 @@ Profile: Domestic ISP
 Tag: Atria Convergence
 
 
-# ASN 6830 ("Liberty Global B.V").
-# European international 5G and fibre provider. Brute-force, WordPress, and
-# webapp attacks, port scans, email harvestors, and spam detected from here.
-# Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 945.
-# Updated: 2023.09.07
-
-2a02:8084:4262:d180::/64 Deny Spam
-Origin: IE
-2a02:a310:8345:cd00::/64 Deny Spam
-2a02:a311:a23d:8800::/64 Deny Spam
-2a02:a311:c43f:bd00::/64 Deny Spam
-2a02:a317:2348:8180::/64 Deny Spam
-2a02:a318:a03a:8c00::/64 Deny Spam
-2a02:a318:a03e:3a00::/64 Deny Spam
-2a02:a31a:a33c:d880::/64 Deny Spam
-2a02:a31a:e142:a80::/64 Deny Spam
-2a02:a31a:e145:ae00::/64 Deny Spam
-Origin: PL
-Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Tor endpoints here
-Tag: Liberty Global
-
-
 # ASN 1221 ("Telstra Corporation Ltd").
 # Australia's largest domestic ISP. Brute-force, SSH, and telnet attacks, port
 # scans, hacking, and spam detected from here.
@@ -426,30 +403,6 @@ Tag: OVH Systems
 Origin: TH
 Profile: Domestic ISP;Infrastructure/Transit;Multiplay
 Tag: Phaholyothin Rd
-
-
-# ASN 34757 ("Sibirskie Seti Ltd").
-# Russian domestic ISP. A frequent source of hacking, brute-force, SSH, and
-# webapp attacks. Listing whole ASN.
-# Stop Forum Spam (SFS) listings: 27.
-# Updated: 2021.02.20 / Checked: 2023.08.03
-
-2a00:bfc0::/35 Deny Attacks
-Origin: RU
-Profile: Domestic ISP
-Tag: Sibirskie Seti Ltd
-
-
-# ASNs 3243, 15525, 42863 ("MEO - SERVICOS DE COMUNICACOES E MULTIMEDIA S.A").
-# Portuguese domestic ISP. Caught by honeypots. Port scans and hack attempts
-# detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 218 (AS3243), 21 (AS15525), 25 (AS42863).
-# Updated: 2023.09.04
-
-2001:8a0:6380:ad00::/64 Deny Spam
-Origin: PT
-Profile: Domestic ISP
-Tag: MEO
 
 
 # ASNs 45820, 134674 ("TATA SKY BROADBAND PRIVATE LIMITED").

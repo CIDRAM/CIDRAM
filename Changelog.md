@@ -440,3 +440,5 @@
 [2024.07.23; Maikuolan]: Added MDN to the front-end's "useful links".
 
 [2024.07.26; Maikuolan]: Fixed BOBUAM missed detection (#609).
+
+[2024.07.27; Bug-fix; Maikuolan]: BGPView and IP-API modules not showing correct country codes in logs after successful lookups when not subsequently on non-sensitive pages; Fixed (#592).

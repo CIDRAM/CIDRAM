@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: IP-API module (last modified: 2024.06.11).
+ * This file: IP-API module (last modified: 2024.07.27).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -33,15 +33,6 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         return;
     }
 
-    /**
-     * Depending on the configured lookup strategy, if the request isn't
-     * attempting to access a sensitive page (login, registration page, etc),
-     * exit.
-     */
-    if ($this->Configuration['ipapi']['lookup_strategy'] !== 1 && !$this->isSensitive(preg_replace('/\s/', '', strtolower($this->BlockInfo['rURI'])))) {
-        return;
-    }
-
     $InCache = false;
     $DoOpt = false;
 
@@ -62,6 +53,8 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         return;
     }
 
+    $BlockLookup = ($this->Configuration['ipapi']['lookup_strategy'] !== 1 && !$this->isSensitive(preg_replace('/\s/', '', strtolower($this->BlockInfo['rURI']))));
+
     /** Expand factors for this origin. */
     $Expanded = [$this->expandIpv4($this->BlockInfo['IPAddr']), $this->expandIpv6($this->BlockInfo['IPAddr'])];
     if (is_array($Expanded[0]) && count($Expanded[0]) === 32) {
@@ -80,7 +73,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     }
 
     /** Prepare to perform a new lookup if none for this origin have been cached yet. */
-    if (!$InCache) {
+    if (!$InCache && !$BlockLookup) {
         $Lookup = $this->Request->request(
             'http://ip-api.com/json/' . $this->BlockInfo['IPAddr'] . '?fields=status,countryCode,as,mobile,proxy,hosting',
             [],

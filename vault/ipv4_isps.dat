@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv4_isps.dat
 
-# Version: 2024.210.0
-# Last modified: 2024.07.29
+# Version: 2024.213.0
+# Last modified: 2024.08.01
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -7725,7 +7725,7 @@ Tag: Foreningen
 # Ukrainian domestic ISP. Hacking and spam detected from here.
 # Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 6,300.
-# Updated: 2024.05.02
+# Updated: 2024.05.02 / Modified: 2024.08.01
 
 46.219.1.5/32 Deny Attacks
 46.219.80.142/32 Deny Attacks
@@ -7742,6 +7742,7 @@ Tag: Foreningen
 46.219.252.210/32 Deny Attacks
 46.219.254.0/23 Deny Spam
 89.252.12.123/32 Deny Attacks
+109.251.89.47/32 Deny Attacks
 Origin: UA
 Profile: Domestic ISP
 Tag: Freenet Ltd
@@ -8749,67 +8750,109 @@ Tag: IT Systems LLC
 # Kazakhstan backbone provider and domestic ISP. Brute-force, SSH, DDoS, and
 # webapp attacks, port scans, and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,759 (AS9198), 7 (AS50482).
-# Updated: 2023.08.23 / Modified: 2023.11.18
+# Stop Forum Spam (SFS) listings: 1,131 (AS9198), 7 (AS50482).
+# Updated: 2024.07.31
 
-2.132.118.222/32 Deny Spam
-2.132.134.0/24 Deny Attacks
-2.133.98.80/32 Deny Spam
-2.133.235.106/32 Deny Attacks
-2.133.235.209/32 Deny Attacks
-2.134.228.192/32 Deny Attacks
+2.132.134.38/32 Deny Attacks
+2.132.134.77/32 Deny Attacks
+2.132.134.94/32 Deny Attacks
+2.132.134.162/32 Deny Attacks
+2.132.134.235/32 Deny Attacks
+2.133.133.91/32 Deny Attacks
+2.133.133.169/32 Deny Attacks
+2.133.225.78/32 Deny Attacks
+2.133.225.81/32 Deny Attacks
+2.133.225.105/32 Deny Attacks
+2.133.235.35/32 Deny Attacks
+2.133.235.38/32 Deny Attacks
+2.134.228.15/32 Deny Attacks
 2.134.228.226/32 Deny Attacks
-2.134.237.115/32 Deny Attacks
-2.134.237.253/32 Deny Attacks
-2.135.115.212/32 Deny Spam
-5.76.25.110/32 Deny Spam
-5.251.7.172/32 Deny Spam
-5.251.222.191/32 Deny Spam
-37.150.225.92/32 Deny Spam
-84.240.213.61/32 Deny Attacks
+2.134.237.3/32 Deny Attacks
+2.134.237.16/32 Deny Attacks
+2.134.237.162/32 Deny Attacks
+2.134.237.201/32 Deny Attacks
+37.151.32.13/32 Deny Attacks
+37.151.32.176/32 Deny Attacks
+84.240.213.59/32 Deny Attacks
+84.240.213.113/32 Deny Attacks
 88.204.216.2/32 Deny Attacks
 88.204.216.142/32 Deny Attacks
-89.218.8.152/32 Deny Spam
-89.218.170.214/32 Deny Attacks
-92.46.91.76/32 Deny Attacks
+88.204.216.182/32 Deny Attacks
+92.46.91.175/32 Deny Attacks
+92.46.91.248/32 Deny Attacks
 92.47.56.0/23 Deny Attacks
-92.47.58.88/32 Deny Attacks
-92.47.58.173/32 Deny Attacks
+92.47.58.102/32 Deny Attacks
+92.47.58.181/32 Deny Attacks
+92.47.59.138/32 Deny Attacks
 92.47.59.150/32 Deny Attacks
-92.47.59.226/32 Deny Attacks
+95.56.48.15/32 Deny Attacks
+95.56.48.54/32 Deny Spam
+95.56.111.36/32 Deny Attacks
+95.56.111.57/32 Deny Attacks
+95.56.111.105/32 Deny Attacks
+95.56.111.116/32 Deny Attacks
+95.56.111.219/32 Deny Attacks
+95.56.130.176/32 Deny Spam
+95.56.194.19/32 Deny Attacks
+95.56.194.112/32 Deny Attacks
+95.56.194.115/32 Deny Attacks
+95.56.194.132/32 Deny Attacks
 95.56.254.139/32 Deny Attacks
 145.255.176.0/22 Deny Attacks
 145.255.180.0/23 Deny Attacks
-145.255.182.206/32 Deny Attacks
-145.255.182.209/32 Deny Attacks
-145.255.183.200/32 Deny Attacks
-145.255.184.0/22 Deny Attacks
-147.30.10.34/32 Deny Spam
-147.30.58.67/32 Deny Spam
+145.255.184.24/32 Deny Attacks
+145.255.184.146/32 Deny Attacks
+145.255.184.211/32 Deny Attacks
+145.255.185.9/32 Deny Attacks
+145.255.185.13/32 Deny Attacks
+145.255.185.35/32 Deny Attacks
+145.255.185.68/32 Deny Attacks
+145.255.185.251/32 Deny Attacks
+145.255.186.51/32 Deny Attacks
+145.255.186.129/32 Deny Attacks
+145.255.186.156/32 Deny Attacks
+145.255.186.239/32 Deny Attacks
+147.30.78.43/32 Deny Attacks
+147.30.78.73/32 Deny Attacks
+147.30.78.164/32 Deny Attacks
+147.30.78.175/32 Deny Attacks
+147.30.85.1/32 Deny Attacks
+147.30.85.79/32 Deny Attacks
+178.88.78.76/32 Deny Attacks
+178.88.78.106/32 Deny Attacks
 178.88.87.0/24 Deny Attacks
-178.88.93.201/32 Deny Attacks
-178.88.93.214/32 Deny Attacks
-178.88.111.210/32 Deny Attacks
-178.88.240.29/32 Deny Attacks
-178.88.240.34/32 Deny Attacks
-178.88.240.55/32 Deny Attacks
-178.88.240.225/32 Deny Attacks
-178.89.32.0/24 Deny Attacks
-178.89.181.26/32 Deny Attacks
-178.89.181.48/32 Deny Attacks
-178.89.186.82/32 Deny Spam
-178.90.95.87/32 Deny Attacks
-178.90.123.247/32 Deny Spam
+178.88.93.0/24 Deny Attacks
+178.88.111.91/32 Deny Attacks
+178.88.111.100/32 Deny Attacks
+178.88.111.206/32 Deny Attacks
+178.88.240.121/32 Deny Attacks
+178.88.240.128/32 Deny Attacks
+178.88.240.191/32 Deny Attacks
+178.88.240.247/32 Deny Attacks
+178.89.32.56/32 Deny Attacks
+178.89.32.65/32 Deny Attacks
+178.89.32.88/32 Deny Attacks
+178.89.32.113/32 Deny Attacks
+178.89.172.161/32 Deny Attacks
+178.89.172.199/32 Deny Attacks
+178.89.181.58/32 Deny Attacks
+178.89.181.71/32 Deny Attacks
+178.89.181.113/32 Deny Attacks
+178.89.181.238/32 Deny Attacks
+178.90.4.42/32 Deny Attacks
+178.90.4.214/32 Deny Attacks
+178.90.71.60/32 Deny Attacks
+178.90.71.142/32 Deny Attacks
+178.90.95.24/32 Deny Attacks
 178.90.228.0/23 Deny Attacks
-178.90.247.19/32 Deny Attacks
-178.90.247.46/32 Deny Attacks
-178.90.247.98/32 Deny Attacks
-178.90.247.204/32 Deny Spam
 178.90.248.0/24 Deny Attacks
 178.90.250.0/24 Deny Attacks
-178.91.209.24/32 Deny Attacks
-178.91.209.195/32 Deny Attacks
-178.91.209.196/32 Deny Attacks
+178.91.209.0/24 Deny Attacks
+212.13.133.91/32 Deny Attacks
+212.13.133.158/32 Deny Attacks
+212.13.159.8/32 Deny Attacks
+212.13.159.103/32 Deny Attacks
+213.211.67.252/32 Deny Spam
 Origin: KZ
 Profile: Domestic ISP;Infrastructure/Transit
 Tag: JSC Kazakhtelecom
@@ -11534,57 +11577,102 @@ Tag: Korea Telecom
 # ASN 8048 ("CANTV Servicios, Venezuela").
 # Venezuelan domestic ISP and TV service. Port scans, hacking, and spam
 # detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 354.
-# Updated: 2023.08.23 / Modified: 2024.01.10
+# Stop Forum Spam (SFS) listings: 168.
+# Updated: 2024.07.31
 
-186.89.249.197/32 Deny Spam
-190.75.101.21/32 Deny Attacks
-190.75.101.30/32 Deny Attacks
-190.75.101.49/32 Deny Attacks
-190.75.101.183/32 Deny Attacks
-190.75.101.193/32 Deny Attacks
+190.75.101.0/24 Deny Attacks
 190.202.45.30/32 Deny Attacks
-190.202.111.160/32 Deny Attacks
+190.202.45.110/32 Deny Attacks
+190.202.45.186/32 Deny Attacks
+190.202.45.198/32 Deny Attacks
+190.202.45.230/32 Deny Attacks
+190.202.111.160/31 Deny Attacks
+190.202.111.162/32 Deny Attacks
+190.202.111.164/32 Deny Attacks
 190.202.111.202/32 Deny Attacks
-200.109.187.108/32 Deny Attacks
-200.109.187.121/32 Deny Attacks
-200.109.187.220/32 Deny Attacks
-201.208.141.0/24 Deny Attacks
+201.208.95.157/32 Deny Attacks
+201.208.96.0/19 Deny Attacks
+201.208.128.0/19 Deny Attacks
 201.210.80.0/20 Deny Attacks
 201.210.96.0/19 Deny Attacks
-201.210.128.0/24 Deny Attacks
-201.210.130.0/23 Deny Attacks
-201.210.132.0/23 Deny Attacks
-201.210.134.25/32 Deny Attacks
-201.210.135.8/32 Deny Attacks
-201.210.136.0/23 Deny Attacks
-201.210.138.229/32 Deny Attacks
+201.210.128.12/32 Deny Attacks
+201.210.130.34/32 Deny Attacks
+201.210.130.75/32 Deny Attacks
+201.210.130.178/31 Deny Attacks
+201.210.131.151/32 Deny Attacks
+201.210.131.159/32 Deny Attacks
+201.210.131.212/32 Deny Attacks
+201.210.132.54/32 Deny Attacks
+201.210.132.91/32 Deny Attacks
+201.210.132.168/32 Deny Attacks
+201.210.132.174/32 Deny Attacks
+201.210.132.233/32 Deny Attacks
+201.210.133.17/32 Deny Attacks
+201.210.133.53/32 Deny Attacks
+201.210.133.63/32 Deny Attacks
+201.210.133.82/32 Deny Attacks
+201.210.133.155/32 Deny Attacks
+201.210.134.0/24 Deny Attacks
+201.210.135.112/32 Deny Attacks
+201.210.136.17/32 Deny Attacks
+201.210.136.23/32 Deny Attacks
+201.210.136.116/32 Deny Attacks
+201.210.136.170/32 Deny Attacks
+201.210.137.102/32 Deny Attacks
+201.210.137.133/32 Deny Attacks
+201.210.138.63/32 Deny Attacks
+201.210.138.109/32 Deny Attacks
+201.210.138.110/32 Deny Attacks
+201.210.138.195/32 Deny Attacks
 201.210.139.0/24 Deny Attacks
-201.210.140.199/32 Deny Attacks
-201.210.142.197/32 Deny Attacks
-201.210.143.19/32 Deny Attacks
-201.210.143.123/32 Deny Attacks
+201.210.142.0/24 Deny Attacks
+201.210.143.45/32 Deny Attacks
+201.210.143.158/32 Deny Attacks
+201.210.143.211/32 Deny Attacks
 201.210.144.0/20 Deny Attacks
 201.210.160.0/19 Deny Attacks
-201.210.192.0/24 Deny Attacks
-201.210.194.6/32 Deny Attacks
-201.210.194.81/32 Deny Attacks
-201.210.195.0/24 Deny Attacks
-201.210.196.0/23 Deny Attacks
-201.210.198.121/32 Deny Attacks
-201.210.199.0/24 Deny Attacks
+201.210.192.73/32 Deny Attacks
+201.210.192.99/32 Deny Attacks
+201.210.193.107/32 Deny Attacks
+201.210.194.77/32 Deny Attacks
+201.210.194.188/32 Deny Attacks
+201.210.195.194/32 Deny Attacks
+201.210.195.248/32 Deny Attacks
+201.210.196.39/32 Deny Attacks
+201.210.196.222/32 Deny Attacks
+201.210.197.39/32 Deny Attacks
+201.210.197.152/32 Deny Attacks
+201.210.197.230/32 Deny Attacks
+201.210.198.130/32 Deny Attacks
+201.210.198.160/32 Deny Attacks
+201.210.199.85/32 Deny Attacks
+201.210.199.191/32 Deny Attacks
+201.210.199.198/32 Deny Attacks
+201.210.199.252/32 Deny Attacks
 201.210.200.0/21 Deny Attacks
 201.210.208.0/20 Deny Attacks
 201.210.224.0/20 Deny Attacks
 201.210.240.0/21 Deny Attacks
-201.210.248.75/32 Deny Attacks
 201.210.248.135/32 Deny Attacks
-201.210.250.212/32 Deny Attacks
-201.210.250.229/32 Deny Attacks
+201.210.248.250/32 Deny Attacks
+201.210.250.28/32 Deny Attacks
+201.210.250.46/32 Deny Attacks
+201.210.250.88/32 Deny Attacks
+201.210.250.136/32 Deny Attacks
+201.210.251.119/32 Deny Attacks
+201.210.251.153/32 Deny Attacks
+201.210.251.169/32 Deny Attacks
 201.210.251.187/32 Deny Attacks
-201.210.252.0/24 Deny Attacks
-201.210.253.2/32 Deny Attacks
-201.210.254.3/32 Deny Attacks
+201.210.252.128/32 Deny Attacks
+201.210.252.143/32 Deny Attacks
+201.210.253.38/32 Deny Attacks
+201.210.253.248/32 Deny Attacks
+201.210.254.187/32 Deny Attacks
+201.210.255.5/32 Deny Attacks
+201.210.255.199/32 Deny Attacks
+201.248.66.18/32 Deny Attacks
+201.248.66.146/32 Deny Attacks
+201.248.66.206/32 Deny Attacks
 Origin: VE
 Profile: Domestic ISP;Multiplay
 Tag: CANTV Servicios

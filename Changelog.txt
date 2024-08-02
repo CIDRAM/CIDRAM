@@ -14,7 +14,8 @@ Detailed version release guidelines for CIDRAM can be found at:
 
 - [2024.07.23; Maikuolan]: Added MDN to the front-end's "useful links".
 
-- [2024.08.02; Maikuolan]: Fixed some typos.
+- [2024.08.02; Maikuolan]: Fixed some typos. Added a guard to the request
+  handler's request method to fail if curl_init doesn't exist (#611).
 
 === Version/Release 1.28.2 ===
 PATCH RELEASE.

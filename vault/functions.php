@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2023.12.12).
+ * This file: Functions file (last modified: 2024.08.02).
  */
 
 /**
@@ -109,7 +109,7 @@ $CIDRAM['FetchIgnores'] = function () use (&$CIDRAM) {
  * Tests whether $Addr is an IPv4 address, and if it is, expands its potential
  * factors (i.e., constructs an array containing the CIDRs that contain $Addr).
  * Returns false if $Addr is *not* an IPv4 address, and otherwise, returns the
- * contructed array.
+ * constructed array.
  *
  * @param string $Addr Refer to the description above.
  * @param bool $ValidateOnly If true, just checks if the IP is valid only.
@@ -146,7 +146,7 @@ $CIDRAM['ExpandIPv4'] = function ($Addr, $ValidateOnly = false, $FactorLimit = 3
  * Tests whether $Addr is an IPv6 address, and if it is, expands its potential
  * factors (i.e., constructs an array containing the CIDRs that contain $Addr).
  * Returns false if $Addr is *not* an IPv6 address, and otherwise, returns the
- * contructed array.
+ * constructed array.
  *
  * @param string $Addr Refer to the description above.
  * @param bool $ValidateOnly If true, just checks if the IP is valid only.

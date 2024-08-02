@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2024.05.05).
+ * This file: Front-end functions file (last modified: 2024.08.02).
  */
 
 /**
@@ -4193,7 +4193,7 @@ $CIDRAM['LTRinRTF'] = function ($String = '') use (&$CIDRAM) {
  *
  * @param string $CIDR The CIDR to split.
  * @return array An array containing two elements (the smaller CIDRs), or an
- *      empty array on faliure (e.g., supplied data isn't a valid CIDR).
+ *      empty array on failure (e.g., supplied data isn't a valid CIDR).
  */
 $CIDRAM['SplitCIDR'] = function ($CIDR) use (&$CIDRAM) {
     if (($Pos = strpos($CIDR, '/')) === false) {

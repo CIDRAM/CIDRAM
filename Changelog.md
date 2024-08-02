@@ -443,4 +443,4 @@
 
 [2024.07.27; Bug-fix; Maikuolan]: BGPView and IP-API modules not showing correct country codes in logs when blocked on requests for non-sensitive pages subsequent to successful lookups; Fixed (#592).
 
-[2024.08.02; Maikuolan]: Fixed some typos.
+[2024.08.02; Maikuolan]: Fixed some typos. Added a guard to the request handler's request method to fail if curl_init doesn't exist (#611).

@@ -1,6 +1,6 @@
 <?php
 /**
- * Request handler (last modified: 2023.12.24).
+ * Request handler (last modified: 2024.08.02).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -106,6 +106,11 @@ class Request extends CommonAbstract
      */
     public function request(string $URI, $Params = [], int $Timeout = -1, array $Headers = [], int $Depth = 0, string $Method = ''): string
     {
+        /** Guard. */
+        if (!function_exists('curl_init')) {
+            return '';
+        }
+
         /** Test channel triggers. */
         foreach ($this->Channels['Triggers'] as $TriggerName => $TriggerURI) {
             if (

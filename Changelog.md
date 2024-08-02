@@ -442,3 +442,5 @@
 [2024.07.26; Maikuolan]: Fixed BOBUAM missed detection (#609).
 
 [2024.07.27; Bug-fix; Maikuolan]: BGPView and IP-API modules not showing correct country codes in logs when blocked on requests for non-sensitive pages subsequent to successful lookups; Fixed (#592).
+
+[2024.08.02; Maikuolan]: Fixed some typos.

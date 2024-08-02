@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used to expand CIDRs (last modified: 2023.10.21).
+ * This file: Methods used to expand CIDRs (last modified: 2024.08.02).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -19,7 +19,7 @@ trait Expand
      * Tests whether $Addr is an IPv4 address, and if it is, expands its potential
      * factors (i.e., constructs an array containing the CIDRs that contain $Addr).
      * Returns false if $Addr is *not* an IPv4 address, and otherwise, returns the
-     * contructed array.
+     * constructed array.
      *
      * @param string $Addr Refer to the description above.
      * @param bool $ValidateOnly If true, just checks if the IP is valid only.
@@ -57,7 +57,7 @@ trait Expand
      * Tests whether $Addr is an IPv6 address, and if it is, expands its potential
      * factors (i.e., constructs an array containing the CIDRs that contain $Addr).
      * Returns false if $Addr is *not* an IPv6 address, and otherwise, returns the
-     * contructed array.
+     * constructed array.
      *
      * @param string $Addr Refer to the description above.
      * @param bool $ValidateOnly If true, just checks if the IP is valid only.

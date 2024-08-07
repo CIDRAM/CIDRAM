@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6_isps.dat
 
-# Version: 2024.207.0
-# Last modified: 2024.07.26
+# Version: 2024.219.0
+# Last modified: 2024.08.07
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -349,10 +349,10 @@ Tag: British Telecom PLC
 # Major US domestic ISP. DDoS, SQLi, brute-force and WordPress/XMLRPC attacks,
 # credential stuffing, port scans, and spam detected from here.
 # Listed just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 5,799.
-# Updated: 2024.05.04
+# Stop Forum Spam (SFS) listings: 4,124.
+# Updated: 2024.08.03
 
-2600:1700:5c58:3a90::/64 Deny Spam
+2600:1700:1110:dd60::/64 Deny Spam
 Origin: US
 Profile: Domestic ISP;Tor endpoints here
 Tag: AT&T Services, Inc
@@ -422,11 +422,11 @@ Tag: TATA SKY BROADBAND PRIVATE LIMITED
 # ASNs 3209, 31334 ("Vodafone Deutschland GmbH").
 # German multiplay network. Brute-force and webapp attacks, hacking, and spam
 # detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,358 (AS3209).
-# Updated: 2023.09.28
+# Stop Forum Spam (SFS) listings: 1,365 (AS3209).
+# Updated: 2024.08.07
 
-2a02:8070:d281:f5e0::/64 Deny Spam
-2a02:8071:2286:dac0::/64 Deny Spam
+2a02:908:1570:7e40::/64 Deny Spam
+2a02:8070:2786:8560::/64 Deny Spam
 Origin: DE
 Profile: Domestic ISP;Mobile ISP;Multiplay
 Tag: Vodafone Deutschland GmbH

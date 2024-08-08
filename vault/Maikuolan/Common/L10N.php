@@ -1,6 +1,6 @@
 <?php
 /**
- * L10N handler (last modified: 2024.07.02).
+ * L10N handler (last modified: 2024.08.08).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -1116,6 +1116,14 @@ class L10N extends CommonAbstract
         }
 
         if (($Pos = strpos($Code, '-')) !== false) {
+            /** @link https://en.wikipedia.org/wiki/ISO_15924 */
+            if (preg_match('~-([A-Z][a-z]{3}|\d{3})$~', $Code, $Script)) {
+                if (preg_match('~^(?:1\d\d|A(?:dlm|rab|rmi|vst)|C(?:hrs|prt)|Elym|Gara|H(?:atr|ebr|ung)|K(?:har|its)|Lydi|M(?:an[di]|end|er[co])|N(?:arb|bat|koo|shu)|Orkh|P(?:alm|hl[ip]|hnx|rti)|Rohg|S(?:amr|arb|idt|ogo|yrc)|T(?:haa|odr)|Yezi)$~', $Script[1])) {
+                    return 'rtl';
+                }
+                return 'ltr';
+            }
+
             $Code = substr($Code, 0, $Pos);
         }
 

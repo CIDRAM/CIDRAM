@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2024.08.08).
+ * This file: The CIDRAM core (last modified: 2024.08.10).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -192,7 +192,7 @@ class Core
     /**
      * @var array Sometimes used with certain kinds of blocked requests.
      */
-    public $Webooks = [];
+    public $Webhooks = [];
 
     /**
      * @var array Channels information for request.
@@ -2214,7 +2214,7 @@ class Core
 
         /** Apply webhooks. */
         if (!empty($Webhooks)) {
-            $this->Webhooks = isset($this->Webhooks) ? array_merge($this->Webhooks, $Webhooks) : $Webhooks;
+            $this->Webhooks = array_merge($this->Webhooks, $Webhooks);
         }
 
         /** Process other options and special flags. */

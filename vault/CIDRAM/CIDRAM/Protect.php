@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2024.07.13).
+ * This file: Protect traits (last modified: 2024.08.10).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -565,7 +565,7 @@ trait Protect
         }
 
         /** Process webhooks. */
-        if (isset($this->Stages['Webhooks:Enable']) && !empty($this->Webhooks) || !empty($this->Configuration['Webhook']['URL'])) {
+        if (isset($this->Stages['Webhooks:Enable']) && (count($this->Webhooks) || !empty($this->Configuration['Webhook']['URL']))) {
             $this->Stage = 'Webhooks';
 
             /** Safety. */
@@ -611,26 +611,22 @@ trait Protect
             unset($this->CIDRAM['WebhookParams']['favicon'], $this->CIDRAM['WebhookParams']['favicon_extension']);
 
             /** Iterate through each webhook. */
-            foreach ($this->Webhooks as $this->CIDRAM['Webhook']) {
+            foreach ($this->Webhooks as $Webhook) {
                 /** Safety. */
-                if (!is_string($this->CIDRAM['Webhook'])) {
+                if (!is_string($Webhook)) {
                     continue;
                 }
 
                 /** Parse any relevant block information to our webhooks. */
-                $this->CIDRAM['Webhook'] = $this->parseVars($this->CIDRAM['ParsedToWebhook'], $this->CIDRAM['Webhook']);
+                $Webhook = $this->parseVars($this->CIDRAM['ParsedToWebhook'], $Webhook);
 
                 /** Perform request. */
-                $this->CIDRAM['Webhook'] = $this->Request->request(
-                    $this->CIDRAM['Webhook'],
-                    $this->CIDRAM['WebhookParams'],
-                    $this->CIDRAM['WebhookTimeout']
-                );
+                $Webhook = $this->Request->request($Webhook, $this->CIDRAM['WebhookParams'], $this->CIDRAM['WebhookTimeout']);
             }
 
             /** Cleanup. */
             unset(
-                $this->CIDRAM['Webhook'],
+                $Webhook,
                 $this->CIDRAM['WebhookParams'],
                 $this->CIDRAM['WebhookTimeout'],
                 $this->CIDRAM['WebhookVar'],

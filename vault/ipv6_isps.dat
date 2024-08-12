@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6_isps.dat
 
-# Version: 2024.219.0
-# Last modified: 2024.08.07
+# Version: 2024.224.0
+# Last modified: 2024.08.12
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -95,6 +95,18 @@ Tag: Idea Cellular Ltd
 Origin: UA
 Profile: Domestic ISP;Tor endpoints here
 Tag: Kyivstar
+
+
+# ASNs 7552, 24086, 37620, 38623, 133606, 140659, 262210, 327799, 327885 ("Viettel Corporation").
+# Vietnamese ISP also serving Cameroon, Cambodia, East Timor, Peru, Burundi,
+# and Tanzania. Brute-force and SSH attacks, port scans, hacking, and spam
+# detected from here. Listing just the affected ranges/addresses only.
+# Updated: 2024.08.12
+
+2402:800::/32 Deny Attacks
+Origin: VN
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Tor endpoints here
+Tag: Viettel Corporation
 
 
 # ASNs 9498, 9730, 24560, 37140, 45609, 132045 ("Bharti Airtel").

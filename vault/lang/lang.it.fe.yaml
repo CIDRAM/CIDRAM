@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2024.07.23).
+# This file: Italian language data for the front-end (last modified: 2024.08.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -149,7 +149,7 @@ config_hcaptcha_lockip: &CaptchaLockIP "Legare CAPTCHA per IP?"
 config_hcaptcha_lockuser: &CaptchaLockUser "Legare CAPTCHA per gli utenti?"
 config_hcaptcha_logfile: &CaptchaLogfile "Registrare tutti i tentativi per CAPTCHA? Se sì, specificare il nome da usare per il file di registrazione. Se non, lasciare questo variabile vuoto."
 config_hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "Quale codice di stato deve essere utilizzato quando si visualizzano i CAPTCHA per le richieste non bloccate?"
-config_hcaptcha_secret: &CaptchaDashboard "Questo valore può essere trovato nella dashboard del tuo servizio CAPTCHA."
+config_hcaptcha_secret: &CaptchaDashboard "Questo valore può essere trovato nella dashboard del suo servizio CAPTCHA."
 config_hcaptcha_show_api_message: &ShowAPIMessage "Mostra messaggio API? True = Sì [Predefinito]; False = No."
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Mostra avviso sui cookie? True = Sì [Predefinito]; False = No."
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Il numero massimo di firme consentito prima che l'offerta di CAPTCHA venga ritirata. Predefinito = 1."
@@ -503,8 +503,8 @@ label_usemode_blkd_mrkd: "Solo quando bloccato, appositamente contrassegnato per
 label_usemode_not_blkd: "Solo quando non è bloccato."
 label_usemode_not_blkd_mrkd: "Solo quando non è bloccato, o quando è appositamente contrassegnato per l'uso, entro il limite di firme, e non è vietato."
 label_values_for_ip_tracking: "Valori per il tracciamento IP"
-label_your_ip: "Il tuo IP:"
-label_your_ua: "Il tuo UA:"
+label_your_ip: "Il suo indirizzo IP:"
+label_your_ua: "Il suo agente utente:"
 link_accounts: "Utenti"
 link_aux: "Regole ausiliarie"
 link_backup: "Backup"
@@ -695,7 +695,7 @@ time_years_ago:
 time_years_from_now:
  - "%s anno da adesso"
  - "%s anni da adesso"
-tip_2fa_sent: "Una posta elettronica contenente un codice di autenticazione a due fattori è stata inviata al tuo indirizzo di posta elettronica. Si prega di confermare questo codice qui sotto per ottenere l'accesso al front-end. Se non hai ricevuto questa posta elettronica, prova a disconnettersi, attendere 10 minuti e accedi di nuovo per ricevere una nuova posta elettronica contenente un nuovo codice."
+tip_2fa_sent: "Una posta elettronica contenente un codice di autenticazione a due fattori è stata inviata al suo indirizzo di posta elettronica. Si prega di confermare questo codice qui sotto per ottenere l'accesso al front-end. Se non hai ricevuto questa posta elettronica, prova a disconnettersi, attendere 10 minuti e accedi di nuovo per ricevere una nuova posta elettronica contenente un nuovo codice."
 tip_accounts: "Salve, {username}.<br />La pagina di conti permette di controllare chi può accedere il front-end di CIDRAM."
 tip_aux: "Salve, {username}.<br />Puoi utilizzare questa pagina per creare, eliminare e modificare le regole ausiliarie per CIDRAM."
 tip_aux_priority: "Priorità (massimo➡(pari🔄equivalente)➡minore):"
@@ -713,7 +713,7 @@ tip_enter_input_here: "Inserisci qui l'input."
 tip_enter_ip_here: "Inserire IP qui."
 tip_enter_ips_here: "Inserisci IP qui."
 tip_expiry_placeholder: "Numero di secondi prima della scadenza."
-tip_fe_cookie_warning: "Nota: CIDRAM utilizza un cookie per autenticare gli accessi. Accedendo, ti dà il tuo consenso per creare e memorizzare un cookie dal tuo browser."
+tip_fe_cookie_warning: "Nota: CIDRAM utilizza un cookie per autenticare gli accessi. Accedendo, ti dà il suo consenso per creare e memorizzare un cookie dal suo browser."
 tip_file_manager: "Salve, {username}.<br />Il file manager consente di eliminare, modificare, caricare e scaricare file. Usare con cautela (si potrebbe rompere l'installazione di questo)."
 tip_fixer: "Salve, {username}.<br />Il fissatore per i file di firme fornisce un modo per rilevare e risolvere potenziali problemi nei file di firme."
 tip_home: "Salve, {username}.<br />Questa è la pagina principale per il front-end di CIDRAM. Selezionare un collegamento dal menu di navigazione a sinistra per continuare."
@@ -735,7 +735,7 @@ tip_statistics: "Salve, {username}.<br />Questa pagina mostra alcune statistiche
 tip_statistics_disabled: "Nota: Il monitoraggio delle statistiche è attualmente disattivato, ma può essere attivato tramite la pagina di configurazione."
 tip_updates: "Salve, {username}.<br />La pagina degli aggiornamenti permette di installare, disinstallare e aggiornare i vari componenti di CIDRAM (il pacchetto di base, le firme, file per L10N, ecc)."
 title_login: "Accedi"
-warning_file_php: "Avvertimento: È noto che alcune soluzioni di sicurezza del web hosting vietano automaticamente gli indirizzi IP al rilevamento di tag PHP all'interno delle richieste (ad esempio, quando si modificano i file PHP tramite un browser). CIDRAM non ha modo di sapere se il tuo servizio di web hosting utilizza una tale soluzione di sicurezza. Per evitare tali problemi, quando possibile si consiglia di non modificare i file PHP in questo modo."
+warning_file_php: "Avvertimento: È noto che alcune soluzioni di sicurezza del web hosting vietano automaticamente gli indirizzi IP al rilevamento di tag PHP all'interno delle richieste (ad esempio, quando si modificano i file PHP tramite un browser). CIDRAM non ha modo di sapere se il suo servizio di web hosting utilizza una tale soluzione di sicurezza. Per evitare tali problemi, quando possibile si consiglia di non modificare i file PHP in questo modo."
 warning_file_overwritten: "Avvertimento: Il file che stai attualmente modificando appartiene al componente "%s". È molto probabile che tutte le modifiche apportate a questo file vengano sovrascritte al successivo aggiornamento del componente."
 warning_javascript_required: "Avvertimento: Alcune funzionalità del front-end richiedono JavaScript. Per garantire che l'intero front-end si comporti come previsto, si consiglia di abilitare JavaScript."
 warning_signatures_1: "Avvertimento: Non ci sono file di firme attivi!"

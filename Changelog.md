@@ -446,3 +446,5 @@
 [2024.08.02; Maikuolan]: Fixed some typos. Added a guard to the request handler's request method to fail if curl_init doesn't exist (#611).
 
 [2024.08.10; Bug-fix; Maikuolan]: Fixed a typo affecting webhook functionality.
+
+[2024.08.14; Maikuolan]: Rephrased some L10N.

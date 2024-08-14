@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese language data for the front-end (last modified: 2024.07.23).
+# This file: Chinese language data for the front-end (last modified: 2024.08.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -84,7 +84,7 @@ Extended Description:
   zh-Hans: "提供通过配置阻止特定请求协议的能力（例如，HTTP/0.9、HTTP/1.1、SPDY/3.0、等等）。注意：不会影响通过强制请求使用相同协议的服务（例如，Cloudflare）路由的网站。"
   zh-Hant: "提供通過配置阻止特定請求協議的能力（例如，HTTP/0.9、HTTP/1.1、SPDY/3.0、等等）。注意：不會影響通過強制請求使用相同協議的服務（例如，Cloudflare）路由的網站。"
  Referrer spam module: {"zh-Hans": "基于引荐来源垃圾邮件阻止通常不会提供任何有意义的安全利益，但在某些情况下，对某些用户可能有用，用于收集有关请求的更多信息，以及能够报告它。", "zh-Hant": "基於引薦來源垃圾郵件阻止通常不會提供任何有意義的安全利益，但在某些情況下，對某些用戶可能有用，用於收集有關請求的更多信息，以及能夠報告它。"}
- Stop Forum Spam module: {"zh-Hans": "防止通过SFS列出的IP地址访问注册和登录页面。", "zh-Hant": "防止通過SFS列出的IP地址訪問註冊和登錄頁面。"}
+ Stop Forum Spam module: {"zh-Hans": "防止通过SFS列出的IP地址访问注册和登录页面。", "zh-Hant": "防止通過SFS列出的IP位址訪問註冊和登錄頁面。"}
  Tor blocker module: {"zh-Hans": "禁止通过DNSEL查找从Tor出口节点进行访问（支持IPv4和IPv6）。", "zh-Hant": "禁止通過DNSEL查找從Tor出口節點進行訪問（支持IPv4和IPv6）。"}
 Name:
  AbuseIPDB module: {"zh-Hans": "AbuseIPDB 模块。", "zh-Hant": "AbuseIPDB 模塊。"}
@@ -142,8 +142,8 @@ config:
  abuseipdb_build_profiles_from_usage_type: {"zh-Hans": "使用API返回的使用类型构建分类？ False = 不要使用。 True = 使用。 标准 = True。", "zh-Hant": "使用API返回的使用類型構建分類？ False = 不要使用。 True = 使用。 標準 = True。"}
  abuseipdb_max_age_in_days: {"zh-Hans": "执行查找时将考虑报告的最长天数（必须是1到365之间的数字）。标准=365。", "zh-Hant": "執行查找時將考慮報告的最長天數（必須是1到365之間的數字）。標準=365。"}
  abuseipdb_max_cs_for_captcha: {"zh-Hans": "为了提供CAPTCHA的目的最大置信度分数（必须是0到100之间的数字）。标准=10。", "zh-Hant": "為了提供CAPTCHA的目的最大置信度分數（必須是0到100之間的數字）。標準=10。"}
- abuseipdb_minimum_confidence_score: {"zh-Hans": "为了让CIDRAM阻止IP地址所需的最低置信度分数（必须是0到100之间的数字）。标准=50。", "zh-Hant": "為了讓CIDRAM阻止IP地址所需的最低置信度分數（必須是0到100之間的數字）。標準=50。"}
- abuseipdb_minimum_total_reports: {"zh-Hans": "为了让CIDRAM阻止IP地址所需的最小总报告数。标准=1。", "zh-Hant": "為了讓CIDRAM阻止IP地址所需的最小總報告數。標準=1。"}
+ abuseipdb_minimum_confidence_score: {"zh-Hans": "为了让CIDRAM阻止IP地址所需的最低置信度分数（必须是0到100之间的数字）。标准=50。", "zh-Hant": "為了讓CIDRAM阻止IP位址所需的最低置信度分數（必須是0到100之間的數字）。標準=50。"}
+ abuseipdb_minimum_total_reports: {"zh-Hans": "为了让CIDRAM阻止IP地址所需的最小总报告数。标准=1。", "zh-Hant": "為了讓CIDRAM阻止IP位址所需的最小總報告數。標準=1。"}
  abuseipdb_report_back: {"zh-Hans": "允许CIDRAM使用您的API密钥将检测到的不良行为报告回AbuseIPDB马？", "zh-Hant": "允許CIDRAM使用您的API金鑰將檢測到的不良行為報告回AbuseIPDB馬？"}
  bgpview: {"zh-Hans": "BGPView模块的配置（为CIDRAM提供ASN和国家代码查找工具）。", "zh-Hant": "BGPView模塊的配置（為CIDRAM提供ASN和國家代碼查找工具）。"}
  bgpview_blocked_asns: &ConfigBlockedASNs {"zh-Hans": "被模块匹配时要阻止的ASN列表。", "zh-Hant": "被模塊匹配時要阻止的ASN列表。"}
@@ -213,7 +213,7 @@ config:
  general_http_response_header_code: {"zh-Hans": "阻止请求时，CIDRAM应发送哪个HTTP状态消息？", "zh-Hant": "阻止請求時，CIDRAM應發送哪個HTTP狀態消息？"}
  general_ipaddr:
   zh-Hans: "在哪里可以找到连接请求IP地址？​（可以使用为服务例如Cloudflare和类似）。 标准 = REMOTE_ADDR。 警告：不要修改此除非您知道什么您做着！"
-  zh-Hant: "在哪裡可以找到連接請求IP地址？​（可以使用為服務例如Cloudflare和類似）。 標準 = REMOTE_ADDR。 警告：不要修改此除非您知道什麼您做著！"
+  zh-Hant: "在哪裡可以找到連接請求IP位址？​（可以使用為服務例如Cloudflare和類似）。 標準 = REMOTE_ADDR。 警告：不要修改此除非您知道什麼您做著！"
  general_lang: {"zh-Hans": "指定标准CIDRAM语言。", "zh-Hant": "指定標準CIDRAM語言。"}
  general_lang_override: {"zh-Hans": "尽可能根据HTTP_ACCEPT_LANGUAGE进行本地化？True（真）=进行本地化【标准】；False（假）=不要本地化。", "zh-Hant": "盡可能根據HTTP_ACCEPT_LANGUAGE進行本地化？True（真）=進行本地化【標準】；False（假）=不要本地化。"}
  general_numbers: {"zh-Hans": "您如何喜欢显示数字？​选择最适合示例。", "zh-Hant": "您如何喜歡顯示數字？​選擇最適合示例。"}
@@ -249,7 +249,7 @@ config:
  ipapi_whitelisted_ccs: *ConfigWhitelistedCCs
  legal: "法律要求的配置。"
  legal_privacy_policy: {"zh-Hans": "要显示在任何生成的页面的页脚中的相关隐私政策的地址。​指定一个URL，或留空以禁用。", "zh-Hant": "要顯示在任何生成的頁面的頁腳中的相關隱私政策的地址。​指定一個URL，或留空以禁用。"}
- legal_pseudonymise_ip_addresses: {"zh-Hans": "编写日志文件时使用假名的IP地址吗？​True（真）=使用假名【标准】；False（假）=不使用假名。", "zh-Hant": "編寫日誌文件時使用假名的IP地址嗎？​True（真）=使用假名【標準】；False（假）=不使用假名。"}
+ legal_pseudonymise_ip_addresses: {"zh-Hans": "编写日志文件时使用假名的IP地址吗？​True（真）=使用假名【标准】；False（假）=不使用假名。", "zh-Hant": "編寫日誌文件時使用假名的IP位址嗎？​True（真）=使用假名【標準】；False（假）=不使用假名。"}
  logging: {"zh-Hans": "与日志相关的配置（与其他類別相關的被排除）。", "zh-Hant": "與日誌相關的配置（與其他類別相關的被排除）。"}
  logging_apache_style_log: {"zh-Hans": "Apache风格文件用于记录所有被拦截的访问。​指定一个文件名，​或留空以禁用。", "zh-Hant": "Apache風格文件用於記錄所有被攔截的訪問。​指定一個文件名，​或留空以禁用。"}
  logging_error_log: {"zh-Hans": "用于记录检测到的任何非致命错误的文件。​指定一个文件名，​或留空以禁用。", "zh-Hant": "用於記錄檢測到的任何非致命錯誤的文件。​指定一個文件名，​或留空以禁用。"}
@@ -289,7 +289,7 @@ config:
  projecthoneypot_api_key: *EnterAPIKey
  projecthoneypot_max_age_in_days: {"zh-Hans": "执行查找时将考虑报告的最长天数。标准=365。", "zh-Hant": "執行查找時將考慮報告的最長天數。標準=365。"}
  projecthoneypot_max_ts_for_captcha: {"zh-Hans": "为了提供CAPTCHA的目的最大威胁分数（必须是1到100之间的数字）。标准=10。", "zh-Hant": "為了提供CAPTCHA的目的最大威脅分數（必須是1到100之間的數字）。標準=10。"}
- projecthoneypot_minimum_threat_score: {"zh-Hans": "为了让CIDRAM阻止IP地址所需的最低威胁分数（必须是1到100之间的数字）。标准=10。", "zh-Hant": "為了讓CIDRAM阻止IP地址所需的最低威脅分數（必須是1到100之間的數字）。標準=10。"}
+ projecthoneypot_minimum_threat_score: {"zh-Hans": "为了让CIDRAM阻止IP地址所需的最低威胁分数（必须是1到100之间的数字）。标准=10。", "zh-Hant": "為了讓CIDRAM阻止IP位址所需的最低威脅分數（必須是1到100之間的數字）。標準=10。"}
  projecthoneypot_type_of_visitor: {"zh-Hans": "根据Project Honeypot确定的访问者类型进行阻止或分类。", "zh-Hant": "根據Project Honeypot確定的訪問者類型進行阻止或分類。"}
  protocol: {"zh-Hans": "协议阻塞模块的配置。", "zh-Hant": "協議阻塞模塊的配置。"}
  protocol_blocked: {"zh-Hans": "选定的协议将被阻止。注意：不会影响通过强制请求使用相同协议的服务（例如，Cloudflare）路由的网站。", "zh-Hant": "選定的協議將被阻止。注意：不會影響通過強制請求使用相同協議的服務（例如，Cloudflare）路由的網站。"}
@@ -317,7 +317,7 @@ config:
  recaptcha_usemode: *CaptchaUseMode
  sfs: {"zh-Hans": "Stop Forum Spam模块的配置。", "zh-Hant": "Stop Forum Spam模塊的配置。"}
  signatures: {"zh-Hans": "签名，签名文件，模块，等的配置。", "zh-Hant": "簽名，簽名文件，模塊，等的配置。"}
- signatures_default_tracktime: {"zh-Hans": "应跟踪IP地址的持续时间。 标准 = 7d0°0′0″ （1周）。", "zh-Hant": "應跟踪IP地址的持續時間。 標準 = 7d0°0′0″ （1週）。"}
+ signatures_default_tracktime: {"zh-Hans": "应跟踪IP地址的持续时间。 标准 = 7d0°0′0″ （1周）。", "zh-Hant": "應跟踪IP位址的持續時間。 標準 = 7d0°0′0″ （1週）。"}
  signatures_infraction_limit: {"zh-Hans": "从IP最大允许违规数量之前它被禁止。​标准=10。", "zh-Hant": "從IP最大允許違規數量之前它被禁止。​標準=10。"}
  signatures_shorthand: {"zh-Hans": "当与使用给定速记词的签名匹配时，控制如何处理请求。", "zh-Hant": "當與使用給定速記詞的簽名匹配時，控制如何處理請求。"}
  signatures_tracking_override: {"zh-Hans": "允许模块覆盖跟踪选项吗？​True（真）=允许【标准】；False（假）=不允许。", "zh-Hant": "允許模塊覆蓋跟踪選項嗎？​True（真）=允許【標準】；False（假）=不允許。"}
@@ -526,7 +526,7 @@ info_cli_by_default_ips:
   --no-ov     防止其他验证。
   --no-aux    防止针对辅助规则进行测试。
  zh-Hant: |
-  IP地址針對所有簽名文件、所有模塊、所有輔助規則、以及社交媒體和搜索引擎驗證進行
+  IP位址針對所有簽名文件、所有模塊、所有輔助規則、以及社交媒體和搜索引擎驗證進行
   測試。
   --no-sig    防止針對簽名文件進行測試。
   --no-mod    防止針對模塊進行測試。
@@ -541,13 +541,13 @@ info_cli_ipv4_ipv6_are_:
   在单个操作中测试多个IP地址）都可以进行多行输入：
  zh-Hant: |
   IPv4/IPv6均受支持。通過使用引號，所有CLI模式操作（例如，
-  在單個操作中測試多個IP地址）都可以進行多行輸入：
+  在單個操作中測試多個IP位址）都可以進行多行輸入：
 info_cli_or_depending_o: {"zh-Hans": "取决于您是喜欢从头到尾，还是从尾到头：", "zh-Hant": "取決於您是喜歡從頭到尾，還是從尾到頭："}
 info_cli_or_to_aggregat: {"zh-Hans": "为了将它们聚合为网络掩码：", "zh-Hant": "為了將它們聚合為網絡掩碼："}
 info_cli_or_using_comma: {"zh-Hans": "使用逗号而不是多行（它做同样的事情）：", "zh-Hant": "使用逗號而不是多行（它做同樣的事情）："}
 info_cli_the_signature_: {"zh-Hans": "可以通过CLI使用签名修复工具：", "zh-Hant": "可以通過CLI使用簽名修復工具："}
-info_cli_to_calculate_c: {"zh-Hans": "为了从IP地址计算CIDR：", "zh-Hant": "為了從IP地址計算CIDR："}
-info_cli_to_test_whethe: {"zh-Hans": "为了测试是否IP地址被CIDRAM阻止：", "zh-Hant": "為了測試是否IP地址被CIDRAM阻止："}
+info_cli_to_calculate_c: {"zh-Hans": "为了从IP地址计算CIDR：", "zh-Hant": "為了從IP位址計算CIDR："}
+info_cli_to_test_whethe: {"zh-Hans": "为了测试是否IP地址被CIDRAM阻止：", "zh-Hant": "為了測試是否IP位址被CIDRAM阻止："}
 info_cli_to_quit_type_q: {"zh-Hans": "为了退出，请键入“q”、“quit”、或“exit”，然后按Enter。", "zh-Hant": "為了退出，請鍵入『q』、『quit』、或『exit』，然後按Enter。"}
 info_cli_you_can_also_a: {"zh-Hans": "您可以聚合IP和CIDR：", "zh-Hant": "您可以聚合IP和CIDR："}
 info_cli_you_can_also_c:
@@ -630,7 +630,7 @@ Some useful links:
             <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Qrator的Radar</a> – 檢查ASN連接的有用工具，​以及關於ASN的各種其他信息。</li>
             <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Spamhaus項目</a> – 顯示有​關ASN殭屍網絡感染率的報告。</li>
             <li>{{Links.AbuseIPDB}} – 維護已知的濫用IP數據庫。它為IP檢查和報告提供了一個API。</li>
-            <li>{{Links.IP-API}} – 獲取有關IP地址或主機名的信息，例如，國家代碼、區域名稱、經度、緯度、組織名稱、等等。</li>
+            <li>{{Links.IP-API}} – 獲取有關IP位址或主機名的信息，例如，國家代碼、區域名稱、經度、緯度、組織名稱、等等。</li>
           </ul>
         </li>
         <li><span class="comCat">信息和學習資源。</span>
@@ -1106,7 +1106,7 @@ tip:
  Auxiliary Rules: {"zh-Hans": "您可以使用此页面为CIDRAM创建，删除，和修改辅助规则。", "zh-Hant": "您可以使用此頁面為CIDRAM創建，刪除，和修改輔助規則。"}
  Backup: {"zh-Hans": "该页面可用于导入/导出您的配置、辅助规则、等等。​如果您需要跨不同安装或不同主要版本迁移数据，这会很有用。", "zh-Hant": "該頁面可用於導入/導出您的配置、輔助規則、等等。​如果您需要跨不同安裝或不同主要版本遷移數據，這會很有用。"}
  Cache Data: {"zh-Hans": "在这里您可以查看缓存的内容。", "zh-Hant": "在這裡您可以查看緩存的內容。"}
- Calculator: {"zh-Hans": "计算器允许您计算IP地址的CIDR和网络掩码。", "zh-Hant": "計算器允許您計算IP地址的CIDR和網絡掩碼。"}
+ Calculator: {"zh-Hans": "计算器允许您计算IP地址的CIDR和网络掩码。", "zh-Hant": "計算器允許您計算IP位址的CIDR和網絡掩碼。"}
  Click the component name for more details: {"zh-Hans": "单击组件名称以获取更多详细信息。", "zh-Hant": "單擊組件名稱以獲取更多詳細信息。"}
  Configuration: {"zh-Hans": "配置页面允许您修改CIDRAM配置从前端。", "zh-Hant": "配置頁面允許您修改CIDRAM配置從前端。"}
  Enter IP here: {"zh-Hans": "在这里时输入IP。", "zh-Hant": "在這裡時輸入IP。"}
@@ -1120,8 +1120,8 @@ tip:
  Greeting: "你好，%s。"
  Home: {"zh-Hans": "这是CIDRAM的前端主页。​从左侧的导航菜单中选择一个链接以继续。", "zh-Hant": "這是CIDRAM的前端主頁。​從左側的導航菜單中選擇一個鏈接以繼續。"}
  How many infractions to incur: {"zh-Hans": "有多少违规行为。", "zh-Hant": "有多少違規行為。"}
- IP Testing: {"zh-Hans": "IP测试页面允许您测试是否IP地址被阻止通过当前安装的签名。", "zh-Hant": "IP測試頁面允許您測試是否IP地址被阻止通過當前安裝的簽名。"}
- IP Tracking: {"zh-Hans": "IP跟踪页面允许您检查IP地址跟踪状态，​检查哪些IP已被禁止，​而如果您想这样做，​对撤消他们的跟踪。", "zh-Hant": "IP跟踪頁面允許您檢查IP地址跟踪狀態，​檢查哪些IP已被禁止，​而如果您想這樣做，​對撤消他們的跟踪。"}
+ IP Testing: {"zh-Hans": "IP测试页面允许您测试是否IP地址被阻止通过当前安装的签名。", "zh-Hant": "IP測試頁面允許您測試是否IP位址被阻止通過當前安裝的簽名。"}
+ IP Tracking: {"zh-Hans": "IP跟踪页面允许您检查IP地址跟踪状态，​检查哪些IP已被禁止，​而如果您想这样做，​对撤消他们的跟踪。", "zh-Hant": "IP跟踪頁面允許您檢查IP位址跟踪狀態，​檢查哪些IP已被禁止，​而如果您想這樣做，​對撤消他們的跟踪。"}
  Intersector: {"zh-Hans": "相交仪可用于从两组范围确定公共因子。", "zh-Hant": "相交儀可用於從兩組範圍確定公共因子。"}
  Logs: {"zh-Hans": "选择一个日志从下面的列表以查看那个日志的内容。", "zh-Hant": "選擇一個日誌從下面的列表以查看那個日誌的內容。"}
  Number of seconds until it expires: {"zh-Hans": "直到它过期的秒数。", "zh-Hant": "直到它過期的秒數。"}
@@ -1148,7 +1148,7 @@ warning:
  Cookies: {"zh-Hans": "注意：CIDRAM使用cookie来验证登录。​通过登录，您同意您的浏览器创建和存储cookie。", "zh-Hant": "注意：CIDRAM使用cookie來驗證登錄。​通過登錄，您同意您的瀏覽器創建和存儲cookie。"}
  Editing PHP files:
   zh-Hans: "警告：一些虚拟主机在检测到请求中的PHP标记时会自动禁止IP地址（例如，当试图通过浏览器修改PHP文件时）。 CIDRAM无法知道您的虚拟主机是否这样做。 为了避免出现问题，建议尽可能不要以这种方式编辑PHP文件。"
-  zh-Hant: "警告：一些虛擬主機在檢測到請求中的PHP標記時會自動禁止IP地址（例如，當試圖通過瀏覽器修改PHP文件時）。 CIDRAM無法知道您的虛擬主機是否這樣做。 為了避免出現問題，建議盡可能不要以這種方式編輯PHP文件。"
+  zh-Hant: "警告：一些虛擬主機在檢測到請求中的PHP標記時會自動禁止IP位址（例如，當試圖通過瀏覽器修改PHP文件時）。 CIDRAM無法知道您的虛擬主機是否這樣做。 為了避免出現問題，建議盡可能不要以這種方式編輯PHP文件。"
  IP tests are disabled: {"zh-Hans": "警告：IP测试被禁用！在解决此问题之前，无法使用签名文件。", "zh-Hant": "警告：IP測試被禁用！在解決此問題之前，無法使用簽名文件。"}
  JavaScript required: {"zh-Hans": "警告：一些前端功能需要JavaScript。为确保整个前端按预期运行，建议启用JavaScript。", "zh-Hant": "警告：一些前端功能需要JavaScript。為確保整個前端按預期運行，建議啟用JavaScript。"}
  Likely to be overwritten: {"zh-Hans": "警告：您当前正在编辑的文件属于组件“%s”。对该文件所做的任何更改很可能会在下次更新该组件时被覆盖。", "zh-Hant": "警告：您當前正在編輯的文件屬於組件『%s』。對該文件所做的任何更改很可能會在下次更新該組件時被覆蓋。"}

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2024.07.23).
+# This file: Italian language data for the front-end (last modified: 2024.08.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -216,7 +216,7 @@ config:
  hcaptcha_lockip: &CaptchaLockIP "Legare CAPTCHA per IP?"
  hcaptcha_lockuser: &CaptchaLockUser "Legare CAPTCHA per gli utenti?"
  hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "Quale codice di stato deve essere utilizzato quando si visualizzano i CAPTCHA per le richieste non bloccate?"
- hcaptcha_secret: &CaptchaDashboard "Questo valore può essere trovato nella dashboard del tuo servizio CAPTCHA."
+ hcaptcha_secret: &CaptchaDashboard "Questo valore può essere trovato nella dashboard del suo servizio CAPTCHA."
  hcaptcha_show_api_message: &ShowAPIMessage "Mostra messaggio API? True = Sì [Predefinito]; False = No."
  hcaptcha_show_cookie_warning: &ShowCookieWarning "Mostra avviso sui cookie? True = Sì [Predefinito]; False = No."
  hcaptcha_signature_limit: &CaptchaSignatureLimit "Il numero massimo di firme consentito prima che l'offerta di CAPTCHA venga ritirata. Predefinito = 1."
@@ -417,9 +417,9 @@ hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.it.md\#user-content-HOW_TO_USE_PDO" hreflang="it-IT">Che cos'è un "DSN PDO"? Come posso usare PDO con CIDRAM?</a></em>"
 hints_sensitive_pages: "Nota: Ciò che costituisce una "pagina sensibile" è determinato da {{Links.ConfigRef.sensitive}}."
 hints_shorthand:
- 0.: "Se il tuo sito web necessita di accesso tramite LAN o localhost, non bloccarlo. Altrimenti, puoi bloccarlo."
+ 0.: "Se il suo sito web necessita di accesso tramite LAN o localhost, non bloccarlo. Altrimenti, puoi bloccarlo."
  1.: "Nessuno dei file di firma predefiniti lo utilizza, ma è comunque supportato nel caso in cui possa essere utile per alcuni utenti."
- 2.: "Se hai bisogno che gli utenti possano accedere al tuo sito web tramite proxy, non bloccarlo. Altrimenti, puoi bloccarlo."
+ 2.: "Se hai bisogno che gli utenti possano accedere al suo sito web tramite proxy, non bloccarlo. Altrimenti, puoi bloccarlo."
  3.: "L'utilizzo diretto nelle firme non è supportato, ma può essere invocato con altri mezzi in circostanze particolari."
  4.: "Si riferisce a casi in cui le parole abbreviate non vengono utilizzate affatto, o non vengono riconosciute da CIDRAM."
  Uno per firma.: "Una firma può invocare più profili, ma può utilizzare solo una parola abbreviata. È possibile che più parole abbreviate possano essere adatte, ma poiché solo una può essere utilizzata, miriamo a utilizzare sempre solo le più adatte."
@@ -669,8 +669,8 @@ label:
  Unignore this: "Non ignorarlo"
  Values for IP tracking: "Valori per il tracciamento IP"
  Whitelist the request: "Lista bianca.\nReimposta il numero di firme innescate, e impedisce qualsiasi ulteriore elaborazione della richiesta. Garantisce che CIDRAM non bloccherà mai la richiesta."
- Your IP: "Il tuo IP:"
- Your UA: "Il tuo UA:"
+ Your IP: "Il suo indirizzo IP:"
+ Your UA: "Il suo agente utente:"
  aux:
   A name for the new rule: "Un nome per la nuova regola:"
   Auxiliary rules triggered: "Regole ausiliarie innescate"
@@ -994,7 +994,7 @@ time_years_from_now:
  - "%s anno da adesso"
  - "%s anni da adesso"
 tip:
- 2FA Sent: "Una posta elettronica contenente un codice di autenticazione a due fattori è stata inviata al tuo indirizzo di posta elettronica. Si prega di confermare questo codice qui sotto per ottenere l'accesso al front-end. Se non hai ricevuto questa posta elettronica, prova a disconnettersi, attendere 10 minuti e accedi di nuovo per ricevere una nuova posta elettronica contenente un nuovo codice."
+ 2FA Sent: "Una posta elettronica contenente un codice di autenticazione a due fattori è stata inviata al suo indirizzo di posta elettronica. Si prega di confermare questo codice qui sotto per ottenere l'accesso al front-end. Se non hai ricevuto questa posta elettronica, prova a disconnettersi, attendere 10 minuti e accedi di nuovo per ricevere una nuova posta elettronica contenente un nuovo codice."
  Accounts: "La pagina di conti permette di controllare chi può accedere il front-end di CIDRAM."
  Aggregator: "L'aggregatore consente di esprimere indirizzi IP, CIDR, e maschere di rete nel modo più piccolo possibile. Inserire i dati da aggregare e premere "OK"."
  Auxiliary Rules Priority: "Priorità (massimo➡(pari🔄equivalente)➡minore):"
@@ -1037,8 +1037,8 @@ tip:
  Updates: "La pagina degli aggiornamenti permette di installare, disinstallare e aggiornare i vari componenti di CIDRAM (il pacchetto di base, le firme, file per L10N, ecc)."
 warning:
  API_Rate_Limited: "Avvertimento: L'accesso all'API %s sembra essere attualmente limitato."
- Cookies: "Nota: CIDRAM utilizza un cookie per autenticare gli accessi. Accedendo, ti dà il tuo consenso per creare e memorizzare un cookie dal tuo browser."
- Editing PHP files: "Avvertimento: È noto che alcune soluzioni di sicurezza del web hosting vietano automaticamente gli indirizzi IP al rilevamento di tag PHP all'interno delle richieste (ad esempio, quando si modificano i file PHP tramite un browser). CIDRAM non ha modo di sapere se il tuo servizio di web hosting utilizza una tale soluzione di sicurezza. Per evitare tali problemi, quando possibile si consiglia di non modificare i file PHP in questo modo."
+ Cookies: "Nota: CIDRAM utilizza un cookie per autenticare gli accessi. Accedendo, ti dà il suo consenso per creare e memorizzare un cookie dal suo browser."
+ Editing PHP files: "Avvertimento: È noto che alcune soluzioni di sicurezza del web hosting vietano automaticamente gli indirizzi IP al rilevamento di tag PHP all'interno delle richieste (ad esempio, quando si modificano i file PHP tramite un browser). CIDRAM non ha modo di sapere se il suo servizio di web hosting utilizza una tale soluzione di sicurezza. Per evitare tali problemi, quando possibile si consiglia di non modificare i file PHP in questo modo."
  IP tests are disabled: "Avvertimento: I test IP sono disabilitati! I file di firma non possono essere utilizzati finché questo non viene risolto."
  JavaScript required: "Avvertimento: Alcune funzionalità del front-end richiedono JavaScript. Per garantire che l'intero front-end si comporti come previsto, si consiglia di abilitare JavaScript."
  Likely to be overwritten: "Avvertimento: Il file che stai attualmente modificando appartiene al componente "%s". È molto probabile che tutte le modifiche apportate a questo file vengano sovrascritte al successivo aggiornamento del componente."

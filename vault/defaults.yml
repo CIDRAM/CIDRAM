@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2024.07.23).
+# This file: Defaults file (last modified: 2024.08.09).
 ##/
 
 Config Defaults:
@@ -373,11 +373,11 @@ Config Defaults:
     zh-Hans: "中文（简体）"
     zh-Hant: "中文（傳統）"
    defer:
+    [cnr-Cyrl, cnr-220, bs-Cyrl, bs-220]: "sr"
+    [cnr, sr-Latn, sr-215]: "bs"
     mo: "ro"
     nb: "no"
-    zh-HK: "zh-Hant"
-    zh-MO: "zh-Hant"
-    zh-TW: "zh-Hant"
+    [zh-HK, zh-MO, zh-TW]: "zh-Hant"
    assume:
     af: "af-ZA"
     bg: "bg-BG"

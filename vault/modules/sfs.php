@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Stop Forum Spam module (last modified: 2024.06.11).
+ * This file: Stop Forum Spam module (last modified: 2024.08.13).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -105,7 +105,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $this->CIDRAM['SFS-' . $this->BlockInfo['IPAddr']] > 0
         ),
         'SFS Lookup',
-        $this->L10N->getString('ReasonMessage_Generic') . '<br />' . sprintf($this->L10N->getString('request_removal'), 'https://www.stopforumspam.com/removal')
+        $this->L10N->getString('ReasonMessage_Spam') . '<br />' . sprintf($this->L10N->getString('request_removal'), 'https://www.stopforumspam.com/removal')
     )) {
         /** Fetch options. */
         $this->enactOptions('', array_flip(explode("\n", $this->Configuration['sfs']['options'])));

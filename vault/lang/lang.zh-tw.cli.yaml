@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for CLI (last modified: 2022.07.28).
+# This file: Chinese (traditional) language data for CLI (last modified: 2024.08.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,7 +24,7 @@
 # requests, ask. I can help.
 ##/
 
-CLI_Bad_IP: " 指定的IP地址，​『{IP}』，​不是有效地址（IPv4/IPv6）！"
+CLI_Bad_IP: " 指定的IP位址，​『{IP}』，​不是有效地址（IPv4/IPv6）！"
 CLI_F_Finished: "簽名定影已完成。​%s變化取得通過%s操作（%s）。"
 CLI_F_Started: "簽名定影已開始（%s）。"
 CLI_H: |
@@ -35,8 +35,8 @@ CLI_H: |
  ---
  鍵：
  -h 顯示此幫助信息。
- -c 檢查如果一個IP地址被阻止由CIDRAM簽名文件。
- -g 生成CIDR從一個IP地址。
+ -c 檢查如果一個IP位址被阻止由CIDRAM簽名文件。
+ -g 生成CIDR從一個IP位址。
  -v 驗證簽名文件。
  -f 修復簽名文件。
  ---
@@ -48,8 +48,8 @@ CLI_H: |
  php.exe /cidram/loader.php -f signatures.dat
  php.exe /cidram/loader.php -v signatures.dat
  ---
-CLI_IP_Blocked: " 指定的IP地址，​『{IP}』，​是阻塞由一個或多簽名文件。"
-CLI_IP_Not_Blocked: " 指定的IP地址，​『{IP}』，​不是阻塞由任何簽名文件。"
+CLI_IP_Blocked: " 指定的IP位址，​『{IP}』，​是阻塞由一個或多簽名文件。"
+CLI_IP_Not_Blocked: " 指定的IP位址，​『{IP}』，​不是阻塞由任何簽名文件。"
 CLI_VF_Empty: "指定的簽名文件為空或不存在的。"
 CLI_VF_Level_0: "通知"
 CLI_VF_Level_1: "警告"

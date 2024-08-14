@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2024.07.23).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2024.08.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -50,7 +50,7 @@ Extended Description module_extras.php: "提供一些有限的保護針對各種
 Extended Description module_httpver.php: "通過CIDRAM配置可以阻止特定的協議和HTTP版本。"
 Extended Description module_projecthoneypot.php: "阻止來自Project Honeypot列出的IP的請求。"
 Extended Description module_refspam.php: "基於引薦來源垃圾郵件阻止通常不會提供任何有意義的安全利益，但在某些情況下，對某些用戶可能有用，用於收集有關請求的更多信息，以及能夠報告它。"
-Extended Description module_sfs.php: "防止通過SFS列出的IP地址訪問註冊和登錄頁面。"
+Extended Description module_sfs.php: "防止通過SFS列出的IP位址訪問註冊和登錄頁面。"
 Name Bypasses: "標準簽名旁路。"
 Name CN_cidram.inc: "中國IPv4阻止清單。"
 Name IPv4: "IPv4（雲和託管服務）。"
@@ -116,7 +116,7 @@ config_general_events: "此處列出的文件在事件處理程序文件之後�
 config_general_forbid_on_block: "阻止請求時，CIDRAM應發送哪個HTTP狀態消息？"
 config_general_force_hostname_lookup: "強制主機名查找？​True（真）=跟踪；False（假）=不跟踪【標準】。​主機名查詢通常在『根據需要』的基礎上執行，但可以在所有請求上強制。​這可能會有助於提供日誌文件中更詳細的信息，但也可能會對性能產生輕微的負面影響。"
 config_general_hide_version: "從日誌和頁面輸出中隱藏版本信息嗎？​True（真）=關閉；False（假）=不關閉【標準】。"
-config_general_ipaddr: "在哪裡可以找到連接請求IP地址？​（可以使用為服務例如Cloudflare和類似）。 標準 = REMOTE_ADDR。​警告：不要修改此除非您知道什麼您做著！"
+config_general_ipaddr: "在哪裡可以找到連接請求IP位址？​（可以使用為服務例如Cloudflare和類似）。 標準 = REMOTE_ADDR。​警告：不要修改此除非您知道什麼您做著！"
 config_general_lang: "指定標準CIDRAM語言。"
 config_general_lang_override: "盡可能根據HTTP_ACCEPT_LANGUAGE進行本地化？True（真）=進行本地化【標準】；False（假）=不要本地化。"
 config_general_log_banned_ips: "包括IP禁止從阻止請求在日誌文件嗎？​True（真）=是【標準】；False（假）=不是。"
@@ -157,10 +157,10 @@ config_hcaptcha_sitekey: *CaptchaDashboard
 config_hcaptcha_usemode: &CaptchaUseMode "何時應提供CAPTCHA嗎？​注意：列入白名單或已驗證且未阻止的請求永遠不需要完成CAPTCHA。​另請注意：CAPTCHA可以提供有用的保護層，防止機器人和各種惡意自動請求，但不會提供任何針對惡意人類的保護。"
 config_legal: "法律要求的配置。"
 config_legal_omit_hostname: "從日誌文件中排除主機名？​True（真）=排除；False（假）=不排除【標準】。"
-config_legal_omit_ip: "從日誌文件中排除IP地址？​True（真）=排除；False（假）=不排除【標準】。​注意：『omit_ip』為『true』時，『pseudonymise_ip_addresses』變得不必要。"
+config_legal_omit_ip: "從日誌文件中排除IP位址？​True（真）=排除；False（假）=不排除【標準】。​注意：『omit_ip』為『true』時，『pseudonymise_ip_addresses』變得不必要。"
 config_legal_omit_ua: "從日誌文件中排除用戶代理？​True（真）=排除；False（假）=不排除【標準】。"
 config_legal_privacy_policy: "要顯示在任何生成的頁面的頁腳中的相關隱私政策的地址。​指定一個URL，或留空以禁用。"
-config_legal_pseudonymise_ip_addresses: "編寫日誌文件時使用假名的IP地址嗎？​True（真）=使用假名【標準】；False（假）=不使用假名。"
+config_legal_pseudonymise_ip_addresses: "編寫日誌文件時使用假名的IP位址嗎？​True（真）=使用假名【標準】；False（假）=不使用假名。"
 config_rate_limiting: "速率限制的配置（不建議一般使用）。"
 config_rate_limiting_allowance_period: "監視使用情況的小時數。​標準=0。"
 config_rate_limiting_exceptions: "例外（即，不應限制速率的請求）。​僅在啟用速率限制時有效。"
@@ -188,7 +188,7 @@ config_signatures_block_bogons: "阻止bogon(『ㄅㄡㄍㄛㄋ』)/martian（�
 config_signatures_block_cloud: "阻止CIDR認定為屬於虛擬主機或云服務嗎？​如果您操作一個API服務從您的網站或如果您預計其他網站連接到您的網站，​這應該被設置為『false』（假）。​如果不，​這應該被設置為『true』（真）。"
 config_signatures_block_generic: "阻止CIDR一般建議對於黑名單嗎？​這包括簽名不標記為的一章节任何其他更具體簽名類別。"
 config_signatures_block_legal: "阻止CIDR因為法律義務嗎？​這個指令通常不應該有任何作用，因為CIDRAM默認情況下不會將任何CIDR與『法律義務』相關聯，​但它作為一個額外的控制措施存在，以利於任何可能因法律原因而存在的自定義簽名文件或模塊。"
-config_signatures_block_malware: "阻止與惡意軟件相關的CIDR嗎？​這包括C&C服務器，受感染的機器，涉及惡意軟件分發的機器，等等。"
+config_signatures_block_malware: "阻止與惡意軟體相關的CIDR嗎？​這包括C&C服務器，受感染的機器，涉及惡意軟體分發的機器，等等。"
 config_signatures_block_proxies: "阻止CIDR認定為屬於代理服務或VPN嗎？​如果您需要該用戶可以訪問您的網站從代理服務和VPN，​這應該被設置為『false』（假）。​除此以外，​如果您不需要代理服務或VPN，​這應該被設置為『true』（真）作為一個方式以提高安全性。"
 config_signatures_block_spam: "阻止高風險垃圾郵件CIDR嗎？​除非您遇到問題當這樣做，​通常，​這應該被設置為『true』（真）。"
 config_signatures_default_tracktime: "多少秒鐘來跟踪模塊禁止的IP。 標準 = 604800 （1週）。"
@@ -335,7 +335,7 @@ info_some_useful_links: |+
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Qrator的Radar</a> – 檢查ASN連接的有用工具，​以及關於ASN的各種其他信息。</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Spamhaus項目</a> – 顯示有​關ASN殭屍網絡感染率的報告。</li>
            <li>{{Links.AbuseIPDB}} – 維護已知的濫用IP數據庫。它為IP檢查和報告提供了一個API。</li>
-           <li>{{Links.IP-API}} – 獲取有關IP地址或主機名的信息，例如，國家代碼、區域名稱、經度、緯度、組織名稱、等等。</li>
+           <li>{{Links.IP-API}} – 獲取有關IP位址或主機名的信息，例如，國家代碼、區域名稱、經度、緯度、組織名稱、等等。</li>
          </ul>
        </li>
        <li><span class="comCat">信息和學習資源。</span>
@@ -671,7 +671,7 @@ tip_aux_priority: "優先（最高➡(相同🔄當量)➡最低）："
 tip_aux_webhooks: "當觸發規則時，CIDRAM將嘗試該事件通知所有連接的webhooks。"
 tip_backup: "你好，{username}。<br />該頁面可用於導入/導出您的配置、輔助規則、等等。​如果您需要跨不同安裝或不同主要版本遷移數據，這會很有用。"
 tip_cache_data: "你好，{username}。<br />在這裡您可以查看緩存的內容。"
-tip_cidr_calc: "你好，{username}。<br />CIDR計算器允許您計算IP地址屬於哪個CIDR。"
+tip_cidr_calc: "你好，{username}。<br />CIDR計算器允許您計算IP位址屬於哪個CIDR。"
 tip_click_the_component: "單擊組件名稱以獲取更多詳細信息。"
 tip_condition_placeholder: "指定一個值，或留空以忽略。"
 tip_config: "你好，{username}。<br />配置頁面允許您修改CIDRAM配置從前端。"
@@ -687,9 +687,9 @@ tip_file_manager: "你好，{username}。<br />文件管理器允許您刪除，
 tip_fixer: "你好，{username}。<br />簽名文件修復工具提供了一種檢測和修復簽名文件中潛在問題的方法。"
 tip_home: "你好，{username}。<br />這是CIDRAM的前端主頁。​從左側的導航菜單中選擇一個鏈接以繼續。"
 tip_ip_aggregator: "你好，{username}。<br />IP聚合器允許您以最小的可能方式表達IP和CIDR。​輸入要聚合的數據，然後按『OK』。"
-tip_ip_test: "你好，{username}。<br />IP測試頁面允許您測試是否IP地址被阻止通過當前安裝的簽名。"
+tip_ip_test: "你好，{username}。<br />IP測試頁面允許您測試是否IP位址被阻止通過當前安裝的簽名。"
 tip_ip_test_switches: "（如果未選中的，只有簽名文件將被測試）。"
-tip_ip_tracking: "你好，{username}。<br />IP跟踪頁面允許您檢查IP地址跟踪狀態，​檢查哪些IP已被禁止，​而如果您想這樣做，​對撤消他們的跟踪。"
+tip_ip_tracking: "你好，{username}。<br />IP跟踪頁面允許您檢查IP位址跟踪狀態，​檢查哪些IP已被禁止，​而如果您想這樣做，​對撤消他們的跟踪。"
 tip_logs: "你好，{username}。<br />選擇一個日誌從下面的列表以查看那個日誌的內容。"
 tip_number_of_infractions: "有多少違規行為。"
 tip_numeric_comparison: "若要使用數值比較，請選擇直接字串比較或自動方法偵測，確保條件的值是數字，並在其前面新增所需的運算子。<br />例如，對於『等於』條件，&gt;=2產生≥2，&lt;=2產生≤2，對於『不等於』條件，&gt;=2產生≱2，&lt;=2產生≰2，等等。"
@@ -704,7 +704,7 @@ tip_statistics: "你好，{username}。<br />此頁面顯示了有關CIDRAM安�
 tip_statistics_disabled: "注意：統計跟踪目前已被禁用，但可以通過配置頁面啟用。"
 tip_updates: "你好，{username}。<br />更新頁面允許您安裝，卸載，和更新CIDRAM的各種組件（核心包，簽名，L10N文件，等等）。"
 title_login: "登錄"
-warning_file_php: "警告：一些虛擬主機在檢測到請求中的PHP標記時會自動禁止IP地址（例如，當試圖通過瀏覽器修改PHP文件時）。 CIDRAM無法知道您的虛擬主機是否這樣做。 為了避免出現問題，建議盡可能不要以這種方式編輯PHP文件。"
+warning_file_php: "警告：一些虛擬主機在檢測到請求中的PHP標記時會自動禁止IP位址（例如，當試圖通過瀏覽器修改PHP文件時）。 CIDRAM無法知道您的虛擬主機是否這樣做。 為了避免出現問題，建議盡可能不要以這種方式編輯PHP文件。"
 warning_file_overwritten: "警告：您當前正在編輯的文件屬於組件『%s』。對該文件所做的任何更改很可能會在下次更新該組件時被覆蓋。"
 warning_javascript_required: "警告：一些前端功能需要JavaScript。為確保整個前端按預期運行，建議啟用JavaScript。"
 warning_signatures_1: "警告：沒有簽名文件是活動的！"

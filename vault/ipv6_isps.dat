@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6_isps.dat
 
-# Version: 2024.224.0
-# Last modified: 2024.08.12
+# Version: 2024.226.0
+# Last modified: 2024.08.14
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -389,8 +389,8 @@ Tag: T-Mobile USA, Inc
 # limited ADSL connectivity also provided. A significant source of spam here,
 # caught trying to hack honeypots, brute-force, SSH, and webapp attacks, and
 # unauthorised WordPress vulnerability scanners detected from here.
-# Stop Forum Spam (SFS) listings: 566,521 (AS16276), 14 (AS35540).
-# Updated: 2021.01.27 / Checked: 2023.11.24
+# Stop Forum Spam (SFS) listings: 65,707 (AS16276), 3 (AS35540).
+# Updated: 2021.01.27 / Checked: 2024.08.14
 
 2607:5300::/32 Run bypasses.php
 Origin: CA
@@ -548,21 +548,6 @@ Tag: Smartlink Solutions
 Origin: US
 Profile: Domestic ISP;Tor endpoints here
 Tag: Verizon Business/UUnet
-
-
-# ASN 4787 ("PT Cyberindo Aditama").
-# Indonesian fibre provider. Brute-force, SMTP, and webapp attacks, port scans,
-# credential stuffing, hacking, and spam detected from here.
-# Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 930.
-# Updated: 2023.09.11
-
-2405:8180:203:96ff::/64 Deny Spam
-2405:8180:301:a39e::/64 Deny Spam
-2405:8180:a01:d86::/64 Deny Spam
-Origin: ID
-Profile: Domestic ISP;Multiplay
-Tag: PT Cyberindo Aditama
 
 
 # ASN 263744 ("Udasha S.A").

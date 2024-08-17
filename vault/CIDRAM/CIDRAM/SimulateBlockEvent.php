@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used to simulate block events (last modified: 2024.07.02).
+ * This file: Methods used to simulate block events (last modified: 2024.08.17).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -140,6 +140,9 @@ trait SimulateBlockEvent
         if (!empty($this->FE['custom-query'])) {
             $this->BlockInfo['rURI'] .= '?' . $this->FE['custom-query'];
         }
+
+        /** Reset tokens. */
+        $this->Tokens = [];
 
         /** Instantiate report orchestrator (used by some modules). */
         $this->Reporter = new Reporter($this->Events);

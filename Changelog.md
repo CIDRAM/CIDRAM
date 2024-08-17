@@ -448,3 +448,5 @@
 [2024.08.10; Bug-fix; Maikuolan]: Fixed a typo affecting webhook functionality.
 
 [2024.08.14; Maikuolan]: Rephrased some L10N.
+
+[2024.08.17; New Feature; Maikuolan]: Added support for secure user agent tokenisation.

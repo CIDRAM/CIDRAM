@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2024.08.10).
+ * This file: The CIDRAM core (last modified: 2024.08.17).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -193,6 +193,11 @@ class Core
      * @var array Sometimes used with certain kinds of blocked requests.
      */
     public $Webhooks = [];
+
+    /**
+     * @var array Tokens from user agents and etc.
+     */
+    public $Tokens = [];
 
     /**
      * @var array Channels information for request.

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2024.08.10).
+ * This file: Protect traits (last modified: 2024.08.17).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -120,6 +120,12 @@ trait Protect
         $this->BlockInfo['rURI'] .= $this->CIDRAM['HTTP_HOST'] ?: 'Unknown.Host';
         $this->BlockInfo['rURI'] .= $Try;
         $this->BlockInfo['rURI'] .= $_SERVER['REQUEST_URI'] ?? '/';
+
+        /** Tokenise secure user agent (if available; won't be available outside HTTPS). */
+        if ($this->BlockInfo['SEC_CH_UA'] !== '' && preg_match_all('~(?<=^|, )"([^"\n\r]+)";v="(\d+)"(?=$|, )~', $this->BlockInfo['SEC_CH_UA'], $Tokens)) {
+            $this->Tokens = array_merge($this->Tokens, array_combine($Tokens[1], $Tokens[2]));
+            unset($Tokens);
+        }
 
         /** Initialise page output and block event log fields. */
         $this->CIDRAM['FieldTemplates'] = $this->Configuration['template_data'] + [

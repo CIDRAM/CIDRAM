@@ -22,7 +22,7 @@
  * William "Bill" Minozzi.
  * @link https://www.stopbadbots.com/
  *
- * This file: Bot Or Browser User Agent Module (last modified: 2024.07.26).
+ * This file: Bot Or Browser User Agent Module (last modified: 2024.08.18).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -181,14 +181,14 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
                 $Chromium = preg_match('%^(?i)(?!.*edg(?:a|e|ios)\/)(?!.* build\/)(?!.* Favicon).*chrom(?:e|ium)\/(\d+)\.\d+.*$%', $this->BlockInfo['UA'], $rebt) ||
                 $Chromium = preg_match('%^(?i)(?=.*android)(?!.* Favicon).*chrom(?:e|ium)\/(\d+)\.\d+.*$%', $this->BlockInfo['UA'], $rebt)
             ) {
-                $rebt = (int)$rebt[1];
-                if ($this->trigger(($rebt < $EOLChrome), $Browser[0] . ' (C)', $Browser[1])) {
+                $TokenChrome = (int)$rebt[1];
+                if ($this->trigger(($TokenChrome < $EOLChrome), $Browser[0] . ' (C)', $Browser[1])) {
                     $this->enactOptions('Chrome:', $Options);
                 }
             }
             if (preg_match('%^(?=.*Mozilla\/)(?i).*Edg(?:a|e|ios)\/(\d+)\.\d+.*$%', $this->BlockInfo['UA'], $rebt)) {
-                $rebt = (int)$rebt[1];
-                if ($this->trigger(($rebt < $EOLEdge), $Browser[0] . ' (E)', $Browser[1])) {
+                $TokenEdge = (int)$rebt[1];
+                if ($this->trigger(($TokenEdge < $EOLEdge), $Browser[0] . ' (E)', $Browser[1])) {
                     $this->enactOptions('Edge:', $Options);
                 }
             }
@@ -214,6 +214,26 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
                     }
                 }
             }
+        }
+    }
+
+    /** Signatures for token mismatches (extends sanity checks). */
+    if ($this->Configuration['bobuam']['sanity_check'] === 'yes') {
+        $Failed = false;
+        if (isset($TokenChrome, $this->Tokens['Google Chrome'])) {
+            $Try = (int)$this->Tokens['Google Chrome'];
+            if ($this->trigger($TokenChrome !== $Try, $Masquerade[0] . ' (TMGC)', $Masquerade[1])) {
+                $Failed = true;
+            }
+        }
+        if (isset($TokenEdge, $this->Tokens['Microsoft Edge'])) {
+            $Try = (int)$this->Tokens['Microsoft Edge'];
+            if ($this->trigger($TokenEdge !== $Try, $Masquerade[0] . ' (TMME)', $Masquerade[1])) {
+                $Failed = true;
+            }
+        }
+        if ($Failed) {
+            $this->enactOptions('Masquerade:', $Options);
         }
     }
 };

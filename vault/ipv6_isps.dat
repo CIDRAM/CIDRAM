@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6_isps.dat
 
-# Version: 2024.226.0
-# Last modified: 2024.08.14
+# Version: 2024.230.0
+# Last modified: 2024.08.18
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -11,12 +11,12 @@
 
 # ---
 # ASNs 34665, 44050 ("Petersburg Internet Network ltd").
-# Major domestic ISP from Russia, but also a significant, long-term source of
-# spam, hack attempts, scraping, probing for vulnerabilities, and other kinds
-# of unwanted traffic.
-# Stop Forum Spam (SFS) listings: 822,131 (AS34665), 2 (AS44050).
-# Updated: 2024.01.28
+# Russian multiplay network. Significant amounts of hacking, scraping, probing
+# for vulnerabilities, port scans, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 1,116,644 (AS34665), 1 (AS44050).
+# Updated: 2024.08.18
 
+2a0b:d900::/29 Deny Spam
 2a0d:1ac3::/32 Deny Spam
 Origin: AE
 2a02:c6c1::/48 Deny Spam
@@ -27,8 +27,9 @@ Origin: GB
 2a0c:8700::/29 Deny Spam
 2a0d:8fc0::/29 Deny Spam
 2a0e:e5c0::/29 Deny Spam
+2a12:c304::/30 Deny Spam
 Origin: RU
-Profile: Domestic ISP
+Profile: Dedicated;Domestic ISP;Infrastructure/Transit;Mobile ISP;Multiplay;Webhosting
 Tag: PIN-AS
 
 
@@ -87,8 +88,8 @@ Tag: Idea Cellular Ltd
 # ASN 15895 ('"Kyivstar" PJSC').
 # Absolutely **INSANE** levels of spam coming from this network!! Shouldn't
 # ever, ever let them through, if at all possible.
-# Stop Forum Spam (SFS) listings: 37,688.
-# Updated: 2022.09.27 / Checked: 2023.09.12
+# Stop Forum Spam (SFS) listings: 10,631.
+# Updated: 2022.09.27 / Checked: 2024.08.18
 
 2a02:8a8::/32 Deny Spam
 2a02:2378::/32 Deny Spam

@@ -450,3 +450,5 @@
 [2024.08.14; Maikuolan]: Rephrased some L10N.
 
 [2024.08.17; New Feature; Maikuolan]: Added support for secure user agent tokenisation.
+
+[2024.08.21; Maikuolan]: BOBUAM's recommended lowest allowed version for the Chrome/Chromium/Edg/Edge/Firefox/ESR tokens raised to 123 due to recent increased reports/detection of bad bots citing versions 122 and older.

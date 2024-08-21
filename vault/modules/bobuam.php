@@ -186,7 +186,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
                     $this->enactOptions('Chrome:', $Options);
                 }
             }
-            if (preg_match('%^(?=.*Mozilla\/)(?i).*Edg(?:a|e|ios)\/(\d+)\.\d+.*$%', $this->BlockInfo['UA'], $rebt)) {
+            if (preg_match('%^(?=.*Mozilla\/)(?i).*Edg(?:a|e|ios)?\/(\d+)\.\d+.*$%', $this->BlockInfo['UA'], $rebt)) {
                 $TokenEdge = (int)$rebt[1];
                 if ($this->trigger(($TokenEdge < $EOLEdge), $Browser[0] . ' (E)', $Browser[1])) {
                     $this->enactOptions('Edge:', $Options);

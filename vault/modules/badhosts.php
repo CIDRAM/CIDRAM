@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bad hosts blocker module (last modified: 2023.12.01).
+ * This file: Bad hosts blocker module (last modified: 2024.08.21).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -65,19 +65,19 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     $this->trigger(preg_match('~captch|dbcapi\.me~', $HN), 'CAPTCHA cracker host'); // 2017.01.21
 
     $this->trigger(preg_match(
-        '~prking\.com\.au$|(?:qvt|telsp)\.net\.br$|(?:\.(?:giga-dns|oodle|po' .
-        'intandchange|solidseo(?:dedicated|vps)?|topsy|vadino)|23gb|35up|acc' .
-        'elovation|barefruit|bestprice|colo\.iinet|detangled|kimsufi|lightsp' .
-        'eedsystems|lipperhey|mantraonline|netcomber|onlinehome-server\.myfo' .
-        'rexvps|page-store|setooz|technicolor)\.com$|poneytelecom\.eu$|(?:4u' .
-        '|netadvert|onlinehome-server)\.info$|mobilemarketingaid\.info|(?:3f' .
-        'n|buyurl|dragonara|isnet|mfnx|onlinehome-server)\.net$|seomoz\.org$' .
-        '|(?:dimargroup|itrack|mail|rulinki|vipmailoffer)\.ru$|(?:2kom|solom' .
-        'ono)\.ru|\.v4\.ngi\.it|awcheck|b(?:oardreader|reakingtopics|uysells' .
-        'ales)|c(?:eptro|heapseovps|yber-uslugi)|drugstore|liwio\.|luxuryhan' .
-        'dbag|s(?:emalt|mileweb\.com\.ua|quider|tartdedicated\.)|exabot~',
+        '~prking\.com\.au$|(?:qvt|telsp)\.net\.br$|' .
+        '(?:\.(?:giga-dns|oodle|pointandchange|solidseo(?:dedicated|vps)?|to' .
+        'psy|vadino)|23gb|35up|accelovation|barefruit|bestprice|colo\.iinet|' .
+        'detangled|kimsufi|lightspeedsystems|lipperhey|mantraonline|netcombe' .
+        'r|myforexvps|page-store|setooz|stretchoid|technicolor)\.com$|' .
+        'poneytelecom\.eu$|(?:4u|netadvert|onlinehome-server)\.info$|(?:3fn|' .
+        'buyurl|dragonara|isnet|mfnx|onlinehome-server)\.net$|' .
+        'seomoz\.org$|(?:dimargroup|itrack|mail|rulinki|vipmailoffer)\.ru$|b' .
+        '(?:oardreader|reakingtopics|uysellsales)|c(?:eptro|heapseovps|yber-' .
+        'uslugi)|drugstore|liwio\.|luxuryhandbag|s(?:emalt|mileweb\.com\.ua|' .
+        'quider|tartdedicated\.)|exabot~',
         $HN
-    ), 'SEO/Bothost/Scraper/Spamhost'); // 2020.11.15 mod 2023.01.27
+    ), 'SEO/Bothost/Scraper/Spamhost'); // 2024.08.21
 
     $this->trigger(preg_match('~cjh-law\.com$~', $HN), 'Phisher / Phishing Host'); // 2017.02.14
 
@@ -100,7 +100,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     $this->trigger(preg_match('~anchorfree|hotspotsheild|esonicspider\.com$~', $HN), 'Hostile/esonicspider'); // 2018.09.15
 
     $this->trigger(preg_match(
-        '~megacom\.biz$|ideastack\.com$|dotnetdotcom\.org$|controlyourself\.online|seeweb\.it~',
+        '~megacom\.biz$|ideastack\.com$|dotnetdotcom\.org$|controlyourself\.online~',
         $HN
     ), 'Hostile/Unauthorised'); // 2017.02.14 mod 2021.06.28
 
@@ -110,7 +110,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         // Caught attempting to brute-force WordPress logins (2020.11.09).
         $this->trigger(preg_match('~\.domainserver\.ne\.jp$~', $HN), 'Cloud/Webhosting') ||
 
-        // 2022.12.19
+        // 2022.12.19 mod 2024.08.21
         $this->trigger(preg_match(
             '~i(?:g|nsite)\.com\.br$|terra\.cl$|acetrophies\.co\.uk$|adsinmedia\.co\.' .
             'in$|(?:webfusion|xcalibre)\.co\.uk$|(?:\.(?:appian|cloud|ctera|dyn|emc|f' .
@@ -144,18 +144,13 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             'essfactory|inkgos|oughtexpress)|rustsaas)|utilitystatus|v(?:aultscape|er' .
             'tica|mware|ordel)|web(?:faction|hosting\.uk|hostinghub|scalesolutions|si' .
             'tewelcome)|xactlycorp|xlhost|xythos|z(?:embly|imory|manda|oho|uora))\.co' .
-            'm$|(?:alxagency|capellahealthcare|host(?:gator|ingprod)|instantdedicated' .
-            '|khavarzamin|link88\.seo|securityspace|serve(?:path|rbuddies))\.com|serv' .
-            'er4u\.cz$|(?:(?:\.|kunden)server|clanmoi|fastwebserver|optimal|server4yo' .
-            'u|your-server)\.de$|eucalyptus\.cs\.uscb\.edu$|candycloud\.eu$|cyberresi' .
-            'lience\.io$|server\.lu$|starnet\.md$|(?:\.(?:above|akpackaging|bhsrv|box' .
-            '|propagation|voxel)|1978th|collab|enkiconsulting|incrediserve|jkserv|rec' .
-            'yber|reliablesite|shared-server|techajans)\.net$|hitech-hosting\.nl$|(?:' .
-            '\.terracotta|beowulf|iboss|opennebula|xen)\.org$|mor\.ph$|(?:ogicom|vamp' .
-            'ire)\.pl$|(?:cyber-host|slaskdatacenter)\.pl|(?:serverhub|rivreg|tkvprok' .
-            '|vpsnow|vympelstroy)\.ru$|g\.ho\.st$|bergdorf-group|cloudsigma|dreamhost' .
-            '|ipxserver|linode|money(?:mattersnow|tech\.mg)|psychz|requestedoffers|sc' .
-            'opehosts|s(?:p?lice|teep)host~',
+            'm$|server4u\.cz$|(?:(?:\.|kunden)server|clanmoi|fastwebserver|optimal|se' .
+            'rver4you|your-server)\.de$|candycloud\.eu$|cyberresilience\.io$|server\.' .
+            'lu$|starnet\.md$|(?:\.(?:above|akpackaging|bhsrv|box|propagation|voxel)|' .
+            '1978th|collab|enkiconsulting|incrediserve|jkserv|recyber|reliablesite|sh' .
+            'ared-server|techajans)\.net$|hitech-hosting\.nl$|(?:\.terracotta|beowulf' .
+            '|iboss|opennebula|xen)\.org$|mor\.ph$|(?:ogicom|vampire)\.pl$|(?:serverh' .
+            'ub|rivreg|tkvprok|vpsnow|vympelstroy)\.ru$|g\.ho\.st$~',
             $HN
         ), 'Cloud/Webhosting') ||
 
@@ -184,12 +179,6 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     ), 'Domain Snipers'); // 2017.02.15 mod 2021.06.28
 
     $this->trigger(preg_match('~(?<!ssg-corp\.)zetta\.net$|(?<!\.user\.)veloxzone\.com\.br$|12bot\.com$~', $HN), 'Server farm'); // 2022.12.19
-
-    $this->trigger(empty($this->CIDRAM['Ignore']['SoftLayer']) && preg_match('/softlayer\.com$/', $HN) && (
-        !substr_count($this->BlockInfo['UALC'], 'disqus') &&
-        !substr_count($this->BlockInfo['UA'], 'Superfeedr bot/2.0') &&
-        !substr_count($this->BlockInfo['UA'], 'Feedbot')
-    ), 'SoftLayer'); // 2017.01.21 (ASN 36351) modified 2020.01.11
 
     $this->trigger(preg_match(
         '~(?:starlogic|temka)\.biz$|ethymos\.com\.br$|(?:amplilogic|astranig' .

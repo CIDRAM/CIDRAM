@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6.dat
 
-# Version: 2024.234.0
-# Last modified: 2024.08.22
+# Version: 2024.237.0
+# Last modified: 2024.08.25
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -2137,21 +2137,19 @@ Tag: Enzu Inc
 
 # ASNs 18779, 397373 ("EGIHosting", "H4Y Technologies LLC").
 # ASNs combined due to interlacing.
-# Stop Forum Spam (SFS) listings: 373 (AS18779), 1,571 (AS397373).
-# Updated: 2024.04.18
+# Stop Forum Spam (SFS) listings: 498 (AS18779), 1,009 (AS397373).
+# Updated: 2024.08.25
 
-2a11:5840::/29 Deny Cloud
-2a11:73c0::/29 Deny Cloud
-2a11:bd40::/29 Deny Cloud
-Origin: SC
 2a02:f240::/29 Deny Cloud
 2a0c:47c0::/29 Deny Cloud
 2a0c:7dc0::/29 Deny Cloud
 2a0c:89c0::/29 Deny Cloud
 2a0c:9ac0::/29 Deny Cloud
+2a11:5840::/29 Deny Cloud
+2a11:73c0::/29 Deny Cloud
+2a11:bd40::/29 Deny Cloud
 Origin: TR
 2602:fcd5:8::/47 Deny Cloud
-2604:bc0:3::/48 Deny Cloud
 2604:f440:6::/48 Deny Cloud
 2605:6c80::/47 Deny Cloud
 2605:6c80:2::/48 Deny Cloud
@@ -2159,8 +2157,8 @@ Origin: TR
 2605:6c80:7::/48 Deny Cloud
 2605:6c80:8::/47 Deny Cloud
 2605:6c80:d::/48 Deny Cloud
-2605:6c80:e::/47 Deny Cloud
 2605:6c80:11::/48 Deny Cloud
+2605:6c80:12::/47 Deny Cloud
 2606:6680:35::/48 Deny Cloud
 2606:6680:36::/48 Deny Cloud
 2607:f358::/32 Deny Cloud
@@ -3114,10 +3112,15 @@ Tag: Hostwinds LLC
 
 # ASN 8342 ("JSC RTComm.RU").
 # Dedicated server farm + an ongoing source of spam and other unwanted traffic.
-# Stop Forum Spam (SFS) listings: 335.
-# Updated: 2016.04.23 / Checked: 2023.12.12
+# Stop Forum Spam (SFS) listings: 726.
+# Updated: 2024.08.24
 
+2a0d:1ac7::/32 Deny Cloud
+Origin: AE
 2001:1bb0::/32 Deny Cloud
+2a05:540::/30 Deny Cloud
+2a06:c000::/31 Deny Cloud
+2a06:c003::/32 Deny Cloud
 Origin: RU
 Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: OJSC RTComm.RU
@@ -13528,6 +13531,500 @@ Tag: ISP4Life INC
 Origin: BR
 Profile: Webhosting
 Tag: EVEO S.A
+
+
+# ASN 43581 ("ZTV CORP LLC").
+# Brute-force attacks, port scans, hacking, and spam detected from here.
+# Updated: 2024.08.24
+
+2a11:1940::/29 Deny Cloud
+2a13:a502::/32 Deny Cloud
+Origin: RU
+Profile: Dedicated;Webhosting;VPNs here
+Tag: ZTV CORP LLC
+
+
+# ASN 43581 ("Cloudflare, Inc").
+# Caught probing for webshells/backdoors. Brute-force, SSH, WordPress/XMLRPC,
+# and webapp attacks, hacking, and spam detected from here. In theory, we
+# shouldn't be seeing any outbound traffic from here *at all*, as they're a CDN
+# and reverse-proxy service, but we have hard logs to the contrary.
+# Stop Forum Spam (SFS) listings: 12,869.
+# Updated: 2024.08.25
+
+2400:cb00:4::/48 Deny Cloud
+2400:cb00:11::/48 Deny Cloud
+2400:cb00:12::/48 Deny Cloud
+2400:cb00:14::/46 Deny Cloud
+2400:cb00:19::/48 Deny Cloud
+2400:cb00:20::/46 Deny Cloud
+2400:cb00:26::/47 Deny Cloud
+2400:cb00:28::/47 Deny Cloud
+2400:cb00:31::/48 Deny Cloud
+2400:cb00:34::/47 Deny Cloud
+2400:cb00:38::/47 Deny Cloud
+2400:cb00:40::/47 Deny Cloud
+2400:cb00:43::/48 Deny Cloud
+2400:cb00:44::/46 Deny Cloud
+2400:cb00:48::/47 Deny Cloud
+2400:cb00:50::/45 Deny Cloud
+2400:cb00:59::/48 Deny Cloud
+2400:cb00:60::/47 Deny Cloud
+2400:cb00:63::/48 Deny Cloud
+2400:cb00:64::/46 Deny Cloud
+2400:cb00:68::/47 Deny Cloud
+2400:cb00:70::/45 Deny Cloud
+2400:cb00:78::/47 Deny Cloud
+2400:cb00:80::/47 Deny Cloud
+2400:cb00:83::/48 Deny Cloud
+2400:cb00:84::/46 Deny Cloud
+2400:cb00:88::/47 Deny Cloud
+2400:cb00:90::/48 Deny Cloud
+2400:cb00:94::/46 Deny Cloud
+2400:cb00:98::/48 Deny Cloud
+2400:cb00:100::/48 Deny Cloud
+2400:cb00:102::/47 Deny Cloud
+2400:cb00:104::/46 Deny Cloud
+2400:cb00:109::/48 Deny Cloud
+2400:cb00:110::/45 Deny Cloud
+2400:cb00:118::/47 Deny Cloud
+2400:cb00:120::/45 Deny Cloud
+2400:cb00:128::/47 Deny Cloud
+2400:cb00:130::/48 Deny Cloud
+2400:cb00:132::/48 Deny Cloud
+2400:cb00:134::/46 Deny Cloud
+2400:cb00:138::/47 Deny Cloud
+2400:cb00:140::/45 Deny Cloud
+2400:cb00:148::/47 Deny Cloud
+2400:cb00:150::/46 Deny Cloud
+2400:cb00:154::/47 Deny Cloud
+2400:cb00:156::/48 Deny Cloud
+2400:cb00:158::/47 Deny Cloud
+2400:cb00:160::/46 Deny Cloud
+2400:cb00:165::/48 Deny Cloud
+2400:cb00:166::/47 Deny Cloud
+2400:cb00:168::/47 Deny Cloud
+2400:cb00:170::/48 Deny Cloud
+2400:cb00:172::/47 Deny Cloud
+2400:cb00:174::/47 Deny Cloud
+2400:cb00:177::/48 Deny Cloud
+2400:cb00:178::/47 Deny Cloud
+2400:cb00:180::/47 Deny Cloud
+2400:cb00:182::/48 Deny Cloud
+2400:cb00:184::/46 Deny Cloud
+2400:cb00:188::/47 Deny Cloud
+2400:cb00:190::/45 Deny Cloud
+2400:cb00:198::/47 Deny Cloud
+2400:cb00:200::/46 Deny Cloud
+2400:cb00:204::/48 Deny Cloud
+2400:cb00:206::/47 Deny Cloud
+2400:cb00:208::/47 Deny Cloud
+2400:cb00:210::/45 Deny Cloud
+2400:cb00:218::/47 Deny Cloud
+2400:cb00:220::/47 Deny Cloud
+2400:cb00:222::/48 Deny Cloud
+2400:cb00:224::/46 Deny Cloud
+2400:cb00:228::/47 Deny Cloud
+2400:cb00:230::/47 Deny Cloud
+2400:cb00:232::/48 Deny Cloud
+2400:cb00:235::/48 Deny Cloud
+2400:cb00:236::/47 Deny Cloud
+2400:cb00:238::/47 Deny Cloud
+2400:cb00:241::/48 Deny Cloud
+2400:cb00:242::/47 Deny Cloud
+2400:cb00:245::/48 Deny Cloud
+2400:cb00:246::/47 Deny Cloud
+2400:cb00:249::/48 Deny Cloud
+2400:cb00:250::/48 Deny Cloud
+2400:cb00:253::/48 Deny Cloud
+2400:cb00:254::/46 Deny Cloud
+2400:cb00:258::/48 Deny Cloud
+2400:cb00:260::/47 Deny Cloud
+2400:cb00:266::/47 Deny Cloud
+2400:cb00:268::/47 Deny Cloud
+2400:cb00:270::/48 Deny Cloud
+2400:cb00:274::/47 Deny Cloud
+2400:cb00:279::/48 Deny Cloud
+2400:cb00:281::/48 Deny Cloud
+2400:cb00:282::/47 Deny Cloud
+2400:cb00:284::/47 Deny Cloud
+2400:cb00:291::/48 Deny Cloud
+2400:cb00:292::/48 Deny Cloud
+2400:cb00:298::/47 Deny Cloud
+2400:cb00:300::/47 Deny Cloud
+2400:cb00:303::/48 Deny Cloud
+2400:cb00:305::/48 Deny Cloud
+2400:cb00:306::/48 Deny Cloud
+2400:cb00:308::/48 Deny Cloud
+2400:cb00:326::/48 Deny Cloud
+2400:cb00:331::/48 Deny Cloud
+2400:cb00:336::/47 Deny Cloud
+2400:cb00:338::/47 Deny Cloud
+2400:cb00:340::/46 Deny Cloud
+2400:cb00:344::/48 Deny Cloud
+2400:cb00:346::/47 Deny Cloud
+2400:cb00:350::/48 Deny Cloud
+2400:cb00:352::/48 Deny Cloud
+2400:cb00:354::/48 Deny Cloud
+2400:cb00:356::/47 Deny Cloud
+2400:cb00:358::/48 Deny Cloud
+2400:cb00:360::/48 Deny Cloud
+2400:cb00:362::/47 Deny Cloud
+2400:cb00:365::/48 Deny Cloud
+2400:cb00:366::/47 Deny Cloud
+2400:cb00:368::/47 Deny Cloud
+2400:cb00:370::/48 Deny Cloud
+2400:cb00:373::/48 Deny Cloud
+2400:cb00:374::/48 Deny Cloud
+2400:cb00:376::/47 Deny Cloud
+2400:cb00:378::/48 Deny Cloud
+2400:cb00:380::/47 Deny Cloud
+2400:cb00:382::/48 Deny Cloud
+2400:cb00:384::/47 Deny Cloud
+2400:cb00:386::/48 Deny Cloud
+2400:cb00:388::/48 Deny Cloud
+2400:cb00:390::/46 Deny Cloud
+2400:cb00:394::/48 Deny Cloud
+2400:cb00:397::/48 Deny Cloud
+2400:cb00:398::/47 Deny Cloud
+2400:cb00:403::/48 Deny Cloud
+2400:cb00:404::/47 Deny Cloud
+2400:cb00:406::/48 Deny Cloud
+2400:cb00:408::/47 Deny Cloud
+2400:cb00:410::/46 Deny Cloud
+2400:cb00:414::/47 Deny Cloud
+2400:cb00:416::/48 Deny Cloud
+2400:cb00:419::/48 Deny Cloud
+2400:cb00:422::/47 Deny Cloud
+2400:cb00:424::/47 Deny Cloud
+2400:cb00:427::/48 Deny Cloud
+2400:cb00:428::/47 Deny Cloud
+2400:cb00:430::/47 Deny Cloud
+2400:cb00:432::/48 Deny Cloud
+2400:cb00:435::/48 Deny Cloud
+2400:cb00:437::/48 Deny Cloud
+2400:cb00:438::/47 Deny Cloud
+2400:cb00:440::/47 Deny Cloud
+2400:cb00:443::/48 Deny Cloud
+2400:cb00:445::/48 Deny Cloud
+2400:cb00:446::/47 Deny Cloud
+2400:cb00:448::/48 Deny Cloud
+2400:cb00:450::/46 Deny Cloud
+2400:cb00:454::/47 Deny Cloud
+2400:cb00:458::/48 Deny Cloud
+2400:cb00:460::/48 Deny Cloud
+2400:cb00:462::/47 Deny Cloud
+2400:cb00:464::/46 Deny Cloud
+2400:cb00:469::/48 Deny Cloud
+2400:cb00:470::/47 Deny Cloud
+2400:cb00:472::/48 Deny Cloud
+2400:cb00:474::/46 Deny Cloud
+2400:cb00:478::/47 Deny Cloud
+2400:cb00:480::/45 Deny Cloud
+2400:cb00:488::/47 Deny Cloud
+2400:cb00:490::/46 Deny Cloud
+2400:cb00:495::/48 Deny Cloud
+2400:cb00:496::/47 Deny Cloud
+2400:cb00:499::/48 Deny Cloud
+2400:cb00:500::/48 Deny Cloud
+2400:cb00:502::/47 Deny Cloud
+2400:cb00:504::/48 Deny Cloud
+2400:cb00:507::/48 Deny Cloud
+2400:cb00:508::/47 Deny Cloud
+2400:cb00:510::/46 Deny Cloud
+2400:cb00:515::/48 Deny Cloud
+2400:cb00:516::/48 Deny Cloud
+2400:cb00:519::/48 Deny Cloud
+2400:cb00:520::/45 Deny Cloud
+2400:cb00:528::/47 Deny Cloud
+2400:cb00:530::/48 Deny Cloud
+2400:cb00:532::/47 Deny Cloud
+2400:cb00:534::/47 Deny Cloud
+2400:cb00:537::/48 Deny Cloud
+2400:cb00:538::/48 Deny Cloud
+2400:cb00:540::/46 Deny Cloud
+2400:cb00:545::/48 Deny Cloud
+2400:cb00:546::/47 Deny Cloud
+2400:cb00:548::/47 Deny Cloud
+2400:cb00:550::/47 Deny Cloud
+2400:cb00:555::/48 Deny Cloud
+2400:cb00:556::/47 Deny Cloud
+2400:cb00:558::/47 Deny Cloud
+2400:cb00:560::/47 Deny Cloud
+2400:cb00:566::/47 Deny Cloud
+2400:cb00:568::/48 Deny Cloud
+2400:cb00:570::/46 Deny Cloud
+2400:cb00:574::/48 Deny Cloud
+2400:cb00:577::/48 Deny Cloud
+2400:cb00:578::/47 Deny Cloud
+2400:cb00:581::/48 Deny Cloud
+2400:cb00:582::/47 Deny Cloud
+2400:cb00:585::/48 Deny Cloud
+2400:cb00:586::/47 Deny Cloud
+2400:cb00:588::/47 Deny Cloud
+2400:cb00:590::/45 Deny Cloud
+2400:cb00:598::/47 Deny Cloud
+2400:cb00:600::/47 Deny Cloud
+2400:cb00:604::/46 Deny Cloud
+2400:cb00:608::/47 Deny Cloud
+2400:cb00:610::/46 Deny Cloud
+2400:cb00:614::/48 Deny Cloud
+2400:cb00:616::/47 Deny Cloud
+2400:cb00:618::/47 Deny Cloud
+2400:cb00:620::/46 Deny Cloud
+2400:cb00:625::/48 Deny Cloud
+2400:cb00:626::/47 Deny Cloud
+2400:cb00:629::/48 Deny Cloud
+2400:cb00:631::/48 Deny Cloud
+2400:cb00:632::/47 Deny Cloud
+2400:cb00:634::/46 Deny Cloud
+2400:cb00:638::/47 Deny Cloud
+2400:cb00:640::/46 Deny Cloud
+2400:cb00:644::/47 Deny Cloud
+2400:cb00:646::/48 Deny Cloud
+2400:cb00:648::/47 Deny Cloud
+2400:cb00:650::/46 Deny Cloud
+2400:cb00:654::/47 Deny Cloud
+2400:cb00:657::/48 Deny Cloud
+2400:cb00:658::/47 Deny Cloud
+2400:cb00:661::/48 Deny Cloud
+2400:cb00:662::/47 Deny Cloud
+2400:cb00:665::/48 Deny Cloud
+2400:cb00:666::/48 Deny Cloud
+2400:cb00:670::/45 Deny Cloud
+2400:cb00:678::/47 Deny Cloud
+2400:cb00:680::/47 Deny Cloud
+2400:cb00:683::/48 Deny Cloud
+2400:cb00:684::/47 Deny Cloud
+2400:cb00:686::/48 Deny Cloud
+2400:cb00:688::/47 Deny Cloud
+2400:cb00:690::/47 Deny Cloud
+2400:cb00:694::/47 Deny Cloud
+2400:cb00:696::/48 Deny Cloud
+2400:cb00:700::/48 Deny Cloud
+2400:cb00:704::/46 Deny Cloud
+2400:cb00:708::/47 Deny Cloud
+2400:cb00:710::/45 Deny Cloud
+2400:cb00:718::/47 Deny Cloud
+2400:cb00:721::/48 Deny Cloud
+2400:cb00:722::/47 Deny Cloud
+2400:cb00:724::/46 Deny Cloud
+2400:cb00:728::/47 Deny Cloud
+2400:cb00:730::/46 Deny Cloud
+2400:cb00:734::/47 Deny Cloud
+2400:cb00:736::/48 Deny Cloud
+2400:cb00:738::/48 Deny Cloud
+2400:cb00:740::/46 Deny Cloud
+2400:cb00:745::/48 Deny Cloud
+2400:cb00:746::/48 Deny Cloud
+2400:cb00:750::/48 Deny Cloud
+2400:cb00:752::/48 Deny Cloud
+2400:cb00:754::/47 Deny Cloud
+2400:cb00:762::/48 Deny Cloud
+2400:cb00:764::/46 Deny Cloud
+2400:cb00:768::/47 Deny Cloud
+2400:cb00:770::/45 Deny Cloud
+2400:cb00:785::/48 Deny Cloud
+2400:cb00:786::/47 Deny Cloud
+2400:cb00:788::/47 Deny Cloud
+2400:cb00:790::/46 Deny Cloud
+2400:cb00:794::/47 Deny Cloud
+2400:cb00:796::/48 Deny Cloud
+2400:cb00:798::/48 Deny Cloud
+2400:cb00:902::/47 Deny Cloud
+2400:cb00:904::/46 Deny Cloud
+2400:cb00:908::/47 Deny Cloud
+2400:cb00:910::/46 Deny Cloud
+2400:cb00:918::/47 Deny Cloud
+2400:cb00:921::/48 Deny Cloud
+2400:cb00:923::/48 Deny Cloud
+2400:cb00:925::/48 Deny Cloud
+2400:cb00:926::/47 Deny Cloud
+2400:cb00:928::/47 Deny Cloud
+2400:cb00:936::/47 Deny Cloud
+2400:cb00:938::/47 Deny Cloud
+2400:cb00:943::/48 Deny Cloud
+2400:cb00:944::/48 Deny Cloud
+2400:cb00:947::/48 Deny Cloud
+2400:cb00:2049::/48 Deny Cloud
+2400:cb00:3000::/48 Deny Cloud
+2400:cb00:3006::/47 Deny Cloud
+2400:cb00:3009::/48 Deny Cloud
+2400:cb00:a040::/46 Deny Cloud
+2400:cb00:a044::/47 Deny Cloud
+2400:cb00:a046::/48 Deny Cloud
+2400:cb00:a0b0::/45 Deny Cloud
+2400:cb00:a0c0::/45 Deny Cloud
+2400:cb00:a0e0::/45 Deny Cloud
+2400:cb00:a0f0::/45 Deny Cloud
+2400:cb00:a100::/45 Deny Cloud
+2400:cb00:a110::/45 Deny Cloud
+2400:cb00:a130::/46 Deny Cloud
+2400:cb00:a135::/48 Deny Cloud
+2400:cb00:a136::/48 Deny Cloud
+2400:cb00:a140::/46 Deny Cloud
+2400:cb00:a144::/47 Deny Cloud
+2400:cb00:a146::/48 Deny Cloud
+2400:cb00:a150::/46 Deny Cloud
+2400:cb00:a154::/47 Deny Cloud
+2400:cb00:a160::/46 Deny Cloud
+2400:cb00:a164::/48 Deny Cloud
+2400:cb00:a170::/46 Deny Cloud
+2400:cb00:a174::/48 Deny Cloud
+2400:cb00:a1a0::/47 Deny Cloud
+2400:cb00:a1a2::/48 Deny Cloud
+2400:cb00:a1b0::/46 Deny Cloud
+2400:cb00:a1b4::/47 Deny Cloud
+2400:cb00:a1c0::/45 Deny Cloud
+2400:cb00:a1d0::/46 Deny Cloud
+2400:cb00:a1d4::/47 Deny Cloud
+2400:cb00:a1f0::/46 Deny Cloud
+2400:cb00:a220::/47 Deny Cloud
+2400:cb00:a222::/48 Deny Cloud
+2400:cb00:a230::/46 Deny Cloud
+2400:cb00:a234::/47 Deny Cloud
+2400:cb00:a236::/48 Deny Cloud
+2400:cb00:a260::/47 Deny Cloud
+2400:cb00:a270::/46 Deny Cloud
+2400:cb00:a274::/47 Deny Cloud
+2400:cb00:a276::/48 Deny Cloud
+2400:cb00:a290::/47 Deny Cloud
+2400:cb00:a2b0::/47 Deny Cloud
+2400:cb00:a2c0::/47 Deny Cloud
+2400:cb00:a2c2::/48 Deny Cloud
+2400:cb00:a2d0::/47 Deny Cloud
+2400:cb00:a2e0::/47 Deny Cloud
+2400:cb00:a2f0::/47 Deny Cloud
+2400:cb00:a2f2::/48 Deny Cloud
+2400:cb00:a300::/46 Deny Cloud
+2400:cb00:a304::/48 Deny Cloud
+2400:cb00:a310::/46 Deny Cloud
+2400:cb00:a314::/47 Deny Cloud
+2400:cb00:a316::/48 Deny Cloud
+2400:cb00:a320::/46 Deny Cloud
+2400:cb00:a324::/47 Deny Cloud
+2400:cb00:a326::/48 Deny Cloud
+2400:cb00:a340::/46 Deny Cloud
+2400:cb00:a370::/47 Deny Cloud
+2400:cb00:a390::/47 Deny Cloud
+2400:cb00:a3b0::/47 Deny Cloud
+2400:cb00:a3c0::/47 Deny Cloud
+2400:cb00:a3f0::/46 Deny Cloud
+2400:cb00:a400::/46 Deny Cloud
+2400:cb00:a404::/48 Deny Cloud
+2400:cb00:a410::/46 Deny Cloud
+2400:cb00:a420::/46 Deny Cloud
+2400:cb00:a424::/48 Deny Cloud
+2400:cb00:a430::/46 Deny Cloud
+2400:cb00:a434::/48 Deny Cloud
+2400:cb00:a450::/47 Deny Cloud
+2400:cb00:a452::/48 Deny Cloud
+2400:cb00:a460::/46 Deny Cloud
+2400:cb00:a464::/48 Deny Cloud
+2400:cb00:a470::/46 Deny Cloud
+2400:cb00:a474::/47 Deny Cloud
+2400:cb00:a476::/48 Deny Cloud
+2400:cb00:a480::/46 Deny Cloud
+2400:cb00:a484::/48 Deny Cloud
+2400:cb00:a490::/46 Deny Cloud
+2400:cb00:a494::/47 Deny Cloud
+2400:cb00:a496::/48 Deny Cloud
+2400:cb00:a4a0::/46 Deny Cloud
+2400:cb00:a4a4::/47 Deny Cloud
+2400:cb00:a4b0::/46 Deny Cloud
+2400:cb00:a4c0::/47 Deny Cloud
+2400:cb00:a4e0::/46 Deny Cloud
+2400:cb00:a4e4::/47 Deny Cloud
+2400:cb00:a4f0::/47 Deny Cloud
+2400:cb00:a4f2::/48 Deny Cloud
+2400:cb00:a500::/46 Deny Cloud
+2400:cb00:a510::/46 Deny Cloud
+2400:cb00:a514::/48 Deny Cloud
+2400:cb00:a530::/48 Deny Cloud
+2400:cb00:a532::/47 Deny Cloud
+2400:cb00:a540::/47 Deny Cloud
+2400:cb00:a542::/48 Deny Cloud
+2400:cb00:a550::/47 Deny Cloud
+2400:cb00:a552::/48 Deny Cloud
+2400:cb00:a570::/47 Deny Cloud
+2400:cb00:a580::/47 Deny Cloud
+2400:cb00:a590::/45 Deny Cloud
+2400:cb00:a5e0::/48 Deny Cloud
+2400:cb00:a5e2::/47 Deny Cloud
+2400:cb00:a600::/47 Deny Cloud
+2400:cb00:a610::/47 Deny Cloud
+2400:cb00:a612::/48 Deny Cloud
+2400:cb00:a620::/46 Deny Cloud
+2400:cb00:a624::/47 Deny Cloud
+2400:cb00:a626::/48 Deny Cloud
+2400:cb00:a640::/48 Deny Cloud
+2400:cb00:a642::/47 Deny Cloud
+2400:cb00:a644::/48 Deny Cloud
+2400:cb00:a670::/46 Deny Cloud
+2400:cb00:a6a0::/46 Deny Cloud
+2400:cb00:a6a4::/47 Deny Cloud
+2400:cb00:a6a6::/48 Deny Cloud
+2400:cb00:a6b0::/46 Deny Cloud
+2400:cb00:a6b4::/48 Deny Cloud
+2400:cb00:a710::/48 Deny Cloud
+2400:cb00:a720::/45 Deny Cloud
+2400:cb00:a730::/48 Deny Cloud
+2400:cb00:a732::/47 Deny Cloud
+2400:cb00:a740::/46 Deny Cloud
+2400:cb00:a750::/47 Deny Cloud
+2400:cb00:a760::/47 Deny Cloud
+2400:cb00:a770::/47 Deny Cloud
+2400:cb00:a772::/48 Deny Cloud
+2400:cb00:a774::/48 Deny Cloud
+2400:cb00:a780::/47 Deny Cloud
+2400:cb00:a790::/46 Deny Cloud
+2400:cb00:a7a0::/47 Deny Cloud
+2400:cb00:a7b0::/46 Deny Cloud
+2400:cb00:a7b4::/47 Deny Cloud
+2400:cb00:a7c0::/47 Deny Cloud
+2400:cb00:a7c2::/48 Deny Cloud
+2400:cb00:a7d0::/46 Deny Cloud
+2400:cb00:a7e0::/46 Deny Cloud
+2400:cb00:a800::/46 Deny Cloud
+2400:cb00:a804::/47 Deny Cloud
+2400:cb00:a820::/47 Deny Cloud
+2400:cb00:a840::/47 Deny Cloud
+2400:cb00:a842::/48 Deny Cloud
+2400:cb00:a870::/47 Deny Cloud
+Origin: US
+Profile: Content Delivery Network
+Tag: Cloudflare, Inc
+
+
+# ASN 29134 ("Webglobe, s.r.o").
+# SQLi, webapp attacks, hacking, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 26.
+# Updated: 2024.08.25
+
+2001:1ab0::/32 Deny Cloud
+2a03:b280::/36 Deny Cloud
+2a03:b780::/32 Deny Cloud
+2a09:ec00::/29 Deny Cloud
+Origin: CZ
+Profile: Webhosting
+Tag: Webglobe
+
+
+# ASN 149440 ("Evoxt Enterprise").
+# Brute-force, SSH, and webapp attacks, port scans, hacking, and spam detected
+# from here.
+# Stop Forum Spam (SFS) listings: 216.
+# Updated: 2024.08.25
+
+2400:8d60:1::/48 Deny Cloud
+2400:8d60:2::/48 Deny Cloud
+2400:8d60:4::/47 Deny Cloud
+2400:8d60:7::/48 Deny Cloud
+2400:8d60:8::/47 Deny Cloud
+2400:8d60:10::/48 Deny Cloud
+Origin: MY
+Profile: Dedicated;Infrastructure/Transit
+Tag: Evoxt Enterprise
 
 
 # ---

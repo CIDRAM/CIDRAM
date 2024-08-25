@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv4_isps.dat
 
-# Version: 2024.234.0
-# Last modified: 2024.08.22
+# Version: 2024.237.0
+# Last modified: 2024.08.25
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -1644,42 +1644,19 @@ Tag: MEGHBELA BROADBAND
 # Indian mobile and internet provider. Brute-force, SSH, and webapp attacks,
 # port scans, hacking, and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,722.
-# Updated: 2023.09.21
+# Stop Forum Spam (SFS) listings: 933.
+# Updated: 2024.08.25
 
+1.187.221.253/32 Deny Spam
+1.187.222.105/32 Deny Spam
 49.14.128.0/24 Deny Attacks
-49.15.240.70/32 Deny Attacks
-49.15.240.74/32 Deny Attacks
-49.15.240.200/32 Deny Attacks
-49.15.241.34/32 Deny Attacks
-49.15.241.103/32 Deny Attacks
-49.15.241.211/32 Deny Attacks
-49.15.241.222/32 Deny Attacks
-106.66.28.15/32 Deny Spam
-106.66.28.59/32 Deny Spam
-106.66.40.22/32 Deny Attacks
-106.66.40.140/32 Deny Attacks
-106.66.40.180/32 Deny Attacks
-106.66.40.250/32 Deny Attacks
-106.66.41.109/32 Deny Attacks
-106.66.42.241/32 Deny Attacks
-106.76.252.46/32 Deny Spam
-106.77.78.4/32 Deny Attacks
-106.77.78.65/32 Deny Attacks
-106.77.78.152/32 Deny Attacks
-106.77.79.24/32 Deny Attacks
-106.77.79.137/32 Deny Attacks
-106.77.79.198/32 Deny Attacks
-106.77.79.205/32 Deny Attacks
-106.77.79.231/32 Deny Attacks
-106.78.51.100/32 Deny Spam
-106.78.51.117/32 Deny Spam
-106.78.52.187/32 Deny Spam
-106.78.83.15/32 Deny Attacks
-106.78.83.198/32 Deny Attacks
-106.79.200.0/24 Deny Attacks
-106.79.201.26/32 Deny Spam
-106.79.202.45/32 Deny Spam
+49.14.165.238/32 Deny Spam
+49.15.240.0/23 Deny Attacks
+106.66.40.0/23 Deny Attacks
+106.76.95.166/32 Deny Spam
+106.77.78.0/23 Deny Attacks
+106.78.83.0/24 Deny Attacks
+106.79.200.0/21 Deny Attacks
 Origin: IN
 Profile: Domestic ISP;Mobile ISP
 Tag: Idea Cellular Ltd
@@ -7597,7 +7574,7 @@ Tag: Ultra-Telecom LLC
 # - forums.spybot.info/showthread.php?23632-SPAM-frauds-fakes-and-other-MALWARE-deliveries/page37
 # - dyn.com/blog/mitm-internet-hijacking/
 # Stop Forum Spam (SFS) listings: 77,910.
-# Updated: 2024.03.14 / Modified: 2024.08.15
+# Updated: 2024.03.14 / Modified: 2024.08.25
 
 5.182.110.0/24 Deny Attacks
 45.88.97.0/24 Deny Attacks
@@ -7660,6 +7637,8 @@ Origin: SE
 154.17.2.95/32 Deny Attacks
 154.17.8.128/32 Deny Attacks
 154.17.8.148/32 Deny Spam
+154.64.232.0/24 Deny Attacks
+154.64.240.0/20 Deny Attacks
 195.78.54.0/24 Deny Attacks
 198.16.66.0/24 Deny Attacks
 198.16.74.203/32 Deny Attacks
@@ -11410,7 +11389,7 @@ Tag: TTNet A.S
 # attacks, port scans, spamming, and probing for vulnerabilities detected from
 # here. Listing just the affected address/ranges only.
 # Stop Forum Spam (SFS) listings: 539.
-# Updated: 2023.12.12 / Modified: 2024.07.14
+# Updated: 2023.12.12 / Modified: 2024.08.24
 
 202.168.152.193/32 Deny Attacks
 202.168.152.237/32 Deny Attacks
@@ -11519,6 +11498,7 @@ Origin: HK
 175.205.4.218/32 Deny Attacks
 175.211.41.49/32 Deny Attacks
 183.96.236.250/32 Deny Attacks
+183.109.146.238/32 Deny Attacks
 203.245.29.159/32 Deny Attacks
 203.245.29.220/32 Deny Attacks
 210.114.1.46/32 Deny Attacks
@@ -16003,7 +15983,7 @@ Tag: Men Danil Valentinovich
 
 
 # ASN 7303 ("Telecom Argentina S.A").
-# Argentinian domestic ISP. Brute-force and SSH attacks, hacking, and spam
+# Argentine domestic ISP. Brute-force and SSH attacks, hacking, and spam
 # detected from here. Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 345.
 # Updated: 2024.06.07
@@ -17251,7 +17231,7 @@ Tag: PenTeleData Inc
 
 
 # ASN 27747 ("Telecentro S.A").
-# Argentinian domestic ISP. Some spam detected here. Listing just the affected
+# Argentine domestic ISP. Some spam detected here. Listing just the affected
 # ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 51.
 # Updated: 2024.08.22
@@ -17658,23 +17638,31 @@ Tag: LIMANET Ltd
 # Scandinavian multiplay network (domestic ISP, webhosting, cloud lease, etc).
 # Regular brute-force attacks and flooding/hammering encountered from this
 # network. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 890 (AS12552).
-# Updated: 2023.11.15
+# Stop Forum Spam (SFS) listings: 128 (AS12552).
+# Updated: 2024.08.25
 
-65.99.160.227/32 Deny Attacks
-65.99.167.40/32 Deny Attacks
 82.96.39.167/32 Deny Attacks
+82.96.39.253/32 Deny Attacks
 82.96.56.36/32 Deny Attacks
-93.158.66.10/32 Deny Attacks
+93.158.66.19/32 Deny Attacks
 93.158.90.0/23 Deny Attacks
 93.158.92.11/32 Deny Attacks
 93.158.92.13/32 Deny Attacks
+130.255.160.26/32 Deny Attacks
+130.255.160.60/32 Deny Attacks
+130.255.160.135/32 Deny Attacks
+130.255.160.238/32 Deny Attacks
+130.255.162.54/32 Deny Attacks
+130.255.162.71/32 Deny Attacks
+130.255.162.199/32 Deny Attacks
+130.255.162.202/32 Deny Attacks
+130.255.162.249/32 Deny Attacks
 185.6.10.0/24 Deny Attacks
 185.6.11.146/32 Deny Attacks
-185.183.146.24/32 Deny Attacks
-185.183.146.190/32 Deny Attacks
+185.183.146.159/32 Deny Attacks
+185.183.146.176/32 Deny Attacks
 185.183.147.0/24 Deny Attacks
-185.205.225.24/32 Deny Attacks
+185.205.225.0/24 Deny Attacks
 Origin: SE
 Profile: Domestic ISP;Multiplay;Webhosting
 Tag: Availo Networks AB
@@ -22338,7 +22326,7 @@ Tag: Emirates Telecom
 
 
 # ASN 27813 ("Teledifusora S.A").
-# Argentinian domestic ISP. Port scans, hacking, webapp attacks, and spam
+# Argentine domestic ISP. Port scans, hacking, webapp attacks, and spam
 # detected from here. Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 79.
 # Updated: 2023.12.01
@@ -22594,7 +22582,7 @@ Tag: Nas Internet Services
 
 
 # ASN 198401 ("Sebastian Souto (SSSERVICIOS)").
-# Argentinian domestic ISP. Brute-force, FTP, SSH, and webapp attacks, hacking,
+# Argentine domestic ISP. Brute-force, FTP, SSH, and webapp attacks, hacking,
 # and spam detected from here. Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 5.
 # Updated: 2024.01.04
@@ -23055,7 +23043,7 @@ Tag: ALTA REDE
 
 
 # ASN 52504 ("Cicomsa S.A").
-# Argentinian domestic ISP. Port scans and hacking detected from here.
+# Argentine domestic ISP. Port scans and hacking detected from here.
 # Manually checked all ranges; All ranges affected.
 # Updated: 2023.05.07 / Checked: 2024.03.03
 
@@ -24598,7 +24586,7 @@ Tag: AgotoZ
 
 
 # ASN 265725 ("COOP. DE ELECT., OBRAS, CR??DITO, VIVIENDA Y SERVICIOS P??BLICOS
-# DE LAS FLORES LTDA"). Argentinian domestic ISP. Brute-force, SSH, and webapp
+# DE LAS FLORES LTDA"). Argentine domestic ISP. Brute-force, SSH, and webapp
 # attacks, port scans, and hacking detected from here. Entire network affected.
 # Updated: 2023.11.16
 
@@ -24610,8 +24598,8 @@ Tag: AS265725
 
 
 # ASN 7049 ("Silica Networks Argentina S.A").
-# Argentinian multiplay network. Brute-force, DDoS, WordPress/XMLRPC, and
-# webapp attacks, port scans, hacking, and spam detected from here.
+# Argentine multiplay network. Brute-force, DDoS, WordPress/XMLRPC, and webapp
+# attacks, port scans, hacking, and spam detected from here.
 # Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 11.
 # Updated: 2023.11.16
@@ -26353,7 +26341,7 @@ Tag: M1 NET LTD
 
 
 # ASNs 262607, 264748 ("COOPERATIVA ELECTRICA Y TECNIFICACION AGROPECUARIA
-# PARADA ROBLES ARROYO DE LA CRUZ LTDA"). Argentinian domestic ISP.
+# PARADA ROBLES ARROYO DE LA CRUZ LTDA"). Argentine domestic ISP.
 # Brute-force, SSH, and webapp attacks, hacking, and port scans detected from
 # here. Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 18 (AS262607).
@@ -26888,7 +26876,7 @@ Tag: Bredband2 AB
 
 
 # ASN 22927 ("Telefonica de Argentina").
-# Argentinian domestic ISP. Brute-force attacks, port scans, hacking, and spam
+# Argentine domestic ISP. Brute-force attacks, port scans, hacking, and spam
 # detected from here. Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 83.
 # Updated: 2024.05.30
@@ -26902,7 +26890,7 @@ Tag: Telefonica de Argentina
 
 
 # ASN 14232 ("Cooperativa Telefónica Pinamar Ltda").
-# Argentinian domestic ISP. Port scans detected from here.
+# Argentine domestic ISP. Port scans detected from here.
 # Listing just the affected ranges/addresses only.
 # Updated: 2024.05.30
 
@@ -27084,6 +27072,35 @@ Origin: AE
 Origin: AU
 Profile: Commercial;Domestic ISP;Infrastructure/Transit;Mobile ISP;Multiplay;Webhosting
 Tag: Bunny Communications
+
+
+# ASN 266702 ("MEGALINK S.R.L").
+# Argentine multiplay network. Brute-force, IoT attacks, port scans, and
+# hacking detected from here. Listing just the affected ranges/addresses only.
+# Updated: 2024.08.24
+
+45.230.64.7/32 Deny Attacks
+45.230.64.17/32 Deny Attacks
+45.230.65.0/24 Deny Attacks
+45.230.66.0/23 Deny Attacks
+190.196.249.0/24 Deny Attacks
+Origin: AR
+Profile: Domestic ISP
+Tag: MEGALINK S.R.L
+
+
+# ASN 196845 ("Nordic Telecom Regional s.r.o").
+# Czech domestic ISP. Brute-force, SSH, and webapp attacks, hacking, and spam
+# detected from here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 52.
+# Updated: 2024.08.25
+
+31.10.62.0/23 Deny Attacks
+109.108.105.198/32 Deny Attacks
+109.108.105.235/32 Deny Attacks
+Origin: CZ
+Profile: Domestic ISP
+Tag: Nordic Telecom
 
 
 # ---

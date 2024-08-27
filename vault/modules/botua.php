@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bot user agents module (last modified: 2024.08.21).
+ * This file: Bot user agents module (last modified: 2024.08.27).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -89,10 +89,8 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     ), 'Probe UA'); // 2019.03.04
     $this->trigger(preg_match('/(?: obot|ie 5\.5 compatible browser)/', $UA), 'Probe UA'); // 2017.02.02
 
-    $this->trigger(preg_match('/[<\[](?:a|link|url)[ =>\]]/', $UA), 'Spam UA'); // 2017.01.02
-    $this->trigger(strpos($UANoSpace, 'ruru)') !== false, 'Spam UA'); // 2017.01.07
-    $this->trigger(preg_match(
-        '~^\.?=|/how-|>click|' .
+    $this->trigger(preg_match('/[<\[](?:a|link|url)[ =>\]]/', $UA) || strpos($UANoSpace, 'ruru)') !== false || preg_match(
+        '~^(?:\.?=|bot|java|msie|windows-live-social-object-extractor)|\\((?:java|\w:\d{2,})|/how-|>click|' .
         'a(?:btasty|llsubmitter|velox)|' .
         'b(?:ad-neighborhood|dsm|ea?stiality|iloba|ork-edition|uyessay)|' .
         'c(?:asino|ialis|igar|heap|oursework)|' .
@@ -118,12 +116,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         'xanax|' .
         'zdorov~',
         $UANoSpace
-    ), 'Spam UA'); // 2022.07.09 mod 2024.08.21
-
-    $this->trigger(preg_match(
-        '/(?: (audit|href|mra |quibids )|\\(build 5339\\))/',
-        $UA
-    ), 'Spam UA'); // 2017.02.02
+    ) || preg_match('~^go +\d|movable type|msie ?(?:\d{3,}|[2-9]\d|[0-8]\.)| (audit|href|mra |quibids )|\\(build 5339\\)~i', $UA), 'Spam UA'); // 2022.07.09 mod 2024.08.27
 
     $this->trigger(preg_match('/[\'"`]\+[\'"`]/', $UANoSpace), 'XSS attack'); // 2017.01.03
     $this->trigger(strpos($UANoSpace, '`') !== false, 'Execution attempt'); // 2017.01.13
@@ -138,35 +131,31 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
     $this->trigger(preg_match('/%(?:[01][\da-f]|2[257]|3[ce]|[57][bd]|[7f]f)/', $UANoSpace), 'Bad UA'); // 2017.01.06
 
-    $this->trigger(preg_match('/test\'?$/', $UANoSpace), 'Banned UA'); // 2017.02.02
-    $this->trigger(preg_match('/^(?:\'?test|-|default|foo)/', $UANoSpace), 'Banned UA'); // 2017.02.02
-    $this->trigger(strpos($UA, '   ') !== false, 'Banned UA'); // 2017.02.02
-
     $this->trigger((
         preg_match('/^[\'"].*[\'"]$/', $UANoSpace) &&
         strpos($UANoSpace, 'duckduckbot') === false
     ), 'Banned UA'); // 2017.02.02 mod 2021.06.20
 
     $this->trigger(preg_match(
-        '~_sitemapper|3mir|a(?:boundex|dmantx|dnormcrawler|dvbot|lphaserver|thens' .
-        '|ttache)|blekko|blogsnowbot|bytespider|cmscrawler|co(?:ccoc|llect|modo-w' .
-        'ebinspector-crawler|mpspy)|crawler(?:4j|\.feedback)|d(?:atacha|igout4uag' .
-        'ent|ioscout|kimrepbot|sarobot)|easou|exabot|f(?:astenterprisecrawler|ast' .
-        'lwspider|ind?bot|indlinks|loodgate|r[_-]?crawler)|hrcrawler|hubspot|i(?:' .
-        'mrbot|ntegromedb|p-?web-?crawler|rcsearch|rgrabber)|jadynavebot|komodiab' .
-        'ot|linguee|linkpad|m(?:ajestic12|agnet|auibot|eanpath|entormate|fibot|ig' .
-        'nify|j12)|nutch|omgilibot|p(?:ackrat|cbrowser|lukkie|surf)|reaper|rsync|' .
-        's(?:aidwot|alad|cspider|ees\.co|hai|[iy]phon|truct\.it|upport\.wordpress' .
-        '\.com|ystemscrawler)|takeout|tasapspider|tweetmeme|user-agent|visaduhoc|' .
-        'vonchimpenfurlr|webtarantula|wolf|y(?:acy|isouspider|[ry]spider|unrang|u' .
-        'nyun)|zoominfobot~',
+        '~^(?:wp-iphone$|\'?test|-|default|foo)|_sitemapper|3mir|' .
+        'a(?:boundex|dmantx|dnormcrawler|dvbot|lphaserver|thens|ttache)|' .
+        'blekko|blogsnowbot|bytespider|' .
+        'cmscrawler|co(?:ccoc|llect|modo-webinspector-crawler|mpspy)|crawler(?:4j|\.feedback)|' .
+        'd(?:atacha|igout4uagent|ioscout|kimrepbot|sarobot)|' .
+        'easou|exabot|' .
+        'f(?:astenterprisecrawler|astlwspider|ind?bot|indlinks|loodgate|r[_-]?crawler)|' .
+        'hrcrawler|hubspot|' .
+        'i(?:mrbot|ntegromedb|p-?web-?crawler|rcsearch|rgrabber)|' .
+        'jadynavebot|komodiabot|linguee|linkpad|' .
+        'm(?:ajestic12|agnet|auibot|eanpath|entormate|fibot|ignify|j12)|' .
+        'nutch|omgilibot|' .
+        'p(?:ackrat|cbrowser|lukkie|surf)|reaper|rsync|' .
+        's(?:aidwot|alad|cspider|ees\.co|hai|[iy]phon|truct\.it|upport\.wordpress\.com|ystemscrawler)|' .
+        't(?:est\'?$|akeout|asapspider|weetmeme)|' .
+        'user-agent|visaduhoc|vonchimpenfurlr|webtarantula|wolf|' .
+        'y(?:acy|isouspider|[ry]spider|unrang|unyun)|zoominfobot~',
         $UANoSpace
-    ), 'Banned UA'); // 2021.07.08 mod 2023.11.10
-
-    $this->trigger(preg_match(
-        '/^wp-iphone$/',
-        $UANoSpace
-    ), 'Banned UA'); // 2017.12.14
+    ) || strpos($UA, '   ') !== false, 'Banned UA'); // 2021.07.08 mod 2024.08.27
 
     if (!$this->trigger((
         preg_match('~^python-requests/2\.27~', $UANoSpace) &&
@@ -256,11 +245,6 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     if ($this->trigger(preg_match('~ivre-|masscan~', $UANoSpace), 'Port scanner and synflood tool detected')) {
         $this->Reporter->report([14, 15, 19], ['MASSCAN port scanner and synflood tool detected.'], $this->BlockInfo['IPAddr']);
     } // 2024.07.28
-
-    $this->trigger((
-        preg_match('~^(?:bot|java|msie|windows-live-social-object-extractor)|\\((?:java|\w:\d{2,})~', $UANoSpace) ||
-        preg_match('~^go +\d|movable type|msie ?(?:\d{3,}|[2-9]\d|[0-8]\.)~i', $UA)
-    ), 'Fake UA'); // 2019.06.30 mod 2024.08.15
 
     $this->trigger(preg_match('/(?:internet explorer)/', $UA), 'Hostile / Fake IE'); // 2017.02.03
 
@@ -403,8 +387,6 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $this->Reporter->report([19], ['Misbehaving bot detected.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'Scraper UA') !== false) {
             $this->Reporter->report([19], ['Scraper detected.'], $this->BlockInfo['IPAddr']);
-        } elseif (strpos($this->BlockInfo['WhyReason'], 'Fake UA') !== false) {
-            $this->Reporter->report([19], ['Faked user agent detected.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'Attempting to expose honeypots') !== false) {
             $this->Reporter->report([21], ['Caught attempting to expose honeypot via reporting mechanism.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'Hack attempt') !== false) {

@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv4_isps.dat
 
-# Version: 2024.237.0
-# Last modified: 2024.08.25
+# Version: 2024.240.0
+# Last modified: 2024.08.28
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -7690,7 +7690,7 @@ Tag: UnmeteredInternet.com
 # ASN 133610 ("BRAC").
 # An NGO charity whose IPs were caught being used in attempts to hack into
 # WordPress installations. See abuseipdb.com/check/103.43.93.26 for example.
-# Updated: 2017.10.20 / Modified: 2021.02.23 / Checked: 2023.09.07
+# Updated: 2017.10.20 / Modified: 2021.02.23 / Checked: 2024.08.28
 
 103.43.93.0/24 Deny Attacks
 103.238.63.0/24 Deny Attacks
@@ -9462,11 +9462,11 @@ Tag: Planet A
 
 # ASN 25513 ("PJSC Moscow city telephone network").
 # Russian domestic ISP and a significant source of forum and blog spam.
-# Stop Forum Spam (SFS) listings: 1,816.
-# Updated: 2023.09.15
+# Stop Forum Spam (SFS) listings: 1,344.
+# Updated: 2024.08.28
 
 37.230.157.0/24 Deny Spam
-178.170.246.0/23 Deny Spam
+178.170.246.0/24 Deny Spam
 Origin: NL
 37.190.0.0/17 Deny Spam
 46.138.0.0/16 Deny Spam
@@ -16898,18 +16898,6 @@ Profile: Domestic ISP;Multiplay
 Tag: IC-VORONEZH
 
 
-# ASN 53174 ("Pannet Servios On Line Ltda").
-# Brazilian domestic ISP. Some specific addresses caught spamming and
-# brute-forcing WordPress websites. Listing just the affected addresses only.
-# Stop Forum Spam (SFS) listings: 11.
-# Updated: 2021.03.18 / Checked: 2023.09.07
-
-186.225.194.78/32 Deny Attacks
-Origin: BR
-Profile: Domestic ISP
-Tag: Pannet
-
-
 # ASN 27831 ("Colombia Movil").
 # Colombian domestic ISP. Brute-force attacks, hacking, and spam detected from
 # here. Listing just the affected ranges/addresses only.
@@ -16931,38 +16919,39 @@ Tag: Colombia Movil
 # ASN 29013 ('Telecommunication company "Link Telecom" LTD').
 # Ukrainian domestic ISP. Some specific addresses caught spamming and
 # performing webapp attacks. Listing just the affected addresses only.
-# Stop Forum Spam (SFS) listings: 19.
-# Updated: 2023.09.18
+# Stop Forum Spam (SFS) listings: 5.
+# Updated: 2024.08.28
 
-188.239.72.75/32 Deny Attacks
-188.239.73.213/32 Deny Attacks
-188.239.73.254/32 Deny Attacks
-188.239.76.47/32 Deny Attacks
-188.239.78.239/32 Deny Attacks
-188.239.80.125/32 Deny Attacks
-188.239.80.151/32 Deny Attacks
-188.239.81.127/32 Deny Attacks
-188.239.82.52/32 Deny Attacks
-188.239.83.107/32 Deny Attacks
-188.239.85.87/32 Deny Attacks
-188.239.85.110/32 Deny Attacks
-188.239.85.225/32 Deny Attacks
-188.239.98.201/32 Deny Attacks
-188.239.99.37/32 Deny Attacks
-188.239.100.230/32 Deny Attacks
-188.239.102.20/32 Deny Attacks
-188.239.102.145/32 Deny Attacks
+188.239.72.164/32 Deny Attacks
+188.239.76.123/32 Deny Attacks
+188.239.78.121/32 Deny Attacks
+188.239.78.167/32 Deny Attacks
+188.239.78.229/32 Deny Attacks
+188.239.80.192/32 Deny Attacks
+188.239.81.6/32 Deny Attacks
+188.239.81.213/32 Deny Attacks
+188.239.82.30/32 Deny Attacks
+188.239.82.107/32 Deny Attacks
+188.239.83.127/32 Deny Attacks
+188.239.83.196/32 Deny Attacks
+188.239.85.119/32 Deny Attacks
+188.239.85.134/32 Deny Attacks
+188.239.85.186/32 Deny Attacks
+188.239.85.236/32 Deny Attacks
+188.239.99.59/32 Deny Attacks
+188.239.100.67/32 Deny Attacks
+188.239.100.176/32 Deny Attacks
+188.239.100.249/32 Deny Attacks
+188.239.102.18/32 Deny Attacks
 188.239.103.68/32 Deny Attacks
-188.239.104.123/32 Deny Attacks
-188.239.118.22/32 Deny Attacks
-188.239.118.136/32 Deny Attacks
-188.239.119.148/32 Deny Attacks
-188.239.120.2/32 Deny Attacks
-188.239.121.63/32 Deny Attacks
-188.239.122.159/32 Deny Attacks
-188.239.123.31/32 Deny Attacks
+188.239.104.184/32 Deny Attacks
+188.239.118.121/32 Deny Attacks
+188.239.118.237/32 Deny Attacks
+188.239.119.14/32 Deny Attacks
+188.239.119.110/32 Deny Attacks
+188.239.120.161/32 Deny Attacks
+188.239.120.209/32 Deny Attacks
 188.239.123.93/32 Deny Attacks
-188.239.123.95/32 Deny Attacks
 Origin: UA
 Profile: Domestic ISP
 Tag: Link Telecom AS29013
@@ -20898,14 +20887,13 @@ Tag: Windstream
 # Indonesian domestic ISP. Brute-force, SSH, and webapp attacks, port scans,
 # hacking, and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Updated: 2023.09.20
+# Updated: 2024.08.28
 
-175.106.17.22/32 Deny Attacks
-175.106.17.34/32 Deny Attacks
-175.106.17.162/32 Deny Attacks
-175.106.17.210/32 Deny Attacks
-175.106.18.242/32 Deny Attacks
+175.106.17.0/24 Deny Attacks
+175.106.18.218/32 Deny Attacks
+175.106.18.243/32 Deny Attacks
 175.106.18.245/32 Deny Attacks
+175.106.18.249/32 Deny Attacks
 175.106.19.0/24 Deny Attacks
 Origin: ID
 Profile: Domestic ISP
@@ -26217,10 +26205,9 @@ Tag: Nauka-Svyaz
 # ASN 137697 ("CHINATELECOM JiangSu YangZhou IDC networkdescr: YangZhou , Jiangsu Province, P.R.China").
 # Chinese domestic ISP. Brute-force, SSH attacks, port scans, hacking, and spam
 # detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 18.
-# Updated: 2023.09.20
+# Stop Forum Spam (SFS) listings: 11.
+# Updated: 2024.08.28
 
-58.220.56.29/32 Deny Attacks
 58.220.56.64/32 Deny Attacks
 58.220.56.66/32 Deny Attacks
 Origin: CN
@@ -26261,13 +26248,11 @@ Tag: Shandong Mobile
 # *Possibly* only a hoster or server farm, but not 100% sure. Homepage looks
 # like it's for some kind of investment firm. Port scans, webapp attacks, and
 # spam detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,073.
-# Updated: 2023.09.20
+# Stop Forum Spam (SFS) listings: 79.
+# Updated: 2024.08.28
 
-87.62.99.29/32 Deny Attacks
-87.62.99.122/32 Deny Attacks
-188.180.107.26/32 Deny Attacks
-212.130.110.226/32 Deny Attacks
+87.57.247.94/32 Deny Spam
+87.62.99.56/32 Deny Attacks
 Origin: DK
 Profile: Commercial;Restricted/Unidentifiable
 Tag: TDC Holding A/S
@@ -27101,6 +27086,21 @@ Tag: MEGALINK S.R.L
 Origin: CZ
 Profile: Domestic ISP
 Tag: Nordic Telecom
+
+
+# ASN 56962 ("RHS s.r.l").
+# Not sure what it is. Brute-force attacks and port scans detected from here.
+# Listing just the affected ranges/addresses only.
+# Updated: 2024.08.27
+
+141.11.24.23/32 Deny Attacks
+141.11.24.32/32 Deny Attacks
+141.11.24.48/32 Deny Attacks
+141.11.24.86/32 Deny Attacks
+141.11.24.91/32 Deny Attacks
+Origin: IT
+Profile: Restricted/Unidentifiable
+Tag: RHS s.r.l
 
 
 # ---

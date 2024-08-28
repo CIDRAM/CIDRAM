@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6.dat
 
-# Version: 2024.237.0
-# Last modified: 2024.08.25
+# Version: 2024.240.0
+# Last modified: 2024.08.28
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -3897,7 +3897,8 @@ Tag: DataWeb Global
 
 # ASN 44112 ("SpaceWeb Ltd").
 # Brute-force attacks and port scans detected from here.
-# Updated: 2016.04.29 / Checked: 2023.08.20
+# Stop Forum Spam (SFS) listings: 18.
+# Updated: 2016.04.29 / Checked: 2024.08.28
 
 2a02:408:7722::/48 Deny Cloud
 Origin: RU
@@ -7918,8 +7919,8 @@ Tag: Long Van
 # ASN 12816 ("Leibniz-Rechenzentrum").
 # Brute-force, SSH, and CCTV attacks, port scans, hacking, probing for
 # vulnerabilities, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 70.
-# Updated: 2020.03.13 / Checked: 2023.08.20
+# Stop Forum Spam (SFS) listings: 4.
+# Updated: 2020.03.13 / Checked: 2024.08.28
 
 2001:4ca0::/29 Deny Cloud
 Origin: DE
@@ -8193,8 +8194,8 @@ Tag: ANEXIA
 
 # ASN 204957 ("GREEN FLOID LLC").
 # Dedicated server farm and a source of spam.
-# Stop Forum Spam (SFS) listings: 646.
-# Updated: 2023.09.24
+# Stop Forum Spam (SFS) listings: 592.
+# Updated: 2023.09.24 / Checked: 2024.08.27
 
 2a06:fcc0:2::/48 Deny Cloud
 2a0a:8c41::/32 Deny Cloud
@@ -10995,8 +10996,8 @@ Tag: HostIran
 # Conducts "internet research". More than 500,000+ reported instances of port
 # scans from here. Heavy hitter, floods of useless traffic, and reports of
 # hacking and other unwanted traffic detected from here.
-# Stop Forum Spam (SFS) listings: 11.
-# Updated: 2022.09.12 / Checked: 2023.09.05
+# Stop Forum Spam (SFS) listings: 17.
+# Updated: 2022.09.12 / Checked: 2024.08.28
 
 2a06:4880::/32 Deny Cloud
 Origin: GB
@@ -11681,14 +11682,14 @@ Tag: Private-Hosting
 
 # ASN 141968 ("PT Industri Kreatif Digital").
 # Brute-force, SSH attacks, port scans, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 13.
-# Updated: 2024.02.11
+# Stop Forum Spam (SFS) listings: 6.
+# Updated: 2024.08.27
 
 2407:6ac0:1::/48 Deny Cloud
 2407:6ac0:2::/47 Deny Cloud
-2407:6ac0:4::/46 Deny Cloud
-2407:6ac0:8::/48 Deny Cloud
-2407:6ac0:12::/48 Deny Cloud
+2407:6ac0:5::/48 Deny Cloud
+2407:6ac0:6::/47 Deny Cloud
+2407:6ac0:8::/47 Deny Cloud
 Origin: ID
 Profile: Webhosting
 Tag: Industri Kreatif Digital
@@ -13163,10 +13164,12 @@ Tag: SKYNET HOSTING SRL
 
 # ASN 399646 ("Snaju Development").
 # Brute-force, SSH, and webapp attacks, port scans, and hacking detected here.
-# Stop Forum Spam (SFS) listings: 9.
-# Updated: 2024.06.15
+# Stop Forum Spam (SFS) listings: 46.
+# Updated: 2024.08.28
 
 2602:f9f3::/36 Deny Cloud
+2a0c:9a40:908f::/48 Deny Cloud
+2a14:7581:700::/48 Deny Cloud
 2a14:7584::/32 Deny Cloud
 Origin: US
 Profile: Commercial;Tor endpoints here
@@ -14025,6 +14028,27 @@ Tag: Webglobe
 Origin: MY
 Profile: Dedicated;Infrastructure/Transit
 Tag: Evoxt Enterprise
+
+
+# ASN 202423 ("Tyurin Viktor Mihaylovich").
+# Brute-force attacks and spam detected from here.
+# Stop Forum Spam (SFS) listings: 187.
+# Updated: 2024.08.27
+
+2a0b:9080::/47 Deny Cloud
+Origin: RU
+Profile: Webhosting
+Tag: T.V.Mihaylovich
+
+
+# ASN 214798 ("Digital City FZE").
+# Brute-force and SSH attacks detected from here.
+# Updated: 2024.08.27
+
+2a09:31c0:cafe::/48 Deny Cloud
+Origin: AE
+Profile: Webhosting
+Tag: Digital City FZE
 
 
 # ---

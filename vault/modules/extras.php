@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2024.08.04).
+ * This file: Optional security extras module (last modified: 2024.08.28).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -313,8 +313,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         $this->trigger(preg_match('/cpis_.*i0seclab@intermal\.com/', $QueryNoSpace), 'Hack attempt'); // 2018.02.20
         $this->trigger(preg_match('/^(?:3x=3x|of=1&a=1)/i', $this->BlockInfo['Query']), 'Hack attempt'); // 2023.07.13 mod 2023.09.02
 
-        $this->trigger(strpos($QueryNoSpace, 'u=ahr0cdovl3nolnrozwjlc3rjb2rllnrvcc90zxh0l3rlehrfmy50ehrz'), 'Compromised credential in brute-force attacks'); // 2023.10.10
-        $this->trigger(strpos($QueryNoSpace, 'key=sb7pqiuxnpweoa84vgjy'), 'Compromised credential in brute-force attacks'); // 2024.07.26
+        $this->trigger(preg_match('~(?:action|key|login|pass|pw?|u|user)=(?:afjbddb|ahr0cdo|dybebtu|fcfjbc6|llaixif|rozwjlc|sb7pqiu|thvyefb|vl3noln|xnpweoa)~', $QueryNoSpace), 'Compromised credential in brute-force attacks'); // 2024.08.28
 
         $this->trigger(preg_match(
             '~pw=(?:o(?:dvlmgnkc|tjmmdu1)|n(?:zrlnjnl|tk2m2i5)|mzllmwnh|yti4ngu2)~',

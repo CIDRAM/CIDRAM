@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6.dat
 
-# Version: 2024.240.0
-# Last modified: 2024.08.28
+# Version: 2024.244.0
+# Last modified: 2024.09.01
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -754,8 +754,8 @@ Tag: IT Park
 
 # ASN 12555 ("Data-center IMAQLIQ Ltd").
 # Port scanning and probing for vulnerabilities.
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2022.10.27 / Checked: 2023.09.28
+# Stop Forum Spam (SFS) listings: 3.
+# Updated: 2022.10.27 / Checked: 2024.09.01
 
 2a00:f2a0::/32 Deny Cloud
 2a0e:8f40::/29 Deny Cloud
@@ -2186,8 +2186,8 @@ Tag: HZ Hosting Ltd
 
 
 # ASN 53264 ("SBA Edge, LLC").
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2017.07.23 / Checked: 2023.09.18
+# Port scans and hacking detected from here.
+# Updated: 2017.07.23 / Checked: 2024.08.31
 
 2607:ff50::/32 Deny Cloud
 Origin: US
@@ -2257,7 +2257,7 @@ Tag: AltusHost B.V
 # At last update: ASNs 12222, 16625, 17204, 18680, 18717, 20940, 21342, 24319,
 # 26008, 31108, 31984, 32787, 33905, 34164, 35204, 35994, 36183, 43639, 49846,
 # 63949, 200005, 213120, 393234, 393560.
-# Updated: 2024.06.21
+# Updated: 2024.09.01
 
 2a01:3e0:402::/48 Deny Cloud
 Origin: CA
@@ -2265,16 +2265,14 @@ Origin: CA
 Origin: GB
 2404:c800:8203::/48 Deny Cloud
 Origin: HK
-2400:9800:b010:1480::/58 Deny Cloud
-Origin: ID
 2001:41a8:45:200::/56 Deny Cloud
-2001:41a8:604::/48 Deny Cloud
 2001:41a8:806:200::/56 Deny Cloud
 Origin: IT
 2001:218:3004::/48 Deny Cloud
 Origin: JP
 2806:1030:cefe::/48 Deny Cloud
 2806:1070:cefe::/48 Deny Cloud
+2806:1080:cefe::/48 Deny Cloud
 2806:10b0:cefe::/48 Deny Cloud
 Origin: MX
 2a02:2370:1::/48 Deny Cloud
@@ -2358,7 +2356,7 @@ Origin: TW
 2001:4878:27::/48 Deny Cloud
 2001:4878:31::/48 Deny Cloud
 2001:4878:37::/48 Deny Cloud
-2001:4878:38::/47 Deny Cloud
+2001:4878:39::/48 Deny Cloud
 2001:4878:48::/48 Deny Cloud
 2001:4878:62::/47 Deny Cloud
 2001:4878:68::/48 Deny Cloud
@@ -2381,7 +2379,6 @@ Origin: TW
 2001:4878:2027::/48 Deny Cloud
 2001:4878:2031::/48 Deny Cloud
 2001:4878:2037::/48 Deny Cloud
-2001:4878:2038::/48 Deny Cloud
 2001:4878:2048::/48 Deny Cloud
 2001:4878:2055::/48 Deny Cloud
 2001:4878:2062::/47 Deny Cloud
@@ -2408,7 +2405,6 @@ Origin: TW
 2001:4878:4027::/48 Deny Cloud
 2001:4878:4031::/48 Deny Cloud
 2001:4878:4037::/48 Deny Cloud
-2001:4878:4038::/48 Deny Cloud
 2001:4878:4055::/48 Deny Cloud
 2001:4878:4062::/47 Deny Cloud
 2001:4878:4164::/48 Deny Cloud
@@ -2427,7 +2423,6 @@ Origin: TW
 2001:4878:8027::/48 Deny Cloud
 2001:4878:8031::/48 Deny Cloud
 2001:4878:8037::/48 Deny Cloud
-2001:4878:8038::/48 Deny Cloud
 2001:4878:8048::/48 Deny Cloud
 2001:4878:8062::/47 Deny Cloud
 2001:4878:8068::/48 Deny Cloud
@@ -2450,7 +2445,6 @@ Origin: TW
 2001:4878:a027::/48 Deny Cloud
 2001:4878:a031::/48 Deny Cloud
 2001:4878:a037::/48 Deny Cloud
-2001:4878:a038::/48 Deny Cloud
 2001:4878:a048::/48 Deny Cloud
 2001:4878:a062::/48 Deny Cloud
 2001:4878:a151::/48 Deny Cloud
@@ -2470,7 +2464,6 @@ Origin: TW
 2001:4878:b027::/48 Deny Cloud
 2001:4878:b031::/48 Deny Cloud
 2001:4878:b037::/48 Deny Cloud
-2001:4878:b038::/48 Deny Cloud
 2001:4878:b048::/48 Deny Cloud
 2001:4878:b151::/48 Deny Cloud
 2001:4878:b173::/48 Deny Cloud
@@ -2483,7 +2476,6 @@ Origin: TW
 2001:4878:c027::/48 Deny Cloud
 2001:4878:c031::/48 Deny Cloud
 2001:4878:c037::/48 Deny Cloud
-2001:4878:c038::/48 Deny Cloud
 2001:4878:c048::/48 Deny Cloud
 2001:4878:c062::/47 Deny Cloud
 2001:4878:c164::/48 Deny Cloud
@@ -2518,14 +2510,19 @@ Origin: TW
 2600:3c0f:20::/45 Deny Cloud
 2600:3c0f:28::/47 Deny Cloud
 2600:3c0f:30::/47 Deny Cloud
-2600:3c0f:44::/47 Deny Cloud
+2600:3c0f:32::/48 Deny Cloud
+2600:3c0f:44::/46 Deny Cloud
+2600:3c0f:48::/48 Deny Cloud
 2600:3c10::/31 Deny Cloud
-2600:3c12:200::/39 Deny Cloud
-2600:3c12:500::/40 Deny Cloud
+2600:3c12:100::/40 Deny Cloud
+2600:3c12:400::/39 Deny Cloud
 2600:3c12:600::/40 Deny Cloud
+2600:3c12:800::/39 Deny Cloud
+2600:3c12:b00::/40 Deny Cloud
 2600:3c13::/32 Deny Cloud
-2600:3c14::/32 Deny Cloud
+2600:3c14::/30 Deny Cloud
 2600:3c1f:2::/48 Deny Cloud
+2600:3c1f:106::/48 Deny Cloud
 2605:2fc0:1000::/36 Deny Cloud
 2605:3c80:fc::/47 Deny Cloud
 2605:3c80:ff::/48 Deny Cloud
@@ -2539,6 +2536,7 @@ Origin: TW
 2606:6c00:200::/45 Deny Cloud
 2606:6c00:208::/46 Deny Cloud
 2606:6c00:20c::/48 Deny Cloud
+2606:6c00:2000::/48 Deny Cloud
 2606:6c00:4000::/48 Deny Cloud
 2606:6c00:6001::/48 Deny Cloud
 2606:6c00:6002::/47 Deny Cloud
@@ -4492,7 +4490,7 @@ Tag: D.E.Tech/HIVELOCITY/IPXO
 # ASNs 26383, 29873, 46606, 49392, 51659, 394695, 398343 ("The
 # Endurance International Group, Inc").
 # See also: onlinetoolsexpert.com/full-list-of-eig-web-hosting-companies/
-# Updated: 2024.06.15
+# Updated: 2024.09.01
 
 2a00:b700::/46 Deny Cloud
 2a00:b700:4::/47 Deny Cloud
@@ -4509,17 +4507,20 @@ Tag: D.E.Tech/HIVELOCITY/IPXO
 2a0e:7f46::/32 Deny Cloud
 2a0e:ccc3::/32 Deny Cloud
 2a0f:3106::/32 Deny Cloud
-2a11:8f81:fc75::/48 Deny Cloud
 Origin: RU
 2605:e440::/45 Deny Cloud
 2605:e440:8::/47 Deny Cloud
+2605:e440:11::/48 Deny Cloud
 2605:e440:12::/47 Deny Cloud
 2605:e440:14::/47 Deny Cloud
 2605:e440:16::/48 Deny Cloud
 2605:e440:18::/47 Deny Cloud
 2605:e440:21::/48 Deny Cloud
-2605:e440:24::/46 Deny Cloud
-2605:e440:29::/48 Deny Cloud
+2605:e440:24::/48 Deny Cloud
+2605:e440:26::/47 Deny Cloud
+2605:e440:28::/47 Deny Cloud
+2605:e440:30::/48 Deny Cloud
+2605:e440:33::/48 Deny Cloud
 2605:f300:ffff::/48 Deny Cloud
 Origin: US
 Profile: Frequent changes;Tor endpoints here;Webhosting
@@ -5859,14 +5860,16 @@ Tag: Trader soft LLC
 
 
 # ASN 51395 ("Datasource AG").
-# Stop Forum Spam (SFS) listings: 607.
-# Updated: 2023.09.21
+# Stop Forum Spam (SFS) listings: 7.
+# Updated: 2024.09.01
 
 2001:67c:2f0::/48 Deny Cloud
+2001:67c:500::/48 Deny Cloud
 2a00:bd80::/32 Deny Cloud
 2a05:6a00::/29 Deny Cloud
 2a0a:5dc0::/29 Deny Cloud
 2a0b:ee80::/29 Deny Cloud
+2a14:6640::/29 Deny Cloud
 Origin: CH
 2a0b:7140:4::/48 Deny Cloud
 Origin: DE
@@ -6165,8 +6168,8 @@ Tag: ICME LIMITED
 
 # ASN 49855 ("PLUTEX GmbH").
 # Tor exit node + webhosting company. A source of forum spam.
-# Stop Forum Spam (SFS) listings: 1,896.
-# Updated: 2021.11.21 / Checked: 2023.09.17
+# Stop Forum Spam (SFS) listings: 45.
+# Updated: 2021.11.21 / Checked: 2024.09.01
 
 2001:678:3b4::/48 Deny Cloud
 2001:67c:18e8::/48 Deny Cloud
@@ -6588,12 +6591,17 @@ Tag: AS61272
 
 # ASN 64236 ("UnReal Servers, LLC").
 # Dedicated webhosting service. Source of forum spam.
-# Stop Forum Spam (SFS) listings: 109.
-# Updated: 2021.03.21 / Checked: 2023.09.12
+# Stop Forum Spam (SFS) listings: 12.
+# Updated: 2024.08.31
 
-2a0a:1f42::/32 Deny Cloud
+2606:99c0::/32 Deny Cloud
+2606:9a40::/32 Deny Cloud
+2606:9ac0::/32 Deny Cloud
+2606:f280::/32 Deny Cloud
 2a0b:aac0::/29 Deny Cloud
 Origin: CA
+2a0a:1f42::/32 Deny Cloud
+Origin: DE
 2604:2d00::/36 Deny Cloud
 2604:abc0::/32 Deny Cloud
 Origin: US
@@ -8275,9 +8283,9 @@ Tag: Liquid Web
 # ASN 55992 ("Beijing Qihu Technology Company Limited").
 # Thousands upon thousands of reported brute-force attacks, SSH attacks,
 # drive-by WordPress attacks, XMLRPC attacks, etc.
-# Updated: 2021.11.27 / Checked: 2023.09.12
+# Updated: 2024.08.31
 
-2405:a900::/32 Deny Cloud
+2405:a900:fffe::/48 Deny Cloud
 Origin: CN
 Profile: Commercial
 Tag: Beijing Qihu
@@ -9044,8 +9052,8 @@ Tag: Inios Oy
 
 # ASN 42331 ("PE Freehost").
 # Webhosting provider caught hacking and performing webapp attacks.
-# Stop Forum Spam (SFS) listings: 102.
-# Updated: 2022.09.14 / Checked: 2023.09.07
+# Stop Forum Spam (SFS) listings: 31.
+# Updated: 2022.09.14 / Checked: 2024.08.31
 
 2a01:8140::/32 Deny Cloud
 2a07:8e00::/29 Deny Cloud
@@ -9071,8 +9079,8 @@ Tag: Taner Temel
 # ASN 263740 ("Corporacion Laceibanetsociety").
 # Fraudulent Honduran ISP operating as a webhoster.
 # Refer scamalytics.com/ip/isp/corporacion-laceibanetsociety
-# Stop Forum Spam (SFS) listings: 2,368.
-# Updated: 2022.09.21 / Checked: 2023.09.12
+# Stop Forum Spam (SFS) listings: 760.
+# Updated: 2022.09.21 / Checked: 2024.08.31
 
 2803:6c00::/32 Deny Cloud
 Origin: HN
@@ -9323,7 +9331,7 @@ Tag: Raya/Scalaxy/Bursabil
 
 
 # ASN 38955 ("World4You Internet Services").
-# Updated: 2021.11.21 / Checked: 2023.09.07
+# Updated: 2021.11.21 / Checked: 2024.08.31
 
 2a00:1a68::/32 Deny Cloud
 2a0a:7c00::/29 Deny Cloud
@@ -9368,8 +9376,8 @@ Tag: EstNOC OY
 # ASN 207992 ("FEELB SARL").
 # Mobile app, infrastructure, I.T. firm. Brute-force and SSH attacks detected
 # from here.
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2021.03.31 / Checked: 2023.09.21
+# Stop Forum Spam (SFS) listings: 2.
+# Updated: 2021.03.31 / Checked: 2024.09.01
 
 2a04:ecc0::/29 Deny Cloud
 Origin: FR
@@ -13004,28 +13012,27 @@ Tag: IPGLOBE INTERNET LTDA
 
 # ASN 51396 ("Pfcloud UG").
 # Brute-force attacks, port scans, hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 456.
-# Updated: 2024.05.29
+# Stop Forum Spam (SFS) listings: 578.
+# Updated: 2024.09.01
 
-2a05:b0c6:a000::/38 Deny Cloud
+2a05:b0c6:a200::/39 Deny Cloud
 2a05:b0c7:6000::/36 Deny Cloud
 2a12:dd47:8500::/40 Deny Cloud
-2a13:df80:a800::/38 Deny Cloud
-2a13:df84::/32 Deny Cloud
 Origin: GB
-2a14:7c0:2800::/38 Deny Cloud
 2a14:7c2::/31 Deny Cloud
 Origin: IL
 2a12:2640::/29 Deny Cloud
 Origin: LB
+2a11:5780::/29 Deny Cloud
+2a12:5a00::/29 Deny Cloud
+2a12:8100::/29 Deny Cloud
+Origin: RU
 2a06:b440::/29 Deny Cloud
 2a12:6740::/29 Deny Cloud
 2a12:8ec0::/29 Deny Cloud
 2a12:ccc0::/29 Deny Cloud
 2a12:e240::/29 Deny Cloud
 Origin: UA
-2602:f915:1::/48 Deny Cloud
-Origin: US
 Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: Pfcloud UG
 
@@ -14057,7 +14064,7 @@ Tag: Digital City FZE
 # Refer microsoft.com/en-us/download/details.aspx?id=57062
 # Refer microsoft.com/en-us/download/details.aspx?id=57063
 # Refer microsoft.com/en-us/download/details.aspx?id=57064
-# Updated: 2024.07.27
+# Updated: 2024.09.01
 
 2404:7940::/47 Run bypasses.php
 2404:7940:3::/48 Run bypasses.php
@@ -14077,7 +14084,8 @@ Tag: Digital City FZE
 2406:e500:2300::/46 Run bypasses.php
 2406:e500:2400::/46 Run bypasses.php
 2406:e500:2500::/59 Run bypasses.php
-2406:e500:2500:20::/63 Run bypasses.php
+2406:e500:2500:20::/62 Run bypasses.php
+2406:e500:2500:24::/63 Run bypasses.php
 2406:e500:2501::/58 Run bypasses.php
 2406:e500:2501:40::/59 Run bypasses.php
 2406:e500:2501:60::/62 Run bypasses.php
@@ -14291,9 +14299,8 @@ Origin: DE
 2603:1030:8::/48 Run bypasses.php
 2603:1030:9::/54 Run bypasses.php
 2603:1030:9:400::/56 Run bypasses.php
-2603:1030:9:500::/59 Run bypasses.php
-2603:1030:9:520::/60 Run bypasses.php
-2603:1030:9:530::/62 Run bypasses.php
+2603:1030:9:500::/57 Run bypasses.php
+2603:1030:9:580::/61 Run bypasses.php
 2603:1030:a::/47 Run bypasses.php
 2603:1030:d::/48 Run bypasses.php
 2603:1030:e::/47 Run bypasses.php
@@ -14304,6 +14311,7 @@ Origin: DE
 2603:1030:100::/58 Run bypasses.php
 2603:1030:100:40::/62 Run bypasses.php
 2603:1030:100:44::/63 Run bypasses.php
+2603:1030:100:46::/64 Run bypasses.php
 2603:1030:101::/48 Run bypasses.php
 2603:1030:103::/48 Run bypasses.php
 2603:1030:104::/46 Run bypasses.php
@@ -14320,11 +14328,10 @@ Origin: DE
 2603:1030:401::/54 Run bypasses.php
 2603:1030:401:400::/55 Run bypasses.php
 2603:1030:401:600::/56 Run bypasses.php
-2603:1030:401:700::/59 Run bypasses.php
-2603:1030:401:720::/60 Run bypasses.php
-2603:1030:401:730::/62 Run bypasses.php
-2603:1030:401:734::/63 Run bypasses.php
-2603:1030:401:736::/64 Run bypasses.php
+2603:1030:401:700::/58 Run bypasses.php
+2603:1030:401:740::/60 Run bypasses.php
+2603:1030:401:750::/61 Run bypasses.php
+2603:1030:401:758::/63 Run bypasses.php
 2603:1030:402::/47 Run bypasses.php
 2603:1030:405::/48 Run bypasses.php
 2603:1030:406::/47 Run bypasses.php
@@ -14353,11 +14360,11 @@ Origin: DE
 2603:1030:802::/47 Run bypasses.php
 2603:1030:804::/55 Run bypasses.php
 2603:1030:804:200::/56 Run bypasses.php
-2603:1030:804:300::/58 Run bypasses.php
-2603:1030:804:340::/59 Run bypasses.php
-2603:1030:804:360::/60 Run bypasses.php
-2603:1030:804:370::/61 Run bypasses.php
-2603:1030:804:378::/62 Run bypasses.php
+2603:1030:804:300::/57 Run bypasses.php
+2603:1030:804:380::/60 Run bypasses.php
+2603:1030:804:390::/62 Run bypasses.php
+2603:1030:804:394::/63 Run bypasses.php
+2603:1030:804:396::/64 Run bypasses.php
 2603:1030:805::/48 Run bypasses.php
 2603:1030:806::/47 Run bypasses.php
 2603:1030:809::/48 Run bypasses.php
@@ -14400,6 +14407,9 @@ Origin: DE
 2603:1030:1101::/48 Run bypasses.php
 2603:1030:1102::/47 Run bypasses.php
 2603:1030:1104::/48 Run bypasses.php
+2603:1030:1201::/48 Run bypasses.php
+2603:1030:1202::/47 Run bypasses.php
+2603:1030:1204::/48 Run bypasses.php
 2603:1036:903::/62 Run bypasses.php
 2603:1036:903:4::/64 Run bypasses.php
 2603:1036:903:6::/63 Run bypasses.php
@@ -14503,6 +14513,9 @@ Origin: DE
 2603:1040:1601::/48 Run bypasses.php
 2603:1040:1602::/47 Run bypasses.php
 2603:1040:1604::/48 Run bypasses.php
+2603:1040:1701::/48 Run bypasses.php
+2603:1040:1702::/47 Run bypasses.php
+2603:1040:1704::/48 Run bypasses.php
 2603:1040:1801::/48 Run bypasses.php
 2603:1040:1802::/47 Run bypasses.php
 2603:1040:1804::/48 Run bypasses.php
@@ -14552,39 +14565,40 @@ Origin: DE
 2603:1061:f::/48 Run bypasses.php
 2603:1061:10::/48 Run bypasses.php
 2603:1061:1000::/46 Run bypasses.php
-2603:1061:1004::/58 Run bypasses.php
-2603:1061:1004:40::/59 Run bypasses.php
-2603:1061:1004:60::/60 Run bypasses.php
-2603:1061:1004:70::/61 Run bypasses.php
-2603:1061:1004:78::/62 Run bypasses.php
-2603:1061:1004:7c::/64 Run bypasses.php
+2603:1061:1004::/57 Run bypasses.php
+2603:1061:1004:80::/64 Run bypasses.php
 2603:1061:1005::/59 Run bypasses.php
-2603:1061:1005:20::/63 Run bypasses.php
+2603:1061:1005:20::/62 Run bypasses.php
+2603:1061:1005:24::/63 Run bypasses.php
+2603:1061:1005:26::/64 Run bypasses.php
 2603:1061:1006::/58 Run bypasses.php
 2603:1061:1006:40::/59 Run bypasses.php
-2603:1061:1006:60::/61 Run bypasses.php
-2603:1061:1006:68::/62 Run bypasses.php
+2603:1061:1006:60::/60 Run bypasses.php
 2603:1061:1007::/58 Run bypasses.php
 2603:1061:1007:40::/59 Run bypasses.php
 2603:1061:1007:60::/60 Run bypasses.php
 2603:1061:1007:70::/62 Run bypasses.php
+2603:1061:1007:74::/64 Run bypasses.php
 2603:1061:1008::/58 Run bypasses.php
 2603:1061:1008:40::/59 Run bypasses.php
 2603:1061:1008:60::/62 Run bypasses.php
+2603:1061:1008:64::/63 Run bypasses.php
+2603:1061:1008:66::/64 Run bypasses.php
 2603:1061:1009::/59 Run bypasses.php
 2603:1061:1009:20::/63 Run bypasses.php
+2603:1061:1009:22::/64 Run bypasses.php
 2603:1061:100a::/59 Run bypasses.php
 2603:1061:100a:20::/62 Run bypasses.php
 2603:1061:100a:24::/63 Run bypasses.php
+2603:1061:100a:26::/64 Run bypasses.php
 2603:1061:100b::/58 Run bypasses.php
 2603:1061:100b:40::/59 Run bypasses.php
 2603:1061:100b:60::/60 Run bypasses.php
-2603:1061:100b:70::/63 Run bypasses.php
-2603:1061:100b:72::/64 Run bypasses.php
+2603:1061:100b:70::/62 Run bypasses.php
+2603:1061:100b:74::/64 Run bypasses.php
 2603:1061:100c::/58 Run bypasses.php
-2603:1061:100c:40::/60 Run bypasses.php
-2603:1061:100c:50::/61 Run bypasses.php
-2603:1061:100c:58::/62 Run bypasses.php
+2603:1061:100c:40::/59 Run bypasses.php
+2603:1061:100c:60::/64 Run bypasses.php
 2603:1061:100d::/59 Run bypasses.php
 2603:1061:100d:20::/60 Run bypasses.php
 2603:1061:100d:30::/62 Run bypasses.php
@@ -14593,6 +14607,7 @@ Origin: DE
 2603:1061:100e:20::/60 Run bypasses.php
 2603:1061:100e:30::/61 Run bypasses.php
 2603:1061:100e:38::/62 Run bypasses.php
+2603:1061:100e:3c::/64 Run bypasses.php
 2603:1061:1010::/59 Run bypasses.php
 2603:1061:1010:20::/60 Run bypasses.php
 2603:1061:1010:30::/62 Run bypasses.php
@@ -14600,6 +14615,9 @@ Origin: DE
 2603:1061:1011::/60 Run bypasses.php
 2603:1061:1011:10::/63 Run bypasses.php
 2603:1061:1011:12::/64 Run bypasses.php
+2603:1061:1013::/60 Run bypasses.php
+2603:1061:1013:10::/63 Run bypasses.php
+2603:1061:1013:12::/64 Run bypasses.php
 2603:1061:1310::/50 Run bypasses.php
 2603:1061:1310:4000::/52 Run bypasses.php
 2603:1061:1311::/50 Run bypasses.php
@@ -14619,9 +14637,10 @@ Origin: DE
 2603:1061:1744::/47 Run bypasses.php
 2603:1061:1746::/62 Run bypasses.php
 2603:1061:1747::/63 Run bypasses.php
+2603:1061:1748::/63 Run bypasses.php
 2603:1061:2000::/62 Run bypasses.php
-2603:1061:2000:100::/59 Run bypasses.php
-2603:1061:2000:120::/60 Run bypasses.php
+2603:1061:2000:100::/58 Run bypasses.php
+2603:1061:2000:140::/60 Run bypasses.php
 2603:1061:2000:400::/62 Run bypasses.php
 2603:1061:2000:408::/62 Run bypasses.php
 2603:1061:2000:410::/62 Run bypasses.php
@@ -14644,12 +14663,16 @@ Origin: DE
 2603:1061:2000:648::/62 Run bypasses.php
 2603:1061:2000:680::/62 Run bypasses.php
 2603:1061:2000:688::/62 Run bypasses.php
+2603:1061:2000:6a0::/62 Run bypasses.php
 2603:1061:2000:6c0::/62 Run bypasses.php
 2603:1061:2000:6c8::/62 Run bypasses.php
+2603:1061:2000:6e0::/62 Run bypasses.php
 2603:1061:2000:700::/62 Run bypasses.php
 2603:1061:2000:708::/62 Run bypasses.php
+2603:1061:2000:720::/62 Run bypasses.php
 2603:1061:2000:740::/62 Run bypasses.php
 2603:1061:2000:748::/62 Run bypasses.php
+2603:1061:2000:760::/62 Run bypasses.php
 2603:1061:2000:780::/62 Run bypasses.php
 2603:1061:2000:788::/62 Run bypasses.php
 2603:1061:2000:7a0::/62 Run bypasses.php
@@ -15036,6 +15059,7 @@ Origin: DE
 2603:1063:2202:64::/64 Run bypasses.php
 2603:1063:2202:68::/64 Run bypasses.php
 2603:1063:2202:6c::/64 Run bypasses.php
+2603:1063:2202:70::/64 Run bypasses.php
 2603:1063:2204::/64 Run bypasses.php
 2603:1063:2204:4::/64 Run bypasses.php
 2603:1063:2204:8::/64 Run bypasses.php

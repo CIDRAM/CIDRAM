@@ -1,8 +1,8 @@
 # IPv6 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6_other.dat
 
-# Version: 2024.207.0
-# Last modified: 2024.07.26
+# Version: 2024.244.0
+# Last modified: 2024.09.01
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -51,7 +51,7 @@ Tag: Emerald Onion
 # you are not allowed to redistribute the feed to other networks. The export of
 # these feeds/prefixes to other networks is prohibited.
 # Excerpt from: https://www.spamhaus.org/bgpf/
-# Updated: 2024.07.26
+# Updated: 2024.09.01
 
 2001:678:6c4::/48 Deny Spam
 2001:678:724::/48 Deny Spam
@@ -65,6 +65,7 @@ Tag: Emerald Onion
 2001:678:c5c::/48 Deny Spam
 2001:678:e38::/48 Deny Spam
 2001:678:e4c::/48 Deny Spam
+2401:1760::/48 Deny Spam
 2401:c580::/32 Deny Spam
 2402:6680::/32 Deny Spam
 2405:9fc0:1::/48 Deny Spam
@@ -127,8 +128,6 @@ Tag: Emerald Onion
 2a13:df87:b600::/39 Deny Spam
 2a13:ef45::/32 Deny Spam
 2a14:7c0:1e00::/40 Deny Spam
-2a14:7c0:3400::/38 Deny Spam
-2a14:7c0:4c00::/40 Deny Spam
 2a14:7c2::/31 Deny Spam
 Profile: Third-party sourced
 Tag: Spamhaus DROPv6

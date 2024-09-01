@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6_isps.dat
 
-# Version: 2024.240.0
-# Last modified: 2024.08.28
+# Version: 2024.244.0
+# Last modified: 2024.09.01
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -157,20 +157,23 @@ Tag: Bharti Airtel
 
 # ASN 12389 ("PJSC Rostelecom").
 # Russian domestic ISP. Listing this particular ASN in its entirety.
-# Stop Forum Spam (SFS) listings: 28,449.
-# Updated: 2023.10.15
+# Stop Forum Spam (SFS) listings: 60,316.
+# Updated: 2024.09.01
 
+2a0:56c0:410::10/125 Deny Attacks
+2a1:620:15:c::/64 Deny Attacks
+a00:1640::d430:c3c6/128 Deny Attacks
+2002::/16 Deny Attacks
 2a00:1640::/32 Deny Attacks
 2a00:1e88::/32 Deny Attacks
-2a00:56c0:200::/39 Deny Attacks
-2a00:56c0:800::/38 Deny Attacks
-2a00:56c0:4140::/46 Deny Attacks
-2a00:56c0:4180::/46 Deny Attacks
+2a00:56c0::/32 Deny Attacks
 2a00:62c0::/32 Deny Attacks
 2a00:b440::/32 Deny Attacks
 2a01:540::/32 Deny Attacks
 2a01:620::/32 Deny Attacks
 2a02:ad8::/32 Deny Attacks
+2a04:c106::/32 Deny Attacks
+2a11:b85::/32 Deny Attacks
 Origin: RU
 Profile: Domestic ISP;Tor endpoints here
 Tag: PJSC Rostelecom
@@ -258,19 +261,18 @@ Profile: Domestic ISP
 Tag: PJSC Moscow city
 
 
-# ASNs 7725, 7922, 33661, 33668 ("Comcast Cable Communications, LLC").
+# ASNs 7015, 7725, 7922, 33661, 33651, 33652, 33668 ("Comcast Cable Communications, LLC").
 # Major domestic ISP in the United States; Should NEVER be blocked in entirety.
 # Listed here are some specific CIDRs/IPs on their network that pose a major
 # spam risk and/or are known sources of spam and/or other undesirable traffic.
 # Mozi botnet detected from here.
-# Stop Forum Spam (SFS) listings: 2 (AS7015), 6,734 (AS7922).
-# Updated: 2024.02.04
+# Stop Forum Spam (SFS) listings: 10 (AS7015), 6,385 (AS7922), 1 (AS33651).
+# Updated: 2024.08.31
 
+2601:c2:1b00:c28d::/64 Deny Spam
 2601:18c:500:1060::/64 Deny Spam
-2601:647:667f:dc40::/64 Deny Spam
-2601:980:4200:3d7::/64 Deny Spam
-2601:985:4280:3080::/64 Deny Spam
-2603:3001:1cd2:8100::/64 Deny Spam
+2601:207:0:bff0::/64 Deny Spam
+2601:410:8180:4200::/64 Deny Spam
 2603:3021:3308:1600::/64 Deny Spam
 Origin: US
 Profile: Domestic ISP
@@ -447,19 +449,6 @@ Tag: Vodafone Deutschland GmbH
 Origin: FR
 Profile: Domestic ISP;Mobile ISP
 Tag: Orange S.A
-
-
-# ASN 57712 ("NPF SOFTVIDEO Ltd").
-# Russian domestic ISP. Relative to the size of the network, a *HUGE* amount of
-# spam has been detected from here. Port scans, and webapp, brute-force, and
-# SSH attacks also detected from here.
-# Stop Forum Spam (SFS) listings: 1,467.
-# Updated: 2023.10.29
-
-2a13:8e40:1000::/36 Deny Spam
-Origin: RU
-Profile: Domestic ISP
-Tag: NPF SOFTVIDEO Ltd
 
 
 # ASN 9123 ("OOO TimeWeb").

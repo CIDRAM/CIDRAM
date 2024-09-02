@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The file manager page (last modified: 2024.06.23).
+ * This file: The file manager page (last modified: 2024.09.02).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -66,7 +66,6 @@ foreach ($this->Components['Components'] as $ComponentName => $ComponentData) {
     }
 }
 
-/** Upload a new file. */
 if (isset($_POST['do'], $_FILES['upload-file']['name']) && $_POST['do'] === 'upload-file') {
     /** Check whether safe. */
     $SafeToContinue = (
@@ -104,10 +103,7 @@ if (isset($_POST['do'], $_FILES['upload-file']['name']) && $_POST['do'] === 'upl
     } else {
         $this->FE['state_msg'] = $this->L10N->getString('response.Failed to upload');
     }
-}
-
-/** A form was submitted. */
-elseif (
+} elseif (
     isset($_POST['filename'], $_POST['do']) &&
     is_readable($this->Vault . $_POST['filename']) &&
     $this->pathSecurityCheck($_POST['filename'])

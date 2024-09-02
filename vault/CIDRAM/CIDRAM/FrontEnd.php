@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2024.06.09).
+ * This file: The CIDRAM front-end (last modified: 2024.09.02).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -514,10 +514,7 @@ class FrontEnd extends Core
 
             /** Cleanup. */
             unset($NameToLog, $LoggerMessage);
-        }
-
-        /** Determine whether the user has logged in. */
-        elseif (!empty($_COOKIE['CIDRAM-ADMIN'])) {
+        } elseif (!empty($_COOKIE['CIDRAM-ADMIN'])) {
             $this->FE['UserState'] = -1;
             $this->FE['LP'] = [];
             if (
@@ -750,9 +747,8 @@ class FrontEnd extends Core
         /** Useful for avoiding excessive IO operations when dealing with components. */
         $this->CIDRAM['Updater-IO'] = new \Maikuolan\Common\DelayedIO();
 
-        /** The user hasn't logged in, or hasn't authenticated yet. */
         if ($this->FE['UserState'] !== 1 && $this->FE['CronMode'] === '') {
-            /** Page initial prepwork. */
+            /** The user hasn't logged in, or hasn't authenticated yet. */
             $this->initialPrepwork($this->L10N->getString('label.Login'), '', false);
 
             /** Hide warnings from non-logged in users. */
@@ -777,14 +773,11 @@ class FrontEnd extends Core
 
             /** Send output. */
             echo $this->sendOutput();
-        }
-
-        /**
-         * The user has logged in, but hasn't selected anything to view. Show them the
-         * front-end home page.
-         */
-        elseif ($this->CIDRAM['QueryVars']['cidram-page'] === '' && $this->FE['CronMode'] === '') {
-            /** Page initial prepwork. */
+        } elseif ($this->CIDRAM['QueryVars']['cidram-page'] === '' && $this->FE['CronMode'] === '') {
+            /**
+             * The user has logged in, but hasn't selected anything to view. Show them the
+             * front-end home page.
+             */
             $this->initialPrepwork($this->L10N->getString('link.Home'), $this->L10N->getString('tip.Home'), false);
 
             /** CIDRAM version used. */
@@ -875,10 +868,8 @@ class FrontEnd extends Core
 
             /** Send output. */
             echo $this->sendOutput();
-        }
-
-        /** A simple passthru for the file manager icons. */
-        elseif ($this->CIDRAM['QueryVars']['cidram-page'] === 'icon' && $this->FE['Permissions'] === 1) {
+        } elseif ($this->CIDRAM['QueryVars']['cidram-page'] === 'icon' && $this->FE['Permissions'] === 1) {
+            /** A simple passthru for the file manager icons. */
             if (
                 !empty($this->CIDRAM['QueryVars']['file']) &&
                 $this->pathSecurityCheck($this->CIDRAM['QueryVars']['file']) &&
@@ -889,19 +880,14 @@ class FrontEnd extends Core
             } elseif (!empty($this->CIDRAM['QueryVars']['icon'])) {
                 $this->eTaggable($this->CIDRAM['QueryVars']['icon'] . '.gif');
             }
-        }
-
-        /** A simple passthru for the flags CSS. */
-        elseif ($this->CIDRAM['QueryVars']['cidram-page'] === 'flags' && $this->FE['Permissions']) {
+        } elseif ($this->CIDRAM['QueryVars']['cidram-page'] === 'flags' && $this->FE['Permissions']) {
+            /** A simple passthru for the flags CSS. */
             $this->eTaggable('flags.css');
-        }
-
-        /** Loading the specific requested page. */
-        else {
+        } else {
             /** Strip out unexpected bytes here for security. */
             $Page = preg_replace('~[^\dA-Za-z-]~', '', $this->CIDRAM['QueryVars']['cidram-page']);
 
-            /** Load the page. */
+            /** Loading the specific requested page. */
             if (!$this->isReserved($Page) && is_readable($this->PagesPath . $Page . '.php')) {
                 require_once $this->PagesPath . $Page . '.php';
             }

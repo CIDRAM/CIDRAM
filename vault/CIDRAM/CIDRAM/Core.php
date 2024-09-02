@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2024.08.17).
+ * This file: The CIDRAM core (last modified: 2024.09.02).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1055,23 +1055,21 @@ class Core
             return $Try['Host'];
         }
 
-        /** The IP address is IPv4. */
         if (strpos($Addr, '.') !== false && strpos($Addr, ':') === false && preg_match(
             '/^([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])' .
             '\.([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])$/',
             $Addr,
             $Octets
         )) {
+            /** The IP address is IPv4. */
             $Lookup =
                 chr(strlen($Octets[4])) . $Octets[4] .
                 chr(strlen($Octets[3])) . $Octets[3] .
                 chr(strlen($Octets[2])) . $Octets[2] .
                 chr(strlen($Octets[1])) . $Octets[1] .
                 "\7in-addr\4arpa\0\0\x0c\0\1";
-        }
-
-        /** The IP address is IPv6. */
-        elseif (strpos($Addr, '.') === false && strpos($Addr, ':') !== false && $this->expandIpv6($Addr, true)) {
+        } elseif (strpos($Addr, '.') === false && strpos($Addr, ':') !== false && $this->expandIpv6($Addr, true)) {
+            /** The IP address is IPv6. */
             $Lookup = $Addr;
             if (strpos($Addr, '::') !== false) {
                 $Repeat = 8 - substr_count($Addr, ':');
@@ -1085,10 +1083,8 @@ class Core
                 );
             }
             $Lookup = strrev(preg_replace(['/:/', '/(.)/'], ['', "\\1\1"], $Lookup)) . "\3ip6\4arpa\0\0\x0c\0\1";
-        }
-
-        /** The IP address is.. wrong. Let's exit the method. */
-        else {
+        } else {
+            /** The IP address is.. wrong. Let's exit the method. */
             return $Addr;
         }
 
@@ -2279,36 +2275,41 @@ class Core
         /** Greylist. */
         if ($Action === 'Greylist' || $RunExitCode === 2) {
             $this->zeroOutBlockInfo();
+            return false;
         }
 
         /** Block. */
-        elseif ($Action === 'Block' || $RunExitCode === 1) {
+        if ($Action === 'Block' || $RunExitCode === 1) {
             $this->trigger(true, $Name, $Reason);
             if ($StatusCode > 400) {
                 $this->CIDRAM['Aux Status Code'] = $StatusCode;
             }
+            return false;
         }
 
         /** Bypass. */
-        elseif ($Action === 'Bypass') {
+        if ($Action === 'Bypass') {
             $this->bypass(true, $Name);
+            return false;
         }
 
         /** Don't log the request instance. */
-        elseif ($Action === 'Don\'t log') {
+        if ($Action === 'Don\'t log') {
             $this->CIDRAM['Suppress logging'] = true;
+            return false;
         }
 
         /** Redirect the request (without blocking it). */
-        elseif ($Action === 'Redirect') {
+        if ($Action === 'Redirect') {
             $this->CIDRAM['Aux Redirect'] = $Target;
             if ($StatusCode > 300 && $StatusCode < 400) {
                 $this->CIDRAM['Aux Status Code'] = $StatusCode;
             }
+            return false;
         }
 
         /** Profile the request. */
-        elseif ($Action === 'Profile') {
+        if ($Action === 'Profile') {
             $this->addProfileEntry($Name);
         }
 

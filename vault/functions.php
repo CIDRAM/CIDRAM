@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2024.08.02).
+ * This file: Functions file (last modified: 2024.09.02).
  */
 
 /**
@@ -780,23 +780,21 @@ $CIDRAM['DNS-Reverse'] = function ($Addr, $DNS = '', $Timeout = 5) use (&$CIDRAM
         return $CIDRAM['DNS-Reverses'][$Addr]['Host'];
     }
 
-    /** The IP address is IPv4. */
     if (strpos($Addr, '.') !== false && strpos($Addr, ':') === false && preg_match(
         '/^([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])' .
         '\.([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])$/',
         $Addr,
         $Octets
     )) {
+        /** The IP address is IPv4. */
         $Lookup =
             chr(strlen($Octets[4])) . $Octets[4] .
             chr(strlen($Octets[3])) . $Octets[3] .
             chr(strlen($Octets[2])) . $Octets[2] .
             chr(strlen($Octets[1])) . $Octets[1] .
             "\7in-addr\4arpa\0\0\x0c\0\1";
-    }
-
-    /** The IP address is IPv6. */
-    elseif (strpos($Addr, '.') === false && strpos($Addr, ':') !== false && $CIDRAM['ExpandIPv6']($Addr, true)) {
+    } elseif (strpos($Addr, '.') === false && strpos($Addr, ':') !== false && $CIDRAM['ExpandIPv6']($Addr, true)) {
+        /** The IP address is IPv6. */
         $Lookup = $Addr;
         if (strpos($Addr, '::') !== false) {
             $Repeat = 8 - substr_count($Addr, ':');
@@ -810,10 +808,8 @@ $CIDRAM['DNS-Reverse'] = function ($Addr, $DNS = '', $Timeout = 5) use (&$CIDRAM
             );
         }
         $Lookup = strrev(preg_replace(['/:/', '/(.)/'], ['', "\\1\1"], $Lookup)) . "\3ip6\4arpa\0\0\x0c\0\1";
-    }
-
-    /** The IP address is.. wrong. Let's exit the closure. */
-    else {
+    } else {
+        /** The IP address is.. wrong. Let's exit the closure. */
         return $Addr;
     }
 
@@ -2094,36 +2090,41 @@ $CIDRAM['AuxAction'] = function ($Action, $Name, $Reason = '', $Target = '', $St
     /** Greylist. */
     if ($Action === 'Greylist' || $RunExitCode === 2) {
         $CIDRAM['ZeroOutBlockInfo']();
+        return false;
     }
 
     /** Block. */
-    elseif ($Action === 'Block' || $RunExitCode === 1) {
+    if ($Action === 'Block' || $RunExitCode === 1) {
         $CIDRAM['Trigger'](true, $Name, $Reason);
         if ($StatusCode > 400) {
             $CIDRAM['Aux Status Code'] = $StatusCode;
         }
+        return false;
     }
 
     /** Bypass. */
-    elseif ($Action === 'Bypass') {
+    if ($Action === 'Bypass') {
         $CIDRAM['Bypass'](true, $Name);
+        return false;
     }
 
     /** Don't log the request instance. */
-    elseif ($Action === 'Don\'t log') {
+    if ($Action === 'Don\'t log') {
         $CIDRAM['Suppress logging'] = true;
+        return false;
     }
 
     /** Redirect the request (without blocking it). */
-    elseif ($Action === 'Redirect') {
+    if ($Action === 'Redirect') {
         $CIDRAM['Aux Redirect'] = $Target;
         if ($StatusCode > 300 && $StatusCode < 400) {
             $CIDRAM['Aux Status Code'] = $StatusCode;
         }
+        return false;
     }
 
     /** Profile the request. */
-    elseif ($Action === 'Profile') {
+    if ($Action === 'Profile') {
         $CIDRAM['AddProfileEntry']($Name);
     }
 

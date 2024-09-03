@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2023.12.12).
+ * This file: Output generator (last modified: 2024.09.02).
  */
 
 /** Initialise cache. */
@@ -141,20 +141,13 @@ if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode']) {
         }
     }
 
-    /**
-     * If all tests fail, report an invalid IP address and kill the request.
-     */
     if (!$CIDRAM['TestResults']) {
+        /** If all tests fail, report an invalid IP address and kill the request. */
         $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['L10N']->getString('ReasonMessage_BadIP');
         $CIDRAM['BlockInfo']['WhyReason'] = $CIDRAM['L10N']->getString('Short_BadIP');
         $CIDRAM['BlockInfo']['SignatureCount']++;
-    }
-
-    /**
-     * Check whether we're tracking the IP due to previous instances of bad
-     * behaviour.
-     */
-    else {
+    } else {
+        /** Check whether we're tracking the IP due to previous instances of bad behaviour. */
         $CIDRAM['Stage'] = 'Tracking';
         if (($CIDRAM['BlockInfo']['IPAddr'] && isset(
             $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddr']],

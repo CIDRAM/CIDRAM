@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2021.09.17).
+ * This file: The loader (last modified: 2024.09.03).
  */
 
 /**
@@ -106,10 +106,8 @@ if (!defined('CIDRAM')) {
         ) {
             require $CIDRAM['Vault'] . 'frontend.php';
         }
-    }
-
-    /** This code block only executed if we're in CLI mode. */
-    elseif (!$CIDRAM['Config']['general']['disable_cli'] && file_exists($CIDRAM['Vault'] . 'cli.php')) {
+    } elseif (!$CIDRAM['Config']['general']['disable_cli'] && file_exists($CIDRAM['Vault'] . 'cli.php')) {
+        /** This code only executed if we're in CLI mode. */
         require $CIDRAM['Vault'] . 'cli.php';
     }
 

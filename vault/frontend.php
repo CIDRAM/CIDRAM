@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2024.04.18).
+ * This file: Front-end handler (last modified: 2024.09.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -448,10 +448,7 @@ if ($CIDRAM['FE']['FormTarget'] === 'login' || $CIDRAM['FE']['CronMode'] !== '')
 
     /** Cleanup. */
     unset($CIDRAM['NameToLog'], $CIDRAM['LoggerMessage']);
-}
-
-/** Determine whether the user has logged in. */
-elseif (!empty($_COOKIE['CIDRAM-ADMIN'])) {
+} elseif (!empty($_COOKIE['CIDRAM-ADMIN'])) {
     $CIDRAM['FE']['UserState'] = -1;
     $CIDRAM['FE']['SessionKey'] = substr($_COOKIE['CIDRAM-ADMIN'], -32);
     $CIDRAM['FE']['UserRaw'] = substr($_COOKIE['CIDRAM-ADMIN'], 0, -32);
@@ -723,9 +720,8 @@ if ($CIDRAM['FE']['UserState'] === 1) {
     unset($CIDRAM['Remote-YAML-PHP-Array'], $CIDRAM['Remote-YAML-PHP'], $CIDRAM['ThisBranch'], $CIDRAM['RemoteVerPath']);
 }
 
-/** The user hasn't logged in, or hasn't authenticated yet. */
 if ($CIDRAM['FE']['UserState'] !== 1 && $CIDRAM['FE']['CronMode'] === '') {
-    /** Page initial prepwork. */
+    /** The user hasn't logged in, or hasn't authenticated yet. */
     $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('title_login'), '', false);
 
     /** Hide warnings from non-logged in users. */
@@ -756,14 +752,11 @@ if ($CIDRAM['FE']['UserState'] !== 1 && $CIDRAM['FE']['CronMode'] === '') {
 
     /** Send output. */
     echo $CIDRAM['SendOutput']();
-}
-
-/**
- * The user has logged in, but hasn't selected anything to view. Show them the
- * front-end home page.
- */
-elseif ($CIDRAM['QueryVars']['cidram-page'] === '' && $CIDRAM['FE']['CronMode'] === '') {
-    /** Page initial prepwork. */
+} elseif ($CIDRAM['QueryVars']['cidram-page'] === '' && $CIDRAM['FE']['CronMode'] === '') {
+    /**
+     * The user has logged in, but hasn't selected anything to view. Show them the
+     * front-end home page.
+     */
     $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_home'), $CIDRAM['L10N']->getString('tip_home'), false);
 
     /** CIDRAM version used. */
@@ -857,10 +850,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === '' && $CIDRAM['FE']['CronMode'] 
 
     /** Send output. */
     echo $CIDRAM['SendOutput']();
-}
-
-/** A simple passthru for the file manager icons. */
-elseif ($CIDRAM['QueryVars']['cidram-page'] === 'icon' && $CIDRAM['FE']['Permissions'] === 1) {
+} elseif ($CIDRAM['QueryVars']['cidram-page'] === 'icon' && $CIDRAM['FE']['Permissions'] === 1) {
+    /** A simple passthru for the file manager icons. */
     if (
         !empty($CIDRAM['QueryVars']['file']) &&
         $CIDRAM['FileManager-PathSecurityCheck']($CIDRAM['QueryVars']['file']) &&
@@ -893,10 +884,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'icon' && $CIDRAM['FE']['Permiss
     }
 
     die;
-}
-
-/** A simple passthru for the flags CSS. */
-elseif ($CIDRAM['QueryVars']['cidram-page'] === 'flags' && $CIDRAM['FE']['Permissions'] && file_exists($CIDRAM['Vault'] . 'fe_assets/flags.css')) {
+} elseif ($CIDRAM['QueryVars']['cidram-page'] === 'flags' && $CIDRAM['FE']['Permissions'] && file_exists($CIDRAM['Vault'] . 'fe_assets/flags.css')) {
+    /** A simple passthru for the flags CSS. */
     header('Content-Type: text/css');
 
     /** Prevents needlessly reloading static assets. */
@@ -3128,7 +3117,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
         $CIDRAM['Components']['ThisData'] = 0;
     }
 
-    /** Upload a new file. */
     if (isset($_POST['do'], $_FILES['upload-file']['name']) && $_POST['do'] === 'upload-file') {
         /** Check whether safe. */
         $CIDRAM['SafeToContinue'] = (
@@ -3166,10 +3154,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
         } else {
             $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_upload_error');
         }
-    }
-
-    /** A form was submitted. */
-    elseif (
+    } elseif (
         isset($_POST['filename'], $_POST['do']) &&
         is_readable($CIDRAM['Vault'] . $_POST['filename']) &&
         $CIDRAM['FileManager-PathSecurityCheck']($_POST['filename'])

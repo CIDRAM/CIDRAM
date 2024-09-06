@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6.dat
 
-# Version: 2024.244.0
-# Last modified: 2024.09.01
+# Version: 2024.249.0
+# Last modified: 2024.09.06
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -2019,15 +2019,12 @@ Tag: UOL DIVEO S.A
 
 # ASN 46562 ("Performive LLC").
 # Data center, server and cloud management platform, server farm.
-# Stop Forum Spam (SFS) listings: 53,775.
-# Updated: 2023.11.21
+# Stop Forum Spam (SFS) listings: 20,168.
+# Updated: 2024.09.05
 
 2407:c40:1::/48 Deny Cloud
 2407:c40:2::/48 Deny Cloud
 Origin: JP
-2604:bc0:1::/48 Deny Cloud
-2604:bc0:5::/48 Deny Cloud
-2604:bc0:6::/47 Deny Cloud
 2604:2880::/48 Deny Cloud
 2607:6b80:1::/48 Deny Cloud
 2607:6b80:2::/48 Deny Cloud
@@ -2043,9 +2040,11 @@ Origin: JP
 2607:f7a0:5::/48 Deny Cloud
 2607:f7a0:6::/48 Deny Cloud
 2607:f7a0:8::/47 Deny Cloud
-2607:f7a0:b::/48 Deny Cloud
 2607:f7a0:c::/46 Deny Cloud
-2607:f7a0:10::/44 Deny Cloud
+2607:f7a0:10::/47 Deny Cloud
+2607:f7a0:12::/48 Deny Cloud
+2607:f7a0:14::/46 Deny Cloud
+2607:f7a0:18::/45 Deny Cloud
 2a07:c6c0:35::/48 Deny Cloud
 2a07:c6c0:36::/47 Deny Cloud
 2a07:c6c0:38::/48 Deny Cloud
@@ -5108,34 +5107,38 @@ Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: TierPoint, LLC
 
 
-# ASNs 15626, 21100, 50979, 59729 ("ITL Company").
+# ASNs 15626, 21100, 50979, 59729, 204957 ("GREEN FLOID LLC").
 # Lighting and crane infrastructure company. A source of forum/blog spam.
-# Stop Forum Spam (SFS) listings: 284 (AS15626), 134 (AS21100), 868 (AS50979),
-# 385 (AS59729).
-# Updated: 2023.09.21
+# Stop Forum Spam (SFS) listings: 226 (AS15626), 56 (AS21100), 15 (AS50979),
+# 717 (AS59729), 467 (AS204957).
+# Updated: 2024.09.06
 
 2001:67c:2f4c::/48 Deny Cloud
 2001:67c:2f5c::/48 Deny Cloud
 2001:67c:2f6c::/48 Deny Cloud
-2a0a:8c40::/32 Deny Cloud
-2a0a:8c46::/32 Deny Cloud
+2a06:fcc0:2::/48 Deny Cloud
+2a0a:8c40::/29 Deny Cloud
 Origin: BG
 2a0d:5a80::/29 Deny Cloud
 Origin: DE
 2a02:c6c1:c::/48 Deny Cloud
 Origin: GB
-2a02:27a8::/30 Deny Cloud
-2a02:27ac::/31 Deny Cloud
 2a06:c6c0::/47 Deny Cloud
 2a0e:40c0:1::/48 Deny Cloud
-2a0e:40c0:2::/48 Deny Cloud
+2a0e:40c0:2::/47 Deny Cloud
 2a0e:40c0:4::/48 Deny Cloud
-2a13:f580:2::/48 Deny Cloud
+2a11:6800:1::/48 Deny Cloud
+2a13:f580:2::/47 Deny Cloud
 Origin: UA
-2a05:9407::/32 Deny Cloud
+2a02:27a8::/30 Deny Cloud
+2a02:27ac::/31 Deny Cloud
+2a02:27ae::/32 Deny Cloud
+2a05:9400::/29 Deny Cloud
+2a12:6fc0::/31 Deny Cloud
+2a12:6fc2::/32 Deny Cloud
 Origin: US
-Profile: Commercial;Tor endpoints here
-Tag: ITL Company
+Profile: Dedicated;Infrastructure/Transit;Tor endpoints here;Webhosting
+Tag: GREEN FLOID LLC
 
 
 # ASN 395111 ("KVCHOSTING.COM LLC").
@@ -8200,31 +8203,6 @@ Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: ANEXIA
 
 
-# ASN 204957 ("GREEN FLOID LLC").
-# Dedicated server farm and a source of spam.
-# Stop Forum Spam (SFS) listings: 592.
-# Updated: 2023.09.24 / Checked: 2024.08.27
-
-2a06:fcc0:2::/48 Deny Cloud
-2a0a:8c41::/32 Deny Cloud
-2a0a:8c42::/31 Deny Cloud
-2a0a:8c44::/31 Deny Cloud
-2a0a:8c47::/32 Deny Cloud
-Origin: BG
-2a0e:40c0:3::/48 Deny Cloud
-2a11:6800:1::/48 Deny Cloud
-2a13:f580:3::/48 Deny Cloud
-Origin: UA
-2a05:9400::/30 Deny Cloud
-2a05:9404::/31 Deny Cloud
-2a05:9406::/32 Deny Cloud
-2a12:6fc0::/31 Deny Cloud
-2a12:6fc2::/32 Deny Cloud
-Origin: US
-Profile: Dedicated;Infrastructure/Transit;Tor endpoints here
-Tag: ITL-Bulgaria Ltd
-
-
 # ASN 35041 ("Binero AB").
 # Infrastructure and cloud provider; Drive-by WordPress hack attempts,
 # brute-force attacks, XMLRPC attacks, and webapp attacks detected originating
@@ -9292,41 +9270,29 @@ Tag: TeraSwitch Networks Inc
 # Bursabil: Turkish webhosting provider. Raya Sepehr: Iranian data processing
 # company. Sections merged together due to interlacing. Brute-force, SQLi, and
 # webapp attacks, port scans, hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 4,712 (AS58061), 79 (AS60721).
-# Updated: 2024.05.18
+# Stop Forum Spam (SFS) listings: 6,650 (AS58061), 69 (AS60721).
+# Updated: 2024.09.05
 
-2a02:c6c1:2::/47 Deny Cloud
-2a02:c6c1:10::/48 Deny Cloud
-2a02:c6c3::/32 Deny Cloud
-2a02:c6c7::/32 Deny Cloud
+2a02:c6c0::/29 Deny Cloud
 2a0c:6740::/29 Deny Cloud
 2a0e:92c0::/29 Deny Cloud
 2a0e:9a40::/29 Deny Cloud
+2a0e:a7c0::/29 Deny Cloud
+2a0f:4b40::/29 Deny Cloud
 Origin: GB
 2a00:1ca8:45::/48 Deny Cloud
 2a00:1ca8:9c::/48 Deny Cloud
 2a00:1ca8:d3::/48 Deny Cloud
 2a00:1ca8:d4::/48 Deny Cloud
 2a03:3f40:2::/48 Deny Cloud
+Origin: NL
 2a04:3880::/30 Deny Cloud
 2a06:c380::/29 Deny Cloud
-2a07:4a00::/29 Deny Cloud
-2a0a:37c0::/29 Deny Cloud
 2a0b:6000::/29 Deny Cloud
-2a0b:9800::/29 Deny Cloud
-2a0b:a280::/29 Deny Cloud
-2a0b:a300::/29 Deny Cloud
-2a0c:7440::/29 Deny Cloud
-2a0c:74c0::/29 Deny Cloud
-2a0c:7540::/29 Deny Cloud
-2a0d:2cc0::/29 Deny Cloud
-2a0d:88c0::/29 Deny Cloud
 2a0d:a2c0::/29 Deny Cloud
 2a0d:c480::/29 Deny Cloud
-2a0f:1180::/29 Deny Cloud
-2a0f:2380::/29 Deny Cloud
 Origin: TR
-Profile: Dedicated;Infrastructure/Transit;Tor endpoints here;Webhosting
+Profile: Dedicated;Frequent changes;Infrastructure/Transit;Tor endpoints here;Webhosting
 Tag: Raya/Scalaxy/Bursabil
 
 
@@ -11603,22 +11569,20 @@ Tag: Binary Racks Limited
 # ASN 142594 ("SpeedyPage Ltd").
 # Brute-force, DDoS, WordPress/XMLRPC, and webapp attacks, port scans, hacking,
 # and spam detected from here.
-# Stop Forum Spam (SFS) listings: 104.
-# Updated: 2024.02.18
+# Stop Forum Spam (SFS) listings: 66.
+# Updated: 2024.09.05
 
-2602:fed2:719b::/48 Deny Cloud
-Origin: CA
 2001:df7:1d80::/47 Deny Cloud
 2a04:ff00:800::/44 Deny Cloud
-2a04:ff00:820::/43 Deny Cloud
-2a04:ff00:840::/43 Deny Cloud
-2a04:ff00:860::/44 Deny Cloud
+2a04:ff00:820::/44 Deny Cloud
+2a04:ff00:840::/44 Deny Cloud
+2a04:ff00:860::/43 Deny Cloud
 Origin: GB
+2602:f919:101::/48 Deny Cloud
 2602:fd92:c90::/44 Deny Cloud
 2a06:a000:1d0::/44 Deny Cloud
 2a06:a005:108c::/48 Deny Cloud
 2a06:a005:16d0::/44 Deny Cloud
-2a06:a005:19e0::/44 Deny Cloud
 Origin: US
 Profile: Webhosting
 Tag: SpeedyPage Ltd
@@ -14056,6 +14020,16 @@ Tag: T.V.Mihaylovich
 Origin: AE
 Profile: Webhosting
 Tag: Digital City FZE
+
+
+# ASN 42369 ("CORESYSTEM SASU").
+# Brute-force attacks and spam detected from here.
+# Updated: 2024.09.03
+
+2a10:8b40::/32 Deny Cloud
+Origin: FR
+Profile: Commercial;Webhosting
+Tag: CORESYSTEM SASU
 
 
 # ---

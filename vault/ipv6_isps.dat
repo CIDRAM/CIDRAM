@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6_isps.dat
 
-# Version: 2024.244.0
-# Last modified: 2024.09.01
+# Version: 2024.248.0
+# Last modified: 2024.09.05
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -179,19 +179,6 @@ Profile: Domestic ISP;Tor endpoints here
 Tag: PJSC Rostelecom
 
 
-# ASN 3255 (State Enterprise Scientific and Telecommunication Centre "Ukrainian
-# Academic and Research Network" of the Institute for Condensed Matter Physics
-# of the National Academy of Science of Ukraine / UARNet).
-# Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 684.
-# Updated: 2023.11.15
-
-2a00:fc00:e000:98::/64 Deny Attacks
-Origin: UA
-Profile: Domestic ISP;Government
-Tag: UARNet
-
-
 # ASNs 18101, 55836 ("Reliance Communications Ltd").
 # Indian domestic ISP. Brute-force, SSH, and webapp attacks, WordPress hack
 # attempts, port scans, and spam detected from here. Listing just the affected
@@ -362,20 +349,6 @@ Profile: Domestic ISP;Tor endpoints here
 Tag: AT&T Services, Inc
 
 
-# ASN 21928 ("T-Mobile USA, Inc").
-# US mobile provider. Spam, brute-force, and SSH attacks detected from here.
-# Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 3,430.
-# Updated: 2023.12.01
-
-2607:fb91:123:4c6::/64 Deny Spam
-2607:fb91:14d4:164c::/64 Deny Spam
-2607:fb91:79af:d65c::/64 Deny Spam
-Origin: US
-Profile: Domestic ISP;Mobile ISP;Multiplay
-Tag: T-Mobile USA, Inc
-
-
 # ASNs 16276, 35540 ("OVH Systems").
 # French multiplay network. Mostly a cloud provider, server leaser, etc. Some
 # limited ADSL connectivity also provided. A significant source of spam here,
@@ -512,21 +485,6 @@ Tag: WEDOS Internet, a.s
 Origin: IN
 Profile: Commercial;Domestic ISP;Infrastructure/Transit
 Tag: Smartlink Solutions
-
-
-# ASN 701 ("Verizon Business/UUnet").
-# US domestic ISP. Honeypot attacks, port scans, malware, and spam detected
-# from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,966.
-# Updated: 2023.11.05
-
-2600:4041:5340:f000::/64 Deny Spam
-2600:4041:54c1:d000::/64 Deny Spam
-2600:4041:5c2c:dc00::/64 Deny Spam
-2600:4041:5f5a:e700::/64 Deny Spam
-Origin: US
-Profile: Domestic ISP;Tor endpoints here
-Tag: Verizon Business/UUnet
 
 
 # ASN 263744 ("Udasha S.A").

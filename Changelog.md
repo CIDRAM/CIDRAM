@@ -454,3 +454,7 @@
 [2024.08.21; Maikuolan]: BOBUAM's recommended lowest allowed version for the Chrome/Chromium/Edg/Edge/Firefox/ESR tokens raised to 123 due to recent increased reports/detection of bad bots citing versions 122 and older.
 
 [2024.09.02; Maikuolan]: Updated the country flags. Code-style patch.
+
+### v3.8.0
+
+[2024.09.07; Maikuolan]: Added a default signature bypass for Skype URL Preview.

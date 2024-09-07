@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Default signature bypasses (last modified: 2023.08.14).
+ * This file: Default signature bypasses (last modified: 2024.09.07).
  */
 
 /** Prevents execution from outside of the checkFactors method. */
@@ -186,6 +186,11 @@ $this->CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [
          * @link https://duckduckgo.com/duckduckbot
          */
         if (isset($Bypasses['DuckDuckBot']) && preg_match('~duckduck(?:go-favicons-)?bot~', $this->BlockInfo['UALC'])) {
+            return 4;
+        }
+
+        /** Skype URL Preview bypass. */
+        if (isset($Bypasses['Skype']) && preg_match('~skypeuripreview.*skype-url-preview@microsoft\.com$~', $this->BlockInfo['UALC'])) {
             return 4;
         }
     }

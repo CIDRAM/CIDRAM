@@ -653,19 +653,19 @@ IPv6-Other:
    Checksum: "733fd8b5e8d2757510f8efb780d6986c19e333a2c32215c1db54c07b550bb804:6927"
    Used with: "ipv6"
 Bypasses:
- Version: "2023.225.0"
+ Version: "2024.250.0"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "^3"
  When Update Succeeds:
-  - "if {Components.Meta.Bypasses.Version}<2023.98&&{Components.RemoteMeta.Bypasses.Version}>=2023.98 then queue message <span dir="ltr" lang="en-AU">A recent signatures update may affect search engine verification, and new bypasses have been added accordingly. Reviewing your configuration (in particular, <code class="s">bypasses➡used</code>) is strongly recommended.</span>"
+  - "if {Components.Meta.Bypasses.Version}<2024.250&&{Components.RemoteMeta.Bypasses.Version}>=2024.250 then queue message <span dir="ltr" lang="en-AU">[Bypasses 2024.250.0] New bypass added ("Skype URL Preview"). It can be enabled via <code class="s">bypasses➡used</code>.</span>"
  Files:
   bypasses.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/bypasses.php"
-   Checksum: "0cba41cef54c93c87260313af5faf47c9a67c3acf321fe0ac19261600153035c:11294"
+   Checksum: "3a4d678c1b5d4f3e51995bc1bf3e19215343d78fca41e3a2195afa6b72516709:11505"
   imports/bypasses.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/imports/bypasses.yml"
-   Checksum: "a073bc8a106dc487ec765c320a73722e9d85f5457b9ef22ddd0e40ac4ec8554c:1134"
+   Checksum: "5f4f14a598d1a51e6237de848e6bf588698bf16d501d9cac7a717931fff5e046:1175"
    Used with: "imports"
 l10n/core/af:
  Extended Description: "Afrikaanse lokalisering"
@@ -1499,7 +1499,7 @@ BOBUAM:
   Optional module which detects unwanted bots, old browsers, and performs some sanity checks.<br />Contains some data from
   the Wordpress plugin "Stop Bad Bots" by William "Bill" Minozzi.<br />(A few webservices bots might need bypasses).
  False Positive Risk: "Medium"
- Version: "2024.235.0"
+ Version: "2024.250.0"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "^3.7"
@@ -1508,8 +1508,7 @@ BOBUAM:
   l10n/frontend/{lang}: ">=2024.162"
  When Install Succeeds: ["queue message response.please_check_config"]
  When Update Succeeds:
-  - "if {Components.Meta.BOBUAM.Version}<2024.162&&{Components.RemoteMeta.BOBUAM.Version}>=2024.162 then queue message <span dir="ltr" lang="en-AU">New configuration directives introduced with this update, <code>bobuam➡edge</code></span> and <code>bobuam➡options</code>.</span>"
-  - "if {Components.Meta.BOBUAM.Version}<2024.233&&{Components.RemoteMeta.BOBUAM.Version}>=2024.233 then queue message <span dir="ltr" lang="en-AU">[BOBUAM] Recommended lowest allowed version for the Chrome/Chromium/Edg/Edge/Firefox/ESR tokens raised to 123 due to recent increased reports/detection of bad bots citing versions 122 and older.</span>"
+  - "if {Components.Meta.BOBUAM.Version}<2024.250&&{Components.RemoteMeta.BOBUAM.Version}>=2024.250 then queue message <span dir="ltr" lang="en-AU">[BOBUAM 2024.250.0] Fixed a false positive ("Skype URL Preview").</span>"
  Files:
   imports/bobuam.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/imports/bobuam.yml"
@@ -1517,7 +1516,7 @@ BOBUAM:
    Used with: "imports"
   modules/bobuam.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/bobuam.php"
-   Checksum: "68b388b6ba298a70cbe7a5bde65f3940ddeee78a76d97a5302de28e2136c1931:45649"
+   Checksum: "6692c17e1a47eb25a02890246a6787bc2ddd1b9fc97c445a74c3c1d53bde1b56:45631"
    Used with: "modules"
 theme/bluemetal:
  Name: "Theme: Blue Metal"

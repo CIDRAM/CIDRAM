@@ -1,6 +1,6 @@
 CIDRAM Core:
  Name: "CIDRAM Core"
- Version: "3.7.0"
+ Version: "3.8.0-DEV+242510"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Front-End: "^3.7"
@@ -55,7 +55,7 @@ CIDRAM Core:
    Checksum: "b62c0cf1deeb97c7ee15638f0a4102292a6bab6f0b6b1ee3a1dec7fa485c2e05:1352"
   defaults.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/defaults.yml"
-   Checksum: "361aee7103501642ab7ff375d79b79c074c4cfd141271d96b88e267c543ae75d:41061"
+   Checksum: "3b24df256b51db76da558e215c1c3362c504eeb758d085abbafe703dda808c68:41103"
   loader.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/loader.php"
    Checksum: "4d56d0a305ceafab32ade65a0f74ad27efe50964d0e257d787a6ee7056c41880:1313"
@@ -839,6 +839,15 @@ l10n/core/lv:
   l10n/core/lv.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/lv.yml"
    Checksum: "e36bfa99352115b9286dea11482c7539a3157bc4cbae7017b66f96f18159c45b:7892"
+l10n/core/mr:
+ Extended Description: "मराठी स्थानिकीकरण"
+ Version: "2024.251.0"
+ Dependencies:
+  CIDRAM Core: "^3.7"
+ Files:
+  l10n/core/mr.yml:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/mr.yml"
+   Checksum: "9991212520ebc9a5e0bc0f9ecb3024321599b4285d5bcc9bb082c0e817e5e3a4:13745"
 l10n/core/ms:
  Extended Description: "Penyetempatan Bahasa Melayu"
  Version: "2024.226.0"

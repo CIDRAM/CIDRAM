@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv4_isps.dat
 
-# Version: 2024.249.0
-# Last modified: 2024.09.06
+# Version: 2024.254.0
+# Last modified: 2024.09.11
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -7545,7 +7545,7 @@ Tag: Ultra-Telecom LLC
 # - forums.spybot.info/showthread.php?23632-SPAM-frauds-fakes-and-other-MALWARE-deliveries/page37
 # - dyn.com/blog/mitm-internet-hijacking/
 # Stop Forum Spam (SFS) listings: 77,910.
-# Updated: 2024.03.14 / Modified: 2024.08.25
+# Updated: 2024.03.14 / Modified: 2024.09.09
 
 5.182.110.0/24 Deny Attacks
 45.88.97.0/24 Deny Attacks
@@ -7581,6 +7581,8 @@ Origin: GB
 194.76.192.183/32 Deny Attacks
 194.76.192.212/32 Deny Attacks
 Origin: LV
+205.164.135.0/24 Deny Attacks
+Origin: PK
 84.239.18.0/24 Deny Attacks
 149.5.172.0/22 Deny Attacks
 Origin: RO
@@ -9169,9 +9171,10 @@ Tag: SIA Tet
 # ASN 9873 ("Lao Telecom Communication, LTC").
 # Laotian domestic ISP. Spam, port scans, webapp attacks, and hack attempts
 # detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 231.
-# Updated: 2023.09.24
+# Stop Forum Spam (SFS) listings: 613.
+# Updated: 2024.09.09
 
+103.43.76.0/22 Deny Attacks
 115.84.70.0/23 Deny Attacks
 115.84.72.0/24 Deny Attacks
 115.84.76.0/23 Deny Attacks
@@ -9180,19 +9183,14 @@ Tag: SIA Tet
 115.84.82.0/24 Deny Attacks
 115.84.90.0/23 Deny Attacks
 115.84.92.0/24 Deny Attacks
-115.84.93.116/32 Deny Attacks
 115.84.94.0/23 Deny Attacks
 115.84.96.0/24 Deny Attacks
 115.84.99.0/24 Deny Attacks
-115.84.112.138/32 Deny Attacks
-115.84.112.141/32 Deny Attacks
 202.137.134.0/24 Deny Attacks
 202.137.138.42/32 Deny Attacks
-202.137.138.63/32 Deny Attacks
 202.137.138.78/32 Deny Attacks
-202.137.138.87/32 Deny Attacks
-202.137.138.88/32 Deny Attacks
 202.137.141.0/24 Deny Attacks
+202.137.142.0/24 Deny Attacks
 202.137.154.0/23 Deny Attacks
 Origin: LA
 Profile: Domestic ISP
@@ -9848,29 +9846,20 @@ Tag: Next Online Limited
 # Indian fibre provider. Brute-force and SSH attacks, malware, port scans,
 # hacking, and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 285.
-# Updated: 2023.09.20
+# Stop Forum Spam (SFS) listings: 103.
+# Updated: 2024.09.10
 
-103.73.181.42/32 Deny Attacks
-103.73.181.91/32 Deny Attacks
-103.73.181.92/32 Deny Attacks
+43.252.220.0/23 Deny Attacks
+103.73.181.0/24 Deny Attacks
 103.73.182.0/23 Deny Attacks
-103.78.180.0/23 Deny Attacks
-103.78.182.5/32 Deny Attacks
-103.78.182.25/32 Deny Attacks
-103.78.182.53/32 Deny Attacks
-103.78.182.74/32 Deny Attacks
-103.78.183.0/24 Deny Attacks
+103.78.180.0/22 Deny Attacks
 103.135.38.0/23 Deny Attacks
 103.180.170.0/23 Deny Attacks
 103.180.178.0/23 Deny Attacks
+103.184.42.0/23 Deny Attacks
 103.233.122.0/23 Deny Attacks
 103.249.180.0/23 Deny Attacks
-123.253.124.23/32 Deny Attacks
-123.253.124.28/32 Deny Attacks
-123.253.124.150/32 Deny Attacks
-123.253.125.0/24 Deny Attacks
-123.253.126.0/23 Deny Attacks
+123.253.124.0/22 Deny Attacks
 150.242.254.0/23 Deny Attacks
 Origin: IN
 Profile: Domestic ISP
@@ -14030,70 +14019,47 @@ Tag: Axtel
 # Polish multiplay network. A *HUGE* source of spam! Brute-force, SSH,
 # WordPress/XMLRPC, and webapp attacks also detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 12,127.
-# Updated: 2023.09.20
+# Stop Forum Spam (SFS) listings: 1,270.
+# Updated: 2024.09.10
 
-37.47.138.91/32 Deny Attacks
-37.47.138.121/32 Deny Spam
-37.47.162.84/32 Deny Attacks
-46.134.8.212/32 Deny Spam
-46.134.20.149/32 Deny Spam
-46.134.38.212/32 Deny Spam
-46.134.40.158/32 Deny Spam
-46.134.57.147/32 Deny Spam
-46.134.129.245/32 Deny Spam
-46.134.144.60/32 Deny Spam
-46.134.149.189/32 Deny Spam
-46.134.175.42/32 Deny Attacks
-46.134.175.201/32 Deny Spam
-46.134.179.47/32 Deny Spam
-46.134.184.0/32 Deny Spam
-46.170.40.98/32 Deny Spam
-79.191.49.87/32 Deny Spam
-79.191.51.116/32 Deny Spam
-79.191.72.123/32 Deny Attacks
-79.191.72.254/32 Deny Spam
-79.191.73.2/32 Deny Attacks
-79.191.73.219/32 Deny Spam
-79.191.82.80/32 Deny Spam
-79.191.108.7/32 Deny Spam
-79.191.108.66/32 Deny Spam
-79.191.108.217/32 Deny Attacks
-79.191.111.187/32 Deny Spam
-79.191.141.87/32 Deny Spam
-79.191.145.103/32 Deny Attacks
-79.191.145.116/32 Deny Spam
-79.191.145.127/32 Deny Spam
-79.191.145.185/32 Deny Attacks
-79.191.146.139/32 Deny Spam
-79.191.148.98/32 Deny Spam
-79.191.176.210/32 Deny Spam
-79.191.240.141/32 Deny Attacks
-79.191.242.16/32 Deny Spam
-79.191.243.6/32 Deny Spam
-80.49.157.89/32 Deny Spam
-80.49.207.84/32 Deny Spam
-80.49.207.182/32 Deny Attacks
-80.49.235.96/32 Deny Spam
-83.11.55.51/32 Deny Attacks
-83.11.55.85/32 Deny Attacks
-83.11.55.188/32 Deny Attacks
-83.11.89.204/32 Deny Attacks
-83.21.6.194/32 Deny Attacks
+79.184.240.101/32 Deny Spam
+79.191.50.71/32 Deny Spam
+79.191.51.12/32 Deny Spam
+79.191.51.188/32 Deny Spam
+79.191.73.28/32 Deny Spam
+79.191.81.45/32 Deny Spam
+79.191.81.216/32 Deny Spam
+79.191.82.211/32 Deny Spam
+79.191.108.169/32 Deny Attacks
+79.191.109.56/32 Deny Spam
+79.191.141.92/32 Deny Spam
+79.191.142.19/32 Deny Spam
+79.191.173.110/32 Deny Spam
+79.191.176.222/32 Deny Spam
+79.191.241.151/32 Deny Spam
+80.49.155.128/32 Deny Spam
+80.49.206.49/32 Deny Spam
+80.49.206.207/32 Deny Spam
+80.51.7.66/32 Deny Spam
+83.11.55.44/32 Deny Attacks
+83.11.55.249/32 Deny Attacks
+83.11.89.137/32 Deny Attacks
+83.25.16.13/32 Deny Spam
 95.48.193.246/32 Deny Attacks
-95.49.191.93/32 Deny Spam
-178.43.251.244/32 Deny Spam
-188.47.29.241/32 Deny Attacks
-188.47.118.179/32 Deny Spam
+95.49.152.63/32 Deny Spam
+95.49.184.130/32 Deny Spam
+95.49.187.51/32 Deny Spam
+95.49.196.193/32 Deny Spam
+95.49.197.58/32 Deny Spam
+95.49.201.63/32 Deny Spam
 188.47.121.0/24 Deny Attacks
-212.244.88.13/32 Deny Attacks
+195.116.155.0/24 Deny Attacks
 212.244.88.51/32 Deny Attacks
-217.97.76.25/32 Deny Attacks
-217.97.76.30/32 Deny Spam
-217.97.77.14/32 Deny Spam
-217.97.77.37/32 Deny Attacks
-217.97.108.24/32 Deny Spam
-217.97.108.95/32 Deny Attacks
+213.25.116.141/32 Deny Spam
+217.96.133.56/32 Deny Spam
+217.96.178.152/32 Deny Spam
+217.97.76.127/32 Deny Attacks
+217.97.76.154/32 Deny Attacks
 Origin: PL
 Profile: Domestic ISP;Mobile ISP;Multiplay;Webhosting
 Tag: Orange Polska Spolka Akcyjna
@@ -15537,12 +15503,20 @@ Tag: Bell Canada
 # limited ADSL connectivity also provided. A significant source of spam here,
 # caught trying to hack honeypots, brute-force, SSH, and webapp attacks, and
 # unauthorised WordPress vulnerability scanners detected from here.
-# Stop Forum Spam (SFS) listings: 65,707 (AS16276), 3 (AS35540).
-# Updated: 2024.08.14
+# Stop Forum Spam (SFS) listings: 65,809 (AS16276), 3 (AS35540).
+# Updated: 2024.09.11
 
 31.24.253.0/24 Run bypasses.php
+31.56.6.0/24 Run bypasses.php
+31.56.37.0/24 Run bypasses.php
+31.56.52.0/22 Run bypasses.php
+31.56.112.0/22 Run bypasses.php
+31.56.117.0/24 Run bypasses.php
+31.56.118.0/23 Run bypasses.php
 45.82.82.0/24 Run bypasses.php
+191.96.153.0/24 Run bypasses.php
 Origin: AE
+89.249.201.0/24 Run bypasses.php
 188.164.156.0/24 Run bypasses.php
 Origin: AM
 193.57.33.0/24 Run bypasses.php
@@ -15564,6 +15538,7 @@ Origin: BG
 66.70.128.0/17 Run bypasses.php
 69.72.31.0/24 Run bypasses.php
 72.251.0.0/17 Run bypasses.php
+104.234.50.0/24 Run bypasses.php
 109.110.184.0/24 Run bypasses.php
 137.83.50.0/24 Run bypasses.php
 139.99.0.0/16 Run bypasses.php
@@ -15584,17 +15559,20 @@ Origin: BG
 198.245.48.0/20 Run bypasses.php
 206.168.174.0/23 Run bypasses.php
 Origin: CA
-178.236.237.0/24 Run bypasses.php
-Origin: CN
+185.167.232.0/24 Run bypasses.php
+Origin: CH
 192.124.170.0/24 Run bypasses.php
 212.192.253.0/24 Run bypasses.php
 Origin: CZ
+5.83.139.0/24 Run bypasses.php
 45.94.49.0/24 Run bypasses.php
-79.137.0.0/17 Run bypasses.php
+77.90.52.0/24 Run bypasses.php
 185.23.237.0/24 Run bypasses.php
 185.25.93.0/24 Run bypasses.php
 185.68.137.0/24 Run bypasses.php
 Origin: DE
+185.250.27.0/24 Run bypasses.php
+Origin: ES
 5.39.0.0/17 Run bypasses.php
 5.135.0.0/16 Run bypasses.php
 5.196.0.0/16 Run bypasses.php
@@ -15618,6 +15596,8 @@ Origin: DE
 57.128.0.0/16 Run bypasses.php
 57.129.0.0/17 Run bypasses.php
 57.130.0.0/16 Run bypasses.php
+79.137.0.0/17 Run bypasses.php
+83.136.212.0/24 Run bypasses.php
 83.136.214.0/23 Run bypasses.php
 87.98.128.0/17 Run bypasses.php
 91.121.0.0/16 Run bypasses.php
@@ -15650,6 +15630,7 @@ Origin: DE
 178.32.0.0/15 Run bypasses.php
 185.12.32.0/23 Run bypasses.php
 185.15.68.0/22 Run bypasses.php
+185.33.26.0/24 Run bypasses.php
 185.135.188.0/24 Run bypasses.php
 185.255.28.0/24 Run bypasses.php
 188.165.0.0/16 Run bypasses.php
@@ -15682,6 +15663,7 @@ Origin: IE
 45.66.83.0/24 Run bypasses.php
 80.71.226.0/24 Run bypasses.php
 Origin: IT
+45.151.45.0/24 Run bypasses.php
 86.38.156.0/24 Run bypasses.php
 Origin: LT
 144.2.32.0/19 Run bypasses.php
@@ -15708,18 +15690,22 @@ Origin: RU
 64.95.150.0/23 Run bypasses.php
 64.225.244.0/23 Run bypasses.php
 91.198.19.0/24 Run bypasses.php
+91.246.38.0/24 Run bypasses.php
 104.225.253.0/24 Run bypasses.php
 117.18.104.0/24 Run bypasses.php
 123.100.227.0/24 Run bypasses.php
 148.222.40.0/22 Run bypasses.php
 167.234.38.0/24 Run bypasses.php
 198.49.103.0/24 Run bypasses.php
+202.2.60.0/22 Run bypasses.php
 216.183.120.0/24 Run bypasses.php
 216.203.15.0/24 Run bypasses.php
+217.11.174.0/24 Run bypasses.php
 Origin: SE
 46.28.236.0/24 Run bypasses.php
 185.228.207.0/24 Run bypasses.php
 Origin: TR
+45.81.112.0/24 Run bypasses.php
 89.251.22.0/24 Run bypasses.php
 Origin: UA
 8.7.244.0/24 Run bypasses.php
@@ -15736,10 +15722,8 @@ Origin: UA
 8.33.136.0/23 Run bypasses.php
 15.204.0.0/16 Run bypasses.php
 23.92.224.0/19 Run bypasses.php
-23.95.142.0/24 Run bypasses.php
 23.151.184.0/24 Run bypasses.php
 23.171.168.0/24 Run bypasses.php
-23.174.184.0/24 Run bypasses.php
 31.6.62.0/24 Run bypasses.php
 40.160.0.0/17 Run bypasses.php
 40.160.224.0/24 Run bypasses.php
@@ -15748,6 +15732,8 @@ Origin: UA
 40.160.230.0/24 Run bypasses.php
 40.160.232.0/24 Run bypasses.php
 40.160.234.0/24 Run bypasses.php
+40.160.236.0/24 Run bypasses.php
+40.160.238.0/24 Run bypasses.php
 46.244.32.0/20 Run bypasses.php
 51.81.0.0/16 Run bypasses.php
 64.94.92.0/23 Run bypasses.php
@@ -15758,7 +15744,9 @@ Origin: UA
 107.189.64.0/18 Run bypasses.php
 116.206.98.0/24 Run bypasses.php
 135.148.0.0/16 Run bypasses.php
+144.172.73.0/24 Run bypasses.php
 147.135.0.0/17 Run bypasses.php
+157.254.155.0/24 Run bypasses.php
 164.153.186.0/24 Run bypasses.php
 167.253.62.0/24 Run bypasses.php
 168.245.185.0/24 Run bypasses.php
@@ -15769,7 +15757,6 @@ Origin: UA
 192.31.246.0/24 Run bypasses.php
 192.70.246.0/23 Run bypasses.php
 192.240.152.0/21 Run bypasses.php
-198.23.222.0/24 Run bypasses.php
 199.193.138.0/24 Run bypasses.php
 199.195.140.0/23 Run bypasses.php
 206.206.126.0/24 Run bypasses.php
@@ -17158,57 +17145,43 @@ Tag: Dot Internet
 # Pakistan streaming provider and domestic ISP. Brute-force, DDoS, and webapp
 # attacks, port scans, hacking, and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 67 (AS134732), 618 (AS136384).
-# Updated: 2023.09.28
+# Stop Forum Spam (SFS) listings: 89 (AS134732), 392 (AS136384).
+# Updated: 2024.09.09
 
+45.248.150.28/32 Deny Attacks
+45.248.150.187/32 Deny Attacks
+45.248.150.214/32 Deny Attacks
+45.248.150.245/32 Deny Attacks
 45.248.151.0/24 Deny Attacks
-59.153.100.102/32 Deny Attacks
 59.153.100.154/32 Deny Attacks
 59.153.101.17/32 Deny Attacks
-59.153.101.83/32 Deny Attacks
-59.153.101.201/32 Deny Attacks
 59.153.102.0/23 Deny Attacks
-103.198.139.62/32 Deny Attacks
-103.198.139.105/32 Deny Attacks
-103.217.110.55/32 Deny Spam
-103.217.110.202/32 Deny Attacks
-103.217.110.247/32 Deny Attacks
-103.217.111.0/24 Deny Attacks
+103.178.67.208/32 Deny Spam
+103.187.94.60/32 Deny Spam
+103.198.139.0/24 Deny Attacks
+103.217.110.0/23 Deny Attacks
 Origin: BD
-43.251.252.8/32 Deny Attacks
-43.251.252.84/32 Deny Spam
-43.251.252.132/32 Deny Attacks
-43.251.252.164/32 Deny Attacks
-43.251.252.224/32 Deny Attacks
-43.251.253.47/32 Deny Attacks
-43.251.253.84/32 Deny Attacks
-43.251.253.106/32 Deny Attacks
-43.251.253.169/32 Deny Attacks
-43.251.253.202/32 Deny Attacks
-43.251.254.11/32 Deny Attacks
-43.251.254.50/32 Deny Attacks
-43.251.255.0/24 Deny Attacks
-103.86.53.122/32 Deny Attacks
-103.86.53.250/32 Deny Spam
+43.251.252.53/32 Deny Spam
+43.251.252.130/32 Deny Attacks
+43.251.253.0/24 Deny Attacks
+43.251.254.0/23 Deny Attacks
+103.86.53.0/24 Deny Attacks
 103.86.55.0/24 Deny Attacks
-202.165.232.168/32 Deny Spam
-202.165.233.67/32 Deny Attacks
-202.165.233.239/32 Deny Attacks
-202.165.233.243/32 Deny Attacks
-202.165.236.107/32 Deny Spam
+202.165.227.130/32 Deny Spam
+202.165.232.2/32 Deny Attacks
+202.165.232.92/32 Deny Attacks
+202.165.232.122/32 Deny Spam
+202.165.232.207/32 Deny Attacks
+202.165.233.0/24 Deny Attacks
 Origin: PK
-205.164.131.156/32 Deny Attacks
-205.164.131.236/32 Deny Attacks
+205.164.131.0/24 Deny Attacks
 205.164.132.216/32 Deny Attacks
-205.164.134.6/32 Deny Attacks
-205.164.135.0/24 Deny Attacks
-205.164.136.26/32 Deny Attacks
-205.164.136.134/32 Deny Attacks
-205.164.136.230/32 Deny Attacks
-205.164.152.165/32 Deny Spam
-205.164.152.228/32 Deny Spam
-205.164.154.0/23 Deny Attacks
-205.164.156.0/22 Deny Attacks
+205.164.134.46/32 Deny Attacks
+205.164.136.0/24 Deny Attacks
+205.164.137.217/32 Deny Attacks
+205.164.150.237/32 Deny Spam
+205.164.152.0/21 Deny Attacks
+206.0.193.211/32 Deny Spam
 Origin: US
 Profile: Domestic ISP;Multiplay
 Tag: Optix Pakistan
@@ -20710,7 +20683,7 @@ Tag: GORAKHPUR NET
 # XMLRPC/WordPress, and XSS attacks, port scans, hacking, and spam detected
 # from here. Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 4 (AS23520), 11 (AS262191).
-# Updated: 2024.08.08
+# Updated: 2024.08.08 / Modified: 2024.09.11
 
 45.173.6.0/24 Deny Attacks
 138.121.15.227/32 Deny Attacks
@@ -20730,6 +20703,7 @@ Origin: CO
 190.109.2.86/32 Deny Attacks
 190.109.2.89/32 Deny Attacks
 Origin: PA
+45.127.192.98/32 Deny Attacks
 72.252.4.254/32 Deny Attacks
 72.252.200.80/32 Deny Attacks
 Origin: US
@@ -24983,13 +24957,14 @@ Tag: CABO VERDE TELECOM
 # Russian multiplay ISP. Brute-force, SSH, WordPress/XMLRPC, cPanel, and webapp
 # attacks, port scans, hacking, and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 12.
-# Updated: 2023.03.25 / Checked: 2024.01.11
+# Stop Forum Spam (SFS) listings: 4.
+# Updated: 2024.09.11
 
+62.68.146.66/32 Deny Attacks
+62.68.146.150/32 Deny Attacks
+62.68.146.235/32 Deny Attacks
 109.248.175.0/24 Deny Attacks
 Origin: RU
-185.244.175.0/24 Deny Attacks
-Origin: SC
 Profile: Domestic ISP;Mobile ISP;Multiplay
 Tag: JSC Avantel
 
@@ -27081,6 +27056,18 @@ Tag: Lintas Data Prima
 Origin: IN
 Profile: Domestic ISP;Infrastructure/Transit
 Tag: Excitel
+
+
+# ASN 265351 ("INFOARTES TELECOM LTDA").
+# Brazilian multiplay ISP. Brute-force, SSH, webapp attacks, and hacking
+# detected from here. Listing just the affected ranges/addresses only.
+# Updated: 2024.09.11
+
+168.181.236.0/24 Deny Attacks
+168.181.239.0/24 Deny Attacks
+Origin: BR
+Profile: Commercial;Domestic ISP;Multiplay
+Tag: INFOARTES TELECOM LTDA
 
 
 # ---

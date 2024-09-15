@@ -458,3 +458,5 @@
 ### v3.8.0
 
 [2024.09.07; Maikuolan]: Added a default signature bypass for Skype URL Preview.
+
+[2024.09.15; Maikuolan]: Updated the default regular expression pattern for the sensitive pages check.

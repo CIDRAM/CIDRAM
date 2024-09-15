@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2024.09.08).
+# This file: Defaults file (last modified: 2024.09.15).
 ##/
 
 Config Defaults:
@@ -353,6 +353,7 @@ Config Defaults:
     ja: "日本語"
     ko: "한국어"
     lv: "Latviešu"
+    ml: "മലയാളം"
     mr: "मराठी"
     ms: "Bahasa Melayu"
     nl: "Nederlandse"
@@ -401,6 +402,7 @@ Config Defaults:
     ja: "ja-JP"
     ko: "ko-KR"
     lv: "lv-LV"
+    ml: "ml-IN"
     mo: "ro-MO"
     mr: "mr-IN"
     ms: "ms-MY"
@@ -557,7 +559,7 @@ Config Defaults:
    preview: "seconds"
   sensitive:
    type: "string"
-   default: "~/(?:comprofiler|user)/(?:login|register)|[/=](?:activate|contact|login|regist(?:er|ration)|signup)|act(?:ion)?=(?:edit|reg)|(?:activate|con(?:firm|tact)|login|newuser|reg(?:ist(?:er|ration))?|signin|signup)(?:\.php|[/=])|special:userlogin&|verifyemail|wp-comments-post~i"
+   default: "~[/=](?:activate|contact|login|regist(?:er|ration)|signup)|act(?:ion)?=(?:edit|reg)|(?:activate|con(?:firm|tact)|login|lost-password|my-account|newuser|reg(?:ist(?:er|ration))?|signin|signup)(?:\\.php|[/=])|special:userlogin&|verifyemail|wp-comments-post~i"
   email_notification_address:
    type: "string"
    default: ""

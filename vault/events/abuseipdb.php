@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: AbuseIPDB event handlers (last modified: 2024.02.17).
+ * This file: AbuseIPDB event handlers (last modified: 2024.09.15).
  */
 
 /**
@@ -144,6 +144,9 @@ $this->Events->addHandler('reporterFinished', function (): void {
             $ToLog = $this->L10N->getString('response.Multiple IP addresses (bulk reporting)');
             $this->Events->fireEvent('writeToReportLog', $ToLog, $ToLog);
         } else {
+            if (substr($Entry[3], 0, 18) === 'Automated report (' && substr($Entry[3], 43, 2) === ').') {
+                $Entry[3] = substr($Entry[3], 46);
+            }
             $this->Events->fireEvent('writeToReportLog', $Entry[3], $Entry[1]);
         }
     }

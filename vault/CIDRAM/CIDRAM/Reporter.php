@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Report orchestrator (last modified: 2024.02.17).
+ * This file: Report orchestrator (last modified: 2024.09.12).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -125,7 +125,7 @@ class Reporter
         if ($this->Events->assigned('writeToReportLog')) {
             foreach ($this->Reports as $Report) {
                 /** Guard. */
-                if (empty($Report['Comments']) || empty($Report['IP'])) {
+                if (count($Report['Comments']) === 0 || $Report['IP'] === '') {
                     continue;
                 }
 

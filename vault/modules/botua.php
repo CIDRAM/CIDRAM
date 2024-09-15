@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bot user agents module (last modified: 2024.08.27).
+ * This file: Bot user agents module (last modified: 2024.09.15).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -215,7 +215,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     $this->trigger(preg_match(
         '~\.buzz|(?<!amazona)dbot/|(?:\W|^)(?:cu|pe)rl(?:\W|$)|#boss#|' .
         '^(?:[aim]$|(?!linkedinbot).*http-?(?:agent|client))|' .
-        'a(?:bonti|ccserver|cme.spider|dreview/\d|jbaxy|nthill$|nyevent-http|ppengine)|' .
+        'a(?:bonti|ccserver|cme.spider|dreview/\d|jbaxy|nthill$|nyevent-http|ppengine|xios)|' .
         'b(?:abbar\.tech|igbozz|lackbird|logsearch|logbot|salsa)|' .
         'c(?:astlebot|atexplorador|k=\{\}|lickagy|liqzbot|ontextad|orporama|ortex/\d|rowsnest|yberpatrol)|' .
         'd(?:eepfield|le_spider|nbcrawler|omainappender|umprendertree)|' .
@@ -240,7 +240,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     ) || preg_match(
         '~^Mozilla/5\.0( [A-Za-z]{2,5}/0\..)?$~',
         $this->BlockInfo['UA']
-    ), 'Unauthorised'); // 2023.09.15 mod 2024.08.14
+    ), 'Unauthorised'); // 2023.09.15 mod 2024.09.15
 
     if ($this->trigger(preg_match('~ivre-|masscan~', $UANoSpace), 'Port scanner and synflood tool detected')) {
         $this->Reporter->report([14, 15, 19], ['MASSCAN port scanner and synflood tool detected.'], $this->BlockInfo['IPAddr']);

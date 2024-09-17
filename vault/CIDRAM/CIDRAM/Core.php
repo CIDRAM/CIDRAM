@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2024.09.02).
+ * This file: The CIDRAM core (last modified: 2024.09.17).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -2092,11 +2092,10 @@ class Core
         foreach ($Criteria as $TestCase) {
             $this->CIDRAM['Last aux regex matches'] = [];
             if ($Method === 'Auto') {
-                $Boundary = substr($TestCase, 0, 1);
+                $Boundary = preg_quote(substr($TestCase, 0, 1));
                 if (
-                    !preg_match('~^[\0-\x20\dA-Za-z\xC0-\xFF]$~', $Boundary) &&
-                    ($Boundary = preg_quote($Boundary) || true) &&
-                    preg_match($Boundary === '~' ? '/^' . $Boundary . '.+' . $Boundary . 'i?m?s?x?A?D?S?U?u?n?$/' : '~^' . $Boundary . '.*' . $Boundary . 'i?m?s?x?A?D?S?U?u?n?$~', $TestCase)
+                    preg_match('~^(?!\\\\)(?![\0-\x20\dA-Za-z\xC0-\xFF]).$~', $Boundary) &&
+                    preg_match($Boundary === '~' ? '/^' . $Boundary . '.+' . $Boundary . 'i?m?s?x?A?D?S?U?u?n?$/' : '~^' . $Boundary . '.+' . $Boundary . 'i?m?s?x?A?D?S?U?u?n?$~', $TestCase)
                 ) {
                     $Operator = $Negate ? '≇' : '≅';
                 } else {

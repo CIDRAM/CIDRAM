@@ -1,16 +1,16 @@
 CIDRAM Core:
  Name: "CIDRAM Core"
- Version: "3.8.0-DEV+242580"
+ Version: "3.8.0-DEV+242600"
  Dependencies:
   PHP: "^7.2|^8"
-  CIDRAM Front-End: "^3.7"
+  CIDRAM Front-End: "Latest"
   Common Classes Package: "^2.12.2"
   l10n/core/{lang}: ">=2024.127"
   l10n/frontend/{lang}: ">=2024.183"
  Changelog: "https://github.com/CIDRAM/CIDRAM/blob/v3/Changelog.md"
  Release Notes For: ["3.2.0", "3.2.1", "3.3.0", "3.4.0", "3.4.1", "3.4.2", "3.5.0", "3.5.1", "3.6.0", "3.7.0"]
  When Update Succeeds:
-  - "wpVer 4.8.0 6.6.1 3.7.0 7.2"
+  - "wpVer 4.8.0 6.6.2 3.7.0 7.2"
   - "foreach {Components.RemoteMeta.CIDRAM Core.Release Notes For} as Key => Value if {Components.Meta.CIDRAM Core.Version}<{Value}&&{Components.RemoteMeta.CIDRAM Core.Version}>={Value} then queue message response.release_notes https://github.com/CIDRAM/CIDRAM/releases/tag/v{Value} CIDRAM v{Value}"
  Uninstallable: false
  Files:
@@ -28,7 +28,7 @@ CIDRAM Core:
    Checksum: "8bfa4d8f80d7adef8670529cd229de10682a538ae139b9af972d2cfe803476e2:4843"
   CIDRAM/CIDRAM/Core.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Core.php"
-   Checksum: "41dbb2bf604b40839f035f20817d4ea3688e42ab243bbb693a714bb40988c464:139443"
+   Checksum: "5f2d44d7c3cc9e1704f25e8a624a1ef42423377028be20263634fa6d0938adc2:139400"
   CIDRAM/CIDRAM/Duration.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Duration.php"
    Checksum: "2407aa5cd6fa8f1bfd789d4d8e4cd37cba050dc7bb1ecc9c8387f75f14049c7c:11651"
@@ -64,10 +64,10 @@ CIDRAM Core:
    Checksum: "41a83d83f1741c896e6f97a285b3de7be6343a40b95a3bd66f8e96de35c05a3b:12577"
 CIDRAM Front-End:
  Name: "CIDRAM Front-End"
- Version: "3.7.0"
+ Version: "3.8.0-DEV+242600"
  Dependencies:
   PHP: "^7.2|^8"
-  CIDRAM Core: "^3.7"
+  CIDRAM Core: "Latest"
   Common Classes Package: "^2.12.2"
   l10n/core/{lang}: ">=2024.127"
   l10n/frontend/{lang}: ">=2024.183"
@@ -427,7 +427,7 @@ CIDRAM Front-End:
    Checksum: "d4fd87cbef26decd86202794a37c14112806eaf0eb9e497e3b0e4a9601e9175b:16401"
   CIDRAM/CIDRAM/AuxiliaryRules.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/AuxiliaryRules.php"
-   Checksum: "60433d2639806494c1d1ffb7908c5812c9751126e77214509de0430b62a31888:42518"
+   Checksum: "263092c7930bac16387c0d99edc5b566aaaa71ee3b09535061897f26a892f0dc:42400"
   CIDRAM/CIDRAM/CLI.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/CLI.php"
    Checksum: "3c3a6705e2665051930d5dc7002e0c4b304a4690f4262e19bd7f9d01ca9b29a5:29876"

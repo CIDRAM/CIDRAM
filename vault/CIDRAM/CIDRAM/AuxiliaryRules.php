@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used for auxiliary rules (last modified: 2024.07.23).
+ * This file: Methods used for auxiliary rules (last modified: 2024.09.17).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -500,11 +500,10 @@ trait AuxiliaryRules
                             } elseif ($Data['Method'] === 'WinEx') {
                                 $Operator = strpos($Value, '*') === false ? '≠' : '≉';
                             } elseif ($Data['Method'] === 'Auto') {
-                                $Boundary = substr($Value, 0, 1);
+                                $Boundary = preg_quote(substr($Value, 0, 1));
                                 if (
-                                    !preg_match('~^[\0-\x20\dA-Za-z\xC0-\xFF]$~', $Boundary) &&
-                                    ($Boundary = preg_quote($Boundary) || true) &&
-                                    preg_match($Boundary === '~' ? '/^' . $Boundary . '.+' . $Boundary . 'i?m?s?x?A?D?S?U?u?n?$/' : '~^' . $Boundary . '.*' . $Boundary . 'i?m?s?x?A?D?S?U?u?n?$~', $Value)
+                                    preg_match('~^(?!\\\\)(?![\0-\x20\dA-Za-z\xC0-\xFF]).$~', $Boundary) &&
+                                    preg_match($Boundary === '~' ? '/^' . $Boundary . '.+' . $Boundary . 'i?m?s?x?A?D?S?U?u?n?$/' : '~^' . $Boundary . '.+' . $Boundary . 'i?m?s?x?A?D?S?U?u?n?$~', $Value)
                                 ) {
                                     $Operator = '≇';
                                 } else {
@@ -538,11 +537,10 @@ trait AuxiliaryRules
                             } elseif ($Data['Method'] === 'WinEx') {
                                 $Operator = strpos($Value, '*') === false ? '=' : '≈';
                             } elseif ($Data['Method'] === 'Auto') {
-                                $Boundary = substr($Value, 0, 1);
+                                $Boundary = preg_quote(substr($Value, 0, 1));
                                 if (
-                                    !preg_match('~^[\0-\x20\dA-Za-z\xC0-\xFF]$~', $Boundary) &&
-                                    ($Boundary = preg_quote($Boundary) || true) &&
-                                    preg_match($Boundary === '~' ? '/^' . $Boundary . '.+' . $Boundary . 'i?m?s?x?A?D?S?U?u?n?$/' : '~^' . $Boundary . '.*' . $Boundary . 'i?m?s?x?A?D?S?U?u?n?$~', $Value)
+                                    preg_match('~^(?!\\\\)(?![\0-\x20\dA-Za-z\xC0-\xFF]).$~', $Boundary) &&
+                                    preg_match($Boundary === '~' ? '/^' . $Boundary . '.+' . $Boundary . 'i?m?s?x?A?D?S?U?u?n?$/' : '~^' . $Boundary . '.+' . $Boundary . 'i?m?s?x?A?D?S?U?u?n?$~', $Value)
                                 ) {
                                     $Operator = '≅';
                                 } else {

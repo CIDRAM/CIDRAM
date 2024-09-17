@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Report to AbuseIPDB page (last modified: 2024.02.20).
+ * This file: Report to AbuseIPDB page (last modified: 2024.09.17).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -30,7 +30,7 @@ if (!isset($_POST['apikey']) && isset($this->Configuration['abuseipdb']['api_key
 
 /** Populate inputs and textareas. */
 foreach (['address', 'comment', 'apikey', 'endpoint'] as $Field) {
-    $this->FE[$Field] = isset($_POST[$Field]) ? str_replace(['&', '<', '>', '"'], ['&amp;', '&lt;', '&gt;', '&quot;'], $_POST[$Field]) : '';
+    $this->FE[$Field] = isset($_POST[$Field]) ? str_replace(['&', '<', '>', '"'], ['&amp;', '&lt;', '&gt;', '&quot;'], $this->desabotage($_POST[$Field])) : '';
 }
 
 /** Populate timezones. */

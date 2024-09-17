@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The file manager page (last modified: 2024.09.02).
+ * This file: The file manager page (last modified: 2024.09.17).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -66,6 +66,16 @@ foreach ($this->Components['Components'] as $ComponentName => $ComponentData) {
     }
 }
 
+$FMData = [];
+
+/** Desabotage POST data. */
+foreach (['filename', 'filename_new', 'content'] as $Key) {
+    if (isset($_POST[$Key])) {
+        $FMData[$Key] = $this->desabotage($_POST[$Key]);
+    }
+}
+unset($Key);
+
 if (isset($_POST['do'], $_FILES['upload-file']['name']) && $_POST['do'] === 'upload-file') {
     /** Check whether safe. */
     $SafeToContinue = (
@@ -104,24 +114,24 @@ if (isset($_POST['do'], $_FILES['upload-file']['name']) && $_POST['do'] === 'upl
         $this->FE['state_msg'] = $this->L10N->getString('response.Failed to upload');
     }
 } elseif (
-    isset($_POST['filename'], $_POST['do']) &&
-    is_readable($this->Vault . $_POST['filename']) &&
-    $this->pathSecurityCheck($_POST['filename'])
+    isset($FMData['filename'], $_POST['do']) &&
+    is_readable($this->Vault . $FMData['filename']) &&
+    $this->pathSecurityCheck($FMData['filename'])
 ) {
     /** Delete a file. */
     if ($_POST['do'] === 'delete-file') {
-        if (is_dir($this->Vault . $_POST['filename'])) {
+        if (is_dir($this->Vault . $FMData['filename'])) {
             if (
-                $this->isDirEmpty($this->Vault . $_POST['filename']) &&
-                rmdir($this->Vault . $_POST['filename'])
+                $this->isDirEmpty($this->Vault . $FMData['filename']) &&
+                rmdir($this->Vault . $FMData['filename'])
             ) {
                 $this->FE['state_msg'] = $this->L10N->getString('response.Directory successfully deleted');
             } else {
                 $this->FE['state_msg'] = $this->L10N->getString('response.Failed to delete');
             }
-        } elseif (unlink($this->Vault . $_POST['filename'])) {
+        } elseif (unlink($this->Vault . $FMData['filename'])) {
             /** Remove empty directories. */
-            $this->deleteDirectory($_POST['filename']);
+            $this->deleteDirectory($FMData['filename']);
 
             $this->FE['state_msg'] = $this->L10N->getString('response.File successfully deleted');
         } else {
@@ -130,29 +140,29 @@ if (isset($_POST['do'], $_FILES['upload-file']['name']) && $_POST['do'] === 'upl
     }
 
     /** Rename a file. */
-    if ($_POST['do'] === 'rename-file' && isset($_POST['filename'])) {
-        if (isset($_POST['filename_new'])) {
+    if ($_POST['do'] === 'rename-file' && isset($FMData['filename'])) {
+        if (isset($FMData['filename_new'])) {
             /** Check whether safe. */
             $SafeToContinue = (
-                $this->pathSecurityCheck($_POST['filename']) &&
-                $this->pathSecurityCheck($_POST['filename_new']) &&
-                $_POST['filename'] !== $_POST['filename_new']
+                $this->pathSecurityCheck($FMData['filename']) &&
+                $this->pathSecurityCheck($FMData['filename_new']) &&
+                $FMData['filename'] !== $FMData['filename_new']
             );
 
             /** If the destination already exists, delete it before renaming the new file. */
             if (
                 $SafeToContinue &&
-                file_exists($this->Vault . $_POST['filename_new']) &&
-                is_readable($this->Vault . $_POST['filename_new'])
+                file_exists($this->Vault . $FMData['filename_new']) &&
+                is_readable($this->Vault . $FMData['filename_new'])
             ) {
-                if (is_dir($this->Vault . $_POST['filename_new'])) {
+                if (is_dir($this->Vault . $FMData['filename_new'])) {
                     if (
-                        !$this->isDirEmpty($this->Vault . $_POST['filename_new']) ||
-                        !rmdir($this->Vault . $_POST['filename_new'])
+                        !$this->isDirEmpty($this->Vault . $FMData['filename_new']) ||
+                        !rmdir($this->Vault . $FMData['filename_new'])
                     ) {
                         $SafeToContinue = false;
                     }
-                } elseif (!unlink($this->Vault . $_POST['filename_new'])) {
+                } elseif (!unlink($this->Vault . $FMData['filename_new'])) {
                     $SafeToContinue = false;
                 }
             }
@@ -160,15 +170,15 @@ if (isset($_POST['do'], $_FILES['upload-file']['name']) && $_POST['do'] === 'upl
             /** Rename the file. */
             if ($SafeToContinue) {
                 /** Add parent directories. */
-                $this->buildPath($this->Vault . $_POST['filename_new']);
+                $this->buildPath($this->Vault . $FMData['filename_new']);
 
-                if (rename($this->Vault . $_POST['filename'], $this->Vault . $_POST['filename_new'])) {
+                if (rename($this->Vault . $FMData['filename'], $this->Vault . $FMData['filename_new'])) {
                     /** Remove empty directories. */
-                    $this->deleteDirectory($_POST['filename']);
+                    $this->deleteDirectory($FMData['filename']);
 
                     /** Update state message. */
                     $this->FE['state_msg'] = $this->L10N->getString(
-                        is_dir($this->Vault . $_POST['filename_new']) ? 'response.Directory successfully renamed' : 'response.File successfully renamed'
+                        is_dir($this->Vault . $FMData['filename_new']) ? 'response.Directory successfully renamed' : 'response.File successfully renamed'
                     );
                 } else {
                     $this->FE['state_msg'] = $this->L10N->getString('response.Failed to rename');
@@ -177,8 +187,8 @@ if (isset($_POST['do'], $_FILES['upload-file']['name']) && $_POST['do'] === 'upl
                 $this->FE['state_msg'] = $this->L10N->getString('response.Failed to rename');
             }
         } else {
-            $this->FE['FE_Title'] .= ' – ' . $this->L10N->getString('field.Rename') . ' – ' . $_POST['filename'];
-            $this->FE['filename'] = $_POST['filename'];
+            $this->FE['FE_Title'] .= ' – ' . $this->L10N->getString('field.Rename') . ' – ' . $FMData['filename'];
+            $this->FE['filename'] = $FMData['filename'];
 
             /** Parse output. */
             $this->FE['FE_Content'] = $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_files_rename.html')), true);
@@ -192,33 +202,33 @@ if (isset($_POST['do'], $_FILES['upload-file']['name']) && $_POST['do'] === 'upl
 
     /** Edit a file. */
     if ($_POST['do'] === 'edit-file') {
-        if (isset($_POST['content'])) {
-            $_POST['content'] = str_replace("\r", '', $_POST['content']);
-            $this->CIDRAM['OldData'] = $this->readFile($this->Vault . $_POST['filename']);
+        if (isset($FMData['content'])) {
+            $FMData['content'] = str_replace("\r", '', $FMData['content']);
+            $this->CIDRAM['OldData'] = $this->readFile($this->Vault . $FMData['filename']);
             if (strpos($this->CIDRAM['OldData'], "\r\n") !== false && strpos($this->CIDRAM['OldData'], "\n\n") === false) {
-                $_POST['content'] = str_replace("\n", "\r\n", $_POST['content']);
+                $FMData['content'] = str_replace("\n", "\r\n", $FMData['content']);
             }
 
-            $Handle = fopen($this->Vault . $_POST['filename'], 'wb');
-            fwrite($Handle, $_POST['content']);
+            $Handle = fopen($this->Vault . $FMData['filename'], 'wb');
+            fwrite($Handle, $FMData['content']);
             fclose($Handle);
 
             $this->FE['state_msg'] = $this->L10N->getString('response.File successfully modified');
         } else {
-            $this->FE['FE_Title'] .= ' – ' . $_POST['filename'];
-            $this->FE['filename'] = $_POST['filename'];
-            $this->FE['content'] = htmlentities($this->readFile($this->Vault . $_POST['filename']));
+            $this->FE['FE_Title'] .= ' – ' . $FMData['filename'];
+            $this->FE['filename'] = $FMData['filename'];
+            $this->FE['content'] = htmlentities($this->readFile($this->Vault . $FMData['filename']));
 
             /** Component update file overwrite warning. */
-            if (isset($this->Components['Files'][$_POST['filename']])) {
+            if (isset($this->Components['Files'][$FMData['filename']])) {
                 $this->FE['state_msg'] = sprintf(
                     $this->L10N->getString('warning.Likely to be overwritten'),
-                    $this->Components['Files'][$_POST['filename']]
+                    $this->Components['Files'][$FMData['filename']]
                 );
             }
 
             /** PHP file warning. */
-            if (preg_match('~\.php$~i', $_POST['filename'])) {
+            if (preg_match('~\.php$~i', $FMData['filename'])) {
                 $this->FE['JS'] .= "\nfunction wfp(d){};";
                 if ($this->FE['state_msg'] !== '') {
                     $this->FE['state_msg'] .= '<br />';
@@ -245,11 +255,14 @@ if (isset($_POST['do'], $_FILES['upload-file']['name']) && $_POST['do'] === 'upl
         $this->Events->fireEvent('final');
         header('Content-Type: application/octet-stream');
         header('Content-Transfer-Encoding: Binary');
-        header('Content-disposition: attachment; filename="' . basename($_POST['filename']) . '"');
-        echo $this->readFile($this->Vault . $_POST['filename']);
+        header('Content-disposition: attachment; filename="' . basename($FMData['filename']) . '"');
+        echo $this->readFile($this->Vault . $FMData['filename']);
         die;
     }
 }
+
+/** Cleanup. */
+unset($FMData);
 
 /** Template for file rows. */
 $this->FE['FilesRow'] = $this->readFile($this->getAssetPath('_files_row.html'));

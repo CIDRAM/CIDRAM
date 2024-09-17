@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2024.08.02).
+ * This file: General methods used by the front-end (last modified: 2024.09.17).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1481,5 +1481,36 @@ trait FrontEndMethods
     private function escapeJsInHTML(string $In): string
     {
         return str_replace(['"', '<', '>', '\\\\n'], ['&#34;', '&lt;', '&gt;', '\\n'], addslashes($In));
+    }
+
+    /**
+     * Attempts to compensate for cases where the environment might be messing
+     * around with POST data and such, negatively affecting CIDRAM functionality.
+     *
+     * @param mixed $Data The data potentially being messed around with.
+     * @return mixed
+     */
+    private function desabotage($Data)
+    {
+        if (is_array($Data)) {
+            foreach ($Data as &$Entry) {
+                $Entry = $this->desabotage($Entry);
+            }
+            return $Data;
+        }
+
+        /**
+         * Errant slashes produced by WordPress throughout all POST data breaks
+         * any changes made to auxiliary rules via the auxiliary rules page, to
+         * files via the file manager, and possibly elsewhere.
+         *
+         * @link https://core.trac.wordpress.org/ticket/18322
+         * @link https://developer.wordpress.org/reference/functions/wp_unslash/
+         */
+        if (is_string($Data) && $Data !== '' && function_exists('wp_unslash')) {
+            return wp_unslash($Data);
+        }
+
+        return $Data;
     }
 }

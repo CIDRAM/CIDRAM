@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The IP testing page (last modified: 2024.03.18).
+ * This file: The IP testing page (last modified: 2024.09.17).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -58,7 +58,7 @@ $this->FE['SensitiveSwitch'] = $this->CIDRAM['isSensitive'] ? ' checked' : '';
 
 /** Fetch and repopulate all fields. */
 foreach (['ip-addr', 'ip-addr-focus', 'custom-query', 'custom-referrer', 'custom-ua', 'custom-ua-focus'] as $Field) {
-    $this->FE[$Field] = isset($_POST[$Field]) ? str_replace(['&', '<', '>', '"'], ['&amp;', '&lt;', '&gt;', '&quot;'], $_POST[$Field]) : '';
+    $this->FE[$Field] = isset($_POST[$Field]) ? str_replace(['&', '<', '>', '"'], ['&amp;', '&lt;', '&gt;', '&quot;'], $this->desabotage($_POST[$Field])) : '';
 }
 unset($Field);
 

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The auxiliary rules edit mode page (last modified: 2023.12.13).
+ * This file: The auxiliary rules edit mode page (last modified: 2024.09.17).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -30,60 +30,57 @@ $this->processMinifiedFormData('minifiedFormData');
 if (isset($_POST['rulePriority']) && is_array($_POST['rulePriority'])) {
     $NewAuxArr = [];
     foreach ($_POST['rulePriority'] as $Iterant => $Priority) {
-        if (
-            !isset($_POST['ruleName'][$Iterant]) ||
-            !strlen($_POST['ruleName'][$Iterant]) ||
-            $_POST['ruleName'][$Iterant] === ' '
-        ) {
+        if (!isset($_POST['ruleName'][$Iterant]) || !strlen($_POST['ruleName'][$Iterant]) || $_POST['ruleName'][$Iterant] === ' ') {
             continue;
         }
-        $NewAuxArr[$_POST['ruleName'][$Iterant]] = ['Priority' => $Priority];
+        $RuleName = $this->desabotage($_POST['ruleName'][$Iterant]);
+        $NewAuxArr[$RuleName] = ['Priority' => $Priority];
         if (!empty($_POST['mtd'][$Iterant])) {
             if ($_POST['mtd'][$Iterant] === 'mtdReg') {
-                $NewAuxArr[$_POST['ruleName'][$Iterant]]['Method'] = 'RegEx';
+                $NewAuxArr[$RuleName]['Method'] = 'RegEx';
             } elseif ($_POST['mtd'][$Iterant] === 'mtdWin') {
-                $NewAuxArr[$_POST['ruleName'][$Iterant]]['Method'] = 'WinEx';
+                $NewAuxArr[$RuleName]['Method'] = 'WinEx';
             } elseif ($_POST['mtd'][$Iterant] === 'mtdDMA') {
-                $NewAuxArr[$_POST['ruleName'][$Iterant]]['Method'] = 'Auto';
+                $NewAuxArr[$RuleName]['Method'] = 'Auto';
             }
         }
         if (!empty($_POST['Notes'][$Iterant])) {
-            $NewAuxArr[$_POST['ruleName'][$Iterant]]['Notes'] = $_POST['Notes'][$Iterant];
+            $NewAuxArr[$RuleName]['Notes'] = $this->desabotage($_POST['Notes'][$Iterant]);
         }
         if (!empty($_POST['logic'][$Iterant])) {
-            $NewAuxArr[$_POST['ruleName'][$Iterant]]['Logic'] = $_POST['logic'][$Iterant];
+            $NewAuxArr[$RuleName]['Logic'] = $this->desabotage($_POST['logic'][$Iterant]);
         }
         if (!empty($_POST['ruleReason'][$Iterant])) {
-            $NewAuxArr[$_POST['ruleName'][$Iterant]]['Reason'] = $_POST['ruleReason'][$Iterant];
+            $NewAuxArr[$RuleName]['Reason'] = $this->desabotage($_POST['ruleReason'][$Iterant]);
         }
         if (!empty($_POST['ruleTarget'][$Iterant])) {
-            $NewAuxArr[$_POST['ruleName'][$Iterant]]['Target'] = $_POST['ruleTarget'][$Iterant];
+            $NewAuxArr[$RuleName]['Target'] = $this->desabotage($_POST['ruleTarget'][$Iterant]);
         }
         if (!empty($_POST['ruleRun'][$Iterant])) {
-            $NewAuxArr[$_POST['ruleName'][$Iterant]]['Run'] = ['File' => $_POST['ruleRun'][$Iterant]];
+            $NewAuxArr[$RuleName]['Run'] = ['File' => $this->desabotage($_POST['ruleRun'][$Iterant])];
         }
         if (!empty($_POST['from'][$Iterant])) {
-            $NewAuxArr[$_POST['ruleName'][$Iterant]]['From'] = $_POST['from'][$Iterant];
+            $NewAuxArr[$RuleName]['From'] = $this->desabotage($_POST['from'][$Iterant]);
         }
         if (!empty($_POST['expiry'][$Iterant])) {
-            $NewAuxArr[$_POST['ruleName'][$Iterant]]['Expiry'] = $_POST['expiry'][$Iterant];
+            $NewAuxArr[$RuleName]['Expiry'] = $this->desabotage($_POST['expiry'][$Iterant]);
         }
         if (!empty($_POST['statusCode'][$Iterant])) {
-            $NewAuxArr[$_POST['ruleName'][$Iterant]]['Status Code'] = $_POST['statusCode'][$Iterant];
+            $NewAuxArr[$RuleName]['Status Code'] = $this->desabotage($_POST['statusCode'][$Iterant]);
         }
-        $NewAuxArr[$_POST['ruleName'][$Iterant]]['Action'] = $_POST['act'][$Iterant] ?? '';
-        if ($NewAuxArr[$_POST['ruleName'][$Iterant]]['Action'] !== 'actRun') {
-            unset($NewAuxArr[$_POST['ruleName'][$Iterant]]['Run']);
+        $NewAuxArr[$RuleName]['Action'] = $this->desabotage($_POST['act'][$Iterant] ?? '');
+        if ($NewAuxArr[$RuleName]['Action'] !== 'actRun') {
+            unset($NewAuxArr[$RuleName]['Run']);
         }
-        $NewAuxArr[$_POST['ruleName'][$Iterant]]['SourceType'] = $_POST['conSourceType'][$Iterant] ?? '';
-        $NewAuxArr[$_POST['ruleName'][$Iterant]]['IfOrNot'] = $_POST['conIfOrNot'][$Iterant] ?? '';
-        $NewAuxArr[$_POST['ruleName'][$Iterant]]['SourceValue'] = $_POST['conSourceValue'][$Iterant] ?? '';
+        $NewAuxArr[$RuleName]['SourceType'] = $this->desabotage($_POST['conSourceType'][$Iterant] ?? '');
+        $NewAuxArr[$RuleName]['IfOrNot'] = $this->desabotage($_POST['conIfOrNot'][$Iterant] ?? '');
+        $NewAuxArr[$RuleName]['SourceValue'] = $this->desabotage($_POST['conSourceValue'][$Iterant] ?? '');
         foreach ($this->CIDRAM['Provide']['Auxiliary Rules']['Flags'] as $FlagSetName => $FlagSetValue) {
             $FlagSetKey = preg_replace('~[^A-Za-z]~', '', $FlagSetName);
             if (!empty($_POST[$FlagSetKey][$Iterant])) {
                 foreach ($FlagSetValue as $FlagName => $FlagData) {
                     if ($_POST[$FlagSetKey][$Iterant] === $FlagName) {
-                        $NewAuxArr[$_POST['ruleName'][$Iterant]][$FlagName] = true;
+                        $NewAuxArr[$RuleName][$FlagName] = true;
                     }
                 }
             }

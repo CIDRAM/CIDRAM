@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The auxiliary rules view mode page (last modified: 2024.06.06).
+ * This file: The auxiliary rules view mode page (last modified: 2024.09.17).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -25,21 +25,23 @@ if (!isset($this->CIDRAM['AuxData'])) {
 
 /** Create new auxiliary rule. */
 if (isset($_POST['ruleName'], $_POST['conSourceType'], $_POST['conIfOrNot'], $_POST['conSourceValue'], $_POST['act'], $_POST['mtd'], $_POST['logic']) && $_POST['ruleName']) {
+    $RuleName = $this->desabotage($_POST['ruleName']);
+
     /** Construct new rule array. */
-    $this->CIDRAM['AuxData'][$_POST['ruleName']] = [];
+    $this->CIDRAM['AuxData'][$RuleName] = [];
 
     /** Construct new rule method. */
     if ($_POST['mtd'] === 'mtdReg') {
-        $this->CIDRAM['AuxData'][$_POST['ruleName']]['Method'] = 'RegEx';
+        $this->CIDRAM['AuxData'][$RuleName]['Method'] = 'RegEx';
     } elseif ($_POST['mtd'] === 'mtdWin') {
-        $this->CIDRAM['AuxData'][$_POST['ruleName']]['Method'] = 'WinEx';
+        $this->CIDRAM['AuxData'][$RuleName]['Method'] = 'WinEx';
     } elseif ($_POST['mtd'] === 'mtdDMA') {
-        $this->CIDRAM['AuxData'][$_POST['ruleName']]['Method'] = 'Auto';
+        $this->CIDRAM['AuxData'][$RuleName]['Method'] = 'Auto';
     }
 
     /** Construct new rule notes. */
     if (isset($_POST['Notes']) && strlen($_POST['Notes'])) {
-        $this->CIDRAM['AuxData'][$_POST['ruleName']]['Notes'] = $_POST['Notes'];
+        $this->CIDRAM['AuxData'][$RuleName]['Notes'] = $this->desabotage($_POST['Notes']);
     }
 
     /** Construct other basic rule fields (e.g., match logic, block reason, etc). */
@@ -53,19 +55,19 @@ if (isset($_POST['ruleName'], $_POST['conSourceType'], $_POST['conIfOrNot'], $_P
         ['Webhooks', 'webhooks']
     ] as $AuxTmp) {
         if (!empty($_POST[$AuxTmp[1]])) {
-            $this->CIDRAM['AuxData'][$_POST['ruleName']][$AuxTmp[0]] = $_POST[$AuxTmp[1]];
+            $this->CIDRAM['AuxData'][$RuleName][$AuxTmp[0]] = $this->desabotage($_POST[$AuxTmp[1]]);
         }
     }
     unset($AuxTmp);
 
     /** Process webhooks. */
-    if (!empty($this->CIDRAM['AuxData'][$_POST['ruleName']]['Webhooks'])) {
-        $this->arrayify($this->CIDRAM['AuxData'][$_POST['ruleName']]['Webhooks']);
-        $this->CIDRAM['AuxData'][$_POST['ruleName']]['Webhooks'] = array_unique(
-            array_filter($this->CIDRAM['AuxData'][$_POST['ruleName']]['Webhooks'])
+    if (!empty($this->CIDRAM['AuxData'][$RuleName]['Webhooks'])) {
+        $this->arrayify($this->CIDRAM['AuxData'][$RuleName]['Webhooks']);
+        $this->CIDRAM['AuxData'][$RuleName]['Webhooks'] = array_unique(
+            array_filter($this->CIDRAM['AuxData'][$RuleName]['Webhooks'])
         );
-        if (!count($this->CIDRAM['AuxData'][$_POST['ruleName']]['Webhooks'])) {
-            unset($this->CIDRAM['AuxData'][$_POST['ruleName']]['Webhooks']);
+        if (!count($this->CIDRAM['AuxData'][$RuleName]['Webhooks'])) {
+            unset($this->CIDRAM['AuxData'][$RuleName]['Webhooks']);
         }
     }
 
@@ -77,7 +79,7 @@ if (isset($_POST['ruleName'], $_POST['conSourceType'], $_POST['conIfOrNot'], $_P
         }
         foreach ($FlagSetValue as $FlagName => $FlagData) {
             if ($_POST[$FlagSetKey] === $FlagName) {
-                $this->CIDRAM['AuxData'][$_POST['ruleName']][$FlagName] = true;
+                $this->CIDRAM['AuxData'][$RuleName][$FlagName] = true;
             }
         }
     }
@@ -99,9 +101,9 @@ if (isset($_POST['ruleName'], $_POST['conSourceType'], $_POST['conIfOrNot'], $_P
 
     /** Construct new rule action array. */
     if ($Action === 'Run' && isset($_POST['ruleRun'])) {
-        $this->CIDRAM['AuxData'][$_POST['ruleName']][$Action] = ['File' => $_POST['ruleRun'], 'If matches' => [], 'But not if matches' => []];
+        $this->CIDRAM['AuxData'][$RuleName][$Action] = ['File' => $this->desabotage($_POST['ruleRun']), 'If matches' => [], 'But not if matches' => []];
     } else {
-        $this->CIDRAM['AuxData'][$_POST['ruleName']][$Action] = ['If matches' => [], 'But not if matches' => []];
+        $this->CIDRAM['AuxData'][$RuleName][$Action] = ['If matches' => [], 'But not if matches' => []];
     }
 
     /** Determine number of new rule conditions to construct. */
@@ -118,28 +120,28 @@ if (isset($_POST['ruleName'], $_POST['conSourceType'], $_POST['conIfOrNot'], $_P
             continue;
         }
 
+        $SourceType = $this->desabotage($_POST['conSourceType'][$Iteration]);
+
         /** Where to construct into. */
         $ConstructInto = ($_POST['conIfOrNot'][$Iteration] === 'If') ? 'If matches' : 'But not if matches';
 
         /** Set source sub in rule if it doesn't already exist. */
-        if (!isset($this->CIDRAM['AuxData'][$_POST['ruleName']][$Action][$ConstructInto][
-            $_POST['conSourceType'][$Iteration]
-        ])) {
-            $this->CIDRAM['AuxData'][$_POST['ruleName']][$Action][$ConstructInto][$_POST['conSourceType'][$Iteration]] = [];
+        if (!isset($this->CIDRAM['AuxData'][$RuleName][$Action][$ConstructInto][$SourceType])) {
+            $this->CIDRAM['AuxData'][$RuleName][$Action][$ConstructInto][$SourceType] = [];
         }
 
         /** Construct expected condition values. */
-        $this->CIDRAM['AuxData'][$_POST['ruleName']][$Action][$ConstructInto][$_POST['conSourceType'][$Iteration]][] = $_POST['conSourceValue'][$Iteration];
+        $this->CIDRAM['AuxData'][$RuleName][$Action][$ConstructInto][$SourceType][] = $this->desabotage($_POST['conSourceValue'][$Iteration]);
     }
 
     /** Remove possible empty array. */
-    if (empty($this->CIDRAM['AuxData'][$_POST['ruleName']][$Action]['If matches'])) {
-        unset($this->CIDRAM['AuxData'][$_POST['ruleName']][$Action]['If matches']);
+    if (empty($this->CIDRAM['AuxData'][$RuleName][$Action]['If matches'])) {
+        unset($this->CIDRAM['AuxData'][$RuleName][$Action]['If matches']);
     }
 
     /** Remove possible empty array. */
-    if (empty($this->CIDRAM['AuxData'][$_POST['ruleName']][$Action]['But not if matches'])) {
-        unset($this->CIDRAM['AuxData'][$_POST['ruleName']][$Action]['But not if matches']);
+    if (empty($this->CIDRAM['AuxData'][$RuleName][$Action]['But not if matches'])) {
+        unset($this->CIDRAM['AuxData'][$RuleName][$Action]['But not if matches']);
     }
 
     $Success = false;
@@ -158,11 +160,11 @@ if (isset($_POST['ruleName'], $_POST['conSourceType'], $_POST['conIfOrNot'], $_P
     /** Update state message. */
     $this->FE['state_msg'] = $Success ? sprintf(
         $this->L10N->getString('response.New auxiliary rule, %s, created successfully'),
-        $_POST['ruleName']
+        $RuleName
     ) . '<br />' : $this->L10N->getString('response.Failed to update auxiliary rules') . '<br />';
 
     /** Cleanup. */
-    unset($NewAuxData, $Success, $ConstructInto, $Iteration, $AuxConditions, $Action);
+    unset($NewAuxData, $Success, $ConstructInto, $SourceType, $Iteration, $AuxConditions, $Action);
 }
 
 /** Prepare data for display. */
@@ -250,7 +252,7 @@ if (!$this->FE['ASYNC']) {
 
     /** Send output. */
     echo $this->sendOutput();
-} elseif (isset($_POST['auxD'], $this->CIDRAM['AuxData'][$_POST['auxD']])) {
+} elseif (isset($_POST['auxD'], $this->CIDRAM['AuxData'][$this->desabotage($_POST['auxD'])])) {
     /** Delete an auxiliary rule. */
     unset($this->CIDRAM['AuxData'][$_POST['auxD']]);
 
@@ -264,26 +266,26 @@ if (!$this->FE['ASYNC']) {
     echo sprintf($this->L10N->getString('response.Auxiliary rule, %s, deleted successfully'), $_POST['auxD']);
 } elseif (isset($_POST['auxT'])) {
     /** Move an auxiliary rule to the top of the list. */
-    $this->CIDRAM['AuxData'] = $this->swapAssociativeArrayElements($this->CIDRAM['AuxData'], $_POST['auxT'], false);
+    $this->CIDRAM['AuxData'] = $this->swapAssociativeArrayElements($this->CIDRAM['AuxData'], $this->desabotage($_POST['auxT']), false);
     $this->updateAuxData();
 } elseif (isset($_POST['auxB'])) {
     /** Move an auxiliary rule to the bottom of the list. */
-    $this->CIDRAM['AuxData'] = $this->swapAssociativeArrayElements($this->CIDRAM['AuxData'], $_POST['auxB'], true);
+    $this->CIDRAM['AuxData'] = $this->swapAssociativeArrayElements($this->CIDRAM['AuxData'], $this->desabotage($_POST['auxB']), true);
     $this->updateAuxData();
 } elseif (isset($_POST['auxMU'])) {
     /** Move an auxiliary rule up one position. */
-    $this->CIDRAM['AuxData'] = $this->swapAssociativeArrayElementsByOne($this->CIDRAM['AuxData'], $_POST['auxMU'], false);
+    $this->CIDRAM['AuxData'] = $this->swapAssociativeArrayElementsByOne($this->CIDRAM['AuxData'], $this->desabotage($_POST['auxMU']), false);
     $this->updateAuxData();
 } elseif (isset($_POST['auxMD'])) {
     /** Move an auxiliary rule down one position. */
-    $this->CIDRAM['AuxData'] = $this->swapAssociativeArrayElementsByOne($this->CIDRAM['AuxData'], $_POST['auxMD'], true);
+    $this->CIDRAM['AuxData'] = $this->swapAssociativeArrayElementsByOne($this->CIDRAM['AuxData'], $this->desabotage($_POST['auxMD']), true);
     $this->updateAuxData();
 } elseif (isset($_POST['auxDR'], $this->CIDRAM['AuxData'][$_POST['auxDR']])) {
     /** Disable an auxiliary rule. */
-    $this->CIDRAM['AuxData'][$_POST['auxDR']]['Disable this rule'] = true;
+    $this->CIDRAM['AuxData'][$this->desabotage($_POST['auxDR'])]['Disable this rule'] = true;
     $this->updateAuxData();
 } elseif (isset($_POST['auxER'], $this->CIDRAM['AuxData'][$_POST['auxER']])) {
     /** Enable an auxiliary rule. */
-    unset($this->CIDRAM['AuxData'][$_POST['auxER']]['Disable this rule']);
+    unset($this->CIDRAM['AuxData'][$this->desabotage($_POST['auxER'])]['Disable this rule']);
     $this->updateAuxData();
 }

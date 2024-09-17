@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The accounts page (last modified: 2023.12.13).
+ * This file: The accounts page (last modified: 2024.09.17).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -36,7 +36,7 @@ if ($this->FE['FormTarget'] === 'accounts' && !empty($_POST['do'])) {
     /** Create a new account. */
     if ($_POST['do'] === 'create-account' && !empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['permissions'])) {
         $Accounts = [
-            'TryPath' => 'user.' . $_POST['username'],
+            'TryPath' => 'user.' . $this->desabotage($_POST['username']),
             'TryPass' => password_hash($_POST['password'], $this->DefaultAlgo),
             'TryPermissions' => (int)$_POST['permissions']
         ];
@@ -55,7 +55,7 @@ if ($this->FE['FormTarget'] === 'accounts' && !empty($_POST['do'])) {
 
     /** Delete an account. */
     if ($_POST['do'] === 'delete-account' && !empty($_POST['username'])) {
-        $Accounts = 'user.' . $_POST['username'];
+        $Accounts = 'user.' . $this->desabotage($_POST['username']);
         if (!isset($this->Configuration[$Accounts])) {
             $this->FE['state_msg'] = $this->L10N->getString('response.That account doesn_t exist');
         } else {
@@ -72,7 +72,7 @@ if ($this->FE['FormTarget'] === 'accounts' && !empty($_POST['do'])) {
     /** Update an account password. */
     if ($_POST['do'] === 'update-password' && !empty($_POST['username']) && !empty($_POST['password'])) {
         $Accounts = [
-            'TryPath' => 'user.' . $_POST['username'],
+            'TryPath' => 'user.' . $this->desabotage($_POST['username']),
             'TryPass' => password_hash($_POST['password'], $this->DefaultAlgo)
         ];
         if (!isset($this->Configuration[$Accounts['TryPath']])) {

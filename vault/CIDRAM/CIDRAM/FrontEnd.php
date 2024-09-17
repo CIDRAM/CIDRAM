@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2024.09.02).
+ * This file: The CIDRAM front-end (last modified: 2024.09.17).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -406,7 +406,7 @@ class FrontEnd extends Core
                 $this->FE['state_msg'] = $this->L10N->getString('response.Username field empty');
             } elseif (!empty($_POST['username']) && !empty($_POST['password'])) {
                 $this->FE['UserState'] = -1;
-                $this->FE['LP'] = ['ConfigUserPath' => 'user.' . $_POST['username']];
+                $this->FE['LP'] = ['ConfigUserPath' => 'user.' . $this->desabotage($_POST['username'])];
                 if (isset(
                     $this->Configuration[$this->FE['LP']['ConfigUserPath']],
                     $this->Configuration[$this->FE['LP']['ConfigUserPath']]['password'],
@@ -424,17 +424,17 @@ class FrontEnd extends Core
                             $this->FE['Permissions'] = 0;
                             $this->FE['state_msg'] = $this->L10N->getString('response.Wrong endpoint');
                         } else {
-                            $this->FE['User'] = $_POST['username'];
+                            $this->FE['User'] = $this->desabotage($_POST['username']);
                             if ($this->FE['CronMode'] === '') {
                                 $this->FE['SessionKey'] = hash('sha256', $this->generateSalt());
-                                $this->FE['Cookie'] = $_POST['username'] . $this->FE['SessionKey'];
+                                $this->FE['Cookie'] = $this->FE['User'] . $this->FE['SessionKey'];
                                 setcookie('CIDRAM-ADMIN', $this->FE['Cookie'], $this->Now + 604800, '/', $this->CIDRAM['HostnameOverride'] ?: $this->CIDRAM['HTTP_HOST'], false, true);
-                                $this->FE['ThisSession'] = $_POST['username'] . ',' . password_hash($this->FE['SessionKey'], $this->DefaultAlgo);
+                                $this->FE['ThisSession'] = $this->FE['User'] . ',' . password_hash($this->FE['SessionKey'], $this->DefaultAlgo);
 
                                 /** Prepare 2FA email. */
                                 if (
                                     $this->Configuration['frontend']['enable_two_factor'] &&
-                                    preg_match('~^.+@.+$~', $_POST['username']) &&
+                                    preg_match('~^.+@.+$~', $this->FE['User']) &&
                                     ($this->FE['LP']['TwoFactorMessage'] = $this->L10N->getString('msg_template_2fa')) &&
                                     ($this->FE['LP']['TwoFactorSubject'] = $this->L10N->getString('msg_subject_2fa'))
                                 ) {
@@ -443,14 +443,14 @@ class FrontEnd extends Core
                                     $this->Cache->setEntry('TwoFactorState:' . $this->FE['Cookie'], '0' . $this->FE['LP']['TwoFactorState']['Hash'], 600);
                                     $this->FE['LP']['TwoFactorState']['Template'] = sprintf(
                                         $this->FE['LP']['TwoFactorMessage'],
-                                        $_POST['username'],
+                                        $this->FE['User'],
                                         $this->FE['LP']['TwoFactorState']['Number']
                                     );
-                                    if (preg_match('~^[^<>]+<[^<>]+>$~', $_POST['username'])) {
-                                        $this->FE['LP']['TwoFactorState']['Name'] = trim(preg_replace('~^([^<>]+)<[^<>]+>$~', '\1', $_POST['username']));
-                                        $this->FE['LP']['TwoFactorState']['Address'] = trim(preg_replace('~^[^<>]+<([^<>]+)>$~', '\1', $_POST['username']));
+                                    if (preg_match('~^[^<>]+<[^<>]+>$~', $this->FE['User'])) {
+                                        $this->FE['LP']['TwoFactorState']['Name'] = trim(preg_replace('~^([^<>]+)<[^<>]+>$~', '\1', $this->FE['User']));
+                                        $this->FE['LP']['TwoFactorState']['Address'] = trim(preg_replace('~^[^<>]+<([^<>]+)>$~', '\1', $this->FE['User']));
                                     } else {
-                                        $this->FE['LP']['TwoFactorState']['Name'] = trim($_POST['username']);
+                                        $this->FE['LP']['TwoFactorState']['Name'] = trim($this->FE['User']);
                                         $this->FE['LP']['TwoFactorState']['Address'] = $this->FE['LP']['TwoFactorState']['Name'];
                                     }
                                     $EventData = [
@@ -507,7 +507,7 @@ class FrontEnd extends Core
             }
 
             /** Safer for the front-end logger. */
-            $NameToLog = preg_replace('~[\x00-\x1F]~', '', $_POST['username'] ?? '');
+            $NameToLog = preg_replace('~[\x00-\x1F]~', '', $this->desabotage($_POST['username'] ?? ''));
 
             /** Handle front-end logging. */
             $this->frontendLogger($this->ipAddr, $NameToLog, $LoggerMessage ?? '');

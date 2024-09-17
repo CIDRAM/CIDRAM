@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The configuration page (last modified: 2024.07.02).
+ * This file: The configuration page (last modified: 2024.09.17).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -100,7 +100,7 @@ foreach ($this->CIDRAM['Config Defaults'] as $CatKey => $CatValue) {
             }
             if (!isset($DirValue['choices']) || isset($DirValue['choices'][$_POST[$ThisDir['DirLangKey']]])) {
                 $this->CIDRAM['ConfigModified'] = true;
-                $this->Configuration[$CatKey][$DirKey] = $_POST[$ThisDir['DirLangKey']];
+                $this->Configuration[$CatKey][$DirKey] = $this->desabotage($_POST[$ThisDir['DirLangKey']]);
             } elseif (
                 !empty($DirValue['allow_other']) &&
                 $_POST[$ThisDir['DirLangKey']] === 'Other' &&
@@ -108,7 +108,7 @@ foreach ($this->CIDRAM['Config Defaults'] as $CatKey => $CatValue) {
                 !preg_match('/[^\x20-\xFF"\']/', $_POST[$ThisDir['DirLangKeyOther']])
             ) {
                 $this->CIDRAM['ConfigModified'] = true;
-                $this->Configuration[$CatKey][$DirKey] = $_POST[$ThisDir['DirLangKeyOther']];
+                $this->Configuration[$CatKey][$DirKey] = $this->desabotage($_POST[$ThisDir['DirLangKeyOther']]);
             }
         } elseif (
             $DirValue['type'] === 'checkbox' &&

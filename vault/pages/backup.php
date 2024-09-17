@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The backup page (last modified: 2024.05.04).
+ * This file: The backup page (last modified: 2024.09.17).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -48,7 +48,9 @@ if (isset($_POST['bckpAct'])) {
                 $this->YAML->process($this->readFile($this->Vault . 'auxiliary.yml'), $this->CIDRAM['AuxData']);
             }
             if (isset($_POST['xprtName'])) {
-                $Export['Auxiliary Rules'] = isset($this->CIDRAM['AuxData'][$_POST['xprtName']]) ? [$_POST['xprtName'] => $this->CIDRAM['AuxData'][$_POST['xprtName']]] : [];
+                $XName = $this->desabotage($_POST['xprtName']);
+                $Export['Auxiliary Rules'] = isset($this->CIDRAM['AuxData'][$XName]) ? [$XName => $this->CIDRAM['AuxData'][$XName]] : [];
+                unset($XName);
             } else {
                 $Export['Auxiliary Rules'] = $this->CIDRAM['AuxData'];
             }

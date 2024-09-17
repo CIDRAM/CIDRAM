@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2024.09.15).
+ * This file: Functions file (last modified: 2024.09.17).
  */
 
 /**
@@ -1942,11 +1942,10 @@ $CIDRAM['AuxMatch'] = function ($Criteria, $Actual, $Method = '') use (&$CIDRAM)
     /** Iterate conditions. */
     foreach ($Criteria as $TestCase) {
         if ($Method === 'Auto') {
-            $Boundary = substr($TestCase, 0, 1);
+            $Boundary = preg_quote(substr($TestCase, 0, 1));
             if (
-                !preg_match('~^[\0-\x20\dA-Za-z\xC0-\xFF]$~', $Boundary) &&
-                ($Boundary = preg_quote($Boundary) || true) &&
-                preg_match($Boundary === '~' ? '/^' . $Boundary . '.+' . $Boundary . 'i?m?s?x?A?D?S?U?u?n?$/' : '~^' . $Boundary . '.*' . $Boundary . 'i?m?s?x?A?D?S?U?u?n?$~', $TestCase)
+                preg_match('~^(?!\\\\)(?![\0-\x20\dA-Za-z\xC0-\xFF]).$~', $Boundary) &&
+                preg_match($Boundary === '~' ? '/^' . $Boundary . '.+' . $Boundary . 'i?m?s?x?A?D?S?U?u?n?$/' : '~^' . $Boundary . '.+' . $Boundary . 'i?m?s?x?A?D?S?U?u?n?$~', $TestCase)
             ) {
                 $Operator = '≅';
             } else {

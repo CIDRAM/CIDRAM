@@ -164,7 +164,7 @@ if (isset($_POST['ruleName'], $_POST['conSourceType'], $_POST['conIfOrNot'], $_P
     ) . '<br />' : $this->L10N->getString('response.Failed to update auxiliary rules') . '<br />';
 
     /** Cleanup. */
-    unset($NewAuxData, $Success, $ConstructInto, $SourceType, $Iteration, $AuxConditions, $Action);
+    unset($NewAuxData, $Success, $ConstructInto, $SourceType, $Iteration, $AuxConditions, $Action, $RuleName);
 }
 
 /** Prepare data for display. */

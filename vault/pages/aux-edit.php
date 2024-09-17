@@ -86,7 +86,7 @@ if (isset($_POST['rulePriority']) && is_array($_POST['rulePriority'])) {
             }
         }
     }
-    unset($FlagData, $FlagName, $FlagSetKey, $FlagSetName, $FlagSetValue);
+    unset($FlagData, $FlagName, $FlagSetKey, $FlagSetName, $FlagSetValue, $RuleName);
     uasort($NewAuxArr, function ($A, $B): int {
         if ($A['Priority'] === $B['Priority']) {
             return 0;

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bosnian language data for the front-end (last modified: 2024.08.14).
+# This file: Bosnian language data for the front-end (last modified: 2024.09.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -49,7 +49,7 @@ Abuse category:
  SSH abuse: "SSH zloupotreba."
  VPN IP: "VPN IP."
  Web spam: "Web spam (neželjena pošta komentara/foruma, neželjena pošta HTTP upućivača, ili druga neželjena pošta CMS-a)."
- Webapp attacks: "Napadi na web aplikacije (ispitivanje ranjivosti ili eksploatacije, ili pokušaj eksploatacije instaliranih web aplikacija, CMS-a, ili rješenja za e-trgovinu, npr. WordPress, Drupal, phpMyAdmin, itd)."
+ Webapp attacks: "Napadi na web aplikacije (ispitivanje ranjivosti ili eksploatacije, ili pokušaj eksploatacije instaliranih web aplikacija, CMS-a, ili rješenja za e-trgovinu, npr., WordPress, Drupal, phpMyAdmin, itd)."
 Extended Description:
  AbuseIPDB module: "Blokira zahtjeve sa IP adresa navedenih na AbuseIPDB."
  BGPView module: "Koristi {{Links.BGPView}} API za pružanje mogućnosti traženja ASN-a i koda zemlje za CIDRAM, omogućavajući ASN-ovima i zemljama da budu blokirani ili stavljeni na bijelu listu putem konfiguracije CIDRAM-a, i pruža sredstvo za verifikaciju društvenih mreža za provjeru Facebook zahtjeva. (Ako koristite ovaj modul, nećete morati koristiti IP-API modul, jer oni služe istoj svrsi)."
@@ -74,7 +74,7 @@ Extended Description:
  Optional security extras module: "Pruža ograničenu zaštitu od različitih vektora napada koji se obično koriste u zahtjevima."
  PHPMailer: "Potrebno za korištenje funkcionalnost koja šalje e-poštu.<br />{{Links.PHPMailer.PHPMailer}} je dostupan preko {{Links.PHPMailer.License}} licence."
  Project Honeypot module: "Blokira zahtjeve sa IP adresa navedenih na Project Honeypot."
- Protocol blocker module: "Pruža mogućnost blokiranja specifičnih protokola zahtjeva putem konfiguracije (npr. HTTP/0.9, HTTP/1.1, SPDY/3.0, itd). Bilješka: Neće imati nikakvog efekta na one web stranice koje usmjeravaju putem servisa koji prepisuju zahtjeve da svi koriste potpuno isti protokol, kao što je Cloudflare."
+ Protocol blocker module: "Pruža mogućnost blokiranja specifičnih protokola zahtjeva putem konfiguracije (npr., HTTP/0.9, HTTP/1.1, SPDY/3.0, itd). Bilješka: Neće imati nikakvog efekta na one web stranice koje usmjeravaju putem servisa koji prepisuju zahtjeve da svi koriste potpuno isti protokol, kao što je Cloudflare."
  Referrer spam module: "Blokiranje zasnovano na neželjenoj e-pošti preporuke generalno neće pružiti nikakvu značajnu sigurnosnu prednost, ali u nekim slučajevima može biti korisno za neke korisnike, za prikupljanje više informacija o zahtjevima i mogućnost prijaviti."
  Stop Forum Spam module: "IP adresama koje navodi SFS biće onemogućen pristup stranicama za prijavu i registraciju."
  Tor blocker module: "Zabranjuje pristup iz Tor izlaznih čvorova putem DNSEL pretraživanja (IPv4 i IPv6 oba podržana)."
@@ -189,9 +189,28 @@ config:
  general_default_algo: "Definira koji algoritam koristiti za sve buduće lozinke i sesije."
  general_default_dns: "Lista DNS servera koji se koriste za traženje imena hosta. UPOZORENJE: Promijenite ovo samo ako znate šta radite!"
  general_default_timeout: "Zadano vremensko ograničenje za korištenje za eksterne zahtjeve? Zadano = 12 sekundi."
- general_disabled_channels: "Ovo se može koristiti da spriječi CIDRAM da koristi određene kanale prilikom slanja zahtjeva (npr. prilikom ažuriranja, prilikom preuzimanja metapodataka komponente, itd)."
- general_email_notification_address: "Ako ste se odlučili za primanje obavještenja od CIDRAM-a putem e-pošte, npr. kada se aktiviraju određena pomoćna pravila, ovdje možete navesti adresu primaoca za te obavijesti."
- general_email_notification_name: "Ako ste se odlučili za primanje obavještenja od CIDRAM-a putem e-pošte, npr. kada se aktiviraju određena pomoćna pravila, ovdje možete navesti ime primaoca za te obavijesti."
+ general_disabled_channels: "Ovo se može koristiti da spriječi CIDRAM da koristi određene kanale prilikom slanja zahtjeva (npr., prilikom ažuriranja, prilikom preuzimanja metapodataka komponente, itd)."
+ general_email_notification_address: "Ako ste se odlučili za primanje obavještenja od CIDRAM-a putem e-pošte, npr., kada se aktiviraju određena pomoćna pravila, ovdje možete navesti adresu primaoca za te obavijesti."
+ general_email_notification_name: "Ako ste se odlučili za primanje obavještenja od CIDRAM-a putem e-pošte, npr., kada se aktiviraju određena pomoćna pravila, ovdje možete navesti ime primaoca za te obavijesti."
+ general_email_notification_when: "Kada poslati obavještenja nakon generiranja."
+ general_emailaddr: "Ako želite, ovdje možete navesti adresu e-pošte koja će se dati korisnicima kada budu blokirani, kako bi mogli koristiti kao kontakt za podršku i/ili pomoć u slučaju da budu blokirani greškom. UPOZORENJE: Koju god adresu e-pošte koju navedete ovdje će sigurno dobiti spamboti i strugači tokom njenog korištenja ovdje, i stoga, toplo se preporučuje da, ako odlučite da ovdje navedete adresu e-pošte, osigurate da je adresa e-pošte koju ovdje navedete jednokratna i/ili adresa na kojoj vam nije stalo da primate neželjenu poštu (drugim riječima, vjerovatno ne želite da koristite svoju primarnu ličnu ili primarnu poslovnu adresu e-pošte)."
+ general_emailaddr_display_style: "Kako biste željeli da se adresa e-pošte prikazuje korisnicima?"
+ general_fields: "Kontrole za polja tokom događaja blokiranja (kada je zahtjev blokiran)."
+ general_force_hostname_lookup: "Prisiliti traženje imena hosta? True/Istinito = Da; False/Lažno = Ne [Zadano]. Pronalaženja imena hosta se obično izvode po potrebi, ali mogu biti prisiljena za sve zahtjeve. To može biti korisno kao sredstvo za pružanje detaljnijih informacija u datotekama evidencije, ali može imati i blagi negativan učinak na performanse."
+ general_http_response_header_code: "Koju HTTP statusnu poruku CIDRAM treba poslati kada blokira zahtjeve?"
+ general_ipaddr: "Gdje pronaći IP adresu zahtjeva za povezivanje? (Korisno za usluge kao što je Cloudflare i slično). Zadano = REMOTE_ADDR. UPOZORENJE: Promijenite ovo samo ako znate šta radite!"
+ general_lang: "Odredite podrazumevani jezik za CIDRAM."
+ general_lang_override: "Lokalizirati prema HTTP_ACCEPT_LANGUAGE kad god je to moguće? True/Istinito = Da [Zadano]; False/Lažno = Ne."
+ general_numbers: "Kako želite da se brojevi prikazuju? Odaberite primjer koji vam se čini najispravnijim."
+ general_sensitive: "Lista putanja koje treba smatrati osjetljivim stranicama. Svaka navedena putanja će biti provjerena u odnosu na rekonstruirani URI kada je to potrebno. Putanja koja počinje kosom crtom prema naprijed će se tretirati kao literal i upariti se od komponente putanje zahtjeva nadalje. U suprotnom, putanja koja počinje ne-alfanumeričkim znakom, a završava se istim znakom (ili istim znakom plus opcionom "i" zastavicom) će se tretirati kao regularni izraz. Bilo koja druga vrsta putanje će se tretirati kao literal i može se podudarati iz bilo kojeg dijela URI-ja. Da li se putanja smatra osjetljivom stranicom može utjecati na to kako se neki moduli ponašaju, ali inače nema nikakvog efekta."
+ general_silent_mode: "Da li bi CIDRAM trebao tiho preusmjeriti pokušaje blokiranog pristupa umjesto da prikazuje stranicu "pristup odbijen"? Ako jeste, navedite lokaciju na koju ćete preusmjeriti pokušaje blokiranog pristupa. Ako ne, ostavite ovu varijablu praznom."
+ general_silent_mode_response_header_code: "Koju HTTP statusnu poruku CIDRAM treba poslati kada tiho preusmjerava blokirane pokušaje pristupa?"
+ general_stages: "Kontrole za faze lanca izvršenja (da li je omogućeno, da li se greške evidentiraju, itd)."
+ general_statistics: "Kontrolira koje statističke informacije treba pratiti."
+ general_time_format: "Format notacije datuma/vremena koji koristi CIDRAM. Dodatne opcije se mogu dodati na zahtjev."
+ general_time_offset: "Pomak vremenske zone u minutama."
+ general_timezone: "Vremenska zona koju treba koristiti (npr., Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, etc). Odredite "SYSTEM" da dozvolite PHP-u da to automatski obavi umjesto vas."
+ hcaptcha: "Konfiguracija za HCaptcha (pruža način da ljudi ponovo dobiju pristup kada su blokirani)."
  phpmailer: "Konfiguracija za PHPMailer (koristi se za dvofaktorsku autentifikaciju i za obavještenja putem e-pošte)."
  phpmailer_add_reply_to_address: "Adresa za odgovor koju treba navesti prilikom slanja e-pošte putem SMTP-a."
  phpmailer_add_reply_to_name: "Ime odgovora koje treba navesti prilikom slanja e-pošte putem SMTP-a."
@@ -208,7 +227,7 @@ config:
 warning:
  API_Rate_Limited: "Upozorenje: Čini se da je pristup %s API-ju trenutno ograničen stopom."
  Cookies: "Bilješka: CIDRAM koristi kolačić za provjeru autentičnosti prijava. Prijavom dajete pristanak da vaš pretraživač kreira i pohrani kolačić."
- Editing PHP files: "Upozorenje: Poznato je da neka sigurnosna rješenja za web hosting automatski zabranjuju IP adrese nakon otkrivanja PHP tagova unutar zahtjeva (npr. kada pokušavate modificirati PHP datoteke putem pretraživača). CIDRAM nema načina da sazna da li vaš webhosting servis koristi takvo sigurnosno rješenje. Kako bi se izbjegli ovakvi problemi, preporučuje se ne uređivanje PHP datoteka na takav način kada je to moguće."
+ Editing PHP files: "Upozorenje: Poznato je da neka sigurnosna rješenja za web hosting automatski zabranjuju IP adrese nakon otkrivanja PHP tagova unutar zahtjeva (npr., kada pokušavate modificirati PHP datoteke putem pretraživača). CIDRAM nema načina da sazna da li vaš webhosting servis koristi takvo sigurnosno rješenje. Kako bi se izbjegli ovakvi problemi, preporučuje se ne uređivanje PHP datoteka na takav način kada je to moguće."
  IP tests are disabled: "Upozorenje: IP testovi su onemogućeni! Datoteke potpisa se ne mogu koristiti dok se ovo ne riješi."
  JavaScript required: "Upozorenje: Neke front-end funkcionalnosti zahtijevaju JavaScript. Kako biste osigurali da se cijeli front-end ponaša kako se očekuje, preporučuje se omogućavanje JavaScripta."
  Likely to be overwritten: "Upozorenje: Datoteka koju trenutno uređujete pripada komponenti "%s". Sve promjene napravljene u ovoj datoteci će vrlo vjerovatno biti prepisane sljedeći put kada se ta komponenta ažurira."

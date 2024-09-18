@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Galician language data for the front-end (last modified: 2024.08.12).
+# This file: Galician language data for the front-end (last modified: 2024.09.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -180,7 +180,7 @@ config:
  frontend_frontend_log: "Ficheiro para rexistrar todos os intentos de iniciar sesión na front-end. Especifique un nome de ficheiro, ou déixeo en branco para desactivalo."
  frontend_magnification: &MagnifDesc "Ampliación da fonte. Predeterminado = 1."
  frontend_max_login_attempts: "Número máximo de intentos para iniciar sesión na front-end. Predeterminado = 5."
- frontend_remotes: "Unha lista dos enderezos utilizados polo actualizador para obter metadatos de compoñentes. É posible que teña que axustarse cando se actualice a unha nova versión principal, ou cando se adquira unha nova fonte de actualizacións, pero en circunstancias normais debe deixarse ​​só."
+ frontend_remotes: "Unha lista dos enderezos utilizados polo actualizador para obter metadatos de compoñentes. É posible que teña que axustarse cando se actualice a unha nova versión principal, ou cando se adquira unha nova fonte de actualizacións, pero en circunstancias normais debe deixarse só."
  frontend_signatures_update_event_log: "Un ficheiro para rexistrar cando se actualizan as sinaturas a través do front-end. Especifique un nome de ficheiro, ou déixeo en branco para desactivalo."
  frontend_theme: "O tema predeterminado a usar para o front-end."
  general: "Configuración xeral (calquera configuración básica non pertencente a outras categorías)."
@@ -192,6 +192,7 @@ config:
  general_disabled_channels: "Pódese usar para evitar que CIDRAM use determinadas canles ao enviar solicitudes (por exemplo, ao actualizar, ao obter metadatos de compoñentes, etc)."
  general_email_notification_address: "Se optou por recibir notificacións de CIDRAM por correo electrónico, por exemplo, cando se desencadean regras auxiliares específicas, pode especificar aquí o enderezo do destinatario para esas notificacións."
  general_email_notification_name: "Se optou por recibir notificacións de CIDRAM por correo electrónico, por exemplo, cando se desencadean regras auxiliares específicas, pode especificar aquí o nome do destinatario para esas notificacións."
+ general_email_notification_when: "Cando enviar notificacións despois de ser xeradas."
  general_emailaddr: "Se o desexa, pode proporcionar aquí un enderezo de correo electrónico para que se lle proporcione aos usuarios cando estean bloqueados, para ser utilizado como punto de contacto de apoio e/ou asistencia en caso de que sexan bloqueados por erro. AVISO: Calquera que sexa o enderezo de correo electrónico que proporciones aquí, seguramente será adquirido por spambots e scrapers durante o seu uso aquí e, por conseguinte, se decides proporcionar un enderezo de correo electrónico aquí, recoméndase encarecidamente que te asegures de que o enderezo de correo electrónico proporcionado aquí sexa desbotable ou un enderezo que non lle importa que sexa obxecto de spam (noutras palabras, probablemente non queira utilizar os seus enderezos de correo electrónico persoais ou empresariais principais)."
  general_emailaddr_display_style: "Como preferirías que se lles presentase o enderezo de correo electrónico aos usuarios?"
  general_fields: "Controis para os campos durante eventos de bloqueo (cando se bloquea unha solicitude)."
@@ -331,6 +332,7 @@ field:
  Add more conditions: "Engade máis condicións"
  Add to tracking: "Engadir ao seguimento"
  Add webhook: "Engade un webhook"
+ After 24 hours, bundled together: "Despois de 24 horas, agrupadas (ou cando se desencadean manualmente, por exemplo, mediante cron)."
  Banned: "Prohibido"
  Blocked: "Bloqueado"
  Clear all: "Borrar todo"
@@ -355,6 +357,7 @@ field:
  Filename: "Nome do ficheiro:"
  Generate output as CIDRs: "Xerar saída como CIDR"
  Generate output as netmasks: "Xerar saída como máscaras de rede"
+ Immediately: "Inmediatamente."
  Install: "Instalar"
  Latest version: "Última versión"
  Log In: "Acceder"
@@ -362,6 +365,7 @@ field:
  New name: "Novo nome:"
  Non-clickable text: "Texto que non se pode clic"
  Not tracking: "Non sendo seguido."
+ Only when triggered manually: "Só cando se desencadean manualmente (por exemplo, mediante cron)."
  Options: "Opcións"
  Password: "Contrasinal"
  Permissions: "Permisos"
@@ -661,7 +665,7 @@ label:
  Total disk space: "Espazo total en disco:"
  Total disk usage: "Uso total do disco:"
  Total: "Total"
- Trigger a bypass: "Desencadear un bypass.\nDesconta unha do número de sinaturas desencadeadas, sempre que polo menos unha sinatura xa se desencadea. Recomendado para tratar con falsos positivos simples que poden ser causados ​​polos ficheiros de sinatura predeterminados."
+ Trigger a bypass: "Desencadear un bypass.\nDesconta unha do número de sinaturas desencadeadas, sempre que polo menos unha sinatura xa se desencadea. Recomendado para tratar con falsos positivos simples que poden ser causados polos ficheiros de sinatura predeterminados."
  Unignore this: "Designora isto"
  Values for IP tracking: "Valores para o seguimento IP"
  Whitelist the request: "Trata a solicitude como na lista branca.\nRestablece o número de sinaturas desencadeadas, e aborta calquera procesamento posterior da solicitude. Garante que CIDRAM nunca bloqueará a solicitude."

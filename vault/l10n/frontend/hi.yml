@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data for the front-end (last modified: 2024.07.23).
+# This file: Hindi language data for the front-end (last modified: 2024.09.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -192,6 +192,7 @@ config:
  general_disabled_channels: "अनुरोध भेजने पर विशेष चैनल का उपयोग करने से CIDRAM को रोकने के लिए इसका उपयोग किया जा सकता है (उदाहरण के लिए, अपडेट करते समय, कंपोनेंट मेटाडेटा लाने पर, आदि)।"
  general_email_notification_address: "यदि आपने ईमेल के माध्यम से CIDRAM से सूचनाएं प्राप्त करने का विकल्प चुना है, उदाहरण के लिए, जब विशिष्ट सहायक नियम ट्रिगर होते हैं, आप यहां उन सूचनाओं के लिए प्राप्तकर्ता का पता निर्दिष्ट कर सकते हैं।"
  general_email_notification_name: "यदि आपने ईमेल के माध्यम से CIDRAM से सूचनाएं प्राप्त करने का विकल्प चुना है, उदाहरण के लिए, जब विशिष्ट सहायक नियम ट्रिगर होते हैं, आप यहां उन सूचनाओं के लिए प्राप्तकर्ता का नाम निर्दिष्ट कर सकते हैं।"
+ general_email_notification_when: "सूचनाएं तैयार होने के बाद उन्हें कब भेजना है।"
  general_emailaddr: "अगर आप चाहते हैं, तो आप उपयोगकर्ताओं को जब उन्हें अवरुद्ध कर रहे हैं तो देने के लिए ईमेल पते की आपूर्ति कर सकते हैं। वे इसका इस्तेमाल आपसे संपर्क करने के लिए कर सकते हैं यदि वे गलती से अवरुद्ध कर रहे हैं। चेतावनी: आप जो भी ईमेल पते पर आपूर्ति करते हैं, वे निश्चित रूप से स्पैम्बट्स और स्क्रेपर द्वारा प्राप्त किए जाएंगे। इस वजह से, यह दृढ़ता से अनुशंसा की जाती है कि आप एक ईमेल पता चुनते हैं जो डिस्पोजेबल या महत्वहीन है (अर्थात।, अपने व्यक्तिगत या व्यावसायिक ईमेल पते का उपयोग न करें)।"
  general_emailaddr_display_style: "उपयोगकर्ताओं को प्रस्तुत करने के लिए आप ईमेल पते को कैसे पसंद करेंगे?"
  general_fields: "ब्लॉक ईवेंट के दौरान फ़ील्ड के लिए नियंत्रण (जब एक अनुरोध अवरुद्ध हो जाता है)।"
@@ -331,6 +332,7 @@ field:
  Add more conditions: "और शर्तें जोड़ें"
  Add to tracking: "ट्रैकिंग में जोड़ें"
  Add webhook: "Webhook जोड़ें"
+ After 24 hours, bundled together: "24 घंटे के बाद, एक साथ बंडल किया जाता है (या मैन्युअल रूप से ट्रिगर किया जाता है, उदाहरण के लिए, cron के माध्यम से)।"
  Banned: "प्रतिबंधित"
  Blocked: "अवरुद्ध"
  Clear all: "सभी साफ करें"
@@ -355,6 +357,7 @@ field:
  Filename: "फाइल का नाम:"
  Generate output as CIDRs: "CIDR नोटेशन का उपयोग कर आउटपुट जनरेट करें"
  Generate output as netmasks: "नेटमास्क नोटेशन का उपयोग करके आउटपुट जनरेट करें"
+ Immediately: "तुरंत।"
  Install: "इंस्टॉल करें"
  Latest version: "नवीनतम संस्करण"
  Log In: "लॉग इन करें"
@@ -362,6 +365,7 @@ field:
  New name: "नया नाम:"
  Non-clickable text: "बिना क्लिक करने योग्य पाठ"
  Not tracking: "ट्रैकिंग नहीं।"
+ Only when triggered manually: "केवल तभी जब मैन्युअल रूप से ट्रिगर किया जाए (उदाहरण के लिए, cron के माध्यम से)।"
  Options: "विकल्प"
  Password: "पासवर्ड"
  Permissions: "अनुमतियां"
@@ -898,7 +902,7 @@ response:
  The IP address is invalid: "API पता अमान्य है!"
  The IP address, %s, successfully reported: "IP पता, %s, सफलतापूर्वक रिपोर्ट किया गया!"
  The report has not been enqueued: "रिपोर्ट को कतारबद्ध नहीं किया गया है।"
- The same IP address can be reported only once every 15 minutes: "एक IP ​पता की रिपोर्ट हर 15 मिनट में केवल एक बार की जा सकती है। रिपोर्ट कतारबद्ध कर दी गई है, और CIDRAM बाद में रिपोर्ट प्रस्तुत करने का प्रयास करेगा।"
+ The same IP address can be reported only once every 15 minutes: "एक IP पता की रिपोर्ट हर 15 मिनट में केवल एक बार की जा सकती है। रिपोर्ट कतारबद्ध कर दी गई है, और CIDRAM बाद में रिपोर्ट प्रस्तुत करने का प्रयास करेगा।"
  There aren_t currently any auxiliary rules: "वर्तमान में कोई सहायक नियम नहीं हैं।"
  There_s nothing to analyse, sorry: "विश्लेषण करने के लिए कुछ भी नहीं है, क्षमा करें।"
  There_s nothing to print, sorry: "प्रिंट करने के लिए कुछ भी नहीं है, क्षमा करें।"

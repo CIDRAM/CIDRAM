@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2024.07.23).
+# This file: Indonesian language data for the front-end (last modified: 2024.09.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -190,8 +190,9 @@ config:
  general_default_dns: "Daftar server DNS yang digunakan untuk pencarian nama host. PERINGATAN: Jangan ganti ini kecuali Anda tahu apa yang Anda lakukan!"
  general_default_timeout: "Batas waktu default yang digunakan untuk permintaan eksternal? Default = 12 detik."
  general_disabled_channels: "Ini dapat digunakan untuk mencegah CIDRAM dari menggunakan saluran tertentu saat mengirim permintaan (misalnya, saat memperbarui, saat mengambil metadata komponen, dll)."
- general_email_notification_address: "Jika Anda memilih untuk menerima notifikasi dari CIDRAM melalui email, misalnya, ketika aturan tambahan tertentu dipicu, Anda dapat menentukan alamat penerima notifikasi tersebut disini."
- general_email_notification_name: "Jika Anda memilih untuk menerima notifikasi dari CIDRAM melalui email, misalnya, ketika aturan tambahan tertentu dipicu, Anda dapat menentukan nama penerima notifikasi tersebut disini."
+ general_email_notification_address: "Jika Anda memilih untuk menerima notifikasi dari CIDRAM melalui email, misalnya, ketika aturan tambahan tertentu dipicu, Anda dapat menentukan alamat penerima untuk notifikasi tersebut disini."
+ general_email_notification_name: "Jika Anda memilih untuk menerima notifikasi dari CIDRAM melalui email, misalnya, ketika aturan tambahan tertentu dipicu, Anda dapat menentukan nama penerima untuk notifikasi tersebut disini."
+ general_email_notification_when: "Kapan harus mengirim notifikasi setelah mereka dibuat."
  general_emailaddr: "Jika Anda ingin, Anda dapat menyediakan alamat email sini untuk diberikan kepada pengguna ketika diblokir, bagi mereka untuk menggunakan sebagai metode kontak untuk dukungan dan/atau bantuan untuk dalam hal mereka menjadi diblokir keliru atau diblokir oleh kesalahan. PERINGATAN: Apapun alamat email Anda menyediakan sini akan pasti diperoleh oleh spambots dan pencakar/scrapers ketika digunakan disini, dan karena itu, jika Anda ingin memberikan alamat email disini, itu sangat direkomendasikan Anda memastikan bahwa alamat email yang Anda berikan disini adalah alamat yang dapat dibuang dan/atau adalah alamat Anda tidak keberatan menjadi di-spam (dengan kata lain, Anda mungkin tidak ingin untuk menggunakan Anda alamat email yang personal primer atau bisnis primer)."
  general_emailaddr_display_style: "Bagaimana Anda lebih suka alamat email yang akan disajikan kepada pengguna?"
  general_fields: "Kontrol untuk bidang selama acara blokir (ketika permintaan diblokir)."
@@ -331,6 +332,7 @@ field:
  Add more conditions: "Tambahkan lebih banyak kondisi"
  Add to tracking: "Tambahkan ke pelacakan"
  Add webhook: "Tambahkan webhook"
+ After 24 hours, bundled together: "Setelah 24 jam, digabungkan bersama (atau ketika dipicu secara manual, misalnya, melalui cron)."
  Banned: "Dilarang"
  Blocked: "Diblokir"
  Clear all: "Cabut semua"
@@ -355,6 +357,7 @@ field:
  Filename: "Nama file:"
  Generate output as CIDRs: "Hasilkan keluaran menggunakan notasi CIDR"
  Generate output as netmasks: "Hasilkan keluaran menggunakan notasi netmask"
+ Immediately: "Segera."
  Install: "Instal"
  Latest version: "Versi terbaru"
  Log In: "Masuk"
@@ -362,6 +365,7 @@ field:
  New name: "Nama baru:"
  Non-clickable text: "Teks yang tidak dapat diklik"
  Not tracking: "Tidak melacak."
+ Only when triggered manually: "Hanya bila dipicu secara manual (misalnya, melalui cron)."
  Options: "Opsi"
  Password: "Kata sandi"
  Permissions: "Izin"
@@ -689,7 +693,7 @@ label:
   Notes: "Catatan (hanya ditampilkan di halaman ini, dan tidak memengaruhi aturan):"
   Other options and special flags: "Opsi lain dan bendera khusus:"
   Requires PHPMailer: "Membutuhkan PHPMailer."
-  Send trigger notification to the configured email notification address: "Kirim pemberitahuan pemicu ke alamat pemberitahuan email yang dikonfigurasi"
+  Send trigger notification to the configured email notification address: "Kirim notifikasi pemicu ke alamat notifikasi email yang dikonfigurasi"
   Suppress logging: "Menekan catatan"
   Suppress output template: "Menekan template output"
   The name of the file to run: "Nama file yang akan dieksekusi:"

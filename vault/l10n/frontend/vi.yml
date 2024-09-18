@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2024.07.23).
+# This file: Vietnamese language data for the front-end (last modified: 2024.09.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -192,6 +192,7 @@ config:
  general_disabled_channels: "Điều này có thể được sử dụng để ngăn CIDRAM sử dụng các kênh cụ thể khi gửi yêu cầu (ví dụ, khi cập nhật, khi lấy siêu dữ liệu thành phần, vv)."
  general_email_notification_address: "Nếu bạn đã chọn nhận thông báo từ CIDRAM qua email, ví dụ, khi các quy tắc phụ trợ cụ thể được kích hoạt, bạn có thể chỉ định địa chỉ người nhận cho những thông báo đó tại đây."
  general_email_notification_name: "Nếu bạn đã chọn nhận thông báo từ CIDRAM qua email, ví dụ, khi các quy tắc phụ trợ cụ thể được kích hoạt, bạn có thể chỉ định tên người nhận cho những thông báo đó tại đây."
+ general_email_notification_when: "Khi nào gửi thông báo sau khi được tạo."
  general_emailaddr: "Nếu bạn muốn, bạn có thể cung cấp một địa chỉ email ở đây để được trao cho người dùng khi họ đang bị chặn, cho họ để sử dụng như một điểm tiếp xúc cho hỗ trợ hay giúp đở cho trong trường hợp họ bị chặn bởi nhầm hay lỗi. CẢNH BÁO: Bất kỳ địa chỉ email mà bạn cung cấp ở đây sẽ chắc chắn nhất được mua lại bởi chương trình thư rác và cái nạo trong quá trình con của nó được sử dụng ở đây, và như vậy, nó khuyên rằng nếu bạn chọn để cung cấp một địa chỉ email ở đây, mà bạn đảm bảo rằng địa chỉ email bạn cung cấp ở đây là một địa chỉ dùng một lần hay một địa chỉ mà bạn không nhớ được thư rác (nói cách khác, có thể bạn không muốn sử dụng một cá nhân chính hay kinh doanh chính địa chỉ email)."
  general_emailaddr_display_style: "Bạn muốn địa chỉ email được trình bày như thế nào với người dùng?"
  general_fields: "Điều khiển cho các trường trong các sự kiện chặn (khi một yêu cầu bị chặn)."
@@ -331,6 +332,7 @@ field:
  Add more conditions: "Thêm các điều kiện khác"
  Add to tracking: "Thêm vào giám sát"
  Add webhook: "Thêm webhook"
+ After 24 hours, bundled together: "Sau 24 giờ, được đóng gói lại với nhau (hoặc khi được kích hoạt thủ công, ví dụ, thông qua cron)."
  Banned: "Bị cấm"
  Blocked: "Bị chặn"
  Clear all: "Hủy bỏ tất cả"
@@ -355,6 +357,7 @@ field:
  Filename: "Tên tập tin:"
  Generate output as CIDRs: "Tạo đầu ra dưới dạng CIDR"
  Generate output as netmasks: "Tạo đầu ra dưới dạng mặt nạ mạng"
+ Immediately: "Ngay lập tức."
  Install: "Cài đặt"
  Latest version: "Phiên bản mới nhất"
  Log In: "Đăng nhập"
@@ -362,6 +365,7 @@ field:
  New name: "Tên mới:"
  Non-clickable text: "Văn bản không thể nhấp"
  Not tracking: "Không giám sát."
+ Only when triggered manually: "Chỉ khi được kích hoạt thủ công (ví dụ, thông qua cron)."
  Options: "Tùy chọn"
  Password: "Mật khẩu"
  Permissions: "Quyền"

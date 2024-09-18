@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2024.07.23).
+# This file: Japanese language data for the front-end (last modified: 2024.09.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -192,6 +192,7 @@ config:
  general_disabled_channels: "これは、要求を送信するときにCIDRAMが特定のチャネルを使用しないようにするために使用できます​（例えば、更新時、コンポーネント・メタデータの取得時、など）。"
  general_email_notification_address: "CIDRAMからＥメールで通知を受け取ることを選択した場合、例えば、特定の補助ルールがトリガーされたとき、ここで、これらの通知の受信者アドレスを指定できます。"
  general_email_notification_name: "CIDRAMからＥメールで通知を受け取ることを選択した場合、例えば、特定の補助ルールがトリガーされたとき、ここで、これらの通知の受信者名を指定できます。"
+ general_email_notification_when: "通知が生成された後に送信するタイミング。"
  general_emailaddr: "ここにＥメールアドレスを入力して、ユーザーがブロックされているときにユーザーに送信することができます。​これはサポートと支援に使用できます（誤ってブロックされた場合、等）。​警告：​ここに入力されたＥメールアドレスは、おそらくスパムロボットによって取得されます。​ここで提供されるＥメールアドレスは、すべて使い捨てにすることを強く推奨します（例えば、プライマリ個人アドレスまたはビジネスアドレスを使用しない、等）。"
  general_emailaddr_display_style: "ユーザーにＥメール・アドレスを提示することをどのように希望しますか？"
  general_fields: "ブロック・イベント中のために、フィールドのコントロールです （リクエストがブロックされたとき）。"
@@ -331,6 +332,7 @@ field:
  Add more conditions: "条件を追加"
  Add to tracking: "トラッキングに追加"
  Add webhook: "Webhookを追加"
+ After 24 hours, bundled together: "２４時間後、まとめてバンドルされます（または、ｃｒｏｎなどによって手動でトリガーされた場合）。"
  Banned: "禁止された"
  Blocked: "ブロックされましたか？"
  Clear all: "すべてキャンセル"
@@ -355,6 +357,7 @@ field:
  Filename: "ファイル名："
  Generate output as CIDRs: "ＣＩＤＲを使って出力を生成する"
  Generate output as netmasks: "ネットマスクを使って出力を生成する"
+ Immediately: "すぐに。"
  Install: "インストール"
  Latest version: "最新バージョン"
  Log In: "ログイン"
@@ -362,6 +365,7 @@ field:
  New name: "新しい名前："
  Non-clickable text: "クリックできないテキスト"
  Not tracking: "追跡していません。"
+ Only when triggered manually: "手動でトリガーされた場合のみ（例：ｃｒｏｎ経由）。"
  Options: "オプション"
  Password: "パスワード"
  Permissions: "パーミッション"

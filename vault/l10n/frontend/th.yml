@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2024.07.23).
+# This file: Thai language data for the front-end (last modified: 2024.09.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -192,6 +192,7 @@ config:
  general_disabled_channels: "สิ่งนี้สามารถนำมาใช้เพื่อป้องกัน CIDRAM จากการใช้ช่องทางเฉพาะเมื่อส่งคำขอ (เช่นเมื่ออัปเดต เมื่อดึงข้อมูลเมตาของคอมโพเนนต์ ฯลฯ)."
  general_email_notification_address: "หากคุณเลือกที่จะรับการแจ้งเตือนจาก CIDRAM ทางอีเมล เช่น เมื่อมีการเรียกใช้กฎเสริมเฉพาะ คุณสามารถระบุที่อยู่ผู้รับสำหรับการแจ้งเตือนเหล่านั้นได้ที่นี่"
  general_email_notification_name: "หากคุณเลือกที่จะรับการแจ้งเตือนจาก CIDRAM ทางอีเมล เช่น เมื่อมีการเรียกใช้กฎเสริมเฉพาะ คุณสามารถระบุชื่อผู้รับสำหรับการแจ้งเตือนเหล่านั้นได้ที่นี่"
+ general_email_notification_when: "เมื่อใดจึงจะส่งการแจ้งเตือนหลังจากที่สร้างขึ้นแล้ว."
  general_emailaddr: "หากต้องการคุณสามารถระบุที่อยู่อีเมลเพื่อมอบให้กับผู้ใช้เมื่อมีการปิดกั้น สำหรับพวกเขาที่จะใช้เป็นจุดติดต่อสำหรับการสนับสนุนและให้ความช่วยเหลือเมื่อพวกเขากำลังบล็อกผิดพลาด. คำเตือน: ที่อยู่อีเมลใด ๆ ที่จัดหาให้ในที่นี้จะได้รับจากสแปมบอทและแครปเปอร์ ดังนั้นขอแนะนำให้คุณเลือกที่อยู่อีเมลที่ใช้แล้วทิ้งหรือไม่สำคัญ (นั่นคือ คุณอาจไม่ต้องการใช้ที่อยู่อีเมลธุรกิจหลักหรือส่วนบุคคลหลักของคุณ)."
  general_emailaddr_display_style: "คุณต้องการที่อยู่อีเมลที่จะนำเสนอต่อผู้ใช้อย่างไร?"
  general_fields: "การควบคุมสำหรับฟิลด์ระหว่างเหตุการณ์บล็อก (เมื่อคำขอถูกปิดกั้น)."
@@ -331,6 +332,7 @@ field:
  Add more conditions: "เพิ่มเงื่อนไขเพิ่มเติม"
  Add to tracking: "เพิ่มในการติดตาม"
  Add webhook: "เพิ่ม webhook"
+ After 24 hours, bundled together: "หลังจากผ่านไป 24 ชั่วโมง มัดรวมกัน (หรือเมื่อถูกทริกเกอร์ด้วยตนเอง เช่น ผ่าน cron)."
  Banned: "ถูกห้าม"
  Blocked: "ถูกบล็อก"
  Clear all: "ล้างทั้งหมด"
@@ -355,6 +357,7 @@ field:
  Filename: "ชื่อไฟล์:"
  Generate output as CIDRs: "สร้างเอาต์พุตเป็น CIDR"
  Generate output as netmasks: "สร้างเอาต์พุตเป็น netmask"
+ Immediately: "โดยทันที."
  Install: "ติดตั้ง"
  Latest version: "รุ่นล่าสุด"
  Log In: "เข้าสู่ระบบ"
@@ -362,6 +365,7 @@ field:
  New name: "ชื่อใหม่:"
  Non-clickable text: "ข้อความที่ไม่สามารถคลิกได้"
  Not tracking: "ไม่ได้ติดตาม."
+ Only when triggered manually: "เฉพาะเมื่อถูกทริกเกอร์ด้วยตนเอง (เช่น ผ่าน cron)."
  Options: "ตัวเลือก"
  Password: "รหัสผ่าน"
  Permissions: "สิทธิ์"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2024.07.23).
+# This file: Arabic language data for the front-end (last modified: 2024.09.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -192,6 +192,7 @@ config:
  general_disabled_channels: "يمكن استخدام هذا لمنع CIDRAM من استخدام قنوات معينة عند إرسال الطلبات (على سبيل المثال، عند التحديث، عند جلب بيانات تعريف المكون، إلخ)."
  general_email_notification_address: "إذا اخترت تلقي الإشعارات من CIDRAM عبر البريد الإلكتروني، على سبيل المثال، عند تفعيل قواعد مساعدة محددة، يمكنك تحديد عنوان المستلم لهذه الإشعارات هنا."
  general_email_notification_name: "إذا اخترت تلقي الإشعارات من CIDRAM عبر البريد الإلكتروني، على سبيل المثال، عند تفعيل قواعد مساعدة محددة، يمكنك تحديد اسم المستلم لتلك الإشعارات هنا."
+ general_email_notification_when: "متى يتم إرسال الإشعارات بعد إنشائها."
  general_emailaddr: "لو كنت تريد، يمكنك توفير عنوان البريد الإلكتروني هنا أن تعطى للمستخدمين عند أنها ممنوعة، بالنسبة لهم لاستخدامها كنقطة اتصال للحصول على الدعم والمساعدة لفي حال منهم سدت طريق الخطأ أو في ضلال. تحذير: أي عنوان البريد الإلكتروني الذي تزويد هنا وبالتأكيد سيتم شراؤها من قبل المتطفلين و برامج التطفل وكاشطات خلال المستخدمة هنا، و حينئذ، انها المستحسن أن إذا اخترت توفير عنوان البريد الإلكتروني هنا، يمكنك التأكد من أن عنوان البريد الإلكتروني الذي نورد هنا يمكن التخلص منها و/أو عنوان أنك لا تمانع في أن محتوى غير مرغوب فيه (بعبارات أخرى، وربما كنت لا تريد استخدام الرئيسية عناوين البريد الإلكتروني التجارية أو العناوين الشخصية الرئيسية الخاصة بك)."
  general_emailaddr_display_style: "كيف تفضل أن يتم تقديم عنوان البريد الإلكتروني إلى المستخدمين؟"
  general_fields: "ضوابط الحقول أثناء أحداث الكتلة (عندما يتم حظر طلب)."
@@ -331,6 +332,7 @@ field:
  Add more conditions: "إضافة المزيد من الشروط"
  Add to tracking: "أضف إلى التتبع"
  Add webhook: "إضافة webhook"
+ After 24 hours, bundled together: "بعد 24 ساعة، يتم تجميعها معًا (أو عند تشغيلها يدويًا، على سبيل المثال، عبر cron)."
  Banned: "محظور"
  Blocked: "مسدود"
  Clear all: "امسح الكل"
@@ -355,6 +357,7 @@ field:
  Filename: "اسم الملف:"
  Generate output as CIDRs: "توليد الإخراج باستخدام تدوين CIDR"
  Generate output as netmasks: "توليد الإخراج باستخدام تدوين قناع الشبكة"
+ Immediately: "في الحال."
  Install: "تثبيت"
  Latest version: "احدث اصدار"
  Log In: "تسجيل الدخول"
@@ -362,6 +365,7 @@ field:
  New name: "اسم جديد:"
  Non-clickable text: "نص غير قابل للنقر"
  Not tracking: "لا تتبع."
+ Only when triggered manually: "فقط عند تشغيله يدويًا (على سبيل المثال، عبر cron)."
  Options: "خيارات"
  Password: "كلمه السر"
  Permissions: "أذونات"

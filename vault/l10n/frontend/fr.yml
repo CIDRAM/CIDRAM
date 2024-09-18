@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2024.07.23).
+# This file: French language data for the front-end (last modified: 2024.09.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -117,10 +117,10 @@ checkbox:
  Blocked non-verified: "Non vérifiés bloqués"
  Delete orphaned values: "Supprimer les valeurs orphelines."
  Enable this stage: "Activer cette étape\_?"
- Log any errors generated during this stage: "Enregistrer les erreurs générées lors de cette étape\_?"
+ Log any errors generated during this stage: "Enregistrer les erreurs générés lors de cette étape\_?"
  Omit this field when it_s empty: "Omettre ce champ lorsqu'il est vide\_?"
  Profile it: "Profilez le."
- Should infractions generated during this stage count towards IP tracking: "Compter les infractions générées lors de cette étape dans le surveillance d'IP\_?"
+ Should infractions generated during this stage count towards IP tracking: "Compter les infractions générés lors de cette étape dans le surveillance d'IP\_?"
  Should this field appear in log entries: "Inclure ce champ dans les journaux\_?"
  Should this field appear on the access denied page: "Inclure ce champ sur la page «\_accès refusé\_»\_?"
  Suppress HCaptcha: "Supprimer HCaptcha"
@@ -192,6 +192,7 @@ config:
  general_disabled_channels: "Ceci peut être utilisé pour empêcher CIDRAM d'utiliser des canaux particuliers lors de l'envoi de requêtes (par exemple, lors de la mise à jour, lors de l'extraction de métadonnées de composant, etc)."
  general_email_notification_address: "Si vous avez choisi de recevoir des notifications de CIDRAM par e-mail, par exemple, lorsque des règles auxiliaires spécifiques sont déclenchées, vous pouvez spécifier ici l'adresse du destinataire de ces notifications."
  general_email_notification_name: "Si vous avez choisi de recevoir des notifications de CIDRAM par e-mail, par exemple, lorsque des règles auxiliaires spécifiques sont déclenchées, vous pouvez spécifier ici le nom du destinataire de ces notifications."
+ general_email_notification_when: "Quand envoyer des notifications après avoir été générés."
  general_emailaddr: "Si vous souhaitez, vous pouvez fournir une adresse e-mail ici à donner aux utilisateurs quand ils sont bloqués, pour qu'ils utilisent comme un point de contact pour support et/ou assistance dans le cas d'eux étant bloqué par erreur. AVERTISSEMENT\_: Tout de l'adresse e-mail vous fournissez ici sera très certainement être acquis par les robots des spammeurs et voleurs de contenu au cours de son être utilisés ici, et donc, il est recommandé fortement que si vous choisissez pour fournir une adresse e-mail ici, de vous assurer que l'adresse e-mail que vous fournissez ici est une adresse jetable et/ou une adresse que ne vous dérange pas d'être spammé (en d'autres termes, vous ne voulez probablement pas d'utiliser votre adresses e-mail personnel primaire ou d'affaires primaire)."
  general_emailaddr_display_style: "Comment préférez-vous que l'adresse électronique soit présentée aux utilisateurs\_?"
  general_fields: "Contrôles des champs lors d'un événement de bloc (lorsqu'une requête est bloquée)."
@@ -228,7 +229,7 @@ config:
  ipapi_whitelisted_asns: *ConfigWhitelistedASNs
  ipapi_whitelisted_ccs: *ConfigWhitelistedCCs
  legal: "Configuration pour les exigences légales."
- legal_privacy_policy: "L'adresse d'une politique de confidentialité pertinente à afficher dans le pied de page des pages générées. Spécifier une URL, ou laisser vide à désactiver."
+ legal_privacy_policy: "L'adresse d'une politique de confidentialité pertinente à afficher dans le pied de page des pages générés. Spécifier une URL, ou laisser vide à désactiver."
  legal_pseudonymise_ip_addresses: "Pseudonymiser les adresses IP lors de la journalisation\_? True = Oui [Défaut]\_; False = Non."
  logging: "Configuration liée à la journalisation (à l'exclusion de ce qui est applicable aux autres catégories)."
  logging_apache_style_log: "Un fichier dans le style d'Apache pour enregistrement de toutes les tentatives d'accès bloquées. Spécifier un fichier, ou laisser vide à désactiver."
@@ -331,6 +332,7 @@ field:
  Add more conditions: "Ajouter plus de conditions"
  Add to tracking: "Ajouter au suivi"
  Add webhook: "Ajouter un webhook"
+ After 24 hours, bundled together: "Après 24 heures, regroupés (ou lorsqu'il est déclenché manuellement, par exemple, via cron)."
  Banned: "Interdit"
  Blocked: "Bloqué"
  Clear all: "Annuler tout"
@@ -355,6 +357,7 @@ field:
  Filename: "Nom de fichier\_:"
  Generate output as CIDRs: "Générer une sortie sous forme de CIDR"
  Generate output as netmasks: "Générer une sortie sous forme de masques de réseau"
+ Immediately: "Immédiatement."
  Install: "Installer"
  Latest version: "Dernière version"
  Log In: "Connecter"
@@ -362,6 +365,7 @@ field:
  New name: "Nouveau nom\_:"
  Non-clickable text: "Texte non-cliquable"
  Not tracking: "Pas de suivi."
+ Only when triggered manually: "Seulement lorsqu'il est déclenché manuellement (par exemple, via cron)."
  Options: "Options"
  Password: "Mot de Passe"
  Permissions: "Autorisations"

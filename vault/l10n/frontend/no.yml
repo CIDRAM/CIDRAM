@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2024.07.23).
+# This file: Norwegian language data for the front-end (last modified: 2024.09.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -192,6 +192,7 @@ config:
  general_disabled_channels: "Dette kan brukes til å forhindre CIDRAM i å bruke bestemte kanaler når du sender forespørsler (f.eks., når du oppdaterer, når du henter komponentmetadata, osv)."
  general_email_notification_address: "Hvis du har valgt å motta varsler fra CIDRAM via e-post, f.eks., når spesifikke tilleggsregler utløses, du kan angi mottakeradressen for disse varslene her."
  general_email_notification_name: "Hvis du har valgt å motta varsler fra CIDRAM via e-post, f.eks., når spesifikke tilleggsregler utløses, du kan angi mottakernavnet for disse varslene her."
+ general_email_notification_when: "Når skal varsler sendes etter generering."
  general_emailaddr: "Hvis du vil, du kan levere en e-postadresse her for å bli gitt til brukerne når de er blokkert, for dem å bruke som et kontaktpunkt for støtte og/eller assistanse i tilfelle de blir blokkert feilaktig eller i feil. ADVARSEL: Uansett hvilken e-postadresse du leverer her, det vil helt sikkert bli ervervet av spamboter og skraper i løpet av bruken her, og så, det anbefales sterkt at hvis du velger å levere en e-postadresse her, at du sørger for at e-postadressen du oppgir her er en engangsadresse og/eller en adresse som du ikke bryr deg om å bli spammet (dvs., du vil sannsynligvis ikke bruke dine primære personlige eller primære virksomhets e-postadresser)."
  general_emailaddr_display_style: "Hvordan foretrekker du e-postadressen som skal presenteres for brukerne?"
  general_fields: "Kontroller for feltene under blokkeringshendelser (når en forespørsel er blokkert)."
@@ -331,6 +332,7 @@ field:
  Add more conditions: "Legg til en ny betingelse"
  Add to tracking: "Legg til sporing"
  Add webhook: "Legg til nettkrok"
+ After 24 hours, bundled together: "Etter 24 timer, buntet sammen (eller når den utløses manuelt, f.eks., via cron)."
  Banned: "Utestengt"
  Blocked: "Blokkert"
  Clear all: "Rydde alt"
@@ -355,6 +357,7 @@ field:
  Filename: "Filnavn:"
  Generate output as CIDRs: "Generer utdata som CIDRer"
  Generate output as netmasks: "Generer utdata som nettmasker"
+ Immediately: "Øyeblikkelig."
  Install: "Installer"
  Latest version: "Siste versjon"
  Log In: "Logg inn"
@@ -362,6 +365,7 @@ field:
  New name: "Nytt navn:"
  Non-clickable text: "Ikke-klikkbar tekst"
  Not tracking: "Sporer ikke."
+ Only when triggered manually: "Bare når den utløses manuelt (f.eks., via cron)."
  Options: "Alternativer"
  Password: "Passord"
  Permissions: "Tillatelser"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Catalan language data for the front-end (last modified: 2024.08.12).
+# This file: Catalan language data for the front-end (last modified: 2024.09.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -192,6 +192,7 @@ config:
  general_disabled_channels: "Això es pot utilitzar per evitar que CIDRAM utilitzi canals concrets quan s'envien sol·licituds (per exemple, en actualitzar, en obtenir metadades de components, etc)."
  general_email_notification_address: "Si heu optat per rebre notificacions de CIDRAM per correu electrònic, per exemple, quan es desencadenen regles auxiliars específiques, podeu especificar l'adreça del destinatari d'aquestes notificacions aquí."
  general_email_notification_name: "Si heu optat per rebre notificacions de CIDRAM per correu electrònic, per exemple, quan es desencadenen regles auxiliars específiques, podeu especificar el nom del destinatari d'aquestes notificacions aquí."
+ general_email_notification_when: "Quan enviar notificacions després de generar-se."
  general_emailaddr: "Si ho desitgeu, podeu proporcionar una adreça de correu electrònic aquí per donar-la als usuaris quan estiguin bloquejats, per ser utilitzat com a punt de contacte de suport i/o assistència en cas de bloqueig per error. ADVERTIMENT: Qualsevol adreça de correu electrònic que proporcioneu aquí, segurament serà adquirida pels robots de correu brossa i els scrapers durant el seu ús aquí, i per tant, si trieu proporcionar una adreça de correu electrònic aquí, us recomanem que us assegureu que l'adreça de correu electrònic proporcionada aquí és d'un sol ús o una adreça que no t'importa que estigui sotmesa a correu brossa (és a dir, és probable que no vulgueu utilitzar les vostres adreces de correu electrònic personals o empresarials principals)."
  general_emailaddr_display_style: "Com preferiries que es presentés l'adreça de correu electrònic als usuaris?"
  general_fields: "Controls dels camps durant els esdeveniments de bloqueig (quan es bloqueja una sol·licitud)."
@@ -331,6 +332,7 @@ field:
  Add more conditions: "Afegeix més condicions"
  Add to tracking: "Afegeix al seguiment"
  Add webhook: "Afegeix un webhook"
+ After 24 hours, bundled together: "Després de 24 hores, s'agrupen (o quan es desencadenen manualment, per exemple, mitjançant cron)."
  Banned: "Prohibit"
  Blocked: "Bloquejat"
  Clear all: "Esborra-ho tot"
@@ -355,6 +357,7 @@ field:
  Filename: "Nom del fitxer:"
  Generate output as CIDRs: "Generar sortida com a CIDR"
  Generate output as netmasks: "Generar sortida com a màscares de xarxa"
+ Immediately: "Immediatament."
  Install: "Instal·leu"
  Latest version: "Última versió"
  Log In: "Iniciar sessió"
@@ -362,6 +365,7 @@ field:
  New name: "Nom nou:"
  Non-clickable text: "Text que no es clicable"
  Not tracking: "No s'està fent un seguiment."
+ Only when triggered manually: "Només quan es desencadenen manualment (per exemple, mitjançant cron)."
  Options: "Opcions"
  Password: "Contrasenya"
  Permissions: "Permisos"
@@ -715,7 +719,7 @@ label:
   mode_edit: "Mode d'edició"
   mode_view: "Mode de visualització"
   profile the request: "perfileu la sol·licitud"
-  redirect the request (without blocking it): "redirigeix ​​la sol·licitud (sense bloquejar-la)"
+  redirect the request (without blocking it): "redirigeix la sol·licitud (sense bloquejar-la)"
   run a file to handle the request: "executeu un fitxer per gestionar la sol·licitud"
   whitelist the request: "tracteu la sol·licitud com a la llista blanca"
  expire_bad: "El temps que les dades dolentes guardades a la memòria cau per aquest mòdul, des del moment de la seva creació, poden viure abans que caduqui."

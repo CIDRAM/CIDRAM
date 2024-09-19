@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv4_isps.dat
 
-# Version: 2024.258.0
-# Last modified: 2024.09.15
+# Version: 2024.262.0
+# Last modified: 2024.09.19
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -504,35 +504,23 @@ Tag: Mobin Net
 # Major domestic Indonesian ISP. Brute-force, SSH, XSS, FTP, and webapp
 # attacks, hacking, port scans, and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 586.
-# Updated: 2023.10.05
+# Stop Forum Spam (SFS) listings: 246.
+# Updated: 2024.09.19
 
 103.10.66.0/24 Deny Attacks
 103.105.27.0/24 Deny Attacks
 103.105.28.0/24 Deny Attacks
-103.105.30.80/32 Deny Attacks
-103.105.30.85/32 Deny Attacks
-103.105.30.90/32 Deny Attacks
-103.105.30.121/32 Deny Attacks
-103.105.31.0/24 Deny Attacks
-103.105.32.0/22 Deny Attacks
-103.108.28.121/32 Deny Spam
-114.142.168.0/22 Deny Attacks
+103.105.33.0/24 Deny Attacks
+103.105.34.0/24 Deny Attacks
+114.142.171.0/24 Deny Attacks
 114.142.172.0/23 Deny Attacks
 116.206.8.0/24 Deny Attacks
-116.206.9.12/32 Deny Spam
 116.206.12.0/22 Deny Attacks
-116.206.28.0/22 Deny Attacks
-116.206.32.34/32 Deny Attacks
-116.206.32.46/32 Deny Attacks
-116.206.32.59/32 Deny Attacks
-116.206.33.40/32 Deny Attacks
-116.206.35.0/24 Deny Attacks
+116.206.28.0/23 Deny Attacks
+116.206.32.0/23 Deny Attacks
 116.206.37.0/24 Deny Attacks
-116.206.42.0/23 Deny Attacks
 180.214.233.0/24 Deny Attacks
-202.67.34.0/24 Deny Attacks
-202.67.40.0/22 Deny Attacks
+202.67.40.0/23 Deny Attacks
 223.255.228.0/22 Deny Attacks
 Origin: ID
 Profile: Domestic ISP;Mobile ISP;Multiplay
@@ -542,8 +530,8 @@ Tag: PT Hutchison
 # ASN 24203 ("PT XL Axiata").
 # Indonesian fibre provider and domestic ISP. Spam and other unwanted traffic
 # detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 543.
-# Updated: 2023.10.05
+# Stop Forum Spam (SFS) listings: 278.
+# Updated: 2024.09.19
 
 112.215.151.0/24 Deny Attacks
 112.215.209.0/24 Deny Attacks
@@ -555,18 +543,20 @@ Tag: PT Hutchison
 140.213.10.0/23 Deny Attacks
 140.213.15.0/24 Deny Attacks
 140.213.16.0/22 Deny Attacks
+140.213.20.0/23 Deny Attacks
+140.213.22.0/24 Deny Attacks
+140.213.24.0/24 Deny Attacks
+140.213.26.0/24 Deny Attacks
+140.213.28.0/22 Deny Attacks
 140.213.32.0/22 Deny Attacks
 140.213.48.0/23 Deny Attacks
 140.213.51.0/24 Deny Attacks
 140.213.138.0/24 Deny Attacks
 140.213.160.0/21 Deny Attacks
 140.213.168.0/22 Deny Attacks
-140.213.172.149/32 Deny Attacks
-140.213.172.182/32 Deny Attacks
+140.213.172.8/32 Deny Attacks
+140.213.172.155/32 Deny Attacks
 140.213.173.0/24 Deny Attacks
-140.213.174.20/32 Deny Attacks
-140.213.174.51/32 Deny Attacks
-140.213.174.162/32 Deny Attacks
 140.213.175.0/24 Deny Attacks
 140.213.176.0/21 Deny Attacks
 140.213.187.0/24 Deny Attacks
@@ -7833,7 +7823,7 @@ Origin: ES
 163.5.151.0/24 Deny Cloud
 Origin: FR
 46.102.180.0/24 Deny Cloud
-82.102.18.124/32 Deny Cloud
+82.102.18.0/24 Deny Cloud
 82.102.23.0/24 Deny Attacks
 82.102.27.0/24 Deny Attacks
 84.39.112.0/24 Deny Attacks
@@ -7852,7 +7842,7 @@ Origin: FR
 89.238.170.0/24 Deny Cloud
 89.238.188.0/23 Deny Cloud
 91.207.57.0/24 Deny Attacks
-104.239.37.55/32 Deny Cloud
+104.239.37.0/24 Deny Cloud
 185.23.56.0/22 Deny Cloud
 185.94.192.0/24 Deny Attacks
 185.104.186.0/24 Deny Attacks
@@ -7940,23 +7930,23 @@ Origin: PK
 188.215.96.0/22 Deny Cloud
 Origin: PL
 5.157.216.0/22 Deny Cloud
-5.253.206.40/32 Deny Cloud
+5.253.206.0/24 Deny Cloud
 37.120.133.0/24 Deny Attacks
 37.120.142.0/24 Deny Attacks
 37.120.153.0/24 Deny Attacks
 37.120.155.0/24 Deny Attacks
-37.120.156.202/32 Deny Cloud
-37.120.232.74/32 Deny Cloud
+37.120.156.0/24 Deny Cloud
+37.120.232.0/24 Deny Cloud
 37.120.235.0/24 Deny Attacks
-45.89.174.42/32 Deny Cloud
+45.89.174.0/24 Deny Cloud
 45.92.33.0/24 Deny Attacks
-45.128.38.244/32 Deny Cloud
-62.133.47.139/32 Deny Cloud
+45.128.38.0/24 Deny Cloud
+62.133.47.0/24 Deny Cloud
 77.36.30.0/24 Deny Cloud
 77.36.36.0/23 Deny Cloud
 84.247.48.0/24 Deny Attacks
 84.247.50.0/24 Deny Attacks
-84.252.92.28/32 Deny Cloud
+84.252.92.0/24 Deny Cloud
 86.106.74.0/24 Deny Attacks
 89.36.76.0/24 Deny Attacks
 91.90.124.0/24 Deny Attacks
@@ -7965,7 +7955,7 @@ Origin: PL
 91.232.184.0/24 Deny Cloud
 91.245.176.0/21 Deny Cloud
 91.246.196.0/22 Deny Cloud
-92.119.177.24/32 Deny Cloud
+92.119.177.0/24 Deny Cloud
 93.120.124.0/22 Deny Cloud
 95.181.233.0/24 Deny Attacks
 95.181.236.0/24 Deny Attacks
@@ -8018,20 +8008,20 @@ Origin: PL
 185.236.200.0/24 Deny Attacks
 185.242.7.0/24 Deny Attacks
 185.245.85.0/24 Deny Attacks
-185.252.223.8/32 Deny Cloud
+185.252.223.0/24 Deny Cloud
 185.253.97.0/24 Deny Attacks
 185.253.162.0/24 Deny Attacks
 188.74.180.0/24 Deny Cloud
 188.119.168.0/21 Deny Cloud
 188.213.34.0/24 Deny Attacks
 188.214.122.0/24 Deny Attacks
-193.9.114.211/32 Deny Cloud
-193.37.253.202/32 Deny Cloud
+193.9.114.0/24 Deny Cloud
+193.37.253.0/24 Deny Cloud
 193.176.86.0/24 Deny Attacks
 193.231.202.0/24 Deny Cloud
 194.36.108.0/24 Deny Attacks
 195.206.105.0/24 Deny Cloud
-212.103.48.58/32 Deny Cloud
+212.103.48.0/24 Deny Cloud
 217.156.26.0/24 Deny Cloud
 Origin: RO
 87.236.37.0/24 Deny Cloud
@@ -17632,11 +17622,11 @@ Tag: Wiland Ltd
 # ASNs 60339, 206067 ("Hutchison 3G UK Limited").
 # UK mobile provider. Brute-force, SSH attacks, spam, and DNS poisoning
 # detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 274 (AS206067).
-# Updated: 2022.11.03 / Checked: 2023.10.01
+# Stop Forum Spam (SFS) listings: 212 (AS206067).
+# Updated: 2024.09.19
 
 92.40.168.0/23 Deny Attacks
-92.40.187.0/24 Deny Attacks
+92.40.187.213/32 Deny Attacks
 Origin: GB
 Profile: Mobile ISP
 Tag: Hutchison 3G UK Limited
@@ -17750,26 +17740,17 @@ Tag: Kvant-II
 # Brute-force, SSH, and webapp attacks, port scans, and spam detected from
 # here. Tor endpoints detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 72.
-# Updated: 2023.10.08
+# Stop Forum Spam (SFS) listings: 75.
+# Updated: 2024.09.19
 
-43.224.5.118/32 Deny Attacks
-43.224.5.246/32 Deny Attacks
-43.224.6.194/32 Deny Attacks
-43.224.6.229/32 Deny Attacks
-43.224.7.222/32 Deny Attacks
-115.160.185.148/32 Deny Spam
+43.224.5.63/32 Deny Attacks
+43.224.6.98/32 Deny Attacks
+43.224.7.43/32 Deny Attacks
 202.64.124.0/24 Deny Attacks
-202.69.68.58/32 Deny Attacks
-202.69.68.90/32 Deny Attacks
-202.69.68.230/32 Deny Attacks
-202.131.66.238/32 Deny Attacks
+202.69.68.110/32 Deny Attacks
 202.155.204.26/32 Deny Attacks
-202.155.204.98/32 Deny Attacks
-218.255.67.35/32 Deny Attacks
-218.255.67.125/32 Deny Attacks
-218.255.67.150/32 Deny Attacks
-218.255.67.210/32 Deny Attacks
+218.255.67.20/32 Deny Attacks
+218.255.67.96/32 Deny Attacks
 Origin: HK
 Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Tor endpoints here;Webhosting
 Tag: HKBN Enterprise Solutions
@@ -22077,13 +22058,16 @@ Profile: Domestic ISP
 Tag: Rogers
 
 
-# ASN 140812 ("Jetway Networks Private Limited").
+# ASN 142453 ("FASTJET TELECOM PRIVATE LIMITED").
 # Indian domestic ISP. Port scans and hacking detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 108.
-# Updated: 2022.02.22 / Checked: 2023.10.02
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2024.09.19
 
-103.90.236.0/22 Deny Attacks
+103.90.237.0/24 Deny Attacks
+103.90.238.70/32 Deny Attacks
+103.90.239.36/32 Deny Attacks
+103.170.82.179/32 Deny Attacks
 Origin: IN
 Profile: Domestic ISP
 Tag: Jetway Networks
@@ -24071,10 +24055,9 @@ Tag: Nagasaki Cable Media Inc
 # Gambian tech firm; various mixed services. Brute-force and SSH attacks, port
 # scans, hacking, and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2022.10.14 / Checked: 2023.09.21
+# Updated: 2024.09.18
 
-196.223.151.194/32 Deny Attacks
+196.223.151.28/32 Deny Attacks
 Origin: GM
 Profile: Commercial
 Tag: INSIST NET Limited

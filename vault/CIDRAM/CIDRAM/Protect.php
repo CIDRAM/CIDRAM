@@ -714,7 +714,7 @@ trait Protect
                     } else {
                         $NotificationQueueLast = (int)$NotificationQueueLast;
                     }
-                    if (true || $NotificationQueueLast <= ($this->Now - 86400)) {
+                    if ($NotificationQueueLast <= ($this->Now - 86400)) {
                         $Bundles = [];
                         foreach ($NotificationQueue as $Notification) {
                             if (!isset($Bundles[$Notification[0][0]['Address']])) {

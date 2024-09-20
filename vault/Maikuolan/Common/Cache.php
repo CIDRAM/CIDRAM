@@ -1,6 +1,6 @@
 <?php
 /**
- * A simple, unified cache handler (last modified: 2024.05.30).
+ * A simple, unified cache handler (last modified: 2024.09.20).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -1077,7 +1077,7 @@ class Cache extends CommonAbstract
      */
     public function unserializeEntry($Entry)
     {
-        if (!is_string($Entry) || !preg_match('~^a:\d+:\{.*\}$~', $Entry)) {
+        if (!is_string($Entry) || !preg_match('~^a:\d+:\{.*\}$~s', $Entry)) {
             return $Entry;
         }
         $Arr = unserialize($Entry);

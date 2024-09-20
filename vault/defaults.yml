@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2024.09.15).
+# This file: Defaults file (last modified: 2024.09.17).
 ##/
 
 Config Defaults:
@@ -566,6 +566,15 @@ Config Defaults:
   email_notification_name:
    type: "string"
    default: ""
+  email_notification_when:
+   type: "string"
+   default: "Immediately"
+   choices:
+    Immediately: "field.Immediately"
+    After24Hours: "field.After 24 hours, bundled together"
+    ManuallyOnly: "field.Only when triggered manually"
+   style: "radio"
+   experimental: true
  components:
   ipv4:
    type: "string"

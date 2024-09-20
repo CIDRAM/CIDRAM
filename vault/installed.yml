@@ -1,10 +1,10 @@
 CIDRAM Core:
  Name: "CIDRAM Core"
- Version: "3.8.0-DEV+242620"
+ Version: "3.8.0-DEV+242630"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Front-End: "Latest"
-  Common Classes Package: "^2.12.2"
+  Common Classes Package: "^2.12.3-DEV"
   l10n/core/{lang}: ">=2024.127"
   l10n/frontend/{lang}: ">=2024.183"
  Changelog: "https://github.com/CIDRAM/CIDRAM/blob/v3/Changelog.md"
@@ -28,7 +28,7 @@ CIDRAM Core:
    Checksum: "8bfa4d8f80d7adef8670529cd229de10682a538ae139b9af972d2cfe803476e2:4843"
   CIDRAM/CIDRAM/Core.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Core.php"
-   Checksum: "5f2d44d7c3cc9e1704f25e8a624a1ef42423377028be20263634fa6d0938adc2:139400"
+   Checksum: "00d98bd968cadf1a56bdd3a3a11afb42272fcb3d394b9d35f808fb4e7579828e:139400"
   CIDRAM/CIDRAM/Duration.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Duration.php"
    Checksum: "2407aa5cd6fa8f1bfd789d4d8e4cd37cba050dc7bb1ecc9c8387f75f14049c7c:11651"
@@ -40,7 +40,7 @@ CIDRAM Core:
    Checksum: "f9db3c4a9fc6e55a8da6cdf8a766c4d417a9641b48bd7505ed10c8a7dea6355a:15725"
   CIDRAM/CIDRAM/Protect.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Protect.php"
-   Checksum: "18f724fb9dd1866c10fb6e046f6f6e018bf174d0f729fa60b96b24bb38ff1dd7:62517"
+   Checksum: "ccce475ac7c01a393bffd9e6a4110362b99f958d0f764e8fdcf10df849b3ec10:65535"
   CIDRAM/CIDRAM/ReCaptcha.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/ReCaptcha.php"
    Checksum: "1e2a1b78daddce7bdb7583d6aff68ebe85d93d9b3f7efb4403d5a9f9bbd50225:15183"
@@ -55,7 +55,7 @@ CIDRAM Core:
    Checksum: "b62c0cf1deeb97c7ee15638f0a4102292a6bab6f0b6b1ee3a1dec7fa485c2e05:1352"
   defaults.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/defaults.yml"
-   Checksum: "a8319799b581bde2ba67e6517eeb0de7c284420ab07d61cfd5e07ff5fec3eb50:41133"
+   Checksum: "864dc881600b7ba9e2016474fdd6e18c903d20568982e2048a609b3f7a919e1f:41407"
   loader.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/loader.php"
    Checksum: "4d56d0a305ceafab32ade65a0f74ad27efe50964d0e257d787a6ee7056c41880:1313"
@@ -517,20 +517,20 @@ CIDRAM Front-End:
    Checksum: "60f96a49000b8aa1e61afcdc84d1bd60109584c4208ca12844013bdf20c56eec:32239"
 Common Classes Package:
  Name: "Common Classes Package"
- Version: "2.12.2"
+ Version: "2.12.3-DEV+242630"
  Dependencies:
   PHP: "^7.2|^8"
- Release Notes For: ["2.10.0", "2.11.0", "2.12.0", "2.12.1", "2.12.2"]
+ Release Notes For: ["2.10.0", "2.11.0", "2.12.0", "2.12.1", "2.12.2", "2.12.3"]
  When Update Succeeds:
   - "foreach {Components.RemoteMeta.Common Classes Package.Release Notes For} as Key => Value if {Components.Meta.Common Classes Package.Version}<{Value}&&{Components.RemoteMeta.Common Classes Package.Version}>={Value} then queue message response.release_notes https://github.com/Maikuolan/Common/releases/tag/v{Value} Common Classes Package v{Value}"
  Uninstallable: false
  Files:
   Maikuolan/Common/Cache.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/Maikuolan/Common/Cache.php"
-   Checksum: "6a8c08d3283f1c7b2746d5037623e4e74bb5192583c674b16380727ea19d2003:42690"
+   Checksum: "2e5b634f21786c40ea29feb1e357b2762e0f22a03100baf2abb21430910a1105:42691"
   Maikuolan/Common/CommonAbstract.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/Maikuolan/Common/CommonAbstract.php"
-   Checksum: "2c2b6f1b92629c3c1ccdd37cbcb63a05bfffaec7a5d7e714f01f471b9f751438:2388"
+   Checksum: "d3e1697a1760c277e1786313b230ed115abc258422131d5f36958bf039caa99a:2388"
   Maikuolan/Common/ComplexStringHandler.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/Maikuolan/Common/ComplexStringHandler.php"
    Checksum: "823edaec75178e8c56ad0accec030cbee543e6ad1a36340a2e2a12c2e2106fbb:3872"

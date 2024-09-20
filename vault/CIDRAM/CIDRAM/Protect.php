@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2024.08.17).
+ * This file: Protect traits (last modified: 2024.09.20).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -644,6 +644,12 @@ trait Protect
         /** Process email trigger notification queue (will be assigned its own stage configuration for v4; delaying to prevent BC breaks between minor/patch releases). */
         if (isset($this->CIDRAM['Trigger notifications']) && $this->Events->assigned('sendEmail')) {
             $this->Stage = 'TriggerNotifications';
+
+            $NotificationQueue = $this->Cache->getEntry('NotificationQueue');
+            if (!is_array($NotificationQueue)) {
+                $NotificationQueue = [];
+            }
+
             $Recipient = [
                 'Name' => trim($this->Configuration['general']['email_notification_name']),
                 'Address' => trim($this->Configuration['general']['email_notification_address'])
@@ -687,11 +693,56 @@ trait Protect
                 /** Prepare event data. */
                 $EventData = [[$Recipient], $this->L10N->getString('Trigger notification.Subject'), $Body, strip_tags($Body), ''];
 
-                /** Send the email. */
-                $this->Events->fireEvent('sendEmail', '', ...$EventData);
-                unset($EventData);
+                if ($this->Configuration['general']['email_notification_when'] === 'Immediately') {
+                    /** Send the email immediately. */
+                    $this->Events->fireEvent('sendEmail', '', ...$EventData);
+                } else {
+                    unset($EventData[4]);
+
+                    /** Enqueue the email for sending later. */
+                    $NotificationQueue[] = $EventData;
+                }
+                unset($EventData, $Body, $BlockInfoForEmailBody);
             }
-            unset($EventData, $Body, $BlockInfoForEmailBody, $Recipient);
+
+            /** Process the notification queue. */
+            if (count($NotificationQueue)) {
+                if ($this->Configuration['general']['email_notification_when'] !== 'ManuallyOnly') {
+                    if (($NotificationQueueLast = $this->Cache->getEntry('NotificationQueueLast')) === false) {
+                        $NotificationQueueLast = $this->Now;
+                        $this->Cache->setEntry('NotificationQueueLast', $NotificationQueueLast, 604800);
+                    } else {
+                        $NotificationQueueLast = (int)$NotificationQueueLast;
+                    }
+                    if (true || $NotificationQueueLast <= ($this->Now - 86400)) {
+                        $Bundles = [];
+                        foreach ($NotificationQueue as $Notification) {
+                            if (!isset($Bundles[$Notification[0][0]['Address']])) {
+                                $Bundles[$Notification[0][0]['Address']] = ['Name' => $Notification[0][0]['Name'], 'HTML' => [], 'Text' => []];
+                            }
+                            $Bundles[$Notification[0][0]['Address']]['HTML'][] = $Notification[2];
+                            $Bundles[$Notification[0][0]['Address']]['Text'][] = $Notification[3];
+                        }
+                        foreach ($Bundles as $Address => $Notification) {
+                            $Subject = $this->L10N->getString('Trigger notification.Subject');
+                            if (($HowMany = count($Notification['HTML'])) > 1) {
+                                $Subject .= ' (' . $HowMany . ')';
+                            }
+                            $Notification = [[['Name' => $Notification['Name'], 'Address' => $Address]], $Subject, implode("<br />\n<br />\n---<br />\n", $Notification['HTML']), implode("\n\n---\n", $Notification['Text']), ''];
+                            $this->Events->fireEvent('sendEmail', '', ...$Notification);
+                        }
+                        $this->Cache->setEntry('NotificationQueueLast', $this->Now, 604800);
+                        $this->Cache->deleteEntry('NotificationQueue');
+                        $NotificationQueue = false;
+                    }
+                    unset($HowMany, $Subject, $Notification, $Bundles, $NotificationQueueLast);
+                }
+                if ($NotificationQueue !== false) {
+                    $this->Cache->setEntry('NotificationQueue', $NotificationQueue, 604800);
+                }
+            }
+
+            unset($Recipient, $NotificationQueue);
         }
 
         /** Clearing because intermediary. */

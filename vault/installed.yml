@@ -1,6 +1,6 @@
 CIDRAM Core:
  Name: "CIDRAM Core"
- Version: "3.8.0-DEV+242631"
+ Version: "3.8.0-DEV+242650"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Front-End: "Latest"
@@ -12,6 +12,7 @@ CIDRAM Core:
  When Update Succeeds:
   - "wpVer 4.8.0 6.6.2 3.7.0 7.2"
   - "foreach {Components.RemoteMeta.CIDRAM Core.Release Notes For} as Key => Value if {Components.Meta.CIDRAM Core.Version}<{Value}&&{Components.RemoteMeta.CIDRAM Core.Version}>={Value} then queue message response.release_notes https://github.com/CIDRAM/CIDRAM/releases/tag/v{Value} CIDRAM v{Value}"
+  - "if {Components.Meta.CIDRAM Core.Version}<3.8.0-DEV+242650&&{Components.RemoteMeta.CIDRAM Core.Version}>=3.8.0-DEV+242650&&{Components.Meta.PHPMailer.Version}===6.9.1&&{Components.RemoteMeta.PHPMailer.Version}===6.9.1 then updatesHandlerRepair PHPMailer"
  Uninstallable: false
  Files:
   assets/core/captcha_default.html:
@@ -40,7 +41,7 @@ CIDRAM Core:
    Checksum: "f9db3c4a9fc6e55a8da6cdf8a766c4d417a9641b48bd7505ed10c8a7dea6355a:15725"
   CIDRAM/CIDRAM/Protect.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Protect.php"
-   Checksum: "da7f692179212aa0fd0a5433f9bac8694b09751cd509d85aeaebf9fd4cc283a7:65527"
+   Checksum: "323132d0913866cb18204ab420a4e5e1cd04c4e92a899f83d79f65fd86c2feed:67612"
   CIDRAM/CIDRAM/ReCaptcha.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/ReCaptcha.php"
    Checksum: "1e2a1b78daddce7bdb7583d6aff68ebe85d93d9b3f7efb4403d5a9f9bbd50225:15183"
@@ -55,7 +56,7 @@ CIDRAM Core:
    Checksum: "b62c0cf1deeb97c7ee15638f0a4102292a6bab6f0b6b1ee3a1dec7fa485c2e05:1352"
   defaults.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/defaults.yml"
-   Checksum: "864dc881600b7ba9e2016474fdd6e18c903d20568982e2048a609b3f7a919e1f:41407"
+   Checksum: "0a5a031d7b545fd5b4b605b4e3013ed10501dcdf8619d82bce4449dc5bd1baf3:41385"
   loader.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/loader.php"
    Checksum: "4d56d0a305ceafab32ade65a0f74ad27efe50964d0e257d787a6ee7056c41880:1313"
@@ -64,7 +65,7 @@ CIDRAM Core:
    Checksum: "41a83d83f1741c896e6f97a285b3de7be6343a40b95a3bd66f8e96de35c05a3b:12577"
 CIDRAM Front-End:
  Name: "CIDRAM Front-End"
- Version: "3.8.0-DEV+242620"
+ Version: "3.8.0-DEV+242650"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "Latest"
@@ -72,9 +73,6 @@ CIDRAM Front-End:
   l10n/core/{lang}: ">=2024.127"
   l10n/frontend/{lang}: ">=2024.261"
  Changelog: "https://github.com/CIDRAM/CIDRAM/blob/v3/Changelog.md"
- When Update Succeeds:
-  - "if {Components.Meta.CIDRAM Front-End.Version}<3.6.0-DEV+241740&&{Components.RemoteMeta.CIDRAM Front-End.Version}>=3.6.0-DEV+241740&&{Components.Meta.PHPMailer.Version}===6.9.1&&{Components.RemoteMeta.PHPMailer.Version}===6.9.1 then updatesHandlerRepair PHPMailer"
-  - "if {Components.Meta.CIDRAM Front-End.Version}<3.7.0-DEV+241830&&{Components.RemoteMeta.CIDRAM Front-End.Version}>=3.7.0-DEV+241830 then queue message <span dir="ltr" lang="en-AU">New fields added: SEC_CH_UA_PLATFORM, SEC_CH_UA_MOBILE, and SEC_CH_UA.</span>"
  Uninstallable: false
  Files:
   assets/frontend/default/_2fa.html:

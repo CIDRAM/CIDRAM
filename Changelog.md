@@ -466,3 +466,5 @@
 [2024.09.17; Maikuolan]: Added code to compensate for cases where the environment might be messing around with POST data and such, negatively affecting CIDRAM functionality (primarily concerns WordPress).
 
 [2024.09.20; New Feature; Maikuolan]: Trigger notifications can now be bundled, their sending delayed for 24 hours instead of being sent immediately (#231).
+
+[2024.09.22; New Feature; Maikuolan]: Trigger notifications can now be triggered manually, via the API (#231).

@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6.dat
 
-# Version: 2024.262.0
-# Last modified: 2024.09.19
+# Version: 2024.268.0
+# Last modified: 2024.09.25
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -82,8 +82,8 @@ Tag: 51idc
 
 
 # ASN 7497 ("Computer Network Information Center").
-# Stop Forum Spam (SFS) listings: 14.
-# Updated: 2022.10.31 / Checked: 2023.10.04
+# Stop Forum Spam (SFS) listings: 7.
+# Updated: 2022.10.31 / Checked: 2024.09.25
 
 2001:cc0::/32 Deny Cloud
 2400:dd00::/28 Deny Cloud
@@ -186,8 +186,8 @@ Tag: Hostinger Int
 
 
 # ASN 12824 ("home.pl").
-# Stop Forum Spam (SFS) listings: 2.
-# Updated: 2019.01.06 / Checked: 2023.10.02
+# Stop Forum Spam (SFS) listings: 60.
+# Updated: 2019.01.06 / Checked: 2024.09.21
 
 2a02:25a8::/29 Deny Cloud
 Origin: PL
@@ -5639,10 +5639,12 @@ Profile: Infrastructure/Transit;Webhosting
 Tag: POWER LINE (HK) CO
 
 
-# ASN 133115 ("HK Kwaifong Group Limited").
-# Stop Forum Spam (SFS) listings: 39.
-# Updated: 2023.10.13
+# ASNs 133073, 133115 ("TELEGLOBAL COMMUNICATION SERVICES LIMITED", "HK Kwaifong Group Limited").
+# Stop Forum Spam (SFS) listings: 27 (AS133073), 8 (AS133115).
+# Updated: 2024.09.25
 
+2400:51c0::/32 Deny Cloud
+2400:7e20::/32 Deny Cloud
 2400:ede0::/32 Deny Cloud
 Origin: HK
 Profile: Restricted/Unidentifiable
@@ -6654,8 +6656,8 @@ Tag: MVPS LTD
 
 # ASN 134113 ("Kazi Sazzad Hossain T/A Millennium Computers & Networking").
 # Caught trying to hack WordPress sites.
-# Stop Forum Spam (SFS) listings: 41.
-# Updated: 2019.07.21 / Checked: 2023.10.10
+# Stop Forum Spam (SFS) listings: 52.
+# Updated: 2019.07.21 / Checked: 2024.09.20
 
 2403:140::/32 Deny Cloud
 Origin: BD
@@ -8976,8 +8978,8 @@ Tag: Skylon Solutions Limited
 
 
 # ASN 266827 ("BOHO BEACH CLUB S.A").
-# Stop Forum Spam (SFS) listings: 374.
-# Updated: 2021.03.10 / Checked: 2023.10.02
+# Stop Forum Spam (SFS) listings: 244.
+# Updated: 2021.03.10 / Checked: 2024.09.21
 
 2803:d4a0::/32 Deny Cloud
 Origin: HN
@@ -9101,8 +9103,8 @@ Tag: IP Volume inc
 # ASN 203461 ("REGISTER S.P.A").
 # Webhosting company. Brute-force, XMLRPC/WordPress, and webapp attacks, port
 # scans, hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2021.03.18 / Checked: 2023.10.02
+# Stop Forum Spam (SFS) listings: 42.
+# Updated: 2021.03.18 / Checked: 2024.09.21
 
 2a01:8100:1::/48 Deny Cloud
 Origin: IT
@@ -9321,8 +9323,8 @@ Tag: GSL Networks Pty LTD
 # ASN 53243 ("Brasil Site Informatica LTDA").
 # Brazilian commercial network. Regular WordPress hack attempts and brute-force
 # and SSH attacks detected from here.
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2021.03.31 / Checked: 2023.10.10
+# Stop Forum Spam (SFS) listings: 2.
+# Updated: 2021.03.31 / Checked: 2024.09.20
 
 2804:11a4::/32 Deny Cloud
 Origin: BR
@@ -9629,8 +9631,8 @@ Tag: Hetzner Online GmbH
 # Provides webhosting, DDoS protection, and dedicated servers. Brute-force,
 # SQLi, and webapp attacks, tor endpoints, hacking, spam, and masquerading as
 # Googlebot detected from here.
-# Stop Forum Spam (SFS) listings: 1,296 (AS30823).
-# Updated: 2023.10.13
+# Stop Forum Spam (SFS) listings: 330 (AS30823).
+# Updated: 2024.09.25
 
 2a00:f826:3::/48 Deny Cloud
 2a01:367::/32 Deny Cloud
@@ -9641,8 +9643,10 @@ Tag: Hetzner Online GmbH
 2a0e:5100::/29 Deny Cloud
 2a0e:b540::/29 Deny Cloud
 2a10:9c00::/29 Deny Cloud
+2a14:47c0::/32 Deny Cloud
 Origin: DE
 2001:df1:7780::/48 Deny Cloud
+2602:fa59::/40 Deny Cloud
 Origin: US
 Profile: Dedicated;Infrastructure/Transit;Tor endpoints here;Webhosting
 Tag: combahton GmbH
@@ -12184,18 +12188,6 @@ Profile: Dedicated;Webhosting
 Tag: SOLLUTIUM EU
 
 
-# ASN 16628 ("DedFiberCo").
-# Brute-force, webapp attacks, port scans, spoofing, hacking, and spam detected
-# from here.
-# Stop Forum Spam (SFS) listings: 21.
-# Updated: 2023.10.13
-
-2602:ffbc:1::/48 Deny Cloud
-Origin: US
-Profile: Dedicated;Infrastructure/Transit;Webhosting
-Tag: DedFiberCo
-
-
 # ASN 136744 ("DREAM POWER TECHNOLOGY LIMITED").
 # Brute-force, webapp attacks, port scans, spoofing, and hacking detected here.
 # Stop Forum Spam (SFS) listings: 7.
@@ -12210,11 +12202,10 @@ Tag: DREAM POWER
 # ASN 212815 ("Dyjix SAS").
 # Brute-force, SSH, FTP, and webapp attacks, port scans, hacking, and spam
 # detected from here.
-# Stop Forum Spam (SFS) listings: 4.
-# Updated: 2023.10.13
+# Updated: 2024.09.20
 
+2a0a:2f80::/31 Deny Cloud
 2a10:4640::/32 Deny Cloud
-2a10:4646:50::/44 Deny Cloud
 Origin: FR
 Profile: Infrastructure/Transit;Webhosting
 Tag: Dyjix SAS

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2024.09.17).
+ * This file: Front-end functions file (last modified: 2024.09.26).
  */
 
 /**
@@ -4041,7 +4041,7 @@ $CIDRAM['ArrayToClickableList'] = function (array $Arr = [], $DeleteKey = '', $D
     $Count = count($Arr);
     $Prefix = substr($DeleteKey, 0, 2) === 'fe' ? 'FE' : '';
     foreach ($Arr as $Key => $Value) {
-        if (is_string($Value) && !$CIDRAM['Demojibakefier']->checkConformity($Value)) {
+        if ((is_string($Value) && !$CIDRAM['Demojibakefier']->checkConformity($Value)) || is_null($Value)) {
             continue;
         }
         $Delete = ($Depth === 0) ? ' – (<span style="cursor:pointer" onclick="javascript:' . $DeleteKey . '(\'' . $CIDRAM['escapeJsInHTML']($Key) . '\')"><code class="s"><span class="txtRd">⌧</span>' . $CIDRAM['L10N']->getString('field_delete') . '</code></span>)' : '';
@@ -4079,7 +4079,7 @@ $CIDRAM['ArrayToClickableList'] = function (array $Arr = [], $DeleteKey = '', $D
             $Output .= '<span class="comCat"><code class="s">' . str_replace(['<', '>'], ['&lt;', '&gt;'], $Key) . '</code></span>' . $Delete . '<ul class="comSub">';
             $Output .= $CIDRAM['ArrayToClickableList']($Value, $DeleteKey, $Depth + 1, $Key);
             $Output .= '</ul>';
-        } else {
+        } elseif (is_scalar($Value)) {
             if ($Key === 'Time' && preg_match('~^\d+$~', $Value)) {
                 $Key = $CIDRAM['L10N']->getString('label_expires');
                 $Value = $CIDRAM['TimeFormat']($Value, $CIDRAM['Config']['general']['timeFormat']);

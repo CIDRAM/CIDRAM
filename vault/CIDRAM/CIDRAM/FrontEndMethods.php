@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2024.09.17).
+ * This file: General methods used by the front-end (last modified: 2024.09.26).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -729,7 +729,7 @@ trait FrontEndMethods
         $Output = '';
         $Count = count($Arr);
         foreach ($Arr as $Key => $Value) {
-            if (is_string($Value) && !$this->Demojibakefier->checkConformity($Value)) {
+            if ((is_string($Value) && !$this->Demojibakefier->checkConformity($Value)) || is_null($Value)) {
                 continue;
             }
             if ($Depth === 1 && isset($this->CIDRAM['ListGroups'][$ParentKey])) {
@@ -783,7 +783,7 @@ trait FrontEndMethods
                 }
                 $Output .= '<span class="comCat"><code class="s">' . str_replace(['<', '>'], ['&lt;', '&gt;'], $Key) . '</code></span>' . $Delete . '<ul class="comSub">';
                 $Output .= $this->arrayToClickableList($Value, $DeleteKey, $Depth + 1, $Key) . '</ul>';
-            } else {
+            } elseif (is_scalar($Value)) {
                 if ($Key === 'Time' && preg_match('~^\d+$~', $Value)) {
                     $Key = $this->L10N->getString('label.Expires');
                     $Value = $this->timeFormat($Value, $this->Configuration['general']['time_format']);

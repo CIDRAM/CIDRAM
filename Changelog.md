@@ -230,7 +230,7 @@
 
 #### Bugs fixed.
 - [2023.08.03]: When the names of auxiliary rules, cache entries, or statistic entries contained certain kinds of characters, JavaScript which used those names could sometimes break due to insufficient escaping; Fixed.
-- [2023.08.03; Bug-fix; neufeind]: The aggregator's constructTables method was constructing the wrong IPv6 netmask for the last octet; Fixed.
+- [2023.08.03; neufeind]: The aggregator's constructTables method was constructing the wrong IPv6 netmask for the last octet; Fixed.
 - [2023.08.16]: When at the very beginning of a signature file, without any preceding linebreaks, signatures based on IP addresses rather than CIDRs (i.e., without a CIDR block size specified) weren't being correctly recognised by CIDRAM; Fixed (#499).
 
 #### Other changes.
@@ -369,6 +369,7 @@
 
 #### Bugs fixed.
 - [2024.09.17]: Auxiliary rules automatic method detection incorrectly identified regular expression matching as direct string matching for certain kinds of pattern boundaries; Fixed.
+- [2024.09.26]: Fixed a passing null parameter error in the arrayToClickableList method.
 
 #### Other changes.
 - [2024.09.07]: Added a default signature bypass for Skype URL Preview.

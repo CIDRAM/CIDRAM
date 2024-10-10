@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Serbian language data for the front-end (last modified: 2024.09.24).
+# This file: Serbian language data for the front-end (last modified: 2024.10.10).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -268,7 +268,83 @@ config:
  rate_limiting: "Конфигурација за ограничавање брзине (не препоручује се за општу употребу)."
  rate_limiting_allowance_period: "Трајање праћења употребе. Подразумевано = 0°0′0″."
  rate_limiting_exceptions: "Изузеци (тј. захтеви који не би требало да буду ограничени брзином). Релевантно само када је ограничење брзине омогућено."
+ rate_limiting_max_bandwidth: "Колико пропусног опсега може да се користи у оквиру додељеног времена пре ограничавања брзине будућих захтева. Вредност 0 онемогућава ову врсту ограничења брзине. Подразумевано = 0KB."
+ rate_limiting_max_requests: "Колико захтева може бити послато у оквиру додељеног времена пре ограничавања брзине будућих захтева. Вредност 0 онемогућава ову врсту ограничења брзине. Подразумевано = 0."
+ rate_limiting_precision_ipv4: "Прецизност за праћење употребе ИПв4. Вредност одражава величину ЦИДР блока. Подесите на 32 за најбољу прецизност. Подразумевано = 32."
+ rate_limiting_precision_ipv6: "Прецизност за праћење употребе ИПв6. Вредност одражава величину ЦИДР блока. Подесите на 128 за најбољу прецизност. Подразумевано = 128."
+ rate_limiting_segregate: "Да ли квоте за различите домене и хостове треба да буду одвојене или подељене? Истинито = Квоте ће бити одвојене. Лажно = Квоте ће бити подељене [Подразумевано]."
+ recaptcha: "Конфигурација за РеЦаптцха (пружа начин да људи поново добију приступ када су блокирани)."
+ recaptcha_api: *CaptchaAPI
+ recaptcha_expiry: *CaptchaExpiry
+ recaptcha_lockip: *CaptchaLockIP
+ recaptcha_lockuser: *CaptchaLockUser
+ recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
+ recaptcha_recaptcha_log: *CaptchaLogFile
+ recaptcha_secret: *CaptchaDashboard
+ recaptcha_show_api_message: *ShowAPIMessage
+ recaptcha_show_cookie_warning: *ShowCookieWarning
+ recaptcha_signature_limit: *CaptchaSignatureLimit
+ recaptcha_sitekey: *CaptchaDashboard
+ recaptcha_usemode: *CaptchaUseMode
+ sfs: "Конфигурација за модул Стоп Форум Спам."
+ signatures: "Конфигурација за потписе, датотеке потписа, модуле, итд."
+ signatures_default_tracktime: "Трајање које ИП адресе треба пратити. Подразумевано = 7d0°0′0″ (1 недеља)."
+ signatures_infraction_limit: "Максималан број прекршаја који ИП може да направи пре него што буде забрањен праћењем ИП-а. Подразумевано = 10."
+ signatures_shorthand: "Контролише шта да се ради са захтевом када постоји позитивно подударање са потписом који користи дате кратке речи."
+ signatures_tracking_override: "Дозволити модулима да замене опције праћења? Истинито = Да [Подразумевано]; Лажно = Не."
+ supplementary_cache_options: "Додатне опције кеша. Белешка: Промена ових вредности може вас потенцијално одјави."
+ supplementary_cache_options_enable_apcu: "Одређује да ли да покушате да користите АПЦу за кеширање. Подразумевано = True."
+ supplementary_cache_options_enable_memcached: "Одређује да ли да покушате да користите Мемцацхед за кеширање. Подразумевано = False."
+ supplementary_cache_options_enable_pdo: "Одређује да ли да покушате да користите ПДО за кеширање. Подразумевано = False."
+ supplementary_cache_options_enable_redis: "Одређује да ли да покушате да користите Редис за кеширање. Подразумевано = False."
+ supplementary_cache_options_memcached_host: "Мемцацхед вредност хоста. Подразумевано = „localhost“."
+ supplementary_cache_options_memcached_port: "Мемцацхед вредност порта. Подразумевано = „11211“."
+ supplementary_cache_options_pdo_dsn: "ПДО вредност ДСН-а. Подразумевано = „mysql:dbname=cidram;host=localhost;port=3306“."
+ supplementary_cache_options_pdo_password: "ПДО лозинка."
+ supplementary_cache_options_pdo_username: "ПДО корисничко име."
+ supplementary_cache_options_prefix: "Овде наведена вредност биће додата свим кључевима за унос у кеш меморију. Подразумевано = „CIDRAM_“. Када постоји више инсталација на истом серверу, ово може бити корисно за држање њихових кешова одвојених један од другог."
+ supplementary_cache_options_redis_database_number: "Редис број базе података. Подразумевано = 0. Белешка: Не могу користити друге вредности осим 0 са Редис кластером."
+ supplementary_cache_options_redis_host: "Редис вредност хоста. Подразумевано = „localhost“."
+ supplementary_cache_options_redis_port: "Редис вредност порта. Подразумевано = „6379“."
+ supplementary_cache_options_redis_timeout: "Редис вредност временског ограничења. Подразумевано = „2.5“."
+ template_data: "Конфигурација за шаблоне и теме."
+ template_data_block_event_title: "Наслов странице за приказ за блок догађаје."
+ template_data_captcha_title: "Наслов странице за приказ за ЦАПТЦХА захтеве."
+ template_data_css_url: "УРЛ ЦСС датотеке за прилагођене теме."
+ template_data_custom_footer: "Уметнуто као ХТМЛ на самом дну свих страница „приступ забрањен“. Ово би могло бити корисно у случају да на свим таквим страницама желите да укључите правно обавештење, везу за контакт, пословне информације, или слично."
+ template_data_custom_header: "Уметнуто као ХТМЛ на самом почетку свих страница „приступ забрањен“. Ово би могло бити корисно у случају да на свим таквим страницама желите да укључите логотип веб странице, персонализовано заглавље, скрипте, или слично."
+ template_data_magnification: *MagnifDesc
+ template_data_theme: "Подразумевана тема за ЦИДРАМ."
+ tor: "Конфигурација за Тор блокатор модул."
+ verification: "Конфигурација за проверу одакле потичу захтеви."
+ verification_adjust: "Контроле за прилагођавање других функција у контексту верификације."
+ verification_other: "Контроле за верификацију других врста захтева где је то могуће."
+ verification_search_engines: "Контроле за верификацију захтева са претраживача."
+ verification_social_media: "Контроле за верификацију захтева са платформи друштвених медија."
+confirm:
+ Action: "Јесте ли сигурни да желите „%s“?"
+ Delete: "Јесте ли сигурни да желите избришете „%s“?"
+field:
+ %s File: "%s датотеку"
+ 2FA code: "2ФА код"
+ API key: "АПИ кључ"
+ Activate: "Активирајте"
+ Add more conditions: "Додајте још услова"
+ Add to tracking: "Додај у праћење"
+ Add webhook: "Додајте вебхоок"
+ After 24 hours, bundled together: "Након 24 сата, заједно у пакету (или када се покрене ручно, нпр. преко црон-а)."
+ Banned: "Забрањено"
+ Blocked: "Блокирано"
+ Clear all: "Обриши све"
+ Clear: "Обриши"
+ Clickable link: "Линк на који се може кликнути"
+ Component: "Компонента"
+ Confirm: "Потврди"
+ Create new account: "Креирајте нови налог"
+ Currently active signature files: "Тренутно активне датотеке потписа"
+ Deactivate: "Деактивирајте"
 tip:
+ IP Tracking: "The IP tracking page allows you to check the tracking status of IP addresses, to check which of them have been banned, and to unban/untrack them if you want to do so."
  Intersector: "Интерсектор се може користити за одређивање заједничких фактора из два скупа опсега."
  Logs: "Изаберите датотеку евиденције са листе испод да бисте видели садржај те датотеке евиденције."
  Number of seconds until it expires: "Број секунди до истека."

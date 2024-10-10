@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bosnian language data for the front-end (last modified: 2024.09.24).
+# This file: Bosnian language data for the front-end (last modified: 2024.10.10).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -239,10 +239,10 @@ config:
  logging_log_rotation_limit: "Rotacija dnevnika ograničava broj datoteka dnevnika koji bi trebali postojati u bilo kojem trenutku. Kada se kreiraju nove datoteke evidencije, ako ukupan broj datoteka dnevnika premašuje navedeno ograničenje, navedena radnja će se izvršiti. Ovdje možete odrediti željeni limit. Vrijednost 0 će onemogućiti rotaciju dnevnika."
  logging_log_sanitisation: "Kada koristite front-end stranicu dnevnika za pregled podataka dnevnika, CIDRAM sanitira podatke dnevnika prije nego što ih prikaže, kako bi zaštitio korisnike od XSS napada i drugih potencijalnih prijetnji koje podaci dnevnika mogu sadržavati. Međutim, prema zadanim postavkama, podaci se ne sanitiraju tokom evidentiranja. Ovo je kako bi se osiguralo da se podaci dnevnika čuvaju točno, kako bi se pomogla svaka heuristička ili forenzička analiza koja bi mogla biti neophodna u budućnosti. Međutim, u slučaju da korisnik pokuša pročitati podatke dnevnika koristeći vanjske alate, i ako ti vanjski alati ne izvrše vlastiti proces sanitiranje, korisnik bi mogao biti izložen XSS napadima. Ako je potrebno, možete promijeniti zadano ponašanje koristeći ovu konfiguracijsku direktivu. True/Istinito = Sanitirajte podatke prilikom evidentiranja (podaci se čuvaju manje precizno, ali XSS rizik je manji). False/Lažno = Nemojte sanitirati podatke prilikom evidentiranja (podaci se čuvaju preciznije, ali XSS rizik je veći) [Zadano]."
  logging_outbound_request_log: "Datoteka za evidentiranje rezultata svih odlaznih zahtjeva. Navedite naziv datoteke, ili ostavite prazno za onemogućavanje."
- logging_report_log: "Fajl za evidentiranje svih izvještaja poslatih vanjskim API-jima. Navedite naziv datoteke, ili ostavite prazno za onemogućavanje."
- logging_serialised_log: "Serijski fajl za evidentiranje svih blokiranih pokušaja pristupa. Navedite naziv datoteke, ili ostavite prazno za onemogućavanje."
- logging_standard_log: "Ljudski čitljiv fajl za evidentiranje svih blokiranih pokušaja pristupa. Navedite naziv datoteke, ili ostavite prazno za onemogućavanje."
- logging_truncate: "Skratiti datoteke dnevnika kada dostignu određenu veličinu? Vrijednost je maksimalna veličina u B/KB/MB/GB/TB do koje datoteka evidencije može narasti prije nego što bude skraćena. Zadana vrijednost od 0KB onemogućuje skraćivanje (datoteke evidencije mogu beskonačno rasti). Bilješka: Odnosi se na pojedinačne log fajlove! Veličina log datoteka se ne razmatra zajedno."
+ logging_report_log: "Datoteka za evidentiranje svih izvještaja poslatih vanjskim API-jima. Navedite naziv datoteke, ili ostavite prazno za onemogućavanje."
+ logging_serialised_log: "Serijski datoteka za evidentiranje svih blokiranih pokušaja pristupa. Navedite naziv datoteke, ili ostavite prazno za onemogućavanje."
+ logging_standard_log: "Ljudski čitljiv datoteka za evidentiranje svih blokiranih pokušaja pristupa. Navedite naziv datoteke, ili ostavite prazno za onemogućavanje."
+ logging_truncate: "Skratiti datoteke dnevnika kada dostignu određenu veličinu? Vrijednost je maksimalna veličina u B/KB/MB/GB/TB do koje datoteka evidencije može narasti prije nego što bude skraćena. Zadana vrijednost od 0KB onemogućuje skraćivanje (datoteke evidencije mogu beskonačno rasti). Bilješka: Odnosi se na pojedinačne log datoteke! Veličina log datoteka se ne razmatra zajedno."
  phpmailer: "Konfiguracija za PHPMailer (koristi se za dvofaktorsku autentifikaciju i za obavještenja putem e-pošte)."
  phpmailer_add_reply_to_address: "Adresa za odgovor koju treba navesti prilikom slanja e-pošte putem SMTP-a."
  phpmailer_add_reply_to_name: "Ime odgovora koje treba navesti prilikom slanja e-pošte putem SMTP-a."
@@ -268,6 +268,81 @@ config:
  rate_limiting: "Konfiguracija za ograničavanje brzine (ne preporučuje se za opću upotrebu)."
  rate_limiting_allowance_period: "Trajanje praćenja upotrebe. Zadano = 0°0′0″."
  rate_limiting_exceptions: "Izuzeci (tj. zahtjevi koji ne bi trebali biti ograničeni brzinom). Relevantno samo kada je ograničenje brzine omogućeno."
+ rate_limiting_max_bandwidth: "Koliko se propusnog opsega može iskoristiti unutar dodijeljenog vremena prije ograničavanja brzine budućih zahtjeva. Vrijednost 0 onemogućuje ovu vrstu ograničenja brzine. Zadano = 0KB."
+ rate_limiting_max_requests: "Koliko zahtjeva se može poslati u predviđenom vremenu prije ograničavanja brzine budućih zahtjeva. Vrijednost 0 onemogućuje ovu vrstu ograničenja brzine. Zadano = 0."
+ rate_limiting_precision_ipv4: "Preciznost za praćenje korištenja IPv4. Vrijednost odražava veličinu CIDR bloka. Postavite na 32 za najbolju preciznost. Zadano = 32."
+ rate_limiting_precision_ipv6: "Preciznost za praćenje korištenja IPv6. Vrijednost odražava veličinu CIDR bloka. Postavite na 128 za najbolju preciznost. Zadano = 128."
+ rate_limiting_segregate: "Trebaju li kvote za različite domene i hostove biti odvojene ili podijeljene? True/Istinito = Kvote će biti odvojene. False/Lažno = Kvote će biti podijeljene [Zadano]."
+ recaptcha: "Konfiguracija za ReCaptcha (pruža način da ljudi ponovo dobiju pristup kada su blokirani)."
+ recaptcha_api: *CaptchaAPI
+ recaptcha_expiry: *CaptchaExpiry
+ recaptcha_lockip: *CaptchaLockIP
+ recaptcha_lockuser: *CaptchaLockUser
+ recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
+ recaptcha_recaptcha_log: *CaptchaLogFile
+ recaptcha_secret: *CaptchaDashboard
+ recaptcha_show_api_message: *ShowAPIMessage
+ recaptcha_show_cookie_warning: *ShowCookieWarning
+ recaptcha_signature_limit: *CaptchaSignatureLimit
+ recaptcha_sitekey: *CaptchaDashboard
+ recaptcha_usemode: *CaptchaUseMode
+ sfs: "Konfiguracija za modul Stop Forum Spam."
+ signatures: "Konfiguracija za potpise, datoteke potpisa, module, itd."
+ signatures_default_tracktime: "Trajanje koje IP adrese treba pratiti. Zadano = 7d0°0′0″ (1 sedmica)."
+ signatures_infraction_limit: "Maksimalan broj prekršaja koji IP može napraviti prije nego što bude zabranjen praćenjem IP-a. Zadano = 10."
+ signatures_shorthand: "Kontrolira šta treba učiniti sa zahtjevom kada postoji pozitivno podudaranje s potpisom koji koristi date kratke riječi."
+ signatures_tracking_override: "Dozvoliti modulima da zamjene opcije praćenja? True/Istinito = Da [Zadano]; False/Lažno = Ne."
+ supplementary_cache_options: "Dodatne opcije keša. Bilješka: Promjena ovih vrijednosti može vas potencijalno odjaviti."
+ supplementary_cache_options_enable_apcu: "Određuje hoće li pokušati koristiti APCu za keširanje. Zadano = True."
+ supplementary_cache_options_enable_memcached: "Određuje hoće li se pokušati koristiti Memcached za keširanje. Zadano = False."
+ supplementary_cache_options_enable_pdo: "Određuje hoće li pokušati koristiti PDO za keširanje. Zadano = False."
+ supplementary_cache_options_enable_redis: "Određuje hoće li pokušati koristiti Redis za keširanje. Zadano = False."
+ supplementary_cache_options_memcached_host: "Memcached vrijednost hosta. Zadano = "localhost"."
+ supplementary_cache_options_memcached_port: "Memcached vrijednost porta. Zadano = "11211"."
+ supplementary_cache_options_pdo_dsn: "Memcached vrijednost DSN-a. Zadano = "mysql:dbname=cidram;host=localhost;port=3306"."
+ supplementary_cache_options_pdo_password: "PDO lozinka."
+ supplementary_cache_options_pdo_username: "PDO korisničko ime."
+ supplementary_cache_options_prefix: "Ovdje navedena vrijednost će biti dodata svim ključevima za unos u keš memoriju. Zadano = "CIDRAM_". Kada postoji više instalacija na istom serveru, ovo može biti korisno za držanje njihovih kešova odvojenih jedan od drugog."
+ supplementary_cache_options_redis_database_number: "Redis broj baze podataka. Zadano = 0. Bilješka: Ne mogu koristiti druge vrijednosti osim 0 s Redis klasterom."
+ supplementary_cache_options_redis_host: "Redis vrijednost hosta. Zadano = "localhost"."
+ supplementary_cache_options_redis_port: "Redis vrijednost porta. Zadano = "6379"."
+ supplementary_cache_options_redis_timeout: "Redis vrijednost vremenskog ograničenja. Zadano = "2.5"."
+ template_data: "Konfiguracija za šablone i teme."
+ template_data_block_event_title: "Naslov stranice za prikaz za blok događaje."
+ template_data_captcha_title: "Naslov stranice za prikaz za CAPTCHA zahtjeve."
+ template_data_css_url: "URL CSS datoteke za prilagođene teme."
+ template_data_custom_footer: "Umetnuto kao HTML na samom dnu svih stranica "pristup odbijen". Ovo bi moglo biti korisno u slučaju da želite uključiti pravnu obavijest, poveznicu za kontakt, poslovne informacije, ili slično na sve takve stranice."
+ template_data_custom_header: "Umetnuto kao HTML na samom početku svih stranica "pristup odbijen". Ovo bi moglo biti korisno u slučaju da želite uključiti logotip web stranice, personalizirano zaglavlje, skripte, ili slično na sve takve stranice."
+ template_data_magnification: *MagnifDesc
+ template_data_theme: "Zadana tema za CIDRAM."
+ tor: "Konfiguracija za Tor blokator modul."
+ verification: "Konfiguracija za provjeru odakle potječu zahtjevi."
+ verification_adjust: "Kontrole za podešavanje drugih funkcija kada su u kontekstu verifikacije."
+ verification_other: "Kontrole za provjeru drugih vrsta zahtjeva gdje je to moguće."
+ verification_search_engines: "Kontrole za provjeru zahtjeva iz tražilica."
+ verification_social_media: "Kontrole za provjeru zahtjeva sa platformi društvenih medija."
+confirm:
+ Action: "Jeste li sigurni da želite "%s"?"
+ Delete: "Jeste li sigurni da želite izbrisati "%s"?"
+field:
+ %s File: "%s datoteku"
+ 2FA code: "2FA kod"
+ API key: "API ključ"
+ Activate: "Aktivirajte"
+ Add more conditions: "Dodajte još uslova"
+ Add to tracking: "Dodaj u praćenje"
+ Add webhook: "Dodajte webhook"
+ After 24 hours, bundled together: "Nakon 24 sata, zajedno u paketu (ili kada se pokrene ručno, npr. preko cron-a)."
+ Banned: "Zabranjeno"
+ Blocked: "Blokirano"
+ Clear all: "Obriši sve"
+ Clear: "Obriši"
+ Clickable link: "Link na koji se može kliknuti"
+ Component: "Komponenta"
+ Confirm: "Potvrdi"
+ Create new account: "Kreirajte novi nalog"
+ Currently active signature files: "Trenutno aktivne datoteke potpisa"
+ Deactivate: "Deaktivirajte"
 tip:
  Intersector: "Intersektor se može koristiti za određivanje zajedničkih faktora iz dva skupa raspona."
  Logs: "Izaberite datoteku evidencije sa liste ispod da vidite sadržaj te datoteke evidencije."
@@ -285,7 +360,7 @@ tip:
  Statistics tracking is currently disabled: "Bilješka: Praćenje statistike je trenutno onemogućeno, ali se može omogućiti putem konfiguracijske stranice."
  Statistics: "Ova stranica prikazuje neke osnovne statistike upotrebe u vezi sa vašom instalacijom CIDRAM-a."
  Subtractor: "Subtractor se može koristiti za oduzimanje jednog raspona IP-ova/CIDR-ova/mrežnih maski od drugog."
- Updates: "Stranica za ažuriranje vam omogućava da instalirate, deinstalirate, i ažurirate različite komponente CIDRAM-a (osnovni paket, potpise, L10N fajlove, itd)."
+ Updates: "Stranica za ažuriranje vam omogućava da instalirate, deinstalirate, i ažurirate različite komponente CIDRAM-a (osnovni paket, potpise, L10N datoteke, itd)."
 warning:
  API_Rate_Limited: "Upozorenje: Čini se da je pristup %s API-ju trenutno ograničen stopom."
  Cookies: "Bilješka: CIDRAM koristi kolačić za provjeru autentičnosti prijava. Prijavom dajete pristanak da vaš pretraživač kreira i pohrani kolačić."

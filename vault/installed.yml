@@ -12,7 +12,6 @@ CIDRAM Core:
  When Update Succeeds:
   - "wpVer 4.8.0 6.6.2 3.7.0 7.2"
   - "foreach {Components.RemoteMeta.CIDRAM Core.Release Notes For} as Key => Value if {Components.Meta.CIDRAM Core.Version}<{Value}&&{Components.RemoteMeta.CIDRAM Core.Version}>={Value} then queue message response.release_notes https://github.com/CIDRAM/CIDRAM/releases/tag/v{Value} CIDRAM v{Value}"
-  - "if {Components.Meta.CIDRAM Core.Version}<3.8.0-DEV+242650&&{Components.RemoteMeta.CIDRAM Core.Version}>=3.8.0-DEV+242650&&{Components.Meta.PHPMailer.Version}===6.9.1&&{Components.RemoteMeta.PHPMailer.Version}===6.9.1 then updatesHandlerRepair PHPMailer"
  Uninstallable: false
  Files:
   assets/core/captcha_default.html:
@@ -839,13 +838,13 @@ l10n/core/lv:
    Checksum: "e36bfa99352115b9286dea11482c7539a3157bc4cbae7017b66f96f18159c45b:7892"
 l10n/core/ml:
  Extended Description: "മലയാളം പ്രാദേശികവൽക്കരണം"
- Version: "2024.256.0"
+ Version: "2024.283.0"
  Dependencies:
   CIDRAM Core: "^3.7"
  Files:
   l10n/core/ml.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/ml.yml"
-   Checksum: "d2e67661f2b921fdfcc07bf5fffa70c6eeb55224341cc75a20933636276fe3a8:16075"
+   Checksum: "cf253198968464c60bb338499a1848b43e88ac082b1533ca3aba845554215eeb:16069"
 l10n/core/mr:
  Extended Description: "मराठी स्थानिकीकरण"
  Version: "2024.251.0"
@@ -1018,13 +1017,13 @@ l10n/frontend/bn:
    Checksum: "d07dd3a4a8253d179d753b7903156204a3e4e180e2da9388fbd22ebf2c0ea86f:173879"
 l10n/frontend/bs:
  Extended Description: "Bosanska lokalizacija"
- Version: "2024.268.0"
+ Version: "2024.283.0"
  Dependencies:
   CIDRAM Core: "^3.5.1"
  Files:
   l10n/frontend/bs.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/bs.yml"
-   Checksum: "ade2a4397329905464ba19934b0ddd84ca179f2c2fb0e66ea0e824ad0a40c2b8:34806"
+   Checksum: "a57d0366c885a2fa857b5f97b142071eeac5269c0ed418bf21a08f8520071cf6:40917"
 l10n/frontend/ca:
  Extended Description: "Localització catalana"
  Version: "2024.261.0"
@@ -1116,13 +1115,13 @@ l10n/frontend/hi:
    Checksum: "973057bb78c1966cc85c07167c0af36da3314e747c471ddb504220ce29ad0fd1:175146"
 l10n/frontend/hr:
  Extended Description: "Hrvatska lokalizacija"
- Version: "2024.268.0"
+ Version: "2024.283.0"
  Dependencies:
   CIDRAM Core: "^3.5.1"
  Files:
   l10n/frontend/hr.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/hr.yml"
-   Checksum: "2a5dffab99105ff958d3d56dfe715698cf113156bac2cd32b88ffa8e5be7366d:34634"
+   Checksum: "13039a149a44fcf5dfd4d2ae437d83571e68781422598ea036ef1265f8c39296:40967"
 l10n/frontend/id:
  Extended Description: "Lokalisasi di Bahasa Indonesia"
  Version: "2024.261.0"
@@ -1222,13 +1221,13 @@ l10n/frontend/ru:
    Checksum: "9443cbc674b8a03757714bc2fb6c6bcbe9c13422f16105f2029cc8d588d31717:140282"
 l10n/frontend/sr:
  Extended Description: "Српска локализација"
- Version: "2024.268.0"
+ Version: "2024.283.0"
  Dependencies:
   CIDRAM Core: "^3.5.1"
  Files:
   l10n/frontend/sr.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/sr.yml"
-   Checksum: "9dff7103ffcee73a16bd68e75a351ffde58c8835ce9eb24aa412f779472c3e08:54234"
+   Checksum: "7834a512584cbe62c5105b880b958ab76f917a8b99e141d1fb19ffdb9a1bf8ee:63549"
 l10n/frontend/sv:
  Extended Description: "Svensk lokalisering"
  Version: "2024.261.0"
@@ -1238,11 +1237,11 @@ l10n/frontend/sv:
    Checksum: "131f4c8bc1ec5950ede9ea75a24c8da940fefcb4b28c661505866dedd457b2d9:89226"
 l10n/frontend/ta:
  Extended Description: "தமிழ் உள்ளூர்மயமாக்கல்"
- Version: "2024.261.0"
+ Version: "2024.283.0"
  Files:
   l10n/frontend/ta.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/ta.yml"
-   Checksum: "e9c25e7156fae3044331f54e1f9917731cf06c2a31bcea52efe2c00b56bd57ac:200752"
+   Checksum: "64eec7455bd5aa6da84bc261e8bf94ef9a1418f3af1cd375d49af8b9fc0f3faa:200746"
 l10n/frontend/th:
  Extended Description: "การแปลภาษาไทย"
  Version: "2024.261.0"

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: IP aggregator (last modified: 2024.06.25).
+ * This file: IP aggregator (last modified: 2024.10.14).
  */
 
 namespace CIDRAM\Aggregator;
@@ -72,13 +72,16 @@ class Aggregator
     /**
      * Aggregate it!
      *
-     * @param string|array $In The IPs/CIDRs/netmasks to be aggregated. Should
-     *          either be a string, with entries separated by lines, or an
-     *          array with an entry to each element.
+     * @param string $In The IPs/CIDRs/netmasks to be aggregated. Entries separated by lines.
      * @return string The aggregated data.
      */
     public function aggregate($In)
     {
+        /** Guard. */
+        if (!is_string($In)) {
+            return '';
+        }
+
         $this->Output = $In;
         $this->stripInvalidCharactersAndSort($this->Output);
         $this->stripInvalidRangesAndSubs($this->Output);
@@ -121,14 +124,12 @@ class Aggregator
     /**
      * Strips invalid characters from lines and sorts entries.
      *
-     * @param string|array
+     * @param string
      * @return void
      */
     private function stripInvalidCharactersAndSort(&$In)
     {
-        if (!is_array($In)) {
-            $In = explode("\n", strtolower(trim(str_replace("\r", '', $In))));
-        }
+        $In = explode("\n", strtolower(trim(str_replace("\r", '', $In))));
         $InCount = count($In);
         if (isset($this->callbacks['newParse']) && is_callable($this->callbacks['newParse'])) {
             $this->callbacks['newParse']($InCount);

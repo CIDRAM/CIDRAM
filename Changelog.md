@@ -379,4 +379,5 @@
 - [2024.09.20]: Trigger notifications can now be bundled, their sending delayed for 24 hours instead of being sent immediately (#231).
 - [2024.09.22]: Trigger notifications can now be triggered manually, via the API (#231).
 - [2024.10.14]: Strictened typing for the aggregator.
+- [2024.10.16]: Verification update.
 - *Plus all the regular signature updates.*

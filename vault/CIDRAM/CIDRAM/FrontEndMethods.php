@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2024.09.26).
+ * This file: General methods used by the front-end (last modified: 2024.10.16).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -913,7 +913,7 @@ trait FrontEndMethods
      */
     private function intersectCidr(string $A = '', string $B = '', int $Format = 0): string
     {
-        $StrObject = new \Maikuolan\Common\ComplexStringHandler($A . "\n", self::REGEX_TAGS, function (string $Data) use ($B, $Format): string {
+        $StrObject = new \Maikuolan\Common\ComplexStringHandler("\n" . $A . "\n", self::REGEX_TAGS, function (string $Data) use ($B, $Format): string {
             $Data = "\n" . $this->CIDRAM['Aggregator']->aggregate($Data) . "\n";
             $Intersect = '';
             foreach ([['B', 'Data'], ['Data', 'B']] as $Points) {
@@ -965,7 +965,7 @@ trait FrontEndMethods
      */
     private function subtractCidr(string $Minuend = '', string $Subtrahend = '', int $Format = 0): string
     {
-        $StrObject = new \Maikuolan\Common\ComplexStringHandler($Minuend . "\n", self::REGEX_TAGS, function (string $Minuend) use ($Subtrahend, $Format): string {
+        $StrObject = new \Maikuolan\Common\ComplexStringHandler("\n" . $Minuend . "\n", self::REGEX_TAGS, function (string $Minuend) use ($Subtrahend, $Format): string {
             $Minuend = "\n" . $this->CIDRAM['Aggregator']->aggregate($Minuend . "\n" . $Subtrahend) . "\n";
             $LPos = 0;
             while (($NPos = strpos($Subtrahend, "\n", $LPos)) !== false) {

@@ -370,6 +370,7 @@
 #### Bugs fixed.
 - [2024.09.17]: Auxiliary rules automatic method detection incorrectly identified regular expression matching as direct string matching for certain kinds of pattern boundaries; Fixed.
 - [2024.09.26]: Fixed a passing null parameter error in the arrayToClickableList method.
+- [2024.10.16]: When using the intersector or the subtractor, when the first line of the A set or minuend began with a comment, that first line would be omitted from the intersect/difference/AB set; Fixed.
 
 #### Other changes.
 - [2024.09.07]: Added a default signature bypass for Skype URL Preview.

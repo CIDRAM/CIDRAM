@@ -23,7 +23,11 @@ Detailed version release guidelines for CIDRAM can be found at:
 - [2024.09.26; Bug-fix; Maikuolan]: Fixed a passing null parameter error in the
   arrayToClickableList method.
 
-- [2024.10.14]: Strictened typing for the aggregator.
+- [2024.10.14; Maikuolan]: Strictened typing for the aggregator.
+
+- [2024.10.16; Bug-fix; Maikuolan]: When using the intersector or the
+  subtractor, when the first line of the A set or minuend began with a comment,
+  that first line would be omitted from the intersect/difference/AB set; Fixed.
 
 === Version/Release 1.28.3 ===
 PATCH RELEASE.

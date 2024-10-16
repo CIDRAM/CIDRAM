@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2024.09.26).
+ * This file: Front-end functions file (last modified: 2024.10.16).
  */
 
 /**
@@ -4215,7 +4215,7 @@ $CIDRAM['SplitCIDR'] = function (string $CIDR) use (&$CIDRAM): array {
  */
 $CIDRAM['IntersectCIDR'] = function (string $A = '', string $B = '', int $Format = 0) use (&$CIDRAM): string {
     $StrObject = new \Maikuolan\Common\ComplexStringHandler(
-        $A . "\n",
+        "\n" . $A . "\n",
         $CIDRAM['RegExTags'],
         function (string $Data) use (&$CIDRAM, $B, $Format): string {
             $Data = "\n" . $CIDRAM['Aggregator']->aggregate($Data) . "\n";
@@ -4270,7 +4270,7 @@ $CIDRAM['IntersectCIDR'] = function (string $A = '', string $B = '', int $Format
  */
 $CIDRAM['SubtractCIDR'] = function (string $Minuend = '', string $Subtrahend = '', int $Format = 0) use (&$CIDRAM): string {
     $StrObject = new \Maikuolan\Common\ComplexStringHandler(
-        $Minuend . "\n",
+        "\n" . $Minuend . "\n",
         $CIDRAM['RegExTags'],
         function (string $Minuend) use (&$CIDRAM, $Subtrahend, $Format): string {
             $Minuend = "\n" . $CIDRAM['Aggregator']->aggregate($Minuend . "\n" . $Subtrahend) . "\n";

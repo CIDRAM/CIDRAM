@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The aggregator (last modified: 2024.10.14).
+ * This file: The aggregator (last modified: 2024.10.16).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -83,18 +83,16 @@ class Aggregator
     private $TableIPv6Netmask = [];
 
     /**
-     * @var int Specifies the format to use for Aggregator output.
-     *      0 = CIDR notation [default].
-     *      1 = Netmask notation.
+     * @var int The output format to use (refer to the constructor comments).
      */
     private $Mode = 0;
 
     /**
      * Constructor.
      *
-     * @param int $Mode Specifies the format to use for Aggregator output.
-     *      0 = CIDR notation [default].
-     *      1 = Netmask notation.
+     * @param int $Mode Specifies the format to use for the Aggregator's output.
+     *      0 = CIDR notation [default]; Data as a line-separated string.
+     *      1 = Netmask notation; Data as a line-separated string.
      * @return void
      */
     public function __construct(int $Mode = 0)
@@ -113,9 +111,9 @@ class Aggregator
     {
         $Begin = microtime(true);
         $this->Output = $In;
-        $this->stripInvalidCharactersAndSort($this->Output);
-        $this->stripInvalidRangesAndSubs($this->Output);
-        $this->mergeRanges($this->Output);
+        $this->stripInvalidCharactersAndSort();
+        $this->stripInvalidRangesAndSubs();
+        $this->mergeRanges();
         if ($this->Mode === 1) {
             $this->convertToNetmasks($this->Output);
         }
@@ -205,28 +203,29 @@ class Aggregator
     /**
      * Strips invalid characters from lines and sorts entries.
      *
-     * @param string
      * @return void
      */
-    private function stripInvalidCharactersAndSort(string &$In): void
+    private function stripInvalidCharactersAndSort(): void
     {
-        $In = explode("\n", strtolower(trim(str_replace("\r", '', $In))));
-        $InCount = count($In);
+        if (!is_array($this->Output)) {
+            $this->Output = explode("\n", strtolower(trim(str_replace("\r", '', $this->Output))));
+        }
+        $Count = count($this->Output);
         if (isset($this->callbacks['newParse']) && is_callable($this->callbacks['newParse'])) {
-            $this->callbacks['newParse']($InCount);
+            $this->callbacks['newParse']($Count);
         }
         if (!empty($this->Results)) {
-            $this->NumberEntered += $InCount;
+            $this->NumberEntered += $Count;
         }
-        unset($InCount);
-        $In = array_filter(array_unique(array_map(function ($Line) {
+        unset($Count);
+        $this->Output = array_filter(array_unique(array_map(function ($Line) {
             $Line = preg_replace('~^(?:(?:#| \*|/\*).*|[^\dA-Fa-f:./]*)|(?:[ \t].*|[^\dA-Fa-f:./]*)$~', '', $Line);
             if (isset($this->callbacks['newTick']) && is_callable($this->callbacks['newTick'])) {
                 $this->callbacks['newTick']();
             }
             return ($Line === '' || preg_match('~[^\da-f:./]+~i', $Line)) ? '' : $Line;
-        }, $In)));
-        usort($In, function (string $A, string $B) {
+        }, $this->Output)));
+        usort($this->Output, function (string $A, string $B) {
             if (($Pos = strpos($A, '/')) !== false) {
                 $ASize = substr($A, $Pos + 1);
                 $A = substr($A, 0, $Pos);
@@ -291,21 +290,20 @@ class Aggregator
             }
             return $Compare < 0 ? -1 : 1;
         });
-        $In = implode("\n", $In);
+        $this->Output = implode("\n", $this->Output);
     }
 
     /**
      * Strips invalid ranges and subordinates.
      *
-     * @param string
      * @return void
      */
-    private function stripInvalidRangesAndSubs(string &$In): void
+    private function stripInvalidRangesAndSubs(): void
     {
         if (isset($this->callbacks['newParse']) && is_callable($this->callbacks['newParse'])) {
-            $this->callbacks['newParse'](substr_count($In, "\n"));
+            $this->callbacks['newParse'](substr_count($this->Output, "\n"));
         }
-        $In = $Out = "\n" . $In . "\n";
+        $this->Output = $Out = "\n" . $this->Output . "\n";
         $Offset = 0;
         $Low = [4 => 1, 6 => 1];
         foreach ([
@@ -322,17 +320,17 @@ class Aggregator
         ] as $Lows) {
             for ($Iterant = 1; $Iterant < $Lows[2]; $Iterant++) {
                 $Low[$Lows[0]] = $Iterant;
-                if (preg_match('~\n' . $Lows[1] . '/' . $Iterant . '(?:$|\D)~i', $In)) {
+                if (preg_match('~\n' . $Lows[1] . '/' . $Iterant . '(?:$|\D)~i', $this->Output)) {
                     break;
                 }
             }
         }
         unset($Lows);
-        while (($NewLine = strpos($In, "\n", $Offset)) !== false) {
+        while (($NewLine = strpos($this->Output, "\n", $Offset)) !== false) {
             if (isset($this->callbacks['newTick']) && is_callable($this->callbacks['newTick'])) {
                 $this->callbacks['newTick']();
             }
-            $Line = substr($In, $Offset, $NewLine - $Offset);
+            $Line = substr($this->Output, $Offset, $NewLine - $Offset);
             $Offset = $NewLine + 1;
             if (!$Line) {
                 continue;
@@ -381,9 +379,9 @@ class Aggregator
                 }
             }
         }
-        $In = trim($Out);
+        $this->Output = trim($Out);
         if (!empty($this->Results)) {
-            $this->NumberReturned += empty($In) ? 0 : substr_count($In, "\n") + 1;
+            $this->NumberReturned += empty($this->Output) ? 0 : substr_count($this->Output, "\n") + 1;
             $this->NumberRejected = $this->NumberEntered - $this->NumberReturned - $this->NumberMerged;
             $this->NumberAccepted = $this->NumberEntered - $this->NumberRejected;
         }
@@ -392,28 +390,27 @@ class Aggregator
     /**
      * Merges ranges.
      *
-     * @param string
      * @return void
      */
-    private function mergeRanges(string &$In): void
+    private function mergeRanges(): void
     {
         while (true) {
-            $Step = $In;
+            $Step = $this->Output;
             if (isset($this->callbacks['newParse']) && is_callable($this->callbacks['newParse'])) {
                 $this->callbacks['newParse'](substr_count($Step, "\n"));
             }
-            $In = $Out = "\n" . $In . "\n";
+            $this->Output = $Out = "\n" . $this->Output . "\n";
             $Size = $Offset = 0;
             $Line = '';
             $CIDRs = false;
-            while (($NewLine = strpos($In, "\n", $Offset)) !== false) {
+            while (($NewLine = strpos($this->Output, "\n", $Offset)) !== false) {
                 if (isset($this->callbacks['newTick']) && is_callable($this->callbacks['newTick'])) {
                     $this->callbacks['newTick']();
                 }
                 $PrevLine = $Line;
                 $PrevSize = $Size;
                 $PrevCIDRs = $CIDRs;
-                $Line = substr($In, $Offset, $NewLine - $Offset);
+                $Line = substr($this->Output, $Offset, $NewLine - $Offset);
                 $Offset = $NewLine + 1;
                 $RangeSep = strpos($Line, '/');
                 $Size = (int)substr($Line, $RangeSep + 1);
@@ -439,8 +436,8 @@ class Aggregator
                     }
                 }
             }
-            $In = trim($Out);
-            if ($Step === $In) {
+            $this->Output = trim($Out);
+            if ($Step === $this->Output) {
                 break;
             }
         }

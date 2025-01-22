@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6_isps.dat
 
-# Version: 2025.15.0
-# Last modified: 2025.01.16
+# Version: 2025.21.0
+# Last modified: 2025.01.22
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -221,19 +221,6 @@ Tag: PJSC Rostelecom
 Origin: IN
 Profile: Domestic ISP;Infrastructure/Transit
 Tag: Reliance Communications
-
-
-# ASN 198093 ("Foreningen for digitala fri- och rattigheter").
-# Dangerous tor network with dead homepage. HUGE levels of brute-force and SSH
-# attacks, hacking, port scans, and spam detected from here!
-# Stop Forum Spam (SFS) listings: 5,945.
-# Updated: 2022.02.26 / Checked: 2023.12.26
-
-2001:67c:16b0::/48 Deny Attacks
-2001:67c:289c::/48 Deny Attacks
-Origin: SE
-Profile: Restricted/Unidentifiable;Tor endpoints here
-Tag: Foreningen
 
 
 # ASN 25513 ("PJSC Moscow city telephone network").

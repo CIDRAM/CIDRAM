@@ -1,8 +1,8 @@
 # IPv4 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv4_other.dat
 
-# Version: 2025.12.0
-# Last modified: 2025.01.13
+# Version: 2025.21.0
+# Last modified: 2025.01.22
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -1758,18 +1758,6 @@ Tag: Data Ideas llc
 Origin: US
 Profile: Tor endpoints here;Webhosting
 Tag: Thin-nology, LLC
-
-
-# ASN 1004 ("Ambyre LLC").
-# Tor provider. Brute-force, WordPress/XMLRPC, SSH, router exploit, and webapp
-# attacks, port scans, hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 32.
-# Updated: 2023.07.15 / Checked: 2024.06.07
-
-2.56.164.0/24 Deny Proxy
-Origin: US
-Profile: Tor endpoints here
-Tag: Ambyre LLC
 
 
 # ASN 16652 ("Riseup Networks").

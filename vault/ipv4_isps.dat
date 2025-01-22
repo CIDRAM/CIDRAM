@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv4_isps.dat
 
-# Version: 2025.15.0
-# Last modified: 2025.01.16
+# Version: 2025.21.0
+# Last modified: 2025.01.22
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -1149,7 +1149,7 @@ Tag: Swift Networks
 # Hong Kong domestic ISP and commercial network. Mirai detected here.
 # Spam detected here. Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 6 (AS4515), 939 (AS4760).
-# Updated: 2025.01.07
+# Updated: 2025.01.07 / Modified: 2025.01.22
 
 1.64.14.59/32 Deny Spam
 1.64.14.90/32 Deny Spam
@@ -1184,6 +1184,7 @@ Tag: Swift Networks
 112.120.7.0/24 Deny Attacks
 112.120.37.75/32 Deny Attacks
 112.120.37.171/32 Deny Spam
+112.120.57.0/24 Deny Attacks
 112.120.110.202/32 Deny Spam
 112.120.251.253/32 Deny Attacks
 116.48.85.116/32 Deny Attacks
@@ -2534,7 +2535,7 @@ Tag: BSNL
 # probing, etc detected from here. Mozi botnets detected from here.
 # Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 80,293 (AS4134).
-# Updated: 2024.05.25 / Modified: 2025.01.16
+# Updated: 2024.05.25 / Modified: 2025.01.22
 
 1.68.195.36/32 Deny Attacks
 1.68.195.115/32 Deny Attacks
@@ -2799,6 +2800,10 @@ Tag: BSNL
 110.182.208.0/20 Deny Attacks
 110.182.224.0/19 Deny Attacks
 110.183.16.0/20 Deny Attacks
+110.183.42.105/32 Deny Attacks
+110.183.43.18/32 Deny Attacks
+110.183.48.0/21 Deny Attacks
+110.183.56.0/22 Deny Attacks
 110.185.148.98/32 Deny Attacks
 110.185.159.77/32 Deny Attacks
 110.185.160.6/32 Deny Attacks
@@ -7723,11 +7728,10 @@ Tag: BRAC
 # ASN 198093 ("Foreningen for digitala fri- och rattigheter").
 # Dangerous tor network with dead homepage. HUGE levels of brute-force and SSH
 # attacks, hacking, port scans, and spam detected from here!
-# Stop Forum Spam (SFS) listings: 5,945.
-# Updated: 2022.02.26 / Checked: 2023.12.26
+# Stop Forum Spam (SFS) listings: 613.
+# Updated: 2025.01.22
 
 171.25.193.0/24 Deny Attacks
-194.0.61.0/24 Deny Attacks
 Origin: SE
 Profile: Restricted/Unidentifiable;Tor endpoints here
 Tag: Foreningen
@@ -10666,26 +10670,14 @@ Tag: Alliance Broadband
 # ASN 2856 ("British Telecommunications PLC").
 # UK domestic ISP. Spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 2,426.
-# Updated: 2024.05.05
+# Stop Forum Spam (SFS) listings: 886.
+# Updated: 2025.01.22
 
-31.94.56.161/32 Deny Spam
-81.129.204.170/32 Deny Spam
-86.128.98.205/32 Deny Attacks
-86.128.98.252/32 Deny Spam
-86.137.86.139/32 Deny Attacks
-86.137.86.176/32 Deny Attacks
-86.145.114.86/32 Deny Spam
-86.168.121.57/32 Deny Spam
-86.179.4.147/32 Deny Attacks
-86.180.176.119/32 Deny Spam
-86.182.197.110/32 Deny Spam
+51.14.161.165/32 Deny Attacks
 109.149.87.158/32 Deny Attacks
-109.149.87.204/32 Deny Attacks
-109.149.96.137/32 Deny Spam
-109.151.163.236/32 Deny Attacks
-109.159.52.112/32 Deny Attacks
-194.72.183.146/32 Deny Spam
+109.149.87.255/32 Deny Attacks
+109.151.163.232/32 Deny Attacks
+109.159.52.88/32 Deny Attacks
 Origin: GB
 Profile: Domestic ISP
 Tag: British Telecom PLC
@@ -13160,7 +13152,7 @@ Tag: Vodafone Italia
 # Italian domestic ISP and commercial multiplay network. Spam, brute-force, and
 # SSH attacks detected from here. Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 566 (AS3269), 1 (AS20746).
-# Updated: 2024.11.06
+# Updated: 2024.11.06 / Modified: 2025.01.22
 
 62.211.127.151/32 Deny Attacks
 79.11.92.240/32 Deny Attacks
@@ -13170,6 +13162,7 @@ Tag: Vodafone Italia
 79.47.41.144/32 Deny Attacks
 79.49.14.75/32 Deny Attacks
 80.117.255.5/32 Deny Spam
+82.49.117.147/32 Deny Attacks
 87.16.170.2/32 Deny Spam
 95.229.5.214/32 Deny Attacks
 95.229.5.248/32 Deny Attacks
@@ -17310,8 +17303,8 @@ Tag: Hutchison 3G UK Limited
 # ASN 134032 ("INFONET COMM ENTERPRISES").
 # Indian commercial network. Spam, port scans, and hack attacks detected from
 # here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 13.
-# Updated: 2022.01.18 / Checked: 2023.12.13
+# Stop Forum Spam (SFS) listings: 5.
+# Updated: 2022.01.18 / Checked: 2025.01.22
 
 45.118.32.0/22 Deny Attacks
 103.57.150.0/24 Deny Attacks
@@ -17628,16 +17621,16 @@ Profile: Domestic ISP
 Tag: WildPark Co
 
 
-# ASNs 9697, 9770, 9845, 10066, 18318, 45996 ("LG HelloVision Corp").
+# ASNs 9697, 9770, 9845, 10066, 18318, 38121, 45996 ("LG HelloVision Corp").
 # Korean commercial network. Brute-force, SSH attacks, credential stuffing,
 # port scans, hacking, and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 5 (AS9770), 8 (AS9845), 4 (AS10066),
-# 3 (AS18318), 34 (AS45996).
-# Updated: 2024.07.13
+# Stop Forum Spam (SFS) listings: 1 (AS9697), 1 (AS9770), 3 (AS9845), 3 (AS10066),
+# 1 (AS18318), 21 (AS45996).
+# Updated: 2025.01.22
 
-1.176.186.204/32 Deny Attacks
-27.102.81.0/24 Deny Cloud
+61.253.238.116/32 Deny Attacks
+61.253.238.218/32 Deny Attacks
 113.131.182.0/23 Deny Attacks
 122.252.74.111/32 Deny Attacks
 Origin: KR
@@ -21672,17 +21665,6 @@ Tag: Telecel S.A
 Origin: IN
 Profile: Domestic ISP
 Tag: DNAInfoTel
-
-
-# ASN 29649 ("Limes sp. z o.o").
-# Polish multiplay ISP. Brute-force attacks, port scans, and hacking detected
-# from here. Listing just the affected ranges/addresses only.
-# Updated: 2023.02.25 / Checked: 2023.12.21
-
-89.206.46.164/32 Deny Attacks
-Origin: PL
-Profile: Domestic ISP;Multiplay
-Tag: Limes sp. z o.o
 
 
 # ASN 5483 ("Magyar Telekom plc").
@@ -26728,6 +26710,19 @@ Tag: Squirrel Internet Ltd
 Origin: MK
 Profile: Domestic ISP;Mobile ISP;Multiplay
 Tag: a1.mk
+
+
+# ASN 9762 ("HYUNDAI COMMUNICATIONS NETWORK").
+# Korean domestic ISP. Port scans and hacking detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 9.
+# Updated: 2025.01.22
+
+49.142.57.99/32 Deny Attacks
+49.142.57.235/32 Deny Attacks
+Origin: KR
+Profile: Domestic ISP
+Tag: HYUNDAI
 
 
 # ---

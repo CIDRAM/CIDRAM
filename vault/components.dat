@@ -256,7 +256,7 @@ CIDRAM:
 IPv4:
  Extended Description: "Default IPv4 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints."
  False Positive Risk: "Medium"
- Version: "2025.15.0"
+ Version: "2025.21.0"
  Dependencies:
   CIDRAM Core: ">=1"
   Bypasses: ">=2023.95"
@@ -268,7 +268,7 @@ IPv4:
   To:
    - "ipv4.dat"
   Checksum:
-   - "38383a65a10f3d6c5d4dc20796ce7e693e264fbf3967e659c005b1683b3489eb:1584563"
+   - "bf4af85f0c31eddf10ba7f883e1660a44bdbf82cd861e3fc939909f0ae7ef39b:1585214"
  Used with: "ipv4"
  Reannotate: "components.dat"
 IPv4-Bogons:
@@ -291,7 +291,7 @@ IPv4-Bogons:
 IPv4-ISPs:
  Extended Description: "Default IPv4 signatures normally included with the main package. Blocks dangerous and spammy ISPs."
  False Positive Risk: "Medium"
- Version: "2025.15.0"
+ Version: "2025.21.0"
  Dependencies:
   CIDRAM Core: ">=1"
   Bypasses: ">=2023.95"
@@ -303,7 +303,7 @@ IPv4-ISPs:
   To:
    - "ipv4_isps.dat"
   Checksum:
-   - "cbe1009e17a7f16e0af0013e1d85587d2d8052d5b4a7b572f1ce0fcdab2727b8:780430"
+   - "4308c15b9329180b7e702de934c3d744db2dffba14c5b207daa7e08aeda5a018:780305"
  Used with: "ipv4"
  Reannotate: "components.dat"
 IPv4-Nonblocking:
@@ -326,7 +326,7 @@ IPv4-Nonblocking:
 IPv4-Other:
  Extended Description: "Default IPv4 signatures normally included with the main package. Blocks CIDRs for proxies, VPNs, and other miscellaneous unwanted services."
  False Positive Risk: "Medium"
- Version: "2025.12.0"
+ Version: "2025.21.0"
  Dependencies:
   CIDRAM Core: ">=1"
  Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat"
@@ -337,13 +337,13 @@ IPv4-Other:
   To:
    - "ipv4_other.dat"
   Checksum:
-   - "f64f416b9a445f589657b5d771a3ae489b837a7981f9c2be458b1cb3417218d6:47891"
+   - "3529b71a6b92a786376ae890b1f9155e196f946af131bb8293a3260edb7a9637:47559"
  Used with: "ipv4"
  Reannotate: "components.dat"
 IPv6:
  Extended Description: "Default IPv6 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints."
  False Positive Risk: "Low"
- Version: "2025.15.0"
+ Version: "2025.21.0"
  Dependencies:
   CIDRAM Core: ">=1"
   Bypasses: ">=2023.95"
@@ -355,7 +355,7 @@ IPv6:
   To:
    - "ipv6.dat"
   Checksum:
-   - "9fb86caa12f30e1a949f6048c673d2a3b986360601700cbbd0586bc606256484:436427"
+   - "969493aee60ac1d025ed2d6335f829335c111092c1bbb3bd20befbb7bf4095f9:435760"
  Used with: "ipv6"
  Reannotate: "components.dat"
 IPv6-Bogons:
@@ -378,7 +378,7 @@ IPv6-Bogons:
 IPv6-ISPs:
  Extended Description: "Default IPv6 signatures normally included with the main package. Blocks dangerous and spammy ISPs."
  False Positive Risk: "Medium"
- Version: "2025.15.0"
+ Version: "2025.21.0"
  Dependencies:
   CIDRAM Core: ">=1"
   Bypasses: ">=2023.95"
@@ -390,7 +390,7 @@ IPv6-ISPs:
   To:
    - "ipv6_isps.dat"
   Checksum:
-   - "2af310b7bb156a39b86f06d8981556ec8318a32d2b2f3e25a6a465bb1dda0e86:20448"
+   - "256c95829a928c761585b6d835907350159277fc18963a405058dbebe42820ee:20012"
  Used with: "ipv6"
  Reannotate: "components.dat"
 IPv6-Nonblocking:
@@ -413,7 +413,7 @@ IPv6-Nonblocking:
 IPv6-Other:
  Extended Description: "Default IPv6 signatures normally included with the main package. Blocks CIDRs for proxies, VPNs, and other miscellaneous unwanted services."
  False Positive Risk: "Low"
- Version: "2025.12.0"
+ Version: "2025.21.0"
  Dependencies:
   CIDRAM Core: ">=1"
  Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat"
@@ -424,7 +424,7 @@ IPv6-Other:
   To:
    - "ipv6_other.dat"
   Checksum:
-   - "42f21ddc8c6d6a631be424b26c2d01474084e6e075aa39e0866f5f739c22df80:7080"
+   - "9efab81a291f41fe28fe7f3c3a550266199e4fee9daecb6478d1b651ad019032:6735"
  Used with: "ipv6"
  Reannotate: "components.dat"
 Bypasses:

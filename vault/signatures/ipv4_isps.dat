@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv4_isps.dat
 
-# Version: 2025.21.0
-# Last modified: 2025.01.22
+# Version: 2025.27.0
+# Last modified: 2025.01.28
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -3463,7 +3463,7 @@ Tag: China Telecom
 # detected from here. Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 73,007 (AS4837), 232 (AS4808),
 # 938 (AS17621), 7 (AS17622), 4 (AS17623), 18 (AS17816), 33 (AS23724).
-# Updated: 2024.10.18 / Modified: 2025.01.07
+# Updated: 2024.10.18 / Modified: 2025.01.27
 
 1.29.73.28/32 Deny Attacks
 1.29.73.228/32 Deny Attacks
@@ -3790,8 +3790,8 @@ Tag: China Telecom
 120.83.84.38/32 Deny Attacks
 120.84.10.0/23 Deny Attacks
 120.85.40.0/22 Deny Attacks
-120.85.104.0/22 Deny Attacks
-120.85.142.0/23 Deny Attacks
+120.85.96.0/19 Deny Attacks
+120.85.128.0/17 Deny Attacks
 120.86.234.40/32 Deny Attacks
 120.86.236.0/22 Deny Attacks
 120.86.251.0/24 Deny Attacks
@@ -26723,6 +26723,31 @@ Tag: a1.mk
 Origin: KR
 Profile: Domestic ISP
 Tag: HYUNDAI
+
+
+# ASN 41798 ("JSC Transtelecom").
+# Kazakh domestic ISP. Brute-force, webapp attacks, port scans, and spam
+# detected from here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 18.
+# Updated: 2025.01.27
+
+45.88.90.0/24 Deny Attacks
+Origin: BG
+37.17.177.94/32 Deny Attacks
+Origin: KZ
+Profile: Domestic ISP
+Tag: JSC Transtelecom
+
+
+# ASN 18780 ("Reservation Telephone Coop").
+# US domestic ISP. Brute-force and SSH attacks detected from here.
+# Listing just the affected ranges/addresses only.
+# Updated: 2025.01.28
+
+23.182.128.13/32 Deny Attacks
+Origin: US
+Profile: Domestic ISP;Government
+Tag: Reservation Telephone Coop
 
 
 # ---

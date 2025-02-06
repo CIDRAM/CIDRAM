@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6_isps.dat
 
-# Version: 2025.21.0
-# Last modified: 2025.01.22
+# Version: 2025.36.0
+# Last modified: 2025.02.06
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -289,21 +289,6 @@ Profile: Domestic ISP
 Tag: Atria Convergence
 
 
-# ASN 1221 ("Telstra Corporation Ltd").
-# Australia's largest domestic ISP. Brute-force, SSH, and telnet attacks, port
-# scans, hacking, and spam detected from here.
-# Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 752.
-# Updated: 2024.01.11
-
-2001:8003:270b:6801::/64 Deny Spam
-2001:8003:3020:1601::/64 Deny Spam
-2001:8003:5dce:3a00::/64 Deny Spam
-Origin: AU
-Profile: Domestic ISP;Mobile ISP;Multiplay
-Tag: Telstra Corporation
-
-
 # ASN 2856 ("British Telecommunications PLC").
 # UK domestic ISP. Spam detected from here.
 # Listing just the affected ranges/addresses only.
@@ -473,15 +458,27 @@ Tag: Udasha S.A
 # ASN 18403 ("The Corporation for Financing & Promoting Technology").
 # Vietnamese multiplay network. Spam, hacking, brute-force attacks, port scans,
 # etc detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 17,087.
-# Updated: 2024.01.10
+# Stop Forum Spam (SFS) listings: 26,357.
+# Updated: 2025.02.06
 
-2405:4802:235:5c50::/64 Deny Spam
-2405:4802:352:eac0::/64 Deny Spam
-2405:4802:6c5:9150::/64 Deny Spam
-2405:4802:1d90:98d0::/64 Deny Spam
-2405:4802:80f5:4b20::/64 Deny Spam
-2405:4802:8137:b650::/64 Deny Spam
+2405:4802:31:310::/64 Deny Spam
+2405:4802:89:4a60::/64 Deny Spam
+2405:4802:213:d640::/64 Deny Spam
+2405:4802:1d97:ad50::/64 Deny Spam
+2405:4802:2298:5810::/64 Deny Spam
+2405:4802:6248:9380::/64 Deny Spam
+2405:4802:6526:d030::/64 Deny Spam
+2405:4802:8134:ea60::/64 Deny Spam
+2405:4802:8259:f420::/64 Deny Spam
+2405:4802:830b:9d80::/64 Deny Spam
+2405:4802:93a1:3040::/64 Deny Spam
+2405:4802:a5c9:650::/64 Deny Spam
+2405:4802:b66a:bcb0::/64 Deny Spam
+2405:4803:c605:d950::/64 Deny Spam
+2405:4803:c64a:2cf0::/64 Deny Spam
+2405:4803:c785:4660::/64 Deny Spam
+2405:4803:c924:4550::/64 Deny Spam
+2405:4803:d756:b7b0::/64 Deny Spam
 Origin: VN
 Profile: Domestic ISP;Infrastructure/Transit;Multiplay
 Tag: CFPT

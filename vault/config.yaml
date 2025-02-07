@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2024.07.23).
+# This file: Configuration defaults file (last modified: 2025.02.07).
 ##/
 
 Config Defaults:
@@ -777,10 +777,11 @@ Provide:
   Config:
    recaptcha: {enabled: false, forcibly_disabled: false}
    hcaptcha: {enabled: false, forcibly_disabled: false}
-  Tracking options override: ""
   Suppress output template: false
   Suppress logging: false
+  Suppress reports: false
   Trackable: true
+  Tracking options override: ""
   Aux Redirect: ""
   Aux Status Code: 200
   Hostname: ""
@@ -850,6 +851,11 @@ Provide:
      Label: "label_aux_special_suppress_logging"
      Sets:
       Suppress logging: true
+   Reports:
+    Suppress reports:
+     Label: "label_aux_special_suppress_reports"
+     Sets:
+      Suppress reports: true
    IP Tracking:
     Label: "link_ip_tracking"
     Forcibly enable IP tracking:

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2025.01.09).
+ * This file: Protect traits (last modified: 2025.02.07).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -497,7 +497,7 @@ trait Protect
         }
 
         /** Process all reports (if any exist, and if not whitelisted), and then destroy the reporter. */
-        if (empty($this->CIDRAM['Whitelisted']) && isset($this->Stages['Reporting:Enable'])) {
+        if (empty($this->CIDRAM['Whitelisted']) && isset($this->Stages['Reporting:Enable']) && empty($this->CIDRAM['Suppress reports'])) {
             $this->Stage = 'Reporting';
             $this->Reporter->process();
             $this->Events->fireEvent('reporterFinished');

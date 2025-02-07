@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2024.12.24).
+ * This file: Output generator (last modified: 2025.02.07).
  */
 
 /** Initialise cache. */
@@ -415,7 +415,7 @@ if (
 }
 
 /** Executed only if maintenance mode is disabled. */
-if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode'] && empty($CIDRAM['Whitelisted']) && $CIDRAM['Reporter'] instanceof \CIDRAM\Core\Reporter) {
+if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode'] && empty($CIDRAM['Whitelisted']) && $CIDRAM['Reporter'] instanceof \CIDRAM\Core\Reporter && empty($CIDRAM['Suppress reports'])) {
     /** Identify proxy connections (conjunctive reporting element). */
     if (
         strpos($CIDRAM['BlockInfo']['WhyReason'], $CIDRAM['L10N']->getString('Short_Proxy')) !== false ||

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2024.12.24).
+ * This file: Functions file (last modified: 2024.12.26).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -32,16 +32,22 @@ $CIDRAM['Events'] = new \Maikuolan\Common\Events();
  * Reads and returns the contents of files.
  *
  * @param string $File The path and the name of the file to read.
+ * @param int $Err Populates on error; Reference; Optional.
  * @return string The file's content, or an empty string on failure.
  */
-$CIDRAM['ReadFile'] = function (string $File): string {
+$CIDRAM['ReadFile'] = function (string $File, int &$Err = 0): string {
     /** Guard. */
     if ($File === '' || !is_file($File) || !is_readable($File)) {
+        $Err = 1;
         return '';
     }
 
     $Data = file_get_contents($File);
-    return is_string($Data) ? $Data : '';
+    if (is_string($Data)) {
+        return $Data;
+    }
+    $Err = 2;
+    return '';
 };
 
 /**
@@ -263,6 +269,9 @@ $CIDRAM['CheckFactors'] = function (array $Files, array $Factors) use (&$CIDRAM)
     if (!isset($CIDRAM['FileCache'])) {
         $CIDRAM['FileCache'] = [];
     }
+    if (!isset($CIDRAM['FileCacheErrors'])) {
+        $CIDRAM['FileCacheErrors'] = [];
+    }
     for ($FileIndex = 0; $FileIndex < $Counts['Files']; $FileIndex++) {
         $Files[$FileIndex] = (
             strpos($Files[$FileIndex], ':') === false
@@ -277,13 +286,14 @@ $CIDRAM['CheckFactors'] = function (array $Files, array $Factors) use (&$CIDRAM)
         } else {
             $DefTag = $Files[$FileIndex] . '-Unknown';
         }
-        $FileExtension = strtolower(substr($Files[$FileIndex], -4));
         if (!isset($CIDRAM['FileCache'][$Files[$FileIndex]])) {
-            $CIDRAM['FileCache'][$Files[$FileIndex]] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $Files[$FileIndex]);
+            $CIDRAM['FileCacheErrors'][$Files[$FileIndex]] = 0;
+            $CIDRAM['FileCache'][$Files[$FileIndex]] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $Files[$FileIndex], $CIDRAM['FileCacheErrors'][$Files[$FileIndex]]);
         }
         if (($Files[$FileIndex] = $CIDRAM['FileCache'][$Files[$FileIndex]]) === '') {
             continue;
         }
+        $FileExtension = strtolower(substr($Files[$FileIndex], -4));
         if (
             $FileExtension === '.csv' &&
             strpos($Files[$FileIndex], "\n") === false &&

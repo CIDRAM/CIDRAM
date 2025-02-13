@@ -1339,14 +1339,14 @@ AbuseIPDB module:
    Checksum: "fe196091ff545d335c1b494fc5a3f628325e4750ccebb74e6401c54cc60a87e1:10807"
 Bad hosts blocker module:
  False Positive Risk: "Medium"
- Version: "2025.36.0"
+ Version: "2025.43.0"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "^3"
  Files:
   modules/badhosts.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/badhosts.php"
-   Checksum: "faef8e22a608ca11a216af21458bc68d9e8848da98f2a32be3976276f84ddc63:14352"
+   Checksum: "854dfa86bc5378e6bbf0d84385fa27692c493ea00d1ee6ab6893a2a9c63c5283:14367"
    Used with: "modules"
 Bad TLDs blocker module:
  False Positive Risk: "Low"
@@ -1439,7 +1439,7 @@ IP-API module:
    Used with: "modules"
 Optional security extras module:
  False Positive Risk: "Medium"
- Version: "2025.36.0"
+ Version: "2025.43.0"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "^3"
@@ -1451,7 +1451,7 @@ Optional security extras module:
    Used with: "imports"
   modules/extras.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/extras.php"
-   Checksum: "2df6140fa0ef550af4c61b26f9005bc8084d5dcbf3953ef927bd2379184cff01:30641"
+   Checksum: "87a6e866d123f81e46596600d8878743656d806844a0ac50730a444bd56ca1b4:30867"
    Used with: "modules"
 Project Honeypot module:
  False Positive Risk: "Medium"

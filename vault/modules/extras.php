@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2025.01.14).
+ * This file: Optional security extras module (last modified: 2025.02.13).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -98,38 +98,41 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             '\.bak/.*|' .
             '\.w(?:ell-known|p-cli)/.*(?:a(?:bout|dmin)[\da-z]*|fierza[\da-z]*|install[\da-z]*|moon[\da-z]*|shell[\da-z]*|wp-login[\da-z]*|x)|' .
             '\.?rxr(?:_[\da-z]+)?|' .
-            '\d{3,5}[a-z]{3,5}|\d+-?backdoor|0byte|0[xz]|10+|4price|991176|' .
+            '\d{3,5}[a-z]{3,5}|\d+-?backdoor|0byte|0[xz]|10+|1337|4price|85022df0ed31|991176|' .
             'a(?:b1ux1ft|dmin-heade\d*|dminfuns|hhygskn|lexus|lfa(?:-rex|_data|a?cgiapi|ioxi|new)?\d*|njas|pismtp|xx)|' .
             'b(?:0|3d2acc621a0|ak|ala|ibil_0day)|' .
-            'c(?:(?:9|10)\d+|adastro-2|asper[\da-z]+|d(?:.*tmp.*rm-rf|chmod.*\d{3,})|fom[-_]files|(?:gi-bin|ss)/(?:luci/;|moon|newgolden|radio|sgd|stok=/|uploader|well-known|wp-login)|jfuns|lasssmtps|olors/blue/uploader|ong|ontentloader1)|' .
-            'd(?:7|eadcode\d*|epotcv|isagraep|kiz)|' .
+            'c(?:(?:9|10)\d+|adastro-2|asper[\da-z]+|d(?:.*tmp.*rm-rf|chmod.*\d{3,})|fom[-_]files|(?:gi-bin|ss)/(?:luci/;|moon|newgolden|radio|sgd|stok=/|uploader|well-known|wp-login)|jfuns|lasssmtps|olors/blue/uploader|ong|ontentloader1|ss/colors/coffee/index)|' .
+            'd(?:7|eadcode\d*|epotcv|isagraep|kiz|ummyyummy/wp-signup)|' .
             'ee|' .
             'f(?:ddqradz|ilefuns?)|' .
             'g(?:el4y|etid3-core|h[0o]st|lab-rare|zismexv)|' .
-            'h[4a]x+[0o]r|h6ss|hanna1337|hehehe|kvkjguw|htmlawedtest|' .
-            'i(?:\d{3,}[a-z]{2,}|cesword|ndoxploit|optimize|r7szrsouep|itsec|xr/(?:allez|wp-login))|' .
+            'h(?:[4a]x+[0o]r|6ss|anna1337|ehehe|sfpdcd|tmlawedtest)|' .
+            'i(?:\d{3,}[a-z]{2,}|cesword|ndoxploit|optimize|oxi/alfa-ioxi|r7szrsouep|itsec|xr/(?:allez|wp-login))|' .
+            'kvkjguw|' .
             'lock0?360|lufix(?:-shell)?|' .
             'miin|my1|' .
-            'old/wp-admin/install|orvx(?:-shell)?|othiondwmek|' .
-            'perl\.alfa|php(?:1|_niu_\d+)|(?:plugins|themes)/(?:ccx|ioptimization|yyobang)|poison|priv8|pzaiihfi|' .
+            'njima|' .
+            'o(?:ld(?:/wp-admin/install|-up-ova)|rvx(?:-shell)?|thiondwmek)|' .
+            'p(?:erl\.alfa|hp(?:1|_niu_\d+)|oison|riv8|wnd|zaiihfi)|' .
             'rendixd|' .
             's(?:ession91|h[3e]llx?\d*|hrift|idwso|ilic|kipper(?:shell)?|onarxleetxd|pammervip|rc/util/php/(?:eval(?:-stdin)?|kill))|' .
-            't62|tenda\.sh.*tenda\.sh|themes/(?:finley/min|pridmag/db|universal-news/www)|tinymce/(?:langs/about|plugins/compat3x/css/index)|tk(?:_dencode_\d+)?|(?:tmp|wp-content)/vuln|topxoh/(?:drsx|wdr)|' .
-            'u(?:nisibfu|pfile(?:_\\(\d\\))?|ploader_by_cloud7_agath|tchiha(?:_uploader)?)|' .
-            'vzlateam|' .
+            't(?:62|enda\.sh.*tenda\.sh|emplates/beez/index|hemes/(?:finley/min|pridmag/db|universal-news/www)|hreefox(?:_exploit/index)?|inymce/(?:langs/about|plugins/compat3x/css/index)|k_dencode_\d+|mp/vuln|opxoh/(?:drsx|wdr))|' .
+            'u(?:bh/up|nisibfu|pfile(?:_\\(\d\\))?|ploader_by_cloud7_agath|tchiha(?:_uploader)?)|' .
+            'v(?:endor/bin/loader|zlateam)|' .
             'w(?:[0o]rm\d+|0rdpr3ssnew|alker-nva|ebshell-[a-z\d]+|idgets-nva|idwsisw|loymzuk)|' .
-            'wp[-_](?:2019|22|(?:admin(?:/images)?|content|css(?:/colors)?|includes(?:/ixr|/customize|/pomo)?|js(?:/widgets)?|network)/(?:dropdown|fgertreyersd|(?:images|widgets)/include|install|js/privacy-tools\.min|(?:random_compat/|requests/)?class(?:_api|-wp-page-[\da-z]{5,})|repeater|simple|text/about|themes/hello-element/footer|uploads/error_log|wp-login)|conflg|content/plugins/(?:backup-backup/includes/hro|cache/dropdown|contact-form-7/.+styles-rtl|contus-hd-flv-player/uploadvideo|(?:core-plugin/|wordpresscore/)?include|dzs-zoomsounds/savepng|fix/up|(?:view-more/)?ioxi|wp-file-manager/lib/php/connector\.minimal)|filemanager|setups|sigunq|sts|p)|' .
-            'wp-configs|' .
+            'wp[-_](?:2019|22|(?:admin(?:/images)?|content|css(?:/colors)?|includes(?:/ixr|/customize|/pomo)?|js(?:/widgets)?|network)/(?:dropdown|fgertreyersd|(?:images|widgets)/include|install|js/privacy-tools\.min|(?:random_compat/|requests/)?class(?:_api|-wp-page-[\da-z]{5,})|repeater|simple|text/about|themes/hello-element/footer|uploads/error_log|vuln|wp-login)|conflg|content/plugins/(?:backup-backup/includes/hro|cache/dropdown|contact-form-7/.+styles-rtl|contus-hd-flv-player/uploadvideo|(?:core-plugin/|wordpresscore/)?include|dzs-zoomsounds/savepng|fix/up|(?:view-more/)?ioxi|wp-file-manager/lib/php/connector\.minimal)|filemanager|setups|sigunq|sts|p)|' .
+            'wp-(?:configs|l0gins?)|' .
             'ws[ou](?:yanz)?(?:[\d.]*|[\da-z]{4,})|wwdv|' .
             'x{3,}|xiaom|xichang/x|x+l(?:\d+|eet(?:mailer|-shell)?x?)|xm(?:lrpcs|lrpz|rlpc)|xw|' .
             'ya?nz|yyobang/mar|' .
             'zone_hackbar(?:_beutify_other)?|' .
+            '(?:plugins|themes)/(?:ccx|ioptimization|yyobang)|' .
             '版iisspy|大马|一句话(?:木马|扫描脚本程序)?' .
             ')\.php[57]?(?:$|[/?])~',
             $LCNrURI
         ), 'Probing for webshells/backdoors')) {
             $this->Reporter->report([15, 20, 21], ['Caught probing for webshells/backdoors. Host might be compromised.'], $this->BlockInfo['IPAddr']);
-        } // 2023.08.18 mod 2025.01.14
+        } // 2023.08.18 mod 2025.02.13
 
         /** Probing for vulnerable plugins or webapps. */
         if (

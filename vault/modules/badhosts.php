@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bad hosts blocker module (last modified: 2024.09.12).
+ * This file: Bad hosts blocker module (last modified: 2025.02.13).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -105,7 +105,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         // Caught attempting to brute-force WordPress logins (2020.11.09).
         $this->trigger(preg_match('~\.domainserver\.ne\.jp$~', $HN), 'Cloud/Webhosting') ||
 
-        // 2022.12.19 mod 2024.09.12
+        // 2022.12.19 mod 2025.02.13
         $this->trigger(preg_match(
             '~i(?:g|nsite)\.com\.br$|terra\.cl$|acetrophies\.co\.uk$|adsinmedia\.co\.' .
             'in$|(?:webfusion|xcalibre)\.co\.uk$|(?:\.(?:appian|cloud|ctera|dyn|emc|f' .
@@ -124,28 +124,28 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             'gineyard|omalism|stratus)|telos|ucalyptus|vapt|vionet)|fathomdb|flexisca' .
             'le|followmeoffice|g(?:emstone|enerositycool|igaspaces|ogrid|othamdating|' .
             'roupcross)|h(?:eroku|exagrid|olhost|ost(?:acy|cats|ing24)|ubspan|yperic)' .
-            '|i(?:buzytravel|modrive|nfo(?:bright|rmatica)|tricityhosting)|j(?:' .
-            'oyent|umpbox|unglebox|usthost)|k(?:2analytics|aavo|eynote|nowledgetree)|' .
-            'l(?:ayeredtech|inkneo|iveops|oadstorm|ogixml|ongjump|tdomains)|m(?:o(?:d' .
-            'erro|jsite|rphexchange|sso|zy)|idphase|turk|ulesoft)|n(?:asstar|e(?:oint' .
-            'eractiva|t(?:app|documents|suite|topia)|wrelic|wservers)|ionex|irvanix|o' .
-            'vatium|scaled)|o(?:co-inc|nelogin|npathtech|penqrm|psource)|p(?:ara(?:sc' .
-            'al|tur)e|hatservers|hishmongers|iemontetv|inqidentity|ivotlink|luraproce' .
-            'ssing)|q(?:layer|rimp|uanti(?:vo|x-uk))|r(?:ackspace(?:cloud)?|e(?:di2|d' .
-            'uctivelabs|lia(?:blehosting|cloud)|sponsys)|ight(?:now|scale)|ollbase|om' .
-            'ania-webhosting|path)|s(?:alesforce|avvis|ertifi|erver306|huilinchi|kyta' .
-            'p|martservercontrol|naplogic|oasta|pringcm|tax|treetsmarts|tretchoid|ucc' .
-            'essmetrics|wifttrim|ymplified|yncplicity)|t(?:aleo|err[ae]mark|h(?:eproc' .
-            'essfactory|inkgos|oughtexpress)|rustsaas)|utilitystatus|v(?:aultscape|er' .
-            'tica|mware|ordel)|web(?:faction|hosting\.uk|hostinghub|scalesolutions|si' .
-            'tewelcome)|xactlycorp|xlhost|xythos|z(?:embly|imory|manda|oho|uora))\.co' .
-            'm$|server4u\.cz$|(?:(?:\.|kunden)server|clanmoi|fastwebserver|optimal|se' .
-            'rver4you|your-server)\.de$|candycloud\.eu$|cyberresilience\.io$|server\.' .
-            'lu$|starnet\.md$|(?:\.(?:above|akpackaging|bhsrv|box|propagation|voxel)|' .
-            '1978th|collab|enkiconsulting|incrediserve|jkserv|recyber|reliablesite|sh' .
-            'ared-server|techajans)\.net$|hitech-hosting\.nl$|(?:\.terracotta|beowulf' .
-            '|iboss|opennebula|xen)\.org$|mor\.ph$|(?:ogicom|vampire)\.pl$|(?:serverh' .
-            'ub|rivreg|tkvprok|vpsnow|vympelstroy)\.ru$|g\.ho\.st$~',
+            '|i(?:buzytravel|modrive|nfo(?:bright|rmatica)|tricityhosting)|j(?:oyent|' .
+            'umpbox|unglebox|usthost)|k(?:2analytics|aavo|eynote|nowledgetree)|l(?:ay' .
+            'eredtech|inkneo|iveops|oadstorm|ogixml|ongjump|tdomains)|m(?:o(?:derro|j' .
+            'site|rphexchange|sso|zy)|idphase|idnight-monkey|turk|ulesoft)|n(?:asstar' .
+            '|e(?:ointeractiva|t(?:app|documents|suite|topia)|wrelic|wservers)|ionex|' .
+            'irvanix|ovatium|scaled)|o(?:co-inc|nelogin|npathtech|penqrm|psource)|p(?' .
+            ':ara(?:scal|tur)e|hatservers|hishmongers|iemontetv|inqidentity|ivotlink|' .
+            'luraprocessing)|q(?:layer|rimp|uanti(?:vo|x-uk))|r(?:ackspace(?:cloud)?|' .
+            'e(?:di2|ductivelabs|lia(?:blehosting|cloud)|sponsys)|ight(?:now|scale)|o' .
+            'llbase|omania-webhosting|path)|s(?:alesforce|avvis|ertifi|erver306|huili' .
+            'nchi|kytap|martservercontrol|naplogic|oasta|pringcm|tax|treetsmarts|tret' .
+            'choid|uccessmetrics|wifttrim|ymplified|yncplicity)|t(?:aleo|err[ae]mark|' .
+            'h(?:eprocessfactory|inkgos|oughtexpress)|rustsaas)|utilitystatus|v(?:aul' .
+            'tscape|ertica|mware|ordel)|web(?:faction|hosting\.uk|hostinghub|scalesol' .
+            'utions|sitewelcome)|xactlycorp|xlhost|xythos|z(?:embly|imory|manda|oho|u' .
+            'ora))\.com$|server4u\.cz$|(?:(?:\.|kunden)server|clanmoi|fastwebserver|o' .
+            'ptimal|server4you|your-server)\.de$|candycloud\.eu$|cyberresilience\.io$' .
+            '|server\.lu$|starnet\.md$|(?:\.(?:above|akpackaging|bhsrv|box|propagatio' .
+            'n|voxel)|1978th|collab|enkiconsulting|incrediserve|jkserv|recyber|reliab' .
+            'lesite|shared-server|techajans)\.net$|hitech-hosting\.nl$|(?:\.terracott' .
+            'a|beowulf|iboss|opennebula|xen)\.org$|mor\.ph$|(?:ogicom|vampire)\.pl$|(' .
+            '?:serverhub|rivreg|tkvprok|vpsnow|vympelstroy)\.ru$|g\.ho\.st$~',
             $HN
         ), 'Cloud/Webhosting') ||
 

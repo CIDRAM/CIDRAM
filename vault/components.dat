@@ -1,7 +1,7 @@
 ---
 CIDRAM:
  Name: "CIDRAM"
- Version: "1.28.5-DEV+250370"
+ Version: "1.28.5-DEV+250430"
  Dependencies:
   PHP: "^5.4|^7|^8"
   l10n/{lang}: ">=2023.258"
@@ -251,12 +251,12 @@ CIDRAM:
    - "ee98b16e3880618a5fbf6b7e70f89eb1dbd36ea4d83a91f0b0060f8830d461bc:1661"
    - "e48dc4d8b942bc26580caebdfc7ff79bfbb3807003c918c739c9e7dfdb61bf5e:1204"
    - "67dbe791d181719036b31e00056ac418e2a9633a5ab9d8b82a18369aabe1e6c6:2434"
-   - "1eb722657cf3128bad7cf3a2f002ea2f12affcafd56f02e9ce0cbc264764b2be:12389"
+   - "9c4e9dbaaf3583da4f9853d7e9db6a69e37f3cdfd2d715a470bce66de9ceca1d:12389"
  Reannotate: "components.dat"
 IPv4:
  Extended Description: "Default IPv4 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints."
  False Positive Risk: "Medium"
- Version: "2025.36.0"
+ Version: "2025.43.0"
  Dependencies:
   CIDRAM Core: ">=1"
   Bypasses: ">=2023.95"
@@ -268,7 +268,7 @@ IPv4:
   To:
    - "ipv4.dat"
   Checksum:
-   - "5b5b0d0f97366101b5ff1ac9a7d9a22c710ecb75b49e88921c16c687a2eb3ae6:1594050"
+   - "950c7abfc50c3d8c6dbc2e5b92f38c8973990a362422cbbdff9a2d1eb3757590:1601437"
  Used with: "ipv4"
  Reannotate: "components.dat"
 IPv4-Bogons:
@@ -291,7 +291,7 @@ IPv4-Bogons:
 IPv4-ISPs:
  Extended Description: "Default IPv4 signatures normally included with the main package. Blocks dangerous and spammy ISPs."
  False Positive Risk: "Medium"
- Version: "2025.36.0"
+ Version: "2025.43.0"
  Dependencies:
   CIDRAM Core: ">=1"
   Bypasses: ">=2023.95"
@@ -303,7 +303,7 @@ IPv4-ISPs:
   To:
    - "ipv4_isps.dat"
   Checksum:
-   - "d9d85062a81beb58a7570819a69770aaaa91d05e579193c26d03ec871774eb4a:780906"
+   - "fc2bee1564698fe469c756bd44e74d8fcd6bf79c82a05b318cf3e9d9e7b0e5a1:779575"
  Used with: "ipv4"
  Reannotate: "components.dat"
 IPv4-Nonblocking:
@@ -343,7 +343,7 @@ IPv4-Other:
 IPv6:
  Extended Description: "Default IPv6 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints."
  False Positive Risk: "Low"
- Version: "2025.36.0"
+ Version: "2025.43.0"
  Dependencies:
   CIDRAM Core: ">=1"
   Bypasses: ">=2023.95"
@@ -355,7 +355,7 @@ IPv6:
   To:
    - "ipv6.dat"
   Checksum:
-   - "24e7e599552a7397f78426e57ad4ae98d3949d0ad39317441acd5de5e7fb1d97:438191"
+   - "3771c6438635c891543e058030ea44a9bf2fa318a883b58cc27bb712ddcb2820:444800"
  Used with: "ipv6"
  Reannotate: "components.dat"
 IPv6-Bogons:

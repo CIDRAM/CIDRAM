@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data for the front-end (last modified: 2025.02.07).
+# This file: Bangla language data for the front-end (last modified: 2025.02.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -194,6 +194,8 @@ config_signatures_infraction_limit: "আইপি ট্র্যাকিং �
 config_signatures_ipv4: "IPv4 স্বাক্ষর ফাইলগুলির একটি তালিকা যা CIDRAM প্রক্রিয়া করার চেষ্টা করা উচিত, কমা দ্বারা বিভক্ত।"
 config_signatures_ipv6: "IPv6 স্বাক্ষর ফাইলগুলির একটি তালিকা যা CIDRAM প্রক্রিয়া করার চেষ্টা করা উচিত, কমা দ্বারা বিভক্ত।"
 config_signatures_modules: "IPv4/IPv6 স্বাক্ষর পরীক্ষা করার পরে লোড করার জন্য মডিউল ফাইলগুলির তালিকা, কমা দ্বারা বিভক্ত।"
+config_signatures_suppress_conflict: "বিরোধপূর্ণ অনুরোধের জন্য আউটপুট টেমপ্লেট দমন করবেন?"
+config_signatures_suppress_rl: "সীমিত হারের অনুরোধের জন্য আউটপুট টেমপ্লেট দমন করবেন?"
 config_signatures_track_mode: "যখন লঙ্ঘন গণনা করা উচিত? False = যখন আইপি মডিউল দ্বারা ব্লক করা হয়। True = যখন আইপি কোন কারণের জন্য ব্লক করা হয়। ডিফল্ট = False।"
 config_signatures_tracking_override: "মডিউলগুলিকে ট্র্যাকিং বিকল্পগুলি ওভাররাইড করার অনুমতি দেবেন? True = হাঁ [ডিফল্ট]; False = না।"
 config_supplementary_cache_options: "পরিপূরক ক্যাচিং বিকল্পগুলি।"
@@ -201,14 +203,14 @@ config_supplementary_cache_options_enable_apcu: "এই ক্যাশিং �
 config_supplementary_cache_options_enable_memcached: "এই ক্যাশিং জন্য Memcached ব্যবহার কিনা তা নির্দিষ্ট করে। ডিফল্ট = False।"
 config_supplementary_cache_options_enable_pdo: "এই ক্যাশিং জন্য PDO ব্যবহার কিনা তা নির্দিষ্ট করে। ডিফল্ট = False।"
 config_supplementary_cache_options_enable_redis: "এই ক্যাশিং জন্য Redis ব্যবহার কিনা তা নির্দিষ্ট করে। ডিফল্ট = False।"
-config_supplementary_cache_options_memcached_host: "Memcached হোস্ট মান। ডিফল্ট = "localhost"।"
+config_supplementary_cache_options_memcached_host: "Memcached হোস্ট মান। ডিফল্ট = localhost."
 config_supplementary_cache_options_memcached_port: "Memcached পোর্ট মান। ডিফল্ট = "11211"।"
 config_supplementary_cache_options_pdo_dsn: "PDO DSN মান। ডিফল্ট = "mysql:dbname=cidram;host=localhost;port=3306"।"
 config_supplementary_cache_options_pdo_password: "PDO পাসওয়ার্ড।"
 config_supplementary_cache_options_pdo_username: "PDO ব্যবহারকারীর নাম।"
 config_supplementary_cache_options_prefix: "এখানে উল্লিখিত মানটি সমস্ত ক্যাশে এন্ট্রি কীগুলিতে প্রিপেন্ড করা হবে। ডিফল্টরূপে খালি। যখন একই সার্ভারে একাধিক ইনস্টলেশন বিদ্যমান, এটি তাদের ক্যাশে একে অপরের থেকে আলাদা রাখার জন্য কার্যকর হতে পারে।"
 config_supplementary_cache_options_redis_database_number: "ডাটাবেস নম্বর Redis. ডিফল্ট = "0"। দ্রষ্টব্য: Redis Cluster সাথে 0 ছাড়া অন্য মান ব্যবহার করা যাবে না।"
-config_supplementary_cache_options_redis_host: "Redis হোস্ট মান। ডিফল্ট = "localhost"।"
+config_supplementary_cache_options_redis_host: "Redis হোস্ট মান। ডিফল্ট = localhost."
 config_supplementary_cache_options_redis_port: "Redis পোর্ট মান। ডিফল্ট = "6379"।"
 config_supplementary_cache_options_redis_timeout: "Redis সময়সীমা মান। ডিফল্ট = "2.5"।"
 config_template_data: "টেমপ্লেট এবং থিমগুলির জন্য কনফিগারেশন।"

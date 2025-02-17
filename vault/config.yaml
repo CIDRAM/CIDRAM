@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2025.02.07).
+# This file: Configuration defaults file (last modified: 2025.02.17).
 ##/
 
 Config Defaults:
@@ -434,6 +434,12 @@ Config Defaults:
    type: "bool"
    default: false
   tracking_override:
+   type: "bool"
+   default: true
+  suppress_rl:
+   type: "bool"
+   default: true
+  suppress_conflict:
    type: "bool"
    default: true
  recaptcha:

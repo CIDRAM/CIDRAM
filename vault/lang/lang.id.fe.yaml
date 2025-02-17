@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2025.02.07).
+# This file: Indonesian language data for the front-end (last modified: 2025.02.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -196,6 +196,8 @@ config_signatures_infraction_limit: "Jumlah maksimum pelanggaran IP diperbolehka
 config_signatures_ipv4: "Daftar file tanda tangan IPv4 yang CIDRAM harus berusaha untuk menggunakan, dipisahkan dengan koma."
 config_signatures_ipv6: "Daftar file tanda tangan IPv6 yang CIDRAM harus berusaha untuk menggunakan, dipisahkan dengan koma."
 config_signatures_modules: "Daftar file modul untuk memuat setelah memeriksa tanda tangan IPv4/IPv6, dipisahkan dengan koma."
+config_signatures_suppress_conflict: "Menekan templat keluaran untuk permintaan yang berkonflik?"
+config_signatures_suppress_rl: "Menekan templat keluaran untuk permintaan dengan batasan laju?"
 config_signatures_track_mode: "Kapan sebaiknya pelanggaran dihitung? False = Ketika IP adalah diblokir oleh modul. True = Ketika IP adalah diblokir untuk alasan apapun. Default = False."
 config_signatures_tracking_override: "Izinkan modul untuk mengganti opsi pelacakan? True = Ya [Default]; False = Tidak."
 config_supplementary_cache_options: "Opsi cache tambahan."
@@ -203,14 +205,14 @@ config_supplementary_cache_options_enable_apcu: "Menentukan apakah akan mencoba 
 config_supplementary_cache_options_enable_memcached: "Menentukan apakah akan mencoba menggunakan Memcached untuk cache. Default = False."
 config_supplementary_cache_options_enable_pdo: "Menentukan apakah akan mencoba menggunakan PDO untuk cache. Default = False."
 config_supplementary_cache_options_enable_redis: "Menentukan apakah akan mencoba menggunakan Redis untuk cache. Default = False."
-config_supplementary_cache_options_memcached_host: "Nilai host Memcached. Default = "localhost"."
+config_supplementary_cache_options_memcached_host: "Nilai host Memcached. Default = localhost."
 config_supplementary_cache_options_memcached_port: "Nilai port Memcached. Default = "11211"."
 config_supplementary_cache_options_pdo_dsn: "Nilai DSN PDO. Default = "mysql:dbname=cidram;host=localhost;port=3306"."
 config_supplementary_cache_options_pdo_password: "Kata sandi PDO."
 config_supplementary_cache_options_pdo_username: "Nama pengguna PDO."
 config_supplementary_cache_options_prefix: "Nilai yang ditentukan disini akan ditambahkan ke awal kunci untuk semua entri di cache. Kosong secara default. Ketika beberapa instalasi ada di server, ini dapat berguna untuk menjaga cache mereka terpisah."
 config_supplementary_cache_options_redis_database_number: "Nomor basis data Redis. Default = 0. Catat: Tidak dapat menggunakan nilai selain 0 dengan Redis Cluster."
-config_supplementary_cache_options_redis_host: "Nilai host Redis. Default = "localhost"."
+config_supplementary_cache_options_redis_host: "Nilai host Redis. Default = localhost."
 config_supplementary_cache_options_redis_port: "Nilai port Redis. Default = "6379"."
 config_supplementary_cache_options_redis_timeout: "Nilai batas waktu Redis. Default = "2.5"."
 config_template_data: "Konfigurasi untuk template dan tema."
@@ -389,7 +391,7 @@ label_aux_special_ip_tracking_disable: "Nonaktifkan pelacakan IP secara paksa"
 label_aux_special_ip_tracking_enable: "Aktifkan pelacakan IP secara paksa"
 label_aux_special_recaptcha_disable: "Nonaktifkan reCAPTCHA secara paksa"
 label_aux_special_recaptcha_mark: "Tandai untuk digunakan dengan reCAPTCHA"
-label_aux_special_suppress: "Menekan template output"
+label_aux_special_suppress: "Menekan templat keluaran"
 label_aux_special_suppress_logging: "Menekan catatan"
 label_aux_special_suppress_reports: "Menekan laporan"
 label_aux_special_tracking_default: "Terapkan opsi pelacakan IP default"

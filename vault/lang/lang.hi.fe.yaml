@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data for the front-end (last modified: 2025.02.07).
+# This file: Hindi language data for the front-end (last modified: 2025.02.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -196,6 +196,8 @@ config_signatures_infraction_limit: "मिथकों की अधिकत�
 config_signatures_ipv4: "IPv4 हस्ताक्षर फाइलों की सूची जिसमें CIDRAM को इस्तेमाल करना चाहिए, कॉमा द्वारा अलग।"
 config_signatures_ipv6: "IPv6 हस्ताक्षर फाइलों की सूची जिसमें CIDRAM को इस्तेमाल करना चाहिए, कॉमा द्वारा अलग।"
 config_signatures_modules: "IPv4/IPv6 हस्ताक्षर की जाँच के बाद लोड करने के लिए मॉड्यूल फाइलें, कॉमा द्वारा अलग।"
+config_signatures_suppress_conflict: "विवादित अनुरोधों के लिए आउटपुट टेम्पलेट का दमन?"
+config_signatures_suppress_rl: "दर सीमित अनुरोधों के लिए आउटपुट टेम्पलेट का दमन?"
 config_signatures_track_mode: "मिथकों गिनती कब किया जाना चाहिए? False(झूठी) = IP मॉड्यूल द्वारा अवरुद्ध कर रहे हैं जब। सच्चा = IP किसी भी कारण से अवरुद्ध कर रहे हैं जब। डिफ़ॉल्ट = False।"
 config_signatures_tracking_override: "मॉड्यूल को ट्रैकिंग विकल्पों को ओवरराइड करने दें? True(सच्चे) = हाँ [डिफ़ॉल्ट]; False(झूठी) = नहीं।"
 config_supplementary_cache_options: "अनुपूरक कैश विकल्प।"
@@ -203,14 +205,14 @@ config_supplementary_cache_options_enable_apcu: "निर्दिष्ट क
 config_supplementary_cache_options_enable_memcached: "निर्दिष्ट करता है कि कैशिंग के लिए Memcached का उपयोग करने का प्रयास करना है या नहीं। डिफ़ॉल्ट = False।"
 config_supplementary_cache_options_enable_pdo: "निर्दिष्ट करता है कि कैशिंग के लिए PDO का उपयोग करने का प्रयास करना है या नहीं। डिफ़ॉल्ट = False।"
 config_supplementary_cache_options_enable_redis: "निर्दिष्ट करता है कि कैशिंग के लिए Redis का उपयोग करने का प्रयास करना है या नहीं। डिफ़ॉल्ट = False।"
-config_supplementary_cache_options_memcached_host: "Memcached होस्ट वैल्यू। डिफ़ॉल्ट = "localhost"।"
+config_supplementary_cache_options_memcached_host: "Memcached होस्ट वैल्यू। डिफ़ॉल्ट = localhost."
 config_supplementary_cache_options_memcached_port: "Memcached पोर्ट वैल्यू। डिफ़ॉल्ट = "11211"।"
 config_supplementary_cache_options_pdo_dsn: "PDO DSN वैल्यू। डिफ़ॉल्ट = "mysql:dbname=cidram;host=localhost;port=3306"।"
 config_supplementary_cache_options_pdo_password: "PDO पासवर्ड।"
 config_supplementary_cache_options_pdo_username: "PDO उपयोगकर्ता नाम।"
 config_supplementary_cache_options_prefix: "यहां निर्दिष्ट मान सभी कैश प्रविष्टि कुंजियों के साथ जोड़ा जाएगा। डिफ़ॉल्ट रूप से खाली। जब एक ही सर्वर पर कई संस्थापन मौजूद होते हैं, तो यह उनके कैश को एक दूसरे से अलग रखने के लिए उपयोगी हो सकता है।"
 config_supplementary_cache_options_redis_database_number: "Redis डेटाबेस नंबर। डिफ़ॉल्ट = "0"। नोट: Redis Cluster के साथ 0 के अलावा अन्य मानों का उपयोग नहीं किया जा सकता।"
-config_supplementary_cache_options_redis_host: "Redis होस्ट वैल्यू। डिफ़ॉल्ट = "localhost"।"
+config_supplementary_cache_options_redis_host: "Redis होस्ट वैल्यू। डिफ़ॉल्ट = localhost."
 config_supplementary_cache_options_redis_port: "Redis पोर्ट वैल्यू। डिफ़ॉल्ट = "6379"।"
 config_supplementary_cache_options_redis_timeout: "Redis मध्यांतर वैल्यू। डिफ़ॉल्ट = "2.5"।"
 config_template_data: "टेम्प्लेट और थीम के लिए कॉन्फ़िगरेशन।"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2025.02.07).
+# This file: Dutch language data for the front-end (last modified: 2025.02.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -196,6 +196,8 @@ config_signatures_infraction_limit: "Maximum aantal overtredingen een IP mag wor
 config_signatures_ipv4: "Een lijst van de IPv4 signatuurbestanden dat CIDRAM moet proberen om te gebruiken, afgebakend door komma's."
 config_signatures_ipv6: "Een lijst van de IPv6 signatuurbestanden dat CIDRAM moet proberen om te gebruiken, afgebakend door komma's."
 config_signatures_modules: "Een lijst van module bestanden te laden na verwerking van de IPv4/IPv6 signatures, afgebakend door komma's."
+config_signatures_suppress_conflict: "Uitvoersjabloon voor conflicterende verzoeken onderdrukken?"
+config_signatures_suppress_rl: "Uitvoersjabloon voor verzoeken met beperkte tarief onderdrukken?"
 config_signatures_track_mode: "Wanneer moet overtredingen worden gerekend? False = Wanneer IP's geblokkeerd door modules worden. True = Wanneer IP's om welke reden geblokkeerd worden. Standaard = False."
 config_signatures_tracking_override: "Moeten modules worden toegestaan om opties voor tracking te overschrijven? True = Ja [Standaard]; False = Nee."
 config_supplementary_cache_options: "Aanvullende cache-opties."
@@ -203,14 +205,14 @@ config_supplementary_cache_options_enable_apcu: "Dit geeft aan of APCu moet word
 config_supplementary_cache_options_enable_memcached: "Dit geeft aan of Memcached moet worden gebruikt voor caching. Standaard = False."
 config_supplementary_cache_options_enable_pdo: "Dit geeft aan of PDO moet worden gebruikt voor caching. Standaard = False."
 config_supplementary_cache_options_enable_redis: "Dit geeft aan of Redis moet worden gebruikt voor caching. Standaard = False."
-config_supplementary_cache_options_memcached_host: "Memcached hostwaarde. Standaard = "localhost"."
+config_supplementary_cache_options_memcached_host: "Memcached hostwaarde. Standaard = localhost."
 config_supplementary_cache_options_memcached_port: "Memcached poortwaarde. Standaard = "11211"."
 config_supplementary_cache_options_pdo_dsn: "PDO DSN-waarde. Standaard = "mysql:dbname=cidram;host=localhost;port=3306"."
 config_supplementary_cache_options_pdo_password: "PDO wachtwoord."
 config_supplementary_cache_options_pdo_username: "PDO gebruikersnaam."
 config_supplementary_cache_options_prefix: "De hier opgegeven waarde wordt toegevoegd aan alle cache-invoersleutels. Standaard leeg. Als er meerdere installaties op dezelfde server staan, dit kan handig zijn om hun caches gescheiden van elkaar te houden."
 config_supplementary_cache_options_redis_database_number: "Redis-databasenummer. Standaard = 0. Opmerking: Kan geen andere waarden dan 0 gebruiken met Redis Cluster."
-config_supplementary_cache_options_redis_host: "Redis hostwaarde. Standaard = "localhost"."
+config_supplementary_cache_options_redis_host: "Redis hostwaarde. Standaard = localhost."
 config_supplementary_cache_options_redis_port: "Redis poortwaarde. Standaard = "6379"."
 config_supplementary_cache_options_redis_timeout: "Redis timeoutwaarde. Standaard = "2.5"."
 config_template_data: "Configuratie voor sjablonen en thema's."

@@ -33,10 +33,10 @@ outbound_request_log=''
 ; considered collectively.
 truncate='0KB'
 
-; Log rotation limits the number of log files that should exist at any one time.
-; When new log files are created, if the total number of log files exceeds the
-; specified limit, the specified action will be performed. You can specify the
-; desired limit here. A value of 0 will disable log rotation.
+; Log rotation limits the number of log files that should exist at any one
+; time. When new log files are created, if the total number of log files
+; exceeds the specified limit, the specified action will be performed. You can
+; specify the desired limit here. A value of 0 will disable log rotation.
 log_rotation_limit=0
 
 ; Log rotation limits the number of log files that should exist at any one time.
@@ -64,8 +64,7 @@ time_format='{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss} {tz}'
 ; change this unless you know what you're doing!
 ipaddr='REMOTE_ADDR'
 
-; Which HTTP status message should CIDRAM send when blocking requests? (Refer
-; to the documentation for more information).
+; Which HTTP status message should CIDRAM send when blocking requests?
 forbid_on_block=200
 
 ; Should CIDRAM silently redirect blocked access attempts instead of displaying
@@ -173,8 +172,8 @@ disable_webfonts=true
 maintenance_mode=false
 
 ; Defines which algorithm to use for all future passwords and sessions.
-; Options: PASSWORD_DEFAULT (default), PASSWORD_BCRYPT, PASSWORD_ARGON2I
-; (requires PHP >= 7.2.0), PASSWORD_ARGON2ID (requires PHP >= 7.3.0).
+; Options: PASSWORD_DEFAULT (default), PASSWORD_BCRYPT, PASSWORD_ARGON2I,
+; PASSWORD_ARGON2ID (requires PHP >= 7.3.0).
 default_algo='PASSWORD_DEFAULT'
 
 ; Track CIDRAM usage statistics? True = Yes; False = No [Default].
@@ -306,13 +305,22 @@ track_mode=false
 ; Allow modules to override tracking options? True = Yes [Default]; False = No.
 tracking_override=true
 
+; Suppress output template for rate limited requests?
+suppress_rl=true
+
+; Suppress output template for conflicted requests?
+suppress_conflict=true
+
 
 [recaptcha]
 ; Configuration for ReCaptcha (provides a way for humans to regain access when
 ; blocked).
 
 ; When should the CAPTCHA be offered? Note: Whitelisted or verified and
-; non-blocked requests never need to complete a CAPTCHA.
+; non-blocked requests never need to complete a CAPTCHA. Also note: CAPTCHAs
+; can provide a useful, additional layer of protection against bots and various
+; kinds of malicious automated requests, but won't provide any protection
+; against a malicious human.
 usemode=0
 
 ; Lock CAPTCHA to IPs?
@@ -357,7 +365,10 @@ nonblocked_status_code=200
 ; blocked).
 
 ; When should the CAPTCHA be offered? Note: Whitelisted or verified and
-; non-blocked requests never need to complete a CAPTCHA.
+; non-blocked requests never need to complete a CAPTCHA. Also note: CAPTCHAs
+; can provide a useful, additional layer of protection against bots and various
+; kinds of malicious automated requests, but won't provide any protection
+; against a malicious human.
 usemode=0
 
 ; Lock CAPTCHA to IPs?
@@ -421,7 +432,7 @@ privacy_policy=''
 [template_data]
 ; Configuration for templates and themes.
 
-; Default theme to use for CIDRAM.
+; The default theme to use for CIDRAM.
 theme='default'
 
 ; Font magnification. Default = 1.
@@ -539,13 +550,13 @@ enable_redis=false
 ; Specifies whether to try using PDO for caching. Default = False.
 enable_pdo=false
 
-; Memcached host value. Default = "localhost".
+; Memcached host value. Default = localhost.
 memcached_host='localhost'
 
 ; Memcached port value. Default = "11211".
 memcached_port=11211
 
-; Redis host value. Default = "localhost".
+; Redis host value. Default = localhost.
 redis_host='localhost'
 
 ; Redis port value. Default = "6379".
@@ -553,6 +564,10 @@ redis_port=6379
 
 ; Redis timeout value. Default = "2.5".
 redis_timeout=2.5
+
+; Redis database number. Default = 0. Note: Can't use values other than 0 with
+; Redis Cluster.
+redis_database_number=0
 
 ; PDO DSN value. Default = "mysql:dbname=cidram;host=localhost;port=3306".
 pdo_dsn='mysql:dbname=cidram;host=localhost;port=3306'

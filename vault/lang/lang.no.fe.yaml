@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2025.02.07).
+# This file: Norwegian language data for the front-end (last modified: 2025.02.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -196,6 +196,8 @@ config_signatures_infraction_limit: "Maks antall infraksjoner som en IP har lov 
 config_signatures_ipv4: "En liste over IPv4 signaturfiler som CIDRAM skal forsøke å analysere, separert av kommaer."
 config_signatures_ipv6: "En liste over IPv6 signaturfiler som CIDRAM skal forsøke å analysere, separert av kommaer."
 config_signatures_modules: "En liste over modulfiler som skal lastes etter at du har sjekket IPv4/IPv6-signaturer, separert av kommaer."
+config_signatures_suppress_conflict: "Undertrykke utdatamal for forespørsler i konflikt?"
+config_signatures_suppress_rl: "Undertrykke utdatamal for forespørsler med begrenset hastighet?"
 config_signatures_track_mode: "Når skal infraksjoner regnes? False = Når IPer blokkert av moduler. True = Når IPer er blokkert av en eller annen grunn. Standardverdi = False."
 config_signatures_tracking_override: "Tillate moduler å overstyre sporingsalternativene? True = Ja [Standardverdi]; False = Nei."
 config_supplementary_cache_options: "Tilleggsvalg for cache."
@@ -203,14 +205,14 @@ config_supplementary_cache_options_enable_apcu: "Dette angir om skal bruke APCu 
 config_supplementary_cache_options_enable_memcached: "Dette angir om skal bruke Memcached for caching. Standardverdi = False."
 config_supplementary_cache_options_enable_pdo: "Dette angir om skal bruke PDO for caching. Standardverdi = False."
 config_supplementary_cache_options_enable_redis: "Dette angir om skal bruke Redis for caching. Standardverdi = False."
-config_supplementary_cache_options_memcached_host: "Memcached vertsverdi. Standardverdi = «localhost»."
+config_supplementary_cache_options_memcached_host: "Memcached vertsverdi. Standardverdi = localhost."
 config_supplementary_cache_options_memcached_port: "Memcached portsverdi. Standardverdi = «11211»."
 config_supplementary_cache_options_pdo_dsn: "PDO DSN-verdi. Standardverdi = «mysql:dbname=cidram;host=localhost;port=3306»."
 config_supplementary_cache_options_pdo_password: "PDO passord."
 config_supplementary_cache_options_pdo_username: "PDO brukernavn."
 config_supplementary_cache_options_prefix: "Verdien som er spesifisert her vil bli lagt foran alle cache-oppføringsnøkler. Tom som standard. Når flere installasjoner eksisterer på samme server, dette kan være nyttig for å holde cachen deres atskilt fra hverandre."
 config_supplementary_cache_options_redis_database_number: "Redis databasenummer. Standardverdi = 0. Merk: Kan ikke bruke andre verdier enn 0 med Redis Cluster."
-config_supplementary_cache_options_redis_host: "Redis vertsverdi. Standardverdi = «localhost»."
+config_supplementary_cache_options_redis_host: "Redis vertsverdi. Standardverdi = localhost."
 config_supplementary_cache_options_redis_port: "Redis portsverdi. Standardverdi = «6379»."
 config_supplementary_cache_options_redis_timeout: "Redis timeout-verdi. Standardverdi = «2.5»."
 config_template_data: "Konfigurasjon for maler og temaer."

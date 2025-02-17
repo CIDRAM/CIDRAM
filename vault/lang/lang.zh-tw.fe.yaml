@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2025.02.07).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2025.02.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -196,6 +196,8 @@ config_signatures_infraction_limit: "從IP最大允許違規數量之前它被�
 config_signatures_ipv4: "列表的IPv4簽名文件，​CIDRAM應該嘗試使用，​用逗號分隔。"
 config_signatures_ipv6: "列表的IPv6簽名文件，​CIDRAM應該嘗試使用，​用逗號分隔。"
 config_signatures_modules: "模組文件要加載的列表以後檢查簽名IPv4/IPv6，​用逗號分隔。"
+config_signatures_suppress_conflict: "抑制衝突請求的輸出模板？"
+config_signatures_suppress_rl: "抑制速率受限請求的輸出模板？"
 config_signatures_track_mode: "何時應該記錄違規？​False（假）=當IP被模組阻止時。​True（真）=當IP由於任何原因阻止時。 默認 = False。"
 config_signatures_tracking_override: "允許模組覆蓋跟踪選項嗎？​True（真）=允許【標準】；False（假）=不允許。"
 config_supplementary_cache_options: "補充緩存選項。"
@@ -203,14 +205,14 @@ config_supplementary_cache_options_enable_apcu: "指定是否嘗試使用APCu進
 config_supplementary_cache_options_enable_memcached: "指定是否嘗試使用Memcached進行緩存。 默認 = False。"
 config_supplementary_cache_options_enable_pdo: "指定是否嘗試使用PDO進行緩存。 默認 = False。"
 config_supplementary_cache_options_enable_redis: "指定是否嘗試使用Redis進行緩存。 默認 = False。"
-config_supplementary_cache_options_memcached_host: "Memcached 主機值。 默認 = 『localhost』。"
+config_supplementary_cache_options_memcached_host: "Memcached 主機值。 默認 = localhost。"
 config_supplementary_cache_options_memcached_port: "Memcached 端口值。 默認 = 『11211』。"
 config_supplementary_cache_options_pdo_dsn: "PDO DSN值。 默認 = 『mysql:dbname=cidram;host=localhost;port=3306』。"
 config_supplementary_cache_options_pdo_password: "PDO 密碼。"
 config_supplementary_cache_options_pdo_username: "PDO 用戶名。"
 config_supplementary_cache_options_prefix: "該值將附加到所有緩存條目的鍵的開頭。​默認值為空。​當同一服務器上存在多個安裝時，這對於將它們的緩存彼此分開非常有用。"
 config_supplementary_cache_options_redis_database_number: "Redis 資料庫編號。 默認 = 『0』。 注意：不能在 Redis Cluster 中使用 0 以外的值。"
-config_supplementary_cache_options_redis_host: "Redis 主機值。 默認 = 『localhost』。"
+config_supplementary_cache_options_redis_host: "Redis 主機值。 默認 = localhost。"
 config_supplementary_cache_options_redis_port: "Redis 端口值。 默認 = 『6379』。"
 config_supplementary_cache_options_redis_timeout: "Redis 超時值。 默認 = 『2.5』。"
 config_template_data: "模板和主題的配置。"

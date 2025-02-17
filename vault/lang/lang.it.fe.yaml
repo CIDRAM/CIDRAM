@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2025.02.07).
+# This file: Italian language data for the front-end (last modified: 2025.02.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -196,6 +196,8 @@ config_signatures_infraction_limit: "Numero massimo di infrazioni un IP è perme
 config_signatures_ipv4: "Un elenco dei file di firma IPv4 che CIDRAM dovrebbe tentare di utilizzare, delimitati da virgole."
 config_signatures_ipv6: "Un elenco dei file di firma IPv6 che CIDRAM dovrebbe tentare di utilizzare, delimitati da virgole."
 config_signatures_modules: "Un elenco di file moduli da caricare dopo l'esecuzione delle firme IPv4/IPv6, delimitati da virgole."
+config_signatures_suppress_conflict: "Sopprimere il modello di output per le richieste in conflitto?"
+config_signatures_suppress_rl: "Sopprimere il modello di output per le richieste con velocità limitata?"
 config_signatures_track_mode: "Quando devono infrazioni essere contati? False = Quando IP sono bloccati da moduli. True = Quando IP sono bloccati per qualsiasi motivo. Predefinito = False."
 config_signatures_tracking_override: "I moduli dovrebbero essere autorizzati a sostituire le opzioni di tracciamento? True = Sì [Predefinito]; False = No."
 config_supplementary_cache_options: "Opzioni di cache supplementari."
@@ -203,14 +205,14 @@ config_supplementary_cache_options_enable_apcu: "Specifica se provare a utilizza
 config_supplementary_cache_options_enable_memcached: "Specifica se provare a utilizzare Memcached per la memorizzazione nella cache. Predefinito = False."
 config_supplementary_cache_options_enable_pdo: "Specifica se provare a utilizzare PDO per la memorizzazione nella cache. Predefinito = False."
 config_supplementary_cache_options_enable_redis: "Specifica se provare a utilizzare Redis per la memorizzazione nella cache. Predefinito = False."
-config_supplementary_cache_options_memcached_host: "Il valore dell'host Memcached. Predefinito = "localhost"."
+config_supplementary_cache_options_memcached_host: "Il valore dell'host Memcached. Predefinito = localhost."
 config_supplementary_cache_options_memcached_port: "Il valore della porta Memcached. Predefinito = "11211"."
 config_supplementary_cache_options_pdo_dsn: "Il valore della DSN per PDO. Predefinito = "mysql:dbname=cidram;host=localhost;port=3306"."
 config_supplementary_cache_options_pdo_password: "La password per PDO."
 config_supplementary_cache_options_pdo_username: "Il nome utente per PDO."
 config_supplementary_cache_options_prefix: "Il valore specificato qui verrà anteposto a tutte le chiavi di ingresso della cache. Vuoto per impostazione predefinita. Quando esistono più installazioni sullo stesso server, questo può essere utile per mantenere le loro cache separate l'una dall'altra."
 config_supplementary_cache_options_redis_database_number: "Il numero del database Redis. Predefinito = 0. Nota: Non è possibile utilizzare valori diversi da 0 con Redis Cluster."
-config_supplementary_cache_options_redis_host: "Il valore dell'host Redis. Predefinito = "localhost"."
+config_supplementary_cache_options_redis_host: "Il valore dell'host Redis. Predefinito = localhost."
 config_supplementary_cache_options_redis_port: "Il valore della porta Redis. Predefinito = "6379"."
 config_supplementary_cache_options_redis_timeout: "Il valore del tempo scaduto per Redis. Predefinito = "2.5"."
 config_template_data: "Configurazione per modelli e temi."

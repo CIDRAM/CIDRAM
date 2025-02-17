@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2025.02.07).
+# This file: Vietnamese language data for the front-end (last modified: 2025.02.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -196,6 +196,8 @@ config_signatures_infraction_limit: "Số lượng tối đa các vi phạm mộ
 config_signatures_ipv4: "Một danh sách các tập tin chữ ký IPv4 mà CIDRAM nên cố gắng để phân tích, ngăn cách bởi dấu phẩy."
 config_signatures_ipv6: "Một danh sách các tập tin chữ ký IPv6 mà CIDRAM nên cố gắng để phân tích, ngăn cách bởi dấu phẩy."
 config_signatures_modules: "Một danh sách các tập tin mô-đun để tải sau khi kiểm tra các chữ ký IPv4/IPv6, ngăn cách bởi dấu phẩy."
+config_signatures_suppress_conflict: "Đàn áp mẫu đầu ra cho các yêu cầu xung đột?"
+config_signatures_suppress_rl: "Đàn áp mẫu đầu ra cho các yêu cầu bị giới hạn tốc độ?"
 config_signatures_track_mode: "Khi vi phạm cần được tính? False = Khi IP bị chặn bởi các mô-đun. True = Khi IP bị chặn vì lý do bất kỳ. Mặc định = False."
 config_signatures_tracking_override: "Cho phép các mô-đun ghi đè các tùy chọn giám sát? True = Vâng [Mặc định]; False = Không."
 config_supplementary_cache_options: "Tùy chọn bộ nhớ cache bổ sung."
@@ -203,14 +205,14 @@ config_supplementary_cache_options_enable_apcu: "Điều này xác định có n
 config_supplementary_cache_options_enable_memcached: "Điều này xác định có nên thử sử dụng Memcached để lưu trữ không. Mặc định = False."
 config_supplementary_cache_options_enable_pdo: "Điều này xác định có nên thử sử dụng PDO để lưu trữ không. Mặc định = False."
 config_supplementary_cache_options_enable_redis: "Điều này xác định có nên thử sử dụng Redis để lưu trữ không. Mặc định = False."
-config_supplementary_cache_options_memcached_host: "Giá trị máy chủ Memcached. Mặc định = "localhost"."
+config_supplementary_cache_options_memcached_host: "Giá trị máy chủ Memcached. Mặc định = localhost."
 config_supplementary_cache_options_memcached_port: "Giá trị cổng Memcached. Mặc định = "11211"."
 config_supplementary_cache_options_pdo_dsn: "Giá trị DSN PDO. Mặc định = "mysql:dbname=cidram;host=localhost;port=3306"."
 config_supplementary_cache_options_pdo_password: "Mật khẩu PDO."
 config_supplementary_cache_options_pdo_username: "Tên người dùng PDO."
 config_supplementary_cache_options_prefix: "Giá trị được chỉ định ở đây sẽ được thêm vào trước tất cả các khóa mục nhập bộ nhớ cache. Trống theo mặc định. Khi nhiều bản cài đặt tồn tại trên cùng một máy chủ, điều này có thể hữu ích để giữ các bộ nhớ cache của chúng tách biệt với nhau."
 config_supplementary_cache_options_redis_database_number: "Số cơ sở dữ liệu Redis. Mặc định = 0. Lưu ý: Không thể sử dụng các giá trị khác 0 với Redis Cluster."
-config_supplementary_cache_options_redis_host: "Giá trị máy chủ Redis. Mặc định = "localhost"."
+config_supplementary_cache_options_redis_host: "Giá trị máy chủ Redis. Mặc định = localhost."
 config_supplementary_cache_options_redis_port: "Giá trị cổng Redis. Mặc định = "6379"."
 config_supplementary_cache_options_redis_timeout: "Giá trị thời gian chờ Redis. Mặc định = "2.5"."
 config_template_data: "Cấu hình cho mẫu và chủ đề."

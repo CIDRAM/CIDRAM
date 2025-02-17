@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2025.02.07).
+# This file: Latvian language data for the front-end (last modified: 2025.02.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -196,6 +196,8 @@ config_signatures_infraction_limit: "Maksimālais IP pieļaujamo pārkāpumu ska
 config_signatures_ipv4: "Ar komatu atdalīts IPv4 paraksta failu saraksts, kuri CIDRAM vajadzētu mēģināt parsēt."
 config_signatures_ipv6: "Ar komatu atdalīts IPv6 paraksta failu saraksts, kuri CIDRAM vajadzētu mēģināt parsēt."
 config_signatures_modules: "Pēc IPv4/IPv6 parakstu pārbaudes ielādējamo moduļu failu saraksts, atdalīts ar komatiem."
+config_signatures_suppress_conflict: "Apspiest izvades veidni pretrunīgiem pieprasījumiem?"
+config_signatures_suppress_rl: "Apspiest izvades veidni ierobežota likmes pieprasījumiem?"
 config_signatures_track_mode: "Kad jāskaita pārkāpumi? False (Nepatiess) = Kad moduļi bloķē IPs. True (Patiess) = Kad IP jebkādu iemeslu dēļ tiek bloķēts. Noklusējuma = False."
 config_signatures_tracking_override: "Vai atļaut moduļiem aizstāt izsekošanas opcijas? True (Patiess) = Jā [Noklusējuma]; False (Nepatiess) = Nē."
 config_supplementary_cache_options: "Papildu kešatmiņas iespējas."
@@ -203,14 +205,14 @@ config_supplementary_cache_options_enable_apcu: "Norāda, vai kešatmiņā mēģ
 config_supplementary_cache_options_enable_memcached: "Norāda, vai kešatmiņā mēģināt izmantot Memcached. Noklusējuma = False."
 config_supplementary_cache_options_enable_pdo: "Norāda, vai kešatmiņā mēģināt izmantot PDO. Noklusējuma = False."
 config_supplementary_cache_options_enable_redis: "Norāda, vai kešatmiņā mēģināt izmantot Redis. Noklusējuma = False."
-config_supplementary_cache_options_memcached_host: "Memcached resursdatora vērtību. Noklusējuma = "localhost"."
+config_supplementary_cache_options_memcached_host: "Memcached resursdatora vērtību. Noklusējuma = localhost."
 config_supplementary_cache_options_memcached_port: "Memcached porta vērtību. Noklusējuma = "11211"."
 config_supplementary_cache_options_pdo_dsn: "PDO DSN vērtību. Noklusējuma = "mysql:dbname=cidram;host=localhost;port=3306"."
 config_supplementary_cache_options_pdo_password: "PDO parole."
 config_supplementary_cache_options_pdo_username: "PDO lietotājvārds."
 config_supplementary_cache_options_prefix: "Šeit norādītā vērtība tiks pievienota visām kešatmiņas ievades atslēgām. Pēc noklusējuma tukšs. Ja vienā serverī ir vairākas instalācijas, tas var būt noderīgi, lai saglabātu to kešatmiņas atsevišķi vienu no otras."
 config_supplementary_cache_options_redis_database_number: "Redis datu bāzes numurs. Noklusējuma = 0. Piezīme: Izmantojot Redis Cluster, kā vērtību var izmantot tikai 0."
-config_supplementary_cache_options_redis_host: "Redis resursdatora vērtību. Noklusējuma = "localhost"."
+config_supplementary_cache_options_redis_host: "Redis resursdatora vērtību. Noklusējuma = localhost."
 config_supplementary_cache_options_redis_port: "Redis porta vērtību. Noklusējuma = "6379"."
 config_supplementary_cache_options_redis_timeout: "Redis taimauta vērtību. Noklusējuma = "2.5"."
 config_template_data: "Veidņu un tēmu konfigurācija."
@@ -651,7 +653,7 @@ state_risk_medium: "Vidējs"
 state_sl_totals: "Kopā (Paraksti: %s – Parakstu sadaļas: %s – Parakstu faili: %s – Unikāli sadaļu tagi: %s)."
 state_tracking:
  - "Pašlaik tiek izsekota %s IP."
- - "Pašlaik tiek izsekota %s IPs."
+ - "Pašlaik tiek izsekotas %s IPs."
 switch-descending-order-set-false: "Kārtot augošā secībā"
 switch-descending-order-set-true: "Kārtot dilstošā secībā"
 switch-hide-non-outdated-set-false: "Neslēpiet nenovecojis"

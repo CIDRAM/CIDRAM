@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2025.02.07).
+# This file: Japanese language data for the front-end (last modified: 2025.02.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -196,6 +196,8 @@ config_signatures_infraction_limit: "ＩＰがＩＰトラッキングによっ�
 config_signatures_ipv4: "ＩＰｖ４シグネチャ・ファイルのリスト（CIDRAMは、これを使用します）。​これは、カンマで区切られています。​必要に応じて、項目を追加することができます。"
 config_signatures_ipv6: "ＩＰｖ６シグネチャ・ファイルのリスト（CIDRAMは、これを使用します）。​これは、カンマで区切られています。​必要に応じて、項目を追加することができます。"
 config_signatures_modules: "ＩＰｖ４/ＩＰｖ６シグネチャをチェックした後にロードするモジュールファイルのリスト。​これは、カンマで区切られています。"
+config_signatures_suppress_conflict: "競合するリクエストの出力テンプレートを抑制しますか？"
+config_signatures_suppress_rl: "レート制限されたリクエストの出力テンプレートを抑制しますか？"
 config_signatures_track_mode: "違反はいつカウントされるべきですか？​False = ＩＰがモジュールによってブロックされている場合。 True = なんでもの理由でＩＰがブロックされた場合。 Default/デフォルルト = False。"
 config_signatures_tracking_override: "モジュールが追跡オプションをオーバーライドできるようにしますか？ True = はい（Default/デフォルルト）。 False = いいえ。"
 config_supplementary_cache_options: "補足キャッシュ・オプション。"
@@ -203,14 +205,14 @@ config_supplementary_cache_options_enable_apcu: "キャッシュに「APCu」を
 config_supplementary_cache_options_enable_memcached: "キャッシュに「Memcached」を使用するかどうかを指定します。 Default/デフォルルト = False。"
 config_supplementary_cache_options_enable_pdo: "キャッシュに「PDO」を使用するかどうかを指定します。 Default/デフォルルト = False。"
 config_supplementary_cache_options_enable_redis: "キャッシュに「Redis」を使用するかどうかを指定します。 Default/デフォルルト = False。"
-config_supplementary_cache_options_memcached_host: "Memcachedのホスト値。 Default/デフォルルト = 「localhost」。"
+config_supplementary_cache_options_memcached_host: "Memcachedのホスト値。 Default/デフォルルト = localhost。"
 config_supplementary_cache_options_memcached_port: "Memcachedのポート値。 Default/デフォルルト = 「11211」。"
 config_supplementary_cache_options_pdo_dsn: "PDOのDSN値。 Default/デフォルルト = 「mysql:dbname=cidram;host=localhost;port=3306」。"
 config_supplementary_cache_options_pdo_password: "PDOのパスワード。"
 config_supplementary_cache_options_pdo_username: "PDOのユーザー名。"
 config_supplementary_cache_options_prefix: "ここで指定された値は、すべてのキャッシュ・エントリ・キーの前に追加されます。​デフォルトでは空です。​同じサーバーに複数のインストールが存在する場合、これはキャッシュを互いに分離しておくのに役立ちます。"
 config_supplementary_cache_options_redis_database_number: "Redisのデータベース番号。 Default/デフォルルト = 0。 注：Redis Clusterでは、0 以外の値を使用できません。"
-config_supplementary_cache_options_redis_host: "Redisのホスト値。 Default/デフォルルト = 「localhost」。"
+config_supplementary_cache_options_redis_host: "Redisのホスト値。 Default/デフォルルト = localhost。"
 config_supplementary_cache_options_redis_port: "Redisのポート値。 Default/デフォルルト = 「6379」。"
 config_supplementary_cache_options_redis_timeout: "Redisのタイムアウト値。 Default/デフォルルト = 「2.5」。"
 config_template_data: "テンプレートとテーマの設定。"

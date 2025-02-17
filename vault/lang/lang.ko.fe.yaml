@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2025.02.07).
+# This file: Korean language data for the front-end (last modified: 2025.02.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -196,6 +196,8 @@ config_signatures_infraction_limit: "IP가 IP 추적에 의해 금지되기 전�
 config_signatures_ipv4: "IPv4의 서명 파일 목록 (CIDRAM는 이것을 사용합니다). 이것은 쉼표로 구분되어 있습니다."
 config_signatures_ipv6: "IPv6의 서명 파일 목록 (CIDRAM는 이것을 사용합니다). 이것은 쉼표로 구분되어 있습니다."
 config_signatures_modules: "IPv4/IPv6 서명을 체크 한 후로드 모듈 파일의 목록입니다. 이것은 쉼표로 구분되어 있습니다."
+config_signatures_suppress_conflict: "충돌하는 요청에 대한 출력 템플릿을 억제하시겠습니까?"
+config_signatures_suppress_rl: "속도 제한 요청에 대한 출력 템플릿을 억제하시겠습니까?"
 config_signatures_track_mode: "위반은 언제 계산해야합니까? False = IP가 모듈에 의해 차단되는 경우. True = 뭐든지 이유로 IP가 차단 된 경우. Default (기본값) = False."
 config_signatures_tracking_override: "모듈이 추적 옵션을 재정의하도록 허용하시겠습니까? True = 예 (Default / 기본 설정); False = 아니오."
 config_supplementary_cache_options: "보충 캐시 옵션."
@@ -203,14 +205,14 @@ config_supplementary_cache_options_enable_apcu: "캐싱에 APCu를 사용할지 
 config_supplementary_cache_options_enable_memcached: "캐싱에 Memcached를 사용할지 여부를 지정합니다. Default (기본값) = False."
 config_supplementary_cache_options_enable_pdo: "캐싱에 PDO를 사용할지 여부를 지정합니다. Default (기본값) = False."
 config_supplementary_cache_options_enable_redis: "캐싱에 Redis를 사용할지 여부를 지정합니다. Default (기본값) = False."
-config_supplementary_cache_options_memcached_host: "Memcached 호스트 값. Default (기본값) = "localhost"."
+config_supplementary_cache_options_memcached_host: "Memcached 호스트 값. Default (기본값) = localhost."
 config_supplementary_cache_options_memcached_port: "Memcached 포트 값. Default (기본값) = "11211"."
 config_supplementary_cache_options_pdo_dsn: "PDO DSN 값. Default (기본값) = "mysql:dbname=cidram;host=localhost;port=3306"."
 config_supplementary_cache_options_pdo_password: "PDO 암호."
 config_supplementary_cache_options_pdo_username: "PDO 사용자 이름."
 config_supplementary_cache_options_prefix: "여기에 지정된 값은 모든 캐시 항목 키 앞에 추가됩니다. 기본적으로 비어 있습니다. 동일한 서버에 여러 설치가 있는 경우, 캐시를 서로 분리하여 유지하는 데 유용할 수 있습니다."
 config_supplementary_cache_options_redis_database_number: "Redis 데이터베이스 번호입니다. Default (기본값) = 0. 참고\_: Redis 클러스터에서는 0 이외의 값을 사용할 수 없습니다."
-config_supplementary_cache_options_redis_host: "Redis 호스트 값. Default (기본값) = "localhost"."
+config_supplementary_cache_options_redis_host: "Redis 호스트 값. Default (기본값) = localhost."
 config_supplementary_cache_options_redis_port: "Redis 포트 값. Default (기본값) = "6379"."
 config_supplementary_cache_options_redis_timeout: "Redis 시간 초과 값. Default (기본값) = "2.5"."
 config_template_data: "템플릿 및 테마 설정."

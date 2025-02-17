@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Tamil language data for the front-end (last modified: 2025.02.07).
+# This file: Tamil language data for the front-end (last modified: 2025.02.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -196,6 +196,8 @@ config_signatures_infraction_limit: "ஐபி கண்காணிப்பா
 config_signatures_ipv4: "CIDRAM செயலாக்க வேண்டிய IPv4 கையொப்பக் கோப்புகளின் கமாவால் பிரிக்கப்பட்ட பட்டியல்."
 config_signatures_ipv6: "CIDRAM செயலாக்க வேண்டிய IPv6 கையொப்பக் கோப்புகளின் கமாவால் பிரிக்கப்பட்ட பட்டியல்."
 config_signatures_modules: "CIDRAM ஏற்ற வேண்டிய தொகுதி கோப்புகளின் கமாவால் பிரிக்கப்பட்ட பட்டியல் (IPv4/IPv6 கோப்புகள் செயலாக்கப்பட்ட பிறகு)."
+config_signatures_suppress_conflict: "முரண்பட்ட கோரிக்கைகளுக்கு வெளியீட்டு டெம்ப்ளேட்டை அடக்கவா?"
+config_signatures_suppress_rl: "விகிதம் வரையறுக்கப்பட்ட கோரிக்கைகளுக்கு வெளியீட்டு டெம்ப்ளேட்டை அடக்கவா?"
 config_signatures_track_mode: "மீறல்களை எப்போது கணக்கிட வேண்டும்? False (தவறான) = தொகுதிகள் மூலம் ஐபிக்கள் தடுக்கப்படும் போது. True (உண்மை) = எந்த காரணத்திற்காகவும் ஐபிக்கள் தடுக்கப்படும் போது. இயல்புநிலை = False (தவறான)."
 config_signatures_tracking_override: "கண்காணிப்பு விருப்பங்களை மாற்ற தொகுதிகள் அனுமதிக்கவா? True (உண்மை) = ஆம் [இயல்புநிலை]; False (தவறான) = இல்லை."
 config_supplementary_cache_options: "தற்காலிக சேமிப்புக்கான துணை விருப்பங்கள்."
@@ -203,14 +205,14 @@ config_supplementary_cache_options_enable_apcu: "தற்காலிக சே
 config_supplementary_cache_options_enable_memcached: "தற்காலிக சேமிப்புக்கான Memcached ஐப் பயன்படுத்த முயற்சிக்கலாமா என்பதைக் குறிப்பிடுகிறது. இயல்புநிலை = False (தவறான)."
 config_supplementary_cache_options_enable_pdo: "தற்காலிக சேமிப்புக்கான PDO ஐப் பயன்படுத்த முயற்சிக்கலாமா என்பதைக் குறிப்பிடுகிறது. இயல்புநிலை = False (தவறான)."
 config_supplementary_cache_options_enable_redis: "தற்காலிக சேமிப்புக்கான Redis ஐப் பயன்படுத்த முயற்சிக்கலாமா என்பதைக் குறிப்பிடுகிறது. இயல்புநிலை = False (தவறான)."
-config_supplementary_cache_options_memcached_host: "Memcachedக்கான ஹோஸ்ட் மதிப்பு. இயல்புநிலை = "localhost"."
+config_supplementary_cache_options_memcached_host: "Memcachedக்கான ஹோஸ்ட் மதிப்பு. இயல்புநிலை = localhost."
 config_supplementary_cache_options_memcached_port: "Memcachedக்கான போர்ட் மதிப்பு. இயல்புநிலை = "11211"."
 config_supplementary_cache_options_pdo_dsn: "PDO DSN மதிப்பு. இயல்புநிலை = "mysql:dbname=cidram;host=localhost;port=3306"."
 config_supplementary_cache_options_pdo_password: "PDO கடவுச்சொல்."
 config_supplementary_cache_options_pdo_username: "PDO பயனர்பெயர்."
 config_supplementary_cache_options_prefix: "இங்கு குறிப்பிடப்பட்டுள்ள மதிப்பு அனைத்து கேச் நுழைவு விசைகளுக்கும் முன்கூட்டியதாக இருக்கும். முன்னிருப்பாக காலி. ஒரே சர்வரில் பல நிறுவல்கள் இருக்கும்போது, அவற்றின் தற்காலிக சேமிப்புகளை ஒருவருக்கொருவர் தனித்தனியாக வைத்திருக்க இது பயனுள்ளதாக இருக்கும்."
 config_supplementary_cache_options_redis_database_number: "Redis தரவுத்தள எண். இயல்புநிலை = 0. குறிப்பு: Redis Cluster உடன் 0 ஐத் தவிர வேறு மதிப்புகளைப் பயன்படுத்த முடியாது."
-config_supplementary_cache_options_redis_host: "Redisக்கான ஹோஸ்ட் மதிப்பு. இயல்புநிலை = "localhost"."
+config_supplementary_cache_options_redis_host: "Redisக்கான ஹோஸ்ட் மதிப்பு. இயல்புநிலை = localhost."
 config_supplementary_cache_options_redis_port: "Redisக்கான போர்ட் மதிப்பு. இயல்புநிலை = 6379."
 config_supplementary_cache_options_redis_timeout: "Redisக்கான காலாவதியான மதிப்பு. இயல்புநிலை = "2.5"."
 config_template_data: "வார்ப்புருக்கள் மற்றும் கருப்பொருள்களுக்கான உள்ளமைவு."

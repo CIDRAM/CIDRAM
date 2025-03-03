@@ -15,6 +15,12 @@ Detailed version release guidelines for CIDRAM can be found at:
 
 - [2025.02.07]: Auxiliary rules can now suppress reports.
 
+- [2025.03.03; Bug-fix]: Added a guard to the InitialiseCache closure to exit
+  early when the cache is found to have been already initialised, which could
+  otherwise present a number of strange problems at the front-end when
+  protect_frontend is enabled, such as being unable to manually add new entries
+  at the IP tracking page.
+
 === Version/Release 1.28.4 ===
 PATCH RELEASE.
 

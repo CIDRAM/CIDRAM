@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2025.02.13).
+ * This file: Optional security extras module (last modified: 2025.03.03).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -49,8 +49,8 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $this->trigger(preg_match('~%5[cf]\.%5[cf]|%5[cf]{3,}|[\x00-\x1f\x7f]~', $LCNrURI), 'Bad request'); // 2017.01.13 mod 2024.02.08
         } // 2017.01.13 mod 2024.02.08
 
-        /** WordPress user enumeration (modified 2022.11.07). */
-        if ($this->trigger(preg_match('~\?author=\d+~i', $LCNrURI), 'WordPress user enumeration not allowed')) {
+        /** WordPress user enumeration (modified 2025.03.03). */
+        if ($this->trigger(preg_match('~\?author=\d+~', $LCNrURI), 'WordPress user enumeration not allowed')) {
             $this->bypass(
                 strpos($LCNrURI, 'administrator/') !== false,
                 'Joomla image inserting tool bypass (WordPress user enumeration conflict)'
@@ -69,11 +69,11 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
         /** Probing for unsecured backup files. */
         if ($this->trigger(preg_match(
-            '~(?:/backup|(?:backup|docroot|htdocs|public_html|site|www)\.(?:gz|rar|tar(?:\.gz)?|zip)|d(?:atabase|b|ump)\.sql)(?:$|[/?])~',
+            '~(?:/backup|(?:archive|backup|docroot|htdocs|public_html|site|www)\.(?:gz|rar|tar(?:\.gz)?|zip)|d(?:atabase|b|ump)\.sql)(?:$|[/?])~',
             $LCNrURI
         ), 'Probing for unsecured backup files not allowed')) {
             $this->Reporter->report([15], ['Caught probing for unsecured backup files.'], $this->BlockInfo['IPAddr']);
-        } // 2023.08.13 mod 2023.08.21
+        } // 2023.08.13 mod 2025.03.03
 
         /** Probing for unsecured SQL dumps. */
         if ($this->trigger(preg_match(
@@ -99,13 +99,13 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             '\.w(?:ell-known|p-cli)/.*(?:a(?:bout|dmin)[\da-z]*|fierza[\da-z]*|install[\da-z]*|moon[\da-z]*|shell[\da-z]*|wp-login[\da-z]*|x)|' .
             '\.?rxr(?:_[\da-z]+)?|' .
             '\d{3,5}[a-z]{3,5}|\d+-?backdoor|0byte|0[xz]|10+|1337|4price|85022df0ed31|991176|' .
-            'a(?:b1ux1ft|dmin-heade\d*|dminfuns|hhygskn|lexus|lfa(?:-rex|_data|a?cgiapi|ioxi|new)?\d*|njas|pismtp|xx)|' .
+            'a(?:b1ux1ft|dmin-heade\d*|hhygskn|lexus|lfa(?:-rex|_data|a?cgiapi|ioxi|new)?\d*|njas|pismtp|xx)|' .
             'b(?:0|3d2acc621a0|ak|ala|ibil_0day)|' .
-            'c(?:(?:9|10)\d+|adastro-2|asper[\da-z]+|d(?:.*tmp.*rm-rf|chmod.*\d{3,})|fom[-_]files|(?:gi-bin|ss)/(?:luci/;|moon|newgolden|radio|sgd|stok=/|uploader|well-known|wp-login)|jfuns|lasssmtps|olors/blue/uploader|ong|ontentloader1|ss/colors/coffee/index)|' .
-            'd(?:7|eadcode\d*|epotcv|isagraep|kiz|ummyyummy/wp-signup)|' .
-            'ee|' .
-            'f(?:ddqradz|ilefuns?)|' .
-            'g(?:el4y|etid3-core|h[0o]st|lab-rare|zismexv)|' .
+            'c(?:(?:9|10)\d+|adastro-2|asper[\da-z]+|d(?:.*tmp.*rm-rf|chmod.*\d{3,})|fom[-_]files|(?:gi-bin|ss)/(?:luci/;|moon|newgolden|radio|sgd|stok=/|uploader|well-known|wp-login)|lass(?:smtps|withtostring)|olors/blue/uploader|omfunctions|ong|ontentloader1|opypaths|ss/colors/coffee/index)|' .
+            'd(?:7|eadcode\d*|elpaths|epotcv|isagraep|kiz|oiconvs|ummyyummy/wp-signup)|' .
+            'e(?:e|pinyins)|' .
+            'f(?:ddqradz|ilefun)|' .
+            'g(?:dftps|el4y|etid3-core|h[0o]st|lab-rare|zismexv)|' .
             'h(?:[4a]x+[0o]r|6ss|anna1337|ehehe|sfpdcd|tmlawedtest)|' .
             'i(?:\d{3,}[a-z]{2,}|cesword|ndoxploit|optimize|oxi/alfa-ioxi|r7szrsouep|itsec|xr/(?:allez|wp-login))|' .
             'kvkjguw|' .
@@ -116,11 +116,11 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             'p(?:erl\.alfa|hp(?:1|_niu_\d+)|oison|riv8|wnd|zaiihfi)|' .
             'rendixd|' .
             's(?:ession91|h[3e]llx?\d*|hrift|idwso|ilic|kipper(?:shell)?|onarxleetxd|pammervip|rc/util/php/(?:eval(?:-stdin)?|kill))|' .
-            't(?:62|enda\.sh.*tenda\.sh|emplates/beez/index|hemes/(?:finley/min|pridmag/db|universal-news/www)|hreefox(?:_exploit/index)?|inymce/(?:langs/about|plugins/compat3x/css/index)|k_dencode_\d+|mp/vuln|opxoh/(?:drsx|wdr))|' .
+            't(?:62|enda\.sh.*tenda\.sh|emplates/beez/index|hemes/(?:finley/min|pridmag/db|universal-news/www)|ermps|homs|hreefox(?:_exploit/index)?|inymce/(?:langs/about|plugins/compat3x/css/index)|k_dencode_\d+|mp/vuln|opxoh/(?:drsx|wdr))|' .
             'u(?:bh/up|nisibfu|pfile(?:_\\(\d\\))?|ploader_by_cloud7_agath|tchiha(?:_uploader)?)|' .
             'v(?:endor/bin/loader|zlateam)|' .
-            'w(?:[0o]rm\d+|0rdpr3ssnew|alker-nva|ebshell-[a-z\d]+|idgets-nva|idwsisw|loymzuk)|' .
-            'wp[-_](?:2019|22|(?:admin(?:/images)?|content|css(?:/colors)?|includes(?:/ixr|/customize|/pomo)?|js(?:/widgets)?|network)/(?:dropdown|fgertreyersd|(?:images|widgets)/include|install|js/privacy-tools\.min|(?:random_compat/|requests/)?class(?:_api|-wp-page-[\da-z]{5,})|repeater|simple|text/about|themes/hello-element/footer|uploads/error_log|vuln|wp-login)|conflg|content/plugins/(?:backup-backup/includes/hro|cache/dropdown|contact-form-7/.+styles-rtl|contus-hd-flv-player/uploadvideo|(?:core-plugin/|wordpresscore/)?include|dzs-zoomsounds/savepng|fix/up|(?:view-more/)?ioxi|wp-file-manager/lib/php/connector\.minimal)|filemanager|setups|sigunq|sts|p)|' .
+            'w(?:[0o]rm\d+|0rdpr3ssnew|alker-nva|ebshell-[a-z\d]+|idgets-nva|idwsisw|loymzuk|orksec)|' .
+            'wp[-_](?:2019|22|(?:admin(?:/images)?|content|css(?:/colors)?|includes(?:/ixr|/customize|/pomo)?|js(?:/widgets)?|network)/(?:aaa|dropdown|fgertreyersd|(?:images|widgets)/include|includes/lint-branch|install|js/privacy-tools\.min|maint/(?:aaa|fie|lint-branch)|(?:random_compat/|requests/)?class(?:_api|-wp-page-[\da-z]{5,})|repeater|simple|text/about|themes/hello-element/footer|uploads/error_log|vuln|wp-login)|conflg|content/plugins/(?:backup-backup/includes/hro|cache/dropdown|contact-form-7/.+styles-rtl|contus-hd-flv-player/uploadvideo|(?:core-plugin/|wordpresscore/)?include|dzs-zoomsounds/savepng|fix/up|(?:view-more/)?ioxi|wp-file-manager/lib/php/connector\.minimal)|filemanager|setups|sigunq|sts|p)|' .
             'wp-(?:configs|l0gins?)|' .
             'ws[ou](?:yanz)?(?:[\d.]*|[\da-z]{4,})|wwdv|' .
             'x{3,}|xiaom|xichang/x|x+l(?:\d+|eet(?:mailer|-shell)?x?)|xm(?:lrpcs|lrpz|rlpc)|xw|' .
@@ -128,11 +128,12 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             'zone_hackbar(?:_beutify_other)?|' .
             '(?:plugins|themes)/(?:ccx|ioptimization|yyobang)|' .
             '版iisspy|大马|一句话(?:木马|扫描脚本程序)?' .
-            ')\.php[57]?(?:$|[/?])~',
+            ')\.php[57]?(?:$|[/?])|' .
+            'funs\.php[57]?(?:$|[/?])~',
             $LCNrURI
         ), 'Probing for webshells/backdoors')) {
             $this->Reporter->report([15, 20, 21], ['Caught probing for webshells/backdoors. Host might be compromised.'], $this->BlockInfo['IPAddr']);
-        } // 2023.08.18 mod 2025.02.13
+        } // 2023.08.18 mod 2025.03.03
 
         /** Probing for vulnerable plugins or webapps. */
         if (
@@ -176,9 +177,9 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         } // 2022.06.05
 
         /** Probing for vulnerable webapps. */
-        if ($this->trigger(preg_match('~cgi-bin/(?:get_status|(?:web)?login)\.cgi(?:$|\?)|manager/text/list~i', $LCNrURI), 'Probing for vulnerable webapps')) {
+        if ($this->trigger(preg_match('~cgi-bin/(?:get_status|(?:web)?login)\.cgi(?:$|\?)|manager/text/list~', $LCNrURI), 'Probing for vulnerable webapps')) {
             $this->Reporter->report([15, 21], ['Caught probing for vulnerable webapps.'], $this->BlockInfo['IPAddr']);
-        } // 2022.06.05 mod 2023.09.15
+        } // 2022.06.05 mod 2025.03.03
 
         /** CONNECT-based signatures. */
         if ($this->BlockInfo['Request_Method'] === 'CONNECT') {
@@ -202,9 +203,12 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         }
 
         /** Probing for sendgrid env file. */
-        if ($this->trigger(preg_match('~/sendgrid\.env(?:$|[/?])~i', $LCNrURI), 'Probing for sendgrid env file')) {
+        if ($this->trigger(preg_match('~/sendgrid\.env(?:$|[/?])~', $LCNrURI), 'Probing for sendgrid env file')) {
             $this->Reporter->report([15, 21], ['Caught probing for sendgrid env file.'], $this->BlockInfo['IPAddr']);
-        } // 2024.05.02
+        } // 2024.05.02 mod 2025.03.03
+
+        /** Attempts by broken bot to incorrectly access ReCaptcha files (treating reference to remote resource as local). */
+        $this->trigger(preg_match('~/www\.google\.com/recaptcha/api\.js(?:$|[/?])~', $LCNrURI), 'Bad request'); // 2025.03.03
     }
 
     /**

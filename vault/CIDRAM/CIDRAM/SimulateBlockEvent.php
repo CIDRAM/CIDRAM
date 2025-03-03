@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used to simulate block events (last modified: 2024.12.26).
+ * This file: Methods used to simulate block events (last modified: 2025.03.03).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -132,8 +132,9 @@ trait SimulateBlockEvent
             $this->BlockInfo['Infractions'] = $this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']];
         } elseif (($Try = $this->Cache->getEntry('Tracking-' . $this->BlockInfo['IPAddr'])) === false) {
             $this->BlockInfo['Infractions'] = 0;
+            $this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']] = 0;
         } else {
-            $this->BlockInfo['Infractions'] = $Try;
+            $this->BlockInfo['Infractions'] = $this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']] = (int)$Try;
         }
 
         /** Appending query onto the reconstructed URI. */
@@ -344,9 +345,7 @@ trait SimulateBlockEvent
      */
     public function lookup($Addr = '', bool $Modules = false, bool $Aux = false, bool $Verification = false, string $Query = '', string $Referrer = '', string $UA = ''): array
     {
-        if (!($this->Cache instanceof \Maikuolan\Common\Cache)) {
-            $this->initialiseCache();
-        }
+        $this->initialiseCache();
         $this->FE = ['DateTime' => $this->timeFormat($this->Now, $this->Configuration['general']['time_format'])];
         if ($this->Stages === []) {
             $this->Stages = array_flip(explode("\n", $this->Configuration['general']['stages']));

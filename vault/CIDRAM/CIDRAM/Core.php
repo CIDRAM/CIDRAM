@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2025.01.09).
+ * This file: The CIDRAM core (last modified: 2025.03.03).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -122,7 +122,7 @@ class Core
     /**
      * @var string CIDRAM version number (SemVer).
      */
-    public $ScriptVersion = '3.8.0';
+    public $ScriptVersion = '3.8.1';
 
     /**
      * @var string CIDRAM version identifier (complete notation).
@@ -1691,6 +1691,11 @@ class Core
      */
     public function initialiseCache(): void
     {
+        /** Guard. */
+        if ($this->Cache instanceof \Maikuolan\Common\Cache) {
+            return;
+        }
+
         /** Create new cache object. */
         $this->Cache = new \Maikuolan\Common\Cache();
         $this->Cache->Prefix = $this->Configuration['supplementary_cache_options']['prefix'];

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2025.02.07).
+ * This file: Protect traits (last modified: 2025.03.03).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -101,7 +101,7 @@ trait Protect
         } elseif (($Try = $this->Cache->getEntry('Tracking-' . $this->BlockInfo['IPAddr'])) === false) {
             $this->BlockInfo['Infractions'] = 0;
         } else {
-            $this->BlockInfo['Infractions'] = $Try;
+            $this->BlockInfo['Infractions'] = (int)$Try;
         }
         $AtRunTimeInfractions = $this->BlockInfo['Infractions'];
         $this->BlockInfo['UALC'] = strtolower($this->BlockInfo['UA']);
@@ -339,11 +339,7 @@ trait Protect
             $this->Cache->setEntry('Tracking-' . $this->BlockInfo['IPAddr'] . '-MinimumTime', $TrackTime, $TrackTime);
 
             /** Track infractions. */
-            $this->Cache->setEntry(
-                'Tracking-' . $this->BlockInfo['IPAddr'],
-                $this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']],
-                $TrackTime
-            );
+            $this->Cache->setEntry('Tracking-' . $this->BlockInfo['IPAddr'], $this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']], $TrackTime);
 
             if ($this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']] >= $this->Configuration['signatures']['infraction_limit']) {
                 $this->CIDRAM['Banned'] = true;

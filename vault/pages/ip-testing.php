@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The IP testing page (last modified: 2024.09.17).
+ * This file: The IP testing page (last modified: 2025.03.03).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -112,6 +112,7 @@ if (isset($_POST['ip-addr'])) {
         if ($this->CIDRAM['ThisIP']['IPAddress'] === '') {
             continue;
         }
+        $HasError = false;
         $this->simulateBlockEvent($this->CIDRAM['ThisIP']['IPAddress'], $TestsSwitch, $ModuleSwitch, $SEVSwitch, $SMVSwitch, $OVSwitch, $AuxSwitch);
         if (
             !empty($this->CIDRAM['Caught']) ||
@@ -186,6 +187,7 @@ if (isset($_POST['ip-addr'])) {
                 }
                 unset($this->CIDRAM['RunName'], $this->CIDRAM['RunError'], $this->CIDRAM['RunErrorCounts'], $this->CIDRAM['RunErrors']);
             }
+            $HasError = true;
         } elseif ($this->BlockInfo['SignatureCount']) {
             $this->BlockInfo['WhyReason'] = preg_replace('~(?<=</span>\\),|]\\),)( )(?=[\dA-Za-z])~', '<br />', $this->BlockInfo['WhyReason']);
             $this->CIDRAM['ThisIP']['YesNo'] = $this->L10N->getString('field.Blocked') . $this->L10N->getString('pair_separator') . $this->L10N->getString('response._Yes') . ' – ' . $this->BlockInfo['WhyReason'];
@@ -232,22 +234,38 @@ if (isset($_POST['ip-addr'])) {
                 $this->L10N->getString('response.Redirected') . ' <' . $this->Configuration['general']['silent_mode_response_header_code'] . '> ➡ <code>' . $this->Configuration['general']['silent_mode'] . '</code>'
             );
         }
-        $this->CIDRAM['ThisIP']['YesNo'] .= '<br />' . $this->L10N->getString('field.Tracking') . $this->L10N->getString('pair_separator');
-        if (isset($this->CIDRAM['Trackable'])) {
-            if ($this->CIDRAM['Trackable']) {
-                $this->CIDRAM['ThisIP']['YesNo'] .= $this->L10N->getString('response._Yes') . ' (++' . $this->L10N->getString('label.aux.Forcibly enable IP tracking') . ')';
+        if ($this->CIDRAM['TestMode'] === 1 && !$HasError) {
+            if ($this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']] > 0) {
+                $this->CIDRAM['ThisIP']['YesNo'] .= sprintf(
+                    '<br /><span class="%1$s">%2$s%3$s%4$s (%5$s%3$s %6$s)',
+                    $this->CIDRAM['Banned'] ? 'txtRd' : 'txtOe',
+                    $this->L10N->getString('field.Tracking'),
+                    $this->L10N->getString('pair_separator'),
+                    $this->L10N->getString('response._Yes'),
+                    $this->L10N->getString('field.Infractions'),
+                    $this->NumberFormatter->format($this->BlockInfo['Infractions'])
+                );
             } else {
-                $this->CIDRAM['ThisIP']['YesNo'] .= $this->L10N->getString('response._No') . ' (++' . $this->L10N->getString('label.aux.Forcibly disable IP tracking') . ')';
+                $this->CIDRAM['ThisIP']['YesNo'] .= sprintf(
+                    '<br /><span class="txtGn">%s%s%s',
+                    $this->L10N->getString('field.Tracking'),
+                    $this->L10N->getString('pair_separator'),
+                    $this->L10N->getString('response._No')
+                );
             }
-        } else {
-            $this->CIDRAM['ThisIP']['YesNo'] .= $this->L10N->getString((
-                isset($this->Stages['Tracking:Enable']) &&
-                $this->BlockInfo['Infractions'] > 0 &&
-                $this->BlockInfo['SignatureCount'] > 0
-            ) ? 'response._Yes' : 'response._No');
-        }
-        if ($this->CIDRAM['TestMode'] === 1) {
-            $this->CIDRAM['ThisIP']['YesNo'] .= '<br />' . $this->L10N->getString('field.Banned') . $this->L10N->getString('pair_separator') . $this->L10N->getString($this->CIDRAM['Banned'] ? 'response._Yes' : 'response._No');
+            if (isset($this->CIDRAM['Trackable'])) {
+                if ($this->CIDRAM['Trackable']) {
+                    $this->CIDRAM['ThisIP']['YesNo'] .= ' (++' . $this->L10N->getString('label.aux.Forcibly enable IP tracking') . ')';
+                } else {
+                    $this->CIDRAM['ThisIP']['YesNo'] .= ' (++' . $this->L10N->getString('label.aux.Forcibly disable IP tracking') . ')';
+                }
+            }
+            $this->CIDRAM['ThisIP']['YesNo'] .= '</span>';
+            if ($this->CIDRAM['Banned']) {
+                $this->CIDRAM['ThisIP']['YesNo'] .= '<br /><span class="txtRd">' . $this->L10N->getString('field.Banned') . $this->L10N->getString('pair_separator') . $this->L10N->getString('response._Yes') . '</span>';
+            } else {
+                $this->CIDRAM['ThisIP']['YesNo'] .= '<br /><span class="txtGn">' . $this->L10N->getString('field.Banned') . $this->L10N->getString('pair_separator') . $this->L10N->getString('response._No') . '</span>';
+            }
         }
         if (isset($this->CIDRAM['ThisStatusHTTP'])) {
             $this->CIDRAM['ThisIP']['YesNo'] .= '<br />' . $this->L10N->getString('field.Status code') . $this->L10N->getString('pair_separator') . $this->CIDRAM['ThisStatusHTTP'];

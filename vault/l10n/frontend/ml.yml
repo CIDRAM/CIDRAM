@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malayalam language data for the front-end (last modified: 2025.02.07).
+# This file: Malayalam language data for the front-end (last modified: 2025.03.09).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,6 +24,10 @@
 # requests, ask. I can help.
 ##/
 
+Abuse category:
+ Bad web bot: "മോശം വെബ് ബോട്ട് (ഇമെയിൽ വിലാസങ്ങൾ, ഉള്ളടക്കം എന്നിവയ്ക്കായി സ്‌ക്രാപ്പ് ചെയ്യൽ, robots.txt-നെ മാനിക്കാത്ത ക്രാളറുകൾ എന്നിവയ്‌ക്കായി, അമിതമായ അഭ്യർത്ഥനകൾ, ഉപയോക്തൃ ഏജന്റിനെ കബളിപ്പിക്കൽ, മുതലായവ)."
+checkbox:
+ Delete orphaned values: "അനാഥ മൂല്യങ്ങൾ ഇല്ലാതാക്കുക."
 config:
  phpmailer: "PHPMailer-നുള്ള കോൺഫിഗറേഷൻ (രണ്ട്-ഘടക പ്രാമാണീകരണത്തിനും ഇമെയിൽ അറിയിപ്പുകൾക്കും ഉപയോഗിക്കുന്നു)."
  phpmailer_add_reply_to_address: "SMTP വഴി ഇമെയിൽ അയയ്ക്കുമ്പോൾ ഉദ്ധരിക്കേണ്ട മറുപടി വിലാസം."
@@ -38,6 +42,62 @@ config:
  phpmailer_smtp_auth: "ഈ നിർദ്ദേശം SMTP സെഷനുകൾ ആധികാരികമാക്കണമോ എന്ന് നിർണ്ണയിക്കുന്നു (സാധാരണയായി ഒറ്റയ്ക്ക് വിടണം)."
  phpmailer_smtp_secure: "SMTP വഴി ഇമെയിൽ അയയ്ക്കുമ്പോൾ ഉപയോഗിക്കേണ്ട പ്രോട്ടോക്കോൾ (TLS അല്ലെങ്കിൽ SSL)."
  phpmailer_username: "SMTP വഴി ഇമെയിൽ അയയ്ക്കുമ്പോൾ ഉപയോഗിക്കേണ്ട ഉപയോക്തൃനാമം."
+response:
+ Source not specified: "ഉറവിടം വ്യക്തമാക്കിയിട്ടില്ല!"
+ Statistics cleared: "സ്ഥിതിവിവരക്കണക്കുകൾ മായ്ച്ചു."
+ Statistics updated: "സ്ഥിതിവിവരക്കണക്കുകൾ അപ്ഡേറ്റ് ചെയ്തു."
+ Successfully activated: "വിജയകരമായി സജീവമാക്കി."
+ Successfully authenticated: "വിജയകരമായി പ്രാമാണീകരിച്ചു."
+ Successfully deactivated: "വിജയകരമായി നിർജ്ജീവമാക്കി."
+ Successfully deleted %s reports for %s:
+  - "%2$s-ന്റെ %1$s റിപ്പോർട്ട് വിജയകരമായി ഇല്ലാതാക്കി!"
+  - "%2$s-ന്റെ %1$s റിപ്പോർട്ടുകൾ വിജയകരമായി ഇല്ലാതാക്കി!"
+ That account doesn_t exist: "ആ അക്കൗണ്ട് നിലവിലില്ല."
+ The %s command can_t be chained in that way, sorry: "%s കമാൻഡിനെ ആ രീതിയിൽ ബന്ധിക്കാൻ കഴിയില്ല, ക്ഷമിക്കണം."
+ The IP address is invalid: "IP വിലാസം അസാധുവാണ്!"
+ The IP address, %s, successfully reported: "IP വിലാസം, %s, വിജയകരമായി റിപ്പോർട്ട് ചെയ്തു!"
+ The report has not been enqueued: "റിപ്പോർട്ട് ക്യൂവിൽ ഉൾപ്പെടുത്തിയിട്ടില്ല."
+ The same IP address can be reported only once every 15 minutes: "ഒരേ IP വിലാസം ഓരോ 15 മിനിറ്റിലും ഒരിക്കൽ മാത്രമേ റിപ്പോർട്ട് ചെയ്യാൻ കഴിയൂ. റിപ്പോർട്ട് ക്യൂവിൽ ഉൾപ്പെടുത്തിയിട്ടുണ്ട്, പിന്നീട് CIDRAM റിപ്പോർട്ട് സമർപ്പിക്കാൻ ശ്രമിക്കും."
+ There aren_t currently any auxiliary rules: "നിലവിൽ ഓക്സിലറി നിയമങ്ങളൊന്നുമില്ല."
+ There_s nothing to analyse, sorry: "വിശകലനം ചെയ്യാൻ ഒന്നുമില്ല, ക്ഷമിക്കണം."
+ There_s nothing to print, sorry: "പ്രിന്റ് ചെയ്യാൻ ഒന്നുമില്ല, ക്ഷമിക്കണം."
+ There_s nothing to write, sorry: "എഴുതാൻ ഒന്നുമില്ല, ക്ഷമിക്കണം."
+ Tracking cleared: "ട്രാക്കിംഗ് മായ്ച്ചു."
+ Unable to determine: "നിർണ്ണയിക്കാൻ കഴിയുന്നില്ല."
+ Unknown error: "അജ്ഞാത പിശക്!"
+ Username doesn_t exist: "ലോഗിൻ പരാജയം! ഉപയോക്തൃനാമം നിലവിലില്ല!"
+ Username field empty: "ഉപയോക്തൃനാമ ഫീൽഡ് ശൂന്യമാണ്!"
+ Verification failed: "പരിശോധിച്ചുറപ്പിക്കൽ പരാജയപ്പെട്ടു! ഘടകം കേടായേക്കാം."
+ Verification success: "പരിശോധിച്ചുറപ്പിക്കൽ വിജയകരം! പ്രശ്നങ്ങളൊന്നും കണ്ടെത്തിയില്ല."
+ Wrong endpoint: "തെറ്റായ എൻഡ്‌പോയിന്റ്!"
+ _No: "ഇല്ല"
+ _Yes: "അതെ"
+ please_check_config: "പുതുതായി ഇൻസ്റ്റാൾ ചെയ്ത മൊഡ്യൂൾ നിങ്ങൾ ഉദ്ദേശിക്കുന്നതുപോലെ പ്രവർത്തിക്കുന്നുവെന്ന് ഉറപ്പാക്കാൻ ദയവായി നിങ്ങളുടെ കോൺഫിഗറേഷൻ പരിശോധിക്കുക."
+ release_notes: "<a href="%s"><span class="navicon link"></span>%s-നുള്ള റിലീസ് കുറിപ്പുകൾ.</a>"
+stages:
+ Deploy CAPTCHAs (blocked requests): "CAPTCHA-കൾ വിന്യസിക്കുക (തടഞ്ഞ അഭ്യർത്ഥനകൾ)"
+ Deploy CAPTCHAs (non-blocked requests): "CAPTCHA-കൾ വിന്യസിക്കുക (തടയാത്ത അഭ്യർത്ഥനകൾ)"
+ Execute IP tracking: "IP ട്രാക്കിംഗ് നടപ്പിലാക്കുക"
+ Execute auxiliary rules: "ഓക്സിലറി നിയമങ്ങൾ നടപ്പിലാക്കുക"
+ Execute modules: "മൊഡ്യൂളുകൾ നടപ്പിലാക്കുക"
+ Execute other verification: "മറ്റ് പരിശോധിച്ചുറപ്പിക്കൽ നടപ്പിലാക്കുക"
+ Execute rate limiting: "നിരക്ക് പരിധി നടപ്പിലാക്കുക"
+ Execute reporting: "റിപ്പോർട്ടിംഗ് നടപ്പിലാക്കുക"
+ Execute search engine verification: "സെർച്ച് എഞ്ചിൻ പരിശോധിച്ചുറപ്പിക്കൽ നടപ്പിലാക്കുക"
+ Execute signature files tests: "ഒപ്പ് ഫയൽ പരിശോധനകൾ നടപ്പിലാക്കുക"
+ Execute social media verification: "സോഷ്യൽ മീഡിയ പരിശോധിച്ചുറപ്പിക്കൽ നടപ്പിലാക്കുക"
+ Execute webhooks: "വെബ്‌ഹുക്കുകൾ നടപ്പിലാക്കുക"
+ Generate output (blocked requests): "ഔട്ട്പുട്ട് സൃഷ്ടിക്കുക (തടഞ്ഞ അഭ്യർത്ഥനകൾ)"
+ Prepare fields for output and logs: "ഔട്ട്പുട്ടിനും ലോഗുകൾക്കുമായി ഫീൽഡുകൾ തയ്യാറാക്കുക"
+ Redirect according to auxiliary rules: "ഓക്സിലറി നിയമങ്ങൾ അനുസരിച്ച് റീഡയറക്ട് ചെയ്യുക"
+ Terminate the request (blocked requests): "അഭ്യർത്ഥന അവസാനിപ്പിക്കുക (തടഞ്ഞ അഭ്യർത്ഥനകൾ)"
+ Update statistics: "സ്ഥിതിവിവരക്കണക്കുകൾ അപ്ഡേറ്റ് ചെയ്യുക"
+ Write to logs (blocked requests): "ലോഗുകളിൽ എഴുതുക (തടഞ്ഞ അഭ്യർത്ഥനകൾ)"
+state_fixer: "%2$s %1$s."
+state_fixer_changed:
+ - "%s മാറ്റം വരുത്തി"
+ - "%s മാറ്റങ്ങൾ വരുത്തി"
+state_fixer_seconds: "%s സെക്കൻഡിനുള്ളിൽ"
 state_sl_totals: "ആകെത്തുക (ഒപ്പുകൾ: %s – ഒപ്പ് വിഭാഗങ്ങൾ: %s – ഒപ്പ് ഫയലുകൾ: %s – അദ്വിതീയ വിഭാഗ ടാഗുകൾ: %s)."
 state_tracking:
  - "നിലവിൽ %s IP വിലാസം ട്രാക്ക് ചെയ്യുന്നു."

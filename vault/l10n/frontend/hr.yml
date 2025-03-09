@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Croatian language data for the front-end (last modified: 2025.02.07).
+# This file: Croatian language data for the front-end (last modified: 2025.03.09).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -301,14 +301,14 @@ config:
  supplementary_cache_options_enable_memcached: "Određuje treba li pokušati koristiti Memcached za predmemoriju. Zadano = False."
  supplementary_cache_options_enable_pdo: "Određuje treba li pokušati koristiti PDO za predmemoriju. Zadano = False."
  supplementary_cache_options_enable_redis: "Određuje treba li pokušati koristiti Redis za predmemoriju. Zadano = False."
- supplementary_cache_options_memcached_host: "Memcached vrijednost hosta. Zadano = "localhost"."
+ supplementary_cache_options_memcached_host: "Memcached vrijednost hosta. Zadano = localhost."
  supplementary_cache_options_memcached_port: "Memcached vrijednost porta. Zadano = "11211"."
  supplementary_cache_options_pdo_dsn: "Memcached vrijednost DSN-a. Zadano = "mysql:dbname=cidram;host=localhost;port=3306"."
  supplementary_cache_options_pdo_password: "PDO lozinka."
  supplementary_cache_options_pdo_username: "PDO korisničko ime."
  supplementary_cache_options_prefix: "Ovdje navedena vrijednost bit će pridodana svim ključevima za unos predmemorije. Zadano = "CIDRAM_". Kada postoji više instalacija na istom poslužitelju, to može biti korisno za držanje njihovih predmemorija odvojenih jedna od druge."
  supplementary_cache_options_redis_database_number: "Redis broj baze podataka. Zadano = 0. Bilješka: Ne mogu koristiti vrijednosti osim 0 s Redis klasterom."
- supplementary_cache_options_redis_host: "Redis vrijednost hosta. Zadano = "localhost"."
+ supplementary_cache_options_redis_host: "Redis vrijednost hosta. Zadano = localhost."
  supplementary_cache_options_redis_port: "Redis vrijednost porta. Zadano = "6379"."
  supplementary_cache_options_redis_timeout: "Redis vrijednost za vremensko ograničenje. Zadano = "2.5"."
  template_data: "Konfiguracija za predloške i teme."
@@ -435,6 +435,57 @@ hints_shorthand:
  4.: "Odnosi se na slučajeve u kojima se skraćene riječi uopće ne koriste ili ih CIDRAM ne prepoznaje."
  Jedan po potpisu.: "Potpis može pozvati više profila, ali može koristiti samo jednu skraćenu riječ. Moguće je da više skraćenih riječi može biti prikladno, ali kako se može koristiti samo jedna, nastojimo uvijek koristiti samo najprikladniju."
  Prioritet.: "Odabrana opcija uvijek ima prioritet nad opcijom koja nije odabrana. Npr., ako je više skraćenih riječi u igri, ali je samo jedna od njih postavljena kao blokirana, zahtjev će i dalje biti blokiran."
+link:
+ Intersector: "Intersektor"
+ Subtractor: "Oduzimač"
+response:
+ That account doesn_t exist: "Taj račun ne postoji."
+ The %s command can_t be chained in that way, sorry: "Naredba %s se ne može ulančati na taj način, izvinite."
+ The IP address is invalid: "IP adresa je nevažeća!"
+ The IP address, %s, successfully reported: "IP adresa, %s, uspješno prijavljena!"
+ The report has not been enqueued: "Izvješće nije stavljeno u red."
+ The same IP address can be reported only once every 15 minutes: "Ista IP adresa može se prijaviti samo jednom svakih 15 minuta. Izvješće je stavljeno u red, a CIDRAM će pokušati poslati izvješće kasnije."
+ There aren_t currently any auxiliary rules: "Trenutno ne postoje nikakva pomoćna pravila."
+ There_s nothing to analyse, sorry: "Nema se što analizirati, oprosti."
+ There_s nothing to print, sorry: "Nema se što ispisati, oprosti."
+ There_s nothing to write, sorry: "Nema se što napisati, oprosti."
+ Tracking cleared: "Praćenje je izbrisano."
+ Unable to determine: "Nije moguće odrediti."
+ Unknown error: "Nepoznata greška!"
+ Username doesn_t exist: "Prijava nije uspjela! Korisničko ime ne postoji!"
+ Username field empty: "Polje za korisničko ime prazno!"
+ Verification failed: "Provjera nije uspjela! Komponenta bi mogla biti oštećena."
+ Verification success: "Provjera je uspjela! Nisam našao nikakve probleme."
+ Wrong endpoint: "Pogrešna krajnja točka!"
+ _No: "Ne"
+ _Yes: "Da"
+ please_check_config: "Provjerite svoju konfiguraciju kako biste bili sigurni da će se novoinstalirani modul ponašati kako želite."
+ release_notes: "<a href="%s"><span class="navicon link"></span>Bilješke o izdanju za %s.</a>"
+stages:
+ Deploy CAPTCHAs (blocked requests): "Uvedite CAPTCHA (blokirani zahtjevi)"
+ Deploy CAPTCHAs (non-blocked requests): "Uvedite CAPTCHA (neblokirani zahtjevi)"
+ Execute IP tracking: "Izvršite IP praćenje"
+ Execute auxiliary rules: "Izvršite pomoćna pravila"
+ Execute modules: "Izvršite module"
+ Execute other verification: "Izvršite drugu provjeru"
+ Execute rate limiting: "Izvršite ograničenje brzine"
+ Execute reporting: "Izvršite izvješćivanje"
+ Execute search engine verification: "Izvršite provjeru tražilice"
+ Execute signature files tests: "Izvršite testove datoteka potpisa"
+ Execute social media verification: "Izvršite provjeru društvenih medija"
+ Execute webhooks: "Izvršite webdojavnike"
+ Generate output (blocked requests): "Generiraj izlaz (blokirani zahtjevi)"
+ Prepare fields for output and logs: "Pripremite polja za izlaz i dnevnike"
+ Redirect according to auxiliary rules: "Preusmjeravanje prema pomoćnim pravilima"
+ Terminate the request (blocked requests): "Prekinite zahtjev (blokirani zahtjevi)"
+ Update statistics: "Ažurirajte statistiku"
+ Write to logs (blocked requests): "Pišite u dnevnike (blokirani zahtjevi)"
+state_fixer: "%s %s."
+state_fixer_changed:
+ - "Napravio %s promjenu"
+ - "Napravio %s promjene"
+ - "Napravio %s promjena"
+state_fixer_seconds: "u %s sekundi"
 state_sl_totals: "Ukupno (Potpisi: %s – Sekcije potpisa: %s – Datoteke potpisa: %s – Jedinstvene oznake sekcija: %s)."
 state_tracking:
  - "Trenutno se prati %s IP adresa."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2025.02.07).
+# This file: Indonesian language data for the front-end (last modified: 2025.02.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -128,7 +128,7 @@ checkbox:
  Suppress ReCaptcha: "Menekan ReCaptcha"
  Test as sensitive request: "Menguji sebagai permintaan sensitif"
  Untrack positives: "Hapus pelacakan untuk positif?"
- When blocked, suppress output template: "Saat diblokir, menekan template output."
+ When blocked, suppress output template: "Saat diblokir, menekan templat keluaran."
 config:
  abuseipdb: "Konfigurasi untuk modul AbuseIPDB."
  abuseipdb_api_key: &EnterAPIKey "Silakan masukkan kunci API Anda disini."
@@ -301,14 +301,14 @@ config:
  supplementary_cache_options_enable_memcached: "Menentukan apakah akan mencoba menggunakan Memcached untuk cache. Default = False."
  supplementary_cache_options_enable_pdo: "Menentukan apakah akan mencoba menggunakan PDO untuk cache. Default = False."
  supplementary_cache_options_enable_redis: "Menentukan apakah akan mencoba menggunakan Redis untuk cache. Default = False."
- supplementary_cache_options_memcached_host: "Nilai host Memcached. Default = "localhost"."
+ supplementary_cache_options_memcached_host: "Nilai host Memcached. Default = localhost."
  supplementary_cache_options_memcached_port: "Nilai port Memcached. Default = "11211"."
  supplementary_cache_options_pdo_dsn: "Nilai DSN PDO. Default = "mysql:dbname=cidram;host=localhost;port=3306"."
  supplementary_cache_options_pdo_password: "Kata sandi PDO."
  supplementary_cache_options_pdo_username: "Nama pengguna PDO."
  supplementary_cache_options_prefix: "Nilai yang ditentukan disini akan ditambahkan ke awal kunci untuk semua entri di cache. Default = "CIDRAM_". Ketika beberapa instalasi ada di server, ini dapat berguna untuk menjaga cache mereka terpisah."
  supplementary_cache_options_redis_database_number: "Nomor basis data Redis. Default = 0. Catat: Tidak dapat menggunakan nilai selain 0 dengan Redis Cluster."
- supplementary_cache_options_redis_host: "Nilai host Redis. Default = "localhost"."
+ supplementary_cache_options_redis_host: "Nilai host Redis. Default = localhost."
  supplementary_cache_options_redis_port: "Nilai port Redis. Default = "6379"."
  supplementary_cache_options_redis_timeout: "Nilai batas waktu Redis. Default = "2.5"."
  template_data: "Konfigurasi untuk template dan tema."
@@ -701,7 +701,7 @@ label:
   Requires PHPMailer: "Membutuhkan PHPMailer."
   Send trigger notification to the configured email notification address: "Kirim notifikasi pemicu ke alamat notifikasi email yang dikonfigurasi"
   Suppress logging: "Menekan catatan"
-  Suppress output template: "Menekan template output"
+  Suppress output template: "Menekan templat keluaran"
   Suppress reports: "Menekan laporan"
   The name of the file to run: "Nama file yang akan dieksekusi:"
   The reason given to the user when blocked: "Alasan diberikan kepada pengguna saat diblokir:"

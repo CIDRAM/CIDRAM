@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malay language data for the front-end (last modified: 2025.02.07).
+# This file: Malay language data for the front-end (last modified: 2025.02.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -124,11 +124,11 @@ checkbox:
  Should infractions generated during this stage count towards IP tracking: "Mengira pelanggaran yang dijana semasa peringkat ini terhadap penjejakan IP?"
  Should this field appear in log entries: "Sertakan medan ini dalam entri log?"
  Should this field appear on the access denied page: "Sertakan medan ini dalam halaman "akses dinafikan"?"
- Suppress HCaptcha: "Sekat HCaptcha"
- Suppress ReCaptcha: "Sekat ReCaptcha"
+ Suppress HCaptcha: "Menindas HCaptcha"
+ Suppress ReCaptcha: "Menindas ReCaptcha"
  Test as sensitive request: "Uji sebagai permintaan sensitif"
  Untrack positives: "Memadam penjejakan untuk positif?"
- When blocked, suppress output template: "Apabila disekat, menekan templat output."
+ When blocked, suppress output template: "Apabila disekat, menindas templat keluaran."
 config:
  abuseipdb: "Konfigurasi untuk modul AbuseIPDB."
  abuseipdb_api_key: &EnterAPIKey "Sila masukkan kunci API anda disini."
@@ -301,14 +301,14 @@ config:
  supplementary_cache_options_enable_memcached: "Menentukan sama ada hendak mencuba menggunakan Memcached untuk caching. Lalai = False."
  supplementary_cache_options_enable_pdo: "Menentukan sama ada hendak mencuba menggunakan PDO untuk caching. Lalai = False."
  supplementary_cache_options_enable_redis: "Menentukan sama ada hendak mencuba menggunakan Redis untuk caching. Lalai = False."
- supplementary_cache_options_memcached_host: "Nilai hos Memcached. Lalai = "localhost"."
+ supplementary_cache_options_memcached_host: "Nilai hos Memcached. Lalai = localhost."
  supplementary_cache_options_memcached_port: "Nilai port Memcached. Lalai = "11211"."
  supplementary_cache_options_pdo_dsn: "Nilai DSN PDO. Lalai = "mysql:dbname=cidram;host=localhost;port=3306"."
  supplementary_cache_options_pdo_password: "Kata laluan PDO."
  supplementary_cache_options_pdo_username: "Nama pengguna PDO."
  supplementary_cache_options_prefix: "Nilai yang dinyatakan disini akan ditambahkan pada permulaan kunci untuk semua entri dalam cache. Lalai = "CIDRAM_". Apabila berbilang pemasangan wujud pada pelayan yang sama, ini boleh berguna untuk memastikan cache mereka berasingan antara satu sama lain."
  supplementary_cache_options_redis_database_number: "Nombor pangkalan data Redis. Lalai = 0. Nota: Tidak boleh menggunakan nilai selain 0 dengan Redis Cluster."
- supplementary_cache_options_redis_host: "Nilai hos Redis. Lalai = "localhost"."
+ supplementary_cache_options_redis_host: "Nilai hos Redis. Lalai = localhost."
  supplementary_cache_options_redis_port: "Nilai port Redis. Lalai = "6379"."
  supplementary_cache_options_redis_timeout: "Nilai tamat masa Redis. Lalai = "2.5"."
  template_data: "Konfigurasi untuk templat dan tema."
@@ -704,7 +704,7 @@ label:
   Requires PHPMailer: "Memerlukan PHPMailer."
   Send trigger notification to the configured email notification address: "Hantar pemberitahuan pencetus ke alamat pemberitahuan e-mel yang dikonfigurasikan"
   Suppress logging: "Menindas pengelogan"
-  Suppress output template: "Menindas templat output"
+  Suppress output template: "Menindas templat keluaran"
   Suppress reports: "Menindas laporan"
   The name of the file to run: "Nama fail yang akan dilaksanakan:"
   The reason given to the user when blocked: "Alasan diberikan kepada pengguna apabila disekat:"

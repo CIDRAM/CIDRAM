@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6.dat
 
-# Version: 2025.69.0
-# Last modified: 2025.03.11
+# Version: 2025.79.0
+# Last modified: 2025.03.21
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -2945,12 +2945,13 @@ Tag: Nazwa.pl
 
 # ASN 18450 ("WebNX, Inc").
 # HUGE amounts of spam, port scans, hack attempts, and other unwanted traffic!
-# Stop Forum Spam (SFS) listings: 11.
-# Updated: 2023.05.05 / Checked: 2024.03.03
+# Stop Forum Spam (SFS) listings: 23.
+# Updated: 2025.03.20
 
 2a0e:fd45:2c70::/48 Deny Cloud
 Origin: NL
-2606:c0:1::/48 Deny Cloud
+2602:f919:103::/48 Deny Cloud
+2602:f919:104::/48 Deny Cloud
 2607:f2d8::/32 Deny Cloud
 Origin: US
 Profile: Dedicated;Infrastructure/Transit;Webhosting
@@ -10106,8 +10107,8 @@ Tag: Tier.Net Technologies LLC
 # ASN 33083 ("AxcelX Technologies LLC").
 # Boston cloud provider / server farm. Brute-force, DDoS, and webapp attacks,
 # port scans, and spam detected from here (substract 44.0.0.0/8 when updating).
-# Stop Forum Spam (SFS) listings: 123.
-# Updated: 2021.07.19 / Checked: 2024.02.13
+# Stop Forum Spam (SFS) listings: 80.
+# Updated: 2021.07.19 / Checked: 2025.03.21
 
 2001:4830:c400::/40 Deny Cloud
 2602:ff65::/36 Deny Cloud
@@ -12821,26 +12822,18 @@ Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: LogicForge Limited
 
 
-# ASN 29470 ('JSC "RetnNet"').
-# Russian server farm. Brute-force, SSH, and FTP attacks, port scans, hacking,
-# and spam detected from here.
-# Stop Forum Spam (SFS) listings: 3.
-# Updated: 2024.02.11
+# ASNs 9002 ("RETN Limited"), 29470 ("JSC RetnNet").
+# Brute-force, SSH, and FTP attacks, port scans, hacking, and spam detected
+# from here.
+# Stop Forum Spam (SFS) listings: 199 (AS9002), 1 (AS29470).
+# Updated: 2025.03.21
 
+2a02:2d8::/32 Deny Cloud
+Origin: GB
 2a02:24b0::/32 Deny Cloud
 Origin: RU
 Profile: Infrastructure/Transit;Webhosting
 Tag: RetnNet
-
-
-# ASN 207994 ("Blockchain Creek B.V").
-# Brute-force, SSH, and webapp attacks, port scans, and hacking detected here.
-# Updated: 2024.02.11
-
-2a10:2f01:219::/48 Deny Cloud
-Origin: TW
-Profile: Infrastructure/Transit;Webhosting
-Tag: Blockchain Creek
 
 
 # ASN 52053 ("REDHEBERG Association declaree").
@@ -12870,8 +12863,8 @@ Tag: Optimus IT
 # ASN 198100 ("WAP.AC LTD").
 # Some kind of Chinese Netflix unblocking service. DNS poisoning, spoofing,
 # brute-force and SSH attacks, port scans, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 4.
-# Updated: 2024.03.04
+# Stop Forum Spam (SFS) listings: 89.
+# Updated: 2024.03.04 / Checked: 2025.03.20
 
 2a0f:7803:ffb1::/48 Deny Cloud
 Origin: GB
@@ -12883,16 +12876,6 @@ Origin: GB
 Origin: US
 Profile: Commercial
 Tag: WAP.AC LTD
-
-
-# ASN 198170 ("Association WAN-HOST").
-# Brute-force, SSH, and DDoS attacks detected from here.
-# Updated: 2024.03.04
-
-2a10:4646:360::/44 Deny Cloud
-Origin: US
-Profile: Webhosting
-Tag: Association WAN-HOST
 
 
 # ASN 149148 ("Phu Hai Computer Co., Ltd").
@@ -14922,6 +14905,148 @@ Origin: GB
 Origin: HK
 Profile: Restricted/Unidentifiable
 Tag: Miku Network
+
+
+# ASN 3214 ("xTom GmbH").
+# Caught probing for vulnerabilities. Brute-force, XMLRPC, SQLi, and webapp
+# attacks, spoofing, port scans, hacking, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 172.
+# Updated: 2025.03.20
+
+2a03:d9c0:1000::/48 Deny Cloud
+2a03:d9c0:2000::/48 Deny Cloud
+2a03:d9c0:4000::/48 Deny Cloud
+2a03:d9c0:5000::/48 Deny Cloud
+2a03:d9c0:6000::/48 Deny Cloud
+2a03:d9c0:7000::/48 Deny Cloud
+2a03:d9c0:8000::/48 Deny Cloud
+2a03:d9c0:c0de::/48 Deny Cloud
+2a03:d9c1:100::/40 Deny Cloud
+2a03:d9c1:200::/39 Deny Cloud
+2a03:d9c1:400::/38 Deny Cloud
+2a03:d9c1:a100::/40 Deny Cloud
+2a03:d9c1:a200::/39 Deny Cloud
+2a03:d9c1:a400::/38 Deny Cloud
+2a03:d9c1:b100::/40 Deny Cloud
+2a03:d9c1:b200::/39 Deny Cloud
+2a03:d9c1:b400::/39 Deny Cloud
+2a03:d9c1:b600::/40 Deny Cloud
+2a03:d9c1:c100::/40 Deny Cloud
+2a03:d9c1:c200::/39 Deny Cloud
+2a03:d9c1:c400::/39 Deny Cloud
+2a03:d9c1:c600::/40 Deny Cloud
+2a03:d9c2:100::/47 Deny Cloud
+2a07:fe00::/29 Deny Cloud
+2a09:0:1::/48 Deny Cloud
+2a09:0:2::/48 Deny Cloud
+2a09:0:6::/47 Deny Cloud
+2a09:0:8::/47 Deny Cloud
+2a09:0:11::/48 Deny Cloud
+2a09:0:9000::/40 Deny Cloud
+2a0b:89c0::/31 Deny Cloud
+2a0c:59c0::/29 Deny Cloud
+Origin: DE
+2a04:6f00::/32 Deny Cloud
+2a04:6f02::/31 Deny Cloud
+2a04:6f04::/30 Deny Cloud
+Origin: EE
+Profile: Infrastructure/Transit
+Tag: xTom GmbH
+
+
+# ASN 216022 ("Valentino de Vries trading as DirectNode").
+# Brute-force and SSH attacks detected from here.
+# Updated: 2025.03.20
+
+2a10:7403::/32 Deny Cloud
+Origin: NL
+Profile: Dedicated;Webhosting
+Tag: DirectNode
+
+
+# ASN 26042 ("FiberState, LLC").
+# Brute-force, SSH, RDP attacks, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 63.
+# Updated: 2025.03.20
+
+2602:fed2:7114::/48 Deny Cloud
+2602:fed2:7128::/48 Deny Cloud
+2602:fed2:7185::/48 Deny Cloud
+2602:fed2:7e05::/48 Deny Cloud
+2602:fed2:7e06::/48 Deny Cloud
+Origin: CA
+2a0f:9400:611f::/48 Deny Cloud
+Origin: GB
+2a0c:e641::/32 Deny Cloud
+Origin: NL
+2a09:da00::/32 Deny Cloud
+Origin: RU
+2a0f:1584:1::/48 Deny Cloud
+2a10:67c3::/32 Deny Cloud
+Origin: SC
+2602:294::/36 Deny Cloud
+2602:f919:100::/48 Deny Cloud
+2602:f919:102::/48 Deny Cloud
+2602:fa3d:a92::/48 Deny Cloud
+2602:fd92:200::/40 Deny Cloud
+2602:fe13:2e0::/44 Deny Cloud
+2602:fe13:806::/48 Deny Cloud
+2606:c0:1::/48 Deny Cloud
+2606:fc40:4004::/48 Deny Cloud
+2606:fc40:4010::/44 Deny Cloud
+2a14:7582::/32 Deny Cloud
+2a14:7584:5000::/36 Deny Cloud
+Origin: US
+Profile: Dedicated;Infrastructure/Transit
+Tag: FiberState, LLC
+
+
+# ASN 215362 ("Promo Plus SRL").
+# Port scans and hacking detected from here.
+# Updated: 2025.03.20
+
+2a0c:9a40:8610::/44 Deny Cloud
+Origin: CH
+Profile: Dedicated;Infrastructure/Transit;Webhosting
+Tag: torchbyte
+
+
+# ASN 932 ("XNNET LLC").
+# Brute-force, honeypot attacks, port scans, hacking, and spam detected.
+# Stop Forum Spam (SFS) listings: 37.
+# Updated: 2025.03.20
+
+2401:2660:1000::/36 Deny Cloud
+Origin: HK
+2a12:ab80::/29 Deny Cloud
+Origin: US
+Profile: Infrastructure/Transit
+Tag: XNNET LLC
+
+
+# ASN 213514 ("EuroVDC EOOD").
+# Brute-force, honeypot, SSH, and webapp attacks, hacking, port scans, and spam
+# detected from here.
+# Stop Forum Spam (SFS) listings: 38.
+# Updated: 2025.03.21
+
+2a14:cd00::/47 Deny Cloud
+Origin: BG
+Profile: Infrastructure/Transit;Webhosting
+Tag: EuroVDC EOOD
+
+
+# ASN 35278 ("SPRINTHOST.RU LLC").
+# Brute-force, SSH, and webapp attacks, hacking, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2025.03.21
+
+2a0a:2b40::/30 Deny Cloud
+2a0a:2b45::/32 Deny Cloud
+2a0a:2b46::/31 Deny Cloud
+Origin: RU
+Profile: Dedicated;Webhosting
+Tag: SPRINTHOST.RU LLC
 
 
 # ---

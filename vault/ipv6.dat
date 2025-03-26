@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6.dat
 
-# Version: 2025.79.0
-# Last modified: 2025.03.21
+# Version: 2025.84.0
+# Last modified: 2025.03.26
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -679,9 +679,10 @@ Tag: Webzilla B.V
 
 
 # ASN 53850 ("GorillaServers, Inc").
-# Stop Forum Spam (SFS) listings: 73.
-# Updated: 2016.09.15 / Checked: 2024.02.18
+# Stop Forum Spam (SFS) listings: 41.
+# Updated: 2025.03.26
 
+2602:f797::/40 Deny Cloud
 2606:c700::/32 Deny Cloud
 Origin: US
 Profile: Dedicated;Webhosting
@@ -1038,8 +1039,8 @@ Tag: IOMart
 # ASNs 14061, 46652 ("DigitalOcean, LLC", "ServerStack, Inc").
 # Brute-force, SSH, honeypot, and webapp attacks, port scans, hacking, and spam
 # detected from here.
-# Stop Forum Spam (SFS) listings: 14,722 (AS14061), 2 (AS46652).
-# Updated: 2024.07.18
+# Stop Forum Spam (SFS) listings: 18,434 (AS14061).
+# Updated: 2025.03.24
 
 2400:6180::/48 Deny Cloud
 2400:6180:10::/48 Deny Cloud
@@ -1047,7 +1048,7 @@ Tag: IOMart
 Origin: SG
 2604:a880::/47 Deny Cloud
 2604:a880:2::/48 Deny Cloud
-2604:a880:4::/48 Deny Cloud
+2604:a880:4::/47 Deny Cloud
 2604:a880:400::/48 Deny Cloud
 2604:a880:800::/48 Deny Cloud
 2604:a880:cad::/48 Deny Cloud
@@ -2499,12 +2500,13 @@ Tag: Daniela Agro
 
 
 # ASN 57169 ("EDIS GmbH").
-# Stop Forum Spam (SFS) listings: 223.
-# Updated: 2024.02.25
+# Stop Forum Spam (SFS) listings: 779.
+# Updated: 2025.03.26
 
 2a03:f80:7::/48 Deny Cloud
 2a03:f80:31::/48 Deny Cloud
 2a03:f80:70::/48 Deny Cloud
+2a03:f80:357::/48 Deny Cloud
 2a03:f80:359::/48 Deny Cloud
 2a03:f80:370::/47 Deny Cloud
 2a03:f80:3991::/48 Deny Cloud
@@ -2512,6 +2514,7 @@ Tag: Daniela Agro
 2a03:f80:ed15::/48 Deny Cloud
 2a03:f80:ed16::/47 Deny Cloud
 2a03:f80:ed31::/48 Deny Cloud
+2a03:f82:abcd::/48 Deny Cloud
 Origin: AT
 Profile: Infrastructure/Transit;Webhosting
 Tag: EDIS GmbH
@@ -4930,9 +4933,9 @@ Tag: CloudSRV Limited
 
 
 # ASN 42831 ("UK Dedicated Servers Limited").
-# Dedicated hosting and server lease and a significant source of spam.
-# Stop Forum Spam (SFS) listings: 1,595.
-# Updated: 2024.04.21
+# Fraudulent shop orders, DDoS attacks, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 2,636.
+# Updated: 2025.03.24
 
 2a00:10e8:100::/48 Deny Cloud
 2a01:a500::/32 Deny Cloud
@@ -4941,9 +4944,6 @@ Tag: CloudSRV Limited
 2a04:d180::/29 Deny Cloud
 Origin: GB
 2a0e:fd45:b30::/48 Deny Cloud
-2a11:1680:9::/48 Deny Cloud
-2a11:1680:10::/48 Deny Cloud
-2a11:1680:1f::/48 Deny Cloud
 Origin: NL
 2a0c:b840:2::/48 Deny Cloud
 Origin: VN
@@ -5943,23 +5943,23 @@ Tag: active-servers.com
 
 
 # ASN 7979 ("Servers.com, Inc").
-# Some IPs here caught scraping website content without permission.
-# Stop Forum Spam (SFS) listings: 62.
-# Updated: 2024.10.02
+# SQLi, WordPress/XMLRPC, webapp attacks, hacking, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 93.
+# Updated: 2025.03.24
 
 2406:380::/31 Deny Cloud
 Origin: HK
 2a01:609::/32 Deny Cloud
 2a01:60b::/32 Deny Cloud
 2a01:60c::/32 Deny Cloud
+2a01:60f::/32 Deny Cloud
 Origin: LU
 2a05:93c0::/31 Deny Cloud
 2a05:93c3::/32 Deny Cloud
 2a05:93c4::/32 Deny Cloud
 2a05:93c6::/31 Deny Cloud
 Origin: NL
-2600:9c00::/32 Deny Cloud
-2600:9c02::/31 Deny Cloud
+2600:9c00::/30 Deny Cloud
 2600:9c04::/31 Deny Cloud
 2600:9c0f::/32 Deny Cloud
 2604:8240::/32 Deny Cloud
@@ -9153,7 +9153,7 @@ Tag: Techcrea Solutions SAS
 
 # ASN 202297 ("Skylon Solutions Limited").
 # Dedicated webhosting provider caught hacking.
-# Updated: 2023.08.24 / Checked: 2024.02.18
+# Updated: 2025.03.26
 
 2a0c:9a40:8089::/48 Deny Cloud
 Origin: CH
@@ -9162,6 +9162,8 @@ Origin: DE
 2001:678:aa4::/48 Deny Cloud
 2a04:ff07::/32 Deny Cloud
 Origin: GB
+2a0e:fd45:40f6::/48 Deny Cloud
+Origin: NL
 Profile: Dedicated;Webhosting
 Tag: Skylon Solutions Limited
 
@@ -10142,20 +10144,18 @@ Tag: Yanoor Islam Khan
 # ASNs 56694, 62212 ("LLC Smart Ape", "SmartApe OU").
 # Russian server farm. Brute-force, XMLRPC, and webapp attacks, hacking, port
 # scans, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 471 (AS56694), 22 (AS62212).
-# Updated: 2024.02.21
+# Stop Forum Spam (SFS) listings: 8,922 (AS56694), 1,373 (AS62212).
+# Updated: 2025.03.26
 
 2a06:dd00::/32 Deny Cloud
+2a0b:2d80::/32 Deny Cloud
+2a0f:8447::/32 Deny Cloud
+Origin: AE
 2a11:3b80::/29 Deny Cloud
 Origin: EE
-2a06:d640:300::/48 Deny Cloud
-2a0b:2d80::/32 Deny Cloud
-2a0e:ccc7::/32 Deny Cloud
-2a0e:dfc4::/32 Deny Cloud
 2a0e:fb42::/32 Deny Cloud
 2a0f:6fc5:3e84::/48 Deny Cloud
 2a0f:6fc5:a4ae::/48 Deny Cloud
-2a0f:8447::/32 Deny Cloud
 Origin: RU
 Profile: Infrastructure/Transit;Webhosting
 Tag: LLC Smart Ape
@@ -12848,8 +12848,8 @@ Tag: REDHEBERG
 
 # ASN 48894 ("Optimus IT d.o.o").
 # Hacking, vulnerability scans, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 27.
-# Updated: 2024.02.25
+# Stop Forum Spam (SFS) listings: 42.
+# Updated: 2024.02.25 / Checked: 2025.03.26
 
 2a03:f80:386::/48 Deny Cloud
 Origin: AT
@@ -15047,6 +15047,24 @@ Tag: EuroVDC EOOD
 Origin: RU
 Profile: Dedicated;Webhosting
 Tag: SPRINTHOST.RU LLC
+
+
+# ASN 212027 ("Daniel Jackson").
+# Brute-force, SSH attacks, port scans, hacking, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 73.
+# Updated: 2025.03.24
+
+2a06:2840::/48 Deny Cloud
+2a10:e780::/40 Deny Cloud
+2a12:7b40::/48 Deny Cloud
+Origin: GB
+2a0e:15c4::/32 Deny Cloud
+2a10:6d00::/29 Deny Cloud
+Origin: SC
+2a12:d3c0::/29 Deny Cloud
+Origin: UA
+Profile: Dedicated;Webhosting
+Tag: Daniel Jackson
 
 
 # ---

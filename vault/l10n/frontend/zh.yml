@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese language data for the front-end (last modified: 2025.02.15).
+# This file: Chinese language data for the front-end (last modified: 2025.03.29).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -186,11 +186,11 @@ config:
  frontend_custom_footer: {"zh-Hans": "在所有前端页面的末尾作为HTML插入。​如果您想在所有此类页面中包含法律声明、联系链接、业务信息、或类似，这可能会很有用。", "zh-Hant": "在所有前端頁面的末尾作為HTML插入。​如果您想在所有此類頁面中包含法律聲明、聯繫鏈接、業務信息、或類似，這可能會很有用。"}
  frontend_custom_header: {"zh-Hans": "在所有前端页面的开头作为HTML插入。​如果您想在所有此类页面中包含网站徽标、个性化标题、脚本、或类似，这可能会很有用。", "zh-Hant": "在所有前端頁面的開頭作為HTML插入。​如果您想在所有此類頁面中包含網站徽標、個性化標題、腳本、或類似，這可能會很有用。"}
  frontend_enable_two_factor: {"zh-Hans": "该指令确定是否将2FA用于前端帐户。", "zh-Hant": "該指令確定是否將2FA用於前端帳戶。"}
- frontend_frontend_log: {"zh-Hans": "前端登录尝试的录音文件。​指定一个文件名，​或留空以禁用。", "zh-Hant": "前端登錄嘗試的錄音文件。​指定一個文件名，​或留空以禁用。"}
+ frontend_frontend_log: {"zh-Hans": "前端登录尝试的录音文件。​指定一个文件名，​或留空以禁用。", "zh-Hant": "前端登錄嘗試的錄音文件。​指定一個檔案名稱，​或留空以禁用。"}
  frontend_magnification: &MagnifDesc {"zh-Hans": "字体放大。 标准 = 1。", "zh-Hant": "字體放大。 標準 = 1。"}
  frontend_max_login_attempts: {"zh-Hans": "最大前端登录尝试次数。 标准 = 5。", "zh-Hant": "最大前端登錄嘗試次數。 標準 = 5。"}
  frontend_remotes: {"zh-Hans": "更新系统用于获取组件元数据的地址列表。​这可能需要在升级到新的主要版本时进行调整，或者在获取新的更新源时进行调整，但在正常情况下应该不理会。", "zh-Hant": "更新系統用於獲取組件元數據的地址列表。​這可能需要在升級到新的主要版本時進行調整，或者在獲取新的更新源時進行調整，但在正常情況下應該不理會。"}
- frontend_signatures_update_event_log: {"zh-Hans": "通过前端更新签名时用于记录的文件。​指定一个文件名，​或留空以禁用。", "zh-Hant": "通過前端更新簽名時用於記錄的文件。​指定一個文件名，​或留空以禁用。"}
+ frontend_signatures_update_event_log: {"zh-Hans": "通过前端更新签名时用于记录的文件。​指定一个文件名，​或留空以禁用。", "zh-Hant": "通過前端更新簽名時用於記錄的文件。​指定一個檔案名稱，​或留空以禁用。"}
  frontend_theme: {"zh-Hans": "用于前端的默认主题。", "zh-Hant": "用於前端的默認主題。"}
  general: {"zh-Hans": "基本配置（任何不属于其他类别的核心配置）。", "zh-Hant": "基本配置（任何不屬於其他類別的核心配置）。"}
  general_allow_gethostbyaddr_lookup: {"zh-Hans": "当UDP不可用时允许gethostbyaddr查找？​True（真）=允许【标准】；False（假）=不允许。", "zh-Hant": "當UDP不可用時允許gethostbyaddr查找？​True（真）=允許【標準】；False（假）=不允許。"}
@@ -234,7 +234,7 @@ config:
  hcaptcha: {"zh-Hans": "HCaptcha的配置（为人们提供了一种在受阻时重新获得访问权限的方法）。", "zh-Hant": "HCaptcha的配置（為人們提供了一種在受阻時重新獲得訪問權限的方法）。"}
  hcaptcha_api: &CaptchaAPI {"zh-Hans": "使用哪个API？", "zh-Hant": "使用哪個API？"}
  hcaptcha_expiry: &CaptchaExpiry {"zh-Hans": "记得CAPTCHA多少小时？ 标准 = 720 （1个月）。", "zh-Hant": "記得CAPTCHA多少小時？ 標準 = 720 （1個月）。"}
- hcaptcha_hcaptcha_log: &CaptchaLogFile {"zh-Hans": "记录所有的CAPTCHA的尝试？​要做到这一点，​指定一个文件名到使用。​如果不，​离开这个变量为空白。", "zh-Hant": "記錄所有的CAPTCHA的嘗試？​要做到這一點，​指定一個文件名到使用。​如果不，​離開這個變量為空白。"}
+ hcaptcha_hcaptcha_log: &CaptchaLogFile {"zh-Hans": "记录所有的CAPTCHA的尝试？​要做到这一点，​指定一个文件名到使用。​如果不，​离开这个变量为空白。", "zh-Hant": "記錄所有的CAPTCHA的嘗試？​要做到這一點，​指定一個檔案名稱到使用。​如果不，​離開這個變量為空白。"}
  hcaptcha_lockip: &CaptchaLockIP {"zh-Hans": "应该CAPTCHA锁定到IP？", "zh-Hant": "應該CAPTCHA鎖定到IP？"}
  hcaptcha_lockuser: &CaptchaLockUser {"zh-Hans": "应该CAPTCHA锁定到用户？", "zh-Hant": "應該CAPTCHA鎖定到用戶？"}
  hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode {"zh-Hans": "向未阻止的请求显示CAPTCHA时应使用哪个状态代码？", "zh-Hant": "向未阻止的請求顯示CAPTCHA時應使用哪個狀態代碼？"}
@@ -253,8 +253,8 @@ config:
  legal_privacy_policy: {"zh-Hans": "要显示在任何生成的页面的页脚中的相关隐私政策的地址。​指定一个URL，或留空以禁用。", "zh-Hant": "要顯示在任何生成的頁面的頁腳中的相關隱私政策的地址。​指定一個URL，或留空以禁用。"}
  legal_pseudonymise_ip_addresses: {"zh-Hans": "编写日志文件时使用假名的IP地址吗？​True（真）=使用假名【标准】；False（假）=不使用假名。", "zh-Hant": "編寫日誌文件時使用假名的IP位址嗎？​True（真）=使用假名【標準】；False（假）=不使用假名。"}
  logging: {"zh-Hans": "与日志相关的配置（与其他類別相關的被排除）。", "zh-Hant": "與日誌相關的配置（與其他類別相關的被排除）。"}
- logging_apache_style_log: {"zh-Hans": "Apache风格文件用于记录所有被拦截的访问。​指定一个文件名，​或留空以禁用。", "zh-Hant": "Apache風格文件用於記錄所有被攔截的訪問。​指定一個文件名，​或留空以禁用。"}
- logging_error_log: {"zh-Hans": "用于记录检测到的任何非致命错误的文件。​指定一个文件名，​或留空以禁用。", "zh-Hant": "用於記錄檢測到的任何非致命錯誤的文件。​指定一個文件名，​或留空以禁用。"}
+ logging_apache_style_log: {"zh-Hans": "Apache风格文件用于记录所有被拦截的访问。​指定一个文件名，​或留空以禁用。", "zh-Hant": "Apache風格文件用於記錄所有被攔截的訪問。​指定一個檔案名稱，​或留空以禁用。"}
+ logging_error_log: {"zh-Hans": "用于记录检测到的任何非致命错误的文件。​指定一个文件名，​或留空以禁用。", "zh-Hant": "用於記錄檢測到的任何非致命錯誤的文件。​指定一個檔案名稱，​或留空以禁用。"}
  logging_log_banned_ips: {"zh-Hans": "包括IP禁止从阻止请求在日志文件吗？​True（真）=是【标准】；False（假）=不是。", "zh-Hant": "包括IP禁止從阻止請求在日誌文件嗎？​True（真）=是【標準】；False（假）=不是。"}
  logging_log_rotation_action:
   zh-Hans: "日志轮转限制了任何时候应该存在的日志文件的数量。​当新的日志文件被创建时，如果日志文件的指定的最大数量已经超过，将执行指定的操作。​您可以在此处指定所需的操作。"
@@ -265,17 +265,17 @@ config:
  logging_log_sanitisation:
   zh-Hans: "当使用前端日志页面查看日志数据时，CIDRAM在显示之前清理日志数据。​这可以保护用户免受XSS攻击和其他潜在威胁。​但是，默认情况下，在记录期间不会清理数据。​这是为了确保准确地保留日志数据（可以帮助任何未来的启发式或法医分析）。​但是，如果用户尝试使用外部工具读取日志数据，如果这些外部工具不执行自己的清理过程，用户可能会受到XSS攻击。​如有必要，可以使用此配置指令更改默认行为。 True = 记录数据时清理数据（数据保存不太准确，但XSS风险较低）。 False = 记录数据时不要清理数据（数据保存得更准确，但XSS风险更高）【标准】。"
   zh-Hant: "當使用前端日誌頁面查看日誌數據時，CIDRAM在顯示之前清理日誌數據。​這可以保護用戶免受XSS攻擊和其他潛在威脅。​但是，默認情況下，在記錄期間不會清理數據。​這是為了確保准確地保留日誌數據（可以幫助任何未來的啟發式或法醫分析）。​但是，如果用戶嘗試使用外部工具讀取日誌數據，如果這些外部工具不執行自己的清理過程，用戶可能會受到XSS攻擊。​如有必要，可以使用此配置指令更改默認行為。 True = 記錄數據時清理數據（數據保存不太準確，但XSS風險較低）。 False = 記錄數據時不要清理數據（數據保存得更準確，但XSS風險更高）【標準】。"
- logging_outbound_request_log: {"zh-Hans": "用于记录任何出站请求结果的文件。​指定一个文件名，​或留空以禁用。", "zh-Hant": "用於記錄任何出站請求結果的文件。​指定一個文件名，​或留空以禁用。"}
- logging_report_log: {"zh-Hans": "用于记录发送到外部API的任何报告的文件。​指定一个文件名，​或留空以禁用。", "zh-Hant": "用於記錄發送到外部API的任何報告的文件。​指定一個文件名，​或留空以禁用。"}
- logging_serialised_log: {"zh-Hans": "连载的文件用于记录所有被拦截的访问。​指定一个文件名，​或留空以禁用。", "zh-Hant": "連載的文件用於記錄所有被攔截的訪問。​指定一個文件名，​或留空以禁用。"}
- logging_standard_log: {"zh-Hans": "人类可读文件用于记录所有被拦截的访问。​指定一个文件名，​或留空以禁用。", "zh-Hant": "人類可讀文件用於記錄所有被攔截的訪問。​指定一個文件名，​或留空以禁用。"}
+ logging_outbound_request_log: {"zh-Hans": "用于记录任何出站请求结果的文件。​指定一个文件名，​或留空以禁用。", "zh-Hant": "用於記錄任何出站請求結果的文件。​指定一個檔案名稱，​或留空以禁用。"}
+ logging_report_log: {"zh-Hans": "用于记录发送到外部API的任何报告的文件。​指定一个文件名，​或留空以禁用。", "zh-Hant": "用於記錄發送到外部API的任何報告的文件。​指定一個檔案名稱，​或留空以禁用。"}
+ logging_serialised_log: {"zh-Hans": "连载的文件用于记录所有被拦截的访问。​指定一个文件名，​或留空以禁用。", "zh-Hant": "連載的文件用於記錄所有被攔截的訪問。​指定一個檔案名稱，​或留空以禁用。"}
+ logging_standard_log: {"zh-Hans": "人类可读文件用于记录所有被拦截的访问。​指定一个文件名，​或留空以禁用。", "zh-Hant": "人類可讀文件用於記錄所有被攔截的訪問。​指定一個檔案名稱，​或留空以禁用。"}
  logging_truncate:
   zh-Hans: "截断日志文件当他们达到一定的大小吗？​值是在B/KB/MB/GB/TB，​是日志文件允许的最大大小直到它被截断。​默认值为“0KB”将禁用截断（日志文件可以无限成长）。​注意：适用于单个日志文件！​日志文件大小不被算集体的。"
   zh-Hant: "截斷日誌文件當他們達到一定的大小嗎？​值是在B/KB/MB/GB/TB，​是日誌文件允許的最大大小直到它被截斷。​默認值為『0KB』將禁用截斷（日誌文件可以無限成長）。​注意：適用於單個日誌文件！​日誌文件大小不被算集體的。"
  phpmailer: {"zh-Hans": "PHPMailer的配置（用于双因素身份验证和电子邮件通知）。", "zh-Hant": "PHPMailer的配置（用於雙重認證和電子郵件通知）。"}
  phpmailer_add_reply_to_address: {"zh-Hans": "通过SMTP发送电子邮件时引用的回复地址。", "zh-Hant": "通過SMTP發送電子郵件時引用的回复地址。"}
  phpmailer_add_reply_to_name: {"zh-Hans": "通过SMTP发送电子邮件时引用的回复姓名。", "zh-Hant": "通過SMTP發送電子郵件時引用的回複姓名。"}
- phpmailer_event_log: {"zh-Hans": "用于记录与PHPMailer相关的所有事件的文件。​指定一个文件名，​或留空以禁用。", "zh-Hant": "用於記錄與PHPMailer相關的所有事件的文件。​指定一個文件名，​或留空以禁用。"}
+ phpmailer_event_log: {"zh-Hans": "用于记录与PHPMailer相关的所有事件的文件。​指定一个文件名，​或留空以禁用。", "zh-Hant": "用於記錄與PHPMailer相關的所有事件的文件。​指定一個檔案名稱，​或留空以禁用。"}
  phpmailer_host: {"zh-Hans": "用于出站电子邮件的SMTP主机。", "zh-Hant": "用於出站電子郵件的SMTP主機。"}
  phpmailer_password: {"zh-Hans": "通过SMTP发送电子邮件时使用的密码。", "zh-Hant": "通過SMTP發送電子郵件時使用的密碼。"}
  phpmailer_port: {"zh-Hans": "用于出站电子邮件的端口号。​标准=587。", "zh-Hant": "用於出站電子郵件的端口號。​標準=587。"}
@@ -390,7 +390,7 @@ field:
  Expiry: "到期"
  False (False): "False（假）"
  File: "文件"
- Filename: "文件名："
+ Filename: {"zh-Hans": "文件名：", "zh-Hant": "檔案名稱："}
  Generate output as CIDRs: {"zh-Hans": "以CIDR的形式生成输出", "zh-Hant": "以CIDR的形式生成輸出"}
  Generate output as netmasks: {"zh-Hans": "以子网络掩码的形式生成输出", "zh-Hant": "以子網絡掩碼的形式生成輸出"}
  Immediately: "立即地。"
@@ -840,7 +840,7 @@ label:
   Suppress logging: {"zh-Hans": "禁止日志记录", "zh-Hant": "禁止日誌記錄"}
   Suppress output template: {"zh-Hans": "禁止输出模板", "zh-Hant": "禁止輸出模板"}
   Suppress reports: {"zh-Hans": "禁止报告", "zh-Hant": "禁止報告"}
-  The name of the file to run: {"zh-Hans": "要运行的文件名：", "zh-Hant": "要運行的文件名："}
+  The name of the file to run: {"zh-Hans": "要运行的文件名：", "zh-Hant": "要運行的檔案名稱："}
   The reason given to the user when blocked: {"zh-Hans": "显示给用户的阻止原因：", "zh-Hant": "顯示給用戶的阻止原因："}
   Track this rule: {"zh-Hans": "跟踪此规则", "zh-Hant": "跟踪此規則"}
   Use Windows-style wildcards to test the conditions: {"zh-Hans": "使用Windows风格的通配符来测试条件。", "zh-Hant": "使用Windows風格的通配符來測試條件。"}

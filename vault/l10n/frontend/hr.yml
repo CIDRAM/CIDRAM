@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Croatian language data for the front-end (last modified: 2025.03.09).
+# This file: Croatian language data for the front-end (last modified: 2025.03.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -435,10 +435,56 @@ hints_shorthand:
  4.: "Odnosi se na slučajeve u kojima se skraćene riječi uopće ne koriste ili ih CIDRAM ne prepoznaje."
  Jedan po potpisu.: "Potpis može pozvati više profila, ali može koristiti samo jednu skraćenu riječ. Moguće je da više skraćenih riječi može biti prikladno, ali kako se može koristiti samo jedna, nastojimo uvijek koristiti samo najprikladniju."
  Prioritet.: "Odabrana opcija uvijek ima prioritet nad opcijom koja nije odabrana. Npr., ako je više skraćenih riječi u igri, ali je samo jedna od njih postavljena kao blokirana, zahtjev će i dalje biti blokiran."
+ Ljudske krajnje točke i usluge u oblaku.: "Usluga u oblaku može se odnositi na pružatelje usluga web hostinga, farme poslužitelja, podatkovne centre, ili bilo koje druge stvari. Ljudska krajnja točka odnosi se na način na koji čovjek pristupa internetu, primjerice putem davatelja internetskih usluga. Mreža obično pruža samo jedno ili drugo, ali ponekad može pružiti oboje. Nastojimo nikada ne identificirati potencijalne ljudske krajnje točke kao usluge u oblaku. Stoga se usluga u oblaku može identificirati kao nešto drugo ako njezin raspon dijele poznate ljudske krajnje točke. Suprotno tome, nastojimo uvijek identificirati usluge u oblaku, čije domete ne dijele nijedna poznata ljudska krajnja točka, kao usluge u oblaku. Stoga, zahtjev koji je izričito identificiran kao usluga u oblaku vjerojatno ne dijeli svoj raspon s bilo kojom poznatom ljudskom krajnjom točkom. Isto tako, zahtjev koji je eksplicitno identificiran napadima ili neželjenom poštom vjerojatno dijeli takve raspone. Međutim, internet je uvijek u tijeku, svrhe mreža se mijenjaju s vremenom, a rasponi se uvijek kupuju ili prodaju, stoga budite svjesni i budni u pogledu lažno pozitivnih rezultata."
+hints_time_format: |
+ <strong><em>Čuvar mjesta – Obrazloženje – Primjer temeljen na 2024-04-30T18:27:49+08:00.</em></strong><br />
+ <code class="s">{yyyy}</code> – Godina – Npr., 2024.<br />
+ <code class="s">{yy}</code> – Skraćena godina – Npr., 24.<br />
+ <code class="s">{Mon}</code> – Skraćeni naziv mjeseca (na engleskom) – Npr., Apr.<br />
+ <code class="s">{mm}</code> – Mjesec s vodećim nulama – Npr., 04.<br />
+ <code class="s">{m}</code> – Mjesec – Npr., 4.<br />
+ <code class="s">{Day}</code> – Skraćeni naziv dana (na engleskom) – Npr., Tue.<br />
+ <code class="s">{dd}</code> – Dan s vodećim nulama – Npr., 30.<br />
+ <code class="s">{d}</code> – Dan – Npr., 30.<br />
+ <code class="s">{hh}</code> – Sat s vodećim nulama (koristi se 24-satno vrijeme) – Npr., 18.<br />
+ <code class="s">{h}</code> – Sat (koristi se 24-satno vrijeme) – Npr., 18.<br />
+ <code class="s">{ii}</code> – Minuta s vodećim nulama – Npr., 27.<br />
+ <code class="s">{i}</code> – Minuta – Npr., 27.<br />
+ <code class="s">{ss}</code> – Sekunde s vodećim nulama – Npr., 49.<br />
+ <code class="s">{s}</code> – Sekunde – Npr., 49.<br />
+ <code class="s">{tz}</code> – Vremenska zona (bez dvotočke) – Npr., +0800.<br />
+ <code class="s">{t:z}</code> – Vremenska zona (s dvotočkom) – Npr., +08:00.
+hints_verification:
+ "Što su "pozitivi" i "negativi"?": "Prilikom provjere identiteta predstavljenog zahtjevom, uspješan ishod mogao bi se opisati kao "pozitivan" ili "negativan". U slučaju da se potvrdi da je predstavljeni identitet pravi identitet, on bi se opisao kao "pozitivan". U slučaju da se potvrdi da je prikazani identitet krivotvoren, on bi se opisao kao "negativan". Međutim, neuspješan ishod (npr., neuspješna provjera, ili se ne može utvrditi vjerodostojnost prikazanog identiteta) ne bi se opisao kao "pozitivan" ili "negativan". Umjesto toga, neuspješan ishod bi se jednostavno opisao kao neprovjeren. Ako se ne pokuša provjeriti identitet predstavljen zahtjevom, zahtjev bi se također opisao kao neprovjeren. Pojmovi imaju smisla samo u kontekstu u kojem je identitet predstavljen zahtjevom prepoznat, i stoga, gdje je provjera moguća. U slučajevima kada prikazani identitet ne odgovara gore navedenim opcijama, ili kada identitet nije predstavljen, gore navedene opcije postaju nevažne."
 link:
  Intersector: "Intersektor"
+ Signature File Fixer: "Popravljač datoteka potpisa"
  Subtractor: "Oduzimač"
 response:
+ Invalid password: "Prijava nije uspjela! Nevažeća lozinka!"
+ Maximum number of login attempts exceeded: "Premašen je maksimalan broj pokušaja prijave; Pristup odbijen."
+ Password field empty: "Polje za lozinku prazno!"
+ Password successfully updated: "Lozinka je uspješno ažurirana!"
+ Permissions not adequate to perform asynchronous requests: "Dozvole nisu odgovarajuće za izvođenje asinkronih zahtjeva. Pokušajte se ponovno prijaviti."
+ Please select at least one category: "Molimo odaberite barem jednu kategoriju!"
+ Rate limited by the upstream: "Stopa ograničena uzvodno."
+ Ready to install: "Spremno za ugradnju."
+ Redirected: "Preusmjereno"
+ Removed %s from tracking: "Uklonjen %s iz praćenja."
+ Repair process completed: "Proces popravka završen."
+ Repair process failed: "Proces popravka nije uspio."
+ Signature files have been updated (%s): "Datoteke potpisa su ažurirane (%s)."
+ Skipped: "Preskočeno"
+ Source not specified: "Izvor nije naveden!"
+ Statistics cleared: "Statistika je obrisana."
+ Statistics updated: "Statistika ažurirana."
+ Successfully activated: "Uspješno aktivirano."
+ Successfully authenticated: "Autentifikacija je uspjela."
+ Successfully deactivated: "Uspješno deaktivirano."
+ Successfully deleted %s reports for %s:
+  - "Uspješno izbrisano %s izvješće za %s!"
+  - "Uspješno izbrisana %s izvješća za %s!"
+  - "Uspješno izbrisano %s izvješća za %s!"
  That account doesn_t exist: "Taj račun ne postoji."
  The %s command can_t be chained in that way, sorry: "Naredba %s se ne može ulančati na taj način, izvinite."
  The IP address is invalid: "IP adresa je nevažeća!"

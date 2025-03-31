@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bot user agents module (last modified: 2025.01.12).
+ * This file: Bot user agents module (last modified: 2025.03.31).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -150,12 +150,12 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         'm(?:ajestic12|agnet|auibot|eanpath|entormate|fibot|ignify|j12)|' .
         'nutch|omgilibot|' .
         'p(?:ackrat|cbrowser|lukkie|surf)|reaper|rsync|' .
-        's(?:aidwot|alad|cspider|ees\.co|hai|[iy]phon|truct\.it|upport\.wordpress\.com|ystemscrawler)|' .
+        's(?:aidwot|alad|cspider|ees\.co|hai|hellbot|[iy]phon|truct\.it|upport\.wordpress\.com|ystemscrawler)|' .
         't(?:est\'?$|akeout|asapspider|weetmeme)|' .
         'user-agent|visaduhoc|vonchimpenfurlr|webtarantula|wolf|' .
         'y(?:acy|isouspider|[ry]spider|unrang|unyun)|zoominfobot~',
         $UANoSpace
-    ) || strpos($UA, '   ') !== false, 'Banned UA'); // 2021.07.08 mod 2024.08.27
+    ) || strpos($UA, '   ') !== false, 'Banned UA'); // 2021.07.08 mod 2025.03.31
 
     if (!$this->trigger((
         preg_match('~^python-requests/2\.27~', $UANoSpace) &&

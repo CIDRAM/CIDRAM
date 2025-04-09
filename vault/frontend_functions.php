@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2024.10.16).
+ * This file: Front-end functions file (last modified: 2025.04.09).
  */
 
 /**
@@ -3540,7 +3540,7 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
                 $JSAppend .= sprintf('onAuxActionChange(\'actWhl\',\'%s\',\'%s\');', $RuleClass, $Current);
             }
             $Output .= sprintf(
-                '</select><input type="button" onclick="javascript:addCondition(\'%s\')" value="%s" class="auto" /></div>',
+                '</select><input type="button" onclick="javascript:addCondition(\'%s\', this.parentElement.parentElement.nextSibling.nextSibling.firstChild.firstChild.value)" value="%s" class="auto" /></div>',
                 $Current,
                 $CIDRAM['L10N']->getString('field_add_more_conditions')
             );
@@ -3548,10 +3548,23 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
 
             /** Populate conditions. */
             if ($ConditionsFrom && is_array($Data[$ConditionsFrom])) {
+                if (empty($Data['Method'])) {
+                    $PosSymbol = '=';
+                    $NegSymbol = '≠';
+                } elseif ($Data['Method'] === 'RegEx') {
+                    $PosSymbol = '≅';
+                    $NegSymbol = '≇';
+                } elseif ($Data['Method'] === 'WinEx') {
+                    $PosSymbol = '≈';
+                    $NegSymbol = '≉';
+                } else {
+                    $PosSymbol = '=';
+                    $NegSymbol = '≠';
+                }
                 $Iteration = 0;
                 $ConditionFormTemplate = "\n" .
                     '<div class="flexrow"><select name="conSourceType[%1$s][%2$s]" class="auto">%3$s</select>' .
-                    '<select name="conIfOrNot[%1$s][%2$s]" class="auto"><option value="If"%6$s>=</option><option value="Not"%7$s>≠</option></select>' .
+                    '<select name="conIfOrNot[%1$s][%2$s]" class="auto"><option value="If" class="ifOrNot"%6$s>%8$s</option><option value="Not" class="ifOrNot"%7$s>%9$s</option></select>' .
                     '<input type="text" name="conSourceValue[%1$s][%2$s]" placeholder="%4$s" class="flexin" value="%5$s" /></div>';
                 foreach ([['If matches', ' selected', ''], ['But not if matches', '', ' selected']] as $ModeSet) {
                     if (isset($Data[$ConditionsFrom][$ModeSet[0]]) && is_array($Data[$ConditionsFrom][$ModeSet[0]])) {
@@ -3566,7 +3579,9 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
                                     $CIDRAM['L10N']->getString('tip_condition_placeholder'),
                                     $Condition,
                                     $ModeSet[1],
-                                    $ModeSet[2]
+                                    $ModeSet[2],
+                                    $PosSymbol,
+                                    $NegSymbol
                                 );
                                 $Iteration++;
                             }
@@ -3612,7 +3627,7 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
                 $MethodData = ['', '', '', ''];
             }
             $Output .= sprintf(
-                '<div class="iCntr"><div class="iLabl"><select name="mtd[%s]" class="auto"><option value="mtdStr"%s>%s</option><option value="mtdReg"%s>%s</option><option value="mtdWin"%s>%s</option><option value="mtdDMA"%s>%s</option></select><br /></div></div><div class="iCntr"><div class="iLabl"><em>%s</em></div></div>',
+                '<div class="iCntr"><div class="iLabl"><select name="mtd[%s]" class="auto" onchange="javascript:changeIfOrNotEditMode(this)"><option value="mtdStr"%s>%s</option><option value="mtdReg"%s>%s</option><option value="mtdWin"%s>%s</option><option value="mtdDMA"%s>%s</option></select><br /></div></div><div class="iCntr"><div class="iLabl"><em>%s</em></div></div>',
                 $Current,
                 $MethodData[0],
                 $CIDRAM['FE']['optMtdStr'],

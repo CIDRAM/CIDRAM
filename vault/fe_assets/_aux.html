@@ -98,10 +98,10 @@
                   <option value="actRdr">{optActRdr}</option>
                   <option value="actRun">{optActRun}</option>
                   <option value="actPro">{optActPro}</option>
-                </select><input type="button" onclick="javascript:addCondition('')" value="{field_add_more_conditions} [1]" class="auto" accesskey="1" />
+                </select><input type="button" onclick="javascript:addCondition('', this.parentElement.parentElement.parentElement.nextSibling.nextSibling.nextSibling.nextSibling.firstChild.nextSibling.firstChild.nextSibling.firstChild.nextSibling.value)" value="{field_add_more_conditions} [1]" class="auto" accesskey="1" />
               </div>
               <div class="iCntn" id="conditions">
-                <div class="flexrow"><select name="conSourceType[]" class="auto">{conSources}</select><select name="conIfOrNot[]" class="auto"><option value="If">=</option><option value="Not">≠</option></select><input type="text" name="conSourceValue[]" placeholder="{tip_condition_placeholder}" class="flexin" /></div>
+                <div class="flexrow"><select name="conSourceType[]" class="auto">{conSources}</select><select name="conIfOrNot[]" class="auto"><option value="If" class="ifOrNot">=</option><option value="Not" class="ifOrNot">≠</option></select><input type="text" name="conSourceValue[]" placeholder="{tip_condition_placeholder}" class="flexin" /></div>
               </div>
             </div>
           </li>
@@ -119,7 +119,7 @@
           <li>
             <div class="iCntr">
               <div class="iLabl s">
-                <select name="mtd" class="auto">
+                <select name="mtd" class="auto" onchange="javascript:changeIfOrNot(this)">
                   <option value="mtdStr" selected>{optMtdStr}</option>
                   <option value="mtdReg">{optMtdReg}</option>
                   <option value="mtdWin">{optMtdWin}</option>

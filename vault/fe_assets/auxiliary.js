@@ -108,7 +108,11 @@ function onAuxActionChange(e, p, i) {
 }
 
 var conIter = 1;
-function addCondition(p) {
+let posSym = '=';
+let negSym = '≠';
+function addCondition(p, e) {
+  posSym=e==='mtdWin'?'≈':e==='mtdReg'?'≅':'=';
+  negSym=e==='mtdWin'?'≉':e==='mtdReg'?'≇':'≠';
   var namePart = p.length > 0 ? '['+p+'][New'+conIter+']' : '[]',
   conId = 'condition'+conIter,
   t = document.createElement('div');
@@ -123,11 +127,13 @@ function addCondition(p) {
   t.setAttribute('class', 'auto'),
   x = document.createElement('option'),
   x.setAttribute('value', 'If'),
-  x.innerHTML = '=',
+  x.setAttribute('class', 'ifOrNot'),
+  x.innerHTML = posSym,
   t.appendChild(x),
   x = document.createElement('option'),
   x.setAttribute('value', 'Not'),
-  x.innerHTML = '≠',
+  x.setAttribute('class', 'ifOrNot'),
+  x.innerHTML = negSym,
   t.appendChild(x),
   document.getElementById(conId).appendChild(t),
   (t = document.createElement('input')).setAttribute('name', 'conSourceValue'+namePart),
@@ -180,4 +186,28 @@ function heavenToggle(c) {
   document.getElementById('heaven'+c).classList.toggle('scaleXToOne');
   document.getElementById('hidden'+c).classList.toggle('scaleXToZero');
   document.getElementById('hidden'+c).classList.toggle('scaleXToOne');
+}
+
+function changeIfOrNot(z) {
+  Array.prototype.forEach.call(z.parentElement.parentElement.parentElement.previousSibling.previousSibling.previousSibling.previousSibling.getElementsByClassName('ifOrNot'),(e)=> {
+    if (e.value==='If') {
+      posSym=z.value==='mtdWin'?'≈':z.value==='mtdReg'?'≅':'=';
+      e.innerHTML=posSym;
+    } else {
+      negSym=z.value==='mtdWin'?'≉':z.value==='mtdReg'?'≇':'≠';
+      e.innerHTML=negSym;
+    }
+  });
+}
+
+function changeIfOrNotEditMode(z) {
+  Array.prototype.forEach.call(z.parentElement.parentElement.previousSibling.previousSibling.getElementsByClassName('ifOrNot'),(e)=> {
+    if (e.value==='If') {
+      posSym=z.value==='mtdWin'?'≈':z.value==='mtdReg'?'≅':'=';
+      e.innerHTML=posSym;
+    } else {
+      negSym=z.value==='mtdWin'?'≉':z.value==='mtdReg'?'≇':'≠';
+      e.innerHTML=negSym;
+    }
+  });
 }

@@ -396,4 +396,5 @@
 - [2025.03.03]: Added a guard to the initialiseCache method to exit early when the cache is found to have been already initialised.
 - [2025.03.04]: Added access keys to some of the fields at the IP tracking page and IP testing page.
 - [2025.04.09]: Grapeshot and Neeva are dead. Removed support for both of them from verification and from the default signature bypasses.
+- [2025.04.09]: Added some JavaScript to the auxiliary rules pages to ensure that the symbols displayed for the "equals", "not equals" condition match type drop-down menu properly reflect the rule's actual comparison type and will auto-update when changed (#581).
 - *Plus all the regular signature updates.*

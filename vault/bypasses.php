@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Default signature bypasses (last modified: 2024.09.07).
+ * This file: Default signature bypasses (last modified: 2025.04.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -147,14 +147,6 @@ $CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [], $Fa
             return;
         }
 
-        /** Neevabot bypass. */
-        if (
-            $CIDRAM['Request']->inCsv('Neevabot', $CIDRAM['Config']['bypasses']['used']) &&
-            strpos($CIDRAM['BlockInfo']['UALC'], 'neevabot') !== false
-        ) {
-            return;
-        }
-
         /**
          * Pinterest bypass.
          * @link https://github.com/CIDRAM/CIDRAM/issues/253
@@ -267,20 +259,6 @@ $CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [], $Fa
             ) {
                 return 4;
             }
-        }
-    }
-
-    /** Oracle bypasses. */
-    if ($Tag === 'Oracle Corporation') {
-        /**
-         * Oracle Data Cloud Crawler (a.k.a., Grapeshot) bypass.
-         * @link https://www.oracle.com/corporate/acquisitions/grapeshot/crawler.html
-         */
-        if (
-            $CIDRAM['Request']->inCsv('Grapeshot', $CIDRAM['Config']['bypasses']['used']) &&
-            strpos($CIDRAM['BlockInfo']['UALC'], 'grapeshot') !== false
-        ) {
-            return;
         }
     }
 

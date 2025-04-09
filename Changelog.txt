@@ -15,6 +15,9 @@ Detailed version release guidelines for CIDRAM can be found at:
 
 - [2025.02.07]: Auxiliary rules can now suppress reports.
 
+- [2025.02.17]: Added two new configuration directives, "suppress_rl" and
+  "suppress_conflict", as a means of partial backporting for #614.
+
 - [2025.03.03; Bug-fix]: Added a guard to the InitialiseCache closure to exit
   early when the cache is found to have been already initialised, which could
   otherwise present a number of strange problems at the front-end when
@@ -23,6 +26,9 @@ Detailed version release guidelines for CIDRAM can be found at:
 
 - [2025.03.04]: Added access keys to some of the fields at the IP tracking page
   and IP testing page.
+
+- [2025.04.09]: Grapeshot and Neeva are dead. Removed support for both of them
+  from verification and from the default signature bypasses.
 
 === Version/Release 1.28.4 ===
 PATCH RELEASE.

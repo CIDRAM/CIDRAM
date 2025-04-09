@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Default signature bypasses (last modified: 2024.09.07).
+ * This file: Default signature bypasses (last modified: 2025.04.09).
  */
 
 /** Prevents execution from outside of the checkFactors method. */
@@ -131,11 +131,6 @@ $this->CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [
             return;
         }
 
-        /** Neevabot bypass. */
-        if (isset($Bypasses['Neevabot']) && strpos($this->BlockInfo['UALC'], 'neevabot') !== false) {
-            return;
-        }
-
         /**
          * Pinterest bypass.
          * @link https://github.com/CIDRAM/CIDRAM/issues/253
@@ -234,17 +229,6 @@ $this->CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [
             ) {
                 return 4;
             }
-        }
-    }
-
-    /** Oracle bypasses. */
-    if ($Tag === 'Oracle Corporation') {
-        /**
-         * Oracle Data Cloud Crawler (a.k.a., Grapeshot) bypass.
-         * @link https://www.oracle.com/corporate/acquisitions/grapeshot/crawler.html
-         */
-        if (isset($Bypasses['Grapeshot']) && strpos($this->BlockInfo['UALC'], 'grapeshot') !== false) {
-            return;
         }
     }
 

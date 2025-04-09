@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2025.02.07).
+# This file: Defaults file (last modified: 2025.04.09).
 ##/
 
 Config Defaults:
@@ -759,7 +759,6 @@ Config Defaults:
     409: "label.409 Conflict"
     429: "label.429 Too Many Requests"
    style: "radio"
-   experimental: true
  verification:
   search_engines:
    type: "checkbox"
@@ -789,9 +788,6 @@ Config Defaults:
     MojeekBot:Verify
     MojeekBot:BlockNegatives
     MojeekBot:UntrackPositives
-    Neevabot:Verify
-    Neevabot:BlockNegatives
-    Neevabot:UntrackPositives
     PetalBot:Verify
     PetalBot:BlockNegatives
     PetalBot:UntrackPositives
@@ -827,7 +823,6 @@ Config Defaults:
     DuckDuckBot: "* DuckDuckBot"
     Googlebot: "* Googlebot"
     MojeekBot: "MojeekBot"
-    Neevabot: "* Neevabot"
     PetalBot: "* PetalBot"
     Qwantify: "Qwantify/Bleriot"
     SeznamBot: "SeznamBot"
@@ -883,9 +878,6 @@ Config Defaults:
     AmazonAdBot:UntrackPositives
     ChatGPT-User:BlockNonVerified
     GPTBot:BlockNonVerified
-    Grapeshot:Verify
-    Grapeshot:BlockNegatives
-    Grapeshot:UntrackPositives
    labels:
     Verify: "checkbox.Attempt to verify"
     BlockNegatives: "checkbox.Block negatives"
@@ -897,7 +889,6 @@ Config Defaults:
     AmazonAdBot: "* AmazonAdBot"
     ChatGPT-User: "!! ChatGPT-User"
     GPTBot: "!! GPTBot"
-    Grapeshot: "* Oracle Data Cloud Crawler (Grapeshot)"
    hints:
     - "hints_verification"
     - "hints_has_bypass"

@@ -395,4 +395,5 @@
 - [2025.02.07]: Auxiliary rules can now suppress reports.
 - [2025.03.03]: Added a guard to the initialiseCache method to exit early when the cache is found to have been already initialised.
 - [2025.03.04]: Added access keys to some of the fields at the IP tracking page and IP testing page.
+- [2025.04.09]: Grapeshot and Neeva are dead. Removed support for both of them from verification and from the default signature bypasses.
 - *Plus all the regular signature updates.*

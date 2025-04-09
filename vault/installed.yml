@@ -1,6 +1,6 @@
 CIDRAM Core:
  Name: "CIDRAM Core"
- Version: "3.8.1-DEV+250610"
+ Version: "3.8.1-DEV+250980"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Front-End: "Latest"
@@ -55,13 +55,13 @@ CIDRAM Core:
    Checksum: "b62c0cf1deeb97c7ee15638f0a4102292a6bab6f0b6b1ee3a1dec7fa485c2e05:1352"
   defaults.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/defaults.yml"
-   Checksum: "4a2587bede3d963eb554c324dc50e62eabeb022b27b5692ea7420d1b36b5b15b:41973"
+   Checksum: "918d8886f88408e114bb49efae3e8a488b2d404eccb3cc6299c5822b409e95ea:41708"
   loader.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/loader.php"
    Checksum: "4d56d0a305ceafab32ade65a0f74ad27efe50964d0e257d787a6ee7056c41880:1313"
   verification.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/verification.yml"
-   Checksum: "44e8b49970144b9b4e1afaa9dc39872585e66d270bf5a629f67015cb48aa42ee:12801"
+   Checksum: "7dd4fcb3297d06c6ddb7857857ffd8160e27d30f470f6a8540ea85ac1fed943e:11887"
 CIDRAM Front-End:
  Name: "CIDRAM Front-End"
  Version: "3.8.1-DEV+250610"
@@ -650,19 +650,17 @@ IPv6-Other:
    Checksum: "af871592026628308ec0b13386d4284e72ecf8cd5f377bc79c1bc93fbef5880d:5889"
    Used with: "ipv6"
 Bypasses:
- Version: "2024.250.0"
+ Version: "2025.98.0"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "^3"
- When Update Succeeds:
-  - "if {Components.Meta.Bypasses.Version}<2024.250&&{Components.RemoteMeta.Bypasses.Version}>=2024.250 then queue message <span dir="ltr" lang="en-AU">[Bypasses 2024.250.0] New bypass added ("Skype URL Preview"). It can be enabled via <code class="s">bypasses➡used</code>.</span>"
  Files:
   bypasses.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/bypasses.php"
-   Checksum: "3a4d678c1b5d4f3e51995bc1bf3e19215343d78fca41e3a2195afa6b72516709:11505"
+   Checksum: "589190714a8b390bd8eeb1eb69966dc88a4bc8c169ae458b4ed7f515b4025cdb:10955"
   imports/bypasses.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/imports/bypasses.yml"
-   Checksum: "5f4f14a598d1a51e6237de848e6bf588698bf16d501d9cac7a717931fff5e046:1175"
+   Checksum: "f96722b9a57c0be7f087ddfe79b53e9f41496eac4968095040beb229e3b4a438:1096"
    Used with: "imports"
 l10n/core/af:
  Extended Description: "Afrikaanse lokalisering"

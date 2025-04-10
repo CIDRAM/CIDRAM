@@ -111,7 +111,7 @@ var conIter = 1;
 let posSym = '=';
 let negSym = '≠';
 function addCondition(p, e) {
-  posSym=e==='mtdWin'?'≈':e==='mtdReg'?'≅':'=';
+  posSym=e==='mtdDMA'?'≟':e==='mtdWin'?'≈':e==='mtdReg'?'≅':'=';
   negSym=e==='mtdWin'?'≉':e==='mtdReg'?'≇':'≠';
   var namePart = p.length > 0 ? '['+p+'][New'+conIter+']' : '[]',
   conId = 'condition'+conIter,
@@ -191,7 +191,7 @@ function heavenToggle(c) {
 function changeIfOrNot(z) {
   Array.prototype.forEach.call(z.parentElement.parentElement.parentElement.previousSibling.previousSibling.previousSibling.previousSibling.getElementsByClassName('ifOrNot'),(e)=> {
     if (e.value==='If') {
-      posSym=z.value==='mtdWin'?'≈':z.value==='mtdReg'?'≅':'=';
+      posSym=z.value==='mtdDMA'?'≟':z.value==='mtdWin'?'≈':z.value==='mtdReg'?'≅':'=';
       e.innerHTML=posSym;
     } else {
       negSym=z.value==='mtdWin'?'≉':z.value==='mtdReg'?'≇':'≠';
@@ -203,7 +203,7 @@ function changeIfOrNot(z) {
 function changeIfOrNotEditMode(z) {
   Array.prototype.forEach.call(z.parentElement.parentElement.previousSibling.previousSibling.getElementsByClassName('ifOrNot'),(e)=> {
     if (e.value==='If') {
-      posSym=z.value==='mtdWin'?'≈':z.value==='mtdReg'?'≅':'=';
+      posSym=z.value==='mtdDMA'?'≟':z.value==='mtdWin'?'≈':z.value==='mtdReg'?'≅':'=';
       e.innerHTML=posSym;
     } else {
       negSym=z.value==='mtdWin'?'≉':z.value==='mtdReg'?'≇':'≠';

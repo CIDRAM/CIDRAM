@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used for auxiliary rules (last modified: 2025.04.09).
+ * This file: Methods used for auxiliary rules (last modified: 2025.04.10).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -218,7 +218,7 @@ trait AuxiliaryRules
                         $PosSymbol = '≈';
                         $NegSymbol = '≉';
                     } else {
-                        $PosSymbol = '=';
+                        $PosSymbol = $Data['Method'] === 'Auto' ? '≟' : '=';
                         $NegSymbol = '≠';
                     }
                     $Iteration = 0;

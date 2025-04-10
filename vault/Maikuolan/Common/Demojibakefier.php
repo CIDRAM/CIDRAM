@@ -1,6 +1,6 @@
 <?php
 /**
- * Demojibakefier (last modified: 2023.09.14).
+ * Demojibakefier (last modified: 2024.11.07).
  *
  * Intended to normalise the character encoding of a given string to a
  * preferred character encoding when the given string's byte sequences don't
@@ -208,7 +208,7 @@ class Demojibakefier extends CommonAbstract
             return !preg_match('~[' . self::CTRL0 . '\x7F-\x9F\xA1\xAD\xBF-\xDE\xFB-\xFF]~', $String);
         }
         if ($Encoding === 'ISO-8859-11') {
-            return !preg_match('~[' . self::CTRL0 . '\X7F-\xA0\xDB-\xDE\xFC-\xFF]~', $String);
+            return !preg_match('~[' . self::CTRL0 . '\x7F-\xA0\xDB-\xDE\xFC-\xFF]~', $String);
         }
         if ($Encoding === 'CP1250') { // Windows-1250
             return !preg_match('~[' . self::CTRL0 . '\x7F\x81\x83\x88\x98\xAD]~', $String);
@@ -220,7 +220,7 @@ class Demojibakefier extends CommonAbstract
             return !preg_match('~[' . self::CTRL0 . '\x7F\x81\x8D\x8F\x90\x9D\xAD]~', $String);
         }
         if ($Encoding === 'CP1253') { // Windows-1253
-            return !preg_match('~[' . self::CTRL0 . '\X7F\x81\x88\x8A\x8C-\x8F\x90\x98\x9A\x9C-\x9F\xAA\xAD\xD2\xFF]~', $String);
+            return !preg_match('~[' . self::CTRL0 . '\x7F\x81\x88\x8A\x8C-\x8F\x90\x98\x9A\x9C-\x9F\xAA\xAD\xD2\xFF]~', $String);
         }
         if ($Encoding === 'CP1254') { // Windows-1254
             return !preg_match('~[' . self::CTRL0 . '\x7F\x81\x8D-\x8F\x90\x9D\x9E\xAD]~', $String);

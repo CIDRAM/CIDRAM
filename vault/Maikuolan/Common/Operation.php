@@ -1,6 +1,6 @@
 <?php
 /**
- * Operation handler (last modified: 2023.09.14).
+ * Operation handler (last modified: 2025.04.10).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -305,5 +305,105 @@ class Operation extends CommonAbstract
             return $this->ifCompare($Data, $ElseString, $AllowMethodCalls);
         }
         return '';
+    }
+
+    /**
+     * Set operation.
+     *
+     * @param mixed $Data Where to set the data.
+     * @param string $Instruction The instruction.
+     * @param bool $AllowMethodCalls Whether to allow method calls.
+     * @return bool True on success; False on failure.
+     */
+    public function set(&$Data, string $Instruction, bool $AllowMethodCalls = false): bool
+    {
+        if (strpos($Instruction, "\n") !== false) {
+            $Instruction = explode("\n", $Instruction);
+            $AllGood = true;
+            foreach ($Instruction as $Task) {
+                if (!$this->set($Data, $Task, $AllowMethodCalls)) {
+                    $AllGood = false;
+                    break;
+                }
+            }
+            return $AllGood;
+        }
+        $LCInstruction = strtolower($Instruction);
+        if (substr($LCInstruction, 0, 3) === 'if ') {
+            $Instruction = $this->ifCompare($Data, $Instruction, $AllowMethodCalls);
+        }
+        if ($Instruction === '') {
+            return true;
+        }
+        $Parts = preg_split('~([-+*/.]?=)~', $Instruction, 2, PREG_SPLIT_DELIM_CAPTURE);
+        if (count($Parts) !== 3) {
+            return false;
+        }
+        if (substr($Parts[2], 0, 1) === '{' && substr($Parts[2], -1) === '}') {
+            $Parts[2] = $this->dataTraverse($Data, substr($Parts[2], 1, -1), true, $AllowMethodCalls);
+        }
+        $Path = preg_split('~(?<!\\\\)\\.~', $Parts[0]) ?: [];
+        foreach ($Path as $Segment) {
+            if (!$Segment && $Segment !== 0 && $Segment !== '0') {
+                return false;
+            }
+            $Segment = str_replace('\.', '.', $Segment);
+            if (!preg_match('~\D~', $Segment)) {
+                $Segment = (int)$Segment;
+            }
+            if (is_object($Data)) {
+                if (property_exists($Data, $Segment)) {
+                    $Data = &$Data->$Segment;
+                    continue;
+                }
+                return false;
+            }
+            if (!is_array($Data)) {
+                $Data = [];
+            }
+            if (!isset($Data[$Segment])) {
+                $Data[$Segment] = [];
+            }
+            $Data = &$Data[$Segment];
+        }
+        if ($Parts[1] === '=') {
+            $Data = $Parts[2];
+            return true;
+        }
+        if ($Parts[1] === '-=') {
+            if (is_numeric($Data) && is_numeric($Parts[2])) {
+                $Data -= $Parts[2];
+                return true;
+            }
+            return false;
+        }
+        if ($Parts[1] === '+=') {
+            if (is_numeric($Data) && is_numeric($Parts[2])) {
+                $Data += $Parts[2];
+                return true;
+            }
+            return false;
+        }
+        if ($Parts[1] === '*=') {
+            if (is_numeric($Data) && is_numeric($Parts[2])) {
+                $Data *= $Parts[2];
+                return true;
+            }
+            return false;
+        }
+        if ($Parts[1] === '/=') {
+            if (is_numeric($Data) && is_numeric($Parts[2]) && $Parts[2] !== 0) {
+                $Data /= $Parts[2];
+                return true;
+            }
+            return false;
+        }
+        if ($Parts[1] === '.=') {
+            if (is_scalar($Data) && is_scalar($Parts[2])) {
+                $Data .= $Parts[2];
+                return true;
+            }
+        }
+        return false;
     }
 }

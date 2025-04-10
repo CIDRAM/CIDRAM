@@ -1,6 +1,6 @@
 <?php
 /**
- * L10N handler (last modified: 2024.08.08).
+ * L10N handler (last modified: 2025.02.12).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -303,7 +303,7 @@ class L10N extends CommonAbstract
     }
 
     /**
-     * Three grammatical numbers, type one. For e.g., Latvian, Prussian.
+     * Three grammatical numbers, type one. For e.g., Prussian.
      *
      * @param int $Int The plurality/number of things.
      * @return int 0: Singular form. 1: Other form. 2: Zero form.
@@ -749,10 +749,11 @@ class L10N extends CommonAbstract
 
     /**
      * Determine an appropriate integer rule to use based upon the specified
-     * ISO 639-1/639-2 language code.
+     * ISO 639-1/639-2/639-3 language code (two-digit code preferred wherever
+     * available).
      * @link https://www.loc.gov/standards/iso639-2/php/code_list.php
      * @link https://cldr.unicode.org/index/cldr-spec/plural-rules
-     * @link https://www.unicode.org/cldr/charts/46/supplemental/language_plural_rules.html
+     * @link https://www.unicode.org/cldr/charts/47/supplemental/language_plural_rules.html
      *
      * @param string $Code An ISO 639-1/639-2 language code.
      * @return string An appropriate integer rule to use.
@@ -856,19 +857,24 @@ class L10N extends CommonAbstract
             'ka',
             'kaj',
             'kcg',
+            'kg',
             'kk',
             'kkj',
             'kl',
             'ks',
             'ksb',
+            'ktu',
             'ku',
             'ky',
             'lb',
             'lg',
             'lij',
+            'ltg',
+            'lv',
             'mas',
             'mgo',
             'mi',
+            'mkw',
             'ml',
             'mn',
             'mr',
@@ -926,13 +932,13 @@ class L10N extends CommonAbstract
             'wae',
             'xh',
             'xog',
-            'yi'
+            'yi',
+            'yom'
         ], true)) {
             return 'int2Type4';
         }
 
         if (in_array($Code, [
-            'lv',
             'prg'
         ], true)) {
             return 'int3Type1';
@@ -1073,7 +1079,11 @@ class L10N extends CommonAbstract
 
     /**
      * Determine an appropriate fraction rule to use based upon the specified
-     * ISO 639-1/639-2 language code.
+     * ISO 639-1/639-2/639-3 language code (two-digit code preferred wherever
+     * available).
+     * @link https://www.loc.gov/standards/iso639-2/php/code_list.php
+     * @link https://cldr.unicode.org/index/cldr-spec/plural-rules
+     * @link https://www.unicode.org/cldr/charts/47/supplemental/language_plural_rules.html
      *
      * @param string $Code An ISO 639-1/639-2 language code.
      * @return string An appropriate fraction rule to use.

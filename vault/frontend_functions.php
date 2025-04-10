@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2025.04.09).
+ * This file: Front-end functions file (last modified: 2025.04.10).
  */
 
 /**
@@ -3543,7 +3543,7 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
                     $PosSymbol = '≈';
                     $NegSymbol = '≉';
                 } else {
-                    $PosSymbol = '=';
+                    $PosSymbol = $Data['Method'] === 'Auto' ? '≟' : '=';
                     $NegSymbol = '≠';
                 }
                 $Iteration = 0;

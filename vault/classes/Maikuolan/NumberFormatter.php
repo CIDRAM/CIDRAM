@@ -1,6 +1,6 @@
 <?php
 /**
- * Number formatter (last modified: 2024.06.26).
+ * Number formatter (last modified: 2025.03.19).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -1059,6 +1059,68 @@ class NumberFormatter extends CommonAbstract
     ];
 
     /**
+     * @var array Lookup table for unformatting a number.
+     */
+    private $UnformatTable = [
+        '0' => ['٠', '۰', '০', '०', '૦', '੦', '೦', '౦', '၀', '០', '๐', '໐', '꧐', '୦', '༠', '᠐', '０', '᱐', '〇', '零', 'Z', '௰'],
+        '1' => ['١', '۱', '১', '१', '૧', '੧', '೧', '౧', '၁', '១', '๑', '໑', '꧑', '୧', '༡', '᠑', '１', '᱑', '一', '壹', '፩', '፲', '௧'],
+        '2' => ['٢', '۲', '২', '२', '૨', '੨', '೨', '౨', '၂', '២', '๒', '໒', '꧒', '୨', '༢', '᠒', '２', '᱒', '二', '贰', '貳', '፪', '፳', '௨'],
+        '3' => ['٣', '۳', '৩', '३', '૩', '੩', '೩', '౩', '၃', '៣', '๓', '໓', '꧓', '୩', '༣', '᠓', '３', '᱓', '三', '叁', '叄', '፫', '፴', '௩'],
+        '4' => ['٤', '۴', '৪', '४', '૪', '੪', '೪', '౪', '၄', '៤', '๔', '໔', '꧔', '୪', '༤', '᠔', '４', '᱔', '四', '肆', '፬', '፵', '௪'],
+        '5' => ['٥', '۵', '৫', '५', '૫', '੫', '೫', '౫', '၅', '៥', '๕', '໕', '꧕', '୫', '༥', '᠕', '５', '᱕', '五', '伍', '፭', '፶', '௫'],
+        '6' => ['٦', '۶', '৬', '६', '૬', '੬', '೬', '౬', '၆', '៦', '๖', '໖', '꧖', '୬', '༦', '᠖', '６', '᱖', '六', '陆', '陸', '፮', '፷', '௬'],
+        '7' => ['٧', '۷', '৭', '७', '૭', '੭', '೭', '౭', '၇', '៧', '๗', '໗', '꧗', '୭', '༧', '᠗', '７', '᱗', '七', '柒', '፯', '፸', '௭'],
+        '8' => ['٨', '۸', '৮', '८', '૮', '੮', '೮', '౮', '၈', '៨', '๘', '໘', '꧘', '୮', '༨', '᠘', '８', '᱘', '八', '捌', '፰', '፹', '௮'],
+        '9' => ['٩', '۹', '৯', '९', '૯', '੯', '೯', '౯', '၉', '៩', '๙', '໙', '꧙', '୯', '༩', '᠙', '９', '᱙', '九', '玖', '፱', '፺', '௯']
+    ];
+
+    /**
+     * @var array Patterns for unformatting a number.
+     */
+    private $UnformatPattern = [
+        '~(?<!一|二|三|四|五|六|七|八|九|十|百|千)(十|百|千|拾|万|億|兆|京|垓)~' => '1\1',
+        '~^(፻|፼|十|百|千|拾|万|億|兆|京|垓|௰|௱|௲)~' => '1\1',
+        '~(፻|፼)(?!፲|፳|፴|፵|፶|፷|፸|፹|፺|\d)~' => '\1Z',
+        '~(፻[\dZ]|፼[\dZ])(?!፩|፪|፫|፬|፭|፮|፯|፰|፱|\d)~' => '\1Z',
+        '~(፲|፳|፴|፵|፶|፷|፸|፹|፺)(?!፩|፪|፫|፬|፭|፮|፯|፰|፱)~' => '\1Z',
+        '~(十|拾)$~' => '0',
+        '~(፻|百)$~' => '00',
+        '~千$~' => '000',
+        '~፼$~' => '0000'
+    ];
+
+    /**
+     * @var array Lookup table for unformatting a base-20 number.
+     */
+    private $UnformatTableKakMay = [
+        '0' => ['𝋀', '𝋠'],
+        '1' => ['𝋁', '𝋡'],
+        '2' => ['𝋂', '𝋢'],
+        '3' => ['𝋃', '𝋣'],
+        '4' => ['𝋄', '𝋤'],
+        '5' => ['𝋅', '𝋥'],
+        '6' => ['𝋆', '𝋦'],
+        '7' => ['𝋇', '𝋧'],
+        '8' => ['𝋈', '𝋨'],
+        '9' => ['𝋉', '𝋩'],
+        'a' => ['𝋊', '𝋪'],
+        'b' => ['𝋋', '𝋫'],
+        'c' => ['𝋌', '𝋬'],
+        'd' => ['𝋍', '𝋭'],
+        'e' => ['𝋎', '𝋮'],
+        'f' => ['𝋏', '𝋯'],
+        'g' => ['𝋐', '𝋰'],
+        'h' => ['𝋑', '𝋱'],
+        'i' => ['𝋒', '𝋲'],
+        'j' => ['𝋓', '𝋳']
+    ];
+
+    /**
+     * @var array Lookup table for unformatting a base-12 number.
+     */
+    private $UnformatTableDuoDec = ['a' => '↊', 'b' => '↋'];
+
+    /**
      * Constructor.
      *
      * @param string $Format Can use this to quickly set commonly used
@@ -1385,6 +1447,136 @@ class NumberFormatter extends CommonAbstract
     }
 
     /**
+     * Unformats the formatted number according to predefined patterns and lookup
+     * tables. Warning: Doesn't work for ALL formats (..yet).
+     *
+     * @param string $Number The number to unformat.
+     * @param string $DecSep The decimal separator to look for. When specified,
+     *      will attempt to unformat fractions. When not specified, won't.
+     * @param int $MinBase The minimum base to interpret from the source number.
+     * @return string The unformatted number (returned as a string rather than as
+     *      an integer or a float in order to retain decimal precision).
+     */
+    public function unformat(string $Number, string $DecSep = '', int $MinBase = 10): string
+    {
+        /** Guard. */
+        if ($MinBase < 2) {
+            $MinBase = 2;
+        } elseif ($MinBase > 35) {
+            $MinBase = 35;
+        }
+
+        /** Fractions. */
+        if ($DecSep !== '') {
+            if (($DSPos = strrpos($Number, $DecSep)) !== false) {
+                $Fraction = substr($Number, $DSPos + strlen($DecSep));
+                $Number = substr($Number, 0, $DSPos);
+            } else {
+                $Fraction = '';
+            }
+            if (preg_match('~\D~', $Fraction)) {
+                foreach ($this->UnformatTable as $Replacement => $Lookup) {
+                    $Fraction = str_replace($Lookup, $Replacement, $Fraction);
+                }
+                $KakMay = $Fraction;
+                foreach ($this->UnformatTableKakMay as $Replacement => $Lookup) {
+                    $KakMay = str_replace($Lookup, $Replacement, $KakMay);
+                }
+                if ($KakMay !== $Fraction) {
+                    if ($MinBase < 20) {
+                        $MinBase = 20;
+                    }
+                    $Fraction = $KakMay;
+                }
+                $DuoDec = $Fraction;
+                foreach ($this->UnformatTableDuoDec as $Replacement => $Lookup) {
+                    $DuoDec = str_replace($Lookup, $Replacement, $DuoDec);
+                }
+                if ($DuoDec !== $Fraction) {
+                    if ($MinBase < 12) {
+                        $MinBase = 12;
+                    }
+                    $Fraction = $DuoDec;
+                }
+                for ($Base = $MinBase; $Base < 36; $Base++) {
+                    if (strpos($Fraction, $this->Symbols[$Base]) !== false) {
+                        $MinBase = $Base;
+                    }
+                }
+            }
+            $Fraction = preg_replace('~0+$~', '', $Fraction);
+        } else {
+            $Fraction = '';
+        }
+
+        /** Whole numbers. */
+        if (preg_match('~\D~', $Number)) {
+            foreach ($this->UnformatPattern as $Pattern => $Replacement) {
+                $Number = preg_replace($Pattern, $Replacement, $Number);
+            }
+            foreach ($this->UnformatTable as $Replacement => $Lookup) {
+                $Number = str_replace($Lookup, $Replacement, $Number);
+            }
+            $KakMay = $Number;
+            foreach ($this->UnformatTableKakMay as $Replacement => $Lookup) {
+                $KakMay = str_replace($Lookup, $Replacement, $KakMay);
+            }
+            if ($KakMay !== $Number) {
+                if ($MinBase < 20) {
+                    $MinBase = 20;
+                }
+                $Number = $KakMay;
+            }
+            $DuoDec = $Number;
+            foreach ($this->UnformatTableDuoDec as $Replacement => $Lookup) {
+                $DuoDec = str_replace($Lookup, $Replacement, $DuoDec);
+            }
+            if ($DuoDec !== $Number) {
+                if ($MinBase < 12) {
+                    $MinBase = 12;
+                }
+                $Number = $DuoDec;
+            }
+            for ($Base = $MinBase; $Base < 36; $Base++) {
+                if (strpos($Number, $this->Symbols[$Base]) !== false) {
+                    $MinBase = $Base;
+                }
+            }
+            $Number = preg_replace('~^0+~', '', $Number);
+        }
+
+        /** Strip unwanted bytes and convert base if necessary. */
+        if ($MinBase === 10) {
+            if ($Fraction !== '') {
+                $Fraction = preg_replace('~\D~', '', $Fraction);
+            }
+            if ($Number !== '') {
+                $Number = preg_replace('~\D~', '', $Number);
+            }
+        } elseif ($MinBase > 10) {
+            $Range = $MinBase === 11 ? 'a' : 'a-' . $this->Symbols[$MinBase];
+            if ($Fraction !== '') {
+                $Fraction = $this->convertFraction(preg_replace('~[^\d' . $Range . ']~', '', $Fraction), $MinBase, 10, 50);
+            }
+            if ($Number !== '') {
+                $Number = base_convert(preg_replace('~[^\d' . $Range . ']~', '', $Number), $MinBase, 10);
+            }
+        } elseif ($MinBase < 10) {
+            if ($Fraction !== '') {
+                $Fraction = $this->convertFraction($Fraction, $MinBase, 10, 50);
+            }
+            if ($Number !== '') {
+                $Number = base_convert($Number, $MinBase, 10);
+            }
+        }
+
+        if ($Fraction === '') {
+            return $Number === '' ? '0' : $Number;
+        }
+        return $Number === '' ? '0.' . $Fraction : $Number . '.' . $Fraction;
+    }
+
+    /**
      * Prepare to convert a fraction.
      *
      * @param string $Fraction The fraction to convert.
@@ -1410,7 +1602,7 @@ class NumberFormatter extends CommonAbstract
                 if (isset($this->Symbols[$PreFloat[$Index]])) {
                     $PreFloat[$Index] = $this->Symbols[$PreFloat[$Index]];
                 }
-                $PreFloat[$Index] = ($PreFloat[$Index] / $From) * 10;
+                $PreFloat[$Index] = ((int)$PreFloat[$Index] / $From) * 10;
                 while ($PreFloat[$Index] >= 10) {
                     $Lookback = $Index;
                     while ($PreFloat[$Lookback] >= 10) {

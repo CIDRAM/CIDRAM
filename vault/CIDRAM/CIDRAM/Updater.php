@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods for updating CIDRAM components (last modified: 2024.12.26).
+ * This file: Methods for updating CIDRAM components (last modified: 2025.04.11).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1418,11 +1418,11 @@ trait Updater
                 );
             } elseif ((
                 isset($this->Components['Installed Versions'][$Dependency]) &&
-                $this->CIDRAM['Operation']->singleCompare($this->Components['Installed Versions'][$Dependency], $Constraints)
+                $this->OperationHandler->singleCompare($this->Components['Installed Versions'][$Dependency], $Constraints)
             ) || (
                 extension_loaded($Dependency) &&
                 ($this->Components['Installed Versions'][$Dependency] = (new \ReflectionExtension($Dependency))->getVersion()) &&
-                $this->CIDRAM['Operation']->singleCompare($this->Components['Installed Versions'][$Dependency], $Constraints)
+                $this->OperationHandler->singleCompare($this->Components['Installed Versions'][$Dependency], $Constraints)
             )) {
                 $ThisComponent['Dependency Status'] .= sprintf(
                     '<span class="txtGn">%s%s – %s</span><br />',
@@ -1433,7 +1433,7 @@ trait Updater
             } elseif (
                 $Source &&
                 isset($this->Components['Available Versions'][$Dependency]) &&
-                $this->CIDRAM['Operation']->singleCompare($this->Components['Available Versions'][$Dependency], $Constraints)
+                $this->OperationHandler->singleCompare($this->Components['Available Versions'][$Dependency], $Constraints)
             ) {
                 $ThisComponent['Dependency Status'] .= sprintf(
                     '<span class="txtOe">%s%s – %s</span><br />',

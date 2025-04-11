@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The updates page (last modified: 2023.12.13).
+ * This file: The updates page (last modified: 2025.04.11).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -186,7 +186,7 @@ foreach ($this->Components['Meta'] as $Key => &$this->Components['ThisComponent'
         $this->prepareExtendedDescription($this->Components['ThisComponent'], $Key);
     }
     if ($this->Components['ThisComponent']['StatClass'] === '' && isset($this->Components['ThisComponent']['Version'])) {
-        if (!empty($this->Components['ThisComponent']['Latest']) && $this->CIDRAM['Operation']->singleCompare(
+        if (!empty($this->Components['ThisComponent']['Latest']) && $this->OperationHandler->singleCompare(
             $this->Components['ThisComponent']['Version'],
             '<' . $this->Components['ThisComponent']['Latest']
         )) {
@@ -647,4 +647,4 @@ if ($this->FE['CronMode'] === '') {
 }
 
 /** Cleanup. */
-unset($this->FE['CFBoilerplate'], $this->CIDRAM['Operation']);
+unset($this->FE['CFBoilerplate']);

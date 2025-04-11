@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used for auxiliary rules (last modified: 2025.04.10).
+ * This file: Methods used for auxiliary rules (last modified: 2025.04.11).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -365,6 +365,14 @@ trait AuxiliaryRules
                     );
                 }
 
+                /** Additional instructions. */
+                $Output .= sprintf(
+                    '<div class="iCntr"><div class="iLabl s">%1$s</div><div class="iCntn"><textarea id="AdditionalInstructions[%2$s]" name="AdditionalInstructions[%2$s]" class="half">%3$s</textarea></div></div>',
+                    $this->L10N->getString('label.aux.Additional instructions'),
+                    $Current,
+                    $Data['Additional instructions'] ?? ''
+                );
+
                 /** Rule notes. */
                 $Output .= sprintf(
                     '<div class="iCntr"><div class="iLabl s">%1$s</div><div class="iCntn"><textarea id="Notes[%2$s]" name="Notes[%2$s]" class="half">%3$s</textarea></div></div>',
@@ -576,7 +584,7 @@ trait AuxiliaryRules
 
             /** Cite the file to run. */
             if (!empty($Data['Run']['File']) && $Label = $this->L10N->getString('label.aux.The name of the file to run')) {
-                $Output .= "\n            <li><div class=\"iCntr\"><div class=\"iLabl s\">" . $Label . '</div><div class="iCntn">' . $Data['Run']['File'] . '</div></div></li>';
+                $Output .= "\n          <li><div class=\"iCntr\"><div class=\"iLabl s\">" . $Label . '</div><div class="iCntn">' . $Data['Run']['File'] . '</div></div></li>';
             }
 
             /** Display other options and special flags. */
@@ -615,6 +623,11 @@ trait AuxiliaryRules
             $Output .= "\n          <li><div class=\"iCntr\"><div class=\"iLabl\"><em>" . $this->L10N->getString(
                 (!empty($Data['Logic']) && $Data['Logic'] !== 'Any') ? 'label.aux.logic_all' : 'label.aux.logic_any'
             ) . '</em></div></div></li>';
+
+            /** Describe any additional instructions. */
+            if (!empty($Data['Additional instructions']) && $Label = $this->L10N->getString('label.aux.Additional instructions')) {
+                $Output .= "\n          <li><div class=\"iCntr\"><div class=\"iLabl s\">" . $Label . '</div><div class="iCntn">' . str_replace(['<', '>', "\n"], ['&lt;', '&gt;', '<br />'], $Data['Additional instructions']) . '</div></div></li>';
+            }
 
             /** Finish writing new rule. */
             $Output .= "\n        </ul>\n      </li>";

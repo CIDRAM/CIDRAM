@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The auxiliary rules edit mode page (last modified: 2024.09.17).
+ * This file: The auxiliary rules edit mode page (last modified: 2025.04.11).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -84,6 +84,9 @@ if (isset($_POST['rulePriority']) && is_array($_POST['rulePriority'])) {
                     }
                 }
             }
+        }
+        if (!empty($_POST['AdditionalInstructions'][$Iterant])) {
+            $NewAuxArr[$RuleName]['Additional instructions'] = $this->desabotage($_POST['AdditionalInstructions'][$Iterant]);
         }
     }
     unset($FlagData, $FlagName, $FlagSetKey, $FlagSetName, $FlagSetValue, $RuleName);

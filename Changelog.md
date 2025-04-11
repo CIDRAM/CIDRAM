@@ -398,3 +398,7 @@
 - [2025.04.09]: Grapeshot and Neeva are dead. Removed support for both of them from verification and from the default signature bypasses.
 - [2025.04.09]: Added some JavaScript to the auxiliary rules pages to ensure that the symbols displayed for the "equals", "not equals" condition match type drop-down menu properly reflect the rule's actual comparison type and will auto-update when changed (#581).
 - *Plus all the regular signature updates.*
+
+### v3.9.0
+
+- [2025.04.11]: Added the ability to include additional instructions with an auxiliary rule, thus enabling capabilities beyond the standard options provided at the auxiliary rules page (#468, #619).

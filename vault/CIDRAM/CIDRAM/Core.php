@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2025.03.03).
+ * This file: The CIDRAM core (last modified: 2025.04.11).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -110,9 +110,17 @@ class Core
     public $NumberFormatter;
 
     /**
-     * @var \Maikuolan\Common\Demojibakefier Ensure correct data encoding.
+     * @var \Maikuolan\Common\Demojibakefier Used to ensure correct encoding,
+     *      hide bad data, etc.
      */
     public $Demojibakefier;
+
+    /**
+     * @var \Maikuolan\Common\Operation Needed for checking dependency version
+     *      constraints, for imports, for processing import and module
+     *      warnings, and for auxiliary rules additional instructions.
+     */
+    public $OperationHandler;
 
     /**
      * @var \CIDRAM\CIDRAM\Reporter Instantiate report orchestrator (used by some modules).
@@ -122,7 +130,7 @@ class Core
     /**
      * @var string CIDRAM version number (SemVer).
      */
-    public $ScriptVersion = '3.8.1';
+    public $ScriptVersion = '3.9.0';
 
     /**
      * @var string CIDRAM version identifier (complete notation).
@@ -416,11 +424,9 @@ class Core
         /** Load CIDRAM core L10N data. */
         $this->loadL10N($this->Vault . 'l10n' . DIRECTORY_SEPARATOR . 'core' . DIRECTORY_SEPARATOR);
 
-        /** Used to format numbers according to the specified configuration. */
         $this->NumberFormatter = new \Maikuolan\Common\NumberFormatter($this->Configuration['general']['numbers']);
-
-        /** Used to ensure correct encoding, hide bad data, etc. */
         $this->Demojibakefier = new \Maikuolan\Common\Demojibakefier();
+        $this->OperationHandler = new \Maikuolan\Common\Operation();
 
         /** Set optional custom path to the CIDRAM cache file. */
         $this->CachePath = $CachePath === '' ? $this->Vault . 'cache.dat' : $CachePath;
@@ -2516,7 +2522,11 @@ class Core
                                                 }
                                             }
                                         }
-                                        if ($this->auxAction($Mode, $Name, $Reason, $Target, $StatusCode, $Webhooks, $Flags, $Run)) {
+                                        $ReturnImmediately = $this->auxAction($Mode, $Name, $Reason, $Target, $StatusCode, $Webhooks, $Flags, $Run);
+                                        if (isset($Data['Additional instructions'])) {
+                                            $this->OperationHandler->set($this, $Data['Additional instructions'], true);
+                                        }
+                                        if ($ReturnImmediately) {
                                             return;
                                         }
                                         continue 4;
@@ -2557,7 +2567,11 @@ class Core
                                         }
                                     }
                                 }
-                                if ($this->auxAction($Mode, $Name, $Reason, $Target, $StatusCode, $Webhooks, $Flags, $Run)) {
+                                $ReturnImmediately = $this->auxAction($Mode, $Name, $Reason, $Target, $StatusCode, $Webhooks, $Flags, $Run);
+                                if (isset($Data['Additional instructions'])) {
+                                    $this->OperationHandler->set($this, $Data['Additional instructions'], true);
+                                }
+                                if ($ReturnImmediately) {
                                     return;
                                 }
                                 continue 3;
@@ -2586,7 +2600,11 @@ class Core
                             }
                         }
                     }
-                    if ($this->auxAction($Mode, $Name, $Reason, $Target, $StatusCode, $Webhooks, $Flags, $Run)) {
+                    $ReturnImmediately = $this->auxAction($Mode, $Name, $Reason, $Target, $StatusCode, $Webhooks, $Flags, $Run);
+                    if (isset($Data['Additional instructions'])) {
+                        $this->OperationHandler->set($this, $Data['Additional instructions'], true);
+                    }
+                    if ($ReturnImmediately) {
                         return;
                     }
                 }

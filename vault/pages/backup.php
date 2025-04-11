@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The backup page (last modified: 2024.09.17).
+ * This file: The backup page (last modified: 2025.04.11).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -111,13 +111,13 @@ if (isset($_POST['bckpAct'])) {
             } else {
                 /** Import configuration. */
                 if (isset($_POST['doConfig']) && $_POST['doConfig'] === 'on') {
-                    if ($this->CIDRAM['Operation']->singleCompare($Import['CIDRAM Version'], '<1.23|>=2 <2.10|>=4')) {
+                    if ($this->OperationHandler->singleCompare($Import['CIDRAM Version'], '<1.23|>=2 <2.10|>=4')) {
                         $this->FE['state_msg'] .= sprintf(
                             $this->L10N->getString('response.Can_t import from v%s data'),
                             $Import['CIDRAM Version']
                         ) . ' ' . $this->L10N->getString('response.Failed to update configuration') . '<br />';
                     } elseif (isset($Import['Configuration']) && is_array($Import['Configuration'])) {
-                        if ($this->CIDRAM['Operation']->singleCompare($Import['CIDRAM Version'], '<3')) {
+                        if ($this->OperationHandler->singleCompare($Import['CIDRAM Version'], '<3')) {
                             /** Renamed configuration directives (v1->v2->v3). */
                             foreach ([
                                 'general' => [
@@ -205,13 +205,13 @@ if (isset($_POST['bckpAct'])) {
                                     }
                                 }
                             }
-                        }
 
-                        /** Normalisation and modified configuration directives (v2->v3). */
-                        foreach (['general' => ['default_dns'], 'components' => ['ipv4', 'ipv6', 'modules', 'imports', 'events'], 'frontend' => ['remotes'], 'bypasses' => ['used']] as $CatKey => $Cat) {
-                            foreach ($Cat as $Pair) {
-                                if (isset($Import['Configuration'][$CatKey][$Pair])) {
-                                    $Import['Configuration'][$CatKey][$Pair] = preg_replace(['~(?<=^|,)[\r\t ]+|[\r\t ]+(?=,|$)~', '~,~'], ['', "\n"], $Import['Configuration'][$CatKey][$Pair]);
+                            /** Normalisation of modified configuration directives (v2->v3). */
+                            foreach (['general' => ['default_dns'], 'components' => ['ipv4', 'ipv6', 'modules', 'imports', 'events'], 'frontend' => ['remotes'], 'bypasses' => ['used']] as $CatKey => $Cat) {
+                                foreach ($Cat as $Pair) {
+                                    if (isset($Import['Configuration'][$CatKey][$Pair])) {
+                                        $Import['Configuration'][$CatKey][$Pair] = preg_replace(['~(?<=^|,)[\r\t ]+|[\r\t ]+(?=,|$)~', '~,~'], ['', "\n"], $Import['Configuration'][$CatKey][$Pair]);
+                                    }
                                 }
                             }
                         }
@@ -231,7 +231,7 @@ if (isset($_POST['bckpAct'])) {
                             $this->CIDRAM['AuxData'] = [];
                             $this->YAML->process($this->readFile($this->Vault . 'auxiliary.yml'), $this->CIDRAM['AuxData']);
                         }
-                        if ($this->CIDRAM['Operation']->singleCompare($Import['CIDRAM Version'], '<3')) {
+                        if ($this->OperationHandler->singleCompare($Import['CIDRAM Version'], '<3')) {
                             $this->callableRecursive($Import['Auxiliary Rules'], function (&$Arr, $Depth) {
                                 if ($Depth === 2) {
                                     if (isset($Arr['Profile']) && !isset($Arr['Profiles'])) {
@@ -264,7 +264,7 @@ if (isset($_POST['bckpAct'])) {
 
                 /** Import component updates metadata. */
                 if (isset($_POST['doMetadata']) && $_POST['doMetadata'] === 'on') {
-                    if ($this->CIDRAM['Operation']->singleCompare($Import['CIDRAM Version'], '<3')) {
+                    if ($this->OperationHandler->singleCompare($Import['CIDRAM Version'], '<3')) {
                         $this->FE['state_msg'] .= sprintf(
                             $this->L10N->getString('response.Can_t import from v%s data'),
                             $Import['CIDRAM Version']
@@ -283,7 +283,7 @@ if (isset($_POST['bckpAct'])) {
                             }
                             if (!isset($this->Components['Available Versions'][$Component])) {
                                 $this->FE['state_msg'] .= '<code>' . $Component . '</code> – ' . $this->L10N->getString('response.Not available at the upstream') . '<br />';
-                            } elseif (!isset($this->Components['Installed Versions'][$Component]) || $this->CIDRAM['Operation']->singleCompare(
+                            } elseif (!isset($this->Components['Installed Versions'][$Component]) || $this->OperationHandler->singleCompare(
                                 $this->Components['Installed Versions'][$Component],
                                 '<' . $this->Components['Available Versions'][$Component]
                             )) {
@@ -314,7 +314,7 @@ if (isset($_POST['bckpAct'])) {
 
                 /** Import IP tracking data. */
                 if (isset($_POST['doTracking']) && $_POST['doTracking'] === 'on') {
-                    if ($this->CIDRAM['Operation']->singleCompare($Import['CIDRAM Version'], '<3.3')) {
+                    if ($this->OperationHandler->singleCompare($Import['CIDRAM Version'], '<3.3')) {
                         $this->FE['state_msg'] .= sprintf(
                             $this->L10N->getString('response.Can_t import from v%s data'),
                             $Import['CIDRAM Version']
@@ -343,7 +343,7 @@ if (isset($_POST['bckpAct'])) {
 
                 /** Import statistics. */
                 if (isset($_POST['doStatistics']) && $_POST['doStatistics'] === 'on') {
-                    if ($this->CIDRAM['Operation']->singleCompare($Import['CIDRAM Version'], '<3.3')) {
+                    if ($this->OperationHandler->singleCompare($Import['CIDRAM Version'], '<3.3')) {
                         $this->FE['state_msg'] .= sprintf(
                             $this->L10N->getString('response.Can_t import from v%s data'),
                             $Import['CIDRAM Version']

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The auxiliary rules view mode page (last modified: 2024.09.17).
+ * This file: The auxiliary rules view mode page (last modified: 2025.04.11).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -142,6 +142,11 @@ if (isset($_POST['ruleName'], $_POST['conSourceType'], $_POST['conIfOrNot'], $_P
     /** Remove possible empty array. */
     if (empty($this->CIDRAM['AuxData'][$RuleName][$Action]['But not if matches'])) {
         unset($this->CIDRAM['AuxData'][$RuleName][$Action]['But not if matches']);
+    }
+
+    /** Construct additional instructions. */
+    if (isset($_POST['AdditionalInstructions']) && strlen($_POST['AdditionalInstructions'])) {
+        $this->CIDRAM['AuxData'][$RuleName]['Additional instructions'] = $this->desabotage($_POST['AdditionalInstructions']);
     }
 
     $Success = false;

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2024.09.17).
+ * This file: The CIDRAM front-end (last modified: 2025.04.11).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -355,9 +355,6 @@ class FrontEnd extends Core
 
         /** Initialise cache. */
         $this->initialiseCache();
-
-        /** Needed for checking dependency version constraints, for imports, and for processing import and module warnings. */
-        $this->CIDRAM['Operation'] = new \Maikuolan\Common\Operation();
 
         /** Warnings from imports and modules. */
         if (isset($this->CIDRAM['Problems']) && is_array($this->CIDRAM['Problems'])) {

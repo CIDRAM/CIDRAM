@@ -402,3 +402,4 @@
 ### v3.9.0
 
 - [2025.04.11]: Added the ability to include additional instructions with an auxiliary rule, thus enabling capabilities beyond the standard options provided at the auxiliary rules page (#468, #619).
+- [2025.04.12]: Removed the link to SourceForge, as their commit hook hasn't worked in a long time now, so they're not really viable as a repository backup location anymore.

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2025.04.11).
+ * This file: The CIDRAM front-end (last modified: 2025.04.12).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -791,12 +791,6 @@ class FrontEnd extends Core
 
             /** Provide the option to log out (omit home link). */
             $this->FE['bNav'] = $this->FE['LogoutButton'];
-
-            /** Build repository backup locations information. */
-            $this->FE['BackupLocations'] = implode(' | ', [
-                '<a href="https://bitbucket.org/Maikuolan/cidram" hreflang="en-US" target="_blank" rel="noopener external">CIDRAM@Bitbucket</a>',
-                '<a href="https://sourceforge.net/projects/cidram/" hreflang="en-US" target="_blank" rel="noopener external">CIDRAM@SourceForge</a>'
-            ]);
 
             /** Extension availability. */
             $this->FE['Extensions'] = [];

@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6_isps.dat
 
-# Version: 2025.79.0
-# Last modified: 2025.03.21
+# Version: 2025.105.0
+# Last modified: 2025.04.16
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -181,43 +181,21 @@ Tag: PJSC Rostelecom
 
 # ASNs 18101, 55836 ("Reliance Communications Ltd").
 # Indian domestic ISP. Brute-force, SSH, and webapp attacks, WordPress hack
-# attempts, port scans, and spam detected from here. Listing just the affected
-# ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 6 (AS18101), 60,272 (AS55836).
-# Updated: 2024.03.28
+# attempts, port scans, and spam detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 4 (AS18101), 36,445 (AS55836).
+# Updated: 2025.04.13
 
-2405:201:200c:9087::/64 Deny Spam
-2405:201:200c:9906::/64 Deny Spam
-2405:201:200c:9cfc::/64 Deny Spam
-2405:201:200c:a0f0::/64 Deny Spam
-2405:201:200c:f0dd::/64 Deny Spam
-2405:201:201c:4964::/64 Deny Spam
-2405:201:202e:b069::/64 Deny Spam
-2405:201:5015:f80d::/64 Deny Spam
-2405:201:5c01:60be::/64 Deny Spam
-2405:201:5c01:6133::/64 Deny Spam
-2405:201:5c01:613a::/64 Deny Spam
-2405:201:5c01:618c::/64 Deny Spam
-2405:201:5c01:6827::/64 Deny Spam
-2405:201:5c01:6877::/64 Deny Spam
-2405:201:5c01:6b76::/64 Deny Spam
-2405:201:5c01:6de9::/64 Deny Spam
-2405:201:5c09:210c::/64 Deny Spam
-2405:201:5c0a:2153::/64 Deny Spam
-2405:201:5c0c:a05d::/64 Deny Spam
-2405:204:128c:b733::/64 Deny Spam
-2405:204:3297:b85e::/64 Deny Spam
-2409:4050:e41:8c61::/64 Deny Spam
-2409:4050:2d95:ac23::/64 Deny Spam
-2409:4050:2d9f:3462::/64 Deny Spam
-2409:4050:2dc1:d75b::/64 Deny Spam
-2409:4051:301:8662::/64 Deny Spam
-2409:4053:2019:4854::/64 Deny Spam
-2409:4088:be89:7296::/64 Deny Spam
-2409:408d:1e82:10b::/64 Deny Spam
-2409:40d6:4:95e8::/64 Deny Spam
-2409:40d6:1f:5b51::/64 Deny Spam
-2409:40d6:1001:3126::/64 Deny Spam
+2405:201:303a:6010::/64 Deny Spam
+2405:201:4015:713a::/64 Deny Spam
+2405:201:5800:a177::/64 Deny Spam
+2405:201:5807:38b8::/64 Deny Spam
+2405:201:6816:11d3::/64 Deny Spam
+2409:4081:ae0f:b2f6::/64 Deny Spam
+2409:4090:8084:e001::/64 Deny Spam
+2409:40d0:2017:6f99::/64 Deny Spam
+2409:40f4:12d:b19f::/64 Deny Spam
+2409:40f4:112b:fec::/64 Deny Spam
 Origin: IN
 Profile: Domestic ISP;Infrastructure/Transit
 Tag: Reliance Communications
@@ -411,18 +389,6 @@ Tag: Rogers
 Origin: CZ
 Profile: Domestic ISP
 Tag: WEDOS Internet, a.s
-
-
-# ASNs 132761, 134331 ("Smartlink Solutions Pvt. Ltd").
-# Indian commercial broadband reseller. Port scans, hacking, and spam detected
-# from here. Manually checked all ranges; All ranges affected.
-# Stop Forum Spam (SFS) listings: 7 (AS134331).
-# Updated: 2023.05.28 / Checked: 2024.03.28
-
-2402:dc40::/32 Deny Attacks
-Origin: IN
-Profile: Commercial;Domestic ISP;Infrastructure/Transit
-Tag: Smartlink Solutions
 
 
 # ASN 263744 ("Udasha S.A").

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2025.04.10).
+ * This file: Optional security extras module (last modified: 2025.04.17).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -100,7 +100,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             '\.?rxr(?:_[\da-z]+)?|' .
             '\d{3,5}[a-z]{3,5}|\d+-?backdoor|0byte|0[xz]|10+|1337|1ppy|4price|85022df0ed31|991176|' .
             'a(?:b1ux1ft|dmin-heade\d*|hhygskn|lexus|lfa(?:-rex|_data|a?cgiapi|ioxi|new|shell)?\d*|njas|pismtp|xx)|' .
-            'b(?:0|3d2acc621a0|ak|ala|eence|ibil_0day)|' .
+            'b(?:0|3d2acc621a0|ak|ala|axa\d+|eence|ibil_0day)|' .
             'c(?:(?:9|10)\d+|adastro-2|asper[\da-z]+|d(?:.*tmp.*rm-rf|chmod.*\d{3,})|fom[-_]files|(?:gi-bin|(?:fm|ss))/(?:luci/;|moon|newgolden|radio|sgd|stok=/|uploader|well-known|wp-login)|lass(?:smtps|withtostring)|offee/fw|olors/blue/uploader|omfunctions|ong|ontentloader1|opypaths|ss/colors/coffee/index)|' .
             'd(?:7|eadcode\d*|elpaths|epotcv|isagraep|kiz|oiconvs|ummyyummy/wp-signup)|' .
             'e(?:e|pinyins)|' .
@@ -128,12 +128,12 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             'zone_hackbar(?:_beutify_other)?|' .
             '(?:plugins|themes)/(?:ccx|ioptimization|yyobang)|' .
             '版iisspy|大马|一句话(?:木马|扫描脚本程序)?' .
-            ')\.php[57]?(?:$|[/?])|' .
-            'funs\.php[57]?(?:$|[/?])~',
+            ')\.php[578]?(?:$|[/?])|' .
+            'funs\.php[578]?(?:$|[/?])~',
             $LCNrURI
         ), 'Probing for webshells/backdoors')) {
             $this->Reporter->report([15, 20, 21], ['Caught probing for webshells/backdoors. Host might be compromised.'], $this->BlockInfo['IPAddr']);
-        } // 2023.08.18 mod 2025.04.10
+        } // 2023.08.18 mod 2025.04.17
 
         /** Probing for vulnerable plugins or webapps. */
         if (

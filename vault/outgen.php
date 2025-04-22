@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2025.02.17).
+ * This file: Output generator (last modified: 2025.04.22).
  */
 
 /** Initialise cache. */
@@ -367,6 +367,7 @@ if ($CIDRAM['RL_Active'] && isset($CIDRAM['Factors']) && (!$CIDRAM['Config']['ra
 /** This code block only executed if signatures were triggered. */
 if (
     $CIDRAM['BlockInfo']['SignatureCount'] > 0 &&
+    empty($CIDRAM['Banned']) &&
     (!isset($CIDRAM['Profile']) || !is_array($CIDRAM['Profile']) || !in_array('Blocked Negative', $CIDRAM['Profile'], true))
 ) {
     $CIDRAM['Stage'] = 'CAPTCHA';
@@ -374,7 +375,6 @@ if (
     if (
         !empty($CIDRAM['Config']['recaptcha']['sitekey']) &&
         !empty($CIDRAM['Config']['recaptcha']['secret']) &&
-        empty($CIDRAM['Banned']) &&
         class_exists('\CIDRAM\Core\ReCaptcha') &&
         $CIDRAM['BlockInfo']['SignatureCount'] <= $CIDRAM['Config']['recaptcha']['signature_limit'] &&
         empty($CIDRAM['Config']['recaptcha']['forcibly_disabled']) &&
@@ -394,7 +394,6 @@ if (
     } elseif (
         !empty($CIDRAM['Config']['hcaptcha']['sitekey']) &&
         !empty($CIDRAM['Config']['hcaptcha']['secret']) &&
-        empty($CIDRAM['Banned']) &&
         class_exists('\CIDRAM\Core\HCaptcha') &&
         $CIDRAM['BlockInfo']['SignatureCount'] <= $CIDRAM['Config']['hcaptcha']['signature_limit'] &&
         empty($CIDRAM['Config']['hcaptcha']['forcibly_disabled']) &&

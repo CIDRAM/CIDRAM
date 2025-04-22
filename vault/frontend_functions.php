@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2025.04.10).
+ * This file: Front-end functions file (last modified: 2025.04.11).
  */
 
 /**
@@ -3882,7 +3882,7 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
 
         /** Cite the file to run. */
         if (!empty($Data['Run']['File']) && $Label = $CIDRAM['L10N']->getString('label_aux_run')) {
-            $Output .= "\n            <li><div class=\"iCntr\"><div class=\"iLabl s\">" . $Label . '</div><div class="iCntn">' . $Data['Run']['File'] . '</div></div></li>';
+            $Output .= "\n          <li><div class=\"iCntr\"><div class=\"iLabl s\">" . $Label . '</div><div class="iCntn">' . $Data['Run']['File'] . '</div></div></li>';
         }
 
         /** Display other options and special flags. */

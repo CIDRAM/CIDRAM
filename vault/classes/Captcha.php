@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Captcha class (last modified: 2023.02.04).
+ * This file: Captcha class (last modified: 2025.04.22).
  */
 
 namespace CIDRAM\Core;
@@ -130,5 +130,19 @@ class Captcha
             return $Salt;
         }
         return $this->CIDRAM['ReadFile']($this->CIDRAM['Vault'] . 'salt.dat');
+    }
+
+    /**
+     * Resets the signatures count and tracking.
+     *
+     * @return void
+     */
+    public function resetSCT()
+    {
+        $this->CIDRAM['BlockInfo']['SignatureCount'] = 0;
+        if (isset($this->CIDRAM['Tracking'][$this->CIDRAM['BlockInfo']['IPAddr']])) {
+            unset($this->CIDRAM['Tracking'][$this->CIDRAM['BlockInfo']['IPAddr']]);
+            $this->CIDRAM['Tracking-Modified'] = true;
+        }
     }
 }

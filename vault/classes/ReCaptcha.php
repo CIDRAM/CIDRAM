@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: ReCaptcha class (last modified: 2023.01.26).
+ * This file: ReCaptcha class (last modified: 2025.04.22).
  */
 
 namespace CIDRAM\Core;
@@ -63,13 +63,7 @@ class ReCaptcha extends Captcha
             /** Verify whether they've passed, update cookies, generate fields. */
             if ($UserHash && $UserMeld && password_verify($UserMeld, $UserHash)) {
                 $this->Bypass = true;
-                $this->CIDRAM['BlockInfo']['SignatureCount'] = 0;
-
-                /** Fix for infraction escalation bug. */
-                if (isset($this->CIDRAM['Tracking'][$this->CIDRAM['BlockInfo']['IPAddr']])) {
-                    unset($this->CIDRAM['Tracking'][$this->CIDRAM['BlockInfo']['IPAddr']]);
-                    $this->CIDRAM['Tracking-Modified'] = true;
-                }
+                $this->resetSCT();
             } else {
                 /** Set CAPTCHA status. */
                 $this->CIDRAM['BlockInfo']['CAPTCHA'] = $this->CIDRAM['L10N']->getString('state_enabled');
@@ -102,9 +96,7 @@ class ReCaptcha extends Captcha
                             false,
                             true
                         );
-
-                        /** Reset signature count. */
-                        $this->CIDRAM['BlockInfo']['SignatureCount'] = 0;
+                        $this->resetSCT();
 
                         /** Append to the hash list. */
                         $HastList .= $UserHash . ',' . ($this->CIDRAM['Now'] + ($this->CIDRAM['Config']['recaptcha']['expiry'] * 3600)) . "\n";
@@ -150,13 +142,7 @@ class ReCaptcha extends Captcha
              */
             if (strpos($BypassList, "\n" . $this->CIDRAM['IPAddr'] . ',') !== false) {
                 $this->Bypass = true;
-                $this->CIDRAM['BlockInfo']['SignatureCount'] = 0;
-
-                /** Fix for infraction escalation bug. */
-                if (isset($this->CIDRAM['Tracking'][$this->CIDRAM['BlockInfo']['IPAddr']])) {
-                    unset($this->CIDRAM['Tracking'][$this->CIDRAM['BlockInfo']['IPAddr']]);
-                    $this->CIDRAM['Tracking-Modified'] = true;
-                }
+                $this->resetSCT();
             } else {
                 /** Set CAPTCHA status. */
                 $this->CIDRAM['BlockInfo']['CAPTCHA'] = $this->CIDRAM['L10N']->getString('state_enabled');
@@ -166,8 +152,7 @@ class ReCaptcha extends Captcha
                     $Loggable = true;
                     $this->doResponse();
                     if ($this->Bypass) {
-                        /** Reset signature count. */
-                        $this->CIDRAM['BlockInfo']['SignatureCount'] = 0;
+                        $this->resetSCT();
 
                         /** Append to the IP bypass list. */
                         $BypassList .= $this->CIDRAM['IPAddr'] . ',' . (

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2025.03.03).
+ * This file: Protect traits (last modified: 2025.04.22).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -428,6 +428,7 @@ trait Protect
         if (
             isset($this->Stages['CAPTCHA:Enable']) &&
             $this->BlockInfo['SignatureCount'] > 0 &&
+            empty($this->CIDRAM['Banned']) &&
             !$this->hasProfile(['BadIP', 'Blacklisted', 'Redlisted'])
         ) {
             $this->Stage = 'CAPTCHA';
@@ -436,7 +437,6 @@ trait Protect
                 $this->Configuration['recaptcha']['sitekey'] !== '' &&
                 $this->Configuration['recaptcha']['secret'] !== '' &&
                 class_exists('\CIDRAM\CIDRAM\ReCaptcha') &&
-                empty($this->CIDRAM['Banned']) &&
                 $this->BlockInfo['SignatureCount'] <= $this->Configuration['recaptcha']['signature_limit'] &&
                 empty($this->Configuration['recaptcha']['forcibly_disabled']) &&
                 (
@@ -458,7 +458,6 @@ trait Protect
                 $this->Configuration['hcaptcha']['sitekey'] !== '' &&
                 $this->Configuration['hcaptcha']['secret'] !== '' &&
                 class_exists('\CIDRAM\CIDRAM\HCaptcha') &&
-                empty($this->CIDRAM['Banned']) &&
                 $this->BlockInfo['SignatureCount'] <= $this->Configuration['hcaptcha']['signature_limit'] &&
                 empty($this->Configuration['hcaptcha']['forcibly_disabled']) &&
                 (

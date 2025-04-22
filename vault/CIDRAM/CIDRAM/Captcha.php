@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Captcha class (last modified: 2023.02.04).
+ * This file: Captcha class (last modified: 2025.04.22).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -157,5 +157,17 @@ abstract class Captcha
                 }
             }
         }
+    }
+
+    /**
+     * Resets the signatures count and tracking.
+     *
+     * @return void
+     */
+    public function resetSCT(): void
+    {
+        $this->CIDRAM->BlockInfo['SignatureCount'] = 0;
+        $this->CIDRAM->Cache->deleteEntry('Tracking-' . $this->CIDRAM->BlockInfo['IPAddr']);
+        $this->CIDRAM->Cache->deleteEntry('Tracking-' . $this->CIDRAM->BlockInfo['IPAddr'] . '-MinimumTime');
     }
 }

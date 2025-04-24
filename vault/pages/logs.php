@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The logs page (last modified: 2023.12.13).
+ * This file: The logs page (last modified: 2025.04.24).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -30,6 +30,20 @@ $this->FE['SortOrder'] = (empty($this->CIDRAM['QueryVars']['sortOrder']) || $thi
 $this->FE['LogFiles'] = ['Files' => $this->arrayReplaceKeys($this->logsRecursiveList($this->Vault, $this->FE['SortOrder']), function (array $Item): string {
     return $Item['Filename'] ?? '';
 }), 'Out' => ''];
+
+/** Download a log file. */
+if (
+    isset($this->CIDRAM['QueryVars']['textMode'], $this->CIDRAM['QueryVars']['logfile']) &&
+    $this->CIDRAM['QueryVars']['textMode'] === 'download' &&
+    isset($this->FE['LogFiles']['Files'][$this->CIDRAM['QueryVars']['logfile']])
+) {
+    $this->Events->fireEvent('final');
+    header('Content-Type: application/octet-stream');
+    header('Content-Transfer-Encoding: Binary');
+    header('Content-disposition: attachment; filename="' . basename($this->CIDRAM['QueryVars']['logfile']) . '"');
+    echo $this->readFile($this->Vault . $this->CIDRAM['QueryVars']['logfile']);
+    die;
+}
 
 $this->FE['SearchInfo'] = '';
 $this->FE['SearchQuery'] = '';
@@ -431,18 +445,21 @@ if ($this->FE['TextModeLinks'] === 'fancy') {
     $this->FE['logfileData'] = '<textarea id="logsTA" readonly>' . trim($this->FE['logfileData']) . '</textarea>';
 }
 
+$DownloadLabel = $this->L10N->getString('field.Download');
+
 /** Generate a list of the logs. */
 foreach ($this->FE['LogFiles']['Files'] as $ThisLogFile) {
     $this->FE['LogFiles']['Out'] .= sprintf(
-        '      <a href="?cidram-page=logs&textMode=%1$s&sortOrder=%2$s%3$s&logfile=%4$s">%4$s</a> – %5$s<br />',
+        '      <a href="?cidram-page=logs&textMode=%1$s&sortOrder=%2$s%3$s&logfile=%4$s">%4$s</a> – %5$s <a title="%6$s" href="?cidram-page=logs&textMode=download&logfile=%4$s"><span class="navicon download"></span></a><br />',
         $this->FE['TextModeLinks'],
         $this->FE['SortOrder'],
         $this->FE['Remember'] ? '&remember=on' : '',
         $ThisLogFile['Filename'],
-        $ThisLogFile['Filesize']
+        $ThisLogFile['Filesize'],
+        $DownloadLabel
     ) . "\n";
 }
-unset($ThisLogFile);
+unset($ThisLogFile, $DownloadLabel);
 
 /** Calculate page load time (useful for debugging). */
 $this->FE['ProcessTime'] = microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];

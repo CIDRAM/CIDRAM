@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2025.04.11).
+ * This file: General methods used by the front-end (last modified: 2025.04.24).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -55,7 +55,7 @@ trait FrontEndMethods
                 continue;
             }
             $Arr[$Key] = ['Filename' => $this->canonical($ThisName), 'CanEdit' => false];
-            if (is_dir($Item)) {
+            if (is_dir($Item) && !is_file($Item)) {
                 $Arr[$Key]['Directory'] = true;
                 $Arr[$Key]['Filesize'] = 0;
                 $Arr[$Key]['Filetype'] = $this->L10N->getString('field.Directory');
@@ -138,7 +138,7 @@ trait FrontEndMethods
                     )) {
                         $Arr[$Key]['Icon'] = 'icon=audio';
                     }
-                    if (preg_match('/^(?:[BD]AT|CSS|[SDX]?HT[AM]L?|INC|JS|MD|NEON|I?NFO|PHP\d?|PY|TXT|YA?ML)$/', $Ext)) {
+                    if (preg_match('/^(?:[BD]AT|CFG|CSS|[SDPX]?HT[AM]L?|IN[CFI]|JS|LOG|MD|NEON|I?NFO|PHP\d?|PY|TXT|YA?ML)$/', $Ext)) {
                         $Arr[$Key]['CanEdit'] = true;
                     }
                 }
@@ -148,6 +148,38 @@ trait FrontEndMethods
                 $Arr[$Key]['Filesize'] .= ' ⏰ <em>' . $this->timeFormat(filemtime($Item), $this->Configuration['general']['time_format']) . '</em>';
             } else {
                 $Arr[$Key]['Filesize'] = '';
+            }
+        }
+        return $Arr;
+    }
+
+    /**
+     * Generates a list of the files in a working directory as array keys.
+     *
+     * @param string $Base The path to the working directory.
+     * @param bool $Rescursive Whether to search the directory recursively.
+     * @return array A list of the files in the working directory as array keys.
+     */
+    private function filesAsKeys(string $Base, bool $Rescursive = true): array
+    {
+        $Arr = [];
+        $Offset = strlen($Base);
+        if ($Rescursive) {
+            $List = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($Base, \RecursiveDirectoryIterator::FOLLOW_SYMLINKS), \RecursiveIteratorIterator::SELF_FIRST);
+            foreach ($List as $Item => $List) {
+                if (preg_match('~^(?:/\.\.|./\.|\.{3})$~', str_replace('\\', '/', substr($Item, -3)))) {
+                    continue;
+                }
+                $Arr[substr($Item, $Offset)] = true;
+            }
+        } else {
+            $List = new \DirectoryIterator($Base);
+            foreach ($List as $Item) {
+                $Item = $Item->getPathname();
+                if (is_dir($Item) || !is_file($Item) || preg_match('~^(?:/\.\.|./\.|\.{3})$~', str_replace('\\', '/', substr($Item, -3)))) {
+                    continue;
+                }
+                $Arr[substr($Item, $Offset)] = true;
             }
         }
         return $Arr;

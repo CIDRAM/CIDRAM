@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The file manager page (last modified: 2024.09.17).
+ * This file: The file manager page (last modified: 2025.04.24).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -277,7 +277,7 @@ $this->FE['FilesData'] = '';
 $this->FE['TotalSize'] = 0;
 
 /** Fetch files data. */
-$this->CIDRAM['FilesArray'] = $this->fileManagerRecursiveList($this->Vault);
+$Files = $this->fileManagerRecursiveList($this->Vault);
 
 if (!$DoughnutFile) {
     $this->FE['Doughnut'] = '';
@@ -350,7 +350,7 @@ if (!$DoughnutFile) {
 }
 
 /** Process files data. */
-array_walk($this->CIDRAM['FilesArray'], function ($ThisFile): void {
+array_walk($Files, function ($ThisFile): void {
     $Base = '<option value="%s"%s>%s</option>';
     $ThisFile['ThisOptions'] = '';
     if (!$ThisFile['Directory'] || $this->isDirEmpty($this->Vault . $ThisFile['Filename'])) {

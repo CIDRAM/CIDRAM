@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods for updating CIDRAM components (last modified: 2025.04.11).
+ * This file: Methods for updating CIDRAM components (last modified: 2025.04.24).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -427,9 +427,11 @@ trait Updater
      * copy of CIDRAM is running as a WordPress plugin.
      *
      * @param string $Versions Stable, minimum required, and tested against versions.
+     * @param ?int $BytesRemoved The number of bytes removed (optional).
+     * @param ?int $BytesAdded The number of bytes added (optional).
      * @return void
      */
-    private function wpVer(string $Versions = ''): void
+    private function wpVer(string $Versions = '', ?int &$BytesRemoved = null, ?int &$BytesAdded = null): void
     {
         if (
             empty($this->Components['RemoteMeta']['CIDRAM Core']['Version']) ||
@@ -447,10 +449,15 @@ trait Updater
         }
         if (!file_exists($this->Vault . '../../.htaccess')) {
             $Handle = fopen($this->Vault . '../../.htaccess', 'wb');
+            $HTAccess = "<Files \"cidram-configuration.yml\">\n  Order Allow,Deny\n  Deny from all\n</Files>\n";
             if (is_resource($Handle)) {
-                fwrite($Handle, "<Files \"cidram-configuration.yml\">  \n  Order Allow,Deny\n  Deny from all\n</Files>\n");
+                fwrite($Handle, $HTAccess);
                 fclose($Handle);
             }
+            if ($BytesAdded !== null) {
+                $BytesAdded += strlen($HTAccess);
+            }
+            unset($HTAccess, $Handle);
         }
         if (
             ($ThisData = $this->CIDRAM['Updater-IO']->readFile($this->Vault . '../readme.txt')) === '' ||
@@ -468,6 +475,27 @@ trait Updater
             $ThisData = preg_replace('~([\r\n]' . $Label . ':) [^\r\n]+([\r\n])~', '\1 ' . $Version . '\2', $ThisData, 1);
         }
         $this->CIDRAM['Updater-IO']->writeFile($this->Vault . '../readme.txt', $ThisData);
+        $BaseFiles = $this->filesAsKeys($this->Vault . '../', false);
+        unset($BaseFiles['cidram.php'], $BaseFiles['index.php'], $BaseFiles['LICENSE.txt'], $BaseFiles['readme.txt'], $BaseFiles['.htaccess']);
+        foreach ($BaseFiles as $File => $Junk) {
+            $Size = filesize($this->Vault . '../' . $File);
+            if (unlink($this->Vault . '../' . $File) && $BytesRemoved !== null) {
+                $BytesRemoved += $Size;
+            }
+        }
+        if (is_dir($this->Vault . '../languages')) {
+            $BaseFiles = $this->filesAsKeys($this->Vault . '../languages', false);
+            unset($BaseFiles['cidram.pot']);
+            foreach (['af', 'ar', 'bg_BG', 'de_DE', 'es_ES', 'es_PE', 'fa', 'fr_FR', 'hi_IN', 'id_ID', 'ja', 'lv', 'ms_MY', 'nb', 'pl_PL', 'pr_BR', 'pt_PT', 'ro', 'tr_TR', 'ur', 'vi'] as $Keep) {
+                unset($BaseFiles[$Keep . '.mo'], $BaseFiles[$Keep . '.po']);
+            }
+            foreach ($BaseFiles as $File => $Junk) {
+                $Size = filesize($this->Vault . '../' . $File);
+                if (unlink($this->Vault . '../' . $File) && $BytesRemoved !== null) {
+                    $BytesRemoved += $Size;
+                }
+            }
+        }
     }
 
     /**

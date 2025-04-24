@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2025.04.11).
+ * This file: Front-end functions file (last modified: 2025.04.24).
  */
 
 /**
@@ -338,7 +338,7 @@ $CIDRAM['FileManager-RecursiveList'] = function ($Base) use (&$CIDRAM) {
             continue;
         }
         $Arr[$Key] = ['Filename' => $ThisName, 'CanEdit' => false];
-        if (is_dir($Item)) {
+        if (is_dir($Item) && !is_file($Item)) {
             $Arr[$Key]['Directory'] = true;
             $Arr[$Key]['Filesize'] = 0;
             $Arr[$Key]['Filetype'] = $CIDRAM['L10N']->getString('field_filetype_directory');
@@ -429,7 +429,7 @@ $CIDRAM['FileManager-RecursiveList'] = function ($Base) use (&$CIDRAM) {
                 )) {
                     $Arr[$Key]['Icon'] = 'icon=audio';
                 }
-                if (preg_match('/^(?:[BD]AT|CSS|[SDX]?HT[AM]L?|INC|JS|MD|NEON|I?NFO|PHP\d?|PY|TXT|YA?ML)$/', $Ext)) {
+                if (preg_match('/^(?:[BD]AT|CFG|CSS|[SDPX]?HT[AM]L?|IN[CFI]|JS|LOG|MD|NEON|I?NFO|PHP\d?|PY|TXT|YA?ML)$/', $Ext)) {
                     $Arr[$Key]['CanEdit'] = true;
                 }
             }

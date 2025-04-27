@@ -409,4 +409,5 @@
 - [2025.04.12]: Removed the link to SourceForge, as their commit hook hasn't worked in a long time now, so they're not really viable as a repository backup location anymore.
 - [2025.04.24]: Slightly improved file management.
 - [2025.04.24]: Added download icons to allow log files to be downloaded directly from the front-end logs page.
+- [2025.01~04]: Added L10N for Marathi.
 - *Plus all the regular signature updates.*

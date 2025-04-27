@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2025.04.12).
+# This file: French language data for the front-end (last modified: 2025.04.27).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -25,7 +25,9 @@
 ##/
 
 Abuse category:
- Bad web bot: "Mauvais robot Web (recherche d'adresses e-mail, de contenu, robots d'exploration qui n'honorent pas le fichier robots.txt, requêtes excessives, usurpation d'agent utilisateur, etc)."
+ Bad web bot:
+  fr-FR: "Mauvais robot Web (recherche d'adresses e-mail, de contenu, robots d'exploration qui n'honorent pas le fichier robots.txt, requêtes excessives, usurpation d'agent utilisateur, etc)."
+  fr-CA: "Mauvais robot Web (recherche d'adresses courriel, de contenu, robots d'exploration qui n'honorent pas le fichier robots.txt, requêtes excessives, usurpation d'agent utilisateur, etc)."
  Brute-force attacks: "Attaques par force brute (attaques par force brute d'informations d'identification sur les connexions de pages Web, SMTP, RDP, etc)."
  Categories (at least one is required): "Catégories (au moins une est requise)"
  CMS blog comment spam: "Spam de commentaires de blog CMS."
@@ -33,8 +35,12 @@ Abuse category:
  DDoS attacks: "Attaques DDoS (fait généralement partie d'un botnet)."
  DNS compromise: "Compromis du DNS (modification des enregistrements DNS entraînant une redirection incorrecte)."
  DNS poisoning: "Empoisonnement du DNS."
- Email sender spoofing: "Usurpation de l'expéditeur d'e-mail."
- Email spam: "Spam par e-mail (contenu d'e-mail indésirable, pièces jointes infectées, e-mail de phishing, etc)."
+ Email sender spoofing:
+  fr-FR: "Usurpation de l'expéditeur d'e-mail."
+  fr-CA: "Usurpation de l'expéditeur du courriel."
+ Email spam:
+  fr-FR: "Spam par e-mail (contenu d'e-mail indésirable, pièces jointes infectées, e-mail de phishing, etc)."
+  fr-CA: "Spam par courriel (contenu de courriel indésirable, pièces jointes infectées, courriel d'hameçonnage, etc)."
  Exploited host: "Hôte exploité (l'hôte est probablement infecté par un logiciel malveillant et est utilisé pour d'autres attaques ou pour héberger du contenu malveillant)."
  FTP brute-force attacks: "Attaques FTP par force brute."
  Fraudulent VoIP: "VoIP frauduleuse."
@@ -42,7 +48,9 @@ Abuse category:
  Hacking: "Hacking."
  IoT targeted: "Abus ciblé par l'IoT. Incluez des informations sur le type d'appareil ciblé dans les commentaires."
  Open proxy, open relay, or tor endpoint: "Proxy ouvert, relais ouvert, ou un point de terminaison tor."
- Phishing: "Sites et/ou e-mails de phishing."
+ Phishing:
+  fr-FR: "Sites et/ou e-mails de phishing."
+  fr-CA: "Sites et/ou courriels d'hameçonnage."
  Ping of death: "Ping de la mort (paquet IP surdimensionné)."
  Port scans: "Analyses de ports (analyse des ports ouverts et des services vulnérables)."
  SQL injection: "Injection SQL."
@@ -57,7 +65,9 @@ Extended Description:
  Bad hosts blocker module: "Bloque les hôtes fréquemment utilisés par les spammeurs, les hackers et autres entités malveillantes."
  Bot user agents module: "Bloque les agents utilisateurs associés aux bots indésirables et aux activités malveillantes."
  Bypasses: "Les fichiers pour contourner les signatures standard qui sont normalement inclus dans le paquet principal."
- Chart.js: "Permet à l'interface frontale de générer des diagrammes à secteurs.<br />{{Links.Chart.js}} est disponible via la licence {{Links.MIT}}."
+ Chart.js:
+  fr-FR: "Permet à l'interface frontale de générer des diagrammes à secteurs.<br />{{Links.Chart.js}} est disponible via la licence {{Links.MIT}}."
+  fr-CA: "Permet à l'interface frontale de générer des diagrammes à secteurs.<br />{{Links.Chart.js}} est disponible en vertu de la licence {{Links.MIT}}."
  Cookie scanner module: "Fournit quelques protections limitées contre les cookies dangereux."
  HTTP version checker module: "Permet de bloquer des protocoles spécifiques et des versions HTTP via la configuration CIDRAM."
  IP-API module: "Exploite l'API {{Links.IP-API}} pour fournir la possibilité de rechercher des codes de pays et des ASN pour CIDRAM, permettre le blocage ou la mise en liste blanche des ASN et des pays via la configuration CIDRAM, et fournir un moyen de vérification des réseaux sociaux pour vérifier les requêtes de Facebook. (Si vous utilisez ce module, vous n'aurez pas besoin d'utiliser le module BGPView, car ils ont le même objectif)."
@@ -72,7 +82,9 @@ Extended Description:
  IPv6-Nonblocking: *ExtDesNonblocking
  IPv6-Other: *ExtDesOther
  Optional security extras module: "Fournit quelques protections limitées contre divers vecteurs d'attaque communément utilisé dans les requêtes."
- PHPMailer: "Requis pour l'utilisation de toute fonctionnalité impliquant l'envoi d'e-mails.<br />{{Links.PHPMailer.PHPMailer}} est disponible via la licence {{Links.PHPMailer.License}}."
+ PHPMailer:
+  fr-FR: "Requis pour l'utilisation de toute fonctionnalité impliquant l'envoi d'e-mails.<br />{{Links.PHPMailer.PHPMailer}} est disponible via la licence {{Links.PHPMailer.License}}."
+  fr-CA: "Requis pour l'utilisation de toute fonctionnalité impliquant l'envoi des courriels.<br />{{Links.PHPMailer.PHPMailer}} est disponible en vertu de la licence {{Links.PHPMailer.License}}."
  Project Honeypot module: "Bloque les requêtes des adresses IP répertoriées dans Project Honeypot."
  Protocol blocker module: "Fournit la possibilité de bloquer des protocoles de requête spécifiques via la configuration (par exemple, HTTP/0.9, HTTP/1.1, SPDY/3.0, etc). Remarque\_: N'aura aucun effet pour les sites Web qui acheminent via des services qui réécrivent les requêtes pour tous utiliser exactement le même protocole, tel que Cloudflare."
  Referrer spam module: "Le blocage basé sur le spam référent ne procure généralement aucun avantage de sécurité significatif, mais dans certains cas, cela pourrait être utile à certains utilisateurs pour rassembler plus d'informations sur les requêtes et pour pouvoir les rapporter."
@@ -191,10 +203,16 @@ config:
  general_default_dns: "Une liste de serveurs DNS à utiliser pour les recherches de noms d'hôtes. AVERTISSEMENT\_: Ne pas changer si vous ne sais pas ce que vous faites\_!"
  general_default_timeout: "Délai d'attente par défaut à utiliser pour les requêtes externes\_? Défaut = 12 secondes."
  general_disabled_channels: "Ceci peut être utilisé pour empêcher CIDRAM d'utiliser des canaux particuliers lors de l'envoi de requêtes (par exemple, lors de la mise à jour, lors de l'extraction de métadonnées de composant, etc)."
- general_email_notification_address: "Si vous avez choisi de recevoir des notifications de CIDRAM par e-mail, par exemple, lorsque des règles auxiliaires spécifiques sont déclenchées, vous pouvez spécifier ici l'adresse du destinataire de ces notifications."
- general_email_notification_name: "Si vous avez choisi de recevoir des notifications de CIDRAM par e-mail, par exemple, lorsque des règles auxiliaires spécifiques sont déclenchées, vous pouvez spécifier ici le nom du destinataire de ces notifications."
+ general_email_notification_address:
+  fr-FR: "Si vous avez choisi de recevoir des notifications de CIDRAM par e-mail, par exemple, lorsque des règles auxiliaires spécifiques sont déclenchées, vous pouvez spécifier ici l'adresse du destinataire de ces notifications."
+  fr-CA: "Si vous avez choisi de recevoir des notifications de CIDRAM par courriel, par exemple, lorsque des règles auxiliaires spécifiques sont déclenchées, vous pouvez spécifier ici l'adresse du destinataire de ces notifications."
+ general_email_notification_name:
+  fr-FR: "Si vous avez choisi de recevoir des notifications de CIDRAM par e-mail, par exemple, lorsque des règles auxiliaires spécifiques sont déclenchées, vous pouvez spécifier ici le nom du destinataire de ces notifications."
+  fr-CA: "Si vous avez choisi de recevoir des notifications de CIDRAM par courriel, par exemple, lorsque des règles auxiliaires spécifiques sont déclenchées, vous pouvez spécifier ici le nom du destinataire de ces notifications."
  general_email_notification_when: "Quand envoyer des notifications après avoir été générés."
- general_emailaddr: "Si vous souhaitez, vous pouvez fournir une adresse e-mail ici à donner aux utilisateurs quand ils sont bloqués, pour qu'ils utilisent comme un point de contact pour support et/ou assistance dans le cas d'eux étant bloqué par erreur. AVERTISSEMENT\_: Tout de l'adresse e-mail vous fournissez ici sera très certainement être acquis par les robots des spammeurs et voleurs de contenu au cours de son être utilisés ici, et donc, il est recommandé fortement que si vous choisissez pour fournir une adresse e-mail ici, de vous assurer que l'adresse e-mail que vous fournissez ici est une adresse jetable et/ou une adresse que ne vous dérange pas d'être spammé (en d'autres termes, vous ne voulez probablement pas d'utiliser votre adresses e-mail personnel primaire ou d'affaires primaire)."
+ general_emailaddr:
+  fr-FR: "Si vous souhaitez, vous pouvez fournir une adresse e-mail ici à donner aux utilisateurs quand ils sont bloqués, pour qu'ils utilisent comme un point de contact pour support et/ou assistance dans le cas d'eux étant bloqué par erreur. AVERTISSEMENT\_: Tout de l'adresse e-mail vous fournissez ici sera très certainement être acquis par les robots des spammeurs et voleurs de contenu au cours de son être utilisés ici, et donc, il est recommandé fortement que si vous choisissez pour fournir une adresse e-mail ici, de vous assurer que l'adresse e-mail que vous fournissez ici est une adresse jetable et/ou une adresse que ne vous dérange pas d'être spammé (en d'autres termes, vous ne voulez probablement pas d'utiliser votre adresses e-mail personnel primaire ou d'affaires primaire)."
+  fr-CA: "Si vous le souhaitez, vous pouvez fournir une adresse courriel ici à donner aux utilisateurs quand ils sont bloqués, pour qu'ils utilisent comme point de contact pour le soutien et/ou l'assistance dans le cas où ils sont bloqués par erreur. AVERTISSEMENT\_: Tout de l'adresse courriel que vous fournissez ici sera très certainement acquis par les robots des pourrielleurs et des voleurs de contenu au cours de son utilisation ici, et donc, il est fortement recommandé que si vous choisissez de fournir une adresse courriel ici, de vous assurer que l'adresse courriel que vous fournissez ici est une adresse jetable et/ou une adresse que ne vous dérange pas d'être spammé (en d'autres termes, vous ne voulez probablement pas utiliser votre adresse courriel personnelle primaire ou d'affaires primaire)."
  general_emailaddr_display_style: "Comment préférez-vous que l'adresse électronique soit présentée aux utilisateurs\_?"
  general_fields: "Contrôles des champs lors d'un événement de bloc (lorsqu'une requête est bloquée)."
  general_force_hostname_lookup: "Forcer les recherches de nom d'hôte\_? True = Oui\_; False = Non [Défaut]. Les recherches de nom d'hôte sont normalement effectuées «\_au besoin\_», mais peuvent être forcées pour toutes les requêtes. Cela peut être utile pour fournir des informations plus détaillées dans les fichiers journaux, mais peut également avoir un effet légèrement négatif sur les performances."
@@ -244,19 +262,41 @@ config:
  logging_serialised_log: "Un fichier sérialisé pour enregistrement de toutes les tentatives d'accès bloquées. Spécifier un fichier, ou laisser vide à désactiver."
  logging_standard_log: "Un fichier lisible par l'homme pour enregistrement de toutes les tentatives d'accès bloquées. Spécifier un fichier, ou laisser vide à désactiver."
  logging_truncate: "Tronquer les fichiers journaux lorsqu'ils atteignent une certaine taille\_? La valeur est la taille maximale en o/Ko/Mo/Go/To qu'un fichier journal peut croître avant d'être tronqué. La valeur par défaut de 0Ko désactive la troncature (les fichiers journaux peuvent croître indéfiniment). Remarque\_: S'applique aux fichiers journaux individuels\_! La taille des fichiers journaux n'est pas considérée collectivement."
- phpmailer: "Configuration pour PHPMailer (utilisé pour l'authentification à deux facteurs et pour les notifications par e-mail)."
- phpmailer_add_reply_to_address: "L'adresse de réponse à citer lors de l'envoi d'e-mail via SMTP."
- phpmailer_add_reply_to_name: "Le nom pour répondre à citer lors de l'envoi d'e-mail via SMTP."
+ phpmailer:
+  fr-FR: "Configuration pour PHPMailer (utilisé pour l'authentification à deux facteurs et pour les notifications par e-mail)."
+  fr-CA: "Configuration pour PHPMailer (utilisé pour l'authentification à deux facteurs et pour les notifications par courriel)."
+ phpmailer_add_reply_to_address:
+  fr-FR: "L'adresse de réponse à citer lors de l'envoi d'e-mail via SMTP."
+  fr-CA: "L'adresse de réponse à citer lors de l'envoi d'un courriel par SMTP."
+ phpmailer_add_reply_to_name:
+  fr-FR: "Le nom pour répondre à citer lors de l'envoi d'e-mail via SMTP."
+  fr-CA: "Le nom pour répondre à citer lors de l'envoi d'un courriel par SMTP."
  phpmailer_event_log: "Fichier pour l'enregistrement de tous les événements relatifs à PHPMailer. Spécifier un fichier, ou laisser vide à désactiver."
- phpmailer_host: "Hôte SMTP à utiliser pour les e-mails sortants."
- phpmailer_password: "Le mot de passe à utiliser lors de l'envoi d'e-mail via SMTP."
- phpmailer_port: "Le numéro de port à utiliser pour l'e-mail sortant. Défaut = 587."
- phpmailer_set_from_address: "L'adresse de l'expéditeur à citer lors de l'envoi d'e-mail via SMTP."
- phpmailer_set_from_name: "Le nom de l'expéditeur à citer lors de l'envoi d'e-mail via SMTP."
- phpmailer_skip_auth_process: "Définir cette directive sur <code>true</code> instruit à PHPMailer de sauter le processus d'authentification qui se produit normalement lors de l'envoi d'e-mail via SMTP. Cela doit être évité, car sauter du processus peut exposer l'e-mail sortant aux attaques MITM, mais peut être nécessaire dans les cas où ce processus empêche PHPMailer de se connecter à un serveur SMTP."
+ phpmailer_host:
+  fr-FR: "Hôte SMTP à utiliser pour les e-mails sortants."
+  fr-CA: "Hôte SMTP à utiliser pour les courriels sortants."
+ phpmailer_password:
+  fr-FR: "Le mot de passe à utiliser lors de l'envoi d'e-mail via SMTP."
+  fr-CA: "Le mot de passe à utiliser lors de l'envoi d'un courriel par SMTP."
+ phpmailer_port:
+  fr-FR: "Le numéro de port à utiliser pour l'e-mail sortant. Défaut = 587."
+  fr-CA: "Le numéro de port à utiliser pour le courriel sortant. Défaut = 587."
+ phpmailer_set_from_address:
+  fr-FR: "L'adresse de l'expéditeur à citer lors de l'envoi d'e-mail via SMTP."
+  fr-CA: "L'adresse de l'expéditeur à citer lors de l'envoi d'un courriel par SMTP."
+ phpmailer_set_from_name:
+  fr-FR: "Le nom de l'expéditeur à citer lors de l'envoi d'e-mail via SMTP."
+  fr-CA: "Le nom de l'expéditeur à citer lors de l'envoi d'un courriel par SMTP."
+ phpmailer_skip_auth_process:
+  fr-FR: "Définir cette directive sur <code>true</code> instruit à PHPMailer de sauter le processus d'authentification qui se produit normalement lors de l'envoi d'e-mail via SMTP. Cela doit être évité, car sauter du processus peut exposer l'e-mail sortant aux attaques MITM, mais peut être nécessaire dans les cas où ce processus empêche PHPMailer de se connecter à un serveur SMTP."
+  fr-CA: "Définir cette directive sur <code>true</code> demande à PHPMailer de sauter le processus d'authentification qui se produit normalement lors de l'envoi de courriel par SMTP. Cela doit être évité, car sauter du processus peut exposer le courriel sortant aux attaques MITM, mais peut être nécessaire dans les cas où ce processus empêche PHPMailer de se connecter à un serveur SMTP."
  phpmailer_smtp_auth: "Cette directive détermine si les sessions SMTP doivent être authentifiées (elles doivent généralement être laissées seules)."
- phpmailer_smtp_secure: "Le protocole à utiliser lors de l'envoi d'e-mail via SMTP (TLS ou SSL)."
- phpmailer_username: "Le nom d'utilisateur à utiliser lors de l'envoi d'e-mail via SMTP."
+ phpmailer_smtp_secure:
+  fr-FR: "Le protocole à utiliser lors de l'envoi d'e-mail via SMTP (TLS ou SSL)."
+  fr-CA: "Le protocole à utiliser lors de l'envoi d'un courriel par SMTP (TLS ou SSL)."
+ phpmailer_username:
+  fr-FR: "Le nom d'utilisateur à utiliser lors de l'envoi d'e-mail via SMTP."
+  fr-CA: "Le nom d'utilisateur à utiliser lors de l'envoi d'un courriel par SMTP."
  projecthoneypot: "Configuration pour le module Project Honeypot."
  projecthoneypot_api_key: *EnterAPIKey
  projecthoneypot_max_age_in_days: "L'âge maximal en jours pour lequel les rapports seront pris en compte lors de l'exécution de recherches. Défaut = 365."
@@ -322,7 +362,9 @@ config:
  tor: "Configuration pour le module bloqueur de Tor."
  verification: "Configuration pour vérifier d'où proviennent les requêtes."
  verification_adjust: "Contrôles pour ajuster d'autres fonctionnalités dans le contexte de la vérification."
- verification_other: "Contrôles pour vérifier d'autres types de requêtes lorsque cela est possible."
+ verification_other:
+  fr-FR: "Contrôles pour vérifier d'autres types de requêtes lorsque cela est possible."
+  fr-CA: "Contrôles pour vérifier d'autres types de requêtes lorsque c'est possible."
  verification_search_engines: "Contrôles pour vérifier les requêtes des moteurs de recherche."
  verification_social_media: "Contrôles pour vérifier les requêtes des plateformes de médias sociaux."
 confirm:
@@ -391,7 +433,7 @@ field:
  Update all: "Tout mettre à jour"
  Update signature files: "Mettre à jour les fichiers de signature"
  Update: "Mettre à jour"
- Upload new file: "Télécharger un nouveau fichier"
+ Upload new file: {"fr-FR": "Télécharger un nouveau fichier", "fr-CA": "Téléverser un nouveau fichier"}
  Use system default timezone: "Utilisez le fuseau horaire par défaut du système."
  Username: "Nom d'Utilisateur"
  Verified search engine and social media requests: "Les requêtes vérifiés des moteur de recherche et médias sociaux"
@@ -702,7 +744,7 @@ label:
   Create new rule: "Créer une nouvelle règle"
   Detect the method for testing the conditions automatically: "Détecter la méthode pour tester les conditions automatiquement."
   Disable this rule: "Désactiver cette règle"
-  Email: "E-mail"
+  Email: {"fr-FR": "E-mail", "fr-CA": "Courriel"}
   Enable this rule: "Activer cette règle"
   Enforce default IP tracking options: "Appliquer les options de surveillance d'IP défaut"
   Enforce extended IP tracking options: "Appliquer les options de surveillance d'IP étendues"
@@ -723,7 +765,9 @@ label:
   Notes: "Remarques (apparaît seulement sur cette page, et n'affecte pas la règle)\_:"
   Other options and special flags: "Autres options et drapeaux spéciaux\_:"
   Requires PHPMailer: "Nécessite PHPMailer."
-  Send trigger notification to the configured email notification address: "Envoyez une notification de déclenchement à l'adresse e-mail configurée pour les notifications"
+  Send trigger notification to the configured email notification address:
+   fr-FR: "Envoyez une notification de déclenchement à l'adresse e-mail configurée pour les notifications"
+   fr-CA: "Envoyer une notification de déclenchement à l'adresse courriel configurée pour les notifications"
   Suppress logging: "Supprimer la journalisation"
   Suppress output template: "Supprime le modèle de sortie"
   Suppress reports: "Supprimer les rapports"
@@ -810,11 +854,17 @@ macro:
   uninstall_modules: "Désinstallez tous les modules inactifs."
   uninstall_signatures: "Désinstallez tous les fichiers de signature inactifs."
 msg_subject_2fa: "Authentification à deux facteurs"
-msg_template_2fa: |
- <center><p>Bonjour, %s.<br /><br />
- Votre code d'authentification à deux facteurs pour l'accès frontal de CIDRAM :</p>
- <h1>%s</h1>
- <p>Ce code expire dans 10 minutes.</p></center>
+msg_template_2fa:
+ fr-FR: |
+  <center><p>Bonjour, %s.<br /><br />
+  Votre code d'authentification à deux facteurs pour l'accès frontal de CIDRAM :</p>
+  <h1>%s</h1>
+  <p>Ce code expire dans 10 minutes.</p></center>
+ fr-CA: |
+  <center><p>Salut, %s.<br /><br />
+  Votre code d'authentification à deux facteurs pour l'accès frontal de CIDRAM :</p>
+  <h1>%s</h1>
+  <p>Ce code expire dans 10 minutes.</p></center>
 notice_new_major_version: "Remarque\_: %s est maintenant disponible (vous utilisez %s). Vous satisfaire aux exigences PHP minimales de cette version. Cependant, certaines étapes manuelles sont nécessaires pour la mise à jour."
 operator_<: "Doit être inférieur à (comparaison numérique)."
 operator_=: "Doit être une correspondance exacte (comparaison directe de chaînes)."
@@ -877,13 +927,13 @@ response:
  Failed to update statistics: "Échec de la mise à jour des statistiques\_!"
  Failed to update tracking: "Échec de la mise à jour de la surveillance\_!"
  Failed to update: "Échec de la mise à jour\_!"
- Failed to upload: "Échec du téléchargement\_!"
+ Failed to upload: {"fr-FR": "Échec du téléchargement\_!", "fr-CA": "Échec du téléversement\_!"}
  File contains unexpected content: "Le fichier contient des contenus inattendus\_!"
  File rejected: "Fichier rejeté"
  File successfully deleted: "Fichier supprimé avec succès\_!"
  File successfully modified: "Fichier modifié avec succès\_!"
  File successfully renamed: "Fichier renommé avec succès\_!"
- File successfully uploaded: "Fichier téléchargé avec succès\_!"
+ File successfully uploaded: {"fr-FR": "Fichier téléchargé avec succès\_!", "fr-FR": "Fichier téléversé avec succès\_!"}
  Finished reading from %s: "«\_%s\_» a fini d'être lu."
  Finished writing to %s: "L'écriture sur «\_%s\_» s'est terminé."
  I can_t write to %s, sorry: "Je ne peux pas écrire à «\_%s\_», désolé."
@@ -1020,7 +1070,9 @@ time_years_from_now:
  - "%s an à partir de maintenant"
  - "%s ans à partir de maintenant"
 tip:
- 2FA Sent: "Un e-mail contenant un code d'authentification à deux facteurs a été envoyé à votre adresse e-mail. Veuillez confirmer ce code ci-dessous pour obtenir un accès frontal. Si vous n'avez pas reçu cet e-mail, essayez de vous déconnecter, d'attendre 10 minutes, et de vous reconnecter pour recevoir un nouvel e-mail contenant un nouveau code."
+ 2FA Sent:
+  fr-FR: "Un e-mail contenant un code d'authentification à deux facteurs a été envoyé à votre adresse e-mail. Veuillez confirmer ce code ci-dessous pour obtenir un accès frontal. Si vous n'avez pas reçu cet e-mail, essayez de vous déconnecter, d'attendre 10 minutes, et de vous reconnecter pour recevoir un nouvel e-mail contenant un nouveau code."
+  fr-CA: "Un courriel contenant un code d'authentification à deux facteurs a été envoyé à votre adresse courriel. Veuillez confirmer ce code ci-dessous pour obtenir un accès frontal. Si vous n'avez pas reçu ce courriel, essayez de vous déconnecter, d'attendre 10 minutes, et de vous reconnecter pour recevoir un nouveau courriel contenant un nouveau code."
  Accounts: "La page des comptes vous permet de contrôler qui peut accéder l'accès frontal de CIDRAM."
  Aggregator: "L'agrégateur vous permet d'exprimer les adresses IP, les CIDR, et les masques de réseau de la manière la plus petite possible. Entrez les données à agréger et appuyez sur «\_OK\_»."
  Auxiliary Rules Priority: "Priorité (plus haut➡(égale🔄équivalent)➡plus bas)\_:"
@@ -1039,7 +1091,7 @@ tip:
  Enter user agent here (optional): "Entrez l'agent utilisateur ici (optionnel)."
  Enter user agents here (optional): "Entrez les agents utilisateurs ici (optionnel)."
  File Manager: "Le gestionnaire de fichiers vous permet de supprimer, éditer et télécharger des fichiers. Utiliser avec précaution (vous pourriez casser votre installation avec ceci)."
- Greeting: "Bonjour, %s."
+ Greeting: {"fr-FR": "Bonjour, %s.", "fr-CA": "Salut, %s."}
  Home: "C'est la page d'accueil de l'accès frontal de CIDRAM. Sélectionnez un lien dans le menu de navigation à gauche pour continuer."
  How many infractions to incur: "Combien d'infractions encourir."
  IP Testing: "La page des tests IP vous permet de tester si les adresses IP sont bloquées par les signatures actuellement installées."

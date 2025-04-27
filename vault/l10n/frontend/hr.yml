@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Croatian language data for the front-end (last modified: 2025.04.12).
+# This file: Croatian language data for the front-end (last modified: 2025.04.27).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -458,6 +458,8 @@ hints_verification:
  "Što su "pozitivi" i "negativi"?": "Prilikom provjere identiteta predstavljenog zahtjevom, uspješan ishod mogao bi se opisati kao "pozitivan" ili "negativan". U slučaju da se potvrdi da je predstavljeni identitet pravi identitet, on bi se opisao kao "pozitivan". U slučaju da se potvrdi da je prikazani identitet krivotvoren, on bi se opisao kao "negativan". Međutim, neuspješan ishod (npr., neuspješna provjera, ili se ne može utvrditi vjerodostojnost prikazanog identiteta) ne bi se opisao kao "pozitivan" ili "negativan". Umjesto toga, neuspješan ishod bi se jednostavno opisao kao neprovjeren. Ako se ne pokuša provjeriti identitet predstavljen zahtjevom, zahtjev bi se također opisao kao neprovjeren. Pojmovi imaju smisla samo u kontekstu u kojem je identitet predstavljen zahtjevom prepoznat, i stoga, gdje je provjera moguća. U slučajevima kada prikazani identitet ne odgovara gore navedenim opcijama, ili kada identitet nije predstavljen, gore navedene opcije postaju nevažne."
 label:
  Default: "Zadano"
+ Fancy: "Otmjeno"
+ Ignore this: "Ignorirajte ovo"
  Operating system used: "Korišteni operativni sustav:"
  Other: "Ostalo"
  PHP version used: "PHP verzija koja se koristi:"
@@ -497,6 +499,11 @@ link:
  Subtractor: "Oduzimač"
  Updates: "Ažuriranja"
 msg_subject_2fa: "Autentifikacija u dva faktora"
+msg_template_2fa: |
+ <center><p>Zdravo, %s.<br /><br />
+ Vaš kod za provjeru autentičnosti u dva faktora za prijavu na CIDRAM front-end:</p>
+ <h1>%s</h1>
+ <p>Ovaj kod istječe za 10 minuta.</p></center>
 previewer:
  Days: "Dana"
  Hours: "Sati"
@@ -508,16 +515,52 @@ previewer:
 response:
  Account successfully created: "Račun je uspješno kreiran!"
  Account successfully deleted: "Račun je uspješno izbrisan!"
+ Added %s to tracking: "Dodan je %s za praćenje."
+ Already up-to-date: "Već ažurno."
  An account with that username already exists: "Račun s tim korisničkim imenom već postoji!"
+ An error occurred while attempting to uninstall the component: "Došlo je do pogreške prilikom pokušaja deinstalacije komponente."
+ Auxiliary rule, %s, deleted successfully: "Pomoćno pravilo, "%s", uspješno izbrisano."
+ Auxiliary rules successfully updated: "Pomoćna pravila su uspješno ažurirana."
+ Can_t fetch metadata: "Nije moguće dohvatiti metapodatke"
+ Can_t fetch the file: "Nije moguće dohvatiti datoteku"
+ Can_t import from v%s data: "Nije moguće uvesti podatke iz v%s!"
+ Checksum error: "Pogreška kontrolnog zbroja!"
+ Component not installed: "Komponenta nije instalirana!"
+ Component successfully installed: "Komponenta je uspješno instalirana."
+ Component successfully uninstalled: "Komponenta je uspješno deinstalirana."
+ Component successfully updated: "Komponenta je uspješno ažurirana."
  Configuration successfully updated: "Konfiguracija je uspješno ažurirana."
+ Copied: "Kopirano"
+ Directory successfully deleted: "Direktorij je uspješno izbrisan!"
+ Directory successfully renamed: "Direktorij je uspješno preimenovan!"
+ Don_t know what to do with the data after reading it: "Ne znam što učiniti s podacima nakon što sam ih pročitao/la.\nRazmislite o lančanom povezivanju s drugom naredbom. Hvala."
+ Error at the upstream: "Greška uzvodno!"
+ Failed to access %s: "Nije uspio pristup "%s"!"
+ Failed to activate: "Aktivacija nije uspjela!"
  Failed to create: "Izrada nije uspjela!"
+ Failed to deactivate: "Deaktivacija nije uspjela!"
+ Failed to delete any reports for %s: "Nije uspjelo brisanje nijednog izvješća za %s!"
  Failed to delete: "Brisanje nije uspjelo!"
+ Failed to execute: "Izvršenje nije uspjelo!"
+ Failed to import: "Uvoz nije uspio!"
+ Failed to install: "Instalacija nije uspjela!"
+ Failed to rename: "Preimenovanje nije uspjelo!"
+ Failed to report the IP address, %s: "Nije uspjelo prijaviti IP adresu, %s!"
+ Failed to update auxiliary rules: "Ažuriranje pomoćnih pravila nije uspjelo!"
  Failed to update configuration: "Ažuriranje konfiguracije nije uspjelo!"
+ Failed to update statistics: "Ažuriranje statistike nije uspjelo!"
+ Failed to update tracking: "Ažuriranje praćenja nije uspjelo!"
  Failed to update: "Ažuriranje nije uspjelo!"
+ Failed to upload: "Prijenos nije uspjelo!"
+ File contains unexpected content: "Datoteka sadrži neočekivani sadržaj!"
+ File rejected: "Datoteka odbijena"
  File successfully deleted: "Datoteka je uspješno izbrisana!"
+ File successfully modified: "Datoteka je uspješno izmijenjena!"
+ File successfully renamed: "Datoteka je uspješno preimenovana!"
+ File successfully uploaded: "Datoteka je uspješno prenesena!"
  Finished reading from %s: "Završeno čitanje od "%s"."
  Finished writing to %s: "Završeno pisanje na "%s"."
- I can_t write to %s, sorry: "Ne mogu pisati na "%s", oprosti."
+ I can_t write to %s, sorry: "Nije moguće pisati na "%s", oprosti."
  I don_t understand that command, sorry: "Ne razumijem tu naredbu, oprosti."
  Incorrect 2FA code entered: "Unesen je pogrešan 2FA kod. Autentifikacija nije uspjela."
  Invalid API key: "Nevažeći API ključ!"
@@ -619,47 +662,47 @@ switch-tracking-blocked-already-set-true: "Provjerite prema datotekama potpisa"
 switch-tracking-hide-banned-blocked-set-false: "Nemojte skrivati ​​zabranjene/blokirane IP adrese"
 switch-tracking-hide-banned-blocked-set-true: "Skrivati zabranjene/blokirane IP adrese"
 time_days_ago:
- - "prije %s dan"
- - "prije %s dana"
+ - "Prije %s dan"
+ - "Prije %s dana"
 time_days_from_now:
  - "%s dan od sada"
  - "%s dana od sada"
 time_hours_ago:
- - "prije %s sat"
- - "prije %s sata"
- - "prije %s sati"
+ - "Prije %s sat"
+ - "Prije %s sata"
+ - "Prije %s sati"
 time_hours_from_now:
  - "%s sat od sada"
  - "%s sata od sada"
  - "%s sati od sada"
 time_minutes_ago:
- - "prije %s minut"
- - "prije %s minute"
- - "prije %s minuta"
+ - "Prije %s minut"
+ - "Prije %s minute"
+ - "Prije %s minuta"
 time_minutes_from_now:
  - "%s minut od sada"
  - "%s minute od sada"
  - "%s minuta od sada"
 time_months_ago:
- - "prije %s mjesec"
- - "prije %s mjeseca"
- - "prije %s mjeseci"
+ - "Prije %s mjesec"
+ - "Prije %s mjeseca"
+ - "Prije %s mjeseci"
 time_months_from_now:
  - "%s mjesec od sada"
  - "%s mjeseca od sada"
  - "%s mjeseci od sada"
 time_seconds_ago:
- - "prije %s sekundu"
- - "prije %s sekunde"
- - "prije %s sekundi"
+ - "Prije %s sekundu"
+ - "Prije %s sekunde"
+ - "Prije %s sekundi"
 time_seconds_from_now:
  - "%s sekundu od sada"
  - "%s sekunde od sada"
  - "%s sekundi od sada"
 time_years_ago:
- - "prije %s godine"
- - "prije %s godine"
- - "prije %s godina"
+ - "Prije %s godine"
+ - "Prije %s godine"
+ - "Prije %s godina"
 time_years_from_now:
  - "%s godinu od sada"
  - "%s godine od sada"

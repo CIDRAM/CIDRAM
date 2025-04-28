@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The auxiliary rules view mode page (last modified: 2025.04.11).
+ * This file: The auxiliary rules view mode page (last modified: 2025.04.28).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -251,6 +251,26 @@ if (!$this->FE['ASYNC']) {
         $this->L10N->getPlural($this->FE['ProcessTime'], 'label.Page request completed in %s seconds'),
         '<span class="txtRd">' . $this->NumberFormatter->format($this->FE['ProcessTime'], 3) . '</span>'
     );
+
+    /** Enable or disable auxiliary rules. */
+    if (isset($this->CIDRAM['QueryVars']['do'])) {
+        if ($this->CIDRAM['QueryVars']['do'] === 'disable' && isset($this->Stages['Aux:Enable'])) {
+            unset($this->Stages['Aux:Enable']);
+            $this->Configuration['general']['stages'] = implode("\n", array_keys($this->Stages));
+            $this->updateConfiguration();
+        } elseif ($this->CIDRAM['QueryVars']['do'] === 'enable' && !isset($this->Stages['Aux:Enable'])) {
+            $this->Stages['Aux:Enable'] = true;
+            $this->Configuration['general']['stages'] = implode("\n", array_keys($this->Stages));
+            $this->updateConfiguration();
+        }
+    }
+
+    /** Whether auxiliary rules are enabled or disabled. */
+    if (isset($this->Stages['Aux:Enable'])) {
+        $this->FE['EnableOrDisableRules'] = '<a href="?cidram-page=aux-view&do=disable">' . $this->L10N->getString('label.Disable auxiliary rules') . '</a>';
+    } else {
+        $this->FE['EnableOrDisableRules'] = '<a href="?cidram-page=aux-view&do=enable">' . $this->L10N->getString('label.Enable auxiliary rules') . '</a><br /><span class="txtRd">' . $this->L10N->getString('warning.The auxiliary rules execution stage is currently disabled') . '</span>';
+    }
 
     /** Parse output. */
     $this->FE['FE_Content'] = $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_aux_view.html')), true) . $this->CIDRAM['MenuToggle'];

@@ -1,7 +1,10 @@
 <div class="nav">{nav}</div>
 <hr />
 <div class="s" id="stateMsg">{state_msg}</div>
-<div class="ng1 center"><a href="?cidram-page=aux-view">{label.aux.mode_view}</a> – <a href="?cidram-page=aux-edit">{label.aux.mode_edit}</a></div>
+<div class="ng1 center">
+  <a href="?cidram-page=aux-view">{label.aux.mode_view}</a> – <a href="?cidram-page=aux-edit">{label.aux.mode_edit}</a><br /><br />
+  {EnableOrDisableRules}
+</div>
 <div class="ng1"><ul class="pieul">{Data}
 </ul>
 <form enctype="multipart/form-data" id="xprtForm" action="?cidram-page=backup" method="POST" style="display:none">

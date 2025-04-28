@@ -410,4 +410,5 @@
 - [2025.04.24]: Slightly improved file management.
 - [2025.04.24]: Added download icons to allow log files to be downloaded directly from the front-end logs page.
 - [2025.01~04]: Added L10N for Marathi.
+- [2025.04.28]: Removed some redundant code from some front-end pages.
 - *Plus all the regular signature updates.*

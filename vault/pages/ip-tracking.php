@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The IP tracking page (last modified: 2024.02.20).
+ * This file: The IP tracking page (last modified: 2025.04.28).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -103,9 +103,6 @@ if (isset($_POST['addNewAddress'], $_POST['addNewInfractions'], $_POST['addNewEx
 
 if (!$this->FE['ASYNC']) {
     $ThisTracking = [];
-
-    /** Initialise stages. */
-    $this->Stages = array_flip(explode("\n", $this->Configuration['general']['stages']));
 
     /** Initialise shorthand options. */
     $this->Shorthand = array_flip(explode("\n", $this->Configuration['signatures']['shorthand']));

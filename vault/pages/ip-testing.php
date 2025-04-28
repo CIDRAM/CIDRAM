@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The IP testing page (last modified: 2025.03.03).
+ * This file: The IP testing page (last modified: 2025.04.28).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -100,9 +100,6 @@ if (isset($_POST['ip-addr'])) {
     }
     natsort($Working);
     $this->CIDRAM['ThisIP'] = [];
-
-    /** Initialise stages. */
-    $this->Stages = array_flip(explode("\n", $this->Configuration['general']['stages']));
 
     /** Initialise shorthand options. */
     $this->Shorthand = array_flip(explode("\n", $this->Configuration['signatures']['shorthand']));

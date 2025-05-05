@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The auxiliary rules view mode page (last modified: 2025.04.28).
+ * This file: The auxiliary rules view mode page (last modified: 2025.05.05).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -297,13 +297,9 @@ if (!$this->FE['ASYNC']) {
     /** Move an auxiliary rule to the bottom of the list. */
     $this->CIDRAM['AuxData'] = $this->swapAssociativeArrayElements($this->CIDRAM['AuxData'], $this->desabotage($_POST['auxB']), true);
     $this->updateAuxData();
-} elseif (isset($_POST['auxMU'])) {
-    /** Move an auxiliary rule up one position. */
-    $this->CIDRAM['AuxData'] = $this->swapAssociativeArrayElementsByOne($this->CIDRAM['AuxData'], $this->desabotage($_POST['auxMU']), false);
-    $this->updateAuxData();
-} elseif (isset($_POST['auxMD'])) {
-    /** Move an auxiliary rule down one position. */
-    $this->CIDRAM['AuxData'] = $this->swapAssociativeArrayElementsByOne($this->CIDRAM['AuxData'], $this->desabotage($_POST['auxMD']), true);
+} elseif (isset($_POST['auxMove'], $_POST['auxDist'])) {
+    /** Move an auxiliary rule by distance. */
+    $this->CIDRAM['AuxData'] = $this->swapAssociativeArrayElementsByDistance($this->CIDRAM['AuxData'], $this->desabotage($_POST['auxMove']), $_POST['auxDist']);
     $this->updateAuxData();
 } elseif (isset($_POST['auxDR'], $this->CIDRAM['AuxData'][$_POST['auxDR']])) {
     /** Disable an auxiliary rule. */

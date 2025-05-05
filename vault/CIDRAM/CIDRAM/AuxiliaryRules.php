@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used for auxiliary rules (last modified: 2025.04.11).
+ * This file: Methods used for auxiliary rules (last modified: 2025.05.05).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -451,12 +451,13 @@ trait AuxiliaryRules
 
             /** Begin generating rule output. */
             $Output .= sprintf(
-                '%1$s<li class="%2$s"><span class="comCat s">%3$s</span>%4$s%5$s%1$s  <ul class="comSub">',
+                '%1$s<li class="%2$s" name="%6$s"><span class="comCat s">%3$s</span>%4$s%5$s%1$s  <ul class="comSub">',
                 "\n      ",
                 $RuleClass . (empty($Data['Disable this rule']) ? '' : ' hB fBlur"'),
                 $Expired ? '<em class="txtRd">' . $Name . ' (' . $this->L10N->getString('state_expired') . ')</em>' : $Name,
                 $Options,
-                isset($Data['Notes']) ? '<div class="iCntn"><em>' . str_replace(['<', '>', "\n"], ['&lt;', '&gt;', "<br />\n"], $Data['Notes']) . '</em></div>' : ''
+                isset($Data['Notes']) ? '<div class="iCntn"><em>' . str_replace(['<', '>', "\n"], ['&lt;', '&gt;', "<br />\n"], $Data['Notes']) . '</em></div>' : '',
+                $Name
             );
 
             /** Additional details about the rule to print to the page (e.g., detailed block reason). */
@@ -792,14 +793,14 @@ trait AuxiliaryRules
     }
 
     /**
-     * Swaps the position of an element in an associative array up or down by one.
+     * Swaps the positions of elements in an associative array by distance.
      *
      * @param array $Arr The associative array to be worked.
      * @param string $Target The key of the element to be swapped.
-     * @param bool $Direction False for up, true for down.
+     * @param int $Distance The distance between the elements to be swapped.
      * @return array The worked array.
      */
-    private function swapAssociativeArrayElementsByOne(array $Arr, string $Target, bool $Direction): array
+    private function swapAssociativeArrayElementsByDistance(array $Arr, string $Target, int $Distance): array
     {
         if (!isset($Arr[$Target])) {
             return $Arr;
@@ -815,22 +816,11 @@ trait AuxiliaryRules
             }
             $Index++;
         }
-        if (!isset($TargetIndex, $Keys[$TargetIndex], $Values[$TargetIndex])) {
+        if (!isset($TargetIndex, $Keys[$TargetIndex], $Values[$TargetIndex], $Keys[$TargetIndex + $Distance], $Values[$TargetIndex + $Distance])) {
             return $Arr;
         }
-        if ($Direction) {
-            if (!isset($Keys[$TargetIndex + 1], $Values[$TargetIndex + 1])) {
-                return $Arr;
-            }
-            [$Keys[$TargetIndex], $Keys[$TargetIndex + 1]] = [$Keys[$TargetIndex + 1], $Keys[$TargetIndex]];
-            [$Values[$TargetIndex], $Values[$TargetIndex + 1]] = [$Values[$TargetIndex + 1], $Values[$TargetIndex]];
-        } else {
-            if (!isset($Keys[$TargetIndex - 1], $Values[$TargetIndex - 1])) {
-                return $Arr;
-            }
-            [$Keys[$TargetIndex], $Keys[$TargetIndex - 1]] = [$Keys[$TargetIndex - 1], $Keys[$TargetIndex]];
-            [$Values[$TargetIndex], $Values[$TargetIndex - 1]] = [$Values[$TargetIndex - 1], $Values[$TargetIndex]];
-        }
+        [$Keys[$TargetIndex], $Keys[$TargetIndex + $Distance]] = [$Keys[$TargetIndex + $Distance], $Keys[$TargetIndex]];
+        [$Values[$TargetIndex], $Values[$TargetIndex + $Distance]] = [$Values[$TargetIndex + $Distance], $Values[$TargetIndex]];
         return array_combine($Keys, $Values);
     }
 }

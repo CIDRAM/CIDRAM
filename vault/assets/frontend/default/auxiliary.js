@@ -18,13 +18,13 @@ function moveToBottom(a, i) {
 }
 
 function moveUp(a, i) {
-  window.auxMU = a, $('POST', '', ['auxMU'], null, function(a) {
+  window.auxMove = a, window.auxDist = -1, $('POST', '', ['auxMove', 'auxDist'], null, function(a) {
     window.location.reload(true)
   })
 }
 
 function moveDown(a, i) {
-  window.auxMD = a, $('POST', '', ['auxMD'], null, function(a) {
+  window.auxMove = a, window.auxDist = 1, $('POST', '', ['auxMove', 'auxDist'], null, function(a) {
     window.location.reload(true)
   })
 }

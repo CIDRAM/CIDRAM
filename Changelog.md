@@ -412,4 +412,5 @@
 - [2025.01~04]: Added L10N for Marathi.
 - [2025.04.28]: Removed some redundant code from some front-end pages.
 - [2025.04.28]: The auxiliary rules execution stage can now be disabled/enabled directly from the front-end auxiliary rules page (#403).
+- [2025.05.06]: Added drag-and-drop functionality to the front-end auxiliary rules view mode page to allow the positions of auxiliary rules to be swapped (#573).
 - *Plus all the regular signature updates.*

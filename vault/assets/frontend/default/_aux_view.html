@@ -180,3 +180,56 @@
   </td>
 </tr>
 </table>
+<script type="text/javascript">
+const auxRuleList = document.getElementById('auxRuleList');
+let draggedRule = null;
+let draggedRuleName = null;
+let targetRule = null;
+let ruleParent = null;
+let draggedIndex = null;
+let targetIndex = null;
+
+auxRuleList.addEventListener('dragstart', (event) => {
+  draggedRule = event.target;
+  while (null !== draggedRule && draggedRule.tagName !== 'LI') {
+    draggedRule = draggedRule.parentElement;
+  }
+  if (draggedRule.hasAttribute('name') && draggedRule.hasAttribute('draggable')) {
+    draggedRuleName = draggedRule.getAttribute('name');
+  }
+  event.dataTransfer.setData('text/plain', null);
+});
+
+auxRuleList.addEventListener('dragover', (event) => {
+  event.preventDefault();
+});
+
+auxRuleList.addEventListener('drop', (event) => {
+  targetRule = event.target;
+  while (null !== targetRule && targetRule.tagName !== 'LI') {
+    targetRule = targetRule.parentElement;
+  }
+  if (targetRule.tagName !== 'LI' || !targetRule.hasAttribute('name') || !targetRule.hasAttribute('draggable') || targetRule === draggedRule) {
+    return;
+  }
+  ruleParent = targetRule.parentNode;
+  draggedIndex = Array.from(ruleParent.children).indexOf(draggedRule);
+  targetIndex = Array.from(ruleParent.children).indexOf(targetRule);
+  window.auxMove = draggedRuleName;
+  window.auxDist = targetIndex - draggedIndex;
+  $('POST', '', ['auxMove', 'auxDist'], null, function (a) {
+    window.location.reload(true)
+  })
+  draggedRule = null;
+  draggedRuleName = null;
+  targetRule = null;
+  ruleParent = null;
+  draggedIndex = null;
+  targetIndex = null;
+});
+
+auxRuleList.addEventListener('dragend', () => {
+  draggedRule = null;
+  draggedRuleName = null;
+});
+</script>

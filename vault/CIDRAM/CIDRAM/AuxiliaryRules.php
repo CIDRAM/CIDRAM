@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used for auxiliary rules (last modified: 2025.05.05).
+ * This file: Methods used for auxiliary rules (last modified: 2025.05.06).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -451,7 +451,7 @@ trait AuxiliaryRules
 
             /** Begin generating rule output. */
             $Output .= sprintf(
-                '%1$s<li class="%2$s" name="%6$s"><span class="comCat s">%3$s</span>%4$s%5$s%1$s  <ul class="comSub">',
+                '%1$s<li class="%2$s" name="%6$s" draggable="true"><span class="comCat s">%3$s</span>%4$s%5$s%1$s  <ul class="comSub">',
                 "\n      ",
                 $RuleClass . (empty($Data['Disable this rule']) ? '' : ' hB fBlur"'),
                 $Expired ? '<em class="txtRd">' . $Name . ' (' . $this->L10N->getString('state_expired') . ')</em>' : $Name,

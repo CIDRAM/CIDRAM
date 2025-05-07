@@ -214,7 +214,7 @@ input[disabled],input[disabled]+label{cursor:not-allowed}
 .auxbl,.hoverglow{filter:invert(86%) sepia(2%) saturate(693%) hue-rotate(192deg) brightness(114%) contrast(84%)}
 .hoverglow:hover,.hoverglow:active,.hoverglow:focus{filter:invert(75%) sepia(22%) saturate(513%) hue-rotate(-3deg) brightness(95%) contrast(100%)}
 .auxgn{filter:invert(55%) sepia(12%) saturate(1578%) hue-rotate(71deg) brightness(93%) contrast(90%)}
-.auxrd{filter:invert(37%) sepia(5%) saturate(3912%) hue-rotate(-46deg) brightness(101%) contrast(87%)}
+.auxrd{filter:invert(84%) sepia(11%) saturate(2632%) hue-rotate(314deg) brightness(118%) contrast(101%);}
 .xscroller{overflow-x:auto}
 .auxicon.delete{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxdelete.svg}{/Base64Encode})}
 .auxicon.down1{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxdown1.svg}{/Base64Encode})}
@@ -230,6 +230,5 @@ input[disabled],input[disabled]+label{cursor:not-allowed}
 .bckpicon.export{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:export.svg}{/Base64Encode})}
 .bckpicon.compress{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:compress.svg}{/Base64Encode})}
 input[type=file]::file-selector-button{position:relative;top:-2px}
-
-
-hB hFd fW
+.rulePseudoPos{display:block;height:0px;width:100%;transform:scaleY(0);transition:all .4s ease-in-out;font-size:calc((10px * {magnification}) + .03vw);font-weight:700}
+.rulePseudoPosActive{background-color:rgba(192,128,0,.2);height:12px;transform:scaleY(1)}

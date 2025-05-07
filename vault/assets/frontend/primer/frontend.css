@@ -2,7 +2,7 @@
 *{vertical-align:text-top}
 body,input,select,textarea,code,.idx{font-size:calc((12px * {magnification}) + .03vw)}
 body,input,input[type=file]::file-selector-button,select{font-family:'BlinkMacSystemFont','Segoe UI','Noto Sans','Helvetica';letter-spacing:1px;text-decoration:none;border-style:none;margin:0;white-space:normal;background-color:#f6f8fa;color:#24292e}
-code{background-color:rgba(164,128,102,.5);vertical-align:0;display:inline-block;height:calc(1em + 2px)}
+code{background-color:rgba(164,128,102,.3);vertical-align:0;display:inline-block;height:calc(1em + 2px)}
 .branchline,hr{box-sizing:content-box;height:0;overflow:visible;height:0;margin:15px 0;overflow:hidden;background:0 0;border:0;border-bottom:1px solid #dadde1}
 .branchline,hr::after{display:table;clear:both;content:""}
 .branchline,hr::before{display:table;content:""}
@@ -228,3 +228,5 @@ input[disabled],input[disabled]+label{cursor:not-allowed}
 .bckpicon.export{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:export.svg}{/Base64Encode})}
 .bckpicon.compress{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:compress.svg}{/Base64Encode})}
 input[type=file]::file-selector-button{position:relative;top:-2px}
+.rulePseudoPos{display:block;height:0px;width:100%;transform:scaleY(0);transition:all .4s ease-in-out;font-size:calc((10px * {magnification}) + .03vw);font-weight:700}
+.rulePseudoPosActive{background-color:rgba(192,128,0,.2);height:12px;transform:scaleY(1)}

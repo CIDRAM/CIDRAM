@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The auxiliary rules view mode page (last modified: 2025.05.05).
+ * This file: The auxiliary rules view mode page (last modified: 2025.05.07).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -298,8 +298,28 @@ if (!$this->FE['ASYNC']) {
     $this->CIDRAM['AuxData'] = $this->swapAssociativeArrayElements($this->CIDRAM['AuxData'], $this->desabotage($_POST['auxB']), true);
     $this->updateAuxData();
 } elseif (isset($_POST['auxMove'], $_POST['auxDist'])) {
+    $TempRuleArr = ['_pseudo0' => []];
+    $Iter = 1;
+
+    /** Add temporary elements to account for pseudo-positions. */
+    foreach ($this->CIDRAM['AuxData'] as $Name => $Rule) {
+        $TempRuleArr[$Name] = $Rule;
+        $TempRuleArr['_pseudo' . $Iter] = [];
+        $Iter++;
+    }
+
     /** Move an auxiliary rule by distance. */
-    $this->CIDRAM['AuxData'] = $this->swapAssociativeArrayElementsByDistance($this->CIDRAM['AuxData'], $this->desabotage($_POST['auxMove']), $_POST['auxDist']);
+    $this->CIDRAM['AuxData'] = $this->swapAssociativeArrayElementsByDistance($TempRuleArr, $this->desabotage($_POST['auxMove']), $_POST['auxDist']);
+
+    /** Remove temporary elements. */
+    foreach ($this->CIDRAM['AuxData'] as $Name => $Rule) {
+        if (!is_array($Rule) || count($Rule) === 0) {
+            unset($this->CIDRAM['AuxData'][$Name]);
+        }
+    }
+    unset($Rule, $Name, $Iter, $TempRuleArr);
+
+    /** Update auxiliary rules data. */
     $this->updateAuxData();
 } elseif (isset($_POST['auxDR'], $this->CIDRAM['AuxData'][$_POST['auxDR']])) {
     /** Disable an auxiliary rule. */

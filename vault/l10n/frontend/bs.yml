@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bosnian language data for the front-end (last modified: 2025.04.27).
+# This file: Bosnian language data for the front-end (last modified: 2025.05.07).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -189,7 +189,7 @@ config:
  general_ban_override: "Vrijednost koja se koristi umjesto "http_response_header_code" kada je "infraction_limit" premašen. 200 = Zadrži isto [Zadano]. Ostale vrijednosti su iste kao dostupne vrijednosti za "http_response_header_code"."
  general_default_algo: "Definira koji algoritam koristiti za sve buduće lozinke i sesije."
  general_default_dns: "Lista DNS servera koji se koriste za traženje imena hosta. UPOZORENJE: Promijenite ovo samo ako znate šta radite!"
- general_default_timeout: "Zadano vremensko ograničenje za korištenje za eksterne zahtjeve? Zadano = 12 sekundi."
+ general_default_timeout: "Zadano vremensko ograničenje za korištenje za vanjske zahtjeve? Zadano = 12 sekundi."
  general_disabled_channels: "Ovo se može koristiti da spriječi CIDRAM da koristi određene kanale prilikom slanja zahtjeva (npr., prilikom ažuriranja, prilikom preuzimanja metapodataka komponente, itd)."
  general_email_notification_address: "Ako ste se odlučili za primanje obavještenja od CIDRAM-a putem e-pošte, npr., kada se aktiviraju određena pomoćna pravila, ovdje možete navesti adresu primaoca za te obavijesti."
  general_email_notification_name: "Ako ste se odlučili za primanje obavještenja od CIDRAM-a putem e-pošte, npr., kada se aktiviraju određena pomoćna pravila, ovdje možete navesti ime primaoca za te obavijesti."
@@ -457,9 +457,33 @@ hints_time_format: |
 hints_verification:
  "Šta su "pozitivi" i "negativi"?": "Prilikom provjere identiteta predstavljenog zahtjevom, uspješan ishod bi se mogao opisati kao "pozitivan" ili "negativan". U slučaju da se potvrdi da je predstavljeni identitet pravi identitet, on bi bio opisan kao "pozitivan". U slučaju da se potvrdi da je predstavljeni identitet falsifikovan, on bi bio opisan kao "negativan". Međutim, neuspješan ishod (npr., provjera ne uspije, ili se ne može utvrditi istinitost predstavljenog identiteta) ne bi se opisali kao "pozitivan" ili "negativan". Umjesto toga, neuspješan ishod bi se jednostavno opisao kao neprovjeren. Kada se ne pokuša provjeriti identitet predstavljen u zahtjevu, zahtjev bi također bio opisan kao neprovjeren. Termini imaju smisla samo u kontekstu u kojem se prepoznaje identitet predstavljen u zahtjevu, a samim tim i gdje je verifikacija moguća. U slučajevima kada predstavljeni identitet ne odgovara gore navedenim opcijama, ili kada identitet nije predstavljen, gore navedene opcije postaju nevažne."
 label:
+ Active configuration file: "Aktivna konfiguracijska datoteka:"
+ Branch latest stable: "Najnovija stabilna grana:"
+ Client information: "Informacije o klijentu:"
+ Complete access: "Potpuni pristup"
+ Copy to clipboard: "Kopiraj u međuspremnik"
  Default: "Zadano"
+ Expires: "Ističe:"
+ Extension: "Ekstenzija"
+ External: "Vanjski"
  Fancy: "Otmjeno"
  Ignore this: "Zanemari ovo"
+ Installed Available: "Instalirano/Dostupno"
+ Latest stable: "Najnovija stabilna verzija:"
+ Latest unstable: "Najnovije nestabilno verzija:"
+ Loading_: "Učitavanje..."
+ Logged in, 2FA pending: "Prijavljen/a, 2FA na čekanju."
+ Logged in: "Prijavljen/a."
+ Logged out: "Odjavljen/a."
+ Login: "Prijava"
+ Logs access only: "Pristup samo do datoteka dnevnika"
+ Most recent: "Najnovije"
+ Netmask: "Mrežna maska"
+ Never: "Nikad"
+ Next: "Sljedeće:"
+ No data available: "Nema dostupnih podataka."
+ No log file selected: "Nije odabrana datoteka dnevnika."
+ No log files available: "Nema dostupnih datoteka dnevnika."
  Operating system used: "Korišćen operativni sistem:"
  Other: "Ostalo"
  PHP version used: "Korištena verzija PHP-a:"
@@ -504,6 +528,21 @@ msg_template_2fa: |
  Vaš dvofaktorski kod za autentifikaciju za prijavu na CIDRAM front-end:</p>
  <h1>%s</h1>
  <p>Ovaj kod ističe za 10 minuta.</p></center>
+notice_new_major_version: "Obavještenje: %s je sada dostupan (trenutno koristite %s). Ispunjavaš minimalne PHP zahtjeve za ovu verziju. Međutim, za ažuriranje su potrebni neki ručni koraci."
+operator_<: "Mora biti manje od (numeričko poređenje)."
+operator_=: "Mora biti potpuno podudaranje (direktno poređenje stringova)."
+operator_>: "Mora biti veće od (numeričko poređenje)."
+operator_≅: "Regularni izraz mora odgovarati."
+operator_≇: "Regularni izraz mora ne odgovarati."
+operator_≈: "Mora biti približno podudaranje (korištenje džoker znakova u Windows stilu)."
+operator_≉: "Mora ne biti približno podudaranje (korištenje džoker znakova u Windows stilu)."
+operator_≠: "Mora ne biti potpuno podudaranje (direktno poređenje stringova)."
+operator_≤: "Mora biti manje od ili jednako (numeričko poređenje)."
+operator_≥: "Mora biti veće od ili jednako (numeričko poređenje)."
+operator_≮: "Mora ne biti manje od (numeričko poređenje)."
+operator_≯: "Mora ne biti veće od (numeričko poređenje)."
+operator_≰: "Mora ne biti manje od niti jednako (numeričko poređenje)."
+operator_≱: "Mora ne biti veće od niti jednako (numeričko poređenje)."
 previewer:
  Days: "Dani"
  Hours: "Sati"
@@ -763,5 +802,6 @@ warning:
  Operating in maintenance mode: "Upozorenje: U režimu održavanja! Dok je u režimu održavanja, ništa se ne provjerava, ne evidentira, ili blokira."
  Page termination is disabled: "Upozorenje: Završetak stranice je onemogućen! Zahtjevi se ne mogu ispravno blokirati dok se ovo ne riješi."
  Proceeding will log out all users: "Upozorenje: Nastavkom će se odjaviti svi korisnici."
+ The auxiliary rules execution stage is currently disabled: "Upozorenje: Faza izvršavanja pomoćnih pravila je trenutno onemogućena."
  This account is not using a valid password: "Upozorenje: Ovaj račun ne koristi važeću lozinku!"
  Using the default password: "Upozorenje: Korištenje zadane lozinke!"

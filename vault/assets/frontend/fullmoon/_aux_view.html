@@ -182,16 +182,23 @@ let targetRule = null;
 let ruleParent = null;
 let draggedIndex = null;
 let targetIndex = null;
+let pseudoPos = null;
+let iter = 0;
 
 auxRuleList.addEventListener('dragstart', (event) => {
   draggedRule = event.target;
   while (null !== draggedRule && draggedRule.tagName !== 'LI') {
     draggedRule = draggedRule.parentElement;
   }
-  if (draggedRule.hasAttribute('name') && draggedRule.hasAttribute('draggable')) {
-    draggedRuleName = draggedRule.getAttribute('name');
+  if (!draggedRule.hasAttribute('name') || !draggedRule.hasAttribute('draggable')) {
+    return;
   }
+  draggedRuleName = draggedRule.getAttribute('name');
   event.dataTransfer.setData('text/plain', null);
+  pseudoPos = document.getElementsByClassName('rulePseudoPos');
+  for (iter = 0; iter < pseudoPos.length; iter++) {
+    pseudoPos[iter].classList.toggle('rulePseudoPosActive');
+  }
 });
 
 auxRuleList.addEventListener('dragover', (event) => {
@@ -200,10 +207,10 @@ auxRuleList.addEventListener('dragover', (event) => {
 
 auxRuleList.addEventListener('drop', (event) => {
   targetRule = event.target;
-  while (null !== targetRule && targetRule.tagName !== 'LI') {
+  while (null !== targetRule && !(targetRule.tagName === 'LI' && targetRule.hasAttribute('draggable')) && !(targetRule.tagName === 'DIV' && targetRule.className === 'rulePseudoPos rulePseudoPosActive')) {
     targetRule = targetRule.parentElement;
   }
-  if (targetRule.tagName !== 'LI' || !targetRule.hasAttribute('name') || !targetRule.hasAttribute('draggable') || targetRule === draggedRule) {
+  if (null === targetRule || (!(targetRule.tagName === 'LI' && targetRule.hasAttribute('draggable')) && !(targetRule.tagName === 'DIV' && targetRule.className === 'rulePseudoPos rulePseudoPosActive')) || !targetRule.hasAttribute('name') || targetRule === draggedRule) {
     return;
   }
   ruleParent = targetRule.parentNode;
@@ -211,6 +218,9 @@ auxRuleList.addEventListener('drop', (event) => {
   targetIndex = Array.from(ruleParent.children).indexOf(targetRule);
   window.auxMove = draggedRuleName;
   window.auxDist = targetIndex - draggedIndex;
+  if (window.auxDist > -2 && window.auxDist < 2) {
+    return;
+  }
   $('POST', '', ['auxMove', 'auxDist'], null, function (a) {
     window.location.reload(true)
   })
@@ -225,5 +235,9 @@ auxRuleList.addEventListener('drop', (event) => {
 auxRuleList.addEventListener('dragend', () => {
   draggedRule = null;
   draggedRuleName = null;
+  pseudoPos = document.getElementsByClassName('rulePseudoPos');
+  for (iter = 0; iter < pseudoPos.length; iter++) {
+    pseudoPos[iter].classList.toggle('rulePseudoPosActive');
+  }
 });
 </script>

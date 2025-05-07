@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used for auxiliary rules (last modified: 2025.05.06).
+ * This file: Methods used for auxiliary rules (last modified: 2025.05.07).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -44,27 +44,32 @@ trait AuxiliaryRules
         /** Make entries safe for display at the front-end. */
         $this->recursiveReplace($this->CIDRAM['AuxData'], ['<', '>', '"'], ['&lt;', '&gt;', '&#34;']);
 
+        /** Style class. */
+        $StyleClass = 'ng1';
+
         if ($Mode) {
             /** Append empty rule if editing. */
             $this->CIDRAM['AuxData'][' '] = [];
             $Count++;
             $Current = 0;
-        } else {
-            /** Useful to know whether we're at the first or last rule (due to the "move to the ..." options. */
-            $Current = 1;
-        }
 
-        /** Style class. */
-        $StyleClass = 'ng1';
-
-        /** Update button before. */
-        if ($Mode) {
+            /** Update button before. */
             $Output .= sprintf(
                 '<div class="%s"><center><input type="submit" value="%s" class="auto" /></center></div>',
                 $StyleClass,
                 $this->L10N->getString('field.Update all')
             );
-        };
+        } else {
+            /** Useful to know whether we're at the first or last rule (due to the "move to the ..." options. */
+            $Current = 1;
+
+            /** Head pseudo-position. */
+            $Output .= sprintf(
+                '%s<div class="rulePseudoPos" name="_pseudo0">%s</div>',
+                "\n      ",
+                $this->L10N->getString('label.aux.Drop the rule here to move it to this position, or onto another rule to swap positions')
+            );
+        }
 
         /** Iterate through the auxiliary rules. */
         foreach ($this->CIDRAM['AuxData'] as $Name => $Data) {
@@ -451,7 +456,7 @@ trait AuxiliaryRules
 
             /** Begin generating rule output. */
             $Output .= sprintf(
-                '%1$s<li class="%2$s" name="%6$s" draggable="true"><span class="comCat s">%3$s</span>%4$s%5$s%1$s  <ul class="comSub">',
+                '%1$s<li title="" class="%2$s" name="%6$s" draggable="true"><span class="comCat s">%3$s</span>%4$s%5$s%1$s  <ul class="comSub">',
                 "\n      ",
                 $RuleClass . (empty($Data['Disable this rule']) ? '' : ' hB fBlur"'),
                 $Expired ? '<em class="txtRd">' . $Name . ' (' . $this->L10N->getString('state_expired') . ')</em>' : $Name,
@@ -580,7 +585,7 @@ trait AuxiliaryRules
                 }
 
                 /** Finish writing conditions list. */
-                $Output .= "\n            </div>\n          </li>";
+                $Output .= "\n            </div>\n          <br /></li>";
             }
 
             /** Cite the file to run. */
@@ -631,7 +636,12 @@ trait AuxiliaryRules
             }
 
             /** Finish writing new rule. */
-            $Output .= "\n        </ul>\n      </li>";
+            $Output .= sprintf(
+                '%1$s  </ul>%1$s</li>%1$s<div class="rulePseudoPos" name="_pseudo%2$d">%3$s</div>',
+                "\n      ",
+                $Current,
+                $this->L10N->getString('label.aux.Drop the rule here to move it to this position, or onto another rule to swap positions')
+            );
             $Current++;
         }
 
@@ -643,7 +653,7 @@ trait AuxiliaryRules
                 $StyleClass,
                 $this->L10N->getString('field.Update all')
             );
-        };
+        }
 
         /** Exit with generated output. */
         return $Output . '<script type="text/javascript">' . $JSAppend . '</script>';

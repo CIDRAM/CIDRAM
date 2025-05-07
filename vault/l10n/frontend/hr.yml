@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Croatian language data for the front-end (last modified: 2025.04.27).
+# This file: Croatian language data for the front-end (last modified: 2025.05.07).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -235,10 +235,10 @@ config:
  logging: "Konfiguracija koja se odnosi na bilježenje (isključujući onu primjenjivu na druge kategorije)."
  logging_apache_style_log: "Datoteka u stilu Apachea za bilježenje svih pokušaja blokiranog pristupa. Navedite naziv datoteke, ili ostavite prazno za onemogućavanje."
  logging_error_log: "Datoteka za bilježenje svih otkrivenih nefatalnih pogrešaka. Navedite naziv datoteke, ili ostavite prazno za onemogućavanje."
- logging_log_banned_ips: "Uključiti blokirane zahtjeve sa zabranjenih IP adresa u zapisnike? True/Istinito = Da [Zadano]; False/Lažno = Ne."
+ logging_log_banned_ips: "Uključiti blokirane zahtjeve sa zabranjenih IP adresa u dnevnike? True/Istinito = Da [Zadano]; False/Lažno = Ne."
  logging_log_rotation_action: "Rotacija dnevnika ograničava broj datoteka dnevnika koje bi trebale postojati u bilo kojem trenutku. Kada se kreiraju nove datoteke dnevnika, ako ukupni broj datoteka dnevnika premaši navedeno ograničenje, izvršit će se navedena radnja. Ovdje možete odrediti željenu radnju."
  logging_log_rotation_limit: "Rotacija dnevnika ograničava broj datoteka dnevnika koje bi trebale postojati u bilo kojem trenutku. Kada se kreiraju nove datoteke dnevnika, ako ukupni broj datoteka dnevnika premaši navedeno ograničenje, izvršit će se navedena radnja. Ovdje možete odrediti željeni limit. Vrijednost 0 onemogućit će rotaciju dnevnika."
- logging_log_sanitisation: "Kada se koristi front-end stranica zapisnika za pregled podataka dnevnika, CIDRAM sanitira podatke dnevnika prije nego što ih prikaže, kako bi zaštitio korisnike od XSS napada i drugih potencijalnih prijetnji koje bi podaci dnevnika mogli sadržavati. Međutim, prema zadanim postavkama, podaci se ne sanitiraju tijekom zapisivanja. Ovo je kako bi se osiguralo da su podaci dnevnika točno sačuvani, kako bi se pomoglo bilo kojoj heurističkoj ili forenzičkoj analizi koja bi mogla biti potrebna u budućnosti. Međutim, u slučaju da korisnik pokuša pročitati podatke dnevnika korištenjem vanjskih alata, i ako ti vanjski alati ne izvrše vlastiti proces sanitiranje, korisnik bi mogao biti izložen XSS napadima. Ako je potrebno, možete promijeniti zadano ponašanje pomoću ove konfiguracijske direktive. True/Istinito = Sanitirajte podatke kada ih bilježite (podaci se čuvaju manje precizno, ali XSS rizik je manji). False/Lažno = Nemojte sanitirati podatke kada ih bilježite (podaci se čuvaju točnije, ali je XSS rizik veći) [Zadano]."
+ logging_log_sanitisation: "Kada se koristi front-end stranica dnevnika za pregled podataka dnevnika, CIDRAM sanitira podatke dnevnika prije nego što ih prikaže, kako bi zaštitio korisnike od XSS napada i drugih potencijalnih prijetnji koje bi podaci dnevnika mogli sadržavati. Međutim, prema zadanim postavkama, podaci se ne sanitiraju tijekom zapisivanja. Ovo je kako bi se osiguralo da su podaci dnevnika točno sačuvani, kako bi se pomoglo bilo kojoj heurističkoj ili forenzičkoj analizi koja bi mogla biti potrebna u budućnosti. Međutim, u slučaju da korisnik pokuša pročitati podatke dnevnika korištenjem vanjskih alata, i ako ti vanjski alati ne izvrše vlastiti proces sanitiranje, korisnik bi mogao biti izložen XSS napadima. Ako je potrebno, možete promijeniti zadano ponašanje pomoću ove konfiguracijske direktive. True/Istinito = Sanitirajte podatke kada ih bilježite (podaci se čuvaju manje precizno, ali XSS rizik je manji). False/Lažno = Nemojte sanitirati podatke kada ih bilježite (podaci se čuvaju točnije, ali je XSS rizik veći) [Zadano]."
  logging_outbound_request_log: "Datoteka za bilježenje rezultata svih izlaznih zahtjeva. Navedite naziv datoteke, ili ostavite prazno za onemogućavanje."
  logging_report_log: "Datoteka za bilježenje svih izvješća poslanih vanjskim API-jima. Navedite naziv datoteke, ili ostavite prazno za onemogućavanje."
  logging_serialised_log: "Serializirana datoteka za bilježenje svih pokušaja blokiranog pristupa. Navedite naziv datoteke, ili ostavite prazno za onemogućavanje."
@@ -457,9 +457,33 @@ hints_time_format: |
 hints_verification:
  "Što su "pozitivi" i "negativi"?": "Prilikom provjere identiteta predstavljenog zahtjevom, uspješan ishod mogao bi se opisati kao "pozitivan" ili "negativan". U slučaju da se potvrdi da je predstavljeni identitet pravi identitet, on bi se opisao kao "pozitivan". U slučaju da se potvrdi da je prikazani identitet krivotvoren, on bi se opisao kao "negativan". Međutim, neuspješan ishod (npr., neuspješna provjera, ili se ne može utvrditi vjerodostojnost prikazanog identiteta) ne bi se opisao kao "pozitivan" ili "negativan". Umjesto toga, neuspješan ishod bi se jednostavno opisao kao neprovjeren. Ako se ne pokuša provjeriti identitet predstavljen zahtjevom, zahtjev bi se također opisao kao neprovjeren. Pojmovi imaju smisla samo u kontekstu u kojem je identitet predstavljen zahtjevom prepoznat, i stoga, gdje je provjera moguća. U slučajevima kada prikazani identitet ne odgovara gore navedenim opcijama, ili kada identitet nije predstavljen, gore navedene opcije postaju nevažne."
 label:
+ Active configuration file: "Aktivna konfiguracijska datoteka:"
+ Branch latest stable: "Najnovija stabilna grana:"
+ Client information: "Podaci o klijentu:"
+ Complete access: "Potpuni pristup"
+ Copy to clipboard: "Kopiraj u međuspremnik"
  Default: "Zadano"
+ Expires: "Istječe:"
+ Extension: "Ekstenzija"
+ External: "Vanjski"
  Fancy: "Otmjeno"
  Ignore this: "Ignorirajte ovo"
+ Installed Available: "Instalirano/Dostupno"
+ Latest stable: "Najnovija stabilna verzija:"
+ Latest unstable: "Najnovije nestabilno verzija:"
+ Loading_: "Učitavanje..."
+ Logged in, 2FA pending: "Prijavljen/a, 2FA na čekanju."
+ Logged in: "Prijavljen/a."
+ Logged out: "Odjavljen/a."
+ Login: "Prijava"
+ Logs access only: "Pristup samo do datoteka dnevnika"
+ Most recent: "Najnovije"
+ Netmask: "Mrežna maska"
+ Never: "Nikada"
+ Next: "Sljedeći:"
+ No data available: "Nema dostupnih podataka."
+ No log file selected: "Nije odabrana datoteka dnevnika."
+ No log files available: "Nema dostupnih datoteka dnevnika."
  Operating system used: "Korišteni operativni sustav:"
  Other: "Ostalo"
  PHP version used: "PHP verzija koja se koristi:"
@@ -504,6 +528,21 @@ msg_template_2fa: |
  Vaš kod za provjeru autentičnosti u dva faktora za prijavu na CIDRAM front-end:</p>
  <h1>%s</h1>
  <p>Ovaj kod istječe za 10 minuta.</p></center>
+notice_new_major_version: "Obavijest: %s je sada dostupan (trenutno koristite %s). Ispunjavaš minimalne PHP zahtjeve za ovu verziju. Međutim, za ažuriranje su potrebni neki ručni koraci."
+operator_<: "Mora biti manje od (numerička usporedba)."
+operator_=: "Mora biti točno podudaranje (izravna usporedba nizova)."
+operator_>: "Mora biti veće od (numerička usporedba)."
+operator_≅: "Regularni izraz mora odgovarati."
+operator_≇: "Regularni izraz mora ne odgovarati."
+operator_≈: "Mora biti približno podudaranje (korištenje zamjenskih znakova u Windows stilu)."
+operator_≉: "Mora ne biti približno podudaranje (korištenje zamjenskih znakova u Windows stilu)."
+operator_≠: "Mora ne biti točno podudaranje (izravna usporedba nizova)."
+operator_≤: "Mora biti manje od ili jednako (numerička usporedba)."
+operator_≥: "Mora biti veće od ili jednako (numerička usporedba)."
+operator_≮: "Mora ne biti manje od (numerička usporedba)."
+operator_≯: "Mora ne biti veće od (numerička usporedba)."
+operator_≰: "Mora ne biti manje od niti jednako (numerička usporedba)."
+operator_≱: "Mora ne biti veće od niti jednako (numerička usporedba)."
 previewer:
  Days: "Dana"
  Hours: "Sati"
@@ -755,7 +794,7 @@ warning:
  Editing PHP files: "Upozorenje: Poznato je da neka sigurnosna rješenja webhostinga automatski zabranjuju IP adrese nakon otkrivanja PHP oznaka unutar zahtjeva (npr., kada pokušavate modificirati PHP datoteke putem preglednika). CIDRAM nema načina da sazna koristi li vaša webhosting usluga takvo sigurnosno rješenje. Kako bi se izbjegli takvi problemi, preporuča se ne uređivati PHP datoteke na takav način kada je to moguće."
  IP tests are disabled: "Upozorenje: IP testovi su onemogućeni! Datoteke potpisa ne mogu se koristiti dok se to ne riješi."
  JavaScript required: "Upozorenje: Neke front-end funkcije zahtijevaju JavaScript. Kako biste osigurali da se cijeli front-end ponaša prema očekivanjima, preporučuje se omogućiti JavaScript."
- Likely to be overwritten: "Upozorenje: Datoteka koju trenutno uređujete pripada komponenti "%s". Sve promjene napravljene u ovoj datoteci vrlo će vjerojatno biti prepisane sljedeći put kada se ta komponenta ažurira."
+ Likely to be overwritten: "Upozorenje: Datoteka koju trenutno uređujete pripada komponenti "%s". Sve promjene napravljene u ovoj datoteku vrlo će vjerojatno biti prepisane sljedeći put kada se ta komponenta ažurira."
  Modules are disabled: "Upozorenje: Moduli su onemogućeni! Moduli se ne mogu koristiti dok se to ne riješi."
  No modules are active: "Upozorenje: Nijedan modul nije omogućen! Moduli se mogu aktivirati pomoću stranica za konfiguraciju ili ažuriranja."
  No signature files are active: "Upozorenje: Nijedan datoteka potpisa nije omogućen! Datoteke potpisa mogu se aktivirati pomoću stranica za konfiguraciju ili ažuriranja."
@@ -763,5 +802,6 @@ warning:
  Operating in maintenance mode: "Upozorenje: U režimu održavanja! Dok je u režimu održavanja, ništa se ne provjerava, ne bilježi, niti blokira."
  Page termination is disabled: "Upozorenje: Zatvaranje stranice je onemogućeno! Zahtjevi se ne mogu ispravno blokirati dok se ovo ne riješi."
  Proceeding will log out all users: "Upozorenje: Nastavkom će se odjaviti svi korisnici."
+ The auxiliary rules execution stage is currently disabled: "Upozorenje: Faza izvršavanja pomoćnih pravila je trenutno onemogućena."
  This account is not using a valid password: "Upozorenje: Ovaj račun ne koristi važeću lozinku!"
  Using the default password: "Upozorenje: Korištenje zadane lozinke!"

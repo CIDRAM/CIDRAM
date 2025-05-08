@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2024.09.02).
+ * This file: Front-end handler (last modified: 2025.05.08).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -106,7 +106,7 @@ $CIDRAM['FE'] = [
 
     /** Used to log out. */
     'LogoutButton' => sprintf(
-        '<form action="?cidram-page=logout" method="POST" style="display:inline">%s%s<input type="submit" id="logoutbutton" value="%s" class="auto" /></form>',
+        '<form action="?cidram-page=logout" method="POST" class="inline">%s%s<input type="submit" id="logoutbutton" value="%s" class="auto" /></form>',
         '<input name="hostname" id="hostnameoverride" type="hidden" value="" />',
         '<script type="text/javascript">document.getElementById(\'hostnameoverride\').value=window.location.hostname;</script>',
         $CIDRAM['L10N']->getString('link_log_out')
@@ -114,7 +114,7 @@ $CIDRAM['FE'] = [
 
     /** Used to return home. */
     'HomeButton' => sprintf(
-        '<form action="?" method="GET" style="display:inline"><input type="submit" id="homebutton" value="%s" class="auto" /></form>',
+        '<form action="?" method="GET" class="inline"><input type="submit" id="homebutton" value="%s" class="auto" /></form>',
         $CIDRAM['L10N']->getString('link_home')
     ),
 
@@ -1937,7 +1937,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
 
     /** Updates page form boilerplate. */
     $CIDRAM['CFBoilerplate'] =
-        '<form action="?%s" method="POST" style="display:inline">' .
+        '<form action="?%s" method="POST" class="inline">' .
         '<input name="cidram-form-target" type="hidden" value="updates" />' .
         '<input name="do" type="hidden" value="%s" />';
 
@@ -4836,7 +4836,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
         $CIDRAM['FE']['AuxFlagsProvides'] = '';
         foreach ($CIDRAM['Config']['Provide']['Auxiliary Rules']['Flags'] as $CIDRAM['FlagSetName'] => $CIDRAM['FlagSet']) {
             $CIDRAM['FlagKey'] = preg_replace('~[^A-Za-z]~', '', $CIDRAM['FlagSetName']);
-            $CIDRAM['Options'] = sprintf('<select name="%s" class="auto"><option value="Default State" selected>%s</option>', $CIDRAM['FlagKey'], $CIDRAM['L10N']->getString('label_aux_special_default_state'));
+            $CIDRAM['Options'] = sprintf('<select name="%1$s" id="%1$s" class="auto" autocomplete="off"><option value="Default State" selected>%2$s</option>', $CIDRAM['FlagKey'], $CIDRAM['L10N']->getString('label_aux_special_default_state'));
             if (isset($CIDRAM['FlagSet']['Label'])) {
                 $CIDRAM['FlagSetName'] = $CIDRAM['L10N']->getString($CIDRAM['FlagSet']['Label']) ?: $CIDRAM['FlagSetName'];
                 unset($CIDRAM['FlagSet']['Label']);
@@ -5478,7 +5478,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
 
     /** Logs control form. */
     $CIDRAM['FE']['TextModeSwitchLink'] = sprintf(
-        '<td class="h4"><span class="s"><label for="textMode">%1$s</label><br /><select name="textMode" class="auto" title="%1$s">' .
+        '<td class="h4"><span class="s"><label for="textMode">%1$s</label><br /><select name="textMode" id="textMode" class="auto" title="%1$s">' .
         '<option value="simple"%2$s>%3$s</option>' .
         '<option value="fancy"%4$s>%5$s</option>' .
         '<option value="tally"%6$s>%7$s</option>' .

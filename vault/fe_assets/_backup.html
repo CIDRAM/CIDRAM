@@ -8,7 +8,7 @@
       <form enctype="multipart/form-data" id="bckpForm" action="?cidram-page=backup" method="POST">
         <input type="radio" class="auto" name="bckpAct" id="doImport" value="import" onchange="javascript:this.checked?(hide('forExport'),show('forImport')):(hide('forImport'),show('forExport'))" checked /> <label class="s" for="doImport">{label_import}</label>
         <span class="forImport" style="float:{FE_Align_Reverse}">
-          <input type="file" name="importFile" class="auto" />
+          <input type="file" name="importFile" class="auto" title="{label_import}/{label_export}" />
         </span><br /><br />
         <input type="radio" class="auto" name="bckpAct" id="doExport" value="export" onchange="javascript:this.checked?(show('forExport'),hide('forImport')):(show('forImport'),hide('forExport'))" /> <label class="s" for="doExport">{label_export}</label>
         <span class="forExport" style="float:{FE_Align_Reverse}">

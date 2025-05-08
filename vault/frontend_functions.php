@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2025.04.24).
+ * This file: Front-end functions file (last modified: 2025.05.08).
  */
 
 /**
@@ -1171,7 +1171,7 @@ $CIDRAM['Formatter'] = function (string &$In, string $BlockLink = '', string $Cu
             foreach ($Parts[1] as $ThisPart) {
                 $Section = str_replace(
                     '[' . $ThisPart . ']',
-                    $OuterOpen . '<a href="' . $CIDRAM['PaginationRemoveFrom']($BlockLink) . '&search=' . str_replace('=', '_', base64_encode($ThisPart)) . '">' . $InnerOpen . $ThisPart . $InnerClose . '</a>' . $OuterClose,
+                    $OuterOpen . '<a href="' . $CIDRAM['PaginationRemoveFrom']($BlockLink) . '&search=' . str_replace('=', '_', base64_encode($ThisPart)) . '" title="' . $ThisPart . '">' . $InnerOpen . $ThisPart . $InnerClose . '</a>' . $OuterClose,
                     $Section
                 );
             }

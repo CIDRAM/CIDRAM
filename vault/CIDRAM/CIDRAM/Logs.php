@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used by the logs page (last modified: 2024.02.20).
+ * This file: Methods used by the logs page (last modified: 2025.05.08).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -175,7 +175,7 @@ trait Logs
                 foreach ($Parts[1] as $ThisPart) {
                     $Section = str_replace(
                         '[' . $ThisPart . ']',
-                        $OuterOpen . '<a href="' . $this->paginationRemoveFrom($BlockLink) . '&search=' . str_replace('=', '_', base64_encode($ThisPart)) . '">' . $InnerOpen . $ThisPart . $InnerClose . '</a>' . $OuterClose,
+                        $OuterOpen . '<a href="' . $this->paginationRemoveFrom($BlockLink) . '&search=' . str_replace('=', '_', base64_encode($ThisPart)) . '" title="' . $ThisPart . '">' . $InnerOpen . $ThisPart . $InnerClose . '</a>' . $OuterClose,
                         $Section
                     );
                 }

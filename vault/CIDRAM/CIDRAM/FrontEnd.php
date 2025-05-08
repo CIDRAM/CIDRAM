@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2025.04.12).
+ * This file: The CIDRAM front-end (last modified: 2025.05.08).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -164,7 +164,7 @@ class FrontEnd extends Core
 
             /** Used to log out. */
             'LogoutButton' => sprintf(
-                '<form action="?cidram-page=logout" method="POST" style="display:inline">%s%s<input type="submit" id="logoutbutton" value="%s" class="auto" /></form>',
+                '<form action="?cidram-page=logout" method="POST" class="inline">%s%s<input type="submit" id="logoutbutton" value="%s" class="auto" /></form>',
                 '<input name="hostname" id="hostnameoverride" type="hidden" value="" />',
                 '<script type="text/javascript">document.getElementById(\'hostnameoverride\').value=window.location.hostname;</script>',
                 $this->L10N->getString('link.Log Out')
@@ -172,7 +172,7 @@ class FrontEnd extends Core
 
             /** Used to return home. */
             'HomeButton' => sprintf(
-                '<form action="" method="GET" style="display:inline"><input type="hidden" name="cidram-page" value="" /><input type="submit" id="homebutton" value="%s" class="auto" /></form>',
+                '<form action="" method="GET" class="inline"><input type="hidden" name="cidram-page" value="" /><input type="submit" id="homebutton" value="%s" class="auto" /></form>',
                 $this->L10N->getString('link.Home')
             ),
 

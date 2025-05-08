@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The updates page (last modified: 2025.04.11).
+ * This file: The updates page (last modified: 2025.05.08).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -40,7 +40,7 @@ unset($StateModified);
 
 /** Updates page form boilerplate. */
 $this->FE['CFBoilerplate'] =
-    '<form action="?%s" method="POST" style="display:inline">' .
+    '<form action="?%s" method="POST" class="inline">' .
     '<input name="cidram-form-target" type="hidden" value="updates" />' .
     '<input name="do" type="hidden" value="%s" />';
 

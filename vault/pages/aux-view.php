@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The auxiliary rules view mode page (last modified: 2025.05.07).
+ * This file: The auxiliary rules view mode page (last modified: 2025.05.08).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -219,7 +219,7 @@ if (!$this->FE['ASYNC']) {
     $this->FE['AuxFlagsProvides'] = '';
     foreach ($this->CIDRAM['Provide']['Auxiliary Rules']['Flags'] as $FlagSetName => $FlagSetValue) {
         $FlagKey = preg_replace('~[^A-Za-z]~', '', $FlagSetName);
-        $Options = sprintf('<select name="%s" class="auto"><option value="Default State" selected>%s</option>', $FlagKey, $this->L10N->getString('label.aux.Leave it as is (don_t set anything)'));
+        $Options = sprintf('<select name="%1$s" id="%1$s" class="auto" autocomplete="off"><option value="Default State" selected>%2$s</option>', $FlagKey, $this->L10N->getString('label.aux.Leave it as is (don_t set anything)'));
         if (isset($FlagSetValue['Label'])) {
             $FlagSetName = $this->L10N->getString($FlagSetValue['Label']) ?: $FlagSetName;
             unset($FlagSetValue['Label']);

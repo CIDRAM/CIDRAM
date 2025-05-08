@@ -40,7 +40,7 @@ a:hover,a:active,a:focus{color:#866}
 .ci{background-color:rgba(192,240,160,.6);border-style:solid;border-width:1px;border-color:#604848;text-align:{FE_Align};border-top-{FE_Align_Reverse}-radius:24px;padding:12px}
 .co,body,.center{text-align:center}
 .co,body{padding:0}
-.dt,.s,.tip,.txtBl,.txtGn,.txtOe,.txtRd{display:inline}
+.dt,.s,.tip,.txtBl,.txtGn,.txtOe,.txtRd,.inline{display:inline}
 .dt,.tip{float:{FE_Align};text-align:{FE_Align};width:80%}
 .gen,input,select,textarea{font-family:'Verdana','Arial','Helvetica'}
 .gen{letter-spacing:0;white-space:nowrap}
@@ -225,3 +225,4 @@ input[disabled],input[disabled]+label{cursor:not-allowed}
 input[type=file]::file-selector-button{padding-{FE_Align}:20px;background-repeat:no-repeat;background-position:top 1px {FE_Align} 4px}
 .rulePseudoPos{display:block;height:0px;width:100%;transform:scaleY(0);transition:all .4s ease-in-out;font-size:calc((10px * {magnification}) + .03vw);font-weight:700}
 .rulePseudoPosActive{background-color:rgba(144,162,72,.6);height:12px;transform:scaleY(1)}
+.navSoftCnr{border-radius:0 12px 0 0}

@@ -456,7 +456,7 @@ trait AuxiliaryRules
 
             /** Begin generating rule output. */
             $Output .= sprintf(
-                '%1$s<li title="" class="%2$s" name="%6$s" draggable="true"><span class="comCat s">%3$s</span>%4$s%5$s%1$s  <ul class="comSub">',
+                '%1$s<li class="%2$s" name="%6$s" draggable="true"><span class="comCat s">%3$s</span>%4$s%5$s%1$s  <ul class="comSub">',
                 "\n      ",
                 $RuleClass . (empty($Data['Disable this rule']) ? '' : ' hB fBlur"'),
                 $Expired ? '<em class="txtRd">' . $Name . ' (' . $this->L10N->getString('state_expired') . ')</em>' : $Name,
@@ -585,7 +585,7 @@ trait AuxiliaryRules
                 }
 
                 /** Finish writing conditions list. */
-                $Output .= "\n            </div>\n          <br /></li>";
+                $Output .= "\n            </div>\n          </li>";
             }
 
             /** Cite the file to run. */

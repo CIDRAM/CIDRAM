@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The logs page (last modified: 2025.04.24).
+ * This file: The logs page (last modified: 2025.05.08).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -397,7 +397,7 @@ if (empty($this->FE['mod_class_nav'])) {
 
 /** Logs control form. */
 $this->FE['TextModeSwitchLink'] = sprintf(
-    '<td class="h4"><span class="s"><label for="textMode">%1$s</label><br /><select name="textMode" class="auto" title="%1$s">' .
+    '<td class="h4"><span class="s"><label for="textMode">%1$s</label><br /><select name="textMode" id="textMode" class="auto" title="%1$s">' .
     '<option value="simple"%2$s>%3$s</option>' .
     '<option value="fancy"%4$s>%5$s</option>' .
     '<option value="tally"%6$s>%7$s</option>' .

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2025.04.28).
+ * This file: Optional security extras module (last modified: 2025.05.12).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -99,22 +99,22 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             '\.w(?:ell-known|p-cli)/(?:.*(?:a(?:bout|dmin)[\da-z]*|fierza[\da-z]*|install[\da-z]*|moon[\da-z]*|shell[\da-z]*|wp-login[\da-z]*|x)|go|radio)|' .
             '\.?rxr(?:_[\da-z]+)?|' .
             '\d{3,5}[a-z]{3,5}|\d+-?backdoor|0byte|0[xz]|10+|1337|1ppy|4price|85022df0ed31|991176|' .
-            'a(?:b1ux1ft|dmin-heade\d*|hhygskn|lexus|lfa(?:-rex|_data|a?cgiapi|ioxi|new|shell)?\d*|njas|pismtp|xx)|' .
+            'a(?:b1ux1ft|dmin-heade\d*|hhygskn|lexus|lfa(?:-?rex|-?ioxi|_data|a?cgiapi|new|shell)?\d*|njas|pismtp|xx)|' .
             'b(?:0|3d2acc621a0|ak|ala|axa\d+|eence|ibil_0day)|' .
             'c(?:(?:9|10)\d+|adastro-2|asper[\da-z]+|d(?:.*tmp.*rm-rf|chmod.*\d{3,})|fom[-_]files|(?:gi-bin|(?:fm|ss))/(?:luci/;|moon|newgolden|radio|sgd|stok=/|uploader|well-known|wp-login)|lass(?:smtps|withtostring)|offee/fw|olors/blue/uploader|omfunctions|ong|ontentloader1|opypaths|ss/colors/coffee/index)|' .
             'd(?:7|eadcode\d*|elpaths|epotcv|isagraep|kiz|oiconvs|ummyyummy/wp-signup)|' .
-            'e(?:e|pinyins)|' .
+            'e(?:e|pinyins|rin\d+)|' .
             'f(?:ddqradz|ilefun)|' .
             'g(?:dftps|el4y|etid3-core|h[0o]st|lab-rare|zismexv)|' .
             'h(?:[4a]x+[0o]r|6ss|anna1337|ehehe|sfpdcd|tmlawedtest)|' .
-            'i(?:\d{3,}[a-z]{2,}|cesword|d3/class-config|mages/sym|ndoxploit|optimize|oxi/alfa-ioxi|r7szrsouep|itsec|xr/(?:allez|wp-login))|' .
+            'i(?:\d{3,}[a-z]{2,}|cesword|d3/class-config|mages/sym|ndoxploit|optimize|oxi\d*|r7szrsouep|itsec|xr/(?:allez|wp-login))|' .
             'kvkjguw|' .
             'l(?:ock0?360|eaf_mailer|eaf_php|ufix(?:-shell)?|uuf)|' .
             'm(?:akeasmtp|iin|oduless|u-plugins/db-safe-mode|y1)|' .
             'njima|' .
             'o(?:ld(?:/wp-admin/install|-up-ova)|rvx(?:-shell)?|thiondwmek)|' .
             'p(?:erl\.alfa|hp(?:1|_niu_\d+)|lugins/(?:backup_index|vwcleanerplugin/bump|zedd/\d+)|oison|riv8|wnd|zaiihfi)|' .
-            'rendixd|' .
+            'r(?:andkeyword|endixd)|' .
             's(?:_n?e|ession91|h[3e]ll[sx]?\d*|hrift|idwso|ilic|kipper(?:shell)?|llolx|onarxleetxd|pammervip|rc/util/php/(?:eval(?:-stdin)?|kill)|ystem_log)|' .
             't(?:62|aptap-null|enda\.sh.*tenda\.sh|emplates/beez/index|hemes/(?:finley/min|pridmag/db|universal-news/www)|ermps|homs|hreefox(?:_exploit/index)?|inymce/(?:langs/about|plugins/compat3x/css/index)|k_dencode_\d+|mp/vuln|opxoh/(?:drsx|wdr))|' .
             'u(?:bh/up|nisibfu|pfile(?:_\\(\d\\))?|pgrade-temp-backup/wp-login|ploader_by_cloud7_agath|tchiha(?:_uploader)?)|' .
@@ -133,7 +133,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $LCNrURI
         ), 'Probing for webshells/backdoors')) {
             $this->Reporter->report([15, 20, 21], ['Caught probing for webshells/backdoors. Host might be compromised.'], $this->BlockInfo['IPAddr']);
-        } // 2023.08.18 mod 2025.04.17
+        } // 2023.08.18 mod 2025.05.12
 
         /** Probing for vulnerable plugins or webapps. */
         if (
@@ -150,6 +150,14 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         ), 'Probing for webshells/backdoors')) {
             $this->Reporter->report([15, 20], ['Caught probing for webshells/backdoors. Host might be compromised.'], $this->BlockInfo['IPAddr']);
         } // 2024.02.18 mod 2025.04.28
+
+        /** Probing for webshells/backdoors. */
+        if ($this->trigger(preg_match(
+            '~(?:^|[/?])(?:perl.alfa|search/label/php-shells)(?:$|[/?])~',
+            $LCNrURI
+        ), 'Probing for webshells/backdoors')) {
+            $this->Reporter->report([15, 20, 21], ['Caught probing for webshells/backdoors. Host might be compromised.'], $this->BlockInfo['IPAddr']);
+        } // 2025.05.12
 
         /** Probing for exposed Git data. */
         if ($this->trigger(preg_match('~\.git(?:config)?(?:$|\W)~', $LCNrURI), 'Probing for exposed git data')) {

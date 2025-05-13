@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Croatian language data for the front-end (last modified: 2025.05.07).
+# This file: Croatian language data for the front-end (last modified: 2025.05.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -457,6 +457,9 @@ hints_time_format: |
 hints_verification:
  "Što su "pozitivi" i "negativi"?": "Prilikom provjere identiteta predstavljenog zahtjevom, uspješan ishod mogao bi se opisati kao "pozitivan" ili "negativan". U slučaju da se potvrdi da je predstavljeni identitet pravi identitet, on bi se opisao kao "pozitivan". U slučaju da se potvrdi da je prikazani identitet krivotvoren, on bi se opisao kao "negativan". Međutim, neuspješan ishod (npr., neuspješna provjera, ili se ne može utvrditi vjerodostojnost prikazanog identiteta) ne bi se opisao kao "pozitivan" ili "negativan". Umjesto toga, neuspješan ishod bi se jednostavno opisao kao neprovjeren. Ako se ne pokuša provjeriti identitet predstavljen zahtjevom, zahtjev bi se također opisao kao neprovjeren. Pojmovi imaju smisla samo u kontekstu u kojem je identitet predstavljen zahtjevom prepoznat, i stoga, gdje je provjera moguća. U slučajevima kada prikazani identitet ne odgovara gore navedenim opcijama, ili kada identitet nije predstavljen, gore navedene opcije postaju nevažne."
 label:
+ %s is available (%s): "%s je dostupan (%s)."
+ %s is available: "%s je dostupan."
+ %s is not available: "%s nije dostupan."
  Active configuration file: "Aktivna konfiguracijska datoteka:"
  Branch latest stable: "Najnovija stabilna grana:"
  Client information: "Podaci o klijentu:"
@@ -477,6 +480,7 @@ label:
  Logged out: "Odjavljen/a."
  Login: "Prijava"
  Logs access only: "Pristup samo do datoteka dnevnika"
+ Minuend: "Minuend"
  Most recent: "Najnovije"
  Netmask: "Mrežna maska"
  Never: "Nikada"
@@ -494,9 +498,19 @@ label:
  Selected log file doesn_t exist: "Odabrana datoteka dnevnika ne postoji!"
  Simple: "Jednostavan"
  Start date: "Datum početka"
+ Subtrahend: "Subtrahend"
  System information: "Informacije o sustavu:"
  Your IP: "Vaša IP adresa:"
  Your UA: "Vaš korisnički agent:"
+ results: "Rezultati (%s dana – %s odbijena – %s prihvaćeno – %s spojena – %s vraćena):"
+ rl_requests: "Poslani zahtjevi: %s – Dostupni zahtjevi: %s"
+ rl_when: "Najnoviji zapis: %s (Istječe: %s).<br />Najstariji zapis: %s (Istječe: %s)."
+ risk:
+  High: "Visok"
+  Low: "Nizak"
+  Medium: "Srednji"
+ timeout_limit: "Ovaj modul izvršava vanjske zahtjeve. Ovdje možete odrediti vremensko ograničenje za te zahtjeve (u sekundama)."
+ timeout_rl: "Količina vremena potrebna prije nastavka vanjskih zahtjeva nakon što je brzina ograničena."
 link:
  Accounts: "Računi"
  Aggregator: "Agregator"
@@ -507,6 +521,7 @@ link:
  Configuration: "Konfiguracija"
  Discussions: "Rasprave"
  Documentation: "Dokumentacija"
+ Edit mode: "Način uređivanja"
  File Manager: "Upravitelj datoteka"
  Get API key: "Ako već nemate API ključ, kliknite ovdje da biste ga dobili."
  Home: "Početna stranica"
@@ -522,6 +537,28 @@ link:
  Statistics: "Statistika"
  Subtractor: "Oduzimač"
  Updates: "Ažuriranja"
+ View mode: "Način prikaza"
+macro:
+ Description:
+  activate_modules: &MayImpactPerformance "Općenito se ne preporučuje, jer vjerovatno postoje neki koji vam neće trebati. Instaliranje i aktiviranje komponenti kada nisu potrebne može negativno utjecati na performanse."
+  install_l10n_core: &RecommendKeepingCore "Kada je omogućena direktiva konfiguracije <code>lang_override</code>, ako korisnikov preglednik odredi određenu jezičnu preferenciju, sve dok su instalirani osnovni L10N podaci za taj jezik, CIDRAM može prikazati stranicu "pristup odbijen" na tom određenom jeziku. Sukladno tome, preporučuje se da svi osnovni L10N podaci ostanu instalirani."
+  install_l10n_fe: &RecommendFEOnlyNeeded "Vaš željeni jezik može se odrediti putem konfiguracijske direktive <code>lang</code>. Nakon što je to učinjeno, vjerojatno vam neće trebati nikakvi L10N podaci s front-enda osim onih za vaš željeni jezik, te ih je možda bolje ukloniti kako biste neznatno oslobodili prostor na disku. U svakom slučaju, neće uzrokovati nikakvu štetu."
+  install_modules: *MayImpactPerformance
+  uninstall_l10n_core: *RecommendKeepingCore
+  uninstall_l10n_fe: *RecommendFEOnlyNeeded
+ Name:
+  activate_modules: "Aktivirajte sve module."
+  activate_signatures: "Aktivirajte sve datoteke potpisa."
+  deactivate_modules: "Deaktivirajte sve module."
+  deactivate_signatures: "Deaktivirajte sve datoteke potpisa."
+  install_l10n_core: "Instalirajte sve dostupne jezgre L10N."
+  install_l10n_fe: "Instalirajte sve dostupne front-end L10N."
+  install_modules: "Instalirajte sve dostupne module."
+  install_signatures: "Instalirajte sve dostupne datoteke potpisa."
+  uninstall_l10n_core: "Deinstalirajte sve neaktivne jezgre L10N."
+  uninstall_l10n_fe: "Deinstalirajte sve neaktivne front-end L10N."
+  uninstall_modules: "Deinstalirajte sve neaktivne module."
+  uninstall_signatures: "Deinstalirajte sve neaktivne datoteke potpisa."
 msg_subject_2fa: "Autentifikacija u dva faktora"
 msg_template_2fa: |
  <center><p>Zdravo, %s.<br /><br />
@@ -750,6 +787,7 @@ tip:
  2FA Sent: "E-pošta koja sadrži kod za provjeru autentičnosti u dva faktora poslana je na vašu adresu e-pošte. Potvrdite ovaj kod u nastavku da biste dobili pristup front-endu. Ako niste primili ovu e-poruku, pokušajte se odjaviti, pričekajte 10 minuta, i ponovno se prijavite kako biste primili novu e-poruku koja sadrži novi kod."
  Accounts: "Stranica s računima omogućuje vam kontrolu tko može pristupiti front-endu CIDRAM-a."
  Aggregator: "Agregator vam omogućuje izražavanje IP-ova, CIDR-ova, i mrežnih maski na najmanji mogući način. Unesite podatke koje želite agregirati i pritisnite "OK"."
+ Auxiliary Rules Modes: "Način prikaza prikazuje pomoćna pravila kao sažeti popis radi lakšeg čitanja. Pravila na popisu mogu se proširiti i prikazati dodatni detalji klikom na njih. Opcije za izvoz ili brisanje pravila prikazat će se klikom na trigram (☰). Redoslijed pravila može se promijeniti metodom povlačenja i ispuštanja, povlačenjem pravila s postojećeg položaja na željeni položaj. Za izmjenu pomoćnih pravila potreban je način uređivanja, polja za uređivanje i opcije za dodavanje novih uvjeta, webhookova, ili druge logike pravilima prema potrebi na stranici. Nova pomoćna pravila mogu se kreirati putem bilo kojeg načina."
  Auxiliary Rules Priority: "Prioritet (najviši➡(jednak🔄ekvivalent)➡najniža):"
  Auxiliary Rules Webhooks: "Kada se pravilo pokrene, CIDRAM će pokušati obavijestiti sve povezane web-dojavnike o događaju."
  Auxiliary Rules: "Ovu stranicu možete koristiti za stvaranje, brisanje, i izmjenu pomoćnih pravila za CIDRAM."

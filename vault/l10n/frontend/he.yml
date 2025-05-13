@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hebrew language data for the front-end (last modified: 2025.05.08).
+# This file: Hebrew language data for the front-end (last modified: 2025.05.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -730,8 +730,6 @@ label:
   greylist the request: "הבקשה תופיע ברשימה רשימה האפורה"
   logic_all: "על מנת להפעיל את הכלל, יש לעמוד בכל התנאים."
   logic_any: "כל תנאי "שווה" (=) עשויים להפעיל את הכלל, כל עוד מתקיימים גם כל התנאים "לא שווים" (≠)."
-  mode_edit: "מצב עריכה"
-  mode_view: "מצב צפייה"
   profile the request: "פרופיל את הבקשה"
   redirect the request (without blocking it): "הפנה מחדש את הבקשה (מבלי לחסום אותה)"
   run a file to handle the request: "להפעיל קובץ כדי לטפל הבקשה"
@@ -759,6 +757,7 @@ link:
  Configuration: "תצורה"
  Discussions: "דיונים"
  Documentation: "תיעוד"
+ Edit mode: "מצב עריכה"
  File Manager: "מנהל קבצים"
  Get API key: "אם עדיין אין לך מפתח API, לחץ כאן כדי לקבל אחד."
  Home: "דף הבית"
@@ -774,6 +773,7 @@ link:
  Statistics: "סטטיסטיקה"
  Subtractor: "כלי להחסיר"
  Updates: "עדכונים"
+ View mode: "מצב צפייה"
 macro:
  Description:
   activate_modules: &MayImpactPerformance "לא מומלץ בדרך כלל, מכיוון שסביר להניח שיש כאלה שאתה לא צריך. התקנה והפעלה של רכיבים כאשר אין בהם צורך עלולים להשפיע לרעה על הביצועים."
@@ -1011,6 +1011,7 @@ tip:
  2FA Sent: "אימייל המכיל קוד אימות דו-גורמי נשלח לכתובת האימייל שלך. אנא אשר את הקוד הזה למטה כדי לקבל גישה להקצה הקדמי. אם לא קיבלת אימייל זה, נסה להתנתק, המתן 10 דקות, ולהיכנס שוב כדי לקבל אימייל חדש המכיל קוד חדש."
  Accounts: "דף החשבונות מאפשר לך לשלוט למי יכול לגשת להקצה הקדמי ה-CIDRAM."
  Aggregator: "האגרגטור מאפשר לך לבטא מסכות רשת, כתובות IP, ו-CIDR בצורה הקטנה ביותר. הזן את הנתונים לבטא ולחץ על "אישור"."
+ Auxiliary Rules Modes: "מצב תצוגה מציג כללי עזר כרשימה קומפקטית לקריאה קלה. ניתן להרחיב את הכללים ברשימה ולהציג פרטים נוספים על ידי לחיצה עליהם. אפשרויות לייצוא או מחיקה של כלל יוצגו בעת לחיצה על הטריגרמה (☰). ניתן לסדר מחדש את הכללים באמצעות גרירה ושחרור, גרירת כלל ממיקומו הקיים למיקום הרצוי. נדרש מצב עריכה כדי לשנות כללי עזר, שדות ואפשרויות להוספת תנאים חדשים ולוגיקה אחרת לכללים המסופקים בדף. ניתן ליצור כללי עזר חדשים באמצעות כל אחד מהמצבים."
  Auxiliary Rules Priority: "עדיפות (הכי גבוה⬅(שווה🔄שווה ערך)⬅הנמוך ביותר):"
  Auxiliary Rules Webhooks: "כאשר כלל מופעל, CIDRAM ינסה להודיע לכל webhooks מחובר על האירוע."
  Auxiliary Rules: "אתה יכול להשתמש בדף זה כדי ליצור, למחוק, ולשנות כללי עזר עבור CIDRAM."

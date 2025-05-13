@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2025.05.08).
+# This file: Turkish language data for the front-end (last modified: 2025.05.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -731,8 +731,6 @@ label:
   greylist the request: "isteği gri listeye ekleyin"
   logic_all: "Kuralı tetiklemek için tüm şartlar yerine getirilmelidir."
   logic_any: "Tüm "eşittir" (=) koşulları, tüm "eşit olmayan" (≠) koşullar da karşılandığı sürece kuralı tetikleyebilir."
-  mode_edit: "Düzenleme modu"
-  mode_view: "Görünüm modu"
   profile the request: "isteği profilleyin"
   redirect the request (without blocking it): "isteği yönlendirin (engellemeden)"
   run a file to handle the request: "isteği işlemek için bir dosya çalıştırın"
@@ -760,6 +758,7 @@ link:
  Configuration: "Yapılandırma"
  Discussions: "Tartışmalar"
  Documentation: "Belgeler"
+ Edit mode: "Düzenleme modu"
  File Manager: "Dosya yöneticisi"
  Get API key: "Halihazırda bir API anahtarınız yoksa, bir tane almak için burayı tıklayın."
  Home: "Ana sayfa"
@@ -775,6 +774,7 @@ link:
  Statistics: "İstatistik"
  Subtractor: "Çıkarıcı"
  Updates: "Güncellemeler"
+ View mode: "Görünüm modu"
 macro:
  Description:
   activate_modules: &MayImpactPerformance "İhtiyacınız olmayan bazı şeyler olabileceğinden, bu genellikle önerilmez. Bileşenleri ihtiyaç duyulmadığında yüklemek ve etkinleştirmek, performansı olumsuz etkileyebilir."
@@ -984,6 +984,7 @@ tip:
  2FA Sent: "E-posta adresinize iki faktörlü bir kimlik doğrulama kodu içeren bir e-posta gönderildi. Ön tarafa erişmek için lütfen aşağıdaki kodu doğrulayın. Bu e-postayı almadıysanız, yeni bir kod içeren yeni bir e-posta almak için, çıkış yapmayı, 10 dakika beklemeyi ve tekrar giriş yapmayı deneyin."
  Accounts: "Hesaplar sayfası, CIDRAM ön ucuna kimin erişebileceğini kontrol etmenizi mümkün kılar."
  Aggregator: "Toplayıcı IP'leri, CIDR'leri, ve ağ maskeleri olabildiğince az şekilde ifade etmenizi sağlar. Birleştirilecek verileri girin ve "Tamam" düğmesine basın."
+ Auxiliary Rules Modes: "Görünüm modu, yardımcı kuralları kolay okunabilecek şekilde kompakt bir liste halinde gösterir. Listedeki kuralların üzerine tıklanarak genişletilebilir ve daha fazla ayrıntı görüntülenebilir. Üçlüye (☰) tıklandığında bir kuralı dışa aktarma veya silme seçenekleri gösterilecektir. Kurallar sürükle bırak yöntemiyle yeniden sıralanabilir, kural mevcut konumundan istenilen konuma sürüklenebilir. Yardımcı kuralları değiştirmek için düzenleme modu gereklidir, sayfada kurallara yeni koşullar, webhook'lar, veya diğer mantıklar eklemek için düzenlenebilir alanlar ve seçenekler sağlanmıştır ihtiyaç duyulduğu takdirde. Her iki mod aracılığıyla da yeni yardımcı kurallar oluşturulabilir."
  Auxiliary Rules Priority: "Öncelik (maksimum➡(eşit🔄eşdeğer)➡minimum):"
  Auxiliary Rules Webhooks: "Bir kural tetiklendiğinde, CIDRAM, olayla ilgili bağlı webhookları bildirmeye çalışır."
  Auxiliary Rules: "CIDRAM için yardımcı kurallar oluşturmak, silmek ve değiştirmek için bu sayfayı kullanabilirsiniz."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2025.05.08).
+# This file: Korean language data for the front-end (last modified: 2025.05.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -724,8 +724,6 @@ label:
   greylist the request: "요청을 그레이리스트에 올리세요"
   logic_all: "규칙을 실행하려면 모든 조건이 충족되어야합니다."
   logic_any: "모든 "같지 않음"(≠) 조건도 충족되면 모든 "같음"(=) 조건이 규칙을 트리거 할 수 있습니다."
-  mode_edit: "편집 모드"
-  mode_view: "보기 모드"
   profile the request: "요청을 프로필을 작성해주세요"
   redirect the request (without blocking it): "요청을 리디렉션하세요 (차단하지 않고)."
   run a file to handle the request: "요청을 처리하기 위해 파일을 실행"
@@ -753,6 +751,7 @@ link:
  Configuration: "구성"
  Discussions: "토론"
  Documentation: "문서"
+ Edit mode: "편집 모드"
  File Manager: "파일 관리자"
  Get API key: "아직 API 키가 없으면, 여기를 클릭하여 키를 받으세요."
  Home: "홈"
@@ -768,6 +767,7 @@ link:
  Statistics: "통계"
  Subtractor: "빼기 도구"
  Updates: "업데이트"
+ View mode: "보기 모드"
 macro:
  Description:
   activate_modules: &MayImpactPerformance "모두 필요하지 않을 수 있으므로 권장하지 않습니다. 필요하지 않은 구성 요소를 설치하고 활성화하면 성능에 부정적인 영향을 미칠 수 있습니다."
@@ -975,6 +975,7 @@ tip:
  2FA Sent: "2FA 코드가 포함 된 이메일이 귀하의 이메일 주소로 발송되었습니다. 프런트 엔드에 액세스하려면 아래 코드를 확인하십시오. 이 이메일을받지 못한 경우 로그 아웃을 시도하고 10 분을 기다린 후 다시 로그인하여 새 코드가 포함 된 새 이메일을 수신 할 수 있습니다."
  Accounts: "계정 페이지는 CIDRAM 프론트 엔드에 액세스 할 수있는 사용자를 제어 할 수 있습니다."
  Aggregator: "애그리게이터 가능한 한 가장 작은 방법으로 IP와 CIDR와 넷마스크를 표현할 수 있게 합니다. 집계할 데이터를 입력하고 "확인"을 누릅니다."
+ Auxiliary Rules Modes: "보기 모드에서는 보조 규칙이 간결한 목록으로 표시되어 읽기 쉽습니다. 목록에 있는 규칙을 클릭하면 확장할 수 있으며, 자세한 내용을 볼 수 있습니다. 삼괘(☰)를 클릭하면 규칙을 내보내거나 삭제하는 옵션이 표시됩니다. 규칙은 드래그 앤 드롭 방식으로 재정렬할 수 있으며, 기존 위치에서 규칙을 원하는 위치로 끌어다 놓으면 됩니다. 보조 규칙을 수정하려면 편집 모드가 필요합니다, 페이지에는 필요에 따라 규칙에 새로운 조건, 웹후크, 또는 기타 논리를 추가할 수 있는 편집 가능한 필드와 옵션이 제공됩니다. 두 모드 중 하나를 통해 새로운 보조 규칙을 만들 수 있습니다."
  Auxiliary Rules Priority: "우선 순위 (최고➡(같은🔄동등한)➡최저한의)\_:"
  Auxiliary Rules Webhooks: "규칙이 트리거 되면, CIDRAM은 연결된 웹 훅에 이벤트에 대해 알리려고 시도합니다."
  Auxiliary Rules: "이 페이지를 사용하여 CIDRAM에 대한 보조 규칙을 작성, 삭제 및 수정할 수 있습니다."

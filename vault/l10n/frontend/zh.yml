@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese language data for the front-end (last modified: 2025.05.08).
+# This file: Chinese language data for the front-end (last modified: 2025.05.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -866,8 +866,6 @@ label:
   greylist the request: {"zh-Hans": "灰名单该请求", "zh-Hant": "灰名單該請求"}
   logic_all: {"zh-Hans": "为了触发规则，必须满足所有条件。", "zh-Hant": "為了觸發規則，必須滿足所有條件。"}
   logic_any: {"zh-Hans": "只要满足所有“不等于”（≠）条件，任何“等于”（=）条件都可以触发规则。", "zh-Hant": "只要滿足所有『不等於』（≠）條件，任何『等於』（=）條件都可以觸發規則。"}
-  mode_edit: {"zh-Hans": "编辑模式", "zh-Hant": "編輯模式"}
-  mode_view: "查看模式"
   profile the request: {"zh-Hans": "分类该请求", "zh-Hant": "分類該請求"}
   redirect the request (without blocking it): {"zh-Hans": "重定向该请求（不阻止它）", "zh-Hant": "重定向該請求（不阻止它）"}
   run a file to handle the request: {"zh-Hans": "运行一个文件来处理该请求", "zh-Hant": "運行一個文件來處理該請求"}
@@ -895,6 +893,7 @@ link:
  Configuration: "配置"
  Discussions: {"zh-Hans": "讨论", "zh-Hant": "討論"}
  Documentation: {"zh-Hans": "文档", "zh-Hant": "文檔"}
+ Edit mode: {"zh-Hans": "编辑模式", "zh-Hant": "編輯模式"}
  File Manager: "文件管理器"
  Get API key: {"zh-Hans": "如果您还没有API密钥，请单击此处获取。", "zh-Hant": "如果您還沒有API金鑰，請單擊此處獲取。"}
  Home: {"zh-Hans": "主页", "zh-Hant": "主頁"}
@@ -910,6 +909,7 @@ link:
  Statistics: {"zh-Hans": "统计", "zh-Hant": "統計"}
  Subtractor: {"zh-Hans": "减法仪", "zh-Hant": "減法儀"}
  Updates: "更新"
+ View mode: "查看模式"
 macro:
  Description:
   activate_modules: &MayImpactPerformance {"zh-Hans": "通常不推荐，因为可能有一些您不需要。​在不需要时安装和启用组件可能会对性能产生负面影响。", "zh-Hant": "通常不推薦，因為可能有一些您不需要。​在不需要時安裝和啟用組件可能會對性能產生負面影響。"}
@@ -1125,6 +1125,9 @@ tip:
   zh-Hant: "包含2FA代碼的電子郵件已發送到您的電子郵件地址。​請確認以下代碼以獲取對前端的訪問權限。​如果您沒有收到此電子郵件，嘗試登出，等待10分鐘，然後再次登錄以接收包含新代碼的新電子郵件。"
  Accounts: {"zh-Hans": "帐户页面允许您控制谁可以访问CIDRAM前端。", "zh-Hant": "帳戶頁面允許您控制誰可以訪問CIDRAM前端。"}
  Aggregator: {"zh-Hans": "聚合器允许您以最小的可能方式表达IP，CIDR，和网络掩码。​输入要聚合的数据，然后按“OK”。", "zh-Hant": "聚合器允許您以最小的可能方式表達IP，CIDR，和網絡掩碼。​輸入要聚合的數據，然後按『OK』。"}
+ Auxiliary Rules Modes:
+  zh-Hans: "查看模式将辅助规则显示为紧凑列表，以便于阅读。​单击列表中的规则即可展开并显示更多详细信息。​单击三元组（☰）时将显示导出或删除规则的选项。​可以通过拖放操作更改规则的顺序，将规则从现有位置拖动到所需位置。​需要编辑模式来修改辅助规则，页面上有可编辑字段和选项，用于添加新条件、webhook、或其他逻辑。​可以通过任一模式创建新的辅助规则。"
+  zh-Hant: "查看模式將輔助規則顯示為緊湊列表，以便於閱讀。​點擊清單中的規則即可展開並顯示更多詳細資訊。​點選三元組（☰）時將顯示匯出或刪除規則的選項。​可以透過拖曳操作來變更規則的順序，將規則從現有位置拖曳到所需位置。​需要編輯模式來修改輔助規則，頁面上有可編輯欄位和選項，用於新增條件、webhook、或其他邏輯。​可以透過任一模式建立新的輔助規則。"
  Auxiliary Rules Priority: {"zh-Hans": "优先（最高➡(相同🔄当量)➡最低）：", "zh-Hant": "優先（最高➡(相同🔄當量)➡最低）："}
  Auxiliary Rules Webhooks: {"zh-Hans": "当触发规则时，CIDRAM将尝试该事件通知所有连接的webhooks。", "zh-Hant": "當觸發規則時，CIDRAM將嘗試該事件通知所有連接的webhooks。"}
  Auxiliary Rules: {"zh-Hans": "您可以使用此页面为CIDRAM创建，删除，和修改辅助规则。", "zh-Hant": "您可以使用此頁面為CIDRAM創建，刪除，和修改輔助規則。"}

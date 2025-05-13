@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2025.05.08).
+# This file: Swedish language data for the front-end (last modified: 2025.05.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -737,8 +737,6 @@ label:
   greylist the request: "grålista begäran"
   logic_all: "För att kunna utlösa regeln måste alla villkor vara uppfyllda."
   logic_any: "Eventuella "lika" (=) villkor kan utlösa regeln, så länge som alla "inte lika" (≠) villkor också uppfylls."
-  mode_edit: "Redigeringsläge"
-  mode_view: "Visningsläge"
   profile the request: "profilera begäran"
   redirect the request (without blocking it): "omdirigera begäran (utan att blockera den)"
   run a file to handle the request: "kör en fil för att hantera begäran"
@@ -766,6 +764,7 @@ link:
  Configuration: "Konfiguration"
  Discussions: "Diskussioner"
  Documentation: "Dokumentation"
+ Edit mode: "Redigeringsläge"
  File Manager: "Filhanterare"
  Get API key: "Om du inte redan har en API-nyckel, klicka här för att få en."
  Home: "Hem"
@@ -781,6 +780,7 @@ link:
  Statistics: "Statistik"
  Subtractor: "Subtraktor"
  Updates: "Uppdateringar"
+ View mode: "Visningsläge"
 macro:
  Description:
   activate_modules: &MayImpactPerformance "Rekommenderas inte generellt, eftersom det sannolikt finns några som du inte behöver. Att installera och aktivera komponenter när de inte behövs kan påverka prestandan negativt."
@@ -1014,6 +1014,7 @@ tip:
  2FA Sent: "Ett email som innehåller en 2FA-kod har skickats till din e-postadress. Vänligen bekräfta den här koden nedan för att få tillgång till front-end. Om du inte fick det här e-postmeddelandet, försöker du logga ut, vänta i 10 minuter, och logga in igen för att få ett nytt e-postmeddelande med en ny kod."
  Accounts: "Du kan styra vem som har tillgång till CIDRAM front-end på kontosidan."
  Aggregator: "Du kan aggregera IP-adresser, subnät, och nätmasker till deras minsta möjliga uttryck med hjälp av aggregatorn. Ange data som ska aggregeras och tryck på "OK"."
+ Auxiliary Rules Modes: "I visningsläget visas hjälpregler som en kompakt lista för enkel läsning. Regler i listan kan utökas och ytterligare detaljer visas genom att klicka på dem. Alternativ för att exportera eller ta bort en regel visas när du klickar på trigrammet (☰). Regler kan ändra ordning via dra-och-släpp, genom att dra en regel från dess befintliga position till önskad position. Redigeringsläge krävs för att modifiera hjälpregler, redigerbara fält och alternativ för att lägga till nya villkor, webhooks, eller annan logik till reglerna efter behov som anges på sidan. Nya hjälpregler kan skapas via båda lägena."
  Auxiliary Rules Priority: "Prioritet (högsta➡(likvärdig🔄ekvivalent)➡lägst):"
  Auxiliary Rules Webhooks: "När en regel utlöses, CIDRAM kommer att försöka meddela alla anslutna webhooks om händelsen."
  Auxiliary Rules: "Du kan använda den här sidan för att skapa, ta bort och ändra hjälpregler för CIDRAM."

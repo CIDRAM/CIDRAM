@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2025.05.08).
+# This file: Italian language data for the front-end (last modified: 2025.05.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -735,8 +735,6 @@ label:
   greylist the request: "inserire nella lista grigia la richiesta"
   logic_all: "Per innescare la regola, devono essere soddisfatte tutte le condizioni."
   logic_any: "Qualsiasi condizione "uguale" (=) può innescare la regola, purché siano soddisfatte anche tutte le condizioni "non uguali" (≠)."
-  mode_edit: "Modalità di modifica"
-  mode_view: "Modalità di visualizzazione"
   profile the request: "profilare la richiesta"
   redirect the request (without blocking it): "reindirizzare la richiesta (senza bloccarla)"
   run a file to handle the request: "eseguire un file per gestire la richiesta"
@@ -764,6 +762,7 @@ link:
  Configuration: "Configurazione"
  Discussions: "Discussioni"
  Documentation: "Documentazione"
+ Edit mode: "Modalità di modifica"
  File Manager: "File manager"
  Get API key: "Se non disponi già di una chiave API, fai clic qui per ottenerla."
  Home: "Pagina principale"
@@ -779,8 +778,9 @@ link:
  Statistics: "Statistiche"
  Subtractor: "Sottrattore"
  Updates: "Aggiornamenti"
-macro:
+ View mode: "Modalità di visualizzazione"
  Description:
+macro:
   activate_modules: &MayImpactPerformance "Generalmente non consigliato, poiché è probabile che ce ne siano alcuni di cui non hai bisogno. L'installazione e l'attivazione di componenti quando non sono necessari potrebbe influire negativamente sulle prestazioni."
   install_l10n_core: &RecommendKeepingCore "Quando la direttiva di configurazione <code>lang_override</code> è abilitata, se il browser di un utente specifica una particolare preferenza di lingua, fintanto che i dati L10N di core per quella lingua sono installati, CIDRAM è in grado di visualizzare la pagina "accesso negato" in quella lingua specificata. Di conseguenza, si consiglia di mantenere installati tutti i dati L10N di core."
   install_l10n_fe: &RecommendFEOnlyNeeded "La lingua preferita può essere specificata tramite la direttiva di configurazione <code>lang</code>. Una volta fatto ciò, è improbabile che tu abbia bisogno di dati L10N di front-end diversi da quelli per vostra lingua preferita e potresti voler rimuoverli per liberare leggermente spazio su disco disponibile. Tuttavia, sia che tu scelga di rimuoverlo o tenerlo, in entrambi i casi, non dovrebbe causare alcun danno."
@@ -1014,6 +1014,7 @@ tip:
  2FA Sent: "Una posta elettronica contenente un codice di autenticazione a due fattori è stata inviata al suo indirizzo di posta elettronica. Si prega di confermare questo codice qui sotto per ottenere l'accesso al front-end. Se non hai ricevuto questa posta elettronica, prova a disconnettersi, attendere 10 minuti e accedi di nuovo per ricevere una nuova posta elettronica contenente un nuovo codice."
  Accounts: "La pagina di conti permette di controllare chi può accedere il front-end di CIDRAM."
  Aggregator: "L'aggregatore consente di esprimere indirizzi IP, CIDR, e maschere di rete nel modo più piccolo possibile. Inserire i dati da aggregare e premere "OK"."
+ Auxiliary Rules Modes: "La modalità di visualizzazione mostra le regole ausiliarie come un elenco compatto per facilitarne la lettura. È possibile espandere le regole nell'elenco e visualizzare ulteriori dettagli cliccando su di esse. Cliccando sul trigramma (☰) verranno visualizzate le opzioni per esportare o eliminare una regola. Le regole possono essere riordinate tramite trascinamento, ovvero trascinando una regola dalla sua posizione esistente alla posizione desiderata. La modalità di modifica è necessaria per modificare le regole ausiliarie, campi modificabili e opzioni per aggiungere nuove condizioni, webhook, o altra logica alle regole secondo necessità fornite nella pagina. È possibile creare nuove regole ausiliarie tramite entrambe le modalità."
  Auxiliary Rules Priority: "Priorità (massimo➡(pari🔄equivalente)➡minore):"
  Auxiliary Rules Webhooks: "Quando viene attivata una regola, CIDRAM tenterà di notificare eventuali webhook collegati all'evento."
  Auxiliary Rules: "Puoi utilizzare questa pagina per creare, eliminare e modificare le regole ausiliarie per CIDRAM."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malay language data for the front-end (last modified: 2025.05.08).
+# This file: Malay language data for the front-end (last modified: 2025.05.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -729,8 +729,6 @@ label:
   greylist the request: "senaraikan kelabu permintaan"
   logic_all: "Untuk mencetuskan peraturan, semua syarat mesti dipenuhi."
   logic_any: "Sebarang syarat "sama" (=) boleh mencetuskan peraturan, selagi semua syarat "tidak sama" (≠) juga dipenuhi."
-  mode_edit: "Mod edit"
-  mode_view: "Mod pandangan"
   profile the request: "profilkan permintaan"
   redirect the request (without blocking it): "mengubah hala permintaan (tanpa menyekatnya)"
   run a file to handle the request: "laksanakan fail untuk mengendalikan permintaan"
@@ -758,6 +756,7 @@ link:
  Configuration: "Konfigurasi"
  Discussions: "Perbincangan"
  Documentation: "Dokumentasi"
+ Edit mode: "Mod edit"
  File Manager: "Pengurus fail"
  Get API key: "Jika anda belum mempunyai kunci API, klik disini untuk mendapatkannya."
  Home: "Halaman utama"
@@ -773,6 +772,7 @@ link:
  Statistics: "Statistik"
  Subtractor: "Penolakan"
  Updates: "Kemas kini"
+ View mode: "Mod pandangan"
 macro:
  Description:
   activate_modules: &MayImpactPerformance "Tidak disyorkan secara amnya, kerana mungkin terdapat beberapa yang anda tidak perlukan. Memasang dan mengaktifkan komponen apabila ia tidak diperlukan boleh menjejaskan prestasi secara negatif."
@@ -980,6 +980,7 @@ tip:
  2FA Sent: "E-mel yang mengandungi kod pengesahan dua-faktor telah dihantar ke alamat e-mel anda. Sila sahkan kod ini di bawah untuk mendapatkan akses kepada bahagian hadapan. Jika anda tidak menerima e-mel ini, cuba log keluar, tunggu selama 10 minit, dan log masuk semula untuk menerima e-mel baharu yang mengandungi kod baharu."
  Accounts: "Halaman akaun membolehkan anda mengawal siapa yang boleh mengakses bahagian hadapan CIDRAM."
  Aggregator: "Agregator membolehkan anda ekspresikan IP, CIDR, dan topeng bersih dengan cara yang paling kecil. Masukkan data yang hendak diagregatkan dan tekan "OK"."
+ Auxiliary Rules Modes: "Mod pandangan memaparkan peraturan tambahan sebagai senarai padat untuk bacaan mudah. Peraturan dalam senarai boleh diperluaskan dan butiran lanjut ditunjukkan dengan mengklik padanya. Pilihan untuk mengeksport atau memadam peraturan akan ditunjukkan apabila mengklik trigram (☰). Peraturan boleh disusun semula melalui seret dan lepas, menyeret peraturan dari kedudukan sedia ada dan ke kedudukan yang diingini. Mod edit diperlukan untuk mengubah suai peraturan tambahan, medan boleh diedit dan pilihan untuk menambah syarat baharu, webhooks, atau logik lain pada peraturan mengikut keperluan disediakan pada halaman. Peraturan tambahan baharu boleh dibuat melalui mana-mana mod."
  Auxiliary Rules Priority: "Keutamaan (tertinggi➡(sama🔄bersamaan)➡terendah):"
  Auxiliary Rules Webhooks: "Apabila peraturan dicetuskan, CIDRAM akan cuba memberitahu mana-mana webhook yang disambungkan tentang acara tersebut."
  Auxiliary Rules: "Anda boleh menggunakan halaman ini untuk membuat, memadam, dan mengubah suai peraturan tambahan untuk CIDRAM."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2025.05.08).
+# This file: Indonesian language data for the front-end (last modified: 2025.05.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -726,8 +726,6 @@ label:
   greylist the request: "mendaftar abu-abu permintaannya"
   logic_all: "Untuk memicu aturan, semua kondisi harus dipenuhi."
   logic_any: "Setiap kondisi "sama" (=) dapat memicu aturan, selama semua kondisi "tidak sama" (≠) juga dipenuhi."
-  mode_edit: "Modus edit"
-  mode_view: "Modus lihat"
   profile the request: "mengklasifikasikan permintaan"
   redirect the request (without blocking it): "mengarahkan permintaan (tanpa memblokirnya)"
   run a file to handle the request: "mengeksekusi file untuk menangani permintaan"
@@ -755,6 +753,7 @@ link:
  Configuration: "Konfigurasi"
  Discussions: "Diskusi"
  Documentation: "Dokumentasi"
+ Edit mode: "Modus edit"
  File Manager: "File manager"
  Get API key: "Jika Anda belum memiliki kunci API, klik disini untuk mendapatkannya."
  Home: "Halaman utama"
@@ -770,6 +769,7 @@ link:
  Statistics: "Statistik"
  Subtractor: "Pengurangan"
  Updates: "Pembaruan"
+ View mode: "Modus lihat"
 macro:
  Description:
   activate_modules: &MayImpactPerformance "Tidak direkomendasikan secara umum, karena kemungkinan ada beberapa yang tidak Anda butuhkan. Menginstal dan mengaktifkan komponen saat tidak dibutuhkan dapat berdampak negatif pada performa."
@@ -977,6 +977,7 @@ tip:
  2FA Sent: "Email yang berisi kode otentikasi dua-faktor telah dikirim ke alamat email Anda. Silakan mengkonfirmasikan kode ini dibawah untuk mendapatkan akses ke bagian depan. Jika Anda tidak menerima email ini, coba keluar, tunggu 10 menit, dan masuk lagi untuk menerima email baru yang berisi kode baru."
  Accounts: "Halaman akun memungkinkan Anda untuk mengontrol siapa dapat mengakses bagian depan CIDRAM."
  Aggregator: "Agregator memungkinkan Anda mengekspresikan IP, CIDR, dan topeng jaring dengan cara sekecil mungkin. Masukkan data yang akan diagregatkan dan tekan "OK"."
+ Auxiliary Rules Modes: "Modus lihat menampilkan aturan tambahan sebagai daftar ringkas agar mudah dibaca. Aturan dalam daftar dapat diperluas dan rincian lebih lanjut ditampilkan dengan mengkliknya. Pilihan untuk mengekspor atau menghapus aturan akan ditampilkan saat mengklik trigram (☰). Aturan dapat disusun ulang dengan cara menyeret dan melepas, menyeret aturan dari posisi yang ada ke posisi yang diinginkan. Modus edit diperlukan untuk mengubah aturan tambahan, bidang yang dapat diedit, dan opsi untuk menambahkan kondisi baru, webhook, atau logika lain ke aturan sebagaimana diperlukan yang disediakan di halaman. Aturan tambahan baru dapat dibuat melalui modus manapun."
  Auxiliary Rules Priority: "Prioritas (maksimum➡(sama🔄setara)➡terendah):"
  Auxiliary Rules Webhooks: "Saat aturan dipicu, CIDRAM akan berusaha memberi tahu webhook yang terhubung tentang acara tersebut."
  Auxiliary Rules: "Anda dapat menggunakan halaman ini untuk membuat, menghapus, dan mengubah aturan tambahan untuk CIDRAM."

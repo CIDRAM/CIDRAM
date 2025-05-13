@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2025.05.08).
+# This file: English language data for the front-end (last modified: 2025.05.13).
 ##/
 
 Abuse category:
@@ -761,8 +761,6 @@ label:
   greylist the request: "greylist the request"
   logic_all: "In order to trigger the rule, all conditions must be met."
   logic_any: "Any "equals" (=) conditions may trigger the rule, as long as all "not equals" (≠) conditions are also met."
-  mode_edit: "Edit mode"
-  mode_view: "View mode"
   profile the request: "profile the request"
   redirect the request (without blocking it): "redirect the request (without blocking it)"
   run a file to handle the request: "run a file to handle the request"
@@ -790,6 +788,7 @@ link:
  Configuration: "Configuration"
  Discussions: "Discussions"
  Documentation: "Documentation"
+ Edit mode: "Edit mode"
  File Manager: "File Manager"
  Get API key: "If you don't already have an API key, click here to get one."
  Home: "Home"
@@ -805,6 +804,7 @@ link:
  Statistics: "Statistics"
  Subtractor: "Subtractor"
  Updates: "Updates"
+ View mode: "View mode"
 macro:
  Description:
   activate_modules: &MayImpactPerformance "Not generally recommended, as there's likely to be some that you don't need. Installing and activating components when they aren't needed could negatively impact performance."
@@ -1044,6 +1044,7 @@ tip:
  2FA Sent: "An email containing a two-factor authentication code has been sent to your email address. Please confirm this code below to gain access to the front-end. If you didn't receive this email, try logging out, waiting for 10 minutes, and logging in again to receive a new email containing a new code."
  Accounts: "The accounts page allows you to control who can access the CIDRAM front-end."
  Aggregator: "The aggregator allows you to express IPs, CIDRs, and netmasks in the smallest possible way. Enter the data to be aggregated and press "OK"."
+ Auxiliary Rules Modes: "View mode displays auxiliary rules as a compact list for easy reading. Rules in the list can be expanded and further details shown by clicking on them. Options to export or delete a rule will be shown when clicking the trigram (☰). Rules can be reordered via drag-and-drop, dragging a rule from its existing position and onto the desired position. Edit mode is required to modify auxiliary rules, editable fields and options to add new conditions, webhooks, or other logic to the rules as needed provided on the page. New auxiliary rules can be created via either mode."
  Auxiliary Rules Priority: "Priority (highest➡(equal🔄equivalent)➡lowest):"
  Auxiliary Rules Webhooks: "When a rule is triggered, CIDRAM will attempt to notify any connected webhooks about the event."
  Auxiliary Rules: "You can use this page to create, delete, and modify auxiliary rules for CIDRAM."

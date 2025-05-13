@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2025.05.08).
+# This file: Japanese language data for the front-end (last modified: 2025.05.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -727,8 +727,6 @@ label:
   greylist the request: "リクエストをグレイリストに登録します"
   logic_all: "ルールをトリガーするには、すべての条件を満たす必要があります。"
   logic_any: "すべての「等しくない」（≠）条件も満たされている限り、すべての「等しい」（=）条件がルールをトリガーする可能性があります。"
-  mode_edit: "変更モード"
-  mode_view: "表示モード"
   profile the request: "リクエストをプロフィールします"
   redirect the request (without blocking it): "リクエストを（ブロックせずに）リダイレクトします"
   run a file to handle the request: "リクエストを処理するファイルを実行します"
@@ -756,6 +754,7 @@ link:
  Configuration: "コンフィギュレーション"
  Discussions: "ディスカッション"
  Documentation: "ドキュメンテーション"
+ Edit mode: "変更モード"
  File Manager: "ファイル・マネージャー"
  Get API key: "ＡＰＩキーをまだお持ちでない場合は、ここをクリックして取得してください。"
  Home: "ホーム"
@@ -771,6 +770,7 @@ link:
  Statistics: "統計"
  Subtractor: "減算器"
  Updates: "アップデート"
+ View mode: "表示モード"
 macro:
  Description:
   activate_modules: &MayImpactPerformance "それらのすべてをおそらく必要ないでしょうため、お勧めしません。​必要のないコンポーネントをインストールしてアクティブ化すると、パフォーマンスに悪影響を及ぼす可能性があります。"
@@ -978,6 +978,7 @@ tip:
  2FA Sent: "２ＦＡコードを含むＥメールがあなたのＥメール・アドレスに送信されました。​フロントエンドにアクセスするには、このコードを確認してください。​このＥメールを受信しなかった場合は、新しいコードを含む新しいＥメールを受け取るために、ログアウトして、１０分待ってからもう一度ログインしてください。"
  Accounts: "アカウント・ページは、CIDRAMフロントエンドにアクセスできるユーザーを制御できます。"
  Aggregator: "アグリゲータを使用すると、最小限の方法でＩＰとＣＩＤＲとネットマスクを表現できます。​集計するデータを入力し、「ＯＫ」を押します。"
+ Auxiliary Rules Modes: "表示モードでは、補助ルールが読みやすいコンパクトなリストとして表示されます。​リスト内のルールはクリックすることで展開され、詳細が表示されます。​トライグラム（☰）をクリックすると、ルールをエクスポートまたは削除するオプションが表示されます。​ルールは、「ドラッグ・アンド・ドロップ」で並べ替えることができ、既存の位置から目的の位置にルールをドラッグします。​補助ルールを変更するには変更モードが必要です、必要に応じてルールに新しい条件、Webhook、またはその他のロジックを追加するための編集可能なフィールドとオプションがページに提供されます。​どちらのモードでも新しい補助ルールを作成できます。"
  Auxiliary Rules Priority: "優先（最高➡(等しい🔄同等)➡最低）："
  Auxiliary Rules Webhooks: "ルールがトリガーされると、CIDRAMは接続されているすべてのWebhookにイベントについて通知しようとします。"
  Auxiliary Rules: "このページを使用して、CIDRAMの補助ルールを作成、削除、および変更することができます。"

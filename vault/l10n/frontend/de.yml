@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2025.05.08).
+# This file: German language data for the front-end (last modified: 2025.05.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -736,8 +736,6 @@ label:
   greylist the request: "setzen Sie die Anfrage auf die graue Liste"
   logic_all: "Um die Regel auszulösen, müssen alle Bedingungen erfüllt sein."
   logic_any: "Irgendwelche Bedingungen „gleich“ (=) können die Regel auslösen, solange alle Bedingungen „nicht gleich“ (≠) erfüllt sind."
-  mode_edit: "Bearbeitungsmodus"
-  mode_view: "Ansichtsmodus"
   profile the request: "profilieren Sie die Anfrage"
   redirect the request (without blocking it): "umleiten Sie die Anfrage (ohne zu blockieren)"
   run a file to handle the request: "durch Ausführen einer Datei Bearbeiten"
@@ -765,6 +763,7 @@ link:
  Configuration: "Konfiguration"
  Discussions: "Diskussionen"
  Documentation: "Dokumentation"
+ Edit mode: "Bearbeitungsmodus"
  File Manager: "Dateimanager"
  Get API key: "Wenn Sie noch keinen API-Schlüssel haben, klicken Sie hier um einen zu erhalten."
  Home: "Startseite"
@@ -780,6 +779,7 @@ link:
  Statistics: "Statistiken"
  Subtractor: "Subtrahierer"
  Updates: "Aktualisierungen"
+ View mode: "Ansichtsmodus"
 macro:
  Description:
   activate_modules: &MayImpactPerformance "Im Allgemeinen nicht empfohlen, da es wahrscheinlich einige, die Sie nicht benötigen. Das Installieren und Aktivieren von Komponenten, wenn sie nicht benötigt werden, kann die Leistung negativ beeinflussen."
@@ -1017,6 +1017,7 @@ tip:
  2FA Sent: "Eine E-Mail mit einem Zwei-Faktor-Authentifizierungscode wurde an Ihre E-Mail-Adresse gesendet. Bitte bestätigen Sie diesen Code, um Zugang zum Frontend zu erhalten. Wenn Sie diese E-Mail nicht erhalten haben, versuchen Sie sich auszuloggen, warten Sie 10 Minuten, und melden Sie sich einzuloggen, um eine neue E-Mail mit einem neuen Code zu erhalten."
  Accounts: "Das Kontenseite macht es möglich zu kontrollieren, wer kann Zugriff auf der CIDRAM Frontend haben."
  Aggregator: "Mit dem Aggregator können Sie IPs, CIDRs, und Netzmasken auf kleinstmögliche Weise ausdrücken. Geben Sie die zu aggregierenden Daten und drücken Sie „OK“."
+ Auxiliary Rules Modes: "Im Ansichtsmodus werden Hilfsregeln als kompakte Liste angezeigt, damit sie leichter zu lesen sind. Durch Anklicken können Regeln in der Liste erweitert und weitere Details angezeigt werden. Optionen zum Exportieren oder Löschen einer Regel werden angezeigt wenn Sie auf das Trigramm (☰) klicken. Regeln können per Drag-and-Drop neu angeordnet werden, indem eine Regel von ihrer vorhandenen Position an die gewünschte Position gezogen wird. Hilfsregeln können im Bearbeitungsmodus geändert werden, auf der Seite werden bearbeitbare Felder und Optionen bereitgestellt um den Regeln nach Bedarf neue Bedingungen, Webhooks, oder andere Logik hinzuzufügen. Neue Hilfsregeln können über beide Modi erstellt werden."
  Auxiliary Rules Priority: "Priorität (höchste➡(gleich🔄äquivalent)➡niedrigste):"
  Auxiliary Rules Webhooks: "Wenn eine Regel ausgelöst wird, CIDRAM versucht, alle Webhooks verbundenen über das Ereignis zu informieren."
  Auxiliary Rules: "Sie können diese Seite verwenden, um Hilfsregeln für CIDRAM zu erstellen, zu löschen und zu ändern."

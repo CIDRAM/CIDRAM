@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Afrikaans language data for the front-end (last modified: 2025.05.08).
+# This file: Afrikaans language data for the front-end (last modified: 2025.05.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -736,8 +736,6 @@ label:
   greylist the request: "gryslys die versoek"
   logic_all: "Om die reël te aktiveer, moet aan alle voorwaardes nagekom word."
   logic_any: "Enige "gelyk aan" (=) voorwaardes kan die reël nakom, solank as alle "nie gelyk ann" (≠) voorwaardes ook nagekom word."
-  mode_edit: "Redigeermodus"
-  mode_view: "Kykmodus"
   profile the request: "profileer die versoek"
   redirect the request (without blocking it): "herlei die versoek (sonder om dit te blokkeer)"
   run a file to handle the request: "hardloop 'n lêer om die versoek te hanteer"
@@ -765,6 +763,7 @@ link:
  Configuration: "Konfigurasie"
  Discussions: "Besprekings"
  Documentation: "Dokumentasie"
+ Edit mode: "Redigeermodus"
  File Manager: "Lêerbestuurder"
  Get API key: "As jy nie reeds 'n API-sleutel het nie, klik hier om een te kry."
  Home: "Tuis"
@@ -780,6 +779,7 @@ link:
  Statistics: "Statistiek"
  Subtractor: "Aftrekker"
  Updates: "Opdaterings"
+ View mode: "Kykmodus"
 macro:
  Description:
   activate_modules: &MayImpactPerformance "Word nie algemeen aanbeveel nie, aangesien daar waarskynlik sommige is wat jy nie nodig het nie. Die installering en aktivering van komponente wanneer dit nie nodig is nie, kan prestasie negatief beïnvloed."
@@ -1017,6 +1017,7 @@ tip:
  2FA Sent: "Ons het 'n e-pos gestuur wat 'n tweefaktor-verifikasiekode bevat na jou e-pos adres. Bevestig asseblief hierdie kode hieronder om toegang tot die front-end te kry. As jy nie hierdie e-pos ontvang nie, probeer om uit te teken, wag vir 10 minute, en weer inteken om 'n nuwe e-pos met 'n nuwe kode te ontvang."
  Accounts: "Jy kan vanaf die rekeninge-bladsy beheer wie toegang tot die CIDRAM front-end het."
  Aggregator: "Jy kan IP's, CIDR's, en netmaskers op die kleinste moontlike manier uitdruk deur die aggregator te gebruik. Voer die data in wat geaggregeerde moet word en druk "OK"."
+ Auxiliary Rules Modes: "Die kykmodus vertoon bykomende reëls as 'n kompakte lys vir maklike lees. Reëls in die lys kan uitgebrei word en verdere besonderhede kan vertoon word deur daarop te klik. Opsies om 'n reël uit te voer of te verwyder, sal gewys word wanneer op die trigram (☰) geklik word. Reëls kan herrangskik word deur te sleep-en-los, deur 'n reël van sy bestaande posisie na die verlangde posisie te sleep. Redigeermodus is nodig om hulpreëls te wysig, wysigbare velde en opsies om nuwe voorwaardes, webhooks, of ander logika by die reëls te voeg soos nodig op die bladsy verskaf. Nuwe bykomende reëls kan via enige modus geskep word."
  Auxiliary Rules Priority: "Prioriteit (hoogste➡(gelyk🔄ekwivalent)➡laagste):"
  Auxiliary Rules Webhooks: "Wanneer aan die reël se voorwaardes nagekom word, CIDRAM sal probeer om enige gekoppelde webhooks oor die gebeurtenis in kennis te stel."
  Auxiliary Rules: "Jy kan hierdie bladsy gebruik om bykomende reëls vir CIDRAM te skep, uit te vee, en te verander."

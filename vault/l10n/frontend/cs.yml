@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Czech language data for the front-end (last modified: 2025.05.08).
+# This file: Czech language data for the front-end (last modified: 2025.05.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -740,8 +740,6 @@ label:
   greylist the request: "greylistujte požadavek"
   logic_all: "Aby bylo možné pravidlo spustit, musí být splněny všechny podmínky."
   logic_any: "Pravidlo může spustit od kterákoli z podmínek „rovná se“ (=), pokud jsou splněny také všechny podmínky „nerovná se“ (≠)."
-  mode_edit: "Režim úprav"
-  mode_view: "Režim zobrazení"
   profile the request: "profilujte požadavek"
   redirect the request (without blocking it): "přesměrujte požadavek (bez blokování)"
   run a file to handle the request: "spustit soubor pro zpracování požadavku"
@@ -769,6 +767,7 @@ link:
  Configuration: "Konfigurace"
  Discussions: "Diskuse"
  Documentation: "Dokumentace"
+ Edit mode: "Režim úprav"
  File Manager: "Správce souborů"
  Get API key: "Pokud ještě nemáte klíč API, klikněte sem a získejte jej."
  Home: "Domovská stránka"
@@ -784,6 +783,7 @@ link:
  Statistics: "Statistika"
  Subtractor: "Odečítač"
  Updates: "Aktualizace"
+ View mode: "Režim zobrazení"
 macro:
  Description:
   activate_modules: &MayImpactPerformance "Obecně se nedoporučuje, protože pravděpodobně existují takové, které nepotřebujete. Instalace a aktivace komponenty, když nejsou potřeba, by mohla negativně ovlivnit výkon."
@@ -1036,6 +1036,7 @@ tip:
  2FA Sent: "Na vaši e-mailovou adresu byl odeslán e-mail obsahující dvoufaktorový ověřovací kód. Chcete-li získat přístup k front-endu, potvrďte prosím tento kód níže. Pokud jste tento e-mail neobdrželi, zkuste se odhlásit, počkejte 10 minut, a znovu se přihlaste, abyste dostali nový e-mail obsahující nový kód."
  Accounts: "Stránka účtů vám umožňuje ovládat, kdo má přístup k front-endu CIDRAM."
  Aggregator: "Agregátor vám umožňuje vyjadřovat IP, CIDR, a síťové masky nejmenším možným způsobem. Zadejte data, která mají být agregována, a stiskněte „OK“."
+ Auxiliary Rules Modes: "V režimu zobrazení se pomocná pravidla zobrazují jako kompaktní seznam pro snadné čtení. Pravidla v seznamu lze rozbalit a zobrazit další podrobnosti kliknutím na ně. Možnosti exportu nebo smazání pravidla se zobrazí po kliknutí na trigram (☰). Pořadí pravidel lze změnit funkcí drag-and-drop, t.j., přetažením pravidla z jeho stávající pozice na požadovanou pozici. Pro úpravu pomocných pravidel je vyžadován režim úprav, upravitelná pole a možnosti pro přidání nových podmínek, webhooků, nebo jiné logiky k pravidlům dle potřeby uvedené na stránce. Nová pomocná pravidla lze vytvořit v obou režimech."
  Auxiliary Rules Priority: "Prioritou (nejvyšší➡(stejné🔄ekvivalent)➡nejnižší):"
  Auxiliary Rules Webhooks: "Když je pravidlo spuštěno, CIDRAM se pokusí upozornit na událost všechny připojené webhooky."
  Auxiliary Rules: "Tuto stránku můžete použít k vytvoření, odstranění, a úpravě pomocných pravidel pro CIDRAM."

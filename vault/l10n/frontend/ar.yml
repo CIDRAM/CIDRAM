@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2025.05.08).
+# This file: Arabic language data for the front-end (last modified: 2025.05.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -728,8 +728,6 @@ label:
   greylist the request: "القائمة الرمادية الطلب"
   logic_all: "من أجل تحريك القاعدة، يجب استيفاء جميع الشروط."
   logic_any: "قد تؤدي أي شروط "يساوي" (=) إلى تشغيل القاعدة، طالما تم استيفاء جميع الشروط "غير متساوية" (≠) أيضًا."
-  mode_edit: "وضع التحرير"
-  mode_view: "وضع العرض"
   profile the request: "بتوصيف الطلب"
   redirect the request (without blocking it): "إعادة توجيه الطلب (دون حظره)"
   run a file to handle the request: "تنفيذ ملف للتعامل مع الطلب"
@@ -757,6 +755,7 @@ link:
  Configuration: "التكوين"
  Discussions: "مناقشات"
  Documentation: "توثيق"
+ Edit mode: "وضع التحرير"
  File Manager: "مدير الملفات"
  Get API key: "إذا لم يكن لديك بالفعل مفتاح API، فانقر هنا للحصول على واحد."
  Home: "الرئيسية"
@@ -772,6 +771,7 @@ link:
  Statistics: "الإحصاء"
  Subtractor: "أداة الطرح"
  Updates: "التحديثات"
+ View mode: "وضع العرض"
 macro:
  Description:
   activate_modules: &MayImpactPerformance "لا يوصى به بشكل عام، حيث من المحتمل أن يكون هناك البعض الذي لا تحتاجه. عندما لا تكون هناك حاجة للمكونات، فقد يؤثر تثبيتها وتنشيطها سلبًا على الأداء."
@@ -1005,6 +1005,7 @@ tip:
  2FA Sent: "تم إرسال بريد إلكتروني يحتوي على رمز 2FA إلى عنوان بريدك الإلكتروني. يرجى تأكيد هذا الرمز أدناه للوصول إلى الواجهة الأمامية. إذا لم تتلقَ رسالة البريد الإلكتروني هذه، فحاول تسجيل الخروج، والانتظار لمدة 10 دقائق، وتسجيل الدخول مرة أخرى لتلقي رسالة إلكترونية جديدة تحتوي على رمز جديد."
  Accounts: "الصفحة حسابات يسمح لك للسيطرة على الذي يمكن الوصول ألfront-end CIDRAM."
  Aggregator: "التجميع يسمح لك للتعبير عن IP و CIDR و أقنعة شبكية في أصغر طريقة ممكنة. أدخل البيانات التي سيتم تجميعها واضغط على "حسنا"."
+ Auxiliary Rules Modes: "وضع العرض العرض القواعد المساعدة كقائمة مضغوطة لسهولة القراءة. يمكن توسيع القواعد الموجودة في القائمة وإظهار المزيد من التفاصيل من خلال النقر عليها. سيتم عرض خيارات تصدير القاعدة أو حذفها عند النقر فوق الرمز الثلاثي (☰). يمكن إعادة ترتيب القواعد عن طريق سحب القاعدة من موضعها الحالي إلى الموضع المطلوب. يجب أن يكون وضع التحرير مطلوبًا لتعديل القواعد المساعدة، حقول قابلة للتعديل وخيارات لإضافة شروط جديدة أو خطافات ويب أو منطق آخر للقواعد حسب الحاجة المقدمة في الصفحة. يمكن إنشاء قواعد مساعدة جديدة عبر أي من الوضعين."
  Auxiliary Rules Priority: "أفضلية (أعلى⬅(مساو🔄ما يعادل)⬅الأدنى):"
  Auxiliary Rules Webhooks: "عندما يتم استيفاء القاعدة، سيحاول CIDRAM إبلاغ أي webhooks متصلة بالحدث."
  Auxiliary Rules: "يمكنك استخدام هذه الصفحة لإنشاء قواعد إضافية لـ CIDRAM وحذفها وتعديلها."

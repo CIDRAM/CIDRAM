@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2025.05.08).
+# This file: Vietnamese language data for the front-end (last modified: 2025.05.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -728,8 +728,6 @@ label:
   greylist the request: "danh sách xám yêu cầu"
   logic_all: "Để kích hoạt quy tắc, tất cả các điều kiện phải được đáp ứng."
   logic_any: "Bất kỳ điều kiện "bằng" (=) nào có thể kích hoạt các quy tắc, miễn là tất cả điều kiện "không bằng" (≠) cũng được đáp ứng."
-  mode_edit: "Chế độ chỉnh sửa"
-  mode_view: "Chế độ xem"
   profile the request: "hồ sơ yêu cầu"
   redirect the request (without blocking it): "chuyển hướng yêu cầu (mà không chặn nó)"
   run a file to handle the request: "chạy một tập tin để xử lý yêu cầu"
@@ -757,6 +755,7 @@ link:
  Configuration: "Cấu hình"
  Discussions: "Thảo luận"
  Documentation: "Tài liệu"
+ Edit mode: "Chế độ chỉnh sửa"
  File Manager: "Quản lý tập tin"
  Get API key: "Nếu bạn chưa có khóa API, hãy nhấp vào đây để lấy khóa."
  Home: "Trang chủ"
@@ -772,6 +771,7 @@ link:
  Statistics: "Số liệu thống kê"
  Subtractor: "Phép trừ"
  Updates: "Cập nhật"
+ View mode: "Chế độ xem"
 macro:
  Description:
   activate_modules: &MayImpactPerformance "Nói chung không nên khuyến khích vì có thể có một số thứ bạn không cần. Việc cài đặt và kích hoạt các thành phần khi không cần thiết có thể tác động tiêu cực đến hiệu suất."
@@ -909,7 +909,7 @@ response:
  The IP address, %s, successfully reported: "Địa chỉ IP %s đã được báo cáo thành công!"
  The report has not been enqueued: "Báo cáo chưa được xếp hàng đợi."
  The same IP address can be reported only once every 15 minutes: "Một địa chỉ IP chỉ có thể được báo cáo 15 phút một lần. Báo cáo đã được xếp vào hàng đợi và CIDRAM sẽ cố gắng gửi báo cáo sau đó."
- There aren_t currently any auxiliary rules: "Hiện tại không có bất kỳ quy tắc phụ nào."
+ There aren_t currently any auxiliary rules: "Hiện tại không có bất kỳ quy tắc phụ trợ nào."
  There_s nothing to analyse, sorry: "Xin lỗi, không có gì để phân tích."
  There_s nothing to print, sorry: "Xin lỗi, không có gì để in."
  There_s nothing to write, sorry: "Xin lỗi, không có gì để viết."
@@ -979,6 +979,7 @@ tip:
  2FA Sent: "Một email chứa mã 2FA đã được gửi đến địa chỉ email của bạn. Vui lòng xác nhận mã này bên dưới để có quyền truy cập vào front-end. Nếu bạn không nhận được email này, thử đăng xuất, đợi 10 phút, và đăng nhập lại để nhận email mới chứa mã mới."
  Accounts: "Trang tài khoản cho phép bạn kiểm soát những người có thể truy cập các front-end CIDRAM."
  Aggregator: "Tập hợp cho phép bạn thể hiện các IP, CIDR, và mặt nạ mạng theo cách nhỏ nhất có thể. Nhập dữ liệu được tập hợp và nhấn "OK"."
+ Auxiliary Rules Modes: "Chế độ xem hiển thị các quy tắc phụ trợ dưới dạng danh sách nhỏ gọn để dễ đọc. Bạn có thể mở rộng các quy tắc trong danh sách và hiển thị thêm thông tin chi tiết bằng cách nhấp vào chúng. Các tùy chọn để xuất hoặc xóa quy tắc sẽ được hiển thị khi nhấp vào biểu tượng tam giác (☰). Có thể thay đổi thứ tự các quy tắc bằng cách kéo và thả, kéo một quy tắc từ vị trí hiện tại đến vị trí mong muốn. Chế độ chỉnh sửa là cần thiết để sửa đổi các quy tắc phụ trợ, các trường có thể chỉnh sửa và tùy chọn để thêm điều kiện mới, webhook, hoặc logic khác vào các quy tắc khi cần thiết được cung cấp trên trang. Có thể tạo các quy tắc phụ trợ mới thông qua cả hai chế độ."
  Auxiliary Rules Priority: "Sự ưu tiên (cao nhất➡(công bằng🔄tương đương)➡thấp nhất):"
  Auxiliary Rules Webhooks: "Khi một quy tắc được đáp ứng, CIDRAM sẽ cố gắng thông báo cho bất kỳ webhooks nào được kết nối về sự kiện này."
  Auxiliary Rules: "Bạn có thể sử dụng trang này để tạo, xóa, và sửa đổi các quy tắc phụ trợ cho CIDRAM."

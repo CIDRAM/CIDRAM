@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2025.05.08).
+# This file: French language data for the front-end (last modified: 2025.05.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -793,8 +793,6 @@ label:
   greylist the request: "mettre la requête sur la liste grise"
   logic_all: "Pour déclencher la règle, toutes les conditions doivent être remplies."
   logic_any: "Toute condition «\_égal\_» (=) peut déclencher la règle, tant que toutes les conditions «\_inégales\_» (≠) sont également remplies."
-  mode_edit: "Mode d'édition"
-  mode_view: "Mode d'affichage"
   profile the request: "profiler la requête"
   redirect the request (without blocking it): "rediriger la requête (sans la bloquer)"
   run a file to handle the request: "exécuter un fichier pour gérer la requête"
@@ -822,6 +820,7 @@ link:
  Configuration: "Configuration"
  Discussions: "Discussions"
  Documentation: "Documentation"
+ Edit mode: "Mode d'édition"
  File Manager: "Gestionnaire de fichiers"
  Get API key: "Si vous n'avez pas de clé API, cliquez ici pour l'obtenir."
  Home: "Page d'accueil"
@@ -837,6 +836,7 @@ link:
  Statistics: "Statistiques"
  Subtractor: "Soustracteur"
  Updates: "Mises à jour"
+ View mode: "Mode d'affichage"
 macro:
  Description:
   activate_modules: &MayImpactPerformance "Généralement pas recommandé, car il y en a probablement certains dont vous n'avez pas besoin. L'installation et l'activation de composants lorsqu'ils ne sont pas nécessaires peuvent avoir un impact négatif sur les performances."
@@ -1080,6 +1080,7 @@ tip:
   fr-CA: "Un courriel contenant un code d'authentification à deux facteurs a été envoyé à votre adresse courriel. Veuillez confirmer ce code ci-dessous pour obtenir un accès frontal. Si vous n'avez pas reçu ce courriel, essayez de vous déconnecter, d'attendre 10 minutes, et de vous reconnecter pour recevoir un nouveau courriel contenant un nouveau code."
  Accounts: "La page des comptes vous permet de contrôler qui peut accéder l'accès frontal de CIDRAM."
  Aggregator: "L'agrégateur vous permet d'exprimer les adresses IP, les CIDR, et les masques de réseau de la manière la plus petite possible. Entrez les données à agréger et appuyez sur «\_OK\_»."
+ Auxiliary Rules Modes: "Le mode d'affichage affiche les règles auxiliaires sous forme de liste compacte pour une lecture facile. Les règles de la liste peuvent être étendues et des détails supplémentaires affichés en cliquant dessus. Les options permettant d'exporter ou de supprimer une règle s'afficheront en cliquant sur le trigramme (☰). Les règles peuvent être réorganisées par glisser-déposer, en faisant glisser une règle de sa position existante vers la position souhaitée. Le mode d'édition est requis pour modifier les règles auxiliaires, les champs modifiables et les options pour ajouter de nouvelles conditions, des webhooks, ou une autre logique aux règles selon les besoins fournis sur la page. De nouvelles règles auxiliaires peuvent être créées via l'un ou l'autre mode."
  Auxiliary Rules Priority: "Priorité (plus haut➡(égale🔄équivalent)➡plus bas)\_:"
  Auxiliary Rules Webhooks: "Lorsqu'une règle est déclenchée, CIDRAM tentera d'informer tous les webhooks connectés de l'événement."
  Auxiliary Rules: "Vous pouvez utiliser cette page pour créer, supprimer et modifier des règles auxiliaires pour CIDRAM."

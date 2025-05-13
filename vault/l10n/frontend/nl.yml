@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2025.05.08).
+# This file: Dutch language data for the front-end (last modified: 2025.05.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -733,8 +733,6 @@ label:
   greylist the request: "zet het verzoek op de grijze lijst"
   logic_all: "Om de regel te activeren, moet aan alle voorwaarden zijn voldaan."
   logic_any: "Elke "gelijk" (=) voorwaarde kan de regel activeren, zolang aan alle "niet gelijk" (≠) voorwaarden ook wordt voldaan."
-  mode_edit: "Bewerkingsmodus"
-  mode_view: "Weergavemodus"
   profile the request: "profileer het verzoek"
   redirect the request (without blocking it): "omleiden het verzoek (zonder het te blokkeren)"
   run a file to handle the request: "voer een bestand uit om het verzoek af te handelen"
@@ -762,6 +760,7 @@ link:
  Configuration: "Configuratie"
  Discussions: "Discussies"
  Documentation: "Documentatie"
+ Edit mode: "Bewerkingsmodus"
  File Manager: "Bestandsbeheer"
  Get API key: "Als u nog geen API-sleutel hebt, klik hier om een te krijgen."
  Home: "Startpagina"
@@ -777,6 +776,7 @@ link:
  Statistics: "Statistieken"
  Subtractor: "Aftrekker"
  Updates: "Updates"
+ View mode: "Weergavemodus"
 macro:
  Description:
   activate_modules: &MayImpactPerformance "Over het algemeen niet aanbevolen, omdat er waarschijnlijk enkele zijn die u niet nodig heeft. Het installeren en activeren van componenten wanneer ze niet nodig zijn, kan een negatieve invloed hebben op de prestaties."
@@ -1006,6 +1006,7 @@ tip:
  2FA Sent: "Een e-mail met een tweefactorauthenticatie code is verzonden naar uw e-mailadres. Bevestig deze code hieronder om toegang te krijgen tot de frontend. Als u deze e-mail niet hebt ontvangen, probeert u uit te loggen, wacht 10 minuten, en in te loggen opnieuw aan om een nieuwe e-mail met een nieuwe code te ontvangen."
  Accounts: "De accounts pagina stelt u in staat om te bepalen wie toegang heeft tot de CIDRAM frontend."
  Aggregator: "Met de aggregator kunt u IP's, CIDR's, un netmaskers zo de kleinste mogelijke weg uitdrukken. Voer de gegevens in die moeten worden geaggregeerd en druk op "OK"."
+ Auxiliary Rules Modes: "In de weergavemodus worden aanvullende regels weergegeven in een compacte lijst, zodat u ze gemakkelijk kunt lezen. Door erop te klikken kunt u de regels in de lijst uitvouwen en krijgt u meer details te zien. Wanneer u op het trigram (☰) klikt, worden opties voor het exporteren of verwijderen van een regel weergegeven. U kunt de volgorde van regels wijzigen door ze te slepen en neer te zetten, een regel van de huidige positie naar de gewenste positie slepen. De bewerkingsmodus is vereist om aanvullende regels, bewerkbare velden en opties te wijzigen en nieuwe voorwaarden, webhooks, of andere logica aan de regels toe te voegen indien nodig die op de pagina worden weergegeven. Nieuwe aanvullende regels kunnen via beide modi worden gemaakt."
  Auxiliary Rules Priority: "Prioriteit (hoogste➡(gelijk🔄gelijkwaardig)➡laagste):"
  Auxiliary Rules Webhooks: "Wanneer een regel wordt geactiveerd, CIDRAM probeert alle aangesloten webhooks op de hoogte te stellen van het evenement."
  Auxiliary Rules: "U kunt deze pagina gebruiken om aanvullende regels voor CIDRAM te maken, te verwijderen en aan te passen."

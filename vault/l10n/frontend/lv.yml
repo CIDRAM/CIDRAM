@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2025.05.08).
+# This file: Latvian language data for the front-end (last modified: 2025.05.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -735,8 +735,6 @@ label:
   greylist the request: "iekļaujiet pieprasījumu pelēkajā sarakstā"
   logic_all: "Lai iedarbinātu palīgnoteikumu, ir jāizpilda visi nosacījumi."
   logic_any: "Jebkuri "vienāds" (=) nosacījumi var iedarbināt palīgnoteikumu, ar nosacījumu, ka arī ir izpildīti visi "nav vienāds" (≠) nosacījumi."
-  mode_edit: "Rediģēšanas režīms"
-  mode_view: "Skatīšanās režīms"
   profile the request: "profilējiet pieprasījumu"
   redirect the request (without blocking it): "pāradresējiet pieprasījumu (nebloķējot to)"
   run a file to handle the request: "palaidiet failu, lai apstrādātu pieprasījumu"
@@ -764,6 +762,7 @@ link:
  Configuration: "Konfigurācija"
  Discussions: "Diskusijas"
  Documentation: "Dokumentācija"
+ Edit mode: "Rediģēšanas režīms"
  File Manager: "Failu menedžeris"
  Get API key: "Ja jums tāda vēl nav API atslēgas, noklikšķiniet šeit, lai to iegūtu."
  Home: "Mājas"
@@ -779,6 +778,7 @@ link:
  Statistics: "Statistika"
  Subtractor: "Atdalītājs"
  Updates: "Atjauninājumi"
+ View mode: "Skatīšanās režīms"
 macro:
  Description:
   activate_modules: &MayImpactPerformance "Parasti nav ieteicams, jo, iespējams, ir daži, kas jums nav vajadzīgi. Komponentu instalēšana un aktivizēšana, kad tie nav nepieciešami, var negatīvi ietekmēt veiktspēju."
@@ -1016,6 +1016,7 @@ tip:
  2FA Sent: "Uz jūsu e-pasta adresi ir nosūtīts e-pasts ar divu faktoru autentifikācijas kodu. Lūdzu, apstipriniet šo kodu zemāk, lai ielogotos. Ja nesaņēmāt šo e-pastu, mēģiniet izlogoties, nogaidiet 10 minūtes, un ielogoties vēlreiz, lai saņemtu jaunu e-pastu ar jaunu kodu."
  Accounts: "Kontu lapa ļauj jums kontrolēt, kurš var ielogoties CIDRAM."
  Aggregator: "Apkopotājs ļauj jums izteikt IP, CIDR, un tīkla maskas iespējami mazākā veidā. Ievadiet apkopojamos datus un nospiediet "Labi"."
+ Auxiliary Rules Modes: "Skatīšanas režīmā palīgnoteikumi tiek parādīti kā kompakts saraksts ērtai lasīšanai. Sarakstā esošos noteikumus var izvērst un, noklikšķinot uz tiem, var parādīt sīkāku informāciju. Noklikšķinot uz trigrama (☰), tiks parādītas opcijas noteikuma eksportēšanai vai dzēšanai. Noteikumus var pārkārtots, izmantojot vilkšanas un nomešanas funkciju, velkot noteikumu no tā esošās pozīcijas uz vēlamo pozīciju. Rediģēšanas režīms ir nepieciešams, lai modificētu palīgnoteikumus, rediģējami lauki un opcijas, lai pievienotu jaunus nosacījumus, tīmekļa āķus, vai citu loģiku noteikumiem ja nepieciešams, kas sniegta lapā. Jaunus palīgnoteikumus var izveidot, izmantojot jebkuru no šiem režīmiem."
  Auxiliary Rules Priority: "Prioritāte (augstākais➡(vienāds🔄ekvivalents)➡zemākais):"
  Auxiliary Rules Webhooks: "Kad tiek iedarbināts palīgnoteikums, CIDRAM mēģinās paziņot visiem saistītajiem tīmekļa āķiem par notikumu."
  Auxiliary Rules: "Varat izmantot šo lapu, lai izveidotu, izdzēstu, un mainītu CIDRAM palīgnoteikumus."

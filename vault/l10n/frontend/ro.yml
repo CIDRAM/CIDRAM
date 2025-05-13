@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Romanian language data for the front-end (last modified: 2025.05.08).
+# This file: Romanian language data for the front-end (last modified: 2025.05.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -746,8 +746,6 @@ label:
   greylist the request: "lista gri a solicitărea"
   logic_all: "Pentru a declanșa regula, trebuie îndeplinite toate condițiile."
   logic_any: "Orice condiții „egal” (=) pot declanșa regula, atâta timp cât toate condițiile „nu egal” (≠) sunt de asemenea îndeplinite."
-  mode_edit: "Mod de editare"
-  mode_view: "Mod de vizualizare"
   profile the request: "profilați solicitărea"
   redirect the request (without blocking it): "redirecționează solicitarea (fără a o bloca)"
   run a file to handle the request: "rulați un fișier pentru a gestiona solicitarea"
@@ -775,6 +773,7 @@ link:
  Configuration: "Configurare"
  Discussions: "Discuții"
  Documentation: "Documentație"
+ Edit mode: "Mod de editare"
  File Manager: "Manager de fișiere"
  Get API key: "Dacă nu aveți deja o cheie API, faceți clic aici pentru a obține una."
  Home: "Pagina principala"
@@ -790,6 +789,7 @@ link:
  Statistics: "Statistici"
  Subtractor: "Scăzător"
  Updates: "Actualizări"
+ View mode: "Mod de vizualizare"
 macro:
  Description:
   activate_modules: &MayImpactPerformance "Nu este recomandat în general, deoarece este posibil să existe unele de care nu aveți nevoie. Instalarea și activarea componentelor atunci când nu sunt necesare ar putea avea un impact negativ asupra performanței."
@@ -1042,6 +1042,7 @@ tip:
  2FA Sent: "Un e-mail care conține un cod de autentificare cu doi factori a fost trimis la adresa dvs. de e-mail. Vă rugăm să confirmați acest cod mai jos pentru a obține acces la front-end. Dacă nu ați primit acest e-mail, încercați să vă deconectați, așteptați 10 minute, și să vă conectați din nou pentru a primi un nou e-mail care conține un nou cod."
  Accounts: "Pagina de conturi vă permite să controlați cine poate accesa front-end-ul CIDRAM."
  Aggregator: "Agregatorul vă permite să exprimați IP-uri, CIDR-uri, și măști de rețea în cel mai mic mod posibil. Introduceți datele de agregat și apăsați „OK”."
+ Auxiliary Rules Modes: "Modul vizualizare afișează regulile auxiliare sub forma unei liste compacte pentru o citire ușoară. Regulile din listă pot fi extinse și pot fi afișate detalii suplimentare făcând clic pe ele. Opțiunile pentru exportarea sau ștergerea unei reguli vor fi afișate când faceți clic pe trigrama (☰). Regulile pot fi reordonate prin trageți și plasați, trăgând o regulă din poziția sa existentă în poziția dorită. Modul de editare este necesar pentru a modifica regulile auxiliare, câmpurile editabile și opțiunile pentru a adăuga noi condiții, webhook-uri, sau alte elemente logice la reguli, după cum este necesar, furnizate pe pagină. Noi reguli auxiliare pot fi create prin oricare dintre moduri."
  Auxiliary Rules Priority: "Prioritate (cea mai mare➡(egal🔄echivalent)➡cea mai mică):"
  Auxiliary Rules Webhooks: "Când se declanșează o regulă, CIDRAM va încerca să notifice orice webhook conectat despre eveniment."
  Auxiliary Rules: "Puteți folosi această pagină pentru a crea, șterge, și modifica reguli auxiliare pentru CIDRAM."

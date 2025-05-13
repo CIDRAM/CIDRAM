@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2025.05.08).
+# This file: Spanish language data for the front-end (last modified: 2025.05.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -733,8 +733,6 @@ label:
   greylist the request: "incluir la solicitud en la lista gris"
   logic_all: "Para desencadenar la regla, se deben cumplir todas las condiciones."
   logic_any: "Cualquier condición "igual" (=) puede desencadenar la regla, siempre y cuando también se cumplan todas las condiciones "no iguales" (≠)."
-  mode_edit: "Modo de edición"
-  mode_view: "Modo de vista"
   profile the request: "perfilar la solicitud"
   redirect the request (without blocking it): "redireccionar la solicitud (sin bloquearla)"
   run a file to handle the request: "ejecutar un archivo para manejar la solicitud"
@@ -762,6 +760,7 @@ link:
  Configuration: "Configuración"
  Discussions: "Discusiones"
  Documentation: "Documentación"
+ Edit mode: "Modo de edición"
  File Manager: "Administración de archivos"
  Get API key: "Si aún no tiene una clave API, haga clic aquí para obtenerla."
  Home: "Página principal"
@@ -777,6 +776,7 @@ link:
  Statistics: "Estadística"
  Subtractor: "Sustractor"
  Updates: "Actualizaciones"
+ View mode: "Modo de visualización"
 macro:
  Description:
   activate_modules: &MayImpactPerformance "En general, no se recomienda, ya que es probable que haya algunos que no necesite. La instalación y activación de componentes cuando no se necesitan podría afectar negativamente el rendimiento."
@@ -1014,6 +1014,7 @@ tip:
  2FA Sent: "Se ha enviado un correo electrónico con un código de autenticación de dos factores a su dirección de correo electrónico. Confirme este código a continuación para obtener acceso al front-end. Si no recibió este correo electrónico, intente cerrar la sesión, espere 10 minutos, y vuelva a iniciar sesión para recibir un nuevo correo electrónico que contenga un nuevo código."
  Accounts: "La página de cuentas permite controlar controlar quién puede acceder al CIDRAM front-end."
  Aggregator: "El agregador permite expresar IPs, CIDRs, y máscaras de red en la forma más pequeña posible. Introduzca los datos que desea agregar y pulse "OK"."
+ Auxiliary Rules Modes: "El modo de visualización muestra las reglas auxiliares como una lista compacta para facilitar la lectura. Las reglas de la lista se pueden ampliar y se pueden mostrar más detalles haciendo clic en ellas. Las opciones para exportar o eliminar una regla se mostrarán al hacer clic en el trigrama (☰). Las reglas se pueden reordenar mediante arrastrar y soltar, arrastrando una regla desde su posición existente a la posición deseada. Se requiere el modo de edición para modificar reglas auxiliares, campos editables y opciones para agregar nuevas condiciones, webhooks, u otra lógica a las reglas según sea necesario en la página. Se pueden crear nuevas reglas auxiliares mediante cualquiera de los modos."
  Auxiliary Rules Priority: "Prioridad (mas alta➡(igual🔄equivalente)➡mas baja):"
  Auxiliary Rules Webhooks: "Cuando se cumple una regla, CIDRAM intentará notificar a los webhooks conectados sobre el evento."
  Auxiliary Rules: "Puede usar esta página para crear, eliminar, y modificar reglas auxiliares para CIDRAM."

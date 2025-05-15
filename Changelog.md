@@ -415,4 +415,5 @@
 - [2025.05.06]: Added drag-and-drop functionality to the front-end auxiliary rules view mode page to allow the positions of auxiliary rules to be swapped (#573).
 - [2025.05.13]: Added information to the auxiliary rules page describing the purposes and functional differences between view mode and edit mode (#573).
 - [2023.05.14]: Updated the flags CSS.
+- [2025.05.15]: Verification updated.
 - *Plus all the regular signature updates.*

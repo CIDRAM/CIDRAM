@@ -7,14 +7,14 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Verification data (last modified: 2025.04.09).
+# This file: Verification data (last modified: 2025.05.15).
 ##/
 
 # Additional references: https://udger.com/resources/ua-list/crawlers
 Search Engine Verification:
- # https://developer.amazon.com/support/amazonbot
+ # https://developer.amazon.com/amazonbot
  # https://github.com/CIDRAM/CIDRAM/issues/317
- # Updated: 2022.06.20
+ # Updated: 2022.06.20 / Checked: 2025.05.15
  Amazonbot:
   User Agent: "amazonbot"
   Method: "dnsReverseForward"
@@ -327,9 +327,9 @@ Search Engine Verification:
    - ".petalsearch.com"
 
  # https://help.qwant.com/bot/
- # Updated: 2024.04.06
+ # Updated: 2025.05.15
  Qwantify:
-  User Agent Pattern: "~qwantify|bleriot~"
+  User Agent Pattern: "~qwant(?:\.com/bot|bot|ify)|bleriot~"
   Method: "dnsReverseForward"
   Valid domains:
    - ".qwant.com"
@@ -352,7 +352,7 @@ Search Engine Verification:
    - ".sogou.com"
 
  # https://help.yahoo.com/help/us/ysearch/slurp
- # Updated: 2020.02.07 / Checked: 2022.02.18
+ # Updated: 2020.02.07 / Checked: 2025.05.15
  Yahoo:
   User Agent: "slurp"
   Method: "dnsReverseForward"
@@ -421,10 +421,9 @@ Social Media Verification:
    - ".twttr.com"
 
  # https://github.com/CIDRAM/CIDRAM/issues/422
- # https://robotsdb.de/snap-url-preview-service-bot-snapchat/
  # https://udger.com/resources/ua-list/bot-detail?bot=Snap+URL+Preview+Service
  # https://developers.snap.com/robots
- # Updated: 2023.02.28
+ # Updated: 2023.02.28 / Checked: 2025.05.15
  Snapchat:
   User Agent Pattern: "~snapchat|developers\.snap\.com/robots$~"
   Method: "dnsReverseForward"
@@ -444,7 +443,7 @@ Other Verification:
 
  # https://adbot.amazon.com/index.html
  # https://github.com/CIDRAM/CIDRAM/issues/260
- # Updated: 2021.10.01 / Checked: 2022.02.18
+ # Updated: 2021.10.01 / Checked: 2025.05.15
  AmazonAdBot:
   User Agent Pattern: "~amazonadbot|adbot\.amazon\.com~"
   Method: "dnsReverseForward"
@@ -452,7 +451,7 @@ Other Verification:
    - ".amazonadbot.com"
 
  # https://platform.openai.com/docs/plugins/bot
- # Updated: 2024.04.09
+ # Updated: 2024.04.09 / Checked: 2025.05.15
  ChatGPT-User:
   User Agent: "chatgpt-user"
   Method: "uaCidrMatch"
@@ -466,7 +465,7 @@ Other Verification:
  # https://openai.com/gptbot-ranges.txt
  # https://platform.openai.com/docs/gptbot
  # https://platform.openai.com/docs/plugins/production
- # Updated: 2024.04.09
+ # Updated: 2024.04.09 / Checked: 2025.05.15
  GPTBot:
   User Agent: "gptbot"
   Method: "uaCidrMatch"

@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6_isps.dat
 
-# Version: 2025.124.0
-# Last modified: 2025.05.05
+# Version: 2025.136.0
+# Last modified: 2025.05.17
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -229,22 +229,6 @@ Tag: PJSC Moscow city
 Origin: US
 Profile: Domestic ISP
 Tag: Comcast Spam IPs
-
-
-# ASNs 7843, 10796, 11351, 11426, 11427, 12271, 20001, 20115, 33363 ("Charter
-# Communications"). US domestic ISP. Honeypot probes, port scans, and spam
-# detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 5 (AS7843), 808 (AS10796), 441 (AS11351),
-# 719 (AS11426), 642 (AS11427), 360 (AS12271), 962 (AS20001), 1,439 (AS20115),
-# 822 (AS33363).
-# Updated: 2024.05.06
-
-2603:6080:5f01:7cbc::/64 Deny Spam
-2603:6080:9005:8b12::/64 Deny Spam
-2603:7000:8f00:d74::/64 Deny Spam
-Origin: US
-Profile: Domestic ISP;University
-Tag: Charter Communications
 
 
 # ASNs 18209, 24309, 55577, 131269 ("Atria Convergence Technologies Pvt. Ltd.

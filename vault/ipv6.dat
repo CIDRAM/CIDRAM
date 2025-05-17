@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6.dat
 
-# Version: 2025.132.0
-# Last modified: 2025.05.13
+# Version: 2025.136.0
+# Last modified: 2025.05.17
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -5360,10 +5360,9 @@ Tag: Lunavi, Inc
 
 # ASN 40034 ("Confluence Networks Inc").
 # Brute-force, SSH attacks, port scans, and hacking detected from here.
-# Updated: 2020.05.21 / Checked: 2024.04.21
+# Updated: 2025.05.16
 
 2604:10c0::/47 Deny Cloud
-2604:10c0:ffff::/48 Deny Cloud
 Origin: VG
 Profile: Commercial
 Tag: Confluence
@@ -11097,8 +11096,8 @@ Tag: manitu GmbH
 
 # ASN 206264 ("Amarutu Technology Ltd").
 # Webhosting; DDoS services. Port scans, hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 128.
-# Updated: 2022.06.21 / Checked: 2024.04.28
+# Stop Forum Spam (SFS) listings: 360.
+# Updated: 2022.06.21 / Checked: 2025.05.16
 
 2402:7840::/32 Deny Cloud
 Origin: HK
@@ -11114,9 +11113,8 @@ Tag: Amarutu Technology Ltd
 
 # ASNs 42335, 200303 ("LUMASERV GmbH").
 # Webapp attacks, port scans, hacking, and spam detected from here.
-# Updated: 2023.06.14 / Checked: 2024.04.28
+# Updated: 2025.05.17
 
-2001:678:c20::/48 Deny Cloud
 2a0d:3580::/32 Deny Cloud
 2a0d:3584:1111::/48 Deny Cloud
 2a0d:3585::/32 Deny Cloud
@@ -11176,27 +11174,12 @@ Tag: MacStadium, Inc
 
 # ASN 36113 ("Netopia").
 # Scraping and flooding detected from here.
-# Updated: 2024.05.02
+# Updated: 2025.05.17
 
 2602:fbc3::/36 Deny Cloud
-2606:6680:41::/48 Deny Cloud
-2606:6680:42::/48 Deny Cloud
-2a0e:c80:4::/48 Deny Cloud
-2a0f:9980:7::/48 Deny Cloud
 Origin: US
 Profile: Webhosting
 Tag: Netopia
-
-
-# ASN 269098 ("AbsamHost Internet Data Center").
-# Brute-force, SSH, FTP, and webapp attacks, port scans, hacking, and spam
-# detected from here.
-# Updated: 2023.06.20 / Checked: 2024.05.02
-
-2804:5f6c::/32 Deny Cloud
-Origin: BR
-Profile: Webhosting
-Tag: AbsamHost
 
 
 # ASNs 49581, 200482, 213200 ("Ferdinand Zink trading as Tube-Hosting").
@@ -12212,8 +12195,8 @@ Tag: Zscaler
 
 # ASN 39287 ("ab stract").
 # Brute-force, webapp attacks, port scans, hacking, and spam detected here.
-# Stop Forum Spam (SFS) listings: 35.
-# Updated: 2023.06.10 / Checked: 2024.04.22
+# Stop Forum Spam (SFS) listings: 85.
+# Updated: 2023.06.10 / Checked: 2025.05.16
 
 2001:67c:2354::/48 Deny Cloud
 2001:67c:2358::/48 Deny Cloud
@@ -12246,8 +12229,7 @@ Tag: RouterHosting LLC
 
 # ASN 58262 ("Negah Roshan Pars Company (PJS)").
 # DDoS attacks and spam detected from here.
-# Stop Forum Spam (SFS) listings: 17.
-# Updated: 2024.04.28
+# Updated: 2024.04.28 / Checked: 2025.05.16
 
 2a05:2d80::/48 Deny Cloud
 Origin: IR
@@ -12290,10 +12272,10 @@ Tag: Megacore
 
 # ASN 400810 ("BreezeHost").
 # Port scans and hacking detected from here.
-# Stop Forum Spam (SFS) listings: 2.
-# Updated: 2024.04.28
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2025.05.16
 
-2602:fa62::/40 Deny Cloud
+2602:fa62::/38 Deny Cloud
 Origin: US
 Profile: Webhosting
 Tag: BreezeHost
@@ -13231,16 +13213,6 @@ Tag: StormyCloud Inc
 Origin: RO
 Profile: Dedicated;Webhosting
 Tag: Chroot Network SRL
-
-
-# ASN 204729 ("Servervy B.V").
-# Port scans and hacking detected from here.
-# Updated: 2024.04.28
-
-2a13:9f40::/29 Deny Cloud
-Origin: NL
-Profile: Dedicated;Infrastructure/Transit;Webhosting
-Tag: Servervy B.V
 
 
 # ASN 202662 ("Hytron Network Services Limited").
@@ -15393,6 +15365,27 @@ Origin: CH
 Origin: US
 Profile: Dedicated;Webhosting
 Tag: Cyber Planet LLC
+
+
+# ASN 13737 ("INCX Global, LLC").
+# Synflood attacks, hacking, and spam detected here.
+# Stop Forum Spam (SFS) listings: 150.
+# Updated: 2025.05.17
+
+2602:f7a6::/40 Deny Cloud
+2602:f895::/40 Deny Cloud
+2602:f8c7::/40 Deny Cloud
+2602:f99f::/40 Deny Cloud
+2602:f9ad::/40 Deny Cloud
+2604:7580:7::/48 Deny Cloud
+2606:6680:41::/48 Deny Cloud
+2606:6680:42::/48 Deny Cloud
+2620:11f:7000::/44 Deny Cloud
+2a0e:c80:4::/48 Deny Cloud
+2a0f:9980:7::/48 Deny Cloud
+Origin: US
+Profile: Dedicated;Webhosting
+Tag: INCX Global, LLC
 
 
 # ---

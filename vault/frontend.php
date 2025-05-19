@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2025.05.08).
+ * This file: Front-end handler (last modified: 2025.05.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1440,7 +1440,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                     }
                 } else {
                     $CIDRAM['ThisDir']['FieldOut'] = sprintf(
-                        '<select class="auto" style="text-transform:capitalize" name="%1$s" id="%1$s_field"%2$s>',
+                        '<select class="auto capitalize" name="%1$s" id="%1$s_field"%2$s>',
                         $CIDRAM['ThisDir']['DirLangKey'],
                         $CIDRAM['ThisDir']['Trigger']
                     );
@@ -1553,7 +1553,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                         }
                     } else {
                         $CIDRAM['ThisDir']['FieldOut'] .= sprintf(
-                            '<option style="text-transform:capitalize" value="%s"%s>%s</option>',
+                            '<option class="capitalize" value="%s"%s>%s</option>',
                             $CIDRAM['ChoiceKey'],
                             $CIDRAM['ChoiceKey'] === $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']] ? ' selected' : '',
                             $CIDRAM['ChoiceValue']

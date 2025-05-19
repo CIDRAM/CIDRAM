@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used for auxiliary rules (last modified: 2025.05.07).
+ * This file: Methods used for auxiliary rules (last modified: 2025.05.20).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -427,7 +427,7 @@ trait AuxiliaryRules
             $Options = implode(' ', $Options);
             if (substr($Options, 0, 1) === '(' && substr($Options, -1) === ')') {
                 $Options = sprintf(
-                    '<span style="display:inline-block">(<span id="heaven%1$s" class="scaleXToOne navicon heaven hoverglow" onclick="javascript:heavenToggle(\'%1$s\')" title="☰"></span><span id="hidden%1$s" class="scaleXToZero">%2$s</span>)</span>',
+                    '<span class="inlineBlock">(<span id="heaven%1$s" class="scaleXToOne navicon heaven hoverglow" onclick="javascript:heavenToggle(\'%1$s\')" title="☰"></span><span id="hidden%1$s" class="scaleXToZero">%2$s</span>)</span>',
                     $RuleClass,
                     substr($Options, 1, -1)
                 );

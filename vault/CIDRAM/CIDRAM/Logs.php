@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used by the logs page (last modified: 2025.05.08).
+ * This file: Methods used by the logs page (last modified: 2025.05.20).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -189,7 +189,7 @@ trait Logs
         $BlockEnd = 0;
         while ($BlockEnd !== false) {
             $Darken = empty($Darken);
-            $Style = '<div style="overflow:visible auto" class="h' . ($Darken ? 'B' : 'W') . ' hFd fW">';
+            $Style = '<div class="logVis h' . ($Darken ? 'B' : 'W') . ' hFd fW">';
             $BlockEnd = strpos($Out, $this->CIDRAM['BlockSeparator'], $BlockStart);
             $In[] = $Style . substr($Out, $BlockStart, $BlockEnd - $BlockStart + $BlockSeparatorLen) . '</div>';
             $BlockStart = $BlockEnd + $BlockSeparatorLen;

@@ -417,3 +417,7 @@
 - [2023.05.14]: Updated the flags CSS.
 - [2025.05.15]: Verification updated.
 - *Plus all the regular signature updates.*
+
+### v3.9.1
+
+- [2025.05.20]: A11y patch.

@@ -420,4 +420,8 @@
 
 ### v3.9.1
 
+#### Bugs fixed.
+- [2025.05.20]: Fixed potentially erroneous in method and updateComponentMetadataFile method bytes calculations.
+
+#### Other changes.
 - [2025.05.20]: A11y patch.

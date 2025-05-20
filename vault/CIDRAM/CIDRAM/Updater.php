@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods for updating CIDRAM components (last modified: 2025.04.24).
+ * This file: Methods for updating CIDRAM components (last modified: 2025.05.20).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -61,12 +61,10 @@ trait Updater
             if ($BytesRemoved !== null) {
                 $BytesRemoved += $SizeDiff;
             }
-        } else {
-            if ($BytesAdded !== null) {
-                $BytesAdded -= $SizeDiff;
-            } elseif ($BytesRemoved !== null) {
-                $BytesRemoved += $SizeDiff;
-            }
+        } elseif ($BytesAdded !== null) {
+            $BytesAdded += $SizeDiff;
+        } elseif ($BytesRemoved !== null) {
+            $BytesRemoved -= $SizeDiff;
         }
 
         /** Write and return. */
@@ -1620,14 +1618,12 @@ trait Updater
         $Metadata = $this->YAML->reconstruct($Metadata);
 
         $SizeDiff = strlen($Metadata) - strlen($this->CIDRAM['Updater-IO']->readFile($this->Vault . 'installed.yml'));
-        if ($SizeDiff > 0) {
-            if ($BytesAdded === null) {
-                $BytesRemoved -= $SizeDiff;
-            } else {
-                $BytesAdded += $SizeDiff;
-            }
-        } elseif ($SizeDiff < 0) {
+        if ($SizeDiff < 0) {
+            $BytesRemoved += $SizeDiff;
+        } elseif ($BytesAdded === null) {
             $BytesRemoved -= $SizeDiff;
+        } else {
+            $BytesAdded += $SizeDiff;
         }
 
         /** Write to the file. */

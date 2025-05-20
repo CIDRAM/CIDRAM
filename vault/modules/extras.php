@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2025.05.16).
+ * This file: Optional security extras module (last modified: 2025.05.20).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -60,7 +60,9 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             );
         }
 
+        /** WordPress hack attempts. */
         $this->trigger(strpos($LCNrURI, 'wp-print.php?script=1') !== false, 'WP hack attempt'); // 2017.10.07 mod 2023.08.10
+        $this->trigger(preg_match('~(?:^|[_/?])id=\d+/wp-login\.php[578]?(?:$|[/?])~', $LCNrURI), 'WP hack attempt'); // 2025.05.20
 
         /** Probing for quarantined files. */
         if ($this->trigger(preg_match('~\.[\da-z]{2,4}\.suspected(?:$|[/?])~', $LCNrURI), 'Probing for quarantined files')) {
@@ -153,11 +155,11 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
         /** Probing for webshells/backdoors. */
         if ($this->trigger(preg_match(
-            '~(?:^|[/?])(?:fierzashell\.html?|perl.alfa|search/label/php-shells)(?:$|[/?])~',
+            '~(?:^|[/?])(?:css/dmtixucz/golden-access|fierzashell\.html?|perl.alfa|search/label/php-shells)(?:$|[/?])~',
             $LCNrURI
         ), 'Probing for webshells/backdoors')) {
             $this->Reporter->report([15, 20, 21], ['Caught probing for webshells/backdoors. Host might be compromised.'], $this->BlockInfo['IPAddr']);
-        } // 2025.05.12 mod 2025.05.16
+        } // 2025.05.12 mod 2025.05.20
 
         /** Probing for exposed Git data. */
         if ($this->trigger(preg_match('~\.git(?:config)?(?:$|\W)~', $LCNrURI), 'Probing for exposed git data')) {

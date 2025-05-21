@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6_isps.dat
 
-# Version: 2025.136.0
-# Last modified: 2025.05.17
+# Version: 2025.140.0
+# Last modified: 2025.05.21
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -99,60 +99,32 @@ Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Tor endpoints here
 Tag: Viettel Corporation
 
 
-# ASNs 9498, 9730, 24560, 37140, 45609, 132045 ("Bharti Airtel").
+# ASNs 9498, 9730, 18001, 24560, 37030, 37140, 45609, 132045 ("Bharti Airtel").
 # Major Indian domestic ISP also serving other parts of Asia and Africa.
 # Also a massive source of spam, brute-force and SSH attacks, malware campaigns
 # and more. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,363 (AS9498), 1 (AS9730),
-# 111,625 (AS24560), 11 (AS37140), 11,694 (AS45609), 34 (AS132045).
-# Updated: 2024.05.15
+# Stop Forum Spam (SFS) listings: 695 (AS9498), 22 (AS9730), 293 (AS18001),
+# 75,307 (AS24560), 20 (AS37030), 10 (AS37140), 9,030 (AS45609), 259 (AS132045).
+# Updated: 2025.05.21
 
-2401:4900:b80:149d::/64 Deny Spam
-2401:4900:b81:2c1::/64 Deny Spam
-2401:4900:168a:5354::/64 Deny Spam
-2401:4900:16df:a754::/64 Deny Spam
-2401:4900:1c1a:5211::/64 Deny Spam
-2401:4900:1c1a:736e::/64 Deny Spam
-2401:4900:1c1b:7423::/64 Deny Spam
-2401:4900:1c1b:9371::/64 Deny Spam
-2401:4900:1c23:377a::/64 Deny Spam
-2401:4900:1c54:2e7f::/64 Deny Spam
-2401:4900:1c5a:7a19::/64 Deny Spam
-2401:4900:1c7a:f6f::/64 Deny Spam
-2401:4900:1c7a:13de::/64 Deny Spam
-2401:4900:1c7a:2ae1::/64 Deny Spam
-2401:4900:1c7a:d78d::/64 Deny Spam
-2401:4900:1c7a:f211::/64 Deny Spam
-2401:4900:1f35:40b6::/64 Deny Spam
-2401:4900:2e85:7542::/64 Deny Spam
-2401:4900:2e8a:efee::/64 Deny Spam
-2401:4900:2e98:ff7f::/64 Deny Spam
-2401:4900:2e9c:e877::/64 Deny Spam
-2401:4900:2ee4:9108::/64 Deny Spam
-2401:4900:2eec:4c98::/64 Deny Spam
-2401:4900:30c2:77f2::/64 Deny Spam
-2401:4900:30e1:47c9::/64 Deny Spam
-2401:4900:3388:c6fa::/64 Deny Spam
-2401:4900:3623:7aa6::/64 Deny Spam
-2401:4900:3b17:8a4f::/64 Deny Spam
-2401:4900:40f1:32a2::/64 Deny Spam
-2401:4900:40ff:760e::/64 Deny Spam
-2401:4900:40ff:cecf::/64 Deny Spam
-2401:4900:4110:d2ec::/64 Deny Spam
-2401:4900:411a:b7c8::/64 Deny Spam
-2401:4900:411f:88f6::/64 Deny Spam
-2401:4900:4144:bcd0::/64 Deny Spam
-2401:4900:421c:5ea2::/64 Deny Spam
-2401:4900:446f:6617::/64 Deny Spam
-2401:4900:5f98:d282::/64 Deny Spam
-2401:4900:63eb:88f4::/64 Deny Spam
-2401:4900:7032:5b88::/64 Deny Spam
-2401:4900:73f9:582e::/64 Deny Spam
-2401:4900:8083:8d1d::/64 Deny Spam
-2401:4900:8093:9a7d::/64 Deny Spam
+2401:4900:b90:efb2::/64 Deny Spam
+2401:4900:120d:a268::/64 Deny Spam
+2401:4900:1c0a:1c61::/64 Deny Spam
+2401:4900:1c47:28f2::/64 Deny Spam
+2401:4900:1c52:a117::/64 Deny Spam
+2401:4900:1c53:3765::/64 Deny Spam
+2401:4900:1c5c:4701::/64 Deny Spam
+2401:4900:1f2f:60bd::/64 Deny Spam
+2401:4900:2fae:e42f::/64 Deny Spam
+2401:4900:81ee:c23f::/64 Deny Spam
+2401:4900:8845:9d9d::/64 Deny Spam
+2401:4900:8846:9370::/64 Deny Spam
+2401:4900:8846:e327::/64 Deny Spam
+2401:4900:8847:a849::/64 Deny Spam
+2401:4900:8847:d1ae::/64 Deny Spam
 Origin: IN
-Profile: Domestic ISP;Frequent changes;Infrastructure/Transit;Multiplay
-Tag: Bharti Airtel
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay
+Tag: Bharti/Axiata
 
 
 # ASN 12389 ("PJSC Rostelecom").
@@ -405,20 +377,17 @@ Tag: CFPT
 # ASNs 7643, 45899, 135905, 135967 ("VietNam Post and Telecom Corporation").
 # A *major* Vietnamese domestic ISP, but also a significant source of spam,
 # hack attempts, probing, etc. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 39 (AS7643), 16,391 (AS45899),
-# 638 (AS135905), 1,805 (AS135967).
-# Updated: 2024.05.10
+# Stop Forum Spam (SFS) listings: 8 (AS7643), 24,690 (AS45899),
+# 663 (AS135905), 108 (AS135967).
+# Updated: 2025.05.20
 
-2001:ee0:4269:f4a0::/64 Deny Spam
-2001:ee0:435b:480::/64 Deny Spam
-2001:ee0:4fcc:9550::/64 Deny Spam
-2001:ee0:55da:8a60::/64 Deny Spam
-2403:6a40:0:40::/64 Deny Spam
-2403:6a40:0:143::/64 Deny Spam
-2403:6a40:0:246::/64 Deny Spam
-2403:6a40:2::/48 Deny Attacks
-2403:6a40:2000::/48 Deny Attacks
-2403:6a40:3000::/48 Deny Attacks
+2001:ee0:4776:aa70::/64 Deny Spam
+2001:ee0:48ed:ebc0::/64 Deny Spam
+2001:ee0:4a48:29b0::/64 Deny Spam
+2001:ee0:4a48:4d50::/64 Deny Spam
+2001:ee0:4a49:c5f0::/64 Deny Spam
+2001:ee0:4a49:eea0::/64 Deny Spam
+2001:ee0:4a5e:2760::/64 Deny Spam
 Origin: VN
 Profile: Domestic ISP;Infrastructure/Transit;Tor endpoints here
 Tag: VNPT Corp

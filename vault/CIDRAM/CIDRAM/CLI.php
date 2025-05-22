@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CIDRAM CLI mode (last modified: 2024.04.14).
+ * This file: CIDRAM CLI mode (last modified: 2024.05.22).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -161,30 +161,31 @@ trait CLI
             /** Print data to the screen. */
             if ($Cmd === 'print') {
                 echo "\033[0;33m";
-                if (empty($Data) || (count($Data) === 1 && empty($Data[0]))) {
+                if (!isset($Data[0]) || (count($Data) === 1 && $Data[0] === '')) {
                     echo $this->L10N->getString('response.There_s nothing to print, sorry') . "\n\n";
                     continue;
                 }
-                if (!$Chain) {
-                    foreach ($Data as $ThisItem) {
-                        echo $ThisItem . "\n";
-                    }
-                    echo "\n";
+                if ($Chain !== '') {
+                    $Chain = '';
+                    echo sprintf($this->L10N->getString('response.The %s command can_t be chained in that way, sorry'), 'print') . "\n\n";
                     continue;
                 }
-                $Chain = '';
-                echo sprintf($this->L10N->getString('response.The %s command can_t be chained in that way, sorry'), 'print') . "\n\n";
+                foreach ($Data as $ThisItem) {
+                    echo $ThisItem . "\n";
+                }
+                echo "\n";
                 continue;
             }
 
             /** Write data to a file. */
             if (substr($Cmd, 0, 7) === 'fwrite=') {
                 echo "\033[0;33m";
-                if (empty($Data) || (count($Data) === 1 && empty($Data[0]))) {
+                if (!isset($Data[0]) || (count($Data) === 1 && $Data[0] === '')) {
                     echo $this->L10N->getString('response.There_s nothing to write, sorry') . "\n\n";
                     continue;
                 }
                 if ($Chain !== '') {
+                    $Chain = '';
                     echo sprintf($this->L10N->getString('response.The %s command can_t be chained in that way, sorry'), 'fwrite') . "\n\n";
                     continue;
                 }
@@ -429,11 +430,12 @@ trait CLI
             /** Create analysis matrix. */
             if (class_exists('\Maikuolan\Common\Matrix') && function_exists('imagecreatetruecolor') && substr($Cmd, 0, 7) === 'matrix=') {
                 echo "\033[0;33m";
-                if (empty($Data) || (count($Data) === 1 && empty($Data[0]))) {
+                if (!isset($Data[0]) || (count($Data) === 1 && $Data[0] === '')) {
                     echo $this->L10N->getString('response.There_s nothing to analyse, sorry') . "\n\n";
                     continue;
                 }
-                if ($Chain) {
+                if ($Chain !== '') {
+                    $Chain = '';
                     echo sprintf($this->L10N->getString('response.The %s command can_t be chained in that way, sorry'), 'matrix') . "\n\n";
                     continue;
                 }

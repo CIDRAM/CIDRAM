@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malayalam language data for the front-end (last modified: 2025.05.17).
+# This file: Malayalam language data for the front-end (last modified: 2025.05.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -186,16 +186,38 @@ config:
  frontend_theme: "ഫ്രണ്ട്-എന്റിന് ഉപയോഗിക്കേണ്ട സ്ഥിരസ്ഥിതി തീം."
  general: "പൊതുവായ കോൺഫിഗറേഷൻ (മറ്റ് വിഭാഗങ്ങളിൽ പെടാത്ത ഏതെങ്കിലും കോർ കോൺഫിഗറേഷൻ)."
  general_allow_gethostbyaddr_lookup: "UDP ലഭ്യമല്ലാത്തപ്പോൾ gethostbyaddr ലുക്കപ്പുകൾ അനുവദിക്കണോ? True = അതെ [സ്ഥിരസ്ഥിതി]; False = ഇല്ല."
+ general_ban_override: ""infraction_limit" കവിഞ്ഞാൽ "http_response_header_code" എന്നതിനുള്ള മൂല്യം മാറ്റിസ്ഥാപിക്കണോ? 200 = മാറ്റിസ്ഥാപിക്കരുത് [സ്ഥിരസ്ഥിതി]. മറ്റ് മൂല്യങ്ങൾ "http_response_header_code" എന്നതിനുള്ള ലഭ്യമായ മൂല്യങ്ങൾക്ക് സമാനമാണ്."
  general_default_algo: "ഭാവിയിലെ എല്ലാ പാസ്‌വേഡുകൾക്കും സെഷനുകൾക്കും ഏത് അൽഗോരിതം ഉപയോഗിക്കണമെന്ന് നിർവചിക്കുന്നു."
  general_default_dns: "ഹോസ്റ്റ്നെയിം ലുക്കപ്പുകൾക്കായി ഉപയോഗിക്കേണ്ട DNS സെർവറുകളുടെ ഒരു പട്ടിക. മുന്നറിയിപ്പ്: നിങ്ങൾ എന്താണ് ചെയ്യുന്നതെന്ന് നിങ്ങൾക്കറിയാമെങ്കിൽ മാത്രം ഇത് മാറ്റുക!"
  general_default_timeout: "ബാഹ്യ അഭ്യർത്ഥനകൾക്ക് ഉപയോഗിക്കേണ്ട സ്ഥിരസ്ഥിതി ടൈംഔട്ട്? സ്ഥിരസ്ഥിതി = 12 സെക്കൻഡ്."
+ general_disabled_channels: "അഭ്യർത്ഥനകൾ അയയ്ക്കുമ്പോൾ പ്രത്യേക ചാനലുകൾ ഉപയോഗിക്കുന്നതിൽ നിന്ന് CIDRAM-നെ തടയാൻ ഇത് ഉപയോഗിക്കാം (ഉദാഹരണത്തിന്, അപ്ഡേറ്റ് ചെയ്യുമ്പോൾ, ഘടക മെറ്റാഡാറ്റ ലഭ്യമാക്കുമ്പോൾ, മുതലായവ)."
+ general_email_notification_address: "CIDRAM-ൽ നിന്ന് ഇമെയിൽ വഴി അറിയിപ്പുകൾ സ്വീകരിക്കാൻ നിങ്ങൾ തിരഞ്ഞെടുത്തിട്ടുണ്ടെങ്കിൽ, ഉദാഹരണത്തിന്, നിർദ്ദിഷ്ട ഓക്സിലറി നിയമങ്ങൾ പ്രവർത്തനക്ഷമമാക്കുമ്പോൾ, ആ അറിയിപ്പുകളുടെ ലഭിക്കേണ്ട സ്വീകർത്താവിന്റെ വിലാസം നിങ്ങൾക്ക് ഇവിടെ വ്യക്തമാക്കാം."
+ general_email_notification_name: "CIDRAM-ൽ നിന്ന് ഇമെയിൽ വഴി അറിയിപ്പുകൾ സ്വീകരിക്കാൻ നിങ്ങൾ തിരഞ്ഞെടുത്തിട്ടുണ്ടെങ്കിൽ, ഉദാഹരണത്തിന്, നിർദ്ദിഷ്ട ഓക്സിലറി നിയമങ്ങൾ പ്രവർത്തനക്ഷമമാക്കുമ്പോൾ, ആ അറിയിപ്പുകളുടെ സ്വീകർത്താവിന്റെ പേര് നിങ്ങൾക്ക് ഇവിടെ വ്യക്തമാക്കാം."
+ general_email_notification_when: "ജനറേറ്റ് ചെയ്തതിനുശേഷം അറിയിപ്പുകൾ എപ്പോൾ അയയ്ക്കണം."
  general_ipaddr: "ബന്ധിപ്പിക്കൽ അഭ്യർത്ഥനകളുടെ IP വിലാസം എവിടെ കണ്ടെത്താം? (Cloudflare തുടങ്ങിയ സേവനങ്ങൾക്ക് ഉപയോഗപ്രദമാണ്). സ്ഥിരസ്ഥിതി = REMOTE_ADDR. മുന്നറിയിപ്പ്: നിങ്ങൾ എന്താണ് ചെയ്യുന്നതെന്ന് നിങ്ങൾക്കറിയാമെങ്കിൽ മാത്രം ഇത് മാറ്റുക!"
  general_lang: "CIDRAM-നുള്ള സ്ഥിരസ്ഥിതി ഭാഷ വ്യക്തമാക്കുക."
  general_lang_override: "സാധ്യമാകുമ്പോഴെല്ലാം HTTP_ACCEPT_LANGUAGE അനുസരിച്ച് പ്രാദേശികവൽക്കരിക്കണോ? True = അതെ [സ്ഥിരസ്ഥിതി]; False = ഇല്ല."
  general_numbers: "അക്കങ്ങൾ എങ്ങനെ പ്രദർശിപ്പിക്കാനാണ് നിങ്ങൾ ഇഷ്ടപ്പെടുന്നത്? നിങ്ങൾക്ക് ഏറ്റവും ശരിയായി തോന്നുന്ന ഉദാഹരണം തിരഞ്ഞെടുക്കുക."
+ general_statistics: "ട്രാക്ക് ചെയ്യേണ്ട സ്റ്റാറ്റിസ്റ്റിക്കൽ വിവരങ്ങൾ നിയന്ത്രിക്കുന്നു."
  general_time_format: "CIDRAM ഉപയോഗിക്കുന്ന തീയതി/സമയ നൊട്ടേഷൻ ഫോർമാറ്റ്. അഭ്യർത്ഥന പ്രകാരം കൂടുതൽ ഓപ്ഷനുകൾ ചേർക്കാവുന്നതാണ്."
  general_time_offset: "മിനിറ്റുകൾക്കുള്ളിൽ സമയമേഖല ഓഫ്‌സെറ്റ്."
  general_timezone: "ഏത് സമയമേഖലയാണ് ഉപയോഗിക്കേണ്ടത് (ഉദാഹരണത്തിന്, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, തുടങ്ങിയവ). ഇത് നിങ്ങൾക്കായി യാന്ത്രികമായി കൈകാര്യം ചെയ്യാൻ PHP-യെ അനുവദിക്കുന്നതിന് "SYSTEM" വ്യക്തമാക്കുക."
+ hcaptcha: "HCaptcha-യ്ക്കുള്ള കോൺഫിഗറേഷൻ (തടയപ്പെടുമ്പോൾ മനുഷ്യർക്ക് ആക്‌സസ് വീണ്ടെടുക്കാനുള്ള ഒരു മാർഗം നൽകുന്നു)."
+ hcaptcha_api: &CaptchaAPI "ഏത് API ഉപയോഗിക്കണം?"
+ hcaptcha_expiry: &CaptchaExpiry "CAPTCHA സന്ദർഭങ്ങൾ ഓർമ്മിക്കേണ്ട മണിക്കൂറുകളുടെ എണ്ണം. സ്ഥിരസ്ഥിതി = 720 (ഒരു മാസം)."
+ hcaptcha_lockip: &CaptchaLockIP "IP വിലാസങ്ങളിലേക്ക് CAPTCHA ലോക്ക് ചെയ്യണോ?"
+ hcaptcha_lockuser: &CaptchaLockUser "ഉപയോക്താക്കൾക്ക് CAPTCHA ലോക്ക് ചെയ്യണോ?"
+ hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "തടയപ്പെടാത്ത അഭ്യർത്ഥനകളിൽ CAPTCHA-കൾ പ്രദർശിപ്പിക്കുമ്പോൾ ഏത് സ്റ്റാറ്റസ് കോഡാണ് ഉപയോഗിക്കേണ്ടത്?"
+ hcaptcha_secret: &CaptchaDashboard "നിങ്ങളുടെ CAPTCHA സേവനത്തിനായുള്ള ഡാഷ്‌ബോർഡിൽ ഈ മൂല്യം കണ്ടെത്താൻ കഴിയും."
+ hcaptcha_show_api_message: &ShowAPIMessage "API സന്ദേശം കാണിക്കണോ? True = അതെ [സ്ഥിരസ്ഥിതി]; False = ഇല്ല."
+ hcaptcha_show_cookie_warning: &ShowCookieWarning "കുക്കി മുന്നറിയിപ്പ് കാണിക്കണോ? True = അതെ [സ്ഥിരസ്ഥിതി]; False = ഇല്ല."
+ hcaptcha_signature_limit: &CaptchaSignatureLimit "CAPTCHA ഓഫർ പിൻവലിക്കുന്നതിന് മുമ്പ് അനുവദനീയമായ പരമാവധി എണ്ണം ഒപ്പുകൾ. സ്ഥിരസ്ഥിതി = 1."
+ hcaptcha_sitekey: *CaptchaDashboard
+ ipapi: "IP-API മൊഡ്യൂളിനായുള്ള കോൺഫിഗറേഷൻ (ഇത് CIDRAM-ന് ഒരു ASN, കൺട്രി കോഡ് ലുക്കപ്പ് സൗകര്യം നൽകുന്നു)."
+ ipapi_blocked_asns: *ConfigBlockedASNs
+ ipapi_blocked_ccs: *ConfigBlockedCCs
+ ipapi_whitelisted_asns: *ConfigWhitelistedASNs
+ ipapi_whitelisted_ccs: *ConfigWhitelistedCCs
  legal: "നിയമപരമായ ആവശ്യകതകൾക്കായുള്ള കോൺഫിഗറേഷൻ."
  legal_privacy_policy: "ജനറേറ്റ് ചെയ്യുന്ന ഏതൊരു പേജിന്റെയും ഫൂട്ടറിൽ പ്രദർശിപ്പിക്കേണ്ട പ്രസക്തമായ സ്വകാര്യതാ നയത്തിന്റെ വിലാസം. ഒരു URL വ്യക്തമാക്കുക, അല്ലെങ്കിൽ പ്രവർത്തനരഹിതമാക്കാൻ ശൂന്യമായി വിടുക."
  legal_pseudonymise_ip_addresses: "രേഖപ്പെടുത്തിയിരിക്കുന്ന IP വിലാസങ്ങൾ വ്യാജനാമമാക്കണോ? True = അതെ [സ്ഥിരസ്ഥിതി]; False = ഇല്ല."
@@ -223,6 +245,18 @@ config:
  phpmailer_username: "SMTP വഴി ഇമെയിൽ അയയ്ക്കുമ്പോൾ ഉപയോഗിക്കേണ്ട ഉപയോക്തൃനാമം."
  projecthoneypot: "പ്രോജക്റ്റ് ഹണിപോട്ട് മൊഡ്യൂളിനായുള്ള കോൺഫിഗറേഷൻ."
  projecthoneypot_api_key: *EnterAPIKey
+ recaptcha: "ReCaptcha-യ്ക്കുള്ള കോൺഫിഗറേഷൻ (തടയപ്പെടുമ്പോൾ മനുഷ്യർക്ക് ആക്‌സസ് വീണ്ടെടുക്കാനുള്ള ഒരു മാർഗം നൽകുന്നു)."
+ recaptcha_api: *CaptchaAPI
+ recaptcha_expiry: *CaptchaExpiry
+ recaptcha_lockip: *CaptchaLockIP
+ recaptcha_lockuser: *CaptchaLockUser
+ recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
+ recaptcha_secret: *CaptchaDashboard
+ recaptcha_show_api_message: *ShowAPIMessage
+ recaptcha_show_cookie_warning: *ShowCookieWarning
+ recaptcha_signature_limit: *CaptchaSignatureLimit
+ recaptcha_sitekey: *CaptchaDashboard
+ recaptcha_usemode: *CaptchaUseMode
  supplementary_cache_options: "അധിക കാഷെ ഓപ്ഷനുകൾ. കുറിപ്പ്: ഈ മൂല്യങ്ങൾ മാറ്റുന്നത് നിങ്ങളെ ലോഗ് ഔട്ട് ചെയ്യാൻ സാധ്യതയുണ്ട്."
  supplementary_cache_options_enable_apcu: "കാഷിംഗിനായി APCu ഉപയോഗിക്കാൻ ശ്രമിക്കണോ എന്ന് വ്യക്തമാക്കുന്നു. സ്ഥിരസ്ഥിതി = True."
  supplementary_cache_options_enable_memcached: "കാഷിംഗിനായി Memcached ഉപയോഗിക്കാൻ ശ്രമിക്കണോ എന്ന് വ്യക്തമാക്കുന്നു. സ്ഥിരസ്ഥിതി = False."
@@ -337,6 +371,63 @@ hints_time_format: |
  <code class="s">{s}</code> – സെക്കൻഡ് – ഉദാഹരണത്തിന്, 49.<br />
  <code class="s">{tz}</code> – സമയമേഖല (കോളൺ ഇല്ലാതെ) – ഉദാഹരണത്തിന്, +0800.<br />
  <code class="s">{t:z}</code> – സമയമേഖല (കോളണോടുകൂടി) – ഉദാഹരണത്തിന്, +08:00.
+info_cli_the_signature_: "ഒപ്പുകളുടെ ഫിക്സർ CLI വഴിയും ഉപയോഗിക്കാം:"
+info_cli_to_calculate_c: "ഒരു IP വിലാസത്തിൽ നിന്ന് CIDR-കൾ കണക്കാക്കാൻ:"
+info_cli_to_test_whethe: "ഒരു IP വിലാസം CIDRAM തടഞ്ഞിട്ടുണ്ടോ എന്ന് പരിശോധിക്കാൻ:"
+info_cli_to_quit_type_q: |
+ പുറത്തുകടക്കാൻ, "q", "quit", അല്ലെങ്കിൽ "exit" എന്ന് ടൈപ്പ് ചെയ്യുക,
+ തുടർന്ന് Enter (എന്റർ) അമർത്തുക.
+info_cli_you_can_also_a: "നിങ്ങൾക്ക് IP-കളും CIDR-കളും സംയോജിപ്പിക്കാനും കഴിയും:"
+info_cli_you_can_also_c: |
+ നിങ്ങൾക്ക് കമാൻഡുകൾ ഒരുമിച്ച് ചെയിൻ ചെയ്യാനും കഴിയും (ഈ ഉദാഹരണം ചില
+ ഫയലുകളിൽ നിന്ന് വായിക്കുകയും, അവയുടെ ഉള്ളടക്കം സമാഹരിക്കുകയും, തുടർന്ന്
+ സമാഹരിച്ച ഡാറ്റ output.dat-ലേക്ക് എഴുതുകയും ചെയ്യുന്നു):
+info_cli_you_can_also_r: "ഇതുപോലുള്ള ഫയലുകളിൽ നിന്നും നിങ്ങൾക്ക് വായിക്കാം:"
+info_cli_you_can_also_u: |
+ നിങ്ങൾക്ക് വേണമെങ്കിൽ പകരം കോമകൾ ഉപയോഗിക്കാം (ഇത് മൾട്ടിലൈനുകൾ
+ ഉപയോഗിക്കുന്നതുപോലെയാണ് കണക്കാക്കുന്നത്, പക്ഷേ നിങ്ങൾ ഉദ്ധരണികൾ
+ ഉപയോഗിക്കേണ്ടതില്ല, രണ്ടും ഒരുമിച്ച് കൂട്ടിക്കലർത്തരുത്.):
+info_cli_you_can_also_w: "നിങ്ങൾക്ക് ഇതുപോലുള്ള ഫയലുകളിലേക്കും എഴുതാം:"
+info_cli_you_can_print_: |
+ നിങ്ങൾക്ക് സ്ക്രീനിൽ ഡാറ്റ ഇതുപോലെ പ്രിന്റ് ചെയ്യാൻ കഴിയും (കമാൻഡുകൾ ചെയിൻ
+ ചെയ്യുമ്പോൾ ചിലപ്പോൾ ഉപയോഗപ്രദമാകും):
+Some useful links: |+
+ ചില ഉപയോഗപ്രദമായ ലിങ്കുകൾ:<br />
+     <ul class="pieul">
+       <li><span class="comCat">CIDRAM-നുള്ള ഉപകരണങ്ങൾ, വിഭവങ്ങൾ, മുതലായവ.</span>
+         <ul class="comSub">
+           <li>{{Links.CIDRAM.Bitbucket}} – റിപ്പോസിറ്ററി ബാക്കപ്പ് സ്ഥാനം.</li>
+           <li>{{Links.CIDRAM.Extras}} – വിവിധ അധികങ്ങൾ.</li>
+           <li>{{Links.CIDRAM.Issues}} – CIDRAM-നുള്ള ലക്കങ്ങളുടെ പേജ് (പിന്തുണ, സഹായം, മുതലായവ).</li>
+           <li>{{Links.CIDRAM.WordPress}} – CIDRAM-നുള്ള വേർഡ്പ്രസ്സ് പ്ലഗിൻ.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">ഗ്രൂപ്പുകൾ, ഫോറങ്ങൾ, കമ്മ്യൂണിറ്റികൾ, മുതലായവ.</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Facebook}} – PHP പഠന വിഭവങ്ങളും ചർച്ചയും.</li>
+           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">ഫോറം@Stop Forum Spam</a> – ഫോറം സ്പാം നിർത്തുന്നതിനെക്കുറിച്ചുള്ള ഉപയോഗപ്രദമായ ചർച്ച ഫോറം.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">മറ്റ് ഉപയോഗപ്രദമായ ഉപകരണങ്ങൾ, വിഭവങ്ങൾ, സേവനങ്ങൾ, മുതലായവ.</span>
+         <ul class="comSub">
+           <li>{{Links.SFS}} – അറിയപ്പെടുന്ന ഫോറം സ്പാമർമാരുടെ ഒരു ഡാറ്റാബേസ് പരിപാലിക്കുന്നു. സ്പാമർമാരിൽ നിന്ന് വെബ്‌സൈറ്റുകളെയും ഫോറങ്ങളെയും സംരക്ഷിക്കുന്നതിന് ഉപയോഗപ്രദമാണ്.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP ടൂൾകിറ്റ്</a> – ASN-കളിൽ നിന്ന് CIDR-കൾ നേടുക, ASN ബന്ധങ്ങൾ നിർണ്ണയിക്കുക, നെറ്റ്‌വർക്ക് നാമങ്ങളെ അടിസ്ഥാനമാക്കി ASN-കൾ കണ്ടെത്തുക, തുടങ്ങിയവ.</li>
+           <li>{{Links.BGPView}} – ASN-കളിൽ നിന്ന് CIDR-കൾ നേടുക, ASN ബന്ധങ്ങൾ നിർണ്ണയിക്കുക, നെറ്റ്‌വർക്ക് നാമങ്ങളെ അടിസ്ഥാനമാക്കി ASN-കൾ കണ്ടെത്തുക, തുടങ്ങിയവ.</li>
+           <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Qrator-ൽ നിന്നുള്ള Radar</a> – ASN-കളുടെ കണക്റ്റിവിറ്റി പരിശോധിക്കുന്നതിനും ASN-കളെക്കുറിച്ചുള്ള മറ്റ് വിവിധ വിവരങ്ങൾക്കും ഉപയോഗപ്രദമായ ഉപകരണം.</li>
+           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">സ്പാംഹൗസ് പ്രോജക്റ്റ്</a> – ASN-കൾക്കുള്ള ബോട്ട്‌നെറ്റ് അണുബാധ നിരക്കുകളെക്കുറിച്ചുള്ള റിപ്പോർട്ടുകൾ പ്രദർശിപ്പിക്കുന്നു.</li>
+           <li>{{Links.AbuseIPDB}} – അറിയപ്പെടുന്ന ദുരുപയോഗ IP-കളുടെ ഒരു ഡാറ്റാബേസ് പരിപാലിക്കുന്നു.; IP-കൾ പരിശോധിക്കുന്നതിനും റിപ്പോർട്ട് ചെയ്യുന്നതിനുമായി ഒരു API നൽകുന്നു.</li>
+           <li>{{Links.IP-API}} – രാജ്യ കോഡ്, പ്രദേശ നാമം, രേഖാംശം, അക്ഷാംശം, തുടങ്ങിയ IP വിലാസങ്ങളെക്കുറിച്ചോ ഹോസ്റ്റ് നാമങ്ങളെക്കുറിച്ചോ ഉള്ള വിവരങ്ങൾ നേടുക.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">വിവര, പഠന വിഭവങ്ങൾ.</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Website}} – PHP പഠന വിഭവങ്ങളും ചർച്ചയും.</li>
+           <li>{{Links.MDN.Homepage}} – ഡെവലപ്പർമാർക്കുള്ള ഉറവിടങ്ങൾ, ഡെവലപ്പർമാർ മുഖേന. HTML, CSS, JavaScript, ആക്‌സസിബിലിറ്റി മറ്റും എന്നിവയെക്കുറിച്ചും പഠിക്കുന്നതിനുള്ള ഒരു മികച്ച ഉറവിടം.</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">ദുർബലതാ ചാർട്ടുകൾ</a> – വിവിധ പാക്കേജുകൾക്കായുള്ള (HHVM, PHP, phpMyAdmin, Python, മുതലായവ) സുരക്ഷിത/സുരക്ഷിതമല്ലാത്ത പതിപ്പുകൾ പട്ടികപ്പെടുത്തുന്നു.</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">അനുയോജ്യതാ ചാർട്ടുകൾ</a> – വിവിധ പാക്കേജുകൾക്കായുള്ള (CIDRAM, phpMussel, മുതലായവ) പൊരുത്ത വിവരങ്ങൾ പട്ടികപ്പെടുത്തുന്നു.</li>
+         </ul>
+       </li>
+     </ul>
 label:
  %s across %s file:
   - "%2$s ഫയലിൽ %1$s"
@@ -372,6 +463,7 @@ label:
  Component is active: "ഘടകം സജീവമാണ്."
  Component is inactive: "ഘടകം നിഷ്‌ക്രിയമാണ്."
  Component is partially active: "ഘടകം ഭാഗികമായി സജീവമാണ്."
+ Component is provisional: "Component is provisional."
  Component updates metadata: "ഘടക അപ്‌ഡേറ്റുകൾ മെറ്റാഡാറ്റ"
  Compress: "കംപ്രസ് ചെയ്യുക"
  Copy to clipboard: "ക്ലിപ്പ്ബോർഡിലേക്ക് പകർത്തുക"

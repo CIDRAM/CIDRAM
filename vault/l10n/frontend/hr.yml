@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Croatian language data for the front-end (last modified: 2025.05.17).
+# This file: Croatian language data for the front-end (last modified: 2025.05.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -456,6 +456,61 @@ hints_time_format: |
  <code class="s">{t:z}</code> – Vremenska zona (s dvotočkom) – Npr., +08:00.
 hints_verification:
  "Što su "pozitivi" i "negativi"?": "Prilikom provjere identiteta predstavljenog zahtjevom, uspješan ishod mogao bi se opisati kao "pozitivan" ili "negativan". U slučaju da se potvrdi da je predstavljeni identitet pravi identitet, on bi se opisao kao "pozitivan". U slučaju da se potvrdi da je prikazani identitet krivotvoren, on bi se opisao kao "negativan". Međutim, neuspješan ishod (npr., neuspješna provjera, ili se ne može utvrditi vjerodostojnost prikazanog identiteta) ne bi se opisao kao "pozitivan" ili "negativan". Umjesto toga, neuspješan ishod bi se jednostavno opisao kao neprovjeren. Ako se ne pokuša provjeriti identitet predstavljen zahtjevom, zahtjev bi se također opisao kao neprovjeren. Pojmovi imaju smisla samo u kontekstu u kojem je identitet predstavljen zahtjevom prepoznat, i stoga, gdje je provjera moguća. U slučajevima kada prikazani identitet ne odgovara gore navedenim opcijama, ili kada identitet nije predstavljen, gore navedene opcije postaju nevažne."
+info_cli_the_signature_: "Alat za ispravljanje potpisa može se koristiti i putem CLI-ja:"
+info_cli_to_calculate_c: "Za izračun CIDR-ova iz IP adrese:"
+info_cli_to_test_whethe: "Za provjeru je li CIDRAM blokirao IP adresu:"
+info_cli_to_quit_type_q: "Za izlaz, upišite "q", "quit", ili "exit", a zatim pritisnite enter."
+info_cli_you_can_also_a: "Također možete agregirati IP adrese i CIDR-ove:"
+info_cli_you_can_also_c: |
+ Također možete povezati naredbe u lanac (primjer čita iz nekih datoteka,
+ agregira njihov sadržaj, a zatim zapisuje agregirane podatke u
+ output.dat):
+info_cli_you_can_also_r: "Također možete čitati iz datoteka poput:"
+info_cli_you_can_also_u: |
+ Možete koristiti zareze ako želite (ovo se tretira isto kao i korištenje
+ višelinijsko, ali nećete morati koristiti navodnike, i nemoj miješati
+ oboje zajedno):
+info_cli_you_can_also_w: "Također možete pisati u datoteke ovako:"
+info_cli_you_can_print_: |
+ Podatke možete ispisati na ekran ovako (ponekad korisno pri lančanom
+ povezivanju naredbi):
+Some useful links: |+
+ Neke korisne poveznice:<br />
+     <ul class="pieul">
+       <li><span class="comCat">Alati, resursi, itd. za CIDRAM.</span>
+         <ul class="comSub">
+           <li>{{Links.CIDRAM.Bitbucket}} – Lokacija sigurnosne kopije repozitorija.</li>
+           <li>{{Links.CIDRAM.Extras}} – Razni dodaci.</li>
+           <li>{{Links.CIDRAM.Issues}} – Stranica s problemima za CIDRAM (podrška, pomoć, itd).</li>
+           <li>{{Links.CIDRAM.WordPress}} – WordPress dodatak za CIDRAM.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Grupe, forumi, zajednice, itd.</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Facebook}} – PHP resursi za učenje i rasprava.</li>
+           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Forum@Stop Forum Spam</a> – Koristan forum za raspravu o zaustavljanju neželjene pošte na forumu.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Drugi korisni alati, resursi, usluge, itd.</span>
+         <ul class="comSub">
+           <li>{{Links.SFS}} – Održava bazu podataka poznatih pošiljatelja neželjene pošte na forumima. Korisno za zaštitu web stranica i foruma od spamera.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Dobijte CIDR-ove od ASN-ova, odredite ASN odnose, otkrijte ASN-ove na temelju naziva mreža, itd.</li>
+           <li>{{Links.BGPView}} – Dobijte CIDR-ove od ASN-ova, odredite ASN odnose, otkrijte ASN-ove na temelju naziva mreža, itd.</li>
+           <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar od Qrator-a</a> – Koristan alat za provjeru povezanosti ASN-ova, kao i za razne druge informacije o ASN-ovima.</li>
+           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Projekt Spamhaus</a> – Prikazuje izvješća o stopama zaraze botnetom za ASN-ove.</li>
+           <li>{{Links.AbuseIPDB}} – Održava bazu podataka o poznatim zlonamjernim IP adresama; Pruža API za provjeru i prijavljivanje IP adresa.</li>
+           <li>{{Links.IP-API}} – Dobijte informacije o IP adresama ili nazivima hostova kao što su pozivni broj države, naziv regije, zemljopisna dužina, zemljopisna širina, itd.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Informativni i obrazovni resursi.</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Website}} – PHP resursi za učenje i rasprava.</li>
+           <li>{{Links.MDN.Homepage}} – Resursi za programere, od programera. Fantastičan resurs za učenje o HTML-u, CSS-u, JavaScriptu, pristupačnosti, i još mnogo čemu.</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Grafikoni ranjivosti</a> – Navodi sigurne/nesigurne verzije različitih paketa (HHVM, PHP, phpMyAdmin, Python, itd).</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Grafikoni kompatibilnosti</a> – Navodi informacije o kompatibilnosti za različite pakete (CIDRAM, phpMussel, itd).</li>
+         </ul>
+       </li>
+     </ul>
 label:
  %s across %s file:
   - "%s u %s datoteci"
@@ -528,6 +583,7 @@ label:
  Other: "Ostalo"
  PHP version used: "PHP verzija koja se koristi:"
  Page request completed in %s seconds: "Zahtjev za stranicu dovršen za %s sekunde."
+ Paginate: "Paginate"
  Please log in to continue: "Molimo prijavite se za nastavak."
  SAPI used: "SAPI koristi:"
  See also: "Vidi također:"

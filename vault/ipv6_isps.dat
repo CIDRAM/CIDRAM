@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6_isps.dat
 
-# Version: 2025.140.0
-# Last modified: 2025.05.21
+# Version: 2025.146.0
+# Last modified: 2025.05.27
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -416,11 +416,13 @@ Tag: Calyx/Zwiebelfreunde
 # ASN 7713 ("PT Telekomunikasi Indonesia").
 # Indonesian domestic ISP. Brute-force, SSH, and webapp attacks, hacking, and
 # spam detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,415.
-# Updated: 2024.05.30
+# Stop Forum Spam (SFS) listings: 1,844.
+# Updated: 2025.05.27
 
-2001:448a:1082:6d8e::/64 Deny Spam
-2001:448a:3063:3dfb::/64 Deny Spam
+2001:448a:50a0:678a::/64 Deny Spam
+2001:448a:50a0:8008::/64 Deny Spam
+2001:448a:7023:430e::/64 Deny Spam
+2001:448a:c0a0:e8f::/64 Deny Spam
 Origin: ID
 Profile: Domestic ISP;Infrastructure/Transit;Mobile ISP;Multiplay
 Tag: PT Telekomunikasi Indonesia

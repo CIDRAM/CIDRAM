@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6.dat
 
-# Version: 2025.140.0
-# Last modified: 2025.05.21
+# Version: 2025.146.0
+# Last modified: 2025.05.27
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -120,8 +120,8 @@ Tag: LayerHost
 # I don't anticipate ever removing these listings. Have been blocking them due
 # to all kinds of unwanted traffic of all descriptions from their network since
 # many years before CIDRAM existed.
-# Stop Forum Spam (SFS) listings: 3,033.
-# Updated: 2023.12.24 / Checked: 2024.10.30
+# Stop Forum Spam (SFS) listings: 2,853.
+# Updated: 2023.12.24 / Checked: 2025.05.27
 
 2605:7280:7::/48 Deny Cloud
 Origin: US
@@ -2004,10 +2004,10 @@ Tag: Contabo GmbH
 
 
 # ASN 45815 ("ESDS Software Solution").
-# Stop Forum Spam (SFS) listings: 18.
-# Updated: 2022.06.22 / Checked: 2024.05.18
+# Stop Forum Spam (SFS) listings: 10.
+# Updated: 2025.05.25
 
-2400:5300::/47 Deny Cloud
+2400:5300:1::/48 Deny Cloud
 2400:5300:3::/48 Deny Cloud
 2400:5300:4::/48 Deny Cloud
 Origin: IN
@@ -2849,8 +2849,8 @@ Tag: SECURED SERVERS LLC
 
 
 # ASN 21859 ("Zenlayer Inc").
-# Stop Forum Spam (SFS) listings: 1,570.
-# Updated: 2024.10.13
+# Stop Forum Spam (SFS) listings: 1,879.
+# Updated: 2025.05.27
 
 2404:3700::/48 Deny Cloud
 2404:e5c0::/32 Deny Cloud
@@ -2894,25 +2894,27 @@ Origin: SG
 2602:ffe4:c58::/48 Deny Cloud
 2602:ffe4:c5b::/48 Deny Cloud
 2602:ffe4:c5c::/47 Deny Cloud
-2602:ffe4:c5e::/48 Deny Cloud
-2602:ffe4:c62::/48 Deny Cloud
 2602:ffe4:c64::/47 Deny Cloud
 2602:ffe4:c6c::/47 Deny Cloud
 2602:ffe4:c6e::/48 Deny Cloud
 2602:ffe4:c70::/48 Deny Cloud
+2602:ffe4:c72::/48 Deny Cloud
 2602:ffe4:c79::/48 Deny Cloud
-2602:ffe4:c7a::/48 Deny Cloud
+2602:ffe4:c7a::/47 Deny Cloud
+2602:ffe4:c8c::/48 Deny Cloud
 2604:980:1000::/36 Deny Cloud
 2604:980:2000::/35 Deny Cloud
 2604:980:4000::/35 Deny Cloud
 2604:980:7000::/36 Deny Cloud
 2604:980:8000::/34 Deny Cloud
-2604:980:c000::/35 Deny Cloud
+2604:980:d000::/36 Deny Cloud
 2604:980:e000::/45 Deny Cloud
 2604:980:e008::/48 Deny Cloud
 2604:980:e00a::/47 Deny Cloud
 2604:980:e00c::/47 Deny Cloud
 2604:980:e00e::/48 Deny Cloud
+2604:980:e01e::/47 Deny Cloud
+2604:980:e020::/47 Deny Cloud
 2607:a400::/32 Deny Cloud
 2a0b:21c0:1000::/36 Deny Cloud
 2a0b:21c0:2000::/35 Deny Cloud
@@ -4340,6 +4342,20 @@ Origin: US
 Origin: XR
 Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: UK-2 Limited
+
+
+# ASN 25820 ("IT7 Networks Inc").
+# Stop Forum Spam (SFS) listings: 600.
+# Updated: 2025.05.25
+
+2607:8700:2200::/48 Deny Cloud
+2607:8700:3100::/48 Deny Cloud
+2607:8700:3400::/48 Deny Cloud
+2607:8700:5500::/48 Deny Cloud
+2607:8700:9300::/48 Deny Cloud
+Origin: CA
+Profile: Dedicated;Webhosting
+Tag: IT7 Networks Inc
 
 
 # ASN 27843 ("OPTICAL TECHNOLOGIES S.A.C").
@@ -6473,11 +6489,11 @@ Tag: HostHatch LLC
 
 # ASNs 3920, 61254, 208673 ("ESTOXY OU").
 # Honeypot attacks, SQLi attacks, hacking, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 5 (AS3920).
 # Gebriano detected from here.
-# Updated: 2024.11.24
+# Updated: 2025.05.27
 
-2a13:adc0::/47 Deny Cloud
-2a13:adc0:2::/48 Deny Cloud
+2a13:adc0::/46 Deny Cloud
 Origin: EE
 Profile: Dedicated;Webhosting
 Tag: ESTOXY OU
@@ -6922,10 +6938,10 @@ Profile: Restricted/Unidentifiable
 Tag: Business Network Ltd
 
 
-# ASNs 47172, 209829 ("Greenhost BV").
+# ASNs 47172, 152460 ("Greenhost BV").
 # Dedicated webhosting provider caught spamming forums.
-# Stop Forum Spam (SFS) listings: 7 (AS47172).
-# Updated: 2019.09.30 / Checked: 2024.07.26
+# Stop Forum Spam (SFS) listings: 761 (AS47172).
+# Updated: 2019.09.30 / Checked: 2025.05.27
 
 2a00:c6c0::/48 Deny Cloud
 Origin: NL
@@ -10533,8 +10549,8 @@ Tag: Sapinet
 
 # ASN 200019 ("ALEXHOST SRL").
 # A significant source of spam, hacking, and other nefarious activity.
-# Stop Forum Spam (SFS) listings: 1,691.
-# Updated: 2025.01.12
+# Stop Forum Spam (SFS) listings: 917.
+# Updated: 2025.05.27
 
 2a00:1728:3e::/47 Deny Cloud
 Origin: BG
@@ -10542,10 +10558,17 @@ Origin: BG
 2a0f:5f40::/47 Deny Cloud
 2a0f:5f40:1000::/48 Deny Cloud
 2a0f:5f45::/32 Deny Cloud
+2a0f:5f46::/32 Deny Cloud
 Origin: MD
-2a09:2983::/32 Deny Cloud
+2a09:af84::/32 Deny Cloud
 2a0a:8d80:1::/48 Deny Cloud
-2a0e:4341::/32 Deny Cloud
+2a0b:9003::/32 Deny Cloud
+2a0e:f03::/32 Deny Cloud
+2a0e:8545::/32 Deny Cloud
+2a11:3186::/32 Deny Cloud
+2a11:4a03::/32 Deny Cloud
+2a11:8505::/32 Deny Cloud
+2a11:9884::/32 Deny Cloud
 Origin: RU
 Profile: Frequent changes;Tor endpoints here;Webhosting
 Tag: ALEXHOST SRL
@@ -13259,8 +13282,8 @@ Tag: Hytron
 # ASN 212913 ("FOP Hornostay Mykhaylo Ivanovych").
 # Dead homepage. Brute-force, SSH, and webapp attacks, port scans, hacking, and
 # spam detected from here.
-# Stop Forum Spam (SFS) listings: 17.
-# Updated: 2024.05.20
+# Stop Forum Spam (SFS) listings: 166.
+# Updated: 2024.05.20 / Checked: 2025.05.25
 
 2001:67c:af4::/48 Deny Cloud
 Origin: UA
@@ -14537,8 +14560,8 @@ Tag: MoeChuang Network
 # ASN 209242 ("Cloudflare London, LLC").
 # DDoS, brute-force, SSH, RDP, and honeypot attacks, port scans, hacking, and
 # spam detected from here.
-# Stop Forum Spam (SFS) listings: 2.
-# Updated: 2024.10.16
+# Stop Forum Spam (SFS) listings: 12.
+# Updated: 2025.05.27
 
 2407:30c0:180::/46 Deny Cloud
 Origin: AU
@@ -14546,6 +14569,8 @@ Origin: AU
 Origin: BZ
 2a05:7880::/32 Deny Cloud
 Origin: CY
+2a14:7ac0::/48 Deny Cloud
+Origin: FR
 2a08:600::/48 Deny Cloud
 2a08:600:e0::/47 Deny Cloud
 2a08:600:ee::/47 Deny Cloud
@@ -14553,11 +14578,14 @@ Origin: CY
 Origin: GB
 2a03:f940::/48 Deny Cloud
 Origin: NL
+2400:c760:a::/48 Deny Cloud
+Origin: NZ
 2001:df7:6e80::/48 Deny Cloud
 Origin: SG
 2001:503:ff40::/46 Deny Cloud
 2602:80c:cf::/48 Deny Cloud
 2602:f830::/48 Deny Cloud
+2606:2c0:20::/47 Deny Cloud
 2606:2c40::/48 Deny Cloud
 2606:54c1::/46 Deny Cloud
 2606:ae80:10::/48 Deny Cloud
@@ -15445,6 +15473,27 @@ Tag: HOSTPERL
 Origin: AL
 Profile: Dedicated;Webhosting
 Tag: Albanian Hosting
+
+
+# ASN 213702 ("QWINS LTD").
+# Brute-force attacks, port scans, and flooding detected from here.
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2025.05.23
+
+2a12:bec4:150::/44 Deny Cloud
+Origin: GB
+Profile: Webhosting
+Tag: QWINS LTD
+
+
+# ASN 214668 ("AxusHost B.V").
+# Brute-force attacks detected from here.
+# Updated: 2025.05.27
+
+2a11:1400:2000::/48 Deny Cloud
+Origin: NL
+Profile: Dedicated;Webhosting
+Tag: AxusHost B.V
 
 
 # ---

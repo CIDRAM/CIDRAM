@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bosnian language data for the front-end (last modified: 2025.05.22).
+# This file: Bosnian language data for the front-end (last modified: 2025.05.28).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -56,7 +56,7 @@ Extended Description:
  Bad TLDs blocker module: "Blokira hostove koji pripadaju TLD-ovima koje često koriste spameri, hakeri, i drugi podli entiteti."
  Bad hosts blocker module: "Blokira hostove koje često koriste spameri, hakeri, i drugi podli entiteti."
  Bot user agents module: "Blokira korisničke agente povezane s neželjenim botovima i zlobnim aktivnostima."
- Bypasses: "Datoteke za bypassi o zadanom potpisu koji su obično uključeni u glavni paket."
+ Bypasses: "Standardne datoteke za zaobilaženje potpisa obično su uključene u glavni paket."
  Chart.js: "Omogućava generiranje krofnih grafikona na front-end.<br />{{Links.Chart.js}} je dostupan preko {{Links.MIT}} licence."
  Cookie scanner module: "Pruža ograničenu zaštitu od opasnih kolačića."
  HTTP version checker module: "Omogućava blokiranje određenih protokola i HTTP verzija kroz CIDRAM konfiguraciju."
@@ -86,7 +86,7 @@ Name:
  Bad hosts blocker module: "Modul za blokiranje loših hostova."
  Bot user agents module: "Modul za bot korisničke agente."
  BunnyCDN compatibility module: "Modul za BunnyCDN kompatibilnost."
- Bypasses: "Bypassi za zadane potpise."
+ Bypasses: "Standardno zaobilaženje potpisa."
  Cookie scanner module: "Neobavezna modul skenera kolačića."
  HTTP version checker module: "Modul za provjeru HTTP verzije."
  IP-API module: "IP-API modul."
@@ -109,7 +109,7 @@ Name:
  Tor blocker module: "Tor bloker modul."
 bobuam_hint_default_value: "Kada se postavi na 0, modul će koristiti trenutno preporučenu vrijednost."
 checkbox:
- Allow single-hit bypasses: "Dopustiti single-hit bypassi?"
+ Allow single-hit bypasses: "Dozvoliti zaobilaženje jednim pogotkom?"
  Attempt to verify: "Pokušati provjeriti?"
  Block it: "Blokiraj to."
  Block negatives: "Blokirati negative?"
@@ -158,9 +158,9 @@ config:
  bobuam_safari: "Najniža dozvoljena verzija Safarijevog tokena "Version". Preporučeno: {{BOBUAM Token.Safari}}."
  bobuam_sanity_check: "Blokirati pretraživače koji prikazuju dvosmislene ili jasno deformirane stringove korisničkog agenta?"
  bunnycdn: "Konfiguracija za BunnyCDN kompatibilni modul."
- bunnycdn_positive_action: "Koju radnju CIDRAM treba izvršiti kada naiđe na zahtjev od BunnyCDN-a? Zadana radnja = Bypass."
- bypasses: "Zadani potpis bypassi konfiguraciju."
- bypasses_used: "Koje bypassi treba koristiti?"
+ bunnycdn_positive_action: "Koju radnju CIDRAM treba izvršiti kada naiđe na zahtjev od BunnyCDN-a? Zadana radnja = Zaobići."
+ bypasses: "Konfiguracija za standardna zaobilaženja potpisa."
+ bypasses_used: "Koje zaobilaženja treba koristiti?"
  components: "Konfiguracija za aktivaciju i deaktivaciju komponenti koje koristi CIDRAM. Obično ih popunjava stranica za ažuriranje, ali se njime može upravljati i odavde radi bolje kontrole i prilagođenih komponenti koje stranica za ažuriranja ne prepoznaje."
  components_events: "Obrađivači događaja. Obično se koristi za modificiranje načina na koji se CIDRAM ponaša interno ili za pružanje dodatne funkcionalnosti."
  components_imports: "Uvoz. Obično se koristi za dostavljanje informacija o konfiguraciji komponente u CIDRAM."
@@ -267,7 +267,7 @@ config:
  protocol_blocked: "Odabrani protokoli će biti blokirani. Bilješka: Neće imati nikakvog učinka za ona web stranicu koja usmjeravaju kroz usluge koje prepisuju zahtjeve tako da svi koriste potpuno isti protokol, kao što je Cloudflare."
  protocol_reason_message: "Poruka razloga se prikazuje kada su takvi zahtjevi blokirani."
  quic: "Konfiguracija za Quic cloud kompatibilni modul."
- quic_positive_action: "Koju radnju CIDRAM treba izvršiti kada naiđe na zahtjev od Quic cloud-a? Zadana radnja = Bypass."
+ quic_positive_action: "Koju radnju CIDRAM treba izvršiti kada naiđe na zahtjev od Quic cloud-a? Zadana radnja = Zaobići."
  rate_limiting: "Konfiguracija za ograničavanje brzine (ne preporučuje se za opću upotrebu)."
  rate_limiting_allowance_period: "Trajanje praćenja upotrebe. Zadano = 0°0′0″."
  rate_limiting_exceptions: "Izuzeci (tj. zahtjevi koji ne bi trebali biti ograničeni brzinom). Relevantno samo kada je ograničenje brzine omogućeno."
@@ -420,7 +420,7 @@ hints_duration:
  Lučnog vremena.: "Trajanje se može opisati pomoću notacije lučnog vremena. Npr., <strong>1d2°3′4″</strong> za jedan dan, dva sata, tri minute, četiri sekunde, ili <strong>5″</strong> za samo pet sekundi."
  Običan engleski.: "Trajanje se može opisati pisanjem jedinica na jednostavnom engleskom jeziku. Npr., <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> za jedan tjedan, dva dana, tri sata, četiri minute, pet sekundi."
  Ograničenja.: "Notacije se mogu miješati, ali jedinice uvijek moraju biti opisane od najveće prema najmanjoj, i ne smiju se ponavljati. Npr., <strong>1 week 2 days 3′4″</strong> je <span class="txtGn">validan</span> i biće ispravno shvaćen, ali <strong>3′4″ 1 week 2 days</strong> i <strong>3 hours 3h 3°</strong> su <span class="txtRd">nevažeći</span>. CIDRAM-u nije važno da li koristite razmak ili ne. Brojevi moraju biti jednostavni i neformatirani. Radi praktičnosti, najveća podržana jedinica je sedmica. Kada se konfiguracija ažurira, CIDRAM normalizira trajanje u lučnog vremena."
-hints_has_bypass: "* Ova opcija ima odgovarajuću bypass pod <code class="s">bypasses➡used</code>. Preporučuje se da osigurate da je potvrdni okvir za odgovarajuću bypass označen na isti način kao i potvrdni okvir za pokušaj provjere ove opcije."
+hints_has_bypass: "* Ova opcija ima odgovarajuće zaobilaženje pod <code class="s">bypasses➡used</code>. Preporučuje se da se osigura da je polje za potvrdu za odgovarajuće zaobilaženje označeno na isti način kao i polje za potvrdu za pokušaj provjere ove opcije."
 hints_inspection: "* Namijenjen samo za otklanjanje grešaka u pomoćnim pravilima. Ne prikazuje se blokiranim korisnicima."
 hints_ipv6_on_32bit: "Bilješka: IPv6 pretraživanja možda neće raditi ispravno na nekim 32-bitnim sistemima."
 hints_logging_datetime: "Koristan savjet: Možete priložiti informacije o datumu/vremenu imenima datoteka evidencije koristeći čuvare mjesta u formatu vremena. Dostupni čuvari mjesta formata vremena prikazani su na {{Links.ConfigRef.time_format}}."
@@ -456,6 +456,20 @@ hints_time_format: |
  <code class="s">{t:z}</code> – Vremenska zona (sa dvotočkom) – Npr., +08:00.
 hints_verification:
  "Šta su "pozitivi" i "negativi"?": "Prilikom provjere identiteta predstavljenog zahtjevom, uspješan ishod bi se mogao opisati kao "pozitivan" ili "negativan". U slučaju da se potvrdi da je predstavljeni identitet pravi identitet, on bi bio opisan kao "pozitivan". U slučaju da se potvrdi da je predstavljeni identitet falsifikovan, on bi bio opisan kao "negativan". Međutim, neuspješan ishod (npr., provjera ne uspije, ili se ne može utvrditi istinitost predstavljenog identiteta) ne bi se opisali kao "pozitivan" ili "negativan". Umjesto toga, neuspješan ishod bi se jednostavno opisao kao neprovjeren. Kada se ne pokuša provjeriti identitet predstavljen u zahtjevu, zahtjev bi također bio opisan kao neprovjeren. Termini imaju smisla samo u kontekstu u kojem se prepoznaje identitet predstavljen u zahtjevu, a samim tim i gdje je verifikacija moguća. U slučajevima kada predstavljeni identitet ne odgovara gore navedenim opcijama, ili kada identitet nije predstavljen, gore navedene opcije postaju nevažne."
+ "Šta su "zaobilaženje jednim pogotkom"?": "U nekim slučajevima, pozitivno verificiran zahtjev može i dalje biti blokiran zbog datoteka potpisa, modula, ili drugih uvjeta zahtjeva, a zaobilaženje može biti potrebno kako bi se izbjegli lažno pozitivni. U slučaju kada je zaobilaženje namijenjeno rješavanju tačno jednog prekršaja, ni više ni manje, takvo zaobilaženje bi se moglo opisati kao "zaobilaženje jednim pogotkom"."
+hints_want_to_block: "!! Većina korisnika će vjerovatno htjeti da se ovo blokira, bez obzira na to da li je stvarno ili lažno. To se može postići tako da se ne odabere "pokušati provjeriti", već da se odabere "blokirati neprovjerene zahtjeve". Međutim, budući da neki korisnici možda žele moći provjeriti takve zahtjeve (kako bi blokirali negativne, a dozvolili pozitivne), umjesto blokiranja takvih zahtjeva putem modula, ovdje su date opcije za rukovanje takvim zahtjevima."
+info_cli_cidram_cli_mod: "CIDRAM CLI režim."
+info_cli_ipv4_ipv6_are_: |
+ IPv4/IPv6 su oba podržana. Višelinijski unos je moguć za *sve* operacije u
+ CLI režimu (npr., za testiranje više IP adresa u jednoj operaciji)
+ korištenjem navodnika, ovako:
+info_cli_or_depending_o: |
+ U zavisnosti od toga da li biste radije povezali od prvog do posljednjeg
+ ili od posljednjeg do prvog:
+info_cli_or_to_aggregat: "Ili, da ih agregiramo kao mrežne maske:"
+info_cli_or_using_comma: |
+ Korištenje zareza umjesto višelinijskih razdjelnika (radi potpuno istu
+ stvar):
 info_cli_the_signature_: "Alat za ispravljanje potpisa može se koristiti i putem CLI-ja:"
 info_cli_to_calculate_c: "Da biste izračunali CIDR-ove iz IP adrese:"
 info_cli_to_test_whethe: "Da biste provjerili da li CIDRAM blokira IP adresu:"
@@ -536,7 +550,7 @@ label:
  CAPTCHA attempts: "Pokušaji CAPTCHA-e"
  Cache data and temporary files: "Podaci keša i privremene datoteke"
  Characters left: "Preostali znakovi"
- Checkbox: "Potvrdni okvir"
+ Checkbox: "Polje za potvrdu"
  Checksum after: "Kontrolni zbir nakon"
  Checksum before: "Kontrolni zbir prije"
  Client information: "Informacije o klijentu:"
@@ -557,12 +571,30 @@ label:
  Dependencies: "Zavisnosti:"
  Difference: "Razlika"
  Disable auxiliary rules: "Onemogući pomoćna pravila"
+ Displaying %s entry that cites %s:
+  - "Prikazuje se %s unos koji citira "%s"."
+  - "Prikazuju se %s unosa koja citiraju "%s"."
+  - "Prikazuju se %s unosa koji citiraju "%s"."
+ Displaying %s entry:
+  - "Prikazuje se %s unos."
+  - "Prikazuju se %s unosa."
+ Expected: "Očekivano"
  Expires: "Ističe:"
+ Export: "Izvoz"
  Extension: "Ekstenzija"
  External: "Vanjski"
+ False positive risk: "Rizik od lažno pozitivnih:"
  Fancy: "Otmjeno"
+ Focus: "Fokus:"
+ Free disk space: "Slobodan prostor na disku:"
+ Harvester: "Sakupljač"
+ Hide: "Sakrij"
  Ignore this: "Zanemari ovo"
+ Import: "Uvoz"
  Installed Available: "Instalirano/Dostupno"
+ Integrity check: "Provjera integriteta:"
+ Intersect: "Presjek"
+ Invisible: "Nevidljiv"
  Latest stable: "Najnovija stabilna verzija:"
  Latest unstable: "Najnovije nestabilno verzija:"
  Loading_: "Učitavanje..."
@@ -580,17 +612,25 @@ label:
  No log file selected: "Nije odabrana datoteka dnevnika."
  No log files available: "Nema dostupnih datoteka dnevnika."
  Operating system used: "Korišćen operativni sistem:"
+ Other rules, signature files, etc: "Druga pravila, datoteke potpisa, itd"
  Other: "Ostalo"
  PHP version used: "Korištena verzija PHP-a:"
  Page request completed in %s seconds: "Zahtjev za stranicu dovršen za %s sekunde."
- Paginate: "Paginate"
+ Paginate: "Paginiraj"
  Please log in to continue: "Molimo prijavite se da nastavite."
+ Preferred source: "Preferirani izvor:"
+ Previous: "Prethodno:"
+ Range tools: "Alati za raspon"
+ Remember: "Zapamti"
  SAPI used: "SAPI koristi:"
  See also: "Vidi također:"
  Selected log file doesn_t exist: "Odabrana datoteka dnevnika ne postoji!"
  Simple: "Jednostavno"
  Start date: "Datum početka"
+ Starting from %s: "Starting from "%s"."
  Subtrahend: "Subtrahend"
+ Suggestions: "Suggestions"
+ Suspicious: "Suspicious"
  System information: "Informacije o sistemu:"
  Your IP: "Vaša IP adresa:"
  Your UA: "Vaš korisnički agent:"

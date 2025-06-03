@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2025.05.13).
+# This file: Norwegian language data for the front-end (last modified: 2025.05.31).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -271,6 +271,7 @@ config:
  rate_limiting: "Konfigurasjon for hastighetsbegrensning (anbefales ikke til generell bruk)."
  rate_limiting_allowance_period: "Varigheten for å spore bruk. Standardverdi = 0°0′0″."
  rate_limiting_exceptions: "Unntak (dvs, forespørsler som ikke bør være hastighetsbegrenset). Relevant bare når hastighetsbegrensning er aktivert."
+ rate_limiting_hint: "Husk at akkurat som med all annen CIDRAM-funksjonalitet, kan CIDRAMs hastighetsbegrensningsfunksjonalitet bare håndheves for de sidene og ressursene som CIDRAM er koblet til. Det ville vanligvis bety at ikke-PHP-ressurser ikke ville bli dekket, bortsett fra der de eksplisitt betjenes av tilkoblede PHP-ressurser. Hvis du kan bruke en servermodul, cPanel, eller et annet nettverksverktøy for å håndheve hastighetsbegrensning, er det bedre å bruke det i stedet for CIDRAMs hastighetsbegrensningsfunksjonalitet. Husk også at en ivrig og målrettet bruker enkelt kan omgå hastighetsbegrensning ved å rotere IP-adressen sin, eller ved å bytte til en proxy eller VPN-leverandør som CIDRAM ennå ikke er klar over, og husk at hastighetsbegrensning kan være veldig irriterende for faktiske sluttbrukere. Det kan til tider være nødvendig, men er sjelden ønskelig."
  rate_limiting_max_bandwidth: "Maksimal båndbredde tillatt innenfor tillatelsesperioden før hastighetsbegrensende fremtidige forespørsler. En verdi på 0 deaktiverer denne typen hastighetsbegrensende. Standardverdi = 0KB."
  rate_limiting_max_requests: "Maksimalt antall forespørsler tillatt innen tillatelsesperioden før hastighetsbegrensende fremtidige forespørsler. En verdi på 0 deaktiverer denne typen hastighetsbegrensende. Standardverdi = 0."
  rate_limiting_precision_ipv4: "Presisjonen som skal brukes til å spore IPv4-bruk. Verdi speiler CIDR-blokkstørrelse. Sett til 32 for best presisjon. Standardverdi = 32."

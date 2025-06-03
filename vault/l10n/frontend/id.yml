@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2025.05.13).
+# This file: Indonesian language data for the front-end (last modified: 2025.05.31).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -271,6 +271,7 @@ config:
  rate_limiting: "Konfigurasi untuk pembatasan laju (tidak direkomendasikan untuk penggunaan umum)."
  rate_limiting_allowance_period: "Durasi untuk melacak penggunaan. Default = 0°0′0″."
  rate_limiting_exceptions: "Pengecualian (yaitu, permintaan yang seharusnya tidak dibatasi). Hanya relevan ketika pembatasan laju diaktifkan."
+ rate_limiting_hint: "Perlu diingat bahwa seperti halnya semua fitur CIDRAM lainnya, fitur pembatasan laju CIDRAM hanya dapat diterapkan untuk halaman dan sumber daya yang terhubung dengan CIDRAM. Ini biasanya berarti bahwa sumber daya yang bukan PHP tidak akan dicakup kecuali jika secara eksplisit dilayani oleh sumber daya PHP yang terhubung. Jika Anda dapat menggunakan modul server, cPanel, atau alat jaringan lain untuk menerapkan pembatasan laju, akan lebih baik menggunakannya daripada fitur pembatasan laju CIDRAM. Perlu diingat juga bahwa pengguna yang sangat bertekad dapat dengan mudah menghindari pembatasan laju dengan memutar alamat IP mereka, atau dengan beralih ke penyedia proxy atau VPN yang belum diketahui oleh CIDRAM, dan perlu diingat bahwa pembatasan laju bisa sangat mengganggu bagi pengguna akhir. Kadang-kadang hal itu mungkin diperlukan, tetapi jarang diinginkan."
  rate_limiting_max_bandwidth: "Jumlah maksimum bandwidth yang diizinkan dalam periode tunjangan sebelum mengaktifkan pembatasan laju untuk permintaan di masa mendatang. Nilai 0 menonaktifkan jenis pembatasan laju ini. Default = 0KB."
  rate_limiting_max_requests: "Jumlah maksimum permintaan yang diizinkan dalam periode tunjangan sebelum mengaktifkan pembatasan laju untuk permintaan di masa mendatang. Nilai 0 menonaktifkan jenis pembatasan laju ini. Default = 0."
  rate_limiting_precision_ipv4: "Presisi yang akan digunakan saat melacak penggunaan IPv4. Nilai mencerminkan ukuran blok CIDR. Atur ke 32 untuk presisi terbaik. Default = 32."

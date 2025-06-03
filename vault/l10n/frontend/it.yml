@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2025.05.13).
+# This file: Italian language data for the front-end (last modified: 2025.05.31).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -271,6 +271,7 @@ config:
  rate_limiting: "Configurazione per la limitazione della velocità (non raccomandato per uso generale)."
  rate_limiting_allowance_period: "La durata per monitorare l'utilizzo. Predefinito = 0°0′0″."
  rate_limiting_exceptions: "Eccezioni (cioè, richieste che non dovrebbero essere limitate). Rilevante solo quando è abilitata la limitazione della velocità."
+ rate_limiting_hint: "Tieni presente che, come per tutte le altre funzionalità di CIDRAM, la limitazione della velocità di CIDRAM può essere applicata solo alle pagine e alle risorse a cui CIDRAM è connesso. Ciò significherebbe in genere che le risorse non PHP non sarebbero coperte, se non nei casi in cui fossero esplicitamente fornite da risorse PHP connesse. Se è possibile utilizzare un modulo server, cPanel, o qualche altro strumento di rete per imporre la limitazione della velocità, sarebbe meglio utilizzare quello anziché la funzionalità di limitazione della velocità di CIDRAM. Tieni presente che un utente attento e determinato potrebbe facilmente aggirare la limitazione della velocità ruotando il proprio indirizzo IP o passando a un provider proxy o VPN di cui CIDRAM non è ancora a conoscenza, e tieni presente che la limitazione della velocità può essere molto fastidiosa per gli utenti finali veri. A volte può essere necessario, ma raramente è auspicabile."
  rate_limiting_max_bandwidth: "La quantità massima di larghezza di banda consentita entro il periodo di tolleranza prima di abilitare la limitazione della velocità per le richieste future. Un valore pari a 0 disabilita questo tipo di limitazione della velocità. Predefinito = 0KB."
  rate_limiting_max_requests: "Il numero massimo di richieste consentite entro il periodo di tolleranza prima di abilitare la limitazione della velocità per le richieste future. Un valore pari a 0 disabilita questo tipo di limitazione della velocità. Predefinito = 0."
  rate_limiting_precision_ipv4: "La precisione da utilizzare durante il monitoraggio dell'utilizzo di IPv4. Il valore riflette la dimensione del blocco CIDR. Impostare su 32 per la massima precisione. Predefinito = 32."

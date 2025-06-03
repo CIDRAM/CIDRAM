@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malay language data for the front-end (last modified: 2025.05.13).
+# This file: Malay language data for the front-end (last modified: 2025.05.31).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -271,6 +271,7 @@ config:
  rate_limiting: "Konfigurasi untuk mengehadkan kadar (tidak disyorkan untuk kegunaan umum)."
  rate_limiting_allowance_period: "Tempoh untuk menjejaki penggunaan. Lalai = 0°0′0″."
  rate_limiting_exceptions: "Pengecualian (iaitu, permintaan yang tidak sepatutnya dihadkan). Relevan hanya apabila pengehadan kadar diaktifkan."
+ rate_limiting_hint: "Perlu diingat bahawa sama seperti semua ciri CIDRAM yang lain, ciri pengehad kadar CIDRAM hanya boleh digunakan untuk halaman dan sumber yang CIDRAM disambungkan. Ini biasanya bermakna bahawa sumber yang bukan PHP tidak akan dilindungi kecuali jika dilayan secara eksplisit oleh sumber PHP yang disambungkan. Jika anda boleh menggunakan modul pelayan, cPanel, atau beberapa alat rangkaian lain untuk menguatkuasakan pengehadan kadar, adalah lebih baik untuk menggunakannya daripada ciri pengehad kadar CIDRAM. Juga perlu diingat bahawa pengguna yang sangat berazam boleh dengan mudah memintas pengehadan kadar dengan memutarkan alamat IP mereka, atau dengan bertukar kepada proksi atau pembekal VPN yang CIDRAM belum mengetahuinya, dan perlu diingat bahawa pengehadan kadar boleh menjadi sangat menjengkelkan bagi pengguna akhir sebenar. Ia mungkin kadang-kadang perlu, tetapi jarang diingini."
  rate_limiting_max_bandwidth: "Jumlah maksimum lebar jalur yang dibenarkan dalam tempoh elaun sebelum kadar mengehadkan permintaan masa hadapan. Nilai 0 nyahaktifkan pengehadan kadar jenis ini. Lalai = 0KB."
  rate_limiting_max_requests: "Jumlah maksimum permintaan yang dibenarkan dalam tempoh elaun sebelum kadar mengehadkan permintaan masa hadapan. Nilai 0 nyahaktifkan pengehadan kadar jenis ini. Lalai = 0."
  rate_limiting_precision_ipv4: "Ketepatan yang digunakan untuk menjejaki penggunaan IPv4. Nilai mencerminkan saiz blok CIDR. Tetapkan kepada 32 untuk ketepatan terbaik. Lalai = 32."

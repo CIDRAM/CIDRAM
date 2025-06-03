@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Catalan language data for the front-end (last modified: 2025.05.13).
+# This file: Catalan language data for the front-end (last modified: 2025.05.31).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -271,6 +271,7 @@ config:
  rate_limiting: "Configuració per a la limitació de la tarifa (no recomanada per a ús general)."
  rate_limiting_allowance_period: "La durada per fer el seguiment de l'ús. Predeterminat = 0°0′0″."
  rate_limiting_exceptions: "Excepcions (és a dir, sol·licituds que no s'han de limitar). Rellevant només quan la limitació de la tarifa està activada."
+ rate_limiting_hint: "Tingueu en compte que, igual que amb totes les altres funcions de CIDRAM, la funció de limitació de la tarifa de CIDRAM només es pot aplicar a les pàgines i recursos als quals CIDRAM està connectat. Això normalment significaria que els recursos que no són PHP no estarien coberts, excepte quan fossin explícitament servits per recursos PHP connectats. Si podeu utilitzar un mòdul de servidor, cPanel, o alguna altra eina de xarxa per aplicar la limitació de la tarifa, seria millor utilitzar-la en lloc de la funció de limitació de la tarifa de CIDRAM. També cal tenir en compte que un usuari molt motivat podria fàcilment evitar la limitació de la tarifa rotant la seva adreça IP o canviant a un proveïdor de proxy o VPN que CIDRAM encara no coneix, i tingueu en compte que la limitació de la tarifa pot ser molt molesta per als usuaris finals reals. De vegades pot ser necessari, però poques vegades és desitjable."
  rate_limiting_max_bandwidth: "La quantitat màxima d'ample de banda permesa dins del període d'autorització abans de la limitació de les sol·licituds futures. Un valor de 0 desactiva aquest tipus de limitació de la tarifa. Predeterminat = 0KB."
  rate_limiting_max_requests: "El nombre màxim de sol·licituds permeses dins del període d'autorització abans de la limitació de les sol·licituds futures. Un valor de 0 desactiva aquest tipus de limitació de la tarifa. Predeterminat = 0."
  rate_limiting_precision_ipv4: "La precisió a utilitzar per fer el seguiment de l'ús d'IPv4. El valor reflecteix la mida del bloc CIDR. Establiu a 32 per obtenir la millor precisió. Predeterminat = 32."

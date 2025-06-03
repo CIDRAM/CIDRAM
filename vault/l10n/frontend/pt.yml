@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2025.05.13).
+# This file: Portuguese language data for the front-end (last modified: 2025.05.31).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -207,7 +207,7 @@ config:
  frontend: "Configuração para o front-end."
  frontend_custom_footer:
   pt-BR: "Inserido como HTML no final de todas as páginas do front-end. Isso pode ser útil caso você queira incluir um aviso legal, link de contato, informações comerciais, ou similares em todas essas páginas."
-  pt-PT: "Inserido como HTML no final de todas as páginas do front-end. Isso pode ser útil caso você queira incluir um aviso legal, link de contacto, informações comerciais, ou similares em todas essas páginas."
+  pt-PT: "Inserido como HTML no final de todas as páginas do front-end. Isto pode ser útil caso você queira incluir um aviso legal, link de contacto, informações comerciais, ou similares em todas essas páginas."
  frontend_custom_header: "Inserido como HTML no início de todas as páginas do front-end. Isso pode ser útil caso você queira incluir um logotipo de site, cabeçalho personalizado, scripts, ou similares em todas essas páginas."
  frontend_enable_two_factor: "Esta diretiva determina se deve usar 2FA para contas front-end."
  frontend_frontend_log: "Arquivo para registrar tentativas de login ao front-end. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
@@ -315,6 +315,9 @@ config:
  rate_limiting: "Configuração para limitação de taxa (não recomendado para uso geral)."
  rate_limiting_allowance_period: "A duração para monitorar o uso. Padrão = 0°0′0″."
  rate_limiting_exceptions: "Exceções (ou seja, solicitações que não devem ser limitadas à taxa). Relevante apenas quando a limitação de taxa está ativada."
+ rate_limiting_hint:
+  pt-BR: "Tenha em mente que, assim como todos os outros funcionalidades do CIDRAM, a funcionalidade de limitação de taxa do CIDRAM só pode ser aplicado às páginas e recursos aos quais o CIDRAM está conectado. Isso tipicamente significa que recursos não PHP não seriam cobertos, exceto quando explicitamente servidos por recursos PHP conectados. Se você puder usar um módulo de servidor, cPanel, ou alguma outra ferramenta de rede para impor a limitação de taxa, seria melhor usar isso em vez da funcionalidade de limitação de taxa do CIDRAM. Tenha também em mente que um usuário motivado e determinado poderia facilmente contornar a limitação de taxa girando seu endereço IP ou mudando para um provedor de proxy ou VPN do qual o CIDRAM ainda não tem conhecimento, e tenha em mente que a limitação de taxa pode ser muito irritante para usuários finais reais. Às vezes pode ser necessário, mas raramente é desejável."
+  pt-PT: "Tenha em mente que, assim como todos os outros funcionalidades do CIDRAM, a funcionalidade de limitação de taxa do CIDRAM só pode ser aplicado às páginas e recursos aos quais o CIDRAM está conectado. Isso tipicamente significa que recursos não PHP não seriam cobertos, exceto quando explicitamente servidos por recursos PHP conectados. Se você puder usar um módulo de servidor, cPanel, ou alguma outra ferramenta de rede para impor a limitação de taxa, seria melhor usar isso em vez da funcionalidade de limitação de taxa do CIDRAM. Tenha também em mente que um utilizador motivado e determinado poderia facilmente contornar a limitação de taxa rodando o seu endereço IP ou mudando para um provedor de proxy ou VPN do qual o CIDRAM ainda não tem conhecimento, e tenha em mente que a limitação de taxa pode ser muito irritante para os utilizadores finais reais. Às vezes pode ser necessário, mas raramente é desejável."
  rate_limiting_max_bandwidth: "A quantidade máxima de largura de banda permitida dentro do período de tolerância antes de ativar a limitação de taxa para solicitações futuras. Um valor de 0 desativa esse tipo de limitação de taxa. Padrão = 0KB."
  rate_limiting_max_requests: "O número máximo de solicitações permitido dentro do período de tolerância antes de ativar a limitação de taxa para solicitações futuras. Um valor de 0 desativa esse tipo de limitação de taxa. Padrão = 0."
  rate_limiting_precision_ipv4: "A precisão a ser usada ao monitorar o uso do IPv4. Valor espelha o tamanho do bloco CIDR. Defina para 32 para melhor precisão. Padrão = 32."
@@ -352,7 +355,9 @@ config:
  supplementary_cache_options_pdo_username:
   pt-BR: "O nome de usuário do PDO."
   pt-PT: "O nome de utilizador do PDO."
- supplementary_cache_options_prefix: "O valor especificado aqui será adicionado ao começo das chaves para todas as entradas de cache. Padrão = "CIDRAM_". Quando existem várias instalações no mesmo servidor, isso pode ser útil para manter seus caches separados uns dos outros."
+ supplementary_cache_options_prefix:
+  pt-BR: "O valor especificado aqui será adicionado ao começo das chaves para todas as entradas de cache. Padrão = "CIDRAM_". Quando existem várias instalações no mesmo servidor, isso pode ser útil para manter seus caches separados uns dos outros."
+  pt-PT: "O valor especificado aqui será adicionado ao começo das chaves para todas as entradas de cache. Padrão = "CIDRAM_". Quando existem várias instalações no mesmo servidor, isto pode ser útil para manter os seus caches separados uns dos outros."
  supplementary_cache_options_redis_database_number: "Número do banco de dados Redis. Padrão = 0. Observação: Não é possível usar valores diferentes de 0 com Redis Cluster."
  supplementary_cache_options_redis_host: "Valor da host do Redis. Padrão = localhost."
  supplementary_cache_options_redis_port: "Valor da porta do Redis. Padrão = "6379"."
@@ -363,7 +368,7 @@ config:
  template_data_css_url: "URL de arquivo CSS para temas personalizados."
  template_data_custom_footer:
   pt-BR: "Inserido como HTML no final de todas as páginas de "acesso negado". Isso pode ser útil caso você queira incluir um aviso legal, link de contato, informações comerciais, ou similares em todas essas páginas."
-  pt-PT: "Inserido como HTML no final de todas as páginas de "acesso negado". Isso pode ser útil caso você queira incluir um aviso legal, link de contacto, informações comerciais, ou similares em todas essas páginas."
+  pt-PT: "Inserido como HTML no final de todas as páginas de "acesso negado". Isto pode ser útil caso você queira incluir um aviso legal, link de contacto, informações comerciais, ou similares em todas essas páginas."
  template_data_custom_header: "Inserido como HTML no início de todas as páginas de "acesso negado". Isso pode ser útil caso você queira incluir um logotipo de site, cabeçalho personalizado, scripts, ou similares em todas essas páginas."
  template_data_magnification: *MagnifDesc
  template_data_theme: "Tema padrão a ser usado para CIDRAM."
@@ -826,8 +831,12 @@ label:
   redirect the request (without blocking it): "redirecionar a solicitação (sem bloqueá-la)"
   run a file to handle the request: "execute um arquivo para lidar com a solicitação"
   whitelist the request: "coloque a solicitação na lista branca"
- expire_bad: "Desde o momento de sua criação, o período de tempo que os dados inválidos armazenados em cache por este módulo podem permanecer antes de expirarem."
- expire_good: "Desde o momento de sua criação, o período de tempo que os dados válidos armazenados em cache por este módulo podem permanecer antes de expirarem."
+ expire_bad:
+  pt-BR: "Desde o momento de sua criação, o período de tempo que os dados inválidos armazenados em cache por este módulo podem permanecer antes de expirarem."
+  pt-PT: "Desde o momento da sua criação, o período de tempo que os dados inválidos armazenados em cache por este módulo podem permanecer antes de expirarem."
+ expire_good:
+  pt-BR: "Desde o momento de sua criação, o período de tempo que os dados válidos armazenados em cache por este módulo podem permanecer antes de expirarem."
+  pt-PT: "Desde o momento da sua criação, o período de tempo que os dados válidos armazenados em cache por este módulo podem permanecer antes de expirarem."
  lookup_strategy: "Para quais solicitações as pesquisas devem ser realizadas?"
  options: "Opções a serem ativadas quando assinaturas ou eventos de bloqueio são desencadeados por este módulo."
  results: "Resultados (%s entrada – %s rejeitado – %s aceito – %s mesclado – %s saída):"
@@ -838,7 +847,7 @@ label:
   Low: "Baixo"
   Medium: "Médio"
  timeout_limit: "Este módulo executa solicitações externas. Aqui você pode especificar o tempo limite para essas solicitações (em segundos)."
- timeout_rl: "A quantidade de tempo necessária antes de retomar as solicitações externas após a limitação da taxa."
+ timeout_rl: "A quantidade de tempo necessária antes de retomar as solicitações externas após a limitação de taxa."
 link:
  Accounts: "Contas"
  Aggregator: "Agregador"
@@ -1029,7 +1038,9 @@ response:
  Wrong endpoint: "Ponto final errado!"
  _No: "Não"
  _Yes: "Sim"
- please_check_config: "Verifique sua configuração para garantir que o módulo recém-instalado se comporte como você deseja."
+ please_check_config:
+  pt-BR: "Verifique sua configuração para garantir que o módulo recém-instalado se comporte como você deseja."
+  pt-PT: "Verifique a sua configuração para garantir que o módulo recém-instalado se comporte como você deseja."
  release_notes: "<a href="%s"><span class="navicon link"></span>Notas de lançamento para %s.</a>"
 stages:
  Deploy CAPTCHAs (blocked requests): "Implantar CAPTCHAs (solicitações bloqueadas)"
@@ -1119,7 +1130,9 @@ tip:
  Auxiliary Rules Priority: "Prioridade (altíssima➡(igual🔄equivalente)➡baixíssima):"
  Auxiliary Rules Webhooks: "Quando uma regra é desencadeada, o CIDRAM tentará notificar quaisquer webhooks conectados sobre o evento."
  Auxiliary Rules: "Você pode usar esta página para criar, deletar e modificar regras auxiliares para o CIDRAM."
- Backup: "Esta página pode ser usada para importar/exportar sua configuração, regras auxiliares, etc. Isso pode ser útil se você precisar migrar dados entre diferentes instalações ou diferentes versões principais."
+ Backup:
+  pt-BR: "Esta página pode ser usada para importar/exportar sua configuração, regras auxiliares, etc. Isso pode ser útil se você precisar migrar dados entre diferentes instalações ou diferentes versões principais."
+  pt-PT: "Esta página pode ser usada para importar/exportar a sua configuração, regras auxiliares, etc. Isto pode ser útil se você precisar migrar dados entre diferentes instalações ou diferentes versões principais."
  Cache Data: "Aqui você pode rever o conteúdo do cache."
  Calculator: "A calculadora permite calcular os CIDRs e máscaras de rede de um endereço IP."
  Click the component name for more details: "Clique no nome do componente para mais detalhes."
@@ -1135,7 +1148,9 @@ tip:
  Enter user agents here (optional):
   pt-BR: "Insira os agentes do usuário aqui (opcional)."
   pt-PT: "Insira os agentes do utilizador aqui (opcional)."
- File Manager: "O gerenciador de arquivos permite deletar, editar, carregar e descarregar arquivos. Use com cuidado (você poderia quebrar sua instalação com este)."
+ File Manager:
+  pt-BR: "O gerenciador de arquivos permite deletar, editar, carregar e descarregar arquivos. Use com cuidado (você poderia quebrar sua instalação com este)."
+  pt-PT: "O gerenciador de arquivos permite deletar, editar, carregar e descarregar arquivos. Use com cuidado (você poderia quebrar a sua instalação com este)."
  Greeting: "Olá, %s."
  Home: "Esta é a página principal do CIDRAM front-end. Selecione um link no menu de navegação à esquerda para continuar."
  How many infractions to incur: "Quantas infrações incorrer."
@@ -1154,7 +1169,9 @@ tip:
  Sections List:
   pt-BR: "Esta página lista quais seções existem nos arquivos de assinatura atualmente ativos."
   pt-PT: "Esta página lista quais secções existem nos arquivos de assinatura atualmente ativos."
- See the documentation: "Consulte a <a href="https://github.com/CIDRAM/Docs/blob/master/readme.pt.md\#user-content-SECTION5" hreflang="pt" rel="noopener external">documentação</a> para obter informações sobre as várias diretrizes de configuração e seus objetivos."
+ See the documentation:
+  pt-BR: "Consulte a <a href="https://github.com/CIDRAM/Docs/blob/master/readme.pt.md\#user-content-SECTION5" hreflang="pt" rel="noopener external">documentação</a> para obter informações sobre as várias diretrizes de configuração e seus objetivos."
+  pt-PT: "Consulte a <a href="https://github.com/CIDRAM/Docs/blob/master/readme.pt.md\#user-content-SECTION5" hreflang="pt" rel="noopener external">documentação</a> para obter informações sobre as várias diretrizes de configuração e os seus objetivos."
  Server log snippets, abuse details, etc: "Trechos de log do servidor, detalhes de abuso, etc."
  Signature File Fixer: "O fixador para os arquivos de assinatura fornece uma maneira de detectar e corrigir possíveis problemas em arquivos de assinatura."
  Specify a value, or leave blank to disregard: "Especifique um valor, ou deixe em branco para desconsiderar."

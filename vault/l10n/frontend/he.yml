@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hebrew language data for the front-end (last modified: 2025.05.13).
+# This file: Hebrew language data for the front-end (last modified: 2025.05.31).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -271,6 +271,7 @@ config:
  rate_limiting: "תצורה להגבלת קצב (לא מומלץ לשימוש כללי)."
  rate_limiting_allowance_period: "משך הזמן למעקב אחר השימוש. סטנדרטי = 0°0′0″."
  rate_limiting_exceptions: "חריגים (כלומר, בקשות שלא צריכות להיות מוגבלות בתעריף). רלוונטי רק כאשר הגבלת תעריפים מופעלת."
+ rate_limiting_hint: "קחו בחשבון שכמו בכל שאר התכונות של CIDRAM, ניתן להחיל את תכונת הגבלת הקצב של CIDRAM רק על אותם דפים ומשאבים שאליהם CIDRAM מחובר. משמעות הדבר היא בדרך כלל שמשאבים שאינם של PHP לא יהיו מכוסים אלא אם כן הם מוגשים במפורש על ידי משאבי PHP מחוברים. אם אתם מסוגלים להשתמש במודול שרת, cPanel, או כלי רשת אחר כדי לאכוף הגבלת קצב, עדיף להשתמש בו במקום בתכונת הגבלת הקצב של CIDRAM. כמו כן, קחו בחשבון שמשתמש נלהב ונחוש יכול לעקוף בקלות את הגבלת התעריף על ידי החלפת כתובת ה-IP שלו, או על ידי מעבר לספק פרוקסי או VPN ש-CIDRAM עדיין לא מודע אליו, וקחו בחשבון שהגבלת קצב יכולה להיות מאוד מעצבנת עבור משתמשי קצה אמיתיים. ייתכן שלעיתים זה הכרחי, אך לעיתים רחוקות זה רצוי."
  rate_limiting_max_bandwidth: "הכמות המקסימלית של רוחב הפס המותרת בתקופת הקצבה לפני הגבלת שיעור בקשות עתידיות. ערך 0 משבית סוג זה של הגבלת תעריפים. סטנדרטי = 0KB."
  rate_limiting_max_requests: "המספר המרבי של בקשות המותר בתקופת הקצבה לפני הגבלת שיעור בקשות עתידיות. ערך 0 משבית סוג זה של הגבלת תעריפים. סטנדרטי = 0."
  rate_limiting_precision_ipv4: "הדיוק לשימוש למעקב אחר השימוש ב-IPv4. ערך משקף את גודל בלוק CIDR. הגדר ל-32 לדיוק הטוב ביותר. סטנדרטי = 32."

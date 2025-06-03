@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Galician language data for the front-end (last modified: 2025.05.13).
+# This file: Galician language data for the front-end (last modified: 2025.05.31).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -271,6 +271,7 @@ config:
  rate_limiting: "Configuración para a limitación da taxa (non recomendada para uso xeral)."
  rate_limiting_allowance_period: "A duración para rastrexar o uso. Predeterminado = 0°0′0″."
  rate_limiting_exceptions: "Excepcións (é dicir, solicitudes que non deben limitarse). Relevante só cando a limitación da taxa está activada."
+ rate_limiting_hint: "Teña en conta que, do mesmo xeito que ocorre con todas as outras funcionalidades de CIDRAM, a funcionalidade de limitación de taxa de CIDRAM só se pode aplicar ás páxinas e recursos aos que estea conectado CIDRAM. Iso significaría normalmente que os recursos que non son PHP non estarían cubertos agás onde fosen servidos explicitamente por recursos PHP conectados. Se podes usar un módulo de servidor, cPanel, ou algunha outra ferramenta de rede para aplicar a limitación de taxa, sería mellor usala en lugar da funcionalidade de limitación da taxa de CIDRAM. Tamén teña en conta que un usuario moi motivado podería eludir facilmente a limitación de taxa rotando o enderezo IP ou cambiando a un provedor de proxy ou VPN do que CIDRAM aínda non teña coñecemento, e teña en conta que a limitación da taxa pode ser moi molesta para os usuarios finais reais. Ás veces pode ser necesario, pero raramente é desexable."
  rate_limiting_max_bandwidth: "A cantidade máxima de ancho de banda permitida dentro do período autorizado antes de limitar as solicitudes futuras. Un valor de 0 desactiva este tipo de limitación de taxa. Predeterminado = 0KB."
  rate_limiting_max_requests: "O número máximo de solicitudes permitidas dentro do período autorizado antes de limitar as solicitudes futuras. Un valor de 0 desactiva este tipo de limitación de taxa. Predeterminado = 0."
  rate_limiting_precision_ipv4: "A precisión a usar para rastrexar o uso de IPv4. O valor reflicte o tamaño do bloque CIDR. Establécese en 32 para obter a mellor precisión. Predeterminado = 32."

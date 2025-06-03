@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2025.05.13).
+# This file: French language data for the front-end (last modified: 2025.05.31).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -311,6 +311,7 @@ config:
  rate_limiting: "Configuration pour la limitation du débit (non recommandé pour d'utilisation générale)."
  rate_limiting_allowance_period: "La durée pour surveiller l'utilisation Défaut = 0°0′0″."
  rate_limiting_exceptions: "Exceptions (c'est à dire, requêtes qui ne devraient pas être limitées). Pertinent uniquement lorsque la limitation du débit est activé."
+ rate_limiting_hint: "Gardez à l'esprit que, comme pour toutes les autres fonctionnalités de CIDRAM, la fonctionnalité de limitation du débit de CIDRAM ne peut être appliqué qu'aux pages et ressources auxquelles CIDRAM est connecté. Cela signifie généralement que les ressources non PHP ne seraient pas couvertes, sauf si elles sont explicitement servies par des ressources PHP connectés. Si vous pouvez utiliser un module serveur, cPanel, ou un autre outil réseau pour appliquer la limitation du débit, il serait préférable de l'utiliser plutôt que la fonctionnalité de limitation du débit de CIDRAM. Gardez également à l'esprit qu'un utilisateur enthousiaste et déterminé pourrait facilement contourner la limitation du débit en faisant tourner son adresse IP ou en passant à un fournisseur de proxy ou de VPN dont CIDRAM n'a pas encore connaissance, et gardez à l'esprit que la limitation du débit peut être très ennuyeuse pour les utilisateurs finaux réels. Cela peut parfois être nécessaire, mais c'est rarement souhaitable."
  rate_limiting_max_bandwidth: "La quantité maximale de bande passante autorisée dans la période de tolérance avant de permettre la limitation du débit pour les requêtes futures. Une valeur de 0 désactive ce type de limitation du débit. Défaut = 0KB."
  rate_limiting_max_requests: "Le nombre maximal de requêtes autorisées dans la période de tolérance avant de permettre la limitation du débit pour les requêtes futures. Une valeur de 0 désactive ce type de limitation du débit. Défaut = 0."
  rate_limiting_precision_ipv4: "La précision à utiliser lors de la surveillance de l'utilisation d'IPv4. La valeur reflète la taille du bloc CIDR. Réglez sur 32 pour une meilleure précision. Défaut = 32."
@@ -331,7 +332,7 @@ config:
  recaptcha_usemode: *CaptchaUseMode
  sfs: "Configuration du module Stop Forum Spam."
  signatures: "Configuration pour les signatures, fichiers de signatures, modules, etc."
- signatures_conflict_response: "Lorsqu'il y a trop de tentatives simultanées pour accéder aux mêmes ressources (par exemple, des requêtes simultanées à plusieurs processus PHP sur la même machine pour les mêmes ressources), certaines de ces tentatives peuvent échouer. Dans le cas rare et peu probable où cela affecte les fichiers de signature ou les modules, CIDRAM peut être empêché de prendre une décision efficace concernant la requête. Dans un tel cas, la requête doit-elle être bloquée, et quel message d’état HTTP CIDRAM doit-il envoyer\_?"
+ signatures_conflict_response: "Lorsqu'il y a trop de tentatives simultanées pour accéder aux mêmes ressources (par exemple, des requêtes simultanées à plusieurs processus PHP sur la même machine pour les mêmes ressources), certaines de ces tentatives peuvent échouer. Dans le cas rare et peu probable où cela affecte les fichiers de signature ou les modules, CIDRAM peut être empêché de prendre une décision efficace concernant la requête. Dans un tel cas, la requête doit-elle être bloquée, et quel message d'état HTTP CIDRAM doit-il envoyer\_?"
  signatures_default_tracktime: "La durée pendant laquelle les adresses IP doivent être suivies. Défaut = 7d0°0′0″ (1 semaine)."
  signatures_infraction_limit: "Nombre maximal d'infractions qu'une IP est autorisée à engager avant d'être interdite par la surveillance des IPs. Défaut = 10."
  signatures_shorthand: "Contrôle ce qu'il faut faire avec une requête lorsqu'il y a une correspondance positive avec une signature qui utilise les mots abrégés donnés."

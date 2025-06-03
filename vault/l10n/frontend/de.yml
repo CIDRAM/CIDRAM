@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2025.05.13).
+# This file: German language data for the front-end (last modified: 2025.05.31).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -271,6 +271,7 @@ config:
  rate_limiting: "Konfiguration für Ratenbegrenzung (nicht für den allgemeinen Gebrauch empfohlen)."
  rate_limiting_allowance_period: "Die Dauer um die Nutzung zu überwachen. Standardeinstellung = 0°0′0″."
  rate_limiting_exceptions: "Ausnahmen (d.h., Anfragen die nicht ratenbegrenzt sein sollten). Nur relevant wenn die Ratenbegrenzung aktiviert ist."
+ rate_limiting_hint: "Beachten Sie dass die Ratenbegrenzungsfunktionalität von CIDRAM, genau wie alle anderen CIDRAM-Funktionalität, kann nur auf Seiten und Ressourcen angewendet werden bei denen CIDRAM verbunden ist. Dies würde normalerweise bedeuten dass Nicht-PHP-Ressourcen nicht abgedeckt wären, außer wenn sie ausdrücklich von verbundenen PHP-Ressourcen bereitgestellt würden. Wenn Sie ein Servermodul, cPanel, oder ein anderes Netzwerktool verwenden können um eine Ratenbegrenzung durchzusetzen, wäre es besser dies anstelle der Ratenbegrenzungsfunktionalität von CIDRAM zu verwenden. Beachten Sie auch dass ein aufmerksamer und entschlossener Benutzer die Ratenbegrenzung leicht umgehen könnte indem er seine IP-Adresse rotiert oder zu einem Proxy oder VPN-Anbieter wechselt den CIDRAM noch nicht kennt, und beachten Sie dass die Ratenbegrenzung für tatsächliche Endbenutzer sehr ärgerlich sein kann. Dies kann manchmal notwendig sein, aber es ist selten wünschenswert."
  rate_limiting_max_bandwidth: "Die maximal zulässige Bandbreite innerhalb der Zulassungsperiode, bevor die Ratenbegrenzung für zukünftige Anforderungen aktiviert wird. Ein Wert von 0 deaktiviert diese Art der Ratenbegrenzung. Standardeinstellung = 0KB."
  rate_limiting_max_requests: "Die maximale Anzahl von Anforderungen, die innerhalb der Zulassungsperiode zulässig sind, bevor die Ratenbegrenzung für zukünftige Anforderungen aktiviert wird. Ein Wert von 0 deaktiviert diese Art der Ratenbegrenzung. Standardeinstellung = 0."
  rate_limiting_precision_ipv4: "Die Präzision für das Monitoring der IPv4-Nutzung. Der Wert spiegelt die CIDR-Blockgröße. Für beste Präzision auf 32 einstellen. Standardeinstellung = 32."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2025.05.13).
+# This file: Japanese language data for the front-end (last modified: 2025.05.31).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -271,6 +271,7 @@ config:
  rate_limiting: "レート制限の設定（一般的な使用には推奨されません）。"
  rate_limiting_allowance_period: "使用状況を監視する期間。 Default/デフォルルト = 0°0′0″。"
  rate_limiting_exceptions: "例外（すなわち、レート制限されるべきではないリクエスト）。​レート制限が有効な場合にのみ効果があります。"
+ rate_limiting_hint: "ご注意ください、他のすべてのCIDRAM機能と同様に、CIDRAMのレート制限機能は、CIDRAMが接続されているページとリソースにのみ適用できます。​これは通常、接続されたＰＨＰリソースによって明示的に提供される場合を除き、非ＰＨＰリソースはカバーされないことを意味します。​サーバー・モジュール、cPanel、またはその他のネットワーク・ツールを使用してレート制限を強制できる場合は、CIDRAMのレート制限機能の代わりにそれらを使用する方が適切です。​また、やる気と決意のあるユーザーは、ＩＰアドレスをローテーションしたり、CIDRAMがまだ認識していないプロキシやＶＰＮプロバイダーに切り替えたりすることで、レート制限を簡単に回避できます。​また、レート制限は実際のエンド・ユーザーにとって非常に迷惑になる可能性があります。​時には必要になることもありますが、望ましいことはめったにありません。"
  rate_limiting_max_bandwidth: "将来の要求に対してレート制限を有効にする前の許容期間内に許容される最大帯域幅。​０の値は、このタイプのレート制限を無効にします。 Default/デフォルルト = 0KB。"
  rate_limiting_max_requests: "将来の要求に対してレート制限を有効にする前に、許容期間内に許可される要求の最大数。​０の値は、このタイプのレート制限を無効にします。 Default/デフォルルト = 0。"
  rate_limiting_precision_ipv4: "ＩＰｖ４の使用状況を監視する際の精度。​値はＣＩＤＲブロック・サイズを反映します。​最高の精度を得るには３２に設定します。 Default/デフォルルト = 32。"
@@ -635,7 +636,7 @@ label:
  Operating system used: "使用されたオペレーティングシステム："
  Other rules, signature files, etc: "その他の規則、シグネチャ・ファイル、など"
  Other: "その他"
- PHP version used: "使用されたPHPバージョン："
+ PHP version used: "使用されたＰＨＰバージョン："
  Page request completed in %s seconds: "ページ要求は%s秒後に完了しました。"
  Paginate: "ページ付けして"
  Please abide by the AbuseIPDB reporting policy: "AbuseIPDB <a target="reporting-policy" hreflang="en-US" href="https://www.abuseipdb.com/reporting-policy">報告ポリシー</a>に従ってください。"

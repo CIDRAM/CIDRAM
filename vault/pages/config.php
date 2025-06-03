@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The configuration page (last modified: 2025.05.20).
+ * This file: The configuration page (last modified: 2025.05.31).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -46,11 +46,14 @@ foreach ($this->CIDRAM['Config Defaults'] as $CatKey => $CatValue) {
         continue;
     }
     if ($CatInfo = $this->L10N->getString('config.' . $CatKey)) {
-        $CatInfo = '<br /><em>' . $CatInfo . '</em>';
+        $CatInfo = '<br /><em class="s">' . $CatInfo . '</em>';
+        if ($CatHint = $this->L10N->getString('config.' . $CatKey . '_hint')) {
+            $CatInfo .= '<br />' . $CatHint;
+        }
     }
     $this->FE['ConfigFields'] .= sprintf(
-        '<table class="tablend"><tr><td class="ng2"><div id="%1$s-container" class="s">' .
-        '<a id="%1$sShowLink" class="showlink" href="#%1$s-container" onclick="javascript:toggleconfig(\'%1$sRow\',\'%1$sShowLink\')">%1$s</a>' .
+        '<table class="tablend"><tr><td class="ng2"><div id="%1$s-container">' .
+        '<a id="%1$sShowLink" class="showlink s" href="#%1$s-container" onclick="javascript:toggleconfig(\'%1$sRow\',\'%1$sShowLink\')">%1$s</a>' .
         '%3$s</div></td></tr></table><span id="%1$sRow" %2$s><table class="tablend">',
         $CatKey,
         'style="display:none"',

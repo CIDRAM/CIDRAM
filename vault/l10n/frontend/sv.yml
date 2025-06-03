@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2025.05.13).
+# This file: Swedish language data for the front-end (last modified: 2025.05.31).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -271,6 +271,7 @@ config:
  rate_limiting: "Konfiguration för hastighetsbegränsning (rekommenderas inte för allmänt bruk)."
  rate_limiting_allowance_period: "Varaktigheten för att spåra användning. Standard = 0°0′0″."
  rate_limiting_exceptions: "Undantagen (d.v.s., förfrågningar som inte bör vara begränsade). Relevant endast när hastighetsbegränsning är aktiverad."
+ rate_limiting_hint: "Observera att precis som med alla andra CIDRAM-funktioner kan CIDRAMs hastighetsbegränsningsfunktion endast tillämpas för de sidor och resurser som CIDRAM är anslutet till. Det skulle normalt sett innebära att icke-PHP-resurser inte skulle täckas förutom där de uttryckligen hanteras av anslutna PHP-resurser. Om du kan använda en servermodul, cPanel, eller något annat nätverksverktyg för att tillämpa hastighetsbegränsning, vore det bättre att använda det istället för CIDRAMs hastighetsbegränsningsfunktion. Observera också att en ivrig och beslutsam användare enkelt kan kringgå hastighetsbegränsningar genom att rotera sin IP-adress, eller genom att byta till en proxy eller VPN-leverantör som CIDRAM ännu inte känner till, och observera att hastighetsbegränsning kan vara mycket irriterande för faktiska, riktiga slutanvändare. Det kan ibland vara nödvändigt, men är sällan önskvärt."
  rate_limiting_max_bandwidth: "Den maximala bandbreddsmängden som tillåts inom tillåten-perioden före hastighetsbegränsar framtida förfrågningar. Ett värde av 0 avaktiverar denna typ av hastighetsbegränsande. Standard = 0KB."
  rate_limiting_max_requests: "Det maximala antalet förfrågningar som tillåts inom tillåten-perioden före hastighetsbegränsar framtida förfrågningar. Ett värde av 0 avaktiverar denna typ av hastighetsbegränsande. Standard = 0."
  rate_limiting_precision_ipv4: "Den precision som ska användas för att spåra IPv4-användning. Värdet speglar CIDR-blockstorleken. Ställ in till 32 för bästa precision. Standard = 32."

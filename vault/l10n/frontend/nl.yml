@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2025.05.13).
+# This file: Dutch language data for the front-end (last modified: 2025.05.31).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -271,6 +271,7 @@ config:
  rate_limiting: "Configuratie voor tarieflimiet (niet aanbevolen voor algemeen gebruik)."
  rate_limiting_allowance_period: "De duur om het gebruik bij te controleren. Standaard = 0°0′0″."
  rate_limiting_exceptions: "Excepties (d.w.z., verzoeken die moet niet worden beperkt). Alleen relevant wanneer tarieflimiet is ingeschakeld."
+ rate_limiting_hint: "Houd er rekening mee dat de tarieflimietfunctionaliteit van CIDRAM, net als alle andere CIDRAM-functies, alleen kan worden toegepast op de pagina's en bronnen waarmee CIDRAM is verbonden. Dat betekent over het algemeen dat niet-PHP-bronnen niet worden gedekt, tenzij ze expliciet worden bediend door aangesloten PHP-bronnen. Als u een servermodule, cPanel, of een ander netwerkhulpmiddel kunt gebruiken om tarieflimieten af te dwingen, het zou beter zijn om dat te gebruiken in plaats van de tarieflimietfunctionaliteit van CIDRAM. Houd er ook rekening mee dat een gemotiveerde en vastberaden gebruiker de tarieflimietfunctionaliteit gemakkelijk kan omzeilen door zijn IP-adres te roteren of door over te schakelen naar een proxy of VPN-provider waarvan CIDRAM nog niet op de hoogte is, en houd er rekening mee dat tarieflimieten erg vervelend kunnen zijn voor echte eindgebruikers. Soms kan het nodig zijn, maar zelden is het wenselijk."
  rate_limiting_max_bandwidth: "De maximale hoeveelheid toegestane bandbreedte binnen de toeslagperiode voordat tarieflimiet voor toekomstige verzoeken wordt ingeschakeld. Een waarde van 0 schakelt dit type tarieflimiet uit. Standaard = 0KB."
  rate_limiting_max_requests: "Het maximale aantal toegestane verzoeken binnen de toeslagperiode voordat de tarieflimiet voor toekomstige verzoeken wordt ingeschakeld. Een waarde van 0 schakelt dit type tarieflimiet uit. Standaard = 0."
  rate_limiting_precision_ipv4: "De precisie om te gebruiken bij het monitoren op het gebruik van IPv4. Waarde weerspiegelt de CIDR-blokgrootte. Stel in op 32 voor de beste precisie. Standaard = 32."

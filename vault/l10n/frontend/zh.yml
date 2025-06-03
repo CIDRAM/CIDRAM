@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese language data for the front-end (last modified: 2025.05.13).
+# This file: Chinese language data for the front-end (last modified: 2025.05.31).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -301,6 +301,9 @@ config:
  rate_limiting: {"zh-Hans": "速率限制的配置（不建议一般使用）。", "zh-Hant": "速率限制的配置（不建議一般使用）。"}
  rate_limiting_allowance_period: {"zh-Hans": "监视使用情况的持续时间。​标准=0°0′0″。", "zh-Hant": "監視使用情況的持續時間。​標準=0°0′0″。"}
  rate_limiting_exceptions: {"zh-Hans": "例外（即，不应限制速率的请求）。​仅在启用速率限制时有效。", "zh-Hant": "例外（即，不應限制速率的請求）。​僅在啟用速率限制時有效。"}
+ rate_limiting_hint:
+  zh-Hans: "请记住，与所有其他CIDRAM功能一样，CIDRAM的速率限制功能只能应用于CIDRAM所连接的页面和资源。​这通常意味着非PHP资源不会在范围内，除非明确由连接的PHP资源提供。​如果您能够使用服务器模块、cPanel、或其他网络工具来强制执行速率限制，那么最好使用它而不是CIDRAM的速率限制功能。​还请记住，敏锐而坚定的用户可以通过轮换IP地址或切换到CIDRAM尚未意识到的代理或VPN提供轻松规避速率限制，还要记住，速率限制对于真正的最终用户来说可能会非常烦人。​有时这可能是必要的，但很少是可取的。"
+  zh-Hant: "請記住，與所有其他CIDRAM功能一樣，CIDRAM的速率限制功能只能套用於CIDRAM所連接的頁面和資源。​這通常意味著非PHP資源不會在範圍內，除非明確地由連接的PHP資源提供。​如果您能夠使用伺服器模組、cPanel、或其他網路工具來強制執行速率限制，那麼最好使用它而不是CIDRAM的速率限制功能。​還要記住，敏銳而堅定的用戶可以透過輪換IP位址或切換到CIDRAM尚未意識到的代理或VPN提供輕鬆規避速率限制，還要記住，速率限制對於真正的最終用戶來說可能會非常煩人。​有時這可能是必要的，但很少是可取的。"
  rate_limiting_max_bandwidth: {"zh-Hans": "在为将来的请求启用速率限制之前的最大允许带宽量。​值为0将禁用此类速率限制。​标准=0KB。", "zh-Hant": "在為將來的請求啟用速率限制之前的最大允許帶寬量。​值為0將禁用此類速率限制。​標準=0KB。"}
  rate_limiting_max_requests: {"zh-Hans": "在为将来的请求启用速率限制之前允许的最大请求数。​值为0将禁用此类速率限制。​标准=0。", "zh-Hant": "在為將來的請求啟用速率限制之前允許的最大請求數。​值為0將禁用此類速率限制。​標準=0。"}
  rate_limiting_precision_ipv4: {"zh-Hans": "监视IPv4使用时的精度。​值镜像CIDR块大小。​设置为32以获得最佳精度。​标准=32。", "zh-Hant": "監視IPv4使用時的精度。​值鏡像CIDR塊大小。​設置為32以獲得最佳精度。​標準=32。"}

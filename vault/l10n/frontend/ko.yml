@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2025.05.13).
+# This file: Korean language data for the front-end (last modified: 2025.05.31).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -271,6 +271,7 @@ config:
  rate_limiting: "속도 제한 설정 (일반적인 사용에는 권장되지 않습니다)."
  rate_limiting_allowance_period: "사용량을 모니터 할 기간입니다. Default (기본 설정) = 0°0′0″."
  rate_limiting_exceptions: "예외 (즉, 속도 제한이 없어야하는 요청). 속도 제한이 활성화 된 경우에만 해당됩니다."
+ rate_limiting_hint: "참고해주세요, 다른 모든 CIDRAM 기능과 마찬가지로, CIDRAM의 속도 제한 기능은 CIDRAM이 연결된 페이지와 리소스에만 적용할 수 있습니다. 일반적으로 이는 연결된 PHP 리소스에서 명시적으로 제공되는 경우를 제외하고는 PHP가 아닌 리소스는 다루어지지 않음을 의미합니다. 서버 모듈, cPanel, 또는 기타 네트워크 도구를 사용하여 속도 제한을 적용할 수 있다면 CIDRAM의 속도 제한 기능 대신 이를 사용하는 것이 더 좋습니다. 또한, 동기가 부여되고 결의가 있는 사용자는 IP 주소를 순환시키거나 CIDRAM이 아직 인식하지 못하는 프록시나 VPN 공급자로 전환함으로써 속도 제한을 쉽게 우회할 수 있으며, 속도 제한은 실제 최종 사용자에게 매우 귀찮을 수 있습니다. 때로는 필요할 수도 있지만, 대개 바람직하지는 않습니다."
  rate_limiting_max_bandwidth: "향후 요청에 대해 속도 제한을 사용하기 전에 허용 기간 내에 허용되는 최대 대역폭입니다. 0 값은 이러한 유형의 속도 제한을 비활성화합니다. Default (기본 설정) = 0KB."
  rate_limiting_max_requests: "향후 요청에 대해 속도 제한을 사용하도록 설정하기 전에 허용 기간 내에 허용되는 최대 요청 수입니다. 0 값은 이러한 유형의 속도 제한을 비활성화합니다. Default (기본 설정) = 0."
  rate_limiting_precision_ipv4: "IPv4 사용을 모니터링 할 때 사용할 정밀도입니다. 값은 CIDR 블록 크기와 동일합니다. 최상의 정밀도를 위해 32로 설정하십시오. Default (기본 설정) = 32."

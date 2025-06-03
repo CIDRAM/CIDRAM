@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2025.05.13).
+# This file: English language data for the front-end (last modified: 2025.05.31).
 ##/
 
 Abuse category:
@@ -282,6 +282,7 @@ config:
  rate_limiting: "Configuration for rate limiting (not recommended for general use)."
  rate_limiting_allowance_period: "The duration to track usage. Default = 0°0′0″."
  rate_limiting_exceptions: "Exceptions (i.e., requests which shouldn't be rate limited). Relevant only when rate limiting is enabled."
+ rate_limiting_hint: "Keep in mind that just as with all other CIDRAM features, CIDRAM's rate limiting feature can only be applied for those pages and resources to which CIDRAM is connected. That would typically mean that non-PHP resources would not be covered except where explicitly served by connected PHP resources. If you're able to use a server module, cPanel, or some other network tool to enforce rate limiting, it would be better to use that instead of CIDRAM's rate limiting feature. Also keep in mind that a keen and determined user could easily circumvent rate limiting by rotating their IP address, or by switching to a proxy or VPN provider which CIDRAM isn't yet aware of, and keep in mind that rate limiting can be very annoying for actual, real end-users. It may at times be necessary, but is rarely desirable."
  rate_limiting_max_bandwidth: "The maximum amount of bandwidth allowed within the allowance period before rate limiting future requests. A value of 0 disables this type of rate limiting. Default = 0KB."
  rate_limiting_max_requests: "The maximum number of requests allowed within the allowance period before rate limiting future requests. A value of 0 disables this type of rate limiting. Default = 0."
  rate_limiting_precision_ipv4: "The precision to use for tracking IPv4 usage. Value mirrors CIDR block size. Set to 32 for best precision. Default = 32."

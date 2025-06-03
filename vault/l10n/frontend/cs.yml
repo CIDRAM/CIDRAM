@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Czech language data for the front-end (last modified: 2025.05.13).
+# This file: Czech language data for the front-end (last modified: 2025.05.31).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -271,6 +271,7 @@ config:
  rate_limiting: "Konfigurace pro omezení rychlosti (nedoporučuje se pro obecné použití)."
  rate_limiting_allowance_period: "Doba sledování využití. Standardní = 0°0′0″."
  rate_limiting_exceptions: "Výjimky (t.j., požadavky, které by neměly být omezení rychlosti). Relevantní pouze v případě že je aktivováno omezení rychlosti."
+ rate_limiting_hint: "Mějte na paměti, že stejně jako u všech ostatních funkcí CIDRAMu lze funkci omezení rychlosti CIDRAMu použít pouze pro ty stránky a zdroje ke kterým je CIDRAM připojen. To by obvykle znamenalo, že zdroje mimo PHP by nebyly ovlivněny s výjimkou případů kdy jsou explicitně obsluhovány připojenými zdroji PHP. Pokud můžete k vynucení omezení rychlosti použít serverový modul, cPanel, nebo nějaký jiný síťový nástroj, bylo by lepší použít ho místo funkce omezení rychlosti CIDRAM. Mějte také na paměti, že horlivý a odhodlaný uživatel by mohl snadno bypassovat omezení rychlosti otáčením jejich IP adresy nebo přechodem na proxy či VPN poskytovatele o kterém CIDRAM zatím neví, a mějte na paměti, že omezení rychlosti může být otravné pro skutečné, reálné koncové uživatele. Někdy to může být nutné, ale zřídka je to žádoucí."
  rate_limiting_max_bandwidth: "Maximální povolená šířka pásma v rámci povoleného období před sazbou omezující budoucí požadavky. Hodnota 0 deaktivuje tento typ omezení rychlosti. Standardní = 0KB."
  rate_limiting_max_requests: "Maximální počet povolených požadavků během povoleného období před sazbou omezující budoucí požadavky. Hodnota 0 deaktivuje tento typ omezení rychlosti. Standardní = 0."
  rate_limiting_precision_ipv4: "Přesnost pro sledování využití IPv4. Hodnota zrcadlí velikost bloku CIDR. Pro nejlepší přesnost nastavte na 32. Standardní = 32."

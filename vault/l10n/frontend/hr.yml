@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Croatian language data for the front-end (last modified: 2025.05.28).
+# This file: Croatian language data for the front-end (last modified: 2025.05.31).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -271,6 +271,7 @@ config:
  rate_limiting: "Konfiguracija za ograničavanje brzine (ne preporučuje se za opću upotrebu)."
  rate_limiting_allowance_period: "Trajanje za praćenje upotrebe. Zadano = 0°0′0″."
  rate_limiting_exceptions: "Iznimke (tj. zahtjevi koji ne bi trebali biti ograničeni brzinom). Relevantno samo kada je omogućeno ograničenje brzine."
+ rate_limiting_hint: "Imajte na umu da, kao i kod svih ostalih CIDRAM funkcionalnosti, CIDRAM-ova funkcionalnost ograničavanja brzine može primijeniti samo na one stranice i resurse na koje je CIDRAM povezan. To bi obično značilo da resursi koji nisu iz PHP-a ne bi bili obuhvaćeni osim ako ih eksplicitno opslužuju povezani PHP resursi. Ako možete koristiti serverski modul, cPanel, ili neki drugi mrežni alat za provođenje ograničavanje brzine, bilo bi bolje koristiti to umjesto CIDRAM-ove funkcionalnosti ograničavanja brzine. Također imajte na umu da bi odlučan i uporan korisnik mogao lako zaobići ograničavanje brzine rotiranjem njihove IP adrese ili prelaskom na proxy ili VPN pružatelja usluga o kojem CIDRAM još nije svjestan, i imajte na umu da ograničavanje brzine može biti vrlo frustrirajuće za stvarne krajnje korisnike. Ponekad može biti potrebno, ali rijetko je poželjno."
  rate_limiting_max_bandwidth: "Kolika se propusnost može koristiti unutar dodijeljenog vremena prije budućih zahtjeva koji ograničavaju brzinu. Vrijednost 0 onemogućuje ovu vrstu ograničenja brzine. Zadano = 0KB."
  rate_limiting_max_requests: "Koliko se zahtjeva može poslati unutar dodijeljenog vremena prije nego što se budući zahtjevi ograničavaju brzinu. Vrijednost 0 onemogućuje ovu vrstu ograničenja brzine. Zadano = 0."
  rate_limiting_precision_ipv4: "Preciznost koja se koristi za praćenje upotrebe IPv4. Vrijednost odražava veličinu CIDR bloka. Postavite na 32 za najbolju preciznost. Zadano = 32."
@@ -458,6 +459,16 @@ hints_verification:
  "Što su "pozitivi" i "negativi"?": "Prilikom provjere identiteta predstavljenog zahtjevom, uspješan ishod mogao bi se opisati kao "pozitivan" ili "negativan". U slučaju da se potvrdi da je predstavljeni identitet pravi identitet, on bi se opisao kao "pozitivan". U slučaju da se potvrdi da je prikazani identitet krivotvoren, on bi se opisao kao "negativan". Međutim, neuspješan ishod (npr., neuspješna provjera, ili se ne može utvrditi vjerodostojnost prikazanog identiteta) ne bi se opisao kao "pozitivan" ili "negativan". Umjesto toga, neuspješan ishod bi se jednostavno opisao kao neprovjeren. Ako se ne pokuša provjeriti identitet predstavljen zahtjevom, zahtjev bi se također opisao kao neprovjeren. Pojmovi imaju smisla samo u kontekstu u kojem je identitet predstavljen zahtjevom prepoznat, i stoga, gdje je provjera moguća. U slučajevima kada prikazani identitet ne odgovara gore navedenim opcijama, ili kada identitet nije predstavljen, gore navedene opcije postaju nevažne."
  "Što su "zaobilaženje jednim pogotkom"?": "U nekim slučajevima, pozitivno verificiran zahtjev može i dalje biti blokiran zbog datoteka potpisa, modula, ili drugih uvjeta zahtjeva, a zaobilaženje može biti potrebno kako bi se izbjegli lažno pozitivni. U slučaju kada je zaobilaženje namijenjeno rješavanju tačno jednog prekršaja, ni više ni manje, takvo zaobilaženje bi se moglo opisati kao "zaobilaženje jednim pogotkom"."
 hints_want_to_block: "!! Većina korisnika će vjerojatno htjeti da se ovo blokira, bez obzira je li stvarno ili lažno. To se može postići tako da se ne odabere "pokušati provjeriti", već da se odabere "blokirati neprovjerene zahtjeve". Međutim, budući da neki korisnici možda žele moći provjeriti takve zahtjeve (kako bi blokirali negativne, a dopustili pozitivne), umjesto blokiranja takvih zahtjeva putem modula, ovdje su navedene opcije za rukovanje takvim zahtjevima."
+info_cli_by_default_ips: |
+ Standardno, IP adrese se testiraju u odnosu na sve datoteke potpisa, sve
+ module, sva pomoćna pravila, te u odnosu na provjeru društvenih mreža i
+ tražilica.
+ --no-sig    Sprječava testiranje u odnosu na datoteke potpisa.
+ --no-mod    Sprječava testiranje na modulima.
+ --no-sev    Sprječava provjeru tražilica.
+ --no-smv    Sprječava provjeru na društvenim mrežama.
+ --no-ov     Sprječava druge provjere.
+ --no-aux    Sprječava testiranje prema pomoćnim pravilima.
 info_cli_cidram_cli_mod: "CIDRAM CLI režim."
 info_cli_ipv4_ipv6_are_: |
  IPv4/IPv6 su oba podržana. Višelinijski unos je moguć za *sve* operacije u
@@ -625,11 +636,17 @@ label:
  Selected log file doesn_t exist: "Odabrana datoteka dnevnika ne postoji!"
  Simple: "Jednostavan"
  Start date: "Datum početka"
- Starting from %s: "Starting from "%s"."
+ Starting from %s: "Počevši od "%s"."
  Subtrahend: "Subtrahend"
- Suggestions: "Suggestions"
- Suspicious: "Suspicious"
+ Suggestions: "Prijedlozi"
+ Suspicious: "Sumnjivo"
  System information: "Informacije o sustavu:"
+ Tally: "Zbroj"
+ Text formatting: "Oblikovanje teksta:"
+ The cache is empty: "Predmemorija je prazna."
+ Total disk space: "Ukupni prostor na disku:"
+ Total disk usage: "Ukupna iskorištenost diska:"
+ Total: "Ukupno"
  Your IP: "Vaša IP adresa:"
  Your UA: "Vaš korisnički agent:"
  results: "Rezultati (%s dana – %s odbijena – %s prihvaćeno – %s spojena – %s vraćena):"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2025.05.13).
+# This file: Polish language data for the front-end (last modified: 2025.05.31).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -271,6 +271,7 @@ config:
  rate_limiting: "Konfiguracja ograniczania (niezalecany do ogólnego użytku)."
  rate_limiting_allowance_period: "Czas trwania śledzenia użycia. Domyślna = 0°0′0″."
  rate_limiting_exceptions: "Wyjątki (żądania, które nie powinny być ograniczone). Dotyczy tylko wtedy, gdy włączone jest ograniczenia."
+ rate_limiting_hint: "Należy pamiętać, że tak jak w przypadku wszystkich innych funkcji CIDRAM, funkcja ograniczania przepustowości CIDRAM może być egzekwowana wyłącznie w przypadku tych stron i zasobów do których CIDRAM jest podłączony. Oznacza to ogólnie że zasoby które nie są zasobami PHP nie będą objęte, chyba że są wyraźnie obsługiwane przez połączone zasoby PHP. Jeśli możesz użyć modułu serwera, cPanel, lub innego narzędzia sieciowego do wymuszenia ograniczenia przepustowości, lepiej jest użyć go zamiast funkcji ograniczania przepustowości CIDRAM. Należy również pamiętać, że bystry i zdeterminowany użytkownik mógłby łatwo obejść ograniczenia przepustowości, zmieniając ich adres IP lub przechodząc na dostawcę proxy lub VPN o którym CIDRAM jeszcze nie wie, i pamiętaj, że ograniczanie przepustowości może być bardzo denerwujące dla prawdziwych użytkowników końcowych. Czasami może to być konieczne, ale rzadko jest pożądane."
  rate_limiting_max_bandwidth: "Maksymalna ilość przepustowości dozwolone w dozwolonym czasie przed stawką ograniczającą przyszłe żądania. Wartość 0 wyłącza ten typ ograniczenia. Domyślna = 0KB."
  rate_limiting_max_requests: "Maksymalna liczba żądań w dozwolonym czasie przed stawką ograniczającą przyszłe żądania. Wartość 0 wyłącza ten typ ograniczenia. Domyślna = 0."
  rate_limiting_precision_ipv4: "Precyzja wykorzystywana do śledzenia użycia IPv4. Wartość odzwierciedla rozmiar bloku CIDR. Ustaw na 32 dla najlepszej precyzji. Domyślna = 32."

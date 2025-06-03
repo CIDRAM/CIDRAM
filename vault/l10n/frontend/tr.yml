@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2025.05.13).
+# This file: Turkish language data for the front-end (last modified: 2025.05.31).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -271,6 +271,7 @@ config:
  rate_limiting: "Hız sınırlaması için yapılandırma (genel kullanım için önerilmez)."
  rate_limiting_allowance_period: "Kullanımı izlemek için süre. Varsayılan = 0°0′0″."
  rate_limiting_exceptions: "İstisnalar (yani oran sınırlı olmaması gereken istekler). Yalnızca sınırlaması etkin olduğunda geçerlidir."
+ rate_limiting_hint: "Diğer tüm CIDRAM özelliklerinde olduğu gibi, CIDRAM'ın hız sınırlama özelliği yalnızca CIDRAM'ın bağlı olduğu sayfalar ve kaynaklar için uygulanabilir. Bu nedenle, PHP dışı kaynaklar, bağlı PHP kaynakları tarafından açıkça sunulmadığı sürece, kapsam dahilinde olmayacaktır. Hız sınırlamasını uygulamak için bir sunucu modülü, cPanel, veya başka bir ağ aracı kullanabiliyorsanız, CIDRAM'ın hız sınırlama özelliği yerine bunları kullanmanız daha iyi olacaktır. Ayrıca, kararlı bir kullanıcı IP adresini döndürerek veya CIDRAM'ın henüz farkında olmadığı bir proxy veya VPN sağlayıcısına geçerek hız sınırlamasını kolayca aşabilir, ve hız sınırlaması gerçek son kullanıcılar için çok can sıkıcı olabilir. Bazen gerekli olabilir, ancak nadiren istenir."
  rate_limiting_max_bandwidth: "Gelecekteki talepleri sınırlayan orandan önce izin süresi içinde izin verilen maksimum bant genişliği miktarı. 0 değeri bu oran sınırlamasını devre dışı bırakır. Varsayılan = 0KB."
  rate_limiting_max_requests: "Gelecekteki istekleri sınırlayan orandan önce izin süresi içinde izin verilen maksimum istek sayısı. 0 değeri bu oran sınırlamasını devre dışı bırakır. Varsayılan = 0."
  rate_limiting_precision_ipv4: "IPv4 kullanımını izlemek için hassaslık. Değer, CIDR blok boyutunu yansıtır. En iyi hassasiyet için 32'ye ayarlayın. Varsayılan = 32."

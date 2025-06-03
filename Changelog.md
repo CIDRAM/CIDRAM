@@ -425,4 +425,5 @@
 
 #### Other changes.
 - [2025.05.20]: A11y patch.
+- [2025.05.31]: Added hinting for the rate limiting configuration category (#327).
 - *Plus all the regular signature updates.*

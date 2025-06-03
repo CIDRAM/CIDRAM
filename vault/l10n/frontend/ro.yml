@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Romanian language data for the front-end (last modified: 2025.05.13).
+# This file: Romanian language data for the front-end (last modified: 2025.05.31).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -271,6 +271,7 @@ config:
  rate_limiting: "Configurație pentru limitarea ratei (nu este recomandată pentru utilizare generală)."
  rate_limiting_allowance_period: "Durata de urmărire a utilizării. Implicit = 0°0′0″."
  rate_limiting_exceptions: "Excepții (adică solicitări care nu ar trebui să fie limitate la tarife). Relevant numai atunci când limitarea ratei este activată."
+ rate_limiting_hint: "Rețineți că, la fel ca în cazul tuturor celorlalte funcționalități CIDRAM, funcționalitatea de limitare a ratei CIDRAM poate fi aplicată doar pentru acele pagini și resurse la care este conectat CIDRAM. Asta ar însemna, în general, că resursele care nu sunt PHP nu ar fi acoperite, cu excepția cazurilor în care sunt furnizate de resurse PHP conectate. Dacă poți utiliza un modul de server, cPanel, sau alt instrument de rețea pentru a impune limitarea ratei, ar fi mai bine să folosești acel instrument în locul funcționalității de limitare a ratei oferite de CIDRAM. De asemenea, rețineți că un utilizator pasionat și determinat ar putea ocoli cu ușurință limitarea ratei prin rotirea adresei IP sau prin trecerea la un furnizor proxy sau VPN de care CIDRAM nu este încă conștient, și rețineți că limitarea ratei poate fi foarte enervantă pentru utilizatorii finali reali. Poate fi uneori necesar, dar rareori este de dorit."
  rate_limiting_max_bandwidth: "Cantitatea maximă de lățime de bandă permisă în perioada permisă înainte de limitarea ratei solicitărilor viitoare. O valoare de 0 dezactivează acest tip de limitare a ratei. Implicit = 0KB."
  rate_limiting_max_requests: "Numărul maxim de solicitări permise în perioada permisă înainte de limitarea ratei solicitărilor viitoare. O valoare de 0 dezactivează acest tip de limitare a ratei. Implicit = 0."
  rate_limiting_precision_ipv4: "Precizia de utilizat pentru urmărirea utilizării IPv4. Valoarea reflectă dimensiunea blocului CIDR. Setați la 32 pentru cea mai bună precizie. Implicit = 32."

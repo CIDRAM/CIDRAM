@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6_isps.dat
 
-# Version: 2025.146.0
-# Last modified: 2025.05.27
+# Version: 2025.154.0
+# Last modified: 2025.06.04
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -208,16 +208,17 @@ Tag: Comcast Spam IPs
 # Indian domestic ISP. Brute-force, SSH, FTP, SQLi, and webapp attacks, port
 # scans, hacking, and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 9,371 (AS18209), 2,755 (AS24309),
-# 414 (AS55577), 454 (AS131269).
-# Updated: 2024.05.20
+# Stop Forum Spam (SFS) listings: 4,021 (AS18209), 2,245 (AS24309),
+# 464 (AS55577), 261 (AS131269).
+# Updated: 2025.06.04
 
-2406:7400:b9:8b6::/64 Deny Spam
-2406:7400:b9:d03::/64 Deny Spam
-2406:7400:ca:9399::/64 Deny Spam
-2406:7400:ca:fba7::/64 Deny Spam
-2406:b400:71:2451::/64 Deny Spam
-2406:b400:b4:ff9f::/64 Deny Spam
+2406:7400:54:1fd::/64 Deny Spam
+2406:b400:71:18c::/64 Deny Spam
+2406:b400:71:b718::/64 Deny Spam
+2406:b400:71:bdce::/64 Deny Spam
+2406:b400:72:1abe::/64 Deny Spam
+2406:b400:72:38d9::/64 Deny Spam
+2406:b400:d1:296f::/64 Deny Spam
 Origin: IN
 Profile: Domestic ISP
 Tag: Atria Convergence

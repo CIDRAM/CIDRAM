@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6.dat
 
-# Version: 2025.146.0
-# Last modified: 2025.05.27
+# Version: 2025.154.0
+# Last modified: 2025.06.04
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -4268,11 +4268,13 @@ Tag: RouteLabel V.O.F
 
 
 # ASN 42632 ("MnogoByte LLC").
-# Updated: 2024.05.21
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2025.06.04
 
 2a02:28:1:2::5f:7d/128 Deny Cloud
 2a02:878:1::/48 Deny Cloud
 2a02:878:2::/48 Deny Cloud
+2a02:878:7:2::e/128 Deny Cloud
 2a02:878:a::/48 Deny Cloud
 2a02:878:a801::/48 Deny Cloud
 2a02:878:a80e::/48 Deny Cloud
@@ -4636,7 +4638,8 @@ Tag: Atlantic.net, Inc
 
 # ASN 52284 ("Panamaserver.com").
 # Caught faking as Googlebot.
-# Updated: 2016.07.10 / Checked: 2024.05.12
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2016.07.10 / Checked: 2025.05.28
 
 2803:200::/32 Deny Cloud
 Origin: PA
@@ -4842,16 +4845,18 @@ Tag: OOO IT-Grad
 # Combines several different networks due to heavy interlacing. Significant
 # levels of unwanted traffic (e.g., spam, hacking, probing for vulnerabilities,
 # etc) detected throughout the included networks.
-# Stop Forum Spam (SFS) listings: 44 (AS55933), 51 (AS133731), 1 (AS134176),
-# 37 (AS134196), 4 (AS138968).
-# Updated: 2024.05.29
+# Stop Forum Spam (SFS) listings: 113 (AS55933), 1 (AS134176), 18 (AS134196),
+# 11 (AS138968).
+# Updated: 2025.05.28
 
 2403:3a40::/32 Deny Cloud
 2403:3b40::/32 Deny Cloud
 2403:3bc0::/32 Deny Cloud
 2404:3bc0::/32 Deny Cloud
 2404:3c40::/32 Deny Cloud
+2405:7240::/32 Deny Cloud
 Origin: CN
+2001:df1:2580::/48 Deny Cloud
 2404:8c80::/32 Deny Cloud
 2a0c:f480::/29 Deny Cloud
 2a0d:2480::/29 Deny Cloud
@@ -7224,8 +7229,8 @@ Tag: GigeNET
 # Owns IPs associated with a Spamhaus top 10 worst offender listing (Nov 2019).
 # Dedicated webhosting provider with spam records at SFS and elsewhere.
 # Subtract 44.0.0.0/9, 44.128.0.0/10 (clean).
-# Stop Forum Spam (SFS) listings: 82 (AS7489), 13 (AS398395).
-# Updated: 2024.05.21
+# Stop Forum Spam (SFS) listings: 5 (AS7489), 308 (AS398395).
+# Updated: 2025.06.04
 
 2403:5680::/48 Deny Cloud
 Origin: AU
@@ -7242,7 +7247,6 @@ Origin: GB
 Origin: HK
 2a0e:fd45:40fa::/48 Deny Cloud
 Origin: NL
-2402:e380:33c::/48 Deny Cloud
 2602:fb54:146::/48 Deny Cloud
 2602:ffc5::/48 Deny Cloud
 2602:ffc5:10::/44 Deny Cloud
@@ -7254,7 +7258,6 @@ Origin: NL
 2602:ffc5:103::/48 Deny Cloud
 2602:ffc5:105::/48 Deny Cloud
 2602:ffc5:109::/48 Deny Cloud
-2602:ffc5:10d::/48 Deny Cloud
 2602:ffc5:152::/47 Deny Cloud
 2602:ffc5:d10::/44 Deny Cloud
 2602:ffc5:da0::/44 Deny Cloud
@@ -8285,8 +8288,8 @@ Tag: ANEXIA
 # Infrastructure and cloud provider; Drive-by WordPress hack attempts,
 # brute-force attacks, XMLRPC attacks, and webapp attacks detected originating
 # from this network.
-# Stop Forum Spam (SFS) listings: 3.
-# Updated: 2024.05.21
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2024.05.21 / Checked: 2025.06.04
 
 2a05:4540::/29 Deny Cloud
 2a06:1000::/29 Deny Cloud
@@ -9864,8 +9867,8 @@ Tag: Obehosting AB
 
 # ASNs 45839, 201133 ("Shinjiru Technology Sdn Bhd", "Verdina Ltd").
 # Webhosting provider. Spam and tor endpoints detected here.
-# Stop Forum Spam (SFS) listings: 133 (AS45839), 18 (AS201133).
-# Updated: 2021.04.11 / Checked: 2024.05.21
+# Stop Forum Spam (SFS) listings: 124 (AS45839), 11 (AS201133).
+# Updated: 2021.04.11 / Checked: 2025.06.04
 
 2407:6c00:18::/48 Deny Cloud
 Origin: MY
@@ -11172,8 +11175,7 @@ Tag: ServTech LTD
 
 # ASN 395336 ("MacStadium, Inc").
 # US cloud provider caught probing for ".env" files.
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2022.06.24 / Checked: 2024.05.10
+# Updated: 2022.06.24 / Checked: 2025.05.28
 
 2607:6480::/35 Deny Cloud
 Origin: US
@@ -12103,10 +12105,10 @@ Profile: Frequent changes;Webhosting
 Tag: gir.network
 
 
-# ASN 56971 ("CGI GLOBAL LIMITED").
+# ASNs 56594, 56971 ("CGI GLOBAL LIMITED").
 # Brute-force, SSH, and webapp attacks detected from here.
-# Stop Forum Spam (SFS) listings: 365.
-# Updated: 2025.04.20
+# Stop Forum Spam (SFS) listings: 313 (AS56971).
+# Updated: 2025.04.20 / Checked: 2025.06.04
 
 2a13:7c00:3::/48 Deny Cloud
 2a13:7c00:4::/46 Deny Cloud
@@ -13291,19 +13293,10 @@ Profile: Restricted/Unidentifiable
 Tag: Hornostay
 
 
-# ASN 212913 ("Shandong Deju Information Technology Co Ltd").
-# Brute-force, SSH attacks, and port scans detected from here.
-# Updated: 2024.05.21
-
-2406:840:fed5::/48 Deny Cloud
-Origin: CN
-Profile: Restricted/Unidentifiable
-Tag: Shandong Deju
-
-
 # ASN 53225 ("IPGLOBE INTERNET LTDA").
 # Brute-force, webapp attacks, port scans, and hacking detected from here.
-# Updated: 2024.05.25
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2024.05.25 / Checked: 2025.05.28
 
 2804:644::/32 Deny Cloud
 Origin: BR
@@ -13383,7 +13376,7 @@ Tag: Securebit AG
 
 # ASN 215400 ("Kaan Kalayci trading as FastLayer").
 # Port scans and hacking detected from here.
-# Updated: 2024.05.31
+# Updated: 2024.05.31 / Checked: 2025.05.28
 
 2a12:de40:27::/48 Deny Cloud
 Origin: DE

@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6.dat
 
-# Version: 2025.157.0
-# Last modified: 2025.06.07
+# Version: 2025.161.0
+# Last modified: 2025.06.11
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -1298,24 +1298,19 @@ Profile: Infrastructure/Transit;Tor endpoints here
 Tag: CoreSpace, Inc
 
 
-# ASNs 8100, 29761 ("QuadraNet, Inc").
-# Stop Forum Spam (SFS) listings: 1,602 (AS8100).
-# Updated: 2024.06.06
+# ASN 8100 ("QuadraNet, Inc").
+# Stop Forum Spam (SFS) listings: 3,377.
+# Updated: 2025.06.11
 
-2a05:b0c6:300::/40 Deny Cloud
-2a12:bec0:163::/48 Deny Cloud
-Origin: GB
-2a04:6ac0::/29 Deny Cloud
-Origin: UA
-2602:ff75::/36 Deny Cloud
-2602:ff96:4::/48 Deny Cloud
-2602:ff96:11::/48 Deny Cloud
-2602:ff96:14::/48 Deny Cloud
-2602:ffc5:60::/64 Deny Cloud
-2602:fff6:1::/48 Deny Cloud
-2602:fff6:2::/48 Deny Cloud
-2607:fcd0::/32 Deny Cloud
-2607:ff48::/32 Deny Cloud
+2602:fed2:708d::/48 Deny Generic
+Origin: CA
+2602:ff96:4::/48 Deny Generic
+2602:ff96:11::/48 Deny Generic
+2602:ff96:14::/48 Deny Generic
+2604:4500:400::/48 Deny Generic
+2607:fcd0:ccc0::/42 Deny Generic
+2607:fcd0:cd00::/42 Deny Generic
+2607:ff48::/32 Deny Generic
 Origin: US
 Profile: Dedicated;Frequent changes;Infrastructure/Transit;Webhosting
 Tag: QuadraNet, Inc
@@ -4135,16 +4130,16 @@ Tag: Transip B.V
 
 
 # ASN 207083 ("HostSlim BV").
-# Stop Forum Spam (SFS) listings: 83.
-# Updated: 2025.01.13
+# Stop Forum Spam (SFS) listings: 183.
+# Updated: 2025.06.11
 
-2a0e:97c1:e7::/48 Deny Cloud
-Origin: CH
 2a06:5b80::/29 Deny Cloud
 2a09:3c00::/29 Deny Cloud
 Origin: NL
 2406:17c0::/32 Deny Cloud
 Origin: SG
+2a09:54c6:a000::/48 Deny Cloud
+2a09:54c6:a700::/48 Deny Cloud
 2a0a:6040:1d00::/40 Deny Cloud
 Origin: US
 Profile: Dedicated;Webhosting
@@ -4816,8 +4811,8 @@ Tag: Accelerated IT
 
 
 # ASN 20278 ("Nexeon Technologies, Inc").
-# Stop Forum Spam (SFS) listings: 370.
-# Updated: 2024.06.11
+# Stop Forum Spam (SFS) listings: 83.
+# Updated: 2024.06.11 / Checked: 2025.06.11
 
 2602:fc41::/40 Deny Cloud
 2602:ffc8::/32 Deny Cloud
@@ -6394,8 +6389,8 @@ Tag: Powerhouse Management
 
 # ASN 21769 ("Colocation America Corporation").
 # Caught trying to brute-force Git accounts and SSH logins.
-# Stop Forum Spam (SFS) listings: 1,859.
-# Updated: 2024.06.06
+# Stop Forum Spam (SFS) listings: 673.
+# Updated: 2024.06.06 / Checked: 2025.06.11
 
 2a0b:2a86::/32 Deny Cloud
 Origin: AE
@@ -7389,7 +7384,7 @@ Tag: HOSTING.CL
 
 # ASN 209737 ("Muhammet Meric trading as Meric Hosting").
 # Dedicated webhosting provider and an occasional source of spam.
-# Updated: 2024.11.24
+# Updated: 2025.06.09
 
 2a09:8780::/29 Deny Cloud
 2a0f:b700::/29 Deny Cloud
@@ -7397,7 +7392,6 @@ Tag: HOSTING.CL
 2a0f:eb00::/29 Deny Cloud
 2a0f:ed00::/29 Deny Cloud
 2a0f:f900::/29 Deny Cloud
-2a13:a440:8::/48 Deny Cloud
 2a13:a441::/32 Deny Cloud
 2a13:a445::/32 Deny Cloud
 2a13:a447::/32 Deny Cloud
@@ -7472,19 +7466,16 @@ Tag: Portland Internet Hosting
 
 # ASN 395092 ("Shock Hosting LLC").
 # Dedicated webhosting provider and a source of spam.
-# Stop Forum Spam (SFS) listings: 109.
-# Updated: 2024.05.31
+# Stop Forum Spam (SFS) listings: 60.
+# Updated: 2025.06.09
 
-2a12:bec0:16c::/48 Deny Cloud
-Origin: GB
-2a09:9444::/32 Deny Cloud
-Origin: RU
 2406:cb40::/47 Deny Cloud
 2406:cb41::/48 Deny Cloud
 2406:cb42::/48 Deny Cloud
 2607:a680::/45 Deny Cloud
 2607:a680:8::/47 Deny Cloud
 2607:a680:f000::/36 Deny Cloud
+2a09:9444::/32 Deny Cloud
 2a0d:9ec0::/48 Deny Cloud
 2a0d:9ec1::/48 Deny Cloud
 2a0d:9ec2::/48 Deny Cloud
@@ -9466,14 +9457,13 @@ Profile: Infrastructure/Transit;Webhosting
 Tag: TeraSwitch Networks Inc
 
 
-# ASNs 16200, 56815, 58061, 60721 ("Raya Sepehr Vira Data Processing Company
-# Ltd", "Scalaxy B.V", "Bursabil Teknoloji A.S").
+# ASNs 58061, 60721 ("Scalaxy B.V", "Bursabil Teknoloji A.S").
 # Scalaxy: High​ fraud risk ISP (see scamalytics.com/ip/isp/scalaxy-b-v).
-# Bursabil: Turkish webhosting provider. Raya Sepehr: Iranian data processing
-# company. Sections merged together due to interlacing. Brute-force, SQLi, and
-# webapp attacks, port scans, hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 6,650 (AS58061), 69 (AS60721).
-# Updated: 2024.09.05
+# Bursabil: Turkish webhosting provider. Sections merged together due to
+# interlacing. Brute-force, SQLi, and webapp attacks, port scans, hacking, and
+# spam detected from here.
+# Stop Forum Spam (SFS) listings: 3,796 (AS58061), 6 (AS60721).
+# Updated: 2025.06.09
 
 2a02:c6c0::/29 Deny Cloud
 2a0c:6740::/29 Deny Cloud
@@ -9488,14 +9478,18 @@ Origin: GB
 2a00:1ca8:d4::/48 Deny Cloud
 2a03:3f40:2::/48 Deny Cloud
 Origin: NL
+2a03:e340:2::/48 Deny Cloud
+2a03:e340:6::/48 Deny Cloud
+Origin: RU
 2a04:3880::/30 Deny Cloud
+2a05:100::/29 Deny Cloud
 2a06:c380::/29 Deny Cloud
 2a0b:6000::/29 Deny Cloud
 2a0d:a2c0::/29 Deny Cloud
 2a0d:c480::/29 Deny Cloud
 Origin: TR
 Profile: Dedicated;Frequent changes;Infrastructure/Transit;Tor endpoints here;Webhosting
-Tag: Raya/Scalaxy/Bursabil
+Tag: Scalaxy/Bursabil
 
 
 # ASN 38955 ("World4You Internet Services").
@@ -12839,18 +12833,16 @@ Tag: Zhejiang Aiyun
 
 # ASNs 43260, 197555 ("DGN TEKNOLOJI A.S", "SMARTMIETEN TECH PRIVATE LIMITED").
 # Brute-force, RDP attacks, and port scans detected from here.
-# Stop Forum Spam (SFS) listings: 52 (AS43260).
-# Updated: 2024.05.31
+# Stop Forum Spam (SFS) listings: 2 (AS43260).
+# Updated: 2025.06.09
 
 2a04:4280::/29 Deny Cloud
-2a05:abc0::/29 Deny Cloud
 2a05:bf00::/29 Deny Cloud
 2a07:21c0::/29 Deny Cloud
 2a07:cd00::/48 Deny Cloud
 2a07:e700::/29 Deny Cloud
 2a0b:2780::/29 Deny Cloud
 2a0c:1340::/29 Deny Cloud
-2a0c:acc0::/29 Deny Cloud
 2a0d:2bc0::/48 Deny Cloud
 2a0d:49c0::/29 Deny Cloud
 Origin: TR
@@ -13368,6 +13360,17 @@ Tag: Securebit AG
 Origin: DE
 Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: FastLayer
+
+
+# ASN 59878 ("BFB ONE FZ-LLC").
+# Brute-force and SSH attacks detected from here.
+# Stop Forum Spam (SFS) listings: 8.
+# Updated: 2025.06.09
+
+2a13:8a40::/48 Deny Cloud
+Origin: AE
+Profile: Restricted/Unidentifiable
+Tag: BFB ONE FZ-LLC
 
 
 # ASN 62068 ("SpectraIP B.V").

@@ -1,8 +1,8 @@
 # IPv6 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6_other.dat
 
-# Version: 2025.62.0
-# Last modified: 2025.03.04
+# Version: 2025.161.0
+# Last modified: 2025.06.11
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -51,7 +51,7 @@ Tag: Emerald Onion
 # you are not allowed to redistribute the feed to other networks. The export of
 # these feeds/prefixes to other networks is prohibited.
 # Excerpt from: https://www.spamhaus.org/bgpf/
-# Updated: 2025.02.20
+# Updated: 2025.06.11
 
 2001:678:6c4::/48 Deny Spam
 2001:678:724::/48 Deny Spam
@@ -65,6 +65,8 @@ Tag: Emerald Onion
 2001:678:c5c::/48 Deny Spam
 2001:678:e38::/48 Deny Spam
 2001:678:e4c::/48 Deny Spam
+2001:67c:f38::/48 Deny Spam
+2001:67c:2dbc::/48 Deny Spam
 2401:1760::/48 Deny Spam
 2401:c580::/32 Deny Spam
 2402:6680::/32 Deny Spam
@@ -72,15 +74,19 @@ Tag: Emerald Onion
 2405:b180::/32 Deny Spam
 2405:b480::/32 Deny Spam
 2405:e880::/32 Deny Spam
+2602:f68a::/40 Deny Spam
 2602:f915:1::/48 Deny Spam
+2602:f959:1::/48 Deny Spam
+2602:f9bb::/36 Deny Spam
 2602:ffa0::/36 Deny Spam
 2607:d100::/32 Deny Spam
 2607:f2d0::/32 Deny Spam
-2801:80:c00::/48 Deny Spam
+2803:4860::/32 Deny Spam
 2803:5380:ffff::/48 Deny Spam
 2803:8700::/32 Deny Spam
 2a00:4c80::/29 Deny Spam
 2a00:55a0::/32 Deny Spam
+2a04:5200:5977::/48 Deny Spam
 2a05:b0c6:a000::/38 Deny Spam
 2a05:b0c7:6000::/36 Deny Spam
 2a06:e80:3000::/36 Deny Spam
@@ -102,20 +108,20 @@ Tag: Emerald Onion
 2a0a:6340::/29 Deny Spam
 2a0a:a840::/29 Deny Spam
 2a0b:3e80::/29 Deny Spam
-2a0b:4ec0::/29 Deny Spam
 2a0b:ae80::/29 Deny Spam
 2a0b:f500::/29 Deny Spam
 2a0b:fdc0::/29 Deny Spam
 2a0d:6c2::/32 Deny Spam
 2a0d:c700::/29 Deny Spam
 2a0d:e7c7:ffff::/48 Deny Spam
-2a0e:b107:1572::/48 Deny Spam
-2a0e:b107:1574::/48 Deny Spam
 2a0e:b107:1a10::/44 Deny Spam
 2a0e:d601:7220::/48 Deny Spam
+2a0f:63c1::/32 Deny Spam
+2a0f:63c6::/32 Deny Spam
 2a10:2f01:215::/48 Deny Spam
 2a10:9700::/29 Deny Spam
 2a10:cc45:100::/44 Deny Spam
+2a10:e5c0::/29 Deny Spam
 2a11:9c00::/40 Deny Spam
 2a12:2640::/29 Deny Spam
 2a12:6740::/30 Deny Spam

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Croatian language data for the front-end (last modified: 2025.05.31).
+# This file: Croatian language data for the front-end (last modified: 2025.06.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -199,7 +199,7 @@ config:
  general_fields: "Kontrole za polja tijekom događaja blokiranja (kada je zahtjev blokiran)."
  general_force_hostname_lookup: "Prisilno tražiti naziv hosta? True/Istinito = Da; False/Lažno = Ne [Zadano]. Traženje naziva hosta obično se izvodi po potrebi, ali se može prisilno izvršiti za sve zahtjeve. To može biti korisno kao način pružanja detaljnijih informacija u datotekama dnevnika, ali može imati i blagi negativan učinak na performanse."
  general_http_response_header_code: "Koju HTTP statusnu poruku CIDRAM treba poslati kada blokira zahtjeve?"
- general_ipaddr: "Gdje pronaći IP adresu zahtjeva za povezivanje? (Korisno za usluge kao što je Cloudflare i slično). Zadano = REMOTE_ADDR. UPOZORENJE: Promijenite ovo samo ako znate što radite!"
+ general_ipaddr: "Gdje pronaći IP adresu zahtjeva za povezivanje? (Korisno za usluge kao što je Cloudflare). Zadano = REMOTE_ADDR. UPOZORENJE: Promijenite ovo samo ako znate što radite!"
  general_lang: "Navedite zadani jezik za CIDRAM."
  general_lang_override: "Lokalizirati prema HTTP_ACCEPT_LANGUAGE kad god je to moguće? True/Istinito = Da [Zadano]; False/Lažno = Ne."
  general_numbers: "Kako želite da se prikazuju brojevi? Odaberite primjer koji vam se čini najispravnijim."
@@ -545,6 +545,18 @@ label:
  %s signature:
   - "%s potpis"
   - "%s potpisa"
+ 200 OK: "200 OK\nNajmanje robustan, ali najprilagođeniji korisniku. Automatizirani zahtjevi će najvjerojatnije protumačiti ovaj odgovor kao pokazatelj da je zahtjev bio uspješan."
+ 301 Moved Permanently: "301 Moved Permanently (Trajno preseljeno)\nUpućuje klijenta da je preusmjeravanje TRAJNO i da metoda zahtjeva korištena za preusmjeravanje MOŽE biti drugačija od metode zahtjeva korištene za početni zahtjev."
+ 302 Found: "302 Found (Pronađeno)\nUpućuje klijenta da je preusmjeravanje PRIVREMENO i da metoda zahtjeva korištena za preusmjeravanje MOŽE biti drugačija od metode zahtjeva korištene za početni zahtjev."
+ 307 Temporary Redirect: "307 Temporary Redirect (Privremeno preusmjeravanje)\nUpućuje klijenta da je preusmjeravanje PRIVREMENO i da metoda zahtjeva korištena za preusmjeravanje NE može razlikovati od metode zahtjeva korištene za početni zahtjev."
+ 308 Permanent Redirect: "308 Permanent Redirect (Trajno preusmjeravanje)\nUpućuje klijenta da je preusmjeravanje TRAJNO i da metoda zahtjeva korištena za preusmjeravanje NE može razlikovati od metode zahtjeva korištene za početni zahtjev."
+ 403 Forbidden: "403 Forbidden (Zabranjeno)\nRobusniji, ali manje prilagođen korisniku. Preporučuje se za većinu općih okolnosti."
+ 409 Conflict: "409 Conflict (Sukob)\nPreporučuje se za sukobe resursa (npr., sukobi spajanja, sukobi pristupa datotekama, itd). Ne preporučuje se u drugim kontekstima."
+ 410 Gone: "410 Gone (Nestalo)\nMože uzrokovati probleme prilikom rješavanja lažno pozitivnih, jer će neki preglednici pohraniti ovu poruku o statusu u predmemoriju i neće slati sljedeće zahtjeve, čak ni nakon što su deblokirani. Može biti najpoželjnije u nekim kontekstima, za određene vrste prometa."
+ 418 I_m a teapot: "418 I'm a teapot (Ja sam čajnik)\nReferencira prvoaprilsku šalu ({{Links.RFC2324}}). Vrlo je malo vjerojatno da će ga razumjeti bilo koji klijent, bot, preglednik, ili netko drugi. Namijenjeno za zabavu i praktičnost, ali se općenito ne preporučuje."
+ 429 Too Many Requests: "429 Too Many Requests (Previše zahtjeva)\nPreporučuje se za ograničavanje brzine, prilikom suočavanja s DDoS napadima, i za sprječavanje poplave. Ne preporučuje se u drugim kontekstima."
+ 451 Unavailable For Legal Reasons: "451 Unavailable For Legal Reasons (Nije dostupno iz pravnih razloga)\nPreporučuje se prilikom blokiranja prvenstveno iz pravnih razloga. Ne preporučuje se u drugim kontekstima."
+ 503 Service Unavailable: "503 Service Unavailable (Usluga nije dostupna)\nNajrobustniji, ali najmanje prilagođen korisniku. Preporučuje se za situacije pod napadom, ili za situacije s izrazito upornim neželjenim prometom."
  Active IPv4 signature files: "Aktivne IPv4 datoteke potpisa"
  Active IPv6 signature files: "Aktivne IPv6 datoteke potpisa"
  Active configuration file: "Aktivna konfiguracijska datoteka:"
@@ -557,6 +569,8 @@ label:
  Bandwidth: "Korištena propusnost: %s – Dostupna propusnost: %s"
  Branch latest stable: "Najnovija stabilna grana:"
  CAPTCHA attempts: "Pokušaji CAPTCHA-e"
+ CIDRAM disk usage: "CIDRAM-ovo korištenje diska:"
+ CIDRAM version used: "Verzija CIDRAM-a koja se koristi:"
  Cache data and temporary files: "Podaci predmemorije i privremene datoteke"
  Characters left: "Preostali znakovi"
  Checkbox: "Potvrdni okvir"
@@ -632,8 +646,12 @@ label:
  Range tools: "Alati za raspon"
  Remember: "Zapamti"
  SAPI used: "SAPI koristi:"
+ Safety mechanisms: "Sigurnosni mehanizmi"
+ Sanity check: "Provjera zdravog razuma:"
+ Search Engine: "Tražilica"
  See also: "Vidi također:"
  Selected log file doesn_t exist: "Odabrana datoteka dnevnika ne postoji!"
+ Show: "Prikaži"
  Simple: "Jednostavan"
  Start date: "Datum početka"
  Starting from %s: "Počevši od "%s"."
@@ -649,6 +667,10 @@ label:
  Total: "Ukupno"
  Your IP: "Vaša IP adresa:"
  Your UA: "Vaš korisnički agent:"
+ expire_bad: "Od trenutka stvaranja, količina vremena koju loši podaci koje ovaj modul pohranjuje u predmemoriju mogu živjeti prije isteka roka trajanja."
+ expire_good: "Od trenutka stvaranja, količina vremena koju dobri podaci koje ovaj modul pohranjuje u predmemoriju mogu živjeti prije isteka roka trajanja."
+ lookup_strategy: "Za koje zahtjeve treba izvršiti pretrage?"
+ options: "Opcije koje će se izvršiti nakon aktiviranja potpisa ili blokiranja događaja od strane modula."
  results: "Rezultati (%s dana – %s odbijena – %s prihvaćeno – %s spojena – %s vraćena):"
  rl_requests: "Poslani zahtjevi: %s – Dostupni zahtjevi: %s"
  rl_when: "Najnoviji zapis: %s (Istječe: %s).<br />Najstariji zapis: %s (Istječe: %s)."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bosnian language data for the front-end (last modified: 2025.05.31).
+# This file: Bosnian language data for the front-end (last modified: 2025.06.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -132,7 +132,7 @@ checkbox:
 config:
  abuseipdb: "Konfiguracija za AbuseIPDB modul."
  abuseipdb_api_key: &EnterAPIKey "Ovdje unesite svoj API ključ."
- abuseipdb_build_profiles_from_usage_type: "Izgraditi profile koristeći tip upotrebe koji vraća API? False/Lažno = Ne. True/Istinito = Da. Zadano = True."
+ abuseipdb_build_profiles_from_usage_type: "Izgraditi profile koristeći vrste upotrebe koji vraća API? False/Lažno = Ne. True/Istinito = Da. Zadano = True."
  abuseipdb_max_age_in_days: "Maksimalna starost u danima za koje će se izvještaji uzeti u obzir prilikom vršenja pretraživanja (mora biti broj između 1 i 365). Zadano = 365."
  abuseipdb_max_cs_for_captcha: "Maksimalni rezultat pouzdanosti dozvoljen za uručenje CAPTCHA (mora biti broj između 0 i 100). Zadano = 10."
  abuseipdb_minimum_confidence_score: "Minimalni rezultat pouzdanosti potreban da bi CIDRAM blokirao IP adresu (mora biti broj između 0 i 100). Zadano = 50."
@@ -199,7 +199,7 @@ config:
  general_fields: "Kontrole za polja tokom događaja blokiranja (kada je zahtjev blokiran)."
  general_force_hostname_lookup: "Prisiliti traženje imena hosta? True/Istinito = Da; False/Lažno = Ne [Zadano]. Pronalaženja imena hosta se obično izvode po potrebi, ali mogu biti prisiljena za sve zahtjeve. To može biti korisno kao sredstvo za pružanje detaljnijih informacija u datotekama evidencije, ali može imati i blagi negativan učinak na performanse."
  general_http_response_header_code: "Koju HTTP statusnu poruku CIDRAM treba poslati kada blokira zahtjeve?"
- general_ipaddr: "Gdje pronaći IP adresu zahtjeva za povezivanje? (Korisno za usluge kao što je Cloudflare i slično). Zadano = REMOTE_ADDR. UPOZORENJE: Promijenite ovo samo ako znate šta radite!"
+ general_ipaddr: "Gdje pronaći IP adresu zahtjeva za povezivanje? (Korisno za usluge kao što je Cloudflare). Zadano = REMOTE_ADDR. UPOZORENJE: Promijenite ovo samo ako znate šta radite!"
  general_lang: "Odredite podrazumevani jezik za CIDRAM."
  general_lang_override: "Lokalizirati prema HTTP_ACCEPT_LANGUAGE kad god je to moguće? True/Istinito = Da [Zadano]; False/Lažno = Ne."
  general_numbers: "Kako želite da se brojevi prikazuju? Odaberite primjer koji vam se čini najispravnijim."
@@ -547,6 +547,18 @@ label:
  %s signature:
   - "%s potpis"
   - "%s potpisa"
+ 200 OK: "200 OK\nNajmanje robustan, ali najprilagođeniji korisniku. Automatizirani zahtjevi će najvjerovatnije protumačiti ovaj odgovor kao indikaciju da je zahtjev bio uspješan."
+ 301 Moved Permanently: "301 Moved Permanently (Trajno premješteno)\nUpućuje klijenta da je preusmjeravanje TRAJNO i da metoda zahtjeva korištena za preusmjeravanje MOŽE biti drugačija od metode zahtjeva korištene za početni zahtjev."
+ 302 Found: "302 Found (Pronađeno)\nUpućuje klijenta da je preusmjeravanje PRIVREMENO i da metoda zahtjeva korištena za preusmjeravanje MOŽE biti drugačija od metode zahtjeva korištene za početni zahtjev."
+ 307 Temporary Redirect: "307 Temporary Redirect (Privremeno preusmjeravanje)\nUpućuje klijenta da je preusmjeravanje PRIVREMENO i da metoda zahtjeva korištena za preusmjeravanje NE može razlikovati od metode zahtjeva korištene za početni zahtjev."
+ 308 Permanent Redirect: "308 Permanent Redirect (Trajno preusmjeravanje)\nUpućuje klijenta da je preusmjeravanje TRAJNO i da metoda zahtjeva korištena za preusmjeravanje NE može razlikovati od metode zahtjeva korištene za početni zahtjev."
+ 403 Forbidden: "403 Forbidden (Zabranjeno)\nRobusniji, ali manje prilagođen korisniku. Preporučuje se za većinu općih okolnosti."
+ 409 Conflict: "409 Conflict (Sukob)\nPreporučuje se za sukobe resursa (npr., sukobi spajanja, sukobi pristupa datotekama, itd). Ne preporučuje se u drugim kontekstima."
+ 410 Gone: "410 Gone (Nestalo)\nMože uzrokovati probleme prilikom rješavanja lažno pozitivnih, jer će neki preglednici keširati ovu statusnu poruku i neće slati sljedeće zahtjeve, čak ni nakon što su deblokirani. Može biti najpoželjnije u nekim kontekstima, za određene vrste prometa."
+ 418 I_m a teapot: "418 I'm a teapot (Ja sam čajnik)\nReferencira prvoaprilsku šalu ({{Links.RFC2324}}). Vrlo je malo vjerovatno da će ga razumjeti bilo koji klijent, bot, preglednik, ili neko drugi. Obezbijeđeno za zabavu i praktičnost, ali se generalno ne preporučuje."
+ 429 Too Many Requests: "429 Too Many Requests (Previše zahtjeva)\nPreporučuje se za ograničavanje brzine, prilikom suočavanja s DDoS napadima, i za sprječavanje poplave. Ne preporučuje se u drugim kontekstima."
+ 451 Unavailable For Legal Reasons: "451 Unavailable For Legal Reasons (Nije dostupno iz pravnih razloga)\nPreporučuje se prilikom blokiranja prvenstveno iz pravnih razloga. Ne preporučuje se u drugim kontekstima."
+ 503 Service Unavailable: "503 Service Unavailable (Usluga nije dostupna)\nNajrobustniji, ali najmanje prilagođen korisniku. Preporučuje se kada ste pod napadom, ili kada se suočavate s izuzetno upornim neželjenim prometom."
  Active IPv4 signature files: "Aktivne IPv4 datoteke potpisa"
  Active IPv6 signature files: "Aktivne IPv6 datoteke potpisa"
  Active configuration file: "Aktivna konfiguracijska datoteka:"
@@ -559,6 +571,8 @@ label:
  Bandwidth: "Korišteni propusni opseg: %s – Dostupni propusni opseg: %s"
  Branch latest stable: "Najnovija stabilna grana:"
  CAPTCHA attempts: "Pokušaji CAPTCHA-e"
+ CIDRAM disk usage: "CIDRAM-ova upotreba diska:"
+ CIDRAM version used: "Verzija CIDRAM-a koja se koristi:"
  Cache data and temporary files: "Podaci keša i privremene datoteke"
  Characters left: "Preostali znakovi"
  Checkbox: "Polje za potvrdu"
@@ -634,8 +648,12 @@ label:
  Range tools: "Alati za raspon"
  Remember: "Zapamti"
  SAPI used: "SAPI koristi:"
+ Safety mechanisms: "Sigurnosni mehanizmi"
+ Sanity check: "Provjera zdravog razuma:"
+ Search Engine: "Tražilica"
  See also: "Vidi također:"
  Selected log file doesn_t exist: "Odabrana datoteka dnevnika ne postoji!"
+ Show: "Prikaži"
  Simple: "Jednostavno"
  Start date: "Datum početka"
  Starting from %s: "Počevši od "%s"."
@@ -651,6 +669,10 @@ label:
  Total: "Ukupno"
  Your IP: "Vaša IP adresa:"
  Your UA: "Vaš korisnički agent:"
+ expire_bad: "Od trenutka kreiranja, vrijeme koje loši podaci koje ovaj modul kešira mogu živjeti prije isteka roka trajanja."
+ expire_good: "Od trenutka kreiranja, vrijeme koje dobri podaci koje ovaj modul kešira mogu živjeti prije isteka roka trajanja."
+ lookup_strategy: "Za koje zahtjeve treba izvršiti pretrage?"
+ options: "Opcije koje treba izvršiti nakon aktiviranja potpisa ili blokiranja događaja od strane modula."
  results: "Rezultati (%s data – %s odbijena – %s prihvaćeno – %s spojena – %s vraćena):"
  rl_requests: "Poslani zahtjevi: %s – Dostupni zahtjevi: %s"
  rl_when: "Najnoviji zapis: %s (Ističe: %s).<br />Najstariji zapis: %s (Ističe: %s)."

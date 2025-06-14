@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2025.05.20).
+ * This file: Front-end handler (last modified: 2025.06.14).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -777,7 +777,7 @@ if ($CIDRAM['FE']['UserState'] !== 1 && $CIDRAM['FE']['CronMode'] === '') {
     /** Build repository backup locations information. */
     $CIDRAM['FE']['BackupLocations'] = implode(' | ', [
         '<a href="https://bitbucket.org/Maikuolan/cidram" hreflang="en-US" target="_blank" rel="noopener external">CIDRAM@Bitbucket</a>',
-        '<a href="https://sourceforge.net/projects/cidram/" hreflang="en-US" target="_blank" rel="noopener external">CIDRAM@SourceForge</a>'
+        '<a href="https://codeberg.org/Maikuolan/CIDRAM" hreflang="en-US" target="_blank" rel="noopener external">CIDRAM@Codeberg</a>'
     ]);
 
     /** Extension availability. */

@@ -426,4 +426,5 @@
 #### Other changes.
 - [2025.05.20]: A11y patch.
 - [2025.05.31]: Added hinting for the rate limiting configuration category (#327).
+- [2025.06.14]: Created a repository backup at Codeberg.
 - *Plus all the regular signature updates.*

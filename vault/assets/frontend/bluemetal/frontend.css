@@ -227,3 +227,12 @@ input[disabled],input[disabled]+label{cursor:not-allowed}
 .clipMar{display:block;margin:16px}
 .inlineBlock{display:inline-block}
 .capitalize{text-transform:capitalize}
+.origin{font-size:calc((9px * {magnification}) + .03vw);background:#00f;color:#fff}
+.origin.us{background:linear-gradient(to right,#f00 30%,#00f 70%);color:#fff}
+.origin.de{background:linear-gradient(#000 30%,#f00 70%);color:#ff0}
+.origin.cn{background:#f00;color:#ff0}
+.origin.nl{background:linear-gradient(#f00 30%,#00f 70%);color:#fff}
+.origin.fr{background:linear-gradient(to right,#00f 30%,#f00 70%);color:#fff}
+.origin.jp{background:#fff;color:#f00}
+.origin.in{background:linear-gradient(#f80 30%,#080 70%);color:#fff}
+.origin.pk{background:#060;color:#fff}

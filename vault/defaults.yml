@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2025.04.27).
+# This file: Defaults file (last modified: 2025.06.14).
 ##/
 
 Config Defaults:
@@ -551,9 +551,10 @@ Config Defaults:
    type: "checkbox"
    default: ""
    choices:
-    GitHub: "GitHub"
-    BitBucket: "BitBucket"
-    GoogleDNS: "GoogleDNS"
+    GitHub: "<span class="origin us">US</span> GitHub"
+    BitBucket: "<span class="origin us">US</span> BitBucket"
+    Codeberg: "<span class="origin de">DE</span> Codeberg"
+    GoogleDNS: "<span class="origin us">US</span> GoogleDNS"
   default_timeout:
    type: "int"
    default: 12
@@ -1331,6 +1332,7 @@ Links:
   js: "<a href="https://github.com/chartjs/Chart.js" dir="ltr" hreflang="en-US" rel="noopener noreferrer external">Chart.js</a>"
  CIDRAM:
   Bitbucket: "<a href="https://bitbucket.org/Maikuolan/cidram" dir="ltr" hreflang="en" rel="noopener noreferrer external">bitbucket.org/Maikuolan/cidram</a>"
+  Codeberg: "<a href="https://codeberg.org/Maikuolan/CIDRAM" dir="ltr" hreflang="en" rel="noopener noreferrer external">codeberg.org/Maikuolan/CIDRAM</a>"
   Extras: "<a href="https://github.com/CIDRAM/CIDRAM-Extras" dir="ltr" hreflang="en" rel="noopener noreferrer external">github.com/CIDRAM/CIDRAM-Extras</a>"
   Issues: "<a href="https://github.com/CIDRAM/CIDRAM/issues" dir="ltr" hreflang="en" rel="noopener noreferrer external">github.com/CIDRAM/CIDRAM/issues</a>"
   WordPress: "<a href="https://wordpress.org/plugins/cidram/" dir="ltr" hreflang="en" rel="noopener noreferrer external">wordpress.org/plugins/cidram</a>"

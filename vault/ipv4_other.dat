@@ -1,8 +1,8 @@
 # IPv4 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv4_other.dat
 
-# Version: 2025.161.0
-# Last modified: 2025.06.11
+# Version: 2025.165.0
+# Last modified: 2025.06.15
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -1540,14 +1540,11 @@ Tag: Applied Privacy
 # Provides anonymous proxy services. Spam, hacking, probing for
 # vulnerabilities, and other kinds of unwanted traffic detected from here.
 # Flooding from Anthill bot detected from here.
-# Stop Forum Spam (SFS) listings: 726 (AS50495), 1,142 (AS62874).
-# Updated: 2024.11.04
+# Stop Forum Spam (SFS) listings: 323 (AS50495), 501 (AS62874), 71 (AS204646).
+# Updated: 2025.06.15
 
-2.56.236.0/22 Deny Proxy
 2.58.12.0/23 Deny Proxy
-2.58.75.0/24 Deny Proxy
 5.253.240.0/22 Deny Proxy
-45.8.164.0/22 Deny Proxy
 45.10.234.0/23 Deny Proxy
 45.80.164.0/22 Deny Proxy
 45.82.222.0/24 Deny Proxy
@@ -1562,26 +1559,21 @@ Tag: Applied Privacy
 45.142.80.0/22 Deny Proxy
 45.146.28.0/22 Deny Proxy
 45.146.204.0/22 Deny Proxy
+45.147.184.0/22 Deny Proxy
+45.150.176.0/22 Deny Proxy
 45.151.160.0/22 Deny Proxy
 45.153.40.0/22 Deny Proxy
+45.159.52.0/22 Deny Proxy
 77.83.232.0/22 Deny Proxy
 83.136.221.0/24 Deny Proxy
-85.190.231.0/24 Deny Proxy
-85.190.255.0/24 Deny Proxy
-85.208.32.0/22 Deny Proxy
 91.223.99.0/24 Deny Proxy
 91.223.102.0/24 Deny Proxy
 91.223.126.0/24 Deny Proxy
 91.223.163.0/24 Deny Proxy
 91.239.64.0/24 Deny Proxy
 176.119.202.0/24 Deny Proxy
-176.126.74.0/24 Deny Proxy
-176.126.77.0/24 Deny Proxy
 185.134.220.0/22 Deny Proxy
 185.166.253.0/24 Deny Proxy
-185.201.224.0/23 Deny Proxy
-185.228.18.0/24 Deny Proxy
-185.232.6.0/23 Deny Proxy
 185.244.10.0/24 Deny Proxy
 185.247.188.0/22 Deny Proxy
 185.253.196.0/22 Deny Proxy
@@ -1598,9 +1590,8 @@ Tag: Applied Privacy
 195.234.99.0/24 Deny Proxy
 212.103.42.0/23 Deny Proxy
 Origin: DE
-204.225.218.0/24 Deny Proxy
-Origin: LT
 194.14.219.0/24 Deny Proxy
+204.225.218.0/24 Deny Proxy
 Origin: SE
 45.41.128.0/22 Deny Proxy
 45.41.140.0/22 Deny Proxy
@@ -1615,9 +1606,9 @@ Origin: SE
 64.57.136.0/21 Deny Proxy
 104.37.24.0/22 Deny Proxy
 104.37.28.0/24 Deny Proxy
-104.143.82.0/23 Deny Proxy
+104.143.82.0/24 Deny Proxy
 104.143.88.0/22 Deny Proxy
-104.143.93.0/24 Deny Proxy
+104.143.92.0/23 Deny Proxy
 104.194.192.0/21 Deny Proxy
 104.194.204.0/23 Deny Proxy
 104.194.208.0/22 Deny Proxy
@@ -1847,7 +1838,8 @@ Tag: Surfshark Ltd
 # ASN 16652 ("Riseup Networks").
 # Webmail and VPN provider. Port scans and other unusual traffic detected from
 # some specific addresses here. Listing just the affected addresses only.
-# Updated: 2024.06.09
+# Stop Forum Spam (SFS) listings: 3.
+# Updated: 2024.06.09 / Checked: 2025.06.14
 
 198.252.153.28/32 Deny Attacks
 Origin: US

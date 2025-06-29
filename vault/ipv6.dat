@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6.dat
 
-# Version: 2025.171.0
-# Last modified: 2025.06.21
+# Version: 2025.179.0
+# Last modified: 2025.06.29
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -4814,8 +4814,8 @@ Tag: Interserver, Inc
 
 
 # ASNs 59349, 131392, 135161 ("GMO-Z.com USA, INC").
-# Stop Forum Spam (SFS) listings: 18 (AS131392), 40 (AS135161).
-# Updated: 2023.06.24 / Checked: 2024.05.02
+# Stop Forum Spam (SFS) listings: 33 (AS131392), 8 (AS135161).
+# Updated: 2023.06.24 / Checked: 2025.06.29
 
 2001:df6:b800::/48 Deny Cloud
 2404:8680:1000::/36 Deny Cloud
@@ -9431,8 +9431,8 @@ Tag: BitWeb LLC
 # ASN 202425 ("IP Volume inc").
 # Brute-force, SSH, and webapp attacks, phishing, malware, and spam detected
 # from here. Also flagged by honeypots.
-# Stop Forum Spam (SFS) listings: 149.
-# Updated: 2023.05.14 / Checked: 2024.05.29
+# Stop Forum Spam (SFS) listings: 2,100.
+# Updated: 2023.05.14 / Checked: 2025.06.26
 
 2a02:6c8:8000::/33 Deny Cloud
 Origin: NL
@@ -10387,6 +10387,16 @@ Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: PS Internet Company LLC
 
 
+# ASN 63997 ("Tsukaeru.net, Web Hosting Company, Japan").
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2025.06.29
+
+2405:a280:33::/48 Deny Cloud
+Origin: SG
+Profile: Commercial;Infrastructure/Transit;Webhosting
+Tag: Tsukaeru.net
+
+
 # ASN 35277 ("LLHOST INC. SRL").
 # Port scans and spam detected from here.
 # Stop Forum Spam (SFS) listings: 4.
@@ -11123,7 +11133,8 @@ Tag: ITP-Solutions
 # ASN 34240 ("manitu GmbH").
 # German webhosting provider. Brute-force, WordPress/XMLRPC, and webapp attacks
 # detected from here.
-# Updated: 2022.06.21 / Checked: 2024.05.12
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2022.06.21 / Checked: 2025.06.26
 
 2a00:1828::/32 Deny Cloud
 Origin: DE
@@ -12355,6 +12366,21 @@ Tag: Rackdog, LLC
 Origin: GB
 Profile: Commercial
 Tag: SECUREWAN
+
+
+# ASN 205659 ("UAB code200").
+# Hosting, cloud, and IT consultancy firm. Phishing, honeypot, DDoS attacks,
+# hacking, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 522.
+# Updated: 2025.06.29
+
+2a0a:a601::/32 Deny Cloud
+Origin: AE
+2a02:e9c6::/32 Deny Cloud
+2a13:6cc6::/32 Deny Cloud
+Origin: LT
+Profile: Webhosting
+Tag: UAB code200
 
 
 # ASN 212872 ("Serverio technologijos MB").

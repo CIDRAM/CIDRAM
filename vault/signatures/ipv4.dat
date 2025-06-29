@@ -1,8 +1,8 @@
 # IPv4 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv4.dat
 
-# Version: 2025.171.0
-# Last modified: 2025.06.21
+# Version: 2025.179.0
+# Last modified: 2025.06.29
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -22085,8 +22085,8 @@ Tag: Interserver, Inc
 
 
 # ASNs 59349, 131392, 135161 ("GMO-Z.com USA, INC").
-# Stop Forum Spam (SFS) listings: 18 (AS131392), 40 (AS135161).
-# Updated: 2023.06.24 / Checked: 2024.05.02
+# Stop Forum Spam (SFS) listings: 33 (AS131392), 8 (AS135161).
+# Updated: 2025.06.29
 
 103.234.170.0/23 Deny Cloud
 118.27.128.0/19 Deny Cloud
@@ -22096,8 +22096,6 @@ Tag: Interserver, Inc
 150.95.30.0/23 Deny Cloud
 150.95.64.0/19 Deny Cloud
 150.95.96.0/21 Deny Cloud
-157.120.160.0/19 Deny Cloud
-163.44.128.0/19 Deny Cloud
 163.44.196.0/22 Deny Cloud
 163.44.201.0/24 Deny Cloud
 163.44.202.0/23 Deny Cloud
@@ -29540,11 +29538,10 @@ Tag: ICME LIMITED
 
 
 # ASN 202054 ("GRUPO SYS4NET, S.L").
-# Stop Forum Spam (SFS) listings: 3.
-# Updated: 2020.12.06 / Checked: 2024.05.12
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2025.06.29
 
-46.16.132.0/23 Deny Cloud
-46.16.134.0/24 Deny Cloud
+46.16.132.0/22 Deny Cloud
 185.14.56.0/22 Deny Cloud
 Origin: ES
 Profile: Infrastructure/Transit;Webhosting
@@ -41144,8 +41141,8 @@ Tag: BitWeb LLC
 # ASN 202425 ("IP Volume inc").
 # Brute-force, SSH, and webapp attacks, phishing, malware, and spam detected
 # from here. Also flagged by honeypots.
-# Stop Forum Spam (SFS) listings: 149.
-# Updated: 2024.03.21 / Checked: 2024.05.29
+# Stop Forum Spam (SFS) listings: 2,100.
+# Updated: 2024.03.21 / Checked: 2025.06.26
 
 80.82.64.0/22 Deny Cloud
 80.82.68.0/23 Deny Cloud
@@ -45161,11 +45158,12 @@ Tag: HOST PARA TU VIDA
 # ASN 208890 ("Republican Digital Communications Office LAN").
 # Commercial network. Brute-force, SSH, and webapp attacks, hacking, port
 # scans, and spam detected from here.
-# Updated: 2021.08.23 / Checked: 2024.05.12
+# Stop Forum Spam (SFS) listings: 5.
+# Updated: 2025.06.29
 
-176.96.230.0/24 Deny Attacks
-Origin: CZ
-193.228.162.0/24 Deny Attacks
+46.16.33.0/24 Deny Cloud
+Origin: AE
+193.228.162.0/24 Deny Cloud
 Origin: RU
 Profile: Commercial
 Tag: AS208890
@@ -45253,8 +45251,8 @@ Tag: UAB Host Baltic
 
 
 # ASN 63997 ("Tsukaeru.net, Web Hosting Company, Japan").
-# Stop Forum Spam (SFS) listings: 80.
-# Updated: 2021.09.09 / Checked: 2024.05.12
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2021.09.09 / Checked: 2025.06.29
 
 27.112.104.0/21 Deny Cloud
 45.124.136.0/22 Deny Cloud
@@ -45544,8 +45542,7 @@ Tag: INVITE Systems SRL
 
 # ASN 197712 ("10dencehispahard, S.L").
 # Spanish webhosting provider. SQLi detected from here.
-# Stop Forum Spam (SFS) listings: 4.
-# Updated: 2018.08.25 / Modified: 2021.11.10 / Checked: 2024.05.12
+# Updated: 2018.08.25 / Modified: 2021.11.10 / Checked: 2025.06.26
 
 46.16.56.0/21 Deny Cloud
 134.0.8.0/21 Deny Cloud
@@ -47794,10 +47791,10 @@ Tag: ITP-Solutions
 # ASN 34240 ("manitu GmbH").
 # German webhosting provider. Brute-force, WordPress/XMLRPC, and webapp attacks
 # detected from here.
-# Updated: 2022.06.21 / Checked: 2024.05.12
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2025.06.26
 
 2.59.84.0/22 Deny Cloud
-85.116.192.0/19 Deny Cloud
 89.238.64.0/18 Deny Cloud
 217.11.48.0/20 Deny Cloud
 Origin: DE
@@ -47993,7 +47990,7 @@ Tag: ServTech LTD
 # AdSense, or Google Fibre, only the ranges/addresses known to be affected will
 # be listed here.
 # Stop Forum Spam (SFS) listings: 235 (AS15169), 6 (AS19527), 1,553 (AS396982).
-# Updated: 2024.09.03 / Modified: 2025.06.11
+# Updated: 2024.09.03 / Modified: 2025.06.26
 
 130.211.68.189/32 Run bypasses.php
 Origin: BE
@@ -48165,6 +48162,9 @@ Origin: CY
 35.215.21.181/32 Run bypasses.php
 35.215.46.153/32 Run bypasses.php
 35.220.175.141/32 Run bypasses.php
+35.222.88.30/32 Run bypasses.php
+35.222.88.70/32 Run bypasses.php
+35.222.88.73/32 Run bypasses.php
 35.223.254.200/32 Run bypasses.php
 35.227.28.0/24 Run bypasses.php
 35.227.90.39/32 Run bypasses.php
@@ -51257,8 +51257,8 @@ Tag: InterLIR GmbH
 # ASN 205659 ("UAB code200").
 # Hosting, cloud, and IT consultancy firm. Phishing, honeypot, DDoS attacks,
 # hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 10,414.
-# Updated: 2023.07.11 / Checked: 2024.05.21
+# Stop Forum Spam (SFS) listings: 522.
+# Updated: 2023.07.11 / Checked: 2025.06.29
 
 185.218.232.0/23 Deny Cloud
 185.218.234.0/24 Deny Cloud

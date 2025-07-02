@@ -1,6 +1,6 @@
 <?php
 /**
- * Number formatter (last modified: 2025.03.19).
+ * Number formatter (last modified: 2025.07.02).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -283,8 +283,11 @@ class NumberFormatter extends CommonAbstract
      * @var array Conversion set for Japanese numerals.
      */
     private $Japanese = [
+        'UpperLimit' => 1.0E+24,
+        'LowerLimit' => 1.0E-11,
         '+0' => '',
         '-+0' => '',
+        '-1' => '一',
         '1' => '',
         '2' => '二',
         '3' => '三',
@@ -335,6 +338,8 @@ class NumberFormatter extends CommonAbstract
      */
     private $Tamil = [
         '.' => true,
+        'UpperLimit' => 1.0E+24,
+        'LowerLimit' => 1,
         '+0' => '',
         '1' => '',
         '2' => '௨',
@@ -392,6 +397,8 @@ class NumberFormatter extends CommonAbstract
      */
     private $Roman = [
         '.' => true,
+        'UpperLimit' => 3999999,
+        'LowerLimit' => 1,
         '0' => '',
         '1' => '',
         '2' => '',
@@ -462,6 +469,47 @@ class NumberFormatter extends CommonAbstract
     ];
 
     /**
+     * @var array Conversion set for Etruscan numerals.
+     */
+    private $Etruscan = [
+        '.' => true,
+        'UpperLimit' => 499,
+        'LowerLimit' => 1,
+        '0' => '',
+        '1' => '',
+        '2' => '',
+        '3' => '',
+        '4' => '',
+        '5' => '',
+        '6' => '',
+        '7' => '',
+        '8' => '',
+        '9' => '',
+        '^0+1' => '𐌠',
+        '^0+2' => '𐌠𐌠',
+        '^0+3' => '𐌠𐌠𐌠',
+        '^0+4' => '𐌠𐌠𐌠𐌠',
+        '^0+5' => '𐌡',
+        '^0+6' => '𐌡𐌠',
+        '^0+7' => '𐌡𐌠𐌠',
+        '^0+8' => '𐌡𐌠𐌠𐌠',
+        '^0+9' => '𐌡𐌠𐌠𐌠𐌠',
+        '^1+1' => '𐌢',
+        '^1+2' => '𐌢𐌢',
+        '^1+3' => '𐌢𐌢𐌢',
+        '^1+4' => '𐌢𐌢𐌢𐌢',
+        '^1+5' => '𐌣',
+        '^1+6' => '𐌣𐌢',
+        '^1+7' => '𐌣𐌢𐌢',
+        '^1+8' => '𐌣𐌢𐌢𐌢',
+        '^1+9' => '𐌣𐌢𐌢𐌢𐌢',
+        '^2+1' => '𐌟',
+        '^2+2' => '𐌟𐌟',
+        '^2+3' => '𐌟𐌟𐌟',
+        '^2+4' => '𐌟𐌟𐌟𐌟'
+    ];
+
+    /**
      * @var array Conversion set for Odia numerals.
      */
     private $Odia = [
@@ -514,6 +562,8 @@ class NumberFormatter extends CommonAbstract
      */
     private $Hebrew = [
         '.' => true,
+        'UpperLimit' => 1.0E+16,
+        'LowerLimit' => 1,
         '+0' => '',
         '1' => 'א',
         '2' => 'ב',
@@ -572,6 +622,8 @@ class NumberFormatter extends CommonAbstract
      */
     private $Armenian = [
         '.' => true,
+        'UpperLimit' => 99999999,
+        'LowerLimit' => 1,
         '0' => '',
         '1' => '',
         '2' => '',
@@ -660,6 +712,7 @@ class NumberFormatter extends CommonAbstract
      * @var array Conversion set for standard simplified Chinese numerals.
      */
     private $ChineseSimplified = [
+        'UpperLimit' => 1.0E+48,
         '+0' => '',
         '-0' => '〇',
         '=0' => '〇',
@@ -674,40 +727,62 @@ class NumberFormatter extends CommonAbstract
         '9' => '九',
         '^1+1' => '十',
         '^1' => '十',
-        'Hundreds' => '百',
+        '^2' => '百',
         '^3' => '千',
         '^4' => '万',
+        '^4+0' => '万',
         '^5' => '十',
+        '^6' => '百',
         '^7' => '千',
         '^8' => '亿',
+        '^8+0' => '亿',
         '^9' => '十',
+        '^10' => '百',
         '^11' => '千',
         '^12' => '兆',
+        '^12+0' => '兆',
         '^13' => '十',
+        '^14' => '百',
         '^15' => '千',
         '^16' => '京',
+        '^16+0' => '京',
         '^17' => '十',
+        '^18' => '百',
         '^19' => '千',
         '^20' => '垓',
+        '^20+0' => '垓',
         '^21' => '十',
+        '^22' => '百',
         '^23' => '千',
         '^24' => '秭',
+        '^24+0' => '秭',
         '^25' => '十',
+        '^26' => '百',
         '^27' => '千',
         '^28' => '穰',
+        '^28+0' => '穰',
         '^29' => '十',
+        '^30' => '百',
         '^31' => '千',
         '^32' => '沟',
+        '^32+0' => '沟',
         '^33' => '十',
+        '^34' => '百',
         '^35' => '千',
         '^36' => '涧',
+        '^36+0' => '涧',
         '^37' => '十',
+        '^38' => '百',
         '^39' => '千',
         '^40' => '正',
+        '^40+0' => '正',
         '^41' => '十',
+        '^42' => '百',
         '^43' => '千',
         '^44' => '载',
+        '^44+0' => '载',
         '^45' => '十',
+        '^46' => '百',
         '^47' => '千'
     ];
 
@@ -715,6 +790,7 @@ class NumberFormatter extends CommonAbstract
      * @var array Conversion set for standard traditional Chinese numerals.
      */
     private $ChineseTraditional = [
+        'UpperLimit' => 1.0E+48,
         '+0' => '',
         '-0' => '零',
         '=0' => '零',
@@ -729,40 +805,62 @@ class NumberFormatter extends CommonAbstract
         '9' => '九',
         '^1+1' => '十',
         '^1' => '十',
-        'Hundreds' => '百',
+        '^2' => '百',
         '^3' => '千',
         '^4' => '萬',
+        '^4+0' => '萬',
         '^5' => '十',
+        '^6' => '百',
         '^7' => '千',
         '^8' => '億',
+        '^8+0' => '億',
         '^9' => '十',
+        '^10' => '百',
         '^11' => '千',
         '^12' => '兆',
+        '^12+0' => '兆',
         '^13' => '十',
+        '^14' => '百',
         '^15' => '千',
         '^16' => '京',
+        '^16+0' => '京',
         '^17' => '十',
+        '^18' => '百',
         '^19' => '千',
         '^20' => '垓',
+        '^20+0' => '垓',
         '^21' => '十',
+        '^22' => '百',
         '^23' => '千',
         '^24' => '秭',
+        '^24+0' => '秭',
         '^25' => '十',
+        '^26' => '百',
         '^27' => '千',
         '^28' => '穰',
+        '^28+0' => '穰',
         '^29' => '十',
+        '^30' => '百',
         '^31' => '千',
         '^32' => '溝',
+        '^32+0' => '溝',
         '^33' => '十',
+        '^34' => '百',
         '^35' => '千',
         '^36' => '澗',
+        '^36+0' => '澗',
         '^37' => '十',
+        '^38' => '百',
         '^39' => '千',
         '^40' => '正',
+        '^40+0' => '正',
         '^41' => '十',
+        '^42' => '百',
         '^43' => '千',
         '^44' => '載',
+        '^44+0' => '載',
         '^45' => '十',
+        '^46' => '百',
         '^47' => '千'
     ];
 
@@ -770,6 +868,7 @@ class NumberFormatter extends CommonAbstract
      * @var array Conversion set for financial simplified Chinese numerals.
      */
     private $ChineseSimplifiedFinancial = [
+        'UpperLimit' => 1.0E+48,
         '+0' => '',
         '-0' => '零',
         '=0' => '零',
@@ -784,40 +883,62 @@ class NumberFormatter extends CommonAbstract
         '9' => '玖',
         '^1+1' => '拾',
         '^1' => '拾',
-        'Hundreds' => '佰',
+        '^2' => '佰',
         '^3' => '仟',
         '^4' => '萬',
+        '^4+0' => '萬',
         '^5' => '拾',
+        '^6' => '佰',
         '^7' => '仟',
         '^8' => '億',
+        '^8+0' => '億',
         '^9' => '拾',
+        '^10' => '佰',
         '^11' => '仟',
         '^12' => '兆',
+        '^12+0' => '兆',
         '^13' => '拾',
+        '^14' => '佰',
         '^15' => '仟',
         '^16' => '京',
+        '^16+0' => '京',
         '^17' => '拾',
+        '^18' => '佰',
         '^19' => '仟',
         '^20' => '垓',
+        '^20+0' => '垓',
         '^21' => '拾',
+        '^22' => '佰',
         '^23' => '仟',
         '^24' => '秭',
+        '^24+0' => '秭',
         '^25' => '拾',
+        '^26' => '佰',
         '^27' => '仟',
         '^28' => '穰',
+        '^28+0' => '穰',
         '^29' => '拾',
+        '^30' => '佰',
         '^31' => '仟',
         '^32' => '沟',
+        '^32+0' => '沟',
         '^33' => '拾',
+        '^34' => '佰',
         '^35' => '仟',
         '^36' => '涧',
+        '^36+0' => '涧',
         '^37' => '拾',
+        '^38' => '佰',
         '^39' => '仟',
         '^40' => '正',
+        '^40+0' => '正',
         '^41' => '拾',
+        '^42' => '佰',
         '^43' => '仟',
         '^44' => '载',
+        '^44+0' => '载',
         '^45' => '拾',
+        '^46' => '佰',
         '^47' => '仟'
     ];
 
@@ -825,6 +946,7 @@ class NumberFormatter extends CommonAbstract
      * @var array Conversion set for financial traditional Chinese numerals.
      */
     private $ChineseTraditionalFinancial = [
+        'UpperLimit' => 1.0E+48,
         '+0' => '',
         '-0' => '零',
         '=0' => '零',
@@ -839,40 +961,62 @@ class NumberFormatter extends CommonAbstract
         '9' => '玖',
         '^1+1' => '拾',
         '^1' => '拾',
-        'Hundreds' => '佰',
+        '^2' => '佰',
         '^3' => '仟',
         '^4' => '萬',
+        '^4+0' => '萬',
         '^5' => '拾',
+        '^6' => '佰',
         '^7' => '仟',
         '^8' => '億',
+        '^8+0' => '億',
         '^9' => '拾',
+        '^10' => '佰',
         '^11' => '仟',
         '^12' => '兆',
+        '^12+0' => '兆',
         '^13' => '拾',
+        '^14' => '佰',
         '^15' => '仟',
         '^16' => '京',
+        '^16+0' => '京',
         '^17' => '拾',
+        '^18' => '佰',
         '^19' => '仟',
         '^20' => '垓',
+        '^20+0' => '垓',
         '^21' => '拾',
+        '^22' => '佰',
         '^23' => '仟',
         '^24' => '秭',
+        '^24+0' => '秭',
         '^25' => '拾',
+        '^26' => '佰',
         '^27' => '仟',
         '^28' => '穰',
+        '^28+0' => '穰',
         '^29' => '拾',
+        '^30' => '佰',
         '^31' => '仟',
         '^32' => '沟',
+        '^32+0' => '沟',
         '^33' => '拾',
+        '^34' => '佰',
         '^35' => '仟',
         '^36' => '涧',
+        '^36+0' => '涧',
         '^37' => '拾',
+        '^38' => '佰',
         '^39' => '仟',
         '^40' => '正',
+        '^40+0' => '正',
         '^41' => '拾',
+        '^42' => '佰',
         '^43' => '仟',
         '^44' => '载',
+        '^44+0' => '载',
         '^45' => '拾',
+        '^46' => '佰',
         '^47' => '仟'
     ];
 
@@ -975,6 +1119,7 @@ class NumberFormatter extends CommonAbstract
      */
     private $Geez = [
         '.' => true,
+        'LowerLimit' => 1,
         '0' => '',
         'o1' => '፩',
         'o2' => '፪',
@@ -1062,7 +1207,7 @@ class NumberFormatter extends CommonAbstract
      * @var array Lookup table for unformatting a number.
      */
     private $UnformatTable = [
-        '0' => ['٠', '۰', '০', '०', '૦', '੦', '೦', '౦', '၀', '០', '๐', '໐', '꧐', '୦', '༠', '᠐', '０', '᱐', '〇', '零', 'Z', '௰'],
+        '0' => ['٠', '۰', '০', '०', '૦', '੦', '೦', '౦', '၀', '០', '๐', '໐', '꧐', '୦', '༠', '᠐', '０', '᱐', '〇', '零', 'Z'],
         '1' => ['١', '۱', '১', '१', '૧', '੧', '೧', '౧', '၁', '១', '๑', '໑', '꧑', '୧', '༡', '᠑', '１', '᱑', '一', '壹', '፩', '፲', '௧'],
         '2' => ['٢', '۲', '২', '२', '૨', '੨', '೨', '౨', '၂', '២', '๒', '໒', '꧒', '୨', '༢', '᠒', '２', '᱒', '二', '贰', '貳', '፪', '፳', '௨'],
         '3' => ['٣', '۳', '৩', '३', '૩', '੩', '೩', '౩', '၃', '៣', '๓', '໓', '꧓', '୩', '༣', '᠓', '３', '᱓', '三', '叁', '叄', '፫', '፴', '௩'],
@@ -1075,17 +1220,40 @@ class NumberFormatter extends CommonAbstract
     ];
 
     /**
+     * @var array Precheck lookup table for unformatting a number.
+     */
+    private $UnformatTablePre = [
+        'I' => ['Ⅰ', 'ⅰ', '𐌠'],
+        'II' => ['Ⅱ', 'ⅱ'],
+        'III' => ['Ⅲ', 'ⅲ'],
+        'IV' => ['Ⅳ', 'ⅳ'],
+        'V' => ['Ⅴ', 'ⅴ', '𐌡'],
+        'VI' => ['Ⅵ', 'ⅵ', 'ↅ'],
+        'VII' => ['Ⅶ', 'ⅶ'],
+        'VIII' => ['Ⅷ', 'ⅷ'],
+        'IX' => ['Ⅸ', 'ⅸ'],
+        'X' => ['Ⅹ', 'ⅹ', '𐌢'],
+        'XI' => ['Ⅺ', 'ⅺ'],
+        'XII' => ['Ⅻ', 'ⅻ'],
+        'L' => ['Ⅼ', 'ⅼ', 'ↆ', '𐌣'],
+        'C' => ['Ⅽ', 'ⅽ', 'Ↄ', 'ↄ', '𐌟'],
+        'D' => ['Ⅾ', 'ⅾ'],
+        'M' => ['Ⅿ', 'ⅿ', 'ↀ'],
+        'v' => ['ↁ'],
+        'x' => ['ↂ'],
+        'l' => ['ↇ'],
+        'c' => ['ↈ']
+    ];
+
+    /**
      * @var array Patterns for unformatting a number.
      */
     private $UnformatPattern = [
-        '~(?<!一|二|三|四|五|六|七|八|九|十|百|千)(十|百|千|拾|万|億|兆|京|垓)~' => '1\1',
-        '~^(፻|፼|十|百|千|拾|万|億|兆|京|垓|௰|௱|௲)~' => '1\1',
+        '~^(፻|፼)~' => '1\1',
         '~(፻|፼)(?!፲|፳|፴|፵|፶|፷|፸|፹|፺|\d)~' => '\1Z',
         '~(፻[\dZ]|፼[\dZ])(?!፩|፪|፫|፬|፭|፮|፯|፰|፱|\d)~' => '\1Z',
         '~(፲|፳|፴|፵|፶|፷|፸|፹|፺)(?!፩|፪|፫|፬|፭|፮|፯|፰|፱)~' => '\1Z',
-        '~(十|拾)$~' => '0',
-        '~(፻|百)$~' => '00',
-        '~千$~' => '000',
+        '~፻$~' => '00',
         '~፼$~' => '0000'
     ];
 
@@ -1119,6 +1287,177 @@ class NumberFormatter extends CommonAbstract
      * @var array Lookup table for unformatting a base-12 number.
      */
     private $UnformatTableDuoDec = ['a' => '↊', 'b' => '↋'];
+
+    /**
+     * @var array Lookup table for unformatting Roman numerals and similar systems.
+     */
+    private $UnformatRoman = [
+        'm' => 1000000,
+        'd' => 500000,
+        'c' => 100000,
+        'l' => 50000,
+        'x' => 10000,
+        'v' => 5000,
+        'M' => 1000,
+        'D' => 500,
+        'C' => 100,
+        'L' => 50,
+        'X' => 10,
+        'V' => 5,
+        'I' => 1
+    ];
+
+    /**
+     * @var array Lookup table for unformatting Chinese numerals and similar systems.
+     */
+    private $UnformatChinese = [
+        '〡' => 1,
+        '一' => 1,
+        '壹' => 1,
+        '〢' => 2,
+        '二' => 2,
+        '兩' => 2,
+        '貳' => 2,
+        '贰' => 2,
+        '〣' => 3,
+        '三' => 3,
+        '叁' => 3,
+        '叄' => 3,
+        '〤' => 4,
+        '四' => 4,
+        '肆' => 4,
+        '〥' => 5,
+        '五' => 5,
+        '伍' => 5,
+        '〦' => 6,
+        '六' => 6,
+        '陆' => 6,
+        '陸' => 6,
+        '〧' => 7,
+        '七' => 7,
+        '柒' => 7,
+        '〨' => 8,
+        '八' => 8,
+        '捌' => 8,
+        '〩' => 9,
+        '九' => 9,
+        '玖' => 9,
+        '〸' => 10,
+        '十' => 10,
+        '拾' => 10,
+        '〹' => 20,
+        '〺' => 30,
+        '佰' => 100,
+        '百' => 100,
+        '仟' => 1000,
+        '千' => 1000,
+        '万' => 10000,
+        '萬' => 10000,
+        '亿' => 100000000,
+        '億' => 100000000,
+        '兆' => 1000000000000,
+        '京' => 10000000000000000,
+        '垓' => 100000000000000000000,
+        '秭' => 1.0E+24,
+        '穰' => 1.0E+28,
+        '沟' => 1.0E+32,
+        '涧' => 1.0E+36,
+        '正' => 1.0E+40,
+        '載' => 1.0E+44
+    ];
+
+    /**
+     * @var array Lookup table for unformatting Japanese numerals and similar systems.
+     */
+    private $UnformatJapanese = [
+        '一' => 1,
+        '二' => 2,
+        '三' => 3,
+        '四' => 4,
+        '五' => 5,
+        '六' => 6,
+        '七' => 7,
+        '八' => 8,
+        '九' => 9,
+        '十' => 10,
+        '百' => 100,
+        '千' => 1000,
+        '万' => 10000,
+        '億' => 100000000,
+        '兆' => 1000000000000,
+        '京' => 10000000000000000,
+        '垓' => 100000000000000000000,
+        '分' => 0.01,
+        '厘' => 0.001,
+        '毛' => 0.0001,
+        '糸' => 0.00001,
+        '忽' => 0.000001,
+        '微' => 0.0000001,
+        '繊' => 0.00000001,
+        '沙' => 0.000000001,
+        '塵' => 0.0000000001,
+        '埃' => 0.00000000001
+    ];
+
+    /**
+     * @var array Lookup table for unformatting Tamil numerals.
+     */
+    private $UnformatTamil = [
+        '௧' => 1,
+        '௨' => 2,
+        '௩' => 3,
+        '௪' => 4,
+        '௫' => 5,
+        '௬' => 6,
+        '௭' => 7,
+        '௮' => 8,
+        '௯' => 9,
+        '௰' => 10,
+        '௱' => 100,
+        '௲' => 1000
+    ];
+
+    /**
+     * @var array Lookup table for unformatting Armenian numerals and similar systems.
+     */
+    private $UnformatArmenian = [
+        'Ա' => 1,
+        'Բ' => 2,
+        'Գ' => 3,
+        'Դ' => 4,
+        'Ե' => 5,
+        'Զ' => 6,
+        'Է' => 7,
+        'Ը' => 8,
+        'Թ' => 9,
+        'Ժ' => 10,
+        'Ի' => 20,
+        'Լ' => 30,
+        'Խ' => 40,
+        'Ծ' => 50,
+        'Կ' => 60,
+        'Հ' => 70,
+        'Ձ' => 80,
+        'Ղ' => 90,
+        'Ճ' => 100,
+        'Մ' => 200,
+        'Յ' => 300,
+        'Ն' => 400,
+        'Շ' => 500,
+        'Ո' => 600,
+        'Չ' => 700,
+        'Պ' => 800,
+        'Ջ' => 900,
+        'Ռ' => 1000,
+        'Ս' => 2000,
+        'Վ' => 3000,
+        'Տ' => 4000,
+        'Ր' => 5000,
+        'Ց' => 6000,
+        'Ւ' => 7000,
+        'Փ' => 8000,
+        'Ք' => 9000
+    ];
 
     /**
      * Constructor.
@@ -1247,6 +1586,7 @@ class NumberFormatter extends CommonAbstract
         }
         if (
             $Format[0] === 'Armenian' ||
+            $Format[0] === 'Etruscan' ||
             $Format[0] === 'Geez' ||
             $Format[0] === 'Hebrew' ||
             $Format[0] === 'Roman' ||
@@ -1333,9 +1673,11 @@ class NumberFormatter extends CommonAbstract
      */
     public function format($Number, int $Decimals = 0): string
     {
-        if ($this->Base < 2 || $this->Base > 36) {
+        /** Guard. */
+        if ($this->Base < 2 || $this->Base > 36 || $this->limits($Number)) {
             return '';
         }
+
         $CSet = $this->{$this->ConversionSet};
         $DecPos = strpos($Number, '.');
         if ($DecPos !== false) {
@@ -1459,11 +1801,164 @@ class NumberFormatter extends CommonAbstract
      */
     public function unformat(string $Number, string $DecSep = '', int $MinBase = 10): string
     {
-        /** Guard. */
+        /** Return early if supplied an empty number. */
+        if ($Number === '') {
+            return '0';
+        }
+
+        /** Guard for base_convert's minimum and maximum range. */
         if ($MinBase < 2) {
             $MinBase = 2;
         } elseif ($MinBase > 35) {
             $MinBase = 35;
+        }
+
+        /** Auto-populate SDN separator when format matches. */
+        if ($MinBase <= 12 && preg_match('~^((?:[\dEX]|↊|↋)+,)+(?:[\dEX]|↊|↋)+(;(?:[\dEX]|↊|↋)+)+$~', $Number)) {
+            $MinBase = 12;
+            $DecSep = ';';
+        }
+
+        /** Dwiggins check. */
+        if ($MinBase === 12) {
+            $Number = str_replace(['X', 'E'], ['a', 'b'], $Number);
+        }
+
+        /** Other pre-checks. */
+        if (preg_match('~\D~', $Number)) {
+            foreach ($this->UnformatTablePre as $Replacement => $Lookup) {
+                $Number = str_replace($Lookup, $Replacement, $Number);
+            }
+        }
+
+        /** Roman check. */
+        if ($MinBase === 10 && preg_match('~[MDCLXVImdclxvi]|̅~', $Number) && !preg_match('~[^MDCLXVImdclxvi̅]|\xCC(?:[^\x85]|$)|(?:^|[^\xCC])\x85~', $Number)) {
+            $Number = str_replace(['M̅', 'D̅', 'C̅', 'L̅', 'X̅', 'V̅', 'I̅'], ['m', 'd', 'c', 'l', 'x', 'v', 'M'], $Number);
+            $Len = strlen($Number);
+            $Out = 0;
+            for ($Iter = 0; $Iter < $Len; $Iter++) {
+                $Unit = $this->UnformatRoman[substr($Number, $Iter, 1)] ?? 0;
+                $Next = $this->UnformatRoman[substr($Number, $Iter + 1, 1)] ?? 0;
+                $Out = $Next !== 0 && $Unit < $Next ? $Out - $Unit : $Out + $Unit;
+            }
+            return (string)$Out;
+        }
+
+        /** Chinese check. */
+        if (
+            preg_match('~^(?:...)*(?:〡|一|壹|〢|二|兩|貳|贰|〣|三|叁|叄|〤|四|肆|〥|五|伍|〦|六|陆|陸|〧|七|柒|〨|八|捌|〩|九|玖|〸|十|拾|〹|〺|佰|百|仟|千|万|萬|亿|億|兆|京|垓|秭|穰|沟|涧|正|載)~', $Number) &&
+            !preg_match('~^(?:...)*(?:分|厘|毛|糸|忽|微|繊|沙|塵|埃)~', $Number)
+        ) {
+            $Len = strlen($Number);
+            if ($Len % 3 === 0) {
+                $Out = 0;
+                $Stack = 0;
+                $Queue = 1;
+                $DecPassed = false;
+                for ($Iter = 0; $Iter < $Len; $Iter += 3) {
+                    $Unit = substr($Number, $Iter, 3);
+                    if ($Unit === '点' || $Unit === '點') {
+                        $Out += $Stack;
+                        if ($Out >= PHP_INT_MAX) {
+                            break;
+                        }
+                        $DecPassed = true;
+                        $Out .= '.';
+                        continue;
+                    }
+                    $Unit = $this->UnformatChinese[$Unit] ?? 0;
+                    if ($DecPassed) {
+                        $Out .= $Unit;
+                        continue;
+                    }
+                    $Queue *= $Unit;
+                    if ($Queue >= 10000) {
+                        $Stack *= $Unit;
+                        $Out += $Queue + $Stack;
+                        $Queue = 1;
+                        $Stack = 0;
+                        continue;
+                    }
+                    $Next = $this->UnformatChinese[substr($Number, $Iter + 3, 3)] ?? 0;
+                    if ($Next < 10) {
+                        $Stack += $Queue;
+                        $Queue = 1;
+                    }
+                }
+                if (!$DecPassed) {
+                    $Out += $Stack;
+                }
+                return $DecPassed ? preg_replace('~\.*0*$~', '', $Out) : (string)$Out;
+            }
+        }
+
+        /** Japanese check. */
+        if (
+            preg_match('~^(?:...)*(?:一|二|三|四|五|六|七|八|九|十|百|千|万|億|兆|京|垓|分|厘|毛|糸|忽|微|繊|沙|塵|埃)~', $Number) &&
+            !preg_match('~^(?:...)*(?:〡|壹|〢|兩|貳|贰|〣|叁|叄|〤|肆|〥|伍|〦|陆|陸|〧|柒|〨|捌|〩|玖|佰|〸|拾|〹|〺|仟|萬|亿|秭|穰|沟|涧|正|載)~', $Number)
+        ) {
+            $Len = strlen($Number);
+            if ($Len % 3 === 0) {
+                $Out = 0;
+                $Queue = 1;
+                $Prev = null;
+                for ($Iter = 0; $Iter < $Len; $Iter += 3) {
+                    $Unit = $this->UnformatJapanese[substr($Number, $Iter, 3)] ?? 0;
+                    $Queue *= $Unit;
+                    if ($Prev === 0) {
+                        $Queue *= 0.1;
+                    }
+                    $Next = $this->UnformatJapanese[substr($Number, $Iter + 3, 3)] ?? 0;
+                    if (($Next >= 1 && $Next < 10) || $Next === 0 || $Queue < 1) {
+                        $Out += $Queue;
+                        $Queue = 1;
+                    }
+                    $Prev = $Unit;
+                }
+                return (string)$Out;
+            }
+        }
+
+        /** Tamil check. */
+        if (preg_match('~^(?:...)*(?:௧|௨|௩|௪|௫|௬|௭|௮|௯|௰|௱|௲)~', $Number)) {
+            $Len = strlen($Number);
+            if ($Len % 3 === 0) {
+                $Out = 0;
+                $Queue = 1;
+                for ($Iter = 0; $Iter < $Len; $Iter += 3) {
+                    $Unit = $this->UnformatTamil[substr($Number, $Iter, 3)] ?? 0;
+                    $Queue *= $Unit;
+                    $Next = $this->UnformatTamil[substr($Number, $Iter + 3, 3)] ?? 0;
+                    if ($Next < 10) {
+                        $Out += $Queue;
+                        $Queue = 1;
+                        if ($Next === 0) {
+                            break;
+                        }
+                    }
+                }
+                return (string)$Out;
+            }
+        }
+
+        /** Armenian check. */
+        if (preg_match('~^(?:..)*(?:Ա|Բ|Գ|Դ|Ե|Զ|Է|Ը|Թ|Ժ|Ի|Լ|Խ|Ծ|Կ|Հ|Ձ|Ղ|Ճ|Մ|Յ|Ն|Շ|Ո|Չ|Պ|Ջ|Ռ|Ս|Վ|Տ|Ր|Ց|Ւ|Փ|Ք)~', $Number)) {
+            $Len = strlen($Number);
+            if ($Len % 2 === 0) {
+                $Out = 0;
+                for ($Iter = 0; $Iter < $Len; $Iter += 2) {
+                    $Unit = $this->UnformatArmenian[substr($Number, $Iter, 2)] ?? 0;
+                    if ($Unit === 0) {
+                        continue;
+                    }
+                    $Next = substr($Number, $Iter + 2, 2);
+                    if ($Next === '̅') {
+                        $Unit *= 10000;
+                    }
+                    $Out += $Unit;
+                }
+                return (string)$Out;
+            }
         }
 
         /** Fractions. */
@@ -1574,6 +2069,44 @@ class NumberFormatter extends CommonAbstract
             return $Number === '' ? '0' : $Number;
         }
         return $Number === '' ? '0.' . $Fraction : $Number . '.' . $Fraction;
+    }
+
+    /**
+     * Guards for the upper and lower limits of the current conversion set.
+     *
+     * @param mixed $Number The number to check.
+     * @return bool True when outside the upper or lower limits.
+     */
+    public function limits($Number): bool
+    {
+        /** Can't check non-numeric values; Assume as okay. */
+        if (!is_numeric($Number)) {
+            return false;
+        }
+
+        $CSet = $this->{$this->ConversionSet};
+
+        /** Upper limit guard. */
+        if (isset($CSet['UpperLimit'])) {
+            if (is_float($CSet['UpperLimit']) && PHP_INT_MAX > $CSet['UpperLimit']) {
+                $CSet['UpperLimit'] = (int)$CSet['UpperLimit'];
+            }
+            if ($Number > $CSet['UpperLimit']) {
+                return true;
+            }
+        }
+
+        /** Lower limit guard. */
+        if (isset($CSet['LowerLimit'])) {
+            if (is_float($CSet['LowerLimit']) && PHP_INT_MIN < $CSet['LowerLimit']) {
+                $CSet['LowerLimit'] = (int)$CSet['LowerLimit'];
+            }
+            if ($Number < $CSet['LowerLimit']) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     /**

@@ -4,7 +4,7 @@ CIDRAM Core:
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Front-End: "Latest"
-  Common Classes Package: "^2.13"
+  Common Classes Package: "^2.14"
   l10n/core/{lang}: ">=2024.358"
   l10n/frontend/{lang}: ">=2024.183"
  Changelog: "https://github.com/CIDRAM/CIDRAM/blob/v3/Changelog.md"
@@ -68,7 +68,7 @@ CIDRAM Front-End:
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "Latest"
-  Common Classes Package: "^2.13"
+  Common Classes Package: "^2.14"
   l10n/core/{lang}: ">=2024.358"
   l10n/frontend/{lang}: ">=2025.126"
  Changelog: "https://github.com/CIDRAM/CIDRAM/blob/v3/Changelog.md"
@@ -517,23 +517,26 @@ CIDRAM Front-End:
    Checksum: "5d35838d70e05895dab8d836004ebb6092c26a412b181a082a66a2d4c3009039:32200"
 Common Classes Package:
  Name: "Common Classes Package"
- Version: "2.13.0"
+ Version: "2.14.0"
  Dependencies:
   PHP: "^7.2|^8"
- Release Notes For: ["2.11.0", "2.12.0", "2.12.1", "2.12.2", "2.12.3", "2.13.0"]
+ Release Notes For: ["2.12.1", "2.12.2", "2.12.3", "2.13.0", "2.14.0"]
  When Update Succeeds:
   - "foreach {Components.RemoteMeta.Common Classes Package.Release Notes For} as Key => Value if {Components.Meta.Common Classes Package.Version}<{Value}&&{Components.RemoteMeta.Common Classes Package.Version}>={Value} then queue message response.release_notes https://github.com/Maikuolan/Common/releases/tag/v{Value} Common Classes Package v{Value}"
  Uninstallable: false
  Files:
   Maikuolan/Common/Cache.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/Maikuolan/Common/Cache.php"
-   Checksum: "2e5b634f21786c40ea29feb1e357b2762e0f22a03100baf2abb21430910a1105:42691"
+   Checksum: "43e35b380be0c11f77052cea7740f0cb68f3ef8cebac844ac6868ce0f06b2ba6:42787"
   Maikuolan/Common/CommonAbstract.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/Maikuolan/Common/CommonAbstract.php"
-   Checksum: "0b331aa038a41ab9f62f0ab7fc15d09503e277e9d77ce3cb3d7cd2b35ce62200:2388"
+   Checksum: "4be41c9b540a4a51ec07026d628d9937fc949720b5f11e4800df656c84466afe:3495"
   Maikuolan/Common/ComplexStringHandler.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/Maikuolan/Common/ComplexStringHandler.php"
    Checksum: "823edaec75178e8c56ad0accec030cbee543e6ad1a36340a2e2a12c2e2106fbb:3872"
+  Maikuolan/Common/Context.php:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/Maikuolan/Common/Context.php"
+   Checksum: "36dfad7e0299f9aba500cc95efb05f5cd710bfe8862450f060d7e794d29bf5fb:691"
   Maikuolan/Common/DelayedIO.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/Maikuolan/Common/DelayedIO.php"
    Checksum: "c2c8f79e3d85b9c9e08b89a516724e0b9db23688ba7be5132e720faa85534d83:4900"
@@ -551,19 +554,19 @@ Common Classes Package:
    Checksum: "60ed512f00d27bc6531926fa6b2b324602ed6947a39dab345703c9d84aa67967:32439"
   Maikuolan/Common/Matrix.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/Maikuolan/Common/Matrix.php"
-   Checksum: "f61e7356587eab6c30a1d97f97b836abda7b90562e2bcb662f360e16aecd5f5e:9024"
+   Checksum: "4752dded15fd92e46c967d17716ba70bdee7f71ee6f3a6a89b889e02d50e2c40:9122"
   Maikuolan/Common/NumberFormatter.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/Maikuolan/Common/NumberFormatter.php"
-   Checksum: "d13156ddc8ac5fbef95198b3ad780ab13ca94a323dd49c9269a81cc2885cb2e5:47338"
+   Checksum: "22425bd1bee1a1421742cc795460968dc078c50fcdc413820de25cf1743aaf81:63141"
   Maikuolan/Common/Operation.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/Maikuolan/Common/Operation.php"
-   Checksum: "4805b99eb2ff8c47f9f5f8156d04caab08653117b154556983e69de9b98bd5c0:14674"
+   Checksum: "19a65cd5fda28ba612b443e2aa3f1f33ee59953872ea353f27bf8d7079a2354b:15052"
   Maikuolan/Common/Request.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/Maikuolan/Common/Request.php"
-   Checksum: "6b7798051081e9675fa5794191cd13dad52dd3d0e4cfd900a1fff7dcde5bf9ed:9089"
+   Checksum: "dfeed39285d0aa6ef7b7e6381b46c1b5b550ace067d195960d1cb42b9d6a4ba3:9618"
   Maikuolan/Common/YAML.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/Maikuolan/Common/YAML.php"
-   Checksum: "b631df2c710889778dd89b08d9dbfabb0fc9cc07f8d0dab010001eee61a2f156:52377"
+   Checksum: "325ee95c0a9ce03eb440596dc9f8d0ac14aa477a5dc976a4e63c575d2fc273d8:56888"
 IPv4:
  False Positive Risk: "Medium"
  Version: "2025.179.0"

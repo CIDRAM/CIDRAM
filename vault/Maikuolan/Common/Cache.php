@@ -1,6 +1,6 @@
 <?php
 /**
- * A simple, unified cache handler (last modified: 2024.09.20).
+ * A simple, unified cache handler (last modified: 2025.07.02).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -71,16 +71,19 @@ class Cache extends CommonAbstract
     /**
      * @var string The DSN to use for PDO connections.
      */
+    #[Context(Sensitive: true)]
     public $PDOdsn = '';
 
     /**
      * @var string The username to use for PDO connections.
      */
+    #[Context(Sensitive: true)]
     public $PDOusername = '';
 
     /**
      * @var string The password to use for PDO connections.
      */
+    #[Context(Sensitive: true)]
     public $PDOpassword = '';
 
     /**

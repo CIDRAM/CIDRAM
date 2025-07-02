@@ -1,6 +1,6 @@
 <?php
 /**
- * YAML handler (last modified: 2024.07.16).
+ * YAML handler (last modified: 2025.06.29).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -98,6 +98,21 @@ class YAML extends CommonAbstract
     private $MultiLineFolded = false;
 
     /**
+     * @var bool Whether to render as an entity.
+     */
+    private $Entity = false;
+
+    /**
+     * @var bool Whether a non-compact flow switch has occurred and the type.
+     */
+    private $FlowSwitchTo = '';
+
+    /**
+     * @var bool Whether the line is the child of a block sequence.
+     */
+    private $IsBlockSeqChild = false;
+
+    /**
      * @var string Whether to use chomping for the current multi-line block.
      */
     private $Chomp = '';
@@ -137,7 +152,7 @@ class YAML extends CommonAbstract
      */
     public function __construct(string $In = '')
     {
-        if ($In) {
+        if ($In !== '') {
             $this->process($In, $this->Data, 0, true);
         }
     }
@@ -308,6 +323,19 @@ class YAML extends CommonAbstract
                 continue;
             }
 
+            /** Final byte in current line. */
+            $FinalByte = substr($ThisLine, -1, 1);
+
+            /** Detect entities. */
+            $IsEntityEnd = $this->Entity && $SendTo !== '' && strlen($ThisLine) === $TabLen && $FinalByte === ')';
+            $this->Entity = false;
+
+            /** Detect flow switch. */
+            if ($IsFlowSwitchEnd = $FinalByte === $this->FlowSwitchTo && $SendTo !== '' && strlen($ThisLine) === $TabLen && is_string($Arr[$Key]) && strlen($Arr[$Key]) === 1) {
+                $SendTo = $Arr[$Key] . $SendTo . $ThisLine;
+            }
+            $this->FlowSwitchTo = '';
+
             /**
              * Data indentation less than the current depth should be
              * impossible. It could suggest bad data, or an error, so we'll
@@ -326,10 +354,24 @@ class YAML extends CommonAbstract
 
                 $Success = true;
                 if (!$this->MultiLine && !$this->MultiLineFolded) {
-                    if (!isset($Arr[$Key]) || !is_array($Arr[$Key])) {
+                    if (!isset($Arr[$Key])) {
                         $Arr[$Key] = [];
                     }
+                    if (!is_array($Arr[$Key])) {
+                        if ($this->IsBlockSeqChild) {
+                            $Arr[$Key] = [$Arr[$Key]];
+                        } else {
+                            $Arr[$Key] = [];
+                        }
+                    }
                     $Success = $this->process(preg_replace('~\n$~m', '', $SendTo), $Arr[$Key], $TabLen);
+                    if ($IsEntityEnd) {
+                        $Hydrate = $Arr[$Key];
+                        $Arr[$Key] = new \stdClass();
+                        foreach ($Hydrate as $EnKey => $EnValue) {
+                            $Arr[$Key]->{$EnKey} = $EnValue;
+                        }
+                    }
                 } else {
                     $this->tryStringDataTraverseByRef($SendTo);
                     if ($this->Chomp === '-') {
@@ -362,7 +404,7 @@ class YAML extends CommonAbstract
             }
 
             /** Process the current line of the data at the current depth. */
-            if (!$this->processLine($ThisLine, $ThisTab, $Key, $Value, $Arr)) {
+            if (!$IsEntityEnd && !$IsFlowSwitchEnd && !$this->processLine($ThisLine, $ThisTab, $Key, $Value, $Arr)) {
                 return false;
             }
 
@@ -375,8 +417,15 @@ class YAML extends CommonAbstract
         /** Needed for processing any remaining data. */
         if ($SendTo) {
             if (!$this->MultiLine && !$this->MultiLineFolded) {
-                if (!isset($Arr[$Key]) || !is_array($Arr[$Key])) {
+                if (!isset($Arr[$Key])) {
                     $Arr[$Key] = [];
+                }
+                if (!is_array($Arr[$Key])) {
+                    if ($this->IsBlockSeqChild) {
+                        $Arr[$Key] = [$Arr[$Key]];
+                    } else {
+                        $Arr[$Key] = [];
+                    }
                 }
                 $Success = $this->process(preg_replace('~\n$~m', '', $SendTo), $Arr[$Key], $TabLen);
             } else {
@@ -599,6 +648,7 @@ class YAML extends CommonAbstract
         /** Reset last resolved tag. */
         $this->LastResolvedTag = '';
 
+        $this->IsBlockSeqChild = false;
         if ($ThisLine === '---') {
             $Key = '---';
             $Value = null;
@@ -607,13 +657,16 @@ class YAML extends CommonAbstract
             $Key = '...';
             $Value = null;
             $Arr[$Key] = $Value;
-        } elseif (substr($ThisLine, -1) === ':' && strpos($ThisLine, ': ') === false) {
+        } elseif ((substr($ThisLine, -1) === ':' || substr($ThisLine, -1) === '(') && strpos($ThisLine, ': ') === false) {
             $Key = substr($ThisLine, $ThisTab, -1);
             $this->normaliseValue($Key, true);
             if (!isset($Arr[$Key])) {
                 $Arr[$Key] = null;
             }
             $Value = null;
+            if (substr($ThisLine, -1) === '(') {
+                $this->Entity = true;
+            }
         } elseif (substr($ThisLine, $ThisTab, 2) === '? ') {
             $Key = substr($ThisLine, $ThisTab + 2);
             $this->normaliseValue($Key, true);
@@ -621,6 +674,9 @@ class YAML extends CommonAbstract
             $Arr[$Key] = null;
         } elseif (substr($ThisLine, $ThisTab, 2) === '- ') {
             $Value = substr($ThisLine, $ThisTab + 2);
+            if (strpos($Value, ': ') !== false && substr($Value, 0, 1) !== '{' && substr($Value, -1) !== '}') {
+                $Value = '{' . $Value . '}';
+            }
             $ValueLen = strlen($Value);
             $this->normaliseValue($Value);
             if ($ValueLen > 0) {
@@ -631,18 +687,25 @@ class YAML extends CommonAbstract
                 }
             }
             $Key = $this->arrayKeyLast($Arr);
+            $this->IsBlockSeqChild = true;
         } elseif (substr($ThisLine, $ThisTab) === '-') {
             $Value = null;
             $Arr[] = $Value;
             $Key = $this->arrayKeyLast($Arr);
+            $this->IsBlockSeqChild = true;
         } elseif (($DelPos = strpos($ThisLine, ': ')) !== false) {
             $Key = substr($ThisLine, $ThisTab, $DelPos - $ThisTab);
+            $InlineEntity = false;
             if (substr($Key, 0, 1) === '[' && substr($Key, -1) === ']') {
                 $TryList = [];
                 $this->flowControl($Key, $TryList, '[', true);
                 $TryListCount = count($TryList);
             } else {
                 $TryListCount = 0;
+                if (($EnPos = strpos($Key, '(')) !== false && substr($ThisLine, -1, 1) === ')') {
+                    $InlineEntity = true;
+                    $Key = substr($Key, 0, $EnPos);
+                }
             }
             $KeyLen = strlen($Key);
             $this->normaliseValue($Key, true);
@@ -652,11 +715,11 @@ class YAML extends CommonAbstract
                 }
                 $Key = 0;
             }
-            $Value = substr($ThisLine, $ThisTab + $KeyLen + 2);
+            $Value = $InlineEntity ? '{' . substr($ThisLine, $ThisTab + $KeyLen + 1, -1) . '}' : substr($ThisLine, $ThisTab + $KeyLen + 2);
             $ValueLen = strlen($Value);
             $this->normaliseValue($Value);
             if ($ValueLen > 0) {
-                if (($this->LastResolvedTag === '!merge' || $Key === '<<') && is_array($Value)) {
+                if (($this->LastResolvedTag === '!merge' || $Key === '<<') && is_array($Value) && !$InlineEntity) {
                     $Arr += $this->merge($Value);
                 } elseif ($TryListCount !== 0 && (!is_array($Value) || count($Value) === $TryListCount)) {
                     if (is_array($Value)) {
@@ -669,17 +732,25 @@ class YAML extends CommonAbstract
                             $Arr[$Key] = $Value;
                         }
                     }
+                } elseif ($InlineEntity && is_array($Value)) {
+                    $Arr[$Key] = new \stdClass();
+                    foreach ($Value as $EnKey => $EnValue) {
+                        $Arr[$Key]->{$EnKey} = $EnValue;
+                    }
                 } else {
                     $Arr[$Key] = $Value;
+                    if ($Value === '[') {
+                        $this->FlowSwitchTo = ']';
+                    } elseif ($Value === '{') {
+                        $this->FlowSwitchTo = '}';
+                    }
                 }
             }
         } elseif (strpos($ThisLine, ':') === false && strlen($ThisLine) > 1) {
-            $Key = $ThisLine;
-            $this->normaliseValue($Key, true);
-            if (!isset($Arr[$Key])) {
-                $Arr[$Key] = null;
-            }
-            $Value = null;
+            $Value = substr($ThisLine, $ThisTab);
+            $this->normaliseValue($Value);
+            $Arr[] = $Value;
+            $Key = $this->arrayKeyLast($Arr);
         }
 
         /**
@@ -727,6 +798,13 @@ class YAML extends CommonAbstract
                 } else {
                     $Out .= ',';
                 }
+                if ($Value instanceof \stdClass) {
+                    $Out .= $this->escapeKey($Key) . '(';
+                    $Properties = get_object_vars($Value);
+                    $this->processInner($Properties, $Out, $Depth + 1);
+                    $Out .= ')';
+                    continue;
+                }
                 if (!$Sequential) {
                     $Out .= ($this->QuoteKeys ? $this->scalarToString($Key) : $this->escapeKey($Key)) . ':';
                 }
@@ -769,11 +847,25 @@ class YAML extends CommonAbstract
             if ($NullSet && !$Sequential) {
                 $Out .= $ThisDepth . '?';
                 $Value = $this->escapeKey($Key);
+            } elseif ($Value instanceof \stdClass) {
+                $Out .= $ThisDepth . $this->escapeKey($Key) . '(';
+                if ($Depth < $this->FlowRebuildDepth - 1) {
+                    $Out .= "\n";
+                }
+                $Properties = get_object_vars($Value);
+                $this->processInner($Properties, $Out, $Depth + 1);
+                $Out .= $ThisDepth . ")\n";
+                continue;
             } else {
                 $Out .= $ThisDepth . ($Sequential ? '-' : ($this->QuoteKeys ? $this->scalarToString($Key) : $this->escapeKey($Key)) . ':');
             }
             if (is_array($Value)) {
-                if ($Depth < $this->FlowRebuildDepth - 1) {
+                if ($Sequential && key($Value) !== 0 && $Depth < $this->FlowRebuildDepth - 2) {
+                    $Append = '';
+                    $this->processInner($Value, $Append, $Depth + 2);
+                    $Out .= substr($Append, $Depth + 1);
+                    continue;
+                } elseif ($Depth < $this->FlowRebuildDepth - 1) {
                     $Out .= "\n";
                 }
                 $this->processInner($Value, $Out, $Depth + 1);
@@ -1260,6 +1352,11 @@ class YAML extends CommonAbstract
              * sequences or mappings are detected.
              */
             foreach ($Split as $Try) {
+                /** Guard for trailing commas. */
+                if (trim($Try) === '') {
+                    continue;
+                }
+
                 if ($SequenceDepth < 1 && $MappingDepth < 1) {
                     if (($CPos = strpos($Try, ':')) === false) {
                         if (strlen($Key) && isset($Arr[$Key])) {
@@ -1277,7 +1374,6 @@ class YAML extends CommonAbstract
                         /** Fail immediately if the mapping entry isn't valid. */
                         return false;
                     }
-
                     $Key = trim(substr($Try, 0, $CPos));
 
                     /** Fail immediately if the key is empty. */
@@ -1404,6 +1500,7 @@ class YAML extends CommonAbstract
      * Convert various scalars to strings.
      *
      * @param mixed $In The scalar.
+     * @throws Error if provided a non-stringable object or an unsupported data type.
      * @return string The string.
      */
     private function scalarToString($In): string
@@ -1423,8 +1520,14 @@ class YAML extends CommonAbstract
         if ($In === -INF) {
             return '-.inf';
         }
-        if (is_float($In) && is_nan($In)) {
-            return '.nan';
+        if (is_float($In)) {
+            if (is_nan($In)) {
+                return '.nan';
+            }
+            return $In;
+        }
+        if (is_int($In)) {
+            return $In;
         }
         if (is_string($In)) {
             return $this->Quotes . $this->escape($In) . $this->Quotes;
@@ -1435,6 +1538,6 @@ class YAML extends CommonAbstract
             }
             throw new \Error('Non-stringable object detected while attempting to reconstruct YAML data');
         }
-        return $In;
+        throw new \Error('Unsupported data type provided to scalarToString while attempting to reconstruct YAML data');
     }
 }

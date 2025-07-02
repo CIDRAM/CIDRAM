@@ -1,6 +1,6 @@
 <?php
 /**
- * Request handler (last modified: 2024.08.02).
+ * Request handler (last modified: 2025.07.02).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -46,6 +46,17 @@ class Request extends CommonAbstract
      * @var string Whether to dump the object-level logger to a file (and where to find it).
      */
     public $ObjLoggerFile = '';
+
+    /**
+     * @var string The URL of a proxy to use if required by the instance.
+     */
+    public $Proxy = '';
+
+    /**
+     * @var string The username and password to use if required by the specified proxy URL.
+     */
+    #[Context(Sensitive: true)]
+    public $ProxyAuth = '';
 
     /**
      * @var string The default user agent to cite (implementations *should* override
@@ -177,6 +188,12 @@ class Request extends CommonAbstract
             $DebugMethod = $Method;
         } else {
             $DebugMethod = $Post ? 'POST' : 'GET';
+        }
+        if ($this->Proxy !== '') {
+            curl_setopt($Request, CURLOPT_PROXY, $this->Proxy);
+            if ($this->ProxyAuth !== '') {
+                curl_setopt($Request, CURLOPT_PROXYUSERPWD, $this->ProxyAuth);
+            }
         }
         curl_setopt($Request, CURLOPT_FOLLOWLOCATION, true);
         curl_setopt($Request, CURLOPT_MAXREDIRS, 1);

@@ -1,6 +1,6 @@
 <?php
 /**
- * Common abstract for the common classes package (last modified: 2025.04.10).
+ * Common abstract for the common classes package (last modified: 2025.07.02).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -20,7 +20,7 @@ abstract class CommonAbstract
      * @var string Common Classes Package tag/release version.
      * @link https://github.com/Maikuolan/Common/tags
      */
-    public const VERSION = '2.13.0';
+    public const VERSION = '2.14.0';
 
     /**
      * Traverse data path.
@@ -60,5 +60,35 @@ abstract class CommonAbstract
             }
         }
         return $this->dataTraverse($Data, $Path, $AllowNonScalar, $AllowMethodCalls);
+    }
+
+    /**
+     * Used to redact sensitive properties from an object's dump.
+     *
+     * @return array An object's dumped properties.
+     */
+    public function __debugInfo(): array
+    {
+        $Properties = get_object_vars($this);
+
+        /** Attributes available as of PHP >= 8. Properties returned as is for older PHP versions. */
+        if (!class_exists('\ReflectionProperty') || !method_exists('\ReflectionProperty', 'getAttributes')) {
+            return $Properties;
+        }
+
+        foreach ($Properties as $Property => &$Value) {
+            $Reflection = new \ReflectionProperty($this, $Property);
+            $Attributes = $Reflection->getAttributes();
+            foreach ($Attributes as $Attribute) {
+                $Name = $Attribute->getName();
+                if ($Name === 'Maikuolan\Common\Context') {
+                    $Arguments = $Attribute->getArguments();
+                    if (!empty($Arguments['Sensitive'])) {
+                        $Value = $Attribute->newInstance();
+                    }
+                }
+            }
+        }
+        return $Properties;
     }
 }

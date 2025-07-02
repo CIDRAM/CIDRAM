@@ -1,6 +1,6 @@
 <?php
 /**
- * Matrix handler (last modified: 2023.09.14).
+ * Matrix handler (last modified: 2025.06.24).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -60,6 +60,7 @@ class Matrix extends CommonAbstract
      * @param string|int $Description The coordinates to iterate over.
      * @param callable $Callback The callback function to iterate.
      * @param array $Data Other data optionally passed to the callback.
+     * @throws Exception if the number of indexes doesn't match the number of dimensions.
      * @return mixed The return value from the callback function (defaults to
      *      just returning the coordinate value verbatim).
      */
@@ -107,7 +108,7 @@ class Matrix extends CommonAbstract
             $Dimension++;
         }
 
-        /** Exception: Number of indexes doesn't match number of dimensions. */
+        /** Exception: The number of indexes doesn't match the number of dimensions. */
         if (($IndexCount = count($Indexes)) !== $this->Dimensions) {
             throw new \Exception(sprintf('iterateCallback() expects %d dimensions, but %d were given', $this->Dimensions, $IndexCount));
             return;

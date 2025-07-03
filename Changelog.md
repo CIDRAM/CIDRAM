@@ -427,4 +427,6 @@
 - [2025.05.20]: A11y patch.
 - [2025.05.31]: Added hinting for the rate limiting configuration category (#327).
 - [2025.06.14]: Created a repository backup at Codeberg.
+- [2025.07.02]: Common classes package update.
+- [2024~2025]: Added L10N for Bosnian, Croatian, and Serbian.
 - *Plus all the regular signature updates.*

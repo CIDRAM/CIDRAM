@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2025.07.01).
+ * This file: Optional security extras module (last modified: 2025.07.05).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -107,7 +107,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             'd(?:7|eadcode\d*|elpaths|epotcv|isagraep|kiz|oiconvs|ummyyummy/wp-signup)|' .
             'e(?:ctoplasm/str_shuffcle|e|pinyins|rin\d+)|' .
             'f(?:ddqradz|ilefun)|' .
-            'g(?:dftps|el4y|etid3-core|h[0o]st|lab-rare|zismexv)|' .
+            'g(?:awean|dftps|el4y|etid3-core|h[0o]st|lab-rare|zismexv)|' .
             'h(?:[4a]x+[0o]r|6ss|anna1337|ehehe|sfpdcd|tmlawedtest)|' .
             'i(?:\d{3,}[a-z]{2,}|cesword|d3/class-config|mages/sym|ndoxploit|optimize|oxi\d*|r7szrsouep|itsec|xr/(?:allez|wp-login))|' .
             'kvkjguw|' .
@@ -135,10 +135,11 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $LCNrURI
         ), 'Probing for webshells/backdoors')) {
             $this->Reporter->report([15, 20, 21], ['Caught probing for webshells/backdoors. Host might be compromised.'], $this->BlockInfo['IPAddr']);
-        } // 2023.08.18 mod 2025.06.29
+        } // 2023.08.18 mod 2025.07.05
 
         /** Probing for vulnerable plugins or webapps. */
         if (
+            $this->trigger(preg_match('~/civicrm/packages/openflashchart/php-ofc-library/ofc_upload_image\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'CiviCRM 3x') || // 2025.07.05
             $this->trigger(preg_match('~/dup-installer/main\.installer\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'CVE-2022-2551') || // 2024.09.05
             $this->trigger(preg_match('~/Telerik\.Web\.UI\.WebResource\.axd(?:$|[/?])~i', $LCNrURI), $Exploit = 'CVE-2019-18935') || // 2024.10.30
             $this->trigger(preg_match('~\?s=../%5c|invokefunction&function=call_user_func_array&|vars%5b0%5d=md5|vars%5b1%5d%5b%5d=hellothinkphp~', $LCNrURI), $Exploit = 'CVE-2018-20062') // 2025.07.01
@@ -148,11 +149,11 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
         /** Probing for webshells/backdoors. */
         if ($this->trigger(preg_match(
-            '~(?:^|[/?])(?:[1-9cefimnptuwx]{27}\.jsp|alfa-?rexhp\d\.p|(?:send-)?ses\.sh)(?:$|[/?])~',
+            '~(?:^|[/?])(?:[1-9cefimnptuwx]{27}\.jsp|alfa_data/alfacgiapi|alfa-?rexhp\d\.p|(?:send-)?ses\.sh)(?:$|[/?])~',
             $LCNrURI
         ), 'Probing for webshells/backdoors')) {
             $this->Reporter->report([15, 20], ['Caught probing for webshells/backdoors. Host might be compromised.'], $this->BlockInfo['IPAddr']);
-        } // 2024.02.18 mod 2025.06.26
+        } // 2024.02.18 mod 2025.07.05
 
         /** Probing for webshells/backdoors. */
         if ($this->trigger(preg_match(
@@ -357,7 +358,8 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         ), 'Compromised password used in brute-force attacks'); // 2023.10.10
 
         $this->trigger(preg_match('~/etc/passwd:null:null$~', $QueryNoSpace), 'Hack attempt'); // 2024.02.18
-        $this->trigger(preg_match('~\?phpinfo=-1$~', $QueryNoSpace), 'Hack attempt'); // 2025.05.24
+        $this->trigger(preg_match('~(?:^|&)phpinfo=-1$~', $QueryNoSpace), 'Hack attempt'); // 2025.05.24 fix 2025.07.05
+        $this->trigger(preg_match('~(?:^|&)action=p&api=p&path=p&token=$~', $QueryNoSpace), 'Hack attempt'); // 2025.07.05
 
         /** These signatures can set extended tracking options. */
         if (

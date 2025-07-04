@@ -22,7 +22,7 @@
  * William "Bill" Minozzi.
  * @link https://www.stopbadbots.com/
  *
- * This file: Bot Or Browser User Agent Module (last modified: 2024.09.07).
+ * This file: Bot Or Browser User Agent Module (last modified: 2025.07.05).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -217,7 +217,11 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         }
     }
 
-    /** Signatures for token mismatches (extends sanity checks). */
+    /**
+     * Signatures for token mismatches (extends sanity checks).
+     * For a list of which browsers do/don't support Sec-CH-UA, see:
+     * @link https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Sec-CH-UA#browser_compatibility
+     */
     if ($this->Configuration['bobuam']['sanity_check'] === 'yes') {
         $Failed = false;
         if (isset($TokenChrome, $this->Tokens['Google Chrome'])) {

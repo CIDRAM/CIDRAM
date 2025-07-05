@@ -96,7 +96,7 @@ input[type=button]:hover,input[type=submit]:hover,input[type=reset]:hover,button
 .fW{word-break:break-all}
 .exp{color:#ff0;background-color:#f00}
 .pieul{list-style-type:none;margin:0;padding:0}
-li>span.comCat:first-child{cursor:pointer}
+li>span.comCat:first-child,input[type=button],input[type=file]::file-selector-button,input[type=checkbox],input[type=checkbox]+label,input[type=radio],input[type=radio]+label,input[type=reset],input[type=submit],span>span[onclick],li>span[onclick],.navicon[onclick]{cursor:pointer}
 .comCat::before{content:"➖";display:inline-block;margin-{FE_Align_Reverse}:6px;line-height:100%;cursor:pointer}
 .caret-down::before{animation:forRotate .2s linear 1;animation-fill-mode:both}
 .caret-up::before{animation:revRotate .2s linear 1;animation-fill-mode:both}
@@ -128,7 +128,7 @@ td code~input,td code~select{vertical-align:middle}
 .trEase>div{display:inline-block;transition:inherit}
 .pipCntrs{display:inline-block;position:relative;left:0;width:12px;height:12px;transition:inherit}
 .pipCntrs>img{display:inline-block;position:absolute;left:0;transition:inherit}
-input[type=checkbox]+label,input[type=radio]+label,input[type=radio]+label,.gridboxitem>label,.gridboxitem input+strong{vertical-align:-3px;cursor:pointer}
+input[type=checkbox]+label,input[type=radio]+label,.gridboxitem>label,.gridboxitem input+strong{vertical-align:-3px;cursor:pointer}
 .gridboxitem>input[type=radio],.statGroup>input[type=radio]{position:relative;top:-1px;margin:2px}
 .statGroup{display:inline-block;height:24px}
 input[type=text]{background-repeat:no-repeat;background-position:{FE_Align_Reverse} 3px center;background-image:none}
@@ -203,7 +203,6 @@ input[type=button].reset:hover,input[type=button].reset:active{color:#f88}
 .txtOe::selection,.txtOe>*:not(.txtGn,.txtRd)::selection{color:#fec}
 .txtRd::selection,.txtRd>*:not(.txtGn,.txtOe)::selection{color:#fcc}
 .canBreak{white-space:normal;overflow-wrap:break-word;word-break:break-all}
-input[type=button],input[type=file]::file-selector-button,input[type=checkbox],input[type=checkbox]+label,input[type=radio],input[type=radio]+label,input[type=reset],input[type=submit],span>span[onclick],li>span[onclick],.navicon[onclick]{cursor:pointer}
 input[disabled],input[disabled]+label{cursor:not-allowed}
 .toolTip{cursor:help}
 .flexrow{display:flex}
@@ -243,3 +242,4 @@ input[type=file]::file-selector-button{position:relative;top:-2px}
 .origin.jp{background:#fff;color:#f00}
 .origin.in{background:linear-gradient(#f80 30%,#080 70%);color:#fff}
 .origin.pk{background:#060;color:#fff}
+input[type=checkbox],input[type=radio]{accent-color:#dadde1}

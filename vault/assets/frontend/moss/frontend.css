@@ -99,7 +99,7 @@ input[id=homebutton]{border-top-{FE_Align_Reverse}-radius:0;border-bottom-{FE_Al
 .fW{word-break:break-all}
 .exp{color:#ff0;background-color:#f00}
 .pieul{list-style-type:none;margin:0;padding:0}
-li>span.comCat:first-child{cursor:pointer}
+li>span.comCat:first-child,input[type=button],input[type=file]::file-selector-button,input[type=checkbox],input[type=checkbox]+label,input[type=radio],input[type=radio]+label,input[type=reset],input[type=submit],span>span[onclick],li>span[onclick],.navicon[onclick]{cursor:pointer}
 .comCat::before{content:"➖";display:inline-block;margin-{FE_Align_Reverse}:6px;line-height:100%;cursor:pointer}
 .caret-down::before{animation:forRotate .2s linear 1;animation-fill-mode:both}
 .caret-up::before{animation:revRotate .2s linear 1;animation-fill-mode:both}
@@ -126,7 +126,7 @@ td code~input,td code~select{vertical-align:middle}
 .trEase>div{display:inline-block;transition:inherit}
 .pipCntrs{display:inline-block;position:relative;left:0;width:12px;height:12px;transition:inherit}
 .pipCntrs>img{display:inline-block;position:absolute;left:0;transition:inherit}
-input[type=checkbox]+label,input[type=radio]+label,input[type=radio]+label,.gridboxitem>label,.gridboxitem input+strong{vertical-align:-2px;cursor:pointer}
+.gridboxitem>label,.gridboxitem input+strong{vertical-align:-2px;cursor:pointer}
 .statGroup{display:inline-block;height:18px}
 .gridHA:not(.gridVA,.gridVB,.gridboxstretch),.gridHB:not(.gridVA,.gridVB,.gridboxstretch){white-space:nowrap}
 .configMatrixLabel,.vrte,.gridbox,.gridboxcheckcell{text-align:center}
@@ -197,7 +197,6 @@ input[type=button].reset:hover,input[type=button].reset:active{color:#b77}
 .txtOe::selection,.txtOe>*:not(.txtGn,.txtRd)::selection{color:#fec}
 .txtRd::selection,.txtRd>*:not(.txtGn,.txtOe)::selection{color:#fcc}
 .canBreak{white-space:normal;overflow-wrap:break-word;word-break:break-all}
-input[type=button],input[type=file]::file-selector-button,input[type=checkbox],input[type=checkbox]+label,input[type=radio],input[type=radio]+label,input[type=reset],input[type=submit],span>span[onclick],li>span[onclick],.navicon[onclick]{cursor:pointer}
 input[disabled],input[disabled]+label{cursor:not-allowed}
 .toolTip{cursor:help}
 .flexrow{display:flex}
@@ -239,3 +238,4 @@ input[type=file]::file-selector-button{padding-{FE_Align}:20px;background-repeat
 .origin.jp{background:#fff;color:#f00}
 .origin.in{background:linear-gradient(#f80 30%,#080 70%);color:#fff}
 .origin.pk{background:#060;color:#fff}
+input[type=checkbox],input[type=radio]{accent-color:#604848}

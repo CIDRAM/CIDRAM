@@ -22,7 +22,7 @@
  * William "Bill" Minozzi.
  * @link https://www.stopbadbots.com/
  *
- * This file: Bot Or Browser User Agent Module (last modified: 2025.07.05).
+ * This file: Bot Or Browser User Agent Module (last modified: 2025.07.06).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -75,6 +75,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $this->trigger(preg_match('%(?i)(?=.*gecko\/\d*)(?=.*rv:([\d\.]*)).*firefox\/(?!\1)%', $this->BlockInfo['UA'], $Ver) && $Ver[1] !== '109.0', $Malformed[0] . ' (FF)', $Malformed[1]) ||
             $this->trigger(preg_match('%(?i)(?!.*gecko\/20100101).*rv:([\d\.]*).*gecko\/(?!\1)%', $this->BlockInfo['UA'], $Ver) && $Ver[1] !== '109.0', $Malformed[0] . ' (MZ)', $Malformed[1]) ||
             $this->trigger(preg_match('%(?:.* Chrome\/(\d*\.)).* Edg\/(?!\1)%', $this->BlockInfo['UA']), $Malformed[0] . ' (EC)', $Malformed[1]) ||
+            $this->trigger(preg_match('%(?:.* Chrome\/(\d*\.)).* OPR\/(?!\1)%', $this->BlockInfo['UA']), $Malformed[0] . ' (OC)', $Malformed[1]) ||
             $this->trigger(preg_match('%(?i)(?!.*safari\/\d{3,5}(?![\w]))(?=safari).*%', $this->BlockInfo['UA']), $Malformed[0] . ' (S)', $Malformed[1]) ||
             $this->trigger(preg_match('%(?i)(?:Microsoft Internet Explorer|ft NT (?:[12789]|[2-9]\d)\.)%', $this->BlockInfo['UA']), $Malformed[0] . ' (MS)', $Malformed[1]) ||
             $this->trigger(preg_match('%^(?=.*Windows NT \d\d\.)(?!.*Kindle\/.*)(?i)(?!.*mobile.*)(?!.*googlebot*)(?!.*android*)(?!.*edge?\/.*).*Version\/.*$%', $this->BlockInfo['UA']), $Malformed[0] . ' (WS)', $Malformed[1])
@@ -172,14 +173,21 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             preg_match('%(?:^.*(?<!googlebot\.com|google\.com|search\.msn\.com)$|^.*(?<=proxy))%', $this->CIDRAM['Hostname']) &&
             !(preg_match('%(?:msn|bing)bot|bingpreview|bing\.com%', $this->BlockInfo['UALC']) && ($this->hasProfile('Bypass flagged') || !isset($this->Stages['Tests:Enable'])))
         ) {
+            $EOLOpera = $this->Configuration['bobuam']['opera'] ?: (int)$this->CIDRAM['BOBUAM Token']['Opera'];
             $EOLChrome = $this->Configuration['bobuam']['chrome'] ?: (int)$this->CIDRAM['BOBUAM Token']['Chrome'];
             $EOLEdge = $this->Configuration['bobuam']['edge'] ?: (int)$this->CIDRAM['BOBUAM Token']['Edge'];
             $EOLFirefox = $this->Configuration['bobuam']['firefox'] ?: (int)$this->CIDRAM['BOBUAM Token']['Firefox'];
             $EOLFirefoxESR = $this->Configuration['bobuam']['firefox_esr'] ?: (int)$this->CIDRAM['BOBUAM Token']['Firefox ESR'];
             $EOLSafari = $this->Configuration['bobuam']['safari'] ?: (int)$this->CIDRAM['BOBUAM Token']['Safari'];
+            if ($Opera = preg_match('%^(?=.*Mozilla\/).*OPR\/(\d+)\.\d+.*$%', $this->BlockInfo['UA'], $rebt)) {
+                $TokenOpera = (int)$rebt[1];
+                if ($this->trigger(($TokenOpera < $EOLOpera), $Browser[0] . ' (O)', $Browser[1])) {
+                    $this->enactOptions('Opera:', $Options);
+                }
+            }
             if (
-                $Chromium = preg_match('%^(?i)(?!.*edg(?:a|e|ios)?\/)(?!.* build\/)(?!.* Favicon).*chrom(?:e|ium)\/(\d+)\.\d+.*$%', $this->BlockInfo['UA'], $rebt) ||
-                $Chromium = preg_match('%^(?i)(?=.*android)(?!.* Favicon).*chrom(?:e|ium)\/(\d+)\.\d+.*$%', $this->BlockInfo['UA'], $rebt)
+                $Chromium = preg_match('%^(?i)(?!.*edg(?:a|e|ios)?\/)(?!.* build\/)(?!.* OPR\/)(?!.* Favicon).*chrom(?:e|ium)\/(\d+)\.\d+.*$%', $this->BlockInfo['UA'], $rebt) ||
+                $Chromium = preg_match('%^(?i)(?=.*android)(?!.* OPR\/)(?!.* Favicon).*chrom(?:e|ium)\/(\d+)\.\d+.*$%', $this->BlockInfo['UA'], $rebt)
             ) {
                 $TokenChrome = (int)$rebt[1];
                 if ($this->trigger(($TokenChrome < $EOLChrome), $Browser[0] . ' (C)', $Browser[1])) {
@@ -192,19 +200,19 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
                     $this->enactOptions('Edge:', $Options);
                 }
             }
-            if (preg_match('%(?!.*SeaMonkey).*Firefox\/(\d+)\.\d+%', $this->BlockInfo['UA'], $rebt)) {
+            if ($Firefox = preg_match('%(?!.*SeaMonkey).*Firefox\/(\d+)\.\d+%', $this->BlockInfo['UA'], $rebt)) {
                 $rebt = (int)$rebt[1];
                 if ($this->trigger((($rebt < $EOLFirefox) && ($rebt !== $EOLFirefoxESR)), $Browser[0] . ' (F)', $Browser[1])) {
                     $this->enactOptions('Firefox:', $Options);
                 }
             }
-            if (preg_match('%^(?=.*Safari\/)(?!.*(?:(?:Kindle|DuckDuckGo| Build)\/|; wv\\)).*)(?i).*version\/(\d+).*$%', $this->BlockInfo['UA'], $rebt)) {
+            if ($Safari = preg_match('%^(?=.*Safari\/)(?!.*(?:(?:Kindle|DuckDuckGo| Build)\/|; wv\\)).*)(?i).*version\/(\d+).*$%', $this->BlockInfo['UA'], $rebt)) {
                 $rebt = (int)$rebt[1];
                 if ($this->trigger(($rebt < $EOLSafari), $Browser[0] . ' (S)', $Browser[1])) {
                     $this->enactOptions('Safari:', $Options);
                 }
             }
-            if ($this->trigger(!$Chromium && !$Edge && preg_match('%^(?i)(?!.*opera (?:mini\/|mobi).*)(?!.*(?:google(?:bot\/| web preview)|(android.*(?:version|samsungbrowser)\/)).*).*(?: Edge\/(?:(?:\d|1[01]|1(?:2\.(?:[02-9]|1(?:0[01346-9]|[1-9]))|3\.(?:[02-9]|1(?:0[0-46-9]|[1-9]))|4\.(?:[02-9]|1(?:4[0-24-9]|[0-35-9]))|5\.(?:0|1[0-4])))\.|[02-9])| Edg\/(?:\d|[0-6]\d)\.|msie\s?(?:\d|1[2-9]|[2-9]\d|\d{3,})\.|(?:netscape|mozilla\/(?:[0-3]\.|4\.0[24568]\s\[|4\.[578]|[7-9]\.|\d{2,}\.))|opera[\s\/](?:[0-8]\.|9\.[1-79]|bork-edition|1[01]\.|12\.(?:[02-9]|1[0-579])|1[3-9]\.|[2-9]\d\.|\d{3,}))%', $this->BlockInfo['UA']), $Browser[0] . ' (HC)', $Browser[1])) {
+            if ($this->trigger(!$Opera && !$Chromium && !$Edge && !$Firefox && !$Safari && preg_match('%^(?i)(?!.*opera (?:mini\/|mobi).*)(?!.*(?:google(?:bot\/| web preview)|(android.*(?:version|samsungbrowser)\/)).*).*(?: Edge\/(?:(?:\d|1[01]|1(?:2\.(?:[02-9]|1(?:0[01346-9]|[1-9]))|3\.(?:[02-9]|1(?:0[0-46-9]|[1-9]))|4\.(?:[02-9]|1(?:4[0-24-9]|[0-35-9]))|5\.(?:0|1[0-4])))\.|[02-9])| Edg\/(?:\d|[0-6]\d)\.|msie\s?(?:\d|1[2-9]|[2-9]\d|\d{3,})\.|(?:netscape|mozilla\/(?:[0-3]\.|4\.0[24568]\s\[|4\.[578]|[7-9]\.|\d{2,}\.))|opera[\s\/](?:[0-8]\.|9\.[1-79]|bork-edition|1[01]\.|12\.(?:[02-9]|1[0-579])|1[3-9]\.|[2-9]\d\.|\d{3,}))%', $this->BlockInfo['UA']), $Browser[0] . ' (HC)', $Browser[1])) {
                 $this->enactOptions('Other:', $Options);
             }
             if (preg_match('%^17\.%', $this->BlockInfo['IPAddr'])) {
@@ -224,6 +232,12 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
      */
     if ($this->Configuration['bobuam']['sanity_check'] === 'yes') {
         $Failed = false;
+        if (isset($TokenOpera, $this->Tokens['Opera'])) {
+            $Try = (int)$this->Tokens['Opera'];
+            if ($this->trigger($TokenOpera !== $Try, $Masquerade[0] . ' (TMOP)', $Masquerade[1])) {
+                $Failed = true;
+            }
+        }
         if (isset($TokenChrome, $this->Tokens['Google Chrome'])) {
             $Try = (int)$this->Tokens['Google Chrome'];
             if ($this->trigger($TokenChrome !== $Try, $Masquerade[0] . ' (TMGC)', $Masquerade[1])) {

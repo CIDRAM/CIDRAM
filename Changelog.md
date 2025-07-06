@@ -430,4 +430,5 @@
 - [2025.07.02]: Common classes package update.
 - [2024~2025]: Added L10N for Bosnian, Croatian, and Serbian.
 - [2025.07.05]: Aesthetic patch.
+- [2025.07.06]: Opera support added to BOBUAM.
 - *Plus all the regular signature updates.*

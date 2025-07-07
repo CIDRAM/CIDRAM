@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2025.05.20).
+ * This file: Front-end functions file (last modified: 2025.07.07).
  */
 
 /**
@@ -123,9 +123,17 @@ $CIDRAM['ZeroMin'] = function (...$Values): int {
  * Format filesize information.
  *
  * @param int $Filesize
+ * @param int $Markers Whether to include positive/negative markers.
+ *      1 = Negative only. 2 = Positive only. 3 = Both.
  * @return void
  */
-$CIDRAM['FormatFilesize'] = function (int &$Filesize) use (&$CIDRAM): void {
+$CIDRAM['FormatFilesize'] = function (int &$Filesize, int $Markers = 0) use (&$CIDRAM): void {
+    if ($Filesize < 0) {
+        $Filesize *= -1;
+        $Marker = $Markers === 1 || $Markers === 3 ? '-' : '';
+    } else {
+        $Marker = $Markers === 2 || $Markers === 3 ? '+' : '';
+    }
     $Scale = ['field_size_bytes', 'field_size_KB', 'field_size_MB', 'field_size_GB', 'field_size_TB', 'field_size_PB'];
     $Iterate = 0;
     while ($Filesize > 1024) {
@@ -135,7 +143,7 @@ $CIDRAM['FormatFilesize'] = function (int &$Filesize) use (&$CIDRAM): void {
             break;
         }
     }
-    $Filesize = $CIDRAM['NumberFormatter']->format($Filesize, ($Iterate === 0) ? 0 : 2) . ' ' . $CIDRAM['L10N']->getPlural($Filesize, $Scale[$Iterate]);
+    $Filesize = $Marker . $CIDRAM['NumberFormatter']->format($Filesize, ($Iterate === 0) ? 0 : 2) . ' ' . $CIDRAM['L10N']->getPlural($Filesize, $Scale[$Iterate]);
 };
 
 /**

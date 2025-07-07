@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2025.04.24).
+ * This file: General methods used by the front-end (last modified: 2025.07.07).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -19,10 +19,18 @@ trait FrontEndMethods
      * Format filesize information.
      *
      * @param int $Filesize
+     * @param int $Markers Whether to include positive/negative markers.
+     *      1 = Negative only. 2 = Positive only. 3 = Both.
      * @return void
      */
-    private function formatFileSize(int &$Filesize): void
+    private function formatFileSize(int &$Filesize, int $Markers = 0): void
     {
+        if ($Filesize < 0) {
+            $Filesize *= -1;
+            $Marker = $Markers === 1 || $Markers === 3 ? '-' : '';
+        } else {
+            $Marker = $Markers === 2 || $Markers === 3 ? '+' : '';
+        }
         $Scale = ['field.size.bytes', 'field.size.KB', 'field.size.MB', 'field.size.GB', 'field.size.TB', 'field.size.PB'];
         $Iterate = 0;
         while ($Filesize > 1024) {
@@ -32,7 +40,7 @@ trait FrontEndMethods
                 break;
             }
         }
-        $Filesize = $this->NumberFormatter->format($Filesize, ($Iterate === 0) ? 0 : 2) . ' ' . $this->L10N->getPlural($Filesize, $Scale[$Iterate]);
+        $Filesize = $Marker . $this->NumberFormatter->format($Filesize, ($Iterate === 0) ? 0 : 2) . ' ' . $this->L10N->getPlural($Filesize, $Scale[$Iterate]);
     }
 
     /**

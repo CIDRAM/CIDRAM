@@ -432,3 +432,8 @@
 - [2025.07.05]: Aesthetic patch.
 - [2025.07.06]: Opera support added to BOBUAM.
 - *Plus all the regular signature updates.*
+
+### v3.10.0
+
+#### Bugs fixed.
+- [2025.07.07]: The formatFileSize method wasn't accounting for negative numbers; Fixed.

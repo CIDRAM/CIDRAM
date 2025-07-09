@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2025.07.06).
+# This file: German language data for the front-end (last modified: 2025.07.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,6 +204,8 @@ config:
  general_lang: "Gibt die Standardsprache für CIDRAM an."
  general_lang_override: "Nach HTTP_ACCEPT_LANGUAGE lokalisieren wann möglich? True = Ja [Standardeinstellung]; False = Nein."
  general_numbers: "Wie willst du Nummern anzeigen? Wählen Sie das Beispiel aus, das Ihnen am besten entspricht."
+ general_request_proxy: "Wenn Sie möchten dass ausgehende Anfragen über einen Proxy gesendet werden, geben Sie diesen Proxy hier an. Wenn nicht, lassen Sie dieses Feld leer."
+ general_request_proxyauth: "Wenn Sie ausgehende Anfragen über einen Proxy senden und dieser Proxy einen Benutzernamen und ein Passwort erfordert, geben Sie diesen Benutzernamen und dieses Passwort hier an (z.B., <code>user:pass</code>). Wenn nicht, lassen Sie dieses Feld leer."
  general_sensitive: "Eine Liste von Pfaden die als vertrauliche Seiten betrachtet werden sollen. Jeder aufgelistete Pfad wird bei Bedarf mit dem rekonstruierten URI verglichen. Ein Pfad, der mit einem Schrägstrich beginnt, wird als Literal behandelt und ab der Pfadkomponente der Anforderung abgeglichen. Andernfalls wird ein Pfad, der mit einem nicht alphanumerischen Zeichen beginnt, und mit demselben Zeichen (oder demselben Zeichen plus einem optionalen „i“-Flag) endet, als regulärer Ausdruck behandelt. Jede andere Art von Pfad wird als Literal behandelt, und kann mit jedem Teil des URI abgeglichen. Ob ein Pfad als sensible Seite betrachtet wird, kann sich auf das Verhalten einiger Module auswirken, aber hat ansonsten keine Auswirkungen."
  general_silent_mode: "Anstatt die „Zugriff verweigert“ Meldung auszugeben, sollte CIDRAM leise die Zugriffe umleiten? Wenn ja, geben Sie den Speicherort an auf welchen die Zugriffe umgeleitet werden sollen. Wenn nein, diese Variable leer lassen."
  general_silent_mode_response_header_code: "Welche HTTP-Status-Message sollte CIDRAM senden, wenn blockierte Zugriffsversuche stillschweigend umgeleitet werden?"

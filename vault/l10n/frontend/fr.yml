@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2025.07.06).
+# This file: French language data for the front-end (last modified: 2025.07.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -222,6 +222,8 @@ config:
  general_lang: "Spécifiez la langue défaut pour CIDRAM."
  general_lang_override: "Localiser selon HTTP_ACCEPT_LANGUAGE autant que possible\_? True = Oui [Défaut]\_; False = Non."
  general_numbers: "Comment préférez-vous que les nombres soient affichés\_? Sélectionnez l'exemple qui vous paraît le plus approprié."
+ general_request_proxy: "Si vous souhaitez que les requêtes sortantes soient envoyés via un proxy, spécifiez ce proxy ici. Sinon, laissez ce champ vide."
+ general_request_proxyauth: "Si vous envoyez des requêtes sortantes via un proxy et si ce proxy nécessite un nom d'utilisateur et un mot de passe, spécifiez ce nom d'utilisateur et ce mot de passe ici (par exemple, <code>user:pass</code>). Sinon, laissez ce champ vide."
  general_sensitive: "Une liste de chemins à considérer comme des pages sensibles. Chaque chemin listé sera vérifié par rapport à l'URI reconstruit si nécessaire. Un chemin qui commence par une barre oblique sera traité comme un littéral, et mis en correspondance à partir du composant de chemin de la requête. Sinon, un chemin qui commence par un caractère non alphanumérique, et se termine par ce même caractère (ou ce même caractère plus un indicateur «\_i\_» facultatif) sera traité comme une expression régulière. Tout autre type de chemin sera traité comme un littéral, et peut correspondre à partir de n'importe quelle partie de l'URI. Le fait qu'un chemin soit considéré comme une page sensible peut affecter le comportement de certains modules, mais n'a aucun effet autrement."
  general_silent_mode: "Devrait CIDRAM rediriger silencieusement les tentatives d'accès bloquées à la place de l'affichage de la page «\_accès refusé\_»\_? Si oui, spécifiez l'emplacement pour rediriger les tentatives d'accès bloquées. Si non, laisser cette variable vide."
  general_silent_mode_response_header_code: "Quel message d'état HTTP devrait être envoyé par CIDRAM lors de la redirection silencieuse des tentatives d'accès bloquées\_?"

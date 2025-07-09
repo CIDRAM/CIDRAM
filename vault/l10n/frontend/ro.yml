@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Romanian language data for the front-end (last modified: 2025.07.06).
+# This file: Romanian language data for the front-end (last modified: 2025.07.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,6 +204,8 @@ config:
  general_lang: "Specificați limba implicită pentru CIDRAM."
  general_lang_override: "Localizați conform HTTP_ACCEPT_LANGUAGE ori de câte ori este posibil? True = Da [Implicit]; False = Nu."
  general_numbers: "Cum preferați să fie afișate numerele? Selectați exemplul care vi se pare cel mai corect."
+ general_request_proxy: "Dacă doriți ca solicitările de ieșire să fie trimise printr-un proxy, specificați proxy-ul respectiv aici. Dacă nu, lăsați acest câmp necompletat."
+ general_request_proxyauth: "Dacă trimit solicitări de ieșire printr-un proxy și dacă proxy-ul respectiv necesită un nume de utilizator și o parolă, specificați numele de utilizator și parola respective aici (de exemplu, <code>user:pass</code>). Dacă nu, lăsați acest câmp necompletat."
  general_sensitive: "O listă de căi de considerat pagini sensibile. Fiecare cale listată va fi verificată cu URI-ul reconstruit atunci când este necesar. O cale care începe cu o bară oblică va fi tratată ca un literal și se va potrivi cu calea solicitării. În caz contrar, o cale care începe cu un caracter non-alfanumeric și se termină cu același caracter (sau același caracter plus un indicator opțional „i”) va fi tratată ca o expresie regulată. Orice alt tip de cale va fi tratat ca un literal și se poate potrivi din orice parte a URI. Faptul că o cale este considerată o pagină sensibilă poate afecta modul în care se comportă unele module, dar nu are niciun efect altfel."
  general_silent_mode: "Ar trebui CIDRAM să redirecționeze în tăcere solicitările blocate în loc să afișeze pagina „acces refuzat”? Dacă da, specificați locația către care să redirecționați. Dacă nu, lăsați această variabilă necompletată."
  general_silent_mode_response_header_code: "Ce mesaj de stare HTTP ar trebui să trimită CIDRAM când redirecționează în tăcere solicitările?"

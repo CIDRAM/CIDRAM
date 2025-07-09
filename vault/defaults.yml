@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2025.06.14).
+# This file: Defaults file (last modified: 2025.07.08).
 ##/
 
 Config Defaults:
@@ -555,6 +555,12 @@ Config Defaults:
     BitBucket: "<span class="origin us">US</span> BitBucket"
     Codeberg: "<span class="origin de">DE</span> Codeberg"
     GoogleDNS: "<span class="origin us">US</span> GoogleDNS"
+  request_proxy:
+   type: "string"
+   default: ""
+  request_proxyauth:
+   type: "string"
+   default: ""
   default_timeout:
    type: "int"
    default: 12

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese language data for the front-end (last modified: 2025.07.06).
+# This file: Chinese language data for the front-end (last modified: 2025.07.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -220,6 +220,10 @@ config:
  general_lang: {"zh-Hans": "指定标准CIDRAM语言。", "zh-Hant": "指定標準CIDRAM語言。"}
  general_lang_override: {"zh-Hans": "尽可能根据HTTP_ACCEPT_LANGUAGE进行本地化？True（真）=进行本地化【标准】；False（假）=不要本地化。", "zh-Hant": "盡可能根據HTTP_ACCEPT_LANGUAGE進行本地化？True（真）=進行本地化【標準】；False（假）=不要本地化。"}
  general_numbers: {"zh-Hans": "您如何喜欢显示数字？​选择最适合示例。", "zh-Hant": "您如何喜歡顯示數字？​選擇最適合示例。"}
+ general_request_proxy: {"zh-Hans": "如果您希望通过代理发送出站请求，请在此处指定该代理。​如果您不想这，请将此处留空。", "zh-Hant": "如果您希望透過代理發送出站請求，請在此處指定該代理。​如果您不想這，請將此處留空。"}
+ general_request_proxyauth:
+  zh-Hans: "如果通过代理发送出站请求并且该代理需要用户名和密码，请在此处指定该用户名和密码（例如，<code>user:pass</code>）。​如果您不想这，请将此处留空。"
+  zh-Hant: "如果透過代理發送出站請求且該代理需要使用者名稱和密碼，請在此處指定該使用者名稱和密碼（例如，<code>user:pass</code>）。​如果您不想這，請將此處留空。"
  general_sensitive:
   zh-Hans: "视为敏感页面的路径列表。​需要时，将根据重建的URI检查列出的每个路径。​以正斜杠开头的路径将被视为文字，并从请求的路径部分开始匹配。​否则，以非字母数字字符开头并以相同字符（或相同字符加上可选的“i”标志）结束的路径将被视为正则表达式。​任何其他类型的路径都将被视为文字，并且可以匹配URI的任何部分。​被视为敏感页面的路径可能会影响某些模块的行为方式，但不会产生任何其他影响。"
   zh-Hant: "視為敏感頁面的路徑列表。​需要時，將根據重建的URI檢查列出的每個路徑。​以正斜杠開頭的路徑將被視為文字，並從請求的路徑部分開始匹配。​否則，以非字母數字字符開頭並以相同字符（或相同字符加上可選的『i』標誌）結束的路徑將被視為正則表達式。​任何其他類型的路徑都將被視為文字，並且可以匹配URI的任何部分。​被視為敏感頁面的路徑可能會影響某些模組的行為方式，但不會產生任何其他影響。"
@@ -287,7 +291,7 @@ config:
   zh-Hant: "將此指令設置為<code>true</code>會指示PHPMailer跳過通過SMTP發送電子郵件時通常會發生的正常身份驗證過程。​應該避免這種情況，因為跳過此過程可能會將出站電子郵件暴露給MITM攻擊，但在此過程阻止PHPMailer連接到SMTP服務器的情況下可能是必要的。"
  phpmailer_smtp_auth: {"zh-Hans": "此指令确定是否对SMTP会话进行身份验证（通常应该保持不变）。", "zh-Hant": "此指令確定是否對SMTP會話進行身份驗證（通常應該保持不變）。"}
  phpmailer_smtp_secure: {"zh-Hans": "通过SMTP发送电子邮件时使用的协议（TLS或SSL）。", "zh-Hant": "通過SMTP發送電子郵件時使用的協議（TLS或SSL）。"}
- phpmailer_username: {"zh-Hans": "通过SMTP发送电子邮件时使用的用户名。", "zh-Hant": "通過SMTP發送電子郵件時使用的用戶名。"}
+ phpmailer_username: {"zh-Hans": "通过SMTP发送电子邮件时使用的用户名。", "zh-Hant": "通過SMTP發送電子郵件時使用的使用者名稱。"}
  projecthoneypot: {"zh-Hans": "Project Honeypot模块的配置。", "zh-Hant": "Project Honeypot模組的配置。"}
  projecthoneypot_api_key: *EnterAPIKey
  projecthoneypot_max_age_in_days: {"zh-Hans": "执行查找时将考虑报告的最长天数。标准=365。", "zh-Hant": "執行查找時將考慮報告的最長天數。標準=365。"}
@@ -341,7 +345,7 @@ config:
  supplementary_cache_options_memcached_port: {"zh-Hans": "Memcached 端口值。 标准 = “11211”。", "zh-Hant": "Memcached 端口值。 默認 = 『11211』。"}
  supplementary_cache_options_pdo_dsn: {"zh-Hans": "PDO DSN值。 标准 = “mysql:dbname=cidram;host=localhost;port=3306”。", "zh-Hant": "PDO DSN值。 默認 = 『mysql:dbname=cidram;host=localhost;port=3306』。"}
  supplementary_cache_options_pdo_password: {"zh-Hans": "PDO 密码。", "zh-Hant": "PDO 密碼。"}
- supplementary_cache_options_pdo_username: {"zh-Hans": "PDO 用户名。", "zh-Hant": "PDO 用戶名。"}
+ supplementary_cache_options_pdo_username: {"zh-Hans": "PDO 用户名。", "zh-Hant": "PDO 使用者名稱。"}
  supplementary_cache_options_prefix: {"zh-Hans": "该值将附加到所有缓存条目的键的开头。 标准 = “CIDRAM_”。​当同一服务器上存在多个安装时，这对于将它们的缓存彼此分开非常有用。", "zh-Hant": "該值將附加到所有緩存條目的鍵的開頭。 默認 = 『CIDRAM_』。​當同一服務器上存在多個安裝時，這對於將它們的緩存彼此分開非常有用。"}
  supplementary_cache_options_redis_database_number: {"zh-Hans": "Redis 数据库编号。 标准 = “0”。 注意：不能在 Redis Cluster 中使用 0 以外的值。", "zh-Hant": "Redis 資料庫編號。 默認 = 『0』。 注意：不能在 Redis Cluster 中使用 0 以外的值。"}
  supplementary_cache_options_redis_host: {"zh-Hans": "Redis 主机值。 标准 = localhost。", "zh-Hant": "Redis 主機值。 默認 = localhost。"}
@@ -429,7 +433,7 @@ field:
  Update: "更新"
  Upload new file: {"zh-Hans": "上传新文件", "zh-Hant": "上傳新文件"}
  Use system default timezone: {"zh-Hans": "使用系统默认时区。", "zh-Hant": "使用系統默認時區。"}
- Username: {"zh-Hans": "用户名", "zh-Hant": "用戶名"}
+ Username: {"zh-Hans": "用户名", "zh-Hant": "使用者名稱"}
  Verified search engine and social media requests: {"zh-Hans": "经过验证的搜索引擎和社交媒体请求", "zh-Hant": "經過驗證的搜索引擎和社交媒體請求"}
  Verify all: {"zh-Hans": "验证全部", "zh-Hant": "驗證全部"}
  Verify: {"zh-Hans": "验证", "zh-Hant": "驗證"}
@@ -977,7 +981,7 @@ response:
  Account successfully deleted: {"zh-Hans": "帐户成功删除！", "zh-Hant": "帳戶成功刪除！"}
  Added %s to tracking: "在跟踪中添加了%s。"
  Already up-to-date: {"zh-Hans": "已经更新。", "zh-Hant": "已經更新。"}
- An account with that username already exists: {"zh-Hans": "一个帐户与那个用户名已经存在！", "zh-Hant": "一個帳戶與那個用戶名已經存在！"}
+ An account with that username already exists: {"zh-Hans": "一个帐户与那个用户名已经存在！", "zh-Hant": "一個帳戶與那個使用者名稱已經存在！"}
  An error occurred while attempting to uninstall the component: {"zh-Hans": "一个错误发生当尝试卸载组件。", "zh-Hant": "一個錯誤發生當嘗試卸載組件。"}
  Auxiliary rule, %s, deleted successfully: {"zh-Hans": "辅助规则“%s”删除成功。", "zh-Hant": "輔助規則『%s』刪除成功。"}
  Auxiliary rules successfully updated: {"zh-Hans": "辅助规则已成功更新。", "zh-Hant": "輔助規則已成功更新。"}
@@ -1066,8 +1070,8 @@ response:
  Tracking cleared: "已撤消跟踪。"
  Unable to determine: {"zh-Hans": "无法确定。", "zh-Hant": "無法確定。"}
  Unknown error: {"zh-Hans": "未知错误！", "zh-Hant": "未知錯誤！"}
- Username doesn_t exist: {"zh-Hans": "登录失败！​用户名不存在！", "zh-Hant": "登錄失敗！​用戶名不存在！"}
- Username field empty: {"zh-Hans": "用户名输入是空的！", "zh-Hant": "用戶名輸入是空的！"}
+ Username doesn_t exist: {"zh-Hans": "登录失败！​用户名不存在！", "zh-Hant": "登錄失敗！​使用者名稱不存在！"}
+ Username field empty: {"zh-Hans": "用户名输入是空的！", "zh-Hant": "使用者名稱輸入是空的！"}
  Verification failed: {"zh-Hans": "验证失败！组件可能已损坏。", "zh-Hant": "驗證失敗！組件可能已損壞。"}
  Verification success: {"zh-Hans": "验证成功！没有发现问题。", "zh-Hant": "驗證成功！沒有發現問題。"}
  Wrong endpoint: {"zh-Hans": "错误的端点！", "zh-Hant": "錯誤的端點！"}

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Czech language data for the front-end (last modified: 2025.07.06).
+# This file: Czech language data for the front-end (last modified: 2025.07.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,6 +204,8 @@ config:
  general_lang: "Zadejte standardní jazyk pro CIDRAM."
  general_lang_override: "Lokalizovat podle HTTP_ACCEPT_LANGUAGE, kdykoli je to možné? True (Pravdivé) = Ano [Standardní]; False (Nepravdivé) = Ne."
  general_numbers: "Jak preferujete zobrazení čísel? Vyberte příklad, který se vám zdá nejsprávnější."
+ general_request_proxy: "Pokud chcete aby byly odchozí požadavky odesílány přes proxy, zadejte zde tento proxy. Pokud ne, nechte toto pole prázdné."
+ general_request_proxyauth: "Pokud odesíláte odchozí požadavky přes proxy a tento proxy vyžaduje uživatelské jméno a heslo, zadejte zde toto uživatelské jméno a heslo (např., <code>user:pass</code>). Pokud ne, nechte toto pole prázdné."
  general_sensitive: "Seznam cest, které je třeba považovat za citlivé stránky. Každá uvedená cesta bude v případě potřeby zkontrolováno podle rekonstruovaného URI. Cesta, která začíná lomítkem, bude považováno za literál a bude porovnáváno od komponenty cesty v požadavku dále. Jinak bude cesta, která začíná nealfanumerickým znakem a končí stejným znakem (nebo stejným znakem plus volitelný příznak „i“), považováno za regulární výraz. Jakýkoli jiný druh cesty bude považován za literál a může se shodovat s jakoukoli částí URI. To zda je cesta považováno za citlivou stránku, může ovlivnit chování některých modulů, ale jinak to nemá žádný vliv."
  general_silent_mode: "Měl by CIDRAM tiše přesměrovat zablokované pokusy o přístup namísto zobrazení stránky „přístup odepřen“? Pokud ano, zadejte umístění, kam se mají pokusy o blokovaný přístup přesměrovat. Pokud ne, ponechte tuto proměnnou prázdnou."
  general_silent_mode_response_header_code: "Jakou zprávu o stavu HTTP má CIDRAM odeslat při tichém přesměrování zablokovaných pokusů o přístup?"

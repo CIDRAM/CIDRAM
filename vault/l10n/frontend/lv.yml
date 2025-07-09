@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2025.07.06).
+# This file: Latvian language data for the front-end (last modified: 2025.07.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,6 +204,8 @@ config:
  general_lang: "Norādiet CIDRAM noklusējuma valodu."
  general_lang_override: "Ja iespējams, lokalizēt saskaņā ar HTTP_ACCEPT_LANGUAGE? True (Patiess) = Jā [Noklusējuma]; False (Nepatiess) = Nē."
  general_numbers: "Kā jūs izvēlaties skaitļu parādīšanu? Atlasiet piemēru, kas jums šķiet vispareizākais."
+ general_request_proxy: "Ja vēlaties, lai izejošie pieprasījumi tiktu sūtīti izmantojot starpniekserveri, norādiet šo starpniekserveri šeit. Ja nē, atstājiet šo tukšu."
+ general_request_proxyauth: "Ja izejošie pieprasījumi tiek sūtīti izmantojot starpniekserveri, un ja šim starpniekserverim ir nepieciešams lietotājvārds un parole, norādiet šo lietotājvārdu un paroli šeit (piemēram, <code>user:pass</code>). Ja nē, atstājiet šo tukšu."
  general_sensitive: "Ceļu saraksts, kas jāuzskata par sensitīvām lapām. Katrs norādītais ceļš tiks pārbaudīts ar rekonstruēto URI, kad tas būs nepieciešams. Ceļš, kas sākas ar slīpsvītru uz priekšu, tiks uzskatīts par burtu un tiks saskaņots, sākot ar pieprasījuma ceļa komponentu. Alternatīvi, ceļš, kas sākas ar rakstzīmi, kas nav burtciparu, un beidzas ar to pašu rakstzīmi (vai to pašu rakstzīmi un neobligātu karodziņu “i”), tiks uzskatīts par regulāru izteiksmi. Jebkurš cita veida ceļš tiks uzskatīts par burtisku, un var atbilst jebkurai URI daļai. Ceļš, kas tiek uzskatīts par sensitīvu lapu, var ietekmēt dažu moduļu darbību, bet citādi tam nav nekādas ietekmes."
  general_silent_mode: "Vai CIDRAM vajadzētu klusībā novirzīt bloķētas piekļuves mēģinājumus, nevis parādīt lapu "piekļuve liegta"? Ja tā, norādiet vietu, uz kuru novirzīt bloķētas piekļuves mēģinājumus. Ja nē, atstājiet šo mainīgo tukšu."
  general_silent_mode_response_header_code: "Kurš HTTP statusa ziņojums būtu jāsūta CIDRAM, klusi novirzot bloķētās piekļuves mēģinājumus?"

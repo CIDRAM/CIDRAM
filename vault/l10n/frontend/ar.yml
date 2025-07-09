@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2025.07.06).
+# This file: Arabic language data for the front-end (last modified: 2025.07.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,6 +204,8 @@ config:
  general_lang: "تحديد اللغة الافتراضية الخاصة بـ CIDRAM."
  general_lang_override: "الترجمة وفقًا لـ HTTP_ACCEPT_LANGUAGE كلما أمكن ذلك؟ صحيح/True = نعم [افتراضي]؛ زائفة/False = لا."
  general_numbers: "كيف تفضل الأرقام ليتم عرضها؟ حدد المثال الذي يبدو أكثر صحيح لك."
+ general_request_proxy: "إذا كنت تريد إرسال الطلبات الصادرة عبر وكيل، حدد هذا الوكيل هنا. إذا لم يكن الأمر كذلك، اترك هذا فارغًا."
+ general_request_proxyauth: "إذا كنت ترسل طلبات صادرة من خلال وكيل وإذا كان هذا الوكيل يتطلب اسم مستخدم وكلمة مرور، فحدد اسم المستخدم وكلمة المرور هنا (على سبيل المثال، <code dir="ltr">user:pass</code>). إذا لم يكن الأمر كذلك، اترك هذا فارغًا."
  general_sensitive: "قائمة المسارات التي يجب اعتبارها صفحات حساسة. ستتم مقارنة كل مسار مدرج مع URI المعاد بناؤه عند الحاجة. سيتم التعامل مع المسار الذي يبدأ بشرطة مائلة للأمام على أنه حرفي، ويتم مطابقته من مكون المسار للطلب فصاعدًا. سيتم التعامل مع المسار الذي يبدأ بحرف غير أبجدي رقمي وينتهي بنفس الحرف (أو نفس الحرف بالإضافة إلى علامة اختيارية "i") كتعبير عادي. سيتم التعامل مع أي نوع آخر من المسارات على أنه حرفي، ويمكن أن يتطابق مع أي جزء من URI. قد يؤثر المسار الذي يتم اعتباره صفحة حساسة على كيفية تصرف بعض الوحدات، ولكن ليس له أي تأثير آخر."
  general_silent_mode: "يجب CIDRAM إعادة توجيه بصمت محاولات وصول مرفوض بدلا من عرض الصفحة "تم رفض الوصول"؟ اذا نعم، تحديد الموقع لإعادة توجيه محاولات وصول مرفوض. ان لم، ترك هذا الحقل فارغا."
  general_silent_mode_response_header_code: "ما رسالة حالة HTTP التي يجب على CIDRAM إرسالها عند إعادة توجيه محاولات الوصول المحظورة بصمت؟"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2025.07.06).
+# This file: Vietnamese language data for the front-end (last modified: 2025.07.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,6 +204,8 @@ config:
  general_lang: "Xác định tiếng mặc định cho CIDRAM."
  general_lang_override: "Bản địa hóa theo HTTP_ACCEPT_LANGUAGE bất cứ khi nào có thể? True = Vâng [Mặc định]; False = Không."
  general_numbers: "Làm thế nào để bạn thích số được hiển thị? Chọn ví dụ có vẻ chính xác nhất cho bạn."
+ general_request_proxy: "Nếu bạn muốn yêu cầu được gửi thông qua proxy, hãy chỉ định proxy đó tại đây. Nếu không, hãy để trống mục này."
+ general_request_proxyauth: "Nếu gửi yêu cầu thông qua proxy và nếu proxy đó yêu cầu tên người dùng và mật khẩu, hãy chỉ định tên người dùng và mật khẩu đó tại đây (ví dụ, <code>user:pass</code>). Nếu không, hãy để trống mục này."
  general_sensitive: "Một danh sách các đường dẫn được coi là các trang nhạy cảm. Mỗi đường dẫn được liệt kê sẽ, khi cần, được kiểm tra dựa trên URI được xây dựng lại. Một đường dẫn bắt đầu bằng dấu gạch chéo lên phía trước sẽ được coi là một nghĩa đen, và được so khớp từ thành phần đường dẫn của yêu cầu trở đi. Mặt khác, một đường dẫn bắt đầu bằng một ký tự không phải chữ và số, và kết thúc bằng cùng ký tự đó (hoặc cùng ký tự đó cộng với "i") sẽ được coi là biểu thức chính quy. Bất kỳ loại đường dẫn nào khác sẽ được coi là theo nghĩa đen, và có thể khớp từ bất kỳ phần nào của URI. Việc một đường dẫn có được coi là một trang nhạy cảm hay không có thể ảnh hưởng đến cách một số mô-đun hoạt động, nhưng không có bất kỳ ảnh hưởng nào khác."
  general_silent_mode: "CIDRAM nên âm thầm chuyển hướng cố gắng truy cập bị chặn thay vì hiển thị trang "Truy cập đã bị từ chối"? Nếu vâng, xác định vị trí để chuyển hướng cố gắng truy cập bị chặn để. Nếu không, để cho biến này được trống."
  general_silent_mode_response_header_code: "Những gì thông báo trạng thái HTTP mà CIDRAM nên gửi khi âm thầm chuyển hướng các nỗ lực truy cập bị chặn?"

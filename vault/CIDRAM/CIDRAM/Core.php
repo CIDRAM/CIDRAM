@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2025.06.14).
+ * This file: The CIDRAM core (last modified: 2025.07.08).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -130,7 +130,7 @@ class Core
     /**
      * @var string CIDRAM version number (SemVer).
      */
-    public $ScriptVersion = '3.9.1';
+    public $ScriptVersion = '3.10.0';
 
     /**
      * @var string CIDRAM version identifier (complete notation).
@@ -410,6 +410,8 @@ class Core
             $this->Request->Channels['Triggers'] = [];
         }
         $this->Request->Disabled = $this->Configuration['general']['disabled_channels'];
+        $this->Request->Proxy = $this->Configuration['general']['request_proxy'];
+        $this->Request->ProxyAuth = $this->Configuration['general']['request_proxyauth'];
         $this->Request->UserAgent = $this->ScriptUA;
         $this->Request->SendToOut = (defined('DEV_DEBUG_MODE') && DEV_DEBUG_MODE === true);
 

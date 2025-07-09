@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bosnian language data for the front-end (last modified: 2025.07.06).
+# This file: Bosnian language data for the front-end (last modified: 2025.07.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,6 +204,8 @@ config:
  general_lang: "Odredite podrazumevani jezik za CIDRAM."
  general_lang_override: "Lokalizirati prema HTTP_ACCEPT_LANGUAGE kad god je to moguće? True/Istinito = Da [Zadano]; False/Lažno = Ne."
  general_numbers: "Kako želite da se brojevi prikazuju? Odaberite primjer koji vam se čini najispravnijim."
+ general_request_proxy: "Ako želite da se odlazni zahtjevi šalju putem proxyja, ovdje navedite taj proxy. Ako ne, ostavite ovo prazno."
+ general_request_proxyauth: "Ako šaljete odlazne zahtjeve putem proxyja i ako taj proxy zahtijeva korisničko ime i lozinku, ovdje navedite to korisničko ime i lozinku (npr., <code>user:pass</code>). Ako ne, ostavite ovo prazno."
  general_sensitive: "Lista putanja koje treba smatrati osjetljivim stranicama. Svaka navedena putanja će biti provjerena u odnosu na rekonstruirani URI kada je to potrebno. Putanja koja počinje kosom crtom prema naprijed će se tretirati kao literal i upariti se od komponente putanje zahtjeva nadalje. U suprotnom, putanja koja počinje ne-alfanumeričkim znakom, a završava se istim znakom (ili istim znakom plus opcionom "i" zastavicom) će se tretirati kao regularni izraz. Bilo koja druga vrsta putanje će se tretirati kao literal i može se podudarati iz bilo kojeg dijela URI-ja. Da li se putanja smatra osjetljivom stranicom može utjecati na to kako se neki moduli ponašaju, ali inače nema nikakvog efekta."
  general_silent_mode: "Da li bi CIDRAM trebao tiho preusmjeriti pokušaje blokiranog pristupa umjesto da prikazuje stranicu "pristup odbijen"? Ako jeste, navedite lokaciju na koju ćete preusmjeriti pokušaje blokiranog pristupa. Ako ne, ostavite ovu varijablu praznom."
  general_silent_mode_response_header_code: "Koju HTTP statusnu poruku CIDRAM treba poslati kada tiho preusmjerava blokirane pokušaje pristupa?"

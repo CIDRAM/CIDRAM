@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Galician language data for the front-end (last modified: 2025.07.06).
+# This file: Galician language data for the front-end (last modified: 2025.07.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,6 +204,8 @@ config:
  general_lang: "Especifique o idioma predeterminado para CIDRAM."
  general_lang_override: "Localizar segundo HTTP_ACCEPT_LANGUAGE sempre que sexa posible? True/Verdadeiro = Si [Predeterminado]; False/Falso = Non."
  general_numbers: "Como prefires que se mostren os números? Selecciona o exemplo que che pareza máis correcto."
+ general_request_proxy: "Se queres que as solicitudes de saída se envíen a través dun proxy, especifica ese proxy aquí. Se non, deixa isto en branco."
+ general_request_proxyauth: "Se envías solicitudes de saída a través dun proxy e se ese proxy require un nome de usuario e un contrasinal, especifica ese nome de usuario e contrasinal aquí (por exemplo, <code>user:pass</code>). Se non, deixa isto en branco."
  general_sensitive: "Unha lista de camiños para considerar páxinas sensibles. Cada camiño listada comprobarase co URI reconstruído cando sexa necesario. Un camiño que comeza cunha barra inclinada será tratado como un literal, e corresponderá a partir do compoñente de camiño da solicitude. En caso contrario, un camiño que comeza cun carácter non alfanumérico e remata con ese mesmo carácter (ou ese mesmo carácter máis unha marca "i" opcional) tratarase como unha expresión regular. Calquera outro tipo de camiño tratarase como un literal, e pode coincidir con calquera parte do URI. Se un camiño é considerado como unha páxina sensible pode afectar o comportamento dalgúns módulos, pero non ten ningún efecto doutro xeito."
  general_silent_mode: "Debería CIDRAM redirixir silenciosamente os intentos de acceso bloqueados en lugar de mostrar a páxina "acceso denegado"? Se si, especifique a localización á que redirixir os intentos de acceso bloqueado. Se non, deixe esta variable en branco."
  general_silent_mode_response_header_code: "Que mensaxe de estado HTTP debe enviar CIDRAM cando redirecciona silenciosamente os intentos de acceso bloqueado?"

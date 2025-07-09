@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hebrew language data for the front-end (last modified: 2025.07.06).
+# This file: Hebrew language data for the front-end (last modified: 2025.07.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,6 +204,8 @@ config:
  general_lang: "ציין את השפה הסטנדרטית עבור CIDRAM."
  general_lang_override: "האם לבצע לוקליזציה לפי HTTP_ACCEPT_LANGUAGE במידת האפשר? True = כן [סטנדרטי]; False = לא."
  general_numbers: "איך אתה מעדיף שמספרים יוצגו? בחר את הדוגמה שנראית לך הנכונה ביותר."
+ general_request_proxy: "אם ברצונך שבקשות יוצאות יישלחו דרך פרוקסי, ציין את הפרוקסי הזה כאן. אם לא, השאירו את זה ריק."
+ general_request_proxyauth: "אם שולחים בקשות יוצאות דרך פרוקסי ואם פרוקסי זה דורש שם משתמש וסיסמה, ציינו את שם המשתמש והסיסמה כאן (למשל, <code>user:pass</code>). אם לא, השאירו את זה ריק."
  general_sensitive: "רשימה של נתיבים להתייחס אליהם כדפים רגישים. כל נתיב הרשום ייבדק מול ה-URI המשוחזר בעת הצורך. נתיב שמתחיל באלכסון קדימה יטופל כמחרוזת מילולי, ויתאים ממרכיב הנתיב של הבקשה ואילך. אחרת, נתיב שמתחיל בתו שאינו אלפאנומרי ומסתיים באותו תו (או אותו תו בתוספת דגל "i") יטופל כביטוי רגיל. כל סוג אחר של נתיב יטופל כמחרוזת מילולי, והוא יכול להתאים מכל חלק של ה-URI. נתיב הנחשב כדף רגיש עשוי להשפיע על אופן הפעולה של מודולים מסוימים, אך אין לו השפעה אחרת."
  general_silent_mode: "האם CIDRAM צריך לנתב מחדש בשקט ניסיונות גישה חסומים במקום להציג את הדף "גישה נדחתה"? אם כן, ציין את המיקום שאליו יש להפנות ניסיונות גישה חסומה. אם לא, השאר את המשתנה הזה ריק."
  general_silent_mode_response_header_code: "איזו הודעת מצב HTTP צריך לשלוח על CIDRAM בעת הפנייה שקטה של ניסיונות גישה חסומה?"

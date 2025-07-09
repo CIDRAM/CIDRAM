@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Catalan language data for the front-end (last modified: 2025.07.06).
+# This file: Catalan language data for the front-end (last modified: 2025.07.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,6 +204,8 @@ config:
  general_lang: "Especifiqueu l'idioma predeterminat per a CIDRAM."
  general_lang_override: "Localitzar segons HTTP_ACCEPT_LANGUAGE sempre que sigui possible? True/Cert = Sí [Predeterminat]; False/Fals = No."
  general_numbers: "Com prefereixes que es mostrin els números? Seleccioneu l'exemple que us sembli més correcte."
+ general_request_proxy: "Si voleu que les sol·licituds s'enviïn a través d'un proxy, especifiqueu aquest proxy aquí. Si no, deixeu-ho en blanc."
+ general_request_proxyauth: "Si envieu sol·licituds a través d'un proxy i aquest proxy requereix un nom d'usuari i una contrasenya, especifiqueu aquest nom d'usuari i contrasenya aquí (per exemple, <code>user:pass</code>). Si no, deixeu-ho en blanc."
  general_sensitive: "Una llista de camins a considerar com a pàgines sensibles. Cada camí llistat es comprovarà amb l'URI reconstruït quan sigui necessari. Un camí que comença amb una barra inclinada es tractarà com un literal, i es farà coincidir a partir del component del camí de la sol·licitud. En cas contrari, un camí que comença amb un caràcter no alfanumèric i acaba amb el mateix caràcter (o el mateix caràcter més un indicador "i" opcional) es tractarà com una expressió regular. Qualsevol altre tipus de camí es tractarà com a literal, i pot coincidir amb qualsevol part de l'URI. El fet que un camí es consideri una pàgina sensible pot afectar el comportament d'alguns mòduls, però no té cap efecte en cas contrari."
  general_silent_mode: "CIDRAM hauria de redirigir en silenci els intents d'accés bloquejats en lloc de mostrar la pàgina "accés denegat"? En cas afirmatiu, especifiqueu la ubicació a la qual redirigir els intents d'accés bloquejats. Si no, deixeu aquesta variable en blanc."
  general_silent_mode_response_header_code: "Quin missatge d'estat HTTP hauria d'enviar CIDRAM quan redirigeixi silenciosament els intents d'accés bloquejat?"

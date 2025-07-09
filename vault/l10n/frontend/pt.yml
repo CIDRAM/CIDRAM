@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2025.07.06).
+# This file: Portuguese language data for the front-end (last modified: 2025.07.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -244,6 +244,10 @@ config:
  general_lang: "Especificar o padrão da linguagem por CIDRAM."
  general_lang_override: "Localizar de acordo com HTTP_ACCEPT_LANGUAGE sempre que possível? True = Sim [Padrão]; False = Não."
  general_numbers: "Como você prefere que os números sejam exibidos? Selecione o exemplo que parece mais correto para você."
+ general_request_proxy: "Se você quiser que solicitações de saída sejam enviadas por meio de um proxy, especifique esse proxy aqui. Caso contrário, deixe em branco."
+ general_request_proxyauth:
+  pt-BR: "Se estiver enviando solicitações de saída por meio de um proxy e se esse proxy exigir um nome de usuário e uma senha, especifique esse nome de usuário e senha aqui (por exemplo, <code>user:pass</code>). Caso contrário, deixe em branco."
+  pt-PT: "Se estiver a enviar solicitações de saída por meio de um proxy e se esse proxy exigir um nome de utilizador e uma senha, especifique esse nome de utilizador e senha aqui (por exemplo, <code>user:pass</code>). Caso contrário, deixe em branco."
  general_sensitive: "Uma lista de caminhos a serem considerados como páginas confidenciais. Cada caminho listado será verificado em relação ao URI reconstruído quando necessário. Um caminho que começa com uma barra será tratado como um literal, e correspondido a partir do componente de caminho da solicitação em diante. Como alternativa, um caminho que começa com um caractere não alfanumérico, e termina com o mesmo caractere (ou o mesmo caractere mais um sinalizador "i" opcional) será tratado como uma expressão regular. Qualquer outro tipo de caminho será tratado como um literal, e pode corresponder a qualquer parte do URI. O fato de um caminho ser considerado uma página confidencial pode afetar o comportamento de alguns módulos, mas não tem nenhum efeito de outra forma."
  general_silent_mode: "Deve CIDRAM silenciosamente redirecionar as tentativas de acesso bloqueadas em vez de exibir o "acesso negado" página? Se sim, especificar o local para redirecionar as tentativas de acesso bloqueadas para. Se não, deixe esta variável em branco."
  general_silent_mode_response_header_code: "Qual mensagem de status HTTP deve enviar o CIDRAM ao redirecionar silenciosamente as tentativas de acesso bloqueados?"
@@ -424,7 +428,7 @@ field:
  Macro: "Macro"
  New name: "Novo nome:"
  Non-clickable text: "Texto não-clicável"
- Not tracking: "Não monitorando."
+ Not tracking: {"pt-BR": "Não monitorando.", "pt-PT": "Não monitorizando."}
  Only when triggered manually: "Somente quando desencadeado manualmente (por exemplo, via cron)."
  Options: "Opções"
  Password: "Senha"
@@ -918,8 +922,12 @@ operator_=: "Deve ser uma correspondência exata (comparação direta de string)
 operator_>: "Deve ser maior que (comparação numérica)."
 operator_≅: "A expressão regular deve corresponder."
 operator_≇: "A expressão regular não deve corresponder."
-operator_≈: "Deve ser uma correspondência aproximada (usando curingas no estilo do Windows)."
-operator_≉: "Não deve ser uma correspondência aproximada (usando curingas no estilo do Windows)."
+operator_≈:
+ pt-BR: "Deve ser uma correspondência aproximada (usando curingas no estilo do Windows)."
+ pt-PT: "Deve ser uma correspondência aproximada (utilizando curingas no estilo do Windows)."
+operator_≉:
+ pt-BR: "Não deve ser uma correspondência aproximada (usando curingas no estilo do Windows)."
+ pt-PT: "Não deve ser uma correspondência aproximada (utilizando curingas no estilo do Windows)."
 operator_≠: "Não deve ser uma correspondência exata (comparação direta de string)."
 operator_≤: "Deve ser menor ou igual a (comparação numérica)."
 operator_≥: "Deve ser maior ou igual a (comparação numérica)."
@@ -1072,8 +1080,8 @@ state_sl_totals:
  pt-BR: "Totais (Assinaturas: %s – Seções de assinatura: %s – Arquivos de assinatura: %s – Etiquetas de seção único: %s)."
  pt-PT: "Totais (Assinaturas: %s – Secções de assinatura: %s – Arquivos de assinatura: %s – Etiquetas de secção único: %s)."
 state_tracking:
- - "Atualmente monitorando %s IP."
- - "Atualmente monitorando %s IPs."
+ - {"pt-BR": "Atualmente monitorando %s endereço IP.", "pt-PT": "Atualmente a monitorizar %s endereço IP."}
+ - {"pt-BR": "Atualmente monitorando %s endereços IP.", "pt-PT": "Atualmente a monitorizar %s endereços IP."}
 switch-descending-order-set-false: "Ordenar em ordem crescente"
 switch-descending-order-set-true: "Ordenar em ordem descendente"
 switch-hide-non-outdated-set-false: "Não ocultar não desatualizado"
@@ -1191,8 +1199,12 @@ warning:
   pt-BR: "Atenção: O arquivo que você está editando no momento pertence ao componente "%s". Quaisquer alterações feitas neste arquivo provavelmente serão sobrescritas na próxima vez que o componente for atualizado."
   pt-PT: "Atenção: O arquivo que você está a editar no momento pertence ao componente "%s". Quaisquer alterações feitas neste arquivo provavelmente serão sobrescritas na próxima vez que o componente for atualizado."
  Modules are disabled: "Atenção: Os módulos estão desabilitados! Os módulos não podem ser utilizados até que isso seja resolvido."
- No modules are active: "Atenção: Nenhum módulo está ativo! Os módulos podem ser ativados usando as páginas de configuração ou atualizações."
- No signature files are active: "Atenção: Nenhum arquivo de assinatura está ativo! Os arquivos de assinatura podem ser ativados usando as páginas de configuração ou atualizações."
+ No modules are active:
+  pt-BR: "Atenção: Nenhum módulo está ativo! Os módulos podem ser ativados usando as páginas de configuração ou atualizações."
+  pt-PT: "Atenção: Nenhum módulo está ativo! Os módulos podem ser ativados utilizando as páginas de configuração ou atualizações."
+ No signature files are active:
+  pt-BR: "Atenção: Nenhum arquivo de assinatura está ativo! Os arquivos de assinatura podem ser ativados usando as páginas de configuração ou atualizações."
+  pt-PT: "Atenção: Nenhum arquivo de assinatura está ativo! Os arquivos de assinatura podem ser ativados utilizando as páginas de configuração ou atualizações."
  Operating in dry run mode: "Atenção: Operando no modo de seco! Enquanto no modo de seco, as solicitações ainda são verificados e registrados como eventos de bloqueio como de costume, mas nada é bloqueado."
  Operating in maintenance mode: "Atenção: Operando em modo de manutenção! Enquanto no modo de manutenção, nada é verificado, registrado, ou bloqueado."
  Page termination is disabled: "Atenção: O encerramento da página está desativado! As solicitações não podem ser bloqueadas corretamente até que isso seja resolvido."

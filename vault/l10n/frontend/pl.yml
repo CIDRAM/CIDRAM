@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2025.07.06).
+# This file: Polish language data for the front-end (last modified: 2025.07.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,6 +204,8 @@ config:
  general_lang: "Określ domyślny język dla CIDRAM."
  general_lang_override: "Kiedy to możliwe, lokalizuj według HTTP_ACCEPT_LANGUAGE? True (Prawdziwe) = Tak [Domyślna]; False (Fałszywy) = Nie."
  general_numbers: "Jak wolisz wyświetlać liczby? Wybierz przykład, który wygląda najlepiej dla Ciebie."
+ general_request_proxy: "Jeśli chcesz aby żądania wychodzące były wysyłane przez serwer proxy, określ ten serwer proxy tutaj. Jeśli nie, zostaw to pole puste."
+ general_request_proxyauth: "Jeśli wysyłasz żądania wychodzące przez serwer proxy i ten serwer proxy wymaga nazwy użytkownika i hasła, podaj tutaj tę nazwę użytkownika i hasło (np., <code>user:pass</code>). Jeśli nie, zostaw to pole puste."
  general_sensitive: "Lista ścieżek, które należy uznać za wrażliwe strony. Kiedy potrzebny, każda wymieniona ścieżka zostanie sprawdzona pod kątem zrekonstruowanego URI. Ścieżka rozpoczynająca się od ukośnika będzie traktowana jako literał i dopasowywana począwszy od składnika ścieżki żądania. Alternatywnie, ścieżka, która zaczyna się od znaku niealfanumerycznego i kończy tym samym znakiem (lub tym samym znakiem plus opcjonalna flaga „i”) będzie traktowana jako wyrażenie regularne. Każdy inny rodzaj ścieżki będzie traktowany jako literał i może pasować z dowolnej części URI. Ścieżka traktowana jako wrażliwa strona może wpływać na zachowanie niektórych modułów, ale nie ma żadnego wpływu w innym przypadku."
  general_silent_mode: "Czy CIDRAM powinien po cichu przekierowywać zablokowane próby dostępu zamiast wyświetlać stronę „dostęp zabroniony”? Jeśli tak, podaj lokalizację, do której mają zostać przekierowane zablokowane próby dostępu. Jeśli nie, pozostaw tę zmienną pustą."
  general_silent_mode_response_header_code: "Który komunikat o stanie HTTP powinien wysłać CIDRAM podczas cichego przekierowania zablokowanych prób dostępu?"

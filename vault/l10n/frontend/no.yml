@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2025.07.06).
+# This file: Norwegian language data for the front-end (last modified: 2025.07.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,6 +204,8 @@ config:
  general_lang: "Angi standardspråket for CIDRAM."
  general_lang_override: "Lokaliser i henhold til HTTP_ACCEPT_LANGUAGE når det er mulig? True = Ja [Standardverdi]; False = Nei."
  general_numbers: "Hvordan foretrekker du at tall vises? Velg eksempelet som passer best for deg."
+ general_request_proxy: "Hvis du vil at utgående forespørsler skal sendes via en proxy, spesifiser proxyen her. Hvis ikke, la dette stå tomt."
+ general_request_proxyauth: "Hvis du sender utgående forespørsler via en proxy, og proxyen krever brukernavn og passord, spesifiser brukernavn og passord her (f.eks., <code>user:pass</code>). Hvis ikke, la dette stå tomt."
  general_sensitive: "En liste over stier å betrakte som sensitive sider. Hver sti som er oppført vil bli sjekket mot den rekonstruerte URIen når det er nødvendig. En sti som begynner med en skråstrek vil bli behandlet som en bokstavelig, og matchet fra stikomponenten i forespørselen og fremover. Ellers vil en sti som begynner med et ikke-alfanumerisk tegn, og slutter med det samme tegnet (eller det samme tegnet pluss et valgfritt «i»-flagg) behandles som et regulært uttrykk. Enhver annen type sti vil bli behandlet som en bokstavelig, og kan matche fra hvilken som helst del av URI. Hvorvidt en sti anses som en sensitiv side kan påvirke hvordan enkelte moduler oppfører seg, men har ingen effekt ellers."
  general_silent_mode: "Bør CIDRAM stille omdirigere blokkerte tilgangsforsøk i stedet for å vise «tilgang nektet» siden? Hvis ja, spesifiser stedet for å omdirigere blokkerte tilgangsforsøk til. Hvis nei, la denne variablen være tom."
  general_silent_mode_response_header_code: "Hvilken HTTP-statusmelding skal CIDRAM sende under stille omdirigering av forsøk på blokkert tilgang?"

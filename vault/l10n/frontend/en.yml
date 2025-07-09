@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2025.07.06).
+# This file: English language data for the front-end (last modified: 2025.07.08).
 ##/
 
 Abuse category:
@@ -208,6 +208,8 @@ config:
   en-AU: "Localise according to HTTP_ACCEPT_LANGUAGE whenever possible? True = Yes [Default]; False = No."
   [en-CA, en-US]: "Localize according to HTTP_ACCEPT_LANGUAGE whenever possible? True = Yes [Default]; False = No."
  general_numbers: "How do you prefer numbers to be displayed? Select the example that looks the most correct to you."
+ general_request_proxy: "If you want outbound requests to be sent through a proxy, specify that proxy here. If not, leave this blank."
+ general_request_proxyauth: "If sending outbound requests through a proxy and if that proxy requires a username and password, specify that username and password here (e.g., <code>user:pass</code>). If not, leave this blank."
  general_sensitive: "A list of paths to regard as sensitive pages. Each path listed will be checked against the reconstructed URI when needed. A path which begins with a forward slash will be treated as a literal, and matched from the path component of the request onward. Otherwise, a path which begins with a non-alphanumeric character, and ends with that same character (or that same character plus an optional "i" flag) will be treated as a regular expression. Any other kind of path will be treated as a literal, and can match from any part of the URI. Whether a path is regarded as a sensitive page may affect how some modules behave, but doesn't have any effect otherwise."
  general_silent_mode: "Should CIDRAM silently redirect blocked access attempts instead of displaying the "access denied" page? If yes, specify the location to redirect blocked access attempts to. If no, leave this variable blank."
  general_silent_mode_response_header_code: "Which HTTP status message should CIDRAM send when silently redirecting blocked access attempts?"

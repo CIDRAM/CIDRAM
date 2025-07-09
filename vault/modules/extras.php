@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2025.07.06).
+ * This file: Optional security extras module (last modified: 2025.07.08).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -134,12 +134,24 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             ')\.php[578]?(?:$|[/?])|' .
             'funs\.php[578]?(?:$|[/?])~',
             $LCNrURI
-        ), 'Probing for webshells/backdoors')) {
+        ), 'Probing for webshells/backdoors')) { // 2023.08.18 mod 2025.07.06
             $this->Reporter->report([15, 20, 21], ['Caught probing for webshells/backdoors. Host might be compromised.'], $this->BlockInfo['IPAddr']);
-        } // 2023.08.18 mod 2025.07.06
+        } elseif ($this->trigger(preg_match(
+            '~(?:^|[/?])(?:css/dmtixucz/golden-access|fierzashell\.html?|perl.alfa|search/label/php-shells)(?:$|[/?])~',
+            $LCNrURI
+        ), 'Probing for webshells/backdoors')) { // 2025.05.12 mod 2025.05.20
+            $this->Reporter->report([15, 20, 21], ['Caught probing for webshells/backdoors. Host might be compromised.'], $this->BlockInfo['IPAddr']);
+        } elseif ($this->trigger(preg_match(
+            '~(?:^|[/?])(?:\.well-known(?:new\d*|old\d*)|[1-9cefimnptuwx]{27}\.jsp|alfa_data/alfacgiapi|alfa-?rexhp\d\.p|(?:send-)?ses\.sh)(?:$|[/?])~',
+            $LCNrURI
+        ), 'Probing for webshells/backdoors')) { // 2024.02.18 mod 2025.07.06
+            $this->Reporter->report([15, 20], ['Caught probing for webshells/backdoors. Host might be compromised.'], $this->BlockInfo['IPAddr']);
+        }
 
         /** Probing for vulnerable plugins or webapps. */
         if (
+            $this->trigger(preg_match('~/elfinder/php/connector\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'elFinder') || // 2025.07.07 (possible matches: CVE-2019-1010178, CVE-2020-25213, CVE-2020-35235, CVE-2021-32682)
+            $this->trigger(preg_match('~/tinymce/plugins/filemanager/dialog\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'TinyMCE Filemanager') || // 2025.07.07
             $this->trigger(preg_match('~/civicrm/packages/openflashchart/php-ofc-library/ofc_upload_image\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'CIVI-SA-2013-001') || // 2025.07.05
             $this->trigger(preg_match('~/dup-installer/main\.installer\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'CVE-2022-2551') || // 2024.09.05
             $this->trigger(preg_match('~/Telerik\.Web\.UI\.WebResource\.axd(?:$|[/?])~i', $LCNrURI), $Exploit = 'CVE-2019-18935') || // 2024.10.30
@@ -147,22 +159,6 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         ) {
             $this->Reporter->report([15, 21], ['Caught probing for ' . $Exploit . ' vulnerability.'], $this->BlockInfo['IPAddr']);
         }
-
-        /** Probing for webshells/backdoors. */
-        if ($this->trigger(preg_match(
-            '~(?:^|[/?])(?:\.well-known(?:new\d*|old\d*)|[1-9cefimnptuwx]{27}\.jsp|alfa_data/alfacgiapi|alfa-?rexhp\d\.p|(?:send-)?ses\.sh)(?:$|[/?])~',
-            $LCNrURI
-        ), 'Probing for webshells/backdoors')) {
-            $this->Reporter->report([15, 20], ['Caught probing for webshells/backdoors. Host might be compromised.'], $this->BlockInfo['IPAddr']);
-        } // 2024.02.18 mod 2025.07.06
-
-        /** Probing for webshells/backdoors. */
-        if ($this->trigger(preg_match(
-            '~(?:^|[/?])(?:css/dmtixucz/golden-access|fierzashell\.html?|perl.alfa|search/label/php-shells)(?:$|[/?])~',
-            $LCNrURI
-        ), 'Probing for webshells/backdoors')) {
-            $this->Reporter->report([15, 20, 21], ['Caught probing for webshells/backdoors. Host might be compromised.'], $this->BlockInfo['IPAddr']);
-        } // 2025.05.12 mod 2025.05.20
 
         /** Probing for exposed Git data. */
         if ($this->trigger(preg_match('~\.git(?:config)?(?:$|\W)~', $LCNrURI), 'Probing for exposed git data')) {

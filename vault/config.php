@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2025.06.14).
+ * This file: Configuration handler (last modified: 2025.07.08).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -17,7 +17,7 @@ if (!defined('CIDRAM')) {
 }
 
 /** CIDRAM version number (SemVer). */
-$CIDRAM['ScriptVersion'] = '2.16.2';
+$CIDRAM['ScriptVersion'] = '2.17.0';
 
 /** CIDRAM version identifier (complete notation). */
 $CIDRAM['ScriptIdent'] = 'CIDRAM v' . $CIDRAM['ScriptVersion'];
@@ -153,6 +153,8 @@ if (!isset($CIDRAM['Request']->Channels['Triggers'])) {
     $CIDRAM['Request']->Channels['Triggers'] = [];
 }
 $CIDRAM['Request']->Disabled = $CIDRAM['Config']['general']['disabled_channels'];
+$CIDRAM['Request']->Proxy = $CIDRAM['Config']['general']['request_proxy'];
+$CIDRAM['Request']->ProxyAuth = $CIDRAM['Config']['general']['request_proxyauth'];
 $CIDRAM['Request']->UserAgent = $CIDRAM['ScriptUA'];
 $CIDRAM['Request']->SendToOut = (defined('DEV_DEBUG_MODE') && DEV_DEBUG_MODE === true);
 

@@ -1408,28 +1408,6 @@ $CIDRAM['FE_Executor'] = function ($Closures = false, $Queue = false) use (&$CID
     }
 };
 
-/**
- * Updates plugin version cited in the WordPress plugins dashboard, if this
- * copy of CIDRAM is running as a WordPress plugin.
- *
- * @return void
- */
-$CIDRAM['WP-Ver'] = function () use (&$CIDRAM) {
-    if (
-        !empty($CIDRAM['Components']['RemoteMeta']['CIDRAM']['Version']) &&
-        ($ThisData = $CIDRAM['Updater-IO']->readFile($CIDRAM['Vault'] . '../cidram.php'))
-    ) {
-        $PlugHead = "\x3C\x3Fphp\n/**\n * Plugin Name: CIDRAM\n * Version: ";
-        if (substr($ThisData, 0, 45) === $PlugHead) {
-            $PlugHeadEnd = strpos($ThisData, "\n", 45);
-            $CIDRAM['Updater-IO']->writeFile(
-                $CIDRAM['Vault'] . '../cidram.php',
-                $PlugHead . $CIDRAM['Components']['RemoteMeta']['CIDRAM']['Version'] . substr($ThisData, $PlugHeadEnd)
-            );
-        }
-    }
-};
-
 /** Used to format numbers according to the specified configuration. */
 $CIDRAM['NumberFormatter'] = new \Maikuolan\Common\NumberFormatter($CIDRAM['Config']['general']['numbers']);
 

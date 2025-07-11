@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2025.07.07).
+ * This file: Front-end functions file (last modified: 2025.07.11).
  */
 
 /**
@@ -127,7 +127,7 @@ $CIDRAM['ZeroMin'] = function () {
  *      1 = Negative only. 2 = Positive only. 3 = Both.
  * @return void
  */
-$CIDRAM['FormatFilesize'] = function (&$Filesize, int $Markers = 0) use (&$CIDRAM) {
+$CIDRAM['FormatFilesize'] = function (&$Filesize, $Markers = 0) use (&$CIDRAM) {
     if ($Filesize < 0) {
         $Filesize *= -1;
         $Marker = $Markers === 1 || $Markers === 3 ? '-' : '';

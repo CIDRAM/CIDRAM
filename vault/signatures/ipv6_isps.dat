@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6_isps.dat
 
-# Version: 2025.179.0
-# Last modified: 2025.06.29
+# Version: 2025.191.0
+# Last modified: 2025.07.11
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -306,20 +306,6 @@ Tag: Vodafone Deutschland GmbH
 Origin: BR
 Profile: Domestic ISP
 Tag: STAYNET
-
-
-# ASN 812 ("Rogers Communications Canada Inc").
-# Canadian domestic ISP. Brute-force, WordPress/XMLRPC, SQLi, manifest, and
-# webapp attacks, port scans, hacking, and spam detected from here.
-# Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 336.
-# Updated: 2024.07.07
-
-2607:fea8:281c:f20::/64 Deny Spam
-2607:fea8:5ce1:e400::/64 Deny Spam
-Origin: CA
-Profile: Domestic ISP
-Tag: Rogers
 
 
 # ASN 197019 ("WEDOS Internet, a.s").

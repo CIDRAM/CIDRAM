@@ -440,3 +440,5 @@
 
 #### Other changes.
 - [2025.07.08]: Added the ability to route all outbound requests through a proxy, and two new configuration directives, `request_proxy` and `request_proxyauth`.
+- [2025.07.11]: Verification updated.
+- *Plus all the regular signature updates.*

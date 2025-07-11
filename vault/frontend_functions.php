@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2025.07.07).
+ * This file: Front-end functions file (last modified: 2025.07.11).
  */
 
 /**
@@ -1395,28 +1395,6 @@ $CIDRAM['FE_Executor'] = function ($Closures = false, bool $Queue = false) use (
                 $Params = $CIDRAM['Operation']->ifCompare($CIDRAM, $Params);
                 $CIDRAM[$Closure]($Params);
             }
-        }
-    }
-};
-
-/**
- * Updates plugin version cited in the WordPress plugins dashboard, if this
- * copy of CIDRAM is running as a WordPress plugin.
- *
- * @return void
- */
-$CIDRAM['WP-Ver'] = function () use (&$CIDRAM): void {
-    if (
-        !empty($CIDRAM['Components']['RemoteMeta']['CIDRAM Core']['Version']) &&
-        ($ThisData = $CIDRAM['Updater-IO']->readFile($CIDRAM['Vault'] . '../cidram.php'))
-    ) {
-        $PlugHead = "\x3C\x3Fphp\n/**\n * Plugin Name: CIDRAM\n * Version: ";
-        if (substr($ThisData, 0, 45) === $PlugHead) {
-            $PlugHeadEnd = strpos($ThisData, "\n", 45);
-            $CIDRAM['Updater-IO']->writeFile(
-                $CIDRAM['Vault'] . '../cidram.php',
-                $PlugHead . $CIDRAM['Components']['RemoteMeta']['CIDRAM Core']['Version'] . substr($ThisData, $PlugHeadEnd)
-            );
         }
     }
 };

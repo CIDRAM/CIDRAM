@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2025.04.22).
+ * This file: Output generator (last modified: 2025.07.12).
  */
 
 /** Initialise cache. */
@@ -793,9 +793,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
     /** Append default L10N data. */
     $CIDRAM['Parsables'] += $CIDRAM['L10N']->Data;
 
-    if (!empty($CIDRAM['Banned']) && $CIDRAM['Config']['general']['ban_override'] > 400 && (
-        $CIDRAM['ThisStatusHTTP'] = $CIDRAM['GetStatusHTTP']($CIDRAM['Config']['general']['ban_override'])
-    )) {
+    if (!empty($CIDRAM['Banned']) && $CIDRAM['Config']['general']['ban_override'] > 400 && $CIDRAM['ThisStatusHTTP'] = $CIDRAM['GetStatusHTTP']($CIDRAM['Config']['general']['ban_override'])) {
         $CIDRAM['errCode'] = $CIDRAM['Config']['general']['ban_override'];
         header('HTTP/1.0 ' . $CIDRAM['errCode'] . ' ' . $CIDRAM['ThisStatusHTTP']);
         header('HTTP/1.1 ' . $CIDRAM['errCode'] . ' ' . $CIDRAM['ThisStatusHTTP']);
@@ -823,7 +821,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
             header('HTTP/1.1 ' . $CIDRAM['errCode'] . ' ' . $CIDRAM['ThisStatusHTTP']);
             header('Status: ' . $CIDRAM['errCode'] . ' ' . $CIDRAM['ThisStatusHTTP']);
         } else {
-            $CIDRAM['errCode'] = 200;
+            $CIDRAM['errCode'] = function_exists('http_response_code') && ($Try = http_response_code()) ? $Try : 200;
         }
 
         if (!empty($CIDRAM['Suppress output template'])) {
@@ -894,10 +892,11 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
             $CIDRAM['Config']['general']['silent_mode_response_header_code'] > 300 &&
             $CIDRAM['Config']['general']['silent_mode_response_header_code'] < 309
         ) ? $CIDRAM['Config']['general']['silent_mode_response_header_code'] : 301;
-        $CIDRAM['Status'] = $CIDRAM['GetStatusHTTP']($CIDRAM['errCode']);
-        header('HTTP/1.0 ' . $CIDRAM['errCode'] . ' ' . $CIDRAM['Status']);
-        header('HTTP/1.1 ' . $CIDRAM['errCode'] . ' ' . $CIDRAM['Status']);
-        header('Status: ' . $CIDRAM['errCode'] . ' ' . $CIDRAM['Status']);
+        if ($CIDRAM['Status'] = $CIDRAM['GetStatusHTTP']($CIDRAM['errCode'])) {
+            header('HTTP/1.0 ' . $CIDRAM['errCode'] . ' ' . $CIDRAM['Status']);
+            header('HTTP/1.1 ' . $CIDRAM['errCode'] . ' ' . $CIDRAM['Status']);
+            header('Status: ' . $CIDRAM['errCode'] . ' ' . $CIDRAM['Status']);
+        }
         header('Location: ' . $CIDRAM['Config']['general']['silent_mode']);
         $CIDRAM['HTML'] = '';
     }
@@ -917,10 +916,11 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
 /** Executed only if request redirection has been triggered by auxiliary rules. */
 if (!empty($CIDRAM['Aux Redirect']) && !empty($CIDRAM['Aux Status Code']) && $CIDRAM['Aux Status Code'] > 300 && $CIDRAM['Aux Status Code'] < 309) {
     $CIDRAM['errCode'] = $CIDRAM['Aux Status Code'];
-    $CIDRAM['Status'] = $CIDRAM['GetStatusHTTP']($CIDRAM['Aux Status Code']);
-    header('HTTP/1.0 ' . $CIDRAM['Aux Status Code'] . ' ' . $CIDRAM['Status']);
-    header('HTTP/1.1 ' . $CIDRAM['Aux Status Code'] . ' ' . $CIDRAM['Status']);
-    header('Status: ' . $CIDRAM['Aux Status Code'] . ' ' . $CIDRAM['Status']);
+    if ($CIDRAM['Status'] = $CIDRAM['GetStatusHTTP']($CIDRAM['Aux Status Code'])) {
+        header('HTTP/1.0 ' . $CIDRAM['Aux Status Code'] . ' ' . $CIDRAM['Status']);
+        header('HTTP/1.1 ' . $CIDRAM['Aux Status Code'] . ' ' . $CIDRAM['Status']);
+        header('Status: ' . $CIDRAM['Aux Status Code'] . ' ' . $CIDRAM['Status']);
+    }
     header('Location: ' . $CIDRAM['Aux Redirect']);
     $CIDRAM['Events']->fireEvent('final');
     die;

@@ -218,6 +218,15 @@ log_sanitisation=false
 ; etc).
 disabled_channels=''
 
+; If you want outbound requests to be sent through a proxy, specify that proxy
+; here. If not, leave this blank.
+request_proxy=''
+
+; If sending outbound requests through a proxy and if that proxy requires a
+; username and password, specify that username and password here (e.g.,
+; user:pass). If not, leave this blank.
+request_proxyauth=''
+
 ; Default timeout to use for external requests? Default = 12 seconds.
 default_timeout=12
 
@@ -583,6 +592,6 @@ pdo_password=''
 ; Default signature bypasses configuration.
 
 ; Which bypasses should be used?
-used='AbuseIPDB,Baidu,AmazonAdBot,Bingbot,DuckDuckBot,Embedly,Feedbot,Feedspot,GoogleFiber,Googlebot,Jetpack,PetalBot,Pinterest,Redditbot,Skype,Snapchat,Sogou,Yandex,WordPress REST API'
+used='AbuseIPDB,Baidu,AmazonAdBot,Bingbot,DuckDuckBot,Embedly,Feedbot,Feedspot,GoogleFiber,Googlebot,Jetpack,PetalBot,Pinterest,Redditbot,Snapchat,Sogou,Yandex,WordPress REST API'
 
 

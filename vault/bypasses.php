@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Default signature bypasses (last modified: 2025.04.09).
+ * This file: Default signature bypasses (last modified: 2025.07.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -203,14 +203,6 @@ $CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [], int
         if (
             $CIDRAM['Request']->inCsv('DuckDuckBot', $CIDRAM['Config']['bypasses']['used']) &&
             preg_match('~duckduck(?:go-favicons-)?bot~', $CIDRAM['BlockInfo']['UALC'])
-        ) {
-            return 4;
-        }
-
-        /** Skype URL Preview bypass. */
-        if (
-            $CIDRAM['Request']->inCsv('Skype', $CIDRAM['Config']['bypasses']['used']) &&
-            preg_match('~skypeuripreview.*skype-url-preview@microsoft\.com$~', $CIDRAM['BlockInfo']['UALC'])
         ) {
             return 4;
         }

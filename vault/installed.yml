@@ -656,17 +656,17 @@ IPv6-Other:
    Checksum: "d519f159e342038059f2550b939adb9d234f77728f19dfdb0c1e3d2d2d4ec25f:6033"
    Used with: "ipv6"
 Bypasses:
- Version: "2025.98.0"
+ Version: "2025.192.0"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "^3"
  Files:
   bypasses.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/bypasses.php"
-   Checksum: "589190714a8b390bd8eeb1eb69966dc88a4bc8c169ae458b4ed7f515b4025cdb:10955"
+   Checksum: "6f22a2af2a688b9d1290ef84e81d1552f561c76c676fb9bc741efe0ab6da37c1:10744"
   imports/bypasses.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/imports/bypasses.yml"
-   Checksum: "f96722b9a57c0be7f087ddfe79b53e9f41496eac4968095040beb229e3b4a438:1096"
+   Checksum: "52162985fb1f5d0c4c9dd8e340124fa005b421e6163f2333f8c7706a12925ef2:1055"
    Used with: "imports"
 l10n/core/af:
  Extended Description: "Afrikaanse lokalisering"
@@ -1562,7 +1562,6 @@ BOBUAM:
   l10n/frontend/{lang}: ">=2025.186"
  When Install Succeeds: ["queue message response.please_check_config"]
  When Update Succeeds:
-  - "if {Components.Meta.BOBUAM.Version}<2024.250&&{Components.RemoteMeta.BOBUAM.Version}>=2024.250 then queue message <span dir="ltr" lang="en-AU">[BOBUAM 2024.250.0] Fixed a false positive ("Skype URL Preview").</span>"
   - "if {Components.Meta.BOBUAM.Version}<2025.186&&{Components.RemoteMeta.BOBUAM.Version}>=2025.186 then queue message <span dir="ltr" lang="en-AU">[BOBUAM 2025.186.0] Added support for Opera (configuration settings should be revised accordingly).</span>"
  Files:
   imports/bobuam.yml:

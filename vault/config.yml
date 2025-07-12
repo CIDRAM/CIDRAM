@@ -129,6 +129,8 @@ general:
  force_hostname_lookup: false
  allow_gethostbyaddr_lookup: true
  disabled_channels: ""
+ request_proxy: ""
+ request_proxyauth: ""
  default_timeout: 12
  sensitive: "~[/=](?:activate|contact|login|regist(?:er|ration)|signup)|act(?:ion)?=(?:edit|reg)|(?:activate|con(?:firm|tact)|login|lost-password|my-account|newuser|reg(?:ist(?:er|ration))?|signin|signup)(?:\\.php|[/=])|special:userlogin&|verifyemail|wp-comments-post~i"
  email_notification_address: ""
@@ -150,6 +152,7 @@ components:
  modules: |
   botua.php
   cookies.php
+  extras.php
  imports: "bypasses.yml"
  events: ""
 logging:

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used to simulate block events (last modified: 2025.03.03).
+ * This file: Methods used to simulate block events (last modified: 2025.07.12).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -327,7 +327,7 @@ trait SimulateBlockEvent
                 (!empty($this->CIDRAM['ThisStatusHTTP']) && $this->CIDRAM['ThisStatusHTTP'] !== 200 && ($Try = $this->CIDRAM['ThisStatusHTTP']))
             ) ? $Try : '200 OK';
         }
-        if (is_int($this->CIDRAM['ThisStatusHTTP']) && ($Try = $this->getStatusHTTP($this->CIDRAM['ThisStatusHTTP'])) !== '') {
+        if (is_int($this->CIDRAM['ThisStatusHTTP']) && $Try = $this->getStatusHTTP($this->CIDRAM['ThisStatusHTTP'])) {
             $this->CIDRAM['ThisStatusHTTP'] .= ' ' . $Try;
         }
     }

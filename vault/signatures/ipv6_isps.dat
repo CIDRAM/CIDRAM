@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6_isps.dat
 
-# Version: 2025.191.0
-# Last modified: 2025.07.11
+# Version: 2025.194.0
+# Last modified: 2025.07.14
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -257,28 +257,19 @@ Profile: Domestic ISP;Multiplay;Tor endpoints here
 Tag: OVH Systems
 
 
-# ASNs 45430, 133481 ("SBN-IIG/AWN-IIG transit provider", "AIS Fibre").
-# Thai transit provider and domestic ISP. Brute-force, SSH, and
-# WordPress/XMLRPC attacks, port scans, hacking, and spam detected from here.
-# Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 2,373 (AS45430), 2,245 (AS133481).
-# Updated: 2024.07.10
-
-2405:9800:b930:4440::/64 Deny Spam
-Origin: TH
-Profile: Domestic ISP;Infrastructure/Transit;Multiplay
-Tag: Phaholyothin Rd
-
-
 # ASNs 45820, 134674 ("TATA SKY BROADBAND PRIVATE LIMITED").
 # Indian domestic ISP. WordPress attacks, hacking, port scans, and spam
 # detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,526 (AS45820), 745 (AS134674).
-# Updated: 2024.07.10
+# Stop Forum Spam (SFS) listings: 1,075 (AS45820), 1,599 (AS134674).
+# Updated: 2025.07.13
 
-2402:e280:2191:389::/64 Deny Spam
-2402:e280:21b5:ce::/64 Deny Spam
-2402:e280:2325:390::/64 Deny Spam
+2402:e280:2303:3bb::/64 Deny Spam
+2402:e280:2303:49c::/64 Deny Spam
+2402:e280:2308:406::/64 Deny Spam
+2402:e280:2310:469::/64 Deny Spam
+2402:e280:2322:7b::/64 Deny Spam
+2402:e280:4117:260::/64 Deny Spam
+2402:e280:411e:36::/64 Deny Spam
 Origin: IN
 Profile: Domestic ISP
 Tag: TATA SKY BROADBAND PRIVATE LIMITED

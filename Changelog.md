@@ -443,4 +443,5 @@
 - [2025.07.11]: Verification updated.
 - [2025.07.12]: Skype is dead; Removed its default signature bypass.
 - [2025.07.12]: The output stage now checks http_response_code() instead of immediately assuming 200 in case something outside of CIDRAM has already set a status code (e.g., the server, in the event of 404 not found, which could happen if CIDRAM is hooked to an HTTP error page). Practically speaking, this affects CIDRAM's Apache-style logging feature (if/when used), but nothing else.
+- [2025.07.17]: Added suggestions for the language resolution condition source at the auxiliary rules page.
 - *Plus all the regular signature updates.*

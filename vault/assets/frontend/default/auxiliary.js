@@ -197,6 +197,7 @@ var methodSuggestions = ['GET','POST','HEAD','CONNECT','DELETE','OPTIONS','PATCH
 var profileSuggestions = ['Advertiser','Bogon','Commercial','Content Delivery Network','Dedicated','Domestic ISP','Frequent changes','Government','Has WordPress Bypasses','Infrastructure/Transit','Mobile ISP','Multiplay','Restricted/Unidentifiable','Search engine','Temporary','Third-party sourced','Tor endpoints here','University','Usenet','VPNs here','Webhosting','6to4','Amateur Radio','ISATAP','Multicast','Orphaned','Teredo','Blocked Negative','Blocked Non-Verified','Organization','Military','University/College/School','Library','Fixed Line ISP','Data Center/Web Hosting/Transit','Search Engine Spider','Reserved'].map((e)=>'<span style="cursor:pointer" onclick="javascript:this.parentElement.parentElement.previousElementSibling.lastChild.value=\''+e+'\'">'+e+'</span>').join(', ');
 var protocolSuggestions = ['HTTP/1.0','HTTP/1.1','HTTP/1.2','HTTP/1.3','HTTP/2.0'].map((e)=>'<span style="cursor:pointer" onclick="javascript:this.parentElement.parentElement.previousElementSibling.lastChild.value=\''+e+'\'">'+e+'</span>').join(', ');
 var verifiedSuggestions = ['AdSense','AmazonAdBot','Amazonbot','Applebot','Baidu','Bingbot','ChatGPT-User','DuckDuckBot','Embedly','Facebook external hit','GPTBot','Googlebot','MojeekBot','PetalBot','Pinterest','Qwantify','SeznamBot','Snapchat','Sogou','Twitterbot','Yahoo','Yandex','YoudaoBot'].map((e)=>'<span style="cursor:pointer" onclick="javascript:this.parentElement.parentElement.previousElementSibling.lastChild.value=\''+e+'\'">'+e+'</span>').join(', ');
+var langResSuggestions = ['af-ZA','ar','ar-SA','bg-BG','bn-BD','bs-BA','ca-ES','cs-CZ','de-CH','de-DE','en-AU','en-CA','en-GB','en-NZ','en-US','es-ES','es-MX','fa-IR','fr-CA','fr-FR','gl-ES','gu-IN','he-IL','hi-IN','hr-HR','id-ID','it-IT','ja-JP','ko-KR','lv-LV','ml-IN','mr-IN','ms-MY','nb-NO','nl-NL','pa-IN','pa-PK','pl-PL','pt-BR','pt-PT','ro-MO','ro-RO','ru-RU','sv-SE','sr-RS','ta-IN','th-TH','tr-TR','uk-UA','ur-PK','vi-VN','zh-CN','zh-Hans','zh-Hant','zh-HK','zh-TW'].map((e)=>'<span style="cursor:pointer" onclick="javascript:this.parentElement.parentElement.previousElementSibling.lastChild.value=\''+e+'\'">'+e+'</span>').join(', ');
 
 function getInputSuggestions(e) {
   if (e.value=='ASNLookup') {
@@ -219,6 +220,9 @@ function getInputSuggestions(e) {
     e.parentElement.nextElementSibling.className='suggestsActive';
   } else if (e.value=='SEC_CH_UA_PLATFORM' || e.value=='SEC_CH_UA_MOBILE' || e.value=='SEC_CH_UA') {
     e.parentElement.nextElementSibling.innerHTML='<small>{hints_client_hints}</small>';
+    e.parentElement.nextElementSibling.className='suggestsActive';
+  } else if (e.value=='ClientL10NAccepted') {
+    e.parentElement.nextElementSibling.innerHTML='<small>{label.Suggestions}{pair_separator}'+langResSuggestions+'</small>';
     e.parentElement.nextElementSibling.className='suggestsActive';
   } else {
     e.parentElement.nextElementSibling.innerHTML='';

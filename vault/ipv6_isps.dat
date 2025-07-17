@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6_isps.dat
 
-# Version: 2025.194.0
-# Last modified: 2025.07.14
+# Version: 2025.197.0
+# Last modified: 2025.07.17
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -31,20 +31,6 @@ Origin: GB
 Origin: RU
 Profile: Dedicated;Domestic ISP;Infrastructure/Transit;Mobile ISP;Multiplay;Webhosting
 Tag: PIN-AS
-
-
-# ASN 38731 ("Vietel - CHT Compamy Ltd").
-# One of Vietnam's largest domestic ISPs, but also a source of forum and blog
-# spam, and occasionally sometimes other kinds of unwanted traffic. Their
-# network consists of a number of different ASNs, but only this specific ASN is
-# included here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 101.
-# Updated: 2023.08.12 / Checked: 2024.07.10
-
-2401:5f80:3000:2::/64 Deny Attacks
-Origin: VN
-Profile: Domestic ISP;Tor endpoints here
-Tag: Vietel
 
 
 # ASNs 6876, 41544, 48239 ("TeNeT Scientific Production Enterprise LLC",
@@ -222,19 +208,6 @@ Tag: Comcast Spam IPs
 Origin: IN
 Profile: Domestic ISP
 Tag: Atria Convergence
-
-
-# ASN 7018 ("AT&T Services, Inc").
-# Major US domestic ISP. DDoS, SQLi, brute-force and WordPress/XMLRPC attacks,
-# credential stuffing, port scans, and spam detected from here.
-# Listed just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 4,124.
-# Updated: 2024.08.03
-
-2600:1700:1110:dd60::/64 Deny Spam
-Origin: US
-Profile: Domestic ISP;Tor endpoints here
-Tag: AT&T Services, Inc
 
 
 # ASNs 16276, 35540 ("OVH Systems").

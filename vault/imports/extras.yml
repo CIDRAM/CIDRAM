@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Optional security extras defaults file (last modified: 2023.09.16).
+# This file: Optional security extras defaults file (last modified: 2025.07.18).
 ##/
 
 Config Defaults:
@@ -24,3 +24,6 @@ Config Defaults:
     query: "config.extras_signatures_query"
     raw: "config.extras_signatures_raw"
     ruri: "config.extras_signatures_ruri"
+  remove_headers:
+   type: "bool"
+   default: true

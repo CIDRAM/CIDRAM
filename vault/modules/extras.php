@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2025.07.16).
+ * This file: Optional security extras module (last modified: 2025.07.18).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -25,6 +25,17 @@ $this->CIDRAM['ExtrasHonoured'] = array_flip(explode("\n", $this->Configuration[
 $this->CIDRAM['ModuleResCache'][$Module] = function () {
     /** The number of signatures triggered by this point in time. */
     $Before = $this->BlockInfo['SignaturesCount'] ?? 0;
+
+    /** Remove headers which are unnecessary and known to be potentially useful for attackers. */
+    if ($this->Configuration['extras']['remove_headers']) {
+        header_remove('Server');
+        header_remove('X-AspNet-Version');
+        header_remove('X-Backend-Server');
+        header_remove('X-Generator');
+        header_remove('X-Powered-By');
+        header_remove('X-Runtime');
+        header_remove('X-Version');
+    }
 
     $this->trigger(count($_REQUEST) >= 500, 'Hack attempt', 'Too many request variables sent!'); // 2017.01.01
 
@@ -69,21 +80,21 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $this->Reporter->report([15], ['Caught probing for quarantined files.'], $this->BlockInfo['IPAddr']);
         } // 2017.03.22 mod 2023.08.13
 
-        /** Probing for unsecured backup files. */
+        /** Probing for exposed backup files. */
         if ($this->trigger(preg_match(
-            '~(?:/backup|(?:archive|backup|docroot|htdocs|public_html|site|www)\.(?:gz|rar|tar(?:\.gz)?|zip)|d(?:atabase|b|ump)\.sql)(?:$|[/?])~',
+            '~(?:(?:^|[/?])backup|(?:archive|backup|d(?:atabase|b|ocroot|ump)|htdocs|public_html|site|www)(?:\.(?:new\d*|old\d*|sql))*(?:\.(?:[7bg]z\d*|7?zip|b[ac]k|[rt]ar(?:\.gz)?|tgz))+)(?:$|[/?])~',
             $LCNrURI
-        ), 'Probing for unsecured backup files not allowed')) {
-            $this->Reporter->report([15], ['Caught probing for unsecured backup files.'], $this->BlockInfo['IPAddr']);
-        } // 2023.08.13 mod 2025.03.03
+        ), 'Probing for exposed backup files')) {
+            $this->Reporter->report([15], ['Caught probing for exposed backup files.'], $this->BlockInfo['IPAddr']);
+        } // 2023.08.13 mod 2025.07.17
 
-        /** Probing for unsecured SQL dumps. */
+        /** Probing for exposed SQL dumps. */
         if ($this->trigger(preg_match(
-            '~^[^?]*[^/?]+\.sql(?:\.(?:b[ac]k|bz|new|old|t?gz|7?zip|[rt]ar))?(?:$|[/?])~',
+            '~\.sql(?:\.(?:[7bg]z\d*|7?zip|b[ac]k|db\d*|new\d*|old\d*|[rt]ar|sql|tgz))*(?:$|[/?])~',
             $LCNrURI
-        ), 'Probing for unsecured SQL dumps not allowed')) {
-            $this->Reporter->report([15], ['Caught probing for unsecured SQL dumps.'], $this->BlockInfo['IPAddr']);
-        } // 2024.05.12
+        ), 'Probing for exposed SQL dumps')) {
+            $this->Reporter->report([15], ['Caught probing for exposed SQL dumps.'], $this->BlockInfo['IPAddr']);
+        } // 2024.05.12 mod 2025.07.17
 
         /** Probing for unsecured WordPress configuration files. */
         if ($this->trigger(preg_match(
@@ -148,8 +159,9 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $this->Reporter->report([15, 20], ['Caught probing for webshells/backdoors. Host might be compromised.'], $this->BlockInfo['IPAddr']);
         }
 
-        /** Probing for vulnerable plugins or webapps. */
+        /** Probing for common vulnerabilities and exploits. */
         if (
+            $this->trigger(preg_match('~/ecp/current/exporttool/microsoft.exchange.ediscovery.exporttool.application(?:$|[/?])~', $LCNrURI), $Exploit = 'CVE-2021-28481') || // 2025.07.17
             $this->trigger(preg_match('~/util/php/eval-stdin\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'CVE-2017-9841') || // 2025.07.16
             $this->trigger(preg_match('~/elfinder/php/connector\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'elFinder') || // 2025.07.07 (possible matches: CVE-2019-1010178, CVE-2020-25213, CVE-2020-35235, CVE-2021-32682)
             $this->trigger(preg_match('~/tinymce/plugins/filemanager/dialog\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'TinyMCE Filemanager') || // 2025.07.07
@@ -157,16 +169,28 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $this->trigger(preg_match('~/library/openflashchart/php-ofc-library/ofc_upload_image\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'ZSL-2013-5126') || // 2025.07.10
             $this->trigger(preg_match('~/includes/openflashchart/php-ofc-library/ofc_upload_image\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'SA53428') || // 2025.07.10
             $this->trigger(preg_match('~/dup-installer/main\.installer\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'CVE-2022-2551') || // 2024.09.05
-            $this->trigger(preg_match('~/Telerik\.Web\.UI\.WebResource\.axd(?:$|[/?])~i', $LCNrURI), $Exploit = 'CVE-2019-18935') || // 2024.10.30
+            $this->trigger(preg_match('~/Telerik\.Web\.UI\.WebResource\.axd(?:$|[/?])~i', $LCNrURI), $Exploit = 'CVE-2019-18935') // 2024.10.30
+        ) {
+            $this->Reporter->report([15, 21], ['Caught probing for ' . $Exploit . ' vulnerability.'], $this->BlockInfo['IPAddr']);
+        }
+
+        /** Probing for common vulnerabilities and exploits. */
+        if (
+            $this->trigger(preg_match('~hello\.world\?(?:%ad|\xAD)d\+allow_url_include(?:%3d|=)1\+(?:%ad|\xAD)d~', $LCNrURI), $Exploit = 'CVE-2024-4577') || // 2025.07.17
             $this->trigger(preg_match('~\?s=../%5c|invokefunction&function=call_user_func_array&|vars%5b0%5d=md5|vars%5b1%5d%5b%5d=hellothinkphp~', $LCNrURI), $Exploit = 'CVE-2018-20062') // 2025.07.01
         ) {
             $this->Reporter->report([15, 21], ['Caught probing for ' . $Exploit . ' vulnerability.'], $this->BlockInfo['IPAddr']);
         }
 
         /** Probing for exposed Git data. */
-        if ($this->trigger(preg_match('~\.git(?:config)?(?:$|\W)~', $LCNrURI), 'Probing for exposed git data')) {
-            $this->Reporter->report([15, 21], ['Caught probing for exposed git data.'], $this->BlockInfo['IPAddr']);
-        } // 2022.06.05 mod 2025.04.28
+        if ($this->trigger(preg_match('~\.git(?:config)?(?:$|\W)~', $LCNrURI), 'Probing for exposed Git data')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed Git data.'], $this->BlockInfo['IPAddr']);
+        } // 2022.06.05 mod 2025.07.17
+
+        /** Probing for exposed SVN data. */
+        if ($this->trigger(preg_match('~(?:^|[/?])\.svn(?:$|[/?])|\.svn/wc\.db(?:$|[/?])~', $LCNrURI), 'Probing for exposed SVN data')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed SVN data.'], $this->BlockInfo['IPAddr']);
+        } // 2025.07.17
 
         /** Probing for exposed VSCode data. */
         if ($this->trigger(preg_match('~(?:^|[/?])\.vscode(?:$|\W)~', $LCNrURI), 'Probing for exposed VSCode data')) {
@@ -188,15 +212,50 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $this->Reporter->report([15], ['Caught probing for exposed FTP credentials.'], $this->BlockInfo['IPAddr']);
         } // 2025.03.09
 
+        /** Probing for exposed FrontPage file credential dumps. */
+        if ($this->trigger(preg_match('~(?:^|[/?])_vti_pvt/service\.pwd(?:$|[/?])~', $LCNrURI), 'Probing for exposed FrontPage file credential dumps')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed FrontPage file credential dumps.'], $this->BlockInfo['IPAddr']);
+        } // 2025.07.17
+
+        /** Probing for exposed server private keys. */
+        if ($this->trigger(preg_match('~(?:^|[/?])private/server\.key(?:$|[/?])~', $LCNrURI), 'Probing for exposed server private keys')) {
+            $this->Reporter->report([15], ['Caught probing for exposed server private keys.'], $this->BlockInfo['IPAddr']);
+        } // 2025.07.17
+
+        /** Probing for exposed Ansible service credentials. */
+        if ($this->trigger(preg_match('~(?:^|[/?])user_secrets\.yml(?:$|[/?])~', $LCNrURI), 'Probing for exposed Ansible service credentials')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed Ansible service credentials.'], $this->BlockInfo['IPAddr']);
+        } // 2025.07.17
+
+        /** Probing for exposed Visual Studio secrets. */
+        if ($this->trigger(preg_match('~(?:^|[/?])secrets\.json(?:$|[/?])~', $LCNrURI), 'Probing for exposed Visual Studio secrets')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed Visual Studio secrets.'], $this->BlockInfo['IPAddr']);
+        } // 2025.07.17
+
+        /** Probing for exposed Rails database schema state capture file. */
+        if ($this->trigger(preg_match('~(?:^|[/?])db/schema\.rb(?:$|[/?])~', $LCNrURI), 'Probing for exposed Rails database schema state capture file')) {
+            $this->Reporter->report([15], ['Caught probing for exposed Rails database schema state capture file.'], $this->BlockInfo['IPAddr']);
+        } // 2025.07.17
+
+        /** Probing for exposed cloud-init configuration file. */
+        if ($this->trigger(preg_match('~(?:^|[/?])cloud-config\.yml(?:$|[/?])~', $LCNrURI), 'Probing for exposed cloud-init configuration file')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed cloud-init configuration file.'], $this->BlockInfo['IPAddr']);
+        } // 2025.07.17
+
+        /** Probing for exposed Rails database schema state capture file. */
+        if ($this->trigger(preg_match('~(?:^|[/?])db/schema\.rb(?:$|[/?])~', $LCNrURI), 'Probing for exposed Rails database schema state capture file')) {
+            $this->Reporter->report([15], ['Caught probing for exposed Rails database schema state capture file.'], $this->BlockInfo['IPAddr']);
+        } // 2025.07.17
+
         /** Probing for vulnerable routers. */
         if ($this->trigger(preg_match('~(?:^|\W)HNAP1~i', $LCNrURI), 'Probing for vulnerable routers')) {
             $this->Reporter->report([15, 23], ['Caught probing for vulnerable routers.'], $this->BlockInfo['IPAddr']);
         } // 2022.06.05
 
         /** Probing for vulnerable webapps. */
-        if ($this->trigger(preg_match('~cgi-bin/(?:get_status|(?:web)?login)\.cgi(?:$|\?)|manager/text/list~', $LCNrURI), 'Probing for vulnerable webapps')) {
+        if ($this->trigger(preg_match('~cgi-bin/(?:get_status|(?:web)?login)\.cgi(?:$|[/?])|(?:^|[/?])manager/text/list~', $LCNrURI), 'Probing for vulnerable webapps')) {
             $this->Reporter->report([15, 21], ['Caught probing for vulnerable webapps.'], $this->BlockInfo['IPAddr']);
-        } // 2022.06.05 mod 2025.03.03
+        } // 2022.06.05 mod 2025.07.17
 
         /** CONNECT-based signatures. */
         if ($this->BlockInfo['Request_Method'] === 'CONNECT') {

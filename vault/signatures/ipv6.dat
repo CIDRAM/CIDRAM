@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6.dat
 
-# Version: 2025.197.0
-# Last modified: 2025.07.17
+# Version: 2025.201.0
+# Last modified: 2025.07.21
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -3055,13 +3055,13 @@ Tag: OJSC RTComm.RU
 
 
 # ASN 15967 ("Nazwa.pl Sp.z.o.o").
-# Stop Forum Spam (SFS) listings: 7.
-# Updated: 2024.07.22
+# Stop Forum Spam (SFS) listings: 39.
+# Updated: 2025.07.19
 
 2a01:6100::/32 Deny Cloud
-2a0c:5840::/31 Deny Cloud
+2a0c:5841::/32 Deny Cloud
 Origin: PL
-Profile: Webhosting
+Profile: Dedicated;Webhosting
 Tag: Nazwa.pl
 
 
@@ -4589,15 +4589,12 @@ Tag: ScaleUp Technologies
 
 
 # ASN 13213 ("UK-2 Limited").
-# Stop Forum Spam (SFS) listings: 1,545.
-# Updated: 2024.07.18
+# Stop Forum Spam (SFS) listings: 3,223.
+# Updated: 2025.07.19
 
 2a02:2498::/47 Deny Cloud
 2a02:2498:4::/47 Deny Cloud
-2a02:2498:6::/48 Deny Cloud
 2a02:2498:16::/48 Deny Cloud
-2a02:2498:55::/48 Deny Cloud
-2a02:2498:295::/48 Deny Cloud
 2a02:2498:1000::/36 Deny Cloud
 2a02:2498:257b::/48 Deny Cloud
 2a02:2498:53aa::/48 Deny Cloud
@@ -4605,10 +4602,13 @@ Tag: ScaleUp Technologies
 2a02:2498:9000::/36 Deny Cloud
 2a02:2498:a000::/35 Deny Cloud
 2a02:2498:e000::/36 Deny Cloud
-2a02:2498:f000::/48 Deny Cloud
+2a02:2498:f000::/47 Deny Cloud
+2a02:2498:f002::/48 Deny Cloud
 2a13:9500:3::/48 Deny Cloud
 2a13:9500:24::/46 Deny Cloud
 2a13:9500:28::/48 Deny Cloud
+2a13:9500:5b::/48 Deny Cloud
+2a13:9500:5c::/46 Deny Cloud
 Origin: GB
 2a04:76c7:200::/48 Deny Cloud
 Origin: NL
@@ -4616,14 +4616,12 @@ Origin: NL
 2602:fad4:2::/48 Deny Cloud
 2602:ff62:128::/45 Deny Cloud
 2602:ff62:184::/47 Deny Cloud
-2602:ff84::/48 Deny Cloud
-2602:ffb0:28::/48 Deny Cloud
-2602:ffb0:30::/47 Deny Cloud
+2602:ffb0:30::/48 Deny Cloud
+2604:c980:5400::/40 Deny Cloud
 2606:2e00:8000::/47 Deny Cloud
+2606:2e00:8003::/48 Deny Cloud
 2606:2e00:8027::/48 Deny Cloud
 2606:2e00:8028::/47 Deny Cloud
-2a07:23c0::/48 Deny Cloud
-2a07:23c0:8::/47 Deny Cloud
 2a07:4841::/48 Deny Cloud
 2a07:4842::/48 Deny Cloud
 Origin: US
@@ -7797,31 +7795,32 @@ Profile: Dedicated;Webhosting
 Tag: Majestic Hosting
 
 
-# ASN 54113 ("Fastly").
+# ASN 54113 ("Fastly, Inc").
 # CDN, cloud provider, and also a source of spam.
-# Stop Forum Spam (SFS) listings: 63.
-# Updated: 2024.07.22
+# Stop Forum Spam (SFS) listings: 333.
+# Updated: 2025.07.19
 
-2a0d:8000:1::/48 Deny Cloud
-Origin: IE
 2001:df0:462::/48 Deny Cloud
 Origin: JP
 2001:df0:45f::/48 Deny Cloud
 Origin: NZ
 2001:df0:461::/48 Deny Cloud
-Origin: SG
 2602:816:5001::/48 Deny Cloud
 2606:2cc0::/46 Deny Cloud
 2606:50c0:8000::/46 Deny Cloud
 2607:71c0:fff0::/45 Deny Cloud
+2607:71c0:fff8::/46 Deny Cloud
 2607:8940:4000::/35 Deny Cloud
 2620:0:890::/48 Deny Cloud
 2620:11a:c004::/48 Deny Cloud
 2620:11a:c010::/48 Deny Cloud
+2620:11a:c012::/48 Deny Cloud
 2620:11a:c014::/48 Deny Cloud
 2620:11a:c016::/48 Deny Cloud
 2620:11a:c018::/46 Deny Cloud
+2620:11a:c01c::/47 Deny Cloud
 2620:11a:c020::/48 Deny Cloud
+2620:11a:c024::/47 Deny Cloud
 2620:12a:8000::/44 Deny Cloud
 2a04:4e40::/48 Deny Cloud
 2a04:4e40:200::/48 Deny Cloud
@@ -7830,30 +7829,33 @@ Origin: SG
 2a04:4e40:230::/48 Deny Cloud
 2a04:4e40:240::/44 Deny Cloud
 2a04:4e40:2f0::/48 Deny Cloud
+2a04:4e40:300::/44 Deny Cloud
 2a04:4e40:400::/48 Deny Cloud
 2a04:4e40:410::/44 Deny Cloud
 2a04:4e40:430::/48 Deny Cloud
 2a04:4e40:440::/48 Deny Cloud
 2a04:4e40:4f0::/48 Deny Cloud
+2a04:4e40:500::/44 Deny Cloud
 2a04:4e40:600::/48 Deny Cloud
-2a04:4e40:610::/48 Deny Cloud
+2a04:4e40:610::/44 Deny Cloud
 2a04:4e40:620::/48 Deny Cloud
 2a04:4e40:630::/48 Deny Cloud
 2a04:4e40:640::/48 Deny Cloud
 2a04:4e40:6f0::/48 Deny Cloud
 2a04:4e40:800::/48 Deny Cloud
-2a04:4e40:820::/48 Deny Cloud
-2a04:4e40:840::/48 Deny Cloud
-2a04:4e40:a00::/47 Deny Cloud
+2a04:4e40:810::/44 Deny Cloud
+2a04:4e40:820::/44 Deny Cloud
+2a04:4e40:840::/44 Deny Cloud
+2a04:4e40:8f0::/48 Deny Cloud
+2a04:4e40:a00::/48 Deny Cloud
 2a04:4e40:a10::/44 Deny Cloud
 2a04:4e40:a20::/43 Deny Cloud
 2a04:4e40:a40::/43 Deny Cloud
-2a04:4e40:af0::/47 Deny Cloud
+2a04:4e40:af0::/48 Deny Cloud
 2a04:4e40:c00::/48 Deny Cloud
 2a04:4e40:e00::/48 Deny Cloud
 2a04:4e40:e10::/48 Deny Cloud
 2a04:4e40:e20::/48 Deny Cloud
-2a04:4e40:e30::/48 Deny Cloud
 2a04:4e40:e40::/48 Deny Cloud
 2a04:4e40:ef0::/48 Deny Cloud
 2a04:4e40:1000::/48 Deny Cloud
@@ -7867,68 +7869,90 @@ Origin: SG
 2a04:4e40:1220::/44 Deny Cloud
 2a04:4e40:1240::/48 Deny Cloud
 2a04:4e40:12f0::/48 Deny Cloud
+2a04:4e40:1600::/48 Deny Cloud
+2a04:4e40:1620::/44 Deny Cloud
+2a04:4e40:1640::/44 Deny Cloud
+2a04:4e40:16f0::/48 Deny Cloud
 2a04:4e40:1800::/48 Deny Cloud
 2a04:4e40:1830::/44 Deny Cloud
 2a04:4e40:1840::/44 Deny Cloud
 2a04:4e40:1850::/48 Deny Cloud
-2a04:4e40:18f0::/48 Deny Cloud
+2a04:4e40:1a00::/44 Deny Cloud
 2a04:4e40:1c00::/47 Deny Cloud
 2a04:4e40:1c10::/47 Deny Cloud
-2a04:4e40:1c20::/47 Deny Cloud
-2a04:4e40:1c30::/47 Deny Cloud
-2a04:4e40:1c40::/47 Deny Cloud
+2a04:4e40:1c20::/43 Deny Cloud
+2a04:4e40:1c40::/44 Deny Cloud
+2a04:4e40:1e00::/44 Deny Cloud
 2a04:4e40:2000::/48 Deny Cloud
 2a04:4e40:2010::/44 Deny Cloud
 2a04:4e40:2020::/43 Deny Cloud
 2a04:4e40:2040::/43 Deny Cloud
 2a04:4e40:20f0::/48 Deny Cloud
+2a04:4e40:2200::/44 Deny Cloud
+2a04:4e40:2400::/48 Deny Cloud
+2a04:4e40:2410::/48 Deny Cloud
+2a04:4e40:24f0::/48 Deny Cloud
 2a04:4e40:2600::/47 Deny Cloud
+2a04:4e40:2800::/44 Deny Cloud
 2a04:4e40:2a00::/48 Deny Cloud
 2a04:4e40:2a10::/44 Deny Cloud
 2a04:4e40:2a20::/43 Deny Cloud
 2a04:4e40:2a40::/43 Deny Cloud
 2a04:4e40:2af0::/48 Deny Cloud
 2a04:4e40:2c00::/48 Deny Cloud
+2a04:4e40:2cf0::/48 Deny Cloud
+2a04:4e40:2e00::/44 Deny Cloud
 2a04:4e40:3000::/48 Deny Cloud
+2a04:4e40:3200::/48 Deny Cloud
 2a04:4e40:3400::/48 Deny Cloud
+2a04:4e40:3600::/48 Deny Cloud
+2a04:4e40:3610::/48 Deny Cloud
+2a04:4e40:3630::/44 Deny Cloud
+2a04:4e40:3640::/43 Deny Cloud
+2a04:4e40:36f0::/48 Deny Cloud
 2a04:4e40:3800::/48 Deny Cloud
 2a04:4e40:3810::/44 Deny Cloud
 2a04:4e40:3820::/43 Deny Cloud
 2a04:4e40:3840::/44 Deny Cloud
 2a04:4e40:38f0::/48 Deny Cloud
+2a04:4e40:3a00::/48 Deny Cloud
+2a04:4e40:3a10::/44 Deny Cloud
+2a04:4e40:3a40::/44 Deny Cloud
+2a04:4e40:3af0::/48 Deny Cloud
 2a04:4e40:3c00::/48 Deny Cloud
 2a04:4e40:3c10::/44 Deny Cloud
-2a04:4e40:3c20::/43 Deny Cloud
+2a04:4e40:3c20::/44 Deny Cloud
 2a04:4e40:3c40::/44 Deny Cloud
 2a04:4e40:3cf0::/48 Deny Cloud
 2a04:4e40:3e00::/48 Deny Cloud
 2a04:4e40:3e10::/44 Deny Cloud
-2a04:4e40:3e30::/48 Deny Cloud
+2a04:4e40:3e20::/48 Deny Cloud
 2a04:4e40:3e40::/48 Deny Cloud
-2a04:4e40:3e50::/48 Deny Cloud
 2a04:4e40:3ef0::/48 Deny Cloud
 2a04:4e40:4000::/48 Deny Cloud
 2a04:4e40:40f0::/48 Deny Cloud
 2a04:4e40:4200::/48 Deny Cloud
 2a04:4e40:4400::/48 Deny Cloud
-2a04:4e40:4410::/48 Deny Cloud
-2a04:4e40:4420::/43 Deny Cloud
+2a04:4e40:4410::/44 Deny Cloud
 2a04:4e40:4440::/44 Deny Cloud
 2a04:4e40:44f0::/48 Deny Cloud
-2a04:4e40:4800::/48 Deny Cloud
-2a04:4e40:4810::/44 Deny Cloud
-2a04:4e40:4820::/43 Deny Cloud
-2a04:4e40:4840::/44 Deny Cloud
-2a04:4e40:48f0::/48 Deny Cloud
+2a04:4e40:4600::/48 Deny Cloud
+2a04:4e40:4610::/48 Deny Cloud
+2a04:4e40:4620::/43 Deny Cloud
+2a04:4e40:4640::/44 Deny Cloud
+2a04:4e40:4650::/48 Deny Cloud
+2a04:4e40:46f0::/48 Deny Cloud
 2a04:4e40:4a00::/48 Deny Cloud
+2a04:4e40:4af0::/48 Deny Cloud
 2a04:4e40:4c00::/47 Deny Cloud
+2a04:4e40:4cf0::/47 Deny Cloud
 2a04:4e40:4e00::/48 Deny Cloud
 2a04:4e40:4e10::/44 Deny Cloud
 2a04:4e40:4e20::/43 Deny Cloud
 2a04:4e40:4ef0::/48 Deny Cloud
 2a04:4e40:5000::/48 Deny Cloud
 2a04:4e40:5010::/44 Deny Cloud
-2a04:4e40:5020::/43 Deny Cloud
+2a04:4e40:5020::/44 Deny Cloud
 2a04:4e40:5040::/44 Deny Cloud
 2a04:4e40:50f0::/48 Deny Cloud
 2a04:4e40:5200::/48 Deny Cloud
@@ -7938,31 +7962,29 @@ Origin: SG
 2a04:4e40:5240::/44 Deny Cloud
 2a04:4e40:52f0::/48 Deny Cloud
 2a04:4e40:5600::/48 Deny Cloud
+2a04:4e40:56f0::/48 Deny Cloud
 2a04:4e40:5800::/48 Deny Cloud
 2a04:4e40:5810::/48 Deny Cloud
 2a04:4e40:5830::/44 Deny Cloud
 2a04:4e40:5840::/44 Deny Cloud
 2a04:4e40:58f0::/48 Deny Cloud
-2a04:4e40:5a00::/48 Deny Cloud
-2a04:4e40:5a10::/48 Deny Cloud
+2a04:4e40:5a00::/47 Deny Cloud
 2a04:4e40:5a20::/48 Deny Cloud
-2a04:4e40:5a30::/44 Deny Cloud
 2a04:4e40:5a40::/44 Deny Cloud
-2a04:4e40:5af0::/48 Deny Cloud
-2a04:4e40:5c00::/48 Deny Cloud
+2a04:4e40:5af0::/47 Deny Cloud
 2a04:4e40:5e00::/48 Deny Cloud
 2a04:4e40:5e10::/44 Deny Cloud
 2a04:4e40:5e30::/44 Deny Cloud
 2a04:4e40:5e40::/44 Deny Cloud
 2a04:4e40:5ef0::/48 Deny Cloud
-2a04:4e40:6000::/48 Deny Cloud
+2a04:4e40:6000::/47 Deny Cloud
 2a04:4e40:6020::/44 Deny Cloud
 2a04:4e40:6400::/48 Deny Cloud
-2a04:4e40:6600::/48 Deny Cloud
+2a04:4e40:6600::/47 Deny Cloud
 2a04:4e40:6610::/44 Deny Cloud
 2a04:4e40:6630::/44 Deny Cloud
 2a04:4e40:6640::/44 Deny Cloud
-2a04:4e40:66f0::/48 Deny Cloud
+2a04:4e40:66f0::/47 Deny Cloud
 2a04:4e40:6800::/48 Deny Cloud
 2a04:4e40:6810::/48 Deny Cloud
 2a04:4e40:6820::/48 Deny Cloud
@@ -7976,12 +7998,17 @@ Origin: SG
 2a04:4e40:6af0::/48 Deny Cloud
 2a04:4e40:6c00::/48 Deny Cloud
 2a04:4e40:6e00::/48 Deny Cloud
+2a04:4e40:6ef0::/48 Deny Cloud
 2a04:4e40:7000::/48 Deny Cloud
 2a04:4e40:7010::/48 Deny Cloud
 2a04:4e40:7030::/44 Deny Cloud
+2a04:4e40:7040::/48 Deny Cloud
+2a04:4e40:7200::/48 Deny Cloud
+2a04:4e40:72f0::/48 Deny Cloud
 2a04:4e40:7800::/48 Deny Cloud
 2a04:4e40:7830::/48 Deny Cloud
 2a04:4e40:7840::/48 Deny Cloud
+2a04:4e40:78f0::/48 Deny Cloud
 2a04:4e40:7a00::/48 Deny Cloud
 2a04:4e40:7e00::/48 Deny Cloud
 2a04:4e40:7e10::/48 Deny Cloud
@@ -7990,7 +8017,6 @@ Origin: SG
 2a04:4e40:7ef0::/48 Deny Cloud
 2a04:4e40:8000::/48 Deny Cloud
 2a04:4e40:8010::/48 Deny Cloud
-2a04:4e40:8040::/48 Deny Cloud
 2a04:4e40:80f0::/48 Deny Cloud
 2a04:4e40:8200::/48 Deny Cloud
 2a04:4e40:8210::/44 Deny Cloud
@@ -8002,11 +8028,12 @@ Origin: SG
 2a04:4e40:8800::/48 Deny Cloud
 2a04:4e40:8830::/48 Deny Cloud
 2a04:4e40:8840::/48 Deny Cloud
-2a04:4e40:8a00::/48 Deny Cloud
-2a04:4e40:8a10::/48 Deny Cloud
-2a04:4e40:8a30::/48 Deny Cloud
-2a04:4e40:8a40::/48 Deny Cloud
-2a04:4e40:8af0::/48 Deny Cloud
+2a04:4e40:88f0::/48 Deny Cloud
+2a04:4e40:8a00::/47 Deny Cloud
+2a04:4e40:8a10::/47 Deny Cloud
+2a04:4e40:8a30::/47 Deny Cloud
+2a04:4e40:8a40::/47 Deny Cloud
+2a04:4e40:8af0::/47 Deny Cloud
 2a04:4e40:8c00::/47 Deny Cloud
 2a04:4e40:8c10::/47 Deny Cloud
 2a04:4e40:8c20::/47 Deny Cloud
@@ -8025,8 +8052,7 @@ Origin: SG
 2a04:4e40:94f0::/47 Deny Cloud
 2a04:4e40:9600::/48 Deny Cloud
 2a04:4e40:9610::/48 Deny Cloud
-2a04:4e40:9620::/48 Deny Cloud
-2a04:4e40:9630::/44 Deny Cloud
+2a04:4e40:9620::/43 Deny Cloud
 2a04:4e40:9640::/44 Deny Cloud
 2a04:4e40:9650::/48 Deny Cloud
 2a04:4e40:96f0::/48 Deny Cloud
@@ -8040,6 +8066,7 @@ Origin: SG
 2a04:4e40:9c00::/48 Deny Cloud
 2a04:4e40:9cf0::/48 Deny Cloud
 2a04:4e40:9e00::/48 Deny Cloud
+2a04:4e40:9ef0::/48 Deny Cloud
 2a04:4e40:a000::/48 Deny Cloud
 2a04:4e40:a010::/48 Deny Cloud
 2a04:4e40:a020::/48 Deny Cloud
@@ -8048,6 +8075,7 @@ Origin: SG
 2a04:4e40:a050::/48 Deny Cloud
 2a04:4e40:a0f0::/48 Deny Cloud
 2a04:4e40:a200::/48 Deny Cloud
+2a04:4e40:a400::/48 Deny Cloud
 2a04:4e40:a600::/48 Deny Cloud
 2a04:4e40:aa00::/47 Deny Cloud
 2a04:4e40:aa10::/47 Deny Cloud
@@ -8059,25 +8087,36 @@ Origin: SG
 2a04:4e40:ac00::/48 Deny Cloud
 2a04:4e40:ac30::/44 Deny Cloud
 2a04:4e40:ac40::/43 Deny Cloud
-2a04:4e40:b000::/48 Deny Cloud
-2a04:4e40:b040::/48 Deny Cloud
-2a04:4e40:b0f0::/48 Deny Cloud
+2a04:4e40:b000::/47 Deny Cloud
+2a04:4e40:b010::/47 Deny Cloud
+2a04:4e40:b040::/47 Deny Cloud
+2a04:4e40:b0f0::/47 Deny Cloud
 2a04:4e40:b200::/48 Deny Cloud
 2a04:4e40:b230::/48 Deny Cloud
 2a04:4e40:b240::/44 Deny Cloud
 2a04:4e40:b2f0::/48 Deny Cloud
-2a04:4e40:b600::/48 Deny Cloud
+2a04:4e40:b400::/48 Deny Cloud
+2a04:4e40:b410::/44 Deny Cloud
+2a04:4e40:b440::/44 Deny Cloud
+2a04:4e40:b4f0::/48 Deny Cloud
+2a04:4e40:b600::/47 Deny Cloud
 2a04:4e40:b630::/44 Deny Cloud
 2a04:4e40:b640::/44 Deny Cloud
-2a04:4e40:b6f0::/48 Deny Cloud
+2a04:4e40:b6f0::/47 Deny Cloud
+2a04:4e40:b800::/48 Deny Cloud
+2a04:4e40:b810::/48 Deny Cloud
+2a04:4e40:b830::/48 Deny Cloud
+2a04:4e40:b840::/48 Deny Cloud
+2a04:4e40:b8f0::/48 Deny Cloud
 2a04:4e40:ba00::/48 Deny Cloud
 2a04:4e40:bc00::/48 Deny Cloud
-2a04:4e40:be00::/48 Deny Cloud
-2a04:4e40:be20::/48 Deny Cloud
-2a04:4e40:be30::/48 Deny Cloud
-2a04:4e40:be40::/48 Deny Cloud
-2a04:4e40:be50::/48 Deny Cloud
-2a04:4e40:bef0::/48 Deny Cloud
+2a04:4e40:be00::/47 Deny Cloud
+2a04:4e40:be10::/47 Deny Cloud
+2a04:4e40:be20::/47 Deny Cloud
+2a04:4e40:be30::/47 Deny Cloud
+2a04:4e40:be40::/47 Deny Cloud
+2a04:4e40:be50::/47 Deny Cloud
+2a04:4e40:bef0::/47 Deny Cloud
 2a04:4e40:c000::/48 Deny Cloud
 2a04:4e40:c030::/44 Deny Cloud
 2a04:4e40:c200::/48 Deny Cloud
@@ -8089,20 +8128,19 @@ Origin: SG
 2a04:4e40:c420::/48 Deny Cloud
 2a04:4e40:c430::/48 Deny Cloud
 2a04:4e40:c440::/48 Deny Cloud
-2a04:4e40:c450::/48 Deny Cloud
 2a04:4e40:c4f0::/48 Deny Cloud
 2a04:4e40:c600::/48 Deny Cloud
 2a04:4e40:c630::/44 Deny Cloud
 2a04:4e40:c6f0::/48 Deny Cloud
 2a04:4e40:c800::/48 Deny Cloud
+2a04:4e40:ca00::/48 Deny Cloud
+2a04:4e40:ca10::/44 Deny Cloud
+2a04:4e40:ca30::/44 Deny Cloud
+2a04:4e40:ca40::/43 Deny Cloud
+2a04:4e40:caf0::/48 Deny Cloud
 2a04:4e40:cc00::/48 Deny Cloud
-2a04:4e40:cc10::/44 Deny Cloud
-2a04:4e40:cc30::/44 Deny Cloud
-2a04:4e40:cc40::/43 Deny Cloud
-2a04:4e40:ccf0::/48 Deny Cloud
 2a04:4e40:ce00::/48 Deny Cloud
 2a04:4e40:ce10::/48 Deny Cloud
-2a04:4e40:ce30::/44 Deny Cloud
 2a04:4e40:ce40::/44 Deny Cloud
 2a04:4e40:cef0::/48 Deny Cloud
 2a04:4e40:d000::/48 Deny Cloud
@@ -8113,10 +8151,12 @@ Origin: SG
 2a04:4e40:d050::/48 Deny Cloud
 2a04:4e40:d0f0::/48 Deny Cloud
 2a04:4e40:d200::/48 Deny Cloud
+2a04:4e40:d2f0::/48 Deny Cloud
 2a04:4e40:d400::/48 Deny Cloud
 2a04:4e40:d430::/44 Deny Cloud
 2a04:4e40:d440::/44 Deny Cloud
 2a04:4e40:d600::/48 Deny Cloud
+2a04:4e40:d6f0::/48 Deny Cloud
 2a04:4e40:da00::/48 Deny Cloud
 2a04:4e40:da10::/44 Deny Cloud
 2a04:4e40:da20::/43 Deny Cloud
@@ -8128,6 +8168,7 @@ Origin: SG
 2a04:4e40:dc50::/48 Deny Cloud
 2a04:4e40:dcf0::/48 Deny Cloud
 2a04:4e40:de00::/48 Deny Cloud
+2a04:4e40:def0::/48 Deny Cloud
 2a04:4e40:e000::/47 Deny Cloud
 2a04:4e40:e010::/47 Deny Cloud
 2a04:4e40:e020::/47 Deny Cloud
@@ -8140,42 +8181,55 @@ Origin: SG
 2a04:4e40:e230::/48 Deny Cloud
 2a04:4e40:e240::/44 Deny Cloud
 2a04:4e40:e2f0::/48 Deny Cloud
-2a04:4e40:e400::/48 Deny Cloud
-2a04:4e40:e410::/48 Deny Cloud
-2a04:4e40:e430::/48 Deny Cloud
-2a04:4e40:e440::/48 Deny Cloud
-2a04:4e40:e600::/48 Deny Cloud
-2a04:4e40:e610::/48 Deny Cloud
-2a04:4e40:e620::/48 Deny Cloud
-2a04:4e40:e640::/48 Deny Cloud
-2a04:4e40:e800::/48 Deny Cloud
+2a04:4e40:e400::/47 Deny Cloud
+2a04:4e40:e410::/47 Deny Cloud
+2a04:4e40:e430::/47 Deny Cloud
+2a04:4e40:e440::/47 Deny Cloud
+2a04:4e40:e4f0::/47 Deny Cloud
+2a04:4e40:e600::/47 Deny Cloud
+2a04:4e40:e610::/47 Deny Cloud
+2a04:4e40:e620::/47 Deny Cloud
+2a04:4e40:e640::/47 Deny Cloud
+2a04:4e40:e6f0::/47 Deny Cloud
+2a04:4e40:e800::/47 Deny Cloud
 2a04:4e40:e820::/44 Deny Cloud
-2a04:4e40:ea00::/48 Deny Cloud
-2a04:4e40:eaf0::/48 Deny Cloud
+2a04:4e40:ea00::/47 Deny Cloud
+2a04:4e40:eaf0::/47 Deny Cloud
 2a04:4e40:ec00::/48 Deny Cloud
+2a04:4e40:ec20::/44 Deny Cloud
+2a04:4e40:ec40::/44 Deny Cloud
+2a04:4e40:ecf0::/48 Deny Cloud
 2a04:4e40:ee00::/48 Deny Cloud
 2a04:4e40:ee10::/48 Deny Cloud
 2a04:4e40:ee20::/48 Deny Cloud
 2a04:4e40:ee30::/44 Deny Cloud
 2a04:4e40:ee40::/48 Deny Cloud
 2a04:4e40:eef0::/48 Deny Cloud
-2a04:4e40:f000::/48 Deny Cloud
-2a04:4e40:f0f0::/48 Deny Cloud
+2a04:4e40:f000::/47 Deny Cloud
+2a04:4e40:f0f0::/47 Deny Cloud
 2a04:4e40:f200::/48 Deny Cloud
-2a04:4e40:f600::/48 Deny Cloud
+2a04:4e40:f400::/48 Deny Cloud
+2a04:4e40:f410::/48 Deny Cloud
+2a04:4e40:f430::/48 Deny Cloud
+2a04:4e40:f440::/48 Deny Cloud
+2a04:4e40:f4f0::/48 Deny Cloud
+2a04:4e40:f600::/47 Deny Cloud
 2a04:4e40:f610::/44 Deny Cloud
 2a04:4e40:f630::/44 Deny Cloud
-2a04:4e40:f6f0::/48 Deny Cloud
+2a04:4e40:f6f0::/47 Deny Cloud
 2a04:4e40:f800::/48 Deny Cloud
-2a04:4e40:f820::/44 Deny Cloud
+2a04:4e40:f820::/48 Deny Cloud
+2a04:4e40:f840::/48 Deny Cloud
 2a04:4e40:f8f0::/48 Deny Cloud
-2a04:4e40:fa00::/48 Deny Cloud
+2a04:4e40:fa00::/47 Deny Cloud
 2a04:4e40:fa10::/48 Deny Cloud
-2a04:4e40:fa20::/48 Deny Cloud
+2a04:4e40:fa20::/47 Deny Cloud
 2a04:4e40:fa30::/48 Deny Cloud
-2a04:4e40:fa40::/48 Deny Cloud
+2a04:4e40:fa40::/47 Deny Cloud
 2a04:4e40:faf0::/48 Deny Cloud
 2a04:4e40:fc00::/48 Deny Cloud
+2a04:4e40:fc20::/48 Deny Cloud
+2a04:4e40:fcf0::/48 Deny Cloud
 2a04:4e40:fe00::/48 Deny Cloud
 2a04:4e40:fe10::/44 Deny Cloud
 2a04:4e40:fe30::/48 Deny Cloud
@@ -8184,7 +8238,6 @@ Origin: SG
 2a04:4e41::/33 Deny Cloud
 2a04:4e41:8000::/48 Deny Cloud
 2a04:4e42::/32 Deny Cloud
-2a04:4e47::/46 Deny Cloud
 Origin: US
 Profile: Content Delivery Network;Dedicated;Webhosting
 Tag: Fastly
@@ -11144,8 +11197,8 @@ Tag: PINVDS OU
 # ASN 133296 ("Web Werks India Pvt. Ltd").
 # Indian server farm. Brute-force, WordPress/XMLRPC, and webapp attacks, port
 # scans, hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 133.
-# Updated: 2024.10.06
+# Stop Forum Spam (SFS) listings: 786.
+# Updated: 2025.07.19
 
 2001:df1:1400::/48 Deny Cloud
 2001:df2:bec0::/48 Deny Cloud
@@ -11153,6 +11206,10 @@ Tag: PINVDS OU
 2001:df2:f9c0::/48 Deny Cloud
 2001:df5:4380::/48 Deny Cloud
 2001:df5:4480::/48 Deny Cloud
+2001:df5:4980::/48 Deny Cloud
+2001:df5:a7c0::/48 Deny Cloud
+2001:df5:af40::/48 Deny Cloud
+2001:df5:b340::/48 Deny Cloud
 2001:df5:f500::/48 Deny Cloud
 2001:df7:5d00::/48 Deny Cloud
 2400:11c0::/32 Deny Cloud
@@ -11165,6 +11222,8 @@ Tag: PINVDS OU
 2401:7500:fff7::/48 Deny Cloud
 2401:7500:fffa::/47 Deny Cloud
 2401:7500:fffc::/48 Deny Cloud
+2402:7a0::/45 Deny Cloud
+2402:7a0:8::/47 Deny Cloud
 Origin: IN
 Profile: Webhosting
 Tag: Web Werks India
@@ -11254,8 +11313,8 @@ Tag: LLC VK
 # ASN 35112 ("GBN group Ltd").
 # Russian VPS provider. Brute-force, SQLi, and webapp attacks, port scans,
 # hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 7.
-# Updated: 2023.08.13 / Checked: 2024.07.18
+# Stop Forum Spam (SFS) listings: 133.
+# Updated: 2023.08.13 / Checked: 2025.07.19
 
 2a0e:7200::/40 Deny Cloud
 Origin: RU
@@ -11324,6 +11383,18 @@ Tag: Beecloud
 Origin: RU
 Profile: Webhosting
 Tag: Lancom Ltd
+
+
+# ASN 50214 ("QWARTA LLC").
+# Brute-force, webapp, and log4shell attacks, RCE attempts, port scans,
+# hacking, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 606.
+# Updated: 2025.07.19
+
+2a11:5bc0::/29 Deny Cloud
+Origin: RU
+Profile: Webhosting
+Tag: QWARTA LLC
 
 
 # ASN 62005 ("BlueVPS OU").
@@ -12880,9 +12951,12 @@ Tag: Kingsoft
 # ASN 263511 ("Saveincloud Hospedagem na Internet Ltda").
 # Server farm. Brute-force, SQLi, and webapp attacks, and ports scans detected
 # from here.
-# Updated: 2024.07.18
+# Stop Forum Spam (SFS) listings: 5.
+# Updated: 2025.07.19
 
 2804:1308::/47 Deny Cloud
+2804:1308:2::/48 Deny Cloud
+2804:1308:b5b::/48 Deny Cloud
 Origin: BR
 Profile: Infrastructure/Transit;Webhosting
 Tag: Saveincloud
@@ -13943,7 +14017,8 @@ Tag: Mizban Dadeh
 # ASN 215419 ("Karizanta LTD").
 # Brute-force, SSH attacks, DNS poisoning, hacking, and port scans detected
 # from here.
-# Updated: 2024.07.18
+# Stop Forum Spam (SFS) listings: 4.
+# Updated: 2024.07.18 / Checked: 2025.07.19
 
 2a0f:5840:1::/48 Deny Cloud
 2a13:7b40:40::/48 Deny Cloud
@@ -13953,9 +14028,10 @@ Profile: Restricted/Unidentifiable
 Tag: Karizanta LTD
 
 
-# ASN 206075 ("Maximilian Jacobsen").
+# ASN 206075 ("Hollander & Jacobsen UG (haftungsbeschraenkt)").
 # Spam detected from here.
-# Updated: 2024.07.18
+# Stop Forum Spam (SFS) listings: 75.
+# Updated: 2024.07.18 / Checked: 2025.07.19
 
 2a07:e040::/31 Deny Cloud
 2a07:e042::/32 Deny Cloud
@@ -13964,33 +14040,9 @@ Profile: Restricted/Unidentifiable
 Tag: Maximilian Jacobsen
 
 
-# ASN 214995 ("Charged IT Solutions LLC").
-# Brute-force and SSH attacks detected from here.
-# Updated: 2024.07.18
-
-2602:fed2:7300::/48 Deny Cloud
-Origin: CA
-2602:299::/44 Deny Cloud
-Origin: US
-Profile: Dedicated;Infrastructure/Transit;Webhosting
-Tag: Charged IT
-
-
-# ASN 210546 ("Miglovets Egor Andreevich").
-# Brute-force, honeypot attacks, and port scans detected from here.
-# Stop Forum Spam (SFS) listings: 4.
-# Updated: 2024.07.18
-
-2a0f:cdc6:600::/44 Deny Cloud
-Origin: LV
-Profile: Restricted/Unidentifiable
-Tag: M.E.Andreevich
-
-
 # ASN 62429 ('"C.S.T". Ltd').
 # Brute-force, hacking, port scans, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2024.07.18
+# Updated: 2024.07.18 / Checked: 2025.07.19
 
 2a00:db20::/32 Deny Cloud
 Origin: RU
@@ -14011,9 +14063,11 @@ Tag: Standart AG, LLC
 
 # ASN 152194 ("CTG Server Limited").
 # Brute-force, SSH attacks, hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 37.
-# Updated: 2024.07.22 / Checked: 2024.11.07
+# Stop Forum Spam (SFS) listings: 69.
+# Updated: 2025.07.21
 
+2403:ea00::/32 Deny Cloud
+Origin: HK
 2407:7580::/32 Deny Cloud
 Origin: SG
 Profile: Restricted/Unidentifiable
@@ -16237,8 +16291,8 @@ Tag: Optibounce, LLC
 
 # ASN 328608 ("Africa on Cloud").
 # DDoS, webapp attacks, port scans, scraping, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 40.
-# Updated: 2025.01.16
+# Stop Forum Spam (SFS) listings: 8.
+# Updated: 2025.01.16 / Checked: 2025.07.19
 
 2c0f:ebd0::/32 Deny Cloud
 2c0f:f1b8::/32 Deny Cloud

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2025.07.18).
+ * This file: Optional security extras module (last modified: 2025.07.21).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -161,6 +161,9 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
         /** Probing for common vulnerabilities and exploits. */
         if (
+            $this->trigger(preg_match('~/wp-json/wp/v2/users(?:$|[/?])~', $LCNrURI), $Exploit = 'CVE-2017-5487') || // 2025.07.21
+            $this->trigger(preg_match('~/fckeditor/editor/filemanager(?:$|[/?])~', $LCNrURI), $Exploit = 'FCKeditor') || // 2025.07.20
+            $this->trigger(preg_match('~/modules/mod_simplefileuploadv1\.3/elements(?:$|[/?])~', $LCNrURI), $Exploit = 'CVE-2011-5148') || // 2025.07.20
             $this->trigger(preg_match('~/ecp/current/exporttool/microsoft.exchange.ediscovery.exporttool.application(?:$|[/?])~', $LCNrURI), $Exploit = 'CVE-2021-28481') || // 2025.07.17
             $this->trigger(preg_match('~/util/php/eval-stdin\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'CVE-2017-9841') || // 2025.07.16
             $this->trigger(preg_match('~/elfinder/php/connector\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'elFinder') || // 2025.07.07 (possible matches: CVE-2019-1010178, CVE-2020-25213, CVE-2020-35235, CVE-2021-32682)

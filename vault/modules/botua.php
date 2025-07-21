@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bot user agents module (last modified: 2025.07.16).
+ * This file: Bot user agents module (last modified: 2025.07.19).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -67,16 +67,20 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         $UANoSpace
     ), 'UA script injection'); // 2017.01.08
 
-    $this->trigger(preg_match(
+    if ($this->trigger(preg_match(
         '/(?:globals|_(cookie|env|files|get|post|request|se(rver|ssion)))\[/',
         $UANoSpace
-    ), 'UA global variable hack'); // 2017.01.13
+    ), 'UA global variable hack')) {
+        $this->Reporter->report([15], ['Globvar hack detected in user agent.'], $this->BlockInfo['IPAddr']);
+    } // 2017.01.13
 
     $this->trigger(preg_match('/Y[EI]$/', $this->BlockInfo['UA']), 'Possible/Suspected hack UA'); // 2017.01.06
 
     $this->trigger(strpos($UA, 'select ') !== false, 'UASQLi'); // 2017.02.25
 
-    $this->trigger(strpos($UANoSpace, 'captch') !== false, 'CAPTCHA cracker UA', '', $UnmarkCaptcha); // 2017.01.08 mod 2021.04.29
+    if ($this->trigger(strpos($UANoSpace, 'captch') !== false, 'CAPTCHA cracker UA', '', $UnmarkCaptcha)) {
+        $this->Reporter->report([19], ['CAPTCHA cracker detected.'], $this->BlockInfo['IPAddr']);
+    } // 2017.01.08 mod 2021.04.29
 
     $this->trigger(preg_match(
         '~(?:^b55|-agent-|auto_?http|bigbrother|cybeye|d(?:(?:iavol|ragoste)a|own' .
@@ -193,11 +197,11 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         't(?:-h-u-n|agsdir|ineye|opseo|raumacadx|urnitinbot)|' .
         'u(?:12bot|p(?:downer|ictobot))|' .
         'v(?:agabondo|bseo|isbot|oyager)|' .
-        'w(?:arebay|auuu|bsearchbot|eb(?:alta|capture|download|mastercoffee|meup|ripper)|ikio|indows(?:3|seven)|inhttp|ise-guys|khtmlto|orldbot|otbox)|' .
+        'w(?:arebay|auuu|bsearchbot|eb(?:alta|capture|download|mastercoffee|meup|ripper)|ikio|indows(?:3|seven)|ise-guys|khtmlto|orldbot|otbox)|' .
         'xtractorpro|' .
         'yoofind~',
         $UANoSpace
-    ), 'Backlink/SEO/Scraper UA'); // 2022.09.19
+    ), 'Backlink/SEO/Scraper UA'); // 2022.09.19 mod 2025.07.19
 
     $this->trigger(strpos($UANoSpace, 'catch') !== false, 'Risky UA'); // 2017.01.13
 
@@ -214,7 +218,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
     $this->trigger(preg_match(
         '~\.buzz|(?<!amazona)dbot/|(?:\W|^)(?:cu|pe)rl(?:\W|$)|#boss#|' .
-        '^(?:[aim]$|(?!linkedinbot).*http-?(?:agent|client))|' .
+        '^(?:[aim]$|(?!linkedinbot).*http-?(?:agent|client))|-xpanse|' .
         'a(?:bonti|ccserver|cme.spider|dreview/\d|jbaxy|nthill$|nyevent-http|ppengine|xios)|' .
         'b(?:abbar\.tech|igbozz|itsight|lackbird|logsearch|logbot|salsa)|' .
         'c(?:astlebot|atexplorador|k=\{\}|lickagy|liqzbot|ms-?checker|ontextad|orporama|ortex/\d|rowsnest|yberpatrol)|' .
@@ -233,14 +237,14 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         's(?:/got|can\.lol|caninfo|creener|eekport|itedomain|mut|nap(?:preview)?bot|oapclient|ocial(?:ayer|searcher)|oso|pyglass|quider|treetbot|ynapse)|' .
         't(?:impi|omba|weezler|ryghost)|' .
         'urlappendbot|urltest|' .
-        'w(?:asalive|atchmouse|eb(?:-monitoring|bot|masteraid|money|pros|site-info\.net|thumbnail)|hatweb|ikiapiary|in(?:http|inet)|maid\.com|pbot/1\.|sr-agent|wwtype)|' .
+        'w(?:asalive|atchmouse|eb(?:-monitoring|bot|masteraid|money|pros|site-info\.net|thumbnail)|hatweb|ikiapiary|ininet|maid\.com|pbot/1\.|sr-agent|wwtype)|' .
         'xenu|xovi|' .
         'zibber|zurichfinancialservices~',
         $UANoSpace
     ) || preg_match(
         '~^Mozilla/5\.0( [A-Za-z]{2,5}/0\..)?$~',
         $this->BlockInfo['UA']
-    ), 'Unauthorised'); // 2023.09.15 mod 2025.07.16
+    ), 'Unauthorised'); // 2023.09.15 mod 2025.07.19
 
     if ($this->trigger(preg_match('~ivre-|masscan~', $UANoSpace), 'Port scanner and synflood tool detected')) {
         $this->Reporter->report([14, 15, 19], ['MASSCAN port scanner and synflood tool detected.'], $this->BlockInfo['IPAddr']);
@@ -276,7 +280,9 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
     $this->trigger(preg_match('~(?:[./]seo|seo/)~', $UANoSpace), 'SEO UA'); // 2018.07.10
 
-    $this->trigger(strpos($UA, 'bittorrent') !== false, 'Bad context (not a bittorrent hub)'); // 2017.02.25
+    if ($this->trigger(strpos($UA, 'bittorrent') !== false, 'Bad context (not a bittorrent hub)')) {
+        $this->Reporter->report([4, 19], ['BitTorrent user agent seen at HTTP server endpoint (possible flood/DDoS attempt).'], $this->BlockInfo['IPAddr']);
+    } // 2017.02.25
 
     $this->trigger(preg_match(
         '~foregenix|modat|nuclei|projectdiscovery|sslyze|threatview~',
@@ -288,21 +294,33 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     /**
      * @link https://gist.github.com/paralax/6de9968e989c292781b2df167a1fb4ce
      */
-    $this->trigger(strpos($UANoSpace, 'gbrmss/') !== false, 'Gebriano webshell detected'); // 2022.02.23
+    if ($this->trigger(strpos($UANoSpace, 'gbrmss/') !== false, 'Gebriano webshell detected')) {
+        $this->Reporter->report([15, 19, 20, 21], ['Gebriano webshell detected here.'], $this->BlockInfo['IPAddr']);
+    } // 2022.02.23
 
     /**
      * @link https://isc.sans.edu/forums/diary/MGLNDD+Scans/28458/
      */
-    $this->trigger(preg_match('~^MGLNDD_~i', $UANoSpace), 'Attempting to expose honeypots'); // 2022.05.08
+    if ($this->trigger(preg_match('~^MGLNDD_~i', $UANoSpace), 'Attempting to expose honeypots')) {
+        $this->Reporter->report([21], ['Caught attempting to expose honeypot via reporting mechanism.'], $this->BlockInfo['IPAddr']);
+    } // 2022.05.08
 
     $this->trigger(preg_match(
-        '~adbar|anonymous-?coward|banana-?bot|bot-?test|brands-?bot|' .
-        'clark-?crawler|fidget-?spinner-?bot|friendly-?spider|' .
-        'jaddjabot|keys-?so-?bot|orbbot|phxbot|storm-?crawler|' .
-        'test-?bot|thesis-?research-?bot|thinkchaos|tiny-?bot|tiny-?test|trafilatura|' .
-        'whatstuffwherebot|zephuli-?bot~',
+        '~adbar|anonymous-?coward|' .
+        'banana-?bot|bot-?test|brands-?bot|' .
+        'clark-?crawler|' .
+        'fidget-?spinner-?bot|friendly-?spider|' .
+        'imagesift|' .
+        'jaddjabot|' .
+        'keys-?so-?bot|' .
+        'orbbot|' .
+        'phxbot|' .
+        'storm-?crawler|' .
+        't(?:est-?bot|hesis-?research-?bot|hinkchaos|iny-?(?:bot|test)|rafilatura)|' .
+        'whatstuffwherebot|winhttp|' .
+        'zephuli-?bot~',
         $UANoSpace
-    ), 'Scraper UA'); // 2023.11.17 mod 2024.04.11
+    ), 'Scraper UA'); // 2023.11.17 mod 2025.07.19
 
     $this->trigger(preg_match('~ct‑git‑scanner/~i', $this->BlockInfo['UA']), 'Unauthorised Git scanner'); // 2025.07.05
 
@@ -355,16 +373,10 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $this->Reporter->report([19, 20], ['User agent cited by malware detected.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'UAEX') !== false) {
             $this->Reporter->report([15, 19], ['Detected command execution via user agent header.'], $this->BlockInfo['IPAddr']);
-        } elseif (strpos($this->BlockInfo['WhyReason'], 'bittorrent') !== false) {
-            $this->Reporter->report([4, 19], ['BitTorrent user agent seen at HTTP server endpoint (possible flood/DDoS attempt).'], $this->BlockInfo['IPAddr']);
-        } elseif (strpos($this->BlockInfo['WhyReason'], 'Gebriano') !== false) {
-            $this->Reporter->report([15, 19, 20, 21], ['Gebriano webshell detected here.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'UA command injection') !== false) {
             $this->Reporter->report([15], ['Command injection detected in user agent.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'UA script injection') !== false) {
             $this->Reporter->report([15], ['Script injection detected in user agent.'], $this->BlockInfo['IPAddr']);
-        } elseif (strpos($this->BlockInfo['WhyReason'], 'UA global variable hack') !== false) {
-            $this->Reporter->report([15], ['Globvar hack detected in user agent.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'UA shell upload attempt') !== false) {
             $this->Reporter->report([15], ['Shell upload attempt detected in user agent.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'Hack UA') !== false) {
@@ -373,8 +385,6 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $this->Reporter->report([15, 19, 21], ['Caught looking for vulnerabilities.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'UASQLi') !== false) {
             $this->Reporter->report([16], ['SQLi attempt detected in user agent.'], $this->BlockInfo['IPAddr']);
-        } elseif (strpos($this->BlockInfo['WhyReason'], 'CAPTCHA cracker UA') !== false) {
-            $this->Reporter->report([19], ['CAPTCHA cracker detected.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'Probe UA') !== false) {
             $this->Reporter->report([19], ['Probe detected.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'Bash/Shellshock UA') !== false) {
@@ -389,8 +399,6 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $this->Reporter->report([19], ['Misbehaving bot detected.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'Scraper UA') !== false) {
             $this->Reporter->report([19], ['Scraper detected.'], $this->BlockInfo['IPAddr']);
-        } elseif (strpos($this->BlockInfo['WhyReason'], 'Attempting to expose honeypots') !== false) {
-            $this->Reporter->report([21], ['Caught attempting to expose honeypot via reporting mechanism.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'Hack attempt') !== false) {
             $this->Reporter->report([15, 19, 21], ['Hack attempt detected.'], $this->BlockInfo['IPAddr']);
         }

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2025.07.21).
+ * This file: Optional security extras module (last modified: 2025.07.22).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -183,6 +183,13 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $this->trigger(preg_match('~\?s=../%5c|invokefunction&function=call_user_func_array&|vars%5b0%5d=md5|vars%5b1%5d%5b%5d=hellothinkphp~', $LCNrURI), $Exploit = 'CVE-2018-20062') // 2025.07.01
         ) {
             $this->Reporter->report([15, 21], ['Caught probing for ' . $Exploit . ' vulnerability.'], $this->BlockInfo['IPAddr']);
+        }
+
+        /** Probing for common vulnerabilities and exploits. */
+        if (
+            $this->trigger(preg_match('~/services/contributor/1&(?:amp;)?id=1(?:(?:%20|[ +-])(?:union|all|select)|.*(?:null,|md5\\(|--(?:%20|[ +-])?))~', $LCNrURI), $Exploit = 'CVE-2021-24666') // 2025.07.22
+        ) {
+            $this->Reporter->report([15, 16, 21], ['Caught probing for ' . $Exploit . ' vulnerability.'], $this->BlockInfo['IPAddr']);
         }
 
         /** Probing for exposed Git data. */
@@ -410,10 +417,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         $this->trigger(strpos($this->BlockInfo['Query'], ',\'\',') !== false, 'Bad query'); // 2017.02.25
 
         $this->trigger(preg_match('/(?<![a-z])id=.*(?:benchmark\\(|id[xy]=|sleep\\()/', $QueryNoSpace), 'Query SQLi'); // 2017.03.01 mod 2023.11.10
-        $this->trigger(preg_match(
-            '~(?:from|union|where).*select|then.*else|(?:o[nr]|where).*isnull|(?:inner|left|outer|right)join~',
-            $QueryNoSpace
-        ), 'Query SQLi'); // 2017.03.01 mod 2023.08.30
+        $this->trigger(preg_match('~(?:from|union|where).*select|then.*else|(?:o[nr]|where).*isnull|(?:inner|left|outer|right)join~', $QueryNoSpace), 'Query SQLi'); // 2017.03.01 mod 2023.08.30
 
         $this->trigger(preg_match('/cpis_.*i0seclab@intermal\.com/', $QueryNoSpace), 'Hack attempt'); // 2018.02.20
         $this->trigger(preg_match('/^(?:3x=3x|of=1&a=1)/i', $this->BlockInfo['Query']), 'Hack attempt'); // 2023.07.13 mod 2023.09.02

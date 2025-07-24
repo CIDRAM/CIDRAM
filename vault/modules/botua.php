@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bot user agents module (last modified: 2025.07.19).
+ * This file: Bot user agents module (last modified: 2025.07.24).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -143,7 +143,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     $this->trigger(preg_match(
         '~^(?:wp-iphone$|\'?test|-|default|foo)|_sitemapper|3mir|' .
         'a(?:boundex|dmantx|dnormcrawler|dvbot|lphaserver|thens|ttache)|' .
-        'blekko|blogsnowbot|bytespider|' .
+        'blekko|blogsnowbot|' .
         'cmscrawler|co(?:ccoc|llect|modo-webinspector-crawler|mpspy)|crawler(?:4j|\.feedback)|' .
         'd(?:atacha|igout4uagent|ioscout|kimrepbot|sarobot)|' .
         'easou|exabot|' .
@@ -159,7 +159,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         'user-agent|visaduhoc|vonchimpenfurlr|webtarantula|wolf|' .
         'y(?:acy|isouspider|[ry]spider|unrang|unyun)|zoominfobot~',
         $UANoSpace
-    ) || strpos($UA, '   ') !== false, 'Banned UA'); // 2021.07.08 mod 2025.03.31
+    ) || strpos($UA, '   ') !== false, 'Banned UA'); // 2021.07.08 mod 2025.07.24
 
     if (!$this->trigger((
         preg_match('~^python-requests/2\.27~', $UANoSpace) &&
@@ -167,10 +167,10 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     ), 'Hack attempt')) { // 2022.05.08
         $this->trigger(preg_match(
             '~c(?:copyright|enturyb|9hilkat|olly)|fetch/|flipboard|googlealerts|grub|' .
-            'indeedbot|quick-crawler|scrapinghub|ttd-content|zgrab|^(?:abot|python-re' .
-            'quests/|spider)~',
+            'indeedbot|quick-crawler|scrapinghub|ttd-content|^(?:abot|python-requests' .
+            '/|spider)~',
             $UANoSpace
-        ), 'Scraper UA'); // 2022.05.11
+        ), 'Scraper UA'); // 2022.05.11 mod 2025.07.24
     }
 
     $this->trigger(preg_match('~^mozila/~', $UANoSpace), 'Hack attempt'); // 2022.05.31
@@ -178,9 +178,9 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     $this->trigger(preg_match(
         '~007ac9|200please|360spider|3d-ftp|' .
         'a(?:6-indexer|ccelo|ffinity|ghaven|href|ipbot|naly(?:ticsseo|zer)|pp3lewebkit|rtviper|wcheck)|' .
-        'b(?:acklink|azqux|ender|inlar|itvo|ixo|lex|nf.fr|ogahn|oitho|pimagewalker)|' .
-        'c(?:cbot|ent(?:iverse|ric)|ityreview|msworldmap|omment|ommoncrawl|overscout|r4nk|rawl(?:erbotalpha|fire)|razywebcrawler|uriousgeorge|ydral)|' .
-        'd(?:ataprovider|atenbank|aylife|ebate|igext|(?:cp|isco|ot|ouban|ownload)bot|otcomdotnet|otnetdotcom|owjones|tsagent)|' .
+        'b(?:abbar\.tech|acklink|arkrowler|azqux|ender|inlar|itvo|ixo|lex|nf.fr|ogahn|oitho|pimagewalker)|' .
+        'c(?:ent(?:iverse|ric)|ityreview|msworldmap|omment|ommoncrawl|overscout|r4nk|rawl(?:erbotalpha|fire)|razywebcrawler|uriousgeorge|ydral)|' .
+        'd(?:ataprovider|aylife|ebate|igext|(?:cp|isco|ot|ouban|ownload)bot|otcomdotnet|otnetdotcom|owjones|tsagent)|' .
         'e(?:(?:na|uro|xperi)bot|nvolk|stimatewebstats|vaal|zoom)|' .
         'f(?:dm|etch(?:er.0|or)|ibgen)|' .
         'g(?:alaxydownloads|et(?:download\.ws|ty|url11)|slfbot|umgum|urujibot)|' .
@@ -189,19 +189,18 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         'k(?:eywenbot|eywordsearchtool|imengi|kman)|' .
         'l(?:abjs\.pro|arbin|ink(?:dex|walker)|iperhey|(?:t|ush)bot)|' .
         'm(?:ahiti|ahonie|attters|egaindex|iabot|lbot|oreover|ormor|ot-v980|oz\.com|rchrome|ulticrawler)|' .
-        'n(?:eofonie|etestate|ewsbot|extgensearchbot|ineconnections)|' .
+        'n(?:eofonie|ewsbot|extgensearchbot|ineconnections)|' .
         'o(?:afcrawl|fflinenavigator|odlebot|ptimizer)|' .
-        'p(?:age(?:fetch|gett|_verifi)er|agesinventory|anscient|ath2|ic(?:grabber|s|tsnapshot|turefinder)|i(?:pl|xmatch|xray)|oe-component-client-|owermarks|rofiler|roximic|(?:s|ure)bot|urity)|qqdownload|' .
+        'p(?:age(?:fetch|gett|_verifi)er|agesinventory|ath2|ic(?:grabber|s|tsnapshot|turefinder)|i(?:pl|xmatch|xray)|oe-component-client-|owermarks|rofiler|roximic|(?:s|ure)bot|urity)|qqdownload|' .
         'r(?:6_|adian6|ankivabot|ebi-shoveler|everseget|ganalytics|ocketcrawler|ogerbot|sscrawl|ulinki)|' .
-        's(?:afeassign|bider|bl[.-]bot|crap[ey]|creamingfrog|earchmetricsbot|emrush|eo(?:bulls|eng|hunt|kicks|mon|profiler|stat|tool)|erpstat|istrix|ite(?:bot|intel)|n[iy]per|olomono|pbot|p(?:hi|y)der|search|webot)|' .
+        's(?:afeassign|bider|bl[.-]bot|creamingfrog|earchmetricsbot|emrush|eo(?:bulls|eng|hunt|kicks|mon|profiler|stat|tool)|erpstat|istrix|ite(?:bot|intel)|n[iy]per|olomono|pbot|search|webot)|' .
         't(?:-h-u-n|agsdir|ineye|opseo|raumacadx|urnitinbot)|' .
         'u(?:12bot|p(?:downer|ictobot))|' .
         'v(?:agabondo|bseo|isbot|oyager)|' .
         'w(?:arebay|auuu|bsearchbot|eb(?:alta|capture|download|mastercoffee|meup|ripper)|ikio|indows(?:3|seven)|ise-guys|khtmlto|orldbot|otbox)|' .
-        'xtractorpro|' .
         'yoofind~',
         $UANoSpace
-    ), 'Backlink/SEO/Scraper UA'); // 2022.09.19 mod 2025.07.19
+    ), 'Backlink/SEO/Scraper UA'); // 2022.09.19 mod 2025.07.24
 
     $this->trigger(strpos($UANoSpace, 'catch') !== false, 'Risky UA'); // 2017.01.13
 
@@ -220,7 +219,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         '~\.buzz|(?<!amazona)dbot/|(?:\W|^)(?:cu|pe)rl(?:\W|$)|#boss#|' .
         '^(?:[aim]$|(?!linkedinbot).*http-?(?:agent|client))|-xpanse|' .
         'a(?:bonti|ccserver|cme.spider|dreview/\d|jbaxy|nthill$|nyevent-http|ppengine|xios)|' .
-        'b(?:abbar\.tech|igbozz|itsight|lackbird|logsearch|logbot|salsa)|' .
+        'b(?:igbozz|itsight|lackbird|logsearch|logbot|salsa)|' .
         'c(?:astlebot|atexplorador|k=\{\}|lickagy|liqzbot|ms-?checker|ontextad|orporama|ortex/\d|rowsnest|yberpatrol)|' .
         'd(?:eepfield|le_spider|nbcrawler|omainappender|umprendertree)|' .
         'expanse|' .
@@ -235,7 +234,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         'p(?:4bot|4load|acrawler|ageglimpse|aloalto(?:company|network)|arsijoo|egasusmonitoring|hantomjs|hpcrawl|ingdom|rlog)|' .
         'r(?:arelyused|obo(?:cop|spider)|yze)|' .
         's(?:/got|can\.lol|caninfo|creener|eekport|itedomain|mut|nap(?:preview)?bot|oapclient|ocial(?:ayer|searcher)|oso|pyglass|quider|treetbot|ynapse)|' .
-        't(?:impi|omba|weezler|ryghost)|' .
+        't(?:omba|weezler|ryghost)|' .
         'urlappendbot|urltest|' .
         'w(?:asalive|atchmouse|eb(?:-monitoring|bot|masteraid|money|pros|site-info\.net|thumbnail)|hatweb|ikiapiary|ininet|maid\.com|pbot/1\.|sr-agent|wwtype)|' .
         'xenu|xovi|' .
@@ -244,7 +243,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     ) || preg_match(
         '~^Mozilla/5\.0( [A-Za-z]{2,5}/0\..)?$~',
         $this->BlockInfo['UA']
-    ), 'Unauthorised'); // 2023.09.15 mod 2025.07.19
+    ), 'Unauthorised'); // 2023.09.15 mod 2025.07.24
 
     if ($this->trigger(preg_match('~ivre-|masscan~', $UANoSpace), 'Port scanner and synflood tool detected')) {
         $this->Reporter->report([14, 15, 19], ['MASSCAN port scanner and synflood tool detected.'], $this->BlockInfo['IPAddr']);
@@ -284,10 +283,13 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         $this->Reporter->report([4, 19], ['BitTorrent user agent seen at HTTP server endpoint (possible flood/DDoS attempt).'], $this->BlockInfo['IPAddr']);
     } // 2017.02.25
 
-    $this->trigger(preg_match(
-        '~foregenix|modat|nuclei|projectdiscovery|sslyze|threatview~',
+    if ($this->trigger(preg_match(
+        '~foregenix|modat|nuclei|isscyberrisk|projectdiscovery|sslyze|threatview~',
         $UA
-    ), 'Vulnerability scanner detected; Unauthorised'); // 2023.06.16 mod 2025.01.12
+    ), 'Unauthorised vulnerability scanner detected')) {
+        $this->Reporter->report([15, 19, 21], ['Unauthorised vulnerability scanner detected.'], $this->BlockInfo['IPAddr']);
+        $this->CIDRAM['Tracking options override'] = 'extended';
+    } // 2023.06.16 mod 2025.07.24
 
     $this->trigger(preg_match('~^python/|aiohttp/|\.post0~', $UANoSpace), 'Bad context (Python/AIO clients not permitted here)'); // 2021.05.18
 
@@ -305,22 +307,33 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         $this->Reporter->report([21], ['Caught attempting to expose honeypot via reporting mechanism.'], $this->BlockInfo['IPAddr']);
     } // 2022.05.08
 
-    $this->trigger(preg_match(
-        '~adbar|anonymous-?coward|' .
-        'banana-?bot|bot-?test|brands-?bot|' .
-        'clark-?crawler|' .
-        'fidget-?spinner-?bot|friendly-?spider|' .
-        'imagesift|' .
+    if ($this->trigger(preg_match(
+        '~80legs|' .
+        'a(?:dbar|i2bot|ihitbot|i.?searchbot|liyun|ndibot|nonymous-?coward|wario)|' .
+        'b(?:anana-?bot|edrockbot|ot-?test|rands-?bot|rightbot|ytespider)|' .
+        'c(?:asperbot|cbot|hinaclaw|lark-?crawler|ohere-)|' .
+        'd(?:atenbank|eep-?research)|' .
+        'echobo[tx]|' .
+        'f(?:idget-?spinner-?bot|irecrawl|riendly-?(?:crawler|spider))|' .
+        'i(?:askspider|magesift|mg2dataset)|' .
         'jaddjabot|' .
-        'keys-?so-?bot|' .
+        'k(?:angaroobot|eys-?so-?bot)|' .
+        'm(?:amac(?:asper|yber)|istral|ozilla/0|ycentralai)|' .
+        'n(?:etestate|ovaact)|' .
         'orbbot|' .
-        'phxbot|' .
-        'storm-?crawler|' .
-        't(?:est-?bot|hesis-?research-?bot|hinkchaos|iny-?(?:bot|test)|rafilatura)|' .
-        'whatstuffwherebot|winhttp|' .
-        'zephuli-?bot~',
+        'p(?:angubot|anscient|erplexity|hindbot|hxbot|oseidon|ublicwebcrawler)|' .
+        'q(?:ualifiedbot|uillbot)|' .
+        'research.?crawler|' .
+        's(?:bintuition|crap[ey]|idetrade|p(?:hi|y)der|torm-?crawler|ummalybot)|' .
+        't(?:est-?bot|heknowledgeai|hesis-?research-?bot|hinkchaos|impi|iny-?(?:bot|test)|rafilatura)|' .
+        'velenpublic|' .
+        'w(?:ardbot|ebzio|hatstuffwherebot|inhttp)|' .
+        'xtractorpro|' .
+        'z(?:ephuli-?bot|grab)~',
         $UANoSpace
-    ), 'Scraper UA'); // 2023.11.17 mod 2025.07.19
+    ), 'Scraper UA')) {
+        $this->CIDRAM['Tracking options override'] = 'extended';
+    } // 2023.11.17 mod 2025.07.24
 
     $this->trigger(preg_match('~ct‑git‑scanner/~i', $this->BlockInfo['UA']), 'Unauthorised Git scanner'); // 2025.07.05
 
@@ -349,12 +362,10 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             strpos($UANoSpace, '}__') !== false ||
             preg_match('~0wn[3e]d|dkemdif.\d|f' . 'uck|:(?:\{[\w]:|[\w\d][;:]\})~', $UANoSpace)
         ), 'Hack UA') || // 2021.06.28
-        $this->trigger(preg_match('~(?:(aihit|casper)bot|mamac(asper|yber)|mozilla/0)~', $UANoSpace), 'Probe UA') || // 2017.02.25
         $this->trigger(strpos($UANoSpace, 'wopbot') !== false, 'Bash/Shellshock UA') || // 2017.01.06
         $this->trigger(preg_match('/(?:x(rumer|pymep)|хрумер)/', $UANoSpace), 'Spam UA') || // 2017.01.02
-        $this->trigger(preg_match('~loadimpact|re-?animator|root|theknowledgeai|webster~', $UANoSpace), 'Banned UA') || // 2021.02.10
+        $this->trigger(preg_match('~loadimpact|re-?animator|root|webster~', $UANoSpace), 'Banned UA') || // 2021.02.10 mod 2025.07.24
         $this->trigger(strpos($UANoSpace, '(somename)') !== false, 'Banned UA') || // 2017.02.02
-        $this->trigger(preg_match('~80legs|chinaclaw~', $UANoSpace), 'Scraper UA') || // 2017.01.08 mod 2021.06.28
         $this->trigger(preg_match('~brandwatch|magpie~', $UANoSpace), 'Snoop UA') || // 2017.01.13 mod 2021.06.28
         $this->trigger(strpos($this->BlockInfo['UA'], 'MSIECrawler') !== false, 'Hostile / Fake IE') // 2017.02.25 mod 2021.06.28
     ) {
@@ -381,8 +392,6 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $this->Reporter->report([15], ['Shell upload attempt detected in user agent.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'Hack UA') !== false) {
             $this->Reporter->report([15, 19, 21], ['Hack identifier detected in user agent.'], $this->BlockInfo['IPAddr']);
-        } elseif (strpos($this->BlockInfo['WhyReason'], 'Vulner') !== false) {
-            $this->Reporter->report([15, 19, 21], ['Caught looking for vulnerabilities.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'UASQLi') !== false) {
             $this->Reporter->report([16], ['SQLi attempt detected in user agent.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'Probe UA') !== false) {
@@ -422,10 +431,10 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
      * @link https://www.reddit.com/r/singularity/comments/1cdm97j/anthropics_claudebot_is_aggressively_scraping_the/
      * @link https://www.linode.com/community/questions/24842/ddos-from-anthropic-ai
      */
-    if ($this->trigger((strpos($UANoSpace, 'anthropic') !== false || strpos($UANoSpace, 'claudebot') !== false), 'Unauthorised AI scanner')) {
+    if ($this->trigger(preg_match('~anthropic|claude-?(?:bot|searchbot|user|web)~', $UANoSpace), 'Unauthorised AI scanner')) {
         $this->Reporter->report([4, 19], ['AI scanner notorious for flooding and DDoS attacks detected.'], $this->BlockInfo['IPAddr']);
         $this->CIDRAM['Tracking options override'] = 'extended';
-    } // 2023.08.10 mod 2024.04.27
+    } // 2023.08.10 mod 2025.07.24
 
     /**
      * @link https://github.com/CIDRAM/CIDRAM/issues/606

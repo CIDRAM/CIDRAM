@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6.dat
 
-# Version: 2025.201.0
-# Last modified: 2025.07.21
+# Version: 2025.204.0
+# Last modified: 2025.07.24
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -8769,8 +8769,7 @@ Tag: Vautron Rech. AG
 
 # ASN 38880 ("Micron21 Datacentre Pty Ltd").
 # SSH and brute-force attacks detected originating from this network.
-# Stop Forum Spam (SFS) listings: 4.
-# Updated: 2021.10.01 / Checked: 2024.07.22
+# Updated: 2021.10.01 / Checked: 2025.07.23
 
 2001:df6:2400::/48 Deny Cloud
 2400:9c00::/32 Deny Cloud
@@ -13321,25 +13320,63 @@ Tag: 365 INC
 
 # ASN 212477 ("RoyaleHosting BV").
 # SQLi, brute-force attacks, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 50.
-# Updated: 2024.07.31
+# Stop Forum Spam (SFS) listings: 273.
+# Updated: 2025.07.24
 
+2a0e:97c0:180::/44 Deny Cloud
+Origin: CH
+2a03:5840:fc::/48 Deny Cloud
+Origin: FR
+2a12:bec0:340::/44 Deny Cloud
+Origin: GB
+2001:3580::/29 Deny Cloud
+2a01:f140::/29 Deny Cloud
+2a01:f240::/29 Deny Cloud
+2a01:f2c0::/29 Deny Cloud
+2a01:f3c0::/29 Deny Cloud
+2a01:f440::/29 Deny Cloud
+2a01:f4c0::/29 Deny Cloud
+2a03:8b80::/29 Deny Cloud
+2a03:f100::/29 Deny Cloud
+2a04:7a80::/29 Deny Cloud
+2a04:f3c0::/29 Deny Cloud
+2a04:f700::/29 Deny Cloud
+2a10:9600::/29 Deny Cloud
+2a13:bec0::/29 Deny Cloud
+2a13:c340::/29 Deny Cloud
+Origin: LT
 2a0b:64c0:1::/48 Deny Cloud
 2a0b:64c0:2::/47 Deny Cloud
-2a0b:64c0:5::/48 Deny Cloud
-2a0b:64c0:6::/47 Deny Cloud
-2a0b:64c0:8::/48 Deny Cloud
-2a0b:64c0:a::/47 Deny Cloud
-2a0b:64c0:d::/48 Deny Cloud
-2a0b:64c0:e::/47 Deny Cloud
-2a0b:64c0:10::/47 Deny Cloud
-2a0b:64c0:f800::/47 Deny Cloud
-2a0b:64c0:f802::/48 Deny Cloud
-2a0b:64c0:fff8::/48 Deny Cloud
-2a10:6c02::/32 Deny Cloud
-2a11:1400:3000::/48 Deny Cloud
-2a11:5440::/29 Deny Cloud
+2a0b:64c0:4::/46 Deny Cloud
+2a0b:64c0:8::/46 Deny Cloud
+2a0b:64c0:e::/48 Deny Cloud
+2a0b:64c0:11::/48 Deny Cloud
+2a0b:64c0:12::/47 Deny Cloud
+2a0b:64c0:15::/48 Deny Cloud
+2a0b:64c0:16::/47 Deny Cloud
+2a0b:64c0:18::/48 Deny Cloud
+2a0b:64c0:1a::/48 Deny Cloud
+2a0b:64c0:1c::/47 Deny Cloud
+2a0b:64c0:f000::/46 Deny Cloud
+2a0b:64c0:f004::/47 Deny Cloud
+2a0b:64c0:f800::/46 Deny Cloud
+2a0b:64c0:f804::/48 Deny Cloud
+2a0b:64c0:f806::/47 Deny Cloud
+2a0b:64c0:f808::/48 Deny Cloud
+2a0b:64c0:fe00::/47 Deny Cloud
+2a0b:64c0:ff00::/47 Deny Cloud
+2a0b:64c0:ffe0::/47 Deny Cloud
+2a0b:64c0:fff0::/47 Deny Cloud
 Origin: NL
+2a11:5c80::/29 Deny Cloud
+2a12:4ac0::/29 Deny Cloud
+2a13:9380::/29 Deny Cloud
+2a13:9402::/32 Deny Cloud
+2a13:9f00::/29 Deny Cloud
+Origin: SC
+2602:f7f8:4::/48 Deny Cloud
+2602:fa0a::/40 Deny Cloud
+Origin: US
 Profile: Webhosting
 Tag: RoyaleHosting BV
 
@@ -14077,13 +14114,14 @@ Tag: CTG Server Limited
 # ASN 399275 ("Solid Systems LLC").
 # Brute-force, SSH, and webapp attacks, phishing, port scans, hacking, and spam
 # detected from here.
-# Stop Forum Spam (SFS) listings: 766.
-# Updated: 2024.07.25
+# Stop Forum Spam (SFS) listings: 1,116.
+# Updated: 2025.07.24
 
 2602:fcc0:1111::/48 Deny Cloud
-2602:fcc0:2222::/48 Deny Cloud
+2602:fcc0:1112::/48 Deny Cloud
+2602:fcc0:2222::/47 Deny Cloud
 2602:fcc0:3333::/48 Deny Cloud
-2602:fcc0:4444::/48 Deny Cloud
+2602:fcc0:4444::/47 Deny Cloud
 2602:fcc0:5555::/48 Deny Cloud
 2602:fcc0:6666::/48 Deny Cloud
 2602:fcc0:7777::/48 Deny Cloud
@@ -14097,9 +14135,10 @@ Tag: Solid Systems LLC
 # ASN 12676 ("HKN GmbH").
 # German cloud provider. Brute-force, SSH attacks, port scans, and hacking
 # detected from here.
-# Updated: 2024.07.26
+# Updated: 2025.07.24
 
 2a01:6780:4::/48 Deny Cloud
+2a01:a740::/32 Deny Cloud
 2a02:4c00::/39 Deny Cloud
 2a02:4c07:4000::/34 Deny Cloud
 2a02:4c07:8000::/34 Deny Cloud
@@ -14107,16 +14146,6 @@ Tag: Solid Systems LLC
 Origin: DE
 Profile: Infrastructure/Transit
 Tag: HKN GmbH
-
-
-# ASN 216253 ("Nanite Hosting LLC").
-# Port scans and hacking detected from here.
-# Updated: 2024.07.31
-
-2a12:bec4:1140::/44 Deny Cloud
-Origin: GB
-Profile: Webhosting
-Tag: Nanite Hosting LLC
 
 
 # ASN 45634 ("10 Science Park Road").

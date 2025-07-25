@@ -437,6 +437,7 @@
 
 #### Bugs fixed.
 - [2025.07.07]: The formatFileSize method wasn't accounting for negative numbers; Fixed.
+- [2025.07.26]: Some browsers, in some contexts, were raising errors during request inspection concerning the absence of any X-Content-Type-Options header declaration (though it isn't entirely clear whether this error had any actual effect); Fixed.
 
 #### Other changes.
 - [2025.07.08]: Added the ability to route all outbound requests through a proxy, and two new configuration directives, `request_proxy` and `request_proxyauth`.

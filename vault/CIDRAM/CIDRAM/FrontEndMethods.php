@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2025.07.07).
+ * This file: General methods used by the front-end (last modified: 2025.07.26).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1301,6 +1301,7 @@ trait FrontEndMethods
             $ThisAsset = $this->getAssetPath($Asset, true);
             if (strlen($ThisAsset) && is_readable($ThisAsset) && ($ThisAssetDel = strrpos($ThisAsset, '.')) !== false) {
                 $Success = false;
+                $NoSniff = false;
                 $Type = strtolower(substr($ThisAsset, $ThisAssetDel + 1));
                 if ($Type === 'jpeg') {
                     $Type = 'jpg';
@@ -1317,9 +1318,11 @@ trait FrontEndMethods
                 } elseif ($Type === 'js') {
                     $MimeType = 'Content-Type: text/javascript';
                     $Success = true;
+                    $NoSniff = true;
                 } elseif ($Type === 'css') {
                     $MimeType = 'Content-Type: text/css';
                     $Success = true;
+                    $NoSniff = true;
                 }
                 if ($Success) {
                     $AssetData = $this->readFile($ThisAsset);
@@ -1335,6 +1338,9 @@ trait FrontEndMethods
                         die;
                     }
                     header($MimeType);
+                    if ($NoSniff) {
+                        header('X-Content-Type-Options: nosniff');
+                    }
                     if (is_callable($Callback)) {
                         $AssetData = $Callback($AssetData);
                     }

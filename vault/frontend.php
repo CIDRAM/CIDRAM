@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2025.06.14).
+ * This file: Front-end handler (last modified: 2025.07.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -887,6 +887,7 @@ if ($CIDRAM['FE']['UserState'] !== 1 && $CIDRAM['FE']['CronMode'] === '') {
 } elseif ($CIDRAM['QueryVars']['cidram-page'] === 'flags' && $CIDRAM['FE']['Permissions'] && file_exists($CIDRAM['Vault'] . 'fe_assets/flags.css')) {
     /** A simple passthru for the flags CSS. */
     header('Content-Type: text/css');
+    header('X-Content-Type-Options: nosniff');
 
     /** Prevents needlessly reloading static assets. */
     header('Last-Modified: ' . gmdate('D, d M Y H:i:s T', filemtime($CIDRAM['Vault'] . 'fe_assets/flags.css')));

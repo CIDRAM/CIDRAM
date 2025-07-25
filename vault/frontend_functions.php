@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2025.07.11).
+ * This file: Front-end functions file (last modified: 2025.07.26).
  */
 
 /**
@@ -4927,6 +4927,7 @@ $CIDRAM['eTaggable'] = function ($Asset, $Callback = null) use (&$CIDRAM) {
         $ThisAsset = $CIDRAM['GetAssetPath']($Asset, true);
         if (strlen($ThisAsset) && is_readable($ThisAsset) && ($ThisAssetDel = strrpos($ThisAsset, '.')) !== false) {
             $Success = false;
+            $NoSniff = false;
             $Type = strtolower(substr($ThisAsset, $ThisAssetDel + 1));
             if ($Type === 'jpeg') {
                 $Type = 'jpg';
@@ -4943,9 +4944,11 @@ $CIDRAM['eTaggable'] = function ($Asset, $Callback = null) use (&$CIDRAM) {
             } elseif ($Type === 'js') {
                 $MimeType = 'Content-Type: text/javascript';
                 $Success = true;
+                $NoSniff = true;
             } elseif ($Type === 'css') {
                 $MimeType = 'Content-Type: text/css';
                 $Success = true;
+                $NoSniff = true;
             }
             if ($Success) {
                 $AssetData = $CIDRAM['ReadFile']($ThisAsset);
@@ -4961,6 +4964,9 @@ $CIDRAM['eTaggable'] = function ($Asset, $Callback = null) use (&$CIDRAM) {
                     die;
                 }
                 header($MimeType);
+                if ($NoSniff) {
+                    header('X-Content-Type-Options: nosniff');
+                }
                 if (is_callable($Callback)) {
                     $AssetData = $Callback($AssetData);
                 }

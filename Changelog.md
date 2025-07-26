@@ -447,4 +447,5 @@
 - [2025.07.17]: Added suggestions for the language resolution condition source at the auxiliary rules page.
 - [2025.07.18]: Added the option to the optional security extras module to remove headers which are unnecessary and known to be potentially useful for attackers.
 - [2024~2025]: Added L10N for Malayalam.
+- [2025.07.26]: Added access keys to a few more front-end pages.
 - *Plus all the regular signature updates.*

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bot user agents module (last modified: 2025.07.24).
+ * This file: Bot user agents module (last modified: 2025.07.26).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -202,6 +202,8 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         $UANoSpace
     ), 'Backlink/SEO/Scraper UA'); // 2022.09.19 mod 2025.07.24
 
+    $this->trigger(preg_match('~zombiebot~', $UANoSpace), 'Backlink/SEO'); // 2025.07.26
+
     $this->trigger(strpos($UANoSpace, 'catch') !== false, 'Risky UA'); // 2017.01.13
 
     if (isset($this->Shorthand['Proxy:Block'])) {
@@ -312,7 +314,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         'a(?:dbar|i2bot|ihitbot|i.?searchbot|liyun|ndibot|nonymous-?coward|wario)|' .
         'b(?:anana-?bot|edrockbot|ot-?test|rands-?bot|rightbot|ytespider)|' .
         'c(?:asperbot|cbot|hinaclaw|lark-?crawler|ohere-)|' .
-        'd(?:atenbank|eep-?research)|' .
+        'd(?:atenbank|eep-?research|iffbot)|' .
         'echobo[tx]|' .
         'f(?:idget-?spinner-?bot|irecrawl|riendly-?(?:crawler|spider))|' .
         'i(?:askspider|magesift|mg2dataset)|' .
@@ -320,7 +322,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         'k(?:angaroobot|eys-?so-?bot)|' .
         'm(?:amac(?:asper|yber)|istral|ozilla/0|ycentralai)|' .
         'n(?:etestate|ovaact)|' .
-        'orbbot|' .
+        'o(?:mgili|rbbot)|' .
         'p(?:angubot|anscient|erplexity|hindbot|hxbot|oseidon|ublicwebcrawler)|' .
         'q(?:ualifiedbot|uillbot)|' .
         'research.?crawler|' .
@@ -333,7 +335,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         $UANoSpace
     ), 'Scraper UA')) {
         $this->CIDRAM['Tracking options override'] = 'extended';
-    } // 2023.11.17 mod 2025.07.24
+    } // 2023.11.17 mod 2025.07.26
 
     $this->trigger(preg_match('~ct‑git‑scanner/~i', $this->BlockInfo['UA']), 'Unauthorised Git scanner'); // 2025.07.05
 

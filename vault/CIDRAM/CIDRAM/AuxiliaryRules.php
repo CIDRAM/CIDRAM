@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used for auxiliary rules (last modified: 2025.05.20).
+ * This file: Methods used for auxiliary rules (last modified: 2025.07.27).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -355,16 +355,16 @@ trait AuxiliaryRules
                         );
                     }
                     $Options = sprintf(
-                        '<select name="%s[%s]" class="auto"><option value="Default State"%s>%s</option>',
+                        '<select id="%1$s%2$s%3$s" name="%2$s[%3$s]" class="auto"><option value="Default State"%4$s>%5$s</option>',
+                        $RuleClass,
                         $FlagKey,
                         $Current,
                         $UseDefaultState ? ' selected' : '',
                         $this->L10N->getString('label.aux.Leave it as is (don_t set anything)')
                     ) . $Options . '</select>' . $Hint . '<br /><br />';
                     $Output .= sprintf(
-                        '<div class="iLabl s"><label for="%s[%s]">%s</label></div><div class="iCntn">%s</div>',
-                        $FlagKey,
-                        $Current,
+                        '<div class="iLabl s"><label for="%s">%s</label></div><div class="iCntn">%s</div>',
+                        $RuleClass . $FlagKey . $Current,
                         trim($FlagSetName . $this->L10N->getString('pair_separator')),
                         $Options
                     );

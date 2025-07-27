@@ -7,45 +7,52 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data (last modified: 2024.12.20).
+# This file: English language data (last modified: 2025.07.27).
 ##/
 
 %s seconds: ["%s second", "%s seconds"]
 PrivacyPolicy: "Privacy Policy"
-ReasonMessage_Attacks: "Your access to this page was denied due to abnormal traffic detected previously from your IP address or network."
-ReasonMessage_BadIP: "Your access to this page was denied because you attempted to access this page using an invalid IP address."
-ReasonMessage_Banned:
- en-AU: "Your access to this page was denied due to previous bad behaviour from your IP address."
- en-US: "Your access to this page was denied due to previous bad behavior from your IP address."
-ReasonMessage_Bogon:
- en-AU: "Your access to this page was denied because your IP address is recognised as a bogon address, and connecting from bogons to this website isn't permitted by the website owner."
- [en-CA, en-US]: "Your access to this page was denied because your IP address is recognized as a bogon address, and connecting from bogons to this website isn't permitted by the website owner."
-ReasonMessage_Cloud:
- en-AU: "Your access to this page was denied because your IP address is recognised as belonging to a cloud service, and connecting to this website from cloud services isn't permitted by the website owner."
- [en-CA, en-US]: "Your access to this page was denied because your IP address is recognized as belonging to a cloud service, and connecting to this website from cloud services isn't permitted by the website owner."
-ReasonMessage_Conflict: "Your request couldn't be processed at this time, as a resource needed to do so was unavailable. Likely caused by a conflict with another request, this problem is expected to be temporary. Try again after waiting a few seconds."
-ReasonMessage_Generic: "Your access to this page was denied because your IP address belongs to a network listed on a blacklist used by this website."
-ReasonMessage_Legal: "Your access to this page was denied due to legal obligations."
-ReasonMessage_Malware: "Your access to this page was denied because your IP address is considered a probable source of malware."
-ReasonMessage_Proxy:
- en-AU: "Your access to this page was denied because your IP address is recognised as belonging to a proxy service or VPN, and connecting to this website from proxy services or VPNs isn't permitted by the website owner."
- [en-CA, en-US]: "Your access to this page was denied because your IP address is recognized as belonging to a proxy service or VPN, and connecting to this website from proxy services or VPNs isn't permitted by the website owner."
-ReasonMessage_RL: "You've exceeded the maximum bandwidth or number of requests permitted to be served at this time. Please wait at least %s before trying again."
-ReasonMessage_Spam: "Your access to this page was denied because your IP address is considered a probable source of spam."
-Short_Attacks: "Attacks"
-Short_BadIP: "Invalid IP"
-Short_Banned: "Banned"
-Short_Bogon: "Bogon IP"
-Short_Cloud: "Cloud service"
-Short_Conflict: "Conflict"
-Short_Fake_UA: "Fake %s"
-Short_Generic: "Generic"
-Short_Legal: "Legal"
-Short_Malware: "Malware"
-Short_Proxy: "Proxy"
-Short_RL: "Rate limited"
-Short_Spam: "Spam"
-Short_Unverified_UA: "Unverified %s"
+ReasonMessage:
+ Attacks: "Your access to this page was denied due to abnormal traffic detected previously from your IP address or network."
+ BadIP: "Your access to this page was denied because you attempted to access this page using an invalid IP address."
+ Banned:
+  en-AU: "Your access to this page was denied due to previous bad behaviour from your IP address."
+  en-US: "Your access to this page was denied due to previous bad behavior from your IP address."
+ Bogon:
+  en-AU: "Your access to this page was denied because your IP address is recognised as a bogon address, and connecting from bogons to this website isn't permitted by the website owner."
+  [en-CA, en-US]: "Your access to this page was denied because your IP address is recognized as a bogon address, and connecting from bogons to this website isn't permitted by the website owner."
+ Cloud:
+  en-AU: "Your access to this page was denied because your IP address is recognised as belonging to a cloud service, and connecting to this website from cloud services isn't permitted by the website owner."
+  [en-CA, en-US]: "Your access to this page was denied because your IP address is recognized as belonging to a cloud service, and connecting to this website from cloud services isn't permitted by the website owner."
+ Conflict: "Your request couldn't be processed at this time, as a resource needed to do so was unavailable. Likely caused by a conflict with another request, this problem is expected to be temporary. Try again after waiting a few seconds."
+ Generic: "Your access to this page was denied because your IP address belongs to a network listed on a blacklist used by this website."
+ Legal: "Your access to this page was denied due to legal obligations."
+ Malware: "Your access to this page was denied because your IP address is considered a probable source of malware."
+ Outdated browser: "Your browser identifies as outdated, and as such constitutes a safety risk. Please update to the current version before accessing this site."
+ Proxy:
+  en-AU: "Your access to this page was denied because your IP address is recognised as belonging to a proxy service or VPN, and connecting to this website from proxy services or VPNs isn't permitted by the website owner."
+  [en-CA, en-US]: "Your access to this page was denied because your IP address is recognized as belonging to a proxy service or VPN, and connecting to this website from proxy services or VPNs isn't permitted by the website owner."
+ RL: "You've exceeded the maximum bandwidth or number of requests permitted to be served at this time. Please wait at least %s before trying again."
+ Spam: "Your access to this page was denied because your IP address is considered a probable source of spam."
+ Unauthorised:
+  en-AU: "Unauthorised!"
+  [en-CA, en-US]: "Unauthorized!"
+Short:
+ Attacks: "Attacks"
+ BadIP: "Invalid IP"
+ Banned: "Banned"
+ Bogon: "Bogon IP"
+ Cloud: "Cloud service"
+ Conflict: "Conflict"
+ Fake_UA: "Fake %s"
+ Generic: "Generic"
+ Legal: "Legal"
+ Malware: "Malware"
+ Outdated browser: "Outdated browser"
+ Proxy: "Proxy"
+ RL: "Rate limited"
+ Spam: "Spam"
+ Unverified_UA: "Unverified %s"
 Support_Email: "If you believe this is in error, or to seek assistance, {ClickHereLink} to send an email support ticket to the webmaster of this website (please don't change the preamble or subject line of the email)."
 Support_Email_2: "If you believe this is in error, send an email to {EmailAddr} to seek assistance."
 Trigger notification:
@@ -55,8 +62,6 @@ bobuam_ambiguous: "Ambiguous browser ID"
 bobuam_bot: "Suspected bot or scraper probe"
 bobuam_malformed: "Malformed UA"
 bobuam_masquerade: "Masquerading attempt"
-bobuam_outdated_long: "Your browser identifies as outdated, and as such constitutes a safety risk. Please update to the current version before accessing this site."
-bobuam_outdated_short: "Outdated browser"
 captcha_cookie_warning: "Note: CIDRAM uses a cookie to remember when users complete the CAPTCHA. By completing the CAPTCHA, you give your consent for a cookie to be created and stored by your browser."
 captcha_message: "In order to regain access to this page, please complete the CAPTCHA supplied below and press the submit button."
 captcha_message_automated_traffic: "This website uses CAPTCHAs to help prevent automated traffic."

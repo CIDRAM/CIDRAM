@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The IP tracking page (last modified: 2025.04.28).
+ * This file: The IP tracking page (last modified: 2025.07.27).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -97,7 +97,7 @@ if (isset($_POST['addNewAddress'], $_POST['addNewInfractions'], $_POST['addNewEx
         $this->Cache->setEntry('Tracking-' . $_POST['addNewAddress'] . '-MinimumTime', $TrackTime, $TrackTime);
         $this->FE['state_msg'] .= sprintf($this->L10N->getString('response.Added %s to tracking'), $_POST['addNewAddress']);
     } else {
-        $this->FE['state_msg'] .= $this->L10N->getString('Short_BadIP') . '!';
+        $this->FE['state_msg'] .= $this->L10N->getString('Short.BadIP') . '!';
     }
 }
 

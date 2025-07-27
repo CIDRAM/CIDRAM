@@ -448,4 +448,5 @@
 - [2025.07.18]: Added the option to the optional security extras module to remove headers which are unnecessary and known to be potentially useful for attackers.
 - [2024~2025]: Added L10N for Malayalam.
 - [2025.07.26]: Added access keys to a few more front-end pages.
+- [2025.07.27]: Refactored some of the core L10N.
 - *Plus all the regular signature updates.*

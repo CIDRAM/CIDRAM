@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2025.07.12).
+ * This file: Protect traits (last modified: 2025.07.27).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -154,8 +154,8 @@ trait Protect
             }
             if ($DoBan) {
                 $this->CIDRAM['Banned'] = true;
-                $this->BlockInfo['ReasonMessage'] = $this->L10N->getString('ReasonMessage_Banned');
-                $this->BlockInfo['WhyReason'] = $this->L10N->getString('Short_Banned');
+                $this->BlockInfo['ReasonMessage'] = $this->L10N->getString('ReasonMessage.Banned');
+                $this->BlockInfo['WhyReason'] = $this->L10N->getString('Short.Banned');
                 $this->BlockInfo['SignatureCount']++;
             }
             unset($DoBan);
@@ -186,8 +186,8 @@ trait Protect
 
             /** If all tests fail, report an invalid IP address. */
             if (!$this->CIDRAM['TestResults']) {
-                $this->BlockInfo['ReasonMessage'] = $this->L10N->getString('ReasonMessage_BadIP');
-                $this->BlockInfo['WhyReason'] = $this->L10N->getString('Short_BadIP');
+                $this->BlockInfo['ReasonMessage'] = $this->L10N->getString('ReasonMessage.BadIP');
+                $this->BlockInfo['WhyReason'] = $this->L10N->getString('Short.BadIP');
                 $this->BlockInfo['SignatureCount']++;
                 if (isset($this->Shorthand['BadIP:Profile'])) {
                     $this->addProfileEntry('BadIP');
@@ -398,7 +398,7 @@ trait Protect
                         if ($this->trigger((
                             ($RLMaxBandwidth > 0 && $this->CIDRAM['RL_Usage']['Bytes'] >= $RLMaxBandwidth) ||
                             ($this->Configuration['rate_limiting']['max_requests'] > 0 && $this->CIDRAM['RL_Usage']['Requests'] >= $this->Configuration['rate_limiting']['max_requests'])
-                        ), $this->L10N->getString('Short_RL'), sprintf($this->L10N->getString('ReasonMessage_RL'), $RLFormatted))) {
+                        ), $this->L10N->getString('Short.RL'), sprintf($this->L10N->getString('ReasonMessage.RL'), $RLFormatted))) {
                             $this->enactOptions('', ['ForciblyDisableReCAPTCHA' => true, 'ForciblyDisableHCAPTCHA' => true]);
                             $this->CIDRAM['Other Status'] = $this->getStatusHTTP(429);
                             $this->CIDRAM['Other Status Code'] = 429;
@@ -480,7 +480,7 @@ trait Protect
 
         /** Identify proxy connections (conjunctive reporting element). */
         if (
-            strpos($this->BlockInfo['WhyReason'], $this->L10N->getString('Short_Proxy')) !== false ||
+            strpos($this->BlockInfo['WhyReason'], $this->L10N->getString('Short.Proxy')) !== false ||
             $this->hasProfile(['Open Proxy', 'Proxy', 'Tor endpoints here'])
         ) {
             $this->Reporter->report([9], [], $this->BlockInfo['IPAddr']);

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Default signature bypasses (last modified: 2025.07.12).
+ * This file: Default signature bypasses (last modified: 2025.07.27).
  */
 
 /** Prevents execution from outside of the checkFactors method. */
@@ -55,11 +55,11 @@ $this->CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [
                 return;
             }
 
-            $this->BlockInfo['ReasonMessage'] = $this->L10N->getString('ReasonMessage_Spam');
+            $this->BlockInfo['ReasonMessage'] = $this->L10N->getString('ReasonMessage.Spam');
             if (!empty($this->BlockInfo['WhyReason'])) {
                 $this->BlockInfo['WhyReason'] .= ', ';
             }
-            $this->BlockInfo['WhyReason'] .= $this->L10N->getString('Short_Spam') . $LN;
+            $this->BlockInfo['WhyReason'] .= $this->L10N->getString('Short.Spam') . $LN;
             $this->addProfileEntry('Spam');
             if (!empty($this->BlockInfo['Signatures'])) {
                 $this->BlockInfo['Signatures'] .= ', ';
@@ -76,11 +76,11 @@ $this->CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [
             return;
         }
 
-        $this->BlockInfo['ReasonMessage'] = $this->L10N->getString('ReasonMessage_Cloud');
+        $this->BlockInfo['ReasonMessage'] = $this->L10N->getString('ReasonMessage.Cloud');
         if (!empty($this->BlockInfo['WhyReason'])) {
             $this->BlockInfo['WhyReason'] .= ', ';
         }
-        $this->BlockInfo['WhyReason'] .= $this->L10N->getString('Short_Cloud') . $LN;
+        $this->BlockInfo['WhyReason'] .= $this->L10N->getString('Short.Cloud') . $LN;
         $this->addProfileEntry('Cloud');
         if (!empty($this->BlockInfo['Signatures'])) {
             $this->BlockInfo['Signatures'] .= ', ';
@@ -278,11 +278,11 @@ $this->CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [
         }
     }
 
-    $this->BlockInfo['ReasonMessage'] = $this->L10N->getString('ReasonMessage_Cloud');
+    $this->BlockInfo['ReasonMessage'] = $this->L10N->getString('ReasonMessage.Cloud');
     if (!empty($this->BlockInfo['WhyReason'])) {
         $this->BlockInfo['WhyReason'] .= ', ';
     }
-    $this->BlockInfo['WhyReason'] .= $this->L10N->getString('Short_Cloud') . $LN;
+    $this->BlockInfo['WhyReason'] .= $this->L10N->getString('Short.Cloud') . $LN;
     $this->addProfileEntry('Cloud');
     if (!empty($this->BlockInfo['Signatures'])) {
         $this->BlockInfo['Signatures'] .= ', ';

@@ -22,7 +22,7 @@
  * William "Bill" Minozzi.
  * @link https://www.stopbadbots.com/
  *
- * This file: Bot Or Browser User Agent Module (last modified: 2025.07.26).
+ * This file: Bot Or Browser User Agent Module (last modified: 2025.07.27).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -164,8 +164,12 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
     /** Signatures for end of life (EoL) browsers. */
     if ($this->Configuration['bobuam']['block_eol_browsers'] === 'yes') {
+        if ($this->Configuration['bobuam']['reason_browser'] === 'bobuam_outdated_long') {
+            /** Temporary fix (2025.07.27). */
+            $this->Configuration['bobuam']['reason_browser'] = 'ReasonMessage.Outdated browser';
+        }
         $Browser = [
-            $this->L10N->getString('bobuam_outdated_short'),
+            $this->L10N->getString('Short.Outdated browser'),
             $this->L10N->getString($this->Configuration['bobuam']['reason_browser']) ?: $this->Configuration['bobuam']['reason_browser'] ?: $this->L10N->getString('denied')
         ];
         if (

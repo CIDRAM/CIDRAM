@@ -11,7 +11,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: BOBUAM defaults file (last modified: 2025.07.06).
+# This file: BOBUAM defaults file (last modified: 2025.07.27).
 ##/
 
 Config Defaults:
@@ -88,9 +88,9 @@ Config Defaults:
    hints: "bobuam_hint_default_value"
   reason_browser:
    type: "string"
-   default: "bobuam_outdated_long"
+   default: "ReasonMessage.Outdated browser"
    choices:
-    bobuam_outdated_long: "bobuam_outdated_long"
+    ReasonMessage.Outdated browser: "ReasonMessage.Outdated browser"
     denied: "denied"
    preview: "allow_other"
    allow_other: true
@@ -119,12 +119,12 @@ Config Defaults:
     Malformed: "bobuam_malformed"
     Masquerade: "bobuam_masquerade"
     SuspectedBot: "bobuam_bot"
-    Opera: "{bobuam_outdated_short} (OPR/Opera)"
-    Chrome: "{bobuam_outdated_short} (Chrome/Chromium)"
-    Edge: "{bobuam_outdated_short} (Edge)"
-    Firefox: "{bobuam_outdated_short} (Firefox)"
-    Safari: "{bobuam_outdated_short} (Safari)"
-    Other: "{bobuam_outdated_short} ({label.Other})"
+    Opera: "{Short.Outdated browser} (OPR/Opera)"
+    Chrome: "{Short.Outdated browser} (Chrome/Chromium)"
+    Edge: "{Short.Outdated browser} (Edge)"
+    Firefox: "{Short.Outdated browser} (Firefox)"
+    Safari: "{Short.Outdated browser} (Safari)"
+    Other: "{Short.Outdated browser} ({label.Other})"
 BOBUAM Token:
  Opera: "110"
  Chrome: "127"

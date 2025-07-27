@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used to simulate block events (last modified: 2025.07.12).
+ * This file: Methods used to simulate block events (last modified: 2025.07.27).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -162,8 +162,8 @@ trait SimulateBlockEvent
             }
             if ($DoBan) {
                 $this->CIDRAM['Banned'] = true;
-                $this->BlockInfo['ReasonMessage'] = $this->L10N->getString('ReasonMessage_Banned');
-                $this->BlockInfo['WhyReason'] = $this->L10N->getString('Short_Banned');
+                $this->BlockInfo['ReasonMessage'] = $this->L10N->getString('ReasonMessage.Banned');
+                $this->BlockInfo['WhyReason'] = $this->L10N->getString('Short.Banned');
                 $this->BlockInfo['SignatureCount']++;
             }
             unset($DoBan);

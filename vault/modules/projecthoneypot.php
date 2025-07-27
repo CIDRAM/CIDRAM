@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Project Honeypot module (last modified: 2024.06.11).
+ * This file: Project Honeypot module (last modified: 2025.07.27).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -180,7 +180,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             )
         ),
         'Project Honeypot Lookup',
-        $this->L10N->getString('ReasonMessage_Generic') . '<br />' . sprintf(
+        $this->L10N->getString('ReasonMessage.Generic') . '<br />' . sprintf(
             $this->L10N->getString('request_removal'),
             'https://www.projecthoneypot.org/ip_' . $this->BlockInfo['IPAddr']
         )

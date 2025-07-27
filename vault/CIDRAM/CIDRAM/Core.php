@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2025.07.08).
+ * This file: The CIDRAM core (last modified: 2025.07.27).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -631,11 +631,11 @@ class Core
                 $LN = ' ("' . $DefTag . '", L0:F' . $FileIndex . ')';
                 for ($FactorIndex = 0; $FactorIndex < $Counts['Factors']; $FactorIndex++) {
                     if ($Occurs = substr_count($Files[$FileIndex], ',' . $Factors[$FactorIndex] . ',')) {
-                        $this->BlockInfo['ReasonMessage'] = $this->L10N->getString('ReasonMessage_Generic');
+                        $this->BlockInfo['ReasonMessage'] = $this->L10N->getString('ReasonMessage.Generic');
                         if (!empty($this->BlockInfo['WhyReason'])) {
                             $this->BlockInfo['WhyReason'] .= ', ';
                         }
-                        $this->BlockInfo['WhyReason'] .= $this->L10N->getString('Short_Generic') . $LN;
+                        $this->BlockInfo['WhyReason'] .= $this->L10N->getString('Short.Generic') . $LN;
                         if (!empty($this->BlockInfo['Signatures'])) {
                             $this->BlockInfo['Signatures'] .= ', ';
                         }
@@ -765,11 +765,11 @@ class Core
                             if (!isset($this->Shorthand[$Signature . ':Block'])) {
                                 continue;
                             }
-                            $this->BlockInfo['ReasonMessage'] = $this->L10N->getString('ReasonMessage_' . $Signature) ?: $Signature;
+                            $this->BlockInfo['ReasonMessage'] = $this->L10N->getString('ReasonMessage.' . $Signature) ?: $Signature;
                             if (!empty($this->BlockInfo['WhyReason'])) {
                                 $this->BlockInfo['WhyReason'] .= ', ';
                             }
-                            $this->BlockInfo['WhyReason'] .= ($this->L10N->getString('Short_' . $Signature) ?: $Signature) . $LN;
+                            $this->BlockInfo['WhyReason'] .= ($this->L10N->getString('Short.' . $Signature) ?: $Signature) . $LN;
                             $DenyMatched = true;
                             if (isset($this->Shorthand[$Signature . ':Suppress'])) {
                                 $this->CIDRAM['Suppress output template'] = true;
@@ -1263,7 +1263,7 @@ class Core
         if (strlen($this->CIDRAM['Hostname']) === 0 || $this->CIDRAM['Hostname'] === $this->BlockInfo['IPAddr']) {
             /** Block non-verified requests. */
             if (isset($this->CIDRAM['VPermissions'][$Friendly . ':BlockNonVerified'])) {
-                $this->trigger(true, sprintf($this->L10N->getString('Short_Unverified_UA'), $Friendly));
+                $this->trigger(true, sprintf($this->L10N->getString('Short.Unverified_UA'), $Friendly));
                 $this->addProfileEntry('Blocked Non-Verified');
             }
 
@@ -1321,7 +1321,7 @@ class Core
             if ($Resolved === '') {
                 /** Block non-verified requests. */
                 if (isset($this->CIDRAM['VPermissions'][$Friendly . ':BlockNonVerified'])) {
-                    $this->trigger(true, sprintf($this->L10N->getString('Short_Unverified_UA'), $Friendly));
+                    $this->trigger(true, sprintf($this->L10N->getString('Short.Unverified_UA'), $Friendly));
                     $this->addProfileEntry('Blocked Non-Verified');
                 }
 
@@ -1355,7 +1355,7 @@ class Core
 
         /** It's a fake; Block it. */
         if (isset($this->CIDRAM['VPermissions'][$Friendly . ':BlockNegatives'])) {
-            $this->trigger(true, sprintf($this->L10N->getString('Short_Fake_UA'), $Friendly));
+            $this->trigger(true, sprintf($this->L10N->getString('Short.Fake_UA'), $Friendly));
             $this->addProfileEntry('Blocked Negative');
 
             /** Reporting. */
@@ -1428,14 +1428,13 @@ class Core
     /**
      * The main method for triggering signatures.
      *
-     * @param bool $Condition Include any variable or PHP code which can be
-     *      evaluated for truthiness. Truthiness is evaluated, and if true, the
-     *      signature is "triggered". If false, the signature is *not* "triggered".
-     * @param string $ReasonShort Cited in the "Why Blocked" field when the
+     * @param bool $Condition Truthiness is evaluated. If true, the signature is
+     *      "triggered". If false, the signature is *not* "triggered".
+     * @param string $ReasonShort Cited in the "Why blocked" field when the
      *      signature is triggered and thus included within log entries.
      * @param string $ReasonLong Message displayed to the user/client when blocked,
      *      to explain why they've been blocked. Optional. Defaults to the standard
-     *      "Access Denied!" message.
+     *      "Access denied!" message.
      * @param array $DefineOptions An optional array containing key/value pairs,
      *      used to define configuration options specific to the request instance.
      *      Configuration options will be applied when the signature is triggered.
@@ -1448,7 +1447,7 @@ class Core
             return false;
         }
         if ($ReasonLong === '') {
-            $ReasonLong = $this->L10N->getString('denied');
+            $ReasonLong = $this->L10N->getString('ReasonMessage.' . $ReasonShort) ?: $this->L10N->getString('denied');
         }
         if (count($DefineOptions) > 0) {
             foreach ($DefineOptions as $CatKey => $CatValue) {
@@ -1485,10 +1484,9 @@ class Core
     /**
      * The main method for triggering signature bypasses.
      *
-     * @param bool $Condition Include any variable or PHP code which can be
-     *      evaluated for truthiness. Truthiness is evaluated, and if true, the
-     *      bypass is "triggered". If false, the bypass is *not* "triggered".
-     * @param string $ReasonShort Cited in the "Why Blocked" field when the
+     * @param bool $Condition Truthiness is evaluated. If true, the bypass is
+     *      "triggered". If false, the bypass is *not* "triggered".
+     * @param string $ReasonShort Cited in the "Why blocked" field when the
      *      bypass is triggered (included within log entries if there are still
      *      other preexisting signatures which have otherwise been triggered).
      * @param array $DefineOptions An optional array containing key/value
@@ -3300,7 +3298,7 @@ class Core
 
         /** Nothing matched. Block it. */
         if (isset($this->CIDRAM['VPermissions'][$Friendly . ':BlockNegatives'])) {
-            $this->trigger(true, sprintf($this->L10N->getString('Short_Fake_UA'), $Friendly));
+            $this->trigger(true, sprintf($this->L10N->getString('Short.Fake_UA'), $Friendly));
             $this->addProfileEntry('Blocked Negative');
 
             /** Reporting. */
@@ -3350,7 +3348,7 @@ class Core
                 if (isset($this->CIDRAM['VPermissions'][$Name . ':Verify'])) {
                     $this->{$Values['Method']}($Values['Valid domains'], $Name, $Values);
                 } elseif (isset($this->CIDRAM['VPermissions'][$Name . ':BlockNonVerified'])) {
-                    $this->trigger(true, sprintf($this->L10N->getString('Short_Unverified_UA'), $Name));
+                    $this->trigger(true, sprintf($this->L10N->getString('Short.Unverified_UA'), $Name));
                     $this->addProfileEntry('Blocked Non-Verified');
                 }
             }
@@ -3387,15 +3385,15 @@ class Core
     {
         if ($this->Configuration['signatures']['conflict_response'] === 429) {
             $Signature = 'RL';
-            $this->BlockInfo['ReasonMessage'] = sprintf($this->L10N->getString('ReasonMessage_RL'), sprintf($this->L10N->getPlural(3, '%s seconds'), $this->NumberFormatter->format(3)));
+            $this->BlockInfo['ReasonMessage'] = sprintf($this->L10N->getString('ReasonMessage.RL'), sprintf($this->L10N->getPlural(3, '%s seconds'), $this->NumberFormatter->format(3)));
         } else {
             $Signature = 'Conflict';
-            $this->BlockInfo['ReasonMessage'] = $this->L10N->getString('ReasonMessage_Conflict');
+            $this->BlockInfo['ReasonMessage'] = $this->L10N->getString('ReasonMessage.Conflict');
         }
         if (!empty($this->BlockInfo['WhyReason'])) {
             $this->BlockInfo['WhyReason'] .= ', ';
         }
-        $this->BlockInfo['WhyReason'] .= $this->L10N->getString('Short_' . $Signature) . ' (' . $Source . ')';
+        $this->BlockInfo['WhyReason'] .= $this->L10N->getString('Short.' . $Signature) . ' (' . $Source . ')';
         if (!empty($this->BlockInfo['Signatures'])) {
             $this->BlockInfo['Signatures'] .= ', ';
         }

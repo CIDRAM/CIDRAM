@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: BGPView module (last modified: 2024.07.27).
+ * This file: BGPView module (last modified: 2025.07.27).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -160,13 +160,13 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
                 /** Origin is blocked. */
                 if (isset($this->CIDRAM['BGPConfig']['blocked_asns'][$this->CIDRAM['BGPView-' . $Factor]['ASN']])) {
-                    $this->BlockInfo['ReasonMessage'] = $this->L10N->getString('ReasonMessage_Generic');
+                    $this->BlockInfo['ReasonMessage'] = $this->L10N->getString('ReasonMessage.Generic');
                     if (!empty($this->BlockInfo['WhyReason'])) {
                         $this->BlockInfo['WhyReason'] .= ', ';
                     }
                     $this->BlockInfo['WhyReason'] .= sprintf(
                         '%s (BGPView, "%d")',
-                        $this->L10N->getString('Short_Generic'),
+                        $this->L10N->getString('Short.Generic'),
                         $this->CIDRAM['BGPView-' . $Factor]['ASN']
                     );
                     if (!empty($this->BlockInfo['Signatures'])) {

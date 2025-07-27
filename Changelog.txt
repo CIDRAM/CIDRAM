@@ -25,12 +25,15 @@ Detailed version release guidelines for CIDRAM can be found at:
   affects CIDRAM's Apache-style logging feature (if/when used), but nothing
   else.
 
-- [2025.07.26]: Some browsers, in some contexts, were raising errors during
-  request inspection concerning the absence of any X-Content-Type-Options
-  header declaration (though it isn't entirely clear whether this error had any
-  actual effect); Fixed.
+- [2025.07.26; Bug-fix]: Some browsers, in some contexts, were raising errors
+  during request inspection concerning the absence of any
+  X-Content-Type-Options header declaration (though it isn't entirely clear
+  whether this error had any actual effect); Fixed.
 
 - [2025.07.26]: Added access keys to a few more front-end pages.
+
+- [2025.07.27; Bug-fix]: Some form element labels were applied incorrectly at
+  the auxiliary rules edit mode page; Fixed.
 
 === Version/Release 1.29.2 ===
 PATCH RELEASE.

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2025.07.26).
+ * This file: Front-end functions file (last modified: 2025.07.27).
  */
 
 /**
@@ -3652,16 +3652,16 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
                     );
                 }
                 $Options = sprintf(
-                    '<select name="%s[%s]" class="auto"><option value="Default State"%s>%s</option>',
+                    '<select id="%1$s%2$s%3$s" name="%2$s[%3$s]" class="auto"><option value="Default State"%4$s>%5$s</option>',
+                    $RuleClass,
                     $FlagKey,
                     $Current,
                     $UseDefaultState ? ' selected' : '',
                     $CIDRAM['L10N']->getString('label_aux_special_default_state')
                 ) . $Options . '</select><br /><br />';
                 $Output .= sprintf(
-                    '<div class="iLabl s"><label for="%s[%s]">%s</label></div><div class="iCntn">%s</div>',
-                    $FlagKey,
-                    $Current,
+                    '<div class="iLabl s"><label for="%s">%s</label></div><div class="iCntn">%s</div>',
+                    $RuleClass . $FlagKey . $Current,
                     trim($FlagSetName . $CIDRAM['L10N']->getString('pair_separator')),
                     $Options
                 );

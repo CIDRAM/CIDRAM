@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bot user agents module (last modified: 2025.07.26).
+ * This file: Bot user agents module (last modified: 2025.07.27).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -222,12 +222,12 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         '^(?:[aim]$|(?!linkedinbot).*http-?(?:agent|client))|-xpanse|' .
         'a(?:bonti|ccserver|cme.spider|dreview/\d|jbaxy|nthill$|nyevent-http|ppengine|xios)|' .
         'b(?:igbozz|itsight|lackbird|logsearch|logbot|salsa)|' .
-        'c(?:astlebot|atexplorador|k=\{\}|lickagy|liqzbot|ms-?checker|ontextad|orporama|ortex/\d|rowsnest|yberpatrol)|' .
+        'c(?:astlebot|atexplorador|cleaner|k=\{\}|lickagy|liqzbot|ms-?checker|ontextad|orporama|ortex/\d|rowsnest|yberpatrol)|' .
         'd(?:eepfield|le_spider|nbcrawler|omainappender|umprendertree)|' .
         'expanse|' .
         'f(?:lightdeckreportsbot|luid/|orms\.gle)|' .
         'g(?:atheranalyzeprovide|enomecrawler|dnplus|imme60|lobalipv[46]space|ooglebenjojo|tbdfffgtb.?$)|' .
-        'infrawatch|internetcensus|ips-agent|isitwp|' .
+        'i(?:nfrawatch|nternet(?:census|measurement)|ps-agent|sitwp)|' .
         'k2spider|kemvi|' .
         'l(?:9scan|eak(?:\.info|ix)|exxebot|ivelapbot|wp)|' .
         'm(?:acinroyprivacyauditors|etaintelligence|ultipletimes)|' .
@@ -245,7 +245,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     ) || preg_match(
         '~^Mozilla/5\.0( [A-Za-z]{2,5}/0\..)?$~',
         $this->BlockInfo['UA']
-    ), 'Unauthorised'); // 2023.09.15 mod 2025.07.24
+    ), 'Unauthorised'); // 2023.09.15 mod 2025.07.27
 
     if ($this->trigger(preg_match('~ivre-|masscan~', $UANoSpace), 'Port scanner and synflood tool detected')) {
         $this->Reporter->report([14, 15, 19], ['MASSCAN port scanner and synflood tool detected.'], $this->BlockInfo['IPAddr']);
@@ -286,12 +286,12 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     } // 2017.02.25
 
     if ($this->trigger(preg_match(
-        '~foregenix|modat|nuclei|isscyberrisk|projectdiscovery|sslyze|threatview~',
-        $UA
+        '~authorizedsecurity|foregenix|modat|nuclei|isscyberrisk|projectdiscovery|securityscanner|sslyze|threatview~',
+        $UANoSpace
     ), 'Unauthorised vulnerability scanner detected')) {
         $this->Reporter->report([15, 19, 21], ['Unauthorised vulnerability scanner detected.'], $this->BlockInfo['IPAddr']);
         $this->CIDRAM['Tracking options override'] = 'extended';
-    } // 2023.06.16 mod 2025.07.24
+    } // 2023.06.16 mod 2025.07.27
 
     $this->trigger(preg_match('~^python/|aiohttp/|\.post0~', $UANoSpace), 'Bad context (Python/AIO clients not permitted here)'); // 2021.05.18
 

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2025.07.26).
+ * This file: Optional security extras module (last modified: 2025.07.27).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -161,7 +161,6 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
         /** Probing for common vulnerabilities and exploits. */
         if (
-            $this->trigger(preg_match('~/wp-json/wp/v2/users(?:$|[/?])~', $LCNrURI), $Exploit = 'CVE-2017-5487') || // 2025.07.21
             $this->trigger(preg_match('~/fckeditor/editor/filemanager(?:$|[/?])~', $LCNrURI), $Exploit = 'FCKeditor') || // 2025.07.20
             $this->trigger(preg_match('~/modules/mod_simplefileuploadv1\.3/elements(?:$|[/?])~', $LCNrURI), $Exploit = 'CVE-2011-5148') || // 2025.07.20
             $this->trigger(preg_match('~/ecp/current/exporttool/microsoft.exchange.ediscovery.exporttool.application(?:$|[/?])~', $LCNrURI), $Exploit = 'CVE-2021-28481') || // 2025.07.17
@@ -301,9 +300,9 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         } // 2024.05.02 mod 2025.03.18
 
         /** Probing for env file. */
-        if ($this->trigger(preg_match('~(?:^|[/?=])(?:config)?\.env(?:\.(?:example|local|production|save))?(?:$|[/?])~', $LCNrURI), 'Probing for env file')) {
+        if ($this->trigger(preg_match('~(?:^|[/?=])(?:config)?\.env(?:\.[\da-z]+)?(?:$|[/?])~', $LCNrURI), 'Probing for env file')) {
             $this->Reporter->report([15, 21], ['Caught probing for env file.'], $this->BlockInfo['IPAddr']);
-        } // 2025.03.18 mod 2025.05.24
+        } // 2025.03.18 mod 2025.07.27
 
         /** Attempts by broken bot to incorrectly access ReCaptcha files (treating reference to remote resource as local). */
         $this->trigger(preg_match('~/www\.google\.com/recaptcha/api\.js(?:$|[/?])~', $LCNrURI), 'Bad request'); // 2025.03.03
@@ -312,6 +311,9 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $this->Reporter->report([15], ['Misconfigured bot caught trying to scrape WordPress media libraries.'], $this->BlockInfo['IPAddr']);
         } // 2015.07.12
 
+        $this->trigger(preg_match('~/(?:appsettings|config)\.json(?:$|[/?])~', $LCNrURI), 'Unauthorised'); // 2025.07.27
+        $this->trigger(preg_match('~/\.htaccess(?:$|[/?])~', $LCNrURI), 'Unauthorised'); // 2025.07.27
+        $this->trigger(preg_match('~/docker-compose\.yml(?:$|[/?])~', $LCNrURI), 'Unauthorised'); // 2025.07.27
         $this->trigger(preg_match('~/phpunit/phpunit\.xsd(?:$|[/?])~', $LCNrURI), 'Unauthorised'); // 2025.07.16
     }
 

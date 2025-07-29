@@ -451,4 +451,5 @@
 - [2024~2025]: Added L10N for Malayalam.
 - [2025.07.26]: Added access keys to a few more front-end pages.
 - [2025.07.27]: Refactored some of the core L10N.
+- [2025.07.29]: Added support for "matrix"-style configuration directives and refactored some of the configuration code.
 - *Plus all the regular signature updates.*

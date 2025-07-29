@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2025.07.27).
+ * This file: The CIDRAM core (last modified: 2025.07.29).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -319,31 +319,33 @@ class Core
         /** Configuration to be populated here. */
         $this->Configuration = [];
 
+        /** Attempts to parse a custom-defined CIDRAM configuration file. */
         if ($ConfigurationPath !== '' && is_readable($ConfigurationPath)) {
-            /** Attempts to parse custom-defined CIDRAM configuration file. */
             if ($this->YAML->process($this->readFile($ConfigurationPath), $this->Configuration)) {
                 /** Declare the configuration file used. */
                 $this->ConfigurationPath = $this->canonical($ConfigurationPath);
             }
-        } elseif (is_readable($this->Vault . 'config.yml')) {
-            /** Attempts to parse the standard CIDRAM configuration file. */
-            if ($this->YAML->process($this->readFile($this->Vault . 'config.yml'), $this->Configuration)) {
-                /** Declare the configuration file used. */
-                $this->ConfigurationPath = $this->canonical($this->Vault . 'config.yml');
-            }
         }
 
-        /** Checks for the existence of the HTTP_HOST "configuration overrides file". */
+        /** If HTTP_HOST is populated, attempts to parse a "configuration overrides file" (specific to the requested domain). */
         if (
+            $this->ConfigurationPath === '' &&
             !empty($_SERVER['HTTP_HOST']) &&
-            ($this->CIDRAM['Domain'] = preg_replace('/^www\./', '', strtolower($_SERVER['HTTP_HOST']))) &&
-            !preg_match('/[^.\da-z-]/', $this->CIDRAM['Domain']) &&
+            ($this->CIDRAM['Domain'] = preg_replace(['/^www\./', '/:/'], ['', '_'], strtolower($_SERVER['HTTP_HOST']))) &&
+            !preg_match('/[^.\da-z_-]/', $this->CIDRAM['Domain']) &&
             is_readable($this->Vault . $this->CIDRAM['Domain'] . '.config.yml')
         ) {
-            /** Attempts to parse the overrides file found (this is configuration specific to the requested domain). */
             if ($this->YAML->process($this->readFile($this->Vault . $this->CIDRAM['Domain'] . '.config.yml'), $this->Configuration)) {
                 /** Declare the configuration file used. */
                 $this->ConfigurationPath = $this->canonical($this->Vault . $this->CIDRAM['Domain'] . '.config.yml');
+            }
+        }
+
+        /** Attempts to parse the standard CIDRAM configuration file. */
+        if ($this->ConfigurationPath === '' && is_readable($this->Vault . 'config.yml')) {
+            if ($this->YAML->process($this->readFile($this->Vault . 'config.yml'), $this->Configuration)) {
+                /** Declare the configuration file used. */
+                $this->ConfigurationPath = $this->canonical($this->Vault . 'config.yml');
             }
         }
 
@@ -999,6 +1001,9 @@ class Core
     public function fallback(array $Fallbacks, array &$Config): void
     {
         foreach ($Fallbacks as $KeyCat => $DCat) {
+            if (!is_array($DCat)) {
+                continue;
+            }
             if (!isset($Config[$KeyCat])) {
                 $Config[$KeyCat] = [];
             }
@@ -1006,18 +1011,31 @@ class Core
                 unset($Cat);
             }
             $Cat = &$Config[$KeyCat];
-            if (!is_array($DCat)) {
-                continue;
-            }
             foreach ($DCat as $DKey => $DData) {
-                if (!isset($Cat[$DKey]) && isset($DData['default'])) {
-                    $Cat[$DKey] = $DData['default'];
+                if (isset($DData['labels'], $DData['style']) && $DData['style'] === 'matrix') {
+                    if (!isset($Cat[$DKey])) {
+                        $Cat[$DKey] = [];
+                    }
+                    foreach ($DData['labels'] as $MLabelKey => $MLabelValue) {
+                        if (!isset($Cat[$DKey][$MLabelKey])) {
+                            $Cat[$DKey][$MLabelKey] = $DData['default'][$MLabelKey] ?? '';
+                        }
+                        if (isset($Dir)) {
+                            unset($Dir);
+                        }
+                        $Dir = &$Cat[$DKey][$MLabelKey];
+                        $Type = $DData['type'][$MLabelKey] ?? $DData['type'] ?? '';
+                        if (is_string($Type) && $Type !== '') {
+                            $this->autoType($Dir, $Type);
+                        }
+                    }
+                    continue;
+                }
+                if (!isset($Cat[$DKey])) {
+                    $Cat[$DKey] = $DData['default'] ?? '';
                 }
                 if (isset($Dir)) {
                     unset($Dir);
-                }
-                if (!isset($Cat[$DKey])) {
-                    $Cat[$DKey] = '';
                 }
                 $Dir = &$Cat[$DKey];
                 if (isset($DData['value_preg_filter']) && is_array($DData['value_preg_filter'])) {

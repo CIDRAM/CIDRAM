@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The configuration page (last modified: 2025.05.31).
+ * This file: The configuration page (last modified: 2025.07.29).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -97,27 +97,32 @@ foreach ($this->CIDRAM['Config Defaults'] as $CatKey => $CatValue) {
             }
         }
 
+        /** Repair other environmental (e.g., Webapp-based) interference. */
+        if (isset($_POST[$ThisDir['DirLangKey']])) {
+            $_POST[$ThisDir['DirLangKey']] = $this->desabotage($_POST[$ThisDir['DirLangKey']]);
+        }
+
         if (isset($_POST[$ThisDir['DirLangKey']])) {
             if (in_array($DirValue['type'], ['email', 'string', 'timezone', 'url', 'float', 'int', 'duration', 'bool', 'kb'], true)) {
                 $this->autoType($_POST[$ThisDir['DirLangKey']], $DirValue['type']);
             }
             if (!isset($DirValue['choices']) || isset($DirValue['choices'][$_POST[$ThisDir['DirLangKey']]])) {
-                $this->CIDRAM['ConfigModified'] = true;
-                $this->Configuration[$CatKey][$DirKey] = $this->desabotage($_POST[$ThisDir['DirLangKey']]);
+                if ($this->Configuration[$CatKey][$DirKey] !== $_POST[$ThisDir['DirLangKey']]) {
+                    $this->Configuration[$CatKey][$DirKey] = $_POST[$ThisDir['DirLangKey']];
+                    $this->CIDRAM['ConfigModified'] = true;
+                }
             } elseif (
                 !empty($DirValue['allow_other']) &&
                 $_POST[$ThisDir['DirLangKey']] === 'Other' &&
                 isset($_POST[$ThisDir['DirLangKeyOther']]) &&
                 !preg_match('/[^\x20-\xFF"\']/', $_POST[$ThisDir['DirLangKeyOther']])
             ) {
-                $this->CIDRAM['ConfigModified'] = true;
-                $this->Configuration[$CatKey][$DirKey] = $this->desabotage($_POST[$ThisDir['DirLangKeyOther']]);
+                if ($this->Configuration[$CatKey][$DirKey] !== $this->desabotage($_POST[$ThisDir['DirLangKeyOther']])) {
+                    $this->Configuration[$CatKey][$DirKey] = $this->desabotage($_POST[$ThisDir['DirLangKeyOther']]);
+                    $this->CIDRAM['ConfigModified'] = true;
+                }
             }
-        } elseif (
-            $DirValue['type'] === 'checkbox' &&
-            isset($DirValue['choices']) &&
-            is_array($DirValue['choices'])
-        ) {
+        } elseif ($DirValue['type'] === 'checkbox' && isset($DirValue['choices']) && is_array($DirValue['choices'])) {
             $DirValue['Posts'] = [];
             foreach ($DirValue['choices'] as $DirValue['ThisChoiceKey'] => $DirValue['ThisChoice']) {
                 if (isset($DirValue['labels']) && is_array($DirValue['labels'])) {
@@ -146,8 +151,25 @@ foreach ($this->CIDRAM['Config Defaults'] as $CatKey => $CatValue) {
             }
             $DirValue['Posts'] = implode("\n", $DirValue['Posts']) ?: '';
             if (!empty($_POST['updatingConfig']) && $this->Configuration[$CatKey][$DirKey] !== $DirValue['Posts']) {
-                $this->CIDRAM['ConfigModified'] = true;
                 $this->Configuration[$CatKey][$DirKey] = $DirValue['Posts'];
+                $this->CIDRAM['ConfigModified'] = true;
+            }
+        } elseif (isset($DirValue['labels'], $DirValue['choices'], $DirValue['style']) && is_array($DirValue['labels']) && is_array($DirValue['choices']) && $DirValue['style'] === 'matrix') {
+            $DirValue['Posts'] = [];
+            foreach ($DirValue['labels'] as $DirValue['MLabelKey'] => $DirValue['MLabelValue']) {
+                if (!empty($_POST[$ThisDir['DirLangKey'] . '_' . $DirValue['MLabelKey']]) && isset($DirValue['choices'][$_POST[$ThisDir['DirLangKey'] . '_' . $DirValue['MLabelKey']]])) {
+                    $DirValue['Posts'][$DirValue['MLabelKey']] = $_POST[$ThisDir['DirLangKey'] . '_' . $DirValue['MLabelKey']];
+                } else {
+                    $Try = str_replace('.', '_', $ThisDir['DirLangKey'] . '_' . $DirValue['MLabelKey']);
+                    if (!empty($_POST[$Try])) {
+                        $DirValue['Posts'][$DirValue['MLabelKey']] = $_POST[$Try];
+                        unset($_POST[$Try]);
+                    }
+                }
+            }
+            if (!empty($_POST['updatingConfig']) && $this->Configuration[$CatKey][$DirKey] !== $DirValue['Posts']) {
+                $this->Configuration[$CatKey][$DirKey] = $DirValue['Posts'];
+                $this->CIDRAM['ConfigModified'] = true;
             }
         }
         if (isset($DirValue['preview'])) {
@@ -323,10 +345,7 @@ foreach ($this->CIDRAM['Config Defaults'] as $CatKey => $CatValue) {
             }
         }
         if (isset($DirValue['choices'])) {
-            if (
-                $DirValue['type'] === 'checkbox' ||
-                (isset($DirValue['style']) && $DirValue['style'] === 'radio')
-            ) {
+            if ($DirValue['type'] === 'checkbox' || (isset($DirValue['style']) && ($DirValue['style'] === 'radio' || $DirValue['style'] === 'matrix'))) {
                 if (isset($DirValue['labels']) && is_array($DirValue['labels'])) {
                     $DirValue['gridV'] = 'gridVB';
                     $ThisDir['FieldOut'] = sprintf(
@@ -384,11 +403,7 @@ foreach ($this->CIDRAM['Config Defaults'] as $CatKey => $CatValue) {
                         foreach ($DirValue['labels'] as $DirValue['ThisLabelKey'] => $DirValue['ThisLabel']) {
                             $DirValue['gridV'] = ($DirValue['gridV']) === 'gridVB' ? 'gridVA' : 'gridVB';
                             if (isset($DirValue['ThisNonsense'][$ChoiceKey . ':' . $DirValue['ThisLabelKey']])) {
-                                $ThisDir['FieldOut'] .= sprintf(
-                                    '<div class="gridboxcheckcell %s %s">–</div>',
-                                    $DirValue['gridV'],
-                                    $DirValue['gridH']
-                                );
+                                $ThisDir['FieldOut'] .= sprintf('<div class="gridboxcheckcell %s %s">–</div>', $DirValue['gridV'], $DirValue['gridH']);
                             } else {
                                 $ThisDir['FieldOut'] .= sprintf(
                                     '<div class="gridboxcheckcell %4$s %5$s"><label class="gridlabel"><input%3$s type="checkbox" class="auto" name="%1$s" id="%1$s"%2$s /></label></div>',
@@ -438,6 +453,38 @@ foreach ($this->CIDRAM['Config Defaults'] as $CatKey => $CatValue) {
                             ) ? 'true' : 'false'
                         );
                     }
+                } elseif (isset($DirValue['style']) && $DirValue['style'] === 'matrix' && $DirValue['HasLabels']) {
+                    if (isset($DirValue['nonsense'])) {
+                        $DirValue['ThisNonsense'] = array_flip(explode("\n", $DirValue['nonsense']));
+                    }
+                    foreach ($DirValue['labels'] as $DirValue['MLabelKey'] => $DirValue['MLabelValue']) {
+                        $DirValue['gridV'] = ($DirValue['gridV']) === 'gridVB' ? 'gridVA' : 'gridVB';
+                        if (isset($DirValue['ThisNonsense'][$DirValue['MLabelKey'] . ':' . $ChoiceKey])) {
+                            $ThisDir['FieldOut'] .= sprintf('<div class="gridboxcheckcell %s %s">–</div>', $DirValue['gridV'], $DirValue['gridH']);
+                        } else {
+                            $ThisDir['FieldOut'] .= sprintf(
+                                '<div class="gridboxcheckcell %s %s"><label class="gridlabel"><input%s type="radio" class="auto" name="%s" id="%s" value="%s"%s /></label></div>',
+                                $DirValue['gridV'],
+                                $DirValue['gridH'],
+                                $ThisDir['Trigger'],
+                                $ThisDir['DirLangKey'] . '_' . $DirValue['MLabelKey'],
+                                $ThisDir['DirLangKey'] . '_' . $DirValue['MLabelKey'] . '_' . $ChoiceKey,
+                                $ChoiceKey,
+                                isset($this->Configuration[$CatKey][$DirKey][$DirValue['MLabelKey']]) && $this->Configuration[$CatKey][$DirKey][$DirValue['MLabelKey']] === $ChoiceKey ? ' checked' : ''
+                            );
+                            $ThisDir['Reset'] .= sprintf(
+                                'document.getElementById(\'%s\').checked=%s;',
+                                $ThisDir['DirLangKey'] . '_' . $DirValue['MLabelKey'] . '_' . $ChoiceKey,
+                                isset($this->CIDRAM['Config Defaults'][$CatKey][$DirKey]['default'][$DirValue['MLabelKey']]) && $this->CIDRAM['Config Defaults'][$CatKey][$DirKey]['default'][$DirValue['MLabelKey']] === $ChoiceKey ? 'true' : 'false'
+                            );
+                        }
+                    }
+                    $ThisDir['FieldOut'] .= sprintf(
+                        '<div class="gridboxitem %s %s">%s</div>',
+                        $DirValue['gridH'],
+                        (count($DirValue['labels']) % 2) === 0 ? 'vrte' : 'vrto',
+                        $ChoiceValue
+                    );
                 } elseif (isset($DirValue['style']) && $DirValue['style'] === 'radio') {
                     if (strpos($ChoiceValue, "\n")) {
                         $ChoiceValue = explode("\n", $ChoiceValue);
@@ -492,10 +539,7 @@ foreach ($this->CIDRAM['Config Defaults'] as $CatKey => $CatValue) {
                     }
                 }
             }
-            if (
-                $DirValue['type'] === 'checkbox' ||
-                (isset($DirValue['style']) && $DirValue['style'] === 'radio')
-            ) {
+            if ($DirValue['type'] === 'checkbox' || (isset($DirValue['style']) && ($DirValue['style'] === 'radio' || $DirValue['style'] === 'matrix'))) {
                 $ThisDir['FieldOut'] .= '</div>';
             } else {
                 $ThisDir['SelectOther'] = !isset($DirValue['choices'][$this->Configuration[$CatKey][$DirKey]]);
@@ -557,9 +601,7 @@ foreach ($this->CIDRAM['Config Defaults'] as $CatKey => $CatValue) {
                     $this->CIDRAM['Config Defaults'][$CatKey][$DirKey]['default']
                 );
             }
-        } elseif ($DirValue['type'] === 'url' || (
-            empty($DirValue['autocomplete']) && $DirValue['type'] === 'string'
-        )) {
+        } elseif ($DirValue['type'] === 'url' || (empty($DirValue['autocomplete']) && $DirValue['type'] === 'string')) {
             $ThisDir['FieldOut'] = sprintf(
                 '<textarea name="%1$s" id="%1$s_field" class="half"%2$s%3$s>%4$s</textarea>',
                 $ThisDir['DirLangKey'],
@@ -611,12 +653,7 @@ foreach ($this->CIDRAM['Config Defaults'] as $CatKey => $CatValue) {
                     $ThisDir['FieldOut'] .= $ReqsLookupCache[$DirValue['Requirement']];
                     continue;
                 }
-                if (substr($DirValue['Requirement'], 0, 1) === '\\') {
-                    $ReqsLookupCache[$DirValue['Requirement']] = '<br /><span class="txtGn">✔️ ' . sprintf(
-                        $this->L10N->getString('label.%s is available'),
-                        $DirValue['Friendly']
-                    ) . '</span>';
-                } elseif (extension_loaded($DirValue['Requirement'])) {
+                if (extension_loaded($DirValue['Requirement'])) {
                     $DirValue['ReqVersion'] = (new \ReflectionExtension($DirValue['Requirement']))->getVersion();
                     $ReqsLookupCache[$DirValue['Requirement']] = '<br /><span class="txtGn">✔️ ' . sprintf(
                         $this->L10N->getString('label.%s is available (%s)'),

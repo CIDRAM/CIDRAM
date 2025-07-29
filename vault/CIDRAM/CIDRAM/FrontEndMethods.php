@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2025.07.26).
+ * This file: General methods used by the front-end (last modified: 2025.07.29).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1230,11 +1230,11 @@ trait FrontEndMethods
      */
     private function processMinifiedFormData(string $MinifiedKey): void
     {
-        if (!isset($_POST[$MinifiedKey]) || substr($_POST[$MinifiedKey], 0, 1) !== '{' || substr($_POST[$MinifiedKey], -1) !== '}') {
+        if (!isset($_POST[$MinifiedKey]) || !is_string($_POST[$MinifiedKey]) || substr($_POST[$MinifiedKey], 0, 1) !== '{' || substr($_POST[$MinifiedKey], -1) !== '}') {
             return;
         }
         $this->initialiseErrorHandler();
-        $MinifiedFormData = json_decode($_POST[$MinifiedKey], true);
+        $MinifiedFormData = json_decode($this->desabotage($_POST[$MinifiedKey]), true);
         $this->restoreErrorHandler();
         if (!is_array($MinifiedFormData)) {
             return;

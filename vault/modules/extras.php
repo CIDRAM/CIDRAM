@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2025.07.28).
+ * This file: Optional security extras module (last modified: 2025.07.31).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -200,11 +200,11 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
         /** Probing for compromised WordPress installations. */
         if ($this->trigger(preg_match(
-            '~/wp-content/plugins/(?:aryabot|cakil|cekidot|dummyyummy|helloapx|ioptimization|masterx|owfsmac|prenota|pwnd|ubh|upspy|uwogh-segs|vwcleanerplugin|wp(?:-d(?:[ao]ftx?|b-ajax-made|iambar)|-freeform|-hps|eazvp)|xichang|xt|yyobang|zaen)/~',
+            '~/wp-content/plugins/(?:aryabot|cakil|cekidot|dummyyummy|helloapx|ioptimization|masterx|owfsmac|prenota|pwnd|seoo(?:yanz)?|ubh|upspy|uwogh-segs|vwcleanerplugin|wp(?:-d(?:[ao]ftx?|b-ajax-made|iambar)|-freeform|-hps|eazvp)|xichang|xt|yyobang|zaen)(?:-\d+)?/~',
             $LCNrURI
         ), 'Probing for compromised WordPress installations')) {
             $this->Reporter->report([15, 21], ['Caught probing for compromised WordPress installations.'], $this->BlockInfo['IPAddr']);
-        } // 2025.07.28
+        } // 2025.07.28 mod 2025.07.31
 
         /** Probing for exposed Git data. */
         if ($this->trigger(preg_match('~\.git(?:config)?(?:$|\W)~', $LCNrURI), 'Probing for exposed Git data')) {

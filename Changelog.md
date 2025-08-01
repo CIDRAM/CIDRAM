@@ -452,4 +452,5 @@
 - [2025.07.26]: Added access keys to a few more front-end pages.
 - [2025.07.27]: Refactored some of the core L10N.
 - [2025.07.29]: Added support for "matrix"-style configuration directives and refactored some of the configuration code.
+- [2025.08.01]: Slightly improved the navigation SVGs.
 - *Plus all the regular signature updates.*

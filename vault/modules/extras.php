@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2025.07.31).
+ * This file: Optional security extras module (last modified: 2025.08.02).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -302,15 +302,25 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             } // 2023.09.15
         }
 
-        /** Probing for sendgrid env file. */
-        if ($this->trigger(preg_match('~(?:^|[/?])sendgrid\.env(?:$|[/?])~', $LCNrURI), 'Probing for sendgrid env file')) {
-            $this->Reporter->report([15, 21], ['Caught probing for sendgrid env file.'], $this->BlockInfo['IPAddr']);
-        } // 2024.05.02 mod 2025.03.18
+        /** Probing for SendGrid env file. */
+        if ($this->trigger(preg_match('~(?:^|[/?])sendgrid\.env(?:$|[/?])~', $LCNrURI), 'Probing for SendGrid env file')) {
+            $this->Reporter->report([15, 21], ['Caught probing for SendGrid env file.'], $this->BlockInfo['IPAddr']);
+        } // 2024.05.02 mod 2025.08.02
+
+        /** Probing for Twilio env file. */
+        if ($this->trigger(preg_match('~(?:^|[/?])twilio\.env(?:$|[/?])~', $LCNrURI), 'Probing for Twilio env file')) {
+            $this->Reporter->report([15, 21], ['Caught probing for Twilio env file.'], $this->BlockInfo['IPAddr']);
+        } // 2025.08.02
 
         /** Probing for env file. */
-        if ($this->trigger(preg_match('~(?:^|[/?=])(?:config)?\.env(?:\.[\da-z]+)?(?:$|[/?])~', $LCNrURI), 'Probing for env file')) {
+        if ($this->trigger(preg_match('~(?:^|[/?=])(?:config|secrets?)?\.env(?:\.[\da-z]+)?(?:$|[/?])~', $LCNrURI), 'Probing for env file')) {
             $this->Reporter->report([15, 21], ['Caught probing for env file.'], $this->BlockInfo['IPAddr']);
-        } // 2025.03.18 mod 2025.07.27
+        } // 2025.03.18 mod 2025.08.02
+
+        /** Probing for unsecured configuration file. */
+        if ($this->trigger(preg_match('~(?:^|/)\.?config.ya?ml(?:$|[/?])~', $LCNrURI), 'Probing for unsecured configuration file')) {
+            $this->Reporter->report([15, 21], ['Caught probing for unsecured configuration file.'], $this->BlockInfo['IPAddr']);
+        } // 2025.08.02
 
         /** Attempts by broken bot to incorrectly access ReCaptcha files (treating reference to remote resource as local). */
         $this->trigger(preg_match('~/www\.google\.com/recaptcha/api\.js(?:$|[/?])~', $LCNrURI), 'Bad request'); // 2025.03.03

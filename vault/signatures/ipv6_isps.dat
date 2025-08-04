@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6_isps.dat
 
-# Version: 2025.197.0
-# Last modified: 2025.07.17
+# Version: 2025.215.0
+# Last modified: 2025.08.04
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -176,14 +176,14 @@ Tag: PJSC Moscow city
 # Listed here are some specific CIDRs/IPs on their network that pose a major
 # spam risk and/or are known sources of spam and/or other undesirable traffic.
 # Mozi botnet detected from here.
-# Stop Forum Spam (SFS) listings: 10 (AS7015), 6,385 (AS7922), 1 (AS33651).
-# Updated: 2024.08.31
+# Stop Forum Spam (SFS) listings: 17 (AS7015), 5,275 (AS7922), 2 (AS33652).
+# Updated: 2025.08.04
 
-2601:c2:1b00:c28d::/64 Deny Spam
-2601:18c:500:1060::/64 Deny Spam
-2601:207:0:bff0::/64 Deny Spam
-2601:410:8180:4200::/64 Deny Spam
-2603:3021:3308:1600::/64 Deny Spam
+2601:281:cf7e:4e10::/64 Deny Spam
+2601:2c1:8601:96f0::/64 Deny Spam
+2601:400:8000:cdf0::/64 Deny Spam
+2601:603:68c:d70::/64 Deny Spam
+2601:801:400:3dc::/64 Deny Spam
 Origin: US
 Profile: Domestic ISP
 Tag: Comcast Spam IPs
@@ -246,19 +246,6 @@ Tag: OVH Systems
 Origin: IN
 Profile: Domestic ISP
 Tag: TATA SKY BROADBAND PRIVATE LIMITED
-
-
-# ASNs 3209, 31334 ("Vodafone Deutschland GmbH").
-# German multiplay network. Brute-force and webapp attacks, hacking, and spam
-# detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,365 (AS3209).
-# Updated: 2024.08.07
-
-2a02:908:1570:7e40::/64 Deny Spam
-2a02:8070:2786:8560::/64 Deny Spam
-Origin: DE
-Profile: Domestic ISP;Mobile ISP;Multiplay
-Tag: Vodafone Deutschland GmbH
 
 
 # ASN 264932 ("STAYNET SERVICOS DE INTERNET LTDA - ME").

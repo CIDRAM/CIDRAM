@@ -1,8 +1,8 @@
 # IPv6 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6_other.dat
 
-# Version: 2025.194.0
-# Last modified: 2025.07.14
+# Version: 2025.215.0
+# Last modified: 2025.08.04
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -183,16 +183,3 @@ Origin: DE
 Origin: US
 Profile: Commercial;Tor endpoints here
 Tag: Web2Objects LLC
-
-
-# ASN 209854 ("Cyberzone S.A").
-# A paid VPN provider. Brute-force and SSH attacks detected from here.
-# Stop Forum Spam (SFS) listings: 1,510.
-# Updated: 2024.12.01
-
-2a09:a702::/47 Deny Attacks
-2a09:a707::/46 Deny Attacks
-2a09:a707:ffff::/48 Deny Attacks
-Origin: PA
-Profile: VPNs here
-Tag: Surfshark Ltd

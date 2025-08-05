@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2025.07.27).
+ * This file: Protect traits (last modified: 2025.08.05).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -248,11 +248,7 @@ trait Protect
                 }
             });
 
-            if (
-                !$this->Configuration['signatures']['tracking_override'] &&
-                !empty($this->CIDRAM['Tracking options override']) &&
-                isset($this->CIDRAM['Restore tracking options override'])
-            ) {
+            if (!$this->Configuration['signatures']['tracking_override'] && isset($this->CIDRAM['Restore tracking options override'])) {
                 $this->CIDRAM['Tracking options override'] = $this->CIDRAM['Restore tracking options override'];
                 unset($this->CIDRAM['Restore tracking options override']);
             }

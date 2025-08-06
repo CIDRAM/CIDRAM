@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese language data for the front-end (last modified: 2025.07.18).
+# This file: Chinese language data for the front-end (last modified: 2025.08.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -61,7 +61,7 @@ Extended Description:
  Bypasses: {"zh-Hans": "标准签名旁路文件通常包括在主包。", "zh-Hant": "標準簽名旁路文件通常包括在主包。"}
  Chart.js: {"zh-Hans": "使前端能够生成饼图。<br />{{Links.Chart.js}}可通过{{Links.MIT}}许可证获得。", "zh-Hant": "使前端能夠生成餅圖。<br />{{Links.Chart.js}}可通過{{Links.MIT}}許可證獲得。"}
  Cookie scanner module: {"zh-Hans": "提供一些针对危险cookie的有限保护。", "zh-Hant": "提供一些針對危險cookie的有限保護。"}
- HTTP version checker module: {"zh-Hans": "通过CIDRAM配置可以阻止特定的协议和HTTP版本。", "zh-Hant": "通過CIDRAM配置可以阻止特定的協議和HTTP版本。"}
+ HTTP version checker module: {"zh-Hans": "通过CIDRAM配置可以阻止特定的协议和HTTP版本。", "zh-Hant": "通過CIDRAM配置可以阻止特定的協定和HTTP版本。"}
  IP-API module:
   zh-Hans: "利用{{Links.IP-API}} API为CIDRAM提供ASN和国家代码查找功能，提供通过CIDRAM配置一种ASN和国家被阻止或列入白名单的方法，并提供一种用于社交媒体验证的方式来验证Facebook请求。 （如果您使用此模块，则无需使用BGPView模块，因为它们的用途相同）。"
   zh-Hant: "利用{{Links.IP-API}} API為CIDRAM提供ASN和國家代碼查找功能，提供通過CIDRAM配置一種ASN和國家被阻止或列入白名單的方法，並提供一種用於社交媒體驗證的方式來驗證Facebook請求。 （如果您使用此模組，則無需使用BGPView模組，因為它們的用途相同）。"
@@ -82,7 +82,7 @@ Extended Description:
  Project Honeypot module: {"zh-Hans": "阻止来自Project Honeypot列出的IP的请求。", "zh-Hant": "阻止來自Project Honeypot列出的IP的請求。"}
  Protocol blocker module:
   zh-Hans: "提供通过配置阻止特定请求协议的能力（例如，HTTP/0.9、HTTP/1.1、SPDY/3.0、等等）。注意：不会影响通过强制请求使用相同协议的服务（例如，Cloudflare）路由的网站。"
-  zh-Hant: "提供通過配置阻止特定請求協議的能力（例如，HTTP/0.9、HTTP/1.1、SPDY/3.0、等等）。注意：不會影響通過強制請求使用相同協議的服務（例如，Cloudflare）路由的網站。"
+  zh-Hant: "提供通過配置阻止特定請求協定的能力（例如，HTTP/0.9、HTTP/1.1、SPDY/3.0、等等）。注意：不會影響通過強制請求使用相同協定的服務（例如，Cloudflare）路由的網站。"
  Referrer spam module: {"zh-Hans": "基于引荐来源垃圾邮件阻止通常不会提供任何有意义的安全利益，但在某些情况下，对某些用户可能有用，用于收集有关请求的更多信息，以及能够报告它。", "zh-Hant": "基於引薦來源垃圾郵件阻止通常不會提供任何有意義的安全利益，但在某些情況下，對某些用戶可能有用，用於收集有關請求的更多信息，以及能夠報告它。"}
  Stop Forum Spam module: {"zh-Hans": "防止通过SFS列出的IP地址访问注册和登录页面。", "zh-Hant": "防止通過SFS列出的IP位址訪問註冊和登錄頁面。"}
  Tor blocker module: {"zh-Hans": "禁止通过DNSEL查找从Tor出口节点进行访问（支持IPv4和IPv6）。", "zh-Hant": "禁止通過DNSEL查找從Tor出口節點進行訪問（支持IPv4和IPv6）。"}
@@ -110,7 +110,7 @@ Name:
  IPv6-Other: "IPv6（代理、VPN、等等）。"
  Optional security extras module: {"zh-Hans": "可选安全附加模块。", "zh-Hant": "可選安全附加模組。"}
  Project Honeypot module: {"zh-Hans": "Project Honeypot 模块。", "zh-Hant": "Project Honeypot 模組。"}
- Protocol blocker module: {"zh-Hans": "协议阻塞模块。", "zh-Hant": "協議阻塞模組。"}
+ Protocol blocker module: {"zh-Hans": "协议阻塞模块。", "zh-Hant": "協定阻塞模組。"}
  Quic cloud compatibility module: {"zh-Hans": "Quic cloud 兼容模块。", "zh-Hant": "Quic cloud 兼容模块。"}
  Referrer spam module: {"zh-Hans": "引荐来源垃圾邮件模块。", "zh-Hant": "引薦來源垃圾郵件模組。"}
  Stop Forum Spam module: {"zh-Hans": "Stop Forum Spam 模块。", "zh-Hant": "Stop Forum Spam 模組。"}
@@ -132,8 +132,8 @@ checkbox:
  Should infractions generated during this stage count towards IP tracking: {"zh-Hans": "将在此阶段产生的违规计入IP跟踪？", "zh-Hant": "將在此階段產生的違規計入IP跟踪？"}
  Should this field appear in log entries: {"zh-Hans": "该字段是否应该出现在日志条目中？", "zh-Hant": "該字段是否應該出現在日誌條目中？"}
  Should this field appear on the access denied page: {"zh-Hans": "该字段是否应该出现在“拒绝访问”页面上？", "zh-Hant": "該字段是否應該出現在『拒絕訪問』頁面上？"}
- Suppress HCaptcha: "禁止HCaptcha"
- Suppress ReCaptcha: "禁止ReCaptcha"
+ Suppress hCaptcha: "禁止hCaptcha"
+ Suppress reCAPTCHA: "禁止reCAPTCHA"
  Test as sensitive request: {"zh-Hans": "作为敏感请求进行测试", "zh-Hant": "作為敏感請求進行測試"}
  Untrack positives: {"zh-Hans": "取消跟踪阳性？", "zh-Hant": "取消跟踪陽性？"}
  When blocked, suppress output template: {"zh-Hans": "被阻止时，禁止输出模板。", "zh-Hant": "被阻止時，禁止輸出模板。"}
@@ -291,7 +291,7 @@ config:
   zh-Hans: "将此指令设置为<code>true</code>会指示PHPMailer跳过通过SMTP发送电子邮件时通常会发生的正常身份验证过程。​应该避免这种情况，因为跳过此过程可能会将出站电子邮件暴露给MITM攻击，但在此过程阻止PHPMailer连接到SMTP服务器的情况下可能是必要的。"
   zh-Hant: "將此指令設置為<code>true</code>會指示PHPMailer跳過通過SMTP發送電子郵件時通常會發生的正常身份驗證過程。​應該避免這種情況，因為跳過此過程可能會將出站電子郵件暴露給MITM攻擊，但在此過程阻止PHPMailer連接到SMTP服務器的情況下可能是必要的。"
  phpmailer_smtp_auth: {"zh-Hans": "此指令确定是否对SMTP会话进行身份验证（通常应该保持不变）。", "zh-Hant": "此指令確定是否對SMTP會話進行身份驗證（通常應該保持不變）。"}
- phpmailer_smtp_secure: {"zh-Hans": "通过SMTP发送电子邮件时使用的协议（TLS或SSL）。", "zh-Hant": "通過SMTP發送電子郵件時使用的協議（TLS或SSL）。"}
+ phpmailer_smtp_secure: {"zh-Hans": "通过SMTP发送电子邮件时使用的协议（TLS或SSL）。", "zh-Hant": "通過SMTP發送電子郵件時使用的協定（TLS或SSL）。"}
  phpmailer_username: {"zh-Hans": "通过SMTP发送电子邮件时使用的用户名。", "zh-Hant": "通過SMTP發送電子郵件時使用的使用者名稱。"}
  projecthoneypot: {"zh-Hans": "Project Honeypot模块的配置。", "zh-Hant": "Project Honeypot模組的配置。"}
  projecthoneypot_api_key: *EnterAPIKey
@@ -299,8 +299,8 @@ config:
  projecthoneypot_max_ts_for_captcha: {"zh-Hans": "为了提供CAPTCHA的目的最大威胁分数（必须是1到100之间的数字）。标准=10。", "zh-Hant": "為了提供CAPTCHA的目的最大威脅分數（必須是1到100之間的數字）。標準=10。"}
  projecthoneypot_minimum_threat_score: {"zh-Hans": "为了让CIDRAM阻止IP地址所需的最低威胁分数（必须是1到100之间的数字）。标准=10。", "zh-Hant": "為了讓CIDRAM阻止IP位址所需的最低威脅分數（必須是1到100之間的數字）。標準=10。"}
  projecthoneypot_type_of_visitor: {"zh-Hans": "根据Project Honeypot确定的访问者类型进行阻止或分类。", "zh-Hant": "根據Project Honeypot確定的訪問者類型進行阻止或分類。"}
- protocol: {"zh-Hans": "协议阻塞模块的配置。", "zh-Hant": "協議阻塞模組的配置。"}
- protocol_blocked: {"zh-Hans": "选定的协议将被阻止。注意：不会影响通过强制请求使用相同协议的服务（例如，Cloudflare）路由的网站。", "zh-Hant": "選定的協議將被阻止。注意：不會影響通過強制請求使用相同協議的服務（例如，Cloudflare）路由的網站。"}
+ protocol: {"zh-Hans": "协议阻塞模块的配置。", "zh-Hant": "協定阻塞模組的配置。"}
+ protocol_blocked: {"zh-Hans": "选定的协议将被阻止。注意：不会影响通过强制请求使用相同协议的服务（例如，Cloudflare）路由的网站。", "zh-Hant": "選定的協定將被阻止。注意：不會影響通過強制請求使用相同協定的服務（例如，Cloudflare）路由的網站。"}
  protocol_reason_message: {"zh-Hans": "阻止此类请求时显示的原因消息。", "zh-Hant": "阻止此類請求時顯示的原因消息。"}
  quic: {"zh-Hans": "Quic cloud兼容性模块配置。", "zh-Hant": "Quic cloud兼容性模組配置。"}
  quic_positive_action: {"zh-Hans": "CIDRAM遇到Quic cloud的请求时应该执行什么动作？ 默认操作 = 绕行。", "zh-Hant": "CIDRAM遇到Quic cloud的請求時應該執行什麼動作？ 默認操作 = 繞行。"}
@@ -315,7 +315,7 @@ config:
  rate_limiting_precision_ipv4: {"zh-Hans": "监视IPv4使用时的精度。​值镜像CIDR块大小。​设置为32以获得最佳精度。​标准=32。", "zh-Hant": "監視IPv4使用時的精度。​值鏡像CIDR塊大小。​設置為32以獲得最佳精度。​標準=32。"}
  rate_limiting_precision_ipv6: {"zh-Hans": "监视IPv6使用时的精度。​值镜像CIDR块大小。​设置为128以获得最佳精度。​标准=128。", "zh-Hant": "監視IPv6使用時的精度。​值鏡像CIDR塊大小。​設置為128以獲得最佳精度。​標準=128。"}
  rate_limiting_segregate: {"zh-Hans": "域名和主机的配额应该分开还是共享？ True = 配额将被分开。 False = 配额将被共享【标准】。", "zh-Hant": "域名和主機的配額應該分開還是共享？ True = 配額將被分開。 False = 配額將被共享【標準】。"}
- recaptcha: {"zh-Hans": "ReCaptcha的配置（为人们提供了一种在受阻时重新获得访问权限的方法）。", "zh-Hant": "ReCaptcha的配置（為人們提供了一種在受阻時重新獲得訪問權限的方法）。"}
+ recaptcha: {"zh-Hans": "ReCAPTCHA的配置（为人们提供了一种在受阻时重新获得访问权限的方法）。", "zh-Hant": "ReCAPTCHA的配置（為人們提供了一種在受阻時重新獲得訪問權限的方法）。"}
  recaptcha_api: *CaptchaAPI
  recaptcha_expiry: *CaptchaExpiry
  recaptcha_lockip: *CaptchaLockIP
@@ -839,14 +839,14 @@ label:
   Enable this rule: {"zh-Hans": "启用此规则", "zh-Hant": "啟用此規則"}
   Enforce default IP tracking options: {"zh-Hans": "实施默认的IP跟踪选项", "zh-Hant": "實施默認的IP跟踪選項"}
   Enforce extended IP tracking options: {"zh-Hans": "实施扩展的IP跟踪选项", "zh-Hant": "實施擴展的IP跟踪選項"}
-  Forcibly disable HCaptcha: {"zh-Hans": "强制禁用HCaptcha", "zh-Hant": "強制禁用HCaptcha"}
+  Forcibly disable hCaptcha: {"zh-Hans": "强制禁用hCaptcha", "zh-Hant": "強制禁用hCaptcha"}
   Forcibly disable IP tracking: {"zh-Hans": "强制禁用IP跟踪", "zh-Hant": "強制禁用IP跟踪"}
   Forcibly disable reCAPTCHA: {"zh-Hans": "强制禁用reCAPTCHA", "zh-Hant": "強制禁用reCAPTCHA"}
   Forcibly enable IP tracking: {"zh-Hans": "强制启用IP跟踪", "zh-Hant": "強制啟用IP跟踪"}
   HTTP status code override: {"zh-Hans": "HTTP状态代码覆盖：", "zh-Hant": "HTTP狀態代碼覆蓋："}
   If the following conditions are met, %s: {"zh-Hans": "如果满足以下条件，%s。", "zh-Hant": "如果滿足以下條件，%s。"}
   Leave it as is (don_t set anything): {"zh-Hans": "保持原样（不设置任何内容）", "zh-Hant": "保持原樣（不設置任何內容）"}
-  Mark for use with HCaptcha: {"zh-Hans": "标记为与HCaptcha一起使用", "zh-Hant": "標記為與HCaptcha一起使用"}
+  Mark for use with hCaptcha: {"zh-Hans": "标记为与hCaptcha一起使用", "zh-Hant": "標記為與hCaptcha一起使用"}
   Mark for use with reCAPTCHA: {"zh-Hans": "标记为与reCAPTCHA一起使用", "zh-Hant": "標記為與reCAPTCHA一起使用"}
   Modify rule: {"zh-Hans": "修改规则", "zh-Hant": "修改規則"}
   Move down: "下移"

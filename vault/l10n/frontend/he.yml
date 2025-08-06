@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hebrew language data for the front-end (last modified: 2025.07.27).
+# This file: Hebrew language data for the front-end (last modified: 2025.08.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -124,8 +124,8 @@ checkbox:
  Should infractions generated during this stage count towards IP tracking: "האם הפרות שנוצרו במהלך שלב זה צריכות להיחשב למעקב אחר IP?"
  Should this field appear in log entries: "האם שדה זה צריך להופיע בערכים ביומן?"
  Should this field appear on the access denied page: "האם שדה זה צריך להופיע בדף "גישה נדחתה"?"
- Suppress HCaptcha: "דיכוי HCaptcha"
- Suppress ReCaptcha: "דיכוי ReCaptcha"
+ Suppress hCaptcha: "דיכוי hCaptcha"
+ Suppress reCAPTCHA: "דיכוי reCAPTCHA"
  Test as sensitive request: "בדוק כבקשה רגישה"
  Untrack positives: "לבטל מעקב חיוביים?"
  When blocked, suppress output template: "כאשר חסום, דחק את תבנית הפלט."
@@ -215,7 +215,7 @@ config:
  general_time_format: "פורמט סימון התאריך/שעה המשמש את CIDRAM. ניתן להוסיף אפשרויות נוספות לפי בקשה."
  general_time_offset: "קיזוז אזור הזמן בדקות."
  general_timezone: "זה משמש כדי לציין את אזור הזמן לשימוש (למשל., Africa/Cairo ,America/New_York ,Asia/Tokyo ,Australia/Perth ,Europe/Berlin ,Pacific/Guam, וכו'). ציין "SYSTEM" כדי לאפשר ל-PHP לטפל בזה עבורך באופן אוטומטי."
- hcaptcha: "תצורה עבור HCaptcha (מספק דרך לבני אדם לקבל חזרה גישה כשהם חסומים)."
+ hcaptcha: "תצורה עבור hCaptcha (מספק דרך לבני אדם לקבל חזרה גישה כשהם חסומים)."
  hcaptcha_api: &CaptchaAPI "באיזה API להשתמש?"
  hcaptcha_expiry: &CaptchaExpiry "מספר השעות לזכור מופעי CAPTCHA. סטנדרטי = 720 (1 חודש)."
  hcaptcha_hcaptcha_log: &CaptchaLogFile "לרשום את כל ניסיונות ה-CAPTCHA? אם כן, ציין את השם לשימוש עבור קובץ היומן. אם לא, השאר את המשתנה הזה ריק."
@@ -281,7 +281,7 @@ config:
  rate_limiting_precision_ipv4: "הדיוק לשימוש למעקב אחר השימוש ב-IPv4. ערך משקף את גודל בלוק CIDR. הגדר ל-32 לדיוק הטוב ביותר. סטנדרטי = 32."
  rate_limiting_precision_ipv6: "הדיוק לשימוש למעקב אחר השימוש ב-IPv6. ערך משקף את גודל בלוק CIDR. הגדר ל-128 לדיוק הטוב ביותר. סטנדרטי = 128."
  rate_limiting_segregate: "האם יש להפריד או לחלוק מכסות עבור דומיינים ומארחים שונים? True = המכסות יופרדו. False = המכסות יחולקו [סטנדרטי]."
- recaptcha: "תצורה עבור ReCaptcha (מספק דרך לבני אדם לקבל חזרה גישה כשהם חסומים)."
+ recaptcha: "תצורה עבור reCAPTCHA (מספק דרך לבני אדם לקבל חזרה גישה כשהם חסומים)."
  recaptcha_api: *CaptchaAPI
  recaptcha_expiry: *CaptchaExpiry
  recaptcha_lockip: *CaptchaLockIP
@@ -698,14 +698,14 @@ label:
   Enable this rule: "הפעל את הכלל הזה"
   Enforce default IP tracking options: "לאכוף אפשרויות מעקב IP סטנדרטיות"
   Enforce extended IP tracking options: "לאכוף אפשרויות מעקב IP מורחבות"
-  Forcibly disable HCaptcha: "להשבית בכוח HCaptcha"
+  Forcibly disable hCaptcha: "להשבית בכוח hCaptcha"
   Forcibly disable IP tracking: "להשבית בכוח מעקב IP"
   Forcibly disable reCAPTCHA: "להשבית בכוח reCAPTCHA"
   Forcibly enable IP tracking: "לאפשר בכוח מעקב IP"
   HTTP status code override: "עקיפה של קוד סטטוס HTTP:"
   If the following conditions are met, %s: "אם מתקיימים התנאים הבאים, %s."
   Leave it as is (don_t set anything): "השאר את זה כמו שהוא (אל תגדיר כלום)"
-  Mark for use with HCaptcha: "לסמן לשימוש עם HCaptcha"
+  Mark for use with hCaptcha: "לסמן לשימוש עם hCaptcha"
   Mark for use with reCAPTCHA: "לסמן לשימוש עם reCAPTCHA"
   Modify rule: "שנה כלל"
   Move down: "לזוז לרדת"

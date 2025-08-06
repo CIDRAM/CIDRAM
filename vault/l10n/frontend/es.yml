@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2025.07.18).
+# This file: Spanish language data for the front-end (last modified: 2025.08.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -124,8 +124,8 @@ checkbox:
  Should infractions generated during this stage count towards IP tracking: "¿Las infracciones generadas durante esta etapa deben contar para el seguimiento de IP?"
  Should this field appear in log entries: "¿Debería aparecer este campo en las entradas de registro?"
  Should this field appear on the access denied page: "¿Debería aparecer este campo en la página "acceso denegado"?"
- Suppress HCaptcha: "Suprimir HCaptcha"
- Suppress ReCaptcha: "Suprimir ReCaptcha"
+ Suppress hCaptcha: "Suprimir hCaptcha"
+ Suppress reCAPTCHA: "Suprimir reCAPTCHA"
  Test as sensitive request: "Prueba como solicitud sensible"
  Untrack positives: "¿No rastrear positivos?"
  When blocked, suppress output template: "Cuando está bloqueado, suprime la plantilla de salida."
@@ -215,7 +215,7 @@ config:
  general_time_format: "El formato de notación de fecha/hora usado por CIDRAM. Se pueden añadir opciones adicionales bajo petición."
  general_time_offset: "Desplazamiento del huso horario en minutos."
  general_timezone: "Esto se usa para especificar la zona horaria a usar (por ejemplo, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, etc). Especifique "SYSTEM" para permitir que PHP maneje esto automáticamente."
- hcaptcha: "Configuración para HCaptcha (proporciona una forma para que los humanos recuperen el acceso cuando están bloqueados)."
+ hcaptcha: "Configuración para hCaptcha (proporciona una forma para que los humanos recuperen el acceso cuando están bloqueados)."
  hcaptcha_api: &CaptchaAPI "¿Qué API usar?"
  hcaptcha_expiry: &CaptchaExpiry "Número de horas para recordar instancias de CAPTCHA. Predefinido = 720 (1 mes)."
  hcaptcha_hcaptcha_log: &CaptchaLogFile "Registrar todos los intentos de CAPTCHA? En caso afirmativo, especifique el nombre que se utilizará para el archivo de registro. Si no, dejar esta variable en blanco."
@@ -281,7 +281,7 @@ config:
  rate_limiting_precision_ipv4: "La precisión a utilizar cuando se monitorea el uso de IPv4. El valor refleja el tamaño del bloque CIDR. Establecer en 32 para la mejor precisión. Predefinido = 32."
  rate_limiting_precision_ipv6: "La precisión a utilizar cuando se monitorea el uso de IPv6. El valor refleja el tamaño del bloque CIDR. Establecer en 128 para la mejor precisión. Predefinido = 128."
  rate_limiting_segregate: "¿Deberían segregarse o compartirse las cuotas para diferentes dominios y hosts? True = Las cuotas serán segregadas. False = Las cuotas serán compartidas [Predefinido]."
- recaptcha: "Configuración para ReCaptcha (proporciona una forma para que los humanos recuperen el acceso cuando están bloqueados)."
+ recaptcha: "Configuración para reCAPTCHA (proporciona una forma para que los humanos recuperen el acceso cuando están bloqueados)."
  recaptcha_api: *CaptchaAPI
  recaptcha_expiry: *CaptchaExpiry
  recaptcha_lockip: *CaptchaLockIP
@@ -701,14 +701,14 @@ label:
   Enable this rule: "Habilitar esta regla"
   Enforce default IP tracking options: "Establecer opciones del rastreo IP predeterminadas"
   Enforce extended IP tracking options: "Establecer opciones del rastreo IP extendidas"
-  Forcibly disable HCaptcha: "Desactivar a la fuerza HCaptcha"
+  Forcibly disable hCaptcha: "Desactivar a la fuerza hCaptcha"
   Forcibly disable IP tracking: "Desactivar a la fuerza el rastreo IP"
   Forcibly disable reCAPTCHA: "Desactivar a la fuerza reCAPTCHA"
   Forcibly enable IP tracking: "Activar a la fuerza el rastreo IP"
   HTTP status code override: "Reemplazo del código de estado HTTP:"
   If the following conditions are met, %s: "Si se cumplen las siguientes condiciones, %s."
   Leave it as is (don_t set anything): "Déjelo como está (no configure nada)"
-  Mark for use with HCaptcha: "Marca para usar con HCaptcha"
+  Mark for use with hCaptcha: "Marca para usar con hCaptcha"
   Mark for use with reCAPTCHA: "Marca para usar con reCAPTCHA"
   Modify rule: "Modifica la regla"
   Move down: "Mueve la regla abajo"

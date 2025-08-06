@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Punjabi language data for the front-end (last modified: 2025.07.27).
+# This file: Punjabi language data for the front-end (last modified: 2025.08.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -124,8 +124,8 @@ checkbox:
  Should infractions generated during this stage count towards IP tracking: "ਕੀ ਇਸ ਪੜਾਅ ਦੌਰਾਨ ਪੈਦਾ ਹੋਏ ਉਲੰਘਣਾਵਾਂ ਨੂੰ IP ਟਰੈਕਿੰਗ ਵਿੱਚ ਗਿਣਿਆ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ?"
  Should this field appear in log entries: "ਕੀ ਇਹ ਖੇਤਰ ਲੌਗ ਐਂਟਰੀਆਂ ਵਿੱਚ ਦਿਖਾਈ ਦੇਣਾ ਚਾਹੀਦਾ ਹੈ?"
  Should this field appear on the access denied page: "ਕੀ ਇਹ ਖੇਤਰ "ਪਹੁੰਚ ਇਨਕਾਰ" ਪੰਨੇ 'ਤੇ ਦਿਖਾਈ ਦੇਣਾ ਚਾਹੀਦਾ ਹੈ?"
- Suppress HCaptcha: "HCaptcha ਬੰਦ ਕਰੋ"
- Suppress ReCaptcha: "ReCaptcha ਬੰਦ ਕਰੋ"
+ Suppress hCaptcha: "HCaptcha ਬੰਦ ਕਰੋ"
+ Suppress reCAPTCHA: "ReCAPTCHA ਬੰਦ ਕਰੋ"
  Test as sensitive request: "ਸੰਵੇਦਨਸ਼ੀਲ ਬੇਨਤੀ ਵਜੋਂ ਜਾਂਚ ਕਰੋ"
  Untrack positives: "ਸਕਾਰਾਤਮਕ ਅਨਟ੍ਰੈਕ ਕਰੋ?"
  When blocked, suppress output template: "ਬਲੌਕ ਕੀਤੇ ਜਾਣ 'ਤੇ, ਆਉਟਪੁੱਟ ਟੈਮਪਲੇਟ ਦੀ ਵਰਤੋਂ ਨਾ ਕਰੋ।"
@@ -281,7 +281,7 @@ config:
  rate_limiting_precision_ipv4: "IPv4 ਵਰਤੋਂ ਨੂੰ ਟਰੈਕ ਕਰਨ ਲਈ ਵਰਤਣ ਲਈ ਸ਼ੁੱਧਤਾ। ਮੁੱਲ CIDR ਬਲਾਕ ਆਕਾਰ ਨੂੰ ਮਿਰਰ ਕਰਦਾ ਹੈ। ਵਧੀਆ ਸ਼ੁੱਧਤਾ ਲਈ 32 'ਤੇ ਸੈੱਟ ਕਰੋ। ਡਿਫਾਲਟ = 32."
  rate_limiting_precision_ipv6: "IPv6 ਵਰਤੋਂ ਨੂੰ ਟਰੈਕ ਕਰਨ ਲਈ ਵਰਤਣ ਲਈ ਸ਼ੁੱਧਤਾ। ਮੁੱਲ CIDR ਬਲਾਕ ਆਕਾਰ ਨੂੰ ਮਿਰਰ ਕਰਦਾ ਹੈ। ਵਧੀਆ ਸ਼ੁੱਧਤਾ ਲਈ 128 'ਤੇ ਸੈੱਟ ਕਰੋ। ਡਿਫਾਲਟ = 128."
  rate_limiting_segregate: "ਕੀ ਵੱਖ-ਵੱਖ ਡੋਮੇਨਾਂ ਅਤੇ ਮੇਜ਼ਬਾਨਾਂ ਲਈ ਕੋਟੇ ਨੂੰ ਵੱਖਰਾ ਜਾਂ ਸਾਂਝਾ ਕੀਤਾ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ? True = ਕੋਟੇ ਵੱਖ ਕੀਤੇ ਜਾਣਗੇ। False = ਕੋਟੇ ਸਾਂਝੇ ਕੀਤੇ ਜਾਣਗੇ [ਡਿਫਾਲਟ]।"
- recaptcha: "ReCaptcha ਲਈ ਕੌਂਫਿਗਰੇਸ਼ਨ (ਬਲੌਕ ਕੀਤੇ ਜਾਣ 'ਤੇ ਮਨੁੱਖਾਂ ਨੂੰ ਮੁੜ ਪਹੁੰਚ ਪ੍ਰਾਪਤ ਕਰਨ ਦਾ ਤਰੀਕਾ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ)।"
+ recaptcha: "ReCAPTCHA ਲਈ ਕੌਂਫਿਗਰੇਸ਼ਨ (ਬਲੌਕ ਕੀਤੇ ਜਾਣ 'ਤੇ ਮਨੁੱਖਾਂ ਨੂੰ ਮੁੜ ਪਹੁੰਚ ਪ੍ਰਾਪਤ ਕਰਨ ਦਾ ਤਰੀਕਾ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ)।"
  recaptcha_api: *CaptchaAPI
  recaptcha_expiry: *CaptchaExpiry
  recaptcha_lockip: *CaptchaLockIP
@@ -704,14 +704,14 @@ label:
   Enable this rule: "ਇਸ ਨਿਯਮ ਨੂੰ ਸਰਗਰਮ ਕਰੋ"
   Enforce default IP tracking options: "ਡਿਫੌਲਟ IP ਟਰੈਕਿੰਗ ਵਿਕਲਪਾਂ ਨੂੰ ਲਾਗੂ ਕਰੋ"
   Enforce extended IP tracking options: "ਵਧਾਇਆ IP ਟਰੈਕਿੰਗ ਵਿਕਲਪਾਂ ਨੂੰ ਲਾਗੂ ਕਰੋ"
-  Forcibly disable HCaptcha: "HCaptcha ਨੂੰ ਜ਼ਬਰਦਸਤੀ ਅਕਿਰਿਆਸ਼ੀਲ ਕਰੋ"
+  Forcibly disable hCaptcha: "HCaptcha ਨੂੰ ਜ਼ਬਰਦਸਤੀ ਅਕਿਰਿਆਸ਼ੀਲ ਕਰੋ"
   Forcibly disable IP tracking: "ਜ਼ਬਰਦਸਤੀ IP ਟਰੈਕਿੰਗ ਨੂੰ ਅਕਿਰਿਆਸ਼ੀਲ ਕਰੋ"
   Forcibly disable reCAPTCHA: "reCAPTCHA ਨੂੰ ਜ਼ਬਰਦਸਤੀ ਅਕਿਰਿਆਸ਼ੀਲ ਕਰੋ"
   Forcibly enable IP tracking: "ਜ਼ਬਰਦਸਤੀ IP ਟਰੈਕਿੰਗ ਨੂੰ ਸਰਗਰਮ ਕਰੋ"
   HTTP status code override: "HTTP ਸਥਿਤੀ ਕੋਡ ਓਵਰਰਾਈਡ:"
   If the following conditions are met, %s: "ਜੇ ਹੇਠ ਲਿਖੀਆਂ ਸ਼ਰਤਾਂ ਪੂਰੀਆਂ ਹੁੰਦੀਆਂ ਹਨ, ਤਾਂ %s।"
   Leave it as is (don_t set anything): "ਇਸਨੂੰ ਇਸ ਤਰ੍ਹਾਂ ਛੱਡੋ (ਕੁਝ ਵੀ ਸੈੱਟ ਨਾ ਕਰੋ)"
-  Mark for use with HCaptcha: "HCaptcha ਦੇ ਨਾਲ ਵਰਤਣ ਲਈ ਚਿੰਨ੍ਹਿਤ ਕਰੋ"
+  Mark for use with hCaptcha: "HCaptcha ਦੇ ਨਾਲ ਵਰਤਣ ਲਈ ਚਿੰਨ੍ਹਿਤ ਕਰੋ"
   Mark for use with reCAPTCHA: "reCAPTCHA ਦੇ ਨਾਲ ਵਰਤਣ ਲਈ ਚਿੰਨ੍ਹਿਤ ਕਰੋ"
   Modify rule: "ਨਿਯਮ ਨੂੰ ਸੋਧੋ"
   Move down: "ਹੇਠਾਂ ਵੱਲ ਸ਼ਿਫਟ ਕਰੋ"

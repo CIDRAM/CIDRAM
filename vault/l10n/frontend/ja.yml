@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2025.07.18).
+# This file: Japanese language data for the front-end (last modified: 2025.08.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -51,7 +51,7 @@ Abuse category:
  Web spam: "ウェブ・スパム（コメントおよびフォーラムのスパム、ＨＴＴＰリファラーのスパム、またはその他のＣＭＳスパム）。"
  Webapp attacks: "ウェブ・アプリ攻撃（脆弱性や悪用を調査する、またはインストールされているウェブ・アプリ、ＣＭＳ「例: WordPress、Drupal、phpMyAdmin、など」、または電子商取引ソリューションを悪用しようとする）。"
 Extended Description:
- AbuseIPDB module: "AbuseIPDBにリストされているＩＰからの要求をブロックします。"
+ AbuseIPDB module: "AbuseIPDBにリストされているＩＰからのリクエストをブロックします。"
  BGPView module: "{{Links.BGPView}}のＡＰＩを活用して、ＣＩＤＲＡＭのためにＡＳＮおよび国コード検索機能を提供します。​ＣＩＤＲＡＭコンフィギュレーションを介して、ＡＳＮと国をブロックまたはホワイトリストに登録できます。​Facebookリクエストを検証する、ソーシャル・メディア・ベリフィケーションの手段を提供します。 （このモジュールを使用する場合、同じ目的を果たすため、IP-APIモジュールを使用する必要はありません）。"
  Bad TLDs blocker module: "スパマー、ハッカー、その他の悪意のあるエンティティによって頻繁に使用されるＴＬＤに属するホストをブロックします。"
  Bad hosts blocker module: "スパマー、ハッカー、およびその他の悪意のあるエンティティによって頻繁に使用されるホストをブロックします。"
@@ -73,8 +73,8 @@ Extended Description:
  IPv6-Other: *ExtDesOther
  Optional security extras module: "リクエストでよく使用される攻撃経路に対して、いくつかの制限された保護を提供します。"
  PHPMailer: "Ｅメールの送信を含む機能の使用に必要です。<br />「{{Links.PHPMailer.PHPMailer}}」は、「{{Links.PHPMailer.License}}」ライセンスを介して利用可能です。"
- Project Honeypot module: "Project HoneypotにリストされているＩＰからの要求をブロックします。"
- Protocol blocker module: "コンフィギュレーションを介して特定の要求プロトコルをブロックする機能を提供します（例：HTTP/0.9、HTTP/1.1、SPDY/3.0、など）。​注：すべての要求をまったく同じプロトコルを使用するように書き換えるサービスを（例:Cloudflare）介してルーティングするウェブサイトには影響しません。"
+ Project Honeypot module: "Project HoneypotにリストされているＩＰからのリクエストをブロックします。"
+ Protocol blocker module: "コンフィギュレーションを介して特定のリクエスト・プロトコルをブロックする機能を提供します（例：HTTP/0.9、HTTP/1.1、SPDY/3.0、など）。​注：すべてのリクエストをまったく同じプロトコルを使用するように書き換えるサービスを（例:Cloudflare）介してルーティングするウェブサイトには影響しません。"
  Referrer spam module: "リファラー・スパムに基づくブロックは、通常、有意義なセキュリティ上の利点を提供しません、ただし、場合によっては、リクエストに関する詳細情報の収集、およびレポートの作成に役立つ可能性があります。"
  Stop Forum Spam module: "ＳＦＳによってリストされたＩＰに対して登録ページとログインページを保護します。"
  Tor blocker module: "ＤＮＳＥＬルックアップによるＴｏｒ出口ノードからのアクセスを禁止します（ＩＰｖ４とＩＰｖ６の両方をサポートします）。"
@@ -124,8 +124,8 @@ checkbox:
  Should infractions generated during this stage count towards IP tracking: "この段階で発生した違反は、ＩＰトラッキングにカウントしますか？"
  Should this field appear in log entries: "このフィールドはログ・エントリに表示する必要がありますか？"
  Should this field appear on the access denied page: "このフィールドは「アクセス拒否」ページに表示する必要がありますか？"
- Suppress HCaptcha: "HCaptchaを抑制して"
- Suppress ReCaptcha: "ReCaptchaを抑制して"
+ Suppress hCaptcha: "HCaptchaを抑制して"
+ Suppress reCAPTCHA: "ReCAPTCHAを抑制して"
  Test as sensitive request: "機密リクエストとしてテストする"
  Untrack positives: "陽性の追跡をやめますか？"
  When blocked, suppress output template: "ブロックされている場合、出力テンプレートを抑制する。"
@@ -159,7 +159,7 @@ config:
  bobuam_safari: "許可されているSafariの「Version」トークンの最低バージョン。 おすすめされた： {{BOBUAM Token.Safari}}。"
  bobuam_sanity_check: "あいまいなまたは明らかに不正な形式のユーザー・エージェント文字列を表示するブラウザーをブロックしますか？"
  bunnycdn: "BunnyCDN互換性モジュールの設定。"
- bunnycdn_positive_action: "BunnyCDNからの要求に遭遇した場合、CIDRAMはどのアクションを実行する必要がありますか？ デフォルト・アクション = バイパスする。"
+ bunnycdn_positive_action: "BunnyCDNからのリクエストに遭遇した場合、CIDRAMはどのアクションを実行する必要がありますか？ デフォルト・アクション = バイパスする。"
  bypasses: "デフォルト・シグネチャ・バイパスのコンフィギュレーション。"
  bypasses_used: "どのバイパスを使用する必要がありますか？"
  components: "CIDRAMによって使用されるコンポーネントをアクティブ化および非アクティブ化するための設定。​通常、アップデート・ページに入力されますが、ここから管理して、より細かく制御したり、アップデート・ページで認識されないカスタム・コンポーネントを管理したりすることもできます。"
@@ -268,20 +268,20 @@ config:
  projecthoneypot_minimum_threat_score: "CIDRAMがＩＰアドレスをブロックするために必要な最小脅威スコア（１から１００までの数値である必要があります）。 Default/デフォルルト = 10。"
  projecthoneypot_type_of_visitor: "Project Honeypotによって決定された訪問者のタイプに基づいて、ブロックまたはプロフィールするかどうかを制御します。"
  protocol: "プロトコル・ブロッカー・モジュールの設定。"
- protocol_blocked: "選択したプロトコルがブロックされます。​注：すべての要求をまったく同じプロトコルを使用するように書き換えるサービスを（例:Cloudflare）介してルーティングするウェブサイトには影響しません。"
+ protocol_blocked: "選択したプロトコルがブロックされます。​注：すべてのリクエストをまったく同じプロトコルを使用するように書き換えるサービスを（例:Cloudflare）介してルーティングするウェブサイトには影響しません。"
  protocol_reason_message: "そのようなリクエストがブロックされたときに表示される理由メッセージ。"
  quic: "Quic cloud互換性モジュールの設定。"
- quic_positive_action: "Quic cloudからの要求に遭遇した場合、CIDRAMはどのアクションを実行する必要がありますか？ デフォルト・アクション = バイパスする。"
+ quic_positive_action: "Quic cloudからのリクエストに遭遇した場合、CIDRAMはどのアクションを実行する必要がありますか？ デフォルト・アクション = バイパスする。"
  rate_limiting: "レート制限の設定（一般的な使用には推奨されません）。"
  rate_limiting_allowance_period: "使用状況を監視する期間。 Default/デフォルルト = 0°0′0″。"
  rate_limiting_exceptions: "例外（すなわち、レート制限されるべきではないリクエスト）。​レート制限が有効な場合にのみ効果があります。"
  rate_limiting_hint: "ご注意ください、他のすべてのCIDRAM機能と同様に、CIDRAMのレート制限機能は、CIDRAMが接続されているページとリソースにのみ適用できます。​これは通常、接続されたＰＨＰリソースによって明示的に提供される場合を除き、非ＰＨＰリソースはカバーされないことを意味します。​サーバー・モジュール、cPanel、またはその他のネットワーク・ツールを使用してレート制限を強制できる場合は、CIDRAMのレート制限機能の代わりにそれらを使用する方が適切です。​また、やる気と決意のあるユーザーは、ＩＰアドレスをローテーションしたり、CIDRAMがまだ認識していないプロキシやＶＰＮプロバイダーに切り替えたりすることで、レート制限を簡単に回避できます。​また、レート制限は実際のエンド・ユーザーにとって非常に迷惑になる可能性があります。​時には必要になることもありますが、望ましいことはめったにありません。"
- rate_limiting_max_bandwidth: "将来の要求に対してレート制限を有効にする前の許容期間内に許容される最大帯域幅。​０の値は、このタイプのレート制限を無効にします。 Default/デフォルルト = 0KB。"
- rate_limiting_max_requests: "将来の要求に対してレート制限を有効にする前に、許容期間内に許可される要求の最大数。​０の値は、このタイプのレート制限を無効にします。 Default/デフォルルト = 0。"
+ rate_limiting_max_bandwidth: "将来のリクエストに対してレート制限を有効にする前の許容期間内に許容される最大帯域幅。​０の値は、このタイプのレート制限を無効にします。 Default/デフォルルト = 0KB。"
+ rate_limiting_max_requests: "将来のリクエストに対してレート制限を有効にする前に、許容期間内に許可される要求の最大数。​０の値は、このタイプのレート制限を無効にします。 Default/デフォルルト = 0。"
  rate_limiting_precision_ipv4: "ＩＰｖ４の使用状況を監視する際の精度。​値はＣＩＤＲブロック・サイズを反映します。​最高の精度を得るには３２に設定します。 Default/デフォルルト = 32。"
  rate_limiting_precision_ipv6: "ＩＰｖ６の使用状況を監視する際の精度。​値はＣＩＤＲブロック・サイズを反映します。​最高の精度を得るには１２８に設定します。 Default/デフォルルト = 128。"
  rate_limiting_segregate: "異なるドメインおよびホストのクォータを分離または共有する必要がありますか？ True = クォータは分離されます。 False = クォータは共有されます（Default/デフォルルト）。"
- recaptcha: "ReCaptchaの設定（ブロックされたときに人間がアクセスを取り戻す方法を提供します）。"
+ recaptcha: "ReCAPTCHAの設定（ブロックされたときに人間がアクセスを取り戻す方法を提供します）。"
  recaptcha_api: *CaptchaAPI
  recaptcha_expiry: *CaptchaExpiry
  recaptcha_lockip: *CaptchaLockIP
@@ -592,7 +592,7 @@ label:
  Disable auxiliary rules: "補助ルールを無効にする"
  Displaying %s entry that cites %s: "「%2$s」を含む%1$sつのエントリが表示されます。"
  Displaying %s entry: "%sエントリが表示されます。"
- Don_t block the request: "リクエストをブロックしないでください。\nリクエストが悪質であると確信できる場合にのみリクエストをブロックしたい場合、または誤検知に関して慎重を期したい場合（不要なトラフィックが時々通過してしまうという犠牲を払って）、これを選択してください。​リクエストが無害かどうか確信が持てない場合にリクエストをブロックしたい場合、または警戒を怠らない場合（時折誤検知が発生する可能性はあるものの）、利用可能な他のオプションのいずれかを選択してください。"
+ Don_t block the request: "リクエストをブロックしないでください。\nリクエストが悪質であると確信できる場合にのみリクエストをブロックしたい場合、または誤検知に関して慎重を期したい場合（不要なトラフィックが時々通過してしまうという犠牲を払って）、これを選択してください。​リクエストが無害かどうか確信が持てない場合にリクエストをブロックしたい場合、または警戒を怠らない場合（時折誤検知が発生する可能性はあるもの）、利用可能な他のオプションのいずれかを選択してください。"
  Empty, unfamiliar, and others: "空、なじみのない、その他。"
  Enable auxiliary rules: "補助ルールを有効にする"
  Entries per page: "ページあたりのエントリ数："
@@ -695,15 +695,15 @@ label:
   Enable this rule: "このルールを有効にして"
   Enforce default IP tracking options: "デフォルトＩＰトラッキング・オプションを適用して"
   Enforce extended IP tracking options: "拡張ＩＰトラッキング・オプションを適用して"
-  Forcibly disable HCaptcha: "HCaptchaを強制的に無効にして"
+  Forcibly disable hCaptcha: "HCaptchaを強制的に無効にして"
   Forcibly disable IP tracking: "ＩＰトラッキングを強制的に無効にして"
-  Forcibly disable reCAPTCHA: "ReCaptchaを強制的に無効にして"
+  Forcibly disable reCAPTCHA: "ReCAPTCHAを強制的に無効にして"
   Forcibly enable IP tracking: "ＩＰトラッキングを強制的に有効にして"
   HTTP status code override: "ＨＴＴＰステータス・コード・オーバーライド："
   If the following conditions are met, %s: "次の条件が満たされている場合は、%s。"
   Leave it as is (don_t set anything): "そのままにしておきます（何も設定しないでください）"
-  Mark for use with HCaptcha: "HCaptchaで使用するためのマーク"
-  Mark for use with reCAPTCHA: "ReCaptchaで使用するためのマーク"
+  Mark for use with hCaptcha: "HCaptchaで使用するためのマーク"
+  Mark for use with reCAPTCHA: "ReCAPTCHAで使用するためのマーク"
   Modify rule: "ルールを変更する"
   Move down: "降りる"
   Move to the bottom: "ルールを最後の場所に移動"

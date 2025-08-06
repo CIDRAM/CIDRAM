@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Ukrainian language data for the front-end (last modified: 2025.07.18).
+# This file: Ukrainian language data for the front-end (last modified: 2025.08.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -124,8 +124,8 @@ checkbox:
  Should infractions generated during this stage count towards IP tracking: "Чи мають порушення, здійснені на цьому етапі, зараховуватися до відстеження IP?"
  Should this field appear in log entries: "Чи повинен це поле відображатися в записах журналу?"
  Should this field appear on the access denied page: "Чи повинен це поле з'являтися на сторінці «доступ заборонено»?"
- Suppress HCaptcha: "Придушити HCaptcha"
- Suppress ReCaptcha: "Придушити ReCaptcha"
+ Suppress hCaptcha: "Придушити hCaptcha"
+ Suppress reCAPTCHA: "Придушити reCAPTCHA"
  Test as sensitive request: "Перевірити як конфіденційний запит"
  Untrack positives: "Скасувати відстеження позитивів?"
  When blocked, suppress output template: "Якщо заблоковано, придушити вихід шаблон."
@@ -215,7 +215,7 @@ config:
  general_time_format: "Формат позначення дати/часу, який використовується CIDRAM. Додаткові опції можуть бути додані за запитом."
  general_time_offset: "Зміщення часового поясу в хвилинах."
  general_timezone: "Часовий пояс для використання (наприклад, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, тощо). Укажіть «SYSTEM», щоб PHP автоматично обробив це за вас."
- hcaptcha: "Конфігурація для HCaptcha (надає можливість людям відновити доступ у разі блокування)."
+ hcaptcha: "Конфігурація для hCaptcha (надає можливість людям відновити доступ у разі блокування)."
  hcaptcha_api: &CaptchaAPI "Який API використовувати?"
  hcaptcha_expiry: &CaptchaExpiry "Кількість годин для запам'ятовування інстанція CAPTCHA. Стандарт = 720 (1 місяць)."
  hcaptcha_hcaptcha_log: &CaptchaLogFile "Реєструвати всі спроби CAPTCHA? Якщо так, укажіть ім'я для файлу журналу. Якщо ні, залиште цю змінну пустою."
@@ -281,7 +281,7 @@ config:
  rate_limiting_precision_ipv4: "Точність для відстеження використання IPv4. Значення відображає розмір блоку CIDR. Встановіть 32 для найкращої точності. Стандарт = 32."
  rate_limiting_precision_ipv6: "Точність для відстеження використання IPv6. Значення відображає розмір блоку CIDR. Встановіть 128 для найкращої точності. Стандарт = 128."
  rate_limiting_segregate: "Квоти для різних доменів і хостів слід зберігати окремо чи спільно? True = Квоти зберігатимуться окремо. False = Квоти зберігатимуться спільно [Стандарт]."
- recaptcha: "Конфігурація для ReCaptcha (надає можливість людям відновити доступ у разі блокування)."
+ recaptcha: "Конфігурація для reCAPTCHA (надає можливість людям відновити доступ у разі блокування)."
  recaptcha_api: *CaptchaAPI
  recaptcha_expiry: *CaptchaExpiry
  recaptcha_lockip: *CaptchaLockIP
@@ -715,14 +715,14 @@ label:
   Enable this rule: "Увімкніть це правило"
   Enforce default IP tracking options: "Застосуйте стандартний параметрів відстеження IP"
   Enforce extended IP tracking options: "Застосуйте розширений параметрів відстеження IP"
-  Forcibly disable HCaptcha: "Примусово вимкнути HCaptcha"
+  Forcibly disable hCaptcha: "Примусово вимкнути hCaptcha"
   Forcibly disable IP tracking: "Примусово вимкнути відстеження IP"
   Forcibly disable reCAPTCHA: "Примусово вимкнути reCAPTCHA"
   Forcibly enable IP tracking: "Примусово ввімкнути відстеження IP"
   HTTP status code override: "Заміна коду статусу HTTP:"
   If the following conditions are met, %s: "Якщо наступні умови виконуються, %s."
   Leave it as is (don_t set anything): "Залишити як є (нічого не встановлювати)"
-  Mark for use with HCaptcha: "Позначити для використання з HCaptcha"
+  Mark for use with hCaptcha: "Позначити для використання з hCaptcha"
   Mark for use with reCAPTCHA: "Позначити для використання з reCAPTCHA"
   Modify rule: "Змініть правило"
   Move down: "Перемістіть його вниз"

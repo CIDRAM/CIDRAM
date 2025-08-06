@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2025.07.18).
+# This file: Dutch language data for the front-end (last modified: 2025.08.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -124,8 +124,8 @@ checkbox:
  Should infractions generated during this stage count towards IP tracking: "Moeten overtredingen die gegenereerd door deze fase meetellen voor IP-tracking?"
  Should this field appear in log entries: "Moet dit veld in logs verschijnen?"
  Should this field appear on the access denied page: "Moet dit veld verschijnen op de "toegang geweigerd" pagina?"
- Suppress HCaptcha: "HCaptcha onderdrukken"
- Suppress ReCaptcha: "ReCaptcha onderdrukken"
+ Suppress hCaptcha: "HCaptcha onderdrukken"
+ Suppress reCAPTCHA: "ReCAPTCHA onderdrukken"
  Test as sensitive request: "Test als gevoelig verzoek"
  Untrack positives: "Tracking annuleren voor positieven?"
  When blocked, suppress output template: "Wanneer geblokkeerd, onderdrukken de uitvoersjabloon."
@@ -215,7 +215,7 @@ config:
  general_time_format: "De datum notatie gebruikt door CIDRAM. Extra opties kunnen worden toegevoegd op aanvraag."
  general_time_offset: "Tijdzone offset in minuten."
  general_timezone: "Dit wordt gebruikt om de te gebruiken tijdzone op te geven (b.v., Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, enz). Geef "SYSTEM" op om PHP dit automatisch voor u te laten afhandelen."
- hcaptcha: "Configuratie voor HCaptcha (biedt een manier voor mensen om toegang te krijgen wanneer ze worden geblokkeerd)."
+ hcaptcha: "Configuratie voor hCaptcha (biedt een manier voor mensen om toegang te krijgen wanneer ze worden geblokkeerd)."
  hcaptcha_api: &CaptchaAPI "Welke API gebruiken?"
  hcaptcha_expiry: &CaptchaExpiry "Aantal uren om CAPTCHA instanties herinneren. Standaard = 720 (1 maand)."
  hcaptcha_hcaptcha_log: &CaptchaLogFile "Log alle CAPTCHA pogingen? Zo ja, geef de naam te gebruiken voor het logbestand. Zo nee, laat u deze variabele leeg."
@@ -281,7 +281,7 @@ config:
  rate_limiting_precision_ipv4: "De precisie om te gebruiken bij het monitoren op het gebruik van IPv4. Waarde weerspiegelt de CIDR-blokgrootte. Stel in op 32 voor de beste precisie. Standaard = 32."
  rate_limiting_precision_ipv6: "De precisie om te gebruiken bij het monitoren op het gebruik van IPv6. Waarde weerspiegelt de CIDR-blokgrootte. Stel in op 128 voor de beste precisie. Standaard = 128."
  rate_limiting_segregate: "Moeten quota voor verschillende domeinen en hosts worden gescheiden of gedeeld? True = Quota zullen worden gescheiden. False = Quota zullen worden gedeeld [Standaard]."
- recaptcha: "Configuratie voor ReCaptcha (biedt een manier voor mensen om toegang te krijgen wanneer ze worden geblokkeerd)."
+ recaptcha: "Configuratie voor reCAPTCHA (biedt een manier voor mensen om toegang te krijgen wanneer ze worden geblokkeerd)."
  recaptcha_api: *CaptchaAPI
  recaptcha_expiry: *CaptchaExpiry
  recaptcha_lockip: *CaptchaLockIP
@@ -701,14 +701,14 @@ label:
   Enable this rule: "Schakel deze regel in"
   Enforce default IP tracking options: "Dwing standaard IP-trackingopties af"
   Enforce extended IP tracking options: "Dwing uitgebreide IP-trackingopties af"
-  Forcibly disable HCaptcha: "Schakel HCaptcha gedwongen uit"
+  Forcibly disable hCaptcha: "Schakel hCaptcha gedwongen uit"
   Forcibly disable IP tracking: "Schakel IP-tracking gedwongen uit"
   Forcibly disable reCAPTCHA: "Schakel reCAPTCHA gedwongen uit"
   Forcibly enable IP tracking: "Schakel IP-tracking gedwongen in"
   HTTP status code override: "HTTP-statuscode overschrijven:"
   If the following conditions are met, %s: "Als de volgende voorwaarden zijn vervuld, %s."
   Leave it as is (don_t set anything): "Laat het zoals het is (stel niets in)"
-  Mark for use with HCaptcha: "Markeer voor gebruik met HCaptcha"
+  Mark for use with hCaptcha: "Markeer voor gebruik met hCaptcha"
   Mark for use with reCAPTCHA: "Markeer voor gebruik met reCAPTCHA"
   Modify rule: "Wijzig de regel"
   Move down: "Beneden gaan"

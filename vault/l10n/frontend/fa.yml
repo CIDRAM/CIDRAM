@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Farsi language data for the front (last modified: 2025.07.18).
+# This file: Farsi language data for the front (last modified: 2025.08.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -124,8 +124,8 @@ checkbox:
  Should infractions generated during this stage count towards IP tracking: "آیا تخلفات ایجاد شده در این مرحله باید در ردیابی IP لحاظ شود؟"
  Should this field appear in log entries: "آیا این فیلد باید در ورودی های گزارش ظاهر شود؟"
  Should this field appear on the access denied page: "آیا این فیلد باید در صفحه «دسترسی ممنوع» ظاهر شود؟"
- Suppress HCaptcha: "HCaptcha را سرکوب کنید"
- Suppress ReCaptcha: "ReCaptcha را سرکوب کنید"
+ Suppress hCaptcha: "HCaptcha را سرکوب کنید"
+ Suppress reCAPTCHA: "ReCAPTCHA را سرکوب کنید"
  Test as sensitive request: "تست به عنوان درخواست حساس"
  Untrack positives: "ردیابی موارد مثبت متوقف شود؟"
  When blocked, suppress output template: "وقتی مسدود شد، الگوی خروجی را سرکوب کنید."
@@ -215,7 +215,7 @@ config:
  general_time_format: "قالب نماد تاریخ/زمان استفاده شده توسط CIDRAM. در صورت درخواست ممکن است گزینه های اضافی اضافه شود."
  general_time_offset: "تغییر منطقه زمانی در دقیقه."
  general_timezone: "این برای تعیین منطقه زمانی استفاده می شود (به عنوان مثال، Africa/Cairo ,America/New_York ,Asia/Tokyo, Australia/Perth ,Europe/Berlin ,Pacific/Guam, و غیره). «SYSTEM» را مشخص کنید تا PHP به طور خودکار این کار را برای شما انجام دهد."
- hcaptcha: "پیکربندی برای HCaptcha (راهی را برای انسان ها فراهم می کند تا در صورت مسدود شدن، دوباره دسترسی پیدا کنند)."
+ hcaptcha: "پیکربندی برای hCaptcha (راهی را برای انسان ها فراهم می کند تا در صورت مسدود شدن، دوباره دسترسی پیدا کنند)."
  hcaptcha_api: &CaptchaAPI "از کدام API استفاده کنیم؟"
  hcaptcha_expiry: &CaptchaExpiry "تعداد ساعات به خاطر سپردن نمونه های CAPTCHA. پیش فرض = 720 (1 ماه)."
  hcaptcha_hcaptcha_log: &CaptchaLogFile "همه تلاش‌های CAPTCHA ثبت شود؟ اگر بله، نام مورد استفاده برای فایل گزارش را مشخص کنید. اگر نه، این متغیر را خالی بگذارید."
@@ -281,7 +281,7 @@ config:
  rate_limiting_precision_ipv4: "دقت مورد استفاده برای ردیابی استفاده از IPv4. ارزش منعکس کننده اندازه بلوک CIDR است. برای بهترین دقت روی 32 تنظیم کنید. پیش فرض = 32."
  rate_limiting_precision_ipv6: "دقت مورد استفاده برای ردیابی استفاده از IPv6. ارزش منعکس کننده اندازه بلوک CIDR است. برای بهترین دقت روی 128 تنظیم کنید. پیش فرض = 128."
  rate_limiting_segregate: "آیا سهمیه ها برای دامنه ها و هاست های مختلف باید جدا شوند یا به اشتراک گذاشته شوند؟ True = سهمیه ها تفکیک خواهد شد. False = سهمیه ها به اشتراک گذاشته می شود [پیش فرض]."
- recaptcha: "پیکربندی برای ReCaptcha (راهی را برای انسان ها فراهم می کند تا در صورت مسدود شدن، دوباره دسترسی پیدا کنند)."
+ recaptcha: "پیکربندی برای reCAPTCHA (راهی را برای انسان ها فراهم می کند تا در صورت مسدود شدن، دوباره دسترسی پیدا کنند)."
  recaptcha_api: *CaptchaAPI
  recaptcha_expiry: *CaptchaExpiry
  recaptcha_lockip: *CaptchaLockIP
@@ -698,14 +698,14 @@ label:
   Enable this rule: "این قوانین را فعال کنید"
   Enforce default IP tracking options: "گزینه های پیش فرض ردیابی IP را اعمال کنید"
   Enforce extended IP tracking options: "گزینه های ردیابی IP گسترده را اعمال کنید"
-  Forcibly disable HCaptcha: "HCaptcha را به اجبار غیرفعال کنید"
+  Forcibly disable hCaptcha: "HCaptcha را به اجبار غیرفعال کنید"
   Forcibly disable IP tracking: "ردیابی IP را به اجبار غیرفعال کنید"
   Forcibly disable reCAPTCHA: "reCAPTCHA را به اجبار غیرفعال کنید"
   Forcibly enable IP tracking: "ردیابی IP را به اجبار فعال کنید"
   HTTP status code override: "جایگزینی کد وضعیت HTTP:"
   If the following conditions are met, %s: "در صورت رعایت شرایط زیر، %s."
   Leave it as is (don_t set anything): "آن را همانطور که هست رها کنید (چیزی را تنظیم نکنید)"
-  Mark for use with HCaptcha: "علامت گذاری برای استفاده با HCaptcha"
+  Mark for use with hCaptcha: "علامت گذاری برای استفاده با hCaptcha"
   Mark for use with reCAPTCHA: "علامت گذاری برای استفاده با reCAPTCHA"
   Modify rule: "قوانین را اصلاح کنید"
   Move down: "حرکت به پایین"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2025.07.27).
+# This file: Urdu language data for the front-end (last modified: 2025.08.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -124,8 +124,8 @@ checkbox:
  Should infractions generated during this stage count towards IP tracking: "IP ٹریکنگ کی طرف اس مرحلے کے دوران پیدا ہونے والی خلاف ورزیوں کو شمار کریں؟"
  Should this field appear in log entries: "کیا یہ فیلڈ لاگ اندراجات میں ظاہر ہونا چاہیے؟"
  Should this field appear on the access denied page: "کیا یہ فیلڈ "رسائی مسترد کر دی" صفحہ پر ظاہر ہونا چاہیے؟"
- Suppress HCaptcha: "HCaptcha کا استعمال نہ کریں"
- Suppress ReCaptcha: "ReCaptcha کا استعمال نہ کریں"
+ Suppress hCaptcha: "HCaptcha کا استعمال نہ کریں"
+ Suppress reCAPTCHA: "ReCAPTCHA کا استعمال نہ کریں"
  Test as sensitive request: "حساس درخواست کے طور پر ٹیسٹ کریں"
  Untrack positives: "مثبت سے باخبر رہنا بند کرو؟"
  When blocked, suppress output template: "بلاک ہونے پر، آؤٹ پٹ ٹیمپلیٹ کا استعمال نہ کریں."
@@ -281,7 +281,7 @@ config:
  rate_limiting_precision_ipv4: "IPv4 استعمال کی نگرانی کرتے وقت استعمال کرنے کی صحت سے متعلق. قیمت CIDR بلاک سائز کی عکاسی کرتا ہے. بہترین صحت سے متعلق کے لیے 32 پر مقرر کریں. پہلے سے طے شدہ = 32."
  rate_limiting_precision_ipv6: "IPv6 استعمال کی نگرانی کرتے وقت استعمال کرنے کی صحت سے متعلق. قیمت CIDR بلاک سائز کی عکاسی کرتا ہے. بہترین صحت سے متعلق کے لیے 128 پر مقرر کریں. پہلے سے طے شدہ = 128."
  rate_limiting_segregate: "کیا مختلف ڈومینز اور میزبانوں کے کوٹوں کو الگ یا شیئر کیا جانا چاہیے؟ True = کوٹے الگ کیے جائیں گے. False = کوٹے شیئر کیے جائیں گے [پہلے سے طے شدہ]."
- recaptcha: "ReCaptcha کی ترتیبات (بلاک ہونے پر انسانوں کو دوبارہ رسائی حاصل کرنے کا ایک راستہ فراہم کرتا ہے)."
+ recaptcha: "ReCAPTCHA کی ترتیبات (بلاک ہونے پر انسانوں کو دوبارہ رسائی حاصل کرنے کا ایک راستہ فراہم کرتا ہے)."
  recaptcha_api: *CaptchaAPI
  recaptcha_expiry: *CaptchaExpiry
  recaptcha_lockip: *CaptchaLockIP
@@ -698,14 +698,14 @@ label:
   Enable this rule: "اس اصول کو فعال کریں"
   Enforce default IP tracking options: "ڈیفالٹ IP سے باخبر رہنے کے اختیارات کو نافذ کریں"
   Enforce extended IP tracking options: "توسیع شدہ IP سے باخبر رہنے کے اختیارات نافذ کریں"
-  Forcibly disable HCaptcha: "زبردستی HCaptcha کو غیر فعال کریں"
+  Forcibly disable hCaptcha: "زبردستی hCaptcha کو غیر فعال کریں"
   Forcibly disable IP tracking: "زبردستی IP ٹریکنگ کو غیر فعال کریں"
   Forcibly disable reCAPTCHA: "زبردستی reCAPTCHA کو غیر فعال کریں"
   Forcibly enable IP tracking: "زبردستی IP سے باخبر رہنے کے قابل بنائیں"
   HTTP status code override: "HTTP حیثیت کا کوڈ اوور رائڈ:"
   If the following conditions are met, %s: "اگر درج ذیل شرائط پوری ہو جائیں تو %s."
   Leave it as is (don_t set anything): "اسے جیسا چھوڑ دیں (کچھ مقرر نہ کریں)"
-  Mark for use with HCaptcha: "HCaptcha کے ساتھ استعمال کے لیے نشان زد کریں"
+  Mark for use with hCaptcha: "HCaptcha کے ساتھ استعمال کے لیے نشان زد کریں"
   Mark for use with reCAPTCHA: "reCAPTCHA کے ساتھ استعمال کے لیے نشان زد کریں"
   Modify rule: "حکمران میں ترمیم کریں"
   Move down: "نیچے منتقل"

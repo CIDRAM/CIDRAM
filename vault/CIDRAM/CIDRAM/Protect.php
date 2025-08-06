@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2025.08.05).
+ * This file: Protect traits (last modified: 2025.08.06).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -395,7 +395,7 @@ trait Protect
                             ($RLMaxBandwidth > 0 && $this->CIDRAM['RL_Usage']['Bytes'] >= $RLMaxBandwidth) ||
                             ($this->Configuration['rate_limiting']['max_requests'] > 0 && $this->CIDRAM['RL_Usage']['Requests'] >= $this->Configuration['rate_limiting']['max_requests'])
                         ), $this->L10N->getString('Short.RL'), sprintf($this->L10N->getString('ReasonMessage.RL'), $RLFormatted))) {
-                            $this->enactOptions('', ['ForciblyDisableReCAPTCHA' => true, 'ForciblyDisableHCAPTCHA' => true]);
+                            $this->enactOptions('', ['ForciblyDisableReCAPTCHA' => true, 'ForciblyDisableHCaptcha' => true]);
                             $this->CIDRAM['Other Status'] = $this->getStatusHTTP(429);
                             $this->CIDRAM['Other Status Code'] = 429;
                             if (isset($this->Shorthand['RL:Suppress'])) {
@@ -448,7 +448,7 @@ trait Protect
                 (!$this->hasProfile('Blocked Negative') || !isset($this->VAdjust['Negatives:ReCaptcha'])) &&
                 (!$this->hasProfile('Blocked Non-Verified') || !isset($this->VAdjust['NonVerified:ReCaptcha']))
             ) {
-                /** Execute the ReCaptcha class. */
+                /** Execute the reCAPTCHA class. */
                 $CaptchaDone = new ReCaptcha($this);
             } elseif (
                 $this->Configuration['hcaptcha']['sitekey'] !== '' &&
@@ -469,7 +469,7 @@ trait Protect
                 (!$this->hasProfile('Blocked Negative') || !isset($this->VAdjust['Negatives:HCaptcha'])) &&
                 (!$this->hasProfile('Blocked Non-Verified') || !isset($this->VAdjust['NonVerified:HCaptcha']))
             ) {
-                /** Execute the HCaptcha class. */
+                /** Execute the hCaptcha class. */
                 $CaptchaDone = new HCaptcha($this);
             }
         }
@@ -1061,7 +1061,7 @@ trait Protect
                         ))
                     )
                 ) {
-                    /** Execute the ReCaptcha class. */
+                    /** Execute the reCAPTCHA class. */
                     $CaptchaDone = new ReCaptcha($this);
 
                     $this->CIDRAM['StatusCodeForNonBlocked'] = $this->Configuration['recaptcha']['nonblocked_status_code'];
@@ -1077,7 +1077,7 @@ trait Protect
                         ))
                     )
                 ) {
-                    /** Execute the HCaptcha class. */
+                    /** Execute the hCaptcha class. */
                     $CaptchaDone = new HCaptcha($this);
 
                     $this->CIDRAM['StatusCodeForNonBlocked'] = $this->Configuration['hcaptcha']['nonblocked_status_code'];

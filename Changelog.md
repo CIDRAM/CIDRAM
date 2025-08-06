@@ -453,4 +453,5 @@
 - [2025.07.27]: Refactored some of the core L10N.
 - [2025.07.29]: Added support for "matrix"-style configuration directives and refactored some of the configuration code.
 - [2025.08.01]: Slightly improved the navigation SVGs.
+- [2025.08.06]: Corrected the capitalisation for the names of a few integrations where they weren't matching that used by their vendors. Fixed a few L10N typos. Slightly refactored a few files.
 - *Plus all the regular signature updates.*

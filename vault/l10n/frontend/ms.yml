@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malay language data for the front-end (last modified: 2025.07.18).
+# This file: Malay language data for the front-end (last modified: 2025.08.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -124,8 +124,8 @@ checkbox:
  Should infractions generated during this stage count towards IP tracking: "Mengira pelanggaran yang dijana semasa peringkat ini terhadap penjejakan IP?"
  Should this field appear in log entries: "Sertakan medan ini dalam entri log?"
  Should this field appear on the access denied page: "Sertakan medan ini dalam halaman "akses dinafikan"?"
- Suppress HCaptcha: "Menindas HCaptcha"
- Suppress ReCaptcha: "Menindas ReCaptcha"
+ Suppress hCaptcha: "Menindas hCaptcha"
+ Suppress reCAPTCHA: "Menindas reCAPTCHA"
  Test as sensitive request: "Uji sebagai permintaan sensitif"
  Untrack positives: "Memadam penjejakan untuk positif?"
  When blocked, suppress output template: "Apabila disekat, menindas templat keluaran."
@@ -215,7 +215,7 @@ config:
  general_time_format: "Format notasi tarikh/masa yang digunakan oleh CIDRAM. Pilihan tambahan boleh ditambah atas permintaan."
  general_time_offset: "Zon waktu diimbangi dalam minit."
  general_timezone: "Ini digunakan untuk menentukan zon waktu yang akan digunakan (cth., Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, dll). Tentukan "SISTEM" untuk membenarkan PHP mengendalikan ini untuk anda secara automatik."
- hcaptcha: "Konfigurasi untuk HCaptcha (menyediakan cara untuk manusia mendapatkan semula akses apabila disekat)."
+ hcaptcha: "Konfigurasi untuk hCaptcha (menyediakan cara untuk manusia mendapatkan semula akses apabila disekat)."
  hcaptcha_api: &CaptchaAPI "API mana yang hendak digunakan?"
  hcaptcha_expiry: &CaptchaExpiry "Jumlah jam untuk mengingati kejadian CAPTCHA. Lalai = 720 (1 bulan)."
  hcaptcha_hcaptcha_log: &CaptchaLogFile "Log semua percubaan CAPTCHA? Jika ya, nyatakan nama yang akan digunakan untuk fail log. Jika tidak, biarkan pembolehubah ini kosong."
@@ -281,7 +281,7 @@ config:
  rate_limiting_precision_ipv4: "Ketepatan yang digunakan untuk menjejaki penggunaan IPv4. Nilai mencerminkan saiz blok CIDR. Tetapkan kepada 32 untuk ketepatan terbaik. Lalai = 32."
  rate_limiting_precision_ipv6: "Ketepatan yang digunakan untuk menjejaki penggunaan IPv6. Nilai mencerminkan saiz blok CIDR. Tetapkan kepada 128 untuk ketepatan terbaik. Lalai = 128."
  rate_limiting_segregate: "Patutkah kuota untuk domain dan hos yang berbeza dipisahkan atau dikongsi? True = Kuota akan diasingkan. False = Kuota akan dikongsi [Lalai]."
- recaptcha: "Konfigurasi untuk ReCaptcha (menyediakan cara untuk manusia mendapatkan semula akses apabila disekat)."
+ recaptcha: "Konfigurasi untuk reCAPTCHA (menyediakan cara untuk manusia mendapatkan semula akses apabila disekat)."
  recaptcha_api: *CaptchaAPI
  recaptcha_expiry: *CaptchaExpiry
  recaptcha_lockip: *CaptchaLockIP
@@ -697,14 +697,14 @@ label:
   Enable this rule: "Aktifkan peraturan ini"
   Enforce default IP tracking options: "Kuatkuasakan pilihan penjejakan IP lalai"
   Enforce extended IP tracking options: "Kuatkuasakan pilihan penjejakan IP dilanjutkan"
-  Forcibly disable HCaptcha: "Nyahaktifkan HCaptcha secara paksa"
+  Forcibly disable hCaptcha: "Nyahaktifkan hCaptcha secara paksa"
   Forcibly disable IP tracking: "Nyahaktifkan penjejakan IP secara paksa"
   Forcibly disable reCAPTCHA: "Nyahaktifkan reCAPTCHA secara paksa"
   Forcibly enable IP tracking: "Aktifkan penjejakan IP secara paksa"
   HTTP status code override: "Gantikan kod status HTTP:"
   If the following conditions are met, %s: "Jika syarat berikut dipenuhi, %s."
   Leave it as is (don_t set anything): "Biarkannya seperti sedia ada (jangan tetapkan apa-apa)"
-  Mark for use with HCaptcha: "Tandakan untuk digunakan dengan HCaptcha"
+  Mark for use with hCaptcha: "Tandakan untuk digunakan dengan hCaptcha"
   Mark for use with reCAPTCHA: "Tandakan untuk digunakan dengan reCAPTCHA"
   Modify rule: "Mengubah suai peraturan"
   Move down: "Bergerak ke bawah"

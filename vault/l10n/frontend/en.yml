@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2025.07.18).
+# This file: English language data for the front-end (last modified: 2025.08.06).
 ##/
 
 Abuse category:
@@ -116,8 +116,8 @@ checkbox:
  Should infractions generated during this stage count towards IP tracking: "Should infractions generated during this stage count towards IP tracking?"
  Should this field appear in log entries: "Should this field appear in log entries?"
  Should this field appear on the access denied page: "Should this field appear on the "access denied" page?"
- Suppress HCaptcha: "Suppress HCaptcha"
- Suppress ReCaptcha: "Suppress ReCaptcha"
+ Suppress hCaptcha: "Suppress hCaptcha"
+ Suppress reCAPTCHA: "Suppress reCAPTCHA"
  Test as sensitive request: "Test as sensitive request"
  Untrack positives: "Untrack positives?"
  When blocked, suppress output template: "When blocked, suppress output template."
@@ -219,7 +219,7 @@ config:
  general_time_format: "The date/time notation format used by CIDRAM. Additional options may be added upon request."
  general_time_offset: "Timezone offset in minutes."
  general_timezone: "This is used to specify the timezone to use (e.g., Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, etc). Specify "SYSTEM" to let PHP handle this for you automatically."
- hcaptcha: "Configuration for HCaptcha (provides a way for humans to regain access when blocked)."
+ hcaptcha: "Configuration for hCaptcha (provides a way for humans to regain access when blocked)."
  hcaptcha_api: &CaptchaAPI "Which API to use?"
  hcaptcha_expiry: &CaptchaExpiry "Number of hours to remember CAPTCHA instances. Default = 720 (1 month)."
  hcaptcha_hcaptcha_log: &CaptchaLogFile "Log all CAPTCHA attempts? If yes, specify the name to use for the log file. If no, leave this variable blank."
@@ -292,7 +292,7 @@ config:
  rate_limiting_precision_ipv4: "The precision to use for tracking IPv4 usage. Value mirrors CIDR block size. Set to 32 for best precision. Default = 32."
  rate_limiting_precision_ipv6: "The precision to use for tracking IPv6 usage. Value mirrors CIDR block size. Set to 128 for best precision. Default = 128."
  rate_limiting_segregate: "Should quotas for different domains and hosts be segregated or shared? True = Quotas will be segregated. False = Quotas will be shared [Default]."
- recaptcha: "Configuration for ReCaptcha (provides a way for humans to regain access when blocked)."
+ recaptcha: "Configuration for reCAPTCHA (provides a way for humans to regain access when blocked)."
  recaptcha_api: *CaptchaAPI
  recaptcha_expiry: *CaptchaExpiry
  recaptcha_lockip: *CaptchaLockIP
@@ -729,14 +729,14 @@ label:
   Enable this rule: "Enable this rule"
   Enforce default IP tracking options: "Enforce default IP tracking options"
   Enforce extended IP tracking options: "Enforce extended IP tracking options"
-  Forcibly disable HCaptcha: "Forcibly disable HCaptcha"
+  Forcibly disable hCaptcha: "Forcibly disable hCaptcha"
   Forcibly disable IP tracking: "Forcibly disable IP tracking"
   Forcibly disable reCAPTCHA: "Forcibly disable reCAPTCHA"
   Forcibly enable IP tracking: "Forcibly enable IP tracking"
   HTTP status code override: "HTTP status code override:"
   If the following conditions are met, %s: "If the following conditions are met, %s."
   Leave it as is (don_t set anything): "Leave it as is (don't set anything)"
-  Mark for use with HCaptcha: "Mark for use with HCaptcha"
+  Mark for use with hCaptcha: "Mark for use with hCaptcha"
   Mark for use with reCAPTCHA: "Mark for use with reCAPTCHA"
   Modify rule: "Modify rule"
   Move down: "Move down"

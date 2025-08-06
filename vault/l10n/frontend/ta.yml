@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Tamil language data for the front-end (last modified: 2025.07.27).
+# This file: Tamil language data for the front-end (last modified: 2025.08.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -124,8 +124,8 @@ checkbox:
  Should infractions generated during this stage count towards IP tracking: "IP கண்காணிப்பை நோக்கி இந்த கட்டத்தில் உருவாக்கப்பட்ட மீறல்களை எண்ணவா?"
  Should this field appear in log entries: "பதிவு உள்ளீடுகளில் இந்தப் புலம் தோன்ற வேண்டுமா?"
  Should this field appear on the access denied page: "இந்த புலம் "அணுகல் மறுக்கப்பட்டது" பக்கத்தில் தோன்ற வேண்டுமா?"
- Suppress HCaptcha: "HCaptcha ஐ அடக்கவும்"
- Suppress ReCaptcha: "ReCaptcha ஐ அடக்கவும்"
+ Suppress hCaptcha: "HCaptcha ஐ அடக்கவும்"
+ Suppress reCAPTCHA: "ReCAPTCHA ஐ அடக்கவும்"
  Test as sensitive request: "முக்கிய கோரிக்கையாக சோதிக்கவும்"
  Untrack positives: "நேர்மறைகளைக் கண்காணிப்பதை நிறுத்தவா?"
  When blocked, suppress output template: "தடுக்கப்பட்டால், வெளியீட்டு வார்ப்புருவை அடக்கு."
@@ -281,7 +281,7 @@ config:
  rate_limiting_precision_ipv4: "IPv4 பயன்பாட்டைக் கண்காணிக்க பயன்படுத்த வேண்டிய துல்லியம். மதிப்பு CIDR தொகுதி அளவிற்கு சமம். சிறந்த துல்லியத்திற்கு 32 ஆக அமைக்கவும். இயல்புநிலை = 32."
  rate_limiting_precision_ipv6: "IPv6 பயன்பாட்டைக் கண்காணிக்க பயன்படுத்த வேண்டிய துல்லியம். மதிப்பு CIDR தொகுதி அளவிற்கு சமம். சிறந்த துல்லியத்திற்கு 128 ஆக அமைக்கவும். இயல்புநிலை = 128."
  rate_limiting_segregate: "வெவ்வேறு டொமைன்கள் மற்றும் ஹோஸ்ட்களுக்கான ஒதுக்கீடுகள் பிரிக்கப்பட வேண்டுமா அல்லது பகிரப்பட வேண்டுமா? True = ஒதுக்கீடுகள் பிரிக்கப்படும். False = ஒதுக்கீடுகள் பகிரப்படும் [இயல்புநிலை]."
- recaptcha: "ReCaptcha க்கான உள்ளமைவு (தடுக்கப்படும்போது மனிதர்களுக்கு அணுகலை மீண்டும் பெறுவதற்கான வழியை வழங்குகிறது)."
+ recaptcha: "ReCAPTCHA க்கான உள்ளமைவு (தடுக்கப்படும்போது மனிதர்களுக்கு அணுகலை மீண்டும் பெறுவதற்கான வழியை வழங்குகிறது)."
  recaptcha_api: *CaptchaAPI
  recaptcha_expiry: *CaptchaExpiry
  recaptcha_lockip: *CaptchaLockIP
@@ -706,14 +706,14 @@ label:
   Enable this rule: "இந்த விதியை இயக்கவும்"
   Enforce default IP tracking options: "இயல்புநிலை IP கண்காணிப்பு விருப்பங்களை செயல்படுத்தவும்"
   Enforce extended IP tracking options: "நீட்டிக்கப்பட்ட IP கண்காணிப்பு விருப்பங்களை செயல்படுத்தவும்"
-  Forcibly disable HCaptcha: "HCaptcha ஐ வலுக்கட்டாயமாக முடக்கு"
+  Forcibly disable hCaptcha: "HCaptcha ஐ வலுக்கட்டாயமாக முடக்கு"
   Forcibly disable IP tracking: "IP கண்காணிப்பை வலுக்கட்டாயமாக முடக்கு"
   Forcibly disable reCAPTCHA: "reCAPTCHA ஐ வலுக்கட்டாயமாக முடக்கு"
   Forcibly enable IP tracking: "IP கண்காணிப்பை வலுக்கட்டாயமாக இயக்கவும்"
   HTTP status code override: "HTTP நிலைக் குறியீடு மேலெழுதும்:"
   If the following conditions are met, %s: "பின்வரும் நிபந்தனைகள் பூர்த்தி செய்யப்பட்டால், %s."
   Leave it as is (don_t set anything): "அதை அப்படியே விட்டு விடுங்கள் (எதையும் அமைக்காதீர்கள்)"
-  Mark for use with HCaptcha: "HCaptcha உடன் பயன்படுத்த குறிக்கவும்"
+  Mark for use with hCaptcha: "HCaptcha உடன் பயன்படுத்த குறிக்கவும்"
   Mark for use with reCAPTCHA: "reCAPTCHA உடன் பயன்படுத்த குறிக்கவும்"
   Modify rule: "விதியை மாற்றவும்"
   Move down: "கீழே இறங்கு"
@@ -746,7 +746,7 @@ label:
   logic_any: "எந்தவொரு "சமமும்" (=) நிபந்தனைகள் விதியைத் தூண்டக்கூடும், எல்லா "சமமும் இல்லை" (≠) நிபந்தனைகளும் பூர்த்தி செய்யப்படும் என்ற நிலையில்."
   profile the request: "கோரிக்கையைத் சுயவிவரம் செய்யுங்கள்"
   redirect the request (without blocking it): "கோரிக்கையைத் திருப்பிவிடவும் (அதைத் தடுக்காமல்)"
-  run a file to handle the request: " கோரிக்கையை கையாள ஒரு கோப்பை இயக்கவும்"
+  run a file to handle the request: "கோரிக்கையை கையாள ஒரு கோப்பை இயக்கவும்"
   whitelist the request: "கோரிக்கையைத் வெள்ளை பட்டியலிடுங்கள்"
  expire_bad: "அதன் உருவாக்க காலத்திலிருந்து, இந்த மாட்யூல் மூலம் தேக்ககப்படுத்தப்பட்ட மோசமான தரவு காலாவதியாகும் முன் வாழக்கூடிய நேரம்."
  expire_good: "அதன் உருவாக்க காலத்திலிருந்து, இந்த மாட்யூல் மூலம் தேக்ககப்படுத்தப்பட்ட நல்ல தரவு காலாவதியாகும் முன் வாழக்கூடிய நேரம்."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bulgarian language data for the front-end (last modified: 2025.07.18).
+# This file: Bulgarian language data for the front-end (last modified: 2025.08.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -124,8 +124,8 @@ checkbox:
  Should infractions generated during this stage count towards IP tracking: "Трябва ли нарушенията, генерирани по време на този етап, да се зачитат за IP проследяване?"
  Should this field appear in log entries: "Това поле трябва ли да се показва в записите в дневника?"
  Should this field appear on the access denied page: "Това поле трябва ли да се появи на страницата „отказан достъп“?"
- Suppress HCaptcha: "Потискане на HCaptcha"
- Suppress ReCaptcha: "Потискане на ReCaptcha"
+ Suppress hCaptcha: "Потискане на hCaptcha"
+ Suppress reCAPTCHA: "Потискане на reCAPTCHA"
  Test as sensitive request: "Тествайте като чувствителна заявка"
  Untrack positives: "Прекратяване на проследяването на положителни?"
  When blocked, suppress output template: "Когато е блокиран, потисни изходния шаблон."
@@ -215,7 +215,7 @@ config:
  general_time_format: "Форматът за нотиране на дата/час, използван от CIDRAM. Допълнителни опции могат да бъдат добавени при поискване."
  general_time_offset: "Отместване на часовата зона в минути."
  general_timezone: "Това се използва за указване на часовата зона, която да се използва (напр., Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, и т.н). Посочете „SYSTEM“, за да позволите на PHP да се справи с това автоматично."
- hcaptcha: "Конфигурация за HCaptcha (предоставя начин за хората да си възвърнат достъпа, когато бъдат блокирани)."
+ hcaptcha: "Конфигурация за hCaptcha (предоставя начин за хората да си възвърнат достъпа, когато бъдат блокирани)."
  hcaptcha_api: &CaptchaAPI "Кой API да използвам?"
  hcaptcha_expiry: &CaptchaExpiry "Брой часове за запомняне на случаите на CAPTCHA. Стандарт = 720 (1 месец)."
  hcaptcha_hcaptcha_log: &CaptchaLogFile "Записване на всички опити за CAPTCHA? Ако да, посочете името, което да използвате за регистрационния файл. Ако не, оставете тази променлива празна."
@@ -281,7 +281,7 @@ config:
  rate_limiting_precision_ipv4: "Прецизността, която да използвате за проследяване на използването на IPv4. Стойността отразява размера на CIDR блока. Задайте 32 за най-добра точност. Стандарт = 32."
  rate_limiting_precision_ipv6: "Прецизността, която да използвате за проследяване на използването на IPv6. Стойността отразява размера на CIDR блока. Задайте 128 за най-добра точност. Стандарт = 128."
  rate_limiting_segregate: "Трябва ли квотите за различни домейни и хостове да бъдат разделени или споделени? True (Вярно) = Квотите ще бъдат разделени. False (Невярно) = Квотите ще бъдат споделени [Стандарт]."
- recaptcha: "Конфигурация за ReCaptcha (предоставя начин за хората да си възвърнат достъпа, когато бъдат блокирани)."
+ recaptcha: "Конфигурация за reCAPTCHA (предоставя начин за хората да си възвърнат достъпа, когато бъдат блокирани)."
  recaptcha_api: *CaptchaAPI
  recaptcha_expiry: *CaptchaExpiry
  recaptcha_lockip: *CaptchaLockIP
@@ -711,14 +711,14 @@ label:
   Enable this rule: "Активирайте това правило"
   Enforce default IP tracking options: "Прилагане на стандартни опции за проследяване на IP"
   Enforce extended IP tracking options: "Прилагане на разширени опции за проследяване на IP"
-  Forcibly disable HCaptcha: "Принудително деактивирайте HCaptcha"
+  Forcibly disable hCaptcha: "Принудително деактивирайте hCaptcha"
   Forcibly disable IP tracking: "Принудително деактивирайте IP проследяването"
   Forcibly disable reCAPTCHA: "Принудително деактивирайте reCAPTCHA"
   Forcibly enable IP tracking: "Принудително активирайте IP проследяването"
   HTTP status code override: "Замяна на HTTP код за състояние:"
   If the following conditions are met, %s: "Ако са изпълнени следните условия, %s."
   Leave it as is (don_t set anything): "Оставете го както е (не задавайте нищо)"
-  Mark for use with HCaptcha: "Маркирайте за използване с HCaptcha"
+  Mark for use with hCaptcha: "Маркирайте за използване с hCaptcha"
   Mark for use with reCAPTCHA: "Маркирайте за използване с reCAPTCHA"
   Modify rule: "Променете правилото"
   Move down: "Преместете надолу"

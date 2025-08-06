@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2025.07.18).
+# This file: Vietnamese language data for the front-end (last modified: 2025.08.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -124,8 +124,8 @@ checkbox:
  Should infractions generated during this stage count towards IP tracking: "Đếm các vi phạm được tạo ra trong giai đoạn này đối với giám sát IP?"
  Should this field appear in log entries: "Trường này có nên xuất hiện trong các mục nhập nhật ký không?"
  Should this field appear on the access denied page: "Trường này có nên xuất hiện trên trang "truy cập đã bị từ chối" không?"
- Suppress HCaptcha: "Đàn áp HCaptcha"
- Suppress ReCaptcha: "Đàn áp ReCaptcha"
+ Suppress hCaptcha: "Đàn áp hCaptcha"
+ Suppress reCAPTCHA: "Đàn áp reCAPTCHA"
  Test as sensitive request: "Kiểm tra theo yêu cầu nhạy cảm"
  Untrack positives: "Ngừng giám sát các tích cực?"
  When blocked, suppress output template: "Khi bị chặn, đàn áp mẫu đầu ra."
@@ -215,7 +215,7 @@ config:
  general_time_format: "Định dạng ngày/giờ tháng sử dụng bởi CIDRAM. Tùy chọn bổ sung có thể được bổ sung theo yêu cầu."
  general_time_offset: "Múi giờ bù đắp trong phút."
  general_timezone: "Điều này được sử dụng để chỉ định múi giờ sử dụng (ví dụ, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, vv). Chỉ định "SYSTEM" để cho phép PHP tự động xử lý việc này cho bạn."
- hcaptcha: "Cấu hình cho HCaptcha (cung cấp một cách để con người lấy lại quyền truy cập khi bị chặn)."
+ hcaptcha: "Cấu hình cho hCaptcha (cung cấp một cách để con người lấy lại quyền truy cập khi bị chặn)."
  hcaptcha_api: &CaptchaAPI "API nào để sử dụng?"
  hcaptcha_expiry: &CaptchaExpiry "Số giờ để nhớ CAPTCHA. Mặc định = 720 (1 tháng)."
  hcaptcha_hcaptcha_log: &CaptchaLogFile "Đăng nhập tất cả các nỗ lực cho CAPTCHA? Nếu có, ghi rõ tên để sử dụng cho các tập tin đăng nhập. Nếu không, đốn biến này."
@@ -281,7 +281,7 @@ config:
  rate_limiting_precision_ipv4: "Độ chính xác để sử dụng khi giám sát việc sử dụng IPv4. Giá trị phản ánh kích thước khối CIDR. Đặt thành 32 để có độ chính xác cao nhất. Mặc định = 32."
  rate_limiting_precision_ipv6: "Độ chính xác để sử dụng khi giám sát việc sử dụng IPv6. Giá trị phản ánh kích thước khối CIDR. Đặt thành 128 để có độ chính xác cao nhất. Mặc định = 128."
  rate_limiting_segregate: "Hạn ngạch cho miền và máy chủ lưu trữ nên được tách biệt hoặc chia sẻ? True = Hạn ngạch sẽ được tách biệt. False = Hạn ngạch sẽ được chia sẻ [Mặc định]."
- recaptcha: "Cấu hình cho ReCaptcha (cung cấp một cách để con người lấy lại quyền truy cập khi bị chặn)."
+ recaptcha: "Cấu hình cho reCAPTCHA (cung cấp một cách để con người lấy lại quyền truy cập khi bị chặn)."
  recaptcha_api: *CaptchaAPI
  recaptcha_expiry: *CaptchaExpiry
  recaptcha_lockip: *CaptchaLockIP
@@ -696,14 +696,14 @@ label:
   Enable this rule: "Bật quy tắc này"
   Enforce default IP tracking options: "Thực thi các tùy chọn giám sát IP mặc định"
   Enforce extended IP tracking options: "Thực thi các tùy chọn giám sát IP mở rộng"
-  Forcibly disable HCaptcha: "Vô hiệu hóa HCaptcha bằng cưỡng bức"
+  Forcibly disable hCaptcha: "Vô hiệu hóa hCaptcha bằng cưỡng bức"
   Forcibly disable IP tracking: "Vô hiệu hóa giám sát IP bằng cưỡng bức"
   Forcibly disable reCAPTCHA: "Vô hiệu hóa reCAPTCHA bằng cưỡng bức"
   Forcibly enable IP tracking: "Kích hoạt giám sát IP bằng cưỡng bức"
   HTTP status code override: "Ghi đè mã trạng thái HTTP:"
   If the following conditions are met, %s: "Nếu các điều kiện sau được đáp ứng, %s."
   Leave it as is (don_t set anything): "Để nguyên như vậy (không đặt bất cứ thứ gì)"
-  Mark for use with HCaptcha: "Đánh dấu để sử dụng với HCaptcha"
+  Mark for use with hCaptcha: "Đánh dấu để sử dụng với hCaptcha"
   Mark for use with reCAPTCHA: "Đánh dấu để sử dụng với reCAPTCHA"
   Modify rule: "Sửa đổi quy tắc"
   Move down: "Đi xuống"

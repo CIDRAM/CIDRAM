@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2025.07.18).
+# This file: Arabic language data for the front-end (last modified: 2025.08.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -124,8 +124,8 @@ checkbox:
  Should infractions generated during this stage count towards IP tracking: "هل يجب احتساب المخالفات التي تم إنشاؤها خلال هذه المرحلة لتتبع IP؟"
  Should this field appear in log entries: "هل يجب أن يظهر هذا الحقل في إدخالات السجل؟"
  Should this field appear on the access denied page: "هل يجب أن يظهر هذا الحقل في صفحة "الوصول مرفوض"؟"
- Suppress HCaptcha: "قمع HCaptcha"
- Suppress ReCaptcha: "قمع ReCaptcha"
+ Suppress hCaptcha: "قمع hCaptcha"
+ Suppress reCAPTCHA: "قمع reCAPTCHA"
  Test as sensitive request: "اختبر كما لو كان طلبًا حساسًا"
  Untrack positives: "التوقف عن تتبع الإيجابيات؟"
  When blocked, suppress output template: "عند حظره، قم بإيقاف قالب الإخراج."
@@ -215,7 +215,7 @@ config:
  general_time_format: "شكل التواريخ المستخدم من قبل CIDRAM. ويمكن إضافة خيارات إضافية عند الطلب."
  general_time_offset: "المنطقة الزمنية تعويض في غضون دقائق."
  general_timezone: "يتم استخدام هذا لتحديد المنطقة الزمنية للاستخدام (على سبيل المثال، Africa/Cairo، America/New_York، Asia/Tokyo، Australia/Perth، Europe/Berlin، Pacific/Guam، إلخ). حدد "SYSTEM" للسماح لـ PHP بمعالجة هذا الأمر تلقائيًا."
- hcaptcha: "التكوين ل HCaptcha (يوفر وسيلة للبشر لاستعادة الوصول عند حجبه)."
+ hcaptcha: "التكوين ل hCaptcha (يوفر وسيلة للبشر لاستعادة الوصول عند حجبه)."
  hcaptcha_api: &CaptchaAPI "أي API لاستخدام؟"
  hcaptcha_expiry: &CaptchaExpiry "عدد الساعات لنتذكر حالات اختبار CAPTCHA. الافتراضي = 720 (١ شهر)."
  hcaptcha_hcaptcha_log: &CaptchaLogFile "تسجيل جميع محاولات اختبار CAPTCHA؟ إذا كانت الإجابة بنعم، حدد اسم لاستخدامه في ملف السجل. ان لم، ترك هذا الحقل فارغا."
@@ -281,7 +281,7 @@ config:
  rate_limiting_precision_ipv4: "الدقة المستخدمة عند مراقبة استخدام IPv4. قيمة تعكس حجم كتلة CIDR. تعيين إلى 32 للحصول على أفضل دقة. افتراضي = 32."
  rate_limiting_precision_ipv6: "الدقة المستخدمة عند مراقبة استخدام IPv6. قيمة تعكس حجم كتلة CIDR. تعيين إلى 128 للحصول على أفضل دقة. افتراضي = 128."
  rate_limiting_segregate: "هل يجب فصل أو مشاركة الحصص الخاصة بالمجالات والمضيفين المختلفين؟ True = سيتم فصل الحصص. False = سيتم تقاسم الحصص [افتراضي]."
- recaptcha: "التكوين ل ReCaptcha (يوفر وسيلة للبشر لاستعادة الوصول عند حجبه)."
+ recaptcha: "التكوين ل reCAPTCHA (يوفر وسيلة للبشر لاستعادة الوصول عند حجبه)."
  recaptcha_api: *CaptchaAPI
  recaptcha_expiry: *CaptchaExpiry
  recaptcha_lockip: *CaptchaLockIP
@@ -652,7 +652,7 @@ label:
  Range tools: "أدوات النطاق"
  Remember: "احفظها"
  Report to AbuseIPDB: "الإبلاغ عن AbuseIPDB"
- Requests banned: "طلبات محظورة "
+ Requests banned: "طلبات محظورة"
  Requests blocked: "الطلبات المحظورة"
  Requests for sensitive pages only: "طلبات الصفحات الحساسة فقط (على سبيل المثال، صفحات تسجيل الدخول، نماذج التسجيل، ما إلى ذلك).\nأقل صرامة وشمولية، لكنها أكثر تحفظًا من حيث الحصص والحدود، وأقل عرضة للتأثير سلبًا على الأداء. الاستراتيجية الموصى بها في معظم الحالات."
  Requests passed: "مرت الطلبات"
@@ -696,14 +696,14 @@ label:
   Enable this rule: "قم بتمكين هذه القاعدة"
   Enforce default IP tracking options: "فرض خيارات تتبع IP الافتراضية"
   Enforce extended IP tracking options: "فرض خيارات تتبع IP الموسعة"
-  Forcibly disable HCaptcha: "قم بتعطيل HCaptcha بالقوة"
+  Forcibly disable hCaptcha: "قم بتعطيل hCaptcha بالقوة"
   Forcibly disable IP tracking: "قم بتعطيل تتبع IP بالقوة"
   Forcibly disable reCAPTCHA: "قم بتعطيل reCAPTCHA بالقوة"
   Forcibly enable IP tracking: "قم بتمكين تتبع IP بالقوة"
   HTTP status code override: "تجاوز رمز حالة HTTP:"
   If the following conditions are met, %s: "إذا تم استيفاء الشروط التالية، %s."
   Leave it as is (don_t set anything): "اتركه كما هو (لا تضع أي شيء)"
-  Mark for use with HCaptcha: "ضع علامة للاستخدام مع HCaptcha"
+  Mark for use with hCaptcha: "ضع علامة للاستخدام مع hCaptcha"
   Mark for use with reCAPTCHA: "ضع علامة للاستخدام مع reCAPTCHA"
   Modify rule: "تعديل القاعدة"
   Move down: "تحرك لأسفل"

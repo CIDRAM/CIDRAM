@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malayalam language data for the front-end (last modified: 2025.07.27).
+# This file: Malayalam language data for the front-end (last modified: 2025.08.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -124,8 +124,8 @@ checkbox:
  Should infractions generated during this stage count towards IP tracking: "ഈ ഘട്ടത്തിൽ ഉണ്ടാകുന്ന ലംഘനങ്ങൾ IP ട്രാക്കിംഗിൽ കണക്കാക്കണോ?"
  Should this field appear in log entries: "ഈ ഫീൽഡ് ലോഗ് എൻട്രികളിൽ ദൃശ്യമാകണോ?"
  Should this field appear on the access denied page: "ഈ ഫീൽഡ് "പ്രവേശനം നിരസിച്ചു" പേജിൽ ദൃശ്യമാകണോ?"
- Suppress HCaptcha: "HCaptcha ഓഫാക്കുക"
- Suppress ReCaptcha: "ReCaptcha ഓഫാക്കുക"
+ Suppress hCaptcha: "HCaptcha ഓഫാക്കുക"
+ Suppress reCAPTCHA: "ReCAPTCHA ഓഫാക്കുക"
  Test as sensitive request: "സെൻസിറ്റീവ് അഭ്യർത്ഥനയായി പരിശോധിക്കുക"
  Untrack positives: "പോസിറ്റീവുകൾ ട്രാക്ക് ചെയ്യുന്നത് നിർത്തണോ?"
  When blocked, suppress output template: "തടയപ്പെടുമ്പോൾ, ഔട്ട്പുട്ട് ടെംപ്ലേറ്റ് ഓഫാക്കുക."
@@ -281,7 +281,7 @@ config:
  rate_limiting_precision_ipv4: "IPv4 ഉപയോഗം ട്രാക്ക് ചെയ്യുന്നതിന് ഉപയോഗിക്കേണ്ട കൃത്യത. മൂല്യം CIDR ബ്ലോക്കിന്റെ വലുപ്പത്തെ പ്രതിഫലിപ്പിക്കുന്നു. മികച്ച കൃത്യതയ്ക്കായി 32 ആയി സജ്ജമാക്കുക. സ്ഥിരസ്ഥിതി = 32."
  rate_limiting_precision_ipv6: "IPv6 ഉപയോഗം ട്രാക്ക് ചെയ്യുന്നതിന് ഉപയോഗിക്കേണ്ട കൃത്യത. മൂല്യം CIDR ബ്ലോക്കിന്റെ വലുപ്പത്തെ പ്രതിഫലിപ്പിക്കുന്നു. മികച്ച കൃത്യതയ്ക്കായി 128 ആയി സജ്ജമാക്കുക. സ്ഥിരസ്ഥിതി = 128."
  rate_limiting_segregate: "വ്യത്യസ്ത ഡൊമെയ്‌നുകൾക്കും ഹോസ്റ്റുകൾക്കുമുള്ള ക്വാട്ടകൾ വേർതിരിക്കണോ അതോ പങ്കിടണോ? True = ക്വാട്ടകൾ വേർതിരിക്കും. False = ക്വാട്ടകൾ പങ്കിടും [സ്ഥിരസ്ഥിതി]."
- recaptcha: "ReCaptcha-യ്ക്കുള്ള കോൺഫിഗറേഷൻ (തടയപ്പെടുമ്പോൾ മനുഷ്യർക്ക് ആക്‌സസ് വീണ്ടെടുക്കാനുള്ള ഒരു മാർഗം നൽകുന്നു)."
+ recaptcha: "ReCAPTCHA-യ്ക്കുള്ള കോൺഫിഗറേഷൻ (തടയപ്പെടുമ്പോൾ മനുഷ്യർക്ക് ആക്‌സസ് വീണ്ടെടുക്കാനുള്ള ഒരു മാർഗം നൽകുന്നു)."
  recaptcha_api: *CaptchaAPI
  recaptcha_expiry: *CaptchaExpiry
  recaptcha_lockip: *CaptchaLockIP
@@ -708,14 +708,14 @@ label:
   Enable this rule: "ഈ നിയമം പ്രാപ്തമാക്കുക"
   Enforce default IP tracking options: "സ്ഥിരസ്ഥിതി IP ട്രാക്കിംഗ് ഓപ്ഷനുകൾ നടപ്പിലാക്കുക"
   Enforce extended IP tracking options: "വിപുലീകൃത IP ട്രാക്കിംഗ് ഓപ്ഷനുകൾ നടപ്പിലാക്കുക"
-  Forcibly disable HCaptcha: "HCaptcha നിർബന്ധിതമായി പ്രവർത്തനരഹിതമാക്കുക"
+  Forcibly disable hCaptcha: "HCaptcha നിർബന്ധിതമായി പ്രവർത്തനരഹിതമാക്കുക"
   Forcibly disable IP tracking: "IP ട്രാക്കിംഗ് നിർബന്ധിതമായി പ്രവർത്തനരഹിതമാക്കുക"
   Forcibly disable reCAPTCHA: "reCAPTCHA നിർബന്ധിതമായി പ്രവർത്തനരഹിതമാക്കുക"
   Forcibly enable IP tracking: "IP ട്രാക്കിംഗ് നിർബന്ധിതമായി പ്രാപ്തമാക്കുക"
   HTTP status code override: "HTTP സ്റ്റാറ്റസ് കോഡ് ഓവർറൈഡ്:"
   If the following conditions are met, %s: "താഴെ പറയുന്ന വ്യവസ്ഥകൾ പാലിക്കപ്പെട്ടിട്ടുണ്ടെങ്കിൽ, %s."
   Leave it as is (don_t set anything): "അത് അതേപടി വിടുക (ഒന്നും സജ്ജമാക്കരുത്)"
-  Mark for use with HCaptcha: "HCaptcha-യിൽ ഉപയോഗിക്കുന്നതിനായി അടയാളപ്പെടുത്തുക"
+  Mark for use with hCaptcha: "HCaptcha-യിൽ ഉപയോഗിക്കുന്നതിനായി അടയാളപ്പെടുത്തുക"
   Mark for use with reCAPTCHA: "reCAPTCHA-യിൽ ഉപയോഗിക്കുന്നതിനായി അടയാളപ്പെടുത്തുക"
   Modify rule: "നിയമം പരിഷ്‌ക്കരിക്കുക"
   Move down: "താഴേക്ക് നീക്കുക"

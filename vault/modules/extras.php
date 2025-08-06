@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2025.08.02).
+ * This file: Optional security extras module (last modified: 2025.08.06).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -322,7 +322,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $this->Reporter->report([15, 21], ['Caught probing for unsecured configuration file.'], $this->BlockInfo['IPAddr']);
         } // 2025.08.02
 
-        /** Attempts by broken bot to incorrectly access ReCaptcha files (treating reference to remote resource as local). */
+        /** Attempts by broken bot to incorrectly access reCAPTCHA files (treating reference to remote resource as local). */
         $this->trigger(preg_match('~/www\.google\.com/recaptcha/api\.js(?:$|[/?])~', $LCNrURI), 'Bad request'); // 2025.03.03
 
         if ($this->trigger(preg_match('~(?:^|/)wp-content/uploads/\+year\+/\+month\+/~', $LCNrURI), 'Scraping WP media libraries')) {

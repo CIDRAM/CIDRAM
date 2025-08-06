@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Afrikaans language data for the front-end (last modified: 2025.07.18).
+# This file: Afrikaans language data for the front-end (last modified: 2025.08.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -124,8 +124,8 @@ checkbox:
  Should infractions generated during this stage count towards IP tracking: "Moet oortredings wat tydens hierdie stadium gegenereer word, tel vir IP-nasporing?"
  Should this field appear in log entries: "Moet hierdie veld in loginskrywings verskyn?"
  Should this field appear on the access denied page: "Moet hierdie veld op die "toegang geweier"-bladsy verskyn?"
- Suppress HCaptcha: "Onderdruk HCaptcha"
- Suppress ReCaptcha: "Onderdruk ReCaptcha"
+ Suppress hCaptcha: "Onderdruk hCaptcha"
+ Suppress reCAPTCHA: "Onderdruk reCAPTCHA"
  Test as sensitive request: "Toets as sensitiewe versoek"
  Untrack positives: "Ontspoor positiewe?"
  When blocked, suppress output template: "As dit geblokkeer is, onderdruk uitsetsjabloon."
@@ -215,7 +215,7 @@ config:
  general_time_format: "Die datum/tyd-notasieformaat wat deur CIDRAM gebruik word. Bykomende opsies kan op versoek bygevoeg word."
  general_time_offset: "Tydsone verskil in minute."
  general_timezone: "Dit word gebruik om die tydsone te spesifiseer (bv., Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, ens). Spesifiseer "SYSTEM" om PHP dit outomaties vir jou te laat hanteer."
- hcaptcha: "Konfigurasie vir HCaptcha (bied 'n manier vir mense om toegang te kry wanneer dit geblokkeer word)."
+ hcaptcha: "Konfigurasie vir hCaptcha (bied 'n manier vir mense om toegang te kry wanneer dit geblokkeer word)."
  hcaptcha_api: &CaptchaAPI "Watter API om te gebruik?"
  hcaptcha_expiry: &CaptchaExpiry "Aantal ure om CAPTCHA-gevalle te onthou. Verstek = 720 (1 maand)."
  hcaptcha_hcaptcha_log: &CaptchaLogFile "Teken alle CAPTCHA-pogings aan? Indien ja, spesifiseer die naam vir die loglêer te gebruik. Indien nee, laat hierdie veranderlike leeg."
@@ -281,7 +281,7 @@ config:
  rate_limiting_precision_ipv4: "Die akkuraatheid om te gebruik vir die dop van IPv4-gebruik. Waarde weerspieël CIDR-blokgrootte. Stel op 32 vir die beste akkuraatheid. Verstek = 32."
  rate_limiting_precision_ipv6: "Die akkuraatheid om te gebruik vir die dop van IPv6-gebruik. Waarde weerspieël CIDR-blokgrootte. Stel op 128 vir die beste akkuraatheid. Verstek = 128."
  rate_limiting_segregate: "Moet kwotas vir verskillende domeine en gashere geskei of gedeel word? True = Kwotas sal geskei word. False = Kwotas sal gedeel word [Verstek]."
- recaptcha: "Konfigurasie vir ReCaptcha (bied 'n manier vir mense om toegang te kry wanneer dit geblokkeer word)."
+ recaptcha: "Konfigurasie vir reCAPTCHA (bied 'n manier vir mense om toegang te kry wanneer dit geblokkeer word)."
  recaptcha_api: *CaptchaAPI
  recaptcha_expiry: *CaptchaExpiry
  recaptcha_lockip: *CaptchaLockIP
@@ -704,14 +704,14 @@ label:
   Enable this rule: "Aktiveer hierdie reël"
   Enforce default IP tracking options: "Dwing verstek IP-nasporingsopsies"
   Enforce extended IP tracking options: "Dwing uitgebreide IP-nasporingsopsies"
-  Forcibly disable HCaptcha: "Dwing HCaptcha om te deaktiveer"
+  Forcibly disable hCaptcha: "Dwing hCaptcha om te deaktiveer"
   Forcibly disable IP tracking: "Dwing IP-nasporing om te deaktiveer"
   Forcibly disable reCAPTCHA: "Dwing reCAPTCHA om te deaktiveer"
   Forcibly enable IP tracking: "Dwing IP-nasporing om te aktiveer"
   HTTP status code override: "Vervanging van HTTP-statuskode:"
   If the following conditions are met, %s: "As die volgende voorwaardes nagekom word, %s."
   Leave it as is (don_t set anything): "Los dit soos dit is (moet niks stel nie)"
-  Mark for use with HCaptcha: "Merk vir gebruik met HCaptcha"
+  Mark for use with hCaptcha: "Merk vir gebruik met hCaptcha"
   Mark for use with reCAPTCHA: "Merk vir gebruik met reCAPTCHA"
   Modify rule: "Verander reël"
   Move down: "Beweeg af"

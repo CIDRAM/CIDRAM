@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bosnian language data for the front-end (last modified: 2025.07.18).
+# This file: Bosnian language data for the front-end (last modified: 2025.08.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -124,8 +124,8 @@ checkbox:
  Should infractions generated during this stage count towards IP tracking: "Trebaju li se prekršaji generirani tokom ove faze računati u IP praćenje?"
  Should this field appear in log entries: "Treba li se ovo polje pojaviti u zapisima u dnevniku?"
  Should this field appear on the access denied page: "Treba li se ovo polje pojaviti na stranici "pristup odbijen"?"
- Suppress HCaptcha: "Potisnuti HCaptcha"
- Suppress ReCaptcha: "Potisnuti ReCaptcha"
+ Suppress hCaptcha: "Potisnuti hCaptcha"
+ Suppress reCAPTCHA: "Potisnuti reCAPTCHA"
  Test as sensitive request: "Testirajte kao osjetljiv zahtjev"
  Untrack positives: "Poništiti praćenje pozitivnih?"
  When blocked, suppress output template: "Kada je blokiran, potisnite izlazni predložak."
@@ -215,7 +215,7 @@ config:
  general_time_format: "Format notacije datuma/vremena koji koristi CIDRAM. Dodatne opcije se mogu dodati na zahtjev."
  general_time_offset: "Pomak vremenske zone u minutama."
  general_timezone: "Vremenska zona koju treba koristiti (npr., Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, etc). Odredite "SYSTEM" da dozvolite PHP-u da to automatski obavi umjesto vas."
- hcaptcha: "Konfiguracija za HCaptcha (pruža način da ljudi ponovo dobiju pristup kada su blokirani)."
+ hcaptcha: "Konfiguracija za hCaptcha (pruža način da ljudi ponovo dobiju pristup kada su blokirani)."
  hcaptcha_api: &CaptchaAPI "Koji API koristiti?"
  hcaptcha_expiry: &CaptchaExpiry "Broj sati za pamćenje CAPTCHA instanci. Zadano = 720 (1 mjesec)."
  hcaptcha_hcaptcha_log: &CaptchaLogFile "Zabilježiti sve pokušaje CAPTCHA? Ako da, navedite naziv koje ćete koristiti za datoteku dnevnika. Ako ne, ostavite ovu varijablu praznom."
@@ -281,7 +281,7 @@ config:
  rate_limiting_precision_ipv4: "Preciznost za praćenje korištenja IPv4. Vrijednost odražava veličinu CIDR bloka. Postavite na 32 za najbolju preciznost. Zadano = 32."
  rate_limiting_precision_ipv6: "Preciznost za praćenje korištenja IPv6. Vrijednost odražava veličinu CIDR bloka. Postavite na 128 za najbolju preciznost. Zadano = 128."
  rate_limiting_segregate: "Trebaju li kvote za različite domene i hostove biti odvojene ili podijeljene? True/Istinito = Kvote će biti odvojene. False/Lažno = Kvote će biti podijeljene [Zadano]."
- recaptcha: "Konfiguracija za ReCaptcha (pruža način da ljudi ponovo dobiju pristup kada su blokirani)."
+ recaptcha: "Konfiguracija za reCAPTCHA (pruža način da ljudi ponovo dobiju pristup kada su blokirani)."
  recaptcha_api: *CaptchaAPI
  recaptcha_expiry: *CaptchaExpiry
  recaptcha_lockip: *CaptchaLockIP
@@ -711,14 +711,14 @@ label:
   Enable this rule: "Omogući ovo pravilo"
   Enforce default IP tracking options: "Primijenite zadane opcije za praćenje IP adrese"
   Enforce extended IP tracking options: "Primijenite proširene opcije za praćenje IP adrese"
-  Forcibly disable HCaptcha: "Prisilno onemogući HCaptcha"
+  Forcibly disable hCaptcha: "Prisilno onemogući hCaptcha"
   Forcibly disable IP tracking: "Prisilno onemogući praćenje IP adrese"
   Forcibly disable reCAPTCHA: "Prisilno onemogući reCAPTCHA"
   Forcibly enable IP tracking: "Prisilno omogući praćenje IP adrese"
   HTTP status code override: "Nadjačavanje HTTP statusnog koda:"
   If the following conditions are met, %s: "Ako su ispunjeni sljedeći uslovi, %s."
   Leave it as is (don_t set anything): "Ostavite kako jeste (ne postavljajte ništa)"
-  Mark for use with HCaptcha: "Označi za upotrebu sa HCaptcha"
+  Mark for use with hCaptcha: "Označi za upotrebu sa hCaptcha"
   Mark for use with reCAPTCHA: "Označi za upotrebu sa reCAPTCHA"
   Modify rule: "Izmijeni pravilo"
   Move down: "Pomakni se dolje"

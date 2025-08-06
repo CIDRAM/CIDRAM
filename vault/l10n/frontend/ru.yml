@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2025.07.18).
+# This file: Russian language data for the front-end (last modified: 2025.08.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -124,8 +124,8 @@ checkbox:
  Should infractions generated during this stage count towards IP tracking: "Засчитывать нарушения, возникшие на этом этапе, в отслеживания IP?"
  Should this field appear in log entries: "Должно ли это поле отображаться в записях журнала?"
  Should this field appear on the access denied page: "Должно ли это поле отображаться на странице «доступ запрещен»?"
- Suppress HCaptcha: "Подавить HCaptcha"
- Suppress ReCaptcha: "Подавить ReCaptcha"
+ Suppress hCaptcha: "Подавить hCaptcha"
+ Suppress reCAPTCHA: "Подавить reCAPTCHA"
  Test as sensitive request: "Проверить как конфиденциальный запрос"
  Untrack positives: "Перестать отслеживать положительные?"
  When blocked, suppress output template: "При блокировке, подавить шаблон вывода."
@@ -215,7 +215,7 @@ config:
  general_time_format: "Формат нотации даты, используемый CIDRAM. Дополнительные опции могут быть добавлены по запросу."
  general_time_offset: "Смещение часового пояса в минут."
  general_timezone: "Часовой пояс для использования (например, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, и т.д.). Укажите «SYSTEM», чтобы позволить PHP обрабатывать это автоматически."
- hcaptcha: "Конфигурация для HCaptcha (предоставляет людям возможность восстановить доступ при блокировании)."
+ hcaptcha: "Конфигурация для hCaptcha (предоставляет людям возможность восстановить доступ при блокировании)."
  hcaptcha_api: &CaptchaAPI "Какой API использовать?"
  hcaptcha_expiry: &CaptchaExpiry "Количество часов, чтобы вспомнить инстанция CAPTCHA. Стандарт = 720 (1 месяц)."
  hcaptcha_hcaptcha_log: &CaptchaLogFile "Записывать все попытки CAPTCHA? Если да, указать имя использовать для файла журнала. Если нет, оставьте эту переменную пустым."
@@ -281,7 +281,7 @@ config:
  rate_limiting_precision_ipv4: "Точность использования при мониторинге использования IPv4. Значение отражает размер блока CIDR. Установить как 32 для наилучшей точности. Стандарт = 32."
  rate_limiting_precision_ipv6: "Точность использования при мониторинге использования IPv6. Значение отражает размер блока CIDR. Установить как 128 для наилучшей точности. Стандарт = 128."
  rate_limiting_segregate: "Должны ли квоты для разных доменов и хостов храниться раздельно или совместно? True = Квоты будут храниться раздельно. False = Квоты будут храниться совместно [Стандарт]."
- recaptcha: "Конфигурация для ReCaptcha (предоставляет людям возможность восстановить доступ при блокировании)."
+ recaptcha: "Конфигурация для reCAPTCHA (предоставляет людям возможность восстановить доступ при блокировании)."
  recaptcha_api: *CaptchaAPI
  recaptcha_expiry: *CaptchaExpiry
  recaptcha_lockip: *CaptchaLockIP
@@ -716,14 +716,14 @@ label:
   Enable this rule: "Включить это правило"
   Enforce default IP tracking options: "Включить стандарт параметры отслеживания IP"
   Enforce extended IP tracking options: "Включить расширенные параметры отслеживания IP"
-  Forcibly disable HCaptcha: "Принудительно отключить HCaptcha"
+  Forcibly disable hCaptcha: "Принудительно отключить hCaptcha"
   Forcibly disable IP tracking: "Принудительно отключить отслеживание IP"
   Forcibly disable reCAPTCHA: "Принудительно отключить reCAPTCHA"
   Forcibly enable IP tracking: "Принудительно включить отслеживание IP"
   HTTP status code override: "Переопределение кода состояния HTTP:"
   If the following conditions are met, %s: "Если выполнены следующие условия, %s."
   Leave it as is (don_t set anything): "Оставьте как есть (ничего не устанавливайте)"
-  Mark for use with HCaptcha: "Отметить для использования с HCaptcha"
+  Mark for use with hCaptcha: "Отметить для использования с hCaptcha"
   Mark for use with reCAPTCHA: "Отметить для использования с reCAPTCHA"
   Modify rule: "Изменить правило"
   Move down: "Двигаться вниз"

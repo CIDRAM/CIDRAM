@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protocol blocker module (last modified: 2024.06.11).
+ * This file: Protocol blocker module (last modified: 2025.08.06).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -105,7 +105,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
     /** Disable CAPTCHAs. */
     if ($Hit) {
-        $this->enactOptions('', ['ForciblyDisableReCAPTCHA' => true, 'ForciblyDisableHCAPTCHA' => true]);
+        $this->enactOptions('', ['ForciblyDisableReCAPTCHA' => true, 'ForciblyDisableHCaptcha' => true]);
     }
 };
 

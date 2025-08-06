@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2025.07.18).
+# This file: Thai language data for the front-end (last modified: 2025.08.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -124,8 +124,8 @@ checkbox:
  Should infractions generated during this stage count towards IP tracking: "นับการละเมิดที่เกิดขึ้นระหว่างขั้นตอนนี้ต่อการติดตาม IP หรือไม่?"
  Should this field appear in log entries: "ช่องนี้ควรปรากฏในรายการบันทึกหรือไม่?"
  Should this field appear on the access denied page: "ฟิลด์นี้ควรปรากฏใน "ปฏิเสธการเข้าใช้" หน้าหรือไม่?"
- Suppress HCaptcha: "ปราบปราม HCaptcha"
- Suppress ReCaptcha: "ปราบปราม ReCaptcha"
+ Suppress hCaptcha: "ปราบปราม hCaptcha"
+ Suppress reCAPTCHA: "ปราบปราม reCAPTCHA"
  Test as sensitive request: "ทดสอบตามคำขอที่ละเอียดอ่อน"
  Untrack positives: "เลิกติดตามผลบวก?"
  When blocked, suppress output template: "เมื่อถูกบล็อก ไม่แสดงเทมเพลตเอาต์พุต."
@@ -215,7 +215,7 @@ config:
  general_time_format: "รูปแบบสัญกรณ์สำหรับวันและเวลาใช้โดย CIDRAM. ตัวเลือกเพิ่มเติมอาจเพิ่มเมื่อมีการร้องขอ."
  general_time_offset: "เขตเวลาชดเชยในนาที."
  general_timezone: "ใช้เพื่อระบุเขตเวลาที่จะใช้ (เช่น., Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, ฯลฯ). ระบุ "SYSTEM" เพื่อให้ PHP จัดการสิ่งนี้ให้คุณโดยอัตโนมัติ."
- hcaptcha: "การกำหนดค่าสำหรับ HCaptcha (เป็นวิธีสำหรับมนุษย์ในการเข้าถึงเมื่อถูกบล็อก)."
+ hcaptcha: "การกำหนดค่าสำหรับ hCaptcha (เป็นวิธีสำหรับมนุษย์ในการเข้าถึงเมื่อถูกบล็อก)."
  hcaptcha_api: &CaptchaAPI "API ใดที่จะใช้?"
  hcaptcha_expiry: &CaptchaExpiry "จำนวนชั่วโมงที่ต้องจำอินสแตนซ์ CAPTCHA. ค่าเริ่มต้น = 720 (1 เดือน)."
  hcaptcha_hcaptcha_log: &CaptchaLogFile "บันทึกความพยายาม CAPTCHA ทั้งหมดหรือไม่? ถ้าใช่ ระบุชื่อที่จะใช้สำหรับไฟล์บันทึก. ถ้าไม่ ปล่อยให้ตัวแปรนี้ว่างเปล่า."
@@ -281,7 +281,7 @@ config:
  rate_limiting_precision_ipv4: "ความแม่นยำในการใช้สำหรับการติดตามการใช้งาน IPv4. ค่าจะสะท้อนขนาดบล็อก CIDR. ตั้งค่าเป็น 32 สำหรับความแม่นยำสูงสุด. ค่าเริ่มต้น = 32."
  rate_limiting_precision_ipv6: "ความแม่นยำในการใช้สำหรับการติดตามการใช้งาน IPv6. ค่าจะสะท้อนขนาดบล็อก CIDR. ตั้งค่าเป็น 128 สำหรับความแม่นยำสูงสุด ค่าเริ่มต้น = 128."
  rate_limiting_segregate: "โควต้าสำหรับโดเมนและโฮสต์ควรแยกหรือแชร์หรือไม่? True = โควต้าจะถูกแยกออก. False = โควต้าจะถูกแชร์ [ค่าเริ่มต้น]."
- recaptcha: "การกำหนดค่าสำหรับ ReCaptcha (เป็นวิธีสำหรับมนุษย์ในการเข้าถึงเมื่อถูกบล็อก)."
+ recaptcha: "การกำหนดค่าสำหรับ reCAPTCHA (เป็นวิธีสำหรับมนุษย์ในการเข้าถึงเมื่อถูกบล็อก)."
  recaptcha_api: *CaptchaAPI
  recaptcha_expiry: *CaptchaExpiry
  recaptcha_lockip: *CaptchaLockIP
@@ -688,14 +688,14 @@ label:
   Enable this rule: "เปิดใช้งานกฎนี้"
   Enforce default IP tracking options: "บังคับใช้ตัวเลือกการติดตาม IP ขยายตัว"
   Enforce extended IP tracking options: "บังคับใช้ตัวเลือกการติดตาม IP เพิ่มเติม"
-  Forcibly disable HCaptcha: "บังคับปิดใช้งาน HCaptcha"
+  Forcibly disable hCaptcha: "บังคับปิดใช้งาน hCaptcha"
   Forcibly disable IP tracking: "บังคับปิดการติดตาม IP"
   Forcibly disable reCAPTCHA: "บังคับปิดใช้งาน reCAPTCHA"
   Forcibly enable IP tracking: "บังคับให้เปิดใช้งานการติดตาม IP"
   HTTP status code override: "การแทนที่รหัสสถานะ HTTP:"
   If the following conditions are met, %s: "หากตรงตามเงื่อนไขต่อไปนี้ %s."
   Leave it as is (don_t set anything): "ปล่อยไว้ตามที่เป็นอยู่ (ไม่ต้องตั้งค่าอะไรเลย)"
-  Mark for use with HCaptcha: "ทำเครื่องหมายเพื่อใช้กับ HCaptcha"
+  Mark for use with hCaptcha: "ทำเครื่องหมายเพื่อใช้กับ hCaptcha"
   Mark for use with reCAPTCHA: "ทำเครื่องหมายเพื่อใช้กับ reCAPTCHA"
   Modify rule: "ปรับเปลี่ยนกฎ"
   Move down: "ย้ายลง"

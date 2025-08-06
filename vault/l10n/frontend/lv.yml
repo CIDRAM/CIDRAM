@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2025.07.18).
+# This file: Latvian language data for the front-end (last modified: 2025.08.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -124,8 +124,8 @@ checkbox:
  Should infractions generated during this stage count towards IP tracking: "Vai šajā posmā ģenerētie pārkāpumi tiek ņemti vērā IP izsekošanas procesā?"
  Should this field appear in log entries: "Vai šim laukam vajadzētu parādīties žurnāla ierakstos?"
  Should this field appear on the access denied page: "Vai šim laukam vajadzētu parādīties lapā "piekļuve liegta"?"
- Suppress HCaptcha: "Apspiest HCaptcha"
- Suppress ReCaptcha: "Apspiest ReCaptcha"
+ Suppress hCaptcha: "Apspiest hCaptcha"
+ Suppress reCAPTCHA: "Apspiest reCAPTCHA"
  Test as sensitive request: "Pārbaudīt kā sensitīvu pieprasījumu"
  Untrack positives: "Vai atcelt pozitīvu izsekošana?"
  When blocked, suppress output template: "Ja tas ir bloķēts, apspiest izvades veidni."
@@ -281,7 +281,7 @@ config:
  rate_limiting_precision_ipv4: "IPv4 lietošanas izsekošanas precizitāte. Vērtības spoguļi CIDR bloka izmērs. Iestatiet uz 32 vislabākajai precizitātei. Noklusējuma = 32."
  rate_limiting_precision_ipv6: "IPv6 lietošanas izsekošanas precizitāte. Vērtības spoguļi CIDR bloka izmērs. Iestatiet uz 128 vislabākajai precizitātei. Noklusējuma = 128."
  rate_limiting_segregate: "Vai kvotas dažādiem domēniem un resursdatoriem ir jānodala vai jādala? True = Kvotas tiks atdalīts. False = Kvotas tiks dalītas [Noklusējuma]."
- recaptcha: "ReCaptcha konfigurācija (nodrošina veidu, kā cilvēki var atgūt piekļuvi, kad tā ir bloķēta)."
+ recaptcha: "ReCAPTCHA konfigurācija (nodrošina veidu, kā cilvēki var atgūt piekļuvi, kad tā ir bloķēta)."
  recaptcha_api: *CaptchaAPI
  recaptcha_expiry: *CaptchaExpiry
  recaptcha_lockip: *CaptchaLockIP
@@ -703,14 +703,14 @@ label:
   Enable this rule: "Iespējot šo noteikumu"
   Enforce default IP tracking options: "Ieviesiet noklusējuma IP izsekošanas iespējas"
   Enforce extended IP tracking options: "Ieviesiet paplašinātas IP izsekošanas iespējas"
-  Forcibly disable HCaptcha: "Piespiedu kārtā atspējojiet HCaptcha"
+  Forcibly disable hCaptcha: "Piespiedu kārtā atspējojiet hCaptcha"
   Forcibly disable IP tracking: "Piespiedu kārtā atspējojiet IP izsekošanu"
   Forcibly disable reCAPTCHA: "Piespiedu kārtā atspējojiet reCAPTCHA"
   Forcibly enable IP tracking: "Piespiedu kārtā iespējojiet IP izsekošanu"
   HTTP status code override: "HTTP statusa koda aizstāšana:"
   If the following conditions are met, %s: "Ja ir izpildīti šādi nosacījumi, %s."
   Leave it as is (don_t set anything): "Atstājiet to kā ir (neko nenosakiet)"
-  Mark for use with HCaptcha: "Atzīmēt izmantošanai ar HCaptcha"
+  Mark for use with hCaptcha: "Atzīmēt izmantošanai ar hCaptcha"
   Mark for use with reCAPTCHA: "Atzīmēt izmantošanai ar reCAPTCHA"
   Modify rule: "Modificēt palīgnoteikumu"
   Move down: "Ej lejā"

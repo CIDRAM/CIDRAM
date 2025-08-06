@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Romanian language data for the front-end (last modified: 2025.07.18).
+# This file: Romanian language data for the front-end (last modified: 2025.08.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -124,8 +124,8 @@ checkbox:
  Should infractions generated during this stage count towards IP tracking: "Ar trebui să conteze infracțiunile generate în această etapă pentru urmărirea IP?"
  Should this field appear in log entries: "Acest câmp ar trebui să apară în intrările de jurnal?"
  Should this field appear on the access denied page: "Acest câmp ar trebui să apară pe pagina „acces refuzat”?"
- Suppress HCaptcha: "Suprimați HCaptcha"
- Suppress ReCaptcha: "Suprimați ReCaptcha"
+ Suppress hCaptcha: "Suprimați hCaptcha"
+ Suppress reCAPTCHA: "Suprimați reCAPTCHA"
  Test as sensitive request: "Testați ca solicităre sensibilă"
  Untrack positives: "Anulați urmărirea pozitive?"
  When blocked, suppress output template: "Când este blocat, suprimați șablonul de ieșire."
@@ -215,7 +215,7 @@ config:
  general_time_format: "Formatul de notație dată/ora utilizat de CIDRAM. Opțiuni suplimentare pot fi adăugate la cerere."
  general_time_offset: "Compensarea fusului orar în minute."
  general_timezone: "Acesta este folosit pentru a specifica fusul orar de utilizat (de exemplu, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, etc). Specificați „SISTEM” pentru a lăsa PHP să se ocupe de asta în mod automat."
- hcaptcha: "Configurare pentru HCaptcha (oferă o modalitate prin care oamenii să-și recapete accesul atunci când sunt blocați)."
+ hcaptcha: "Configurare pentru hCaptcha (oferă o modalitate prin care oamenii să-și recapete accesul atunci când sunt blocați)."
  hcaptcha_api: &CaptchaAPI "Ce API să folosești?"
  hcaptcha_expiry: &CaptchaExpiry "Numărul de ore pentru a vă aminti instanțele CAPTCHA. Implicit = 720 (1 lună)."
  hcaptcha_hcaptcha_log: &CaptchaLogFile "Înregistrați toate încercările CAPTCHA? Dacă da, specificați numele de utilizat pentru fișierul jurnal. Dacă nu, lăsați această variabilă necompletată."
@@ -281,7 +281,7 @@ config:
  rate_limiting_precision_ipv4: "Precizia de utilizat pentru urmărirea utilizării IPv4. Valoarea reflectă dimensiunea blocului CIDR. Setați la 32 pentru cea mai bună precizie. Implicit = 32."
  rate_limiting_precision_ipv6: "Precizia de utilizat pentru urmărirea utilizării IPv6. Valoarea reflectă dimensiunea blocului CIDR. Setați la 128 pentru cea mai bună precizie. Implicit = 128."
  rate_limiting_segregate: "Ar trebui să fie separate sau partajate cotele pentru diferite domenii și gazde? True = Cotele vor fi separate. False = Cotele vor fi partajate [Implicit]."
- recaptcha: "Configurare pentru ReCaptcha (oferă o modalitate prin care oamenii să-și recapete accesul atunci când sunt blocați)."
+ recaptcha: "Configurare pentru reCAPTCHA (oferă o modalitate prin care oamenii să-și recapete accesul atunci când sunt blocați)."
  recaptcha_api: *CaptchaAPI
  recaptcha_expiry: *CaptchaExpiry
  recaptcha_lockip: *CaptchaLockIP
@@ -714,14 +714,14 @@ label:
   Enable this rule: "Activați această regulă"
   Enforce default IP tracking options: "Aplicați opțiunile de urmărire IP implicite"
   Enforce extended IP tracking options: "Aplicați opțiunile de urmărire IP extinse"
-  Forcibly disable HCaptcha: "Dezactivați forțat HCaptcha"
+  Forcibly disable hCaptcha: "Dezactivați forțat hCaptcha"
   Forcibly disable IP tracking: "Dezactivați forțat urmărirea IP"
   Forcibly disable reCAPTCHA: "Dezactivați forțat reCAPTCHA"
   Forcibly enable IP tracking: "Activați forțat urmărirea IP"
   HTTP status code override: "Modificarea codului de stare HTTP:"
   If the following conditions are met, %s: "Dacă sunt îndeplinite următoarele condiții, %s."
   Leave it as is (don_t set anything): "Lăsați-l așa cum este (nu setați nimic)"
-  Mark for use with HCaptcha: "Marcați pentru utilizare cu HCaptcha"
+  Mark for use with hCaptcha: "Marcați pentru utilizare cu hCaptcha"
   Mark for use with reCAPTCHA: "Marcați pentru utilizare cu reCAPTCHA"
   Modify rule: "Modificați regula"
   Move down: "Mutați asta în jos"

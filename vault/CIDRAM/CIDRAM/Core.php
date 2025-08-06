@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2025.07.29).
+ * This file: The CIDRAM core (last modified: 2025.08.06).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1566,10 +1566,10 @@ class Core
             $this->Configuration['recaptcha']['usemode'] = 0;
             $this->Configuration['recaptcha']['forcibly_disabled'] = true;
         }
-        if (isset($Options[$Prefix . 'MarkForUseWithHCAPTCHA'])) {
+        if (isset($Options[$Prefix . 'MarkForUseWithHCaptcha'])) {
             $this->Configuration['hcaptcha']['enabled'] = true;
         }
-        if (isset($Options[$Prefix . 'ForciblyDisableHCAPTCHA'])) {
+        if (isset($Options[$Prefix . 'ForciblyDisableHCaptcha'])) {
             $this->Configuration['hcaptcha']['usemode'] = 0;
             $this->Configuration['hcaptcha']['forcibly_disabled'] = true;
         }
@@ -3417,7 +3417,7 @@ class Core
         }
         $this->BlockInfo['Signatures'] .= 'Conflict';
         $this->BlockInfo['SignatureCount']++;
-        $this->enactOptions('', ['ForciblyDisableReCAPTCHA' => true, 'ForciblyDisableHCAPTCHA' => true]);
+        $this->enactOptions('', ['ForciblyDisableReCAPTCHA' => true, 'ForciblyDisableHCaptcha' => true]);
         $this->CIDRAM['Other Status'] = $this->getStatusHTTP($this->Configuration['signatures']['conflict_response']);
         $this->CIDRAM['Other Status Code'] = $this->Configuration['signatures']['conflict_response'];
         if (isset($this->Shorthand[$Signature . ':Suppress'])) {

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2025.07.18).
+# This file: Swedish language data for the front-end (last modified: 2025.08.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -124,8 +124,8 @@ checkbox:
  Should infractions generated during this stage count towards IP tracking: "Räkna infraktions som genererats under detta skede mot IP-spårning?"
  Should this field appear in log entries: "Ska detta fält visas i loggposter?"
  Should this field appear on the access denied page: "Ska den här fältet visas på sidan "nekat tillgång"?"
- Suppress HCaptcha: "Undertryck HCaptcha"
- Suppress ReCaptcha: "Undertryck ReCaptcha"
+ Suppress hCaptcha: "Undertryck hCaptcha"
+ Suppress reCAPTCHA: "Undertryck reCAPTCHA"
  Test as sensitive request: "Testa som känslig begäran"
  Untrack positives: "Sluta spåra efter positiva?"
  When blocked, suppress output template: "När blockerad, undertryck utmatningsmallen."
@@ -215,7 +215,7 @@ config:
  general_time_format: "Datum/tid notationsformat som används av CIDRAM. Ytterligare alternativ kan läggas till på begäran."
  general_time_offset: "Tidszonen kompenseras i minuter."
  general_timezone: "Detta används för att specificera den tidszon som ska användas (t.ex., Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, osv). Ange "SYSTEM" för att låta PHP hantera detta åt dig automatiskt."
- hcaptcha: "Konfiguration för HCaptcha (ger ett sätt för människor att återfå åtkomst när de blockeras)."
+ hcaptcha: "Konfiguration för hCaptcha (ger ett sätt för människor att återfå åtkomst när de blockeras)."
  hcaptcha_api: &CaptchaAPI "Vilket API ska användas?"
  hcaptcha_expiry: &CaptchaExpiry "Antal timmar för att komma ihåg CAPTCHA-instanser. Standard = 720 (1 månad)."
  hcaptcha_hcaptcha_log: &CaptchaLogFile "Logga in alla CAPTCHA-försök? Om ja, ange det namn som ska användas för loggfilen. Om nej, lämna denna variabel tom."
@@ -281,7 +281,7 @@ config:
  rate_limiting_precision_ipv4: "Den precision som ska användas för att spåra IPv4-användning. Värdet speglar CIDR-blockstorleken. Ställ in till 32 för bästa precision. Standard = 32."
  rate_limiting_precision_ipv6: "Den precision som ska användas för att spåra IPv6-användning. Värdet speglar CIDR-blockstorleken. Ställ in till 128 för bästa precision. Standard = 128."
  rate_limiting_segregate: "Bör kvoter för olika domäner och värdar segregeras eller delas? True = Kvoter kommer att vara segregerade. False = Kvoter kommer att vara delas [Standard]."
- recaptcha: "Konfiguration för ReCaptcha (ger ett sätt för människor att återfå åtkomst när de blockeras)."
+ recaptcha: "Konfiguration för reCAPTCHA (ger ett sätt för människor att återfå åtkomst när de blockeras)."
  recaptcha_api: *CaptchaAPI
  recaptcha_expiry: *CaptchaExpiry
  recaptcha_lockip: *CaptchaLockIP
@@ -705,14 +705,14 @@ label:
   Enable this rule: "Aktivera den här regeln"
   Enforce default IP tracking options: "Tillämpa standard IP-spårningsalternativ"
   Enforce extended IP tracking options: "Tillämpa utökade IP-spårningsalternativ"
-  Forcibly disable HCaptcha: "Inaktivera HCaptcha med våld"
+  Forcibly disable hCaptcha: "Inaktivera hCaptcha med våld"
   Forcibly disable IP tracking: "Inaktivera IP-spårning med våld"
   Forcibly disable reCAPTCHA: "Inaktivera reCAPTCHA med våld"
   Forcibly enable IP tracking: "Aktivera IP-spårning med våld"
   HTTP status code override: "HTTP-statuskod åsidosätter:"
   If the following conditions are met, %s: "Om följande villkor är uppfyllda, %s."
   Leave it as is (don_t set anything): "Lämna det som det är (ställ inte in något)"
-  Mark for use with HCaptcha: "Markera för användning med HCaptcha"
+  Mark for use with hCaptcha: "Markera för användning med hCaptcha"
   Mark for use with reCAPTCHA: "Markera för användning med reCAPTCHA"
   Modify rule: "Ändra regeln"
   Move down: "Flytta ner"

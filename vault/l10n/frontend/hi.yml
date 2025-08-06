@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data for the front-end (last modified: 2025.07.18).
+# This file: Hindi language data for the front-end (last modified: 2025.08.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -124,8 +124,8 @@ checkbox:
  Should infractions generated during this stage count towards IP tracking: "IP ट्रैकिंग के लिए इस चरण के दौरान उत्पन्न उल्लंघन की गणना करें?"
  Should this field appear in log entries: "क्या यह फ़ील्ड लॉग प्रविष्टियों में दिखाई देनी चाहिए?"
  Should this field appear on the access denied page: "क्या यह फ़ील्ड "पहुंच अस्वीकृत" पृष्ठ पर दिखाई देनी चाहिए?"
- Suppress HCaptcha: "HCaptcha का दमन"
- Suppress ReCaptcha: "ReCaptcha का दमन"
+ Suppress hCaptcha: "HCaptcha का दमन"
+ Suppress reCAPTCHA: "ReCAPTCHA का दमन"
  Test as sensitive request: "संवेदनशील अनुरोध के रूप में परीक्षण करें"
  Untrack positives: "सकारात्मक अनट्रैक करें?"
  When blocked, suppress output template: "अवरुद्ध होने पर, आउटपुट टेम्पलेट का दमन।"
@@ -281,7 +281,7 @@ config:
  rate_limiting_precision_ipv4: "IPv4 उपयोग को ट्रैक करने के लिए उपयोग करने की सटीकता। मूल्य दर्पण CIDR ब्लॉक आकार। सर्वोत्तम परिशुद्धता के लिए 32 पर सेट करें। डिफ़ॉल्ट = "32"।"
  rate_limiting_precision_ipv6: "IPv6 उपयोग को ट्रैक करने के लिए उपयोग करने की सटीकता। मूल्य दर्पण CIDR ब्लॉक आकार। सर्वोत्तम परिशुद्धता के लिए 128 पर सेट करें। डिफ़ॉल्ट = "128"।"
  rate_limiting_segregate: "डोमेन और होस्ट के लिए कोटा अलग या साझा किया जाना चाहिए? True = कोटा अलग किया जाएगा। False = कोटा साझा किया जाएगा [डिफ़ॉल्ट]।"
- recaptcha: "ReCaptcha के लिए कॉन्फ़िगरेशन (अवरुद्ध होने पर मनुष्यों को पुनः प्राप्त करने का एक तरीका प्रदान करता है)।"
+ recaptcha: "ReCAPTCHA के लिए कॉन्फ़िगरेशन (अवरुद्ध होने पर मनुष्यों को पुनः प्राप्त करने का एक तरीका प्रदान करता है)।"
  recaptcha_api: *CaptchaAPI
  recaptcha_expiry: *CaptchaExpiry
  recaptcha_lockip: *CaptchaLockIP
@@ -703,14 +703,14 @@ label:
   Enable this rule: "इस नियम को सक्षम करें"
   Enforce default IP tracking options: "डिफ़ॉल्ट IP ट्रैकिंग विकल्प लागू करें"
   Enforce extended IP tracking options: "विस्तारित IP ट्रैकिंग विकल्प लागू करें"
-  Forcibly disable HCaptcha: "HCaptcha को जबरन अक्षम करें"
+  Forcibly disable hCaptcha: "HCaptcha को जबरन अक्षम करें"
   Forcibly disable IP tracking: "IP ट्रैकिंग को जबरन अक्षम करें"
   Forcibly disable reCAPTCHA: "reCAPTCHA को जबरन अक्षम करें"
   Forcibly enable IP tracking: "IP ट्रैकिंग को जबरन सक्षम करें"
   HTTP status code override: "HTTP स्थिति कोड ओवरराइड:"
   If the following conditions are met, %s: "यदि निम्नलिखित शर्तें पूरी होती हैं, तो %s।"
   Leave it as is (don_t set anything): "इसे छोड़ दो (कुछ भी सेट मत करो)"
-  Mark for use with HCaptcha: "HCaptcha के साथ उपयोग के लिए निशान"
+  Mark for use with hCaptcha: "HCaptcha के साथ उपयोग के लिए निशान"
   Mark for use with reCAPTCHA: "reCAPTCHA के साथ उपयोग के लिए निशान"
   Modify rule: "नियम को संशोधित करें"
   Move down: "नीचे जाओ"

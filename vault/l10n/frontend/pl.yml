@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2025.07.18).
+# This file: Polish language data for the front-end (last modified: 2025.08.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -124,8 +124,8 @@ checkbox:
  Should infractions generated during this stage count towards IP tracking: "Wliczać wykroczenia wygenerowane na tym etapie do śledzenie IP?"
  Should this field appear in log entries: "Czy to pole powinno pojawiać się w logach?"
  Should this field appear on the access denied page: "Czy to pole powinno pojawiać się na stronie „dostęp zabroniony”?"
- Suppress HCaptcha: "Pomiń HCaptcha"
- Suppress ReCaptcha: "Pomiń ReCaptcha"
+ Suppress hCaptcha: "Pomiń hCaptcha"
+ Suppress reCAPTCHA: "Pomiń reCAPTCHA"
  Test as sensitive request: "Przetestuj jako wrażliwe żądanie"
  Untrack positives: "Nie śledzić pozytywów?"
  When blocked, suppress output template: "Po zablokowaniu, pomiń szablon wyjściowy."
@@ -215,7 +215,7 @@ config:
  general_time_format: "Format notacja daty/godziny używany przez CIDRAM. Dodatkowe opcje mogą być dodane na życzenie."
  general_time_offset: "Przesunięcie strefy czasowej w minutach."
  general_timezone: "Służy do określania używanej strefy czasowej (na przykład, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, itp). Podaj „SYSTEM”, aby PHP mógł to zrobić automatycznie."
- hcaptcha: "Konfiguracja HCaptcha (zapewnia ludziom możliwość odzyskania dostępu po zablokowaniu)."
+ hcaptcha: "Konfiguracja hCaptcha (zapewnia ludziom możliwość odzyskania dostępu po zablokowaniu)."
  hcaptcha_api: &CaptchaAPI "Którego interfejsu API użyć?"
  hcaptcha_expiry: &CaptchaExpiry "Liczba godzin do zapamiętania instancji CAPTCHA. Domyślna = 720 (1 miesiąc)."
  hcaptcha_hcaptcha_log: &CaptchaLogFile "Zalogować wszystkie próby CAPTCHA? Jeśli tak, podaj nazwę pliku do logowania. Jeśli nie, pozostaw tę zmienną pustą."
@@ -281,7 +281,7 @@ config:
  rate_limiting_precision_ipv4: "Precyzja wykorzystywana do śledzenia użycia IPv4. Wartość odzwierciedla rozmiar bloku CIDR. Ustaw na 32 dla najlepszej precyzji. Domyślna = 32."
  rate_limiting_precision_ipv6: "Precyzja wykorzystywana do śledzenia użycia IPv6. Wartość odzwierciedla rozmiar bloku CIDR. Ustaw na 128 dla najlepszej precyzji. Domyślna = 128."
  rate_limiting_segregate: "Czy kontyngenty dla różnych domen i hostów powinny być segregowane czy dzielone? True = Kontyngenty będą segregowane. False = Kontyngenty będą dzielone [Domyślna]."
- recaptcha: "Konfiguracja ReCaptcha (zapewnia ludziom możliwość odzyskania dostępu po zablokowaniu)."
+ recaptcha: "Konfiguracja reCAPTCHA (zapewnia ludziom możliwość odzyskania dostępu po zablokowaniu)."
  recaptcha_api: *CaptchaAPI
  recaptcha_expiry: *CaptchaExpiry
  recaptcha_lockip: *CaptchaLockIP
@@ -710,14 +710,14 @@ label:
   Enable this rule: "Włącz tę regułę"
   Enforce default IP tracking options: "Wymuszaj domyślne opcje śledzenia IP"
   Enforce extended IP tracking options: "Wymuszaj rozszerzone opcje śledzenia IP"
-  Forcibly disable HCaptcha: "Wymuś wyłączenie HCaptcha"
+  Forcibly disable hCaptcha: "Wymuś wyłączenie hCaptcha"
   Forcibly disable IP tracking: "Wymuś wyłączenie śledzenia IP"
   Forcibly disable reCAPTCHA: "Wymuś wyłączenie reCAPTCHA"
   Forcibly enable IP tracking: "Wymuszenie włączenia śledzenia IP"
   HTTP status code override: "Przesłonięcie kodu stanu HTTP:"
   If the following conditions are met, %s: "Jeśli spełnione są następujące warunki, %s."
   Leave it as is (don_t set anything): "Zostaw to tak, jak jest (nie ustawiaj niczego)"
-  Mark for use with HCaptcha: "Oznacz do użytku z HCaptcha"
+  Mark for use with hCaptcha: "Oznacz do użytku z hCaptcha"
   Mark for use with reCAPTCHA: "Oznacz do użytku z reCAPTCHA"
   Modify rule: "Zmodyfikuj regułę"
   Move down: "Padnij"

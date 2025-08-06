@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2025.07.08).
+# This file: Thai language data for the front-end (last modified: 2025.08.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -144,7 +144,7 @@ config_general_time_format: "รูปแบบสัญกรณ์สำหร
 config_general_time_offset: "เขตเวลาชดเชยในนาที."
 config_general_timezone: "ใช้เพื่อระบุเขตเวลาที่จะใช้ (เช่น., Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, ฯลฯ). ระบุ "SYSTEM" เพื่อให้ PHP จัดการสิ่งนี้ให้คุณโดยอัตโนมัติ."
 config_general_truncate: "ตัดทอนแฟ้มบันทึกเมื่อถึงขนาดที่กำหนดหรือไม่? ค่ามีขนาดสูงสุดในรูปแบบ B/KB/MB/GB/TB ที่แฟ้มบันทึกอาจโตขึ้นก่อนที่จะถูกตัดทอน. ค่าเริ่มต้นของ 0KB ปิดการตัดทอน (แฟ้มบันทึกสามารถเติบโตไปเรื่อย). หมายเหตุ: ถูกใช้ด้วยกับล็อกไฟล์แต่ละไฟล์! ขนาดของไฟล์บันทึกไม่ถือเป็นการรวมกัน."
-config_hcaptcha: "การกำหนดค่าสำหรับ HCaptcha (เป็นวิธีสำหรับมนุษย์ในการเข้าถึงเมื่อถูกบล็อก)."
+config_hcaptcha: "การกำหนดค่าสำหรับ hCaptcha (เป็นวิธีสำหรับมนุษย์ในการเข้าถึงเมื่อถูกบล็อก)."
 config_hcaptcha_api: &CaptchaAPI "API ใดที่จะใช้?"
 config_hcaptcha_expiry: &CaptchaExpiry "จำนวนชั่วโมงที่ต้องจำอินสแตนซ์ CAPTCHA. ค่าเริ่มต้น = 720 (1 เดือน)."
 config_hcaptcha_lockip: &CaptchaLockIP "ล็อค CAPTCHA ด้วย IP หรือไม่?"
@@ -171,7 +171,7 @@ config_rate_limiting_max_requests: "จำนวนคำขอสูงสุ�
 config_rate_limiting_precision_ipv4: "ความแม่นยำในการใช้สำหรับการติดตามการใช้งาน IPv4. ค่าจะสะท้อนขนาดบล็อก CIDR. ตั้งค่าเป็น 32 สำหรับความแม่นยำสูงสุด. ค่าเริ่มต้น = 32."
 config_rate_limiting_precision_ipv6: "ความแม่นยำในการใช้สำหรับการติดตามการใช้งาน IPv6. ค่าจะสะท้อนขนาดบล็อก CIDR. ตั้งค่าเป็น 128 สำหรับความแม่นยำสูงสุด ค่าเริ่มต้น = 128."
 config_rate_limiting_segregate: "โควต้าสำหรับโดเมนและโฮสต์ควรแยกหรือแชร์หรือไม่? True = โควต้าจะถูกแยกออก. False = โควต้าจะถูกแชร์ [ค่าเริ่มต้น]."
-config_recaptcha: "การกำหนดค่าสำหรับ ReCaptcha (เป็นวิธีสำหรับมนุษย์ในการเข้าถึงเมื่อถูกบล็อก)."
+config_recaptcha: "การกำหนดค่าสำหรับ reCAPTCHA (เป็นวิธีสำหรับมนุษย์ในการเข้าถึงเมื่อถูกบล็อก)."
 config_recaptcha_api: *CaptchaAPI
 config_recaptcha_expiry: *CaptchaExpiry
 config_recaptcha_lockip: *CaptchaLockIP
@@ -377,7 +377,7 @@ label_aux_move_top: "ย้ายกฎไปด้านบน"
 label_aux_move_up: "ขยับขึ้น"
 label_aux_mtdReg: "นิพจน์ปกติ"
 label_aux_mtdStr: "การเปรียบเทียบสตริงโดยตรง"
-label_aux_mtdWin: "อักขระตัวแทนในรูปแบบ Windows "
+label_aux_mtdWin: "อักขระตัวแทนในรูปแบบ Windows"
 label_aux_mtdDMA: "ตรวจหาวิธีการทดสอบเงื่อนไขโดยอัตโนมัติ."
 label_aux_name: "ชื่อกฎใหม่:"
 label_aux_notes: "หมายเหตุ (แสดงเฉพาะในหน้านี้ และไม่มีผลต่อกฎ):"
@@ -387,8 +387,8 @@ label_aux_special: "ตัวเลือกอื่น ๆ และธงพ�
 label_aux_special_default_state: "ปล่อยไว้ตามที่เป็นอยู่ (ไม่ต้องตั้งค่าอะไรเลย)"
 label_aux_special_disable: "ปิดใช้กฎนี้"
 label_aux_special_enable: "เปิดใช้งานกฎนี้"
-label_aux_special_hcaptcha_disable: "บังคับปิดใช้งาน HCaptcha"
-label_aux_special_hcaptcha_mark: "ทำเครื่องหมายเพื่อใช้กับ HCaptcha"
+label_aux_special_hcaptcha_disable: "บังคับปิดใช้งาน hCaptcha"
+label_aux_special_hcaptcha_mark: "ทำเครื่องหมายเพื่อใช้กับ hCaptcha"
 label_aux_special_ip_tracking_disable: "บังคับปิดการติดตาม IP"
 label_aux_special_ip_tracking_enable: "บังคับให้เปิดใช้งานการติดตาม IP"
 label_aux_special_recaptcha_disable: "บังคับปิดใช้งาน reCAPTCHA"

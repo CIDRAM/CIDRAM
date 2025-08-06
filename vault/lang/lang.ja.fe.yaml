@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2025.07.08).
+# This file: Japanese language data for the front-end (last modified: 2025.08.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -39,7 +39,7 @@ Extended Description IPv6-Other: *ExtDesOther
 Extended Description PHPMailer: "Ｅメールの送信を含む機能の使用に必要です。<br />「{{Links.PHPMailer.PHPMailer}}」は、「{{Links.PHPMailer.License}}」ライセンスを介して利用可能です。"
 Extended Description Search engines blocker module: "一部のウェブサイトで問題となる可能性のある検索エンジンを（例：Baidu、Sogou、Yandexなど）ブロックする機能を提供します。"
 Extended Description flags.css: "フロントエンド・ログページにフラグ・サポートを追加します。"
-Extended Description module_abuseipdb.php: "AbuseIPDBにリストされているＩＰからの要求をブロックします。"
+Extended Description module_abuseipdb.php: "AbuseIPDBにリストされているＩＰからのリクエストをブロックします。"
 Extended Description module_badhosts.php: "スパマー、ハッカー、およびその他の悪意のあるエンティティによって頻繁に使用されるホストをブロックします。"
 Extended Description module_badhosts_isps.php: "スパマー、ハッカー、その他の悪意のあるエンティティによって頻繁に使用されるＩＳＰに属するホストをブロックします。"
 Extended Description module_badtlds.php: "スパマー、ハッカー、その他の悪意のあるエンティティによって頻繁に使用されるＴＬＤに属するホストをブロックします。"
@@ -48,7 +48,7 @@ Extended Description module_botua.php: "望ましくないボットや悪意の�
 Extended Description module_cookies.php: "危険なクッキーに対するいくつかの限定された保護を提供します。"
 Extended Description module_extras.php: "リクエストでよく使用される攻撃経路に対して、いくつかの制限された保護を提供します。"
 Extended Description module_httpver.php: "CIDRAMコンフィグレーションを介して特定のプロトコルとＨＴＴＰバージョンをブロックすることを可能にします。"
-Extended Description module_projecthoneypot.php: "Project HoneypotにリストされているＩＰからの要求をブロックします。"
+Extended Description module_projecthoneypot.php: "Project HoneypotにリストされているＩＰからのリクエストをブロックします。"
 Extended Description module_refspam.php: "リファラー・スパムに基づくブロックは、通常、有意義なセキュリティ上の利点を提供しません、ただし、場合によっては、リクエストに関する詳細情報の収集、およびレポートの作成に役立つ可能性があります。"
 Extended Description module_sfs.php: "ＳＦＳによってリストされたＩＰに対して登録ページとログインページを保護します。"
 Name Bypasses: "デフォルト・シグネチャ・バイパス。"
@@ -166,12 +166,12 @@ config_legal_pseudonymise_ip_addresses: "ログ・ファイルを書き込むと
 config_rate_limiting: "レート制限の設定（一般的な使用には推奨されません）。"
 config_rate_limiting_allowance_period: "使用状況を監視する時間数。 Default/デフォルルト = 0."
 config_rate_limiting_exceptions: "例外（すなわち、レート制限されるべきではないリクエスト）。​レート制限が有効な場合にのみ効果があります。"
-config_rate_limiting_max_bandwidth: "将来の要求に対してレート制限を有効にする前の許容期間内に許容される最大帯域幅。​０の値は、このタイプのレート制限を無効にします。 Default/デフォルルト = 0KB。"
-config_rate_limiting_max_requests: "将来の要求に対してレート制限を有効にする前に、許容期間内に許可される要求の最大数。​０の値は、このタイプのレート制限を無効にします。 Default/デフォルルト = 0。"
+config_rate_limiting_max_bandwidth: "将来のリクエストに対してレート制限を有効にする前の許容期間内に許容される最大帯域幅。​０の値は、このタイプのレート制限を無効にします。 Default/デフォルルト = 0KB。"
+config_rate_limiting_max_requests: "将来のリクエストに対してレート制限を有効にする前に、許容期間内に許可される要求の最大数。​０の値は、このタイプのレート制限を無効にします。 Default/デフォルルト = 0。"
 config_rate_limiting_precision_ipv4: "ＩＰｖ４の使用状況を監視する際の精度。​値はＣＩＤＲブロック・サイズを反映します。​最高の精度を得るには３２に設定します。 Default/デフォルルト = 32。"
 config_rate_limiting_precision_ipv6: "ＩＰｖ６の使用状況を監視する際の精度。​値はＣＩＤＲブロック・サイズを反映します。​最高の精度を得るには１２８に設定します。 Default/デフォルルト = 128。"
 config_rate_limiting_segregate: "異なるドメインおよびホストのクォータを分離または共有する必要がありますか？ True = クォータは分離されます。 False = クォータは共有されます（Default/デフォルルト）。"
-config_recaptcha: "ReCaptchaの設定（ブロックされたときに人間がアクセスを取り戻す方法を提供します）。"
+config_recaptcha: "ReCAPTCHAの設定（ブロックされたときに人間がアクセスを取り戻す方法を提供します）。"
 config_recaptcha_api: *CaptchaAPI
 config_recaptcha_expiry: *CaptchaExpiry
 config_recaptcha_lockip: *CaptchaLockIP
@@ -391,8 +391,8 @@ label_aux_special_hcaptcha_disable: "HCaptchaを強制的に無効にして"
 label_aux_special_hcaptcha_mark: "HCaptchaで使用するためのマーク"
 label_aux_special_ip_tracking_disable: "ＩＰトラッキングを強制的に無効にして"
 label_aux_special_ip_tracking_enable: "ＩＰトラッキングを強制的に有効にして"
-label_aux_special_recaptcha_disable: "ReCaptchaを強制的に無効にして"
-label_aux_special_recaptcha_mark: "ReCaptchaで使用するためのマーク"
+label_aux_special_recaptcha_disable: "ReCAPTCHAを強制的に無効にして"
+label_aux_special_recaptcha_mark: "ReCAPTCHAで使用するためのマーク"
 label_aux_special_suppress: "出力テンプレートを抑制する"
 label_aux_special_suppress_logging: "ロギングを抑制する"
 label_aux_special_suppress_reports: "レポートを抑制する"

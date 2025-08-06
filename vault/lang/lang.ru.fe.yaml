@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2025.07.08).
+# This file: Russian language data for the front-end (last modified: 2025.08.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -144,7 +144,7 @@ config_general_time_format: "Формат нотации даты, исполь�
 config_general_time_offset: "Смещение часового пояса в минут."
 config_general_timezone: "Это используется, чтобы указать часовой пояс для использования (например, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, и т.д.). Укажите «SYSTEM», чтобы позволить PHP обрабатывать это автоматически."
 config_general_truncate: "Усекать лог-файлы, когда они достигают определенного размера? Значение это максимальный размер в Б/КБ/МБ/ГБ/ТБ, до которого файл журнала может увеличиться до усечения. Стандартное значение 0КБ отключает усечение (лог-файлы может расти неограниченно). Примечание: относится к отдельным лог-файлы! Размер файлов журнала не учитывается совместно."
-config_hcaptcha: "Конфигурация для HCaptcha (предоставляет людям возможность восстановить доступ при блокировании)."
+config_hcaptcha: "Конфигурация для hCaptcha (предоставляет людям возможность восстановить доступ при блокировании)."
 config_hcaptcha_api: &CaptchaAPI "Какой API использовать?"
 config_hcaptcha_expiry: &CaptchaExpiry "Количество часов, чтобы вспомнить инстанция CAPTCHA. Стандарт = 720 (1 месяц)."
 config_hcaptcha_lockip: &CaptchaLockIP "Свяжите CAPTCHA к IP-адреса?"
@@ -171,7 +171,7 @@ config_rate_limiting_max_requests: "Максимальное количеств�
 config_rate_limiting_precision_ipv4: "Точность использования при мониторинге использования IPv4. Значение отражает размер блока CIDR. Установить как 32 для наилучшей точности. Стандарт = 32."
 config_rate_limiting_precision_ipv6: "Точность использования при мониторинге использования IPv6. Значение отражает размер блока CIDR. Установить как 128 для наилучшей точности. Стандарт = 128."
 config_rate_limiting_segregate: "Должны ли квоты для разных доменов и хостов храниться раздельно или совместно? True = Квоты будут храниться раздельно. False = Квоты будут храниться совместно [Стандарт]."
-config_recaptcha: "Конфигурация для ReCaptcha (предоставляет людям возможность восстановить доступ при блокировании)."
+config_recaptcha: "Конфигурация для reCAPTCHA (предоставляет людям возможность восстановить доступ при блокировании)."
 config_recaptcha_api: *CaptchaAPI
 config_recaptcha_expiry: *CaptchaExpiry
 config_recaptcha_lockip: *CaptchaLockIP
@@ -390,8 +390,8 @@ label_aux_special: "Другие опции и специальные флаги
 label_aux_special_default_state: "Оставьте как есть (ничего не устанавливайте)"
 label_aux_special_disable: "Отключить это правило"
 label_aux_special_enable: "Включить это правило"
-label_aux_special_hcaptcha_disable: "Принудительно отключить HCaptcha"
-label_aux_special_hcaptcha_mark: "Отметить для использования с HCaptcha"
+label_aux_special_hcaptcha_disable: "Принудительно отключить hCaptcha"
+label_aux_special_hcaptcha_mark: "Отметить для использования с hCaptcha"
 label_aux_special_ip_tracking_disable: "Принудительно отключить отслеживание IP"
 label_aux_special_ip_tracking_enable: "Принудительно включить отслеживание IP"
 label_aux_special_recaptcha_disable: "Принудительно отключить reCAPTCHA"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2025.07.08).
+# This file: Polish language data for the front-end (last modified: 2025.08.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -144,7 +144,7 @@ config_general_time_format: "Format notacja daty/godziny używany przez CIDRAM. 
 config_general_time_offset: "Przesunięcie strefy czasowej w minutach."
 config_general_timezone: "Służy do określania używanej strefy czasowej (na przykład, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, itp). Podaj „SYSTEM”, aby PHP mógł to zrobić automatycznie."
 config_general_truncate: "Obciąć pliki dziennika, gdy osiągną określony rozmiar? Wartość to maksymalny rozmiar w B/KB/MB/GB/TB, do którego plik dziennika może się powiększyć, zanim zostanie obcięty. Domyślna wartość 0KB wyłącza obcinanie (pliki dziennika mogą rosnąć w nieskończoność). Uwaga: Dotyczy pojedynczych plików dziennika! Rozmiar plików dziennika nie jest rozpatrywany łącznie."
-config_hcaptcha: "Konfiguracja HCaptcha (zapewnia ludziom możliwość odzyskania dostępu po zablokowaniu)."
+config_hcaptcha: "Konfiguracja hCaptcha (zapewnia ludziom możliwość odzyskania dostępu po zablokowaniu)."
 config_hcaptcha_api: &CaptchaAPI "Którego interfejsu API użyć?"
 config_hcaptcha_expiry: &CaptchaExpiry "Liczba godzin do zapamiętania instancji CAPTCHA. Domyślna = 720 (1 miesiąc)."
 config_hcaptcha_lockip: &CaptchaLockIP "Przywiąż CAPTCHA do adresów IP?"
@@ -171,7 +171,7 @@ config_rate_limiting_max_requests: "Maksymalna liczba żądań w dozwolonym czas
 config_rate_limiting_precision_ipv4: "Precyzja wykorzystywana do śledzenia użycia IPv4. Wartość odzwierciedla rozmiar bloku CIDR. Ustaw na 32 dla najlepszej precyzji. Domyślna = 32."
 config_rate_limiting_precision_ipv6: "Precyzja wykorzystywana do śledzenia użycia IPv6. Wartość odzwierciedla rozmiar bloku CIDR. Ustaw na 128 dla najlepszej precyzji. Domyślna = 128."
 config_rate_limiting_segregate: "Czy kontyngenty dla różnych domen i hostów powinny być segregowane czy dzielone? True = Kontyngenty będą segregowane. False = Kontyngenty będą dzielone [Domyślna]."
-config_recaptcha: "Konfiguracja ReCaptcha (zapewnia ludziom możliwość odzyskania dostępu po zablokowaniu)."
+config_recaptcha: "Konfiguracja reCAPTCHA (zapewnia ludziom możliwość odzyskania dostępu po zablokowaniu)."
 config_recaptcha_api: *CaptchaAPI
 config_recaptcha_expiry: *CaptchaExpiry
 config_recaptcha_lockip: *CaptchaLockIP
@@ -390,8 +390,8 @@ label_aux_special: "Inne opcje i specjalne flagi:"
 label_aux_special_default_state: "Zostaw to tak, jak jest (nie ustawiaj niczego)"
 label_aux_special_disable: "Wyłącz tę regułę"
 label_aux_special_enable: "Włącz tę regułę"
-label_aux_special_hcaptcha_disable: "Wymuś wyłączenie HCaptcha"
-label_aux_special_hcaptcha_mark: "Oznacz do użytku z HCaptcha"
+label_aux_special_hcaptcha_disable: "Wymuś wyłączenie hCaptcha"
+label_aux_special_hcaptcha_mark: "Oznacz do użytku z hCaptcha"
 label_aux_special_ip_tracking_disable: "Wymuś wyłączenie śledzenia IP"
 label_aux_special_ip_tracking_enable: "Wymuszenie włączenia śledzenia IP"
 label_aux_special_recaptcha_disable: "Wymuś wyłączenie reCAPTCHA"

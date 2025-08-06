@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2025.07.08).
+# This file: Spanish language data for the front-end (last modified: 2025.08.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -144,7 +144,7 @@ config_general_time_format: "El formato de notación de fecha/hora usado por CID
 config_general_time_offset: "Desplazamiento del huso horario en minutos."
 config_general_timezone: "Esto se usa para especificar la zona horaria a usar (por ejemplo, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, etc). Especifique "SYSTEM" para permitir que PHP maneje esto automáticamente."
 config_general_truncate: "¿Truncar archivos de registro cuando alcanzan cierto tamaño? Valor es el tamaño máximo en B/KB/MB/GB/TB que un archivo de registro puede crecer antes de ser truncado. El valor predeterminado de 0KB deshabilita el truncamiento (archivos de registro pueden crecer indefinidamente). Nota: ¡Se aplica a archivos de registro individuales! El tamaño de los archivos de registro no se considera colectivamente."
-config_hcaptcha: "Configuración para HCaptcha (proporciona una forma para que los humanos recuperen el acceso cuando están bloqueados)."
+config_hcaptcha: "Configuración para hCaptcha (proporciona una forma para que los humanos recuperen el acceso cuando están bloqueados)."
 config_hcaptcha_api: &CaptchaAPI "¿Qué API usar?"
 config_hcaptcha_expiry: &CaptchaExpiry "Número de horas para recordar instancias de CAPTCHA. Predefinido = 720 (1 mes)."
 config_hcaptcha_lockip: &CaptchaLockIP "Ligar CAPTCHA a los IPs?"
@@ -171,7 +171,7 @@ config_rate_limiting_max_requests: "El número máximo de solicitudes permitido 
 config_rate_limiting_precision_ipv4: "La precisión a utilizar cuando se monitorea el uso de IPv4. El valor refleja el tamaño del bloque CIDR. Establecer en 32 para la mejor precisión. Predefinido = 32."
 config_rate_limiting_precision_ipv6: "La precisión a utilizar cuando se monitorea el uso de IPv6. El valor refleja el tamaño del bloque CIDR. Establecer en 128 para la mejor precisión. Predefinido = 128."
 config_rate_limiting_segregate: "¿Deberían segregarse o compartirse las cuotas para diferentes dominios y hosts? True = Las cuotas serán segregadas. False = Las cuotas serán compartidas [Predefinido]."
-config_recaptcha: "Configuración para ReCaptcha (proporciona una forma para que los humanos recuperen el acceso cuando están bloqueados)."
+config_recaptcha: "Configuración para reCAPTCHA (proporciona una forma para que los humanos recuperen el acceso cuando están bloqueados)."
 config_recaptcha_api: *CaptchaAPI
 config_recaptcha_expiry: *CaptchaExpiry
 config_recaptcha_lockip: *CaptchaLockIP
@@ -389,8 +389,8 @@ label_aux_special: "Otras opciones y banderas especiales:"
 label_aux_special_default_state: "Déjelo como está (no configure nada)"
 label_aux_special_disable: "Deshabilitar esta regla"
 label_aux_special_enable: "Habilitar esta regla"
-label_aux_special_hcaptcha_disable: "Desactivar a la fuerza HCaptcha"
-label_aux_special_hcaptcha_mark: "Marca para usar con HCaptcha"
+label_aux_special_hcaptcha_disable: "Desactivar a la fuerza hCaptcha"
+label_aux_special_hcaptcha_mark: "Marca para usar con hCaptcha"
 label_aux_special_ip_tracking_disable: "Desactivar a la fuerza el rastreo IP"
 label_aux_special_ip_tracking_enable: "Activar a la fuerza el rastreo IP"
 label_aux_special_recaptcha_disable: "Desactivar a la fuerza reCAPTCHA"

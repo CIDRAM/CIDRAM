@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2025.07.08).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2025.08.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -47,7 +47,7 @@ Extended Description module_bgpview.php: "利用{{Links.BGPView}} API為CIDRAM�
 Extended Description module_botua.php: "阻止不需要的機器人和惡意活動相關聯的用戶代理。"
 Extended Description module_cookies.php: "提供一些針對危險cookie的有限保護。"
 Extended Description module_extras.php: "提供一些有限的保護針對各種攻擊向量常用於請求。"
-Extended Description module_httpver.php: "通過CIDRAM配置可以阻止特定的協議和HTTP版本。"
+Extended Description module_httpver.php: "通過CIDRAM配置可以阻止特定的協定和HTTP版本。"
 Extended Description module_projecthoneypot.php: "阻止來自Project Honeypot列出的IP的請求。"
 Extended Description module_refspam.php: "基於引薦來源垃圾郵件阻止通常不會提供任何有意義的安全利益，但在某些情況下，對某些用戶可能有用，用於收集有關請求的更多信息，以及能夠報告它。"
 Extended Description module_sfs.php: "防止通過SFS列出的IP位址訪問註冊和登錄頁面。"
@@ -91,7 +91,7 @@ config_PHPMailer_set_from_address: "通過SMTP發送電子郵件時引用的發�
 config_PHPMailer_set_from_name: "通過SMTP發送電子郵件時引用的發件人姓名。"
 config_PHPMailer_skip_auth_process: "將此指令設置為<code>true</code>會指示PHPMailer跳過通過SMTP發送電子郵件時通常會發生的正常身份驗證過程。​應該避免這種情況，因為跳過此過程可能會將出站電子郵件暴露給MITM攻擊，但在此過程阻止PHPMailer連接到SMTP服務器的情況下可能是必要的。"
 config_PHPMailer_smtp_auth: "此指令確定是否對SMTP會話進行身份驗證（通常應該保持不變）。"
-config_PHPMailer_smtp_secure: "通過SMTP發送電子郵件時使用的協議（TLS或SSL）。"
+config_PHPMailer_smtp_secure: "通過SMTP發送電子郵件時使用的協定（TLS或SSL）。"
 config_PHPMailer_username: "通過SMTP發送電子郵件時使用的使用者名稱。"
 config_bypasses: "默認簽名繞過配置。"
 config_bypasses_used: "應該使用哪些繞過？"
@@ -171,7 +171,7 @@ config_rate_limiting_max_requests: "在為將來的請求啟用速率限制之�
 config_rate_limiting_precision_ipv4: "監視IPv4使用時的精度。​值鏡像CIDR塊大小。​設置為32以獲得最佳精度。​標準=32。"
 config_rate_limiting_precision_ipv6: "監視IPv6使用時的精度。​值鏡像CIDR塊大小。​設置為128以獲得最佳精度。​標準=128。"
 config_rate_limiting_segregate: "域名和主機的配額應該分開還是共享？ True = 配額將被分開。 False = 配額將被共享【標準】。"
-config_recaptcha: "ReCaptcha的配置（為人們提供了一種在受阻時重新獲得訪問權限的方法）。"
+config_recaptcha: "ReCAPTCHA的配置（為人們提供了一種在受阻時重新獲得訪問權限的方法）。"
 config_recaptcha_api: *CaptchaAPI
 config_recaptcha_expiry: *CaptchaExpiry
 config_recaptcha_lockip: *CaptchaLockIP
@@ -388,8 +388,8 @@ label_aux_special: "其他選項和特殊標誌："
 label_aux_special_default_state: "保持原樣（不設置任何內容）"
 label_aux_special_disable: "禁用此規則"
 label_aux_special_enable: "啟用此規則"
-label_aux_special_hcaptcha_disable: "強制禁用HCaptcha"
-label_aux_special_hcaptcha_mark: "標記為與HCaptcha一起使用"
+label_aux_special_hcaptcha_disable: "強制禁用hCaptcha"
+label_aux_special_hcaptcha_mark: "標記為與hCaptcha一起使用"
 label_aux_special_ip_tracking_disable: "強制禁用IP跟踪"
 label_aux_special_ip_tracking_enable: "強制啟用IP跟踪"
 label_aux_special_recaptcha_disable: "強制禁用reCAPTCHA"

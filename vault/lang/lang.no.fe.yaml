@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2025.07.08).
+# This file: Norwegian language data for the front-end (last modified: 2025.08.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -144,7 +144,7 @@ config_general_time_format: "Dato/tid notasjonsformat som brukes av CIDRAM. Ytte
 config_general_time_offset: "Tidssone forskjøvet i minutter."
 config_general_timezone: "Dette brukes til å spesifisere tidssonen som skal brukes (f.eks., Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, osv). Spesifiser «SYSTEM» for å la PHP håndtere dette for deg automatisk."
 config_general_truncate: "Skjær loggfiler når de kommer til en viss størrelse? Verdi er den maksimale størrelsen i B/KB/MB/GB/TB som en loggfil kan vokse til før den blir avkortet. Standardverdi på 0KB deaktiverer avkorting (loggfilene kan vokse på ubestemt tid). Merk: Gjelder for individuelle loggfiler! Størrelsen på loggfiler anses ikke kollektivt."
-config_hcaptcha: "Konfigurasjon for HCaptcha (gir en måte for mennesker å gjenvinne tilgang når de blokkeres)."
+config_hcaptcha: "Konfigurasjon for hCaptcha (gir en måte for mennesker å gjenvinne tilgang når de blokkeres)."
 config_hcaptcha_api: &CaptchaAPI "Hvilken API skal du bruke?"
 config_hcaptcha_expiry: &CaptchaExpiry "Antall timer for å huske CAPTCHA-forekomster. Standardverdi = 720 (1 måned)."
 config_hcaptcha_lockip: &CaptchaLockIP "Lås CAPTCHA til IP-adresser?"
@@ -171,7 +171,7 @@ config_rate_limiting_max_requests: "Maksimalt antall forespørsler tillatt innen
 config_rate_limiting_precision_ipv4: "Presisjonen som skal brukes til å spore IPv4-bruk. Verdi speiler CIDR-blokkstørrelse. Sett til 32 for best presisjon. Standardverdi = 32."
 config_rate_limiting_precision_ipv6: "Presisjonen som skal brukes til å spore IPv6-bruk. Verdi speiler CIDR-blokkstørrelse. Sett til 128 for best presisjon. Standardverdi = 128."
 config_rate_limiting_segregate: "Bør kvoter for forskjellige domener og verter adskilles eller deles? True = Kvoter vil bli adskilt. False = Kvoter vil bli delt [Standardverdi]."
-config_recaptcha: "Konfigurasjon for ReCaptcha (gir en måte for mennesker å gjenvinne tilgang når de blokkeres)."
+config_recaptcha: "Konfigurasjon for reCAPTCHA (gir en måte for mennesker å gjenvinne tilgang når de blokkeres)."
 config_recaptcha_api: *CaptchaAPI
 config_recaptcha_expiry: *CaptchaExpiry
 config_recaptcha_lockip: *CaptchaLockIP
@@ -387,8 +387,8 @@ label_aux_special: "Andre opsjoner og spesielle flagg:"
 label_aux_special_default_state: "La det være som det er (ikke sett noe)"
 label_aux_special_disable: "Deaktiver denne regelen"
 label_aux_special_enable: "Aktiver denne regelen"
-label_aux_special_hcaptcha_disable: "Deaktiver HCaptcha med makt"
-label_aux_special_hcaptcha_mark: "Merk for bruk med HCaptcha"
+label_aux_special_hcaptcha_disable: "Deaktiver hCaptcha med makt"
+label_aux_special_hcaptcha_mark: "Merk for bruk med hCaptcha"
 label_aux_special_ip_tracking_disable: "Deaktiver IP-sporing med makt"
 label_aux_special_ip_tracking_enable: "Aktiver IP-sporing med makt"
 label_aux_special_recaptcha_disable: "Deaktiver reCAPTCHA med makt"

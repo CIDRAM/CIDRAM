@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2025.07.08).
+# This file: Indonesian language data for the front-end (last modified: 2025.08.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -144,7 +144,7 @@ config_general_time_format: "Format notasi tanggal/waktu yang digunakan oleh CID
 config_general_time_offset: "Offset zona waktu dalam hitungan menit."
 config_general_timezone: "Ini digunakan untuk menentukan zona waktu yang akan digunakan (misalnya, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, dll). Menentukan "SYSTEM" untuk membiarkan PHP menangani ini untuk Anda secara otomatis."
 config_general_truncate: "Memotong file log ketika mereka mencapai ukuran tertentu? Nilai adalah ukuran maksimum dalam B/KB/MB/GB/TB yang bisa ditambahkan untuk file log sebelum dipotong. Nilai default 0KB menonaktifkan pemotongan (file log dapat tumbuh tanpa batas waktu). Catat: Berlaku untuk file log individu! Ukuran file log tidak dianggap secara kolektif."
-config_hcaptcha: "Konfigurasi untuk HCaptcha (menyediakan cara bagi manusia untuk mendapatkan kembali akses ketika diblokir)."
+config_hcaptcha: "Konfigurasi untuk hCaptcha (menyediakan cara bagi manusia untuk mendapatkan kembali akses ketika diblokir)."
 config_hcaptcha_api: &CaptchaAPI "API mana yang akan digunakan?"
 config_hcaptcha_expiry: &CaptchaExpiry "Jumlah jam untuk mengingat instansi CAPTCHA. Default = 720 (1 bulan)."
 config_hcaptcha_lockip: &CaptchaLockIP "Kunci CAPTCHA ke IP?"
@@ -171,7 +171,7 @@ config_rate_limiting_max_requests: "Jumlah maksimum permintaan yang diizinkan da
 config_rate_limiting_precision_ipv4: "Presisi yang akan digunakan saat memonitor penggunaan IPv4. Nilai mencerminkan ukuran blok CIDR. Atur ke 32 untuk presisi terbaik. Default = 32."
 config_rate_limiting_precision_ipv6: "Presisi yang akan digunakan saat memonitor penggunaan IPv6. Nilai mencerminkan ukuran blok CIDR. Atur ke 128 untuk presisi terbaik. Default = 128."
 config_rate_limiting_segregate: "Haruskah kuota untuk domain dan host yang berbeda dipisahkan atau dibagikan? True = Kuota akan dipisahkan. False = Kuota akan dibagikan [Default]."
-config_recaptcha: "Konfigurasi untuk ReCaptcha (menyediakan cara bagi manusia untuk mendapatkan kembali akses ketika diblokir)."
+config_recaptcha: "Konfigurasi untuk reCAPTCHA (menyediakan cara bagi manusia untuk mendapatkan kembali akses ketika diblokir)."
 config_recaptcha_api: *CaptchaAPI
 config_recaptcha_expiry: *CaptchaExpiry
 config_recaptcha_lockip: *CaptchaLockIP
@@ -387,8 +387,8 @@ label_aux_special: "Opsi lain dan bendera khusus:"
 label_aux_special_default_state: "Biarkan apa adanya (jangan atur apapun)"
 label_aux_special_disable: "Nonaktifkan aturan ini"
 label_aux_special_enable: "Aktifkan aturan ini"
-label_aux_special_hcaptcha_disable: "Nonaktifkan HCaptcha secara paksa"
-label_aux_special_hcaptcha_mark: "Tandai untuk digunakan dengan HCaptcha"
+label_aux_special_hcaptcha_disable: "Nonaktifkan hCaptcha secara paksa"
+label_aux_special_hcaptcha_mark: "Tandai untuk digunakan dengan hCaptcha"
 label_aux_special_ip_tracking_disable: "Nonaktifkan pelacakan IP secara paksa"
 label_aux_special_ip_tracking_enable: "Aktifkan pelacakan IP secara paksa"
 label_aux_special_recaptcha_disable: "Nonaktifkan reCAPTCHA secara paksa"

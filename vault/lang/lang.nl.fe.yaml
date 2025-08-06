@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2025.02.17).
+# This file: Dutch language data for the front-end (last modified: 2025.08.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -142,7 +142,7 @@ config_general_timeFormat: "De datum notatie gebruikt door CIDRAM. Extra opties 
 config_general_timeOffset: "Tijdzone offset in minuten."
 config_general_timezone: "Dit wordt gebruikt om de te gebruiken tijdzone op te geven (b.v., Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, enz). Geef "SYSTEM" op om PHP dit automatisch voor u te laten afhandelen."
 config_general_truncate: "Trunceren logbestanden wanneer ze een bepaalde grootte bereiken? Waarde is de maximale grootte in B/KB/MB/GB/TB dat een logbestand kan groeien tot voordat het wordt getrunceerd. De standaardwaarde van 0KB schakelt truncatie uit (logbestanden kunnen onbepaald groeien). Notitie: Van toepassing op individuele logbestanden! De grootte van de logbestanden wordt niet collectief beschouwd."
-config_hcaptcha: "Configuratie voor HCaptcha (biedt een manier voor mensen om toegang te krijgen wanneer ze worden geblokkeerd)."
+config_hcaptcha: "Configuratie voor hCaptcha (biedt een manier voor mensen om toegang te krijgen wanneer ze worden geblokkeerd)."
 config_hcaptcha_api: &CaptchaAPI "Welke API gebruiken?"
 config_hcaptcha_expiry: &CaptchaExpiry "Aantal uren om CAPTCHA instanties herinneren. Standaard = 720 (1 maand)."
 config_hcaptcha_lockip: &CaptchaLockIP "Binden CAPTCHA om IP's?"
@@ -169,7 +169,7 @@ config_rate_limiting_max_requests: "Het maximale aantal toegestane verzoeken bin
 config_rate_limiting_precision_ipv4: "De precisie om te gebruiken bij het monitoren op het gebruik van IPv4. Waarde weerspiegelt de CIDR-blokgrootte. Stel in op 32 voor de beste precisie. Standaard = 32."
 config_rate_limiting_precision_ipv6: "De precisie om te gebruiken bij het monitoren op het gebruik van IPv6. Waarde weerspiegelt de CIDR-blokgrootte. Stel in op 128 voor de beste precisie. Standaard = 128."
 config_rate_limiting_segregate: "Moeten quota voor verschillende domeinen en hosts worden gescheiden of gedeeld? True = Quota zullen worden gescheiden. False = Quota zullen worden gedeeld [Standaard]."
-config_recaptcha: "Configuratie voor ReCaptcha (biedt een manier voor mensen om toegang te krijgen wanneer ze worden geblokkeerd)."
+config_recaptcha: "Configuratie voor reCAPTCHA (biedt een manier voor mensen om toegang te krijgen wanneer ze worden geblokkeerd)."
 config_recaptcha_api: *CaptchaAPI
 config_recaptcha_expiry: *CaptchaExpiry
 config_recaptcha_lockip: *CaptchaLockIP
@@ -387,8 +387,8 @@ label_aux_special: "Andere opties en speciale vlaggen:"
 label_aux_special_default_state: "Laat het zoals het is (stel niets in)"
 label_aux_special_disable: "Schakel deze regel uit"
 label_aux_special_enable: "Schakel deze regel in"
-label_aux_special_hcaptcha_disable: "Schakel HCaptcha gedwongen uit"
-label_aux_special_hcaptcha_mark: "Markeer voor gebruik met HCaptcha"
+label_aux_special_hcaptcha_disable: "Schakel hCaptcha gedwongen uit"
+label_aux_special_hcaptcha_mark: "Markeer voor gebruik met hCaptcha"
 label_aux_special_ip_tracking_disable: "Schakel IP-tracking gedwongen uit"
 label_aux_special_ip_tracking_enable: "Schakel IP-tracking gedwongen in"
 label_aux_special_recaptcha_disable: "Schakel reCAPTCHA gedwongen uit"

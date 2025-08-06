@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: HCaptcha class (last modified: 2025.04.22).
+ * This file: HCaptcha class (last modified: 2025.08.06).
  */
 
 namespace CIDRAM\Core;
@@ -40,7 +40,7 @@ class HCaptcha extends Captcha
             $this->CIDRAM['ClearExpired']($HastList, $HastListModified);
 
             /**
-             * Determine whether a HCaptcha instance has already been completed by the
+             * Determine whether a hCaptcha instance has already been completed by the
              * user and populate relevant variables.
              */
             if (!empty($_COOKIE['CIDRAM']) && $Split = strpos($_COOKIE['CIDRAM'], ',')) {
@@ -108,7 +108,7 @@ class HCaptcha extends Captcha
                 }
 
                 /**
-                 * HCaptcha template data included if HCaptcha isn't being bypassed.
+                 * HCaptcha template data included if hCaptcha isn't being bypassed.
                  * Note: Cookie warning IS included here due to expected behaviour when lockuser is TRUE.
                  */
                 $this->generateContainer(
@@ -137,7 +137,7 @@ class HCaptcha extends Captcha
             $this->CIDRAM['ClearExpired']($BypassList, $BypassListModified);
 
             /**
-             * Verify whether a HCaptcha instance has already been completed before
+             * Verify whether a hCaptcha instance has already been completed before
              * for the current IP, populate relevant variables, and generate fields.
              */
             if (strpos($BypassList, "\n" . $this->CIDRAM['IPAddr'] . ',') !== false) {
@@ -167,7 +167,7 @@ class HCaptcha extends Captcha
                 }
 
                 /**
-                 * HCaptcha template data included if HCaptcha isn't being bypassed.
+                 * HCaptcha template data included if hCaptcha isn't being bypassed.
                  * Note: Cookie warning is NOT included here due to expected behaviour when lockuser is FALSE.
                  */
                 $this->generateContainer(false, $this->CIDRAM['Config']['hcaptcha']['show_api_message']);
@@ -217,7 +217,7 @@ class HCaptcha extends Captcha
     }
 
     /**
-     * Generate HCaptcha form template data.
+     * Generate hCaptcha form template data.
      *
      * @param string $SiteKey The sitekey to use.
      * @param string $API The API to use.
@@ -231,7 +231,7 @@ class HCaptcha extends Captcha
             'Content-Security-Policy: default-src \'none\'; connect-src %1$s; frame-src %1$s; script-src %1$s \'unsafe-inline\'; style-src \'unsafe-inline\';',
             '\'self\' https://assets.hcaptcha.com https://hcaptcha.com https://newassets.hcaptcha.com/'
         ));
-        $Script = '<script src="https://hcaptcha.com/1/api.js?onload=onloadCallback&render=explicit" async defer></script>';
+        $Script = '<script src="https://hcaptcha.com/1/api.js?onload=onloadHCaptcha&render=explicit" async defer></script>';
         $Script .= '<script type="text/javascript">document.getElementById(\'hostnameoverride\').value=window.location.hostname;</script>';
         return $API === 'Invisible' ? sprintf(
             "\n<hr />\n<p class=\"detected\">%s%s<br /></p>\n" .
@@ -263,7 +263,7 @@ class HCaptcha extends Captcha
     }
 
     /**
-     * Generate HCaptcha callback data.
+     * Generate hCaptcha callback data.
      *
      * @param string $SiteKey The sitekey to use.
      * @param string $API The API to use.
@@ -272,21 +272,22 @@ class HCaptcha extends Captcha
     private function generateCallbackData($SiteKey, $API)
     {
         return sprintf(
-            "\n  <script type=\"text/javascript\">var onloadCallback=function(){window.document.hcwidget=hcaptcha.render(%s)%s}</script>",
-            "'hcform',{sitekey:'" . $SiteKey . "',theme:'" . $this->determineTheme() . "'}",
-            ($API === 'Invisible') ? ';hcaptcha.execute()' : ''
+            "\n  <script type=\"text/javascript\">var onloadHCaptcha=function(){window.document.hcwidget=hcaptcha.render('hcform',{sitekey:'%s',theme:'%s'})%s}</script>",
+            $SiteKey,
+            $this->determineTheme(),
+            $API === 'Invisible' ? ';hcaptcha.execute()' : ''
         );
     }
 
     /**
-     * Fetch results from the HCaptcha API.
-     * @link https://docs.hcaptcha.com/switch
+     * Fetch results from the hCaptcha API.
+     * @link https://docs.hcaptcha.com/
      *
      * @return void
      */
     private function doResponse()
     {
-        $this->Results = $this->CIDRAM['Request']('https://hcaptcha.com/siteverify', [
+        $this->Results = $this->CIDRAM['Request']('https://api.hcaptcha.com/siteverify', [
             'secret' => $this->CIDRAM['Config']['hcaptcha']['secret'],
             'response' => $_POST['hc-response'],
             'remoteip' => $this->CIDRAM['IPAddr']

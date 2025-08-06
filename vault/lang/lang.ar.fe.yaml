@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2025.02.17).
+# This file: Arabic language data for the front-end (last modified: 2025.08.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -140,7 +140,7 @@ config_general_timeFormat: "شكل التواريخ المستخدم من قبل
 config_general_timeOffset: "المنطقة الزمنية تعويض في غضون دقائق."
 config_general_timezone: "يتم استخدام هذا لتحديد المنطقة الزمنية للاستخدام (على سبيل المثال، Africa/Cairo، America/New_York، Asia/Tokyo، Australia/Perth، Europe/Berlin، Pacific/Guam، إلخ). حدد "SYSTEM" للسماح لـ PHP بمعالجة هذا الأمر تلقائيًا."
 config_general_truncate: "اقتطاع ملفات السجل عندما تصل إلى حجم معين؟ القيمة هي الحجم الأقصى في بايت/كيلوبايت/ميغابايت/غيغابايت/تيرابايت الذي قد ينمو ملفات السجل إلى قبل اقتطاعه. القيمة الافتراضية 0KB تعطيل اقتطاع (ملفات السجل يمكن أن تنمو إلى أجل غير مسمى). ملاحظة: ينطبق على ملفات السجل الفردية! ولا يعتبر حجمها جماعيا."
-config_hcaptcha: "التكوين ل HCaptcha (يوفر وسيلة للبشر لاستعادة الوصول عند حجبه)."
+config_hcaptcha: "التكوين ل hCaptcha (يوفر وسيلة للبشر لاستعادة الوصول عند حجبه)."
 config_hcaptcha_api: &CaptchaAPI "أي API لاستخدام؟"
 config_hcaptcha_expiry: &CaptchaExpiry "عدد الساعات لنتذكر حالات اختبار CAPTCHA. الافتراضي = 720 (١ شهر)."
 config_hcaptcha_lockip: &CaptchaLockIP "القفل CAPTCHA إلى IP؟"
@@ -167,7 +167,7 @@ config_rate_limiting_max_requests: "الحد الأقصى لعدد الطلبا�
 config_rate_limiting_precision_ipv4: "الدقة المستخدمة عند مراقبة استخدام IPv4. قيمة تعكس حجم كتلة CIDR. تعيين إلى 32 للحصول على أفضل دقة. افتراضي = 32."
 config_rate_limiting_precision_ipv6: "الدقة المستخدمة عند مراقبة استخدام IPv6. قيمة تعكس حجم كتلة CIDR. تعيين إلى 128 للحصول على أفضل دقة. افتراضي = 128."
 config_rate_limiting_segregate: "هل يجب فصل أو مشاركة الحصص الخاصة بالمجالات والمضيفين المختلفين؟ True = سيتم فصل الحصص. False = سيتم تقاسم الحصص [افتراضي]."
-config_recaptcha: "التكوين ل ReCaptcha (يوفر وسيلة للبشر لاستعادة الوصول عند حجبه)."
+config_recaptcha: "التكوين ل reCAPTCHA (يوفر وسيلة للبشر لاستعادة الوصول عند حجبه)."
 config_recaptcha_api: *CaptchaAPI
 config_recaptcha_expiry: *CaptchaExpiry
 config_recaptcha_lockip: *CaptchaLockIP
@@ -383,8 +383,8 @@ label_aux_special: "خيارات أخرى وأعلام خاصة:"
 label_aux_special_default_state: "اتركه كما هو (لا تضع أي شيء)"
 label_aux_special_disable: "قم بتعطيل هذه القاعدة"
 label_aux_special_enable: "قم بتمكين هذه القاعدة"
-label_aux_special_hcaptcha_disable: "قم بتعطيل HCaptcha بالقوة"
-label_aux_special_hcaptcha_mark: "ضع علامة للاستخدام مع HCaptcha"
+label_aux_special_hcaptcha_disable: "قم بتعطيل hCaptcha بالقوة"
+label_aux_special_hcaptcha_mark: "ضع علامة للاستخدام مع hCaptcha"
 label_aux_special_ip_tracking_disable: "قم بتعطيل تتبع IP بالقوة"
 label_aux_special_ip_tracking_enable: "قم بتمكين تتبع IP بالقوة"
 label_aux_special_recaptcha_disable: "قم بتعطيل reCAPTCHA بالقوة"
@@ -397,7 +397,7 @@ label_aux_special_tracking_extended: "فرض خيارات تتبع IP الموس
 label_aux_target: "مكان إعادة توجيه الطلب:"
 label_aux_webhooks: "تطبيق webhooks للتطبيق عند استيفاء متطلبات القاعدة:"
 label_backup_location: "مواقع النسخ الاحتياطي مستودع (في حالة الطوارئ، أو إذا فشل كل شيء آخر):"
-label_banned: "طلبات محظورة "
+label_banned: "طلبات محظورة"
 label_blocked: "الطلبات المحظورة"
 label_branch: "فرع أحدث مستقرة:"
 label_captcha: "محاولات CAPTCHA"

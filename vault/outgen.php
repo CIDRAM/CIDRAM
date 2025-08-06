@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2025.07.12).
+ * This file: Output generator (last modified: 2025.08.06).
  */
 
 /** Initialise cache. */
@@ -391,7 +391,7 @@ if (
             )
         )
     ) {
-        /** Execute the ReCaptcha class. */
+        /** Execute the reCAPTCHA class. */
         $CIDRAM['CaptchaDone'] = new \CIDRAM\Core\ReCaptcha($CIDRAM);
     } elseif (
         !empty($CIDRAM['Config']['hcaptcha']['sitekey']) &&
@@ -410,7 +410,7 @@ if (
             )
         )
     ) {
-        /** Execute the HCaptcha class. */
+        /** Execute the hCaptcha class. */
         $CIDRAM['CaptchaDone'] = new \CIDRAM\Core\HCaptcha($CIDRAM);
     }
 }
@@ -932,7 +932,7 @@ if (empty($CIDRAM['CaptchaDone']) && empty($CIDRAM['Whitelisted']) && empty($CID
         class_exists('\CIDRAM\Core\ReCaptcha') &&
         ($CIDRAM['Config']['recaptcha']['usemode'] >= 3 && $CIDRAM['Config']['recaptcha']['usemode'] <= 5)
     ) {
-        /** Execute the ReCaptcha class. */
+        /** Execute the reCAPTCHA class. */
         $CIDRAM['CaptchaDone'] = new \CIDRAM\Core\ReCaptcha($CIDRAM);
 
         $CIDRAM['StatusCodeForNonBlocked'] = $CIDRAM['Config']['recaptcha']['nonblocked_status_code'];
@@ -942,7 +942,7 @@ if (empty($CIDRAM['CaptchaDone']) && empty($CIDRAM['Whitelisted']) && empty($CID
         class_exists('\CIDRAM\Core\HCaptcha') &&
         ($CIDRAM['Config']['hcaptcha']['usemode'] >= 3 && $CIDRAM['Config']['hcaptcha']['usemode'] <= 5)
     ) {
-        /** Execute the HCaptcha class. */
+        /** Execute the hCaptcha class. */
         $CIDRAM['CaptchaDone'] = new \CIDRAM\Core\HCaptcha($CIDRAM);
 
         $CIDRAM['StatusCodeForNonBlocked'] = $CIDRAM['Config']['hcaptcha']['nonblocked_status_code'];

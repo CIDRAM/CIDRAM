@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2025.02.17).
+# This file: English language data for the front-end (last modified: 2025.08.06).
 ##/
 
 Extended Description Bypasses: "The default signature bypass files normally included with the main package."
@@ -128,7 +128,7 @@ config_general_timeFormat: "The date/time notation format used by CIDRAM. Additi
 config_general_timeOffset: "Timezone offset in minutes."
 config_general_timezone: "This is used to specify the timezone to use (e.g., Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, etc). Specify "SYSTEM" to let PHP handle this for you automatically."
 config_general_truncate: "Truncate log files when they reach a certain size? Value is the maximum size in B/KB/MB/GB/TB that a log file may grow to before being truncated. The default value of 0KB disables truncation (log files can grow indefinitely). Note: Applies to individual log files! The size of log files is not considered collectively."
-config_hcaptcha: "Configuration for HCaptcha (provides a way for humans to regain access when blocked)."
+config_hcaptcha: "Configuration for hCaptcha (provides a way for humans to regain access when blocked)."
 config_hcaptcha_api: &CaptchaAPI "Which API to use?"
 config_hcaptcha_expiry: &CaptchaExpiry "Number of hours to remember CAPTCHA instances. Default = 720 (1 month)."
 config_hcaptcha_lockip: &CaptchaLockIP "Lock CAPTCHA to IPs?"
@@ -155,7 +155,7 @@ config_rate_limiting_max_requests: "The maximum number of requests allowed withi
 config_rate_limiting_precision_ipv4: "The precision to use for tracking IPv4 usage. Value mirrors CIDR block size. Set to 32 for best precision. Default = 32."
 config_rate_limiting_precision_ipv6: "The precision to use for tracking IPv6 usage. Value mirrors CIDR block size. Set to 128 for best precision. Default = 128."
 config_rate_limiting_segregate: "Should quotas for different domains and hosts be segregated or shared? True = Quotas will be segregated. False = Quotas will be shared [Default]."
-config_recaptcha: "Configuration for ReCaptcha (provides a way for humans to regain access when blocked)."
+config_recaptcha: "Configuration for reCAPTCHA (provides a way for humans to regain access when blocked)."
 config_recaptcha_api: *CaptchaAPI
 config_recaptcha_expiry: *CaptchaExpiry
 config_recaptcha_lockip: *CaptchaLockIP
@@ -373,7 +373,7 @@ label_aux_special_default_state: "Leave it as is (don't set anything)"
 label_aux_special_disable: "Disable this rule"
 label_aux_special_enable: "Enable this rule"
 label_aux_special_hcaptcha_disable: "Forcibly disable HCaptcha"
-label_aux_special_hcaptcha_mark: "Mark for use with HCaptcha"
+label_aux_special_hcaptcha_mark: "Mark for use with hCaptcha"
 label_aux_special_ip_tracking_disable: "Forcibly disable IP tracking"
 label_aux_special_ip_tracking_enable: "Forcibly enable IP tracking"
 label_aux_special_recaptcha_disable: "Forcibly disable reCAPTCHA"

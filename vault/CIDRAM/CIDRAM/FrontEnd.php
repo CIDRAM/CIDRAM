@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2025.05.08).
+ * This file: The CIDRAM front-end (last modified: 2025.08.07).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -650,16 +650,8 @@ class FrontEnd extends Core
                 if (empty($RemoteYAMLCIDRAMArray['Stable'])) {
                     $this->FE['info_cidram_stable'] = $this->L10N->getString('response.Error');
                 } else {
-                    $this->FE['MajorVersionCurrent'] = (int)substr(
-                        $this->ScriptVersion,
-                        0,
-                        strpos($this->ScriptVersion, '.') ?: strlen($this->ScriptVersion)
-                    );
-                    $this->FE['MajorVersionLatest'] = (int)substr(
-                        $RemoteYAMLCIDRAMArray['Stable'],
-                        0,
-                        strpos($RemoteYAMLCIDRAMArray['Stable'], '.') ?: strlen($RemoteYAMLCIDRAMArray['Stable'])
-                    );
+                    $this->FE['MajorVersionCurrent'] = (int)substr($this->ScriptVersion, 0, strpos($this->ScriptVersion, '.') ?: strlen($this->ScriptVersion));
+                    $this->FE['MajorVersionLatest'] = (int)substr($RemoteYAMLCIDRAMArray['Stable'], 0, strpos($RemoteYAMLCIDRAMArray['Stable'], '.') ?: strlen($RemoteYAMLCIDRAMArray['Stable']));
                     if (
                         $this->FE['MajorVersionCurrent'] < $this->FE['MajorVersionLatest'] &&
                         !empty($RemoteYAMLCIDRAMArray['Stable Minimum PHP Required']) &&

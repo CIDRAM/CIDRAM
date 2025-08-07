@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese language data for the front-end (last modified: 2025.08.06).
+# This file: Chinese language data for the front-end (last modified: 2025.08.07).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -954,7 +954,9 @@ msg_template_2fa:
  用於登錄CIDRAM前端的2FA代碼：</p>
  <h1>%s</h1>
  <p>此代碼將在10分鐘後到期。</p></center>
-notice_new_major_version: {"zh-Hans": "通知：%s现在可用（您正在使用%s）。​您满足此版本的最低PHP要求。​但是，需要一些手动步骤来更新。", "zh-Hant": "通知：%s現在可用（您正在使用%s）。​您滿足此版本的最低PHP要求。​但是，需要一些手動步驟來更新。"}
+notice_new_major_version:
+ zh-Hans: "通知：%s现在可用（您正在使用%s）。​您满足此版本的最低PHP要求。 <em>看：<a href="{{Links.CIDRAM.Docs Base Path}}readme.zh-Hans.md\#10-从以前的主要版本升级" hreflang="zh-Hans"><span class="navicon link"></span>从以前的主要版本升级</a>。</em>"
+ zh-Hant: "通知：%s現在可用（您正在使用%s）。​您滿足此版本的最低PHP要求。 <em>看：<a href="{{Links.CIDRAM.Docs Base Path}}readme.zh-Hant.md\#10-從以前的主要版本升級" hreflang="zh-Hant"><span class="navicon link"></span>從以前的主要版本升級</a>。</em>"
 operator_<: {"zh-Hans": "必须是小于（数值比较）。", "zh-Hant": "必須是小於（數值比較）。"}
 operator_=: {"zh-Hans": "必须是完全匹配（直接字符串比较）。", "zh-Hant": "必須是完全匹配（直接字符串比較）。"}
 operator_>: {"zh-Hans": "必须是大于（数值比较）。", "zh-Hant": "必須是大於（數值比較）。"}

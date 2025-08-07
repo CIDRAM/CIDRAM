@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: HCaptcha class (last modified: 2025.08.06).
+ * This file: HCaptcha class (last modified: 2025.08.07).
  */
 
 namespace CIDRAM\Core;
@@ -199,7 +199,7 @@ class HCaptcha extends Captcha
             $this->CIDRAM['Config']['legal']['pseudonymise_ip_addresses'] ? $this->CIDRAM['Pseudonymise-IP']($this->CIDRAM['IPAddr']) : $this->CIDRAM['IPAddr'],
             $this->CIDRAM['L10N']->getString('field_datetime'),
             $this->CIDRAM['BlockInfo']['DateTime'],
-            $this->CIDRAM['L10N']->getString('field_captcha'),
+            $this->CIDRAM['L10N']->getString('field_captcha') . '(hCaptcha)',
             $this->CIDRAM['BlockInfo']['CAPTCHA']
         );
 

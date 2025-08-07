@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2025.08.06).
+ * This file: Optional security extras module (last modified: 2025.08.07).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -89,12 +89,9 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         } // 2023.08.13 mod 2025.07.17
 
         /** Probing for exposed SQL dumps. */
-        if ($this->trigger(preg_match(
-            '~\.sql(?:\.(?:[7bg]z\d*|7?zip|b[ac]k|db\d*|new\d*|old\d*|[rt]ar|sql|tgz))*(?:$|[/?])~',
-            $LCNrURI
-        ), 'Probing for exposed SQL dumps')) {
-            $this->Reporter->report([15], ['Caught probing for exposed SQL dumps.'], $this->BlockInfo['IPAddr']);
-        } // 2024.05.12 mod 2025.07.17
+        if ($this->trigger(preg_match('~\.sql(?:\.(?:[7bg]z\d*|7?zip|b[ac]k|db\d*|new\d*|old\d*|[rt]ar|sql|tgz))*(?:$|[/?])~', $LCNrURI), 'Probing for exposed SQL dumps')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed SQL dumps.'], $this->BlockInfo['IPAddr']);
+        } // 2024.05.12 mod 2025.08.07
 
         /** Probing for unsecured WordPress configuration files. */
         if ($this->trigger(preg_match(
@@ -105,73 +102,68 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         } // 2023.09.02 mod 2025.07.11
 
         /** Probing for webshells/backdoors. */
-        if ($this->trigger(preg_match(
-            '~^/{3,}wp-|(?:^|[/?])(?:mt-xmlrpc\.cgi|shell\?cd|wp-includes/wlwmanifest\.xml)(?:$|[/?])|(?:^|[/?])(?:' .
-            '\+theme\+/(?:error|index)|' .
-            '\.bak/.*|' .
-            '\.w(?:ell-known(?:new\d*|old\d*)?|p-cli)/(?:.*(?:(?:a(?:bout|dmin|pap)|c(?:aches?|ihjbmjk|lasswithtostring|ong)|fi(?:erza|le)|l(?:itespeed|ofmebwd)|install|moon|shell|wp-login)[\da-z]*|/x)|go|radio|x)|' .
-            '\.?rxr(?:_[\da-z]+)?|' .
-            '\d{3,5}[a-z]{3,5}|\d+-?backdoor|0byte|0[xz]|10+|1337|1ppy|4price|85022df0ed31|991176|' .
-            'a(?:b1ux1ft|dmin-heade\d*|hhygskn|lexus|lfa(?:-?rex|-?ioxi|_data|a?cgiapi|new|shell)?\d*|njas|pismtp|xx)|' .
-            'b(?:0|3d2acc621a0|ak|ala|axa\d+|eence|ibil_0day)|' .
-            'c(?:(?:9|10)\d+|adastro-2|asper[\da-z]+|d(?:.*tmp.*rm-rf|chmod.*\d{3,})|fom[-_]files|(?:gi-bin|(?:fm|ss))/(?:luci/;|moon|newgolden|radio|sgd|stok=/|uploader|well-known|wp-login)|lass(?:-t\.api|-wp-(?:pagebuilders-bdsjlk|simplepie-sanitize-kses-stream)|smtps|withtostring)|offee/fw|olors/blue/uploader|omfunctions|ong|ontentloader1|opypaths|ss/colors/coffee/index)|' .
-            'd(?:7|eadcode\d*|elpaths|epotcv|isagraep|kiz|oiconvs|ummyyummy/wp-signup)|' .
-            'e(?:ctoplasm/str_shuffcle|e|pinyins|rin\d+)|' .
-            'f(?:ddqradz|ilefun)|' .
-            'g(?:awean|dftps|el4y|etid3-core|h[0o]st|lab-rare|zismexv)|' .
-            'h(?:[4a]x+[0o]r|6ss|anna1337|ehehe|sfpdcd|tmlawedtest)|' .
-            'i(?:\d{3,}[a-z]{2,}|cesword|d3/class-config|mages/sym|ndoxploit|optimize|oxi\d*|r7szrsouep|itsec|xr/(?:allez|wp-login))|' .
-            'kvkjguw|' .
-            'l(?:ock0?360|eaf_mailer|eaf_php|ufix(?:-shell)?|uuf)|' .
-            'm(?:akeasmtp|iin|oduless|u-plugins/db-safe-mode|y1)|' .
-            'njima|' .
-            'o(?:ld(?:/wp-admin/install|-up-ova)|rvx(?:-shell)?|thiondwmek)|' .
-            'p(?:erl\.alfa|hp(?:1|_niu_\d+)|huploader|lugins/(?:backup_index|vwcleanerplugin/bump|zedd/\d+)|oison|rayer_intentions|riv8|wnd|zaiihfi)|' .
-            'qxuho|' .
-            'r(?:andkeyword|endixd)|' .
-            's(?:_n?e|ession91|h[3e]ll[sx]?\d*|hrift|idwso|ilic|kipper(?:shell)?|llolx|onarxleetxd|pammervip|rc/util/php/(?:eval(?:-stdin)?|kill)|ystem_log)|' .
-            't(?:62|aptap-null|enda\.sh.*tenda\.sh|emplates/beez/index|hemes/(?:finley/min|pridmag/db|universal-news/www)|ermps|homs|hreefox(?:_exploit/index)?|inymce/(?:langs/about|plugins/compat3x/css/index)|k_dencode_\d+|mp/vuln|opxoh/(?:drsx|wdr))|' .
-            'u(?:bh/up|nisibfu|pfile(?:_\\(\d\\))?|pgrade-temp-backup/wp-login|ploader_by_cloud7_agath|tchiha(?:_uploader)?)|' .
-            'v(?:endor/bin/loader|zlateam)|' .
-            'w(?:[0o]rm\d+|0rdpr3ssnew|alker-nva|ebshell-[a-z\d]+|idgets-nva|idwsisw|loymzuk|orksec)|' .
-            'wp[-_](?:2019|22|(?:admin(?:/images)?|content|css(?:/colors)?|includes(?:/ixr|/customize|/pomo)?|js(?:/widgets)?|network)/(?:0|aaa|cof|css/(?:about|acces|bgfbmo|colors/blue/file|dist/niil|gecko|ok)|fonts/wp-login|dropdown|fgertreyersd|id3/about|(?:images|widgets)/include|includes/lint-branch|install|js/(?:codemirror/\d+|jcrop/jcrop|privacy-tools\.min)|mah|maint/(?:aaa|fie|fw|lint-branch|lmfi2|wp-login)|(?:random_compat/|requests/)?class(?:_api|-wp-page-[\da-z]{5,})|repeater|rk2|simple|text/(?:about|diff/renderer/last)|themes/hello-element/footer|uploads/(?:admin|error_log)|vuln|wp-login)|conflg|content/plugins/(?:about|backup-backup/includes/hro|cache/dropdown|contact-form-7/.+styles-rtl|contus-hd-flv-player/uploadvideo|(?:core-plugin/|wordpresscore/)?include|dzs-zoomsounds/savepng|fix/up|(?:view-more/)?ioxi|wp-automatic/inc/csv|wp-file-manager/lib/php/connector\.minimal|wp-content/uploads/.+)|filemanager|setups|sigunq|sts|p)|' .
-            'wp-(?:aa|beckup|configs|(?:content/uploads|includes/(?:customize|js))/(?:autoload_classmap|wp-stream)|l0gins?|mail\.php/wp-includes(?:/id3/[\da-z]+)?|mna|red)|' .
-            'ws[ou](?:yanz)?(?:[\d.]*|[\da-z]{4,})|wwdv|' .
-            'x(?:iaom|ichang/x|m(?:lrpcs|lrpz|rlpc)|s?hell|w|x{2,}|x*l(?:\d+|eet(?:mailer|-shell)?x?))|' .
-            'ya?nz|yyobang/mar|' .
-            'zone_hackbar(?:_beutify_other)?|' .
-            '(?:plugins|themes)/(?:ccx|ioptimization|yyobang)|' .
-            '版iisspy|大马|一句话(?:木马|扫描脚本程序)?' .
-            ')\.php[578]?(?:$|[/?])|' .
-            'funs\.php[578]?(?:$|[/?])~',
-            $LCNrURI
-        ), 'Probing for webshells/backdoors')) { // 2023.08.18 mod 2025.07.10
+        if (
+            $this->trigger(preg_match(
+                '~^/{3,}wp-|(?:^|[/?])(?:mt-xmlrpc\.cgi|shell\?cd|wp-includes/wlwmanifest\.xml)(?:$|[/?])|(?:^|[/?])(?:' .
+                '\+theme\+/(?:error|index)|' .
+                '\.bak/.*|' .
+                '\.w(?:ell-known(?:new\d*|old\d*)?|p-cli)/(?:.*(?:(?:a(?:bout|dmin|pap)|c(?:aches?|ihjbmjk|lasswithtostring|ong)|fi(?:erza|le)|l(?:itespeed|ofmebwd)|install|moon|shell|wp-login)[\da-z]*|/x)|go|radio|x)|' .
+                '\.?rxr(?:_[\da-z]+)?|' .
+                '\d{3,5}[a-z]{3,5}|\d+-?backdoor|0byte|0[xz]|10+|1337|1ppy|4price|85022df0ed31|991176|' .
+                'a(?:b1ux1ft|dmin-heade\d*|hhygskn|lexus|lfa(?:-?rex|-?ioxi|_data|a?cgiapi|new|shell)?\d*|njas|pismtp|xx)|' .
+                'b(?:0|3d2acc621a0|ak|ala|axa\d+|eence|ibil_0day)|' .
+                'c(?:(?:9|10)\d+|adastro-2|asper[\da-z]+|d(?:.*tmp.*rm-rf|chmod.*\d{3,})|fom[-_]files|(?:gi-bin|(?:fm|ss))/(?:luci/;|moon|newgolden|radio|sgd|stok=/|uploader|well-known|wp-login)|lass(?:-t\.api|-wp-(?:pagebuilders-bdsjlk|simplepie-sanitize-kses-stream)|smtps|withtostring)|offee/fw|olors/blue/uploader|omfunctions|ong|ontentloader1|opypaths|ss/colors/coffee/index)|' .
+                'd(?:7|eadcode\d*|elpaths|epotcv|isagraep|kiz|oiconvs|ummyyummy/wp-signup)|' .
+                'e(?:ctoplasm/str_shuffcle|e|pinyins|rin\d+)|' .
+                'f(?:ddqradz|ilefun)|' .
+                'g(?:awean|dftps|el4y|etid3-core|h[0o]st|lab-rare|zismexv)|' .
+                'h(?:[4a]x+[0o]r|6ss|anna1337|ehehe|sfpdcd|tmlawedtest)|' .
+                'i(?:\d{3,}[a-z]{2,}|cesword|d3/class-config|mages/sym|ndoxploit|optimize|oxi\d*|r7szrsouep|itsec|xr/(?:allez|wp-login))|' .
+                'kvkjguw|' .
+                'l(?:ock0?360|eaf_mailer|eaf_php|ufix(?:-shell)?|uuf)|' .
+                'm(?:akeasmtp|iin|oduless|u-plugins/db-safe-mode|y1)|' .
+                'njima|' .
+                'o(?:ld(?:/wp-admin/install|-up-ova)|rvx(?:-shell)?|thiondwmek)|' .
+                'p(?:erl\.alfa|hp(?:1|_niu_\d+)|huploader|lugins/(?:backup_index|vwcleanerplugin/bump|zedd/\d+)|oison|rayer_intentions|riv8|wnd|zaiihfi)|' .
+                'qxuho|' .
+                'r(?:andkeyword|endixd)|' .
+                's(?:_n?e|ession91|h[3e]ll[sx]?\d*|hrift|idwso|ilic|kipper(?:shell)?|llolx|onarxleetxd|pammervip|rc/util/php/(?:eval(?:-stdin)?|kill)|ystem_log)|' .
+                't(?:62|aptap-null|enda\.sh.*tenda\.sh|emplates/beez/index|hemes/(?:finley/min|pridmag/db|universal-news/www)|ermps|homs|hreefox(?:_exploit/index)?|inymce/(?:langs/about|plugins/compat3x/css/index)|k_dencode_\d+|mp/vuln|opxoh/(?:drsx|wdr))|' .
+                'u(?:bh/up|nisibfu|pfile(?:_\\(\d\\))?|pgrade-temp-backup/wp-login|ploader_by_cloud7_agath|tchiha(?:_uploader)?)|' .
+                'v(?:endor/bin/loader|zlateam)|' .
+                'w(?:[0o]rm\d+|0rdpr3ssnew|alker-nva|ebshell-[a-z\d]+|idgets-nva|idwsisw|loymzuk|orksec)|' .
+                'wp[-_](?:2019|22|(?:admin(?:/images)?|content|css(?:/colors)?|includes(?:/ixr|/customize|/pomo)?|js(?:/widgets)?|network)/(?:0|aaa|cof|css/(?:about|acces|bgfbmo|colors/blue/file|dist/niil|gecko|ok)|fonts/wp-login|dropdown|fgertreyersd|id3/about|(?:images|widgets)/include|includes/lint-branch|install|js/(?:codemirror/\d+|jcrop/jcrop|privacy-tools\.min)|mah|maint/(?:aaa|fie|fw|lint-branch|lmfi2|wp-login)|(?:random_compat/|requests/)?class(?:_api|-wp-page-[\da-z]{5,})|repeater|rk2|simple|text/(?:about|diff/renderer/last)|themes/hello-element/footer|uploads/(?:admin|error_log)|vuln|wp-login)|conflg|content/plugins/(?:about|backup-backup/includes/hro|cache/dropdown|contact-form-7/.+styles-rtl|contus-hd-flv-player/uploadvideo|(?:core-plugin/|wordpresscore/)?include|dzs-zoomsounds/savepng|fix/up|(?:view-more/)?ioxi|wp-automatic/inc/csv|wp-file-manager/lib/php/connector\.minimal|wp-content/uploads/.+)|filemanager|setups|sigunq|sts|p)|' .
+                'wp-(?:aa|beckup|configs|(?:content/uploads|includes/(?:customize|js))/(?:autoload_classmap|wp-stream)|l0gins?|mail\.php/wp-includes(?:/id3/[\da-z]+)?|mna|red)|' .
+                'ws[ou](?:yanz)?(?:[\d.]*|[\da-z]{4,})|wwdv|' .
+                'x(?:iaom|ichang/x|m(?:lrpcs|lrpz|rlpc)|s?hell|w|x{2,}|x*l(?:\d+|eet(?:mailer|-shell)?x?))|' .
+                'ya?nz|yyobang/mar|' .
+                'zone_hackbar(?:_beutify_other)?|' .
+                '(?:plugins|themes)/(?:ccx|ioptimization|yyobang)|' .
+                '版iisspy|大马|一句话(?:木马|扫描脚本程序)?' .
+                ')\.php[578]?(?:$|[/?])|' .
+                'funs\.php[578]?(?:$|[/?])~',
+            $LCNrURI), 'Probing for webshells/backdoors') || // 2023.08.18 mod 2025.07.10
+            $this->trigger(preg_match('~(?:^|[/?])(?:brutalshell|css/dmtixucz/golden-access|fierzashell\.html?|perl.alfa|search/label/php-shells|wp-ksv1i\.ph)(?:$|[/?])~', $LCNrURI), 'Probing for webshells/backdoors') || // 2025.05.12 mod 2025.08.07
+            $this->trigger(preg_match('~(?:^|[/?])(?:moon\.php|ss\.php)\?(?:f_c|p)=~', $LCNrURI), 'Probing for webshells/backdoors') // 2025.08.07
+        ) {
             $this->Reporter->report([15, 20, 21], ['Caught probing for webshells/backdoors. Host might be compromised.'], $this->BlockInfo['IPAddr']);
-        } elseif ($this->trigger(preg_match(
-            '~(?:^|[/?])(?:brutalshell|css/dmtixucz/golden-access|fierzashell\.html?|perl.alfa|search/label/php-shells)(?:$|[/?])~',
-            $LCNrURI
-        ), 'Probing for webshells/backdoors')) { // 2025.05.12 mod 2025.07.28
-            $this->Reporter->report([15, 20, 21], ['Caught probing for webshells/backdoors. Host might be compromised.'], $this->BlockInfo['IPAddr']);
-        } elseif ($this->trigger(preg_match(
-            '~(?:^|[/?])(?:\.well-known(?:new\d*|old\d*)|[1-9cefimnptuwx]{27}\.jsp|alfa_data/alfacgiapi|alfa-?rexhp\d\.p|(?:send-)?ses\.sh)(?:$|[/?])~',
-            $LCNrURI
-        ), 'Probing for webshells/backdoors')) { // 2024.02.18 mod 2025.07.06
+        } elseif ($this->trigger(preg_match('~(?:^|[/?])(?:\.well-known(?:new\d*|old\d*)|[1-9cefimnptuwx]{27}\.jsp|alfa_data/alfacgiapi|alfa-?rexhp\d\.p|(?:send-)?ses\.sh)(?:$|[/?])~', $LCNrURI), 'Probing for webshells/backdoors')) { // 2024.02.18 mod 2025.07.06
             $this->Reporter->report([15, 20], ['Caught probing for webshells/backdoors. Host might be compromised.'], $this->BlockInfo['IPAddr']);
         }
 
         /** Probing for common vulnerabilities and exploits. */
         if (
-            $this->trigger(preg_match('~/fckeditor/editor/filemanager(?:$|[/?])~', $LCNrURI), $Exploit = 'FCKeditor') || // 2025.07.20
-            $this->trigger(preg_match('~/modules/mod_simplefileuploadv1\.3/elements(?:$|[/?])~', $LCNrURI), $Exploit = 'CVE-2011-5148') || // 2025.07.20
-            $this->trigger(preg_match('~/ecp/current/exporttool/microsoft.exchange.ediscovery.exporttool.application(?:$|[/?])~', $LCNrURI), $Exploit = 'CVE-2021-28481') || // 2025.07.17
-            $this->trigger(preg_match('~/util/php/eval-stdin\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'CVE-2017-9841') || // 2025.07.16
-            $this->trigger(preg_match('~/elfinder/php/connector\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'elFinder') || // 2025.07.07 (possible matches: CVE-2019-1010178, CVE-2020-25213, CVE-2020-35235, CVE-2021-32682)
-            $this->trigger(preg_match('~/tinymce/plugins/filemanager/dialog\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'TinyMCE Filemanager') || // 2025.07.07
-            $this->trigger(preg_match('~/civicrm/packages/openflashchart/php-ofc-library/ofc_upload_image\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'CIVI-SA-2013-001') || // 2025.07.05
-            $this->trigger(preg_match('~/library/openflashchart/php-ofc-library/ofc_upload_image\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'ZSL-2013-5126') || // 2025.07.10
-            $this->trigger(preg_match('~/includes/openflashchart/php-ofc-library/ofc_upload_image\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'SA53428') || // 2025.07.10
-            $this->trigger(preg_match('~/dup-installer/main\.installer\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'CVE-2022-2551') || // 2024.09.05
-            $this->trigger(preg_match('~/Telerik\.Web\.UI\.WebResource\.axd(?:$|[/?])~i', $LCNrURI), $Exploit = 'CVE-2019-18935') // 2024.10.30
+            $this->trigger(preg_match('~(?:^|[/?])fckeditor/editor/filemanager(?:$|[/?])~', $LCNrURI), $Exploit = 'FCKeditor') || // 2025.07.20 mod 2025.08.07
+            $this->trigger(preg_match('~(?:^|[/?])modules/mod_simplefileuploadv1\.3/elements(?:$|[/?])~', $LCNrURI), $Exploit = 'CVE-2011-5148') || // 2025.07.20 mod 2025.08.07
+            $this->trigger(preg_match('~(?:^|[/?])ecp/current/exporttool/microsoft.exchange.ediscovery.exporttool.application(?:$|[/?])~', $LCNrURI), $Exploit = 'CVE-2021-28481') || // 2025.07.17 mod 2025.08.07
+            $this->trigger(preg_match('~(?:^|[/?])util/php/eval-stdin\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'CVE-2017-9841') || // 2025.07.16 mod 2025.08.07
+            $this->trigger(preg_match('~(?:^|[/?])elfinder/php/connector\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'elFinder') || // 2025.07.07 mod 2025.08.07 (possible matches: CVE-2019-1010178, CVE-2020-25213, CVE-2020-35235, CVE-2021-32682)
+            $this->trigger(preg_match('~(?:^|[/?])tinymce/plugins/filemanager/dialog\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'TinyMCE Filemanager') || // 2025.07.07 mod 2025.08.07
+            $this->trigger(preg_match('~(?:^|[/?])civicrm/packages/openflashchart/php-ofc-library/ofc_upload_image\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'CIVI-SA-2013-001') || // 2025.07.05 mod 2025.08.07
+            $this->trigger(preg_match('~(?:^|[/?])library/openflashchart/php-ofc-library/ofc_upload_image\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'ZSL-2013-5126') || // 2025.07.10 mod 2025.08.07
+            $this->trigger(preg_match('~(?:^|[/?])includes/openflashchart/php-ofc-library/ofc_upload_image\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'SA53428') || // 2025.07.10 mod 2025.08.07
+            $this->trigger(preg_match('~(?:^|[/?])dup-installer/main\.installer\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'CVE-2022-2551') || // 2024.09.05 mod 2025.08.07
+            $this->trigger(preg_match('~(?:^|[/?])Telerik\.Web\.UI\.WebResource\.axd(?:$|[/?])~i', $LCNrURI), $Exploit = 'CVE-2019-18935') // 2024.10.30 mod 2025.08.07
         ) {
             $this->Reporter->report([15, 21], ['Caught probing for ' . $Exploit . ' vulnerability.'], $this->BlockInfo['IPAddr']);
         }
@@ -193,18 +185,18 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
         /** Probing for common vulnerabilities and exploits + SQLi. */
         if (
-            $this->trigger(preg_match('~/services/contributor/1&(?:amp;)?id=1(?:(?:%20|[ +-])(?:union|all|select)|.*(?:null,|md5\\(|--(?:%20|[ +-])?))~', $LCNrURI), $Exploit = 'CVE-2021-24666') // 2025.07.22
+            $this->trigger(preg_match('~(?:^|[/?])services/contributor/1&(?:amp;)?id=1(?:(?:%20|[ +-])(?:union|all|select)|.*(?:null,|md5\\(|--(?:%20|[ +-])?))~', $LCNrURI), $Exploit = 'CVE-2021-24666') // 2025.07.22 mod 2025.08.07
         ) {
             $this->Reporter->report([15, 16, 21], ['Caught probing for ' . $Exploit . ' vulnerability.'], $this->BlockInfo['IPAddr']);
         }
 
         /** Probing for compromised WordPress installations. */
         if ($this->trigger(preg_match(
-            '~/wp-content/plugins/(?:aryabot|cakil|cekidot|dummyyummy|helloapx|ioptimization|masterx|owfsmac|prenota|pwnd|seoo(?:yanz)?|ubh|upspy|uwogh-segs|vwcleanerplugin|wp(?:-d(?:[ao]ftx?|b-ajax-made|iambar)|-freeform|-hps|eazvp)|xichang|xt|yyobang|zaen)(?:-\d+)?/~',
+            '~(?:^|[/?])wp-content/plugins/(?:aryabot|cakil|cekidot|dummyyummy|helloapx|ioptimization|masterx|owfsmac|prenota|pwnd|seoo(?:yanz)?|ubh|upspy|uwogh-segs|vwcleanerplugin|wp(?:-d(?:[ao]ftx?|b-ajax-made|iambar)|-freeform|-hps|eazvp)|xichang|xt|yyobang|zaen)(?:-\d+)?/~',
             $LCNrURI
         ), 'Probing for compromised WordPress installations')) {
             $this->Reporter->report([15, 21], ['Caught probing for compromised WordPress installations.'], $this->BlockInfo['IPAddr']);
-        } // 2025.07.28 mod 2025.07.31
+        } // 2025.07.28 mod 2025.08.07
 
         /** Probing for exposed Git data. */
         if ($this->trigger(preg_match('~\.git(?:config)?(?:$|\W)~', $LCNrURI), 'Probing for exposed Git data')) {
@@ -227,9 +219,9 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         } // 2022.06.05 mod 2023.09.04
 
         /** Probing for exposed AWS credentials. */
-        if ($this->trigger(preg_match('~(?:^|[/?])(?:\.aws_?/credentials?|aws\.yml)(?:$|\W)~', $LCNrURI), 'Probing for exposed AWS credentials')) {
+        if ($this->trigger(preg_match('~(?:^|[/?])(?:\.?aws_?/(?:config(?:uration)?|credentials?)(?:\.yml)?|\.?aws\.yml|config/aws\.json)(?:$|[/?])~', $LCNrURI), 'Probing for exposed AWS credentials')) {
             $this->Reporter->report([15, 21], ['Caught probing for exposed AWS credentials.'], $this->BlockInfo['IPAddr']);
-        } // 2023.09.04 mod 2025.04.28
+        } // 2023.09.04 mod 2025.08.07
 
         /** Probing for exposed FTP credentials. */
         if ($this->trigger(preg_match('~(?:^|[/?])\.?s?ftp-(?:config|sync)\.json(?:$|[/?])~', $LCNrURI), 'Probing for exposed FTP credentials')) {
@@ -318,21 +310,46 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         } // 2025.03.18 mod 2025.08.02
 
         /** Probing for unsecured configuration file. */
-        if ($this->trigger(preg_match('~(?:^|/)\.?config.ya?ml(?:$|[/?])~', $LCNrURI), 'Probing for unsecured configuration file')) {
+        if ($this->trigger(preg_match('~(?:^|[/?])\.?config.ya?ml(?:$|[/?])~', $LCNrURI), 'Probing for unsecured configuration file')) {
             $this->Reporter->report([15, 21], ['Caught probing for unsecured configuration file.'], $this->BlockInfo['IPAddr']);
-        } // 2025.08.02
+        } // 2025.08.02 mod 2025.08.07
 
         /** Attempts by broken bot to incorrectly access reCAPTCHA files (treating reference to remote resource as local). */
         $this->trigger(preg_match('~/www\.google\.com/recaptcha/api\.js(?:$|[/?])~', $LCNrURI), 'Bad request'); // 2025.03.03
 
-        if ($this->trigger(preg_match('~(?:^|/)wp-content/uploads/\+year\+/\+month\+/~', $LCNrURI), 'Scraping WP media libraries')) {
+        if ($this->trigger(preg_match('~(?:^|[/?])wp-content/uploads/\+year\+/\+month\+/~', $LCNrURI), 'Scraping WP media libraries')) {
             $this->Reporter->report([15], ['Misconfigured bot caught trying to scrape WordPress media libraries.'], $this->BlockInfo['IPAddr']);
-        } // 2015.07.12
+        } // 2015.07.12 mod 2025.08.07
 
-        $this->trigger(preg_match('~/(?:appsettings|config)\.json(?:$|[/?])~', $LCNrURI), 'Unauthorised'); // 2025.07.27
-        $this->trigger(preg_match('~/\.htaccess(?:$|[/?])~', $LCNrURI), 'Unauthorised'); // 2025.07.27
-        $this->trigger(preg_match('~/docker-compose\.yml(?:$|[/?])~', $LCNrURI), 'Unauthorised'); // 2025.07.27
-        $this->trigger(preg_match('~/phpunit/phpunit\.xsd(?:$|[/?])~', $LCNrURI), 'Unauthorised'); // 2025.07.16
+        $this->trigger(preg_match('~(?:^|[/?])(?:appsettings|config)\.json(?:$|[/?])~', $LCNrURI), 'Unauthorised'); // 2025.07.27 mod 2025.08.07
+        $this->trigger(preg_match('~(?:^|[/?])\.htaccess(?:$|[/?])~', $LCNrURI), 'Unauthorised'); // 2025.07.27 mod 2025.08.07
+        $this->trigger(preg_match('~(?:^|[/?])docker-compose\.yml(?:$|[/?])~', $LCNrURI), 'Unauthorised'); // 2025.07.27 mod 2025.08.07
+        $this->trigger(preg_match('~(?:^|[/?])phpunit/phpunit\.xsd(?:$|[/?])~', $LCNrURI), 'Unauthorised'); // 2025.07.16 mod 2025.08.07
+
+        /** Probing for exposed Rails app secrets. */
+        if ($this->trigger(preg_match('~(?:^|[/?])secrets\.yml(?:$|[/?])~', $LCNrURI), 'Probing for exposed Rails app secrets')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed Rails app secrets.'], $this->BlockInfo['IPAddr']);
+        } // 2025.08.07
+
+        /** Probing for exposed Apache HTTP authentication credentials. */
+        if ($this->trigger(preg_match('~(?:^|[/?])\.htpasswd(?:$|[/?])~', $LCNrURI), 'Probing for exposed Apache HTTP authentication credentials')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed Apache HTTP authentication credentials.'], $this->BlockInfo['IPAddr']);
+        } // 2025.08.07
+
+        /** Probing for exposed temporary file dumps. */
+        if ($this->trigger(preg_match('~(?:^|[/?])\*\.tmp(?:$|[/?])~', $LCNrURI), 'Probing for exposed temporary file dumps')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed temporary file dumps.'], $this->BlockInfo['IPAddr']);
+        } // 2025.08.07
+
+        /** Probing for exposed procfile. */
+        if ($this->trigger(preg_match('~(?:^|[/?])procfile(?:$|[/?])~', $LCNrURI), 'Probing for exposed procfile')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed procfile.'], $this->BlockInfo['IPAddr']);
+        } // 2025.08.07
+
+        /** Probing for exposed SQLite databases. */
+        if ($this->trigger(preg_match('~(?:^|[/?])database\.sqlite(?:$|[/?])~', $LCNrURI), 'Probing for exposed SQLite databases')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed SQLite databases.'], $this->BlockInfo['IPAddr']);
+        } // 2025.08.07
     }
 
     /**
@@ -456,7 +473,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $QueryNoSpace
         ), 'Compromised password used in brute-force attacks'); // 2023.10.10
 
-        $this->trigger(preg_match('~/etc/passwd:null:null$~', $QueryNoSpace), 'Hack attempt'); // 2024.02.18
+        $this->trigger(preg_match('~(?:^|[/?])etc/passwd:null:null$~', $QueryNoSpace), 'Hack attempt'); // 2024.02.18 mod 2025.08.07
         $this->trigger(preg_match('~(?:^|&)phpinfo=-1$~', $QueryNoSpace), 'Hack attempt'); // 2025.05.24 fix 2025.07.05
         $this->trigger(preg_match('~(?:^|&)action=p&api=p&path=p&token=$~', $QueryNoSpace), 'Hack attempt'); // 2025.07.05
 

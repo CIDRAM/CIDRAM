@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2025.07.29).
+ * This file: General methods used by the front-end (last modified: 2025.08.09).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -308,6 +308,20 @@ trait FrontEndMethods
     }
 
     /**
+     * Traversal detection.
+     *
+     * @param string $Path The path to check for traversal.
+     * @return bool True when the path is traversal-free. False when traversal has been detected.
+     */
+    private function freeFromTraversal(string $Path): bool
+    {
+        return !preg_match(
+            '~(?://|(?<![\da-z])\.\.(?![\da-z])|/\.(?![\da-z])|(?<![\da-z])\./|[\x01-\x1F\[-^`?*$])~i',
+            str_replace('\\', '/', $Path)
+        );
+    }
+
+    /**
      * Get the appropriate path for a specified asset as per the defined theme.
      *
      * @param string $Asset The asset filename.
@@ -317,15 +331,27 @@ trait FrontEndMethods
      */
     private function getAssetPath(string $Asset, bool $CanFail = false): string
     {
-        if (file_exists($this->AssetsPath . 'frontend/' . $this->Configuration['frontend']['theme'] . '/' . $Asset)) {
-            return $this->AssetsPath . 'frontend/' . $this->Configuration['frontend']['theme'] . '/' . $Asset;
+        /** Guard against unsafe paths and traversal attacks. */
+        if (preg_match('~[^\da-z._]~i', $Asset) || !$this->freeFromTraversal($Asset)) {
+            return '';
         }
-        if (file_exists($this->AssetsPath . 'frontend/default/' . $Asset)) {
-            return $this->AssetsPath . 'frontend/default/' . $Asset;
+
+        /** Non-default theme assets. */
+        if (file_exists($this->AssetsPath . 'frontend' . DIRECTORY_SEPARATOR . $this->Configuration['frontend']['theme'] . DIRECTORY_SEPARATOR . $Asset)) {
+            return $this->AssetsPath . 'frontend' . DIRECTORY_SEPARATOR . $this->Configuration['frontend']['theme'] . DIRECTORY_SEPARATOR . $Asset;
         }
-        if (file_exists($this->AssetsPath . 'frontend/' . $Asset)) {
-            return $this->AssetsPath . 'frontend/' . $Asset;
+
+        /** Default theme assets. */
+        if (file_exists($this->AssetsPath . 'frontend' . DIRECTORY_SEPARATOR . 'default' . DIRECTORY_SEPARATOR . $Asset)) {
+            return $this->AssetsPath . 'frontend' . DIRECTORY_SEPARATOR . 'default' . DIRECTORY_SEPARATOR . $Asset;
         }
+
+        /** Front-end assets base directory assets. */
+        if (file_exists($this->AssetsPath . 'frontend' . DIRECTORY_SEPARATOR . $Asset)) {
+            return $this->AssetsPath . 'frontend' . DIRECTORY_SEPARATOR . $Asset;
+        }
+
+        /** Failure. */
         if ($CanFail) {
             return '';
         }
@@ -1326,6 +1352,9 @@ trait FrontEndMethods
                 }
                 if ($Success) {
                     $AssetData = $this->readFile($ThisAsset);
+                    if (is_callable($Callback)) {
+                        $AssetData = $Callback($AssetData);
+                    }
                     $OldETag = $_SERVER['HTTP_IF_NONE_MATCH'] ?? '';
                     $NewETag = hash('sha256', $AssetData) . '-' . strlen($AssetData);
                     header('Last-Modified: ' . gmdate('D, d M Y H:i:s T', filemtime($ThisAsset)));
@@ -1340,9 +1369,6 @@ trait FrontEndMethods
                     header($MimeType);
                     if ($NoSniff) {
                         header('X-Content-Type-Options: nosniff');
-                    }
-                    if (is_callable($Callback)) {
-                        $AssetData = $Callback($AssetData);
                     }
                     echo $AssetData;
                     die;

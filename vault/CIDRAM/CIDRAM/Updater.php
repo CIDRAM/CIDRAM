@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods for updating CIDRAM components (last modified: 2025.05.20).
+ * This file: Methods for updating CIDRAM components (last modified: 2025.08.09).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -494,20 +494,6 @@ trait Updater
                 }
             }
         }
-    }
-
-    /**
-     * Traversal detection.
-     *
-     * @param string $Path The path to check for traversal.
-     * @return bool True when the path is traversal-free. False when traversal has been detected.
-     */
-    private function freeFromTraversal(string $Path): bool
-    {
-        return !preg_match(
-            '~(?://|(?<![\da-z])\.\.(?![\da-z])|/\.(?![\da-z])|(?<![\da-z])\./|[\x01-\x1F\[-^`?*$])~i',
-            str_replace('\\', '/', $Path)
-        );
     }
 
     /**

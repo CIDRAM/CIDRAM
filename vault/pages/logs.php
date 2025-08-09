@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The logs page (last modified: 2025.05.08).
+ * This file: The logs page (last modified: 2025.08.09).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -29,13 +29,12 @@ $this->FE['SortOrder'] = (empty($this->CIDRAM['QueryVars']['sortOrder']) || $thi
 /** Initialise array for fetching logs data. */
 $this->FE['LogFiles'] = ['Files' => $this->arrayReplaceKeys($this->logsRecursiveList($this->Vault, $this->FE['SortOrder']), function (array $Item): string {
     return $Item['Filename'] ?? '';
-}), 'Out' => ''];
+}), 'Out' => "\n"];
 
 /** Download a log file. */
 if (
-    isset($this->CIDRAM['QueryVars']['textMode'], $this->CIDRAM['QueryVars']['logfile']) &&
-    $this->CIDRAM['QueryVars']['textMode'] === 'download' &&
-    isset($this->FE['LogFiles']['Files'][$this->CIDRAM['QueryVars']['logfile']])
+    isset($this->CIDRAM['QueryVars']['textMode'], $this->CIDRAM['QueryVars']['logfile'], $this->FE['LogFiles']['Files'][$this->CIDRAM['QueryVars']['logfile']]) &&
+    $this->CIDRAM['QueryVars']['textMode'] === 'download'
 ) {
     $this->Events->fireEvent('final');
     header('Content-Type: application/octet-stream');
@@ -94,7 +93,7 @@ $this->FE['BlockLink'] = sprintf(
     $this->FE['Paginate'] ? '&paginate=on' : '',
     $this->FE['PerPage'] > 0 && $this->FE['PerPage'] !== 20 ? '&perpage=' . $this->FE['PerPage'] : '',
     $this->FE['From'] ? '&from=' . urlencode($this->FE['From']) : '',
-    empty($this->CIDRAM['QueryVars']['logfile']) ? '' : '&logfile=' . $this->CIDRAM['QueryVars']['logfile']
+    isset($this->CIDRAM['QueryVars']['logfile'], $this->FE['LogFiles']['Files'][$this->CIDRAM['QueryVars']['logfile']]) ? '&logfile=' . $this->CIDRAM['QueryVars']['logfile'] : ''
 );
 
 /** Remember search filters. */
@@ -110,7 +109,7 @@ if ($this->FE['Remember'] && $this->FE['BlockLink'] !== $this->FE['CachedLogsLin
 /** Define log data. */
 if (empty($this->CIDRAM['QueryVars']['logfile'])) {
     $this->FE['logfileData'] = $this->L10N->getString('label.No log file selected');
-} elseif (!isset($this->FE['LogFiles']['Files'][$this->CIDRAM['QueryVars']['logfile']])) {
+} elseif (!isset($this->CIDRAM['QueryVars']['logfile'], $this->FE['LogFiles']['Files'][$this->CIDRAM['QueryVars']['logfile']])) {
     $this->FE['logfileData'] = $this->L10N->getString('label.Selected log file doesn_t exist');
 } else {
     if (strtolower(substr($this->CIDRAM['QueryVars']['logfile'], -3)) === '.gz') {
@@ -424,7 +423,7 @@ $this->FE['TextModeSwitchLink'] = sprintf(
     $this->L10N->getString('switch-descending-order-set-true'),
     $this->FE['Remember'] ? ' checked' : '',
     $this->L10N->getString('label.Remember'),
-    $this->CIDRAM['QueryVars']['logfile'] ?? '',
+    isset($this->CIDRAM['QueryVars']['logfile'], $this->FE['LogFiles']['Files'][$this->CIDRAM['QueryVars']['logfile']]) ? $this->CIDRAM['QueryVars']['logfile'] : '',
     $this->L10N->getString('field.OK'),
     $this->FE['Paginate'] ? ' checked' : '',
     $this->L10N->getString('label.Paginate'),

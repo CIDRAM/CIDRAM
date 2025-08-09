@@ -441,6 +441,9 @@
 - [2025.07.27]: Some form element labels were applied incorrectly at the auxiliary rules edit mode page; Fixed.
 - [2025.07.29]: The processMinifiedFormData method wasn't behaving as expected when running in the context of WordPress; Fixed.
 
+#### Security.
+- [2025.08.09]: Improved the safeguards for getAssetPath. The logfile query parameter at the front-end logs page could potentially be exploited via embedAssets to display the contents of files other than log files due to insufficient getAssetPath safeguards (though given that one would need to be logged into front-end in order to access the logs page to begin with, the risk factor should be minimal); Fixed. Added a check to the front-end logs page to ignore the logfile query parameter when a non-log file is specified.
+
 #### Other changes.
 - [2025.07.08]: Added the ability to route all outbound requests through a proxy, and two new configuration directives, `request_proxy` and `request_proxyauth`.
 - [2025.07.11]: Verification updated.

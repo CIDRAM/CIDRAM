@@ -94,9 +94,9 @@ input[id=homebutton]{border-top-{FE_Align_Reverse}-radius:0;border-bottom-{FE_Al
 .exp{color:#ff0;background-color:#f00}
 .pieul{list-style-type:none;margin:0;padding:0}
 li>span.comCat:first-child,input[type=button],input[type=file]::file-selector-button,input[type=checkbox],input[type=checkbox]+label,input[type=radio],input[type=radio]+label,input[type=reset],input[type=submit],span>span[onclick],li>span[onclick],.navicon[onclick]{cursor:pointer}
-.comCat::before{content:"";width:16px;height:16px;background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:caret.svg}{/Base64Encode});background-repeat:no-repeat;background-position:top 2px center;display:inline-block;margin-{FE_Align_Reverse}:6px;line-height:100%;cursor:pointer}
-.caret-down::before{animation:forRotate .2s linear 1;animation-fill-mode:both}
-.caret-up::before{animation:revRotate .2s linear 1;animation-fill-mode:both}
+.comCat::before,.showlink::before,.shownlink::before,.unshownlink::before{content:"";width:16px;height:16px;background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:caret.svg}{/Base64Encode});background-repeat:no-repeat;background-position:center;position:relative;top:2px;display:inline-block;margin-{FE_Align_Reverse}:6px;line-height:100%;cursor:pointer}
+.caret-down::before{animation:forRotate .3s ease-in 1;animation-fill-mode:both}
+.caret-up::before{animation:revRotate .5s linear 1;animation-fill-mode:both}
 .suggestsInactive,.comSub{overflow:hidden;transform:scaleY(0);transform-origin:top;opacity:0;max-height:0;transition:all .5s ease-out}
 .active{transform:scaleY(1);transform-origin:top;opacity:1;max-height:99999px;transition:all .3s ease-in}
 .suggestsActive{transform:scaleY(1);font-style:italic;font-weight:700;transform-origin:top;opacity:1;max-height:64px;transition:all .3s ease-in}
@@ -107,8 +107,8 @@ blockquote.comSub{margin:-2px 0 0 0;padding:0 0 0 0}
 @media only all and (max-width:968px) {
   .iCntn{margin:0}
 }
-@keyframes forRotate{0%{transform:rotate(0) translate(0, 0) scaleX(1)}100%{transform:rotate({45deg}) {caretTransform}}}
-@keyframes revRotate{0%{transform:rotate({45deg}) {caretTransform}}100%{transform:rotate(0) translate(0, 0) scaleX(1)}}
+@keyframes forRotate{0%{{caretTransformBefore} invert(79%) sepia(28%) saturate(328%) hue-rotate(13deg) brightness(90%) contrast(89%)}100%{{caretTransformAfter} invert(79%) sepia(28%) saturate(328%) hue-rotate(13deg) brightness(90%) contrast(89%)}}
+@keyframes revRotate{0%{{caretTransformAfter} invert(79%) sepia(28%) saturate(328%) hue-rotate(13deg) brightness(90%) contrast(89%)}100%{{caretTransformBefore} invert(79%) sepia(28%) saturate(328%) hue-rotate(13deg) brightness(90%) contrast(89%)}}
 select+input[type=submit],select+input[type=button]{height:20px;margin-{FE_Align}:-3px;border-bottom-{FE_Align}-radius:0;border-top-{FE_Align}-radius:0;padding-{FE_Align}:3px}
 select,input[type=submit],input[type=reset],input[type=button],input[type=file]::file-selector-button,input[type=text],input[type=password],input[type=number],input[type=date],input[type=time],input[type=datetime-local],button{box-sizing:border-box;height:20px;padding-top:0;padding-bottom:0}
 select[class=auto]+select[class=auto]{margin-{FE_Align}:-3px;margin-{FE_Align_Reverse}:0}
@@ -148,9 +148,8 @@ td code~input,td code~select{vertical-align:middle}
 @keyframes sFadeFrames{0%{opacity:1}100%{opacity:0}}
 .sHide{display:none}
 .sFade{display:inline-block;margin-{FE_Align}:4px;animation:sFadeFrames .5s linear 1;animation-fill-mode:both}
-.showlink::before,.shownlink::before,.unshownlink::before{content:"";width:16px;height:16px;background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:caret.svg}{/Base64Encode});background-repeat:no-repeat;background-position:top 2px center;display:inline-block;margin-{FE_Align_Reverse}:6px}
-.shownlink::before{animation:forRotate .5s ease-out 1;animation-fill-mode:both}
-.unshownlink::before{animation:revRotate .5s ease-out 1;animation-fill-mode:both}
+.shownlink::before{animation:forRotate .5s ease-in 1;animation-fill-mode:both}
+.unshownlink::before{animation:revRotate .5s linear 1;animation-fill-mode:both}
 .fBlur{filter:contrast(.8) blur(.5px);transition:all .3s ease-out}
 .fBlur:hover,.fBlur:active{filter:contrast(1) blur(0)}
 input[type=button].reset{background:none;cursor:pointer;border:none;padding:0 12px 0 12px;margin:0;width:auto;color:#e7ab7d}
@@ -170,7 +169,7 @@ input[disabled],input[disabled]+label{cursor:not-allowed}
 .flexin{margin-{FE_Align}:-1px;margin-{FE_Align_Reverse}:1px;width:auto;flex-grow:1}
 .navicon.heaven{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:heaven.svg}{/Base64Encode})}
 .auxicon{display:inline-block;background-repeat:no-repeat;position:relative;top:1px;width:12px;height:12px}
-.auxbl,.hoverglow,.navicon,a.showlink[onclick]::before,a.shownlink[onclick]::before,a.unshownlink[onclick]::before{display:inline-block;filter:invert(79%) sepia(28%) saturate(328%) hue-rotate(13deg) brightness(90%) contrast(89%);position:relative;top:1px;width:16px;height:16px}
+.auxbl,.hoverglow,.navicon,.comCat::before,.showlink::before,.shownlink::before,.unshownlink::before{display:inline-block;background-repeat:no-repeat;filter:invert(79%) sepia(28%) saturate(328%) hue-rotate(13deg) brightness(90%) contrast(89%);position:relative;top:1px;width:16px;height:16px}
 .hoverglow:hover,.hoverglow:active,.hoverglow:focus,.navicon[onclick]:hover,.navicon[onclick]:active,.navicon[onclick]:focus{filter:invert(95%) sepia(12%) saturate(882%) hue-rotate(-24deg) brightness(104%) contrast(95%)}
 .auxgn{filter:invert(91%) sepia(88%) saturate(358%) hue-rotate(26deg) brightness(89%) contrast(94%)}
 .auxrd{filter:invert(90%) sepia(63%) saturate(4751%) hue-rotate(-59deg) brightness(96%) contrast(87%)}
@@ -194,13 +193,13 @@ input[disabled],input[disabled]+label{cursor:not-allowed}
 .bckpicon.export{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:export.svg}{/Base64Encode})}
 .bckpicon.compress{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:compress.svg}{/Base64Encode})}
 .bckpicon.statistics{position:relative;top:-1px}
-.rulePseudoPos{display:block;height:0px;width:100%;transform:scaleY(0);transition:all .4s ease-in-out;font-size:calc((10px * {magnification}) + .03vw);font-weight:700}
+.rulePseudoPos{display:block;height:0px;width:100%;transform:scaleY(0);transition:all .5s ease-in-out;font-size:calc((10px * {magnification}) + .03vw);font-weight:700}
 .rulePseudoPosActive{background-color:rgba(192,128,0,.2);height:16px;transform:scaleY(1)}
 .logVis{overflow:visible auto}
 .clipMar{display:block;margin:16px}
 .inlineBlock{display:inline-block}
 .capitalize{text-transform:capitalize}
-.origin{font-size:calc((9px * {magnification}) + .03vw);background:#00f;color:#fff}
+.origin{font-size:calc((9px * {magnification}) + .03vw);background:#00f;color:#fff{theme_mode_effects}}
 .origin.us{background:linear-gradient(to right,#f00 30%,#00f 70%);color:#fff}
 .origin.de{background:linear-gradient(#000 30%,#f00 70%);color:#ff0}
 .origin.cn{background:#f00;color:#ff0}

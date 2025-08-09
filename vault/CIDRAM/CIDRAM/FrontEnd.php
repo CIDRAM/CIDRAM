@@ -327,12 +327,11 @@ class FrontEnd extends Core
         }
 
         /** Menu toggle JavaScript, needed by some front-end pages. */
-        $this->CIDRAM['MenuToggle'] = '<script type="text/javascript">' .
-            'var i,toggler=document.getElementsByClassName("comCat");for(i=0;i<toggl' .
-            'er.length;i++)toggler[i].addEventListener("click",function(){this.paren' .
-            'tElement.querySelector(".comSub").classList.toggle("active"),!this.clas' .
-            'sList.toggle("caret-down")&&this.classList.toggle("caret-up")&&setTimeo' .
-            'ut(function(t){t.classList.toggle("caret-up")},200,this)});</script>';
+        $this->CIDRAM['MenuToggle'] =
+            '<script type="text/javascript">var i,toggler=document.getElementsByClassName("comCat");' .
+            'for(i=0;i<toggler.length;i++)toggler[i].addEventListener("click",function(){' .
+            'this.parentElement.querySelector(".comSub").classList.toggle("active"),!this.classList.toggle("caret-down")&&this.classList.toggle("caret-up")&&setTimeout(function(t){' .
+            't.classList.toggle("caret-up")},500,this)});</script>';
 
         /** A fix for correctly displaying LTR/RTL text. */
         if ($this->L10N->Directionality !== 'rtl') {
@@ -341,18 +340,18 @@ class FrontEnd extends Core
             $this->FE['FE_Align_Reverse'] = 'right';
             $this->FE['FE_Align_Mode'] = 'lr';
             $this->FE['Half_Border'] = 'solid solid none none';
-            $this->FE['45deg'] = '45deg';
             $this->FE['90deg'] = '90deg';
-            $this->FE['caretTransform'] = 'translate(5px, -2px) scaleX(0.9)';
+            $this->FE['caretTransformBefore'] = 'transform:rotate(0) scaleX(1);position:relative;top:2px;left:0px;filter:drop-shadow(0 0 0 rgba(0,0,0,0)) drop-shadow(0 0 0 rgba(0,0,0,0))';
+            $this->FE['caretTransformAfter'] = 'transform:rotate(90deg) scaleX(0.4);position:relative;top:4px;left:10px;filter:drop-shadow(0 6px 0 rgba(0,0,0,0.7)) drop-shadow(0 12px 0 rgba(0,0,0,0.4))';
         } else {
             $this->L10N->Data['Text Direction'] = 'rtl';
             $this->FE['FE_Align'] = 'right';
             $this->FE['FE_Align_Reverse'] = 'left';
             $this->FE['FE_Align_Mode'] = 'rl';
             $this->FE['Half_Border'] = 'solid none none solid';
-            $this->FE['45deg'] = '-45deg';
             $this->FE['90deg'] = '270deg';
-            $this->FE['caretTransform'] = 'translateX(-5px, -2px) scaleX(0.9)';
+            $this->FE['caretTransformBefore'] = 'transform:rotate(0) scaleX(1);position:relative;top:2px;right:0px;filter:drop-shadow(0 0 0 rgba(0,0,0,0)) drop-shadow(0 0 0 rgba(0,0,0,0))';
+            $this->FE['caretTransformAfter'] = 'transform:rotate(90deg) scaleX(0.4);position:relative;top:4px;right:10px;filter:drop-shadow(0 -6px 0 rgba(0,0,0,0.7)) drop-shadow(0 -12px 0 rgba(0,0,0,0.4))';
         }
 
         /** A simple passthru for non-private theme images and related data. */

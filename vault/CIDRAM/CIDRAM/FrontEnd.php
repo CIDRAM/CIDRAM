@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2025.08.08).
+ * This file: The CIDRAM front-end (last modified: 2025.08.09).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -203,6 +203,18 @@ class FrontEnd extends Core
             'Links.Website' => $this->CIDRAM['Links']['Website']
         ];
 
+        if ($this->CIDRAM['QueryVars']['cidram-page'] === 'config') {
+            /** Fix for immediate display of freshly updated theme selection. */
+            if (!empty($_POST['config_frontend_theme']) && !preg_match('~[^a-z]~', $_POST['config_frontend_theme']) && $this->filterThemeFrontEnd($_POST['config_frontend_theme'])) {
+                $this->FE['theme'] = $_POST['config_frontend_theme'];
+            }
+
+            /** Fix for immediate display of freshly updated theme mode selection. */
+            if (!empty($_POST['config_frontend_theme_mode']) && isset($this->CIDRAM['Config Defaults']['frontend']['theme_mode']['choices'][$_POST['config_frontend_theme_mode']])) {
+                $this->FE['theme_mode'] = $_POST['config_frontend_theme_mode'];
+            }
+        }
+
         /** Used by rate limiting exceptions. */
         $this->CIDRAM['ViewCalled'] = true;
 
@@ -351,6 +363,9 @@ class FrontEnd extends Core
         /** A simple passthru for the front-end CSS. */
         if ($this->CIDRAM['QueryVars']['cidram-page'] === 'css') {
             $this->eTaggable('frontend.css', function ($AssetData) {
+                if (!empty($this->CIDRAM['QueryVars']['theme-mode'])) {
+                    $this->FE['theme_mode_effects'] = $this->CIDRAM['Config Defaults']['frontend']['theme_mode']['effects'][$this->CIDRAM['QueryVars']['theme-mode']] ?? '';
+                }
                 return $this->embedAssets($this->parseVars($this->FE, $AssetData, true));
             });
         }

@@ -440,6 +440,7 @@
 - [2025.07.26]: Some browsers, in some contexts, were raising errors during request inspection concerning the absence of any X-Content-Type-Options header declaration (though it isn't entirely clear whether this error had any actual effect); Fixed.
 - [2025.07.27]: Some form element labels were applied incorrectly at the auxiliary rules edit mode page; Fixed.
 - [2025.07.29]: The processMinifiedFormData method wasn't behaving as expected when running in the context of WordPress; Fixed.
+- [2025.08.09]: When changing the front-end's theme or theme mode at the configuration page, the change wasn't being seen immediately, instead being seen only upon subsequent request to any front-end page; Fixed.
 
 #### Security.
 - [2025.08.09]: Improved the safeguards for getAssetPath. The logfile query parameter at the front-end logs page could potentially be exploited via embedAssets to display the contents of files other than log files due to insufficient getAssetPath safeguards (though given that one would need to be logged into front-end in order to access the logs page to begin with, the risk factor should be minimal); Fixed. Added a check to the front-end logs page to ignore the logfile query parameter when a non-log file is specified.

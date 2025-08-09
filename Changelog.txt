@@ -45,6 +45,10 @@ Detailed version release guidelines for CIDRAM can be found at:
 
 - [2025.08.07]: Updated the CAPTCHA log format (#627).
 
+- [2025.08.09; Security]: Improved the safeguards for GetAssetPath. Added a
+  check to the front-end logs page to ignore the logfile query parameter when a
+  non-log file is specified.
+
 === Version/Release 2.16.2 ===
 PATCH RELEASE.
 

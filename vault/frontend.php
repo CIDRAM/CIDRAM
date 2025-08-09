@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2025.08.08).
+ * This file: Front-end handler (last modified: 2025.08.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -5103,7 +5103,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
     /** Initialise array for fetching logs data. */
     $CIDRAM['FE']['LogFiles'] = ['Files' => $CIDRAM['arrayReplaceKeys']($CIDRAM['Logs-RecursiveList']($CIDRAM['Vault'], $CIDRAM['FE']['SortOrder']), function (array $Item): string {
         return $Item['Filename'] ?? '';
-    }), 'Out' => ''];
+    }), 'Out' => "\n"];
 
     $CIDRAM['FE']['SearchInfo'] = '';
     $CIDRAM['FE']['SearchQuery'] = '';
@@ -5154,7 +5154,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
         $CIDRAM['FE']['Paginate'] ? '&paginate=on' : '',
         $CIDRAM['FE']['PerPage'] > 0 && $CIDRAM['FE']['PerPage'] !== 20 ? '&perpage=' . $CIDRAM['FE']['PerPage'] : '',
         $CIDRAM['FE']['From'] ? '&from=' . urlencode($CIDRAM['FE']['From']) : '',
-        empty($CIDRAM['QueryVars']['logfile']) ? '' : '&logfile=' . $CIDRAM['QueryVars']['logfile']
+        isset($CIDRAM['QueryVars']['logfile'], $CIDRAM['FE']['LogFiles']['Files'][$CIDRAM['QueryVars']['logfile']]) ? '&logfile=' . $CIDRAM['QueryVars']['logfile'] : ''
     );
 
     /** Remember search filters. */
@@ -5176,7 +5176,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
     /** Define log data. */
     if (empty($CIDRAM['QueryVars']['logfile'])) {
         $CIDRAM['FE']['logfileData'] = $CIDRAM['L10N']->getString('logs_no_logfile_selected');
-    } elseif (!isset($CIDRAM['FE']['LogFiles']['Files'][$CIDRAM['QueryVars']['logfile']])) {
+    } elseif (!isset($CIDRAM['QueryVars']['logfile'], $CIDRAM['FE']['LogFiles']['Files'][$CIDRAM['QueryVars']['logfile']])) {
         $CIDRAM['FE']['logfileData'] = $CIDRAM['L10N']->getString('logs_logfile_doesnt_exist');
     } else {
         if (strtolower(substr($CIDRAM['QueryVars']['logfile'], -3)) === '.gz') {
@@ -5511,7 +5511,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
         $CIDRAM['L10N']->getString('switch-descending-order-set-true'),
         $CIDRAM['FE']['Remember'] ? ' checked' : '',
         $CIDRAM['L10N']->getString('label_remember'),
-        $CIDRAM['QueryVars']['logfile'] ?? '',
+        isset($CIDRAM['QueryVars']['logfile'], $CIDRAM['FE']['LogFiles']['Files'][$CIDRAM['QueryVars']['logfile']]) ? $CIDRAM['QueryVars']['logfile'] : '',
         $CIDRAM['L10N']->getString('field_ok'),
         $CIDRAM['FE']['Paginate'] ? ' checked' : '',
         $CIDRAM['L10N']->getString('label_paginate'),

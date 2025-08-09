@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2025.07.27).
+ * This file: Front-end functions file (last modified: 2025.08.09).
  */
 
 /**
@@ -1317,6 +1317,19 @@ $CIDRAM['Tally'] = function ($In, $BlockLink, array $Exclusions = []) use (&$CID
 };
 
 /**
+ * Traversal detection.
+ *
+ * @param string $Path The path to check for traversal.
+ * @return bool True when the path is traversal-free. False when traversal has been detected.
+ */
+$CIDRAM['Traverse'] = function ($Path) {
+    return !preg_match(
+        '~(?://|(?<![\da-z])\.\.(?![\da-z])|/\.(?![\da-z])|(?<![\da-z])\./|[\x01-\x1F\[-^`?*$])~i',
+        str_replace('\\', '/', $Path)
+    );
+};
+
+/**
  * Get the appropriate path for a specified asset as per the defined theme.
  *
  * @param string $Asset The asset filename.
@@ -1325,6 +1338,11 @@ $CIDRAM['Tally'] = function ($In, $BlockLink, array $Exclusions = []) use (&$CID
  * @return string The asset path.
  */
 $CIDRAM['GetAssetPath'] = function ($Asset, $CanFail = false) use (&$CIDRAM) {
+    /** Guard against unsafe paths and traversal attacks. */
+    if (preg_match('~[^\da-z._]~i', $Asset) || !$CIDRAM['Traverse']($Asset)) {
+        return '';
+    }
+
     if (
         $CIDRAM['Config']['template_data']['theme'] !== 'default' &&
         file_exists($CIDRAM['Vault'] . 'fe_assets/' . $CIDRAM['Config']['template_data']['theme'] . '/' . $Asset)
@@ -1461,19 +1479,6 @@ $CIDRAM['FilterSwitch'] = function (array $Switches, $Selector, &$StateModified,
         $Label = $CIDRAM['L10N']->getString($LangItem) ?: $LangItem;
         $Options .= '<option value="' . $Switch . '">' . $Label . '</option>';
     }
-};
-
-/**
- * Traversal detection.
- *
- * @param string $Path The path to check for traversal.
- * @return bool True when the path is traversal-free. False when traversal has been detected.
- */
-$CIDRAM['Traverse'] = function ($Path) {
-    return !preg_match(
-        '~(?://|(?<![\da-z])\.\.(?![\da-z])|/\.(?![\da-z])|(?<![\da-z])\./|[\x01-\x1F\[-^`?*$])~i',
-        str_replace('\\', '/', $Path)
-    );
 };
 
 /**
@@ -4952,6 +4957,9 @@ $CIDRAM['eTaggable'] = function ($Asset, $Callback = null) use (&$CIDRAM) {
             }
             if ($Success) {
                 $AssetData = $CIDRAM['ReadFile']($ThisAsset);
+                if (is_callable($Callback)) {
+                    $AssetData = $Callback($AssetData);
+                }
                 $OldETag = isset($_SERVER['HTTP_IF_NONE_MATCH']) ? $_SERVER['HTTP_IF_NONE_MATCH'] : '';
                 $NewETag = hash('sha256', $AssetData) . '-' . strlen($AssetData);
                 header('Last-Modified: ' . gmdate('D, d M Y H:i:s T', filemtime($ThisAsset)));
@@ -4966,9 +4974,6 @@ $CIDRAM['eTaggable'] = function ($Asset, $Callback = null) use (&$CIDRAM) {
                 header($MimeType);
                 if ($NoSniff) {
                     header('X-Content-Type-Options: nosniff');
-                }
-                if (is_callable($Callback)) {
-                    $AssetData = $Callback($AssetData);
                 }
                 echo $AssetData;
                 die;

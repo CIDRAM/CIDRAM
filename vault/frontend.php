@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2025.07.26).
+ * This file: Front-end handler (last modified: 2025.08.08).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -59,13 +59,13 @@ $CIDRAM['FE'] = [
     /** Define active configuration file. */
     'ActiveConfigFile' => !empty($CIDRAM['Overrides']) ? $CIDRAM['Domain'] . '.config.ini' : 'config.ini',
 
-    /** Current time and date. */
+    /** The current time and date. */
     'DateTime' => $CIDRAM['TimeFormat']($CIDRAM['Now'], $CIDRAM['Config']['general']['time_format']),
 
     /** How the script identifies itself. */
     'ScriptIdent' => $CIDRAM['ScriptIdent'],
 
-    /** Current default theme. */
+    /** The currently configured theme. */
     'theme' => $CIDRAM['Config']['template_data']['theme'],
 
     /** List of front-end users will be populated here. */
@@ -1277,7 +1277,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                 $CIDRAM['RegenerateConfig'] .= $CIDRAM['DirKey'] . '=\'' . $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']] . "'\r\n\r\n";
             }
             if (isset($CIDRAM['DirValue']['preview'])) {
-                $CIDRAM['ThisDir']['Preview'] = ($CIDRAM['DirValue']['preview'] === 'allow_other') ? '' : sprintf(
+                $CIDRAM['ThisDir']['Preview'] = ($CIDRAM['DirValue']['preview'] === 'allow_other' || substr($CIDRAM['DirValue']['preview'], 0, 3) === 'js:') ? '' : sprintf(
                     ' = <span id="%s_preview"></span>',
                     $CIDRAM['ThisDir']['DirLangKey']
                 );
@@ -1364,10 +1364,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                         $CIDRAM['ThisDir']['DirLangKeyOther']
                     );
                 } elseif (substr($CIDRAM['DirValue']['preview'], 0, 3) === 'js:') {
-                    $CIDRAM['ThisDir']['Preview'] .= '<script type="text/javascript">' . sprintf(
-                        substr($CIDRAM['DirValue']['preview'], 3),
-                        $CIDRAM['ThisDir']['DirLangKey']
-                    ) . '</script>';
+                    $CIDRAM['ThisDir']['Preview'] .= '<script type="text/javascript">' . sprintf(substr($CIDRAM['DirValue']['preview'], 3), $CIDRAM['ThisDir']['DirLangKey']) . '</script>';
                 }
             } elseif ($CIDRAM['DirValue']['type'] === 'kb') {
                 $CIDRAM['ThisDir']['Preview'] = sprintf(' = <span id="%s_preview"></span>', $CIDRAM['ThisDir']['DirLangKey']);

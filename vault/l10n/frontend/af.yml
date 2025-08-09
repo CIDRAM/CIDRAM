@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Afrikaans language data for the front-end (last modified: 2025.08.07).
+# This file: Afrikaans language data for the front-end (last modified: 2025.08.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -185,7 +185,8 @@ config:
  frontend_max_login_attempts: "Maksimum aantal intekenpogings aan die front-end. Verstek = 5."
  frontend_remotes: "Lys van die adresse wat deur die bywerker gebruik word om komponent-metadata te gaan haal. Dit moet dalk aangepas word wanneer jy na 'n nuwe hoofweergawe opgradeer, of wanneer 'n nuwe bron vir opdaterings verkry word, maar moet onder normale omstandighede alleen gelaat word."
  frontend_signatures_update_event_log: "Lêer vir aanteken wanneer handtekeninge via die front-end opgedateer word. Spesifiseer 'n lêernaam, of laat leeg om te deaktiveer."
- frontend_theme: "Die verstektema om vir die front-end te gebruik."
+ frontend_theme: "Die tema om vir die front-end te gebruik."
+ frontend_theme_mode: "Die modus vir die tema om vir die front-end te gebruik."
  general: "Algemene konfigurasie (enige kernkonfigurasie wat nie aan ander kategorieë behoort nie)."
  general_allow_gethostbyaddr_lookup: "Laat gethostbyaddr-opsoeke toe wanneer UDP nie beskikbaar is nie? True = Ja [Verstek]; False = Nee."
  general_ban_override: "Vervang "http_response_header_code" wanneer "infraction_limit" oorskry word? 200 = Moenie vervang nie [Verstek]. Ander waardes is dieselfde as die beskikbare waardes vir "http_response_header_code"."
@@ -323,7 +324,8 @@ config:
  template_data_custom_footer: "Ingevoeg as HTML heel onderaan alle "toegang geweier" bladsye. Dit kan nuttig wees indien jy 'n regskennisgewing, kontakskakel, besigheidsinligting, of soortgelyke by al sulke bladsye wil insluit."
  template_data_custom_header: "Ingevoeg as HTML heel aan die begin van alle "toegang geweier" bladsye. Dit kan nuttig wees indien u 'n webwerf-logo, gepersonaliseerde kopskrif, skrifte, of soortgelyke by al sulke bladsye wil insluit."
  template_data_magnification: *MagnifDesc
- template_data_theme: "Die verstektema om vir CIDRAM te gebruik."
+ template_data_theme: "Die tema om te gebruik vir blokgebeurtenisse en CAPTCHA-versoeke."
+ template_data_theme_mode: "Die modus vir die tema om te gebruik vir blokgebeurtenisse en CAPTCHA-versoeke."
  tor: "Konfigurasie vir die Tor-blokker module."
  verification: "Konfigurasie om te verifieer waar versoeke vandaan kom."
  verification_adjust: "Kontroles om ander kenmerke aan te pas wanneer dit in die konteks van verifikasie is."
@@ -623,6 +625,7 @@ label:
  Installed Available: "Geïnstalleer/Beskikbaar"
  Integrity check: "Integriteitskontrole:"
  Intersect: "Intersek"
+ Inverted: "Omgekeerd"
  Invisible: "Onsigbaar"
  Latest stable: "Nuutste stabiele:"
  Latest unstable: "Nuutste onstabiele:"
@@ -641,6 +644,7 @@ label:
  No log file selected: "Geen loglêer gekies nie."
  No log files available: "Geen loglêers beskikbaar nie."
  None: "Geen.\nAs jy die module slegs vir verslagdoeleindes wil gebruik, sonder om iets op te soek, gebruik dit."
+ Normal: "Normaal"
  Only when blocked, specially marked for use, within the signature limit, and not banned: "Slegs wanneer geblokkeer is, spesiaal gemerk vir gebruik is, binne die handtekeninglimiet is, en nie verban is nie."
  Only when blocked, within the signature limit, and not banned: "Slegs wanneer geblokkeer is, binne die handtekeninglimiet is, en nie verban is nie."
  Only when not blocked, at sensitive page requests: "Slegs wanneer dit nie geblokkeer is nie, op sensitiewe bladsyversoeke."

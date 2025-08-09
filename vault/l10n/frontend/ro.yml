@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Romanian language data for the front-end (last modified: 2025.08.07).
+# This file: Romanian language data for the front-end (last modified: 2025.08.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -185,7 +185,8 @@ config:
  frontend_max_login_attempts: "Numărul maxim de încercări de conectare front-end. Implicit = 5."
  frontend_remotes: "O listă a adreselor utilizate de actualizator pentru a prelua metadatele componente. Poate fi necesar să fie ajustat atunci când faceți upgrade la o nouă versiune majoră sau când achiziționați o nouă sursă pentru actualizări, dar în circumstanțe normale ar trebui lăsat în pace."
  frontend_signatures_update_event_log: "Un fișier pentru înregistrare atunci când semnăturile sunt actualizate prin intermediul front-end-ului. Specificați un nume de fișier, sau lăsați necompletat pentru a dezactiva."
- frontend_theme: "Tema implicită de utilizat pentru front-end."
+ frontend_theme: "Tema de utilizat pentru front-end."
+ frontend_theme_mode: "Modul pentru temă de utilizat pentru front-end."
  general: "Configurație generală (orice configurație de bază care nu aparține altor categorii)."
  general_allow_gethostbyaddr_lookup: "Permiteți căutările gethostbyaddr când UDP nu este disponibil? True = Da [Implicit]; False = Nu."
  general_ban_override: "Înlocuiți „http_response_header code” atunci când „infraction_limit” este depășită? 200 = Nu înlocuiți [Implicit]. Alte valori sunt aceleași cu valorile disponibile pentru „http_response_header_code”."
@@ -317,13 +318,14 @@ config:
  supplementary_cache_options_redis_port: "Valoarea portului Redis. Implicit = „6379”."
  supplementary_cache_options_redis_timeout: "Valoarea timeout Redis. Implicit = „2.5”."
  template_data: "Configurare pentru șabloane și teme."
- template_data_block_event_title: "Titlul paginii de afișat pentru evenimentele blocate."
+ template_data_block_event_title: "Titlul paginii de afișat pentru evenimentele de blocare."
  template_data_captcha_title: "Titlul paginii de afișat pentru solicitările CAPTCHA."
  template_data_css_url: "Adresa URL a fișierului CSS pentru teme personalizate."
  template_data_custom_footer: "Inserat ca HTML chiar la sfârşitul tuturor paginilor „acces refuzat”. Acest lucru ar putea fi util în cazul în care doriți să includeți o notificare legală, un link de contact, informații despre companie, sau similare în toate aceste pagini."
  template_data_custom_header: "Inserat ca HTML chiar la începutul tuturor paginilor „acces refuzat”. Acest lucru ar putea fi util în cazul în care doriți să includeți un logo al site-ului web, un antet personalizat, scripturi, sau similare în toate aceste pagini."
  template_data_magnification: *MagnifDesc
- template_data_theme: "Tema implicită de utilizat pentru CIDRAM."
+ template_data_theme: "Tema de utilizat pentru evenimentele de blocare și solicitările CAPTCHA."
+ template_data_theme_mode: "Modul pentru temă de utilizat pentru evenimentele de blocare și solicitările CAPTCHA."
  tor: "Configurare pentru modulul de blocare Tor."
  verification: "Configurație pentru verificarea de unde provin solicitările."
  verification_adjust: "Controale pentru ajustarea altor funcții în contextul verificării."
@@ -633,6 +635,7 @@ label:
  Installed Available: "Instalat/Disponibil"
  Integrity check: "Verificarea integrității:"
  Intersect: "Intersectul"
+ Inverted: "Inversat"
  Invisible: "Invizibil"
  Latest stable: "Ultima stabilă:"
  Latest unstable: "Ultima instabilă:"
@@ -651,6 +654,7 @@ label:
  No log file selected: "Niciun fișier jurnal selectat."
  No log files available: "Niciun fișier jurnal disponibile."
  None: "Niciun.\nDacă doriți să utilizați modulul numai în scopuri de raportare, fără a căuta nimic, utilizați acest lucru."
+ Normal: "Normal"
  Only when blocked, specially marked for use, within the signature limit, and not banned: "Doar atunci când este blocat, marcat special pentru utilizare, în limita semnătură, și nu este interzis."
  Only when blocked, within the signature limit, and not banned: "Doar atunci când este blocat, în limita de semnătură, și nu este interzis."
  Only when not blocked, at sensitive page requests: "Doar când nu este blocat, la solicitări de pagini sensibile."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2025.08.07).
+# This file: French language data for the front-end (last modified: 2025.08.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -197,7 +197,8 @@ config:
  frontend_max_login_attempts: "Nombre maximal de tentatives de connexion (l'accès frontal). Défaut = 5."
  frontend_remotes: "Une liste des adresses utilisées par la page des mises à jour pour procurer les métadonnées des composants. Cela peut devoir être ajusté lors du passage à une nouvelle version majeure, ou lors de l'acquisition d'une nouvelle source de mises à jour, mais dans des circonstances normales, il doit être laissé tel quel."
  frontend_signatures_update_event_log: "Un fichier pour la journalisation lorsque les signatures sont mises à jour via la page des mises à jour. Spécifier un fichier, ou laisser vide à désactiver."
- frontend_theme: "Le thème à utiliser par défaut pour l'accès frontal."
+ frontend_theme: "Le thème à utiliser pour l'accès frontal."
+ frontend_theme_mode: "Le mode pour le thème à utiliser pour l'accès frontal."
  general: "Configuration générale (toute configuration de base n'appartenant pas à d'autres catégories)."
  general_allow_gethostbyaddr_lookup: "Autoriser les recherches par gethostbyaddr lorsque UDP est indisponible\_? True = Oui [Défaut]\_; False = Non."
  general_ban_override: "Remplacer «\_http_response_header_code\_» lorsque «\_infraction_limit\_» est dépassé\_? 200 = Ne pas remplacer [Défaut]. Les autres valeurs sont les mêmes que les valeurs disponibles pour «\_http_response_header_code\_»."
@@ -363,7 +364,8 @@ config:
  template_data_custom_footer: "Inséré en tant que HTML au tout bas de toutes les pages «\_accès refusé\_». Cela peut être utile si vous souhaitez inclure une notice légale, un lien de contact, des informations commerciales, ou similaires sur toutes ces pages."
  template_data_custom_header: "Inséré en tant que HTML au tout début de toutes les pages «\_accès refusé\_». Cela peut être utile si vous souhaitez inclure un logo de site Web, un en-tête personnalisé, des scripts, ou similaires sur toutes ces pages."
  template_data_magnification: *MagnifDesc
- template_data_theme: "Le thème à utiliser par défaut pour CIDRAM."
+ template_data_theme: "Le thème à utiliser pour les événements de blocage et les requêtes d'un CAPTCHA."
+ template_data_theme_mode: "Le mode pour le thème à utiliser pour les événements de blocage et les requêtes d'un CAPTCHA."
  tor: "Configuration pour le module bloqueur de Tor."
  verification: "Configuration pour vérifier d'où proviennent les requêtes."
  verification_adjust: "Contrôles pour ajuster d'autres fonctionnalités dans le contexte de la vérification."
@@ -676,6 +678,7 @@ label:
  Installed Available: "Installé/Disponible"
  Integrity check: "Vérification de l'intégrité\_:"
  Intersect: "L'intersection des deux ensembles"
+ Inverted: "Inversé"
  Invisible: "Invisible"
  Latest stable: "Dernier stable\_:"
  Latest unstable: "Dernier instable\_:"
@@ -694,6 +697,7 @@ label:
  No log file selected: "Aucun fichier journal sélectionné."
  No log files available: "Aucun fichiers journaux disponibles."
  None: "Aucun.\nSi vous souhaitez utiliser le module seulement à des fins de création de rapports, sans rien rechercher, utilisez ceci."
+ Normal: "Normale"
  Only when blocked, specially marked for use, within the signature limit, and not banned: "Seulement lorsqu'il est bloqué, spécialement marqué pour l'utilisation, dans la limite de signatures, et non interdit."
  Only when blocked, within the signature limit, and not banned: "Seulement lorsqu'il est bloqué, dans la limite de signatures, et non interdit."
  Only when not blocked, at sensitive page requests: "Seulement lorsqu'il n'est pas bloqué, lors de requêtes de pages sensibles."

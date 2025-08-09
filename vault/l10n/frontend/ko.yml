@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2025.08.07).
+# This file: Korean language data for the front-end (last modified: 2025.08.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -185,7 +185,8 @@ config:
  frontend_max_login_attempts: "로그인 시도 최대 횟수입니다 (프론트 엔드). Default (기본 설정) = 5."
  frontend_remotes: "구성 요소 메타데이터를 가져오기 위해 업데이트할 터에서 사용하는 주소 목록입니다. 이것은 새로운 주 버전으로 업그레이드하거나 업데이트를 위한 새로운 소스를 얻을 때 조정해야 할 수 있지만 일반적인 상황에서는 그대로 두어야 합니다."
  frontend_signatures_update_event_log: "프런트 엔드임를 통해 서명이 업데이트될 때 로깅을 위한 파일입니다. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다."
- frontend_theme: "프런트 엔드에 사용할 기본 테마."
+ frontend_theme: "프런트 엔드에 사용할 테마입니다."
+ frontend_theme_mode: "프런트 엔드에 사용할 테마의 모드입니다."
  general: "일반 설정 (다른 카테고리에 속하지 않는 설정)."
  general_allow_gethostbyaddr_lookup: "UDP를 사용할 수 없을 때 gethostbyaddr 검색을 허용 하시겠습니까? True = 예 (Default / 기본 설정); False = 아니오."
  general_ban_override: ""infraction_limit"를 초과하면 "http_response_header_code"를 덮어 쓰시겠습니까? 200 = 덮어 쓰지 (Default / 기본값). 다른 값은 "http_response_header_code"에 사용할 수있는 값과 같습니다."
@@ -257,7 +258,7 @@ config:
  phpmailer_port: "아웃 바운드 이메일에 사용할 포트 번호입니다. Default (기본 설정) = 587."
  phpmailer_set_from_address: "SMTP를 통해 전자 메일을 보낼 때 인용 할 보낸 사람 주소입니다."
  phpmailer_set_from_name: "SMTP를 통해 전자 메일을 보낼 때 인용 할 보낸 사람 이름입니다."
- phpmailer_skip_auth_process: "<code>true</code> 일 때, PHPMailer는 전자 메일 전송을위한 SMTP 인증 프로세스를 건너 뛰도록 지시합니다. 이 프로세스를 건너 뛰면 아웃 바운드 전자 메일이 MITM 공격에 노출 될 수 있으므로 피해야합니다. 특정 경우에 필요할 수 있음 (예\_: PHPMailer가 SMTP 서버에 제대로 연결할 수없는 경우)."
+ phpmailer_skip_auth_process: "<code>true</code> 일 때, PHPMailer는 전자 메일 전송을위한 SMTP 인증 프로세스를 건너 뛰도록 지시합니다. 이 프로세스를 건너 뛰면 아웃 바운드 전자 메일이 MITM 공격에 노출 될 수 있으므로 피해야합니다. 특정 경우에 필요할 수 있음 (예\_: PHPMailer가 SMTP 서버에 제대로 연결할 수 없는 경우)."
  phpmailer_smtp_auth: "이 지시문은 SMTP 세션을 인증할지 여부를 결정합니다 (보통 이것을 무시해야합니다)."
  phpmailer_smtp_secure: "SMTP를 통해 이메일을 보낼 때 사용할 프로토콜 (TLS 또는 SSL)."
  phpmailer_username: "SMTP를 통해 이메일을 보낼 때 사용할 사용자 이름입니다."
@@ -323,7 +324,8 @@ config:
  template_data_custom_footer: "모든 "액세스 거부" 페이지 맨 아래에 HTML로 삽입됩니다. 법적 고지, 연락처 링크, 비즈니스 정보, 등에 유용합니다."
  template_data_custom_header: "모든 "액세스 거부" 페이지의 맨 처음에 HTML로 삽입됩니다. 웹사이트 로고, 개인화된 헤더, 스크립트, 등에 유용합니다."
  template_data_magnification: *MagnifDesc
- template_data_theme: "CIDRAM에 사용할 기본 테마."
+ template_data_theme: "블록 이벤트와 CAPTCHA 요청에 사용할 테마입니다."
+ template_data_theme_mode: "블록 이벤트와 CAPTCHA 요청에 사용할 테마의 모드입니다."
  tor: "Tor 차단기 모듈에 대한 설정."
  verification: "요청의 출처를 확인하기 위한 구성."
  verification_adjust: "검증과 관련하여 다른 기능을 조정하는 컨트롤입니다."
@@ -372,7 +374,7 @@ field:
  Log In: "로그인"
  Macro: "매크로"
  New name: "새 이름\_:"
- Non-clickable text: "클릭 할 수없는 텍스트"
+ Non-clickable text: "클릭 할 수 없는 텍스트"
  Not tracking: "추적하지 않습니다."
  Only when triggered manually: "수동으로 트리거되는 경우에만 (예를 들어, cron을 통해)."
  Options: "옵션"
@@ -611,6 +613,7 @@ label:
  Installed Available: "설치되어있다 / 이용 가능"
  Integrity check: "무결성 검사\_:"
  Intersect: "교차"
+ Inverted: "반전"
  Invisible: "보이지 않음"
  Latest stable: "최신 안정\_:"
  Latest unstable: "최신 불안정\_:"
@@ -629,6 +632,7 @@ label:
  No log file selected: "로그가 선택되어 있지 않습니다."
  No log files available: "아니 로그를 사용할 수 있습니다."
  None: "하지 마라.\n아무것도 조회하지 않고 보고 목적으로만 모듈을 사용하려면 이것을 사용하십시오."
+ Normal: "정상"
  Only when blocked, specially marked for use, within the signature limit, and not banned: "차단되었을, 특별히 사용 표시, 서명 한도 내고 금지되지 않으면 때만."
  Only when blocked, within the signature limit, and not banned: "차단되었을, 서명 한도 내고 금지되지 않으면 때만."
  Only when not blocked, at sensitive page requests: "차단되지 않은 경우에만, 민감한 페이지 요청 시."

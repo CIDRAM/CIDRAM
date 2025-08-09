@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2025.08.07).
+ * This file: The CIDRAM front-end (last modified: 2025.08.08).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -126,14 +126,20 @@ class FrontEnd extends Core
             /** Define active configuration file. */
             'ActiveConfigFile' => $this->ConfigurationPath,
 
-            /** Current time and date. */
+            /** The current time and date. */
             'DateTime' => $this->timeFormat($this->Now, $this->Configuration['general']['time_format']),
 
             /** How the script identifies itself. */
             'ScriptIdent' => $this->ScriptIdent,
 
-            /** Current default theme. */
+            /** The currently configured theme. */
             'theme' => $this->Configuration['frontend']['theme'],
+
+            /** The currently configured theme mode. */
+            'theme_mode' => $this->Configuration['frontend']['theme_mode'],
+
+            /** The currently configured theme mode's effects. */
+            'theme_mode_effects' => $this->CIDRAM['Config Defaults']['frontend']['theme_mode']['effects'][$this->Configuration['frontend']['theme_mode']] ?? '',
 
             /**
              * The current user state.
@@ -325,6 +331,7 @@ class FrontEnd extends Core
             $this->FE['Half_Border'] = 'solid solid none none';
             $this->FE['45deg'] = '45deg';
             $this->FE['90deg'] = '90deg';
+            $this->FE['caretTransform'] = 'translate(5px, -2px) scaleX(0.9)';
         } else {
             $this->L10N->Data['Text Direction'] = 'rtl';
             $this->FE['FE_Align'] = 'right';
@@ -333,6 +340,7 @@ class FrontEnd extends Core
             $this->FE['Half_Border'] = 'solid none none solid';
             $this->FE['45deg'] = '-45deg';
             $this->FE['90deg'] = '270deg';
+            $this->FE['caretTransform'] = 'translateX(-5px, -2px) scaleX(0.9)';
         }
 
         /** A simple passthru for non-private theme images and related data. */

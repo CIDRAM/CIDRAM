@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese language data for the front-end (last modified: 2025.08.07).
+# This file: Chinese language data for the front-end (last modified: 2025.08.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -193,7 +193,8 @@ config:
  frontend_max_login_attempts: {"zh-Hans": "最大前端登录尝试次数。 标准 = 5。", "zh-Hant": "最大前端登錄嘗試次數。 標準 = 5。"}
  frontend_remotes: {"zh-Hans": "更新系统用于获取组件元数据的地址列表。​这可能需要在升级到新的主要版本时进行调整，或者在获取新的更新源时进行调整，但在正常情况下应该不理会。", "zh-Hant": "更新系統用於獲取組件元數據的地址列表。​這可能需要在升級到新的主要版本時進行調整，或者在獲取新的更新源時進行調整，但在正常情況下應該不理會。"}
  frontend_signatures_update_event_log: {"zh-Hans": "通过前端更新签名时用于记录的文件。​指定一个文件名，​或留空以禁用。", "zh-Hant": "通過前端更新簽名時用於記錄的文件。​指定一個檔案名稱，​或留空以禁用。"}
- frontend_theme: {"zh-Hans": "用于前端的默认主题。", "zh-Hant": "用於前端的默認主題。"}
+ frontend_theme: {"zh-Hans": "用于前端的主题。", "zh-Hant": "用於前端的主題。"}
+ frontend_theme_mode: {"zh-Hans": "用于前端的主题模式。", "zh-Hant": "用於前端的主題模式。"}
  general: {"zh-Hans": "基本配置（任何不属于其他类别的核心配置）。", "zh-Hant": "基本配置（任何不屬於其他類別的核心配置）。"}
  general_allow_gethostbyaddr_lookup: {"zh-Hans": "当UDP不可用时允许gethostbyaddr查找？​True（真）=允许【标准】；False（假）=不允许。", "zh-Hant": "當UDP不可用時允許gethostbyaddr查找？​True（真）=允許【標準】；False（假）=不允許。"}
  general_ban_override:
@@ -359,7 +360,8 @@ config:
  template_data_custom_footer: {"zh-Hans": "在所有“拒绝访问”页面的末尾作为HTML插入。​如果您想在所有此类页面中包含法律声明、联系链接、业务信息、或类似，这可能会很有用。", "zh-Hant": "在所有『拒絕訪問』頁面的末尾作為HTML插入。​如果您想在所有此類頁面中包含法律聲明、聯繫鏈接、業務信息、或類似，這可能會很有用。"}
  template_data_custom_header: {"zh-Hans": "在所有“拒绝访问”页面的开头作为HTML插入。​如果您想在所有此类页面中包含网站徽标、个性化标题、脚本、或类似，这可能会很有用。", "zh-Hant": "在所有『拒絕訪問』頁面的開頭作為HTML插入。​如果您想在所有此類頁面中包含網站徽標、個性化標題、腳本、或類似，這可能會很有用。"}
  template_data_magnification: *MagnifDesc
- template_data_theme: {"zh-Hans": "用于CIDRAM的默认主题。", "zh-Hant": "用於CIDRAM的默認主題。"}
+ template_data_theme: {"zh-Hans": "用于阻止事件和CAPTCHA请求的主题。", "zh-Hant": "用於阻止事件和CAPTCHA請求的主題。"}
+ template_data_theme_mode: {"zh-Hans": "用于阻止事件和CAPTCHA请求的主题模式。", "zh-Hant": "用於阻止事件和CAPTCHA請求的主題模式。"}
  tor: {"zh-Hans": "Tor阻塞模块的配置。", "zh-Hant": "Tor阻塞模組的配置。"}
  verification: {"zh-Hans": "请求来源验证配置。", "zh-Hant": "請求來源驗證配置。"}
  verification_adjust: {"zh-Hans": "在验证上下文中调整其他功能的控件。", "zh-Hant": "在驗證上下文中調整其他功能的控件。"}
@@ -752,6 +754,7 @@ label:
  Installed Available: {"zh-Hans": "已安装/可用", "zh-Hant": "已安裝/可用"}
  Integrity check: {"zh-Hans": "完整性检查：", "zh-Hant": "完整性檢查："}
  Intersect: "相交"
+ Inverted: "倒置的"
  Invisible: {"zh-Hans": "不可见的", "zh-Hant": "不可見的"}
  Latest stable: {"zh-Hans": "最新稳定：", "zh-Hant": "最新穩定："}
  Latest unstable: {"zh-Hans": "最新不稳定：", "zh-Hant": "最新不穩定："}
@@ -770,6 +773,7 @@ label:
  No log file selected: {"zh-Hans": "没有选择的日志。", "zh-Hant": "沒有選擇的日誌。"}
  No log files available: {"zh-Hans": "没有日志可用。", "zh-Hant": "沒有日誌可用。"}
  None: {"zh-Hans": "不要执行。\n使用如果您只想将该模块用于报告目的，而不是检查结果。", "zh-Hant": "不要執行。\n使用如果您只想將該模組用於報告目的，而不是檢查結果。"}
+ Normal: "普通的"
  Only when blocked, specially marked for use, within the signature limit, and not banned: {"zh-Hans": "仅当被阻止时，专门标明使用时，在签名限制之内，并且不被禁止。", "zh-Hant": "僅當被阻止時，專門標明使用時，在簽名限制之內，並且不被禁止。"}
  Only when blocked, within the signature limit, and not banned: {"zh-Hans": "仅当被阻止时，在签名限制之内，并且不被禁止。", "zh-Hant": "僅當被阻止時，在簽名限制之內，並且不被禁止。"}
  Only when not blocked, at sensitive page requests: {"zh-Hans": "仅在不被阻止时，在敏感页面请求时。", "zh-Hant": "僅在不被阻止時，在敏感頁面請求時。"}

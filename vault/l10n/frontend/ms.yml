@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malay language data for the front-end (last modified: 2025.08.07).
+# This file: Malay language data for the front-end (last modified: 2025.08.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -185,7 +185,8 @@ config:
  frontend_max_login_attempts: "Jumlah maksimum percubaan log masuk bahagian hadapan. Lalai = 5."
  frontend_remotes: "Senarai alamat yang digunakan oleh pengemas kini untuk mengambil metadata komponen. Ini mungkin perlu dilaraskan apabila menaik taraf kepada versi utama baharu, atau apabila memperoleh sumber baharu untuk kemas kini, tetapi dalam keadaan biasa harus dibiarkan begitu sahaja."
  frontend_signatures_update_event_log: "Fail untuk pengelogan apabila tandatangan dikemas kini melalui bahagian hadapan. Tentukan nama fail, atau biarkan kosong untuk nyahaktifkan."
- frontend_theme: "Tema lalai yang digunakan untuk bahagian hadapan."
+ frontend_theme: "Tema yang akan digunakan untuk bahagian hadapan."
+ frontend_theme_mode: "Mod untuk tema yang akan digunakan untuk bahagian hadapan."
  general: "Konfigurasi generik (sebarang konfigurasi teras yang bukan tergolong dalam kategori lain)."
  general_allow_gethostbyaddr_lookup: "Benarkan menggunakan gethostbyaddr apabila UDP tidak tersedia? True = Ya [Lalai]; False = Tidak."
  general_ban_override: "Mengatasi "http_response_header_code" apabila "infraction_limit" melebihi? 200 = Jangan mengatasikan [Lalai]. Nilai lain adalah sama dengan nilai yang tersedia untuk "http_response_header_code"."
@@ -323,7 +324,8 @@ config:
  template_data_custom_footer: "Disisipkan sebagai HTML pada penghujung semua halaman "akses dinafikan". Ini mungkin berguna sekiranya anda ingin menyertakan notis undang-undang, pautan hubungan, maklumat perniagaan, dsb pada semua halaman tersebut."
  template_data_custom_header: "Disisipkan sebagai HTML pada permulaan semua halaman "akses dinafikan". Ini mungkin berguna sekiranya anda ingin menyertakan logo tapak web, pengepala diperibadikan, skrip, dsb pada semua halaman tersebut."
  template_data_magnification: *MagnifDesc
- template_data_theme: "Tema lalai yang digunakan untuk CIDRAM."
+ template_data_theme: "Tema yang akan digunakan untuk acara sekat dan permintaan CAPTCHA."
+ template_data_theme_mode: "Mod untuk tema yang akan digunakan untuk acara sekat dan permintaan CAPTCHA."
  tor: "Konfigurasi untuk modul penyekat Tor."
  verification: "Konfigurasi untuk mengesahkan dari mana permintaan berasal."
  verification_adjust: "Kawalan untuk melaraskan ciri lain apabila dalam konteks pengesahan."
@@ -616,6 +618,7 @@ label:
  Installed Available: "Dipasang/Tersedia"
  Integrity check: "Pemeriksaan integriti:"
  Intersect: "Bersilang"
+ Inverted: "Terbalik"
  Invisible: "Tak nampak"
  Latest stable: "Terkini stabil:"
  Latest unstable: "Terkini tidak stabil:"
@@ -634,6 +637,7 @@ label:
  No log file selected: "Tiada fail log dipilih."
  No log files available: "Tiada fail log tersedia."
  None: "Tiada.\nJika anda ingin menggunakan modul untuk tujuan pelaporan sahaja, tanpa carian untuk apa-apa, gunakan ini."
+ Normal: "Semulajadi"
  Only when blocked, specially marked for use, within the signature limit, and not banned: "Hanya apabila disekat, ditanda khas untuk digunakan, dalam had tandatangan, dan tidak dilarang."
  Only when blocked, within the signature limit, and not banned: "Hanya apabila disekat, dalam had tandatangan, dan tidak dilarang."
  Only when not blocked, at sensitive page requests: "Hanya apabila tidak disekat, atas permintaan halaman sensitif."

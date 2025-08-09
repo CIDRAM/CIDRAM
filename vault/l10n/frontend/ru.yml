@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2025.08.07).
+# This file: Russian language data for the front-end (last modified: 2025.08.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -185,7 +185,8 @@ config:
  frontend_max_login_attempts: "Максимальное количество попыток входа в систему фронтенда. Стандарт = 5."
  frontend_remotes: "Список адресов, используемых системой обновлений для получения метаданных компонентов. Это может потребоваться скорректировать при обновлении до новой основной версии, или при приобретении нового источника обновлений, но в обычных обстоятельствах его следует оставить в покое."
  frontend_signatures_update_event_log: "Файл для регистрации при обновлении сигнатурей через фронтенд. Задайте имя файлу, или оставьте пустым чтобы деактивировать опцию."
- frontend_theme: "Стандартная тема для фронтенда."
+ frontend_theme: "Тема, которая будет использоваться для фронтенда."
+ frontend_theme_mode: "Режим для тема, которая будет использоваться для фронтенда."
  general: "Общая конфигурация (любая конфигурация ядра, не относящаяся к другим категориям)."
  general_allow_gethostbyaddr_lookup: "Разрешить поиск gethostbyaddr, когда UDP недоступен? True = Да [Стандарт]; False = Нет."
  general_ban_override: "Переопределить «http_response_header_code» когда «infraction_limit» превысило? 200 = Не переопределить [Стандарт]. Другие значения совпадают с доступными значениями для «http_response_header_code»."
@@ -323,7 +324,8 @@ config:
  template_data_custom_footer: "Вставляется как HTML в конце всех страниц «доступ запрещен». Это может быть полезно, если вы хотите включить юридическое уведомление, контактную ссылку, деловую информацию, или подобное на всех таких страницах."
  template_data_custom_header: "Вставляется как HTML в начало всех страниц «доступ запрещен». Это может быть полезно, если вы хотите включить логотип веб-сайта, персонализированный заголовок, скрипты, или подобное на всех таких страницах."
  template_data_magnification: *MagnifDesc
- template_data_theme: "Стандартная тема для CIDRAM."
+ template_data_theme: "Тема, которая будет использоваться для событий блокировки и запросов CAPTCHA."
+ template_data_theme_mode: "Режим для тема, которая будет использоваться для событий блокировки и запросов CAPTCHA."
  tor: "Конфигурация для модуля блокировщика Tor."
  verification: "Конфигурация для проверки того, откуда исходят запросы."
  verification_adjust: "Элементы управления для настройки других функциональность в контексте проверки."
@@ -635,6 +637,7 @@ label:
  Installed Available: "Установлено/Доступно"
  Integrity check: "Проверка целостности:"
  Intersect: "Пересечение"
+ Inverted: "Перевернутый"
  Invisible: "Невидимый"
  Latest stable: "Последние стабильный:"
  Latest unstable: "Последние нестабильный:"
@@ -653,6 +656,7 @@ label:
  No log file selected: "Не лог-файлы Выбранный."
  No log files available: "Не лог-файлы доступны."
  None: "Ничего.\nЕсли вы хотите использовать модуль только для отчетов, ничего не ища, используйте это."
+ Normal: "Нормальный"
  Only when blocked, specially marked for use, within the signature limit, and not banned: "Только когда заблокирован, специально помечен для использования, в пределах лимита сигнатурей, и не забанен."
  Only when blocked, within the signature limit, and not banned: "Только когда блокировке, в пределах лимита сигнатурей, и не забанен."
  Only when not blocked, at sensitive page requests: "Только когда не заблокирован, при запросах конфиденциальных страниц."

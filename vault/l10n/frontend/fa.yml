@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Farsi language data for the front (last modified: 2025.08.07).
+# This file: Farsi language data for the front (last modified: 2025.08.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -185,7 +185,8 @@ config:
  frontend_max_login_attempts: "حداکثر تعداد تلاش برای ورود به جلویی. پیش فرض = 5."
  frontend_remotes: "فهرستی از آدرس‌هایی که به‌روزرسانی‌کننده برای واکشی ابرداده مؤلفه استفاده می‌کند. ممکن است هنگام ارتقاء به نسخه اصلی جدید، یا هنگام به دست آوردن منبع جدیدی برای به روز رسانی، این مورد نیاز به تنظیم داشته باشد، اما در شرایط عادی باید به حال خود رها شود."
  frontend_signatures_update_event_log: "فایلی برای ثبت زمانی که امضاها از طریق جلویی به روز می شوند. نام فایل را مشخص کنید، یا برای غیرفعال کردن آن را خالی بگذارید."
- frontend_theme: "تم پیش‌فرض برای استفاده در قسمت جلویی."
+ frontend_theme: "قالبی که برای بخش کاربری استفاده می‌شود."
+ frontend_theme_mode: "حالتی که قالب برای استفاده در بخش کاربری استفاده می‌کند."
  general: "پیکربندی کلی (هر پیکربندی اصلی که به دسته های دیگر تعلق ندارد)."
  general_allow_gethostbyaddr_lookup: "وقتی UDP در دسترس نیست، جستجوی gethostbyaddr مجاز باشد؟ True = آره [پیش فرض]؛ False = نکن."
  general_ban_override: "وقتی از «infraction_limit» فراتر رفت، «http_response_header_code» جایگزین شود؟ 200 = تعویض نکنید [پیش فرض]. مقادیر دیگر مانند مقادیر موجود برای «http_response_header_code» هستند."
@@ -323,7 +324,8 @@ config:
  template_data_custom_footer: "به عنوان HTML در پایین تمام صفحات «دسترسی ممنوع» درج می شود. در صورتی که می‌خواهید یک اخطار حقوقی، پیوند تماس، اطلاعات تجاری و غیره اضافه کنید، این می تواند مفید باشد."
  template_data_custom_header: "به عنوان HTML در همان ابتدای همه صفحات «دسترسی ممنوع» درج می شود. در صورتی که می خواهید لوگوی وب سایت، هدر شخصی، اسکریپت ها و غیره را اضافه کنید، این می تواند مفید باشد."
  template_data_magnification: *MagnifDesc
- template_data_theme: "طرح زمینه پیش‌فرض برای استفاده برای CIDRAM."
+ template_data_theme: "قالبی که برای رویدادهای بلاک و درخواست‌های CAPTCHA استفاده می‌شود."
+ template_data_theme_mode: "حالتی که قالب برای رویدادهای بلاک و درخواست‌های CAPTCHA استفاده می‌کند."
  tor: "پیکربندی برای ماژول مسدود کننده Tor."
  verification: "پیکربندی برای تأیید اینکه درخواست ها از کجا سرچشمه می گیرند."
  verification_adjust: "کنترل‌هایی برای سایر ویژگی ها را تنظیم کنید در رابطه با تأیید."
@@ -617,6 +619,7 @@ label:
  Installed Available: "نصب شده/در دسترس"
  Integrity check: "بررسی یکپارچگی:"
  Intersect: "تقاطع"
+ Inverted: "معکوس"
  Invisible: "نامرئی"
  Latest stable: "آخرین نسخه پایدار:"
  Latest unstable: "جدیدترین نسخه ناپایدار:"
@@ -635,6 +638,7 @@ label:
  No log file selected: "هیچ فایل گزارشی انتخاب نشده است."
  No log files available: "هیچ فایل گزارشی در دسترس نیست."
  None: "هیچ یک.\nاگر می خواهید از ماژول فقط برای مقاصد گزارش استفاده کنید، بدون اینکه چیزی را جستجو کنید، از این استفاده کنید."
+ Normal: "Normal"
  Only when blocked, specially marked for use, within the signature limit, and not banned: "فقط زمانی که مسدود شده باشد، مخصوصاً برای استفاده مشخص شده باشد، در حد امضا باشد، و ممنوع نباشد."
  Only when blocked, within the signature limit, and not banned: "فقط در صورت مسدود شدن، در محدوده امضا، و ممنوع نیست."
  Only when not blocked, at sensitive page requests: "فقط زمانی که مسدود نشده باشد، در صورت درخواست صفحه حساس."

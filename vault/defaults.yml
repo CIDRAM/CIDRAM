@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2025.08.07).
+# This file: Defaults file (last modified: 2025.08.08).
 ##/
 
 Config Defaults:
@@ -683,6 +683,16 @@ Config Defaults:
     rbi: "Red-Blue Inverted"
     slate: "Slate"
    choice_filter: "filterThemeFrontEnd"
+  theme_mode:
+   type: "string"
+   default: "normal"
+   choices:
+    normal: "label.Normal"
+    inverted: "label.Inverted"
+   effects:
+    inverted: ";filter:invert(1) hue-rotate(-180deg)"
+   preview: "js:const root=document.documentElement;function config_frontend_theme_mode_function(){var sR=document.querySelector('input[name="config_frontend_theme_mode"]:checked');if(sR){root.style.filter=sR.value==='inverted'?'invert(1) hue-rotate(-180deg)':'none'}}"
+   style: "radio"
   magnification:
    type: "float"
    step: "any"
@@ -1076,6 +1086,15 @@ Config Defaults:
     primerdark: "dark"
     rbi: "light"
     slate: "dark"
+  theme_mode:
+   type: "string"
+   default: "normal"
+   choices:
+    normal: "label.Normal"
+    inverted: "label.Inverted"
+   effects:
+    inverted: ";filter:invert(1) hue-rotate(-180deg)"
+   style: "radio"
   magnification:
    type: "float"
    step: "any"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2025.08.07).
+# This file: Norwegian language data for the front-end (last modified: 2025.08.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -185,7 +185,8 @@ config:
  frontend_max_login_attempts: "Maksimum antall påloggingsforsøk i front-end. Standard = 5."
  frontend_remotes: "En liste over adressene som brukes av oppdateringssystemet for å hente komponentmetadata. Dette må kanskje justeres når du oppgraderer til en ny hovedversjon, eller når du anskaffer en ny kilde for oppdateringer, men bør under normale omstendigheter stå i fred."
  frontend_signatures_update_event_log: "En fil for logging når signaturer oppdateres via frontend. Angi et filnavn, eller la det være tomt for å deaktivere."
- frontend_theme: "Standard tema som skal brukes for frontenden."
+ frontend_theme: "Temaet som skal brukes for frontenden."
+ frontend_theme_mode: "Modusen for temaet som skal brukes for frontenden."
  general: "Generell konfigurasjon (enhver kjernekonfigurasjon som ikke tilhører andre kategorier)."
  general_allow_gethostbyaddr_lookup: "Tillat gethostbyaddr oppslag når UDP er utilgjengelig? True = Ja [Standardverdi]; False = Nei."
  general_ban_override: "Overstyr «http_response_header_code» når «infraction_limit» overskrides? 200 = Ikke overstyre [Standardverdi]. Andre verdier er de samme som tilgjengelige verdier for «http_response_header_code»."
@@ -323,7 +324,8 @@ config:
  template_data_custom_footer: "Sett inn som HTML helt i slutten av alle «tilgang nektet»-sider. Dette kan være nyttig i tilfelle du ønsker å inkludere en juridisk melding, kontaktlenke, forretningsinformasjon, eller lignende på alle slike sider."
  template_data_custom_header: "Sett inn som HTML helt i begynnelsen av alle «tilgang nektet»-sider. Dette kan være nyttig i tilfelle du ønsker å inkludere en nettsidelogo, personlig overskrift, skript, eller lignende på alle slike sider."
  template_data_magnification: *MagnifDesc
- template_data_theme: "Standard tema som skal brukes til CIDRAM."
+ template_data_theme: "Temaet som skal brukes for blokkhendelser og CAPTCHA-forespørsler."
+ template_data_theme_mode: "Modusen for temaet som skal brukes for blokkhendelser og CAPTCHA-forespørsler."
  tor: "Konfigurasjon for Tor-blokkeringsmodulen."
  verification: "Konfigurasjon for å bekrefte hvor forespørsler kommer fra."
  verification_adjust: "Kontroller for å justere andre funksjoner i forbindelse med verifisering."
@@ -622,6 +624,7 @@ label:
  Installed Available: "Installert/Tilgjengelig"
  Integrity check: "Integritetskontroll:"
  Intersect: "Krysset"
+ Inverted: "Invertert"
  Invisible: "Usynlig"
  Latest stable: "Siste stabile:"
  Latest unstable: "Siste ustabil:"
@@ -640,6 +643,7 @@ label:
  No log file selected: "Ingen loggfil valgt."
  No log files available: "Ingen loggfiler tilgjengelig."
  None: "Ingen.\nHvis du vil bruke modulen kun til rapporteringsformål, uten å slå opp noe, bruk denne."
+ Normal: "Normal"
  Only when blocked, specially marked for use, within the signature limit, and not banned: "Bare når det er blokkert, spesielt merket for bruk, innenfor signaturgrensen, og ikke utestengt."
  Only when blocked, within the signature limit, and not banned: "Bare når det er blokkert, innenfor signaturgrensen, og ikke utestengt."
  Only when not blocked, at sensitive page requests: "Bare når det ikke er blokkert, ved forespørsler om sensitive sider."

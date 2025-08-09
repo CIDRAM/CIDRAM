@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data for the front-end (last modified: 2025.08.07).
+# This file: Bangla language data for the front-end (last modified: 2025.08.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -185,7 +185,8 @@ config:
  frontend_max_login_attempts: "লগইন প্রচেষ্টা সর্বাধিক সংখ্যা। ডিফল্ট = "5"।"
  frontend_remotes: "কম্পোনেন্ট মেটাডেটা আনতে আপডেটার দ্বারা ব্যবহৃত ঠিকানাগুলির একটি তালিকা। একটি নতুন প্রধান সংস্করণে আপগ্রেড করার সময়, বা আপডেটের জন্য একটি নতুন উত্স অর্জন করার সময় এটি সামঞ্জস্য করা প্রয়োজন হতে পারে, তবে সাধারণ পরিস্থিতিতে একা ছেড়ে দেওয়া উচিত।"
  frontend_signatures_update_event_log: "লগিংয়ের জন্য একটি ফাইল যখন স্বাক্ষরগুলি সামনের প্রান্তের মাধ্যমে আপডেট হয়। ফাইলের নাম উল্লেখ করুন, অথবা নিষ্ক্রিয় করতে ফাঁকা রাখুন।"
- frontend_theme: "ফ্রন্ট-এন্ডের জন্য ব্যবহার করার জন্য ডিফল্ট থিম।"
+ frontend_theme: "ফ্রন্ট-এন্ডের জন্য ব্যবহৃত থিম।"
+ frontend_theme_mode: "ফ্রন্ট-এন্ডের জন্য ব্যবহৃত থিমের মোড।"
  general: "সাধারণ কনফিগারেশন (অন্য কোনও বিভাগের অন্তর্ভুক্ত নয় এমন কোনও কনফিগারেশন)।"
  general_allow_gethostbyaddr_lookup: "যখন UDP অনুপলব্ধ হয় তখন gethostbyaddr সন্ধানগুলি মঞ্জুর করুন? True = হাঁ [ডিফল্ট]; False = না।"
  general_ban_override: "যখন "infraction_limit" অতিক্রম করা হয় তখন "http_response_header_code" ওভাররাইড করে? 200 = ওভাররাইড করবেন না [ডিফল্ট]। অন্যান্য মানগুলি "http_response_header_code" এর জন্য উপলব্ধ মানগুলির মতই।"
@@ -323,7 +324,8 @@ config:
  template_data_custom_footer: "সমস্ত "অ্যাক্সেস অস্বীকার" পৃষ্ঠাগুলির একেবারে নীচে HTML হিসাবে সন্নিবেশ করা হয়েছে৷। যদি আপনি একটি আইনি নোটিশ, যোগাযোগের লিঙ্ক, ব্যবসার তথ্য, বা অনুরূপ সমস্ত পৃষ্ঠাগুলিতে অন্তর্ভুক্ত করতে করতে চাইলে এটি কার্যকর হতে পারে।"
  template_data_custom_header: "সমস্ত "অ্যাক্সেস অস্বীকার" পৃষ্ঠাগুলির একেবারে শুরুতে HTML হিসাবে সন্নিবেশ করা হয়েছে৷। আপনি একটি ওয়েবসাইটের লোগো, ব্যক্তিগতকৃত শিরোনাম, স্ক্রিপ্ট, বা অনুরূপ সমস্ত পৃষ্ঠাগুলিতে অন্তর্ভুক্ত করতে করতে চাইলে এটি কার্যকর হতে পারে।"
  template_data_magnification: *MagnifDesc
- template_data_theme: "CIDRAM এর জন্য ব্যবহার করার জন্য ডিফল্ট থিম।"
+ template_data_theme: "ব্লক ইভেন্ট এবং ক্যাপচা অনুরোধের জন্য ব্যবহৃত থিম।"
+ template_data_theme_mode: "ব্লক ইভেন্ট এবং ক্যাপচা অনুরোধের জন্য ব্যবহৃত থিমের মোড।"
  tor: "টর অবরোধকারী মডিউলের জন্য কনফিগারেশন।"
  verification: "অনুরোধগুলি কোথা থেকে এসেছে তা যাচাই করার জন্য কনফিগারেশন।"
  verification_adjust: "যাচাইকরণের প্রেক্ষাপটে অন্যান্য বৈশিষ্ট্যগুলি সামঞ্জস্য করার জন্য নিয়ন্ত্রণগুলি৷"
@@ -612,6 +614,7 @@ label:
  Installed Available: "ইনস্টল করা হয়েছে / সহজলভ্য"
  Integrity check: "অখণ্ডতা পরীক্ষা:"
  Intersect: "ইন্টারসেক্ট"
+ Inverted: "উল্টানো"
  Invisible: "অদৃশ্য"
  Latest stable: "সর্বশেষ স্থিতিশীল:"
  Latest unstable: "সর্বশেষ অস্থিতিশীল:"
@@ -630,6 +633,7 @@ label:
  No log file selected: "কোনও লগ ফাইল নির্বাচিত নেই।"
  No log files available: "কোন লগ ফাইল উপলব্ধ।"
  None: "কোনোটিই নয়।\nআপনি যদি মডিউলটি শুধুমাত্র রিপোর্টিংয়ের উদ্দেশ্যে ব্যবহার করতে চান, পরিষেবা থেকে আনা ছাড়াই, এটি ব্যবহার করুন।"
+ Normal: "স্বাভাবিক"
  Only when blocked, specially marked for use, within the signature limit, and not banned: "শুধুমাত্র যখন অবরুদ্ধ হলেই, বিশেষভাবে ব্যবহারের জন্য চিহ্নিত করা, স্বাক্ষর সীমাতে থাকে, এবং নিষিদ্ধ হয় না।"
  Only when blocked, within the signature limit, and not banned: "শুধুমাত্র যখন অবরুদ্ধ হলেই, স্বাক্ষর সীমাতে থাকে, এবং নিষিদ্ধ হয় না।"
  Only when not blocked, at sensitive page requests: "শুধুমাত্র যখন অবরুদ্ধ না হলে, সংবেদনশীল পৃষ্ঠার অনুরোধে।"

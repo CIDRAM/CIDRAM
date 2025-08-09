@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2025.08.07).
+# This file: Portuguese language data for the front-end (last modified: 2025.08.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -132,7 +132,9 @@ checkbox:
  Blocked non-verified: "Os não verificados bloqueados"
  Delete orphaned values: "Deletar valores órfãos."
  Enable this stage: "Ativar esta etapa?"
- Log any errors generated during this stage: "Registrar algum erro gerado durante esta etapa?"
+ Log any errors generated during this stage:
+  pt-BR: "Registrar algum erro gerado durante esta etapa?"
+  pt-PT: "Registar algum erro gerado durante esta etapa?"
  Omit this field when it_s empty: "Omitir este campo quando estiver vazio?"
  Profile it: "Perfilar-o."
  Should infractions generated during this stage count towards IP tracking: "Contar infrações geradas durante esta etapa para o monitoração de IP?"
@@ -212,12 +214,21 @@ config:
   pt-PT: "Inserido como HTML no final de todas as páginas do front-end. Isto pode ser útil caso você queira incluir um aviso legal, link de contacto, informações comerciais, ou similares em todas essas páginas."
  frontend_custom_header: "Inserido como HTML no início de todas as páginas do front-end. Isso pode ser útil caso você queira incluir um logotipo de site, cabeçalho personalizado, scripts, ou similares em todas essas páginas."
  frontend_enable_two_factor: "Esta diretiva determina se deve usar 2FA para contas front-end."
- frontend_frontend_log: "Arquivo para registrar tentativas de login ao front-end. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
+ frontend_frontend_log:
+  pt-BR: "Arquivo para registrar tentativas de login ao front-end. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
+  pt-PT: "Arquivo para registar tentativas de login ao front-end. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
  frontend_magnification: &MagnifDesc "Ampliação de fonte. Padrão = 1."
  frontend_max_login_attempts: "Número máximo de tentativas de login ao front-end. Padrão = 5."
  frontend_remotes: "Uma lista dos endereços usados pelo atualizador para buscar metadados de componentes. Isso pode precisar ser ajustado ao atualizar para uma nova versão principal, ou ao adquirir uma nova fonte para atualizações, mas em circunstâncias normais deve ser deixado de lado."
- frontend_signatures_update_event_log: "Um arquivo para registrar quando as assinaturas são atualizadas por meio do front-end. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
- frontend_theme: "Tema padrão a ser usado para o front-end."
+ frontend_signatures_update_event_log:
+  pt-BR: "Um arquivo para registrar quando as assinaturas são atualizadas por meio do front-end. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
+  pt-PT: "Um arquivo para registar quando as assinaturas são atualizadas por meio do front-end. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
+ frontend_theme:
+  pt-BR: "O tema a ser usado no front-end."
+  pt-PT: "O tema a utilizar no front-end."
+ frontend_theme_mode:
+  pt-BR: "O modo para o tema a ser usado no front-end."
+  pt-PT: "O modo para o tema a utilizar no front-end."
  general: "Configuração geral (qualquer configuração principal que não pertença a outras categorias)."
  general_allow_gethostbyaddr_lookup: "Permitir pesquisas gethostbyaddr quando o UDP não está disponível? True = Sim [Padrão]; False = Não."
  general_ban_override: "Sobrepor "http_response_header_code" quando "infraction_limit" é excedido? 200 = Não sobrepor [Padrão]. Outros valores são os mesmos que os valores disponíveis para "http_response_header_code"."
@@ -225,8 +236,12 @@ config:
  general_default_dns:
   pt-BR: "Uma lista de servidores DNS a serem usados para pesquisas de nomes de host. ATENÇÃO: Não mude isso a menos que você saiba o que está fazendo!"
   pt-PT: "Uma lista de servidores DNS a serem usados para pesquisas de nomes de host. ATENÇÃO: Não mude isso a menos que você saiba o que está a fazer!"
- general_default_timeout: "Tempo limite padrão a ser usado para solicitações externas? Padrão = 12 segundos."
- general_disabled_channels: "Isso pode ser usado para impedir que o CIDRAM use canais específicos ao enviar solicitações (por exemplo, ao atualizar, ao buscar metadados de componentes, etc)."
+ general_default_timeout:
+  pt-BR: "Tempo limite padrão a ser usado para solicitações externas? Padrão = 12 segundos."
+  pt-PT: "Tempo limite padrão a utilizar para solicitações externas? Padrão = 12 segundos."
+ general_disabled_channels:
+  pt-BR: "Isso pode ser usado para impedir que o CIDRAM use canais específicos ao enviar solicitações (por exemplo, ao atualizar, ao buscar metadados de componentes, etc)."
+  pt-PT: "Isto pode ser utilizado para impedir que o CIDRAM utilize canais específicos ao enviar solicitações (por exemplo, ao atualizar, ao procurar metadados de componentes, etc)."
  general_email_notification_address: "Se você optou por receber notificações do CIDRAM por e-mail, por exemplo, quando regras auxiliares específicas são desencadeadas, você pode especificar o endereço do destinatário dessas notificações aqui."
  general_email_notification_name: "Se você optou por receber notificações do CIDRAM por e-mail, por exemplo, quando regras auxiliares específicas são desencadeadas, você pode especificar o nome do destinatário dessas notificações aqui."
  general_email_notification_when: "Quando enviar notificações após serem geradas."
@@ -252,15 +267,19 @@ config:
  general_sensitive: "Uma lista de caminhos a serem considerados como páginas confidenciais. Cada caminho listado será verificado em relação ao URI reconstruído quando necessário. Um caminho que começa com uma barra será tratado como um literal, e correspondido a partir do componente de caminho da solicitação em diante. Como alternativa, um caminho que começa com um caractere não alfanumérico, e termina com o mesmo caractere (ou o mesmo caractere mais um sinalizador "i" opcional) será tratado como uma expressão regular. Qualquer outro tipo de caminho será tratado como um literal, e pode corresponder a qualquer parte do URI. O fato de um caminho ser considerado uma página confidencial pode afetar o comportamento de alguns módulos, mas não tem nenhum efeito de outra forma."
  general_silent_mode: "Deve CIDRAM silenciosamente redirecionar as tentativas de acesso bloqueadas em vez de exibir o "acesso negado" página? Se sim, especificar o local para redirecionar as tentativas de acesso bloqueadas para. Se não, deixe esta variável em branco."
  general_silent_mode_response_header_code: "Qual mensagem de status HTTP deve enviar o CIDRAM ao redirecionar silenciosamente as tentativas de acesso bloqueados?"
- general_stages: "Controles para as etapas da cadeia de execução (se ativado, se os erros são registrados, etc)."
+ general_stages:
+  pt-BR: "Controles para as etapas da cadeia de execução (se ativado, se os erros são registrados, etc)."
+  pt-PT: "Controles para as etapas da cadeia de execução (se ativado, se os erros são registados, etc)."
  general_statistics: "Controla quais informações estatísticas rastrear."
  general_time_format: "O formato de notação de data/tempo utilizado pelo CIDRAM. Opções adicionais podem ser adicionadas mediante solicitação."
  general_time_offset: "Deslocamento do fuso horário em minutos."
- general_timezone: "Isso é usado para especificar o fuso horário a ser usado (por exemplo, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, etc). Especifique "SYSTEM" para permitir que o PHP lide com isso automaticamente."
+ general_timezone:
+  pt-BR: "Isso é usado para especificar o fuso horário a ser usado (por exemplo, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, etc). Especifique "SYSTEM" para permitir que o PHP lide com isso automaticamente."
+  pt-PT: "Isto é utilizado para especificar o fuso horário a utilizar (por exemplo, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, etc). Especifique "SYSTEM" para permitir que o PHP lide com isto automaticamente."
  hcaptcha: "Configuração para hCaptcha (fornece uma maneira para os humanos recuperarem o acesso quando bloqueados)."
  hcaptcha_api: &CaptchaAPI "Qual API usar?"
  hcaptcha_expiry: &CaptchaExpiry "Número de horas para lembrar instâncias CAPTCHA. Padrão = 720 (1 mês)."
- hcaptcha_hcaptcha_log: &CaptchaLogFile "Registrar todas as tentativas de CAPTCHA? Se sim, especificar o nome a ser usado para o arquivo de log. Se não, deixe esta variável em branco."
+ hcaptcha_hcaptcha_log: &CaptchaLogFile {"pt-BR": "Registrar todas as tentativas de CAPTCHA? Se sim, especificar o nome a ser usado para o arquivo de log. Se não, deixe esta variável em branco.", "pt-PT": "Registar todas as tentativas de CAPTCHA? Se sim, especificar o nome a utilizar para o arquivo de log. Se não, deixe esta variável em branco."}
  hcaptcha_lockip: &CaptchaLockIP "Ligar CAPTCHA para IPs?"
  hcaptcha_lockuser: &CaptchaLockUser {"pt-BR": "Ligar CAPTCHA para os usuários?", "pt-PT": "Ligar CAPTCHA para os utilizadores?"}
  hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "Qual código de status deve ser usado ao exibir CAPTCHAs para solicitações não bloqueadas?"
@@ -279,31 +298,57 @@ config:
  legal_privacy_policy: "O endereço de uma política de privacidade relevante a ser exibida no rodapé de qualquer página gerada. Especifique um URL, ou deixe em branco para desabilitar."
  legal_pseudonymise_ip_addresses: "Pseudonimiza endereços IP ao escrever os arquivos de log? True = Sim [Padrão]; False = Não."
  logging: "Configuração relacionada ao log (excluindo o que é aplicável a outras categorias)."
- logging_apache_style_log: "Um arquivo no estilo da Apache para registrar todas as tentativas de acesso bloqueadas. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
- logging_error_log: "Um arquivo para registrar erros detectados que não são fatais. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
+ logging_apache_style_log:
+  pt-BR: "Um arquivo no estilo da Apache para registrar todas as tentativas de acesso bloqueadas. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
+  pt-PT: "Um arquivo ao estilo da Apache para registar todas as tentativas de acesso bloqueadas. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
+ logging_error_log:
+  pt-BR: "Um arquivo para registrar erros detectados que não são fatais. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
+  pt-PT: "Um arquivo para registar erros detectados que não são fatais. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
  logging_log_banned_ips: "Incluir solicitações bloqueadas de IPs banidas nos arquivos de log? True = Sim [Padrão]; False = Não."
  logging_log_rotation_action: "A rotação de log limita o número de arquivos de log que devem existir a qualquer momento. Quando novos arquivos de log são criados, se o número total de arquivos de log exceder o limite especificado, a ação especificada será executada. Você pode especificar a ação desejada aqui."
  logging_log_rotation_limit: "A rotação de log limita o número de arquivos de log que devem existir a qualquer momento. Quando novos arquivos de log são criados, se o número total de arquivos de log exceder o limite especificado, a ação especificada será executada. Você pode especificar o limite desejado aqui. Um valor de 0 desativará a rotação de log."
  logging_log_sanitisation:
   pt-BR: "Ao usar o front-end página para os arquivos de log para exibir dados de log, o CIDRAM sanitiza os dados de log antes de exibi-los, para proteger os usuários contra ataques XSS e outras ameaças potenciais que os dados de log podem conter. No entanto, por padrão, os dados não são sanitizados durante o registro. Isso é para assegurar que os dados de log sejam preservados com precisão, para auxiliar qualquer análise heurística ou forense que possa ser necessária no futuro. No entanto, no caso de um usuário tentar ler dados de log usando ferramentas externas, e se essas ferramentas externas não realizarem seu próprio processo de sanitização, o usuário pode estar exposto a ataques XSS. Se necessário, você pode alterar o comportamento padrão usando esta diretiva de configuração. True = Sanitize dados ao registrá-lo (os dados são preservados com menos precisão, mas o risco de XSS é menor). False = Não sanitize dados ao registrá-lo (os dados são preservados com mais precisão, mas o risco de XSS é maior) [Padrão]."
   pt-PT: "Ao usar o front-end página para os arquivos de log para exibir dados de log, o CIDRAM sanitiza os dados de log antes de exibi-los, para proteger os utilizadores contra ataques XSS e outras ameaças potenciais que os dados de log podem conter. No entanto, por padrão, os dados não são sanitizados durante o registro. Isso é para assegurar que os dados de log sejam preservados com precisão, para auxiliar qualquer análise heurística ou forense que possa ser necessária no futuro. No entanto, no caso de um utilizador tentar ler dados de log utilizando ferramentas externas, e se essas ferramentas externas não realizarem o seu próprio processo de sanitização, o usuário pode estar exposto a ataques XSS. Se necessário, você pode alterar o comportamento padrão utilizando esta diretiva de configuração. True = Sanitize dados ao registrá-lo (os dados são preservados com menos precisão, mas o risco de XSS é menor). False = Não sanitize dados ao registrá-lo (os dados são preservados com mais precisão, mas o risco de XSS é maior) [Padrão]."
- logging_outbound_request_log: "Um arquivo para registrar os resultados de quaisquer solicitações de saída. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
- logging_report_log: "Um arquivo para registrar quaisquer relatórios enviados para APIs externas. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
- logging_serialised_log: "Um arquivo serializado para registrar todas as tentativas de acesso bloqueadas. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
- logging_standard_log: "Um arquivo legível por humanos para registrar todas as tentativas de acesso bloqueadas. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
+ logging_outbound_request_log:
+  pt-BR: "Um arquivo para registrar os resultados de quaisquer solicitações de saída. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
+  pt-PT: "Um arquivo para registar os resultados de quaisquer solicitações de saída. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
+ logging_report_log:
+  pt-BR: "Um arquivo para registrar quaisquer relatórios enviados para APIs externas. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
+  pt-PT: "Um arquivo para registar quaisquer relatórios enviados para APIs externas. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
+ logging_serialised_log:
+  pt-BR: "Um arquivo serializado para registrar todas as tentativas de acesso bloqueadas. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
+  pt-PT: "Um arquivo serializado para registar todas as tentativas de acesso bloqueadas. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
+ logging_standard_log:
+  pt-BR: "Um arquivo legível por humanos para registrar todas as tentativas de acesso bloqueadas. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
+  pt-PT: "Um arquivo legível por humanos para registar todas as tentativas de acesso bloqueadas. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
  logging_truncate: "Truncar arquivos de log quando atingem um determinado tamanho? Valor é o tamanho máximo em B/KB/MB/GB/TB que um arquivo de log pode crescer antes de ser truncado. O valor padrão de 0KB desativa o truncamento (arquivos de log podem crescer indefinidamente). Nota: Aplica-se a arquivos de log individuais! O tamanho dos arquivos de log não é considerado coletivamente."
  phpmailer: "Configuração para PHPMailer (usado para autenticação de dois fatores e para notificações por e-mail)."
  phpmailer_add_reply_to_address: "O endereço de resposta a ser citado ao enviar e-mail via SMTP."
  phpmailer_add_reply_to_name: "O nome da resposta a ser citado ao enviar e-mail via SMTP."
- phpmailer_event_log: "Um arquivo para registrar todos os eventos em relação ao PHPMailer. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
- phpmailer_host: "O host SMTP a ser usado para e-mail de saída."
- phpmailer_password: "A senha a ser usada ao enviar e-mail via SMTP."
- phpmailer_port: "O número da porta a ser usado para o e-mail de saída. Padrão = 587."
- phpmailer_set_from_address: "O endereço do remetente a ser citado ao enviar e-mail via SMTP."
- phpmailer_set_from_name: "O nome do remetente a ser citado ao enviar e-mail via SMTP."
+ phpmailer_event_log:
+  pt-BR: "Um arquivo para registrar todos os eventos em relação ao PHPMailer. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
+  pt-PT: "Um arquivo para registar todos os eventos em relação ao PHPMailer. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
+ phpmailer_host:
+  pt-BR: "O host SMTP a ser usado para e-mail de saída."
+  pt-PT: "O host SMTP a utilizar para o e-mail de saída."
+ phpmailer_password:
+  pt-BR: "A senha a ser usada ao enviar e-mail via SMTP."
+  pt-PT: "A senha a utilizar ao enviar e-mail via SMTP."
+ phpmailer_port:
+  pt-BR: "O número da porta a ser usado para e-mail de saída. Padrão = 587."
+  pt-PT: "O número da porta a utilizar para o e-mail de saída. Padrão = 587."
+ phpmailer_set_from_address:
+  pt-BR: "O endereço do remetente a ser citado ao enviar e-mail via SMTP."
+  pt-PT: "O endereço do remetente a citar ao enviar e-mail via SMTP."
+ phpmailer_set_from_name:
+  pt-BR: "O nome do remetente a ser citado ao enviar e-mail via SMTP."
+  pt-PT: "O nome do remetente a citar ao enviar e-mail via SMTP."
  phpmailer_skip_auth_process: "Definir essa diretiva como <code>true</code> instrui o PHPMailer a ignorar o processo de autenticação que normalmente ocorre ao enviar e-mail via SMTP. Isso deve ser evitado, porque ignorar esse processo pode expor o e-mail de saída a ataques MITM, mas pode ser necessário nos casos em que esse processo impedir que o PHPMailer se conecte a um servidor SMTP."
  phpmailer_smtp_auth: "Esta diretiva determina se autenticar sessões SMTP (geralmente deve ser deixado em paz)."
- phpmailer_smtp_secure: "O protocolo a ser usado ao enviar e-mail via SMTP (TLS ou SSL)."
+ phpmailer_smtp_secure:
+  pt-BR: "O protocolo a ser usado ao enviar e-mail via SMTP (TLS ou SSL)."
+  pt-PT: "O protocolo a utilizar no enviar e-mail via SMTP (TLS ou SSL)."
  phpmailer_username:
   pt-BR: "O nome de usuário a ser usada ao enviar e-mail via SMTP."
   pt-PT: "O nome de utilizador a ser usada ao enviar e-mail via SMTP."
@@ -377,7 +422,12 @@ config:
   pt-PT: "Inserido como HTML no final de todas as páginas de "acesso negado". Isto pode ser útil caso você queira incluir um aviso legal, link de contacto, informações comerciais, ou similares em todas essas páginas."
  template_data_custom_header: "Inserido como HTML no início de todas as páginas de "acesso negado". Isso pode ser útil caso você queira incluir um logotipo de site, cabeçalho personalizado, scripts, ou similares em todas essas páginas."
  template_data_magnification: *MagnifDesc
- template_data_theme: "Tema padrão a ser usado para CIDRAM."
+ template_data_theme:
+  pt-BR: "O tema a ser usado para eventos de bloqueio e solicitações CAPTCHA."
+  pt-PT: "O tema a utilizar para eventos de bloqueio e solicitações CAPTCHA."
+ template_data_theme_mode:
+  pt-BR: "O modo para o tema a ser usado para eventos de bloqueio e solicitações CAPTCHA."
+  pt-PT: "O modo para o tema a utilizar para eventos de bloqueio e solicitações CAPTCHA."
  tor: "Configuração para o módulo bloqueador do Tor."
  verification: "Configuração para verificar a origem das solicitações."
  verification_adjust: "Controles para ajustar outros recursos no contexto de verificação."
@@ -613,7 +663,7 @@ Some useful links: |+
            <li>{{Links.BGPView}} – Obter CIDRs de ASNs, Determinar relações de ASNs, descobrir ASNs com base em nomes de rede, etc.</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar por Qrator</a> – Ferramenta útil para verificar a conectividade de ASNs bem como para várias outras informações sobre ASNs.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">O Projeto Spamhaus</a> – Exibe relatórios sobre taxas de infecção por botnets para ASNs.</li>
-           <li>{{Links.AbuseIPDB}} – Mantém um banco de dados de IPs abusivos conhecidos; Fornece uma API para verificar e reportar IPs.</li>
+           <li>{{Links.AbuseIPDB}} – Mantém um banco de dados de IPs abusivos conhecidos; Fornece uma API para verificar e relatar IPs.</li>
            <li>{{Links.IP-API}} – Obtenha informações sobre endereços IP ou nomes de host, como código do país, nome da região, longitude, latitude, nome da organização, etc.</li>
          </ul>
        </li>
@@ -713,6 +763,7 @@ label:
  Installed Available: "Instalado/Disponível"
  Integrity check: "Verificação de integridade:"
  Intersect: {"pt-BR": "A interseção dos dois conjuntos", "pt-PT": "A intersecção dos dois conjuntos"}
+ Inverted: "Invertido"
  Invisible: "Invisível"
  Latest stable: "Mais novo de estável:"
  Latest unstable: "Mais novo de instável:"
@@ -731,6 +782,7 @@ label:
  No log file selected: "Não qualquer arquivo de log selecionado."
  No log files available: "Não quaisquer arquivos de log disponíveis."
  None: "Nenhum.\nSe você quiser usar o módulo apenas para fins de relatório, sem pesquisar nada, use isso."
+ Normal: "Normal"
  Only when blocked, specially marked for use, within the signature limit, and not banned: "Somente quando bloqueado, especialmente marcado para uso, dentro do limite de assinaturas, e não banido."
  Only when blocked, within the signature limit, and not banned: "Somente quando bloqueado, dentro do limite de assinaturas, e não banido."
  Only when not blocked, at sensitive page requests: "Somente quando não está bloqueado, em solicitações de páginas confidenciais."
@@ -1167,7 +1219,9 @@ tip:
  How many infractions to incur: "Quantas infrações incorrer."
  IP Testing: "A página para teste IP permite que você teste se os endereços IP são bloqueados pelas assinaturas atualmente instaladas."
  IP Tracking: "A página de monitoração IP permite verificar o status de monitoração de endereços IP, para verificar quais deles foram banidos, e para cancelar monitoração para eles se você quiser fazê-lo."
- Intersector: "O intersetor pode ser usado para determinar os fatores comuns de dois conjuntos de alcances."
+ Intersector:
+  pt-BR: "O intersetor pode ser usado para determinar os fatores comuns de dois conjuntos de alcances."
+  pt-PT: "O intersetor pode ser utilizado para determinar os fatores comuns de dois conjuntos de alcances."
  Logs: "Selecionar um arquivo de log da lista abaixo para visualizar o conteúdo desse arquivo de log."
  Number of seconds until it expires: "Número de segundos até expirar."
  Numeric comparison:
@@ -1176,7 +1230,9 @@ tip:
  Range Tables: "Esta página mostra algumas informações estatísticas básicas sobre os IPs abrangidos pelos arquivos de assinatura ativos no momento."
  Rate Limiting: "Esta página mostra o uso e a disponibilidade da cota atual em relação à limitação de taxa."
  Rate limiting is currently disabled: "Nota: A limitação de taxa está desativado atualmente, mas pode ser ativado através da página de configuração."
- Report to AbuseIPDB: "Esta página pode ser usado para relatar endereços IP ao AbuseIPDB, ou para deletar relatórios anteriores caso um endereço IP tenha sido relatado por engano."
+ Report to AbuseIPDB:
+  pt-BR: "Esta página pode ser usado para relatar endereços IP ao AbuseIPDB, ou para deletar relatórios anteriores caso um endereço IP tenha sido relatado por engano."
+  pt-PT: "Esta página pode ser utilizada para relatar endereços IP ao AbuseIPDB, ou para deletar relatórios anteriores caso um endereço IP tenha sido relatado por engano."
  Sections List:
   pt-BR: "Esta página lista quais seções existem nos arquivos de assinatura atualmente ativos."
   pt-PT: "Esta página lista quais secções existem nos arquivos de assinatura atualmente ativos."
@@ -1188,7 +1244,9 @@ tip:
  Specify a value, or leave blank to disregard: "Especifique um valor, ou deixe em branco para desconsiderar."
  Statistics tracking is currently disabled: "Nota: O monitoramento de estatísticas está desativado atualmente, mas pode ser ativado através da página de configuração."
  Statistics: "Esta página mostra algumas estatísticas de uso básicas relativas à instalação do CIDRAM."
- Subtractor: "O subtrator pode ser usado para subtrair um alcance de IPs/CIDRs/máscaras de rede de outro."
+ Subtractor:
+  pt-BR: "O subtrator pode ser usado para subtrair um alcance de IPs/CIDRs/máscaras de rede de outro."
+  pt-PT: "O subtrator pode ser utilizado para subtrair um alcance de IPs/CIDRs/máscaras de rede de outro."
  Updates: "A página de atualizações permite que você instale, desinstale, e atualize os vários componentes do CIDRAM (o pacote principal, assinaturas, arquivos de L10N, etc)."
 warning:
  API_Rate_Limited: "Atenção: O acesso à API %s parece ser atualmente limitado por taxa."
@@ -1206,8 +1264,12 @@ warning:
  No signature files are active:
   pt-BR: "Atenção: Nenhum arquivo de assinatura está ativo! Os arquivos de assinatura podem ser ativados usando as páginas de configuração ou atualizações."
   pt-PT: "Atenção: Nenhum arquivo de assinatura está ativo! Os arquivos de assinatura podem ser ativados utilizando as páginas de configuração ou atualizações."
- Operating in dry run mode: "Atenção: Operando no modo de seco! Enquanto no modo de seco, as solicitações ainda são verificados e registrados como eventos de bloqueio como de costume, mas nada é bloqueado."
- Operating in maintenance mode: "Atenção: Operando em modo de manutenção! Enquanto no modo de manutenção, nada é verificado, registrado, ou bloqueado."
+ Operating in dry run mode:
+  pt-BR: "Atenção: Operando no modo de seco! Enquanto no modo de seco, as solicitações ainda são verificados e registrados como eventos de bloqueio como de costume, mas nada é bloqueado."
+  pt-PT: "Atenção: Funcionamento em modo de seco! Enquanto no modo de seco, as solicitações ainda são verificados e registados como eventos de bloqueio como habitualmente, mas nada é bloqueado."
+ Operating in maintenance mode:
+  pt-BR: "Atenção: Operando em modo de manutenção! Enquanto no modo de manutenção, nada é verificado, registrado, ou bloqueado."
+  pt-PT: "Atenção: Funcionamento em modo de manutenção! Enquanto no modo de manutenção, nada é verificado, registado, ou bloqueado."
  Page termination is disabled: "Atenção: O encerramento da página está desativado! As solicitações não podem ser bloqueadas corretamente até que isso seja resolvido."
  Proceeding will log out all users:
   pt-BR: "Atenção: Todos os usuários serão saíram se você continuar."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Gujarati language data for the front-end (last modified: 2025.08.07).
+# This file: Gujarati language data for the front-end (last modified: 2025.08.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -185,7 +185,8 @@ config:
  frontend_max_login_attempts: "ફ્રન્ટ-એન્ડ લૉગિન પ્રયાસોની મહત્તમ સંખ્યા. ડિફૉલ્ટ = 5."
  frontend_remotes: "ઘટક મેટાડેટા મેળવવા માટે અપડેટર દ્વારા ઉપયોગમાં લેવાતા સરનામાંઓની સૂચિ. નવા મુખ્ય સંસ્કરણ પર અપગ્રેડ કરતી વખતે, અથવા અપડેટ્સ માટે નવો સ્રોત પ્રાપ્ત કરતી વખતે આને સમાયોજિત કરવાની જરૂર પડી શકે છે, પરંતુ સામાન્ય સંજોગોમાં તેને એકલું છોડી દેવું જોઈએ."
  frontend_signatures_update_event_log: "ફ્રન્ટ-એન્ડ દ્વારા સિગ્નેચર અપડેટ કરવામાં આવે ત્યારે લોગીંગ માટેની ફાઇલ. ફાઇલનામનો ઉલ્લેખ કરો, અથવા અક્ષમ કરવા માટે ખાલી છોડી દો."
- frontend_theme: "ફ્રન્ટ-એન્ડ માટે વાપરવા માટેની ડિફૉલ્ટ થીમ."
+ frontend_theme: "ફ્રન્ટ-એન્ડ માટે વાપરવાની થીમ."
+ frontend_theme_mode: "ફ્રન્ટ-એન્ડ માટે વાપરવાની થીમ માટે મોડ."
  general: "સામાન્ય રૂપરેખાંકન (કોઈપણ મુખ્ય રૂપરેખાંકન અન્ય શ્રેણીઓ સાથે સંબંધિત નથી)."
  general_allow_gethostbyaddr_lookup: "જ્યારે UDP અનુપલબ્ધ હોય ત્યારે gethostbyaddr લુકઅપને મંજૂરી આપીએ? True/સાચું = હા [ડિફૉલ્ટ]; False/ખોટા = ના."
  general_ban_override: ""http_response_header_code" ને ઓવરરાઇડ કરો જ્યારે "infraction_limit" ઓળંગાઈ જાય? 200 = ઓવરરાઇડ કરશો નહીં [ડિફૉલ્ટ]. અન્ય મૂલ્યો "http_response_header_code" માટે ઉપલબ્ધ મૂલ્યો સમાન છે."
@@ -323,7 +324,8 @@ config:
  template_data_custom_footer: "બધા "ઍક્સેસ નકારી છે" પૃષ્ઠોની ખૂબ જ નીચે HTML તરીકે દાખલ કરેલ છે. જો તમે આવા તમામ પૃષ્ઠો પર કાનૂની સૂચના, સંપર્ક લિંક, વ્યવસાયની માહિતી, અથવા સમાન સમાવવા માંગતા હો તો આ ઉપયોગી થઈ શકે છે."
  template_data_custom_header: "બધા "ઍક્સેસ નકારી છે" પૃષ્ઠોની શરૂઆતમાં HTML તરીકે દાખલ કરેલ છે. જો તમે આવા તમામ પૃષ્ઠો પર વેબસાઈટનો લોગો, વ્યક્તિગત હેડર, સ્ક્રિપ્ટો, અથવા સમાન સમાવવા માંગતા હો તો આ ઉપયોગી થઈ શકે છે."
  template_data_magnification: *MagnifDesc
- template_data_theme: "CIDRAM માટે વાપરવા માટેની મૂળભૂત થીમ."
+ template_data_theme: "બ્લોક ઘટનાઓ અને કેપ્ચા વિનંતીઓ માટે વાપરવાની થીમ."
+ template_data_theme_mode: "બ્લોક ઘટનાઓ અને કેપ્ચા વિનંતીઓ માટે વાપરવાની થીમ માટે મોડ."
  tor: "ટોર બ્લોકર મોડ્યુલ માટે રૂપરેખાંકન."
  verification: "વિનંતીઓ ક્યાંથી આવે છે તે ચકાસવા માટેનું રૂપરેખાંકન."
  verification_adjust: "જ્યારે ચકાસણીના સંદર્ભમાં હોય ત્યારે અન્ય સુવિધાઓને સમાયોજિત કરવા માટેના નિયંત્રણો."
@@ -619,6 +621,7 @@ label:
  Installed Available: "ઇન્સ્ટોલ/ઉપલબ્ધ છે"
  Integrity check: "અખંડિતતા તપાસ:"
  Intersect: "છેદાય"
+ Inverted: "ઊલટું"
  Invisible: "અદ્રશ્ય"
  Latest stable: "નવીનતમ સ્થિર:"
  Latest unstable: "નવીનતમ અસ્થિર:"
@@ -637,6 +640,7 @@ label:
  No log file selected: "કોઈ લૉગ ફાઇલ પસંદ કરેલ નથી."
  No log files available: "કોઈ લૉગ ફાઇલો ઉપલબ્ધ નથી."
  None: "કોઈ નહિ.\nજો તમે મોડ્યુલનો ઉપયોગ માત્ર રિપોર્ટિંગ હેતુઓ માટે કરવા માંગતા હો, તો કંઈપણ તપાસ્યા વિના, આનો ઉપયોગ કરો."
+ Normal: "કુદરતી"
  Only when blocked, specially marked for use, within the signature limit, and not banned: "માત્ર ત્યારે જ જ્યારે અવરોધિત હોય, ખાસ ઉપયોગ માટે ચિહ્નિત હોય, સિગ્નેચર મર્યાદામાં હોય, અને પ્રતિબંધિત ન હોય."
  Only when blocked, within the signature limit, and not banned: "માત્ર ત્યારે જ જ્યારે અવરોધિત હોય, સિગ્નેચર મર્યાદામાં હોય, અને પ્રતિબંધિત ન હોય."
  Only when not blocked, at sensitive page requests: "માત્ર ત્યારે જ જ્યારે અવરોધિત ન હોય, સંવેદનશીલ પૃષ્ઠ વિનંતીઓ પર."

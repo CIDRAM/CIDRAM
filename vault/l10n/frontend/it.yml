@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2025.08.07).
+# This file: Italian language data for the front-end (last modified: 2025.08.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -185,7 +185,8 @@ config:
  frontend_max_login_attempts: "Numero massimo di tentativi di accesso al front-end. Predefinito = 5."
  frontend_remotes: "Un elenco degli indirizzi utilizzati dal sistema di aggiornamenti per recuperare i metadati dei componenti. Potrebbe essere necessario modificarlo durante l'aggiornamento a una nuova versione principale, o quando si acquisisce una nuova fonte per gli aggiornamenti, ma in circostanze normali dovrebbe essere lasciato in pace."
  frontend_signatures_update_event_log: "Un file per la registrazione quando le firme vengono aggiornate tramite il front-end. Specificare un nome di file, o lasciare vuoto per disabilitare."
- frontend_theme: "Tema predefinito da utilizzare per il front-end."
+ frontend_theme: "Il tema da utilizzare per il front-end."
+ frontend_theme_mode: "La modalità per il tema da utilizzare per il front-end."
  general: "Configurazione generale (qualsiasi configurazione di base non appartenente ad altre categorie)."
  general_allow_gethostbyaddr_lookup: "Consenti ricerche gethostbyaddr quando UDP non è disponibile? True = Sì [Predefinito]; False = No."
  general_ban_override: "Sostituire "http_response_header_code" quando "infraction_limit" è superato? 200 = Non sostituire [Predefinito]. Altri valori sono uguali ai valori disponibili per "http_response_header_code"."
@@ -323,7 +324,8 @@ config:
  template_data_custom_footer: "Inserito come HTML alla fine di tutte le pagine di "accesso negato". Questo potrebbe essere utile nel caso in cui desideri includere un avviso legale, un link di contatto, informazioni commerciali, o simili in tutte queste pagine."
  template_data_custom_header: "Inserito come HTML all'inizio di tutte le pagine di "accesso negato". Questo potrebbe essere utile nel caso in cui desideri includere il logo di un sito web, un'intestazione personalizzata, script, o simili in tutte queste pagine."
  template_data_magnification: *MagnifDesc
- template_data_theme: "Tema predefinito da utilizzare per CIDRAM."
+ template_data_theme: "Il tema da utilizzare per gli eventi di blocco e le richieste CAPTCHA."
+ template_data_theme_mode: "La modalità per il tema da utilizzare per gli eventi di blocco e le richieste CAPTCHA."
  tor: "Configurazione per il modulo bloccante di Tor."
  verification: "Configurazione per verificare da dove provengono le richieste."
  verification_adjust: "Controlli per regolare altre funzionalità nel contesto della verifica."
@@ -622,6 +624,7 @@ label:
  Installed Available: "Installato/Disponibile"
  Integrity check: "Controllo di integrità:"
  Intersect: "L'intersezione dei due insiemi"
+ Inverted: "Invertito"
  Invisible: "Invisibile"
  Latest stable: "Più recente stabile:"
  Latest unstable: "Più recente instabile:"
@@ -640,6 +643,7 @@ label:
  No log file selected: "Nessun file di log selezionato."
  No log files available: "Nessun file di log disponibili."
  None: "Nessuno.\nSe si desidera utilizzare il modulo solo a scopo di reportistica, senza cercare nulla, utilizzare questo."
+ Normal: "Normale"
  Only when blocked, specially marked for use, within the signature limit, and not banned: "Solo quando bloccato, appositamente contrassegnato per l'uso, entro il limite di firme, e non vietato."
  Only when blocked, within the signature limit, and not banned: "Solo quando bloccato, entro il limite di firme, e non vietato."
  Only when not blocked, at sensitive page requests: "Solo quando non è bloccato, in caso di richieste di pagine sensibili."

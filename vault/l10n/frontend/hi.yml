@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data for the front-end (last modified: 2025.08.07).
+# This file: Hindi language data for the front-end (last modified: 2025.08.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -185,7 +185,8 @@ config:
  frontend_max_login_attempts: "फ्रंट-एंड लॉगिन प्रयासों की अधिकतम संख्या। डिफ़ॉल्ट = 5।"
  frontend_remotes: "कंपोनेंट मेटाडेटा लाने के लिए अद्यतनकर्ता द्वारा उपयोग किए गए पतों की सूची। नए प्रमुख संस्करण में अपग्रेड करते समय, या अपडेट के लिए नया स्रोत प्राप्त करते समय इसे समायोजित करने की आवश्यकता हो सकती है, लेकिन सामान्य परिस्थितियों में इसे अकेला छोड़ दिया जाना चाहिए।"
  frontend_signatures_update_event_log: "फ्रंट-एंड के माध्यम से हस्ताक्षर अपडेट किए जाने पर लॉगिंग के लिए एक फाइल। एक फाइल नाम निर्दिष्ट करें, या निष्क्रिय करने के लिए खाली छोड़।"
- frontend_theme: "फ्रंट-एंड के लिए उपयोग करने के लिए डिफ़ॉल्ट थीम।"
+ frontend_theme: "फ्रंट-एंड के लिए उपयोग की जाने वाली थीम।"
+ frontend_theme_mode: "फ्रंट-एंड के लिए उपयोग की जाने वाली थीम के लिए मोड।"
  general: "सामान्य कॉन्फ़िगरेशन (कॉन्फ़िगरेशन जो अन्य श्रेणियों से संबंधित नहीं है)।"
  general_allow_gethostbyaddr_lookup: "जब UDP अनुपलब्ध हो तो gethostbyaddr लुकअप की अनुमति दें? True(सच्चे) = हाँ [डिफ़ॉल्ट]; False(झूठी) = नहीं।"
  general_ban_override: "विलोपन "http_response_header_code" कब "infraction_limit" पार कर रहा है? 200 = ओवरराइड न करें [डिफ़ॉल्ट]। अन्य मान "http_response_header_code" के लिए उपलब्ध मानों के समान हैं।"
@@ -323,7 +324,8 @@ config:
  template_data_custom_footer: "सभी "पहुंच अस्वीकृत" पृष्ठों के सबसे नीचे HTML के रूप में डाला गया। यदि आप कानूनी नोटिस, संपर्क लिंक, व्यावसायिक जानकारी, आदि शामिल करना चाहते हैं, तो यह उपयोगी हो सकता है।"
  template_data_custom_header: "सभी "पहुंच अस्वीकृत" पृष्ठों की शुरुआत में HTML के रूप में डाला गया। यदि आप एक वेबसाइट लोगो, निजीकृत हेडर, स्क्रिप्ट, आदि शामिल करना चाहते हैं, तो यह उपयोगी हो सकता है।"
  template_data_magnification: *MagnifDesc
- template_data_theme: "CIDRAM के लिए उपयोग करने के लिए डिफ़ॉल्ट थीम।"
+ template_data_theme: "ब्लॉक इवेंट और कैप्चा अनुरोधों के लिए उपयोग की जाने वाली थीम।"
+ template_data_theme_mode: "ब्लॉक इवेंट और कैप्चा अनुरोधों के लिए उपयोग की जाने वाली थीम के लिए मोड।"
  tor: "टोर ब्लॉकर मॉड्यूल के लिए कॉन्फ़िगरेशन।"
  verification: "अनुरोध कहां से उत्पन्न होते हैं, इसके सत्यापन के लिए कॉन्फ़िगरेशन।"
  verification_adjust: "सत्यापन के संदर्भ में अन्य सुविधाओं को समायोजित करने के लिए नियंत्रण।"
@@ -622,6 +624,7 @@ label:
  Installed Available: "स्थापित/उपलब्ध है"
  Integrity check: "अखंडता की जांच:"
  Intersect: "इंटरसेक्ट"
+ Inverted: "उल्टे"
  Invisible: "अदृश्य"
  Latest stable: "नवीनतम स्थिर:"
  Latest unstable: "नवीनतम अस्थिर:"
@@ -640,6 +643,7 @@ label:
  No log file selected: "कोई लॉग फाइल चयनित नहीं।"
  No log files available: "कोई लॉग फाइल उपलब्ध नहीं।"
  None: "कोई भी नहीं।\nयदि आप बिना लुकअप, केवल रिपोर्टिंग उद्देश्यों के लिए मॉड्यूल का उपयोग करना चाहते हैं, तो इसका उपयोग करें।"
+ Normal: "प्राकृतिक"
  Only when blocked, specially marked for use, within the signature limit, and not banned: "केवल जब अवरुद्ध है, हस्ताक्षर सीमा के भीतर, विशेष रूप से उपयोग के लिए चिह्नित, और प्रतिबंधित नहीं है।"
  Only when blocked, within the signature limit, and not banned: "केवल जब अवरुद्ध है, हस्ताक्षर सीमा के भीतर हो, और प्रतिबंधित नहीं है।"
  Only when not blocked, at sensitive page requests: "केवल जब अवरुद्ध नहीं है, संवेदनशील पृष्ठ अनुरोधों पर।"

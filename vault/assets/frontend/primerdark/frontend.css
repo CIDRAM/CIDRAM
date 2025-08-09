@@ -1,4 +1,4 @@
-:root{color-scheme:dark}
+:root{color-scheme:dark{theme_mode_effects}}
 *{vertical-align:text-top}
 body,input,select,textarea,code,.idx{font-size:calc((12px * {magnification}) + .03vw)}
 body,input,input[type=file]::file-selector-button,select{font-family:'BlinkMacSystemFont','Segoe UI','Noto Sans','Helvetica';letter-spacing:1px;text-decoration:none;border-style:none;margin:0;white-space:normal;color:#e4e6eb}
@@ -100,7 +100,7 @@ input[type=button],input[type=file]::file-selector-button,input[type=submit],inp
 .exp{color:#ff0;background-color:#f00}
 .pieul{list-style-type:none;margin:0;padding:0}
 li>span.comCat:first-child,input[type=button],input[type=file]::file-selector-button,input[type=checkbox],input[type=checkbox]+label,input[type=radio],input[type=radio]+label,input[type=reset],input[type=submit],span>span[onclick],li>span[onclick],.navicon[onclick]{cursor:pointer}
-.comCat::before{content:"➖";display:inline-block;margin-{FE_Align_Reverse}:6px;line-height:100%;cursor:pointer}
+.comCat::before{content:"";width:16px;height:16px;background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:caret.svg}{/Base64Encode});background-repeat:no-repeat;background-position:top 2px center;display:inline-block;margin-{FE_Align_Reverse}:6px;line-height:100%;cursor:pointer}
 .caret-down::before{animation:forRotate .2s linear 1;animation-fill-mode:both}
 .caret-up::before{animation:revRotate .2s linear 1;animation-fill-mode:both}
 .suggestsInactive,.comSub{overflow:hidden;transform:scaleY(0);transform-origin:top;opacity:0;max-height:0;transition:all .5s ease-out}
@@ -113,9 +113,9 @@ blockquote.comSub{margin:-2px 0 0 0;padding:0 0 0 0}
 @media only all and (max-width:968px) {
   .iCntn{margin:0}
 }
-@keyframes forRotate{0%{transform:rotate(0)}100%{transform:rotate({45deg})}}
-@keyframes revRotate{0%{transform:rotate({45deg})}100%{transform:rotate(0)}}
-.navicon{display:inline-block;background-repeat:no-repeat;filter:invert(78%) sepia(74%) saturate(2174%) brightness(105%) contrast(104%);position:relative;top:1px;width:16px;height:16px}
+@keyframes forRotate{0%{transform:rotate(0) translate(0, 0) scaleX(1)}100%{transform:rotate({45deg}) {caretTransform}}}
+@keyframes revRotate{0%{transform:rotate({45deg}) {caretTransform}}100%{transform:rotate(0) translate(0, 0) scaleX(1)}}
+.navicon,a.showlink[onclick]::before,a.shownlink[onclick]::before,a.unshownlink[onclick]::before{display:inline-block;background-repeat:no-repeat;filter:invert(78%) sepia(74%) saturate(2174%) brightness(105%) contrast(104%);position:relative;top:1px;width:16px;height:16px}
 a:hover>.navicon,a:active>.navicon,a:focus>.navicon,.navicon[onclick]:hover,.navicon[onclick]:active,.navicon[onclick]:focus{filter:invert(82%) sepia(42%) saturate(2345%) hue-rotate(-7deg) brightness(101%) contrast(111%)}
 p{margin-top:0;margin-bottom:10px}
 small{font-size:.9em}
@@ -164,7 +164,7 @@ input[type=text][pattern]:invalid:not(input[type=text]:placeholder-shown){backgr
 @keyframes sFadeFrames{0%{opacity:1}100%{opacity:0}}
 .sHide{display:none}
 .sFade{display:inline-block;margin-{FE_Align}:4px;animation:sFadeFrames .5s linear 1;animation-fill-mode:both}
-.showlink::before,.shownlink::before,.unshownlink::before{content:"➖";display:inline-block;margin-{FE_Align_Reverse}:6px}
+.showlink::before,.shownlink::before,.unshownlink::before{content:"";width:16px;height:16px;background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:caret.svg}{/Base64Encode});background-repeat:no-repeat;background-position:top 2px center;display:inline-block;margin-{FE_Align_Reverse}:6px}
 .shownlink::before{animation:forRotate .5s ease-out 1;animation-fill-mode:both}
 .unshownlink::before{animation:revRotate .5s ease-out 1;animation-fill-mode:both}
 .subNav{text-align:center;font-size:calc((10px * {magnification}) + .03vw);color:rgba(228,230,235,.6);text-shadow:2px 2px 1px rgba(255,255,255,.2)}

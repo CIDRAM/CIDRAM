@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2025.08.07).
+# This file: English language data for the front-end (last modified: 2025.08.08).
 ##/
 
 Abuse category:
@@ -187,7 +187,8 @@ config:
  frontend_max_login_attempts: "Maximum number of front-end login attempts. Default = 5."
  frontend_remotes: "A list of the addresses used by the updater to fetch component metadata. This may need to be adjusted when upgrading to a new major version, or when acquiring a new source for updates, but under normal circumstances should be left alone."
  frontend_signatures_update_event_log: "A file for logging when signatures are updated via the front-end. Specify a filename, or leave blank to disable."
- frontend_theme: "The default theme to use for the front-end."
+ frontend_theme: "The theme to use for the front-end."
+ frontend_theme_mode: "The mode for the theme to use for the front-end."
  general: "General configuration (any core configuration not belonging to other categories)."
  general_allow_gethostbyaddr_lookup: "Allow gethostbyaddr lookups when UDP is unavailable? True = Yes [Default]; False = No."
  general_ban_override: "Override "http_response_header_code" when "infraction_limit" is exceeded? 200 = Don't override [Default]. Other values are the same as the available values for "http_response_header_code"."
@@ -338,7 +339,8 @@ config:
   en-AU: "Inserted as HTML at the very beginning of all "access denied" pages. This could be useful in case you want to include a website logo, personalised header, scripts, or similar at all such pages."
   [en-CA, en-US]: "Inserted as HTML at the very beginning of all "access denied" pages. This could be useful in case you want to include a website logo, personalized header, scripts, or similar at all such pages."
  template_data_magnification: *MagnifDesc
- template_data_theme: "The default theme to use for CIDRAM."
+ template_data_theme: "The theme to use for block events and CAPTCHA requests."
+ template_data_theme_mode: "The mode for the theme to use for block events and CAPTCHA requests."
  tor: "Configuration for the Tor blocker module."
  verification: "Configuration for verifying where requests originate from."
  verification_adjust: "Controls to adjust other features when in the context of verification."
@@ -648,6 +650,7 @@ label:
  Installed Available: "Installed/Available"
  Integrity check: "Integrity check:"
  Intersect: "Intersect"
+ Inverted: "Inverted"
  Invisible: "Invisible"
  Latest stable: "Latest stable:"
  Latest unstable: "Latest unstable:"
@@ -666,6 +669,7 @@ label:
  No log file selected: "No log file selected."
  No log files available: "No log files available."
  None: "None.\nIf you want to use the module for reporting purposes only, without looking anything up, use this."
+ Normal: "Normal"
  Only when blocked, specially marked for use, within the signature limit, and not banned: "Only when blocked, specially marked for use, within the signature limit, and not banned."
  Only when blocked, within the signature limit, and not banned: "Only when blocked, within the signature limit, and not banned."
  Only when not blocked, at sensitive page requests: "Only when not blocked, at sensitive page requests."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2025.08.07).
+# This file: Turkish language data for the front-end (last modified: 2025.08.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -185,7 +185,8 @@ config:
  frontend_max_login_attempts: "Maksimum giriş denemesi sayısı. Varsayılan = 5."
  frontend_remotes: "Güncelleyici tarafından bileşen meta verilerini almak için kullanılan adreslerin listesi. Bunun yeni bir ana sürüme yükseltme yaparken, veya güncellemeler için yeni bir kaynak alırken ayarlanması gerekebilir, ancak normal şartlar altında olduğu gibi bırakılmalıdır."
  frontend_signatures_update_event_log: "Ön uç aracılığıyla imzalar güncellendiğinde günlüğe kaydedilecek bir dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
- frontend_theme: "Ön uç için kullanılacak varsayılan tema."
+ frontend_theme: "Ön uç için kullanılacak tema."
+ frontend_theme_mode: "Ön uç için kullanılacak tema modu."
  general: "Genel yapılandırma (diğer kategorilere ait olmayan herhangi bir çekirdek yapılandırma)."
  general_allow_gethostbyaddr_lookup: "UDP kullanılamadığında gethostbyaddr aramalarına izin verilsin mi? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
  general_ban_override: ""infraction_limit" aşıldığında "http_response_header_code"u geçersiz kıl? 200 = [Varsayılan] değerini geçersiz kılmayın. Diğer değerler "http_response_header_code" için mevcut değerler ile aynıdır."
@@ -323,7 +324,8 @@ config:
  template_data_custom_footer: "Tüm "erişim reddedildi" sayfalarının sonuna HTML olarak eklenir. Bu tür tüm sayfalara yasal bir bildirim, iletişim bağlantısı, işletme bilgileri, veya benzerlerini eklemek istediğinizde kullanışlıdır."
  template_data_custom_header: "Tüm "erişim reddedildi" sayfalarının başına HTML olarak eklenir. Bu tür tüm sayfalara bir web sitesi logosu, kişiselleştirilmiş başlık, komut dosyaları, veya benzerlerini eklemek istediğinizde kullanışlıdır."
  template_data_magnification: *MagnifDesc
- template_data_theme: "CIDRAM için kullanılacak varsayılan tema."
+ template_data_theme: "Blok olayları ve CAPTCHA istekleri için kullanılacak tema."
+ template_data_theme_mode: "Blok olayları ve CAPTCHA istekleri için kullanılacak tema modu."
  tor: "Tor engelleyici modülü için yapılandırma."
  verification: "İsteklerin nereden geldiğini doğrulamak için yapılandırma."
  verification_adjust: "Doğrulama bağlamındayken diğer özellikleri ayarlamak için kontroller."
@@ -618,6 +620,7 @@ label:
  Installed Available: "Yüklü/Mevcut"
  Integrity check: "Bütünlük denetimi:"
  Intersect: "Kesişim"
+ Inverted: "Ters çevrilmiş"
  Invisible: "Görünmez"
  Latest stable: "En yeni kararlı:"
  Latest unstable: "En yeni kararsız:"
@@ -636,6 +639,7 @@ label:
  No log file selected: "Hiçbir günlük dosyası seçilmedi."
  No log files available: "Günlük dosyası yok."
  None: "Hiçbiri.\nModülü hiçbir şeye bakmadan yalnızca raporlama amacıyla kullanmak istiyorsanız, bunu kullanın."
+ Normal: "Normal"
  Only when blocked, specially marked for use, within the signature limit, and not banned: "Yalnızca engellendiğinde, kullanım için özel olarak işaretlendiğinde, imza sınırı dahilindeyken, ve yasaklanmadığında."
  Only when blocked, within the signature limit, and not banned: "Yalnızca engellendiğinde, imza sınırı dahilindeyken, ve yasaklanmadığında."
  Only when not blocked, at sensitive page requests: "Yalnızca engellenmediği zaman, hassas sayfa isteklerinde."

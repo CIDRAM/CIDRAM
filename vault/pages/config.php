@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The configuration page (last modified: 2025.07.29).
+ * This file: The configuration page (last modified: 2025.08.08).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -173,7 +173,7 @@ foreach ($this->CIDRAM['Config Defaults'] as $CatKey => $CatValue) {
             }
         }
         if (isset($DirValue['preview'])) {
-            $ThisDir['Preview'] = ($DirValue['preview'] === 'allow_other') ? '' : sprintf(' = <span id="%s_preview"></span>', $ThisDir['DirLangKey']);
+            $ThisDir['Preview'] = ($DirValue['preview'] === 'allow_other' || substr($DirValue['preview'], 0, 3) === 'js:') ? '' : sprintf(' = <span id="%s_preview"></span>', $ThisDir['DirLangKey']);
             $ThisDir['Trigger'] = ' onchange="javascript:' . $ThisDir['DirLangKey'] . '_function();" onkeyup="javascript:' . $ThisDir['DirLangKey'] . '_function();"';
             if ($DirValue['preview'] === 'seconds') {
                 $ThisDir['Preview'] .= sprintf(
@@ -257,10 +257,7 @@ foreach ($this->CIDRAM['Config Defaults'] as $CatKey => $CatValue) {
                     $ThisDir['DirLangKeyOther']
                 );
             } elseif (substr($DirValue['preview'], 0, 3) === 'js:') {
-                $ThisDir['Preview'] .= '<script type="text/javascript">' . sprintf(
-                    substr($DirValue['preview'], 3),
-                    $ThisDir['DirLangKey']
-                ) . '</script>';
+                $ThisDir['Preview'] .= '<script type="text/javascript">' . sprintf(substr($DirValue['preview'], 3), $ThisDir['DirLangKey']) . '</script>';
             }
         } elseif ($DirValue['type'] === 'duration') {
             $ThisDir['Preview'] = sprintf(' = <span id="%s_preview"></span>', $ThisDir['DirLangKey']);

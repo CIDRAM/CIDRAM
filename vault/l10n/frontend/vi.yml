@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2025.08.07).
+# This file: Vietnamese language data for the front-end (last modified: 2025.08.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -185,7 +185,8 @@ config:
  frontend_max_login_attempts: "Số lượng tối đa cố gắng đăng nhập front-end. Mặc định = 5."
  frontend_remotes: "Danh sách các địa chỉ được trình cập nhật sử dụng để tìm nạp siêu dữ liệu thành phần. Điều này có thể cần được điều chỉnh khi nâng cấp lên phiên bản chính mới, hoặc khi tìm một nguồn mới để cập nhật, nhưng trong các trường hợp bình thường thì nên để nguyên."
  frontend_signatures_update_event_log: "Một tập tin để ghi nhật ký khi chữ ký được cập nhật qua front-end. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa."
- frontend_theme: "Chủ đề mặc định để sử dụng cho front-end."
+ frontend_theme: "Chủ đề sẽ được sử dụng cho front-end."
+ frontend_theme_mode: "Chế độ cho chủ đề sẽ được sử dụng cho front-end."
  general: "Cấu hình chung (bất kỳ cấu hình cốt lõi nào không thuộc về các loại khác)."
  general_allow_gethostbyaddr_lookup: "Cho phép tra cứu gethostbyaddr khi UDP không khả dụng? True = Vâng [Mặc định]; False = Không."
  general_ban_override: "Ghi đè "http_response_header_code" khi "infraction_limit" bị vượt quá? 200 = Không ghi đè [Mặc định]. Các giá trị khác giống với các giá trị có sẵn cho "http_response_header_code"."
@@ -323,7 +324,8 @@ config:
  template_data_custom_footer: "Được chèn dưới dạng HTML ở cuối tất cả các trang "truy cập đã bị từ chối". Điều này có thể hữu ích trong trường hợp bạn muốn bao gồm thông báo pháp lý, liên kết liên hệ, thông tin doanh nghiệp, hoặc tương tự ở tất cả các trang như vậy."
  template_data_custom_header: "Được chèn dưới dạng HTML ở đầu tất cả các trang "truy cập đã bị từ chối". Điều này có thể hữu ích trong trường hợp bạn muốn bao gồm biểu trưng trang web, tiêu đề được cá nhân hóa, tập lệnh, hoặc tương tự ở tất cả các trang như vậy."
  template_data_magnification: *MagnifDesc
- template_data_theme: "Chủ đề mặc định để sử dụng cho CIDRAM."
+ template_data_theme: "Chủ đề sẽ được sử dụng cho các sự kiện chặn và yêu cầu CAPTCHA."
+ template_data_theme_mode: "Chế độ cho chủ đề sẽ được sử dụng cho các sự kiện chặn và yêu cầu CAPTCHA."
  tor: "Cấu hình cho mô-đun chặn Tor."
  verification: "Cấu hình để xác minh yêu cầu bắt nguồn từ đâu."
  verification_adjust: "Điều khiển cho các điều chỉnh các tính năng khác trong bối cảnh xác minh."
@@ -615,6 +617,7 @@ label:
  Installed Available: "Được cài đặt / Có sẵn"
  Integrity check: "Kiểm tra tính toàn vẹn:"
  Intersect: "Giao nhau"
+ Inverted: "Nghịch đảo"
  Invisible: "Vô hình"
  Latest stable: "Ổn định mới nhất:"
  Latest unstable: "Không ổn định mới nhất:"
@@ -633,6 +636,7 @@ label:
  No log file selected: "Không có bản ghi được chọn."
  No log files available: "Không có bản ghi có sẵn."
  None: "Không phải bất kỳ.\nNếu bạn chỉ muốn sử dụng mô-đun cho mục đích báo cáo mà không cần tra cứu gì, hãy sử dụng mô-đun này."
+ Normal: "Bình thường"
  Only when blocked, specially marked for use, within the signature limit, and not banned: "Chỉ khi bị chặn, được đánh dấu đặc biệt để sử dụng, trong giới hạn chữ ký, và không bị cấm."
  Only when blocked, within the signature limit, and not banned: "Chỉ khi bị chặn, trong giới hạn chữ ký, và không bị cấm."
  Only when not blocked, at sensitive page requests: "Chỉ khi không bị chặn, ở những yêu cầu trang nhạy cảm."

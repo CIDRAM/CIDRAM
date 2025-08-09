@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Galician language data for the front-end (last modified: 2025.08.07).
+# This file: Galician language data for the front-end (last modified: 2025.08.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -185,7 +185,8 @@ config:
  frontend_max_login_attempts: "Número máximo de intentos para iniciar sesión na front-end. Predeterminado = 5."
  frontend_remotes: "Unha lista dos enderezos utilizados polo actualizador para obter metadatos de compoñentes. É posible que teña que axustarse cando se actualice a unha nova versión principal, ou cando se adquira unha nova fonte de actualizacións, pero en circunstancias normais debe deixarse só."
  frontend_signatures_update_event_log: "Un ficheiro para rexistrar cando se actualizan as sinaturas a través do front-end. Especifique un nome de ficheiro, ou déixeo en branco para desactivalo."
- frontend_theme: "O tema predeterminado a usar para o front-end."
+ frontend_theme: "O tema a usar para o front-end."
+ frontend_theme_mode: "O modo para o tema a usar para o front-end."
  general: "Configuración xeral (calquera configuración básica non pertencente a outras categorías)."
  general_allow_gethostbyaddr_lookup: "Permitir buscas mediante gethostbyaddr cando UDP non estea dispoñible? True/Verdadeiro = Si [Predeterminado]; False/Falso = Non."
  general_ban_override: "Substitúe "http_response_header_code" cando se supere "infraction_limit"? 200 = Non substituír [Predeterminado]. Outros valores son os mesmos que os valores dispoñibles para "http_response_header_code"."
@@ -323,7 +324,8 @@ config:
  template_data_custom_footer: "Inseriuse como HTML na parte inferior de todas as páxinas de "acceso denegado". Isto pode ser útil no caso de que queiras incluír un aviso legal, ligazón de contacto, información comercial, ou similares en todas esas páxinas."
  template_data_custom_header: "Inseriuse como HTML ao comezo de todas as páxinas de "acceso denegado". Isto pode ser útil no caso de que queiras incluír un logotipo do sitio web, un encabezado personalizado, guións, ou similares en todas esas páxinas."
  template_data_magnification: *MagnifDesc
- template_data_theme: "O tema predeterminado a usar para CIDRAM."
+ template_data_theme: "O tema a usar para eventos de bloque e solicitudes de CAPTCHA."
+ template_data_theme_mode: "O modo para o tema a usar para eventos de bloque e solicitudes de CAPTCHA."
  tor: "Configuración para o módulo bloqueador de Tor."
  verification: "Configuración para verificar de onde se orixinan as solicitudes."
  verification_adjust: "Controis para axustar outras funcións no contexto da verificación."
@@ -618,6 +620,7 @@ label:
  Installed Available: "Instalado/Dispoñible"
  Integrity check: "Verificación de integridade:"
  Intersect: "Intersección"
+ Inverted: "Invertido"
  Invisible: "Invisible"
  Latest stable: "Último estable:"
  Latest unstable: "Último inestable:"
@@ -636,6 +639,7 @@ label:
  No log file selected: "Non se seleccionou ningún ficheiro de rexistro."
  No log files available: "Non hai ficheiros de rexistro dispoñibles."
  None: "Ningún.\nSe queres usar o módulo só para informes, sen buscar nada, use isto."
+ Normal: "Normal"
  Only when blocked, specially marked for use, within the signature limit, and not banned: "Só cando está bloqueado, especialmente marcado para o seu uso, dentro do límite de sinatura, e non prohibido."
  Only when blocked, within the signature limit, and not banned: "Só cando está bloqueado, dentro do límite de sinatura, e non está prohibido."
  Only when not blocked, at sensitive page requests: "Só cando non está bloqueado, en solicitudes de páxinas sensibles."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Czech language data for the front-end (last modified: 2025.08.07).
+# This file: Czech language data for the front-end (last modified: 2025.08.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -185,7 +185,8 @@ config:
  frontend_max_login_attempts: "Maximální počet pokusů o přihlášení k front-endu. Standardní = 5."
  frontend_remotes: "Seznam adres používaných aktualizátorem k načtení metadat komponent. To může být nutné upravit při upgradu na novou hlavní verzi, nebo při získávání nového zdroje pro aktualizace, ale za normálních okolností by to mělo být ponecháno na pokoji."
  frontend_signatures_update_event_log: "Soubor pro protokolování při aktualizaci podpisů prostřednictvím rozhraní front-end. Zadejte název souboru nebo ponechejte prázdné, chcete-li jej deaktivovat."
- frontend_theme: "Téma, které se má použít pro front-end."
+ frontend_theme: "Téma, která se má použít pro front-end."
+ frontend_theme_mode: "Režim pro téma, která se má použít pro front-end."
  general: "Obecná konfigurace (jakákoliv hlavní konfigurace, která nepatří do jiných kategorií)."
  general_allow_gethostbyaddr_lookup: "Povolit vyhledávání gethostbyaddr, když UDP není k dispozici? True (Pravdivé) = Ano [Standardní]; False (Nepravdivé) = Ne."
  general_ban_override: "Přepsat „http_response_header_code“ při překročení „infraction_limit“? 200 = Nepřepisujte [Standardní]. Ostatní hodnoty jsou stejné jako dostupné hodnoty pro „http_response_header_code“."
@@ -323,7 +324,8 @@ config:
  template_data_custom_footer: "Bude vložen jako HTML na konci všech „přístup odepřen“ stránek. To by mohlo být užitečné v případě, že chcete na všech takových stránkách zahrnout právní upozornění, kontaktní odkaz, obchodní informace nebo podobné."
  template_data_custom_header: "Bude vložen jako HTML na začátku všech „přístup odepřen“ stránek. To by mohlo být užitečné v případě, že chcete na všechny takové stránky zahrnout logo webové stránky, personalizované záhlaví, skripty nebo podobné."
  template_data_magnification: *MagnifDesc
- template_data_theme: "Standardní téma pro CIDRAM."
+ template_data_theme: "Téma, která se má použít pro blokové události a požadavky CAPTCHA."
+ template_data_theme_mode: "Režim pro téma, která se má použít pro blokové události a požadavky CAPTCHA."
  tor: "Konfigurace pro modul pro blokování Tor."
  verification: "Konfigurace pro ověření, odkud požadavky pocházejí."
  verification_adjust: "Ovládací prvky pro úpravu dalších funkcí v kontextu ověřování."
@@ -627,6 +629,7 @@ label:
  Installed Available: "Instalováno/Dostupné"
  Integrity check: "Kontrola integrity:"
  Intersect: "Průsečík"
+ Inverted: "Inverzní"
  Invisible: "Neviditelný"
  Latest stable: "Nejnovější stabilní:"
  Latest unstable: "Nejnovější nestabilní:"
@@ -645,6 +648,7 @@ label:
  No log file selected: "Nebyl vybrán žádný soubor protokolu."
  No log files available: "Nejsou k dispozici žádné soubory protokolu."
  None: "Žádný.\nPokud chcete modul používat pouze pro účely reportovat, aniž byste cokoliv hledali, použijte toto."
+ Normal: "Normální"
  Only when blocked, specially marked for use, within the signature limit, and not banned: "Pouze při zablokování, speciálně označeném pro použití, v rámci limitu podpisů, a bez zákazu."
  Only when blocked, within the signature limit, and not banned: "Pouze při zablokování, v rámci limitu podpisů, a bez zákazu."
  Only when not blocked, at sensitive page requests: "Pouze když není blokován, na žádost citlivých stránek."

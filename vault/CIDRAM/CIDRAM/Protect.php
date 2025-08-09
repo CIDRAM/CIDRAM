@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2025.08.06).
+ * This file: Protect traits (last modified: 2025.08.08).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -135,6 +135,7 @@ trait Protect
             'Output' => [],
             'captcha_api_include' => '',
             'captcha_div_include' => '',
+            'theme_mode_effects' => $this->CIDRAM['Config Defaults']['template_data']['theme_mode']['effects'][$this->Configuration['template_data']['theme_mode']] ?? ''
         ];
 
         /** Instantiate report orchestrator (used by some modules). */

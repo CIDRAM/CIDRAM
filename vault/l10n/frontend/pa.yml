@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Punjabi language data for the front-end (last modified: 2025.08.07).
+# This file: Punjabi language data for the front-end (last modified: 2025.08.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -185,7 +185,8 @@ config:
  frontend_max_login_attempts: "ਫਰੰਟ-ਐਂਡ ਲੌਗਇਨ ਕੋਸ਼ਿਸ਼ਾਂ ਦੀ ਅਧਿਕਤਮ ਸੰਖਿਆ। ਡਿਫਾਲਟ = 5."
  frontend_remotes: "ਕੰਪੋਨੈਂਟ ਮੈਟਾਡੇਟਾ ਪ੍ਰਾਪਤ ਕਰਨ ਲਈ ਅੱਪਡੇਟਰ ਦੁਆਰਾ ਵਰਤੇ ਗਏ ਪਤਿਆਂ ਦੀ ਸੂਚੀ। ਇੱਕ ਨਵੇਂ ਮੁੱਖ ਸੰਸਕਰਣ ਵਿੱਚ ਅੱਪਗਰੇਡ ਕਰਨ ਵੇਲੇ, ਜਾਂ ਅੱਪਡੇਟ ਲਈ ਇੱਕ ਨਵਾਂ ਸਰੋਤ ਪ੍ਰਾਪਤ ਕਰਨ ਵੇਲੇ ਇਸ ਨੂੰ ਐਡਜਸਟ ਕਰਨ ਦੀ ਲੋੜ ਹੋ ਸਕਦੀ ਹੈ, ਪਰ ਆਮ ਹਾਲਤਾਂ ਵਿੱਚ ਇਸਨੂੰ ਇਕੱਲੇ ਛੱਡ ਦਿੱਤਾ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ।"
  frontend_signatures_update_event_log: "ਲੌਗਿੰਗ ਲਈ ਇੱਕ ਫਾਈਲ ਜਦੋਂ ਦਸਤਖਤਾਂ ਨੂੰ ਫਰੰਟ-ਐਂਡ ਦੁਆਰਾ ਅਪਡੇਟ ਕੀਤਾ ਜਾਂਦਾ ਹੈ। ਇੱਕ ਫਾਈਲ ਨਾਮ ਦਿਓ, ਜਾਂ ਅਯੋਗ ਕਰਨ ਲਈ ਖਾਲੀ ਛੱਡੋ।"
- frontend_theme: "ਫਰੰਟ-ਐਂਡ ਲਈ ਵਰਤਣ ਲਈ ਡਿਫੌਲਟ ਥੀਮ।"
+ frontend_theme: "ਫਰੰਟ-ਐਂਡ ਲਈ ਵਰਤਣ ਲਈ ਥੀਮ।"
+ frontend_theme_mode: "ਫਰੰਟ-ਐਂਡ ਲਈ ਵਰਤਣ ਲਈ ਥੀਮ ਲਈ ਮੋਡ।"
  general: "ਆਮ ਕੌਂਫਿਗਰੇਸ਼ਨ (ਕੋਈ ਵੀ ਮੁੱਖ ਕੌਂਫਿਗਰੇਸ਼ਨ ਜੋ ਹੋਰ ਸ਼੍ਰੇਣੀਆਂ ਨਾਲ ਸਬੰਧਤ ਨਹੀਂ ਹੈ)।"
  general_allow_gethostbyaddr_lookup: "ਜਦੋਂ UDP ਉਪਲਬਧ ਨਾ ਹੋਵੇ ਤਾਂ gethostbyaddr ਲੁੱਕਅੱਪ ਦੀ ਇਜਾਜ਼ਤ ਦੇਣੀ ਹੈ? True = ਹਾਂ [ਡਿਫਾਲਟ]; False = ਨਹੀਂ।"
  general_ban_override: ""http_response_header_code" ਨੂੰ ਓਵਰਰਾਈਡ ਕਰਨਾ ਹੈ ਜਦੋਂ "infraction_limit" ਵੱਧ ਜਾਂਦੀ ਹੈ? 200 = ਓਵਰਰਾਈਡ ਨਾ ਕਰੋ [ਡਿਫਾਲਟ]। ਹੋਰ ਮੁੱਲ "http_response_header_code" ਲਈ ਉਪਲਬਧ ਮੁੱਲਾਂ ਦੇ ਸਮਾਨ ਹਨ।"
@@ -198,7 +199,7 @@ config:
  general_email_notification_when: "ਜਨਰੇਟ ਹੋਣ ਤੋਂ ਬਾਅਦ ਸੂਚਨਾਵਾਂ ਕਦੋਂ ਭੇਜਣੀਆਂ ਹਨ।"
  general_emailaddr: "ਜੇਕਰ ਤੁਸੀਂ ਚਾਹੋ, ਤਾਂ ਤੁਸੀਂ ਇੱਥੇ ਇੱਕ ਈਮੇਲ ਪਤਾ ਪ੍ਰਦਾਨ ਕਰ ਸਕਦੇ ਹੋ ਜੋ ਉਪਭੋਗਤਾਵਾਂ ਨੂੰ ਬਲੌਕ ਕੀਤੇ ਜਾਣ 'ਤੇ ਦਿੱਤਾ ਜਾਵੇਗਾ, ਉਹਨਾਂ ਨੂੰ ਗਲਤੀ ਨਾਲ ਬਲੌਕ ਕੀਤੇ ਜਾਣ ਦੀ ਸਥਿਤੀ ਵਿੱਚ ਸਹਾਇਤਾ ਲਈ ਸੰਪਰਕ ਦੇ ਬਿੰਦੂ ਵਜੋਂ ਵਰਤਣ ਲਈ। ਚੇਤਾਵਨੀ: ਜੋ ਵੀ ਈਮੇਲ ਪਤਾ ਤੁਸੀਂ ਇੱਥੇ ਪ੍ਰਦਾਨ ਕਰਦੇ ਹੋ, ਉਹ ਇੱਥੇ ਵਰਤੇ ਜਾਣ ਦੇ ਦੌਰਾਨ ਸਪੈਮਬੋਟਸ ਅਤੇ ਸਕ੍ਰੈਪਰਾਂ ਦੁਆਰਾ ਪ੍ਰਾਪਤ ਕੀਤਾ ਜਾਵੇਗਾ, ਅਤੇ ਇਸ ਲਈ, ਇਹ ਜ਼ੋਰਦਾਰ ਸਿਫਾਰਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ ਕਿ ਜੇਕਰ ਤੁਸੀਂ ਇੱਥੇ ਇੱਕ ਈਮੇਲ ਪਤਾ ਪ੍ਰਦਾਨ ਕਰਨਾ ਚੁਣਦੇ ਹੋ, ਤਾਂ ਤੁਸੀਂ ਯਕੀਨੀ ਬਣਾਓ ਕਿ ਇਹ ਇੱਕ ਡਿਸਪੋਸੇਬਲ ਪਤਾ ਹੈ, ਜਾਂ ਇੱਕ ਅਜਿਹਾ ਪਤਾ ਹੈ ਜਿਸਨੂੰ ਸਪੈਮ ਕੀਤੇ ਜਾਣ ਵਿੱਚ ਕੋਈ ਇਤਰਾਜ਼ ਨਹੀਂ ਹੈ (ਦੂਜੇ ਸ਼ਬਦਾਂ ਵਿੱਚ, ਤੁਸੀਂ ਸ਼ਾਇਦ ਆਪਣੇ ਪ੍ਰਾਇਮਰੀ ਨਿੱਜੀ ਜਾਂ ਪ੍ਰਾਇਮਰੀ ਕਾਰੋਬਾਰੀ ਈਮੇਲ ਪਤਿਆਂ ਦੀ ਵਰਤੋਂ ਨਹੀਂ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ)।"
  general_emailaddr_display_style: "ਤੁਸੀਂ ਉਪਭੋਗਤਾਵਾਂ ਨੂੰ ਪੇਸ਼ ਕੀਤੇ ਜਾਣ ਵਾਲੇ ਈਮੇਲ ਪਤੇ ਨੂੰ ਕਿਵੇਂ ਤਰਜੀਹ ਦਿੰਦੇ ਹੋ?"
- general_fields: "ਬਲਾਕ ਇਵੈਂਟਸ (ਜਦੋਂ ਇੱਕ ਬੇਨਤੀ ਬਲੌਕ ਕੀਤੀ ਜਾਂਦੀ ਹੈ) ਦੌਰਾਨ ਖੇਤਰਾਂ ਲਈ ਨਿਯੰਤਰਣ।"
+ general_fields: "ਬਲਾਕ ਸਮਾਗਮ (ਜਦੋਂ ਇੱਕ ਬੇਨਤੀ ਬਲੌਕ ਕੀਤੀ ਜਾਂਦੀ ਹੈ) ਦੌਰਾਨ ਖੇਤਰਾਂ ਲਈ ਨਿਯੰਤਰਣ।"
  general_force_hostname_lookup: "ਹੋਸਟਨਾਮ ਲੁੱਕਅਪ ਨੂੰ ਮਜਬੂਰ ਕਰਨਾ ਹੈ? True = ਹਾਂ; False = ਨਹੀਂ [ਡਿਫਾਲਟ]। ਹੋਸਟਨਾਮ ਲੁੱਕਅੱਪ ਆਮ ਤੌਰ 'ਤੇ ਲੋੜ ਦੇ ਆਧਾਰ 'ਤੇ ਕੀਤੇ ਜਾਂਦੇ ਹਨ, ਪਰ ਸਾਰੀਆਂ ਬੇਨਤੀਆਂ ਲਈ ਮਜਬੂਰ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ। ਅਜਿਹਾ ਕਰਨਾ ਲੌਗ ਫਾਈਲਾਂ ਵਿੱਚ ਵਧੇਰੇ ਵਿਸਤ੍ਰਿਤ ਜਾਣਕਾਰੀ ਪ੍ਰਦਾਨ ਕਰਨ ਦੇ ਇੱਕ ਸਾਧਨ ਵਜੋਂ ਲਾਭਦਾਇਕ ਹੋ ਸਕਦਾ ਹੈ, ਪਰ ਕਾਰਗੁਜ਼ਾਰੀ ਉੱਤੇ ਥੋੜ੍ਹਾ ਨਕਾਰਾਤਮਕ ਪ੍ਰਭਾਵ ਵੀ ਹੋ ਸਕਦਾ ਹੈ।"
  general_http_response_header_code: "ਬੇਨਤੀਆਂ ਨੂੰ ਬਲੌਕ ਕਰਨ ਵੇਲੇ CIDRAM ਨੂੰ ਕਿਹੜਾ HTTP ਸਥਿਤੀ ਸੁਨੇਹਾ ਭੇਜਣਾ ਚਾਹੀਦਾ ਹੈ?"
  general_ipaddr: "ਅੰਦਰ ਵੱਲ ਬੇਨਤੀਆਂ ਦਾ IP ਪਤਾ ਕਿੱਥੇ ਲੱਭਣਾ ਹੈ? (Cloudflare ਵਰਗੀਆਂ ਸੇਵਾਵਾਂ ਲਈ ਉਪਯੋਗੀ)। ਡਿਫਾਲਟ = REMOTE_ADDR. ਚੇਤਾਵਨੀ: ਇਸ ਨੂੰ ਨਾ ਬਦਲੋ ਜੇਕਰ ਤੁਸੀਂ ਨਹੀਂ ਜਾਣਦੇ ਕਿ ਤੁਸੀਂ ਕੀ ਕਰ ਰਹੇ ਹੋ!"
@@ -317,13 +318,14 @@ config:
  supplementary_cache_options_redis_port: "Redis ਪੋਰਟ ਮੁੱਲ। ਡਿਫਾਲਟ = 6379."
  supplementary_cache_options_redis_timeout: "Redis ਸਮਾਂ ਸਮਾਪਤ ਮੁੱਲ। ਡਿਫਾਲਟ = "2.5"."
  template_data: "ਟੈਂਪਲੇਟਾਂ ਅਤੇ ਥੀਮਾਂ ਲਈ ਕੌਂਫਿਗਰੇਸ਼ਨ।"
- template_data_block_event_title: "ਬਲਾਕ ਇਵੈਂਟਸ ਲਈ ਪ੍ਰਦਰਸ਼ਿਤ ਕਰਨ ਲਈ ਪੰਨਾ ਸਿਰਲੇਖ।"
+ template_data_block_event_title: "ਬਲਾਕ ਸਮਾਗਮ ਲਈ ਪ੍ਰਦਰਸ਼ਿਤ ਕਰਨ ਲਈ ਪੰਨਾ ਸਿਰਲੇਖ।"
  template_data_captcha_title: "ਕੈਪਟਚਾ ਬੇਨਤੀਆਂ ਲਈ ਪ੍ਰਦਰਸ਼ਿਤ ਕਰਨ ਲਈ ਪੰਨਾ ਸਿਰਲੇਖ।"
  template_data_css_url: "ਕਸਟਮ ਥੀਮ ਲਈ CSS ਫਾਈਲ URL।"
  template_data_custom_footer: "ਸਾਰੇ "ਪਹੁੰਚ ਇਨਕਾਰ" ਪੰਨਿਆਂ ਦੇ ਬਿਲਕੁਲ ਹੇਠਾਂ HTML ਦੇ ਰੂਪ ਵਿੱਚ ਸ਼ਾਮਲ ਕੀਤਾ ਗਿਆ। ਇਹ ਉਪਯੋਗੀ ਹੋ ਸਕਦਾ ਹੈ ਜੇਕਰ ਤੁਸੀਂ ਅਜਿਹੇ ਸਾਰੇ ਪੰਨਿਆਂ 'ਤੇ ਕਾਨੂੰਨੀ ਨੋਟਿਸ, ਸੰਪਰਕ ਲਿੰਕ, ਕਾਰੋਬਾਰੀ ਜਾਣਕਾਰੀ, ਜਾਂ ਸਮਾਨ ਸ਼ਾਮਲ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ।"
  template_data_custom_header: "ਸਾਰੇ "ਪਹੁੰਚ ਇਨਕਾਰ" ਪੰਨਿਆਂ ਦੇ ਸ਼ੁਰੂ ਵਿੱਚ HTML ਦੇ ਰੂਪ ਵਿੱਚ ਸ਼ਾਮਲ ਕੀਤਾ ਗਿਆ। ਇਹ ਉਪਯੋਗੀ ਹੋ ਸਕਦਾ ਹੈ ਜੇਕਰ ਤੁਸੀਂ ਅਜਿਹੇ ਸਾਰੇ ਪੰਨਿਆਂ 'ਤੇ ਇੱਕ ਵੈਬਸਾਈਟ ਲੋਗੋ, ਵਿਅਕਤੀਗਤ ਸਿਰਲੇਖ, ਸਕ੍ਰਿਪਟਾਂ, ਜਾਂ ਸਮਾਨ ਸ਼ਾਮਲ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ।"
  template_data_magnification: *MagnifDesc
- template_data_theme: "CIDRAM ਲਈ ਵਰਤਣ ਲਈ ਡਿਫਾਲਟ ਥੀਮ।"
+ template_data_theme: "ਬਲਾਕ ਸਮਾਗਮ ਅਤੇ ਕੈਪਟਚਾ ਬੇਨਤੀਆਂ ਲਈ ਵਰਤਣ ਲਈ ਥੀਮ।"
+ template_data_theme_mode: "ਬਲਾਕ ਸਮਾਗਮ ਅਤੇ ਕੈਪਟਚਾ ਬੇਨਤੀਆਂ ਲਈ ਵਰਤਣ ਲਈ ਥੀਮ ਲਈ ਮੋਡ।"
  tor: "Tor ਬਲੌਕਰ ਮੋਡੀਊਲ ਲਈ ਕੌਂਫਿਗਰੇਸ਼ਨ।"
  verification: "ਬੇਨਤੀਆਂ ਕਿੱਥੋਂ ਆਉਂਦੀਆਂ ਹਨ, ਇਸਦੀ ਪੁਸ਼ਟੀ ਕਰਨ ਲਈ ਕੌਂਫਿਗਰੇਸ਼ਨ।"
  verification_adjust: "ਪੁਸ਼ਟੀਕਰਨ ਦੇ ਸੰਦਰਭ ਵਿੱਚ ਹੋਰ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ ਨੂੰ ਵਿਵਸਥਿਤ ਕਰਨ ਲਈ ਨਿਯੰਤਰਣ।"
@@ -623,6 +625,7 @@ label:
  Installed Available: "ਇੰਸਟਾਲ ਕੀਤਾ/ਉਪਲੱਬਧ"
  Integrity check: "ਇਕਸਾਰਤਾ ਜਾਂਚ:"
  Intersect: "ਲਾਂਘਾ ਕਰੋ"
+ Inverted: "ਉਲਟਾ"
  Invisible: "ਅਦਿੱਖ"
  Latest stable: "ਤਾਜ਼ਾ ਸਥਿਰ:"
  Latest unstable: "ਤਾਜ਼ਾ ਅਸਥਿਰ:"
@@ -641,6 +644,7 @@ label:
  No log file selected: "ਕੋਈ ਲੌਗ ਫਾਈਲ ਨਹੀਂ ਚੁਣੀ ਗਈ।"
  No log files available: "ਕੋਈ ਲੌਗ ਫਾਈਲਾਂ ਉਪਲਬਧ ਨਹੀਂ ਹਨ।"
  None: "ਕੋਈ ਨਹੀਂ।\nਜੇਕਰ ਤੁਸੀਂ ਮਾਡਿਊਲ ਨੂੰ ਸਿਰਫ ਰਿਪੋਰਟਿੰਗ ਦੇ ਉਦੇਸ਼ਾਂ ਲਈ ਵਰਤਣਾ ਚਾਹੁੰਦੇ ਹੋ, ਬਿਨਾਂ ਕੁਝ ਦੇਖੇ, ਇਸ ਦੀ ਵਰਤੋਂ ਕਰੋ।"
+ Normal: "ਕੁਦਰਤੀ"
  Only when blocked, specially marked for use, within the signature limit, and not banned: "ਸਿਰਫ ਜਦੋਂ ਬਲੌਕ ਕੀਤਾ ਗਿਆ ਹੈ, ਵਰਤਣ ਲਈ ਮਾਰਕ ਕੀਤਾ, ਦਸਤਖਤ ਸੀਮਾ ਦੇ ਅੰਦਰ, ਅਤੇ ਪਾਬੰਦੀਸ਼ੁਦਾ ਨਹੀਂ।"
  Only when blocked, within the signature limit, and not banned: "ਸਿਰਫ ਜਦੋਂ ਬਲੌਕ ਕੀਤਾ ਗਿਆ ਹੈ, ਦਸਤਖਤ ਸੀਮਾ ਦੇ ਅੰਦਰ, ਅਤੇ ਪਾਬੰਦੀਸ਼ੁਦਾ ਨਹੀਂ।"
  Only when not blocked, at sensitive page requests: "ਸਿਰਫ ਜਦੋਂ ਬਲੌਕ ਨਹੀਂ ਹੈ, ਸੰਵੇਦਨਸ਼ੀਲ ਪੰਨੇ ਦੀਆਂ ਬੇਨਤੀਆਂ 'ਤੇ।"
@@ -927,7 +931,7 @@ response:
  The same IP address can be reported only once every 15 minutes: "ਉਹੀ IP ਪਤਾ ਹਰ 15 ਮਿੰਟਾਂ ਵਿੱਚ ਸਿਰਫ ਇੱਕ ਵਾਰ ਰਿਪੋਰਟ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ। ਰਿਪੋਰਟ ਕਤਾਰਬੱਧ ਕਰ ਦਿੱਤੀ ਗਈ ਹੈ, ਅਤੇ CIDRAM ਬਾਅਦ ਵਿੱਚ ਰਿਪੋਰਟ ਪੇਸ਼ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੇਗੀ।"
  There aren_t currently any auxiliary rules: "ਵਰਤਮਾਨ ਵਿੱਚ ਕੋਈ ਸਹਾਇਕ ਨਿਯਮ ਨਹੀਂ ਹਨ।"
  There_s nothing to analyse, sorry: "ਵਿਸ਼ਲੇਸ਼ਣ ਕਰਨ ਲਈ ਕੁਝ ਨਹੀਂ ਹੈ, ਮਾਫ਼ ਕਰਨਾ।"
- There_s nothing to print, sorry: "ਛਾਪਣ ਲਈ ਕੁਝ ਨਹੀਂ ਹੈ,, ਮਾਫ਼ ਕਰਨਾ।"
+ There_s nothing to print, sorry: "ਛਾਪਣ ਲਈ ਕੁਝ ਨਹੀਂ ਹੈ, ਮਾਫ਼ ਕਰਨਾ।"
  There_s nothing to write, sorry: "ਲਿਖਣ ਲਈ ਕੁਝ ਨਹੀਂ ਹੈ, ਮਾਫ਼ ਕਰਨਾ।"
  Tracking cleared: "ਟਰੈਕਿੰਗ ਸਾਫ਼ ਕੀਤੀ ਗਈ।"
  Unable to determine: "ਨਿਰਧਾਰਤ ਕਰਨ ਵਿੱਚ ਅਸਮਰੱਥ।"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2025.08.07).
+# This file: Swedish language data for the front-end (last modified: 2025.08.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -185,7 +185,8 @@ config:
  frontend_max_login_attempts: "Maximalt antal inloggningsförsök i front-end. Standard = 5."
  frontend_remotes: "En lista över adresserna som används av uppdateraren för att hämta komponentmetadata. Detta kan behöva justeras när du uppgraderar till en ny huvudversion, eller när du skaffar en ny källa för uppdateringar, men bör under normala omständigheter lämnas ifred."
  frontend_signatures_update_event_log: "En fil för loggning när signaturer uppdateras via frontend. Ange ett filnamn, eller lämna tomt för att inaktivera."
- frontend_theme: "Standardtemat som ska användas för front-enden."
+ frontend_theme: "Temat som ska användas för front-enden."
+ frontend_theme_mode: "Läget för temat som ska användas för front-enden."
  general: "Allmän konfiguration (alla kärnkonfigurationer som inte tillhör andra kategorier)."
  general_allow_gethostbyaddr_lookup: "Tillåt gethostbyaddr-uppslag när UDP är otillgänglig? True = Ja [Standard]; False = Nej."
  general_ban_override: "Åsidosätta "http_response_header_code" när "infraction_limit" överskrids? 200 = Åsidosätta inte [Standard]. Andra värden är desamma som tillgängliga värden för "http_response_header_code"."
@@ -323,7 +324,8 @@ config:
  template_data_custom_footer: "Infogas som HTML i slutet av alla "nekat tillgång"-sidor. Detta kan vara användbart om du vill inkludera ett juridiskt meddelande, kontaktlänk, företagsinformation, eller liknande på alla sådana sidor."
  template_data_custom_header: "Infogas som HTML i början av alla "nekat tillgång"-sidor. Detta kan vara användbart om du vill inkludera en webbplatslogotyp, personlig rubrik, skript, eller liknande på alla sådana sidor."
  template_data_magnification: *MagnifDesc
- template_data_theme: "Standardtemat som ska användas för CIDRAM."
+ template_data_theme: "Temat som ska användas för blockhändelser och CAPTCHA-förfrågningar."
+ template_data_theme_mode: "Läget för temat som ska användas för blockhändelser och CAPTCHA-förfrågningar."
  tor: "Konfiguration för Tor-blockeringsmodulen."
  verification: "Konfiguration för att verifiera var förfrågningar kommer ifrån."
  verification_adjust: "Kontroller för att justera andra funktioner i samband med verifiering."
@@ -624,6 +626,7 @@ label:
  Installed Available: "Installerad/Tillgängliga"
  Integrity check: "Integritetskontroll:"
  Intersect: "Skärningspunkten"
+ Inverted: "Omvänd"
  Invisible: "Osynlig"
  Latest stable: "Senaste stabila:"
  Latest unstable: "Senaste instabil:"
@@ -642,6 +645,7 @@ label:
  No log file selected: "Ingen loggfil vald."
  No log files available: "Inga loggfiler finns tillgängliga."
  None: "Ingen.\nOm du vill använda modulen endast för rapporteringsändamål, utan att slå upp något, använd denna."
+ Normal: "Normal"
  Only when blocked, specially marked for use, within the signature limit, and not banned: "Endast när det är blockerat, speciellt markerad för användning, inom signaturgränsen, och inte förbjudet."
  Only when blocked, within the signature limit, and not banned: "Endast när det är blockerat, inom signaturgränsen, och inte förbjudet."
  Only when not blocked, at sensitive page requests: "Endast när det inte blockerat, vid förfrågningar om känsliga sidor."

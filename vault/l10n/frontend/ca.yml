@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Catalan language data for the front-end (last modified: 2025.08.07).
+# This file: Catalan language data for the front-end (last modified: 2025.08.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -185,7 +185,8 @@ config:
  frontend_max_login_attempts: "Nombre màxim d'intents d'iniciar sessió al front-end. Predeterminat = 5."
  frontend_remotes: "Una llista de les adreces utilitzades per l'actualitzador per obtenir les metadades dels components. És possible que s'hagi d'ajustar quan s'actualitzi a una versió principal nova, o quan s'adquireixi una font nova per a actualitzacions, però en circumstàncies normals s'ha de deixar sol."
  frontend_signatures_update_event_log: "Un fitxer per registrar quan les signatures s'actualitzen a través del front-end. Especifiqueu un nom de fitxer, o deixeu-lo en blanc per desactivar-lo."
- frontend_theme: "El tema predeterminat que s'utilitza per a la front-end."
+ frontend_theme: "El tema que s'utilitzarà per al front-end."
+ frontend_theme_mode: "El mode que el tema utilitzarà per al front-end."
  general: "Configuració general (qualsevol configuració bàsica que no pertanyi a altres categories)."
  general_allow_gethostbyaddr_lookup: "Permetre cerques mitjançant gethostbyaddr quan UDP no està disponible? True/Cert = Sí [Predeterminat]; False/Fals = No."
  general_ban_override: "Substituïu "http_response_header_code" quan se superi "infraction_limit"? 200 = No substituïu [Predeterminat]. Altres valors són els mateixos que els valors disponibles per a "http_response_header_code"."
@@ -323,7 +324,8 @@ config:
  template_data_custom_footer: "Inserir com a HTML a la part inferior de totes les pàgines d'accés denegat. Això pot ser útil en cas que vulgueu incloure un avís legal, un enllaç de contacte, informació comercial, o similar a totes aquestes pàgines."
  template_data_custom_header: "Inserir com a HTML al principi de totes les pàgines d'accés denegat. Això pot ser útil en cas que vulgueu incloure un logotip de lloc web, una capçalera personalitzada, scripts, o similar a totes aquestes pàgines."
  template_data_magnification: *MagnifDesc
- template_data_theme: "El tema predeterminat que s'utilitza per a CIDRAM."
+ template_data_theme: "El tema que s'utilitzarà per a esdeveniments de bloqueig i sol·licituds CAPTCHA."
+ template_data_theme_mode: "El mode que el tema utilitzarà per a esdeveniments de bloqueig i sol·licituds CAPTCHA."
  tor: "Configuració del mòdul bloquejador de Tor."
  verification: "Configuració per verificar d'on provenen les sol·licituds."
  verification_adjust: "Controls per ajustar altres funcions en el context de la verificació."
@@ -616,6 +618,7 @@ label:
  Installed Available: "Instal·lat/Disponible"
  Integrity check: "Comprovació d'integritat:"
  Intersect: "Intersecció"
+ Inverted: "Invertit"
  Invisible: "Invisible"
  Latest stable: "Últim estable:"
  Latest unstable: "Últim inestable:"
@@ -634,6 +637,7 @@ label:
  No log file selected: "No s'ha seleccionat cap fitxer de registre."
  No log files available: "No hi ha fitxers de registre disponibles."
  None: "Cap.\nSi voleu utilitzar el mòdul només amb finalitats d'informes, sense buscar res, usa aixó."
+ Normal: "Normal"
  Only when blocked, specially marked for use, within the signature limit, and not banned: "Només quan està bloquejat, especialment marcat per al seu ús, dins del límit de signatura, i no prohibit."
  Only when blocked, within the signature limit, and not banned: "Només quan està bloquejat, dins del límit de signatura, i no prohibit."
  Only when not blocked, at sensitive page requests: "Només quan no està bloquejat, a sol·licituds de pàgines sensibles."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Marathi language data for the front-end (last modified: 2025.08.07).
+# This file: Marathi language data for the front-end (last modified: 2025.08.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -185,7 +185,8 @@ config:
  frontend_max_login_attempts: "फ्रंट-एंड लॉगिन प्रयत्नांची कमाल संख्या. डीफॉल्ट = 5."
  frontend_remotes: "घटक मेटाडेटा आणण्यासाठी अपडेटरने वापरलेल्या पत्त्यांची यादी. नवीन प्रमुख आवृत्तीवर अपग्रेड करताना किंवा अद्यतनांसाठी नवीन स्रोत मिळवताना हे समायोजित करावे लागू शकते, परंतु सामान्य परिस्थितीत ते तसेच सोडले पाहिजे."
  frontend_signatures_update_event_log: "फ्रंट-एंडद्वारे स्वाक्षऱ्या अपडेट केल्यावर लॉग करण्यासाठी एक फाइल. फाइलनाव निर्दिष्ट करा, किंवा अक्षम करण्यासाठी रिक्त सोडा."
- frontend_theme: "फ्रंट-एंडसाठी वापरण्यासाठी डीफॉल्ट थीम."
+ frontend_theme: "फ्रंट-एंडसाठी वापरायची थीम."
+ frontend_theme_mode: "फ्रंट-एंडसाठी वापरायची थीमसाठी मोड."
  general: "सामान्य कॉन्फिगरेशन (इतर श्रेणींमध्ये नसलेले कोणतेही कोर कॉन्फिगरेशन)."
  general_allow_gethostbyaddr_lookup: "UDP उपलब्ध नसताना gethostbyaddr लुकअपला परवानगी द्यायची का? True = होय [डीफॉल्ट]; False = नाही."
  general_ban_override: ""infraction_limit" ओलांडल्यावर "http_response_header_code" ओव्हरराइड करायचे का? 200 = ओव्हरराइड करू नका [डीफॉल्ट]. इतर मूल्ये "http_response_header_code" साठी उपलब्ध मूल्यांसारखीच आहेत."
@@ -323,7 +324,8 @@ config:
  template_data_custom_footer: "सर्व "प्रवेश नाकारला" पृष्ठांच्या अगदी तळाशी HTML म्हणून समाविष्ट केले आहे. तुम्हाला कायदेशीर सूचना, संपर्क लिंक, व्यवसाय माहिती, किंवा तत्सम अशा सर्व पृष्ठांवर समाविष्ट करायचे असल्यास हे उपयुक्त ठरू शकते."
  template_data_custom_header: "सर्व "प्रवेश नाकारला" पृष्ठांच्या अगदी सुरुवातीला HTML म्हणून समाविष्ट केले आहे. तुम्हाला वेबसाइटचा लोगो, वैयक्तिक शीर्षलेख, स्क्रिप्ट्स, किंवा तत्सम अशा सर्व पृष्ठांवर समाविष्ट करायचे असल्यास हे उपयुक्त ठरू शकते."
  template_data_magnification: *MagnifDesc
- template_data_theme: "CIDRAM साठी वापरण्यासाठी डीफॉल्ट थीम."
+ template_data_theme: "अवरोधित कार्यक्रम आणि कॅप्चा रिक्वेस्टसाठी वापरायची थीम."
+ template_data_theme_mode: "अवरोधित कार्यक्रम आणि कॅप्चा रिक्वेस्टसाठी वापरायची थीमसाठी मोड."
  tor: "टॉर ब्लॉकर मॉड्यूलसाठी कॉन्फिगरेशन."
  verification: "विनंत्या कुठून येतात हे पडताळण्यासाठी कॉन्फिगरेशन."
  verification_adjust: "पडताळणीच्या संदर्भात इतर वैशिष्ट्ये समायोजित करण्यासाठी नियंत्रणे."
@@ -620,6 +622,7 @@ label:
  Installed Available: "स्थापित/उपलब्ध"
  Integrity check: "सचोटी तपासणी:"
  Intersect: "छेदणे"
+ Inverted: "उलटा"
  Invisible: "अदृश्य"
  Latest stable: "नवीनतम स्थिर:"
  Latest unstable: "नवीनतम अस्थिर:"
@@ -638,6 +641,7 @@ label:
  No log file selected: "कोणतीही नोंदी फाइल निवडलेली नाही."
  No log files available: "कोणत्याही नोंदी फायली उपलब्ध नाहीत."
  None: "काहीही नाही.\nजर तुम्हाला हे मॉड्यूल फक्त अहवालसाठी वापरायचे असेल, तर काहीही न पाहता, हे वापरा."
+ Normal: "नैसर्गिक"
  Only when blocked, specially marked for use, within the signature limit, and not banned: "फक्त अवरोधित असताना, वापरासाठी विशेषतः चिन्हांकित केलेले असताना, स्वाक्षरी मर्यादेत असताना, आणि बंदी घातलेली नसताना."
  Only when blocked, within the signature limit, and not banned: "फक्त अवरोधित असताना, स्वाक्षरी मर्यादेत असताना, आणि बंदी घातलेली नसताना."
  Only when not blocked, at sensitive page requests: "फक्त अवरोधित नसताना, संवेदनशील पृष्ठ विनंत्यांवर."
@@ -746,7 +750,7 @@ label:
  expire_bad: "या मॉड्यूलद्वारे कॅश केलेला खराब डेटा कालबाह्य होण्यापूर्वी किती वेळ टिकू शकतो."
  expire_good: "या मॉड्यूलद्वारे कॅश केलेला चांगला डेटा कालबाह्य होण्यापूर्वी किती वेळ टिकू शकतो."
  lookup_strategy: "कोणत्या विनंत्यांसाठी लुकअप केले पाहिजेत?"
- options: "या मॉड्यूलद्वारे स्वाक्षरी किंवा ब्लॉक इव्हेंट्स ट्रिगर झाल्यावर लागू करायचे पर्याय."
+ options: "या मॉड्यूलद्वारे स्वाक्षरी किंवा अवरोधित कार्यक्रम ट्रिगर झाल्यावर लागू करायचे पर्याय."
  results: "निकाल (%s येणारे – %s नाकारले – %s स्वीकारले – %s विलीन केले – %s जाणारे):"
  rl_requests: "पाठवलेल्या विनंत्या: %s – उपलब्ध विनंत्या: %s"
  rl_when: "नवीनतम नोंद: %s (कालबाह्य: %s).<br />सर्वात जुनी नोंद: %s (कालबाह्य: %s)."

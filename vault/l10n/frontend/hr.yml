@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Croatian language data for the front-end (last modified: 2025.08.07).
+# This file: Croatian language data for the front-end (last modified: 2025.08.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -185,7 +185,8 @@ config:
  frontend_max_login_attempts: "Maksimalan broj pokušaja front-end prijave. Zadano = 5."
  frontend_remotes: "Popis adresa koje koristi program za ažuriranje za dohvaćanje metapodataka komponente. Ovo će se možda trebati prilagoditi prilikom nadogradnje na novu glavnu verziju ili prilikom nabave novog izvora za ažuriranja, ali u normalnim okolnostima to treba ostaviti na miru."
  frontend_signatures_update_event_log: "Datoteka za evidentiranje kada se potpisi ažuriraju putem front-enda. Navedite naziv datoteke, ili ostavite prazno za onemogućavanje."
- frontend_theme: "Zadana tema koja se koristi za front-end."
+ frontend_theme: "Tema koja će se koristiti za front-end."
+ frontend_theme_mode: "Način za tema koja će se koristiti za front-end."
  general: "Opća konfiguracija (bilo koja konfiguracija jezgre koja ne pripada drugim kategorijama)."
  general_allow_gethostbyaddr_lookup: "Dopustiti pretraživanje gethostbyaddr kada UDP nije dostupan? True/Istinito = Da [Zadano]; False/Lažno = Ne."
  general_ban_override: "Vrijednost koja se koristi umjesto "http_response_header_code" kada se premaši "infraction_limit". 200 = Zadrži isto [Zadano]. Ostale vrijednosti su iste kao dostupne vrijednosti za "http_response_header_code"."
@@ -323,7 +324,8 @@ config:
  template_data_custom_footer: "Umetnuto kao HTML na samom dnu svih stranica "pristup odbijen". Ovo bi moglo biti korisno u slučaju da želite uključiti pravnu obavijest, poveznicu za kontakt, poslovne informacije, ili slično na sve takve stranice."
  template_data_custom_header: "Umetnuto kao HTML na samom početku svih stranica "pristup odbijen". Ovo bi moglo biti korisno u slučaju da želite uključiti logotip web stranice, personalizirano zaglavlje, skripte, ili slično na sve takve stranice."
  template_data_magnification: *MagnifDesc
- template_data_theme: "Zadana tema za CIDRAM."
+ template_data_theme: "Tema koja će se koristiti za blok događaje i CAPTCHA zahtjeve."
+ template_data_theme_mode: "Način za tema koja će se koristiti za blok događaje i CAPTCHA zahtjeve."
  tor: "Konfiguracija za Tor blokator modul."
  verification: "Konfiguracija za provjeru odakle potječu zahtjevi."
  verification_adjust: "Kontrole za prilagodbu drugih značajki u kontekstu provjere."
@@ -628,6 +630,7 @@ label:
  Installed Available: "Instalirano/Dostupno"
  Integrity check: "Provjera integriteta:"
  Intersect: "Presjek"
+ Inverted: "Obrnuto"
  Invisible: "Nevidljiv"
  Latest stable: "Najnovija stabilna verzija:"
  Latest unstable: "Najnovije nestabilno verzija:"
@@ -646,6 +649,7 @@ label:
  No log file selected: "Nije odabrana datoteka dnevnika."
  No log files available: "Nema dostupnih datoteka dnevnika."
  None: "Niti jedan.\nAko želite koristiti modul samo za potrebe izvještavanja, bez ikakvog pretraživanja, koristite ovo."
+ Normal: "Normalan"
  Only when blocked, specially marked for use, within the signature limit, and not banned: "Samo kada je blokirano, posebno označeno za upotrebu, unutar ograničenja potpisa, i nije zabranjeno."
  Only when blocked, within the signature limit, and not banned: "Samo kada je blokirano, unutar ograničenja potpisa, i nije zabranjeno."
  Only when not blocked, at sensitive page requests: "Samo kada nije blokirano, kod zahtjeva za osjetljive stranice."

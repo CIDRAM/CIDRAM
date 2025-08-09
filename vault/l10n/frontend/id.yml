@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2025.08.07).
+# This file: Indonesian language data for the front-end (last modified: 2025.08.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -185,7 +185,8 @@ config:
  frontend_max_login_attempts: "Jumlah maksimum upaya memasukkan ke bagian depan. Default = 5."
  frontend_remotes: "Daftar alamat yang digunakan oleh pembaru untuk mengambil metadata komponen. Ini mungkin perlu disesuaikan saat memutakhirkan ke versi utama baru, atau saat memperoleh sumber baru untuk pembaruan, tetapi dalam keadaan normal harus dibiarkan saja."
  frontend_signatures_update_event_log: "File untuk mencatat ketika tanda tangan diperbarui melalui bagian depan. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
- frontend_theme: "Tema default yang digunakan untuk front-end."
+ frontend_theme: "Tema yang akan digunakan untuk front-end."
+ frontend_theme_mode: "Mode untuk tema yang akan digunakan untuk front-end."
  general: "Konfigurasi umum (konfigurasi inti apapun yang bukan milik kategori lain)."
  general_allow_gethostbyaddr_lookup: "Izinkan menggunakan gethostbyaddr saat UDP tidak tersedia? True = Ya [Default]; False = Tidak."
  general_ban_override: "Mengesampingkan "http_response_header_code" ketika "infraction_limit" adalah melampaui? 200 = Jangan mengesampingkan [Default]. Nilai lainnya sama dengan nilai yang tersedia untuk "http_response_header_code"."
@@ -323,7 +324,8 @@ config:
  template_data_custom_footer: "Disisipkan sebagai HTML di akhir semua halaman "akses ditolak". Ini dapat berguna jika Anda ingin menyertakan pemberitahuan hukum, tautan kontak, informasi bisnis, atau sejenisnya di semua halaman tersebut."
  template_data_custom_header: "Disisipkan sebagai HTML di awal semua halaman "akses ditolak". Ini dapat berguna jika Anda ingin menyertakan logo situs web, header yang dipersonalisasi, skrip, atau sejenisnya di semua halaman tersebut."
  template_data_magnification: *MagnifDesc
- template_data_theme: "Tema default yang digunakan untuk CIDRAM."
+ template_data_theme: "Tema yang akan digunakan untuk acara blokir dan permintaan CAPTCHA."
+ template_data_theme_mode: "Mode untuk tema yang akan digunakan untuk acara blokir dan permintaan CAPTCHA."
  tor: "Konfigurasi untuk modul pemblokir Tor."
  verification: "Konfigurasi untuk memverifikasi dari mana permintaan berasal."
  verification_adjust: "Kontrol untuk menyesuaikan fitur lain saat dalam konteks verifikasi."
@@ -613,6 +615,7 @@ label:
  Installed Available: "Diinstal/Tersedia"
  Integrity check: "Pemeriksaan integritas:"
  Intersect: "Intersekt"
+ Inverted: "Terbalik"
  Invisible: "Tak terlihat"
  Latest stable: "Terbaru stabil:"
  Latest unstable: "Terbaru tidak stabil:"
@@ -631,6 +634,7 @@ label:
  No log file selected: "Tidak ada file log dipilih."
  No log files available: "Tidak ada file log tersedia."
  None: "Tidak satupun.\nJika Anda ingin menggunakan modul hanya untuk tujuan pelaporan, tanpa mencari apapun, gunakan ini."
+ Normal: "Normal"
  Only when blocked, specially marked for use, within the signature limit, and not banned: "Hanya jika diblokir, ditandai khusus untuk digunakan, dalam batas tanda tangan, dan tidak dilarang."
  Only when blocked, within the signature limit, and not banned: "Hanya jika diblokir, dalam batas tanda tangan, dan tidak dilarang."
  Only when not blocked, at sensitive page requests: "Hanya jika tidak diblokir, pada permintaan halaman sensitif."

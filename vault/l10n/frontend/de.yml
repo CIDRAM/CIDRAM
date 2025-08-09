@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2025.08.07).
+# This file: German language data for the front-end (last modified: 2025.08.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -185,7 +185,8 @@ config:
  frontend_max_login_attempts: "Maximale Anzahl der Versucht zum Anmelden (Frontend). Standardeinstellung = 5."
  frontend_remotes: "Eine Liste der Adressen an denen der Updater Komponenten-Metadaten abruft. Dies muss möglicherweise beim Upgrade auf eine neue Hauptversion oder beim Erwerb einer neuen Quelle für Updates angepasst werden, aber sollte unter normalen Umständen in Ruhe gelassen werden."
  frontend_signatures_update_event_log: "Einer Datei zum Protokollieren wenn Signaturen über das Front-End aktualisiert werden. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer."
- frontend_theme: "Standard-Thema für das Front-End zu verwenden."
+ frontend_theme: "Thema für das Front-End zu verwenden."
+ frontend_theme_mode: "Der Modus für das Thema für das Front-End zu verwenden."
  general: "Allgemeine Konfiguration (jede Kernkonfiguration, die nicht zu anderen Kategorien gehört)."
  general_allow_gethostbyaddr_lookup: "gethostbyaddr-Suche erlauben, wenn UDP nicht verfügbar ist? True = Ja [Standardeinstellung]; False = Nein."
  general_ban_override: "Überschreiben „http_response_header_code“ wenn „infraction_limit“ überschritten wird? 200 = Nicht überschreiben [Standardeinstellung]. Andere Werte entsprechen den verfügbaren Werten für „http_response_header_code“."
@@ -323,7 +324,8 @@ config:
  template_data_custom_footer: "Als HTML ganz am Unten aller "Zugriff verweigert"-Seiten eingefügt. Dies kann nützlich sein, wenn Sie auf allen solchen Seiten einen rechtlichen Hinweis, einen Kontaktlink, Geschäftsinformationen, oder ähnliches einfügen möchten."
  template_data_custom_header: "Als HTML ganz am Anfang aller "Zugriff verweigert"-Seiten eingefügt. Dies kann nützlich sein, wenn Sie auf allen solchen Seiten ein Website-Logo, einen personalisierten Header, Skripte, oder ähnliches einfügen möchten."
  template_data_magnification: *MagnifDesc
- template_data_theme: "Standard-Thema für CIDRAM zu verwenden."
+ template_data_theme: "Thema für Blockereignisse und CAPTCHA-Anfragen zu verwenden."
+ template_data_theme_mode: "Der Modus für das Thema für Blockereignisse und CAPTCHA-Anfragen zu verwenden."
  tor: "Konfiguration für das Tor-Blocker-Modul."
  verification: "Konfiguration zur Verifizierung woher Anfragen stammen."
  verification_adjust: "Kontrollen zum Anpassen anderer Funktionen im Zusammenhang mit der Verifizierung."
@@ -623,6 +625,7 @@ label:
  Installed Available: "Installiert/Verfügbar"
  Integrity check: "Integritätsprüfung:"
  Intersect: "Durchschnitt"
+ Inverted: "Invertiert"
  Invisible: "Unsichtbar"
  Latest stable: "Neueste stabil:"
  Latest unstable: "Neueste instabil:"
@@ -641,6 +644,7 @@ label:
  No log file selected: "Keine Protokolldatei ausgewählt."
  No log files available: "Keine Protokolldateien vorhanden."
  None: "Keiner.\nWenn Sie das Modul nur für Berichtszwecke verwenden möchten, ohne etwas nachzuschlagen, verwenden Sie dies."
+ Normal: "Normal"
  Only when blocked, specially marked for use, within the signature limit, and not banned: "Nur wenn blockiert, speziell für die Verwendung markiert, innerhalb der Signaturgrenze, und nicht verbannt."
  Only when blocked, within the signature limit, and not banned: "Nur wenn blockiert, innerhalb des Signaturgrenze, und nicht verbannt."
  Only when not blocked, at sensitive page requests: "Nur wenn nicht blockiert, bei Anfragen für sensible Seiten."

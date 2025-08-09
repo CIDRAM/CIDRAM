@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malayalam language data for the front-end (last modified: 2025.08.07).
+# This file: Malayalam language data for the front-end (last modified: 2025.08.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -185,7 +185,8 @@ config:
  frontend_max_login_attempts: "ഫ്രണ്ട്-എൻഡ് ലോഗിൻ ശ്രമങ്ങളുടെ പരമാവധി എണ്ണം. സ്ഥിരസ്ഥിതി = 5."
  frontend_remotes: "ഘടക മെറ്റാഡാറ്റ ലഭ്യമാക്കാൻ അപ്‌ഡേറ്റ് പേജ് ഉപയോഗിക്കുന്ന വിലാസങ്ങളുടെ ഒരു പട്ടിക. ഒരു പുതിയ പ്രധാന പതിപ്പിലേക്ക് അപ്‌ഗ്രേഡ് ചെയ്യുമ്പോഴോ അപ്‌ഡേറ്റുകൾക്കായി ഒരു പുതിയ ഉറവിടം പ്രയോഗിക്കുമ്പോൾ ഇത് ക്രമീകരിക്കേണ്ടി വന്നേക്കാം, പക്ഷേ സാധാരണ സാഹചര്യങ്ങളിൽ അത് അതേപടി വിടണം."
  frontend_signatures_update_event_log: "ഫ്രണ്ട്-എൻഡ് വഴി ഒപ്പുകൾ അപ്ഡേറ്റ് ചെയ്യുമ്പോൾ രേഖപ്പെടുത്തുന്നതിനായി ഒരു ഫയൽ. ഒരു ഫയലിൻ്റെ പേര് വ്യക്തമാക്കുക, അല്ലെങ്കിൽ പ്രവർത്തനരഹിതമാക്കാൻ ശൂന്യമായി വിടുക."
- frontend_theme: "ഫ്രണ്ട്-എന്റിന് ഉപയോഗിക്കേണ്ട സ്ഥിരസ്ഥിതി തീം."
+ frontend_theme: "ഫ്രണ്ട്-എന്റിന് ഉപയോഗിക്കേണ്ട തീം."
+ frontend_theme_mode: "ഫ്രണ്ട്-എന്റിന് ഉപയോഗിക്കേണ്ട തീമിനുള്ള മോഡ്."
  general: "പൊതുവായ കോൺഫിഗറേഷൻ (മറ്റ് വിഭാഗങ്ങളിൽ പെടാത്ത ഏതെങ്കിലും കോർ കോൺഫിഗറേഷൻ)."
  general_allow_gethostbyaddr_lookup: "UDP ലഭ്യമല്ലാത്തപ്പോൾ gethostbyaddr ലുക്കപ്പുകൾ അനുവദിക്കണോ? True = അതെ [സ്ഥിരസ്ഥിതി]; False = ഇല്ല."
  general_ban_override: ""infraction_limit" കവിഞ്ഞാൽ "http_response_header_code" എന്നതിനുള്ള മൂല്യം മാറ്റിസ്ഥാപിക്കണോ? 200 = മാറ്റിസ്ഥാപിക്കരുത് [സ്ഥിരസ്ഥിതി]. മറ്റ് മൂല്യങ്ങൾ "http_response_header_code" എന്നതിനുള്ള ലഭ്യമായ മൂല്യങ്ങൾക്ക് സമാനമാണ്."
@@ -323,7 +324,8 @@ config:
  template_data_custom_footer: "എല്ലാ "പ്രവേശനം നിരസിച്ചു" പേജുകളുടെയും ഏറ്റവും താഴെയായി HTML ആയി ചേർത്തിരിക്കുന്നു. നിയമപരമായ അറിയിപ്പ്, കോൺടാക്റ്റ് ലിങ്ക്, ബിസിനസ്സ് വിവരങ്ങൾ, അല്ലെങ്കിൽ സമാനമായ എല്ലാ പേജുകളിലും ഉൾപ്പെടുത്താൻ നിങ്ങൾ ആഗ്രഹിക്കുന്ന സാഹചര്യത്തിൽ ഇത് ഉപയോഗപ്രദമാകും."
  template_data_custom_header: "എല്ലാ "പ്രവേശനം നിരസിച്ചു" പേജുകളുടെയും തുടക്കത്തിൽ തന്നെ HTML ആയി ചേർത്തിരിക്കുന്നു. ഒരു വെബ്‌സൈറ്റ് ലോഗോ, വ്യക്തിഗതമാക്കിയ തലക്കെട്ട്, സ്‌ക്രിപ്റ്റുകൾ, അല്ലെങ്കിൽ സമാനമായ എല്ലാ പേജുകളിലും ഉൾപ്പെടുത്താൻ നിങ്ങൾ ആഗ്രഹിക്കുന്ന സാഹചര്യത്തിൽ ഇത് ഉപയോഗപ്രദമാകും."
  template_data_magnification: *MagnifDesc
- template_data_theme: "CIDRAM-ന് ഉപയോഗിക്കേണ്ട സ്ഥിരസ്ഥിതി തീം."
+ template_data_theme: "ബ്ലോക്ക് ഇവന്റുകൾക്കും CAPTCHA അഭ്യർത്ഥനകൾക്കും ഉപയോഗിക്കേണ്ട തീം."
+ template_data_theme_mode: "ബ്ലോക്ക് ഇവന്റുകൾക്കും CAPTCHA അഭ്യർത്ഥനകൾക്കും ഉപയോഗിക്കേണ്ട തീമിനുള്ള മോഡ്."
  tor: "ടോർ ബ്ലോക്കർ മൊഡ്യൂളിനുള്ള കോൺഫിഗറേഷൻ."
  verification: "അഭ്യർത്ഥനകൾ എവിടെ നിന്നാണ് ഉത്ഭവിക്കുന്നതെന്ന് പരിശോധിക്കുന്നതിനുള്ള കോൺഫിഗറേഷൻ."
  verification_adjust: "പരിശോധിക്കുമ്പോൾ മറ്റ് സവിശേഷതകൾക്കായുള്ള ക്രമീകരണങ്ങൾ."
@@ -627,6 +629,7 @@ label:
  Installed Available: "ഇൻസ്റ്റാൾ ചെയ്‌തു/ലഭ്യം"
  Integrity check: "സമഗ്രതാ പരിശോധന:"
  Intersect: "വിഭജിക്കുന്നത്"
+ Inverted: "വിപരീതം"
  Invisible: "അദൃശ്യം"
  Latest stable: "ഏറ്റവും പുതിയ സ്റ്റേബിൾ:"
  Latest unstable: "ഏറ്റവും പുതിയ അസ്ഥിരം:"
@@ -645,6 +648,7 @@ label:
  No log file selected: "ഒരു ലോഗ് ഫയലും തിരഞ്ഞെടുത്തിട്ടില്ല."
  No log files available: "ലോഗ് ഫയലുകളൊന്നും ലഭ്യമല്ല."
  None: "അഭ്യർത്ഥനകളൊന്നുമില്ല.\nഒന്നും നോക്കാതെ, റിപ്പോർട്ടുകൾ അയയ്ക്കാൻ മാത്രം മൊഡ്യൂൾ ഉപയോഗിക്കണമെങ്കിൽ, ഇത് ഉപയോഗിക്കുക."
+ Normal: "സാധാരണ"
  Only when blocked, specially marked for use, within the signature limit, and not banned: "തടയപ്പെടുമ്പോൾ, ഉപയോഗത്തിനായി പ്രത്യേകം അടയാളപ്പെടുത്തിയിരിക്കുമ്പോൾ, ഒപ്പിന്റെ പരിധിക്കുള്ളിൽ, നിരോധിക്കാതിരിക്കുമ്പോൾ മാത്രം."
  Only when blocked, within the signature limit, and not banned: "തടയപ്പെടുമ്പോൾ, ഒപ്പിന്റെ പരിധിക്കുള്ളിൽ, നിരോധിക്കാതിരിക്കുമ്പോൾ മാത്രം."
  Only when not blocked, at sensitive page requests: "തടയാത്തപ്പോൾ, സെൻസിറ്റീവ് പേജ് അഭ്യർത്ഥനകളിൽ മാത്രം."

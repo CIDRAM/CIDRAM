@@ -343,6 +343,7 @@ class FrontEnd extends Core
             $this->FE['90deg'] = '90deg';
             $this->FE['caretTransformBefore'] = 'transform:rotate(0) scaleX(1);position:relative;top:2px;left:0px;filter:drop-shadow(0 0 0 rgba(0,0,0,0)) drop-shadow(0 0 0 rgba(0,0,0,0))';
             $this->FE['caretTransformAfter'] = 'transform:rotate(90deg) scaleX(0.4);position:relative;top:4px;left:10px;filter:drop-shadow(0 6px 0 rgba(0,0,0,0.7)) drop-shadow(0 12px 0 rgba(0,0,0,0.4))';
+            $this->FE['cnrRadius'] = '0 12px';
         } else {
             $this->L10N->Data['Text Direction'] = 'rtl';
             $this->FE['FE_Align'] = 'right';
@@ -352,6 +353,7 @@ class FrontEnd extends Core
             $this->FE['90deg'] = '270deg';
             $this->FE['caretTransformBefore'] = 'transform:rotate(0) scaleX(1);position:relative;top:2px;right:0px;filter:drop-shadow(0 0 0 rgba(0,0,0,0)) drop-shadow(0 0 0 rgba(0,0,0,0))';
             $this->FE['caretTransformAfter'] = 'transform:rotate(90deg) scaleX(0.4);position:relative;top:4px;right:10px;filter:drop-shadow(0 -6px 0 rgba(0,0,0,0.7)) drop-shadow(0 -12px 0 rgba(0,0,0,0.4))';
+            $this->FE['cnrRadius'] = '12px 0';
         }
 
         /** A simple passthru for non-private theme images and related data. */

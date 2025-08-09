@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used for auxiliary rules (last modified: 2025.07.27).
+ * This file: Methods used for auxiliary rules (last modified: 2025.08.10).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -426,13 +426,13 @@ trait AuxiliaryRules
             );
             $Options = implode(' ', $Options);
             if (substr($Options, 0, 1) === '(' && substr($Options, -1) === ')') {
-                $Options = sprintf(
-                    '<span class="inlineBlock">(<span id="heaven%1$s" class="scaleXToOne navicon heaven hoverglow" onclick="javascript:heavenToggle(\'%1$s\')" title="☰"></span><span id="hidden%1$s" class="scaleXToZero">%2$s</span>)</span>',
-                    $RuleClass,
-                    substr($Options, 1, -1)
-                );
+                $Options = substr($Options, 1, -1);
             }
-            $Options = ' – ' . $Options;
+            $Options = sprintf(
+                ' <span class="inlineBlock">– (<span id="heaven%1$s" class="scaleXToOne navicon heaven hoverglow" onclick="javascript:heavenToggle(\'%1$s\')" title="☰"></span><span id="hidden%1$s" class="scaleXToZero">%2$s</span>)</span>',
+                $RuleClass,
+                $Options
+            );
 
             $FromAndExpiry = '';
             $Expired = false;
@@ -456,7 +456,7 @@ trait AuxiliaryRules
 
             /** Begin generating rule output. */
             $Output .= sprintf(
-                '%1$s<li class="%2$s" name="%6$s" draggable="true"><span class="comCat s">%3$s</span>%4$s%5$s%1$s  <ul class="comSub">',
+                '%1$s<li class="%2$s" name="%6$s" draggable="true"><span class="comCat s">%3$s</span><span class="auxAlignFix">%4$s</span>%5$s%1$s  <ul class="comSub">',
                 "\n      ",
                 $RuleClass . (empty($Data['Disable this rule']) ? '' : ' hB fBlur"'),
                 $Expired ? '<em class="txtRd">' . $Name . ' (' . $this->L10N->getString('state_expired') . ')</em>' : $Name,

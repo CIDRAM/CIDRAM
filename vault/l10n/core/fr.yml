@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data (last modified: 2025.07.27).
+# This file: French language data (last modified: 2025.08.10).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -87,10 +87,12 @@ field:
  Conditions inspection: "Inspection des conditions"
  Country code lookup: "Recherche de code de pays"
  DateTime: "Date/Heure"
+ Expired: "Expiré"
  Hostname: "Nom d'hôte"
  ID: "ID"
  IP address (resolved): "IP adresse (résolu)"
  IP address: "IP adresse"
+ Ignored: "Ignoré"
  Infractions: "Infractions"
  Language resolution: "Résolution linguistique"
  OK: "D'accord"
@@ -104,6 +106,7 @@ field:
  Signatures count: "Compte des signatures"
  Signatures reference: "Référence des signatures"
  Status code: "Code d'état"
+ Unknown: "Inconnu"
  User agent (lower-case): "Agent utilisateur (minuscule)"
  User agent: "Agent utilisateur"
  Verified identity: "Identité vérifiée"
@@ -131,12 +134,11 @@ response:
  Satisfied: "Satisfait."
  Task failed because a necessary component is unavailable: "La tâche a échoué car un composant nécessaire n'est pas disponible."
  Unable to write to the cache: "Ne peux pas d'écrire dans le cache\_! Veuillez vérifier votre permissions CHMOD\_!"
-state_disabled: "Désactivé."
-state_enabled: "Activé."
-state_expired: "Expiré"
-state_failed: "Échoué\_!"
-state_ignored: "Ignoré"
-state_passed: "Passé\_!"
+state:
+ Disabled: "Désactivé."
+ Enabled: "Activé (%s)."
+ Failed: "Échoué (%s)\_!"
+ Passed: "Passé (%s)\_!"
 why_no_access_allowed_from: "L'accès à partir de %s n'est pas autorisé."
 why_single_hit_bypass: "Contournement à un seul coup (requête vérifié)"
 why_tor_project_exit_node: "La connexion à cette site à partir de nœuds de sortie Tor n'est pas autorisée par le propriétaire du site."

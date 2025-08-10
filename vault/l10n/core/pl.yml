@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data (last modified: 2025.07.27).
+# This file: Polish language data (last modified: 2025.08.10).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -81,10 +81,12 @@ field:
  Conditions inspection: "Inspekcja warunków"
  Country code lookup: "Wyszukiwanie kodu kraju"
  DateTime: "Data/Godzina"
+ Expired: "Wygasły"
  Hostname: "Nazwa hosta"
  ID: "ID"
  IP address (resolved): "Adres IP (rozwiązany)"
  IP address: "Adres IP"
+ Ignored: "Ignorowane"
  Infractions: "Wykroczenia"
  Language resolution: "Rozdzielczość językowa"
  OK: "OK"
@@ -98,6 +100,7 @@ field:
  Signatures count: "Liczba podpisów"
  Signatures reference: "Referencje podpisów"
  Status code: "Kod stanu"
+ Unknown: "Nieznany"
  User agent (lower-case): "Agent Użytkownika (małe litery)"
  User agent: "Agent Użytkownika"
  Verified identity: "Zweryfikowana tożsamość"
@@ -123,12 +126,11 @@ response:
  Satisfied: "Spełnione."
  Task failed because a necessary component is unavailable: "Zadanie nie powiodło się, ponieważ niezbędny komponent jest niedostępny."
  Unable to write to the cache: "Nie można zapisać w pamięci podręcznej! Proszę sprawdź swoje uprawnienia do plików CHMOD!"
-state_disabled: "Wyłączone."
-state_enabled: "Włączone."
-state_expired: "Wygasły"
-state_failed: "Niepowodzenie!"
-state_ignored: "Ignorowane"
-state_passed: "Minął!"
+state:
+ Disabled: "Wyłączone."
+ Enabled: "Włączone (%s)."
+ Failed: "Niepowodzenie (%s)!"
+ Passed: "Minął (%s)!"
 why_no_access_allowed_from: "Dostęp z %s jest niedozwolony."
 why_single_hit_bypass: "Obejście pojedynczego trafienia (zweryfikowana prośba)"
 why_tor_project_exit_node: "Łączenie się z tą witryną z węzłów wyjściowych Tora nie jest dozwolone przez właściciela witryny."

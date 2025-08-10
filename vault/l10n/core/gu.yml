@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Gujarati language data (last modified: 2025.07.27).
+# This file: Gujarati language data (last modified: 2025.08.10).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -81,10 +81,12 @@ field:
  Conditions inspection: "શરતો નિરીક્ષણ"
  Country code lookup: "દેશ કોડ લુકઅપ"
  DateTime: "તારીખ/સમય"
+ Expired: "સમાપ્ત થઈ ગઈ છે"
  Hostname: "હોસ્ટનામ"
  ID: "ID"
  IP address (resolved): "IP સરનામું (ઉકેલાયેલ)"
  IP address: "IP સરનામું"
+ Ignored: "અવગણ્યું"
  Infractions: "ઉલ્લંઘન"
  Language resolution: "ભાષા રીઝોલ્યુશન"
  OK: "OK"
@@ -98,6 +100,7 @@ field:
  Signatures count: "સિગ્નેચર ગણતરી"
  Signatures reference: "સિગ્નેચર સંદર્ભ"
  Status code: "સ્થિતિ કોડ"
+ Unknown: "અજ્ઞાત"
  User agent (lower-case): "વપરાશકર્તા એજન્ટ (લોઅર-કેસ)"
  User agent: "વપરાશકર્તા એજન્ટ"
  Verified identity: "ચકાસાયેલ ઓળખ"
@@ -123,12 +126,11 @@ response:
  Satisfied: "સંતુષ્ટ."
  Task failed because a necessary component is unavailable: "કાર્ય નિષ્ફળ થયું કારણ કે જરૂરી ઘટક અનુપલબ્ધ છે."
  Unable to write to the cache: "કેશમાં લખવામાં અસમર્થ! કૃપા કરીને તમારી CHMOD ફાઇલ પરવાનગીઓ તપાસો!"
-state_disabled: "અક્ષમ."
-state_enabled: "સક્ષમ."
-state_expired: "સમાપ્ત થઈ ગઈ છે"
-state_failed: "નિષ્ફળ!"
-state_ignored: "અવગણ્યું"
-state_passed: "પાસ!"
+state:
+ Disabled: "અક્ષમ."
+ Enabled: "સક્ષમ (%s)."
+ Failed: "નિષ્ફળ (%s)!"
+ Passed: "પાસ (%s)!"
 why_no_access_allowed_from: "%s માંથી કોઈ ઍક્સેસની મંજૂરી નથી."
 why_single_hit_bypass: "સિંગલ હિટ બાયપાસ (ચકાસાયેલ વિનંતી)"
 why_tor_project_exit_node: "ટોર એક્ઝિટ નોડ્સમાંથી આ વેબસાઇટ સાથે કનેક્ટ કરવાની વેબસાઇટ માલિક દ્વારા પરવાનગી નથી."

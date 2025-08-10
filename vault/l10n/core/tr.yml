@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data (last modified: 2025.07.27).
+# This file: Turkish language data (last modified: 2025.08.10).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -81,10 +81,12 @@ field:
  Conditions inspection: "Koşullar denetimi"
  Country code lookup: "Ülke kodu araması"
  DateTime: "Tarih/Saat"
+ Expired: "Tarihi geçti"
  Hostname: "Hostname"
  ID: "ID"
  IP address (resolved): "IP adresi (kararlı)"
  IP address: "IP adresi"
+ Ignored: "Kullanılmamış"
  Infractions: "İhlaller"
  Language resolution: "Dil çözünürlüğü"
  OK: "Tamam"
@@ -98,6 +100,7 @@ field:
  Signatures count: "İmza sayısı"
  Signatures reference: "İmza referansı"
  Status code: "Durum kodu"
+ Unknown: "Bilinmiyor"
  User agent (lower-case): "Kullanıcı aracısı (küçük harf)"
  User agent: "Kullanıcı aracısı"
  Verified identity: "Doğrulanmış kimlik"
@@ -123,12 +126,11 @@ response:
  Satisfied: "Karşılandı."
  Task failed because a necessary component is unavailable: "Gerekli bir bileşen kullanılamaması nedeniyle görev başarısız oldu."
  Unable to write to the cache: "Önbelleğe yazılamıyor! Lütfen CHMOD dosya izinlerinizi kontrol edin!"
-state_disabled: "Devre dışı."
-state_enabled: "Etkinleştirildi."
-state_expired: "Tarihi geçti"
-state_failed: "Başarısız oldu!"
-state_ignored: "Kullanılmamış"
-state_passed: "Geçildi!"
+state:
+ Disabled: "Devre dışı."
+ Enabled: "Etkinleştirildi (%s)."
+ Failed: "Başarısız oldu (%s)!"
+ Passed: "Geçildi (%s)!"
 why_no_access_allowed_from: "%s den erişime izin verilmez."
 why_single_hit_bypass: "Tek vuruşlu bypass (doğrulanmış istek)"
 why_tor_project_exit_node: "Bu web sitesine Tor çıkış düğümlerinden bağlanmaya web sitesi sahibi tarafından izin verilmiyor."

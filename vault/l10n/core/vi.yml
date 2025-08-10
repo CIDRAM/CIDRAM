@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data (last modified: 2025.07.27).
+# This file: Vietnamese language data (last modified: 2025.08.10).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -81,10 +81,12 @@ field:
  Conditions inspection: "Kiểm tra điều kiện"
  Country code lookup: "Tra cứu mã quốc gia"
  DateTime: "Ngày/Thời gian"
+ Expired: "Đã hết hạn"
  Hostname: "Tên máy chủ"
  ID: "ID"
  IP address (resolved): "Địa chỉ IP (giải quyết)"
  IP address: "Địa chỉ IP"
+ Ignored: "Bị bỏ qua"
  Infractions: "Vi phạm"
  Language resolution: "Độ phân giải ngôn ngữ"
  OK: "OK"
@@ -98,6 +100,7 @@ field:
  Signatures count: "Số lượng chữ ký"
  Signatures reference: "Tham khảo cho chữ ký"
  Status code: "Mã trạng thái"
+ Unknown: "Không xác định"
  User agent (lower-case): "Đại lý người dùng (chữ thường)"
  User agent: "Đại lý người dùng"
  Verified identity: "Xác minh danh tính"
@@ -123,12 +126,11 @@ response:
  Satisfied: "Hài lòng."
  Task failed because a necessary component is unavailable: "Tác vụ không thành công vì không có thành phần cần thiết."
  Unable to write to the cache: "Không thể ghi vào cache! Xin kiểm tra quyền tập tin CHMOD của bạn!"
-state_disabled: "Tắt."
-state_enabled: "Trên."
-state_expired: "Đã hết hạn"
-state_failed: "Thất bại!"
-state_ignored: "Bị bỏ qua"
-state_passed: "Thành công!"
+state:
+ Disabled: "Tắt."
+ Enabled: "Trên (%s)."
+ Failed: "Thất bại (%s)!"
+ Passed: "Thành công (%s)!"
 why_no_access_allowed_from: "Không cho phép truy cập từ %s."
 why_single_hit_bypass: "Đường tránh một cú (yêu cầu xác minh)"
 why_tor_project_exit_node: "Chủ sở hữu trang web không cho phép kết nối với trang web này từ các nút thoát Tor."

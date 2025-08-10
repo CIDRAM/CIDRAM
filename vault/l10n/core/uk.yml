@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Ukrainian language data (last modified: 2025.07.27).
+# This file: Ukrainian language data (last modified: 2025.08.10).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -81,10 +81,12 @@ field:
  Conditions inspection: "Перевірка умов"
  Country code lookup: "Пошук коду країни"
  DateTime: "Дата/Час"
+ Expired: "Термін дії минув"
  Hostname: "Ім'я хоста"
  ID: "ІД"
  IP address (resolved): "IP-адреса (розв'язав)"
  IP address: "IP-адреса"
+ Ignored: "Ігнорується"
  Infractions: "Порушення"
  Language resolution: "Мова розв'язана"
  OK: "ОК"
@@ -98,6 +100,7 @@ field:
  Signatures count: "Кількість сигнатурів"
  Signatures reference: "Відомості про сигнатури"
  Status code: "Код статусу"
+ Unknown: "Невідомий"
  User agent (lower-case): "Агент користувача (у малому регістрі)"
  User agent: "Агент користувача"
  Verified identity: "Підтверджена ідентичність"
@@ -123,12 +126,11 @@ response:
  Satisfied: "Задоволений."
  Task failed because a necessary component is unavailable: "Завдання не виконано, оскільки необхідний компонент недоступний."
  Unable to write to the cache: "Неможливо записати в кеш! Перевірте права доступу CHMOD!"
-state_disabled: "Вимкнено."
-state_enabled: "Увімкнено."
-state_expired: "Термін дії минув"
-state_failed: "Невдача!"
-state_ignored: "Ігнорується"
-state_passed: "Пройшов!"
+state:
+ Disabled: "Вимкнено."
+ Enabled: "Увімкнено (%s)."
+ Failed: "Невдача (%s)!"
+ Passed: "Пройшов (%s)!"
 why_no_access_allowed_from: "Заборонено доступ із %s."
 why_single_hit_bypass: "Одноразовий обхід (перевірений запит)"
 why_tor_project_exit_node: "Підключення до цього веб-сайту з вузлів виходу Tor не дозволено власником веб-сайту."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data (last modified: 2025.07.27).
+# This file: Dutch language data (last modified: 2025.08.10).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -81,10 +81,12 @@ field:
  Conditions inspection: "Inspectie van de voorwaarden"
  Country code lookup: "Landcode opzoeken"
  DateTime: "Datum/Tijd"
+ Expired: "Verlopen"
  Hostname: "Hostname"
  ID: "ID"
  IP address (resolved): "IP-adres (vastbesloten)"
  IP address: "IP-Adres"
+ Ignored: "Genegeerd"
  Infractions: "Overtredingen"
  Language resolution: "Taalresolutie"
  OK: "OK"
@@ -98,6 +100,7 @@ field:
  Signatures count: "Signatures tellen"
  Signatures reference: "Signatures verwijzing"
  Status code: "Statuscode"
+ Unknown: "Onbekend"
  User agent (lower-case): "Gebruikersagent (kleine letters)"
  User agent: "Gebruikersagent"
  Verified identity: "Geverifieerde identiteit"
@@ -123,12 +126,11 @@ response:
  Satisfied: "Tevreden."
  Task failed because a necessary component is unavailable: "Taak mislukt omdat een noodzakelijk component niet beschikbaar is."
  Unable to write to the cache: "Kan niet naar de cache schrijven! Controleer uw CHMOD permissies!"
-state_disabled: "Gedeactiveerd."
-state_enabled: "Geactiveerd."
-state_expired: "Verlopen"
-state_failed: "Mislukt!"
-state_ignored: "Genegeerd"
-state_passed: "Succes!"
+state:
+ Disabled: "Gedeactiveerd."
+ Enabled: "Geactiveerd (%s)."
+ Failed: "Mislukt (%s)!"
+ Passed: "Succes (%s)!"
 why_no_access_allowed_from: "Geen toegang toegestaan vanaf %s."
 why_single_hit_bypass: "Enkele-treffer bypass (geverifieerd verzoek)"
 why_tor_project_exit_node: "Verbinding met deze website vanaf Tor exit-knooppunten is niet toegestaan door de eigenaar van deze website."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Marathi language data (last modified: 2025.07.27).
+# This file: Marathi language data (last modified: 2025.08.10).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -81,10 +81,12 @@ field:
  Conditions inspection: "परिस्थितींची तपासणी"
  Country code lookup: "देश कोड शोध"
  DateTime: "तारीख/वेळ"
+ Expired: "कालबाह्य"
  Hostname: "होस्टनाव"
  ID: "आयडी"
  IP address (resolved): "IP पत्ता (निराकरण)"
  IP address: "IP पत्ता"
+ Ignored: "दुर्लक्ष केले"
  Infractions: "उल्लंघन"
  Language resolution: "भाषेचे ठराव"
  OK: "ठीक"
@@ -98,6 +100,7 @@ field:
  Signatures count: "स्वाक्षरी मोजतात"
  Signatures reference: "स्वाक्षरी संदर्भ"
  Status code: "स्थिती कोड"
+ Unknown: "अज्ञात"
  User agent (lower-case): "वापरकर्ता एजंट (लोअर-केस)"
  User agent: "वापरकर्ता एजंट"
  Verified identity: "सत्यापित ओळख"
@@ -123,12 +126,11 @@ response:
  Satisfied: "समाधानी."
  Task failed because a necessary component is unavailable: "आवश्यक घटक अनुपलब्ध असल्यामुळे कार्य अयशस्वी झाले."
  Unable to write to the cache: "कॅशेवर लिहिता येत नाही! कृपया तुमच्या CHMOD फाइल परवानग्या तपासा!"
-state_disabled: "अक्षम केले."
-state_enabled: "सक्षम केले."
-state_expired: "कालबाह्य"
-state_failed: "अयशस्वी!"
-state_ignored: "दुर्लक्ष केले"
-state_passed: "उत्तीर्ण!"
+state:
+ Disabled: "अक्षम केले."
+ Enabled: "सक्षम केले (%s)."
+ Failed: "अयशस्वी (%s)!"
+ Passed: "उत्तीर्ण (%s)!"
 why_no_access_allowed_from: "%s पासून प्रवेशास परवानगी नाही."
 why_single_hit_bypass: "सिंगल हिट बायपास (सत्यापित विनंती)"
 why_tor_project_exit_node: "टोर एक्झिट नोड्सवरून या वेबसाइटशी कनेक्ट करण्याची वेबसाइट मालकाची परवानगी नाही."

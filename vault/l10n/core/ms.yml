@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malay language data (last modified: 2025.07.27).
+# This file: Malay language data (last modified: 2025.08.10).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -81,10 +81,12 @@ field:
  Conditions inspection: "Pemeriksaan syarat"
  Country code lookup: "Pencarian kod negara"
  DateTime: "Masa/tarikh"
+ Expired: "Tamat tempoh"
  Hostname: "Nama hos"
  ID: "ID"
  IP address (resolved): "Alamat IP (diselesaikan)"
  IP address: "Alamat IP"
+ Ignored: "Diabaikan"
  Infractions: "Pelanggaran"
  Language resolution: "Resolusi bahasa"
  OK: "OK"
@@ -98,6 +100,7 @@ field:
  Signatures count: "Pengiraan tandatangan"
  Signatures reference: "Rujukan tandatangan"
  Status code: "Kod status"
+ Unknown: "Tidak diketahui"
  User agent (lower-case): "Ejen pengguna (huruf kecil)"
  User agent: "Ejen pengguna"
  Verified identity: "Identiti yang disahkan"
@@ -123,12 +126,11 @@ response:
  Satisfied: "Berpuas hati."
  Task failed because a necessary component is unavailable: "Tugasan gagal kerana komponen yang diperlukan tidak tersedia."
  Unable to write to the cache: "Tidak boleh menulis ke cache! Sila semak kebenaran fail CHMOD anda!"
-state_disabled: "Dinyahaktifkan."
-state_enabled: "Diaktifkan."
-state_expired: "Tamat tempoh"
-state_failed: "Gagal!"
-state_ignored: "Diabaikan"
-state_passed: "Dilepasi!"
+state:
+ Disabled: "Dinyahaktifkan."
+ Enabled: "Diaktifkan (%s)."
+ Failed: "Gagal (%s)!"
+ Passed: "Dilepasi (%s)!"
 why_no_access_allowed_from: "Akses daripada %s tidak dibenarkan."
 why_single_hit_bypass: "Pintasan satu pukulan (permintaan disahkan)"
 why_tor_project_exit_node: "Menyambung ke tapak web ini dari nod keluar Tor tidak dibenarkan oleh pemilik tapak web ini."

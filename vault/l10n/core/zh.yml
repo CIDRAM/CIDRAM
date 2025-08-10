@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese language data (last modified: 2025.08.06).
+# This file: Chinese language data (last modified: 2025.08.10).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -83,10 +83,12 @@ field:
  Conditions inspection: {"zh-Hans": "条件检查", "zh-Hant": "條件檢查"}
  Country code lookup: {"zh-Hans": "国家代码查询", "zh-Hant": "國家代碼查詢"}
  DateTime: {"zh-Hans": "日期/时间", "zh-Hant": "日期/時間"}
+ Expired: {"zh-Hans": "已过期", "zh-Hant": "已過期"}
  Hostname: {"zh-Hans": "主机名", "zh-Hant": "主機名"}
  ID: "ID"
  IP address (resolved): {"zh-Hans": "IP地址（解决）", "zh-Hant": "IP位址（解決）"}
  IP address: {"zh-Hans": "IP地址", "zh-Hant": "IP位址"}
+ Ignored: "忽略了"
  Infractions: {"zh-Hans": "违规", "zh-Hant": "違規"}
  Language resolution: {"zh-Hans": "语言解析", "zh-Hant": "語言解析"}
  OK: "OK"
@@ -100,6 +102,7 @@ field:
  Signatures count: {"zh-Hans": "签名计数", "zh-Hant": "簽名計數"}
  Signatures reference: {"zh-Hans": "签名参考", "zh-Hant": "簽名參考"}
  Status code: {"zh-Hans": "状态码", "zh-Hant": "狀態碼"}
+ Unknown: "未知"
  User agent (lower-case): {"zh-Hans": "用户代理（小写）", "zh-Hant": "用戶代理（小寫）"}
  User agent: {"zh-Hans": "用户代理", "zh-Hant": "用戶代理"}
  Verified identity: {"zh-Hans": "身份验证", "zh-Hant": "身份驗證"}
@@ -125,12 +128,11 @@ response:
  Satisfied: {"zh-Hans": "满意。", "zh-Hant": "滿意。"}
  Task failed because a necessary component is unavailable: {"zh-Hans": "任务失败，因为必要的组件不可用。", "zh-Hant": "任務失敗，因為必要的組件不可用。"}
  Unable to write to the cache: {"zh-Hans": "无法写入缓存！​请检查您的CHMOD文件的权限！", "zh-Hant": "無法寫入緩存！​請檢查您的CHMOD文件的權限！"}
-state_disabled: {"zh-Hans": "关掉。", "zh-Hant": "關掉。"}
-state_enabled: {"zh-Hans": "打开。", "zh-Hant": "打開。"}
-state_expired: {"zh-Hans": "已过期", "zh-Hant": "已過期"}
-state_failed: {"zh-Hans": "失败！", "zh-Hant": "失敗！"}
-state_ignored: "忽略了"
-state_passed: {"zh-Hans": "成功！", "zh-Hant": "成功！"}
+state:
+ Disabled: {"zh-Hans": "关掉。", "zh-Hant": "關掉。"}
+ Enabled: {"zh-Hans": "打开（%s）。", "zh-Hant": "打開（%s）。"}
+ Failed: {"zh-Hans": "失败（%s）！", "zh-Hant": "失敗（%s）！"}
+ Passed: "成功（%s）！"
 why_no_access_allowed_from: {"zh-Hans": "来自%s的访问不允许。", "zh-Hant": "來自%s的訪問不允許。"}
 why_single_hit_bypass: {"zh-Hans": "一击旁路（已验证请求）", "zh-Hant": "一擊旁路（已驗證請求）"}
 why_tor_project_exit_node: {"zh-Hans": "网站所有者不允许从Tor出口节点连接到该网站。", "zh-Hant": "網站所有者不允許從Tor出口節點連接到該網站。"}

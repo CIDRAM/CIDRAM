@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2025.08.09).
+ * This file: General methods used by the front-end (last modified: 2025.08.10).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -562,7 +562,7 @@ trait FrontEndMethods
                     $OriginSafe . '" style="transform:skew(-18deg);filter:grayscale(75%) contrast(50%)' . ($State ? ';display:none' : ''),
                     $OriginDisplay,
                     $Quantity,
-                    $this->L10N->getString('state_ignored') . ' – ',
+                    $this->L10N->getString('field.Ignored') . ' – ',
                     $Section,
                     $Origin,
                     'unignore\',\'sectionControlIgnored' . $OriginSafe . '\',\'sectionControlNotIgnored' . $OriginSafe . '\')">' . $this->L10N->getString('label.Unignore this')
@@ -580,7 +580,7 @@ trait FrontEndMethods
                 '<div class="%s sectionControlIgnored%s"><strong>%s%s</strong><br />%s</div>',
                 $Class,
                 $SectionSafe . '" style="filter:grayscale(50%) contrast(50%)' . ($State ? ';display:none' : ''),
-                $SectionLabel . ' – ' . $this->L10N->getString('state_ignored'),
+                $SectionLabel . ' – ' . $this->L10N->getString('field.Ignored'),
                 ' – <a href="javascript:void()" onclick="javascript:slx(\'' . $Section . '\',\'unignore\',\'sectionControlIgnored' . $SectionSafe . '\',\'sectionControlNotIgnored' . $SectionSafe . '\')">' . $this->L10N->getString('label.Unignore this') . '</a>',
                 $OriginOut
             );

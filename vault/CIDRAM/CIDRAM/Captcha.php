@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Captcha class (last modified: 2025.04.22).
+ * This file: Captcha class (last modified: 2025.08.10).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -81,12 +81,13 @@ abstract class Captcha
     /**
      * Generate data for failed attempts.
      *
+     * @param string $Platform The CAPTCHA platform in use.
      * @return void
      */
-    public function generateFailed(): void
+    public function generateFailed(string $Platform = ''): void
     {
         /** Set CAPTCHA status. */
-        $this->CIDRAM->BlockInfo['CAPTCHA'] = $this->CIDRAM->L10N->getString('state_failed');
+        $this->CIDRAM->BlockInfo['CAPTCHA'] = sprintf($this->CIDRAM->L10N->getString('state.Failed'), $Platform ?: $this->CIDRAM->L10N->getString('field.unknown'));
 
         /** Append to reCAPTCHA statistics if necessary. */
         if (isset($this->CIDRAM->Stages['Statistics:Enable'], $this->CIDRAM->StatisticsTracked['CAPTCHAs-Failed'])) {
@@ -97,12 +98,13 @@ abstract class Captcha
     /**
      * Generate data for passed attempts.
      *
+     * @param string $Platform The CAPTCHA platform in use.
      * @return void
      */
-    public function generatePassed(): void
+    public function generatePassed(string $Platform = ''): void
     {
         /** Set CAPTCHA status. */
-        $this->CIDRAM->BlockInfo['CAPTCHA'] = $this->CIDRAM->L10N->getString('state_passed');
+        $this->CIDRAM->BlockInfo['CAPTCHA'] = sprintf($this->CIDRAM->L10N->getString('state.Passed'), $Platform ?: $this->CIDRAM->L10N->getString('field.unknown'));
 
         /** Append to reCAPTCHA statistics if necessary. */
         if (isset($this->CIDRAM->Stages['Statistics:Enable'], $this->CIDRAM->StatisticsTracked['CAPTCHAs-Passed'])) {

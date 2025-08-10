@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data (last modified: 2025.07.27).
+# This file: Portuguese language data (last modified: 2025.08.10).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -113,10 +113,12 @@ field:
  Conditions inspection: "Inspeção do condições"
  Country code lookup: "Pesquisa de código de país"
  DateTime: "Data/Hora"
+ Expired: "Expirado"
  Hostname: "Nome do host"
  ID: "ID"
  IP address (resolved): "Endereço IP (resolvido)"
  IP address: "Endereço IP"
+ Ignored: "Ignorado"
  Infractions: "Infrações"
  Language resolution: "Resolução de idioma"
  OK: "OK"
@@ -130,6 +132,7 @@ field:
  Signatures count: "Contagem da assinaturas"
  Signatures reference: "Assinaturas referência"
  Status code: "Código de status"
+ Unknown: "Desconhecido"
  User agent (lower-case):
   pt-BR: "Agente do usuário (minúscula)"
   pt-PT: "Agente do utilizador (minúscula)"
@@ -165,12 +168,11 @@ response:
  Unable to write to the cache:
   pt-BR: "Não é possível gravar para o cache! Por favor verifique suas permissões CHMOD!"
   pt-PT: "Não é possível gravar para o cache! Por favor verifique as suas permissões CHMOD!"
-state_disabled: "Desactivado."
-state_enabled: "Ativado."
-state_expired: "Expirado"
-state_failed: "Falhou!"
-state_ignored: "Ignorado"
-state_passed: "Sucesso!"
+state:
+ Disabled: "Desactivado."
+ Enabled: "Ativado (%s)."
+ Failed: "Falhou (%s)!"
+ Passed: "Sucesso (%s)!"
 why_no_access_allowed_from: "Nenhum acesso permitido de %s."
 why_single_hit_bypass: "Único hit bypass (solicitação verificada)"
 why_tor_project_exit_node: "Conectar-se a este site a partir de nós de saída do Tor não é permitido pelo proprietário do site."

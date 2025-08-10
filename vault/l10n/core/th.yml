@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data (last modified: 2025.07.27).
+# This file: Thai language data (last modified: 2025.08.10).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -81,10 +81,12 @@ field:
  Conditions inspection: "การตรวจสอบเงื่อนไข"
  Country code lookup: "การค้นหารหัสประเทศ"
  DateTime: "วันเวลา"
+ Expired: "หมดอายุ"
  Hostname: "ชื่อโฮสต์"
  ID: "ID"
  IP address (resolved): "ที่อยู่ IP (แก้ไข)"
  IP address: "ที่อยู่ IP"
+ Ignored: "จะถูกละเลย"
  Infractions: "การละเมิด"
  Language resolution: "ความละเอียดของภาษา"
  OK: "ตกลง"
@@ -98,6 +100,7 @@ field:
  Signatures count: "ลายเซ็นนับ"
  Signatures reference: "การอ้างอิงลายเซ็น"
  Status code: "รหัสสถานะ"
+ Unknown: "ไม่รู้จัก"
  User agent (lower-case): "ตัวแทนผู้ใช้ (กรณีที่ต่ำกว่า)"
  User agent: "ตัวแทนผู้ใช้"
  Verified identity: "การยืนยันเอกลักษณ์"
@@ -123,12 +126,11 @@ response:
  Satisfied: "พอใจ."
  Task failed because a necessary component is unavailable: "ภารกิจล้มเหลวเนื่องจากคอมโพเนนต์ที่จำเป็นไม่พร้อมใช้งาน."
  Unable to write to the cache: "ไม่สามารถเขียนลงในแคช! โปรดตรวจสอบสิทธิ์ของไฟล์ CHMOD!"
-state_disabled: "ไม่ใช้งาน."
-state_enabled: "ใช้งานอยู่."
-state_expired: "หมดอายุ"
-state_failed: "ความล้มเหลว!"
-state_ignored: "จะถูกละเลย"
-state_passed: "ผ่าน!"
+state:
+ Disabled: "ไม่ใช้งาน."
+ Enabled: "ใช้งานอยู่ (%s)."
+ Failed: "ความล้มเหลว (%s)!"
+ Passed: "ผ่าน (%s)!"
 why_no_access_allowed_from: "ไม่อนุญาตให้เข้าถึงจาก %s."
 why_single_hit_bypass: "บายพาสตีครั้งเดียว (คำขอที่ได้รับการยืนยัน)"
 why_tor_project_exit_node: "เจ้าของเว็บไซต์ไม่อนุญาตให้เชื่อมต่อกับเว็บไซต์นี้จากโหนดทางออกของ Tor."

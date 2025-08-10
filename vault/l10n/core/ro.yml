@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Romanian language data (last modified: 2025.07.27).
+# This file: Romanian language data (last modified: 2025.08.10).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -81,10 +81,12 @@ field:
  Conditions inspection: "Inspecția condițiilor"
  Country code lookup: "Căutare cod de țară"
  DateTime: "Data/Ora"
+ Expired: "Expirat"
  Hostname: "Nume gazdă"
  ID: "ID"
  IP address (resolved): "Adresa IP (rezolvat)"
  IP address: "Adresa IP"
+ Ignored: "Ignorat"
  Infractions: "Infracțiuni"
  Language resolution: "Rezoluție lingvistică"
  OK: "OK"
@@ -98,6 +100,7 @@ field:
  Signatures count: "Numărul de semnături"
  Signatures reference: "Referințe de semnături"
  Status code: "Cod de stare"
+ Unknown: "Necunoscut"
  User agent (lower-case): "Agent utilizator (litere mici)"
  User agent: "Agent utilizator"
  Verified identity: "Identitate verificată"
@@ -123,12 +126,11 @@ response:
  Satisfied: "Satisfacut."
  Task failed because a necessary component is unavailable: "Sarcina a eșuat deoarece o componentă necesară nu este disponibilă."
  Unable to write to the cache: "Nu se poate scrie în cache! Vă rugăm să verificați permisiunile pentru fișierul CHMOD!"
-state_disabled: "Dezactivat."
-state_enabled: "Activat."
-state_expired: "Expirat"
-state_failed: "A eșuat!"
-state_ignored: "Ignorat"
-state_passed: "A trecut!"
+state:
+ Disabled: "Dezactivat."
+ Enabled: "Activat (%s)."
+ Failed: "A eșuat (%s)!"
+ Passed: "A trecut (%s)!"
 why_no_access_allowed_from: "Nu este permis accesul de la %s."
 why_single_hit_bypass: "Bypass o singură lovitură (solicităre verificată)"
 why_tor_project_exit_node: "Conectarea la acest site web din nodurile de ieșire Tor nu este permisă de proprietarul site-ului."

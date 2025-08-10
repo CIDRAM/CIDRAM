@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data (last modified: 2025.07.27).
+# This file: Russian language data (last modified: 2025.08.10).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -81,10 +81,12 @@ field:
  Conditions inspection: "Проверка условий"
  Country code lookup: "Поиск кода страны"
  DateTime: "Дата/Время"
+ Expired: "Истекший"
  Hostname: "Имя хоста"
  ID: "ИД"
  IP address (resolved): "IP-адрес (постановили)"
  IP address: "IP-адрес"
+ Ignored: "Игнорируется"
  Infractions: "Нарушений"
  Language resolution: "Языковое разрешение"
  OK: "ОК"
@@ -98,6 +100,7 @@ field:
  Signatures count: "Количество сигнатурей"
  Signatures reference: "Идентификаторы для сигнатурей"
  Status code: "Код состояния"
+ Unknown: "Неизвестный"
  User agent (lower-case): "Агент пользователя (в нижнем регистре)"
  User agent: "Агент пользователя"
  Verified identity: "Подтвержденная идентичность"
@@ -123,12 +126,11 @@ response:
  Satisfied: "Удовлетворены."
  Task failed because a necessary component is unavailable: "Не удалось выполнить задачу, потому что необходимый компонент недоступен."
  Unable to write to the cache: "Невозможно записать в кэш! Пожалуйста проверьте ваш CHMOD!"
-state_disabled: "Отключается."
-state_enabled: "Включается."
-state_expired: "Истекший"
-state_failed: "Не удалось!"
-state_ignored: "Игнорируется"
-state_passed: "Успех!"
+state:
+ Disabled: "Отключается."
+ Enabled: "Включается (%s)."
+ Failed: "Не удалось (%s)!"
+ Passed: "Успех (%s)!"
 why_no_access_allowed_from: "Доступ из %s запрещен."
 why_single_hit_bypass: "Байпас одиночного удара (проверенный запрос)"
 why_tor_project_exit_node: "Подключение к этому веб-сайту с выходных узлов Tor запрещено владельцем веб-сайта."

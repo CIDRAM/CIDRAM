@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bulgarian language data (last modified: 2025.07.27).
+# This file: Bulgarian language data (last modified: 2025.08.10).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -81,10 +81,12 @@ field:
  Conditions inspection: "Проверка на условията"
  Country code lookup: "Търсене на код на държава"
  DateTime: "Дата/Време"
+ Expired: "Изтекъл срок"
  Hostname: "Име на хост"
  ID: "ID"
  IP address (resolved): "IP адрес (разрешено)"
  IP address: "IP адрес"
+ Ignored: "Игнорирани"
  Infractions: "Нарушения"
  Language resolution: "Езикова резолюция"
  OK: "Добре"
@@ -98,6 +100,7 @@ field:
  Signatures count: "Броят на сигнатурите"
  Signatures reference: "Справка за сигнатури"
  Status code: "Код на състоянието"
+ Unknown: "Неизвестен"
  User agent (lower-case): "Потребителски агент (малки букви)"
  User agent: "Потребителски агент"
  Verified identity: "Потвърдена самоличност"
@@ -123,12 +126,11 @@ response:
  Satisfied: "Се изпълнени."
  Task failed because a necessary component is unavailable: "Задачата е неуспешна, защото необходимият компонент не е наличен."
  Unable to write to the cache: "Не може да се пише в кеша! Моля, проверете вашите разрешения за CHMOD файл!"
-state_disabled: "Деактивиран."
-state_enabled: "Активиран."
-state_expired: "Изтекъл срок"
-state_failed: "Се провали!"
-state_ignored: "Игнорирани"
-state_passed: "Премина!"
+state:
+ Disabled: "Деактивиран."
+ Enabled: "Активиран (%s)."
+ Failed: "Се провали (%s)!"
+ Passed: "Премина (%s)!"
 why_no_access_allowed_from: "Не е разрешен достъп от %s."
 why_single_hit_bypass: "Байпас с един удар (проверена заявка)"
 why_tor_project_exit_node: "Свързването към този уебсайт от изходните възли на Tor не е разрешено от собственика на уебсайта."

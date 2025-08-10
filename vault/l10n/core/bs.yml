@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bosnian language data (last modified: 2025.07.27).
+# This file: Bosnian language data (last modified: 2025.08.10).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -81,10 +81,12 @@ field:
  Conditions inspection: "Inspekcija uslova"
  Country code lookup: "Traženje koda zemlje"
  DateTime: "Datum/Vrijeme"
+ Expired: "Istekao"
  Hostname: "Ime hosta"
  ID: "ID"
  IP address (resolved): "IP adresa (riješeno)"
  IP address: "IP adresa"
+ Ignored: "Ignorirano"
  Infractions: "Prekršaji"
  Language resolution: "Rezolucija jezika"
  OK: "OK"
@@ -98,6 +100,7 @@ field:
  Signatures count: "Broj potpisa"
  Signatures reference: "Referenca za potpise"
  Status code: "Statusni kod"
+ Unknown: "Nepoznato"
  User agent (lower-case): "Korisnički agent (mala slova)"
  User agent: "Korisnički agent"
  Verified identity: "Provjereni identitet"
@@ -123,12 +126,11 @@ response:
  Satisfied: "Zadovoljan."
  Task failed because a necessary component is unavailable: "Zadatak nije uspio jer neophodna komponenta nije dostupna."
  Unable to write to the cache: "Nije moguće pisati u keš memoriju! Molimo provjerite dozvole za CHMOD datoteku!"
-state_disabled: "Onemogućeno."
-state_enabled: "Omogućeno."
-state_expired: "Istekao"
-state_failed: "Nije uspjelo!"
-state_ignored: "Ignorirano"
-state_passed: "Prošlo!"
+state:
+ Disabled: "Onemogućeno."
+ Enabled: "Omogućeno (%s)."
+ Failed: "Nije uspjelo (%s)!"
+ Passed: "Prošlo (%s)!"
 why_no_access_allowed_from: "Nije dozvoljen pristup sa %s."
 why_single_hit_bypass: "Zaobilaženje jednim pogodkom (potvrđeni zahtjev)"
 why_tor_project_exit_node: "Povezivanje na ovu web stranicu iz Tor izlaznih čvorova nije dozvoljeno od strane vlasnika web stranice."

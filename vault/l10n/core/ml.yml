@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malayalam language data (last modified: 2025.07.27).
+# This file: Malayalam language data (last modified: 2025.08.10).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -81,10 +81,12 @@ field:
  Conditions inspection: "വ്യവസ്ഥകളുടെ പരിശോധന"
  Country code lookup: "രാജ്യ കോഡ് ലുക്ക്അപ്പ്"
  DateTime: "തീയതി/സമയം"
+ Expired: "കാലഹരണപ്പെട്ടു"
  Hostname: "ഹോസ്റ്റിൻ്റെ പേര്"
  ID: "ഐഡി"
  IP address (resolved): "IP വിലാസം (പരിഹരിച്ച)"
  IP address: "IP വിലാസം"
+ Ignored: "അവഗണിച്ചു"
  Infractions: "ലംഘനങ്ങൾ"
  Language resolution: "പരിഹരിച്ച ഭാഷ"
  OK: "ശരി"
@@ -98,6 +100,7 @@ field:
  Signatures count: "ഒപ്പുകൾ എണ്ണുന്നു"
  Signatures reference: "ഒപ്പുകളുടെ റഫറൻസ്"
  Status code: "സ്റ്റാറ്റസ് കോഡ്"
+ Unknown: "അജ്ഞാതം"
  User agent (lower-case): "ഉപയോക്തൃ ഏജൻ്റ് (ചെറിയ അക്ഷരം)"
  User agent: "ഉപയോക്തൃ ഏജൻ്റ്"
  Verified identity: "പരിശോധിച്ച ഐഡൻ്റിറ്റി"
@@ -123,12 +126,11 @@ response:
  Satisfied: "തൃപ്തിയായി."
  Task failed because a necessary component is unavailable: "ആവശ്യമായ ഘടകം ലഭ്യമല്ലാത്തതിനാൽ ടാസ്‌ക് പരാജയപ്പെട്ടു."
  Unable to write to the cache: "കാഷെയിൽ എഴുതാൻ കഴിയുന്നില്ല! നിങ്ങളുടെ CHMOD ഫയൽ അനുമതികൾ പരിശോധിക്കുക!"
-state_disabled: "അപ്രാപ്തമാക്കി."
-state_enabled: "പ്രവർത്തനക്ഷമമാക്കി."
-state_expired: "കാലഹരണപ്പെട്ടു"
-state_failed: "പരാജയപ്പെട്ടു!"
-state_ignored: "അവഗണിച്ചു"
-state_passed: "പാസ്സായി!"
+state:
+ Disabled: "അപ്രാപ്തമാക്കി."
+ Enabled: "പ്രവർത്തനക്ഷമമാക്കി (%s)."
+ Failed: "പരാജയപ്പെട്ടു (%s)!"
+ Passed: "പാസ്സായി (%s)!"
 why_no_access_allowed_from: "%s-ൽ നിന്ന് പ്രവേശനം അനുവദനീയമല്ല."
 why_single_hit_bypass: "സിംഗിൾ ഹിറ്റ് ബൈപാസ് (പരിശോധിച്ച അഭ്യർത്ഥന)"
 why_tor_project_exit_node: "ടോർ എക്സിറ്റ് നോഡുകളിൽ നിന്ന് ഈ വെബ്‌സൈറ്റിലേക്ക് കണക്റ്റുചെയ്യുന്നത് വെബ്‌സൈറ്റ് ഉടമ അനുവദനീയമല്ല."

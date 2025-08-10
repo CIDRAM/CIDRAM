@@ -458,6 +458,6 @@
 - [2025.07.29]: Added support for "matrix"-style configuration directives and refactored some of the configuration code.
 - [2025.08.01]: Slightly improved the navigation SVGs.
 - [2025.08.06]: Corrected the capitalisation for the names of a few integrations where they weren't matching that used by their vendors. Fixed a few L10N typos. Slightly refactored a few files.
-- [2025.08.07]: Updated the CAPTCHA log format (#627).
 - [2025.08.08]: Added the ability to change the "mode" of the configured theme, thus enabling any singular theme to have some slight variation in its potential presentation. Two new configuration directives have been added to facilitate this (look for `theme_mode` under `frontend` and `template_data` respectively, directly under the existing `theme` configuration directives). For now, the available "modes" are just "normal" and "inverted" (the latter inverting the tone of the colours/lighting used by the theme).
+- [2025.08.07~10]: Updated the CAPTCHA log format (#627).
 - *Plus all the regular signature updates.*

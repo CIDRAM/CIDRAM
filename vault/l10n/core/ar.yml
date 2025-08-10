@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data (last modified: 2025.07.27).
+# This file: Arabic language data (last modified: 2025.08.10).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -81,10 +81,12 @@ field:
  Conditions inspection: "فحص الشروط"
  Country code lookup: "بحث عن كود البلد"
  DateTime: "الوقت/التاريخ"
+ Expired: "منتهية الصلاحية"
  Hostname: "اسم المضيف"
  ID: "الهوية الشخصية"
  IP address (resolved): "عنوان IP (تم حلها)"
  IP address: "عنوان IP"
+ Ignored: "تجاهل"
  Infractions: "مخالفات"
  Language resolution: "تم حل اللغة"
  OK: "حسنا"
@@ -98,6 +100,7 @@ field:
  Signatures count: "عدد التوقيعات"
  Signatures reference: "مرجع التوقيعات"
  Status code: "رمز حالة"
+ Unknown: "غير معروف"
  User agent (lower-case): "وكيل المستخدم (أحرف صغيرة)"
  User agent: "وكيل المستخدم"
  Verified identity: "التحقق من الهوية"
@@ -123,12 +126,11 @@ response:
  Satisfied: "راضي."
  Task failed because a necessary component is unavailable: "فشلت المهمة لأن المكون الضروري غير متوفر."
  Unable to write to the cache: "لا تملك تصريح للقيام بهذا، يرجى التأكد من تصاريح الملفات"
-state_disabled: "تعطيل."
-state_enabled: "تمكين."
-state_expired: "منتهية الصلاحية"
-state_failed: "فشل!"
-state_ignored: "تجاهل"
-state_passed: "نجحت!"
+state:
+ Disabled: "تعطيل."
+ Enabled: "تمكين (%s)."
+ Failed: "فشل (%s)!"
+ Passed: "نجحت (%s)!"
 why_no_access_allowed_from: "لا يسمح بالوصول من %s."
 why_single_hit_bypass: "الالتفافية ضربة واحدة (طلب تم التحقق منه)"
 why_tor_project_exit_node: "لا يسمح مالك الموقع بالاتصال بهذا الموقع من Tor عقد خروج."

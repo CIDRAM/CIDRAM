@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Afrikaans language data (last modified: 2025.07.27).
+# This file: Afrikaans language data (last modified: 2025.08.10).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -81,10 +81,12 @@ field:
  Conditions inspection: "Toestandsinspeksie"
  Country code lookup: "Landkode opsoek"
  DateTime: "Datum/Tyd"
+ Expired: "Verval"
  Hostname: "Gasheernaam"
  ID: "ID"
  IP address (resolved): "IP adres (opgelos)"
  IP address: "IP adres"
+ Ignored: "Ignoreer"
  Infractions: "Oortredings"
  Language resolution: "Taalresolusie"
  OK: "OK"
@@ -98,6 +100,7 @@ field:
  Signatures count: "Handtekeninge tel"
  Signatures reference: "Handtekeninge verwysing"
  Status code: "Status kode"
+ Unknown: "Onbekend"
  User agent (lower-case): "Gebruikersagent (kleinletters)"
  User agent: "Gebruikersagent"
  Verified identity: "Geverifieerde identiteit"
@@ -123,12 +126,11 @@ response:
  Satisfied: "Tevrede."
  Task failed because a necessary component is unavailable: "Taak het misluk omdat 'n nodige komponent nie beskikbaar is nie."
  Unable to write to the cache: "Kan nie na die kas skryf nie! Gaan asseblief jou CHMOD-lêertoestemmings na!"
-state_disabled: "Gedeaktiveer."
-state_enabled: "Geaktiveer."
-state_expired: "Verval"
-state_failed: "Misluk!"
-state_ignored: "Ignoreer"
-state_passed: "Geslaag!"
+state:
+ Disabled: "Gedeaktiveer."
+ Enabled: "Geaktiveer (%s)."
+ Failed: "Misluk (%s)!"
+ Passed: "Geslaag (%s)!"
 why_no_access_allowed_from: "Geen toegang vanaf %s toegelaat nie."
 why_single_hit_bypass: "Enkeltreffer-omleiding (geverifieerde versoek)"
 why_tor_project_exit_node: "Om aan hierdie webwerf vanaf Tor-uitgangsnodusse te koppel, word nie deur die webwerf-eienaar toegelaat nie."

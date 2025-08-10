@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data (last modified: 2025.07.27).
+# This file: Indonesian language data (last modified: 2025.08.10).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -81,10 +81,12 @@ field:
  Conditions inspection: "Pemeriksaan kondisi"
  Country code lookup: "Pencarian kode negara"
  DateTime: "Tanggal/Waktu"
+ Expired: "Kedaluwarsa"
  Hostname: "Nama host"
  ID: "ID"
  IP address (resolved): "Alamat IP (terselesaikan)"
  IP address: "Alamat IP"
+ Ignored: "Diabaikan"
  Infractions: "Pelanggaran"
  Language resolution: "Resolusi bahasa"
  OK: "OK"
@@ -98,6 +100,7 @@ field:
  Signatures count: "Penghitungan tanda tangan"
  Signatures reference: "Referensi tanda tangan"
  Status code: "Kode status"
+ Unknown: "Tidak diketahui"
  User agent (lower-case): "Agen pengguna (huruf kecil)"
  User agent: "Agen pengguna"
  Verified identity: "Identitas terverifikasi"
@@ -123,12 +126,11 @@ response:
  Satisfied: "Puas."
  Task failed because a necessary component is unavailable: "Tugas gagal karena komponen yang diperlukan tidak tersedia."
  Unable to write to the cache: "Tidak dapat menulis ke cache! Silakan periksa hak akses file CHMOD Anda!"
-state_disabled: "Dinonaktifkan."
-state_enabled: "Diaktifkan."
-state_expired: "Kedaluwarsa"
-state_failed: "Gagal!"
-state_ignored: "Diabaikan"
-state_passed: "Lulus!"
+state:
+ Disabled: "Dinonaktifkan."
+ Enabled: "Diaktifkan (%s)."
+ Failed: "Gagal (%s)!"
+ Passed: "Lulus (%s)!"
 why_no_access_allowed_from: "Akses dari %s tidak diizinkan."
 why_single_hit_bypass: "Bypass satu pukulan (permintaan terverifikasi)"
 why_tor_project_exit_node: "Menghubungkan ke situs ini dari simpul keluar Tor tidak diizinkan oleh pemilik situs ini."

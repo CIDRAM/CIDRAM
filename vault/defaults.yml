@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2025.08.08).
+# This file: Defaults file (last modified: 2025.08.10).
 ##/
 
 Config Defaults:
@@ -128,7 +128,6 @@ Config Defaults:
     rURI:ShowInPageOutput
     rURI:OmitIfEmpty
     Infractions:ShowInLogs
-    Infractions:OmitIfEmpty
     ASNLookup:ShowInLogs
     ASNLookup:OmitIfEmpty
     CCLookup:ShowInLogs
@@ -149,7 +148,6 @@ Config Defaults:
     Hostname:ShowInPageOutput
     Hostname:OmitIfEmpty
     CAPTCHA:ShowInLogs
-    CAPTCHA:OmitIfEmpty
     Inspection:OmitIfEmpty
    labels:
     ShowInLogs: "checkbox.Should this field appear in log entries"
@@ -174,8 +172,8 @@ Config Defaults:
     ASNLookup: "** {field.ASN lookup}"
     CCLookup: "** {field.Country code lookup}"
     Verified: "field.Verified identity"
-    Expired: "state_expired"
-    Ignored: "state_ignored"
+    Expired: "field.Expired"
+    Ignored: "field.Ignored"
     Request_Method: "field.Request method"
     Protocol: "field.Protocol"
     SEC_CH_UA_PLATFORM: "!! SEC_CH_UA_PLATFORM"
@@ -191,6 +189,7 @@ Config Defaults:
     DateTime:OmitIfEmpty
     SignatureCount:OmitIfEmpty
     Infractions:OmitIfEmpty
+    CAPTCHA:OmitIfEmpty
     Inspection:ShowInPageOutput
     ClientL10NAccepted:ShowInPageOutput
     ClientL10NAccepted:OmitIfEmpty
@@ -533,8 +532,8 @@ Config Defaults:
     Passed-IPv4: "{label.Requests passed} – IPv4"
     Passed-IPv6: "{label.Requests passed} – IPv6"
     Passed-Other: "{label.Requests passed} – {label.Other}"
-    CAPTCHAs-Failed: "{label.CAPTCHA attempts} – {state_failed}"
-    CAPTCHAs-Passed: "{label.CAPTCHA attempts} – {state_passed}"
+    CAPTCHAs-Failed: "{label.CAPTCHA attempts} – {state.Failed}"
+    CAPTCHAs-Passed: "{label.CAPTCHA attempts} – {state.Passed}"
     Reported-IPv4-OK: "{label.Requests reported to external APIs} – IPv4 – {field.OK}"
     Reported-IPv4-Failed: "{label.Requests reported to external APIs} – IPv4 – {response.Failed}"
     Reported-IPv6-OK: "{label.Requests reported to external APIs} – IPv6 – {field.OK}"
@@ -1260,8 +1259,8 @@ Provide:
     ASNLookup: "field.ASN lookup"
     CCLookup: "field.Country code lookup"
     Verified: "field.Verified identity"
-    Expired: "state_expired"
-    Ignored: "state_ignored"
+    Expired: "field.Expired"
+    Ignored: "field.Ignored"
     Request_Method: "field.Request method"
     Protocol: "field.Protocol"
     SEC_CH_UA_PLATFORM: "SEC_CH_UA_PLATFORM"

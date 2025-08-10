@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Catalan language data (last modified: 2025.07.27).
+# This file: Catalan language data (last modified: 2025.08.10).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -81,10 +81,12 @@ field:
  Conditions inspection: "Inspecció de condicions"
  Country code lookup: "Cerca de codi de país"
  DateTime: "Data i hora"
+ Expired: "Caducat"
  Hostname: "Nom d'amfitrió"
  ID: "ID"
  IP address (resolved): "Adreça IP (resolt)"
  IP address: "Adreça IP"
+ Ignored: "Ignorat"
  Infractions: "Infraccions"
  Language resolution: "Resolució lingüística"
  OK: "D'acord"
@@ -98,6 +100,7 @@ field:
  Signatures count: "Les signatures compten"
  Signatures reference: "Referència de signatures"
  Status code: "Codi d'estat"
+ Unknown: "Desconegut"
  User agent (lower-case): "Agent d'usuari (en minúscules)"
  User agent: "Agent d'usuari"
  Verified identity: "Identitat verificada"
@@ -123,12 +126,11 @@ response:
  Satisfied: "Satisfet."
  Task failed because a necessary component is unavailable: "La tasca ha fallat perquè un component necessari no està disponible."
  Unable to write to the cache: "No es pot escriure a la memòria cau! Si us plau, comproveu els vostres permisos del fitxer CHMOD!"
-state_disabled: "Desactivat."
-state_enabled: "Activat."
-state_expired: "Caducat"
-state_failed: "Fallat!"
-state_ignored: "Ignorat"
-state_passed: "Aprovat!"
+state:
+ Disabled: "Desactivat."
+ Enabled: "Activat (%s)."
+ Failed: "Fallat (%s)!"
+ Passed: "Aprovat (%s)!"
 why_no_access_allowed_from: "No es permet l'accés des de %s."
 why_single_hit_bypass: "Bypass d'un sol cop (sol·licitud verificada)"
 why_tor_project_exit_node: "El propietari del lloc web no permet connectar-se a aquest lloc web des dels nodes de sortida de Tor."

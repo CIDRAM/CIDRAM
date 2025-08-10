@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data (last modified: 2025.07.27).
+# This file: English language data (last modified: 2025.08.10).
 ##/
 
 %s seconds: ["%s second", "%s seconds"]
@@ -77,10 +77,12 @@ field:
  Conditions inspection: "Conditions inspection"
  Country code lookup: "Country code lookup"
  DateTime: "Date/Time"
+ Expired: "Expired"
  Hostname: "Hostname"
  ID: "ID"
  IP address (resolved): "IP address (resolved)"
  IP address: "IP address"
+ Ignored: "Ignored"
  Infractions: "Infractions"
  Language resolution: "Language resolution"
  OK: "OK"
@@ -94,6 +96,7 @@ field:
  Signatures count: "Signatures count"
  Signatures reference: "Signatures reference"
  Status code: "Status code"
+ Unknown: "Unknown"
  User agent (lower-case): "User agent (lower-case)"
  User agent: "User agent"
  Verified identity: "Verified identity"
@@ -119,12 +122,11 @@ response:
  Satisfied: "Satisfied."
  Task failed because a necessary component is unavailable: "Task failed because a necessary component is unavailable."
  Unable to write to the cache: "Unable to write to the cache! Please check your CHMOD file permissions!"
-state_disabled: "Disabled."
-state_enabled: "Enabled."
-state_expired: "Expired"
-state_failed: "Failed!"
-state_ignored: "Ignored"
-state_passed: "Passed!"
+state:
+ Disabled: "Disabled."
+ Enabled: "Enabled (%s)."
+ Failed: "Failed (%s)!"
+ Passed: "Passed (%s)!"
 why_no_access_allowed_from: "No access allowed from %s."
 why_single_hit_bypass: "Single hit bypass (verified request)"
 why_tor_project_exit_node: "Connecting to this website from Tor exit nodes isn't permitted by the website owner."

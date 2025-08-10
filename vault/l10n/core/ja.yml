@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data (last modified: 2025.07.27).
+# This file: Japanese language data (last modified: 2025.08.10).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -81,10 +81,12 @@ field:
  Conditions inspection: "条件検査"
  Country code lookup: "国コード・ルックアップ"
  DateTime: "日/月/年/時刻"
+ Expired: "期限切れ"
  Hostname: "ホスト名"
  ID: "ＩＤ"
  IP address (resolved): "ＩＰアドレス（解決済み）"
  IP address: "ＩＰアドレス"
+ Ignored: "無視された"
  Infractions: "違反"
  Language resolution: "言語解決"
  OK: "ＯＫ"
@@ -98,6 +100,7 @@ field:
  Signatures count: "シグネチャの数"
  Signatures reference: "シグネチャリファレンス"
  Status code: "ステータス・コード"
+ Unknown: "不明です"
  User agent (lower-case): "ユーザーエージェント（小文字）"
  User agent: "ユーザーエージェント"
  Verified identity: "確認済みの身元"
@@ -123,12 +126,11 @@ response:
  Satisfied: "満たされました。"
  Task failed because a necessary component is unavailable: "必要なコンポーネントが使用できないため、タスクが失敗しました。"
  Unable to write to the cache: "キャッシュは書き込み不可です！​あなたのＣＨＭＯＤをチェックしてください！"
-state_disabled: "オフ。"
-state_enabled: "オン。"
-state_expired: "期限切れ"
-state_failed: "失敗しました！"
-state_ignored: "無視された"
-state_passed: "合格！"
+state:
+ Disabled: "オフ。"
+ Enabled: "オン（%s）。"
+ Failed: "失敗しました（%s）！"
+ Passed: "合格（%s）！"
 why_no_access_allowed_from: "%sからのアクセスは許可されていません。"
 why_single_hit_bypass: "シングル・ヒット・バイパス（確認済みのリクエスト）"
 why_tor_project_exit_node: "Ｔｏｒ出口ノードからこのウェブサイトに接続することは、ウェブサイトの所有者によって許可されていません。"

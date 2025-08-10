@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data (last modified: 2025.07.27).
+# This file: Latvian language data (last modified: 2025.08.10).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -81,10 +81,12 @@ field:
  Conditions inspection: "Nosacījumu pārbaude"
  Country code lookup: "Valsts koda meklēšana"
  DateTime: "Datums/Laiks"
+ Expired: "Beidzies derīguma termiņš"
  Hostname: "Resursdatora nosaukums"
  ID: "ID"
  IP address (resolved): "IP adrese (atrisināts)"
  IP address: "IP adrese"
+ Ignored: "Ignorēts"
  Infractions: "Pārkāpumi"
  Language resolution: "Valodas izšķirtspēja"
  OK: "Labi"
@@ -98,6 +100,7 @@ field:
  Signatures count: "Parakstu skaits"
  Signatures reference: "Parakstu atsauce"
  Status code: "Statusa kods"
+ Unknown: "Nezināms"
  User agent (lower-case): "Lietotāja Aģents (mazie burti)"
  User agent: "Lietotāja aģents"
  Verified identity: "Verificēta identitāte"
@@ -123,12 +126,11 @@ response:
  Satisfied: "Apmierināts."
  Task failed because a necessary component is unavailable: "Uzdevums neizdevās, jo nepieciešamais komponents nav pieejams."
  Unable to write to the cache: "Nevar ierakstīt kešatmiņā! Lūdzu, pārbaudiet savas CHMOD faila atļaujas!"
-state_disabled: "Deaktivizēts."
-state_enabled: "Aktivizēts."
-state_expired: "Beidzies derīguma termiņš"
-state_failed: "Neizdevās!"
-state_ignored: "Ignorēts"
-state_passed: "Panākumi!"
+state:
+ Disabled: "Deaktivizēts."
+ Enabled: "Aktivizēts (%s)."
+ Failed: "Neizdevās (%s)!"
+ Passed: "Panākumi (%s)!"
 why_no_access_allowed_from: "No %s nav atļauta piekļuve."
 why_single_hit_bypass: "Apiet vienu sitienu (pārbaudīts pieprasījums)"
 why_tor_project_exit_node: "Vietnes īpašnieks nav atļāvis izveidot savienojumu ar šo vietni no Tor izejas mezgliem."

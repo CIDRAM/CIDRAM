@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Galician language data (last modified: 2025.07.27).
+# This file: Galician language data (last modified: 2025.08.10).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -81,10 +81,12 @@ field:
  Conditions inspection: "Inspección de condicións"
  Country code lookup: "Busca de código de país"
  DateTime: "Data/Hora"
+ Expired: "Caducou"
  Hostname: "Nome de host"
  ID: "ID"
  IP address (resolved): "Enderezo IP (resolvedo)"
  IP address: "Enderezo IP"
+ Ignored: "Ignorado"
  Infractions: "Infraccións"
  Language resolution: "Resolución lingüística"
  OK: "OK"
@@ -98,6 +100,7 @@ field:
  Signatures count: "As sinaturas contan"
  Signatures reference: "Referencia de sinaturas"
  Status code: "Código de estado"
+ Unknown: "Descoñecido"
  User agent (lower-case): "Axente de usuario (en minúsculas)"
  User agent: "Axente de usuario"
  Verified identity: "Identidade verificada"
@@ -123,12 +126,11 @@ response:
  Satisfied: "Satisfeito."
  Task failed because a necessary component is unavailable: "Produciuse un erro porque un compoñente necesario non está dispoñible."
  Unable to write to the cache: "Non se pode escribir na caché. Comproba os permisos dos teus ficheiros CHMOD!"
-state_disabled: "Desactivado."
-state_enabled: "Activado."
-state_expired: "Caducou"
-state_failed: "Fallou!"
-state_ignored: "Ignorado"
-state_passed: "Aprobado!"
+state:
+ Disabled: "Desactivado."
+ Enabled: "Activado (%s)."
+ Failed: "Fallou (%s)!"
+ Passed: "Aprobado (%s)!"
 why_no_access_allowed_from: "Non se permite o acceso desde %s."
 why_single_hit_bypass: "Bypass dun só golpe (solicitude verificada)"
 why_tor_project_exit_node: "O propietario do sitio web non permite conectarse a este sitio web desde os nodos de saída de Tor."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Serbian language data (last modified: 2025.07.27).
+# This file: Serbian language data (last modified: 2025.08.10).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -81,10 +81,12 @@ field:
  Conditions inspection: "Инспекција услова"
  Country code lookup: "Проналажење кода земље"
  DateTime: "Датум/Време"
+ Expired: "Истекао"
  Hostname: "Име хоста"
  ID: "ИД"
  IP address (resolved): "ИП адреса (решена)"
  IP address: "ИП адреса"
+ Ignored: "Игнорирано"
  Infractions: "Прекршаји"
  Language resolution: "Резолуција језика"
  OK: "ОК"
@@ -98,6 +100,7 @@ field:
  Signatures count: "Потписи се рачунају"
  Signatures reference: "Референца за потписе"
  Status code: "Статусни код"
+ Unknown: "Непознато"
  User agent (lower-case): "Кориснички агент (мала слова)"
  User agent: "Кориснички агент"
  Verified identity: "Верификован идентитет"
@@ -123,12 +126,11 @@ response:
  Satisfied: "Задовољан."
  Task failed because a necessary component is unavailable: "Задатак није успео јер неопходна компонента није доступна."
  Unable to write to the cache: "Није могуће писати у кеш! Проверите дозволе за ЦХМОД датотека!"
-state_disabled: "Онемогућено."
-state_enabled: "Омогућено."
-state_expired: "Истекао"
-state_failed: "Није успео!"
-state_ignored: "Игнорирано"
-state_passed: "Положио!"
+state:
+ Disabled: "Онемогућено."
+ Enabled: "Омогућено (%s)."
+ Failed: "Није успео (%s)!"
+ Passed: "Положио (%s)!"
 why_no_access_allowed_from: "Није дозвољен приступ са %s."
 why_single_hit_bypass: "Заобилажење једним поготком (верификован захтев)"
 why_tor_project_exit_node: "Повезивање на ову веб страницу са Тор излазних чворова није дозвољено од стране власника веб странице."

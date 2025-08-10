@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: ReCaptcha class (last modified: 2025.08.07).
+ * This file: ReCaptcha class (last modified: 2025.08.10).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -65,8 +65,8 @@ class ReCaptcha extends Captcha
                 $this->Bypass = true;
                 $this->resetSCT();
             } else {
-                /** Set CAPTCHA status. */
-                $this->CIDRAM->BlockInfo['CAPTCHA'] = $this->CIDRAM->L10N->getString('state_enabled');
+                /** Set reCAPTCHA status. */
+                $this->CIDRAM->BlockInfo['CAPTCHA'] = sprintf($this->CIDRAM->L10N->getString('state.Enabled'), 'reCAPTCHA');
 
                 /** We've received a response. */
                 if (isset($_POST['g-recaptcha-response'])) {
@@ -101,9 +101,9 @@ class ReCaptcha extends Captcha
                         /** Append to the hash list. */
                         $HastList .= $UserHash . ',' . ($this->CIDRAM->Now + ($this->CIDRAM->Configuration['recaptcha']['expiry'] * 3600)) . "\n";
                         $HastListModified = true;
-                        $this->generatePassed();
+                        $this->generatePassed('reCAPTCHA');
                     } else {
-                        $this->generateFailed();
+                        $this->generateFailed('reCAPTCHA');
                     }
                 }
 
@@ -144,8 +144,8 @@ class ReCaptcha extends Captcha
                 $this->Bypass = true;
                 $this->resetSCT();
             } else {
-                /** Set CAPTCHA status. */
-                $this->CIDRAM->BlockInfo['CAPTCHA'] = $this->CIDRAM->L10N->getString('state_enabled');
+                /** Set reCAPTCHA status. */
+                $this->CIDRAM->BlockInfo['CAPTCHA'] = sprintf($this->CIDRAM->L10N->getString('state.Enabled'), 'reCAPTCHA');
 
                 /** We've received a response. */
                 if (isset($_POST['g-recaptcha-response'])) {
@@ -160,9 +160,9 @@ class ReCaptcha extends Captcha
                         ) . "\n";
                         $BypassListModified = true;
 
-                        $this->generatePassed();
+                        $this->generatePassed('reCAPTCHA');
                     } else {
-                        $this->generateFailed();
+                        $this->generateFailed('reCAPTCHA');
                     }
                 }
 
@@ -199,7 +199,7 @@ class ReCaptcha extends Captcha
             $this->CIDRAM->Configuration['legal']['pseudonymise_ip_addresses'] ? $this->CIDRAM->pseudonymiseIp($this->CIDRAM->ipAddr) : $this->CIDRAM->ipAddr,
             $this->CIDRAM->L10N->getString('field.DateTime'),
             $this->CIDRAM->BlockInfo['DateTime'],
-            $this->CIDRAM->L10N->getString('field.CAPTCHA state') . '(reCAPTCHA)',
+            $this->CIDRAM->L10N->getString('field.CAPTCHA state'),
             $this->CIDRAM->BlockInfo['CAPTCHA'],
             $this->CIDRAM->L10N->getString('pair_separator')
         ) . "\n";

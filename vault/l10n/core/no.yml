@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data (last modified: 2025.07.27).
+# This file: Norwegian language data (last modified: 2025.08.10).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -81,10 +81,12 @@ field:
  Conditions inspection: "Inspeksjon av betingelsene"
  Country code lookup: "Oppslag av landskode"
  DateTime: "Dato/Tid"
+ Expired: "Utløpt"
  Hostname: "Vertsnavn"
  ID: "ID"
  IP address (resolved): "IP-adresse (løst)"
  IP address: "IP-Adresse"
+ Ignored: "Ignorert"
  Infractions: "Infraksjoner"
  Language resolution: "Språkoppløsning"
  OK: "OK"
@@ -98,6 +100,7 @@ field:
  Signatures count: "Antall signaturer"
  Signatures reference: "Signaturreferanse"
  Status code: "Statuskode"
+ Unknown: "Ukjent"
  User agent (lower-case): "Bruker agent (små bokstaver)"
  User agent: "Bruker agent"
  Verified identity: "Bekreftet identitet"
@@ -123,12 +126,11 @@ response:
  Satisfied: "Fornøyd."
  Task failed because a necessary component is unavailable: "Oppgave mislyktes fordi en nødvendig komponent ikke er tilgjengelig."
  Unable to write to the cache: "Kan ikke skrive til hurtigbufferen! Vennligst sjekk CHMOD-filtillatelsene dine!"
-state_disabled: "Deaktivert."
-state_enabled: "Aktivert."
-state_expired: "Utløpt"
-state_failed: "Mislykket!"
-state_ignored: "Ignorert"
-state_passed: "Bestått!"
+state:
+ Disabled: "Deaktivert."
+ Enabled: "Aktivert (%s)."
+ Failed: "Mislykket (%s)!"
+ Passed: "Bestått (%s)!"
 why_no_access_allowed_from: "Ingen tilgang tillatt fra %s."
 why_single_hit_bypass: "Enkelt-hit bypass (bekreftet forespørsel)"
 why_tor_project_exit_node: "Koble til denne nettsiden fra Tor-utgangsnoder er ikke tillatt av nettstedets eier."

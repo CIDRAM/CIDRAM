@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data (last modified: 2025.07.27).
+# This file: Swedish language data (last modified: 2025.08.10).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -81,10 +81,12 @@ field:
  Conditions inspection: "Besiktning av villkoren"
  Country code lookup: "Landskod-uppslag"
  DateTime: "Datum/Tid"
+ Expired: "Utgånget"
  Hostname: "Värdnamn"
  ID: "ID"
  IP address (resolved): "IP-adress (löst)"
  IP address: "IP-Adress"
+ Ignored: "Ignorerades"
  Infractions: "Infraktions"
  Language resolution: "Språkupplösning"
  OK: "OK"
@@ -98,6 +100,7 @@ field:
  Signatures count: "Signaturer räknas"
  Signatures reference: "Signatur referens"
  Status code: "Statuskod"
+ Unknown: "Okänd"
  User agent (lower-case): "Användaragent (små bokstäver)"
  User agent: "Användaragent"
  Verified identity: "Verifierad identitet"
@@ -123,12 +126,11 @@ response:
  Satisfied: "Nöjda."
  Task failed because a necessary component is unavailable: "Uppgiften misslyckades eftersom en nödvändig komponent inte är tillgänglig."
  Unable to write to the cache: "Det går inte att skriva till cacheminnet! Kontrollera dina CHMOD-filbehörigheter!"
-state_disabled: "Inaktiverad."
-state_enabled: "Aktiverad."
-state_expired: "Utgånget"
-state_failed: "Misslyckades!"
-state_ignored: "Ignorerades"
-state_passed: "Godkänd!"
+state:
+ Disabled: "Inaktiverad."
+ Enabled: "Aktiverad (%s)."
+ Failed: "Misslyckades (%s)!"
+ Passed: "Godkänd (%s)!"
 why_no_access_allowed_from: "Ingen åtkomst tillåten från %s."
 why_single_hit_bypass: "Singel-hit bypass (verifierad begäran)"
 why_tor_project_exit_node: "Att ansluta till denna webbplats från Tor-utgångsnoder är inte tillåtet av webbplatsägaren."

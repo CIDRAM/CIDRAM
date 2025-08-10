@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used by the range tables page (last modified: 2023.12.12).
+ * This file: Methods used by the range tables page (last modified: 2025.08.10).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -389,7 +389,7 @@ trait RangeTables
             for ($Range = 1; $Range <= $Build[1]; $Range++) {
                 foreach ([
                     [$Build[0] . '/' . $Range, $Build[0] . '/' . $Range],
-                    [$Build[0] . '-Ignored/' . $Range, $Build[0] . '/' . $Range . ' (' . $this->L10N->getString('state_ignored') . ')'],
+                    [$Build[0] . '-Ignored/' . $Range, $Build[0] . '/' . $Range . ' (' . $this->L10N->getString('field.Ignored') . ')'],
                     [$Build[0] . '-Total/' . $Range, $Build[0] . '/' . $Range . ' (' . $this->L10N->getString('label.Total') . ')']
                 ] as $Label) {
                     if (!empty($Out[$Label[0]])) {
@@ -408,7 +408,7 @@ trait RangeTables
         $Loading = $this->L10N->getString('label.Loading_');
         foreach ([
             ['', $this->L10N->getString('label.Total')],
-            ['-Ignored', $this->L10N->getString('label.Total') . ' (' . $this->L10N->getString('state_ignored') . ')'],
+            ['-Ignored', $this->L10N->getString('label.Total') . ' (' . $this->L10N->getString('field.Ignored') . ')'],
             ['-Total', $this->L10N->getString('label.Total') . ' (' . $this->L10N->getString('label.Total') . ')']
         ] as $Label) {
             $ThisRight = '<table><tr><td>';

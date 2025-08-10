@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2025.08.08).
+ * This file: Protect traits (last modified: 2025.08.10).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -785,7 +785,7 @@ trait Protect
 
                 /** Set CAPTCHA status. */
                 if (empty($this->BlockInfo['CAPTCHA'])) {
-                    $this->BlockInfo['CAPTCHA'] = $this->L10N->getString('state_disabled');
+                    $this->BlockInfo['CAPTCHA'] = $this->L10N->getString('state.Disabled');
                 }
 
                 /** IP address pseudonymisation. */
@@ -830,8 +830,8 @@ trait Protect
                 $this->addField('ASNLookup', 'field.ASN lookup', $this->BlockInfo['ASNLookup'], true);
                 $this->addField('CCLookup', 'field.Country code lookup', $this->BlockInfo['CCLookup'], true);
                 $this->addField('Verified', 'field.Verified identity', $this->BlockInfo['Verified']);
-                $this->addField('Expired', 'state_expired', $this->BlockInfo['Expired']);
-                $this->addField('Ignored', 'state_ignored', $this->BlockInfo['Ignored']);
+                $this->addField('Expired', 'field.Expired', $this->BlockInfo['Expired']);
+                $this->addField('Ignored', 'field.Ignored', $this->BlockInfo['Ignored']);
                 $this->addField('Request_Method', 'field.Request method', $this->BlockInfo['Request_Method'], true);
                 $this->addField('Protocol', 'field.Protocol', $this->BlockInfo['Protocol'], true);
                 $this->addField('SEC_CH_UA_PLATFORM', 'SEC_CH_UA_PLATFORM', $this->BlockInfo['SEC_CH_UA_PLATFORM'], true);

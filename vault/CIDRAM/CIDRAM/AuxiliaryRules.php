@@ -459,7 +459,7 @@ trait AuxiliaryRules
                 '%1$s<li class="%2$s" name="%6$s" draggable="true"><span class="comCat s">%3$s</span><span class="auxAlignFix">%4$s</span>%5$s%1$s  <ul class="comSub">',
                 "\n      ",
                 $RuleClass . (empty($Data['Disable this rule']) ? '' : ' hB fBlur"'),
-                $Expired ? '<em class="txtRd">' . $Name . ' (' . $this->L10N->getString('state_expired') . ')</em>' : $Name,
+                $Expired ? '<em class="txtRd">' . $Name . ' (' . $this->L10N->getString('field.Expired') . ')</em>' : $Name,
                 $Options,
                 isset($Data['Notes']) ? '<div class="iCntn"><em>' . str_replace(['<', '>', "\n"], ['&lt;', '&gt;', "<br />\n"], $Data['Notes']) . '</em></div>' : '',
                 $Name

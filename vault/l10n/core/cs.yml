@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Czech language data (last modified: 2025.07.27).
+# This file: Czech language data (last modified: 2025.08.10).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -81,10 +81,12 @@ field:
  Conditions inspection: "Kontrola podmínek"
  Country code lookup: "Vyhledávání kódu země"
  DateTime: "Datum/Čas"
+ Expired: "Platnost vypršela"
  Hostname: "Název hostitele"
  ID: "ID"
  IP address (resolved): "IP adresa (vyřešeno)"
  IP address: "IP adresa"
+ Ignored: "Ignorováno"
  Infractions: "Přestupky"
  Language resolution: "Jazykové rozlišení"
  OK: "OK"
@@ -98,6 +100,7 @@ field:
  Signatures count: "Počet podpisů"
  Signatures reference: "Odkaz na podpisy"
  Status code: "Stavový kód"
+ Unknown: "Neznámý"
  User agent (lower-case): "Uživatelský agent (malá písmena)"
  User agent: "Uživatelský agent"
  Verified identity: "Ověřená identita"
@@ -123,12 +126,11 @@ response:
  Satisfied: "Spokojený."
  Task failed because a necessary component is unavailable: "Úkol se nezdařila, protože nezbytná součást není k dispozici."
  Unable to write to the cache: "Nelze zapisovat do mezipaměti! Zkontrolujte prosím svá oprávnění k souboru CHMOD!"
-state_disabled: "Vypnutý."
-state_enabled: "Zapnuto."
-state_expired: "Platnost vypršela"
-state_failed: "Selhání!"
-state_ignored: "Ignorováno"
-state_passed: "Prošel!"
+state:
+ Disabled: "Vypnutý."
+ Enabled: "Zapnuto (%s)."
+ Failed: "Selhání (%s)!"
+ Passed: "Prošel (%s)!"
 why_no_access_allowed_from: "Z %s není povolen přístup."
 why_single_hit_bypass: "Přemostění s jedním zásahem (ověřená žádost)"
 why_tor_project_exit_node: "Vlastník webu nepovoluje připojení k tomuto webu z výstupních uzlů Tor."

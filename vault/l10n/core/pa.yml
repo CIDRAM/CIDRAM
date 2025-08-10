@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Punjabi language data (last modified: 2025.07.27).
+# This file: Punjabi language data (last modified: 2025.08.10).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -187,6 +187,9 @@ field:
  DateTime:
   pa-IN: "ਤਾਰੀਖ਼/ਸਮਾਂ"
   [pa-160, pa-Arab, pa-PK]: "تریخ/ویلا"
+ Expired:
+  pa-IN: "ਮਿਆਦ ਪੁੱਗ ਗਈ"
+  [pa-160, pa-Arab, pa-PK]: "معیاد مکی"
  Hostname:
   pa-IN: "ਹੋਸਟਨਾਮ"
   [pa-160, pa-Arab, pa-PK]: "میزبان دا ناں"
@@ -199,6 +202,9 @@ field:
  IP address:
   pa-IN: "IP ਪਤਾ"
   [pa-160, pa-Arab, pa-PK]: "IP ایڈریس"
+ Ignored:
+  pa-IN: "ਅਣਡਿੱਠ ਕੀਤਾ"
+  [pa-160, pa-Arab, pa-PK]: "نظر انداز کر دتا گیا"
  Infractions:
   pa-IN: "ਉਲੰਘਣਾਵਾਂ"
   [pa-160, pa-Arab, pa-PK]: "خلاف ورزیاں"
@@ -238,6 +244,9 @@ field:
  Status code:
   pa-IN: "ਸਥਿਤੀ ਕੋਡ"
   [pa-160, pa-Arab, pa-PK]: "حیثیت دا کوڈ"
+ Unknown:
+  pa-IN: "ਅਣਜਾਣ"
+  [pa-160, pa-Arab, pa-PK]: "نامعلوم"
  User agent (lower-case):
   pa-IN: "ਉਪਭੋਗਤਾ ਏਜੰਟ (ਛੋਟੇ-ਕੇਸ)"
   [pa-160, pa-Arab, pa-PK]: "ورتن آلا ایجنٹ (نکے حروف)"
@@ -307,24 +316,19 @@ response:
  Unable to write to the cache:
   pa-IN: "ਕੈਸ਼ ਨੂੰ ਲਿਖਣ ਲਈ ਅਸਮਰੱਥ! ਕਿਰਪਾ ਕਰਕੇ ਆਪਣੀ CHMOD ਫਾਈਲ ਅਨੁਮਤੀਆਂ ਦੀ ਜਾਂਚ ਕਰੋ!"
   [pa-160, pa-Arab, pa-PK]: "کیشے تے لکھن توں قاصر! مہربانی کر کے اپنی CHMOD فائل دی اجازت چیک کرو!"
-state_disabled:
+state:
+ Disabled:
  pa-IN: "ਅਕਿਰਿਆਸ਼ੀਲ।"
  [pa-160, pa-Arab, pa-PK]: "نااہل بناؤ۔"
-state_enabled:
- pa-IN: "ਸਰਗਰਮ।"
- [pa-160, pa-Arab, pa-PK]: "فعال۔"
-state_expired:
- pa-IN: "ਮਿਆਦ ਪੁੱਗ ਗਈ"
- [pa-160, pa-Arab, pa-PK]: "معیاد مکی"
-state_failed:
- pa-IN: "ਅਸਫਲ!"
- [pa-160, pa-Arab, pa-PK]: "ناکام ہویا!"
-state_ignored:
- pa-IN: "ਅਣਡਿੱਠ ਕੀਤਾ"
- [pa-160, pa-Arab, pa-PK]: "نظر انداز کر دتا گیا"
-state_passed:
- pa-IN: "ਪਾਸ!"
- [pa-160, pa-Arab, pa-PK]: "لنگھ گیا!"
+ Enabled:
+ pa-IN: "ਸਰਗਰਮ (%s)।"
+ [pa-160, pa-Arab, pa-PK]: "فعال (%s)۔"
+ Failed:
+ pa-IN: "ਅਸਫਲ (%s)!"
+ [pa-160, pa-Arab, pa-PK]: "ناکام ہویا (%s)!"
+ Passed:
+ pa-IN: "ਪਾਸ (%s)!"
+ [pa-160, pa-Arab, pa-PK]: "لنگھ گیا (%s)!"
 why_no_access_allowed_from:
  pa-IN: "%s ਤੋਂ ਪਹੁੰਚ ਦੀ ਇਜਾਜ਼ਤ ਨਹੀਂ ਹੈ।"
  [pa-160, pa-Arab, pa-PK]: "%s توں رسائی دی اجازت نئیں۔"

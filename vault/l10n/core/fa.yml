@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Farsi language data (last modified: 2025.07.27).
+# This file: Farsi language data (last modified: 2025.08.10).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -81,10 +81,12 @@ field:
  Conditions inspection: "بازرسی شرایط"
  Country code lookup: "جستجوی کد کشور"
  DateTime: "تاریخ/زمان"
+ Expired: "منقضی شده"
  Hostname: "نام میزبان"
  ID: "شناسه"
  IP address (resolved): "آدرس IP (حل شد)"
  IP address: "آدرس IP"
+ Ignored: "نادیده گرفته شد"
  Infractions: "تخلفات"
  Language resolution: "زبان حل شده"
  OK: "خوب"
@@ -98,6 +100,7 @@ field:
  Signatures count: "تعداد امضاها"
  Signatures reference: "مرجع امضاها"
  Status code: "کد وضعیت"
+ Unknown: "ناشناس"
  User agent (lower-case): "عامل کاربر (حروف کوچک)"
  User agent: "عامل کاربر"
  Verified identity: "هویت تایید شده"
@@ -123,12 +126,11 @@ response:
  Satisfied: "راضی."
  Task failed because a necessary component is unavailable: "کار انجام نشد زیرا یک جزء ضروری در دسترس نیست."
  Unable to write to the cache: "امکان نوشتن در حافظه پنهان وجود ندارد! لطفا مجوزهای CHMOD خود را بررسی کنید!"
-state_disabled: "غیرفعال."
-state_enabled: "فعال."
-state_expired: "منقضی شده"
-state_failed: "ناموفق!"
-state_ignored: "نادیده گرفته شد"
-state_passed: "گذشت!"
+state:
+ Disabled: "غیرفعال."
+ Enabled: "فعال (%s)."
+ Failed: "ناموفق (%s)!"
+ Passed: "گذشت (%s)!"
 why_no_access_allowed_from: "دسترسی از %s مجاز نیست."
 why_single_hit_bypass: "بای پس تک ضربه ای (درخواست تایید شده)"
 why_tor_project_exit_node: "اتصال به این وب سایت از گره های خروجی Tor توسط مالک وب سایت مجاز نیست."

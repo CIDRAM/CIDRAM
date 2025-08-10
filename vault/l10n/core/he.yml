@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hebrew language data (last modified: 2025.07.27).
+# This file: Hebrew language data (last modified: 2025.08.10).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -81,10 +81,12 @@ field:
  Conditions inspection: "בדיקת תנאים"
  Country code lookup: "חיפוש קוד מדינה"
  DateTime: "תאריך/שעה"
+ Expired: "לא בתוקף"
  Hostname: "שם מארח"
  ID: "זהות"
  IP address (resolved): "כתובת IP (נפתר)"
  IP address: "כתובת IP"
+ Ignored: "מתעלמים"
  Infractions: "עבירות"
  Language resolution: "רזולוציית שפה"
  OK: "בסדר"
@@ -98,6 +100,7 @@ field:
  Signatures count: "ספירת חתימות"
  Signatures reference: "התייחסות לחתימות"
  Status code: "קוד סטטוס"
+ Unknown: "לא ידוע"
  User agent (lower-case): "סוכן משתמש (אותיות קטנות)"
  User agent: "סוכן משתמש"
  Verified identity: "זהות מאומתת"
@@ -123,12 +126,11 @@ response:
  Satisfied: "מרוצה."
  Task failed because a necessary component is unavailable: "המשימה נכשלה מכיוון שרכיב הכרחי אינו זמין."
  Unable to write to the cache: "לא ניתן לכתוב למטמון! אנא בדוק את הרשאות ה-CHMOD שלך!"
-state_disabled: "מושבת."
-state_enabled: "מוּפעָל."
-state_expired: "לא בתוקף"
-state_failed: "נכשל!"
-state_ignored: "מתעלמים"
-state_passed: "עבר!"
+state:
+ Disabled: "מושבת."
+ Enabled: "מוּפעָל (%s)."
+ Failed: "נכשל (%s)!"
+ Passed: "עבר (%s)!"
 why_no_access_allowed_from: "אין גישה מ%s."
 why_single_hit_bypass: "מעקף של מכה בודדת (בקשה מאומתת)"
 why_tor_project_exit_node: "חיבור לאתר זה מצמתי יציאה של Tor אינו מורשה על ידי בעל האתר."

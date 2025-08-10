@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The IP testing page (last modified: 2025.08.06).
+ * This file: The IP testing page (last modified: 2025.08.10).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -205,12 +205,12 @@ if (isset($_POST['ip-addr'])) {
             if ($this->BlockInfo['Ignored']) {
                 $this->CIDRAM['ThisIP']['YesNo'] .= sprintf(
                     ', +%s (%s)',
-                    $this->L10N->getString('state_ignored'),
+                    $this->L10N->getString('field.Ignored'),
                     $this->BlockInfo['Ignored']
                 );
             }
         } elseif ($this->BlockInfo['Ignored']) {
-            $this->CIDRAM['ThisIP']['YesNo'] = $this->L10N->getString('field.Blocked') . $this->L10N->getString('pair_separator') . $this->L10N->getString('response._No') . ' (' . $this->L10N->getString('state_ignored') . ') ' . $this->BlockInfo['Ignored'];
+            $this->CIDRAM['ThisIP']['YesNo'] = $this->L10N->getString('field.Blocked') . $this->L10N->getString('pair_separator') . $this->L10N->getString('response._No') . ' (' . $this->L10N->getString('field.Ignored') . ') ' . $this->BlockInfo['Ignored'];
             $this->CIDRAM['ThisIP']['StatClass'] = 'txtOe';
         } elseif (!empty($this->CIDRAM['Aux Redirect']) && !empty($this->CIDRAM['Aux Status Code'])) {
             $this->CIDRAM['ThisIP']['YesNo'] = $this->L10N->getString('field.Blocked') . $this->L10N->getString('pair_separator') . $this->L10N->getString('response._No') . ' (' . $this->L10N->getString('response.Redirected') . ')';

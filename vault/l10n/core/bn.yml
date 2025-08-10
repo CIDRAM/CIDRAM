@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data (last modified: 2025.07.27).
+# This file: Bangla language data (last modified: 2025.08.10).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -81,10 +81,12 @@ field:
  Conditions inspection: "শর্ত পরিদর্শন"
  Country code lookup: "কান্ট্রি কোড লুকআপ"
  DateTime: "তারিখ/সময়"
+ Expired: "মেয়াদোত্তীর্ণ"
  Hostname: "হোস্টনাম"
  ID: "ID"
  IP address (resolved): "আইপি ঠিকানা (স্থিরপ্রতিজ্ঞ)"
  IP address: "আইপি ঠিকানা"
+ Ignored: "উপেক্ষিত"
  Infractions: "লঙ্ঘনটিকে"
  Language resolution: "ভাষার রেজোলিউশন"
  OK: "OK"
@@ -98,6 +100,7 @@ field:
  Signatures count: "স্বাক্ষর গণনা"
  Signatures reference: "স্বাক্ষর রেফারেন্স"
  Status code: "স্থিতি কোড"
+ Unknown: "অজানা"
  User agent (lower-case): "User agent (ছোট হাতের)"
  User agent: "User agent"
  Verified identity: "যাচাই করা পরিচয়"
@@ -123,12 +126,11 @@ response:
  Satisfied: "সন্তুষ্ট।"
  Task failed because a necessary component is unavailable: "কার্য ব্যর্থ হয়েছে কারণ একটি প্রয়োজনীয় উপাদান অনুপলব্ধ।"
  Unable to write to the cache: "ক্যাশে লিখতে অক্ষম! আপনার CHMOD ফাইল অনুমতি চেক করুন!"
-state_disabled: "অফলাইন।"
-state_enabled: "অনলাইন।"
-state_expired: "মেয়াদোত্তীর্ণ"
-state_failed: "ব্যর্থ!"
-state_ignored: "উপেক্ষিত"
-state_passed: "পাস!"
+state:
+ Disabled: "অফলাইন।"
+ Enabled: "অনলাইন (%s)।"
+ Failed: "ব্যর্থ (%s)!"
+ Passed: "পাস (%s)!"
 why_no_access_allowed_from: "%s থেকে কোনও অ্যাক্সেসের অনুমতি নেই।"
 why_single_hit_bypass: "একক হিট বাইপাস (যাচাই করা অনুরোধ)"
 why_tor_project_exit_node: "টর এক্সিট নোড থেকে এই ওয়েবসাইটে সংযোগ করা ওয়েবসাইটের মালিকের দ্বারা অনুমোদিত নয়৷।"

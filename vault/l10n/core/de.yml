@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data (last modified: 2025.07.27).
+# This file: German language data (last modified: 2025.08.10).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -81,10 +81,12 @@ field:
  Conditions inspection: "Überprüfung der Bedingungen"
  Country code lookup: "Ländercode-Suche"
  DateTime: "Datum/Uhrzeit"
+ Expired: "Abgelaufen"
  Hostname: "Hostname"
  ID: "ID"
  IP address (resolved): "IP-Adresse (aufgelöst)"
  IP address: "IP-Adresse"
+ Ignored: "Ignoriert"
  Infractions: "Verstöße"
  Language resolution: "Sprachauflösung"
  OK: "OK"
@@ -98,6 +100,7 @@ field:
  Signatures count: "Zählung den Signaturen"
  Signatures reference: "Referenz für den Signaturen"
  Status code: "Statuscode"
+ Unknown: "Unbekannt"
  User agent (lower-case): "Benutzeragent (kleingeschrieben)"
  User agent: "Benutzeragent"
  Verified identity: "Verifizierte Identität"
@@ -123,12 +126,11 @@ response:
  Satisfied: "Zufrieden."
  Task failed because a necessary component is unavailable: "Der Vorgang ist fehlgeschlagen, weil eine erforderliche Komponente nicht verfügbar ist."
  Unable to write to the cache: "Kann nicht in den Cache schreiben! Bitte überprüfen Sie Ihre CHMOD Dateiberechtigungen!"
-state_disabled: "Deaktiviert."
-state_enabled: "Aktiviert."
-state_expired: "Abgelaufen"
-state_failed: "Gescheitert!"
-state_ignored: "Ignoriert"
-state_passed: "Gelungen!"
+state:
+ Disabled: "Deaktiviert."
+ Enabled: "Aktiviert (%s)."
+ Failed: "Gescheitert (%s)!"
+ Passed: "Gelungen (%s)!"
 why_no_access_allowed_from: "Kein Zugriff von %s erlaubt."
 why_single_hit_bypass: "Single Hit Bypass (verifizierte Anfrage)"
 why_tor_project_exit_node: "Verbindungen von Tor-Ausgangsknoten auf dieser Website ist nicht vom Besitzer der Website gestattet."

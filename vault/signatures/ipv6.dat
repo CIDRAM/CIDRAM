@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6.dat
 
-# Version: 2025.215.0
-# Last modified: 2025.08.04
+# Version: 2025.221.0
+# Last modified: 2025.08.10
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -6741,8 +6741,8 @@ Tag: Quintex
 
 # ASN 29889 ("Fast Serv Networks, LLC").
 # Dedicated host; evidence of unauthorised access attempts; spam events.
-# Stop Forum Spam (SFS) listings: 12.
-# Updated: 2024.08.06
+# Stop Forum Spam (SFS) listings: 17.
+# Updated: 2024.08.06 / Checked: 2025.08.10
 
 2602:f9c7::/36 Deny Cloud
 2602:fffa::/36 Deny Cloud
@@ -8217,10 +8217,11 @@ Profile: Content Delivery Network;Frequent changes;Infrastructure/Transit
 Tag: CDN77
 
 
-# ASN 131386 ("Long Van System Solution JSC").
+# ASNs 131386, 131423 ("Long Van System Solution JSC", "Branch of Long Van
+# System Solution JSC - Hanoi").
 # Brute-force attacks and spam detected from here.
-# Stop Forum Spam (SFS) listings: 296.
-# Updated: 2025.08.04
+# Stop Forum Spam (SFS) listings: 295 (AS131386), 6 (AS131423).
+# Updated: 2025.08.04 / Checked: 2025.08.10
 
 2403:bf40::/47 Deny Cloud
 2403:bf40:2::/48 Deny Cloud
@@ -8259,15 +8260,17 @@ Tag: eSecureData
 # ASNs 21396, 31708 ("NetConnex Broadband Ltd", "Coreix Ltd").
 # Data center and webhosting provider. IPs from their networks caught trying to
 # hack WordPress sites, brute-force logins, perform XMLRPC attacks, etc.
-# Stop Forum Spam (SFS) listings: 70 (AS21396), 16 (AS31708).
-# Updated: 2024.08.05
+# Stop Forum Spam (SFS) listings: 1 (AS21396), 34 (AS31708).
+# Updated: 2025.08.10
 
+2a05:98c0::/29 Deny Cloud
+Origin: DK
 2a00:d680::/32 Deny Cloud
 2a01:c0::/32 Deny Cloud
 2a02:68::/29 Deny Cloud
 2a04:fcc0::/29 Deny Cloud
 2a05:8440::/29 Deny Cloud
-2a0d:5c00::/32 Deny Cloud
+2a13:f040::/48 Deny Cloud
 Origin: GB
 Profile: Dedicated;Webhosting
 Tag: NetConnex/Coreix
@@ -9540,21 +9543,28 @@ Tag: The Infrastructure Group B.V
 
 # ASNs 199524, 202422 ("G-Core Labs S.A").
 # Server farm with significant tor endpoints and a significant source of spam.
-# Stop Forum Spam (SFS) listings: 6,586 (AS199524), 3,163 (AS202422).
-# Updated: 2024.08.05
+# Stop Forum Spam (SFS) listings: 8,335 (AS199524), 473 (AS202422).
+# Updated: 2025.08.10
 
 2a03:90c0:10::/44 Deny Cloud
 2a03:90c0:20::/43 Deny Cloud
 2a03:90c0:40::/42 Deny Cloud
 2a03:90c0:80::/41 Deny Cloud
-2a03:90c0:100::/40 Deny Cloud
+2a03:90c0:100::/41 Deny Cloud
+2a03:90c0:180::/42 Deny Cloud
+2a03:90c0:1d0::/44 Deny Cloud
+2a03:90c0:1e0::/43 Deny Cloud
 2a03:90c0:210::/44 Deny Cloud
 2a03:90c0:220::/43 Deny Cloud
 2a03:90c0:240::/42 Deny Cloud
-2a03:90c0:280::/41 Deny Cloud
-2a03:90c0:300::/41 Deny Cloud
+2a03:90c0:280::/43 Deny Cloud
+2a03:90c0:2a0::/44 Deny Cloud
+2a03:90c0:2c0::/42 Deny Cloud
+2a03:90c0:300::/44 Deny Cloud
+2a03:90c0:320::/43 Deny Cloud
+2a03:90c0:340::/42 Deny Cloud
 2a03:90c0:380::/42 Deny Cloud
-2a03:90c0:3f0::/44 Deny Cloud
+2a03:90c0:3e0::/43 Deny Cloud
 2a03:90c0:400::/44 Deny Cloud
 2a03:90c0:420::/43 Deny Cloud
 2a03:90c0:440::/42 Deny Cloud
@@ -9565,19 +9575,23 @@ Tag: The Infrastructure Group B.V
 2a03:90c0:5c0::/42 Deny Cloud
 2a03:90c0:610::/44 Deny Cloud
 2a03:90c0:640::/44 Deny Cloud
-2a03:90c0:660::/44 Deny Cloud
-2a03:90c0:680::/41 Deny Cloud
-2a03:90c0:710::/44 Deny Cloud
-2a03:90c0:720::/43 Deny Cloud
+2a03:90c0:660::/43 Deny Cloud
+2a03:90c0:690::/44 Deny Cloud
+2a03:90c0:6a0::/43 Deny Cloud
+2a03:90c0:6c0::/42 Deny Cloud
+2a03:90c0:700::/42 Deny Cloud
 2a03:90c0:740::/43 Deny Cloud
+2a03:90c0:770::/44 Deny Cloud
+2a03:90c0:780::/43 Deny Cloud
 2a03:90c0:8885::/48 Deny Cloud
-2a03:90c0:888a::/47 Deny Cloud
+2a03:90c0:8886::/48 Deny Cloud
+2a03:90c0:8888::/46 Deny Cloud
+2a03:90c0:888c::/48 Deny Cloud
+2a03:90c0:888e::/47 Deny Cloud
 2a03:90c0:9990::/47 Deny Cloud
 2a03:90c0:9992::/48 Deny Cloud
 2a03:90c0:9994::/46 Deny Cloud
-2a03:90c0:9998::/46 Deny Cloud
-2a03:90c0:999c::/47 Deny Cloud
-2a03:90c0:999f::/48 Deny Cloud
+2a03:90c0:9998::/45 Deny Cloud
 Origin: LU
 Profile: Content Delivery Network;Infrastructure/Transit;Tor endpoints here;Webhosting
 Tag: G-Core Labs S.A
@@ -13988,8 +14002,8 @@ Tag: HKN GmbH
 
 # ASN 45634 ("10 Science Park Road").
 # Port scans, hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 107.
-# Updated: 2024.08.07
+# Stop Forum Spam (SFS) listings: 29.
+# Updated: 2024.08.07 / Checked: 2025.08.10
 
 2401:c100::/32 Deny Cloud
 Origin: SG

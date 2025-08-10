@@ -142,7 +142,8 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
                 '版iisspy|大马|一句话(?:木马|扫描脚本程序)?' .
                 ')\.php[578]?(?:$|[/?])|' .
                 'funs\.php[578]?(?:$|[/?])~',
-            $LCNrURI), 'Probing for webshells/backdoors') || // 2023.08.18 mod 2025.08.10
+                $LCNrURI
+            ), 'Probing for webshells/backdoors') || // 2023.08.18 mod 2025.08.10
             $this->trigger(preg_match('~(?:^|[/?])(?:brutalshell|css/dmtixucz/golden-access|fierzashell\.html?|perl.alfa|search/label/php-shells|wp-ksv1i\.ph)(?:$|[/?])~', $LCNrURI), 'Probing for webshells/backdoors') || // 2025.05.12 mod 2025.08.07
             $this->trigger(preg_match('~(?:^|[/?])(?:moon\.php|ss\.php)\?(?:f_c|p)=~', $LCNrURI), 'Probing for webshells/backdoors') // 2025.08.07
         ) {

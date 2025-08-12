@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2025.08.10).
+ * This file: General methods used by the front-end (last modified: 2025.08.12).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1165,20 +1165,34 @@ trait FrontEndMethods
     /**
      * Update the configuration.
      *
+     * @param ?int $BytesRemoved The number of bytes removed (only used when invoked by executor).
+     * @param ?int $BytesAdded The number of bytes added (only used when invoked by executor).
      * @return bool Whether succeeded or failed.
      */
-    private function updateConfiguration(): bool
+    private function updateConfiguration(?int &$BytesRemoved = null, ?int &$BytesAdded = null): bool
     {
         if (!is_file($this->FE['ActiveConfigFile']) || !is_writable($this->FE['ActiveConfigFile'])) {
             return false;
         }
         $Reconstructed = $this->YAML->reconstruct($this->Configuration);
+        if ($BytesRemoved !== null) {
+            $Size = strlen($Reconstructed) - filesize($this->FE['ActiveConfigFile']);
+        }
         $Handle = fopen($this->FE['ActiveConfigFile'], 'wb');
         if (!is_resource($Handle)) {
             return false;
         }
         $Err = fwrite($Handle, $Reconstructed);
         fclose($Handle);
+        if ($Err !== false && $BytesRemoved !== null) {
+            if ($Size < 0) {
+                $BytesRemoved += $Size;
+            } elseif ($BytesAdded === null) {
+                $BytesRemoved -= $Size;
+            } else {
+                $BytesAdded += $Size;
+            }
+        }
         return $Err !== false;
     }
 
@@ -1489,9 +1503,12 @@ trait FrontEndMethods
                 if (method_exists($this, $Method)) {
                     $this->{$Method}($BytesRemoved, $BytesAdded);
                 } elseif (($Pos = strpos($Method, ' ')) !== false) {
+                    $Method = preg_replace('~(?<!\\\\)\\\\;~', ';', $Method);
                     $Params = substr($Method, $Pos + 1);
                     $Method = substr($Method, 0, $Pos);
-                    if (method_exists($this, $Method)) {
+                    if ($Method === 'set') {
+                        $this->OperationHandler->set($this, $Params, true);
+                    } elseif (method_exists($this, $Method)) {
                         $Params = $this->OperationHandler->ifCompare($this, $Params, true);
                         $this->{$Method}($Params, $BytesRemoved, $BytesAdded);
                     }
@@ -1584,5 +1601,33 @@ trait FrontEndMethods
         }
 
         return $Data;
+    }
+
+    /**
+     * If, of two numbers, one is negative while the other is positive and
+     * non-zero, attempt to rebalance them out so that neither is negative.
+     *
+     * @param int $A The first number.
+     * @param int $B The second number.
+     * @return The two numbers rebalanced.
+     */
+    private function rebalanceNumbers(int $A, int $B): int
+    {
+        if (($A >= 0 && $B >= 0) || ($A < 0 && $B < 0)) {
+            return [$A, $B];
+        }
+        if ($A < 0) {
+            $A *= 1;
+        } elseif ($B < 0) {
+            $B *= 1;
+        }
+        if ($A > $B) {
+            [$A, $B] = [$A - $B, 0];
+        } elseif ($A < $B) {
+            [$A, $B] = [0, $A - $B];
+        } else {
+            [$A, $B] = [0, 0];
+        }
+        return [$A, $B];
     }
 }

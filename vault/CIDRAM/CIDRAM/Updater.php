@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods for updating CIDRAM components (last modified: 2025.08.09).
+ * This file: Methods for updating CIDRAM components (last modified: 2025.08.12).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -75,14 +75,16 @@ trait Updater
      * Wrapper to execute a macro from within another macro.
      *
      * @param string $Macro The macro to execute.
+     * @param ?int $BytesRemoved The number of bytes removed (only used when invoked by executor).
+     * @param ?int $BytesAdded The number of bytes added (only used when invoked by executor).
      * @return void
      */
-    private function executeMacro(string $Macro): void
+    private function executeMacro(string $Macro, ?int &$BytesRemoved = null, ?int &$BytesAdded = null): void
     {
         if (!isset($this->Components['Macros'][$Macro]['On Execute'])) {
             return;
         }
-        $this->executor($this->Components['Macros'][$Macro]['On Execute']);
+        $this->executor($this->Components['Macros'][$Macro]['On Execute'], false, $BytesRemoved, $BytesAdded);
     }
 
     /**
@@ -98,7 +100,9 @@ trait Updater
             $File = substr($File, 1, -1);
         }
         if ($File !== '' && file_exists($this->Vault . $File) && $this->freeFromTraversal($File)) {
-            $Size = filesize($this->Vault . $File);
+            if ($BytesRemoved !== null) {
+                $Size = filesize($this->Vault . $File);
+            }
             if (!unlink($this->Vault . $File)) {
                 return false;
             }
@@ -890,6 +894,7 @@ trait Updater
                     }
                 }
             }
+            [$BytesRemoved, $BytesAdded] = $this->rebalanceNumbers($BytesRemoved, $BytesAdded);
             $this->formatFileSize($BytesAdded);
             $this->formatFileSize($BytesRemoved);
             $this->FE['state_msg'] .= $StateMessage . sprintf(
@@ -1294,6 +1299,7 @@ trait Updater
                     $this->executor($this->Components['Meta'][$ThisTarget]['When Repair Fails'], false, $BytesRemoved, $BytesAdded);
                 }
             }
+            [$BytesRemoved, $BytesAdded] = $this->rebalanceNumbers($BytesRemoved, $BytesAdded);
             $this->formatFileSize($BytesAdded);
             $this->formatFileSize($BytesRemoved);
             $this->FE['state_msg'] .= $StateMessage . sprintf(

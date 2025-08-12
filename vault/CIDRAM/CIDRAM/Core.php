@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2025.08.06).
+ * This file: The CIDRAM core (last modified: 2025.08.12).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1013,7 +1013,7 @@ class Core
             $Cat = &$Config[$KeyCat];
             foreach ($DCat as $DKey => $DData) {
                 if (isset($DData['labels'], $DData['style']) && $DData['style'] === 'matrix') {
-                    if (!isset($Cat[$DKey])) {
+                    if (!isset($Cat[$DKey]) || !is_array($Cat[$DKey])) {
                         $Cat[$DKey] = [];
                     }
                     foreach ($DData['labels'] as $MLabelKey => $MLabelValue) {

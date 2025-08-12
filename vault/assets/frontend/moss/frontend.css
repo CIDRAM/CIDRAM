@@ -1,5 +1,9 @@
-:root{color-scheme:normal{theme_mode_effects}}
+:root{scroll-behavior:smooth;color-scheme:normal{theme_mode_effects}}
 *{vertical-align:text-top}
+@media screen and (prefers-reduced-motion: reduce) {
+  :root{scroll-behavior:auto}
+}
+.scrollTrans{transition:all .5s ease-in-out}
 body,input,select,textarea,.idx{font-size:calc((12px * {magnification}) + .03vw)}
 body{font-family:'Tahoma','Verdana','Noto Sans','Arial';letter-spacing:1px;text-decoration:none;border-style:none;margin:0;white-space:normal;background-color:#789048;background-image:url('?cidram-asset=bg.png&theme={theme}');background-repeat:repeat-x;background-attachment:fixed;background-position:left bottom;color:#303c24}
 code{vertical-align:0;display:inline-block;height:calc(1em + 2px)}
@@ -122,10 +126,6 @@ select,input[type=submit],input[type=reset],input[type=button],input[type=file]:
 select[class=auto]+select[class=auto]{margin-{FE_Align}:-3px;margin-{FE_Align_Reverse}:0}
 #pgrad{width:16px;height:16px;display:inline-block;border-radius:16px;filter:blur(2px)}
 td code~input,td code~select{vertical-align:middle}
-.trEase{transition:all .5s ease-out}
-.trEase>div{display:inline-block;transition:inherit}
-.pipCntrs{display:inline-block;position:relative;left:0;width:12px;height:12px;transition:inherit}
-.pipCntrs>img{display:inline-block;position:absolute;left:0;transition:inherit}
 .gridboxitem>label,.gridboxitem input+strong{vertical-align:-2px;cursor:pointer}
 .statGroup{display:inline-block;height:18px}
 .gridHA:not(.gridVA,.gridVB,.gridboxstretch),.gridHB:not(.gridVA,.gridVB,.gridboxstretch){white-space:nowrap}

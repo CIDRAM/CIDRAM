@@ -1,5 +1,9 @@
-:root{color-scheme:dark{theme_mode_effects}}
+:root{scroll-behavior:smooth;color-scheme:dark{theme_mode_effects}}
 *{vertical-align:text-top}
+@media screen and (prefers-reduced-motion: reduce) {
+  :root{scroll-behavior:auto}
+}
+.scrollTrans{transition:all .5s ease-in-out}
 body,input,select,textarea,code,.idx{font-size:calc((12px * {magnification}) + .03vw)}
 body,input,input[type=file]::file-selector-button,select{font-family:'BlinkMacSystemFont','Segoe UI','Noto Sans','Helvetica';letter-spacing:1px;text-decoration:none;border-style:none;margin:0;white-space:normal;color:#e4e6eb}
 body{background-color:#18191a}
@@ -126,10 +130,6 @@ textarea{border:none}
 select,input[type=submit],input[type=reset],input[type=button],input[type=file]::file-selector-button,input[type=text],input[type=password],input[type=number],input[type=date],input[type=time],input[type=datetime-local],button{box-sizing:border-box;height:20px;padding-top:0;padding-bottom:0}
 #pgrad{width:16px;height:16px;display:inline-block;border-radius:16px;filter:blur(2px)}
 td code~input,td code~select{vertical-align:middle}
-.trEase{transition:all .5s ease-out}
-.trEase>div{display:inline-block;transition:inherit}
-.pipCntrs{display:inline-block;position:relative;left:0;width:12px;height:12px;transition:inherit}
-.pipCntrs>img{display:inline-block;position:absolute;left:0;transition:inherit}
 input[type=checkbox]+label,input[type=radio]+label,.gridboxitem>label,.gridboxitem input+strong{vertical-align:-3px;cursor:pointer}
 .gridboxitem>input[type=radio],.statGroup>input[type=radio]{position:relative;top:-1px;margin:2px}
 .statGroup{display:inline-block;height:24px}

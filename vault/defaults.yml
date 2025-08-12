@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2025.08.10).
+# This file: Defaults file (last modified: 2025.08.12).
 ##/
 
 Config Defaults:
@@ -929,7 +929,7 @@ Config Defaults:
    type: "int"
    default: 0
    choices:
-    0: "{label.Never} !!!"
+    0: "label.Never"
     1: "label.Only when blocked, within the signature limit, and not banned"
     2: "label.Only when blocked, specially marked for use, within the signature limit, and not banned"
     3: "label.Only when within the signature limit, and not banned (regardless of whether blocked)"
@@ -994,7 +994,7 @@ Config Defaults:
    type: "int"
    default: 0
    choices:
-    0: "{label.Never} !!!"
+    0: "label.Never"
     1: "label.Only when blocked, within the signature limit, and not banned"
     2: "label.Only when blocked, specially marked for use, within the signature limit, and not banned"
     3: "label.Only when within the signature limit, and not banned (regardless of whether blocked)"

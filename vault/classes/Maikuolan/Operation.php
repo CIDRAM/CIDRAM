@@ -1,6 +1,6 @@
 <?php
 /**
- * Operation handler (last modified: 2025.04.17).
+ * Operation handler (last modified: 2025.08.05).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -335,15 +335,15 @@ class Operation extends CommonAbstract
         if ($Instruction === '') {
             return true;
         }
-        $Parts = preg_split('~([-+*/.]?=)~', $Instruction, 2, PREG_SPLIT_DELIM_CAPTURE);
+        $Parts = preg_split('~([-+*/%.]?=)~', $Instruction, 2, PREG_SPLIT_DELIM_CAPTURE);
         if (count($Parts) !== 3) {
             return false;
         }
         if (substr($Parts[2], 0, 1) === '{' && substr($Parts[2], -1) === '}' && substr_count($Parts[2], '{') === 1 && substr_count($Parts[2], '}') === 1) {
             $Parts[2] = $this->dataTraverse($Data, substr($Parts[2], 1, -1), true, $AllowMethodCalls);
-        } elseif (preg_match_all('~\{[^{}\r\n]+\}~', $Parts[2], $VarMatches)) {
+        } elseif (preg_match_all('~\\{[^{}\r\n]+\\}~', $Parts[2], $VarMatches)) {
             foreach ($VarMatches[0] as $VarMatch) {
-                $Parts[2] = str_replace($VarMatch, $this->dataTraverse($Data, substr($VarMatch, 1, -1)), $Parts[2]);
+                $Parts[2] = str_replace($VarMatch, $this->dataTraverse($Data, substr($VarMatch, 1, -1), false, $AllowMethodCalls), $Parts[2]);
             }
         }
         unset($VarMatch, $VarMatches);
@@ -371,6 +371,7 @@ class Operation extends CommonAbstract
             }
             $Data = &$Data[$Segment];
         }
+        $Parts[2] = $this->operate($Data, $Parts[2], $AllowMethodCalls);
         if ($Parts[1] === '=') {
             $Data = $Parts[2];
             return true;
@@ -403,6 +404,13 @@ class Operation extends CommonAbstract
             }
             return false;
         }
+        if ($Parts[1] === '%=') {
+            if (is_numeric($Data) && is_numeric($Parts[2]) && $Parts[2] !== 0) {
+                $Data %= $Parts[2];
+                return true;
+            }
+            return false;
+        }
         if ($Parts[1] === '.=') {
             if (is_scalar($Data) && is_scalar($Parts[2])) {
                 $Data .= $Parts[2];
@@ -410,5 +418,95 @@ class Operation extends CommonAbstract
             }
         }
         return false;
+    }
+
+    /**
+     * Operate on data.
+     *
+     * @param mixed $Source The data source (used for traversing data when anchors are used).
+     * @param mixed $Data The data to operate on (though returns early if not a string).
+     * @param bool $AllowMethodCalls Whether to allow method calls.
+     * @return mixed The result of the operation.
+     */
+    public function operate(&$Source, $Data, bool $AllowMethodCalls = false)
+    {
+        /** Guard. */
+        if (!is_string($Data) || $Data === '') {
+            return $Data;
+        }
+
+        $First = substr($Data, 0, 1);
+        $Last = substr($Data, -1);
+        $Parts = preg_split('~(?<!\\\\)\\{((?:[A-Za-z\d]+\\.?)+)\\}~', $Data, -1, PREG_SPLIT_DELIM_CAPTURE);
+        $NumOfParts = count($Parts);
+        if ($NumOfParts % 2 !== 1) {
+            return false;
+        }
+        if ($NumOfParts > 2) {
+            /** Resolve anchors. */
+            for ($Iter = 0; $Iter < $NumOfParts - 1; $Iter += 2) {
+                $Parts[$Iter + 1] = $this->dataTraverse($Source, $Parts[$Iter + 1], false, $AllowMethodCalls);
+            }
+        }
+        $Parts = implode('', $Parts);
+        if (($First === '"' && $Last === '"') || ($First === '\'' && $Last === '\'')) {
+            return substr($Parts, 1, -1);
+        }
+        if ($Parts === 'true') {
+            return true;
+        }
+        if ($Parts === 'false') {
+            return false;
+        }
+        $PartsBefore = $Parts;
+        $Parts = preg_split('~(?<!\\\\)\\(([^()]+)\\)~', $Parts, -1, PREG_SPLIT_DELIM_CAPTURE);
+        $NumOfParts = count($Parts);
+        if ($NumOfParts > 2) {
+            for ($Iter = 0; $Iter < $NumOfParts - 1; $Iter += 2) {
+                $Parts[$Iter + 1] = $this->operateInner($Parts[$Iter + 1]);
+            }
+        }
+        $Parts = implode('', $Parts);
+        if ($PartsBefore !== $Parts) {
+            $Parts = $this->operate($Source, $Parts, $AllowMethodCalls);
+        }
+        $Parts = $this->operateInner($Parts);
+        if (preg_match('~^-?\d+$~', $Parts)) {
+            return (int)$Parts;
+        }
+        return is_numeric($Parts) ? (float)$Parts : $Parts;
+    }
+
+    /**
+     * Resolve part of an operation.
+     *
+     * @param string $Part The part of the operation being resolved.
+     * @return mixed The result.
+     */
+    public function operateInner(string $Part)
+    {
+        $Part = preg_split('~(?<!^)(?<![-+*/%{}\\\\])(\*\*|[-+*/%])~', $Part, -1, PREG_SPLIT_DELIM_CAPTURE);
+        $Total = array_shift($Part);
+        while (count($Part) > 1) {
+            $Operator = array_shift($Part);
+            $Operand = array_shift($Part);
+            if (!is_numeric($Total) || !is_numeric($Operand)) {
+                break;
+            }
+            if ($Operator === '-') {
+                $Total -= $Operand;
+            } elseif ($Operator === '+') {
+                $Total += $Operand;
+            } elseif ($Operator === '*') {
+                $Total *= $Operand;
+            } elseif ($Operator === '/') {
+                $Total /= $Operand;
+            } elseif ($Operator === '%') {
+                $Total %= $Operand;
+            } elseif ($Operator === '**') {
+                $Total **= $Operand;
+            }
+        }
+        return $Total;
     }
 }

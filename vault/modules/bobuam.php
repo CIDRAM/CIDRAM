@@ -162,6 +162,54 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         }
     }
 
+    /** Fetch Opera user agent token. */
+    if ($Opera = preg_match('%^(?=.*Mozilla\/).*OPR\/(\d+)\.\d+.*$%', $this->BlockInfo['UA'], $rebt)) {
+        $TokenOpera = (int)$rebt[1];
+    } else {
+        $TokenOpera = 0;
+    }
+
+    /** Fetch Chrome/Chromium user agent token. */
+    if (
+        $Chromium = preg_match('%^(?i)(?!.*edg(?:a|e|ios)?\/)(?!.* build\/)(?!.* OPR\/)(?!.* Favicon)(?!.* SamsungBrowser/).*chrom(?:e|ium)\/(\d+)\.\d+.*$%', $this->BlockInfo['UA'], $rebt) ||
+        $Chromium = preg_match('%^(?i)(?=.*android)(?!.* OPR\/)(?!.* Favicon)(?!.* SamsungBrowser/).*chrom(?:e|ium)\/(\d+)\.\d+.*$%', $this->BlockInfo['UA'], $rebt)
+    ) {
+        $TokenChrome = (int)$rebt[1];
+    } else {
+        $TokenChrome = 0;
+    }
+
+    /** Fetch Edge user agent token. */
+    if ($Edge = preg_match('%^(?=.*Mozilla\/)(?i).*Edg(?:a|e|ios)?\/(\d+)\.\d+.*$%', $this->BlockInfo['UA'], $rebt)) {
+        $TokenEdge = (int)$rebt[1];
+    } else {
+        $TokenEdge = 0;
+    }
+
+    /** Fetch Firefox user agent token. */
+    if ($Firefox = preg_match('%(?!.*SeaMonkey).*Firefox\/(\d+)\.\d+%', $this->BlockInfo['UA'], $rebt)) {
+        $TokenFirefox = (int)$rebt[1];
+    } else {
+        $TokenFirefox = 0;
+    }
+
+    /** Fetch Safari user agent token. */
+    if ($Safari = preg_match('%^(?=.*Safari\/)(?!.*(?:(?:Kindle|DuckDuckGo| Build)\/|; wv\\)).*)(?i).*version\/(\d+).*$%', $this->BlockInfo['UA'], $rebt)) {
+        $TokenSafari = (int)$rebt[1];
+    } else {
+        $TokenSafari = 0;
+    }
+
+    /** Fetch Samsung Browser user agent token. */
+    if (
+        $Samsung = preg_match('%^(?=.*Mozilla\/)(?i).* SamsungBrowser\/(\d+)\.\d+.*$%', $this->BlockInfo['UA'], $rebt) ||
+        $Samsung = preg_match('%^(?=.*Mozilla\/)(?=.* SM-[\dA-Za-z]+)(?i).* Version\/(\d+)\.\d+.*$%', $this->BlockInfo['UA'], $rebt)
+    ) {
+        $TokenSamsung = (int)$rebt[1];
+    } else {
+        $TokenSamsung = 0;
+    }
+
     /** Signatures for end of life (EoL) browsers. */
     if ($this->Configuration['bobuam']['block_eol_browsers'] === 'yes') {
         if ($this->Configuration['bobuam']['reason_browser'] === 'bobuam_outdated_long') {
@@ -176,42 +224,34 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             preg_match('%(?:^.*(?<!googlebot\.com|google\.com|search\.msn\.com)$|^.*(?<=proxy))%', $this->CIDRAM['Hostname']) &&
             !(preg_match('%(?:msn|bing)bot|bingpreview|bing\.com%', $this->BlockInfo['UALC']) && ($this->hasProfile('Bypass flagged') || !isset($this->Stages['Tests:Enable'])))
         ) {
-            $EOLOpera = $this->Configuration['bobuam']['opera'] ?: (int)$this->CIDRAM['BOBUAM Token']['Opera'];
-            $EOLChrome = $this->Configuration['bobuam']['chrome'] ?: (int)$this->CIDRAM['BOBUAM Token']['Chrome'];
-            $EOLEdge = $this->Configuration['bobuam']['edge'] ?: (int)$this->CIDRAM['BOBUAM Token']['Edge'];
-            $EOLFirefox = $this->Configuration['bobuam']['firefox'] ?: (int)$this->CIDRAM['BOBUAM Token']['Firefox'];
-            $EOLFirefoxESR = $this->Configuration['bobuam']['firefox_esr'] ?: (int)$this->CIDRAM['BOBUAM Token']['Firefox ESR'];
-            $EOLSafari = $this->Configuration['bobuam']['safari'] ?: (int)$this->CIDRAM['BOBUAM Token']['Safari'];
-            if ($Opera = preg_match('%^(?=.*Mozilla\/).*OPR\/(\d+)\.\d+.*$%', $this->BlockInfo['UA'], $rebt)) {
-                $TokenOpera = (int)$rebt[1];
-                if ($this->trigger(($TokenOpera < $EOLOpera), $Browser[0] . ' (O)', $Browser[1])) {
+            if ($Opera) {
+                $EOLOpera = $this->Configuration['bobuam']['opera'] ?: (int)$this->CIDRAM['BOBUAM Token']['Opera'];
+                if ($this->trigger($TokenOpera < $EOLOpera, $Browser[0] . ' (O)', $Browser[1])) {
                     $this->enactOptions('Opera:', $Options);
                 }
             }
-            if (
-                $Chromium = preg_match('%^(?i)(?!.*edg(?:a|e|ios)?\/)(?!.* build\/)(?!.* OPR\/)(?!.* Favicon).*chrom(?:e|ium)\/(\d+)\.\d+.*$%', $this->BlockInfo['UA'], $rebt) ||
-                $Chromium = preg_match('%^(?i)(?=.*android)(?!.* OPR\/)(?!.* Favicon).*chrom(?:e|ium)\/(\d+)\.\d+.*$%', $this->BlockInfo['UA'], $rebt)
-            ) {
-                $TokenChrome = (int)$rebt[1];
-                if ($this->trigger(($TokenChrome < $EOLChrome), $Browser[0] . ' (C)', $Browser[1])) {
+            if ($Chromium) {
+                $EOLChrome = $this->Configuration['bobuam']['chrome'] ?: (int)$this->CIDRAM['BOBUAM Token']['Chrome'];
+                if ($this->trigger($TokenChrome < $EOLChrome, $Browser[0] . ' (C)', $Browser[1])) {
                     $this->enactOptions('Chrome:', $Options);
                 }
             }
-            if ($Edge = preg_match('%^(?=.*Mozilla\/)(?i).*Edg(?:a|e|ios)?\/(\d+)\.\d+.*$%', $this->BlockInfo['UA'], $rebt)) {
-                $TokenEdge = (int)$rebt[1];
-                if ($this->trigger(($TokenEdge < $EOLEdge), $Browser[0] . ' (E)', $Browser[1])) {
+            if ($Edge) {
+                $EOLEdge = $this->Configuration['bobuam']['edge'] ?: (int)$this->CIDRAM['BOBUAM Token']['Edge'];
+                if ($this->trigger($TokenEdge < $EOLEdge, $Browser[0] . ' (E)', $Browser[1])) {
                     $this->enactOptions('Edge:', $Options);
                 }
             }
-            if ($Firefox = preg_match('%(?!.*SeaMonkey).*Firefox\/(\d+)\.\d+%', $this->BlockInfo['UA'], $rebt)) {
-                $rebt = (int)$rebt[1];
-                if ($this->trigger((($rebt < $EOLFirefox) && ($rebt !== $EOLFirefoxESR)), $Browser[0] . ' (F)', $Browser[1])) {
+            if ($Firefox) {
+                $EOLFirefox = $this->Configuration['bobuam']['firefox'] ?: (int)$this->CIDRAM['BOBUAM Token']['Firefox'];
+                $EOLFirefoxESR = $this->Configuration['bobuam']['firefox_esr'] ?: (int)$this->CIDRAM['BOBUAM Token']['Firefox ESR'];
+                if ($this->trigger((($TokenFirefox < $EOLFirefox) && ($TokenFirefox !== $EOLFirefoxESR)), $Browser[0] . ' (F)', $Browser[1])) {
                     $this->enactOptions('Firefox:', $Options);
                 }
             }
-            if ($Safari = preg_match('%^(?=.*Safari\/)(?!.*(?:(?:Kindle|DuckDuckGo| Build)\/|; wv\\)).*)(?i).*version\/(\d+).*$%', $this->BlockInfo['UA'], $rebt)) {
-                $rebt = (int)$rebt[1];
-                if ($this->trigger(($rebt < $EOLSafari), $Browser[0] . ' (S)', $Browser[1])) {
+            if ($Safari) {
+                $EOLSafari = $this->Configuration['bobuam']['safari'] ?: (int)$this->CIDRAM['BOBUAM Token']['Safari'];
+                if ($this->trigger($TokenSafari < $EOLSafari, $Browser[0] . ' (S)', $Browser[1])) {
                     $this->enactOptions('Safari:', $Options);
                 }
             }
@@ -236,9 +276,6 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     if ($this->Configuration['bobuam']['sanity_check'] === 'yes') {
         $Failed = false;
         if (isset($this->Tokens['Opera'])) {
-            if (!isset($TokenOpera)) {
-                $TokenOpera = 0;
-            }
             $Try = (int)$this->Tokens['Opera'];
             if (
                 $this->trigger($TokenOpera !== $Try, $Masquerade[0] . ' (TMOP)', $Masquerade[1]) ||
@@ -248,9 +285,6 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             }
         }
         if (isset($this->Tokens['Google Chrome'])) {
-            if (!isset($TokenChrome)) {
-                $TokenChrome = 0;
-            }
             $Try = (int)$this->Tokens['Google Chrome'];
             if (
                 $this->trigger($TokenChrome !== $Try, $Masquerade[0] . ' (TMGC)', $Masquerade[1]) ||
@@ -260,13 +294,19 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             }
         }
         if (isset($this->Tokens['Microsoft Edge'])) {
-            if (!isset($TokenEdge)) {
-                $TokenEdge = 0;
-            }
             $Try = (int)$this->Tokens['Microsoft Edge'];
             if (
                 $this->trigger($TokenEdge !== $Try, $Masquerade[0] . ' (TMME)', $Masquerade[1]) ||
                 $this->trigger($Try < 89, $Masquerade[0] . ' (FTME)', $Masquerade[1])
+            ) {
+                $Failed = true;
+            }
+        }
+        if (isset($this->Tokens['Samsung Internet'])) {
+            $Try = (int)$this->Tokens['Samsung Internet'];
+            if (
+                $this->trigger($TokenSamsung !== $Try, $Masquerade[0] . ' (TMSI)', $Masquerade[1]) ||
+                $this->trigger($Try < 23, $Masquerade[0] . ' (FTSI)', $Masquerade[1])
             ) {
                 $Failed = true;
             }

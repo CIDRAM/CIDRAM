@@ -1,15 +1,15 @@
 CIDRAM Core:
  Name: "CIDRAM Core"
- Version: "3.10.0-DEV+252230"
+ Version: "3.10.0"
  Dependencies:
   PHP: "^7.2|^8"
-  CIDRAM Front-End: "Latest"
+  CIDRAM Front-End: "^3.10"
   Common Classes Package: "^2.14.1"
   l10n/core/{lang}: ">=2025.221"
  Changelog: "https://github.com/CIDRAM/CIDRAM/blob/v3/Changelog.md"
  Release Notes For: ["3.6.0", "3.7.0", "3.8.0", "3.8.1", "3.9.0", "3.9.1", "3.10.0"]
  When Update Succeeds:
-  - "wpVer 4.8 6.8.2 3.9.1 7.2"
+  - "wpVer 4.8 6.8.2 3.10.0 7.2"
   - "foreach {Components.RemoteMeta.CIDRAM Core.Release Notes For} as Key => Value if {Components.Meta.CIDRAM Core.Version}<{Value}&&{Components.RemoteMeta.CIDRAM Core.Version}>={Value} then queue message response.release_notes https://github.com/CIDRAM/CIDRAM/releases/tag/v{Value} CIDRAM v{Value}"
  Uninstallable: false
  Files:
@@ -63,10 +63,10 @@ CIDRAM Core:
    Checksum: "965037ecb1ca69fa0318469f4f01c0f1e06f6758a10622826fb4e3d00b9bea81:11943"
 CIDRAM Front-End:
  Name: "CIDRAM Front-End"
- Version: "3.10.0-DEV+252240"
+ Version: "3.10.0"
  Dependencies:
   PHP: "^7.2|^8"
-  CIDRAM Core: "Latest"
+  CIDRAM Core: "^3.10"
   Common Classes Package: "^2.14.1"
   l10n/core/{lang}: ">=2025.221"
   l10n/frontend/{lang}: ">=2025.217"

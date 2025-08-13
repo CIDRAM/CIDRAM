@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2025.08.10).
+ * This file: Optional security extras module (last modified: 2025.08.13).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -123,7 +123,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
                 'l(?:ock0?360|eaf_mailer|eaf_php|ufix(?:-shell)?|uuf)|' .
                 'm(?:akeasmtp|iin|oduless|u-plugins/db-safe-mode|y1)|' .
                 'njima|' .
-                'o(?:ld(?:/wp-admin/install|-up-ova)|rvx(?:-shell)?|thiondwmek)|' .
+                'o(?:ld(?:/wp-admin/install|-up-ova)|va-uname|rvx(?:-shell)?|thiondwmek)|' .
                 'p(?:erl\.alfa|hp(?:1|_niu_\d+)|huploader|lugins/(?:backup_index|vwcleanerplugin/bump|zedd/\d+)|oison|rayer_intentions|riv8|wnd|zaiihfi)|' .
                 'qxuho|' .
                 'r(?:andkeyword|endixd)|' .
@@ -143,7 +143,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
                 ')\.php[578]?(?:$|[/?])|' .
                 'funs\.php[578]?(?:$|[/?])~',
                 $LCNrURI
-            ), 'Probing for webshells/backdoors') || // 2023.08.18 mod 2025.08.10
+            ), 'Probing for webshells/backdoors') || // 2023.08.18 mod 2025.08.11
             $this->trigger(preg_match('~(?:^|[/?])(?:brutalshell|css/dmtixucz/golden-access|fierzashell\.html?|perl.alfa|search/label/php-shells|wp-ksv1i\.ph)(?:$|[/?])~', $LCNrURI), 'Probing for webshells/backdoors') || // 2025.05.12 mod 2025.08.07
             $this->trigger(preg_match('~(?:^|[/?])(?:moon\.php|ss\.php)\?(?:f_c|p)=~', $LCNrURI), 'Probing for webshells/backdoors') // 2025.08.07
         ) {
@@ -348,9 +348,89 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         } // 2025.08.07
 
         /** Probing for exposed SQLite databases. */
-        if ($this->trigger(preg_match('~(?:^|[/?])database\.sqlite(?:$|[/?])~', $LCNrURI), 'Probing for exposed SQLite databases')) {
+        if ($this->trigger(preg_match('~(?:^|[/?])\.?database\.sqlite(?:$|[/?])~', $LCNrURI), 'Probing for exposed SQLite databases')) {
             $this->Reporter->report([15, 21], ['Caught probing for exposed SQLite databases.'], $this->BlockInfo['IPAddr']);
-        } // 2025.08.07
+        } // 2025.08.07 mod 2025.08.13
+
+        /** Probing for exposed Yarn configuration file. */
+        if ($this->trigger(preg_match('~(?:^|[/?])\.?yarnrc(?:$|[/?])~', $LCNrURI), 'Probing for exposed Yarn configuration file')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed Yarn configuration file.'], $this->BlockInfo['IPAddr']);
+        } // 2025.08.13
+
+        /** Probing for exposed Yarn lock file. */
+        if ($this->trigger(preg_match('~(?:^|[/?])yarn\.lock(?:$|[/?])~', $LCNrURI), 'Probing for exposed Yarn lock file')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed Yarn lock file.'], $this->BlockInfo['IPAddr']);
+        } // 2025.08.13
+
+        /** Probing for exposed NPM configuration file. */
+        if ($this->trigger(preg_match('~(?:^|[/?])\.?npmrc(?:$|[/?])~', $LCNrURI), 'Probing for exposed NPM configuration file')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed NPM configuration file.'], $this->BlockInfo['IPAddr']);
+        } // 2025.08.13
+
+        /** Probing for exposed Composer configuration file. */
+        if ($this->trigger(preg_match('~(?:^|[/?])composer\.json(?:$|[/?])~', $LCNrURI), 'Probing for exposed Composer configuration file')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed Composer configuration file.'], $this->BlockInfo['IPAddr']);
+        } // 2025.08.13
+
+        /** Probing for exposed Composer lock file. */
+        if ($this->trigger(preg_match('~(?:^|[/?])composer\.lock(?:$|[/?])~', $LCNrURI), 'Probing for exposed Composer lock file')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed Composer lock file.'], $this->BlockInfo['IPAddr']);
+        } // 2025.08.13
+
+        /** Probing for exposed Composer OAuth keys. */
+        if ($this->trigger(preg_match('~(?:^|[/?])\.?co(?:mposer/auth\.json|nfig/composer)(?:$|[/?])~', $LCNrURI), 'Probing for exposed Composer OAuth keys')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed Composer OAuth keys.'], $this->BlockInfo['IPAddr']);
+        } // 2025.08.13
+
+        /** Probing for exposed Bundler/Ruby lock file. */
+        if ($this->trigger(preg_match('~(?:^|[/?])gemfile\.lock(?:$|[/?])~', $LCNrURI), 'Probing for exposed Bundler/Ruby lock file')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed Bundler/Ruby lock file.'], $this->BlockInfo['IPAddr']);
+        } // 2025.08.13
+
+        /** Probing for exposed Pipenv/Python lock file. */
+        if ($this->trigger(preg_match('~(?:^|[/?])pipfile\.lock(?:$|[/?])~', $LCNrURI), 'Probing for exposed Pipenv/Python lock file')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed Pipenv/Python lock file.'], $this->BlockInfo['IPAddr']);
+        } // 2025.08.13
+
+        /** Probing for exposed Eclipse configuration file. */
+        if ($this->trigger(preg_match('~(?:^|[/?])\.settings(?:$|[/?])~', $LCNrURI), 'Probing for exposed Eclipse configuration file')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed Eclipse configuration file.'], $this->BlockInfo['IPAddr']);
+        } // 2025.08.13
+
+        /** Probing for exposed Docker image. */
+        if ($this->trigger(preg_match('~(?:^|[/?])\.?dockerfile(?:$|[/?])~', $LCNrURI), 'Probing for exposed Docker image')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed Docker image.'], $this->BlockInfo['IPAddr']);
+        } // 2025.08.13
+
+        /** Probing for exposed Gradle configuration file. */
+        if ($this->trigger(preg_match('~(?:^|[/?])build\.gradle(?:$|[/?])~', $LCNrURI), 'Probing for exposed Gradle configuration file')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed Gradle configuration file.'], $this->BlockInfo['IPAddr']);
+        } // 2025.08.13
+
+        /** Probing for exposed PHP configuration file. */
+        if ($this->trigger(preg_match('~(?:^|[/?])php\d?\.ini(?:$|[/?])~', $LCNrURI), 'Probing for exposed PHP configuration file')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed PHP configuration file.'], $this->BlockInfo['IPAddr']);
+        } // 2025.08.13
+
+        /** Probing for exposed Laravel/OpenCart error logs. */
+        if ($this->trigger(preg_match('~(?:^|[/?])storage/logs/error\.log(?:$|[/?])~', $LCNrURI), 'Probing for exposed Laravel/OpenCart error logs')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed Laravel/OpenCart error logs.'], $this->BlockInfo['IPAddr']);
+        } // 2025.08.13
+
+        /** Probing for exposed Apache logs. */
+        if ($this->trigger(preg_match('~(?:^|[/?])var/log/httpd(?:$|[/?])~', $LCNrURI), 'Probing for exposed Apache logs')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed Apache logs.'], $this->BlockInfo['IPAddr']);
+        } // 2025.08.13
+
+        /** Probing for exposed Nginx logs. */
+        if ($this->trigger(preg_match('~(?:^|[/?])var/log/nginx(?:$|[/?])~', $LCNrURI), 'Probing for exposed Nginx logs')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed Nginx logs.'], $this->BlockInfo['IPAddr']);
+        } // 2025.08.13
+
+        /** Probing for exposed error logs. */
+        if ($this->trigger(preg_match('~(?:^|[/?])(?:tmp/errors[._]log|php_error_log)(?:$|[/?])~', $LCNrURI), 'Probing for exposed error logs')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed error logs.'], $this->BlockInfo['IPAddr']);
+        } // 2025.08.13
     }
 
     /**

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protocol blocker module (last modified: 2025.08.06).
+ * This file: Protocol blocker module (last modified: 2025.08.11).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -51,7 +51,9 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     $Long = $this->L10N->getString($this->Configuration['protocol']['reason_message']) ?: $this->Configuration['protocol']['reason_message'] ?: $this->L10N->getString('denied');
 
     if ($Protocol === 'HTTP') {
-        /** See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Evolution_of_HTTP */
+        /**
+         * @link https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Evolution_of_HTTP
+         */
         if ($this->trigger((
             (isset($this->CIDRAM['ProtocolBlocker']['blocked']['HTTP/0.9']) && $Major === 0 && $Minor === 9) ||
             (isset($this->CIDRAM['ProtocolBlocker']['blocked']['HTTP/0.x']) && $Major === 0 && $Minor !== 9) ||
@@ -84,7 +86,9 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $Hit = true;
         }
     } elseif ($Protocol === 'IRC') {
-        /** See: https://tools.ietf.org/html/rfc7230 */
+        /**
+         * @link https://tools.ietf.org/html/rfc7230
+         */
         if ($this->trigger((
             (isset($this->CIDRAM['ProtocolBlocker']['blocked']['IRC/6.9']) && $Major === 6 && $Minor === 9) ||
             (isset($this->CIDRAM['ProtocolBlocker']['blocked']['IRC/x.x']) && !($Major === 6 && $Minor === 9))

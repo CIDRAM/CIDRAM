@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bad hosts blocker module (last modified: 2025.07.27).
+ * This file: Bad hosts blocker module (last modified: 2025.08.11).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -91,7 +91,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     ), 'Questionable Host'); // 2017.01.30 mod 2025.07.27
 
     if ($this->trigger(preg_match('~anchorfree|hotspotsheild|esonicspider\.com$~', $HN), 'Hostile/esonicspider')) {
-        $this->Reporter->report([21], ['esonicspider detected at this address.'], $this->BlockInfo['IPAddr']);
+        $this->Reporter->report([19, 21], ['esonicspider detected at this address.'], $this->BlockInfo['IPAddr']);
     } // 2018.09.15
 
     $this->trigger(preg_match('~brandaffinity~', $HN), 'Hostile/SLAPP'); // 2018.09.15
@@ -108,27 +108,21 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
     $this->trigger(preg_match('~shadowserver\.org$~', $HN), 'Regular unauthorised proxy tunnel attempts'); // 2023.09.15
 
-    $this->trigger(preg_match(
-        '~(?:iweb|privatedns)\.com$|iweb\.ca$|^(?:www\.)?iweb~',
-        $HN
-    ), 'Domain Snipers'); // 2017.02.15 mod 2021.06.28
+    $this->trigger(preg_match('~(?:iweb|privatedns)\.com$|iweb\.ca$|^(?:www\.)?iweb~', $HN), 'Domain Snipers'); // 2017.02.15 mod 2021.06.28
 
     $this->trigger(preg_match('~amazonaws\.com$~', $HN) && (
-        !preg_match(
-            '~alexa|postrank|twitt(?:urly|erfeed)|bitlybot|unwindfetchor|met' .
-            'auri|pinterest|slack|silk-accelerated=true$~',
-            $UANoSpace
-        ) &&
-        !preg_match(
-            '~(?:Feedspot http://www\.feedspot\.com|developers\.snap\.com/robots)$~',
-            $this->BlockInfo['UA']
-        )
+        !preg_match('~alexa|postrank|twitt(?:urly|erfeed)|bitlybot|unwindfetchor|metauri|pinterest|slack|silk-accelerated=true$~', $UANoSpace) &&
+        !preg_match('~(?:Feedspot http://www\.feedspot\.com|developers\.snap\.com/robots)$~', $this->BlockInfo['UA'])
     ), 'Amazon Web Services'); // 2023.02.28
 
     $this->trigger(preg_match('/\.local$/', $HN), 'Spoofed/Fake Hostname'); // 2017.02.06
 
-    // See: https://zb-block.net/zbf/showthread.php?t=25
+    /**
+     * @link https://zb-block.net/zbf/showthread.php?t=25
+     */
     $this->trigger(preg_match('/shodan\.io|(?:serverprofi24|aspadmin|project25499)\./', $HN), 'AutoSploit Host'); // 2018.02.02 mod 2021.02.07
+
+    $this->trigger(preg_match('~\.cypex\.ai$~', $HN), 'Unauthorised security scanner'); // 2025.08.11
 
     /** These signatures can set extended tracking options. */
     if (

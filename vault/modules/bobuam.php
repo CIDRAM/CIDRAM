@@ -22,7 +22,7 @@
  * William "Bill" Minozzi.
  * @link https://www.stopbadbots.com/
  *
- * This file: Bot Or Browser User Agent Module (last modified: 2025.07.27).
+ * This file: Bot Or Browser User Agent Module (last modified: 2025.08.13).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -235,21 +235,39 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
      */
     if ($this->Configuration['bobuam']['sanity_check'] === 'yes') {
         $Failed = false;
-        if (isset($TokenOpera, $this->Tokens['Opera'])) {
+        if (isset($this->Tokens['Opera'])) {
+            if (!isset($TokenOpera)) {
+                $TokenOpera = 0;
+            }
             $Try = (int)$this->Tokens['Opera'];
-            if ($this->trigger($TokenOpera !== $Try, $Masquerade[0] . ' (TMOP)', $Masquerade[1])) {
+            if (
+                $this->trigger($TokenOpera !== $Try, $Masquerade[0] . ' (TMOP)', $Masquerade[1]) ||
+                $this->trigger($Try < 63, $Masquerade[0] . ' (FTOP)', $Masquerade[1])
+            ) {
                 $Failed = true;
             }
         }
-        if (isset($TokenChrome, $this->Tokens['Google Chrome'])) {
+        if (isset($this->Tokens['Google Chrome'])) {
+            if (!isset($TokenChrome)) {
+                $TokenChrome = 0;
+            }
             $Try = (int)$this->Tokens['Google Chrome'];
-            if ($this->trigger($TokenChrome !== $Try, $Masquerade[0] . ' (TMGC)', $Masquerade[1])) {
+            if (
+                $this->trigger($TokenChrome !== $Try, $Masquerade[0] . ' (TMGC)', $Masquerade[1]) ||
+                $this->trigger($Try < 89, $Masquerade[0] . ' (FTGC)', $Masquerade[1])
+            ) {
                 $Failed = true;
             }
         }
-        if (isset($TokenEdge, $this->Tokens['Microsoft Edge'])) {
+        if (isset($this->Tokens['Microsoft Edge'])) {
+            if (!isset($TokenEdge)) {
+                $TokenEdge = 0;
+            }
             $Try = (int)$this->Tokens['Microsoft Edge'];
-            if ($this->trigger($TokenEdge !== $Try, $Masquerade[0] . ' (TMME)', $Masquerade[1])) {
+            if (
+                $this->trigger($TokenEdge !== $Try, $Masquerade[0] . ' (TMME)', $Masquerade[1]) ||
+                $this->trigger($Try < 89, $Masquerade[0] . ' (FTME)', $Masquerade[1])
+            ) {
                 $Failed = true;
             }
         }

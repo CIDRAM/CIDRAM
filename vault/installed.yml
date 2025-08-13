@@ -1349,14 +1349,14 @@ AbuseIPDB module:
    Checksum: "fe196091ff545d335c1b494fc5a3f628325e4750ccebb74e6401c54cc60a87e1:10807"
 Bad hosts blocker module:
  False Positive Risk: "Medium"
- Version: "2025.208.0"
+ Version: "2025.224.0"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "^3"
  Files:
   modules/badhosts.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/badhosts.php"
-   Checksum: "dfb987b28214165a7ca0f77fc4b7d1f18b99f59eeb44f3c92125795580382a44:8736"
+   Checksum: "2b57a4ab268592074f0255910eb36ad1029ae3212130e62c424903fcab90ef60:8753"
    Used with: "modules"
 Bad TLDs blocker module:
  False Positive Risk: "Low"
@@ -1452,7 +1452,7 @@ IP-API module:
    Used with: "modules"
 Optional security extras module:
  False Positive Risk: "Medium"
- Version: "2025.221.0"
+ Version: "2025.224.0"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "^3"
@@ -1468,7 +1468,7 @@ Optional security extras module:
    Used with: "imports"
   modules/extras.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/extras.php"
-   Checksum: "859bfefcee829a3cf20d2c0eb636a1dc56f951c6a148fe49f0d076e0fd0577fb:44708"
+   Checksum: "73f400aa40458294303ccd3e8af5e1796a02387b6e630c3a2405731facb6e501:50288"
    Used with: "modules"
 Project Honeypot module:
  False Positive Risk: "Medium"
@@ -1493,7 +1493,7 @@ Project Honeypot module:
    Used with: "modules"
 Protocol blocker module:
  False Positive Risk: "Low"
- Version: "2025.217.0"
+ Version: "2025.224.0"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "^3"
@@ -1506,7 +1506,7 @@ Protocol blocker module:
    Used with: "imports"
   modules/protocol.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/protocol.php"
-   Checksum: "26393a820b3a36af82b31a4e7a4a713ca93aa0650d6e044e65ea76ec77b22551:5887"
+   Checksum: "b8b8af322e09bf8e5482ef54245c4e1f0fa6f9b77b8bfadf0ade246604e9e65f:5929"
    Used with: "modules"
 Stop Forum Spam module:
  False Positive Risk: "Low"
@@ -1569,7 +1569,7 @@ BOBUAM:
   Optional module which detects unwanted bots, old browsers, and performs some sanity checks.<br />Contains some data from
   the Wordpress plugin "Stop Bad Bots" by William "Bill" Minozzi.<br />(A few webservices bots might need bypasses).
  False Positive Risk: "Medium"
- Version: "2025.217.0"
+ Version: "2025.224.0"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "^3.7"
@@ -1586,7 +1586,7 @@ BOBUAM:
    Used with: "imports"
   modules/bobuam.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/bobuam.php"
-   Checksum: "6fdd91b0d7586b550404308a29de0369c4b26139e2333f2e32116dccd11e06ae:46799"
+   Checksum: "b365deb3e4a68384add7c6f164a7ba1988b30e88c125e20ce2862bcaea5942c5:47375"
    Used with: "modules"
 theme/bluemetal:
  Name: "Theme: Blue Metal"

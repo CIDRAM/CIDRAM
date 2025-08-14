@@ -125,7 +125,6 @@ checkbox:
  Should this field appear in log entries: "Trường này có nên xuất hiện trong các mục nhập nhật ký không?"
  Should this field appear on the access denied page: "Trường này có nên xuất hiện trên trang "truy cập đã bị từ chối" không?"
  Suppress hCaptcha: "Đàn áp hCaptcha"
- Suppress reCAPTCHA: "Đàn áp reCAPTCHA"
  Test as sensitive request: "Kiểm tra theo yêu cầu nhạy cảm"
  Untrack positives: "Ngừng giám sát các tích cực?"
  When blocked, suppress output template: "Khi bị chặn, đàn áp mẫu đầu ra."
@@ -282,19 +281,6 @@ config:
  rate_limiting_precision_ipv4: "Độ chính xác để sử dụng khi giám sát việc sử dụng IPv4. Giá trị phản ánh kích thước khối CIDR. Đặt thành 32 để có độ chính xác cao nhất. Mặc định = 32."
  rate_limiting_precision_ipv6: "Độ chính xác để sử dụng khi giám sát việc sử dụng IPv6. Giá trị phản ánh kích thước khối CIDR. Đặt thành 128 để có độ chính xác cao nhất. Mặc định = 128."
  rate_limiting_segregate: "Hạn ngạch cho miền và máy chủ lưu trữ nên được tách biệt hoặc chia sẻ? True = Hạn ngạch sẽ được tách biệt. False = Hạn ngạch sẽ được chia sẻ [Mặc định]."
- recaptcha: "Cấu hình cho reCAPTCHA (cung cấp một cách để con người lấy lại quyền truy cập khi bị chặn)."
- recaptcha_api: *CaptchaAPI
- recaptcha_expiry: *CaptchaExpiry
- recaptcha_lockip: *CaptchaLockIP
- recaptcha_lockuser: *CaptchaLockUser
- recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
- recaptcha_recaptcha_log: *CaptchaLogFile
- recaptcha_secret: *CaptchaDashboard
- recaptcha_show_api_message: *ShowAPIMessage
- recaptcha_show_cookie_warning: *ShowCookieWarning
- recaptcha_signature_limit: *CaptchaSignatureLimit
- recaptcha_sitekey: *CaptchaDashboard
- recaptcha_usemode: *CaptchaUseMode
  sfs: "Cấu hình cho mô-đun Stop Forum Spam."
  signatures: "Cấu hình cho chữ ký, tập tin chữ ký, mô-đun, vv."
  signatures_conflict_response: "Khi có quá nhiều lần thử truy cập cùng một tài nguyên cùng lúc (v.d., yêu cầu đồng thời tới nhiều quy trình PHP trên cùng một máy cho cùng một tài nguyên), một số lần thử đó có thể không thành công. Trong trường hợp hiếm hoi và không chắc xảy ra khi điều này ảnh hưởng đến các tập tin chữ ký hay mô-đun, CIDRAM có thể không đưa ra được quyết định hiệu quả về yêu cầu. Nếu điều này xảy ra, yêu cầu có nên bị chặn không, và CIDRAM nên gửi tin nhắn trạng thái HTTP nào?"
@@ -701,13 +687,11 @@ label:
   Enforce extended IP tracking options: "Thực thi các tùy chọn giám sát IP mở rộng"
   Forcibly disable hCaptcha: "Vô hiệu hóa hCaptcha bằng cưỡng bức"
   Forcibly disable IP tracking: "Vô hiệu hóa giám sát IP bằng cưỡng bức"
-  Forcibly disable reCAPTCHA: "Vô hiệu hóa reCAPTCHA bằng cưỡng bức"
   Forcibly enable IP tracking: "Kích hoạt giám sát IP bằng cưỡng bức"
   HTTP status code override: "Ghi đè mã trạng thái HTTP:"
   If the following conditions are met, %s: "Nếu các điều kiện sau được đáp ứng, %s."
   Leave it as is (don_t set anything): "Để nguyên như vậy (không đặt bất cứ thứ gì)"
   Mark for use with hCaptcha: "Đánh dấu để sử dụng với hCaptcha"
-  Mark for use with reCAPTCHA: "Đánh dấu để sử dụng với reCAPTCHA"
   Modify rule: "Sửa đổi quy tắc"
   Move down: "Đi xuống"
   Move to the bottom: "Di chuyển quy tắc xuống dưới cùng"

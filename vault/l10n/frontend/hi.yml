@@ -125,7 +125,6 @@ checkbox:
  Should this field appear in log entries: "क्या यह फ़ील्ड लॉग प्रविष्टियों में दिखाई देनी चाहिए?"
  Should this field appear on the access denied page: "क्या यह फ़ील्ड "पहुंच अस्वीकृत" पृष्ठ पर दिखाई देनी चाहिए?"
  Suppress hCaptcha: "HCaptcha का दमन"
- Suppress reCAPTCHA: "ReCAPTCHA का दमन"
  Test as sensitive request: "संवेदनशील अनुरोध के रूप में परीक्षण करें"
  Untrack positives: "सकारात्मक अनट्रैक करें?"
  When blocked, suppress output template: "अवरुद्ध होने पर, आउटपुट टेम्पलेट का दमन।"
@@ -282,19 +281,6 @@ config:
  rate_limiting_precision_ipv4: "IPv4 उपयोग को ट्रैक करने के लिए उपयोग करने की सटीकता। मूल्य दर्पण CIDR ब्लॉक आकार। सर्वोत्तम परिशुद्धता के लिए 32 पर सेट करें। डिफ़ॉल्ट = "32"।"
  rate_limiting_precision_ipv6: "IPv6 उपयोग को ट्रैक करने के लिए उपयोग करने की सटीकता। मूल्य दर्पण CIDR ब्लॉक आकार। सर्वोत्तम परिशुद्धता के लिए 128 पर सेट करें। डिफ़ॉल्ट = "128"।"
  rate_limiting_segregate: "डोमेन और होस्ट के लिए कोटा अलग या साझा किया जाना चाहिए? True = कोटा अलग किया जाएगा। False = कोटा साझा किया जाएगा [डिफ़ॉल्ट]।"
- recaptcha: "ReCAPTCHA के लिए कॉन्फ़िगरेशन (अवरुद्ध होने पर मनुष्यों को पुनः प्राप्त करने का एक तरीका प्रदान करता है)।"
- recaptcha_api: *CaptchaAPI
- recaptcha_expiry: *CaptchaExpiry
- recaptcha_lockip: *CaptchaLockIP
- recaptcha_lockuser: *CaptchaLockUser
- recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
- recaptcha_recaptcha_log: *CaptchaLogFile
- recaptcha_secret: *CaptchaDashboard
- recaptcha_show_api_message: *ShowAPIMessage
- recaptcha_show_cookie_warning: *ShowCookieWarning
- recaptcha_signature_limit: *CaptchaSignatureLimit
- recaptcha_sitekey: *CaptchaDashboard
- recaptcha_usemode: *CaptchaUseMode
  sfs: "Stop Forum Spam मॉड्यूल के लिए कॉन्फ़िगरेशन।"
  signatures: "हस्ताक्षर, हस्ताक्षर फाइलें, मॉड्यूल, आदि के लिए कॉन्फ़िगरेशन।"
  signatures_conflict_response: "जब समान संसाधनों तक पहुंचने के लिए एक साथ कई प्रयास किए जाते हैं (उदाहरण के लिए, समान संसाधनों के लिए एक ही मशीन पर एकाधिक PHP प्रक्रियाओं के लिए एक साथ अनुरोध), तो उनमें से कुछ प्रयास विफल हो सकते हैं। दुर्लभ एवं असंभावित घटना में यदि इससे हस्ताक्षर फाइलें या मॉड्यूल प्रभावित होते हैं, तो CIDRAM को अनुरोध के बारे में प्रभावी निर्धारण करने से रोका जा सकता है। यदि ऐसा होता है, तो क्या अनुरोध को अवरुद्ध कर दिया जाना चाहिए, और CIDRAM को कौन सा HTTP स्थिति संदेश भेजना चाहिए?"
@@ -708,13 +694,11 @@ label:
   Enforce extended IP tracking options: "विस्तारित IP ट्रैकिंग विकल्प लागू करें"
   Forcibly disable hCaptcha: "HCaptcha को जबरन अक्षम करें"
   Forcibly disable IP tracking: "IP ट्रैकिंग को जबरन अक्षम करें"
-  Forcibly disable reCAPTCHA: "reCAPTCHA को जबरन अक्षम करें"
   Forcibly enable IP tracking: "IP ट्रैकिंग को जबरन सक्षम करें"
   HTTP status code override: "HTTP स्थिति कोड ओवरराइड:"
   If the following conditions are met, %s: "यदि निम्नलिखित शर्तें पूरी होती हैं, तो %s।"
   Leave it as is (don_t set anything): "इसे छोड़ दो (कुछ भी सेट मत करो)"
   Mark for use with hCaptcha: "HCaptcha के साथ उपयोग के लिए निशान"
-  Mark for use with reCAPTCHA: "reCAPTCHA के साथ उपयोग के लिए निशान"
   Modify rule: "नियम को संशोधित करें"
   Move down: "नीचे जाओ"
   Move to the bottom: "नियम को नीचे पर ले जाएं"

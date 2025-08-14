@@ -125,7 +125,6 @@ checkbox:
  Should this field appear in log entries: "האם שדה זה צריך להופיע בערכים ביומן?"
  Should this field appear on the access denied page: "האם שדה זה צריך להופיע בדף "גישה נדחתה"?"
  Suppress hCaptcha: "דיכוי hCaptcha"
- Suppress reCAPTCHA: "דיכוי reCAPTCHA"
  Test as sensitive request: "בדוק כבקשה רגישה"
  Untrack positives: "לבטל מעקב חיוביים?"
  When blocked, suppress output template: "כאשר חסום, דחק את תבנית הפלט."
@@ -282,19 +281,6 @@ config:
  rate_limiting_precision_ipv4: "הדיוק לשימוש למעקב אחר השימוש ב-IPv4. ערך משקף את גודל בלוק CIDR. הגדר ל-32 לדיוק הטוב ביותר. סטנדרטי = 32."
  rate_limiting_precision_ipv6: "הדיוק לשימוש למעקב אחר השימוש ב-IPv6. ערך משקף את גודל בלוק CIDR. הגדר ל-128 לדיוק הטוב ביותר. סטנדרטי = 128."
  rate_limiting_segregate: "האם יש להפריד או לחלוק מכסות עבור דומיינים ומארחים שונים? True = המכסות יופרדו. False = המכסות יחולקו [סטנדרטי]."
- recaptcha: "תצורה עבור reCAPTCHA (מספק דרך לבני אדם לקבל חזרה גישה כשהם חסומים)."
- recaptcha_api: *CaptchaAPI
- recaptcha_expiry: *CaptchaExpiry
- recaptcha_lockip: *CaptchaLockIP
- recaptcha_lockuser: *CaptchaLockUser
- recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
- recaptcha_recaptcha_log: *CaptchaLogFile
- recaptcha_secret: *CaptchaDashboard
- recaptcha_show_api_message: *ShowAPIMessage
- recaptcha_show_cookie_warning: *ShowCookieWarning
- recaptcha_signature_limit: *CaptchaSignatureLimit
- recaptcha_sitekey: *CaptchaDashboard
- recaptcha_usemode: *CaptchaUseMode
  sfs: "תצורה עבור מודול Stop Forum Spam."
  signatures: "תצורה של חתימות, קבצי חתימה, מודולים, וכו'."
  signatures_conflict_response: "כאשר יש יותר מדי ניסיונות בו-זמנית לגשת לאותם משאבים (למשל, בקשות בו-זמנית למספר תהליכי PHP באותו מחשב עבור אותם משאבים), חלק מהניסיונות הללו עלולים להיכשל. במקרה הנדיר והבלתי סביר שהדבר משפיע על קובצי חתימה או מודולים, ייתכן ש-CIDRAM יימנע מלקבל קביעה יעילה לגבי הבקשה. אם זה קורה, האם צריך לחסום את הבקשה, ואיזו הודעת מצב HTTP צריך לשלוח CIDRAM?"
@@ -703,13 +689,11 @@ label:
   Enforce extended IP tracking options: "לאכוף אפשרויות מעקב IP מורחבות"
   Forcibly disable hCaptcha: "להשבית בכוח hCaptcha"
   Forcibly disable IP tracking: "להשבית בכוח מעקב IP"
-  Forcibly disable reCAPTCHA: "להשבית בכוח reCAPTCHA"
   Forcibly enable IP tracking: "לאפשר בכוח מעקב IP"
   HTTP status code override: "עקיפה של קוד סטטוס HTTP:"
   If the following conditions are met, %s: "אם מתקיימים התנאים הבאים, %s."
   Leave it as is (don_t set anything): "השאר את זה כמו שהוא (אל תגדיר כלום)"
   Mark for use with hCaptcha: "לסמן לשימוש עם hCaptcha"
-  Mark for use with reCAPTCHA: "לסמן לשימוש עם reCAPTCHA"
   Modify rule: "שנה כלל"
   Move down: "לזוז לרדת"
   Move to the bottom: "לזוז לתחתית"

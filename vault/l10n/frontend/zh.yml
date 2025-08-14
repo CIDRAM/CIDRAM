@@ -133,7 +133,6 @@ checkbox:
  Should this field appear in log entries: {"zh-Hans": "该字段是否应该出现在日志条目中？", "zh-Hant": "該字段是否應該出現在日誌條目中？"}
  Should this field appear on the access denied page: {"zh-Hans": "该字段是否应该出现在“拒绝访问”页面上？", "zh-Hant": "該字段是否應該出現在『拒絕訪問』頁面上？"}
  Suppress hCaptcha: "禁止hCaptcha"
- Suppress reCAPTCHA: "禁止reCAPTCHA"
  Test as sensitive request: {"zh-Hans": "作为敏感请求进行测试", "zh-Hant": "作為敏感請求進行測試"}
  Untrack positives: {"zh-Hans": "取消跟踪阳性？", "zh-Hant": "取消跟踪陽性？"}
  When blocked, suppress output template: {"zh-Hans": "被阻止时，禁止输出模板。", "zh-Hant": "被阻止時，禁止輸出模板。"}
@@ -316,19 +315,6 @@ config:
  rate_limiting_precision_ipv4: {"zh-Hans": "监视IPv4使用时的精度。​值镜像CIDR块大小。​设置为32以获得最佳精度。​标准=32。", "zh-Hant": "監視IPv4使用時的精度。​值鏡像CIDR塊大小。​設置為32以獲得最佳精度。​標準=32。"}
  rate_limiting_precision_ipv6: {"zh-Hans": "监视IPv6使用时的精度。​值镜像CIDR块大小。​设置为128以获得最佳精度。​标准=128。", "zh-Hant": "監視IPv6使用時的精度。​值鏡像CIDR塊大小。​設置為128以獲得最佳精度。​標準=128。"}
  rate_limiting_segregate: {"zh-Hans": "域名和主机的配额应该分开还是共享？ True = 配额将被分开。 False = 配额将被共享【标准】。", "zh-Hant": "域名和主機的配額應該分開還是共享？ True = 配額將被分開。 False = 配額將被共享【標準】。"}
- recaptcha: {"zh-Hans": "ReCAPTCHA的配置（为人们提供了一种在受阻时重新获得访问权限的方法）。", "zh-Hant": "ReCAPTCHA的配置（為人們提供了一種在受阻時重新獲得訪問權限的方法）。"}
- recaptcha_api: *CaptchaAPI
- recaptcha_expiry: *CaptchaExpiry
- recaptcha_lockip: *CaptchaLockIP
- recaptcha_lockuser: *CaptchaLockUser
- recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
- recaptcha_recaptcha_log: *CaptchaLogFile
- recaptcha_secret: *CaptchaDashboard
- recaptcha_show_api_message: *ShowAPIMessage
- recaptcha_show_cookie_warning: *ShowCookieWarning
- recaptcha_signature_limit: *CaptchaSignatureLimit
- recaptcha_sitekey: *CaptchaDashboard
- recaptcha_usemode: *CaptchaUseMode
  sfs: {"zh-Hans": "Stop Forum Spam模块的配置。", "zh-Hant": "Stop Forum Spam模組的配置。"}
  signatures: {"zh-Hans": "签名，签名文件，模块，等的配置。", "zh-Hant": "簽名，簽名文件，模組，等的配置。"}
  signatures_conflict_response:
@@ -844,13 +830,11 @@ label:
   Enforce extended IP tracking options: {"zh-Hans": "实施扩展的IP跟踪选项", "zh-Hant": "實施擴展的IP跟踪選項"}
   Forcibly disable hCaptcha: {"zh-Hans": "强制禁用hCaptcha", "zh-Hant": "強制禁用hCaptcha"}
   Forcibly disable IP tracking: {"zh-Hans": "强制禁用IP跟踪", "zh-Hant": "強制禁用IP跟踪"}
-  Forcibly disable reCAPTCHA: {"zh-Hans": "强制禁用reCAPTCHA", "zh-Hant": "強制禁用reCAPTCHA"}
   Forcibly enable IP tracking: {"zh-Hans": "强制启用IP跟踪", "zh-Hant": "強制啟用IP跟踪"}
   HTTP status code override: {"zh-Hans": "HTTP状态代码覆盖：", "zh-Hant": "HTTP狀態代碼覆蓋："}
   If the following conditions are met, %s: {"zh-Hans": "如果满足以下条件，%s。", "zh-Hant": "如果滿足以下條件，%s。"}
   Leave it as is (don_t set anything): {"zh-Hans": "保持原样（不设置任何内容）", "zh-Hant": "保持原樣（不設置任何內容）"}
   Mark for use with hCaptcha: {"zh-Hans": "标记为与hCaptcha一起使用", "zh-Hant": "標記為與hCaptcha一起使用"}
-  Mark for use with reCAPTCHA: {"zh-Hans": "标记为与reCAPTCHA一起使用", "zh-Hant": "標記為與reCAPTCHA一起使用"}
   Modify rule: {"zh-Hans": "修改规则", "zh-Hant": "修改規則"}
   Move down: "下移"
   Move to the bottom: {"zh-Hans": "将规则移至底部", "zh-Hant": "將規則移至底部"}

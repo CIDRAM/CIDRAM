@@ -125,7 +125,6 @@ checkbox:
  Should this field appear in log entries: "ਕੀ ਇਹ ਖੇਤਰ ਲੌਗ ਐਂਟਰੀਆਂ ਵਿੱਚ ਦਿਖਾਈ ਦੇਣਾ ਚਾਹੀਦਾ ਹੈ?"
  Should this field appear on the access denied page: "ਕੀ ਇਹ ਖੇਤਰ "ਪਹੁੰਚ ਇਨਕਾਰ" ਪੰਨੇ 'ਤੇ ਦਿਖਾਈ ਦੇਣਾ ਚਾਹੀਦਾ ਹੈ?"
  Suppress hCaptcha: "HCaptcha ਬੰਦ ਕਰੋ"
- Suppress reCAPTCHA: "ReCAPTCHA ਬੰਦ ਕਰੋ"
  Test as sensitive request: "ਸੰਵੇਦਨਸ਼ੀਲ ਬੇਨਤੀ ਵਜੋਂ ਜਾਂਚ ਕਰੋ"
  Untrack positives: "ਸਕਾਰਾਤਮਕ ਅਨਟ੍ਰੈਕ ਕਰੋ?"
  When blocked, suppress output template: "ਬਲੌਕ ਕੀਤੇ ਜਾਣ 'ਤੇ, ਆਉਟਪੁੱਟ ਟੈਮਪਲੇਟ ਦੀ ਵਰਤੋਂ ਨਾ ਕਰੋ।"
@@ -282,19 +281,6 @@ config:
  rate_limiting_precision_ipv4: "IPv4 ਵਰਤੋਂ ਨੂੰ ਟਰੈਕ ਕਰਨ ਲਈ ਵਰਤਣ ਲਈ ਸ਼ੁੱਧਤਾ। ਮੁੱਲ CIDR ਬਲਾਕ ਆਕਾਰ ਨੂੰ ਮਿਰਰ ਕਰਦਾ ਹੈ। ਵਧੀਆ ਸ਼ੁੱਧਤਾ ਲਈ 32 'ਤੇ ਸੈੱਟ ਕਰੋ। ਡਿਫਾਲਟ = 32."
  rate_limiting_precision_ipv6: "IPv6 ਵਰਤੋਂ ਨੂੰ ਟਰੈਕ ਕਰਨ ਲਈ ਵਰਤਣ ਲਈ ਸ਼ੁੱਧਤਾ। ਮੁੱਲ CIDR ਬਲਾਕ ਆਕਾਰ ਨੂੰ ਮਿਰਰ ਕਰਦਾ ਹੈ। ਵਧੀਆ ਸ਼ੁੱਧਤਾ ਲਈ 128 'ਤੇ ਸੈੱਟ ਕਰੋ। ਡਿਫਾਲਟ = 128."
  rate_limiting_segregate: "ਕੀ ਵੱਖ-ਵੱਖ ਡੋਮੇਨਾਂ ਅਤੇ ਮੇਜ਼ਬਾਨਾਂ ਲਈ ਕੋਟੇ ਨੂੰ ਵੱਖਰਾ ਜਾਂ ਸਾਂਝਾ ਕੀਤਾ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ? True = ਕੋਟੇ ਵੱਖ ਕੀਤੇ ਜਾਣਗੇ। False = ਕੋਟੇ ਸਾਂਝੇ ਕੀਤੇ ਜਾਣਗੇ [ਡਿਫਾਲਟ]।"
- recaptcha: "ReCAPTCHA ਲਈ ਕੌਂਫਿਗਰੇਸ਼ਨ (ਬਲੌਕ ਕੀਤੇ ਜਾਣ 'ਤੇ ਮਨੁੱਖਾਂ ਨੂੰ ਮੁੜ ਪਹੁੰਚ ਪ੍ਰਾਪਤ ਕਰਨ ਦਾ ਤਰੀਕਾ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ)।"
- recaptcha_api: *CaptchaAPI
- recaptcha_expiry: *CaptchaExpiry
- recaptcha_lockip: *CaptchaLockIP
- recaptcha_lockuser: *CaptchaLockUser
- recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
- recaptcha_recaptcha_log: *CaptchaLogFile
- recaptcha_secret: *CaptchaDashboard
- recaptcha_show_api_message: *ShowAPIMessage
- recaptcha_show_cookie_warning: *ShowCookieWarning
- recaptcha_signature_limit: *CaptchaSignatureLimit
- recaptcha_sitekey: *CaptchaDashboard
- recaptcha_usemode: *CaptchaUseMode
  sfs: "Stop Forum Spam (ਸਟਾਪ ਫੋਰਮ ਸਪੈਮ) ਮੋਡੀਊਲ ਲਈ ਕੌਂਫਿਗਰੇਸ਼ਨ।"
  signatures: "ਦਸਤਖਤਾਂ, ਦਸਤਖਤ ਫਾਈਲਾਂ, ਮੋਡੀਊਲ, ਆਦਿ ਲਈ ਕੌਂਫਿਗਰੇਸ਼ਨ।"
  signatures_conflict_response: "ਜਦੋਂ ਇੱਕੋ ਸਰੋਤਾਂ ਤੱਕ ਪਹੁੰਚ ਕਰਨ ਦੀਆਂ ਬਹੁਤ ਸਾਰੀਆਂ ਇੱਕੋ ਸਮੇਂ ਕੋਸ਼ਿਸ਼ਾਂ ਹੁੰਦੀਆਂ ਹਨ (ਉਦਾਹਰਣ ਵਜੋਂ, ਇੱਕੋ ਸਾਧਨਾਂ ਲਈ ਇੱਕੋ ਮਸ਼ੀਨ 'ਤੇ ਕਈ PHP ਪ੍ਰਕਿਰਿਆਵਾਂ ਲਈ ਇੱਕੋ ਸਮੇਂ ਬੇਨਤੀਆਂ), ਇਹਨਾਂ ਵਿੱਚੋਂ ਕੁਝ ਕੋਸ਼ਿਸ਼ਾਂ ਅਸਫਲ ਹੋ ਸਕਦੀਆਂ ਹਨ। ਦੁਰਲੱਭ ਅਤੇ ਅਸੰਭਵ ਘਟਨਾ ਵਿੱਚ ਕਿ ਇਹ ਦਸਤਖਤ ਫਾਈਲਾਂ ਜਾਂ ਮੈਡਿਊਲਾਂ ਨੂੰ ਪ੍ਰਭਾਵਿਤ ਕਰਦਾ ਹੈ, CIDRAM ਨੂੰ ਬੇਨਤੀ ਬਾਰੇ ਇੱਕ ਪ੍ਰਭਾਵੀ ਨਿਰਣਾ ਕਰਨ ਤੋਂ ਰੋਕਿਆ ਜਾ ਸਕਦਾ ਹੈ। ਜੇਕਰ ਅਜਿਹਾ ਹੁੰਦਾ ਹੈ, ਤਾਂ ਕੀ ਬੇਨਤੀ ਨੂੰ ਬਲੌਕ ਕੀਤਾ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ, ਅਤੇ CIDRAM ਨੂੰ ਕਿਹੜਾ HTTP ਸਥਿਤੀ ਸੁਨੇਹਾ ਭੇਜਣਾ ਚਾਹੀਦਾ ਹੈ?"
@@ -709,13 +695,11 @@ label:
   Enforce extended IP tracking options: "ਵਧਾਇਆ IP ਟਰੈਕਿੰਗ ਵਿਕਲਪਾਂ ਨੂੰ ਲਾਗੂ ਕਰੋ"
   Forcibly disable hCaptcha: "HCaptcha ਨੂੰ ਜ਼ਬਰਦਸਤੀ ਅਕਿਰਿਆਸ਼ੀਲ ਕਰੋ"
   Forcibly disable IP tracking: "ਜ਼ਬਰਦਸਤੀ IP ਟਰੈਕਿੰਗ ਨੂੰ ਅਕਿਰਿਆਸ਼ੀਲ ਕਰੋ"
-  Forcibly disable reCAPTCHA: "reCAPTCHA ਨੂੰ ਜ਼ਬਰਦਸਤੀ ਅਕਿਰਿਆਸ਼ੀਲ ਕਰੋ"
   Forcibly enable IP tracking: "ਜ਼ਬਰਦਸਤੀ IP ਟਰੈਕਿੰਗ ਨੂੰ ਸਰਗਰਮ ਕਰੋ"
   HTTP status code override: "HTTP ਸਥਿਤੀ ਕੋਡ ਓਵਰਰਾਈਡ:"
   If the following conditions are met, %s: "ਜੇ ਹੇਠ ਲਿਖੀਆਂ ਸ਼ਰਤਾਂ ਪੂਰੀਆਂ ਹੁੰਦੀਆਂ ਹਨ, ਤਾਂ %s।"
   Leave it as is (don_t set anything): "ਇਸਨੂੰ ਇਸ ਤਰ੍ਹਾਂ ਛੱਡੋ (ਕੁਝ ਵੀ ਸੈੱਟ ਨਾ ਕਰੋ)"
   Mark for use with hCaptcha: "HCaptcha ਦੇ ਨਾਲ ਵਰਤਣ ਲਈ ਚਿੰਨ੍ਹਿਤ ਕਰੋ"
-  Mark for use with reCAPTCHA: "reCAPTCHA ਦੇ ਨਾਲ ਵਰਤਣ ਲਈ ਚਿੰਨ੍ਹਿਤ ਕਰੋ"
   Modify rule: "ਨਿਯਮ ਨੂੰ ਸੋਧੋ"
   Move down: "ਹੇਠਾਂ ਵੱਲ ਸ਼ਿਫਟ ਕਰੋ"
   Move to the bottom: "ਅੰਤ ਵਿੱਚ ਸ਼ਿਫਟ ਕਰੋ"

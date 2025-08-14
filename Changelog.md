@@ -461,3 +461,10 @@
 - [2025.08.08]: Added the ability to change the "mode" of the configured theme, thus enabling any singular theme to have some slight variation in its potential presentation. Two new configuration directives have been added to facilitate this (look for `theme_mode` under `frontend` and `template_data` respectively, directly under the existing `theme` configuration directives). For now, the available "modes" are just "normal" and "inverted" (the latter inverting the tone of the colours/lighting used by the theme).
 - [2025.08.07~10]: Updated the CAPTCHA log format (#627).
 - *Plus all the regular signature updates.*
+
+### v4.0.0
+
+*CIDRAM v4 branches from v3 at v3.10.0 (2025.08.14).*
+
+#### Backwards-incompatible changes.
+- [2025.08.14]: Removed support for reCAPTCHA (#624).

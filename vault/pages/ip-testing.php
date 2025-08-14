@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The IP testing page (last modified: 2025.08.10).
+ * This file: The IP testing page (last modified: 2025.08.14).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -266,12 +266,6 @@ if (isset($_POST['ip-addr'])) {
         }
         if (isset($this->CIDRAM['ThisStatusHTTP'])) {
             $this->CIDRAM['ThisIP']['YesNo'] .= '<br />' . $this->L10N->getString('field.Status code') . $this->L10N->getString('pair_separator') . $this->CIDRAM['ThisStatusHTTP'];
-        }
-        if (!empty($this->Configuration['recaptcha']['enabled'])) {
-            $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label.aux.Mark for use with reCAPTCHA');
-        }
-        if (!empty($this->Configuration['recaptcha']['forcibly_disabled'])) {
-            $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label.aux.Forcibly disable reCAPTCHA');
         }
         if (!empty($this->Configuration['hcaptcha']['enabled'])) {
             $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label.aux.Mark for use with hCaptcha');

@@ -125,7 +125,6 @@ checkbox:
  Should this field appear in log entries: "பதிவு உள்ளீடுகளில் இந்தப் புலம் தோன்ற வேண்டுமா?"
  Should this field appear on the access denied page: "இந்த புலம் "அணுகல் மறுக்கப்பட்டது" பக்கத்தில் தோன்ற வேண்டுமா?"
  Suppress hCaptcha: "HCaptcha ஐ அடக்கவும்"
- Suppress reCAPTCHA: "ReCAPTCHA ஐ அடக்கவும்"
  Test as sensitive request: "முக்கிய கோரிக்கையாக சோதிக்கவும்"
  Untrack positives: "நேர்மறைகளைக் கண்காணிப்பதை நிறுத்தவா?"
  When blocked, suppress output template: "தடுக்கப்பட்டால், வெளியீட்டு வார்ப்புருவை அடக்கு."
@@ -282,19 +281,6 @@ config:
  rate_limiting_precision_ipv4: "IPv4 பயன்பாட்டைக் கண்காணிக்க பயன்படுத்த வேண்டிய துல்லியம். மதிப்பு CIDR தொகுதி அளவிற்கு சமம். சிறந்த துல்லியத்திற்கு 32 ஆக அமைக்கவும். இயல்புநிலை = 32."
  rate_limiting_precision_ipv6: "IPv6 பயன்பாட்டைக் கண்காணிக்க பயன்படுத்த வேண்டிய துல்லியம். மதிப்பு CIDR தொகுதி அளவிற்கு சமம். சிறந்த துல்லியத்திற்கு 128 ஆக அமைக்கவும். இயல்புநிலை = 128."
  rate_limiting_segregate: "வெவ்வேறு டொமைன்கள் மற்றும் ஹோஸ்ட்களுக்கான ஒதுக்கீடுகள் பிரிக்கப்பட வேண்டுமா அல்லது பகிரப்பட வேண்டுமா? True = ஒதுக்கீடுகள் பிரிக்கப்படும். False = ஒதுக்கீடுகள் பகிரப்படும் [இயல்புநிலை]."
- recaptcha: "ReCAPTCHA க்கான உள்ளமைவு (தடுக்கப்படும்போது மனிதர்களுக்கு அணுகலை மீண்டும் பெறுவதற்கான வழியை வழங்குகிறது)."
- recaptcha_api: *CaptchaAPI
- recaptcha_expiry: *CaptchaExpiry
- recaptcha_lockip: *CaptchaLockIP
- recaptcha_lockuser: *CaptchaLockUser
- recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
- recaptcha_recaptcha_log: *CaptchaLogFile
- recaptcha_secret: *CaptchaDashboard
- recaptcha_show_api_message: *ShowAPIMessage
- recaptcha_show_cookie_warning: *ShowCookieWarning
- recaptcha_signature_limit: *CaptchaSignatureLimit
- recaptcha_sitekey: *CaptchaDashboard
- recaptcha_usemode: *CaptchaUseMode
  sfs: "Stop Forum Spam தொகுதிக்கான உள்ளமைவு."
  signatures: "கையொப்பங்கள், கையொப்பம் கோப்புகள், தொகுதிகள், போன்றவற்றுக்கான உள்ளமைவு."
  signatures_conflict_response: "அதே ஆதாரங்களை அணுகுவதற்கு ஒரே நேரத்தில் பல முயற்சிகள் இருக்கும்போது (எ.கா., ஒரே கணினியில் ஒரே ஆதாரங்களுக்காக பல PHP செயல்முறைகளுக்கு ஒரே நேரத்தில் கோரிக்கைகள்), அந்த முயற்சிகளில் சில தோல்வியடையலாம். இது கையொப்பக் கோப்புகள் அல்லது தொகுதிக்கூறுகளைப் பாதிக்கும் அரிதான மற்றும் சாத்தியமில்லாத நிகழ்வில், கோரிக்கையைப் பற்றி திறம்பட தீர்மானிப்பதில் இருந்து CIDRAM தடுக்கப்படலாம். இது நடந்தால், கோரிக்கை தடுக்கப்பட வேண்டும், மேலும் CIDRAM எந்த HTTP நிலை செய்தியை அனுப்ப வேண்டும்?"
@@ -711,13 +697,11 @@ label:
   Enforce extended IP tracking options: "நீட்டிக்கப்பட்ட IP கண்காணிப்பு விருப்பங்களை செயல்படுத்தவும்"
   Forcibly disable hCaptcha: "HCaptcha ஐ வலுக்கட்டாயமாக முடக்கு"
   Forcibly disable IP tracking: "IP கண்காணிப்பை வலுக்கட்டாயமாக முடக்கு"
-  Forcibly disable reCAPTCHA: "reCAPTCHA ஐ வலுக்கட்டாயமாக முடக்கு"
   Forcibly enable IP tracking: "IP கண்காணிப்பை வலுக்கட்டாயமாக இயக்கவும்"
   HTTP status code override: "HTTP நிலைக் குறியீடு மேலெழுதும்:"
   If the following conditions are met, %s: "பின்வரும் நிபந்தனைகள் பூர்த்தி செய்யப்பட்டால், %s."
   Leave it as is (don_t set anything): "அதை அப்படியே விட்டு விடுங்கள் (எதையும் அமைக்காதீர்கள்)"
   Mark for use with hCaptcha: "HCaptcha உடன் பயன்படுத்த குறிக்கவும்"
-  Mark for use with reCAPTCHA: "reCAPTCHA உடன் பயன்படுத்த குறிக்கவும்"
   Modify rule: "விதியை மாற்றவும்"
   Move down: "கீழே இறங்கு"
   Move to the bottom: "விதியை கீழே நகர்த்தவும்"

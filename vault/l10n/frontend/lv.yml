@@ -125,7 +125,6 @@ checkbox:
  Should this field appear in log entries: "Vai šim laukam vajadzētu parādīties žurnāla ierakstos?"
  Should this field appear on the access denied page: "Vai šim laukam vajadzētu parādīties lapā "piekļuve liegta"?"
  Suppress hCaptcha: "Apspiest hCaptcha"
- Suppress reCAPTCHA: "Apspiest reCAPTCHA"
  Test as sensitive request: "Pārbaudīt kā sensitīvu pieprasījumu"
  Untrack positives: "Vai atcelt pozitīvu izsekošana?"
  When blocked, suppress output template: "Ja tas ir bloķēts, apspiest izvades veidni."
@@ -282,19 +281,6 @@ config:
  rate_limiting_precision_ipv4: "IPv4 lietošanas izsekošanas precizitāte. Vērtības spoguļi CIDR bloka izmērs. Iestatiet uz 32 vislabākajai precizitātei. Noklusējuma = 32."
  rate_limiting_precision_ipv6: "IPv6 lietošanas izsekošanas precizitāte. Vērtības spoguļi CIDR bloka izmērs. Iestatiet uz 128 vislabākajai precizitātei. Noklusējuma = 128."
  rate_limiting_segregate: "Vai kvotas dažādiem domēniem un resursdatoriem ir jānodala vai jādala? True = Kvotas tiks atdalīts. False = Kvotas tiks dalītas [Noklusējuma]."
- recaptcha: "ReCAPTCHA konfigurācija (nodrošina veidu, kā cilvēki var atgūt piekļuvi, kad tā ir bloķēta)."
- recaptcha_api: *CaptchaAPI
- recaptcha_expiry: *CaptchaExpiry
- recaptcha_lockip: *CaptchaLockIP
- recaptcha_lockuser: *CaptchaLockUser
- recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
- recaptcha_recaptcha_log: *CaptchaLogFile
- recaptcha_secret: *CaptchaDashboard
- recaptcha_show_api_message: *ShowAPIMessage
- recaptcha_show_cookie_warning: *ShowCookieWarning
- recaptcha_signature_limit: *CaptchaSignatureLimit
- recaptcha_sitekey: *CaptchaDashboard
- recaptcha_usemode: *CaptchaUseMode
  sfs: "Stop Forum Spam moduļa konfigurācija."
  signatures: "Parakstu, parakstu failu, moduļu, utt konfigurācija."
  signatures_conflict_response: "Ja ir pārāk daudz vienlaicīgu mēģinājumu piekļūt vieniem un tiem pašiem resursiem (piemēram, vienlaicīgi tiek pieprasīti vairāki PHP procesi vienā un tajā pašā mašīnā par tiem pašiem resursiem), daži no šiem mēģinājumiem var neizdoties. Retos un maz ticamos gadījumos, kad tas ietekmēs paraksta failus vai moduļus, CIDRAM var liegt pieņemt efektīvu lēmumu par pieprasījumu. Ja tas notiek, vai pieprasījums ir jābloķē un kurš HTTP statusa ziņojums ir jānosūta CIDRAM?"
@@ -708,13 +694,11 @@ label:
   Enforce extended IP tracking options: "Ieviesiet paplašinātas IP izsekošanas iespējas"
   Forcibly disable hCaptcha: "Piespiedu kārtā atspējojiet hCaptcha"
   Forcibly disable IP tracking: "Piespiedu kārtā atspējojiet IP izsekošanu"
-  Forcibly disable reCAPTCHA: "Piespiedu kārtā atspējojiet reCAPTCHA"
   Forcibly enable IP tracking: "Piespiedu kārtā iespējojiet IP izsekošanu"
   HTTP status code override: "HTTP statusa koda aizstāšana:"
   If the following conditions are met, %s: "Ja ir izpildīti šādi nosacījumi, %s."
   Leave it as is (don_t set anything): "Atstājiet to kā ir (neko nenosakiet)"
   Mark for use with hCaptcha: "Atzīmēt izmantošanai ar hCaptcha"
-  Mark for use with reCAPTCHA: "Atzīmēt izmantošanai ar reCAPTCHA"
   Modify rule: "Modificēt palīgnoteikumu"
   Move down: "Ej lejā"
   Move to the bottom: "Pārvietojiet palīgnoteikumu uz apakšā"

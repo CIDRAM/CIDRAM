@@ -125,7 +125,6 @@ checkbox:
  Should this field appear in log entries: "آیا این فیلد باید در ورودی های گزارش ظاهر شود؟"
  Should this field appear on the access denied page: "آیا این فیلد باید در صفحه «دسترسی ممنوع» ظاهر شود؟"
  Suppress hCaptcha: "HCaptcha را سرکوب کنید"
- Suppress reCAPTCHA: "ReCAPTCHA را سرکوب کنید"
  Test as sensitive request: "تست به عنوان درخواست حساس"
  Untrack positives: "ردیابی موارد مثبت متوقف شود؟"
  When blocked, suppress output template: "وقتی مسدود شد، الگوی خروجی را سرکوب کنید."
@@ -282,19 +281,6 @@ config:
  rate_limiting_precision_ipv4: "دقت مورد استفاده برای ردیابی استفاده از IPv4. ارزش منعکس کننده اندازه بلوک CIDR است. برای بهترین دقت روی 32 تنظیم کنید. پیش فرض = 32."
  rate_limiting_precision_ipv6: "دقت مورد استفاده برای ردیابی استفاده از IPv6. ارزش منعکس کننده اندازه بلوک CIDR است. برای بهترین دقت روی 128 تنظیم کنید. پیش فرض = 128."
  rate_limiting_segregate: "آیا سهمیه ها برای دامنه ها و هاست های مختلف باید جدا شوند یا به اشتراک گذاشته شوند؟ True = سهمیه ها تفکیک خواهد شد. False = سهمیه ها به اشتراک گذاشته می شود [پیش فرض]."
- recaptcha: "پیکربندی برای reCAPTCHA (راهی را برای انسان ها فراهم می کند تا در صورت مسدود شدن، دوباره دسترسی پیدا کنند)."
- recaptcha_api: *CaptchaAPI
- recaptcha_expiry: *CaptchaExpiry
- recaptcha_lockip: *CaptchaLockIP
- recaptcha_lockuser: *CaptchaLockUser
- recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
- recaptcha_recaptcha_log: *CaptchaLogFile
- recaptcha_secret: *CaptchaDashboard
- recaptcha_show_api_message: *ShowAPIMessage
- recaptcha_show_cookie_warning: *ShowCookieWarning
- recaptcha_signature_limit: *CaptchaSignatureLimit
- recaptcha_sitekey: *CaptchaDashboard
- recaptcha_usemode: *CaptchaUseMode
  sfs: "پیکربندی ماژول Stop Forum Spam."
  signatures: "پیکربندی برای امضاها، فایل های امضا، ماژول ها و غیره."
  signatures_conflict_response: "زمانی که تلاش‌های همزمان بیش از حد برای دسترسی به منابع یکسان وجود داشته باشد (مثلاً، درخواست‌های همزمان چندین فرآیند PHP در یک دستگاه برای منابع یکسان)، برخی از این تلاش‌ها ممکن است با شکست مواجه شوند. در موارد نادر و غیر محتمل که این امر بر فایل‌های امضا یا ماژول‌ها تأثیر می‌گذارد، ممکن است CIDRAM از تصمیم‌گیری مؤثر در مورد درخواست جلوگیری شود. اگر این اتفاق بیفتد، آیا باید درخواست مسدود شود و CIDRAM کدام پیام وضعیت HTTP را باید ارسال کند؟"
@@ -703,13 +689,11 @@ label:
   Enforce extended IP tracking options: "گزینه های ردیابی IP گسترده را اعمال کنید"
   Forcibly disable hCaptcha: "HCaptcha را به اجبار غیرفعال کنید"
   Forcibly disable IP tracking: "ردیابی IP را به اجبار غیرفعال کنید"
-  Forcibly disable reCAPTCHA: "reCAPTCHA را به اجبار غیرفعال کنید"
   Forcibly enable IP tracking: "ردیابی IP را به اجبار فعال کنید"
   HTTP status code override: "جایگزینی کد وضعیت HTTP:"
   If the following conditions are met, %s: "در صورت رعایت شرایط زیر، %s."
   Leave it as is (don_t set anything): "آن را همانطور که هست رها کنید (چیزی را تنظیم نکنید)"
   Mark for use with hCaptcha: "علامت گذاری برای استفاده با hCaptcha"
-  Mark for use with reCAPTCHA: "علامت گذاری برای استفاده با reCAPTCHA"
   Modify rule: "قوانین را اصلاح کنید"
   Move down: "حرکت به پایین"
   Move to the bottom: "به سمت پایین حرکت کنید"

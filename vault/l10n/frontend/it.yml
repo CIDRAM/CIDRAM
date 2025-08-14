@@ -125,7 +125,6 @@ checkbox:
  Should this field appear in log entries: "Questo campo dovrebbe apparire nelle voci dei registri?"
  Should this field appear on the access denied page: "Questo campo dovrebbe apparire nella pagina "accesso negato"?"
  Suppress hCaptcha: "Sopprimi hCaptcha"
- Suppress reCAPTCHA: "Sopprimi reCAPTCHA"
  Test as sensitive request: "Test come richiesta sensibile"
  Untrack positives: "Annulla le tracciamento per i positivi?"
  When blocked, suppress output template: "Quando bloccato, sopprima il modello di output."
@@ -282,19 +281,6 @@ config:
  rate_limiting_precision_ipv4: "La precisione da utilizzare durante il monitoraggio dell'utilizzo di IPv4. Il valore riflette la dimensione del blocco CIDR. Impostare su 32 per la massima precisione. Predefinito = 32."
  rate_limiting_precision_ipv6: "La precisione da utilizzare durante il monitoraggio dell'utilizzo di IPv6. Il valore riflette la dimensione del blocco CIDR. Impostare su 128 per la massima precisione. Predefinito = 128."
  rate_limiting_segregate: "Le quote per domini e host diversi devono essere segregate o condivise? True = Le quote saranno segregate. False = Le quote saranno condivise [Predefinito]."
- recaptcha: "Configurazione per reCAPTCHA (fornisce un modo per gli umani di riottenere l'accesso quando bloccato)."
- recaptcha_api: *CaptchaAPI
- recaptcha_expiry: *CaptchaExpiry
- recaptcha_lockip: *CaptchaLockIP
- recaptcha_lockuser: *CaptchaLockUser
- recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
- recaptcha_recaptcha_log: *CaptchaLogFile
- recaptcha_secret: *CaptchaDashboard
- recaptcha_show_api_message: *ShowAPIMessage
- recaptcha_show_cookie_warning: *ShowCookieWarning
- recaptcha_signature_limit: *CaptchaSignatureLimit
- recaptcha_sitekey: *CaptchaDashboard
- recaptcha_usemode: *CaptchaUseMode
  sfs: "Configurazione per il modulo Stop Forum Spam."
  signatures: "Configurazione per firme, file di firma, moduli, ecc."
  signatures_conflict_response: "Quando ce ne sono troppi tentativi simultanei di accedere alle stesse risorse (ad esempio, richieste simultanee a più processi PHP sulla stessa macchina per le stesse risorse), alcuni di questi tentativi potrebbero fallire. Nel raro e improbabile caso in cui ciò influisca sui file delle firme o sui moduli, CIDRAM potrebbe non essere in grado di prendere una decisione effettiva in merito alla richiesta. In tal caso, dovrebbe la richiesta essere bloccata, e quale messaggio di stato HTTP dovrebbe CIDRAM inviare?"
@@ -708,13 +694,11 @@ label:
   Enforce extended IP tracking options: "Applica le opzioni di tracciamento IP estese"
   Forcibly disable hCaptcha: "Disabilita forzatamente hCaptcha"
   Forcibly disable IP tracking: "Disabilita forzatamente il tracciamento IP"
-  Forcibly disable reCAPTCHA: "Disabilita forzatamente reCAPTCHA"
   Forcibly enable IP tracking: "Abilita forzatamente il tracciamento IP"
   HTTP status code override: "Sostituzione del codice di stato HTTP:"
   If the following conditions are met, %s: "Se sono soddisfatte le seguenti condizioni, %s."
   Leave it as is (don_t set anything): "Lascialo così com'è (non impostare nulla)"
   Mark for use with hCaptcha: "Contrassegnare per l'uso con hCaptcha"
-  Mark for use with reCAPTCHA: "Contrassegnare per l'uso con reCAPTCHA"
   Modify rule: "Modifica regola"
   Move down: "Abbassa"
   Move to the bottom: "Sposta la regola in basso"

@@ -125,7 +125,6 @@ checkbox:
  Should this field appear in log entries: "Mělo by se toto pole objevit v záznamech protokolu?"
  Should this field appear on the access denied page: "Má se toto pole objevit na stránce „přístup odepřen“?"
  Suppress hCaptcha: "Potlačit hCaptcha"
- Suppress reCAPTCHA: "Potlačit reCAPTCHA"
  Test as sensitive request: "Testovat jako citlivý požadavek"
  Untrack positives: "Zrušit sledování pro pozitiva?"
  When blocked, suppress output template: "Při zablokování potlačte výstupní šablonu."
@@ -282,19 +281,6 @@ config:
  rate_limiting_precision_ipv4: "Přesnost pro sledování využití IPv4. Hodnota zrcadlí velikost bloku CIDR. Pro nejlepší přesnost nastavte na 32. Standardní = 32."
  rate_limiting_precision_ipv6: "Přesnost pro sledování využití IPv6. Hodnota zrcadlí velikost bloku CIDR. Pro nejlepší přesnost nastavte na 128. Standardní = 128."
  rate_limiting_segregate: "Měly by být kvóty pro různé domény a hostitele odděleny nebo sdíleny? True (Pravdivé) = Kvóty budou odděleny. False (Nepravdivé) = Kvóty budou sdíleny [Standardní]."
- recaptcha: "Konfigurace pro reCAPTCHA (poskytuje lidem způsob, jak znovu získat přístup, když je blokován)."
- recaptcha_api: *CaptchaAPI
- recaptcha_expiry: *CaptchaExpiry
- recaptcha_lockip: *CaptchaLockIP
- recaptcha_lockuser: *CaptchaLockUser
- recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
- recaptcha_recaptcha_log: *CaptchaLogFile
- recaptcha_secret: *CaptchaDashboard
- recaptcha_show_api_message: *ShowAPIMessage
- recaptcha_show_cookie_warning: *ShowCookieWarning
- recaptcha_signature_limit: *CaptchaSignatureLimit
- recaptcha_sitekey: *CaptchaDashboard
- recaptcha_usemode: *CaptchaUseMode
  sfs: "Konfigurace pro modul Stop Forum Spam."
  signatures: "Konfigurace pro podpisy, soubory podpisů, moduly, atd."
  signatures_conflict_response: "Pokud existuje příliš mnoho současných pokusů o přístup ke stejným zdrojům (např., současné požadavky na více procesů PHP na stejném počítači pro stejné zdroje), některé z těchto pokusů mohou selhat. Ve vzácných a nepravděpodobných případech, kdy to ovlivní soubory podpisů nebo moduly, může být CIDRAM zabráněno v účinném rozhodnutí o požadavku. Pokud k tomu dojde, měl by být požadavek zablokován, a jakou zprávu o stavu HTTP má CIDRAM odeslat?"
@@ -713,13 +699,11 @@ label:
   Enforce extended IP tracking options: "Prosadit rozšířené možnosti sledování IP"
   Forcibly disable hCaptcha: "Vynuceně zakázat hCaptcha"
   Forcibly disable IP tracking: "Vynuceně zakázat sledování IP"
-  Forcibly disable reCAPTCHA: "Vynuceně zakázat reCAPTCHA"
   Forcibly enable IP tracking: "Vynuceně zapnout sledování IP"
   HTTP status code override: "Přepsání stavového kódu HTTP:"
   If the following conditions are met, %s: "Pokud jsou splněny následující podmínky, %s."
   Leave it as is (don_t set anything): "Nechte to tak, jak je (nic nenastavujte)"
   Mark for use with hCaptcha: "Označte pro použití s hCaptcha"
-  Mark for use with reCAPTCHA: "Označte pro použití s reCAPTCHA"
   Modify rule: "Upravte pravidlo"
   Move down: "Přesuňte to dolů"
   Move to the bottom: "Přesuňte se na dno"

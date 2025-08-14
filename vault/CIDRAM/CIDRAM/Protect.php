@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2025.08.10).
+ * This file: Protect traits (last modified: 2025.08.14).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -396,7 +396,7 @@ trait Protect
                             ($RLMaxBandwidth > 0 && $this->CIDRAM['RL_Usage']['Bytes'] >= $RLMaxBandwidth) ||
                             ($this->Configuration['rate_limiting']['max_requests'] > 0 && $this->CIDRAM['RL_Usage']['Requests'] >= $this->Configuration['rate_limiting']['max_requests'])
                         ), $this->L10N->getString('Short.RL'), sprintf($this->L10N->getString('ReasonMessage.RL'), $RLFormatted))) {
-                            $this->enactOptions('', ['ForciblyDisableReCAPTCHA' => true, 'ForciblyDisableHCaptcha' => true]);
+                            $this->enactOptions('', ['ForciblyDisableHCaptcha' => true]);
                             $this->CIDRAM['Other Status'] = $this->getStatusHTTP(429);
                             $this->CIDRAM['Other Status Code'] = 429;
                             if (isset($this->Shorthand['RL:Suppress'])) {
@@ -431,27 +431,6 @@ trait Protect
             $this->Stage = 'CAPTCHA';
 
             if (
-                $this->Configuration['recaptcha']['sitekey'] !== '' &&
-                $this->Configuration['recaptcha']['secret'] !== '' &&
-                class_exists('\CIDRAM\CIDRAM\ReCaptcha') &&
-                $this->BlockInfo['SignatureCount'] <= $this->Configuration['recaptcha']['signature_limit'] &&
-                empty($this->Configuration['recaptcha']['forcibly_disabled']) &&
-                (
-                    $this->Configuration['recaptcha']['usemode'] === 1 ||
-                    $this->Configuration['recaptcha']['usemode'] === 3 ||
-                    (
-                        (
-                            $this->Configuration['recaptcha']['usemode'] === 2 ||
-                            $this->Configuration['recaptcha']['usemode'] === 5
-                        ) && !empty($this->Configuration['recaptcha']['enabled'])
-                    )
-                ) &&
-                (!$this->hasProfile('Blocked Negative') || !isset($this->VAdjust['Negatives:ReCaptcha'])) &&
-                (!$this->hasProfile('Blocked Non-Verified') || !isset($this->VAdjust['NonVerified:ReCaptcha']))
-            ) {
-                /** Execute the reCAPTCHA class. */
-                $CaptchaDone = new ReCaptcha($this);
-            } elseif (
                 $this->Configuration['hcaptcha']['sitekey'] !== '' &&
                 $this->Configuration['hcaptcha']['secret'] !== '' &&
                 class_exists('\CIDRAM\CIDRAM\HCaptcha') &&
@@ -1051,22 +1030,6 @@ trait Protect
             $this->Stage = 'NonBlockedCAPTCHA';
             if (empty($CaptchaDone) && empty($this->CIDRAM['Whitelisted']) && empty($this->BlockInfo['Verified'])) {
                 if (
-                    $this->Configuration['recaptcha']['sitekey'] !== '' &&
-                    $this->Configuration['recaptcha']['secret'] !== '' &&
-                    class_exists('\CIDRAM\CIDRAM\ReCaptcha') &&
-                    (
-                        ($this->Configuration['recaptcha']['usemode'] >= 3 && $this->Configuration['recaptcha']['usemode'] <= 5) ||
-                        ($this->Configuration['recaptcha']['usemode'] === 6 && (
-                            isset($this->BlockInfo['rURI']) &&
-                            $this->isSensitive(preg_replace('/\s/', '', strtolower($this->BlockInfo['rURI'])))
-                        ))
-                    )
-                ) {
-                    /** Execute the reCAPTCHA class. */
-                    $CaptchaDone = new ReCaptcha($this);
-
-                    $this->CIDRAM['StatusCodeForNonBlocked'] = $this->Configuration['recaptcha']['nonblocked_status_code'];
-                } elseif (
                     $this->Configuration['hcaptcha']['sitekey'] !== '' &&
                     $this->Configuration['hcaptcha']['secret'] !== '' &&
                     class_exists('\CIDRAM\CIDRAM\HCaptcha') &&

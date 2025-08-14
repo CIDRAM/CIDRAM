@@ -125,7 +125,6 @@ checkbox:
  Should this field appear in log entries: "Skal dette feltet vises i loggoppføringer?"
  Should this field appear on the access denied page: "Skal dette feltet vises på «tilgang nektet» siden?"
  Suppress hCaptcha: "Undertrykk hCaptcha"
- Suppress reCAPTCHA: "Undertrykk reCAPTCHA"
  Test as sensitive request: "Test som sensitiv forespørsel"
  Untrack positives: "Slutte å spore etter positive?"
  When blocked, suppress output template: "Når blokkert, undertrykk utdatamalen."
@@ -282,19 +281,6 @@ config:
  rate_limiting_precision_ipv4: "Presisjonen som skal brukes til å spore IPv4-bruk. Verdi speiler CIDR-blokkstørrelse. Sett til 32 for best presisjon. Standardverdi = 32."
  rate_limiting_precision_ipv6: "Presisjonen som skal brukes til å spore IPv6-bruk. Verdi speiler CIDR-blokkstørrelse. Sett til 128 for best presisjon. Standardverdi = 128."
  rate_limiting_segregate: "Bør kvoter for forskjellige domener og verter adskilles eller deles? True = Kvoter vil bli adskilt. False = Kvoter vil bli delt [Standardverdi]."
- recaptcha: "Konfigurasjon for reCAPTCHA (gir en måte for mennesker å gjenvinne tilgang når de blokkeres)."
- recaptcha_api: *CaptchaAPI
- recaptcha_expiry: *CaptchaExpiry
- recaptcha_lockip: *CaptchaLockIP
- recaptcha_lockuser: *CaptchaLockUser
- recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
- recaptcha_recaptcha_log: *CaptchaLogFile
- recaptcha_secret: *CaptchaDashboard
- recaptcha_show_api_message: *ShowAPIMessage
- recaptcha_show_cookie_warning: *ShowCookieWarning
- recaptcha_signature_limit: *CaptchaSignatureLimit
- recaptcha_sitekey: *CaptchaDashboard
- recaptcha_usemode: *CaptchaUseMode
  sfs: "Konfigurasjon for Stop Forum Spam modulen."
  signatures: "Konfigurasjon for signaturer, signaturfiler, moduler, osv."
  signatures_conflict_response: "Når det er for mange samtidige forsøk på å få tilgang til de samme ressursene (f.eks., samtidige forespørsler til flere PHP-prosesser på samme maskin for de samme ressursene), kan noen av disse forsøkene mislykkes. I det sjeldne og usannsynlige tilfellet at dette påvirker signaturfiler eller moduler, kan CIDRAM bli forhindret fra å ta en effektiv avgjørelse om forespørselen. Hvis dette skjer, bør forespørselen blokkeres, og hvilken HTTP-statusmelding skal CIDRAM sende?"
@@ -708,13 +694,11 @@ label:
   Enforce extended IP tracking options: "Håndheve utvidede IP-sporingsalternativer"
   Forcibly disable hCaptcha: "Deaktiver hCaptcha med makt"
   Forcibly disable IP tracking: "Deaktiver IP-sporing med makt"
-  Forcibly disable reCAPTCHA: "Deaktiver reCAPTCHA med makt"
   Forcibly enable IP tracking: "Aktiver IP-sporing med makt"
   HTTP status code override: "HTTP-statuskode overstyrer:"
   If the following conditions are met, %s: "Hvis følgende betingelser er oppfylt, %s."
   Leave it as is (don_t set anything): "La det være som det er (ikke sett noe)"
   Mark for use with hCaptcha: "Merk for bruk med hCaptcha"
-  Mark for use with reCAPTCHA: "Merk for bruk med reCAPTCHA"
   Modify rule: "Endre regelen"
   Move down: "Flytt ned"
   Move to the bottom: "Flytt regelen til bunnen"

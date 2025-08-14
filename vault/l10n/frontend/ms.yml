@@ -125,7 +125,6 @@ checkbox:
  Should this field appear in log entries: "Sertakan medan ini dalam entri log?"
  Should this field appear on the access denied page: "Sertakan medan ini dalam halaman "akses dinafikan"?"
  Suppress hCaptcha: "Menindas hCaptcha"
- Suppress reCAPTCHA: "Menindas reCAPTCHA"
  Test as sensitive request: "Uji sebagai permintaan sensitif"
  Untrack positives: "Memadam penjejakan untuk positif?"
  When blocked, suppress output template: "Apabila disekat, menindas templat keluaran."
@@ -282,19 +281,6 @@ config:
  rate_limiting_precision_ipv4: "Ketepatan yang digunakan untuk menjejaki penggunaan IPv4. Nilai mencerminkan saiz blok CIDR. Tetapkan kepada 32 untuk ketepatan terbaik. Lalai = 32."
  rate_limiting_precision_ipv6: "Ketepatan yang digunakan untuk menjejaki penggunaan IPv6. Nilai mencerminkan saiz blok CIDR. Tetapkan kepada 128 untuk ketepatan terbaik. Lalai = 128."
  rate_limiting_segregate: "Patutkah kuota untuk domain dan hos yang berbeza dipisahkan atau dikongsi? True = Kuota akan diasingkan. False = Kuota akan dikongsi [Lalai]."
- recaptcha: "Konfigurasi untuk reCAPTCHA (menyediakan cara untuk manusia mendapatkan semula akses apabila disekat)."
- recaptcha_api: *CaptchaAPI
- recaptcha_expiry: *CaptchaExpiry
- recaptcha_lockip: *CaptchaLockIP
- recaptcha_lockuser: *CaptchaLockUser
- recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
- recaptcha_recaptcha_log: *CaptchaLogFile
- recaptcha_secret: *CaptchaDashboard
- recaptcha_show_api_message: *ShowAPIMessage
- recaptcha_show_cookie_warning: *ShowCookieWarning
- recaptcha_signature_limit: *CaptchaSignatureLimit
- recaptcha_sitekey: *CaptchaDashboard
- recaptcha_usemode: *CaptchaUseMode
  sfs: "Konfigurasi untuk modul Stop Forum Spam."
  signatures: "Konfigurasi untuk tandatangan, fail tandatangan, modul, dsb."
  signatures_conflict_response: "Apabila terdapat terlalu banyak percubaan serentak untuk mengakses sumber yang sama (cth., permintaan serentak kepada berbilang proses PHP pada mesin yang sama untuk sumber yang sama), beberapa percubaan tersebut mungkin gagal. Apabila ini menjejaskan fail tandatangan atau modul, CIDRAM mungkin dihalang daripada membuat penentuan yang berkesan tentang permintaan tersebut. Jika ini berlaku, adakah permintaan tersebut harus disekat, dan manakah mesej status HTTP harus dihantar oleh CIDRAM?"
@@ -702,13 +688,11 @@ label:
   Enforce extended IP tracking options: "Kuatkuasakan pilihan penjejakan IP dilanjutkan"
   Forcibly disable hCaptcha: "Nyahaktifkan hCaptcha secara paksa"
   Forcibly disable IP tracking: "Nyahaktifkan penjejakan IP secara paksa"
-  Forcibly disable reCAPTCHA: "Nyahaktifkan reCAPTCHA secara paksa"
   Forcibly enable IP tracking: "Aktifkan penjejakan IP secara paksa"
   HTTP status code override: "Gantikan kod status HTTP:"
   If the following conditions are met, %s: "Jika syarat berikut dipenuhi, %s."
   Leave it as is (don_t set anything): "Biarkannya seperti sedia ada (jangan tetapkan apa-apa)"
   Mark for use with hCaptcha: "Tandakan untuk digunakan dengan hCaptcha"
-  Mark for use with reCAPTCHA: "Tandakan untuk digunakan dengan reCAPTCHA"
   Modify rule: "Mengubah suai peraturan"
   Move down: "Bergerak ke bawah"
   Move to the bottom: "Bergerak ke paling bawah"

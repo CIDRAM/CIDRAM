@@ -125,7 +125,6 @@ checkbox:
  Should this field appear in log entries: "Да ли ово поље треба да се појављује у записима у дневнику?"
  Should this field appear on the access denied page: "Да ли ово поље треба да се појави на страници „приступ забрањен“?"
  Suppress hCaptcha: "Потисне hCaptcha"
- Suppress reCAPTCHA: "Потисне reCAPTCHA"
  Test as sensitive request: "Тестирајте као осетљив захтев"
  Untrack positives: "Опозовете праћење позитивних?"
  When blocked, suppress output template: "Када је блокиран, потисните излазни шаблон."
@@ -282,19 +281,6 @@ config:
  rate_limiting_precision_ipv4: "Прецизност за праћење употребе ИПв4. Вредност одражава величину ЦИДР блока. Подесите на 32 за најбољу прецизност. Подразумевано = 32."
  rate_limiting_precision_ipv6: "Прецизност за праћење употребе ИПв6. Вредност одражава величину ЦИДР блока. Подесите на 128 за најбољу прецизност. Подразумевано = 128."
  rate_limiting_segregate: "Да ли квоте за различите домене и хостове треба да буду одвојене или подељене? Истинито = Квоте ће бити одвојене. Лажно = Квоте ће бити подељене [Подразумевано]."
- recaptcha: "Конфигурација за РеЦаптцха (пружа начин да људи поново добију приступ када су блокирани)."
- recaptcha_api: *CaptchaAPI
- recaptcha_expiry: *CaptchaExpiry
- recaptcha_lockip: *CaptchaLockIP
- recaptcha_lockuser: *CaptchaLockUser
- recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
- recaptcha_recaptcha_log: *CaptchaLogFile
- recaptcha_secret: *CaptchaDashboard
- recaptcha_show_api_message: *ShowAPIMessage
- recaptcha_show_cookie_warning: *ShowCookieWarning
- recaptcha_signature_limit: *CaptchaSignatureLimit
- recaptcha_sitekey: *CaptchaDashboard
- recaptcha_usemode: *CaptchaUseMode
  sfs: "Конфигурација за модул Стоп Форум Спам."
  signatures: "Конфигурација за потписе, датотеке потписа, модуле, итд."
  signatures_conflict_response: "Када постоји превише истовремених покушаја приступа истим ресурсима (нпр., симултани захтеви за више ПХП процеса на истој машини за исте ресурсе), неки од тих покушаја могу бити неуспешни. У ретком и мало вероватном случају да ово утиче на датотеке потписа или модуле, ЦИДРАМ може бити спречен да донесе ефикасну одлуку о захтеву. Ако се то догоди, да ли би захтев требало да буде блокиран, и коју ХТТП статусну поруку ЦИДРАМ треба да пошаље?"
@@ -718,13 +704,11 @@ label:
   Enforce extended IP tracking options: "Примените проширене опције за праћење ИП адресе"
   Forcibly disable hCaptcha: "Присилно онемогући hCaptcha"
   Forcibly disable IP tracking: "Присилно онемогући праћење ИП адресе"
-  Forcibly disable reCAPTCHA: "Присилно онемогући reCAPTCHA"
   Forcibly enable IP tracking: "Присилно омогући праћење ИП адресе"
   HTTP status code override: "Замена HTTP статусног кода:"
   If the following conditions are met, %s: "Ако су испуњени следећи услови, %s."
   Leave it as is (don_t set anything): "Остави како јесте (не подешавај ништа)"
   Mark for use with hCaptcha: "Означи за употребу са hCaptcha"
-  Mark for use with reCAPTCHA: "Означи за употребу са reCAPTCHA"
   Modify rule: "Измени правило"
   Move down: "Помери надоле"
   Move to the bottom: "Помери на дно"

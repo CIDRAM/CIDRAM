@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2025.08.12).
+ * This file: The CIDRAM core (last modified: 2025.08.14).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1559,13 +1559,6 @@ class Core
      */
     public function enactOptions(string $Prefix = '', array $Options = []): void
     {
-        if (isset($Options[$Prefix . 'MarkForUseWithReCAPTCHA'])) {
-            $this->Configuration['recaptcha']['enabled'] = true;
-        }
-        if (isset($Options[$Prefix . 'ForciblyDisableReCAPTCHA'])) {
-            $this->Configuration['recaptcha']['usemode'] = 0;
-            $this->Configuration['recaptcha']['forcibly_disabled'] = true;
-        }
         if (isset($Options[$Prefix . 'MarkForUseWithHCaptcha'])) {
             $this->Configuration['hcaptcha']['enabled'] = true;
         }
@@ -3029,18 +3022,6 @@ class Core
         if (!isset($this->BlockInfo['SignatureCount'])) {
             return false;
         }
-        if (isset($this->Configuration['recaptcha']['usemode']) && (
-            $this->Configuration['recaptcha']['usemode'] === 1 ||
-            $this->Configuration['recaptcha']['usemode'] === 3 ||
-            (
-                (
-                    $this->Configuration['recaptcha']['usemode'] === 2 ||
-                    $this->Configuration['recaptcha']['usemode'] === 5
-                ) && !empty($this->Configuration['recaptcha']['enabled'])
-            )
-        )) {
-            return $this->BlockInfo['SignatureCount'] <= $this->Configuration['recaptcha']['signature_limit'];
-        }
         if (isset($this->Configuration['hcaptcha']['usemode']) && (
             $this->Configuration['hcaptcha']['usemode'] === 1 ||
             $this->Configuration['hcaptcha']['usemode'] === 3 ||
@@ -3417,7 +3398,7 @@ class Core
         }
         $this->BlockInfo['Signatures'] .= 'Conflict';
         $this->BlockInfo['SignatureCount']++;
-        $this->enactOptions('', ['ForciblyDisableReCAPTCHA' => true, 'ForciblyDisableHCaptcha' => true]);
+        $this->enactOptions('', ['ForciblyDisableHCaptcha' => true]);
         $this->CIDRAM['Other Status'] = $this->getStatusHTTP($this->Configuration['signatures']['conflict_response']);
         $this->CIDRAM['Other Status Code'] = $this->Configuration['signatures']['conflict_response'];
         if (isset($this->Shorthand[$Signature . ':Suppress'])) {

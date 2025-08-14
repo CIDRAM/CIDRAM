@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2025.08.12).
+# This file: Defaults file (last modified: 2025.08.14).
 ##/
 
 Config Defaults:
@@ -914,81 +914,13 @@ Config Defaults:
   adjust:
    type: "checkbox"
    default: |
-    Negatives:ReCaptcha
     Negatives:HCaptcha
-    NonVerified:ReCaptcha
     NonVerified:HCaptcha
    labels:
-    ReCaptcha: "checkbox.Suppress reCAPTCHA"
     HCaptcha: "checkbox.Suppress hCaptcha"
    choices:
     Negatives: "checkbox.Blocked negatives"
     NonVerified: "checkbox.Blocked non-verified"
- recaptcha:
-  usemode:
-   type: "int"
-   default: 0
-   choices:
-    0: "label.Never"
-    1: "label.Only when blocked, within the signature limit, and not banned"
-    2: "label.Only when blocked, specially marked for use, within the signature limit, and not banned"
-    3: "label.Only when within the signature limit, and not banned (regardless of whether blocked)"
-    4: "label.Only when not blocked"
-    5: "label.Only when not blocked, or when specially marked for use, within the signature limit, and not banned"
-    6: "label.Only when not blocked, at sensitive page requests"
-   style: "radio"
-  lockip:
-   type: "bool"
-   default: false
-  lockuser:
-   type: "bool"
-   default: true
-  sitekey:
-   type: "string"
-   default: ""
-   See also:
-    Invisible reCAPTCHA: &ReCaptchaInvisible "https://developers.google.com/recaptcha/docs/invisible"
-    reCAPTCHA v2: &ReCaptchaV2 "https://developers.google.com/recaptcha/docs/display"
-  secret:
-   type: "string"
-   default: ""
-   See also:
-    Invisible reCAPTCHA: *ReCaptchaInvisible
-    reCAPTCHA v2: *ReCaptchaV2
-  expiry:
-   type: "float"
-   step: "any"
-   default: 720
-   preview: "hours"
-  recaptcha_log:
-   type: "string"
-   default: ""
-   hints: "hints_logging_datetime"
-  signature_limit:
-   type: "int"
-   default: 1
-  api:
-   type: "string"
-   default: "v2"
-   choices:
-    v2: "v2 ({label.Checkbox})"
-    Invisible: "v2 ({label.Invisible})"
-  show_cookie_warning:
-   type: "bool"
-   default: true
-  show_api_message:
-   type: "bool"
-   default: true
-  nonblocked_status_code:
-   type: "int"
-   default: 200
-   choices:
-    200: *200
-    403: *403
-    418: *418
-    429: &429 "label.429 Too Many Requests"
-    451: *451
-   style: "radio"
  hcaptcha:
   usemode:
    type: "int"
@@ -1231,7 +1163,6 @@ Provide:
    Other Status Code: 0
   Configuration:
    hcaptcha: {enabled: false, forcibly_disabled: false}
-   recaptcha: {enabled: false, forcibly_disabled: false}
  Auxiliary Rules:
   Modes:
    - "Whitelist"
@@ -1272,18 +1203,6 @@ Provide:
     Factors: "CIDR"
    ClientL10NAccepted: "field.Language resolution"
   Flags:
-   reCAPTCHA:
-    Hint: "{label.aux.When forcibly disabled, marking for use won_t have any effect} {label.See also} <code>recaptcha➡usemode</code>"
-    Mark for use with reCAPTCHA:
-     Label: "label.aux.Mark for use with reCAPTCHA"
-     Sets:
-      Configuration:
-       recaptcha: {enabled: true}
-    Forcibly disable reCAPTCHA:
-     Label: "label.aux.Forcibly disable reCAPTCHA"
-     Sets:
-      Configuration:
-       recaptcha: {usemode: 0, forcibly_disabled: true}
    HCaptcha:
     Hint: "{label.aux.When forcibly disabled, marking for use won_t have any effect} {label.See also} <code>hcaptcha➡usemode</code>"
     Mark for use with HCaptcha:

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bot user agents module (last modified: 2025.08.06).
+ * This file: Bot user agents module (last modified: 2025.08.14).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -28,8 +28,8 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         return;
     }
 
-    /** Unmarks for use with reCAPTCHA and hCaptcha. */
-    $UnmarkCaptcha = ['recaptcha' => ['usemode' => 0, 'forcibly_disabled' => true], 'hcaptcha' => ['usemode' => 0, 'forcibly_disabled' => true]];
+    /** Unmarks for use with hCaptcha. */
+    $UnmarkCaptcha = ['hcaptcha' => ['usemode' => 0, 'forcibly_disabled' => true]];
 
     $UA = str_replace('\\', '/', strtolower(urldecode($this->BlockInfo['UA'])));
     $UANoSpace = preg_replace('/\s/', '', $UA);

@@ -125,7 +125,6 @@ checkbox:
  Should this field appear in log entries: "ഈ ഫീൽഡ് ലോഗ് എൻട്രികളിൽ ദൃശ്യമാകണോ?"
  Should this field appear on the access denied page: "ഈ ഫീൽഡ് "പ്രവേശനം നിരസിച്ചു" പേജിൽ ദൃശ്യമാകണോ?"
  Suppress hCaptcha: "HCaptcha ഓഫാക്കുക"
- Suppress reCAPTCHA: "ReCAPTCHA ഓഫാക്കുക"
  Test as sensitive request: "സെൻസിറ്റീവ് അഭ്യർത്ഥനയായി പരിശോധിക്കുക"
  Untrack positives: "പോസിറ്റീവുകൾ ട്രാക്ക് ചെയ്യുന്നത് നിർത്തണോ?"
  When blocked, suppress output template: "തടയപ്പെടുമ്പോൾ, ഔട്ട്പുട്ട് ടെംപ്ലേറ്റ് ഓഫാക്കുക."
@@ -282,19 +281,6 @@ config:
  rate_limiting_precision_ipv4: "IPv4 ഉപയോഗം ട്രാക്ക് ചെയ്യുന്നതിന് ഉപയോഗിക്കേണ്ട കൃത്യത. മൂല്യം CIDR ബ്ലോക്കിന്റെ വലുപ്പത്തെ പ്രതിഫലിപ്പിക്കുന്നു. മികച്ച കൃത്യതയ്ക്കായി 32 ആയി സജ്ജമാക്കുക. സ്ഥിരസ്ഥിതി = 32."
  rate_limiting_precision_ipv6: "IPv6 ഉപയോഗം ട്രാക്ക് ചെയ്യുന്നതിന് ഉപയോഗിക്കേണ്ട കൃത്യത. മൂല്യം CIDR ബ്ലോക്കിന്റെ വലുപ്പത്തെ പ്രതിഫലിപ്പിക്കുന്നു. മികച്ച കൃത്യതയ്ക്കായി 128 ആയി സജ്ജമാക്കുക. സ്ഥിരസ്ഥിതി = 128."
  rate_limiting_segregate: "വ്യത്യസ്ത ഡൊമെയ്‌നുകൾക്കും ഹോസ്റ്റുകൾക്കുമുള്ള ക്വാട്ടകൾ വേർതിരിക്കണോ അതോ പങ്കിടണോ? True = ക്വാട്ടകൾ വേർതിരിക്കും. False = ക്വാട്ടകൾ പങ്കിടും [സ്ഥിരസ്ഥിതി]."
- recaptcha: "ReCAPTCHA-യ്ക്കുള്ള കോൺഫിഗറേഷൻ (തടയപ്പെടുമ്പോൾ മനുഷ്യർക്ക് ആക്‌സസ് വീണ്ടെടുക്കാനുള്ള ഒരു മാർഗം നൽകുന്നു)."
- recaptcha_api: *CaptchaAPI
- recaptcha_expiry: *CaptchaExpiry
- recaptcha_lockip: *CaptchaLockIP
- recaptcha_lockuser: *CaptchaLockUser
- recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
- recaptcha_recaptcha_log: *CaptchaLogFile
- recaptcha_secret: *CaptchaDashboard
- recaptcha_show_api_message: *ShowAPIMessage
- recaptcha_show_cookie_warning: *ShowCookieWarning
- recaptcha_signature_limit: *CaptchaSignatureLimit
- recaptcha_sitekey: *CaptchaDashboard
- recaptcha_usemode: *CaptchaUseMode
  sfs: "Stop Forum Spam മൊഡ്യൂളിനായുള്ള കോൺഫിഗറേഷൻ."
  signatures: "ഒപ്പുകൾ, ഒപ്പ് ഫയലുകൾ, മൊഡ്യൂളുകൾ, മുതലായവയ്ക്കുള്ള കോൺഫിഗറേഷൻ."
  signatures_conflict_response: "ഒരേ ഉറവിടങ്ങൾ ആക്‌സസ് ചെയ്യാൻ ഒരേസമയം നിരവധി ശ്രമങ്ങൾ നടക്കുമ്പോൾ (ഉദാഹരണത്തിന്, ഒരേ മെഷീനിൽ ഒരേ ഉറവിടങ്ങൾക്കായി ഒന്നിലധികം PHP പ്രക്രിയകളിലേക്കുള്ള ഒരേസമയം അഭ്യർത്ഥനകൾ), ആ ശ്രമങ്ങളിൽ ചിലത് പരാജയപ്പെട്ടേക്കാം. ഒപ്പ് ഫയലുകളെയോ മൊഡ്യൂളുകളെയോ ഇത് ബാധിക്കുന്ന അപൂർവവും സാധ്യതയില്ലാത്തതുമായ സാഹചര്യത്തിൽ, അഭ്യർത്ഥനയെക്കുറിച്ച് ഫലപ്രദമായ തീരുമാനമെടുക്കുന്നതിൽ നിന്ന് CIDRAM-നെ തടഞ്ഞേക്കാം. ഇങ്ങനെ സംഭവിച്ചാൽ, അഭ്യർത്ഥന തടയണോ, ഏത് HTTP സ്റ്റാറ്റസ് സന്ദേശമാണ് CIDRAM അയയ്ക്കേണ്ടത്?"
@@ -713,13 +699,11 @@ label:
   Enforce extended IP tracking options: "വിപുലീകൃത IP ട്രാക്കിംഗ് ഓപ്ഷനുകൾ നടപ്പിലാക്കുക"
   Forcibly disable hCaptcha: "HCaptcha നിർബന്ധിതമായി പ്രവർത്തനരഹിതമാക്കുക"
   Forcibly disable IP tracking: "IP ട്രാക്കിംഗ് നിർബന്ധിതമായി പ്രവർത്തനരഹിതമാക്കുക"
-  Forcibly disable reCAPTCHA: "reCAPTCHA നിർബന്ധിതമായി പ്രവർത്തനരഹിതമാക്കുക"
   Forcibly enable IP tracking: "IP ട്രാക്കിംഗ് നിർബന്ധിതമായി പ്രാപ്തമാക്കുക"
   HTTP status code override: "HTTP സ്റ്റാറ്റസ് കോഡ് ഓവർറൈഡ്:"
   If the following conditions are met, %s: "താഴെ പറയുന്ന വ്യവസ്ഥകൾ പാലിക്കപ്പെട്ടിട്ടുണ്ടെങ്കിൽ, %s."
   Leave it as is (don_t set anything): "അത് അതേപടി വിടുക (ഒന്നും സജ്ജമാക്കരുത്)"
   Mark for use with hCaptcha: "HCaptcha-യിൽ ഉപയോഗിക്കുന്നതിനായി അടയാളപ്പെടുത്തുക"
-  Mark for use with reCAPTCHA: "reCAPTCHA-യിൽ ഉപയോഗിക്കുന്നതിനായി അടയാളപ്പെടുത്തുക"
   Modify rule: "നിയമം പരിഷ്‌ക്കരിക്കുക"
   Move down: "താഴേക്ക് നീക്കുക"
   Move to the bottom: "അവസാനത്തിലേക്ക് നീങ്ങുക"

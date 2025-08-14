@@ -125,7 +125,6 @@ checkbox:
  Should this field appear in log entries: "Acest câmp ar trebui să apară în intrările de jurnal?"
  Should this field appear on the access denied page: "Acest câmp ar trebui să apară pe pagina „acces refuzat”?"
  Suppress hCaptcha: "Suprimați hCaptcha"
- Suppress reCAPTCHA: "Suprimați reCAPTCHA"
  Test as sensitive request: "Testați ca solicităre sensibilă"
  Untrack positives: "Anulați urmărirea pozitive?"
  When blocked, suppress output template: "Când este blocat, suprimați șablonul de ieșire."
@@ -282,19 +281,6 @@ config:
  rate_limiting_precision_ipv4: "Precizia de utilizat pentru urmărirea utilizării IPv4. Valoarea reflectă dimensiunea blocului CIDR. Setați la 32 pentru cea mai bună precizie. Implicit = 32."
  rate_limiting_precision_ipv6: "Precizia de utilizat pentru urmărirea utilizării IPv6. Valoarea reflectă dimensiunea blocului CIDR. Setați la 128 pentru cea mai bună precizie. Implicit = 128."
  rate_limiting_segregate: "Ar trebui să fie separate sau partajate cotele pentru diferite domenii și gazde? True = Cotele vor fi separate. False = Cotele vor fi partajate [Implicit]."
- recaptcha: "Configurare pentru reCAPTCHA (oferă o modalitate prin care oamenii să-și recapete accesul atunci când sunt blocați)."
- recaptcha_api: *CaptchaAPI
- recaptcha_expiry: *CaptchaExpiry
- recaptcha_lockip: *CaptchaLockIP
- recaptcha_lockuser: *CaptchaLockUser
- recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
- recaptcha_recaptcha_log: *CaptchaLogFile
- recaptcha_secret: *CaptchaDashboard
- recaptcha_show_api_message: *ShowAPIMessage
- recaptcha_show_cookie_warning: *ShowCookieWarning
- recaptcha_signature_limit: *CaptchaSignatureLimit
- recaptcha_sitekey: *CaptchaDashboard
- recaptcha_usemode: *CaptchaUseMode
  sfs: "Configurare pentru modulul Stop Forum Spam."
  signatures: "Configurare pentru semnături, fișiere de semnătură, module, etc."
  signatures_conflict_response: "Când există prea multe încercări simultane de a accesa aceleași resurse (de exemplu, solicitări simultane către mai multe procese PHP de la aceeași mașină pentru aceleași resurse), unele dintre aceste încercări pot eșua. În cazul rar și puțin probabil în care acest lucru afectează fișierele de semnătură sau modulele, CIDRAM poate fi împiedicat să ia o decizie eficientă cu privire la solicităre. Dacă se întâmplă acest lucru, solicitărea ar trebui să fie blocată, și ce mesaj de stare HTTP ar trebui să trimită CIDRAM?"
@@ -719,13 +705,11 @@ label:
   Enforce extended IP tracking options: "Aplicați opțiunile de urmărire IP extinse"
   Forcibly disable hCaptcha: "Dezactivați forțat hCaptcha"
   Forcibly disable IP tracking: "Dezactivați forțat urmărirea IP"
-  Forcibly disable reCAPTCHA: "Dezactivați forțat reCAPTCHA"
   Forcibly enable IP tracking: "Activați forțat urmărirea IP"
   HTTP status code override: "Modificarea codului de stare HTTP:"
   If the following conditions are met, %s: "Dacă sunt îndeplinite următoarele condiții, %s."
   Leave it as is (don_t set anything): "Lăsați-l așa cum este (nu setați nimic)"
   Mark for use with hCaptcha: "Marcați pentru utilizare cu hCaptcha"
-  Mark for use with reCAPTCHA: "Marcați pentru utilizare cu reCAPTCHA"
   Modify rule: "Modificați regula"
   Move down: "Mutați asta în jos"
   Move to the bottom: "Mutați asta la capăt"

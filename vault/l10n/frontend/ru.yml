@@ -125,7 +125,6 @@ checkbox:
  Should this field appear in log entries: "Должно ли это поле отображаться в записях журнала?"
  Should this field appear on the access denied page: "Должно ли это поле отображаться на странице «доступ запрещен»?"
  Suppress hCaptcha: "Подавить hCaptcha"
- Suppress reCAPTCHA: "Подавить reCAPTCHA"
  Test as sensitive request: "Проверить как конфиденциальный запрос"
  Untrack positives: "Перестать отслеживать положительные?"
  When blocked, suppress output template: "При блокировке, подавить шаблон вывода."
@@ -282,19 +281,6 @@ config:
  rate_limiting_precision_ipv4: "Точность использования при мониторинге использования IPv4. Значение отражает размер блока CIDR. Установить как 32 для наилучшей точности. Стандарт = 32."
  rate_limiting_precision_ipv6: "Точность использования при мониторинге использования IPv6. Значение отражает размер блока CIDR. Установить как 128 для наилучшей точности. Стандарт = 128."
  rate_limiting_segregate: "Должны ли квоты для разных доменов и хостов храниться раздельно или совместно? True = Квоты будут храниться раздельно. False = Квоты будут храниться совместно [Стандарт]."
- recaptcha: "Конфигурация для reCAPTCHA (предоставляет людям возможность восстановить доступ при блокировании)."
- recaptcha_api: *CaptchaAPI
- recaptcha_expiry: *CaptchaExpiry
- recaptcha_lockip: *CaptchaLockIP
- recaptcha_lockuser: *CaptchaLockUser
- recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
- recaptcha_recaptcha_log: *CaptchaLogFile
- recaptcha_secret: *CaptchaDashboard
- recaptcha_show_api_message: *ShowAPIMessage
- recaptcha_show_cookie_warning: *ShowCookieWarning
- recaptcha_signature_limit: *CaptchaSignatureLimit
- recaptcha_sitekey: *CaptchaDashboard
- recaptcha_usemode: *CaptchaUseMode
  sfs: "Конфигурация модуля Stop Forum Spam."
  signatures: "Конфигурация для сигнатурей, файлов сигнатурей, модулей и т.д."
  signatures_conflict_response: "Если одновременно происходит слишком много попыток доступа к одним и тем же ресурсам (например, одновременные запросы к нескольким процессам PHP на одном компьютере для одних и тех же ресурсов), некоторые из этих попыток могут завершиться неудачей. В редком и маловероятном случае, если это затронет файлы сигнатурей или модули, CIDRAM может быть лишен возможности принять эффективное решение по запросу. Если это произойдет, следует ли блокировать запрос, и какое сообщение о состоянии HTTP должен отправить CIDRAM?"
@@ -721,13 +707,11 @@ label:
   Enforce extended IP tracking options: "Включить расширенные параметры отслеживания IP"
   Forcibly disable hCaptcha: "Принудительно отключить hCaptcha"
   Forcibly disable IP tracking: "Принудительно отключить отслеживание IP"
-  Forcibly disable reCAPTCHA: "Принудительно отключить reCAPTCHA"
   Forcibly enable IP tracking: "Принудительно включить отслеживание IP"
   HTTP status code override: "Переопределение кода состояния HTTP:"
   If the following conditions are met, %s: "Если выполнены следующие условия, %s."
   Leave it as is (don_t set anything): "Оставьте как есть (ничего не устанавливайте)"
   Mark for use with hCaptcha: "Отметить для использования с hCaptcha"
-  Mark for use with reCAPTCHA: "Отметить для использования с reCAPTCHA"
   Modify rule: "Изменить правило"
   Move down: "Двигаться вниз"
   Move to the bottom: "Переместить правило последнее место"

@@ -276,23 +276,8 @@ verification:
   ChatGPT-User:BlockNonVerified
   GPTBot:BlockNonVerified
  adjust: |
-  Negatives:ReCaptcha
   Negatives:HCaptcha
-  NonVerified:ReCaptcha
   NonVerified:HCaptcha
-recaptcha:
- usemode: 0
- lockip: false
- lockuser: true
- sitekey: ""
- secret: ""
- expiry: 720
- recaptcha_log: ""
- signature_limit: 1
- api: "v2"
- show_cookie_warning: true
- show_api_message: true
- nonblocked_status_code: 200
 hcaptcha:
  usemode: 0
  lockip: false

@@ -125,7 +125,6 @@ checkbox:
  Should this field appear in log entries: "هل يجب أن يظهر هذا الحقل في إدخالات السجل؟"
  Should this field appear on the access denied page: "هل يجب أن يظهر هذا الحقل في صفحة "الوصول مرفوض"؟"
  Suppress hCaptcha: "قمع hCaptcha"
- Suppress reCAPTCHA: "قمع reCAPTCHA"
  Test as sensitive request: "اختبر كما لو كان طلبًا حساسًا"
  Untrack positives: "التوقف عن تتبع الإيجابيات؟"
  When blocked, suppress output template: "عند حظره، قم بإيقاف قالب الإخراج."
@@ -282,19 +281,6 @@ config:
  rate_limiting_precision_ipv4: "الدقة المستخدمة عند مراقبة استخدام IPv4. قيمة تعكس حجم كتلة CIDR. تعيين إلى 32 للحصول على أفضل دقة. افتراضي = 32."
  rate_limiting_precision_ipv6: "الدقة المستخدمة عند مراقبة استخدام IPv6. قيمة تعكس حجم كتلة CIDR. تعيين إلى 128 للحصول على أفضل دقة. افتراضي = 128."
  rate_limiting_segregate: "هل يجب فصل أو مشاركة الحصص الخاصة بالمجالات والمضيفين المختلفين؟ True = سيتم فصل الحصص. False = سيتم تقاسم الحصص [افتراضي]."
- recaptcha: "التكوين ل reCAPTCHA (يوفر وسيلة للبشر لاستعادة الوصول عند حجبه)."
- recaptcha_api: *CaptchaAPI
- recaptcha_expiry: *CaptchaExpiry
- recaptcha_lockip: *CaptchaLockIP
- recaptcha_lockuser: *CaptchaLockUser
- recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
- recaptcha_recaptcha_log: *CaptchaLogFile
- recaptcha_secret: *CaptchaDashboard
- recaptcha_show_api_message: *ShowAPIMessage
- recaptcha_show_cookie_warning: *ShowCookieWarning
- recaptcha_signature_limit: *CaptchaSignatureLimit
- recaptcha_sitekey: *CaptchaDashboard
- recaptcha_usemode: *CaptchaUseMode
  sfs: "التكوين للوحدة Stop Forum Spam."
  signatures: "التكوين للتوقيعات، ملفات التوقيع، الوحدات النمطية، إلخ."
  signatures_conflict_response: "عندما يكون هناك العديد من المحاولات المتزامنة للوصول إلى نفس الموارد (على سبيل المثال، الطلبات المتزامنة لعمليات PHP متعددة على نفس الجهاز لنفس الموارد)، فقد تفشل بعض هذه المحاولات. في حالة نادرة وغير محتملة أن يؤثر هذا على ملفات التوقيع أو الوحدات النمطية، قد يتم منع CIDRAM من اتخاذ قرار فعال بشأن الطلب. إذا حدث هذا، فهل يجب حظر الطلب، وما هي رسالة حالة HTTP التي يجب أن يرسلها CIDRAM؟"
@@ -701,13 +687,11 @@ label:
   Enforce extended IP tracking options: "فرض خيارات تتبع IP الموسعة"
   Forcibly disable hCaptcha: "قم بتعطيل hCaptcha بالقوة"
   Forcibly disable IP tracking: "قم بتعطيل تتبع IP بالقوة"
-  Forcibly disable reCAPTCHA: "قم بتعطيل reCAPTCHA بالقوة"
   Forcibly enable IP tracking: "قم بتمكين تتبع IP بالقوة"
   HTTP status code override: "تجاوز رمز حالة HTTP:"
   If the following conditions are met, %s: "إذا تم استيفاء الشروط التالية، %s."
   Leave it as is (don_t set anything): "اتركه كما هو (لا تضع أي شيء)"
   Mark for use with hCaptcha: "ضع علامة للاستخدام مع hCaptcha"
-  Mark for use with reCAPTCHA: "ضع علامة للاستخدام مع reCAPTCHA"
   Modify rule: "تعديل القاعدة"
   Move down: "تحرك لأسفل"
   Move to the bottom: "نقل القاعدة إلى أسفل"

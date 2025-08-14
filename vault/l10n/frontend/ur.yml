@@ -125,7 +125,6 @@ checkbox:
  Should this field appear in log entries: "کیا یہ فیلڈ لاگ اندراجات میں ظاہر ہونا چاہیے؟"
  Should this field appear on the access denied page: "کیا یہ فیلڈ "رسائی مسترد کر دی" صفحہ پر ظاہر ہونا چاہیے؟"
  Suppress hCaptcha: "HCaptcha کا استعمال نہ کریں"
- Suppress reCAPTCHA: "ReCAPTCHA کا استعمال نہ کریں"
  Test as sensitive request: "حساس درخواست کے طور پر ٹیسٹ کریں"
  Untrack positives: "مثبت سے باخبر رہنا بند کرو؟"
  When blocked, suppress output template: "بلاک ہونے پر، آؤٹ پٹ ٹیمپلیٹ کا استعمال نہ کریں."
@@ -282,19 +281,6 @@ config:
  rate_limiting_precision_ipv4: "IPv4 استعمال کی نگرانی کرتے وقت استعمال کرنے کی صحت سے متعلق. قیمت CIDR بلاک سائز کی عکاسی کرتا ہے. بہترین صحت سے متعلق کے لیے 32 پر مقرر کریں. پہلے سے طے شدہ = 32."
  rate_limiting_precision_ipv6: "IPv6 استعمال کی نگرانی کرتے وقت استعمال کرنے کی صحت سے متعلق. قیمت CIDR بلاک سائز کی عکاسی کرتا ہے. بہترین صحت سے متعلق کے لیے 128 پر مقرر کریں. پہلے سے طے شدہ = 128."
  rate_limiting_segregate: "کیا مختلف ڈومینز اور میزبانوں کے کوٹوں کو الگ یا شیئر کیا جانا چاہیے؟ True = کوٹے الگ کیے جائیں گے. False = کوٹے شیئر کیے جائیں گے [پہلے سے طے شدہ]."
- recaptcha: "ReCAPTCHA کی ترتیبات (بلاک ہونے پر انسانوں کو دوبارہ رسائی حاصل کرنے کا ایک راستہ فراہم کرتا ہے)."
- recaptcha_api: *CaptchaAPI
- recaptcha_expiry: *CaptchaExpiry
- recaptcha_lockip: *CaptchaLockIP
- recaptcha_lockuser: *CaptchaLockUser
- recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
- recaptcha_recaptcha_log: *CaptchaLogFile
- recaptcha_secret: *CaptchaDashboard
- recaptcha_show_api_message: *ShowAPIMessage
- recaptcha_show_cookie_warning: *ShowCookieWarning
- recaptcha_signature_limit: *CaptchaSignatureLimit
- recaptcha_sitekey: *CaptchaDashboard
- recaptcha_usemode: *CaptchaUseMode
  sfs: "Stop Forum Spam ماڈیول کے لیے ترتیب."
  signatures: "دستخطوں، دستخط فائلوں، ماڈیولز، وغیرہ کے لیے تشکیل."
  signatures_conflict_response: "جب ایک ہی وسائل تک رسائی کے لیے بیک وقت بہت ساری کوششیں ہوتی ہیں (مثال کے طور پر، ایک ہی مشین پر ایک ہی وسائل کے لیے متعدد پی ایچ پی پروسیسز کے لیے بیک وقت درخواستیں)، ان میں سے کچھ کوششیں ناکام ہو سکتی ہیں. نایاب اور غیر امکانی صورت میں کہ یہ دستخطی فائلوں یا ماڈیولز کو متاثر کرتا ہے، CIDRAM کو درخواست کے بارے میں موثر فیصلہ کرنے سے روکا جا سکتا ہے. اگر ایسا ہوتا ہے، کیا درخواست کو بلاک کر دینا چاہیے، اور CIDRAM کو کون سا HTTP اسٹیٹس پیغام بھیجنا چاہیے؟"
@@ -703,13 +689,11 @@ label:
   Enforce extended IP tracking options: "توسیع شدہ IP سے باخبر رہنے کے اختیارات نافذ کریں"
   Forcibly disable hCaptcha: "زبردستی hCaptcha کو غیر فعال کریں"
   Forcibly disable IP tracking: "زبردستی IP ٹریکنگ کو غیر فعال کریں"
-  Forcibly disable reCAPTCHA: "زبردستی reCAPTCHA کو غیر فعال کریں"
   Forcibly enable IP tracking: "زبردستی IP سے باخبر رہنے کے قابل بنائیں"
   HTTP status code override: "HTTP حیثیت کا کوڈ اوور رائڈ:"
   If the following conditions are met, %s: "اگر درج ذیل شرائط پوری ہو جائیں تو %s."
   Leave it as is (don_t set anything): "اسے جیسا چھوڑ دیں (کچھ مقرر نہ کریں)"
   Mark for use with hCaptcha: "HCaptcha کے ساتھ استعمال کے لیے نشان زد کریں"
-  Mark for use with reCAPTCHA: "reCAPTCHA کے ساتھ استعمال کے لیے نشان زد کریں"
   Modify rule: "حکمران میں ترمیم کریں"
   Move down: "نیچے منتقل"
   Move to the bottom: "اصول کو نیچے سے نیچے منتقل کریں"

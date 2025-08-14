@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Default event handlers (last modified: 2023.12.24).
+ * This file: Default event handlers (last modified: 2025.08.14).
  */
 
 /**
@@ -267,9 +267,6 @@ $this->Events->addHandler('isLogFile', function (): void {
     }
     if ($this->Configuration['frontend']['frontend_log'] !== '') {
         $this->CIDRAM['LogPatterns'][] = $this->buildLogPattern($this->Configuration['frontend']['frontend_log'], true);
-    }
-    if ($this->Configuration['recaptcha']['recaptcha_log'] !== '') {
-        $this->CIDRAM['LogPatterns'][] = $this->buildLogPattern($this->Configuration['recaptcha']['recaptcha_log'], true);
     }
     if ($this->Configuration['hcaptcha']['hcaptcha_log'] !== '') {
         $this->CIDRAM['LogPatterns'][] = $this->buildLogPattern($this->Configuration['hcaptcha']['hcaptcha_log'], true);

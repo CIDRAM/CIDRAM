@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Marathi language data for the front-end (last modified: 2025.08.12).
+# This file: Marathi language data for the front-end (last modified: 2025.08.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -417,7 +417,7 @@ hints_cclookup: "** देश कोड लुकअप कार्यक्ष
 hints_client_hints: "!! हा कमी-एंट्रॉपी क्लायंट सूचना आहे. क्लायंट सूचना ही एक नवीन, प्रायोगिक वेब तंत्रज्ञान आहे जी अद्याप सर्व ब्राउझर आणि प्रमुख क्लायंटमध्ये व्यापकपणे समर्थित नाही. <em>पहा: {{Links.MDN.Client hints}}.</em> जरी क्लायंट सूचना फिंगरप्रिंटिंगसाठी उपयुक्त ठरू शकतात, कारण त्यांना व्यापकपणे पाठिंबा मिळत नाही, तरीही विनंत्यांमध्ये त्यांची उपस्थिती गृहीत धरू नये किंवा त्यावर अवलंबून राहू नये (म्हणजेच, त्यांच्या अनुपस्थितीमुळे अवरोधित करणे ही एक वाईट कल्पना आहे)."
 hints_client_honour: "आपण क्लायंटला कसेही सूचना दिल्या तरी, हे लक्षात ठेवणे महत्त्वाचे आहे की क्लायंट काय करायचे ठरवतो यावर आपले कोणतेही नियंत्रण नसते आणि क्लायंट आपल्या सूचनांचे पालन करेल याची कोणतीही हमी नसते."
 hints_default_dns:
- वारंवार विचारले जाणारे प्रश्न.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#what-can-i-use-for-default_dns" hreflang="en-AU">"default_dns" साठी मी काय वापरू शकतो?</a></em>"
+ वारंवार विचारले जाणारे प्रश्न.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#what-can-i-use-for-default_dns" hreflang="en-AU">"default_dns" साठी मी काय वापरू शकतो?</a></em>"
 hints_duration:
  SI.: ""आंतरराष्ट्रीय युनिट्स सिस्टम" वापरून कालावधीचे वर्णन करता येते. उदाहरणार्थ, <strong>1d2h3min4s</strong> किंवा <strong>1d 2h 3min 4s</strong> एक दिवस, दोन तास, तीन मिनिटे, चार सेकंदांसाठी, किंवा <strong>5min</strong> फक्त पाच मिनिटांसाठी."
  आर्कटाइम.: "कालावधीचे वर्णन आर्कटाइम नोटेशन वापरून करता येते. उदाहरणार्थ, <strong>1d2°3′4″</strong> एक दिवस, दोन तास, तीन मिनिटे, चार सेकंदांसाठी, किंवा <strong>5″</strong> फक्त पाच सेकंदांसाठी."
@@ -428,7 +428,7 @@ hints_inspection: "* केवळ सहाय्यक नियम डीब�
 hints_ipv6_on_32bit: "टीप: काही ३२-बिट सिस्टीमवर IPv6 लुकअप योग्यरित्या काम करू शकत नाहीत."
 hints_logging_datetime: "उपयुक्त टीप: वेळ स्वरूप प्लेसहोल्डर वापरून तुम्ही लॉग फायलींच्या नावांना तारीख/वेळ माहिती जोडू शकता. उपलब्ध वेळ स्वरूप प्लेसहोल्डर {{Links.ConfigRef.time_format}} वर प्रदर्शित केले जातात."
 hints_pdo_dsn:
- वारंवार विचारले जाणारे प्रश्न.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">"PDO DSN" म्हणजे काय? मी CIDRAM सह PDO कसा वापरू शकतो?</a></em>"
+ वारंवार विचारले जाणारे प्रश्न.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">"PDO DSN" म्हणजे काय? मी CIDRAM सह PDO कसा वापरू शकतो?</a></em>"
 hints_sensitive_pages: "टीप: "संवेदनशील पृष्ठ" म्हणजे काय हे {{Links.ConfigRef.sensitive}} द्वारे निश्चित केले जाते."
 hints_shorthand:
  0.: "जर तुमच्या वेबसाइटला LAN किंवा लोकलहोस्ट द्वारे प्रवेश हवा असेल, तर ते अवरोधित करू नका. अन्यथा, तुम्ही हे अवरोधित करू शकता."
@@ -1046,7 +1046,7 @@ tip:
  Rate limiting is currently disabled: "टीप: दर मर्यादा सध्या अक्षम केली आहे, परंतु कॉन्फिगरेशन पृष्ठाद्वारे सक्षम केली जाऊ शकते."
  Report to AbuseIPDB: "या पानाचा वापर AbuseIPDB ला IP पत्ते कळवण्यासाठी किंवा चुकून IP पत्ता कळवला गेल्यास मागील अहवाल हटवण्यासाठी केला जाऊ शकतो."
  Sections List: "या पानावर सध्या सक्रिय असलेल्या स्वाक्षरी फायलींमध्ये कोणते विभाग अस्तित्वात आहेत ते सूचीबद्ध केले आहे."
- See the documentation: "विविध कॉन्फिगरेशन निर्देश आणि त्यांच्या उद्देशांबद्दल माहितीसाठी <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external">दस्तऐवजीकरण</a> पहा."
+ See the documentation: "विविध कॉन्फिगरेशन निर्देश आणि त्यांच्या उद्देशांबद्दल माहितीसाठी <a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external">दस्तऐवजीकरण</a> पहा."
  Server log snippets, abuse details, etc: "सर्व्हर लॉग स्निपेट, गैरवापर तपशील, इ."
  Signature File Fixer: "स्वाक्षरी फाइल फिक्सर स्वाक्षरी फायलीमधील संभाव्य समस्या शोधण्याचा आणि त्यांचे निराकरण करण्याचा एक मार्ग प्रदान करतो."
  Specify a value, or leave blank to disregard: "मूल्य निर्दिष्ट करा, किंवा दुर्लक्ष करण्यासाठी रिक्त सोडा."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2025.08.12).
+# This file: German language data for the front-end (last modified: 2025.08.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -415,7 +415,7 @@ hints_cclookup: "** Erfordert Ländercode-Lookup-Funktionalität (z.B., über da
 hints_client_hints: "!! Dies ist ein Client-Hinweis mit niedriger Entropie. Client-Hinweise sind eine neue, experimentelle Webtechnologie, die noch nicht von allen Browsern und wichtigen Clients allgemein unterstützt wird. <em>Sehen: {{Links.MDN.Client hints}}.</em> Client-Hinweise können für das Fingerprinting nützlich sein, aber da sie nicht allgemein unterstützt werden, sollte man weder davon ausgehen dass sie in Anfragen vorhanden sind, noch sich darauf verlassen (d.h., eine Blockierung aufgrund ihrer Abwesenheit ist keine gute Idee)."
 hints_client_honour: "Egal was wir dem Client sagen, Es ist wichtig zu bedenken, dass wir letztendlich keine Kontrolle darüber haben, was der Client tut, und es gibt keine Garantie dafür, dass der Client unseren Anweisungen Folge leistet."
 hints_default_dns:
- FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.de.md\#was-kann-ich-für-default_dns-verwenden" hreflang="de-DE">Was kann ich für „default_dns“ verwenden?</a></em>"
+ FAQ.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.de.md\#was-kann-ich-für-default_dns-verwenden" hreflang="de-DE">Was kann ich für „default_dns“ verwenden?</a></em>"
 hints_duration:
  SI.: "Die Dauer kann mit dem „International System of Units“ beschrieben werden. z.B., <strong>1d2h3min4s</strong> oder <strong>1d 2h 3min 4s</strong> für einen Tag, zwei Stunden, drei Minuten, vier Sekunden, oder <strong>5min</strong> für nur fünf Minuten."
  Bogenzeit.: "Die Dauer kann unter Verwendung der Bogenzeit-Notation beschrieben werden. z.B., <strong>1d2°3′4″</strong> für einen Tag, zwei Stunden, drei Minuten, vier Sekunden, oder <strong>5″</strong> für nur fünf Sekunden."
@@ -426,7 +426,7 @@ hints_inspection: "* Nur zum Debuggen von Hilfsregeln vorgesehen. Blockierten Be
 hints_ipv6_on_32bit: "Hinweis: IPv6-Lookups funktionieren auf einigen 32-Bit-Systemen möglicherweise nicht richtig."
 hints_logging_datetime: "Nützlicher Tipp: Sie können den Namen der Protokolldateien Datums-/Uhrzeitinformationen hinzufügen, indem Sie Platzhalter für das Zeitformat verwenden. Verfügbare Platzhalter für Zeitformate werden bei {{Links.ConfigRef.time_format}} angezeigt."
 hints_pdo_dsn:
- FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.de.md\#user-content-HOW_TO_USE_PDO" hreflang="de-DE">Was ist ein „PDO DSN“? Wie kann ich PDO mit CIDRAM verwenden?</a></em>"
+ FAQ.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.de.md\#user-content-HOW_TO_USE_PDO" hreflang="de-DE">Was ist ein „PDO DSN“? Wie kann ich PDO mit CIDRAM verwenden?</a></em>"
 hints_sensitive_pages: "Hinweis: Was eine „sensible Seite“ ist, wird durch {{Links.ConfigRef.sensitive}} bestimmt."
 hints_shorthand:
  0.: "Wenn Ihre Website Zugriff über LAN oder localhost benötigt, blockieren Sie dies nicht. Andernfalls können Sie dies blockieren."
@@ -1057,7 +1057,7 @@ tip:
  Rate limiting is currently disabled: "Hinweis: Die Ratenbegrenzung ist derzeit deaktiviert, aber kann über die Konfigurationsseite aktiviert werden."
  Report to AbuseIPDB: "Diese Seite kann verwendet werden, um IP-Adressen an AbuseIPDB zu melden, oder um frühere Berichte zu löschen, falls eine IP-Adresse fälschlicherweise gemeldet wurde."
  Sections List: "Auf dieser Seite wird aufgelistet, welche Sektionen in den derzeit aktiven Signaturdateien vorhanden sind."
- See the documentation: "Siehe die <a href="https://github.com/CIDRAM/Docs/blob/master/readme.de.md\#user-content-SECTION5" hreflang="de-DE" rel="noopener external">Dokumentation</a> für Informationen über den verschiedenen Konfigurationseinstellungen und ihren Zwecken."
+ See the documentation: "Siehe die <a href="{{Links.CIDRAM.Docs Base Path}}readme.de.md\#user-content-SECTION5" hreflang="de-DE" rel="noopener external">Dokumentation</a> für Informationen über den verschiedenen Konfigurationseinstellungen und ihren Zwecken."
  Server log snippets, abuse details, etc: "Auszüge aus Serverprotokollen, Missbrauchsdetails, u.s.w."
  Signature File Fixer: "Mit dem Signaturdatei-Fixierer können potenzielle Probleme in Signaturdateien erkannt und behoben werden."
  Specify a value, or leave blank to disregard: "Geben Sie einen Wert an, oder lassen Sie das Feld leer, um es zu ignorieren."

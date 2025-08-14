@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data for the front-end (last modified: 2025.08.12).
+# This file: Bangla language data for the front-end (last modified: 2025.08.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -417,7 +417,7 @@ hints_cclookup: "** দেশের কোড লুকআপ কার্যক
 hints_client_hints: "!! এটি একটি কম-এনট্রপি ক্লায়েন্ট ইঙ্গিত। ক্লায়েন্ট ইঙ্গিত একটি নতুন, পরীক্ষামূলক ওয়েব প্রযুক্তি যা এখনও সমস্ত ব্রাউজার এবং প্রধান ক্লায়েন্ট জুড়ে ব্যাপকভাবে সমর্থিত নয়৷ <em>দেখা: {{Links.MDN.Client hints}}.</em> যদিও ক্লায়েন্ট ইঙ্গিতগুলি আঙ্গুলের ছাপের জন্য উপযোগী হতে পারে, কারণ সেগুলি ব্যাপকভাবে সমর্থিত নয়, অনুরোধে তাদের উপস্থিতি অনুমান করা উচিত নয় বা নির্ভর করা উচিত নয় (অর্থাৎ, তাদের অনুপস্থিতির উপর ভিত্তি করে ব্লক করা একটি খারাপ ধারণা)।"
 hints_client_honour: "ক্লায়েন্টকে যে নির্দেশনা দেওয়া হোক না কেন, এটা মনে রাখা গুরুত্বপূর্ণ যে আমরা তাদের পছন্দগুলি নিয়ন্ত্রণ করতে অক্ষম, এবং ক্লায়েন্ট যে আমাদের নির্দেশাবলীকে সম্মান করবে তার কোন গ্যারান্টি নেই।"
 hints_default_dns:
- FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#what-can-i-use-for-default_dns" hreflang="en-AU">আমি "default_dns" এর জন্য কি ব্যবহার করতে পারি?</a></em>"
+ FAQ.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#what-can-i-use-for-default_dns" hreflang="en-AU">আমি "default_dns" এর জন্য কি ব্যবহার করতে পারি?</a></em>"
 hints_duration:
  SI.: ""ইন্টারন্যাশনাল সিস্টেম অফ ইউনিট" ব্যবহার করে সময়কাল বর্ণনা করা যেতে পারে। যেমন, এক দিন, দুই ঘন্টা, তিন মিনিট, চার সেকেন্ডের জন্য <strong>1d2h3min4s</strong> বা <strong>1d 2h 3min 4s</strong>, বা মাত্র পাঁচ মিনিট জন্য <strong>5min</strong> ব্যবহার করুন।"
  আর্কটাইম।: "আর্কটাইম স্বরলিপি ব্যবহার করে সময়কাল বর্ণনা করা যেতে পারে। যেমন, এক দিন, দুই ঘন্টা, তিন মিনিট, চার সেকেন্ডের জন্য <strong>1d2°3′4″</strong>, বা মাত্র পাঁচ সেকেন্ড জন্য <strong>5″</strong> ব্যবহার করুন।"
@@ -428,7 +428,7 @@ hints_inspection: "* শুধুমাত্র অক্সিলিয়া�
 hints_ipv6_on_32bit: "দ্রষ্টব্য: IPv6 লুকআপ কিছু 32-বিট সিস্টেমে সঠিকভাবে কাজ নাও করতে পারে।"
 hints_logging_datetime: "দরকারী টিপ: আপনি সময় বিন্যাস স্থানধারক ব্যবহার করে লগ ফাইলের নামের সাথে তারিখ/সময় তথ্য সংযুক্ত করতে পারেন। উপলব্ধ সময় বিন্যাস স্থানধারক {{Links.ConfigRef.time_format}} এ প্রদর্শিত হয়।"
 hints_pdo_dsn:
- FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">একটি "PDO DSN" কি? আমি কিভাবে CIDRAM এর সাথে PDO ব্যবহার করতে পারি?</a></em>"
+ FAQ.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">একটি "PDO DSN" কি? আমি কিভাবে CIDRAM এর সাথে PDO ব্যবহার করতে পারি?</a></em>"
 hints_sensitive_pages: "দ্রষ্টব্য: একটি "সংবেদনশীল পৃষ্ঠা" কি গঠন করে তা {{Links.ConfigRef.sensitive}} দ্বারা নির্ধারিত হয়।"
 hints_shorthand:
  0.: "যদি আপনার ওয়েবসাইটের LAN বা লোকালহোস্টের মাধ্যমে অ্যাক্সেসের প্রয়োজন হয়, তাহলে এটি ব্লক করবেন না। অন্যথায়, আপনি এটি ব্লক করতে পারেন।"
@@ -1016,7 +1016,7 @@ tip:
  Rate limiting is currently disabled: "নোট: হার সীমিত বর্তমানে অক্ষম আছে, তবে কনফিগারেশন পৃষ্ঠার মাধ্যমে সক্ষম করা যেতে পারে।"
  Report to AbuseIPDB: "এই পৃষ্ঠাটি ব্যবহার করা যেতে পারে আইপি ঠিকানাগুলিকে AbuseIPDB-তে রিপোর্ট করতে, অথবা কোনও আইপি ঠিকানা ভুলভাবে রিপোর্ট করা হলে পূর্ববর্তী রিপোর্টগুলি মুছে ফেলতে।"
  Sections List: "এই পৃষ্ঠাটি বর্তমানে সক্রিয় স্বাক্ষর ফাইলগুলির মধ্যে কোন অংশগুলি বিদ্যমান।"
- See the documentation: "বিভিন্ন কনফিগারেশন নির্দেশাবলী এবং তাদের উদ্দেশ্য সম্পর্কে আরও তথ্যের জন্য <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external">ডকুমেন্টেশনটি</a> দেখুন।"
+ See the documentation: "বিভিন্ন কনফিগারেশন নির্দেশাবলী এবং তাদের উদ্দেশ্য সম্পর্কে আরও তথ্যের জন্য <a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external">ডকুমেন্টেশনটি</a> দেখুন।"
  Server log snippets, abuse details, etc: "সার্ভার লগ স্নিপেট, অপব্যবহারের বিবরণ, ইত্যাদি।"
  Signature File Fixer: "এখানে আপনি স্বাক্ষর ফাইল সম্ভাব্য সমস্যা সনাক্ত এবং ঠিক করতে পারেন।"
  Specify a value, or leave blank to disregard: "একটি মান উল্লেখ করুন, অথবা উপেক্ষা করতে ফাঁকা ছেড়ে।"

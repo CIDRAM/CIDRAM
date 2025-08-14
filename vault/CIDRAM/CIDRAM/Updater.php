@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods for updating CIDRAM components (last modified: 2025.08.12).
+ * This file: Methods for updating CIDRAM components (last modified: 2025.08.14).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -894,7 +894,7 @@ trait Updater
                     }
                 }
             }
-            [$BytesRemoved, $BytesAdded] = $this->rebalanceNumbers($BytesRemoved, $BytesAdded);
+            $this->rebalanceNumbers($BytesRemoved, $BytesAdded);
             $this->formatFileSize($BytesAdded);
             $this->formatFileSize($BytesRemoved);
             $this->FE['state_msg'] .= $StateMessage . sprintf(
@@ -1299,7 +1299,7 @@ trait Updater
                     $this->executor($this->Components['Meta'][$ThisTarget]['When Repair Fails'], false, $BytesRemoved, $BytesAdded);
                 }
             }
-            [$BytesRemoved, $BytesAdded] = $this->rebalanceNumbers($BytesRemoved, $BytesAdded);
+            $this->rebalanceNumbers($BytesRemoved, $BytesAdded);
             $this->formatFileSize($BytesAdded);
             $this->formatFileSize($BytesRemoved);
             $this->FE['state_msg'] .= $StateMessage . sprintf(

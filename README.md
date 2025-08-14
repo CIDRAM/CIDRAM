@@ -1,5 +1,5 @@
 [![v1: PHP >= 5.4](https://img.shields.io/badge/v1-PHP%20%3E%3D%205.4-8892bf.svg)](https://maikuolan.github.io/Compatibility-Charts/)
-[![v2~v3: PHP >= 7.2](https://img.shields.io/badge/v2%7Ev3-PHP%20%3E%3D%207.2-8892bf.svg)](https://maikuolan.github.io/Compatibility-Charts/)
+[![v2~v4: PHP >= 7.2](https://img.shields.io/badge/v2%7Ev4-PHP%20%3E%3D%207.2-8892bf.svg)](https://maikuolan.github.io/Compatibility-Charts/)
 [![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
 [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](http://makeapullrequest.com)
 
@@ -46,4 +46,4 @@ CIDRAM (Classless Inter-Domain Routing Access Manager) is a PHP script designed 
 ---
 
 
-Last Updated: 1 July 2024 (2024.07.01).
+Last Updated: 14 August 2025 (2025.08.14).

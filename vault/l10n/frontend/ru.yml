@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2025.08.12).
+# This file: Russian language data for the front-end (last modified: 2025.08.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -425,7 +425,7 @@ hints_cclookup: "** Требуется функциональность поис
 hints_client_hints: "!! Это подсказка клиенту с низкой энтропией. Это новая экспериментальная веб-технология, которая еще не получила широкой поддержки во всех браузерах и основных клиентах. <em>Видеть: {{Links.MDN.Client hints}}.</em> Хотя клиентские подсказки могут быть полезны для снятия отпечатков пальцев, поскольку они не получили широкой поддержки, их присутствие в запросах не следует предполагать и не полагаться на них (т.е., блокировать по причине их отсутствия – плохая идея)."
 hints_client_honour: "Независимо от того, как мы инструктируем клиента, важно помнить, что в конечном счете мы не имеем никакого контроля над тем, что клиент решит сделать, и нет никакой гарантии, что клиент выполнит наши инструкции."
 hints_default_dns:
- FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.ru.md\#что-я-могу-использовать-для-default_dns" hreflang="ru-RU">Что я могу использовать для «default_dns»?</a></em>"
+ FAQ.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.ru.md\#что-я-могу-использовать-для-default_dns" hreflang="ru-RU">Что я могу использовать для «default_dns»?</a></em>"
 hints_duration:
  SI.: "Продолжительность можно описать с помощью «Международной системы единиц». Например, <strong>1d2h3min4s</strong> или <strong>1d 2h 3min 4s</strong> для один день, два часа, три минуты, четыре секунды, или <strong>5min</strong> для всего пять минут."
  Угловая время.: "Продолжительность можно описать с помощью углового времени. Например, <strong>1d2°3′4″</strong> для один день, два часа, три минуты, четыре секунды, или <strong>5″</strong> для всего пять секунд."
@@ -436,7 +436,7 @@ hints_inspection: "* Предназначен только для отладки
 hints_ipv6_on_32bit: "Примечание: Поиск IPv6 может работать некорректно в некоторых 32-разрядных системах."
 hints_logging_datetime: "Полезный совет: Вы можете прикрепить информацию о дате и времени к именам файлов журналов, используя заполнители формата времени. Доступные заполнители формата времени отображаются на {{Links.ConfigRef.time_format}}."
 hints_pdo_dsn:
- FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.ru.md\#user-content-HOW_TO_USE_PDO" hreflang="ru-RU">Что такое «PDO DSN»? Как я могу использовать PDO с CIDRAM?</a></em>"
+ FAQ.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.ru.md\#user-content-HOW_TO_USE_PDO" hreflang="ru-RU">Что такое «PDO DSN»? Как я могу использовать PDO с CIDRAM?</a></em>"
 hints_sensitive_pages: "Примечание: «Конфиденциальная страница» определяется в соответствии с {{Links.ConfigRef.sensitive}}."
 hints_shorthand:
  0.: "Если вашему веб-сайту требуется доступ через локальную сеть или локальный хост, не блокируйте это. В противном случае вы можете заблокировать это."
@@ -1084,7 +1084,7 @@ tip:
  Rate limiting is currently disabled: "Заметка: Ограничение скорости в настоящее время отключено, но может быть включено через страницу конфигурации."
  Report to AbuseIPDB: "Эту страницу можно использовать для сообщения IP-адресов в AbuseIPDB, или для удаления предыдущих отчетов в случае IP-адрес был сообщил по ошибке."
  Sections List: "На этой странице перечислены секций, которые существуют в активных файлах сигнатур."
- See the documentation: "Просмотреть <a href="https://github.com/CIDRAM/Docs/blob/master/readme.ru.md\#user-content-SECTION5" hreflang="ru-RU" rel="noopener external">документации</a> для получения информации о различных директив конфигурации и их целей."
+ See the documentation: "Просмотреть <a href="{{Links.CIDRAM.Docs Base Path}}readme.ru.md\#user-content-SECTION5" hreflang="ru-RU" rel="noopener external">документации</a> для получения информации о различных директив конфигурации и их целей."
  Server log snippets, abuse details, etc: "Фрагменты журналов сервера, сведения о злоупотреблениях, и т.д."
  Signature File Fixer: "Закрепитель файла сигнатуры позволяет обнаруживать и устранять потенциальные проблемы в файлах сигнатуры."
  Specify a value, or leave blank to disregard: "Укажите значение, или оставьте пустым, чтобы игнорировать."

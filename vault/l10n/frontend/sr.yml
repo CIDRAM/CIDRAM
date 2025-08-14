@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Serbian language data for the front-end (last modified: 2025.08.12).
+# This file: Serbian language data for the front-end (last modified: 2025.08.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -425,7 +425,7 @@ hints_cclookup: "** Захтева функционалност за траже�
 hints_client_hints: "!! Ово је наговештај клијента са ниском ентропијом. Ово је нова, експериментална веб технологија која још увек није широко подржана. <em>Види: {{Links.MDN.Client hints}}.</em> Иако наговештаји клијената могу бити корисни за узимање отисака прстију, пошто нису широко подржани, њихово присуство у захтевима не треба претпостављати нити се на њих ослањати (тј. блокирање на основу њиховог одсуства је лоша идеја)."
 hints_client_honour: "Без обзира на то како дајемо инструкције клијенту, важно је запамтити да на крају немамо контролу над оним што клијент одабере да уради, и да нема гаранције да ће клијент поштовати наша упутства."
 hints_default_dns:
- Чпп.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#what-can-i-use-for-default_dns" hreflang="en-AU">Шта могу да користим за „default_dns“?</a></em>"
+ Чпп.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#what-can-i-use-for-default_dns" hreflang="en-AU">Шта могу да користим за „default_dns“?</a></em>"
 hints_duration:
  SI.: "Трајање се може описати коришћењем „међународног система јединица“. Нпр., <strong>1d2h3min4s</strong> или <strong>1d 2h 3min 4s</strong> за један дан, два сата, три минута, четири секунде, или <strong>5min</strong> за само пет минута."
  Арцтиме.: "Трајање се може описати коришћењем арцтиме нотације. Нпр., <strong>1d2°3′4″</strong> за један дан, два сата, три минута, четири секунде, или <strong>5″</strong> за само пет секунди."
@@ -436,7 +436,7 @@ hints_inspection: "* Намењен само за отклањање греша�
 hints_ipv6_on_32bit: "Белешка: ИПв6 претраге можда неће радити исправно на неким 32-битним системима."
 hints_logging_datetime: "Користан савет: Можете да приложите информације о датуму/времену именима датотека евиденције користећи чуваре места у формату времена. Доступни чувари места формата времена су приказани на {{Links.ConfigRef.time_format}}."
 hints_pdo_dsn:
- Чпп.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">Шта је „ПДО ДСН“? Како могу да користим ПДО са ЦИДРАМ-ом?</a></em>"
+ Чпп.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">Шта је „ПДО ДСН“? Како могу да користим ПДО са ЦИДРАМ-ом?</a></em>"
 hints_sensitive_pages: "Белешка: Шта чини „осетљиву страницу“ одређује {{Links.ConfigRef.sensitive}}."
 hints_shorthand:
  0.: "Ако вашој веб локацији треба приступ преко ЛАН-а или localhost-а, немојте ово блокирати. У супротном, можете блокирати ово."
@@ -1078,7 +1078,7 @@ tip:
  Rate limiting is currently disabled: "Белешка: Ограничење брзине је тренутно онемогућено, али се може омогућити преко конфигурационе странице."
  Report to AbuseIPDB: "Ова страница се може користити за пријављивање ИП адреса АбусеИПДБ-у, или за брисање претходних извештаја у случају да је ИП адреса пријављена грешком."
  Sections List: "Ова страница наводи који одељци постоје у тренутно активним датотекама потписа."
- See the documentation: "Погледајте <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external">документацију</a> за информације о различитим конфигурационим директивама и њиховој сврси."
+ See the documentation: "Погледајте <a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external">документацију</a> за информације о различитим конфигурационим директивама и њиховој сврси."
  Server log snippets, abuse details, etc: "Исјечци евиденције сервера, детаљи о злоупотреби, итд."
  Signature File Fixer: "Поправљач датотека потписа пружа начин за откривање и решавање потенцијалних проблема у датотекама потписа."
  Specify a value, or leave blank to disregard: "Наведите вредност, или оставите празно да бисте занемарили."

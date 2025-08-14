@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Ukrainian language data for the front-end (last modified: 2025.08.12).
+# This file: Ukrainian language data for the front-end (last modified: 2025.08.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -425,7 +425,7 @@ hints_cclookup: "** Потрібна функціональність пошук
 hints_client_hints: "!! Це підказка клієнта з низькою ентропією. Це нова експериментальна веб-технологія, яка ще не широко підтримується в усіх браузерах і основних клієнтах. <em>Побачити: {{Links.MDN.Client hints}}.</em> Хоча клієнтські підказки можуть бути корисними для зняття відбитків пальців, оскільки вони не широко підтримуються, не слід припускати чи покладатися на їхню присутність у запитах (тобто, блокування через їх відсутність – погана ідея)."
 hints_client_honour: "Незалежно від того, як ми інструктуємо клієнта, важливо пам'ятати, що зрештою ми не маємо контролю над тим, що клієнт вирішить зробити, і немає нульової гарантії, що клієнт виконає наші інструкції."
 hints_default_dns:
- FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#what-can-i-use-for-default_dns" hreflang="en-AU">Що я можу використовувати для «default_dns»?</a></em>"
+ FAQ.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#what-can-i-use-for-default_dns" hreflang="en-AU">Що я можу використовувати для «default_dns»?</a></em>"
 hints_duration:
  SI.: "Тривалість можна описати за допомогою «Міжнародної системи одиниць». Наприклад, <strong>1d2°3′4″</strong> або <strong>1d 2h 3min 4s</strong> для одного дня, двох годин, трьох хвилин, чотирьох секунд, або <strong>5min</strong> для лише п'яти хвилин."
  Кутовий час.: "Тривалість можна описати за допомогою кутового часу. Наприклад, <strong>1d2°3′4″</strong> для один день, дві години, три хвилини, чотири секунди, або <strong>5″</strong> лише на п'ять секунд."
@@ -436,7 +436,7 @@ hints_inspection: "* Призначений тільки для налагодж
 hints_ipv6_on_32bit: "Зауважте: Пошук IPv6 може не працювати належним чином у деяких 32-розрядних системах."
 hints_logging_datetime: "Корисна порада: Ви можете додати інформацію про дату й час до імен файлів журналу, використовуючи заповнювачі формату часу. Доступні заповнювачі формату часу відображаються на {{Links.ConfigRef.time_format}}."
 hints_pdo_dsn:
- FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">Що таке «PDO DSN»? Як я можу використовувати PDO з CIDRAM?</a></em>"
+ FAQ.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">Що таке «PDO DSN»? Як я можу використовувати PDO з CIDRAM?</a></em>"
 hints_sensitive_pages: "Зауважте: «Конфіденційна сторінка» визначається відповідно до {{Links.ConfigRef.sensitive}}."
 hints_shorthand:
  0.: "Якщо вашому веб-сайту потрібен доступ через локальну мережу або локальний хост, не блокуйте це. В іншому випадку ви можете заблокувати це."
@@ -1083,7 +1083,7 @@ tip:
  Rate limiting is currently disabled: "Зауважте: Обмеження швидкості наразі вимкнено, але його можна ввімкнути на сторінці конфігурації."
  Report to AbuseIPDB: "Цю сторінку можна використовувати для звітування IP-адреси в AbuseIPDB, або для видалення попередніх звітів у випадку, якщо IP-адреса була повідомлена помилково."
  Sections List: "На цій сторінці вказано, які розділи існують у поточних активних файлах сигнатур."
- See the documentation: "Перегляньте <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external">документацію</a> для отримання інформації про різні директиви конфігурації та їх призначення."
+ See the documentation: "Перегляньте <a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external">документацію</a> для отримання інформації про різні директиви конфігурації та їх призначення."
  Server log snippets, abuse details, etc: "Фрагменти журналу сервера, деталі зловживань, тощо."
  Signature File Fixer: "Засіб виправлення файлів сигнатур надає спосіб виявлення та усунення потенційних проблем у файлах сигнатури."
  Specify a value, or leave blank to disregard: "Укажіть значення, або залиште порожнім щоб не враховувати."

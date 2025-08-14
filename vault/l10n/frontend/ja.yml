@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2025.08.12).
+# This file: Japanese language data for the front-end (last modified: 2025.08.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -417,7 +417,7 @@ hints_cclookup: "** 国コード・ルックアップ機能が必要です（た
 hints_client_hints: "!! これは低エントロピーのクライアント・ヒントです。​クライアント・ヒントは、新しい実験的なウェブ・テクノロジーであり、まだすべてのブラウザや主要なクライアントで広くサポートされているわけではありません。 <em>見る：{{Links.MDN.Client hints}}。</em> クライアント・ヒントは、フィンガープリンティングに役立ちますが、広くサポートされていないため、リクエストでクライアント・ヒントが存在すると想定したり、それに頼ったりしないでください（つまり、不在を理由にブロックするのは悪い考えだ）。"
 hints_client_honour: "私たちがクライアントにどのように指示しても、クライアントが何を選択するかを最終的には制御できず、クライアントが私たちの指示に従うという保証はゼロであることを覚えておくことが重要です。"
 hints_default_dns:
- ＦＡＱ。: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.ja.md\#default_dnsには何が使えますか" hreflang="ja-JP">「default_dns」には何が使えますか？</a></em>"
+ ＦＡＱ。: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.ja.md\#default_dnsには何が使えますか" hreflang="ja-JP">「default_dns」には何が使えますか？</a></em>"
 hints_duration:
  ＳＩ。: "期間は、「国際単位系」を使用して記述できます。​例えば、１日、２時間、３分、４秒れするために<strong>「1d2h3min4s」</strong>または<strong>「1d 2h 3min 4s」</strong>して、または５分だけするために<strong>「5min」</strong>して。"
  アークタイム。: "期間はアークタイム表記を使用して記述できます。​例えば、１日、２時間、３分、４秒するために<strong>「1d2°3′4″」</strong>して、または５秒だけするために<strong>「5″」</strong>して。"
@@ -428,7 +428,7 @@ hints_inspection: "* 補助ルールのデバッグのみを目的としてい�
 hints_ipv6_on_32bit: "注：一部の３２ビットシステムでは、ＩＰｖ６ルックアップが正しく機能しない場合があります。"
 hints_logging_datetime: "役に立つヒント:時刻形式のプレースホルダーを使用して、ログ・ファイルの名前に日付/時刻情報を添付できます。​使用可能な時刻形式のプレースホルダーが{{Links.ConfigRef.time_format}}に表示されます。"
 hints_pdo_dsn:
- ＦＡＱ。: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.ja.md\#user-content-HOW_TO_USE_PDO" hreflang="ja-JP">「PDO DSN」とは何ですか？​CIDRAMでPDOを使用するにはどうすればよいですか？</a></em>"
+ ＦＡＱ。: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.ja.md\#user-content-HOW_TO_USE_PDO" hreflang="ja-JP">「PDO DSN」とは何ですか？​CIDRAMでPDOを使用するにはどうすればよいですか？</a></em>"
 hints_sensitive_pages: "注：「機密ページ」を構成するものは{{Links.ConfigRef.sensitive}}によって決まります。"
 hints_shorthand:
  0.: "ウェブサイトにＬＡＮまたはｌｏｃａｌｈｏｓｔ「ローカルホスト」経由でアクセスする必要がある場合は、これをブロックしないで。​それ以外の場合は、これをブロックできます。"
@@ -1018,7 +1018,7 @@ tip:
  Rate limiting is currently disabled: "注意：レート制限は現在オフラインですが、コンフィギュレーション・ページで有効にすることができます。"
  Report to AbuseIPDB: "このページを使用して、ＩＰアドレスをAbuseIPDBに報告したり、ＩＰアドレスが誤って報告された場合に以前のレポートを削除したりできます。"
  Sections List: "このページには、現在アクティブなシグネチャ・ファイルに存在するセクションが一覧表示されます。"
- See the documentation: "コンフィギュレーション・ディレクティブの詳細については、<a href="https://github.com/CIDRAM/Docs/blob/master/readme.ja.md\#user-content-SECTION5" hreflang="ja-JP" rel="noopener external">ドキュメント</a>を参照してください。"
+ See the documentation: "コンフィギュレーション・ディレクティブの詳細については、<a href="{{Links.CIDRAM.Docs Base Path}}readme.ja.md\#user-content-SECTION5" hreflang="ja-JP" rel="noopener external">ドキュメント</a>を参照してください。"
  Server log snippets, abuse details, etc: "サーバーログのスニペット、不正行為の詳細、など。"
  Signature File Fixer: "シグネチャ・ファイルのフィクサーは、シグネチャ・ファイルの潜在的な問題を検出して修正する方法を提供します。"
  Specify a value, or leave blank to disregard: "値を指定するか、無視する場合は空白のままにします。"

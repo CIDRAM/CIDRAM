@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data for the front-end (last modified: 2025.08.12).
+# This file: Hindi language data for the front-end (last modified: 2025.08.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -419,7 +419,7 @@ hints_cclookup: "** देश कोड लुकअप कार्यक्ष
 hints_client_hints: "!! यह एक कम-एन्ट्रॉपी क्लाइंट संकेत है। क्लाइंट संकेत एक नई, प्रायोगिक वेब तकनीक है जो अभी तक सभी ब्राउज़रों और प्रमुख क्लाइंटों द्वारा व्यापक रूप से समर्थित नहीं है। <em>देखना: {{Links.MDN.Client hints}}.</em> यद्यपि क्लाइंट संकेत फिंगरप्रिंटिंग के लिए उपयोगी हो सकते हैं, क्योंकि वे व्यापक रूप से समर्थित नहीं हैं, अनुरोधों में उनकी उपस्थिति को न तो माना जाना चाहिए और न ही उन पर भरोसा किया जाना चाहिए (यानी, उनकी अनुपस्थिति के आधार पर अवरुद्ध करना एक बुरा विचार है)."
 hints_client_honour: "कोई फर्क नहीं पड़ता कि हम ग्राहक को कैसे निर्देश देते हैं, यह याद रखना महत्वपूर्ण है कि ग्राहक क्या करना चाहता है, इस पर हमारा कोई नियंत्रण नहीं है, और इस बात की शून्य गारंटी है कि ग्राहक हमारे निर्देशों का सम्मान करेगा।"
 hints_default_dns:
- सामान्य प्रश्न।: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#what-can-i-use-for-default_dns" hreflang="en-AU">मैं "Default_dns" के लिए क्या उपयोग कर सकता हूं?</a></em>"
+ सामान्य प्रश्न।: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#what-can-i-use-for-default_dns" hreflang="en-AU">मैं "Default_dns" के लिए क्या उपयोग कर सकता हूं?</a></em>"
 hints_duration:
  SI.: ""इकाइयों की अंतर्राष्ट्रीय प्रणाली" का उपयोग करके अवधि का वर्णन किया जा सकता है। उदा., एक दिन, दो घंटे, तीन मिनट, चार सेकंड के लिए <strong>1d2h3min4s</strong> या <strong>1d 2h 3min 4s</strong> का प्रयोग करें, या सिर्फ पांच मिनट के लिए <strong>5min</strong> का प्रयोग करें।"
  कोणीय समय।: "कोणीय समय का उपयोग करके अवधि का वर्णन किया जा सकता है। उदा., एक दिन, दो घंटे, तीन मिनट, चार सेकंड के लिए <strong>1d2°3′4″</strong> का प्रयोग करें, या सिर्फ पांच सेकंड के लिए <strong>5″</strong> का प्रयोग करें।"
@@ -430,7 +430,7 @@ hints_inspection: "* केवल सहायक नियमों को ड�
 hints_ipv6_on_32bit: "नोट: हो सकता है कि कुछ 32-बिट सिस्टम पर IPv6 लुकअप ठीक से काम न करें।"
 hints_logging_datetime: "उपयोगी सुझाव: आप समय प्रारूप प्लेसहोल्डर्स का उपयोग करके लॉग फाइलों के नामों में दिनांक/समय जानकारी संलग्न कर सकते हैं। उपलब्ध समय प्रारूप प्लेसहोल्डर्स {{Links.ConfigRef.time_format}} पर प्रदर्शित होते हैं।"
 hints_pdo_dsn:
- सामान्य प्रश्न।: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">"PDO DSN" क्या है? मैं CIDRAM के साथ PDO का उपयोग कैसे कर सकता हूं?</a></em>"
+ सामान्य प्रश्न।: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">"PDO DSN" क्या है? मैं CIDRAM के साथ PDO का उपयोग कैसे कर सकता हूं?</a></em>"
 hints_sensitive_pages: "नोट: "संवेदनशील पृष्ठ" क्या है, इसका निर्धारण {{Links.ConfigRef.sensitive}} द्वारा किया जाता है।"
 hints_shorthand:
  0.: "यदि आपकी वेबसाइट को LAN या localhost के माध्यम से एक्सेस की आवश्यकता है, तो इसे ब्लॉक न करें। अन्यथा, आप इसे ब्लॉक कर सकते हैं।"
@@ -1032,7 +1032,7 @@ tip:
  Rate limiting is currently disabled: "नोट: दर सीमित वर्तमान में अक्षम है, लेकिन कॉन्फ़िगरेशन पृष्ठ के माध्यम से सक्षम किया जा।"
  Report to AbuseIPDB: "इस पृष्ठ का उपयोग AbuseIPDB को IP पते की रिपोर्ट करने के लिए, या IP पते की गलती से रिपोर्ट किए जाने की स्थिति में पिछली रिपोर्टें को हटाने के लिए किया जा सकता है।"
  Sections List: "यह पृष्ठ वर्तमान सक्रिय हस्ताक्षर फाइलों में मौजूद अनुभागों को सूचीबद्ध करता है।"
- See the documentation: "विभिन्न कॉन्फ़िगरेशन निर्देशों और उनके उद्देश्यों के बारे में जानकारी के लिए <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external">डॉक्यूमेंटेशन</a> देखें।"
+ See the documentation: "विभिन्न कॉन्फ़िगरेशन निर्देशों और उनके उद्देश्यों के बारे में जानकारी के लिए <a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external">डॉक्यूमेंटेशन</a> देखें।"
  Server log snippets, abuse details, etc: "सर्वर लॉग स्निपेट, दुरुपयोग विवरण, आदि।"
  Signature File Fixer: "यहां आप हस्ताक्षर फाइलों में संभावित समस्याओं का पता लगा सकते हैं और उन्हें ठीक कर सकते हैं।"
  Specify a value, or leave blank to disregard: "एक मान निर्दिष्ट करें, या उपेक्षा करने के लिए खाली छोड़ दें।"

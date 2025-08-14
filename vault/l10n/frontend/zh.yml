@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese language data for the front-end (last modified: 2025.08.12).
+# This file: Chinese language data for the front-end (last modified: 2025.08.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -456,8 +456,8 @@ hints_client_hints:
  zh-Hant: "!! 這是一個低熵客戶端提示。客戶端提示是一種新的、實驗性的網路技術，尚未在所有瀏覽器和主要用戶端中廣泛支援。 <em>看：{{Links.MDN.Client hints}}.</em> 儘管客戶端提示對於指紋識別很有用，但由於它們沒有廣泛支持，因此不應假設或依賴它們在請求中的存在（換句話說，基於他們的缺席而阻止是一個壞主意）。"
 hints_client_honour: {"zh-Hans": "无论我们如何指示客户，重要的是要记住，我们无法控制客户选择做什么，而且客户会遵守我们的指示的没有保证。", "zh-Hant": "無論我們如何指示客戶，重要的是要記住，我們無法控制客戶選擇做什麼，而且客戶會遵守我們的指示的沒有保證。"}
 hints_default_dns:
- zh-Hans: "<strong>常问问题。</strong> <em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.zh-Hans.md\#在default_dns中我可以使用什么" hreflang="zh-Hans">在“default_dns”中我可以使用什么？</a></em>"
- zh-Hant: "<strong>常問問題。</strong> <em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.zh-Hant.md\#在default_dns中我可以使用什麼" hreflang="zh-Hant">在『default_dns』中我可以使用什麼？</a></em>"
+ zh-Hans: "<strong>常问问题。</strong> <em><a href="{{Links.CIDRAM.Docs Base Path}}readme.zh-Hans.md\#在default_dns中我可以使用什么" hreflang="zh-Hans">在“default_dns”中我可以使用什么？</a></em>"
+ zh-Hant: "<strong>常問問題。</strong> <em><a href="{{Links.CIDRAM.Docs Base Path}}readme.zh-Hant.md\#在default_dns中我可以使用什麼" hreflang="zh-Hant">在『default_dns』中我可以使用什麼？</a></em>"
 hints_duration:
  zh-Hans: |
   <strong>SI。</strong> 可以使用“国际单位制”来描述持续时间。 例如， <strong>1d2h3min4s</strong> 或 <strong>1d 2h 3min 4s</strong> 表示一天、两小时、三分钟、四秒。 <strong>5min</strong> 表示仅五分钟。<br /><br />
@@ -478,8 +478,8 @@ hints_logging_datetime:
  zh-Hans: "有用提示：您可以使用时间格式占位符将日期/时间信息附加到日志文件的名称。​可用的时间格式占位符显示在{{Links.ConfigRef.time_format}}处。"
  zh-Hant: "有用的提示：您可以使用時間格式佔位符將日期/時間資訊附加到日誌檔案的名稱。​可用的時間格式佔位符顯示在{{Links.ConfigRef.time_format}}處。"
 hints_pdo_dsn:
- zh-Hans: "<strong>常问问题。</strong> <em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.zh-Hans.md\#user-content-HOW_TO_USE_PDO" hreflang="zh-Hans">“PDO DSN”是什么？如何能PDO与CIDRAM一起使用？</a></em>"
- zh-Hant: "<strong>常問問題。</strong> <em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.zh-Hant.md\#user-content-HOW_TO_USE_PDO" hreflang="zh-Hant">『PDO DSN』是什麼？如何能PDO與CIDRAM一起使用？</a></em>"
+ zh-Hans: "<strong>常问问题。</strong> <em><a href="{{Links.CIDRAM.Docs Base Path}}readme.zh-Hans.md\#user-content-HOW_TO_USE_PDO" hreflang="zh-Hans">“PDO DSN”是什么？如何能PDO与CIDRAM一起使用？</a></em>"
+ zh-Hant: "<strong>常問問題。</strong> <em><a href="{{Links.CIDRAM.Docs Base Path}}readme.zh-Hant.md\#user-content-HOW_TO_USE_PDO" hreflang="zh-Hant">『PDO DSN』是什麼？如何能PDO與CIDRAM一起使用？</a></em>"
 hints_sensitive_pages: {"zh-Hans": "注意：“敏感页面”的构成由{{Links.ConfigRef.sensitive}}决定。", "zh-Hant": "注意：『敏感頁面』的構成由{{Links.ConfigRef.sensitive}}決定。"}
 hints_shorthand:
  0.: {"zh-Hans": "如果您的网站需要通过LAN或localhost访问，不要阻止它。​否则，您可以阻止它。", "zh-Hant": "如果您的網站需要通過LAN或localhost訪問，不要阻止它。​否則，您可以阻止它。"}
@@ -1177,8 +1177,8 @@ tip:
  Report to AbuseIPDB: {"zh-Hans": "此页面可用于向AbuseIPDB报告IP地址，或者在IP地址报告错误时删除以前的报告。", "zh-Hant": "此頁面可用於向AbuseIPDB報告IP位址，或在IP位址報告錯誤時刪除先前的報告。"}
  Sections List: {"zh-Hans": "此页面列出当前活动签名文件中存在哪些章节。", "zh-Hant": "此頁面列出當前活動簽名文件中存在哪些章節。"}
  See the documentation:
-  zh-Hans: "请参阅<a href="https://github.com/CIDRAM/Docs/blob/master/readme.zh-Hans.md\#user-content-SECTION5" hreflang="zh-Hans" rel="noopener external">文档</a>以获取有关各种配置指令的信息和他们的目的。"
-  zh-Hant: "請參閱<a href="https://github.com/CIDRAM/Docs/blob/master/readme.zh-Hant.md\#user-content-SECTION5" hreflang="zh-Hant" rel="noopener external">文檔</a>以獲取有關各種配置指令的信息和他們的目的。"
+  zh-Hans: "请参阅<a href="{{Links.CIDRAM.Docs Base Path}}readme.zh-Hans.md\#user-content-SECTION5" hreflang="zh-Hans" rel="noopener external">文档</a>以获取有关各种配置指令的信息和他们的目的。"
+  zh-Hant: "請參閱<a href="{{Links.CIDRAM.Docs Base Path}}readme.zh-Hant.md\#user-content-SECTION5" hreflang="zh-Hant" rel="noopener external">文檔</a>以獲取有關各種配置指令的信息和他們的目的。"
  Server log snippets, abuse details, etc: {"zh-Hans": "服务器日志片段、滥用详细信息、等等。", "zh-Hant": "伺服器日誌片段、濫用詳細資訊、等等。"}
  Signature File Fixer: {"zh-Hans": "签名文件修复工具提供了一种检测和修复签名文件中潜在问题的方法。", "zh-Hant": "簽名文件修復工具提供了一種檢測和修復簽名文件中潛在問題的方法。"}
  Specify a value, or leave blank to disregard: {"zh-Hans": "指定一个值，或留空以忽略。", "zh-Hant": "指定一個值，或留空以忽略。"}

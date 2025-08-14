@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Czech language data for the front-end (last modified: 2025.08.12).
+# This file: Czech language data for the front-end (last modified: 2025.08.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -420,7 +420,7 @@ hints_cclookup: "** Vyžaduje funkčnost vyhledávání kódu země (např., př
 hints_client_hints: "!! Toto je nápověda klienta s nízkou entropií. Klientské rady jsou nová, experimentální webová technologie, která zatím není široce podporována všemi prohlížeči a hlavními klienty. <em>Vidět: {{Links.MDN.Client hints}}.</em> I když klientské rady mohou být užitečné pro digitální otisky prstů, protože nejsou široce podporovány, jejich přítomnost v požadavcích by se neměla předpokládat ani spoléhat na (t.j., blokování na základě jejich nepřítomnosti je špatný nápad)."
 hints_client_honour: "Bez ohledu na to, jak dáváme klientovi pokyny, je důležité mít na paměti, že v konečném důsledku nemáme žádnou kontrolu nad tím, co se klient rozhodne udělat, a neexistuje žádná záruka, že klient bude respektovat naše pokyny."
 hints_default_dns:
- FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#what-can-i-use-for-default_dns" hreflang="en-AU">Co mohu použít pro „default_dns“?</a></em>"
+ FAQ.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#what-can-i-use-for-default_dns" hreflang="en-AU">Co mohu použít pro „default_dns“?</a></em>"
 hints_duration:
  SI.: "Trvání lze popsat pomocí „Mezinárodního systému jednotek“. Např., <strong>1d2h3min4s</strong> nebo <strong>1d 2h 3min 4s</strong> pro jeden den, dvě hodiny, tři minuty, čtyři sekundy, nebo <strong>5min</strong> pro jen pět minut."
  Obloukový čas.: "Trvání lze popsat pomocí notace obloukového času. Např., <strong>1d2°3′4″</strong> pro jeden den, dvě hodiny, tři minuty, čtyři sekundy, nebo <strong>5″</strong> pro jen pět sekund."
@@ -431,7 +431,7 @@ hints_inspection: "* Určeno pouze pro ladění pomocných pravidel. Nezobrazuje
 hints_ipv6_on_32bit: "Poznámka: Vyhledávání IPv6 nemusí na některých 32-bitových systémech fungovat správně."
 hints_logging_datetime: "Užitečný tip: K názvům souborů protokolu můžete připojit informace o datu a čase pomocí zástupných symbolů formátu času. Dostupné zástupné symboly formátu času jsou zobrazeny v {{Links.ConfigRef.time_format}}."
 hints_pdo_dsn:
- FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">Co je to „PDO DSN“? Jak mohu používat PDO s CIDRAM?</a></em>"
+ FAQ.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">Co je to „PDO DSN“? Jak mohu používat PDO s CIDRAM?</a></em>"
 hints_sensitive_pages: "Poznámka: Co tvoří „citlivou stránku“ je určeno {{Links.ConfigRef.sensitive}}."
 hints_shorthand:
  0.: "Pokud váš web potřebuje přístup přes LAN nebo localhost, neblokujte to. Jinak to ale můžete zablokovat."
@@ -1076,7 +1076,7 @@ tip:
  Rate limiting is currently disabled: "Poznámka: Omezení rychlosti je aktuálně deaktivováno, ale lze jej aktivovat prostřednictvím konfigurační stránky."
  Report to AbuseIPDB: "Tuto stránku lze použít k reportovat IP adres AbuseIPDB, nebo k smazat předchozích report v případě, že byla IP adresa nahlášena omylem."
  Sections List: "Tato stránka uvádí, které sekce existují v aktuálně aktivních souborech podpisů."
- See the documentation: "Informace o různých konfiguračních direktivách a jejich účelech najdete v <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external">dokumentaci</a>."
+ See the documentation: "Informace o různých konfiguračních direktivách a jejich účelech najdete v <a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external">dokumentaci</a>."
  Server log snippets, abuse details, etc: "Úryvky protokolu serveru, podrobnosti o zneužití, atd."
  Signature File Fixer: "Opravovač podpisových souborů poskytuje způsob, jak zjistit a opravit potenciální problémy v souborech podpisů."
  Specify a value, or leave blank to disregard: "Zadejte hodnotu nebo ponechte prázdné, aby se to ignorovalo."

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2025.08.13).
+ * This file: General methods used by the front-end (last modified: 2025.08.14).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1609,12 +1609,12 @@ trait FrontEndMethods
      *
      * @param int $A The first number.
      * @param int $B The second number.
-     * @return array The two numbers rebalanced.
+     * @return void
      */
-    private function rebalanceNumbers(int $A, int $B): array
+    private function rebalanceNumbers(int &$A, int &$B): void
     {
         if (($A >= 0 && $B >= 0) || ($A < 0 && $B < 0)) {
-            return [$A, $B];
+            return;
         }
         if ($A < 0) {
             $A *= 1;
@@ -1628,6 +1628,5 @@ trait FrontEndMethods
         } else {
             [$A, $B] = [0, 0];
         }
-        return [$A, $B];
     }
 }

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2025.08.12).
+# This file: Thai language data for the front-end (last modified: 2025.08.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -417,7 +417,7 @@ hints_cclookup: "** ต้องมีฟังก์ชันการค้น
 hints_client_hints: "!! นี่เป็นคำใบ้ไคลเอ็นต์เอนโทรปีต่ำ. คำใบ้ไคลเอ็นต์เป็นเทคโนโลยีเว็บทดลองใหม่ ซึ่งยังไม่ได้รับการสนับสนุนอย่างกว้างขวางในเบราว์เซอร์และไคลเอนต์หลักทั้งหมด. <em>ดู: {{Links.MDN.Client hints}}.</em> แม้ว่าคำใบ้ไคลเอ็นต์จะมีประโยชน์สำหรับการพิมพ์ลายนิ้วมือ เนื่องจากไม่ได้รับการสนับสนุนอย่างกว้างขวาง แต่การมีอยู่ของพวกเขาในคำขอไม่ควรสันนิษฐานหรือเชื่อถือ (กล่าวคือ การบล็อกตามการไม่อยู่นั้นเป็นความคิดที่ไม่ดี)."
 hints_client_honour: "โดยไม่คำนึงถึงคำแนะนำที่ให้กับไคลเอ็นต์ สิ่งสำคัญคือต้องจำไว้ว่าเราไม่สามารถควบคุมตัวเลือกของพวกเขาได้ และไม่มีการรับประกันว่าไคลเอ็นต์จะปฏิบัติตามคำแนะนำของเรา."
 hints_default_dns:
- คำถามที่พบบ่อย.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#what-can-i-use-for-default_dns" hreflang="en-AU">ฉันจะใช้อะไรกับ "default_dns" ได้บ้าง?</a></em>"
+ คำถามที่พบบ่อย.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#what-can-i-use-for-default_dns" hreflang="en-AU">ฉันจะใช้อะไรกับ "default_dns" ได้บ้าง?</a></em>"
 hints_duration:
  SI.: "สามารถอธิบายระยะเวลาได้โดยใช้ "ระบบสากลของหน่วย". เช่น., <strong>1d2h3min4s</strong> หรือ <strong>1d 2h 3min 4s</strong> สำหรับหนึ่งวัน สองชั่วโมง สามนาที สี่วินาที หรือ <strong>5min</strong> สำหรับเพียงห้านาที."
  เวลาเชิงมุม.: "สามารถอธิบายระยะเวลาได้โดยใช้เวลาเชิงมุม. เช่น., <strong>1d2°3′4″</strong> สำหรับหนึ่งวัน สองชั่วโมง สามนาที สี่วินาที หรือ <strong>5″</strong> สำหรับเพียงห้าวินาที."
@@ -428,7 +428,7 @@ hints_inspection: "* มีไว้สำหรับการดีบัก�
 hints_ipv6_on_32bit: "หมายเหตุ: การค้นหา IPv6 อาจทำงานไม่ถูกต้องบนระบบ 32 บิตบางระบบ."
 hints_logging_datetime: "เคล็ดลับที่เป็นประโยชน์: คุณสามารถแนบข้อมูลวันที่/เวลาเข้ากับชื่อของไฟล์บันทึกได้โดยใช้ตัวยึดแบบเวลา. ตัวยึดแบบเวลาที่พร้อมใช้งานจะแสดงที่ {{Links.ConfigRef.time_format}}."
 hints_pdo_dsn:
- คำถามที่พบบ่อย.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">"PDO DSN" คืออะไร? ฉันจะใช้ PDO กับ CIDRAM ได้อย่างไร?</a></em>"
+ คำถามที่พบบ่อย.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">"PDO DSN" คืออะไร? ฉันจะใช้ PDO กับ CIDRAM ได้อย่างไร?</a></em>"
 hints_sensitive_pages: "หมายเหตุ: สิ่งที่ถือเป็น "หน้าที่ละเอียดอ่อน" จะถูกกำหนดโดย {{Links.ConfigRef.sensitive}}."
 hints_shorthand:
  0.: "หากเว็บไซต์ของคุณต้องการเข้าถึงผ่าน LAN หรือ localhost อย่าบล็อกสิ่งนี้. มิฉะนั้น คุณสามารถบล็อกสิ่งนี้ได้."
@@ -1011,7 +1011,7 @@ tip:
  Rate limiting is currently disabled: "บันทึก: การจำกัดอัตราถูกปิดใช้งานอยู่ในขณะนี้ แต่สามารถเปิดใช้งานได้ผ่านทางหน้าการกำหนดค่า."
  Report to AbuseIPDB: "หน้านี้สามารถใช้เพื่อรายงานที่อยู่ IP ไปยัง AbuseIPDB หรือเพื่อลบรายงานก่อนหน้านี้ในกรณีที่ที่อยู่ IP ได้รับการรายงานด้วยข้อผิดพลาด."
  Sections List: "หน้านี้แสดงรายการส่วนที่มีอยู่ในไฟล์ลายเซ็นที่ใช้งานอยู่ในปัจจุบัน."
- See the documentation: "ดูที่<a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external">เอกสาร</a>สำหรับข้อมูลเกี่ยวกับคำสั่งการกำหนดค่าต่างๆและวัตถุประสงค์ของพวกเขา."
+ See the documentation: "ดูที่<a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external">เอกสาร</a>สำหรับข้อมูลเกี่ยวกับคำสั่งการกำหนดค่าต่างๆและวัตถุประสงค์ของพวกเขา."
  Server log snippets, abuse details, etc: "ข้อความที่ตัดตอนมาจากบันทึกเซิร์ฟเวอร์ รายละเอียดการละเมิด ฯลฯ."
  Signature File Fixer: "เครื่องมือซ่อมแซมไฟล์ลายเซ็นเป็นวิธีการตรวจจับและแก้ไขปัญหาที่อาจเกิดขึ้นในไฟล์ลายเซ็น."
  Specify a value, or leave blank to disregard: "ระบุค่าหรือเว้นว่างไว้เพื่อไม่สนใจ."

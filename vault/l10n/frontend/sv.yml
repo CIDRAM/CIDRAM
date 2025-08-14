@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2025.08.12).
+# This file: Swedish language data for the front-end (last modified: 2025.08.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -417,7 +417,7 @@ hints_cclookup: "** Kräver landskoduppslagsfunktionalitet (t.ex., via IP-API-mo
 hints_client_hints: "!! Detta är en klienttips med låg entropi. Klienttips är en ny, experimentell webbteknik som ännu inte stöds av alla webbläsare och större klienter. <em>Se: {{Links.MDN.Client hints}}.</em> Klienttips kan vara användbara för fingeravtryck, men eftersom de inte har allmänt stöd, bör deras närvaro i förfrågningar inte antas eller litas på (d.v.s., att blockera baserat på deras frånvaro är en dålig idé)."
 hints_client_honour: "Oavsett hur vi instruerar kunden är det viktigt att komma ihåg att vi i slutändan inte har någon kontroll över vad kunden väljer att göra, och det finns ingen garanti för att kunden kommer att respektera våra instruktioner."
 hints_default_dns:
- FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#what-can-i-use-for-default_dns" hreflang="en-AU">Vad kan jag använda för "default_dns"?</a></em>"
+ FAQ.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#what-can-i-use-for-default_dns" hreflang="en-AU">Vad kan jag använda för "default_dns"?</a></em>"
 hints_duration:
  SI.: "Varaktighet kan beskrivas med hjälp av "International System of Units". T.ex., <strong>1d2h3min4s</strong> eller <strong>1d 2h 3min 4s</strong> för en dag, två timmar, tre minuter, fyra sekunder, eller <strong>5min</strong> för bara fem minuter."
  Bågtid.: "Varaktighet kan beskrivas med bågtidsnotation. T.ex., <strong>1d2°3′4″</strong> för en dag, två timmar, tre minuter, fyra sekunder, eller <strong>5″</strong> för bara fem sekunder."
@@ -428,7 +428,7 @@ hints_inspection: "* Avsedd endast för felsökning av hjälpregler. Visas inte 
 hints_ipv6_on_32bit: "Obs: IPv6-sökningar kanske inte fungerar korrekt på vissa 32-bitarssystem."
 hints_logging_datetime: "Användbart tips: Du kan bifoga information om datum och tid till namnen på loggfiler genom att använda platshållare i tidsformat. Tillgängliga platshållare för tidsformat visas vid {{Links.ConfigRef.time_format}}."
 hints_pdo_dsn:
- FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">Vad är en "PDO DSN"? Hur kan jag använda PDO med CIDRAM?</a></em>"
+ FAQ.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">Vad är en "PDO DSN"? Hur kan jag använda PDO med CIDRAM?</a></em>"
 hints_sensitive_pages: "Obs: Vad som utgör en "känslig sida" bestäms av {{Links.ConfigRef.sensitive}}."
 hints_shorthand:
  0.: "Om din webbplats behöver åtkomst via LAN eller localhost, inte blockera detta. Annars du kan blockera detta."
@@ -1054,7 +1054,7 @@ tip:
  Rate limiting is currently disabled: "Notera: Hastighetsbegränsning är för närvarande inaktiverad, men kan aktiveras via konfigurationssidan."
  Report to AbuseIPDB: "Denna sida kan användas för att rapportera IP-adresser till AbuseIPDB, eller för att radera tidigare rapporter i händelse av att en IP-adress har rapporterats av misstag."
  Sections List: "Den här sidan visar vilka sektioner som finns i de aktuella aktiva signaturfilerna."
- See the documentation: "Se <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external">dokumentationen</a> för information om de olika konfigurationsdirektiven och deras ändamål."
+ See the documentation: "Se <a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external">dokumentationen</a> för information om de olika konfigurationsdirektiven och deras ändamål."
  Server log snippets, abuse details, etc: "Utdrag från serverlogg, missbruksdetaljer, osv."
  Signature File Fixer: "Signaturfilfixaren ger ett sätt att upptäcka och åtgärda eventuella problem i signaturfiler."
  Specify a value, or leave blank to disregard: "Ange ett värde, eller lämna tomma för att bortse från."

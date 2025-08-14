@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2025.08.12).
+# This file: Norwegian language data for the front-end (last modified: 2025.08.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -417,7 +417,7 @@ hints_cclookup: "** Krever landskodeoppslagsfunksjonalitet (f.eks., via IP-API-m
 hints_client_hints: "!! Dette er et klienthint med lav entropi. Klienthints er en ny, eksperimentell nettteknologi som ennå ikke støttes bredt på tvers av alle nettlesere og større klienter. <em>Se: {{Links.MDN.Client hints}}.</em> Klienthints kan være nyttige for fingeravtrykk, men siden de ikke er allment støttet, bør deres tilstedeværelse i forespørsler ikke antas eller stoles på (dvs., blokkering basert på deres fravær er en dårlig idé)."
 hints_client_honour: "Uansett hvordan vi instruerer klienten, er det viktig å huske at vi til syvende og sist ikke har kontroll over hva klienten velger å gjøre, og det er ingen garanti for at klienten vil respektere instruksjonene våre."
 hints_default_dns:
- FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#what-can-i-use-for-default_dns" hreflang="en-AU">Hva kan jeg bruke for «default_dns»?</a></em>"
+ FAQ.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#what-can-i-use-for-default_dns" hreflang="en-AU">Hva kan jeg bruke for «default_dns»?</a></em>"
 hints_duration:
  SI.: "Varighet kan beskrives ved hjelp av «International System of Units». F.eks., <strong>1d2h3min4s</strong> eller <strong>1d 2h 3min 4s</strong> for én dag, to timer, tre minutter, fire sekunder, eller <strong>5min</strong> for bare fem minutter."
  Buetid.: "Varighet kan beskrives ved bruk av buetidsnotasjon. F.eks., <strong>1d2°3′4″</strong> for én dag, to timer, tre minutter, fire sekunder, eller <strong>5″</strong> for bare fem sekunder."
@@ -428,7 +428,7 @@ hints_inspection: "* Kun ment for feilsøking av tilleggsregler. Ikke vist for b
 hints_ipv6_on_32bit: "Merk: IPv6-oppslag fungerer kanskje ikke riktig på enkelte 32-biters systemer."
 hints_logging_datetime: "Nyttig tips: Du kan legge ved dato-/klokkeslettinformasjon til navnene på loggfilene ved å bruke plassholdere for tidsformat. Tilgjengelige tidsformatplassholdere vises ved {{Links.ConfigRef.time_format}}."
 hints_pdo_dsn:
- FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">Hva er en «PDO DSN»? Hvordan kan jeg bruke PDO med CIDRAM?</a></em>"
+ FAQ.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">Hva er en «PDO DSN»? Hvordan kan jeg bruke PDO med CIDRAM?</a></em>"
 hints_sensitive_pages: "Merk: Hva som utgjør en «sensitiv side» bestemmes av {{Links.ConfigRef.sensitive}}."
 hints_shorthand:
  0.: "Hvis nettstedet ditt trenger tilgang via LAN eller localhost, ikke blokker dette. Ellers, du kan blokkere dette."
@@ -1052,7 +1052,7 @@ tip:
  Rate limiting is currently disabled: "Merk: Hastighetsbegrensning er for øyeblikket deaktivert, men kan aktiveres via konfigurasjonssiden."
  Report to AbuseIPDB: "Denne siden kan brukes til å rapportere IP-adresser til AbuseIPDB, eller til å slette tidligere rapporter i tilfelle at en IP-adresse er feilrapportert."
  Sections List: "Denne siden viser hvilke seksjoner som finnes i de aktive signaturfilene."
- See the documentation: "Se <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external">dokumentasjonen</a> for informasjon om de ulike konfigurasjonsdirektiver og deres formål."
+ See the documentation: "Se <a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external">dokumentasjonen</a> for informasjon om de ulike konfigurasjonsdirektiver og deres formål."
  Server log snippets, abuse details, etc: "Utdrag fra serverlogg, misbruksdetaljer, osv."
  Signature File Fixer: "Signaturfilfikseren gir en måte å oppdage og fikse potensielle problemer i signaturfiler."
  Specify a value, or leave blank to disregard: "Angi en verdi, eller legg blank for å se bort fra."

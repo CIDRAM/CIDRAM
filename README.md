@@ -1,5 +1,5 @@
 [![v1: PHP >= 5.4](https://img.shields.io/badge/v1-PHP%20%3E%3D%205.4-8892bf.svg)](https://maikuolan.github.io/Compatibility-Charts/)
-[![v2~v3: PHP >= 7.2](https://img.shields.io/badge/v2%7Ev3-PHP%20%3E%3D%207.2-8892bf.svg)](https://maikuolan.github.io/Compatibility-Charts/)
+[![v2~v4: PHP >= 7.2](https://img.shields.io/badge/v2%7Ev4-PHP%20%3E%3D%207.2-8892bf.svg)](https://maikuolan.github.io/Compatibility-Charts/)
 [![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
 [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](http://makeapullrequest.com)
 
@@ -24,26 +24,26 @@ CIDRAM (Classless Inter-Domain Routing Access Manager) is a PHP script designed 
 
 
 ### Documentation:
-- **[English](https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.en.md)**
-- **[العربية](https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.ar.md)**
-- **[Deutsch](https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.de.md)**
-- **[Español](https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.es.md)**
-- **[Français](https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.fr.md)**
-- **[Bahasa Indonesia](https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.id.md)**
-- **[Italiano](https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.it.md)**
-- **[日本語](https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.ja.md)**
-- **[한국어](https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.ko.md)**
-- **[Nederlandse](https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.nl.md)**
-- **[Português](https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.pt.md)**
-- **[Русский](https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.ru.md)**
-- **[اردو](https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.ur.md)**
-- **[Tiếng Việt](https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.vi.md)**
-- **[中文（简体）](https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.zh-Hans.md)**
-- **[中文（傳統）](https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.zh-Hant.md)**
+- **[English](https://github.com/CIDRAM/Docs/blob/v3.10.0/v2-and-earlier/readme.en.md)**
+- **[العربية](https://github.com/CIDRAM/Docs/blob/v3.10.0/v2-and-earlier/readme.ar.md)**
+- **[Deutsch](https://github.com/CIDRAM/Docs/blob/v3.10.0/v2-and-earlier/readme.de.md)**
+- **[Español](https://github.com/CIDRAM/Docs/blob/v3.10.0/v2-and-earlier/readme.es.md)**
+- **[Français](https://github.com/CIDRAM/Docs/blob/v3.10.0/v2-and-earlier/readme.fr.md)**
+- **[Bahasa Indonesia](https://github.com/CIDRAM/Docs/blob/v3.10.0/v2-and-earlier/readme.id.md)**
+- **[Italiano](https://github.com/CIDRAM/Docs/blob/v3.10.0/v2-and-earlier/readme.it.md)**
+- **[日本語](https://github.com/CIDRAM/Docs/blob/v3.10.0/v2-and-earlier/readme.ja.md)**
+- **[한국어](https://github.com/CIDRAM/Docs/blob/v3.10.0/v2-and-earlier/readme.ko.md)**
+- **[Nederlandse](https://github.com/CIDRAM/Docs/blob/v3.10.0/v2-and-earlier/readme.nl.md)**
+- **[Português](https://github.com/CIDRAM/Docs/blob/v3.10.0/v2-and-earlier/readme.pt.md)**
+- **[Русский](https://github.com/CIDRAM/Docs/blob/v3.10.0/v2-and-earlier/readme.ru.md)**
+- **[اردو](https://github.com/CIDRAM/Docs/blob/v3.10.0/v2-and-earlier/readme.ur.md)**
+- **[Tiếng Việt](https://github.com/CIDRAM/Docs/blob/v3.10.0/v2-and-earlier/readme.vi.md)**
+- **[中文（简体）](https://github.com/CIDRAM/Docs/blob/v3.10.0/v2-and-earlier/readme.zh-Hans.md)**
+- **[中文（傳統）](https://github.com/CIDRAM/Docs/blob/v3.10.0/v2-and-earlier/readme.zh-Hant.md)**
 
 [\[CONTRIBUTING.md\] **Want to help?**](https://github.com/CIDRAM/.github/blob/master/CONTRIBUTING.md)
 
 ---
 
 
-Last Updated: 1 July 2024 (2024.07.01).
+Last Updated: 14 August 2025 (2025.08.14).

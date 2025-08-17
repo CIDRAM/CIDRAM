@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6.dat
 
-# Version: 2025.224.0
-# Last modified: 2025.08.13
+# Version: 2025.228.0
+# Last modified: 2025.08.17
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -5075,7 +5075,8 @@ Tag: Dreamscape Networks
 
 
 # ASN 22458 ("NetSource Communications, Inc").
-# Updated: 2019.10.26 / Checked: 2024.08.07
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2019.10.26 / Checked: 2025.08.14
 
 2604:f80::/32 Deny Cloud
 Origin: US
@@ -5091,7 +5092,7 @@ Tag: NetSource
 2a03:7940::/32 Deny Cloud
 Origin: PL
 Profile: Dedicated;Frequent changes;Webhosting
-Tag: SPRINT
+Tag: SPRINT S.A
 
 
 # ASN 55286 ("B2 Net Solutions Inc").
@@ -5222,28 +5223,24 @@ Profile: Dedicated;Infrastructure/Transit
 Tag: zColo
 
 
-# ASNs 61138, 136510 ("Zappie Host LLC", "Streamline Servers Pty Ltd").
-# Stop Forum Spam (SFS) listings: 9 (AS61138).
-# Updated: 2024.08.15
+# ASNs 61138, 136510, 151817 ("Zappie Host LLC", "Streamline Servers Pty Ltd").
+# Brute-force, SSH, and DDoS attacks, phishing, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 6 (AS61138), 152 (AS136510).
+# Updated: 2025.08.15 / Modified: 2025.08.17
 
-2402:5ac0::/32 Deny Cloud
-2404:b9c0::/32 Deny Cloud
-Origin: AU
 2a0c:9a40:8082::/48 Deny Cloud
 Origin: CH
 2a0f:5707:ab2f::/48 Deny Cloud
 Origin: DE
-2401:3cc0::/32 Deny Cloud
-Origin: HK
 2a0e:fd45:40fd::/48 Deny Cloud
 Origin: NL
-2401:3bc0::/32 Deny Cloud
-Origin: NZ
 2c0f:f530::/32 Deny Cloud
 Origin: SC
+2404:3d80::/32 Deny Cloud
+2602:f919:106::/47 Deny Cloud
+2602:f919:108::/48 Deny Cloud
+2602:fba1:700::/40 Deny Cloud
 2606:b940::/32 Deny Cloud
-2a05:dfc7:dfc7::/48 Deny Cloud
-2a05:dfc7:dfc8::/48 Deny Cloud
 2a06:1280::/32 Deny Cloud
 2a06:a006::/32 Deny Cloud
 Origin: US
@@ -6132,9 +6129,9 @@ Profile: Dedicated;Webhosting
 Tag: Namecheap, Inc
 
 
-# ASNs 47674, 49349 ("Dotsi, Unipessoal Lda").
-# Stop Forum Spam (SFS) listings: 13 (AS47674).
-# Updated: 2023.09.11 / Checked: 2024.08.14
+# ASN 47674 ("NETSOLUTIONS").
+# Stop Forum Spam (SFS) listings: 34.
+# Updated: 2023.09.11 / Checked: 2025.08.14
 
 2a00:1c60::/32 Deny Cloud
 Origin: PT
@@ -6187,9 +6184,9 @@ Profile: Dedicated;Infrastructure/Transit
 Tag: Servers.com
 
 
-# ASNs 48635, 202861, 205631 ("CLDIN B.V").
-# Stop Forum Spam (SFS) listings: 1,908 (AS48635).
-# Updated: 2023.09.11 / Checked: 2024.08.14
+# ASNs 48635, 205631 ("CLDIN B.V").
+# Stop Forum Spam (SFS) listings: 45 (AS48635).
+# Updated: 2025.08.14
 
 2001:678:3a4::/48 Deny Cloud
 2001:67c:28fc::/48 Deny Cloud
@@ -6205,13 +6202,12 @@ Tag: Servers.com
 2a04:1cc0::/29 Deny Cloud
 2a04:6bc0::/36 Deny Cloud
 2a05:1500::/29 Deny Cloud
+2a06:4040::/29 Deny Cloud
 2a0b:7280::/29 Deny Cloud
 2a0b:8f80::/29 Deny Cloud
 2a0c:84c0::/29 Deny Cloud
 2a0d:7980::/32 Deny Cloud
 Origin: NL
-2a06:a001:a0f8::/47 Deny Cloud
-Origin: US
 Profile: Frequent changes;Infrastructure/Transit;Tor endpoints here;Webhosting
 Tag: PCextreme B.V
 
@@ -6581,13 +6577,12 @@ Tag: Host Universal Pty Ltd
 
 
 # ASN 15083 ("Infolink Global Corporation").
-# Stop Forum Spam (SFS) listings: 8.
-# Updated: 2024.08.15
+# Stop Forum Spam (SFS) listings: 18.
+# Updated: 2025.08.15
 
 2607:1680::/32 Deny Cloud
 2607:feb8::/32 Deny Cloud
 2a06:8e40::/29 Deny Cloud
-2a0c:9480::/30 Deny Cloud
 Origin: US
 Profile: Dedicated;Webhosting
 Tag: Infolink Global Corporation
@@ -10694,7 +10689,7 @@ Tag: INVITE Systems SRL
 # Cloud computing provider. Synflood, Slowloris, and Ping of Death attacks
 # detected from here.
 # Stop Forum Spam (SFS) listings: 1 (AS208566).
-# Updated: 2021.11.21 / Checked: 2024.08.14
+# Updated: 2021.11.21 / Checked: 2025.08.14
 
 2a0e:41c0::/29 Deny Cloud
 Origin: PL
@@ -12708,15 +12703,18 @@ Tag: GWY IT PTY LTD
 
 # ASN 149020 ("WebHorizon Internet Services").
 # SSH and webapp attacks, port scans, and hacking detected from here.
-# Stop Forum Spam (SFS) listings: 59.
-# Updated: 2024.08.15
+# Stop Forum Spam (SFS) listings: 1,667.
+# Updated: 2025.08.15
 
-2403:cfc0:1110::/44 Deny Cloud
+2a0b:4e07:100::/40 Deny Cloud
+Origin: IL
+2401:4520:1000::/36 Deny Cloud
+2401:4520:2000::/36 Deny Cloud
+Origin: IN
 2403:cfc0:1120::/44 Deny Cloud
 Origin: SG
 2602:fa08:3::/48 Deny Cloud
 2602:fa08:5::/48 Deny Cloud
-2602:fa08:10::/44 Deny Cloud
 2602:fa08:20::/44 Deny Cloud
 2602:fa08:50::/44 Deny Cloud
 2a05:dfc1:4000::/40 Deny Cloud
@@ -13797,14 +13795,16 @@ Tag: Goodnet LLC
 # ASN 399486 ("12651980 CANADA INC").
 # Searching for vulnerabilities, brute-force, SMTP, SSH, WordPress, and webapp
 # attacks, port scans, hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 989.
-# Updated: 2025.07.06
+# Stop Forum Spam (SFS) listings: 323.
+# Updated: 2025.08.17
 
+2a0f:b240:c::/48 Deny Cloud
+Origin: CA
 2a0f:85c1:3d9::/48 Deny Cloud
 Origin: GB
 2001:550:601::/48 Deny Cloud
 Origin: US
-Profile: Dedicated;Infrastructure/Transit;Webhosting
+Profile: Dedicated;Frequent changes;Infrastructure/Transit;Webhosting
 Tag: Virtuo.host
 
 
@@ -14014,10 +14014,12 @@ Tag: 10 Science Park Road
 
 # ASN 216139 ("Iron Hosting Centre LTD").
 # Brute-force, SSH attacks, port scans, hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 22.
-# Updated: 2024.08.14
+# Stop Forum Spam (SFS) listings: 50.
+# Updated: 2025.08.14
 
 2a03:80c0:abba::/48 Deny Cloud
+2a03:80c0:face::/48 Deny Cloud
+2a03:c980:face::/48 Deny Cloud
 2a09:c140:feed::/48 Deny Cloud
 Origin: RU
 Profile: Webhosting
@@ -14033,16 +14035,6 @@ Tag: Iron Hosting Centre LTD
 Origin: TR
 Profile: Webhosting
 Tag: onlineservers.ir
-
-
-# ASN 215780 ("NordicVM LTD").
-# Webapp attacks, port scans, and spam detected from here.
-# Updated: 2024.08.15
-
-2a0f:9400:6901::/48 Deny Cloud
-Origin: GB
-Profile: Dedicated;Multiplay;Webhosting
-Tag: NordicVM LTD
 
 
 # ASN 48753 ("AVA HOST SRL").
@@ -17246,6 +17238,18 @@ Tag: Fourplex Telecom LLC
 Origin: CH
 Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: Florian Kolb
+
+
+# ASN 201446 ("Soluciones web on line s.l").
+# Brute-force, SSH, WordPress/XMLRPC, and webapp attacks, hacking, and spam
+# detected from here.
+# Stop Forum Spam (SFS) listings: 40.
+# Updated: 2025.08.17
+
+2a03:f6c0::/52 Deny Cloud
+Origin: ES
+Profile: Dedicated;Webhosting
+Tag: Soluciones web
 
 
 # ---

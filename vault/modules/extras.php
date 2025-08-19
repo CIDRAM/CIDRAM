@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2025.08.14).
+ * This file: Optional security extras module (last modified: 2025.08.19).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -82,11 +82,11 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
         /** Probing for exposed backup files. */
         if ($this->trigger(preg_match(
-            '~(?:(?:^|[/?])backup|(?:archive|backup|d(?:atabase|b|ocroot|ump)|htdocs|public_html|site|www)(?:\.(?:new\d*|old\d*|sql))*(?:\.(?:[7bg]z\d*|7?zip|b[ac]k|[rt]ar(?:\.gz)?|tgz))+)(?:$|[/?])~',
+            '~(?:(?:^|[/?])backup|(?:archive|bac?k|ba?cku?p|blog|d(?:atabase|b|ocroot|ump)|htdocs|public_html|site|www)(?:\.(?:new\d*|old\d*|sql))*(?:\.(?:[7bg]z\d*|7?zip|b[ac]k|[rt]ar(?:\.gz)?|tgz))+)(?:$|[/?])~',
             $LCNrURI
         ), 'Probing for exposed backup files')) {
             $this->Reporter->report([15], ['Caught probing for exposed backup files.'], $this->BlockInfo['IPAddr']);
-        } // 2023.08.13 mod 2025.07.17
+        } // 2023.08.13 mod 2025.08.19
 
         /** Probing for exposed SQL dumps. */
         if ($this->trigger(preg_match('~\.sql(?:\.(?:[7bg]z\d*|7?zip|b[ac]k|db\d*|new\d*|old\d*|[rt]ar|sql|tgz))*(?:$|[/?])~', $LCNrURI), 'Probing for exposed SQL dumps')) {

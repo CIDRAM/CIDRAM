@@ -1265,9 +1265,6 @@ AbuseIPDB module:
   PHP: "^7.2|^8"
   CIDRAM Core: "^4"
  When Install Succeeds: ["queue message response.please_check_config"]
- When Update Succeeds:
-  - "if {Components.Meta.AbuseIPDB module.Version}<2024.138&&{Components.RemoteMeta.AbuseIPDB module.Version}>=2024.138 then queue message <span dir="ltr" lang="en-AU">New configuration directive introduced with this update, <code>abuseipdb➡options</code>.</span>"
-  - "if {Components.Meta.AbuseIPDB module.Version}<2024.140&&{Components.RemoteMeta.AbuseIPDB module.Version}>=2024.140 then queue message <span dir="ltr" lang="en-AU">New configuration directives introduced with this update, <code>abuseipdb➡expire_good</code> and <code>abuseipdb➡expire_bad</code>.</span>"
  Files:
   assets/frontend/default/_abuseipdb.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/assets/frontend/default/_abuseipdb.html"
@@ -1316,9 +1313,6 @@ BGPView module:
   PHP: "^7.2|^8"
   CIDRAM Core: "^4"
  When Install Succeeds: ["queue message response.please_check_config"]
- When Update Succeeds:
-  - "if {Components.Meta.BGPView module.Version}<2024.138&&{Components.RemoteMeta.BGPView module.Version}>=2024.138 then queue message <span dir="ltr" lang="en-AU">New configuration directive introduced with this update, <code>bgpview➡options</code>.</span>"
-  - "if {Components.Meta.BGPView module.Version}<2024.140&&{Components.RemoteMeta.BGPView module.Version}>=2024.140 then queue message <span dir="ltr" lang="en-AU">New configuration directives introduced with this update, <code>bgpview➡expire_good</code> and <code>bgpview➡expire_bad</code>.</span>"
  Files:
   imports/bgpview.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/imports/bgpview.yml"
@@ -1330,14 +1324,14 @@ BGPView module:
    Used with: "modules"
 Bot user agents module:
  False Positive Risk: "Medium"
- Version: "2025.225.0"
+ Version: "2025.230.0"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "^4"
  Files:
   modules/botua.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/modules/botua.php"
-   Checksum: "0c8a740060d43c5c8e657f34fd4ee36ab8bf48f5ae9559fce41822789ed850c5:27249"
+   Checksum: "c5081b997b400a04331714ae1189990a61b675db0e0a2775e258380c19025e01:27260"
    Used with: "modules"
 BunnyCDN compatibility module:
  False Positive Risk: "Low"
@@ -1373,9 +1367,6 @@ IP-API module:
   PHP: "^7.2|^8"
   CIDRAM Core: "^4"
  When Install Succeeds: ["queue message response.please_check_config"]
- When Update Succeeds:
-  - "if {Components.Meta.IP-API module.Version}<2024.138&&{Components.RemoteMeta.IP-API module.Version}>=2024.138 then queue message <span dir="ltr" lang="en-AU">New configuration directive introduced with this update, <code>ipapi➡options</code>.</span>"
-  - "if {Components.Meta.IP-API module.Version}<2024.140&&{Components.RemoteMeta.IP-API module.Version}>=2024.140 then queue message <span dir="ltr" lang="en-AU">New configuration directives introduced with this update, <code>ipapi➡expire_good</code> and <code>ipapi➡expire_bad</code>.</span>"
  Files:
   imports/ipapi.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/imports/ipapi.yml"
@@ -1387,13 +1378,11 @@ IP-API module:
    Used with: "modules"
 Optional security extras module:
  False Positive Risk: "Medium"
- Version: "2025.225.0"
+ Version: "2025.230.0"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "^4"
  When Install Succeeds: ["queue message response.please_check_config"]
- When Update Succeeds:
-  - "if {Components.Meta.Optional security extras module.Version}<2025.198&&{Components.RemoteMeta.Optional security extras module.Version}>=2025.198 then queue message <span dir="ltr" lang="en-AU">New configuration directive introduced with this update, <code>extras➡remove_headers</code>.</span>"
  Files:
   imports/extras.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/imports/extras.yml"
@@ -1401,7 +1390,7 @@ Optional security extras module:
    Used with: "imports"
   modules/extras.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/modules/extras.php"
-   Checksum: "5da93c566eaf4428ade213e70ea47e24d1a245c1821a6093f69362a591d38736:50288"
+   Checksum: "edff54925ab6b581085d9c3d9c1462c11219eb6025141ee84d8119fac15dab68:50301"
    Used with: "modules"
 Project Honeypot module:
  False Positive Risk: "Medium"
@@ -1410,9 +1399,6 @@ Project Honeypot module:
   PHP: "^7.2|^8"
   CIDRAM Core: "^4"
  When Install Succeeds: ["queue message response.please_check_config"]
- When Update Succeeds:
-  - "if {Components.Meta.Project Honeypot module.Version}<2024.138&&{Components.RemoteMeta.Project Honeypot module.Version}>=2024.138 then queue message <span dir="ltr" lang="en-AU">New configuration directive introduced with this update, <code>projecthoneypot➡options</code>.</span>"
-  - "if {Components.Meta.Project Honeypot module.Version}<2024.140&&{Components.RemoteMeta.Project Honeypot module.Version}>=2024.140 then queue message <span dir="ltr" lang="en-AU">New configuration directives introduced with this update, <code>projecthoneypot➡expire_good</code> and <code>projecthoneypot➡expire_bad</code>.</span>"
  Files:
   imports/projecthoneypot.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/imports/projecthoneypot.yml"
@@ -1445,9 +1431,6 @@ Stop Forum Spam module:
   PHP: "^7.2|^8"
   CIDRAM Core: "^4"
  When Install Succeeds: ["queue message response.please_check_config"]
- When Update Succeeds:
-  - "if {Components.Meta.Stop Forum Spam module.Version}<2024.138&&{Components.RemoteMeta.Stop Forum Spam module.Version}>=2024.138 then queue message <span dir="ltr" lang="en-AU">Configuration directive <code>sfs➡offer_captcha</code> removed with this update, replaced by the newly added <code>sfs➡options</code>.</span>"
-  - "if {Components.Meta.Stop Forum Spam module.Version}<2024.140&&{Components.RemoteMeta.Stop Forum Spam module.Version}>=2024.140 then queue message <span dir="ltr" lang="en-AU">New configuration directives introduced with this update, <code>sfs➡expire_good</code> and <code>sfs➡expire_bad</code>.</span>"
  Files:
   imports/sfs.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/imports/sfs.yml"
@@ -1480,7 +1463,6 @@ Tor blocker module:
   PHP: "^7.2|^8"
   CIDRAM Core: "^4"
  When Install Succeeds: ["queue message response.please_check_config"]
- When Update Succeeds: ["if {Components.Meta.Tor blocker module.Version}<2024.138&&{Components.RemoteMeta.Tor blocker module.Version}>=2024.138 then queue message <span dir="ltr" lang="en-AU">New configuration directive introduced with this update, <code>tor➡options</code>.</span>"]
  Files:
   imports/tor.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/imports/tor.yml"
@@ -1500,8 +1482,6 @@ BOBUAM:
   PHP: "^7.2|^8"
   CIDRAM Core: "^4"
  When Install Succeeds: ["queue message response.please_check_config"]
- When Update Succeeds:
-  - "if {Components.Meta.BOBUAM.Version}<2025.186&&{Components.RemoteMeta.BOBUAM.Version}>=2025.186 then queue message <span dir="ltr" lang="en-AU">[BOBUAM 2025.186.0] Added support for Opera (configuration settings should be revised accordingly).</span>"
  Files:
   imports/bobuam.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/imports/bobuam.yml"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2025.08.12).
+# This file: Defaults file (last modified: 2025.08.14).
 ##/
 
 Config Defaults:
@@ -774,8 +774,8 @@ Config Defaults:
    default: 0
    choices:
     0: "label.Don_t block the request"
-    409: "label.409 Conflict"
-    429: "label.429 Too Many Requests"
+    409: &409 "label.409 Conflict"
+    429: &429 "label.429 Too Many Requests"
    style: "radio"
  verification:
   search_engines:
@@ -986,7 +986,7 @@ Config Defaults:
     200: *200
     403: *403
     418: *418
-    429: &429 "label.429 Too Many Requests"
+    429: *429
     451: *451
    style: "radio"
  hcaptcha:

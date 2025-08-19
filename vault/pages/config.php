@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The configuration page (last modified: 2025.08.08).
+ * This file: The configuration page (last modified: 2025.08.16).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -102,7 +102,30 @@ foreach ($this->CIDRAM['Config Defaults'] as $CatKey => $CatValue) {
             $_POST[$ThisDir['DirLangKey']] = $this->desabotage($_POST[$ThisDir['DirLangKey']]);
         }
 
-        if (isset($_POST[$ThisDir['DirLangKey']])) {
+        if (isset($DirValue['labels'], $DirValue['choices'], $DirValue['style']) && is_array($DirValue['labels']) && is_array($DirValue['choices']) && $DirValue['style'] === 'matrix') {
+            $DirValue['Posts'] = [];
+            foreach ($DirValue['labels'] as $DirValue['MLabelKey'] => $DirValue['MLabelValue']) {
+                if (isset($_POST[$ThisDir['DirLangKey'] . '_' . $DirValue['MLabelKey']], $DirValue['choices'][$_POST[$ThisDir['DirLangKey'] . '_' . $DirValue['MLabelKey']]])) {
+                    $DirValue['Posts'][$DirValue['MLabelKey']] = $_POST[$ThisDir['DirLangKey'] . '_' . $DirValue['MLabelKey']];
+                } else {
+                    $Try = str_replace('.', '_', $ThisDir['DirLangKey'] . '_' . $DirValue['MLabelKey']);
+                    if (isset($_POST[$Try], $DirValue['choices'][$Try])) {
+                        $DirValue['Posts'][$DirValue['MLabelKey']] = $_POST[$Try];
+                        unset($_POST[$Try]);
+                    }
+                }
+                if (isset($DirValue['Posts'][$DirValue['MLabelKey']])) {
+                    $Type = $DirValue['type'][$DirValue['MLabelKey']] ?? $DirValue['type'] ?? '';
+                    if (is_string($Type) && $Type !== '') {
+                        $this->autoType($DirValue['Posts'][$DirValue['MLabelKey']], $Type);
+                    }
+                }
+            }
+            if (!empty($_POST['updatingConfig']) && $this->Configuration[$CatKey][$DirKey] !== $DirValue['Posts']) {
+                $this->Configuration[$CatKey][$DirKey] = $DirValue['Posts'];
+                $this->CIDRAM['ConfigModified'] = true;
+            }
+        } elseif (isset($_POST[$ThisDir['DirLangKey']])) {
             if (in_array($DirValue['type'], ['email', 'string', 'timezone', 'url', 'float', 'int', 'duration', 'bool', 'kb'], true)) {
                 $this->autoType($_POST[$ThisDir['DirLangKey']], $DirValue['type']);
             }
@@ -150,23 +173,6 @@ foreach ($this->CIDRAM['Config Defaults'] as $CatKey => $CatValue) {
                 }
             }
             $DirValue['Posts'] = implode("\n", $DirValue['Posts']) ?: '';
-            if (!empty($_POST['updatingConfig']) && $this->Configuration[$CatKey][$DirKey] !== $DirValue['Posts']) {
-                $this->Configuration[$CatKey][$DirKey] = $DirValue['Posts'];
-                $this->CIDRAM['ConfigModified'] = true;
-            }
-        } elseif (isset($DirValue['labels'], $DirValue['choices'], $DirValue['style']) && is_array($DirValue['labels']) && is_array($DirValue['choices']) && $DirValue['style'] === 'matrix') {
-            $DirValue['Posts'] = [];
-            foreach ($DirValue['labels'] as $DirValue['MLabelKey'] => $DirValue['MLabelValue']) {
-                if (!empty($_POST[$ThisDir['DirLangKey'] . '_' . $DirValue['MLabelKey']]) && isset($DirValue['choices'][$_POST[$ThisDir['DirLangKey'] . '_' . $DirValue['MLabelKey']]])) {
-                    $DirValue['Posts'][$DirValue['MLabelKey']] = $_POST[$ThisDir['DirLangKey'] . '_' . $DirValue['MLabelKey']];
-                } else {
-                    $Try = str_replace('.', '_', $ThisDir['DirLangKey'] . '_' . $DirValue['MLabelKey']);
-                    if (!empty($_POST[$Try])) {
-                        $DirValue['Posts'][$DirValue['MLabelKey']] = $_POST[$Try];
-                        unset($_POST[$Try]);
-                    }
-                }
-            }
             if (!empty($_POST['updatingConfig']) && $this->Configuration[$CatKey][$DirKey] !== $DirValue['Posts']) {
                 $this->Configuration[$CatKey][$DirKey] = $DirValue['Posts'];
                 $this->CIDRAM['ConfigModified'] = true;
@@ -346,8 +352,9 @@ foreach ($this->CIDRAM['Config Defaults'] as $CatKey => $CatValue) {
                 if (isset($DirValue['labels']) && is_array($DirValue['labels'])) {
                     $DirValue['gridV'] = 'gridVB';
                     $ThisDir['FieldOut'] = sprintf(
-                        '<div style="display:grid;margin:auto 38px;grid-template-columns:repeat(%s) auto;text-align:%s">',
-                        count($DirValue['labels']) . ',minmax(0, 1fr)',
+                        '<div style="display:grid;margin:auto 38px;grid-template-columns:repeat(%s,%s) auto;text-align:%s">',
+                        count($DirValue['labels']),
+                        $DirValue['columns'] ?? 'minmax(100px, 1fr)',
                         $this->FE['FE_Align']
                     );
                     $DirValue['HasLabels'] = true;
@@ -362,18 +369,11 @@ foreach ($this->CIDRAM['Config Defaults'] as $CatKey => $CatValue) {
                     }
                     $ThisDir['FieldOut'] .= '<div class="gridboxitem"></div>';
                 } else {
-                    $ThisDir['FieldOut'] = sprintf(
-                        '<div style="display:grid;margin:auto 38px;grid-template-columns:19px auto;text-align:%s">',
-                        $this->FE['FE_Align']
-                    );
+                    $ThisDir['FieldOut'] = sprintf('<div style="display:grid;margin:auto 38px;grid-template-columns:19px auto;text-align:%s">', $this->FE['FE_Align']);
                     $DirValue['HasLabels'] = false;
                 }
             } else {
-                $ThisDir['FieldOut'] = sprintf(
-                    '<select class="auto capitalize" name="%1$s" id="%1$s_field"%2$s>',
-                    $ThisDir['DirLangKey'],
-                    $ThisDir['Trigger']
-                );
+                $ThisDir['FieldOut'] = sprintf('<select class="auto capitalize" name="%1$s" id="%1$s_field"%2$s>', $ThisDir['DirLangKey'], $ThisDir['Trigger']);
                 if (!empty($DirValue['allow_other'])) {
                     $ThisDir['FieldOut'] = '<div class="flexrow">' . $ThisDir['FieldOut'];
                 }
@@ -400,10 +400,10 @@ foreach ($this->CIDRAM['Config Defaults'] as $CatKey => $CatValue) {
                         foreach ($DirValue['labels'] as $DirValue['ThisLabelKey'] => $DirValue['ThisLabel']) {
                             $DirValue['gridV'] = ($DirValue['gridV']) === 'gridVB' ? 'gridVA' : 'gridVB';
                             if (isset($DirValue['ThisNonsense'][$ChoiceKey . ':' . $DirValue['ThisLabelKey']])) {
-                                $ThisDir['FieldOut'] .= sprintf('<div class="gridboxcheckcell %s %s">–</div>', $DirValue['gridV'], $DirValue['gridH']);
+                                $ThisDir['FieldOut'] .= sprintf('<div class="gridboxstretch %s %s"><div class="center configMatrixLabel">–</div></div>', $DirValue['gridV'], $DirValue['gridH']);
                             } else {
                                 $ThisDir['FieldOut'] .= sprintf(
-                                    '<div class="gridboxcheckcell %4$s %5$s"><label class="gridlabel"><input%3$s type="checkbox" class="auto" name="%1$s" id="%1$s"%2$s /></label></div>',
+                                    '<label class="gridlabel"><div class="gridboxstretch %4$s %5$s"><div class="center configMatrixLabel"><input%3$s type="checkbox" class="auto" name="%1$s" id="%1$s"%2$s /></div></div></label>',
                                     $ThisDir['DirLangKey'] . '_' . $ChoiceKey . '_' . $DirValue['ThisLabelKey'],
                                     preg_match(
                                         '~(?:^|\n)' . preg_quote($ChoiceKey . ':' . $DirValue['ThisLabelKey']) . '(?:\n|$)~i',
@@ -423,12 +423,22 @@ foreach ($this->CIDRAM['Config Defaults'] as $CatKey => $CatValue) {
                                 );
                             }
                         }
-                        $ThisDir['FieldOut'] .= sprintf(
-                            '<div class="gridboxitem %s %s">%s</div>',
-                            $DirValue['gridH'],
-                            (count($DirValue['labels']) % 2) === 0 ? 'vrte' : 'vrto',
-                            $ChoiceValue
-                        );
+                        if (strpos($ChoiceValue, "\n") !== false) {
+                            $ChoiceValue = explode("\n", $ChoiceValue, 2);
+                            $ThisDir['FieldOut'] .= sprintf(
+                                '<div class="gridboxstretch %s"><span class="s">%s</span><br />%s</div>',
+                                $DirValue['gridH'],
+                                $ChoiceValue[0],
+                                $ChoiceValue[1]
+                            );
+                        } else {
+                            $ThisDir['FieldOut'] .= sprintf(
+                                '<div class="gridboxitem %s %s">%s</div>',
+                                $DirValue['gridH'],
+                                (count($DirValue['labels']) % 2) === 0 ? 'vrte' : 'vrto',
+                                $ChoiceValue
+                            );
+                        }
                     } else {
                         $ThisDir['FieldOut'] .= sprintf(
                             '<div class="gridboxcheckcell gridVA %5$s"><label class="gridlabel"><input%4$s type="checkbox" class="auto" name="%1$s" id="%1$s"%2$s /></label></div><div class="gridboxitem %5$s"><label for="%1$s" class="s">%3$s</label></div>',
@@ -457,10 +467,10 @@ foreach ($this->CIDRAM['Config Defaults'] as $CatKey => $CatValue) {
                     foreach ($DirValue['labels'] as $DirValue['MLabelKey'] => $DirValue['MLabelValue']) {
                         $DirValue['gridV'] = ($DirValue['gridV']) === 'gridVB' ? 'gridVA' : 'gridVB';
                         if (isset($DirValue['ThisNonsense'][$DirValue['MLabelKey'] . ':' . $ChoiceKey])) {
-                            $ThisDir['FieldOut'] .= sprintf('<div class="gridboxcheckcell %s %s">–</div>', $DirValue['gridV'], $DirValue['gridH']);
+                            $ThisDir['FieldOut'] .= sprintf('<div class="gridboxstretch %s %s"><div class="center configMatrixLabel">–</div></div>', $DirValue['gridV'], $DirValue['gridH']);
                         } else {
                             $ThisDir['FieldOut'] .= sprintf(
-                                '<div class="gridboxcheckcell %s %s"><label class="gridlabel"><input%s type="radio" class="auto" name="%s" id="%s" value="%s"%s /></label></div>',
+                                '<label class="gridlabel"><div class="gridboxstretch %s %s"><div class="center configMatrixLabel"><input%s type="radio" class="auto" name="%s" id="%s" value="%s"%s /></div></div></label>',
                                 $DirValue['gridV'],
                                 $DirValue['gridH'],
                                 $ThisDir['Trigger'],
@@ -476,15 +486,25 @@ foreach ($this->CIDRAM['Config Defaults'] as $CatKey => $CatValue) {
                             );
                         }
                     }
-                    $ThisDir['FieldOut'] .= sprintf(
-                        '<div class="gridboxitem %s %s">%s</div>',
-                        $DirValue['gridH'],
-                        (count($DirValue['labels']) % 2) === 0 ? 'vrte' : 'vrto',
-                        $ChoiceValue
-                    );
+                    if (strpos($ChoiceValue, "\n") !== false) {
+                        $ChoiceValue = explode("\n", $ChoiceValue, 2);
+                        $ThisDir['FieldOut'] .= sprintf(
+                            '<div class="gridboxstretch %s"><span class="s">%s</span><br />%s</div>',
+                            $DirValue['gridH'],
+                            $ChoiceValue[0],
+                            $ChoiceValue[1]
+                        );
+                    } else {
+                        $ThisDir['FieldOut'] .= sprintf(
+                            '<div class="gridboxstretch %s %s">%s</div>',
+                            $DirValue['gridH'],
+                            (count($DirValue['labels']) % 2) === 0 ? 'vrte' : 'vrto',
+                            $ChoiceValue
+                        );
+                    }
                 } elseif (isset($DirValue['style']) && $DirValue['style'] === 'radio') {
                     if (strpos($ChoiceValue, "\n")) {
-                        $ChoiceValue = explode("\n", $ChoiceValue);
+                        $ChoiceValue = explode("\n", $ChoiceValue, 2);
                         $ThisDir['FieldOut'] .= sprintf(
                             '<div class="gridboxstretch gridVA %5$s"><label class="gridlabel"><input%4$s type="radio" class="auto" name="%6$s" id="%1$s" value="%7$s"%2$s /></label></div><div class="gridboxstretch %5$s"><label for="%1$s"><span class="s">%3$s</span><br />%8$s</label></div>',
                             $ThisDir['DirLangKey'] . '_' . $ChoiceKey,

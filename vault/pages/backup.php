@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The backup page (last modified: 2025.04.11).
+ * This file: The backup page (last modified: 2025.08.15).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -199,10 +199,11 @@ if (isset($_POST['bckpAct'])) {
                                     'config_imports', 'events', 'ipv4', 'ipv6', 'modules', 'track_mode'
                                 ]
                             ] as $CatKey => $Cat) {
+                                if (!isset($Import['Configuration'][$CatKey])) {
+                                    continue;
+                                }
                                 foreach ($Cat as $Pair) {
-                                    if (isset($Import['Configuration'][$CatKey])) {
-                                        unset($Import['Configuration'][$CatKey][$Pair]);
-                                    }
+                                    unset($Import['Configuration'][$CatKey][$Pair]);
                                 }
                             }
 

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data for the front-end (last modified: 2025.08.14).
+# This file: Bangla language data for the front-end (last modified: 2025.08.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -84,7 +84,7 @@ config_PHPMailer_Password: "SMTP এর মাধ্যমে ইমেইল �
 config_PHPMailer_Port: "আউটবাউন্ড ইমেইলের জন্য ব্যবহার করার জন্য পোর্ট নাম্বার। ডিফল্ট = "587"।"
 config_PHPMailer_SMTPAuth: "এই নির্দেশটি SMTP সেশনের প্রমাণীকরণ কিনা তা নির্ধারণ করে (সাধারণত এই একা ছেড়ে দেওয়া উচিত)।"
 config_PHPMailer_SMTPSecure: "SMTP এর মাধ্যমে ইমেইল পাঠানোর সময় ব্যবহারের জন্য প্রোটোকল (TLS বা SSL)।"
-config_PHPMailer_SkipAuthProcess: "যখন <code>true</code>, PHPMailer এসএমটিপি এর মাধ্যমে ইমেইল পাঠানোর সাথে সাথে প্রমাণীকরণের প্রক্রিয়াটিকে সাধারণত ছাড় দেয়। এই এড়ানো উচিত, কারণ বহির্গামী ইমেইল MITM আক্রমনের সম্মুখীন হতে পারে। তবে, এটি কিছু ক্ষেত্রে প্রয়োজনীয় হতে পারে (যেমন, যখন PHPMailer একটি SMTP সার্ভারে সংযোগ করতে পারবে না)।"
+config_PHPMailer_SkipAuthProcess: "যখন <code>true</code>, PHPMailer SMTP এর মাধ্যমে ইমেইল পাঠানোর সাথে সাথে প্রমাণীকরণের প্রক্রিয়াটিকে সাধারণত ছাড় দেয়। এই এড়ানো উচিত, কারণ বহির্গামী ইমেইল MITM আক্রমনের সম্মুখীন হতে পারে। তবে, এটি কিছু ক্ষেত্রে প্রয়োজনীয় হতে পারে (যেমন, যখন PHPMailer একটি SMTP সার্ভারে সংযোগ করতে পারবে না)।"
 config_PHPMailer_Username: "SMTP এর মাধ্যমে ইমেইল পাঠানোর সময় ব্যবহারের জন্য ব্যবহারকারীর নাম।"
 config_PHPMailer_addReplyToAddress: "SMTP এর মাধ্যমে ইমেইল পাঠানোর সময় ব্যবহারের জন্য উত্তর ঠিকানা।"
 config_PHPMailer_addReplyToName: "SMTP এর মাধ্যমে ইমেইল পাঠানোর সময় ব্যবহারের জন্য উত্তর নাম।"
@@ -400,7 +400,7 @@ label_backup_location: "সংগ্রহস্থল ব্যাকআপ অ
 label_banned: "অনুরোধ নিষিদ্ধ"
 label_blocked: "অনুরোধ অবরুদ্ধ"
 label_branch: "শাখা সর্বশেষ স্থিতিশীল:"
-label_captcha: "CAPTCHA প্রচেষ্টা"
+label_captcha: "ক্যাপচা প্রচেষ্টা"
 label_check_aux: "এছাড়াও অক্সিলিয়ারি নিয়ম বিরুদ্ধে পরীক্ষা করুন।"
 label_check_modules: "এছাড়াও মডিউলগুলির বিরুদ্ধে পরীক্ষা করুন।"
 label_check_verification: "এছাড়াও সার্চ ইঞ্জিন এবং সোশ্যাল মিডিয়া যাচাইকরণ করুন।"

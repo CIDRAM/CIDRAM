@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2025.08.09).
+ * This file: Front-end handler (last modified: 2025.08.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1403,19 +1403,13 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                 }
             }
             if (isset($CIDRAM['DirValue']['choices'])) {
-                if (
-                    $CIDRAM['DirValue']['type'] === 'checkbox' ||
-                    (isset($CIDRAM['DirValue']['style']) && $CIDRAM['DirValue']['style'] === 'radio')
-                ) {
-                    if (
-                        $CIDRAM['DirValue']['type'] === 'checkbox' &&
-                        isset($CIDRAM['DirValue']['labels']) &&
-                        is_array($CIDRAM['DirValue']['labels'])
-                    ) {
+                if ($CIDRAM['DirValue']['type'] === 'checkbox' || (isset($CIDRAM['DirValue']['style']) && $CIDRAM['DirValue']['style'] === 'radio')) {
+                    if (isset($CIDRAM['DirValue']['labels']) && is_array($CIDRAM['DirValue']['labels'])) {
                         $CIDRAM['DirValue']['gridV'] = 'gridVB';
                         $CIDRAM['ThisDir']['FieldOut'] = sprintf(
-                            '<div style="display:grid;margin:auto 38px;grid-template-columns:repeat(%s) auto;text-align:%s">',
-                            count($CIDRAM['DirValue']['labels']) . ',minmax(0, 1fr)',
+                            '<div style="display:grid;margin:auto 38px;grid-template-columns:repeat(%s,%s) auto;text-align:%s">',
+                            count($CIDRAM['DirValue']['labels']),
+                            $CIDRAM['DirValue']['columns'] ?? 'minmax(100px, 1fr)',
                             $CIDRAM['FE']['FE_Align']
                         );
                         $CIDRAM['DirValue']['HasLabels'] = true;
@@ -1430,10 +1424,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                         }
                         $CIDRAM['ThisDir']['FieldOut'] .= '<div class="gridboxitem"></div>';
                     } else {
-                        $CIDRAM['ThisDir']['FieldOut'] = sprintf(
-                            '<div style="display:grid;margin:auto 38px;grid-template-columns:19px auto;text-align:%s">',
-                            $CIDRAM['FE']['FE_Align']
-                        );
+                        $CIDRAM['ThisDir']['FieldOut'] = sprintf('<div style="display:grid;margin:auto 38px;grid-template-columns:19px auto;text-align:%s">', $CIDRAM['FE']['FE_Align']);
                         $CIDRAM['DirValue']['HasLabels'] = false;
                     }
                 } else {
@@ -1468,7 +1459,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                             foreach ($CIDRAM['DirValue']['labels'] as $CIDRAM['DirValue']['ThisLabelKey'] => $CIDRAM['DirValue']['ThisLabel']) {
                                 $CIDRAM['DirValue']['gridV'] = ($CIDRAM['DirValue']['gridV']) === 'gridVB' ? 'gridVA' : 'gridVB';
                                 $CIDRAM['ThisDir']['FieldOut'] .= sprintf(
-                                    '<div class="gridboxcheckcell %4$s %5$s"><label class="gridlabel"><input%3$s type="checkbox" class="auto" name="%1$s" id="%1$s"%2$s /></label></div>',
+                                    '<label class="gridlabel"><div class="gridboxstretch %4$s %5$s"><div class="center configMatrixLabel"><input%3$s type="checkbox" class="auto" name="%1$s" id="%1$s"%2$s /></div></div></label>',
                                     $CIDRAM['ThisDir']['DirLangKey'] . '_' . $CIDRAM['ChoiceKey'] . '_' . $CIDRAM['DirValue']['ThisLabelKey'],
                                     $CIDRAM['Request']->inCsv(
                                         $CIDRAM['ChoiceKey'] . ':' . $CIDRAM['DirValue']['ThisLabelKey'],
@@ -1516,7 +1507,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                         }
                     } elseif (isset($CIDRAM['DirValue']['style']) && $CIDRAM['DirValue']['style'] === 'radio') {
                         if (strpos($CIDRAM['ChoiceValue'], "\n")) {
-                            $CIDRAM['ChoiceValue'] = explode("\n", $CIDRAM['ChoiceValue']);
+                            $CIDRAM['ChoiceValue'] = explode("\n", $CIDRAM['ChoiceValue'], 2);
                             $CIDRAM['ThisDir']['FieldOut'] .= sprintf(
                                 '<div class="gridboxstretch gridVA %5$s"><label class="gridlabel"><input%4$s type="radio" class="auto" name="%6$s" id="%1$s" value="%7$s"%2$s /></label></div><div class="gridboxstretch %5$s"><label for="%1$s"><span class="s">%3$s</span><br />%8$s</label></div>',
                                 $CIDRAM['ThisDir']['DirLangKey'] . '_' . $CIDRAM['ChoiceKey'],

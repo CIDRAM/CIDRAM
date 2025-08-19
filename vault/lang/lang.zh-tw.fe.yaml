@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2025.08.14).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2025.08.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -146,17 +146,17 @@ config_general_timezone: "這用於指定要使用的時區​（例如，Africa
 config_general_truncate: "截斷日誌文件當他們達到一定的大小嗎？​值是在B/KB/MB/GB/TB，​是日誌文件允許的最大大小直到它被截斷。​默認值為『0KB』將禁用截斷（日誌文件可以無限成長）。​注意：適用於單個日誌文件！​日誌文件大小不被算集體的。"
 config_hcaptcha: "HCaptcha的配置（為人們提供了一種在受阻時重新獲得訪問權限的方法）。"
 config_hcaptcha_api: &CaptchaAPI "使用哪個API？"
-config_hcaptcha_expiry: &CaptchaExpiry "記得CAPTCHA多少小時？ 標準 = 720 （1個月）。"
-config_hcaptcha_lockip: &CaptchaLockIP "應該CAPTCHA鎖定到IP？"
-config_hcaptcha_lockuser: &CaptchaLockUser "應該CAPTCHA鎖定到用戶？"
-config_hcaptcha_logfile: &CaptchaLogfile "記錄所有的CAPTCHA的嘗試？​要做到這一點，​指定一個檔案名稱到使用。​如果不，​離開這個變量為空白。"
-config_hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "向未阻止的請求顯示CAPTCHA時應使用哪個狀態代碼？"
-config_hcaptcha_secret: &CaptchaDashboard "可以在您的CAPTCHA服務的儀表板中找到該值。"
+config_hcaptcha_expiry: &CaptchaExpiry "記得驗證碼多少小時？ 標準 = 720 （1個月）。"
+config_hcaptcha_lockip: &CaptchaLockIP "應該驗證碼鎖定到IP？"
+config_hcaptcha_lockuser: &CaptchaLockUser "應該驗證碼鎖定到用戶？"
+config_hcaptcha_logfile: &CaptchaLogfile "記錄所有的驗證碼的嘗試？​要做到這一點，​指定一個檔案名稱到使用。​如果不，​離開這個變量為空白。"
+config_hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "向未阻止的請求顯示驗證碼時應使用哪個狀態代碼？"
+config_hcaptcha_secret: &CaptchaDashboard "可以在您的驗證碼服務的儀表板中找到該值。"
 config_hcaptcha_show_api_message: &ShowAPIMessage "顯示API訊息嗎？​True（真）=顯示【標準】；False（假）=不顯示。"
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "顯示cookie警告嗎？​True（真）=顯示【標準】；False（假）=不顯示。"
-config_hcaptcha_signature_limit: &CaptchaSignatureLimit "撤銷CAPTCHA之前允許的最大簽名數。標準 = 1。"
+config_hcaptcha_signature_limit: &CaptchaSignatureLimit "撤銷驗證碼之前允許的最大簽名數。標準 = 1。"
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "何時應提供CAPTCHA嗎？​注意：列入白名單或已驗證且未阻止的請求永遠不需要完成CAPTCHA。​另請注意：CAPTCHA可以提供有用的保護層，防止機器人和各種惡意自動請求，但不會提供任何針對惡意人類的保護。"
+config_hcaptcha_usemode: &CaptchaUseMode "何時應提供驗證碼？​注意：列入白名單或已驗證且未阻止的請求永遠不需要完成驗證碼。​另請注意：驗證碼可以提供有用的保護層，防止機器人和各種惡意自動請求，但不會提供任何針對惡意人類的保護。"
 config_legal: "法律要求的配置。"
 config_legal_omit_hostname: "從日誌文件中排除主機名？​True（真）=排除；False（假）=不排除【標準】。"
 config_legal_omit_ip: "從日誌文件中排除IP位址？​True（真）=排除；False（假）=不排除【標準】。​注意：『omit_ip』為『true』時，『pseudonymise_ip_addresses』變得不必要。"
@@ -219,7 +219,7 @@ config_supplementary_cache_options_redis_port: "Redis 端口值。 默認 = 『6
 config_supplementary_cache_options_redis_timeout: "Redis 超時值。 默認 = 『2.5』。"
 config_template_data: "模板和主題的配置。"
 config_template_data_block_event_title: "為阻止事件顯示的頁面標題。"
-config_template_data_captcha_title: "為CAPTCHA請求顯示的頁面標題。"
+config_template_data_captcha_title: "為驗證碼請求顯示的頁面標題。"
 config_template_data_css_url: "自定義主題的CSS文件URL。"
 config_template_data_magnification: "字體放大。 標準 = 1。"
 config_template_data_theme: "用於CIDRAM的默認主題。"
@@ -405,7 +405,7 @@ label_backup_location: "存儲庫備份位置（在緊急情況下，或如果�
 label_banned: "請求已禁止"
 label_blocked: "請求已阻止"
 label_branch: "分支最新穩定："
-label_captcha: "CAPTCHA嘗試"
+label_captcha: "驗證碼嘗試"
 label_check_aux: "也用輔助規則進行測試。"
 label_check_modules: "也用模組進行測試。"
 label_check_verification: "也用搜索引擎和社交媒體驗證進行測試。"

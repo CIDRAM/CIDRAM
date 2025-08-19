@@ -47,12 +47,12 @@ CIDRAM Core:
   Checksum:
    - "90ee5477f0d027589dbc3b85689c750d95b3a6202d95eefef58af08a891a95d5:1947"
    - "8c4c69894d155285cf06875512ca30ba4d3022ec4df129c37d35a0230872b47e:1611"
-   - "f68652c76f8bdc2127429f074373428857d75fc1e742f71469ae8ca2654b3083:4348"
+   - "bda6ec4471976478eb9a832ba8599475e638ebd68e772eacf9c75f859b5ca44d:4344"
    - "654cf394783825bf4196b51bb351246f3a783110f36f5220a18eea41a9989617:999"
    - "0b2f533cefc92190c9eb4459dde30b00169fbb60ca1085235d0e8a1544ad21c6:14347"
    - "e88dd3915b03318e760b71683105a53bea6f79b4e4ecff3e47c76e5f26f04189:13808"
    - "a0a0389c14928a11bb5a78323ae80dae35d759f6b483df329455706da1266d48:3038"
-   - "faac14e957a98a0c12f78edbc43b213b296fed00add0699ccd9402ad068e791a:8012"
+   - "5dbc25b7834e5127ccf17fadf8184609d0058e3b366f4138a38ef840a123f316:8012"
    - "e5dab2704bca44363d45afc29a3ad21a9a561b43d995c5212afde4e00eb1ce2b:26449"
    - "b1dc2bb73e579630013904ae4567d19acdf7b709ad38e92cb5ec850dca6e3c76:10063"
    - "596c847be0c5a1de028f832af8bc4fea4f40449e7c786542146fa717b0a2898a:105862"
@@ -218,7 +218,7 @@ CIDRAM Front-End:
    - "efe8a97866d0682c38fa8e12d1c0e394c22520e2bcba0ebf07874e5dc3ad232c:640"
    - "f7005e845a0b8d962a16e149cf2797537d943732ea8540565d235ce69992d606:10012"
    - "8203bdce48a5a8e28a05cbf0bf83242693c98a754d496385012dccd0551b78ba:1582"
-   - "bbc483cd586e26f2384c53877af0caaa2425d91bdcf95d93c8146af00f3c7fcc:12771"
+   - "6359e24ecee9cab5fd742c48683731f83363f3558ea59a062b11ff010c783d11:12702"
    - "370f3eb6b7a3042d627f8ee0a75420a1923dcb1a189562bdf27f6a369ce966fb:1040"
    - "027b6f4dd47512da316363a078c067cc0c7208debd185272b39ccde7977cd89b:7438"
    - "9901ee26130157dbe3e70b5024773f0cde0bb8d59a451159cd6902c09640a1bd:705"
@@ -230,7 +230,7 @@ CIDRAM Front-End:
    - "94be5c5042512f18612a1a41a3166481c675f6bd5a122778517c168b366ab17c:4494"
    - "828d6cb0f53f3ff440d9901f295f8c6a0eefb295998445b81436158e94b40f2e:1391"
    - "d012b50ae1d71f7e3aaaad6f899d3e2666f61b451c26dfb42fd30f90a3282f29:2405"
-   - "8dcc749771419c52eb70124c5bf80a791ac4ad7f2e895d8209f0aa3ae3392f37:312450"
+   - "b28110cd7662fe4f1eaf67269e99b9b733d14f49a08d957d6df832828dbaee6f:312282"
    - "f2e252d625543f8ad7988b84a1a56ef1987be264c167b2cf3c2c9bf53e294ea9:234606"
  Reannotate: "components.dat"
 Common Classes Package:
@@ -289,7 +289,7 @@ Common Classes Package:
 IPv4:
  Extended Description: "Default IPv4 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints."
  False Positive Risk: "Medium"
- Version: "2025.224.0"
+ Version: "2025.228.0"
  Dependencies:
   CIDRAM Core: ">=1"
   Bypasses: ">=2023.95"
@@ -301,7 +301,7 @@ IPv4:
   To:
    - "ipv4.dat"
   Checksum:
-   - "4bab83ea42c4ae15a325b0e1e7c8571ee1bc82b57387f8f7a07b12be8855c360:1795880"
+   - "d182c8fed1626ad816b0bba703c1405a0b5515f34121d8e3324fa436d3bcd656:1797436"
  Used with: "ipv4"
  Reannotate: "components.dat"
 IPv4-Bogons:
@@ -324,7 +324,7 @@ IPv4-Bogons:
 IPv4-ISPs:
  Extended Description: "Default IPv4 signatures normally included with the main package. Blocks dangerous and spammy ISPs."
  False Positive Risk: "Medium"
- Version: "2025.224.0"
+ Version: "2025.228.0"
  Dependencies:
   CIDRAM Core: ">=1"
   Bypasses: ">=2023.95"
@@ -336,7 +336,7 @@ IPv4-ISPs:
   To:
    - "ipv4_isps.dat"
   Checksum:
-   - "477c4b6986b89dd7e5999f8907e129f902847e886fbdbd69164d910b33d669d8:775891"
+   - "6765f9fb502f5206d370cd337c5962fd563cd03dec8e7c20938ef043adc641da:778178"
  Used with: "ipv4"
  Reannotate: "components.dat"
 IPv4-Nonblocking:
@@ -376,7 +376,7 @@ IPv4-Other:
 IPv6:
  Extended Description: "Default IPv6 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints."
  False Positive Risk: "Low"
- Version: "2025.224.0"
+ Version: "2025.228.0"
  Dependencies:
   CIDRAM Core: ">=1"
   Bypasses: ">=2023.95"
@@ -388,7 +388,7 @@ IPv6:
   To:
    - "ipv6.dat"
   Checksum:
-   - "3a7470538be7004443ff0c9a0257bc189771413a2531fffc1fe51ac08e7fdc7c:520670"
+   - "eaf2cd578258d2d365185eaf1ebbb9b10b6006bbbc548d786a15049f92ddad50:520904"
  Used with: "ipv6"
  Reannotate: "components.dat"
 IPv6-Bogons:
@@ -534,8 +534,8 @@ l10n/bn:
    - "lang/lang.bn.fe.yaml"
    - "lang/lang.bn.yaml"
   Checksum:
-   - "a5fecf22d376cf6e1c61031ea1a5648f3836534f180cf1f44c8b76543596ad51:117686"
-   - "449a7fef079388ffd7977a951bfe975496c55e780b101097b6c787ec4133d6ab:12035"
+   - "718b888f83ceed20fe4671628ade6942ddd9433565ce97acc75573af708574e1:117680"
+   - "dfa8741ba30b2d77fa5ed5640ce8f72a662d54f7e1ad5ebbf578d0e1eb929a2b:12105"
  Reannotate: "components.dat"
 l10n/de:
  Name: "L10N: Deutsche"
@@ -610,8 +610,8 @@ l10n/hi:
    - "lang/lang.hi.fe.yaml"
    - "lang/lang.hi.yaml"
   Checksum:
-   - "36fd804b6cdfeea6c1a1d4a50f1819415c14e1de288272cc12dbbc00ca503e29:118500"
-   - "8f1859da206a4cbcecae6914c5d823749ff3e8c557a1d9f6d89a9904fa83acda:10800"
+   - "fefb29897d067d44b80f0310a45980b5a2fe38c232e12ca4035f2e62b4dda7ce:118511"
+   - "d2ab13463b90213bc3959e58372266be7fb91fa8215b7ec1380e0967576c2292:10799"
  Reannotate: "components.dat"
 l10n/id:
  Name: "L10N: Bahasa Indonesia"
@@ -667,7 +667,7 @@ l10n/ja:
    - "lang/lang.ja.fe.yaml"
    - "lang/lang.ja.yaml"
   Checksum:
-   - "b0ecadff5a536996545e6cb0baa749728297dc8a69d1e1e98cef255ea8c490e3:80574"
+   - "aaf4e4660881647ef2f2a11796ce182e432924ae59ab337917990912beaa6f40:80580"
    - "9945f1c8553e06d08ce5c3a0eb61bfb109b4df35d79fbc5ac3d529882d5fd37a:7198"
  Reannotate: "components.dat"
 l10n/ko:
@@ -933,8 +933,8 @@ l10n/zh-TW:
    - "lang/lang.zh-tw.fe.yaml"
    - "lang/lang.zh-tw.yaml"
   Checksum:
-   - "69aae8c332585c4b4f9fd61c92bcc36f11467a61860c725c035d3d9728d77beb:55987"
-   - "c35d939939b6a9a61b8281b60bdf1d51f909fe1f04ea86fad1c9388d62f60dc1:5498"
+   - "e29eff94d463bf6a58604421a1b8d33256a831b6d8a0f1768f30591ddf02fe52:56008"
+   - "de09a67a907c149da28e86726060e09aa4f49c05e413c18ab9e0f8cb7ad96a65:5510"
  Reannotate: "components.dat"
 l10n/zh:
  Name: "L10N: 中文（简体）"
@@ -952,6 +952,6 @@ l10n/zh:
    - "lang/lang.zh.fe.yaml"
    - "lang/lang.zh.yaml"
   Checksum:
-   - "7345e1fb022748b105fb360bc75e4e2c5316a22f7e18d8f69a22ae916fe4ea55:55924"
-   - "d926fed6a1360a9118cf011f579e5ca7ecc94a8c0a0abae0f69ea0e57560c559:5506"
+   - "4a980b824c0fea75c761938b0a2858a6d02a5de3b35b3d628a86bc9c160bece0:55945"
+   - "393eaed05f3a091a53508fe8edbf1941c05adfb3f9c3eaea150e1eeca8eddce2:5518"
  Reannotate: "components.dat"

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Captcha class (last modified: 2025.08.14).
+ * This file: Captcha class (last modified: 2025.08.17).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -34,6 +34,11 @@ abstract class Captcha
      * @var array The main CIDRAM array passed by reference.
      */
     public $CIDRAM;
+
+    /**
+     * @var array Configuration for messages.
+     */
+    public $Messages = [];
 
     /**
      * Meld together two or more strings by padding to equal length and

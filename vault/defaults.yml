@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2025.08.14).
+# This file: Defaults file (last modified: 2025.08.17).
 ##/
 
 Config Defaults:
@@ -774,8 +774,8 @@ Config Defaults:
    default: 0
    choices:
     0: "label.Don_t block the request"
-    409: "label.409 Conflict"
-    429: "label.429 Too Many Requests"
+    409: &409 "label.409 Conflict"
+    429: &429 "label.429 Too Many Requests"
    style: "radio"
  verification:
   search_engines:
@@ -921,10 +921,17 @@ Config Defaults:
    choices:
     Negatives: "checkbox.Blocked negatives"
     NonVerified: "checkbox.Blocked non-verified"
- hcaptcha:
+ captcha:
   usemode:
    type: "int"
-   default: 0
+   default:
+    hcaptcha: 0
+    friendly: 0
+    cloudflare: 0
+   labels:
+    hcaptcha: "hCaptcha"
+    friendly: "Friendly Captcha"
+    cloudflare: "Cloudflare Turnstile"
    choices:
     0: "label.Never"
     1: "label.Only when blocked, within the signature limit, and not banned"
@@ -933,57 +940,96 @@ Config Defaults:
     4: "label.Only when not blocked"
     5: "label.Only when not blocked, or when specially marked for use, within the signature limit, and not banned"
     6: "label.Only when not blocked, at sensitive page requests"
-   style: "radio"
-  lockip:
-   type: "bool"
-   default: false
-  lockuser:
-   type: "bool"
-   default: true
-  sitekey:
-   type: "string"
-   default: ""
-   See also:
-    HCaptcha Dashboard: &HCaptchaDashboard "https://dashboard.hcaptcha.com/overview"
-  secret:
-   type: "string"
-   default: ""
-   See also:
-    HCaptcha Dashboard: *HCaptchaDashboard
-  expiry:
-   type: "float"
-   step: "any"
-   default: 720
-   preview: "hours"
-  hcaptcha_log:
-   type: "string"
-   default: ""
-   hints: "hints_logging_datetime"
-  signature_limit:
-   type: "int"
-   default: 1
-  api:
-   type: "string"
-   default: "v1"
-   choices:
-    v1: "v1"
-    Invisible: "v1 ({label.Invisible})"
-  show_cookie_warning:
-   type: "bool"
-   default: true
-  show_api_message:
-   type: "bool"
-   default: true
+   style: "matrix"
+   columns: "100px"
   nonblocked_status_code:
    type: "int"
-   default: 200
+   default:
+    hcaptcha: 200
+    friendly: 200
+    cloudflare: 200
+   labels:
+    hcaptcha: "hCaptcha"
+    friendly: "Friendly Captcha"
+    cloudflare: "Cloudflare Turnstile"
    choices:
     200: *200
     403: *403
     418: *418
     429: *429
     451: *451
-   style: "radio"
+   style: "matrix"
+   columns: "100px"
+  api:
+   type: "string"
+   default:
+    hcaptcha: "v1"
+    friendly: "v1"
+    cloudflare: "v1"
+   labels:
+    hcaptcha: "hCaptcha"
+    friendly: "Friendly Captcha"
+    cloudflare: "Cloudflare Turnstile"
+   choices:
+    v1: "v1"
+    Invisible: "v1 ({label.Invisible})"
+   style: "matrix"
+   columns: "100px"
+  messages:
+   type: "checkbox"
+   default: |
+    cookie_warning:hcaptcha
+    cookie_warning:friendly
+    cookie_warning:cloudflare
+    api_message:hcaptcha
+    api_message:friendly
+    api_message:cloudflare
+   labels:
+    hcaptcha: "hCaptcha"
+    friendly: "Friendly Captcha"
+    cloudflare: "Cloudflare Turnstile"
+   choices:
+    cookie_warning: "label.Show cookie warning"
+    api_message: "label.Show API message"
+   columns: "100px"
+  lockto:
+   type: "string"
+   default:
+    hcaptcha: "user"
+    friendly: "user"
+    cloudflare: "user"
+   labels:
+    hcaptcha: "hCaptcha"
+    friendly: "Friendly Captcha"
+    cloudflare: "Cloudflare Turnstile"
+   choices:
+    ip: "label.Lock CAPTCHAs to the IP address of the user completing the CAPTCHA but not to the actual user"
+    user: "label.Lock CAPTCHAs to the user completing the CAPTCHA but not to their IP address"
+    both: "label.Lock CAPTCHAs to the user completing the CAPTCHA as well as to their IP address"
+   style: "matrix"
+   columns: "100px"
+  hcaptcha_sitekey:
+   type: "string"
+   default: ""
+   See also:
+    HCaptcha Dashboard: &HCaptchaDashboard "https://dashboard.hcaptcha.com/overview"
+  hcaptcha_secret:
+   type: "string"
+   default: ""
+   See also:
+    HCaptcha Dashboard: *HCaptchaDashboard
+  hcaptcha_log:
+   type: "string"
+   default: ""
+   hints: "hints_logging_datetime"
+  expiry:
+   type: "float"
+   step: "any"
+   default: 720
+   preview: "hours"
+  signature_limit:
+   type: "int"
+   default: 1
  legal:
   pseudonymise_ip_addresses:
    type: "bool"

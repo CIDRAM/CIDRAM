@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Czech language data for the front-end (last modified: 2025.08.14).
+# This file: Czech language data for the front-end (last modified: 2025.08.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -161,6 +161,17 @@ config:
  bunnycdn_positive_action: "Jakou akci by měl CIDRAM provést, když narazí na požadavek od BunnyCDN? Standardní akce = Bypass."
  bypasses: "Konfigurace pro standardní bypassace podpisů."
  bypasses_used: "Jaké bypassy by se měly použít?"
+ captcha: "Konfigurace pro CAPTCHA (poskytuje lidem způsob, jak znovu získat přístup, když je blokován)."
+ captcha_api: "Které API použít?"
+ captcha_expiry: "Počet hodin zapamatování instancí CAPTCHA. Standardní = 720 (1 měsíc)."
+ captcha_hcaptcha_log: "Zaznamenat všechny pokusy o CAPTCHA? Pokud ano, zadejte název, který se má použít pro soubor protokolu. Pokud ne, ponechte tuto proměnnou prázdnou."
+ captcha_hcaptcha_secret: &CaptchaDashboard "Tuto hodnotu lze nalézt na řídicím panelu vaší služby CAPTCHA."
+ captcha_hcaptcha_sitekey: *CaptchaDashboard
+ captcha_messages: "Zprávy, které se budou zobrazovat spolu s CAPTCHA."
+ captcha_lockto: "K čemu uzamknout CAPTCHA."
+ captcha_nonblocked_status_code: "Jaký stavový kód by se měl použít při zobrazování obrázků CAPTCHA neblokovaným požadavkům?"
+ captcha_signature_limit: "Maximální počet podpisů povolený před CAPTCHA již není nabízen. Standardní = 1."
+ captcha_usemode: "Kdy by měly být CAPTCHA nabízeny? Zde můžete zadat preferované chování pro každého podporovaného poskytovatele. Poznámka: Požadavky, které byly whitelistování nebo ověřené a neblokované nikdy nemusí dokončit CAPTCHA. Taky: CAPTCHA mohou poskytnout užitečnou další vrstvu ochrany proti robotům a různým druhům škodlivých automatizovaných požadavků, ale neposkytnou žádnou ochranu proti škodlivému člověku."
  components: "Konfigurace pro aktivaci a deaktivaci komponent používaných CIDRAM. Obvykle se vyplní na stránce aktualizací, ale lze je také spravovat odtud pro jemnější ovládání a pro vlastní komponenty, které stránka aktualizací nerozpozná."
  components_events: "Obsluha událostí. Obvykle se používá k úpravě způsobu, jakým se CIDRAM chová interně, nebo k poskytování dalších funkcí."
  components_imports: "Dovoz. Obvykle se používá k dodání informací o konfiguraci komponent do CIDRAM."
@@ -215,19 +226,6 @@ config:
  general_time_format: "Formát zápisu data/času používaný CIDRAM. Další možnosti mohou být přidány na vyžádání."
  general_time_offset: "Posun časového pásma v minutách."
  general_timezone: "Slouží k určení časového pásma, které se má použít (např., Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, atd). Zadejte „SYSTEM“, aby to PHP zpracovalo za vás automaticky."
- hcaptcha: "Konfigurace pro hCaptcha (poskytuje lidem způsob, jak znovu získat přístup, když je blokován)."
- hcaptcha_api: &CaptchaAPI "Které API použít?"
- hcaptcha_expiry: &CaptchaExpiry "Počet hodin zapamatování instancí CAPTCHA. Standardní = 720 (1 měsíc)."
- hcaptcha_hcaptcha_log: &CaptchaLogFile "Zaznamenat všechny pokusy o CAPTCHA? Pokud ano, zadejte název, který se má použít pro soubor protokolu. Pokud ne, ponechte tuto proměnnou prázdnou."
- hcaptcha_lockip: &CaptchaLockIP "Uzamknout CAPTCHA na IP adresy?"
- hcaptcha_lockuser: &CaptchaLockUser "Uzamknout CAPTCHA pro uživatele?"
- hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "Jaký stavový kód by se měl použít při zobrazování obrázků CAPTCHA neblokovaným požadavkům?"
- hcaptcha_secret: &CaptchaDashboard "Tuto hodnotu lze nalézt na řídicím panelu vaší služby CAPTCHA."
- hcaptcha_show_api_message: &ShowAPIMessage "Zobrazit zprávu API? True (Pravdivé) = Ano [Standardní]; False (Nepravdivé) = Ne."
- hcaptcha_show_cookie_warning: &ShowCookieWarning "Zobrazit upozornění na soubory cookie? True (Pravdivé) = Ano [Standardní]; False (Nepravdivé) = Ne."
- hcaptcha_signature_limit: &CaptchaSignatureLimit "Maximální počet podpisů povolený před CAPTCHA již není nabízen. Standardní = 1."
- hcaptcha_sitekey: *CaptchaDashboard
- hcaptcha_usemode: &CaptchaUseMode "Kdy by měla být CAPTCHA nabízena? Poznámka: Požadavky, které byly whitelistování nebo ověřené a neblokované nikdy nemusí dokončit CAPTCHA. Taky: CAPTCHA mohou poskytnout užitečnou další vrstvu ochrany proti robotům a různým druhům škodlivých automatizovaných požadavků, ale neposkytnou žádnou ochranu proti škodlivému člověku."
  ipapi: "Konfigurace pro modul IP-API (poskytuje nástroj pro vyhledávání ASN a kódu země pro CIDRAM)."
  ipapi_blocked_asns: *ConfigBlockedASNs
  ipapi_blocked_ccs: *ConfigBlockedCCs
@@ -535,7 +533,7 @@ label:
   - "%s podpis"
   - "%s podpisy"
   - "%s podpisů"
- 200 OK: "200 OK\nNejméně robustní, ale uživatelsky nejpřívětivější. Automatické požadavky budou s největší pravděpodobností interpretovat tuto odpověď jako znamení, že požadavek byl úspěšný."
+ 200 OK: "200 OK\nNejméně robustní, ale uživatelsky nejpřívětivější. Automatické požadavky budou s největší pravděpodobností interpretovat tuto odpověď jako znamení, že požadavek byl úspěšný. Doporučeno pro neblokované požadavky."
  301 Moved Permanently: "301 Moved Permanently (Přesunuto natrvalo)\nInstruuje klienta, že přesměrování je TRVALÉ, a že metoda požadavku použitá pro přesměrování MŮŽE být jiná než metoda požadavku použitá pro počáteční požadavek."
  302 Found: "302 Found (Našel)\nInstruuje klienta, že přesměrování je DOČASNÉ, a že metoda požadavku použitá pro přesměrování MŮŽE být jiná než metoda požadavku použitá pro počáteční požadavek."
  307 Temporary Redirect: "307 Temporary Redirect (Dočasné přesměrování)\nInstruuje klienta, že přesměrování je DOČASNÉ, a že metoda požadavku použitá pro přesměrování NESMÍ být jiná než metoda požadavku použitá pro počáteční požadavek."
@@ -619,6 +617,9 @@ label:
  Latest stable: "Nejnovější stabilní:"
  Latest unstable: "Nejnovější nestabilní:"
  Loading_: "Načítání..."
+ Lock CAPTCHAs to the IP address of the user completing the CAPTCHA but not to the actual user: "Uzamknout CAPTCHA pro IP adresu uživatele který CAPTCHA vyplňuje, ale ne pro samotného uživatele.\nSoubory cookie se NEPOUŽÍVAJÍ k identifikaci uživatelů. Pokud je přístup znovu získán díky úspěšnému dokončení CAPTCHA, vztahuje se to na každého, kdo se připojuje ze stejné IP adresy."
+ Lock CAPTCHAs to the user completing the CAPTCHA as well as to their IP address: "Uzamknout CAPTCHA pro uživatele který CAPTCHA vyplňuje, a také pro jeho IP adresu.\nSoubory cookie se používají k identifikaci uživatelů. Pokud je přístup znovu získán díky úspěšnému dokončení CAPTCHA, vztahuje se to pouze na uživatele který CAPTCHA vyplnil, a nebude trvalý pokud se jeho IP adresa změní."
+ Lock CAPTCHAs to the user completing the CAPTCHA but not to their IP address: "Uzamknout CAPTCHA pro uživatele který CAPTCHA vyplnil, ale ne pro jeho IP adresu.\nSoubory cookie se používají k identifikaci uživatelů. Pokud je přístup znovu získán díky úspěšnému dokončení CAPTCHA, vztahuje se to pouze na uživatele který CAPTCHA vyplnil, a dokud je jeho soubor cookie platný, přetrvává, a to i v případě změny jeho IP adresy."
  Logged in, 2FA pending: "Přihlášen, čeká 2FA."
  Logged in: "Přihlášen."
  Logged out: "Odhlášen."
@@ -664,6 +665,8 @@ label:
  Search Engine: "Vyhledávač"
  See also: "Viz také:"
  Selected log file doesn_t exist: "Vybraný soubor protokolu neexistuje!"
+ Show API message: "Zobrazit zprávu API?\nPokyny pro uživatele, odpovídající použitému API, týkající se vyplnění CAPTCHA."
+ Show cookie warning: "Zobrazit upozornění na soubory cookie?\nV závislosti na zákonech o ochraně osobních údajů ve vaší zemi nebo státě (např., GDPR/DSGVO v EU, LGPD v Brazílii, atd), to může být ze zákona vyžadováno."
  Show: "Ukázat"
  Signature type: "Typ podpisu:"
  Simple: "Jednoduchý"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2025.08.14).
+# This file: Korean language data for the front-end (last modified: 2025.08.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -161,6 +161,17 @@ config:
  bunnycdn_positive_action: "CIDRAM은 BunnyCDN의 요청을 만났을 때 어떤 작업을 수행해야 합니까? 기본 동작 = 우회."
  bypasses: "기본 서명 바이 패스 구성."
  bypasses_used: "어떤 바이 패스를 사용해야 합니까?"
+ captcha: "CAPTCHA 설정 (차단될 때 사람이 다시 액세스할 수 있는 방법을 제공합니다)."
+ captcha_api: "어떤 API를 사용할 수 있습니까?"
+ captcha_expiry: "보안 문자 인스턴스를 기억 시간. Default (기본 설정) = 720 (1 개월)."
+ captcha_hcaptcha_log: "보안 문자 시도 기록. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다."
+ captcha_hcaptcha_secret: &CaptchaDashboard "이 값은 보안 문자 서비스의 대시 보드에서 찾을 수 있습니다."
+ captcha_hcaptcha_sitekey: *CaptchaDashboard
+ captcha_messages: "CAPTCHA와 함께 표시될 메시지입니다."
+ captcha_lockto: "CAPTCHA를 잠글 대상."
+ captcha_nonblocked_status_code: "차단되지 않은 요청에 CAPTCHA를 표시 할 때 어떤 상태 코드를 사용해야합니까?"
+ captcha_signature_limit: "보안 문자 제안이 철회되기 전에 허용되는 최대 서명 수입니다. Default (기본 설정) = 1."
+ captcha_usemode: "CAPTCHA는 언제 제공해야 합니까\_? 여기에서 지원되는 각 공급자에 대한 기본 동작을 지정할 수 있습니다. 참고\_: 허용 목록에 있거나 확인되고 차단되지 않은 요청은 보안 문자를 작성할 필요가 없습니다. 또한 참고\_: CAPTCHA는 봇 및 다양한 종류의 악성 자동 요청에 대한 유용한 추가 보호 계층을 제공할 수 있지만 악의적인 사람에 대한 보호는 제공하지 않습니다."
  components: "CIDRAM에서 사용하는 구성 요소를 활성화 및 비활성화하기 위한 구성입니다. 일반적으로 업데이트 페이지에 의해 채워지지만, 세부 제어 및 업데이트 페이지에서 인식하지 못하는 사용자 지정 구성 요소를 위해 여기에서 관리할 수도 있습니다."
  components_events: "이벤트 핸들러. 일반적으로 CIDRAM이 내부적으로 작동하는 방식을 수정하거나 추가 기능을 제공하는 데 사용됩니다."
  components_imports: "수입품. 일반적으로 구성 요소의 구성 정보를 CIDRAM에 제공하는 데 사용됩니다."
@@ -215,19 +226,6 @@ config:
  general_time_format: "CIDRAM에서 사용되는 날짜 형식. 추가 옵션이 요청에 따라 추가 될 수 있습니다."
  general_time_offset: "시간대 오프셋 (분)."
  general_timezone: "사용할 시간대를 지정합니다 (예\_: Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, 등등). PHP가 자동으로 처리하도록하려면, "SYSTEM"을 지정하십시오."
- hcaptcha: "HCaptcha 설정 (차단될 때 사람이 다시 액세스할 수 있는 방법을 제공합니다)."
- hcaptcha_api: &CaptchaAPI "어떤 API를 사용할 수 있습니까?"
- hcaptcha_expiry: &CaptchaExpiry "보안 문자 인스턴스를 기억 시간. Default (기본 설정) = 720 (1 개월)."
- hcaptcha_hcaptcha_log: &CaptchaLogFile "보안 문자 시도 기록. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다."
- hcaptcha_lockip: &CaptchaLockIP "보안 문자를 IP로 잠금 하시겠습니까?"
- hcaptcha_lockuser: &CaptchaLockUser "보안 문자를 사용자에 잠금 하시겠습니까?"
- hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "차단되지 않은 요청에 CAPTCHA를 표시 할 때 어떤 상태 코드를 사용해야합니까?"
- hcaptcha_secret: &CaptchaDashboard "이 값은 보안 문자 서비스의 대시 보드에서 찾을 수 있습니다."
- hcaptcha_show_api_message: &ShowAPIMessage "API 메시지를 표시 하시겠습니까? True = 예 (Default / 기본 설정); False = 아니오."
- hcaptcha_show_cookie_warning: &ShowCookieWarning "쿠키 경고 표시 하시겠습니까? True = 예 (Default / 기본 설정); False = 아니오."
- hcaptcha_signature_limit: &CaptchaSignatureLimit "보안 문자 제안이 철회되기 전에 허용되는 최대 서명 수입니다. Default (기본 설정) = 1."
- hcaptcha_sitekey: *CaptchaDashboard
- hcaptcha_usemode: &CaptchaUseMode "보안 문자는 언제 제공해야 합니까? 참고\_: 허용 목록에 있거나 확인되고 차단되지 않은 요청은 보안 문자를 작성할 필요가 없습니다. 또한 참고\_: CAPTCHA는 봇 및 다양한 종류의 악성 자동 요청에 대한 유용한 추가 보호 계층을 제공할 수 있지만 악의적인 사람에 대한 보호는 제공하지 않습니다."
  ipapi: "IP-API 모듈 구성 (CIDRAM에 대한 ASN 및 국가 코드 조회 기능을 제공합니다)."
  ipapi_blocked_asns: *ConfigBlockedASNs
  ipapi_blocked_ccs: *ConfigBlockedCCs
@@ -525,7 +523,7 @@ label:
  %s is available: "%s를 사용할 수 있습니다."
  %s is not available: "%s는 사용할 수 없습니다."
  %s signature: "%s 개의 서명"
- 200 OK: "200 OK\n가장 덜 강력하지만 가장 사용자 친화적입니다. 자동화된 요청은 이 응답을 요청이 성공했다는 표시로 해석할 가능성이 큽니다."
+ 200 OK: "200 OK\n가장 덜 강력하지만 가장 사용자 친화적입니다. 자동화된 요청은 이 응답을 요청이 성공했다는 표시로 해석할 가능성이 큽니다. 차단되지 않은 요청에 권장됩니다."
  301 Moved Permanently: "301 Moved Permanently (영구 이동)\n리디렉션이 영구적임을 클라이언트에 지시합니다. 리디렉션 및 초기 요청의 요청 방법은 다를 수 있습니다."
  302 Found: "302 Found (임시 이동)\n리디렉션이 일시적임을 클라이언트에 지시합니다. 리디렉션 및 초기 요청의 요청 방법은 다를 수 있습니다."
  307 Temporary Redirect: "307 Temporary Redirect (임시 리다이렉션)\n리디렉션이 일시적임을 클라이언트에 지시합니다. 리디렉션 및 초기 요청의 요청 방법은 다를 수 없습니다."
@@ -603,6 +601,9 @@ label:
  Latest stable: "최신 안정\_:"
  Latest unstable: "최신 불안정\_:"
  Loading_: "로드 중 ..."
+ Lock CAPTCHAs to the IP address of the user completing the CAPTCHA but not to the actual user: "CAPTCHA는 CAPTCHA를 완료하는 사용자의 IP 주소에 잠금되어야 하며, 실제 사용자에게는 잠금되어서는 안 됩니다.\n쿠키는 사용자를 식별하는 데 사용되지 않습니다. CAPTCHA를 성공적으로 완료하여 접근이 회복된 경우, 동일한 IP 주소에서 접속하는 모든 사람에게 적용됩니다."
+ Lock CAPTCHAs to the user completing the CAPTCHA as well as to their IP address: "CAPTCHA는 CAPTCHA를 완료한 사용자와 해당 IP 주소에 모두 잠금되어야 합니다.\n쿠키는 사용자를 식별하는 데 사용됩니다. CAPTCHA를 성공적으로 완료하여 접근이 회복된 경우, 이는 사용자가 CAPTCHA를 완료한 경우에만 적용됩니다. IP 주소가 변경되면 액세스가 지속되지 않습니다."
+ Lock CAPTCHAs to the user completing the CAPTCHA but not to their IP address: "CAPTCHA는 CAPTCHA를 완료한 사용자에게만 잠금되어야 하지만, IP 주소에는 잠금되어서는 안 됩니다.\n쿠키는 사용자를 식별하는 데 사용됩니다. CAPTCHA를 성공적으로 완료하여 접근이 회복된 경우, 이는 CAPTCHA를 완료한 사용자에게만 적용되며, 쿠키가 유효한 한 IP 주소가 변경되더라도 유지됩니다."
  Logged in, 2FA pending: "로그인 했습니다, 2FA를 기다리는 중."
  Logged in: "로그인 했습니다."
  Logged out: "로그 아웃했습니다."
@@ -648,6 +649,8 @@ label:
  Search Engine: "검색 엔진"
  See also: "또한보십시오\_:"
  Selected log file doesn_t exist: "선택한 로그는 존재하지 않습니다!"
+ Show API message: "API 메시지를 표시 하시겠습니까\_?\nCAPTCHA를 완료하기 위한 API에 적합한 사용자 지침입니다."
+ Show cookie warning: "쿠키 경고 표시 하시겠습니까\_?\n해당 국가 또는 주의 개인정보 보호법 (예\_: EU의 GDPR/DSGVO, 브라질의 LGPD, 등)에 따라, 법적으로 요구될 수 있습니다."
  Show: "보여"
  Signature type: "서명 유형\_:"
  Simple: "단순한"

@@ -468,3 +468,4 @@
 
 #### Backwards-incompatible changes.
 - [2025.08.14]: Removed support for reCAPTCHA (#624).
+- [2025.08.15~19]: All CAPTCHA configuration directives have been completely reworked, with better labelling and clearer descriptions than before, and unified under a singular configuration category, "captcha" (#624).

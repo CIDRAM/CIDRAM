@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2025.08.14).
+# This file: Japanese language data for the front-end (last modified: 2025.08.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -161,6 +161,17 @@ config:
  bunnycdn_positive_action: "BunnyCDNからのリクエストに遭遇した場合、CIDRAMはどのアクションを実行する必要がありますか？ デフォルト・アクション = バイパスする。"
  bypasses: "デフォルト・シグネチャ・バイパスのコンフィギュレーション。"
  bypasses_used: "どのバイパスを使用する必要がありますか？"
+ captcha: "キャプチャの設定（ブロックされたときに人間がアクセスを取り戻す方法を提供します）。"
+ captcha_api: "どのＡＰＩを使用するのですか？"
+ captcha_expiry: "キャプチャ・インスタンスを覚えておく時間数。 Default（デフォルルト） = ７２０（１ヶ月）。"
+ captcha_hcaptcha_log: "キャプチャ試行の記録。​ファイル名指定するか、無効にしたい場合は空白のままにして下さい。"
+ captcha_hcaptcha_secret: &CaptchaDashboard "この値は、キャプチャ・サービスのダッシュボードに表示されます。"
+ captcha_hcaptcha_sitekey: *CaptchaDashboard
+ captcha_messages: "キャプチャと一緒に表示されるメッセージ。"
+ captcha_lockto: "キャプチャをロックする対象。"
+ captcha_nonblocked_status_code: "ブロックされていないリクエストにキャプチャを表示する場合、どのステータス・コードを使用する必要がありますか？"
+ captcha_signature_limit: "キャプチャが取り消される前に許可されるシグネチャの最大数。 Default/デフォルルト = １。"
+ captcha_usemode: "キャプチャはいつ提供されるべきでしょうか？​ここで、サポートされている各プロバイダーの優先動作を指定できます。​注：ホワイト・リストされまたは検証済みでブロックされていないリクエストは、キャプチャを完了する必要はありません。​また注意してください：​キャプチャは、ボットやさまざまな種類の悪意のある自動化されたリクエストに対する有用な追加の保護レイヤーを提供できますが、悪意のある人間に対する保護は提供しません。"
  components: "CIDRAMによって使用されるコンポーネントをアクティブ化および非アクティブ化するための設定。​通常、アップデート・ページに入力されますが、ここから管理して、より細かく制御したり、アップデート・ページで認識されないカスタム・コンポーネントを管理したりすることもできます。"
  components_events: "イベント・ハンドラー。​通常、CIDRAMの内部動作を変更したり、追加機能を提供したりするために使用されます。"
  components_imports: "輸入。​通常、コンポーネントのコンフィギュレーション情報をCIDRAMに提供するために使用されます。"
@@ -215,19 +226,6 @@ config:
  general_time_format: "CIDRAMで使用される日付表記形式。​追加のオプションがリクエストに応じて追加される場合があります。"
  general_time_offset: "タイムゾーン・オフセット（分）。"
  general_timezone: "使用するタイムゾーンを指定します​（例えば、「Africa/Cairo」、「America/New_York」、「Asia/Tokyo」、「Australia/Perth」、「Europe/Berlin」、「Pacific/Guam」、等）。​「SYSTEM」を指定すると、ＰＨＰがこれを自動的に処理します。"
- hcaptcha: "HCaptchaの設定（ブロックされたときに人間がアクセスを取り戻す方法を提供します）。"
- hcaptcha_api: &CaptchaAPI "どのＡＰＩを使用するのですか？"
- hcaptcha_expiry: &CaptchaExpiry "キャプチャ・インスタンスを覚えておく時間数。 Default（デフォルルト） = ７２０（１ヶ月）。"
- hcaptcha_hcaptcha_log: &CaptchaLogFile "キャプチャ試行の記録。​ファイル名指定するか、無効にしたい場合は空白のままにして下さい。"
- hcaptcha_lockip: &CaptchaLockIP "キャプチャをＩＰにロックしますか？"
- hcaptcha_lockuser: &CaptchaLockUser "キャプチャをユーザーにロックしますか？"
- hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "ブロックされていないリクエストにキャプチャを表示する場合、どのステータス・コードを使用する必要がありますか？"
- hcaptcha_secret: &CaptchaDashboard "この値は、キャプチャ・サービスのダッシュボードに表示されます。"
- hcaptcha_show_api_message: &ShowAPIMessage "ＡＰＩメッセージを表示しますか？ True = はい（Default/デフォルルト）。 False = いいえ。"
- hcaptcha_show_cookie_warning: &ShowCookieWarning "クッキーの警告を表示しますか？ True = はい（Default/デフォルルト）。 False = いいえ。"
- hcaptcha_signature_limit: &CaptchaSignatureLimit "キャプチャが取り消される前に許可されるシグネチャの最大数。 Default/デフォルルト = １。"
- hcaptcha_sitekey: *CaptchaDashboard
- hcaptcha_usemode: &CaptchaUseMode "キャプチャはいつ提供する必要がありますか？​注：ホワイト・リストされまたは検証済みでブロックされていないリクエストは、キャプチャを完了する必要はありません。​また注意してください：​ＣＡＰＴＣＨＡは、ボットやさまざまな種類の悪意のある自動化されたリクエストに対する有用な追加の保護レイヤーを提供できますが、悪意のある人間に対する保護は提供しません。"
  ipapi: "IP-APIモジュールの設定（CIDRAMにASNおよび国コード検索機能を提供します）。"
  ipapi_blocked_asns: *ConfigBlockedASNs
  ipapi_blocked_ccs: *ConfigBlockedCCs
@@ -528,7 +526,7 @@ label:
  %s is available: "%s は使用できます。"
  %s is not available: "%s は使用できません。"
  %s signature: "%sつのシグネチャ"
- 200 OK: "200 OK （大丈夫です）\nそれは最小の堅牢が、最もユーザー・フレンドリーです。 自動化されたリクエストは、この応答をリクエストが成功したことを示すものとして解釈する可能性があります。"
+ 200 OK: "200 OK （大丈夫です）\nそれは最小の堅牢が、最もユーザー・フレンドリーです。 自動化されたリクエストは、この応答をリクエストが成功したことを示すものとして解釈する可能性があります。 ブロックされていないリクエストに推奨されます。"
  301 Moved Permanently: "301 Moved Permanently （永久に移動されました）\nリダイレクトが永続的であることをクライアントに指示します。​リダイレクトのリクエスト・メソッドと最初のリクエストのリクエスト・メソッドは異なるものであってができます。"
  302 Found: "302 Found （見つかった）\nリダイレクトが一時的であることをクライアントに指示します。​リダイレクトのリクエスト・メソッドと最初のリクエストのリクエスト・メソッドは異なるものであってができます。"
  307 Temporary Redirect: "307 Temporary Redirect （一時的なリダイレクト）\nリダイレクトが一時的であることをクライアントに指示します。​リダイレクトのリクエスト・メソッドと最初のリクエストのリクエスト・メソッドは異なるものであってはできません。"
@@ -606,6 +604,9 @@ label:
  Latest stable: "最新安定："
  Latest unstable: "最新不安定："
  Loading_: "読み込んでいます..."
+ Lock CAPTCHAs to the IP address of the user completing the CAPTCHA but not to the actual user: "キャプチャは、キャプチャを完了したユーザーのＩＰアドレスにロックしますが、実際のユーザーにはロックされません。\nクッキーは、ユーザーを識別するために使用されません。​キャプチャが正常に完了してアクセスが回復された場合、同じＩＰアドレスから接続するすべてのユーザーに適用されます。"
+ Lock CAPTCHAs to the user completing the CAPTCHA as well as to their IP address: "キャプチャは、キャプチャを完了したユーザーとそのＩＰアドレスにロックします。\nクッキーは、ユーザーを識別するために使用されます。​キャプチャが正常に完了してアクセスが回復された場合、それはキャプチャを完了したユーザーにのみ適用されます。​ＩＰアドレスが変更されるとアクセスは継続されなくなります。"
+ Lock CAPTCHAs to the user completing the CAPTCHA but not to their IP address: "キャプチャは、キャプチャを完了したユーザーにロックしますが、ＩＰアドレスにはロックされません。\nクッキーは、ユーザーを識別するために使用されます。​キャプチャが正常に完了してアクセスが回復された場合、それはキャプチャを完了したユーザーにのみ適用され、クッキーが有効である限り、ＩＰアドレスが変更されても、持続します。"
  Logged in, 2FA pending: "ログインしました、２ＦＡを待っています。"
  Logged in: "ログインしました。"
  Logged out: "ログアウトしました。"
@@ -651,6 +652,8 @@ label:
  Search Engine: "検索エンジン"
  See also: "参照してください："
  Selected log file doesn_t exist: "選択したログは存在しません！"
+ Show API message: "ＡＰＩメッセージを表示しますか？\nキャプチャの完了に関して、使用されているＡＰＩに適したユーザーへの指示。"
+ Show cookie warning: "クッキーの警告を表示しますか？\nお住まいの国または州のプライバシー法（例えば、ＥＵのＧＤＰＲ／ＤＳＧＶＯ、ブラジルのＬＧＰＤ、など）に応じて、これが法的に義務付けられている場合があります。"
  Show: "表示する"
  Signature type: "シグネチャ・タイプ："
  Simple: "シンプル"
@@ -1012,7 +1015,7 @@ tip:
  Updates: "アップデート・ページは、CIDRAMのさまざまなコンポーネントはインストール、アンインストール、更新が可能です（コアパッケージ、シグネチャ、Ｌ１０Ｎファイル、等）。"
 warning:
  API_Rate_Limited: "警告：%s APIへのアクセスは、現在レート制限されているようです。"
- Cookies: "注意：CIDRAMは、Cookieを使用してログインを認証します。​ログインすると、ブラウザでCookieを作成して保存することに同意したことになります。"
+ Cookies: "注意：CIDRAMは、クッキーを使用してログインを認証します。​ログインすると、ブラウザでクッキーを作成して保存することに同意したことになります。"
  Editing PHP files: "警告：一部のウェブホストは、リクエスト内のＰＨＰタグを検出すると、ＩＰアドレスを自動的に禁止します（たとえば、ブラウザを介してＰＨＰファイルを変更しようとする場合）。 あなたのウェブホストがこれを行うかどうか、CIDRAMは知る方法がありません。 問題を回避するために、可能であればそのような方法でＰＨＰファイルを編集しないことをお勧めします。"
  IP tests are disabled: "警告：ＩＰテストは無効になっています！これが解決されるまで、シグネチャ・ファイルは利用することはできません。"
  JavaScript required: "警告：一部のフロントエンド機能性にはJavaScriptが必要です。フロントエンドの全体が期待どおりに動作するようにするには、JavaScriptを有効にすることをお勧めします。"

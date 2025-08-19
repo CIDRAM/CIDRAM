@@ -278,19 +278,35 @@ verification:
  adjust: |
   Negatives:HCaptcha
   NonVerified:HCaptcha
-hcaptcha:
- usemode: 0
- lockip: false
- lockuser: true
- sitekey: ""
- secret: ""
- expiry: 720
+captcha:
+ usemode:
+  hcaptcha: 0
+  friendly: 0
+  cloudflare: 0
+ nonblocked_status_code:
+  hcaptcha: 200
+  friendly: 200
+  cloudflare: 200
+ api:
+  hcaptcha: "v1"
+  friendly: "v1"
+  cloudflare: "v1"
+ messages: |
+  cookie_warning:hcaptcha
+  cookie_warning:friendly
+  cookie_warning:cloudflare
+  api_message:hcaptcha
+  api_message:friendly
+  api_message:cloudflare
+ lockto:
+  hcaptcha: "user"
+  friendly: "user"
+  cloudflare: "user"
+ hcaptcha_sitekey: ""
+ hcaptcha_secret: ""
  hcaptcha_log: ""
+ expiry: 720
  signature_limit: 1
- api: "v1"
- show_cookie_warning: true
- show_api_message: true
- nonblocked_status_code: 200
 legal:
  pseudonymise_ip_addresses: true
  privacy_policy: ""

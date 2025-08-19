@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2025.08.14).
+# This file: Dutch language data for the front-end (last modified: 2025.08.16).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -161,6 +161,17 @@ config:
  bunnycdn_positive_action: "Welke actie moet CIDRAM uitvoeren wanneer het een verzoek van BunnyCDN tegenkomt? Standaard actie = Omzeil."
  bypasses: "Configuratie voor de standaard bypasses voor signatures."
  bypasses_used: "Welke bypasses moeten worden gebruikt?"
+ captcha: "Configuratie voor CAPTCHA (biedt een manier voor mensen om toegang te krijgen wanneer ze worden geblokkeerd)."
+ captcha_api: "Welke API gebruiken?"
+ captcha_expiry: "Aantal uren om CAPTCHA instanties herinneren. Standaard = 720 (1 maand)."
+ captcha_hcaptcha_log: "Log alle CAPTCHA pogingen? Zo ja, geef de naam te gebruiken voor het logbestand. Zo nee, laat u deze variabele leeg."
+ captcha_hcaptcha_secret: &CaptchaDashboard "Deze waarde is te vinden in het dashboard voor uw CAPTCHA-service."
+ captcha_hcaptcha_sitekey: *CaptchaDashboard
+ captcha_messages: "Berichten die naast CAPTCHA's worden weergegeven."
+ captcha_lockto: "Waaraan CAPTCHA's gekoppeld moeten worden."
+ captcha_nonblocked_status_code: "Welke statuscode moet worden gebruikt bij het weergeven van CAPTCHA's voor niet-geblokkeerde verzoeken?"
+ captcha_signature_limit: "Maximaal aantal toegestane signatures voordat een CAPTCHA-aanbieding wordt ingetrokken. Standaard = 1."
+ captcha_usemode: "Wanneer moeten CAPTCHA's worden aangeboden? Hier kunt u het gewenste gedrag voor elke ondersteunde provider opgeven. Opmerking: Op de witte lijst geplaatste of geverifieerde en niet-geblokkeerde verzoeken hoeven nooit een CAPTCHA in te vullen. Let ook op: CAPTCHA's kunnen een nuttige, extra beschermingslaag bieden tegen bots en verschillende soorten kwaadwillende geautomatiseerde verzoeken, maar bieden geen enkele bescherming tegen kwaadwillende mensen."
  components: "Configuratie voor het activeren en het deactiveren van de door CIDRAM gebruikte componenten. Meestal gevuld door de updates-pagina, maar kan ook vanaf hier worden beheerd voor fijnere controle en voor aangepaste componenten die niet worden herkend door de updates-pagina."
  components_events: "Evenement-Behandelaars. Meestal gebruikt om de manier waarop CIDRAM zich intern gedraagt te wijzigen of om extra functionaliteit te bieden."
  components_imports: "Import. Meestal gebruikt om de configuratie-informatie van een component aan CIDRAM te leveren."
@@ -215,19 +226,6 @@ config:
  general_time_format: "De datum notatie gebruikt door CIDRAM. Extra opties kunnen worden toegevoegd op aanvraag."
  general_time_offset: "Tijdzone offset in minuten."
  general_timezone: "Dit wordt gebruikt om de te gebruiken tijdzone op te geven (b.v., Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, enz). Geef "SYSTEM" op om PHP dit automatisch voor u te laten afhandelen."
- hcaptcha: "Configuratie voor hCaptcha (biedt een manier voor mensen om toegang te krijgen wanneer ze worden geblokkeerd)."
- hcaptcha_api: &CaptchaAPI "Welke API gebruiken?"
- hcaptcha_expiry: &CaptchaExpiry "Aantal uren om CAPTCHA instanties herinneren. Standaard = 720 (1 maand)."
- hcaptcha_hcaptcha_log: &CaptchaLogFile "Log alle CAPTCHA pogingen? Zo ja, geef de naam te gebruiken voor het logbestand. Zo nee, laat u deze variabele leeg."
- hcaptcha_lockip: &CaptchaLockIP "Binden CAPTCHA om IP's?"
- hcaptcha_lockuser: &CaptchaLockUser "Binden CAPTCHA om gebruikers?"
- hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "Welke statuscode moet worden gebruikt bij het weergeven van CAPTCHA's voor niet-geblokkeerde verzoeken?"
- hcaptcha_secret: &CaptchaDashboard "Deze waarde is te vinden in het dashboard voor uw CAPTCHA-service."
- hcaptcha_show_api_message: &ShowAPIMessage "API-bericht weergeven? True = Ja [Standaard]; False = Nee."
- hcaptcha_show_cookie_warning: &ShowCookieWarning "Cookiewaarschuwing weergeven? True = Ja [Standaard]; False = Nee."
- hcaptcha_signature_limit: &CaptchaSignatureLimit "Maximaal aantal toegestane signatures voordat een CAPTCHA-aanbieding wordt ingetrokken. Standaard = 1."
- hcaptcha_sitekey: *CaptchaDashboard
- hcaptcha_usemode: &CaptchaUseMode "Wanneer moet de CAPTCHA worden aangeboden? Opmerking: Op de witte lijst geplaatste of geverifieerde en niet-geblokkeerde verzoeken hoeven nooit een CAPTCHA in te vullen. Let ook op: CAPTCHA's kunnen een nuttige, extra beschermingslaag bieden tegen bots en verschillende soorten kwaadwillende geautomatiseerde verzoeken, maar bieden geen enkele bescherming tegen kwaadwillende mensen."
  ipapi: "Configuratie voor de IP-API-module (biedt een zoekfunctie voor ASN en landcodes voor CIDRAM)."
  ipapi_blocked_asns: *ConfigBlockedASNs
  ipapi_blocked_ccs: *ConfigBlockedCCs
@@ -530,7 +528,7 @@ label:
  %s signature:
   - "%s signature"
   - "%s signatures"
- 200 OK: "200 OK\nMinst robuust, maar meest gebruiksvriendelijk. Geautomatiseerde verzoeken zullen dit antwoord hoogstwaarschijnlijk interpreteren als een indicatie dat het verzoek was succesvol."
+ 200 OK: "200 OK\nMinst robuust, maar meest gebruiksvriendelijk. Geautomatiseerde verzoeken zullen dit antwoord hoogstwaarschijnlijk interpreteren als een indicatie dat het verzoek was succesvol. Aanbevolen voor niet-geblokkeerde verzoeken."
  301 Moved Permanently: "301 Moved Permanently (Permanent verhuisd)\nInstrueert de client dat de omleiding PERMANENT is, en dat de verzoekmethode die wordt gebruikt voor de omleiding KAN verschillen van de verzoekmethode die wordt gebruikt voor het oorspronkelijke verzoek."
  302 Found: "302 Found (Gevonden)\nInstrueert de client dat de omleiding TIJDELIJK is, en dat de verzoekmethode die wordt gebruikt voor de omleiding KAN verschillen van de verzoekmethode die wordt gebruikt voor het oorspronkelijke verzoek."
  307 Temporary Redirect: "307 Temporary Redirect (Tijdelijke omleiding)\nInstrueert de client dat de omleiding TIJDELIJK is, en dat de verzoekmethode die wordt gebruikt voor de omleiding NIET mag verschillen van de verzoekmethode die wordt gebruikt voor het oorspronkelijke verzoek."
@@ -612,6 +610,9 @@ label:
  Latest stable: "Laatste stabiele:"
  Latest unstable: "Laatste onstabiele:"
  Loading_: "Bezig met laden..."
+ Lock CAPTCHAs to the IP address of the user completing the CAPTCHA but not to the actual user: "Koppel CAPTCHA's aan het IP-adres van de gebruiker die de CAPTCHA invult, maar niet aan de gebruiker zelf.\nCookies worden NIET gebruikt om gebruikers te identificeren. Wanneer de toegang wordt hersteld doordat een CAPTCHA succesvol is voltooid, dit geldt voor iedereen die verbinding maakt vanaf hetzelfde IP-adres."
+ Lock CAPTCHAs to the user completing the CAPTCHA as well as to their IP address: "Koppel CAPTCHA's aan de gebruiker die de CAPTCHA invult en aan zijn/haar IP-adres.\nCookies worden gebruikt om gebruikers te identificeren. Wanneer de toegang wordt hersteld doordat een CAPTCHA succesvol is voltooid, dit geldt alleen voor de gebruiker die de CAPTCHA heeft voltooid, en blijft niet behouden als zijn/haar IP-adres verandert."
+ Lock CAPTCHAs to the user completing the CAPTCHA but not to their IP address: "Koppel CAPTCHA's aan de gebruiker die de CAPTCHA invult, maar niet aan zijn/haar IP-adres.\nCookies worden gebruikt om gebruikers te identificeren. Wanneer de toegang wordt hersteld doordat een CAPTCHA succesvol is voltooid, dit geldt alleen voor de gebruiker die de CAPTCHA heeft voltooid, en zolang de cookie geldig blijft, blijft deze bestaan, zelfs als het IP-adres verandert."
  Logged in, 2FA pending: "Ingelogd, wachten op 2FA."
  Logged in: "Ingelogd."
  Logged out: "Uitgelogd."
@@ -657,6 +658,8 @@ label:
  Search Engine: "Zoekmachine"
  See also: "Zie ook:"
  Selected log file doesn_t exist: "Geselecteerde logbestand bestaat niet!"
+ Show API message: "API-bericht weergeven?\nInstructies voor de gebruiker, passend bij de gebruikte API, met betrekking tot het invullen van de CAPTCHA."
+ Show cookie warning: "Cookiewaarschuwing weergeven?\nAfhankelijk van de privacywetgeving van uw land of staat (b.v., GDPR/DSGVO/AVG in de EU, LGPD in Brazilië, enz) kan dit wettelijk verplicht zijn."
  Show: "Zien"
  Signature type: "Signature type:"
  Simple: "Eenvoudig"

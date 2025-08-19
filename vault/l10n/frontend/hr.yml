@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Croatian language data for the front-end (last modified: 2025.08.14).
+# This file: Croatian language data for the front-end (last modified: 2025.08.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -161,6 +161,17 @@ config:
  bunnycdn_positive_action: "Koju radnju CIDRAM treba izvršiti kada naiđe na zahtjev od BunnyCDN-a? Zadana radnja = Zaobići."
  bypasses: "Konfiguracija za standardna zaobilaženja potpisa."
  bypasses_used: "Koje zaobilaženja treba koristiti?"
+ captcha: "Konfiguracija za CAPTCHA-e (pruža način da ljudi ponovno dobiju pristup kada su blokirani)."
+ captcha_api: "Koji API koristiti?"
+ captcha_expiry: "Broj sati za pamćenje instanci CAPTCHA. Zadano = 720 (1 mjesec)."
+ captcha_hcaptcha_log: "Zabilježiti sve pokušaje CAPTCHA? Ako da, navedite naziv koji će se koristiti za datoteku dnevnika. Ako ne, ostavite ovu varijablu praznu."
+ captcha_hcaptcha_secret: &CaptchaDashboard "Ova se vrijednost može pronaći na nadzornoj ploči za vašu CAPTCHA uslugu."
+ captcha_hcaptcha_sitekey: *CaptchaDashboard
+ captcha_messages: "Poruke koje će se prikazivati uz CAPTCHA-e."
+ captcha_lockto: "Na što zaključati CAPTCHA-e."
+ captcha_nonblocked_status_code: "Koji statusni kôd treba koristiti kada se CAPTCHA prikazuje neblokiranim zahtjevima?"
+ captcha_signature_limit: "Maksimalan dopušteni broj potpisa prije povlačenja CAPTCHA ponude. Zadano = 1."
+ captcha_usemode: "Kada bi trebalo ponuditi CAPTCHA-e? Ovdje možete odrediti preferirano ponašanje za svakog podržanog pružatelja. Bilješka: Zahtjevi s popisa dopuštenih, ili provjereni i neblokirani zahtjevi, nikada ne moraju ispuniti CAPTCHA. Također imajte na umu: CAPTCHA može pružiti koristan, dodatni sloj zaštite od botova i raznih vrsta zlonamjernih automatiziranih zahtjeva, ali neće pružiti nikakvu zaštitu od zlonamjernih ljudi."
  components: "Konfiguracija za aktivaciju i deaktivaciju komponenti koje koristi CIDRAM. Obično se popunjava na stranici ažuriranja, ali se njime također može upravljati odavde za finiju kontrolu i prilagođene komponente koje stranica ažuriranja ne prepoznaje."
  components_events: "Rukovatelji događajima. Obično se koristi za izmjenu načina na koji se CIDRAM interno ponaša ili za pružanje dodatne funkcionalnosti."
  components_imports: "Uvozi. Obično se koristi za dostavljanje informacija o konfiguraciji komponente CIDRAM-u."
@@ -215,19 +226,6 @@ config:
  general_time_format: "Format zapisa datuma/vremena koji koristi CIDRAM. Dodatne opcije mogu se dodati na zahtjev."
  general_time_offset: "Pomak vremenske zone u minutama."
  general_timezone: "Vremenska zona za korištenje (npr., Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, etc). Navedite "SYSTEM" kako bi PHP to automatski obradio za vas."
- hcaptcha: "Konfiguracija za hCaptcha (pruža način da ljudi ponovno dobiju pristup kada su blokirani)."
- hcaptcha_api: &CaptchaAPI "Koji API koristiti?"
- hcaptcha_expiry: &CaptchaExpiry "Broj sati za pamćenje instanci CAPTCHA. Zadano = 720 (1 mjesec)."
- hcaptcha_hcaptcha_log: &CaptchaLogFile "Zabilježiti sve pokušaje CAPTCHA? Ako da, navedite naziv koji će se koristiti za datoteku dnevnika. Ako ne, ostavite ovu varijablu praznu."
- hcaptcha_lockip: &CaptchaLockIP "Zaključati CAPTCHA za IP adrese?"
- hcaptcha_lockuser: &CaptchaLockUser "Zaključati CAPTCHA za korisnike?"
- hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "Koji statusni kôd treba koristiti kada se CAPTCHA prikazuje neblokiranim zahtjevima?"
- hcaptcha_secret: &CaptchaDashboard "Ova se vrijednost može pronaći na nadzornoj ploči za vašu CAPTCHA uslugu."
- hcaptcha_show_api_message: &ShowAPIMessage "Prikaži API poruku? True/Istinito = Da [Zadano]; False/Lažno = Ne."
- hcaptcha_show_cookie_warning: &ShowCookieWarning "Prikaži upozorenje o kolačićima? True/Istinito = Da [Zadano]; False/Lažno = Ne."
- hcaptcha_signature_limit: &CaptchaSignatureLimit "Maksimalan dopušteni broj potpisa prije povlačenja CAPTCHA ponude. Zadano = 1."
- hcaptcha_sitekey: *CaptchaDashboard
- hcaptcha_usemode: &CaptchaUseMode "Kada treba ponuditi CAPTCHA? Bilješka: Zahtjevi s popisa dopuštenih, ili provjereni i neblokirani zahtjevi, nikada ne moraju ispuniti CAPTCHA. Također imajte na umu: CAPTCHA može pružiti koristan, dodatni sloj zaštite od botova i raznih vrsta zlonamjernih automatiziranih zahtjeva, ali neće pružiti nikakvu zaštitu od zlonamjernih ljudi."
  ipapi: "Konfiguracija za IP-API modul (pruža mogućnost pretraživanja ASN-a i koda zemlje za CIDRAM)."
  ipapi_blocked_asns: *ConfigBlockedASNs
  ipapi_blocked_ccs: *ConfigBlockedCCs
@@ -537,7 +535,7 @@ label:
  %s signature:
   - "%s potpis"
   - "%s potpisa"
- 200 OK: "200 OK\nNajmanje robustan, ali najprilagođeniji korisniku. Automatizirani zahtjevi će najvjerojatnije protumačiti ovaj odgovor kao pokazatelj da je zahtjev bio uspješan."
+ 200 OK: "200 OK\nNajmanje robustan, ali najprilagođeniji korisniku. Automatizirani zahtjevi će najvjerojatnije protumačiti ovaj odgovor kao pokazatelj da je zahtjev bio uspješan. Preporučuje se za neblokirane zahtjeve."
  301 Moved Permanently: "301 Moved Permanently (Trajno preseljeno)\nUpućuje klijenta da je preusmjeravanje TRAJNO i da metoda zahtjeva korištena za preusmjeravanje MOŽE biti drugačija od metode zahtjeva korištene za početni zahtjev."
  302 Found: "302 Found (Pronađeno)\nUpućuje klijenta da je preusmjeravanje PRIVREMENO i da metoda zahtjeva korištena za preusmjeravanje MOŽE biti drugačija od metode zahtjeva korištene za početni zahtjev."
  307 Temporary Redirect: "307 Temporary Redirect (Privremeno preusmjeravanje)\nUpućuje klijenta da je preusmjeravanje PRIVREMENO i da metoda zahtjeva korištena za preusmjeravanje NE može razlikovati od metode zahtjeva korištene za početni zahtjev."
@@ -620,6 +618,9 @@ label:
  Latest stable: "Najnovija stabilna verzija:"
  Latest unstable: "Najnovije nestabilno verzija:"
  Loading_: "Učitavanje..."
+ Lock CAPTCHAs to the IP address of the user completing the CAPTCHA but not to the actual user: "Zaključaj CAPTCHA-e na IP adresu korisnika koji ih ispunjava, ali ne na stvarnog korisnika.\nKolačići se NE koriste za identifikaciju korisnika. Kada se pristup ponovno dobije zbog uspješnog dovršetka CAPTCHA-e, to se odnosi na sve koji se povezuju s iste IP adrese."
+ Lock CAPTCHAs to the user completing the CAPTCHA as well as to their IP address: "Zaključajte CAPTCHA-e za korisnika koji ih ispunjava, kao i za njegovu IP adresu.\nKolačići se koriste za identifikaciju korisnika. Kada se pristup ponovno dobije zbog uspješnog dovršetka CAPTCHA-e, to se odnosi samo na korisnika koji je dovršio CAPTCHA i neće trajati ako se njegova IP adresa promijeni."
+ Lock CAPTCHAs to the user completing the CAPTCHA but not to their IP address: "Zaključaj CAPTCHA-e za korisnika koji ih ispunjava, ali ne i za njegovu IP adresu.\nKolačići se koriste za identifikaciju korisnika. Kada se pristup ponovno dobije zbog uspješnog dovršetka CAPTCHA-e, to se odnosi samo na korisnika koji je dovršio CAPTCHA i ostat će aktivan sve dok je njihov kolačić važeći, čak i ako se promijeni njihova IP adresa."
  Logged in, 2FA pending: "Prijavljen/a, 2FA na čekanju."
  Logged in: "Prijavljen/a."
  Logged out: "Odjavljen/a."
@@ -665,6 +666,8 @@ label:
  Search Engine: "Tražilica"
  See also: "Vidi također:"
  Selected log file doesn_t exist: "Odabrana datoteka dnevnika ne postoji!"
+ Show API message: "Prikaži API poruku?\nUpute korisniku, primjerene korištenom API-ju, u vezi s dovršetkom CAPTCHA-e."
+ Show cookie warning: "Prikaži upozorenje o kolačićima?\nOvisno o zakonima o privatnosti vaše zemlje ili države (npr., GDPR/DSGVO u EU, LGPD u Brazilu, itd), ovo može biti zakonski obavezno."
  Show: "Prikaži"
  Signature type: "Vrsta potpisa:"
  Simple: "Jednostavan"

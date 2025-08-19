@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2025.08.14).
+# This file: Thai language data for the front-end (last modified: 2025.08.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -161,6 +161,17 @@ config:
  bunnycdn_positive_action: "CIDRAM ควรดำเนินการใดเมื่อพบคำขอจาก BunnyCDN? การกระทำเริ่มต้น = บายพาส."
  bypasses: "การกำหนดค่าสำหรับการข้ามลายเซ็นเริ่มต้น."
  bypasses_used: "ควรใช้บายพาสใด?"
+ captcha: "การกำหนดค่าสำหรับ CAPTCHA (เป็นวิธีสำหรับมนุษย์ในการเข้าถึงเมื่อถูกบล็อก)."
+ captcha_api: "API ใดที่จะใช้?"
+ captcha_expiry: "จำนวนชั่วโมงที่ต้องจำอินสแตนซ์ CAPTCHA. ค่าเริ่มต้น = 720 (1 เดือน)."
+ captcha_hcaptcha_log: "บันทึกความพยายาม CAPTCHA ทั้งหมดหรือไม่? ถ้าใช่ ระบุชื่อที่จะใช้สำหรับไฟล์บันทึก. ถ้าไม่ ปล่อยให้ตัวแปรนี้ว่างเปล่า."
+ captcha_hcaptcha_secret: &CaptchaDashboard "ค่านี้สามารถพบได้ในแดชบอร์ดสำหรับบริการ CAPTCHA ของคุณ."
+ captcha_hcaptcha_sitekey: *CaptchaDashboard
+ captcha_messages: "ข้อความที่จะแสดงร่วมกับ CAPTCHA."
+ captcha_lockto: "สิ่งที่ต้องล็อค CAPTCHA."
+ captcha_nonblocked_status_code: "ควรใช้รหัสสถานะใดเมื่อแสดง CAPTCHA สำหรับคำขอที่ไม่ถูกบล็อก?"
+ captcha_signature_limit: "จำนวนลายเซ็นสูงสุดที่อนุญาตก่อนที่ข้อเสนอ CAPTCHA จะถูกเพิกถอน. ค่าเริ่มต้น = 1."
+ captcha_usemode: "ควรเสนอ CAPTCHA เมื่อใด? คุณสามารถระบุพฤติกรรมที่ต้องการสำหรับผู้ให้บริการที่รองรับแต่ละรายได้ที่นี่. หมายเหตุ: คำขอที่อนุญาตพิเศษหรือได้รับการยืนยันและไม่ถูกบล็อกไม่จำเป็นต้องกรอก CAPTCHA. โปรดทราบด้วย: CAPTCHAs สามารถให้การป้องกันที่เป็นประโยชน์ต่อบอทและคำขออัตโนมัติที่เป็นอันตรายหลายประเภท แต่จะไม่ให้การป้องกันมนุษย์ที่เป็นอันตราย."
  components: "การกำหนดค่าสำหรับการเปิดใช้งานและการปิดใช้งานคอมโพเนนต์ที่ใช้โดย CIDRAM. โดยปกติหน้าการอัปเดตจะจัดการสิ่งนี้ แต่สามารถจัดการได้จากที่นี่เพื่อการควบคุมที่ละเอียดยิ่งขึ้นและคอมโพเนนต์ที่กำหนดเอง."
  components_events: "ตัวจัดการเหตุการณ์. โดยปกติจะใช้เพื่อปรับเปลี่ยนพฤติกรรมภายในของ CIDRAM หรือเพื่อให้มีฟังก์ชันการทำงานเพิ่มเติม."
  components_imports: "การนำเข้า. โดยปกติจะใช้เพื่อจัดหาข้อมูลการกำหนดค่าของคอมโพเนนต์ให้กับ CIDRAM."
@@ -215,19 +226,6 @@ config:
  general_time_format: "รูปแบบสัญกรณ์สำหรับวันและเวลาใช้โดย CIDRAM. ตัวเลือกเพิ่มเติมอาจเพิ่มเมื่อมีการร้องขอ."
  general_time_offset: "เขตเวลาชดเชยในนาที."
  general_timezone: "ใช้เพื่อระบุเขตเวลาที่จะใช้ (เช่น., Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, ฯลฯ). ระบุ "SYSTEM" เพื่อให้ PHP จัดการสิ่งนี้ให้คุณโดยอัตโนมัติ."
- hcaptcha: "การกำหนดค่าสำหรับ hCaptcha (เป็นวิธีสำหรับมนุษย์ในการเข้าถึงเมื่อถูกบล็อก)."
- hcaptcha_api: &CaptchaAPI "API ใดที่จะใช้?"
- hcaptcha_expiry: &CaptchaExpiry "จำนวนชั่วโมงที่ต้องจำอินสแตนซ์ CAPTCHA. ค่าเริ่มต้น = 720 (1 เดือน)."
- hcaptcha_hcaptcha_log: &CaptchaLogFile "บันทึกความพยายาม CAPTCHA ทั้งหมดหรือไม่? ถ้าใช่ ระบุชื่อที่จะใช้สำหรับไฟล์บันทึก. ถ้าไม่ ปล่อยให้ตัวแปรนี้ว่างเปล่า."
- hcaptcha_lockip: &CaptchaLockIP "ล็อค CAPTCHA ด้วย IP หรือไม่?"
- hcaptcha_lockuser: &CaptchaLockUser "ล็อค CAPTCHA ด้วยผู้ใช้หรือไม่?"
- hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "ควรใช้รหัสสถานะใดเมื่อแสดง CAPTCHA สำหรับคำขอที่ไม่ถูกบล็อก?"
- hcaptcha_secret: &CaptchaDashboard "ค่านี้สามารถพบได้ในแดชบอร์ดสำหรับบริการ CAPTCHA ของคุณ."
- hcaptcha_show_api_message: &ShowAPIMessage "แสดงข้อความ API ไหม? True = ทำ [ค่าเริ่มต้น]; False = ไม่ทำ."
- hcaptcha_show_cookie_warning: &ShowCookieWarning "แสดงคำเตือนเกี่ยวกับคุกกี้หรือไม่? True = ทำ [ค่าเริ่มต้น]; False = ไม่ทำ."
- hcaptcha_signature_limit: &CaptchaSignatureLimit "จำนวนลายเซ็นสูงสุดที่อนุญาตก่อนที่ข้อเสนอ CAPTCHA จะถูกเพิกถอน. ค่าเริ่มต้น = 1."
- hcaptcha_sitekey: *CaptchaDashboard
- hcaptcha_usemode: &CaptchaUseMode "ควรเสนอ CAPTCHA เมื่อใด? หมายเหตุ: คำขอที่อนุญาตพิเศษหรือได้รับการยืนยันและไม่ถูกบล็อกไม่จำเป็นต้องกรอก CAPTCHA. โปรดทราบด้วย: CAPTCHAs สามารถให้การป้องกันที่เป็นประโยชน์ต่อบอทและคำขออัตโนมัติที่เป็นอันตรายหลายประเภท แต่จะไม่ให้การป้องกันมนุษย์ที่เป็นอันตราย."
  ipapi: "การกำหนดค่าสำหรับโมดูล IP-API (ให้สิ่งอำนวยความสะดวกในการค้นหา ASN และรหัสประเทศสำหรับ CIDRAM)."
  ipapi_blocked_asns: *ConfigBlockedASNs
  ipapi_blocked_ccs: *ConfigBlockedCCs
@@ -521,7 +519,7 @@ label:
  %s is available: "%s สามารถใช้ได้."
  %s is not available: "%s ไม่สามารถใช้ได้."
  %s signature: "%s ลายเซ็น"
- 200 OK: "200 OK (โอเค)\nแข็งแกร่งน้อยที่สุด แต่ใช้งานง่ายที่สุด. คำขออัตโนมัติมักจะตีความคำตอบนี้เป็นข้อบ่งชี้ว่าคำขอประสบความสำเร็จ."
+ 200 OK: "200 OK (โอเค)\nแข็งแกร่งน้อยที่สุด แต่ใช้งานง่ายที่สุด. คำขออัตโนมัติมักจะตีความคำตอบนี้เป็นข้อบ่งชี้ว่าคำขอประสบความสำเร็จ. แนะนำสำหรับคำขอที่ไม่ถูกบล็อค."
  301 Moved Permanently: "301 Moved Permanently (ย้ายอย่างถาวร)\nแนะนำไคลเอ็นต์ว่าการเปลี่ยนเส้นทางเป็นแบบถาวร และวิธีการขอเปลี่ยนเส้นทางและคำขอเริ่มต้นจะแตกต่างกันได้."
  302 Found: "302 Found (พบ)\nแนะนำไคลเอ็นต์ว่าการเปลี่ยนเส้นทางเป็นแบบชั่วคราว และวิธีการขอเปลี่ยนเส้นทางและคำขอเริ่มต้นจะแตกต่างกันได้."
  307 Temporary Redirect: "307 Temporary Redirect (เปลี่ยนเส้นทางชั่วคราว)\nแนะนำไคลเอ็นต์ว่าการเปลี่ยนเส้นทางเป็นแบบชั่วคราว และวิธีการของคำขอเปลี่ยนเส้นทางและคำขอเริ่มต้นไม่ได้รับอนุญาตให้แตกต่างกัน."
@@ -599,6 +597,9 @@ label:
  Latest stable: "เสถียรล่าสุด:"
  Latest unstable: "ไม่เสถียรล่าสุด:"
  Loading_: "กำลังโหลด ..."
+ Lock CAPTCHAs to the IP address of the user completing the CAPTCHA but not to the actual user: "ควรล็อค CAPTCHA ไว้ที่ที่อยู่ IP ของผู้ใช้ที่กรอก CAPTCHA เท่านั้น ไม่ใช่ที่ตัวผู้ใช้จริง.\nคุกกี้จะไม่ถูกใช้เพื่อระบุตัวตนของผู้ใช้. เมื่อได้รับสิทธิ์การเข้าถึงอีกครั้งเนื่องจากผ่าน CAPTCHA สำเร็จแล้ว สิทธิ์ดังกล่าวจะใช้ได้กับทุกคนที่เชื่อมต่อจากที่อยู่ IP เดียวกัน."
+ Lock CAPTCHAs to the user completing the CAPTCHA as well as to their IP address: "ควรล็อค CAPTCHA ให้กับผู้ใช้ที่กรอก CAPTCHA เท่านั้น รวมถึงที่อยู่ IP ของพวกเขาด้วย.\nคุกกี้ใช้เพื่อระบุผู้ใช้. เมื่อได้รับสิทธิ์การเข้าถึงอีกครั้งเนื่องจากผ่าน CAPTCHA สำเร็จแล้ว สิทธิ์นี้จะใช้ได้กับผู้ใช้ที่กรอก CAPTCHA เสร็จเรียบร้อยแล้วเท่านั้น และจะไม่คงอยู่แม้ว่าที่อยู่ IP ของผู้ใช้จะเปลี่ยนแปลง."
+ Lock CAPTCHAs to the user completing the CAPTCHA but not to their IP address: "ควรล็อค CAPTCHA ให้กับผู้ใช้ที่กรอก CAPTCHA เท่านั้น ไม่ใช่กับที่อยู่ IP ของพวกเขา.\nคุกกี้ใช้เพื่อระบุผู้ใช้. เมื่อได้รับสิทธิ์การเข้าถึงอีกครั้งเนื่องจากผ่าน CAPTCHA สำเร็จแล้ว สิทธิ์ดังกล่าวจะใช้ได้กับผู้ใช้ที่กรอก CAPTCHA เสร็จเรียบร้อยแล้วเท่านั้น และคุกกี้จะยังคงอยู่ต่อไปตราบใดที่ผู้ใช้ยังใช้งานได้ แม้ว่าที่อยู่ IP ของผู้ใช้จะเปลี่ยนแปลงก็ตาม."
  Logged in, 2FA pending: "เข้าสู่ระบบ, รอดำเนินการ 2FA."
  Logged in: "เข้าสู่ระบบ."
  Logged out: "ออกจากระบบ."
@@ -644,6 +645,8 @@ label:
  Search Engine: "เครื่องมือค้นหา"
  See also: "ดูสิ่งนี้ด้วย:"
  Selected log file doesn_t exist: "ไฟล์บันทึกเลือกไม่มีอยู่จริง!"
+ Show API message: "แสดงข้อความ API ไหม?\nคำแนะนำสำหรับผู้ใช้งานที่เหมาะสมกับ API ที่ใช้เกี่ยวกับการกรอก CAPTCHA."
+ Show cookie warning: "แสดงคำเตือนเกี่ยวกับคุกกี้หรือไม่?\nสิ่งนี้อาจจำเป็นตามกฎหมายขึ้นอยู่กับประเทศของคุณ (เช่น GDPR/DSGVO ในสหภาพยุโรป LGPD ในบราซิล เป็นต้น)."
  Show: "แสดง"
  Signature type: "ประเภทลายเซ็น:"
  Simple: "ง่าย"

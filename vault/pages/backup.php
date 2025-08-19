@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The backup page (last modified: 2025.04.11).
+ * This file: The backup page (last modified: 2025.08.15).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -111,7 +111,7 @@ if (isset($_POST['bckpAct'])) {
             } else {
                 /** Import configuration. */
                 if (isset($_POST['doConfig']) && $_POST['doConfig'] === 'on') {
-                    if ($this->OperationHandler->singleCompare($Import['CIDRAM Version'], '<1.23|>=2 <2.10|>=4')) {
+                    if ($this->OperationHandler->singleCompare($Import['CIDRAM Version'], '<1.23|>=2 <2.10|>=5')) {
                         $this->FE['state_msg'] .= sprintf(
                             $this->L10N->getString('response.Can_t import from v%s data'),
                             $Import['CIDRAM Version']
@@ -128,8 +128,6 @@ if (isset($_POST['bckpAct'])) {
                                     ['FrontEndLog', 'frontend_log'],
                                     ['forbid_on_block', 'http_response_header_code']
                                 ],
-                                'recaptcha' => [['logfile', 'recaptcha_log']],
-                                'hcaptcha' => [['logfile', 'hcaptcha_log']],
                                 'template_data' => [['Magnification', 'magnification']],
                                 'PHPMailer' => [
                                     ['EventLog', 'event_log'],
@@ -154,9 +152,13 @@ if (isset($_POST['bckpAct'])) {
                                     }
                                 }
                             }
-                            if (isset($Import['Configuration']['PHPMailer']) && !isset($Import['Configuration']['phpmailer'])) {
-                                $Import['Configuration']['phpmailer'] = $Import['Configuration']['PHPMailer'];
-                                unset($Import['Configuration']['PHPMailer']);
+
+                            /** Renamed configuration categories (v1->v2->v3). */
+                            foreach (['PHPMailer' => 'phpmailer'] as $OldCat => $NewCat) {
+                                if (isset($Import['Configuration'][$OldCat]) && !isset($Import['Configuration'][$NewCat])) {
+                                    $Import['Configuration'][$NewCat] = $Import['Configuration'][$OldCat];
+                                    unset($Import['Configuration'][$OldCat]);
+                                }
                             }
 
                             /** Moved configuration directives (v2->v3). */
@@ -199,10 +201,11 @@ if (isset($_POST['bckpAct'])) {
                                     'config_imports', 'events', 'ipv4', 'ipv6', 'modules', 'track_mode'
                                 ]
                             ] as $CatKey => $Cat) {
+                                if (!isset($Import['Configuration'][$CatKey])) {
+                                    continue;
+                                }
                                 foreach ($Cat as $Pair) {
-                                    if (isset($Import['Configuration'][$CatKey])) {
-                                        unset($Import['Configuration'][$CatKey][$Pair]);
-                                    }
+                                    unset($Import['Configuration'][$CatKey][$Pair]);
                                 }
                             }
 
@@ -215,8 +218,52 @@ if (isset($_POST['bckpAct'])) {
                                 }
                             }
                         }
+                        if ($this->OperationHandler->singleCompare($Import['CIDRAM Version'], '<4')) {
+                            /** Renamed configuration directives (v1->v2->v3->v4). */
+                            foreach ([
+                                'hcaptcha' => [['logfile', 'hcaptcha_log'], ['secret', 'hcaptcha_secret'], ['sitekey', 'hcaptcha_sitekey']]
+                            ] as $CatKey => $Cat) {
+                                foreach ($Cat as $Pair) {
+                                    if (isset($Import['Configuration'][$CatKey][$Pair[0]]) && !isset($Import['Configuration'][$CatKey][$Pair[1]])) {
+                                        $Import['Configuration'][$CatKey][$Pair[1]] = $Import['Configuration'][$CatKey][$Pair[0]];
+                                        unset($Import['Configuration'][$CatKey][$Pair[0]]);
+                                    }
+                                }
+                            }
 
-                        unset($Pair, $Cat, $CatKey, $Import['Configuration']['Config Defaults'], $Import['Configuration']['Provide'], $Import['Configuration']['Links']);
+                            /** Renamed configuration categories (v3->v4). */
+                            foreach (['hcaptcha' => 'captcha'] as $OldCat => $NewCat) {
+                                if (isset($Import['Configuration'][$OldCat]) && !isset($Import['Configuration'][$NewCat])) {
+                                    $Import['Configuration'][$NewCat] = $Import['Configuration'][$OldCat];
+                                    unset($Import['Configuration'][$OldCat]);
+                                }
+                            }
+
+                            /** Deleted configuration categories (v3->v4). */
+                            foreach (['recaptcha'] as $OldCat) {
+                                if (isset($Import['Configuration'][$OldCat])) {
+                                    unset($Import['Configuration'][$OldCat]);
+                                }
+                            }
+
+                            /** Deleted configuration directives (v3->v4). */
+                            foreach (['captcha' => ['show_cookie_warning', 'show_api_message']] as $CatKey => $Cat) {
+                                if (!isset($Import['Configuration'][$CatKey])) {
+                                    continue;
+                                }
+                                foreach ($Cat as $Pair) {
+                                    unset($Import['Configuration'][$CatKey][$Pair]);
+                                }
+                            }
+
+                            /** Normalisation of matrices (v3->v4). */
+                            foreach (['usemode', 'nonblocked_status_code', 'api'] as $Matrix) {
+                                if (isset($Import['Configuration']['captcha'][$Matrix]) && !is_array($Import['Configuration']['captcha'][$Matrix])) {
+                                    $Import['Configuration']['captcha'][$Matrix] = ['hcaptcha' => $Import['Configuration']['captcha'][$Matrix]];
+                                }
+                            }
+                        }
+                        unset($NewCat, $OldCat, $Pair, $Cat, $CatKey, $Import['Configuration']['Config Defaults'], $Import['Configuration']['Provide'], $Import['Configuration']['Links']);
                         $this->Configuration = array_replace_recursive($this->Configuration, $Import['Configuration']);
                         $this->FE['state_msg'] .= $this->L10N->getString($this->updateConfiguration() ? 'response.Configuration successfully updated' : 'response.Failed to update configuration') . '<br />';
                     } else {

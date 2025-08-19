@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2025.08.14).
+ * This file: The CIDRAM core (last modified: 2025.08.15).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -130,7 +130,7 @@ class Core
     /**
      * @var string CIDRAM version number (SemVer).
      */
-    public $ScriptVersion = '3.10.0';
+    public $ScriptVersion = '4.0.0';
 
     /**
      * @var string CIDRAM version identifier (complete notation).
@@ -1560,11 +1560,11 @@ class Core
     public function enactOptions(string $Prefix = '', array $Options = []): void
     {
         if (isset($Options[$Prefix . 'MarkForUseWithHCaptcha'])) {
-            $this->Configuration['hcaptcha']['enabled'] = true;
+            $this->Configuration['captcha']['enabled'] = true;
         }
         if (isset($Options[$Prefix . 'ForciblyDisableHCaptcha'])) {
-            $this->Configuration['hcaptcha']['usemode'] = 0;
-            $this->Configuration['hcaptcha']['forcibly_disabled'] = true;
+            $this->Configuration['captcha']['usemode']['hcaptcha'] = 0;
+            $this->Configuration['captcha']['forcibly_disabled'] = true;
         }
     }
 
@@ -3022,17 +3022,17 @@ class Core
         if (!isset($this->BlockInfo['SignatureCount'])) {
             return false;
         }
-        if (isset($this->Configuration['hcaptcha']['usemode']) && (
-            $this->Configuration['hcaptcha']['usemode'] === 1 ||
-            $this->Configuration['hcaptcha']['usemode'] === 3 ||
+        if (isset($this->Configuration['captcha']['usemode']['hcaptcha']) && (
+            $this->Configuration['captcha']['usemode']['hcaptcha'] === 1 ||
+            $this->Configuration['captcha']['usemode']['hcaptcha'] === 3 ||
             (
                 (
-                    $this->Configuration['hcaptcha']['usemode'] === 2 ||
-                    $this->Configuration['hcaptcha']['usemode'] === 5
-                ) && !empty($this->Configuration['hcaptcha']['enabled'])
+                    $this->Configuration['captcha']['usemode']['hcaptcha'] === 2 ||
+                    $this->Configuration['captcha']['usemode']['hcaptcha'] === 5
+                ) && !empty($this->Configuration['captcha']['enabled'])
             )
         )) {
-            return $this->BlockInfo['SignatureCount'] <= $this->Configuration['hcaptcha']['signature_limit'];
+            return $this->BlockInfo['SignatureCount'] <= $this->Configuration['captcha']['signature_limit'];
         }
         return $this->BlockInfo['SignatureCount'] < 1;
     }

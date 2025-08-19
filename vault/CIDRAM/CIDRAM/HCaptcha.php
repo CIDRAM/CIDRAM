@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: HCaptcha class (last modified: 2025.08.10).
+ * This file: HCaptcha class (last modified: 2025.08.19).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -26,104 +26,13 @@ class HCaptcha extends Captcha
         $this->CIDRAM = &$CIDRAM;
         $Salt = $this->generateSalt();
 
-        /** Refer to the documentation regarding the behaviour of "lockuser". */
-        if ($this->CIDRAM->Configuration['hcaptcha']['lockuser']) {
-            if (file_exists($this->CIDRAM->Vault . 'hashes.dat')) {
-                $HastList = $this->CIDRAM->readFile($this->CIDRAM->Vault . 'hashes.dat');
-                $HastListModified = false;
-            } else {
-                $HastList = "HASH LIST\n---------\n";
-                $HastListModified = true;
-            }
+        /** Initialise messages. */
+        $this->Messages = array_flip(explode("\n", $this->CIDRAM->Configuration['captcha']['messages']));
 
-            /** Cycle through the hash list and remove any expired hashes. */
-            $this->clearExpired($HastList, $HastListModified);
+        /** What to lock CAPTCHAs to. */
+        $LockTo = $this->CIDRAM->Configuration['captcha']['lockto']['hcaptcha'] ?? 'user';
 
-            /**
-             * Determine whether a hCaptcha instance has already been completed by the
-             * user and populate relevant variables.
-             */
-            if (!empty($_COOKIE['CIDRAM']) && ($Split = strpos($_COOKIE['CIDRAM'], ',')) !== false) {
-                $UserHash = substr($_COOKIE['CIDRAM'], 0, $Split);
-                if (strpos($HastList, "\n" . $UserHash . ',') !== false) {
-                    $UserSalt = base64_decode(substr($_COOKIE['CIDRAM'], $Split));
-                    if ($this->CIDRAM->Configuration['hcaptcha']['lockip']) {
-                        $UserMeld = $this->meld($Salt, $UserSalt, $this->CIDRAM->ipAddr);
-                    } else {
-                        $UserMeld = $this->meld($Salt, $UserSalt);
-                    }
-                }
-            }
-            if (!isset($UserMeld) || strlen($UserMeld) === 0) {
-                $UserMeld = '';
-                $UserSalt = '';
-                $UserHash = '';
-            }
-
-            /** Verify whether they've passed, update cookies, generate fields. */
-            if ($UserHash !== '' && $UserMeld !== '' && password_verify($UserMeld, $UserHash)) {
-                $this->Bypass = true;
-                $this->resetSCT();
-            } else {
-                /** Set hCaptcha status. */
-                $this->CIDRAM->BlockInfo['CAPTCHA'] = sprintf($this->CIDRAM->L10N->getString('state.Enabled'), 'hCaptcha');
-
-                /** We've received a response. */
-                if (isset($_POST['hc-response'])) {
-                    $Loggable = true;
-                    $this->doResponse();
-                    if ($this->Bypass) {
-                        /** Generate client-side salt. */
-                        $UserSalt = $this->generateSalt();
-
-                        /** Generate authentication hash. */
-                        if ($this->CIDRAM->Configuration['hcaptcha']['lockip']) {
-                            $Cookie = $this->meld($Salt, $UserSalt, $this->CIDRAM->ipAddr);
-                        } else {
-                            $Cookie = $this->meld($Salt, $UserSalt);
-                        }
-                        if (strpos($Cookie, "\0") !== false) {
-                            $Cookie = str_replace("\0", '', $Cookie);
-                        }
-                        $UserHash = password_hash($Cookie, $this->DefaultAlgo);
-                        $Cookie = $UserHash . ',' . base64_encode($UserSalt);
-                        setcookie(
-                            'CIDRAM',
-                            $Cookie,
-                            $this->CIDRAM->Now + ($this->CIDRAM->Configuration['hcaptcha']['expiry'] * 3600),
-                            '/',
-                            $this->CIDRAM->CIDRAM['HostnameOverride'] ?: $this->CIDRAM->CIDRAM['HTTP_HOST'],
-                            false,
-                            true
-                        );
-                        $this->resetSCT();
-
-                        /** Append to the hash list. */
-                        $HastList .= $UserHash . ',' . ($this->CIDRAM->Now + ($this->CIDRAM->Configuration['hcaptcha']['expiry'] * 3600)) . "\n";
-                        $HastListModified = true;
-                        $this->generatePassed('hCaptcha');
-                    } else {
-                        $this->generateFailed('hCaptcha');
-                    }
-                }
-
-                /**
-                 * HCaptcha template data included if hCaptcha isn't being bypassed.
-                 * Note: Cookie warning IS included here due to expected behaviour when lockuser is TRUE.
-                 */
-                $this->generateContainer(
-                    $this->CIDRAM->Configuration['hcaptcha']['show_cookie_warning'],
-                    $this->CIDRAM->Configuration['hcaptcha']['show_api_message']
-                );
-            }
-
-            /** Update the hash list if any changes were made. */
-            if ($HastListModified) {
-                $Handle = fopen($this->CIDRAM->Vault . 'hashes.dat', 'wb');
-                fwrite($Handle, $HastList);
-                fclose($Handle);
-            }
-        } else {
+        if ($LockTo === 'ip') {
             /** Attempt to load the IP bypass list. */
             if (file_exists($this->CIDRAM->Vault . 'ipbypass.dat')) {
                 $BypassList = $this->CIDRAM->readFile($this->CIDRAM->Vault . 'ipbypass.dat');
@@ -156,7 +65,7 @@ class HCaptcha extends Captcha
 
                         /** Append to the IP bypass list. */
                         $BypassList .= $this->CIDRAM->ipAddr . ',' . (
-                            $this->CIDRAM->Now + ($this->CIDRAM->Configuration['hcaptcha']['expiry'] * 3600)
+                            $this->CIDRAM->Now + ($this->CIDRAM->Configuration['captcha']['expiry'] * 3600)
                         ) . "\n";
                         $BypassListModified = true;
 
@@ -170,7 +79,7 @@ class HCaptcha extends Captcha
                  * HCaptcha template data included if hCaptcha isn't being bypassed.
                  * Note: Cookie warning is NOT included here due to expected behaviour when lockuser is FALSE.
                  */
-                $this->generateContainer(false, $this->CIDRAM->Configuration['hcaptcha']['show_api_message']);
+                $this->generateContainer(false, isset($this->Messages['api_message:hcaptcha']));
             }
 
             /** Update the IP bypass list if any changes were made. */
@@ -179,14 +88,105 @@ class HCaptcha extends Captcha
                 fwrite($Handle, $BypassList);
                 fclose($Handle);
             }
+        } else {
+            if (file_exists($this->CIDRAM->Vault . 'hashes.dat')) {
+                $HastList = $this->CIDRAM->readFile($this->CIDRAM->Vault . 'hashes.dat');
+                $HastListModified = false;
+            } else {
+                $HastList = "HASH LIST\n---------\n";
+                $HastListModified = true;
+            }
+
+            /** Cycle through the hash list and remove any expired hashes. */
+            $this->clearExpired($HastList, $HastListModified);
+
+            /**
+             * Determine whether a hCaptcha instance has already been completed by the
+             * user and populate relevant variables.
+             */
+            if (!empty($_COOKIE['CIDRAM']) && ($Split = strpos($_COOKIE['CIDRAM'], ',')) !== false) {
+                $UserHash = substr($_COOKIE['CIDRAM'], 0, $Split);
+                if (strpos($HastList, "\n" . $UserHash . ',') !== false) {
+                    $UserSalt = base64_decode(substr($_COOKIE['CIDRAM'], $Split));
+                    $UserMeld = $LockTo === 'both' ? $this->meld($Salt, $UserSalt, $this->CIDRAM->ipAddr) : $this->meld($Salt, $UserSalt);
+                }
+            }
+            if (!isset($UserMeld) || strlen($UserMeld) === 0) {
+                $UserMeld = '';
+                $UserSalt = '';
+                $UserHash = '';
+            }
+
+            /** Verify whether they've passed, update cookies, generate fields. */
+            if ($UserHash !== '' && $UserMeld !== '' && password_verify($UserMeld, $UserHash)) {
+                $this->Bypass = true;
+                $this->resetSCT();
+            } else {
+                /** Set hCaptcha status. */
+                $this->CIDRAM->BlockInfo['CAPTCHA'] = sprintf($this->CIDRAM->L10N->getString('state.Enabled'), 'hCaptcha');
+
+                /** We've received a response. */
+                if (isset($_POST['hc-response'])) {
+                    $Loggable = true;
+                    $this->doResponse();
+                    if ($this->Bypass) {
+                        /** Generate client-side salt. */
+                        $UserSalt = $this->generateSalt();
+
+                        /** Generate authentication hash. */
+                        $Cookie = $LockTo === 'both' ? $this->meld($Salt, $UserSalt, $this->CIDRAM->ipAddr) : $this->meld($Salt, $UserSalt);
+
+                        /** Purge null bytes. */
+                        if (strpos($Cookie, "\0") !== false) {
+                            $Cookie = str_replace("\0", '', $Cookie);
+                        }
+
+                        $UserHash = password_hash($Cookie, $this->DefaultAlgo);
+                        $Cookie = $UserHash . ',' . base64_encode($UserSalt);
+                        setcookie(
+                            'CIDRAM',
+                            $Cookie,
+                            $this->CIDRAM->Now + ($this->CIDRAM->Configuration['captcha']['expiry'] * 3600),
+                            '/',
+                            $this->CIDRAM->CIDRAM['HostnameOverride'] ?: $this->CIDRAM->CIDRAM['HTTP_HOST'],
+                            false,
+                            true
+                        );
+                        $this->resetSCT();
+
+                        /** Append to the hash list. */
+                        $HastList .= $UserHash . ',' . ($this->CIDRAM->Now + ($this->CIDRAM->Configuration['captcha']['expiry'] * 3600)) . "\n";
+                        $HastListModified = true;
+                        $this->generatePassed('hCaptcha');
+                    } else {
+                        $this->generateFailed('hCaptcha');
+                    }
+                }
+
+                /**
+                 * HCaptcha template data included if hCaptcha isn't being bypassed.
+                 * Note: Cookie warning IS included here due to expected behaviour when lockuser is TRUE.
+                 */
+                $this->generateContainer(
+                    isset($this->Messages['cookie_warning:hcaptcha']),
+                    isset($this->Messages['api_message:hcaptcha'])
+                );
+            }
+
+            /** Update the hash list if any changes were made. */
+            if ($HastListModified) {
+                $Handle = fopen($this->CIDRAM->Vault . 'hashes.dat', 'wb');
+                fwrite($Handle, $HastList);
+                fclose($Handle);
+            }
         }
 
         /** Guard. */
         if (
             empty($Loggable) ||
             empty($this->CIDRAM->BlockInfo) ||
-            $this->CIDRAM->Configuration['hcaptcha']['hcaptcha_log'] === '' ||
-            !($Filename = $this->CIDRAM->buildPath($this->CIDRAM->Vault . $this->CIDRAM->Configuration['hcaptcha']['hcaptcha_log']))
+            $this->CIDRAM->Configuration['captcha']['hcaptcha_log'] === '' ||
+            !($Filename = $this->CIDRAM->buildPath($this->CIDRAM->Vault . $this->CIDRAM->Configuration['captcha']['hcaptcha_log']))
         ) {
             return;
         }
@@ -205,7 +205,7 @@ class HCaptcha extends Captcha
         ) . "\n";
 
         /** Adds a second new line in case of combined log files. */
-        if ($this->CIDRAM->Configuration['hcaptcha']['hcaptcha_log'] === $this->CIDRAM->Configuration['logging']['standard_log']) {
+        if ($this->CIDRAM->Configuration['captcha']['hcaptcha_log'] === $this->CIDRAM->Configuration['logging']['standard_log']) {
             $Data .= "\n";
         }
 
@@ -213,7 +213,7 @@ class HCaptcha extends Captcha
         fwrite($File, $Data);
         fclose($File);
         if ($WriteMode === 'wb') {
-            $this->CIDRAM->logRotation($this->CIDRAM->Configuration['hcaptcha']['hcaptcha_log']);
+            $this->CIDRAM->logRotation($this->CIDRAM->Configuration['captcha']['hcaptcha_log']);
         }
     }
 
@@ -293,7 +293,7 @@ class HCaptcha extends Captcha
     private function doResponse(): void
     {
         $this->Results = $this->CIDRAM->Request->request('https://api.hcaptcha.com/siteverify', [
-            'secret' => $this->CIDRAM->Configuration['hcaptcha']['secret'],
+            'secret' => $this->CIDRAM->Configuration['captcha']['hcaptcha_secret'],
             'response' => $_POST['hc-response'],
             'remoteip' => $this->CIDRAM->ipAddr
         ]);
@@ -315,12 +315,12 @@ class HCaptcha extends Captcha
         }
 
         $this->CIDRAM->CIDRAM['FieldTemplates']['captcha_api_include'] = $this->generateCallbackData(
-            $this->CIDRAM->Configuration['hcaptcha']['sitekey'],
-            $this->CIDRAM->Configuration['hcaptcha']['api']
+            $this->CIDRAM->Configuration['captcha']['hcaptcha_sitekey'],
+            $this->CIDRAM->Configuration['captcha']['api']['hcaptcha']
         );
         $this->CIDRAM->CIDRAM['FieldTemplates']['captcha_div_include'] = $this->generateTemplateData(
-            $this->CIDRAM->Configuration['hcaptcha']['sitekey'],
-            $this->CIDRAM->Configuration['hcaptcha']['api'],
+            $this->CIDRAM->Configuration['captcha']['hcaptcha_sitekey'],
+            $this->CIDRAM->Configuration['captcha']['api']['hcaptcha'],
             $CookieWarn,
             $ApiMessage
         );

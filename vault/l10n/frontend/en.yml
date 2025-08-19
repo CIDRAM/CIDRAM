@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2025.08.14).
+# This file: English language data for the front-end (last modified: 2025.08.16).
 ##/
 
 Abuse category:
@@ -157,6 +157,19 @@ config:
  bunnycdn_positive_action: "Which action should CIDRAM perform when it encounters a request from BunnyCDN? Default action = Bypass."
  bypasses: "Default signature bypasses configuration."
  bypasses_used: "Which bypasses should be used?"
+ captcha: "Configuration for CAPTCHAs (provides a way for humans to regain access when blocked)."
+ captcha_api: "Which API to use?"
+ captcha_expiry: "Number of hours to remember CAPTCHA instances. Default = 720 (1 month)."
+ captcha_hcaptcha_log: "Log all CAPTCHA attempts? If yes, specify the name to use for the log file. If no, leave this variable blank."
+ captcha_hcaptcha_secret: &CaptchaDashboard "This value can be found in the dashboard for your CAPTCHA service."
+ captcha_hcaptcha_sitekey: *CaptchaDashboard
+ captcha_messages: "Messages to be displayed alongside CAPTCHAs."
+ captcha_lockto: "What to lock CAPTCHAs to."
+ captcha_nonblocked_status_code: "Which status code should be used when displaying CAPTCHAs to non-blocked requests?"
+ captcha_signature_limit: "Maximum number of signatures allowed before the CAPTCHA offer is withdrawn. Default = 1."
+ captcha_usemode:
+  en-AU: "When should CAPTCHAs be offered? You can specify the preferred behaviour for each supported provider here. Note: Whitelisted or verified and non-blocked requests never need to complete a CAPTCHA. Also note: CAPTCHAs can provide a useful, additional layer of protection against bots and various kinds of malicious automated requests, but won't provide any protection against a malicious human."
+  en-US: "When should CAPTCHAs be offered? You can specify the preferred behavior for each supported provider here. Note: Whitelisted or verified and non-blocked requests never need to complete a CAPTCHA. Also note: CAPTCHAs can provide a useful, additional layer of protection against bots and various kinds of malicious automated requests, but won't provide any protection against a malicious human."
  components:
   en-AU: "Configuration for the activation and the deactivation of the components used by CIDRAM. Typically populated by the updates page, but can also be managed from here for finer control and for custom components not recognised by the updates page."
   [en-CA, en-US]: "Configuration for the activation and the deactivation of the components used by CIDRAM. Typically populated by the updates page, but can also be managed from here for finer control and for custom components not recognized by the updates page."
@@ -219,19 +232,6 @@ config:
  general_time_format: "The date/time notation format used by CIDRAM. Additional options may be added upon request."
  general_time_offset: "Timezone offset in minutes."
  general_timezone: "This is used to specify the timezone to use (e.g., Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, etc). Specify "SYSTEM" to let PHP handle this for you automatically."
- hcaptcha: "Configuration for hCaptcha (provides a way for humans to regain access when blocked)."
- hcaptcha_api: &CaptchaAPI "Which API to use?"
- hcaptcha_expiry: &CaptchaExpiry "Number of hours to remember CAPTCHA instances. Default = 720 (1 month)."
- hcaptcha_hcaptcha_log: &CaptchaLogFile "Log all CAPTCHA attempts? If yes, specify the name to use for the log file. If no, leave this variable blank."
- hcaptcha_lockip: &CaptchaLockIP "Lock CAPTCHA to IPs?"
- hcaptcha_lockuser: &CaptchaLockUser "Lock CAPTCHA to users?"
- hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "Which status code should be used when displaying CAPTCHAs to non-blocked requests?"
- hcaptcha_secret: &CaptchaDashboard "This value can be found in the dashboard for your CAPTCHA service."
- hcaptcha_show_api_message: &ShowAPIMessage "Show API message? True = Yes [Default]; False = No."
- hcaptcha_show_cookie_warning: &ShowCookieWarning "Show cookie warning? True = Yes [Default]; False = No."
- hcaptcha_signature_limit: &CaptchaSignatureLimit "Maximum number of signatures allowed before the CAPTCHA offer is withdrawn. Default = 1."
- hcaptcha_sitekey: *CaptchaDashboard
- hcaptcha_usemode: &CaptchaUseMode "When should the CAPTCHA be offered? Note: Whitelisted or verified and non-blocked requests never need to complete a CAPTCHA. Also note: CAPTCHAs can provide a useful, additional layer of protection against bots and various kinds of malicious automated requests, but won't provide any protection against a malicious human."
  ipapi: "Configuration for the IP-API module (provides an ASN and country code lookup facility for CIDRAM)."
  ipapi_blocked_asns: *ConfigBlockedASNs
  ipapi_blocked_ccs: *ConfigBlockedCCs
@@ -558,7 +558,7 @@ label:
  %s signature:
   - "%s signature"
   - "%s signatures"
- 200 OK: "200 OK\nLeast robust, but most user-friendly. Automated requests will most likely interpret this response as indication that the request was successful."
+ 200 OK: "200 OK\nLeast robust, but most user-friendly. Automated requests will most likely interpret this response as indication that the request was successful. Recommended for non-blocked requests."
  301 Moved Permanently: "301 Moved Permanently\nInstructs the client that the redirect is PERMANENT, and that the request method used for the redirect MAY be different than the request method used for the initial request."
  302 Found: "302 Found\nInstructs the client that the redirect is TEMPORARY, and that the request method used for the redirect MAY be different than the request method used for the initial request."
  307 Temporary Redirect: "307 Temporary Redirect\nInstructs the client that the redirect is TEMPORARY, and that the request method used for the redirect may NOT be different than the request method used for the initial request."
@@ -640,6 +640,9 @@ label:
  Latest stable: "Latest stable:"
  Latest unstable: "Latest unstable:"
  Loading_: "Loading..."
+ Lock CAPTCHAs to the IP address of the user completing the CAPTCHA but not to the actual user: "Lock CAPTCHAs to the IP address of the user completing the CAPTCHA but not to the actual user.\nCookies are NOT used to identify users. When access is regained due to the successful completion of a CAPTCHA, it applies to anyone connecting from the same IP address."
+ Lock CAPTCHAs to the user completing the CAPTCHA as well as to their IP address: "Lock CAPTCHAs to the user completing the CAPTCHA as well as to their IP address.\nCookies are used to identify users. When access is regained due to the successful completion of a CAPTCHA, it applies only to the user completing the CAPTCHA, and won't persist if their IP address changes."
+ Lock CAPTCHAs to the user completing the CAPTCHA but not to their IP address: "Lock CAPTCHAs to the user completing the CAPTCHA but not to their IP address.\nCookies are used to identify users. When access is regained due to the successful completion of a CAPTCHA, it applies only to the user completing the CAPTCHA, and as long as their cookie remains valid, will persist, even if their IP address changes."
  Logged in, 2FA pending: "Logged in, 2FA pending."
  Logged in: "Logged in."
  Logged out: "Logged out."
@@ -685,6 +688,8 @@ label:
  Search Engine: "Search Engine"
  See also: "See also:"
  Selected log file doesn_t exist: "Selected log file doesn't exist!"
+ Show API message: "Show API message?\nInstructions to the user, appropriate to the API used, regarding the completion of the CAPTCHA."
+ Show cookie warning: "Show cookie warning?\nDepending on the privacy laws of your country or state (e.g., GDPR/DSGVO in the EU, LGPD in Brazil, etc), this may be legally required."
  Show: "Show"
  Signature type: "Signature type:"
  Simple: "Simple"

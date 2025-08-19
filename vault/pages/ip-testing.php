@@ -267,10 +267,10 @@ if (isset($_POST['ip-addr'])) {
         if (isset($this->CIDRAM['ThisStatusHTTP'])) {
             $this->CIDRAM['ThisIP']['YesNo'] .= '<br />' . $this->L10N->getString('field.Status code') . $this->L10N->getString('pair_separator') . $this->CIDRAM['ThisStatusHTTP'];
         }
-        if (!empty($this->Configuration['hcaptcha']['enabled'])) {
+        if (!empty($this->Configuration['captcha']['enabled'])) {
             $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label.aux.Mark for use with hCaptcha');
         }
-        if (!empty($this->Configuration['hcaptcha']['forcibly_disabled'])) {
+        if (!empty($this->Configuration['captcha']['forcibly_disabled'])) {
             $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label.aux.Forcibly disable hCaptcha');
         }
         if (!empty($this->CIDRAM['Suppress output template'])) {

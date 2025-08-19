@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2025.08.14).
+# This file: Portuguese language data for the front-end (last modified: 2025.08.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -191,6 +191,17 @@ config:
  bunnycdn_positive_action: "Qual ação o CIDRAM deve executar quando encontrar uma solicitação do BunnyCDN? Ação padrão = Contornar."
  bypasses: "Configuração para o bypass das assinaturas padrão."
  bypasses_used: "Quais bypass devem ser usados?"
+ captcha: "Configuração para CAPTCHAs (fornece uma maneira para os humanos recuperarem o acesso quando bloqueados)."
+ captcha_api: "Qual API usar?"
+ captcha_expiry: "Número de horas para lembrar instâncias CAPTCHA. Padrão = 720 (1 mês)."
+ captcha_hcaptcha_log: {"pt-BR": "Registrar todas as tentativas de CAPTCHA? Se sim, especificar o nome a ser usado para o arquivo de log. Se não, deixe esta variável em branco.", "pt-PT": "Registar todas as tentativas de CAPTCHA? Se sim, especificar o nome a utilizar para o arquivo de log. Se não, deixe esta variável em branco."}
+ captcha_hcaptcha_secret: &CaptchaDashboard "Este valor pode ser encontrado no painel do seu serviço CAPTCHA."
+ captcha_hcaptcha_sitekey: *CaptchaDashboard
+ captcha_messages: "Mensagens a serem exibidas junto com CAPTCHAs."
+ captcha_lockto: "A que ligar CAPTCHAs."
+ captcha_nonblocked_status_code: "Qual código de status deve ser usado ao exibir CAPTCHAs para solicitações não bloqueadas?"
+ captcha_signature_limit: "O número máximo de assinaturas permitidas antes que o CAPTCHA seja retirado. Padrão = 1."
+ captcha_usemode: "Quando devem ser oferecidos os CAPTCHAs? Você pode especificar o comportamento preferido para cada provedor suportado aqui. Nota: Solicitações na lista branca ou verificadas e não bloqueadas nunca precisam completar um CAPTCHA. Também: Os CAPTCHAs podem fornecer uma camada de proteção útil contra bots e vários tipos de solicitações automatizadas e maliciosas, mas não fornecerão nenhuma proteção contra humanos maliciosas."
  components: "Configuração para ativação e desativação dos componentes utilizados pelo CIDRAM. Normalmente preenchido pela página de atualizações, mas também pode ser gerenciado aqui para um controle mais preciso e para componentes personalizados não reconhecidos pela página de atualizações."
  components_events: "Manipuladores de eventos. Normalmente usado para modificar a maneira como o CIDRAM se comporta internamente ou para fornecer funcionalidade adicional."
  components_imports: "Importações. Normalmente usado para fornecer informações de configuração de um componente ao CIDRAM."
@@ -275,19 +286,6 @@ config:
  general_timezone:
   pt-BR: "Isso é usado para especificar o fuso horário a ser usado (por exemplo, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, etc). Especifique "SYSTEM" para permitir que o PHP lide com isso automaticamente."
   pt-PT: "Isto é utilizado para especificar o fuso horário a utilizar (por exemplo, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, etc). Especifique "SYSTEM" para permitir que o PHP lide com isto automaticamente."
- hcaptcha: "Configuração para hCaptcha (fornece uma maneira para os humanos recuperarem o acesso quando bloqueados)."
- hcaptcha_api: &CaptchaAPI "Qual API usar?"
- hcaptcha_expiry: &CaptchaExpiry "Número de horas para lembrar instâncias CAPTCHA. Padrão = 720 (1 mês)."
- hcaptcha_hcaptcha_log: &CaptchaLogFile {"pt-BR": "Registrar todas as tentativas de CAPTCHA? Se sim, especificar o nome a ser usado para o arquivo de log. Se não, deixe esta variável em branco.", "pt-PT": "Registar todas as tentativas de CAPTCHA? Se sim, especificar o nome a utilizar para o arquivo de log. Se não, deixe esta variável em branco."}
- hcaptcha_lockip: &CaptchaLockIP "Ligar CAPTCHA para IPs?"
- hcaptcha_lockuser: &CaptchaLockUser {"pt-BR": "Ligar CAPTCHA para os usuários?", "pt-PT": "Ligar CAPTCHA para os utilizadores?"}
- hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "Qual código de status deve ser usado ao exibir CAPTCHAs para solicitações não bloqueadas?"
- hcaptcha_secret: &CaptchaDashboard "Este valor pode ser encontrado no painel do seu serviço CAPTCHA."
- hcaptcha_show_api_message: &ShowAPIMessage "Mostrar mensagem API? True = Sim [Padrão]; False = Não."
- hcaptcha_show_cookie_warning: &ShowCookieWarning "Mostrar aviso de cookie? True = Sim [Padrão]; False = Não."
- hcaptcha_signature_limit: &CaptchaSignatureLimit "O número máximo de assinaturas permitidas antes que o CAPTCHA seja retirado. Padrão = 1."
- hcaptcha_sitekey: *CaptchaDashboard
- hcaptcha_usemode: &CaptchaUseMode "Quando o CAPTCHA deve ser oferecido? Nota: Solicitações na lista branca ou verificadas e não bloqueadas nunca precisam completar um CAPTCHA. Também: Os CAPTCHAs podem fornecer uma camada de proteção útil contra bots e vários tipos de solicitações automatizadas e maliciosas, mas não fornecerão nenhuma proteção contra humanos maliciosas."
  ipapi: "Configuração para o módulo IP-API (fornece um recurso de pesquisa de código de país e ASN para CIDRAM)."
  ipapi_blocked_asns: *ConfigBlockedASNs
  ipapi_blocked_ccs: *ConfigBlockedCCs
@@ -375,7 +373,9 @@ config:
  rate_limiting_segregate: "As cotas para diferentes domínios e hosts devem ser segregadas ou compartilhadas? True = As cotas serão segregadas. False = As cotas serão compartilhadas [Padrão]."
  sfs: "Configuração para o módulo Stop Forum Spam."
  signatures: "Configuração para assinaturas, arquivos de assinatura, módulos, etc."
- signatures_conflict_response: "Quando há muitas tentativas simultâneas de acessar os mesmos recursos (por exemplo, solicitações simultâneas para vários processos PHP na mesma máquina para os mesmos recursos), algumas dessas tentativas podem falhar. No caso raro e improvável de isso afetar arquivos de assinatura ou módulos, o CIDRAM pode ser impedido de tomar uma decisão efetiva sobre a solicitação. Se isso acontecer, a solicitação deve ser bloqueada, e qual mensagem de status HTTP o CIDRAM deve enviar?"
+ signatures_conflict_response:
+  pt-BR: "Quando há muitas tentativas simultâneas de acessar os mesmos recursos (por exemplo, solicitações simultâneas para vários processos PHP na mesma máquina para os mesmos recursos), algumas dessas tentativas podem falhar. No caso raro e improvável de isso afetar arquivos de assinatura ou módulos, o CIDRAM pode ser impedido de tomar uma decisão efetiva sobre a solicitação. Se isso acontecer, a solicitação deve ser bloqueada, e qual mensagem de status HTTP o CIDRAM deve enviar?"
+  pt-PT: "Quando existem muitas tentativas simultâneas de aceder aos mesmos recursos (por exemplo, solicitações simultâneos para vários processos PHP na mesma máquina para os mesmos recursos), algumas destas tentativas podem falhar. No caso raro e improvável de isto afetar arquivos de assinatura ou módulos, o CIDRAM pode ser impedido de tomar uma decisão eficaz sobre o solicitação. Se isto acontecer, a solicitação deve ser bloqueado, e qual a mensagem de estado HTTP que o CIDRAM deve enviar?"
  signatures_default_tracktime: "A duração pela qual os endereços IP devem ser rastreados. Padrão = 7d0°0′0″ (1 semana)."
  signatures_infraction_limit: "Número máximo de infrações que um IP pode incorrer antes de ser banido por monitoração IP. Padrão = 10."
  signatures_shorthand: "Controla o que fazer com uma solicitação quando há uma correspondência positiva com uma assinatura que utiliza as palavras curtas fornecidas."
@@ -535,14 +535,14 @@ hints_shorthand:
   pt-PT: "Nenhum dos arquivos de assinatura padrão usa isso, mas é suportado mesmo assim, caso possa ser útil para alguns utilizadores."
  2.:
   pt-BR: "Se você precisar que os usuários possam acessar seu site por meio de proxies, não bloqueie isso. Caso contrário, você pode bloquear isso."
-  pt-PT: "Se você precisar que os utilizadores possam acessar o seu site por meio de proxies, não bloqueie isso. Caso contrário, você pode bloquear isso."
+  pt-PT: "Se você precisar que os utilizadores possam aceder ao seu site por meio de proxies, não bloqueie isso. Caso contrário, você pode bloquear isso."
  3.: "O uso direto em assinaturas não é suportado, mas pode ser invocado por outros meios em circunstâncias específicas."
  4.: "Refere-se aos casos em que as palavras curtas não são usadas, ou não são reconhecidas pelo CIDRAM."
  Um por assinatura.: "Uma assinatura pode invocar vários perfis, mas pode usar apenas uma palavra curta. É possível que várias palavras curtas podem ser adequadas, mas como apenas uma pode ser usada, procuramos sempre usar apenas a mais adequada."
  Prioridade.: "Uma opção selecionada sempre tem prioridade sobre uma opção não selecionada. Por exemplo, se várias palavras curtas estiverem em jogo, mas apenas uma delas estiver definida como bloqueada, a solicitação ainda será bloqueada."
  Pontos finais humanos e serviços em nuvem.:
   pt-BR: "O serviço em nuvem pode se referir a provedores de hospedagem na web, farms de servidores, data centers, ou uma série de coisas diferentes. Ponto final humano refere-se ao meio pelo qual um humano acessa a internet, como por meio de um provedor de serviços de internet. Uma rede geralmente fornece apenas um ou outro, mas às vezes pode fornecer ambos. Visamos nunca identificar pontos finais humanos potenciais como serviços em nuvem. Portanto, um serviço de nuvem pode ser identificado como outra coisa se seu alcance for compartilhado por pontos finais humanos conhecidos. Vice versa, visamos sempre identificar serviços em nuvem, cujos alcances não são compartilhados por nenhum ponto final humano conhecido, como serviços em nuvem. Portanto, uma solicitação identificada explicitamente como um serviço de nuvem provavelmente não compartilha seu alcances com nenhum pontos finais humanos conhecidos. Da mesma forma, uma solicitação identificada explicitamente por ataques ou risco de spam provavelmente os compartilha. No entanto, a internet está sempre em fluxo, os propósitos das redes mudam ao longo do tempo, e os alcances estão sempre sendo comprados ou vendidos, portanto, permaneça ciente e vigilante em relação a falsos positivos."
-  pt-PT: "O serviço em nuvem pode se referir a provedores de hospedagem na web, farms de servidores, data centers, ou uma série de coisas diferentes. Ponto final humano refere-se ao meio pelo qual um humano acessa a internet, como por meio de um provedor de serviços de internet. Uma rede geralmente fornece apenas um ou outro, mas às vezes pode fornecer ambos. Visamos nunca identificar pontos finais humanos potenciais como serviços em nuvem. Portanto, um serviço de nuvem pode ser identificado como outra coisa se o seu alcance for compartilhado por pontos finais humanos conhecidos. Vice versa, visamos sempre identificar serviços em nuvem, cujos alcances não são compartilhados por nenhum ponto final humano conhecido, como serviços em nuvem. Portanto, uma solicitação identificada explicitamente como um serviço de nuvem provavelmente não compartilha o seu alcances com nenhum pontos finais humanos conhecidos. Da mesma forma, uma solicitação identificada explicitamente por ataques ou risco de spam provavelmente os compartilha. No entanto, a internet está sempre em fluxo, os propósitos das redes mudam ao longo do tempo, e os alcances estão sempre sendo comprados ou vendidos, portanto, permaneça ciente e vigilante em relação a falsos positivos."
+  pt-PT: "O serviço na nuvem pode referir-se a provedores de alojamento web, server farms, data centers, ou uma série de coisas diferentes. Ponto final humano refere-se ao meio pelo qual um humano acede à internet, como por meio de um provedor de serviços de internet. Uma rede geralmente fornece apenas um ou outro, mas às vezes pode fornecer ambos. Visamos nunca identificar pontos finais humanos potenciais como serviços em nuvem. Portanto, um serviço de nuvem pode ser identificado como outra coisa se o seu alcance for compartilhado por pontos finais humanos conhecidos. Vice versa, visamos sempre identificar serviços em nuvem, cujos alcances não são compartilhados por nenhum ponto final humano conhecido, como serviços em nuvem. Portanto, uma solicitação identificada explicitamente como um serviço de nuvem provavelmente não compartilha o seu alcances com nenhum pontos finais humanos conhecidos. Da mesma forma, uma solicitação identificada explicitamente por ataques ou risco de spam provavelmente os compartilha. No entanto, a internet está sempre em fluxo, os propósitos das redes mudam ao longo do tempo, e os alcances estão sempre sendo comprados ou vendidos, portanto, permaneça ciente e vigilante em relação a falsos positivos."
 hints_time_format: |
  <strong><em>Espaço reservado – Explicação – Exemplo baseado em 2024-04-30T18:27:49+08:00.</em></strong><br />
  <code class="s">{yyyy}</code> – O ano – Por exemplo, 2024.<br />
@@ -671,7 +671,7 @@ label:
  %s signature:
   - "%s assinatura"
   - "%s assinaturas"
- 200 OK: "200 OK\nMenos robusto, mas mais amigável de usar. As solicitações automatizadas provavelmente interpretarão essa resposta como indicação de que a solicitação foi bem-sucedida."
+ 200 OK: "200 OK\nMenos robusto, mas mais amigável de usar. As solicitações automatizadas provavelmente interpretarão essa resposta como indicação de que a solicitação foi bem-sucedida. Recomendado para solicitações não bloqueadas."
  301 Moved Permanently: "301 Moved Permanently (Movido Permanentemente)\nInstrui o cliente que o redirecionamento é PERMANENTE, e que o método de solicitação usado para o redirecionamento PODE ser diferente do método de solicitação usado na solicitação inicial."
  302 Found: "302 Found (Encontrado)\nInstrui o cliente que o redirecionamento é TEMPORÁRIO, e que o método de solicitação usado para o redirecionamento PODE ser diferente do método de solicitação usado na solicitação inicial."
  307 Temporary Redirect: "307 Temporary Redirect (Redirecionamento Temporário)\nInstrui o cliente que o redirecionamento é TEMPORÁRIO, e que o método de solicitação usado para o redirecionamento NÃO pode ser diferente do método de solicitação usado para a solicitação inicial."
@@ -753,6 +753,15 @@ label:
  Latest stable: "Mais novo de estável:"
  Latest unstable: "Mais novo de instável:"
  Loading_: "Carregando..."
+ Lock CAPTCHAs to the IP address of the user completing the CAPTCHA but not to the actual user:
+  pt-BR: "Ligue CAPTCHAs ao endereço IP do usuário que está completando o CAPTCHA, mas não ao usuário real.\nOs cookies NÃO são usados para identificar usuários. Quando o acesso é recuperado devido à conclusão bem-sucedida de um CAPTCHA, ele se aplica a qualquer pessoa que se conecte a partir do mesmo endereço IP."
+  pt-PT: "Ligue CAPTCHAs ao endereço IP do utilizador que está a completar o CAPTCHA, mas não ao utilizador real.\nOs cookies NÃO são utilizados para identificar utilizadores. Quando o acesso é recuperado devido à conclusão bem-sucedida de um CAPTCHA, aplica-se a qualquer pessoa que se conecte a partir do mesmo endereço IP."
+ Lock CAPTCHAs to the user completing the CAPTCHA as well as to their IP address:
+  pt-BR: "Ligue os CAPTCHAs ao usuário completando o CAPTCHA, bem como ao seu endereço IP.\nOs cookies são usados para identificar usuários. Quando o acesso é recuperado devido à conclusão bem-sucedida de um CAPTCHA, ele se aplica somente ao usuário que concluiu o CAPTCHA e não persistirá se seu endereço IP for alterado."
+  pt-PT: "Ligue os CAPTCHAs ao utilizador que está a completar o CAPTCHA, bem como ao seu endereço IP.\nOs cookies são utilizados para identificar os utilizadores. Quando o acesso é recuperado devido à conclusão bem-sucedida de um CAPTCHA, aplica-se apenas ao utilizador que concluiu o CAPTCHA e não persistirá se o seu endereço IP for alterado."
+ Lock CAPTCHAs to the user completing the CAPTCHA but not to their IP address:
+  pt-BR: "Ligue os CAPTCHAs ao usuário completando o CAPTCHA, mas não ao seu endereço IP.\nOs cookies são usados para identificar usuários. Quando o acesso é recuperado devido à conclusão bem-sucedida de um CAPTCHA, ele se aplica somente ao usuário que concluiu o CAPTCHA e, enquanto seu cookie permanecer válido, persistirá, mesmo que seu endereço IP seja alterado."
+  pt-PT: "Ligue os CAPTCHAs ao utilizador que está a completar o CAPTCHA, mas não ao seu endereço IP.\nOs cookies são utilizados para identificar os utilizadores. Quando o acesso é recuperado devido à conclusão bem-sucedida de um CAPTCHA, aplica-se apenas ao utilizador que concluiu o CAPTCHA e, enquanto o seu cookie permanecer válido, persistirá, mesmo que o seu endereço IP seja alterado."
  Logged in, 2FA pending: "Conectado, 2FA pendentes."
  Logged in: "Conectado."
  Logged out: "Desconectado."
@@ -798,6 +807,10 @@ label:
  Search Engine: "Motor de pesquisa"
  See also: "Veja também:"
  Selected log file doesn_t exist: "O arquivo de log selecionado não existe!"
+ Show API message:
+  pt-BR: "Mostrar mensagem API?\nInstruções ao usuário, adequadas à API utilizada, sobre a completando do CAPTCHA."
+  pt-PT: "Mostrar mensagem API?\nInstruções ao utilizador, adequadas à API utilizada, sobre a completando do CAPTCHA."
+ Show cookie warning: "Mostrar aviso de cookie?\nDependendo das leis de privacidade do seu país ou estado (por exemplo, GDPR/DSGVO na UE, LGPD no Brasil, etc), isso pode ser legalmente exigido."
  Show: "Mostrar"
  Signature type: "Tipo de assinatura:"
  Simple: "Simples"
@@ -1002,7 +1015,7 @@ response:
  Directory successfully renamed: "Diretório renomeado com sucesso!"
  Don_t know what to do with the data after reading it: "Não sei o que fazer com os dados depois de lê-los.\nConsidere encadeá-lo a outro comando. Obrigado."
  Error at the upstream: "Erro no upstream!"
- Failed to access %s: "Falha ao acessar "%s"!"
+ Failed to access %s: {"pt-BR": "Falha ao acessar "%s"!", "pt-PT": "Falha ao aceder ao "%s"!"}
  Failed to activate: "Falha ao ativar!"
  Failed to create: "Criação falhada!"
  Failed to deactivate: "Falha ao desativar!"
@@ -1170,7 +1183,9 @@ time_years_from_now:
  - "%s anos a partir de agora"
 tip:
  2FA Sent: "Um e-mail contendo um código de autenticação de dois fatores foi enviado para o seu endereço de e-mail. Por favor, confirme este código abaixo para obter acesso ao front-end. Se você não recebeu este e-mail, tente fazer logout, aguarde 10 minutos, e faça login novamente para receber um novo e-mail contendo um novo código."
- Accounts: "A página de contas permite que você controle quem pode acessar o CIDRAM front-end."
+ Accounts:
+  pt-BR: "A página de contas permite que você controle quem pode acessar o CIDRAM front-end."
+  pt-PT: "A página de contas permite que você controle quem pode aceder ao CIDRAM front-end."
  Aggregator: "O agregador permite que você expresse IPs, CIDRs, e máscaras de rede da maneira mais pequena possível. Insira os dados a serem agregados e pressione "OK"."
  Auxiliary Rules Modes: "O modo de visualização exibe regras auxiliares como uma lista compacta para facilitar a leitura. As regras na lista podem ser expandidas e mais detalhes podem ser exibidos clicando nelas. Opções para exportar ou excluir uma regra serão mostradas ao clicar no trigrama (☰). As regras podem ser reordenadas por meio de arrastar e soltar, arrastando uma regra de sua posição existente para a posição desejada. O modo de edição é necessário para modificar regras auxiliares, campos editáveis ​​e opções para adicionar novas condições, webhooks, ou outra lógica às regras conforme necessário fornecidas na página. Novas regras auxiliares podem ser criadas por meio de qualquer modo."
  Auxiliary Rules Priority: "Prioridade (altíssima➡(igual🔄equivalente)➡baixíssima):"
@@ -1234,7 +1249,9 @@ tip:
 warning:
  API_Rate_Limited: "Atenção: O acesso à API %s parece ser atualmente limitado por taxa."
  Cookies: "Nota: CIDRAM usa um cookie para autenticar logins. Ao efetuar o login, você dá seu consentimento para que um cookie seja criado e armazenado pelo seu navegador."
- Editing PHP files: "Atenção: Algumas soluções de segurança de hospedagem na web são conhecidas por banir automaticamente endereços IP ao detectar tags PHP em solicitações (por exemplo, ao modificar arquivos PHP por meio de um navegador). O CIDRAM não tem como saber se o seu serviço de hospedagem na web usa tal solução de segurança. Para evitar tais problemas, é recomendado não editar arquivos PHP dessa forma quando possível."
+ Editing PHP files:
+  pt-BR: "Atenção: Algumas soluções de segurança de hospedagem na web são conhecidas por banir automaticamente endereços IP ao detectar tags PHP em solicitações (por exemplo, ao modificar arquivos PHP por meio de um navegador). O CIDRAM não tem como saber se seu serviço de hospedagem na web usa tal solução de segurança. Para evitar tais problemas, é recomendado não editar arquivos PHP dessa forma quando possível."
+  pt-PT: "Atenção: Algumas soluções de segurança de alojamento web são conhecidas por banir automaticamente os endereços IP ao detetar tags PHP em solicitações (por exemplo, ao modificar arquivos PHP por meio de um navegador). O CIDRAM não tem forma de saber se o seu serviço de alojamento web utiliza tal solução de segurança. Para evitar tais problemas, é recomendado não editar arquivos PHP desta forma quando possível."
  IP tests are disabled: "Atenção: Os testes de IP estão desabilitados! Os arquivos de assinatura não podem ser utilizados até que isso seja resolvido."
  JavaScript required: "Atenção: Algumas funcionalidades do front-end requerem JavaScript. Para garantir que todo o front-end se comporte conforme o esperado, é recomendável ativar o JavaScript."
  Likely to be overwritten:

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2025.08.14).
+# This file: Polish language data for the front-end (last modified: 2025.08.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -161,6 +161,17 @@ config:
  bunnycdn_positive_action: "Jakie działanie powinien wykonać CIDRAM, gdy napotka żądanie od BunnyCDN? Akcja domyślna = Obejść."
  bypasses: "Konfiguracja domyślnego obejścia podpisu."
  bypasses_used: "Jakich obwodnic należy użyć?"
+ captcha: "Konfiguracja dla CAPTCHA (zapewnia ludziom możliwość odzyskania dostępu po zablokowaniu)."
+ captcha_api: "Którego interfejsu API użyć?"
+ captcha_expiry: "Liczba godzin do zapamiętania instancji CAPTCHA. Domyślna = 720 (1 miesiąc)."
+ captcha_hcaptcha_log: "Zalogować wszystkie próby CAPTCHA? Jeśli tak, podaj nazwę pliku do logowania. Jeśli nie, pozostaw tę zmienną pustą."
+ captcha_hcaptcha_secret: &CaptchaDashboard "Wartość tę można znaleźć na pulpicie nawigacyjnym usługi CAPTCHA."
+ captcha_hcaptcha_sitekey: *CaptchaDashboard
+ captcha_messages: "Wiadomości wyświetlane obok testów CAPTCHA."
+ captcha_lockto: "Do czego powiązać CAPTCHA."
+ captcha_nonblocked_status_code: "Którego kodu stanu należy używać podczas wyświetlania CAPTCHA dla niezablokowanych żądań?"
+ captcha_signature_limit: "Maksymalna liczba podpisów dozwolona przed wycofaniem oferty CAPTCHA. Domyślna = 1."
+ captcha_usemode: "Kiedy należy oferować testy CAPTCHA? Tutaj możesz określić preferowane zachowanie dla każdego dostawcy. Uwaga: Umieszczone na białej liście lub zweryfikowane i niezablokowane żądania nigdy nie muszą kończyć CAPTCHA. Uwaga również: CAPTCHA mogą zapewnić użyteczną, dodatkową warstwę ochrony przed botami i różnymi rodzajami złośliwych automatycznych żądań, ale nie zapewnią żadnej ochrony przed złośliwym człowiekiem."
  components: "Konfiguracja do aktywacji i dezaktywacji komponentów używanych przez CIDRAM. Zwykle wypełniana przez stronę aktualizacji, ale można nią również zarządzać z tego miejsca, aby uzyskać lepszą kontrolę i niestandardowe komponenty, które nie są rozpoznawane przez stronę aktualizacji."
  components_events: "Obsługa zdarzeń. Zwykle używany do modyfikowania wewnętrznego zachowania pamięci CIDRAM lub w celu zapewnienia dodatkowej funkcjonalności."
  components_imports: "Import. Zwykle używany do dostarczania informacji o konfiguracji komponentu do pamięci CIDRAM."
@@ -215,19 +226,6 @@ config:
  general_time_format: "Format notacja daty/godziny używany przez CIDRAM. Dodatkowe opcje mogą być dodane na życzenie."
  general_time_offset: "Przesunięcie strefy czasowej w minutach."
  general_timezone: "Służy do określania używanej strefy czasowej (na przykład, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, itp). Podaj „SYSTEM”, aby PHP mógł to zrobić automatycznie."
- hcaptcha: "Konfiguracja hCaptcha (zapewnia ludziom możliwość odzyskania dostępu po zablokowaniu)."
- hcaptcha_api: &CaptchaAPI "Którego interfejsu API użyć?"
- hcaptcha_expiry: &CaptchaExpiry "Liczba godzin do zapamiętania instancji CAPTCHA. Domyślna = 720 (1 miesiąc)."
- hcaptcha_hcaptcha_log: &CaptchaLogFile "Zalogować wszystkie próby CAPTCHA? Jeśli tak, podaj nazwę pliku do logowania. Jeśli nie, pozostaw tę zmienną pustą."
- hcaptcha_lockip: &CaptchaLockIP "Przywiąż CAPTCHA do adresów IP?"
- hcaptcha_lockuser: &CaptchaLockUser "Przywiąż CAPTCHA z użytkownikami?"
- hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "Którego kodu stanu należy używać podczas wyświetlania CAPTCHA dla niezablokowanych żądań?"
- hcaptcha_secret: &CaptchaDashboard "Wartość tę można znaleźć na pulpicie nawigacyjnym usługi CAPTCHA."
- hcaptcha_show_api_message: &ShowAPIMessage "Pokaż komunikat API? True (Prawdziwe) = Tak [Domyślna]; False (Fałszywy) = Nie."
- hcaptcha_show_cookie_warning: &ShowCookieWarning "Pokaż ostrzeżenie o plikach cookie? True (Prawdziwe) = Tak [Domyślna]; False (Fałszywy) = Nie."
- hcaptcha_signature_limit: &CaptchaSignatureLimit "Maksymalna liczba podpisów dozwolona przed wycofaniem oferty CAPTCHA. Domyślna = 1."
- hcaptcha_sitekey: *CaptchaDashboard
- hcaptcha_usemode: &CaptchaUseMode "Kiedy należy oferować CAPTCHA? Uwaga: Umieszczone na białej liście lub zweryfikowane i niezablokowane żądania nigdy nie muszą kończyć CAPTCHA. Uwaga również: CAPTCHA mogą zapewnić użyteczną, dodatkową warstwę ochrony przed botami i różnymi rodzajami złośliwych automatycznych żądań, ale nie zapewnią żadnej ochrony przed złośliwym człowiekiem."
  ipapi: "Konfiguracja dla modułu IP-API (zapewnia funkcjonalność wyszukiwania ASN i kodu kraju dla CIDRAM)."
  ipapi_blocked_asns: *ConfigBlockedASNs
  ipapi_blocked_ccs: *ConfigBlockedCCs
@@ -537,7 +535,7 @@ label:
   - "%s podpis"
   - "%s podpisy"
   - "%s podpisów"
- 200 OK: "200 OK\nNajmniej solidny, ale najbardziej przyjazny dla użytkownika. Zautomatyzowane żądania najprawdopodobniej zinterpretują tę odpowiedź jako wskazanie, że żądanie zakończyło się powodzeniem."
+ 200 OK: "200 OK\nNajmniej solidny, ale najbardziej przyjazny dla użytkownika. Zautomatyzowane żądania najprawdopodobniej zinterpretują tę odpowiedź jako wskazanie, że żądanie zakończyło się powodzeniem. Zalecane w przypadku żądań niezablokowanych."
  301 Moved Permanently: "301 Moved Permanently (Trwale przeniesiony)\nInstruuje klienta, że przekierowanie jest STAŁE, oraz że metoda żądania użyta do przekierowania MOŻE być inna niż metoda żądania użyta do pierwotnego żądania."
  302 Found: "302 Found (Znaleziono)\nInstruuje klienta, że przekierowanie jest TYMCZASOWE, oraz że metoda żądania użyta do przekierowania MOŻE być inna niż metoda żądania użyta do pierwotnego żądania."
  307 Temporary Redirect: "307 Temporary Redirect (Tymczasowe przekierowanie)\nInstruuje klienta, że przekierowanie jest TYMCZASOWE, oraz że metoda żądania użyta do przekierowania NIE może być inna niż metoda żądania użyta do pierwotnego żądania."
@@ -621,6 +619,9 @@ label:
  Latest stable: "Najnowsza stabilna:"
  Latest unstable: "Najnowsza niestabilna:"
  Loading_: "Ładowanie..."
+ Lock CAPTCHAs to the IP address of the user completing the CAPTCHA but not to the actual user: "Powiąż CAPTCHA z adresem IP użytkownika wypełniającego CAPTCHA, ale nie z samym użytkownikiem.\nPliki cookie NIE służą do identyfikacji użytkowników. Gdy dostęp zostanie odzyskany dzięki pomyślnemu wypełnieniu CAPTCHA, dotyczy to wszystkich osób łączących się z tego samego adresu IP."
+ Lock CAPTCHAs to the user completing the CAPTCHA as well as to their IP address: "Powiąż CAPTCHA z użytkownikiem wypełniającego CAPTCHA, a także z jego adresem IP.\nPliki cookie służą do identyfikacji użytkowników. Gdy dostęp zostanie odzyskany dzięki pomyślnemu wypełnieniu CAPTCHA, dotyczy to tylko użytkownika który wypełnił CAPTCHA, i nie zostanie utrzymany jeśli zmieni się jego adres IP."
+ Lock CAPTCHAs to the user completing the CAPTCHA but not to their IP address: "Powiąż CAPTCHA z użytkownikiem wypełniającego CAPTCHA, ale nie z jego adresem IP.\nPliki cookie służą do identyfikacji użytkowników. Gdy dostęp zostanie odzyskany dzięki pomyślnemu wypełnieniu CAPTCHA, dotyczy to tylko użytkownika który wypełnił CAPTCHA, i będzie obowiązywać tak długo, jak długo jego plik cookie pozostanie ważny, nawet jeśli jego adres IP ulegnie zmianie."
  Logged in, 2FA pending: "Zalogowany, oczekuje na potwierdzenie 2FA."
  Logged in: "Zalogowany."
  Logged out: "Wylogowano."
@@ -666,6 +667,8 @@ label:
  Search Engine: "Wyszukiwarka"
  See also: "Zobacz też:"
  Selected log file doesn_t exist: "Wybrany plik dziennika nie istnieje!"
+ Show API message: "Pokaż komunikat API?\nInstrukcje dla użytkownika dotyczące wypełniania CAPTCHA, odpowiednie dla używanego interfejsu API."
+ Show cookie warning: "Pokaż ostrzeżenie o plikach cookie?\nW zależności od przepisów dotyczących prywatności obowiązujących w Twoim kraju lub stanie (np., GDPR/DSGVO/RODO w UE, LGPD w Brazylii, itp), może to być wymagane prawnie."
  Show: "Pokaż"
  Signature type: "Rodzaj podpisu:"
  Simple: "Prosty"

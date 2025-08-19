@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2025.08.14).
+# This file: Turkish language data for the front-end (last modified: 2025.08.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -161,6 +161,17 @@ config:
  bunnycdn_positive_action: "CIDRAM, BunnyCDN'den bir istekle karşılaştığında hangi eylemi gerçekleştirmelidir? Varsayılan aksiyon = Atlayın."
  bypasses: "Varsayılan imza bypass için yapılandırma."
  bypasses_used: "Hangi bypasslar kullanılmalıdır?"
+ captcha: "CAPTCHA'lar için yapılandırma (engellendiğinde insanlara erişimi yeniden kazanmaları için bir yol sağlar)."
+ captcha_api: "Hangi API'yı kullanacaksınız?"
+ captcha_expiry: "CAPTCHA örneklerini hatırlamak için saat sayısı. Varsayılan = 720 (1 ay)."
+ captcha_hcaptcha_log: "Tüm CAPTCHA denemelerini günlüğe yaz? Yanıt evet ise, günlük dosyası için kullanılacak adı belirtin. Yanıt hayır ise, bu değişkeni boş bırakın."
+ captcha_hcaptcha_secret: &CaptchaDashboard "Bu değer, CAPTCHA hizmetinizin kontrol panelinde bulunabilir."
+ captcha_hcaptcha_sitekey: *CaptchaDashboard
+ captcha_messages: "CAPTCHA'ların yanında görüntülenecek mesajlar."
+ captcha_lockto: "CAPTCHA'ları neye kilitlemeliyiz."
+ captcha_nonblocked_status_code: "Engellenmemiş isteklere CAPTCHA'lar görüntülenirken hangi durum kodu kullanılmalıdır?"
+ captcha_signature_limit: "CAPTCHA teklifi geri çekilmeden önce izin verilen maksimum imza sayısı. Varsayılan = 1."
+ captcha_usemode: "CAPTCHA'lar ne zaman sunulmalıdır? Burada desteklenen her sağlayıcı için tercih edilen davranışı belirtebilirsiniz. Not: Beyaz listeye alınmış veya doğrulanmış ve engellenmemiş isteklerin hiçbir zaman bir CAPTCHA tamamlaması gerekmez. Ayrıca not edin: CAPTCHA'lar, botlara ve çeşitli kötü niyetli otomatik isteklere karşı yararlı ek bir koruma katmanı sağlayabilir, ancak kötü niyetli insanlar karşı herhangi bir koruma sağlamaz."
  components: "CIDRAM tarafından kullanılan bileşenlerin etkinleştirilmesi ve devre dışı bırakılması için yapılandırma. Genellikle güncelleme sayfası tarafından doldurulur, ancak daha hassas kontrol ve güncelleme sayfası tarafından tanınmayan özel bileşenler için buradan da yönetilebilir."
  components_events: "Etkinlik sahipleri. Normalde CIDRAM'ın dahili olarak çalışma şeklini değiştirmek veya ek işlevsellik sağlamak için kullanılır."
  components_imports: "İthalat. Normalde bir bileşenin yapılandırma bilgilerini CIDRAM'a sağlamak için kullanılır."
@@ -215,19 +226,6 @@ config:
  general_time_format: "CIDRAM tarafından kullanılan tarih/saat gösterimi biçimi. İsteğe bağlı olarak ek seçenekler eklenebilir."
  general_time_offset: "Dakika cinsinden zaman dilimi farkı."
  general_timezone: "Kullanılacak saat dilimini belirtir (örneğin, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, vb). PHP'nin bunu sizin için otomatik olarak yapmasına izin vermek için "SYSTEM" i belirtin."
- hcaptcha: "HCaptcha için yapılandırma (engellendiğinde insanlara erişimi yeniden kazanmaları için bir yol sağlar)."
- hcaptcha_api: &CaptchaAPI "Hangi API'yı kullanacaksınız?"
- hcaptcha_expiry: &CaptchaExpiry "CAPTCHA örneklerini hatırlamak için saat sayısı. Varsayılan = 720 (1 ay)."
- hcaptcha_hcaptcha_log: &CaptchaLogFile "Tüm CAPTCHA denemelerini günlüğe yaz? Yanıt evet ise, günlük dosyası için kullanılacak adı belirtin. Yanıt hayır ise, bu değişkeni boş bırakın."
- hcaptcha_lockip: &CaptchaLockIP "CAPTCHA'yı IP'lere kilitle?"
- hcaptcha_lockuser: &CaptchaLockUser "CAPTCHA kullanıcılara kilitle?"
- hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "Engellenmemiş isteklere CAPTCHA'lar görüntülenirken hangi durum kodu kullanılmalıdır?"
- hcaptcha_secret: &CaptchaDashboard "Bu değer, CAPTCHA hizmetinizin kontrol panelinde bulunabilir."
- hcaptcha_show_api_message: &ShowAPIMessage "API mesajı göster? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
- hcaptcha_show_cookie_warning: &ShowCookieWarning "Çerez uyarısını göster? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
- hcaptcha_signature_limit: &CaptchaSignatureLimit "CAPTCHA teklifi geri çekilmeden önce izin verilen maksimum imza sayısı. Varsayılan = 1."
- hcaptcha_sitekey: *CaptchaDashboard
- hcaptcha_usemode: &CaptchaUseMode "CAPTCHA ne zaman sunulmalı? Not: Beyaz listeye alınmış veya doğrulanmış ve engellenmemiş isteklerin hiçbir zaman bir CAPTCHA tamamlaması gerekmez. Ayrıca not edin: CAPTCHA'lar, botlara ve çeşitli kötü niyetli otomatik isteklere karşı yararlı ek bir koruma katmanı sağlayabilir, ancak kötü niyetli insanlar karşı herhangi bir koruma sağlamaz."
  ipapi: "IP-API modülü için yapılandırma (CIDRAM için bir ASN ve ülke kodu arama olanağı sağlar)."
  ipapi_blocked_asns: *ConfigBlockedASNs
  ipapi_blocked_ccs: *ConfigBlockedCCs
@@ -528,7 +526,7 @@ label:
  %s is available: "%s mevcuttur."
  %s is not available: "%s mevcut değil."
  %s signature: "%s dosya"
- 200 OK: "200 OK (Tamam)\nEn az sağlam, ancak en kullanıcı dostu. Otomatik istekler, büyük olasılıkla bu yanıtı, isteğin başarılı olduğunun göstergesi olarak yorumlayacaktır."
+ 200 OK: "200 OK (Tamam)\nEn az sağlam, ancak en kullanıcı dostu. Otomatik istekler, büyük olasılıkla bu yanıtı, isteğin başarılı olduğunun göstergesi olarak yorumlayacaktır. Engellenmeyen istekler için önerilir."
  301 Moved Permanently: "301 Moved Permanently (Kalıcı Olarak Taşındı)\nİstemciye yönlendirmenin KALICI olduğunu söyler. Yönlendirme ve ilk isteğin istek yöntemleri farklı OLABİLİR."
  302 Found: "302 Found (Kurmak)\nİstemciye yönlendirmenin GEÇİCİ olduğunu söyler. Yönlendirme ve ilk isteğin istek yöntemleri farklı OLABİLİR."
  307 Temporary Redirect: "307 Temporary Redirect (Geçici Yönlendirme)\nİstemciye yönlendirmenin GEÇİCİ olduğunu söyler. Yönlendirme ve ilk isteğin istek yöntemleri farklı OLMAYABİLİR."
@@ -610,6 +608,9 @@ label:
  Latest stable: "En yeni kararlı:"
  Latest unstable: "En yeni kararsız:"
  Loading_: "Yükleniyor..."
+ Lock CAPTCHAs to the IP address of the user completing the CAPTCHA but not to the actual user: "CAPTCHA'ları, CAPTCHA'yı tamamlayan kullanıcının IP adresine kilitleyin, ancak gerçek kullanıcıya kilitlemeyin.\nÇerezler kullanıcıları tanımlamak için KULLANILMAZ. Bir CAPTCHA'nın başarıyla tamamlanması sonucunda erişim tekrar sağlandığında, bu erişim aynı IP adresinden bağlanan herkes için geçerli olur."
+ Lock CAPTCHAs to the user completing the CAPTCHA as well as to their IP address: "CAPTCHA'ları, hem CAPTCHA'yı tamamlayan kullanıcıya hem de kullanıcının IP adresine kilitleyin.\nÇerezler kullanıcıları tanımlamak için kullanılır. Bir CAPTCHA'nın başarıyla tamamlanması sonucunda erişim tekrar sağlandığında, bu yalnızca CAPTCHA'yı tamamlayan kullanıcı için geçerli olur ve kullanıcının IP adresi değişirse sona erecektir."
+ Lock CAPTCHAs to the user completing the CAPTCHA but not to their IP address: "CAPTCHA'ları, CAPTCHA'yı tamamlayan kullanıcıya kilitleyin ancak IP adresine kilitlemeyin.\nÇerezler kullanıcıları tanımlamak için kullanılır. Bir CAPTCHA'nın başarıyla tamamlanması sonucunda erişim tekrar sağlandığında, bu yalnızca CAPTCHA'yı tamamlayan kullanıcı için geçerli olur ve çerezleri geçerli kaldığı sürece, IP adresleri değişse bile varlığını sürdürür."
  Logged in, 2FA pending: "Giriş yapıldı, 2FA beklemede."
  Logged in: "Giriş yapıldı."
  Logged out: "Çıkış yapıldı."
@@ -655,6 +656,8 @@ label:
  Search Engine: "Arama motoru"
  See also: "Ayrıca bakınız:"
  Selected log file doesn_t exist: "Seçilen günlük dosyası yok!"
+ Show API message: "API mesajı göster?\nKullanılan API'ye uygun olarak, CAPTCHA'nın tamamlanmasına ilişkin kullanıcıya verilen talimatlar."
+ Show cookie warning: "Çerez uyarısını göster?\nÜlkenizin veya eyaletinizin gizlilik yasalarına bağlı olarak (örneğin, AB'de GDPR/DSGVO, Brezilya'da LGPD, vb), bu yasal olarak gerekli olabilir."
  Show: "Göstermek"
  Signature type: "İmza tipi:"
  Simple: "Basit"

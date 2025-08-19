@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2025.08.14).
+# This file: Swedish language data for the front-end (last modified: 2025.08.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -161,6 +161,17 @@ config:
  bunnycdn_positive_action: "Vilken åtgärd ska CIDRAM utföra när det stöter på en begäran från BunnyCDN? Standardåtgärd = Bypassera."
  bypasses: "Konfiguration för standard-signatur-bypasserna."
  bypasses_used: "Vilka bypasser ska användas?"
+ captcha: "Konfiguration för CAPTCHA-er (ger ett sätt för människor att återfå åtkomst när de blockeras)."
+ captcha_api: "Vilket API ska användas?"
+ captcha_expiry: "Antal timmar för att komma ihåg CAPTCHA-instanser. Standard = 720 (1 månad)."
+ captcha_hcaptcha_log: "Logga in alla CAPTCHA-försök? Om ja, ange det namn som ska användas för loggfilen. Om nej, lämna denna variabel tom."
+ captcha_hcaptcha_secret: &CaptchaDashboard "Det här värdet finns i instrumentpanelen för din CAPTCHA-tjänst."
+ captcha_hcaptcha_sitekey: *CaptchaDashboard
+ captcha_messages: "Meddelanden som ska visas tillsammans med CAPTCHA-er."
+ captcha_lockto: "Vad man ska låsa CAPTCHA-er till."
+ captcha_nonblocked_status_code: "Vilken statuskod ska användas när CAPTCHAs visas för icke-blockerade förfrågningar?"
+ captcha_signature_limit: "Maximalt antal signaturer tillåtna innan CAPTCHA-erbjudandet dras tillbaka. Standard = 1."
+ captcha_usemode: "När bör CAPTCHA-er erbjudas? Du kan ange önskat beteende för varje leverantör som stöds här. Obs: Vitlistade eller verifierade och icke-blockerade förfrågningar behöver aldrig slutföra en CAPTCHA. Också: CAPTCHA-ar kan ge ett användbart, ytterligare skydd mot bots och olika typer av illvilliga automatiska förfrågningar, men ger inget skydd mot illvilliga människor."
  components: "Konfiguration för aktivering och avaktivering av komponenterna som används av CIDRAM. Fylls vanligtvis av uppdateringssidan, men kan också hanteras härifrån för bättre kontroll och för anpassade komponenter som inte känns igen av uppdateringssidan."
  components_events: "Händelsehanterare. Används vanligtvis för att modifiera hur CIDRAM beter sig internt eller för att tillhandahålla ytterligare funktionalitet."
  components_imports: "Importer. Används vanligtvis för att tillhandahålla en komponents konfigurationsinformation till CIDRAM."
@@ -215,19 +226,6 @@ config:
  general_time_format: "Datum/tid notationsformat som används av CIDRAM. Ytterligare alternativ kan läggas till på begäran."
  general_time_offset: "Tidszonen kompenseras i minuter."
  general_timezone: "Detta används för att specificera den tidszon som ska användas (t.ex., Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, osv). Ange "SYSTEM" för att låta PHP hantera detta åt dig automatiskt."
- hcaptcha: "Konfiguration för hCaptcha (ger ett sätt för människor att återfå åtkomst när de blockeras)."
- hcaptcha_api: &CaptchaAPI "Vilket API ska användas?"
- hcaptcha_expiry: &CaptchaExpiry "Antal timmar för att komma ihåg CAPTCHA-instanser. Standard = 720 (1 månad)."
- hcaptcha_hcaptcha_log: &CaptchaLogFile "Logga in alla CAPTCHA-försök? Om ja, ange det namn som ska användas för loggfilen. Om nej, lämna denna variabel tom."
- hcaptcha_lockip: &CaptchaLockIP "Låsa CAPTCHA till IP-adresser?"
- hcaptcha_lockuser: &CaptchaLockUser "Låsa CAPTCHA till användare?"
- hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "Vilken statuskod ska användas när CAPTCHAs visas för icke-blockerade förfrågningar?"
- hcaptcha_secret: &CaptchaDashboard "Det här värdet finns i instrumentpanelen för din CAPTCHA-tjänst."
- hcaptcha_show_api_message: &ShowAPIMessage "Inkludera API-meddelande? True = Ja [Standard]; False = Nej."
- hcaptcha_show_cookie_warning: &ShowCookieWarning "Inkludera cookievarning? True = Ja [Standard]; False = Nej."
- hcaptcha_signature_limit: &CaptchaSignatureLimit "Maximalt antal signaturer tillåtna innan CAPTCHA-erbjudandet dras tillbaka. Standard = 1."
- hcaptcha_sitekey: *CaptchaDashboard
- hcaptcha_usemode: &CaptchaUseMode "När ska CAPTCHA erbjudas? Obs: Vitlistade eller verifierade och icke-blockerade förfrågningar behöver aldrig slutföra en CAPTCHA. Också: CAPTCHA-ar kan ge ett användbart, ytterligare skydd mot bots och olika typer av illvilliga automatiska förfrågningar, men ger inget skydd mot illvilliga människor."
  ipapi: "Konfiguration för IP-API-modulen (tillhandahåller en ASN- och landskodsökningsfunktion för CIDRAM)."
  ipapi_blocked_asns: *ConfigBlockedASNs
  ipapi_blocked_ccs: *ConfigBlockedCCs
@@ -534,7 +532,7 @@ label:
  %s signature:
   - "%s signatur"
   - "%s signaturer"
- 200 OK: "200 OK\nMinst robust, men mest användarvänlig. Automatiserade förfrågningar kommer med största sannolikhet att tolka detta svar som en indikation på att begäran lyckades."
+ 200 OK: "200 OK\nMinst robust, men mest användarvänlig. Automatiserade förfrågningar kommer med största sannolikhet att tolka detta svar som en indikation på att begäran lyckades. Rekommenderas för icke-blockerade förfrågningar."
  301 Moved Permanently: "301 Moved Permanently (Flyttad permanent)\nInstruerar klienten att omdirigeringen är PERMANENT, och att förfrågningsmetoden som används för omdirigeringen KAN vara annorlunda än den förfrågningsmetod som användes för den initiala begäran."
  302 Found: "302 Found (Hittades)\nInstruerar klienten att omdirigeringen är TILLFÄLLIG, och att förfrågningsmetoden som används för omdirigeringen KAN vara annorlunda än den förfrågningsmetod som användes för den initiala begäran."
  307 Temporary Redirect: "307 Temporary Redirect (Tillfällig omdirigering)\nInstruerar klienten att omdirigeringen är TILLFÄLLIG, och att förfrågningsmetoden som används för omdirigeringen INTE får vara annorlunda än den förfrågningsmetod som användes för den initiala begäran."
@@ -616,6 +614,9 @@ label:
  Latest stable: "Senaste stabila:"
  Latest unstable: "Senaste instabil:"
  Loading_: "Laddar..."
+ Lock CAPTCHAs to the IP address of the user completing the CAPTCHA but not to the actual user: "Lås CAPTCHA-er till IP-adressen för användaren som fyller i CAPTCHA-n, men inte till den faktiska användaren.\nCookies används INTE för att identifiera användare. När åtkomst återfås på grund av att en CAPTCHA har slutförts, gäller det alla som ansluter från samma IP-adress."
+ Lock CAPTCHAs to the user completing the CAPTCHA as well as to their IP address: "Lås CAPTCHA-er till användaren som fyller i CAPTCHA-n samt till deras IP-adress.\nCookies används för att identifiera användare. När åtkomst återfås på grund av att en CAPTCHA har slutförts, gäller det endast för användaren som slutför CAPTCHA-n och kommer inte att finnas kvar om deras IP-adress ändras."
+ Lock CAPTCHAs to the user completing the CAPTCHA but not to their IP address: "Lås CAPTCHA-er till användaren som fyller i CAPTCHA-n, men inte till deras IP-adress.\nCookies används för att identifiera användare. När åtkomst återfås på grund av att en CAPTCHA har slutförts, gäller det endast för användaren som slutför CAPTCHA-n, och så länge deras cookie förblir giltig kommer den att finnas kvar, även om deras IP-adress ändras."
  Logged in, 2FA pending: "Inloggad, 2FA väntar."
  Logged in: "Inloggad."
  Logged out: "Utloggad."
@@ -661,6 +662,8 @@ label:
  Search Engine: "Sökmotor"
  See also: "Se även:"
  Selected log file doesn_t exist: "Vald loggfil existerar inte!"
+ Show API message: "Inkludera API-meddelande?\nInstruktioner till användaren, relevanta för det använda API-et, angående ifyllande av CAPTCHA."
+ Show cookie warning: "Inkludera cookievarning?\nBeroende på sekretesslagarna i ditt land eller din delstat (t.ex., GDPR/DSGVO i EU, LGPD i Brasilien, osv), kan detta vara ett lagstadgat krav."
  Show: "Visa"
  Signature type: "Signaturtyp:"
  Simple: "Enkel"

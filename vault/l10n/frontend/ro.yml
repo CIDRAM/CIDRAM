@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Romanian language data for the front-end (last modified: 2025.08.14).
+# This file: Romanian language data for the front-end (last modified: 2025.08.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -161,6 +161,17 @@ config:
  bunnycdn_positive_action: "Ce acțiune ar trebui să efectueze CIDRAM atunci când întâlnește o solicitare de la BunnyCDN? Acțiune implicită = Bypass."
  bypasses: "Configurația pentru bypass semnăturii implicite."
  bypasses_used: "Ce bypass-uri ar trebui folosite?"
+ captcha: "Configurarea pentru CAPTCHA-uri (oferă o modalitate prin care oamenii să-și recapete accesul atunci când sunt blocați)."
+ captcha_api: "Ce API să folosești?"
+ captcha_expiry: "Numărul de ore pentru a vă aminti instanțele CAPTCHA. Implicit = 720 (1 lună)."
+ captcha_hcaptcha_log: "Înregistrați toate încercările CAPTCHA? Dacă da, specificați numele de utilizat pentru fișierul jurnal. Dacă nu, lăsați această variabilă necompletată."
+ captcha_hcaptcha_secret: &CaptchaDashboard "Această valoare poate fi găsită în tabloul de bord pentru serviciul dvs. CAPTCHA."
+ captcha_hcaptcha_sitekey: *CaptchaDashboard
+ captcha_messages: "Mesaje care vor fi afișate alături de CAPTCHA-uri."
+ captcha_lockto: "La ce să legați CAPTCHA-urile."
+ captcha_nonblocked_status_code: "Ce cod de stare ar trebui folosit când se afișează CAPTCHA la solicitările neblocate?"
+ captcha_signature_limit: "Numărul maxim de semnături permis înainte ca oferta CAPTCHA să fie retrasă. Implicit = 1."
+ captcha_usemode: "Când ar trebui oferite CAPTCHA-urile? Puteți specifica aici comportamentul preferat pentru fiecare furnizor acceptat. Notă: Solicitările incluse în lista albă sau verificate și neblocate nu trebuie să completeze niciodată un CAPTCHA. De asemenea, rețineți: CAPTCHA-urile pot oferi un strat suplimentar util de protecție împotriva roboților și a diferitelor tipuri de solicitări automate rău intenționate, dar nu vor oferi nicio protecție împotriva unui om rău intenționat."
  components: "Configurare pentru activarea si dezactivarea componentelor utilizate de CIDRAM. De obicei populat de pagina de actualizări, dar poate fi gestionat și de aici pentru un control mai fin și pentru componente personalizate nerecunoscute de pagina de actualizări."
  components_events: "Manageri de evenimente. Utilizat de obicei pentru a modifica modul în care CIDRAM se comportă intern sau pentru a oferi funcționalități suplimentare."
  components_imports: "Importurile. Utilizat de obicei pentru a furniza informații de configurare a unei componente către CIDRAM."
@@ -215,19 +226,6 @@ config:
  general_time_format: "Formatul de notație dată/ora utilizat de CIDRAM. Opțiuni suplimentare pot fi adăugate la cerere."
  general_time_offset: "Compensarea fusului orar în minute."
  general_timezone: "Acesta este folosit pentru a specifica fusul orar de utilizat (de exemplu, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, etc). Specificați „SISTEM” pentru a lăsa PHP să se ocupe de asta în mod automat."
- hcaptcha: "Configurare pentru hCaptcha (oferă o modalitate prin care oamenii să-și recapete accesul atunci când sunt blocați)."
- hcaptcha_api: &CaptchaAPI "Ce API să folosești?"
- hcaptcha_expiry: &CaptchaExpiry "Numărul de ore pentru a vă aminti instanțele CAPTCHA. Implicit = 720 (1 lună)."
- hcaptcha_hcaptcha_log: &CaptchaLogFile "Înregistrați toate încercările CAPTCHA? Dacă da, specificați numele de utilizat pentru fișierul jurnal. Dacă nu, lăsați această variabilă necompletată."
- hcaptcha_lockip: &CaptchaLockIP "Conectați CAPTCHA la IP-uri?"
- hcaptcha_lockuser: &CaptchaLockUser "Conectați CAPTCHA la utilizatori?"
- hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "Ce cod de stare ar trebui folosit când se afișează CAPTCHA la solicitările neblocate?"
- hcaptcha_secret: &CaptchaDashboard "Această valoare poate fi găsită în tabloul de bord pentru serviciul dvs. CAPTCHA."
- hcaptcha_show_api_message: &ShowAPIMessage "Afișați mesajul API? True = Da [Implicit]; False = Nu."
- hcaptcha_show_cookie_warning: &ShowCookieWarning "Afișați avertisment privind cookie-urile? True = Da [Implicit]; False = Nu."
- hcaptcha_signature_limit: &CaptchaSignatureLimit "Numărul maxim de semnături permis înainte ca oferta CAPTCHA să fie retrasă. Implicit = 1."
- hcaptcha_sitekey: *CaptchaDashboard
- hcaptcha_usemode: &CaptchaUseMode "Când ar trebui să fie oferit CAPTCHA? Notă: Solicitările incluse în lista albă sau verificate și neblocate nu trebuie să completeze niciodată un CAPTCHA. De asemenea, rețineți: CAPTCHA-urile pot oferi un strat suplimentar util de protecție împotriva roboților și a diferitelor tipuri de solicitări automate rău intenționate, dar nu vor oferi nicio protecție împotriva unui om rău intenționat."
  ipapi: "Configurare pentru modulul IP-API (oferă o facilitate de căutare ASN și cod de țară pentru CIDRAM)."
  ipapi_blocked_asns: *ConfigBlockedASNs
  ipapi_blocked_ccs: *ConfigBlockedCCs
@@ -541,7 +539,7 @@ label:
   - "%s semnătură"
   - "%s semnături"
   - "%s de semnături"
- 200 OK: "200 OK\nCel mai puțin robust, dar cel mai ușor de utilizat. Solicitările automate vor interpreta cel mai probabil acest răspuns ca o indicație că solicitărea a avut succes."
+ 200 OK: "200 OK\nCel mai puțin robust, dar cel mai ușor de utilizat. Solicitările automate vor interpreta cel mai probabil acest răspuns ca o indicație că solicitărea a avut succes. Recomandat pentru solicitări neblocate."
  301 Moved Permanently: "301 Moved Permanently (Mutat permanent)\nInstruiește clientul că redirecționarea este PERMANENTĂ, și că metoda de solicitare utilizată pentru redirecționare POATE fi diferită de metoda de solicitare utilizată pentru solicitărea inițială."
  302 Found: "302 Found (Găsit)\nInstruiește clientul că redirecționarea este TEMPORARĂ, și că metoda de solicitare utilizată pentru redirecționare POATE fi diferită de metoda de solicitare utilizată pentru solicitărea inițială."
  307 Temporary Redirect: "307 Temporary Redirect (Redirecționare temporară)\nInstruiește clientul că redirecționarea este TEMPORARĂ, și că metoda de solicitare utilizată pentru redirecționare NU poate fi diferită de metoda de solicitare utilizată pentru solicitărea inițială."
@@ -625,6 +623,9 @@ label:
  Latest stable: "Ultima stabilă:"
  Latest unstable: "Ultima instabilă:"
  Loading_: "Se încarcă..."
+ Lock CAPTCHAs to the IP address of the user completing the CAPTCHA but not to the actual user: "Legați CAPTCHA-urile la adresa IP a utilizatorului care completează CAPTCHA-ul, dar nu la utilizatorul real.\nCookie-urile NU sunt folosite pentru identificarea utilizatorilor. Când accesul este redobândit datorită completării cu succes a unui CAPTCHA, acesta se aplică oricărei persoane care se conectează de la aceeași adresă IP."
+ Lock CAPTCHAs to the user completing the CAPTCHA as well as to their IP address: "Legați CAPTCHA-urile la utilizatorul care completează CAPTCHA-ul, precum și la adresa sa IP.\nCookie-urile sunt folosite pentru a identifica utilizatorii. Când accesul este redobândit datorită completării cu succes a unui CAPTCHA, acesta se aplică numai utilizatorului care completează CAPTCHA-ul și nu va persista dacă adresa IP a acestuia se modifică."
+ Lock CAPTCHAs to the user completing the CAPTCHA but not to their IP address: "Legați CAPTCHA-urile la utilizatorul care completează CAPTCHA-ul, dar nu la adresa sa IP.\nCookie-urile sunt folosite pentru a identifica utilizatorii. Când accesul este redobândit datorită completării cu succes a unui CAPTCHA, acesta se aplică numai utilizatorului care completează CAPTCHA-ul și, atâta timp cât cookie-ul său rămâne valid, va persista, chiar dacă adresa sa IP se schimbă."
  Logged in, 2FA pending: "Conectat, 2FA în așteptare."
  Logged in: "Conectat."
  Logged out: "Deconectat."
@@ -670,6 +671,8 @@ label:
  Search Engine: "Motor de căutare"
  See also: "Vezi si:"
  Selected log file doesn_t exist: "Fișierul jurnal selectat nu există!"
+ Show API message: "Afișați mesajul API?\nInstrucțiuni pentru utilizator, corespunzătoare API-ului utilizat, privind completarea CAPTCHA-ului."
+ Show cookie warning: "Afișați avertisment privind cookie-urile?\nÎn funcție de legile privind confidențialitatea datelor din țara sau statul dumneavoastră (de exemplu, GDPR/DSGVO în UE, LGPD în Brazilia, etc), acest lucru poate fi impus prin lege."
  Show: "Afișați"
  Signature type: "Tipul semnăturii:"
  Simple: "Simplu"

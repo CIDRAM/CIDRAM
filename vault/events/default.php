@@ -268,8 +268,8 @@ $this->Events->addHandler('isLogFile', function (): void {
     if ($this->Configuration['frontend']['frontend_log'] !== '') {
         $this->CIDRAM['LogPatterns'][] = $this->buildLogPattern($this->Configuration['frontend']['frontend_log'], true);
     }
-    if ($this->Configuration['hcaptcha']['hcaptcha_log'] !== '') {
-        $this->CIDRAM['LogPatterns'][] = $this->buildLogPattern($this->Configuration['hcaptcha']['hcaptcha_log'], true);
+    if ($this->Configuration['captcha']['hcaptcha_log'] !== '') {
+        $this->CIDRAM['LogPatterns'][] = $this->buildLogPattern($this->Configuration['captcha']['hcaptcha_log'], true);
     }
 });
 

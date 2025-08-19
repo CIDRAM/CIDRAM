@@ -28,9 +28,6 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         return;
     }
 
-    /** Unmarks for use with hCaptcha. */
-    $UnmarkCaptcha = ['hcaptcha' => ['usemode' => 0, 'forcibly_disabled' => true]];
-
     $UA = str_replace('\\', '/', strtolower(urldecode($this->BlockInfo['UA'])));
     $UANoSpace = preg_replace('/\s/', '', $UA);
 
@@ -78,8 +75,9 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
     $this->trigger(strpos($UA, 'select ') !== false, 'UASQLi'); // 2017.02.25
 
-    if ($this->trigger(strpos($UANoSpace, 'captch') !== false, 'CAPTCHA cracker UA', '', $UnmarkCaptcha)) {
+    if ($this->trigger(strpos($UANoSpace, 'captch') !== false, 'CAPTCHA cracker UA', '')) {
         $this->Reporter->report([19], ['CAPTCHA cracker detected.'], $this->BlockInfo['IPAddr']);
+        $this->enactOptions('', ['ForciblyDisableHCaptcha' => true]);
     } // 2017.01.08 mod 2021.04.29
 
     $this->trigger(preg_match(

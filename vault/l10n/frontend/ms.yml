@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malay language data for the front-end (last modified: 2025.08.14).
+# This file: Malay language data for the front-end (last modified: 2025.08.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -161,6 +161,17 @@ config:
  bunnycdn_positive_action: "Tindakan manakah yang perlu CIDRAM lakukan apabila ia menghadapi permintaan daripada BunnyCDN? Tindakan lalai = Memintasnya."
  bypasses: "Konfigurasi untuk pintasan tandatangan lalai."
  bypasses_used: "Pintasan mana yang harus digunakan?"
+ captcha: "Konfigurasi untuk CAPTCHA (menyediakan cara untuk manusia mendapatkan semula akses apabila disekat)."
+ captcha_api: "API mana yang hendak digunakan?"
+ captcha_expiry: "Jumlah jam untuk mengingati kejadian CAPTCHA. Lalai = 720 (1 bulan)."
+ captcha_hcaptcha_log: "Log semua percubaan CAPTCHA? Jika ya, nyatakan nama yang akan digunakan untuk fail log. Jika tidak, biarkan pembolehubah ini kosong."
+ captcha_hcaptcha_secret: &CaptchaDashboard "Nilai ini boleh didapati dalam papan pemuka untuk perkhidmatan CAPTCHA anda."
+ captcha_hcaptcha_sitekey: *CaptchaDashboard
+ captcha_messages: "Mesej untuk dipaparkan bersama CAPTCHA."
+ captcha_lockto: "Dimana mengunci CAPTCHA."
+ captcha_nonblocked_status_code: "Kod status yang manakah harus digunakan semasa Paparkan CAPTCHA kepada permintaan yang tidak disekat?"
+ captcha_signature_limit: "Jumlah maksimum tandatangan yang dibenarkan sebelum tawaran CAPTCHA ditarik. Lalai = 1."
+ captcha_usemode: "Bila CAPTCHA harus ditawarkan? Anda boleh menentukan tingkah laku yang disukai untuk setiap penyedia yang disokong disini. Perhatian: Permintaan yang disenarai putih atau disahkan dan tidak disekat tidak perlu melengkapkan CAPTCHA. Juga ambil perhatian: CAPTCHA boleh memberikan lapisan perlindungan tambahan yang berguna terhadap bot dan pelbagai jenis permintaan automatik yang berniat jahat, tetapi tidak akan memberikan sebarang perlindungan terhadap manusia yang berniat jahat."
  components: "Konfigurasi untuk pengaktifan dan penyahaktifan komponen yang digunakan oleh CIDRAM. Biasanya diisi oleh halaman kemas kini, tetapi juga boleh diuruskan dari sini untuk kawalan yang lebih halus dan untuk komponen tersuai yang tidak dikenali oleh halaman kemas kini."
  components_events: "Pengendali acara. Biasanya digunakan untuk mengubah suai cara CIDRAM berkelakuan secara dalaman atau untuk menyediakan kefungsian tambahan."
  components_imports: "Import. Biasanya digunakan untuk membekalkan maklumat konfigurasi komponen kepada CIDRAM."
@@ -215,19 +226,6 @@ config:
  general_time_format: "Format notasi tarikh/masa yang digunakan oleh CIDRAM. Pilihan tambahan boleh ditambah atas permintaan."
  general_time_offset: "Zon waktu diimbangi dalam minit."
  general_timezone: "Ini digunakan untuk menentukan zon waktu yang akan digunakan (cth., Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, dll). Tentukan "SISTEM" untuk membenarkan PHP mengendalikan ini untuk anda secara automatik."
- hcaptcha: "Konfigurasi untuk hCaptcha (menyediakan cara untuk manusia mendapatkan semula akses apabila disekat)."
- hcaptcha_api: &CaptchaAPI "API mana yang hendak digunakan?"
- hcaptcha_expiry: &CaptchaExpiry "Jumlah jam untuk mengingati kejadian CAPTCHA. Lalai = 720 (1 bulan)."
- hcaptcha_hcaptcha_log: &CaptchaLogFile "Log semua percubaan CAPTCHA? Jika ya, nyatakan nama yang akan digunakan untuk fail log. Jika tidak, biarkan pembolehubah ini kosong."
- hcaptcha_lockip: &CaptchaLockIP "Kunci CAPTCHA kepada IP?"
- hcaptcha_lockuser: &CaptchaLockUser "Kunci CAPTCHA kepada pengguna?"
- hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "Kod status yang manakah harus digunakan semasa Paparkan CAPTCHA kepada permintaan yang tidak disekat?"
- hcaptcha_secret: &CaptchaDashboard "Nilai ini boleh didapati dalam papan pemuka untuk perkhidmatan CAPTCHA anda."
- hcaptcha_show_api_message: &ShowAPIMessage "Tunjukkan mesej API? True = Ya [Lalai]; False = Tidak."
- hcaptcha_show_cookie_warning: &ShowCookieWarning "Tunjukkan amaran kuki? True = Ya [Lalai]; False = Tidak."
- hcaptcha_signature_limit: &CaptchaSignatureLimit "Jumlah maksimum tandatangan yang dibenarkan sebelum tawaran CAPTCHA ditarik. Lalai = 1."
- hcaptcha_sitekey: *CaptchaDashboard
- hcaptcha_usemode: &CaptchaUseMode "Bilakah CAPTCHA perlu ditawarkan? Perhatian: Permintaan yang disenarai putih atau disahkan dan tidak disekat tidak perlu melengkapkan CAPTCHA. Juga ambil perhatian: CAPTCHA boleh memberikan lapisan perlindungan tambahan yang berguna terhadap bot dan pelbagai jenis permintaan automatik yang berniat jahat, tetapi tidak akan memberikan sebarang perlindungan terhadap manusia yang berniat jahat."
  ipapi: "Konfigurasi untuk modul IP-API (menyediakan kemudahan carian ASN dan kod negara untuk CIDRAM)."
  ipapi_blocked_asns: *ConfigBlockedASNs
  ipapi_blocked_ccs: *ConfigBlockedCCs
@@ -530,7 +528,7 @@ label:
  %s is available: "%s tersedia."
  %s is not available: "%s tidak tersedia."
  %s signature: "%s tandatangan"
- 200 OK: "200 OK\nPaling tidak teguh, tetapi paling mesra-pengguna. Permintaan automatik kemungkinan besar akan mentafsirkan respons ini sebagai petunjuk bahawa permintaan berjaya."
+ 200 OK: "200 OK\nPaling tidak teguh, tetapi paling mesra-pengguna. Permintaan automatik kemungkinan besar akan mentafsirkan respons ini sebagai petunjuk bahawa permintaan berjaya. Disyorkan untuk permintaan yang tidak disekat."
  301 Moved Permanently: "301 Moved Permanently (Berpindah secara tetap)\nMengarahkan klien bahawa ubah hala adalah KEKAL, dan kaedah permintaan yang digunakan untuk ubah hala MUNGKIN berbeza daripada kaedah permintaan yang digunakan untuk permintaan awal."
  302 Found: "302 Found (Dijumpai)\nMengarahkan klien bahawa ubah hala adalah SEMENTARA, dan kaedah permintaan yang digunakan untuk ubah hala MUNGKIN berbeza daripada kaedah permintaan yang digunakan untuk permintaan awal."
  307 Temporary Redirect: "307 Temporary Redirect (Ubah hala sementara)\nMengarahkan klien bahawa ubah hala adalah SEMENTARA, dan kaedah permintaan yang digunakan untuk ubah hala mungkin TIDAK berbeza daripada kaedah permintaan yang digunakan untuk permintaan awal."
@@ -608,6 +606,9 @@ label:
  Latest stable: "Terkini stabil:"
  Latest unstable: "Terkini tidak stabil:"
  Loading_: "Memuatkan..."
+ Lock CAPTCHAs to the IP address of the user completing the CAPTCHA but not to the actual user: "Kunci CAPTCHA kepada alamat IP daripada pengguna yang melengkapkan CAPTCHA, tetapi tidak kepada pengguna sebenarnya.\nKuki TIDAK digunakan untuk mengenal pasti pengguna. Apabila akses diperoleh semula kerana kejayaan melengkapkan CAPTCHA, ia terpakai kepada sesiapa sahaja yang menyambung dari alamat IP yang sama."
+ Lock CAPTCHAs to the user completing the CAPTCHA as well as to their IP address: "Kunci CAPTCHA kepada pengguna yang melengkapkan CAPTCHA serta alamat IP mereka.\nKuki digunakan untuk mengenal pasti pengguna. Apabila akses diperoleh semula kerana kejayaan melengkapkan CAPTCHA, ia hanya terpakai kepada pengguna yang melengkapkan CAPTCHA, dan tidak akan berterusan jika alamat IP mereka berubah."
+ Lock CAPTCHAs to the user completing the CAPTCHA but not to their IP address: "Kunci CAPTCHA kepada pengguna yang melengkapkan CAPTCHA, tetapi tidak kepada alamat IP mereka.\nKuki digunakan untuk mengenal pasti pengguna. Apabila akses diperoleh semula kerana kejayaan melengkapkan CAPTCHA, ia hanya terpakai kepada pengguna yang melengkapkan CAPTCHA, dan selagi kuki mereka kekal sah, akan berterusan, walaupun alamat IP mereka berubah."
  Logged in, 2FA pending: "Dimasukkan, 2FA sedang menunggu."
  Logged in: "Dimasukkan."
  Logged out: "Dikeluarkan."
@@ -653,6 +654,8 @@ label:
  Search Engine: "Enjin carian"
  See also: "Lihat juga:"
  Selected log file doesn_t exist: "Fail log yang dipilih tidak wujud!"
+ Show API message: "Tunjukkan mesej API?\nArahan kepada pengguna, sesuai dengan API yang digunakan, mengenai penyiapan CAPTCHA."
+ Show cookie warning: "Tunjukkan amaran kuki?\nBergantung pada undang-undang privasi untuk negara anda (cth., GDPR/DSGVO di EU, LGPD di Brazil, dsb), ini mungkin diperlukan secara sah."
  Show: "Tunjukkan"
  Signature type: "Jenis tandatangan:"
  Simple: "Mudah"

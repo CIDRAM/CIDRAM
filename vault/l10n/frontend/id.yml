@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2025.08.14).
+# This file: Indonesian language data for the front-end (last modified: 2025.08.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -161,6 +161,17 @@ config:
  bunnycdn_positive_action: "Tindakan mana yang harus dilakukan CIDRAM saat menangani permintaan dari BunnyCDN? Tindakan default = Melewatinya."
  bypasses: "Konfigurasi untuk bypass tanda tangan default."
  bypasses_used: "Bypass mana yang harus digunakan?"
+ captcha: "Konfigurasi untuk CAPTCHA (menyediakan cara bagi manusia untuk mendapatkan kembali akses ketika diblokir)."
+ captcha_api: "API mana yang akan digunakan?"
+ captcha_expiry: "Jumlah jam untuk mengingat instansi CAPTCHA. Default = 720 (1 bulan)."
+ captcha_hcaptcha_log: "Mencatat hasil semua instansi CAPTCHA? Jika ya, tentukan nama untuk menggunakan untuk file pencatatan. Jika tidak, variabel ini harus kosong."
+ captcha_hcaptcha_secret: &CaptchaDashboard "Nilai ini dapat ditemukan di dashboard untuk layanan CAPTCHA Anda."
+ captcha_hcaptcha_sitekey: *CaptchaDashboard
+ captcha_messages: "Pesan untuk ditampilkan bersama CAPTCHA."
+ captcha_lockto: "Dimana mengunci CAPTCHA."
+ captcha_nonblocked_status_code: "Kode status mana yang harus digunakan saat menampilkan CAPTCHA ke permintaan yang tidak diblokir?"
+ captcha_signature_limit: "Jumlah maksimum tanda tangan yang diperbolehkan sebelum penawaran CAPTCHA ditarik. Default = 1."
+ captcha_usemode: "Kapan CAPTCHA harus ditawarkan? Anda dapat menentukan perilaku yang disukai untuk setiap penyedia yang didukung disini. Catat: Permintaan yang masuk daftar putih atau diverifikasi dan tidak diblokir tidak perlu menyelesaikan CAPTCHA. Juga mencatat: CAPTCHA dapat memberikan lapisan perlindungan tambahan yang berguna terhadap bot dan berbagai jenis permintaan yang otomatis dan berbahaya, tetapi tidak akan memberikan perlindungan apapun terhadap manusia yang berbahaya."
  components: "Konfigurasi untuk pengaktifan dan penonaktifan komponen yang digunakan oleh CIDRAM. Biasanya diisi oleh halaman pembaruan, tetapi juga dapat dikelola dari sini untuk kontrol yang lebih baik dan untuk komponen dipersonalisasi yang tidak dikenali oleh halaman pembaruan."
  components_events: "Penangan acara. Biasanya digunakan untuk memodifikasi cara CIDRAM berperilaku secara internal atau untuk menyediakan fungsionalitas tambahan."
  components_imports: "Impor. Biasanya digunakan untuk memasok informasi konfigurasi komponen ke CIDRAM."
@@ -215,19 +226,6 @@ config:
  general_time_format: "Format notasi tanggal/waktu yang digunakan oleh CIDRAM. Opsi tambahan dapat ditambahkan atas permintaan."
  general_time_offset: "Offset zona waktu dalam hitungan menit."
  general_timezone: "Ini digunakan untuk menentukan zona waktu yang akan digunakan (misalnya, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, dll). Menentukan "SYSTEM" untuk membiarkan PHP menangani ini untuk Anda secara otomatis."
- hcaptcha: "Konfigurasi untuk hCaptcha (menyediakan cara bagi manusia untuk mendapatkan kembali akses ketika diblokir)."
- hcaptcha_api: &CaptchaAPI "API mana yang akan digunakan?"
- hcaptcha_expiry: &CaptchaExpiry "Jumlah jam untuk mengingat instansi CAPTCHA. Default = 720 (1 bulan)."
- hcaptcha_hcaptcha_log: &CaptchaLogFile "Mencatat hasil semua instansi CAPTCHA? Jika ya, tentukan nama untuk menggunakan untuk file pencatatan. Jika tidak, variabel ini harus kosong."
- hcaptcha_lockip: &CaptchaLockIP "Kunci CAPTCHA ke IP?"
- hcaptcha_lockuser: &CaptchaLockUser "Kunci CAPTCHA ke pengguna?"
- hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "Kode status mana yang harus digunakan saat menampilkan CAPTCHA ke permintaan yang tidak diblokir?"
- hcaptcha_secret: &CaptchaDashboard "Nilai ini dapat ditemukan di dashboard untuk layanan CAPTCHA Anda."
- hcaptcha_show_api_message: &ShowAPIMessage "Tampilkan pesan API? True = Ya [Default]; False = Tidak."
- hcaptcha_show_cookie_warning: &ShowCookieWarning "Tampilkan peringatan cookie? True = Ya [Default]; False = Tidak."
- hcaptcha_signature_limit: &CaptchaSignatureLimit "Jumlah maksimum tanda tangan yang diperbolehkan sebelum penawaran CAPTCHA ditarik. Default = 1."
- hcaptcha_sitekey: *CaptchaDashboard
- hcaptcha_usemode: &CaptchaUseMode "Kapan CAPTCHA harus ditawarkan? Catat: Permintaan yang masuk daftar putih atau diverifikasi dan tidak diblokir tidak perlu menyelesaikan CAPTCHA. Juga mencatat: CAPTCHA dapat memberikan lapisan perlindungan tambahan yang berguna terhadap bot dan berbagai jenis permintaan yang otomatis dan berbahaya, tetapi tidak akan memberikan perlindungan apapun terhadap manusia yang berbahaya."
  ipapi: "Konfigurasi untuk modul IP-API (menyediakan fasilitas pencarian ASN dan kode negara untuk CIDRAM)."
  ipapi_blocked_asns: *ConfigBlockedASNs
  ipapi_blocked_ccs: *ConfigBlockedCCs
@@ -527,7 +525,7 @@ label:
  %s is available: "%s tersedia."
  %s is not available: "%s tidak tersedia."
  %s signature: "%s tanda tangan"
- 200 OK: "200 OK\nPaling tidak kuat, tetapi paling ramah-pengguna. Permintaan otomatis kemungkinan besar akan menafsirkan respons ini sebagai indikasi bahwa permintaan berhasil."
+ 200 OK: "200 OK\nPaling tidak kuat, tetapi paling ramah-pengguna. Permintaan otomatis kemungkinan besar akan menafsirkan respons ini sebagai indikasi bahwa permintaan berhasil. Direkomendasikan untuk permintaan yang tidak diblokir."
  301 Moved Permanently: "301 Moved Permanently (Dipindahkan Secara Permanen)\nMenginstruksikan klien bahwa pengalihan adalah PERMANEN, dan bahwa metode permintaan yang digunakan untuk pengalihan MUNGKIN berbeda dari metode permintaan yang digunakan untuk permintaan awal."
  302 Found: "302 Found (Ditemukan)\nMenginstruksikan klien bahwa pengalihan adalah SEMENTARA, dan bahwa metode permintaan yang digunakan untuk pengalihan MUNGKIN berbeda dari metode permintaan yang digunakan untuk permintaan awal."
  307 Temporary Redirect: "307 Temporary Redirect (Pengalihan Sementara)\nMenginstruksikan klien bahwa pengalihan adalah SEMENTARA, dan bahwa metode permintaan yang digunakan untuk pengalihan TIDAK mungkin berbeda dari metode permintaan yang digunakan untuk permintaan awal."
@@ -605,6 +603,9 @@ label:
  Latest stable: "Terbaru stabil:"
  Latest unstable: "Terbaru tidak stabil:"
  Loading_: "Pemuatan..."
+ Lock CAPTCHAs to the IP address of the user completing the CAPTCHA but not to the actual user: "Kunci CAPTCHA pada alamat IP dari pengguna yang menyelesaikan CAPTCHA, tetapi bukan pada pengguna sebenarnya.\nCookie TIDAK digunakan untuk mengidentifikasi pengguna. Jika akses diperoleh kembali karena berhasil menyelesaikan CAPTCHA, akses tersebut berlaku bagi siapa saja yang terhubung dari alamat IP yang sama."
+ Lock CAPTCHAs to the user completing the CAPTCHA as well as to their IP address: "Kunci CAPTCHA pada pengguna yang menyelesaikan CAPTCHA serta alamat IP mereka.\nCookie digunakan untuk mengidentifikasi pengguna. Jika akses diperoleh kembali karena berhasil menyelesaikan CAPTCHA, akses tersebut hanya berlaku bagi pengguna yang menyelesaikan CAPTCHA, dan tidak akan bertahan jika alamat IP mereka berubah."
+ Lock CAPTCHAs to the user completing the CAPTCHA but not to their IP address: "Kunci CAPTCHA untuk pengguna yang menyelesaikan CAPTCHA, tetapi bukan pada alamat IP mereka.\nCookie digunakan untuk mengidentifikasi pengguna. Jika akses diperoleh kembali karena berhasil menyelesaikan CAPTCHA, akses tersebut hanya berlaku bagi pengguna yang menyelesaikan CAPTCHA, dan selama cookie mereka tetap valid, akses akan tetap ada, bahkan jika alamat IP mereka berubah."
  Logged in, 2FA pending: "Dimasuk, 2FA sedang menunggu."
  Logged in: "Dimasuk."
  Logged out: "Dikeluar."
@@ -650,6 +651,8 @@ label:
  Search Engine: "Mesin pencari"
  See also: "Lihat juga:"
  Selected log file doesn_t exist: "File log yang dipilih tidak ada!"
+ Show API message: "Tampilkan pesan API?\nInstruksi kepada pengguna, sesuai dengan API yang digunakan, mengenai penyelesaian CAPTCHA."
+ Show cookie warning: "Tampilkan peringatan cookie?\nBergantung pada undang-undang privasi untuk negara Anda (misalnya, GDPR/DSGVO di UE, LGPD di Brasil, dll), ini mungkin diwajibkan secara hukum."
  Show: "Menunjukkan"
  Signature type: "Jenis tanda tangan:"
  Simple: "Sederhana"

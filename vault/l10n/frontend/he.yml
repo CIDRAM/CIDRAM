@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hebrew language data for the front-end (last modified: 2025.08.14).
+# This file: Hebrew language data for the front-end (last modified: 2025.08.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -58,7 +58,7 @@ Extended Description:
  Bot user agents module: "חוסם סוכני משתמשים הקשורים לבוטים לא רצויים ולפעילות מרושעת."
  Bypasses: "החתימה הסטנדרטית עוקפת קבצים הנכללים בדרך כלל בחבילה הראשית."
  Chart.js: "מאפשר לקצה הקדמי ליצור תרשימי סופגניות.<br />{{Links.Chart.js}} זמין באמצעות רישיון {{Links.MIT}}."
- Cookie scanner module: "מספק כמה הגנות מוגבלות מפני עוגיות מסוכנות."
+ Cookie scanner module: "מספק כמה הגנות מוגבלות מפני קוקיות מסוכנות."
  HTTP version checker module: "מאפשר לחסום פרוטוקולים ספציפיים וגרסאות HTTP באמצעות תצורת CIDRAM."
  IP-API module: "מנף את ה-{{Links.IP-API}} API כדי לספק מתקן חיפוש ASN וקוד מדינה עבור CIDRAM, המאפשרת חסימה או אישור של ASN ומדינות באמצעות תצורת CIDRAM, ומספקת אמצעי לאימות רשתות חברתיות לאימות בקשות של פייסבוק. (אם אתה משתמש במודול זה, לא תצטרך להשתמש במודול BGPView, מכיוון שהם משרתים את אותה מטרה)."
  IPv4: &ExtDesCloud "חוסם שירותי ענן לא רצויים ונקודות קצה לא אנושיות."
@@ -74,7 +74,7 @@ Extended Description:
  Optional security extras module: "מספק כמה הגנות מוגבלות מפני וקטורי תקיפה שונים הנפוצים בבקשות."
  PHPMailer: "נדרש לשימוש בכל פונקציונליות הכרוכה בשליחת אימייל.<br />{{Links.PHPMailer.PHPMailer}} זמין באמצעות רישיון {{Links.PHPMailer.License}}."
  Project Honeypot module: "חוסם בקשות מכתובות IP המופיעות ב-Project Honeypot."
- Protocol blocker module: "מספק את היכולת לחסום פרוטוקולי בקשות ספציפיים באמצעות התצורה (למשל., HTTP/0.9 ,HTTP/1.1 ,SPDY/3.0, וכו). הערה: לא ישפיע על אתרים שמנתבים דרך שירותים המשכתבים בקשות לכולן משתמשות באותו פרוטוקול, כגון Cloudflare."
+ Protocol blocker module: "מספק את היכולת לחסום פרוטוקולי בקשות ספציפיים באמצעות התצורה (למשל., HTTP/0.9 ,HTTP/1.1 ,SPDY/3.0, וכו'). הערה: לא ישפיע על אתרים שמנתבים דרך שירותים המשכתבים בקשות לכולן משתמשות באותו פרוטוקול, כגון Cloudflare."
  Referrer spam module: "חסימה המבוססת על ספאם מפנה לא תספק בדרך כלל תועלת אבטחה משמעותית, אך במקרים מסוימים, יכול להיות שימושי עבור חלק מהמשתמשים, לאיסוף מידע נוסף על בקשות וליכולת לדווח על כך."
  Stop Forum Spam module: "מגן על דפי רישום וכניסה מפני כתובות IP הרשומות על ידי SFS."
  Tor blocker module: "אוסר על גישה מצמתי יציאה של Tor דרך חיפושי DNSEL (תומך גם ב-IPv4 וגם ב-IPv6)."
@@ -87,7 +87,7 @@ Name:
  Bot user agents module: "מודול סוכני משתמש בוט."
  BunnyCDN compatibility module: "מודול תאימות של BunnyCDN."
  Bypasses: "עוקף חתימה סטנדרטית."
- Cookie scanner module: "מודול סורק עוגיות אופציונלי."
+ Cookie scanner module: "מודול סורק קוקיות אופציונלי."
  HTTP version checker module: "מודול בודק גרסאות HTTP."
  IP-API module: "מודול IP-API."
  IPv4: "IPv4 (שירותי ענן ואירוח)."
@@ -161,6 +161,17 @@ config:
  bunnycdn_positive_action: "איזו פעולה על CIDRAM לבצע כאשר הוא נתקל בבקשה מ- BunnyCDN? סטנדרטי = לעקוף את זה."
  bypasses: "החתימה הסטנדרטית עוקפת את התצורה."
  bypasses_used: "באילו מעקפים כדאי להשתמש?"
+ captcha: "תצורה עבור CAPTCHA (מספק דרך לבני אדם לקבל חזרה גישה כשהם חסומים)."
+ captcha_api: "באיזה API להשתמש?"
+ captcha_expiry: "מספר השעות לזכור מופעי CAPTCHA. סטנדרטי = 720 (1 חודש)."
+ captcha_hcaptcha_log: "לרשום את כל ניסיונות ה-CAPTCHA? אם כן, ציין את השם לשימוש עבור קובץ היומן. אם לא, השאר את המשתנה הזה ריק."
+ captcha_hcaptcha_secret: &CaptchaDashboard "ניתן למצוא ערך זה בלוח המחוונים של שירות ה-CAPTCHA שלך."
+ captcha_hcaptcha_sitekey: *CaptchaDashboard
+ captcha_messages: "הודעות שיוצגו לצד CAPTCHA."
+ captcha_lockto: "לאן לנעול CAPTCHAs."
+ captcha_nonblocked_status_code: "באיזה קוד סטטוס יש להשתמש בעת הצגת CAPTCHA לבקשות לא חסומות?"
+ captcha_signature_limit: "המספר המרבי של חתימות המותר לפני ביטול הצעת ה-CAPTCHA. סטנדרטי = 1."
+ captcha_usemode: "מתי כדאי להציע CAPTCHA? כאן ניתן לציין את ההתנהגות המועדפת עבור כל ספק נתמך. הערה: בקשות ברשימה הלבנה או מאומתת ולא חסומה לעולם אינן צריכות להשלים CAPTCHA. שימו לב גם: CAPTCHA יכול לספק שכבה שימושית נוספת של הגנה מפני בוטים וסוגים שונים של בקשות אוטומטיות זדוניות, אך לא תספק כל הגנה מפני אדם זדוני."
  components: "תצורה להפעלה ולביטול הרכיבים המשמשים את CIDRAM. מאוכלס בדרך כלל על ידי המעדכן, אך ניתן גם לנהל מכאן לשליטה עדינה יותר ולרכיבים מותאמים אישית שאינם מזוהים על ידי המעדכן."
  components_events: "מטפלי אירועים. משמש בדרך כלל כדי לשנות את האופן שבו CIDRAM מתנהג באופן פנימי או כדי לספק פונקציונליות נוספת."
  components_imports: "היבוא. משמש בדרך כלל לאספקת מידע תצורה של רכיב ל-CIDRAM."
@@ -215,19 +226,6 @@ config:
  general_time_format: "פורמט סימון התאריך/שעה המשמש את CIDRAM. ניתן להוסיף אפשרויות נוספות לפי בקשה."
  general_time_offset: "קיזוז אזור הזמן בדקות."
  general_timezone: "זה משמש כדי לציין את אזור הזמן לשימוש (למשל., Africa/Cairo ,America/New_York ,Asia/Tokyo ,Australia/Perth ,Europe/Berlin ,Pacific/Guam, וכו'). ציין "SYSTEM" כדי לאפשר ל-PHP לטפל בזה עבורך באופן אוטומטי."
- hcaptcha: "תצורה עבור hCaptcha (מספק דרך לבני אדם לקבל חזרה גישה כשהם חסומים)."
- hcaptcha_api: &CaptchaAPI "באיזה API להשתמש?"
- hcaptcha_expiry: &CaptchaExpiry "מספר השעות לזכור מופעי CAPTCHA. סטנדרטי = 720 (1 חודש)."
- hcaptcha_hcaptcha_log: &CaptchaLogFile "לרשום את כל ניסיונות ה-CAPTCHA? אם כן, ציין את השם לשימוש עבור קובץ היומן. אם לא, השאר את המשתנה הזה ריק."
- hcaptcha_lockip: &CaptchaLockIP "לנעול CAPTCHA ל-IPs?"
- hcaptcha_lockuser: &CaptchaLockUser "לנעול את CAPTCHA למשתמשים?"
- hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "באיזה קוד סטטוס יש להשתמש בעת הצגת CAPTCHA לבקשות לא חסומות?"
- hcaptcha_secret: &CaptchaDashboard "ניתן למצוא ערך זה בלוח המחוונים של שירות ה-CAPTCHA שלך."
- hcaptcha_show_api_message: &ShowAPIMessage "להציג הודעת API? True = כן [סטנדרטי]; False = לא."
- hcaptcha_show_cookie_warning: &ShowCookieWarning "להציג אזהרת עוגיות? True = כן [סטנדרטי]; False = לא."
- hcaptcha_signature_limit: &CaptchaSignatureLimit "המספר המרבי של חתימות המותר לפני ביטול הצעת ה-CAPTCHA. סטנדרטי = 1."
- hcaptcha_sitekey: *CaptchaDashboard
- hcaptcha_usemode: &CaptchaUseMode "מתי יש להציע את ה-CAPTCHA? הערה: בקשות ברשימה הלבנה או מאומתת ולא חסומה לעולם אינן צריכות להשלים CAPTCHA. שימו לב גם: CAPTCHA יכול לספק שכבה שימושית נוספת של הגנה מפני בוטים וסוגים שונים של בקשות אוטומטיות זדוניות, אך לא תספק כל הגנה מפני אדם זדוני."
  ipapi: "תצורה עבור מודול IP-API (מספק מתקן חיפוש ASN וקוד מדינה עבור CIDRAM)."
  ipapi_blocked_asns: *ConfigBlockedASNs
  ipapi_blocked_ccs: *ConfigBlockedCCs
@@ -527,7 +525,7 @@ label:
  %s signature:
   - "%s חתימה"
   - "%s חתימות"
- 200 OK: "200 OK (בסדר)\nהכי פחות חזק, אבל הכי ידידותי למשתמש. סביר להניח שבקשות אוטומטיות יפרשו תגובה זו כאינדיקציה לכך שהבקשה הצליחה."
+ 200 OK: "200 OK (בסדר)\nהכי פחות חזק, אבל הכי ידידותי למשתמש. סביר להניח שבקשות אוטומטיות יפרשו תגובה זו כאינדיקציה לכך שהבקשה הצליחה. מומלץ עבור בקשות שאינן חסומות."
  301 Moved Permanently: "301 Moved Permanently (הועבר באופן קבוע)\nמורה ללקוח שההפניה מחדש היא קבועה, וששיטת הבקשה המשמשת להפניה מחדש עשויה להיות שונה משיטת הבקשה ששימשה לבקשה הראשונית."
  302 Found: "302 Found (מצאתי)\nמורה ללקוח שההפניה מחדש היא זמנית, וששיטת הבקשה המשמשת להפניה מחדש עשויה להיות שונה משיטת הבקשה ששימשה לבקשה הראשונית."
  307 Temporary Redirect: "307 Temporary Redirect (הפניה זמנית)\nמורה ללקוח שההפניה מחדש היא זמנית, וששיטת הבקשה המשמשת להפניה מחדש לא יכולה להיות שונה משיטת הבקשה המשמשת לבקשה הראשונית."
@@ -609,6 +607,9 @@ label:
  Latest stable: "יציב אחרון:"
  Latest unstable: "לא יציב אחרון:"
  Loading_: "טוען..."
+ Lock CAPTCHAs to the IP address of the user completing the CAPTCHA but not to the actual user: "נעל קובצי CAPTCHA לכתובת ה-IP של המשתמש שמשלים את ה-CAPTCHA אך לא למשתמש בפועל.\nקובצי קוקיות אינם משמשים לזיהוי משתמשים. כאשר הגישה חוזרת לאחר השלמה מוצלחת של CAPTCHA, היא חלה על כל מי שמתחבר מאותה כתובת IP."
+ Lock CAPTCHAs to the user completing the CAPTCHA as well as to their IP address: "נעל CAPTCHA למשתמש שמשלים את ה-CAPTCHA וגם לכתובת ה-IP שלו.\nקובצי קוקיות משמשים לזיהוי משתמשים. כאשר הגישה חוזרת לאחר השלמה מוצלחת של CAPTCHA, הדבר חל רק על המשתמש שהשלים את ה-CAPTCHA, ולא תישאר בתוקף אם כתובת ה-IP שלו תשתנה."
+ Lock CAPTCHAs to the user completing the CAPTCHA but not to their IP address: "נעל CAPTCHA למשתמש שמשלים את ה-CAPTCHA אך לא לכתובת ה-IP שלו.\nקובצי קוקיות משמשים לזיהוי משתמשים. כאשר הגישה חוזרת לאחר השלמה מוצלחת של CAPTCHA, הדבר חל רק על המשתמש שהשלים את ה-CAPTCHA, וכל עוד הקוקי שלו נשארת בתוקף, היא תישאר בתוקף, גם אם כתובת ה-IP שלו תשתנה."
  Logged in, 2FA pending: "מחובר, 2FA בהמתנה."
  Logged in: "מחובר."
  Logged out: "התנתק."
@@ -654,6 +655,8 @@ label:
  Search Engine: "מנוע חיפוש"
  See also: "ראה גם:"
  Selected log file doesn_t exist: "קובץ היומן שנבחר לא קיים!"
+ Show API message: "להציג הודעת API?\nהוראות למשתמש, המתאימות ל-API בו נעשה שימוש, בנוגע למילוי ה-CAPTCHA."
+ Show cookie warning: "להציג אזהרת קוקיות?\nבהתאם לחוקי הפרטיות של המדינה או המדינה שלך (למשל, GDPR/DSGVO באיחוד האירופי, LGPD בברזיל, וכו'), ייתכן שזה נדרש על פי חוק."
  Show: "הצג"
  Signature type: "סוג חתימה:"
  Simple: "פשוט"
@@ -1029,7 +1032,7 @@ tip:
  Intersector: "ניתן להשתמש כלי להצטלב כדי לקבוע את הגורמים המשותפים משתי קבוצות של טווחים."
  Logs: "בחר קובץ יומן מהרשימה למטה כדי להציג את התוכן של קובץ יומן זה."
  Number of seconds until it expires: "מספר שניות עד שתוקפו יפוג."
- Numeric comparison: "כדי להשתמש בהשוואה מספרית, בחר בהשוואה ישירה של מחרוזות או בזיהוי שיטה אוטומטי, ודא שערך התנאי הוא מספרי, והקדימו את האופרטור הרצוי.<br />למשל., לתנאים "שווה", &gt;=2 נותן ≥2, &lt;=2 נותן ≤2, לתנאי "לא שווים", &gt;=2 נותן ≱2, &lt;=2 נותן ≰2, וכו."
+ Numeric comparison: "כדי להשתמש בהשוואה מספרית, בחר בהשוואה ישירה של מחרוזות או בזיהוי שיטה אוטומטי, ודא שערך התנאי הוא מספרי, והקדימו את האופרטור הרצוי.<br />למשל., לתנאים "שווה", &gt;=2 נותן ≥2, &lt;=2 נותן ≤2, לתנאי "לא שווים", &gt;=2 נותן ≱2, &lt;=2 נותן ≰2, וכו'."
  Range Tables: "דף זה מציג מידע סטטיסטי בסיסי על טווחי ה-IP המכוסים על ידי קובצי החתימה הפעילים כעת."
  Rate Limiting: "דף זה מציג את השימוש הנוכחי במכסה והזמינות לגבי הגבלת תעריפים."
  Rate limiting is currently disabled: "הערה: הגבלת התעריפים מושבתת כעת, אך ניתן להפעיל אותה דרך דף התצורה."
@@ -1045,7 +1048,7 @@ tip:
  Updates: "דף העדכונים מאפשר לך להתקין, להסיר, ולעדכן את הרכיבים השונים של CIDRAM (חבילת הליבה, חתימות, קבצי L10N, וכו')."
 warning:
  API_Rate_Limited: "אזהרה: נראה שהגישה ל-%s API מוגבלת כרגע."
- Cookies: "הערה: CIDRAM משתמש cookie כדי לאמת כניסות. על ידי התחברות, אתה נותן את הסכמתך לכך cookie תיווצר ויישמר על ידי הדפדפן שלך."
+ Cookies: "הערה: CIDRAM משתמש קוקי כדי לאמת כניסות. על ידי התחברות, אתה נותן את הסכמתך לקוקי תיווצר ויישמר על ידי הדפדפן שלך."
  Editing PHP files: "אזהרה: ידוע שחלק מפתרונות האבטחה לאירוח אתרים אוסרים באופן אוטומטי כתובות IP לאחר זיהוי תגי PHP בתוך בקשות (למשל., כאשר מנסים לשנות קבצי PHP דרך דפדפן). ל-CIDRAM אין כל אמצעי לדעת אם שירות אירוח אתרים שלך משתמש בפתרון אבטחה כזה. על מנת למנוע בעיות כאלה, מומלץ לא לערוך קבצי PHP בצורה כזו במידת האפשר."
  IP tests are disabled: "אזהרה: בדיקות IP מושבתות! לא ניתן להשתמש בקובצי חתימה עד שהדבר נפתר."
  JavaScript required: "אזהרה: חלק מפונקציונליות הקצה הקדמי דורשת JavaScript. כדי להבטיח שכל הקצה הקדמי יתנהג כמצופה, מומלץ להפעיל JavaScript."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Afrikaans language data for the front-end (last modified: 2025.08.14).
+# This file: Afrikaans language data for the front-end (last modified: 2025.08.16).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -161,6 +161,17 @@ config:
  bunnycdn_positive_action: "Watter aksie moet CIDRAM uitvoer wanneer dit 'n versoek van BunnyCDN teëkom? Verstekaksie = Omseil."
  bypasses: "Konfigurasie vir die verstek handtekening-omleidings."
  bypasses_used: "Watter omleidings moet gebruik word?"
+ captcha: "Konfigurasie vir hCaptcha (bied 'n manier vir mense om toegang te kry wanneer dit geblokkeer word)."
+ captcha_api: "Watter API om te gebruik?"
+ captcha_expiry: "Aantal ure om CAPTCHA-gevalle te onthou. Verstek = 720 (1 maand)."
+ captcha_hcaptcha_log: "Teken alle CAPTCHA-pogings aan? Indien ja, spesifiseer die naam vir die loglêer te gebruik. Indien nee, laat hierdie veranderlike leeg."
+ captcha_hcaptcha_secret: &CaptchaDashboard "Hierdie waarde kan in die kontroleskerm vir jou CAPTCHA-diens gevind word."
+ captcha_hcaptcha_sitekey: *CaptchaDashboard
+ captcha_messages: "Boodskappe wat saam met CAPTCHA's vertoon moet word."
+ captcha_lockto: "Waarop om CAPTCHA's te sluit."
+ captcha_nonblocked_status_code: "Watter statuskode moet gebruik word wanneer CAPTCHA's aan nie-geblokkeerde versoeke vertoon word?"
+ captcha_signature_limit: "Maksimum aantal handtekeninge wat toegelaat word voordat die CAPTCHA-aanbod teruggetrek word. Verstek = 1."
+ captcha_usemode: "Wanneer moet CAPTCHA's aangebied word? Jy kan die voorkeurgedrag vir elke ondersteunde verskaffer hier spesifiseer. Kennis neem: Gewitlys of geverifieerde en nie-geblokkeerde versoeke hoef nooit 'n CAPTCHA te voltooi nie. Let ook op: CAPTCHA's kan 'n nuttige, bykomende laag beskerming teen bots en verskeie soorte kwaadwillige outomatiese versoeke bied, maar sal geen beskerming teen 'n kwaadwillige mens bied nie."
  components: "Konfigurasie vir die aktivering en deaktivering van die komponente wat deur CIDRAM gebruik word. Gewoonlik gevul deur die opdateringsbladsy, maar kan ook van hier af bestuur word vir fyner beheer en vir pasgemaakte komponente wat nie deur die opdateringsbladsy herken word nie."
  components_events: "Gebeurtenishanteerders. Gewoonlik gebruik om die manier waarop CIDRAM intern optree te verander of om bykomende funksionaliteit te verskaf."
  components_imports: "Invoere. Gewoonlik gebruik om 'n komponent se konfigurasie-inligting aan CIDRAM te verskaf."
@@ -215,19 +226,6 @@ config:
  general_time_format: "Die datum/tyd-notasieformaat wat deur CIDRAM gebruik word. Bykomende opsies kan op versoek bygevoeg word."
  general_time_offset: "Tydsone verskil in minute."
  general_timezone: "Dit word gebruik om die tydsone te spesifiseer (bv., Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, ens). Spesifiseer "SYSTEM" om PHP dit outomaties vir jou te laat hanteer."
- hcaptcha: "Konfigurasie vir hCaptcha (bied 'n manier vir mense om toegang te kry wanneer dit geblokkeer word)."
- hcaptcha_api: &CaptchaAPI "Watter API om te gebruik?"
- hcaptcha_expiry: &CaptchaExpiry "Aantal ure om CAPTCHA-gevalle te onthou. Verstek = 720 (1 maand)."
- hcaptcha_hcaptcha_log: &CaptchaLogFile "Teken alle CAPTCHA-pogings aan? Indien ja, spesifiseer die naam vir die loglêer te gebruik. Indien nee, laat hierdie veranderlike leeg."
- hcaptcha_lockip: &CaptchaLockIP "Sluit CAPTCHA vir IP'e?"
- hcaptcha_lockuser: &CaptchaLockUser "Sluit CAPTCHA vir gebruikers?"
- hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "Watter statuskode moet gebruik word wanneer CAPTCHA's aan nie-geblokkeerde versoeke vertoon word?"
- hcaptcha_secret: &CaptchaDashboard "Hierdie waarde kan in die kontroleskerm vir jou CAPTCHA-diens gevind word."
- hcaptcha_show_api_message: &ShowAPIMessage "Wys API-boodskap? True = Ja [Verstek]; False = Nee."
- hcaptcha_show_cookie_warning: &ShowCookieWarning "Wys koekiewaarskuwing? True = Ja [Verstek]; False = Nee."
- hcaptcha_signature_limit: &CaptchaSignatureLimit "Maksimum aantal handtekeninge wat toegelaat word voordat die CAPTCHA-aanbod teruggetrek word. Verstek = 1."
- hcaptcha_sitekey: *CaptchaDashboard
- hcaptcha_usemode: &CaptchaUseMode "Wanneer moet die CAPTCHA aangebied word? Kennis neem: Gewitlys of geverifieerde en nie-geblokkeerde versoeke hoef nooit 'n CAPTCHA te voltooi nie. Let ook op: CAPTCHA's kan 'n nuttige, bykomende laag beskerming teen bots en verskeie soorte kwaadwillige outomatiese versoeke bied, maar sal geen beskerming teen 'n kwaadwillige mens bied nie."
  ipapi: "Konfigurasie vir die IP-API module (bied 'n ASN en landkode opsoekfasiliteit vir CIDRAM)."
  ipapi_blocked_asns: *ConfigBlockedASNs
  ipapi_blocked_ccs: *ConfigBlockedCCs
@@ -533,7 +531,7 @@ label:
  %s signature:
   - "%s handtekening"
   - "%s handtekeninge"
- 200 OK: "200 OK\nMinste robuust, maar mees gebruikersvriendelik. Outomatiese versoeke sal heel waarskynlik hierdie reaksie interpreteer as 'n aanduiding dat die versoek suksesvol was."
+ 200 OK: "200 OK\nMinste robuust, maar mees gebruikersvriendelik. Outomatiese versoeke sal heel waarskynlik hierdie reaksie interpreteer as 'n aanduiding dat die versoek suksesvol was. Aanbeveel vir nie-geblokkeerde versoeke."
  301 Moved Permanently: "301 Moved Permanently (Permanent Verskuif)\nGee die kliënt opdrag dat die herleiding PERMANENT is, en dat die versoekmetode wat vir die herleiding gebruik word, anders MAG wees as die versoekmetode wat vir die aanvanklike versoek gebruik is."
  302 Found: "302 Found (Gevind)\nGee die kliënt opdrag dat die herleiding TYDELIK is, en dat die versoekmetode wat vir die herleiding gebruik word, anders MAG wees as die versoekmetode wat vir die aanvanklike versoek gebruik is."
  307 Temporary Redirect: "307 Temporary Redirect (Tydelike Herleiding)\nGee die kliënt opdrag dat die herleiding TYDELIK is, en dat die versoekmetode wat vir die herleiding gebruik word, NIE anders mag wees as die versoekmetode wat vir die aanvanklike versoek gebruik is nie."
@@ -615,6 +613,9 @@ label:
  Latest stable: "Nuutste stabiele:"
  Latest unstable: "Nuutste onstabiele:"
  Loading_: "Laai tans..."
+ Lock CAPTCHAs to the IP address of the user completing the CAPTCHA but not to the actual user: "Sluit CAPTCHA's aan die IP-adres van die gebruiker wat die CAPTCHA voltooi, maar nie aan die werklike gebruiker nie.\nKoekies word NIE gebruik om gebruikers te identifiseer nie. Wanneer toegang herwin word as gevolg van die suksesvolle voltooiing van 'n CAPTCHA, dit geld vir enigiemand wat vanaf dieselfde IP-adres koppel."
+ Lock CAPTCHAs to the user completing the CAPTCHA as well as to their IP address: "Sluit CAPTCHA's aan die gebruiker wat die CAPTCHA voltooi, sowel as aan hul IP-adres.\nKoekies word gebruik om gebruikers te identifiseer. Wanneer toegang herwin word as gevolg van die suksesvolle voltooiing van 'n CAPTCHA, dit is slegs van toepassing op die gebruiker wat die CAPTCHA voltooi, en sal dit nie voortduur as hul IP-adres verander nie."
+ Lock CAPTCHAs to the user completing the CAPTCHA but not to their IP address: "Sluit CAPTCHA's aan die gebruiker wat die CAPTCHA voltooi, maar nie aan hul IP-adres nie.\nKoekies word gebruik om gebruikers te identifiseer. Wanneer toegang herwin word as gevolg van die suksesvolle voltooiing van 'n CAPTCHA, dit is slegs van toepassing op die gebruiker wat die CAPTCHA voltooi, en solank hul koekie geldig bly, sal dit voortduur, selfs al verander hul IP-adres."
  Logged in, 2FA pending: "Ingeteken, 2FA hangende."
  Logged in: "Ingeteken."
  Logged out: "Uitgeteken."
@@ -660,6 +661,8 @@ label:
  Search Engine: "Soek-masjien"
  See also: "Sien ook:"
  Selected log file doesn_t exist: "Geselekteerde loglêer bestaan nie!"
+ Show API message: "Wys API-boodskap?\nInstruksies aan die gebruiker, toepaslik op die API wat gebruik word, rakende die voltooiing van die CAPTCHA."
+ Show cookie warning: "Wys koekiewaarskuwing?\nAfhangende van die privaatheidswette van jou land of staat (bv., GDPR/DSGVO in die EU, LGPD in Brasilië, ens), mag dit wetlik vereis word."
  Show: "Wys"
  Signature type: "Tipe handtekening:"
  Simple: "Eenvoudige"

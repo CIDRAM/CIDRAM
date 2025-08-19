@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2025.08.14).
+# This file: Spanish language data for the front-end (last modified: 2025.08.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -161,6 +161,17 @@ config:
  bunnycdn_positive_action: "¿Qué acción debe realizar CIDRAM cuando encuentra una solicitud de BunnyCDN? Acción predefinido = Bypassear."
  bypasses: "La configuración de las bypasses de firmas estándar."
  bypasses_used: "¿Qué bypasses se deben utilizar?"
+ captcha: "Configuración para CAPTCHAs (proporciona una forma para que los humanos recuperen el acceso cuando están bloqueados)."
+ captcha_api: "¿Qué API usar?"
+ captcha_expiry: "Número de horas para recordar instancias de CAPTCHA. Predefinido = 720 (1 mes)."
+ captcha_hcaptcha_log: "Registrar todos los intentos de CAPTCHA? En caso afirmativo, especifique el nombre que se utilizará para el archivo de registro. Si no, dejar esta variable en blanco."
+ captcha_hcaptcha_secret: &CaptchaDashboard "Este valor se puede encontrar en el panel de control de su servicio de CAPTCHA."
+ captcha_hcaptcha_sitekey: *CaptchaDashboard
+ captcha_messages: "Mensajes que se mostrarán junto a los CAPTCHA."
+ captcha_lockto: "¿A qué vincular los CAPTCHA?"
+ captcha_nonblocked_status_code: "¿Qué código de estado se debe usar al mostrar CAPTCHA a solicitudes no bloqueadas?"
+ captcha_signature_limit: "Número máximo de firmas permitidas antes de que se retire la oferta de CAPTCHA. Predefinido = 1."
+ captcha_usemode: "¿Cuándo se deben ofrecer CAPTCHAs? Puede especificar aquí el comportamiento preferido para cada proveedor compatible. Nota: Las solicitudes incluidas en la lista blanca o verificadas y no bloqueadas nunca necesitan completar un CAPTCHA. También tenga en cuenta: Los CAPTCHA pueden proporcionar una capa de protección útil contra bots y varios tipos de solicitudes automatizadas y maliciosas, pero no proporcionán ninguna protección contra humanos maliciosas."
  components: "Configuración para la activación y la desactivación de los componentes utilizados por CIDRAM. Normalmente se administra desde la página de actualizaciones, pero también se puede administrar desde aquí para un control más preciso y para los componentes personalizados que la página de actualizaciones no reconoce."
  components_events: "Manejadores de eventos. Normalmente se usa para modificar la forma en que CIDRAM se comporta internamente o para proporcionar funcionalidad adicional."
  components_imports: "Importaciones. Normalmente se utiliza para proporcionar información de configuración de un componente a CIDRAM."
@@ -215,19 +226,6 @@ config:
  general_time_format: "El formato de notación de fecha/hora usado por CIDRAM. Se pueden añadir opciones adicionales bajo petición."
  general_time_offset: "Desplazamiento del huso horario en minutos."
  general_timezone: "Esto se usa para especificar la zona horaria a usar (por ejemplo, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, etc). Especifique "SYSTEM" para permitir que PHP maneje esto automáticamente."
- hcaptcha: "Configuración para hCaptcha (proporciona una forma para que los humanos recuperen el acceso cuando están bloqueados)."
- hcaptcha_api: &CaptchaAPI "¿Qué API usar?"
- hcaptcha_expiry: &CaptchaExpiry "Número de horas para recordar instancias de CAPTCHA. Predefinido = 720 (1 mes)."
- hcaptcha_hcaptcha_log: &CaptchaLogFile "Registrar todos los intentos de CAPTCHA? En caso afirmativo, especifique el nombre que se utilizará para el archivo de registro. Si no, dejar esta variable en blanco."
- hcaptcha_lockip: &CaptchaLockIP "Ligar CAPTCHA a los IPs?"
- hcaptcha_lockuser: &CaptchaLockUser "Ligar CAPTCHA a los usuarios?"
- hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "¿Qué código de estado se debe usar al mostrar CAPTCHA a solicitudes no bloqueadas?"
- hcaptcha_secret: &CaptchaDashboard "Este valor se puede encontrar en el panel de control de su servicio de CAPTCHA."
- hcaptcha_show_api_message: &ShowAPIMessage "¿Mostrar mensaje de API? True = Sí [Predefinido]; False = No."
- hcaptcha_show_cookie_warning: &ShowCookieWarning "¿Mostrar advertencia de cookie? True = Sí [Predefinido]; False = No."
- hcaptcha_signature_limit: &CaptchaSignatureLimit "Número máximo de firmas permitidas antes de que se retire la oferta de CAPTCHA. Predefinido = 1."
- hcaptcha_sitekey: *CaptchaDashboard
- hcaptcha_usemode: &CaptchaUseMode "¿Cuándo se debe ofrecer el CAPTCHA? Nota: Las solicitudes incluidas en la lista blanca o verificadas y no bloqueadas nunca necesitan completar un CAPTCHA. También tenga en cuenta: Los CAPTCHA pueden proporcionar una capa de protección útil contra bots y varios tipos de solicitudes automatizadas y maliciosas, pero no proporcionán ninguna protección contra humanos maliciosas."
  ipapi: "Configuración para el módulo IP-API (proporciona una funcionalidad de búsqueda de ASNs y códigos de país para CIDRAM)."
  ipapi_blocked_asns: *ConfigBlockedASNs
  ipapi_blocked_ccs: *ConfigBlockedCCs
@@ -530,7 +528,7 @@ label:
  %s signature:
   - "%s firma"
   - "%s firmas"
- 200 OK: "200 OK\nMenos robusto, pero más fácil de usar. Lo más probable que las solicitudes automatizadas interpreten esta respuesta como una indicación de que la solicitud fue exitosa."
+ 200 OK: "200 OK\nMenos robusto, pero más fácil de usar. Lo más probable que las solicitudes automatizadas interpreten esta respuesta como una indicación de que la solicitud fue exitosa. Recomendado para solicitudes no bloqueadas."
  301 Moved Permanently: "301 Moved Permanently (Movido permanentemente)\nIndica al cliente que la redirección es PERMANENTE, y que el método de solicitud utilizado para la redirección PUEDE ser diferente del método de solicitud utilizado para la solicitud inicial."
  302 Found: "302 Found (Encontrado)\nIndica al cliente que la redirección es TEMPORAL, y que el método de solicitud utilizado para la redirección PUEDE ser diferente del método de solicitud utilizado para la solicitud inicial."
  307 Temporary Redirect: "307 Temporary Redirect (Redirección temporal)\nIndica al cliente que la redirección es TEMPORAL, y que el método de solicitud utilizado para la redirección NO puede ser diferente del método de solicitud utilizado para la solicitud inicial."
@@ -612,6 +610,9 @@ label:
  Latest stable: "Más nuevo estable:"
  Latest unstable: "Más nuevo inestable:"
  Loading_: "Cargando..."
+ Lock CAPTCHAs to the IP address of the user completing the CAPTCHA but not to the actual user: "Vincula los CAPTCHA a la dirección IP del usuario que completa el CAPTCHA, pero no al usuario real.\nLas cookies NO se utilizan para identificar a los usuarios. Cuando se recupera el acceso debido a completar con éxito un CAPTCHA, se aplica a cualquier persona que se conecte desde la misma dirección IP."
+ Lock CAPTCHAs to the user completing the CAPTCHA as well as to their IP address: "Vincula los CAPTCHA al usuario que completa el CAPTCHA así como a su dirección IP.\nLas cookies se utilizan para identificar a los usuarios. Cuando se recupera el acceso debido a completar con éxito un CAPTCHA, se aplica solo al usuario que completó el CAPTCHA y no persistirá si su dirección IP cambia."
+ Lock CAPTCHAs to the user completing the CAPTCHA but not to their IP address: "Vincula los CAPTCHA al usuario que completa el CAPTCHA, pero no a su dirección IP.\nLas cookies se utilizan para identificar a los usuarios. Cuando se recupera el acceso debido a completar con éxito un CAPTCHA, se aplica solo al usuario que completó el CAPTCHA y, mientras su cookie siga siendo válida, persistirá, incluso si su dirección IP cambia."
  Logged in, 2FA pending: "Conectado, 2FA pendiente."
  Logged in: "Conectado."
  Logged out: "Desconectado."
@@ -657,6 +658,8 @@ label:
  Search Engine: "Motor de búsqueda"
  See also: "Ver también:"
  Selected log file doesn_t exist: "¡Archivo de registro seleccionado no existe!"
+ Show API message: "¿Mostrar mensaje de API?\nInstrucciones al usuario, adecuadas a la API utilizada, relativas a la cumplimentación del CAPTCHA."
+ Show cookie warning: "¿Mostrar advertencia de cookie?\nDependiendo de las leyes de privacidad de su país o estado (por ejemplo, GDPR/DSGVO en la UE, LGPD en Brasil, etc), esto puede ser legalmente requerido."
  Show: "Mostrar"
  Signature type: "Tipo de firma:"
  Simple: "Simple"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2025.08.14).
+# This file: Vietnamese language data for the front-end (last modified: 2025.08.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -161,6 +161,17 @@ config:
  bunnycdn_positive_action: "CIDRAM nên thực hiện hành động nào khi gặp yêu cầu từ BunnyCDN? Hành động mặc định = Đường tránh."
  bypasses: "Cấu hình cho các đường tránh chữ ký mặc định."
  bypasses_used: "Những đường tránh nào nên được sử dụng?"
+ captcha: "Cấu hình cho CAPTCHA (cung cấp một cách để con người lấy lại quyền truy cập khi bị chặn)."
+ captcha_api: "API nào để sử dụng?"
+ captcha_expiry: "Số giờ để nhớ CAPTCHA. Mặc định = 720 (1 tháng)."
+ captcha_hcaptcha_log: "Đăng nhập tất cả các nỗ lực cho CAPTCHA? Nếu có, ghi rõ tên để sử dụng cho các tập tin đăng nhập. Nếu không, đốn biến này."
+ captcha_hcaptcha_secret: &CaptchaDashboard "Giá trị này có thể được tìm thấy trong bảng điều khiển cho dịch vụ CAPTCHA của bạn."
+ captcha_hcaptcha_sitekey: *CaptchaDashboard
+ captcha_messages: "Tin nhắn sẽ được hiển thị cùng với CAPTCHA."
+ captcha_lockto: "Khóa CAPTCHA."
+ captcha_nonblocked_status_code: "Mã trạng thái nào nên được sử dụng khi hiển thị CAPTCHA cho các yêu cầu không bị chặn?"
+ captcha_signature_limit: "Số lượng chữ ký tối đa được phép trước khi đề nghị CAPTCHA bị rút lại. Mặc định = 1."
+ captcha_usemode: "Khi nào nên cung cấp CAPTCHA? Bạn có thể chỉ định hành vi ưu tiên cho từng nhà cung cấp được hỗ trợ tại đây. Lưu ý: Các yêu cầu trong danh sách trắng hay đã xác minh và không bị chặn không cần phải hoàn thành CAPTCHA. Cũng lưu ý: CAPTCHA có thể cung cấp một lớp bảo vệ bổ sung, hữu ích chống lại bot và các loại yêu cầu tự động độc hại khác nhau, nhưng sẽ không cung cấp bất kỳ biện pháp bảo vệ nào chống lại con người độc hại."
  components: "Cấu hình để kích hoạt và vô hiệu hóa các thành phần được sử dụng bởi CIDRAM. Thường được điền bởi trang cập nhật, nhưng cũng có thể được quản lý từ đây để kiểm soát tốt hơn và cho các thành phần tùy chỉnh không được công nhận bởi trang cập nhật."
  components_events: "Trình xử lý sự kiện. Thường được sử dụng để sửa đổi cách CIDRAM hoạt động trong nội bộ hoặc để cung cấp chức năng bổ sung."
  components_imports: "Nhập khẩu. Thường được sử dụng để cung cấp thông tin cấu hình của một thành phần cho CIDRAM."
@@ -215,19 +226,6 @@ config:
  general_time_format: "Định dạng ngày/giờ tháng sử dụng bởi CIDRAM. Tùy chọn bổ sung có thể được bổ sung theo yêu cầu."
  general_time_offset: "Múi giờ bù đắp trong phút."
  general_timezone: "Điều này được sử dụng để chỉ định múi giờ sử dụng (ví dụ, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, vv). Chỉ định "SYSTEM" để cho phép PHP tự động xử lý việc này cho bạn."
- hcaptcha: "Cấu hình cho hCaptcha (cung cấp một cách để con người lấy lại quyền truy cập khi bị chặn)."
- hcaptcha_api: &CaptchaAPI "API nào để sử dụng?"
- hcaptcha_expiry: &CaptchaExpiry "Số giờ để nhớ CAPTCHA. Mặc định = 720 (1 tháng)."
- hcaptcha_hcaptcha_log: &CaptchaLogFile "Đăng nhập tất cả các nỗ lực cho CAPTCHA? Nếu có, ghi rõ tên để sử dụng cho các tập tin đăng nhập. Nếu không, đốn biến này."
- hcaptcha_lockip: &CaptchaLockIP "Khóa CAPTCHA để IP?"
- hcaptcha_lockuser: &CaptchaLockUser "Khóa CAPTCHA để người dùng?"
- hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "Mã trạng thái nào nên được sử dụng khi hiển thị CAPTCHA cho các yêu cầu không bị chặn?"
- hcaptcha_secret: &CaptchaDashboard "Giá trị này có thể được tìm thấy trong bảng điều khiển cho dịch vụ CAPTCHA của bạn."
- hcaptcha_show_api_message: &ShowAPIMessage "Hiển thị thông báo API? True = Vâng [Mặc định]; False = Không."
- hcaptcha_show_cookie_warning: &ShowCookieWarning "Hiển thị cảnh báo cookie? True = Vâng [Mặc định]; False = Không."
- hcaptcha_signature_limit: &CaptchaSignatureLimit "Số lượng chữ ký tối đa được phép trước khi đề nghị CAPTCHA bị rút lại. Mặc định = 1."
- hcaptcha_sitekey: *CaptchaDashboard
- hcaptcha_usemode: &CaptchaUseMode "Khi nào nên cung cấp CAPTCHA? Lưu ý: Các yêu cầu trong danh sách trắng hay đã xác minh và không bị chặn không cần phải hoàn thành CAPTCHA. Cũng lưu ý: CAPTCHA có thể cung cấp một lớp bảo vệ bổ sung, hữu ích chống lại bot và các loại yêu cầu tự động độc hại khác nhau, nhưng sẽ không cung cấp bất kỳ biện pháp bảo vệ nào chống lại con người độc hại."
  ipapi: "Cấu hình cho mô-đun IP-API (cung cấp cơ sở tra cứu cho ASN và mã quốc gia cho CIDRAM)."
  ipapi_blocked_asns: *ConfigBlockedASNs
  ipapi_blocked_ccs: *ConfigBlockedCCs
@@ -529,7 +527,7 @@ label:
  %s is available: "%s có sẵn."
  %s is not available: "%s không có sẵn."
  %s signature: "%s chữ ký"
- 200 OK: "200 OK\nKhông mạnh mẽ, nhưng thân thiện với người dùng nhất. Các yêu cầu tự động rất có thể sẽ diễn giải phản hồi này là dấu hiệu cho thấy yêu cầu đã thành công."
+ 200 OK: "200 OK\nKhông mạnh mẽ, nhưng thân thiện với người dùng nhất. Các yêu cầu tự động rất có thể sẽ diễn giải phản hồi này là dấu hiệu cho thấy yêu cầu đã thành công. Được khuyến khích cho các yêu cầu không bị chặn."
  301 Moved Permanently: "301 Moved Permanently (Đã di chuyển vĩnh viễn)\nHướng dẫn khách hàng rằng chuyển hướng là VĨNH VIỄN, và rằng phương thức yêu cầu được sử dụng cho chuyển hướng CÓ THỂ khác với phương thức yêu cầu được sử dụng cho yêu cầu ban đầu."
  302 Found: "302 Found (Tìm thấy)\nHướng dẫn khách hàng rằng chuyển hướng là TẠM THỜI, và rằng phương thức yêu cầu được sử dụng cho chuyển hướng CÓ THỂ khác với phương thức yêu cầu được sử dụng cho yêu cầu ban đầu."
  307 Temporary Redirect: "307 Temporary Redirect (Chuyển hướng tạm thời)\nHướng dẫn khách hàng rằng chuyển hướng là TẠM THỜI, và rằng phương thức yêu cầu được sử dụng cho chuyển hướng có thể KHÔNG khác với phương thức yêu cầu được sử dụng cho yêu cầu ban đầu."
@@ -607,6 +605,9 @@ label:
  Latest stable: "Ổn định mới nhất:"
  Latest unstable: "Không ổn định mới nhất:"
  Loading_: "Trong tiến trình..."
+ Lock CAPTCHAs to the IP address of the user completing the CAPTCHA but not to the actual user: "Khóa CAPTCHA vào địa chỉ IP của người dùng hoàn thành CAPTCHA nhưng không phải vào chính người dùng đó.\nCookie KHÔNG được sử dụng để xác định người dùng. Khi quyền truy cập được lấy lại do hoàn thành thành công CAPTCHA, quyền này sẽ áp dụng cho bất kỳ ai kết nối từ cùng một địa chỉ IP."
+ Lock CAPTCHAs to the user completing the CAPTCHA as well as to their IP address: "Khóa CAPTCHA đối với người dùng hoàn thành CAPTCHA cũng như đối với địa chỉ IP của họ.\nCookie được sử dụng để xác định người dùng. Khi quyền truy cập được lấy lại do hoàn thành thành công CAPTCHA, quyền này chỉ áp dụng cho người dùng hoàn thành CAPTCHA và sẽ không còn hiệu lực nếu địa chỉ IP của họ thay đổi."
+ Lock CAPTCHAs to the user completing the CAPTCHA but not to their IP address: "Khóa CAPTCHA đối với người dùng hoàn thành CAPTCHA nhưng không đối với địa chỉ IP của họ.\nCookie được sử dụng để xác định người dùng. Khi quyền truy cập được lấy lại do hoàn thành thành công CAPTCHA, quyền này chỉ áp dụng cho người dùng hoàn thành CAPTCHA và sẽ tồn tại miễn là cookie của họ vẫn còn hiệu lực, ngay cả khi địa chỉ IP của họ thay đổi."
  Logged in, 2FA pending: "Đã đăng nhập, đang chờ xử lý 2FA."
  Logged in: "Đã đăng nhập."
  Logged out: "Đã đăng xuất."
@@ -652,6 +653,8 @@ label:
  Search Engine: "Máy tìm kiếm"
  See also: "Xem thêm:"
  Selected log file doesn_t exist: "Bản ghi đã chọn không tồn tại!"
+ Show API message: "Hiển thị thông báo API?\nHướng dẫn cho người dùng, phù hợp với API được sử dụng, về cách hoàn thành CAPTCHA."
+ Show cookie warning: "Hiển thị cảnh báo cookie?\nTùy thuộc vào luật bảo mật của quốc gia hoặc tiểu bang của bạn (ví dụ, GDPR/DSGVO ở EU, LGPD ở Brazil, vv), điều này có thể là bắt buộc về mặt pháp lý."
  Show: "Hiển thị"
  Signature type: "Loại chữ ký"
  Simple: "Đơn giản"

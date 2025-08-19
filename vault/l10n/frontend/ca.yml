@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Catalan language data for the front-end (last modified: 2025.08.14).
+# This file: Catalan language data for the front-end (last modified: 2025.08.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -161,6 +161,17 @@ config:
  bunnycdn_positive_action: "Quina acció hauria de realitzar CIDRAM quan troba una sol·licitud de BunnyCDN? L'acció predeterminada = Bypass."
  bypasses: "La configuració de les bypasses per a les signatures predeterminadas."
  bypasses_used: "Quins bypasses s'han d'utilitzar?"
+ captcha: "Configuració per a CAPTCHAs (proporciona una manera perquè els humans recuperin l'accés quan estan bloquejats)."
+ captcha_api: "Quina API utilitzar?"
+ captcha_expiry: "Nombre d'hores per recordar instàncies de CAPTCHA. Predeterminat = 720 (1 mes)."
+ captcha_hcaptcha_log: "Registrar tots els intents de CAPTCHA? En cas afirmatiu, especifiqueu el nom que voleu utilitzar per al fitxer de registre. Si no, deixeu aquesta variable en blanc."
+ captcha_hcaptcha_secret: &CaptchaDashboard "Aquest valor es pot trobar al tauler del vostre servei CAPTCHA."
+ captcha_hcaptcha_sitekey: *CaptchaDashboard
+ captcha_messages: "Missatges que es mostraran juntament amb els CAPTCHA."
+ captcha_lockto: "A què vincular els CAPTCHA."
+ captcha_nonblocked_status_code: "Quin codi d'estat s'ha d'utilitzar quan es mostren CAPTCHA a sol·licituds no bloquejades?"
+ captcha_signature_limit: "Nombre màxim de signatures permeses abans de la retirada de l'oferta CAPTCHA. Predeterminat = 1."
+ captcha_usemode: "Quan s'haurien d'oferir els CAPTCHA? Aquí podeu especificar el comportament preferit per a cada proveïdor compatible. Nota: Les sol·licituds a la llista blanca o verificades i no bloquejades no necessiten mai completar un CAPTCHA. També tingueu en compte: Els CAPTCHA poden proporcionar una capa addicional de protecció útil contra els robots i diversos tipus de sol·licituds automatitzades malicioses, però no proporcionaran cap protecció contra un humà maliciós."
  components: "Configuració per a l'activació i desactivació dels components utilitzats per CIDRAM. Normalment s'omple per la pàgina d'actualitzacions, però també es pot gestionar des d'aquí per a un control més fi i per a components personalitzats no reconeguts per la pàgina d'actualitzacions."
  components_events: "Gestors d'esdeveniments. Normalment s'utilitza per modificar la forma en què CIDRAM es comporta internament o per proporcionar funcionalitats addicionals."
  components_imports: "Importacions. Normalment s'utilitza per proporcionar informació de configuració d'un component a CIDRAM."
@@ -215,19 +226,6 @@ config:
  general_time_format: "El format de notació de data/hora utilitzat per CIDRAM. Es poden afegir opcions addicionals a petició."
  general_time_offset: "Desplaçament de la zona horària en minuts."
  general_timezone: "S'utilitza per especificar la zona horària a utilitzar (per exemple, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, etc). Especifiqueu "SYSTEM" per tal que PHP ho gestioni automàticament."
- hcaptcha: "Configuració per a hCaptcha (proporciona una manera perquè els humans recuperin l'accés quan estan bloquejats)."
- hcaptcha_api: &CaptchaAPI "Quina API utilitzar?"
- hcaptcha_expiry: &CaptchaExpiry "Nombre d'hores per recordar instàncies de CAPTCHA. Predeterminat = 720 (1 mes)."
- hcaptcha_hcaptcha_log: &CaptchaLogFile "Registrar tots els intents de CAPTCHA? En cas afirmatiu, especifiqueu el nom que voleu utilitzar per al fitxer de registre. Si no, deixeu aquesta variable en blanc."
- hcaptcha_lockip: &CaptchaLockIP "Lligar els CAPTCHA a les adreces IP?"
- hcaptcha_lockuser: &CaptchaLockUser "Lligar els CAPTCHA als usuaris?"
- hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "Quin codi d'estat s'ha d'utilitzar quan es mostren CAPTCHA a sol·licituds no bloquejades?"
- hcaptcha_secret: &CaptchaDashboard "Aquest valor es pot trobar al tauler del vostre servei CAPTCHA."
- hcaptcha_show_api_message: &ShowAPIMessage "Mostra el missatge de l'API? True/Cert = Sí [Predeterminat]; False/Fals = No."
- hcaptcha_show_cookie_warning: &ShowCookieWarning "Mostra l'advertència de galetes? True/Cert = Sí [Predeterminat]; False/Fals = No."
- hcaptcha_signature_limit: &CaptchaSignatureLimit "Nombre màxim de signatures permeses abans de la retirada de l'oferta CAPTCHA. Predeterminat = 1."
- hcaptcha_sitekey: *CaptchaDashboard
- hcaptcha_usemode: &CaptchaUseMode "Quan s'ha d'oferir el CAPTCHA? Nota: Les sol·licituds a la llista blanca o verificades i no bloquejades no necessiten mai completar un CAPTCHA. També tingueu en compte: Els CAPTCHA poden proporcionar una capa addicional de protecció útil contra els robots i diversos tipus de sol·licituds automatitzades malicioses, però no proporcionaran cap protecció contra un humà maliciós."
  ipapi: "Configuració del mòdul IP-API (proporciona una funció de cerca d'ASN i codi de país per a CIDRAM)."
  ipapi_blocked_asns: *ConfigBlockedASNs
  ipapi_blocked_ccs: *ConfigBlockedCCs
@@ -526,7 +524,7 @@ label:
  %s signature:
   - "%s signatura"
   - "%s signatures"
- 200 OK: "200 OK (D'acord)\nEl menys robust, però el més fàcil d'utilitzar. És probable que les sol·licituds automatitzades interpretin aquesta resposta com una indicació que la sol·licitud ha tingut èxit."
+ 200 OK: "200 OK (D'acord)\nEl menys robust, però el més fàcil d'utilitzar. És probable que les sol·licituds automatitzades interpretin aquesta resposta com una indicació que la sol·licitud ha tingut èxit. Recomanat per a sol·licituds no bloquejades."
  301 Moved Permanently: "301 Moved Permanently (Trasllat permanentment)\nIndica al client que la redirecció és PERMANENT, i que el mètode de sol·licitud utilitzat per a la redirecció POT ser diferent del mètode de sol·licitud utilitzat per a la sol·licitud inicial."
  302 Found: "302 Found (Trobats)\nIndica al client que la redirecció és TEMPORAL, i que el mètode de sol·licitud utilitzat per a la redirecció POT ser diferent del mètode de sol·licitud utilitzat per a la sol·licitud inicial."
  307 Temporary Redirect: "307 Temporary Redirect (Redirecció temporal)\nIndica al client que la redirecció és TEMPORAL, i que el mètode de sol·licitud utilitzat per a la redirecció NO pot ser diferent del mètode de sol·licitud utilitzat per a la sol·licitud inicial."
@@ -608,6 +606,9 @@ label:
  Latest stable: "Últim estable:"
  Latest unstable: "Últim inestable:"
  Loading_: "Carregant..."
+ Lock CAPTCHAs to the IP address of the user completing the CAPTCHA but not to the actual user: "Vincula els CAPTCHA a l'adreça IP de l'usuari que completa el CAPTCHA, però no a l'usuari real.\nLes galetes NO s'utilitzen per identificar els usuaris. Quan es recupera l'accés després de completar correctament un CAPTCHA, s'aplica a qualsevol persona que es connecti des de la mateixa adreça IP."
+ Lock CAPTCHAs to the user completing the CAPTCHA as well as to their IP address: "Vincula els CAPTCHA a l'usuari que completa el CAPTCHA, així com a la seva adreça IP.\nLes galetes s'utilitzen per identificar els usuaris. Quan es recupera l'accés després de completar correctament un CAPTCHA, només s'aplica a l'usuari que ha completat el CAPTCHA i no persistirà si la seva adreça IP canvia."
+ Lock CAPTCHAs to the user completing the CAPTCHA but not to their IP address: "Vincula els CAPTCHA a l'usuari que completa el CAPTCHA, però no a la seva adreça IP.\nLes galetes s'utilitzen per identificar els usuaris. Quan es recupera l'accés després de completar correctament un CAPTCHA, només s'aplica a l'usuari que ha completat el CAPTCHA i, mentre la seva galeta segueixi sent vàlida, persistirà, fins i tot si la seva adreça IP canvia."
  Logged in, 2FA pending: "Connectat, 2FA pendent."
  Logged in: "Connectat."
  Logged out: "Desconnectat."
@@ -653,6 +654,8 @@ label:
  Search Engine: "Motor de cerca"
  See also: "Vegeu també:"
  Selected log file doesn_t exist: "El fitxer de registre seleccionat no existeix!"
+ Show API message: "Mostra el missatge de l'API?\nInstruccions a l'usuari, adequades a l'API utilitzada, relatives a la finalització del CAPTCHA."
+ Show cookie warning: "Mostra l'advertència de galetes?\nDepenent de les lleis de privadesa del vostre país o estat (per exemple, GDPR/DSGVO a la UE, LGPD al Brasil, etc), això pot ser legalment obligatori."
  Show: "Mostra"
  Signature type: "Tipus de signatura:"
  Simple: "Senzill"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2025.08.14).
+# This file: Urdu language data for the front-end (last modified: 2025.08.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -161,6 +161,17 @@ config:
  bunnycdn_positive_action: "BunnyCDN کی درخواست کا سامنا کرنا پڑتا ہے تو CIDRAM کو کون سا عمل کرنا چاہیے؟ پہلے سے طے شدہ کارروائی = بائی پاس."
  bypasses: "پہلے سے طے شدہ دستخط کو نظرانداز کرنے کے لیے تشکیل."
  bypasses_used: "کون سے بائی پاس کو استعمال کیا جانا چاہیے؟"
+ captcha: "CAPTCHA کی ترتیبات (بلاک ہونے پر انسانوں کو دوبارہ رسائی حاصل کرنے کا ایک راستہ فراہم کرتا ہے)."
+ captcha_api: "کون سا API استعمال کرنے کے لیے؟"
+ captcha_expiry: "گھنٹوں کی تعداد CAPTCHA کے واقعات کو یاد کرنے. پہلے سے طے شدہ = 720 (1 ماہ)."
+ captcha_hcaptcha_log: "تمام CAPTCHA کے کوششوں لاگ؟ اگر ہاں، تو لاگ فائل کے لیے استعمال کرنے کے لیے نام کی وضاحت کریں. اگر نہیں، تو اس متغیر کو خالی چھوڑ دیں."
+ captcha_hcaptcha_secret: &CaptchaDashboard "یہ قدر آپ کے CAPTCHA خدمت کے لیے ڈیش بورڈ میں مل سکتی ہے."
+ captcha_hcaptcha_sitekey: *CaptchaDashboard
+ captcha_messages: "CAPTCHA کے ساتھ دکھائے جانے والے پیغامات."
+ captcha_lockto: "CAPTCHA کو کس چیز پر لاک کرنا ہے."
+ captcha_nonblocked_status_code: "غیر مسدود درخواستوں پر CAPTCHA کی نمائش کرتے وقت کون سا اسٹیٹس کوڈ استعمال کرنا چاہیے؟"
+ captcha_signature_limit: "CAPTCHA پیش کش واپس لینے سے پہلے دستخطوں کی زیادہ سے زیادہ تعداد کی اجازت. پہلے سے طے شدہ = 1."
+ captcha_usemode: "CAPTCHA کب پیش کیے جائیں؟ آپ یہاں ہر معاون فراہم کنندہ کے لیے ترجیحی سلوک کی وضاحت کر سکتے ہیں. نوٹ: وائٹ لسٹڈ یا توثیق شدہ اور غیر مسدود درخواستوں کو کبھی بھی CAPTCHA کو مکمل کرنے کی ضرورت نہیں ہے. یہ بھی نوٹ کریں: CAPTCHA بوٹس اور مختلف قسم کی بدنیتی پر مبنی خودکار درخواستوں کے خلاف مفید تحفظ فراہم کر سکتے ہیں، لیکن بدنیتی پر مبنی انسان کے خلاف کوئی تحفظ فراہم نہیں کریں گے."
  components: "CIDRAM کی طرف سے استعمال ہونے والے اجزاء کو چالو کرنے اور غیر فعال کرنے کے لیے ترتیب. عام طور پر اپ ڈیٹس صفحہ کے ذریعے آباد ہوتا ہے، لیکن بہتر کنٹرول کے لیے اور اپ ڈیٹس صفحہ کے ذریعے پہچانے جانے والے حسب ضرورت اجزاء کے لیے بھی یہاں سے منظم کیا جا سکتا ہے."
  components_events: "ایونٹ ہینڈلرز. عام طور پر استعمال کیا جاتا ہے جس طرح سے CIDRAM اندرونی طور پر برتاؤ کرتا ہے یا اضافی فعالیت فراہم کرتا ہے."
  components_imports: "درآمدات. عام طور پر CIDRAM کو جزو کی ترتیب کی معلومات فراہم کرنے کے لیے استعمال کیا جاتا ہے."
@@ -215,19 +226,6 @@ config:
  general_time_format: "CIDRAM کی طرف سے استعمال کی تاریخوں کا فارم. اضافی اختیارات درخواست پر شامل کیا جا سکتا ہے."
  general_time_offset: "ٹائم زون منٹ میں آفسیٹ."
  general_timezone: "استعمال کرنے کے لیے ٹائم زون کی وضاحت کرتا ہے (جیسے، Africa/Cairo، America/New_York، Asia/Tokyo، Australia/Perth، Europe/Berlin، Pacific/Guam، وغیرہ). SYSTEM کی وضاحت کریں تاکہ PHP کو آپ کے لیے خود بخود یہ سنبھل سکے."
- hcaptcha: "HCaptcha کی ترتیبات (بلاک ہونے پر انسانوں کو دوبارہ رسائی حاصل کرنے کا ایک راستہ فراہم کرتا ہے)."
- hcaptcha_api: &CaptchaAPI "کون سا API استعمال کرنے کے لیے؟"
- hcaptcha_expiry: &CaptchaExpiry "گھنٹوں کی تعداد CAPTCHA کے واقعات کو یاد کرنے. پہلے سے طے شدہ = 720 (1 ماہ)."
- hcaptcha_hcaptcha_log: &CaptchaLogFile "تمام CAPTCHA کے کوششوں لاگ؟ اگر ہاں، تو لاگ فائل کے لیے استعمال کرنے کے لیے نام کی وضاحت کریں. اگر نہیں، تو اس متغیر کو خالی چھوڑ دیں."
- hcaptcha_lockip: &CaptchaLockIP "ئی پی ایس کے لیے ہیتی لاک؟"
- hcaptcha_lockuser: &CaptchaLockUser "صارفین کے لیے ہیتی لاک؟"
- hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "غیر مسدود درخواستوں پر CAPTCHA کی نمائش کرتے وقت کون سا اسٹیٹس کوڈ استعمال کرنا چاہیے؟"
- hcaptcha_secret: &CaptchaDashboard "یہ قدر آپ کے CAPTCHA خدمت کے لیے ڈیش بورڈ میں مل سکتی ہے."
- hcaptcha_show_api_message: &ShowAPIMessage "API کا پیغام دکھائیں؟ True (سچے) = جی ہاں [پہلے سے طے شدہ]؛ False (جھوٹی) = نہیں."
- hcaptcha_show_cookie_warning: &ShowCookieWarning "کوکی انتباہ دکھائیں؟ True (سچے) = جی ہاں [پہلے سے طے شدہ]؛ False (جھوٹی) = نہیں."
- hcaptcha_signature_limit: &CaptchaSignatureLimit "CAPTCHA پیش کش واپس لینے سے پہلے دستخطوں کی زیادہ سے زیادہ تعداد کی اجازت. پہلے سے طے شدہ = 1."
- hcaptcha_sitekey: *CaptchaDashboard
- hcaptcha_usemode: &CaptchaUseMode "CAPTCHA کب پیش کیا جائے؟ نوٹ: وائٹ لسٹڈ یا توثیق شدہ اور غیر مسدود درخواستوں کو کبھی بھی CAPTCHA کو مکمل کرنے کی ضرورت نہیں ہے. یہ بھی نوٹ کریں: CAPTCHA بوٹس اور مختلف قسم کی بدنیتی پر مبنی خودکار درخواستوں کے خلاف مفید تحفظ فراہم کر سکتے ہیں، لیکن بدنیتی پر مبنی انسان کے خلاف کوئی تحفظ فراہم نہیں کریں گے."
  ipapi: "IP-API ماڈیول کے لیے کنفیگریشن (CIDRAM کے لیے ASN اور کنٹری کوڈ تلاش کرنے کی سہولت فراہم کرتا ہے)."
  ipapi_blocked_asns: *ConfigBlockedASNs
  ipapi_blocked_ccs: *ConfigBlockedCCs
@@ -527,7 +525,7 @@ label:
  %s is available: "%s دستیاب ہے."
  %s is not available: "%s دستیاب نہیں ہے."
  %s signature: "%s دستخط"
- 200 OK: "200 OK (ٹھیک ہے)\nکم سے کم مضبوط، لیکن سب سے زیادہ صارف دوست. خودکار درخواستیں غالباً اس جواب کی تشریح کریں گی کہ درخواست کامیاب تھی."
+ 200 OK: "200 OK (ٹھیک ہے)\nکم سے کم مضبوط، لیکن سب سے زیادہ صارف دوست. خودکار درخواستیں غالباً اس جواب کی تشریح کریں گی کہ درخواست کامیاب تھی. غیر مسدود درخواستوں کے لیے تجویز کردہ."
  301 Moved Permanently: "301 Moved Permanently (مستقل طور پر منتقل ہو گیا)\nکلائنٹ کو ہدایت کرتا ہے کہ ری ڈائریکٹ مستقل ہے، اور یہ کہ ری ڈائریکٹ کے لیے استعمال ہونے والا کا طریقہ ابتدائی درخواست کے لیے استعمال کیے جانے والے درخواست کے طریقہ سے مختلف ہو سکتا ہے."
  302 Found: "302 Found (ملا)\nکلائنٹ کو ہدایت کرتا ہے کہ ری ڈائریکٹ عارضی ہے، اور یہ کہ ری ڈائریکٹ کے لیے استعمال ہونے والا درخواست کا طریقہ ابتدائی درخواست کے لیے استعمال کیے جانے والے درخواست کے طریقہ سے مختلف ہو سکتا ہے."
  307 Temporary Redirect: "307 Temporary Redirect (عارضی ری ڈائریکٹ)\nکلائنٹ کو ہدایت کرتا ہے کہ ری ڈائریکٹ عارضی ہے، اور یہ کہ ری ڈائریکٹ کے لیے استعمال ہونے والا درخواست کا طریقہ ابتدائی درخواست کے لیے استعمال کیے جانے والے درخواست کے طریقہ سے مختلف نہیں ہو سکتا."
@@ -609,6 +607,9 @@ label:
  Latest stable: "تازہ ترین مستحکم:"
  Latest unstable: "تازہ ترین غیر مستحکم:"
  Loading_: "لوڈ کر رہا ہے ..."
+ Lock CAPTCHAs to the IP address of the user completing the CAPTCHA but not to the actual user: "CAPTCHA کو CAPTCHA مکمل کرنے والے صارف کے IP پتے پر لاک کریں لیکن اصل صارف کے لیے نہیں.\nکوکیز کا استعمال صارفین کی شناخت کے لیے نہیں کیا جاتا. جب CAPTCHA کی کامیاب تکمیل کی وجہ سے دوبارہ رسائی حاصل کی جاتی ہے، تو اس کا اطلاق اسی IP ایڈریس سے جڑنے والے ہر فرد پر ہوتا ہے."
+ Lock CAPTCHAs to the user completing the CAPTCHA as well as to their IP address: "CAPTCHA مکمل کرنے والے صارف کے ساتھ ساتھ ان کے IP ایڈریس پر CAPTCHA کو لاک کریں.\nکوکیز کا استعمال صارفین کی شناخت کے لیے کیا جاتا ہے. جب CAPTCHA کی کامیاب تکمیل کی وجہ سے دوبارہ رسائی حاصل کی جاتی ہے، تو یہ صرف CAPTCHA کو مکمل کرنے والے صارف پر لاگو ہوتا ہے، اور اگر اس کا IP پتہ تبدیل ہوتا ہے تو یہ برقرار نہیں رہے گا."
+ Lock CAPTCHAs to the user completing the CAPTCHA but not to their IP address: "CAPTCHA مکمل کرنے والے صارف کے لیے CAPTCHA کو لاک کریں لیکن ان کے IP ایڈریس پر نہیں.\nکوکیز کا استعمال صارفین کی شناخت کے لیے کیا جاتا ہے. جب CAPTCHA کی کامیاب تکمیل کی وجہ سے دوبارہ رسائی حاصل کی جاتی ہے، تو یہ صرف CAPTCHA کو مکمل کرنے والے صارف پر لاگو ہوتا ہے، اور جب تک ان کی کوکی درست رہے گی، برقرار رہے گی، چاہے ان کا IP پتہ بدل جائے."
  Logged in, 2FA pending: "لاگ ان، 2FA زیر التواء."
  Logged in: "لاگ ان."
  Logged out: "لاگ آؤٹ."
@@ -654,6 +655,8 @@ label:
  Search Engine: "سرچ انجن"
  See also: "بھی دیکھو:"
  Selected log file doesn_t exist: "منتخب شدہ لاگ فائل موجود نہیں ہے!"
+ Show API message: "API کا پیغام دکھائیں؟\nCAPTCHA کی تکمیل کے حوالے سے صارف کے لیے ہدایات، استعمال کیے گئے API کے لیے موزوں."
+ Show cookie warning: "کوکی انتباہ دکھائیں؟\nآپ کے ملک یا ریاست کے رازداری کے قوانین پر منحصر ہے (مثلاً، EU میں GDPR/DSGVO، برازیل میں LGPD وغیرہ)، یہ قانونی طور پر درکار ہو سکتا ہے."
  Show: "دکھائیں"
  Signature type: "دستخط کی قسم:"
  Simple: "سادہ"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese language data for the front-end (last modified: 2025.08.14).
+# This file: Chinese language data for the front-end (last modified: 2025.08.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -141,7 +141,7 @@ config:
  abuseipdb_api_key: &EnterAPIKey {"zh-Hans": "请在此处输入您的API密钥。", "zh-Hant": "請在此處輸入您的API金鑰。"}
  abuseipdb_build_profiles_from_usage_type: {"zh-Hans": "使用API返回的使用类型构建分类？ False = 不要使用。 True = 使用。 标准 = True。", "zh-Hant": "使用API返回的使用類型構建分類？ False = 不要使用。 True = 使用。 標準 = True。"}
  abuseipdb_max_age_in_days: {"zh-Hans": "执行查找时将考虑报告的最长天数（必须是1到365之间的数字）。标准=365。", "zh-Hant": "執行查找時將考慮報告的最長天數（必須是1到365之間的數字）。標準=365。"}
- abuseipdb_max_cs_for_captcha: {"zh-Hans": "为了提供CAPTCHA的目的最大置信度分数（必须是0到100之间的数字）。标准=10。", "zh-Hant": "為了提供CAPTCHA的目的最大置信度分數（必須是0到100之間的數字）。標準=10。"}
+ abuseipdb_max_cs_for_captcha: {"zh-Hans": "为了提供验证码的目的最大置信度分数（必须是0到100之间的数字）。标准=10。", "zh-Hant": "為了提供驗證碼的目的最大置信度分數（必須是0到100之間的數字）。標準=10。"}
  abuseipdb_minimum_confidence_score: {"zh-Hans": "为了让CIDRAM阻止IP地址所需的最低置信度分数（必须是0到100之间的数字）。标准=50。", "zh-Hant": "為了讓CIDRAM阻止IP位址所需的最低置信度分數（必須是0到100之間的數字）。標準=50。"}
  abuseipdb_minimum_total_reports: {"zh-Hans": "为了让CIDRAM阻止IP地址所需的最小总报告数。标准=1。", "zh-Hant": "為了讓CIDRAM阻止IP位址所需的最小總報告數。標準=1。"}
  abuseipdb_report_back: {"zh-Hans": "允许CIDRAM使用您的API密钥将检测到的不良行为报告回AbuseIPDB吗？", "zh-Hant": "允許CIDRAM使用您的API金鑰將檢測到的不良行為報告回AbuseIPDB嗎？"}
@@ -169,6 +169,19 @@ config:
  bunnycdn_positive_action: {"zh-Hans": "CIDRAM遇到BunnyCDN的请求时应该执行什么动作？ 默认操作 = 绕行。", "zh-Hant": "CIDRAM遇到BunnyCDN的請求時應該執行什麼動作？ 默認操作 = 繞行。"}
  bypasses: {"zh-Hans": "默认签名绕过配置。", "zh-Hant": "默認簽名繞過配置。"}
  bypasses_used: {"zh-Hans": "应该使用哪些绕过？", "zh-Hant": "應該使用哪些繞過？"}
+ captcha: {"zh-Hans": "验证码的配置（为人们提供了一种在受阻时重新获得访问权限的方法）。", "zh-Hant": "驗證碼的配置（為人們提供了一種在受阻時重新獲得訪問權限的方法）。"}
+ captcha_api: {"zh-Hans": "使用哪个API？", "zh-Hant": "使用哪個API？"}
+ captcha_expiry: {"zh-Hans": "记得验证码多少小时？ 标准 = 720 （1个月）。", "zh-Hant": "記得驗證碼多少小時？ 標準 = 720 （1個月）。"}
+ captcha_hcaptcha_log: {"zh-Hans": "记录所有的验证码的尝试？​要做到这一点，​指定一个文件名到使用。​如果不，​离开这个变量为空白。", "zh-Hant": "記錄所有的驗證碼的嘗試？​要做到這一點，​指定一個檔案名稱到使用。​如果不，​離開這個變量為空白。"}
+ captcha_hcaptcha_secret: &CaptchaDashboard {"zh-Hans": "可以在您的验证码服务的仪表板中找到该值。", "zh-Hant": "可以在您的驗證碼服務的儀表板中找到該值。"}
+ captcha_hcaptcha_sitekey: *CaptchaDashboard
+ captcha_messages: {"zh-Hans": "与验证码一起显示的消息。", "zh-Hant": "與驗證碼一起顯示的訊息。"}
+ captcha_lockto: {"zh-Hans": "将验证码锁定到什么。", "zh-Hant": "將驗證碼鎖定在什麼。"}
+ captcha_nonblocked_status_code: {"zh-Hans": "向未阻止的请求显示验证码时应使用哪个状态代码？", "zh-Hant": "向未阻止的請求顯示驗證碼時應使用哪個狀態代碼？"}
+ captcha_signature_limit: {"zh-Hans": "撤销验证码之前允许的最大签名数。 标准 = 1。", "zh-Hant": "撤銷驗證碼之前允許的最大簽名數。 標準 = 1。"}
+ captcha_usemode:
+  zh-Hans: "何时应提供验证码？​您可以在此处为每个受支持的提供商指定首选行为。​注意：列入白名单或已验证且未阻止的请求永远不需要完成验证码。​另请注意：验证码可以提供有用的保护层，防止机器人和各种恶意自动请求，但不会提供任何针对恶意人类的保护。"
+  zh-Hant: "何時應提供驗證碼？​您可以在此處為每個受支援的提供者指定首選行為。​注意：列入白名單或已驗證且未阻止的請求永遠不需要完成驗證碼。​另請注意：驗證碼可以提供有用的保護層，防止機器人和各種惡意自動請求，但不會提供任何針對惡意人類的保護。"
  components: {"zh-Hans": "CIDRAM使用的组件的启用和停用的配置。​通常由更新页面填充，但也可以从此处进行管理，以实现更好的控制以及更新页面无法识别的自定义组件。", "zh-Hant": "CIDRAM使用的組件的啟用和停用的配置。​通常由更新頁面填充，但也可以從此處進行管理，以實現更好的控制以及更新頁面無法識別的自定義組件。"}
  components_events: {"zh-Hans": "事件处理程序。​通常用于修改CIDRAM在内部的行为方式或提供附加功能。", "zh-Hant": "事件處理程序。​通常用於修改CIDRAM在內部的行為方式或提供附加功能。"}
  components_imports: {"zh-Hans": "进口。​通常用于向CIDRAM提供组件的配置信息。", "zh-Hant": "進口。​通常用於向CIDRAM提供組件的配置信息。"}
@@ -237,19 +250,6 @@ config:
  general_timezone:
   zh-Hans: "这用于指定要使用的时区​（例如，Africa/Cairo、America/New_York、Asia/Tokyo、Australia/Perth、Europe/Berlin、Pacific/Guam、等等）。​指定“SYSTEM”使PHP自动为您处理。"
   zh-Hant: "這用於指定要使用的時區​（例如，Africa/Cairo、America/New_York、Asia/Tokyo、Australia/Perth、Europe/Berlin、Pacific/Guam、等等）。​指定『SYSTEM』使PHP自動為您處理。"
- hcaptcha: {"zh-Hans": "HCaptcha的配置（为人们提供了一种在受阻时重新获得访问权限的方法）。", "zh-Hant": "HCaptcha的配置（為人們提供了一種在受阻時重新獲得訪問權限的方法）。"}
- hcaptcha_api: &CaptchaAPI {"zh-Hans": "使用哪个API？", "zh-Hant": "使用哪個API？"}
- hcaptcha_expiry: &CaptchaExpiry {"zh-Hans": "记得CAPTCHA多少小时？ 标准 = 720 （1个月）。", "zh-Hant": "記得CAPTCHA多少小時？ 標準 = 720 （1個月）。"}
- hcaptcha_hcaptcha_log: &CaptchaLogFile {"zh-Hans": "记录所有的CAPTCHA的尝试？​要做到这一点，​指定一个文件名到使用。​如果不，​离开这个变量为空白。", "zh-Hant": "記錄所有的CAPTCHA的嘗試？​要做到這一點，​指定一個檔案名稱到使用。​如果不，​離開這個變量為空白。"}
- hcaptcha_lockip: &CaptchaLockIP {"zh-Hans": "应该CAPTCHA锁定到IP？", "zh-Hant": "應該CAPTCHA鎖定到IP？"}
- hcaptcha_lockuser: &CaptchaLockUser {"zh-Hans": "应该CAPTCHA锁定到用户？", "zh-Hant": "應該CAPTCHA鎖定到用戶？"}
- hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode {"zh-Hans": "向未阻止的请求显示CAPTCHA时应使用哪个状态代码？", "zh-Hant": "向未阻止的請求顯示CAPTCHA時應使用哪個狀態代碼？"}
- hcaptcha_secret: &CaptchaDashboard {"zh-Hans": "可以在您的CAPTCHA服务的仪表板中找到该值。", "zh-Hant": "可以在您的CAPTCHA服務的儀表板中找到該值。"}
- hcaptcha_show_api_message: &ShowAPIMessage {"zh-Hans": "显示API讯息吗？​True（真）=显示【标准】；False（假）=不显示。", "zh-Hant": "顯示API訊息嗎？​True（真）=顯示【標準】；False（假）=不顯示。"}
- hcaptcha_show_cookie_warning: &ShowCookieWarning {"zh-Hans": "显示cookie警告吗？​True（真）=显示【标准】；False（假）=不显示。", "zh-Hant": "顯示cookie警告嗎？​True（真）=顯示【標準】；False（假）=不顯示。"}
- hcaptcha_signature_limit: &CaptchaSignatureLimit {"zh-Hans": "撤销CAPTCHA之前允许的最大签名数。 标准 = 1。", "zh-Hant": "撤銷CAPTCHA之前允許的最大簽名數。 標準 = 1。"}
- hcaptcha_sitekey: *CaptchaDashboard
- hcaptcha_usemode: &CaptchaUseMode {"zh-Hans": "何时应提供CAPTCHA吗？​注意：列入白名单或已验证且未阻止的请求永远不需要完成CAPTCHA。​另请注意：CAPTCHA可以提供有用的保护层，防止机器人和各种恶意自动请求，但不会提供任何针对恶意人类的保护。", "zh-Hant": "何時應提供CAPTCHA嗎？​注意：列入白名單或已驗證且未阻止的請求永遠不需要完成CAPTCHA。​另請注意：CAPTCHA可以提供有用的保護層，防止機器人和各種惡意自動請求，但不會提供任何針對惡意人類的保護。"}
  ipapi: {"zh-Hans": "IP-API模块的配置（为CIDRAM提供ASN和国家代码查找工具）。", "zh-Hant": "IP-API模組的配置（為CIDRAM提供ASN和國家代碼查找工具）。"}
  ipapi_blocked_asns: *ConfigBlockedASNs
  ipapi_blocked_ccs: *ConfigBlockedCCs
@@ -296,7 +296,7 @@ config:
  projecthoneypot: {"zh-Hans": "Project Honeypot模块的配置。", "zh-Hant": "Project Honeypot模組的配置。"}
  projecthoneypot_api_key: *EnterAPIKey
  projecthoneypot_max_age_in_days: {"zh-Hans": "执行查找时将考虑报告的最长天数。标准=365。", "zh-Hant": "執行查找時將考慮報告的最長天數。標準=365。"}
- projecthoneypot_max_ts_for_captcha: {"zh-Hans": "为了提供CAPTCHA的目的最大威胁分数（必须是1到100之间的数字）。标准=10。", "zh-Hant": "為了提供CAPTCHA的目的最大威脅分數（必須是1到100之間的數字）。標準=10。"}
+ projecthoneypot_max_ts_for_captcha: {"zh-Hans": "为了提供验证码的目的最大威胁分数（必须是1到100之间的数字）。标准=10。", "zh-Hant": "為了提供驗證碼的目的最大威脅分數（必須是1到100之間的數字）。標準=10。"}
  projecthoneypot_minimum_threat_score: {"zh-Hans": "为了让CIDRAM阻止IP地址所需的最低威胁分数（必须是1到100之间的数字）。标准=10。", "zh-Hant": "為了讓CIDRAM阻止IP位址所需的最低威脅分數（必須是1到100之間的數字）。標準=10。"}
  projecthoneypot_type_of_visitor: {"zh-Hans": "根据Project Honeypot确定的访问者类型进行阻止或分类。", "zh-Hant": "根據Project Honeypot確定的訪問者類型進行阻止或分類。"}
  protocol: {"zh-Hans": "协议阻塞模块的配置。", "zh-Hant": "協定阻塞模組的配置。"}
@@ -334,20 +334,22 @@ config:
  supplementary_cache_options_pdo_dsn: {"zh-Hans": "PDO DSN值。 标准 = “mysql:dbname=cidram;host=localhost;port=3306”。", "zh-Hant": "PDO DSN值。 默認 = 『mysql:dbname=cidram;host=localhost;port=3306』。"}
  supplementary_cache_options_pdo_password: {"zh-Hans": "PDO 密码。", "zh-Hant": "PDO 密碼。"}
  supplementary_cache_options_pdo_username: {"zh-Hans": "PDO 用户名。", "zh-Hant": "PDO 使用者名稱。"}
- supplementary_cache_options_prefix: {"zh-Hans": "该值将附加到所有缓存条目的键的开头。 标准 = “CIDRAM_”。​当同一服务器上存在多个安装时，这对于将它们的缓存彼此分开非常有用。", "zh-Hant": "該值將附加到所有緩存條目的鍵的開頭。 默認 = 『CIDRAM_』。​當同一服務器上存在多個安裝時，這對於將它們的緩存彼此分開非常有用。"}
+ supplementary_cache_options_prefix:
+  zh-Hans: "该值将附加到所有缓存条目的键的开头。 标准 = “CIDRAM_”。 当同一服务器上存在多个安装时，这对于将它们的缓存彼此分开非常有用。"
+  zh-Hant: "該值將附加到所有緩存條目的鍵的開頭。 默認 = 『CIDRAM_』。 當同一服務器上存在多個安裝時，這對於將它們的緩存彼此分開非常有用。"
  supplementary_cache_options_redis_database_number: {"zh-Hans": "Redis 数据库编号。 标准 = “0”。 注意：不能在 Redis Cluster 中使用 0 以外的值。", "zh-Hant": "Redis 資料庫編號。 默認 = 『0』。 注意：不能在 Redis Cluster 中使用 0 以外的值。"}
  supplementary_cache_options_redis_host: {"zh-Hans": "Redis 主机值。 标准 = localhost。", "zh-Hant": "Redis 主機值。 默認 = localhost。"}
  supplementary_cache_options_redis_port: {"zh-Hans": "Redis 端口值。 标准 = “6379”。", "zh-Hant": "Redis 端口值。 默認 = 『6379』。"}
  supplementary_cache_options_redis_timeout: {"zh-Hans": "Redis 超时值。 标准 = “2.5”。", "zh-Hant": "Redis 超時值。 默認 = 『2.5』。"}
  template_data: {"zh-Hans": "模板和主题的配置。", "zh-Hant": "模板和主題的配置。"}
  template_data_block_event_title: {"zh-Hans": "为阻止事件显示的页面标题。", "zh-Hant": "為阻止事件顯示的頁面標題。"}
- template_data_captcha_title: {"zh-Hans": "为CAPTCHA请求显示的页面标题。", "zh-Hant": "為CAPTCHA請求顯示的頁面標題。"}
+ template_data_captcha_title: {"zh-Hans": "为验证码请求显示的页面标题。", "zh-Hant": "為驗證碼請求顯示的頁面標題。"}
  template_data_css_url: {"zh-Hans": "自定义主题的CSS文件URL。", "zh-Hant": "自定義主題的CSS文件URL。"}
  template_data_custom_footer: {"zh-Hans": "在所有“拒绝访问”页面的末尾作为HTML插入。​如果您想在所有此类页面中包含法律声明、联系链接、业务信息、或类似，这可能会很有用。", "zh-Hant": "在所有『拒絕訪問』頁面的末尾作為HTML插入。​如果您想在所有此類頁面中包含法律聲明、聯繫鏈接、業務信息、或類似，這可能會很有用。"}
  template_data_custom_header: {"zh-Hans": "在所有“拒绝访问”页面的开头作为HTML插入。​如果您想在所有此类页面中包含网站徽标、个性化标题、脚本、或类似，这可能会很有用。", "zh-Hant": "在所有『拒絕訪問』頁面的開頭作為HTML插入。​如果您想在所有此類頁面中包含網站徽標、個性化標題、腳本、或類似，這可能會很有用。"}
  template_data_magnification: *MagnifDesc
- template_data_theme: {"zh-Hans": "用于阻止事件和CAPTCHA请求的主题。", "zh-Hant": "用於阻止事件和CAPTCHA請求的主題。"}
- template_data_theme_mode: {"zh-Hans": "用于阻止事件和CAPTCHA请求的主题模式。", "zh-Hant": "用於阻止事件和CAPTCHA請求的主題模式。"}
+ template_data_theme: {"zh-Hans": "用于阻止事件和验证码请求的主题。", "zh-Hant": "用於阻止事件和驗證碼請求的主題。"}
+ template_data_theme_mode: {"zh-Hans": "用于阻止事件和验证码请求的主题模式。", "zh-Hant": "用於阻止事件和驗證碼請求的主題模式。"}
  tor: {"zh-Hans": "Tor阻塞模块的配置。", "zh-Hant": "Tor阻塞模組的配置。"}
  verification: {"zh-Hans": "请求来源验证配置。", "zh-Hant": "請求來源驗證配置。"}
  verification_adjust: {"zh-Hans": "在验证上下文中调整其他功能的控件。", "zh-Hant": "在驗證上下文中調整其他功能的控件。"}
@@ -658,22 +660,42 @@ label:
  %s is available: "%s可用。"
  %s is not available: "%s不可用。"
  %s signature: {"zh-Hans": "%s个文件中的", "zh-Hant": "%s個文件中的"}
- 200 OK: {"zh-Hans": "200 OK （好的）\n最不健壮，但最用户友好。​自动请求很可能将此响应解释为成功。", "zh-Hant": "200 OK （好的）\n最不健壯，但最用戶友好。​自動請求很可能將此響應解釋為成功。"}
- 301 Moved Permanently: {"zh-Hans": "301 Moved Permanently （永久移动）\n指示客户端重定向是永久的。​重定向和初始请求的请求方法允许不同。", "zh-Hant": "301 Moved Permanently （永久移動）\n指示客戶端重定向是永久的。​重定向和初始請求的請求方法允許不同。"}
- 302 Found: {"zh-Hans": "302 Found （找到）\n指示客户端重定向是临时的。​重定向和初始请求的请求方法允许不同。", "zh-Hant": "302 Found （找到）\n指示客戶端重定向是臨時的。​重定向和初始請求的請求方法允許不同。"}
- 307 Temporary Redirect: {"zh-Hans": "307 Temporary Redirect （临时重定向）\n指示客户端重定向是临时的。​重定向和初始请求的请求方法不允许不同。", "zh-Hant": "307 Temporary Redirect （臨時重定向）\n指示客戶端重定向是臨時的。​重定向和初始請求的請求方法不允許不同。"}
- 308 Permanent Redirect: {"zh-Hans": "308 Permanent Redirect （永久重定向）\n指示客户端重定向是永久的。​重定向和初始请求的请求方法不允许不同。", "zh-Hant": "308 Permanent Redirect （永久重定向）\n指示客戶端重定向是永久的。​重定向和初始請求的請求方法不允許不同。"}
- 403 Forbidden: {"zh-Hans": "403 Forbidden （禁止的）\n更健壮，但不太用户友好。​一般最推荐的。", "zh-Hant": "403 Forbidden （禁止的）\n更健壯，但不太用戶友好。​一般最推薦的。"}
- 409 Conflict: {"zh-Hans:" "409 Conflict （冲突）\n推荐用于资源冲突（例如，合并冲突、文件访问冲突、等等）。​不推荐在其他情况下。", "zh-Hant:" "409 Conflict （衝突）\n建議用於資源衝突（例如，合併衝突、文件存取衝突、等等）。​不推薦在其他情況下。"}
+ 200 OK:
+  zh-Hans: "200 OK （好的）\n最不健壮，但最用户友好。​自动请求很可能将此响应解释为成功。​建议用于非阻塞请求。"
+  zh-Hant: "200 OK （好的）\n最不健壯，但最用戶友好。​自動請求很可能將此響應解釋為成功。​建議用於非阻塞請求。"
+ 301 Moved Permanently:
+  zh-Hans: "301 Moved Permanently （永久移动）\n指示客户端重定向是永久的。​重定向和初始请求的请求方法允许不同。"
+  zh-Hant: "301 Moved Permanently （永久移動）\n指示客戶端重定向是永久的。​重定向和初始請求的請求方法允許不同。"
+ 302 Found:
+  zh-Hans: "302 Found （找到）\n指示客户端重定向是临时的。​重定向和初始请求的请求方法允许不同。"
+  zh-Hant: "302 Found （找到）\n指示客戶端重定向是臨時的。​重定向和初始請求的請求方法允許不同。"
+ 307 Temporary Redirect:
+  zh-Hans: "307 Temporary Redirect （临时重定向）\n指示客户端重定向是临时的。​重定向和初始请求的请求方法不允许不同。"
+  zh-Hant: "307 Temporary Redirect （臨時重定向）\n指示客戶端重定向是臨時的。​重定向和初始請求的請求方法不允許不同。"
+ 308 Permanent Redirect:
+  zh-Hans: "308 Permanent Redirect （永久重定向）\n指示客户端重定向是永久的。​重定向和初始请求的请求方法不允许不同。"
+  zh-Hant: "308 Permanent Redirect （永久重定向）\n指示客戶端重定向是永久的。​重定向和初始請求的請求方法不允許不同。"
+ 403 Forbidden:
+  zh-Hans: "403 Forbidden （禁止的）\n更健壮，但不太用户友好。​一般最推荐的。"
+  zh-Hant: "403 Forbidden （禁止的）\n更健壯，但不太用戶友好。​一般最推薦的。"
+ 409 Conflict:
+  zh-Hans: "409 Conflict （冲突）\n推荐用于资源冲突（例如，合并冲突、文件访问冲突、等等）。​不推荐在其他情况下。"
+  zh-Hant: "409 Conflict （衝突）\n建議用於資源衝突（例如，合併衝突、文件存取衝突、等等）。​不推薦在其他情況下。"
  410 Gone:
   zh-Hans: "410 Gone （走了）\n解决假阳性时可能会导致问题，因为某些浏览器会缓存此状态消息并且不会发送后续请求，即使在被解除阻止后也是如此。​在某些情况下可能是最可取的。"
   zh-Hant: "410 Gone （走了）\n解決假陽性時可能會導致問題，因為某些瀏覽器會緩存此狀態消息並且不會發送後續請求，即使在被解除阻止後也是如此。​在某些情況下可能是最可取的。"
  418 I_m a teapot:
   zh-Hans: "418 I'm a teapot （我是一个茶壶）\n引用愚人节的笑话【{{Links.RFC2324}}】。​任何客户端、机器人、浏览器、或其他方式都不太可能理解。​它是为了娱乐和方便而提供的，但是通常不推荐。"
   zh-Hant: "418 I'm a teapot （我是一個茶壺）\n引用愚人節的笑話【{{Links.RFC2324}}】。​任何客戶端、機器人、瀏覽器、或其他方式都不太可能理解。​它是為了娛樂和方便而提供的，但是通常不推薦。"
- 429 Too Many Requests: {"zh-Hans": "429 Too Many Requests （请求过多）\n推荐用于速率限制、处理DDoS攻击、和防洪。​不推荐在其他情况下。", "zh-Hant": "429 Too Many Requests （請求過多）\n推薦用於速率限制、處理DDoS攻擊、和防洪。​不推薦在其他情況下。"}
- 451 Unavailable For Legal Reasons: {"zh-Hans": "451 Unavailable For Legal Reasons （因法律原因不可用）\n主要出于法律原因被阻止时推荐。​不推荐在其他情况下。", "zh-Hant": "451 Unavailable For Legal Reasons （因法律原因不可用）\n主要出於法律原因被阻止時推薦。​不推薦在其他情況下。"}
- 503 Service Unavailable: {"zh-Hans": "503 Service Unavailable （服务不可用）\n最健壮，但最不用户友好。​推荐用于受到攻击，或处理极其持久的有害流量时。", "zh-Hant": "503 Service Unavailable （服務不可用）\n最健壯，但最不用戶友好。​推薦用於受到攻擊，或處理極其持久的有害流量時。"}
+ 429 Too Many Requests:
+  zh-Hans: "429 Too Many Requests （请求过多）\n推荐用于速率限制、处理DDoS攻击、和防洪。​不推荐在其他情况下。"
+  zh-Hant: "429 Too Many Requests （請求過多）\n推薦用於速率限制、處理DDoS攻擊、和防洪。​不推薦在其他情況下。"
+ 451 Unavailable For Legal Reasons:
+  zh-Hans: "451 Unavailable For Legal Reasons （因法律原因不可用）\n主要出于法律原因被阻止时推荐。​不推荐在其他情况下。"
+  zh-Hant: "451 Unavailable For Legal Reasons （因法律原因不可用）\n主要出於法律原因被阻止時推薦。​不推薦在其他情況下。"
+ 503 Service Unavailable:
+  zh-Hans: "503 Service Unavailable （服务不可用）\n最健壮，但最不用户友好。​推荐用于受到攻击，或处理极其持久的有害流量时。"
+  zh-Hant: "503 Service Unavailable （服務不可用）\n最健壯，但最不用戶友好。​推薦用於受到攻擊，或處理極其持久的有害流量時。"
  Active IPv4 signature files: {"zh-Hans": "活动IPv4签名文件", "zh-Hant": "活動IPv4簽名文件"}
  Active IPv6 signature files: {"zh-Hans": "活动IPv6签名文件", "zh-Hant": "活動IPv6簽名文件"}
  Active configuration file: {"zh-Hans": "活动配置文件：", "zh-Hant": "活動配置文件："}
@@ -685,7 +707,7 @@ label:
  Allow: {"zh-Hans": "允许。", "zh-Hant": "允許。"}
  Bandwidth: {"zh-Hans": "使用的带宽： %s – 可用带宽： %s", "zh-Hant": "使用的帶寬： %s – 可用帶寬： %s"}
  Branch latest stable: {"zh-Hans": "分支最新稳定：", "zh-Hant": "分支最新穩定："}
- CAPTCHA attempts: {"zh-Hans": "CAPTCHA尝试", "zh-Hant": "CAPTCHA嘗試"}
+ CAPTCHA attempts: {"zh-Hans": "验证码尝试", "zh-Hant": "驗證碼嘗試"}
  CIDRAM disk usage: {"zh-Hans": "CIDRAM使用的磁盘空间：", "zh-Hant": "CIDRAM使用的磁盤空間："}
  CIDRAM version used: "目前使用CIDRAM版本："
  Cache data and temporary files: {"zh-Hans": "缓存数据和临时文件", "zh-Hant": "緩存數據和臨時文件"}
@@ -744,6 +766,15 @@ label:
  Latest stable: {"zh-Hans": "最新稳定：", "zh-Hant": "最新穩定："}
  Latest unstable: {"zh-Hans": "最新不稳定：", "zh-Hant": "最新不穩定："}
  Loading_: {"zh-Hans": "载入中...", "zh-Hant": "載入中..."}
+ Lock CAPTCHAs to the IP address of the user completing the CAPTCHA but not to the actual user:
+  zh-Hans: "将验证码锁定到完成它的用户的IP地址，但不锁定到用户。\nCookies不用于识别用户。​当由于成功完成验证码而重新获得访问时，它适用于从同一IP地址连接的任何人。"
+  zh-Hant: "將驗證碼鎖定到完成它的使用者的IP位址，但不鎖定到使用者。\nCookies不用於識別使用者。​當由於成功完成驗證碼而重新獲得訪問時，它適用於從相同IP位址連接的任何人。"
+ Lock CAPTCHAs to the user completing the CAPTCHA as well as to their IP address:
+  zh-Hans: "将验证码锁定到完成它的用户以及他们的IP地址。\nCookies用于识别用户。​当由于成功完成验证码而重新获得访问时，它仅适用于完成它的用户，并且如果他们的IP地址发生变化，它将不再有效。"
+  zh-Hant: "將驗證碼鎖定到完成它的使用者以及他們的IP位址。\nCookies用於識別使用者。​當由於成功完成驗證碼而重新獲得訪問時，它僅適用於完成它的用戶，並且如果他們的IP位址發生變化，它將不再有效。"
+ Lock CAPTCHAs to the user completing the CAPTCHA but not to their IP address:
+  zh-Hans: "将验证码锁定到完成它的用户，但不锁定到其IP地址。\nCookies用于识别用户。​当由于成功完成验证码而重新获得访问时，它仅适用于完成它的用户，并且只要他们的cookie仍然有效，即使他们的IP地址发生变化，它也会持续适用。"
+  zh-Hant: "將驗證碼鎖定到完成它的使用者，但不鎖定到其IP位址。\nCookies用於識別使用者。​當由於成功完成驗證碼而重新獲得訪問時，它僅適用於完成它的用戶，並且只要他們的cookie仍然有效，即使他們的IP位址發生變化，它也會持續適用。"
  Logged in, 2FA pending: {"zh-Hans": "已登录，2FA待定。", "zh-Hant": "已登錄，2FA待定。"}
  Logged in: {"zh-Hans": "已登录。", "zh-Hant": "已登錄。"}
  Logged out: "已登出。"
@@ -793,6 +824,12 @@ label:
  Search Engine: "搜索引擎"
  See also: "也可以看看："
  Selected log file doesn_t exist: {"zh-Hans": "选择的日志不存在！", "zh-Hant": "選擇的日誌不存在！"}
+ Show API message:
+  zh-Hans: "显示API讯息吗？\n针对所用API的用户有关完成验证码的说明。"
+  zh-Hant: "顯示API訊息嗎？\n針對所用API的使用者有關完成驗證碼的說明。"
+ Show cookie warning:
+  zh-Hans: "显示cookie警告吗？\n根据您所在国家或州的隐私法（例如，欧盟的GDPR/DSGVO、巴西的LGPD、等等），这可能是法律要求的。"
+  zh-Hant: "顯示cookie警告嗎？\n根據您所在國家或州的隱私法（例如，歐盟的GDPR/DSGVO、巴西的LGPD、等等），這可能是法律要求的。"
  Show: {"zh-Hans": "显示", "zh-Hant": "顯示"}
  Signature type: {"zh-Hans": "签名类型：", "zh-Hant": "簽名類型："}
  Simple: {"zh-Hans": "简单", "zh-Hant": "簡單"}
@@ -1052,7 +1089,9 @@ response:
  The IP address is invalid: {"zh-Hans": "IP地址无效！", "zh-Hant": "IP位址無效！"}
  The IP address, %s, successfully reported: {"zh-Hans": "IP地址%s已成功报告！", "zh-Hant": "IP位址%s已成功報告！"}
  The report has not been enqueued: {"zh-Hans": "该报告不在队列中。", "zh-Hant": "該報告不在隊列中。"}
- The same IP address can be reported only once every 15 minutes: {"zh-Hans": "同一IP地址每15分钟只能报告一次。​该报告在队列中，CIDRAM将稍后尝试提交该报告。", "zh-Hant": "同一IP位址每15分鐘只能報告一次。​該報告在佇列中，CIDRAM將稍後嘗試提交該報告。"}
+ The same IP address can be reported only once every 15 minutes:
+  zh-Hans: "同一IP地址每15分钟只能报告一次。​该报告在队列中，CIDRAM将稍后尝试提交该报告。"
+  zh-Hant: "同一IP位址每15分鐘只能報告一次。​該報告在佇列中，CIDRAM將稍後嘗試提交該報告。"
  There aren_t currently any auxiliary rules: {"zh-Hans": "目前没有任何辅助规则。", "zh-Hant": "目前沒有任何輔助規則。"}
  There_s nothing to analyse, sorry: {"zh-Hans": "没有什么可分析的，对不起。", "zh-Hant": "沒有什麼可分析的，對不起。"}
  There_s nothing to print, sorry: {"zh-Hans": "没有什么可打印的，对不起。", "zh-Hant": "沒有什麼可打印的，對不起。"}

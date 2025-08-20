@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2025.08.16).
+ * This file: Front-end handler (last modified: 2025.08.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1700,11 +1700,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                 $CIDRAM['ThisDir']['Hints'] = $CIDRAM['L10N']->arrayFromL10nToArray($CIDRAM['DirValue']['hints']);
                 foreach ($CIDRAM['ThisDir']['Hints'] as $CIDRAM['ThisDir']['HintKey'] => $CIDRAM['ThisDir']['HintValue']) {
                     if (is_int($CIDRAM['ThisDir']['HintKey'])) {
-                        $CIDRAM['ThisDir']['FieldOut'] .= sprintf("\n<br /><br />%s", $CIDRAM['ThisDir']['HintValue']);
+                        $CIDRAM['ThisDir']['FieldOut'] .= sprintf("<br /><br />\n        %s", $CIDRAM['ThisDir']['HintValue']);
                         continue;
                     }
                     $CIDRAM['ThisDir']['FieldOut'] .= sprintf(
-                        "\n<br /><br /><span class=\"s\">%s</span> %s",
+                        "<br /><br />\n        <span class=\"s\">%s</span> %s",
                         $CIDRAM['ThisDir']['HintKey'],
                         $CIDRAM['ThisDir']['HintValue']
                     );
@@ -1713,18 +1713,21 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
 
             /** Provide additional information, useful for users to better understand the directive at hand. */
             if (!empty($CIDRAM['DirValue']['See also']) && is_array($CIDRAM['DirValue']['See also'])) {
-                $CIDRAM['ThisDir']['FieldOut'] .= sprintf("\n<br /><br />%s<ul>\n", $CIDRAM['L10N']->getString('label_see_also'));
+                $CIDRAM['ThisDir']['FieldOut'] .= sprintf("<br />\n        %s<ul>\n", isset($CIDRAM['DirValue']['hints']) ? '' : $CIDRAM['L10N']->getString('label_see_also'));
                 foreach ($CIDRAM['DirValue']['See also'] as $CIDRAM['DirValue']['Ref key'] => $CIDRAM['DirValue']['Ref link']) {
                     if (isset($CIDRAM['L10N']->Data[$CIDRAM['DirValue']['Ref key']])) {
                         $CIDRAM['DirValue']['Ref key'] = $CIDRAM['L10N']->Data[$CIDRAM['DirValue']['Ref key']];
                     }
                     $CIDRAM['ThisDir']['FieldOut'] .= sprintf(
-                        '<li><a dir="ltr" href="%s">%s</a></li>',
+                        '          <li><a dir="ltr" href="%s">%s</a></li>',
                         $CIDRAM['DirValue']['Ref link'],
                         $CIDRAM['DirValue']['Ref key']
-                    );
+                    ) . "\n";
+                }                
+                if (substr($CIDRAM['ThisDir']['FieldOut'], -1) === "\n") {
+                    $CIDRAM['ThisDir']['FieldOut'] = substr($CIDRAM['ThisDir']['FieldOut'], 0, -1);
                 }
-                $CIDRAM['ThisDir']['FieldOut'] .= "\n</ul>";
+                $CIDRAM['ThisDir']['FieldOut'] .= '        </ul>';
             }
 
             /** Reset to defaults. */
@@ -1736,8 +1739,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                         $CIDRAM['DirValue']['default']
                     );
                 }
+                if (empty($CIDRAM['DirValue']['See also']) || !is_array($CIDRAM['DirValue']['See also'])) {
+                    $CIDRAM['ThisDir']['FieldOut'] .= '<br />';
+                }
                 $CIDRAM['ThisDir']['FieldOut'] .= sprintf(
-                    '<br /><br /><input type="button" class="reset" onclick="javascript:%s" value="↺ %s" />',
+                    '<br /><input type="button" class="reset" onclick="javascript:%s" value="↺ %s" />',
                     $CIDRAM['ThisDir']['Reset'],
                     $CIDRAM['L10N']->getString('field_reset')
                 );

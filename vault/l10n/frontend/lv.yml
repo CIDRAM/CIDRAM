@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2025.08.17).
+# This file: Latvian language data for the front-end (last modified: 2025.08.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -164,13 +164,17 @@ config:
  captcha: "CAPTCHA konfigurācija (nodrošina veidu, kā cilvēki var atgūt piekļuvi, kad tā ir bloķēta)."
  captcha_api: "Kuru API izmantot?"
  captcha_expiry: "Stundu skaits, lai atcerētos CAPTCHA instances. Noklusējuma = 720 (1 mēnesis)."
- captcha_hcaptcha_log: "Vai reģistrēt visus CAPTCHA mēģinājumus? Ja tā, norādiet vārdu, kuru izmantosit logfailam. Ja nē, atstājiet šo mainīgo tukšu."
- captcha_hcaptcha_secret: &CaptchaDashboard "Šī vērtība ir atrodama jūsu CAPTCHA pakalpojuma informācijas panelī."
- captcha_hcaptcha_sitekey: *CaptchaDashboard
- captcha_messages: "Ziņojumi, kas jārāda līdzās CAPTCHA."
+ captcha_friendly_apikey: &FriendlyCred "Ja vēlaties izmantot Friendly Captcha ar CIDRAM, šeit jāievada vērtība. Ja nē, varat to ignorēt."
+ captcha_friendly_sitekey: *FriendlyCred
+ captcha_hcaptcha_secret: &HCaptchaCred "Ja vēlaties izmantot hCaptcha ar CIDRAM, šeit jāievada vērtība. Ja nē, varat to ignorēt."
+ captcha_hcaptcha_sitekey: *HCaptchaCred
  captcha_lockto: "Uz ko jāfiksē CAPTCHA."
+ captcha_log: "Vai reģistrēt visus CAPTCHA mēģinājumus? Ja tā, norādiet vārdu, kuru izmantosit logfailam. Ja nē, atstājiet šo mainīgo tukšu."
+ captcha_messages: "Ziņojumi, kas jārāda līdzās CAPTCHA."
  captcha_nonblocked_status_code: "Kurš statusa kods ir jāizmanto, parādot CAPTCHA bloķētiem pieprasījumiem?"
  captcha_signature_limit: "Maksimālais atļautais parakstu skaits pirms CAPTCHA piedāvājuma atsaukšanas. Noklusējuma = 1."
+ captcha_turnstile_secret: &TurnstileCred "Ja vēlaties izmantot Cloudflare Turnstile ar CIDRAM, šeit jāievada vērtība. Ja nē, varat to ignorēt."
+ captcha_turnstile_sitekey: *TurnstileCred
  captcha_usemode: "Kad jāpiedāvā CAPTCHA? Šeit varat norādīt vēlamo darbību katram atbalstītajam sniedzējam. Piezīme: Baltā sarakstā iekļautajiem vai pārbaudītajiem un nebloķētajiem pieprasījumiem nekad nav jāaizpilda CAPTCHA. Ņemiet vērā arī: CAPTCHA var nodrošināt noderīgu aizsardzību pret robotprogrammatūrām un dažāda veida ļaunprātīgiem un automatizētiem pieprasījumiem, taču tās nenodrošina nekādu aizsardzību pret ļaunprātīgu cilvēku."
  components: "CIDRAM izmantoto konfigurācija komponentu aktivizēšanai un deaktivizēšanai. Parasti to aizpilda atjauninājumu lapa, taču to var arī pārvaldīt no šejienes, lai iegūtu precīzāku kontroli un pielāgotus komponentus, ko atjauninājumu lapa neatpazīst."
  components_events: "Pasākumu apdarinātāji. Parasti izmanto, lai mainītu veidu, kā CIDRAM darbojas iekšēji vai nodrošinātu papildu funkcionalitāti."
@@ -396,6 +400,8 @@ field:
   bytes:
    - "baits"
    - "baiti"
+hint:
+ This value can be found in the dashboard for your CAPTCHA service: "Šī vērtība ir atrodama jūsu CAPTCHA pakalpojuma informācijas panelī."
 hints_asnlookup: "** Nepieciešama ASN uzmeklēšanas funkcionalitāte (piemēram, izmantojot IP-API vai BGPView moduli)."
 hints_aux_stats: "Piezīme: Vai izsekot palīgnoteikumu statistiku, var kontrolēt palīgnoteikumu lapā."
 hints_cause_fp: "*!! Liela iespējamība izraisīt viltus pozitīvus rezultātus %s dēļ."

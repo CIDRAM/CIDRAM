@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hebrew language data for the front-end (last modified: 2025.08.18).
+# This file: Hebrew language data for the front-end (last modified: 2025.08.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -164,13 +164,17 @@ config:
  captcha: "תצורה עבור CAPTCHA (מספק דרך לבני אדם לקבל חזרה גישה כשהם חסומים)."
  captcha_api: "באיזה API להשתמש?"
  captcha_expiry: "מספר השעות לזכור מופעי CAPTCHA. סטנדרטי = 720 (1 חודש)."
- captcha_hcaptcha_log: "לרשום את כל ניסיונות ה-CAPTCHA? אם כן, ציין את השם לשימוש עבור קובץ היומן. אם לא, השאר את המשתנה הזה ריק."
- captcha_hcaptcha_secret: &CaptchaDashboard "ניתן למצוא ערך זה בלוח המחוונים של שירות ה-CAPTCHA שלך."
- captcha_hcaptcha_sitekey: *CaptchaDashboard
- captcha_messages: "הודעות שיוצגו לצד CAPTCHA."
+ captcha_friendly_apikey: &FriendlyCred "אם ברצונך להשתמש ב-Friendly Captcha עם CIDRAM, תצטרך להזין כאן ערך. אם לא, תוכל להתעלם ממנו."
+ captcha_friendly_sitekey: *FriendlyCred
+ captcha_hcaptcha_secret: &HCaptchaCred "אם ברצונך להשתמש ב-hCaptcha עם CIDRAM, תצטרך להזין כאן ערך. אם לא, תוכל להתעלם ממנו."
+ captcha_hcaptcha_sitekey: *HCaptchaCred
  captcha_lockto: "לאן לנעול CAPTCHAs."
+ captcha_log: "לרשום את כל ניסיונות ה-CAPTCHA? אם כן, ציין את השם לשימוש עבור קובץ היומן. אם לא, השאר את המשתנה הזה ריק."
+ captcha_messages: "הודעות שיוצגו לצד CAPTCHA."
  captcha_nonblocked_status_code: "באיזה קוד סטטוס יש להשתמש בעת הצגת CAPTCHA לבקשות לא חסומות?"
  captcha_signature_limit: "המספר המרבי של חתימות המותר לפני ביטול הצעת ה-CAPTCHA. סטנדרטי = 1."
+ captcha_turnstile_secret: &TurnstileCred "אם ברצונך להשתמש ב-Cloudflare Turnstile עם CIDRAM, תצטרך להזין כאן ערך. אם לא, תוכל להתעלם ממנו."
+ captcha_turnstile_sitekey: *TurnstileCred
  captcha_usemode: "מתי כדאי להציע CAPTCHA? כאן ניתן לציין את ההתנהגות המועדפת עבור כל ספק נתמך. הערה: בקשות ברשימה הלבנה או מאומתת ולא חסומה לעולם אינן צריכות להשלים CAPTCHA. שימו לב גם: CAPTCHA יכול לספק שכבה שימושית נוספת של הגנה מפני בוטים וסוגים שונים של בקשות אוטומטיות זדוניות, אך לא תספק כל הגנה מפני אדם זדוני."
  components: "תצורה להפעלה ולביטול הרכיבים המשמשים את CIDRAM. מאוכלס בדרך כלל על ידי המעדכן, אך ניתן גם לנהל מכאן לשליטה עדינה יותר ולרכיבים מותאמים אישית שאינם מזוהים על ידי המעדכן."
  components_events: "מטפלי אירועים. משמש בדרך כלל כדי לשנות את האופן שבו CIDRAM מתנהג באופן פנימי או כדי לספק פונקציונליות נוספת."
@@ -396,6 +400,8 @@ field:
   bytes:
    - "בייט"
    - "בתים"
+hint:
+ This value can be found in the dashboard for your CAPTCHA service: "ניתן למצוא ערך זה בלוח המחוונים של שירות ה-CAPTCHA שלך."
 hints_asnlookup: "** דורש פונקציונליות חיפוש ASN (למשל., דרך מודול IP-API או BGPView)."
 hints_aux_stats: "הערה: האם לעקוב אחר סטטיסטיקות עבור כללי עזר ניתן לשלוט בדף כללי העזר."
 hints_cause_fp: "*!! סבירות גבוהה לגרום לתוצאות חיוביות כוזבות עקב %s."

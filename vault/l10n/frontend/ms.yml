@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malay language data for the front-end (last modified: 2025.08.17).
+# This file: Malay language data for the front-end (last modified: 2025.08.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -164,13 +164,17 @@ config:
  captcha: "Konfigurasi untuk CAPTCHA (menyediakan cara untuk manusia mendapatkan semula akses apabila disekat)."
  captcha_api: "API mana yang hendak digunakan?"
  captcha_expiry: "Jumlah jam untuk mengingati kejadian CAPTCHA. Lalai = 720 (1 bulan)."
- captcha_hcaptcha_log: "Log semua percubaan CAPTCHA? Jika ya, nyatakan nama yang akan digunakan untuk fail log. Jika tidak, biarkan pembolehubah ini kosong."
- captcha_hcaptcha_secret: &CaptchaDashboard "Nilai ini boleh didapati dalam papan pemuka untuk perkhidmatan CAPTCHA anda."
- captcha_hcaptcha_sitekey: *CaptchaDashboard
- captcha_messages: "Mesej untuk dipaparkan bersama CAPTCHA."
+ captcha_friendly_apikey: &FriendlyCred "Jika anda ingin menggunakan Friendly Captcha dengan CIDRAM, anda perlu memasukkan nilai disini. Jika tidak, anda boleh mengabaikannya."
+ captcha_friendly_sitekey: *FriendlyCred
+ captcha_hcaptcha_secret: &HCaptchaCred "Jika anda ingin menggunakan hCaptcha dengan CIDRAM, anda perlu memasukkan nilai disini. Jika tidak, anda boleh mengabaikannya."
+ captcha_hcaptcha_sitekey: *HCaptchaCred
  captcha_lockto: "Dimana mengunci CAPTCHA."
+ captcha_log: "Log semua percubaan CAPTCHA? Jika ya, nyatakan nama yang akan digunakan untuk fail log. Jika tidak, biarkan pembolehubah ini kosong."
+ captcha_messages: "Mesej untuk dipaparkan bersama CAPTCHA."
  captcha_nonblocked_status_code: "Kod status yang manakah harus digunakan semasa Paparkan CAPTCHA kepada permintaan yang tidak disekat?"
  captcha_signature_limit: "Jumlah maksimum tandatangan yang dibenarkan sebelum tawaran CAPTCHA ditarik. Lalai = 1."
+ captcha_turnstile_secret: &TurnstileCred "Jika anda ingin menggunakan Cloudflare Turnstile dengan CIDRAM, anda perlu memasukkan nilai disini. Jika tidak, anda boleh mengabaikannya."
+ captcha_turnstile_sitekey: *TurnstileCred
  captcha_usemode: "Bila CAPTCHA harus ditawarkan? Anda boleh menentukan tingkah laku yang disukai untuk setiap penyedia yang disokong disini. Perhatian: Permintaan yang disenarai putih atau disahkan dan tidak disekat tidak perlu melengkapkan CAPTCHA. Juga ambil perhatian: CAPTCHA boleh memberikan lapisan perlindungan tambahan yang berguna terhadap bot dan pelbagai jenis permintaan automatik yang berniat jahat, tetapi tidak akan memberikan sebarang perlindungan terhadap manusia yang berniat jahat."
  components: "Konfigurasi untuk pengaktifan dan penyahaktifan komponen yang digunakan oleh CIDRAM. Biasanya diisi oleh halaman kemas kini, tetapi juga boleh diuruskan dari sini untuk kawalan yang lebih halus dan untuk komponen tersuai yang tidak dikenali oleh halaman kemas kini."
  components_events: "Pengendali acara. Biasanya digunakan untuk mengubah suai cara CIDRAM berkelakuan secara dalaman atau untuk menyediakan kefungsian tambahan."
@@ -394,6 +398,8 @@ field:
  size:
   Total size: "Jumlah saiz:"
   bytes: "bait"
+hint:
+ This value can be found in the dashboard for your CAPTCHA service: "Nilai ini boleh didapati dalam papan pemuka untuk perkhidmatan CAPTCHA anda."
 hints_asnlookup: "** Memerlukan kefungsian carian ASN (cth., melalui modul IP-API atau BGPView)."
 hints_aux_stats: "Nota: Sama ada untuk menjejak statistik untuk peraturan tambahan boleh dikawal dari halaman peraturan tambahan."
 hints_cause_fp: "*!! Kemungkinan tinggi menyebabkan positif palsu kerana %s."

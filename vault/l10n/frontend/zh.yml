@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese language data for the front-end (last modified: 2025.08.18).
+# This file: Chinese language data for the front-end (last modified: 2025.08.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -172,17 +172,23 @@ config:
  captcha: {"zh-Hans": "验证码的配置（为人们提供了一种在受阻时重新获得访问权限的方法）。", "zh-Hant": "驗證碼的配置（為人們提供了一種在受阻時重新獲得訪問權限的方法）。"}
  captcha_api: {"zh-Hans": "使用哪个API？", "zh-Hant": "使用哪個API？"}
  captcha_expiry: {"zh-Hans": "记得验证码多少小时？ 标准 = 720 （1个月）。", "zh-Hant": "記得驗證碼多少小時？ 標準 = 720 （1個月）。"}
- captcha_hcaptcha_log: {"zh-Hans": "记录所有的验证码的尝试？​要做到这一点，​指定一个文件名到使用。​如果不，​离开这个变量为空白。", "zh-Hant": "記錄所有的驗證碼的嘗試？​要做到這一點，​指定一個檔案名稱到使用。​如果不，​離開這個變量為空白。"}
- captcha_hcaptcha_secret: &CaptchaDashboard {"zh-Hans": "可以在您的验证码服务的仪表板中找到该值。", "zh-Hant": "可以在您的驗證碼服務的儀表板中找到該值。"}
- captcha_hcaptcha_sitekey: *CaptchaDashboard
- captcha_messages: {"zh-Hans": "与验证码一起显示的消息。", "zh-Hant": "與驗證碼一起顯示的訊息。"}
+ captcha_friendly_apikey: &FriendlyCred {"zh-Hans": "如果您想将Friendly Captcha与CIDRAM一起使用，则需要在此输入一个值。​如果不使用它，您可以忽略它。", "zh-Hant": "如果您想將Friendly Captcha與CIDRAM一起使用，則需要在此輸入一個值。​如果不使用它，您可以忽略它。"}
+ captcha_friendly_sitekey: *FriendlyCred
+ captcha_hcaptcha_secret: &HCaptchaCred {"zh-Hans": "如果您想将hCaptcha与CIDRAM一起使用，则需要在此输入一个值。​如果不使用它，您可以忽略它。", "zh-Hant": "如果您想將hCaptcha與CIDRAM一起使用，則需要在此輸入一個值。​如果不使用它，您可以忽略它。"}
+ captcha_hcaptcha_sitekey: *HCaptchaCred
  captcha_lockto: {"zh-Hans": "将验证码锁定到什么。", "zh-Hant": "將驗證碼鎖定在什麼。"}
+ captcha_log: {"zh-Hans": "记录所有的验证码的尝试？​要做到这一点，​指定一个文件名到使用。​如果不，​离开这个变量为空白。", "zh-Hant": "記錄所有的驗證碼的嘗試？​要做到這一點，​指定一個檔案名稱到使用。​如果不，​離開這個變量為空白。"}
+ captcha_messages: {"zh-Hans": "与验证码一起显示的消息。", "zh-Hant": "與驗證碼一起顯示的訊息。"}
  captcha_nonblocked_status_code: {"zh-Hans": "向未阻止的请求显示验证码时应使用哪个状态代码？", "zh-Hant": "向未阻止的請求顯示驗證碼時應使用哪個狀態代碼？"}
  captcha_signature_limit: {"zh-Hans": "撤销验证码之前允许的最大签名数。 标准 = 1。", "zh-Hant": "撤銷驗證碼之前允許的最大簽名數。 標準 = 1。"}
+ captcha_turnstile_secret: &TurnstileCred {"zh-Hans": "如果您想将Cloudflare Turnstile与CIDRAM一起使用，则需要在此输入一个值。​如果不使用它，您可以忽略它。", "zh-Hant": "如果您想將Cloudflare Turnstile與CIDRAM一起使用，則需要在此輸入一個值。​如果不使用它，您可以忽略它。"}
+ captcha_turnstile_sitekey: *TurnstileCred
  captcha_usemode:
   zh-Hans: "何时应提供验证码？​您可以在此处为每个受支持的提供商指定首选行为。​注意：列入白名单或已验证且未阻止的请求永远不需要完成验证码。​另请注意：验证码可以提供有用的保护层，防止机器人和各种恶意自动请求，但不会提供任何针对恶意人类的保护。"
   zh-Hant: "何時應提供驗證碼？​您可以在此處為每個受支援的提供者指定首選行為。​注意：列入白名單或已驗證且未阻止的請求永遠不需要完成驗證碼。​另請注意：驗證碼可以提供有用的保護層，防止機器人和各種惡意自動請求，但不會提供任何針對惡意人類的保護。"
- components: {"zh-Hans": "CIDRAM使用的组件的启用和停用的配置。​通常由更新页面填充，但也可以从此处进行管理，以实现更好的控制以及更新页面无法识别的自定义组件。", "zh-Hant": "CIDRAM使用的組件的啟用和停用的配置。​通常由更新頁面填充，但也可以從此處進行管理，以實現更好的控制以及更新頁面無法識別的自定義組件。"}
+ components:
+  zh-Hans: "CIDRAM使用的组件的启用和停用的配置。​通常由更新页面填充，但也可以从此处进行管理，以实现更好的控制以及更新页面无法识别的自定义组件。"
+  zh-Hant: "CIDRAM使用的組件的啟用和停用的配置。​通常由更新頁面填充，但也可以從此處進行管理，以實現更好的控制以及更新頁面無法識別的自定義組件。"
  components_events: {"zh-Hans": "事件处理程序。​通常用于修改CIDRAM在内部的行为方式或提供附加功能。", "zh-Hant": "事件處理程序。​通常用於修改CIDRAM在內部的行為方式或提供附加功能。"}
  components_imports: {"zh-Hans": "进口。​通常用于向CIDRAM提供组件的配置信息。", "zh-Hant": "進口。​通常用於向CIDRAM提供組件的配置信息。"}
  components_ipv4: {"zh-Hans": "IPv4签名文件。", "zh-Hant": "IPv4簽名文件。"}
@@ -435,6 +441,8 @@ field:
   Total size: {"zh-Hans": "总大小：", "zh-Hant": "總大小："}
   bytes:
    - {"zh-Hans": "字节", "zh-Hant": "字節"}
+hint:
+ This value can be found in the dashboard for your CAPTCHA service: {"zh-Hans": "可以在您的验证码服务的仪表板中找到该值。", "zh-Hant": "可以在您的驗證碼服務的儀表板中找到該值。"}
 hints_asnlookup: {"zh-Hans": "** 需要ASN查找功能（例如，通过IP-API或BGPView模块）。", "zh-Hant": "** 需要ASN查找功能（例如，通過IP-API或BGPView模組）。"}
 hints_aux_stats: {"zh-Hans": "注意：辅助规则的跟踪统计可以从辅助规则页面进行控制。", "zh-Hant": "注意：輔助規則的跟踪統計可以從輔助規則頁面進行控制。"}
 hints_cause_fp: {"zh-Hans": "*!! 由于%s而导致假阳性的可能性很高。", "zh-Hant": "*!! 由於%s而導致假陽性的可能性很高。"}

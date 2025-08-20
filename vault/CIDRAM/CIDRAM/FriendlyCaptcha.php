@@ -8,12 +8,12 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: HCaptcha class (last modified: 2025.08.20).
+ * This file: Friendly Captcha class (last modified: 2025.08.20).
  */
 
 namespace CIDRAM\CIDRAM;
 
-class HCaptcha extends Captcha
+class FriendlyCaptcha extends Captcha
 {
     /**
      * Constructor.
@@ -30,7 +30,7 @@ class HCaptcha extends Captcha
         $this->Messages = array_flip(explode("\n", $this->CIDRAM->Configuration['captcha']['messages']));
 
         /** What to lock CAPTCHAs to. */
-        $LockTo = $this->CIDRAM->Configuration['captcha']['lockto']['hcaptcha'] ?? 'user';
+        $LockTo = $this->CIDRAM->Configuration['captcha']['lockto']['friendly'] ?? 'user';
 
         if ($LockTo === 'ip') {
             /** Attempt to load the IP bypass list. */
@@ -46,18 +46,21 @@ class HCaptcha extends Captcha
             $this->clearExpired($BypassList, $BypassListModified);
 
             /**
-             * Verify whether a hCaptcha instance has already been completed before
+             * Verify whether a Friendly Captcha instance has already been completed before
              * for the current IP, populate relevant variables, and generate fields.
              */
             if (strpos($BypassList, "\n" . $this->CIDRAM->ipAddr . ',') !== false) {
                 $this->Bypass = true;
                 $this->resetSCT();
             } else {
-                /** Set hCaptcha status. */
-                $this->CIDRAM->BlockInfo['CAPTCHA'] = sprintf($this->CIDRAM->L10N->getString('state.Enabled'), 'hCaptcha');
+                /** Set Friendly Captcha status. */
+                $this->CIDRAM->BlockInfo['CAPTCHA'] = sprintf($this->CIDRAM->L10N->getString('state.Enabled'), 'Friendly Captcha');
 
                 /** We've received a response. */
-                if (isset($_POST['hc-response'])) {
+                if (
+                    ($this->CIDRAM->Configuration['captcha']['api']['friendly'] === 'v1' && isset($_POST['frc-captcha-solution'])) ||
+                    ($this->CIDRAM->Configuration['captcha']['api']['friendly'] === 'v2' && isset($_POST['frc-captcha-response']))
+                ) {
                     $Loggable = true;
                     $this->doResponse();
                     if ($this->Bypass) {
@@ -69,14 +72,14 @@ class HCaptcha extends Captcha
                         ) . "\n";
                         $BypassListModified = true;
 
-                        $this->generatePassed('hCaptcha');
+                        $this->generatePassed('Friendly Captcha');
                     } else {
-                        $this->generateFailed('hCaptcha');
+                        $this->generateFailed('Friendly Captcha');
                     }
                 }
 
-                /** HCaptcha template data included if hCaptcha isn't being bypassed. */
-                $this->generateContainer(false, isset($this->Messages['api_message:hcaptcha']));
+                /** Friendly Captcha template data included if Friendly Captcha isn't being bypassed. */
+                $this->generateContainer(false, isset($this->Messages['api_message:friendly']));
             }
 
             /** Update the IP bypass list if any changes were made. */
@@ -98,7 +101,7 @@ class HCaptcha extends Captcha
             $this->clearExpired($HastList, $HastListModified);
 
             /**
-             * Determine whether a hCaptcha instance has already been completed by the
+             * Determine whether a Friendly Captcha instance has already been completed by the
              * user and populate relevant variables.
              */
             if (!empty($_COOKIE['CIDRAM']) && ($Split = strpos($_COOKIE['CIDRAM'], ',')) !== false) {
@@ -119,11 +122,14 @@ class HCaptcha extends Captcha
                 $this->Bypass = true;
                 $this->resetSCT();
             } else {
-                /** Set hCaptcha status. */
-                $this->CIDRAM->BlockInfo['CAPTCHA'] = sprintf($this->CIDRAM->L10N->getString('state.Enabled'), 'hCaptcha');
+                /** Set Friendly Captcha status. */
+                $this->CIDRAM->BlockInfo['CAPTCHA'] = sprintf($this->CIDRAM->L10N->getString('state.Enabled'), 'Friendly Captcha');
 
                 /** We've received a response. */
-                if (isset($_POST['hc-response'])) {
+                if (
+                    ($this->CIDRAM->Configuration['captcha']['api']['friendly'] === 'v1' && isset($_POST['frc-captcha-solution'])) ||
+                    ($this->CIDRAM->Configuration['captcha']['api']['friendly'] === 'v2' && isset($_POST['frc-captcha-response']))
+                ) {
                     $Loggable = true;
                     $this->doResponse();
                     if ($this->Bypass) {
@@ -154,14 +160,14 @@ class HCaptcha extends Captcha
                         /** Append to the hash list. */
                         $HastList .= $UserHash . ',' . ($this->CIDRAM->Now + ($this->CIDRAM->Configuration['captcha']['expiry'] * 3600)) . "\n";
                         $HastListModified = true;
-                        $this->generatePassed('hCaptcha');
+                        $this->generatePassed('Friendly Captcha');
                     } else {
-                        $this->generateFailed('hCaptcha');
+                        $this->generateFailed('Friendly Captcha');
                     }
                 }
 
-                /** HCaptcha template data included if hCaptcha isn't being bypassed. */
-                $this->generateContainer(isset($this->Messages['cookie_warning:hcaptcha']), isset($this->Messages['api_message:hcaptcha']));
+                /** Friendly Captcha template data included if Friendly Captcha isn't being bypassed. */
+                $this->generateContainer(isset($this->Messages['cookie_warning:friendly']), isset($this->Messages['api_message:friendly']));
             }
 
             /** Update the hash list if any changes were made. */
@@ -179,7 +185,7 @@ class HCaptcha extends Captcha
     }
 
     /**
-     * Generate hCaptcha form template data.
+     * Generate Friendly Captcha form template data.
      *
      * @param string $SiteKey The sitekey to use.
      * @param bool $CookieWarn Whether to display a cookie warning.
@@ -188,77 +194,54 @@ class HCaptcha extends Captcha
      */
     private function generateTemplateData(string $SiteKey, bool $CookieWarn = false, bool $ApiMessage = false): string
     {
-        header(sprintf(
-            'Content-Security-Policy: default-src \'none\'; connect-src %1$s; frame-src %1$s; script-src %1$s \'unsafe-inline\'; style-src \'unsafe-inline\';',
-            '\'self\' https://assets.hcaptcha.com https://hcaptcha.com https://newassets.hcaptcha.com/'
-        ));
-        $Script = sprintf(
-            '<script src="https://hcaptcha.com/1/api.js?hl=%s&onload=onloadHCaptcha&render=explicit" async defer></script>',
-            $this->CIDRAM->ClientL10N->getString('hl.hcaptcha') ?: $this->CIDRAM->L10N->getString('hl.hcaptcha')
-        ) . '<script type="text/javascript">document.getElementById(\'hostnameoverride\').value=window.location.hostname;</script>';
-        $MsgCookieWarning = $this->CIDRAM->ClientL10N->getString('captcha_cookie_warning') ?: $this->CIDRAM->L10N->getString('captcha_cookie_warning');
-        return $this->CIDRAM->Configuration['captcha']['api']['hcaptcha'] === 'Invisible' ? sprintf(
-            "\n<hr />\n<p class=\"detected\"%s>%s%s<br /></p>\n" .
-            '<div class="gForm">' .
-                '<div id="hcform" class="h-captcha" data-sitekey="%s" data-theme="%s" data-callback="onSubmitCallback" data-size="invisible"></div>' .
-            "</div>\n" .
-            '<form id="gF" method="POST" action="" class="gForm" onsubmit="javascript:hcaptcha.execute()">' .
-                '<input id="rData" type="hidden" name="hc-response" value="" />%s' .
-            "</form>\n" .
-            "<script type=\"text/javascript\">function onSubmitCallback(token){document.getElementById('rData').value=hcaptcha.getResponse(window.document.hcwidget);document.getElementById('gF').submit()}</script>\n",
-            $this->CIDRAM->CIDRAM['L10N-Lang-Attache'],
-            $ApiMessage ? ($this->CIDRAM->ClientL10N->getString('captcha_message_invisible') ?: $this->CIDRAM->L10N->getString('captcha_message_invisible')) : '',
-            $CookieWarn ? '<br />' . $MsgCookieWarning : '',
-            $SiteKey,
-            $this->determineTheme(),
-            $this->TemplateInsert
-        ) . $Script . "\n" : sprintf(
+        if ($this->CIDRAM->Configuration['captcha']['api']['friendly'] === 'v1') {
+            $Script = '<script type="module" src="https://cdn.jsdelivr.net/npm/friendly-challenge@0.9.18/widget.module.min.js" async defer></script>';
+            $Script .= '<script nomodule src="https://cdn.jsdelivr.net/npm/friendly-challenge@0.9.18/widget.min.js" async defer></script>';
+        } else {
+            $Script = '<script type="module" src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@0.1.31/site.min.js" async defer></script>';
+            $Script .= '<script nomodule src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@0.1.31/site.compat.min.js" async defer></script>';
+        }
+        $Script .= '<script type="text/javascript">document.getElementById(\'hostnameoverride\').value=window.location.hostname;</script>';
+        return sprintf(
             "\n<hr />\n<p class=\"detected\"%s>%s%s<br /></p>\n" .
             '<form method="POST" action="" class="gForm">' .
-                '<input id="rData" type="hidden" name="hc-response" value="" />' .
-                '<div id="hcform" data-theme="%s" data-callback="onSubmitCallback"></div>' .
+                '<div class="frc-captcha" data-sitekey="%s" data-theme="%s" lang="%s"></div>' .
                 '<div>%s<input type="submit" value="%s" /></div>' .
-            "</form>\n" .
-            "<script type=\"text/javascript\">function onSubmitCallback(token){document.getElementById('rData').value=hcaptcha.getResponse(window.document.hcwidget)}</script>\n",
+            "</form>\n",
             $this->CIDRAM->CIDRAM['L10N-Lang-Attache'],
             $ApiMessage ? ($this->CIDRAM->ClientL10N->getString('captcha_message') ?: $this->CIDRAM->L10N->getString('captcha_message')) : '',
-            $CookieWarn ? '<br />' . $MsgCookieWarning : '',
+            $CookieWarn ? '<br />' . ($this->CIDRAM->ClientL10N->getString('captcha_cookie_warning') ?: $this->CIDRAM->L10N->getString('captcha_cookie_warning')) : '',
+            $SiteKey,
             $this->determineTheme(),
+            $this->CIDRAM->ClientL10N->getString('hl.friendly') ?: $this->CIDRAM->L10N->getString('hl.friendly'),
             $this->TemplateInsert,
             $this->CIDRAM->ClientL10N->getString('label.Submit') ?: $this->CIDRAM->L10N->getString('label.Submit')
         ) . $Script;
     }
 
     /**
-     * Generate hCaptcha callback data.
-     *
-     * @param string $SiteKey The sitekey to use.
-     * @return string The callback data.
-     */
-    private function generateCallbackData(string $SiteKey): string
-    {
-        return sprintf(
-            "\n  <script type=\"text/javascript\">var onloadHCaptcha=function(){window.document.hcwidget=hcaptcha.render('hcform',{sitekey:'%s',theme:'%s'})%s}</script>",
-            $SiteKey,
-            $this->determineTheme(),
-            $this->CIDRAM->Configuration['captcha']['api']['hcaptcha'] === 'Invisible' ? ';hcaptcha.execute()' : ''
-        );
-    }
-
-    /**
-     * Fetch results from the hCaptcha API.
-     * @link https://docs.hcaptcha.com/
+     * Fetch results from the Friendly Captcha API.
+     * @link https://developer.friendlycaptcha.com/docs/v1
+     * @link https://developer.friendlycaptcha.com/docs/v2
      *
      * @return void
      */
     private function doResponse(): void
     {
-        $this->Results = $this->CIDRAM->Request->request('https://api.hcaptcha.com/siteverify', [
-            'secret' => $this->CIDRAM->Configuration['captcha']['hcaptcha_secret'],
-            'response' => $_POST['hc-response'],
-            'remoteip' => $this->CIDRAM->ipAddr
-        ]);
-        $this->Bypass = (strpos($this->Results, '"success":true,') !== false);
+        if ($this->CIDRAM->Configuration['captcha']['api']['friendly'] === 'v1') {
+            $this->Results = $this->CIDRAM->Request->request('https://api.friendlycaptcha.com/api/v1/siteverify', [
+                'solution' => $_POST['frc-captcha-solution'],
+                'sitekey' => $this->CIDRAM->Configuration['captcha']['friendly_sitekey'],
+                'secret' => $this->CIDRAM->Configuration['captcha']['friendly_apikey']
+            ]);
+            $this->Bypass = (strpos($this->Results, '"success":true') !== false);
+        } elseif ($this->CIDRAM->Configuration['captcha']['api']['friendly'] === 'v2') {
+            $this->Results = $this->CIDRAM->Request->request('https://global.frcapi.com/api/v2/captcha/siteverify', [
+                'response' => $_POST['frc-captcha-response'],
+                'sitekey' => $this->CIDRAM->Configuration['captcha']['friendly_sitekey']
+            ], -1, ['X-API-Key: ' . $this->CIDRAM->Configuration['captcha']['friendly_apikey']]);
+            $this->Bypass = (strpos($this->Results, '"success":true') !== false);
+        }
     }
 
     /**
@@ -275,11 +258,9 @@ class HCaptcha extends Captcha
             return;
         }
 
-        $this->CIDRAM->CIDRAM['FieldTemplates']['captcha_api_include'] = $this->generateCallbackData(
-            $this->CIDRAM->Configuration['captcha']['hcaptcha_sitekey']
-        );
+        $this->CIDRAM->CIDRAM['FieldTemplates']['captcha_api_include'] = '';
         $this->CIDRAM->CIDRAM['FieldTemplates']['captcha_div_include'] = $this->generateTemplateData(
-            $this->CIDRAM->Configuration['captcha']['hcaptcha_sitekey'],
+            $this->CIDRAM->Configuration['captcha']['friendly_sitekey'],
             $CookieWarn,
             $ApiMessage
         );

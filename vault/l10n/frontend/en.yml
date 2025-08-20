@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2025.08.16).
+# This file: English language data for the front-end (last modified: 2025.08.20).
 ##/
 
 Abuse category:
@@ -160,13 +160,17 @@ config:
  captcha: "Configuration for CAPTCHAs (provides a way for humans to regain access when blocked)."
  captcha_api: "Which API to use?"
  captcha_expiry: "Number of hours to remember CAPTCHA instances. Default = 720 (1 month)."
- captcha_hcaptcha_log: "Log all CAPTCHA attempts? If yes, specify the name to use for the log file. If no, leave this variable blank."
- captcha_hcaptcha_secret: &CaptchaDashboard "This value can be found in the dashboard for your CAPTCHA service."
- captcha_hcaptcha_sitekey: *CaptchaDashboard
- captcha_messages: "Messages to be displayed alongside CAPTCHAs."
+ captcha_friendly_apikey: &FriendlyCred "If you want to use Friendly Captcha with CIDRAM, you'll need to enter a value here. If not, you can ignore it."
+ captcha_friendly_sitekey: *FriendlyCred
+ captcha_hcaptcha_secret: &HCaptchaCred "If you want to use hCaptcha with CIDRAM, you'll need to enter a value here. If not, you can ignore it."
+ captcha_hcaptcha_sitekey: *HCaptchaCred
  captcha_lockto: "What to lock CAPTCHAs to."
+ captcha_log: "Log all CAPTCHA attempts? If yes, specify the name to use for the log file. If no, leave this variable blank."
+ captcha_messages: "Messages to be displayed alongside CAPTCHAs."
  captcha_nonblocked_status_code: "Which status code should be used when displaying CAPTCHAs to non-blocked requests?"
  captcha_signature_limit: "Maximum number of signatures allowed before the CAPTCHA offer is withdrawn. Default = 1."
+ captcha_turnstile_secret: &TurnstileCred "If you want to use Cloudflare Turnstile with CIDRAM, you'll need to enter a value here. If not, you can ignore it."
+ captcha_turnstile_sitekey: *TurnstileCred
  captcha_usemode:
   en-AU: "When should CAPTCHAs be offered? You can specify the preferred behaviour for each supported provider here. Note: Whitelisted or verified and non-blocked requests never need to complete a CAPTCHA. Also note: CAPTCHAs can provide a useful, additional layer of protection against bots and various kinds of malicious automated requests, but won't provide any protection against a malicious human."
   en-US: "When should CAPTCHAs be offered? You can specify the preferred behavior for each supported provider here. Note: Whitelisted or verified and non-blocked requests never need to complete a CAPTCHA. Also note: CAPTCHAs can provide a useful, additional layer of protection against bots and various kinds of malicious automated requests, but won't provide any protection against a malicious human."
@@ -418,6 +422,8 @@ field:
   bytes:
    - "byte"
    - "bytes"
+hint:
+ This value can be found in the dashboard for your CAPTCHA service: "This value can be found in the dashboard for your CAPTCHA service."
 hints_asnlookup: "** Requires ASN lookup functionality (e.g., via the IP-API or BGPView module)."
 hints_aux_stats: "Note: Whether to track statistics for auxiliary rules can be controlled from the auxiliary rules page."
 hints_cause_fp: "*!! High likelihood of causing false positives due to %s."

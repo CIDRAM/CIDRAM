@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Punjabi language data for the front-end (last modified: 2025.08.18).
+# This file: Punjabi language data for the front-end (last modified: 2025.08.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -164,13 +164,17 @@ config:
  captcha: "CAPTCHA ਲਈ ਕੌਂਫਿਗਰੇਸ਼ਨ (ਬਲੌਕ ਕੀਤੇ ਜਾਣ 'ਤੇ ਮਨੁੱਖਾਂ ਨੂੰ ਮੁੜ ਪਹੁੰਚ ਪ੍ਰਾਪਤ ਕਰਨ ਦਾ ਤਰੀਕਾ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ)।"
  captcha_api: "ਕਿਹੜਾ API ਵਰਤਣਾ ਹੈ?"
  captcha_expiry: "ਕੈਪਟਚਾ ਉਦਾਹਰਨਾਂ ਨੂੰ ਯਾਦ ਰੱਖਣ ਲਈ ਘੰਟਿਆਂ ਦੀ ਗਿਣਤੀ। ਡਿਫਾਲਟ = 720 (1 ਮਹੀਨਾ)।"
- captcha_hcaptcha_log: "ਕੀ ਸਾਰੀਆਂ ਕੈਪਟਚਾ ਕੋਸ਼ਿਸ਼ਾਂ ਨੂੰ ਲੌਗ ਕਰੋ? ਜੇਕਰ ਹਾਂ, ਤਾਂ ਲਾਗ ਫਾਇਲ ਲਈ ਵਰਤਣ ਲਈ ਨਾਂ ਦਿਓ। ਜੇਕਰ ਨਹੀਂ, ਤਾਂ ਇਸ ਵੇਰੀਏਬਲ ਨੂੰ ਖਾਲੀ ਛੱਡ ਦਿਓ।"
- captcha_hcaptcha_secret: &CaptchaDashboard "ਇਹ ਮੁੱਲ ਤੁਹਾਡੀ ਕੈਪਟਚਾ ਸੇਵਾ ਲਈ ਡੈਸ਼ਬੋਰਡ ਵਿੱਚ ਪਾਇਆ ਜਾ ਸਕਦਾ ਹੈ।"
- captcha_hcaptcha_sitekey: *CaptchaDashboard
- captcha_messages: "ਕੈਪਟਚਾ ਦੇ ਨਾਲ ਪ੍ਰਦਰਸ਼ਿਤ ਕੀਤੇ ਜਾਣ ਵਾਲੇ ਸੁਨੇਹੇ।"
+ captcha_friendly_apikey: &FriendlyCred "ਜੇਕਰ ਤੁਸੀਂ CIDRAM ਨਾਲ Friendly Captcha ਦੀ ਵਰਤੋਂ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ, ਤਾਂ ਤੁਹਾਨੂੰ ਇੱਥੇ ਇੱਕ ਮੁੱਲ ਦਰਜ ਕਰਨ ਦੀ ਲੋੜ ਹੋਵੇਗੀ। ਜੇਕਰ ਨਹੀਂ, ਤਾਂ ਤੁਸੀਂ ਇਸਨੂੰ ਅਣਡਿੱਠਾ ਕਰ ਸਕਦੇ ਹੋ।"
+ captcha_friendly_sitekey: *FriendlyCred
+ captcha_hcaptcha_secret: &HCaptchaCred "ਜੇਕਰ ਤੁਸੀਂ CIDRAM ਨਾਲ hCaptcha ਦੀ ਵਰਤੋਂ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ, ਤਾਂ ਤੁਹਾਨੂੰ ਇੱਥੇ ਇੱਕ ਮੁੱਲ ਦਰਜ ਕਰਨ ਦੀ ਲੋੜ ਹੋਵੇਗੀ। ਜੇਕਰ ਨਹੀਂ, ਤਾਂ ਤੁਸੀਂ ਇਸਨੂੰ ਅਣਡਿੱਠਾ ਕਰ ਸਕਦੇ ਹੋ।"
+ captcha_hcaptcha_sitekey: *HCaptchaCred
  captcha_lockto: "ਕੈਪਟਚਾ ਨੂੰ ਕਿਸ 'ਤੇ ਲਾਕ ਕਰਨਾ ਹੈ।"
+ captcha_log: "ਕੀ ਸਾਰੀਆਂ ਕੈਪਟਚਾ ਕੋਸ਼ਿਸ਼ਾਂ ਨੂੰ ਲੌਗ ਕਰੋ? ਜੇਕਰ ਹਾਂ, ਤਾਂ ਲਾਗ ਫਾਇਲ ਲਈ ਵਰਤਣ ਲਈ ਨਾਂ ਦਿਓ। ਜੇਕਰ ਨਹੀਂ, ਤਾਂ ਇਸ ਵੇਰੀਏਬਲ ਨੂੰ ਖਾਲੀ ਛੱਡ ਦਿਓ।"
+ captcha_messages: "ਕੈਪਟਚਾ ਦੇ ਨਾਲ ਪ੍ਰਦਰਸ਼ਿਤ ਕੀਤੇ ਜਾਣ ਵਾਲੇ ਸੁਨੇਹੇ।"
  captcha_nonblocked_status_code: "ਗੈਰ-ਬਲੌਕ ਕੀਤੀਆਂ ਬੇਨਤੀਆਂ ਨੂੰ ਕੈਪਟਚਾ ਪ੍ਰਦਰਸ਼ਿਤ ਕਰਨ ਵੇਲੇ ਕਿਹੜਾ ਸਥਿਤੀ ਕੋਡ ਵਰਤਿਆ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ?"
  captcha_signature_limit: "ਕੈਪਟਚਾ ਪੇਸ਼ਕਸ਼ ਨੂੰ ਵਾਪਸ ਲੈਣ ਤੋਂ ਪਹਿਲਾਂ ਦਸਤਖਤਾਂ ਦੀ ਅਧਿਕਤਮ ਸੰਖਿਆ ਦੀ ਆਗਿਆ ਹੈ। ਡਿਫਾਲਟ = 1."
+ captcha_turnstile_secret: &TurnstileCred "ਜੇਕਰ ਤੁਸੀਂ CIDRAM ਨਾਲ Cloudflare Turnstile ਦੀ ਵਰਤੋਂ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ, ਤਾਂ ਤੁਹਾਨੂੰ ਇੱਥੇ ਇੱਕ ਮੁੱਲ ਦਰਜ ਕਰਨ ਦੀ ਲੋੜ ਹੋਵੇਗੀ। ਜੇਕਰ ਨਹੀਂ, ਤਾਂ ਤੁਸੀਂ ਇਸਨੂੰ ਅਣਡਿੱਠਾ ਕਰ ਸਕਦੇ ਹੋ।"
+ captcha_turnstile_sitekey: *TurnstileCred
  captcha_usemode: "ਕੈਪਟਚਾ ਕਦੋਂ ਪੇਸ਼ ਕੀਤੇ ਜਾਣੇ ਚਾਹੀਦੇ ਹਨ? ਤੁਸੀਂ ਇੱਥੇ ਹਰੇਕ ਸਮਰਥਿਤ ਪ੍ਰਦਾਤਾ ਲਈ ਪਸੰਦੀਦਾ ਵਿਵਹਾਰ ਨਿਰਧਾਰਤ ਕਰ ਸਕਦੇ ਹੋ। ਨੋਟ: ਵ੍ਹਾਈਟਲਿਸਟ ਜਾਂ ਪ੍ਰਮਾਣਿਤ ਅਤੇ ਗੈਰ-ਬਲੌਕ ਕੀਤੀਆਂ ਬੇਨਤੀਆਂ ਨੂੰ ਕਦੇ ਵੀ ਕੈਪਟਚਾ ਨੂੰ ਪੂਰਾ ਕਰਨ ਦੀ ਲੋੜ ਨਹੀਂ ਹੁੰਦੀ ਹੈ। ਇਹ ਵੀ ਨੋਟ ਕਰੋ: ਕੈਪਟਚਾ, ਬੋਟਾਂ ਅਤੇ ਕਈ ਤਰ੍ਹਾਂ ਦੀਆਂ ਖਤਰਨਾਕ ਸਵੈਚਲਿਤ ਬੇਨਤੀਆਂ ਦੇ ਵਿਰੁੱਧ ਸੁਰੱਖਿਆ ਦੀ ਇੱਕ ਉਪਯੋਗੀ, ਵਾਧੂ ਪਰਤ ਪ੍ਰਦਾਨ ਕਰ ਸਕਦੇ ਹਨ, ਪਰ ਇੱਕ ਖਤਰਨਾਕ ਮਨੁੱਖ ਦੇ ਵਿਰੁੱਧ ਕੋਈ ਸੁਰੱਖਿਆ ਪ੍ਰਦਾਨ ਨਹੀਂ ਕਰਨਗੇ।"
  components: "CIDRAM ਦੁਆਰਾ ਵਰਤੇ ਗਏ ਕੰਪੋਨੈਂਟ ਦੀ ਐਕਟੀਵੇਸ਼ਨ ਅਤੇ ਡੀਐਕਟੀਵੇਸ਼ਨ ਲਈ ਕੌਂਫਿਗਰੇਸ਼ਨ। ਆਮ ਤੌਰ 'ਤੇ ਅੱਪਡੇਟ ਪੰਨੇ ਦੁਆਰਾ ਭਰਿਆ ਜਾਂਦਾ ਹੈ, ਪਰ ਬਿਹਤਰ ਨਿਯੰਤਰਣ ਲਈ ਅਤੇ ਅੱਪਡੇਟ ਪੰਨੇ ਦੁਆਰਾ ਪਛਾਣੇ ਨਾ ਜਾਣ ਵਾਲੇ ਕਸਟਮ ਕੰਪੋਨੈਂਟ ਲਈ ਵੀ ਇੱਥੋਂ ਪ੍ਰਬੰਧਿਤ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ।"
  components_events: "ਇਵੈਂਟ ਹੈਂਡਲਰ। ਆਮ ਤੌਰ 'ਤੇ CIDRAM ਦੇ ਅੰਦਰੂਨੀ ਵਿਵਹਾਰ ਨੂੰ ਸੋਧਣ ਲਈ ਜਾਂ ਵਾਧੂ ਕਾਰਜਕੁਸ਼ਲਤਾ ਪ੍ਰਦਾਨ ਕਰਨ ਲਈ ਵਰਤਿਆ ਜਾਂਦਾ ਹੈ।"
@@ -394,6 +398,8 @@ field:
  size:
   Total size: "ਕੁੱਲ ਆਕਾਰ:"
   bytes: "ਬਾਈਟ"
+hint:
+ This value can be found in the dashboard for your CAPTCHA service: "ਇਹ ਮੁੱਲ ਤੁਹਾਡੀ ਕੈਪਟਚਾ ਸੇਵਾ ਲਈ ਡੈਸ਼ਬੋਰਡ ਵਿੱਚ ਪਾਇਆ ਜਾ ਸਕਦਾ ਹੈ।"
 hints_asnlookup: "** ASN ਲੁੱਕਅੱਪ ਕਾਰਜਕੁਸ਼ਲਤਾ ਦੀ ਲੋੜ ਹੈ (ਉਦਾਹਰਨ ਲਈ, IP-API ਜਾਂ BGPView ਮੋਡੀਊਲ ਰਾਹੀਂ)।"
 hints_aux_stats: "ਨੋਟ: ਸਹਾਇਕ ਨਿਯਮਾਂ ਲਈ ਅੰਕੜਿਆਂ ਨੂੰ ਟਰੈਕ ਕਰਨਾ ਹੈ ਜਾਂ ਨਹੀਂ, ਸਹਾਇਕ ਨਿਯਮ ਪੰਨੇ ਤੋਂ ਨਿਯੰਤਰਿਤ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ।"
 hints_cause_fp: "*!! %s ਦੇ ਕਾਰਨ ਝੂਠੇ ਸਕਾਰਾਤਮਕ ਹੋਣ ਦੀ ਉੱਚ ਸੰਭਾਵਨਾ।"

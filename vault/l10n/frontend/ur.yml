@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2025.08.18).
+# This file: Urdu language data for the front-end (last modified: 2025.08.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -164,13 +164,17 @@ config:
  captcha: "CAPTCHA کی ترتیبات (بلاک ہونے پر انسانوں کو دوبارہ رسائی حاصل کرنے کا ایک راستہ فراہم کرتا ہے)."
  captcha_api: "کون سا API استعمال کرنے کے لیے؟"
  captcha_expiry: "گھنٹوں کی تعداد CAPTCHA کے واقعات کو یاد کرنے. پہلے سے طے شدہ = 720 (1 ماہ)."
- captcha_hcaptcha_log: "تمام CAPTCHA کے کوششوں لاگ؟ اگر ہاں، تو لاگ فائل کے لیے استعمال کرنے کے لیے نام کی وضاحت کریں. اگر نہیں، تو اس متغیر کو خالی چھوڑ دیں."
- captcha_hcaptcha_secret: &CaptchaDashboard "یہ قدر آپ کے CAPTCHA خدمت کے لیے ڈیش بورڈ میں مل سکتی ہے."
- captcha_hcaptcha_sitekey: *CaptchaDashboard
- captcha_messages: "CAPTCHA کے ساتھ دکھائے جانے والے پیغامات."
+ captcha_friendly_apikey: &FriendlyCred "اگر آپ CIDRAM کے ساتھ Friendly Captcha استعمال کرنا چاہتے ہیں، تو آپ کو یہاں ایک قدر درج کرنے کی ضرورت ہوگی. اگر نہیں، تو آپ اسے نظر انداز کر سکتے ہیں."
+ captcha_friendly_sitekey: *FriendlyCred
+ captcha_hcaptcha_secret: &HCaptchaCred "اگر آپ CIDRAM کے ساتھ hCaptcha استعمال کرنا چاہتے ہیں، تو آپ کو یہاں ایک قدر درج کرنے کی ضرورت ہوگی. اگر نہیں، تو آپ اسے نظر انداز کر سکتے ہیں."
+ captcha_hcaptcha_sitekey: *HCaptchaCred
  captcha_lockto: "CAPTCHA کو کس چیز پر لاک کرنا ہے."
+ captcha_log: "تمام CAPTCHA کے کوششوں لاگ؟ اگر ہاں، تو لاگ فائل کے لیے استعمال کرنے کے لیے نام کی وضاحت کریں. اگر نہیں، تو اس متغیر کو خالی چھوڑ دیں."
+ captcha_messages: "CAPTCHA کے ساتھ دکھائے جانے والے پیغامات."
  captcha_nonblocked_status_code: "غیر مسدود درخواستوں پر CAPTCHA کی نمائش کرتے وقت کون سا اسٹیٹس کوڈ استعمال کرنا چاہیے؟"
  captcha_signature_limit: "CAPTCHA پیش کش واپس لینے سے پہلے دستخطوں کی زیادہ سے زیادہ تعداد کی اجازت. پہلے سے طے شدہ = 1."
+ captcha_turnstile_secret: &TurnstileCred "اگر آپ CIDRAM کے ساتھ Cloudflare Turnstile استعمال کرنا چاہتے ہیں، تو آپ کو یہاں ایک قدر درج کرنے کی ضرورت ہوگی. اگر نہیں، تو آپ اسے نظر انداز کر سکتے ہیں."
+ captcha_turnstile_sitekey: *TurnstileCred
  captcha_usemode: "CAPTCHA کب پیش کیے جائیں؟ آپ یہاں ہر معاون فراہم کنندہ کے لیے ترجیحی سلوک کی وضاحت کر سکتے ہیں. نوٹ: وائٹ لسٹڈ یا توثیق شدہ اور غیر مسدود درخواستوں کو کبھی بھی CAPTCHA کو مکمل کرنے کی ضرورت نہیں ہے. یہ بھی نوٹ کریں: CAPTCHA بوٹس اور مختلف قسم کی بدنیتی پر مبنی خودکار درخواستوں کے خلاف مفید تحفظ فراہم کر سکتے ہیں، لیکن بدنیتی پر مبنی انسان کے خلاف کوئی تحفظ فراہم نہیں کریں گے."
  components: "CIDRAM کی طرف سے استعمال ہونے والے اجزاء کو چالو کرنے اور غیر فعال کرنے کے لیے ترتیب. عام طور پر اپ ڈیٹس صفحہ کے ذریعے آباد ہوتا ہے، لیکن بہتر کنٹرول کے لیے اور اپ ڈیٹس صفحہ کے ذریعے پہچانے جانے والے حسب ضرورت اجزاء کے لیے بھی یہاں سے منظم کیا جا سکتا ہے."
  components_events: "ایونٹ ہینڈلرز. عام طور پر استعمال کیا جاتا ہے جس طرح سے CIDRAM اندرونی طور پر برتاؤ کرتا ہے یا اضافی فعالیت فراہم کرتا ہے."
@@ -394,6 +398,8 @@ field:
  size:
   Total size: "کل سائز:"
   bytes: "بائٹس"
+hint:
+ This value can be found in the dashboard for your CAPTCHA service: "یہ قدر آپ کے CAPTCHA خدمت کے لیے ڈیش بورڈ میں مل سکتی ہے."
 hints_asnlookup: "** ASN تلاش کی فعالیت کی ضرورت ہے (مثال کے طور پر، IP-API یا BGPView ماڈیول کے ذریعے)."
 hints_aux_stats: "نوٹ: معاون قواعد کے اعداد و شمار کو ٹریک کرنا ہے یا نہیں، معاون قواعد کے صفحہ سے کنٹرول کیا جا سکتا ہے."
 hints_cause_fp: "*!! %s کی وجہ سے جھوٹے مثبت ہونے کا زیادہ امکان."

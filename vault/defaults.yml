@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2025.08.17).
+# This file: Defaults file (last modified: 2025.08.20).
 ##/
 
 Config Defaults:
@@ -608,6 +608,7 @@ Config Defaults:
    type: "string"
    default: |
     bypasses.yml
+    extras.yml
   events:
    type: "string"
    default: ""
@@ -964,15 +965,25 @@ Config Defaults:
    type: "string"
    default:
     hcaptcha: "v1"
-    friendly: "v1"
-    cloudflare: "v1"
+    friendly: "v2"
+    cloudflare: "v0"
    labels:
     hcaptcha: "hCaptcha"
     friendly: "Friendly Captcha"
     cloudflare: "Cloudflare Turnstile"
    choices:
+    v0: "v0"
     v1: "v1"
     Invisible: "v1 ({label.Invisible})"
+    v2: "v2"
+   nonsense: |
+    hcaptcha:v0
+    hcaptcha:v2
+    friendly:v0
+    friendly:Invisible
+    cloudflare:v1
+    cloudflare:Invisible
+    cloudflare:v2
    style: "matrix"
    columns: "100px"
   messages:
@@ -1011,17 +1022,39 @@ Config Defaults:
   hcaptcha_sitekey:
    type: "string"
    default: ""
+   hints: "hint.This value can be found in the dashboard for your CAPTCHA service"
    See also:
     HCaptcha Dashboard: &HCaptchaDashboard "https://dashboard.hcaptcha.com/overview"
   hcaptcha_secret:
    type: "string"
    default: ""
+   hints: "hint.This value can be found in the dashboard for your CAPTCHA service"
    See also:
     HCaptcha Dashboard: *HCaptchaDashboard
-  hcaptcha_log:
+  friendly_sitekey:
    type: "string"
    default: ""
-   hints: "hints_logging_datetime"
+   hints: "hint.This value can be found in the dashboard for your CAPTCHA service"
+   See also:
+    Friendly Captcha Dashboard: &FriendlyDashboard "https://app.friendlycaptcha.eu/dashboard"
+  friendly_apikey:
+   type: "string"
+   default: ""
+   hints: "hint.This value can be found in the dashboard for your CAPTCHA service"
+   See also:
+    Friendly Captcha Dashboard: *FriendlyDashboard
+  turnstile_sitekey:
+   type: "string"
+   default: ""
+   hints: "hint.This value can be found in the dashboard for your CAPTCHA service"
+   See also:
+    Cloudflare Dashboard: &CloudflareDashboard "https://dash.cloudflare.com/"
+  turnstile_secret:
+   type: "string"
+   default: ""
+   hints: "hint.This value can be found in the dashboard for your CAPTCHA service"
+   See also:
+    Cloudflare Dashboard: *CloudflareDashboard
   expiry:
    type: "float"
    step: "any"
@@ -1030,6 +1063,10 @@ Config Defaults:
   signature_limit:
    type: "int"
    default: 1
+  log:
+   type: "string"
+   default: ""
+   hints: "hints_logging_datetime"
  legal:
   pseudonymise_ip_addresses:
    type: "bool"

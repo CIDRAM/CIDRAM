@@ -8,12 +8,12 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: HCaptcha class (last modified: 2025.08.20).
+ * This file: Cloudflare Turnstile class (last modified: 2025.08.20).
  */
 
 namespace CIDRAM\CIDRAM;
 
-class HCaptcha extends Captcha
+class CloudflareTurnstile extends Captcha
 {
     /**
      * Constructor.
@@ -30,7 +30,7 @@ class HCaptcha extends Captcha
         $this->Messages = array_flip(explode("\n", $this->CIDRAM->Configuration['captcha']['messages']));
 
         /** What to lock CAPTCHAs to. */
-        $LockTo = $this->CIDRAM->Configuration['captcha']['lockto']['hcaptcha'] ?? 'user';
+        $LockTo = $this->CIDRAM->Configuration['captcha']['lockto']['cloudflare'] ?? 'user';
 
         if ($LockTo === 'ip') {
             /** Attempt to load the IP bypass list. */
@@ -46,18 +46,18 @@ class HCaptcha extends Captcha
             $this->clearExpired($BypassList, $BypassListModified);
 
             /**
-             * Verify whether a hCaptcha instance has already been completed before
+             * Verify whether a Cloudflare Turnstile instance has already been completed before
              * for the current IP, populate relevant variables, and generate fields.
              */
             if (strpos($BypassList, "\n" . $this->CIDRAM->ipAddr . ',') !== false) {
                 $this->Bypass = true;
                 $this->resetSCT();
             } else {
-                /** Set hCaptcha status. */
-                $this->CIDRAM->BlockInfo['CAPTCHA'] = sprintf($this->CIDRAM->L10N->getString('state.Enabled'), 'hCaptcha');
+                /** Set Cloudflare Turnstile status. */
+                $this->CIDRAM->BlockInfo['CAPTCHA'] = sprintf($this->CIDRAM->L10N->getString('state.Enabled'), 'Cloudflare Turnstile');
 
                 /** We've received a response. */
-                if (isset($_POST['hc-response'])) {
+                if (isset($_POST['cf-turnstile-response'], $_POST['cfidem'])) {
                     $Loggable = true;
                     $this->doResponse();
                     if ($this->Bypass) {
@@ -69,14 +69,14 @@ class HCaptcha extends Captcha
                         ) . "\n";
                         $BypassListModified = true;
 
-                        $this->generatePassed('hCaptcha');
+                        $this->generatePassed('Cloudflare Turnstile');
                     } else {
-                        $this->generateFailed('hCaptcha');
+                        $this->generateFailed('Cloudflare Turnstile');
                     }
                 }
 
-                /** HCaptcha template data included if hCaptcha isn't being bypassed. */
-                $this->generateContainer(false, isset($this->Messages['api_message:hcaptcha']));
+                /** Cloudflare Turnstile template data included if Cloudflare Turnstile isn't being bypassed. */
+                $this->generateContainer(false, isset($this->Messages['api_message:friendly']));
             }
 
             /** Update the IP bypass list if any changes were made. */
@@ -98,7 +98,7 @@ class HCaptcha extends Captcha
             $this->clearExpired($HastList, $HastListModified);
 
             /**
-             * Determine whether a hCaptcha instance has already been completed by the
+             * Determine whether a Cloudflare Turnstile instance has already been completed by the
              * user and populate relevant variables.
              */
             if (!empty($_COOKIE['CIDRAM']) && ($Split = strpos($_COOKIE['CIDRAM'], ',')) !== false) {
@@ -119,11 +119,11 @@ class HCaptcha extends Captcha
                 $this->Bypass = true;
                 $this->resetSCT();
             } else {
-                /** Set hCaptcha status. */
-                $this->CIDRAM->BlockInfo['CAPTCHA'] = sprintf($this->CIDRAM->L10N->getString('state.Enabled'), 'hCaptcha');
+                /** Set Cloudflare Turnstile status. */
+                $this->CIDRAM->BlockInfo['CAPTCHA'] = sprintf($this->CIDRAM->L10N->getString('state.Enabled'), 'Cloudflare Turnstile');
 
                 /** We've received a response. */
-                if (isset($_POST['hc-response'])) {
+                if (isset($_POST['cf-turnstile-response'], $_POST['cfidem'])) {
                     $Loggable = true;
                     $this->doResponse();
                     if ($this->Bypass) {
@@ -154,14 +154,14 @@ class HCaptcha extends Captcha
                         /** Append to the hash list. */
                         $HastList .= $UserHash . ',' . ($this->CIDRAM->Now + ($this->CIDRAM->Configuration['captcha']['expiry'] * 3600)) . "\n";
                         $HastListModified = true;
-                        $this->generatePassed('hCaptcha');
+                        $this->generatePassed('Cloudflare Turnstile');
                     } else {
-                        $this->generateFailed('hCaptcha');
+                        $this->generateFailed('Cloudflare Turnstile');
                     }
                 }
 
-                /** HCaptcha template data included if hCaptcha isn't being bypassed. */
-                $this->generateContainer(isset($this->Messages['cookie_warning:hcaptcha']), isset($this->Messages['api_message:hcaptcha']));
+                /** Cloudflare Turnstile template data included if Cloudflare Turnstile isn't being bypassed. */
+                $this->generateContainer(isset($this->Messages['cookie_warning:friendly']), isset($this->Messages['api_message:friendly']));
             }
 
             /** Update the hash list if any changes were made. */
@@ -179,7 +179,7 @@ class HCaptcha extends Captcha
     }
 
     /**
-     * Generate hCaptcha form template data.
+     * Generate Cloudflare Turnstile form template data.
      *
      * @param string $SiteKey The sitekey to use.
      * @param bool $CookieWarn Whether to display a cookie warning.
@@ -188,77 +188,41 @@ class HCaptcha extends Captcha
      */
     private function generateTemplateData(string $SiteKey, bool $CookieWarn = false, bool $ApiMessage = false): string
     {
-        header(sprintf(
-            'Content-Security-Policy: default-src \'none\'; connect-src %1$s; frame-src %1$s; script-src %1$s \'unsafe-inline\'; style-src \'unsafe-inline\';',
-            '\'self\' https://assets.hcaptcha.com https://hcaptcha.com https://newassets.hcaptcha.com/'
-        ));
-        $Script = sprintf(
-            '<script src="https://hcaptcha.com/1/api.js?hl=%s&onload=onloadHCaptcha&render=explicit" async defer></script>',
-            $this->CIDRAM->ClientL10N->getString('hl.hcaptcha') ?: $this->CIDRAM->L10N->getString('hl.hcaptcha')
-        ) . '<script type="text/javascript">document.getElementById(\'hostnameoverride\').value=window.location.hostname;</script>';
-        $MsgCookieWarning = $this->CIDRAM->ClientL10N->getString('captcha_cookie_warning') ?: $this->CIDRAM->L10N->getString('captcha_cookie_warning');
-        return $this->CIDRAM->Configuration['captcha']['api']['hcaptcha'] === 'Invisible' ? sprintf(
-            "\n<hr />\n<p class=\"detected\"%s>%s%s<br /></p>\n" .
-            '<div class="gForm">' .
-                '<div id="hcform" class="h-captcha" data-sitekey="%s" data-theme="%s" data-callback="onSubmitCallback" data-size="invisible"></div>' .
-            "</div>\n" .
-            '<form id="gF" method="POST" action="" class="gForm" onsubmit="javascript:hcaptcha.execute()">' .
-                '<input id="rData" type="hidden" name="hc-response" value="" />%s' .
-            "</form>\n" .
-            "<script type=\"text/javascript\">function onSubmitCallback(token){document.getElementById('rData').value=hcaptcha.getResponse(window.document.hcwidget);document.getElementById('gF').submit()}</script>\n",
-            $this->CIDRAM->CIDRAM['L10N-Lang-Attache'],
-            $ApiMessage ? ($this->CIDRAM->ClientL10N->getString('captcha_message_invisible') ?: $this->CIDRAM->L10N->getString('captcha_message_invisible')) : '',
-            $CookieWarn ? '<br />' . $MsgCookieWarning : '',
-            $SiteKey,
-            $this->determineTheme(),
-            $this->TemplateInsert
-        ) . $Script . "\n" : sprintf(
+        $Script = '<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>';
+        $Script .= '<script type="text/javascript">document.getElementById(\'hostnameoverride\').value=window.location.hostname;</script>';
+        return sprintf(
             "\n<hr />\n<p class=\"detected\"%s>%s%s<br /></p>\n" .
             '<form method="POST" action="" class="gForm">' .
-                '<input id="rData" type="hidden" name="hc-response" value="" />' .
-                '<div id="hcform" data-theme="%s" data-callback="onSubmitCallback"></div>' .
-                '<div>%s<input type="submit" value="%s" /></div>' .
-            "</form>\n" .
-            "<script type=\"text/javascript\">function onSubmitCallback(token){document.getElementById('rData').value=hcaptcha.getResponse(window.document.hcwidget)}</script>\n",
+                '<div class="cf-turnstile" data-sitekey="%s" data-theme="%s" data-size="flexible" data-language="%s"></div>' .
+                '<div>%s<input type="hidden" name="cfidem" value="%s" /><input type="submit" value="%s" /></div>' .
+            "</form>\n",
             $this->CIDRAM->CIDRAM['L10N-Lang-Attache'],
             $ApiMessage ? ($this->CIDRAM->ClientL10N->getString('captcha_message') ?: $this->CIDRAM->L10N->getString('captcha_message')) : '',
-            $CookieWarn ? '<br />' . $MsgCookieWarning : '',
+            $CookieWarn ? '<br />' . ($this->CIDRAM->ClientL10N->getString('captcha_cookie_warning') ?: $this->CIDRAM->L10N->getString('captcha_cookie_warning')) : '',
+            $SiteKey,
             $this->determineTheme(),
+            $this->CIDRAM->ClientL10N->getString('hl.cloudflare') ?: $this->CIDRAM->L10N->getString('hl.cloudflare'),
             $this->TemplateInsert,
+            $this->CIDRAM->BlockInfo['ID'] ?? $this->CIDRAM->generateId(),
             $this->CIDRAM->ClientL10N->getString('label.Submit') ?: $this->CIDRAM->L10N->getString('label.Submit')
         ) . $Script;
     }
 
     /**
-     * Generate hCaptcha callback data.
-     *
-     * @param string $SiteKey The sitekey to use.
-     * @return string The callback data.
-     */
-    private function generateCallbackData(string $SiteKey): string
-    {
-        return sprintf(
-            "\n  <script type=\"text/javascript\">var onloadHCaptcha=function(){window.document.hcwidget=hcaptcha.render('hcform',{sitekey:'%s',theme:'%s'})%s}</script>",
-            $SiteKey,
-            $this->determineTheme(),
-            $this->CIDRAM->Configuration['captcha']['api']['hcaptcha'] === 'Invisible' ? ';hcaptcha.execute()' : ''
-        );
-    }
-
-    /**
-     * Fetch results from the hCaptcha API.
-     * @link https://docs.hcaptcha.com/
+     * Fetch results from the Cloudflare Turnstile API.
+     * @link https://developers.cloudflare.com/turnstile/get-started/server-side-validation/
      *
      * @return void
      */
     private function doResponse(): void
     {
-        $this->Results = $this->CIDRAM->Request->request('https://api.hcaptcha.com/siteverify', [
-            'secret' => $this->CIDRAM->Configuration['captcha']['hcaptcha_secret'],
-            'response' => $_POST['hc-response'],
-            'remoteip' => $this->CIDRAM->ipAddr
+        $this->Results = $this->CIDRAM->Request->request('https://challenges.cloudflare.com/turnstile/v0/siteverify', [
+            'secret' => $this->CIDRAM->Configuration['captcha']['turnstile_secret'],
+            'response' => $_POST['cf-turnstile-response'],
+            'remoteip' => $this->CIDRAM->ipAddr,
+            'idempotency_key' => $_POST['cfidem']
         ]);
-        $this->Bypass = (strpos($this->Results, '"success":true,') !== false);
+        $this->Bypass = (strpos($this->Results, '"success":true') !== false);
     }
 
     /**
@@ -275,11 +239,9 @@ class HCaptcha extends Captcha
             return;
         }
 
-        $this->CIDRAM->CIDRAM['FieldTemplates']['captcha_api_include'] = $this->generateCallbackData(
-            $this->CIDRAM->Configuration['captcha']['hcaptcha_sitekey']
-        );
+        $this->CIDRAM->CIDRAM['FieldTemplates']['captcha_api_include'] = '';
         $this->CIDRAM->CIDRAM['FieldTemplates']['captcha_div_include'] = $this->generateTemplateData(
-            $this->CIDRAM->Configuration['captcha']['hcaptcha_sitekey'],
+            $this->CIDRAM->Configuration['captcha']['turnstile_sitekey'],
             $CookieWarn,
             $ApiMessage
         );

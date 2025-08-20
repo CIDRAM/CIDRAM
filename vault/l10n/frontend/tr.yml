@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2025.08.18).
+# This file: Turkish language data for the front-end (last modified: 2025.08.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -164,13 +164,17 @@ config:
  captcha: "CAPTCHA'lar için yapılandırma (engellendiğinde insanlara erişimi yeniden kazanmaları için bir yol sağlar)."
  captcha_api: "Hangi API'yı kullanacaksınız?"
  captcha_expiry: "CAPTCHA örneklerini hatırlamak için saat sayısı. Varsayılan = 720 (1 ay)."
- captcha_hcaptcha_log: "Tüm CAPTCHA denemelerini günlüğe yaz? Yanıt evet ise, günlük dosyası için kullanılacak adı belirtin. Yanıt hayır ise, bu değişkeni boş bırakın."
- captcha_hcaptcha_secret: &CaptchaDashboard "Bu değer, CAPTCHA hizmetinizin kontrol panelinde bulunabilir."
- captcha_hcaptcha_sitekey: *CaptchaDashboard
- captcha_messages: "CAPTCHA'ların yanında görüntülenecek mesajlar."
+ captcha_friendly_apikey: &FriendlyCred "Friendly Captcha'yı CIDRAM ile kullanmak istiyorsanız, buraya bir değer girmeniz gerekir. Aksi takdirde, bu değeri göz ardı edebilirsiniz."
+ captcha_friendly_sitekey: *FriendlyCred
+ captcha_hcaptcha_secret: &HCaptchaCred "HCaptcha'yı CIDRAM ile kullanmak istiyorsanız, buraya bir değer girmeniz gerekir. Aksi takdirde, bu değeri göz ardı edebilirsiniz."
+ captcha_hcaptcha_sitekey: *HCaptchaCred
  captcha_lockto: "CAPTCHA'ları neye kilitlemeliyiz."
+ captcha_log: "Tüm CAPTCHA denemelerini günlüğe yaz? Yanıt evet ise, günlük dosyası için kullanılacak adı belirtin. Yanıt hayır ise, bu değişkeni boş bırakın."
+ captcha_messages: "CAPTCHA'ların yanında görüntülenecek mesajlar."
  captcha_nonblocked_status_code: "Engellenmemiş isteklere CAPTCHA'lar görüntülenirken hangi durum kodu kullanılmalıdır?"
  captcha_signature_limit: "CAPTCHA teklifi geri çekilmeden önce izin verilen maksimum imza sayısı. Varsayılan = 1."
+ captcha_turnstile_secret: &TurnstileCred "Cloudflare Turnstile'yı CIDRAM ile kullanmak istiyorsanız, buraya bir değer girmeniz gerekir. Aksi takdirde, bu değeri göz ardı edebilirsiniz."
+ captcha_turnstile_sitekey: *TurnstileCred
  captcha_usemode: "CAPTCHA'lar ne zaman sunulmalıdır? Burada desteklenen her sağlayıcı için tercih edilen davranışı belirtebilirsiniz. Not: Beyaz listeye alınmış veya doğrulanmış ve engellenmemiş isteklerin hiçbir zaman bir CAPTCHA tamamlaması gerekmez. Ayrıca not edin: CAPTCHA'lar, botlara ve çeşitli kötü niyetli otomatik isteklere karşı yararlı ek bir koruma katmanı sağlayabilir, ancak kötü niyetli insanlar karşı herhangi bir koruma sağlamaz."
  components: "CIDRAM tarafından kullanılan bileşenlerin etkinleştirilmesi ve devre dışı bırakılması için yapılandırma. Genellikle güncelleme sayfası tarafından doldurulur, ancak daha hassas kontrol ve güncelleme sayfası tarafından tanınmayan özel bileşenler için buradan da yönetilebilir."
  components_events: "Etkinlik sahipleri. Normalde CIDRAM'ın dahili olarak çalışma şeklini değiştirmek veya ek işlevsellik sağlamak için kullanılır."
@@ -394,6 +398,8 @@ field:
  size:
   Total size: "Toplam boyut:"
   bytes: "bayt"
+hint:
+ This value can be found in the dashboard for your CAPTCHA service: "Bu değer, CAPTCHA hizmetinizin kontrol panelinde bulunabilir."
 hints_asnlookup: "** ASN arama işlevini gerektirir (örneğin, IP-API veya BGPView modülü aracılığıyla)."
 hints_aux_stats: "Not: Yardımcı kurallar için istatistiklerin izlenip izlenemeyeceği yardımcı kurallar sayfasından kontrol edilebilir."
 hints_cause_fp: "*!! %s nedeniyle yanlış pozitiflere neden olma olasılığı yüksektir."

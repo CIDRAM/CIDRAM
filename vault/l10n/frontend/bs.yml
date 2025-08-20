@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bosnian language data for the front-end (last modified: 2025.08.17).
+# This file: Bosnian language data for the front-end (last modified: 2025.08.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -164,13 +164,17 @@ config:
  captcha: "Konfiguracija za CAPTCHA-e (pruža način da ljudi ponovo dobiju pristup kada su blokirani)."
  captcha_api: "Koji API koristiti?"
  captcha_expiry: "Broj sati za pamćenje CAPTCHA instanci. Zadano = 720 (1 mjesec)."
- captcha_hcaptcha_log: "Zabilježiti sve pokušaje CAPTCHA? Ako da, navedite naziv koje ćete koristiti za datoteku dnevnika. Ako ne, ostavite ovu varijablu praznom."
- captcha_hcaptcha_secret: &CaptchaDashboard "Ovu vrijednost možete pronaći na kontrolnoj tabli za vašu CAPTCHA uslugu."
- captcha_hcaptcha_sitekey: *CaptchaDashboard
- captcha_messages: "Poruke koje će se prikazivati uz CAPTCHA-e."
+ captcha_friendly_apikey: &FriendlyCred "Ako želite koristiti Friendly Captcha sa CIDRAM-om, morat ćete ovdje unijeti vrijednost. Ako ne, možete je zanemariti."
+ captcha_friendly_sitekey: *FriendlyCred
+ captcha_hcaptcha_secret: &HCaptchaCred "Ako želite koristiti hCaptcha sa CIDRAM-om, morat ćete ovdje unijeti vrijednost. Ako ne, možete je zanemariti."
+ captcha_hcaptcha_sitekey: *HCaptchaCred
  captcha_lockto: "Na šta zaključati CAPTCHA-e."
+ captcha_log: "Zabilježiti sve pokušaje CAPTCHA? Ako da, navedite naziv koje ćete koristiti za datoteku dnevnika. Ako ne, ostavite ovu varijablu praznom."
+ captcha_messages: "Poruke koje će se prikazivati uz CAPTCHA-e."
  captcha_nonblocked_status_code: "Koji statusni kod treba koristiti kada se CAPTCHA prikazuju za neblokirane zahtjeve?"
  captcha_signature_limit: "Maksimalni dozvoljeni broj potpisa prije povlačenja CAPTCHA ponude. Zadano = 1."
+ captcha_turnstile_secret: &TurnstileCred "Ako želite koristiti Cloudflare Turnstile sa CIDRAM-om, morat ćete ovdje unijeti vrijednost. Ako ne, možete je zanemariti."
+ captcha_turnstile_sitekey: *TurnstileCred
  captcha_usemode: "Kada bi trebalo ponuditi CAPTCHA-e? Ovdje možete odrediti preferirano ponašanje za svakog podržanog pružatelja. Bilješka: Zahtjevi na bijeloj listi, ili provjereni i neblokirani zahtjevi, nikada ne moraju ispuniti CAPTCHA. Također imajte na umu: CAPTCHA mogu pružiti koristan, dodatni sloj zaštite od botova i raznih vrsta zlonamjernih automatiziranih zahtjeva, ali neće pružiti nikakvu zaštitu od zlonamjernog ljudi."
  components: "Konfiguracija za aktivaciju i deaktivaciju komponenti koje koristi CIDRAM. Obično ih popunjava stranica za ažuriranje, ali se njime može upravljati i odavde radi bolje kontrole i prilagođenih komponenti koje stranica za ažuriranja ne prepoznaje."
  components_events: "Obrađivači događaja. Obično se koristi za modificiranje načina na koji se CIDRAM ponaša interno ili za pružanje dodatne funkcionalnosti."
@@ -397,6 +401,8 @@ field:
    - "bajt"
    - "bajta"
    - "bajtova"
+hint:
+ This value can be found in the dashboard for your CAPTCHA service: "Ovu vrijednost možete pronaći na kontrolnoj tabli za vašu CAPTCHA uslugu."
 hints_asnlookup: "** Zahtijeva funkcionalnost za ASN pretraživanja (npr., preko IP-API ili BGPView modula)."
 hints_aux_stats: "Bilješka: Praćenje statistike za pomoćna pravila može se kontrolisati sa stranice pomoćnih pravila."
 hints_cause_fp: "*!! Velika vjerovatnoća izazivanja lažnih pozitivnih rezultata zbog %s."

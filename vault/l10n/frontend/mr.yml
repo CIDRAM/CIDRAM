@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Marathi language data for the front-end (last modified: 2025.08.19).
+# This file: Marathi language data for the front-end (last modified: 2025.08.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -164,13 +164,17 @@ config:
  captcha: "कॅप्चासाठी कॉन्फिगरेशन (अवरोधित केल्यावर मानवांना पुन्हा प्रवेश मिळविण्याचा मार्ग प्रदान करते)."
  captcha_api: "कोणते API वापरायचे?"
  captcha_expiry: "कॅप्चा लक्षात ठेवण्यासाठी तासांची संख्या. डीफॉल्ट = ७२० (१ महिना)."
- captcha_hcaptcha_log: "सर्व कॅप्चा प्रयत्न लॉग करायचे? जर हो, तर लॉग फाइलसाठी वापरायचे नाव निर्दिष्ट करा. जर नाही, तर हे व्हेरिएबल रिकामे सोडा."
- captcha_hcaptcha_secret: &CaptchaDashboard "हे मूल्य तुमच्या कॅप्चा सेवेच्या डॅशबोर्डमध्ये आढळू शकते."
- captcha_hcaptcha_sitekey: *CaptchaDashboard
- captcha_messages: "कॅप्चा सोबत प्रदर्शित करायचे संदेश."
+ captcha_friendly_apikey: &FriendlyCred "जर तुम्हाला CIDRAM सह Friendly Captcha वापरायचे असेल, तर तुम्हाला येथे एक मूल्य प्रविष्ट करावे लागेल. जर नसेल, तर तुम्ही ते दुर्लक्षित करू शकता."
+ captcha_friendly_sitekey: *FriendlyCred
+ captcha_hcaptcha_secret: &HCaptchaCred "जर तुम्हाला CIDRAM सह hCaptcha वापरायचे असेल, तर तुम्हाला येथे एक मूल्य प्रविष्ट करावे लागेल. जर नसेल, तर तुम्ही ते दुर्लक्षित करू शकता."
+ captcha_hcaptcha_sitekey: *HCaptchaCred
  captcha_lockto: "कॅप्चा कशावर लॉक करायचे."
+ captcha_log: "सर्व कॅप्चा प्रयत्न लॉग करायचे? जर हो, तर लॉग फाइलसाठी वापरायचे नाव निर्दिष्ट करा. जर नाही, तर हे व्हेरिएबल रिकामे सोडा."
+ captcha_messages: "कॅप्चा सोबत प्रदर्शित करायचे संदेश."
  captcha_nonblocked_status_code: "ब्लॉक न केलेल्या विनंत्यांमध्ये कॅप्चा प्रदर्शित करताना कोणता स्थिती कोड वापरावा?"
  captcha_signature_limit: "कॅप्चा ऑफर मागे घेण्यापूर्वी परवानगी असलेल्या स्वाक्षऱ्यांची कमाल संख्या. डीफॉल्ट = १."
+ captcha_turnstile_secret: &TurnstileCred "जर तुम्हाला CIDRAM सह Cloudflare Turnstile वापरायचे असेल, तर तुम्हाला येथे एक मूल्य प्रविष्ट करावे लागेल. जर नसेल, तर तुम्ही ते दुर्लक्षित करू शकता."
+ captcha_turnstile_sitekey: *TurnstileCred
  captcha_usemode: "कॅप्चा कधी द्यावेत? तुम्ही येथे प्रत्येक समर्थित प्रदात्यासाठी पसंतीचे वर्तन निर्दिष्ट करू शकता. टीप: श्वेतसूचीबद्ध किंवा सत्यापित आणि अवरोधित नसलेल्या विनंत्यांसाठी कधीही कॅप्चा पूर्ण करण्याची आवश्यकता नाही. हे देखील लक्षात ठेवा: कॅप्चा, बॉट्स आणि विविध प्रकारच्या दुर्भावनापूर्ण स्वयंचलित विनंत्यांपासून संरक्षणाचा एक उपयुक्त, अतिरिक्त स्तर प्रदान करू शकतात, परंतु दुर्भावनापूर्ण मानवापासून कोणतेही संरक्षण प्रदान करणार नाहीत."
  components: "CIDRAM द्वारे वापरल्या जाणाऱ्या घटकांच्या सक्रियकरण आणि निष्क्रियतेसाठी कॉन्फिगरेशन. सामान्यतः अपडेट्स पेजद्वारे भरलेले असते, परंतु अधिक बारकाईने नियंत्रणासाठी आणि अपडेट्स पेजद्वारे ओळखले न गेलेल्या कस्टम घटकांसाठी येथून व्यवस्थापित केले जाऊ शकते."
  components_events: "कार्यक्रम हाताळणारे. सामान्यतः CIDRAM अंतर्गत वर्तन कसे सुधारते किंवा अतिरिक्त कार्यक्षमता प्रदान करण्यासाठी वापरले जाते."
@@ -394,6 +398,8 @@ field:
  size:
   Total size: "एकूण आकार:"
   bytes: "बाइट"
+hint:
+ This value can be found in the dashboard for your CAPTCHA service: "हे मूल्य तुमच्या कॅप्चा सेवेच्या डॅशबोर्डमध्ये आढळू शकते."
 hints_asnlookup: "** ASN लुकअप कार्यक्षमता आवश्यक आहे (उदाहरणार्थ, IP-API किंवा BGPView मॉड्यूलद्वारे)."
 hints_aux_stats: "टीप: सहाय्यक नियमांसाठी आकडेवारी ट्रॅक करायची की नाही हे सहाय्यक नियम पृष्ठावरून नियंत्रित केले जाऊ शकते."
 hints_cause_fp: "*!! %s मुळे खोटे पॉझिटिव्ह येण्याची उच्च शक्यता."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malayalam language data for the front-end (last modified: 2025.08.18).
+# This file: Malayalam language data for the front-end (last modified: 2025.08.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -164,13 +164,17 @@ config:
  captcha: "CAPTCHA-യ്ക്കുള്ള കോൺഫിഗറേഷൻ (തടയപ്പെടുമ്പോൾ മനുഷ്യർക്ക് ആക്‌സസ് വീണ്ടെടുക്കാനുള്ള ഒരു മാർഗം നൽകുന്നു)."
  captcha_api: "ഏത് API ഉപയോഗിക്കണം?"
  captcha_expiry: "CAPTCHA സന്ദർഭങ്ങൾ ഓർമ്മിക്കേണ്ട മണിക്കൂറുകളുടെ എണ്ണം. സ്ഥിരസ്ഥിതി = 720 (ഒരു മാസം)."
- captcha_hcaptcha_log: "എല്ലാ CAPTCHA ശ്രമങ്ങളും ലോഗ് ചെയ്യണോ? ഉണ്ടെങ്കിൽ, ലോഗ് ഫയലിന് ഉപയോഗിക്കേണ്ട പേര് വ്യക്തമാക്കുക. ഇല്ലെങ്കിൽ, ഈ വേരിയബിൾ ശൂന്യമായി വിടുക."
- captcha_hcaptcha_secret: &CaptchaDashboard "നിങ്ങളുടെ CAPTCHA സേവനത്തിനായുള്ള ഡാഷ്‌ബോർഡിൽ ഈ മൂല്യം കണ്ടെത്താൻ കഴിയും."
- captcha_hcaptcha_sitekey: *CaptchaDashboard
- captcha_messages: "CAPTCHA-കൾക്കൊപ്പം പ്രദർശിപ്പിക്കേണ്ട സന്ദേശങ്ങൾ."
+ captcha_friendly_apikey: &FriendlyCred "CIDRAM-നൊപ്പം Friendly Captcha ഉപയോഗിക്കണമെങ്കിൽ, നിങ്ങൾ ഇവിടെ ഒരു മൂല്യം നൽകേണ്ടതുണ്ട്. അല്ലെങ്കിൽ, നിങ്ങൾക്ക് അത് അവഗണിക്കാം."
+ captcha_friendly_sitekey: *FriendlyCred
+ captcha_hcaptcha_secret: &HCaptchaCred "CIDRAM-നൊപ്പം hCaptcha ഉപയോഗിക്കണമെങ്കിൽ, നിങ്ങൾ ഇവിടെ ഒരു മൂല്യം നൽകേണ്ടതുണ്ട്. അല്ലെങ്കിൽ, നിങ്ങൾക്ക് അത് അവഗണിക്കാം."
+ captcha_hcaptcha_sitekey: *HCaptchaCred
  captcha_lockto: "CAPTCHA-കൾ എന്തിലേക്ക് ലോക്ക് ചെയ്യണം."
+ captcha_log: "എല്ലാ CAPTCHA ശ്രമങ്ങളും ലോഗ് ചെയ്യണോ? ഉണ്ടെങ്കിൽ, ലോഗ് ഫയലിന് ഉപയോഗിക്കേണ്ട പേര് വ്യക്തമാക്കുക. ഇല്ലെങ്കിൽ, ഈ വേരിയബിൾ ശൂന്യമായി വിടുക."
+ captcha_messages: "CAPTCHA-കൾക്കൊപ്പം പ്രദർശിപ്പിക്കേണ്ട സന്ദേശങ്ങൾ."
  captcha_nonblocked_status_code: "തടയപ്പെടാത്ത അഭ്യർത്ഥനകളിൽ CAPTCHA-കൾ പ്രദർശിപ്പിക്കുമ്പോൾ ഏത് സ്റ്റാറ്റസ് കോഡാണ് ഉപയോഗിക്കേണ്ടത്?"
  captcha_signature_limit: "CAPTCHA ഓഫർ പിൻവലിക്കുന്നതിന് മുമ്പ് അനുവദനീയമായ പരമാവധി എണ്ണം ഒപ്പുകൾ. സ്ഥിരസ്ഥിതി = 1."
+ captcha_turnstile_secret: &TurnstileCred "CIDRAM-നൊപ്പം Cloudflare Turnstile ഉപയോഗിക്കണമെങ്കിൽ, നിങ്ങൾ ഇവിടെ ഒരു മൂല്യം നൽകേണ്ടതുണ്ട്. അല്ലെങ്കിൽ, നിങ്ങൾക്ക് അത് അവഗണിക്കാം."
+ captcha_turnstile_sitekey: *TurnstileCred
  captcha_usemode: "എപ്പോഴാണ് CAPTCHAകൾ നൽകേണ്ടത്? പിന്തുണയ്ക്കുന്ന ഓരോ ദാതാവിനും അനുയോജ്യമായ പെരുമാറ്റം നിങ്ങൾക്ക് ഇവിടെ വ്യക്തമാക്കാം. കുറിപ്പ്: വൈറ്റ്‌ലിസ്റ്റ് ചെയ്‌തതോ പരിശോധിച്ചുറപ്പിച്ചതോ തടയാത്തതോ ആയ അഭ്യർത്ഥനകൾക്ക് ഒരിക്കലും ഒരു CAPTCHA പൂർത്തിയാക്കേണ്ടതില്ല. ഇതും ശ്രദ്ധിക്കുക: ബോട്ടുകൾക്കും വിവിധതരം ക്ഷുദ്രകരമായ ഓട്ടോമേറ്റഡ് അഭ്യർത്ഥനകൾക്കുമെതിരെ ഉപയോഗപ്രദവും അധികവുമായ ഒരു സംരക്ഷണ പാളി നൽകാൻ CAPTCHA-കൾക്ക് കഴിയും, എന്നാൽ ക്ഷുദ്രകരമായ ഒരു മനുഷ്യനിൽ നിന്ന് ഒരു സംരക്ഷണവും നൽകില്ല."
  components: "CIDRAM ഉപയോഗിക്കുന്ന ഘടകങ്ങൾ സജീവമാക്കുന്നതിനും നിർജ്ജീവമാക്കുന്നതിനുമുള്ള കോൺഫിഗറേഷൻ. സാധാരണയായി അപ്‌ഡേറ്റ് പേജ് വഴി പൂരിപ്പിക്കും, പക്ഷേ മികച്ച നിയന്ത്രണത്തിനും അപ്‌ഡേറ്റ് പേജ് തിരിച്ചറിയാത്ത ഇഷ്‌ടാനുസൃത ഘടകങ്ങൾക്കുമായി ഇവിടെ നിന്ന് കൈകാര്യം ചെയ്യാനും കഴിയും."
  components_events: "ഇവന്റ് ഹാൻഡ്‌ലറുകൾ. സാധാരണയായി CIDRAM ആന്തരികമായി പ്രവർത്തിക്കുന്ന രീതി പരിഷ്കരിക്കുന്നതിനോ അധിക പ്രവർത്തനങ്ങൾ നൽകുന്നതിനോ ഉപയോഗിക്കുന്നു."
@@ -396,6 +400,8 @@ field:
   bytes:
    - "ബൈറ്റ്"
    - "ബൈറ്റുകൾ"
+hint:
+ This value can be found in the dashboard for your CAPTCHA service: "നിങ്ങളുടെ CAPTCHA സേവനത്തിനായുള്ള ഡാഷ്‌ബോർഡിൽ ഈ മൂല്യം കണ്ടെത്താൻ കഴിയും."
 hints_asnlookup: "** ASN തിരയൽ പ്രവർത്തനം ആവശ്യമാണ് (ഉദാഹരണത്തിന്, IP-API അല്ലെങ്കിൽ BGPView മൊഡ്യൂൾ വഴി)."
 hints_aux_stats: "കുറിപ്പ്: ഓക്സിലറി നിയമങ്ങൾക്കായുള്ള സ്ഥിതിവിവരക്കണക്കുകൾ ട്രാക്ക് ചെയ്യണോ വേണ്ടയോ എന്നത് ഓക്സിലറി നിയമങ്ങൾ പേജിൽ നിന്ന് നിയന്ത്രിക്കാവുന്നതാണ്."
 hints_cause_fp: "*!! %s കാരണം തെറ്റായ പോസിറ്റീവുകൾ ഉണ്ടാകാനുള്ള ഉയർന്ന സാധ്യത."

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2025.08.14).
+ * This file: General methods used by the front-end (last modified: 2025.08.20).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -730,7 +730,7 @@ trait FrontEndMethods
         if (
             empty($this->FE['DateTime']) ||
             $this->Configuration['frontend']['frontend_log'] === '' ||
-            !($File = $this->buildPath($this->Vault . $this->Configuration['frontend']['frontend_log']))
+            ($File = $this->buildPath($this->Vault . $this->Configuration['frontend']['frontend_log'])) === ''
         ) {
             return;
         }

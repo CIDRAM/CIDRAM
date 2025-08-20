@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2025.08.19).
+# This file: Japanese language data for the front-end (last modified: 2025.08.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -164,13 +164,17 @@ config:
  captcha: "キャプチャの設定（ブロックされたときに人間がアクセスを取り戻す方法を提供します）。"
  captcha_api: "どのＡＰＩを使用するのですか？"
  captcha_expiry: "キャプチャ・インスタンスを覚えておく時間数。 Default（デフォルルト） = ７２０（１ヶ月）。"
- captcha_hcaptcha_log: "キャプチャ試行の記録。​ファイル名指定するか、無効にしたい場合は空白のままにして下さい。"
- captcha_hcaptcha_secret: &CaptchaDashboard "この値は、キャプチャ・サービスのダッシュボードに表示されます。"
- captcha_hcaptcha_sitekey: *CaptchaDashboard
- captcha_messages: "キャプチャと一緒に表示されるメッセージ。"
+ captcha_friendly_apikey: &FriendlyCred "Friendly Captcha「フレンドリー・キャプチャ」を、CIDRAM「シドラム」で使いたいときは、ここに値を入力する必要があります。​使用しない場合は、無視しても大丈夫です。"
+ captcha_friendly_sitekey: *FriendlyCred
+ captcha_hcaptcha_secret: &HCaptchaCred "HCaptcha「Ｈキャプチャ」を、CIDRAM「シドラム」で使いたいときは、ここに値を入力する必要があります。​使用しない場合は、無視しても大丈夫です。"
+ captcha_hcaptcha_sitekey: *HCaptchaCred
  captcha_lockto: "キャプチャをロックする対象。"
+ captcha_log: "キャプチャ試行の記録。​ファイル名指定するか、無効にしたい場合は空白のままにして下さい。"
+ captcha_messages: "キャプチャと一緒に表示されるメッセージ。"
  captcha_nonblocked_status_code: "ブロックされていないリクエストにキャプチャを表示する場合、どのステータス・コードを使用する必要がありますか？"
  captcha_signature_limit: "キャプチャが取り消される前に許可されるシグネチャの最大数。 Default/デフォルルト = １。"
+ captcha_turnstile_secret: &TurnstileCred "Cloudflare Turnstile「クラウドフレア・ターンスタイル」を、CIDRAM「シドラム」で使いたいときは、ここに値を入力する必要があります。​使用しない場合は、無視しても大丈夫です。"
+ captcha_turnstile_sitekey: *TurnstileCred
  captcha_usemode: "キャプチャはいつ提供されるべきでしょうか？​ここで、サポートされている各プロバイダーの優先動作を指定できます。​注：ホワイト・リストされまたは検証済みでブロックされていないリクエストは、キャプチャを完了する必要はありません。​また注意してください：​キャプチャは、ボットやさまざまな種類の悪意のある自動化されたリクエストに対する有用な追加の保護レイヤーを提供できますが、悪意のある人間に対する保護は提供しません。"
  components: "CIDRAMによって使用されるコンポーネントをアクティブ化および非アクティブ化するための設定。​通常、アップデート・ページに入力されますが、ここから管理して、より細かく制御したり、アップデート・ページで認識されないカスタム・コンポーネントを管理したりすることもできます。"
  components_events: "イベント・ハンドラー。​通常、CIDRAMの内部動作を変更したり、追加機能を提供したりするために使用されます。"
@@ -394,6 +398,8 @@ field:
  size:
   Total size: "合計サイズ："
   bytes: "バイト"
+hint:
+ This value can be found in the dashboard for your CAPTCHA service: "この値は、キャプチャ・サービスのダッシュボードに表示されます。"
 hints_asnlookup: "** ＡＳＮルックアップ機能が必要です（たとえば、IP-APIモジュールまたはBGPViewモジュールを介して）。"
 hints_aux_stats: "注：補助ルールの統計を追跡するかどうかは、補助ルール・ページから制御できます。"
 hints_cause_fp: "*!! %sによる誤検知の可能性が高い。"

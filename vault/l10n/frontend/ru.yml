@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2025.08.18).
+# This file: Russian language data for the front-end (last modified: 2025.08.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -164,13 +164,17 @@ config:
  captcha: "Конфигурация для CAPTCHA (предоставляет людям возможность восстановить доступ при блокировании)."
  captcha_api: "Какой API использовать?"
  captcha_expiry: "Количество часов, чтобы вспомнить инстанция CAPTCHA. Стандарт = 720 (1 месяц)."
- captcha_hcaptcha_log: "Записывать все попытки CAPTCHA? Если да, указать имя использовать для файла журнала. Если нет, оставьте эту переменную пустым."
- captcha_hcaptcha_secret: &CaptchaDashboard "Это значение можно найти на панели управления вашей службы CAPTCHA."
- captcha_hcaptcha_sitekey: *CaptchaDashboard
- captcha_messages: "Сообщения, которые будут отображаться вместе с CAPTCHA."
+ captcha_friendly_apikey: &FriendlyCred "Если вы хотите использовать Friendly Captcha с CIDRAM, вам потребуется ввести здесь значение. Если нет, можете проигнорировать его."
+ captcha_friendly_sitekey: *FriendlyCred
+ captcha_hcaptcha_secret: &HCaptchaCred "Если вы хотите использовать hCaptcha с CIDRAM, вам потребуется ввести здесь значение. Если нет, можете проигнорировать его."
+ captcha_hcaptcha_sitekey: *HCaptchaCred
  captcha_lockto: "К чему привязывать CAPTCHA."
+ captcha_log: "Записывать все попытки CAPTCHA? Если да, указать имя использовать для файла журнала. Если нет, оставьте эту переменную пустым."
+ captcha_messages: "Сообщения, которые будут отображаться вместе с CAPTCHA."
  captcha_nonblocked_status_code: "Какой код состояния следует использовать при отображении CAPTCHA для неблокированных запросов?"
  captcha_signature_limit: "Максимально допустимое количество сигнатурей перед снятием CAPTCHA. Стандарт = 1."
+ captcha_turnstile_secret: &TurnstileCred "Если вы хотите использовать Cloudflare Turnstile с CIDRAM, вам потребуется ввести здесь значение. Если нет, можете проигнорировать его."
+ captcha_turnstile_sitekey: *TurnstileCred
  captcha_usemode: "Когда следует предлагать CAPTCHA? Здесь вы можете указать предпочтительное поведение для каждого поддерживаемого поставщика. Примечание: Запросы из белого списка или проверенные и неблокированные запросы никогда не требуют выполнения CAPTCHA. Также обратите внимание: CAPTCHA может обеспечить полезный дополнительный уровень защиты от ботов и различных вредоносных автоматических запросов, но не обеспечивает никакой защиты от вредоносных люди."
  components: "Конфигурация для активации и деактивации компонентов, используемых CIDRAM. Обычно заполняется страницей обновлений, но также может управляться отсюда для более точного контроля и для пользовательских компонентов, не распознаваемых страницей обновлений."
  components_events: "Обработчики событий. Обычно используется для изменения внутреннего поведения CIDRAM или для предоставления дополнительных функционал."
@@ -402,6 +406,8 @@ field:
    - "байт"
    - "байта"
    - "байтов"
+hint:
+ This value can be found in the dashboard for your CAPTCHA service: "Это значение можно найти на панели управления вашей службы CAPTCHA."
 hints_asnlookup: "** Требуется функциональность поиска ASN (например, через модуль IP-API или BGPView)."
 hints_aux_stats: "Примечание: Статистику отслеживания для вспомогательных правил можно контролировать на странице вспомогательных правил."
 hints_cause_fp: "*!! Высокая вероятность ложноположительный из-за %s."

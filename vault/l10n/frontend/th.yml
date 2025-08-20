@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2025.08.19).
+# This file: Thai language data for the front-end (last modified: 2025.08.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -164,13 +164,17 @@ config:
  captcha: "การกำหนดค่าสำหรับ CAPTCHA (เป็นวิธีสำหรับมนุษย์ในการเข้าถึงเมื่อถูกบล็อก)."
  captcha_api: "API ใดที่จะใช้?"
  captcha_expiry: "จำนวนชั่วโมงที่ต้องจำอินสแตนซ์ CAPTCHA. ค่าเริ่มต้น = 720 (1 เดือน)."
- captcha_hcaptcha_log: "บันทึกความพยายาม CAPTCHA ทั้งหมดหรือไม่? ถ้าใช่ ระบุชื่อที่จะใช้สำหรับไฟล์บันทึก. ถ้าไม่ ปล่อยให้ตัวแปรนี้ว่างเปล่า."
- captcha_hcaptcha_secret: &CaptchaDashboard "ค่านี้สามารถพบได้ในแดชบอร์ดสำหรับบริการ CAPTCHA ของคุณ."
- captcha_hcaptcha_sitekey: *CaptchaDashboard
- captcha_messages: "ข้อความที่จะแสดงร่วมกับ CAPTCHA."
+ captcha_friendly_apikey: &FriendlyCred "หากต้องการใช้ Friendly Captcha กับ CIDRAM คุณต้องป้อนค่าที่นี่. หากไม่ต้องการ คุณสามารถข้ามขั้นตอนนี้ได้."
+ captcha_friendly_sitekey: *FriendlyCred
+ captcha_hcaptcha_secret: &HCaptchaCred "หากต้องการใช้ hCaptcha กับ CIDRAM คุณต้องป้อนค่าที่นี่. หากไม่ต้องการ คุณสามารถข้ามขั้นตอนนี้ได้."
+ captcha_hcaptcha_sitekey: *HCaptchaCred
  captcha_lockto: "สิ่งที่ต้องล็อค CAPTCHA."
+ captcha_log: "บันทึกความพยายาม CAPTCHA ทั้งหมดหรือไม่? ถ้าใช่ ระบุชื่อที่จะใช้สำหรับไฟล์บันทึก. ถ้าไม่ ปล่อยให้ตัวแปรนี้ว่างเปล่า."
+ captcha_messages: "ข้อความที่จะแสดงร่วมกับ CAPTCHA."
  captcha_nonblocked_status_code: "ควรใช้รหัสสถานะใดเมื่อแสดง CAPTCHA สำหรับคำขอที่ไม่ถูกบล็อก?"
  captcha_signature_limit: "จำนวนลายเซ็นสูงสุดที่อนุญาตก่อนที่ข้อเสนอ CAPTCHA จะถูกเพิกถอน. ค่าเริ่มต้น = 1."
+ captcha_turnstile_secret: &TurnstileCred "หากต้องการใช้ Cloudflare Turnstile กับ CIDRAM คุณต้องป้อนค่าที่นี่. หากไม่ต้องการ คุณสามารถข้ามขั้นตอนนี้ได้."
+ captcha_turnstile_sitekey: *TurnstileCred
  captcha_usemode: "ควรเสนอ CAPTCHA เมื่อใด? คุณสามารถระบุพฤติกรรมที่ต้องการสำหรับผู้ให้บริการที่รองรับแต่ละรายได้ที่นี่. หมายเหตุ: คำขอที่อนุญาตพิเศษหรือได้รับการยืนยันและไม่ถูกบล็อกไม่จำเป็นต้องกรอก CAPTCHA. โปรดทราบด้วย: CAPTCHAs สามารถให้การป้องกันที่เป็นประโยชน์ต่อบอทและคำขออัตโนมัติที่เป็นอันตรายหลายประเภท แต่จะไม่ให้การป้องกันมนุษย์ที่เป็นอันตราย."
  components: "การกำหนดค่าสำหรับการเปิดใช้งานและการปิดใช้งานคอมโพเนนต์ที่ใช้โดย CIDRAM. โดยปกติหน้าการอัปเดตจะจัดการสิ่งนี้ แต่สามารถจัดการได้จากที่นี่เพื่อการควบคุมที่ละเอียดยิ่งขึ้นและคอมโพเนนต์ที่กำหนดเอง."
  components_events: "ตัวจัดการเหตุการณ์. โดยปกติจะใช้เพื่อปรับเปลี่ยนพฤติกรรมภายในของ CIDRAM หรือเพื่อให้มีฟังก์ชันการทำงานเพิ่มเติม."
@@ -394,6 +398,8 @@ field:
  size:
   Total size: "ขนาดรวม:"
   bytes: "ไบต์"
+hint:
+ This value can be found in the dashboard for your CAPTCHA service: "ค่านี้สามารถพบได้ในแดชบอร์ดสำหรับบริการ CAPTCHA ของคุณ."
 hints_asnlookup: "** ต้องมีฟังก์ชันการค้นหา ASN (เช่น., ผ่านโมดูล IP-API หรือ BGPView)."
 hints_aux_stats: "หมายเหตุ: สถิติการติดตามสำหรับกฎเสริมสามารถควบคุมได้จากหน้ากฎเสริม."
 hints_cause_fp: "*!! มีโอกาสสูงที่จะทำให้เกิดผลบวกลวงเนื่องจาก %s."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bulgarian language data for the front-end (last modified: 2025.08.18).
+# This file: Bulgarian language data for the front-end (last modified: 2025.08.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -164,13 +164,17 @@ config:
  captcha: "Конфигурация за CAPTCHA (предоставя начин за хората да си възвърнат достъпа, когато бъдат блокирани)."
  captcha_api: "Кой API да използвам?"
  captcha_expiry: "Брой часове за запомняне на случаите на CAPTCHA. Стандарт = 720 (1 месец)."
- captcha_hcaptcha_log: "Записване на всички опити за CAPTCHA? Ако да, посочете името, което да използвате за регистрационния файл. Ако не, оставете тази променлива празна."
- captcha_hcaptcha_secret: &CaptchaDashboard "Тази стойност може да бъде намерена в таблото за управление на вашата услуга CAPTCHA."
- captcha_hcaptcha_sitekey: *CaptchaDashboard
- captcha_messages: "Съобщения, които ще се показват заедно с CAPTCHA."
+ captcha_friendly_apikey: &FriendlyCred "Ако искате да използвате Friendly Captcha с CIDRAM, ще трябва да въведете стойност тук. Ако не, можете да я игнорирате."
+ captcha_friendly_sitekey: *FriendlyCred
+ captcha_hcaptcha_secret: &HCaptchaCred "Ако искате да използвате hCaptcha с CIDRAM, ще трябва да въведете стойност тук. Ако не, можете да я игнорирате."
+ captcha_hcaptcha_sitekey: *HCaptchaCred
  captcha_lockto: "Към какво да заключим CAPTCHA."
+ captcha_log: "Записване на всички опити за CAPTCHA? Ако да, посочете името, което да използвате за регистрационния файл. Ако не, оставете тази променлива празна."
+ captcha_messages: "Съобщения, които ще се показват заедно с CAPTCHA."
  captcha_nonblocked_status_code: "Кой код на състоянието трябва да се използва при показване на CAPTCHA на неблокирани заявки?"
  captcha_signature_limit: "Максимален брой разрешени сигнатури преди офертата за CAPTCHA да бъде оттеглена. Стандарт = 1."
+ captcha_turnstile_secret: &TurnstileCred "Ако искате да използвате Cloudflare Turnstile с CIDRAM, ще трябва да въведете стойност тук. Ако не, можете да я игнорирате."
+ captcha_turnstile_sitekey: *TurnstileCred
  captcha_usemode: "Кога трябва да се предлагат CAPTCHA? Тук можете да зададете предпочитаното поведение за всеки поддържан доставчик. Забележка: Заявките, включени в белия списък или проверени и неблокирани, никога не трябва да попълват CAPTCHA. Също така имайте предвид: CAPTCHA могат да осигурят полезно, допълнително ниво на защита срещу ботове и различни видове злонамерени автоматизирани заявки, но няма да осигурят никаква защита срещу злонамерен човек."
  components: "Конфигурация за активиране и деактивиране на компонентите, използвани от CIDRAM. Обикновено се попълва от страницата за актуализации, но може да се управлява и от тук за по-фин контрол и за персонализирани компоненти, които не се разпознават от страницата за актуализации."
  components_events: "Обработчици на събития. Обикновено се използва за промяна на начина, по който CIDRAM се държи вътрешно или за предоставяне на допълнителна функционалност."
@@ -401,6 +405,8 @@ field:
   bytes:
    - "байт"
    - "байта"
+hint:
+ This value can be found in the dashboard for your CAPTCHA service: "Тази стойност може да бъде намерена в таблото за управление на вашата услуга CAPTCHA."
 hints_asnlookup: "** Изисква функционалност за търсене в ASN (напр., чрез модула IP-API или BGPView)."
 hints_aux_stats: "Забележка: Дали да се проследяват статистики за спомагателни правила може да се контролира от страницата за спомагателни правила."
 hints_cause_fp: "*!! Висока вероятност за причиняване на фалшиви положителни резултати поради %s."

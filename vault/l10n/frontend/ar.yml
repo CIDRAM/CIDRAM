@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2025.08.16).
+# This file: Arabic language data for the front-end (last modified: 2025.08.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -164,13 +164,17 @@ config:
  captcha: "التكوين ل CAPTCHA (يوفر وسيلة للبشر لاستعادة الوصول عند حجبه)."
  captcha_api: "أي API لاستخدام؟"
  captcha_expiry: "عدد الساعات لنتذكر حالات اختبار CAPTCHA. الافتراضي = 720 (١ شهر)."
- captcha_hcaptcha_log: "تسجيل جميع محاولات اختبار CAPTCHA؟ إذا كانت الإجابة بنعم، حدد اسم لاستخدامه في ملف السجل. ان لم، ترك هذا الحقل فارغا."
- captcha_hcaptcha_secret: &CaptchaDashboard "يمكن العثور على هذه القيمة في لوحة التحكم الخاصة بخدمة CAPTCHA."
- captcha_hcaptcha_sitekey: *CaptchaDashboard
+ captcha_friendly_apikey: &FriendlyCred "إذا كنت ترغب في استخدام Friendly Captcha مع CIDRAM، فستحتاج إلى إدخال قيمة هنا. إذا لم يكن الأمر كذلك، فيمكنك تجاهلها."
+ captcha_friendly_sitekey: *FriendlyCred
+ captcha_hcaptcha_secret: &HCaptchaCred "إذا كنت ترغب في استخدام hCaptcha مع CIDRAM، فستحتاج إلى إدخال قيمة هنا. إذا لم يكن الأمر كذلك، فيمكنك تجاهلها."
+ captcha_hcaptcha_sitekey: *HCaptchaCred
+ captcha_lockto: "ما الذي يجب قفل CAPTCHA عليه."
+ captcha_log: "تسجيل جميع محاولات اختبار CAPTCHA؟ إذا كانت الإجابة بنعم، حدد اسم لاستخدامه في ملف السجل. ان لم، ترك هذا الحقل فارغا."
  captcha_messages: "الرسائل التي سيتم عرضها بجوار رموز CAPTCHA."
- captcha_lockto: "ما الذي يجب قفل CAPTCHA عليه؟"
  captcha_nonblocked_status_code: "ما هو رمز الحالة الذي يجب استخدامه عند عرض CAPTCHA للطلبات غير المحظورة؟"
  captcha_signature_limit: "الحد الأقصى لعدد التوقيعات المسموح بها قبل سحب عرض CAPTCHA. افتراضي = 1."
+ captcha_turnstile_secret: &TurnstileCred "إذا كنت ترغب في استخدام Cloudflare Turnstile مع CIDRAM، فستحتاج إلى إدخال قيمة هنا. إذا لم يكن الأمر كذلك، فيمكنك تجاهلها."
+ captcha_turnstile_sitekey: *TurnstileCred
  captcha_usemode: "متى يجب تقديم CAPTCHA؟ يمكنك تحديد السلوك المفضل لكل مزود مدعوم هنا. ملاحظة: لا تحتاج الطلبات المدرجة في القائمة البيضاء أو التي تم التحقق منها والتي لم يتم حظرها إلى إكمال اختبار CAPTCHA. لاحظ أيضًا: يمكن أن توفر اختبارات CAPTCHA طبقة إضافية مفيدة من الحماية ضد الروبوتات وأنواع مختلفة من الطلبات الآلية الضارة، ولكنها لن توفر أي حماية ضد أي شخص ضار."
  components: "التكوين لتنشيط وتعطيل المكونات المستخدمة من قبل CIDRAM. عادةً ما يتم ملؤها بواسطة صفحة التحديثات، ولكن يمكن أيضًا إدارتها من هنا لتحكم أفضل وللمكونات المخصصة التي لا تتعرف عليها صفحة التحديثات."
  components_events: "معالجات الأحداث. تُستخدم عادةً لتعديل الطريقة التي يتصرف بها CIDRAM داخليًا أو لتوفير وظائف إضافية."
@@ -394,6 +398,8 @@ field:
  size:
   Total size: "الحجم الإجمالي:"
   bytes: "بايت"
+hint:
+ This value can be found in the dashboard for your CAPTCHA service: "يمكن العثور على هذه القيمة في لوحة التحكم الخاصة بخدمة CAPTCHA."
 hints_asnlookup: "** يتطلب وظيفة بحث ASN (على سبيل المثال، عبر وحدة IP-API أو وحدة BGPView)."
 hints_aux_stats: "ملاحظة: يمكن التحكم في تتبع الإحصائيات للقواعد المساعدة من صفحة القواعد المساعدة."
 hints_cause_fp: "*!! احتمالية عالية للتسبب في نتائج إيجابية خاطئة بسبب %s."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Czech language data for the front-end (last modified: 2025.08.18).
+# This file: Czech language data for the front-end (last modified: 2025.08.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -164,13 +164,17 @@ config:
  captcha: "Konfigurace pro CAPTCHA (poskytuje lidem způsob, jak znovu získat přístup, když je blokován)."
  captcha_api: "Které API použít?"
  captcha_expiry: "Počet hodin zapamatování instancí CAPTCHA. Standardní = 720 (1 měsíc)."
- captcha_hcaptcha_log: "Zaznamenat všechny pokusy o CAPTCHA? Pokud ano, zadejte název, který se má použít pro soubor protokolu. Pokud ne, ponechte tuto proměnnou prázdnou."
- captcha_hcaptcha_secret: &CaptchaDashboard "Tuto hodnotu lze nalézt na řídicím panelu vaší služby CAPTCHA."
- captcha_hcaptcha_sitekey: *CaptchaDashboard
- captcha_messages: "Zprávy, které se budou zobrazovat spolu s CAPTCHA."
+ captcha_friendly_apikey: &FriendlyCred "Pokud chcete použít Friendly Captcha s CIDRAM, budete muset zde zadat hodnotu. Pokud ne, můžete ji ignorovat."
+ captcha_friendly_sitekey: *FriendlyCred
+ captcha_hcaptcha_secret: &HCaptchaCred "Pokud chcete použít hCaptcha s CIDRAM, budete muset zde zadat hodnotu. Pokud ne, můžete ji ignorovat."
+ captcha_hcaptcha_sitekey: *HCaptchaCred
  captcha_lockto: "K čemu uzamknout CAPTCHA."
+ captcha_log: "Zaznamenat všechny pokusy o CAPTCHA? Pokud ano, zadejte název, který se má použít pro soubor protokolu. Pokud ne, ponechte tuto proměnnou prázdnou."
+ captcha_messages: "Zprávy, které se budou zobrazovat spolu s CAPTCHA."
  captcha_nonblocked_status_code: "Jaký stavový kód by se měl použít při zobrazování obrázků CAPTCHA neblokovaným požadavkům?"
  captcha_signature_limit: "Maximální počet podpisů povolený před CAPTCHA již není nabízen. Standardní = 1."
+ captcha_turnstile_secret: &TurnstileCred "Pokud chcete použít Cloudflare Turnstile s CIDRAM, budete muset zde zadat hodnotu. Pokud ne, můžete ji ignorovat."
+ captcha_turnstile_sitekey: *TurnstileCred
  captcha_usemode: "Kdy by měly být CAPTCHA nabízeny? Zde můžete zadat preferované chování pro každého podporovaného poskytovatele. Poznámka: Požadavky, které byly whitelistování nebo ověřené a neblokované nikdy nemusí dokončit CAPTCHA. Taky: CAPTCHA mohou poskytnout užitečnou další vrstvu ochrany proti robotům a různým druhům škodlivých automatizovaných požadavků, ale neposkytnou žádnou ochranu proti škodlivému člověku."
  components: "Konfigurace pro aktivaci a deaktivaci komponent používaných CIDRAM. Obvykle se vyplní na stránce aktualizací, ale lze je také spravovat odtud pro jemnější ovládání a pro vlastní komponenty, které stránka aktualizací nerozpozná."
  components_events: "Obsluha událostí. Obvykle se používá k úpravě způsobu, jakým se CIDRAM chová interně, nebo k poskytování dalších funkcí."
@@ -397,6 +401,8 @@ field:
    - "bajt"
    - "bajty"
    - "bajtů"
+hint:
+ This value can be found in the dashboard for your CAPTCHA service: "Tuto hodnotu lze nalézt na řídicím panelu vaší služby CAPTCHA."
 hints_asnlookup: "** Vyžaduje funkčnost vyhledávání ASN (např., přes modul IP-API nebo BGPView)."
 hints_aux_stats: "Poznámka: Zda sledovat statistiky pro pomocná pravidla lze ovládat na stránce pomocných pravidel."
 hints_cause_fp: "*!! Vysoká pravděpodobnost způsobení falešných poplachů v důsledku %s."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Afrikaans language data for the front-end (last modified: 2025.08.16).
+# This file: Afrikaans language data for the front-end (last modified: 2025.08.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -164,13 +164,17 @@ config:
  captcha: "Konfigurasie vir hCaptcha (bied 'n manier vir mense om toegang te kry wanneer dit geblokkeer word)."
  captcha_api: "Watter API om te gebruik?"
  captcha_expiry: "Aantal ure om CAPTCHA-gevalle te onthou. Verstek = 720 (1 maand)."
- captcha_hcaptcha_log: "Teken alle CAPTCHA-pogings aan? Indien ja, spesifiseer die naam vir die loglêer te gebruik. Indien nee, laat hierdie veranderlike leeg."
- captcha_hcaptcha_secret: &CaptchaDashboard "Hierdie waarde kan in die kontroleskerm vir jou CAPTCHA-diens gevind word."
- captcha_hcaptcha_sitekey: *CaptchaDashboard
- captcha_messages: "Boodskappe wat saam met CAPTCHA's vertoon moet word."
+ captcha_friendly_apikey: &FriendlyCred "As jy Friendly Captcha met CIDRAM wil gebruik, moet jy hier 'n waarde invoer. Indien nie, kan jy dit ignoreer."
+ captcha_friendly_sitekey: *FriendlyCred
+ captcha_hcaptcha_secret: &HCaptchaCred "As jy hCaptcha met CIDRAM wil gebruik, moet jy hier 'n waarde invoer. Indien nie, kan jy dit ignoreer."
+ captcha_hcaptcha_sitekey: *HCaptchaCred
  captcha_lockto: "Waarop om CAPTCHA's te sluit."
+ captcha_log: "Teken alle CAPTCHA-pogings aan? Indien ja, spesifiseer die naam vir die loglêer te gebruik. Indien nee, laat hierdie veranderlike leeg."
+ captcha_messages: "Boodskappe wat saam met CAPTCHA's vertoon moet word."
  captcha_nonblocked_status_code: "Watter statuskode moet gebruik word wanneer CAPTCHA's aan nie-geblokkeerde versoeke vertoon word?"
  captcha_signature_limit: "Maksimum aantal handtekeninge wat toegelaat word voordat die CAPTCHA-aanbod teruggetrek word. Verstek = 1."
+ captcha_turnstile_secret: &TurnstileCred "As jy Cloudflare Turnstile met CIDRAM wil gebruik, moet jy hier 'n waarde invoer. Indien nie, kan jy dit ignoreer."
+ captcha_turnstile_sitekey: *TurnstileCred
  captcha_usemode: "Wanneer moet CAPTCHA's aangebied word? Jy kan die voorkeurgedrag vir elke ondersteunde verskaffer hier spesifiseer. Kennis neem: Gewitlys of geverifieerde en nie-geblokkeerde versoeke hoef nooit 'n CAPTCHA te voltooi nie. Let ook op: CAPTCHA's kan 'n nuttige, bykomende laag beskerming teen bots en verskeie soorte kwaadwillige outomatiese versoeke bied, maar sal geen beskerming teen 'n kwaadwillige mens bied nie."
  components: "Konfigurasie vir die aktivering en deaktivering van die komponente wat deur CIDRAM gebruik word. Gewoonlik gevul deur die opdateringsbladsy, maar kan ook van hier af bestuur word vir fyner beheer en vir pasgemaakte komponente wat nie deur die opdateringsbladsy herken word nie."
  components_events: "Gebeurtenishanteerders. Gewoonlik gebruik om die manier waarop CIDRAM intern optree te verander of om bykomende funksionaliteit te verskaf."
@@ -396,6 +400,8 @@ field:
   bytes:
    - "greep"
    - "grepe"
+hint:
+ This value can be found in the dashboard for your CAPTCHA service: "Hierdie waarde kan in die kontroleskerm vir jou CAPTCHA-diens gevind word."
 hints_asnlookup: "** Vereis ASN-opsoekfasiliteit (bv., via die IP-API of BGPView module)."
 hints_aux_stats: "Kennis neem: Of om statistieke vir bykomende reëls na te spoor, kan vanaf die bykomende reëls bladsy beheer word."
 hints_cause_fp: "*!! Hoë waarskynlikheid om vals positiewe te veroorsaak as gevolg van %s."

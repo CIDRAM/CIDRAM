@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Default event handlers (last modified: 2025.08.14).
+ * This file: Default event handlers (last modified: 2025.08.20).
  */
 
 /**
@@ -21,7 +21,7 @@ $this->Events->addHandler('writeToLog', function (): void {
     if (
         $this->Configuration['logging']['standard_log'] === '' ||
         !empty($this->CIDRAM['Suppress logging']) ||
-        !($Filename = $this->buildPath($this->Vault . $this->Configuration['logging']['standard_log']))
+        ($Filename = $this->buildPath($this->Vault . $this->Configuration['logging']['standard_log'])) === ''
     ) {
         return;
     }
@@ -53,7 +53,7 @@ $this->Events->addHandler('writeToLog', function (): void {
         empty($this->BlockInfo) ||
         $this->Configuration['logging']['apache_style_log'] === '' ||
         !empty($this->CIDRAM['Suppress logging']) ||
-        !($Filename = $this->buildPath($this->Vault . $this->Configuration['logging']['apache_style_log']))
+        ($Filename = $this->buildPath($this->Vault . $this->Configuration['logging']['apache_style_log'])) === ''
     ) {
         return;
     }
@@ -95,7 +95,7 @@ $this->Events->addHandler('writeToLog', function (): void {
         empty($this->BlockInfo) ||
         $this->Configuration['logging']['serialised_log'] === '' ||
         !empty($this->CIDRAM['Suppress logging']) ||
-        !($Filename = $this->buildPath($this->Vault . $this->Configuration['logging']['serialised_log']))
+        ($Filename = $this->buildPath($this->Vault . $this->Configuration['logging']['serialised_log'])) === ''
     ) {
         return;
     }
@@ -179,7 +179,7 @@ $this->Events->addHandler('final', function (): void {
     if (
         !isset($this->CIDRAM['Pending-Error-Log-Data']) ||
         $this->Configuration['logging']['error_log'] === '' ||
-        !($File = $this->buildPath($this->Vault . $this->Configuration['logging']['error_log']))
+        ($File = $this->buildPath($this->Vault . $this->Configuration['logging']['error_log'])) === ''
     ) {
         return;
     }
@@ -213,7 +213,7 @@ $this->Events->addHandler('writeToSignaturesUpdateEventLog', function (string $D
     /** Guard. */
     if (
         $this->Configuration['frontend']['signatures_update_event_log'] === '' ||
-        !($UpdatesLog = $this->buildPath($this->Vault . $this->Configuration['frontend']['signatures_update_event_log']))
+        ($UpdatesLog = $this->buildPath($this->Vault . $this->Configuration['frontend']['signatures_update_event_log'])) === ''
     ) {
         return;
     }
@@ -268,8 +268,8 @@ $this->Events->addHandler('isLogFile', function (): void {
     if ($this->Configuration['frontend']['frontend_log'] !== '') {
         $this->CIDRAM['LogPatterns'][] = $this->buildLogPattern($this->Configuration['frontend']['frontend_log'], true);
     }
-    if ($this->Configuration['captcha']['hcaptcha_log'] !== '') {
-        $this->CIDRAM['LogPatterns'][] = $this->buildLogPattern($this->Configuration['captcha']['hcaptcha_log'], true);
+    if ($this->Configuration['captcha']['log'] !== '') {
+        $this->CIDRAM['LogPatterns'][] = $this->buildLogPattern($this->Configuration['captcha']['log'], true);
     }
 });
 
@@ -285,7 +285,7 @@ $this->Events->addHandler('writeToReportLog', function (string $Data, array $Mis
     if (
         !isset($Misc[0]) ||
         $this->Configuration['logging']['report_log'] === '' ||
-        !($Filename = $this->buildPath($this->Vault . $this->Configuration['logging']['report_log']))
+        ($Filename = $this->buildPath($this->Vault . $this->Configuration['logging']['report_log'])) === ''
     ) {
         return;
     }
@@ -313,5 +313,45 @@ $this->Events->addHandler('writeToReportLog', function (string $Data, array $Mis
     fclose($File);
     if ($WriteMode === 'wb') {
         $this->logRotation($this->Configuration['logging']['report_log']);
+    }
+});
+
+/**
+ * Writes to the CAPTCHA log file.
+ *
+ * @return void
+ */
+$this->Events->addHandler('writeToCaptchaLog', function (): void {
+    /** Guard. */
+    if (empty($this->BlockInfo) || $this->Configuration['captcha']['log'] === '' || ($Filename = $this->buildPath($this->Vault . $this->Configuration['captcha']['log'])) === '') {
+        return;
+    }
+
+    $Truncate = $this->readBytes($this->Configuration['logging']['truncate']);
+    $WriteMode = (!file_exists($Filename) || $Truncate > 0 && filesize($Filename) >= $Truncate) ? 'wb' : 'ab';
+    $Data = sprintf(
+        '%1$s%7$s%2$s - %3$s%7$s%4$s - %5$s%7$s%6$s',
+        $this->L10N->getString('field.IP address'),
+        $this->Configuration['legal']['pseudonymise_ip_addresses'] ? $this->pseudonymiseIp($this->ipAddr) : $this->ipAddr,
+        $this->L10N->getString('field.DateTime'),
+        $this->BlockInfo['DateTime'],
+        $this->L10N->getString('field.CAPTCHA state'),
+        $this->BlockInfo['CAPTCHA'],
+        $this->L10N->getString('pair_separator')
+    ) . "\n";
+
+    /** Adds a second new line in case of combined log files. */
+    if ($this->Configuration['captcha']['log'] === $this->Configuration['logging']['standard_log']) {
+        $Data .= "\n";
+    }
+
+    if (!is_resource($File = fopen($Filename, $WriteMode))) {
+        trigger_error('The "writeToCaptchaLog" event failed to open "' . $Filename . '" for writing.');
+        return;
+    }
+    fwrite($File, $Data);
+    fclose($File);
+    if ($WriteMode === 'wb') {
+        $this->logRotation($this->Configuration['captcha']['log']);
     }
 });

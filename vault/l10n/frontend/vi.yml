@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2025.08.17).
+# This file: Vietnamese language data for the front-end (last modified: 2025.08.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -164,13 +164,17 @@ config:
  captcha: "Cấu hình cho CAPTCHA (cung cấp một cách để con người lấy lại quyền truy cập khi bị chặn)."
  captcha_api: "API nào để sử dụng?"
  captcha_expiry: "Số giờ để nhớ CAPTCHA. Mặc định = 720 (1 tháng)."
- captcha_hcaptcha_log: "Đăng nhập tất cả các nỗ lực cho CAPTCHA? Nếu có, ghi rõ tên để sử dụng cho các tập tin đăng nhập. Nếu không, đốn biến này."
- captcha_hcaptcha_secret: &CaptchaDashboard "Giá trị này có thể được tìm thấy trong bảng điều khiển cho dịch vụ CAPTCHA của bạn."
- captcha_hcaptcha_sitekey: *CaptchaDashboard
- captcha_messages: "Tin nhắn sẽ được hiển thị cùng với CAPTCHA."
+ captcha_friendly_apikey: &FriendlyCred "Nếu bạn muốn sử dụng Friendly Captcha với CIDRAM, bạn sẽ cần nhập giá trị vào đây. Nếu không, bạn có thể bỏ qua điều này."
+ captcha_friendly_sitekey: *FriendlyCred
+ captcha_hcaptcha_secret: &HCaptchaCred "Nếu bạn muốn sử dụng hCaptcha với CIDRAM, bạn sẽ cần nhập giá trị vào đây. Nếu không, bạn có thể bỏ qua điều này."
+ captcha_hcaptcha_sitekey: *HCaptchaCred
  captcha_lockto: "Khóa CAPTCHA."
+ captcha_log: "Đăng nhập tất cả các nỗ lực cho CAPTCHA? Nếu có, ghi rõ tên để sử dụng cho các tập tin đăng nhập. Nếu không, đốn biến này."
+ captcha_messages: "Tin nhắn sẽ được hiển thị cùng với CAPTCHA."
  captcha_nonblocked_status_code: "Mã trạng thái nào nên được sử dụng khi hiển thị CAPTCHA cho các yêu cầu không bị chặn?"
  captcha_signature_limit: "Số lượng chữ ký tối đa được phép trước khi đề nghị CAPTCHA bị rút lại. Mặc định = 1."
+ captcha_turnstile_secret: &TurnstileCred "Nếu bạn muốn sử dụng Cloudflare Turnstile với CIDRAM, bạn sẽ cần nhập giá trị vào đây. Nếu không, bạn có thể bỏ qua điều này."
+ captcha_turnstile_sitekey: *TurnstileCred
  captcha_usemode: "Khi nào nên cung cấp CAPTCHA? Bạn có thể chỉ định hành vi ưu tiên cho từng nhà cung cấp được hỗ trợ tại đây. Lưu ý: Các yêu cầu trong danh sách trắng hay đã xác minh và không bị chặn không cần phải hoàn thành CAPTCHA. Cũng lưu ý: CAPTCHA có thể cung cấp một lớp bảo vệ bổ sung, hữu ích chống lại bot và các loại yêu cầu tự động độc hại khác nhau, nhưng sẽ không cung cấp bất kỳ biện pháp bảo vệ nào chống lại con người độc hại."
  components: "Cấu hình để kích hoạt và vô hiệu hóa các thành phần được sử dụng bởi CIDRAM. Thường được điền bởi trang cập nhật, nhưng cũng có thể được quản lý từ đây để kiểm soát tốt hơn và cho các thành phần tùy chỉnh không được công nhận bởi trang cập nhật."
  components_events: "Trình xử lý sự kiện. Thường được sử dụng để sửa đổi cách CIDRAM hoạt động trong nội bộ hoặc để cung cấp chức năng bổ sung."
@@ -394,6 +398,8 @@ field:
  size:
   Total size: "Kích thước tổng:"
   bytes: "byte"
+hint:
+ This value can be found in the dashboard for your CAPTCHA service: "Giá trị này có thể được tìm thấy trong bảng điều khiển cho dịch vụ CAPTCHA của bạn."
 hints_asnlookup: "** Yêu cầu chức năng tra cứu ASN (v.d., thông qua mô-đun IP-API hoặc BGPView)."
 hints_aux_stats: "Lưu ý: Giám sát thống kê cho các quy tắc phụ trợ có thể được kiểm soát từ trang quy tắc phụ trợ."
 hints_cause_fp: "*!! Khả năng cao gây ra sai tích cực do %s."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2025.08.17).
+# This file: Swedish language data for the front-end (last modified: 2025.08.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -164,13 +164,17 @@ config:
  captcha: "Konfiguration för CAPTCHA-er (ger ett sätt för människor att återfå åtkomst när de blockeras)."
  captcha_api: "Vilket API ska användas?"
  captcha_expiry: "Antal timmar för att komma ihåg CAPTCHA-instanser. Standard = 720 (1 månad)."
- captcha_hcaptcha_log: "Logga in alla CAPTCHA-försök? Om ja, ange det namn som ska användas för loggfilen. Om nej, lämna denna variabel tom."
- captcha_hcaptcha_secret: &CaptchaDashboard "Det här värdet finns i instrumentpanelen för din CAPTCHA-tjänst."
- captcha_hcaptcha_sitekey: *CaptchaDashboard
- captcha_messages: "Meddelanden som ska visas tillsammans med CAPTCHA-er."
+ captcha_friendly_apikey: &FriendlyCred "Om du vill använda Friendly Captcha med CIDRAM, du måste ange ett värde här. Om inte, du kan ignorera det."
+ captcha_friendly_sitekey: *FriendlyCred
+ captcha_hcaptcha_secret: &HCaptchaCred "Om du vill använda hCaptcha med CIDRAM, du måste ange ett värde här. Om inte, du kan ignorera det."
+ captcha_hcaptcha_sitekey: *HCaptchaCred
  captcha_lockto: "Vad man ska låsa CAPTCHA-er till."
+ captcha_log: "Logga in alla CAPTCHA-försök? Om ja, ange det namn som ska användas för loggfilen. Om nej, lämna denna variabel tom."
+ captcha_messages: "Meddelanden som ska visas tillsammans med CAPTCHA-er."
  captcha_nonblocked_status_code: "Vilken statuskod ska användas när CAPTCHAs visas för icke-blockerade förfrågningar?"
  captcha_signature_limit: "Maximalt antal signaturer tillåtna innan CAPTCHA-erbjudandet dras tillbaka. Standard = 1."
+ captcha_turnstile_secret: &TurnstileCred "Om du vill använda Cloudflare Turnstile med CIDRAM, du måste ange ett värde här. Om inte, du kan ignorera det."
+ captcha_turnstile_sitekey: *TurnstileCred
  captcha_usemode: "När bör CAPTCHA-er erbjudas? Du kan ange önskat beteende för varje leverantör som stöds här. Obs: Vitlistade eller verifierade och icke-blockerade förfrågningar behöver aldrig slutföra en CAPTCHA. Också: CAPTCHA-ar kan ge ett användbart, ytterligare skydd mot bots och olika typer av illvilliga automatiska förfrågningar, men ger inget skydd mot illvilliga människor."
  components: "Konfiguration för aktivering och avaktivering av komponenterna som används av CIDRAM. Fylls vanligtvis av uppdateringssidan, men kan också hanteras härifrån för bättre kontroll och för anpassade komponenter som inte känns igen av uppdateringssidan."
  components_events: "Händelsehanterare. Används vanligtvis för att modifiera hur CIDRAM beter sig internt eller för att tillhandahålla ytterligare funktionalitet."
@@ -207,7 +211,7 @@ config:
  general_email_notification_address: "Om du har valt att ta emot meddelanden från CIDRAM via e-post, t.ex., när specifika hjälpregler utlöses, du kan ange mottagaradressen för dessa meddelanden här."
  general_email_notification_name: "Om du har valt att ta emot meddelanden från CIDRAM via e-post, t.ex., när specifika hjälpregler utlöses, du kan ange mottagarens namn för dessa meddelanden här."
  general_email_notification_when: "När ska meddelanden skickas när de har genererats."
- general_emailaddr: "Om du vill, kan du ange en e-postadress här för att kunna ges till användare när de är blockerade, för att de ska kunna användas som kontaktpunkt för stöd och/eller hjälp till om de blockeras av misstag eller fel. VARNING: Alla e-postadresser du tillhandahåller här kommer säkert att förvärvas av spamrobotar och skrapor medan de används här, och så, det rekommenderas starkt att om du väljer att tillhandahålla en e-postadress här, så ser du till att e-postadressen du tillhandahåller här är en engångsadress och/eller en adress som du inte har något emot att bli spamad (med andra ord, vill du antagligen inte använda dina primära personliga eller primära företags e-postadresser)."
+ general_emailaddr: "Om du vill, du kan ange en e-postadress här för att kunna ges till användare när de är blockerade, för att de ska kunna användas som kontaktpunkt för stöd och/eller hjälp till om de blockeras av misstag eller fel. VARNING: Alla e-postadresser du tillhandahåller här kommer säkert att förvärvas av spamrobotar och skrapor medan de används här, och så, det rekommenderas starkt att om du väljer att tillhandahålla en e-postadress här, så ser du till att e-postadressen du tillhandahåller här är en engångsadress och/eller en adress som du inte har något emot att bli spamad (med andra ord, vill du antagligen inte använda dina primära personliga eller primära företags e-postadresser)."
  general_emailaddr_display_style: "Hur skulle du föredra att e-postadressen ska presenteras för användarna?"
  general_fields: "Kontroller för fälten under blockhändelser (när en begäran blockeras)."
  general_force_hostname_lookup: "Tvinga värdnamnssökningar? True = Ja; False = Nej [Standard]. Värdnamnssökningar utförs normalt på grundval av nödvändighet, men kan tvingas för alla förfrågningar. Att göra det kan vara användbart som ett medel för att ge mer detaljerad information i loggarna, men kan också ha en något negativ effekt på prestanda."
@@ -394,6 +398,8 @@ field:
  size:
   Total size: "Total storlek:"
   bytes: "byte"
+hint:
+ This value can be found in the dashboard for your CAPTCHA service: "Det här värdet finns i instrumentpanelen för din CAPTCHA-tjänst."
 hints_asnlookup: "** Kräver ASN-uppslagsfunktionalitet (t.ex., via IP-API-modulen eller BGPView-modulen)."
 hints_aux_stats: "Obs: Om statistik för hjälpregler ska spåras kan styras från sidan för hjälpreglerna."
 hints_cause_fp: "*!! Hög sannolikhet för att orsaka falska positiva resultat på grund av %s."

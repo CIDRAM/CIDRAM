@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2025.08.15).
+ * This file: Protect traits (last modified: 2025.08.19).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -426,31 +426,39 @@ trait Protect
             isset($this->Stages['CAPTCHA:Enable']) &&
             $this->BlockInfo['SignatureCount'] > 0 &&
             empty($this->CIDRAM['Banned']) &&
-            !$this->hasProfile(['BadIP', 'Blacklisted', 'Redlisted'])
+            !$this->hasProfile(['BadIP', 'Blacklisted', 'Redlisted']) &&
+            $this->BlockInfo['SignatureCount'] <= $this->Configuration['captcha']['signature_limit']
         ) {
             $this->Stage = 'CAPTCHA';
-
-            if (
-                $this->Configuration['captcha']['hcaptcha_sitekey'] !== '' &&
-                $this->Configuration['captcha']['hcaptcha_secret'] !== '' &&
-                class_exists('\CIDRAM\CIDRAM\HCaptcha') &&
-                $this->BlockInfo['SignatureCount'] <= $this->Configuration['captcha']['signature_limit'] &&
-                empty($this->Configuration['captcha']['forcibly_disabled']) &&
-                (
-                    $this->Configuration['captcha']['usemode']['hcaptcha'] === 1 ||
-                    $this->Configuration['captcha']['usemode']['hcaptcha'] === 3 ||
+            foreach ([
+                ['hcaptcha_sitekey', 'hcaptcha_secret', 'HCaptcha', 'hcaptcha'],
+                ['friendly_sitekey', 'friendly_apikey', 'FriendlyCaptcha', 'friendly'],
+                ['turnstile_sitekey', 'turnstile_secret', 'CloudflareTurnstile', 'cloudflare']
+            ] as $CAPTCHA) {
+                $ClassName = '\\CIDRAM\\CIDRAM\\' . $CAPTCHA[2];
+                if (
+                    $this->Configuration['captcha'][$CAPTCHA[0]] !== '' &&
+                    $this->Configuration['captcha'][$CAPTCHA[1]] !== '' &&
+                    class_exists($ClassName) &&
+                    empty($this->Configuration['captcha']['forcibly_disabled']) &&
                     (
+                        $this->Configuration['captcha']['usemode'][$CAPTCHA[3]] === 1 ||
+                        $this->Configuration['captcha']['usemode'][$CAPTCHA[3]] === 3 ||
                         (
-                            $this->Configuration['captcha']['usemode']['hcaptcha'] === 2 ||
-                            $this->Configuration['captcha']['usemode']['hcaptcha'] === 5
-                        ) && !empty($this->Configuration['captcha']['enabled'])
-                    )
-                ) &&
-                (!$this->hasProfile('Blocked Negative') || !isset($this->VAdjust['Negatives:HCaptcha'])) &&
-                (!$this->hasProfile('Blocked Non-Verified') || !isset($this->VAdjust['NonVerified:HCaptcha']))
-            ) {
-                /** Execute the hCaptcha class. */
-                $CaptchaDone = new HCaptcha($this);
+                            (
+                                $this->Configuration['captcha']['usemode'][$CAPTCHA[3]] === 2 ||
+                                $this->Configuration['captcha']['usemode'][$CAPTCHA[3]] === 5
+                            ) && !empty($this->Configuration['captcha']['enabled'])
+                        )
+                    ) &&
+                    (!$this->hasProfile('Blocked Negative') || !isset($this->VAdjust['Negatives:' . $CAPTCHA[2]])) &&
+                    (!$this->hasProfile('Blocked Non-Verified') || !isset($this->VAdjust['NonVerified:' . $CAPTCHA[2]]))
+                ) {
+                    /** Execute the CAPTCHA class. */
+                    $CaptchaDone = new $ClassName($this);
+
+                    break;
+                }
             }
         }
 
@@ -1029,22 +1037,30 @@ trait Protect
         if (isset($this->Stages['NonBlockedCAPTCHA:Enable'])) {
             $this->Stage = 'NonBlockedCAPTCHA';
             if (empty($CaptchaDone) && empty($this->CIDRAM['Whitelisted']) && empty($this->BlockInfo['Verified'])) {
-                if (
-                    $this->Configuration['captcha']['hcaptcha_sitekey'] !== '' &&
-                    $this->Configuration['captcha']['hcaptcha_secret'] !== '' &&
-                    class_exists('\CIDRAM\CIDRAM\HCaptcha') &&
-                    (
-                        ($this->Configuration['captcha']['usemode']['hcaptcha'] >= 3 && $this->Configuration['captcha']['usemode']['hcaptcha'] <= 5) ||
-                        ($this->Configuration['captcha']['usemode']['hcaptcha'] === 6 && (
-                            isset($this->BlockInfo['rURI']) &&
-                            $this->isSensitive(preg_replace('/\s/', '', strtolower($this->BlockInfo['rURI'])))
-                        ))
-                    )
-                ) {
-                    /** Execute the hCaptcha class. */
-                    $CaptchaDone = new HCaptcha($this);
+                foreach ([
+                    ['hcaptcha_sitekey', 'hcaptcha_secret', 'HCaptcha', 'hcaptcha'],
+                    ['friendly_sitekey', 'friendly_apikey', 'FriendlyCaptcha', 'friendly'],
+                    ['turnstile_sitekey', 'turnstile_secret', 'CloudflareTurnstile', 'cloudflare']
+                ] as $CAPTCHA) {
+                    $ClassName = '\\CIDRAM\\CIDRAM\\' . $CAPTCHA[2];
+                    if (
+                        $this->Configuration['captcha'][$CAPTCHA[0]] !== '' &&
+                        $this->Configuration['captcha'][$CAPTCHA[1]] !== '' &&
+                        class_exists($ClassName) &&
+                        (
+                            ($this->Configuration['captcha']['usemode'][$CAPTCHA[3]] >= 3 && $this->Configuration['captcha']['usemode'][$CAPTCHA[3]] <= 5) ||
+                            ($this->Configuration['captcha']['usemode'][$CAPTCHA[3]] === 6 && (
+                                isset($this->BlockInfo['rURI']) &&
+                                $this->isSensitive(preg_replace('/\s/', '', strtolower($this->BlockInfo['rURI'])))
+                            ))
+                        )
+                    ) {
+                        /** Execute the CAPTCHA class. */
+                        $CaptchaDone = new $ClassName($this);
 
-                    $this->CIDRAM['StatusCodeForNonBlocked'] = $this->Configuration['captcha']['nonblocked_status_code']['hcaptcha'];
+                        $this->CIDRAM['StatusCodeForNonBlocked'] = $this->Configuration['captcha']['nonblocked_status_code'][$CAPTCHA[3]];
+                        break;
+                    }
                 }
 
                 if (

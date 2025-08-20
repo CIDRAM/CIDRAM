@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The backup page (last modified: 2025.08.15).
+ * This file: The backup page (last modified: 2025.08.20).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -221,7 +221,7 @@ if (isset($_POST['bckpAct'])) {
                         if ($this->OperationHandler->singleCompare($Import['CIDRAM Version'], '<4')) {
                             /** Renamed configuration directives (v1->v2->v3->v4). */
                             foreach ([
-                                'hcaptcha' => [['logfile', 'hcaptcha_log'], ['secret', 'hcaptcha_secret'], ['sitekey', 'hcaptcha_sitekey']]
+                                'hcaptcha' => [['logfile', 'log'], ['hcaptcha_log', 'log'], ['secret', 'hcaptcha_secret'], ['sitekey', 'hcaptcha_sitekey']]
                             ] as $CatKey => $Cat) {
                                 foreach ($Cat as $Pair) {
                                     if (isset($Import['Configuration'][$CatKey][$Pair[0]]) && !isset($Import['Configuration'][$CatKey][$Pair[1]])) {

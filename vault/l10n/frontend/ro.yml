@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Romanian language data for the front-end (last modified: 2025.08.17).
+# This file: Romanian language data for the front-end (last modified: 2025.08.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -164,13 +164,17 @@ config:
  captcha: "Configurarea pentru CAPTCHA-uri (oferă o modalitate prin care oamenii să-și recapete accesul atunci când sunt blocați)."
  captcha_api: "Ce API să folosești?"
  captcha_expiry: "Numărul de ore pentru a vă aminti instanțele CAPTCHA. Implicit = 720 (1 lună)."
- captcha_hcaptcha_log: "Înregistrați toate încercările CAPTCHA? Dacă da, specificați numele de utilizat pentru fișierul jurnal. Dacă nu, lăsați această variabilă necompletată."
- captcha_hcaptcha_secret: &CaptchaDashboard "Această valoare poate fi găsită în tabloul de bord pentru serviciul dvs. CAPTCHA."
- captcha_hcaptcha_sitekey: *CaptchaDashboard
- captcha_messages: "Mesaje care vor fi afișate alături de CAPTCHA-uri."
+ captcha_friendly_apikey: &FriendlyCred "Dacă vrei să folosești Friendly Captcha cu CIDRAM, va trebui să introduci o valoare aici. Dacă nu, o poți ignora."
+ captcha_friendly_sitekey: *FriendlyCred
+ captcha_hcaptcha_secret: &HCaptchaCred "Dacă vrei să folosești hCaptcha cu CIDRAM, va trebui să introduci o valoare aici. Dacă nu, o poți ignora."
+ captcha_hcaptcha_sitekey: *HCaptchaCred
  captcha_lockto: "La ce să legați CAPTCHA-urile."
+ captcha_log: "Înregistrați toate încercările CAPTCHA? Dacă da, specificați numele de utilizat pentru fișierul jurnal. Dacă nu, lăsați această variabilă necompletată."
+ captcha_messages: "Mesaje care vor fi afișate alături de CAPTCHA-uri."
  captcha_nonblocked_status_code: "Ce cod de stare ar trebui folosit când se afișează CAPTCHA la solicitările neblocate?"
  captcha_signature_limit: "Numărul maxim de semnături permis înainte ca oferta CAPTCHA să fie retrasă. Implicit = 1."
+ captcha_turnstile_secret: &TurnstileCred "Dacă vrei să folosești Cloudflare Turnstile cu CIDRAM, va trebui să introduci o valoare aici. Dacă nu, o poți ignora."
+ captcha_turnstile_sitekey: *TurnstileCred
  captcha_usemode: "Când ar trebui oferite CAPTCHA-urile? Puteți specifica aici comportamentul preferat pentru fiecare furnizor acceptat. Notă: Solicitările incluse în lista albă sau verificate și neblocate nu trebuie să completeze niciodată un CAPTCHA. De asemenea, rețineți: CAPTCHA-urile pot oferi un strat suplimentar util de protecție împotriva roboților și a diferitelor tipuri de solicitări automate rău intenționate, dar nu vor oferi nicio protecție împotriva unui om rău intenționat."
  components: "Configurare pentru activarea si dezactivarea componentelor utilizate de CIDRAM. De obicei populat de pagina de actualizări, dar poate fi gestionat și de aici pentru un control mai fin și pentru componente personalizate nerecunoscute de pagina de actualizări."
  components_events: "Manageri de evenimente. Utilizat de obicei pentru a modifica modul în care CIDRAM se comportă intern sau pentru a oferi funcționalități suplimentare."
@@ -402,6 +406,8 @@ field:
    - "octet"
    - "octeți"
    - "de octeți"
+hint:
+ This value can be found in the dashboard for your CAPTCHA service: "Această valoare poate fi găsită în tabloul de bord pentru serviciul dvs. CAPTCHA."
 hints_asnlookup: "** Necesită funcționalitatea de căutare ASN (de exemplu, prin modulele pentru IP-API sau BGPView)."
 hints_aux_stats: "Notă: Dacă să urmăriți statisticile pentru regulile auxiliare poate fi controlat din pagina cu regulile auxiliare."
 hints_cause_fp: "*!! Probabilitate mare de a provoca fals pozitive din cauza %s."

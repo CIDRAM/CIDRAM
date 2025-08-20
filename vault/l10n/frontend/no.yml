@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2025.08.17).
+# This file: Norwegian language data for the front-end (last modified: 2025.08.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -164,13 +164,17 @@ config:
  captcha: "Konfigurasjon for CAPTCHA-er (gir en måte for mennesker å gjenvinne tilgang når de blokkeres)."
  captcha_api: "Hvilken API skal du bruke?"
  captcha_expiry: "Antall timer for å huske CAPTCHA-forekomster. Standardverdi = 720 (1 måned)."
- captcha_hcaptcha_log: "Logg på alle CAPTCHA-forsøk? Hvis ja, spesifiser navnet som skal brukes til loggfilen. Hvis nei, la denne variablen være tom."
- captcha_hcaptcha_secret: &CaptchaDashboard "Denne verdien finner du i dashbordet for CAPTCHA-tjenesten din."
- captcha_hcaptcha_sitekey: *CaptchaDashboard
- captcha_messages: "Meldinger som skal vises sammen med CAPTCHA-er."
+ captcha_friendly_apikey: &FriendlyCred "Hvis du vil bruke Friendly Captcha med CIDRAM, du må angi en verdi her. Hvis ikke, du kan ignorere den."
+ captcha_friendly_sitekey: *FriendlyCred
+ captcha_hcaptcha_secret: &HCaptchaCred "Hvis du vil bruke hCaptcha med CIDRAM, du må angi en verdi her. Hvis ikke, du kan ignorere den."
+ captcha_hcaptcha_sitekey: *HCaptchaCred
  captcha_lockto: "Hva man skal låse CAPTCHA-er til."
+ captcha_log: "Logg på alle CAPTCHA-forsøk? Hvis ja, spesifiser navnet som skal brukes til loggfilen. Hvis nei, la denne variablen være tom."
+ captcha_messages: "Meldinger som skal vises sammen med CAPTCHA-er."
  captcha_nonblocked_status_code: "Hvilken statuskode skal brukes når CAPTCHA vises til forespørsler som ikke er blokkert?"
  captcha_signature_limit: "Maksimalt antall signaturer tillatt før du trekker tilbake et CAPTCHA-tilbud. Standardverdi = 1."
+ captcha_turnstile_secret: &TurnstileCred "Hvis du vil bruke Cloudflare Turnstile med CIDRAM, du må angi en verdi her. Hvis ikke, du kan ignorere den."
+ captcha_turnstile_sitekey: *TurnstileCred
  captcha_usemode: "Når bør CAPTCHA-er tilbys? Du kan angi foretrukket oppførsel for hver støttede leverandør her. Merk: Hvitlistet eller verifiserte og ikke-blokkerte forespørsler trenger aldri å fullføre en CAPTCHA. Merk også: CAPTCHA-er kan gi et nyttig, ekstra lag med beskyttelse mot roboter og ulike typer ondsinnede automatiske forespørsler, men vil ikke gi noen beskyttelse mot et ondsinnet menneske."
  components: "Konfigurasjon for aktivering og deaktivering av komponentene som brukes av CIDRAM. Fylles vanligvis ut av oppdateringssiden, men kan også administreres herfra for bedre kontroll og for tilpassede komponenter som ikke gjenkjennes av oppdateringssiden."
  components_events: "Hendelsesbehandlere. Brukes vanligvis for å endre måten CIDRAM oppfører seg internt på eller for å gi ekstra funksjonalitet."
@@ -394,6 +398,8 @@ field:
  size:
   Total size: "Total størrelse:"
   bytes: "byte"
+hint:
+ This value can be found in the dashboard for your CAPTCHA service: "Denne verdien finner du i dashbordet for CAPTCHA-tjenesten din."
 hints_asnlookup: "** Krever ASN-oppslagsfunksjonalitet (f.eks., via IP-API-modulen eller BGPView-modulen)."
 hints_aux_stats: "Merk: Om det skal spores statistikk for tilleggsregler kan kontrolleres fra siden for tilleggsreglene."
 hints_cause_fp: "*!! Høy sannsynlighet for å forårsake falske positiver på grunn av %s."
@@ -1005,7 +1011,7 @@ time_seconds_from_now:
 time_years_ago: "%s år siden"
 time_years_from_now: "%s år fra nå"
 tip:
- 2FA Sent: "En e-post som inneholder en 2FA-kode, er sendt til e-postadressen din. Vennligst bekreft denne koden nedenfor for å få tilgang til frontenden. Hvis du ikke mottok denne e-posten, kan du prøve å logge ut, vente i 10 minutter og logge på igjen for å motta en ny e-post som inneholder en ny kode."
+ 2FA Sent: "En e-post som inneholder en 2FA-kode, er sendt til e-postadressen din. Vennligst bekreft denne koden nedenfor for å få tilgang til frontenden. Hvis du ikke mottok denne e-posten, du kan prøve å logge ut, vente i 10 minutter og logge på igjen for å motta en ny e-post som inneholder en ny kode."
  Accounts: "Du kan kontrollere hvem som kan få tilgang til CIDRAM-frontenden ved hjelp av kontosiden."
  Aggregator: "Aggregatoren lar deg uttrykke IPer, CIDRer, og nettmasker på den minste mulige måten. Skriv inn dataene som skal aggregeres og trykk «OK»."
  Auxiliary Rules Modes: "Visningsmodus viser tilleggsregler som en kompakt liste for enkel lesning. Regler i listen kan utvides og ytterligere detaljer vises ved å klikke på dem. Alternativer for å eksportere eller slette en regel vises når du klikker på trigrammet (☰). Regler kan endre rekkefølgen ved å dra og slippe, ved å dra en regel fra den eksisterende posisjonen og til ønsket posisjon. Redigeringsmodus er nødvendig for å endre tilleggsregler, redigerbare felt og alternativer for å legge til nye betingelser, webhooks, eller annen logikk i reglene etter behov som er angitt på siden. New auxiliary rules can be created via either mode."

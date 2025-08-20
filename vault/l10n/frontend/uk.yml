@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Ukrainian language data for the front-end (last modified: 2025.08.18).
+# This file: Ukrainian language data for the front-end (last modified: 2025.08.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -164,13 +164,17 @@ config:
  captcha: "Конфігурація для CAPTCHA (надає можливість людям відновити доступ у разі блокування)."
  captcha_api: "Який API використовувати?"
  captcha_expiry: "Кількість годин для запам'ятовування інстанція CAPTCHA. Стандарт = 720 (1 місяць)."
- captcha_hcaptcha_log: "Реєструвати всі спроби CAPTCHA? Якщо так, укажіть ім'я для файлу журналу. Якщо ні, залиште цю змінну пустою."
- captcha_hcaptcha_secret: &CaptchaDashboard "Це значення можна знайти на інформаційній панелі служби CAPTCHA."
- captcha_hcaptcha_sitekey: *CaptchaDashboard
- captcha_messages: "Повідомлення, що відображатимуться разом із CAPTCHA."
+ captcha_friendly_apikey: &FriendlyCred "Якщо ви хочете використовувати Friendly Captcha з CIDRAM, вам потрібно буде ввести значення тут. Якщо ні, ви можете його ігнорувати."
+ captcha_friendly_sitekey: *FriendlyCred
+ captcha_hcaptcha_secret: &HCaptchaCred "Якщо ви хочете використовувати hCaptcha з CIDRAM, вам потрібно буде ввести значення тут. Якщо ні, ви можете його ігнорувати."
+ captcha_hcaptcha_sitekey: *HCaptchaCred
  captcha_lockto: "До чого прив'язувати CAPTCHA."
+ captcha_log: "Реєструвати всі спроби CAPTCHA? Якщо так, укажіть ім'я для файлу журналу. Якщо ні, залиште цю змінну пустою."
+ captcha_messages: "Повідомлення, що відображатимуться разом із CAPTCHA."
  captcha_nonblocked_status_code: "Який код статусу слід використовувати під час відображення CAPTCHA для незаблокованих запитів?"
  captcha_signature_limit: "Максимальна дозволена кількість сигнатур до відкликання пропозиції CAPTCHA. Стандарт = 1."
+ captcha_turnstile_secret: &TurnstileCred "Якщо ви хочете використовувати Cloudflare Turnstile з CIDRAM, вам потрібно буде ввести значення тут. Якщо ні, ви можете його ігнорувати."
+ captcha_turnstile_sitekey: *TurnstileCred
  captcha_usemode: "Коли слід пропонувати CAPTCHA? Тут ви можете вказати бажану поведінку для кожного підтримуваного постачальника. Зауважте: Запитує, що з білого списку, або неперевірений та незаблоковані, ніколи не потрібно заповнювати CAPTCHA. Також зауважте: CAPTCHA може забезпечити корисний додатковий рівень захисту від ботів і різних видів зловмисних автоматизованих запитів, але не забезпечить жодного захисту від зловмисної людини."
  components: "Конфігурація для активації та дезактивації компонентів, які використовуються CIDRAM. Зазвичай заповнюється сторінкою оновлень, але також можна керувати звідси для більш точного контролю та для компонентів, які не розпізнаються сторінкою оновлень."
  components_events: "Обробники подій. Зазвичай використовується для зміни внутрішньої поведінки CIDRAM або для надання додаткових функцій."
@@ -402,6 +406,8 @@ field:
    - "байт"
    - "байта"
    - "байтов"
+hint:
+ This value can be found in the dashboard for your CAPTCHA service: "Це значення можна знайти на інформаційній панелі служби CAPTCHA."
 hints_asnlookup: "** Потрібна функціональність пошуку ASN (наприклад, через модуль IP-API або BGPView)."
 hints_aux_stats: "Зауважте: Статистикою відстеження для допоміжних правил можна керувати зі сторінки допоміжних правил."
 hints_cause_fp: "*!! Висока ймовірність виникнення помилкових спрацьовувань через %s."

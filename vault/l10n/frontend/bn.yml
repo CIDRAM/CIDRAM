@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data for the front-end (last modified: 2025.08.18).
+# This file: Bangla language data for the front-end (last modified: 2025.08.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -164,13 +164,17 @@ config:
  captcha: "ক্যাপচা জন্য কনফিগারেশন (যখন অবরুদ্ধ থাকে তখন মানুষের অ্যাক্সেস ফিরে পাওয়ার জন্য একটি উপায় সরবরাহ করে)।"
  captcha_api: "API ব্যবহার করতে?"
  captcha_expiry: "ক্যাপচা দৃষ্টান্তগুলি মনে রাখার জন্য ঘন্টাগুলির সংখ্যা। ডিফল্ট = 720 (1 মাস)।"
- captcha_hcaptcha_log: "সব ক্যাপচা প্রচেষ্টা লগ ইন করুন? যদি তাই, লগ ফাইলে ব্যবহারের জন্য নামটি উল্লেখ করুন। যদি না, এই পরিবর্তনশীল খালি রাখুন।"
- captcha_hcaptcha_secret: &CaptchaDashboard "আপনার ক্যাপচা পরিষেবাটির জন্য এই মানটি ড্যাশবোর্ডে পাওয়া যাবে।"
- captcha_hcaptcha_sitekey: *CaptchaDashboard
- captcha_messages: "ক্যাপচা এর পাশাপাশি প্রদর্শিত বার্তা।"
+ captcha_friendly_apikey: &FriendlyCred "যদি আপনি CIDRAM এর সাথে Friendly Captcha ব্যবহার করতে চান, তাহলে আপনাকে এখানে একটি মান লিখতে হবে। যদি না হয়, তাহলে আপনি এটি উপেক্ষা করতে পারেন।"
+ captcha_friendly_sitekey: *FriendlyCred
+ captcha_hcaptcha_secret: &HCaptchaCred "যদি আপনি CIDRAM এর সাথে hCaptcha ব্যবহার করতে চান, তাহলে আপনাকে এখানে একটি মান লিখতে হবে। যদি না হয়, তাহলে আপনি এটি উপেক্ষা করতে পারেন।"
+ captcha_hcaptcha_sitekey: *HCaptchaCred
  captcha_lockto: "ক্যাপচা লক করার পদ্ধতি কী?"
+ captcha_log: "সব ক্যাপচা প্রচেষ্টা লগ ইন করুন? যদি তাই, লগ ফাইলে ব্যবহারের জন্য নামটি উল্লেখ করুন। যদি না, এই পরিবর্তনশীল খালি রাখুন।"
+ captcha_messages: "ক্যাপচা এর পাশাপাশি প্রদর্শিত বার্তা।"
  captcha_nonblocked_status_code: "অবরুদ্ধ নয় অনুরোধগুলিতে ক্যাপচা প্রদর্শন করার সময় কোন স্থিতি কোড ব্যবহার করা উচিত?"
  captcha_signature_limit: "ক্যাপচা অফার প্রত্যাহারের আগে সর্বাধিক সংখ্যক স্বাক্ষর অনুমোদিত। ডিফল্ট = 1।"
+ captcha_turnstile_secret: &TurnstileCred "যদি আপনি CIDRAM এর সাথে Cloudflare Turnstile ব্যবহার করতে চান, তাহলে আপনাকে এখানে একটি মান লিখতে হবে। যদি না হয়, তাহলে আপনি এটি উপেক্ষা করতে পারেন।"
+ captcha_turnstile_sitekey: *TurnstileCred
  captcha_usemode: "ক্যাপচা কখন দেওয়া উচিত? আপনি এখানে প্রতিটি সমর্থিত প্রদানকারীর জন্য পছন্দের আচরণ নির্দিষ্ট করতে পারেন। নোট: শ্বেত তালিকাভুক্ত বা যাচাইকৃত এবং অ-অবরুদ্ধ অনুরোধগুলির জন্য কখনই একটি ক্যাপচেকএ সম্পূর্ণ করার প্রয়োজন হয় না। এছাড়াও নোট করুন: ক্যাপচাগুলি, বট এবং বিভিন্ন ধরণের দূষিত স্বয়ংক্রিয় অনুরোধগুলির বিরুদ্ধে সুরক্ষার একটি দরকারী স্তর হতে পারে, তবে একটি দূষিত মানুষের বিরুদ্ধে কোনও সুরক্ষা প্রদান করবে না৷।"
  components: "CIDRAM দ্বারা ব্যবহৃত উপাদানগুলির সক্রিয়করণ এবং নিষ্ক্রিয়করণের জন্য কনফিগারেশন। সাধারণত আপডেট পৃষ্ঠা দ্বারা জনবহুল, তবে সূক্ষ্ম নিয়ন্ত্রণের জন্য এবং আপডেট পৃষ্ঠা দ্বারা স্বীকৃত না হওয়া কাস্টম উপাদানগুলির জন্য এখান থেকে পরিচালনা করা যেতে পারে।"
  components_events: "ইভেন্ট হ্যান্ডলারগুলি। সাধারণত, CIDRAM অভ্যন্তরীণভাবে আচরণ করার উপায় পরিবর্তন করতে বা অতিরিক্ত কার্যকারিতা প্রদান করতে ব্যবহৃত হয়।"
@@ -394,6 +398,8 @@ field:
  size:
   Total size: "মোট আকার:"
   bytes: "বাইট"
+hint:
+ This value can be found in the dashboard for your CAPTCHA service: "আপনার ক্যাপচা পরিষেবাটির জন্য এই মানটি ড্যাশবোর্ডে পাওয়া যাবে।"
 hints_asnlookup: "** ASN লুকআপ কার্যকারিতা প্রয়োজন (যেমন, IP-API বা BGPView মডিউল)।"
 hints_aux_stats: "দ্রষ্টব্য: সহায়ক নিয়মের পরিসংখ্যান ট্র্যাক করতে হবে কিনা তা সহায়ক নিয়ম পৃষ্ঠা থেকে নিয়ন্ত্রণ করা যেতে পারে।"
 hints_cause_fp: "*!! %s এর কারণে মিথ্যা ইতিবাচক হওয়ার উচ্চ সম্ভাবনা।"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2025.08.17).
+# This file: Portuguese language data for the front-end (last modified: 2025.08.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -194,13 +194,17 @@ config:
  captcha: "Configuração para CAPTCHAs (fornece uma maneira para os humanos recuperarem o acesso quando bloqueados)."
  captcha_api: "Qual API usar?"
  captcha_expiry: "Número de horas para lembrar instâncias CAPTCHA. Padrão = 720 (1 mês)."
- captcha_hcaptcha_log: {"pt-BR": "Registrar todas as tentativas de CAPTCHA? Se sim, especificar o nome a ser usado para o arquivo de log. Se não, deixe esta variável em branco.", "pt-PT": "Registar todas as tentativas de CAPTCHA? Se sim, especificar o nome a utilizar para o arquivo de log. Se não, deixe esta variável em branco."}
- captcha_hcaptcha_secret: &CaptchaDashboard "Este valor pode ser encontrado no painel do seu serviço CAPTCHA."
- captcha_hcaptcha_sitekey: *CaptchaDashboard
- captcha_messages: "Mensagens a serem exibidas junto com CAPTCHAs."
+ captcha_friendly_apikey: &FriendlyCred {"pt-BR": "Se quiser usar o Friendly Captcha com o CIDRAM, você precisará inserir um valor aqui. Caso contrário, pode ignorá-lo.", "pt-PT": "Se quiser utilizar o Friendly Captcha com o CIDRAM, terá de introduzir um valor aqui. Caso contrário, pode ignorá-lo."}
+ captcha_friendly_sitekey: *FriendlyCred
+ captcha_hcaptcha_secret: &HCaptchaCred {"pt-BR": "Se quiser usar o hCaptcha com o CIDRAM, você precisará inserir um valor aqui. Caso contrário, pode ignorá-lo.", "pt-PT": "Se quiser utilizar o hCaptcha com o CIDRAM, terá de introduzir um valor aqui. Caso contrário, pode ignorá-lo."}
+ captcha_hcaptcha_sitekey: *HCaptchaCred
  captcha_lockto: "A que ligar CAPTCHAs."
+ captcha_log: {"pt-BR": "Registrar todas as tentativas de CAPTCHA? Se sim, especificar o nome a ser usado para o arquivo de log. Se não, deixe esta variável em branco.", "pt-PT": "Registar todas as tentativas de CAPTCHA? Se sim, especificar o nome a utilizar para o arquivo de log. Se não, deixe esta variável em branco."}
+ captcha_messages: "Mensagens a serem exibidas junto com CAPTCHAs."
  captcha_nonblocked_status_code: "Qual código de status deve ser usado ao exibir CAPTCHAs para solicitações não bloqueadas?"
  captcha_signature_limit: "O número máximo de assinaturas permitidas antes que o CAPTCHA seja retirado. Padrão = 1."
+ captcha_turnstile_secret: &TurnstileCred {"pt-BR": "Se quiser usar o Cloudflare Turnstile com o CIDRAM, você precisará inserir um valor aqui. Caso contrário, pode ignorá-lo.", "pt-PT": "Se quiser utilizar o Cloudflare Turnstile com o CIDRAM, terá de introduzir um valor aqui. Caso contrário, pode ignorá-lo."}
+ captcha_turnstile_sitekey: *TurnstileCred
  captcha_usemode: "Quando devem ser oferecidos os CAPTCHAs? Você pode especificar o comportamento preferido para cada provedor suportado aqui. Nota: Solicitações na lista branca ou verificadas e não bloqueadas nunca precisam completar um CAPTCHA. Também: Os CAPTCHAs podem fornecer uma camada de proteção útil contra bots e vários tipos de solicitações automatizadas e maliciosas, mas não fornecerão nenhuma proteção contra humanos maliciosas."
  components: "Configuração para ativação e desativação dos componentes utilizados pelo CIDRAM. Normalmente preenchido pela página de atualizações, mas também pode ser gerenciado aqui para um controle mais preciso e para componentes personalizados não reconhecidos pela página de atualizações."
  components_events: "Manipuladores de eventos. Normalmente usado para modificar a maneira como o CIDRAM se comporta internamente ou para fornecer funcionalidade adicional."
@@ -502,6 +506,8 @@ field:
  log_rotation_archive: "Primeiramente arquivar, e então deletar os arquivos de log mais antigos, até o limite não seja mais excedido."
  log_rotation_delete: "Deletar os arquivos de log mais antigos, até o limite não seja mais excedido."
  size: {"Total size": "Tamanho total:"}
+hint:
+ This value can be found in the dashboard for your CAPTCHA service: "Este valor pode ser encontrado no painel do seu serviço CAPTCHA."
 hints_asnlookup: "** Requer funcionalidade de pesquisa ASN (por exemplo, através do módulo IP-API ou BGPView)."
 hints_aux_stats: "Nota: O rastreamento de estatísticas para regras auxiliares pode ser controlado na página de regras auxiliares."
 hints_cause_fp: "*!! Alta probabilidade de causar falsos positivos devido a %s."

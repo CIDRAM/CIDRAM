@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Catalan language data for the front-end (last modified: 2025.08.17).
+# This file: Catalan language data for the front-end (last modified: 2025.08.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -164,13 +164,17 @@ config:
  captcha: "Configuració per a CAPTCHAs (proporciona una manera perquè els humans recuperin l'accés quan estan bloquejats)."
  captcha_api: "Quina API utilitzar?"
  captcha_expiry: "Nombre d'hores per recordar instàncies de CAPTCHA. Predeterminat = 720 (1 mes)."
- captcha_hcaptcha_log: "Registrar tots els intents de CAPTCHA? En cas afirmatiu, especifiqueu el nom que voleu utilitzar per al fitxer de registre. Si no, deixeu aquesta variable en blanc."
- captcha_hcaptcha_secret: &CaptchaDashboard "Aquest valor es pot trobar al tauler del vostre servei CAPTCHA."
- captcha_hcaptcha_sitekey: *CaptchaDashboard
- captcha_messages: "Missatges que es mostraran juntament amb els CAPTCHA."
+ captcha_friendly_apikey: &FriendlyCred "Si voleu utilitzar Friendly Captcha amb CIDRAM, haureu d'introduir un valor aquí. Si no, el podeu ignorar."
+ captcha_friendly_sitekey: *FriendlyCred
+ captcha_hcaptcha_secret: &HCaptchaCred "Si voleu utilitzar hCaptcha amb CIDRAM, haureu d'introduir un valor aquí. Si no, el podeu ignorar."
+ captcha_hcaptcha_sitekey: *HCaptchaCred
  captcha_lockto: "A què vincular els CAPTCHA."
+ captcha_log: "Registrar tots els intents de CAPTCHA? En cas afirmatiu, especifiqueu el nom que voleu utilitzar per al fitxer de registre. Si no, deixeu aquesta variable en blanc."
+ captcha_messages: "Missatges que es mostraran juntament amb els CAPTCHA."
  captcha_nonblocked_status_code: "Quin codi d'estat s'ha d'utilitzar quan es mostren CAPTCHA a sol·licituds no bloquejades?"
  captcha_signature_limit: "Nombre màxim de signatures permeses abans de la retirada de l'oferta CAPTCHA. Predeterminat = 1."
+ captcha_turnstile_secret: &TurnstileCred "Si voleu utilitzar Cloudflare Turnstile amb CIDRAM, haureu d'introduir un valor aquí. Si no, el podeu ignorar."
+ captcha_turnstile_sitekey: *TurnstileCred
  captcha_usemode: "Quan s'haurien d'oferir els CAPTCHA? Aquí podeu especificar el comportament preferit per a cada proveïdor compatible. Nota: Les sol·licituds a la llista blanca o verificades i no bloquejades no necessiten mai completar un CAPTCHA. També tingueu en compte: Els CAPTCHA poden proporcionar una capa addicional de protecció útil contra els robots i diversos tipus de sol·licituds automatitzades malicioses, però no proporcionaran cap protecció contra un humà maliciós."
  components: "Configuració per a l'activació i desactivació dels components utilitzats per CIDRAM. Normalment s'omple per la pàgina d'actualitzacions, però també es pot gestionar des d'aquí per a un control més fi i per a components personalitzats no reconeguts per la pàgina d'actualitzacions."
  components_events: "Gestors d'esdeveniments. Normalment s'utilitza per modificar la forma en què CIDRAM es comporta internament o per proporcionar funcionalitats addicionals."
@@ -392,6 +396,8 @@ field:
  log_rotation_archive: "Primer arxiveu i, a continuació, suprimiu els fitxers de registre més antics, fins que ja no es superi el límit."
  log_rotation_delete: "Suprimeix els fitxers de registre més antics, fins que ja no es superi el límit."
  size: {"Total size": "Mida total:"}
+hint:
+ This value can be found in the dashboard for your CAPTCHA service: "Aquest valor es pot trobar al tauler del vostre servei CAPTCHA."
 hints_asnlookup: "** Requereix la funcionalitat de cerca d'ASN (per exemple, mitjançant el mòdul IP-API o BGPView)."
 hints_aux_stats: "Nota: Es pot controlar si cal fer un seguiment de les estadístiques de les regles auxiliars des de la pàgina de regles auxiliars."
 hints_cause_fp: "*!! Alta probabilitat de provocar falsos positius a causa de %s."

@@ -289,8 +289,8 @@ captcha:
   cloudflare: 200
  api:
   hcaptcha: "v1"
-  friendly: "v1"
-  cloudflare: "v1"
+  friendly: "v2"
+  cloudflare: "v0"
  messages: |
   cookie_warning:hcaptcha
   cookie_warning:friendly
@@ -304,9 +304,13 @@ captcha:
   cloudflare: "user"
  hcaptcha_sitekey: ""
  hcaptcha_secret: ""
- hcaptcha_log: ""
+ friendly_sitekey: ""
+ friendly_apikey: ""
+ turnstile_sitekey: ""
+ turnstile_secret: ""
  expiry: 720
  signature_limit: 1
+ log: ""
 legal:
  pseudonymise_ip_addresses: true
  privacy_policy: ""

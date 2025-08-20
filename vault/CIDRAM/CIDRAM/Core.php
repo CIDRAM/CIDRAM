@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2025.08.15).
+ * This file: The CIDRAM core (last modified: 2025.08.19).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1571,7 +1571,7 @@ class Core
     /**
      * Used to generate new salts when necessary, which may be occasionally used by
      * some specific optional peripheral features (note: should not be considered
-     * cryptographically secure; especially so for versions of PHP < 7).
+     * cryptographically secure).
      *
      * @return string Salt.
      */

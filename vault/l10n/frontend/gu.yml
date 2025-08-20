@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Gujarati language data for the front-end (last modified: 2025.08.18).
+# This file: Gujarati language data for the front-end (last modified: 2025.08.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -164,13 +164,17 @@ config:
  captcha: "CAPTCHA માટે રૂપરેખાંકન (જ્યારે અવરોધિત કરવામાં આવે ત્યારે મનુષ્યોને ફરીથી ઍક્સેસ મેળવવાનો માર્ગ પૂરો પાડે છે)."
  captcha_api: "કયા API નો ઉપયોગ કરવો?"
  captcha_expiry: "કેપ્ચા ઉદાહરણો યાદ રાખવાના કલાકોની સંખ્યા. ડિફૉલ્ટ = 720 (1 મહિનો)."
- captcha_hcaptcha_log: "બધા કેપ્ચા પ્રયાસોને લૉગ કરીએ? જો હા, તો લોગ ફાઇલ માટે વાપરવા માટેનું નામ સ્પષ્ટ કરો. જો ના, તો આ ચલ ખાલી છોડી દો."
- captcha_hcaptcha_secret: &CaptchaDashboard "આ મૂલ્ય તમારી કેપ્ચા સેવા માટેના ડેશબોર્ડમાં મળી શકે છે."
- captcha_hcaptcha_sitekey: *CaptchaDashboard
- captcha_messages: "કેપ્ચા સાથે પ્રદર્શિત કરવાના સંદેશાઓ."
+ captcha_friendly_apikey: &FriendlyCred "જો તમે CIDRAM સાથે Friendly Captcha નો ઉપયોગ કરવા માંગતા હો, તો તમારે અહીં એક મૂલ્ય દાખલ કરવાની જરૂર પડશે. જો નહીં, તો તમે તેને અવગણી શકો છો."
+ captcha_friendly_sitekey: *FriendlyCred
+ captcha_hcaptcha_secret: &HCaptchaCred "જો તમે CIDRAM સાથે hCaptcha નો ઉપયોગ કરવા માંગતા હો, તો તમારે અહીં એક મૂલ્ય દાખલ કરવાની જરૂર પડશે. જો નહીં, તો તમે તેને અવગણી શકો છો."
+ captcha_hcaptcha_sitekey: *HCaptchaCred
  captcha_lockto: "કેપ્ચાને શેમાં લોક કરવા."
+ captcha_log: "બધા કેપ્ચા પ્રયાસોને લૉગ કરીએ? જો હા, તો લોગ ફાઇલ માટે વાપરવા માટેનું નામ સ્પષ્ટ કરો. જો ના, તો આ ચલ ખાલી છોડી દો."
+ captcha_messages: "કેપ્ચા સાથે પ્રદર્શિત કરવાના સંદેશાઓ."
  captcha_nonblocked_status_code: "બિન-અવરોધિત વિનંતીઓને કેપ્ચા પ્રદર્શિત કરતી વખતે કયા સ્ટેટસ કોડનો ઉપયોગ કરવો જોઈએ?"
  captcha_signature_limit: "કેપ્ચા ઑફર પાછી ખેંચી લેવામાં આવે તે પહેલાં મહત્તમ સિગ્નેચરને મંજૂરી છે. ડિફૉલ્ટ = 1."
+ captcha_turnstile_secret: &TurnstileCred "જો તમે CIDRAM સાથે Cloudflare Turnstile નો ઉપયોગ કરવા માંગતા હો, તો તમારે અહીં એક મૂલ્ય દાખલ કરવાની જરૂર પડશે. જો નહીં, તો તમે તેને અવગણી શકો છો."
+ captcha_turnstile_sitekey: *TurnstileCred
  captcha_usemode: "કેપ્ચા ક્યારે ઓફર કરવા જોઈએ? તમે અહીં દરેક સપોર્ટેડ પ્રદાતા માટે પસંદગીનું વર્તન સ્પષ્ટ કરી શકો છો. નૉૅધ: વ્હાઇટલિસ્ટેડ અથવા ચકાસાયેલ અને બિન-અવરોધિત વિનંતીઓને ક્યારેય કેપ્ચા પૂર્ણ કરવાની જરૂર નથી. પણ નોંધ કરો: કેપ્ચા, બોટ્સ અને વિવિધ પ્રકારની દૂષિત સ્વયંસંચાલિત વિનંતીઓ સામે રક્ષણનું એક ઉપયોગી, વધારાનું સ્તર પ્રદાન કરી શકે છે, પરંતુ દૂષિત માનવ સામે કોઈ રક્ષણ પૂરું પાડતું નથી."
  components: "CIDRAM દ્વારા ઉપયોગમાં લેવાતા ઘટકોના સક્રિયકરણ અને નિષ્ક્રિયકરણ માટે રૂપરેખાંકન. સામાન્ય રીતે અપડેટ્સ પેજ દ્વારા ભરાય છે, પરંતુ વધુ સારા નિયંત્રણ માટે અને અપડેટ્સ પેજ દ્વારા ઓળખાતા ન હોય તેવા કસ્ટમ ઘટકો માટે પણ અહીંથી મેનેજ કરી શકાય છે."
  components_events: "ઘટના હેન્ડલર્સ. સામાન્ય રીતે CIDRAM આંતરિક રીતે જે રીતે વર્તે છે તેને સંશોધિત કરવા અથવા વધારાની કાર્યક્ષમતા પ્રદાન કરવા માટે વપરાય છે."
@@ -394,6 +398,8 @@ field:
  size:
   Total size: "કુલ કદ:"
   bytes: ["બાઈટ", "બાઇટો"]
+hint:
+ This value can be found in the dashboard for your CAPTCHA service: "આ મૂલ્ય તમારી કેપ્ચા સેવા માટેના ડેશબોર્ડમાં મળી શકે છે."
 hints_asnlookup: "** ASN લુકઅપ વિધેયની જરૂર છે (દા.ત., IP-API અથવા BGPView મોડ્યુલ દ્વારા)."
 hints_aux_stats: "નૉૅધ: સહાયક નિયમો માટે આંકડા ટ્રૅક કરવા કે કેમ તે સહાયક નિયમો પૃષ્ઠ પરથી નિયંત્રિત કરી શકાય છે."
 hints_cause_fp: "*!! %s ના કારણે ખોટા હકારાત્મક થવાની ઉચ્ચ સંભાવના."

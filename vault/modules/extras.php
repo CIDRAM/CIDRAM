@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2025.08.19).
+ * This file: Optional security extras module (last modified: 2025.08.21).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -74,6 +74,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         /** WordPress hack attempts. */
         $this->trigger(strpos($LCNrURI, 'wp-print.php?script=1') !== false, 'WP hack attempt'); // 2017.10.07 mod 2023.08.10
         $this->trigger(preg_match('~(?:^|[_/?])id=\d+/wp-login\.php[578]?(?:$|[/?])~', $LCNrURI), 'WP hack attempt'); // 2025.05.20
+        $this->trigger(preg_match('~(?:^|[/?])wp-admin/setup-config\.ph%70(?:$|[/?])~', $LCNrURI), 'WP hack attempt'); // 2025.08.21
 
         /** Probing for quarantined files. */
         if ($this->trigger(preg_match('~\.[\da-z]{2,4}\.suspected(?:$|[/?])~', $LCNrURI), 'Probing for quarantined files')) {

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The configuration page (last modified: 2025.08.16).
+ * This file: The configuration page (last modified: 2025.08.20).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -694,32 +694,43 @@ foreach ($this->CIDRAM['Config Defaults'] as $CatKey => $CatValue) {
         }
 
         /** Provide hints, useful for users to better understand the directive at hand. */
-        if (!empty($DirValue['hints'])) {
-            $ThisDir['Hints'] = $this->L10N->arrayFromL10nToArray($DirValue['hints']);
-            foreach ($ThisDir['Hints'] as $ThisDir['HintKey'] => $ThisDir['HintValue']) {
-                if (is_int($ThisDir['HintKey'])) {
-                    $ThisDir['FieldOut'] .= "\n<br /><br />" . $ThisDir['HintValue'];
-                    continue;
+        if (isset($DirValue['hints'])) {
+            $Try = '';
+            if (is_string($DirValue['hints']) && strpos($DirValue['hints'], '.') !== false) {
+                $Try = $this->L10N->getString($DirValue['hints']);
+            }
+            if ($Try !== '') {
+                $ThisDir['FieldOut'] .= "        <br /><br />\n        " . $Try;
+            } else {
+                $ThisDir['Hints'] = $this->L10N->arrayFromL10nToArray($DirValue['hints']);
+                foreach ($ThisDir['Hints'] as $ThisDir['HintKey'] => $ThisDir['HintValue']) {
+                    if (is_int($ThisDir['HintKey'])) {
+                        $ThisDir['FieldOut'] .= "        <br /><br />\n        " . $ThisDir['HintValue'];
+                        continue;
+                    }
+                    $ThisDir['FieldOut'] .= sprintf(
+                        "<br /><br />\n        <span class=\"s\">%s</span> %s",
+                        $ThisDir['HintKey'],
+                        $ThisDir['HintValue']
+                    );
                 }
-                $ThisDir['FieldOut'] .= sprintf(
-                    "\n<br /><br /><span class=\"s\">%s</span> %s",
-                    $ThisDir['HintKey'],
-                    $ThisDir['HintValue']
-                );
             }
         }
 
         /** Provide additional information, useful for users to better understand the directive at hand. */
         if (!empty($DirValue['See also']) && is_array($DirValue['See also'])) {
-            $ThisDir['FieldOut'] .= sprintf("\n<br /><br />%s<ul>\n", $this->L10N->getString('label.See also'));
+            $ThisDir['FieldOut'] .= sprintf("<br />\n        %s<ul>\n", isset($DirValue['hints']) ? '' : $this->L10N->getString('label.See also'));
             foreach ($DirValue['See also'] as $DirValue['Ref key'] => $DirValue['Ref link']) {
                 $ThisDir['FieldOut'] .= sprintf(
-                    '<li><a dir="ltr" href="%s">%s</a></li>',
+                    '          <li><a dir="ltr" href="%s"><span class="navicon link"></span>%s</a></li>',
                     $DirValue['Ref link'],
                     $this->L10N->getString($DirValue['Ref key']) ?: $DirValue['Ref key']
-                );
+                ) . "\n";
             }
-            $ThisDir['FieldOut'] .= "\n</ul>";
+            if (substr($ThisDir['FieldOut'], -1) === "\n") {
+                $ThisDir['FieldOut'] = substr($ThisDir['FieldOut'], 0, -1);
+            }
+            $ThisDir['FieldOut'] .= '        </ul>';
         }
 
         /** Reset to defaults. */
@@ -731,8 +742,11 @@ foreach ($this->CIDRAM['Config Defaults'] as $CatKey => $CatValue) {
                     $DirValue['default']
                 );
             }
+            if (empty($DirValue['See also']) || !is_array($DirValue['See also'])) {
+                $ThisDir['FieldOut'] .= '<br />';
+            }
             $ThisDir['FieldOut'] .= sprintf(
-                '<br /><br /><input type="button" class="reset" onclick="javascript:%s" value="↺ %s" />',
+                '<br /><input type="button" class="reset" onclick="javascript:%s" value="↺ %s" />',
                 $ThisDir['Reset'],
                 $this->L10N->getString('field.Reset')
             );

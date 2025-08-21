@@ -469,3 +469,7 @@
 #### Backwards-incompatible changes.
 - Removed support for reCAPTCHA entirely; Improved hCaptcha support; Added support for Friendly Captcha and Cloudflare Turnstile (#624).
 - All CAPTCHA configuration directives have been completely reworked along with the mechanisms behind them, with better labelling and clearer descriptions than before, and unified under a singular configuration category, "captcha" (#624).
+
+#### Other changes.
+- Added a macro for uninstalling any no longer available components.
+- *Plus all the regular signature updates.*

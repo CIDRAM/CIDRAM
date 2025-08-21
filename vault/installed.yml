@@ -1,6 +1,6 @@
 CIDRAM Core:
  Name: "CIDRAM Core"
- Version: "4.0.0-DEV+252310"
+ Version: "4.0.0-DEV+252320"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Front-End: "Latest"
@@ -11,7 +11,7 @@ CIDRAM Core:
  When Update Succeeds:
   - "wpVer 4.8 6.8.2 3.10.0 7.2"
   - "foreach {Components.RemoteMeta.CIDRAM Core.Release Notes For} as Key => Value if {Components.Meta.CIDRAM Core.Version}<{Value}&&{Components.RemoteMeta.CIDRAM Core.Version}>={Value} then queue message response.release_notes https://github.com/CIDRAM/CIDRAM/releases/tag/v{Value} CIDRAM v{Value}"
-  - "if {Components.Meta.CIDRAM Core.Version}<4.0.0-DEV&&{Components.RemoteMeta.CIDRAM Core.Version}>=4.0.0-DEV then set Configuration.captcha={Configuration.hcaptcha};set Configuration.captcha.log={Configuration.captcha.hcaptcha_log};set Configuration.captcha.hcaptcha_secret={Configuration.captcha.secret};set Configuration.captcha.hcaptcha_sitekey={Configuration.captcha.sitekey};set Configuration.captcha.usemode.hcaptcha={Configuration.captcha.usemode};set Configuration.captcha.nonblocked_status_code.hcaptcha={Configuration.captcha.nonblocked_status_code};set Configuration.captcha.api.hcaptcha={Configuration.captcha.api};set Configuration.recaptcha="";set Configuration.hcaptcha="";updateConfiguration"
+  - "if {Components.Meta.CIDRAM Core.Version}<4.0.0-DEV&&{Components.RemoteMeta.CIDRAM Core.Version}>=4.0.0-DEV then set Configuration.captcha={Configuration.hcaptcha};executeMacro uninstall_no_longer_available;set Configuration.captcha.log={Configuration.captcha.hcaptcha_log};set Configuration.captcha.hcaptcha_secret={Configuration.captcha.secret};set Configuration.captcha.hcaptcha_sitekey={Configuration.captcha.sitekey};set Configuration.captcha.usemode.hcaptcha={Configuration.captcha.usemode};set Configuration.captcha.nonblocked_status_code.hcaptcha={Configuration.captcha.nonblocked_status_code};set Configuration.captcha.api.hcaptcha={Configuration.captcha.api};set Configuration.recaptcha="";set Configuration.hcaptcha="";updateConfiguration"
  Uninstallable: false
  Files:
   assets/core/captcha_default.html:
@@ -67,11 +67,11 @@ CIDRAM Core:
    Checksum: "965037ecb1ca69fa0318469f4f01c0f1e06f6758a10622826fb4e3d00b9bea81:11943"
 CIDRAM Front-End:
  Name: "CIDRAM Front-End"
- Version: "4.0.0-DEV+252310"
+ Version: "4.0.0-DEV+252320"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "Latest"
-  Common Classes Package: "^2.14.1"
+  Common Classes Package: "^2.14.2-DEV+252320"
   l10n/core/{lang}: ">=2025.225"
   l10n/frontend/{lang}: ">=2025.231"
  Changelog: "https://github.com/CIDRAM/CIDRAM/blob/v4/Changelog.md"
@@ -460,10 +460,10 @@ CIDRAM Front-End:
    Checksum: "4e22354e99c188ae3f9071ed142fe998621af1cc12782aeaa3a17b620cc45cbd:17492"
   CIDRAM/CIDRAM/Updater.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/CIDRAM/CIDRAM/Updater.php"
-   Checksum: "2b7ca9f26dce7dfb5b3fb156d032860e36c71e684a91e42dffb718f80b769ce6:76200"
+   Checksum: "d156c896bb31660c1fa4c1c15efcc67f8b9364926a943e7d8e68a957aec9860a:76287"
   macros.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/macros.yml"
-   Checksum: "f0461d91fb28f18df4e4fa388d47a0f06f8809cfd9d3e346c530d028d66009f0:3485"
+   Checksum: "787f905d83fdccd75b2d8085087344b228dac6cac4531bf40612454b7f39c150:3751"
   pages/accounts.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/pages/accounts.php"
    Checksum: "87847243a27adea8e823bdf15bdc1ad875f2e51f204d33e8dc55c369e856d5d4:8282"
@@ -526,10 +526,10 @@ CIDRAM Front-End:
    Checksum: "5d35838d70e05895dab8d836004ebb6092c26a412b181a082a66a2d4c3009039:32200"
 Common Classes Package:
  Name: "Common Classes Package"
- Version: "2.14.1"
+ Version: "2.14.2-DEV+252320"
  Dependencies:
   PHP: "^7.2|^8"
- Release Notes For: ["2.14.1"]
+ Release Notes For: ["2.14.1", "2.14.2"]
  When Update Succeeds:
   - "foreach {Components.RemoteMeta.Common Classes Package.Release Notes For} as Key => Value if {Components.Meta.Common Classes Package.Version}<{Value}&&{Components.RemoteMeta.Common Classes Package.Version}>={Value} then queue message response.release_notes https://github.com/Maikuolan/Common/releases/tag/v{Value} Common Classes Package v{Value}"
  Uninstallable: false
@@ -539,7 +539,7 @@ Common Classes Package:
    Checksum: "43e35b380be0c11f77052cea7740f0cb68f3ef8cebac844ac6868ce0f06b2ba6:42787"
   Maikuolan/Common/CommonAbstract.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/Maikuolan/Common/CommonAbstract.php"
-   Checksum: "d2edfdcc2d68d1d583fd4a1a15b0cf172f1c6bf98324462c7de1a36c630d98e0:3495"
+   Checksum: "a028cb6996971cc8cd6bc688814eee0d14ed9601bb74a0905aee34288ebe8eb3:3892"
   Maikuolan/Common/ComplexStringHandler.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/Maikuolan/Common/ComplexStringHandler.php"
    Checksum: "823edaec75178e8c56ad0accec030cbee543e6ad1a36340a2e2a12c2e2106fbb:3872"

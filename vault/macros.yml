@@ -14,16 +14,17 @@ Modules:
  - "Bad hosts blocker module"
  - "Bad TLDs blocker module"
  - "BGPView module"
+ - "BOBUAM"
  - "Bot user agents module"
  - "BunnyCDN compatibility module"
  - "Cookie scanner module"
- - "IP-API module"
  - "Optional security extras module"
+ - "IP-API module"
  - "Project Honeypot module"
  - "Protocol blocker module"
+ - "Quic cloud compatibility module"
  - "Stop Forum Spam module"
  - "Tor blocker module"
- - "BOBUAM"
  - "Referrer spam module"
 activate_modules:
  On Execute:
@@ -61,3 +62,6 @@ uninstall_modules:
 uninstall_signatures:
  On Execute:
   - "foreach {Components.Macros.Signature Files} as Key => Value if {Components.Installed Versions.{Value}}>0&&{Components.In Use.{Value}}==0 then updatesHandlerUninstall {Value}"
+uninstall_no_longer_available:
+ On Execute:
+  - "foreach {Components.Meta.keys()} as Key => Value if {Value}!==PHP&&{Components.In Use.{Value}}==0&&{Components.Available Versions.{Value}}=== then updatesHandlerUninstall {Value}"

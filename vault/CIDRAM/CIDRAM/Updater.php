@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods for updating CIDRAM components (last modified: 2025.08.14).
+ * This file: Methods for updating CIDRAM components (last modified: 2025.08.21).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -924,11 +924,10 @@ trait Updater
         $BytesRemoved = 0;
         $TimeRequired = microtime(true);
         $StateMessage = '<code>' . $ID . '</code> – ';
-        if (
-            $InUse === 0 &&
-            !empty($this->Components['Meta'][$ID]['Files']) &&
-            (!isset($this->Components['Meta'][$ID]['Uninstallable']) || $this->Components['Meta'][$ID]['Uninstallable'] !== false)
-        ) {
+        if (isset($this->Components['Meta'][$ID]) && $InUse === 0 && (!isset($this->Components['Meta'][$ID]['Uninstallable']) || $this->Components['Meta'][$ID]['Uninstallable'] !== false)) {
+            if (!isset($this->Components['Meta'][$ID]['Files'])) {
+                $this->Components['Meta'][$ID]['Files'] = [];
+            }
             $this->arrayify($this->Components['Meta'][$ID]['Files']);
 
             /** Iterate through and remove all the component's files. */

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2025.08.21).
+# This file: Spanish language data for the front-end (last modified: 2025.08.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -453,6 +453,7 @@ info_cli_by_default_ips: |
  De forma predeterminada, las direcciones IP se prueban con todos los archivos
  de firma, todos los módulos, todas las reglas auxiliares, así como con la
  verificación de redes sociales y motores de búsqueda.
+ --no-ban    Evita comprobar si está prohibido.
  --no-sig    Evita las pruebas contra los archivos de firma.
  --no-mod    Evita las pruebas contra los módulos.
  --no-sev    Evita la verificación de los motores de búsqueda.
@@ -714,7 +715,7 @@ label:
   Notes: "Notas (solo se muestra en esta página, y no afecta la regla):"
   Other options and special flags: "Otras opciones y banderas especiales:"
   Requires PHPMailer: "Requiere PHPMailer."
-  Send trigger notification to the configured email notification address: "Envíe una notificación de desencadenar a la dirección de notificación por correo electrónico configurada"
+  Send trigger notification to the configured email notification address: "Envíe una notificación de desencadenamiento a la dirección de notificación por correo electrónico configurada"
   Suppress logging: "Suprimir registro"
   Suppress output template: "Suprime la plantilla de salida"
   Suppress reports: "Suprimir informes"
@@ -936,6 +937,7 @@ response:
  please_check_config: "Verifique su configuración para asegurarse de que el módulo recién instalado se comportará como lo desea."
  release_notes: "<a href="%s"><span class="navicon link"></span>Notas de la versión para %s.</a>"
 stages:
+ Check whether banned: "Comprobar si está prohibido"
  Deploy CAPTCHAs (blocked requests): "Desplegar CAPTCHAs (solicitudes bloqueadas)"
  Deploy CAPTCHAs (non-blocked requests): "Desplegar CAPTCHAs (solicitudes no bloqueadas)"
  Execute IP tracking: "Ejecutar seguimiento de IP"
@@ -950,6 +952,7 @@ stages:
  Execute webhooks: "Ejecutar webhooks"
  Generate output (blocked requests): "Generar salida (solicitudes bloqueadas)"
  Prepare fields for output and logs: "Preparar campos para salida y registros"
+ Process email trigger notification queue: "Procesar la cola de notificaciones de desencadenamiento por correo electrónico"
  Redirect according to auxiliary rules: "Redirigir según reglas auxiliares"
  Terminate the request (blocked requests): "Terminar la solicitud (solicitudes bloqueadas)"
  Update statistics: "Actualizar estadísticas"

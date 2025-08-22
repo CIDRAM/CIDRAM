@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Romanian language data for the front-end (last modified: 2025.08.21).
+# This file: Romanian language data for the front-end (last modified: 2025.08.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -463,6 +463,7 @@ info_cli_by_default_ips: |
  În mod implicit, IP-urile sunt testate împotriva tuturor fișierelor de
  semnătură, a tuturor modulelor, a tuturor regulilor auxiliare, *și* împotriva
  verificării rețelelor sociale și a motorului de căutare.
+ --no-ban    Previne verificarea dacă este interzis.
  --no-sig    Previne testarea împotriva fișierelor de semnătură.
  --no-mod    Previne testarea împotriva modulelor.
  --no-sev    Previne verificarea motorului de căutare.
@@ -950,6 +951,7 @@ response:
  please_check_config: "Vă rugăm să vă verificați configurația pentru a vă asigura că modulul nou instalat se va comporta așa cum doriți."
  release_notes: "<a href="%s"><span class="navicon link"></span>Note de lansare pentru %s.</a>"
 stages:
+ Check whether banned: "Verifică dacă este interzis"
  Deploy CAPTCHAs (blocked requests): "Implementați CAPTCHA (solicitări blocate)"
  Deploy CAPTCHAs (non-blocked requests): "Implementați CAPTCHA (solicitări neblocate)"
  Execute IP tracking: "Executați urmărirea IP"
@@ -964,6 +966,7 @@ stages:
  Execute webhooks: "Executați webhook-uri"
  Generate output (blocked requests): "Generați ieșire (solicitări blocate)"
  Prepare fields for output and logs: "Pregătiți câmpurile pentru ieșire și jurnalele"
+ Process email trigger notification queue: "Procesarea coadei de notificări declanșatoare prin e-mail"
  Redirect according to auxiliary rules: "Redirecționează conform regulilor auxiliare"
  Terminate the request (blocked requests): "Terminați solicitărea (solicitări blocate)"
  Update statistics: "Actualizați statisticile"

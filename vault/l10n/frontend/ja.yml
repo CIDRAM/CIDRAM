@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2025.08.21).
+# This file: Japanese language data for the front-end (last modified: 2025.08.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -455,6 +455,7 @@ info_cli_by_default_ips: |
  ＩＰアドレスは、すべてのシグネチャ・ファイル、すべてのモジュール、
  すべての補助ルール、およびソーシャル・メディアと検索エンジンの検証に
  対してテストされます。
+ --no-ban    禁止されているかどうかのチェックを防ぎます。
  --no-sig    シグネチャ・ファイルに対するテストを防ぎます。
  --no-mod    モジュールに対するテストを防ぎます。
  --no-sev    検索エンジンの検証を防ぎます。
@@ -928,6 +929,7 @@ response:
  please_check_config: "新しくインストールされたモジュールが意図したとおりに動作することを確認するために、コンフィギュレーションを確認してください。"
  release_notes: "<a href="%s"><span class="navicon link"></span>%s のリリース・ノート。</a>"
 stages:
+ Check whether banned: "禁止されているかどうかを確認する"
  Deploy CAPTCHAs (blocked requests): "キャプチャを展開する（ブロックされたリクエスト）"
  Deploy CAPTCHAs (non-blocked requests): "キャプチャを展開する（ブロックされていないリクエスト）"
  Execute IP tracking: "ＩＰトラッキングを実行する"
@@ -942,6 +944,7 @@ stages:
  Execute webhooks: "Webhookを実行する"
  Generate output (blocked requests): "出力を生成する（ブロックされたリクエスト）"
  Prepare fields for output and logs: "出力とログ用のフィールドを準備する"
+ Process email trigger notification queue: "Ｅメール・トリガー通知キューを処理する"
  Redirect according to auxiliary rules: "補助ルールに従ってリダイレクトする"
  Terminate the request (blocked requests): "リクエストを終了する（ブロックされたリクエスト）"
  Update statistics: "統計をアップデートする"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese language data for the front-end (last modified: 2025.08.21).
+# This file: Chinese language data for the front-end (last modified: 2025.08.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -535,6 +535,7 @@ info_cli_by_default_ips:
  zh-Hans: |
   IP地址针对所有签名文件、所有模块、所有辅助规则、以及社交媒体和搜索引擎验证进行
   测试。
+  --no-ban    防止检查是否被禁止。
   --no-sig    防止针对签名文件进行测试。
   --no-mod    防止针对模块进行测试。
   --no-sev    防止搜索引擎验证。
@@ -544,6 +545,7 @@ info_cli_by_default_ips:
  zh-Hant: |
   IP位址針對所有簽名文件、所有模組、所有輔助規則、以及社交媒體和搜索引擎驗證進行
   測試。
+  --no-ban    防止檢查是否被禁止。
   --no-sig    防止針對簽名文件進行測試。
   --no-mod    防止針對模組進行測試。
   --no-sev    防止搜索引擎驗證。
@@ -1118,6 +1120,7 @@ response:
  please_check_config: {"zh-Hans": "请检查您的配置，以确保新安装的模块按您的意愿运行。", "zh-Hant": "請檢查您的配置，以確保新安裝的模組按您的意願運行。"}
  release_notes: {"zh-Hans": "<a href="%s"><span class="navicon link"></span>%s的发行说明。</a>", "zh-Hant": "<a href="%s"><span class="navicon link"></span>%s的發行說明。</a>"}
 stages:
+ Check whether banned: {"zh-Hans": "检查是否被禁止", "zh-Hant": "檢查是否被禁止"}
  Deploy CAPTCHAs (blocked requests): {"zh-Hans": "部署验证码（被阻止的请求）", "zh-Hant": "部署驗證碼（被阻止的請求）"}
  Deploy CAPTCHAs (non-blocked requests): {"zh-Hans": "部署验证码（非阻止的请求）", "zh-Hant": "部署驗證碼（非阻止的請求）"}
  Execute IP tracking: {"zh-Hans": "执行IP跟踪", "zh-Hant": "執行IP跟踪"}
@@ -1132,6 +1135,7 @@ stages:
  Execute webhooks: {"zh-Hans": "执行webhook", "zh-Hant": "執行webhook"}
  Generate output (blocked requests): {"zh-Hans": "生成输出（被阻止的请求）", "zh-Hant": "生成輸出（被阻止的請求）"}
  Prepare fields for output and logs: {"zh-Hans": "为输出和日志准备字段", "zh-Hant": "為輸出和日誌準備字段"}
+ Process email trigger notification queue: {"zh-Hans": "处理电子邮件触发通知队列", "zh-Hant": "處理電子郵件觸發通知佇列"}
  Redirect according to auxiliary rules: {"zh-Hans": "根据辅助规则重定向", "zh-Hant": "根據輔助規則重定向"}
  Terminate the request (blocked requests): {"zh-Hans": "终止请求（被阻止的请求）", "zh-Hant": "終止請求（被阻止的請求）"}
  Update statistics: {"zh-Hans": "更新统计", "zh-Hant": "更新統計"}

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2025.08.21).
+# This file: Korean language data for the front-end (last modified: 2025.08.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -454,6 +454,7 @@ hints_want_to_block: "!! 진짜든 가짜든 상관없이, 대부분의 사용�
 info_cli_by_default_ips: |
  IP 주소는 모든 서명 파일, 모든 모듈, 모든 보조 규칙, 소셜 미디어 및
  검색 엔진 검증에 대해 테스트 됩니다.
+ --no-ban    금지 여부를 확인하는 것을 방지합니다.
  --no-sig    서명 파일에 대한 테스트를 방지합니다.
  --no-mod    모듈에 대한 테스트를 방지합니다.
  --no-sev    검색 엔진 확인을 방지합니다.
@@ -925,6 +926,7 @@ response:
  please_check_config: "새로 설치된 모듈이 의도 한 대로 작동하는지 확인하려면 구성을 확인하십시오."
  release_notes: "<a href="%s"><span class="navicon link"></span>%s에 대한 릴리스 노트.</a>"
 stages:
+ Check whether banned: "금지되었는지 확인하는"
  Deploy CAPTCHAs (blocked requests): "보안문자 배포 (차단된 요청)"
  Deploy CAPTCHAs (non-blocked requests): "보안문자 배포 (차단되지 않은 요청)"
  Execute IP tracking: "IP 추적 실행"
@@ -939,6 +941,7 @@ stages:
  Execute webhooks: "웹훅 실행"
  Generate output (blocked requests): "출력 생성 (차단된 요청)"
  Prepare fields for output and logs: "출력 및 로그용 필드 준비"
+ Process email trigger notification queue: "이메일 트리거 알림 대기열 처리"
  Redirect according to auxiliary rules: "보조 규칙에 따라 리디렉션"
  Terminate the request (blocked requests): "요청 종료 (차단된 요청)"
  Update statistics: "통계 업데이트"

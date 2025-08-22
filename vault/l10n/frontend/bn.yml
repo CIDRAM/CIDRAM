@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data for the front-end (last modified: 2025.08.21).
+# This file: Bangla language data for the front-end (last modified: 2025.08.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -454,6 +454,7 @@ hints_want_to_block: "!! আসল বা নকল, যেভাবেই হ�
 info_cli_by_default_ips: |
  আইপি ঠিকানাগুলি সমস্ত স্বাক্ষর ফাইল, সমস্ত মডিউল, সমস্ত অক্সিলিয়ারি নিয়ম,
  সেইসাথে সোশ্যাল মিডিয়া এবং সার্চ ইঞ্জিন যাচাইকরণের বিরুদ্ধে পরীক্ষা করা হয়।
+ --no-ban    নিষিদ্ধ কিনা তা পরীক্ষা করতে প্রতিরোধ করে।
  --no-sig    স্বাক্ষর ফাইলের বিরুদ্ধে পরীক্ষা প্রতিরোধ করে।
  --no-mod    মডিউলগুলির বিরুদ্ধে পরীক্ষা প্রতিরোধ করে।
  --no-sev    সার্চ ইঞ্জিন যাচাই প্রতিরোধ করে।
@@ -926,6 +927,7 @@ response:
  please_check_config: "সদ্য ইনস্টল করা মডিউলটি আপনার ইচ্ছা অনুসারে আচরণ করবে তা নিশ্চিত করার জন্য দয়া করে আপনার কনফিগারেশনটি পরীক্ষা করুন।"
  release_notes: "<a href="%s"><span class="navicon link"></span>%s এর জন্য নোট রিলিজ।</a>"
 stages:
+ Check whether banned: "নিষিদ্ধ কিনা তা পরীক্ষা করুন"
  Deploy CAPTCHAs (blocked requests): "ক্যাপচা স্থাপন করুন (অবরুদ্ধ অনুরোধের জন্য)"
  Deploy CAPTCHAs (non-blocked requests): "ক্যাপচা স্থাপন করুন (অ-অবরুদ্ধ অনুরোধের জন্য)"
  Execute IP tracking: "আইপি ট্র্যাকিং চালান"
@@ -940,6 +942,7 @@ stages:
  Execute webhooks: "ওয়েবহুক চালান"
  Generate output (blocked requests): "আউটপুট তৈরি করুন (অবরুদ্ধ অনুরোধের জন্য)"
  Prepare fields for output and logs: "আউটপুট এবং লগের জন্য ক্ষেত্র প্রস্তুত করুন"
+ Process email trigger notification queue: "ইমেল ট্রিগার বিজ্ঞপ্তি সারি প্রক্রিয়া করুন"
  Redirect according to auxiliary rules: "অক্সিলিয়ারি নিয়মগুলি অনুযায়ী পুনর্নির্দেশ"
  Terminate the request (blocked requests): "অনুরোধটি বন্ধ করুন (অবরুদ্ধ অনুরোধের জন্য)"
  Update statistics: "পরিসংখ্যান আপডেট করুন"
@@ -947,7 +950,7 @@ stages:
 state_fixer: "%2$s %1$s।"
 state_fixer_changed: "%s পরিবর্তন করা হয়েছে"
 state_fixer_seconds: "%s সেকেন্ডের মধ্যে"
-state_sl_totals: "মোট (স্বাক্ষর: %s – স্বাক্ষর বিভাগ: %s – স্বাক্ষর ফাইল: %s – Unique section tags: %s)।"
+state_sl_totals: "মোট (স্বাক্ষর: %s – স্বাক্ষর বিভাগ: %s – স্বাক্ষর ফাইল: %s – অনন্য বিভাগের ট্যাগ: %s)।"
 state_tracking: "বর্তমানে %s আইপি ঠিকানাগুলি ট্র্যাকিং করছে।"
 switch-descending-order-set-false: "ঊর্ধ্বগামী ক্রম অনুসারে বাছাই করুন"
 switch-descending-order-set-true: "নিম্নাভিমুখ ক্রম অনুসারে বাছাই করুন"

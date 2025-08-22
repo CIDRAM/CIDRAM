@@ -469,6 +469,7 @@
 #### Backwards-incompatible changes.
 - Removed support for reCAPTCHA entirely; Improved hCaptcha support; Added support for Friendly Captcha and Cloudflare Turnstile (#624).
 - All CAPTCHA configuration directives have been completely reworked along with the mechanisms behind them, with better labelling and clearer descriptions than before, and unified under a singular configuration category, "captcha" (#624).
+- In the execution chain, checking whether the inbound request's IP address is blocked was previously staged under IP tracking, and processing the email trigger notification queue wasn't staged at all; both have now been given their own stages and are thus now configurable independently of other stages (#624).
 
 #### Other changes.
 - Added a macro for uninstalling any no longer available components.

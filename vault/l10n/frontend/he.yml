@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hebrew language data for the front-end (last modified: 2025.08.21).
+# This file: Hebrew language data for the front-end (last modified: 2025.08.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -456,6 +456,7 @@ hints_want_to_block: "!! סביר להניח שרוב המשתמשים ירצו 
 info_cli_by_default_ips: |
  כסטנדרט, כתובות IP נבדקות מול כל קבצי החתימה, כל המודולים, כל כללי העזר,
  כמו גם אימות עבור מנועי חיפוש ומדיה חברתית.
+ --no-ban    מונע בדיקה האם אסור.
  --no-sig    מונע בדיקה מול קבצי חתימה.
  --no-mod    מונע בדיקה מול מודולים.
  --no-sev    מונע אימות מנוע חיפוש.
@@ -933,6 +934,7 @@ response:
  please_check_config: "אנא בדוק את התצורה שלך כדי להבטיח שהמודול שהותקן לאחרונה יתנהג כפי שאתה מתכוון."
  release_notes: "<a href="%s"><span class="navicon link"></span>הערות שחרור עבור %s.</a>"
 stages:
+ Check whether banned: "בדוק האם אסור"
  Deploy CAPTCHAs (blocked requests): "פרוס CAPTCHA (בקשות חסומות)"
  Deploy CAPTCHAs (non-blocked requests): "פרוס CAPTCHA (בקשות לא חסומות)"
  Execute IP tracking: "להפעיל מעקב IP"
@@ -947,6 +949,7 @@ stages:
  Execute webhooks: "להפעיל webhooks"
  Generate output (blocked requests): "ליצור את פלט העמוד (בקשות חסומות)"
  Prepare fields for output and logs: "הכן שדות לפלט ויומנים"
+ Process email trigger notification queue: "עבד את תור ההודעות של טריגר האימייל"
  Redirect according to auxiliary rules: "הפנה מחדש לפי כללי עזר"
  Terminate the request (blocked requests): "לסיים הבקשה (בקשות חסומות)"
  Update statistics: "עדכן סטטיסטיקה"

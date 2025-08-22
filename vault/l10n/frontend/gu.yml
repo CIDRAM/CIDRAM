@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Gujarati language data for the front-end (last modified: 2025.08.21).
+# This file: Gujarati language data for the front-end (last modified: 2025.08.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -454,6 +454,7 @@ hints_want_to_block: "!! મોટાભાગના વપરાશકર્ત
 info_cli_by_default_ips: |
  ડિફૉલ્ટ રૂપે, IP સરનામાંનો તમામ સિગ્નેચર ફાઇલો, બધા મોડ્યુલો, તમામ સહાયક
  નિયમો, અને સોશિયલ મીડિયા અને સર્ચ એન્જિન ચકાસણી સામે પરીક્ષણ કરવામાં આવે છે.
+ --no-ban    પ્રતિબંધિત છે કે નહીં તે તપાસતા અટકાવે છે.
  --no-sig    સિગ્નેચર ફાઇલો સામે પરીક્ષણ અટકાવે છે.
  --no-mod    મોડ્યુલો સામે પરીક્ષણ અટકાવે છે.
  --no-sev    શોધ એન્જિન વેરિફિકેશન અટકાવે છે.
@@ -935,6 +936,7 @@ response:
  please_check_config: "મહેરબાની કરીને તમારું રૂપરેખાંકન તપાસો તેની ખાતરી કરવા માટે કે નવું ઇન્સ્ટોલ કરેલ મોડ્યુલ તમે ઇચ્છો તે પ્રમાણે વર્તે."
  release_notes: "<a href="%s"><span class="navicon link"></span>%s માટે પ્રકાશન નોંધો.</a>"
 stages:
+ Check whether banned: "પ્રતિબંધિત છે કે નહીં તે તપાસો"
  Deploy CAPTCHAs (blocked requests): "કેપ્ચા દર્શાવો (અવરોધિત વિનંતીઓ)"
  Deploy CAPTCHAs (non-blocked requests): "કેપ્ચા દર્શાવો (બિન-અવરોધિત વિનંતીઓ)"
  Execute IP tracking: "IP ટ્રેકિંગ ચલાવો"
@@ -949,6 +951,7 @@ stages:
  Execute webhooks: "વેબહુક્સ ચલાવો"
  Generate output (blocked requests): "આઉટપુટ જનરેટ કરો (અવરોધિત વિનંતીઓ)"
  Prepare fields for output and logs: "આઉટપુટ અને લોગ માટે ક્ષેત્રો તૈયાર કરો"
+ Process email trigger notification queue: "ઇમેઇલ ટ્રિગર સૂચના કતાર પર પ્રક્રિયા કરો"
  Redirect according to auxiliary rules: "સહાયક નિયમો અનુસાર રીડાયરેક્ટ કરો"
  Terminate the request (blocked requests): "વિનંતીને સમાપ્ત કરો (અવરોધિત વિનંતીઓ)"
  Update statistics: "આંકડાઓ અપડેટ કરો"

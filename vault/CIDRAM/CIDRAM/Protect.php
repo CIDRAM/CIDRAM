@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2025.08.19).
+ * This file: Protect traits (last modified: 2025.08.22).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -141,9 +141,9 @@ trait Protect
         /** Instantiate report orchestrator (used by some modules). */
         $this->Reporter = new Reporter($this->Events);
 
-        /** Ban check (will split to its own stage for v4; e.g., 'BanCheck'; keeping as 'Tracking' for now to prevent BC breaks between minor/patch releases). */
-        if (isset($this->Stages['Tracking:Enable'])) {
-            $this->Stage = 'Tracking';
+        /** Check whether banned. */
+        if (isset($this->Stages['BanCheck:Enable'])) {
+            $this->Stage = 'BanCheck';
             $DoBan = false;
             if ($AtRunTimeInfractions >= $this->Configuration['signatures']['infraction_limit']) {
                 $DoBan = true;
@@ -160,7 +160,6 @@ trait Protect
                 $this->BlockInfo['SignatureCount']++;
             }
             unset($DoBan);
-            $this->Stage = '';
         }
 
         if (isset($this->Stages['Tests:Enable'])) {
@@ -201,11 +200,11 @@ trait Protect
             if (isset($this->Stages['Tests:Tracking']) && $this->BlockInfo['SignatureCount'] !== $Before) {
                 $this->BlockInfo['Infractions'] += $this->BlockInfo['SignatureCount'] - $Before;
             }
-            $this->Stage = '';
         }
 
         /** Perform forced hostname lookup if this has been enabled. */
         if ($this->Configuration['general']['force_hostname_lookup']) {
+            $this->Stage = '';
             $this->CIDRAM['Hostname'] = $this->dnsReverse($this->BlockInfo['IPAddrResolved'] ?: $this->BlockInfo['IPAddr']);
         }
 
@@ -638,8 +637,8 @@ trait Protect
             );
         }
 
-        /** Process email trigger notification queue (will be assigned its own stage configuration for v4; delaying to prevent BC breaks between minor/patch releases). */
-        if ($this->Events->assigned('sendEmail')) {
+        /** Process email trigger notification queue. */
+        if (isset($this->Stages['TriggerNotifications:Enable']) && $this->Events->assigned('sendEmail')) {
             $this->Stage = 'TriggerNotifications';
 
             $NotificationQueue = $this->Cache->getEntry('NotificationQueue');
@@ -746,9 +745,6 @@ trait Protect
             }
             unset($ChangedState, $NotificationQueue);
         }
-
-        /** Clearing because intermediary. */
-        $this->Stage = '';
 
         /** A fix for correctly displaying LTR/RTL text. */
         if ($this->ClientL10N->Directionality !== 'rtl') {

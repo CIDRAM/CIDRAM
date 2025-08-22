@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2025.08.21).
+# This file: Polish language data for the front-end (last modified: 2025.08.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -458,6 +458,7 @@ info_cli_by_default_ips: |
  Domyślnie adresy IP są testowane pod kątem wszystkich plików podpisów,
  wszystkich modułów, wszystkich reguł pomocniczych, a także weryfikacji mediów
  społecznościowych i wyszukiwarek.
+ --no-ban    Zapobiega sprawdzeniu czy jest zbanowany.
  --no-sig    Zapobiega testowaniu plików podpisów.
  --no-mod    Zapobiega testowaniu modułów.
  --no-sev    Zapobiega weryfikację w wyszukiwarce.
@@ -946,6 +947,7 @@ response:
  please_check_config: "Sprawdź swoją konfigurację, aby upewnić się, że nowo zainstalowany moduł będzie zachowywał się zgodnie z przeznaczeniem."
  release_notes: "<a href="%s"><span class="navicon link"></span>Informacje o wersji dla %s.</a>"
 stages:
+ Check whether banned: "Sprawdź czy jest zbanowany"
  Deploy CAPTCHAs (blocked requests): "Wdróż CAPTCHAs (zablokowane żądania)"
  Deploy CAPTCHAs (non-blocked requests): "Wdróż CAPTCHAs (niezablokowane żądania)"
  Execute IP tracking: "Wykonaj śledzenie IP"
@@ -960,6 +962,7 @@ stages:
  Execute webhooks: "Wykonaj haczyki internetowe"
  Generate output (blocked requests): "Generuj dane wyjściowe (zablokowane żądania)"
  Prepare fields for output and logs: "Przygotuj pola na dane wyjściowe i logi"
+ Process email trigger notification queue: "Przetwórz kolejkę powiadomień o wyzwalaczach e-mail"
  Redirect according to auxiliary rules: "Przekieruj według reguły pomocniczych"
  Terminate the request (blocked requests): "Zatrzymać żądanie (zablokowane żądania)"
  Update statistics: "Zaktualizuj statystyki"

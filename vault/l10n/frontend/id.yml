@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2025.08.21).
+# This file: Indonesian language data for the front-end (last modified: 2025.08.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -454,6 +454,7 @@ hints_want_to_block: "!! Mayoritas pengguna mungkin ingin ini diblokir, terlepas
 info_cli_by_default_ips: |
  Sebagai standar, IP akan diuji terhadap semua file tanda tangan, semua modul,
  semua aturan tambahan, serta verifikasi media sosial dan mesin pencari.
+ --no-ban    Mencegah memeriksa apakah dilarang.
  --no-sig    Mencegah pengujian terhadap file tanda tangan.
  --no-mod    Mencegah pengujian terhadap modul.
  --no-sev    Mencegah verifikasi mesin pencari.
@@ -927,6 +928,7 @@ response:
  please_check_config: "Memeriksa konfigurasi Anda untuk memastikan bahwa modul yang baru diinstal akan berfungsi seperti yang Anda inginkan."
  release_notes: "<a href="%s"><span class="navicon link"></span>Catatan rilis untuk %s.</a>"
 stages:
+ Check whether banned: "Periksa apakah dilarang"
  Deploy CAPTCHAs (blocked requests): "Terapkan CAPTCHA (permintaan yang diblokir)"
  Deploy CAPTCHAs (non-blocked requests): "Terapkan CAPTCHA (permintaan yang tidak diblokir)"
  Execute IP tracking: "Jalankan pelacakan IP"
@@ -941,6 +943,7 @@ stages:
  Execute webhooks: "Jalankan webhook"
  Generate output (blocked requests): "Menghasilkan keluaran (permintaan yang diblokir)"
  Prepare fields for output and logs: "Siapkan bidang untuk keluaran dan log"
+ Process email trigger notification queue: "Memproses antrean notifikasi pemicu email"
  Redirect according to auxiliary rules: "Arahkan ulang sesuai dengan aturan tambahan"
  Terminate the request (blocked requests): "Hentikan permintaan (permintaan yang diblokir)"
  Update statistics: "Memperbarui statistik"

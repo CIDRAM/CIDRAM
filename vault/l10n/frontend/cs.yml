@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Czech language data for the front-end (last modified: 2025.08.21).
+# This file: Czech language data for the front-end (last modified: 2025.08.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -458,6 +458,7 @@ info_cli_by_default_ips: |
  Standardně jsou IP adresy testovány proti všem podpisovým souborům, všem
  modulům, všem pomocným pravidlům, a proti ověření na sociálních sítích a
  vyhledávačích.
+ --no-ban    Zabraňuje kontrole zda je zakázáno.
  --no-sig    Zabraňuje testování proti souborům podpisů.
  --no-mod    Zabraňuje testování proti modulům.
  --no-sev    Zabraňuje ověření vyhledávačem.
@@ -944,6 +945,7 @@ response:
  please_check_config: "Zkontrolujte prosím svou konfiguraci, abyste se ujistili že se nově nainstalovaný modul bude chovat tak, jak zamýšlíte."
  release_notes: "<a href="%s"><span class="navicon link"></span>Poznámky k vydání pro %s.</a>"
 stages:
+ Check whether banned: "Zkontrolujte zda je zakázáno"
  Deploy CAPTCHAs (blocked requests): "Nasaďte CAPTCHA (zablokované požadavky)"
  Deploy CAPTCHAs (non-blocked requests): "Nasaďte CAPTCHA (neblokované požadavky)"
  Execute IP tracking: "Proveďte sledování IP"
@@ -958,6 +960,7 @@ stages:
  Execute webhooks: "Proveďte webhooky"
  Generate output (blocked requests): "Generovat výstup (zablokované požadavky)"
  Prepare fields for output and logs: "Připravte pole pro výstup a protokoly"
+ Process email trigger notification queue: "Zpracování fronty oznámení o aktivaci e-mailu"
  Redirect according to auxiliary rules: "Přesměrování podle pomocných pravidel"
  Terminate the request (blocked requests): "Ukončete požadavek (zablokované požadavky)"
  Update statistics: "Aktualizujte statistiky"

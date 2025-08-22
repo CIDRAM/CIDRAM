@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Punjabi language data for the front-end (last modified: 2025.08.21).
+# This file: Punjabi language data for the front-end (last modified: 2025.08.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -455,6 +455,7 @@ info_cli_by_default_ips: |
  ਡਿਫਾਲਟ ਦੇ ਤੌਰ ਤੇ, IP ਪਤਿਆਂ ਦੀ ਜਾਂਚ ਸਾਰੀਆਂ ਦਸਤਖਤ ਫਾਈਲਾਂ, ਸਾਰੇ ਮਾਡਿਊਲਾਂ,
  ਸਾਰੇ ਸਹਾਇਕ ਨਿਯਮਾਂ, ਅਤੇ ਸੋਸ਼ਲ ਮੀਡੀਆ ਅਤੇ ਖੋਜ ਇੰਜਣ ਤਸਦੀਕ ਦੇ ਵਿਰੁੱਧ ਕੀਤੀ ਜਾਂਦੀ
  ਹੈ।
+ --no-ban    ਇਹ ਜਾਂਚ ਕਰਨ ਤੋਂ ਰੋਕਦਾ ਹੈ ਕਿ ਕੀ ਪਾਬੰਦੀ ਲਗਾਈ ਗਈ ਹੈ।
  --no-sig    ਦਸਤਖਤ ਫਾਈਲਾਂ ਦੇ ਵਿਰੁੱਧ ਜਾਂਚ ਨੂੰ ਰੋਕਦਾ ਹੈ।
  --no-mod    ਮੋਡੀਊਲ ਦੇ ਵਿਰੁੱਧ ਟੈਸਟਿੰਗ ਨੂੰ ਰੋਕਦਾ ਹੈ।
  --no-sev    ਖੋਜ ਇੰਜਣ ਤਸਦੀਕ ਨੂੰ ਰੋਕਦਾ ਹੈ।
@@ -939,6 +940,7 @@ response:
  please_check_config: "ਕਿਰਪਾ ਕਰਕੇ ਇਹ ਯਕੀਨੀ ਬਣਾਉਣ ਲਈ ਆਪਣੀ ਕੌਂਫਿਗਰੇਸ਼ਨ ਦੀ ਜਾਂਚ ਕਰੋ ਕਿ ਨਵਾਂ ਇੰਸਟਾਲ ਕੀਤਾ ਮੋਡੀਊਲ ਤੁਹਾਡੇ ਇਰਾਦੇ ਅਨੁਸਾਰ ਵਿਹਾਰ ਕਰੇਗਾ।"
  release_notes: "<a href="%s"><span class="navicon link"></span>%s ਲਈ ਰੀਲੀਜ਼ ਨੋਟਸ।</a>"
 stages:
+ Check whether banned: "ਜਾਂਚ ਕਰੋ ਕਿ ਕੀ ਪਾਬੰਦੀ ਲਗਾਈ ਗਈ ਹੈ"
  Deploy CAPTCHAs (blocked requests): "ਕੈਪਟਚਾ ਤੈਨਾਤ ਕਰੋ (ਬਲੌਕ ਕੀਤੀਆਂ ਬੇਨਤੀਆਂ)"
  Deploy CAPTCHAs (non-blocked requests): "ਕੈਪਟਚਾ ਤੈਨਾਤ ਕਰੋ (ਗੈਰ-ਬਲੌਕ ਕੀਤੀਆਂ ਬੇਨਤੀਆਂ)"
  Execute IP tracking: "IP ਟਰੈਕਿੰਗ ਚਲਾਓ"
@@ -953,6 +955,7 @@ stages:
  Execute webhooks: "ਵੈਬਹੁੱਕ ਚਲਾਓ"
  Generate output (blocked requests): "ਆਉਟਪੁੱਟ ਤਿਆਰ ਕਰੋ (ਬਲੌਕ ਕੀਤੀਆਂ ਬੇਨਤੀਆਂ)"
  Prepare fields for output and logs: "ਆਉਟਪੁੱਟ ਅਤੇ ਲੌਗਸ ਲਈ ਖੇਤਰ ਤਿਆਰ ਕਰੋ"
+ Process email trigger notification queue: "ਈਮੇਲ ਟ੍ਰਿਗਰ ਸੂਚਨਾ ਕਤਾਰ ਦੀ ਪ੍ਰਕਿਰਿਆ ਕਰੋ"
  Redirect according to auxiliary rules: "ਸਹਾਇਕ ਨਿਯਮਾਂ ਅਨੁਸਾਰ ਰੀਡਾਇਰੈਕਟ ਕਰੋ"
  Terminate the request (blocked requests): "ਬੇਨਤੀ ਨੂੰ ਖਤਮ ਕਰੋ (ਬਲੌਕ ਕੀਤੀਆਂ ਬੇਨਤੀਆਂ)"
  Update statistics: "ਅੰਕੜੇ ਅੱਪਡੇਟ ਕਰੋ"

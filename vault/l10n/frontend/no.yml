@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2025.08.21).
+# This file: Norwegian language data for the front-end (last modified: 2025.08.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -142,7 +142,7 @@ config:
  bgpview_blocked_ccs: &ConfigBlockedCCs "En liste over land (identifisert av deres {{Links.ISO.3166}} 2-sifrede landskoder) som skal blokkeres når de matchet av modulen."
  bgpview_whitelisted_asns: &ConfigWhitelistedASNs "En liste over ASNer som skal hvitelistes når de matchet av modulen."
  bgpview_whitelisted_ccs: &ConfigWhitelistedCCs "En liste over land (identifisert av deres {{Links.ISO.3166}} 2-sifrede landskoder) som skal hvitelistes når de matchet av modulen."
- bobuam: "Konfigurasjon for den valgfrie «bot eller nettleser brukeragentmodul», som oppdager uønskede roboter, gamle nettlesere, og utfører noen sikkerhetskontroll."
+ bobuam: "Konfigurasjon for den valgfrie «bot eller nettleser brukeragentmodul», som oppdager uønskede roboter, gamle nettlesere, og utfører noen forstandssjekker."
  bobuam_block_bots: "Blokkere roboter gjenkjent som ondsinnet eller uønsket?"
  bobuam_block_eol_browsers: "Blokkere nettlesere som har nådd slutten av livet? (Angi versjonene nedenfor)."
  bobuam_chrome: "Laveste tillatte versjon av «Chrome/Chromium»-tokenet. Anbefalt: {{BOBUAM Token.Chrome}}."
@@ -454,6 +454,7 @@ hints_want_to_block: "!! De fleste brukere vil sannsynligvis at dette skal blokk
 info_cli_by_default_ips: |
  Som standard testes IPer mot alle signaturfiler, alle moduler, alle
  tilleggsregler, samt sosiale medier og søkemotor verifisering.
+ --no-ban    Hindrer sjekker om det er utestengt.
  --no-sig    Hindrer testing mot signaturfiler.
  --no-mod    Hindrer testing mot moduler.
  --no-sev    Hindrer verifisering av søkemotorer.
@@ -611,7 +612,7 @@ label:
  Ignore this: "Ignorere dette"
  Import: "Importer"
  Installed Available: "Installert/Tilgjengelig"
- Integrity check: "Integritetskontroll:"
+ Integrity check: "Integritetssjekker:"
  Intersect: "Krysset"
  Inverted: "Invertert"
  Invisible: "Usynlig"
@@ -662,7 +663,7 @@ label:
  Requests reported to external APIs: "Forespørsler rapportert til eksterne APIer"
  SAPI used: "SAPI brukt:"
  Safety mechanisms: "Sikkerhetsmekanismer"
- Sanity check: "Sikkerhetskontroll:"
+ Sanity check: "Forstandssjekker:"
  Search Engine: "Søkemotor"
  See also: "Se også:"
  Selected log file doesn_t exist: "Utvalgte loggfilen finnes ikke!"
@@ -935,9 +936,10 @@ response:
  Wrong endpoint: "Feil sluttpunkt!"
  _No: "Nei"
  _Yes: "Ja"
- please_check_config: "Kontroller konfigurasjonen for å sikre at den nylig installerte modulen vil oppføre seg slik du har tenkt deg."
+ please_check_config: "Sjekk konfigurasjonen for å sikre at den nylig installerte modulen vil oppføre seg slik du har tenkt deg."
  release_notes: "<a href="%s"><span class="navicon link"></span>Utgivelsesnotater for %s.</a>"
 stages:
+ Check whether banned: "Sjekk om det er utestengt"
  Deploy CAPTCHAs (blocked requests): "Vis CAPTCHA (blokkerte forespørsler)"
  Deploy CAPTCHAs (non-blocked requests): "Vis CAPTCHA (ikke-blokkerte forespørsler)"
  Execute IP tracking: "Utfør IP-sporing"
@@ -952,6 +954,7 @@ stages:
  Execute webhooks: "Utfør webhooks"
  Generate output (blocked requests): "Generer utgang (blokkerte forespørsler)"
  Prepare fields for output and logs: "Klargjør felt for utgang og logger"
+ Process email trigger notification queue: "Behandle køen med e-poster om utløservarsler"
  Redirect according to auxiliary rules: "Omdirigere i henhold til tilleggsregler"
  Terminate the request (blocked requests): "Avslutt forespørselen (blokkerte forespørsler)"
  Update statistics: "Oppdater statistikk"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2025.08.21).
+# This file: Turkish language data for the front-end (last modified: 2025.08.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -455,6 +455,7 @@ info_cli_by_default_ips: |
  Varsayılan olarak, IP'ler tüm imza dosyalarına, tüm modüllere, tüm yardımcı
  kurallara, ve ayrıca sosyal medya ve arama motoru doğrulamasına karşı test
  edilir.
+ --no-ban    Yasak olup olmadığının kontrol edilmesini önler.
  --no-sig    İmza dosyalarına karşı test yapılmasını önler.
  --no-mod    Modüllere karşı test yapılmasını önler.
  --no-sev    Arama motoru doğrulamasını önler.
@@ -934,6 +935,7 @@ response:
  please_check_config: "Yeni kurulan modülün istediğiniz gibi davrandığından emin olmak için lütfen yapılandırmanızı kontrol edin."
  release_notes: "<a href="%s"><span class="navicon link"></span>%s için sürüm notları.</a>"
 stages:
+ Check whether banned: "Yasak olup olmadığını kontrol edin"
  Deploy CAPTCHAs (blocked requests): "CAPTCHA'ları göster (engellenen istekler)"
  Deploy CAPTCHAs (non-blocked requests): "CAPTCHA'ları göster (engellenmeyen istekler)"
  Execute IP tracking: "IP izlemeyi yürütün"
@@ -948,6 +950,7 @@ stages:
  Execute webhooks: "Web kancalarını yürütün"
  Generate output (blocked requests): "Çıktı oluştur (engellenen istekler)"
  Prepare fields for output and logs: "Çıktı ve günlükler için alanları hazırlayın"
+ Process email trigger notification queue: "E-posta tetikleyici bildirim kuyruğunu işle"
  Redirect according to auxiliary rules: "Yardımcı kurallara göre yönlendirme"
  Terminate the request (blocked requests): "İsteği sonlandır (engellenen istekler)"
  Update statistics: "İstatistikleri güncelle"

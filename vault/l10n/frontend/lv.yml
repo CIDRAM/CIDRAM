@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2025.08.21).
+# This file: Latvian language data for the front-end (last modified: 2025.08.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -457,6 +457,7 @@ info_cli_by_default_ips: |
  Pēc noklusējuma IP tiek pārbaudīti attiecībā pret visiem paraksta failiem,
  visiem moduļiem, visiem palīgnoteikumiem, kā arī sociālo mediju un
  meklētājprogrammu verifikāciju.
+ --no-ban    Novērš pārbaudīt, vai ir aizliegts.
  --no-sig    Novērš testēšanu pret paraksta failiem.
  --no-mod    Novērš testēšanu pret moduļiem.
  --no-sev    Novērš meklētājprogrammas verifikāciju.
@@ -938,6 +939,7 @@ response:
  please_check_config: "Lūdzu, pārbaudiet konfigurāciju, lai pārliecinātos, ka tikko instalētais modulis rīkosies atbilstoši iecerētajam."
  release_notes: "<a href="%s"><span class="navicon link"></span>Piezīmes par %s.</a>"
 stages:
+ Check whether banned: "Pārbaudiet, vai ir aizliegts"
  Deploy CAPTCHAs (blocked requests): "Izvietojiet CAPTCHA (bloķēti pieprasījumi)"
  Deploy CAPTCHAs (non-blocked requests): "Izvietojiet CAPTCHA (nebloķēti pieprasījumi)"
  Execute IP tracking: "Izpildīt IP izsekošanu"
@@ -952,6 +954,7 @@ stages:
  Execute webhooks: "Izpildīt tīmekļa āķis"
  Generate output (blocked requests): "Ģenerēt izvadi (bloķēti pieprasījumi)"
  Prepare fields for output and logs: "Sagatavojiet laukus izvadei un žurnāliem"
+ Process email trigger notification queue: "Apstrādāt e-pasta aktivizēšanas paziņojumu rindu"
  Redirect according to auxiliary rules: "Pāradresēt saskaņā ar palīgnoteikumiem"
  Terminate the request (blocked requests): "Pārtrauciet pieprasījumu (bloķēti pieprasījumi)"
  Update statistics: "Atjaunināt statistiku"

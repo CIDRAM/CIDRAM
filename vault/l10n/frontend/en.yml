@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2025.08.21).
+# This file: English language data for the front-end (last modified: 2025.08.22).
 ##/
 
 Abuse category:
@@ -486,6 +486,7 @@ hints_want_to_block: "!! Most users will likely want this to be blocked, regardl
 info_cli_by_default_ips: |
  By default, IPs are tested against all signature files, all modules, all
  auxiliary rules, *and* against social media and search engine verification.
+ --no-ban    Prevents checking whether banned.
  --no-sig    Prevents testing against signature files.
  --no-mod    Prevents testing against modules.
  --no-sev    Prevents search engine verification.
@@ -968,6 +969,7 @@ response:
  please_check_config: "Please check your configuration in order to ensure that the newly installed module will behave as you intend."
  release_notes: "<a href="%s"><span class="navicon link"></span>Release notes for %s.</a>"
 stages:
+ Check whether banned: "Check whether banned"
  Deploy CAPTCHAs (blocked requests): "Deploy CAPTCHAs (blocked requests)"
  Deploy CAPTCHAs (non-blocked requests): "Deploy CAPTCHAs (non-blocked requests)"
  Execute IP tracking: "Execute IP tracking"
@@ -982,6 +984,7 @@ stages:
  Execute webhooks: "Execute webhooks"
  Generate output (blocked requests): "Generate output (blocked requests)"
  Prepare fields for output and logs: "Prepare fields for output and logs"
+ Process email trigger notification queue: "Process email trigger notification queue"
  Redirect according to auxiliary rules: "Redirect according to auxiliary rules"
  Terminate the request (blocked requests): "Terminate the request (blocked requests)"
  Update statistics: "Update statistics"

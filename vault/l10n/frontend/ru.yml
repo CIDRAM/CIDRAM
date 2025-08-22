@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2025.08.21).
+# This file: Russian language data for the front-end (last modified: 2025.08.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -463,6 +463,7 @@ info_cli_by_default_ips: |
  Стандартно IP-адреса проверяются на соответствие всем файлам сигнатурам, всем
  модулям, всем вспомогательным правилам, а также проверке в социальных сетях и
  поисковых системах.
+ --no-ban    Предотвращает проверить, запрещен ли он.
  --no-sig    Предотвращает тестирование файлов сигнатурей.
  --no-mod    Предотвращает тестирование модулей.
  --no-sev    Предотвращает проверку в поисковых системах.
@@ -952,6 +953,7 @@ response:
  please_check_config: "Пожалуйста, проверьте свою конфигурацию, чтобы убедиться, что вновь установленный модуль будет вести себя должным образом."
  release_notes: "<a href="%s"><span class="navicon link"></span>Примечания к выпуску для %s.</a>"
 stages:
+ Check whether banned: "Проверьте, запрещены ли"
  Deploy CAPTCHAs (blocked requests): "Развертывание CAPTCHA (заблокированные запросы)"
  Deploy CAPTCHAs (non-blocked requests): "Развертывание CAPTCHA (незаблокированные запросы)"
  Execute IP tracking: "Выполнить отслеживание IP"
@@ -966,6 +968,7 @@ stages:
  Execute webhooks: "Выполнить веб-крючков"
  Generate output (blocked requests): "Генерация выводных (заблокированные запросы)"
  Prepare fields for output and logs: "Подготовить поля для вывода и журналов"
+ Process email trigger notification queue: "Обработать очередь уведомлений о триггерах по электронной почте"
  Redirect according to auxiliary rules: "Редирект по вспомогательным правилам"
  Terminate the request (blocked requests): "Прекращать запрос (заблокированные запросы)"
  Update statistics: "Обновить статистику"

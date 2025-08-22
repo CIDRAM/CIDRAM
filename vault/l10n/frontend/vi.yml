@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2025.08.21).
+# This file: Vietnamese language data for the front-end (last modified: 2025.08.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -455,6 +455,7 @@ info_cli_by_default_ips: |
  Theo mặc định, các IP được kiểm tra dựa trên tất cả các tập tin chữ ký, tất cả
  các mô-đun, tất cả các quy tắc phụ trợ, cũng như xác minh truyền thông xã hội
  và máy tìm kiếm.
+ --no-ban    Ngăn chặn việc kiểm tra xem có bị cấm hay không.
  --no-sig    Ngăn chặn thử nghiệm đối với các tập tin chữ ký.
  --no-mod    Ngăn chặn thử nghiệm đối với các mô-đun.
  --no-sev    Ngăn chặn xác minh máy tìm kiếm.
@@ -929,6 +930,7 @@ response:
  please_check_config: "Vui lòng kiểm tra cấu hình của bạn để đảm bảo rằng mô-đun mới được cài đặt sẽ hoạt động như bạn dự định."
  release_notes: "<a href="%s"><span class="navicon link"></span>Ghi chú phát hành cho %s.</a>"
 stages:
+ Check whether banned: "Kiểm tra xem có bị cấm hay không"
  Deploy CAPTCHAs (blocked requests): "Triển khai CAPTCHA (yêu cầu bị chặn)"
  Deploy CAPTCHAs (non-blocked requests): "Triển khai CAPTCHA (yêu cầu không bị chặn)"
  Execute IP tracking: "Thực hiện giám sát IP"
@@ -943,6 +945,7 @@ stages:
  Execute webhooks: "Thực hiện webhook"
  Generate output (blocked requests): "Tạo đầu ra (yêu cầu bị chặn)"
  Prepare fields for output and logs: "Chuẩn bị các trường cho đầu ra và nhật ký"
+ Process email trigger notification queue: "Xử lý hàng đợi thông báo kích hoạt email"
  Redirect according to auxiliary rules: "Chuyển hướng theo các quy tắc phụ trợ"
  Terminate the request (blocked requests): "Chấm dứt yêu cầu (yêu cầu bị chặn)"
  Update statistics: "Cập nhật số liệu thống kê"

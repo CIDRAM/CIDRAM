@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2025.08.21).
+# This file: Swedish language data for the front-end (last modified: 2025.08.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -454,6 +454,7 @@ hints_want_to_block: "!! De flesta användare kommer förmodligen att vilja att 
 info_cli_by_default_ips: |
  Som standard testas IPer mot alla signaturfiler, alla moduler, alla
  hjälpregler, samt verifiering av sociala medier och sökmotorer.
+ --no-ban    Förhindrar kontroll av om det är förbjudet.
  --no-sig    Förhindrar testning mot signaturfiler.
  --no-mod    Förhindrar testning mot moduler.
  --no-sev    Förhindrar verifiering av sökmotorer.
@@ -613,7 +614,7 @@ label:
  Ignore this: "Ignorera detta"
  Import: "Importera"
  Installed Available: "Installerad/Tillgängliga"
- Integrity check: "Integritetskontroll:"
+ Integrity check: "Integritetssjekker:"
  Intersect: "Skärningspunkten"
  Inverted: "Omvänd"
  Invisible: "Osynlig"
@@ -940,6 +941,7 @@ response:
  please_check_config: "Kontrollera din konfiguration för att säkerställa att den nyligen installerade modulen fungerar som du tänker."
  release_notes: "<a href="%s"><span class="navicon link"></span>Utgivningsinformation för %s.</a>"
 stages:
+ Check whether banned: "Kontrollera om det är förbjudet"
  Deploy CAPTCHAs (blocked requests): "Visa CAPTCHAs (blockerade förfrågningar)"
  Deploy CAPTCHAs (non-blocked requests): "Visa CAPTCHAs (icke-blockerade förfrågningar)"
  Execute IP tracking: "Utför IP-spårning"
@@ -954,6 +956,7 @@ stages:
  Execute webhooks: "Utför webhooks"
  Generate output (blocked requests): "Generera utdata (blockerade förfrågningar)"
  Prepare fields for output and logs: "Förbered fält för utdata och loggar"
+ Process email trigger notification queue: "Bearbeta kön med e-postmeddelanden om utlösare"
  Redirect according to auxiliary rules: "Omdirigera enligt hjälpregler"
  Terminate the request (blocked requests): "Avsluta begäran (blockerade förfrågningar)"
  Update statistics: "Uppdatera statistik"

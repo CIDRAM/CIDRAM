@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2025.08.21).
+# This file: Urdu language data for the front-end (last modified: 2025.08.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -454,6 +454,7 @@ hints_want_to_block: "!! اصلی یا جعلی، کسی بھی طرح سے، ز
 info_cli_by_default_ips: |
  عام طور پر، IP کی جانچ تمام دستخطی فائلوں، تمام ماڈیولز، تمام معاون قواعد،
  اور سوشل میڈیا اور سرچ انجنوں کی تصدیق کے خلاف کی جاتی ہے.
+ --no-ban    یہ چیک کرنے سے روکتا ہے کہ آیا اس پر پابندی ہے.
  --no-sig    دستخطی فائلوں کے خلاف جانچ کو روکتا ہے.
  --no-mod    ماڈیولز کے خلاف جانچ کو روکتا ہے.
  --no-sev    سرچ انجن کی تصدیق کو روکتا ہے.
@@ -933,6 +934,7 @@ response:
  please_check_config: "کنفیگریشن کی جانچ پڑتال کریں تاکہ یہ یقینی بنایا جاسکے کہ نیا نصب شدہ ماڈیول جس طرح کا سلوک کرے گا."
  release_notes: "<a href="%s"><span class="navicon link"></span>%s کے لیے نوٹ جاری کریں.</a>"
 stages:
+ Check whether banned: "چیک کریں کہ آیا پابندی لگائی گئی ہے"
  Deploy CAPTCHAs (blocked requests): "CAPTCHA تعینات کریں (بلاک شدہ درخواستیں)"
  Deploy CAPTCHAs (non-blocked requests): "CAPTCHA تعینات کریں (غیر مسدود درخواستیں)"
  Execute IP tracking: "IP ٹریکنگ پر عمل کریں"
@@ -947,6 +949,7 @@ stages:
  Execute webhooks: "ویب ہکس پر عمل کریں"
  Generate output (blocked requests): "آؤٹ پٹ پیدا کریں (بلاک شدہ درخواستیں)"
  Prepare fields for output and logs: "آؤٹ پٹ اور لاگز کے لیے فیلڈز تیار کریں"
+ Process email trigger notification queue: "ای میل ٹرگر اطلاع کی قطار پر کارروائی کریں"
  Redirect according to auxiliary rules: "معاون قوانین کے مطابق ری ڈائریکٹ کریں"
  Terminate the request (blocked requests): "درخواست کو ختم کریں (بلاک شدہ درخواستیں)"
  Update statistics: "اعداد و شمار کو اپ ڈیٹ کریں"

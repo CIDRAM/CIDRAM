@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The IP testing page (last modified: 2025.08.14).
+ * This file: The IP testing page (last modified: 2025.08.22).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -33,6 +33,7 @@ $this->FE['IPTestResults'] = '';
 
 /** Switches for which stages to enable for the IP test. */
 if (isset($_POST['ip-addr'])) {
+    $BanCheckSwitch = !empty($_POST['BanCheckSwitch']);
     $TestsSwitch = !empty($_POST['TestsSwitch']);
     $ModuleSwitch = !empty($_POST['ModuleSwitch']);
     $SEVSwitch = !empty($_POST['SEVSwitch']);
@@ -40,6 +41,7 @@ if (isset($_POST['ip-addr'])) {
     $OVSwitch = !empty($_POST['OVSwitch']);
     $AuxSwitch = !empty($_POST['AuxSwitch']);
 } else {
+    $BanCheckSwitch = true;
     $TestsSwitch = true;
     $ModuleSwitch = false;
     $SEVSwitch = false;
@@ -47,6 +49,7 @@ if (isset($_POST['ip-addr'])) {
     $OVSwitch = false;
     $AuxSwitch = false;
 }
+$this->FE['BanCheckSwitch'] = $BanCheckSwitch ? ' checked' : '';
 $this->FE['TestsSwitch'] = $TestsSwitch ? ' checked' : '';
 $this->FE['ModuleSwitch'] = $ModuleSwitch ? ' checked' : '';
 $this->FE['SEVSwitch'] = $SEVSwitch ? ' checked' : '';
@@ -110,7 +113,7 @@ if (isset($_POST['ip-addr'])) {
             continue;
         }
         $HasError = false;
-        $this->simulateBlockEvent($this->CIDRAM['ThisIP']['IPAddress'], $TestsSwitch, $ModuleSwitch, $SEVSwitch, $SMVSwitch, $OVSwitch, $AuxSwitch);
+        $this->simulateBlockEvent($this->CIDRAM['ThisIP']['IPAddress'], $BanCheckSwitch, $TestsSwitch, $ModuleSwitch, $SEVSwitch, $SMVSwitch, $OVSwitch, $AuxSwitch);
         if (
             !empty($this->CIDRAM['Caught']) ||
             ($this->CIDRAM['TestMode'] === 1 && $TestsSwitch && (empty($this->CIDRAM['LastTestIP']) || empty($this->CIDRAM['TestResults']))) ||
@@ -203,11 +206,7 @@ if (isset($_POST['ip-addr'])) {
                 }
             }
             if ($this->BlockInfo['Ignored']) {
-                $this->CIDRAM['ThisIP']['YesNo'] .= sprintf(
-                    ', +%s (%s)',
-                    $this->L10N->getString('field.Ignored'),
-                    $this->BlockInfo['Ignored']
-                );
+                $this->CIDRAM['ThisIP']['YesNo'] .= sprintf(', +%s (%s)', $this->L10N->getString('field.Ignored'), $this->BlockInfo['Ignored']);
             }
         } elseif ($this->BlockInfo['Ignored']) {
             $this->CIDRAM['ThisIP']['YesNo'] = $this->L10N->getString('field.Blocked') . $this->L10N->getString('pair_separator') . $this->L10N->getString('response._No') . ' (' . $this->L10N->getString('field.Ignored') . ') ' . $this->BlockInfo['Ignored'];

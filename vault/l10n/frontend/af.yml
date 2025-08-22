@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Afrikaans language data for the front-end (last modified: 2025.08.21).
+# This file: Afrikaans language data for the front-end (last modified: 2025.08.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -456,6 +456,7 @@ hints_want_to_block: "!! Die meeste gebruikers sal waarskynlik wil hê dit moet 
 info_cli_by_default_ips: |
  IP's word standaard getoets teen alle handtekeninglêers, alle modules, alle
  bykomende reëls, *en* teen verifikasie vir sosiale media en soekenjins.
+ --no-ban    Voorkom kontrolering of dit verbode is.
  --no-sig    Voorkom toetsing teen handtekeninglêers.
  --no-mod    Voorkom toetsing teen modules.
  --no-sev    Voorkom verifikasie van soekenjins.
@@ -939,6 +940,7 @@ response:
  please_check_config: "Gaan asseblief jou konfigurasie na om te verseker dat die nuut geïnstalleerde module sal optree soos jy beplan."
  release_notes: "<a href="%s"><span class="navicon link"></span>Vrystellingnotas vir %s.</a>"
 stages:
+ Check whether banned: "Kontroleer of dit verbode is"
  Deploy CAPTCHAs (blocked requests): "Ontplooi CAPTCHA's (geblokkeerde versoeke)"
  Deploy CAPTCHAs (non-blocked requests): "Ontplooi CAPTCHA's (nie-geblokkeerde versoeke)"
  Execute IP tracking: "Voer IP-nasporing uit"
@@ -953,6 +955,7 @@ stages:
  Execute webhooks: "Voer webhooks uit"
  Generate output (blocked requests): "Genereer uitset (geblokkeerde versoeke)"
  Prepare fields for output and logs: "Berei velde vir uitvoer en logs"
+ Process email trigger notification queue: "Verwerk e-pos aktiveringskennisgewing waglys"
  Redirect according to auxiliary rules: "Herlei volgens bykomende reëls"
  Terminate the request (blocked requests): "Beëindig die versoek (geblokkeerde versoeke)"
  Update statistics: "Dateer statistieke op"

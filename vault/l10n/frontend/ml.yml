@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malayalam language data for the front-end (last modified: 2025.08.21).
+# This file: Malayalam language data for the front-end (last modified: 2025.08.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -457,6 +457,7 @@ info_cli_by_default_ips: |
  സ്ഥിരസ്ഥിതിയായി, എല്ലാ ഒപ്പ് ഫയലുകൾ, എല്ലാ മൊഡ്യൂളുകൾ, എല്ലാ ഓക്സിലറി
  നിയമങ്ങൾ, സോഷ്യൽ മീഡിയ പരിശോധന, തിരയൽ എഞ്ചിൻ പരിശോധന എന്നിവയ്‌ക്കെതിരെയും
  IP വിലാസങ്ങൾ പരീക്ഷിക്കപ്പെടുന്നു.
+ --no-ban    നിരോധിച്ചിട്ടുണ്ടോ എന്ന് പരിശോധിക്കുന്നത് തടയുന്നു.
  --no-sig    ഒപ്പ് ഫയലുകൾക്കെതിരായ പരിശോധന തടയുന്നു.
  --no-mod    മൊഡ്യൂളുകൾക്കെതിരായ പരിശോധന തടയുന്നു.
  --no-sev    തിരയൽ എഞ്ചിൻ പരിശോധന തടയുന്നു.
@@ -943,6 +944,7 @@ response:
  please_check_config: "പുതുതായി ഇൻസ്റ്റാൾ ചെയ്ത മൊഡ്യൂൾ നിങ്ങൾ ഉദ്ദേശിക്കുന്നതുപോലെ പ്രവർത്തിക്കുന്നുവെന്ന് ഉറപ്പാക്കാൻ ദയവായി നിങ്ങളുടെ കോൺഫിഗറേഷൻ പരിശോധിക്കുക."
  release_notes: "<a href="%s"><span class="navicon link"></span>%s-നുള്ള റിലീസ് കുറിപ്പുകൾ.</a>"
 stages:
+ Check whether banned: "നിരോധിച്ചിട്ടുണ്ടോ എന്ന് പരിശോധിക്കുക"
  Deploy CAPTCHAs (blocked requests): "CAPTCHA-കൾ വിന്യസിക്കുക (തടഞ്ഞ അഭ്യർത്ഥനകൾ)"
  Deploy CAPTCHAs (non-blocked requests): "CAPTCHA-കൾ വിന്യസിക്കുക (തടയാത്ത അഭ്യർത്ഥനകൾ)"
  Execute IP tracking: "IP ട്രാക്കിംഗ് നടപ്പിലാക്കുക"
@@ -957,6 +959,7 @@ stages:
  Execute webhooks: "വെബ്‌ഹുക്കുകൾ നടപ്പിലാക്കുക"
  Generate output (blocked requests): "ഔട്ട്പുട്ട് സൃഷ്ടിക്കുക (തടഞ്ഞ അഭ്യർത്ഥനകൾ)"
  Prepare fields for output and logs: "ഔട്ട്പുട്ടിനും ലോഗുകൾക്കുമായി ഫീൽഡുകൾ തയ്യാറാക്കുക"
+ Process email trigger notification queue: "ഇമെയിൽ ട്രിഗർ അറിയിപ്പ് ക്യൂ പ്രോസസ്സ് ചെയ്യുക"
  Redirect according to auxiliary rules: "ഓക്സിലറി നിയമങ്ങൾ അനുസരിച്ച് റീഡയറക്ട് ചെയ്യുക"
  Terminate the request (blocked requests): "അഭ്യർത്ഥന അവസാനിപ്പിക്കുക (തടഞ്ഞ അഭ്യർത്ഥനകൾ)"
  Update statistics: "സ്ഥിതിവിവരക്കണക്കുകൾ അപ്ഡേറ്റ് ചെയ്യുക"

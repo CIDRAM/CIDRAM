@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Report to AbuseIPDB page (last modified: 2024.09.17).
+ * This file: Report to AbuseIPDB page (last modified: 2025.08.22).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -64,7 +64,7 @@ for ($Iterator = 1; $Iterator < 24; $Iterator++) {
 
 if ($this->FE['address'] !== '') {
     /** Run tests. */
-    $this->simulateBlockEvent($this->FE['address'], true, false, false, false, false, true);
+    $this->simulateBlockEvent($this->FE['address'], true, true, false, false, false, false, true);
 
     /** Auto-populate based on IP profiling. */
     if (isset($_POST['populate']) && $_POST['populate'] === 'yes') {

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2025.08.21).
+# This file: Italian language data for the front-end (last modified: 2025.08.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -455,6 +455,7 @@ info_cli_by_default_ips: |
  Normalmente, gli IP vengono testati rispetto a tutti i file di firma, tutti i
  moduli, tutte le regole ausiliarie, nonché la verifica dei social media e dei
  motori di ricerca.
+ --no-ban    Impedisce di verificare se è vietato.
  --no-sig    Impedisce il test contro i file delle firme.
  --no-mod    Impedisce il test contro i moduli.
  --no-sev    Impedisce la verifica dei motori di ricerca.
@@ -716,7 +717,7 @@ label:
   Notes: "Appunti (mostrato solo in questa pagina, e non influisce sulla regola):"
   Other options and special flags: "Altre opzioni e flag speciali:"
   Requires PHPMailer: "Richiede PHPMailer."
-  Send trigger notification to the configured email notification address: "Invia notifica di innescare all'indirizzo di notifica posta elettronica configurato"
+  Send trigger notification to the configured email notification address: "Invia notifica di innescamento all'indirizzo di notifica posta elettronica configurato"
   Suppress logging: "Sopprimi la registrazione"
   Suppress output template: "Sopprima il modello di output"
   Suppress reports: "Sopprimi la rapportazione"
@@ -938,6 +939,7 @@ response:
  please_check_config: "Si prega di controllare la configurazione per assicurarsi che il modulo appena installato si comporti come previsto."
  release_notes: "<a href="%s"><span class="navicon link"></span>Note di rilascio per %s.</a>"
 stages:
+ Check whether banned: "Controlla se è vietato"
  Deploy CAPTCHAs (blocked requests): "Presenta i CAPTCHA (richieste bloccate)"
  Deploy CAPTCHAs (non-blocked requests): "Presenta i CAPTCHA (richieste non bloccate)"
  Execute IP tracking: "Esegui il tracciamento IP"
@@ -952,6 +954,7 @@ stages:
  Execute webhooks: "Esegui webhook"
  Generate output (blocked requests): "Genera output (richieste bloccate)"
  Prepare fields for output and logs: "Preparare i campi per l'output e i registri"
+ Process email trigger notification queue: "Elabora la coda di notifiche di innescamento posta elettronica"
  Redirect according to auxiliary rules: "Reindirizzamento secondo regole ausiliarie"
  Terminate the request (blocked requests): "Termina la richiesta (richieste bloccate)"
  Update statistics: "Aggiorna le statistiche"
@@ -1019,7 +1022,7 @@ tip:
  Aggregator: "L'aggregatore consente di esprimere indirizzi IP, CIDR, e maschere di rete nel modo più piccolo possibile. Inserire i dati da aggregare e premere "OK"."
  Auxiliary Rules Modes: "La modalità di visualizzazione mostra le regole ausiliarie come un elenco compatto per facilitarne la lettura. È possibile espandere le regole nell'elenco e visualizzare ulteriori dettagli cliccando su di esse. Cliccando sul trigramma (☰) verranno visualizzate le opzioni per esportare o eliminare una regola. Le regole possono essere riordinate tramite trascinamento, ovvero trascinando una regola dalla sua posizione esistente alla posizione desiderata. La modalità di modifica è necessaria per modificare le regole ausiliarie, campi modificabili e opzioni per aggiungere nuove condizioni, webhook, o altra logica alle regole secondo necessità fornite nella pagina. È possibile creare nuove regole ausiliarie tramite entrambe le modalità."
  Auxiliary Rules Priority: "Priorità (massimo➡(pari🔄equivalente)➡minore):"
- Auxiliary Rules Webhooks: "Quando viene attivata una regola, CIDRAM tenterà di notificare eventuali webhook collegati all'evento."
+ Auxiliary Rules Webhooks: "Quando viene innescata una regola, CIDRAM tenterà di notificare eventuali webhook collegati all'evento."
  Auxiliary Rules: "Puoi utilizzare questa pagina per creare, eliminare e modificare le regole ausiliarie per CIDRAM."
  Backup: "Questa pagina può essere utilizzata per importare/esportare la configurazione, le regole ausiliarie, ecc. Questa può essere utile se è necessario la migrazione dei dati tra installazioni diverse o versioni principali diverse."
  Cache Data: "Qui puoi rivedere il contenuto della cache."

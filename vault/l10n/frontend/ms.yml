@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malay language data for the front-end (last modified: 2025.08.21).
+# This file: Malay language data for the front-end (last modified: 2025.08.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -454,6 +454,7 @@ hints_want_to_block: "!! Kebanyakan pengguna mungkin mahu ini disekat, tidak kir
 info_cli_by_default_ips: |
  Sebagai standard, IP akan diuji terhadap semua fail tandatangan, semua modul,
  semua peraturan tambahan, serta pengesahan media sosial dan enjin carian.
+ --no-ban    Menghalang menyemak sama ada dilarang.
  --no-sig    Menghalang ujian terhadap fail tandatangan.
  --no-mod    Menghalang ujian terhadap modul.
  --no-sev    Menghalang pengesahan enjin carian.
@@ -930,6 +931,7 @@ response:
  please_check_config: "Sila semak konfigurasi anda untuk memastikan bahawa modul yang baru dipasang akan berfungsi seperti yang anda mahukan."
  release_notes: "<a href="%s"><span class="navicon link"></span>Nota keluaran untuk %s.</a>"
 stages:
+ Check whether banned: "Semak sama ada dilarang"
  Deploy CAPTCHAs (blocked requests): "Paparkan CAPTCHA (permintaan yang disekat)"
  Deploy CAPTCHAs (non-blocked requests): "Paparkan CAPTCHA (permintaan yang tidak disekat)"
  Execute IP tracking: "Jalankan penjejakan IP"
@@ -944,6 +946,7 @@ stages:
  Execute webhooks: "Jalankan webhook"
  Generate output (blocked requests): "Hasilkan output (permintaan yang disekat)"
  Prepare fields for output and logs: "Sediakan medan untuk output dan log"
+ Process email trigger notification queue: "Memproses baris gilir pemberitahuan pencetus e-mel"
  Redirect according to auxiliary rules: "Ubah hala mengikut peraturan tambahan"
  Terminate the request (blocked requests): "Tamatkan permintaan (permintaan yang disekat)"
  Update statistics: "Kemas kini statistik"
@@ -1004,7 +1007,7 @@ tip:
  Home: "Ini ialah halaman utama untuk bahagian hadapan CIDRAM. Pilih pautan daripada menu navigasi di sebelah kiri untuk meneruskan."
  How many infractions to incur: "Berapa banyak pelanggaran yang perlu dilakukan."
  IP Testing: "Halaman ujian IP membolehkan anda menguji sama ada alamat IP disekat oleh tandatangan yang sedang dipasang."
- IP Tracking: "Halaman penjejakan IP membolehkan anda untuk menyemak status penjejakan alamat IP, untuk menyemak yang mana antara mereka telah diharamkan, dan untuk menyahlarang/menyahjejaknya jika anda mahu berbuat demikian."
+ IP Tracking: "Halaman penjejakan IP membolehkan anda untuk menyemak status penjejakan alamat IP, untuk menyemak yang mana antara mereka telah dilarang, dan untuk menyahlarang/menyahjejaknya jika anda mahu berbuat demikian."
  Intersector: "Intersektor boleh digunakan untuk menentukan faktor sepunya daripada dua set julat."
  Logs: "Pilih fail log daripada senarai di bawah untuk melihat kandungan fail log tersebut."
  Number of seconds until it expires: "Bilangan saat sehingga tamat tempoh."

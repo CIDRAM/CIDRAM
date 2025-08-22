@@ -1,5 +1,7 @@
 general:
  stages: |
+  BanCheck:Enable
+  BanCheck:LogErrors
   Tests:Enable
   Tests:LogErrors
   Modules:Enable
@@ -29,6 +31,8 @@ general:
   Statistics:LogErrors
   Webhooks:Enable
   Webhooks:LogErrors
+  TriggerNotifications:Enable
+  TriggerNotifications:LogErrors
   PrepareFields:Enable
   PrepareFields:LogErrors
   Output:Enable

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2025.08.21).
+# This file: French language data for the front-end (last modified: 2025.08.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -504,6 +504,7 @@ info_cli_by_default_ips: |
  Par défaut, les adresses IP sont testés par rapport à tous les fichiers de
  signature, tous les modules, toutes les règles auxiliaires, ainsi que la
  vérification des médias sociaux et des moteurs de recherche.
+ --no-ban    Empêche de vérifier si c'est interdit.
  --no-sig    Empêche les tests sur les fichiers de signature.
  --no-mod    Empêche les tests sur les modules.
  --no-sev    Empêche la vérification des moteurs de recherche.
@@ -1004,6 +1005,7 @@ response:
  please_check_config: "Vérifier votre configuration afin d'assurer que le module nouvellement installé se comportera comme vous le souhaitez."
  release_notes: "<a href="%s"><span class="navicon link"></span>Notes de version pour %s.</a>"
 stages:
+ Check whether banned: "Vérifiez si c'est interdit"
  Deploy CAPTCHAs (blocked requests): "Déployer les CAPTCHAs (requêtes bloquées)"
  Deploy CAPTCHAs (non-blocked requests): "Déployer les CAPTCHAs (requêtes non bloquées)"
  Execute IP tracking: "Exécuter le surveillance d'IP"
@@ -1018,6 +1020,9 @@ stages:
  Execute webhooks: "Exécuter des webhooks"
  Generate output (blocked requests): "Générer une sortie (requêtes bloquées)"
  Prepare fields for output and logs: "Préparer les champs pour la sortie et les journaux"
+ Process email trigger notification queue:
+  fr-FR: "Traiter la file d'attente des e-mails de notification de déclenchement"
+  fr-CA: "Traiter la file d'attente des courriels de notification de déclenchement"
  Redirect according to auxiliary rules: "Rediriger selon les règles auxiliaires"
  Terminate the request (blocked requests): "Terminer la requête (requêtes bloquées)"
  Update statistics: "Mettre à jour les statistiques"

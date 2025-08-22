@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bosnian language data for the front-end (last modified: 2025.08.21).
+# This file: Bosnian language data for the front-end (last modified: 2025.08.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -458,6 +458,7 @@ info_cli_by_default_ips: |
  Standardno, IP adrese se testiraju u odnosu na sve datoteke potpisa, sve
  module, sva pomoćna pravila, i u odnosu na verifikaciju na društvenim
  mrežama i pretraživačima.
+ --no-ban    Sprečava provjeru da li je zabranjeno.
  --no-sig    Sprečava testiranje u odnosu na datoteke potpisa.
  --no-mod    Sprečava testiranje na modulima.
  --no-sev    Sprečava verifikaciju pretraživača.
@@ -947,6 +948,7 @@ response:
  please_check_config: "Provjerite svoju konfiguraciju kako biste bili sigurni da će se novoinstalirani modul ponašati kako želite."
  release_notes: "<a href="%s"><span class="navicon link"></span>Napomene o izdanju za %s.</a>"
 stages:
+ Check whether banned: "Provjerite da li je zabranjeno"
  Deploy CAPTCHAs (blocked requests): "Postavite CAPTCHA (blokirani zahtjevi)"
  Deploy CAPTCHAs (non-blocked requests): "Postavite CAPTCHA (neblokirani zahtjevi)"
  Execute IP tracking: "Izvršite IP praćenje"
@@ -961,6 +963,7 @@ stages:
  Execute webhooks: "Izvršite webhookove"
  Generate output (blocked requests): "Generiraj izlaz (blokirani zahtjevi)"
  Prepare fields for output and logs: "Pripremite polja za izlaz i dnevnike"
+ Process email trigger notification queue: "Obradi red čekanja za obavještenja o pokretanju e-pošte"
  Redirect according to auxiliary rules: "Preusmjeravanje prema pomoćnim pravilima"
  Terminate the request (blocked requests): "Prekinite zahtjev (blokirani zahtjevi)"
  Update statistics: "Ažurirajte statistiku"

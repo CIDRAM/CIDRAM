@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Ukrainian language data for the front-end (last modified: 2025.08.21).
+# This file: Ukrainian language data for the front-end (last modified: 2025.08.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -463,6 +463,7 @@ info_cli_by_default_ips: |
  Стандартно IP-адреси перевіряються на відповідність усім файлам сигнатурам,
  усім модулям, усім допоміжним правилам, а також перевірці соціальних мереж і
  пошукової системи.
+ --no-ban    Запобігає перевірці, чи заборонено.
  --no-sig    Запобігає тестуванню проти файлів сигнатур.
  --no-mod    Запобігає тестуванню проти модулів.
  --no-sev    Запобігає перевірці пошукової системи.
@@ -951,6 +952,7 @@ response:
  please_check_config: "Будь ласка, перевірте свою конфігурацію, щоб переконатися, що нещодавно встановлений модуль працюватиме так, як ви бажаєте."
  release_notes: "<a href="%s"><span class="navicon link"></span>Примітки до випуску для %s.</a>"
 stages:
+ Check whether banned: "Перевірте, чи заборонено"
  Deploy CAPTCHAs (blocked requests): "Показати CAPTCHA (запити які заблоковані)"
  Deploy CAPTCHAs (non-blocked requests): "Показати CAPTCHA (запити які не заблоковані)"
  Execute IP tracking: "Виконайте відстеження IP"
@@ -965,6 +967,7 @@ stages:
  Execute webhooks: "Виконайте веб-хуки"
  Generate output (blocked requests): "Згенерувати вихід (запити які заблоковані)"
  Prepare fields for output and logs: "Підготувати поля для виведення та журнали"
+ Process email trigger notification queue: "Обробка черги сповіщень про тригери електронною поштою"
  Redirect according to auxiliary rules: "Перенаправлення за допоміжними правилами"
  Terminate the request (blocked requests): "Припиніть запит (запити які заблоковані)"
  Update statistics: "Оновити статистику"

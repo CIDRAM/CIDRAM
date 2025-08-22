@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bulgarian language data for the front-end (last modified: 2025.08.21).
+# This file: Bulgarian language data for the front-end (last modified: 2025.08.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -462,6 +462,7 @@ info_cli_by_default_ips: |
  Стандартно IP адресите се тестват спрямо всички файлове за сигнатури, всички
  модули, всички спомагателни правила, *и* срещу проверка на социални медии и
  търсачки.
+ --no-ban    Предотвратява проверката дали е забранено.
  --no-sig    Предотвратява тестване срещу файлове със сигнатури.
  --no-mod    Предотвратява тестване срещу модули.
  --no-sev    Предотвратява проверката на търсачката.
@@ -946,6 +947,7 @@ response:
  please_check_config: "Моля, проверете вашата конфигурация, за да се уверите, че новоинсталираният модул ще се държи според вашите намерения."
  release_notes: "<a href="%s"><span class="navicon link"></span>Бележки по изданието за %s.</a>"
 stages:
+ Check whether banned: "Проверете дали е забранено"
  Deploy CAPTCHAs (blocked requests): "Разположете CAPTCHA (блокирани заявки)"
  Deploy CAPTCHAs (non-blocked requests): "Разположете CAPTCHA (неблокирани заявки)"
  Execute IP tracking: "Изпълнете IP проследяване"
@@ -960,6 +962,7 @@ stages:
  Execute webhooks: "Изпълнете уеб кукички"
  Generate output (blocked requests): "Генериране на изход (блокирани заявки)"
  Prepare fields for output and logs: "Подгответе полета за изход и регистрационни файлове"
+ Process email trigger notification queue: "Обработка на опашката за известия за задействане на имейл"
  Redirect according to auxiliary rules: "Пренасочване според спомагателни правила"
  Terminate the request (blocked requests): "Прекратете заявката (блокирани заявки)"
  Update statistics: "Актуализирайте статистиката"

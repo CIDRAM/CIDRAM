@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Galician language data for the front-end (last modified: 2025.08.21).
+# This file: Galician language data for the front-end (last modified: 2025.08.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -453,6 +453,7 @@ info_cli_by_default_ips: |
  Os enderezos IP adoitan probarse con todos os ficheiros de sinatura, todos
  os módulos, todas as regras auxiliares, e a verificación de redes sociais
  e buscadores.
+ --no-ban    Evita comprobar se está prohibido.
  --no-sig    Evita as probas con ficheiros de sinatura.
  --no-mod    Evita as probas con módulos.
  --no-sev    Evita a verificación dos buscadores.
@@ -934,6 +935,7 @@ response:
  please_check_config: "Comprobe a súa configuración para asegurarse de que o módulo recén instalado se comportará como quere."
  release_notes: "<a href="%s"><span class="navicon link"></span>Notas de publicación para %s.</a>"
 stages:
+ Check whether banned: "Comprobar se está prohibido"
  Deploy CAPTCHAs (blocked requests): "Despregar CAPTCHA (solicitudes bloqueadas)"
  Deploy CAPTCHAs (non-blocked requests): "Despregar CAPTCHA (solicitudes non bloqueadas)"
  Execute IP tracking: "Executar seguimento IP"
@@ -948,6 +950,7 @@ stages:
  Execute webhooks: "Executar webhooks"
  Generate output (blocked requests): "Xerar saída (solicitudes bloqueadas)"
  Prepare fields for output and logs: "Prepare campos para a saída e os rexistros"
+ Process email trigger notification queue: "Procesar a cola de correos electrónicos de notificación de desencadeamento"
  Redirect according to auxiliary rules: "Redirixir segundo regras auxiliares"
  Terminate the request (blocked requests): "Finalizar a solicitude (solicitudes bloqueadas)"
  Update statistics: "Actualizar estatísticas"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2025.08.21).
+# This file: Thai language data for the front-end (last modified: 2025.08.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -175,7 +175,7 @@ config:
  captcha_signature_limit: "จำนวนลายเซ็นสูงสุดที่อนุญาตก่อนที่ข้อเสนอ CAPTCHA จะถูกเพิกถอน. ค่าเริ่มต้น = 1."
  captcha_turnstile_secret: &TurnstileCred "หากต้องการใช้ Cloudflare Turnstile กับ CIDRAM คุณต้องป้อนค่าที่นี่. หากไม่ต้องการ คุณสามารถข้ามขั้นตอนนี้ได้."
  captcha_turnstile_sitekey: *TurnstileCred
- captcha_usemode: "ควรเสนอ CAPTCHA เมื่อใด? คุณสามารถระบุพฤติกรรมที่ต้องการสำหรับผู้ให้บริการที่รองรับแต่ละรายได้ที่นี่. หมายเหตุ: คำขอที่อนุญาตพิเศษหรือได้รับการยืนยันและไม่ถูกบล็อกไม่จำเป็นต้องกรอก CAPTCHA. โปรดทราบด้วย: CAPTCHAs สามารถให้การป้องกันที่เป็นประโยชน์ต่อบอทและคำขออัตโนมัติที่เป็นอันตรายหลายประเภท แต่จะไม่ให้การป้องกันมนุษย์ที่เป็นอันตราย."
+ captcha_usemode: "ควรเสนอ CAPTCHA เมื่อใด? คุณสามารถระบุพฤติกรรมที่ต้องการสำหรับผู้ให้บริการที่รองรับแต่ละรายได้ที่นี่. หมายเหตุ: คำขอที่อนุญาตพิเศษหรือได้รับการยืนยันและไม่ถูกบล็อกไม่จำเป็นต้องกรอก CAPTCHA. โปรดทราบด้วย: CAPTCHA สามารถให้การป้องกันที่เป็นประโยชน์ต่อบอทและคำขออัตโนมัติที่เป็นอันตรายหลายประเภท แต่จะไม่ให้การป้องกันมนุษย์ที่เป็นอันตราย."
  components: "การกำหนดค่าสำหรับการเปิดใช้งานและการปิดใช้งานคอมโพเนนต์ที่ใช้โดย CIDRAM. โดยปกติหน้าการอัปเดตจะจัดการสิ่งนี้ แต่สามารถจัดการได้จากที่นี่เพื่อการควบคุมที่ละเอียดยิ่งขึ้นและคอมโพเนนต์ที่กำหนดเอง."
  components_events: "ตัวจัดการเหตุการณ์. โดยปกติจะใช้เพื่อปรับเปลี่ยนพฤติกรรมภายในของ CIDRAM หรือเพื่อให้มีฟังก์ชันการทำงานเพิ่มเติม."
  components_imports: "การนำเข้า. โดยปกติจะใช้เพื่อจัดหาข้อมูลการกำหนดค่าของคอมโพเนนต์ให้กับ CIDRAM."
@@ -454,6 +454,7 @@ hints_want_to_block: "!! ของจริงหรือของปลอม 
 info_cli_by_default_ips: |
  ที่อยู่ IP ถูกทดสอบกับไฟล์ลายเซ็นทั้งหมด โมดูลทั้งหมด กฎเสริมทั้งหมด
  เช่นเดียวกับการตรวจสอบโซเชียลมีเดียและเครื่องมือค้นหา.
+ --no-ban    ป้องกันการตรวจสอบว่าถูกแบนหรือไม่.
  --no-sig    ป้องกันการทดสอบกับไฟล์ลายเซ็น.
  --no-mod    ป้องกันการทดสอบกับโมดูล.
  --no-sev    ป้องกันการตรวจสอบเครื่องมือค้นหา.
@@ -921,8 +922,9 @@ response:
  please_check_config: "ตรวจสอบการกำหนดค่าของคุณเพื่อให้แน่ใจว่าโมดูลที่ติดตั้งใหม่จะทำงานตามที่ตั้งใจไว้."
  release_notes: "<a href="%s"><span class="navicon link"></span>บันทึกประจำรุ่นสำหรับ %s.</a>"
 stages:
- Deploy CAPTCHAs (blocked requests): "ปรับใช้ CAPTCHAs (คำขอที่ถูกบล็อก)"
- Deploy CAPTCHAs (non-blocked requests): "ปรับใช้ CAPTCHAs (คำขอที่ไม่ถูกบล็อก)"
+ Check whether banned: "ตรวจสอบว่ามีการแบนหรือไม่"
+ Deploy CAPTCHAs (blocked requests): "ปรับใช้ CAPTCHA (คำขอที่ถูกบล็อก)"
+ Deploy CAPTCHAs (non-blocked requests): "ปรับใช้ CAPTCHA (คำขอที่ไม่ถูกบล็อก)"
  Execute IP tracking: "ดำเนินการติดตาม IP"
  Execute auxiliary rules: "ดำเนินการกฎเสริม"
  Execute modules: "ดำเนินการโมดูล"
@@ -935,6 +937,7 @@ stages:
  Execute webhooks: "ดำเนินการเว็บฮุค"
  Generate output (blocked requests): "สร้างผลลัพธ์ของหน้า (คำขอที่ถูกบล็อก)"
  Prepare fields for output and logs: "เตรียมฟิลด์สำหรับเอาต์พุตและบันทึก"
+ Process email trigger notification queue: "ประมวลผลคิวการแจ้งเตือนการทริกเกอร์อีเมล"
  Redirect according to auxiliary rules: "เปลี่ยนเส้นทางตามกฎเสริม"
  Terminate the request (blocked requests): "ยุติการร้องขอ (คำขอที่ถูกบล็อก)"
  Update statistics: "อัพเดทสถิติ"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Marathi language data for the front-end (last modified: 2025.08.21).
+# This file: Marathi language data for the front-end (last modified: 2025.08.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -455,6 +455,7 @@ info_cli_by_default_ips: |
  डीफॉल्टनुसार, IP पत्ते सर्व स्वाक्षरी फायली, सर्व मॉड्यूल, सर्व सहाय्यक
  नियमांविरुद्ध तपासले जातात, आणि सोशल मीडिया आणि शोध इंजिन पडताळणीच्या
  विरुद्ध तपासले.
+ --no-ban    बंदी घातली आहे की नाही हे तपासण्यास प्रतिबंधित करते.
  --no-sig    स्वाक्षरी फायलींविरुद्ध चाचणी प्रतिबंधित करते.
  --no-mod    मॉड्यूल विरुद्ध चाचणी प्रतिबंधित करते.
  --no-sev    शोध इंजिन पडताळणी प्रतिबंधित करते.
@@ -934,6 +935,7 @@ response:
  please_check_config: "नवीन स्थापित केलेले मॉड्यूल तुमच्या इच्छेनुसार वागेल याची खात्री करण्यासाठी कृपया तुमचे कॉन्फिगरेशन तपासा."
  release_notes: "<a href="%s"><span class="navicon link"></span>%s साठी प्रकाशन नोंदी.</a>"
 stages:
+ Check whether banned: "बंदी घातली आहे का ते तपासा"
  Deploy CAPTCHAs (blocked requests): "कॅप्चा तैनात करा (अवरोधित केलेल्या विनंत्या)"
  Deploy CAPTCHAs (non-blocked requests): "कॅप्चा तैनात करा (ब्लॉक न केलेल्या विनंत्या)"
  Execute IP tracking: "IP ट्रॅकिंग कार्यान्वित करा"
@@ -948,6 +950,7 @@ stages:
  Execute webhooks: "वेबहूक कार्यान्वित करा"
  Generate output (blocked requests): "आउटपुट जनरेट करा (अवरोधित केलेल्या विनंत्या)"
  Prepare fields for output and logs: "आउटपुट आणि लॉगसाठी फील्ड तयार करा"
+ Process email trigger notification queue: "ईमेल ट्रिगर सूचना रांगेवर प्रक्रिया करा"
  Redirect according to auxiliary rules: "सहाय्यक नियमांनुसार पुनर्निर्देशित करा"
  Terminate the request (blocked requests): "विनंती समाप्त करा (अवरोधित केलेल्या विनंत्या)"
  Update statistics: "आकडेवारी अपडेट करा"

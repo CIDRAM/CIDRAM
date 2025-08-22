@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2025.08.21).
+# This file: Portuguese language data for the front-end (last modified: 2025.08.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -578,6 +578,7 @@ info_cli_by_default_ips:
   Por padrão, os IPs são testados contras todos os arquivos de assinatura, todos
   os módulos, todas as regras auxiliares, bem como a verificação de mídia social
   e mecanismo de pesquisa.
+  --no-ban    Evita a verificação se foi banido.
   --no-sig    Evita testes contra os arquivos de assinatura.
   --no-mod    Evita testes contra os módulos.
   --no-sev    Evita a verificação do mecanismo de pesquisa.
@@ -588,6 +589,7 @@ info_cli_by_default_ips:
   Por padrão, os IPs são testados contras todos os arquivos de assinatura, todos
   os módulos, todas as regras auxiliares, bem como a verificação de media social
   e mecanismo de pesquisa.
+  --no-ban    Evita a verificação se foi banido.
   --no-sig    Evita testes contra os arquivos de assinatura.
   --no-mod    Evita testes contra os módulos.
   --no-sev    Evita a verificação do mecanismo de pesquisa.
@@ -1111,6 +1113,7 @@ response:
   pt-PT: "Verifique a sua configuração para garantir que o módulo recém-instalado se comporte como você deseja."
  release_notes: "<a href="%s"><span class="navicon link"></span>Notas de lançamento para %s.</a>"
 stages:
+ Check whether banned: "Verifique se está banido"
  Deploy CAPTCHAs (blocked requests): "Implantar CAPTCHAs (solicitações bloqueadas)"
  Deploy CAPTCHAs (non-blocked requests): "Implantar CAPTCHAs (solicitações não bloqueadas)"
  Execute IP tracking: "Executar monitoração de IP"
@@ -1125,6 +1128,7 @@ stages:
  Execute webhooks: "Executar webhooks"
  Generate output (blocked requests): "Gerar saída (solicitações bloqueadas)"
  Prepare fields for output and logs: "Preparar campos para saída e logs"
+ Process email trigger notification queue: "Processar a fila de notificação do desencadeamento de e-mail"
  Redirect according to auxiliary rules: "Redirecionar de acordo com regras auxiliares"
  Terminate the request (blocked requests): "Encerrar a solicitação (solicitações bloqueadas)"
  Update statistics: "Atualizar estatísticas"

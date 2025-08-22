@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2025.08.21).
+# This file: Dutch language data for the front-end (last modified: 2025.08.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -452,6 +452,7 @@ hints_want_to_block: "!! De meeste gebruikers zullen waarschijnlijk willen dat d
 info_cli_by_default_ips: |
  Standaard worden IP's getest tegen alle signatuurbestanden, alle modules, alle
  aanvullende regels, evenals verificatie van sociale media en zoekmachines.
+ --no-ban    Voorkomt controleren of het verbannen is.
  --no-sig    Voorkomt testen tegen signatuurbestanden.
  --no-mod    Voorkomt testen tegen modules.
  --no-sev    Voorkomt verificatie van zoekmachines.
@@ -936,6 +937,7 @@ response:
  please_check_config: "Controleer uw configuratie om er zeker van te zijn dat de nieuw geïnstalleerde module zich zal gedragen zoals u wilt."
  release_notes: "<a href="%s"><span class="navicon link"></span>Releaseopmerkingen voor %s.</a>"
 stages:
+ Check whether banned: "Controleer of verbannen"
  Deploy CAPTCHAs (blocked requests): "Voeg CAPTCHA's (geblokkeerde verzoeken)"
  Deploy CAPTCHAs (non-blocked requests): "Voeg CAPTCHA's (niet-geblokkeerde verzoeken)"
  Execute IP tracking: "Voer IP-tracking"
@@ -950,6 +952,7 @@ stages:
  Execute webhooks: "Voer webhooks"
  Generate output (blocked requests): "Genereren uitvoer (geblokkeerde verzoeken)"
  Prepare fields for output and logs: "Voorbereiden velden voor uitvoer en logs"
+ Process email trigger notification queue: "Verwerk de wachtrij van triggermelding e-mails"
  Redirect according to auxiliary rules: "Omleiden volgens aanvullende regels"
  Terminate the request (blocked requests): "Beëindig het verzoek (geblokkeerde verzoeken)"
  Update statistics: "Bijwerk statistieken"

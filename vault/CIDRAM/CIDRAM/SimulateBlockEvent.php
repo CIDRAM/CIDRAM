@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used to simulate block events (last modified: 2025.07.27).
+ * This file: Methods used to simulate block events (last modified: 2025.08.22).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -19,6 +19,7 @@ trait SimulateBlockEvent
      * Simulates block events (used by the IP tracking and IP test pages).
      *
      * @param string $Addr The IP address to test against.
+     * @param bool $BanCheck Switch for ban check.
      * @param bool $Tests Switch for signature file testing.
      * @param bool $Modules Switch for modules.
      * @param bool $SEV Switch for search engine verification.
@@ -27,10 +28,15 @@ trait SimulateBlockEvent
      * @param bool $Aux Switch for auxiliary rules.
      * @return void
      */
-    public function simulateBlockEvent(string $Addr, bool $Tests = true, bool $Modules = false, bool $SEV = false, bool $SMV = false, bool $OV = false, bool $Aux = false): void
+    public function simulateBlockEvent(string $Addr, bool $BanCheck, bool $Tests = true, bool $Modules = false, bool $SEV = false, bool $SMV = false, bool $OV = false, bool $Aux = false): void
     {
         $this->Stage = '';
         $ConfiguredStages = $this->Stages;
+        if ($BanCheck) {
+            $this->Stages['BanCheck:Enable'] = true;
+        } else {
+            unset($this->Stages['BanCheck:Enable']);
+        }
         if ($Tests) {
             $this->Stages['Tests:Enable'] = true;
         } else {
@@ -148,9 +154,9 @@ trait SimulateBlockEvent
         /** Instantiate report orchestrator (used by some modules). */
         $this->Reporter = new Reporter($this->Events);
 
-        /** Ban check (will split to its own stage for v4; e.g., 'BanCheck'; keeping as 'Tracking' for now to prevent BC breaks between minor/patch releases). */
-        if ($Addr !== '') {
-            $this->Stage = 'Tracking';
+        /** Check whether banned. */
+        if ($Addr !== '' && isset($this->Stages['BanCheck:Enable'])) {
+            $this->Stage = 'BanCheck';
             $DoBan = false;
             if ($this->BlockInfo['Infractions'] >= $this->Configuration['signatures']['infraction_limit']) {
                 $DoBan = true;
@@ -167,7 +173,6 @@ trait SimulateBlockEvent
                 $this->BlockInfo['SignatureCount']++;
             }
             unset($DoBan);
-            $this->Stage = '';
         }
 
         if ($Tests && $Addr !== '') {
@@ -200,11 +205,11 @@ trait SimulateBlockEvent
             }
             $this->CIDRAM['RunErrors'] = $this->CIDRAM['Errors'];
             $this->restoreErrorHandler();
-            $this->Stage = '';
         }
 
         /** Perform forced hostname lookup if this has been enabled. */
         if ($this->Configuration['general']['force_hostname_lookup']) {
+            $this->Stage = '';
             $this->CIDRAM['Hostname'] = $this->dnsReverse($this->BlockInfo['IPAddrResolved'] ?: $this->BlockInfo['IPAddr']);
         }
 
@@ -365,12 +370,12 @@ trait SimulateBlockEvent
         if (is_array($Addr)) {
             $Results = [];
             foreach ($Addr as $ThisAddr) {
-                $this->simulateBlockEvent($ThisAddr, true, $Modules, $Verification, $Verification, $Verification, $Aux);
+                $this->simulateBlockEvent($ThisAddr, true, true, $Modules, $Verification, $Verification, $Verification, $Aux);
                 $Results[$ThisAddr] = $this->BlockInfo;
             }
             return $Results;
         }
-        $this->simulateBlockEvent($Addr, true, $Modules, $Verification, $Verification, $Verification, $Aux);
+        $this->simulateBlockEvent($Addr, true, true, $Modules, $Verification, $Verification, $Verification, $Aux);
         return $this->BlockInfo;
     }
 }

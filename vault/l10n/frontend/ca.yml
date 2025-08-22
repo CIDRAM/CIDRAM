@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Catalan language data for the front-end (last modified: 2025.08.21).
+# This file: Catalan language data for the front-end (last modified: 2025.08.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -453,6 +453,7 @@ info_cli_by_default_ips: |
  Normalment, les adreces IP es comproven amb tots els fitxers de signatura,
  tots els mòduls, totes les regles auxiliars, i amb la verificació de les
  xarxes socials i del motor de cerca.
+ --no-ban    Impedeix comprovar si està prohibit.
  --no-sig    Impedeix les proves amb fitxers de signatura.
  --no-mod    Impedeix les proves amb mòduls.
  --no-sev    Impedeix la verificació dels motors de cerca.
@@ -932,6 +933,7 @@ response:
  please_check_config: "Si us plau, comproveu la vostra configuració per assegurar-vos que el mòdul recentment instal·lat es comportarà com voleu."
  release_notes: "<a href="%s"><span class="navicon link"></span>Notes de la versió per a %s.</a>"
 stages:
+ Check whether banned: "Comprova si està prohibit"
  Deploy CAPTCHAs (blocked requests): "Desplegueu CAPTCHA (sol·licituds bloquejades)"
  Deploy CAPTCHAs (non-blocked requests): "Desplegueu CAPTCHA (sol·licituds no bloquejades)"
  Execute IP tracking: "Executeu seguiment d'IP"
@@ -946,6 +948,7 @@ stages:
  Execute webhooks: "Executeu webhooks"
  Generate output (blocked requests): "Generar sortida (sol·licituds bloquejades)"
  Prepare fields for output and logs: "Prepareu camps per a la sortida i els registres"
+ Process email trigger notification queue: "Processar la cua de notificacions de desencadenant de correu electrònic"
  Redirect according to auxiliary rules: "Redirigir segons regles auxiliars"
  Terminate the request (blocked requests): "Finalitzar la sol·licitud (sol·licituds bloquejades)"
  Update statistics: "Actualitzar les estadístiques"

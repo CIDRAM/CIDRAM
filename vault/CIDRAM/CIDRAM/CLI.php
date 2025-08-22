@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CIDRAM CLI mode (last modified: 2024.05.22).
+ * This file: CIDRAM CLI mode (last modified: 2025.08.22).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -268,6 +268,7 @@ trait CLI
                     $this->CIDRAM['ModuleErrors'] = '';
                     $this->CIDRAM['AuxErrors'] = '';
                     $Results = [
+                        'BanCheck' => (strpos($ThisItem, ' --no-ban') === false),
                         'Tests' => (strpos($ThisItem, ' --no-sig') === false),
                         'Modules' => (strpos($ThisItem, ' --no-mod') === false),
                         'SEV' => (strpos($ThisItem, ' --no-sev') === false),
@@ -275,7 +276,7 @@ trait CLI
                         'OV' => (strpos($ThisItem, ' --no-ov') === false),
                         'Aux' => (strpos($ThisItem, ' --no-aux') === false)
                     ];
-                    $ThisItem = preg_replace('~( --no-(?:sig|mod|s[em]v|ov|aux))+$~', '', $ThisItem);
+                    $ThisItem = preg_replace('~( --no-(?:ban|sig|mod|s[em]v|ov|aux))+$~', '', $ThisItem);
                     $this->simulateBlockEvent($ThisItem, ...$Results);
                     if (
                         $this->CIDRAM['Caught'] ||

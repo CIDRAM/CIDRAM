@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2025.08.20).
+# This file: Defaults file (last modified: 2025.08.22).
 ##/
 
 Config Defaults:
@@ -15,6 +15,8 @@ Config Defaults:
   stages:
    type: "checkbox"
    default: |
+    BanCheck:Enable
+    BanCheck:LogErrors
     Tests:Enable
     Tests:LogErrors
     Modules:Enable
@@ -44,6 +46,8 @@ Config Defaults:
     Statistics:LogErrors
     Webhooks:Enable
     Webhooks:LogErrors
+    TriggerNotifications:Enable
+    TriggerNotifications:LogErrors
     PrepareFields:Enable
     PrepareFields:LogErrors
     Output:Enable
@@ -61,6 +65,7 @@ Config Defaults:
     LogErrors: "checkbox.Log any errors generated during this stage"
     Tracking: "checkbox.Should infractions generated during this stage count towards IP tracking"
    choices:
+    BanCheck: "stages.Check whether banned"
     Tests: "stages.Execute signature files tests"
     Modules: "stages.Execute modules"
     SearchEngineVerification: "stages.Execute search engine verification"
@@ -73,6 +78,7 @@ Config Defaults:
     Reporting: "stages.Execute reporting"
     Statistics: "stages.Update statistics"
     Webhooks: "stages.Execute webhooks"
+    TriggerNotifications: "stages.Process email trigger notification queue"
     PrepareFields: "stages.Prepare fields for output and logs"
     Output: "stages.Generate output (blocked requests)"
     WriteLogs: "stages.Write to logs (blocked requests)"
@@ -80,12 +86,14 @@ Config Defaults:
     AuxRedirect: "stages.Redirect according to auxiliary rules"
     NonBlockedCAPTCHA: "stages.Deploy CAPTCHAs (non-blocked requests)"
    nonsense: |
+    BanCheck:Tracking
     Tracking:Tracking
     RL:Tracking
     CAPTCHA:Tracking
     Reporting:Tracking
     Statistics:Tracking
     Webhooks:Tracking
+    TriggerNotifications:Tracking
     PrepareFields:Tracking
     Output:Tracking
     WriteLogs:Tracking

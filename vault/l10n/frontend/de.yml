@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2025.08.21).
+# This file: German language data for the front-end (last modified: 2025.08.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -452,6 +452,7 @@ hints_want_to_block: "!! Die meisten Benutzer möchten wahrscheinlich dass dies 
 info_cli_by_default_ips: |
  Standardmäßig werden IPs gegen alle Signaturdateien, alle Module, alle
  Hilfsregeln, sowie Social Media und Suchmaschinen Verifizierung getestet.
+ --no-ban    Verhindert die Überprüfung ob es verbannt ist.
  --no-sig    Verhindert das Testen gegen Signaturdateien.
  --no-mod    Verhindert das Testen gegen Module.
  --no-sev    Verhindert die Suchmaschinen-Verifizierung.
@@ -939,6 +940,7 @@ response:
  please_check_config: "Bitte überprüfen Sie Ihre Konfiguration um sicherzustellen dass das neu installierte Modul wie gewünscht verhält."
  release_notes: "<a href="%s"><span class="navicon link"></span>Versionshinweise für %s.</a>"
 stages:
+ Check whether banned: "Prüfen ob verbannt"
  Deploy CAPTCHAs (blocked requests): "Richten die CAPTCHAs ein (blockierte Anfragen)"
  Deploy CAPTCHAs (non-blocked requests): "Richten die CAPTCHAs ein (non-blockierte Anfragen)"
  Execute IP tracking: "IP-Tracking ausführen"
@@ -953,6 +955,7 @@ stages:
  Execute webhooks: "Webhooks ausführen"
  Generate output (blocked requests): "Ausgabe generieren (blockierte Anfragen)"
  Prepare fields for output and logs: "Bereiten Felder für Ausgabe und Protokolle"
+ Process email trigger notification queue: "Verarbeiten der Warteschlange für E-Mail-Auslösung-Benachrichtigungen"
  Redirect according to auxiliary rules: "Umleitung nach Hilfsregeln"
  Terminate the request (blocked requests): "Die Anfrage beenden (blockierte Anfragen)"
  Update statistics: "Statistiken aktualisieren"

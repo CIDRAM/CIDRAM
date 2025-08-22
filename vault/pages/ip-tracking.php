@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The IP tracking page (last modified: 2025.07.27).
+ * This file: The IP tracking page (last modified: 2025.08.22).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -142,7 +142,7 @@ if (!$this->FE['ASYNC']) {
 
         /** Check whether normally blocked by signature files and/or auxiliary rules. */
         if ($this->FE['tracking-blocked-already'] || $this->FE['tracking-aux']) {
-            $this->simulateBlockEvent($ThisTracking['IPAddr'], $this->FE['tracking-blocked-already'], false, false, false, false, $this->FE['tracking-aux']);
+            $this->simulateBlockEvent($ThisTracking['IPAddr'], true, $this->FE['tracking-blocked-already'], false, false, false, false, $this->FE['tracking-aux']);
             $ThisTracking['Blocked'] = ($this->CIDRAM['Caught'] || $this->BlockInfo['SignatureCount']);
         } else {
             $ThisTracking['Blocked'] = false;

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The IP testing page (last modified: 2025.08.22).
+ * This file: The IP testing page (last modified: 2025.08.23).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -32,7 +32,7 @@ $this->FE['IPTestRow'] = $this->readFile($this->getAssetPath('_ip_testing_row.ht
 $this->FE['IPTestResults'] = '';
 
 /** Switches for which stages to enable for the IP test. */
-if (isset($_POST['ip-addr'])) {
+if (isset($_POST['ip-addr-focus'])) {
     $BanCheckSwitch = !empty($_POST['BanCheckSwitch']);
     $TestsSwitch = !empty($_POST['TestsSwitch']);
     $ModuleSwitch = !empty($_POST['ModuleSwitch']);
@@ -60,46 +60,61 @@ $this->CIDRAM['isSensitive'] = !empty($_POST['SensitiveSwitch']);
 $this->FE['SensitiveSwitch'] = $this->CIDRAM['isSensitive'] ? ' checked' : '';
 
 /** Fetch and repopulate all fields. */
-foreach (['ip-addr', 'ip-addr-focus', 'custom-query', 'custom-referrer', 'custom-ua', 'custom-ua-focus'] as $Field) {
+foreach (['ip-addr', 'ip-addr-focus', 'custom-query', 'custom-query-focus', 'custom-referrer', 'custom-ua', 'custom-ua-focus'] as $Field) {
     $this->FE[$Field] = isset($_POST[$Field]) ? str_replace(['&', '<', '>', '"'], ['&amp;', '&lt;', '&gt;', '&quot;'], $this->desabotage($_POST[$Field])) : '';
 }
 unset($Field);
 
 /** Determine the focus. */
-if (isset($_POST['FocusSwitch']) && $_POST['FocusSwitch'] === 'UserAgent') {
+$Focus = $_POST['FocusSwitch'] ?? 'IPAddress';
+if ($Focus === 'UserAgent') {
     $this->FE['FocusSwitchIPAddress'] = '';
     $this->FE['FocusSwitchUserAgent'] = ' checked="true"';
-    $this->FE['IPTestScripting'] = '<script type="text/javascript">hideid(\'IPAddrSwitch\');hideid(\'UASwitch\');</script>';
-    $this->FE['ip-addr'] = '';
+    $this->FE['FocusSwitchQuery'] = '';
+    $this->FE['IPTestScripting'] = '<script type="text/javascript">hideid(\'IPAddrFocusSwitch\');hideid(\'UASwitch\');hideid(\'QueryFocusSwitch\')</script>';
+    $this->FE['ip-addr-focus'] = '';
     $this->FE['custom-ua'] = '';
-    $ForceUAFocus = true;
+    $this->FE['custom-query-focus'] = '';
+} elseif ($Focus === 'Query') {
+    $this->FE['FocusSwitchIPAddress'] = '';
+    $this->FE['FocusSwitchUserAgent'] = '';
+    $this->FE['FocusSwitchQuery'] = ' checked="true"';
+    $this->FE['IPTestScripting'] = '<script type="text/javascript">hideid(\'IPAddrFocusSwitch\');hideid(\'UAFocusSwitch\');hideid(\'QuerySwitch\')</script>';
+    $this->FE['ip-addr-focus'] = '';
+    $this->FE['custom-ua-focus'] = '';
+    $this->FE['custom-query'] = '';
 } else {
     $this->FE['FocusSwitchIPAddress'] = ' checked="true"';
     $this->FE['FocusSwitchUserAgent'] = '';
-    $this->FE['IPTestScripting'] = '<script type="text/javascript">hideid(\'IPAddrFocusSwitch\');hideid(\'UAFocusSwitch\');</script>';
-    $this->FE['ip-addr-focus'] = '';
+    $this->FE['FocusSwitchQuery'] = '';
+    $this->FE['IPTestScripting'] = '<script type="text/javascript">hideid(\'IPAddrSwitch\');hideid(\'UAFocusSwitch\');hideid(\'QueryFocusSwitch\')</script>';
+    $this->FE['ip-addr'] = '';
     $this->FE['custom-ua-focus'] = '';
-    $ForceUAFocus = false;
+    $this->FE['custom-query-focus'] = '';
 }
 
 /** Set field label and ascertain the mode of testing. */
-if (!$ForceUAFocus && ($this->FE['ip-addr'] !== '' || $this->FE['ip-addr-focus'] !== '' || ($this->FE['custom-ua'] === '' && $this->FE['custom-ua-focus'] === ''))) {
-    $this->FE['TestItemLabel'] = $this->L10N->getString('field.IP address');
-    $this->CIDRAM['TestMode'] = 1;
-} else {
+if ($Focus === 'Query' && $this->FE['custom-query-focus'] !== '') {
+    $this->FE['TestItemLabel'] = $this->L10N->getString('field.Query');
+    $this->CIDRAM['TestMode'] = 3;
+} elseif ($Focus === 'UserAgent' && $this->FE['custom-ua-focus'] !== '') {
     $this->FE['TestItemLabel'] = $this->L10N->getString('field.User agent');
     $this->CIDRAM['TestMode'] = 2;
+} else {
+    $this->FE['TestItemLabel'] = $this->L10N->getString('field.IP address');
+    $this->CIDRAM['TestMode'] = 1;
 }
-unset($ForceUAFocus);
 
 /** Data has been submitted for testing. */
-if (isset($_POST['ip-addr'])) {
-    if ($this->CIDRAM['TestMode'] === 1) {
+if (isset($_POST['ip-addr-focus'])) {
+    if ($this->CIDRAM['TestMode'] === 3) {
+        $Working = explode("\n", str_replace("\r", '', $this->FE['custom-query-focus']));
+    } elseif ($this->CIDRAM['TestMode'] === 2) {
+        $Working = explode("\n", str_replace("\r", '', $this->FE['custom-ua-focus']));
+    } else {
         $Working = array_unique(array_map(function ($IP) {
             return preg_replace('~[^\da-f:./]~i', '', $IP);
-        }, explode("\n", str_replace("\r", '', $this->FE['ip-addr'] ?: $this->FE['ip-addr-focus']))));
-    } else {
-        $Working = explode("\n", str_replace("\r", '', $this->FE['custom-ua'] ?: $this->FE['custom-ua-focus']));
+        }, explode("\n", str_replace("\r", '', $this->FE['ip-addr-focus'] ?: $this->FE['ip-addr']))));
     }
     natsort($Working);
     $this->CIDRAM['ThisIP'] = [];

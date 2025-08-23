@@ -105,7 +105,7 @@
                 </select><input type="button" onclick="javascript:addCondition('', this.parentElement.parentElement.parentElement.nextSibling.nextSibling.nextSibling.nextSibling.firstChild.nextSibling.firstChild.nextSibling.firstChild.nextSibling.value)" value="{field.Add more conditions} [1]" class="auto" accesskey="1" />
               </div>
               <div class="iCntn" id="conditions">
-                <div class="flexrow"><select name="conSourceType[]" class="auto" onchange="javascript:getInputSuggestions(this)">{conSources}</select><select name="conIfOrNot[]" class="auto"><option value="If" class="ifOrNot">=</option><option value="Not" class="ifOrNot">≠</option></select><input type="text" name="conSourceValue[]" placeholder="{tip.Specify a value, or leave blank to disregard}" class="flexin" onfocus="javascript:getInputSuggestions(this.previousElementSibling.previousElementSibling)" /></div><div class="suggestsInactive s"></div>
+                <div class="flexrow"><select name="conSourceType[]" class="auto" onchange="javascript:getInputSuggestions(this)">{conSources}</select><select name="conIfOrNot[]" class="auto"><option value="If" class="ifOrNot">=</option><option value="Not" class="ifOrNot">≠</option></select><input type="text" name="conSourceValue[]" placeholder="{tip.Specify a value, or leave blank to disregard}" class="flexin" onfocus="javascript:getInputSuggestions(this.previousElementSibling.previousElementSibling)" /></div><div class="suggestsInactive"></div>
               </div>
             </div>
           </li>
@@ -181,8 +181,7 @@
   </td>
 </tr>
 </table>
-<script type="text/javascript">
-const auxRuleList = document.getElementById('auxRuleList');
+<script type="text/javascript">const auxRuleList = document.getElementById('auxRuleList');
 let draggedRule = null;
 let draggedRuleName = null;
 let targetRule = null;
@@ -245,6 +244,17 @@ auxRuleList.addEventListener('dragend', () => {
   pseudoPos = document.getElementsByClassName('rulePseudoPos');
   for (iter = 0; iter < pseudoPos.length; iter++) {
     pseudoPos[iter].classList.toggle('rulePseudoPosActive');
+  }
+});
+
+const inputContainer = document.getElementById('auxForm');
+inputContainer.addEventListener('keydown', function(event) {
+  if ((event.target.matches('input[type="text"].flexin')||event.target.matches('input[type="text"].txtf'))&&event.target.value===''&&(event.keyCode===8||event.keyCode===46)) {
+    event.target.parentElement.style='display:none';
+    if (event.target.parentElement.nextSibling.className==='suggestsActive') {
+      event.target.parentElement.nextSibling.className='suggestInactive';
+      event.target.parentElement.nextSibling.innerHTML='';
+    }
   }
 });
 </script>

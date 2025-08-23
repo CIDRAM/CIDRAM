@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2025.08.10).
+ * This file: Protect traits (last modified: 2025.08.22).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -201,11 +201,11 @@ trait Protect
             if (isset($this->Stages['Tests:Tracking']) && $this->BlockInfo['SignatureCount'] !== $Before) {
                 $this->BlockInfo['Infractions'] += $this->BlockInfo['SignatureCount'] - $Before;
             }
-            $this->Stage = '';
         }
 
         /** Perform forced hostname lookup if this has been enabled. */
         if ($this->Configuration['general']['force_hostname_lookup']) {
+            $this->Stage = '';
             $this->CIDRAM['Hostname'] = $this->dnsReverse($this->BlockInfo['IPAddrResolved'] ?: $this->BlockInfo['IPAddr']);
         }
 
@@ -759,9 +759,6 @@ trait Protect
             }
             unset($ChangedState, $NotificationQueue);
         }
-
-        /** Clearing because intermediary. */
-        $this->Stage = '';
 
         /** A fix for correctly displaying LTR/RTL text. */
         if ($this->ClientL10N->Directionality !== 'rtl') {

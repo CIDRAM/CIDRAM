@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2025.08.21).
+# This file: Thai language data for the front-end (last modified: 2025.08.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -228,7 +228,7 @@ config:
  hcaptcha_show_cookie_warning: &ShowCookieWarning "แสดงคำเตือนเกี่ยวกับคุกกี้หรือไม่? True = ทำ [ค่าเริ่มต้น]; False = ไม่ทำ."
  hcaptcha_signature_limit: &CaptchaSignatureLimit "จำนวนลายเซ็นสูงสุดที่อนุญาตก่อนที่ข้อเสนอ CAPTCHA จะถูกเพิกถอน. ค่าเริ่มต้น = 1."
  hcaptcha_sitekey: *CaptchaDashboard
- hcaptcha_usemode: &CaptchaUseMode "ควรเสนอ CAPTCHA เมื่อใด? หมายเหตุ: คำขอที่อนุญาตพิเศษหรือได้รับการยืนยันและไม่ถูกบล็อกไม่จำเป็นต้องกรอก CAPTCHA. โปรดทราบด้วย: CAPTCHAs สามารถให้การป้องกันที่เป็นประโยชน์ต่อบอทและคำขออัตโนมัติที่เป็นอันตรายหลายประเภท แต่จะไม่ให้การป้องกันมนุษย์ที่เป็นอันตราย."
+ hcaptcha_usemode: &CaptchaUseMode "ควรเสนอ CAPTCHA เมื่อใด? หมายเหตุ: คำขอที่อนุญาตพิเศษหรือได้รับการยืนยันและไม่ถูกบล็อกไม่จำเป็นต้องกรอก CAPTCHA. โปรดทราบด้วย: CAPTCHA สามารถให้การป้องกันที่เป็นประโยชน์ต่อบอทและคำขออัตโนมัติที่เป็นอันตรายหลายประเภท แต่จะไม่ให้การป้องกันมนุษย์ที่เป็นอันตราย."
  ipapi: "การกำหนดค่าสำหรับโมดูล IP-API (ให้สิ่งอำนวยความสะดวกในการค้นหา ASN และรหัสประเทศสำหรับ CIDRAM)."
  ipapi_blocked_asns: *ConfigBlockedASNs
  ipapi_blocked_ccs: *ConfigBlockedCCs
@@ -928,8 +928,8 @@ response:
  please_check_config: "ตรวจสอบการกำหนดค่าของคุณเพื่อให้แน่ใจว่าโมดูลที่ติดตั้งใหม่จะทำงานตามที่ตั้งใจไว้."
  release_notes: "<a href="%s"><span class="navicon link"></span>บันทึกประจำรุ่นสำหรับ %s.</a>"
 stages:
- Deploy CAPTCHAs (blocked requests): "ปรับใช้ CAPTCHAs (คำขอที่ถูกบล็อก)"
- Deploy CAPTCHAs (non-blocked requests): "ปรับใช้ CAPTCHAs (คำขอที่ไม่ถูกบล็อก)"
+ Deploy CAPTCHAs (blocked requests): "ปรับใช้ CAPTCHA (คำขอที่ถูกบล็อก)"
+ Deploy CAPTCHAs (non-blocked requests): "ปรับใช้ CAPTCHA (คำขอที่ไม่ถูกบล็อก)"
  Execute IP tracking: "ดำเนินการติดตาม IP"
  Execute auxiliary rules: "ดำเนินการกฎเสริม"
  Execute modules: "ดำเนินการโมดูล"

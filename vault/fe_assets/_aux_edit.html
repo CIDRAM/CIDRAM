@@ -12,4 +12,11 @@
   </td>
 </tr>
 </table>
-<script type="text/javascript">minifyForm('#auxForm','auxFormMinified','minifiedFormData')</script>
+<script type="text/javascript">minifyForm('#auxForm','auxFormMinified','minifiedFormData');
+const inputContainer = document.getElementById('auxForm');
+inputContainer.addEventListener('keydown', function(event) {
+  if ((event.target.matches('input[type="text"].flexin')||event.target.matches('input[type="text"].f500'))&&event.target.value===''&&(event.keyCode===8||event.keyCode===46)) {
+    event.target.parentElement.style='display:none';
+  }
+});
+</script>

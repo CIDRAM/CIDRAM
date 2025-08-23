@@ -10,7 +10,12 @@ Detailed version release guidelines for CIDRAM can be found at:
 
 === Changes made since last versioned release ===
 
-(none)
+- [2025.08.23]: On the auxiliary rules page, when focused on the input field
+  for a condition or webhook, if that field is empty, pressing backspace or
+  delete will now hide the relevant fields for that condition or webhook. Such
+  empty fields were already being disregarded when creating or updating
+  auxiliary rules, so this change doesn't affect those mechanisms, but being
+  able to hide such fields may slightly benefit the UX (#624).
 
 === Version/Release 2.17.0 ===
 MINOR RELEASE.

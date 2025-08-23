@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2025.08.14).
+# This file: Thai language data for the front-end (last modified: 2025.08.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -156,7 +156,7 @@ config_hcaptcha_show_api_message: &ShowAPIMessage "แสดงข้อคว�
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "แสดงคำเตือนเกี่ยวกับคุกกี้หรือไม่? True = ทำ [ค่าเริ่มต้น]; False = ไม่ทำ."
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "จำนวนลายเซ็นสูงสุดที่อนุญาตก่อนที่ข้อเสนอ CAPTCHA จะถูกเพิกถอน. ค่าเริ่มต้น = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "ควรเสนอ CAPTCHA เมื่อใด? หมายเหตุ: คำขอที่อนุญาตพิเศษหรือได้รับการยืนยันและไม่ถูกบล็อกไม่จำเป็นต้องกรอก CAPTCHA. โปรดทราบด้วย: CAPTCHAs สามารถให้การป้องกันที่เป็นประโยชน์ต่อบอทและคำขออัตโนมัติที่เป็นอันตรายหลายประเภท แต่จะไม่ให้การป้องกันมนุษย์ที่เป็นอันตราย."
+config_hcaptcha_usemode: &CaptchaUseMode "ควรเสนอ CAPTCHA เมื่อใด? หมายเหตุ: คำขอที่อนุญาตพิเศษหรือได้รับการยืนยันและไม่ถูกบล็อกไม่จำเป็นต้องกรอก CAPTCHA. โปรดทราบด้วย: CAPTCHA สามารถให้การป้องกันที่เป็นประโยชน์ต่อบอทและคำขออัตโนมัติที่เป็นอันตรายหลายประเภท แต่จะไม่ให้การป้องกันมนุษย์ที่เป็นอันตราย."
 config_legal: "การกำหนดค่าสำหรับข้อกำหนดทางกฎหมาย."
 config_legal_omit_hostname: "ไม่รวมชื่อโฮสต์ในล็อกไฟล์? True = ทำ; False = ไม่ทำ [ค่าเริ่มต้น]."
 config_legal_omit_ip: "ไม่รวมที่อยู่ IP ในล็อกไฟล์? True = ทำ; False = ไม่ทำ [ค่าเริ่มต้น]. หมายเหตุ: "pseudonymise_ip_addresses" กลายเป็นซ้ำซ้อนเมื่อ "omit_ip" เป็น "true"."

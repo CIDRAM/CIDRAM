@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2025.08.21).
+# This file: Latvian language data for the front-end (last modified: 2025.08.23).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -48,7 +48,7 @@ Abuse category:
  SQL injection: "SQL injekcija."
  SSH abuse: "SSH ļaunprātīga izmantošana."
  VPN IP: "VPN IP."
- Web spam: "Tīmekļa surogātpasts (komentāru/foruma surogātpasts, HTTP novirzītāja surogātpasts, vai cits CMS surogātpasts)."
+ Web spam: "Tīmekļa surogātpasts (komentāru/foruma surogātpasts, HTTP referer surogātpasts, vai cits CMS surogātpasts)."
  Webapp attacks: "Tīmekļa lietotņu uzbrukumi (ievainojamības vai ekspluatācijas meklēšana, ko izmantot pret instalētajām tīmekļa lietotnēm, CMS, vai e-komercijas risinājumiem, piemēram, WordPress, Drupal, phpMyAdmin, utt)."
 Extended Description:
  AbuseIPDB module: "Bloķē pieprasījumus no IP, kas uzskaitīti vietnē AbuseIPDB."
@@ -75,7 +75,7 @@ Extended Description:
  PHPMailer: "Nepieciešams jebkuras funkcijas izmantošanai, kas saistīta ar e-pasta sūtīšanu.<br />{{Links.PHPMailer.PHPMailer}} ir pieejams caur {{Links.PHPMailer.License}} licenci."
  Project Honeypot module: "Bloķē pieprasījumus no IP, kas uzskaitīti vietnē Project Honeypot."
  Protocol blocker module: "Nodrošina iespēju bloķēt konkrētus pieprasījuma protokolus, izmantojot konfigurāciju (piemēram, HTTP/0.9, HTTP/1.1, SPDY/3.0, utt). Piezīme: Tas neietekmēs vietnes, kas maršrutē caur pakalpojumiem, kas pārraksta pieprasījumus visiem, izmantojot tieši to pašu protokolu (piemēram, Cloudflare)."
- Referrer spam module: "Bloķēšana, pamatojoties uz novirzītāja surogātpastu, parasti nesniegs nozīmīgus drošības ieguvumus, taču dažos gadījumos tas varētu būt noderīgs dažiem lietotājiem, lai savāktu vairāk informācijas par pieprasījumiem un par iespēju par to ziņot."
+ Referrer spam module: "Bloķēšana, pamatojoties uz referer surogātpastu, parasti nesniegs nozīmīgus drošības ieguvumus, taču dažos gadījumos tas varētu būt noderīgs dažiem lietotājiem, lai savāktu vairāk informācijas par pieprasījumiem un par iespēju par to ziņot."
  Stop Forum Spam module: "Aizsargā reģistrācijas un ielogošanās lapas pret SFS uzskaitītajiem IP."
  Tor blocker module: "Aizliedz piekļuvi no Tor izejas mezgliem, izmantojot DNSEL uzmeklēšanu (atbalsta gan IPv4 un IPv6)."
 Name:
@@ -104,7 +104,7 @@ Name:
  Project Honeypot module: "Project Honeypot modulis."
  Protocol blocker module: "Protokolu bloķētāja modulis."
  Quic cloud compatibility module: "Quic cloud saderības modulis."
- Referrer spam module: "Novirzītāja surogātpastu modulis."
+ Referrer spam module: "Referer surogātpasta modulis."
  Stop Forum Spam module: "Stop Forum Spam modulis."
  Tor blocker module: "Tor bloķētāja modulis."
 bobuam_hint_default_value: "Ja iestatīts uz 0, modulis izmanto pašlaik ieteicamo vērtību."
@@ -1035,13 +1035,14 @@ tip:
  Calculator: "Kalkulators ļauj aprēķināt IP adreses CIDR un tīkla maskas."
  Click the component name for more details: "Noklikšķiniet uz komponenta nosaukuma, lai iegūtu sīkāku informāciju."
  Configuration: "Konfigurācijas lapa ļauj mainīt CIDRAM konfigurāciju."
- Enter IP here: "Šeit ievadiet IP adresi."
- Enter IPs here: "Šeit ievadiet IP adreses."
- Enter input here: "Šeit ievadiet ievadi."
- Enter query here (optional): "Šeit ievadiet novirzītāju (nav obligāti)."
- Enter referrer here (optional): "Šeit ievadiet vaicājumu (nav obligāti)."
- Enter user agent here (optional): "Šeit ievadiet lietotāja aģentu (nav obligāti)."
- Enter user agents here (optional): "Šeit ievadiet lietotāju aģentus (nav obligāti)."
+ Enter IP here: "Ievadiet IP adresi šeit."
+ Enter IPs here: "Ievadiet IP adreses šeit."
+ Enter input here: "Ievadiet ievadi šeit."
+ Enter queries here (optional): "Ievadiet vaicājumus šeit (neobligāti)."
+ Enter query here (optional): "Ievadiet vaicājumu šeit (neobligāti)."
+ Enter referrer here (optional): "Ievadiet referer šeit (neobligāti)."
+ Enter user agent here (optional): "Ievadiet lietotāja aģentu šeit (neobligāti)."
+ Enter user agents here (optional): "Ievadiet lietotāja aģentus šeit (neobligāti)."
  File Manager: "Failu menedžeris ļauj izdzēst, rediģēt, augšupielādēt un lejupielādēt failus. Lietojiet piesardzīgi (ar to jūs varētu sabojāt instalāciju)."
  Greeting: "Sveiki, %s."
  Home: "Šī ir jūsu CIDRAM instalācijas mājas lapa. Lai turpinātu, navigācijas izvēlnē kreisajā pusē atlasiet saiti."

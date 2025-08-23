@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used to simulate block events (last modified: 2025.08.22).
+ * This file: Methods used to simulate block events (last modified: 2025.08.23).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -86,17 +86,21 @@ trait SimulateBlockEvent
         /** Reset factors. */
         $this->CIDRAM['Factors'] = [];
 
-        if (isset($this->CIDRAM['TestMode']) && $this->CIDRAM['TestMode'] === 2) {
+        $TestMode = $this->CIDRAM['TestMode'] ?? 1;
+        if ($TestMode === 3) {
+            $Query = $Addr;
+            $Addr = isset($this->FE['ip-addr']) ? preg_replace('~[^\da-f:./]~i', '', $this->FE['ip-addr']) : '';
+            $UA = $this->FE['custom-ua'] ?? '';
+        } elseif ($TestMode === 2) {
             $UA = $Addr;
-            $Addr = isset($this->FE['ip-addr-focus']) ? preg_replace('~[^\da-f:./]~i', '', $this->FE['ip-addr-focus']) : '';
-        } elseif (isset($this->FE['custom-ua-focus']) && $this->FE['custom-ua-focus'] !== '') {
-            $UA = $this->FE['custom-ua-focus'];
-        } elseif (isset($this->FE['custom-ua']) && $this->FE['custom-ua'] !== '') {
-            $UA = $this->FE['custom-ua'];
+            $Addr = isset($this->FE['ip-addr']) ? preg_replace('~[^\da-f:./]~i', '', $this->FE['ip-addr']) : '';
+            $Query = $this->FE['custom-query'] ?? '';
         } else {
-            $UA = 'SimulateBlockEvent';
+            $UA = $this->FE['custom-ua'] ?? '';
+            $Query = $this->FE['custom-query'] ?? '';
         }
-        $UA = str_replace(['&quot;', '&gt;', '&lt;', '&amp;'], ['"', '>', '<', '&'], $UA);
+        $UA = str_replace(['&quot;', '&gt;', '&lt;', '&amp;'], ['"', '>', '<', '&'], $UA) ?: 'SimulateBlockEvent';
+        $Query = str_replace(['&quot;', '&gt;', '&lt;', '&amp;'], ['"', '>', '<', '&'], $Query) ?: 'SimulateBlockEvent';
 
         /** Populate BlockInfo. */
         $this->BlockInfo = [
@@ -105,7 +109,7 @@ trait SimulateBlockEvent
             'DateTime' => $this->FE['DateTime'],
             'IPAddr' => $Addr,
             'IPAddrResolved' => $this->resolve6to4($Addr),
-            'Query' => str_replace(['&quot;', '&gt;', '&lt;', '&amp;'], ['"', '>', '<', '&'], $this->FE['custom-query'] ?? '') ?: 'SimulateBlockEvent',
+            'Query' => $Query,
             'Referrer' => str_replace(['&quot;', '&gt;', '&lt;', '&amp;'], ['"', '>', '<', '&'], $this->FE['custom-referrer'] ?? '') ?: 'SimulateBlockEvent',
             'UA' => $UA,
             'UALC' => strtolower($UA),
@@ -138,8 +142,8 @@ trait SimulateBlockEvent
         }
 
         /** Appending query onto the reconstructed URI. */
-        if (!empty($this->FE['custom-query'])) {
-            $this->BlockInfo['rURI'] .= '?' . $this->FE['custom-query'];
+        if ($Query !== 'SimulateBlockEvent' && $Query !== '') {
+            $this->BlockInfo['rURI'] .= '?' . $Query;
         }
 
         /** Reset tokens. */

@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6.dat
 
-# Version: 2025.228.0
-# Last modified: 2025.08.17
+# Version: 2025.235.0
+# Last modified: 2025.08.24
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -13,14 +13,16 @@
 # ASN 3223 ("Voxility LLC").
 # Bandwidth reseller. Various server farms and hosting providers route through
 # here. Spam and other unwanted traffic detected from here.
-# Stop Forum Spam (SFS) listings: 2,983.
-# Updated: 2024.01.11 / Checked: 2024.08.18
+# Stop Forum Spam (SFS) listings: 7,114.
+# Updated: 2025.08.24
 
 2001:67c:b30::/48 Deny Cloud
 Origin: NL
-2a03:5180::/44 Deny Cloud
-2a03:5180:10::/47 Deny Cloud
-2a03:5180:13::/48 Deny Cloud
+2a03:5180::/45 Deny Cloud
+2a03:5180:8::/46 Deny Cloud
+2a03:5180:c::/47 Deny Cloud
+2a03:5180:f::/48 Deny Cloud
+2a03:5180:10::/46 Deny Cloud
 2a03:5180:15::/48 Deny Cloud
 2a03:5180:16::/48 Deny Cloud
 Origin: RO
@@ -812,7 +814,7 @@ Tag: H88 S.A
 
 
 # ASN 47846 ("Sedo Domain Parking").
-# Updated: 2021.01.02 / Checked: 2024.08.06
+# Updated: 2021.01.02 / Checked: 2025.08.21
 
 2001:67c:64c::/48 Deny Cloud
 Origin: DE
@@ -2291,10 +2293,10 @@ Tag: CariNet, Inc
 
 
 # ASN 263237 ("PowerHost Telecom SPA").
-# Updated: 2024.08.19
+# Updated: 2025.08.24
 
 2803:8180:1::/48 Deny Cloud
-2803:8180:2::/48 Deny Cloud
+2803:8180:2::/47 Deny Cloud
 Origin: CL
 Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: POWER HOST E.I.R.L
@@ -3919,11 +3921,9 @@ Tag: UAB Rakrejus
 
 
 # ASNs 3842, 22611, 54641 ("InMotion Hosting, Inc").
-# Stop Forum Spam (SFS) listings: 85 (AS3842), 5 (AS22611), 27 (AS54641).
-# Updated: 2024.08.19
+# Stop Forum Spam (SFS) listings: 55 (AS3842), 17 (AS22611), 18 (AS54641).
+# Updated: 2025.08.24
 
-2602:2e8::/40 Deny Cloud
-2602:f96b::/40 Deny Cloud
 2604:180::/46 Deny Cloud
 2604:180:9::/48 Deny Cloud
 2604:180:a::/47 Deny Cloud
@@ -3932,9 +3932,12 @@ Tag: UAB Rakrejus
 2604:180:f1::/48 Deny Cloud
 2604:180:f2::/47 Deny Cloud
 2604:180:f4::/48 Deny Cloud
+2604:180:f7::/48 Deny Cloud
 2605:f400:1::/48 Deny Cloud
 2605:f400:2::/47 Deny Cloud
 2605:f400:4::/47 Deny Cloud
+2607:f298:7::/48 Deny Cloud
+2a04:c5c0::/48 Deny Cloud
 Origin: US
 Profile: Webhosting
 Tag: InMotion Hosting, Inc
@@ -6391,8 +6394,7 @@ Tag: 3W Infra B.V
 
 # ASN 58073 ("YISP B.V").
 # Server farm and a source of spam and tor endpoints.
-# Stop Forum Spam (SFS) listings: 3.
-# Updated: 2023.09.12 / Checked: 2024.08.18
+# Updated: 2023.09.12 / Checked: 2025.08.21
 
 2a02:2a38::/32 Deny Cloud
 Origin: NL
@@ -9732,9 +9734,11 @@ Tag: UCLOUD
 
 # ASN 206804 ("EstNOC OY").
 # VPS provider. Brute-force and hack attempts detected from here.
-# Stop Forum Spam (SFS) listings: 9,902.
-# Updated: 2024.08.18
+# Stop Forum Spam (SFS) listings: 6,405.
+# Updated: 2025.08.19
 
+2401:eaa0:1::/48 Deny Cloud
+Origin: EE
 2001:1548:206::/48 Deny Cloud
 Origin: GR
 2a01:1b8:5::/48 Deny Cloud
@@ -9742,10 +9746,11 @@ Origin: SE
 2a03:efc0:2100::/40 Deny Cloud
 2a06:a000:1e0::/47 Deny Cloud
 2a06:a000:1e2::/48 Deny Cloud
-2a06:a000:1e4::/46 Deny Cloud
-2a06:a000:1e8::/47 Deny Cloud
-2a06:a000:1ea::/48 Deny Cloud
+2a06:a000:1e4::/47 Deny Cloud
+2a06:a000:1e6::/48 Deny Cloud
+2a06:a000:1e8::/46 Deny Cloud
 2a06:a000:1ec::/48 Deny Cloud
+2a06:a000:1ee::/48 Deny Cloud
 2a0b:b87:ffd7::/48 Deny Cloud
 Origin: US
 Profile: Dedicated;Tor endpoints here;Webhosting
@@ -10715,8 +10720,8 @@ Tag: Harmony Hosting SARL
 # ASN 964 ("IonSwitch, LLC").
 # Colo, VPS, dedicated server provider. Brute-force, SSH, and webapp attacks,
 # port scans, and hacking detected from here.
-# Stop Forum Spam (SFS) listings: 7.
-# Updated: 2023.09.12 / Checked: 2024.08.18
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2023.09.12 / Checked: 2025.08.19
 
 2602:fe54::/32 Deny Cloud
 2606:ddc0::/32 Deny Cloud
@@ -12851,10 +12856,9 @@ Tag: EuroByte LLC
 # ASNs 63734, 149132, 202602 ("GREENCLOUD LIMITED LIABILITY COMPANY", "365 Online Technology Joint Stock Company").
 # VPS and IT consultancy firm. Brute-force, WordPress/XMLRPC, and webapp
 # attacks, hacking, port scans, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 10 (AS202602).
-# Updated: 2024.08.18
+# Stop Forum Spam (SFS) listings: 2 (AS63734), 118 (AS149132), 14 (AS202602).
+# Updated: 2025.08.19
 
-2400:6ea0::/48 Deny Cloud
 2401:8260::/48 Deny Cloud
 2404:fbc0::/48 Deny Cloud
 2a0c:b847:ffff::/48 Deny Cloud
@@ -16102,19 +16106,6 @@ Profile: Restricted/Unidentifiable
 Tag: Oxide Group Limited
 
 
-# ASNs 19762, 48925, 211750 ("Physgun LLC", "VibeGAMES B.V", "Stef Herman Anton Wolters trading as MC-Node").
-# Server hosting for Minecraft and other games. Port scans, hacking, and spam
-# detected from here.
-# Stop Forum Spam (SFS) listings: 9 (AS211750).
-# Updated: 2024.12.18
-
-2001:67c:be8::/48 Deny Cloud
-2a01:ec40::/48 Deny Cloud
-Origin: NL
-Profile: Dedicated;Infrastructure/Transit
-Tag: Physgun/VibeGAMES/MC-Node
-
-
 # ASN 213738 ("HOSTEG HOSPEDAGEM E SERVIDORES LTDA").
 # Brute-force attacks, port scans, and hacking detected from here.
 # Updated: 2024.12.19
@@ -17250,6 +17241,27 @@ Tag: Florian Kolb
 Origin: ES
 Profile: Dedicated;Webhosting
 Tag: Soluciones web
+
+
+# ASN 151858 ("INTERDIGI JOINT STOCK COMPANY").
+# Brute-force, SSH, WordPress/XMLRPC, and webapp attacks, hacking, and spam
+# detected from here.
+# Stop Forum Spam (SFS) listings: 14.
+# Updated: 2025.08.21
+
+2001:df3:53c0::/48 Deny Cloud
+2001:df4:e40::/48 Deny Cloud
+2001:df4:5740::/48 Deny Cloud
+2400:6ea0::/48 Deny Cloud
+2400:eea0::/48 Deny Cloud
+2401:1e60::/48 Deny Cloud
+2401:2b20::/48 Deny Cloud
+2407:66c0::/48 Deny Cloud
+2407:9940::/48 Deny Cloud
+2407:f140::/48 Deny Cloud
+Origin: VN
+Profile: Restricted/Unidentifiable
+Tag: INTERDIGI
 
 
 # ---

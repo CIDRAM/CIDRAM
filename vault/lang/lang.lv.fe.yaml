@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2025.08.14).
+# This file: Latvian language data for the front-end (last modified: 2025.08.23).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -49,7 +49,7 @@ Extended Description module_cookies.php: "Nodrošina ierobežotu aizsardzību pr
 Extended Description module_extras.php: "Nodrošina ierobežotu aizsardzību pret dažādiem uzbrukumu vektoriem, kurus parasti izmanto pieprasījumos."
 Extended Description module_httpver.php: "Ļauj bloķēt noteiktus protokolus un HTTP versijas, izmantojot CIDRAM konfigurāciju."
 Extended Description module_projecthoneypot.php: "Bloķē pieprasījumus no IP, kas uzskaitīti vietnē Project Honeypot."
-Extended Description module_refspam.php: "Bloķēšana, pamatojoties uz novirzītāja surogātpastu, parasti nesniegs nozīmīgus drošības ieguvumus, taču dažos gadījumos tas varētu būt noderīgs dažiem lietotājiem, lai savāktu vairāk informācijas par pieprasījumiem un par iespēju par to ziņot."
+Extended Description module_refspam.php: "Bloķēšana, pamatojoties uz referer surogātpastu, parasti nesniegs nozīmīgus drošības ieguvumus, taču dažos gadījumos tas varētu būt noderīgs dažiem lietotājiem, lai savāktu vairāk informācijas par pieprasījumiem un par iespēju par to ziņot."
 Extended Description module_sfs.php: "Aizsargā reģistrācijas un ielogošanās lapas pret SFS uzskaitītajiem IP."
 Name Bypasses: "Noklusējuma paraksta apiešana."
 Name CN_cidram.inc: "Ķīnas IPv4 bloķēšanas saraksts."
@@ -76,7 +76,7 @@ Name module_cookies.php: "Neobligāts sīkdatņu skeneru modulis."
 Name module_extras.php: "Neobligāts drošības ekstras modulis."
 Name module_httpver.php: "HTTP versiju pārbaudītāja modulis."
 Name module_projecthoneypot.php: "Project Honeypot modulis."
-Name module_refspam.php: "Novirzītāja surogātpastu modulis."
+Name module_refspam.php: "Referer surogātpasta modulis."
 Name module_sfs.php: "Stop Forum Spam modulis."
 checkbox_label_sensitive: "Pārbaudīt kā sensitīvu pieprasījumu"
 config_PHPMailer: "PHPMailer konfigurācija (izmanto divu faktoru autentifikācijai)."
@@ -296,7 +296,7 @@ field_status: "Statuss"
 field_system_timezone: "Izmantojiet sistēmas noklusējuma laika joslu."
 field_tracking: "Izsekošana"
 field_true: "True (Patiess)"
-field_ualc: "Lietotāja Aģents (mazie burti)"
+field_ualc: "Lietotāja aģents (mazie burti)"
 field_uninstall: "Atinstalējiet"
 field_update: "Atjauniniet"
 field_update_all: "Atjauniniet visus"
@@ -717,12 +717,12 @@ tip_cidr_calc: "Sveiki, {username}.<br />CIDR kalkulators ļauj aprēķināt IP 
 tip_click_the_component: "Noklikšķiniet uz komponenta nosaukuma, lai iegūtu sīkāku informāciju."
 tip_condition_placeholder: "Norādiet vērtību vai atstājiet tukšu lai neievērotu."
 tip_config: "Sveiki, {username}.<br />Konfigurācijas lapa ļauj mainīt CIDRAM konfigurāciju."
-tip_custom_query: "Šeit ievadiet novirzītāju (nav obligāti)."
-tip_custom_referrer: "Šeit ievadiet vaicājumu (nav obligāti)."
-tip_custom_ua: "Šeit ievadiet lietotāja aģentu (nav obligāti)."
-tip_enter_input_here: "Šeit ievadiet ievadi."
-tip_enter_ip_here: "Šeit ievadiet IP adresi."
-tip_enter_ips_here: "Šeit ievadiet IP adreses."
+tip_custom_query: "Ievadiet vaicājumu šeit (neobligāti)."
+tip_custom_referrer: "Ievadiet referer šeit (neobligāti)."
+tip_custom_ua: "Ievadiet lietotāja aģentu šeit (neobligāti)."
+tip_enter_input_here: "Ievadiet ievadi šeit."
+tip_enter_ip_here: "Ievadiet IP adresi šeit."
+tip_enter_ips_here: "Ievadiet IP adreses šeit."
 tip_expiry_placeholder: "Sekunžu skaits līdz derīguma termiņa beigām."
 tip_fe_cookie_warning: "Piezīme: CIDRAM izmanto sīkfailu, lai autentificētu ielogošanās informāciju. Ielogoties, jūs dodat piekrišanu sīkdatnes izveidošanai un saglabāšanai jūsu pārlūkprogrammā."
 tip_file_manager: "Sveiki, {username}.<br />Failu menedžeris ļauj izdzēst, rediģēt, augšupielādēt un lejupielādēt failus. Lietojiet piesardzīgi (ar to jūs varētu sabojāt instalāciju)."

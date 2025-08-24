@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2025.03.03).
+ * This file: Functions file (last modified: 2025.08.24).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -400,12 +400,11 @@ $CIDRAM['CheckFactors'] = function (array $Files, array $Factors) use (&$CIDRAM)
                 $LN = ' ("' . $Tag . '", L' . substr_count($Files[$FileIndex], "\n", 0, $PosA) . ':F' . $FileIndex . $Origin . ')';
                 $Signature = substr($Files[$FileIndex], $PosA, ($PosB - $PosA));
                 $PosS = strpos($Signature, ' ');
-                $Category = substr($Signature, 0, $PosS);
-                if (strlen($Category) === 0) {
+                $Category = $PosS === false ? '' : substr($Signature, 0, $PosS);
+                if ($Category === '') {
                     $Category = $Signature;
                     $Signature = '';
                 } else {
-                    $PosS = strpos($Signature, ' ');
                     $Signature = substr($Signature, $PosS + 1);
                     if (preg_match('~ until (\d{4})[.-](\d\d)[.-](\d\d)$~i', $Signature, $EndParts)) {
                         $Until = mktime(0, 0, 0, (int)$EndParts[2], (int)$EndParts[3], (int)$EndParts[1]);

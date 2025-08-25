@@ -1472,7 +1472,7 @@ BOBUAM:
   Optional module which detects unwanted bots, old browsers, and performs some sanity checks.<br />Contains some data from
   the Wordpress plugin "Stop Bad Bots" by William "Bill" Minozzi.<br />(A few webservices bots might need bypasses).
  False Positive Risk: "Medium"
- Version: "2025.225.0"
+ Version: "2025.236.0"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "^4"
@@ -1480,11 +1480,11 @@ BOBUAM:
  Files:
   imports/bobuam.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/imports/bobuam.yml"
-   Checksum: "0fca8f1e68902c759b1f16e33f8ef77b1fc8a4168d199b54bfce54484415c45e:3036"
+   Checksum: "12a5ff22a5305480f0be37e32110ea999e463ece5daa4c9377d011f9f7860c1d:3035"
    Used with: "imports"
   modules/bobuam.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/modules/bobuam.php"
-   Checksum: "17ad931788f4adb1b46f1363fb08a0e69c1d8bc1f0cb9aa701d17ea19903b0ae:48492"
+   Checksum: "a1a45ff3d0c13c5ad07376517229acececa8e5c9c163de89b1f08300f73629ce:48565"
    Used with: "modules"
 theme/bluemetal:
  Name: "Theme: Blue Metal"

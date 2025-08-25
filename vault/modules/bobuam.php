@@ -22,7 +22,7 @@
  * William "Bill" Minozzi.
  * @link https://www.stopbadbots.com/
  *
- * This file: Bot Or Browser User Agent Module (last modified: 2025.08.13).
+ * This file: Bot Or Browser User Agent Module (last modified: 2025.08.25).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -275,8 +275,8 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
      */
     if ($this->Configuration['bobuam']['sanity_check'] === 'yes') {
         $Failed = false;
-        if (isset($this->Tokens['Opera'])) {
-            $Try = (int)$this->Tokens['Opera'];
+        if (isset($this->Tokens['Opera']) || isset($this->Tokens['OperaMobile'])) {
+            $Try = (int)($this->Tokens['OperaMobile'] ?? $this->Tokens['Opera']);
             if (
                 $this->trigger($TokenOpera !== $Try, $Masquerade[0] . ' (TMOP)', $Masquerade[1]) ||
                 $this->trigger($Try < 63, $Masquerade[0] . ' (FTOP)', $Masquerade[1])

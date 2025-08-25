@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese language data for the front-end (last modified: 2025.08.23).
+# This file: Chinese language data for the front-end (last modified: 2025.08.25).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -646,12 +646,12 @@ Some useful links:
         </li>
         <li><span class="comCat">其他有用的工具、資源、服務、等等</span>
           <ul class="comSub">
-            <li>{{Links.SFS}} – 維護已知論壇垃圾郵件發送者的數據庫。有用的保護網站和論壇免受垃圾郵件發送者的攻。</li>
+            <li>{{Links.SFS}} – 維護已知論壇垃圾郵件發送者的資料庫。有用的保護網站和論壇免受垃圾郵件發送者的攻。</li>
             <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – 從ASN獲取CIDR、確定ASN關係、基於網絡名稱發現ASN、等等。</li>
             <li>{{Links.BGPView}} – 從ASN獲取CIDR，​確定ASN關係，​基於網絡名稱發現ASN，​等等。</li>
             <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Qrator的Radar</a> – 檢查ASN連接的有用工具，以及關於ASN的各種其他信息。</li>
             <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Spamhaus項目</a> – 顯示有​關ASN殭屍網絡感染率的報告。</li>
-            <li>{{Links.AbuseIPDB}} – 維護已知的濫用IP數據庫。它為IP檢查和報告提供了一個API。</li>
+            <li>{{Links.AbuseIPDB}} – 維護已知的濫用IP資料庫。它為IP檢查和報告提供了一個API。</li>
             <li>{{Links.IP-API}} – 獲取有關IP位址或主機名的信息，例如，國家代碼、區域名稱、經度、緯度、組織名稱、等等。</li>
           </ul>
         </li>
@@ -706,6 +706,7 @@ label:
  503 Service Unavailable:
   zh-Hans: "503 Service Unavailable （服务不可用）\n最健壮，但最不用户友好。​推荐用于受到攻击，或处理极其持久的有害流量时。"
   zh-Hant: "503 Service Unavailable （服務不可用）\n最健壯，但最不用戶友好。​推薦用於受到攻擊，或處理極其持久的有害流量時。"
+ Action: {"zh-Hans": "行动", "zh-Hant": "行動"}
  Active IPv4 signature files: {"zh-Hans": "活动IPv4签名文件", "zh-Hant": "活動IPv4簽名文件"}
  Active IPv6 signature files: {"zh-Hans": "活动IPv6签名文件", "zh-Hant": "活動IPv6簽名文件"}
  Active configuration file: {"zh-Hans": "活动配置文件：", "zh-Hant": "活動配置文件："}
@@ -737,6 +738,8 @@ label:
  Copy to clipboard: {"zh-Hans": "复制到剪贴板", "zh-Hant": "複製到剪貼板"}
  Current data for %s: {"zh-Hans": "“%s”的当前数据。", "zh-Hant": "『%s』的當前數據。"}
  Current data: {"zh-Hans": "当前数据。", "zh-Hant": "當前數據。"}
+ Data source: {"zh-Hans": "数据来源", "zh-Hant": "數據來源"}
+ Data value: {"zh-Hans": "数据值", "zh-Hant": "數據值"}
  Default: {"zh-Hans": "标准", "zh-Hant": "標準"}
  Delete previous reports: {"zh-Hans": "删除以前的报告", "zh-Hant": "刪除先前的報告"}
  Deny: {"zh-Hans": "拒绝。", "zh-Hant": "拒絕。"}
@@ -788,8 +791,10 @@ label:
  Logged in, 2FA pending: {"zh-Hans": "已登录，2FA待定。", "zh-Hant": "已登錄，2FA待定。"}
  Logged in: {"zh-Hans": "已登录。", "zh-Hant": "已登錄。"}
  Logged out: "已登出。"
+ Logic: {"zh-Hans": "逻辑", "zh-Hant": "邏輯"}
  Login: {"zh-Hans": "登录", "zh-Hant": "登錄"}
  Logs access only: {"zh-Hans": "仅日志访问", "zh-Hant": "僅日誌訪問"}
+ Method: "方法"
  Minuend: {"zh-Hans": "被减数", "zh-Hant": "被減數"}
  Most recent: "最近的"
  Netmask: {"zh-Hans": "网络掩码", "zh-Hant": "網絡掩碼"}
@@ -807,6 +812,7 @@ label:
  Only when not blocked: {"zh-Hans": "仅在不被阻止时。", "zh-Hant": "僅在不被阻止時。"}
  Only when within the signature limit, and not banned (regardless of whether blocked): {"zh-Hans": "仅在签名限制之内，并且不被禁止（不管是否被阻止）。", "zh-Hant": "僅在簽名限制之內，並且不被禁止（不管是否被阻止）。"}
  Operating system used: {"zh-Hans": "目前使用操作系统：", "zh-Hant": "目前使用操作系統："}
+ Operator: {"zh-Hans": "运算符", "zh-Hant": "運算符"}
  Other rules, signature files, etc: {"zh-Hans": "其他规则、签名文件、等等", "zh-Hant": "其他規則、簽名文件、等等"}
  Other: "其他"
  PHP version used: "目前使用PHP版本："
@@ -1207,7 +1213,7 @@ tip:
  Number of seconds until it expires: {"zh-Hans": "直到它过期的秒数。", "zh-Hant": "直到它過期的秒數。"}
  Numeric comparison:
   zh-Hans: "要使用数值比较，请选择直接字符串比较或自动方法检测，确保条件的值是数字，并在其前面添加所需的运算符。<br />例如，对于“等于”条件，&gt;=2产生≥2，&lt;=2产生≤2，对于“不等于”条件，&gt;=2产生≱2，&lt;=2产生≰2，等等。"
-  zh-Hant: "若要使用數值比較，請選擇直接字串比較或自動方法偵測，確保條件的值是數字，並在其前面新增所需的運算子。<br />例如，對於『等於』條件，&gt;=2產生≥2，&lt;=2產生≤2，對於『不等於』條件，&gt;=2產生≱2，&lt;=2產生≰2，等等。"
+  zh-Hant: "若要使用數值比較，請選擇直接字串比較或自動方法偵測，確保條件的值是數字，並在其前面新增所需的運算符。<br />例如，對於『等於』條件，&gt;=2產生≥2，&lt;=2產生≤2，對於『不等於』條件，&gt;=2產生≱2，&lt;=2產生≰2，等等。"
  Range Tables: {"zh-Hans": "本页面显示了有关当前活性签名文件覆盖的IP范围的一些基本统计信息。", "zh-Hant": "本頁面顯示了有關當前活性簽名文件覆蓋的IP範圍的一些基本統計信息。"}
  Rate Limiting: {"zh-Hans": "此页面显示有关速率限制的当前配额使用情况和可用性。", "zh-Hant": "此頁面顯示有關速率限制的當前配額使用情況和可用性。"}
  Rate limiting is currently disabled: {"zh-Hans": "注意：速率限制目前已被禁用，但可以通过配置页面启用。", "zh-Hant": "注意：速率限制目前已被禁用，但可以通過配置頁面啟用。"}

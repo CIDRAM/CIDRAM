@@ -90,7 +90,7 @@
       <li>
         <div class="iCntr">
           <div class="iLabl s">
-            <select id="act" name="act" class="auto" onchange="javascript:onAuxActionChange(this.value,'','')">
+            <select id="act" name="act" title="{label.Action}" class="auto" onchange="javascript:onAuxActionChange(this.value,'','')">
               <option value="actWhl">{optActWhl}</option>
               <option value="actGrl">{optActGrl}</option>
               <option value="actBlk" selected>{optActBlk}</option>
@@ -102,7 +102,7 @@
             </select><input type="button" onclick="javascript:addCondition('', this.parentElement.parentElement.parentElement.nextSibling.nextSibling.nextSibling.nextSibling.firstChild.nextSibling.firstChild.nextSibling.firstChild.nextSibling.value)" value="{field.Add more conditions} [1]" class="auto" accesskey="1" />
           </div>
           <div class="iCntn" id="conditions">
-            <div class="flexrow"><select name="conSourceType[]" class="auto" onchange="javascript:getInputSuggestions(this)">{conSources}</select><select name="conIfOrNot[]" class="auto"><option value="If" class="ifOrNot">=</option><option value="Not" class="ifOrNot">≠</option></select><input type="text" name="conSourceValue[]" placeholder="{tip.Specify a value, or leave blank to disregard}" class="flexin" onfocus="javascript:getInputSuggestions(this.previousElementSibling.previousElementSibling)" /></div><div class="suggestsInactive"></div>
+            <div class="flexrow"><select name="conSourceType[]" title="{label.Data source}" class="auto" onchange="javascript:getInputSuggestions(this)">{conSources}</select><select name="conIfOrNot[]" title="{label.Operator}" class="auto"><option value="If" class="ifOrNot">=</option><option value="Not" class="ifOrNot">≠</option></select><input type="text" name="conSourceValue[]" title="{label.Data value}" placeholder="{tip.Specify a value, or leave blank to disregard}" class="flexin" onfocus="javascript:getInputSuggestions(this.previousElementSibling.previousElementSibling)" /></div><div class="suggestsInactive"></div>
           </div>
         </div>
       </li>
@@ -118,7 +118,7 @@
       <li>
         <div class="iCntr">
           <div class="iLabl s">
-            <select name="mtd" class="auto" onchange="javascript:changeIfOrNot(this)">
+            <select name="mtd" title="{label.Method}" class="auto" onchange="javascript:changeIfOrNot(this)">
               <option value="mtdStr" selected>{optMtdStr}</option>
               <option value="mtdReg">{optMtdReg}</option>
               <option value="mtdWin">{optMtdWin}</option>
@@ -131,7 +131,7 @@
       <li>
         <div class="iCntr">
           <div class="iLabl s">
-            <select id="logic" name="logic" class="flong">
+            <select id="logic" name="logic" title="{label.Logic}" class="flong">
               <option value="Any">{label.aux.logic_any}</option>
               <option value="All">{label.aux.logic_all}</option>
             </select>

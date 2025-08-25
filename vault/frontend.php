@@ -1723,7 +1723,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                         $CIDRAM['DirValue']['Ref link'],
                         $CIDRAM['DirValue']['Ref key']
                     ) . "\n";
-                }                
+                }
                 if (substr($CIDRAM['ThisDir']['FieldOut'], -1) === "\n") {
                     $CIDRAM['ThisDir']['FieldOut'] = substr($CIDRAM['ThisDir']['FieldOut'], 0, -1);
                 }

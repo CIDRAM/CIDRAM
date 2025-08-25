@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2025.08.09).
+ * This file: Front-end functions file (last modified: 2025.08.25).
  */
 
 /**
@@ -3403,7 +3403,7 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
 
             /** Rule name. */
             $Output .= sprintf(
-                '%1$s<div class="iCntr">%1$s  <div class="iLabl s">%3$s</div><div class="iCntn"><input type="text" name="ruleName[%4$s]" class="f400" value="%2$s" /></div></div>',
+                '%1$s<label><div class="iCntr"><div class="iLabl s">%3$s</div><div class="iCntn"><input type="text" name="ruleName[%4$s]" class="f400" value="%2$s" /></div></div></label>',
                 "\n      ",
                 $Name === ' ' ? '' : $Name,
                 $CIDRAM['L10N']->getString('field_new_name'),
@@ -3412,15 +3412,16 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
 
             /** Set rule priority (rearranges the rules). */
             $Output .= sprintf(
-                '%1$s<div class="iCntr"><div class="iLabl s">%3$s</div>%1$s  <div class="iCntn"><input type="text" name="rulePriority[%2$s]" class="f400" value="%2$s" /></div></div>',
+                '%1$s<label><div class="iCntr"><div class="iLabl s">%2$s</div><div class="iCntn"><input type="number" name="rulePriority[%3$s]" class="f400" value="%3$s" /></div></div></label>',
                 "\n      ",
-                $Current,
-                $CIDRAM['L10N']->getString('field_execution_order')
+                $CIDRAM['L10N']->getString('field_execution_order'),
+                $Current
             );
 
             /** Rule reason. */
             $Output .= sprintf(
-                '<div class="iCntr"><div class="iLabl s" id="%4$sruleReasonDt">%2$s</div><div class="iCntn" id="%4$sruleReasonDd"><input type="text" name="ruleReason[%3$s]" class="f400" value="%1$s" /></div></div>',
+                '%1$s<label><div class="iCntr"><div class="iLabl s" id="%5$sruleReasonDt">%3$s</div><div class="iCntn" id="%5$sruleReasonDd"><input type="text" name="ruleReason[%4$s]" class="f400" value="%2$s" /></div></div></label>',
+                "\n      ",
                 $Data['Reason'] ?? '',
                 $CIDRAM['L10N']->getString('label_aux_reason'),
                 $Current,
@@ -3429,7 +3430,8 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
 
             /** Redirect target. */
             $Output .= sprintf(
-                '<div class="iCntr"><div class="iLabl s" id="%4$sruleTargetDt">%2$s</div><div class="iCntn" id="%4$sruleTargetDd"><input type="text" name="ruleTarget[%3$s]" class="f400" value="%1$s" /></div></div>',
+                '%1$s<label><div class="iCntr"><div class="iLabl s" id="%5$sruleTargetDt">%3$s</div><div class="iCntn" id="%5$sruleTargetDd"><input type="text" name="ruleTarget[%4$s]" class="f400" value="%2$s" /></div></div></label>',
+                "\n      ",
                 $Data['Target'] ?? '',
                 $CIDRAM['L10N']->getString('label_aux_target'),
                 $Current,
@@ -3438,7 +3440,8 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
 
             /** Run target. */
             $Output .= sprintf(
-                '<div class="iCntr"><div class="iLabl s" id="%4$sruleRunDt">%2$s</div><div class="iCntn" id="%4$sruleRunDd"><input type="text" name="ruleRun[%3$s]" class="f400" value="%1$s" /></div></div>',
+                '%1$s<label><div class="iCntr"><div class="iLabl s" id="%5$sruleRunDt">%3$s</div><div class="iCntn" id="%5$sruleRunDd"><input type="text" name="ruleRun[%4$s]" class="f400" value="%2$s" /></div></div></label>',
+                "\n      ",
                 $Data['Run']['File'] ?? '',
                 $CIDRAM['L10N']->getString('label_aux_run'),
                 $Current,
@@ -3447,7 +3450,8 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
 
             /** From. */
             $Output .= sprintf(
-                '<div class="iCntr"><div class="iLabl s" id="%4$sfromDt">%2$s</div><div class="iCntn" id="%4$sfromDd"><input type="date" name="from[%3$s]" class="f400" value="%1$s" /></div></div>',
+                '%1$s<label><div class="iCntr"><div class="iLabl s" id="%5$sfromDt">%3$s</div><div class="iCntn" id="%5$sfromDd"><input type="date" name="from[%4$s]" class="f400" value="%2$s" /></div></div></label>',
+                "\n      ",
                 isset($Data['From']) ? str_replace('.', '-', $Data['From']) : '',
                 $CIDRAM['L10N']->getString('label_aux_from'),
                 $Current,
@@ -3456,7 +3460,8 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
 
             /** Expiry. */
             $Output .= sprintf(
-                '<div class="iCntr"><div class="iLabl s" id="%4$sexpiryDt">%2$s</div><div class="iCntn" id="%4$sexpiryDd"><input type="date" name="expiry[%3$s]" class="f400" value="%1$s" /></div></div>',
+                '%1$s<label><div class="iCntr"><div class="iLabl s" id="%5$sexpiryDt">%3$s</div><div class="iCntn" id="%5$sexpiryDd"><input type="date" name="expiry[%4$s]" class="f400" value="%2$s" /></div></div></label>',
+                "\n      ",
                 isset($Data['Expiry']) ? str_replace('.', '-', $Data['Expiry']) : '',
                 $CIDRAM['L10N']->getString('label_aux_expiry'),
                 $Current,
@@ -3464,8 +3469,7 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
             );
 
             /** Status code override. */
-            $Output .= sprintf('<div class="iCntr"><div class="iLabl s">%1$s</div><div class="iCntn">', $CIDRAM['L10N']->getString('label_aux_http_status_code_override'));
-            $Output .= sprintf(
+            $Output .= sprintf('<div class="iCntr"><div class="iLabl s">%1$s</div><div class="iCntn">', $CIDRAM['L10N']->getString('label_aux_http_status_code_override')) . sprintf(
                 '<span id="%1$sstatGroupX" class="statGroup"><input type="radio" class="auto" id="%1$sstatusCodeX" name="statusCode[%3$s]" value="0" %2$s/><label for="%1$sstatusCodeX">🗙</label></span>',
                 $RuleClass,
                 empty($Data['Status Code']) ? 'checked="true" ' : '',
@@ -3674,7 +3678,7 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
 
             /** Rule notes. */
             $Output .= sprintf(
-                '<div class="iCntr"><div class="iLabl s">%1$s</div><div class="iCntn"><textarea id="Notes[%2$s]" name="Notes[%2$s]" class="half">%3$s</textarea></div></div>',
+                '<label><div class="iCntr"><div class="iLabl s">%1$s</div><div class="iCntn"><textarea id="Notes[%2$s]" name="Notes[%2$s]" class="half">%3$s</textarea></div></div></label>',
                 $CIDRAM['L10N']->getString('label_aux_notes'),
                 $Current,
                 $Data['Notes'] ?? ''
@@ -3952,7 +3956,7 @@ $CIDRAM['GenerateOptions'] = function (array $Options, string $Trim = '', bool $
             $Label = preg_replace($Trim, '', $Label);
         }
         if ($JS) {
-            $Output .= "\n  x = document.createElement('option'),\n  x.setAttribute('value', '" . $Value . "'),\n  x.innerHTML = '" . $Label . "',\n  t.appendChild(x),";
+            $Output .= "\n  x = document.createElement('option'),\n  x.setAttribute('value', '" . $Value . "'),\n  x.textContent = '" . $Label . "',\n  t.appendChild(x),";
         } else {
             $Output .= '<option value="' . $Value . '">' . $Label . '</option>';
         }

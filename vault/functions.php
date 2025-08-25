@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2025.08.24).
+ * This file: Functions file (last modified: 2025.08.25).
  */
 
 /**
@@ -334,8 +334,8 @@ $CIDRAM['CheckFactors'] = function (array $Files, array $Factors) use (&$CIDRAM)
                 $LastCIDR = "\n" . $Factors[127] . ' ';
             }
         }
-        if (strpos($Files[$FileIndex], $NoCIDR) !== false) {
-            $Files[$FileIndex] = str_replace($NoCIDR, $LastCIDR, $Files[$FileIndex]);
+        if (stripos($Files[$FileIndex], $NoCIDR) !== false) {
+            $Files[$FileIndex] = str_ireplace($NoCIDR, $LastCIDR, $Files[$FileIndex]);
         }
         if ($SigFormat === 'CSV') {
             $LN = ' ("' . $DefTag . '", L0:F' . $FileIndex . ')';
@@ -360,7 +360,7 @@ $CIDRAM['CheckFactors'] = function (array $Files, array $Factors) use (&$CIDRAM)
         for ($FactorIndex = 0; $FactorIndex < $Counts['Factors']; $FactorIndex++) {
             $PosB = -1;
             while (true) {
-                $PosA = strpos($Files[$FileIndex], "\n" . $Factors[$FactorIndex] . ' ', ($PosB + 1));
+                $PosA = stripos($Files[$FileIndex], "\n" . $Factors[$FactorIndex] . ' ', ($PosB + 1));
                 if ($PosA === false) {
                     break;
                 }

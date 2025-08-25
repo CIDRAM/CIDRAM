@@ -2089,6 +2089,7 @@ class Core
             307 => 'Temporary Redirect',
             308 => 'Permanent Redirect',
             403 => 'Forbidden',
+            404 => 'Not Found',
             409 => 'Conflict',
             410 => 'Gone',
             418 => 'I\'m a teapot',

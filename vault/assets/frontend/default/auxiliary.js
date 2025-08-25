@@ -129,12 +129,12 @@ function addCondition(p, e) {
   x = document.createElement('option'),
   x.setAttribute('value', 'If'),
   x.setAttribute('class', 'ifOrNot'),
-  x.innerHTML = posSym,
+  x.textContent = posSym,
   t.appendChild(x),
   x = document.createElement('option'),
   x.setAttribute('value', 'Not'),
   x.setAttribute('class', 'ifOrNot'),
-  x.innerHTML = negSym,
+  x.textContent = negSym,
   t.appendChild(x),
   document.getElementById(conId).appendChild(t),
   (t = document.createElement('input')).setAttribute('name', 'conSourceValue'+namePart),
@@ -234,10 +234,10 @@ function changeIfOrNot(z) {
   Array.prototype.forEach.call(z.parentElement.parentElement.parentElement.previousSibling.previousSibling.previousSibling.previousSibling.getElementsByClassName('ifOrNot'),(e)=> {
     if (e.value==='If') {
       posSym=z.value==='mtdDMA'?'≟':z.value==='mtdWin'?'≈':z.value==='mtdReg'?'≅':'=';
-      e.innerHTML=posSym;
+      e.textContent=posSym;
     } else {
       negSym=z.value==='mtdWin'?'≉':z.value==='mtdReg'?'≇':'≠';
-      e.innerHTML=negSym;
+      e.textContent=negSym;
     }
   });
 }
@@ -246,10 +246,10 @@ function changeIfOrNotEditMode(z) {
   Array.prototype.forEach.call(z.parentElement.parentElement.previousSibling.previousSibling.getElementsByClassName('ifOrNot'),(e)=> {
     if (e.value==='If') {
       posSym=z.value==='mtdDMA'?'≟':z.value==='mtdWin'?'≈':z.value==='mtdReg'?'≅':'=';
-      e.innerHTML=posSym;
+      e.textContent=posSym;
     } else {
       negSym=z.value==='mtdWin'?'≉':z.value==='mtdReg'?'≇':'≠';
-      e.innerHTML=negSym;
+      e.textContent=negSym;
     }
   });
 }

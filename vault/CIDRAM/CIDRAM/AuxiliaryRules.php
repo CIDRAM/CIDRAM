@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used for auxiliary rules (last modified: 2025.08.10).
+ * This file: Methods used for auxiliary rules (last modified: 2025.08.25).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -92,7 +92,7 @@ trait AuxiliaryRules
 
                 /** Rule name. */
                 $Output .= sprintf(
-                    '%1$s<div class="iCntr">%1$s  <div class="iLabl s">%3$s</div><div class="iCntn"><input type="text" name="ruleName[%4$s]" class="f400" value="%2$s" /></div></div>',
+                    '%1$s<label><div class="iCntr"><div class="iLabl s">%3$s</div><div class="iCntn"><input type="text" name="ruleName[%4$s]" class="f400" value="%2$s" /></div></div></label>',
                     "\n      ",
                     $Name === ' ' ? '' : $Name,
                     $this->L10N->getString('field.New name'),
@@ -101,15 +101,16 @@ trait AuxiliaryRules
 
                 /** Set rule priority (rearranges the rules). */
                 $Output .= sprintf(
-                    '%1$s<div class="iCntr"><div class="iLabl s">%3$s</div>%1$s  <div class="iCntn"><input type="text" name="rulePriority[%2$s]" class="f400" value="%2$s" /></div></div>',
+                    '%1$s<label><div class="iCntr"><div class="iLabl s">%2$s</div><div class="iCntn"><input type="number" name="rulePriority[%3$s]" class="f400" value="%3$s" /></div></div></label>',
                     "\n      ",
-                    $Current,
-                    $this->L10N->getString('field.Execution order')
+                    $this->L10N->getString('field.Execution order'),
+                    $Current
                 );
 
                 /** Rule reason. */
                 $Output .= sprintf(
-                    '<div class="iCntr"><div class="iLabl s" id="%4$sruleReasonDt">%2$s</div><div class="iCntn" id="%4$sruleReasonDd"><input type="text" name="ruleReason[%3$s]" class="f400" value="%1$s" /></div></div>',
+                    '%1$s<label><div class="iCntr"><div class="iLabl s" id="%5$sruleReasonDt">%3$s</div><div class="iCntn" id="%5$sruleReasonDd"><input type="text" name="ruleReason[%4$s]" class="f400" value="%2$s" /></div></div></label>',
+                    "\n      ",
                     $Data['Reason'] ?? '',
                     $this->L10N->getString('label.aux.The reason given to the user when blocked'),
                     $Current,
@@ -118,7 +119,8 @@ trait AuxiliaryRules
 
                 /** Redirect target. */
                 $Output .= sprintf(
-                    '<div class="iCntr"><div class="iLabl s" id="%4$sruleTargetDt">%2$s</div><div class="iCntn" id="%4$sruleTargetDd"><input type="text" name="ruleTarget[%3$s]" class="f400" value="%1$s" /></div></div>',
+                    '%1$s<label><div class="iCntr"><div class="iLabl s" id="%5$sruleTargetDt">%3$s</div><div class="iCntn" id="%5$sruleTargetDd"><input type="text" name="ruleTarget[%4$s]" class="f400" value="%2$s" /></div></div></label>',
+                    "\n      ",
                     $Data['Target'] ?? '',
                     $this->L10N->getString('label.aux.Where to redirect the request'),
                     $Current,
@@ -127,7 +129,8 @@ trait AuxiliaryRules
 
                 /** Run target. */
                 $Output .= sprintf(
-                    '<div class="iCntr"><div class="iLabl s" id="%4$sruleRunDt">%2$s</div><div class="iCntn" id="%4$sruleRunDd"><input type="text" name="ruleRun[%3$s]" class="f400" value="%1$s" /></div></div>',
+                    '%1$s<label><div class="iCntr"><div class="iLabl s" id="%5$sruleRunDt">%3$s</div><div class="iCntn" id="%5$sruleRunDd"><input type="text" name="ruleRun[%4$s]" class="f400" value="%2$s" /></div></div></label>',
+                    "\n      ",
                     $Data['Run']['File'] ?? '',
                     $this->L10N->getString('label.aux.The name of the file to run'),
                     $Current,
@@ -136,7 +139,8 @@ trait AuxiliaryRules
 
                 /** From. */
                 $Output .= sprintf(
-                    '<div class="iCntr"><div class="iLabl s" id="%4$sfromDt">%2$s</div><div class="iCntn" id="%4$sfromDd"><input type="date" name="from[%3$s]" class="f400" value="%1$s" /></div></div>',
+                    '%1$s<label><div class="iCntr"><div class="iLabl s" id="%5$sfromDt">%3$s</div><div class="iCntn" id="%5$sfromDd"><input type="date" name="from[%4$s]" class="f400" value="%2$s" /></div></div></label>',
+                    "\n      ",
                     isset($Data['From']) ? str_replace('.', '-', $Data['From']) : '',
                     $this->L10N->getString('label.aux.When the rule should begin (optional)'),
                     $Current,
@@ -145,7 +149,8 @@ trait AuxiliaryRules
 
                 /** Expiry. */
                 $Output .= sprintf(
-                    '<div class="iCntr"><div class="iLabl s" id="%4$sexpiryDt">%2$s</div><div class="iCntn" id="%4$sexpiryDd"><input type="date" name="expiry[%3$s]" class="f400" value="%1$s" /></div></div>',
+                    '%1$s<label><div class="iCntr"><div class="iLabl s" id="%5$sexpiryDt">%3$s</div><div class="iCntn" id="%5$sexpiryDd"><input type="date" name="expiry[%4$s]" class="f400" value="%2$s" /></div></div></label>',
+                    "\n      ",
                     isset($Data['Expiry']) ? str_replace('.', '-', $Data['Expiry']) : '',
                     $this->L10N->getString('label.aux.When the rule should expire (optional)'),
                     $Current,
@@ -153,8 +158,7 @@ trait AuxiliaryRules
                 );
 
                 /** Status code override. */
-                $Output .= sprintf('<div class="iCntr"><div class="iLabl s">%1$s</div><div class="iCntn">', $this->L10N->getString('label.aux.HTTP status code override'));
-                $Output .= sprintf(
+                $Output .= sprintf('<div class="iCntr"><div class="iLabl s">%1$s</div><div class="iCntn">', $this->L10N->getString('label.aux.HTTP status code override')) . sprintf(
                     '<span id="%1$sstatGroupX" class="statGroup"><input type="radio" class="auto" id="%1$sstatusCodeX" name="statusCode[%3$s]" value="0" %2$s/><label for="%1$sstatusCodeX">🗙</label></span>',
                     $RuleClass,
                     empty($Data['Status Code']) ? 'checked="true" ' : '',
@@ -179,7 +183,7 @@ trait AuxiliaryRules
                 $ConditionsFrom = '';
 
                 /** Action menu. */
-                $Output .= sprintf('<div class="iCntr"><div class="iLabl"><select id="act%1$s" name="act[%1$s]" class="auto" onchange="javascript:onAuxActionChange(this.value,\'%2$s\',\'%1$s\')">', $Current, $RuleClass);
+                $Output .= sprintf('<div class="iCntr"><div class="iLabl"><select id="act%1$s" name="act[%1$s]" title="%3$s" class="auto" onchange="javascript:onAuxActionChange(this.value,\'%2$s\',\'%1$s\')">', $Current, $RuleClass, $this->L10N->getString('label.Action'));
                 foreach ([
                     ['actWhl', 'optActWhl', 'Whitelist'],
                     ['actGrl', 'optActGrl', 'Greylist'],
@@ -228,9 +232,9 @@ trait AuxiliaryRules
                     }
                     $Iteration = 0;
                     $ConditionFormTemplate = "\n" .
-                        '<div class="flexrow"><select name="conSourceType[%1$s][%2$s]" class="auto" onchange="javascript:getInputSuggestions(this)">%3$s</select>' .
-                        '<select name="conIfOrNot[%1$s][%2$s]" class="auto"><option value="If" class="ifOrNot"%6$s>%8$s</option><option value="Not" class="ifOrNot"%7$s>%9$s</option></select>' .
-                        '<input type="text" name="conSourceValue[%1$s][%2$s]" placeholder="%4$s" class="flexin" value="%5$s" onfocus="javascript:getInputSuggestions(this.previousElementSibling.previousElementSibling)" /></div><div class="suggestsInactive s"></div>';
+                        '<div class="flexrow"><select name="conSourceType[%1$s][%2$s]" title="%10$s" class="auto" onchange="javascript:getInputSuggestions(this)">%3$s</select>' .
+                        '<select name="conIfOrNot[%1$s][%2$s]" title="{label.Operator}" class="auto"><option value="If" class="ifOrNot"%6$s>%8$s</option><option value="Not" class="ifOrNot"%7$s>%9$s</option></select>' .
+                        '<input type="text" name="conSourceValue[%1$s][%2$s]" title="%11$s" placeholder="%4$s" class="flexin" value="%5$s" onfocus="javascript:getInputSuggestions(this.previousElementSibling.previousElementSibling)" /></div><div class="suggestsInactive s"></div>';
                     foreach ([['If matches', ' selected', ''], ['But not if matches', '', ' selected']] as $ModeSet) {
                         if (isset($Data[$ConditionsFrom][$ModeSet[0]]) && is_array($Data[$ConditionsFrom][$ModeSet[0]])) {
                             foreach ($Data[$ConditionsFrom][$ModeSet[0]] as $Key => $Values) {
@@ -246,7 +250,9 @@ trait AuxiliaryRules
                                         $ModeSet[1],
                                         $ModeSet[2],
                                         $PosSymbol,
-                                        $NegSymbol
+                                        $NegSymbol,
+                                        $this->L10N->getString('label.Data source'),
+                                        $this->L10N->getString('label.Data value')
                                     );
                                     $Iteration++;
                                 }
@@ -293,8 +299,9 @@ trait AuxiliaryRules
                     $MethodData = ['', '', '', ''];
                 }
                 $Output .= sprintf(
-                    '<div class="iCntr"><div class="iLabl"><select name="mtd[%s]" class="auto" onchange="javascript:changeIfOrNotEditMode(this)"><option value="mtdStr"%s>%s</option><option value="mtdReg"%s>%s</option><option value="mtdWin"%s>%s</option><option value="mtdDMA"%s>%s</option></select><br /><span class="suggestsActive"><small>%s</small></span></div></div>',
+                    '<div class="iCntr"><div class="iLabl"><select name="mtd[%s]" title="%s" class="auto" onchange="javascript:changeIfOrNotEditMode(this)"><option value="mtdStr"%s>%s</option><option value="mtdReg"%s>%s</option><option value="mtdWin"%s>%s</option><option value="mtdDMA"%s>%s</option></select><br /><span class="suggestsActive"><small>%s</small></span></div></div>',
                     $Current,
+                    $this->L10N->getString('label.Method'),
                     $MethodData[0],
                     $this->FE['optMtdStr'],
                     $MethodData[1],
@@ -315,12 +322,13 @@ trait AuxiliaryRules
                     $LogicData = ['', ''];
                 }
                 $Output .= sprintf(
-                    '<div class="iCntr"><div class="iLabl"><select id="logic[%1$s]" name="logic[%1$s]" class="flong"><option value="Any"%4$s>%2$s</option><option value="All"%5$s>%3$s</option></select></div></div>',
+                    '<div class="iCntr"><div class="iLabl"><select id="logic[%1$s]" name="logic[%1$s]" title="%2$s" class="flong"><option value="Any"%3$s>%4$s</option><option value="All"%5$s>%6$s</option></select></div></div>',
                     $Current,
-                    $this->L10N->getString('label.aux.logic_any'),
-                    $this->L10N->getString('label.aux.logic_all'),
+                    $this->L10N->getString('label.Logic'),
                     $LogicData[0],
-                    $LogicData[1]
+                    $this->L10N->getString('label.aux.logic_any'),
+                    $LogicData[1],
+                    $this->L10N->getString('label.aux.logic_all')
                 );
 
                 /** Other options and special flags. */
@@ -372,7 +380,7 @@ trait AuxiliaryRules
 
                 /** Additional instructions. */
                 $Output .= sprintf(
-                    '<div class="iCntr"><div class="iLabl s">%1$s</div><div class="iCntn"><textarea id="AdditionalInstructions[%2$s]" name="AdditionalInstructions[%2$s]" class="half">%3$s</textarea></div></div>',
+                    '<label><div class="iCntr"><div class="iLabl s">%1$s</div><div class="iCntn"><textarea id="AdditionalInstructions[%2$s]" name="AdditionalInstructions[%2$s]" class="half">%3$s</textarea></div></div></label>',
                     $this->L10N->getString('label.aux.Additional instructions'),
                     $Current,
                     $Data['Additional instructions'] ?? ''
@@ -380,7 +388,7 @@ trait AuxiliaryRules
 
                 /** Rule notes. */
                 $Output .= sprintf(
-                    '<div class="iCntr"><div class="iLabl s">%1$s</div><div class="iCntn"><textarea id="Notes[%2$s]" name="Notes[%2$s]" class="half">%3$s</textarea></div></div>',
+                    '<label><div class="iCntr"><div class="iLabl s">%1$s</div><div class="iCntn"><textarea id="Notes[%2$s]" name="Notes[%2$s]" class="half">%3$s</textarea></div></div></label>',
                     $this->L10N->getString('label.aux.Notes'),
                     $Current,
                     $Data['Notes'] ?? ''
@@ -676,7 +684,7 @@ trait AuxiliaryRules
             }
             $Label = $this->L10N->getString($Label) ?: $Label;
             if ($JS) {
-                $Output .= "\n  x = document.createElement('option'),\n  x.setAttribute('value', '" . $Value . "'),\n  x.innerHTML = '" . $Label . "',\n  t.appendChild(x),";
+                $Output .= "\n  x = document.createElement('option'),\n  x.setAttribute('value', '" . $Value . "'),\n  x.textContent = '" . $Label . "',\n  t.appendChild(x),";
             } else {
                 $Output .= '<option value="' . $Value . '">' . $Label . '</option>';
             }

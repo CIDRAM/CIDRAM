@@ -464,6 +464,10 @@
 
 ### v3.10.1
 
+#### Bugs fixed.
+- [2025.08.25]: Fixed various accessibility issues affecting the auxiliary rules pages.
+
+#### Other changes.
 - [2025.08.21]: Added a macro for uninstalling any no longer available components.
 - [2025.08.23]: On the auxiliary rules page, when focused on the input field for a condition or webhook, if that field is empty, pressing backspace or delete will now hide the relevant fields for that condition or webhook. Such empty fields were already being disregarded when creating or updating auxiliary rules, so this change doesn't affect those mechanisms, but being able to hide such fields may slightly benefit the UX (#624).
 - [2025.08.23]: Added a focus option for query to the IP testing page.

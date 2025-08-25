@@ -3475,7 +3475,7 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
                 empty($Data['Status Code']) ? 'checked="true" ' : '',
                 $Current
             );
-            foreach ([['3', ['301', '302', '307', '308']], ['45', ['403', '410', '418', '451', '503']]] as $StatGroup) {
+            foreach ([['3', ['301', '302', '307', '308']], ['45', ['403', '404', '410', '418', '451', '503']]] as $StatGroup) {
                 $Output .= sprintf('<span id="%1$sstatGroup%2$s" class="statGroup">', $RuleClass, $StatGroup[0]);
                 foreach ($StatGroup[1] as $StatusCode) {
                     $Output .= sprintf(

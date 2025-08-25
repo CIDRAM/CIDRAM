@@ -50,6 +50,7 @@ function onAuxActionChange(e, p, i) {
   if ('actBlk' === e) {
     statusCode < 400 && (document.getElementById(p+'statusCodeX').checked = true);
     document.getElementById(p+'statusCode403').disabled = false;
+    document.getElementById(p+'statusCode404').disabled = false;
     document.getElementById(p+'statusCode410').disabled = false;
     document.getElementById(p+'statusCode418').disabled = false;
     document.getElementById(p+'statusCode451').disabled = false;
@@ -60,6 +61,7 @@ function onAuxActionChange(e, p, i) {
     document.getElementById(p+'statGroup45').style.backgroundColor = '';
   } else {
     document.getElementById(p+'statusCode403').disabled = true;
+    document.getElementById(p+'statusCode404').disabled = true;
     document.getElementById(p+'statusCode410').disabled = true;
     document.getElementById(p+'statusCode418').disabled = true;
     document.getElementById(p+'statusCode451').disabled = true;

@@ -473,6 +473,7 @@
 
 #### Bugs fixed.
 - Fixed various accessibility issues affecting the auxiliary rules pages.
+- Standard signatures should been case-insensitive, but some checks used were case-sensitive; Fixed (#633).
 
 #### Other changes.
 - Added a macro for uninstalling any no longer available components.

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2025.08.24).
+ * This file: The CIDRAM core (last modified: 2025.08.25).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -626,8 +626,8 @@ class Core
                     $LastCIDR = "\n" . $Factors[127] . ' ';
                 }
             }
-            if (strpos($Files[$FileIndex], $NoCIDR) !== false) {
-                $Files[$FileIndex] = str_replace($NoCIDR, $LastCIDR, $Files[$FileIndex]);
+            if (stripos($Files[$FileIndex], $NoCIDR) !== false) {
+                $Files[$FileIndex] = str_ireplace($NoCIDR, $LastCIDR, $Files[$FileIndex]);
             }
             if ($SigFormat === 'CSV') {
                 $LN = ' ("' . $DefTag . '", L0:F' . $FileIndex . ')';
@@ -650,7 +650,7 @@ class Core
             for ($FactorIndex = 0; $FactorIndex < $Counts['Factors']; $FactorIndex++) {
                 $PosB = -1;
                 while (true) {
-                    $PosA = strpos($Files[$FileIndex], "\n" . $Factors[$FactorIndex] . ' ', ($PosB + 1));
+                    $PosA = stripos($Files[$FileIndex], "\n" . $Factors[$FactorIndex] . ' ', ($PosB + 1));
                     if ($PosA === false) {
                         break;
                     }

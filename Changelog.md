@@ -467,6 +467,7 @@
 #### Bugs fixed.
 - [2025.08.25]: Fixed various accessibility issues affecting the auxiliary rules pages.
 - [2025.08.25]: Standard signatures should been case-insensitive, but some checks used were case-sensitive; Fixed (#633).
+- [2025.08.26]: Wrong label used for CAPTCHAs at the front-end statistics page; Fixed (#631).
 
 #### Other changes.
 - [2025.08.21]: Added a macro for uninstalling any no longer available components.

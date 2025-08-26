@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2025.08.25).
+ * This file: Functions file (last modified: 2025.08.26).
  */
 
 /**
@@ -2068,7 +2068,7 @@ $CIDRAM['AuxAction'] = function ($Action, $Name, $Reason = '', $Target = '', $St
     /** Process other options and special flags. */
     foreach ($CIDRAM['Config']['Provide']['Auxiliary Rules']['Flags'] as $FlagSetName => $FlagSet) {
         foreach ($FlagSet as $FlagName => $FlagData) {
-            if (empty($Flags[$FlagName]) || empty($FlagData['Sets']) || !is_array($FlagData['Sets'])) {
+            if (empty($Flags[$FlagName]) || !isset($FlagData['Sets']) || !is_array($FlagData['Sets'])) {
                 continue;
             }
             foreach ($FlagData['Sets'] as $SetKey => $SetData) {
@@ -2233,7 +2233,7 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM) {
         $Flags = [];
         foreach ($CIDRAM['Config']['Provide']['Auxiliary Rules']['Flags'] as $FlagSet) {
             foreach ($FlagSet as $FlagKey => $FlagData) {
-                $Flags[$FlagKey] = !empty($Data[$FlagKey]);
+                $Flags[$FlagKey] = is_array($FlagData) && !empty($Data[$FlagKey]);
             }
         }
 

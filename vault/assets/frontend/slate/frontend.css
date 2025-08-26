@@ -182,7 +182,7 @@ input[type=button].reset:hover,input[type=button].reset:active{color:#fa7}
 .navicon.home{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:home.svg}{/Base64Encode})}
 .navicon.intersector{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:intersector.svg}{/Base64Encode})}
 .navicon.link{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:link.svg}{/Base64Encode})}
-.navicon.logs{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:logs.svg}{/Base64Encode})}
+.navicon.logs,.bckpicon.logs{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:logs.svg}{/Base64Encode})}
 .navicon.range{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:range.svg}{/Base64Encode})}
 .navicon.rl{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:rl.svg}{/Base64Encode})}
 .navicon.sections{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:sections.svg}{/Base64Encode})}
@@ -216,9 +216,12 @@ input[disabled],input[disabled]+label{cursor:not-allowed}
 .auxicon.up2{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxup2.svg}{/Base64Encode})}
 .auxicontxt{padding:0 3px 0 3px}
 .bckpicon{display:inline-block;width:16px;height:16px}
-.bckpicon.import{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:import.svg}{/Base64Encode})}
-.bckpicon.export{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:export.svg}{/Base64Encode})}
+.bckpicon.auxpausebig{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxpausebig.svg}{/Base64Encode})}
 .bckpicon.compress{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:compress.svg}{/Base64Encode})}
+.bckpicon.disabledoverlay{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:disabledoverlay.svg}{/Base64Encode});position:relative;inset:-16px 0;opacity:.8}
+.bckpicon.email{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:email.svg}{/Base64Encode})}
+.bckpicon.export{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:export.svg}{/Base64Encode})}
+.bckpicon.import{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:import.svg}{/Base64Encode})}
 .bckpicon.statistics{position:relative;top:-1px}
 input[type=file]::file-selector-button{padding-{FE_Align}:20px;background-repeat:no-repeat;background-position:top 1px {FE_Align} 4px}
 .rulePseudoPos{display:block;height:0px;width:100%;transform:scaleY(0);transition:all .5s ease-in-out;font-size:calc((10px * {magnification}) + .03vw);font-weight:700}

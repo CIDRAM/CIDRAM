@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bot user agents module (last modified: 2025.08.21).
+ * This file: Bot user agents module (last modified: 2025.08.26).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -77,7 +77,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
     if ($this->trigger(strpos($UANoSpace, 'captch') !== false, 'CAPTCHA cracker UA', '')) {
         $this->Reporter->report([19], ['CAPTCHA cracker detected.'], $this->BlockInfo['IPAddr']);
-        $this->enactOptions('', ['ForciblyDisableHCaptcha' => true]);
+        $this->enactOptions('', ['ForciblyDisableAll' => true]);
     } // 2017.01.08 mod 2021.04.29
 
     $this->trigger(preg_match(

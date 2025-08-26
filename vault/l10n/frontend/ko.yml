@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2025.08.25).
+# This file: Korean language data for the front-end (last modified: 2025.08.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -124,6 +124,8 @@ checkbox:
  Should infractions generated during this stage count towards IP tracking: "이 단계에서 생성된 위반은 IP 추적에 포함되어야 합니까?"
  Should this field appear in log entries: "이 필드가 로그 항목에 나타나야 합니까?"
  Should this field appear on the access denied page: "이 필드가 "액세스 거부" 페이지에 나타나야 합니까?"
+ Suppress Cloudflare Turnstile: "Cloudflare Turnstile 억제"
+ Suppress Friendly Captcha: "Friendly Captcha 억제"
  Suppress hCaptcha: "HCaptcha 억제"
  Test as sensitive request: "민감한 요청으로 테스트"
  Untrack positives: "포지티브를 추적 해제하시겠습니까?"
@@ -697,12 +699,15 @@ label:
   Enable this rule: "이 규칙 사용"
   Enforce default IP tracking options: "기본 IP 추적 옵션 적용"
   Enforce extended IP tracking options: "확장 된 IP 추적 옵션 적용"
-  Forcibly disable hCaptcha: "HCaptcha를 강제로 비활성화"
+  Forcibly disable Cloudflare Turnstile: "Cloudflare Turnstile를 강제로 비활성화"
+  Forcibly disable Friendly Captcha: "Friendly Captcha를 강제로 비활성화"
   Forcibly disable IP tracking: "IP 추적을 강제로 비활성화"
+  Forcibly disable hCaptcha: "HCaptcha를 강제로 비활성화"
   Forcibly enable IP tracking: "IP 추적을 강제로 활성화"
   HTTP status code override: "HTTP 상태 코드 바꿔 놓음\_:"
   If the following conditions are met, %s: "다음 조건이 충족되면 %s."
-  Leave it as is (don_t set anything): "그대로 두십시오 (아무것도 설정하지 마십시오)"
+  Mark for use with Cloudflare Turnstile: "Cloudflare Turnstile와 함께 사용하기위한 마크"
+  Mark for use with Friendly Captcha: "Friendly Captcha와 함께 사용하기위한 마크"
   Mark for use with hCaptcha: "HCaptcha와 함께 사용하기위한 마크"
   Modify rule: "규칙 수정"
   Move down: "내려가다"

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2025.08.22).
+ * This file: Protect traits (last modified: 2025.08.26).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -395,7 +395,7 @@ trait Protect
                             ($RLMaxBandwidth > 0 && $this->CIDRAM['RL_Usage']['Bytes'] >= $RLMaxBandwidth) ||
                             ($this->Configuration['rate_limiting']['max_requests'] > 0 && $this->CIDRAM['RL_Usage']['Requests'] >= $this->Configuration['rate_limiting']['max_requests'])
                         ), $this->L10N->getString('Short.RL'), sprintf($this->L10N->getString('ReasonMessage.RL'), $RLFormatted))) {
-                            $this->enactOptions('', ['ForciblyDisableHCaptcha' => true]);
+                            $this->enactOptions('', ['ForciblyDisableAll' => true]);
                             $this->CIDRAM['Other Status'] = $this->getStatusHTTP(429);
                             $this->CIDRAM['Other Status Code'] = 429;
                             if (isset($this->Shorthand['RL:Suppress'])) {
@@ -439,7 +439,7 @@ trait Protect
                     $this->Configuration['captcha'][$CAPTCHA[0]] !== '' &&
                     $this->Configuration['captcha'][$CAPTCHA[1]] !== '' &&
                     class_exists($ClassName) &&
-                    empty($this->Configuration['captcha']['forcibly_disabled']) &&
+                    empty($this->CIDRAM['ForciblyDisable' . $CAPTCHA[2]]) &&
                     (
                         $this->Configuration['captcha']['usemode'][$CAPTCHA[3]] === 1 ||
                         $this->Configuration['captcha']['usemode'][$CAPTCHA[3]] === 3 ||
@@ -447,7 +447,7 @@ trait Protect
                             (
                                 $this->Configuration['captcha']['usemode'][$CAPTCHA[3]] === 2 ||
                                 $this->Configuration['captcha']['usemode'][$CAPTCHA[3]] === 5
-                            ) && !empty($this->Configuration['captcha']['enabled'])
+                            ) && !empty($this->CIDRAM['MarkForUseWith' . $CAPTCHA[2]])
                         )
                     ) &&
                     (!$this->hasProfile('Blocked Negative') || !isset($this->VAdjust['Negatives:' . $CAPTCHA[2]])) &&

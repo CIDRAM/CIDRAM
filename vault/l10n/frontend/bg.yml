@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bulgarian language data for the front-end (last modified: 2025.08.25).
+# This file: Bulgarian language data for the front-end (last modified: 2025.08.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -124,6 +124,8 @@ checkbox:
  Should infractions generated during this stage count towards IP tracking: "Трябва ли нарушенията, генерирани по време на този етап, да се зачитат за IP проследяване?"
  Should this field appear in log entries: "Това поле трябва ли да се показва в записите в дневника?"
  Should this field appear on the access denied page: "Това поле трябва ли да се появи на страницата „отказан достъп“?"
+ Suppress Cloudflare Turnstile: "Потискане на Cloudflare Turnstile"
+ Suppress Friendly Captcha: "Потискане на Friendly Captcha"
  Suppress hCaptcha: "Потискане на hCaptcha"
  Test as sensitive request: "Тествайте като чувствителна заявка"
  Untrack positives: "Прекратяване на проследяването на положителни?"
@@ -716,12 +718,15 @@ label:
   Enable this rule: "Активирайте това правило"
   Enforce default IP tracking options: "Прилагане на стандартни опции за проследяване на IP"
   Enforce extended IP tracking options: "Прилагане на разширени опции за проследяване на IP"
-  Forcibly disable hCaptcha: "Принудително деактивирайте hCaptcha"
+  Forcibly disable Cloudflare Turnstile: "Принудително деактивирайте Cloudflare Turnstile"
+  Forcibly disable Friendly Captcha: "Принудително деактивирайте Friendly Captcha"
   Forcibly disable IP tracking: "Принудително деактивирайте IP проследяването"
+  Forcibly disable hCaptcha: "Принудително деактивирайте hCaptcha"
   Forcibly enable IP tracking: "Принудително активирайте IP проследяването"
   HTTP status code override: "Замяна на HTTP код за състояние:"
   If the following conditions are met, %s: "Ако са изпълнени следните условия, %s."
-  Leave it as is (don_t set anything): "Оставете го както е (не задавайте нищо)"
+  Mark for use with Cloudflare Turnstile: "Маркирайте за използване с Cloudflare Turnstile"
+  Mark for use with Friendly Captcha: "Маркирайте за използване с Friendly Captcha"
   Mark for use with hCaptcha: "Маркирайте за използване с hCaptcha"
   Modify rule: "Променете правилото"
   Move down: "Преместете надолу"

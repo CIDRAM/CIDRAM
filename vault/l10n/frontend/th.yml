@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2025.08.25).
+# This file: Thai language data for the front-end (last modified: 2025.08.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -124,6 +124,8 @@ checkbox:
  Should infractions generated during this stage count towards IP tracking: "นับการละเมิดที่เกิดขึ้นระหว่างขั้นตอนนี้ต่อการติดตาม IP หรือไม่?"
  Should this field appear in log entries: "ช่องนี้ควรปรากฏในรายการบันทึกหรือไม่?"
  Should this field appear on the access denied page: "ฟิลด์นี้ควรปรากฏใน "ปฏิเสธการเข้าใช้" หน้าหรือไม่?"
+ Suppress Cloudflare Turnstile: "ปราบปราม Cloudflare Turnstile"
+ Suppress Friendly Captcha: "ปราบปราม Friendly Captcha"
  Suppress hCaptcha: "ปราบปราม hCaptcha"
  Test as sensitive request: "ทดสอบตามคำขอที่ละเอียดอ่อน"
  Untrack positives: "เลิกติดตามผลบวก?"
@@ -693,12 +695,15 @@ label:
   Enable this rule: "เปิดใช้งานกฎนี้"
   Enforce default IP tracking options: "บังคับใช้ตัวเลือกการติดตาม IP ขยายตัว"
   Enforce extended IP tracking options: "บังคับใช้ตัวเลือกการติดตาม IP เพิ่มเติม"
-  Forcibly disable hCaptcha: "บังคับปิดใช้งาน hCaptcha"
+  Forcibly disable Cloudflare Turnstile: "บังคับปิดใช้งาน Cloudflare Turnstile"
+  Forcibly disable Friendly Captcha: "บังคับปิดใช้งาน Friendly Captcha"
   Forcibly disable IP tracking: "บังคับปิดการติดตาม IP"
+  Forcibly disable hCaptcha: "บังคับปิดใช้งาน hCaptcha"
   Forcibly enable IP tracking: "บังคับให้เปิดใช้งานการติดตาม IP"
   HTTP status code override: "การแทนที่รหัสสถานะ HTTP:"
   If the following conditions are met, %s: "หากตรงตามเงื่อนไขต่อไปนี้ %s."
-  Leave it as is (don_t set anything): "ปล่อยไว้ตามที่เป็นอยู่ (ไม่ต้องตั้งค่าอะไรเลย)"
+  Mark for use with Cloudflare Turnstile: "ทำเครื่องหมายเพื่อใช้กับ Cloudflare Turnstile"
+  Mark for use with Friendly Captcha: "ทำเครื่องหมายเพื่อใช้กับ Friendly Captcha"
   Mark for use with hCaptcha: "ทำเครื่องหมายเพื่อใช้กับ hCaptcha"
   Modify rule: "ปรับเปลี่ยนกฎ"
   Move down: "ย้ายลง"

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2025.08.25).
+ * This file: The CIDRAM core (last modified: 2025.08.26).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1558,12 +1558,13 @@ class Core
      */
     public function enactOptions(string $Prefix = '', array $Options = []): void
     {
-        if (isset($Options[$Prefix . 'MarkForUseWithHCaptcha'])) {
-            $this->Configuration['captcha']['enabled'] = true;
-        }
-        if (isset($Options[$Prefix . 'ForciblyDisableHCaptcha'])) {
-            $this->Configuration['captcha']['usemode']['hcaptcha'] = 0;
-            $this->Configuration['captcha']['forcibly_disabled'] = true;
+        foreach (['HCaptcha', 'FriendlyCaptcha', 'CloudflareTurnstile'] as $Platform) {
+            if (isset($Options[$Prefix . 'MarkForUseWith' . $Platform]) || isset($Options[$Prefix . 'MarkForUseWithAll'])) {
+                $this->CIDRAM['MarkForUseWith' . $Platform] = true;
+            }
+            if (isset($Options[$Prefix . 'ForciblyDisable' . $Platform]) || isset($Options[$Prefix . 'ForciblyDisableAll'])) {
+                $this->CIDRAM['ForciblyDisable' . $Platform] = true;
+            }
         }
     }
 
@@ -2260,7 +2261,7 @@ class Core
         /** Process other options and special flags. */
         foreach ($this->CIDRAM['Provide']['Auxiliary Rules']['Flags'] as $FlagSetName => $FlagSet) {
             foreach ($FlagSet as $FlagName => $FlagData) {
-                if (empty($Flags[$FlagName]) || empty($FlagData['Sets']) || !is_array($FlagData['Sets'])) {
+                if (empty($Flags[$FlagName]) || !isset($FlagData['Sets']) || !is_array($FlagData['Sets'])) {
                     continue;
                 }
                 foreach ($FlagData['Sets'] as $SetKey => $SetData) {
@@ -2431,7 +2432,7 @@ class Core
             $Flags = [];
             foreach ($this->CIDRAM['Provide']['Auxiliary Rules']['Flags'] as $FlagSet) {
                 foreach ($FlagSet as $FlagKey => $FlagData) {
-                    $Flags[$FlagKey] = !empty($Data[$FlagKey]);
+                    $Flags[$FlagKey] = is_array($FlagData) && !empty($Data[$FlagKey]);
                 }
             }
 
@@ -3022,17 +3023,17 @@ class Core
         if (!isset($this->BlockInfo['SignatureCount'])) {
             return false;
         }
-        if (isset($this->Configuration['captcha']['usemode']['hcaptcha']) && (
-            $this->Configuration['captcha']['usemode']['hcaptcha'] === 1 ||
-            $this->Configuration['captcha']['usemode']['hcaptcha'] === 3 ||
-            (
+        foreach ([['HCaptcha', 'hcaptcha'], ['FriendlyCaptcha', 'friendly'], ['CloudflareTurnstile', 'cloudflare']] as $CAPTCHA) {
+            if (isset($this->Configuration['captcha']['usemode'][$CAPTCHA[1]]) && (
+                $this->Configuration['captcha']['usemode'][$CAPTCHA[1]] === 1 ||
+                $this->Configuration['captcha']['usemode'][$CAPTCHA[1]] === 3 ||
                 (
-                    $this->Configuration['captcha']['usemode']['hcaptcha'] === 2 ||
-                    $this->Configuration['captcha']['usemode']['hcaptcha'] === 5
-                ) && !empty($this->Configuration['captcha']['enabled'])
-            )
-        )) {
-            return $this->BlockInfo['SignatureCount'] <= $this->Configuration['captcha']['signature_limit'];
+                    ($this->Configuration['captcha']['usemode'][$CAPTCHA[1]] === 2 || $this->Configuration['captcha']['usemode'][$CAPTCHA[1]] === 5) &&
+                    !empty($this->CIDRAM['MarkForUseWith' . $CAPTCHA[0]])
+                )
+            )) {
+                return $this->BlockInfo['SignatureCount'] <= $this->Configuration['captcha']['signature_limit'];
+            }
         }
         return $this->BlockInfo['SignatureCount'] < 1;
     }
@@ -3398,7 +3399,7 @@ class Core
         }
         $this->BlockInfo['Signatures'] .= 'Conflict';
         $this->BlockInfo['SignatureCount']++;
-        $this->enactOptions('', ['ForciblyDisableHCaptcha' => true]);
+        $this->enactOptions('', ['ForciblyDisableAll' => true]);
         $this->CIDRAM['Other Status'] = $this->getStatusHTTP($this->Configuration['signatures']['conflict_response']);
         $this->CIDRAM['Other Status Code'] = $this->Configuration['signatures']['conflict_response'];
         if (isset($this->Shorthand[$Signature . ':Suppress'])) {

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2025.08.25).
+# This file: Norwegian language data for the front-end (last modified: 2025.08.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -124,6 +124,8 @@ checkbox:
  Should infractions generated during this stage count towards IP tracking: "Telle infraksjoner generert i løpet av dette stadiet mot IP-sporing?"
  Should this field appear in log entries: "Skal dette feltet vises i loggoppføringer?"
  Should this field appear on the access denied page: "Skal dette feltet vises på «tilgang nektet» siden?"
+ Suppress Cloudflare Turnstile: "Undertrykk Cloudflare Turnstile"
+ Suppress Friendly Captcha: "Undertrykk Friendly Captcha"
  Suppress hCaptcha: "Undertrykk hCaptcha"
  Test as sensitive request: "Test som sensitiv forespørsel"
  Untrack positives: "Slutte å spore etter positive?"
@@ -708,12 +710,15 @@ label:
   Enable this rule: "Aktiver denne regelen"
   Enforce default IP tracking options: "Håndheve standard IP-sporingsalternativer"
   Enforce extended IP tracking options: "Håndheve utvidede IP-sporingsalternativer"
-  Forcibly disable hCaptcha: "Deaktiver hCaptcha med makt"
+  Forcibly disable Cloudflare Turnstile: "Deaktiver Cloudflare Turnstile med makt"
+  Forcibly disable Friendly Captcha: "Deaktiver Friendly Captcha med makt"
   Forcibly disable IP tracking: "Deaktiver IP-sporing med makt"
+  Forcibly disable hCaptcha: "Deaktiver hCaptcha med makt"
   Forcibly enable IP tracking: "Aktiver IP-sporing med makt"
   HTTP status code override: "HTTP-statuskode overstyrer:"
   If the following conditions are met, %s: "Hvis følgende betingelser er oppfylt, %s."
-  Leave it as is (don_t set anything): "La det være som det er (ikke sett noe)"
+  Mark for use with Cloudflare Turnstile: "Merk for bruk med Cloudflare Turnstile"
+  Mark for use with Friendly Captcha: "Merk for bruk med Friendly Captcha"
   Mark for use with hCaptcha: "Merk for bruk med hCaptcha"
   Modify rule: "Endre regelen"
   Move down: "Flytt ned"

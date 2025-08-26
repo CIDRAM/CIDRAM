@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Galician language data for the front-end (last modified: 2025.08.25).
+# This file: Galician language data for the front-end (last modified: 2025.08.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -124,6 +124,8 @@ checkbox:
  Should infractions generated during this stage count towards IP tracking: "As infraccións xeradas durante esta etapa deberían contar para o seguimento IP?"
  Should this field appear in log entries: "Este campo debería aparecer nas entradas de rexistro?"
  Should this field appear on the access denied page: "Este campo debería aparecer na páxina "acceso denegado"?"
+ Suppress Cloudflare Turnstile: "Desactiva Cloudflare Turnstile"
+ Suppress Friendly Captcha: "Desactiva Friendly Captcha"
  Suppress hCaptcha: "Desactiva hCaptcha"
  Test as sensitive request: "Proba como solicitude sensible"
  Untrack positives: "Cancelar o seguimento de positivos?"
@@ -704,12 +706,15 @@ label:
   Enable this rule: "Activa esta regra"
   Enforce default IP tracking options: "Aplicar opcións de seguimento IP predeterminadas"
   Enforce extended IP tracking options: "Aplicar opcións de seguimento IP ampliadas"
-  Forcibly disable hCaptcha: "Desactivar hCaptcha á forza"
+  Forcibly disable Cloudflare Turnstile: "Desactivar Cloudflare Turnstile á forza"
+  Forcibly disable Friendly Captcha: "Desactivar Friendly Captcha á forza"
   Forcibly disable IP tracking: "Desactivar o seguimento IP á forza"
+  Forcibly disable hCaptcha: "Desactivar hCaptcha á forza"
   Forcibly enable IP tracking: "Activar o seguimento IP á forza"
   HTTP status code override: "Anulación do código de estado HTTP:"
   If the following conditions are met, %s: "Se se cumpren as seguintes condicións, %s."
-  Leave it as is (don_t set anything): "Déixao como está (non configures nada)"
+  Mark for use with Cloudflare Turnstile: "Marcar para usar con Cloudflare Turnstile"
+  Mark for use with Friendly Captcha: "Marcar para usar con Friendly Captcha"
   Mark for use with hCaptcha: "Marcar para usar con hCaptcha"
   Modify rule: "Modificar a regra"
   Move down: "Mover cara abaixo"

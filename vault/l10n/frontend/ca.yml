@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Catalan language data for the front-end (last modified: 2025.08.25).
+# This file: Catalan language data for the front-end (last modified: 2025.08.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -124,6 +124,8 @@ checkbox:
  Should infractions generated during this stage count towards IP tracking: "Les infraccions generades durant aquesta etapa haurien de comptar per al seguiment de la IP?"
  Should this field appear in log entries: "Aquest camp hauria d'aparèixer a les entrades del registre?"
  Should this field appear on the access denied page: "Aquest camp hauria d'aparèixer a la pàgina "accés denegat"?"
+ Suppress Cloudflare Turnstile: "Desactiva Cloudflare Turnstile"
+ Suppress Friendly Captcha: "Desactiva Friendly Captcha"
  Suppress hCaptcha: "Desactiva hCaptcha"
  Test as sensitive request: "Prova com a sol·licitud sensible"
  Untrack positives: "Cancel·la el seguiment de positius?"
@@ -702,12 +704,15 @@ label:
   Enable this rule: "Activa aquesta regla"
   Enforce default IP tracking options: "Apliqueu opcions del seguiment de IP predeterminades"
   Enforce extended IP tracking options: "Apliqueu opcions del seguiment de IP ampliades"
-  Forcibly disable hCaptcha: "Desactivar forçadament hCaptcha"
+  Forcibly disable Cloudflare Turnstile: "Desactivar forçadament Cloudflare Turnstile"
+  Forcibly disable Friendly Captcha: "Desactivar forçadament Friendly Captcha"
   Forcibly disable IP tracking: "Desactivar forçadament del seguiment de IP"
+  Forcibly disable hCaptcha: "Desactivar forçadament hCaptcha"
   Forcibly enable IP tracking: "Activar forçadament del seguiment de IP"
   HTTP status code override: "Substitució del codi d'estat HTTP:"
   If the following conditions are met, %s: "Si es compleixen les condicions següents, %s."
-  Leave it as is (don_t set anything): "Deixeu-ho tal qual (no configureu res)"
+  Mark for use with Cloudflare Turnstile: "Marqueu per utilitzar-lo amb Cloudflare Turnstile"
+  Mark for use with Friendly Captcha: "Marqueu per utilitzar-lo amb Friendly Captcha"
   Mark for use with hCaptcha: "Marqueu per utilitzar-lo amb hCaptcha"
   Modify rule: "Modificar la regla"
   Move down: "Mou cap avall"

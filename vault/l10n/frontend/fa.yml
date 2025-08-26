@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Farsi language data for the front (last modified: 2025.08.25).
+# This file: Farsi language data for the front (last modified: 2025.08.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -124,6 +124,8 @@ checkbox:
  Should infractions generated during this stage count towards IP tracking: "آیا تخلفات ایجاد شده در این مرحله باید در ردیابی IP لحاظ شود؟"
  Should this field appear in log entries: "آیا این فیلد باید در ورودی های گزارش ظاهر شود؟"
  Should this field appear on the access denied page: "آیا این فیلد باید در صفحه «دسترسی ممنوع» ظاهر شود؟"
+ Suppress Cloudflare Turnstile: "Cloudflare Turnstile را سرکوب کنید"
+ Suppress Friendly Captcha: "Friendly Captcha را سرکوب کنید"
  Suppress hCaptcha: "HCaptcha را سرکوب کنید"
  Test as sensitive request: "تست به عنوان درخواست حساس"
  Untrack positives: "ردیابی موارد مثبت متوقف شود؟"
@@ -703,12 +705,15 @@ label:
   Enable this rule: "این قوانین را فعال کنید"
   Enforce default IP tracking options: "گزینه های پیش فرض ردیابی IP را اعمال کنید"
   Enforce extended IP tracking options: "گزینه های ردیابی IP گسترده را اعمال کنید"
-  Forcibly disable hCaptcha: "HCaptcha را به اجبار غیرفعال کنید"
+  Forcibly disable Cloudflare Turnstile: "Cloudflare Turnstile را به اجبار غیرفعال کنید"
+  Forcibly disable Friendly Captcha: "Friendly Captcha را به اجبار غیرفعال کنید"
   Forcibly disable IP tracking: "ردیابی IP را به اجبار غیرفعال کنید"
+  Forcibly disable hCaptcha: "HCaptcha را به اجبار غیرفعال کنید"
   Forcibly enable IP tracking: "ردیابی IP را به اجبار فعال کنید"
   HTTP status code override: "جایگزینی کد وضعیت HTTP:"
   If the following conditions are met, %s: "در صورت رعایت شرایط زیر، %s."
-  Leave it as is (don_t set anything): "آن را همانطور که هست رها کنید (چیزی را تنظیم نکنید)"
+  Mark for use with Cloudflare Turnstile: "علامت گذاری برای استفاده با Cloudflare Turnstile"
+  Mark for use with Friendly Captcha: "علامت گذاری برای استفاده با Friendly Captcha"
   Mark for use with hCaptcha: "علامت گذاری برای استفاده با hCaptcha"
   Modify rule: "قوانین را اصلاح کنید"
   Move down: "حرکت به پایین"

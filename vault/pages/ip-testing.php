@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The IP testing page (last modified: 2025.08.23).
+ * This file: The IP testing page (last modified: 2025.08.26).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -281,11 +281,13 @@ if (isset($_POST['ip-addr-focus'])) {
         if (isset($this->CIDRAM['ThisStatusHTTP'])) {
             $this->CIDRAM['ThisIP']['YesNo'] .= '<br />' . $this->L10N->getString('field.Status code') . $this->L10N->getString('pair_separator') . $this->CIDRAM['ThisStatusHTTP'];
         }
-        if (!empty($this->Configuration['captcha']['enabled'])) {
-            $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label.aux.Mark for use with hCaptcha');
-        }
-        if (!empty($this->Configuration['captcha']['forcibly_disabled'])) {
-            $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label.aux.Forcibly disable hCaptcha');
+        foreach ([['HCaptcha', 'hcaptcha'], ['FriendlyCaptcha', 'Friendly Captcha'], ['CloudflareTurnstile', 'Cloudflare Turnstile']] as $CAPTCHA) {
+            if (!empty($this->CIDRAM['MarkForUseWith' . $CAPTCHA[0]])) {
+                $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label.aux.Mark for use with ' . $CAPTCHA[1]);
+            }
+            if (!empty($this->CIDRAM['ForciblyDisable' . $CAPTCHA[0]])) {
+                $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label.aux.Forcibly disable ' . $CAPTCHA[1]);
+            }
         }
         if (!empty($this->CIDRAM['Suppress output template'])) {
             $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label.aux.Suppress output template');

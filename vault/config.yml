@@ -281,7 +281,11 @@ verification:
   GPTBot:BlockNonVerified
  adjust: |
   Negatives:HCaptcha
+  Negatives:FriendlyCaptcha
+  Negatives:CloudflareTurnstile
   NonVerified:HCaptcha
+  NonVerified:FriendlyCaptcha
+  NonVerified:CloudflareTurnstile
 captcha:
  usemode:
   hcaptcha: 0

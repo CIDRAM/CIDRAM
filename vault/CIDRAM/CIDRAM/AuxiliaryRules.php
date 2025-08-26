@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used for auxiliary rules (last modified: 2025.08.25).
+ * This file: Methods used for auxiliary rules (last modified: 2025.08.26).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -231,7 +231,7 @@ trait AuxiliaryRules
                         $NegSymbol = '≠';
                     }
                     $Iteration = 0;
-                    $ConditionFormTemplate = "\n" .
+                    $ConditionFormTemplate = "\n      " .
                         '<div class="flexrow"><select name="conSourceType[%1$s][%2$s]" title="%10$s" class="auto" onchange="javascript:getInputSuggestions(this)">%3$s</select>' .
                         '<select name="conIfOrNot[%1$s][%2$s]" title="{label.Operator}" class="auto"><option value="If" class="ifOrNot"%6$s>%8$s</option><option value="Not" class="ifOrNot"%7$s>%9$s</option></select>' .
                         '<input type="text" name="conSourceValue[%1$s][%2$s]" title="%11$s" placeholder="%4$s" class="flexin" value="%5$s" onfocus="javascript:getInputSuggestions(this.previousElementSibling.previousElementSibling)" /></div><div class="suggestsInactive s"></div>';
@@ -331,51 +331,28 @@ trait AuxiliaryRules
                     $this->L10N->getString('label.aux.logic_all')
                 );
 
-                /** Other options and special flags. */
+                /** Display flags (edit mode). */
                 foreach ($this->CIDRAM['Provide']['Auxiliary Rules']['Flags'] as $FlagSetName => $FlagSet) {
-                    $FlagKey = preg_replace('~[^A-Za-z]~', '', $FlagSetName);
-                    $UseDefaultState = true;
-                    $Options = '';
-                    if (isset($FlagSet['Label'])) {
+                    if (isset($FlagSet['Label']) && is_string($FlagSet['Label'])) {
                         $FlagSetName = $this->L10N->getString($FlagSet['Label']) ?: $FlagSetName;
-                        unset($FlagSet['Label']);
                     }
-                    if (isset($FlagSet['Hint'])) {
-                        if (($Hint = $this->parseVars([], $FlagSet['Hint'], true)) !== '') {
-                            $Hint = '<br /><span class="suggestsActive s"><small>' . $Hint . '</small></span>';
-                        }
-                        unset($FlagSet['Hint']);
-                    } else {
-                        $Hint = '';
-                    }
+                    $Output .= sprintf('%s<div class="iLabl s"><fieldset><legend>%s</legend>', "\n      ", $FlagSetName);
                     foreach ($FlagSet as $FlagName => $FlagData) {
-                        if (empty($Data[$FlagName])) {
-                            $Selected = '';
-                        } else {
-                            $UseDefaultState = false;
-                            $Selected = ' selected';
+                        if (!isset($FlagData['Label'])) {
+                            continue;
                         }
-                        $Options .= sprintf(
-                            '<option value="%s"%s>%s</option>',
-                            $FlagName,
-                            $Selected,
-                            isset($FlagData['Label']) ? ($this->L10N->getString($FlagData['Label']) ?: $FlagName) : $FlagName
+                        $Output .= sprintf(
+                            '<label><input type="checkbox" class="auto" id="%1$s" name="%1$s"%2$s /> %3$s%4$s</label><br />',
+                            preg_replace('~[^A-Za-z]~', '_', $FlagName) . '_' . $Current,
+                            empty($Data[$FlagName]) ? '' : ' checked',
+                            isset($FlagData['Icon']) ? $FlagData['Icon'] . ' ' : '',
+                            $this->L10N->getString($FlagData['Label']) ?: $FlagName
                         );
                     }
-                    $Options = sprintf(
-                        '<select id="%1$s%2$s%3$s" name="%2$s[%3$s]" class="auto"><option value="Default State"%4$s>%5$s</option>',
-                        $RuleClass,
-                        $FlagKey,
-                        $Current,
-                        $UseDefaultState ? ' selected' : '',
-                        $this->L10N->getString('label.aux.Leave it as is (don_t set anything)')
-                    ) . $Options . '</select>' . $Hint . '<br /><br />';
-                    $Output .= sprintf(
-                        '<div class="iLabl s"><label for="%s">%s</label></div><div class="iCntn">%s</div>',
-                        $RuleClass . $FlagKey . $Current,
-                        trim($FlagSetName . $this->L10N->getString('pair_separator')),
-                        $Options
-                    );
+                    if (($Hint = isset($FlagSet['Hint']) ? $this->parseVars([], $FlagSet['Hint'], true) : '') !== '') {
+                        $Output .= '<br /><span class="suggestsActive s"><small>' . $Hint . '</small></span><br />';
+                    }
+                    $Output .= '</fieldset></div>';
                 }
 
                 /** Additional instructions. */
@@ -601,16 +578,15 @@ trait AuxiliaryRules
                 $Output .= "\n          <li><div class=\"iCntr\"><div class=\"iLabl s\">" . $Label . '</div><div class="iCntn">' . $Data['Run']['File'] . '</div></div></li>';
             }
 
-            /** Display other options and special flags. */
+            /** Display flags (view mode). */
             $Flags = [];
             foreach ($this->CIDRAM['Provide']['Auxiliary Rules']['Flags'] as $FlagSetName => $FlagSet) {
                 foreach ($FlagSet as $FlagName => $FlagData) {
-                    if (!is_array($FlagData) || empty($FlagData['Label'])) {
+                    if (!isset($FlagData['Label'])) {
                         continue;
                     }
-                    $Label = isset($FlagData['Label']) ? ($this->L10N->getString($FlagData['Label']) ?: $FlagData['Label']) : $FlagData['Label'];
                     if (!empty($Data[$FlagName])) {
-                        $Flags[] = $Label;
+                        $Flags[] = $this->L10N->getString($FlagData['Label']) ?: $FlagName;
                     }
                 }
             }

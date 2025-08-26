@@ -11,7 +11,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: BOBUAM defaults file (last modified: 2025.08.25).
+# This file: BOBUAM defaults file (last modified: 2025.08.26).
 ##/
 
 Config Defaults:
@@ -98,14 +98,24 @@ Config Defaults:
    type: "checkbox"
    default: |
     Masquerade:ForciblyDisableHCaptcha
+    Masquerade:ForciblyDisableFriendlyCaptcha
+    Masquerade:ForciblyDisableCloudflareTurnstile
     Opera:MarkForUseWithHCaptcha
+    Opera:MarkForUseWithFriendlyCaptcha
+    Opera:MarkForUseWithCloudflareTurnstile
     Chrome:MarkForUseWithHCaptcha
+    Chrome:MarkForUseWithFriendlyCaptcha
+    Chrome:MarkForUseWithCloudflareTurnstile
     Edge:MarkForUseWithHCaptcha
+    Edge:MarkForUseWithFriendlyCaptcha
+    Edge:MarkForUseWithCloudflareTurnstile
     Firefox:MarkForUseWithHCaptcha
+    Firefox:MarkForUseWithFriendlyCaptcha
+    Firefox:MarkForUseWithCloudflareTurnstile
     Safari:MarkForUseWithHCaptcha
-   labels:
-    MarkForUseWithHCaptcha: "label.aux.Mark for use with hCaptcha"
-    ForciblyDisableHCaptcha: "label.aux.Forcibly disable hCaptcha"
+    Safari:MarkForUseWithFriendlyCaptcha
+    Safari:MarkForUseWithCloudflareTurnstile
+   labels: *CaptchaChoicesForModules
    choices:
     Ambiguous: "bobuam_ambiguous"
     Malformed: "bobuam_malformed"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data for the front-end (last modified: 2025.08.25).
+# This file: Hindi language data for the front-end (last modified: 2025.08.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -124,6 +124,8 @@ checkbox:
  Should infractions generated during this stage count towards IP tracking: "IP ट्रैकिंग के लिए इस चरण के दौरान उत्पन्न उल्लंघन की गणना करें?"
  Should this field appear in log entries: "क्या यह फ़ील्ड लॉग प्रविष्टियों में दिखाई देनी चाहिए?"
  Should this field appear on the access denied page: "क्या यह फ़ील्ड "पहुंच अस्वीकृत" पृष्ठ पर दिखाई देनी चाहिए?"
+ Suppress Cloudflare Turnstile: "Cloudflare Turnstile का दमन"
+ Suppress Friendly Captcha: "Friendly Captcha का दमन"
  Suppress hCaptcha: "HCaptcha का दमन"
  Test as sensitive request: "संवेदनशील अनुरोध के रूप में परीक्षण करें"
  Untrack positives: "सकारात्मक अनट्रैक करें?"
@@ -708,12 +710,15 @@ label:
   Enable this rule: "इस नियम को सक्षम करें"
   Enforce default IP tracking options: "डिफ़ॉल्ट IP ट्रैकिंग विकल्प लागू करें"
   Enforce extended IP tracking options: "विस्तारित IP ट्रैकिंग विकल्प लागू करें"
-  Forcibly disable hCaptcha: "HCaptcha को जबरन अक्षम करें"
+  Forcibly disable Cloudflare Turnstile: "Cloudflare Turnstile को जबरन अक्षम करें"
+  Forcibly disable Friendly Captcha: "Friendly Captcha को जबरन अक्षम करें"
   Forcibly disable IP tracking: "IP ट्रैकिंग को जबरन अक्षम करें"
+  Forcibly disable hCaptcha: "HCaptcha को जबरन अक्षम करें"
   Forcibly enable IP tracking: "IP ट्रैकिंग को जबरन सक्षम करें"
   HTTP status code override: "HTTP स्थिति कोड ओवरराइड:"
   If the following conditions are met, %s: "यदि निम्नलिखित शर्तें पूरी होती हैं, तो %s।"
-  Leave it as is (don_t set anything): "इसे छोड़ दो (कुछ भी सेट मत करो)"
+  Mark for use with Cloudflare Turnstile: "Cloudflare Turnstile के साथ उपयोग के लिए निशान"
+  Mark for use with Friendly Captcha: "Friendly Captcha के साथ उपयोग के लिए निशान"
   Mark for use with hCaptcha: "HCaptcha के साथ उपयोग के लिए निशान"
   Modify rule: "नियम को संशोधित करें"
   Move down: "नीचे जाओ"

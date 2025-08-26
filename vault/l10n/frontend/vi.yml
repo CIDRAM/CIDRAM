@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2025.08.25).
+# This file: Vietnamese language data for the front-end (last modified: 2025.08.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -124,6 +124,8 @@ checkbox:
  Should infractions generated during this stage count towards IP tracking: "Đếm các vi phạm được tạo ra trong giai đoạn này đối với giám sát IP?"
  Should this field appear in log entries: "Trường này có nên xuất hiện trong các mục nhập nhật ký không?"
  Should this field appear on the access denied page: "Trường này có nên xuất hiện trên trang "truy cập đã bị từ chối" không?"
+ Suppress Cloudflare Turnstile: "Đàn áp Cloudflare Turnstile"
+ Suppress Friendly Captcha: "Đàn áp Friendly Captcha"
  Suppress hCaptcha: "Đàn áp hCaptcha"
  Test as sensitive request: "Kiểm tra theo yêu cầu nhạy cảm"
  Untrack positives: "Ngừng giám sát các tích cực?"
@@ -701,12 +703,15 @@ label:
   Enable this rule: "Bật quy tắc này"
   Enforce default IP tracking options: "Thực thi các tùy chọn giám sát IP mặc định"
   Enforce extended IP tracking options: "Thực thi các tùy chọn giám sát IP mở rộng"
-  Forcibly disable hCaptcha: "Vô hiệu hóa hCaptcha bằng cưỡng bức"
+  Forcibly disable Cloudflare Turnstile: "Vô hiệu hóa Cloudflare Turnstile bằng cưỡng bức"
+  Forcibly disable Friendly Captcha: "Vô hiệu hóa Friendly Captcha bằng cưỡng bức"
   Forcibly disable IP tracking: "Vô hiệu hóa giám sát IP bằng cưỡng bức"
+  Forcibly disable hCaptcha: "Vô hiệu hóa hCaptcha bằng cưỡng bức"
   Forcibly enable IP tracking: "Kích hoạt giám sát IP bằng cưỡng bức"
   HTTP status code override: "Ghi đè mã trạng thái HTTP:"
   If the following conditions are met, %s: "Nếu các điều kiện sau được đáp ứng, %s."
-  Leave it as is (don_t set anything): "Để nguyên như vậy (không đặt bất cứ thứ gì)"
+  Mark for use with Cloudflare Turnstile: "Đánh dấu để sử dụng với Cloudflare Turnstile"
+  Mark for use with Friendly Captcha: "Đánh dấu để sử dụng với Friendly Captcha"
   Mark for use with hCaptcha: "Đánh dấu để sử dụng với hCaptcha"
   Modify rule: "Sửa đổi quy tắc"
   Move down: "Đi xuống"

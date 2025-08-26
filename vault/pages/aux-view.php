@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The auxiliary rules view mode page (last modified: 2025.05.08).
+ * This file: The auxiliary rules view mode page (last modified: 2025.08.26).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -71,19 +71,19 @@ if (isset($_POST['ruleName'], $_POST['conSourceType'], $_POST['conIfOrNot'], $_P
         }
     }
 
-    /** Process other options and special flags. */
-    foreach ($this->CIDRAM['Provide']['Auxiliary Rules']['Flags'] as $FlagSetName => $FlagSetValue) {
-        $FlagSetKey = preg_replace('~[^A-Za-z]~', '', $FlagSetName);
-        if (!isset($_POST[$FlagSetKey])) {
-            continue;
-        }
-        foreach ($FlagSetValue as $FlagName => $FlagData) {
-            if ($_POST[$FlagSetKey] === $FlagName) {
+    /** Set flags for the newly created rule (view mode). */
+    foreach ($this->CIDRAM['Provide']['Auxiliary Rules']['Flags'] as $FlagSetName => $FlagSet) {
+        foreach ($FlagSet as $FlagName => $FlagData) {
+            if (!isset($FlagData['Label'])) {
+                continue;
+            }
+            $FlagKey = preg_replace('~[^A-Za-z]~', '_', $FlagName);
+            if (!empty($_POST[$FlagKey])) {
                 $this->CIDRAM['AuxData'][$RuleName][$FlagName] = true;
             }
         }
     }
-    unset($FlagData, $FlagName, $FlagSetKey, $FlagSetValue, $FlagSetName);
+    unset($FlagKey, $FlagData, $FlagName, $FlagSet, $FlagSetName);
 
     /** Possible actions (other than block). */
     $Actions = [
@@ -215,35 +215,30 @@ if (!$this->FE['ASYNC']) {
         $this->L10N->getString('label.Other')
     );
 
-    /** Provides the "other options and special flags" to the default view mode new rule creation. */
+    /** Display flags for creating a new rule (view mode). */
     $this->FE['AuxFlagsProvides'] = '';
-    foreach ($this->CIDRAM['Provide']['Auxiliary Rules']['Flags'] as $FlagSetName => $FlagSetValue) {
-        $FlagKey = preg_replace('~[^A-Za-z]~', '', $FlagSetName);
-        $Options = sprintf('<select name="%1$s" id="%1$s" class="auto" autocomplete="off"><option value="Default State" selected>%2$s</option>', $FlagKey, $this->L10N->getString('label.aux.Leave it as is (don_t set anything)'));
-        if (isset($FlagSetValue['Label'])) {
-            $FlagSetName = $this->L10N->getString($FlagSetValue['Label']) ?: $FlagSetName;
-            unset($FlagSetValue['Label']);
+    foreach ($this->CIDRAM['Provide']['Auxiliary Rules']['Flags'] as $FlagSetName => $FlagSet) {
+        if (isset($FlagSet['Label']) && is_string($FlagSet['Label'])) {
+            $FlagSetName = $this->L10N->getString($FlagSet['Label']) ?: $FlagSetName;
         }
-        if (isset($FlagSetValue['Hint'])) {
-            if (($Hint = $this->parseVars([], $FlagSetValue['Hint'], true)) !== '') {
-                $Hint = '<br /><span class="suggestsActive s"><small>' . $Hint . '</small></span>';
+        $this->FE['AuxFlagsProvides'] .= sprintf('%s<div class="iLabl s"><fieldset><legend>%s</legend>', "\n            ", $FlagSetName);
+        foreach ($FlagSet as $FlagName => $FlagData) {
+            if (!isset($FlagData['Label'])) {
+                continue;
             }
-            unset($FlagSetValue['Hint']);
-        } else {
-            $Hint = '';
+            $this->FE['AuxFlagsProvides'] .= sprintf(
+                '<label><input type="checkbox" class="auto" id="%1$s" name="%1$s" /> %2$s%3$s</label><br />',
+                preg_replace('~[^A-Za-z]~', '_', $FlagName),
+                isset($FlagData['Icon']) ? $FlagData['Icon'] . ' ' : '',
+                $this->L10N->getString($FlagData['Label']) ?: $FlagName
+            );
         }
-        foreach ($FlagSetValue as $FlagName => $FlagData) {
-            $Options .= sprintf('<option value="%s">%s</option>', $FlagName, isset($FlagData['Label']) ? ($this->L10N->getString($FlagData['Label']) ?: $FlagName) : $FlagName);
+        if (($Hint = isset($FlagSet['Hint']) ? $this->parseVars([], $FlagSet['Hint'], true) : '') !== '') {
+            $this->FE['AuxFlagsProvides'] .= '<br /><span class="suggestsActive s"><small>' . $Hint . '</small></span><br />';
         }
-        $Options .= '</select>' . $Hint;
-        $this->FE['AuxFlagsProvides'] .= sprintf(
-            "\n          <li>\n            <div class=\"iCntr\">\n              <div class=\"iLabl s\"><label for=\"%s\">%s</label></div><div class=\"iCntn\">%s</div>\n            </div>\n          </li>",
-            $FlagKey,
-            trim($FlagSetName . $this->L10N->getString('pair_separator')),
-            $Options
-        );
+        $this->FE['AuxFlagsProvides'] .= '</fieldset></div>';
     }
-    unset($FlagData, $FlagName, $Hint, $Options, $FlagKey, $FlagSetValue, $FlagSetName);
+    unset($Hint, $FlagData, $FlagName, $FlagSet, $FlagSetName);
 
     /** Calculate page load time (useful for debugging). */
     $this->FE['ProcessTime'] = microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];

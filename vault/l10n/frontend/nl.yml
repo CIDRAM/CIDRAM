@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2025.08.25).
+# This file: Dutch language data for the front-end (last modified: 2025.08.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -124,6 +124,8 @@ checkbox:
  Should infractions generated during this stage count towards IP tracking: "Moeten overtredingen die gegenereerd door deze fase meetellen voor IP-tracking?"
  Should this field appear in log entries: "Moet dit veld in logs verschijnen?"
  Should this field appear on the access denied page: "Moet dit veld verschijnen op de "toegang geweigerd" pagina?"
+ Suppress Cloudflare Turnstile: "Cloudflare Turnstile onderdrukken"
+ Suppress Friendly Captcha: "Friendly Captcha onderdrukken"
  Suppress hCaptcha: "HCaptcha onderdrukken"
  Test as sensitive request: "Test als gevoelig verzoek"
  Untrack positives: "Tracking annuleren voor positieven?"
@@ -706,12 +708,15 @@ label:
   Enable this rule: "Schakel deze regel in"
   Enforce default IP tracking options: "Dwing standaard IP-trackingopties af"
   Enforce extended IP tracking options: "Dwing uitgebreide IP-trackingopties af"
-  Forcibly disable hCaptcha: "Schakel hCaptcha gedwongen uit"
+  Forcibly disable Cloudflare Turnstile: "Schakel Cloudflare Turnstile gedwongen uit"
+  Forcibly disable Friendly Captcha: "Schakel Friendly Captcha gedwongen uit"
   Forcibly disable IP tracking: "Schakel IP-tracking gedwongen uit"
+  Forcibly disable hCaptcha: "Schakel hCaptcha gedwongen uit"
   Forcibly enable IP tracking: "Schakel IP-tracking gedwongen in"
   HTTP status code override: "HTTP-statuscode overschrijven:"
   If the following conditions are met, %s: "Als de volgende voorwaarden zijn vervuld, %s."
-  Leave it as is (don_t set anything): "Laat het zoals het is (stel niets in)"
+  Mark for use with Cloudflare Turnstile: "Markeer voor gebruik met Cloudflare Turnstile"
+  Mark for use with Friendly Captcha: "Markeer voor gebruik met Friendly Captcha"
   Mark for use with hCaptcha: "Markeer voor gebruik met hCaptcha"
   Modify rule: "Wijzig de regel"
   Move down: "Beneden gaan"

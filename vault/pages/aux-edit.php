@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The auxiliary rules edit mode page (last modified: 2025.04.28).
+ * This file: The auxiliary rules edit mode page (last modified: 2025.08.26).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -75,21 +75,26 @@ if (isset($_POST['rulePriority']) && is_array($_POST['rulePriority'])) {
         $NewAuxArr[$RuleName]['SourceType'] = $this->desabotage($_POST['conSourceType'][$Iterant] ?? '');
         $NewAuxArr[$RuleName]['IfOrNot'] = $this->desabotage($_POST['conIfOrNot'][$Iterant] ?? '');
         $NewAuxArr[$RuleName]['SourceValue'] = $this->desabotage($_POST['conSourceValue'][$Iterant] ?? '');
-        foreach ($this->CIDRAM['Provide']['Auxiliary Rules']['Flags'] as $FlagSetName => $FlagSetValue) {
-            $FlagSetKey = preg_replace('~[^A-Za-z]~', '', $FlagSetName);
-            if (!empty($_POST[$FlagSetKey][$Iterant])) {
-                foreach ($FlagSetValue as $FlagName => $FlagData) {
-                    if ($_POST[$FlagSetKey][$Iterant] === $FlagName) {
-                        $NewAuxArr[$RuleName][$FlagName] = true;
-                    }
+
+        /** Update flags (edit mode). */
+        foreach ($this->CIDRAM['Provide']['Auxiliary Rules']['Flags'] as $FlagSetName => $FlagSet) {
+            foreach ($FlagSet as $FlagName => $FlagData) {
+                if (!isset($FlagData['Label'])) {
+                    continue;
+                }
+                $FlagKey = preg_replace('~[^A-Za-z]~', '_', $FlagName) . '_' . $Iterant;
+                if (!empty($_POST[$FlagKey])) {
+                    $NewAuxArr[$RuleName][$FlagName] = true;
                 }
             }
         }
+
+        /** Update additional instructions (edit mode). */
         if (!empty($_POST['AdditionalInstructions'][$Iterant])) {
             $NewAuxArr[$RuleName]['Additional instructions'] = $this->desabotage($_POST['AdditionalInstructions'][$Iterant]);
         }
     }
-    unset($FlagData, $FlagName, $FlagSetKey, $FlagSetName, $FlagSetValue, $RuleName);
+    unset($FlagKey, $FlagData, $FlagName, $FlagSet, $FlagSetName, $RuleName);
     uasort($NewAuxArr, function ($A, $B): int {
         if ($A['Priority'] === $B['Priority']) {
             return 0;

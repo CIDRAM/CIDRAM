@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Stop Forum Spam defaults file (last modified: 2025.08.14).
+# This file: Stop Forum Spam defaults file (last modified: 2025.08.26).
 ##/
 
 Config Defaults:
@@ -21,9 +21,7 @@ Config Defaults:
   options:
    type: "checkbox"
    default: ""
-   choices:
-    MarkForUseWithHCaptcha: "label.aux.Mark for use with hCaptcha"
-    ForciblyDisableHCaptcha: "label.aux.Forcibly disable hCaptcha"
+   choices: *CaptchaChoicesForModules
   expire_good:
    type: "duration"
    default: "7d0°0′0″"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hebrew language data for the front-end (last modified: 2025.08.25).
+# This file: Hebrew language data for the front-end (last modified: 2025.08.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -124,6 +124,8 @@ checkbox:
  Should infractions generated during this stage count towards IP tracking: "האם הפרות שנוצרו במהלך שלב זה צריכות להיחשב למעקב אחר IP?"
  Should this field appear in log entries: "האם שדה זה צריך להופיע בערכים ביומן?"
  Should this field appear on the access denied page: "האם שדה זה צריך להופיע בדף "גישה נדחתה"?"
+ Suppress Cloudflare Turnstile: "דיכוי Cloudflare Turnstile"
+ Suppress Friendly Captcha: "דיכוי Friendly Captcha"
  Suppress hCaptcha: "דיכוי hCaptcha"
  Test as sensitive request: "בדוק כבקשה רגישה"
  Untrack positives: "לבטל מעקב חיוביים?"
@@ -703,12 +705,15 @@ label:
   Enable this rule: "הפעל את הכלל הזה"
   Enforce default IP tracking options: "לאכוף אפשרויות מעקב IP סטנדרטיות"
   Enforce extended IP tracking options: "לאכוף אפשרויות מעקב IP מורחבות"
-  Forcibly disable hCaptcha: "להשבית בכוח hCaptcha"
+  Forcibly disable Cloudflare Turnstile: "להשבית בכוח Cloudflare Turnstile"
+  Forcibly disable Friendly Captcha: "להשבית בכוח Friendly Captcha"
   Forcibly disable IP tracking: "להשבית בכוח מעקב IP"
+  Forcibly disable hCaptcha: "להשבית בכוח hCaptcha"
   Forcibly enable IP tracking: "לאפשר בכוח מעקב IP"
   HTTP status code override: "עקיפה של קוד סטטוס HTTP:"
   If the following conditions are met, %s: "אם מתקיימים התנאים הבאים, %s."
-  Leave it as is (don_t set anything): "השאר את זה כמו שהוא (אל תגדיר כלום)"
+  Mark for use with Cloudflare Turnstile: "לסמן לשימוש עם Cloudflare Turnstile"
+  Mark for use with Friendly Captcha: "לסמן לשימוש עם Friendly Captcha"
   Mark for use with hCaptcha: "לסמן לשימוש עם hCaptcha"
   Modify rule: "שנה כלל"
   Move down: "לזוז לרדת"

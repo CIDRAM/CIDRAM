@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2025.08.25).
+# This file: Polish language data for the front-end (last modified: 2025.08.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -124,6 +124,8 @@ checkbox:
  Should infractions generated during this stage count towards IP tracking: "Wliczać wykroczenia wygenerowane na tym etapie do śledzenie IP?"
  Should this field appear in log entries: "Czy to pole powinno pojawiać się w logach?"
  Should this field appear on the access denied page: "Czy to pole powinno pojawiać się na stronie „dostęp zabroniony”?"
+ Suppress Cloudflare Turnstile: "Pomiń Cloudflare Turnstile"
+ Suppress Friendly Captcha: "Pomiń Friendly Captcha"
  Suppress hCaptcha: "Pomiń hCaptcha"
  Test as sensitive request: "Przetestuj jako wrażliwe żądanie"
  Untrack positives: "Nie śledzić pozytywów?"
@@ -715,12 +717,15 @@ label:
   Enable this rule: "Włącz tę regułę"
   Enforce default IP tracking options: "Wymuszaj domyślne opcje śledzenia IP"
   Enforce extended IP tracking options: "Wymuszaj rozszerzone opcje śledzenia IP"
-  Forcibly disable hCaptcha: "Wymuś wyłączenie hCaptcha"
+  Forcibly disable Cloudflare Turnstile: "Wymuś wyłączenie Cloudflare Turnstile"
+  Forcibly disable Friendly Captcha: "Wymuś wyłączenie Friendly Captcha"
   Forcibly disable IP tracking: "Wymuś wyłączenie śledzenia IP"
+  Forcibly disable hCaptcha: "Wymuś wyłączenie hCaptcha"
   Forcibly enable IP tracking: "Wymuszenie włączenia śledzenia IP"
   HTTP status code override: "Przesłonięcie kodu stanu HTTP:"
   If the following conditions are met, %s: "Jeśli spełnione są następujące warunki, %s."
-  Leave it as is (don_t set anything): "Zostaw to tak, jak jest (nie ustawiaj niczego)"
+  Mark for use with Cloudflare Turnstile: "Oznacz do użytku z Cloudflare Turnstile"
+  Mark for use with Friendly Captcha: "Oznacz do użytku z Friendly Captcha"
   Mark for use with hCaptcha: "Oznacz do użytku z hCaptcha"
   Modify rule: "Zmodyfikuj regułę"
   Move down: "Padnij"

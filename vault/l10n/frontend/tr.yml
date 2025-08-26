@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2025.08.25).
+# This file: Turkish language data for the front-end (last modified: 2025.08.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -124,6 +124,8 @@ checkbox:
  Should infractions generated during this stage count towards IP tracking: "IP izleme yönelik bu aşamada oluşturulan ihlaller sayılır mı?"
  Should this field appear in log entries: "Bu alan günlük girişlerinde görünmeli mi?"
  Should this field appear on the access denied page: "Bu alan "erişim reddedildi" sayfasında görünmeli mi?"
+ Suppress Cloudflare Turnstile: "Cloudflare Turnstile'yı bastır"
+ Suppress Friendly Captcha: "Friendly Captcha'yı bastır"
  Suppress hCaptcha: "HCaptcha'yı bastır"
  Test as sensitive request: "Hassas istek olarak test et"
  Untrack positives: "Pozitifler için izleme durdurulsun mu?"
@@ -704,12 +706,15 @@ label:
   Enable this rule: "Bu kuralı etkinleştirin"
   Enforce default IP tracking options: "Varsayılan IP izleme seçeneklerini ayarlayın"
   Enforce extended IP tracking options: "Genişletilmiş IP izleme seçeneklerini ayarlayın"
-  Forcibly disable hCaptcha: "HCaptcha'yı zorla devre dışı bırakın"
+  Forcibly disable Cloudflare Turnstile: "Cloudflare Turnstile'yı zorla devre dışı bırakın"
+  Forcibly disable Friendly Captcha: "Friendly Captcha'yı zorla devre dışı bırakın"
   Forcibly disable IP tracking: "IP izlemeyi zorla devre dışı bırakın"
+  Forcibly disable hCaptcha: "HCaptcha'yı zorla devre dışı bırakın"
   Forcibly enable IP tracking: "IP izlemeyi zorla etkinleştirin"
   HTTP status code override: "HTTP durum kodunun değiştirilmesi:"
   If the following conditions are met, %s: "Aşağıdaki koşullar karşılanırsa, %s."
-  Leave it as is (don_t set anything): "Olduğu gibi bırakın (hiçbir şey ayarlamayın)"
+  Mark for use with Cloudflare Turnstile: "Cloudflare Turnstile ile kullanım için işaretle"
+  Mark for use with Friendly Captcha: "Friendly Captcha ile kullanım için işaretle"
   Mark for use with hCaptcha: "HCaptcha ile kullanım için işaretle"
   Modify rule: "Kuralı değiştir"
   Move down: "Aşağı taşı"

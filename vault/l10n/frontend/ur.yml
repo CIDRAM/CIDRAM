@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2025.08.25).
+# This file: Urdu language data for the front-end (last modified: 2025.08.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -124,6 +124,8 @@ checkbox:
  Should infractions generated during this stage count towards IP tracking: "IP ٹریکنگ کی طرف اس مرحلے کے دوران پیدا ہونے والی خلاف ورزیوں کو شمار کریں؟"
  Should this field appear in log entries: "کیا یہ فیلڈ لاگ اندراجات میں ظاہر ہونا چاہیے؟"
  Should this field appear on the access denied page: "کیا یہ فیلڈ "رسائی مسترد کر دی" صفحہ پر ظاہر ہونا چاہیے؟"
+ Suppress Cloudflare Turnstile: "Cloudflare Turnstile کا استعمال نہ کریں"
+ Suppress Friendly Captcha: "Friendly Captcha کا استعمال نہ کریں"
  Suppress hCaptcha: "HCaptcha کا استعمال نہ کریں"
  Test as sensitive request: "حساس درخواست کے طور پر ٹیسٹ کریں"
  Untrack positives: "مثبت سے باخبر رہنا بند کرو؟"
@@ -703,12 +705,15 @@ label:
   Enable this rule: "اس اصول کو فعال کریں"
   Enforce default IP tracking options: "ڈیفالٹ IP سے باخبر رہنے کے اختیارات کو نافذ کریں"
   Enforce extended IP tracking options: "توسیع شدہ IP سے باخبر رہنے کے اختیارات نافذ کریں"
-  Forcibly disable hCaptcha: "زبردستی hCaptcha کو غیر فعال کریں"
+  Forcibly disable Cloudflare Turnstile: "زبردستی Cloudflare Turnstile کو غیر فعال کریں"
+  Forcibly disable Friendly Captcha: "زبردستی Friendly Captcha کو غیر فعال کریں"
   Forcibly disable IP tracking: "زبردستی IP ٹریکنگ کو غیر فعال کریں"
+  Forcibly disable hCaptcha: "زبردستی hCaptcha کو غیر فعال کریں"
   Forcibly enable IP tracking: "زبردستی IP سے باخبر رہنے کے قابل بنائیں"
   HTTP status code override: "HTTP حیثیت کا کوڈ اوور رائڈ:"
   If the following conditions are met, %s: "اگر درج ذیل شرائط پوری ہو جائیں تو %s."
-  Leave it as is (don_t set anything): "اسے جیسا چھوڑ دیں (کچھ مقرر نہ کریں)"
+  Mark for use with Cloudflare Turnstile: "Cloudflare Turnstile کے ساتھ استعمال کے لیے نشان زد کریں"
+  Mark for use with Friendly Captcha: "Friendly Captcha کے ساتھ استعمال کے لیے نشان زد کریں"
   Mark for use with hCaptcha: "HCaptcha کے ساتھ استعمال کے لیے نشان زد کریں"
   Modify rule: "حکمران میں ترمیم کریں"
   Move down: "نیچے منتقل"

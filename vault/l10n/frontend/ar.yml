@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2025.08.25).
+# This file: Arabic language data for the front-end (last modified: 2025.08.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -124,6 +124,8 @@ checkbox:
  Should infractions generated during this stage count towards IP tracking: "هل يجب احتساب المخالفات التي تم إنشاؤها خلال هذه المرحلة لتتبع IP؟"
  Should this field appear in log entries: "هل يجب أن يظهر هذا الحقل في إدخالات السجل؟"
  Should this field appear on the access denied page: "هل يجب أن يظهر هذا الحقل في صفحة "الوصول مرفوض"؟"
+ Suppress Cloudflare Turnstile: "قمع Cloudflare Turnstile"
+ Suppress Friendly Captcha: "قمع Friendly Captcha"
  Suppress hCaptcha: "قمع hCaptcha"
  Test as sensitive request: "اختبر كما لو كان طلبًا حساسًا"
  Untrack positives: "التوقف عن تتبع الإيجابيات؟"
@@ -701,12 +703,15 @@ label:
   Enable this rule: "قم بتمكين هذه القاعدة"
   Enforce default IP tracking options: "فرض خيارات تتبع IP الافتراضية"
   Enforce extended IP tracking options: "فرض خيارات تتبع IP الموسعة"
-  Forcibly disable hCaptcha: "قم بتعطيل hCaptcha بالقوة"
+  Forcibly disable Cloudflare Turnstile: "قم بتعطيل Cloudflare Turnstile بالقوة"
+  Forcibly disable Friendly Captcha: "قم بتعطيل Friendly Captcha بالقوة"
   Forcibly disable IP tracking: "قم بتعطيل تتبع IP بالقوة"
+  Forcibly disable hCaptcha: "قم بتعطيل hCaptcha بالقوة"
   Forcibly enable IP tracking: "قم بتمكين تتبع IP بالقوة"
   HTTP status code override: "تجاوز رمز حالة HTTP:"
   If the following conditions are met, %s: "إذا تم استيفاء الشروط التالية، %s."
-  Leave it as is (don_t set anything): "اتركه كما هو (لا تضع أي شيء)"
+  Mark for use with Cloudflare Turnstile: "ضع علامة للاستخدام مع Cloudflare Turnstile"
+  Mark for use with Friendly Captcha: "ضع علامة للاستخدام مع Friendly Captcha"
   Mark for use with hCaptcha: "ضع علامة للاستخدام مع hCaptcha"
   Modify rule: "تعديل القاعدة"
   Move down: "تحرك لأسفل"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2025.08.25).
+# This file: Japanese language data for the front-end (last modified: 2025.08.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -124,6 +124,8 @@ checkbox:
  Should infractions generated during this stage count towards IP tracking: "この段階で発生した違反は、ＩＰトラッキングにカウントしますか？"
  Should this field appear in log entries: "このフィールドはログ・エントリに表示する必要がありますか？"
  Should this field appear on the access denied page: "このフィールドは「アクセス拒否」ページに表示する必要がありますか？"
+ Suppress Cloudflare Turnstile: "Cloudflare Turnstileを抑制して"
+ Suppress Friendly Captcha: "Friendly Captchaを抑制して"
  Suppress hCaptcha: "HCaptchaを抑制して"
  Test as sensitive request: "機密リクエストとしてテストする"
  Untrack positives: "陽性の追跡をやめますか？"
@@ -700,12 +702,15 @@ label:
   Enable this rule: "このルールを有効にして"
   Enforce default IP tracking options: "デフォルトＩＰトラッキング・オプションを適用して"
   Enforce extended IP tracking options: "拡張ＩＰトラッキング・オプションを適用して"
-  Forcibly disable hCaptcha: "HCaptchaを強制的に無効にして"
+  Forcibly disable Cloudflare Turnstile: "Cloudflare Turnstileを強制的に無効にして"
+  Forcibly disable Friendly Captcha: "Friendly Captchaを強制的に無効にして"
   Forcibly disable IP tracking: "ＩＰトラッキングを強制的に無効にして"
+  Forcibly disable hCaptcha: "HCaptchaを強制的に無効にして"
   Forcibly enable IP tracking: "ＩＰトラッキングを強制的に有効にして"
   HTTP status code override: "ＨＴＴＰステータス・コード・オーバーライド："
   If the following conditions are met, %s: "次の条件が満たされている場合は、%s。"
-  Leave it as is (don_t set anything): "そのままにしておきます（何も設定しないでください）"
+  Mark for use with Cloudflare Turnstile: "Cloudflare Turnstileで使用するためのマーク"
+  Mark for use with Friendly Captcha: "Friendly Captchaで使用するためのマーク"
   Mark for use with hCaptcha: "HCaptchaで使用するためのマーク"
   Modify rule: "ルールを変更する"
   Move down: "降りる"

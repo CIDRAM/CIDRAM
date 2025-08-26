@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Serbian language data for the front-end (last modified: 2025.08.25).
+# This file: Serbian language data for the front-end (last modified: 2025.08.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -124,6 +124,8 @@ checkbox:
  Should infractions generated during this stage count towards IP tracking: "Да ли прекршаји генерисани током ове фазе треба да се рачунају у праћење ИП адреса?"
  Should this field appear in log entries: "Да ли ово поље треба да се појављује у записима у дневнику?"
  Should this field appear on the access denied page: "Да ли ово поље треба да се појави на страници „приступ забрањен“?"
+ Suppress Cloudflare Turnstile: "Потисне Cloudflare Turnstile"
+ Suppress Friendly Captcha: "Потисне Friendly Captcha"
  Suppress hCaptcha: "Потисне hCaptcha"
  Test as sensitive request: "Тестирајте као осетљив захтев"
  Untrack positives: "Опозовете праћење позитивних?"
@@ -718,12 +720,15 @@ label:
   Enable this rule: "Омогући ово правило"
   Enforce default IP tracking options: "Примените подразумеване опције за праћење ИП адресе"
   Enforce extended IP tracking options: "Примените проширене опције за праћење ИП адресе"
-  Forcibly disable hCaptcha: "Присилно онемогући hCaptcha"
+  Forcibly disable Cloudflare Turnstile: "Присилно онемогући Cloudflare Turnstile"
+  Forcibly disable Friendly Captcha: "Присилно онемогући Friendly Captcha"
   Forcibly disable IP tracking: "Присилно онемогући праћење ИП адресе"
+  Forcibly disable hCaptcha: "Присилно онемогући hCaptcha"
   Forcibly enable IP tracking: "Присилно омогући праћење ИП адресе"
   HTTP status code override: "Замена HTTP статусног кода:"
   If the following conditions are met, %s: "Ако су испуњени следећи услови, %s."
-  Leave it as is (don_t set anything): "Остави како јесте (не подешавај ништа)"
+  Mark for use with Cloudflare Turnstile: "Означи за употребу са Cloudflare Turnstile"
+  Mark for use with Friendly Captcha: "Означи за употребу са Friendly Captcha"
   Mark for use with hCaptcha: "Означи за употребу са hCaptcha"
   Modify rule: "Измени правило"
   Move down: "Помери надоле"

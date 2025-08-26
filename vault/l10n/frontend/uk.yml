@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Ukrainian language data for the front-end (last modified: 2025.08.25).
+# This file: Ukrainian language data for the front-end (last modified: 2025.08.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -124,6 +124,8 @@ checkbox:
  Should infractions generated during this stage count towards IP tracking: "Чи мають порушення, здійснені на цьому етапі, зараховуватися до відстеження IP?"
  Should this field appear in log entries: "Чи повинен це поле відображатися в записах журналу?"
  Should this field appear on the access denied page: "Чи повинен це поле з'являтися на сторінці «доступ заборонено»?"
+ Suppress Cloudflare Turnstile: "Придушити Cloudflare Turnstile"
+ Suppress Friendly Captcha: "Придушити Friendly Captcha"
  Suppress hCaptcha: "Придушити hCaptcha"
  Test as sensitive request: "Перевірити як конфіденційний запит"
  Untrack positives: "Скасувати відстеження позитивів?"
@@ -720,12 +722,15 @@ label:
   Enable this rule: "Увімкніть це правило"
   Enforce default IP tracking options: "Застосуйте стандартний параметрів відстеження IP"
   Enforce extended IP tracking options: "Застосуйте розширений параметрів відстеження IP"
-  Forcibly disable hCaptcha: "Примусово вимкнути hCaptcha"
+  Forcibly disable Cloudflare Turnstile: "Примусово вимкнути Cloudflare Turnstile"
+  Forcibly disable Friendly Captcha: "Примусово вимкнути Friendly Captcha"
   Forcibly disable IP tracking: "Примусово вимкнути відстеження IP"
+  Forcibly disable hCaptcha: "Примусово вимкнути hCaptcha"
   Forcibly enable IP tracking: "Примусово ввімкнути відстеження IP"
   HTTP status code override: "Заміна коду статусу HTTP:"
   If the following conditions are met, %s: "Якщо наступні умови виконуються, %s."
-  Leave it as is (don_t set anything): "Залишити як є (нічого не встановлювати)"
+  Mark for use with Cloudflare Turnstile: "Позначити для використання з Cloudflare Turnstile"
+  Mark for use with Friendly Captcha: "Позначити для використання з Friendly Captcha"
   Mark for use with hCaptcha: "Позначити для використання з hCaptcha"
   Modify rule: "Змініть правило"
   Move down: "Перемістіть його вниз"

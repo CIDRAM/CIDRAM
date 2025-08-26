@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Tamil language data for the front-end (last modified: 2025.08.25).
+# This file: Tamil language data for the front-end (last modified: 2025.08.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -124,6 +124,8 @@ checkbox:
  Should infractions generated during this stage count towards IP tracking: "IP கண்காணிப்பை நோக்கி இந்த கட்டத்தில் உருவாக்கப்பட்ட மீறல்களை எண்ணவா?"
  Should this field appear in log entries: "பதிவு உள்ளீடுகளில் இந்தப் புலம் தோன்ற வேண்டுமா?"
  Should this field appear on the access denied page: "இந்த புலம் "அணுகல் மறுக்கப்பட்டது" பக்கத்தில் தோன்ற வேண்டுமா?"
+ Suppress Cloudflare Turnstile: "Cloudflare Turnstile ஐ அடக்கவும்"
+ Suppress Friendly Captcha: "Friendly Captcha ஐ அடக்கவும்"
  Suppress hCaptcha: "HCaptcha ஐ அடக்கவும்"
  Test as sensitive request: "முக்கிய கோரிக்கையாக சோதிக்கவும்"
  Untrack positives: "நேர்மறைகளைக் கண்காணிப்பதை நிறுத்தவா?"
@@ -711,12 +713,15 @@ label:
   Enable this rule: "இந்த விதியை இயக்கவும்"
   Enforce default IP tracking options: "இயல்புநிலை IP கண்காணிப்பு விருப்பங்களை செயல்படுத்தவும்"
   Enforce extended IP tracking options: "நீட்டிக்கப்பட்ட IP கண்காணிப்பு விருப்பங்களை செயல்படுத்தவும்"
-  Forcibly disable hCaptcha: "HCaptcha ஐ வலுக்கட்டாயமாக முடக்கு"
+  Forcibly disable Cloudflare Turnstile: "Cloudflare Turnstile ஐ வலுக்கட்டாயமாக முடக்கு"
+  Forcibly disable Friendly Captcha: "Friendly Captcha ஐ வலுக்கட்டாயமாக முடக்கு"
   Forcibly disable IP tracking: "IP கண்காணிப்பை வலுக்கட்டாயமாக முடக்கு"
+  Forcibly disable hCaptcha: "HCaptcha ஐ வலுக்கட்டாயமாக முடக்கு"
   Forcibly enable IP tracking: "IP கண்காணிப்பை வலுக்கட்டாயமாக இயக்கவும்"
   HTTP status code override: "HTTP நிலைக் குறியீடு மேலெழுதும்:"
   If the following conditions are met, %s: "பின்வரும் நிபந்தனைகள் பூர்த்தி செய்யப்பட்டால், %s."
-  Leave it as is (don_t set anything): "அதை அப்படியே விட்டு விடுங்கள் (எதையும் அமைக்காதீர்கள்)"
+  Mark for use with Cloudflare Turnstile: "Cloudflare Turnstile உடன் பயன்படுத்த குறிக்கவும்"
+  Mark for use with Friendly Captcha: "Friendly Captcha உடன் பயன்படுத்த குறிக்கவும்"
   Mark for use with hCaptcha: "HCaptcha உடன் பயன்படுத்த குறிக்கவும்"
   Modify rule: "விதியை மாற்றவும்"
   Move down: "கீழே இறங்கு"

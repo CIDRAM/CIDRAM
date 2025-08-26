@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Punjabi language data for the front-end (last modified: 2025.08.25).
+# This file: Punjabi language data for the front-end (last modified: 2025.08.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -124,6 +124,8 @@ checkbox:
  Should infractions generated during this stage count towards IP tracking: "ਕੀ ਇਸ ਪੜਾਅ ਦੌਰਾਨ ਪੈਦਾ ਹੋਏ ਉਲੰਘਣਾਵਾਂ ਨੂੰ IP ਟਰੈਕਿੰਗ ਵਿੱਚ ਗਿਣਿਆ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ?"
  Should this field appear in log entries: "ਕੀ ਇਹ ਖੇਤਰ ਲੌਗ ਐਂਟਰੀਆਂ ਵਿੱਚ ਦਿਖਾਈ ਦੇਣਾ ਚਾਹੀਦਾ ਹੈ?"
  Should this field appear on the access denied page: "ਕੀ ਇਹ ਖੇਤਰ "ਪਹੁੰਚ ਇਨਕਾਰ" ਪੰਨੇ 'ਤੇ ਦਿਖਾਈ ਦੇਣਾ ਚਾਹੀਦਾ ਹੈ?"
+ Suppress Cloudflare Turnstile: "Cloudflare Turnstile ਬੰਦ ਕਰੋ"
+ Suppress Friendly Captcha: "Friendly Captcha ਬੰਦ ਕਰੋ"
  Suppress hCaptcha: "HCaptcha ਬੰਦ ਕਰੋ"
  Test as sensitive request: "ਸੰਵੇਦਨਸ਼ੀਲ ਬੇਨਤੀ ਵਜੋਂ ਜਾਂਚ ਕਰੋ"
  Untrack positives: "ਸਕਾਰਾਤਮਕ ਅਨਟ੍ਰੈਕ ਕਰੋ?"
@@ -709,12 +711,15 @@ label:
   Enable this rule: "ਇਸ ਨਿਯਮ ਨੂੰ ਸਰਗਰਮ ਕਰੋ"
   Enforce default IP tracking options: "ਡਿਫੌਲਟ IP ਟਰੈਕਿੰਗ ਵਿਕਲਪਾਂ ਨੂੰ ਲਾਗੂ ਕਰੋ"
   Enforce extended IP tracking options: "ਵਧਾਇਆ IP ਟਰੈਕਿੰਗ ਵਿਕਲਪਾਂ ਨੂੰ ਲਾਗੂ ਕਰੋ"
-  Forcibly disable hCaptcha: "HCaptcha ਨੂੰ ਜ਼ਬਰਦਸਤੀ ਅਕਿਰਿਆਸ਼ੀਲ ਕਰੋ"
+  Forcibly disable Cloudflare Turnstile: "Cloudflare Turnstile ਨੂੰ ਜ਼ਬਰਦਸਤੀ ਅਕਿਰਿਆਸ਼ੀਲ ਕਰੋ"
+  Forcibly disable Friendly Captcha: "Friendly Captcha ਨੂੰ ਜ਼ਬਰਦਸਤੀ ਅਕਿਰਿਆਸ਼ੀਲ ਕਰੋ"
   Forcibly disable IP tracking: "ਜ਼ਬਰਦਸਤੀ IP ਟਰੈਕਿੰਗ ਨੂੰ ਅਕਿਰਿਆਸ਼ੀਲ ਕਰੋ"
+  Forcibly disable hCaptcha: "HCaptcha ਨੂੰ ਜ਼ਬਰਦਸਤੀ ਅਕਿਰਿਆਸ਼ੀਲ ਕਰੋ"
   Forcibly enable IP tracking: "ਜ਼ਬਰਦਸਤੀ IP ਟਰੈਕਿੰਗ ਨੂੰ ਸਰਗਰਮ ਕਰੋ"
   HTTP status code override: "HTTP ਸਥਿਤੀ ਕੋਡ ਓਵਰਰਾਈਡ:"
   If the following conditions are met, %s: "ਜੇ ਹੇਠ ਲਿਖੀਆਂ ਸ਼ਰਤਾਂ ਪੂਰੀਆਂ ਹੁੰਦੀਆਂ ਹਨ, ਤਾਂ %s।"
-  Leave it as is (don_t set anything): "ਇਸਨੂੰ ਇਸ ਤਰ੍ਹਾਂ ਛੱਡੋ (ਕੁਝ ਵੀ ਸੈੱਟ ਨਾ ਕਰੋ)"
+  Mark for use with Cloudflare Turnstile: "Cloudflare Turnstile ਦੇ ਨਾਲ ਵਰਤਣ ਲਈ ਚਿੰਨ੍ਹਿਤ ਕਰੋ"
+  Mark for use with Friendly Captcha: "Friendly Captcha ਦੇ ਨਾਲ ਵਰਤਣ ਲਈ ਚਿੰਨ੍ਹਿਤ ਕਰੋ"
   Mark for use with hCaptcha: "HCaptcha ਦੇ ਨਾਲ ਵਰਤਣ ਲਈ ਚਿੰਨ੍ਹਿਤ ਕਰੋ"
   Modify rule: "ਨਿਯਮ ਨੂੰ ਸੋਧੋ"
   Move down: "ਹੇਠਾਂ ਵੱਲ ਸ਼ਿਫਟ ਕਰੋ"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2025.08.22).
+# This file: Defaults file (last modified: 2025.08.26).
 ##/
 
 Config Defaults:
@@ -924,9 +924,15 @@ Config Defaults:
    type: "checkbox"
    default: |
     Negatives:HCaptcha
+    Negatives:FriendlyCaptcha
+    Negatives:CloudflareTurnstile
     NonVerified:HCaptcha
+    NonVerified:FriendlyCaptcha
+    NonVerified:CloudflareTurnstile
    labels:
     HCaptcha: "checkbox.Suppress hCaptcha"
+    FriendlyCaptcha: "checkbox.Suppress Friendly Captcha"
+    CloudflareTurnstile: "checkbox.Suppress Cloudflare Turnstile"
    choices:
     Negatives: "checkbox.Blocked negatives"
     NonVerified: "checkbox.Blocked non-verified"
@@ -1243,17 +1249,22 @@ Provide:
    Aux Redirect: ""
    Aux Status Code: 200
    Banned: false
+   ForciblyDisableCloudflareTurnstile: false
+   ForciblyDisableFriendlyCaptcha: false
+   ForciblyDisableHCaptcha: false
    Hostname: ""
-   Suppress output template: false
+   MarkForUseWithCloudflareTurnstile: false
+   MarkForUseWithFriendlyCaptcha: false
+   MarkForUseWithHCaptcha: false
+   Other Status Code: 0
+   Other Status: ""
    Suppress logging: false
+   Suppress output template: false
    Suppress reports: false
    ThisStatusHTTP: 200
    Trackable: null
    Tracking options override: ""
-   Other Status: ""
-   Other Status Code: 0
-  Configuration:
-   hcaptcha: {enabled: false, forcibly_disabled: false}
+ CAPTCHA choices for modules: &CaptchaChoicesForModules {MarkForUseWithHCaptcha: "label.aux.Mark for use with hCaptcha", ForciblyDisableHCaptcha: "label.aux.Forcibly disable hCaptcha", MarkForUseWithFriendlyCaptcha: "label.aux.Mark for use with Friendly Captcha", ForciblyDisableFriendlyCaptcha: "label.aux.Forcibly disable Friendly Captcha", MarkForUseWithCloudflareTurnstile: "label.aux.Mark for use with Cloudflare Turnstile", ForciblyDisableCloudflareTurnstile: "label.aux.Forcibly disable Cloudflare Turnstile"}
  Auxiliary Rules:
   Modes:
    - "Whitelist"
@@ -1294,18 +1305,32 @@ Provide:
     Factors: "CIDR"
    ClientL10NAccepted: "field.Language resolution"
   Flags:
-   HCaptcha:
-    Hint: "{label.aux.When forcibly disabled, marking for use won_t have any effect} {label.See also} <code>hcaptcha➡usemode</code>"
+   CAPTCHA:
+    Hint: "{label.aux.When forcibly disabled, marking for use won_t have any effect} {label.See also} <code>captcha➡usemode</code>"
     Mark for use with HCaptcha:
      Label: "label.aux.Mark for use with hCaptcha"
      Sets:
-      Configuration:
-       hcaptcha: {enabled: true}
+      CIDRAM: {MarkForUseWithHCaptcha: true}
     Forcibly disable HCaptcha:
      Label: "label.aux.Forcibly disable hCaptcha"
      Sets:
-      Configuration:
-       hcaptcha: {usemode: 0, forcibly_disabled: true}
+      CIDRAM: {ForciblyDisableHCaptcha: true}
+    Mark for use with Friendly Captcha:
+     Label: "label.aux.Mark for use with Friendly Captcha"
+     Sets:
+      CIDRAM: {MarkForUseWithFriendlyCaptcha: true}
+    Forcibly disable Friendly Captcha:
+     Label: "label.aux.Forcibly disable Friendly Captcha"
+     Sets:
+      CIDRAM: {ForciblyDisableFriendlyCaptcha: true}
+    Mark for use with Cloudflare Turnstile:
+     Label: "label.aux.Mark for use with Cloudflare Turnstile"
+     Sets:
+      CIDRAM: {MarkForUseWithCloudflareTurnstile: true}
+    Forcibly disable Cloudflare Turnstile:
+     Label: "label.aux.Forcibly disable Cloudflare Turnstile"
+     Sets:
+      CIDRAM: {ForciblyDisableCloudflareTurnstile: true}
    Output template:
     Label: "label.aux.Suppress output template"
     Suppress output template:
@@ -1316,6 +1341,7 @@ Provide:
     Label: "label.aux.Suppress logging"
     Suppress logging:
      Label: "label.aux.Suppress logging"
+     Icon: "<span class="bckpicon"><span class="bckpicon auxbl logs"></span><span class="bckpicon auxrd disabledoverlay"></span></span>"
      Sets:
       CIDRAM: {Suppress logging: true}
    Reports:
@@ -1329,10 +1355,12 @@ Provide:
     Label: "link.IP Tracking"
     Forcibly enable IP tracking:
      Label: "label.aux.Forcibly enable IP tracking"
+     Icon: "<span class="bckpicon auxbl tracking"></span>"
      Sets:
       CIDRAM: {Trackable: true}
     Forcibly disable IP tracking:
      Label: "label.aux.Forcibly disable IP tracking"
+     Icon: "<span class="bckpicon"><span class="bckpicon auxbl tracking"></span><span class="bckpicon auxrd disabledoverlay"></span></span>"
      Sets:
       CIDRAM: {Trackable: false}
    Values for IP tracking:
@@ -1348,6 +1376,7 @@ Provide:
    Statistics:
     Label: "link.Statistics"
     Track this rule:
+     Icon: "<span class="bckpicon auxbl statistics"></span>"
      Label: "label.aux.Track this rule"
    Email:
     Label: "label.aux.Email"
@@ -1358,6 +1387,7 @@ Provide:
     Label: "label.aux.Disable this rule"
     Disable this rule:
      Label: "label.aux.Disable this rule"
+     Icon: "<span class="bckpicon auxbl auxpausebig"></span>"
 Links:
  AbuseIPDB: "<a href="https://abuseipdb.com/" dir="ltr" hreflang="en-US" rel="noopener noreferrer external">AbuseIPDB</a>"
  BGPView: "<a href="https://bgpview.io/" dir="ltr" hreflang="en-US" rel="noopener noreferrer external">BGPView</a>"

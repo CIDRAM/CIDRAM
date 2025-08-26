@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2025.08.25).
+ * This file: The CIDRAM core (last modified: 2025.08.26).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -2267,7 +2267,7 @@ class Core
         /** Process other options and special flags. */
         foreach ($this->CIDRAM['Provide']['Auxiliary Rules']['Flags'] as $FlagSetName => $FlagSet) {
             foreach ($FlagSet as $FlagName => $FlagData) {
-                if (empty($Flags[$FlagName]) || empty($FlagData['Sets']) || !is_array($FlagData['Sets'])) {
+                if (empty($Flags[$FlagName]) || !isset($FlagData['Sets']) || !is_array($FlagData['Sets'])) {
                     continue;
                 }
                 foreach ($FlagData['Sets'] as $SetKey => $SetData) {
@@ -2438,7 +2438,7 @@ class Core
             $Flags = [];
             foreach ($this->CIDRAM['Provide']['Auxiliary Rules']['Flags'] as $FlagSet) {
                 foreach ($FlagSet as $FlagKey => $FlagData) {
-                    $Flags[$FlagKey] = !empty($Data[$FlagKey]);
+                    $Flags[$FlagKey] = is_array($FlagData) && !empty($Data[$FlagKey]);
                 }
             }
 

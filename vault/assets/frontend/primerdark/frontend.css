@@ -48,7 +48,7 @@ a:hover{color:#fc0;text-decoration:underline}
 .hFd:hover,.r{background-color:rgba(255,102,0,.3)}
 .rf{background:linear-gradient({90deg},rgba(255,102,0,.3),rgba(255,102,0,.5))}
 .right,.ci>.bNav:first-child{background-color:#242526;border:none;border-radius:6px;padding:12px}
-.right{text-align:{FE_Align};padding:12px;width:80%}
+.right{text-align:{FE_Align};width:80%}
 .txtBl{color:#fff}
 .txtGn{color:#595}
 .txtOe{color:#f95}
@@ -67,7 +67,7 @@ code.txtRd,code>.txtRd{color:#f77}
 .inv{opacity:.0}
 .mob{display:none}
 input,textarea,select,option{background-color:#3a3b3c}
-input,textarea{padding:0 8px 0 8px;font-weight:600}
+input:not([type=checkbox]):not([type=radio]),textarea{padding:0 8px 0 8px;font-weight:600}
 select,option{padding:0;font-weight:700}
 select,option,input:not([type=checkbox]):not([type=radio]),textarea,input[type=file]::file-selector-button{margin:2px;border-style:none;border-radius:6px}
 input[type=button],input[type=file]::file-selector-button,input[type=submit],input[type=reset],input[type=file]::file-selector-button{border-color:rgba(27,31,35,.4);border-style:solid;border-width:1px;box-shadow:0 1px 0 rgba(27,31,35,.04),inset 0 1px 0 rgba(255,255,255,.25);transition:background-color .2s cubic-bezier(.3,0,.5,1);filter:grayscale(.3) brightness(.9)}
@@ -78,7 +78,7 @@ select:hover,textarea:hover:not([readonly]),input,input:hover::file-selector-but
 select,option,textarea,input{color:#fff;background-color:#585960}
 input[type=button],input[type=file]::file-selector-button,input[type=submit]{color:#fff;background-color:#595}
 input[type=reset]{color:#fff;background-color:#955}
-input[type=button],input[type=file]::file-selector-button,input[type=submit],input[type=reset],button{transition:all .2s ease-out}
+input[type=button]:hover,input[type=submit]:hover,input[type=reset]:hover,button:hover{transition:all .2s ease-out;filter:grayscale(0) brightness(1.2)}
 .textLabel{color:#fed;white-space:pre}
 .f400{width:400px}
 @media only all and (max-width:410px) {
@@ -125,14 +125,14 @@ p{margin-top:0;margin-bottom:10px}
 small{font-size:.9em}
 sub,sup{font-size:.7em;line-height:0;position:relative;vertical-align:baseline}
 .auto{width:auto;padding-left:8px;padding-right:8px}
-input:not([type=submit]):not([type=reset]):not([type=button]){border:none;height:20px}
+input:not([type=submit]):not([type=reset]):not([type=button]){border:none}
 textarea{border:none}
 select,input[type=submit],input[type=reset],input[type=button],input[type=file]::file-selector-button,input[type=text],input[type=password],input[type=number],input[type=date],input[type=time],input[type=datetime-local],button{box-sizing:border-box;height:20px;padding-top:0;padding-bottom:0}
 #pgrad{width:16px;height:16px;display:inline-block;border-radius:16px;filter:blur(2px)}
 td code~input,td code~select{vertical-align:middle}
-input[type=checkbox]+label,input[type=radio]+label,.gridboxitem>label,.gridboxitem input+strong{vertical-align:-3px;cursor:pointer}
-.gridboxitem>input[type=radio],.statGroup>input[type=radio]{position:relative;top:-1px;margin:2px}
-.statGroup{display:inline-block;height:24px}
+input[type=checkbox],input[type=radio]{margin:2px}
+.gridboxitem>label,.gridboxitem input+strong{vertical-align:-2px;cursor:pointer}
+.statGroup{display:inline-block;height:18px}
 input[type=text]{background-repeat:no-repeat;background-position:{FE_Align_Reverse} 3px center;background-image:none}
 input[type=text][pattern]:valid:not(input[type=text]:placeholder-shown){background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAICAYAAADaxo44AAABhWlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AcxV9TpaKVDnYQEQlSnSyIijhKFYtgobQVWnUwufRDaNKQpLg4Cq4FBz8Wqw4uzro6uAqC4AeIm5uToouU+L+k0CLGg+N+vLv3uHsHCPUyU82OcUDVLCMVj4nZ3IoYeEUPhhDCMKISM/VEeiEDz/F1Dx9f76I8y/vcn6NXyZsM8InEs0w3LOJ14ulNS+e8TxxmJUkhPiceM+iCxI9cl11+41x0WOCZYSOTmiMOE4vFNpbbmJUMlXiKOKKoGuULWZcVzluc1XKVNe/JXxjMa8tprtMcRByLSCAJETKq2EAZFqK0aqSYSNF+zMM/4PiT5JLJtQFGjnlUoEJy/OB/8LtbszA54SYFY0Dni21/jACBXaBRs+3vY9tunAD+Z+BKa/krdWDmk/RaS4scAaFt4OK6pcl7wOUO0P+kS4bkSH6aQqEAvJ/RN+WAvluge9XtrbmP0wcgQ10t3QAHh8BokbLXPN7d1d7bv2ea/f0A3i5y0gUAnskAAAAGYktHRAAAAAAAAPlDu38AAAAJcEhZcwAALiMAAC4jAXilP3YAAABRSURBVAjXbc3BDUBAAAXRZ6MUKqAGDWhjFaAOLlqhEqEXLiuRzf7LJH8OU4VNaU8onBeURIMhF0viETAjpiNihRojOpxJTl+jx4090T/eZvQC8cgK4AcVCPIAAAAASUVORK5CYII=)}
 input[type=text][pattern]:invalid:not(input[type=text]:placeholder-shown){background-image:url(data:image/gif;base64,R0lGODlhBgAIAKECAAQAAJkCAAAAAAAAACH5BAEKAAAALAAAAAAGAAgAAAIMBBJmqJfK4GstrlcAADs=)}
@@ -168,7 +168,7 @@ input[type=text][pattern]:invalid:not(input[type=text]:placeholder-shown){backgr
 .subNav{text-align:center;font-size:calc((10px * {magnification}) + .03vw);color:rgba(228,230,235,.6);text-shadow:2px 2px 1px rgba(255,255,255,.2)}
 .fBlur{filter:contrast(.8) blur(.5px);transition:all .3s ease-out}
 .fBlur:hover,.fBlur:active{filter:contrast(1) blur(0)}
-input[type=button].reset{box-shadow:none;background:none;cursor:pointer;border:none;padding:0 12px 0 12px;margin:0;width:auto;color:#c99}
+input[type=button].reset{box-shadow:none;background:none;cursor:pointer;border:none;padding:0 12px 0 12px;width:auto;color:#c99}
 input[type=button].reset:hover,input[type=button].reset:active{color:#eaa}
 .tablend{margin-top:-2px}
 .scaleXToZero{display:inline-block;overflow:hidden;transform:scaleX(0);transform-origin:{FE_Align};opacity:0;max-height:16px;max-width:0;transition:all .3s ease-out}
@@ -212,7 +212,7 @@ input[disabled],input[disabled]+label{cursor:not-allowed}
 .auxbl,.hoverglow,.comCat::before,.showlink::before,.shownlink::before,.unshownlink::before{filter:invert(86%) sepia(2%) saturate(693%) hue-rotate(192deg) brightness(114%) contrast(84%)}
 .hoverglow:hover,.hoverglow:active,.hoverglow:focus{filter:invert(75%) sepia(22%) saturate(513%) hue-rotate(-3deg) brightness(95%) contrast(100%)}
 .auxgn{filter:invert(55%) sepia(12%) saturate(1578%) hue-rotate(71deg) brightness(93%) contrast(90%)}
-.auxrd{filter:invert(84%) sepia(11%) saturate(2632%) hue-rotate(314deg) brightness(118%) contrast(101%);}
+.auxrd{filter:invert(100%) sepia(76%) saturate(6595%) hue-rotate(290deg) brightness(108%) contrast(126%)}
 .xscroller{overflow-x:auto}
 .auxicon.delete{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxdelete.svg}{/Base64Encode})}
 .auxicon.down1{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxdown1.svg}{/Base64Encode})}
@@ -243,4 +243,4 @@ input[type=file]::file-selector-button{position:relative;top:-2px}
 .origin.jp{background:#fff;color:#f00}
 .origin.in{background:linear-gradient(#f80 30%,#080 70%);color:#fff}
 .origin.pk{background:#060;color:#fff}
-input[type=checkbox],input[type=radio]{accent-color:#3a3b3c}
+input[type=checkbox],input[type=radio]{accent-color:#bdc0c3}

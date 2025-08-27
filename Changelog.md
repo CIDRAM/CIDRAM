@@ -470,14 +470,16 @@
 - Removed support for reCAPTCHA entirely; Improved hCaptcha support; Added support for Friendly Captcha and Cloudflare Turnstile (#624).
 - All CAPTCHA configuration directives have been completely reworked along with the mechanisms behind them, with better labelling and clearer descriptions than before, and unified under a singular configuration category, "captcha" (#624).
 - In the execution chain, checking whether the inbound request's IP address is blocked was previously staged under IP tracking, and processing the email trigger notification queue wasn't staged at all; both have now been given their own stages and are thus now configurable independently of other stages (#624).
+- Reworked the part of the interface at the auxiliary rules pages for "other options and special flags".
+- The configuration directive for statistics has been split in two (tracking statistical information for CAPTCHAs now has its own configuration directive, separate from the other statistics), and the configuration for tracking statistical information for CAPTCHAs now distinguishes between platforms and can also track served CAPTCHAs (#624).
 
 #### Bugs fixed.
 - Fixed various accessibility issues affecting the auxiliary rules pages.
-- Standard signatures should been case-insensitive, but some checks used were case-sensitive; Fixed (#633).
+- Standard signatures should've been case-insensitive, but some of the checks used were case-sensitive; Fixed (#633).
 
 #### Other changes.
 - Added a macro for uninstalling any no longer available components.
-- On the auxiliary rules page, when focused on the input field for a condition or webhook, if that field is empty, pressing backspace or delete will now hide the relevant fields for that condition or webhook. Such empty fields were already being disregarded when creating or updating auxiliary rules, so this change doesn't affect those mechanisms, but being able to hide such fields may slightly benefit the UX (#624).
+- On the auxiliary rules pages, when focused on the input field for a condition or webhook, if that field is empty, pressing backspace or delete will now hide the relevant fields for that condition or webhook. Such empty fields were already being disregarded when creating or updating auxiliary rules, so this change doesn't affect those mechanisms, but being able to hide such fields may slightly benefit the UX (#624).
 - Added a focus option for query to the IP testing page.
 - Added 404 as an option to the auxiliary rules HTTP status code override (#624).
 - *Plus all the regular signature updates.*

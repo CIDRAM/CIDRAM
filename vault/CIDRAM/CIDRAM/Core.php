@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2025.08.26).
+ * This file: The CIDRAM core (last modified: 2025.08.27).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -186,6 +186,11 @@ class Core
      * @var array The statistics to be tracked.
      */
     public $StatisticsTracked = [];
+
+    /**
+     * @var array The CAPTCHA statistics to be tracked.
+     */
+    public $StatisticsTrackedCAPTCHAs = [];
 
     /**
      * @var array The current statistics.

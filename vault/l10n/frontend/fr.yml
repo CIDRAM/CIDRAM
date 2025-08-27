@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2025.08.26).
+# This file: French language data for the front-end (last modified: 2025.08.27).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -247,6 +247,7 @@ config:
  general_silent_mode_response_header_code: "Quel message d'état HTTP devrait être envoyé par CIDRAM lors de la redirection silencieuse des tentatives d'accès bloquées\_?"
  general_stages: "Contrôles des étapes de la chaîne d'exécution (s'il est activé, si les erreurs sont enregistrées, etc)."
  general_statistics: "Contrôle les informations statistiques à suivre."
+ general_statistics_captchas: "Contrôle les informations statistiques à suivre pour les CAPTCHA."
  general_time_format: "Le format de notation de la date/heure utilisé par CIDRAM. Des options supplémentaires peuvent être ajoutées sur requête."
  general_time_offset: "Décalage horaire en minutes."
  general_timezone: "Ceci est utilisé pour spécifier le fuseau horaire à utiliser (par exemple, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, etc). Spécifiez «\_SYSTEM\_» pour laisser PHP gérer cela automatiquement pour vous."
@@ -982,6 +983,7 @@ response:
  Removed %s from tracking: "%s est retiré de la surveillance."
  Repair process completed: "Le processus de réparation a été un succès."
  Repair process failed: "Le processus de réparation a échoué."
+ Served: "Servi"
  Signature files have been updated (%s): "Les fichiers de signature ont été mis à jour (%s)."
  Skipped: "Sauté"
  Source not specified: "Aucune source n'a été spécifié\_!"

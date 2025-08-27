@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2025.08.26).
+ * This file: Protect traits (last modified: 2025.08.27).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -46,6 +46,9 @@ trait Protect
 
         /** Initialise statistics tracked. */
         $this->StatisticsTracked = array_flip(explode("\n", $this->Configuration['general']['statistics']));
+
+        /** Initialise CAPTCHA statistics tracked. */
+        $this->StatisticsTrackedCAPTCHAs = array_flip(explode("\n", $this->Configuration['general']['statistics_captchas']));
 
         /** Reset bypass flags. */
         $this->resetBypassFlags();
@@ -481,18 +484,18 @@ trait Protect
             $this->Events->fireEvent('reporterFinished');
             if (isset($this->CIDRAM['LastTestIP'])) {
                 if ($this->CIDRAM['LastTestIP'] === 4) {
-                    if (isset($this->CIDRAM['Report OK']) && $this->CIDRAM['Report OK'] > 0 && isset($this->StatisticsTracked['Reported-IPv4-OK'])) {
-                        $this->Cache->incEntry('Statistics-Reported-IPv4-OK', $this->CIDRAM['Report OK']);
+                    if (isset($this->CIDRAM['Report OK']) && $this->CIDRAM['Report OK'] > 0 && isset($this->StatisticsTracked['ReportOK:IPv4'])) {
+                        $this->Cache->incEntry('Statistics-ReportOK:IPv4', $this->CIDRAM['Report OK']);
                     }
-                    if (isset($this->CIDRAM['Report Failed']) && $this->CIDRAM['Report Failed'] > 0 && isset($this->StatisticsTracked['Reported-IPv4-Failed'])) {
-                        $this->Cache->incEntry('Statistics-Reported-IPv4-Failed', $this->CIDRAM['Report Failed']);
+                    if (isset($this->CIDRAM['Report Failed']) && $this->CIDRAM['Report Failed'] > 0 && isset($this->StatisticsTracked['ReportFailed:IPv4'])) {
+                        $this->Cache->incEntry('Statistics-ReportFailed:IPv4', $this->CIDRAM['Report Failed']);
                     }
                 } elseif ($this->CIDRAM['LastTestIP'] === 6) {
-                    if (isset($this->CIDRAM['Report OK']) && $this->CIDRAM['Report OK'] > 0 && isset($this->StatisticsTracked['Reported-IPv6-OK'])) {
-                        $this->Cache->incEntry('Statistics-Reported-IPv6-OK', $this->CIDRAM['Report OK']);
+                    if (isset($this->CIDRAM['Report OK']) && $this->CIDRAM['Report OK'] > 0 && isset($this->StatisticsTracked['ReportOK:IPv6'])) {
+                        $this->Cache->incEntry('Statistics-ReportOK:IPv6', $this->CIDRAM['Report OK']);
                     }
-                    if (isset($this->CIDRAM['Report Failed']) && $this->CIDRAM['Report Failed'] > 0 && isset($this->StatisticsTracked['Reported-IPv6-Failed'])) {
-                        $this->Cache->incEntry('Statistics-Reported-IPv6-Failed', $this->CIDRAM['Report Failed']);
+                    if (isset($this->CIDRAM['Report Failed']) && $this->CIDRAM['Report Failed'] > 0 && isset($this->StatisticsTracked['ReportFailed:IPv6'])) {
+                        $this->Cache->incEntry('Statistics-ReportFailed:IPv6', $this->CIDRAM['Report Failed']);
                     }
                 }
             }
@@ -507,60 +510,60 @@ trait Protect
             if ($this->BlockInfo['SignatureCount'] > 0) {
                 if (!empty($this->CIDRAM['Banned'])) {
                     if ($this->BlockInfo['IPAddrResolved']) {
-                        if (isset($this->StatisticsTracked['Banned-IPv4'])) {
-                            $this->Cache->incEntry('Statistics-Banned-IPv4');
+                        if (isset($this->StatisticsTracked['Banned:IPv4'])) {
+                            $this->Cache->incEntry('Statistics-Banned:IPv4');
                         }
-                        if (isset($this->StatisticsTracked['Banned-IPv6'])) {
-                            $this->Cache->incEntry('Statistics-Banned-IPv6');
+                        if (isset($this->StatisticsTracked['Banned:IPv6'])) {
+                            $this->Cache->incEntry('Statistics-Banned:IPv6');
                         }
                     } elseif ($this->CIDRAM['LastTestIP'] === 4) {
-                        if (isset($this->StatisticsTracked['Banned-IPv4'])) {
-                            $this->Cache->incEntry('Statistics-Banned-IPv4');
+                        if (isset($this->StatisticsTracked['Banned:IPv4'])) {
+                            $this->Cache->incEntry('Statistics-Banned:IPv4');
                         }
                     } elseif ($this->CIDRAM['LastTestIP'] === 6) {
-                        if (isset($this->StatisticsTracked['Banned-IPv6'])) {
-                            $this->Cache->incEntry('Statistics-Banned-IPv6');
+                        if (isset($this->StatisticsTracked['Banned:IPv6'])) {
+                            $this->Cache->incEntry('Statistics-Banned:IPv6');
                         }
                     }
                 } elseif ($this->BlockInfo['IPAddrResolved']) {
-                    if (isset($this->StatisticsTracked['Blocked-IPv4'])) {
-                        $this->Cache->incEntry('Statistics-Blocked-IPv4');
+                    if (isset($this->StatisticsTracked['Blocked:IPv4'])) {
+                        $this->Cache->incEntry('Statistics-Blocked:IPv4');
                     }
-                    if (isset($this->StatisticsTracked['Blocked-IPv6'])) {
-                        $this->Cache->incEntry('Statistics-Blocked-IPv6');
+                    if (isset($this->StatisticsTracked['Blocked:IPv6'])) {
+                        $this->Cache->incEntry('Statistics-Blocked:IPv6');
                     }
                 } elseif ($this->CIDRAM['LastTestIP'] === 4) {
-                    if (isset($this->StatisticsTracked['Blocked-IPv4'])) {
-                        $this->Cache->incEntry('Statistics-Blocked-IPv4');
+                    if (isset($this->StatisticsTracked['Blocked:IPv4'])) {
+                        $this->Cache->incEntry('Statistics-Blocked:IPv4');
                     }
                 } elseif ($this->CIDRAM['LastTestIP'] === 6) {
-                    if (isset($this->StatisticsTracked['Blocked-IPv6'])) {
-                        $this->Cache->incEntry('Statistics-Blocked-IPv6');
+                    if (isset($this->StatisticsTracked['Blocked:IPv6'])) {
+                        $this->Cache->incEntry('Statistics-Blocked:IPv6');
                     }
                 } else {
-                    if (isset($this->StatisticsTracked['Blocked-Other'])) {
-                        $this->Cache->incEntry('Statistics-Blocked-Other');
+                    if (isset($this->StatisticsTracked['Blocked:Other'])) {
+                        $this->Cache->incEntry('Statistics-Blocked:Other');
                     }
                 }
             } else {
                 if ($this->BlockInfo['IPAddrResolved']) {
-                    if (isset($this->StatisticsTracked['Passed-IPv4'])) {
-                        $this->Cache->incEntry('Statistics-Passed-IPv4');
+                    if (isset($this->StatisticsTracked['Passed:IPv4'])) {
+                        $this->Cache->incEntry('Statistics-Passed:IPv4');
                     }
-                    if (isset($this->StatisticsTracked['Passed-IPv6'])) {
-                        $this->Cache->incEntry('Statistics-Passed-IPv6');
+                    if (isset($this->StatisticsTracked['Passed:IPv6'])) {
+                        $this->Cache->incEntry('Statistics-Passed:IPv6');
                     }
                 } elseif ($this->CIDRAM['LastTestIP'] === 4) {
-                    if (isset($this->StatisticsTracked['Passed-IPv4'])) {
-                        $this->Cache->incEntry('Statistics-Passed-IPv4');
+                    if (isset($this->StatisticsTracked['Passed:IPv4'])) {
+                        $this->Cache->incEntry('Statistics-Passed:IPv4');
                     }
                 } elseif ($this->CIDRAM['LastTestIP'] === 6) {
-                    if (isset($this->StatisticsTracked['Passed-IPv6'])) {
-                        $this->Cache->incEntry('Statistics-Passed-IPv6');
+                    if (isset($this->StatisticsTracked['Passed:IPv6'])) {
+                        $this->Cache->incEntry('Statistics-Passed:IPv6');
                     }
                 } else {
-                    if (isset($this->StatisticsTracked['Passed-Other'])) {
-                        $this->Cache->incEntry('Statistics-Passed-Other');
+                    if (isset($this->StatisticsTracked['Passed:Other'])) {
+                        $this->Cache->incEntry('Statistics-Passed:Other');
                     }
                 }
             }

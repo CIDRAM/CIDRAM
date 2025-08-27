@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2025.08.09).
+ * This file: The CIDRAM front-end (last modified: 2025.08.27).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -404,6 +404,9 @@ class FrontEnd extends Core
 
         /** Initialise statistics tracked. */
         $this->StatisticsTracked = array_flip(explode("\n", $this->Configuration['general']['statistics']));
+
+        /** Initialise CAPTCHA statistics tracked. */
+        $this->StatisticsTrackedCAPTCHAs = array_flip(explode("\n", $this->Configuration['general']['statistics_captchas']));
 
         /** Brute-force protection. */
         if ((

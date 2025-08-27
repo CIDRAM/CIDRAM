@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Captcha class (last modified: 2025.08.17).
+ * This file: Captcha class (last modified: 2025.08.27).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -87,16 +87,17 @@ abstract class Captcha
      * Generate data for failed attempts.
      *
      * @param string $Platform The CAPTCHA platform in use.
+     * @param string $ConfigSuffix The suffix used for relevant configuration elements.
      * @return void
      */
-    public function generateFailed(string $Platform = ''): void
+    public function generateFailed(string $Platform = '', string $ConfigSuffix = ''): void
     {
         /** Set CAPTCHA status. */
         $this->CIDRAM->BlockInfo['CAPTCHA'] = sprintf($this->CIDRAM->L10N->getString('state.Failed'), $Platform ?: $this->CIDRAM->L10N->getString('field.unknown'));
 
         /** Append to CAPTCHA statistics if necessary. */
-        if (isset($this->CIDRAM->Stages['Statistics:Enable'], $this->CIDRAM->StatisticsTracked['CAPTCHAs-Failed'])) {
-            $this->CIDRAM->Cache->incEntry('Statistics-CAPTCHAs-Failed');
+        if (isset($this->CIDRAM->Stages['Statistics:Enable'], $this->CIDRAM->StatisticsTrackedCAPTCHAs[$ConfigSuffix . ':Failed'])) {
+            $this->CIDRAM->Cache->incEntry('Statistics-' . $ConfigSuffix . ':Failed');
         }
     }
 
@@ -104,16 +105,17 @@ abstract class Captcha
      * Generate data for passed attempts.
      *
      * @param string $Platform The CAPTCHA platform in use.
+     * @param string $ConfigSuffix The suffix used for relevant configuration elements.
      * @return void
      */
-    public function generatePassed(string $Platform = ''): void
+    public function generatePassed(string $Platform = '', string $ConfigSuffix = ''): void
     {
         /** Set CAPTCHA status. */
         $this->CIDRAM->BlockInfo['CAPTCHA'] = sprintf($this->CIDRAM->L10N->getString('state.Passed'), $Platform ?: $this->CIDRAM->L10N->getString('field.unknown'));
 
         /** Append to CAPTCHA statistics if necessary. */
-        if (isset($this->CIDRAM->Stages['Statistics:Enable'], $this->CIDRAM->StatisticsTracked['CAPTCHAs-Passed'])) {
-            $this->CIDRAM->Cache->incEntry('Statistics-CAPTCHAs-Passed');
+        if (isset($this->CIDRAM->Stages['Statistics:Enable'], $this->CIDRAM->StatisticsTrackedCAPTCHAs[$ConfigSuffix . ':Passed'])) {
+            $this->CIDRAM->Cache->incEntry('Statistics-' . $ConfigSuffix . ':Passed');
         }
     }
 

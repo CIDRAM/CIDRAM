@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Friendly Captcha class (last modified: 2025.08.20).
+ * This file: Friendly Captcha class (last modified: 2025.08.27).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -72,9 +72,9 @@ class FriendlyCaptcha extends Captcha
                         ) . "\n";
                         $BypassListModified = true;
 
-                        $this->generatePassed('Friendly Captcha');
+                        $this->generatePassed('Friendly Captcha', 'FriendlyCaptcha');
                     } else {
-                        $this->generateFailed('Friendly Captcha');
+                        $this->generateFailed('Friendly Captcha', 'FriendlyCaptcha');
                     }
                 }
 
@@ -160,9 +160,9 @@ class FriendlyCaptcha extends Captcha
                         /** Append to the hash list. */
                         $HastList .= $UserHash . ',' . ($this->CIDRAM->Now + ($this->CIDRAM->Configuration['captcha']['expiry'] * 3600)) . "\n";
                         $HastListModified = true;
-                        $this->generatePassed('Friendly Captcha');
+                        $this->generatePassed('Friendly Captcha', 'FriendlyCaptcha');
                     } else {
-                        $this->generateFailed('Friendly Captcha');
+                        $this->generateFailed('Friendly Captcha', 'FriendlyCaptcha');
                     }
                 }
 
@@ -194,12 +194,15 @@ class FriendlyCaptcha extends Captcha
      */
     private function generateTemplateData(string $SiteKey, bool $CookieWarn = false, bool $ApiMessage = false): string
     {
+        /** Append to CAPTCHA statistics if necessary. */
+        if (isset($this->CIDRAM->Stages['Statistics:Enable'], $this->CIDRAM->StatisticsTrackedCAPTCHAs['FriendlyCaptcha:Served'])) {
+            $this->CIDRAM->Cache->incEntry('Statistics-FriendlyCaptcha:Served');
+        }
+
         if ($this->CIDRAM->Configuration['captcha']['api']['friendly'] === 'v1') {
-            $Script = '<script type="module" src="https://cdn.jsdelivr.net/npm/friendly-challenge@0.9.18/widget.module.min.js" async defer></script>';
-            $Script .= '<script nomodule src="https://cdn.jsdelivr.net/npm/friendly-challenge@0.9.18/widget.min.js" async defer></script>';
+            $Script = '<script type="module" src="https://cdn.jsdelivr.net/npm/friendly-challenge@0.9.18/widget.module.min.js" async defer></script><script nomodule src="https://cdn.jsdelivr.net/npm/friendly-challenge@0.9.18/widget.min.js" async defer></script>';
         } else {
-            $Script = '<script type="module" src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@0.1.31/site.min.js" async defer></script>';
-            $Script .= '<script nomodule src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@0.1.31/site.compat.min.js" async defer></script>';
+            $Script = '<script type="module" src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@0.1.31/site.min.js" async defer></script><script nomodule src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@0.1.31/site.compat.min.js" async defer></script>';
         }
         $Script .= '<script type="text/javascript">document.getElementById(\'hostnameoverride\').value=window.location.hostname;</script>';
         return sprintf(

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2025.08.26).
+# This file: Japanese language data for the front-end (last modified: 2025.08.27).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -229,6 +229,7 @@ config:
  general_silent_mode_response_header_code: "ブロックされたアクセス試行をサイレントにリダイレクトする場合、CIDRAMが送信するＨＴＴＰステータス・メッセージはどれですか？"
  general_stages: "実行チェーンの段階のコントロールです （有効かどうか、エラーがログに記録されるかどうか、など）。"
  general_statistics: "追跡する統計情報を制御します。"
+ general_statistics_captchas: "キャプチャで追跡する統計情報を制御します。"
  general_time_format: "CIDRAMで使用される日付表記形式。​追加のオプションがリクエストに応じて追加される場合があります。"
  general_time_offset: "タイムゾーン・オフセット（分）。"
  general_timezone: "使用するタイムゾーンを指定します​（例えば、「Africa/Cairo」、「America/New_York」、「Asia/Tokyo」、「Australia/Perth」、「Europe/Berlin」、「Pacific/Guam」、等）。​「SYSTEM」を指定すると、ＰＨＰがこれを自動的に処理します。"
@@ -896,7 +897,7 @@ response:
  Not available at the upstream: "アップストリームでは利用できません。"
  Outdated: "時代遅れです！"
  Parse: "解析"
- Passed: "合格しました"
+ Passed: "合格された"
  Password field empty: "パスワード入力は空です！"
  Password successfully updated: "パスワードの更新が成功しました！"
  Payment required at the upstream: "アップストリームでは支払いが必要です。"
@@ -908,6 +909,7 @@ response:
  Removed %s from tracking: "追跡から「%s」を削除しました。"
  Repair process completed: "修復プロセスが完了しました。"
  Repair process failed: "修復プロセスが失敗しました。"
+ Served: "提供された"
  Signature files have been updated (%s): "シグネチャ・ファイルが更新されました（%s）。"
  Skipped: "スキップしました"
  Source not specified: "ソースが指定されていません！"

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The statistics page (last modified: 2024.03.18).
+ * This file: The statistics page (last modified: 2025.08.27).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -45,20 +45,27 @@ if (!empty($_POST['ClearStats']) && $this->Cache->deleteAllEntriesWhere('~^Stati
 
 /** Fetch and process various statistics. */
 foreach ([
-    ['Blocked-IPv4', 'Blocked-Total'],
-    ['Blocked-IPv6', 'Blocked-Total'],
-    ['Blocked-Other', 'Blocked-Total'],
-    ['Banned-IPv4', 'Banned-Total'],
-    ['Banned-IPv6', 'Banned-Total'],
-    ['Passed-IPv4', 'Passed-Total'],
-    ['Passed-IPv6', 'Passed-Total'],
-    ['Passed-Other', 'Passed-Total'],
-    ['CAPTCHAs-Failed', 'CAPTCHAs-Total'],
-    ['CAPTCHAs-Passed', 'CAPTCHAs-Total'],
-    ['Reported-IPv4-OK', 'Reported-Total'],
-    ['Reported-IPv4-Failed', 'Reported-Total'],
-    ['Reported-IPv6-OK', 'Reported-Total'],
-    ['Reported-IPv6-Failed', 'Reported-Total']
+    ['Blocked:IPv4', 'BlockedTotal'],
+    ['Blocked:IPv6', 'BlockedTotal'],
+    ['Blocked:Other', 'BlockedTotal'],
+    ['Banned:IPv4', 'BannedTotal'],
+    ['Banned:IPv6', 'BannedTotal'],
+    ['Passed:IPv4', 'PassedTotal'],
+    ['Passed:IPv6', 'PassedTotal'],
+    ['Passed:Other', 'PassedTotal'],
+    ['ReportOK:IPv4', 'ReportTotal'],
+    ['ReportFailed:IPv4', 'ReportTotal'],
+    ['ReportOK:IPv6', 'ReportTotal'],
+    ['ReportFailed:IPv6', 'ReportTotal'],
+    ['HCaptcha:Failed', 'CAPTCHAs-TotalFailed'],
+    ['HCaptcha:Passed', 'CAPTCHAs-TotalPassed'],
+    ['HCaptcha:Served', 'CAPTCHAs-TotalServed'],
+    ['FriendlyCaptcha:Failed', 'CAPTCHAs-TotalFailed'],
+    ['FriendlyCaptcha:Passed', 'CAPTCHAs-TotalPassed'],
+    ['FriendlyCaptcha:Served', 'CAPTCHAs-TotalServed'],
+    ['CloudflareTurnstile:Failed', 'CAPTCHAs-TotalFailed'],
+    ['CloudflareTurnstile:Passed', 'CAPTCHAs-TotalPassed'],
+    ['CloudflareTurnstile:Served', 'CAPTCHAs-TotalServed']
 ] as $TheseStats) {
     if (!isset($this->FE[$TheseStats[1]])) {
         $this->FE[$TheseStats[1]] = 0;
@@ -69,7 +76,7 @@ foreach ([
     }
     $this->FE[$TheseStats[1]] += $Try;
     $this->FE[$TheseStats[0]] = $this->NumberFormatter->format($Try);
-    if (!isset($this->Stages['Statistics:Enable'], $this->StatisticsTracked[$TheseStats[0]])) {
+    if (!isset($this->Stages['Statistics:Enable']) && (!isset($this->StatisticsTracked[$TheseStats[0]]) || !isset($this->StatisticsTrackedCAPTCHAs[$TheseStats[0]]))) {
         $this->FE[$TheseStats[0]] .= ' – ' . $this->L10N->getString('field.Not tracking');
     }
 }
@@ -144,7 +151,7 @@ if (count($AuxRulesTracked) === 0) {
 unset($Try, $AuxRulesTotal, $AuxRuleData, $AuxRuleName, $AuxRulesTracked);
 
 /** Fetch and process totals. */
-foreach (['Blocked-Total', 'Banned-Total', 'Passed-Total', 'CAPTCHAs-Total', 'Reported-Total'] as $TheseStats) {
+foreach (['BlockedTotal', 'BannedTotal', 'PassedTotal', 'ReportTotal', 'CAPTCHAs-TotalFailed', 'CAPTCHAs-TotalPassed', 'CAPTCHAs-TotalServed'] as $TheseStats) {
     $this->FE[$TheseStats] = $this->NumberFormatter->format($this->FE[$TheseStats]);
 }
 

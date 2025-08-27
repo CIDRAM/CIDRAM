@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2025.08.26).
+# This file: Norwegian language data for the front-end (last modified: 2025.08.27).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -229,6 +229,7 @@ config:
  general_silent_mode_response_header_code: "Hvilken HTTP-statusmelding skal CIDRAM sende under stille omdirigering av forsøk på blokkert tilgang?"
  general_stages: "Kontroller for stadiene i utførelseskjeden (om aktivert, om feil logges, osv)."
  general_statistics: "Kontrollerer hvilken statistisk informasjon som skal spores."
+ general_statistics_captchas: "Kontrollerer hvilken statistisk informasjon som skal spores for CAPTCHA-er."
  general_time_format: "Dato/tid notasjonsformat som brukes av CIDRAM. Ytterligere alternativer kan legges på forespørsel."
  general_time_offset: "Tidssone forskjøvet i minutter."
  general_timezone: "Dette brukes til å spesifisere tidssonen som skal brukes (f.eks., Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, osv). Spesifiser «SYSTEM» for å la PHP håndtere dette for deg automatisk."
@@ -916,6 +917,7 @@ response:
  Removed %s from tracking: "Fjernet %s fra sporing."
  Repair process completed: "Reparasjonsprosessen er fullført."
  Repair process failed: "Reparasjonsprosessen mislyktes."
+ Served: "Servert"
  Signature files have been updated (%s): "Signaturfiler er oppdatert (%s)."
  Skipped: "Ignorert"
  Source not specified: "Kilde ikke spesifisert!"

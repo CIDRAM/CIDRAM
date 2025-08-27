@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Cloudflare Turnstile class (last modified: 2025.08.20).
+ * This file: Cloudflare Turnstile class (last modified: 2025.08.27).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -69,9 +69,9 @@ class CloudflareTurnstile extends Captcha
                         ) . "\n";
                         $BypassListModified = true;
 
-                        $this->generatePassed('Cloudflare Turnstile');
+                        $this->generatePassed('Cloudflare Turnstile', 'CloudflareTurnstile');
                     } else {
-                        $this->generateFailed('Cloudflare Turnstile');
+                        $this->generateFailed('Cloudflare Turnstile', 'CloudflareTurnstile');
                     }
                 }
 
@@ -154,9 +154,9 @@ class CloudflareTurnstile extends Captcha
                         /** Append to the hash list. */
                         $HastList .= $UserHash . ',' . ($this->CIDRAM->Now + ($this->CIDRAM->Configuration['captcha']['expiry'] * 3600)) . "\n";
                         $HastListModified = true;
-                        $this->generatePassed('Cloudflare Turnstile');
+                        $this->generatePassed('Cloudflare Turnstile', 'CloudflareTurnstile');
                     } else {
-                        $this->generateFailed('Cloudflare Turnstile');
+                        $this->generateFailed('Cloudflare Turnstile', 'CloudflareTurnstile');
                     }
                 }
 
@@ -188,8 +188,11 @@ class CloudflareTurnstile extends Captcha
      */
     private function generateTemplateData(string $SiteKey, bool $CookieWarn = false, bool $ApiMessage = false): string
     {
-        $Script = '<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>';
-        $Script .= '<script type="text/javascript">document.getElementById(\'hostnameoverride\').value=window.location.hostname;</script>';
+        /** Append to CAPTCHA statistics if necessary. */
+        if (isset($this->CIDRAM->Stages['Statistics:Enable'], $this->CIDRAM->StatisticsTrackedCAPTCHAs['CloudflareTurnstile:Served'])) {
+            $this->CIDRAM->Cache->incEntry('Statistics-CloudflareTurnstile:Served');
+        }
+
         return sprintf(
             "\n<hr />\n<p class=\"detected\"%s>%s%s<br /></p>\n" .
             '<form method="POST" action="" class="gForm">' .
@@ -205,7 +208,7 @@ class CloudflareTurnstile extends Captcha
             $this->TemplateInsert,
             $this->CIDRAM->BlockInfo['ID'] ?? $this->CIDRAM->generateId(),
             $this->CIDRAM->ClientL10N->getString('label.Submit') ?: $this->CIDRAM->L10N->getString('label.Submit')
-        ) . $Script;
+        ) . '<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script><script type="text/javascript">document.getElementById(\'hostnameoverride\').value=window.location.hostname;</script>';
     }
 
     /**

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2025.08.26).
+# This file: Defaults file (last modified: 2025.08.27).
 ##/
 
 Config Defaults:
@@ -520,32 +520,52 @@ Config Defaults:
   statistics:
    type: "checkbox"
    default: |
-    Blocked-IPv4
-    Blocked-IPv6
-    Blocked-Other
-    Banned-IPv4
-    Banned-IPv6
-    CAPTCHAs-Failed
-    CAPTCHAs-Passed
-    Reported-IPv4-OK
-    Reported-IPv4-Failed
-    Reported-IPv6-OK
-    Reported-IPv6-Failed
+    Blocked:IPv4
+    Blocked:IPv6
+    Blocked:Other
+    Banned:IPv4
+    Banned:IPv6
+    ReportOK:IPv4
+    ReportOK:IPv6
+    ReportFailed:IPv4
+    ReportFailed:IPv6
+   labels:
+    IPv4: "IPv4"
+    IPv6: "IPv6"
+    Other: "label.Other"
    choices:
-    Blocked-IPv4: "{label.Requests blocked} – IPv4"
-    Blocked-IPv6: "{label.Requests blocked} – IPv6"
-    Blocked-Other: "{label.Requests blocked} – {label.Other}"
-    Banned-IPv4: "{label.Requests banned} – IPv4"
-    Banned-IPv6: "{label.Requests banned} – IPv6"
-    Passed-IPv4: "{label.Requests passed} – IPv4"
-    Passed-IPv6: "{label.Requests passed} – IPv6"
-    Passed-Other: "{label.Requests passed} – {label.Other}"
-    CAPTCHAs-Failed: "{label.CAPTCHA attempts} – {state.Failed}"
-    CAPTCHAs-Passed: "{label.CAPTCHA attempts} – {state.Passed}"
-    Reported-IPv4-OK: "{label.Requests reported to external APIs} – IPv4 – {field.OK}"
-    Reported-IPv4-Failed: "{label.Requests reported to external APIs} – IPv4 – {response.Failed}"
-    Reported-IPv6-OK: "{label.Requests reported to external APIs} – IPv6 – {field.OK}"
-    Reported-IPv6-Failed: "{label.Requests reported to external APIs} – IPv6 – {response.Failed}"
+    Blocked: "{label.Requests blocked}"
+    Banned: "{label.Requests banned}"
+    Passed: "{label.Requests passed}"
+    ReportOK: "{label.Requests reported to external APIs} – {field.OK}"
+    ReportFailed: "{label.Requests reported to external APIs} – {response.Failed}"
+   nonsense: |
+    Banned:Other
+    ReportOK:Other
+    ReportFailed:Other
+   columns: "100px"
+   hints: "hints_aux_stats"
+  statistics_captchas:
+   type: "checkbox"
+   default: |
+    HCaptcha:Failed
+    HCaptcha:Passed
+    HCaptcha:Served
+    FriendlyCaptcha:Failed
+    FriendlyCaptcha:Passed
+    FriendlyCaptcha:Served
+    CloudflareTurnstile:Failed
+    CloudflareTurnstile:Passed
+    CloudflareTurnstile:Served
+   labels:
+    Failed: "response.Failed"
+    Passed: "response.Passed"
+    Served: "response.Served"
+   choices:
+    HCaptcha: "hCaptcha"
+    FriendlyCaptcha: "Friendly Captcha"
+    CloudflareTurnstile: "Cloudflare Turnstile"
+   columns: "100px"
    hints: "hints_aux_stats"
   force_hostname_lookup:
    type: "bool"

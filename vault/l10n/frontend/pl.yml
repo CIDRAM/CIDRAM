@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2025.08.26).
+# This file: Polish language data for the front-end (last modified: 2025.08.27).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -172,7 +172,7 @@ config:
  captcha_hcaptcha_sitekey: *HCaptchaCred
  captcha_lockto: "Do czego powiązać CAPTCHA."
  captcha_log: "Zalogować wszystkie próby CAPTCHA? Jeśli tak, podaj nazwę pliku do logowania. Jeśli nie, pozostaw tę zmienną pustą."
- captcha_messages: "Wiadomości wyświetlane obok testów CAPTCHA."
+ captcha_messages: "Wiadomości wyświetlane obok CAPTCHA."
  captcha_nonblocked_status_code: "Którego kodu stanu należy używać podczas wyświetlania CAPTCHA dla niezablokowanych żądań?"
  captcha_signature_limit: "Maksymalna liczba podpisów dozwolona przed wycofaniem oferty CAPTCHA. Domyślna = 1."
  captcha_turnstile_secret: &TurnstileCred "Jeśli chcesz używać Cloudflare Turnstile z CIDRAM, musisz wpisać tutaj wartość. Jeśli nie, możesz ją zignorować."
@@ -229,6 +229,7 @@ config:
  general_silent_mode_response_header_code: "Który komunikat o stanie HTTP powinien wysłać CIDRAM podczas cichego przekierowania zablokowanych prób dostępu?"
  general_stages: "Kontrole etapów łańcucha egzekucyjnego (czy włączone, czy błędy są rejestrowane, itp)."
  general_statistics: "Kontroluje, które informacje statystyczne należy śledzić."
+ general_statistics_captchas: "Kontroluje, które informacje statystyczne dotyczące CAPTCHA należy śledzić."
  general_time_format: "Format notacja daty/godziny używany przez CIDRAM. Dodatkowe opcje mogą być dodane na życzenie."
  general_time_offset: "Przesunięcie strefy czasowej w minutach."
  general_timezone: "Służy do określania używanej strefy czasowej (na przykład, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, itp). Podaj „SYSTEM”, aby PHP mógł to zrobić automatycznie."
@@ -923,6 +924,7 @@ response:
  Removed %s from tracking: "Usunięto %s ze śledzenia."
  Repair process completed: "Zakończenie procesu naprawy."
  Repair process failed: "Niepowodzenie procesu naprawy."
+ Served: "Podano"
  Signature files have been updated (%s): "Pliki podpis zostały zaktualizowane (%s)."
  Skipped: "Pominięte"
  Source not specified: "Nie podano źródła!"

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Report to AbuseIPDB page (last modified: 2025.08.22).
+ * This file: Report to AbuseIPDB page (last modified: 2025.08.27).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -111,9 +111,9 @@ if (!isset($_POST['populate']) && $this->FE['address'] !== '' && $this->FE['apik
                 $this->FE['state_msg'] = sprintf($this->L10N->getString('response.The IP address, %s, successfully reported'), $LookupLink);
                 $Queue = false;
                 if ($this->CIDRAM['LastTestIP'] === 4) {
-                    $this->Cache->incEntry('Statistics-Reported-IPv4-OK');
+                    $this->Cache->incEntry('Statistics-ReportOK:IPv4');
                 } elseif ($this->CIDRAM['LastTestIP'] === 6) {
-                    $this->Cache->incEntry('Statistics-Reported-IPv6-OK');
+                    $this->Cache->incEntry('Statistics-ReportOK:IPv6');
                 }
             } else {
                 $this->FE['state_msg'] = sprintf($this->L10N->getString('response.Failed to report the IP address, %s'), $LookupLink);
@@ -133,9 +133,9 @@ if (!isset($_POST['populate']) && $this->FE['address'] !== '' && $this->FE['apik
                     $this->FE['state_msg'] .= ' ' . $this->L10N->getString('response.The report has not been enqueued');
                 }
                 if ($this->CIDRAM['LastTestIP'] === 4) {
-                    $this->Cache->incEntry('Statistics-Reported-IPv4-Failed');
+                    $this->Cache->incEntry('Statistics-ReportFailed:IPv4');
                 } elseif ($this->CIDRAM['LastTestIP'] === 6) {
-                    $this->Cache->incEntry('Statistics-Reported-IPv6-Failed');
+                    $this->Cache->incEntry('Statistics-ReportFailed:IPv6');
                 }
             }
             if ($Queue) {

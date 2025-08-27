@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: HCaptcha class (last modified: 2025.08.20).
+ * This file: HCaptcha class (last modified: 2025.08.27).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -69,9 +69,9 @@ class HCaptcha extends Captcha
                         ) . "\n";
                         $BypassListModified = true;
 
-                        $this->generatePassed('hCaptcha');
+                        $this->generatePassed('hCaptcha', 'HCaptcha');
                     } else {
-                        $this->generateFailed('hCaptcha');
+                        $this->generateFailed('hCaptcha', 'HCaptcha');
                     }
                 }
 
@@ -154,9 +154,9 @@ class HCaptcha extends Captcha
                         /** Append to the hash list. */
                         $HastList .= $UserHash . ',' . ($this->CIDRAM->Now + ($this->CIDRAM->Configuration['captcha']['expiry'] * 3600)) . "\n";
                         $HastListModified = true;
-                        $this->generatePassed('hCaptcha');
+                        $this->generatePassed('hCaptcha', 'HCaptcha');
                     } else {
-                        $this->generateFailed('hCaptcha');
+                        $this->generateFailed('hCaptcha', 'HCaptcha');
                     }
                 }
 
@@ -188,6 +188,11 @@ class HCaptcha extends Captcha
      */
     private function generateTemplateData(string $SiteKey, bool $CookieWarn = false, bool $ApiMessage = false): string
     {
+        /** Append to CAPTCHA statistics if necessary. */
+        if (isset($this->CIDRAM->Stages['Statistics:Enable'], $this->CIDRAM->StatisticsTrackedCAPTCHAs['HCaptcha:Served'])) {
+            $this->CIDRAM->Cache->incEntry('Statistics-HCaptcha:Served');
+        }
+
         header(sprintf(
             'Content-Security-Policy: default-src \'none\'; connect-src %1$s; frame-src %1$s; script-src %1$s \'unsafe-inline\'; style-src \'unsafe-inline\';',
             '\'self\' https://assets.hcaptcha.com https://hcaptcha.com https://newassets.hcaptcha.com/'

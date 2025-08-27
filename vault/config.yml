@@ -118,17 +118,25 @@ general:
   8.8.4.4
  default_algo: "PASSWORD_DEFAULT"
  statistics: |
-  Blocked-IPv4
-  Blocked-IPv6
-  Blocked-Other
-  Banned-IPv4
-  Banned-IPv6
-  CAPTCHAs-Failed
-  CAPTCHAs-Passed
-  Reported-IPv4-OK
-  Reported-IPv4-Failed
-  Reported-IPv6-OK
-  Reported-IPv6-Failed
+  Blocked:IPv4
+  Blocked:IPv6
+  Blocked:Other
+  Banned:IPv4
+  Banned:IPv6
+  ReportOK:IPv4
+  ReportOK:IPv6
+  ReportFailed:IPv4
+  ReportFailed:IPv6
+ statistics_captchas: |
+  HCaptcha:Failed
+  HCaptcha:Passed
+  HCaptcha:Served
+  FriendlyCaptcha:Failed
+  FriendlyCaptcha:Passed
+  FriendlyCaptcha:Served
+  CloudflareTurnstile:Failed
+  CloudflareTurnstile:Passed
+  CloudflareTurnstile:Served
  force_hostname_lookup: false
  allow_gethostbyaddr_lookup: true
  disabled_channels: ""

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Farsi language data for the front (last modified: 2025.08.26).
+# This file: Farsi language data for the front (last modified: 2025.08.27).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -229,6 +229,7 @@ config:
  general_silent_mode_response_header_code: "CIDRAM هنگام هدایت بی‌صدا تلاش‌های دسترسی مسدود شده باید کدام پیام وضعیت HTTP را ارسال کند؟"
  general_stages: "کنترل مراحل زنجیره اجرا (آیا فعال است، آیا خطاها ثبت شده اند، و غیره)."
  general_statistics: "کنترل می‌کند که کدام اطلاعات آماری را ردیابی کند."
+ general_statistics_captchas: "کنترل می‌کند که کدام اطلاعات آماری برای CAPTCHAها ردیابی شوند."
  general_time_format: "قالب نماد تاریخ/زمان استفاده شده توسط CIDRAM. در صورت درخواست ممکن است گزینه های اضافی اضافه شود."
  general_time_offset: "تغییر منطقه زمانی در دقیقه."
  general_timezone: "این برای تعیین منطقه زمانی استفاده می شود (به عنوان مثال، Africa/Cairo ,America/New_York ,Asia/Tokyo, Australia/Perth ,Europe/Berlin ,Pacific/Guam, و غیره). «SYSTEM» را مشخص کنید تا PHP به طور خودکار این کار را برای شما انجام دهد."
@@ -911,6 +912,7 @@ response:
  Removed %s from tracking: "%s از ردیابی حذف شد."
  Repair process completed: "تعمیر شد."
  Repair process failed: "تعمیر کردن ناموفق بود."
+ Served: "سرو شده"
  Signature files have been updated (%s): "فایل های امضا به روز شده است (%s)."
  Skipped: "عمل نشده"
  Source not specified: "منبع مشخص نشده!"

@@ -482,4 +482,5 @@
 - On the auxiliary rules pages, when focused on the input field for a condition or webhook, if that field is empty, pressing backspace or delete will now hide the relevant fields for that condition or webhook. Such empty fields were already being disregarded when creating or updating auxiliary rules, so this change doesn't affect those mechanisms, but being able to hide such fields may slightly benefit the UX (#624).
 - Added a focus option for query to the IP testing page.
 - Added 404 as an option to the auxiliary rules HTTP status code override (#624).
+- Options shown at the auxiliary rules view mode page when clicking the trigram can now be unshown by reclicking it (#392).
 - *Plus all the regular signature updates.*

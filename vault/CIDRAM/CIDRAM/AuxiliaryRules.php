@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used for auxiliary rules (last modified: 2025.08.26).
+ * This file: Methods used for auxiliary rules (last modified: 2025.08.28).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -378,12 +378,17 @@ trait AuxiliaryRules
             }
 
             /** Figure out which options are available for the rule (view mode). */
-            $Options = ['(<span onclick="javascript:%s(\'' . $this->escapeJsInHTML($Name) . '\',\'' . $RuleClass . '\')"><code><span class="auxicon %s" title="%s"></span><span class="s auxicontxt">%s</span></code></span>)'];
+            $Options = ['<span onclick="javascript:%s(\'' . $this->escapeJsInHTML($Name) . '\',\'' . $RuleClass . '\')" class="auxopt"><code><span class="auxicon %s" title="%s"></span><span class="s auxicontxt">%s</span></code></span>'];
             if (empty($Data['Disable this rule'])) {
                 $Options['disableRule'] = sprintf($Options[0], 'disableRule', 'auxbl pause', '⏸', $this->L10N->getString('label.aux.Disable this rule'));
             } else {
                 $Options['enableRule'] = sprintf($Options[0], 'enableRule', 'auxgn play', '▶', $this->L10N->getString('label.aux.Enable this rule'));
             }
+            $Options['exportRule'] = sprintf(
+                '<span onclick="javascript:{document.getElementById(\'xprtName\').value=\'%s\';document.getElementById(\'xprtForm\').submit()}" class="auxopt"><code><span class="auxicon auxbl export"></span><span class="s auxicontxt">%s</span></code></span>',
+                $this->escapeJsInHTML($Name),
+                $this->L10N->getString('label.Export')
+            );
             if ($Count > 1) {
                 if ($Current !== 1) {
                     if ($Current !== 2) {
@@ -399,24 +404,15 @@ trait AuxiliaryRules
                 }
             }
             unset($Options[0]);
-            $Options['exportRule'] = sprintf(
-                '(<span onclick="javascript:{document.getElementById(\'xprtName\').value=\'%s\';document.getElementById(\'xprtForm\').submit()}"><code><span class="auxicon auxbl export"></span><span class="s auxicontxt">%s</span></code></span>)',
-                $this->escapeJsInHTML($Name),
-                $this->L10N->getString('label.Export')
-            );
             $Options['delRule'] = sprintf(
-                '(<span onclick="javascript:confirm(\'%s\')&&delRule(\'' . $this->escapeJsInHTML($Name) . '\',\'' . $RuleClass . '\')"><code><span class="auxicon auxrd delete" title="⌧"></span><span class="s auxicontxt">%s</span></code></span>)',
+                '<span onclick="javascript:confirm(\'%s\')&&delRule(\'' . $this->escapeJsInHTML($Name) . '\',\'' . $RuleClass . '\')" class="auxopt"><code><span class="auxicon auxrd delete" title="⌧"></span><span class="s auxicontxt">%s</span></code></span>',
                 $this->escapeJsInHTML(sprintf($this->L10N->getString('confirm.Delete'), $Name)),
                 $this->L10N->getString('field.Delete')
             );
-            $Options = implode(' ', $Options);
-            if (substr($Options, 0, 1) === '(' && substr($Options, -1) === ')') {
-                $Options = substr($Options, 1, -1);
-            }
             $Options = sprintf(
-                ' <span class="inlineBlock">– (<span id="heaven%1$s" class="scaleXToOne navicon heaven hoverglow" onclick="javascript:heavenToggle(\'%1$s\')" title="☰"></span><span id="hidden%1$s" class="scaleXToZero">%2$s</span>)</span>',
+                ' <span class="inlineBlock">– <span id="heaven%1$s" class="heavenInitPos navicon heaven hoverglow" onclick="javascript:heavenToggle(\'%1$s\')" title="☰"></span><span id="hidden%1$s" class="hiddenInitPos">&nbsp;– %2$s</span></span>',
                 $RuleClass,
-                $Options
+                implode(' – ', $Options)
             );
 
             $FromAndExpiry = '';

@@ -163,8 +163,10 @@ td code~input,td code~select{vertical-align:middle}
 input[type=button].reset{background:none;cursor:pointer;border:none;padding:0 12px 0 12px;margin:0;width:auto;color:#a04848}
 input[type=button].reset:hover,input[type=button].reset:active{color:#b77}
 .tablend{margin-top:-2px}
-.scaleXToZero{display:inline-block;overflow:hidden;transform:scaleX(0);transform-origin:{FE_Align};opacity:0;max-height:16px;max-width:0;transition:all .3s ease-out}
-.scaleXToOne{display:inline-block;overflow:hidden;transform:scaleX(1);transform-origin:{FE_Align};opacity:1;max-height:16px;max-width:auto;transition:all .3s ease-in}
+.hiddenInitPos{display:inline-block;overflow:hidden;transform:scaleX(0);transform-origin:{FE_Align};opacity:0;max-width:0;max-height:16px;transition:all .9s ease-out}
+.hiddenOpenPos{transform:scaleX(1);opacity:1;max-width:100%}
+.heavenInitPos{display:inline-block;overflow:hidden;transform:none;width:16px;height:16px;transition:all .9s cubic-bezier(0,0,.1,1)}
+.heavenOpenPos{transform:rotate(-270deg)}
 #logsTA{position:relative;top:-2px}
 .navicon.accounts{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:accounts.svg}{/Base64Encode})}
 .navicon.aggregator{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:aggregator.svg}{/Base64Encode})}

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2025.08.20).
+# This file: Defaults file (last modified: 2025.08.26).
 ##/
 
 Config Defaults:
@@ -532,8 +532,8 @@ Config Defaults:
     Passed-IPv4: "{label.Requests passed} – IPv4"
     Passed-IPv6: "{label.Requests passed} – IPv6"
     Passed-Other: "{label.Requests passed} – {label.Other}"
-    CAPTCHAs-Failed: "{label.CAPTCHA attempts} – {state.Failed}"
-    CAPTCHAs-Passed: "{label.CAPTCHA attempts} – {state.Passed}"
+    CAPTCHAs-Failed: "{label.CAPTCHA attempts} – {response.Failed}"
+    CAPTCHAs-Passed: "{label.CAPTCHA attempts} – {response.Passed}"
     Reported-IPv4-OK: "{label.Requests reported to external APIs} – IPv4 – {field.OK}"
     Reported-IPv4-Failed: "{label.Requests reported to external APIs} – IPv4 – {response.Failed}"
     Reported-IPv6-OK: "{label.Requests reported to external APIs} – IPv6 – {field.OK}"

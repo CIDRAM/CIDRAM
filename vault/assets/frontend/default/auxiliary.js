@@ -189,10 +189,8 @@ function createNewRule() {
 }
 
 function heavenToggle(c) {
-  document.getElementById('heaven'+c).classList.toggle('scaleXToZero');
-  document.getElementById('heaven'+c).classList.toggle('scaleXToOne');
-  document.getElementById('hidden'+c).classList.toggle('scaleXToZero');
-  document.getElementById('hidden'+c).classList.toggle('scaleXToOne');
+  document.getElementById('heaven'+c).classList.toggle('heavenOpenPos');
+  document.getElementById('hidden'+c).classList.toggle('hiddenOpenPos');
 }
 
 var methodSuggestions = ['GET','POST','HEAD','CONNECT','DELETE','OPTIONS','PATCH','PUT','TRACE'].map((e)=>'<span class="auxSuggestLink" onclick="javascript:this.parentElement.parentElement.previousElementSibling.lastChild.value=\''+e+'\'">'+e+'</span>').join(', ');

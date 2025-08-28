@@ -4,14 +4,14 @@
   :root{scroll-behavior:auto}
 }
 .scrollTrans{transition:all .5s ease-in-out}
-body,input,select,textarea{font-size:calc((12px * {magnification}) + .03vw)}
+body,input,select,textarea{font-size:calc((12px * {magnification}) + .03vw);max-width:100%}
 body{font-family:'Tahoma','Verdana','Noto Sans','Arial';letter-spacing:1px;text-decoration:none;border-style:none;margin:0;white-space:normal;background-color:#36393b;color:#c5bc8e;background-image:url('?cidram-asset=moon.jpg&theme={theme}');background-repeat:no-repeat;background-attachment:fixed;background-position:center center}
 hr{border-style:solid none none;border-width:1px;margin:5px 2px 0;padding:2px;color:#aaa}
 img.ico{width:16px;height:16px;border:0}
 input[type=file]{margin:0;padding:0;border:none;background:none;width:auto}
 input,input[type=file]::file-selector-button,select,option,textarea{background-color:rgba(54,57,59,.7);border:1px solid #aaa;color:#c5bc8e;margin:2px;padding:2px}
 input,select{width:150px;background-repeat:no-repeat;background-position:top {FE_Align_Reverse}}
-input[type=submit]:not(.auto),input[type=button]:not(.auto){width:auto;min-width:150px}
+input[type=submit]:not(.auto),input[type=button]:not(.auto){width:auto;min-width:min(150px, 25%)}
 input.auto,input[type=file]::file-selector-button,select.auto{width:auto;padding-left:10px;padding-right:10px}
 input[type=image]{width:inherit;border:inherit}
 input[type=password]{background-image:url(data:image/gif;base64,{Base64Encode}{Asset:pip_key_silver.gif}{/Base64Encode})}
@@ -84,6 +84,9 @@ input[id=homebutton]{border-top-{FE_Align_Reverse}-radius:0;border-bottom-{FE_Al
 }
 .flong{width:auto}
 .h1f,.h2f,.h3f,.h4f,.rf{white-space:nowrap}
+.iCntr,.iLabl,.iCntn{display:block}
+.iCntr{margin:16px 0 16px 0}
+.iCntn{margin-{FE_Align}:42px}
 @media only all and (max-width:968px) {
   .big,.dt{display:none}
   .mob{display:block}
@@ -91,6 +94,7 @@ input[id=homebutton]{border-top-{FE_Align_Reverse}-radius:0;border-bottom-{FE_Al
   .h1,.h1f,.h2,.h2f,.r,.rf{width:50%}
   .extend{width:100%}
   .flong{width:calc(100% - 10px)}
+  .iCntn{margin:0}
 }
 .hB{background-color:rgba(0,0,0,.125)}
 .hW{background-color:rgba(255,255,255,.125)}
@@ -105,12 +109,6 @@ li>span.comCat:first-child,input[type=button],input[type=file]::file-selector-bu
 .active{transform:scaleY(1);transform-origin:top;opacity:1;max-height:99999px;transition:all .3s ease-in}
 .suggestsActive{transform:scaleY(1);font-style:italic;font-weight:700;transform-origin:top;opacity:1;max-height:64px;transition:all .3s ease-in}
 blockquote.comSub{margin:-2px 0 0 0;padding:0 0 0 0}
-.iCntr,.iLabl,.iCntn{display:block}
-.iCntr{margin:16px 0 16px 0}
-.iCntn{margin-{FE_Align}:42px}
-@media only all and (max-width:968px) {
-  .iCntn{margin:0}
-}
 @keyframes forRotate{0%{{caretTransformBefore} invert(79%) sepia(28%) saturate(328%) hue-rotate(13deg) brightness(90%) contrast(89%)}100%{{caretTransformAfter} invert(79%) sepia(28%) saturate(328%) hue-rotate(13deg) brightness(90%) contrast(89%)}}
 @keyframes revRotate{0%{{caretTransformAfter} invert(79%) sepia(28%) saturate(328%) hue-rotate(13deg) brightness(90%) contrast(89%)}100%{{caretTransformBefore} invert(79%) sepia(28%) saturate(328%) hue-rotate(13deg) brightness(90%) contrast(89%)}}
 select+input[type=submit],select+input[type=button]{height:20px;margin-{FE_Align}:-3px;border-bottom-{FE_Align}-radius:0;border-top-{FE_Align}-radius:0;padding-{FE_Align}:3px}

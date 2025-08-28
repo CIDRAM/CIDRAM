@@ -4,7 +4,7 @@
   :root{scroll-behavior:auto}
 }
 .scrollTrans{transition:all .5s ease-in-out}
-body,input,select,textarea,code,.idx{font-size:calc((12px * {magnification}) + .03vw)}
+body,input,select,textarea,code,.idx{font-size:calc((12px * {magnification}) + .03vw);max-width:100%}
 body,input,input[type=file]::file-selector-button,select{font-family:'BlinkMacSystemFont','Segoe UI','Noto Sans','Helvetica';letter-spacing:1px;text-decoration:none;border-style:none;margin:0;white-space:normal;background-color:#f6f8fa;color:#24292e}
 code{background-color:rgba(164,128,102,.3);vertical-align:0;display:inline-block;height:calc(1em + 2px)}
 .branchline,hr{box-sizing:content-box;height:0;overflow:visible;height:0;margin:15px 0;overflow:hidden;background:0 0;border:0;border-bottom:1px solid #dadde1}
@@ -87,6 +87,9 @@ input[type=button]:hover,input[type=submit]:hover,input[type=reset]:hover,button
 }
 .flong{width:auto}
 .h1f,.h2f,.h3f,.h4f,.rf{white-space:nowrap}
+.iCntr,.iLabl,.iCntn{display:block}
+.iCntr{margin:16px 0 16px 0}
+.iCntn{margin-{FE_Align}:42px}
 @media only all and (max-width:968px) {
   .big,.dt{display:none}
   .mob{display:block}
@@ -94,6 +97,7 @@ input[type=button]:hover,input[type=submit]:hover,input[type=reset]:hover,button
   .h1,.h1f,.h2,.h2f,.r,.rf{width:50%}
   .extend{width:100%}
   .flong{width:calc(100% - 10px)}
+  .iCntn{margin:0}
 }
 .hB{background-color:rgba(0,0,0,.125)}
 .hW{background-color:rgba(255,255,255,.125)}
@@ -108,12 +112,6 @@ li>span.comCat:first-child,input[type=button],input[type=file]::file-selector-bu
 .active{transform:scaleY(1);transform-origin:top;opacity:1;max-height:99999px;transition:all .3s ease-in}
 .suggestsActive{transform:scaleY(1);font-style:italic;font-weight:700;transform-origin:top;opacity:1;max-height:64px;transition:all .3s ease-in}
 blockquote.comSub{margin:-2px 0 0 0;padding:0 0 0 0}
-.iCntr,.iLabl,.iCntn{display:block}
-.iCntr{margin:16px 0 16px 0}
-.iCntn{margin-{FE_Align}:42px}
-@media only all and (max-width:968px) {
-  .iCntn{margin:0}
-}
 @keyframes forRotate{0%{{caretTransformBefore} invert(13%) sepia(5%) saturate(1453%) hue-rotate(169deg) brightness(97%) contrast(92%)}100%{{caretTransformAfter} invert(13%) sepia(5%) saturate(1453%) hue-rotate(169deg) brightness(97%) contrast(92%)}}
 @keyframes revRotate{0%{{caretTransformAfter} invert(13%) sepia(5%) saturate(1453%) hue-rotate(169deg) brightness(97%) contrast(92%)}100%{{caretTransformBefore} invert(13%) sepia(5%) saturate(1453%) hue-rotate(169deg) brightness(97%) contrast(92%)}}
 .navicon{display:inline-block;background-repeat:no-repeat;filter:invert(23%) sepia(82%) saturate(2401%) hue-rotate(-158deg) brightness(97%) contrast(98%);position:relative;top:1px;width:16px;height:16px}

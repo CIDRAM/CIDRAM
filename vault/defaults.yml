@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2025.08.27).
+# This file: Defaults file (last modified: 2025.08.28).
 ##/
 
 Config Defaults:
@@ -734,7 +734,7 @@ Config Defaults:
   remotes:
    type: "string"
    default: |
-    https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml
+    https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/installed.yml
     https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/modules/modules.yml
   enable_two_factor:
    type: "bool"
@@ -1291,7 +1291,6 @@ Provide:
    - "Greylist"
    - "Block"
    - "Bypass"
-   - "Don't log"
    - "Redirect"
    - "Run"
    - "Profile"

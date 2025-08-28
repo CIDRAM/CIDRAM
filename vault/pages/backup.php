@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The backup page (last modified: 2025.08.20).
+ * This file: The backup page (last modified: 2025.08.28).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -287,6 +287,18 @@ if (isset($_POST['bckpAct'])) {
                                     }
                                 }
                                 return ($Depth < 3);
+                            });
+                        }
+                        if ($this->OperationHandler->singleCompare($Import['CIDRAM Version'], '<4')) {
+                            $this->callableRecursive($Import['Auxiliary Rules'], function (&$Arr, $Depth) {
+                                if ($Depth === 0) {
+                                    if (isset($Arr['Don\'t log']) && !isset($Arr['Profile'])) {
+                                        $Arr['Profile'] = $Arr['Don\'t log'];
+                                        $Arr['Suppress logging'] = true;
+                                        unset($Arr['Don\'t log']);
+                                    }
+                                }
+                                return ($Depth < 1);
                             });
                         }
                         $this->CIDRAM['AuxData'] = array_replace($this->CIDRAM['AuxData'], $Import['Auxiliary Rules']);

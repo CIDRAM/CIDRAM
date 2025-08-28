@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The auxiliary rules edit mode page (last modified: 2025.08.26).
+ * This file: The auxiliary rules edit mode page (last modified: 2025.08.28).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -116,8 +116,6 @@ if (isset($_POST['rulePriority']) && is_array($_POST['rulePriority'])) {
             $ThisAuxData['Action'] = 'Block';
         } elseif ($ThisAuxData['Action'] === 'actByp') {
             $ThisAuxData['Action'] = 'Bypass';
-        } elseif ($ThisAuxData['Action'] === 'actLog') {
-            $ThisAuxData['Action'] = 'Don\'t log';
         } elseif ($ThisAuxData['Action'] === 'actRdr') {
             $ThisAuxData['Action'] = 'Redirect';
         } elseif ($ThisAuxData['Action'] === 'actRun') {

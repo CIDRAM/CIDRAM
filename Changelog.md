@@ -472,6 +472,7 @@
 - In the execution chain, checking whether the inbound request's IP address is blocked was previously staged under IP tracking, and processing the email trigger notification queue wasn't staged at all; both have now been given their own stages and are thus now configurable independently of other stages (#624).
 - Reworked the part of the interface at the auxiliary rules pages for "other options and special flags".
 - The configuration directive for statistics has been split in two (tracking statistical information for CAPTCHAs now has its own configuration directive, separate from the other statistics), and the configuration for tracking statistical information for CAPTCHAs now distinguishes between platforms and can also track served CAPTCHAs (#624).
+- Dropped the "don't log" action from the auxiliary rules system. As the "suppress logging" option and the "don't log" action do the same thing, having both isn't necessary, so having users just use the "suppress logging" option is recommended instead (#334, #624).
 
 #### Bugs fixed.
 - Fixed various accessibility issues affecting the auxiliary rules pages.

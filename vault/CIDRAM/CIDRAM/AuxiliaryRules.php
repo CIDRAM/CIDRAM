@@ -189,7 +189,6 @@ trait AuxiliaryRules
                     ['actGrl', 'optActGrl', 'Greylist'],
                     ['actBlk', 'optActBlk', 'Block'],
                     ['actByp', 'optActByp', 'Bypass'],
-                    ['actLog', 'optActLog', 'Don\'t log'],
                     ['actRdr', 'optActRdr', 'Redirect'],
                     ['actRun', 'optActRun', 'Run'],
                     ['actPro', 'optActPro', 'Profile']
@@ -474,7 +473,6 @@ trait AuxiliaryRules
                 ['Greylist', 'optActGrl'],
                 ['Block', 'optActBlk'],
                 ['Bypass', 'optActByp'],
-                ['Don\'t log', 'optActLog'],
                 ['Redirect', 'optActRdr'],
                 ['Run', 'optActRun'],
                 ['Profile', 'optActPro']
@@ -713,7 +711,6 @@ trait AuxiliaryRules
         $this->FE['optActGrl'] = sprintf($this->L10N->getString('label.aux.If the following conditions are met, %s'), $this->L10N->getString('label.aux.greylist the request'));
         $this->FE['optActBlk'] = sprintf($this->L10N->getString('label.aux.If the following conditions are met, %s'), $this->L10N->getString('label.aux.block the request'));
         $this->FE['optActByp'] = sprintf($this->L10N->getString('label.aux.If the following conditions are met, %s'), $this->L10N->getString('label.aux.bypass the request'));
-        $this->FE['optActLog'] = sprintf($this->L10N->getString('label.aux.If the following conditions are met, %s'), $this->L10N->getString('label.aux.don_t log the request'));
         $this->FE['optActRdr'] = sprintf($this->L10N->getString('label.aux.If the following conditions are met, %s'), $this->L10N->getString('label.aux.redirect the request (without blocking it)'));
         $this->FE['optActRun'] = sprintf($this->L10N->getString('label.aux.If the following conditions are met, %s'), $this->L10N->getString('label.aux.run a file to handle the request'));
         $this->FE['optActPro'] = sprintf($this->L10N->getString('label.aux.If the following conditions are met, %s'), $this->L10N->getString('label.aux.profile the request'));

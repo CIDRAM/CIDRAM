@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2025.08.27).
+ * This file: The CIDRAM core (last modified: 2025.08.28).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -2335,12 +2335,6 @@ class Core
         /** Bypass. */
         if ($Action === 'Bypass') {
             $this->bypass(true, $Name);
-            return false;
-        }
-
-        /** Don't log the request instance. */
-        if ($Action === 'Don\'t log') {
-            $this->CIDRAM['Suppress logging'] = true;
             return false;
         }
 

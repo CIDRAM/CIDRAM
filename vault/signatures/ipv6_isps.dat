@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6_isps.dat
 
-# Version: 2025.235.0
-# Last modified: 2025.08.24
+# Version: 2025.240.0
+# Last modified: 2025.08.29
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -135,10 +135,20 @@ Tag: Reliance Communications
 
 # ASN 25513 ("PJSC Moscow city telephone network").
 # Russian domestic ISP and a significant source of forum and blog spam.
-# Stop Forum Spam (SFS) listings: 1,344.
-# Updated: 2022.09.27 / Checked: 2024.08.28
+# Stop Forum Spam (SFS) listings: 2,755.
+# Updated: 2025.08.29
 
 2a00:1370::/32 Deny Spam
+2a03:6505:2000::/126 Deny Spam
+2a03:6505:2000:c::/126 Deny Spam
+2a03:6505:2000:d::/64 Deny Spam
+2a03:6505:4000:1::/64 Deny Spam
+2a03:6505:4000:3::/64 Deny Spam
+2a03:6505:4000:5::/64 Deny Spam
+2a03:6505:4003::/61 Deny Spam
+2a03:6505:4008:300::/56 Deny Spam
+2a03:6505:4008:400::/56 Deny Spam
+2a03:6505:6000::/48 Deny Spam
 2a03:af60::/32 Deny Spam
 Origin: RU
 Profile: Domestic ISP

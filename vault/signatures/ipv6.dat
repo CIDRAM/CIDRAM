@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6.dat
 
-# Version: 2025.235.0
-# Last modified: 2025.08.24
+# Version: 2025.240.0
+# Last modified: 2025.08.29
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -1319,17 +1319,14 @@ Tag: QuadraNet, Inc
 
 
 # ASN 36352 ("HostPapa").
-# Stop Forum Spam (SFS) listings: 52,090.
-# Updated: 2025.06.14
+# Stop Forum Spam (SFS) listings: 57,846.
+# Updated: 2025.08.29
 
-2a0e:df40::/32 Deny Cloud
-Origin: AE
 2602:f692:1::/48 Deny Cloud
 2602:f692:2::/48 Deny Cloud
 Origin: CA
-2a0a:2d04:f::/48 Deny Cloud
-Origin: SC
 2a04:6ac0::/29 Deny Cloud
+2a0a:2d04:f::/48 Deny Cloud
 Origin: UA
 2605:6f01::/32 Deny Cloud
 2605:6f02::/32 Deny Cloud
@@ -1508,12 +1505,15 @@ Tag: Psychz Networks
 
 # ASN 27176 ("DataWagon LLC").
 # A source of forum spam.
-# Stop Forum Spam (SFS) listings: 433.
-# Updated: 2025.01.28
+# Stop Forum Spam (SFS) listings: 940.
+# Updated: 2025.08.29
 
 2a07:6c80::/29 Deny Cloud
 Origin: LT
+2a0a:2d06:22::/48 Deny Cloud
+Origin: SC
 2605:aa80::/32 Deny Cloud
+2a0b:b87:ffd2::/48 Deny Cloud
 Origin: US
 Profile: Tor endpoints here;Webhosting
 Tag: DataWagon LLC
@@ -8635,9 +8635,8 @@ Tag: EasyDataHost S.L
 
 # ASNs 39486, 44144, 46516, 133499, 134450, 203020, 204287, 207990 ("HostRoyale
 # Technologies Pvt Ltd"). Dedicated webhosting provider.
-# Updated: 2025.07.30
+# Updated: 2025.08.29
 
-2402:bd80::/30 Deny Cloud
 2a01:4740:1::/48 Deny Cloud
 2a01:4740:2::/47 Deny Cloud
 2a05:f4c0::/29 Deny Cloud
@@ -8650,19 +8649,23 @@ Tag: EasyDataHost S.L
 2a06:3040:12::/48 Deny Cloud
 2a06:3040:15::/48 Deny Cloud
 2a06:3040:16::/47 Deny Cloud
+2a06:3040:18::/48 Deny Cloud
 2a06:3040:91::/48 Deny Cloud
 2a06:3040:c001::/48 Deny Cloud
 2a06:3040:c002::/48 Deny Cloud
+2a06:3040:c100::/47 Deny Cloud
+2a06:3040:c200::/46 Deny Cloud
+2a06:3040:c204::/48 Deny Cloud
+2a06:3040:c300::/47 Deny Cloud
+2a06:3040:c400::/47 Deny Cloud
 2a06:3040:ca00::/48 Deny Cloud
-2a06:3040:cb00::/46 Deny Cloud
-2a06:3040:cb04::/47 Deny Cloud
-2a06:3040:cb06::/48 Deny Cloud
+2a06:3040:cb00::/45 Deny Cloud
+2a06:3040:cb08::/48 Deny Cloud
 2a06:3040:f000::/47 Deny Cloud
 2a06:46c0::/29 Deny Cloud
 2a06:5700::/29 Deny Cloud
 2a06:df80::/29 Deny Cloud
 2a06:e480::/29 Deny Cloud
-2a07:4780::/29 Deny Cloud
 2a07:9c80::/29 Deny Cloud
 2a07:f2c0::/29 Deny Cloud
 2a0a:3080::/29 Deny Cloud
@@ -8674,6 +8677,7 @@ Origin: IN
 2a0f:c840::/29 Deny Cloud
 2a13:c44::/30 Deny Cloud
 Origin: LT
+2402:bd80::/30 Deny Cloud
 2600:2900::/32 Deny Cloud
 2600:2902::/31 Deny Cloud
 Origin: US
@@ -14043,7 +14047,8 @@ Tag: onlineservers.ir
 
 # ASN 48753 ("AVA HOST SRL").
 # Fraudulent orders and phishing detected from here.
-# Updated: 2024.08.18 / Checked: 2025.01.22
+# Stop Forum Spam (SFS) listings: 2,637.
+# Updated: 2024.08.18 / Checked: 2025.08.25
 
 2a0f:5f44::/48 Deny Cloud
 Origin: MD

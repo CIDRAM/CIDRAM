@@ -4,7 +4,8 @@
   :root{scroll-behavior:auto}
 }
 .scrollTrans{transition:all .5s ease-in-out}
-body,input,select,textarea,code,.idx{font-size:calc((12px * {magnification}) + .03vw);max-width:100%}
+body,input,select,textarea,code{max-width:100%}
+body,input,select,textarea,code,.idx{font-size:calc((12px * {magnification}) + .03vw)}
 body,input,input[type=file]::file-selector-button,select{font-family:'BlinkMacSystemFont','Segoe UI','Noto Sans','Helvetica';letter-spacing:1px;text-decoration:none;border-style:none;margin:0;white-space:normal;background-color:#f6f8fa;color:#24292e}
 code{background-color:rgba(164,128,102,.3);vertical-align:0;display:inline-block;height:calc(1em + 2px)}
 .branchline,hr{box-sizing:content-box;height:0;overflow:visible;height:0;margin:15px 0;overflow:hidden;background:0 0;border:0;border-bottom:1px solid #dadde1}
@@ -13,6 +14,11 @@ code{background-color:rgba(164,128,102,.3);vertical-align:0;display:inline-block
 img.ico{width:16px;height:16px;border:0}
 input[type=file]{margin:0;padding:0;border:none;background:none;width:auto}
 label{font-weight:600}
+.mainbox{display:flex;flex-direction:row;gap:auto;justify-content:center;align-items:start}
+nav{display:flex;flex-direction:column;gap:2px;justify-content:start;align-items:start;font-size:calc((14px * {magnification}) + .03vw);flex-basis:20%;flex-shrink:2;flex-grow:1;letter-spacing:calc(1px + .03vw)}
+nav a:not(.idx a){display:block}
+main{flex-basis:80%;flex-shrink:1;flex-grow:2}
+.subNav{display:block;text-align:center;font-size:calc((10px * {magnification}) + .03vw);color:rgba(36,41,46,.6);text-shadow:2px 2px 1px rgba(0,0,0,.2)}
 table{table-layout:fixed}
 table,.spanner{width:100%}
 textarea{height:150px}
@@ -27,30 +33,29 @@ a:hover{text-decoration:underline;color:#f64}
 a:active,a:focus{color:#cb2431}
 .bNav,.gen,.spanner{text-align:{FE_Align_Reverse}}
 .bNav{height:64px}
-.cat,.exp,.bNav,.gen,.nav,.s,.tip,.txtGn,.txtOe,.txtRd,.spanner,a{font-weight:700}
+.cat,.exp,.bNav,.gen,nav,.s,.tip,.txtGn,.txtOe,.txtRd,.spanner,a{font-weight:700}
 .ci,.co,.gen,.center{margin:auto}
-.ci,.co,.ng1,.ng2,.ci>.bNav:first-child{width:calc(100% - 32px)}
-.idx{width:calc(100% - 10px)}
+.ci,.co,.ng1,.ng2,.ci>.bNav:first-child,.mainbox{width:calc(100% - 32px)}
 .ci{padding:12px;text-align:{FE_Align}}
 .co,body,.center{text-align:center}
 .co,body,input,select{padding:0}
 .dt,.s,.tip,.txtBl,.txtGn,.txtOe,.txtRd,.inline{display:inline}
 .dt,.tip{float:{FE_Align};text-align:{FE_Align};width:80%}
 .gen{font-family:inherit;letter-spacing:0;white-space:nowrap}
-.ng2 a,.h2 a,.h2f a,.h4 a,.h4f a{filter:brightness(.5)}
+.ng2 a:not(nav .ng2 a),.h2 a,.h2f a,.h4 a,.h4f a{filter:brightness(.5)}
 .h1,.h1f,.h2,.h2f,.h3,.h3f,.h4,.h4f,.ng1,.ng2,.r,.rf,.spanner{margin:0;padding:4px;border-style:{Half_Border};border-width:1px;border-color:rgba(68,102,187,.2)}
+nav .ng1:first-child,nav .ng2:first-child{border-style:none}
+nav .ng1:not(:first-child),nav .ng2:not(:first-child){border-style:solid none none none}
 .h1,.h1f,.h2,.h2f,.r,.rf{width:25%}
 .h1,.h3,.spanner{background-color:rgba(102,153,255,.1)}
 .h2,.h4{background-color:rgba(102,153,255,.2)}
 .h3,.h3f,.h4,.h4f{width:50%}
-.nav{font-size:calc((14px * {magnification}) + .03vw);width:20%;letter-spacing:calc(1px + .03vw)}
 .nav:lang(ja){letter-spacing:-1px}
-.ng1,.h1f,.h3f{background:linear-gradient({90deg},rgba(102,153,255,.1),rgba(102,153,255,.3))}
-.ng2,.h2f,.h4f{background:linear-gradient({90deg},rgba(102,153,255,.2),rgba(102,153,255,.4))}
+.ng1:not(nav .ng1),.h1f,.h3f{background:linear-gradient({90deg},rgba(102,153,255,.1),rgba(102,153,255,.3))}
+.ng2:not(nav .ng2),.h2f,.h4f{background:linear-gradient({90deg},rgba(102,153,255,.2),rgba(102,153,255,.4))}
 .hFd:hover,.r{background-color:rgba(255,102,0,.3)}
 .rf{background:linear-gradient({90deg},rgba(255,102,0,.3),rgba(255,102,0,.5))}
-.right,.ci>.bNav:first-child{background-color:#fff;border:1px #e1e4e8 solid;border-radius:6px;padding:12px}
-.right{text-align:{FE_Align};width:80%}
+.ci>.bNav:first-child,.mainbox{background-color:#fff;border:1px #e1e4e8 solid;border-radius:6px;padding:12px}
 .txtBl{color:#000}
 .txtGn{color:#22863a}
 .txtOe{color:#a04100}
@@ -60,6 +65,7 @@ a:active,a:focus{color:#cb2431}
 @media only all and (max-width:230px) {
   .ufts{width:calc(100% - 10px)}
 }
+.vr{display:none}
 @keyframes idxAn{0%{background:rgba(246,192,153,.5)}100%{background:rgba(164,128,102,.5)}}
 @keyframes xAux{0%{opacity:.0}100%{opacity:1.0}}
 @keyframes rAux{0%{background:rgba(255,0,0,.7)}100%{background:rgba(255,0,0,.0)}}
@@ -91,11 +97,11 @@ input[type=button]:hover,input[type=submit]:hover,input[type=reset]:hover,button
 .iCntr{margin:16px 0 16px 0}
 .iCntn{margin-{FE_Align}:42px}
 @media only all and (max-width:968px) {
+  .extend{flex-basis:100%}
   .big,.dt{display:none}
   .mob{display:block}
   .tip,.bNav,.gen{float:none;height:auto;text-align:center}
   .h1,.h1f,.h2,.h2f,.r,.rf{width:50%}
-  .extend{width:100%}
   .flong{width:calc(100% - 10px)}
   .iCntn{margin:0}
 }
@@ -161,7 +167,6 @@ input[type=text][pattern]:invalid:not(input[type=text]:placeholder-shown){backgr
 .sFade{display:inline-block;margin-{FE_Align}:4px;animation:sFadeFrames .5s linear 1;animation-fill-mode:both}
 .shownlink::before{animation:forRotate .5s ease-in 1;animation-fill-mode:both}
 .unshownlink::before{animation:revRotate .5s linear 1;animation-fill-mode:both}
-.subNav{text-align:center;font-size:calc((10px * {magnification}) + .03vw);color:rgba(36,41,46,.6);text-shadow:2px 2px 1px rgba(0,0,0,.2)}
 .fBlur{filter:contrast(.8) blur(.5px);transition:all .3s ease-out}
 .fBlur:hover,.fBlur:active{filter:contrast(1) blur(0)}
 input[type=button].reset{box-shadow:none;background:none;cursor:pointer;border:none;padding:0 12px 0 12px;width:auto;color:#cb2431}
@@ -204,7 +209,7 @@ input[type=button].reset:hover,input[type=button].reset:active{color:#f88}
 .canBreak{white-space:normal;overflow-wrap:break-word;word-break:break-all}
 input[disabled],input[disabled]+label{cursor:not-allowed}
 .toolTip{cursor:help}
-.flexrow{display:flex}
+.flexrow{display:flex;flex-direction:row}
 .flexin{margin-{FE_Align}:-1px;margin-{FE_Align_Reverse}:1px;width:auto;flex-grow:1}
 .auxicon{display:inline-block;background-repeat:no-repeat;position:relative;top:1px;width:12px;height:12px}
 .auxbl,.hoverglow,.comCat::before,.showlink::before,.shownlink::before,.unshownlink::before{filter:invert(13%) sepia(5%) saturate(1453%) hue-rotate(169deg) brightness(97%) contrast(92%)}
@@ -245,3 +250,8 @@ input[type=file]::file-selector-button{position:relative;top:-2px}
 .origin.in{background:linear-gradient(#f80 30%,#080 70%);color:#fff}
 .origin.pk{background:#060;color:#fff}
 input[type=checkbox],input[type=radio]{accent-color:#1d1d1e}
+.clockBlock{display:inline-block;width:16px;height:16px;transition:none}
+.clockHours{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:clockhours.svg}{/Base64Encode});position:relative;inset:0 0}
+.clockMinutes{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:clockminutes.svg}{/Base64Encode});position:relative;inset:0 -16px}
+.clockSeconds{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:clockseconds.svg}{/Base64Encode});position:relative;inset:0 -32px}
+.clockFace{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:clockface.svg}{/Base64Encode});position:relative;inset:0 -48px}

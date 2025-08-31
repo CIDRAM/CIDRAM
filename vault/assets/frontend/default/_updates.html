@@ -1,9 +1,9 @@
-<table>
-<tr>
-  <td class="nav big">
-{nav}      <hr />
+<div class="mainbox">
+  <nav class="big">
+{nav}
     <div class="ng1 idx">{Indexes}</div>
-  <td class="right extend">
+  </nav>
+  <main class="extend">
     <div class="s">{state_msg}</div>
     <table><tr><td class="spanner">
       <form action="?{UpdatesFormTarget}" method="POST" name="ufts"><input name="cidram-form-target" type="hidden" value="updates" /><select name="FilterSelector" class="ufts">
@@ -26,6 +26,5 @@
     </tr>
 {Macros}
     </table>
-  </td>
-</tr>
-</table>
+  </main>
+</div>

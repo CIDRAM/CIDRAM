@@ -4,8 +4,9 @@
   :root{scroll-behavior:auto}
 }
 .scrollTrans{transition:all .5s ease-in-out}
-body,input,select,textarea,.idx{font-size:calc((12px * {magnification}) + .03vw);max-width:100%}
-body{font-family:'Tahoma','Verdana','Noto Sans','Arial';letter-spacing:1px;text-decoration:none;border-style:none;margin:0;white-space:normal;background-color:#333;color:#cde;background-image:url(data:image/gif;base64,R0lGODdhAwADAIACADMzM1VicCwAAAAAAwADAAACBIQRBwUAOw==);background-attachment:fixed}
+body,input,select,textarea{max-width:100%}
+body,input,select,textarea,.idx{font-size:calc((12px * {magnification}) + .03vw)}
+body{font-family:'Tahoma','Verdana','Noto Sans','Arial';letter-spacing:1px;text-decoration:none;border-style:none;margin:0;white-space:normal;background-color:#333;color:#cde;background-image:url(data:image/png;base64,{Base64Encode}{Asset:texture.png}{/Base64Encode});background-attachment:fixed}
 code{background-color:rgba(85,85,85,.5);color:#eee;vertical-align:0;display:inline-block;height:calc(1em + 2px)}
 hr{border-style:solid none none;border-width:1px;margin:5px 2px 0;padding:2px;color:#89b}
 img.ico{width:16px;height:16px;border:0;filter:hue-rotate(180deg) brightness(.8)}
@@ -25,6 +26,11 @@ select,option,input,textarea{filter:grayscale(.1) brightness(.94)}
 select:active,textarea:active:not([readonly]),input:active{filter:grayscale(0) brightness(1)}
 select:disabled,textarea:disabled,input:disabled{filter:grayscale(1) brightness(.5)}
 select:focus,textarea:focus,input:focus,select:hover,textarea:hover:not([readonly]),input:hover{filter:grayscale(0) brightness(1)}
+.mainbox{display:flex;flex-direction:row;gap:auto;justify-content:center;align-items:start}
+nav{display:flex;flex-direction:column;gap:2px;justify-content:start;align-items:start;font-size:calc((14px * {magnification}) + .03vw);flex-basis:20%;flex-shrink:2;flex-grow:1;letter-spacing:calc(1px + .03vw)}
+nav a:not(.idx a){display:block}
+main{flex-basis:80%;flex-shrink:1;flex-grow:2}
+.subNav{display:block;text-align:center;font-size:calc((10px * {magnification}) + .03vw);color:rgba(204,221,238,.6);text-shadow:2px 2px 1px rgba(255,255,255,.2)}
 table{table-layout:fixed}
 table,.spanner{width:100%}
 textarea{height:150px}
@@ -37,10 +43,9 @@ a:link,a:visited{color:#def}
 a:hover,a:active,a:focus,.txtRd{color:#fca}
 .bNav,.gen,.spanner{text-align:{FE_Align_Reverse}}
 .bNav{height:64px}
-.cat,.exp,.bNav,.gen,.nav,.s,.tip,.txtGn,.txtOe,.txtRd,.spanner,a,input,input[type=file]::file-selector-button,select,textarea{font-weight:700}
+.cat,.exp,.bNav,.gen,nav,.s,.tip,.txtGn,.txtOe,.txtRd,.spanner,a,input,input[type=file]::file-selector-button,select,textarea{font-weight:700}
 .ci,.co,.gen,.center{margin:auto}
 .ci,.co,.ng1,.ng2{width:calc(100% - 32px)}
-.idx{width:calc(100% - 10px)}
 .ci{background-color:rgba(102,119,136,.5);text-align:{FE_Align};border-top-{FE_Align_Reverse}-radius:24px;padding:12px}
 .co,body,.center{text-align:center}
 .co,body{padding:0}
@@ -53,13 +58,11 @@ a:hover,a:active,a:focus,.txtRd{color:#fca}
 .h1,.h3,.spanner{background-color:rgba(102,119,136,.5)}
 .h2,.h4{background-color:rgba(85,102,119,.5)}
 .h3,.h3f,.h4,.h4f{width:50%}
-.nav{font-size:calc((14px * {magnification}) + .03vw);width:20%;letter-spacing:calc(1px + .03vw)}
 .nav:lang(ja){letter-spacing:-1px}
 .ng1,.h1f,.h3f{background:linear-gradient({90deg},rgba(102,119,136,.5),#89a)}
 .ng2,.h2f,.h4f{background:linear-gradient({90deg},rgba(85,102,119,.5),#789)}
 .hFd:hover,.r{background-color:rgba(153,102,51,.6)}
 .rf{background:linear-gradient({90deg},rgba(153,102,51,.6),#c96)}
-.right{padding:20px;width:80%}
 .branchline{border-style:none none solid none;border-width:1px;border-color:#89b}
 .txtBl{color:#eee}
 .txtGn{color:#9c7}
@@ -93,11 +96,11 @@ input[id=homebutton]{border-top-{FE_Align_Reverse}-radius:0;border-bottom-{FE_Al
 .iCntr{margin:16px 0 16px 0}
 .iCntn{margin-{FE_Align}:42px}
 @media only all and (max-width:968px) {
+  .extend{flex-basis:100%}
   .big,.dt{display:none}
   .mob{display:block}
   .tip,.bNav,.gen{float:none;height:auto;text-align:center}
   .h1,.h1f,.h2,.h2f,.r,.rf{width:50%}
-  .extend{width:100%}
   .flong{width:calc(100% - 10px)}
   .iCntn{margin:0}
 }
@@ -117,9 +120,10 @@ blockquote.comSub{margin:-2px 0 0 0;padding:0 0 0 0}
 @keyframes forRotate{0%{{caretTransformBefore} invert(90%) sepia(8%) saturate(574%) hue-rotate(174deg) brightness(98%) contrast(90%)}100%{{caretTransformAfter} invert(90%) sepia(8%) saturate(574%) hue-rotate(174deg) brightness(98%) contrast(90%)}}
 @keyframes revRotate{0%{{caretTransformAfter} invert(90%) sepia(8%) saturate(574%) hue-rotate(174deg) brightness(98%) contrast(90%)}100%{{caretTransformBefore} invert(90%) sepia(8%) saturate(574%) hue-rotate(174deg) brightness(98%) contrast(90%)}}
 .navicon{display:inline-block;background-repeat:no-repeat;filter:invert(85%) saturate(1074%) hue-rotate(-154deg) brightness(100%) contrast(87%);position:relative;top:1px;width:16px;height:16px}
+a:hover>.navicon,a:active>.navicon,a:focus>.navicon,.navicon[onclick]:hover,.navicon[onclick]:active,.navicon[onclick]:focus{filter:invert(91%) sepia(87%) saturate(611%) hue-rotate(-62deg) brightness(100%) contrast(109%)}
 .auxicon{display:inline-block;background-repeat:no-repeat;position:relative;top:1px;width:12px;height:12px}
 .auxbl,.hoverglow,.comCat::before,.showlink::before,.shownlink::before,.unshownlink::before{filter:invert(90%) sepia(8%) saturate(574%) hue-rotate(174deg) brightness(98%) contrast(90%)}
-a:hover>.navicon,a:active>.navicon,a:focus>.navicon,.hoverglow:hover,.hoverglow:active,.hoverglow:focus,.navicon[onclick]:hover,.navicon[onclick]:active,.navicon[onclick]:focus{filter:invert(91%) sepia(87%) saturate(611%) hue-rotate(298deg) brightness(100%) contrast(109%)}
+.hoverglow:hover,.hoverglow:active,.hoverglow:focus{filter:invert(91%) sepia(87%) saturate(611%) hue-rotate(298deg) brightness(100%) contrast(109%)}
 .auxgn{filter:invert(76%) sepia(43%) saturate(368%) hue-rotate(52deg) brightness(92%) contrast(88%)}
 .auxrd{filter:invert(76%) sepia(43%) saturate(275%) hue-rotate(-25deg) brightness(101%) contrast(102%)}
 select+input[type=submit],select+input[type=button]{height:20px;margin-{FE_Align}:-3px;border-bottom-{FE_Align}-radius:0;border-top-{FE_Align}-radius:0;padding-{FE_Align}:3px}
@@ -158,7 +162,6 @@ td code~input,td code~select{vertical-align:middle}
 .sFade{display:inline-block;margin-{FE_Align}:4px;animation:sFadeFrames .5s linear 1;animation-fill-mode:both}
 .shownlink::before{animation:forRotate .5s ease-in 1;animation-fill-mode:both}
 .unshownlink::before{animation:revRotate .5s linear 1;animation-fill-mode:both}
-.subNav{text-align:center;font-size:calc((10px * {magnification}) + .03vw);color:rgba(204,221,238,.6);text-shadow:2px 2px 1px rgba(255,255,255,.2)}
 .fBlur{filter:contrast(.8) blur(.5px);transition:all .3s ease-out}
 .fBlur:hover,.fBlur:active{filter:contrast(1) blur(0)}
 input[type=button].reset{background:none;cursor:pointer;border:none;padding:0 12px 0 12px;margin:0;width:auto;color:#fca}
@@ -179,7 +182,7 @@ input[type=button].reset:hover,input[type=button].reset:active{color:#ffc}
 .navicon.discussions{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:discussions.svg}{/Base64Encode})}
 .navicon.documentation{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:documentation.svg}{/Base64Encode})}
 .navicon.fixer{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:fixer.svg}{/Base64Encode})}
-.navicon.folder{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:folder.svg}{/Base64Encode})}
+.navicon.folder,input[type=file]::file-selector-button{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:folder.svg}{/Base64Encode})}
 .navicon.heaven{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:heaven.svg}{/Base64Encode})}
 .navicon.home{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:home.svg}{/Base64Encode})}
 .navicon.intersector{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:intersector.svg}{/Base64Encode})}
@@ -201,7 +204,7 @@ input[type=button].reset:hover,input[type=button].reset:active{color:#ffc}
 .canBreak{white-space:normal;overflow-wrap:break-word;word-break:break-all}
 input[disabled],input[disabled]+label{cursor:not-allowed}
 .toolTip{cursor:help}
-.flexrow{display:flex}
+.flexrow{display:flex;flex-direction:row}
 .flexin{margin-{FE_Align}:-1px;margin-{FE_Align_Reverse}:1px;width:auto;flex-grow:1}
 .xscroller{overflow-x:auto}
 .auxicon.delete{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxdelete.svg}{/Base64Encode})}
@@ -238,3 +241,8 @@ input[disabled],input[disabled]+label{cursor:not-allowed}
 .origin.in{background:linear-gradient(#f80 30%,#080 70%);color:#fff}
 .origin.pk{background:#060;color:#fff}
 input[type=checkbox],input[type=radio]{accent-color:#89b}
+.clockBlock{display:inline-block;width:16px;height:16px;transition:none}
+.clockHours{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:clockhours.svg}{/Base64Encode});position:relative;inset:0 0}
+.clockMinutes{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:clockminutes.svg}{/Base64Encode});position:relative;inset:0 -16px}
+.clockSeconds{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:clockseconds.svg}{/Base64Encode});position:relative;inset:0 -32px}
+.clockFace{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:clockface.svg}{/Base64Encode});position:relative;inset:0 -48px}

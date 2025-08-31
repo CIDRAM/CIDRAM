@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The logs page (last modified: 2025.08.09).
+ * This file: The logs page (last modified: 2025.08.31).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -109,8 +109,10 @@ if ($this->FE['Remember'] && $this->FE['BlockLink'] !== $this->FE['CachedLogsLin
 /** Define log data. */
 if (empty($this->CIDRAM['QueryVars']['logfile'])) {
     $this->FE['logfileData'] = $this->L10N->getString('label.No log file selected');
+    $this->FE['mod_class_right'] = '';
 } elseif (!isset($this->CIDRAM['QueryVars']['logfile'], $this->FE['LogFiles']['Files'][$this->CIDRAM['QueryVars']['logfile']])) {
     $this->FE['logfileData'] = $this->L10N->getString('label.Selected log file doesn_t exist');
+    $this->FE['mod_class_right'] = '';
 } else {
     if (strtolower(substr($this->CIDRAM['QueryVars']['logfile'], -3)) === '.gz') {
         $GZLogHandler = gzopen($this->Vault . $this->CIDRAM['QueryVars']['logfile'], 'rb');
@@ -386,12 +388,7 @@ if (empty($this->CIDRAM['QueryVars']['logfile'])) {
         ['&lt;', '&gt;', ''],
         $this->FE['logfileData']
     );
-    $this->FE['mod_class_nav'] = ' big';
     $this->FE['mod_class_right'] = ' extend';
-}
-if (empty($this->FE['mod_class_nav'])) {
-    $this->FE['mod_class_nav'] = ' extend';
-    $this->FE['mod_class_right'] = ' big';
 }
 
 /** Logs control form. */

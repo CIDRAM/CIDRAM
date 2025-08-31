@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2025.08.20).
+ * This file: General methods used by the front-end (last modified: 2025.08.31).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -643,10 +643,15 @@ trait FrontEndMethods
             $Template = str_replace(['<!-- ' . $Label . ' Begin -->', '<!-- ' . $Label . ' End -->'], '', $Template);
         }
         foreach ($Segments as $Segment) {
-            $BPos = strpos($Template, '<!-- ' . $Segment . ' Begin -->');
-            $EPos = strpos($Template, '<!-- ' . $Segment . ' End -->');
-            if ($BPos !== false && $EPos !== false) {
-                $Template = substr($Template, 0, $BPos) . substr($Template, $EPos + strlen($Segment) + 13);
+            while ($Before = $Template) {
+                $BPos = strpos($Template, '<!-- ' . $Segment . ' Begin -->');
+                $EPos = $BPos === false ? false : strpos($Template, '<!-- ' . $Segment . ' End -->', $BPos);
+                if ($BPos !== false && $EPos !== false) {
+                    $Template = substr($Template, 0, $BPos) . substr($Template, $EPos + strlen($Segment) + 13);
+                }
+                if ($Template === $Before) {
+                    break;
+                }
             }
         }
         return $this->embedAssets($this->parseVars($this->FE, $Template, true));

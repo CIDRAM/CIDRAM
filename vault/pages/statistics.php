@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The statistics page (last modified: 2025.08.27).
+ * This file: The statistics page (last modified: 2025.08.31).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -18,7 +18,7 @@ if (!isset($this->FE['Permissions'], $this->CIDRAM['QueryVars']['cidram-page']) 
 }
 
 /** Page initial prepwork. */
-$this->initialPrepwork($this->L10N->getString('link.Statistics'), $this->L10N->getString('tip.Statistics'), false);
+$this->initialPrepwork($this->L10N->getString('link.Statistics'), $this->L10N->getString('tip.Statistics'));
 
 if (isset($this->Stages['Statistics:Enable'])) {
     /** Statistics have been counted since... */

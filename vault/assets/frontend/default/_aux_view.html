@@ -1,8 +1,8 @@
-<table>
-<tr>
-  <td class="nav big">
-{nav}  </td>
-  <td class="right extend">
+<div class="mainbox">
+  <nav class="big">
+{nav}
+  </nav>
+  <main class="extend">
     <div class="s" id="stateMsg">{state_msg}</div>
     <div class="ng1 center">
       <a href="?cidram-page=aux-view">{link.View mode}</a> – <a href="?cidram-page=aux-edit">{link.Edit mode}</a><br />
@@ -178,9 +178,8 @@
         </ul>
       </li>
     </ul></form></div>
-  </td>
-</tr>
-</table>
+  </main>
+</div>
 <script type="text/javascript">const auxRuleList = document.getElementById('auxRuleList');
 let draggedRule = null;
 let draggedRuleName = null;

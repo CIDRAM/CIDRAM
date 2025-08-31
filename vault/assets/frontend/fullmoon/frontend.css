@@ -4,7 +4,8 @@
   :root{scroll-behavior:auto}
 }
 .scrollTrans{transition:all .5s ease-in-out}
-body,input,select,textarea{font-size:calc((12px * {magnification}) + .03vw);max-width:100%}
+body,input,select,textarea{max-width:100%}
+body,input,select,textarea,.idx{font-size:calc((12px * {magnification}) + .03vw)}
 body{font-family:'Tahoma','Verdana','Noto Sans','Arial';letter-spacing:1px;text-decoration:none;border-style:none;margin:0;white-space:normal;background-color:#36393b;color:#c5bc8e;background-image:url('?cidram-asset=moon.jpg&theme={theme}');background-repeat:no-repeat;background-attachment:fixed;background-position:center center}
 hr{border-style:solid none none;border-width:1px;margin:5px 2px 0;padding:2px;color:#aaa}
 img.ico{width:16px;height:16px;border:0}
@@ -24,6 +25,10 @@ select,option,input,textarea{filter:grayscale(.1) brightness(.94)}
 select:active,textarea:active:not([readonly]),input:active{filter:grayscale(0) brightness(1)}
 select:disabled,textarea:disabled,input:disabled{filter:grayscale(1) brightness(.5)}
 select:focus,textarea:focus,input:focus,select:hover,textarea:hover:not([readonly]),input:hover{filter:grayscale(0) brightness(1)}
+.mainbox{display:flex;flex-direction:column;gap:0;justify-content:center;align-items:start}
+nav{display:flex;flex-direction:column;gap:0;justify-content:center;align-items:center}
+nav a{display:inline}
+.subNav,nav .big{display:none}
 table{table-layout:fixed}
 table,.spanner{width:100%}
 textarea{height:150px}
@@ -34,26 +39,25 @@ textarea{width:calc(100% - 10px)}
 li>.iCntr>.iCntn>textarea{width:calc(100% - 92px)}
 a:link,a:visited{color:#eee6ab}
 a:hover,a:active,a:focus{color:#fff7bc}
-.cat,.exp,.gen,.nav,.s,.txtGn,.txtOe,.txtRd,.spanner,a,input,input[type=file]::file-selector-button,select,textarea{font-weight:700}
+.cat,.exp,.gen,nav,.s,.txtGn,.txtOe,.txtRd,.spanner,a,input,input[type=file]::file-selector-button,select,textarea{font-weight:700}
 .ci,.co,.gen,.center{margin:auto}
 .ci,.co,.ng1,.ng2{width:calc(100% - 32px)}
-.idx{width:calc(100% - 10px)}
 .ci{background-color:rgba(69,84,75,.5);border-style:solid;border-width:1px;border-color:#aaa;text-align:{FE_Align};border-top-{FE_Align_Reverse}-radius:24px;padding:12px}
-.co,body,.nav,.center{text-align:center}
+.co,body,.center{text-align:center}
 .co,body{padding:0}
 .dt,.s,.txtBl,.txtGn,.txtOe,.txtRd,.inline{display:inline}
 .dt{float:{FE_Align};text-align:{FE_Align};width:80%}
 .gen,.spanner{text-align:{FE_Align_Reverse}}
 .gen,input,select,textarea{font-family:'Verdana','Arial',Helvetica}
 .gen{letter-spacing:0;white-space:nowrap}
-.h1,.h1f,.h2,.h2f,.h3,.h3f,.h4,.h4f,.ng1,.ng2,.r,.rf,.spanner{margin:0;padding:4px;border-style:{Half_Border};border-width:1px;border-color:#999}
+.h1,.h1f,.h2,.h2f,.h3,.h3f,.h4,.h4f,.ng1:not(nav .ng1),.ng2:not(nav .ng2),.r,.rf,.spanner{margin:0;padding:4px;border-style:{Half_Border};border-width:1px;border-color:#999}
 .h1,.h1f,.h2,.h2f,.r,.rf{width:25%}
 .h1,.h3,.spanner{background-color:rgba(103,106,109,.5)}
 .h2,.h4,code{background-color:rgba(86,89,92,.5)}
 .h3,.h3f,.h4,.h4f{width:50%}
-code,.nav{font-family:'Courier New','Courier','Arial'}
-.ng1,.h1f,.h3f{background:linear-gradient({90deg},rgba(103,106,109,.5),#555)}
-.ng2,.h2f,.h4f{background:linear-gradient({90deg},rgba(86,89,92,.5),#444)}
+code,nav{font-family:'Courier New','Courier','Arial'}
+.ng1:not(nav .ng1),.h1f,.h3f{background:linear-gradient({90deg},rgba(103,106,109,.5),#555)}
+.ng2:not(nav .ng2),.h2f,.h4f{background:linear-gradient({90deg},rgba(86,89,92,.5),#444)}
 .hFd:hover,.r{background-color:rgba(120,89,92,.5)}
 .rf{background:linear-gradient({90deg},rgba(120,89,92,.5),#644)}
 .branchline{border-style:none none solid none;border-width:1px;border-color:#aaa}
@@ -88,11 +92,11 @@ input[id=homebutton]{border-top-{FE_Align_Reverse}-radius:0;border-bottom-{FE_Al
 .iCntr{margin:16px 0 16px 0}
 .iCntn{margin-{FE_Align}:42px}
 @media only all and (max-width:968px) {
+  .extend{flex-basis:100%}
   .big,.dt{display:none}
   .mob{display:block}
   .gen{float:none;height:auto;text-align:center}
   .h1,.h1f,.h2,.h2f,.r,.rf{width:50%}
-  .extend{width:100%}
   .flong{width:calc(100% - 10px)}
   .iCntn{margin:0}
 }
@@ -157,6 +161,31 @@ input[type=button].reset:hover,input[type=button].reset:active{color:#fcefcf}
 .heavenInitPos{display:inline-block;overflow:hidden;transform:none;width:16px;height:16px;transition:all .9s cubic-bezier(0,0,.1,1)}
 .heavenOpenPos{transform:rotate(-270deg)}
 #logsTA{position:relative;top:-2px}
+.navicon.accounts{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:accounts.svg}{/Base64Encode})}
+.navicon.aggregator{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:aggregator.svg}{/Base64Encode})}
+.navicon.auxiliary,.bckpicon.auxiliary{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxiliary.svg}{/Base64Encode})}
+.navicon.backup{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:backup.svg}{/Base64Encode})}
+.navicon.cache{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:cache.svg}{/Base64Encode})}
+.navicon.calculator{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:calculator.svg}{/Base64Encode})}
+.navicon.configuration,.bckpicon.configuration{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:configuration.svg}{/Base64Encode})}
+.navicon.discussions{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:discussions.svg}{/Base64Encode})}
+.navicon.documentation{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:documentation.svg}{/Base64Encode})}
+.navicon.fixer{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:fixer.svg}{/Base64Encode})}
+.navicon.folder,input[type=file]::file-selector-button{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:folder.svg}{/Base64Encode})}
+.navicon.heaven{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:heaven.svg}{/Base64Encode})}
+.navicon.home{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:home.svg}{/Base64Encode})}
+.navicon.intersector{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:intersector.svg}{/Base64Encode})}
+.navicon.link{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:link.svg}{/Base64Encode})}
+.navicon.logs,.bckpicon.logs{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:logs.svg}{/Base64Encode})}
+.navicon.range{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:range.svg}{/Base64Encode})}
+.navicon.rl{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:rl.svg}{/Base64Encode})}
+.navicon.sections{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:sections.svg}{/Base64Encode})}
+.navicon.statistics,.bckpicon.statistics{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:statistics.svg}{/Base64Encode})}
+.navicon.subtractor{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:subtractor.svg}{/Base64Encode})}
+.navicon.test{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:test.svg}{/Base64Encode})}
+.navicon.tracking,.bckpicon.tracking{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:tracking.svg}{/Base64Encode})}
+.navicon.updates,.bckpicon.updates{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:updates.svg}{/Base64Encode})}
+.navicon.download{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:download.svg}{/Base64Encode})}
 ::selection{background-color:rgba(204,102,102,.5);color:#fff}
 .txtGn::selection,.txtGn>*:not(.txtOe,.txtRd)::selection{color:#dfc}
 .txtOe::selection,.txtOe>*:not(.txtGn,.txtRd)::selection{color:#fec}
@@ -164,12 +193,12 @@ input[type=button].reset:hover,input[type=button].reset:active{color:#fcefcf}
 .canBreak{white-space:normal;overflow-wrap:break-word;word-break:break-all}
 input[disabled],input[disabled]+label{cursor:not-allowed}
 .toolTip{cursor:help}
-.flexrow{display:flex}
+.flexrow{display:flex;flex-direction:row}
 .flexin{margin-{FE_Align}:-1px;margin-{FE_Align_Reverse}:1px;width:auto;flex-grow:1}
-.navicon.heaven{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:heaven.svg}{/Base64Encode})}
 .auxicon{display:inline-block;background-repeat:no-repeat;position:relative;top:1px;width:12px;height:12px}
 .auxbl,.hoverglow,.navicon,.comCat::before,.showlink::before,.shownlink::before,.unshownlink::before{display:inline-block;background-repeat:no-repeat;filter:invert(79%) sepia(28%) saturate(328%) hue-rotate(13deg) brightness(90%) contrast(89%);position:relative;top:1px;width:16px;height:16px}
-.hoverglow:hover,.hoverglow:active,.hoverglow:focus,.navicon[onclick]:hover,.navicon[onclick]:active,.navicon[onclick]:focus{filter:invert(95%) sepia(12%) saturate(882%) hue-rotate(-24deg) brightness(104%) contrast(95%)}
+.hoverglow:hover,.hoverglow:active,.hoverglow:focus,a:hover>.navicon,a:active>.navicon,a:focus>.navicon,.navicon[onclick]:hover,.navicon[onclick]:active,.navicon[onclick]:focus{filter:invert(93%) sepia(7%) saturate(1611%) hue-rotate(-15deg) brightness(105%) contrast(103%)}
+nav a .navicon{position:relative;top:-1px}
 .auxgn{filter:invert(91%) sepia(88%) saturate(358%) hue-rotate(26deg) brightness(89%) contrast(94%)}
 .auxrd{filter:invert(90%) sepia(63%) saturate(4751%) hue-rotate(-59deg) brightness(96%) contrast(87%)}
 .xscroller{overflow-x:auto}
@@ -212,3 +241,8 @@ input[disabled],input[disabled]+label{cursor:not-allowed}
 .origin.in{background:linear-gradient(#f80 30%,#080 70%);color:#fff}
 .origin.pk{background:#060;color:#fff}
 input[type=checkbox],input[type=radio]{accent-color:#cca}
+.clockBlock{display:inline-block;width:16px;height:16px;transition:none}
+.clockHours{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:clockhours.svg}{/Base64Encode});position:relative;inset:0 0}
+.clockMinutes{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:clockminutes.svg}{/Base64Encode});position:relative;inset:0 -16px}
+.clockSeconds{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:clockseconds.svg}{/Base64Encode});position:relative;inset:0 -32px}
+.clockFace{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:clockface.svg}{/Base64Encode});position:relative;inset:0 -48px}

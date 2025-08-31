@@ -1,10 +1,9 @@
-<table>
-<tr>
-  <td class="nav{mod_class_nav}"><div class="big">
-{nav}    <hr /></div>
-    <div class="ng1 idx">{LogFiles}    </div>
-  </td>
-  <td class="right{mod_class_right}">
+<div class="mainbox">
+  <nav class="big">
+{nav}
+    <div class="ng1 idx" translate="no">{LogFiles}    </div>
+  </nav>
+  <main class="extend{mod_class_right}">
   <div class="ng1 s flong mob">{LogFiles}  </div>
   {SVGsFormData}
   <form class="s" method="GET" action=""><input type="hidden" name="cidram-page" value="logs" />
@@ -18,6 +17,5 @@
     </table>
   </form>
 {logfileData}
-  </td>
-</tr>
-</table>
+  </main>
+</div>

@@ -484,4 +484,5 @@
 - Added a focus option for query to the IP testing page.
 - Added 404 as an option to the auxiliary rules HTTP status code override (#624).
 - Options shown at the auxiliary rules view mode page when clicking the trigram can now be unshown by reclicking it (#392).
+- Slightly reworked the various front-end themes.
 - *Plus all the regular signature updates.*

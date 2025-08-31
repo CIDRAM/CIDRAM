@@ -1,8 +1,8 @@
-<table>
-<tr>
-  <td class="nav big">
-{nav}  </td>
-  <td class="right extend">
+<div class="mainbox">
+  <nav class="big">
+{nav}
+  </nav>
+  <main class="extend">
     <div class="s" id="stateMsg">{state_msg}</div>
     <form id="auxForm" action="?cidram-page=aux-edit" method="POST">
     <div class="ng1 center">
@@ -13,9 +13,8 @@
     {Data}
     </form>
     <form id="auxFormMinified" action="?cidram-page=aux-edit" method="POST" style="display:none"><input type="hidden" id="minifiedFormData" name="minifiedFormData" value="" /></form>
-  </td>
-</tr>
-</table>
+  </main>
+</div>
 <script type="text/javascript">minifyForm('#auxForm','auxFormMinified','minifiedFormData');
 const inputContainer = document.getElementById('auxForm');
 inputContainer.addEventListener('keydown', function(event) {

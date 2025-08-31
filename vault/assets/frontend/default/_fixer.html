@@ -1,8 +1,8 @@
-<table>
-<tr>
-  <td class="nav big">
-{nav}  </td>
-  <td class="right extend">
+<div class="mainbox">
+  <nav class="big">
+{nav}
+  </nav>
+  <main class="extend">
     <div class="ng1">
       <form action="?cidram-page=fixer" method="POST">
         <span class="s">{label.Preferred source}</span><br />
@@ -16,6 +16,5 @@
         <input id="submitButton" type="submit" value="{field.OK}" {submitButtonVisibility}/>
       </form>{FixerOutput}
     </div>
-  </td>
-</tr>
-</table>
+  </main>
+</div>

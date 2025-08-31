@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2025.08.27).
+ * This file: The CIDRAM front-end (last modified: 2025.08.31).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -794,7 +794,7 @@ class FrontEnd extends Core
              * The user has logged in, but hasn't selected anything to view. Show them the
              * front-end home page.
              */
-            $this->initialPrepwork($this->L10N->getString('link.Home'), $this->L10N->getString('tip.Home'), false);
+            $this->initialPrepwork($this->L10N->getString('link.Home'), $this->L10N->getString('tip.Home'));
 
             /** CIDRAM version used. */
             $this->FE['ScriptVersion'] = $this->ScriptVersion;

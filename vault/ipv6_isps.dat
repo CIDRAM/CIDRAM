@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6_isps.dat
 
-# Version: 2025.240.0
-# Last modified: 2025.08.29
+# Version: 2025.243.0
+# Last modified: 2025.09.01
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -49,8 +49,8 @@ Tag: TeNeT
 # ASN 15895 ('"Kyivstar" PJSC').
 # Absolutely **INSANE** levels of spam coming from this network!! Shouldn't
 # ever, ever let them through, if at all possible.
-# Stop Forum Spam (SFS) listings: 10,631.
-# Updated: 2022.09.27 / Checked: 2024.08.18
+# Stop Forum Spam (SFS) listings: 3,580.
+# Updated: 2022.09.27 / Checked: 2025.08.30
 
 2a02:8a8::/32 Deny Spam
 2a02:2378::/32 Deny Spam
@@ -89,8 +89,8 @@ Tag: Bharti/Axiata
 
 # ASN 12389 ("PJSC Rostelecom").
 # Russian domestic ISP. Listing this particular ASN in its entirety.
-# Stop Forum Spam (SFS) listings: 60,316.
-# Updated: 2024.09.01
+# Stop Forum Spam (SFS) listings: 17,161.
+# Updated: 2025.09.01
 
 2a0:56c0:410::10/125 Deny Attacks
 2a1:620:15:c::/64 Deny Attacks
@@ -105,7 +105,12 @@ a00:1640::d430:c3c6/128 Deny Attacks
 2a01:620::/32 Deny Attacks
 2a02:ad8::/32 Deny Attacks
 2a04:c106::/32 Deny Attacks
+2a09:6285::/32 Deny Attacks
+2a10:d8c0::/32 Deny Attacks
 2a11:b85::/32 Deny Attacks
+2a12:2d40::/29 Deny Attacks
+2a13:93c2::/32 Deny Attacks
+2a13:93c4::/32 Deny Attacks
 Origin: RU
 Profile: Domestic ISP;Tor endpoints here
 Tag: PJSC Rostelecom

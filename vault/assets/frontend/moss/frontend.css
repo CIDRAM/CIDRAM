@@ -162,7 +162,6 @@ td code~input,td code~select{vertical-align:middle}
 .fBlur:hover,.fBlur:active{filter:contrast(1) blur(0)}
 input[type=button].reset{background:none;cursor:pointer;border:none;padding:0 12px 0 12px;margin:0;width:auto;color:#a04848}
 input[type=button].reset:hover,input[type=button].reset:active{color:#b77}
-.tablend{margin-top:-2px}
 .hiddenInitPos{display:inline-block;overflow:hidden;transform:scaleX(0);transform-origin:{FE_Align};opacity:0;max-width:0;max-height:16px;transition:all .9s ease-out}
 .hiddenOpenPos{transform:scaleX(1);opacity:1;max-width:100%}
 .heavenInitPos{display:inline-block;overflow:hidden;transform:none;width:16px;height:16px;transition:all .9s cubic-bezier(0,0,.1,1)}
@@ -248,3 +247,6 @@ input[type=checkbox],input[type=radio]{accent-color:#604848}
 .clockMinutes{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:clockminutes.svg}{/Base64Encode});position:relative;inset:0 -16px}
 .clockSeconds{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:clockseconds.svg}{/Base64Encode});position:relative;inset:0 -32px}
 .clockFace{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:clockface.svg}{/Base64Encode});position:relative;inset:0 -48px}
+.col{display:flex;flex-direction:column;gap:2px;justify-content:start;align-items:start;flex-basis:100%;width:100%}
+.configInitPos{transform:scaleY(0);transform-origin:top center;opacity:0;max-height:0;margin-top:-2px}
+.configOpenPos{transform:scaleY(1);transform-origin:top center;opacity:1;max-height:auto}

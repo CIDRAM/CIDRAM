@@ -29,7 +29,7 @@ $this->FE['SortOrder'] = (empty($this->CIDRAM['QueryVars']['sortOrder']) || $thi
 /** Initialise array for fetching logs data. */
 $this->FE['LogFiles'] = ['Files' => $this->arrayReplaceKeys($this->logsRecursiveList($this->Vault, $this->FE['SortOrder']), function (array $Item): string {
     return $Item['Filename'] ?? '';
-}), 'Out' => "\n"];
+}), 'Out' => ''];
 
 /** Download a log file. */
 if (
@@ -464,8 +464,12 @@ $this->FE['SearchInfo'] = '<td colspan="2" class="spanner">' . sprintf(
     '<span class="txtRd">' . $this->NumberFormatter->format($this->FE['ProcessTime'], 3) . '</span>'
 ) . $this->FE['SearchInfo'] . '</td>';
 
-/** Set log-file list or no log files available message. */
-$this->FE['LogFiles'] = $this->FE['LogFiles']['Out'] ?: $this->L10N->getString('label.No log files available');
+/** Set the log files list or the no log files available message. */
+if ($this->FE['LogFiles']['Out'] === '') {
+    $this->FE['LogFiles'] = $this->L10N->getString('label.No log files available');
+} else {
+    $this->FE['LogFiles'] = sprintf('      <div class="subNav">%s</div>', $this->L10N->getString('link.Logs')) . "\n" . $this->FE['LogFiles']['Out'];
+}
 
 /** Send output. */
 echo $this->sendOutput();

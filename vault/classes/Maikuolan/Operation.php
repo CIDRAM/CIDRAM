@@ -1,6 +1,6 @@
 <?php
 /**
- * Operation handler (last modified: 2025.08.05).
+ * Operation handler (last modified: 2025.08.22).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -437,7 +437,7 @@ class Operation extends CommonAbstract
 
         $First = substr($Data, 0, 1);
         $Last = substr($Data, -1);
-        $Parts = preg_split('~(?<!\\\\)\\{((?:[A-Za-z\d]+\\.?)+)\\}~', $Data, -1, PREG_SPLIT_DELIM_CAPTURE);
+        $Parts = preg_split('~(?<!\\\\)\\{((?:[A-Za-z\d ()_-]+\\.?)+)\\}~', $Data, -1, PREG_SPLIT_DELIM_CAPTURE);
         $NumOfParts = count($Parts);
         if ($NumOfParts % 2 !== 1) {
             return false;

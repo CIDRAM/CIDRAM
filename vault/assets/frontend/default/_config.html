@@ -1,13 +1,12 @@
 <div class="mainbox">
   <nav class="big">
-{nav}
-  <div class="ng1 idx" translate="no">
+{nav}  <div class="ng1 idx" translate="no">
     <div class="subNav">{link.Configuration}</div>
     {Indexes}
   </div>
   </nav>
   <main class="extend">
-    <div class="s">{state_msg}</div>
+    <div class="s flexstretch">{state_msg}</div>
     <form action="?cidram-page=config" method="POST">
       <input type="hidden" name="updatingConfig" value="1" />
       <div class="col scrollTrans">

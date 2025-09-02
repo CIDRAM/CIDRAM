@@ -3,35 +3,37 @@
 {nav}
   </nav>
   <main class="extend">
-    <div class="s">{state_msg}</div>
-    <table>
-      <tr>
-        <td class="h4"><div class="s">{field.File}</div></td>
-        <td class="h4f"><div class="s">{field.Options}</div></td>
-      </tr>
-      <tr>
-        <form enctype="multipart/form-data" action="?{FMgrFormTarget}" method="POST">
-          <input name="cidram-form-target" type="hidden" value="file-manager" />
-          <input name="do" type="hidden" value="upload-file" />
-          <td class="h3" colspan="2">
-            <div class="bNav">
-              <input type="file" name="upload-file" />
-              <input type="submit" value="{field.Upload new file}" />
+    <div class="col">
+      <div class="s flexstretch">{state_msg}</div>
+      <table>
+        <tr>
+          <td class="h4"><div class="s">{field.File}</div></td>
+          <td class="h4f"><div class="s">{field.Options}</div></td>
+        </tr>
+        <tr>
+          <form enctype="multipart/form-data" action="?{FMgrFormTarget}" method="POST">
+            <input name="cidram-form-target" type="hidden" value="file-manager" />
+            <input name="do" type="hidden" value="upload-file" />
+            <td class="h3" colspan="2">
+              <div class="bNav">
+                <input type="file" name="upload-file" />
+                <input type="submit" value="{field.Upload new file}" />
+              </div>
+            </td>
+          </form>
+        </tr>
+        <tr>
+          <td class="h4f" colspan="2">
+            <div class="s">
+              {label.CIDRAM disk usage} {TotalSize} – {ShowHideLink}<br />
+              {label.Total disk usage} {TotalUsage}<br />
+              {label.Free disk space} {FreeSpace}<br />
+              {label.Total disk space} {TotalSpace}
             </div>
           </td>
-        </form>
-      </tr>
-      <tr>
-        <td class="h4f" colspan="2">
-          <div class="s">
-            {label.CIDRAM disk usage} {TotalSize} – {ShowHideLink}<br />
-            {label.Total disk usage} {TotalUsage}<br />
-            {label.Free disk space} {FreeSpace}<br />
-            {label.Total disk space} {TotalSpace}
-          </div>
-        </td>
-      </tr>
+        </tr>
 {Doughnut}{FilesData}
-    </table>
+      </table>
+    </div>
   </main>
 </div>

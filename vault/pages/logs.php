@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The logs page (last modified: 2025.08.31).
+ * This file: The logs page (last modified: 2025.09.01).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -446,7 +446,7 @@ $DownloadLabel = $this->L10N->getString('field.Download');
 /** Generate a list of the logs. */
 foreach ($this->FE['LogFiles']['Files'] as $ThisLogFile) {
     $this->FE['LogFiles']['Out'] .= sprintf(
-        '      <a href="?cidram-page=logs&textMode=%1$s&sortOrder=%2$s%3$s&logfile=%4$s">%4$s</a> – %5$s <a title="%6$s" href="?cidram-page=logs&textMode=download&logfile=%4$s"><span class="navicon download"></span></a><br />',
+        '        <a href="?cidram-page=logs&textMode=%1$s&sortOrder=%2$s%3$s&logfile=%4$s">%4$s</a> – %5$s <a title="%6$s" href="?cidram-page=logs&textMode=download&logfile=%4$s"><span class="navicon download"></span></a><br />',
         $this->FE['TextModeLinks'],
         $this->FE['SortOrder'],
         $this->FE['Remember'] ? '&remember=on' : '',
@@ -468,7 +468,7 @@ $this->FE['SearchInfo'] = '<td colspan="2" class="spanner">' . sprintf(
 if ($this->FE['LogFiles']['Out'] === '') {
     $this->FE['LogFiles'] = $this->L10N->getString('label.No log files available');
 } else {
-    $this->FE['LogFiles'] = sprintf('      <div class="subNav">%s</div>', $this->L10N->getString('link.Logs')) . "\n" . $this->FE['LogFiles']['Out'];
+    $this->FE['LogFiles'] = sprintf('        <div class="subNav">%s</div>', $this->L10N->getString('link.Logs')) . "\n" . $this->FE['LogFiles']['Out'];
 }
 
 /** Send output. */

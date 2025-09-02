@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The range tables page (last modified: 2023.12.29).
+ * This file: The range tables page (last modified: 2025.09.01).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -43,7 +43,7 @@ $this->FE['JSFOOT'] = $this->rangeTablesHandler(
 /** Process matrix data. */
 if ($this->FE['Matrix-Data']) {
     $this->FE['Matrix'] = sprintf(
-        '<br /><table><tr><td class="spanner"><img src="data:image/png;base64,%s" alt="CIDRAM signature file analysis" /></td></tr></table>',
+        '<div class="spanner"><img src="data:image/png;base64,%s" alt="CIDRAM signature file analysis" /></div>',
         base64_encode($this->matrixCreate($this->FE['Matrix-Data']))
     );
 } else {

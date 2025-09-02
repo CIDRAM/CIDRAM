@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The configuration page (last modified: 2025.08.31).
+ * This file: The configuration page (last modified: 2025.09.01).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -52,8 +52,8 @@ foreach ($this->CIDRAM['Config Defaults'] as $CatKey => $CatValue) {
         }
     }
     $this->FE['ConfigFields'] .= sprintf(
-        '        <div class="ng2" id="%1$s-container"><a id="%1$sShowLink" class="showlink s" href="#%1$s-container" onclick="javascript:toggleconfig(\'%1$sRow\',\'%1$sShowLink\')">%1$s</a>' .
-        '%2$s</div><div class="col configInitPos scrollTrans" id="%1$sRow">',
+        '        <div class="ng2" id="%1$s-container"><a id="%1$sShowLink" class="showlink s" href="#%1$s-container" onclick="javascript:toggleconfig(\'%1$sRow\',\'%1$sShowLink\')">%1$s</a>%2$s</div>' .
+        "\n" . '        <div class="col configInitPos scrollTrans" id="%1$sRow">',
         $CatKey,
         $CatInfo
     ) . "\n";
@@ -756,7 +756,7 @@ foreach ($this->CIDRAM['Config Defaults'] as $CatKey => $CatValue) {
         $CatKeyFriendly,
         $CatData
     );
-    $this->FE['ConfigFields'] .= "</div>\n";
+    $this->FE['ConfigFields'] .= "        </div>\n";
 }
 
 /** Cleanup. */

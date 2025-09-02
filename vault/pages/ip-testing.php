@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The IP testing page (last modified: 2025.08.26).
+ * This file: The IP testing page (last modified: 2025.09.01).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -165,17 +165,21 @@ if (isset($_POST['ip-addr-focus'])) {
                 $this->CIDRAM['ModuleErrorCounts'] = [];
                 foreach ($this->CIDRAM['ModuleErrors'] as $this->CIDRAM['ModuleError']) {
                     if (isset($this->CIDRAM['ModuleErrorCounts'][$this->CIDRAM['ModuleError'][2]])) {
-                        $this->CIDRAM['ModuleErrorCounts'][$this->CIDRAM['ModuleError'][2]]++;
+                        $this->CIDRAM['ModuleErrorCounts'][$this->CIDRAM['ModuleError'][2]][0][] = $this->CIDRAM['ModuleError'][1];
+                        $this->CIDRAM['ModuleErrorCounts'][$this->CIDRAM['ModuleError'][2]][1]++;
                     } else {
-                        $this->CIDRAM['ModuleErrorCounts'][$this->CIDRAM['ModuleError'][2]] = 1;
+                        $this->CIDRAM['ModuleErrorCounts'][$this->CIDRAM['ModuleError'][2]] = [[$this->CIDRAM['ModuleError'][1]], 1];
                     }
                 }
                 arsort($this->CIDRAM['ModuleErrorCounts']);
+                $ErrorText = $this->L10N->getString('response.Error');
                 foreach ($this->CIDRAM['ModuleErrorCounts'] as $this->CIDRAM['ModuleName'] => $this->CIDRAM['ModuleError']) {
                     $this->CIDRAM['ThisIP']['YesNo'] .= sprintf(
-                        ' – %s (%s)',
+                        '<br />%s – %s (x%s):<em><br />– %s</em>',
+                        $ErrorText,
                         $this->CIDRAM['ModuleName'],
-                        $this->NumberFormatter->format($this->CIDRAM['ModuleError'])
+                        $this->NumberFormatter->format($this->CIDRAM['ModuleError'][1]),
+                        implode(',<br />– ', $this->CIDRAM['ModuleError'][0])
                     );
                 }
                 unset($this->CIDRAM['ModuleName'], $this->CIDRAM['ModuleError'], $this->CIDRAM['ModuleErrorCounts'], $this->CIDRAM['ModuleErrors']);

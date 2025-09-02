@@ -15,13 +15,14 @@ code{background-color:rgba(255,153,102,.3);vertical-align:0;display:inline-block
 img.ico{width:16px;height:16px;border:0}
 input[type=file]{margin:0;padding:0;border:none;background:none;width:auto}
 label{font-weight:600}
-.mainbox{display:flex;flex-direction:row;gap:auto;justify-content:center;align-items:start}
+.mainbox{display:flex;flex-direction:row;gap:auto;flex-basis:100%;justify-content:center;align-items:stretch}
 nav{display:flex;flex-direction:column;gap:2px;justify-content:start;align-items:start;font-size:calc((14px * {magnification}) + .03vw);flex-basis:20%;flex-shrink:2;flex-grow:1;letter-spacing:calc(1px + .03vw)}
 nav a:not(.idx a){display:block}
 main{flex-basis:80%;flex-shrink:1;flex-grow:2}
 .subNav{display:block;text-align:center;font-size:calc((10px * {magnification}) + .03vw);color:rgba(228,230,235,.6);text-shadow:2px 2px 1px rgba(255,255,255,.2)}
 table{table-layout:fixed}
-table,.spanner{width:100%}
+table,.spanner,.logVis,.flexstretch{align-self:stretch}
+.ci>.bNav:first-child{width:calc(100% - 26px);padding:12px}
 textarea{height:150px}
 textarea.half{height:75px}
 input.txtf{width:calc(100% - 4px)}
@@ -34,7 +35,7 @@ a:hover{color:#fc0;text-decoration:underline}
 .bNav{height:64px}
 .cat,.exp,.bNav,.gen,nav,.s,.tip,.txtGn,.txtOe,.txtRd,.spanner,a{font-weight:700}
 .ci,.co,.gen,.center{margin:auto}
-.ci,.co,.ng1,.ng2,.ci>.bNav:first-child,.mainbox{width:calc(100% - 32px)}
+.ci,.co,.ng1,.ng2{width:calc(100% - 32px)}
 .ci{padding:12px;text-align:{FE_Align}}
 .co,body,.center{text-align:center}
 .co,body,input,select{padding:0}
@@ -236,7 +237,6 @@ input[disabled],input[disabled]+label{cursor:not-allowed}
 input[type=file]::file-selector-button{position:relative;top:-2px}
 .rulePseudoPos{display:block;height:0px;width:100%;transform:scaleY(0);transition:all .5s ease-in-out;font-size:calc((10px * {magnification}) + .03vw);font-weight:700}
 .rulePseudoPosActive{background-color:rgba(192,128,0,.2);height:16px;transform:scaleY(1)}
-.logVis{overflow:visible auto}
 .clipMar{display:block;margin:16px}
 .inlineBlock{display:inline-block;position:relative;top:3px}
 .capitalize{text-transform:capitalize}
@@ -256,5 +256,13 @@ input[type=checkbox],input[type=radio]{accent-color:#bdc0c3}
 .clockSeconds{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:clockseconds.svg}{/Base64Encode});position:relative;inset:0 -32px}
 .clockFace{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:clockface.svg}{/Base64Encode});position:relative;inset:0 -48px}
 .col{display:flex;flex-direction:column;gap:2px;justify-content:start;align-items:start;flex-basis:100%;width:100%}
+.col>.ng1,.col>.ng2,.flexstretch{width:calc(100% - 10px)}
 .configInitPos{transform:scaleY(0);transform-origin:top center;opacity:0;max-height:0;margin-top:-2px}
 .configOpenPos{transform:scaleY(1);transform-origin:top center;opacity:1;max-height:auto}
+.spanner+table{margin:-2px -2px 0 -2px}
+.spanner+table~table{margin:-4px -2px 0 -2px}
+.col>form{display:contents}
+input[type=hidden],script{display:none}
+.logVis{overflow:visible auto;margin-left:2px;margin-right:2px}
+form+.logVis,table[id="logsTA"]{margin-top:-2px}
+textarea[id="logsTA"]{margin-top:0}

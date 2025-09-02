@@ -3,24 +3,22 @@
 {nav}
   </nav>
   <main class="extend">
-    {ProcTime}
-    <table class="tablend">
-      <tr>
-        <td class="spanner">
-          <select id="rangeCat" class="ufts" onchange="javascript:setRangeCat()">
-            {rangeCatOptions}
-          </select>
-        </td>
-      </tr>
-    </table>
-    <table class="tablend">
-      <tr>
-        <td class="center h4f" colspan="2">
-          <span class="s placeholder_loading">{label.Loading_}</span>{Labels}
-        </td>
-      </tr>
-{RangeRows}
-    </table>
+    <div class="col">
+      {ProcTime}
+      <div class="spanner">
+        <select id="rangeCat" class="ufts" onchange="javascript:setRangeCat()">
+          {rangeCatOptions}
+        </select>
+      </div>
+      <table>
+        <tr>
+          <td class="center h4f" colspan="2">
+            <span class="s placeholder_loading">{label.Loading_}</span>{Labels}
+          </td>
+        </tr>
+  {RangeRows}
+      </table>
+    </div>
   </main>
 </div>
 <script type="text/javascript">function setRangeCat(){x=document.getElementById('rangeCat').value,null!==window.yCat&&hide(window.yCat),show(x),window.yCat=x}window.yCat='placeholder_loading',setRangeCat();{JSFOOT}</script>

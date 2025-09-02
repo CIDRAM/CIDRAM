@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The sections list page (last modified: 2023.12.13).
+ * This file: The sections list page (last modified: 2025.09.01).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -41,7 +41,7 @@ if (!$this->FE['ASYNC']) {
 
     /** Calculate and append page load time, and append totals. */
     $this->FE['ProcessTime'] = microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];
-    $this->FE['Data'] = '<div class="s">' . sprintf(
+    $this->FE['Data'] = '      <div class="s">' . sprintf(
         $this->L10N->getPlural($this->FE['ProcessTime'], 'label.Page request completed in %s seconds'),
         '<span class="txtRd">' . $this->NumberFormatter->format($this->FE['ProcessTime'], 3) . '</span>'
     ) . '<br />' . sprintf(
@@ -50,7 +50,7 @@ if (!$this->FE['ASYNC']) {
         '<span class="txtRd">' . $this->NumberFormatter->format($this->FE['SL_Sections'] ?? 0) . '</span>',
         '<span class="txtRd">' . $this->NumberFormatter->format($this->FE['SL_Files'] ?? 0) . '</span>',
         '<span class="txtRd">' . $this->NumberFormatter->format($this->FE['SL_Unique'] ?? 0) . '</span>'
-    ) . '</div><hr />' . $this->FE['Data'];
+    ) . '</div>' . $this->FE['Data'] . "\n";
 
     /** Parse output. */
     $this->FE['FE_Content'] = $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_sections.html')), true);

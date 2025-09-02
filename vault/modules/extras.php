@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2025.08.29).
+ * This file: Optional security extras module (last modified: 2025.09.02).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -43,7 +43,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     $is_WP_plugin = (defined('ABSPATH') || strtolower(str_replace('\\', '/', substr(__DIR__, -31))) === 'wp-content/plugins/cidram/vault');
 
     /** If enabled, block empty user agents. */
-    if ($this->CIDRAM['ExtrasHonoured']['empty_ua']) {
+    if (isset($this->CIDRAM['ExtrasHonoured']['empty_ua'])) {
         $this->trigger(preg_replace('~[^\w\d]~i', '', $this->BlockInfo['UA']) === '', 'Empty UA');
     }
 
@@ -51,7 +51,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
      * Signatures based on the reconstructed URI start from here.
      * Please report all false positives to https://github.com/CIDRAM/CIDRAM/issues
      */
-    if ($this->CIDRAM['ExtrasHonoured']['ruri'] && $this->BlockInfo['rURI']) {
+    if (isset($this->CIDRAM['ExtrasHonoured']['ruri']) && $this->BlockInfo['rURI'] !== '') {
         $LCNrURI = str_replace('\\', '/', strtolower($this->BlockInfo['rURI']));
 
         /** Directory traversal protection. */
@@ -484,7 +484,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
      * Query-based signatures start from here.
      * Please report all false positives to https://github.com/CIDRAM/CIDRAM/issues
      */
-    if ($this->CIDRAM['ExtrasHonoured']['query'] && !empty($this->BlockInfo['Query'])) {
+    if (isset($this->CIDRAM['ExtrasHonoured']['query']) && $this->BlockInfo['Query'] !== '') {
         $Query = str_replace('\\', '/', strtolower(urldecode($this->BlockInfo['Query'])));
         $QueryNoSpace = preg_replace('/\s/', '', $Query);
 
@@ -620,7 +620,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     }
 
     /** If enabled, fetch the first 1MB of raw input from the input stream. */
-    if ($this->CIDRAM['ExtrasHonoured']['raw']) {
+    if (isset($this->CIDRAM['ExtrasHonoured']['raw'])) {
         $Handle = fopen('php://input', 'rb');
         $RawInput = fread($Handle, 1048576);
         fclose($Handle);
@@ -632,7 +632,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
      * Signatures based on raw input start from here.
      * Please report all false positives to https://github.com/CIDRAM/CIDRAM/issues
      */
-    if ($this->CIDRAM['ExtrasHonoured']['raw'] && $RawInput) {
+    if (isset($this->CIDRAM['ExtrasHonoured']['raw']) && $RawInput !== '') {
         $RawInputSafe = strtolower(preg_replace('/[\s\x00-\x1f\x7f-\xff]/', '', $RawInput));
 
         $this->trigger(preg_match('/charcode\\(88,83,83\\)/', $RawInputSafe), 'Hack attempt'); // 2017.03.01

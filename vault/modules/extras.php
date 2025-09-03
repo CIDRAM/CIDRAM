@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2025.09.02).
+ * This file: Optional security extras module (last modified: 2025.09.03).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -55,10 +55,10 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         $LCNrURI = str_replace('\\', '/', strtolower($this->BlockInfo['rURI']));
 
         /** Directory traversal protection. */
-        if (!$this->trigger(preg_match('~%5[cf]\.{2,}%5[cf]~', $LCNrURI), 'Traversal attack')) {
+        if (!$this->trigger(!$this->freeFromTraversal($this->BlockInfo['rURI']), 'Traversal attack')) {
             /** Detect bad/dangerous/malformed requests. */
             $this->trigger(preg_match('~%5[cf]\.%5[cf]|%5[cf]{3,}|[\x00-\x1f\x7f]~', $LCNrURI), 'Bad request'); // 2017.01.13 mod 2024.02.08
-        } // 2017.01.13 mod 2024.02.08
+        } // 2017.01.13 mod 2025.09.03
 
         /** WordPress user enumeration (modified 2025.03.03). */
         if ($this->trigger(preg_match('~\?author=\d+~', $LCNrURI), 'WordPress user enumeration not allowed')) {
@@ -478,6 +478,30 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         if ($this->trigger(preg_match('~(?:^|[/?])wallet\.dat(?:$|[/?])~', $LCNrURI), 'Probing for exposed Bitcoin wallets')) {
             $this->Reporter->report([15], ['Caught probing for exposed Bitcoin wallets.'], $this->BlockInfo['IPAddr']);
         } // 2025.08.29
+
+        /** Malware spam redirection attempt. */
+        if ($this->trigger(preg_match('~(?:^|[/?])(?:__media__/js|netsoltrademark\.php)(?:$|[/?])~', $LCNrURI), 'Malware spam redirection attempt detected')) {
+            $this->Reporter->report([10, 20], ['Malware spam redirection attempt detected.'], $this->BlockInfo['IPAddr']);
+        } // 2025.09.03
+
+        /** Probing for exposed etc/passwd file. */
+        if ($this->trigger(preg_match('~(?:^|[/?])etc(?:/|%2f)passwd(?:$|[/?])~', $LCNrURI), 'Probing for exposed etc/passwd file')) {
+            $this->Reporter->report([15], ['Caught probing for exposed etc/passwd file.'], $this->BlockInfo['IPAddr']);
+        } // 2025.09.03
+
+        /** Probing for exposed etc/hosts file. */
+        if ($this->trigger(preg_match('~(?:^|[/?])etc(?:/|%2f)hosts(?:$|[/?])~', $LCNrURI), 'Probing for exposed etc/hosts file')) {
+            $this->Reporter->report([15], ['Caught probing for exposed etc/hosts file.'], $this->BlockInfo['IPAddr']);
+        } // 2025.09.03
+
+        /** Probing for exposed etc/shadow file. */
+        if ($this->trigger(preg_match('~(?:^|[/?])etc(?:/|%2f)shadow(?:$|[/?])~', $LCNrURI), 'Probing for exposed etc/shadow file')) {
+            $this->Reporter->report([15], ['Caught probing for exposed etc/shadow file.'], $this->BlockInfo['IPAddr']);
+        } // 2025.09.03
+
+        if ($this->trigger(preg_match('~\?1+1&&|\)%7d%7d%2f~', $LCNrURI), 'SQLi attack')) {
+            $this->Reporter->report([15, 16], ['SQL injection attack detected.'], $this->BlockInfo['IPAddr']);
+        } // 2025.09.03
     }
 
     /**
@@ -588,8 +612,12 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         $this->trigger(strpos($this->BlockInfo['Query'], ',0x') !== false, 'Bad query'); // 2017.02.25
         $this->trigger(strpos($this->BlockInfo['Query'], ',\'\',') !== false, 'Bad query'); // 2017.02.25
 
-        $this->trigger(preg_match('/(?<![a-z])id=.*(?:benchmark\\(|id[xy]=|sleep\\()/', $QueryNoSpace), 'Query SQLi'); // 2017.03.01 mod 2023.11.10
-        $this->trigger(preg_match('~(?:from|union|where).*select|then.*else|(?:o[nr]|where).*isnull|(?:inner|left|outer|right)join~', $QueryNoSpace), 'Query SQLi'); // 2017.03.01 mod 2023.08.30
+        if ($this->trigger(preg_match(
+            '~(?<![a-z])id=.*(?:benchmark\\(|id[xy]=|sleep\\()|(?:from|union|where).*select|then.*else|(?:o[nr]|where).*isnull|(?:inner|left|outer|right)join~',
+            $QueryNoSpace
+        ), 'SQLi attack')) {
+            $this->Reporter->report([15, 16], ['SQL injection attack detected.'], $this->BlockInfo['IPAddr']);
+        } // 2017.03.01 mod 2025.09.03
 
         $this->trigger(preg_match('/cpis_.*i0seclab@intermal\.com/', $QueryNoSpace), 'Hack attempt'); // 2018.02.20
         $this->trigger(preg_match('/^(?:3x=3x|of=1&a=1)/i', $this->BlockInfo['Query']), 'Hack attempt'); // 2023.07.13 mod 2023.09.02
@@ -708,8 +736,6 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $this->Reporter->report([15, 21], ['Plesk hack attempt detected.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'Probe attempt') !== false) {
             $this->Reporter->report([19], ['Probe detected.'], $this->BlockInfo['IPAddr']);
-        } elseif (strpos($this->BlockInfo['WhyReason'], 'Query SQLi') !== false) {
-            $this->Reporter->report([16], ['SQL injection attempt detected.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'Query command injection') !== false) {
             $this->Reporter->report([15], ['Query command injection attempt detected.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'Query global variable hack') !== false) {

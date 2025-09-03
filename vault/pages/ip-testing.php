@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The IP testing page (last modified: 2025.09.01).
+ * This file: The IP testing page (last modified: 2025.09.03).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -318,6 +318,7 @@ if (isset($_POST['ip-addr-focus'])) {
             str_replace('=', '_', base64_encode($this->CIDRAM['ThisIP']['IPAddress'])),
             $this->CIDRAM['ThisIP']['IPAddress']
         ) : $this->CIDRAM['ThisIP']['IPAddress'];
+        $this->CIDRAM['ThisIP']['IPAddressQuoted'] = str_replace('\'', '\\\'', $this->CIDRAM['ThisIP']['IPAddress']);
         $this->FE['IPTestResults'] .= $this->parseVars($this->CIDRAM['ThisIP'], $this->FE['IPTestRow'], true);
     }
     unset($this->CIDRAM['ThisIP'], $Working, $this->CIDRAM['TestMode']);

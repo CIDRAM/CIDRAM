@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2025.08.26).
+ * This file: The CIDRAM core (last modified: 2025.09.03).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -3273,6 +3273,20 @@ class Core
     public function isReserved(string $Name): bool
     {
         return preg_match('~(?:^|\\\\|/)(?:\.{1,3}|aux|com(?:\d+|¹|²|³)|con|lpt(?:\d+|¹|²|³)|nul|prn)(?:(?:\..*)?$|\\\\|/)|[ .]$~i', $Name);
+    }
+
+    /**
+     * Traversal detection.
+     *
+     * @param string $Path The path to check for traversal.
+     * @return bool True when the path is traversal-free. False when traversal has been detected.
+     */
+    public function freeFromTraversal(string $Path): bool
+    {
+        return !preg_match(
+            '~//|(?:[^\da-z\p{L}\p{N}\p{M}\p{P}\p{S}\p{Z}.]|[\\/?&=]|^)\.\.+(?:[^\da-z\p{L}\p{N}\p{M}\p{P}\p{S}\p{Z}.]|[\\/?&=]|$)|/\.+(?:[^\da-z\p{L}\p{N}\p{M}\p{P}\p{S}\p{Z}.]|[\\/?&=]|$)|(?:[^\da-z\p{L}\p{N}\p{M}\p{P}\p{S}\p{Z}.]|[\\/?&=])\.+/|[\x01-\x1F]~i',
+            str_ireplace(['%25', '%22', '%27', '%2e', '%2f', '%5b', '%5c', '%5d', '%5e', '%5f', '%60', '\\'], ['%', '"', '\'', '.', '/', '[', '/', ']', '^', '_', '`', '/'], $Path)
+        );
     }
 
     /**

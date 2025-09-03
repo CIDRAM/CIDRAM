@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The file manager page (last modified: 2025.04.24).
+ * This file: The file manager page (last modified: 2025.09.03).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -113,11 +113,7 @@ if (isset($_POST['do'], $_FILES['upload-file']['name']) && $_POST['do'] === 'upl
     } else {
         $this->FE['state_msg'] = $this->L10N->getString('response.Failed to upload');
     }
-} elseif (
-    isset($FMData['filename'], $_POST['do']) &&
-    is_readable($this->Vault . $FMData['filename']) &&
-    $this->pathSecurityCheck($FMData['filename'])
-) {
+} elseif (isset($FMData['filename'], $_POST['do']) && is_readable($this->Vault . $FMData['filename']) && $this->pathSecurityCheck($FMData['filename'])) {
     /** Delete a file. */
     if ($_POST['do'] === 'delete-file') {
         if (is_dir($this->Vault . $FMData['filename'])) {

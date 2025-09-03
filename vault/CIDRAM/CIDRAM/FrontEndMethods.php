@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2025.08.14).
+ * This file: General methods used by the front-end (last modified: 2025.09.03).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -204,10 +204,7 @@ trait FrontEndMethods
     private function pathSecurityCheck(string $Path): bool
     {
         $Path = str_replace('\\', '/', $Path);
-        if (
-            preg_match('~(?://|[^!\d\w\._-]$)~i', $Path) ||
-            preg_match('~^(?:/\.\.|./\.|\.{3})$~', str_replace('\\', '/', substr($Path, -3)))
-        ) {
+        if (preg_match('~(?://|[^!\d\w\._-]$)~i', $Path) || !$this->freeFromTraversal($Path)) {
             return false;
         }
         $Path = preg_split('@/@', $Path, -1, PREG_SPLIT_NO_EMPTY);
@@ -305,20 +302,6 @@ trait FrontEndMethods
         } elseif (!isset($Arr['Name'])) {
             $Arr['Name'] = '';
         }
-    }
-
-    /**
-     * Traversal detection.
-     *
-     * @param string $Path The path to check for traversal.
-     * @return bool True when the path is traversal-free. False when traversal has been detected.
-     */
-    private function freeFromTraversal(string $Path): bool
-    {
-        return !preg_match(
-            '~(?://|(?<![\da-z])\.\.(?![\da-z])|/\.(?![\da-z])|(?<![\da-z])\./|[\x01-\x1F\[-^`?*$])~i',
-            str_replace('\\', '/', $Path)
-        );
     }
 
     /**

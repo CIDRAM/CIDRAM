@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2025.08.20).
+ * This file: Front-end handler (last modified: 2025.09.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -4216,6 +4216,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
                 str_replace('=', '_', base64_encode($CIDRAM['ThisIP']['IPAddress'])),
                 $CIDRAM['ThisIP']['IPAddress']
             ) : $CIDRAM['ThisIP']['IPAddress'];
+            $CIDRAM['ThisIP']['IPAddressQuoted'] = str_replace('\'', '\\\'', $CIDRAM['ThisIP']['IPAddress']);
             $CIDRAM['FE']['IPTestResults'] .= $CIDRAM['ParseVars'](
                 $CIDRAM['L10N']->Data + $CIDRAM['ThisIP'],
                 $CIDRAM['FE']['IPTestRow']

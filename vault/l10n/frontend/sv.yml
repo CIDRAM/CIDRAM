@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2025.08.28).
+# This file: Swedish language data for the front-end (last modified: 2025.09.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -57,7 +57,6 @@ Extended Description:
  Bad hosts blocker module: "Blockar värdar som ofta används av spammare, hackare och andra skändlig enheter."
  Bot user agents module: "Blockerar användaragenter associerade med oönskade bots och nöjesaktivitet."
  Bypasses: "Standard-signatur-bypass-filer som normalt ingår i huvudpaketet."
- Chart.js: "Gör det möjligt för framsidan att generera cirkeldiagram.<br />{{Links.Chart.js}} är tillgänglig via {{Links.MIT}}-licensen."
  Cookie scanner module: "Ger vissa begränsade skydd mot farliga kakor."
  HTTP version checker module: "Gör det möjligt att blockera specifika protokoll och HTTP-versioner genom CIDRAM-konfigurationen."
  IP-API module: "Utnyttjar {{Links.IP-API}} API för att tillhandahålla sökfunktioner för ASNer och landskoder för CIDRAM, så att ASNer och länder kan blockeras eller listas med vitlista via CIDRAM-konfigurationen, och tillhandahålla ett sätt för verifiering av socialt nätverk för att verifiera Facebook-förfrågningar. (Om du använder den här modulen, du inte behöver använda BGPView-modulen, eftersom de tjänar samma syfte)."
@@ -327,7 +326,6 @@ confirm:
  Action: "Är du säker på att du vill "%s"?"
  Delete: "Är du säker på att du vill radera "%s"?"
 field:
- %s File: "%s-Fil"
  2FA code: "2FA-kod"
  API key: "API-nyckel"
  Activate: "Aktivera"
@@ -361,6 +359,7 @@ field:
  Generate output as netmasks: "Generera utgång som nätmasker"
  Immediately: "Omedelbart."
  Install: "Installera"
+ Last modified: "Senast ändrad"
  Latest version: "Senaste versionen"
  Log In: "Logga in"
  Macro: "Makro"
@@ -372,6 +371,7 @@ field:
  Password: "Lösenord"
  Permissions: "Behörigheter"
  Preserve tags and comments: "Bevara taggar och kommentarer"
+ Purpose: "Ändamål"
  Range (First Last): "Räckvidd (Först – Sista)"
  Rename: "Byt namn"
  Repair all: "Reparera allt"
@@ -399,6 +399,7 @@ field:
  log_rotation_archive: "För det första, arkivera, och sedan radera de äldsta loggfilerna, tills gränsen inte längre överskrids."
  log_rotation_delete: "Radera de äldsta loggfilerna, tills gränsen inte längre överskrids."
  size:
+  Size: "Storlek"
   Total size: "Total storlek:"
   bytes: "byte"
 hint:
@@ -567,9 +568,9 @@ label:
  Bandwidth: "Använd bandbredd: %s – Tillgänglig bandbredd: %s"
  Branch latest stable: "Branch senaste stabila:"
  CAPTCHA attempts: "CAPTCHA försöken"
- CIDRAM disk usage: "CIDRAM-diskanvändning:"
  CIDRAM version used: "CIDRAM-version som används:"
  Cache data and temporary files: "Cacherdata och tillfälliga filer"
+ Cancel: "Avboka"
  Characters left: "Tecken kvar"
  Checkbox: "Kryssruta"
  Checksum after: "Kontrollsumma efter"
@@ -613,7 +614,7 @@ label:
  False positive risk: "Falsk positiv risk:"
  Fancy: "Fint"
  Focus: "Fokuset:"
- Free disk space: "Gratis diskutrymme:"
+
  Greylist the request: "Grålista begäran.\nÅterställer antalet utlösta signaturer, men fortsätter att bearbeta begäran. Rekommenderas när du inte vill vitlista begäran, men behöver något mer omfattande än att utlösa en bypass."
  Harvester: "Skördare"
  Hide: "Dölja"
@@ -692,8 +693,6 @@ label:
  Tally: "Tally"
  Text formatting: "Textformatering:"
  The cache is empty: "Cacheminnet är tomt."
- Total disk space: "Totalt diskutrymme:"
- Total disk usage: "Totalt diskanvändning:"
  Total: "Totalt"
  Trigger a bypass: "Utlösa en bypass.\nSubtraherar en räkning från antalet utlösta signaturer, så länge som minst en signatur redan har utlösts. Rekommenderas för att hantera enkla falska positiva resultat som kan orsakas av standardsignaturfilerna."
  Unignore this: "Inte ignorera detta"
@@ -865,8 +864,6 @@ response:
  Component successfully updated: "Komponent har uppdaterats framgångsrikt."
  Configuration successfully updated: "Konfigurationen har uppdaterats framgångsrikt."
  Copied: "Kopierade"
- Directory successfully deleted: "Katalog har raderats framgångsrikt!"
- Directory successfully renamed: "Katalognamn har ändrats framgångsrikt!"
  Don_t know what to do with the data after reading it: "Vet inte vad jag ska göra med data efter att ha läst den.\nÖverväg att koppla det till ett annat kommando. Tack."
  Error at the upstream: "Fel vid uppströms!"
  Failed to access %s: "Det gick inte att komma åt "%s"!"
@@ -888,9 +885,7 @@ response:
  Failed to upload: "Misslyckades med att ladda upp!"
  File contains unexpected content: "Filen innehåller oväntat innehåll!"
  File rejected: "Filen avvisas"
- File successfully deleted: "Fil har raderats framgångsrikt!"
  File successfully modified: "Fil har ändrats framgångsrikt!"
- File successfully renamed: "Filnamn har ändrats framgångsrikt!"
  File successfully uploaded: "Fil har laddats upp framgångsrikt!"
  Finished reading from %s: "Läsningen från "%s" är klar."
  Finished writing to %s: "Har skrivit klart till "%s"."

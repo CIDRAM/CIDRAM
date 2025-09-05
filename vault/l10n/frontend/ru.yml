@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2025.08.28).
+# This file: Russian language data for the front-end (last modified: 2025.09.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -57,7 +57,6 @@ Extended Description:
  Bad hosts blocker module: "Блокирует хосты, часто используемые спамерами, хакерами и другими гнусными объектами."
  Bot user agents module: "Блокирует пользовательские агенты, связанные с нежелательными ботами и нечестной деятельностью."
  Bypasses: "Стандартная сигнатуры байпасы, обычно включены в основной пакет."
- Chart.js: "Позволяет фронтенд создавать круговые диаграммы.<br />{{Links.Chart.js}} доступен через лицензии {{Links.MIT}}."
  Cookie scanner module: "Обеспечивает некоторые ограниченные средства защиты против опасных куки."
  HTTP version checker module: "Дает возможность блокировать определенные протоколы и версии HTTP через конфигурацию CIDRAM."
  IP-API module: "Использует API {{Links.IP-API}} для предоставления средства поиска для ASN и коды страны для CIDRAM, таким образом, позволяя блокировать или вносить белый список ASN и стран через конфигурацию CIDRAM, и предоставление средств для проверки в социальных сетях для проверки запросов Facebook. (Если вы используете этот модуль, вам не нужно будет использовать модуль BGPView, так как они служат той же цели)."
@@ -327,7 +326,6 @@ confirm:
  Action: "Вы уверены, что хотите «%s»?"
  Delete: "Вы уверены, что хотите удалить «%s»?"
 field:
- %s File: "Файл %s"
  2FA code: "Код 2FA"
  API key: "Ключ API"
  Activate: "Активировать"
@@ -361,6 +359,7 @@ field:
  Generate output as netmasks: "Генерировать вывод в виде сетевых масок"
  Immediately: "Сразу."
  Install: "Устанавливать"
+ Last modified: "Последнее изменение"
  Latest version: "Последняя версия"
  Log In: "Войдите"
  Macro: "Макрос"
@@ -372,6 +371,7 @@ field:
  Password: "Пароль"
  Permissions: "Разрешения"
  Preserve tags and comments: "Сохранить теги и комментарии"
+ Purpose: "Цель"
  Range (First Last): "Диапазон (Первый – Последний)"
  Rename: "Переименовывать"
  Repair all: "Починить все"
@@ -399,6 +399,7 @@ field:
  log_rotation_archive: "Сначала архивируйте, а затем удалите самые старые лог-файлы, пока лимит больше не будет превышен."
  log_rotation_delete: "Удалите самые старые лог-файлы, пока лимит больше не будет превышен."
  size:
+  Size: "Размер"
   Total size: "Общий размер:"
   GB: "ГБ"
   KB: "КБ"
@@ -576,9 +577,9 @@ label:
  Bandwidth: "Используемая пропускная способность: %s – Доступная пропускная способность: %s"
  Branch latest stable: "Ветвь последние стабильный:"
  CAPTCHA attempts: "Попытки CAPTCHA"
- CIDRAM disk usage: "CIDRAM Использование диска:"
  CIDRAM version used: "Используемая версия CIDRAM:"
  Cache data and temporary files: "Данные кэша и временные файлы"
+ Cancel: "Отмена"
  Characters left: "Осталось символов"
  Checkbox: "Флажок"
  Checksum after: "Контрольная сумма после"
@@ -624,7 +625,7 @@ label:
  False positive risk: "Риск ложноположительный:"
  Fancy: "Маскарадный"
  Focus: "Фокус:"
- Free disk space: "Свободное место на диске:"
+
  Greylist the request: "Серый список.\nСбрасывает число задействованных сигнатурей, но продолжает обработку запроса. Рекомендуется, если вы не хотите вносить запрос в белый список, но вам нужно что-то более существенное, чем обход."
  Harvester: "Сборщик"
  Hide: "Скрывать"
@@ -703,8 +704,6 @@ label:
  Tally: "Подсчет"
  Text formatting: "Форматирование текста:"
  The cache is empty: "Кэш пуст."
- Total disk space: "Емкость диска:"
- Total disk usage: "Все использование диска:"
  Total: "Всего"
  Trigger a bypass: "Обходить.\nЕсли задействована хотя бы одна сигнатур, из числа задействованных сигнатурей вычитается один счет. Рекомендуется для работы с простыми ложными срабатываниями, которые могут быть вызваны файлами сигнатур стандардию."
  Unignore this: "Не игнорировать это"
@@ -876,8 +875,6 @@ response:
  Component successfully updated: "Компонент успешно обновлено."
  Configuration successfully updated: "Конфигурация успешно обновлено."
  Copied: "Скопировано"
- Directory successfully deleted: "Каталог успешно удален!"
- Directory successfully renamed: "Каталог успешно переименован!"
  Don_t know what to do with the data after reading it: "Не знаю, что делать с данными после прочтения.\nПопробуйте связать его с другой командой. Спасибо."
  Error at the upstream: "Ошибка в источнике!"
  Failed to access %s: "Не удалось получить доступ к «%s»!"
@@ -899,9 +896,7 @@ response:
  Failed to upload: "Не удалось загрузить!"
  File contains unexpected content: "Файл содержит неожиданный контент!"
  File rejected: "Файл отклонен"
- File successfully deleted: "Файл успешно удален!"
  File successfully modified: "Файл успешно изменен!"
- File successfully renamed: "Файл успешно переименован!"
  File successfully uploaded: "Файл успешно загружен!"
  Finished reading from %s: "Закончил читать с «%s»."
  Finished writing to %s: "Закончил писать на «%s»."

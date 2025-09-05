@@ -27,6 +27,7 @@ select:disabled,textarea:disabled,input:disabled{filter:grayscale(1) brightness(
 select:focus,textarea:focus,input:focus,select:hover,textarea:hover:not([readonly]),input:hover{filter:grayscale(0) brightness(1)}
 .mainbox{display:flex;flex-direction:column;gap:0;width:100%;justify-content:center;align-items:start}
 nav{display:flex;flex-direction:column;gap:0;justify-content:center;align-items:center;align-self:stretch;border-style:none none solid;border-width:1px;border-color:#aaa}
+nav:lang(ja){letter-spacing:-1px}
 nav a{display:inline}
 .subNav,nav .big{display:none}
 main{align-self:stretch}
@@ -42,7 +43,7 @@ a:link,a:visited{color:#eee6ab}
 a:hover,a:active,a:focus{color:#fff7bc}
 .cat,.exp,.gen,nav,.s,.txtGn,.txtOe,.txtRd,.spanner,a,input,input[type=file]::file-selector-button,select,textarea{font-weight:700}
 .ci,.co,.gen,.center{margin:auto}
-.ci,.co,.ng1:not(nav .ng1),.ng2:not(nav .ng2){width:calc(100% - 32px)}
+.ci,.co,.ng1:not(nav .ng1,.quad .ng1,.col>.ng1),.ng2:not(nav .ng2,.quad .ng2,,.col>.ng2){width:calc(100% - 32px)}
 .ci{background-color:rgba(69,84,75,.5);border-style:solid;border-width:1px;border-color:#aaa;text-align:{FE_Align};border-top-{FE_Align_Reverse}-radius:24px;padding:12px}
 .co,body,.center{text-align:center}
 .co,body{padding:0}
@@ -52,10 +53,10 @@ a:hover,a:active,a:focus{color:#fff7bc}
 .gen,input,select,textarea{font-family:'Verdana','Arial',Helvetica}
 .gen{letter-spacing:0;white-space:nowrap}
 .h1,.h1f,.h2,.h2f,.h3,.h3f,.h4,.h4f,.ng1:not(nav .ng1),.ng2:not(nav .ng2),.r,.rf,.spanner{margin:0;padding:4px;border-style:{Half_Border};border-width:1px;border-color:#999}
-.h1,.h1f,.h2,.h2f,.r,.rf{width:25%}
+td.h1,td.h1f,td.h2,td.h2f,td.r,td.rf{width:25%}
 .h1,.h3,.spanner{background-color:rgba(103,106,109,.5)}
 .h2,.h4,code{background-color:rgba(86,89,92,.5)}
-.h3,.h3f,.h4,.h4f{width:50%}
+td.h3,td.h3f,td.h4,td.h4f{width:50%}
 code,nav{font-family:'Courier New','Courier','Arial'}
 .ng1:not(nav .ng1),.h1f,.h3f{background:linear-gradient({90deg},rgba(103,106,109,.5),#555)}
 .ng2:not(nav .ng2),.h2f,.h4f{background:linear-gradient({90deg},rgba(86,89,92,.5),#444)}
@@ -97,7 +98,7 @@ input[id=homebutton]{border-top-{FE_Align_Reverse}-radius:0;border-bottom-{FE_Al
   .big,.dt{display:none}
   .mob{display:block}
   .gen{float:none;height:auto;text-align:center}
-  .h1,.h1f,.h2,.h2f,.r,.rf{width:50%}
+  td.h1,td.h1f,td.h2,td.h2f,td.r,td.rf{width:50%}
   .flong{width:calc(100% - 10px)}
   .iCntn{margin:0}
   nav{border-style:none}
@@ -107,7 +108,7 @@ input[id=homebutton]{border-top-{FE_Align_Reverse}-radius:0;border-bottom-{FE_Al
 .fW{word-break:break-all}
 .exp{color:#ff0;background-color:#f00}
 .pieul{list-style-type:none;margin:0;padding:0}
-li>span.comCat:first-child,input[type=button],input[type=file]::file-selector-button,input[type=checkbox],input[type=checkbox]+label,input[type=radio],input[type=radio]+label,input[type=reset],input[type=submit],span>span[onclick],li>span[onclick],.navicon[onclick],.auxSuggestLink{cursor:pointer}
+li>span.comCat:first-child,input[type=button],input[type=file]::file-selector-button,input[type=checkbox],input[type=checkbox]+label,input[type=radio],input[type=radio]+label,input[type=reset],input[type=submit],span>span[onclick],li>span[onclick],.navicon[onclick],.auxSuggestLink,.fmOptions>code{cursor:pointer}
 .comCat::before,.showlink::before,.shownlink::before,.unshownlink::before{content:"";width:16px;height:16px;background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:caret.svg}{/Base64Encode});background-repeat:no-repeat;background-position:center;position:relative;top:2px;display:inline-block;margin-{FE_Align_Reverse}:6px;line-height:100%;cursor:pointer}
 .caret-down::before{animation:forRotate .3s ease-in 1;animation-fill-mode:both}
 .caret-up::before{animation:revRotate .5s linear 1;animation-fill-mode:both}
@@ -164,20 +165,20 @@ input[type=button].reset:hover,input[type=button].reset:active{color:#fcefcf}
 #logsTA{position:relative;top:-2px}
 .navicon.accounts{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:accounts.svg}{/Base64Encode})}
 .navicon.aggregator{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:aggregator.svg}{/Base64Encode})}
-.navicon.auxiliary,.bckpicon.auxiliary{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxiliary.svg}{/Base64Encode})}
+.navicon.auxiliary,.bckpicon.auxiliary,.fmicon.auxiliary{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxiliary.svg}{/Base64Encode})}
 .navicon.backup{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:backup.svg}{/Base64Encode})}
 .navicon.cache{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:cache.svg}{/Base64Encode})}
 .navicon.calculator{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:calculator.svg}{/Base64Encode})}
-.navicon.configuration,.bckpicon.configuration{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:configuration.svg}{/Base64Encode})}
+.navicon.configuration,.bckpicon.configuration,.fmicon.configuration{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:configuration.svg}{/Base64Encode})}
 .navicon.discussions{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:discussions.svg}{/Base64Encode})}
 .navicon.documentation{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:documentation.svg}{/Base64Encode})}
 .navicon.fixer{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:fixer.svg}{/Base64Encode})}
-.navicon.folder,input[type=file]::file-selector-button{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:folder.svg}{/Base64Encode})}
+.navicon.folder,.fmicon.folder{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:folder.svg}{/Base64Encode})}
 .navicon.heaven{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:heaven.svg}{/Base64Encode})}
 .navicon.home{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:home.svg}{/Base64Encode})}
 .navicon.intersector{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:intersector.svg}{/Base64Encode})}
 .navicon.link{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:link.svg}{/Base64Encode})}
-.navicon.logs,.bckpicon.logs{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:logs.svg}{/Base64Encode})}
+.navicon.logs,.bckpicon.logs,.fmicon.logs{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:logs.svg}{/Base64Encode})}
 .navicon.range{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:range.svg}{/Base64Encode})}
 .navicon.rl{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:rl.svg}{/Base64Encode})}
 .navicon.sections{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:sections.svg}{/Base64Encode})}
@@ -185,7 +186,7 @@ input[type=button].reset:hover,input[type=button].reset:active{color:#fcefcf}
 .navicon.subtractor{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:subtractor.svg}{/Base64Encode})}
 .navicon.test{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:test.svg}{/Base64Encode})}
 .navicon.tracking,.bckpicon.tracking{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:tracking.svg}{/Base64Encode})}
-.navicon.updates,.bckpicon.updates{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:updates.svg}{/Base64Encode})}
+.navicon.updates,.bckpicon.updates,.fmicon.updates{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:updates.svg}{/Base64Encode})}
 .navicon.download{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:download.svg}{/Base64Encode})}
 ::selection{background-color:rgba(204,102,102,.5);color:#fff}
 .txtGn::selection,.txtGn>*:not(.txtOe,.txtRd)::selection{color:#dfc}
@@ -197,6 +198,7 @@ input[disabled],input[disabled]+label{cursor:not-allowed}
 .flexrow{display:flex;flex-direction:row}
 .flexin{margin-{FE_Align}:-1px;margin-{FE_Align_Reverse}:1px;width:auto;flex-grow:1}
 .auxicon{display:inline-block;background-repeat:no-repeat;position:relative;top:1px;width:12px;height:12px}
+.bckpicon,.fmicon{display:inline-block;background-repeat:no-repeat;width:16px;height:16px}
 .auxbl,.hoverglow,.navicon,.comCat::before,.showlink::before,.shownlink::before,.unshownlink::before{display:inline-block;background-repeat:no-repeat;filter:invert(79%) sepia(28%) saturate(328%) hue-rotate(13deg) brightness(90%) contrast(89%);position:relative;top:1px;width:16px;height:16px}
 .hoverglow:hover,.hoverglow:active,.hoverglow:focus,a:hover>.navicon,a:active>.navicon,a:focus>.navicon,.navicon[onclick]:hover,.navicon[onclick]:active,.navicon[onclick]:focus{filter:invert(93%) sepia(7%) saturate(1611%) hue-rotate(-15deg) brightness(105%) contrast(103%)}
 nav a .navicon{position:relative;top:-1px}
@@ -206,13 +208,15 @@ nav a .navicon{position:relative;top:-1px}
 .auxicon.delete{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxdelete.svg}{/Base64Encode})}
 .auxicon.down1{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxdown1.svg}{/Base64Encode})}
 .auxicon.down2{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxdown2.svg}{/Base64Encode})}
+.auxicon.download{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:downloadfm.svg}{/Base64Encode})}
+.auxicon.edit{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:edit.svg}{/Base64Encode})}
 .auxicon.export{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxexport.svg}{/Base64Encode})}
 .auxicon.pause{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxpause.svg}{/Base64Encode})}
 .auxicon.play{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxplay.svg}{/Base64Encode})}
+.auxicon.rename{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:rename.svg}{/Base64Encode})}
 .auxicon.up1{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxup1.svg}{/Base64Encode})}
 .auxicon.up2{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxup2.svg}{/Base64Encode})}
-.auxicontxt{padding:0 3px 0 3px}
-.bckpicon{display:inline-block;width:16px;height:16px}
+.auxicontxt,.fmicontxt{padding:0 1px 0 1px}
 .bckpicon.auxiliary{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxiliary.svg}{/Base64Encode})}
 .bckpicon.auxpausebig{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxpausebig.svg}{/Base64Encode})}
 .bckpicon.compress{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:compress.svg}{/Base64Encode})}
@@ -247,7 +251,7 @@ input[type=checkbox],input[type=radio]{accent-color:#cca}
 .clockSeconds{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:clockseconds.svg}{/Base64Encode});position:relative;inset:0 -32px}
 .clockFace{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:clockface.svg}{/Base64Encode});position:relative;inset:0 -48px}
 .col{display:flex;flex-direction:column;gap:2px;justify-content:start;align-items:start;flex-basis:100%;width:100%}
-.col>.ng1,.col>.ng2,.flexstretch{width:calc(100% - 10px)}
+.col>.ng1,.col>.ng2,.flexstretch,.spanner{width:calc(100% - 10px)}
 .configInitPos{transform:scaleY(0);transform-origin:top center;opacity:0;max-height:0;margin-top:-2px}
 .configOpenPos{transform:scaleY(1);transform-origin:top center;opacity:1;max-height:auto}
 .spanner+table{margin:-2px -2px 0 -2px}
@@ -257,3 +261,10 @@ input[type=hidden],script{display:none}
 .logVis{overflow:visible auto;margin-left:2px;margin-right:2px}
 form+.logVis,table[id="logsTA"]{margin-top:-2px}
 textarea[id="logsTA"]{margin-top:0}
+.quad{display:grid;gap:2px;grid-template-columns:repeat(4,1fr);justify-content:stretch;justify-items:stretch}
+.col+.quad{margin-top:2px;margin-{FE_Align_Reverse}:1px}
+@media only all and (max-width:968px) {
+  .quad{grid-template-columns:1fr 1fr}
+}
+@keyframes fmDeleteAnim{0%{opacity:1}100%{filter:brightness(0);opacity:0;display:none}}
+.fmDelete{transform-origin:top;animation:fmDeleteAnim .5s cubic-bezier(0,0,.1,1);animation-iteration-count:1;animation-fill-mode:forwards}

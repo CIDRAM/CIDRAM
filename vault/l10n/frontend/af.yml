@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Afrikaans language data for the front-end (last modified: 2025.08.28).
+# This file: Afrikaans language data for the front-end (last modified: 2025.09.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -57,7 +57,6 @@ Extended Description:
  Bad hosts blocker module: "Blokkeer gashere wat gereeld deur spammers, kuberkrakers, en ander onheilspellende entiteite gebruik word."
  Bot user agents module: "Blokkeer gebruikersagente wat verband hou met ongewenste bots en onheilspellende aktiwiteite."
  Bypasses: "Die verstek handtekening omleiding lêers wat gewoonlik by die hoofpakket ingesluit is."
- Chart.js: "Stel die front-end in staat om doughnut-kaarte te genereer.<br />{{Links.Chart.js}} is beskikbaar via die {{Links.MIT}}-lisensie."
  Cookie scanner module: "Bied beperkte beskerming teen gevaarlike koekies."
  HTTP version checker module: "Maak dit moontlik om spesifieke protokolle en HTTP-weergawes te blokkeer deur die CIDRAM-konfigurasie."
  IP-API module: "Gebruik die {{Links.IP-API}}-API om 'n ASN en landkode opsoekfasiliteit vir CIDRAM te verskaf, wat dit moontlik maak om ASN'e en lande via die CIDRAM-konfigurasie geblokkeer of gewitlys te word, en die verskaffing van 'n manier om versoeke van Facebook en ander sosiale versoeke te verifieer. (As jy hierdie module gebruik, hoef jy nie die BGPView-module te gebruik nie, aangesien dit dieselfde doel dien)."
@@ -327,7 +326,6 @@ confirm:
  Action: "Is jy seker jy wil "%s"?"
  Delete: "Is jy seker jy wil "%s" uitvee?"
 field:
- %s File: "%s-lêer"
  2FA code: "2FA kode"
  API key: "API sleutel"
  Activate: "Aktiveer"
@@ -361,6 +359,7 @@ field:
  Generate output as netmasks: "Genereer uitset as netmaskers"
  Immediately: "Onmiddellik."
  Install: "Installeer"
+ Last modified: "Laas gewysig"
  Latest version: "Nuutste weergawe"
  Log In: "Teken in"
  Macro: "Makro"
@@ -372,6 +371,7 @@ field:
  Password: "Wagwoord"
  Permissions: "Toestemmings"
  Preserve tags and comments: "Bewaar etikette en opmerkings"
+ Purpose: "Doel"
  Range (First Last): "Reeks (Eerstens – Laaste)"
  Rename: "Hernoem"
  Repair all: "Herstel alles"
@@ -399,6 +399,7 @@ field:
  log_rotation_archive: "Argiveer eers, en vee dan die oudste loglêers uit totdat die limiet nie meer oorskry word nie."
  log_rotation_delete: "Vee die oudste loglêers uit totdat die limiet nie meer oorskry word nie."
  size:
+  Size: "Grootte"
   Total size: "Totale grootte:"
   bytes:
    - "greep"
@@ -566,9 +567,9 @@ label:
  Bandwidth: "Bandwydte gebruik: %s – Bandwydte beskikbaar: %s"
  Branch latest stable: "Tak nuutste stabiele:"
  CAPTCHA attempts: "CAPTCHA-pogings"
- CIDRAM disk usage: "CIDRAM skyf gebruik:"
  CIDRAM version used: "CIDRAM weergawe gebruik:"
  Cache data and temporary files: "Kas data en tydelike lêers"
+ Cancel: "Kanselleer"
  Characters left: "Karakters oor"
  Checkbox: "Merkblokkie"
  Checksum after: "Kontrolesom na"
@@ -612,7 +613,7 @@ label:
  False positive risk: "Vals positiewe risiko:"
  Fancy: "Fancy"
  Focus: "Fokus:"
- Free disk space: "Vrye skyfspasie:"
+
  Greylist the request: "Gryslys die versoek.\nStel die aantal handtekeninge terug, maar gaan voort om die versoek te verwerk. Aanbeveel wanneer jy nie die versoek wil witlys nie, maar iets aansienliker benodig as om 'n omleiding."
  Harvester: "Stroper"
  Hide: "Versteek"
@@ -691,8 +692,6 @@ label:
  Tally: "Telling"
  Text formatting: "Teksformatering:"
  The cache is empty: "Die kas is leeg."
- Total disk space: "Totale skyfspasie:"
- Total disk usage: "Totale skyfgebruik:"
  Total: "Totaal"
  Trigger a bypass: "Veroorsaak 'n omleiding.\nTrek een telling af van die aantal handtekeninge wat geaktiveer is, solank ten minste een handtekening reeds geaktiveer is. Aanbeveel vir die hantering van eenvoudige vals positiewe wat moontlik deur die verstekhandtekeninglêers veroorsaak word."
  Unignore this: "Onignoreer dit"
@@ -864,8 +863,6 @@ response:
  Component successfully updated: "Komponent suksesvol opgedateer."
  Configuration successfully updated: "Konfigurasie suksesvol opgedateer."
  Copied: "Gekopieer"
- Directory successfully deleted: "Gids suksesvol verwyderde!"
- Directory successfully renamed: "Gids suksesvol hernoem!"
  Don_t know what to do with the data after reading it: "Na die lees van die data, nie seker wat om daarmee te doen nie.\nOorweeg om dit aan 'n ander opdrag te koppel. Dankie."
  Error at the upstream: "Fout by die stroomop!"
  Failed to access %s: "Kon nie toegang tot "%s" kry nie!"
@@ -887,9 +884,7 @@ response:
  Failed to upload: "Kon nie oplaai nie!"
  File contains unexpected content: "Lêer bevat onverwagte inhoud!"
  File rejected: "Lêer is afgekeur"
- File successfully deleted: "Lêer suksesvol verwyderde!"
  File successfully modified: "Lêer suksesvol gewysig!"
- File successfully renamed: "Lêer suksesvol hernoem!"
  File successfully uploaded: "Lêer suksesvol opgelaai!"
  Finished reading from %s: "Klaar gelees van "%s"."
  Finished writing to %s: "Klaar geskryf na "%s"."

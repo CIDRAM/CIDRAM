@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Romanian language data for the front-end (last modified: 2025.08.28).
+# This file: Romanian language data for the front-end (last modified: 2025.09.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -57,7 +57,6 @@ Extended Description:
  Bad hosts blocker module: "Blochează gazdele utilizate frecvent de spammeri, hackeri, și alte entități nefaste."
  Bot user agents module: "Blochează agenții utilizatori asociați cu roboți nedoriți și cu activități nefaste."
  Bypasses: "Fișierele implicite de bypass a semnăturii incluse în mod normal în pachetul principal."
- Chart.js: "Permite front-end-ului să genereze diagrame donut.<br />{{Links.Chart.js}} este disponibil prin licența {{Links.MIT}}."
  Cookie scanner module: "Oferă unele protecții limitate împotriva cookie-urilor periculoase."
  HTTP version checker module: "Face posibilă blocarea anumitor protocoale și versiuni HTTP prin configurația CIDRAM."
  IP-API module: "Utilizează {{Links.IP-API}} API pentru a oferi o facilitate de căutare ASN și cod de țară pentru CIDRAM, permițând blocarea sau înscrierea în lista albă a ASN-urilor și a țărilor prin configurația CIDRAM, și oferind un mijloc de verificare a rețelelor sociale pentru a verifica solicitările Facebook. (Dacă utilizați acest modul, nu va trebui să utilizați modulul BGPView, deoarece au același scop)."
@@ -327,7 +326,6 @@ confirm:
  Action: "Sigur doriți să „%s”?"
  Delete: "Sigur doriți să ștergeți „%s”?"
 field:
- %s File: "Fișier %s"
  2FA code: "Cod 2FA"
  API key: "Cheie API"
  Activate: "Activați"
@@ -361,6 +359,7 @@ field:
  Generate output as netmasks: "Generați rezultate ca măști de rețea"
  Immediately: "Imediat."
  Install: "Instalați"
+ Last modified: "Ultima modificare"
  Latest version: "Ultima versiune"
  Log In: "Conectați"
  Macro: "Macro"
@@ -372,6 +371,7 @@ field:
  Password: "Parola"
  Permissions: "Permisiuni"
  Preserve tags and comments: "Păstrați etichetele și comentariile"
+ Purpose: "Scopul"
  Range (First Last): "Interval (Primul – Ultimul)"
  Rename: "Redenumiți"
  Repair all: "Repara totul"
@@ -399,6 +399,7 @@ field:
  log_rotation_archive: "Mai întâi arhivați, apoi ștergeți cele mai vechi fișiere jurnal, până când limita nu mai este depășită."
  log_rotation_delete: "Ștergeți cele mai vechi fișiere jurnal, până când limita nu mai este depășită."
  size:
+  Size: "Dimensiunea"
   Total size: "Dimensiunea totala:"
   GB: "Go"
   KB: "Ko"
@@ -574,9 +575,9 @@ label:
  Bandwidth: "Lățimea de bandă utilizată: %s – Lățimea de bandă disponibilă: %s"
  Branch latest stable: "Cel mai recent ramura stabilă:"
  CAPTCHA attempts: "încercări CAPTCHA"
- CIDRAM disk usage: "Utilizarea discului CIDRAM:"
  CIDRAM version used: "Versiunea CIDRAM utilizată:"
  Cache data and temporary files: "Datele în cache și fișierele temporare"
+ Cancel: "Anula"
  Characters left: "Caractere rămase"
  Checkbox: "Caseta de bifat"
  Checksum after: "Suma de control după"
@@ -622,7 +623,7 @@ label:
  False positive risk: "Risc fals pozitiv:"
  Fancy: "Extravagant"
  Focus: "Accentul:"
- Free disk space: "Spațiu liber pe disc:"
+
  Greylist the request: "Lista gri a solicitării.\nResetează numărul de semnături declanșate, dar continuă procesarea solicitării. Recomandat atunci când nu doriți să lista albă a solicitării, dar aveți nevoie de ceva mai substanțial decât declanșarea unui bypass."
  Harvester: "Recoltator"
  Hide: "Ascunde"
@@ -701,8 +702,6 @@ label:
  Tally: "Numerele"
  Text formatting: "Formatarea textului:"
  The cache is empty: "Cache-ul este gol."
- Total disk space: "Spațiu totală a discului:"
- Total disk usage: "Utilizarea totală a discului:"
  Total: "Total"
  Trigger a bypass: "Declanșați un bypass.\nScade un număr din numărul de semnături declanșate, atâta timp cât cel puțin o semnătură a fost deja declanșată. Recomandat pentru tratarea simplelor false pozitive posibile cauzate de fișierele de semnătură implicite."
  Unignore this: "Nu ignora asta"
@@ -874,8 +873,6 @@ response:
  Component successfully updated: "Componenta a fost actualizată cu succes."
  Configuration successfully updated: "Configurația a fost actualizată cu succes."
  Copied: "Copiat"
- Directory successfully deleted: "Directorul a fost șters cu succes!"
- Directory successfully renamed: "Directorul a fost redenumit cu succes!"
  Don_t know what to do with the data after reading it: "Nu știu ce să fac cu datele după ce le citesc.\nLuați în considerare înlănțuirea acestuia la o altă comandă. Mulțumiri."
  Error at the upstream: "Eroare la amonte!"
  Failed to access %s: "Accesul la „%s” a eșuat!"
@@ -897,9 +894,7 @@ response:
  Failed to upload: "Încărcare a eșuat!"
  File contains unexpected content: "Fișierul conține conținut neașteptat!"
  File rejected: "Fișier respins"
- File successfully deleted: "Fișierul a fost șters cu succes!"
  File successfully modified: "Fișierul a fost modificat cu succes!"
- File successfully renamed: "Fișierul a fost redenumit cu succes!"
  File successfully uploaded: "Fișierul a fost încărcat cu succes!"
  Finished reading from %s: "A citit cu succes din „%s”."
  Finished writing to %s: "A scris cu succes la „%s”."

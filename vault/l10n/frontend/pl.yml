@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2025.08.28).
+# This file: Polish language data for the front-end (last modified: 2025.09.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -57,7 +57,6 @@ Extended Description:
  Bad hosts blocker module: "Blokuje hosty często używane przez spamerów, hakerów i inne nikczemne podmioty."
  Bot user agents module: "Blokuje agenty użytkownika związane z niechcianymi botami i nikczemną aktywnością."
  Bypasses: "Domyślne pliki obejścia podpisów zwykle zawarte w pakiecie głównym."
- Chart.js: "Umożliwia interfejsowi użytkownika generowanie wykresów kołowych.<br />{{Links.Chart.js}} jest dostępny za pośrednictwem licencji {{Links.MIT}}."
  Cookie scanner module: "Zapewnia pewne ograniczone zabezpieczenia przed niebezpiecznymi plikami cookie."
  HTTP version checker module: "Umożliwia blokowanie określonych protokołów i wersji HTTP poprzez konfigurację CIDRAM."
  IP-API module: "Wykorzystuje API {{Links.IP-API}} do zapewnienia dla CIDRAM funkcjonalności wyszukiwania dla ASN i kodu kraju, który umożliwia blokowanie ASN i krajów lub umieszczanie ich na białej liście za pomocą konfiguracji CIDRAM oraz zapewnia sposób weryfikacji żądań z sieci społecznościowych, takich jak Facebook. (Jeśli używasz tego modułu, nie będziesz musiał używać modułu BGPView, ponieważ służą one temu samemu celowi)."
@@ -327,7 +326,6 @@ confirm:
  Action: "Czy na pewno chcesz „%s”?"
  Delete: "Czy na pewno chcesz usunąć „%s”?"
 field:
- %s File: "Plik %s"
  2FA code: "Kod 2FA"
  API key: "Klucz API"
  Activate: "Aktywuj"
@@ -361,6 +359,7 @@ field:
  Generate output as netmasks: "Generuj dane wyjściowe jako netmaski"
  Immediately: "Natychmiast."
  Install: "Zainstaluj"
+ Last modified: "Ostatnia modyfikacja"
  Latest version: "Ostatnia wersja"
  Log In: "Zaloguj sie"
  Macro: "Makro"
@@ -372,6 +371,7 @@ field:
  Password: "Hasło"
  Permissions: "Uprawnienia"
  Preserve tags and comments: "Zachowaj tagi i komentarze"
+ Purpose: "Zamiar"
  Range (First Last): "Zakres (Pierwszy – Ostatni)"
  Rename: "Przemianować"
  Repair all: "Naprawić wszystko"
@@ -399,6 +399,7 @@ field:
  log_rotation_archive: "Najpierw zarchiwizuj, a następnie usuń najstarsze pliki dziennika, dopóki limit nie zostanie przekroczony."
  log_rotation_delete: "Usuń najstarsze pliki dziennika, dopóki limit nie zostanie przekroczony."
  size:
+  Size: "Rozmiar"
   Total size: "Całkowity rozmiar:"
   bytes:
    - "bajt"
@@ -570,9 +571,9 @@ label:
  Bandwidth: "Wykorzystywana przepustowość: %s – Dostępna przepustowość: %s"
  Branch latest stable: "Oddział najnowsza stabilna:"
  CAPTCHA attempts: "Próby CAPTCHA"
- CIDRAM disk usage: "Wykorzystanie dysku przez CIDRAM:"
  CIDRAM version used: "Użyta wersja CIDRAM:"
  Cache data and temporary files: "Pamięć podręczna dane i pliki tymczasowe"
+ Cancel: "Anulować"
  Characters left: "Pozostałe znaki"
  Checkbox: "Pole wyboru"
  Checksum after: "Suma kontrolna po"
@@ -618,7 +619,7 @@ label:
  False positive risk: "Ryzyko fałszywie pozytywny:"
  Fancy: "Fantazyjny"
  Focus: "Ostrość:"
- Free disk space: "Wolne miejsce na dysku:"
+
  Greylist the request: "Traktuj żądanie jako umieszczone na szarej liście.\nResetuje liczbę wyzwolonych podpisów, ale kontynuuje przetwarzanie żądania. Polecane, gdy nie chcesz traktować żądania jako umieszczonego na białej liście, ale potrzebujesz czegoś bardziej istotnego niż uruchomienie obejścia."
  Harvester: "Zbieracz"
  Hide: "Ukryj"
@@ -697,8 +698,6 @@ label:
  Tally: "Zestawienie"
  Text formatting: "Formatowanie tekstu:"
  The cache is empty: "Pamięć podręczna jest pusta."
- Total disk space: "Całkowite miejsce na dysku:"
- Total disk usage: "Zajęte miejsce na dysku:"
  Total: "Ogółem"
  Trigger a bypass: "Uruchom obejście.\nJeśli przynajmniej jedna podpisa została już wyzwolona, odejmuje jedną liczbę od liczby wyzwolonych podpis. Zalecane do obsługi prostych fałszywych pozytywów potencjalnie spowodowanych przez domyślne pliki podpis."
  Unignore this: "Nie ignoruj tego"
@@ -870,8 +869,6 @@ response:
  Component successfully updated: "Sukces aktualizacji komponentu."
  Configuration successfully updated: "Konfiguracja pomyślnie zaktualizowana."
  Copied: "Skopiowane"
- Directory successfully deleted: "Sukces usunięcie katalogu!"
- Directory successfully renamed: "Sukces zmiany nazwy katalogu!"
  Don_t know what to do with the data after reading it: "Nie wiem co zrobić z danymi po ich przeczytaniu.\nRozważ połączenie go z innym poleceniem. Dzięki."
  Error at the upstream: "Błąd u źródła!"
  Failed to access %s: "Nie można uzyskać dostępu do „%s”!"
@@ -893,9 +890,7 @@ response:
  Failed to upload: "Niepowodzenie przesyłania!"
  File contains unexpected content: "Plik zawiera nieoczekiwaną treść!"
  File rejected: "Plik odrzucony"
- File successfully deleted: "Sukces usunięcie pliku!"
  File successfully modified: "Sukces modyfikacji pliku!"
- File successfully renamed: "Sukces zmiany nazwy pliku!"
  File successfully uploaded: "Sukces przesłanie pliku!"
  Finished reading from %s: "Zakończono czytanie od „%s”."
  Finished writing to %s: "Skończyłem pisać do „%s”."

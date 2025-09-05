@@ -2,7 +2,7 @@ function $(c,i,d,r,a,m){if('POST'===c||'GET'===c){var x=new XMLHttpRequest;x.onr
 function showid(e){b=document.getElementById(e),b.style.display='inline'}
 function hideid(e){b=document.getElementById(e),b.style.display='none'}
 function show(e,t='inline'){b=document.getElementsByClassName(e);for(var s=0;s<b.length;s++)b[s].style.display=t}
-function hide(e){b=document.getElementsByClassName(e);for(var s=0;s<b.length;s++)b[s].style.display="none"}
+function hide(e){b=document.getElementsByClassName(e);for(var s=0;s<b.length;s++)b[s].style.display='none'}
 function r(e){return document.getElementById(e).innerHTML}
 function w(e,x){document.getElementById(e).innerHTML=x}
 function copySvg(){if(navigator.clipboard){document.currentScript.insertAdjacentHTML('afterend','<svg class="detailedSvgIcon copySvg" width="18" height="19" xmlns="http://www.w3.org/2000/svg"><title>{label.Copy to clipboard}</title><g stroke-width="1" stroke-linecap="round"><rect class="copyHind" rx="2" height="12" width="11" y="2" x="5"/><rect class="copyFore" rx="2" height="12" width="11" y="5" x="2"/><line class="copyLine" y2="14" x2="11" y1="14" x1="4"/><line class="copyLine" y2="8" x2="9" y1="8" x1="4"/><line class="copyLine" y2="11" x2="10" y1="11" x1="4"/></g></svg>')}}

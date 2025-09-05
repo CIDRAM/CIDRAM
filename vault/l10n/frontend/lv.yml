@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2025.08.28).
+# This file: Latvian language data for the front-end (last modified: 2025.09.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -57,7 +57,6 @@ Extended Description:
  Bad hosts blocker module: "Bloķē resursdatorus, kurus bieži izmanto surogātpasta izplatītāji, hakeri, un citas nekonkrētas vienības."
  Bot user agents module: "Bloķē lietotāju aģentus, kas saistīti ar nevēlamiem robotiem un nožēlojamām darbībām."
  Bypasses: "Noklusējuma paraksta apiešana faili, kas parasti ir iekļauti galvenajā paketē."
- Chart.js: "Ļauj sektoru diagrammas izmantot administratīvai piekļuvei.<br />{{Links.Chart.js}} ir pieejams caur {{Links.MIT}} licenci."
  Cookie scanner module: "Nodrošina ierobežotu aizsardzību pret bīstamām sīkdatnēm."
  HTTP version checker module: "Ļauj bloķēt noteiktus protokolus un HTTP versijas, izmantojot CIDRAM konfigurāciju."
  IP-API module: "Izmanto {{Links.IP-API}} API, lai nodrošinātu ASN un valsts koda meklēšanas iespēju CIDRAM, tādējādi dodot iespēju bloķēt vai iekļaut baltajā sarakstā ASN un valstis, izmantojot CIDRAM konfigurāciju, un sociālo mediju verifikācijas līdzekļu nodrošināšana, lai pārbaudītu Facebook pieprasījumus. (Ja izmantojat šo moduli, jums nebūs jāizmanto BGPView modulis, jo tie kalpo vienam un tam pašam mērķim)."
@@ -327,7 +326,6 @@ confirm:
  Action: "Vai tiešām vēlaties "%s"?"
  Delete: "Vai tiešām vēlaties izdzēst "%s"?"
 field:
- %s File: "%s Fails"
  2FA code: "2FA kods"
  API key: "API atslēga"
  Activate: "Aktivizējiet"
@@ -361,6 +359,7 @@ field:
  Generate output as netmasks: "Ģenerēt izvadi kā tīkla maskas"
  Immediately: "Tūlīt."
  Install: "Instalējiet"
+ Last modified: "Pēdējoreiz modificēts"
  Latest version: "Jaunākā versija"
  Log In: "Ielogoties"
  Macro: "Makro"
@@ -372,6 +371,7 @@ field:
  Password: "Parole"
  Permissions: "Atļaujas"
  Preserve tags and comments: "Saglabājiet tagus un komentārus"
+ Purpose: "Mērķis"
  Range (First Last): "Diapazons (Pirmais – Pēdējais)"
  Rename: "Pārdēvējiet"
  Repair all: "Remontēt visus"
@@ -399,6 +399,7 @@ field:
  log_rotation_archive: "Vispirms arhivējiet un pēc tam izdzēsiet vecākos logfailus, līdz ierobežojums vairs netiek pārsniegts."
  log_rotation_delete: "Izdzēsiet vecākos logfailus, līdz ierobežojums vairs netiek pārsniegts."
  size:
+  Size: "Lielums"
   Total size: "Kopējais lielums:"
   bytes:
    - "baits"
@@ -565,9 +566,9 @@ label:
  Bandwidth: "Izmantotais joslas platums: %s – Pieejamais joslas platums: %s"
  Branch latest stable: "Jaunākā stabilā (uz šīs "branch"):"
  CAPTCHA attempts: "CAPTCHA mēģinājumi"
- CIDRAM disk usage: "CIDRAM diska lietojums:"
  CIDRAM version used: "Izmantotā CIDRAM versija:"
  Cache data and temporary files: "Kešatmiņas dati un pagaidu faili"
+ Cancel: "Atcelt"
  Characters left: "Palikuši rakstzīmes"
  Checkbox: "Izvēles rūtiņu"
  Checksum after: "Kontrolsumma pēc"
@@ -611,7 +612,7 @@ label:
  False positive risk: "Nepatiesi pozitīvs risks:"
  Fancy: "Iedomātā"
  Focus: "Fokuss:"
- Free disk space: "Brīva vieta diskā:"
+
  Greylist the request: "Apstrādājiet pieprasījumu kā pelēka sarakstā.\nAtiestata parakstu skaitu, bet turpina pieprasījuma apstrādi. Ieteicams, ja nevēlaties apstrādājiet pieprasījumu kā baltajā sarakstā, bet nepieciešams kaut kas būtiskāks par apvedceļu."
  Harvester: "Kombains"
  Hide: "Slēpt"
@@ -690,8 +691,6 @@ label:
  Tally: "Skaita"
  Text formatting: "Teksta formatēšana:"
  The cache is empty: "Kešatmiņa ir tukša."
- Total disk space: "Kopējā diska vieta:"
- Total disk usage: "Kopējais diska lietojums:"
  Total: "Kopā"
  Trigger a bypass: "Ieslēgt apvedceļu.\nJa vismaz viens paraksts jau ir saskaitīts, atņem vienu no saskaitīto parakstu skaita. Ieteicams, lai tiktu galā ar vienkāršiem viltus pozitīviem gadījumiem, ko var izraisīt noklusējuma paraksta faili."
  Unignore this: "Atignorēt šo"
@@ -863,8 +862,6 @@ response:
  Component successfully updated: "Komponents atjaunināšana izdevās."
  Configuration successfully updated: "Konfigurācija ir atjaunināta."
  Copied: "Kopēts"
- Directory successfully deleted: "Direktorija izdzēšana izdevās!"
- Directory successfully renamed: "Direktorija pārdēvēšana izdevās!"
  Don_t know what to do with the data after reading it: "Nezinu, ko darīt ar datiem pēc to izlasīšanas.\nApsveriet iespēju savienot to ar citu komandu. Paldies."
  Error at the upstream: "Kļūda augštecē!"
  Failed to access %s: "Neizdevās piekļūt "%s"!"
@@ -886,9 +883,7 @@ response:
  Failed to upload: "Neizdevās augšupielādēt!"
  File contains unexpected content: "Failā ir neparedzēts saturs!"
  File rejected: "Fails noraidīts"
- File successfully deleted: "Failu izdzēšana izdevās!"
  File successfully modified: "Failu modifikācija izdevās!"
- File successfully renamed: "Failu pārdēvēšana izdevās!"
  File successfully uploaded: "Failu augšupielāde izdevās!"
  Finished reading from %s: "Pabeigts lasījums no "%s"."
  Finished writing to %s: "Pabeidzu rakstīt uz "%s"."

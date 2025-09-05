@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Catalan language data for the front-end (last modified: 2025.08.28).
+# This file: Catalan language data for the front-end (last modified: 2025.09.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -57,7 +57,6 @@ Extended Description:
  Bad hosts blocker module: "Bloqueja els amfitrions utilitzats amb freqüència per spammers, pirates informàtics, i altres entitats nefastes."
  Bot user agents module: "Bloqueja els agents d'usuari associats amb robots no desitjats i activitats nefastes."
  Bypasses: "Els fitxers de bypass de signatura estàndard que s'inclouen normalment amb el paquet principal."
- Chart.js: "Permet que el front-end generi gràfics de donuts.<br />{{Links.Chart.js}} està disponible mitjançant la llicència {{Links.MIT}}."
  Cookie scanner module: "Ofereix algunes proteccions limitades contra les galetes perilloses."
  HTTP version checker module: "Permet bloquejar protocols específics i versions HTTP específiques mitjançant la configuració CIDRAM."
  IP-API module: "Aprofita l'API {{Links.IP-API}} per proporcionar una funció de cerca d'ASN i codi de país per a CIDRAM, que permet bloquejar o incloure a la llista blanca ASN i països mitjançant la configuració CIDRAM, i proporciona un mitjà per a la verificació de xarxes socials per verificar les sol·licituds de Facebook. (Si utilitzeu aquest mòdul, no haureu d'utilitzar el mòdul BGPView, ja que tenen el mateix propòsit)."
@@ -327,7 +326,6 @@ confirm:
  Action: "Esteu segur que voleu "%s"?"
  Delete: "Esteu segur que voleu suprimir "%s"?"
 field:
- %s File: "Fitxer %s"
  2FA code: "Codi 2FA"
  API key: "Clau API"
  Activate: "Activar"
@@ -361,6 +359,7 @@ field:
  Generate output as netmasks: "Generar sortida com a màscares de xarxa"
  Immediately: "Immediatament."
  Install: "Instal·leu"
+ Last modified: "Última modificació"
  Latest version: "Última versió"
  Log In: "Iniciar sessió"
  Macro: "Macro"
@@ -372,6 +371,7 @@ field:
  Password: "Contrasenya"
  Permissions: "Permisos"
  Preserve tags and comments: "Conserva les etiquetes i els comentaris"
+ Purpose: "Propòsit"
  Range (First Last): "Rang (El primer – L'últim)"
  Rename: "Canvia el nom"
  Repair all: "Repara-ho tot"
@@ -398,7 +398,9 @@ field:
  Your version: "El vostre versió"
  log_rotation_archive: "Primer arxiveu i, a continuació, suprimiu els fitxers de registre més antics, fins que ja no es superi el límit."
  log_rotation_delete: "Suprimeix els fitxers de registre més antics, fins que ja no es superi el límit."
- size: {"Total size": "Mida total:"}
+ size:
+  Size: "Mida"
+  Total size: "Mida total:"
 hint:
  This value can be found in the dashboard for your CAPTCHA service: "Aquest valor es pot trobar al tauler del vostre servei CAPTCHA."
 hints_asnlookup: "** Requereix la funcionalitat de cerca d'ASN (per exemple, mitjançant el mòdul IP-API o BGPView)."
@@ -559,9 +561,9 @@ label:
  Bandwidth: "Ample de banda utilitzat: %s – Ample de banda disponible: %s"
  Branch latest stable: "Branca darrera versió:"
  CAPTCHA attempts: "Intents de CAPTCHA"
- CIDRAM disk usage: "Ús del disc de CIDRAM:"
  CIDRAM version used: "Versió de CIDRAM utilitzada:"
  Cache data and temporary files: "Dades de memòria cau i fitxers temporals"
+ Cancel: "Cancel·la"
  Characters left: "Queden caràcters"
  Checkbox: "Casella de selecció"
  Checksum after: "Suma de control després"
@@ -605,7 +607,7 @@ label:
  False positive risk: "Risc fals positiu:"
  Fancy: "Luxós"
  Focus: "Focus:"
- Free disk space: "Espai lliure al disc:"
+
  Greylist the request: "Tracteu la sol·licitud com a la llista grisa.\nRestableix el nombre de signatures desencadenats, però continua processant la sol·licitud. Recomanat quan no voleu tractar la sol·licitud com a la llista blanca, però necessiteu alguna cosa més substancial que un bypass."
  Harvester: "Recol·lector"
  Hide: "Amagar"
@@ -684,8 +686,6 @@ label:
  Tally: "Recompte"
  Text formatting: "Format del text:"
  The cache is empty: "La memòria cau està buida."
- Total disk space: "Espai total en disc:"
- Total disk usage: "Ús total del disc:"
  Total: "Total"
  Trigger a bypass: "Desencadenar un bypass.\nDedueix una del nombre de signatures desencadenats, sempre que almenys una signatura ja s'hagi desencadenat. Recomanat per tractar amb falsos positius simples potencialment causats pels fitxers de signatura predeterminats."
  Unignore this: "Designora això"
@@ -857,8 +857,6 @@ response:
  Component successfully updated: "Component actualitzat amb èxit."
  Configuration successfully updated: "Configuració actualitzat amb èxit."
  Copied: "Copiat"
- Directory successfully deleted: "El directori s'ha suprimit amb èxit!"
- Directory successfully renamed: "El nom del directori ha canviat amb èxit!"
  Don_t know what to do with the data after reading it: "No sé què fer amb les dades després de llegir-les.\nPenseu en encadenar-lo a una altra ordre. Gràcies."
  Error at the upstream: "Error a la upstream!"
  Failed to access %s: "No s'ha pogut accedir a "%s"!"
@@ -880,9 +878,7 @@ response:
  Failed to upload: "La càrrega ha fallat!"
  File contains unexpected content: "El fitxer conté contingut inesperat!"
  File rejected: "Fitxer rebutjat"
- File successfully deleted: "Fitxer suprimit amb èxit!"
  File successfully modified: "Fitxer modificat amb èxit!"
- File successfully renamed: "Canviat el nom del fitxer amb èxit!"
  File successfully uploaded: "Fitxer carregat amb èxit!"
  Finished reading from %s: "S'ha acabat la lectura de "%s"."
  Finished writing to %s: "S'ha acabat d'escriure a "%s"."

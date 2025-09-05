@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2025.08.28).
+# This file: French language data for the front-end (last modified: 2025.09.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -65,9 +65,6 @@ Extended Description:
  Bad hosts blocker module: "Bloque les hôtes fréquemment utilisés par les spammeurs, les hackers et autres entités malveillantes."
  Bot user agents module: "Bloque les agents utilisateurs associés aux bots indésirables et aux activités malveillantes."
  Bypasses: "Les fichiers pour contourner les signatures standard qui sont normalement inclus dans le paquet principal."
- Chart.js:
-  fr-FR: "Permet à l'interface frontale de générer des diagrammes à secteurs.<br />{{Links.Chart.js}} est disponible via la licence {{Links.MIT}}."
-  fr-CA: "Permet à l'interface frontale de générer des diagrammes à secteurs.<br />{{Links.Chart.js}} est disponible en vertu de la licence {{Links.MIT}}."
  Cookie scanner module: "Fournit quelques protections limitées contre les cookies dangereux."
  HTTP version checker module: "Permet de bloquer des protocoles spécifiques et des versions HTTP via la configuration CIDRAM."
  IP-API module: "Exploite l'API {{Links.IP-API}} pour fournir la possibilité de rechercher des codes de pays et des ASN pour CIDRAM, permettre le blocage ou la mise en liste blanche des ASN et des pays via la configuration CIDRAM, et fournir un moyen de vérification des réseaux sociaux pour vérifier les requêtes de Facebook. (Si vous utilisez ce module, vous n'aurez pas besoin d'utiliser le module BGPView, car ils ont le même objectif)."
@@ -369,7 +366,6 @@ confirm:
  Action: "Êtes-vous sûr de vouloir «\_%s\_»\_?"
  Delete: "Êtes-vous sûr de vouloir supprimer «\_%s\_»\_?"
 field:
- %s File: "%s Fichier"
  2FA code: "Code 2FA"
  API key: "Clé API"
  Activate: "Activer"
@@ -403,6 +399,7 @@ field:
  Generate output as netmasks: "Générer une sortie sous forme de masques de réseau"
  Immediately: "Immédiatement."
  Install: "Installer"
+ Last modified: "Dernière modification"
  Latest version: "Dernière version"
  Log In: "Connecter"
  Macro: "Macro"
@@ -414,6 +411,7 @@ field:
  Password: "Mot de Passe"
  Permissions: "Autorisations"
  Preserve tags and comments: "Préserver les tags et les commentaires"
+ Purpose: {"fr-FR": "But", "fr-CA": "Objectif"}
  Range (First Last): "Gamma (Première – Final)"
  Rename: "Renommer"
  Repair all: "Réparer tous"
@@ -441,6 +439,7 @@ field:
  log_rotation_archive: "Tout d'abord archiver, puis supprimez les fichiers journaux les plus anciens, jusqu'à ce que la limite ne soit plus dépassé."
  log_rotation_delete: "Supprimez les fichiers journaux les plus anciens, jusqu'à ce que la limite ne soit plus dépassé."
  size:
+  Size: "Taille"
   Total size: "Taille totale\_:"
   GB: "Go"
   KB: "Ko"
@@ -619,9 +618,9 @@ label:
  Bandwidth: "Bande passante utilisée\_: %s – Bande passante disponible\_: %s"
  Branch latest stable: "Dernier stable de branche\_:"
  CAPTCHA attempts: "Tentatives de CAPTCHA"
- CIDRAM disk usage: "Utilisation du disque par CIDRAM\_:"
  CIDRAM version used: "Version CIDRAM utilisée\_:"
  Cache data and temporary files: "Données cache et fichiers temporaires"
+ Cancel: "Annuler"
  Characters left: "Caractères restants"
  Checkbox: "Case à cocher"
  Checksum after: "Somme de contrôle après"
@@ -665,7 +664,7 @@ label:
  False positive risk: "Risque de faux positifs\_:"
  Fancy: "Formaté"
  Focus: "Objectif\_:"
- Free disk space: "Espace disque libre\_:"
+
  Greylist the request: "Mettez la requête en la liste grise.\nRéinitialise le nombre de signatures déclenchées, mais poursuit le traitement de la requête. Recommandé quand vous ne souhaitez pas ajouter la requête à la liste blanche, mais que vous avez besoin de quelque chose de plus substantiel que de déclencher un contournement."
  Harvester: "Récolteur"
  Hide: "Cacher"
@@ -748,8 +747,6 @@ label:
  Tally: "Compte"
  Text formatting: "Formatage du texte\_:"
  The cache is empty: "Le cache est vide."
- Total disk space: "Espace disque total\_:"
- Total disk usage: "Utilisation du disque totale\_:"
  Total: "Total"
  Trigger a bypass: "Déclenchez un contournement.\nSoustrait un compte du nombre de signatures déclenchées, tant qu'au moins une signature a déjà été déclenchée. Recommandé pour traiter les faux positifs simples potentiellement causés par les fichiers de signature défaut."
  Unignore this: "Ne pas ignorez ceci"
@@ -929,8 +926,6 @@ response:
  Component successfully updated: "Composant mise à jour avec succès."
  Configuration successfully updated: "Configuration mis à jour avec succès."
  Copied: "Copié"
- Directory successfully deleted: "Répertoire supprimé avec succès\_!"
- Directory successfully renamed: "Répertoire renommé avec succès\_!"
  Don_t know what to do with the data after reading it: "Je ne sais pas quoi faire des données après les avoir lues.\nConsidérez de l'enchaîner à une autre commande. Merci."
  Error at the upstream: "Erreur en amont\_!"
  Failed to access %s: "Impossible d'accéder à «\_%s\_»\_!"
@@ -952,9 +947,7 @@ response:
  Failed to upload: {"fr-FR": "Échec du téléchargement\_!", "fr-CA": "Échec du téléversement\_!"}
  File contains unexpected content: "Le fichier contient des contenus inattendus\_!"
  File rejected: "Fichier rejeté"
- File successfully deleted: "Fichier supprimé avec succès\_!"
  File successfully modified: "Fichier modifié avec succès\_!"
- File successfully renamed: "Fichier renommé avec succès\_!"
  File successfully uploaded: {"fr-FR": "Fichier téléchargé avec succès\_!", "fr-FR": "Fichier téléversé avec succès\_!"}
  Finished reading from %s: "«\_%s\_» a fini d'être lu."
  Finished writing to %s: "L'écriture sur «\_%s\_» s'est terminé."

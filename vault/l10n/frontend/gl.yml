@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Galician language data for the front-end (last modified: 2025.08.28).
+# This file: Galician language data for the front-end (last modified: 2025.09.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -57,7 +57,6 @@ Extended Description:
  Bad hosts blocker module: "Bloquea os hosts usados con frecuencia por spammers, hackers, e outras entidades nefastas."
  Bot user agents module: "Bloquea os axentes de usuario asociados con bots non desexados e actividade nefasta."
  Bypasses: "Os ficheiros de bypass de sinatura estándar que se inclúen normalmente co paquete principal."
- Chart.js: "Permite que o front-end xere gráficos de rosquillas.<br />{{Links.Chart.js}} está dispoñible a través da licenza {{Links.MIT}}."
  Cookie scanner module: "Ofrece algunhas proteccións limitadas contra cookies perigosas."
  HTTP version checker module: "Permite bloquear protocolos específicos e versións HTTP específicas mediante a configuración CIDRAM."
  IP-API module: "Aproveita a API {{Links.IP-API}} para proporcionar unha función de busca de códigos de país e ASN para CIDRAM, permitindo que ASNs e países sexan bloqueados ou incluídos na lista branca mediante a configuración CIDRAM, e proporcionando un medio para verificar as redes sociais para verificar as solicitudes de Facebook. (Se usa este módulo, non necesitará utilizar o módulo BGPView, xa que serven para o mesmo propósito)."
@@ -327,7 +326,6 @@ confirm:
  Action: "Estás seguro de que queres "%s"?"
  Delete: "Estás seguro de que queres eliminar "%s"?"
 field:
- %s File: "Ficheiro %s"
  2FA code: "Código 2FA"
  API key: "Chave API"
  Activate: "Activar"
@@ -361,6 +359,7 @@ field:
  Generate output as netmasks: "Xerar saída como máscaras de rede"
  Immediately: "Inmediatamente."
  Install: "Instalar"
+ Last modified: "Última modificación"
  Latest version: "Última versión"
  Log In: "Acceder"
  Macro: "Macro"
@@ -372,6 +371,7 @@ field:
  Password: "Contrasinal"
  Permissions: "Permisos"
  Preserve tags and comments: "Conserva etiquetas e comentarios"
+ Purpose: "Propósito"
  Range (First Last): "Rango (Primeiro – Último)"
  Rename: "Cambiar o nome"
  Repair all: "Repara todo"
@@ -398,7 +398,9 @@ field:
  Your version: "O teu versión"
  log_rotation_archive: "Primeiro arquiva, e despois elimina os ficheiros de rexistro máis antigos, ata que non se supere o límite."
  log_rotation_delete: "Elimina os ficheiros de rexistro máis antigos, ata que non se supere o límite."
- size: {"Total size": "Tamaño total:"}
+ size:
+  Size: "Tamaño"
+  Total size: "Tamaño total:"
 hint:
  This value can be found in the dashboard for your CAPTCHA service: "Este valor pódese atopar no panel do teu servizo CAPTCHA."
 hints_asnlookup: "** Require a funcionalidade de busca de ASN (por exemplo, a través do módulo IP-API ou BGPView)."
@@ -561,9 +563,9 @@ label:
  Bandwidth: "Ancho de banda utilizado: %s – Ancho de banda dispoñible: %s"
  Branch latest stable: "Rama última versión:"
  CAPTCHA attempts: "Intentos de CAPTCHA"
- CIDRAM disk usage: "Uso do disco do CIDRAM:"
  CIDRAM version used: "Versión de CIDRAM utilizada:"
  Cache data and temporary files: "Cache de datos e ficheiros temporais"
+ Cancel: "Cancelar"
  Characters left: "Quedan caracteres"
  Checkbox: "Caixa de verificación"
  Checksum after: "Suma de verificación despois"
@@ -607,7 +609,7 @@ label:
  False positive risk: "Risco falso positivo:"
  Fancy: "Fantasía"
  Focus: "Foco:"
- Free disk space: "Espazo libre no disco:"
+
  Greylist the request: "Trata a solicitude como na lista gris.\nRestablece o número de sinaturas desencadeadas, pero continúa procesando a solicitude. Recomendado cando non queres tratar a solicitude como na lista branca, pero necesitas algo máis substancial que un bypass."
  Harvester: "Recolector"
  Hide: "Ocultar"
@@ -686,8 +688,6 @@ label:
  Tally: "Recuento"
  Text formatting: "Formato do texto:"
  The cache is empty: "A caché está baleira."
- Total disk space: "Espazo total en disco:"
- Total disk usage: "Uso total do disco:"
  Total: "Total"
  Trigger a bypass: "Desencadear un bypass.\nDesconta unha do número de sinaturas desencadeadas, sempre que polo menos unha sinatura xa se desencadea. Recomendado para tratar con falsos positivos simples que poden ser causados polos ficheiros de sinatura predeterminados."
  Unignore this: "Designora isto"
@@ -859,8 +859,6 @@ response:
  Component successfully updated: "Compoñente actualizouse con éxito."
  Configuration successfully updated: "Configuración actualizouse con éxito."
  Copied: "Copiouse"
- Directory successfully deleted: "Eliminouse o directorio con éxito!"
- Directory successfully renamed: "O nome do directorio cambiou con éxito!"
  Don_t know what to do with the data after reading it: "Non sei que facer cos datos despois de lelos.\nConsidera encadealo a outro comando. Grazas."
  Error at the upstream: "Erro na upstream!"
  Failed to access %s: "Non se puido acceder a "%s"!"
@@ -882,9 +880,7 @@ response:
  Failed to upload: "Fallou a carga!"
  File contains unexpected content: "O ficheiro contén contido inesperado!"
  File rejected: "Ficheiro rexeitado"
- File successfully deleted: "O ficheiro eliminouse con éxito!"
  File successfully modified: "O ficheiro modificouse con éxito!"
- File successfully renamed: "Cambiouse o nome do ficheiro con éxito!"
  File successfully uploaded: "O ficheiro cargouse con éxito!"
  Finished reading from %s: "Rematou a lectura de "%s"."
  Finished writing to %s: "Rematou de escribir en "%s"."

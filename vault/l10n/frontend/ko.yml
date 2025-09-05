@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2025.08.28).
+# This file: Korean language data for the front-end (last modified: 2025.09.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -57,7 +57,6 @@ Extended Description:
  Bad hosts blocker module: "스패머, 해커 및 기타 사기꾼이 자주 사용하는 호스트를 차단합니다."
  Bot user agents module: "원치 않는 봇과 관련없는 사용자 에이전트를 차단합니다."
  Bypasses: "기본 서명 우회 일반적으로 기본 패키지에 포함되어 있습니다."
- Chart.js: "프런트 엔드에서 원형 차트를 생성 할 수 있습니다.<br />{{Links.Chart.js}}는 {{Links.MIT}} 라이선스를 통해 사용 가능합니다."
  Cookie scanner module: "위험한 쿠키에 대해 제한된 보호 기능을 제공합니다."
  HTTP version checker module: "CIDRAM 구성을 통해 특정 프로토콜 및 HTTP 버전을 차단할 수 있습니다."
  IP-API module: "{{Links.IP-API}} API를 활용하여 CIDRAM에 대한 ASN 및 국가 코드 조회 기능 제공. CIDRAM 구성을 통해 ASN 및 국가를 차단 또는 허용 할 수 있습니다. Facebook 요청을 확인하기 위한 소셜 네트워킹 확인 수단 제공. (이 모듈을 사용하는 경우, 동일한 용도로 사용되므로, BGPView 모듈을 사용할 필요가 없습니다)."
@@ -327,7 +326,6 @@ confirm:
  Action: ""%s"하시겠습니까?"
  Delete: ""%s"를 삭제하시겠습니까?"
 field:
- %s File: "%s 파일"
  2FA code: "2FA 코드"
  API key: "API 키"
  Activate: "활성화"
@@ -361,6 +359,7 @@ field:
  Generate output as netmasks: "넷 마스크 사용하여 출력 생성"
  Immediately: "즉시."
  Install: "설치"
+ Last modified: "마지막 수정"
  Latest version: "최신 버전"
  Log In: "로그인"
  Macro: "매크로"
@@ -372,6 +371,7 @@ field:
  Password: "비밀번호"
  Permissions: "권한"
  Preserve tags and comments: "태그 및 주석 유지"
+ Purpose: "목적"
  Range (First Last): "범위 (처음 – 마지막)"
  Rename: "이름을 변경하려면"
  Repair all: "모두 수리"
@@ -399,6 +399,7 @@ field:
  log_rotation_archive: "제한이 더 이상 초과되지 않을 때까지, 가장 오래된 로그 파일을 보관 한 다음 삭제하십시오."
  log_rotation_delete: "제한이 더 이상 초과되지 않을 때까지, 가장 오래된 로그 파일을 삭제하십시오."
  size:
+  Size: "크기"
   Total size: "전체 크기\_:"
   bytes: "바이트"
 hint:
@@ -558,9 +559,9 @@ label:
  Bandwidth: "사용된 대역폭\_: %s – 사용 가능한 대역폭\_: %s"
  Branch latest stable: "분기 최신 안정\_:"
  CAPTCHA attempts: "CAPTCHA 완료 시도"
- CIDRAM disk usage: "CIDRAM 디스크 사용\_:"
  CIDRAM version used: "사용된 CIDRAM 버전\_:"
  Cache data and temporary files: "캐시 데이터 및 임시 파일"
+ Cancel: "취소"
  Characters left: "남은 문자 수"
  Checkbox: "체크 박스"
  Checksum after: "이후 체크섬"
@@ -600,7 +601,7 @@ label:
  False positive risk: "거짓 양성 위험\_:"
  Fancy: "공상"
  Focus: "초점\_:"
- Free disk space: "사용 가능한 디스크 공간\_:"
+
  Greylist the request: "요청을 그레이리스트에합니다.\n트리거 된 서명 수를 재설정하지만, 요청 처리를 계속합니다. 요청을 화이트리스트에하고 싶지 않지만, 우회를 트리거 하는 것보다 더 실질적인 것이 필요할 때 권장됩니다."
  Harvester: "수집기"
  Hide: "숨기다"
@@ -679,8 +680,6 @@ label:
  Tally: "집계"
  Text formatting: "텍스트 서식 지정\_:"
  The cache is empty: "캐시가 비어 있습니다."
- Total disk space: "총 디스크 공간\_:"
- Total disk usage: "총 디스크 사용\_:"
  Total: "합계"
  Trigger a bypass: "바이패스를 트리거합니다.\n하나 이상의 서명이 이미 트리거 된 경우 트리거 된 서명 수에서 하나의 카운트를 뺍니다. 기본 서명 파일로 인해 발생할 수 있는 단순 오탄지 처리에 권장됩니다."
  Unignore this: "이것을 무시하지 마라"
@@ -852,8 +851,6 @@ response:
  Component successfully updated: "구성 요소의 업데이트에 성공했습니다."
  Configuration successfully updated: "구성 업데이트가 성공했습니다."
  Copied: "복사되었습니다"
- Directory successfully deleted: "디렉토리가 성공적으로 삭제되었습니다!"
- Directory successfully renamed: "디렉토리의 이름이 변경되었습니다!"
  Don_t know what to do with the data after reading it: "데이터를 읽은 후 데이터로 무엇을 해야 할지 모릅니다.\n다른 명령에 연결하는 것을 고려하십시오. 감사해요."
  Error at the upstream: "업스트림에 오류가 발생했습니다!"
  Failed to access %s: ""%s"에 액세스하지 못했습니다!"
@@ -875,9 +872,7 @@ response:
  Failed to upload: "업로드에 실패했습니다!"
  File contains unexpected content: "파일에 예상치 못한 내용이 포함되어 있습니다!"
  File rejected: "파일이 거부되었습니다"
- File successfully deleted: "파일 삭제가 성공했습니다!"
  File successfully modified: "파일이 성공적으로 변경되었습니다!"
- File successfully renamed: "파일 이름이 변경되었습니다!"
  File successfully uploaded: "파일이 성공적으로 업로드되었습니다!"
  Finished reading from %s: ""%s"에서 읽기를 마쳤습니다."
  Finished writing to %s: ""%s"에 쓰기를 마쳤습니다."

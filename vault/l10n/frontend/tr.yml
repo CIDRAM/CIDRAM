@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2025.08.28).
+# This file: Turkish language data for the front-end (last modified: 2025.09.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -57,7 +57,6 @@ Extended Description:
  Bad hosts blocker module: "Spam gönderenler, bilgisayar korsanları ve diğer haince varlıklar tarafından sıkça kullanılan ana bilgisayarları engeller."
  Bot user agents module: "İstenmeyen botlar ve nefret dolu faaliyetlerle ilişkili kullanıcı aracılarını engeller."
  Bypasses: "Varsayılan imza bypass'lar, normalde ana paketle birlikte verilir."
- Chart.js: "Ön uçların pasta grafikler oluşturmasını sağlar.<br />{{Links.Chart.js}}, {{Links.MIT}} lisansı aracılığıyla kullanılabilir."
  Cookie scanner module: "Tehlikeli çerezlere karşı bazı sınırlı koruma sağlar."
  HTTP version checker module: "CIDRAM yapılandırması aracılığıyla belirli protokolleri ve HTTP sürümlerini engellemeyi mümkün kılar."
  IP-API module: "CIDRAM için ASN ve ülke kodu arama olanağı sağlamak için {{Links.IP-API}} API'den yararlanır, ASN'lerin ve ülkelerin CIDRAM yapılandırması aracılığıyla engellenmesini veya beyaz listeye eklenmesini sağlamak, ve Facebook isteklerini doğrulamak için sosyal ağ doğrulaması için bir araç sağlamak. (Bu modülü kullanırsanız, aynı amaca hizmet ettikleri için BGPView modülünü kullanmanıza gerek kalmaz)."
@@ -327,7 +326,6 @@ confirm:
  Action: ""%s" istediğinizden emin misiniz?"
  Delete: ""%s"yı silmek istediğinizden emin misiniz?"
 field:
- %s File: "%s Dosya"
  2FA code: "2FA kodu"
  API key: "API anahtarı"
  Activate: "Etkinleştir"
@@ -361,6 +359,7 @@ field:
  Generate output as netmasks: "Ağ maskeler olarak çıktı üretmek"
  Immediately: "Hemen."
  Install: "Yükle"
+ Last modified: "Son değiştirilme tarihi"
  Latest version: "En son sürüm"
  Log In: "Oturum aç"
  Macro: "Makro"
@@ -372,6 +371,7 @@ field:
  Password: "Parola"
  Permissions: "İzinler"
  Preserve tags and comments: "Etiketleri ve yorumları koru"
+ Purpose: "Amaç"
  Range (First Last): "Aralık (İlk – Son)"
  Rename: "Adını değiştirmek"
  Repair all: "Tümünü tamir"
@@ -399,6 +399,7 @@ field:
  log_rotation_archive: "Öncelikle dosyayı arşivleyin, ve sonra en eski log dosyalarını sil, sınır artık aşılmamış kadar."
  log_rotation_delete: "En eski log dosyalarını sil, sınır artık aşılmamış kadar."
  size:
+  Size: "Boyut"
   Total size: "Toplam boyut:"
   bytes: "bayt"
 hint:
@@ -561,9 +562,9 @@ label:
  Bandwidth: "Kullanılan bant genişliği: %s – Mevcut bant genişliği: %s"
  Branch latest stable: "Branşı en yeni kararlı:"
  CAPTCHA attempts: "CAPTCHA denemeler"
- CIDRAM disk usage: "CIDRAM disk kullanımı:"
  CIDRAM version used: "Kullanılan CIDRAM sürümü:"
  Cache data and temporary files: "Önbellek verileri ve geçici dosyalar"
+ Cancel: "İptal etmek"
  Characters left: "Kalan karakterler"
  Checkbox: "Onay kutusu"
  Checksum after: "Sonra sağlama toplamı"
@@ -607,7 +608,7 @@ label:
  False positive risk: "Yanlış pozitif risk:"
  Fancy: "Süslü"
  Focus: "Odak:"
- Free disk space: "Boş disk alanı:"
+
  Greylist the request: "İsteği gri listeye alın.\nTetiklenen imzaların sayısını sıfırlar, ancak isteği işlemeye devam eder. İsteği beyaz listeye eklemek istemediğiniz, ancak bir bypass tetiklemekten daha önemli bir şeye ihtiyacınız olduğunda önerilir."
  Harvester: "Toplayıcı"
  Hide: "Saklamak"
@@ -686,8 +687,6 @@ label:
  Tally: "Taksir"
  Text formatting: "Metin biçimlendirme:"
  The cache is empty: "Önbellek boş."
- Total disk space: "Toplam disk alanı:"
- Total disk usage: "Toplam disk kullanımı:"
  Total: "Toplam"
  Trigger a bypass: "Bir bypass tetikleyin.\nEn az bir imza zaten tetiklenmiş olduğu sürece, tetiklenen imza sayısından bir sayı çıkarır. Varsayılan imza dosyalarının neden olabileceği basit yanlış pozitiflerle başa çıkmak için önerilir."
  Unignore this: "Bunu görmezden gelme"
@@ -859,8 +858,6 @@ response:
  Component successfully updated: "Bileşen başarıyla güncellendi."
  Configuration successfully updated: "Yapılandırma başarıyla güncellendi."
  Copied: "Kopyalanmıştır"
- Directory successfully deleted: "Dizin başarıyla silindi!"
- Directory successfully renamed: "Dizin başarıyla yeniden adlandırıldı!"
  Don_t know what to do with the data after reading it: "Verileri okuduktan sonra ne yapacağımı bilmiyorum.\nBaşka bir komuta zincirlemeyi düşünün. Teşekkürler."
  Error at the upstream: "Kaynakta hata!"
  Failed to access %s: ""%s" erişilemedi!"
@@ -882,9 +879,7 @@ response:
  Failed to upload: "Yüklenemedi!"
  File contains unexpected content: "Dosya beklenmedik içerik barındırıyor!"
  File rejected: "Dosya reddedildi"
- File successfully deleted: "Dosya başarıyla silindi!"
  File successfully modified: "Dosya başarıyla değiştirildi!"
- File successfully renamed: "Dosya başarıyla yeniden adlandırıldı!"
  File successfully uploaded: "Dosya başarıyla yüklendi!"
  Finished reading from %s: ""%s" den okumayı bitirdim."
  Finished writing to %s: "%s'e yazmayı bitirdim."

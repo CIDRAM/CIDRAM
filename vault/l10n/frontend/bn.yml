@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data for the front-end (last modified: 2025.08.28).
+# This file: Bangla language data for the front-end (last modified: 2025.09.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -57,7 +57,6 @@ Extended Description:
  Bad hosts blocker module: "ব্লক হোস্ট ঘন ঘন স্প্যামার, হ্যাকার, এবং অন্যান্য নৃশংস সত্ত্বা দ্বারা ব্যবহৃত।"
  Bot user agents module: "অবাঞ্ছিত বট এবং নৃশংস কার্যকলাপের সাথে যুক্ত ব্যবহারকারী এজেন্টগুলিকে ব্লক করে।"
  Bypasses: "ডিফল্ট স্বাক্ষর বাইপাস ফাইল সাধারণত প্রধান প্যাকেজ সহ অন্তর্ভুক্ত।"
- Chart.js: "পাওয়ার চার্ট তৈরি করার জন্য সামনে-শেষ সক্ষম করে।<br />{{Links.Chart.js}} {{Links.MIT}} লাইসেন্সের মাধ্যমে উপলব্ধ।"
  Cookie scanner module: "বিপজ্জনক কুকিজগুলির বিরুদ্ধে কিছু সীমিত সুরক্ষা প্রদান করে।"
  HTTP version checker module: "CIDRAM কনফিগারেশনের মাধ্যমে নির্দিষ্ট প্রোটোকল এবং HTTP সংস্করণগুলি ব্লক করা সম্ভব করে তোলে।"
  IP-API module: "{{Links.IP-API}}, CIDRAM জন্য একটি ASN এবং দেশ কোড পরিষেবা সরবরাহ করে, CIDRAM কনফিগারেশনের মাধ্যমে ASN এবং দেশগুলিকে অবরুদ্ধ বা শ্বেত তালিকাভুক্ত করতে সক্ষম করে, এবং Facebook অনুরোধগুলি যাচাই করার জন্য একটি উপায় সরবরাহ করে। (আপনি যদি এই মডিউলটি ব্যবহার করেন, তাহলে আপনাকে BGPView মডিউল ব্যবহার করতে হবে না, কারণ তারা একই উদ্দেশ্যে কাজ করে)।"
@@ -327,7 +326,6 @@ confirm:
  Action: "আপনি কি "%s" চান?"
  Delete: "আপনি কি "%s" মুছতে চান?"
 field:
- %s File: "%s ফাইল"
  2FA code: "2FA কোড"
  API key: "API কী"
  Activate: "সক্রিয় করা"
@@ -361,6 +359,7 @@ field:
  Generate output as netmasks: "নেটমাস্ক নোটেশন ব্যবহার করে আউটপুট তৈরি করুন"
  Immediately: "অবিলম্বে।"
  Install: "ইনস্টল করুন"
+ Last modified: "সর্বশেষ পরিবর্তন করা হয়েছে"
  Latest version: "সবচেয়ে সাম্প্রতিক সংস্করণ"
  Log In: "লগ ইন করুন"
  Macro: "ম্যাক্রো"
@@ -372,6 +371,7 @@ field:
  Password: "পাসওয়ার্ড"
  Permissions: "অনুমতিসমূহ"
  Preserve tags and comments: "ট্যাগ এবং মন্তব্য সংরক্ষণ করুন"
+ Purpose: "উদ্দেশ্য"
  Range (First Last): "রেঞ্জ (প্রথম – চূড়ান্ত)"
  Rename: "পুনঃনামকরণ"
  Repair all: "সব মেরামত"
@@ -399,6 +399,7 @@ field:
  log_rotation_archive: "প্রথমত, লগ ফাইলগুলিকে আর্কাইভ করুন, এবং তারপর, সীমা অতিক্রম না হওয়া পর্যন্ত, প্রাচীনতম লগ ফাইলগুলি মুছুন।"
  log_rotation_delete: "সীমা অতিক্রম না হওয়া পর্যন্ত, প্রাচীনতম লগ ফাইলগুলি মুছুন।"
  size:
+  Size: "আকার"
   Total size: "মোট আকার:"
   bytes: "বাইট"
 hint:
@@ -559,9 +560,9 @@ label:
  Bandwidth: "ব্যান্ডউইথ ব্যবহৃত: %s – ব্যান্ডউইথ উপলব্ধ: %s"
  Branch latest stable: "শাখা সর্বশেষ স্থিতিশীল:"
  CAPTCHA attempts: "ক্যাপচা প্রচেষ্টা"
- CIDRAM disk usage: "CIDRAM ডিস্ক ব্যবহার:"
  CIDRAM version used: "CIDRAM সংস্করণ ব্যবহৃত:"
  Cache data and temporary files: "ক্যাশ ডেটা এবং অস্থায়ী ফাইল"
+ Cancel: "বাতিল করুন"
  Characters left: "অক্ষর বাকি"
  Checkbox: "চেকবাক্স"
  Checksum after: "চেকসাম পরে"
@@ -601,7 +602,7 @@ label:
  False positive risk: "ঝুঁকিতে ইতিবাচক মিথ্যা:"
  Fancy: "অভিনব"
  Focus: "ফোকাস:"
- Free disk space: "উপলব্ধ ডিস্ক স্থান:"
+
  Greylist the request: "অনুরোধটি ধূসরা তালিকাভুক্ত করুন।\nট্রিগারকৃত স্বাক্ষরের সংখ্যা পুনরায় সেট করে, কিন্তু অনুরোধ প্রক্রিয়াকরণ চালিয়ে যায়। আপনি যখন অনুরোধটি সাদা তালিকাভুক্ত করতে চান না তখন প্রস্তাবিত, কিন্তু একটি বাইপাসের চেয়ে আরও উল্লেখযোগ্য কিছু প্রয়োজন৷।"
  Harvester: "হারভেস্টার"
  Hide: "লুকান"
@@ -680,8 +681,6 @@ label:
  Tally: "তালি"
  Text formatting: "পাঠ্য বিন্যাস:"
  The cache is empty: "ক্যাশ খালি আছে।"
- Total disk space: "মোট ডিস্ক স্থান:"
- Total disk usage: "মোট ডিস্ক ব্যবহার:"
  Total: "মোট"
  Trigger a bypass: "একটি বাইপাস ট্রিগার করুন।\nযদি অন্তত একটি স্বাক্ষর ইতিমধ্যেই ট্রিগার হয়ে থাকে, তাহলে ট্রিগার করা স্বাক্ষরের সংখ্যা থেকে একটি বিয়োগ করে। সম্ভাব্য ডিফল্ট স্বাক্ষর ফাইল দ্বারা সৃষ্ট সাধারণ মিথ্যা ইতিবাচক মোকাবেলা করার জন্য প্রস্তাবিত।"
  Unignore this: "এই উপেক্ষা করুন না"
@@ -853,8 +852,6 @@ response:
  Component successfully updated: "কম্পোনেন্ট সফলভাবে আপডেট।"
  Configuration successfully updated: "কনফিগারেশন সফলভাবে আপডেট করা হয়েছে।"
  Copied: "কপি করা হয়েছে"
- Directory successfully deleted: "ডিরেক্টরি সফলভাবে মুছে ফেলা!"
- Directory successfully renamed: "ডিরেক্টরি সফলভাবে পুনরায় নামকরণ করা হয়েছে!"
  Don_t know what to do with the data after reading it: "এটি পড়ার পরে ডেটা নিয়ে কী করবেন তা জানেন না।\nএটিকে অন্য কমান্ডে চেইন করার কথা বিবেচনা করুন। ধন্যবাদ।"
  Error at the upstream: "আপস্ট্রিম এ ত্রুটি!"
  Failed to access %s: ""%s" অ্যাক্সেস করতে ব্যর্থ হয়েছে!"
@@ -876,9 +873,7 @@ response:
  Failed to upload: "আপলোড করতে ব্যর্থ হয়েছে!"
  File contains unexpected content: "ফাইলটিতে অপ্রত্যাশিত সামগ্রী রয়েছে!"
  File rejected: "ফাইল প্রত্যাখ্যাত"
- File successfully deleted: "ফাইল সফলভাবে মোছা হয়েছে!"
  File successfully modified: "ফাইল সফলভাবে সম্পাদিত!"
- File successfully renamed: "ফাইল সফলভাবে পুনরায় নামকরণ করা হয়েছে!"
  File successfully uploaded: "ফাইল সফলভাবে আপলোড করা হয়েছে!"
  Finished reading from %s: ""%s" থেকে পড়া শেষ।"
  Finished writing to %s: ""%s" লেখা শেষ।"

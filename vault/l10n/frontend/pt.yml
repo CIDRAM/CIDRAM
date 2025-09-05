@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2025.08.28).
+# This file: Portuguese language data for the front-end (last modified: 2025.09.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -63,7 +63,6 @@ Extended Description:
   pt-BR: "Bloqueia os agentes do usuário associados a bots indesejados e atividades nefastas."
   pt-PT: "Bloqueia os agentes do utilizador associados a bots indesejados e atividades nefastas."
  Bypasses: "Os arquivos para bypass das assinaturas padrão normalmente incluído com o pacote principal."
- Chart.js: "Permite que o front-end gere gráficos de pizza.<br />{{Links.Chart.js}} está disponível através da licença {{Links.MIT}}."
  Cookie scanner module: "Fornece algumas proteções limitadas contra cookies perigosos."
  HTTP version checker module: "Possibilita o bloqueio de protocolos específicos e versões HTTP por meio da configuração CIDRAM."
  IP-API module:
@@ -433,7 +432,6 @@ confirm:
  Action: "Você tem certeza de que deseja "%s"?"
  Delete: "Você tem certeza de que deseja deletar "%s"?"
 field:
- %s File: "%s Arquivo"
  2FA code: "Código 2FA"
  API key: "Chave de API"
  Activate: "Ativar"
@@ -467,6 +465,7 @@ field:
  Generate output as netmasks: "Gerar saída como máscaras de rede"
  Immediately: "Imediatamente."
  Install: "Instalar"
+ Last modified: "Última modificação"
  Latest version: "Última versão"
  Log In: "Entrar"
  Macro: "Macro"
@@ -478,6 +477,7 @@ field:
  Password: "Senha"
  Permissions: "Permissões"
  Preserve tags and comments: "Preservar tags e comentários"
+ Purpose: "Propósito"
  Range (First Last): "Alcance (Primeiro – Final)"
  Rename: "Renomear"
  Repair all: "Reparar tudo"
@@ -508,7 +508,9 @@ field:
  Your version: {"pt-BR": "Sua versão", "pt-PT": "A sua versão"}
  log_rotation_archive: "Primeiramente arquivar, e então deletar os arquivos de log mais antigos, até o limite não seja mais excedido."
  log_rotation_delete: "Deletar os arquivos de log mais antigos, até o limite não seja mais excedido."
- size: {"Total size": "Tamanho total:"}
+ size:
+  Size: "Tamanho"
+  Total size: "Tamanho total:"
 hint:
  This value can be found in the dashboard for your CAPTCHA service: "Este valor pode ser encontrado no painel do seu serviço CAPTCHA."
 hints_asnlookup: "** Requer funcionalidade de pesquisa ASN (por exemplo, através do módulo IP-API ou BGPView)."
@@ -707,9 +709,9 @@ label:
  Bandwidth: "Largura de banda usada: %s – Largura de banda disponível: %s"
  Branch latest stable: "Mais novo de estável de branch:"
  CAPTCHA attempts: "CAPTCHA tentativas"
- CIDRAM disk usage: "Uso do disco pelo CIDRAM:"
  CIDRAM version used: "Versão do CIDRAM usada:"
  Cache data and temporary files: "Dados de cache e arquivos temporários"
+ Cancel: "Cancelar"
  Characters left: "Caracteres restantes"
  Checkbox: "Caixa de seleção"
  Checksum after: "Checksum após"
@@ -753,7 +755,7 @@ label:
  False positive risk: "Risco de falsos positivos:"
  Fancy: "Chique"
  Focus: "Foco:"
- Free disk space: "Espaço livre no disco:"
+
  Greylist the request: "Trate a solicitação como na lista cinza.\nRedefine o número de assinaturas desencadeadas, mas continua processando a solicitação. Recomendado quando você não deseja tratar a solicitação como na lista branca, mas precisa de algo mais substancial do que desencadear um bypass."
  Harvester: "Coletor"
  Hide: "Ocultar"
@@ -840,8 +842,6 @@ label:
  Tally: "Contagem"
  Text formatting: "Formatação de texto:"
  The cache is empty: "O cache está vazio."
- Total disk space: "Espaço total no disco:"
- Total disk usage: "Uso total do disco:"
  Total: "Total"
  Trigger a bypass: "Desencadear um bypass.\nSubtrai uma contagem do número de assinaturas desencadeadas, desde que pelo menos uma assinatura já tenha sido desencadeada. Recomendado para lidar com falsos positivos simples potencialmente causados pelos arquivos de assinatura padrão."
  Unignore this: "Não ignore isso"
@@ -1033,8 +1033,6 @@ response:
  Component successfully updated: "Componente atualizado com sucesso."
  Configuration successfully updated: "Configuração atualizada com sucesso."
  Copied: "Copiado"
- Directory successfully deleted: "Diretório deletado com sucesso!"
- Directory successfully renamed: "Diretório renomeado com sucesso!"
  Don_t know what to do with the data after reading it: "Não sei o que fazer com os dados depois de lê-los.\nConsidere encadeá-lo a outro comando. Obrigado."
  Error at the upstream: "Erro no upstream!"
  Failed to access %s: {"pt-BR": "Falha ao acessar "%s"!", "pt-PT": "Falha ao aceder ao "%s"!"}
@@ -1056,9 +1054,7 @@ response:
  Failed to upload: "Falha ao carregar!"
  File contains unexpected content: "Arquivo contém conteúdo inesperado!"
  File rejected: "Arquivo rejeitado"
- File successfully deleted: "Arquivo deletado com sucesso!"
  File successfully modified: "Arquivo modificado com sucesso!"
- File successfully renamed: "Arquivo renomeado com sucesso!"
  File successfully uploaded: "Arquivo carregado com sucesso!"
  Finished reading from %s: "Leitura de "%s" é feita."
  Finished writing to %s: "Gravação concluída em "%s"."

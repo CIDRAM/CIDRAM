@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2025.08.28).
+# This file: Japanese language data for the front-end (last modified: 2025.09.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -57,7 +57,6 @@ Extended Description:
  Bad hosts blocker module: "スパマー、ハッカー、およびその他の悪意のあるエンティティによって頻繁に使用されるホストをブロックします。"
  Bot user agents module: "望ましくないボットや悪意のあるアクティビティに関連付けられたユーザー・エージェントをブロックします。"
  Bypasses: "メインパッケージに通常含まれているデフォルト・シグネチャ・バイパス。"
- Chart.js: "フロントエンドが円グラフを生成できるようにします。<br />「{{Links.Chart.js}}」は、「{{Links.MIT}}」ライセンスを介して利用可能です。"
  Cookie scanner module: "危険なクッキーに対するいくつかの限定された保護を提供します。"
  HTTP version checker module: "CIDRAMコンフィギュレーションを介して特定のプロトコルとＨＴＴＰバージョンをブロックすることを可能にします。"
  IP-API module: "{{Links.IP-API}}のＡＰＩを活用して、ＣＩＤＲＡＭのためにＡＳＮおよび国コード検索機能を提供します。​ＣＩＤＲＡＭコンフィギュレーションを介して、ＡＳＮと国をブロックまたはホワイトリストに登録できます。​Facebookリクエストを検証する、ソーシャル・メディア・ベリフィケーションの手段を提供します。 （このモジュールを使用する場合、同じ目的を果たすため、BGPViewモジュールを使用する必要はありません）。"
@@ -327,7 +326,6 @@ confirm:
  Action: "あなたは「%s」したいですか？"
  Delete: "あなたは「%s」を削除したいですか？"
 field:
- %s File: "%sファイル"
  2FA code: "２ＦＡコード"
  API key: "ＡＰＩキー"
  Activate: "アクティブにする"
@@ -361,6 +359,7 @@ field:
  Generate output as netmasks: "ネットマスクを使って出力を生成する"
  Immediately: "すぐに。"
  Install: "インストール"
+ Last modified: "最終更新日"
  Latest version: "最新バージョン"
  Log In: "ログイン"
  Macro: "マクロ"
@@ -372,6 +371,7 @@ field:
  Password: "パスワード"
  Permissions: "パーミッション"
  Preserve tags and comments: "タグとコメントを保存する"
+ Purpose: "目的"
  Range (First Last): "範囲 （最初 – 最後）"
  Rename: "名前を変更する"
  Repair all: "すべてを修復する"
@@ -399,6 +399,7 @@ field:
  log_rotation_archive: "最初にアーカイブしてから、最も古いログ・ファイルを削除して、制限を超過しないようにします。"
  log_rotation_delete: "最も古いログ・ファイルを削除して、制限を超過しないようにします。"
  size:
+  Size: "サイズ"
   Total size: "合計サイズ："
   bytes: "バイト"
 hint:
@@ -561,9 +562,9 @@ label:
  Bandwidth: "使用された帯域幅： %s – 利用可能な帯域幅： %s"
  Branch latest stable: "ブランチ最新安定："
  CAPTCHA attempts: "キャプチャの試み"
- CIDRAM disk usage: "CIDRAMディスク使用量："
  CIDRAM version used: "使用されたCIDRAMバージョン："
  Cache data and temporary files: "キャッシュ・データとテンポラリ・ファイル"
+ Cancel: "キャンセル"
  Characters left: "残りの文字"
  Checkbox: "チェックボックス"
  Checksum after: "後のチェックサム"
@@ -603,7 +604,7 @@ label:
  False positive risk: "オプション："
  Fancy: "ファンシー"
  Focus: "焦点："
- Free disk space: "空きディスク容量："
+
  Greylist the request: "リクエストをグレイリストします。\nトリガーされたシグネチャの数をリセットしますが、要求の処理を続行します。​リクエストをホワイトリストしたくないが、バイパスをトリガーするよりも実質的なものが必要な場合に推奨されます。"
  Harvester: "ハーベスター"
  Hide: "隠す"
@@ -682,8 +683,6 @@ label:
  Tally: "集計"
  Text formatting: "テキスト・フォーマット："
  The cache is empty: "キャッシュは空です。"
- Total disk space: "ディスク容量の合計："
- Total disk usage: "ディスク使用量の合計："
  Total: "合計"
  Trigger a bypass: "バイパスをトリガーします。\n少なくとも１つのシグネチャがすでにトリガーされている限り、トリガーされたシグネチャの数から１カウントを減算します。​デフォルトのシグネチャ・ファイルによって引き起こされる可能性のある単純な偽陽性を処理するために推奨されます。"
  Unignore this: "これを無視しないで"
@@ -855,8 +854,6 @@ response:
  Component successfully updated: "コンポーネントのアップデートに成功しました。"
  Configuration successfully updated: "コンフィギュレーションの更新が成功しました。"
  Copied: "コピーされました"
- Directory successfully deleted: "ディレクトリが正常に削除されました！"
- Directory successfully renamed: "ディレクトリの名前が変更されました！"
  Don_t know what to do with the data after reading it: "データを読み取った後、どうすればよいかわかりません。\n別のコマンドにチェーンすることを検討してください。​ありがとう。"
  Error at the upstream: "アップストリームでエラーが発生しました!"
  Failed to access %s: "「%s」にアクセスできませんでした！"
@@ -878,9 +875,7 @@ response:
  Failed to upload: "アップロードに失敗しました！"
  File contains unexpected content: "ファイルに予期しないコンテンツがあります！"
  File rejected: "ファイルが拒否されました"
- File successfully deleted: "ファイルを削除が成功しました！"
  File successfully modified: "ファイルは正常に変更されました！"
- File successfully renamed: "ファイルの名前が変更されました！"
  File successfully uploaded: "ファイルは正常にアップロードされました！"
  Finished reading from %s: "「%s」からの読み取りが完了しました。"
  Finished writing to %s: "「%s」への書き込みが完了しました。"

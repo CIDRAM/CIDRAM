@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Ukrainian language data for the front-end (last modified: 2025.08.28).
+# This file: Ukrainian language data for the front-end (last modified: 2025.09.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -57,7 +57,6 @@ Extended Description:
  Bad hosts blocker module: "Блокує хости, які часто використовуються спамерами, хакерами та іншими нечестивими особами."
  Bot user agents module: "Блокує агенти користувача, пов'язані з небажаними ботами та нечесною діяльністю."
  Bypasses: "Стандартні файли байпасу сигнатуру, які зазвичай входять до основного пакета."
- Chart.js: "Дозволяє фронтенду генерувати круглі діаграми.<br />{{Links.Chart.js}} доступний за ліцензією {{Links.MIT}}."
  Cookie scanner module: "Забезпечує обмежений захист від небезпечних файлів cookie."
  HTTP version checker module: "Дозволяє блокувати певні протоколи та версії HTTP за допомогою конфігурації CIDRAM."
  IP-API module: "Використовує {{Links.IP-API}} API щоб надати можливість пошуку за ASN і кодами країни для CIDRAM, таким чином дозволяючи ASN і країни бути заблокованими або додавати в білий список через конфігурацію CIDRAM, і надаючи засоби перевірки соціальних мереж для перевірки запитів Facebook. (Якщо ви використовуєте цей модуль, вам не потрібно буде використовувати модуль BGPView, оскільки вони служать тій самій меті)."
@@ -327,7 +326,6 @@ confirm:
  Action: "Ви впевнені, що хочете «%s»?"
  Delete: "Ви впевнені, що хочете видаліть «%s»?"
 field:
- %s File: "Файл %s"
  2FA code: "Код 2FA"
  API key: "Ключ API"
  Activate: "Активуйте"
@@ -361,6 +359,7 @@ field:
  Generate output as netmasks: "Згенерувати вихідні дані як мережеві маски"
  Immediately: "Негайно."
  Install: "Встановіть"
+ Last modified: "Остання зміна"
  Latest version: "Остання версія"
  Log In: "Увійти"
  Macro: "Макрос"
@@ -372,6 +371,7 @@ field:
  Password: "Пароль"
  Permissions: "Дозволи"
  Preserve tags and comments: "Зберігайте теги та коментарі"
+ Purpose: "Мета"
  Range (First Last): "Діапазон (Перший – Останній)"
  Rename: "Перейменуйте"
  Repair all: "Відремонтувати все"
@@ -399,6 +399,7 @@ field:
  log_rotation_archive: "Спочатку заархівуйте, а потім видаліть найстаріші файли журналу, доки ліміт більше не буде перевищено."
  log_rotation_delete: "Видаліть найстаріші файли журналу, доки ліміт більше не буде перевищено."
  size:
+  Size: "Розмір"
   Total size: "Загальний розмір:"
   GB: "ГБ"
   KB: "КБ"
@@ -575,9 +576,9 @@ label:
  Bandwidth: "Використана пропускна здатність: %s – Доступна пропускна здатність: %s"
  Branch latest stable: "Остання стабільна версія філії:"
  CAPTCHA attempts: "Спроби CAPTCHA"
- CIDRAM disk usage: "Використання диска CIDRAM:"
  CIDRAM version used: "Використана версія CIDRAM:"
  Cache data and temporary files: "Кешування даних і тимчасових файлів"
+ Cancel: "Скасувати"
  Characters left: "Залишилось символів"
  Checkbox: "Прапорець"
  Checksum after: "Контрольна сума після"
@@ -623,7 +624,7 @@ label:
  False positive risk: "Хибнопозитивний ризик:"
  Fancy: "Фантазійний"
  Focus: "Фокус:"
- Free disk space: "Вільне місце на диску:"
+
  Greylist the request: "Додайте запит до сірого списку.\nСкидає кількість тригерованих сигнатур, але продовжує обробку запиту. Рекомендується, якщо ви не хочете вносити запит у білий список, але вам потрібно щось більш суттєве ніж байпас."
  Harvester: "Комбайн"
  Hide: "Сховати"
@@ -702,8 +703,6 @@ label:
  Tally: "Підраховано"
  Text formatting: "Форматування тексту:"
  The cache is empty: "Кеш порожній."
- Total disk space: "Загальний обсяг дискового простору:"
- Total disk usage: "Загальне використання диска:"
  Total: "Загальна сума"
  Trigger a bypass: "Запустити байпас.\nВіднімає один підрахунок із кількості тригерованих сигнатур, якщо принаймні один сигнатур уже було тригеровано. Рекомендовано для роботи з простими хибнопозитивними, потенційно спричиненими стандартними файлами сигнатурами."
  Unignore this: "Не ігноруйте це"
@@ -875,8 +874,6 @@ response:
  Component successfully updated: "Компонент успішно оновлено."
  Configuration successfully updated: "Конфігурацію успішно оновлено."
  Copied: "Скопійовано"
- Directory successfully deleted: "Каталог успішно видалено!"
- Directory successfully renamed: "Каталог успішно перейменовано!"
  Don_t know what to do with the data after reading it: "Не знаю, що робити з даними після їх прочитання.\nСпробуйте приєднати його до іншої команди. Дякую."
  Error at the upstream: "Помилка на апстрім!"
  Failed to access %s: "Не вдалося отримати доступ до «%s»!"
@@ -898,9 +895,7 @@ response:
  Failed to upload: "Помилка завантаження!"
  File contains unexpected content: "Файл містить неочікуваний вміст!"
  File rejected: "Файл відхилено"
- File successfully deleted: "Файл успішно видалено!"
  File successfully modified: "Файл успішно змінено!"
- File successfully renamed: "Файл успішно перейменовано!"
  File successfully uploaded: "Файл успішно завантажено!"
  Finished reading from %s: "Закінчив читати від «%s»."
  Finished writing to %s: "Закінчив писати на «%s»."

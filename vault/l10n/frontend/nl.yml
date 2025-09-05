@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2025.08.28).
+# This file: Dutch language data for the front-end (last modified: 2025.09.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -57,7 +57,6 @@ Extended Description:
  Bad hosts blocker module: "Blokkeert hosts die vaak worden gebruikt door spammers, hackers en andere kwaadwillige entiteiten."
  Bot user agents module: "Blokkeert gebruikersagenten die zijn gekoppeld aan ongewenste bots en schadelijke activiteiten."
  Bypasses: "De standaard signature bypasses normaal opgenomen met de primaire pakket."
- Chart.js: "Hiermee kan de frontend taartdiagrammen genereren.<br />{{Links.Chart.js}} is beschikbaar via de {{Links.MIT}}-licentie."
  Cookie scanner module: "Biedt een beperkte bescherming tegen gevaarlijke cookies."
  HTTP version checker module: "Maakt het mogelijk om specifieke protocollen en HTTP-versies te blokkeren via de CIDRAM-configuratie."
  IP-API module: "Maakt gebruik van de {{Links.IP-API}} API om ASN en landcode op te zoeken voor CIDRAM, waardoor ASN's en landen kunnen worden geblokkeerd of op de witte lijst kunnen worden gezet via de CIDRAM-configuratie, en het verschaffen van een middel voor sociale netwerkverificatie om Facebook-verzoeken te verifiëren. (Als u deze module gebruikt, hoeft u de BGPVIew-module niet te gebruiken, omdat deze hetzelfde doel dienen)."
@@ -327,7 +326,6 @@ confirm:
  Action: "Weet u zeker dat u wilt "%s"?"
  Delete: "Weet u zeker dat u "%s" wilt verwijderen?"
 field:
- %s File: "%s-Bestand"
  2FA code: "2FA-code"
  API key: "API sleutel"
  Activate: "Activeren"
@@ -361,6 +359,7 @@ field:
  Generate output as netmasks: "Genereer uitvoer als netmaskers"
  Immediately: "Onmiddellijk."
  Install: "Installeren"
+ Last modified: "Laatst gewijzigd"
  Latest version: "Laatste versie"
  Log In: "Inloggen"
  Macro: "Makro"
@@ -372,6 +371,7 @@ field:
  Password: "Wachtwoord"
  Permissions: "Machtigingen"
  Preserve tags and comments: "Tags en opmerkingen behouden"
+ Purpose: "Doel"
  Range (First Last): "Bereik (Eerste – Laatste)"
  Rename: "Naam veranderen"
  Repair all: "Repareren alles"
@@ -398,7 +398,9 @@ field:
  Your version: "Uw versie"
  log_rotation_archive: "Eerst archiveer en verwijder vervolgens de oudste logbestanden, totdat de limiet niet langer wordt overschreden."
  log_rotation_delete: "Verwijder de oudste logbestanden, totdat de limiet niet langer wordt overschreden."
- size: {"Total size": "Totale grootte:"}
+ size:
+  Size: "Grootte"
+  Total size: "Totale grootte:"
 hint:
  This value can be found in the dashboard for your CAPTCHA service: "Deze waarde is te vinden in het dashboard voor uw CAPTCHA-service."
 hints_asnlookup: "** Vereist ASN-opzoekfunctionaliteit (b.v., via de IP-API-module of BGPView-module)."
@@ -563,9 +565,9 @@ label:
  Bandwidth: "Gebruikte bandbreedte: %s – Bandbreedte beschikbaar: %s"
  Branch latest stable: "Branch laatste stabiele:"
  CAPTCHA attempts: "CAPTCHA pogingen"
- CIDRAM disk usage: "CIDRAM-schijfgebruik:"
  CIDRAM version used: "CIDRAM versie gebruikt:"
  Cache data and temporary files: "Cache data en tijdelijke bestanden"
+ Cancel: "Annuleren"
  Characters left: "Karakters over"
  Checkbox: "Selectievakje"
  Checksum after: "Controlesom na"
@@ -609,7 +611,7 @@ label:
  False positive risk: "Vals positieve risico:"
  Fancy: "Geformatteerde"
  Focus: "Focus:"
- Free disk space: "Vrije schijfruimte:"
+
  Greylist the request: "Behandel het verzoek als op de grijze lijst.\nStelt het aantal getriggerde signatures in op nul, maar gaat door met het verwerken van het verzoek. Aanbevolen wanneer u het verzoek niet als op de witte lijst wilt behandelen, maar iets meer substantieel nodig hebt dan het triggeren van een bypass."
  Harvester: "Oogstmachine"
  Hide: "Verbergen"
@@ -688,8 +690,6 @@ label:
  Tally: "Telling"
  Text formatting: "Tekstformaat:"
  The cache is empty: "De cache is leeg."
- Total disk space: "Totale schijfruimte:"
- Total disk usage: "Totaal schijfgebruik:"
  Total: "Totaal"
  Trigger a bypass: "Trigger een bypass.\nTrekt één telling af van het aantal getriggerde signatures, zolang er minstens één signature is al getriggerd. Aanbevolen voor het omgaan met eenvoudige valse positieven die mogelijk worden veroorzaakt door de standaard signatuurbestanden."
  Unignore this: "Niet negeer dit"
@@ -861,8 +861,6 @@ response:
  Component successfully updated: "Component succesvol gewijzigd."
  Configuration successfully updated: "Configuratie succesvol gewijzigd."
  Copied: "Gekopieerd"
- Directory successfully deleted: "Bestandsmap succesvol verwijderd!"
- Directory successfully renamed: "De naam van de bestandsmap met succes veranderd!"
  Don_t know what to do with the data after reading it: "Weet niet wat te doen met de gegevens na het lezen ervan.\nOverweeg om het aan een ander commando te koppelen. Bedankt."
  Error at the upstream: "Fout bij het upstream!"
  Failed to access %s: "Toegang tot "%s" is mislukt!"
@@ -884,9 +882,7 @@ response:
  Failed to upload: "Mislukt om te uploaden!"
  File contains unexpected content: "Bestand bevat onverwachte inhoud!"
  File rejected: "Bestand afgewezen"
- File successfully deleted: "Bestand succesvol verwijderd!"
  File successfully modified: "Bestand succesvol gewijzigd!"
- File successfully renamed: "De naam van de bestand met succes veranderd!"
  File successfully uploaded: "Bestand succesvol uploadet!"
  Finished reading from %s: "Klaar met lezen vanaf "%s"."
  Finished writing to %s: "Klaar met schrijven naar "%s"."

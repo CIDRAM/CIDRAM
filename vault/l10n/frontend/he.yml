@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hebrew language data for the front-end (last modified: 2025.08.28).
+# This file: Hebrew language data for the front-end (last modified: 2025.09.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -57,7 +57,6 @@ Extended Description:
  Bad hosts blocker module: "חוסם מארחים בשימוש תכוף על ידי שולחי ספאם, האקרים, וגורמים מרושעים אחרים."
  Bot user agents module: "חוסם סוכני משתמשים הקשורים לבוטים לא רצויים ולפעילות מרושעת."
  Bypasses: "החתימה הסטנדרטית עוקפת קבצים הנכללים בדרך כלל בחבילה הראשית."
- Chart.js: "מאפשר לקצה הקדמי ליצור תרשימי סופגניות.<br />{{Links.Chart.js}} זמין באמצעות רישיון {{Links.MIT}}."
  Cookie scanner module: "מספק כמה הגנות מוגבלות מפני קוקיות מסוכנות."
  HTTP version checker module: "מאפשר לחסום פרוטוקולים ספציפיים וגרסאות HTTP באמצעות תצורת CIDRAM."
  IP-API module: "מנף את ה-{{Links.IP-API}} API כדי לספק מתקן חיפוש ASN וקוד מדינה עבור CIDRAM, המאפשרת חסימה או אישור של ASN ומדינות באמצעות תצורת CIDRAM, ומספקת אמצעי לאימות רשתות חברתיות לאימות בקשות של פייסבוק. (אם אתה משתמש במודול זה, לא תצטרך להשתמש במודול BGPView, מכיוון שהם משרתים את אותה מטרה)."
@@ -327,7 +326,6 @@ confirm:
  Action: "האם אתה בטוח שברצונך "%s"?"
  Delete: "האם אתה בטוח שברצונך למחוק את "%s"?"
 field:
- %s File: "קובץ %s"
  2FA code: "קוד 2FA"
  API key: "מפתח API"
  Activate: "להפעיל"
@@ -361,6 +359,7 @@ field:
  Generate output as netmasks: "צור פלט כ-netmask"
  Immediately: "מיד."
  Install: "להתקין"
+ Last modified: "שונה לאחרונה"
  Latest version: "הגרסה העדכנית ביותר"
  Log In: "התחבר על"
  Macro: "מאקרו"
@@ -372,6 +371,7 @@ field:
  Password: "סיסמה"
  Permissions: "הרשאות"
  Preserve tags and comments: "שמור תגיות והערות"
+ Purpose: "מטרה"
  Range (First Last): "טווח (הראשון – האחרון)"
  Rename: "שנה שם"
  Repair all: "לתקן הכל"
@@ -399,6 +399,7 @@ field:
  log_rotation_archive: "תחילה ארכיון, ולאחר מכן מחק את קבצי היומן הישנים ביותר, עד שההגבלה לא תחרוג עוד."
  log_rotation_delete: "מחק את קובצי היומן הישנים ביותר, עד שההגבלה לא תחרוג עוד."
  size:
+  Size: "גודל"
   Total size: "הגודל הכולל:"
   bytes:
    - "בייט"
@@ -560,9 +561,9 @@ label:
  Bandwidth: "רוחב פס בשימוש: %s – רוחב פס זמין: %s"
  Branch latest stable: "האורווה האחרונה של הסניף:"
  CAPTCHA attempts: "ניסיונות CAPTCHA"
- CIDRAM disk usage: "שימוש בדיסק CIDRAM:"
  CIDRAM version used: "גרסת CIDRAM בשימוש:"
  Cache data and temporary files: "מטמון נתונים וקבצים זמניים"
+ Cancel: "ביטול"
  Characters left: "נשארו דמויות"
  Checkbox: "תיבת סימון"
  Checksum after: "סכום בדיקה לאחר"
@@ -606,7 +607,7 @@ label:
  False positive risk: "סיכון חיובי כוזב:"
  Fancy: "מפואר"
  Focus: "הפוקוס:"
- Free disk space: "מקום פנוי בדיסק:"
+
  Greylist the request: "גרייליסט את הבקשה.\nמאפס את מספר החתימות שהופעלו, אך ממשיך בעיבוד הבקשה. מומלץ כאשר אתה לא רוצה whitelist את הבקשה, אבל צריך משהו יותר מהותי מהפעלת מעקף."
  Harvester: "קוצר"
  Hide: "להתחבא"
@@ -685,8 +686,6 @@ label:
  Tally: "לספור"
  Text formatting: "עיצוב טקסט:"
  The cache is empty: "המטמון ריק."
- Total disk space: "שטח דיסק כולל:"
- Total disk usage: "סך השימוש בדיסק:"
  Total: "סך הכל"
  Trigger a bypass: "הפעל עוקף.\nמוריד ספירה אחת ממספר החתימות שהופעלו, כל עוד לפחות חתימה אחת כבר הופעלה. מומלץ לטיפול בתוצאות שגויות פשוטות שעלולות להיגרם על ידי קובצי החתימה המוגדרים כברירת מחדל."
  Unignore this: "אל תתעלם מזה"
@@ -858,8 +857,6 @@ response:
  Component successfully updated: "הרכיב עודכן בהצלחה."
  Configuration successfully updated: "התצורה עודכנה בהצלחה."
  Copied: "מועתק"
- Directory successfully deleted: "הספריית נמחק בהצלחה!"
- Directory successfully renamed: "שם הספרייה שונה בהצלחה!"
  Don_t know what to do with the data after reading it: "לא יודע מה לעשות עם הנתונים לאחר קריאתם.\nשקול לשרשר אותו לפקודה אחרת. תודה."
  Error at the upstream: "שגיאה במעלה הזרם!"
  Failed to access %s: "הגישה ל-"%s" נכשלה!"
@@ -881,9 +878,7 @@ response:
  Failed to upload: "ההעלאה נכשלה!"
  File contains unexpected content: "הקובץ מכיל תוכן בלתי צפוי!"
  File rejected: "הקובץ נדחה"
- File successfully deleted: "הקובץ נמחק בהצלחה!"
  File successfully modified: "הקובץ השתנה בהצלחה!"
- File successfully renamed: "שם הקובץ שונה בהצלחה!"
  File successfully uploaded: "הקובץ הועלה בהצלחה!"
  Finished reading from %s: "סיים לקרוא מ-"%s"."
  Finished writing to %s: "סיימתי לכתוב ל-"%s"."

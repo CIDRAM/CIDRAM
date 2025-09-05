@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2025.08.28).
+# This file: Italian language data for the front-end (last modified: 2025.09.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -57,7 +57,6 @@ Extended Description:
  Bad hosts blocker module: "Blocca gli host utilizzati frequentemente da spammer, hacker e altre entità nefande."
  Bot user agents module: "Blocca gli agenti utente associati a bot indesiderati e attività nefande."
  Bypasses: "Un file per bypassare alcune delle firme predefinite normalmente inclusi nel pacchetto principale."
- Chart.js: "Consente al front-end di generare grafici a torta.<br />{{Links.Chart.js}} è disponibile tramite la licenza {{Links.MIT}}."
  Cookie scanner module: "Fornisce alcune protezioni limitate contro i cookie pericolosi."
  HTTP version checker module: "Permette di bloccare protocolli specifici e versioni HTTP tramite la configurazione CIDRAM."
  IP-API module: "Sfrutta l'API {{Links.IP-API}} per fornire funzionalità di ricerca di ASN e codici paese per CIDRAM, abilitando a ASN e paesi di essere bloccati o autorizzati nella configurazione CIDRAM, e fornire un mezzo per la verifica dei social network per verificare le richieste di Facebook. (Se utilizzi questo modulo, non avrai bisogno di utilizzare il modulo BGPView, poiché hanno lo stesso scopo)."
@@ -327,7 +326,6 @@ confirm:
  Action: "Sei sicuro di voler "%s"?"
  Delete: "Sei sicuro di voler eliminare "%s"?"
 field:
- %s File: "%s File"
  2FA code: "Codice 2FA"
  API key: "Chiave API"
  Activate: "Attivarlo"
@@ -361,6 +359,7 @@ field:
  Generate output as netmasks: "Genera output utilizzando la notazione netmask"
  Immediately: "Immediatamente."
  Install: "Installarlo"
+ Last modified: "Ultima modifica"
  Latest version: "Ultima versione"
  Log In: "Accedi"
  Macro: "Macro"
@@ -372,6 +371,7 @@ field:
  Password: "Password"
  Permissions: "Permessi"
  Preserve tags and comments: "Mantieni tag e commenti"
+ Purpose: "Scopo"
  Range (First Last): "Gamma (Primo – Finale)"
  Rename: "Rinominare"
  Repair all: "Ripara tutto"
@@ -399,6 +399,7 @@ field:
  log_rotation_archive: "In primo luogo archiviare e quindi, eliminare i file di log più vecchi, finché il limite non viene più superato."
  log_rotation_delete: "Elimina i file di log più vecchi, finché il limite non viene più superato."
  size:
+  Size: "Dimensione"
   Total size: "Dimensione totale:"
   bytes: "byte"
 hint:
@@ -565,9 +566,9 @@ label:
  Bandwidth: "Larghezza di banda utilizzata: %s – Larghezza di banda disponibile: %s"
  Branch latest stable: "Branch più recente stabile:"
  CAPTCHA attempts: "Tentativi di CAPTCHA"
- CIDRAM disk usage: "Utilizzo del disco da parte di CIDRAM:"
  CIDRAM version used: "Versione CIDRAM utilizzata:"
  Cache data and temporary files: "Dati di cache e file temporanei"
+ Cancel: "Cancellare"
  Characters left: "Caratteri rimanenti"
  Checkbox: "Casella di controllo"
  Checksum after: "Checksum dopo"
@@ -611,7 +612,7 @@ label:
  False positive risk: "Rischio di falsi positivi:"
  Fancy: "Formattato"
  Focus: "Focus:"
- Free disk space: "Spazio libero su disco:"
+
  Greylist the request: "Lista grigia.\nReimposta il numero di firme innescate, ma continua a elaborare la richiesta. Consigliato quando non si desidera applicare un'azione di lista bianca alla richiesta, ma è necessario qualcosa di più sostanziale dell'innescando di un bypass."
  Harvester: "Raccoglitore"
  Hide: "Nascondere"
@@ -690,8 +691,6 @@ label:
  Tally: "Conteggio"
  Text formatting: "Formattazione del testo:"
  The cache is empty: "La cache è vuota."
- Total disk space: "Spazio totale su disco:"
- Total disk usage: "Utilizzo del disco totale:"
  Total: "Totale"
  Trigger a bypass: "Innesca un bypass.\nSottrae un conteggio dal numero di firme innescate, purché almeno una firma sia già stata innescata. Consigliato per gestire semplici falsi positivi potenzialmente causati dai file di firme predefiniti."
  Unignore this: "Non ignorarlo"
@@ -863,8 +862,6 @@ response:
  Component successfully updated: "Componente aggiornato con successo."
  Configuration successfully updated: "Configurazione aggiornato con successo."
  Copied: "Copiato"
- Directory successfully deleted: "Elenco eliminato con successo!"
- Directory successfully renamed: "Elenco rinominato con successo!"
  Don_t know what to do with the data after reading it: "Non so cosa fare con i dati dopo averlo letto.\nPrendi in considerazione l'idea di concatenarlo a un altro comando. Grazie."
  Error at the upstream: "Errore a monte!"
  Failed to access %s: "Impossibile accedere a "%s"!"
@@ -886,9 +883,7 @@ response:
  Failed to upload: "Non è riuscito a caricare!"
  File contains unexpected content: "Il file contiene contenuti inattesi!"
  File rejected: "File rifiutato"
- File successfully deleted: "File eliminato con successo!"
  File successfully modified: "File modificato con successo!"
- File successfully renamed: "File rinominato con successo!"
  File successfully uploaded: "File caricato con successo!"
  Finished reading from %s: "Finito di leggere da "%s"."
  Finished writing to %s: "Scrittura completata su "%s"."

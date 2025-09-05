@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Czech language data for the front-end (last modified: 2025.08.28).
+# This file: Czech language data for the front-end (last modified: 2025.09.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -57,7 +57,6 @@ Extended Description:
  Bad hosts blocker module: "Blokuje hostitele často používané spammery, hackery, a dalšími zločinnými entitami."
  Bot user agents module: "Blokuje uživatelské agenty spojené s nežádoucími roboty a hanebnou činností."
  Bypasses: "Soubory pro standardní bypassace podpisů jsou běžně součástí hlavního balíčku."
- Chart.js: "Umožňuje front-endu generovat prstencové grafy.<br />{{Links.Chart.js}} je k dispozici prostřednictvím licence {{Links.MIT}}."
  Cookie scanner module: "Poskytuje určitou omezenou ochranu před nebezpečnými soubory cookie."
  HTTP version checker module: "Umožňuje blokovat konkrétní protokoly a verze HTTP prostřednictvím konfigurace CIDRAM."
  IP-API module: "Využívá {{Links.IP-API}} API k poskytování zařízení pro vyhledávání ASN a kódu země pro CIDRAM, umožňující blokování nebo whitelistaci ASN a zemí prostřednictvím konfigurace CIDRAM a poskytuje prostředky pro ověření sociálních sítí pro ověření požadavků Facebooku. (Pokud použijete tento modul, nebudete muset používat modul BGPView, protože slouží stejnému účelu)."
@@ -327,7 +326,6 @@ confirm:
  Action: "Jste si jisti, že chcete „%s“?"
  Delete: "Jste si jisti, že chcete smazat „%s“?"
 field:
- %s File: "Soubor %s"
  2FA code: "2FA kód"
  API key: "API klíč"
  Activate: "Aktivujte"
@@ -361,6 +359,7 @@ field:
  Generate output as netmasks: "Generujte výstup jako síťové masky"
  Immediately: "Ihned."
  Install: "Nainstalujte"
+ Last modified: "Naposledy upraveno"
  Latest version: "Nejnovější verze"
  Log In: "Přihlásit se"
  Macro: "Makro"
@@ -372,6 +371,7 @@ field:
  Password: "Heslo"
  Permissions: "Oprávnění"
  Preserve tags and comments: "Zachovat tagy a komentáře"
+ Purpose: "Účel"
  Range (First Last): "Rozsah (První – Poslední)"
  Rename: "Přejmenujte"
  Repair all: "Opravte všechny"
@@ -399,6 +399,7 @@ field:
  log_rotation_archive: "Nejprve archivujte, a poté odstraňte nejstarší soubory protokolu, dokud nebude překročen limit."
  log_rotation_delete: "Odstraňte nejstarší soubory protokolu, dokud nebude překročen limit."
  size:
+  Size: "Velikost"
   Total size: "Celková velikost:"
   bytes:
    - "bajt"
@@ -568,9 +569,9 @@ label:
  Bandwidth: "Použitá šířka pásma: %s – Dostupná šířka pásma: %s"
  Branch latest stable: "Nejnovější stáj pobočky:"
  CAPTCHA attempts: "Pokusy o CAPTCHA"
- CIDRAM disk usage: "Využití disku CIDRAM:"
  CIDRAM version used: "Použitá verze CIDRAM:"
  Cache data and temporary files: "Mezipaměť dat a dočasné soubory"
+ Cancel: "Zrušit"
  Characters left: "Zbývá znaků"
  Checkbox: "Zaškrtávací políčko"
  Checksum after: "Kontrolní součet po"
@@ -616,7 +617,7 @@ label:
  False positive risk: "Falešně pozitivní riziko:"
  Fancy: "Ozdobný"
  Focus: "Soustředění:"
- Free disk space: "Volné místo na disku:"
+
  Greylist the request: "Greylistujte požadavek.\nResetuje počet spuštěných podpisů, ale pokračuje ve zpracování požadavku. Doporučeno, když nechcete whitelistovat požadavek, ale potřebujete něco podstatnějšího než spuštění bypassu."
  Harvester: "Harvester"
  Hide: "Skrýt"
@@ -695,8 +696,6 @@ label:
  Tally: "Součet"
  Text formatting: "Formátování textu:"
  The cache is empty: "Mezipaměť je prázdná."
- Total disk space: "Celkový prostor na disku:"
- Total disk usage: "Celkové využití disku:"
  Total: "Celkový"
  Trigger a bypass: "Spusťte bypass.\nOdečte jeden počet od počtu spuštěných podpisů, pokud již byl spuštěn alespoň jeden podpis. Doporučeno pro řešení jednoduchých falešných poplachů potenciálně způsobených standardními soubory podpisů."
  Unignore this: "Odignorujte to"
@@ -868,8 +867,6 @@ response:
  Component successfully updated: "Komponenta byla úspěšně aktualizována."
  Configuration successfully updated: "Konfigurace byla úspěšně aktualizována."
  Copied: "Zkopírováno"
- Directory successfully deleted: "Adresář úspěšně smazán!"
- Directory successfully renamed: "Adresář úspěšně přejmenován!"
  Don_t know what to do with the data after reading it: "Po přečtení nevím, co s daty dělat.\nZvažte jeho zřetězení k jinému příkazu. Dík."
  Error at the upstream: "Chyba upstreamu!"
  Failed to access %s: "Nepodařilo se získat přístup k „%s“!"
@@ -891,9 +888,7 @@ response:
  Failed to upload: "Nahrání se nezdařilo!"
  File contains unexpected content: "Soubor obsahuje neočekávaný obsah!"
  File rejected: "Soubor zamítnut"
- File successfully deleted: "Soubor byl úspěšně smazán!"
  File successfully modified: "Soubor byl úspěšně upraven!"
- File successfully renamed: "Soubor byl úspěšně přejmenován!"
  File successfully uploaded: "Soubor byl úspěšně nahrán!"
  Finished reading from %s: "Dokončeno čtení od „%s“."
  Finished writing to %s: "Dokončeno psaní do „%s“."

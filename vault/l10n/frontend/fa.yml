@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Farsi language data for the front (last modified: 2025.08.28).
+# This file: Farsi language data for the front (last modified: 2025.09.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -57,7 +57,6 @@ Extended Description:
  Bad hosts blocker module: "هاست هایی را که اغلب توسط اسپمرها، هکرها و دیگر نهادهای شرور استفاده می شوند مسدود می‌کند."
  Bot user agents module: "عوامل کاربر مرتبط با ربات های ناخواسته و فعالیت های شرور را مسدود می‌کند."
  Bypasses: "فایل‌های دور زدن امضای پیش‌فرض معمولاً با بسته اصلی ارائه می‌شوند."
- Chart.js: "این امکان را برای جلویی ایجاد می‌کند تا نمودارهای دونات تولید کند.<br />{{Links.Chart.js}} از طریق مجوز {{Links.MIT}} در دسترس است."
  Cookie scanner module: "محافظت های محدودی در برابر کوکی های خطرناک ارائه می دهد."
  HTTP version checker module: "مسدود کردن پروتکل‌های خاص و نسخه‌های HTTP را از طریق پیکربندی CIDRAM ممکن می‌سازد."
  IP-API module: "از API {{Links.IP-API}} برای ارائه تسهیلات جستجوی ASN و کد کشور برای CIDRAM استفاده می‌کند، این امکان را می دهد که ASN ها و کشورها از طریق پیکربندی CIDRAM مسدود یا در لیست سفید قرار گیرند و ابزاری برای تأیید شبکه های اجتماعی برای تأیید درخواست های فیس بوک فراهم شود. (اگر از این ماژول استفاده می‌کنید، نیازی به استفاده از ماژول BGPView نخواهید داشت، زیرا هدف آنها یکسان است)."
@@ -72,7 +71,7 @@ Extended Description:
  IPv6-Nonblocking: *ExtDesNonblocking
  IPv6-Other: *ExtDesOther
  Optional security extras module: "برخی از محافظت های محدود در برابر بردارهای حمله مختلف که معمولاً در درخواست ها استفاده می شوند ارائه می دهد."
- PHPMailer: "برای استفاده از هر قابلیتی که شامل ارسال ایمیل باشد، لازم است.<br />{{Links.PHPMailer.PHPMailer}} از طریق مجوز {{Links.MIT}} در دسترس است."
+ PHPMailer: "برای استفاده از هر قابلیتی که شامل ارسال ایمیل باشد، لازم است.<br />{{Links.PHPMailer.PHPMailer}} از طریق مجوز {{Links.PHPMailer.License}} در دسترس است."
  Project Honeypot module: "درخواست‌های IP‌های فهرست‌شده در Project Honeypot را مسدود می‌کند."
  Protocol blocker module: "امکان مسدود کردن پروتکل های درخواستی خاص را از طریق پیکربندی فراهم می‌کند (به عنوان مثال، HTTP/0.9 ،HTTP/1.1 ،SPDY/3.0، غیره). توجه داشته باشید: بر روی وب سایت هایی که از طریق سرویس هایی که درخواست ها را بازنویسی می کنند مسیریابی می کنند تا همه از پروتکل یکسان استفاده کنند (به عنوان مثال، Cloudflare) تأثیری نخواهد گذاشت."
  Referrer spam module: "مسدود کردن بر اساس اسپم های ارجاع دهنده معمولاً هیچ مزیت امنیتی معنی داری ارائه نمی دهد، اما در برخی موارد می تواند برای برخی از کاربران مفید باشد، برای جمع آوری اطلاعات بیشتر در مورد درخواست ها و امکان گزارش آن."
@@ -327,7 +326,6 @@ confirm:
  Action: "آیا مطمئن هستید که می خواهید «%s» کنید؟"
  Delete: "آیا مطمئن هستید که می خواهید «%s» را حذف کنید؟"
 field:
- %s File: "فایل %s"
  2FA code: "کد 2FA"
  API key: "کلید API"
  Activate: "فعال کنید"
@@ -361,6 +359,7 @@ field:
  Generate output as netmasks: "خروجی را به عنوان ماسک شبکه تولید کنید"
  Immediately: "بلافاصله."
  Install: "نصب کنید"
+ Last modified: "آخرین اصلاح"
  Latest version: "آخرین نسخه"
  Log In: "وارد شدن"
  Macro: "ماکرو"
@@ -372,6 +371,7 @@ field:
  Password: "کلمه عبور"
  Permissions: "مجوزها"
  Preserve tags and comments: "برچسب ها و نظرات را حفظ کنید"
+ Purpose: "هدف"
  Range (First Last): "محدوده (اولین – آخر)"
  Rename: "تغییر نام دهید"
  Repair all: "همه آنها را تعمیر کنید"
@@ -399,6 +399,7 @@ field:
  log_rotation_archive: "ابتدا بایگانی کنید، و سپس قدیمی ترین فایل های گزارش را حذف کنید، تا زمانی که دیگر از حد مجاز فراتر نرود."
  log_rotation_delete: "قدیمی‌ترین فایل‌های گزارش را حذف کنید، تا زمانی که دیگر از حد مجاز تجاوز نکنید."
  size:
+  Size: "اندازه"
   Total size: "اندازه کل:"
   GB: "گیگابایت"
   KB: "کیلوبایت"
@@ -564,9 +565,9 @@ label:
  Bandwidth: "پهنای باند استفاده شده: %s – پهنای باند موجود: %s"
  Branch latest stable: "آخرین اصطبل شعبه:"
  CAPTCHA attempts: "CAPTCHA تلاش می‌کند"
- CIDRAM disk usage: "استفاده از دیسک CIDRAM:"
  CIDRAM version used: "نسخه CIDRAM استفاده شده:"
  Cache data and temporary files: "داده های کش و فایل های موقت"
+ Cancel: "لغو"
  Characters left: "کاراکترهای باقی مانده است"
  Checkbox: "چک باکس"
  Checksum after: "چک سام بعد از"
@@ -606,7 +607,7 @@ label:
  False positive risk: "خطر مثبت کاذب:"
  Fancy: "فانتزی"
  Focus: "تمرکز:"
- Free disk space: "فضای خالی دیسک:"
+
  Greylist the request: "درخواست را در لیست خاکستری قرار دهید.\nتعداد امضاهای درگیر شده را بازنشانی می‌کند، اما به پردازش درخواست ادامه می دهد. زمانی توصیه می‌شود که نمی‌خواهید درخواست را در لیست سفید قرار دهید، اما به چیزی اساسی‌تر از بای پس کردن نیاز دارید."
  Harvester: "دروگر"
  Hide: "پنهان شدن"
@@ -685,8 +686,6 @@ label:
  Tally: "شمارش"
  Text formatting: "قالب بندی متن:"
  The cache is empty: "کش خالی است."
- Total disk space: "کل فضای دیسک:"
- Total disk usage: "کل مصرف دیسک:"
  Total: "کل"
  Trigger a bypass: "یک بای پس را درگیر کنید.\nتا زمانی که حداقل یک امضا از قبل امضا شده باشد، یک مورد را از تعداد امضاهای درگیر شده کم می‌کند. برای مقابله با موارد مثبت کاذب ساده که به طور بالقوه توسط فایل های امضای پیش فرض ایجاد می شوند توصیه می شود."
  Unignore this: "دست از این را نادیده بگیرید"
@@ -858,8 +857,6 @@ response:
  Component successfully updated: "مؤلفه با موفقیت به روز شد."
  Configuration successfully updated: "پیکربندی با موفقیت به روز شد."
  Copied: "کپی شد"
- Directory successfully deleted: "دایرکتوری با موفقیت حذف شد!"
- Directory successfully renamed: "دایرکتوری با موفقیت تغییر نام داد!"
  Don_t know what to do with the data after reading it: "نمی دانم پس از خواندن داده ها چه باید بکنید.\nدر نظر بگیرید که آن را به دستور دیگری زنجیر کنید. با تشکر."
  Error at the upstream: "خطا در بالادست!"
  Failed to access %s: "دسترسی به «%s» ناموفق بود!"
@@ -881,9 +878,7 @@ response:
  Failed to upload: "آپلود ناموفق بود!"
  File contains unexpected content: "فایل حاوی محتوای غیرمنتظره است!"
  File rejected: "فایل رد شد"
- File successfully deleted: "فایل با موفقیت حذف شد!"
  File successfully modified: "فایل با موفقیت اصلاح شد!"
- File successfully renamed: "فایل با موفقیت تغییر نام داد!"
  File successfully uploaded: "فایل با موفقیت آپلود شد!"
  Finished reading from %s: "خواندن از «%s» به پایان رسید."
  Finished writing to %s: "نوشتن به «%s» تمام شد."

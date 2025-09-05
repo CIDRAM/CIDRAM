@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2025.08.28).
+# This file: Indonesian language data for the front-end (last modified: 2025.09.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -57,7 +57,6 @@ Extended Description:
  Bad hosts blocker module: "Memblokir host yang sering digunakan oleh spammer, peretas, dan entitas jahat lainnya."
  Bot user agents module: "Memblokir agen pengguna yang terkait dengan bot yang tidak diinginkan dan aktivitas jahat."
  Bypasses: "File untuk bypass tanda tangan standar yang biasanya disertakan dengan paket utama."
- Chart.js: "Memungkinkan bagian depan untuk menghasilkan bagan pai.<br />{{Links.Chart.js}} tersedia melalui lisensi {{Links.MIT}}."
  Cookie scanner module: "Menyediakan beberapa perlindungan terbatas terhadap cookie berbahaya."
  HTTP version checker module: "Memungkinkan untuk memblokir protokol tertentu dan versi HTTP melalui konfigurasi CIDRAM."
  IP-API module: "Memanfaatkan {{Links.IP-API}} API untuk menyediakan fasilitas pencarian untuk ASN dan kode negara untuk CIDRAM, memungkinkan ASN dan negara untuk diblokir atau masuk daftar putih melalui konfigurasi CIDRAM, dan menyediakan sarana untuk verifikasi media sosial untuk memverifikasi permintaan Facebook. (Jika Anda menggunakan modul ini, Anda tidak perlu menggunakan modul BGPView, karena mereka memiliki tujuan yang sama)."
@@ -327,7 +326,6 @@ confirm:
  Action: "Anda yakin ingin "%s"?"
  Delete: "Anda yakin ingin menghapus "%s"?"
 field:
- %s File: "File %s"
  2FA code: "Kode 2FA"
  API key: "Kunci API"
  Activate: "Mengaktifkan"
@@ -361,6 +359,7 @@ field:
  Generate output as netmasks: "Hasilkan keluaran menggunakan notasi netmask"
  Immediately: "Segera."
  Install: "Instal"
+ Last modified: "Terakhir diubah"
  Latest version: "Versi terbaru"
  Log In: "Masuk"
  Macro: "Makro"
@@ -372,6 +371,7 @@ field:
  Password: "Kata sandi"
  Permissions: "Izin"
  Preserve tags and comments: "Pertahankan tag dan komentar"
+ Purpose: "Tujuan"
  Range (First Last): "Rentang (Pertama – Terakhir)"
  Rename: "Memodifikasi nama"
  Repair all: "Memperbaiki semua"
@@ -399,6 +399,7 @@ field:
  log_rotation_archive: "Pertama arsipkan, lalu hapus file log tertua, hingga batasnya tidak lagi terlampaui."
  log_rotation_delete: "Hapus file log tertua, hingga batasnya tidak lagi terlampaui."
  size:
+  Size: "Ukuran"
   Total size: "Ukuran total:"
   bytes: "byte"
 hint:
@@ -560,9 +561,9 @@ label:
  Bandwidth: "Bandwidth yang digunakan: %s – Bandwidth yang tersedia: %s"
  Branch latest stable: "Cabang terbaru stabil:"
  CAPTCHA attempts: "Upaya CAPTCHA"
- CIDRAM disk usage: "Penggunaan disk CIDRAM:"
  CIDRAM version used: "Versi CIDRAM digunakan:"
  Cache data and temporary files: "Data cache dan file sementara"
+ Cancel: "Batalkan"
  Characters left: "Karakter tersedia"
  Checkbox: "Kotak centang"
  Checksum after: "Checksum setelahnya"
@@ -602,7 +603,7 @@ label:
  False positive risk: "Risiko positif palsu:"
  Fancy: "Terformat"
  Focus: "Fokus:"
- Free disk space: "Ruang disk kosong:"
+
  Greylist the request: "Mendaftar abu-abu permintaan.\nReset jumlah tanda tangan yang dipicu, tetapi terus memproses permintaan. Direkomendasikan saat Anda tidak ingin mendaftar permintaan putih, tetapi membutuhkan sesuatu yang lebih substansial daripada memicu bypass."
  Harvester: "Pemanen"
  Hide: "Menyembunyikan"
@@ -681,8 +682,6 @@ label:
  Tally: "Penghitungannya"
  Text formatting: "Format teks:"
  The cache is empty: "Cache kosong."
- Total disk space: "Ruang disk total:"
- Total disk usage: "Penggunaan disk total:"
  Total: "Total"
  Trigger a bypass: "Memicu bypass.\nMengurangi satu hitungan dari jumlah tanda tangan yang dipicu, selama setidaknya satu tanda tangan telah dipicu. Direkomendasikan untuk menangani kesalahan positif sederhana yang berpotensi disebabkan oleh file tanda tangan default."
  Unignore this: "Jangan abaikan ini"
@@ -854,8 +853,6 @@ response:
  Component successfully updated: "Komponen berhasil diperbarui."
  Configuration successfully updated: "Konfigurasi berhasil diperbarui."
  Copied: "Disalin"
- Directory successfully deleted: "Direktori berhasil dihapus!"
- Directory successfully renamed: "Nama direktori berhasil dimodifikasi!"
  Don_t know what to do with the data after reading it: "Tidak tahu apa yang harus dilakukan dengan data setelah membacanya.\nPertimbangkan untuk merantainya ke perintah lain. Terima kasih."
  Error at the upstream: "Kesalahan di hulu!"
  Failed to access %s: "Gagal mengakses "%s"!"
@@ -877,9 +874,7 @@ response:
  Failed to upload: "Gagal mengupload!"
  File contains unexpected content: "File berisi konten yang tidak diharapkan!"
  File rejected: "File ditolak"
- File successfully deleted: "File berhasil dihapus!"
  File successfully modified: "File berhasil diubah!"
- File successfully renamed: "Nama file berhasil dimodifikasi!"
  File successfully uploaded: "File berhasil diupload!"
  Finished reading from %s: "Selesai membaca dari "%s"."
  Finished writing to %s: "Selesai menulis ke "%s"."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bulgarian language data for the front-end (last modified: 2025.08.28).
+# This file: Bulgarian language data for the front-end (last modified: 2025.09.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -57,7 +57,6 @@ Extended Description:
  Bad hosts blocker module: "Блокира хостове, често използвани от спамери, хакери и други нечестиви субекти."
  Bot user agents module: "Блокира потребителски агенти, свързани с нежелани ботове и нечестиви субекти."
  Bypasses: "Стандартните файлове за заобикаляне на сигнатура, обикновено включени в основния пакет."
- Chart.js: "Позволява на фронтенд да генерира кръгли диаграми.<br />{{Links.Chart.js}} е достъпен чрез лиценза на {{Links.MIT}}."
  Cookie scanner module: "Предоставя някои ограничени защити срещу опасни бисквитки."
  HTTP version checker module: "Дава възможност за блокиране на конкретни протоколи и HTTP версии чрез конфигурацията на CIDRAM."
  IP-API module: "Използва {{Links.IP-API}} API, за да предостави средство за търсене на ASN и код на държава за CIDRAM, позволявайки ASN и държави да бъдат блокирани или включени в белия списък чрез конфигурацията на CIDRAM и предоставя средство за проверка на социалните мрежи за проверка на заявки във Facebook. (Ако използвате този модул, няма да е необходимо да използвате BGPView модула, тъй като те служат за същата цел)."
@@ -327,7 +326,6 @@ confirm:
  Action: "Сигурни ли сте, че искате да „%s“?"
  Delete: "Сигурни ли сте, че искате да изтриете „%s“?"
 field:
- %s File: "%s файл"
  2FA code: "2FA код"
  API key: "API ключ"
  Activate: "Активирайте"
@@ -361,6 +359,7 @@ field:
  Generate output as netmasks: "Генерирайте изход като мрежови маски"
  Immediately: "Веднага."
  Install: "Инсталирайте"
+ Last modified: "Последна промяна"
  Latest version: "Последна версия"
  Log In: "Влезете"
  Macro: "Макро"
@@ -372,6 +371,7 @@ field:
  Password: "Парола"
  Permissions: "Разрешения"
  Preserve tags and comments: "Запазете етикети и коментари"
+ Purpose: "Цел"
  Range (First Last): "Обхват (Първо – Последно)"
  Rename: "Преименувайте"
  Repair all: "Поправете всички"
@@ -399,6 +399,7 @@ field:
  log_rotation_archive: "Първо архивирайте и след това изтрийте най-старите регистрационни файлове, докато ограничението вече не бъде превишено."
  log_rotation_delete: "Изтрийте най-старите регистрационни файлове, докато ограничението вече не бъде превишено."
  size:
+  Size: "Размер"
   Total size: "Общият размер:"
   GB: "ГБ"
   KB: "КБ"
@@ -573,9 +574,9 @@ label:
  Bandwidth: "Използвана честотна лента: %s – Налична честотна лента: %s"
  Branch latest stable: "Най-новата стабилна в клона:"
  CAPTCHA attempts: "CAPTCHA опити"
- CIDRAM disk usage: "Дисково използване на CIDRAM:"
  CIDRAM version used: "Използвана версия на CIDRAM:"
  Cache data and temporary files: "Кеширане на данни и временни файлове"
+ Cancel: "Отказ"
  Characters left: "Остават знаци"
  Checkbox: "Квадратче за отметка"
  Checksum after: "Контролна сума след"
@@ -619,7 +620,7 @@ label:
  False positive risk: "Фалшив положителен риск:"
  Fancy: "Изискано"
  Focus: "Фокус:"
- Free disk space: "Налично дисково пространство:"
+
  Greylist the request: "Поставете заявката в сивия списък.\nНулира броя на задействаните сигнатури, но продължава да обработва заявката. Препоръчва се, когато не искате да поставите заявката в белия списък, но имате нужда от нещо по-съществено от задействане на байпас."
  Harvester: "Комбайн"
  Hide: "Скрийте"
@@ -698,8 +699,6 @@ label:
  Tally: "Тали"
  Text formatting: "Форматиране на текст:"
  The cache is empty: "Кешът е празен."
- Total disk space: "Общо дисково пространство:"
- Total disk usage: "Общо използване на диска:"
  Total: "Обща сума"
  Trigger a bypass: "Задействайте байпас.\nИзважда един брой от броя на сигнатурите задействали, стига поне един сигнатур вече да е бил задействан. Препоръчва се за справяне с прости фалшиви положителни резултати, потенциално причинени от стандартните файлове за сигнатури."
  Unignore this: "Спрете да игнорирате това"
@@ -871,8 +870,6 @@ response:
  Component successfully updated: "Компонентът е актуализиран успешно."
  Configuration successfully updated: "Конфигурацията е актуализирана успешно."
  Copied: "Копирано"
- Directory successfully deleted: "Директорията е изтрита успешно!"
- Directory successfully renamed: "Директорията е преименувана успешно!"
  Don_t know what to do with the data after reading it: "Не знам какво да правя с данните, след като ги прочета.\nПомислете за свързването му към друга команда. Благодаря."
  Error at the upstream: "Грешка в източника!"
  Failed to access %s: "Неуспешно достъп до „%s“!"
@@ -894,9 +891,7 @@ response:
  Failed to upload: "Неуспешно качване!"
  File contains unexpected content: "Файлът съдържа неочаквано съдържание!"
  File rejected: "Файлът е отхвърлен"
- File successfully deleted: "Файлът е изтрит успешно!"
  File successfully modified: "Файлът е модифициран успешно!"
- File successfully renamed: "Файлът е преименуван успешно!"
  File successfully uploaded: "Файлът е качен успешно!"
  Finished reading from %s: "Завърших четенето от „%s“."
  Finished writing to %s: "Завърших писането на „%s“."

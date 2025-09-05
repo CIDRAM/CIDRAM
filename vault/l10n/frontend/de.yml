@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2025.08.28).
+# This file: German language data for the front-end (last modified: 2025.09.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -57,7 +57,6 @@ Extended Description:
  Bad hosts blocker module: "Blockiert Hosts, die häufig von Spammern, Hackern und anderen bösartigen Entitäten verwendet werden."
  Bot user agents module: "Blockiert Benutzeragenten, die mit unerwünschten Bots und ruchlosen Aktivitäten in Verbindung stehen."
  Bypasses: "Die Standard-Signatur-Bypässe, die normalerweise im Hauptpaket enthalten sind."
- Chart.js: "Ermöglicht dem Frontend die Generierung von Kreisdiagrammen.<br />{{Links.Chart.js}} ist über die {{Links.MIT}}-Lizenz verfügbar."
  Cookie scanner module: "Bietet einige begrenzte Schutzmaßnahmen gegen gefährliche Cookies."
  HTTP version checker module: "Ermöglicht das Blockieren bestimmter Protokolle und HTTP-Versionen über die CIDRAM-Konfiguration."
  IP-API module: "Nutzt die {{Links.IP-API}}-API, um ASN-Suchfunktionalität und Ländercode-Suchfunktionalität für CIDRAM bereitzustellen, um ASNer und Länder über die CIDRAM-Konfiguration zu blockieren oder in die Whitelist aufzulisten werden, und Bereitstellung eines Mittels zur Social-Media-Verifizierung um Facebook-Anfragen zu überprüfen. (Wenn Sie dieses Modul verwenden, müssen Sie das BGPView-Modul nicht verwenden, da sie demselben Zweck dienen)."
@@ -327,7 +326,6 @@ confirm:
  Action: "Möchten Sie wirklich zu „%s“?"
  Delete: "Möchten Sie wirklich „%s“ zu löschen?"
 field:
- %s File: "%s-Datei"
  2FA code: "2FA-Code"
  API key: "API-Schlüssel"
  Activate: "Aktivieren"
@@ -361,6 +359,7 @@ field:
  Generate output as netmasks: "Ausgabe als Netzmaske generieren"
  Immediately: "Sofort."
  Install: "Installieren"
+ Last modified: "Zuletzt geändert"
  Latest version: "Letzte Version"
  Log In: "Einloggen"
  Macro: "Makro"
@@ -372,6 +371,7 @@ field:
  Password: "Passwort"
  Permissions: "Berechtigungen"
  Preserve tags and comments: "Tags und Kommentare beibehalten"
+ Purpose: "Zweck"
  Range (First Last): "Umfang (Erste – Letzte)"
  Rename: "Umbenennen"
  Repair all: "Reparieren alle"
@@ -398,7 +398,9 @@ field:
  Your version: "Ihre Version"
  log_rotation_archive: "Zuerst archivieren, und dann löschen Sie die ältesten Protokolldateien, bis das Limit nicht mehr überschritten wird."
  log_rotation_delete: "Löschen Sie die ältesten Protokolldateien, bis das Limit nicht mehr überschritten wird."
- size: {"Total size": "Gesamtgröße:"}
+ size:
+  Size: "Größe"
+  Total size: "Gesamtgröße:"
 hint:
  This value can be found in the dashboard for your CAPTCHA service: "Dieser Wert befindet sich im Dashboard für Ihren CAPTCHA-Dienst."
 hints_asnlookup: "** Erfordert ASN-Lookup-Funktionalität (z.B., über das IP-API-Modul oder BGPView-Modul)."
@@ -566,9 +568,9 @@ label:
  Bandwidth: "Verwendete Bandbreite: %s – Verfügbare Bandbreite: %s"
  Branch latest stable: "Branch neueste stabil:"
  CAPTCHA attempts: "CAPTCHA versucht"
- CIDRAM disk usage: "CIDRAM Speicherplatz verwendet:"
  CIDRAM version used: "CIDRAM-Version verwendet:"
  Cache data and temporary files: "Cache-Daten und temporäre Dateien"
+ Cancel: "Abbrechen"
  Characters left: "Zeichen übrig"
  Checkbox: "Kontrollkästchen"
  Checksum after: "Prüfsumme nach"
@@ -612,7 +614,7 @@ label:
  False positive risk: "Falsch-Positive Risiko:"
  Fancy: "Schick"
  Focus: "Fokus:"
- Free disk space: "Speicherplatz verfügbar:"
+
  Greylist the request: "Setzen die Anfrage auf die graue Liste.\nSetzt die Anzahl der ausgelösten Signaturen zurück. Jedoch, verarbeitet die Anforderung weiter. Empfohlen wenn Sie möchten nicht dass die Anfrage auf die weiße Liste gesetzt wird, aber etwas Wesentlicheres als das Auslösen einer Bypass benötigen."
  Harvester: "Harvester"
  Hide: "Verstecke"
@@ -691,8 +693,6 @@ label:
  Tally: "Tally"
  Text formatting: "Textformatierung:"
  The cache is empty: "Der Cache ist leer."
- Total disk space: "Speicherplatz insgesamt:"
- Total disk usage: "Speicherplatz verwendet insgesamt:"
  Total: "Gesamt"
  Trigger a bypass: "Lösen einen Bypass aus.\nSubtrahiert einen Zähler von der Anzahl der ausgelösten Signaturen, solange mindestens eine Signatur bereits ausgelöst wurde. Empfohlen für den Umgang mit einfachen Falsch-Positiven, die möglicherweise durch die Standardsignaturdateien verursacht werden."
  Unignore this: "Unignoriere"
@@ -864,8 +864,6 @@ response:
  Component successfully updated: "Komponente erfolgreich aktualisiert."
  Configuration successfully updated: "Konfiguration erfolgreich aktualisiert."
  Copied: "Kopiert"
- Directory successfully deleted: "Verzeichnis erfolgreich gelöscht!"
- Directory successfully renamed: "Verzeichnis erfolgreich umbenannt!"
  Don_t know what to do with the data after reading it: "Ich weiß nicht was ich mit den Daten machen soll nachdem ich sie gelesen habe.\nErwägen Sie die Verkettung mit einem anderen Befehl. Danke."
  Error at the upstream: "Fehler an der Upstream!"
  Failed to access %s: "Fehler beim Zugriff auf „%s“!"
@@ -887,9 +885,7 @@ response:
  Failed to upload: "Hochladen-Fehler!"
  File contains unexpected content: "Datei enthält unerwarteten Inhalt!"
  File rejected: "Datei abgelehnt"
- File successfully deleted: "Datei erfolgreich gelöscht!"
  File successfully modified: "Datei erfolgreich geändert!"
- File successfully renamed: "Datei erfolgreich umbenannt!"
  File successfully uploaded: "Datei erfolgreich hochgeladen!"
  Finished reading from %s: "Das Lesen von „%s“ beendet."
  Finished writing to %s: "Das Schreiben an „%s“ ist abgeschlossen."

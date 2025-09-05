@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2025.08.28).
+# This file: English language data for the front-end (last modified: 2025.09.05).
 ##/
 
 Abuse category:
@@ -45,9 +45,6 @@ Extended Description:
  Bad hosts blocker module: "Blocks hosts frequently used by spammers, hackers, and other nefarious entities."
  Bot user agents module: "Blocks user agents associated with unwanted bots and nefarious activity."
  Bypasses: "The default signature bypass files normally included with the main package."
- Chart.js:
-  en-AU: "Enables the front-end to generate doughnut charts.<br />{{Links.Chart.js}} is available via the {{Links.MIT}} licence."
-  en-US: "Enables the front-end to generate doughnut charts.<br />{{Links.Chart.js}} is available via the {{Links.MIT}} license."
  Cookie scanner module: "Provides some limited protections against dangerous cookies."
  HTTP version checker module: "Makes it possible to block specific protocols and HTTP versions through the CIDRAM configuration."
  IP-API module: "Leverages the {{Links.IP-API}} API to provide an ASN and country code lookup facility for CIDRAM, enabling ASNs and countries to be blocked or whitelisted via the CIDRAM configuration, and providing a means for social networking verification to verify Facebook requests. (If you use this module, you won't need to use the BGPView module, as they serve the same purpose)."
@@ -344,7 +341,6 @@ confirm:
  Action: "Are you sure you want to "%s"?"
  Delete: "Are you sure you want to delete "%s"?"
 field:
- %s File: "%s File"
  2FA code: "2FA code"
  API key: "API key"
  Activate: "Activate"
@@ -378,6 +374,7 @@ field:
  Generate output as netmasks: "Generate output as netmasks"
  Immediately: "Immediately."
  Install: "Install"
+ Last modified: "Last modified"
  Latest version: "Latest version"
  Log In: "Log In"
  Macro: "Macro"
@@ -389,6 +386,7 @@ field:
  Password: "Password"
  Permissions: "Permissions"
  Preserve tags and comments: "Preserve tags and comments"
+ Purpose: "Purpose"
  Range (First Last): "Range (First – Last)"
  Rename: "Rename"
  Repair all: "Repair all"
@@ -416,6 +414,7 @@ field:
  log_rotation_archive: "Firstly archive, and then delete the oldest log files, until the limit is no longer exceeded."
  log_rotation_delete: "Delete the oldest log files, until the limit is no longer exceeded."
  size:
+  Size: "Size"
   Total size: "Total size:"
   GB: "GB"
   KB: "KB"
@@ -593,9 +592,9 @@ label:
  Bandwidth: "Bandwidth used: %s – Bandwidth available: %s"
  Branch latest stable: "Branch latest stable:"
  CAPTCHA attempts: "CAPTCHA attempts"
- CIDRAM disk usage: "CIDRAM disk usage:"
  CIDRAM version used: "CIDRAM version used:"
  Cache data and temporary files: "Cache data and temporary files"
+ Cancel: "Cancel"
  Characters left: "Characters left"
  Checkbox: "Checkbox"
  Checksum after: "Checksum after"
@@ -639,7 +638,7 @@ label:
  False positive risk: "False positive risk:"
  Fancy: "Fancy"
  Focus: "Focus:"
- Free disk space: "Free disk space:"
+
  Greylist the request: "Greylist the request.\nResets the number of signatures triggered, but continues processing the request. Recommended when you don't want to whitelist the request, but need something more substantial than triggering a bypass."
  Harvester: "Harvester"
  Hide: "Hide"
@@ -718,8 +717,6 @@ label:
  Tally: "Tally"
  Text formatting: "Text formatting:"
  The cache is empty: "The cache is empty."
- Total disk space: "Total disk space:"
- Total disk usage: "Total disk usage:"
  Total: "Total"
  Trigger a bypass: "Trigger a bypass.\nSubtracts one count from the number of signatures triggered, as long as at least one signature has already been triggered. Recommended for dealing with simple false positives potentially caused by the default signature files."
  Unignore this: "Unignore this"
@@ -891,8 +888,6 @@ response:
  Component successfully updated: "Component successfully updated."
  Configuration successfully updated: "Configuration successfully updated."
  Copied: "Copied"
- Directory successfully deleted: "Directory successfully deleted!"
- Directory successfully renamed: "Directory successfully renamed!"
  Don_t know what to do with the data after reading it: "Don't know what to do with the data after reading it.\nConsider chaining it to another command. Thanks."
  Error at the upstream: "Error at the upstream!"
  Failed to access %s: "Failed to access "%s"!"
@@ -914,9 +909,7 @@ response:
  Failed to upload: "Failed to upload!"
  File contains unexpected content: "File contains unexpected content!"
  File rejected: "File rejected"
- File successfully deleted: "File successfully deleted!"
  File successfully modified: "File successfully modified!"
- File successfully renamed: "File successfully renamed!"
  File successfully uploaded: "File successfully uploaded!"
  Finished reading from %s: "Finished reading from "%s"."
  Finished writing to %s: "Finished writing to "%s"."

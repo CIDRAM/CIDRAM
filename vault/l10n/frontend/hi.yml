@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data for the front-end (last modified: 2025.08.28).
+# This file: Hindi language data for the front-end (last modified: 2025.09.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -57,7 +57,6 @@ Extended Description:
  Bad hosts blocker module: "यह ब्लॉक होस्ट करता है, अक्सर स्पैमर, हैकर्स, और अन्य नेफ़ायस संस्थाओं द्वारा उपयोग किया जाता है।"
  Bot user agents module: "अवांछित बॉट और घृणित गतिविधि से जुड़े उपयोगकर्ता एजेंट ब्लॉक।"
  Bypasses: "डिफ़ॉल्ट हस्ताक्षर बाईपास फाइलों को सामान्यतः मुख्य पैकेज के साथ शामिल किया गया था।"
- Chart.js: "पाई चार्ट उत्पन्न करने के लिए सामने के अंत सक्षम करता है।<br />{{Links.Chart.js}} {{Links.MIT}} लाइसेंस के माध्यम से उपलब्ध है।"
  Cookie scanner module: "खतरनाक कुकीज़ के विरुद्ध कुछ सीमित सुरक्षा प्रदान करता है।"
  HTTP version checker module: "CIDRAM कॉन्फ़िगरेशन के माध्यम से विशिष्ट प्रोटोकॉल और HTTP संस्करणों को अवरुद्ध करना संभव बनाता है।"
  IP-API module: "CIDRAM के लिए ASN और देश कोड लुकअप सुविधा प्रदान करने के लिए {{Links.IP-API}} का उपयोग करता है। यह ASN और देशों को CIDRAM कॉन्फ़िगरेशन के माध्यम से अवरुद्ध या श्वेतसूची में सक्षम बनाता है, और Facebook अनुरोधों को सत्यापित करने के लिए सामाजिक नेटवर्किंग सत्यापन के लिए एक साधन प्रदान करता है। (यदि आप इस मॉड्यूल का उपयोग करते हैं, तो आपको BGPView मॉड्यूल का उपयोग करने की आवश्यकता नहीं होगी, क्योंकि वे एक ही उद्देश्य को पूरा करते हैं)।"
@@ -327,7 +326,6 @@ confirm:
  Action: "क्या आप वाकई "%s" चाहते हैं?"
  Delete: "क्या आप वाकई "%s" हटाना चाहते हैं?"
 field:
- %s File: "%s फाइल"
  2FA code: "2FA कोड"
  API key: "API कुंजी"
  Activate: "सक्रिय करें"
@@ -361,6 +359,7 @@ field:
  Generate output as netmasks: "नेटमास्क नोटेशन का उपयोग करके आउटपुट जनरेट करें"
  Immediately: "तुरंत।"
  Install: "इंस्टॉल करें"
+ Last modified: "अंतिम संशोधन"
  Latest version: "नवीनतम संस्करण"
  Log In: "लॉग इन करें"
  Macro: "मैक्रो"
@@ -372,6 +371,7 @@ field:
  Password: "पासवर्ड"
  Permissions: "अनुमतियां"
  Preserve tags and comments: "टैग और टिप्पणियां संरक्षित करें"
+ Purpose: "उद्देश्य"
  Range (First Last): "रेंज (प्रथम – अंतिम)"
  Rename: "नाम बदलें"
  Repair all: "सभी को मरम्मत करें"
@@ -399,6 +399,7 @@ field:
  log_rotation_archive: "सबसे पहले संग्रहित करें, और तब सबसे पुरानी लॉगफाइल हटाएं, जब तक कि सीमा अब पार न हो जाए।"
  log_rotation_delete: "सबसे पुरानी लॉगफाइल हटाएं, जब तक कि सीमा अब पार न हो जाए।"
  size:
+  Size: "आकार"
   Total size: "कुल आकार:"
   bytes:
    - "बाइट"
@@ -565,9 +566,9 @@ label:
  Bandwidth: "बैंडविड्थ का इस्तेमाल किया: %s – बैंडविड्थ उपलब्ध: %s"
  Branch latest stable: "शाखा नवीनतम स्थिर:"
  CAPTCHA attempts: "कैप्चा प्रयास"
- CIDRAM disk usage: "CIDRAM डिस्क उपयोग:"
  CIDRAM version used: "CIDRAM संस्करण का उपयोग:"
  Cache data and temporary files: "कैश डेटा और अस्थायी फाइलें"
+ Cancel: "रद्द करना"
  Characters left: "शेष वर्ण"
  Checkbox: "चेक बॉक्स"
  Checksum after: "चेकसम के बाद"
@@ -611,7 +612,7 @@ label:
  False positive risk: "झूठी सकारात्मक जोखिम:"
  Fancy: "स्वरूपित"
  Focus: "फोकस:"
- Free disk space: "खाली डिस्क स्पेस:"
+
  Greylist the request: "अनुरोध को ग्रे सूचीबद्ध के रूप में मानें।\nट्रिगर किए गए हस्ताक्षरों की संख्या को रीसेट करता है, लेकिन अनुरोध को संसाधित करना जारी रखता है। इसका सुझाव तब दिया जाता है जब आप अनुरोध को सफेद सूचीबद्ध के रूप में मानें नहीं करना चाहते हैं, लेकिन बाईपास को ट्रिगर करने से अधिक प्रभावी चीज़ की आवश्यकता होती है।"
  Harvester: "हारवेस्टर"
  Hide: "छिपाना"
@@ -690,8 +691,6 @@ label:
  Tally: "मिलान"
  Text formatting: "पाठ स्वरूपण:"
  The cache is empty: "कैश खाली है।"
- Total disk space: "कुल डिस्क स्पेस:"
- Total disk usage: "कुल डिस्क उपयोग:"
  Total: "कुल"
  Trigger a bypass: "एक बाईपास ट्रिगर करें।\nयदि कम से कम एक हस्ताक्षर पहले ही ट्रिगर किया जा चुका है, तो ट्रिगर किए गए हस्ताक्षरों की संख्या से एक गिनती घटा देता है। डिफ़ॉल्ट हस्ताक्षर फाइलों के कारण संभावित रूप से सरल झूठी सकारात्मकता से निपटने के लिए अनुशंसित।"
  Unignore this: "अनदेखा न करें"
@@ -863,8 +862,6 @@ response:
  Component successfully updated: "कंपोनेंट सफलतापूर्वक अपडेट किया गया।"
  Configuration successfully updated: "कॉन्फ़िगरेशन सफलतापूर्वक अपडेट किया गया।"
  Copied: "कॉपी किया गया"
- Directory successfully deleted: "निर्देशिका को सफलतापूर्वक हटाया गया!"
- Directory successfully renamed: "निर्देशिका को सफलतापूर्वक नाम दिया गया!"
  Don_t know what to do with the data after reading it: "इसे पढ़ने के बाद डेटा का क्या करना है, यह नहीं जानते।\nइसे किसी अन्य कमांड से जोड़ने पर विचार करें। धन्यवाद।"
  Error at the upstream: "अपस्ट्रीम पर त्रुटि!"
  Failed to access %s: ""%s" तक पहुंचने में विफल!"
@@ -886,9 +883,7 @@ response:
  Failed to upload: "अपलोड करने में विफल!"
  File contains unexpected content: "फाइल में अप्रत्याशित सामग्री है!"
  File rejected: "फाइल अस्वीकृत"
- File successfully deleted: "सफलतापूर्वक फाइल हटाया गया!"
  File successfully modified: "सफलतापूर्वक फाइल संशोधित किया गया!"
- File successfully renamed: "सफलतापूर्वक फाइल नाम दिया गया!"
  File successfully uploaded: "सफलतापूर्वक फाइल अपलोड की गई!"
  Finished reading from %s: ""%s" पढ़ना पूरा हो गया है।"
  Finished writing to %s: ""%s" को लिखना समाप्त।"

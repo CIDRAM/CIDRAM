@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2025.08.28).
+# This file: Norwegian language data for the front-end (last modified: 2025.09.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -57,7 +57,6 @@ Extended Description:
  Bad hosts blocker module: "Blokker vertene ofte brukt av spammere, hackere og andre farlige enheter."
  Bot user agents module: "Blokkerer brukeragenter assosiert med uønskede bots og ufarlig aktivitet."
  Bypasses: "Standard-signatur-bypass-filene som normalt følger med hovedpakken."
- Chart.js: "Gjør det mulig for frontendens å generere pajediagrammer.<br />{{Links.Chart.js}} er tilgjengelig via {{Links.MIT}}-lisensen."
  Cookie scanner module: "Gir noen begrensede beskyttelser mot farlige informasjonskapsler."
  HTTP version checker module: "Gjør det mulig å blokkere spesifikke protokoller og HTTP-versjoner gjennom CIDRAM-konfigurasjonen."
  IP-API module: "Utnytter {{Links.IP-API}} API for å tilby et ASN og landkode oppslag funksjonalitet for CIDRAM, slik at ASNer og land kan blokkeres eller hvitelister via CIDRAM-konfigurasjonen, og tilveiebringe et middel for verifisering av sosiale nettverk for å bekrefte Facebook-forespørsler. (Hvis du bruker denne modulen, du ikke trenger bruke BGPView-modulen, siden de tjener samme formål)."
@@ -327,7 +326,6 @@ confirm:
  Action: "Er du sikker på at du vil «%s»?"
  Delete: "Er du sikker på at du vil slette «%s»?"
 field:
- %s File: "%s-Fil"
  2FA code: "2FA kode"
  API key: "API-nøkkel"
  Activate: "Aktiver"
@@ -361,6 +359,7 @@ field:
  Generate output as netmasks: "Generer utdata som nettmasker"
  Immediately: "Øyeblikkelig."
  Install: "Installer"
+ Last modified: "Sist endret"
  Latest version: "Siste versjon"
  Log In: "Logg inn"
  Macro: "Makro"
@@ -372,6 +371,7 @@ field:
  Password: "Passord"
  Permissions: "Tillatelser"
  Preserve tags and comments: "Bevar tagger og kommentarer"
+ Purpose: "Hensikt"
  Range (First Last): "Område (Først – Siste)"
  Rename: "Gi nytt navn"
  Repair all: "Reparer alt"
@@ -399,6 +399,7 @@ field:
  log_rotation_archive: "Først arkiver, og deretter slett de eldste loggfiler, til grensen ikke overskrides."
  log_rotation_delete: "Slett de eldste loggfiler, til grensen ikke overskrides."
  size:
+  Size: "Størrelse"
   Total size: "Total størrelse:"
   bytes: "byte"
 hint:
@@ -565,9 +566,9 @@ label:
  Bandwidth: "Brukt båndbredde: %s – Tilgjengelig båndbredde: %s"
  Branch latest stable: "Branch siste stabile:"
  CAPTCHA attempts: "CAPTCHA forsøk"
- CIDRAM disk usage: "CIDRAM diskbruk:"
  CIDRAM version used: "CIDRAM versjon brukt:"
  Cache data and temporary files: "Cache data og midlertidige filer"
+ Cancel: "Kansellere"
  Characters left: "Tilgjengelige tegn"
  Checkbox: "Avkrysningsrute"
  Checksum after: "Sjekksum etter"
@@ -611,7 +612,7 @@ label:
  False positive risk: "Falsk positiv risiko:"
  Fancy: "Fancy"
  Focus: "Fokuset:"
- Free disk space: "Ledig diskplass:"
+
  Greylist the request: "Grålister forespørselen.\nTilbakestiller antallet signaturer som er utløst, men fortsetter å behandle forespørselen. Anbefales når du ikke vil hvitelister forespørselen, men trenger noe mer omfattende enn å utløse en bypass."
  Harvester: "Harvester"
  Hide: "Gjem"
@@ -690,8 +691,6 @@ label:
  Tally: "Tally"
  Text formatting: "Tekstformatering:"
  The cache is empty: "Cachen er tom."
- Total disk space: "Totalt diskplass:"
- Total disk usage: "Totalt diskbruk:"
  Total: "Total"
  Trigger a bypass: "Utløs en bypass.\nTrekker én telling fra antallet signaturer som er utløst, så lenge minst én signatur allerede er utløst. Anbefalt for å håndtere enkle falske positiver som potensielt kan forårsakes av standard signaturfilene."
  Unignore this: "Ikke ignorere dette"
@@ -863,8 +862,6 @@ response:
  Component successfully updated: "Komponent oppdatert."
  Configuration successfully updated: "Konfigurasjon oppdatert."
  Copied: "Kopiert"
- Directory successfully deleted: "Filkatalog slettet!"
- Directory successfully renamed: "Filkatalog omdøpt!"
  Don_t know what to do with the data after reading it: "Vet ikke hva jeg skal gjøre med dataene etter å ha lest den.\nVurder å lenke den til en annen kommando. Takk."
  Error at the upstream: "Feil ved oppstrøms!"
  Failed to access %s: "Kunne ikke få tilgang til «%s»!"
@@ -886,9 +883,7 @@ response:
  Failed to upload: "Opplasting mislyktes!"
  File contains unexpected content: "Filen inneholder uventet innhold!"
  File rejected: "Fil avvist"
- File successfully deleted: "Fil slettet!"
  File successfully modified: "Fil modifisert!"
- File successfully renamed: "Fil omdøpt!"
  File successfully uploaded: "Fil opplastet!"
  Finished reading from %s: "Ferdig med å lese fra «%s»."
  Finished writing to %s: "Ferdig med å skrive til «%s»."

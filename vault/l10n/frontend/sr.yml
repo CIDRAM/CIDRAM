@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Serbian language data for the front-end (last modified: 2025.08.28).
+# This file: Serbian language data for the front-end (last modified: 2025.09.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -57,7 +57,6 @@ Extended Description:
  Bad hosts blocker module: "Блокира хостове које често користе спамери, хакери, и други подли ентитети."
  Bot user agents module: "Блокира корисничке агенте повезане са нежељеним ботовима и злобним активностима."
  Bypasses: "Стандардне датотеке за заобилажење потписа су обично укључене у главни пакет."
- Chart.js: "Омогућава генерисање крофних графикона на фронт-енд.<br />{{Links.Chart.js}} је доступан преко {{Links.MIT}} лиценце."
  Cookie scanner module: "Пружа ограничену заштиту од опасних колачића."
  HTTP version checker module: "Омогућава блокирање одређених протокола и ХТТП верзија преко ЦИДРАМ конфигурације."
  IP-API module: "Користи {{Links.IP-API}} АПИ да обезбеди могућност тражења АСН-а и кода земље за ЦИДРАМ, омогућавајући АСН-овима и земљама да буду блокирани или стављени на белу листу преко конфигурације ЦИДРАМ-а, и обезбеђујући средства за верификацију друштвених мрежа ради верификације Фацебоок захтева. (Ако користите овај модул, нећете морати да користите БГПВиев модул, јер они служе истој сврси)."
@@ -327,7 +326,6 @@ confirm:
  Action: "Јесте ли сигурни да желите „%s“?"
  Delete: "Јесте ли сигурни да желите избришете „%s“?"
 field:
- %s File: "%s датотеку"
  2FA code: "2ФА код"
  API key: "АПИ кључ"
  Activate: "Активирајте"
@@ -361,6 +359,7 @@ field:
  Generate output as netmasks: "Генеришите излаз као мрежне маске"
  Immediately: "Одмах."
  Install: "Инсталирајте"
+ Last modified: "Последња измена"
  Latest version: "Најновија верзија"
  Log In: "Пријавите се"
  Macro: "Макро"
@@ -372,6 +371,7 @@ field:
  Password: "Лозинка"
  Permissions: "Дозволе"
  Preserve tags and comments: "Сачувајте ознаке и коментаре"
+ Purpose: "Сврха"
  Range (First Last): "Распон (Први – Последњи)"
  Rename: "Преименуј"
  Repair all: "Поправи све"
@@ -399,6 +399,7 @@ field:
  log_rotation_archive: "Прво архивирајте, а затим избришите најстарије датотеке евиденције, тако да ограничења више неће бити прекорачена."
  log_rotation_delete: "Избришите најстарије датотеке евиденције, тако да ограничења више неће бити прекорачена."
  size:
+  Size: "Величина"
   Total size: "Укупна величина:"
   GB: "ГБ"
   KB: "КБ"
@@ -574,9 +575,9 @@ label:
  Bandwidth: "Коришћени пропусни опсег: %s – Доступни пропусни опсег: %s"
  Branch latest stable: "Најновија стабилна грана:"
  CAPTCHA attempts: "Покушаји ЦАПТЦХА-е"
- CIDRAM disk usage: "ЦИДРАМ-ова употреба диска:"
  CIDRAM version used: "Верзија ЦИДРАМ-а која се користи:"
  Cache data and temporary files: "Кеш подаци и привремене датотеке"
+ Cancel: "Откажи"
  Characters left: "Преостали ликови"
  Checkbox: "Поље за потврду"
  Checksum after: "Контролни збир након"
@@ -621,7 +622,7 @@ label:
  False positive risk: "Ризик од лажно позитивних:"
  Fancy: "Отмено"
  Focus: "Фокус:"
- Free disk space: "Слободан простор на диску:"
+
  Greylist the request: "Стави захтев на сиву листу.\nРесетује број потписа, али наставља са обрадом захтева. Препоручује се када не желите ставити захтев на белу листу, али вам је потребно нешто значајније од заобилажења."
  Harvester: "Сакупљач"
  Hide: "Сакриј"
@@ -700,8 +701,6 @@ label:
  Tally: "Пребројавање"
  Text formatting: "Форматирање текста:"
  The cache is empty: "Кеш меморија је празна."
- Total disk space: "Укупан простор на диску:"
- Total disk usage: "Укупна искоришћеност диска:"
  Total: "Укупно"
  Trigger a bypass: "Извршите заобилажење.\nОдузима један од броја потписа, све док је број потписа барем један. Препоручује се за решавање једноставних лажно позитивних које потенцијално узроковано подразумеваним датотекама потписа."
  Unignore this: "Не игноришите ово"
@@ -873,8 +872,6 @@ response:
  Component successfully updated: "Компонента је успешно ажурирана."
  Configuration successfully updated: "Конфигурација је успешно ажурирана."
  Copied: "Копирано"
- Directory successfully deleted: "Директоријум је успешно обрисан!"
- Directory successfully renamed: "Директоријум је успешно преименован!"
  Don_t know what to do with the data after reading it: "Не знам шта да радим са подацима након што сам их прочитао.\nРазмислите о повезивању са другом командом. Хвала."
  Error at the upstream: "Грешка узводно!"
  Failed to access %s: "Приступ „%s“ није успео!"
@@ -896,9 +893,7 @@ response:
  Failed to upload: "Отпремање није успело!"
  File contains unexpected content: "Датотека садржи неочекивани садржај!"
  File rejected: "Датотека одбијена"
- File successfully deleted: "Датотека је успешно избрисан!"
  File successfully modified: "Датотека је успешно измењена!"
- File successfully renamed: "Датотека је успешно преименована!"
  File successfully uploaded: "Датотека је успешно отпремљена!"
  Finished reading from %s: "Завршено читање од „%s“."
  Finished writing to %s: "Завршено писање за „%s“."

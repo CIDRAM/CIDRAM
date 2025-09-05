@@ -3,15 +3,15 @@
 {nav}
   </nav>
   <main class="extend">
-    <div class="col">
-      <div class="s flexstretch">{state_msg}</div>
-      <form action="?{FMgrFormTarget}" method="POST">
+    <form action="?cidram-page=file-manager" method="POST">
+      <div class="col">
+        <div class="s flexstretch">{state_msg}</div>
+        <input type="hidden" name="do_action" value="edit-file" />
         <input type="hidden" name="filename" value="{filename}" />
-        <input type="hidden" name="do" value="edit-file" />
-        <div class="ng2 s flexstretch">{link.File Manager} – {filename}</div>
-        <div class="ng1 flexstretch"><textarea id="efta" name="content" onchange="javascript:wfp(this.value)" onkeyup="javascript:wfp(this.value)">{content}</textarea><script type="text/javascript">wfp(document.getElementById('efta').value)</script></div>
-        <div class="ng1 bNav flexstretch"><input type="submit" value="{field.Edit}" /> <input type="reset" value="{field.Reset}" /></div>
-      </form>
-    </div>
+        <div class="ng2 s">{link.File Manager} – {filename}</div>
+        <div class="ng1"><textarea id="efta" name="content" onchange="javascript:wfp(this.value)" onkeyup="javascript:wfp(this.value)">{content}</textarea><script type="text/javascript">wfp(document.getElementById('efta').value)</script></div>
+        <div class="spanner"><input type="submit" value="{field.Edit}" /> <input type="reset" value="{field.Reset}" /></div>
+      </div>
+    </form>
   </main>
 </div>

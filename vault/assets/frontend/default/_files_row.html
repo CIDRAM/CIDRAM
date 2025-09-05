@@ -1,13 +1,9 @@
-        <tr>
-          <form action="?{FMgrFormTarget}" method="POST">
-            <input name="cidram-form-target" type="hidden" value="file-manager" />
-            <input name="filename" type="hidden" value="{Filename}" />
-            <td class="h3">
-              <img src="?cidram-page=icon&{Icon}&theme={theme}" alt="Icon" class="ico" /><br />
-              <div class="s">{Filename}</div><br />{Filetype}<br />{Filesize}
-            </td>
-            <td class="h3f">
-              <div class="s">{ThisOptions}</div>
-            </td>
-          </form>
-        </tr>
+      <div class="h1 s" id="Name{FilenameID}">
+        {Icon}
+        <span id="File{FilenameID}">{Filename}</span>
+        <span id="RenameControls{FilenameID}" style="display:none"><span class="flexrow"><input id="RenameInput{FilenameID}" class="flexin" type="text" value="{Filename}" /><input type="button" class="auto" value="{field.OK}" onclick="javascript:hideid('RenameControls{FilenameID}');showid('File{FilenameID}');showid('Icon{FilenameID}');renameFile(document.getElementById('File{FilenameID}').textContent,document.getElementById('RenameInput{FilenameID}').value,'{FilenameID}')" /><input type="button" class="auto" value="{label.Cancel}" onclick="javascript:hideid('RenameControls{FilenameID}');showid('File{FilenameID}');showid('Icon{FilenameID}')" /></span></span>
+        <span id="DeleteControls{FilenameID}" style="display:none"><span class="flexrow"><span>{DeleteConfirmText}</span><input type="button" class="auto" value="{field.OK}" onclick="javascript:deleteFile(document.getElementById('File{FilenameID}').textContent,'{FilenameID}')" /><input type="button" class="auto" value="{label.Cancel}" onclick="javascript:hideid('DeleteControls{FilenameID}');showid('File{FilenameID}');showid('Icon{FilenameID}');document.getElementById('Name{FilenameID}').classList.remove('r');document.getElementById('Size{FilenameID}').classList.remove('r');document.getElementById('Component{FilenameID}').classList.remove('r');document.getElementById('Options{FilenameID}').classList.remove('rf')" /></span></span>
+      </div>
+      <div class="h1 big" id="Size{FilenameID}">{Filesize}</div>
+      <div class="h1 big" id="Component{FilenameID}">{Component}</div>
+      <div class="h1f s fmOptions" id="Options{FilenameID}">{ThisOptions}<script type="text/javascript">document.getElementById('RenameInput{FilenameID}').addEventListener('keydown',function(e){if(e.keyCode===13||e.keyCode===27){hideid('RenameControls{FilenameID}');showid('File{FilenameID}');showid('Icon{FilenameID}')}if(e.keyCode===13){renameFile(document.getElementById('File{FilenameID}').textContent,document.getElementById('RenameInput{FilenameID}').value,'{FilenameID}')}})</script></div>

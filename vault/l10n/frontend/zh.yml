@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese language data for the front-end (last modified: 2025.08.28).
+# This file: Chinese language data for the front-end (last modified: 2025.09.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -59,7 +59,6 @@ Extended Description:
  Bad hosts blocker module: {"zh-Hans": "阻止垃圾邮件发送者，黑客，和其他恶意实体经常使用的主机。", "zh-Hant": "阻止垃圾郵件發送者，黑客，和其他惡意實體經常使用的主機。"}
  Bot user agents module: {"zh-Hans": "阻止不需要的机器人和恶意活动相关联的用户代理。", "zh-Hant": "阻止不需要的機器人和惡意活動相關聯的用戶代理。"}
  Bypasses: {"zh-Hans": "标准签名旁路文件通常包括在主包。", "zh-Hant": "標準簽名旁路文件通常包括在主包。"}
- Chart.js: {"zh-Hans": "使前端能够生成饼图。<br />{{Links.Chart.js}}可通过{{Links.MIT}}许可证获得。", "zh-Hant": "使前端能夠生成餅圖。<br />{{Links.Chart.js}}可通過{{Links.MIT}}許可證獲得。"}
  Cookie scanner module: {"zh-Hans": "提供一些针对危险cookie的有限保护。", "zh-Hant": "提供一些針對危險cookie的有限保護。"}
  HTTP version checker module: {"zh-Hans": "通过CIDRAM配置可以阻止特定的协议和HTTP版本。", "zh-Hant": "通過CIDRAM配置可以阻止特定的協定和HTTP版本。"}
  IP-API module:
@@ -369,7 +368,6 @@ confirm:
  Action: {"zh-Hans": "您确定要“%s”吗？", "zh-Hant": "您確定要『%s』嗎？"}
  Delete: {"zh-Hans": "您确定要删除“%s”吗？", "zh-Hant": "您確定要刪除『%s』嗎？"}
 field:
- %s File: "%s文件"
  2FA code: {"zh-Hans": "2FA代码", "zh-Hant": "2FA代碼"}
  API key: {"zh-Hans": "API密钥", "zh-Hant": "API金鑰"}
  Activate: {"zh-Hans": "启用", "zh-Hant": "啟用"}
@@ -403,6 +401,7 @@ field:
  Generate output as netmasks: {"zh-Hans": "以子网络掩码的形式生成输出", "zh-Hant": "以子網絡掩碼的形式生成輸出"}
  Immediately: "立即地。"
  Install: {"zh-Hans": "安装", "zh-Hant": "安裝"}
+ Last modified: {"zh-Hans": "上次修改时间", "zh-Hant": "上次修改時間"}
  Latest version: "最新版本"
  Log In: {"zh-Hans": "登录", "zh-Hant": "登錄"}
  Macro: "巨集"
@@ -414,6 +413,7 @@ field:
  Password: {"zh-Hans": "密码", "zh-Hant": "密碼"}
  Permissions: {"zh-Hans": "权限", "zh-Hant": "權限"}
  Preserve tags and comments: {"zh-Hans": "保留标签和评论", "zh-Hant": "保留標籤和評論"}
+ Purpose: "目的"
  Range (First Last): {"zh-Hans": "范围 （初始 – 最后）", "zh-Hant": "範圍 （初始 – 最後）"}
  Rename: "改名"
  Repair all: {"zh-Hans": "修复全部", "zh-Hant": "修復全部"}
@@ -441,6 +441,7 @@ field:
  log_rotation_archive: {"zh-Hans": "首先归档，然后删除最旧的日志文件，直到不再超出限制。", "zh-Hant": "首先歸檔，然後刪除最舊的日誌文件，直到不再超出限制。"}
  log_rotation_delete: {"zh-Hans": "删除最旧的日志文件，直到不再超出限制。", "zh-Hant": "刪除最舊的日誌文件，直到不再超出限制。"}
  size:
+  Size: "大小"
   Total size: {"zh-Hans": "总大小：", "zh-Hant": "總大小："}
   bytes:
    - {"zh-Hans": "字节", "zh-Hant": "字節"}
@@ -722,9 +723,9 @@ label:
  Bandwidth: {"zh-Hans": "使用的带宽： %s – 可用带宽： %s", "zh-Hant": "使用的帶寬： %s – 可用帶寬： %s"}
  Branch latest stable: {"zh-Hans": "分支最新稳定：", "zh-Hant": "分支最新穩定："}
  CAPTCHA attempts: {"zh-Hans": "验证码尝试", "zh-Hant": "驗證碼嘗試"}
- CIDRAM disk usage: {"zh-Hans": "CIDRAM使用的磁盘空间：", "zh-Hant": "CIDRAM使用的磁盤空間："}
  CIDRAM version used: "目前使用CIDRAM版本："
  Cache data and temporary files: {"zh-Hans": "缓存数据和临时文件", "zh-Hant": "緩存數據和臨時文件"}
+ Cancel: "取消"
  Characters left: {"zh-Hans": "剩余字符数", "zh-Hant": "剩餘字元數"}
  Checkbox: {"zh-Hans": "选框", "zh-Hant": "選框"}
  Checksum after: {"zh-Hans": "之后的校验和", "zh-Hant": "之後的校驗和"}
@@ -768,7 +769,6 @@ label:
  False positive risk: {"zh-Hans": "假阳性风险：", "zh-Hant": "假陽性風險："}
  Fancy: "漂亮"
  Focus: {"zh-Hans": "焦点：", "zh-Hant": "焦點："}
- Free disk space: {"zh-Hans": "可用磁盘空间：", "zh-Hant": "可用磁盤空間："}
  Greylist the request: {"zh-Hans": "将请求列入灰名单。\n重置触发的签名数量，但继续处理请求。​当您不想将请求列入白名单，但需要比触发的绕过更实质的时推荐使用。", "zh-Hant": "將請求列入灰名單。\n重置觸發的簽名數量，但繼續處理請求。​當您不想將請求列入白名單，但需要比觸發的繞過更實質的時推薦使用。"}
  Harvester: {"zh-Hans": "收割机", "zh-Hant": "收割機"}
  Hide: {"zh-Hans": "隐藏", "zh-Hant": "隱藏"}
@@ -861,8 +861,6 @@ label:
  Tally: {"zh-Hans": "理货", "zh-Hant": "理貨"}
  Text formatting: "文字格式："
  The cache is empty: {"zh-Hans": "缓存是空的。", "zh-Hant": "緩存是空的。"}
- Total disk space: {"zh-Hans": "总磁盘空间：", "zh-Hant": "總磁盤空間："}
- Total disk usage: {"zh-Hans": "总共使用的磁盘空间：", "zh-Hant": "總共使用的磁盤空間："}
  Total: {"zh-Hans": "总", "zh-Hant": "總"}
  Trigger a bypass: {"zh-Hans": "触发旁路。\n只要至少已经触发了一个签名，就从触发的签名数中减去一个计数。推荐用于处理可能由默认签名文件引起的简单假阳性。", "zh-Hant": "觸發旁路。\n只要至少已經觸發了一個簽名，就從觸發的簽名數中減去一個計數。推薦用於處理可能由默認簽名文件引起的簡單假陽性。"}
  Unignore this: {"zh-Hans": "不要忽略这个", "zh-Hant": "不要忽略這個"}
@@ -1044,8 +1042,6 @@ response:
  Component successfully updated: {"zh-Hans": "组件成功更新。", "zh-Hant": "組件成功更新。"}
  Configuration successfully updated: "配置成功更新。"
  Copied: {"zh-Hans": "已复制", "zh-Hant": "已復制"}
- Directory successfully deleted: {"zh-Hans": "文件夹成功删除！", "zh-Hant": "文件夾成功刪除！"}
- Directory successfully renamed: {"zh-Hans": "文件夹成功改名！", "zh-Hant": "文件夾成功改名！"}
  Don_t know what to do with the data after reading it: {"zh-Hans": "读取数据后不知道如何处理。\n考虑将其链接到另一个命令。谢谢。", "zh-Hant": "讀取數據後不知道如何處理。\n考慮將其鏈接到另一個命令。謝謝。"}
  Error at the upstream: {"zh-Hans": "上游错误！", "zh-Hant": "上游錯誤！"}
  Failed to access %s: {"zh-Hans": "无法访问“%s”！", "zh-Hant": "無法訪問『%s』！"}
@@ -1067,9 +1063,7 @@ response:
  Failed to upload: {"zh-Hans": "无法上传！", "zh-Hant": "無法上傳！"}
  File contains unexpected content: {"zh-Hans": "文件包含意外的内容！", "zh-Hant": "文件包含意外的內容！"}
  File rejected: {"zh-Hans": "文件拒绝", "zh-Hant": "文件拒絕"}
- File successfully deleted: {"zh-Hans": "文件成功删除！", "zh-Hant": "文件成功刪除！"}
  File successfully modified: "文件成功改性！"
- File successfully renamed: "文件成功改名！"
  File successfully uploaded: {"zh-Hans": "文件成功上传！", "zh-Hant": "文件成功上傳！"}
  Finished reading from %s: {"zh-Hans": "从“%s”读完。", "zh-Hant": "從『%s』讀完。"}
  Finished writing to %s: {"zh-Hans": "完成对“%s”的写入。", "zh-Hant": "完成對『%s』的寫入。"}

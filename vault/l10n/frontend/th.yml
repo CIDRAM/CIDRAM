@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2025.08.28).
+# This file: Thai language data for the front-end (last modified: 2025.09.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -57,7 +57,6 @@ Extended Description:
  Bad hosts blocker module: "บล็อกโฮสต์ที่มักใช้โดยผู้ส่งสแปม แฮ็กเกอร์ และบุคคลอื่น ๆ ที่ไม่เป็นไปตามหลักเกณฑ์."
  Bot user agents module: "บล็อกตัวแทนผู้ใช้ที่เกี่ยวข้องกับบอทและกิจกรรมที่ไม่เป็นที่ต้องการ."
  Bypasses: "ไฟล์บายพาสลายเซ็นเริ่มต้นที่รวมอยู่ในแพคเกจหลัก."
- Chart.js: "เปิดใช้งาน front-end เพื่อสร้างแผนภูมิวงกลม.<br />{{Links.Chart.js}} สามารถใช้ได้ผ่านใบอนุญาต {{Links.MIT}}."
  Cookie scanner module: "ให้การป้องกันที่ จำกัด สำหรับคุกกี้ที่เป็นอันตราย."
  HTTP version checker module: "ทำให้สามารถบล็อกโปรโตคอลและเวอร์ชัน HTTP เฉพาะผ่านการกำหนดค่า CIDRAM."
  IP-API module: "ใช้ {{Links.IP-API}} เพื่อจัดเตรียมความสามารถในการค้นหา ASN และรหัสประเทศสำหรับ CIDRAM การเปิดใช้งาน ASN และประเทศต่างๆให้ถูกบล็อกหรืออนุญาตผ่านการกำหนดค่า CIDRAM และจัดหาวิธีสำหรับการตรวจสอบเครือข่ายสังคมออนไลน์เพื่อยืนยันคำขอ Facebook. (หากคุณใช้โมดูลนี้ คุณไม่จำเป็นต้องใช้โมดูล BGPView เนื่องจากมีจุดประสงค์เดียวกัน)."
@@ -327,7 +326,6 @@ confirm:
  Action: "คุณแน่ใจหรือไม่ว่าต้องการ "%s"?"
  Delete: "คุณแน่ใจหรือไม่ว่าต้องการลบ "%s"?"
 field:
- %s File: "ไฟล์ %s"
  2FA code: "โค้ด 2FA"
  API key: "คีย์ API"
  Activate: "เปิดใช้งาน"
@@ -361,6 +359,7 @@ field:
  Generate output as netmasks: "สร้างเอาต์พุตเป็น netmask"
  Immediately: "โดยทันที."
  Install: "ติดตั้ง"
+ Last modified: "แก้ไขล่าสุด"
  Latest version: "รุ่นล่าสุด"
  Log In: "เข้าสู่ระบบ"
  Macro: "มาโคร"
@@ -372,6 +371,7 @@ field:
  Password: "รหัสผ่าน"
  Permissions: "สิทธิ์"
  Preserve tags and comments: "รักษาแท็กและความคิดเห็น"
+ Purpose: "วัตถุประสงค์"
  Range (First Last): "พิสัย (เริ่ม – สิ้นสุด)"
  Rename: "เปลี่ยนชื่อ"
  Repair all: "ซ่อมแซมทั้งหมด"
@@ -399,6 +399,7 @@ field:
  log_rotation_archive: "ประการแรก บีบอัดไฟล์ และหลังจากนั้น ลบไฟล์ที่เก่าที่สุด จำกัด จะไม่เกิน."
  log_rotation_delete: "ลบไฟล์ที่เก่าที่สุด จนกว่าขีด จำกัด จะไม่เกิน."
  size:
+  Size: "ขนาด"
   Total size: "ขนาดรวม:"
   bytes: "ไบต์"
 hint:
@@ -554,9 +555,9 @@ label:
  Bandwidth: "แบนด์วิดท์ที่ใช้: %s – แบนด์วิดท์ที่ใช้ได้: %s"
  Branch latest stable: "สาขาเสถียรล่าสุด:"
  CAPTCHA attempts: "ความพยายามในการ CAPTCHA"
- CIDRAM disk usage: "เนื้อที่ดิสก์ที่ CIDRAM ใช้:"
  CIDRAM version used: "รุ่น CIDRAM ในการใช้งาน:"
  Cache data and temporary files: "ข้อมูลแคชและไฟล์ชั่วคราว"
+ Cancel: "ยกเลิก"
  Characters left: "อักขระที่เหลืออยู่"
  Checkbox: "ช่องทำเครื่องหมาย"
  Checksum after: "เช็คซัมหลัง"
@@ -596,7 +597,7 @@ label:
  False positive risk: "ความเสี่ยงสำหรับการบวกเท็จ:"
  Fancy: "แฟนซี"
  Focus: "โฟกัส:"
- Free disk space: "พื้นที่ว่างในดิสก์:"
+
  Greylist the request: "รายการเทา.\nรีเซ็ตจำนวนลายเซ็น แต่ดำเนินการตามคำขอต่อไป. แนะนำเมื่อคุณไม่ต้องการรายการสีขาว แต่ต้องการมากกว่าบายพาส."
  Harvester: "เครื่องมือเก็บเกี่ยว"
  Hide: "ปิดบัง"
@@ -675,8 +676,6 @@ label:
  Tally: "นับ"
  Text formatting: "การจัดรูปแบบข้อความ:"
  The cache is empty: "แคชว่างเปล่า."
- Total disk space: "เนื้อที่ดิสก์ทั้งหมด:"
- Total disk usage: "เนื้อที่ดิสก์ที่ใช้ทั้งหมด:"
  Total: "ทั้งหมด"
  Trigger a bypass: "ทริกเกอร์บายพาส.\nหากจำนวนลายเซ็นมีอย่างน้อยหนึ่ง ลบหนึ่งจากการนับลายเซ็น. แนะนำสำหรับการจัดการกับผลบวกปลอมที่อาจเกิดขึ้นซึ่งเกิดจากไฟล์ลายเซ็นเริ่มต้น."
  Unignore this: "อย่าไม่สนใจเรื่องนี้"
@@ -848,8 +847,6 @@ response:
  Component successfully updated: "คอมโพเนนต์สำเร็จแล้วอัปเดต."
  Configuration successfully updated: "การกำหนดค่าสำเร็จแล้วอัปเดต."
  Copied: "คัดลอกแล้ว"
- Directory successfully deleted: "ไดเรกทอรีสำเร็จแล้วลบ!"
- Directory successfully renamed: "ไดเรกทอรีสำเร็จแล้วเปลี่ยนชื่อ!"
  Don_t know what to do with the data after reading it: "ไม่รู้จะทำอย่างไรกับข้อมูลหลังจากอ่านแล้ว.\nพิจารณาผูกมัดกับคำสั่งอื่น. ขอบคุณ."
  Error at the upstream: "เกิดข้อผิดพลาดที่ต้นน้ำ!"
  Failed to access %s: "ไม่สามารถเข้าถึง "%s"!"
@@ -871,9 +868,7 @@ response:
  Failed to upload: "ล้มเหลวอัปโหลด!"
  File contains unexpected content: "ไฟล์มีเนื้อหาที่ไม่คาดคิด!"
  File rejected: "ไฟล์ถูกปฏิเสธ"
- File successfully deleted: "ไฟล์สำเร็จแล้วลบ!"
  File successfully modified: "ไฟล์สำเร็จแล้วเปลี่ยนแปลง!"
- File successfully renamed: "ไฟล์สำเร็จแล้วเปลี่ยนชื่อ!"
  File successfully uploaded: "ไฟล์สำเร็จแล้วอัปโหลด!"
  Finished reading from %s: "อ่านจบจาก "%s"."
  Finished writing to %s: "เขียนถึง "%s" เสร็จแล้ว."

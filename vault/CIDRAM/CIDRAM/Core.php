@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2025.09.03).
+ * This file: The CIDRAM core (last modified: 2025.09.05).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -3265,7 +3265,7 @@ class Core
     public function freeFromTraversal(string $Path): bool
     {
         return !preg_match(
-            '~//|(?:[^\da-z\p{L}\p{N}\p{M}\p{P}\p{S}\p{Z}.]|[\\/?&=]|^)\.\.+(?:[^\da-z\p{L}\p{N}\p{M}\p{P}\p{S}\p{Z}.]|[\\/?&=]|$)|/\.+(?:[^\da-z\p{L}\p{N}\p{M}\p{P}\p{S}\p{Z}.]|[\\/?&=]|$)|(?:[^\da-z\p{L}\p{N}\p{M}\p{P}\p{S}\p{Z}.]|[\\/?&=])\.+/|[\x01-\x1F]~i',
+            '~(?:[^:]|^)//|(?:[^\da-z\p{L}\p{N}\p{M}\p{P}\p{S}\p{Z}.]|[\\/?&=]|^)\.\.+(?:[^\da-z\p{L}\p{N}\p{M}\p{P}\p{S}\p{Z}.]|[\\/?&=]|$)|/\.+(?:[^\da-z\p{L}\p{N}\p{M}\p{P}\p{S}\p{Z}.]|[\\/?&=]|$)|(?:[^\da-z\p{L}\p{N}\p{M}\p{P}\p{S}\p{Z}.]|[\\/?&=])\.+/|[\x01-\x1F]~i',
             str_ireplace(['%25', '%22', '%27', '%2e', '%2f', '%5b', '%5c', '%5d', '%5e', '%5f', '%60', '\\'], ['%', '"', '\'', '.', '/', '[', '/', ']', '^', '_', '`', '/'], $Path)
         );
     }

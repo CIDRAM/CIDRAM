@@ -43,7 +43,7 @@ a:link,a:visited{color:#eee6ab}
 a:hover,a:active,a:focus{color:#fff7bc}
 .cat,.exp,.gen,nav,.s,.txtGn,.txtOe,.txtRd,.spanner,a,input,input[type=file]::file-selector-button,select,textarea{font-weight:700}
 .ci,.co,.gen,.center{margin:auto}
-.ci,.co,.ng1:not(nav .ng1,.quad .ng1,.col>.ng1),.ng2:not(nav .ng2,.quad .ng2,,.col>.ng2){width:calc(100% - 32px)}
+.ci,.co,.ng1:not(nav .ng1,.quad .ng1,.duo .ng1,.col>.ng1),.ng2:not(nav .ng2,.quad .ng2,.duo .ng2,.col>.ng2){width:calc(100% - 32px)}
 .ci{background-color:rgba(69,84,75,.5);border-style:solid;border-width:1px;border-color:#aaa;text-align:{FE_Align};border-top-{FE_Align_Reverse}-radius:24px;padding:12px}
 .co,body,.center{text-align:center}
 .co,body{padding:0}
@@ -256,13 +256,14 @@ input[type=checkbox],input[type=radio]{accent-color:#cca}
 .configOpenPos{transform:scaleY(1);transform-origin:top center;opacity:1;max-height:auto}
 .spanner+table{margin:-2px -2px 0 -2px}
 .spanner+table~table{margin:-4px -2px 0 -2px}
-.col>form{display:contents}
+.col>form,.quad>form,.duo>form{display:contents}
 input[type=hidden],script{display:none}
 .logVis{overflow:visible auto;margin-left:2px;margin-right:2px}
 form+.logVis,table[id="logsTA"]{margin-top:-2px}
 textarea[id="logsTA"]{margin-top:0}
 .quad{display:grid;gap:2px;grid-template-columns:repeat(4,1fr);justify-content:stretch;justify-items:stretch}
-.col+.quad{margin-top:2px;margin-{FE_Align_Reverse}:1px}
+.duo{display:grid;gap:2px;grid-template-columns:1fr 1fr;justify-content:stretch;justify-items:stretch}
+.col+.quad,.col+.duo,.quad+.col,.quad+.duo,.duo+.col,.duo+.quad{margin-top:2px;margin-{FE_Align_Reverse}:1px}
 @media only all and (max-width:968px) {
   .quad{grid-template-columns:1fr 1fr}
 }

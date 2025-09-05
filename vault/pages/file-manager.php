@@ -236,12 +236,12 @@ if (!$this->FE['ASYNC']) {
         /** Rename the file. */
         if (rename($this->Vault . $FMData['filename'], $this->Vault . $FMData['filename_new'])) {
             $this->deleteDirectory($FMData['filename']);
-            $this->FE['state_msg'] = "\nOK";
+            $this->FE['state_msg'] = 'OK';
         } else {
-            $this->FE['state_msg'] = $this->L10N->getString('response.Failed to rename') . "\nFailed";
+            $this->FE['state_msg'] = $this->L10N->getString('response.Failed to rename');
         }
     } else {
-        $this->FE['state_msg'] = $this->L10N->getString('response.Failed to rename') . "\nFailed";
+        $this->FE['state_msg'] = $this->L10N->getString('response.Failed to rename');
     }
 
     /** Return results to the async call for the rename operation. */
@@ -249,15 +249,15 @@ if (!$this->FE['ASYNC']) {
 } elseif (isset($FMData['filename'], $FMData['do_action']) && $FMData['do_action'] === 'delete-file') {
     if (is_dir($this->Vault . $FMData['filename'])) {
         if ($this->isDirEmpty($this->Vault . $FMData['filename']) && rmdir($this->Vault . $FMData['filename'])) {
-            $this->FE['state_msg'] = "\nOK";
+            $this->FE['state_msg'] = 'OK';
         } else {
-            $this->FE['state_msg'] = $this->L10N->getString('response.Failed to delete') . "\nFailed";
+            $this->FE['state_msg'] = $this->L10N->getString('response.Failed to delete');
         }
     } elseif (unlink($this->Vault . $FMData['filename'])) {
         $this->deleteDirectory($FMData['filename']);
-        $this->FE['state_msg'] = "\nOK";
+        $this->FE['state_msg'] = 'OK';
     } else {
-        $this->FE['state_msg'] = $this->L10N->getString('response.Failed to delete') . "\nFailed";
+        $this->FE['state_msg'] = $this->L10N->getString('response.Failed to delete');
     }
 
     /** Return results to the async call for the delete operation. */

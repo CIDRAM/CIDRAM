@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The IP tracking page (last modified: 2025.08.22).
+ * This file: The IP tracking page (last modified: 2025.09.05).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -158,9 +158,8 @@ if (!$this->FE['ASYNC']) {
 
         /** Set clearing option. */
         $ThisTracking['Options'] = sprintf(
-            '<input type="button" class="auto" onclick="javascript:{window[\'IPAddr\']=\'%s\';' .
-            '$(\'POST\',\'\',[\'IPAddr\'],function(){w(\'stateMsg\',\'%s\')},function(e){w(\'stateMsg\',e);' .
-            'hideid(\'%s\')},function(e){w(\'stateMsg\',e)})}" value="%s" />',
+            '<input type="button" class="auto" onclick="javascript:{window[\'IPAddr\']=\'%1$s\';$(\'POST\',\'\',[\'IPAddr\'],function(){w(\'stateMsg\',\'%2$s\')},function(e){w(\'stateMsg\',e);' .
+            'document.getElementById(\'A%3$s\').classList.add(\'fmDelete\');document.getElementById(\'B%3$s\').classList.add(\'fmDelete\');document.getElementById(\'C%3$s\').classList.add(\'fmDelete\');document.getElementById(\'D%3$s\').classList.add(\'fmDelete\')},function(e){w(\'stateMsg\',e)})}" value="%4$s" />',
             $ThisTracking['IPAddr'],
             $this->L10N->getString('label.Loading_'),
             $ThisTracking['IPID'],

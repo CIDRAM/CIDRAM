@@ -29,6 +29,11 @@ Detailed version release guidelines for CIDRAM can be found at:
   the IP testing page were preventing the copy to clipboard icon from being
   able to copy those values properly; Fixed.
 
+- [2025.09.06; Bug-fix]: The DNS-Resolve closure wasn't citing a specific
+  record type when calling the Google DNS API, potentially causing false
+  positives when attempting to verify search engines in the event where the
+  resolution may differ depending on the specified record type; Fixed (#637).
+
 === Version/Release 1.29.3 ===
 PATCH RELEASE.
 

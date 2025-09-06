@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2025.08.26).
+ * This file: Functions file (last modified: 2025.09.06).
  */
 
 /**
@@ -932,14 +932,27 @@ $CIDRAM['DNS-Resolve'] = function ($Host, $Timeout = 5) use (&$CIDRAM) {
         return '';
     }
     static $Valid = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-._~';
+    $RecordParam = '';
+    $PadBase = 204;
+    $TTL = 21600;
+    if (isset($this->CIDRAM['LastTestIP'])) {
+        if ($this->CIDRAM['LastTestIP'] === 4) {
+            $RecordParam = '&type=A';
+            $PadBase = 211;
+        } elseif ($this->CIDRAM['LastTestIP'] === 6) {
+            $RecordParam = '&type=AAAA';
+            $PadBase = 214;
+            $TTL = 129600;
+        }
+    }
 
-    $CIDRAM['DNS-Forwards'][$Host] = ['IPAddr' => '', 'Time' => $CIDRAM['Now'] + 21600];
+    $CIDRAM['DNS-Forwards'][$Host] = ['IPAddr' => '', 'Time' => $CIDRAM['Now'] + $TTL];
     $CIDRAM['DNS-Forwards-Modified'] = true;
 
-    $URI = 'https://dns.google.com/resolve?name=' . urlencode($Host) . '&random_padding=';
-    $PadLen = 204 - $HostLen;
+    $URI = 'https://dns.google.com/resolve?name=' . $Host . $RecordParam . '&random_padding=';
+    $PadLen = $PadBase - $HostLen;
     if ($PadLen < 1) {
-        $PadLen = 972 - $HostLen;
+        $PadLen += 768;
     }
     while ($PadLen > 0) {
         $PadLen--;

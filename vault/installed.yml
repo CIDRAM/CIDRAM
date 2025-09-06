@@ -1,6 +1,6 @@
 CIDRAM Core:
  Name: "CIDRAM Core"
- Version: "3.10.1-DEV+252480"
+ Version: "3.10.1-DEV+252481"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Front-End: "Latest"
@@ -27,7 +27,7 @@ CIDRAM Core:
    Checksum: "44528aa97fe4b83343f7fe4ba7937971c9bd08fd2e3c2adcf2e6ccbc97d2d2d0:5544"
   CIDRAM/CIDRAM/Core.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Core.php"
-   Checksum: "59070835d89d87c8319ab79c7a347eff88f8d72e9bbd38cfd166403ab0e1bcf7:145644"
+   Checksum: "2e81c6ad290630ef5e9437b91b0f0c5ec9b492deaffec17dce68673dc74a878d:146083"
   CIDRAM/CIDRAM/Duration.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Duration.php"
    Checksum: "2407aa5cd6fa8f1bfd789d4d8e4cd37cba050dc7bb1ecc9c8387f75f14049c7c:11651"
@@ -60,7 +60,7 @@ CIDRAM Core:
    Checksum: "4d56d0a305ceafab32ade65a0f74ad27efe50964d0e257d787a6ee7056c41880:1313"
   verification.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/verification.yml"
-   Checksum: "f7fa0c8ba119e95f0d86859bc9c17fe3a13dfe906d8c23b765a8af4d05517609:11943"
+   Checksum: "f873cbf0655ccb42fe96172596b893c177ef0ce02660c291dbfd6a77a6d1a3cd:11947"
 CIDRAM Front-End:
  Name: "CIDRAM Front-End"
  Version: "3.10.1-DEV+252450"
@@ -1452,12 +1452,12 @@ IP-API module:
    Used with: "modules"
 Optional security extras module:
  False Positive Risk: "Medium"
- Version: "2025.247.2"
+ Version: "2025.248.0"
  Dependencies:
   PHP: "^7.2|^8"
-  CIDRAM Core: "^3"
-  l10n/core/{lang}: ">=2025.208"
-  l10n/frontend/{lang}: ">=2025.217"
+  CIDRAM Core: "^3.10.1-DEV+252480"
+  l10n/core/{lang}: ">=2025.225"
+  l10n/frontend/{lang}: ">=2025.236"
  When Install Succeeds: ["queue message response.please_check_config"]
  When Update Succeeds:
   - "if {Components.Meta.Optional security extras module.Version}<2025.198&&{Components.RemoteMeta.Optional security extras module.Version}>=2025.198 then queue message <span dir="ltr" lang="en-AU">New configuration directive introduced with this update, <code>extras➡remove_headers</code>.</span>"

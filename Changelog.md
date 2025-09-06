@@ -469,6 +469,7 @@
 - [2025.08.25]: Standard signatures should've been case-insensitive, but some of the checks used were case-sensitive; Fixed (#633).
 - [2025.08.26]: Wrong label used for CAPTCHAs at the front-end statistics page; Fixed (#631).
 - [2025.09.03]: Unescaped quotes in values supplied to the inputs at the IP testing page were preventing the copy to clipboard icon from being able to copy those values properly; Fixed.
+- [2025.09.06]: The dnsResolve method wasn't citing a specific record type when calling the Google DNS API, potentially causing false positives when attempting to verify search engines in the event where the resolution may differ depending on the specified record type; Fixed (#637).
 
 #### Other changes.
 - [2025.08.21]: Added a macro for uninstalling any no longer available components.

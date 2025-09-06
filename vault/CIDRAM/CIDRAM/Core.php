@@ -1245,11 +1245,24 @@ class Core
         if (($HostLen = strlen($Host)) > 253) {
             return '';
         }
+        $RecordParam = '';
+        $PadBase = 204;
+        $TTL = 21600;
+        if (isset($this->CIDRAM['LastTestIP'])) {
+            if ($this->CIDRAM['LastTestIP'] === 4) {
+                $RecordParam = '&type=A';
+                $PadBase = 211;
+            } elseif ($this->CIDRAM['LastTestIP'] === 6) {
+                $RecordParam = '&type=AAAA';
+                $PadBase = 214;
+                $TTL = 129600;
+            }
+        }
 
-        $URI = 'https://dns.google.com/resolve?name=' . urlencode($Host) . '&random_padding=';
-        $PadLen = 204 - $HostLen;
+        $URI = 'https://dns.google.com/resolve?name=' . $Host . $RecordParam . '&random_padding=';
+        $PadLen = $PadBase - $HostLen;
         if ($PadLen < 1) {
-            $PadLen = 972 - $HostLen;
+            $PadLen += 768;
         }
         while ($PadLen > 0) {
             $PadLen--;
@@ -1261,7 +1274,7 @@ class Core
         } else {
             $this->CIDRAM['DnsForwards-' . $Host] = preg_replace('/[^\da-f.:]/i', '', $Results['Answer'][0]['data']);
         }
-        $this->Cache->setEntry('DnsForwards-' . $Host, $this->CIDRAM['DnsForwards-' . $Host], 21600);
+        $this->Cache->setEntry('DnsForwards-' . $Host, $this->CIDRAM['DnsForwards-' . $Host], $TTL);
         return $this->CIDRAM['DnsForwards-' . $Host];
     }
 

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The file manager page (last modified: 2025.09.05).
+ * This file: The file manager page (last modified: 2025.09.09).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -198,6 +198,8 @@ if (!$this->FE['ASYNC']) {
         $ThisFile['ThisOptions'] = implode(' – ', $ThisFile['ThisOptions']);
         if ($ThisFile['Icon'] === 'icon=directory') {
             $ThisFile['Icon'] = sprintf('<span class="fmicon auxbl folder" title="%s" id="Icon%s"></span>', $ThisFile['Component'], $ThisFile['FilenameID']);
+        } elseif ($ThisFile['Icon'] === 'icon=text') {
+            $ThisFile['Icon'] = sprintf('<span class="fmicon auxbl documentation" title="%s" id="Icon%s"></span>', $ThisFile['Component'], $ThisFile['FilenameID']);
         } elseif ($ThisFile['Icon'] === 'icon=logs') {
             $ThisFile['Icon'] = sprintf('<span class="fmicon auxbl logs" title="%s" id="Icon%s"></span>', $ThisFile['Component'], $ThisFile['FilenameID']);
         } elseif ($ThisFile['Icon'] === 'icon=configuration') {

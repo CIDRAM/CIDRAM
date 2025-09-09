@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The rate limiting page (last modified: 2023.12.13).
+ * This file: The rate limiting page (last modified: 2025.09.09).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -50,25 +50,21 @@ if (isset($this->Stages['RL:Enable']) && ($this->Configuration['rate_limiting'][
 
     if (count($Entries) === 0) {
         /** Default message to display if there aren't any rate limiting records currently available. */
-        $this->FE['Entries'] .= "\n" . sprintf('<tr><td class="center h4f" colspan="2"><div class="s">%s</div></td></tr>', $this->L10N->getString('label.No data available'));
+        $this->FE['Entries'] .= "\n      " . sprintf('<div class="h2f center s flexstretch">%s</div>', $this->L10N->getString('label.No data available'));
     } else {
         /** Process all entries. */
         foreach ($Entries as $EntryName => $EntryData) {
+            $this->FE['Entries'] .= "\n    </div>\n    <div class=\"col\">";
             if ($EntryName === 'rl') {
-                $this->FE['Entries'] .= "\n" . sprintf('<tr><td class="center h4f" colspan="2"><div class="s">%s</div></td></tr>', $this->L10N->getString('label.Current data'));
+                $this->FE['Entries'] .= "\n      " . sprintf('<div class="h2f center s flexstretch">%s</div>', $this->L10N->getString('label.Current data'));
             } elseif (substr($EntryName, 0, 3) === 'rl-') {
-                $this->FE['Entries'] .= "\n" . sprintf('<tr><td class="center h4f" colspan="2"><div class="s">%s</div></td></tr>', sprintf(
+                $this->FE['Entries'] .= "\n      " . sprintf('<div class="h2f center s flexstretch">%s</div>', sprintf(
                     $this->L10N->getString('label.Current data for %s'),
                     substr($EntryName, 3)
                 ));
             }
             $EntryData = $this->processRLUsage(is_array($EntryData) && isset($EntryData['Data']) ? $EntryData['Data'] : $EntryData);
-            if (count($EntryData) === 0) {
-                $this->FE['Entries'] .= "\n" . sprintf(
-                    '<tr><td class="h3f" colspan="2"><div class="s">%s</div></td></tr>',
-                    $this->L10N->getString('label.No data available')
-                );
-            }
+            $this->FE['Entries'] .= count($EntryData) === 0 ? "\n      " . sprintf('<div class="h1f s flexstretch">%s</div>', $this->L10N->getString('label.No data available')) : "\n    </div>\n    <div class=\"duo\">";
             foreach ($EntryData as $Address => $EntryDetails) {
                 $EntryDetails['Class'] = (
                     $EntryDetails['Bandwidth'] >= $RLMaxBandwidth ||
@@ -111,9 +107,8 @@ if (isset($this->Stages['RL:Enable']) && ($this->Configuration['rate_limiting'][
                     $RLHighRequests,
                     $EntryDetails['Requests']
                 ) : '';
-                $this->FE['Entries'] .= "\n" . sprintf('<tr><td class="h3"><div class="%s">%s</div></td>', $EntryDetails['Class'], $Address);
-                $this->FE['Entries'] .= "\n" . sprintf(
-                    '<td class="h3f"><div class="s">%s%s%s</div></td></tr>',
+                $this->FE['Entries'] .= "\n      " . sprintf('<div class="h1 %s">%s</div>', $EntryDetails['Class'], $Address) . "\n      " . sprintf(
+                    '<div class="h1f s">%s%s%s</div>',
                     $EntryDetails['Bandwidth'],
                     $EntryDetails['Requests'],
                     sprintf(

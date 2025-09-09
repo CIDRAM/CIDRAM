@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2025.09.07).
+ * This file: General methods used by the front-end (last modified: 2025.09.09).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -129,8 +129,6 @@ trait FrontEndMethods
                     $Arr[$Key]['Icon'] = 'icon=spreadsheet';
                 } elseif (preg_match('/^(?:ODP|PDF|PP[ST]X?|XDP)$/', $Ext)) {
                     $Arr[$Key]['Icon'] = 'icon=presentation';
-                } elseif (preg_match('/^(?:DOC[XT]?|ODT|RTF)$/', $Ext)) {
-                    $Arr[$Key]['Icon'] = 'icon=document';
                 } elseif (preg_match('/^(?:[OM]?DB|SQL)$/', $Ext)) {
                     $Arr[$Key]['Icon'] = 'icon=database';
                 } elseif (preg_match('/^(?:ODF|TEX)$/', $Ext)) {

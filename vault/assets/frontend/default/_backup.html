@@ -1,20 +1,19 @@
 <div class="mainbox">
   <nav class="big">
-{nav}
-  </nav>
+{nav}  </nav>
   <main class="extend">
     <form enctype="multipart/form-data" id="bckpForm" action="?cidram-page=backup" method="POST">
       <div class="col">
         <div class="s flexstretch" id="stateMsg">{state_msg}</div>
-        <div class="ng1">
-          <input type="radio" class="auto" name="bckpAct" id="doImport" value="import" onchange="javascript:this.checked?(hide('forExport'),show('forImport')):(hide('forImport'),show('forExport'))" checked /> <label class="s" for="doImport"><span class="bckpicon auxbl import"></span>{label.Import}</label>
-          <span class="forImport" style="float:{FE_Align_Reverse}">
-            <input type="file" name="importFile" class="auto" title="{label.Import}/{label.Export}" />
-          </span><br /><br />
-          <input type="radio" class="auto" name="bckpAct" id="doExport" value="export" onchange="javascript:this.checked?(show('forExport'),hide('forImport')):(show('forImport'),hide('forExport'))" /> <label class="s" for="doExport"><span class="bckpicon auxbl export"></span>{label.Export}</label>
-          <span class="forExport" style="float:{FE_Align_Reverse}">
-            <span class="s"><input type="checkbox" name="doCompress" id="doCompress" class="auto" checked /> <label for="doCompress"><span class="bckpicon auxbl compress"></span>{label.Compress}</label></span>
-          </span>
+        <div class="duo ng1">
+          <div>
+            <input type="radio" class="auto" name="bckpAct" id="doImport" value="import" onchange="javascript:this.checked?(hide('forExport'),show('forImport')):(hide('forImport'),show('forExport'))" checked /> <label class="s" for="doImport"><span class="bckpicon auxbl import"></span>{label.Import}</label><br /><br />
+            <input type="radio" class="auto" name="bckpAct" id="doExport" value="export" onchange="javascript:this.checked?(show('forExport'),hide('forImport')):(show('forImport'),hide('forExport'))" /> <label class="s" for="doExport"><span class="bckpicon auxbl export"></span>{label.Export}</label>
+          </div>
+          <div class="end">
+            <span class="forImport"><input type="file" name="importFile" class="auto" title="{label.Import}/{label.Export}" /></span>
+            <span class="forExport s"><input type="checkbox" name="doCompress" id="doCompress" class="auto" checked /> <label for="doCompress"><span class="bckpicon auxbl compress"></span>{label.Compress}</label></span>
+          </div>
         </div>
         <div class="ng1">
           <div style="display:grid;margin:38px min(38px, 1vw * 1.6);grid-template-columns:auto;contain:paint">

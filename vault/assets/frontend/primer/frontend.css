@@ -21,10 +21,11 @@ nav a:not(.idx a){display:block}
 main{flex-basis:80%;flex-shrink:1;flex-grow:2}
 .subNav{display:block;text-align:center;font-size:calc((10px * {magnification}) + .03vw);color:rgba(36,41,46,.6);text-shadow:2px 2px 1px rgba(0,0,0,.2)}
 table{table-layout:fixed}
-table,.spanner,.logVis,.flexstretch{align-self:stretch}
+table,.spanner,.flexstretch,.logVis{align-self:stretch}
 .ci>.bNav:first-child{width:calc(100% - 26px);padding:12px}
 textarea{height:150px}
 textarea.half{height:75px}
+textarea#efta,textarea#logsTA{height:375px}
 input.txtf{width:calc(100% - 4px)}
 textarea{width:calc(100% - 20px)}
 .iCntr>.iCntn>textarea{width:calc(100% - 62px)}
@@ -37,7 +38,7 @@ a:active,a:focus{color:#cb2431}
 .bNav{height:64px}
 .cat,.exp,.bNav,.gen,nav,.s,.tip,.txtGn,.txtOe,.txtRd,.spanner,a{font-weight:700}
 .ci,.co,.gen,.center{margin:auto}
-.ci,.co,.ng1:not(.quad .ng1,.duo .ng1,.col>.ng1),.ng2:not(.quad .ng2,.duo .ng2,.col>.ng2){width:calc(100% - 32px)}
+.ci,.co,.ng1:not(.quad .ng1,.duo .ng1,.col .ng1),.ng2:not(.quad .ng2,.duo .ng2,.col .ng2){width:calc(100% - 32px)}
 .ci{padding:12px;text-align:{FE_Align}}
 .co,body,.center{text-align:center}
 .co,body,input,select{padding:0}
@@ -176,7 +177,6 @@ input[type=button].reset:hover,input[type=button].reset:active{color:#f88}
 .hiddenOpenPos{transform:scaleX(1);opacity:1;max-width:100%}
 .heavenInitPos{display:inline-block;overflow:hidden;transform:none;width:16px;height:16px;transition:all .9s cubic-bezier(0,0,.1,1)}
 .heavenOpenPos{transform:rotate(-270deg)}
-#logsTA{position:relative;top:-2px}
 .navicon.accounts{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:accounts.svg}{/Base64Encode})}
 .navicon.aggregator{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:aggregator.svg}{/Base64Encode})}
 .navicon.auxiliary,.bckpicon.auxiliary,.fmicon.auxiliary{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:auxiliary.svg}{/Base64Encode})}
@@ -185,7 +185,7 @@ input[type=button].reset:hover,input[type=button].reset:active{color:#f88}
 .navicon.calculator{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:calculator.svg}{/Base64Encode})}
 .navicon.configuration,.bckpicon.configuration,.fmicon.configuration{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:configuration.svg}{/Base64Encode})}
 .navicon.discussions{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:discussions.svg}{/Base64Encode})}
-.navicon.documentation{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:documentation.svg}{/Base64Encode})}
+.navicon.documentation,.fmicon.documentation{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:documentation.svg}{/Base64Encode})}
 .navicon.fixer{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:fixer.svg}{/Base64Encode})}
 .navicon.folder,.fmicon.folder{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:folder.svg}{/Base64Encode})}
 .navicon.heaven{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:heaven.svg}{/Base64Encode})}
@@ -264,14 +264,14 @@ input[type=checkbox],input[type=radio]{accent-color:#1d1d1e}
 .spanner+table~table{margin:-4px -2px 0 -2px}
 .col>form,.quad>form,.duo>form{display:contents}
 input[type=hidden],script{display:none}
-.logVis{overflow:visible auto;margin-left:2px;margin-right:2px}
-form+.logVis,table[id="logsTA"]{margin-top:-2px}
-textarea[id="logsTA"]{margin-top:0}
+.logVis{overflow:visible auto;margin-{FE_Align_Reverse}:1px}
+textarea#logsTA{margin-top:0;margin-bottom:0;margin-{FE_Align}:0;margin-{FE_Align_Reverse}:1px;width:auto;align-self:stretch}
 .quad{display:grid;gap:2px;grid-template-columns:repeat(4,1fr);justify-content:stretch;justify-items:stretch}
 .duo{display:grid;gap:2px;grid-template-columns:1fr 1fr;justify-content:stretch;justify-items:stretch}
-.col+.quad,.col+.duo,.quad+.col,.quad+.duo,.duo+.col,.duo+.quad{margin-top:2px;margin-{FE_Align_Reverse}:1px}
+.col+.col,.col+.quad,.col+.duo,.quad+.col,.quad+.quad,.quad+.duo,.duo+.col,.duo+.quad,.duo+.duo{margin-top:2px;margin-{FE_Align_Reverse}:1px}
 @media only all and (max-width:968px) {
   .quad{grid-template-columns:1fr 1fr}
 }
 @keyframes fmDeleteAnim{0%{opacity:1}100%{filter:brightness(0);opacity:0;display:none}}
 .fmDelete{transform-origin:top;animation:fmDeleteAnim .5s cubic-bezier(0,0,.1,1);animation-iteration-count:1;animation-fill-mode:forwards}
+.end{text-align:{FE_Align_Reverse};justify-self:end}

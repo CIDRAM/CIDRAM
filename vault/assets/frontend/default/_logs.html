@@ -1,24 +1,22 @@
 <div class="mainbox">
   <nav class="big">
-{nav}    <div class="ng1 idx" translate="no">
+{nav}    <div class="ng1 idx">
 {LogFiles}    </div>
   </nav>
-  <main class="extend{mod_class_right}">
+  <main class="extend">
     <div class="col">
-      <div class="ng1 s flong mob">
-      {LogFiles}      </div>
+      <div class="ng1 s mob">
+{LogFiles}      </div>
       {SVGsFormData}
-      <form class="s" method="GET" action=""><input type="hidden" name="cidram-page" value="logs" />
-        <table>
-          <tr>
-            {TextModeSwitchLink}
-          </tr>
-          <tr>
-            {SearchInfo}
-          </tr>
-        </table>
-      </form>
-{logfileData}
     </div>
+    <div class="duo">
+      <form action="" method="GET">
+        <input type="hidden" name="cidram-page" value="logs" />
+        {TextModeSwitchLink}
+      </form>
+    </div>
+    <div class="col">
+      <div class="spanner">{SearchInfo}</div>
+{logfileData}    </div>
   </main>
 </div>

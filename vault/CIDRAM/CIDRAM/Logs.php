@@ -143,7 +143,7 @@ trait Logs
             /** Add pair styles. */
             if (preg_match_all('~\n((?:<span class="textLabel">.*|(?!：)[^\n:]+)' . $FieldSeparator . '(?:(?!<br />)[^\n])+)~i', $Section, $Parts) && count($Parts[1])) {
                 foreach ($Parts[1] as $ThisPart) {
-                    $Section = str_replace("\n" . $ThisPart . "<br />\n", "\n<span class=\"s\">" . $ThisPart . "</span><br />\n", $Section);
+                    $Section = str_replace("\n" . $ThisPart . "<br />\n", "\n        <span class=\"s\">" . $ThisPart . "</span><br />\n", $Section);
                 }
             }
 
@@ -188,13 +188,16 @@ trait Logs
         $BlockStart = 0;
         $BlockEnd = 0;
         while ($BlockEnd !== false) {
-            $Darken = empty($Darken);
-            $Style = '<div class="logVis h' . ($Darken ? 'B' : 'W') . ' hFd fW">';
             $BlockEnd = strpos($Out, $this->CIDRAM['BlockSeparator'], $BlockStart);
-            $In[] = $Style . substr($Out, $BlockStart, $BlockEnd - $BlockStart + $BlockSeparatorLen) . '</div>';
+            $Try = preg_replace('~(?:<br />|\n)*$~i', '', substr($Out, $BlockStart, $BlockEnd - $BlockStart + $BlockSeparatorLen));
+            if ($Try !== '') {
+                $Darken = empty($Darken);
+                $Style = '      <div class="logVis h' . ($Darken ? 'B' : 'W') . ' hFd fW">';
+                $In[] = $Style . "\n" . $Try . "<br /><br />\n      </div>\n";
+            }
             $BlockStart = $BlockEnd + $BlockSeparatorLen;
         }
-        $In = str_replace("<br />\n</div>", "<br /></div>\n", implode('', $In));
+        $In = implode('', $In);
     }
 
     /**
@@ -258,13 +261,15 @@ trait Logs
         if (empty($Data['Origin'])) {
             unset($Data['Origin']);
         }
-        $Out = '<table id="logsTA">';
+        $Out = '';
         foreach ($Data as $Field => $Entries) {
-            $Out .= '<tr><td class="h2f" colspan="2"><div class="s">' . $Field . "</div></td></tr>\n";
             if ($this->FE['SortOrder'] === 'descending') {
                 arsort($Entries, SORT_NUMERIC);
             } else {
                 asort($Entries, SORT_NUMERIC);
+            }
+            if (count($Entries)) {
+                $Out .= '</div><div class="col"><div class="h2f s flexstretch">' . $Field . '</div></div><div class="duo">';
             }
             foreach ($Entries as $Entry => $Count) {
                 if (!(substr($Entry, 0, 1) === '[' && substr($Entry, 3, 1) === ']')) {
@@ -308,10 +313,9 @@ trait Logs
                 } else {
                     $Percent = 0;
                 }
-                $Out .= '<tr><td class="h1 fW">' . $Entry . '</td><td class="h1f"><div class="s">' . $this->NumberFormatter->format($Count) . ' (' . $this->NumberFormatter->format($Percent, 2) . "%)</div></td></tr>\n";
+                $Out .= '<div class="h1 fW">' . $Entry . '</div><div class="h1f s">' . $this->NumberFormatter->format($Count) . ' (' . $this->NumberFormatter->format($Percent, 2) . '%)</div>';
             }
         }
-        $Out .= '</table>';
         return $Out;
     }
 

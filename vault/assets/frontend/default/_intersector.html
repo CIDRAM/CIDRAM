@@ -1,44 +1,23 @@
 <div class="mainbox">
   <nav class="big">
-{nav}
-  </nav>
+{nav}  </nav>
   <main class="extend">
-    <div class="col">
-      <div class="s flexstretch">{state_msg}</div>
-      <table>
-        <form action="?cidram-page=intersector" method="POST">
-          <tr>
-            <td colspan="2" class="h3f">
-              <div class="center"><span class="s">A<br /></span><textarea name="A" title="A">{Intersector_A}</textarea></div>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="2" class="h3f">
-              <div class="center"><span class="s">B<br /></span><textarea name="B" title="B">{Intersector_B}</textarea></div>
-            </td>
-          </tr>
-          <tr>
-            <td class="h3">
-              <div class="center">
-                {OutputFormat}
-              </div>
-            </td>
-            <td class="h3f">
-              <div class="center">
-                <input type="submit" value="{field.OK} [0]" accesskey="0" />
-              </div>
-            </td>
-          </tr><!-- Output Begin -->
-          <tr>
-            <td colspan="2" class="h4f">
-              <div class="center">
-                <span class="s">{label.Intersect} (A∩B)<br /></span><textarea id="rangeOutput" readonly>{Intersector_AB}</textarea><br />
-              </div>
-              <div class="s clipMar"><span onclick="javascript:if(navigator.clipboard){navigator.clipboard.writeText(getElementById('rangeOutput').value);getElementById('rangeSvg_copied').className='sFade'}else{getElementById('rangeSvg_failed').style.className='sFade'}"><script type="text/javascript">copySvg();</script></span><span id="rangeSvg_copied" class="sHide" onanimationend="javascript:this.className='sHide'">✔️ {response.Copied}</span><span id="rangeSvg_failed" class="sHide" onanimationend="javascript:this.className='sHide'">❌ {response.Failed}</span></div>
-            </td>
-          </tr><!-- Output End -->
-        </form>
-      </table>
-    </div>
+    <form action="?cidram-page=intersector" method="POST">
+      <div class="col">
+        <div class="s flexstretch">{state_msg}</div>
+        <div class="h1f center s flexstretch">A<br /><textarea name="A" title="A">{Intersector_A}</textarea></div>
+        <div class="h1f center s flexstretch">B<br /><textarea name="B" title="B">{Intersector_B}</textarea></div>
+      </div>
+      <div class="duo">
+        <div class="h1 center">{OutputFormat}</div>
+        <div class="h1f center"><input type="submit" value="{field.OK} [0]" accesskey="0" /></div>
+      </div><!-- Output Begin -->
+      <div class="col">
+        <div class="h1f s flexstretch">
+          <div class="center">{label.Intersect} (A∩B)<br /><textarea id="rangeOutput" readonly>{Intersector_AB}</textarea></div>
+          <div class="clipMar"><span onclick="javascript:if(navigator.clipboard){navigator.clipboard.writeText(getElementById('rangeOutput').value);getElementById('rangeSvg_copied').className='sFade'}else{getElementById('rangeSvg_failed').style.className='sFade'}"><script type="text/javascript">copySvg();</script></span><span id="rangeSvg_copied" class="sHide" onanimationend="javascript:this.className='sHide'">✔️ {response.Copied}</span><span id="rangeSvg_failed" class="sHide" onanimationend="javascript:this.className='sHide'">❌ {response.Failed}</span></div>
+        </div>
+      </div><!-- Output End -->
+    </form>
   </main>
 </div>

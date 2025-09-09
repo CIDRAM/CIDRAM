@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The logs page (last modified: 2025.09.01).
+ * This file: The logs page (last modified: 2025.09.09).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -109,10 +109,8 @@ if ($this->FE['Remember'] && $this->FE['BlockLink'] !== $this->FE['CachedLogsLin
 /** Define log data. */
 if (empty($this->CIDRAM['QueryVars']['logfile'])) {
     $this->FE['logfileData'] = $this->L10N->getString('label.No log file selected');
-    $this->FE['mod_class_right'] = '';
 } elseif (!isset($this->CIDRAM['QueryVars']['logfile'], $this->FE['LogFiles']['Files'][$this->CIDRAM['QueryVars']['logfile']])) {
     $this->FE['logfileData'] = $this->L10N->getString('label.Selected log file doesn_t exist');
-    $this->FE['mod_class_right'] = '';
 } else {
     if (strtolower(substr($this->CIDRAM['QueryVars']['logfile'], -3)) === '.gz') {
         $GZLogHandler = gzopen($this->Vault . $this->CIDRAM['QueryVars']['logfile'], 'rb');
@@ -388,25 +386,21 @@ if (empty($this->CIDRAM['QueryVars']['logfile'])) {
         ['&lt;', '&gt;', ''],
         $this->FE['logfileData']
     );
-    $this->FE['mod_class_right'] = ' extend';
 }
 
 /** Logs control form. */
 $this->FE['TextModeSwitchLink'] = sprintf(
-    '<td class="h4"><span class="s"><label for="textMode">%1$s</label><br /><select name="textMode" id="textMode" class="auto" title="%1$s">' .
-    '<option value="simple"%2$s>%3$s</option>' .
-    '<option value="fancy"%4$s>%5$s</option>' .
-    '<option value="tally"%6$s>%7$s</option>' .
-    '</select></span></td><td class="h4f"><span class="s">' .
+    '<div class="h2 s"><label for="textMode">%1$s</label><br /><select name="textMode" id="textMode" class="auto" title="%1$s">' .
+    '<option value="simple"%2$s>%3$s</option><option value="fancy"%4$s>%5$s</option><option value="tally"%6$s>%7$s</option>' .
+    '</select></div><div class="h2f s">' .
     '<input type="radio" class="auto" name="sortOrder" value="ascending" id="sOa"%8$s /><label for="sOa">%9$s</label><br />' .
     '<input type="radio" class="auto" name="sortOrder" value="descending" id="sOd"%10$s /><label for="sOd">%11$s</label>' .
-    '</span></td></tr><tr><td class="h4"><span class="s">' .
+    '</span></div><div class="h2 s">' .
     '<input type="checkbox" name="paginate" class="auto" id="paginate"%16$s /><label for="paginate">%17$s</label><br />' .
     '<label for="perpage">%18$s</label><br /><input type="number" name="perpage" class="auto" id="perpage" value="%19$d" />' .
-    '</span></td><td class="h4f"><span class="s">' .
+    '</div><div class="h2f s">' .
     '<input type="checkbox" name="remember" class="auto" id="remember"%12$s /><label for="remember">%13$s</label><br />' .
-    '<input type="hidden" name="logfile" value="%14$s" /><input type="submit" value="%15$s" />' .
-    '</span></td>',
+    '<input type="hidden" name="logfile" value="%14$s" /><input type="submit" value="%15$s" /></div>',
     $this->L10N->getString('label.Text formatting'),
     $this->FE['TextModeLinks'] === 'simple' ? ' selected' : '',
     $this->L10N->getString('label.Simple'),
@@ -459,10 +453,10 @@ unset($ThisLogFile, $DownloadLabel);
 
 /** Calculate page load time (useful for debugging). */
 $this->FE['ProcessTime'] = microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];
-$this->FE['SearchInfo'] = '<td colspan="2" class="spanner">' . sprintf(
+$this->FE['SearchInfo'] = sprintf(
     $this->L10N->getPlural($this->FE['ProcessTime'], 'label.Page request completed in %s seconds'),
     '<span class="txtRd">' . $this->NumberFormatter->format($this->FE['ProcessTime'], 3) . '</span>'
-) . $this->FE['SearchInfo'] . '</td>';
+) . $this->FE['SearchInfo'];
 
 /** Set the log files list or the no log files available message. */
 if ($this->FE['LogFiles']['Out'] === '') {

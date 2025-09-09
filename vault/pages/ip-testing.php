@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The IP testing page (last modified: 2025.09.03).
+ * This file: The IP testing page (last modified: 2025.09.08).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -278,9 +278,9 @@ if (isset($_POST['ip-addr-focus'])) {
             }
             $this->CIDRAM['ThisIP']['YesNo'] .= '</span>';
             if ($this->CIDRAM['Banned']) {
-                $this->CIDRAM['ThisIP']['YesNo'] .= '<br /><span class="txtRd">' . $this->L10N->getString('field.Banned') . $this->L10N->getString('pair_separator') . $this->L10N->getString('response._Yes') . '</span>';
+                $this->CIDRAM['ThisIP']['YesNo'] .= '<br /><span class="txtRd">' . $this->L10N->getString('Short.Banned') . $this->L10N->getString('pair_separator') . $this->L10N->getString('response._Yes') . '</span>';
             } else {
-                $this->CIDRAM['ThisIP']['YesNo'] .= '<br /><span class="txtGn">' . $this->L10N->getString('field.Banned') . $this->L10N->getString('pair_separator') . $this->L10N->getString('response._No') . '</span>';
+                $this->CIDRAM['ThisIP']['YesNo'] .= '<br /><span class="txtGn">' . $this->L10N->getString('Short.Banned') . $this->L10N->getString('pair_separator') . $this->L10N->getString('response._No') . '</span>';
             }
         }
         if (isset($this->CIDRAM['ThisStatusHTTP'])) {

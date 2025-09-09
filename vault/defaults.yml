@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2025.08.26).
+# This file: Defaults file (last modified: 2025.09.08).
 ##/
 
 Config Defaults:
@@ -1222,14 +1222,16 @@ Provide:
    Aux Status Code: 200
    Banned: false
    Hostname: ""
-   Suppress output template: false
+   LastTestIP: 0
+   Other Status Code: 0
+   Other Status: ""
    Suppress logging: false
+   Suppress output template: false
    Suppress reports: false
    ThisStatusHTTP: 200
    Trackable: null
    Tracking options override: ""
-   Other Status: ""
-   Other Status Code: 0
+   Whitelisted: false
   Configuration:
    hcaptcha: {enabled: false, forcibly_disabled: false}
    recaptcha: {enabled: false, forcibly_disabled: false}

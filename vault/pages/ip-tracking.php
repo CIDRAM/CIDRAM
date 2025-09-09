@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The IP tracking page (last modified: 2025.07.27).
+ * This file: The IP tracking page (last modified: 2025.09.08).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -179,7 +179,7 @@ if (!$this->FE['ASYNC']) {
 
         if ($ThisTrackingArray['Data'] >= $this->Configuration['signatures']['infraction_limit']) {
             $ThisTracking['StatClass'] = 'txtRd';
-            $ThisTracking['Status'] = $this->L10N->getString('field.Banned');
+            $ThisTracking['Status'] = $this->L10N->getString('Short.Banned');
         } elseif ($ThisTrackingArray['Data'] >= ($this->Configuration['signatures']['infraction_limit'] / 2)) {
             $ThisTracking['StatClass'] = 'txtOe';
             $ThisTracking['Status'] = $this->L10N->getString('field.Tracking');

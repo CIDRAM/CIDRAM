@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2025.08.25).
+# This file: Polish language data for the front-end (last modified: 2025.09.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -222,7 +222,7 @@ config:
  hcaptcha_hcaptcha_log: &CaptchaLogFile "Zalogować wszystkie próby CAPTCHA? Jeśli tak, podaj nazwę pliku do logowania. Jeśli nie, pozostaw tę zmienną pustą."
  hcaptcha_lockip: &CaptchaLockIP "Przywiąż CAPTCHA do adresów IP?"
  hcaptcha_lockuser: &CaptchaLockUser "Przywiąż CAPTCHA z użytkownikami?"
- hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "Którego kodu stanu należy używać podczas wyświetlania CAPTCHA dla niezablokowanych żądań?"
+ hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "Którego kodu statusu należy używać podczas wyświetlania CAPTCHA dla niezablokowanych żądań?"
  hcaptcha_secret: &CaptchaDashboard "Wartość tę można znaleźć na pulpicie nawigacyjnym usługi CAPTCHA."
  hcaptcha_show_api_message: &ShowAPIMessage "Pokaż komunikat API? True (Prawdziwe) = Tak [Domyślna]; False (Fałszywy) = Nie."
  hcaptcha_show_cookie_warning: &ShowCookieWarning "Pokaż ostrzeżenie o plikach cookie? True (Prawdziwe) = Tak [Domyślna]; False (Fałszywy) = Nie."
@@ -344,7 +344,6 @@ field:
  Add to tracking: "Dodaj do śledzenia"
  Add webhook: "Dodaj hak internetowy"
  After 24 hours, bundled together: "Po 24 godzinach, połączone w całość (lub po ręcznym uruchomieniu, np., za pomocą cron)."
- Banned: "Zbanowany"
  Blocked: "Zablokowany"
  Clear all: "Wyczyść wszystko"
  Clear: "Wyczyść"
@@ -723,7 +722,7 @@ label:
   Forcibly disable IP tracking: "Wymuś wyłączenie śledzenia IP"
   Forcibly disable reCAPTCHA: "Wymuś wyłączenie reCAPTCHA"
   Forcibly enable IP tracking: "Wymuszenie włączenia śledzenia IP"
-  HTTP status code override: "Przesłonięcie kodu stanu HTTP:"
+  HTTP status code override: "Zastąpienie kodu statusu HTTP:"
   If the following conditions are met, %s: "Jeśli spełnione są następujące warunki, %s."
   Leave it as is (don_t set anything): "Zostaw to tak, jak jest (nie ustawiaj niczego)"
   Mark for use with hCaptcha: "Oznacz do użytku z hCaptcha"

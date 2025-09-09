@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2025.08.27).
+# This file: Russian language data for the front-end (last modified: 2025.09.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -222,7 +222,7 @@ config:
  hcaptcha_hcaptcha_log: &CaptchaLogFile "Записывать все попытки CAPTCHA? Если да, указать имя использовать для файла журнала. Если нет, оставьте эту переменную пустым."
  hcaptcha_lockip: &CaptchaLockIP "Свяжите CAPTCHA к IP-адреса?"
  hcaptcha_lockuser: &CaptchaLockUser "Свяжите CAPTCHA к пользователи?"
- hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "Какой код состояния следует использовать при отображении CAPTCHA для неблокированных запросов?"
+ hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "Какой код статуса следует использовать при отображении CAPTCHA для неблокированных запросов?"
  hcaptcha_secret: &CaptchaDashboard "Это значение можно найти на панели управления вашей службы CAPTCHA."
  hcaptcha_show_api_message: &ShowAPIMessage "Показать сообщение API? True = Да [Стандарт]; False = Нет."
  hcaptcha_show_cookie_warning: &ShowCookieWarning "Показать предупреждение о файлах куки? True = Да [Стандарт]; False = Нет."
@@ -344,7 +344,6 @@ field:
  Add to tracking: "Добавить в отслеживание"
  Add webhook: "Добавить веб-крючок"
  After 24 hours, bundled together: "Через 24 часа, объединенные вместе (или при ручном запуске, например, через cron)."
- Banned: "Запрещенный"
  Blocked: "Блокированный"
  Clear all: "Очистить все"
  Clear: "Очистить"
@@ -729,7 +728,7 @@ label:
   Forcibly disable IP tracking: "Принудительно отключить отслеживание IP"
   Forcibly disable reCAPTCHA: "Принудительно отключить reCAPTCHA"
   Forcibly enable IP tracking: "Принудительно включить отслеживание IP"
-  HTTP status code override: "Переопределение кода состояния HTTP:"
+  HTTP status code override: "Переопределение кода статуса HTTP:"
   If the following conditions are met, %s: "Если выполнены следующие условия, %s."
   Leave it as is (don_t set anything): "Оставьте как есть (ничего не устанавливайте)"
   Mark for use with hCaptcha: "Отметить для использования с hCaptcha"

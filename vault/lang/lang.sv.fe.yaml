@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2025.08.20).
+# This file: Swedish language data for the front-end (last modified: 2025.09.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -134,7 +134,7 @@ config_general_outbound_request_log: "En fil för att logga resultaten av eventu
 config_general_protect_frontend: "Anger om de skydd som normalt tillhandahålls av CIDRAM ska tillämpas på front-end. True = Ja [Standard]; False = Nej."
 config_general_search_engine_verification: "Försök att verifiera förfrågningar från sökmotorer? Verifierande sökmotorer ser till att de inte kommer att förbjudas till följd av att infraktionsgräns överskrids (förbjuda sökmotorer från din webbplats kommer vanligtvis att ha en negativ effekt på din sökmotor ranking, SEO, osv). När verifieras kan sökmotorer blockeras som normalt, men kommer inte att förbjudas. När det inte är verifierat, är det möjligt för dem att bli förbjudna till följd av att infraktionsgräns överskrids. Dessutom, sökmotorverifiering ger skydd mot falska sökmotorförfrågningar och mot potentiellt skadliga enheter som maskerar som sökmotorer (sådana förfrågningar kommer att blockeras när sökmotorverifiering är aktiverad). True = Aktivera sökmotorverifiering [Standard]; False = Inaktivera sökmotorverifiering."
 config_general_signatures_update_event_log: "En fil för loggning när signaturer uppdateras via frontend. Ange ett filnamn, eller lämna tomt för att inaktivera."
-config_general_silent_mode: "Ska CIDRAM utföra tyst omdirigering av blockerade åtkomstförsök istället för att visa sidan "nekat tillgång"? Om ja, ange platsen för omdirigering av blockerade åtkomstförsök. Om nej, lämna denna variabel tom."
+config_general_silent_mode: "Ska CIDRAM utföra tyst omdirigering av blockerade åtkomstförsök istället för att visa sidan "åtkomst nekad"? Om ja, ange platsen för omdirigering av blockerade åtkomstförsök. Om nej, lämna denna variabel tom."
 config_general_silent_mode_response_header_code: "Vilket HTTP-statusmeddelande ska CIDRAM skicka vid tyst omdirigering av försök med blockerad åtkomst?"
 config_general_social_media_verification: "Försök att verifiera sociala medier begäranden? Social media verifiering ger skydd mot falska sociala medier begäranden (sådana förfrågningar kommer att blockeras). True = Aktivera social media verifiering [Standard]; False = Inaktivera social media verifiering."
 config_general_statistics: "Spåra statistik för CIDRAM? True = Ja; False = Nej [Standard]."
@@ -187,7 +187,7 @@ config_signatures_block_attacks: "Blockera CIDRer i samband med attacker och ann
 config_signatures_block_bogons: "Blockera bogon/martian CIDRer? Om du förväntar dig anslutningar till din webbplats från ditt lokala nätverk, från localhost eller från ditt LAN, detta direktiv borde vara false. Om du inte förväntar dig sådana anslutningar, detta direktiv borde vara true."
 config_signatures_block_cloud: "Blockera CIDRer identifierade som tillhör webbhotell/molntjänster? Om du använder en API-tjänst från din webbplats eller om du förväntar dig att andra webbplatser ska ansluta till din webbplats, detta direktiv borde vara false. Annars, detta direktiv borde vara true."
 config_signatures_block_generic: "Blockera CIDRer rekommenderas generellt för svartlistning? Detta omfattar alla signaturer som inte är markerade som en del av någon av de andra mer specifika signaturkategorierna."
-config_signatures_block_legal: "Blockera CIDRer som svar på lagliga skyldigheter? Detta direktiv borde normalt inte ha någon effekt, eftersom CIDRAM inte som standard kopplar samman några CIDR med "lagliga skyldigheter", men det finns ändå som en extra kontrollåtgärd till förmån för eventuella anpassade signaturfiler eller moduler som kan existera av juridiska skäl."
+config_signatures_block_legal: "Blockera CIDRer som svar på juridiska skyldigheter? Detta direktiv borde normalt inte ha någon effekt, eftersom CIDRAM inte som standard kopplar samman några CIDR med "juridiska skyldigheter", men det finns ändå som en extra kontrollåtgärd till förmån för eventuella anpassade signaturfiler eller moduler som kan existera av juridiska skäl."
 config_signatures_block_malware: "Blockera CIDRer i samband med skadlig kod? Detta inkluderar C&C-servrar, infekterade maskiner, maskiner som är involverade i distribution av skadlig kod, osv."
 config_signatures_block_proxies: "Blockera CIDRer identifierade som tillhör proxytjänster eller VPNer? Om du behöver att användare ska kunna komma åt din webbplats från proxytjänster och VPNer, detta direktiv borde vara false. Annars, om du inte behöver proxytjänster eller VPNer, detta direktiv borde vara true som ett sätt att förbättra säkerheten."
 config_signatures_block_spam: "Blockera CIDRer identifierade som högrisk för spam? Om du inte upplever problem när du gör det, bör det alltid vara true."
@@ -230,7 +230,6 @@ field_add_more_conditions: "Lägg till fler villkor"
 field_add_to_tracking: "Lägg till spårning"
 field_add_webhook: "Lägg till en webhook"
 field_asnlookup: "ASN-uppslag"
-field_banned: "Förbjudna"
 field_blocked: "Blockerad"
 field_cclookup: "Landskod-uppslag"
 field_cidr: "Generera utgång som CIDR"
@@ -537,7 +536,7 @@ link_updates: "Uppdateringar"
 logs_logfile_doesnt_exist: "Vald loggfil existerar inte!"
 logs_no_logfile_selected: "Ingen loggfil vald."
 logs_no_logfiles_available: "Inga loggfiler finns tillgängliga."
-max_login_attempts_exceeded: "Maximalt antal inloggningsförsök överskreds; Nekat tillgång."
+max_login_attempts_exceeded: "Maximalt antal inloggningsförsök överskreds; Åtkomst nekad."
 msg_subject_2fa: "Tvåfaktorsautentisering"
 msg_template_2fa: |
  <center><p>Hallå, %s.<br /><br />

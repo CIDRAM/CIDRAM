@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2025.09.03).
+ * This file: Front-end handler (last modified: 2025.09.08).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -4395,7 +4395,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
 
             if ($CIDRAM['ThisTrackingArr']['Count'] >= $CIDRAM['Config']['signatures']['infraction_limit']) {
                 $CIDRAM['ThisTracking']['StatClass'] = 'txtRd';
-                $CIDRAM['ThisTracking']['Status'] = $CIDRAM['L10N']->getString('field_banned');
+                $CIDRAM['ThisTracking']['Status'] = $CIDRAM['L10N']->getString('Short_Banned');
             } elseif ($CIDRAM['ThisTrackingArr']['Count'] >= ($CIDRAM['Config']['signatures']['infraction_limit'] / 2)) {
                 $CIDRAM['ThisTracking']['StatClass'] = 'txtOe';
                 $CIDRAM['ThisTracking']['Status'] = $CIDRAM['L10N']->getString('field_tracking');

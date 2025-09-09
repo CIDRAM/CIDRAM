@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2025.08.23).
+# This file: Russian language data for the front-end (last modified: 2025.09.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -150,7 +150,7 @@ config_hcaptcha_expiry: &CaptchaExpiry "Количество часов, что�
 config_hcaptcha_lockip: &CaptchaLockIP "Свяжите CAPTCHA к IP-адреса?"
 config_hcaptcha_lockuser: &CaptchaLockUser "Свяжите CAPTCHA к пользователи?"
 config_hcaptcha_logfile: &CaptchaLogfile "Записывать все попытки CAPTCHA? Если да, указать имя использовать для файла журнала. Если нет, оставьте эту переменную пустым."
-config_hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "Какой код состояния следует использовать при отображении CAPTCHA для неблокированных запросов?"
+config_hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "Какой код статуса следует использовать при отображении CAPTCHA для неблокированных запросов?"
 config_hcaptcha_secret: &CaptchaDashboard "Это значение можно найти на панели управления вашей службы CAPTCHA."
 config_hcaptcha_show_api_message: &ShowAPIMessage "Показать сообщение API? True = Да [Стандарт]; False = Нет."
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Показать предупреждение о файлах куки? True = Да [Стандарт]; False = Нет."
@@ -232,7 +232,6 @@ field_add_more_conditions: "Добавить дополнительные усл
 field_add_to_tracking: "Добавить в отслеживание"
 field_add_webhook: "Добавить веб-крючок"
 field_asnlookup: "Поиск ASN"
-field_banned: "Запрещенный"
 field_blocked: "Блокированный"
 field_cclookup: "Поиск кода страны"
 field_cidr: "Генерировать вывод в виде CIDR"
@@ -366,7 +365,7 @@ label_aux_actWhl: "белый список"
 label_aux_create_new_rule: "Создать новое правило"
 label_aux_expiry: "Когда должно истечь правило (необязательно):"
 label_aux_from: "Когда должно начаться правило (необязательно):"
-label_aux_http_status_code_override: "Переопределение кода состояния HTTP:"
+label_aux_http_status_code_override: "Переопределение кода статуса HTTP:"
 label_aux_logic_all: "Чтобы вызвать правило, все условия должны быть выполнены."
 label_aux_logic_any: "Любые условия «равно» (=) могут вызвать правило, если все условия «не равны» (≠) также соблюдены."
 label_aux_menu_action: "Если выполнены следующие условия, %s запрос."

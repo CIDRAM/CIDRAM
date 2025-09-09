@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2025.08.14).
+# This file: Polish language data for the front-end (last modified: 2025.09.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -150,7 +150,7 @@ config_hcaptcha_expiry: &CaptchaExpiry "Liczba godzin do zapamiętania instancji
 config_hcaptcha_lockip: &CaptchaLockIP "Przywiąż CAPTCHA do adresów IP?"
 config_hcaptcha_lockuser: &CaptchaLockUser "Przywiąż CAPTCHA z użytkownikami?"
 config_hcaptcha_logfile: &CaptchaLogfile "Zalogować wszystkie próby CAPTCHA? Jeśli tak, podaj nazwę pliku do logowania. Jeśli nie, pozostaw tę zmienną pustą."
-config_hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "Którego kodu stanu należy używać podczas wyświetlania CAPTCHA dla niezablokowanych żądań?"
+config_hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "Którego kodu statusu należy używać podczas wyświetlania CAPTCHA dla niezablokowanych żądań?"
 config_hcaptcha_secret: &CaptchaDashboard "Wartość tę można znaleźć na pulpicie nawigacyjnym usługi CAPTCHA."
 config_hcaptcha_show_api_message: &ShowAPIMessage "Pokaż komunikat API? True (Prawdziwe) = Tak [Domyślna]; False (Fałszywy) = Nie."
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Pokaż ostrzeżenie o plikach cookie? True (Prawdziwe) = Tak [Domyślna]; False (Fałszywy) = Nie."
@@ -232,7 +232,6 @@ field_add_more_conditions: "Dodaj więcej warunków"
 field_add_to_tracking: "Dodaj do śledzenia"
 field_add_webhook: "Dodaj hak internetowy"
 field_asnlookup: "Wyszukiwanie ASN"
-field_banned: "Zbanowany"
 field_blocked: "Zablokowany"
 field_cclookup: "Wyszukiwanie kodu kraju"
 field_cidr: "Generuj dane wyjściowe jako CIDR"
@@ -366,7 +365,7 @@ label_aux_actWhl: "dokonywać na białej liście"
 label_aux_create_new_rule: "Stwórz nową regułę"
 label_aux_expiry: "Kiedy reguła powinna wygasnąć (opcjonalny):"
 label_aux_from: "Kiedy reguła powinna się zacząć (opcjonalny):"
-label_aux_http_status_code_override: "Przesłonięcie kodu stanu HTTP:"
+label_aux_http_status_code_override: "Zastąpienie kodu statusu HTTP:"
 label_aux_logic_all: "Aby uruchomić regułę, wszystkie warunki muszą być spełnione."
 label_aux_logic_any: "Wszelkie warunki „równe” (=) mogą uruchomić regułę, dopóki spełnione są wszystkie warunki „nie równe” (≠)."
 label_aux_menu_action: "Jeśli spełnione są następujące warunki, %s żądanie."

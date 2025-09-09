@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2025.08.23).
+# This file: Spanish language data for the front-end (last modified: 2025.09.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -99,10 +99,10 @@ config_experimental: "¡Inestable/Experimental!"
 config_general: "Configuración general (cualquier configuración que no pertenezca a otras categorías)."
 config_general_allow_gethostbyaddr_lookup: "¿Permitir búsquedas gethostbyaddr cuando UDP no está disponible? True = Sí [Predefinido]; False = No."
 config_general_ban_override: "Anular "forbid_on_block" cuando "infraction_limit" es excedido? Cuando se anula: Las solicitudes bloqueadas devuelven una página en blanco (los archivos templates no se utilizan). 200 = No anular [Predefinido]. Otros valores son los mismos que los valores disponibles para "forbid_on_block"."
-config_general_config_imports: "Una lista delimitada por comas de archivos para importar a la configuración predeterminada de CIDRAM. Normalmente se llena con la página de actualizaciones al activar componentes que lo necesitan cuando sea necesario. En la mayoría de los casos, puede ignorarlo."
+config_general_config_imports: "Una lista delimitada por comas de archivos para importar a la configuración predefinida de CIDRAM. Normalmente se llena con la página de actualizaciones al activar componentes que lo necesitan cuando sea necesario. En la mayoría de los casos, puede ignorarlo."
 config_general_default_algo: "Define qué algoritmo utilizar para todas las contraseñas y sesiones en el futuro. Opciones: PASSWORD_DEFAULT (predefinido), PASSWORD_BCRYPT, PASSWORD_ARGON2I, PASSWORD_ARGON2ID (requiere PHP &gt;= 7.3.0)."
 config_general_default_dns: "Una lista delimitada por comas de los servidores DNS que se utilizarán para las búsquedas de nombres del host. Predefinido = "8.8.8.8,8.8.4.4" (Google DNS). ¡AVISO: No cambie esto a menos que sepas lo que estás haciendo!"
-config_general_default_timeout: "¿Tiempo de espera predeterminado para usar en solicitudes externas? Predeterminado = 12 segundos."
+config_general_default_timeout: "¿Tiempo de espera predefinido para usar en solicitudes externas? Predefinido = 12 segundos."
 config_general_disable_frontend: "¿Desactivar el acceso front-end? El acceso front-end puede hacer CIDRAM más manejable, pero también puede ser un riesgo de seguridad. Se recomienda administrar CIDRAM a través del back-end cuando sea posible, pero el acceso front-end se proporciona para cuando no es posible. Mantenerlo desactivado a menos que lo necesite. False = Activar el acceso front-end; True = Desactivar el acceso front-end [Predefinido]."
 config_general_disable_webfonts: "¿Desactivar webfonts? True = Sí [Predefinido]; False = No."
 config_general_disabled_channels: "Esto se puede usar para evitar que CIDRAM use canales particulares al enviar solicitudes (por ejemplo, al actualizar, al obtener metadatos de componentes, etc)."
@@ -143,7 +143,7 @@ config_general_statistics: "¿Seguir las estadísticas de uso de CIDRAM? True = 
 config_general_time_format: "El formato de notación de fecha/hora usado por CIDRAM. Se pueden añadir opciones adicionales bajo petición."
 config_general_time_offset: "Desplazamiento del huso horario en minutos."
 config_general_timezone: "Esto se usa para especificar la zona horaria a usar (por ejemplo, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, etc). Especifique "SYSTEM" para permitir que PHP maneje esto automáticamente."
-config_general_truncate: "¿Truncar archivos de registro cuando alcanzan cierto tamaño? Valor es el tamaño máximo en B/KB/MB/GB/TB que un archivo de registro puede crecer antes de ser truncado. El valor predeterminado de 0KB deshabilita el truncamiento (archivos de registro pueden crecer indefinidamente). Nota: ¡Se aplica a archivos de registro individuales! El tamaño de los archivos de registro no se considera colectivamente."
+config_general_truncate: "¿Truncar archivos de registro cuando alcanzan cierto tamaño? Valor es el tamaño máximo en B/KB/MB/GB/TB que un archivo de registro puede crecer antes de ser truncado. El valor predefinido de 0KB deshabilita el truncamiento (archivos de registro pueden crecer indefinidamente). Nota: ¡Se aplica a archivos de registro individuales! El tamaño de los archivos de registro no se considera colectivamente."
 config_hcaptcha: "Configuración para hCaptcha (proporciona una forma para que los humanos recuperen el acceso cuando están bloqueados)."
 config_hcaptcha_api: &CaptchaAPI "¿Qué API usar?"
 config_hcaptcha_expiry: &CaptchaExpiry "Número de horas para recordar instancias de CAPTCHA. Predefinido = 720 (1 mes)."
@@ -232,7 +232,6 @@ field_add_more_conditions: "Añadir más condiciones"
 field_add_to_tracking: "Agregar al seguimiento"
 field_add_webhook: "Añadir webhook"
 field_asnlookup: "Búsqueda de ASN"
-field_banned: "Prohibido"
 field_blocked: "Bloqueado"
 field_cclookup: "Búsqueda de código de país"
 field_cidr: "Generar salida como CIDRs"
@@ -293,7 +292,7 @@ field_size_bytes:
  - "byte"
  - "bytes"
 field_status: "Estado"
-field_system_timezone: "Usar la zona horaria predeterminada del sistema."
+field_system_timezone: "Usar la zona horaria predefinida del sistema."
 field_tracking: "Seguimiento"
 field_true: "True (Verdadero)"
 field_ualc: "Agente de usuario (minúscula)"
@@ -398,7 +397,7 @@ label_aux_special_recaptcha_mark: "Marca para usar con reCAPTCHA"
 label_aux_special_suppress: "Suprime la plantilla de salida"
 label_aux_special_suppress_logging: "Suprimir registro"
 label_aux_special_suppress_reports: "Suprimir informes"
-label_aux_special_tracking_default: "Establecer opciones del rastreo IP predeterminadas"
+label_aux_special_tracking_default: "Establecer opciones del rastreo IP predefinidas"
 label_aux_special_tracking_extended: "Establecer opciones del rastreo IP extendidas"
 label_aux_target: "Dónde redireccionar la solicitud:"
 label_aux_webhooks: "Webhooks para aplicar cuando se cumplen los requisitos de la regla:"

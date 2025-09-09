@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2025.08.27).
+ * This file: Protect traits (last modified: 2025.09.08).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -898,7 +898,19 @@ trait Protect
                 /** Append default L10N data. */
                 $this->CIDRAM['Parsables'] += $this->L10N->Data;
 
-                if ($this->Configuration['general']['silent_mode'] === '') {
+                if ($this->Configuration['general']['silent_mode'] !== '') {
+                    $this->CIDRAM['errCode'] = (
+                        $this->Configuration['general']['silent_mode_response_header_code'] > 300 &&
+                        $this->Configuration['general']['silent_mode_response_header_code'] < 309
+                    ) ? $this->Configuration['general']['silent_mode_response_header_code'] : 301;
+                    if ($this->CIDRAM['Status'] = $this->getStatusHTTP($this->CIDRAM['errCode'])) {
+                        header('HTTP/1.0 ' . $this->CIDRAM['errCode'] . ' ' . $this->CIDRAM['Status']);
+                        header('HTTP/1.1 ' . $this->CIDRAM['errCode'] . ' ' . $this->CIDRAM['Status']);
+                        header('Status: ' . $this->CIDRAM['errCode'] . ' ' . $this->CIDRAM['Status']);
+                    }
+                    header('Location: ' . $this->Configuration['general']['silent_mode']);
+                    $HTML = '';
+                } else {
                     /** Enforce output template suppression. */
                     if (!empty($this->CIDRAM['Banned']) && isset($this->Shorthand['Banned:Suppress'])) {
                         $this->CIDRAM['Suppress output template'] = true;
@@ -907,32 +919,35 @@ trait Protect
                     /** Fetch appropriate HTTP status code. */
                     if (
                         !empty($this->CIDRAM['Banned']) &&
-                        $this->Configuration['general']['ban_override'] > 400 &&
-                        $this->CIDRAM['ThisStatusHTTP'] = $this->getStatusHTTP($this->Configuration['general']['ban_override'])
+                        ($this->CIDRAM['errCode'] = $this->Configuration['general']['http_response_header_code']['banned']) >= 200 &&
+                        ($StatusHTTP = $this->getStatusHTTP($this->CIDRAM['errCode'])) !== ''
                     ) {
-                        $this->CIDRAM['errCode'] = $this->Configuration['general']['ban_override'];
-                        header('HTTP/1.0 ' . $this->CIDRAM['errCode'] . ' ' . $this->CIDRAM['ThisStatusHTTP']);
-                        header('HTTP/1.1 ' . $this->CIDRAM['errCode'] . ' ' . $this->CIDRAM['ThisStatusHTTP']);
-                        header('Status: ' . $this->CIDRAM['errCode'] . ' ' . $this->CIDRAM['ThisStatusHTTP']);
-                    } elseif (!empty($this->CIDRAM['Other Status']) && !empty($this->CIDRAM['Other Status Code']) && $this->BlockInfo['SignatureCount'] === 1) {
+                        header('HTTP/1.0 ' . $this->CIDRAM['errCode'] . ' ' . $StatusHTTP);
+                        header('HTTP/1.1 ' . $this->CIDRAM['errCode'] . ' ' . $StatusHTTP);
+                        header('Status: ' . $this->CIDRAM['errCode'] . ' ' . $StatusHTTP);
+                    } elseif (!empty($this->CIDRAM['Other Status']) && !empty($this->CIDRAM['Other Status Code'])) {
                         $this->CIDRAM['errCode'] = $this->CIDRAM['Other Status Code'];
                         header('HTTP/1.0 ' . $this->CIDRAM['Other Status Code'] . ' ' . $this->CIDRAM['Other Status']);
                         header('HTTP/1.1 ' . $this->CIDRAM['Other Status Code'] . ' ' . $this->CIDRAM['Other Status']);
                         header('Status: ' . $this->CIDRAM['Other Status Code'] . ' ' . $this->CIDRAM['Other Status']);
-                        if ($this->CIDRAM['Other Status Code'] === 429 && isset($RLRetryAfter)) {
+                        if ($this->CIDRAM['Other Status Code'] === 429 && isset($RLRetryAfter) && $this->BlockInfo['SignatureCount'] === 1) {
                             header('Retry-After: ' . $RLRetryAfter);
                         }
                     } elseif ((
                         !empty($this->CIDRAM['Aux Status Code']) &&
                         ($this->CIDRAM['errCode'] = $this->CIDRAM['Aux Status Code']) > 400 &&
-                        $this->CIDRAM['ThisStatusHTTP'] = $this->getStatusHTTP($this->CIDRAM['errCode'])
+                        ($StatusHTTP = $this->getStatusHTTP($this->CIDRAM['errCode'])) !== ''
                     ) || (
-                        ($this->CIDRAM['errCode'] = $this->Configuration['general']['http_response_header_code']) > 400 &&
-                        $this->CIDRAM['ThisStatusHTTP'] = $this->getStatusHTTP($this->CIDRAM['errCode'])
+                        !empty($this->CIDRAM['Legal block triggered']) &&
+                        ($this->CIDRAM['errCode'] = $this->Configuration['general']['http_response_header_code']['legal']) >= 200 &&
+                        ($StatusHTTP = $this->getStatusHTTP($this->CIDRAM['errCode'])) !== ''
+                    ) || (
+                        ($this->CIDRAM['errCode'] = $this->Configuration['general']['http_response_header_code']['default']) >= 200 &&
+                        ($StatusHTTP = $this->getStatusHTTP($this->CIDRAM['errCode'])) !== ''
                     )) {
-                        header('HTTP/1.0 ' . $this->CIDRAM['errCode'] . ' ' . $this->CIDRAM['ThisStatusHTTP']);
-                        header('HTTP/1.1 ' . $this->CIDRAM['errCode'] . ' ' . $this->CIDRAM['ThisStatusHTTP']);
-                        header('Status: ' . $this->CIDRAM['errCode'] . ' ' . $this->CIDRAM['ThisStatusHTTP']);
+                        header('HTTP/1.0 ' . $this->CIDRAM['errCode'] . ' ' . $StatusHTTP);
+                        header('HTTP/1.1 ' . $this->CIDRAM['errCode'] . ' ' . $StatusHTTP);
+                        header('Status: ' . $this->CIDRAM['errCode'] . ' ' . $StatusHTTP);
                     } else {
                         $this->CIDRAM['errCode'] = function_exists('http_response_code') && ($Try = http_response_code()) ? $Try : 200;
                     }
@@ -982,18 +997,6 @@ trait Protect
                             $this->parseVars($this->CIDRAM['Parsables'], $this->readFile($this->AssetsPath . $this->CIDRAM['template_file']))
                         );
                     }
-                } else {
-                    $this->CIDRAM['errCode'] = (
-                        $this->Configuration['general']['silent_mode_response_header_code'] > 300 &&
-                        $this->Configuration['general']['silent_mode_response_header_code'] < 309
-                    ) ? $this->Configuration['general']['silent_mode_response_header_code'] : 301;
-                    if ($this->CIDRAM['Status'] = $this->getStatusHTTP($this->CIDRAM['errCode'])) {
-                        header('HTTP/1.0 ' . $this->CIDRAM['errCode'] . ' ' . $this->CIDRAM['Status']);
-                        header('HTTP/1.1 ' . $this->CIDRAM['errCode'] . ' ' . $this->CIDRAM['Status']);
-                        header('Status: ' . $this->CIDRAM['errCode'] . ' ' . $this->CIDRAM['Status']);
-                    }
-                    header('Location: ' . $this->Configuration['general']['silent_mode']);
-                    $HTML = '';
                 }
             }
 
@@ -1107,11 +1110,11 @@ trait Protect
                     /** Process non-blocked status code. */
                     if (
                         $this->CIDRAM['StatusCodeForNonBlocked'] > 400 &&
-                        $this->CIDRAM['ThisStatusHTTP'] = $this->getStatusHTTP($this->CIDRAM['StatusCodeForNonBlocked'])
+                        $StatusHTTP = $this->getStatusHTTP($this->CIDRAM['StatusCodeForNonBlocked'])
                     ) {
-                        header('HTTP/1.0 ' . $this->CIDRAM['StatusCodeForNonBlocked'] . ' ' . $this->CIDRAM['ThisStatusHTTP']);
-                        header('HTTP/1.1 ' . $this->CIDRAM['StatusCodeForNonBlocked'] . ' ' . $this->CIDRAM['ThisStatusHTTP']);
-                        header('Status: ' . $this->CIDRAM['StatusCodeForNonBlocked'] . ' ' . $this->CIDRAM['ThisStatusHTTP']);
+                        header('HTTP/1.0 ' . $this->CIDRAM['StatusCodeForNonBlocked'] . ' ' . $StatusHTTP);
+                        header('HTTP/1.1 ' . $this->CIDRAM['StatusCodeForNonBlocked'] . ' ' . $StatusHTTP);
+                        header('Status: ' . $this->CIDRAM['StatusCodeForNonBlocked'] . ' ' . $StatusHTTP);
                     }
 
                     /** Generate HTML output. */

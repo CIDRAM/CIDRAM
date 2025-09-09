@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Czech language data for the front-end (last modified: 2025.09.05).
+# This file: Czech language data for the front-end (last modified: 2025.09.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,7 +204,6 @@ config:
  frontend_theme_mode: "Režim pro téma, která se má použít pro front-end."
  general: "Obecná konfigurace (jakákoliv hlavní konfigurace, která nepatří do jiných kategorií)."
  general_allow_gethostbyaddr_lookup: "Povolit vyhledávání gethostbyaddr, když UDP není k dispozici? True (Pravdivé) = Ano [Standardní]; False (Nepravdivé) = Ne."
- general_ban_override: "Přepsat „http_response_header_code“ při překročení „infraction_limit“? 200 = Nepřepisujte [Standardní]. Ostatní hodnoty jsou stejné jako dostupné hodnoty pro „http_response_header_code“."
  general_default_algo: "Definuje, který algoritmus se má použít pro všechna budoucí hesla a relace."
  general_default_dns: "Seznam serverů DNS, které se mají použít pro vyhledávání názvu hostitele. VAROVÁNÍ: Neměňte to, pokud nevíte co děláte!"
  general_default_timeout: "Časový limit pro externí požadavky? Standardní = 12 sekund."
@@ -333,7 +332,6 @@ field:
  Add to tracking: "Přidat ke sledování"
  Add webhook: "Přidat webhook"
  After 24 hours, bundled together: "Po 24 hodinách, svázané dohromady (nebo při ručním spuštění, např., přes cron)."
- Banned: "Zakázáno"
  Blocked: "Blokováno"
  Clear all: "Vymazat všechny"
  Clear: "Vymazat"
@@ -421,6 +419,8 @@ hints_duration:
  Jednoduchá angličtina.: "Trvání lze popsat napsáním jednotek v jednoduché angličtině. Např., <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> pro jeden týden, dva dny, tři hodiny, čtyři minuty, pět sekund."
  Omezení.: "Notace lze kombinovat, ale jednotky musí být vždy popsány od největší po nejmenší a nelze je opakovat. Např., <strong>1 week 2 days 3′4″</strong> je <span class="txtGn">platné</span> a bude správně pochopeno, ale <strong>3′4″ 1 week 2 days</strong> a <strong>3 hours 3h 3°</strong> jsou <span class="txtRd">neplatné</span>. CIDRAM se nestará o to, zda používáte mezery nebo ne. Čísla musí být čistá a neformátovaná. Pro praktičnost je největší podporovanou jednotkou týden. Když je konfigurace aktualizováno, CIDRAM normalizuje trvání na obloukový čas."
 hints_has_bypass: "* Tato možnost má odpovídající bypass pod <code class="s">bypasses➡used</code>. Doporučuji zajistit, aby zaškrtávací políčko pro odpovídající bypass bylo označeno stejně jako zaškrtávací políčko pro pokus o ověření této možnosti."
+hints_http_response_header_code:
+ 1.: "Pokud je aktivní „tichý režim“, použije se stavová zpráva HTTP definované direktivou <code class="s">general➡silent_mode_response_header_code</code> (tato zpráva má nejvyšší prioritu)."
 hints_inspection: "* Určeno pouze pro ladění pomocných pravidel. Nezobrazuje se blokovaným uživatelům."
 hints_ipv6_on_32bit: "Poznámka: Vyhledávání IPv6 nemusí na některých 32-bitových systémech fungovat správně."
 hints_logging_datetime: "Užitečný tip: K názvům souborů protokolu můžete připojit informace o datu a čase pomocí zástupných symbolů formátu času. Dostupné zástupné symboly formátu času jsou zobrazeny v {{Links.ConfigRef.time_format}}."
@@ -617,7 +617,6 @@ label:
  False positive risk: "Falešně pozitivní riziko:"
  Fancy: "Ozdobný"
  Focus: "Soustředění:"
-
  Greylist the request: "Greylistujte požadavek.\nResetuje počet spuštěných podpisů, ale pokračuje ve zpracování požadavku. Doporučeno, když nechcete whitelistovat požadavek, ale potřebujete něco podstatnějšího než spuštění bypassu."
  Harvester: "Harvester"
  Hide: "Skrýt"

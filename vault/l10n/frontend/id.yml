@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2025.09.05).
+# This file: Indonesian language data for the front-end (last modified: 2025.09.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,7 +204,6 @@ config:
  frontend_theme_mode: "Mode untuk tema yang akan digunakan untuk front-end."
  general: "Konfigurasi umum (konfigurasi inti apapun yang bukan milik kategori lain)."
  general_allow_gethostbyaddr_lookup: "Izinkan menggunakan gethostbyaddr saat UDP tidak tersedia? True = Ya [Default]; False = Tidak."
- general_ban_override: "Mengesampingkan "http_response_header_code" ketika "infraction_limit" adalah melampaui? 200 = Jangan mengesampingkan [Default]. Nilai lainnya sama dengan nilai yang tersedia untuk "http_response_header_code"."
  general_default_algo: "Mendefinisikan algoritma mana yang akan digunakan untuk semua kata sandi dan sesi di masa depan."
  general_default_dns: "Daftar server DNS yang digunakan untuk pencarian nama host. PERINGATAN: Jangan ganti ini kecuali Anda tahu apa yang Anda lakukan!"
  general_default_timeout: "Batas waktu default yang digunakan untuk permintaan eksternal? Default = 12 detik."
@@ -333,7 +332,6 @@ field:
  Add to tracking: "Tambahkan ke pelacakan"
  Add webhook: "Tambahkan webhook"
  After 24 hours, bundled together: "Setelah 24 jam, digabungkan bersama (atau ketika dipicu secara manual, misalnya, melalui cron)."
- Banned: "Dilarang"
  Blocked: "Diblokir"
  Clear all: "Cabut semua"
  Clear: "Cabut"
@@ -418,6 +416,13 @@ hints_duration:
  Bahasa Inggris sederhana.: "Durasi dapat dideskripsikan dengan menulis satuan dalam bahasa Inggris sederhana. Misalnya, <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> untuk satu minggu, dua hari, tiga jam, empat menit, lima detik."
  Kendala.: "Notasi dapat dicampur, tetapi satuan harus selalu dideskripsikan dari terbesar ke terkecil, dan tidak dapat diulang. Misalnya, <strong>1 week 2 days 3′4″</strong> adalah <span class="txtGn">valid</span> dan akan dipahami dengan benar, tetapi <strong>3′4″ 1 week 2 days</strong> dan <strong>3 hours 3h 3°</strong> adalah <span class="txtRd">tidak valid</span>. CIDRAM tidak peduli apakah Anda menggunakan spasi atau tidak. Nomor harus polos dan tidak diformat. Untuk kepraktisan, satuan didukung yang terbesar adalah seminggu. Saat konfigurasi diperbarui, CIDRAM menormalkan durasi ke waktu busur."
 hints_has_bypass: "* Opsi ini memiliki bypass terkait dibawah <code class="s">bypasses➡used</code>. Direkomendasikan untuk memastikan bahwa kotak centang untuk bypass terkait ditandai dengan cara yang sama seperti kotak centang untuk mencoba memverifikasi opsi ini."
+hints_http_response_header_code:
+ 1.: "Jika "mode senyap" berlaku, pesan status HTTP yang ditentukan oleh <code class="s">general➡silent_mode_response_header_code</code> akan digunakan (ini memiliki prioritas tertinggi)."
+ 2.: "Jika entitas yang meminta telah diblokir karena melampaui batas pelanggaran, pesan status HTTP untuk "dilarang" akan digunakan."
+ 3.: "Jika diblokir karena pembatasan laju, 429 akan digunakan, atau jika diblokir karena konflik sumber daya, pesan status HTTP yang ditentukan oleh <code class="s">signatures➡conflict_response</code> akan digunakan (pembatasan laju dan konflik sumber daya mempunyai prioritas yang sama dalam konteks ini)."
+ 4.: "Jika diblokir karena aturan tambahan yang menetapkan "penggantian kode status HTTP", penggantian kode status HTTP tersebut akan digunakan."
+ 5.: "Jika diblokir karena alasan hukum (misalnya, jika diblokir karena tanda tangan khusus yang menggunakan kata singkatan "hukum"), pesan status HTTP untuk "hukum" akan digunakan."
+ 6.: "Untuk semua permintaan terblokir lainnya, pesan status HTTP untuk "default" akan digunakan (ini memiliki prioritas terendah)."
 hints_inspection: "* Dimaksudkan hanya untuk men-debug aturan tambahan. Tidak ditampilkan kepada pengguna yang diblokir."
 hints_ipv6_on_32bit: "Catat: Pencarian IPv6 mungkin tidak bekerja dengan benar pada beberapa sistem 32-bit."
 hints_logging_datetime: "Kiat yang berguna: Anda dapat melampirkan informasi tanggal/waktu ke nama file log dengan menggunakan placeholder format waktu. Placeholder format waktu yang tersedia ditampilkan di {{Links.ConfigRef.time_format}}."
@@ -603,7 +608,6 @@ label:
  False positive risk: "Risiko positif palsu:"
  Fancy: "Terformat"
  Focus: "Fokus:"
-
  Greylist the request: "Mendaftar abu-abu permintaan.\nReset jumlah tanda tangan yang dipicu, tetapi terus memproses permintaan. Direkomendasikan saat Anda tidak ingin mendaftar permintaan putih, tetapi membutuhkan sesuatu yang lebih substansial daripada memicu bypass."
  Harvester: "Pemanen"
  Hide: "Menyembunyikan"
@@ -706,7 +710,7 @@ label:
   Forcibly disable IP tracking: "Nonaktifkan pelacakan IP secara paksa"
   Forcibly disable hCaptcha: "Nonaktifkan hCaptcha secara paksa"
   Forcibly enable IP tracking: "Aktifkan pelacakan IP secara paksa"
-  HTTP status code override: "Ganti kode status HTTP:"
+  HTTP status code override: "Penggantian kode status HTTP:"
   If the following conditions are met, %s: "Jika kondisi berikut dipenuhi, %s."
   Mark for use with Cloudflare Turnstile: "Tandai untuk digunakan dengan Cloudflare Turnstile"
   Mark for use with Friendly Captcha: "Tandai untuk digunakan dengan Friendly Captcha"

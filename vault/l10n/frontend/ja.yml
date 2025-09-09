@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2025.09.05).
+# This file: Japanese language data for the front-end (last modified: 2025.09.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,7 +204,6 @@ config:
  frontend_theme_mode: "フロントエンドに使用するテーマのモード。"
  general: "全般的な設定（他のカテゴリに属さないの設定）。"
  general_allow_gethostbyaddr_lookup: "ＵＤＰが利用できない場合、gethostbyaddrルックアップを許可しますか？ True = はい（Default/デフォルルト）。 False = いいえ。"
- general_ban_override: "「infraction_limit」を超えたときに「http_response_header_code」を上書きしますか？ ２００ = 上書きしない（Default/デフォルルト）。​他の値は、「http_response_header_code」の利用可能な値と同じです。"
  general_default_algo: "将来のすべてのパスワードとセッションに使用するアルゴリズムを定義します。"
  general_default_dns: "ホスト名検索に使用する、ＤＮＳ（ドメイン・ネーム・システム）サーバーのリスト。​注意：あなたが何をしているのか、分からない限り、これを変更しないでください。"
  general_default_timeout: "外部リクエストに使用するデフォルトのタイムアウト？ Default/デフォルルト = １２秒。"
@@ -333,7 +332,6 @@ field:
  Add to tracking: "トラッキングに追加"
  Add webhook: "Webhookを追加"
  After 24 hours, bundled together: "２４時間後、まとめてバンドルされます（または、ｃｒｏｎなどによって手動でトリガーされた場合）。"
- Banned: "禁止された"
  Blocked: "ブロックされましたか？"
  Clear all: "すべてキャンセル"
  Clear: "キャンセル"
@@ -418,6 +416,13 @@ hints_duration:
  平易な英語を使用します。: "期間は、平易な英語で単位を書くことで記述できます。​例えば、１週間、２日、３時間、４分、５秒するために<strong>「1 week 2 days 3 hours 4 minutes 5 seconds」</strong>して。"
  制約。: "表記は混在できますが、単位は常に最大から最小の順に記述する必要があり、繰り返すことはできません。​例えば、<strong>「1 week 2 days 3′4″」</strong>は<span class="txtGn">有効</span>で、正しく理解されますが、<strong>「3′4″ 1 week 2 days」</strong>と<strong>「3 hours 3h 3°」</strong>は<span class="txtRd">無効/span>です。​CIDRAM は、スペーシングを使用するかどうかは気にしません。​数値はプレーンでフォーマットなし必要があります。​実用性のために、サポートされている最大の単位は１週間です。​コンフィギュレーションがアップデートされると、CIDRAMは期間をアークタイムに正規化します。"
 hints_has_bypass: "* このオプションには、<code class="s">bypasses➡used</code>の下に対応するバイパスがあります。​対応するバイパスのチェックボックスが、このオプションの検証のチェックボックスと同じようにマークされていることを確認することをお勧めします。"
+hints_http_response_header_code:
+ 1.: "「サイレント・モード」が有効な場合、<code class="s">general➡silent_mode_response_header_code</code>で定義されたＨＴＴＰステータス・メッセージが使用されます（これは最も優先順位が高い）。"
+ 2.: "違反制限を超えたためにリクエスト元のエンティティが禁止された場合、「禁止された」のＨＴＴＰステータス・メッセージが使用されます。"
+ 3.: "レート制限によりブロックされた場合は、「429」が使用され、リソースの競合によりブロックされた場合は、<code class="s">signatures➡conflict_response</code>で定義されたＨＴＴＰステータス・メッセージが使用されます（この文脈では、レート制限とリソースの競合は同等の優先順位を持つ）。"
+ 4.: "「ＨＴＴＰステータス・コード・オーバーライド」を設定する補助ルールによってブロックされた場合、そのＨＴＴＰステータス・コード・オーバーライドが使用されます。"
+ 5.: "法的な理由でブロックされた場合（つまり、「法的」という速記語を使用するカスタム・シグネチャによりブロックされた場合）、「法的」のＨＴＴＰステータス・メッセージが使用されます。"
+ 6.: "その他のブロックされたリクエストについては、「デフォルト」のＨＴＴＰステータス・メッセージが使用されます（これは最も優先順位が低い）。"
 hints_inspection: "* 補助ルールのデバッグのみを目的としています。​ブロックされたユーザーには表示されません。"
 hints_ipv6_on_32bit: "注：一部の３２ビットシステムでは、ＩＰｖ６ルックアップが正しく機能しない場合があります。"
 hints_logging_datetime: "役に立つヒント:時刻形式のプレースホルダーを使用して、ログ・ファイルの名前に日付/時刻情報を添付できます。​使用可能な時刻形式のプレースホルダーが{{Links.ConfigRef.time_format}}に表示されます。"
@@ -604,7 +609,6 @@ label:
  False positive risk: "オプション："
  Fancy: "ファンシー"
  Focus: "焦点："
-
  Greylist the request: "リクエストをグレイリストします。\nトリガーされたシグネチャの数をリセットしますが、要求の処理を続行します。​リクエストをホワイトリストしたくないが、バイパスをトリガーするよりも実質的なものが必要な場合に推奨されます。"
  Harvester: "ハーベスター"
  Hide: "隠す"

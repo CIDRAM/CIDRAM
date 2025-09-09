@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used to simulate block events (last modified: 2025.08.23).
+ * This file: Methods used to simulate block events (last modified: 2025.09.08).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -306,17 +306,20 @@ trait SimulateBlockEvent
         /** Clear to prevent potential interference with later execution within the same request. */
         unset($this->CIDRAM['Trigger notifications']);
 
+        /** Fix for non-integer status codes. */
+        $this->CIDRAM['Aux Status Code'] = empty($this->CIDRAM['Aux Status Code']) ? 0 : (int)$this->CIDRAM['Aux Status Code'];
+
         /**
-         * Determine HTTP status code. Priority (from highest to lowest):
-         * - silent_mode(30x)
-         * - ban_override(4xx~5xx)
-         * - rate_limiting(429)
-         * - Auxiliary Rules(4xx~5xx)
-         * - http_response_header_code(4xx~5xx)
-         * - Auxiliary Rules(30x)
-         * - Other (or 200 if not blocked)
-         * Block event simulation doesn't account for:
-         * - nonblocked_status_code(4xx) (CAPTCHA completion status determined at request time).
+         * Determine HTTP status code. Precedence (from highest to lowest):
+         * 1. Silent mode (3xx).
+         * 2. Banned due to exceeding the infraction limit (general.http_response_header_code.banned).
+         * 3. Rate limiting (429); Resource conflicts (signatures.conflict_response).
+         * 4. Auxiliary rules which set a "HTTP status code override" when blocking (4xx/5xx).
+         * 5. Blocked for legal reasons (general.http_response_header_code.legal).
+         * 6. Blocked for other reasons (general.http_response_header_code.default).
+         * 7. Auxiliary rules which set a "HTTP status code override" when redirecting (3xx).
+         * 8. Not blocked and CAPTCHA required (captcha.nonblocked_status_code.*).
+         * 9. Not blocked and no CAPTCHA required (200).
          */
         if ($this->BlockInfo['SignatureCount'] > 0) {
             $this->CIDRAM['ThisStatusHTTP'] = (
@@ -324,20 +327,47 @@ trait SimulateBlockEvent
                     $this->Configuration['general']['silent_mode_response_header_code'] > 300 &&
                     $this->Configuration['general']['silent_mode_response_header_code'] < 309
                 ) ? $this->Configuration['general']['silent_mode_response_header_code'] : 301)) ||
-                (!empty($this->CIDRAM['Banned']) && $this->Configuration['general']['ban_override'] > 400 && ($Try = $this->Configuration['general']['ban_override'])) ||
-                (!empty($this->CIDRAM['Other Status']) && !empty($this->CIDRAM['Other Status Code']) && $this->BlockInfo['SignatureCount'] === 1 && ($Try = $this->CIDRAM['Other Status Code'])) ||
-                (!empty($this->CIDRAM['Aux Status Code']) && $this->CIDRAM['Aux Status Code'] > 400 && ($Try = $this->CIDRAM['Aux Status Code'])) ||
-                ($this->Configuration['general']['http_response_header_code'] > 400 && ($Try = $this->Configuration['general']['http_response_header_code'])) ||
-                (!empty($this->CIDRAM['ThisStatusHTTP']) && $this->CIDRAM['ThisStatusHTTP'] !== 200 && ($Try = $this->CIDRAM['ThisStatusHTTP']))
+                (!empty($this->CIDRAM['Banned']) && $this->Configuration['general']['http_response_header_code']['banned'] >= 200 && ($Try = $this->Configuration['general']['http_response_header_code']['banned'])) ||
+                (!empty($this->CIDRAM['Other Status']) && !empty($this->CIDRAM['Other Status Code']) && ($Try = $this->CIDRAM['Other Status Code'])) ||
+                ($this->CIDRAM['Aux Status Code'] > 400 && ($Try = $this->CIDRAM['Aux Status Code'])) ||
+                (!empty($this->CIDRAM['Legal block triggered']) && $this->Configuration['general']['http_response_header_code']['legal'] >= 200 && ($Try = $this->Configuration['general']['http_response_header_code']['legal'])) ||
+                ($this->Configuration['general']['http_response_header_code']['default'] >= 200 && ($Try = $this->Configuration['general']['http_response_header_code']['default']))
             ) ? $Try : '200 OK';
+        } elseif (!empty($this->CIDRAM['Aux Redirect']) && $this->CIDRAM['Aux Status Code'] > 300 && $this->CIDRAM['Aux Status Code'] < 400 && ($Try = $this->CIDRAM['Aux Status Code'])) {
+            $this->CIDRAM['ThisStatusHTTP'] = $Try;
         } else {
-            $this->CIDRAM['ThisStatusHTTP'] = (
-                (!empty($this->CIDRAM['Aux Redirect']) && !empty($this->CIDRAM['Aux Status Code']) && $this->CIDRAM['Aux Status Code'] > 300 && $this->CIDRAM['Aux Status Code'] < 400 && ($Try = $this->CIDRAM['Aux Status Code'])) ||
-                (!empty($this->CIDRAM['ThisStatusHTTP']) && $this->CIDRAM['ThisStatusHTTP'] !== 200 && ($Try = $this->CIDRAM['ThisStatusHTTP']))
-            ) ? $Try : '200 OK';
+            $this->CIDRAM['ThisStatusHTTP'] = '200 OK';
+            if (empty($this->CIDRAM['Whitelisted']) && empty($this->BlockInfo['Verified'])) {
+                foreach ([
+                    ['hcaptcha_sitekey', 'hcaptcha_secret', 'HCaptcha', 'hcaptcha'],
+                    ['friendly_sitekey', 'friendly_apikey', 'FriendlyCaptcha', 'friendly'],
+                    ['turnstile_sitekey', 'turnstile_secret', 'CloudflareTurnstile', 'cloudflare']
+                ] as $CAPTCHA) {
+                    if (
+                        $this->Configuration['captcha'][$CAPTCHA[0]] !== '' &&
+                        $this->Configuration['captcha'][$CAPTCHA[1]] !== '' &&
+                        (
+                            ($this->Configuration['captcha']['usemode'][$CAPTCHA[3]] >= 3 && $this->Configuration['captcha']['usemode'][$CAPTCHA[3]] <= 5) ||
+                            ($this->Configuration['captcha']['usemode'][$CAPTCHA[3]] === 6 && (
+                                isset($this->BlockInfo['rURI']) &&
+                                $this->isSensitive(preg_replace('/\s/', '', strtolower($this->BlockInfo['rURI'])))
+                            ))
+                        )
+                    ) {
+                        $this->CIDRAM['ThisStatusHTTP'] = $this->Configuration['captcha']['nonblocked_status_code'][$CAPTCHA[3]];
+                        break;
+                    }
+                }
+            }
         }
-        if (is_int($this->CIDRAM['ThisStatusHTTP']) && $Try = $this->getStatusHTTP($this->CIDRAM['ThisStatusHTTP'])) {
-            $this->CIDRAM['ThisStatusHTTP'] .= ' ' . $Try;
+        if (is_int($this->CIDRAM['ThisStatusHTTP'])) {
+            if (($Try = $this->getStatusHTTP($this->CIDRAM['ThisStatusHTTP'])) !== '') {
+                $this->CIDRAM['ThisStatusHTTP'] .= ' ' . $Try;
+            } elseif ($this->CIDRAM['ThisStatusHTTP'] === 200) {
+                $this->CIDRAM['ThisStatusHTTP'] .= ' ' . $this->L10N->getString('field.OK');
+            } else {
+                $this->CIDRAM['ThisStatusHTTP'] .= ' ' . $this->L10N->getString('field.Unknown');
+            }
         }
     }
 

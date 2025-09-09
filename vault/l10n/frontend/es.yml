@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2025.09.05).
+# This file: Spanish language data for the front-end (last modified: 2025.09.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,10 +204,9 @@ config:
  frontend_theme_mode: "El modo para el tema a utilizar para el front-end."
  general: "Configuración general (cualquier configuración que no pertenezca a otras categorías)."
  general_allow_gethostbyaddr_lookup: "¿Permitir búsquedas gethostbyaddr cuando UDP no está disponible? True = Sí [Predefinido]; False = No."
- general_ban_override: "Anular "http_response_header_code" cuando "infraction_limit" es excedido? 200 = No anular [Predefinido]. Otros valores son los mismos que los valores disponibles para "http_response_header_code"."
  general_default_algo: "Define qué algoritmo utilizar para todas las contraseñas y sesiones en el futuro."
  general_default_dns: "Una lista de los servidores DNS que se utilizarán para las búsquedas de nombres del host. ¡AVISO: No cambie esto a menos que sepas lo que estás haciendo!"
- general_default_timeout: "¿Tiempo de espera predeterminado para usar en solicitudes externas? Predeterminado = 12 segundos."
+ general_default_timeout: "¿Tiempo de espera predefinido para usar en solicitudes externas? Predefinido = 12 segundos."
  general_disabled_channels: "Esto se puede usar para evitar que CIDRAM use canales particulares al enviar solicitudes (por ejemplo, al actualizar, al obtener metadatos de componentes, etc)."
  general_email_notification_address: "Si ha optado por recibir notificaciones del CIDRAM por correo electrónico, por ejemplo, cuando se activan reglas auxiliares específicas, puede especificar la dirección del destinatario de esas notificaciones aquí."
  general_email_notification_name: "Si ha optado por recibir notificaciones del CIDRAM por correo electrónico, por ejemplo, cuando se activan reglas auxiliares específicas, puede especificar el nombre del destinatario de esas notificaciones aquí."
@@ -251,7 +250,7 @@ config:
  logging_report_log: "Un archivo para registrar cualquier reportes enviados a las API externas. Especificar el nombre del archivo, o dejar en blanco para desactivar."
  logging_serialised_log: "Un archivo serializado para el registro de todos los intentos de acceso bloqueados. Especificar el nombre del archivo, o dejar en blanco para desactivar."
  logging_standard_log: "Un archivo legible por humanos para el registro de todos los intentos de acceso bloqueados. Especificar el nombre del archivo, o dejar en blanco para desactivar."
- logging_truncate: "¿Truncar archivos de registro cuando alcanzan cierto tamaño? Valor es el tamaño máximo en B/KB/MB/GB/TB que un archivo de registro puede crecer antes de ser truncado. El valor predeterminado de 0KB deshabilita el truncamiento (archivos de registro pueden crecer indefinidamente). Nota: ¡Se aplica a archivos de registro individuales! El tamaño de los archivos de registro no se considera colectivamente."
+ logging_truncate: "¿Truncar archivos de registro cuando alcanzan cierto tamaño? Valor es el tamaño máximo en B/KB/MB/GB/TB que un archivo de registro puede crecer antes de ser truncado. El valor predefinido de 0KB deshabilita el truncamiento (archivos de registro pueden crecer indefinidamente). Nota: ¡Se aplica a archivos de registro individuales! El tamaño de los archivos de registro no se considera colectivamente."
  phpmailer: "Configuración para PHPMailer (se utiliza para la autenticación de dos factores y para notificaciones por correo electrónico)."
  phpmailer_add_reply_to_address: "La dirección de la respuesta para citar cuando se envía un correo electrónico a través de SMTP."
  phpmailer_add_reply_to_name: "El nombre de la respuesta para citar cuando se envía un correo electrónico a través de SMTP."
@@ -333,7 +332,6 @@ field:
  Add to tracking: "Agregar al seguimiento"
  Add webhook: "Añadir webhook"
  After 24 hours, bundled together: "Después de 24 horas, agrupados juntos (o cuando se desencadena manualmente, por ejemplo, a través de cron)."
- Banned: "Prohibido"
  Blocked: "Bloqueado"
  Clear all: "Anular todo"
  Clear: "Anular"
@@ -389,7 +387,7 @@ field:
  Update signature files: "Actualizar archivos de firmas"
  Update: "Actualizar"
  Upload new file: "Subir un nuevo archivo"
- Use system default timezone: "Usar la zona horaria predeterminada del sistema."
+ Use system default timezone: "Usar la zona horaria predefinida del sistema."
  Username: "Usuario"
  Verified search engine and social media requests: "Solicitudes verificadas de motores de búsqueda y redes sociales"
  Verify all: "Verificar todo"
@@ -417,6 +415,13 @@ hints_duration:
  Inglés simple.: "La duración se puede describir escribiendo las unidades en Inglés simple. Por ejemplo, <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> para una semana, dos días, tres horas, cuatro minutos, cinco segundos."
  Restricciones.: "La notación se puede mezclar, pero las unidades siempre se deben describir de mayor a menor, y no se pueden repetir. Por ejemplo, <strong>1 week 2 days 3′4″</strong> es <span class="txtGn">válido</span> y se entenderá correctamente, pero <strong>3′4″ 1 week 2 days</strong> y <strong>3 hours 3h 3°</strong> <span class="txtRd">no son válidos</span>. A CIDRAM no le importa si usa espaciado o no. Los números deben ser simples y sin formato. Por motivos prácticos, la unidad más grande admitida es una semana. Cuando se actualiza la configuración, CIDRAM normaliza las duraciones al tiempo de arco."
 hints_has_bypass: "* Esta opción tiene un bypass correspondiente bajo <code class="s">bypasses➡used</code>. Se recomienda asegurarse de que la casilla de verificación para la bypass correspondiente esté marcado de la misma manera que la casilla de verificación para intentar verificar esta opción."
+hints_http_response_header_code:
+ 1.: "Cuando el "modo silencioso" está activo, se utilizará el mensaje de estado HTTP definido por <code class="s">general➡silent_mode_response_header_code</code> (esto tiene la mayor precedencia)."
+ 2.: "Cuando la entidad solicitante haya sido prohibido por exceder el límite de infracciones, se utilizará el mensaje de estado HTTP "prohibido"."
+ 3.: "Cuando se bloquea debido a una limitación de tasa, se utilizará 429, o cuando se bloquea debido a conflictos de recursos, se utilizará el mensaje de estado HTTP definido por <code class="s">signatures➡conflict_response</code> (la limitación de tasa y los conflictos por los recursos tienen igual precedencia en este contexto)."
+ 4.: "Cuando se bloquea debido a una regla auxiliar que establece una "reemplazo del código de estado HTTP", se utilizará esa reemplazo del código de estado HTTP."
+ 5.: "Cuando se bloquea debido a razones legales (es decir, cuando se bloquea debido a una firma personalizada que utiliza la palabra abreviada "legal"), se utilizará el mensaje de estado HTTP para "legal"."
+ 6.: "Para todas las demás solicitudes bloqueadas, se utilizará el mensaje de estado HTTP "predefinido" (este tiene la precedencia más baja)."
 hints_inspection: "* Destinado solo para reglas auxiliares. No se muestra a los usuarios bloqueados."
 hints_ipv6_on_32bit: "Nota: Es posible que las búsquedas de IPv6 no funcionen correctamente en algunos sistemas de 32 bits."
 hints_logging_datetime: "Consejo útil: Puede adjuntar información de fecha/hora a los nombres de los archivos de registro utilizando marcadores de posición de formato de hora. Los marcadores de posición de formato de hora disponibles se muestran en {{Links.ConfigRef.time_format}}."
@@ -425,7 +430,7 @@ hints_pdo_dsn:
 hints_sensitive_pages: "Nota: Lo que constituye una "página confidencial" está determinado por {{Links.ConfigRef.sensitive}}."
 hints_shorthand:
  0.: "Si su sitio web necesita acceso a través de LAN o localhost, no bloquee esto. De lo contrario, puedes bloquear esto."
- 1.: "Ninguno de los archivos de firma predeterminados usa esto, pero no obstante, es soportado en caso que pueda ser útil para algunos usuarios."
+ 1.: "Ninguno de los archivos de firma predefinidos usa esto, pero no obstante, es soportado en caso que pueda ser útil para algunos usuarios."
  2.: "Si necesita que los usuarios puedan acceder a su sitio web a través de proxies, no bloquee esto. De lo contrario, puedes bloquear esto."
  3.: "El uso directo en las firmas no es soportados, pero se puede invocar por otros medios en circunstancias particulares."
  4.: "Se refiere a los casos en que las palabras abreviadas no se usan en absoluto, o no son reconocidas por CIDRAM."
@@ -455,7 +460,7 @@ hints_verification:
  "¿Qué son los "bypasses de un solo golpe"?": "En algunos casos, una solicitud con verificación positiva aún puede bloquearse como resultado de los archivos de firma, módulos, u otras condiciones de la solicitud, y las bypasses pueden ser necesarias para evitar falsos positivos. En el caso de que una bypass esté destinada a tratar exactamente una infracción, ni más ni menos, dicha bypass podría describirse como una "bypass de un solo golpe"."
 hints_want_to_block: "!! La mayoría de los usuarios probablemente querrán que esto se bloquee, independientemente de si es real o falso. Eso se puede lograr si no se selecciona "intentar verificar" y se selecciona "bloquear solicitudes no verificadas". Pero, debido a que algunos usuarios pueden querer poder verificar dichas solicitudes (para bloquear las negativas y permitir las positivas), en lugar de bloquear dichas solicitudes a través de módulos, aquí se proporcionan opciones para manejar dichas solicitudes."
 info_cli_by_default_ips: |
- De forma predeterminada, las direcciones IP se prueban con todos los archivos
+ De forma predefinida, las direcciones IP se prueban con todos los archivos
  de firma, todos los módulos, todas las reglas auxiliares, así como con la
  verificación de redes sociales y motores de búsqueda.
  --no-ban    Evita comprobar si está prohibido.
@@ -611,7 +616,6 @@ label:
  False positive risk: "Riesgo de falsos positivos:"
  Fancy: "Lujoso"
  Focus: "Foco:"
-
  Greylist the request: "Trate la solicitud como en la lista gris.\nRestablece el número de firmas desencadenadas, pero continúa procesando la solicitud. Recomendado cuando no desea incluir la solicitud en la lista blanca, pero necesita algo más sustancial que desencadenar un bypass."
  Harvester: "Recolector"
  Hide: "Esconder"
@@ -691,7 +695,7 @@ label:
  Text formatting: "Formato de texto:"
  The cache is empty: "El caché está vacío."
  Total: "Total"
- Trigger a bypass: "Desencadenar un bypass.\nResta un recuento del número de firmas desencadenadas, siempre que ya se haya desencadenado al menos una firma. Recomendado para tratar con falsos positivos simples potencialmente causados por los archivos de firma predeterminados."
+ Trigger a bypass: "Desencadenar un bypass.\nResta un recuento del número de firmas desencadenadas, siempre que ya se haya desencadenado al menos una firma. Recomendado para tratar con falsos positivos simples potencialmente causados por los archivos de firma predefinidos."
  Unignore this: "No ignora esto"
  Values for IP tracking: "Valores para rastreo IP"
  Whitelist the request: "Trate la solicitud como en la lista blanca.\nRestablece el número de firmas desencadenadas, y aborta cualquier procesamiento posterior de la solicitud. Garantiza que CIDRAM nunca bloqueará la solicitud."
@@ -707,7 +711,7 @@ label:
   Drop the rule here to move it to this position, or onto another rule to swap positions: "Suelte la regla aquí para moverla a esta posición, o sobre otra regla para intercambiar posiciones."
   Email: "Correo electrónico"
   Enable this rule: "Habilitar esta regla"
-  Enforce default IP tracking options: "Establecer opciones del rastreo IP predeterminadas"
+  Enforce default IP tracking options: "Establecer opciones del rastreo IP predefinidas"
   Enforce extended IP tracking options: "Establecer opciones del rastreo IP extendidas"
   Forcibly disable Cloudflare Turnstile: "Desactivar a la fuerza Cloudflare Turnstile"
   Forcibly disable Friendly Captcha: "Desactivar a la fuerza Friendly Captcha"

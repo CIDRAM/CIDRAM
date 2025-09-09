@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2025.09.04).
+# This file: Defaults file (last modified: 2025.09.08).
 ##/
 
 Config Defaults:
@@ -309,7 +309,14 @@ Config Defaults:
     "Forwarded - HTTP | MDN": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Forwarded"
   http_response_header_code:
    type: "int"
-   default: 403
+   default:
+    default: 403
+    legal: 451
+    banned: 503
+   labels:
+    default: "label.Default"
+    legal: "Short.Legal"
+    banned: "Short.Banned"
    choices:
     200: &200 "label.200 OK"
     403: &403 "label.403 Forbidden"
@@ -317,7 +324,9 @@ Config Defaults:
     418: &418 "label.418 I_m a teapot"
     451: &451 "label.451 Unavailable For Legal Reasons"
     503: &503 "label.503 Service Unavailable"
-   style: "radio"
+   style: "matrix"
+   columns: "100px"
+   hints: "hints_http_response_header_code"
   silent_mode:
    type: "url"
    default: ""
@@ -491,17 +500,6 @@ Config Defaults:
    choices:
     default: "field.Clickable link"
     noclick: "field.Non-clickable text"
-  ban_override:
-   type: "int"
-   default: 200
-   choices:
-    200: *200
-    403: *403
-    410: *410
-    418: *418
-    451: *451
-    503: *503
-   style: "radio"
   default_dns:
    type: "string"
    default: |
@@ -1273,6 +1271,8 @@ Provide:
    ForciblyDisableFriendlyCaptcha: false
    ForciblyDisableHCaptcha: false
    Hostname: ""
+   LastTestIP: 0
+   Legal block triggered: false
    MarkForUseWithCloudflareTurnstile: false
    MarkForUseWithFriendlyCaptcha: false
    MarkForUseWithHCaptcha: false
@@ -1284,6 +1284,7 @@ Provide:
    ThisStatusHTTP: 200
    Trackable: null
    Tracking options override: ""
+   Whitelisted: false
  CAPTCHA choices for modules: &CaptchaChoicesForModules {MarkForUseWithHCaptcha: "label.aux.Mark for use with hCaptcha", ForciblyDisableHCaptcha: "label.aux.Forcibly disable hCaptcha", MarkForUseWithFriendlyCaptcha: "label.aux.Mark for use with Friendly Captcha", ForciblyDisableFriendlyCaptcha: "label.aux.Forcibly disable Friendly Captcha", MarkForUseWithCloudflareTurnstile: "label.aux.Mark for use with Cloudflare Turnstile", ForciblyDisableCloudflareTurnstile: "label.aux.Forcibly disable Cloudflare Turnstile"}
  Auxiliary Rules:
   Modes:

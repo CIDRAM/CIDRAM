@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2025.09.05).
+# This file: Vietnamese language data for the front-end (last modified: 2025.09.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,7 +204,6 @@ config:
  frontend_theme_mode: "Chế độ cho chủ đề sẽ được sử dụng cho front-end."
  general: "Cấu hình chung (bất kỳ cấu hình cốt lõi nào không thuộc về các loại khác)."
  general_allow_gethostbyaddr_lookup: "Cho phép tra cứu gethostbyaddr khi UDP không khả dụng? True = Vâng [Mặc định]; False = Không."
- general_ban_override: "Ghi đè "http_response_header_code" khi "infraction_limit" bị vượt quá? 200 = Không ghi đè [Mặc định]. Các giá trị khác giống với các giá trị có sẵn cho "http_response_header_code"."
  general_default_algo: "Xác định thuật toán nào sẽ sử dụng cho tất cả các mật khẩu và phiên trong tương lai."
  general_default_dns: "Danh sách các máy chủ DNS để sử dụng cho tra cứu tên máy. CẢNH BÁO: Không thay đổi này, trừ khi bạn biết những gì bạn đang làm!"
  general_default_timeout: "Thời gian chờ mặc định để sử dụng cho các yêu cầu bên ngoài? Mặc định = 12 giây."
@@ -333,7 +332,6 @@ field:
  Add to tracking: "Thêm vào giám sát"
  Add webhook: "Thêm webhook"
  After 24 hours, bundled together: "Sau 24 giờ, được đóng gói lại với nhau (hoặc khi được kích hoạt thủ công, ví dụ, thông qua cron)."
- Banned: "Bị cấm"
  Blocked: "Bị chặn"
  Clear all: "Hủy bỏ tất cả"
  Clear: "Hủy bỏ"
@@ -418,6 +416,13 @@ hints_duration:
  Tiếng Anh đơn giản.: "Khoảng thời gian có thể được mô tả bằng cách viết các đơn vị bằng tiếng Anh đơn giản. V.d., <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> cho một tuần, hai ngày, ba giờ, bốn phút, năm giây."
  Hạn chế.: "Ký hiệu có thể được trộn lẫn, nhưng các đơn vị phải luôn được mô tả từ lớn nhất đến nhỏ nhất, và không được lặp lại. V.d., <strong>1 week 2 days 3′4″</strong> là <span class="txtGn">hợp lệ</span> và sẽ được hiểu đúng, nhưng <strong>3′4″ 1 week 2 days</strong> và <strong>3 hours 3h 3°</strong> <span class="txtRd">không hợp lệ</span>. CIDRAM không quan tâm đến việc bạn có sử dụng khoảng cách hay không. Các số phải đơn giản và không có định dạng. Đơn vị được hỗ trợ lớn nhất là một tuần. Khi cấu hình được cập nhật, CIDRAM chuẩn hóa khoảng thời gian thành thời gian góc."
 hints_has_bypass: "* Tùy chọn này có một đường tránh tương ứng dưới <code class="s">bypasses➡used</code>. Bạn nên đảm bảo rằng hộp kiểm cho đường tránh tương ứng được đánh dấu giống như hộp kiểm để cố gắng xác minh tùy chọn này."
+hints_http_response_header_code:
+ 1.: "Khi "chế độ im lặng" có hiệu lực, thông báo trạng thái HTTP được xác định bởi <code class="s">general➡silent_mode_response_header_code</code> sẽ được sử dụng (thông báo này có mức độ ưu tiên cao nhất)."
+ 2.: "Khi thực thể yêu cầu bị cấm do vượt quá giới hạn vi phạm, thông báo trạng thái HTTP "bị cấm" sẽ được sử dụng."
+ 3.: "Khi bị chặn do giới hạn tốc độ, 429 sẽ được sử dụng, hoặc khi bị chặn do xung đột tài nguyên, thông báo trạng thái HTTP được xác định bởi <code class="s">signatures➡conflict_response</code> sẽ được sử dụng (giới hạn tốc độ và xung đột tài nguyên có mức độ ưu tiên ngang nhau trong bối cảnh này)."
+ 4.: "Khi bị chặn do quy tắc phụ trợ đặt "ghi đè mã trạng thái HTTP", ghi đè mã trạng thái HTTP đó sẽ được sử dụng."
+ 5.: "Khi bị chặn do nghĩa vụ pháp lý (tức là, khi bị chặn do chữ ký tùy chỉnh sử dụng từ viết tắt "pháp lý"), thông báo trạng thái HTTP cho "pháp lý" sẽ được sử dụng."
+ 6.: "Đối với tất cả các yêu cầu bị chặn khác, thông báo trạng thái HTTP cho "mặc định" sẽ được sử dụng (thông báo này có mức độ ưu tiên thấp nhất)."
 hints_inspection: "* Chỉ dành cho việc gỡ lỗi các quy tắc phụ trợ. Không hiển thị cho người dùng bị chặn."
 hints_ipv6_on_32bit: "Lưu ý: Tra cứu IPv6 có thể không hoạt động chính xác trên một số hệ thống 32 bit."
 hints_logging_datetime: "Lời khuyên hữu ích: Bạn có thể đính kèm thông tin ngày/giờ vào tên của tập tin nhật ký bằng cách sử dụng phần giữ chỗ định dạng thời gian. Phần giữ chỗ định dạng thời gian có sẵn được hiển thị tại {{Links.ConfigRef.time_format}}."
@@ -605,7 +610,6 @@ label:
  False positive risk: "Nguy cơ sai tích cực:"
  Fancy: "Đẹp"
  Focus: "Trọng tâm:"
-
  Greylist the request: "Danh sách xám các yêu cầu.\nĐặt lại số lượng chữ ký được kích hoạt, nhưng vẫn tiếp tục xử lý yêu cầu. Được khuyến khích khi bạn không muốn đưa yêu cầu vào danh sách trắng, nhưng cần điều gì đó thực chất hơn kích hoạt trường hợp."
  Harvester: "Trình thu thập"
  Hide: "Che giấu"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Afrikaans language data for the front-end (last modified: 2025.09.05).
+# This file: Afrikaans language data for the front-end (last modified: 2025.09.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,7 +204,6 @@ config:
  frontend_theme_mode: "Die modus vir die tema om vir die front-end te gebruik."
  general: "Algemene konfigurasie (enige kernkonfigurasie wat nie aan ander kategorieë behoort nie)."
  general_allow_gethostbyaddr_lookup: "Laat gethostbyaddr-opsoeke toe wanneer UDP nie beskikbaar is nie? True = Ja [Verstek]; False = Nee."
- general_ban_override: "Vervang "http_response_header_code" wanneer "infraction_limit" oorskry word? 200 = Moenie vervang nie [Verstek]. Ander waardes is dieselfde as die beskikbare waardes vir "http_response_header_code"."
  general_default_algo: "Definieer watter algoritme om vir alle toekomstige wagwoorde en sessies te gebruik."
  general_default_dns: "Lys van DNS-bedieners om vir gasheernaam-opsoeke te gebruik. WAARSKUWING: Moenie dit verander tensy jy weet wat jy doen nie!"
  general_default_timeout: "Verstek uitteltyd om vir eksterne versoeke te gebruik? Verstek = 12 sekondes."
@@ -333,7 +332,6 @@ field:
  Add to tracking: "Voeg by IP-nasporing"
  Add webhook: "Voeg webhook"
  After 24 hours, bundled together: "Na 24 uur, saamgebondel (of wanneer dit met die hand geaktiveer word, bv., via cron)."
- Banned: "Verban"
  Blocked: "Geblokkeer"
  Clear all: "Vee dit alles uit"
  Clear: "Vee dit uit"
@@ -420,6 +418,13 @@ hints_duration:
  Gewone Engels.: "Tydsduur kan beskryf word deur die eenhede in gewone Engels te skryf. Bv., <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> vir een week, twee dae, drie uur, vier minute, vyf sekondes."
  Beperkings.: "Notasie kan gemeng word, maar eenhede moet altyd beskryf word van die grootste tot die kleinste, en kan nie herhaal word nie. Bv., <strong>1 week 2 days 3′4″</strong> is <span class="txtGn">geldig</span> en sal korrek verstaan word, maar <strong>3′4″ 1 week 2 days</strong> en <strong>3 hours 3h 3°</strong> is <span class="txtRd">ongeldig</span>. CIDRAM gee nie om of jy spasiëring gebruik of nie. Getalle moet eenvoudig en ongeformateer wees. Vir praktiese toepassing is die grootste ondersteunde eenheid 'n week. Wanneer konfigurasie opgedateer word, normaliseer CIDRAM duurs na boogtyd."
 hints_has_bypass: "* Hierdie opsie het 'n ooreenstemmende omleiding onder <code class="s">bypasses➡used</code>. Dit word aanbeveel om seker te maak dat die merkblokkie vir die ooreenstemmende omleiding gemerk is op dieselfde manier as die merkblokkie om hierdie opsie te probeer verifieer."
+hints_http_response_header_code:
+ 1.: "Wanneer "stil modus" aktief is, sal die HTTP-statusboodskap wat deur <code class="s">general➡silent_mode_response_header_code</code> gedefinieer word, gebruik word (dit het die hoogste prioriteit)."
+ 2.: "Wanneer die versoekende entiteit verban is weens die oorskryding van die oortredingslimiet, sal die HTTP-statusboodskap vir "verban" gebruik word."
+ 3.: "Wanneer dit geblokkeer word weens tariefbeperking, sal 429 gebruik word, of wanneer dit geblokkeer word weens hulpbronkonflikte, sal die HTTP-statusboodskap wat deur <code class="s">signatures➡conflict_response</code> gedefinieer word, gebruik word (tariefbeperking en hulpbronkonflikte het gelyke prioriteit in hierdie konteks)."
+ 4.: "Wanneer dit geblokkeer word weens 'n bykomende reël wat 'n "vervanging van HTTP-statuskode" stel, sal daardie vervanging van HTTP-statuskode gebruik word."
+ 5.: "Wanneer dit weens wettige redes geblokkeer word (d.w.s., wanneer dit geblokkeer word weens 'n persoonlike handtekening wat die snelskrifwoord "wettig" gebruik), sal die HTTP-statusboodskap vir "wettig" gebruik word."
+ 6.: "Vir alle ander geblokkeerde versoeke sal die HTTP-statusboodskap vir "verstek" gebruik word (dit het die laagste prioriteit)."
 hints_inspection: "* Slegs bedoel vir ontfouting van bykomende reëls. Word nie aan geblokkeerde gebruikers gewys nie."
 hints_ipv6_on_32bit: "Kennis neem: IPv6-soektogte werk dalk nie korrek op sommige 32-bis stelsels nie."
 hints_logging_datetime: "Nuttige wenk: Jy kan datum/tyd inligting aan die name van loglêers heg deur tydformaat plekhouers te gebruik. Beskikbare tydformaat plekhouers word by {{Links.ConfigRef.time_format}} vertoon."
@@ -613,7 +618,6 @@ label:
  False positive risk: "Vals positiewe risiko:"
  Fancy: "Fancy"
  Focus: "Fokus:"
-
  Greylist the request: "Gryslys die versoek.\nStel die aantal handtekeninge terug, maar gaan voort om die versoek te verwerk. Aanbeveel wanneer jy nie die versoek wil witlys nie, maar iets aansienliker benodig as om 'n omleiding."
  Harvester: "Stroper"
  Hide: "Versteek"

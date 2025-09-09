@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Punjabi language data for the front-end (last modified: 2025.09.05).
+# This file: Punjabi language data for the front-end (last modified: 2025.09.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,7 +204,6 @@ config:
  frontend_theme_mode: "ਫਰੰਟ-ਐਂਡ ਲਈ ਵਰਤਣ ਲਈ ਥੀਮ ਲਈ ਮੋਡ।"
  general: "ਆਮ ਕੌਂਫਿਗਰੇਸ਼ਨ (ਕੋਈ ਵੀ ਮੁੱਖ ਕੌਂਫਿਗਰੇਸ਼ਨ ਜੋ ਹੋਰ ਸ਼੍ਰੇਣੀਆਂ ਨਾਲ ਸਬੰਧਤ ਨਹੀਂ ਹੈ)।"
  general_allow_gethostbyaddr_lookup: "ਜਦੋਂ UDP ਉਪਲਬਧ ਨਾ ਹੋਵੇ ਤਾਂ gethostbyaddr ਲੁੱਕਅੱਪ ਦੀ ਇਜਾਜ਼ਤ ਦੇਣੀ ਹੈ? True = ਹਾਂ [ਡਿਫਾਲਟ]; False = ਨਹੀਂ।"
- general_ban_override: ""http_response_header_code" ਨੂੰ ਓਵਰਰਾਈਡ ਕਰਨਾ ਹੈ ਜਦੋਂ "infraction_limit" ਵੱਧ ਜਾਂਦੀ ਹੈ? 200 = ਓਵਰਰਾਈਡ ਨਾ ਕਰੋ [ਡਿਫਾਲਟ]। ਹੋਰ ਮੁੱਲ "http_response_header_code" ਲਈ ਉਪਲਬਧ ਮੁੱਲਾਂ ਦੇ ਸਮਾਨ ਹਨ।"
  general_default_algo: "ਪਰਿਭਾਸ਼ਿਤ ਕਰਦਾ ਹੈ ਕਿ ਭਵਿੱਖ ਦੇ ਸਾਰੇ ਪਾਸਵਰਡਾਂ ਅਤੇ ਸੈਸ਼ਨਾਂ ਲਈ ਕਿਹੜਾ ਐਲਗੋਰਿਦਮ ਵਰਤਣਾ ਹੈ।"
  general_default_dns: "ਹੋਸਟ-ਨਾਂ ਲੁੱਕਅੱਪ ਲਈ ਵਰਤਣ ਲਈ DNS ਸਰਵਰਾਂ ਦੀ ਸੂਚੀ। ਚੇਤਾਵਨੀ: ਇਸ ਨੂੰ ਨਾ ਬਦਲੋ ਜੇਕਰ ਤੁਸੀਂ ਨਹੀਂ ਜਾਣਦੇ ਕਿ ਤੁਸੀਂ ਕੀ ਕਰ ਰਹੇ ਹੋ!"
  general_default_timeout: "ਬਾਹਰੀ ਬੇਨਤੀਆਂ ਲਈ ਵਰਤਣ ਲਈ ਡਿਫੌਲਟ ਸਮਾਂ ਸਮਾਪਤ? ਡਿਫਾਲਟ = 12 ਸਕਿੰਟ।"
@@ -333,7 +332,6 @@ field:
  Add to tracking: "ਟਰੈਕਿੰਗ ਵਿੱਚ ਜੋੜਨ ਕਰੋ"
  Add webhook: "ਵੈਬਹੁੱਕ ਜੋੜਨ ਕਰੋ"
  After 24 hours, bundled together: "24 ਘੰਟਿਆਂ ਬਾਅਦ, ਇਕੱਠੇ ਬੰਡਲ ਕੀਤਾ ਗਿਆ (ਜਾਂ ਜਦੋਂ ਹੱਥੀਂ ਟਰਿੱਗਰ ਕੀਤਾ ਜਾਂਦਾ ਹੈ, ਉਦਾਹਰਨ ਲਈ, cron ਰਾਹੀਂ)।"
- Banned: "ਪਾਬੰਦੀ ਕੀਤਾ"
  Blocked: "ਬਲੌਕ ਕੀਤਾ"
  Clear all: "ਸਭ ਦੀ ਸਾਫ ਕਰੋ"
  Clear: "ਸਾਫ਼ ਕਰੋ"
@@ -613,7 +611,6 @@ label:
  False positive risk: "ਗਲਤ ਸਕਾਰਾਤਮਕ ਜੋਖਮ:"
  Fancy: "ਫੈਂਸੀ"
  Focus: "ਫੋਕਸ:"
-
  Greylist the request: "ਬੇਨਤੀ ਨੂੰ ਗ੍ਰੇਲਿਸਟ ਕਰੋ।\nਟ੍ਰਿਗਰ ਕੀਤੇ ਦਸਤਖਤਾਂ ਦੀ ਸੰਖਿਆ ਨੂੰ ਰੀਸੈੱਟ ਕਰਦਾ ਹੈ, ਪਰ ਬੇਨਤੀ ਦੀ ਪ੍ਰਕਿਰਿਆ ਜਾਰੀ ਰੱਖਦਾ ਹੈ। ਜਦੋਂ ਤੁਸੀਂ ਬੇਨਤੀ ਨੂੰ ਵ੍ਹਾਈਟਲਿਸਟ ਨਹੀਂ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ, ਪਰ ਬਾਈਪਾਸ ਨੂੰ ਟ੍ਰਿਗਰ ਕਰਨ ਨਾਲੋਂ ਕਿਸੇ ਹੋਰ ਮਹੱਤਵਪੂਰਨ ਚੀਜ਼ ਦੀ ਲੋੜ ਹੁੰਦੀ ਹੈ ਤਾਂ ਸਿਫ਼ਾਰਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ।"
  Harvester: "ਹਾਰਵੈਸਟਰ"
  Hide: "ਲੁਕਾਓ"

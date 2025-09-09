@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The auxiliary rules edit mode page (last modified: 2025.08.28).
+ * This file: The auxiliary rules edit mode page (last modified: 2025.09.08).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -172,7 +172,7 @@ if (isset($_POST['rulePriority']) && is_array($_POST['rulePriority'])) {
 }
 
 /** Process auxiliary rules. */
-$this->FE['Data'] = '      ' . $this->generateRules(true);
+$this->FE['Data'] = '        ' . $this->generateRules(true);
 
 /** Calculate page load time (useful for debugging). */
 $this->FE['ProcessTime'] = microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];

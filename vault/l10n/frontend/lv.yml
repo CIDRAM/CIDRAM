@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2025.09.05).
+# This file: Latvian language data for the front-end (last modified: 2025.09.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,7 +204,6 @@ config:
  frontend_theme_mode: "Priekšgalā izmantojamās tēmas režīms."
  general: "Vispārējā konfigurācija (jebkura pamata konfigurācija, kas nepieder citām kategorijām)."
  general_allow_gethostbyaddr_lookup: "Vai atļaut meklēt ar gethostbyaddr, kad UDP nav pieejams? True (Patiess) = Jā [Noklusējuma]; False (Nepatiess) = Nē."
- general_ban_override: "Vai ignorēt "http_response_header_code", ja tiek pārsniegts "infraction_limit"? 200 = Neignorējiet [Noklusējuma]. Citas vērtības ir tādas pašas kā pieejamās vērtības "http_response_header_code"."
  general_default_algo: "Definē, kuru algoritmu izmantot visām turpmākajām parolēm un sesijām."
  general_default_dns: "DNS serveru saraksts, ko izmantot resursdatora nosaukuma meklēšanā. BRĪDINĀJUMS: Nemainiet to, ja vien nezināt, ko darāt!"
  general_default_timeout: "Kādu noklusējuma taimautu izmantot ārējiem pieprasījumiem? Noklusējuma = 12 sekundes."
@@ -333,7 +332,6 @@ field:
  Add to tracking: "Pievienot izsekošanai"
  Add webhook: "Pievienojiet tīmekļa āķis"
  After 24 hours, bundled together: "Pēc 24 stundām, sagrupēti kopā (vai kad tas ir aktivizēts manuāli, piemēram, izmantojot cron)."
- Banned: "Aizliegts"
  Blocked: "Bloķēts"
  Clear all: "Notīriet visus"
  Clear: "Notīriet"
@@ -420,6 +418,10 @@ hints_duration:
  Vienkārša angļu valoda.: "Ilgumu var aprakstīt, ierakstot vienības vienkāršā angļu valodā. Piemēram, <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> vienu nedēļu, divas dienas, trīs stundas, četras minūtes, piecas sekundes."
  Ierobežojumi.: "Apzīmējumus var jaukt, taču vienības vienmēr jāapraksta no lielākās līdz mazākajai, un tās nevar atkārtot. Piemēram, <strong>1 week 2 days 3′4″</strong> ir <span class="txtGn">derīgs</span> un tiks pareizi saprasts, bet <strong>3′4″ 1 week 2 days</strong> un <strong>3 hours 3h 3°</strong> ir <span class="txtRd">nav derīgi</span>. CIDRAM ir vienalga, vai izmantojat atstarpes. Cipariem jābūt vienkāršiem un neformatētiem. Praktiskuma labad lielākā atbalstītā vienība ir nedēļa. Kad konfigurācija tiek atjaunināta, CIDRAM normalizē ilgumus uz loka laiku."
 hints_has_bypass: "* Šai opcijai zem <code class="s">bypasses➡used</code> ir atbilstošs apvedceļš. Ieteicams nodrošināt, lai atbilstošā apiešanas izvēles rūtiņa būtu atzīmēta tāpat kā izvēles rūtiņa, lai mēģinātu pārbaudīt šo opciju."
+hints_http_response_header_code:
+ 1.: "Kad ir ieslēgts "klusuma režīms", tiks izmantots HTTP statusa ziņojums, kas definēts ar <code class="s">general➡silent_mode_response_header_code</code> (tam ir visaugstākā prioritāte)."
+ 2.: "Ja pieprasītāja vienība ir aizliegta pārkāpuma ierobežojuma pārsniegšanas dēļ, tiks izmantots HTTP statusa ziņojums “aizliegts”."
+ 3.: "Ja bloķē ātruma ierobežojuma dēļ, tiks izmantots kods 429 vai, ja bloķē resursu konfliktu dēļ, tiks izmantots HTTP statusa ziņojums, kas definēts ar <code class="s">signatures➡conflict_response</code> (šajā kontekstā ātruma ierobežošanai un resursu konfliktiem ir vienlīdzīga prioritāte)."
 hints_inspection: "* Paredzēts tikai palīgnoteikumu atkļūdošanai. Netiek rādīts bloķētajiem lietotājiem."
 hints_ipv6_on_32bit: "Piezīme: Dažās 32 bitu sistēmās IPv6 meklēšana var nedarboties pareizi."
 hints_logging_datetime: "Noderīgs padoms: Varat pievienot datuma/laika informāciju žurnālfailu nosaukumiem, izmantojot laika formāta vietturus. Pieejamie laika formāta vietturi tiek parādīti pie {{Links.ConfigRef.time_format}}."
@@ -612,7 +614,6 @@ label:
  False positive risk: "Nepatiesi pozitīvs risks:"
  Fancy: "Iedomātā"
  Focus: "Fokuss:"
-
  Greylist the request: "Apstrādājiet pieprasījumu kā pelēka sarakstā.\nAtiestata parakstu skaitu, bet turpina pieprasījuma apstrādi. Ieteicams, ja nevēlaties apstrādājiet pieprasījumu kā baltajā sarakstā, bet nepieciešams kaut kas būtiskāks par apvedceļu."
  Harvester: "Kombains"
  Hide: "Slēpt"

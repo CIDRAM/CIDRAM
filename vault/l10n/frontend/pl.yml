@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2025.09.05).
+# This file: Polish language data for the front-end (last modified: 2025.09.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -172,7 +172,7 @@ config:
  captcha_lockto: "Do czego powiązać CAPTCHA."
  captcha_log: "Zalogować wszystkie próby CAPTCHA? Jeśli tak, podaj nazwę pliku do logowania. Jeśli nie, pozostaw tę zmienną pustą."
  captcha_messages: "Wiadomości wyświetlane obok CAPTCHA."
- captcha_nonblocked_status_code: "Którego kodu stanu należy używać podczas wyświetlania CAPTCHA dla niezablokowanych żądań?"
+ captcha_nonblocked_status_code: "Którego kodu statusu należy używać podczas wyświetlania CAPTCHA dla niezablokowanych żądań?"
  captcha_signature_limit: "Maksymalna liczba podpisów dozwolona przed wycofaniem oferty CAPTCHA. Domyślna = 1."
  captcha_turnstile_secret: &TurnstileCred "Jeśli chcesz używać Cloudflare Turnstile z CIDRAM, musisz wpisać tutaj wartość. Jeśli nie, możesz ją zignorować."
  captcha_turnstile_sitekey: *TurnstileCred
@@ -204,7 +204,6 @@ config:
  frontend_theme_mode: "Tryb dla motywu do wykorzystania w interfejsie użytkownika."
  general: "Ogólna konfiguracja (dowolna konfiguracja podstawowa nienależąca do innych kategorii)."
  general_allow_gethostbyaddr_lookup: "Zezwolić na wyszukiwanie gethostbyaddr, gdy UDP jest niedostępny? True (Prawdziwe) = Tak [Domyślna]; False (Fałszywy) = Nie."
- general_ban_override: "Zastąpić „http_response_header_code”, gdy zostanie przekroczony „infraction_limit”? 200 = Nie zastępuj [Domyślna]. Inne wartości są takie same, jak dostępne wartości dla „http_response_header_code”."
  general_default_algo: "Określa, którego algorytmu należy używać dla wszystkich przyszłych haseł i sesji."
  general_default_dns: "Lista serwerów DNS używanych do wyszukiwania nazw hostów. OSTRZEŻENIE: Nie zmieniaj tego, chyba że wiesz, co robisz!"
  general_default_timeout: "Domyślny limit czasu używany dla żądań zewnętrznych? Domyślna = 12 sekund."
@@ -333,7 +332,6 @@ field:
  Add to tracking: "Dodaj do śledzenia"
  Add webhook: "Dodaj hak internetowy"
  After 24 hours, bundled together: "Po 24 godzinach, połączone w całość (lub po ręcznym uruchomieniu, np., za pomocą cron)."
- Banned: "Zbanowany"
  Blocked: "Zablokowany"
  Clear all: "Wyczyść wszystko"
  Clear: "Wyczyść"
@@ -421,6 +419,13 @@ hints_duration:
  Zwykły angielski.: "Czas trwania można opisać, pisząc jednostki w zwykły angielskim. Np., <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> dla jeden tydzień, dwa dni, trzy godziny, cztery minuty, pięć sekund."
  Ograniczenia.: "Notację można mieszać, ale jednostki należy zawsze opisywać od największej do najmniejszej, i nie można ich powtarzać. Np., <strong>1 week 2 days 3′4″</strong> jest <span class="txtGn">ważne</span> i będzie poprawnie rozumiane, ale <strong>3′4″ 1 week 2 days</strong> i <strong>3 hours 3h 3°</strong> są <span class="txtRd">nieważne</span>. CIDRAM nie dba o to, czy używasz odstępów. Liczby muszą być proste i niesformatowane. Ze względów praktycznych największa obsługiwana jednostka to tydzień. Gdy konfiguracja jest aktualizowana, CIDRAM normalizuje czasy trwania do czasu kątowego."
 hints_has_bypass: "* Ta opcja ma odpowiednie obejście pod <code class="s">bypasses➡used</code>. Zaleca się upewnienie się, że pole wyboru dla odpowiedniego obejścia jest zaznaczone w taki sam sposób, jak pole wyboru do próby zweryfikowania tej opcji."
+hints_http_response_header_code:
+ 1.: "Gdy włączony jest „tryb cichy”, używany jest komunikat o stanie HTTP zdefiniowany przez <code class="s">general➡silent_mode_response_header_code</code> (to ma najwyższy pierwszeństwo)."
+ 2.: "Jeśli podmiot żądający został zbanowany z powodu przekroczenia limitu wykroczeń, zostanie użyty komunikat o stanie HTTP „zbanowany”."
+ 3.: "W przypadku zablokowania z powodu ograniczenia przepustowości zostanie użyty 429, a w przypadku zablokowania z powodu konfliktów zasobów zostanie użyty komunikat o stanie HTTP zdefiniowany przez <code class="s">signatures➡conflict_response</code> (ograniczenia przepustowości i konflikty zasobów mają w tym kontekście równe pierwszeństwo)."
+ 4.: "W przypadku zablokowania z powodu reguły pomocniczej ustawiającej „zastąpienie kodu statusu HTTP”, zostanie użyte to zastąpienie kodu statusu HTTP."
+ 5.: "W przypadku zablokowania z przyczyn prawnych (tj., zablokowania z powodu niestandardowego podpisu, który wykorzystuje skrócone słowo „prawna”), zostanie użyty komunikat o stanie HTTP dla „prawna”."
+ 6.: "W przypadku wszystkich innych zablokowanych żądań zostanie użyty komunikat o stanie HTTP dla „domyślna” (to ma najniższy pierwszeństwo)."
 hints_inspection: "* Przeznaczony tylko do debugowania reguł pomocniczych. Nie wyświetla się zablokowanym użytkownikom."
 hints_ipv6_on_32bit: "Uwaga: Wyszukiwania IPv6 mogą nie działać poprawnie w niektórych systemach 32-bitowych."
 hints_logging_datetime: "Przydatna wskazówka: Do nazw plików dziennika można dołączać informacje o dacie/godzinie, używając symboli zastępczych w formacie godziny. Dostępne symbole zastępcze formatu czasu są wyświetlane przy {{Links.ConfigRef.time_format}}."
@@ -619,7 +624,6 @@ label:
  False positive risk: "Ryzyko fałszywie pozytywny:"
  Fancy: "Fantazyjny"
  Focus: "Ostrość:"
-
  Greylist the request: "Traktuj żądanie jako umieszczone na szarej liście.\nResetuje liczbę wyzwolonych podpisów, ale kontynuuje przetwarzanie żądania. Polecane, gdy nie chcesz traktować żądania jako umieszczonego na białej liście, ale potrzebujesz czegoś bardziej istotnego niż uruchomienie obejścia."
  Harvester: "Zbieracz"
  Hide: "Ukryj"
@@ -722,7 +726,7 @@ label:
   Forcibly disable IP tracking: "Wymuś wyłączenie śledzenia IP"
   Forcibly disable hCaptcha: "Wymuś wyłączenie hCaptcha"
   Forcibly enable IP tracking: "Wymuszenie włączenia śledzenia IP"
-  HTTP status code override: "Przesłonięcie kodu stanu HTTP:"
+  HTTP status code override: "Zastąpienie kodu statusu HTTP:"
   If the following conditions are met, %s: "Jeśli spełnione są następujące warunki, %s."
   Mark for use with Cloudflare Turnstile: "Oznacz do użytku z Cloudflare Turnstile"
   Mark for use with Friendly Captcha: "Oznacz do użytku z Friendly Captcha"

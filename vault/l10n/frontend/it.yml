@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2025.09.05).
+# This file: Italian language data for the front-end (last modified: 2025.09.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,7 +204,6 @@ config:
  frontend_theme_mode: "La modalità per il tema da utilizzare per il front-end."
  general: "Configurazione generale (qualsiasi configurazione di base non appartenente ad altre categorie)."
  general_allow_gethostbyaddr_lookup: "Consenti ricerche gethostbyaddr quando UDP non è disponibile? True = Sì [Predefinito]; False = No."
- general_ban_override: "Sostituire "http_response_header_code" quando "infraction_limit" è superato? 200 = Non sostituire [Predefinito]. Altri valori sono uguali ai valori disponibili per "http_response_header_code"."
  general_default_algo: "Definisce quale algoritmo da utilizzare per tutte le password e le sessioni in futuro."
  general_default_dns: "Un elenco di server DNS da utilizzare per le ricerche dei nomi di host. AVVISO: Non modificare questa se non sai quello che stai facendo!"
  general_default_timeout: "Il tempo scaduto predefinito da utilizzare per le richieste esterne? Predefinito = 12 secondi."
@@ -333,7 +332,6 @@ field:
  Add to tracking: "Aggiungi al tracciamento"
  Add webhook: "Aggiungi webhook"
  After 24 hours, bundled together: "Dopo 24 ore, raggruppati insieme (o quando innescate manualmente, ad es., tramite cron)."
- Banned: "Vietato"
  Blocked: "Bloccato"
  Clear all: "Revoca tutto"
  Clear: "Revocarlo"
@@ -418,6 +416,13 @@ hints_duration:
  Inglese semplice.: "La durata può essere descritta scrivendo le unità in un inglese semplice. Ad esempio, <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> per una settimana, due giorni, tre ore, quattro minuti, cinque secondi."
  Costrizione.: "La notazione può essere mista, ma le unità devono sempre essere descritte dal più grande al più piccolo, e non possono essere ripetute. Ad esempio, <strong>1 week 2 days 3′4″</strong> è <span class="txtGn">valido</span> e sarà compreso correttamente, ma <strong>3′4″ 1 week 2 days</strong> e <strong>3 hours 3h 3°</strong> <span class="txtRd">non sono validi</span>. A CIDRAM non importa se usi la spaziatura. I numeri devono essere semplici e non formattati. Per praticità, l'unità più grande supportata è una settimana. Quando la configurazione viene aggiornato, CIDRAM normalizza le durate in tempo d'arco."
 hints_has_bypass: "* Questa opzione ha un bypass corrispondente sotto <code class="s">bypasses➡used</code>. Si consiglia di assicurarsi che la casella di controllo per il bypass corrispondente sia contrassegnato allo stesso modo della casella di controllo per tentare di verificare questa opzione."
+hints_http_response_header_code:
+ 1.: "Quando è attiva la "modalità silenziosa", verrà utilizzato il messaggio di stato HTTP definito da <code class="s">general➡silent_mode_response_header_code</code> (questo ha la precedenza più alta)."
+ 2.: "Se l'entità richiedente è stata vietata a causa del superamento del limite di infrazione, verrà utilizzato il messaggio di stato HTTP per "vietato"."
+ 3.: "Se bloccato a causa della limitazione della velocità, verrà utilizzato 429 oppure, in caso di blocco a causa di conflitti di risorse, verrà utilizzato il messaggio di stato HTTP definito da <code class="s">signatures➡conflict_response</code> (in questo contesto, la limitazione della velocità e i conflitti di risorse hanno pari precedenza)."
+ 4.: "Se bloccato a causa di una regola ausiliaria che imposta un "sostituzione del codice di stato HTTP", verrà utilizzato tale sostituzione del codice di stato HTTP."
+ 5.: "Se bloccato per motivi legali (ad esempio, se bloccato a causa di una firma personalizzata che utilizza la parola abbreviata "legale"), verrà utilizzato il messaggio di stato HTTP per "legale"."
+ 6.: "Per tutte le altre richieste bloccate, verrà utilizzato il messaggio di stato HTTP per "default" (questo ha la precedenza più bassa)."
 hints_inspection: "* Destinato solo al debug delle regole ausiliarie. Non mostrato agli utenti bloccati."
 hints_ipv6_on_32bit: "Nota: Le ricerche IPv6 potrebbero non funzionare correttamente su alcuni sistemi a 32 bit."
 hints_logging_datetime: "Consiglio utile: È possibile allegare informazioni su data/ora ai nomi dei file di registro utilizzando i segnaposto del formato ora. I segnaposto del formato ora disponibili vengono visualizzati in {{Links.ConfigRef.time_format}}."
@@ -612,7 +617,6 @@ label:
  False positive risk: "Rischio di falsi positivi:"
  Fancy: "Formattato"
  Focus: "Focus:"
-
  Greylist the request: "Lista grigia.\nReimposta il numero di firme innescate, ma continua a elaborare la richiesta. Consigliato quando non si desidera applicare un'azione di lista bianca alla richiesta, ma è necessario qualcosa di più sostanziale dell'innescando di un bypass."
  Harvester: "Raccoglitore"
  Hide: "Nascondere"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Farsi language data for the front (last modified: 2025.09.05).
+# This file: Farsi language data for the front (last modified: 2025.09.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,7 +204,6 @@ config:
  frontend_theme_mode: "حالتی که قالب برای استفاده در بخش کاربری استفاده می‌کند."
  general: "پیکربندی کلی (هر پیکربندی اصلی که به دسته های دیگر تعلق ندارد)."
  general_allow_gethostbyaddr_lookup: "وقتی UDP در دسترس نیست، جستجوی gethostbyaddr مجاز باشد؟ True = آره [پیش فرض]؛ False = نکن."
- general_ban_override: "وقتی از «infraction_limit» فراتر رفت، «http_response_header_code» جایگزین شود؟ 200 = تعویض نکنید [پیش فرض]. مقادیر دیگر مانند مقادیر موجود برای «http_response_header_code» هستند."
  general_default_algo: "تعریف می‌کند که از کدام الگوریتم برای همه گذرواژه ها و جلسات آینده استفاده شود."
  general_default_dns: "لیستی از سرورهای DNS برای استفاده برای جستجوی نام میزبان. هشدار: این را تغییر ندهید مگر اینکه بدانید دارید چه کار می کنید!"
  general_default_timeout: "مهلت پیش‌فرض برای استفاده برای درخواست‌های خارجی؟ پیش فرض = ۱۲ ثانیه."
@@ -333,7 +332,6 @@ field:
  Add to tracking: "به ردیابی اضافه کنید"
  Add webhook: "اضافه کردن وب هوک"
  After 24 hours, bundled together: "پس از 24 ساعت، با هم (یا زمانی که به صورت دستی فعال می شود، به عنوان مثال، از طریق cron)."
- Banned: "ممنوع شد"
  Blocked: "مسدود"
  Clear all: "همه آنها را پاک کنید"
  Clear: "پاک کنید"
@@ -607,7 +605,6 @@ label:
  False positive risk: "خطر مثبت کاذب:"
  Fancy: "فانتزی"
  Focus: "تمرکز:"
-
  Greylist the request: "درخواست را در لیست خاکستری قرار دهید.\nتعداد امضاهای درگیر شده را بازنشانی می‌کند، اما به پردازش درخواست ادامه می دهد. زمانی توصیه می‌شود که نمی‌خواهید درخواست را در لیست سفید قرار دهید، اما به چیزی اساسی‌تر از بای پس کردن نیاز دارید."
  Harvester: "دروگر"
  Hide: "پنهان شدن"

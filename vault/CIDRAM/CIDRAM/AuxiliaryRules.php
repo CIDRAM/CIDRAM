@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used for auxiliary rules (last modified: 2025.09.01).
+ * This file: Methods used for auxiliary rules (last modified: 2025.09.08).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -66,7 +66,7 @@ trait AuxiliaryRules
             /** Head pseudo-position. */
             $Output .= sprintf(
                 '%s<div class="rulePseudoPos" name="_pseudo0">%s</div>',
-                "\n      ",
+                "\n        ",
                 $this->L10N->getString('label.aux.Drop the rule here to move it to this position, or onto another rule to swap positions')
             );
         }
@@ -84,7 +84,7 @@ trait AuxiliaryRules
                 /** Rule begin and sticky. */
                 $Output .= sprintf(
                     '%s<div class="%s flexstretch"><div style="float:%s;position:sticky;top:0px;overflow:hidden;z-index;-1"><span class="s">%s</span></div>',
-                    "\n      ",
+                    "\n        ",
                     $StyleClass,
                     $this->FE['FE_Align_Reverse'],
                     ($Name === ' ' && count($Data) === 0) ? '' : sprintf($this->L10N->getString('label.Current data for %s'), $Name)
@@ -93,7 +93,7 @@ trait AuxiliaryRules
                 /** Rule name. */
                 $Output .= sprintf(
                     '%1$s<label><div class="iCntr"><div class="iLabl s">%3$s</div><div class="iCntn"><input type="text" name="ruleName[%4$s]" class="f400" value="%2$s" /></div></div></label>',
-                    "\n      ",
+                    "\n        ",
                     $Name === ' ' ? '' : $Name,
                     $this->L10N->getString('field.New name'),
                     $Current
@@ -102,7 +102,7 @@ trait AuxiliaryRules
                 /** Set rule priority (rearranges the rules). */
                 $Output .= sprintf(
                     '%1$s<label><div class="iCntr"><div class="iLabl s">%2$s</div><div class="iCntn"><input type="number" name="rulePriority[%3$s]" class="f400" value="%3$s" /></div></div></label>',
-                    "\n      ",
+                    "\n        ",
                     $this->L10N->getString('field.Execution order'),
                     $Current
                 );
@@ -110,7 +110,7 @@ trait AuxiliaryRules
                 /** Rule reason. */
                 $Output .= sprintf(
                     '%1$s<label><div class="iCntr"><div class="iLabl s" id="%5$sruleReasonDt">%3$s</div><div class="iCntn" id="%5$sruleReasonDd"><input type="text" name="ruleReason[%4$s]" class="f400" value="%2$s" /></div></div></label>',
-                    "\n      ",
+                    "\n        ",
                     $Data['Reason'] ?? '',
                     $this->L10N->getString('label.aux.The reason given to the user when blocked'),
                     $Current,
@@ -120,7 +120,7 @@ trait AuxiliaryRules
                 /** Redirect target. */
                 $Output .= sprintf(
                     '%1$s<label><div class="iCntr"><div class="iLabl s" id="%5$sruleTargetDt">%3$s</div><div class="iCntn" id="%5$sruleTargetDd"><input type="text" name="ruleTarget[%4$s]" class="f400" value="%2$s" /></div></div></label>',
-                    "\n      ",
+                    "\n        ",
                     $Data['Target'] ?? '',
                     $this->L10N->getString('label.aux.Where to redirect the request'),
                     $Current,
@@ -130,7 +130,7 @@ trait AuxiliaryRules
                 /** Run target. */
                 $Output .= sprintf(
                     '%1$s<label><div class="iCntr"><div class="iLabl s" id="%5$sruleRunDt">%3$s</div><div class="iCntn" id="%5$sruleRunDd"><input type="text" name="ruleRun[%4$s]" class="f400" value="%2$s" /></div></div></label>',
-                    "\n      ",
+                    "\n        ",
                     $Data['Run']['File'] ?? '',
                     $this->L10N->getString('label.aux.The name of the file to run'),
                     $Current,
@@ -140,7 +140,7 @@ trait AuxiliaryRules
                 /** From. */
                 $Output .= sprintf(
                     '%1$s<label><div class="iCntr"><div class="iLabl s" id="%5$sfromDt">%3$s</div><div class="iCntn" id="%5$sfromDd"><input type="date" name="from[%4$s]" class="f400" value="%2$s" /></div></div></label>',
-                    "\n      ",
+                    "\n        ",
                     isset($Data['From']) ? str_replace('.', '-', $Data['From']) : '',
                     $this->L10N->getString('label.aux.When the rule should begin (optional)'),
                     $Current,
@@ -150,7 +150,7 @@ trait AuxiliaryRules
                 /** Expiry. */
                 $Output .= sprintf(
                     '%1$s<label><div class="iCntr"><div class="iLabl s" id="%5$sexpiryDt">%3$s</div><div class="iCntn" id="%5$sexpiryDd"><input type="date" name="expiry[%4$s]" class="f400" value="%2$s" /></div></div></label>',
-                    "\n      ",
+                    "\n        ",
                     isset($Data['Expiry']) ? str_replace('.', '-', $Data['Expiry']) : '',
                     $this->L10N->getString('label.aux.When the rule should expire (optional)'),
                     $Current,
@@ -230,7 +230,7 @@ trait AuxiliaryRules
                         $NegSymbol = '≠';
                     }
                     $Iteration = 0;
-                    $ConditionFormTemplate = "\n      " .
+                    $ConditionFormTemplate = "\n        " .
                         '<div class="flexrow"><select name="conSourceType[%1$s][%2$s]" title="%10$s" class="auto" onchange="javascript:getInputSuggestions(this)">%3$s</select>' .
                         '<select name="conIfOrNot[%1$s][%2$s]" title="{label.Operator}" class="auto"><option value="If" class="ifOrNot"%6$s>%8$s</option><option value="Not" class="ifOrNot"%7$s>%9$s</option></select>' .
                         '<input type="text" name="conSourceValue[%1$s][%2$s]" title="%11$s" placeholder="%4$s" class="flexin" value="%5$s" onfocus="javascript:getInputSuggestions(this.previousElementSibling.previousElementSibling)" /></div><div class="suggestsInactive s"></div>';
@@ -335,7 +335,7 @@ trait AuxiliaryRules
                     if (isset($FlagSet['Label']) && is_string($FlagSet['Label'])) {
                         $FlagSetName = $this->L10N->getString($FlagSet['Label']) ?: $FlagSetName;
                     }
-                    $Output .= sprintf('%s<div class="iLabl s"><fieldset><legend>%s</legend>', "\n      ", $FlagSetName);
+                    $Output .= sprintf('%s<div class="iLabl s"><fieldset><legend>%s</legend>', "\n        ", $FlagSetName);
                     foreach ($FlagSet as $FlagName => $FlagData) {
                         if (!isset($FlagData['Label'])) {
                             continue;
@@ -437,7 +437,7 @@ trait AuxiliaryRules
             /** Begin generating rule output. */
             $Output .= sprintf(
                 '%1$s<li class="%2$s" name="%6$s" draggable="true"><span class="comCat s">%3$s</span><span class="auxAlignFix">%4$s</span>%5$s%1$s  <ul class="comSub">',
-                "\n      ",
+                "\n        ",
                 $RuleClass . (empty($Data['Disable this rule']) ? '' : ' hB fBlur"'),
                 $Expired ? '<em class="txtRd">' . $Name . ' (' . $this->L10N->getString('field.Expired') . ')</em>' : $Name,
                 $Options,
@@ -616,7 +616,7 @@ trait AuxiliaryRules
             /** Finish writing new rule. */
             $Output .= sprintf(
                 '%1$s  </ul>%1$s</li>%1$s<div class="rulePseudoPos" name="_pseudo%2$d">%3$s</div>',
-                "\n      ",
+                "\n        ",
                 $Current,
                 $this->L10N->getString('label.aux.Drop the rule here to move it to this position, or onto another rule to swap positions')
             );

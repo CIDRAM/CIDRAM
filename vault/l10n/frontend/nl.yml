@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2025.09.05).
+# This file: Dutch language data for the front-end (last modified: 2025.09.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,7 +204,6 @@ config:
  frontend_theme_mode: "De modus voor het thema dat voor de frontend gebruikt moet worden."
  general: "Algemene configuratie (elke kernconfiguratie die niet tot andere categorieën behoort)."
  general_allow_gethostbyaddr_lookup: "Zoeken op gethostbyaddr toestaan als UDP niet beschikbaar is? True = Ja [Standaard]; False = Nee."
- general_ban_override: "Overrijden "http_response_header_code" wanneer "infraction_limit" wordt overschreden? 200 = Niet overrijden [Standaard]. Andere waarden zijn hetzelfde als de beschikbare waarden voor "http_response_header_code"."
  general_default_algo: "Definieert welk algoritme u wilt gebruiken voor alle toekomstige wachtwoorden en sessies."
  general_default_dns: "Een lijst met DNS-servers te gebruiken voor de hostnaam lookups. WAARSCHUWING: Verander dit niet tenzij u weet wat u doet!"
  general_default_timeout: "Standaard time-out om te gebruiken voor externe verzoeken? Standaard = 12 seconden."
@@ -333,7 +332,6 @@ field:
  Add to tracking: "Toevoegen aan tracking"
  Add webhook: "Webhook toevoegen"
  After 24 hours, bundled together: "Na 24 uur, gebundeld (of wanneer handmatig getriggerde, b.v., via cron)."
- Banned: "Verbannen"
  Blocked: "Geblokkeerd"
  Clear all: "Annuleer alles"
  Clear: "Annuleer"
@@ -417,6 +415,13 @@ hints_duration:
  Normaal Engels.: "De duur kan worden beschreven door de eenheden in normaal Engels te schrijven. B.v., <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> voor een week, twee dagen, drie uur, vier minuten, vijf seconden."
  Beperkingen.: "Notatie kan worden gemengd, maar eenheden moeten altijd van groot naar klein worden beschreven, en kunnen niet worden herhaald. B.v., <strong>1 week 2 days 3′4″</strong> is <span class="txtGn">geldig</span> en zal correct worden begrepen, maar <strong>3′4″ 1 week 2 days</strong> en <strong>3 hours 3h 3°</strong> zijn <span class="txtRd">ongeldig</span>. Het maakt CIDRAM niet uit of u spaties gebruikt of niet. Nummers moeten duidelijk en ongeformatteerd zijn. De grootste ondersteunde eenheid is een week. Wanneer de configuratie wordt bijgewerkt, normaliseert CIDRAM de duur naar boogtijd."
 hints_has_bypass: "* Deze optie heeft een bijbehorende bypass onder <code class="s">bypasses➡used</code>. Ongeacht of het selectievakje om te proberen deze optie te verifiëren is ingeschakeld, het wordt aanbevolen om ervoor te zorgen dat het selectievakje voor de corresponderende bypass hetzelfde is."
+hints_http_response_header_code:
+ 1.: "Wanneer de "stille modus" actief is, wordt het door <code class="s">general➡silent_mode_response_header_code</code> gedefinieerde HTTP-statusbericht gebruikt (dit heeft de hoogste prioriteit)."
+ 2.: "Wanneer de aanvragende entiteit is verbannen vanwege overschrijding van de overtredingslimiet, wordt het HTTP-statusbericht voor "verbannen" gebruikt."
+ 3.: "Wanneer geblokkeerd vanwege tarieflimiet, wordt 429 gebruikt, of wanneer geblokkeerd vanwege resourceconflicten, wordt het HTTP-statusbericht gedefinieerd door <code class="s">signatures➡conflict_response</code> gebruikt (tarieflimiet en hulpbronnenconflicten hebben in deze context gelijke prioriteit)."
+ 4.: "Wanneer geblokkeerd vanwege een aanvullende regel die een "HTTP-statuscode overschrijven" instelt, wordt die HTTP-statuscode overschrijven gebruikt."
+ 5.: "Wanneer geblokkeerd vanwege juridische redenen (d.w.z., wanneer geblokkeerd vanwege een aangepaste signature die het stenowoord "wettelijke" gebruikt), wordt het HTTP-statusbericht voor "wettelijke" gebruikt."
+ 6.: "Voor alle andere geblokkeerde verzoeken wordt het HTTP-statusbericht voor "standaard" gebruikt (dit heeft de laagste prioriteit)."
 hints_inspection: "* Alleen bedoeld voor het debuggen van aanvullende regels. Niet weergegeven voor geblokkeerde gebruikers."
 hints_ipv6_on_32bit: "Opmerking: IPv6-opzoeken mogelijk werken niet correct op sommige 32-bits systemen."
 hints_logging_datetime: "Handige tip: U kunt datum-/tijdinformatie aan de namen van logbestanden toevoegen door tijdelijke aanduidingen voor de tijdnotatie te gebruiken. Beschikbare tijdelijke aanduidingen voor tijdnotatie worden weergegeven bij {{Links.ConfigRef.time_format}}."
@@ -611,7 +616,6 @@ label:
  False positive risk: "Vals positieve risico:"
  Fancy: "Geformatteerde"
  Focus: "Focus:"
-
  Greylist the request: "Behandel het verzoek als op de grijze lijst.\nStelt het aantal getriggerde signatures in op nul, maar gaat door met het verwerken van het verzoek. Aanbevolen wanneer u het verzoek niet als op de witte lijst wilt behandelen, maar iets meer substantieel nodig hebt dan het triggeren van een bypass."
  Harvester: "Oogstmachine"
  Hide: "Verbergen"

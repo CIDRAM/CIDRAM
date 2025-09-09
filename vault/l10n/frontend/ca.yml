@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Catalan language data for the front-end (last modified: 2025.09.05).
+# This file: Catalan language data for the front-end (last modified: 2025.09.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,7 +204,6 @@ config:
  frontend_theme_mode: "El mode que el tema utilitzarà per al front-end."
  general: "Configuració general (qualsevol configuració bàsica que no pertanyi a altres categories)."
  general_allow_gethostbyaddr_lookup: "Permetre cerques mitjançant gethostbyaddr quan UDP no està disponible? True/Cert = Sí [Predeterminat]; False/Fals = No."
- general_ban_override: "Substituïu "http_response_header_code" quan se superi "infraction_limit"? 200 = No substituïu [Predeterminat]. Altres valors són els mateixos que els valors disponibles per a "http_response_header_code"."
  general_default_algo: "Defineix quin algorisme utilitzar per a totes les contrasenyes i sessions futures."
  general_default_dns: "Una llista de servidors DNS que s'utilitzen per a les cerques de noms d'amfitrió. ADVERTIMENT: No canvieu això tret que sàpigues què estàs fent!"
  general_default_timeout: "Temps d'espera predeterminat per utilitzar per a sol·licituds externes? Predeterminat = 12 segons."
@@ -333,7 +332,6 @@ field:
  Add to tracking: "Afegeix al seguiment"
  Add webhook: "Afegeix un webhook"
  After 24 hours, bundled together: "Després de 24 hores, s'agrupen (o quan es desencadenen manualment, per exemple, mitjançant cron)."
- Banned: "Prohibit"
  Blocked: "Bloquejat"
  Clear all: "Esborra-ho tot"
  Clear: "Esborra-ho"
@@ -417,6 +415,13 @@ hints_duration:
  Anglès senzill.: "La durada es pot descriure escrivint les unitats en anglès senzill. Per exemple, <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> per significar una setmana, dos dies, tres hores, quatre minuts, cinc segons."
  Restriccions.: "La notació es pot barrejar, però les unitats sempre s'han de descriure de més gran a més petita, i no es poden repetir. Per exemple, <strong>1 week 2 days 3′4″</strong> és <span class="txtGn">vàlida</span> i s'entendrà correctament, però <strong>3′4″ 1 week 2 days</strong> i <strong>3 hours 3h 3°</strong> <span class="txtRd">no</span> són vàlids. A CIDRAM no li importa si feu servir l'espaiat o no. Els números han de ser senzills i sense format. Per aspectes pràctics, la unitat compatible més gran és una setmana. Quan s'actualitza la configuració, CIDRAM normalitza les durades a temps d'arc."
 hints_has_bypass: "* Aquesta opció té un bypass corresponent sota <code class="s">bypasses➡used</code>. Es recomana assegurar-se que la casella de verificació del bypass corresponent estigui marcada de la mateixa manera que la casella de verificació per intentar verificar aquesta opció."
+hints_http_response_header_code:
+ 1.: "Quan el "mode silenciós" està activat, s'utilitzarà el missatge d'estat HTTP definit per <code class="s">general➡silent_mode_response_header_code</code> (aquest té la prioritat més alta)."
+ 2.: "Quan l'entitat sol·licitant ha estat prohibida per haver superat el límit d'infracció, s'utilitzarà el missatge d'estat HTTP per a "prohibit"."
+ 3.: "Quan es bloquegi a causa d'una limitació de la tarifa, s'utilitzarà 429, o quan es bloquegi a causa de conflictes de recursos, s'utilitzarà el missatge d'estat HTTP definit per <code class="s">signatures➡conflict_response</code> (la limitació de la tarifa i els conflictes de recursos tenen la mateixa prioritat en aquest context)."
+ 4.: "Quan es bloqueja a causa d'una regla auxiliar que estableix una "substitució del codi d'estat HTTP", s'utilitzarà aquesta substitució del codi d'estat HTTP."
+ 5.: "Quan es bloqueja per motius legals (és a dir, quan es bloqueja a causa d'una signatura personalitzada que utilitza la paraula taquigràfica "legal"), s'utilitzarà el missatge d'estat HTTP per a "legal"."
+ 6.: "Per a totes les altres sol·licituds bloquejades, s'utilitzarà el missatge d'estat HTTP per a "predeterminat" (aquest té la precedència més baixa)."
 hints_inspection: "* Dissenyat només per depurar regles auxiliars. No es mostra als usuaris bloquejats."
 hints_ipv6_on_32bit: "Nota: És possible que les cerques IPv6 no funcionin correctament en alguns sistemes de 32 bits."
 hints_logging_datetime: "Consell útil: Podeu adjuntar informació de data/hora als noms dels fitxers de registre utilitzant marcadors de posició de format d'hora. Els marcadors de posició de format d'hora disponibles es mostren a {{Links.ConfigRef.time_format}}."
@@ -607,7 +612,6 @@ label:
  False positive risk: "Risc fals positiu:"
  Fancy: "Luxós"
  Focus: "Focus:"
-
  Greylist the request: "Tracteu la sol·licitud com a la llista grisa.\nRestableix el nombre de signatures desencadenats, però continua processant la sol·licitud. Recomanat quan no voleu tractar la sol·licitud com a la llista blanca, però necessiteu alguna cosa més substancial que un bypass."
  Harvester: "Recol·lector"
  Hide: "Amagar"

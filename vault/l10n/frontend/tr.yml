@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2025.09.05).
+# This file: Turkish language data for the front-end (last modified: 2025.09.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,7 +204,6 @@ config:
  frontend_theme_mode: "Ön uç için kullanılacak tema modu."
  general: "Genel yapılandırma (diğer kategorilere ait olmayan herhangi bir çekirdek yapılandırma)."
  general_allow_gethostbyaddr_lookup: "UDP kullanılamadığında gethostbyaddr aramalarına izin verilsin mi? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
- general_ban_override: ""infraction_limit" aşıldığında "http_response_header_code"u geçersiz kıl? 200 = [Varsayılan] değerini geçersiz kılmayın. Diğer değerler "http_response_header_code" için mevcut değerler ile aynıdır."
  general_default_algo: "Gelecekteki tüm şifreler ve oturumlar için hangi algoritmayı kullanacağını tanımlar."
  general_default_dns: "Ana makine adı aramalarda kullanılacak DNS sunucuları listesi. UYARI: Ne yaptığınızı bilmiyorsanız bunu değiştirmeyin!"
  general_default_timeout: "Harici istekler için kullanılacak varsayılan zaman aşımı? Varsayılan = 12 saniye."
@@ -333,7 +332,6 @@ field:
  Add to tracking: "İzlemeye ekle"
  Add webhook: "Web kanca ekle"
  After 24 hours, bundled together: "24 saat sonra, bir araya toplanarak (veya manuel olarak tetiklendiğinde, örneğin cron aracılığıyla)."
- Banned: "Yasaklandı"
  Blocked: "Engellendi"
  Clear all: "Hepsini temizle"
  Clear: "Temiz"
@@ -418,6 +416,13 @@ hints_duration:
  Sade İngilizce.: "Süre, birimler sade İngilizce olarak yazılarak tanımlanabilir. Örneğin, <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> bir hafta, iki gün, üç saat, dört dakika, beş saniye için."
  Kısıtlamalar: "Gösterim karıştırılabilir, ancak birimler her zaman büyükten küçüğe tanımlanmalıdır, ve tekrarlanamaz. Örneğin, <strong>1 week 2 days 3′4″</strong> <span class="txtGn">geçerlidir</span> ve doğru anlaşılacaktır, ancak <strong>3′4″ 1 week 2 days</strong> ve <strong>3 hours 3h 3°</strong> <span class="txtRd">geçersizdir</span>. CIDRAM, boşluk kullanıp kullanmadığınızı umursamıyor. Sayılar düz ve biçimlendirilmemiş olmalıdır. Pratiklik için desteklenen en büyük birim bir haftadır. Konfigürasyon güncellendiğinde, CIDRAM süreleri açısal zamana göre normalleştirir."
 hints_has_bypass: "* Bu seçenek, <code class="s">bypasses➡used</code> altında bir karşılık gelen bypass'a sahiptir. Karşılık gelen bypass'a için onay kutusunun, bu seçeneği doğrulamaya çalışmak için onay kutusuyla aynı şekilde işaretlendiğinden emin olunması önerilir."
+hints_http_response_header_code:
+ 1.: ""Sessiz mod" etkin olduğunda, <code class="s">general➡silent_mode_response_header_code</code> tarafından tanımlanan HTTP durum mesajı kullanılacaktır (bu en yüksek önceliğe sahiptir)."
+ 2.: "Talep eden kuruluş ihlal sınırını aştığı için yasaklandığında, "yasaklandı" HTTP durum mesajı kullanılacaktır."
+ 3.: "Hız sınırlaması nedeniyle engellendiğinde, 429 kullanılacak, veya kaynak çakışmaları nedeniyle engellendiğinde, <code class="s">signatures➡conflict_response</code> tarafından tanımlanan HTTP durum mesajı kullanılacaktır (bu bağlamda hız sınırlaması ve kaynak çatışmaları eşit önceliğe sahiptir)."
+ 4.: ""HTTP durum kodu değiştirilmesi"ni ayarlayan bir yardımcı kural nedeniyle engellendiğinde, bu HTTP durum kodu değiştirilmesi kullanılacaktır."
+ 5.: "Yasal sebeplerden dolayı engellendiğinde (başka bir deyişle, "yasal" kısaltma kelimesini kullanan özel bir imza nedeniyle engellendiğinde), "yasal" için HTTP durum mesajı kullanılacaktır."
+ 6.: "Engellenen diğer tüm istekler için "varsayılan" HTTP durum mesajı kullanılacaktır (bu en düşük önceliğe sahiptir)."
 hints_inspection: "* Yalnızca yardımcı kurallarda hata ayıklama amaçlıdır. Engellenen kullanıcılara gösterilmez."
 hints_ipv6_on_32bit: "Not: IPv6 aramaları bazı 32 bit sistemlerde düzgün çalışmayabilir."
 hints_logging_datetime: "Yararlı ipucu: Saat biçimi yer tutucularını kullanarak günlük dosyalarının adlarına tarih/saat bilgilerini ekleyebilirsiniz. Kullanılabilir zaman biçimi yer tutucuları {{Links.ConfigRef.time_format}} yönergesinde görüntülenir."
@@ -608,7 +613,6 @@ label:
  False positive risk: "Yanlış pozitif risk:"
  Fancy: "Süslü"
  Focus: "Odak:"
-
  Greylist the request: "İsteği gri listeye alın.\nTetiklenen imzaların sayısını sıfırlar, ancak isteği işlemeye devam eder. İsteği beyaz listeye eklemek istemediğiniz, ancak bir bypass tetiklemekten daha önemli bir şeye ihtiyacınız olduğunda önerilir."
  Harvester: "Toplayıcı"
  Hide: "Saklamak"

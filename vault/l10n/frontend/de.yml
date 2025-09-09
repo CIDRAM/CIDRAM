@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2025.09.05).
+# This file: German language data for the front-end (last modified: 2025.09.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,7 +204,6 @@ config:
  frontend_theme_mode: "Der Modus für das Thema für das Front-End zu verwenden."
  general: "Allgemeine Konfiguration (jede Kernkonfiguration, die nicht zu anderen Kategorien gehört)."
  general_allow_gethostbyaddr_lookup: "gethostbyaddr-Suche erlauben, wenn UDP nicht verfügbar ist? True = Ja [Standardeinstellung]; False = Nein."
- general_ban_override: "Überschreiben „http_response_header_code“ wenn „infraction_limit“ überschritten wird? 200 = Nicht überschreiben [Standardeinstellung]. Andere Werte entsprechen den verfügbaren Werten für „http_response_header_code“."
  general_default_algo: "Definiert den Algorithmus für alle zukünftigen Passwörter und Sitzungen."
  general_default_dns: "Eine Liste von DNS-Servern, die für Hostnamen-Lookups verwendet werden sollen. ACHTUNG: Ändern Sie diesen Wert nur, wenn Sie wissen, was Sie tun!"
  general_default_timeout: "Standardzeitlimit für externe Anforderungen? Standardeinstellung = 12 Sekunden."
@@ -333,7 +332,6 @@ field:
  Add to tracking: "Fügen Sie zum Tracking"
  Add webhook: "Fügen Sie ein Webhook"
  After 24 hours, bundled together: "Nach 24 Stunden, gebündelt (oder bei manueller Auslösung, z.B., über Cron)."
- Banned: "Verbannt"
  Blocked: "Blockiert"
  Clear all: "Alles löschen"
  Clear: "Löschen"
@@ -417,6 +415,13 @@ hints_duration:
  Einfaches Englisch.: "Die Dauer kann beschrieben werden indem die Einheiten in einfachem Englisch geschrieben werden. z.B., <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> für eine Woche, zwei Tage, drei Stunden, vier Minuten, fünf Sekunden."
  Einschränkungen.: "Die Notation kann gemischt werden, aber Einheiten müssen immer vom größten zum kleinsten beschrieben werden, und können nicht wiederholt werden. z.B., <strong>1 week 2 days 3′4″</strong> ist <span class="txtGn">gültig</span> und wird korrekt verstanden, aber <strong>3′4″ 1 week 2 days</strong> und <strong>3 hours 3h 3°</strong> sind <span class="txtRd">ungültig</span>. CIDRAM kümmert sich nicht darum ob Sie Leerzeichen verwenden oder nicht. Zahlen müssen einfach und unformatiert sein. Aus praktischen Gründen ist die größte unterstützte Einheit eine Woche. Wenn die Konfiguration aktualisiert wird, normalisiert CIDRAM die Dauer auf Bogenzeit."
 hints_has_bypass: "* Diese Option hat einen entsprechenden Bypass unter <code class="s">bypasses➡used</code>. Es wird empfohlen sicherzustellen dass das Kontrollkästchen für die entsprechende Bypass genauso markiert ist wie das Kontrollkästchen für den Versuch aus diese Option zu überprüfen."
+hints_http_response_header_code:
+ 1.: "Wenn der „Silent-Modus“ aktiv ist, wird die durch <code class="s">general➡silent_mode_response_header_code</code> definierte HTTP-Statusmeldung verwendet (diese hat die höchste Priorität)."
+ 2.: "Wenn die anfordernde Entität aufgrund der Überschreitung des Verstoßlimits verbannt wurde, wird die HTTP-Statusmeldung für „verbannt“ verwendet."
+ 3.: "Bei einer Blockierung aufgrund einer Ratenbegrenzung wird 429 verwendet, bei einer Blockierung aufgrund von Ressourcenkonflikten wird die durch <code class="s">signatures➡conflict_response</code> definierte HTTP-Statusmeldung verwendet (Ratenbegrenzung und Ressourcenkonflikte haben in diesem Zusammenhang die gleiche Priorität)."
+ 4.: "Bei einer Blockierung aufgrund einer Hilfsregel die eine „Überschreibung für den HTTP-Statuscode“ festlegt, wird diese Überschreibung für den HTTP-Statuscode verwendet."
+ 5.: "Bei einer Blockierung aus rechtlichen Gründen (d.h., bei einer Blockierung aufgrund einer benutzerdefinierten Signatur die das Kurzwort „Gesetzliche“ verwendet), wird die HTTP-Statusmeldung für „Gesetzliche“ verwendet."
+ 6.: "Für alle anderen blockierten Anfragen wird die HTTP-Statusmeldung für „Standardeinstellung“ verwendet (dies hat die niedrigste Priorität)."
 hints_inspection: "* Nur zum Debuggen von Hilfsregeln vorgesehen. Blockierten Benutzern nicht angezeigt."
 hints_ipv6_on_32bit: "Hinweis: IPv6-Lookups funktionieren auf einigen 32-Bit-Systemen möglicherweise nicht richtig."
 hints_logging_datetime: "Nützlicher Tipp: Sie können den Namen der Protokolldateien Datums-/Uhrzeitinformationen hinzufügen, indem Sie Platzhalter für das Zeitformat verwenden. Verfügbare Platzhalter für Zeitformate werden bei {{Links.ConfigRef.time_format}} angezeigt."
@@ -614,7 +619,6 @@ label:
  False positive risk: "Falsch-Positive Risiko:"
  Fancy: "Schick"
  Focus: "Fokus:"
-
  Greylist the request: "Setzen die Anfrage auf die graue Liste.\nSetzt die Anzahl der ausgelösten Signaturen zurück. Jedoch, verarbeitet die Anforderung weiter. Empfohlen wenn Sie möchten nicht dass die Anfrage auf die weiße Liste gesetzt wird, aber etwas Wesentlicheres als das Auslösen einer Bypass benötigen."
  Harvester: "Harvester"
  Hide: "Verstecke"

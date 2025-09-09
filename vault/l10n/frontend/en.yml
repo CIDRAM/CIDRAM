@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2025.09.05).
+# This file: English language data for the front-end (last modified: 2025.09.08).
 ##/
 
 Abuse category:
@@ -206,7 +206,6 @@ config:
  frontend_theme_mode: "The mode for the theme to use for the front-end."
  general: "General configuration (any core configuration not belonging to other categories)."
  general_allow_gethostbyaddr_lookup: "Allow gethostbyaddr lookups when UDP is unavailable? True = Yes [Default]; False = No."
- general_ban_override: "Override "http_response_header_code" when "infraction_limit" is exceeded? 200 = Don't override [Default]. Other values are the same as the available values for "http_response_header_code"."
  general_default_algo: "Defines which algorithm to use for all future passwords and sessions."
  general_default_dns: "A list of DNS servers to use for hostname lookups. WARNING: Don't change this unless you know what you're doing!"
  general_default_timeout: "Default timeout to use for external requests? Default = 12 seconds."
@@ -348,7 +347,6 @@ field:
  Add to tracking: "Add to tracking"
  Add webhook: "Add webhook"
  After 24 hours, bundled together: "After 24 hours, bundled together (or when triggered manually, e.g., via cron)."
- Banned: "Banned"
  Blocked: "Blocked"
  Clear all: "Clear all"
  Clear: "Clear"
@@ -442,6 +440,13 @@ hints_duration:
  Plain English.: "Duration can be described by writing the units in plain English. E.g., <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> for one week, two days, three hours, four minutes, five seconds."
  Constraints.: "Notation can be mixed, but units must always be described from largest to smallest, and can't be repeated. E.g., <strong>1 week 2 days 3′4″</strong> is <span class="txtGn">valid</span> and will be understood correctly, but <strong>3′4″ 1 week 2 days</strong> and <strong>3 hours 3h 3°</strong> are <span class="txtRd">invalid</span>. CIDRAM doesn't care whether you use spacing or not. Numbers must be plain and unformatted. For practicality, the largest supported unit is a week. When configuration is updated, CIDRAM normalises durations to arctime."
 hints_has_bypass: "* This option has a corresponding bypass under <code class="s">bypasses➡used</code>. It's recommended to ensure that the checkbox for the corresponding bypass is marked the same way as the checkbox for attempting to verify this option."
+hints_http_response_header_code:
+ 1.: "When "silent mode" is in effect, the HTTP status message defined by <code class="s">general➡silent_mode_response_header_code</code> will be used (this has the highest precedence)."
+ 2.: "When the requesting entity has been banned due to exceeding the infraction limit, the HTTP status message for "banned" will be used."
+ 3.: "When blocked due to rate limiting, 429 will be used, or when blocked due to resource conflicts, the HTTP status message defined by <code class="s">signatures➡conflict_response</code> will be used (rate limiting and resource conflicts have equal precedence in this context)."
+ 4.: "When blocked due to an auxiliary rule which sets an "HTTP status code override", that HTTP status code override will be used."
+ 5.: "When blocked due to legal reasons (i.e., when blocked due to a custom signature which uses the "legal" shorthand word), the HTTP status message for "legal" will be used."
+ 6.: "For all other blocked requests, the HTTP status message for "default" will be used (this has the lowest precedence)."
 hints_inspection: "* Intended only for debugging auxiliary rules. Not displayed to blocked users."
 hints_ipv6_on_32bit: "Note: IPv6 lookups mightn't work correctly on some 32-bit systems."
 hints_logging_datetime: "Useful tip: You can attach date/time information to the names of log files by using time format placeholders. Available time format placeholders are displayed at {{Links.ConfigRef.time_format}}."
@@ -638,7 +643,6 @@ label:
  False positive risk: "False positive risk:"
  Fancy: "Fancy"
  Focus: "Focus:"
-
  Greylist the request: "Greylist the request.\nResets the number of signatures triggered, but continues processing the request. Recommended when you don't want to whitelist the request, but need something more substantial than triggering a bypass."
  Harvester: "Harvester"
  Hide: "Hide"

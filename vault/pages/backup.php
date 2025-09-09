@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The backup page (last modified: 2025.08.28).
+ * This file: The backup page (last modified: 2025.09.08).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -247,7 +247,7 @@ if (isset($_POST['bckpAct'])) {
                             }
 
                             /** Deleted configuration directives (v3->v4). */
-                            foreach (['captcha' => ['show_cookie_warning', 'show_api_message']] as $CatKey => $Cat) {
+                            foreach (['captcha' => ['show_cookie_warning', 'show_api_message'], 'general' => ['ban_override']] as $CatKey => $Cat) {
                                 if (!isset($Import['Configuration'][$CatKey])) {
                                     continue;
                                 }
@@ -256,14 +256,23 @@ if (isset($_POST['bckpAct'])) {
                                 }
                             }
 
-                            /** Normalisation of matrices (v3->v4). */
+                            /** Normalisation of CAPTCHA matrices (v3->v4). */
                             foreach (['usemode', 'nonblocked_status_code', 'api'] as $Matrix) {
                                 if (isset($Import['Configuration']['captcha'][$Matrix]) && !is_array($Import['Configuration']['captcha'][$Matrix])) {
                                     $Import['Configuration']['captcha'][$Matrix] = ['hcaptcha' => $Import['Configuration']['captcha'][$Matrix]];
                                 }
                             }
+
+                            /** Normalisation of other matrices (v3->v4). */
+                            foreach (['general' => ['http_response_header_code' => 'default']] as $CatKey => $Cat) {
+                                foreach ($Cat as $Matrix => $DefaultVector) {
+                                    if (isset($Import['Configuration'][$CatKey][$Matrix]) && !is_array($Import['Configuration'][$CatKey][$Matrix])) {
+                                        $Import['Configuration'][$CatKey][$Matrix] = [$DefaultVector => $Import['Configuration'][$CatKey][$Matrix]];
+                                    }
+                                }
+                            }
                         }
-                        unset($NewCat, $OldCat, $Pair, $Cat, $CatKey, $Import['Configuration']['Config Defaults'], $Import['Configuration']['Provide'], $Import['Configuration']['Links']);
+                        unset($DefaultVector, $Matrix, $NewCat, $OldCat, $Pair, $Cat, $CatKey, $Import['Configuration']['Config Defaults'], $Import['Configuration']['Provide'], $Import['Configuration']['Links']);
                         $this->Configuration = array_replace_recursive($this->Configuration, $Import['Configuration']);
                         $this->FE['state_msg'] .= $this->L10N->getString($this->updateConfiguration() ? 'response.Configuration successfully updated' : 'response.Failed to update configuration') . '<br />';
                     } else {

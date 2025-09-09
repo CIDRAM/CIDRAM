@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malay language data for the front-end (last modified: 2025.09.05).
+# This file: Malay language data for the front-end (last modified: 2025.09.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,7 +204,6 @@ config:
  frontend_theme_mode: "Mod untuk tema yang akan digunakan untuk bahagian hadapan."
  general: "Konfigurasi generik (sebarang konfigurasi teras yang bukan tergolong dalam kategori lain)."
  general_allow_gethostbyaddr_lookup: "Benarkan menggunakan gethostbyaddr apabila UDP tidak tersedia? True = Ya [Lalai]; False = Tidak."
- general_ban_override: "Mengatasi "http_response_header_code" apabila "infraction_limit" melebihi? 200 = Jangan mengatasikan [Lalai]. Nilai lain adalah sama dengan nilai yang tersedia untuk "http_response_header_code"."
  general_default_algo: "Mentakrifkan algoritma yang hendak digunakan untuk semua kata laluan dan sesi masa depan."
  general_default_dns: "Senarai pelayan DNS yang digunakan untuk carian nama hos. AMARAN: Jangan ganti ini melainkan anda tahu apa yang anda lakukan!"
  general_default_timeout: "Tamat masa lalai yang digunakan untuk permintaan luaran? Lalai = 12 saat."
@@ -333,7 +332,6 @@ field:
  Add to tracking: "Tambahkan pada penjejakan"
  Add webhook: "Tambahkan webhook"
  After 24 hours, bundled together: "Selepas 24 jam, digabungkan bersama (atau apabila dicetuskan secara manual, cth., melalui cron)."
- Banned: "Dilarang"
  Blocked: "Disekat"
  Clear all: "Kosongkan semua"
  Clear: "Kosongkan"
@@ -418,6 +416,13 @@ hints_duration:
  Bahasa Inggeris biasa.: "Tempoh boleh diterangkan dengan menulis unit dalam bahasa Inggeris biasa. Cth., <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> untuk satu minggu, dua hari, tiga jam, empat minit, lima saat."
  Kekangan.: "Notasi boleh dicampur, tetapi unit mesti sentiasa diterangkan daripada terbesar hingga terkecil, dan tidak boleh diulang. Cth., <strong>1 week 2 days 3′4″</strong> adalah <span class="txtGn">sah</span> dan akan difahami dengan betul, tetapi <strong>3′4″ 1 week 2 days</strong> dan <strong>3 hours 3h 3°</strong> adalah <span class="txtRd">tidak sah</span>. CIDRAM tidak peduli sama ada anda menggunakan ruang atau tidak. Nombor mestilah biasa dan tidak berformat. Untuk kepraktisan, unit sokongan yang terbesar ialah seminggu. Apabila konfigurasi dikemas kini, CIDRAM menormalkan tempoh kepada tatatanda arka."
 hints_has_bypass: "* Pilihan ini mempunyai pintasan yang sepadan di bawah <code class="s">bypasses➡used</code>. Disyorkan untuk memastikan bahawa kotak pilihan untuk pintasan yang sepadan ditandakan dengan cara yang sama seperti kotak pilihan untuk cuba mengesahkan pilihan ini."
+hints_http_response_header_code:
+ 1.: "Apabila "mod senyap" berkuat kuasa, mesej status HTTP yang ditakrifkan oleh <code class="s">general➡silent_mode_response_header_code</code> akan digunakan (ini mempunyai keutamaan tertinggi)."
+ 2.: "Apabila entiti yang meminta telah disekat kerana melebihi had pelanggaran, mesej status HTTP untuk "dilarang" akan digunakan."
+ 3.: "Apabila disekat kerana pengehadan kadar, 429 akan digunakan, atau apabila disekat kerana konflik sumber, mesej status HTTP yang ditakrifkan oleh <code class="s">signatures➡conflict_response</code> akan digunakan (had kadar dan konflik sumber mempunyai keutamaan yang sama dalam konteks ini)."
+ 4.: "Apabila disekat kerana peraturan tambahan yang menetapkan "penggantian kod status HTTP", penggantian kod status HTTP tersebut akan digunakan."
+ 5.: "Apabila disekat kerana alasan undang-undang (iaitu, apabila disekat kerana tandatangan tersuai yang menggunakan perkataan pendek "undang-undang", mesej status HTTP untuk "undang-undang" akan digunakan."
+ 6.: "Untuk semua permintaan lain yang disekat, mesej status HTTP untuk "lalai" akan digunakan (ini mempunyai keutamaan yang paling rendah)."
 hints_inspection: "* Bertujuan hanya untuk menyahpepijat peraturan tambahan. Tidak dipaparkan kepada pengguna yang disekat."
 hints_ipv6_on_32bit: "Nota: Carian IPv6 mungkin tidak berfungsi dengan betul pada sesetengah sistem 32-bit."
 hints_logging_datetime: "Petua berguna: Anda boleh melampirkan maklumat tarikh/masa pada nama fail log dengan menggunakan pemegang tempat format masa. Pemegang tempat format masa yang tersedia dipaparkan pada {{Links.ConfigRef.time_format}}."
@@ -606,7 +611,6 @@ label:
  False positive risk: "Risiko positif palsu:"
  Fancy: "Diformatkan"
  Focus: "Tumpuan:"
-
  Greylist the request: "Senaraikan kelabu permintaan.\nMenetapkan semula bilangan tandatangan yang dicetuskan, tetapi meneruskan memproses permintaan. Disyorkan apabila anda tidak mahu menyenarai permintaan putih, tetapi memerlukan sesuatu yang lebih substansial daripada mencetuskan pintasan."
  Harvester: "Penuai"
  Hide: "Sembunyikan"
@@ -709,7 +713,7 @@ label:
   Forcibly disable IP tracking: "Nyahaktifkan penjejakan IP secara paksa"
   Forcibly disable hCaptcha: "Nyahaktifkan hCaptcha secara paksa"
   Forcibly enable IP tracking: "Aktifkan penjejakan IP secara paksa"
-  HTTP status code override: "Gantikan kod status HTTP:"
+  HTTP status code override: "Penggantian kod status HTTP:"
   If the following conditions are met, %s: "Jika syarat berikut dipenuhi, %s."
   Mark for use with Cloudflare Turnstile: "Tandakan untuk digunakan dengan Cloudflare Turnstile"
   Mark for use with Friendly Captcha: "Tandakan untuk digunakan dengan Friendly Captcha"

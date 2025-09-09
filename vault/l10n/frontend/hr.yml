@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Croatian language data for the front-end (last modified: 2025.09.05).
+# This file: Croatian language data for the front-end (last modified: 2025.09.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,7 +204,6 @@ config:
  frontend_theme_mode: "Način za tema koja će se koristiti za front-end."
  general: "Opća konfiguracija (bilo koja konfiguracija jezgre koja ne pripada drugim kategorijama)."
  general_allow_gethostbyaddr_lookup: "Dopustiti pretraživanje gethostbyaddr kada UDP nije dostupan? True/Istinito = Da [Zadano]; False/Lažno = Ne."
- general_ban_override: "Vrijednost koja se koristi umjesto "http_response_header_code" kada se premaši "infraction_limit". 200 = Zadrži isto [Zadano]. Ostale vrijednosti su iste kao dostupne vrijednosti za "http_response_header_code"."
  general_default_algo: "Definira koji algoritam koristiti za sve buduće lozinke i sesije."
  general_default_dns: "Popis DNS poslužitelja koji se koriste za traženje naziva hosta. UPOZORENJE: Promijenite ovo samo ako znate što radite!"
  general_default_timeout: "Zadano vrijeme čekanja za korištenje za vanjske zahtjeve? Zadano = 12 sekundi."
@@ -333,7 +332,6 @@ field:
  Add to tracking: "Dodaj u praćenje"
  Add webhook: "Dodajte web-dojavnik"
  After 24 hours, bundled together: "Nakon 24 sata, zajedno u paketu (ili kada se pokrene ručno, npr., putem cron-a)."
- Banned: "Zabranjeno"
  Blocked: "Blokirano"
  Clear all: "Obriši sve"
  Clear: "Obriši"
@@ -421,6 +419,13 @@ hints_duration:
  Običan engleski.: "Trajanje se može opisati pisanjem jedinica na jednostavnom engleskom jeziku. Npr., <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> za jedan tjedan, dva dana, tri sata, četiri minute, pet sekundi."
  Ograničenja.: "Notacije se mogu miješati, ali jedinice uvijek moraju biti opisane od najveće prema najmanjoj, i ne smiju se ponavljati. Npr., <strong>1 week 2 days 3′4″</strong> je <span class="txtGn">valjan</span> i bit će ispravno shvaćen, ali <strong>3′4″ 1 week 2 days</strong> i <strong>3 hours 3h 3°</strong> su <span class="txtRd">nevažeći</span>. CIDRAM-u je svejedno koristite li razmak ili ne. Brojevi moraju biti čisti i neformatirani. Radi praktičnosti, najveća podržana jedinica je tjedan. Kada se konfiguracija ažurira, CIDRAM normalizira trajanja na lučnog vremena."
 hints_has_bypass: "* Ova opcija ima odgovarajuće zaobilaženje pod <code class="s">bypasses➡used</code>. Preporučuje se osigurati da je potvrdni okvir za odgovarajuće zaobilaženje označen na isti način kao i potvrdni okvir za pokušaj provjere ove opcije."
+hints_http_response_header_code:
+ 1.: "Kada je na snazi ​​"tihi način", koristit će se HTTP statusna poruka definirana s <code class="s">general➡silent_mode_response_header_code</code> (ovo ima najveći prioritet)."
+ 2.: "Kada je entitet koji je podnio zahtjev zabranjen zbog prekoračenja ograničenja prekršaja, koristit će se HTTP statusna poruka za "zabranjeno"."
+ 3.: "Kada je blokirano zbog ograničenja brzine, koristit će se 429, ili kada je blokirano zbog sukoba resursa, koristit će se HTTP statusna poruka definirana s <code class="s">signatures➡conflict_response</code> (ograničavanje brzine i sukobi resursa imaju jednak prioritet u ovom kontekstu)."
+ 4.: "Kada je blokirano zbog pomoćnog pravila koje postavlja "nadjačavanje HTTP statusnog koda", koristit će se to nadjačavanje HTTP statusnog koda."
+ 5.: "Kada je blokirano iz pravnih razloga (tj. kada je blokirano zbog prilagođenog potpisa koji koristi skraćenicu "pravni"), koristit će se HTTP statusna poruka za "pravni"."
+ 6.: "Za sve ostale blokirane zahtjeve, koristit će se HTTP statusna poruka za "zadano" (ovo ima najniži prioritet)."
 hints_inspection: "* Namijenjen samo za otklanjanje pogrešaka pomoćnih pravila. Ne prikazuje se blokiranim korisnicima."
 hints_ipv6_on_32bit: "Bilješka: IPv6 pretraživanja možda neće ispravno raditi na nekim 32-bitnim sustavima."
 hints_logging_datetime: "Koristan savjet: Nazivima datoteka dnevnika možete priložiti informacije o datumu/vremenu pomoću rezerviranih mjesta formata vremena. Dostupni rezervirani prostori formata vremena prikazani su na {{Links.ConfigRef.time_format}}."
@@ -618,7 +623,6 @@ label:
  False positive risk: "Rizik od lažno pozitivnih:"
  Fancy: "Otmjeno"
  Focus: "Fokus:"
-
  Greylist the request: "Stavi zahtjev na sivu listu.\nResetira broj potpisa, ali nastavlja s obradom zahtjeva. Preporučuje se kada ne želite staviti zahtjev na bijelu listu, ali vam je potrebno nešto opsežnije od zaobilaženja."
  Harvester: "Sakupljač"
  Hide: "Sakriti"

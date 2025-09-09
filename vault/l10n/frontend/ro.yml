@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Romanian language data for the front-end (last modified: 2025.09.05).
+# This file: Romanian language data for the front-end (last modified: 2025.09.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,7 +204,6 @@ config:
  frontend_theme_mode: "Modul pentru temă de utilizat pentru front-end."
  general: "Configurație generală (orice configurație de bază care nu aparține altor categorii)."
  general_allow_gethostbyaddr_lookup: "Permiteți căutările gethostbyaddr când UDP nu este disponibil? True = Da [Implicit]; False = Nu."
- general_ban_override: "Înlocuiți „http_response_header code” atunci când „infraction_limit” este depășită? 200 = Nu înlocuiți [Implicit]. Alte valori sunt aceleași cu valorile disponibile pentru „http_response_header_code”."
  general_default_algo: "Definește algoritmul de utilizat pentru toate parolele și sesiunile viitoare."
  general_default_dns: "O listă de servere DNS de utilizat pentru căutări de nume de gazdă. AVERTIZARE: Nu schimba asta dacă nu înțelegi ce faci!"
  general_default_timeout: "Timeout implicit de utilizat pentru solicitările externe? Implicit = 12 secunde."
@@ -333,7 +332,6 @@ field:
  Add to tracking: "Adăugați la urmărire"
  Add webhook: "Adăugați webhook"
  After 24 hours, bundled together: "După 24 de ore, împreună (sau când sunt declanșate manual, de exemplu, prin cron)."
- Banned: "Interzis"
  Blocked: "Blocată"
  Clear all: "Ștergeți totul"
  Clear: "Șterge"
@@ -426,6 +424,13 @@ hints_duration:
  Engleză simplă.: "Durata poate fi descrisă prin scrierea unităților în limba engleză simplă. De exemplu, <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> pentru o săptămână, două zile, trei ore, patru minute, cinci secunde."
  Constrângeri.: "Notația poate fi amestecată, dar unitățile trebuie întotdeauna descrise de la cel mai mare la cel mai mic, și nu pot fi repetate. De exemplu, <strong>1 week 2 days 3′4″</strong> este <span class="txtGn">valide</span> și va fi înțeles corect, dar <strong>3′4″ 1 week 2 days</strong> și <strong>3 hours 3h 3°</strong> sunt <span class="txtRd">invalide</span>. CIDRAM nu-i pasă dacă folosești spațierea sau nu. Numerele trebuie să fie simple și neformatate. Pentru caracter practic, cea mai mare unitate suportată este o săptămână. Când configurația este actualizată, CIDRAM normalizează duratele la arctime."
 hints_has_bypass: "* Această opțiune are un bypass corespunzător sub <code class="s">bypasses➡used</code>. Este recomandat să vă asigurați că caseta de selectare pentru bypass-ul corespunzătoare este bifată în același mod ca și caseta de selectare pentru încercarea de a verifica această opțiune."
+hints_http_response_header_code:
+ 1.: "Când este activ „modul silențios”, va fi utilizat mesajul de stare HTTP definit de <code class="s">general➡silent_mode_response_header_code</code> (acesta are cea mai mare prioritate)."
+ 2.: "Când entitatea solicitantă a fost interzisă din cauza depășirii limitei de infracțiuni, va fi utilizat mesajul de stare HTTP „interzis”."
+ 3.: "Când este blocat din cauza limitării ratei, se va utiliza codul 429, sau când este blocat din cauza conflictelor de resurse, se va utiliza mesajul de stare HTTP definit de <code class="s">signatures➡conflict_response</code> (limitarea ratei și conflicte de resurse au prioritate egală în acest context)."
+ 4.: "Când este blocat din cauza unei reguli auxiliare care setează o „modificarea codului de stare HTTP”, se va utiliza modificarea codului de stare HTTP respectivă."
+ 5.: "Când este blocat din motive legale (adică, când este blocat din cauza unei semnături personalizate care folosește cuvânt prescurtarea „legal”), se va utiliza mesajul de stare HTTP pentru „legal”."
+ 6.: "Pentru toate celelalte solicitări blocate, se va utiliza mesajul de stare HTTP pentru „implicit” (aceasta are cea mai mică prioritate)."
 hints_inspection: "* Destinat numai pentru depanarea regulilor auxiliare. Nu este afișat pentru utilizatorii blocați."
 hints_ipv6_on_32bit: "Notă: Căutările IPv6 ar putea să nu funcționeze corect pe unele sisteme pe 32 de biți."
 hints_logging_datetime: "Sfat util: Puteți atașa informații despre dată/ora la numele fișierelor jurnal utilizând substituenți pentru formatul de timp. Substituenții disponibili pentru formatul de timp sunt afișați la {{Links.ConfigRef.time_format}}."
@@ -623,7 +628,6 @@ label:
  False positive risk: "Risc fals pozitiv:"
  Fancy: "Extravagant"
  Focus: "Accentul:"
-
  Greylist the request: "Lista gri a solicitării.\nResetează numărul de semnături declanșate, dar continuă procesarea solicitării. Recomandat atunci când nu doriți să lista albă a solicitării, dar aveți nevoie de ceva mai substanțial decât declanșarea unui bypass."
  Harvester: "Recoltator"
  Hide: "Ascunde"

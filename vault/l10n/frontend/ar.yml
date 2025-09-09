@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2025.09.05).
+# This file: Arabic language data for the front-end (last modified: 2025.09.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,7 +204,6 @@ config:
  frontend_theme_mode: "الوضع الذي سيتم استخدامه للموضوع في الواجهة الأمامية."
  general: "التكوين العام (أي التكوين الأساسي لا ينتمي إلى فئات أخرى)."
  general_allow_gethostbyaddr_lookup: "السماح بعمليات البحث gethostbyaddr عندما يكون UDP غير متوفر؟ صحيح/True = نعم [افتراضي]؛ زائفة/False = لا."
- general_ban_override: "تجاوز "http_response_header_code" متى "infraction_limit" تجاوزت؟ 200 = لا تجاوز [الافتراضي]. القيم الأخرى هي نفس القيم المتاحة لـ "http_response_header_code"."
  general_default_algo: "يحدد الخوارزمية التي سيتم استخدامها لكل كلمات المرور والجلسات المستقبلية."
  general_default_dns: "قائمة من خوادم DNS لاستخدامها في عمليات البحث عن اسم المضيف. تحذير: لا تغير هذا إلا إذا كنت تعرف ما تفعلونه!"
  general_default_timeout: "المهلة الافتراضية لاستخدامها للطلبات الخارجية؟ الافتراضي = 12 ثانية."
@@ -333,7 +332,6 @@ field:
  Add to tracking: "أضف إلى التتبع"
  Add webhook: "إضافة webhook"
  After 24 hours, bundled together: "بعد 24 ساعة، يتم تجميعها معًا (أو عند تشغيلها يدويًا، على سبيل المثال، عبر cron)."
- Banned: "محظور"
  Blocked: "مسدود"
  Clear all: "امسح الكل"
  Clear: "إلغاء"
@@ -605,7 +603,6 @@ label:
  False positive risk: "خطر إيجابية كاذبة:"
  Fancy: "تهيئتها"
  Focus: "التركيز:"
-
  Greylist the request: "القائمة الرمادية.\nيعيد تعيين عدد التوقيعات التي تم تشغيلها، ولكنه يستمر في معالجة الطلب. يوصى به عندما لا تريد إدراج الطلب في القائمة البيضاء، لكنك تحتاج إلى محتوى أكثر من تجاوز."
  Harvester: "الحاصدة"
  Hide: "إخفائه"

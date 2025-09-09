@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2025.09.03).
+ * This file: General methods used by the front-end (last modified: 2025.09.07).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -65,98 +65,88 @@ trait FrontEndMethods
             $Arr[$Key] = ['Filename' => $this->canonical($ThisName), 'CanEdit' => false];
             if (is_dir($Item) && !is_file($Item)) {
                 $Arr[$Key]['Directory'] = true;
-                $Arr[$Key]['Filesize'] = 0;
-                $Arr[$Key]['Filetype'] = $this->L10N->getString('field.Directory');
+                $Arr[$Key]['Filesize'] = '';
+                $Arr[$Key]['Component'] = $this->L10N->getString('field.Directory');
                 $Arr[$Key]['Icon'] = 'icon=directory';
-            } elseif (is_file($Item)) {
-                $Arr[$Key]['Directory'] = false;
+                continue;
+            }
+            $Arr[$Key]['Directory'] = false;
+            if (is_file($Item)) {
                 $Arr[$Key]['Filesize'] = filesize($Item);
-                $Arr[$Key]['Filetype'] = $this->L10N->getString('field.Unknown');
+                $Component = '';
                 $Arr[$Key]['Icon'] = 'icon=text';
-                if (isset($this->FE['TotalSize'])) {
-                    $this->FE['TotalSize'] += $Arr[$Key]['Filesize'];
-                }
+                $NoEdit = false;
+                $Early = false;
                 if (isset($this->Components['Files'])) {
-                    $Component = $this->L10N->getString('field.Unknown');
                     if (isset($this->Components['Files'][$Arr[$Key]['Filename']])) {
-                        $Component = $this->Components['Files'][$Arr[$Key]['Filename']];
+                        $Component = $this->L10N->getString('field.Component') . $this->L10N->getString('pair_separator') . $this->Components['Files'][$Arr[$Key]['Filename']];
                     } elseif (preg_match('~(?:[^|/]\.ht|\.safety$|^salt\.dat$)~i', $Arr[$Key]['Filename'])) {
                         $Component = $this->L10N->getString('label.Safety mechanisms');
+                        $NoEdit = true;
                     } elseif (preg_match('~config\.yml$~i', $Arr[$Key]['Filename'])) {
                         $Component = $this->L10N->getString('link.Configuration');
+                        $Arr[$Key]['Icon'] = 'icon=configuration';
+                        $Early = true;
                     } elseif ($this->isLogFile($Arr[$Key]['Filename'])) {
                         $Component = $this->L10N->getString('link.Logs');
+                        $Arr[$Key]['Icon'] = 'icon=logs';
+                        $Early = true;
                     } elseif ($Arr[$Key]['Filename'] === 'auxiliary.yml') {
                         $Component = $this->L10N->getString('link.Auxiliary Rules');
+                        $Arr[$Key]['Icon'] = 'icon=auxiliary';
+                        $Early = true;
                     } elseif (preg_match('/(?:^ignore\.dat|_custom\.dat|\.sig|\.inc)$/i', $Arr[$Key]['Filename'])) {
                         $Component = $this->L10N->getString('label.Other rules, signature files, etc');
                     } elseif (preg_match('~(?:\.tmp|\.rollback|^(?:cache|hashes|ipbypass|rl)\.dat)$~i', $Arr[$Key]['Filename'])) {
                         $Component = $this->L10N->getString('label.Cache data and temporary files');
                     } elseif ($Arr[$Key]['Filename'] === 'installed.yml') {
                         $Component = $this->L10N->getString('label.Component updates metadata');
+                        $Arr[$Key]['Icon'] = 'icon=updates';
+                        $Early = true;
                     }
                     if (!isset($this->Components['Components'][$Component]) || !is_int($this->Components['Components'][$Component])) {
                         $this->Components['Components'][$Component] = 0;
                     }
                     $this->Components['Components'][$Component] += $Arr[$Key]['Filesize'];
-                    if (!isset($this->Components['ComponentFiles'][$Component])) {
-                        $this->Components['ComponentFiles'][$Component] = [];
-                    }
-                    $this->Components['ComponentFiles'][$Component][$Arr[$Key]['Filename']] = $Arr[$Key]['Filesize'];
                 }
-                if (($ExtDel = strrpos($Item, '.')) !== false) {
-                    $Ext = strtoupper(substr($Item, $ExtDel + 1));
-                    if ($Ext === '') {
-                        $this->formatFileSize($Arr[$Key]['Filesize']);
-                        continue;
-                    }
-                    $Arr[$Key]['Filetype'] = sprintf($this->L10N->getString('field.%s File'), $Ext);
-                    if ($Ext === 'ICO') {
-                        $Arr[$Key]['Icon'] = 'file=' . urlencode($Arr[$Key]['Filename']);
-                        $this->formatFileSize($Arr[$Key]['Filesize']);
-                        continue;
-                    }
-                    if (preg_match('/^(?:CSV|ODS|XLS[XT]?)$/', $Ext)) {
-                        $Arr[$Key]['Icon'] = 'icon=spreadsheet';
-                    } elseif (preg_match('/^(?:ODP|PDF|PP[ST]X?|XDP)$/', $Ext)) {
-                        $Arr[$Key]['Icon'] = 'icon=presentation';
-                    } elseif (preg_match('/^(?:DOC[XT]?|ODT|RTF)$/', $Ext)) {
-                        $Arr[$Key]['Icon'] = 'icon=document';
-                    } elseif (preg_match('/^(?:[OM]?DB|SQL)$/', $Ext)) {
-                        $Arr[$Key]['Icon'] = 'icon=database';
-                    } elseif (preg_match('/^(?:ODF|TEX)$/', $Ext)) {
-                        $Arr[$Key]['Icon'] = 'icon=formulas';
-                    } elseif (preg_match('/^ODG$/', $Ext)) {
-                        $Arr[$Key]['Icon'] = 'icon=graphs';
-                    } elseif (preg_match(
-                        '/^(?:BM[2P]|C(D5|GM)|D(IB|W[FG]|XF)|ECW|FITS|GIF|IMG|J(F?IF?|P[2S]|PE?G?2?|XR)|P(BM|CX|DD|GM|IC|N[GMS]|PM|S[DP])|S(ID|V[AG])|TGA|W(BMP?|EBP|MP)|X(CF|BMP))$/',
-                        $Ext
-                    )) {
-                        $Arr[$Key]['Icon'] = 'icon=image';
-                    } elseif (preg_match(
-                        '/^(?:H?264|3GP(P2)?|A(M[CV]|VI)|BIK|D(IVX|V5?)|F([4L][CV]|LASH|MV)|GIFV|HLV|' .
-                        'M(4V|OV|P4|PE?G[4V]?|KV|VR)|OGM|SWF|V(IDEO|OB)|W(EBM|M[FV]3?)|X(WMV|VID))$/',
-                        $Ext
-                    )) {
-                        $Arr[$Key]['Icon'] = 'icon=video';
-                    } elseif (preg_match(
-                        '/^(?:3GA|A(AC|IFF?|SF|U)|CDA|FLAC?|M(P?4A|IDI|KA|P[A23])|OGG|PCM|' .
-                        'R(AM?|M[AX])|SWA|W(AVE?|MA))$/',
-                        $Ext
-                    )) {
-                        $Arr[$Key]['Icon'] = 'icon=audio';
-                    }
-                    if (preg_match('/^(?:[BD]AT|CFG|CSS|[SDPX]?HT[AM]L?|IN[CFI]|JS|LOG|MD|NEON|I?NFO|PHP\d?|PY|TXT|YA?ML)$/', $Ext)) {
-                        $Arr[$Key]['CanEdit'] = true;
-                    }
-                }
-            }
-            if ($Arr[$Key]['Filesize']) {
+                $Arr[$Key]['Component'] = $Component ?: $this->L10N->getString('field.Unknown');
                 $this->formatFileSize($Arr[$Key]['Filesize']);
-                $Arr[$Key]['Filesize'] .= ' ⏰ <em>' . $this->timeFormat(filemtime($Item), $this->Configuration['general']['time_format']) . '</em>';
-            } else {
-                $Arr[$Key]['Filesize'] = '';
+                $Arr[$Key]['Filesize'] = $Arr[$Key]['Filesize'] . ' – ' . $this->timeFormat(filemtime($Item), $this->Configuration['general']['time_format']);
+                if (($ExtDel = strrpos($Item, '.')) === false || ($Ext = strtoupper(substr($Item, $ExtDel + 1))) === '') {
+                    continue;
+                }
+                if (!$NoEdit && preg_match('/^(?:[BD]AT|[CXY]A?ML|CFG|[SDPX]?HT[AM]L?|IN[CFI]|[JT]S|LOG|MD|NEON|I?NFO|PHP\d?|PY|S?CSS|SIG|SVG|TXT)$/', $Ext)) {
+                    $Arr[$Key]['CanEdit'] = true;
+                }
+                if ($Early) {
+                    continue;
+                }
+                if ($Ext === 'ICO') {
+                    $Arr[$Key]['Icon'] = 'file=' . urlencode($Arr[$Key]['Filename']);
+                    continue;
+                }
+                if (preg_match('/^(?:CSV|ODS|XLS[XT]?)$/', $Ext)) {
+                    $Arr[$Key]['Icon'] = 'icon=spreadsheet';
+                } elseif (preg_match('/^(?:ODP|PDF|PP[ST]X?|XDP)$/', $Ext)) {
+                    $Arr[$Key]['Icon'] = 'icon=presentation';
+                } elseif (preg_match('/^(?:DOC[XT]?|ODT|RTF)$/', $Ext)) {
+                    $Arr[$Key]['Icon'] = 'icon=document';
+                } elseif (preg_match('/^(?:[OM]?DB|SQL)$/', $Ext)) {
+                    $Arr[$Key]['Icon'] = 'icon=database';
+                } elseif (preg_match('/^(?:ODF|TEX)$/', $Ext)) {
+                    $Arr[$Key]['Icon'] = 'icon=formulas';
+                } elseif (preg_match('/^ODG$/', $Ext)) {
+                    $Arr[$Key]['Icon'] = 'icon=graphs';
+                } elseif (preg_match('/^(?:BM[2P]|C(D5|GM)|D(IB|W[FG]|XF)|ECW|FITS|GIF|IMG|J(F?IF?|P[2S]|PE?G?2?|XR)|P(BM|CX|DD|GM|IC|N[GMS]|PM|S[DP])|S(ID|V[AG])|TGA|W(BMP?|EBP|MP)|X(CF|BMP))$/', $Ext)) {
+                    $Arr[$Key]['Icon'] = 'icon=image';
+                } elseif (preg_match('/^(?:H?264|3GP(P2)?|A(M[CV]|VI)|BIK|D(IVX|V5?)|F([4L][CV]|LASH|MV)|GIFV|HLV|M(4V|OV|P4|PE?G[4V]?|KV|VR)|OGM|SWF|V(IDEO|OB)|W(EBM|M[FV]3?)|X(WMV|VID))$/', $Ext)) {
+                    $Arr[$Key]['Icon'] = 'icon=video';
+                } elseif (preg_match('/^(?:3GA|A(AC|IFF?|SF|U)|CDA|FLAC?|M(P?4A|IDI|KA|P[A23])|OGG|PCM|R(AM?|M[AX])|SWA|W(AVE?|MA))$/', $Ext)) {
+                    $Arr[$Key]['Icon'] = 'icon=audio';
+                }
+                continue;
             }
+            $Arr[$Key]['Filesize'] = $Arr[$Key]['Component'] = $this->L10N->getString('field.Unknown');
         }
         return $Arr;
     }
@@ -788,7 +778,7 @@ trait FrontEndMethods
             }
             if ($Depth === 1 && isset($this->CIDRAM['ListGroups'][$ParentKey])) {
                 $Delete = sprintf(
-                    ' – (<span onclick="javascript:%s(\'%s\')"><code><span class="auxicon auxrd delete" title="⌧"></span><span class="s auxicontxt">%s</span></code></span>)',
+                    ' – (<span onclick="javascript:%1$s(\'%2$s\')"><code><span class="auxicon auxrd delete" title="%3$s"></span><span class="s auxicontxt">%3$s</span></code></span>)',
                     $DeleteKey,
                     $this->escapeJsInHTML($ParentKey . '-' . $Key),
                     $this->L10N->getString('field.Delete')
@@ -796,7 +786,7 @@ trait FrontEndMethods
                 $Output .= '<span id="' . $this->escapeJsInHTML($ParentKey . '-' . $Key) . 'Container">';
             } elseif ($Depth === 0) {
                 $Delete = sprintf(
-                    ' – (<span onclick="javascript:%s(\'%s\')"><code><span class="auxicon auxrd delete" title="⌧"></span><span class="s auxicontxt">%s</span></code></span>)',
+                    ' – (<span onclick="javascript:%1$s(\'%2$s\')"><code><span class="auxicon auxrd delete" title="%3$s"></span><span class="s auxicontxt">%3$s</span></code></span>)',
                     $DeleteKey,
                     (isset($this->CIDRAM['ListGroups'][$Key]) ? '^' : '') . $this->escapeJsInHTML($Key),
                     $this->L10N->getString('field.Delete')

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2025.09.06).
+ * This file: The CIDRAM core (last modified: 2025.09.08).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -802,6 +802,9 @@ class Core
                         }
                         $this->BlockInfo['Signatures'] .= $Factors[$FactorIndex];
                         $this->BlockInfo['SignatureCount']++;
+                        if ($Signature === 'Legal') {
+                            $this->CIDRAM['Legal block triggered'] = true;
+                        }
                     }
                 }
             }

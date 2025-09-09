@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2025.09.05).
+# This file: Swedish language data for the front-end (last modified: 2025.09.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -122,7 +122,7 @@ checkbox:
  Profile it: "Profilera det."
  Should infractions generated during this stage count towards IP tracking: "Räkna infraktions som genererats under detta skede mot IP-spårning?"
  Should this field appear in log entries: "Ska detta fält visas i loggposter?"
- Should this field appear on the access denied page: "Ska den här fältet visas på sidan "nekat tillgång"?"
+ Should this field appear on the access denied page: "Ska det här fältet visas på sidan "åtkomst nekad"?"
  Suppress Cloudflare Turnstile: "Undertryck Cloudflare Turnstile"
  Suppress Friendly Captcha: "Undertryck Friendly Captcha"
  Suppress hCaptcha: "Undertryck hCaptcha"
@@ -204,7 +204,6 @@ config:
  frontend_theme_mode: "Läget för temat som ska användas för front-enden."
  general: "Allmän konfiguration (alla kärnkonfigurationer som inte tillhör andra kategorier)."
  general_allow_gethostbyaddr_lookup: "Tillåt gethostbyaddr-uppslag när UDP är otillgänglig? True = Ja [Standard]; False = Nej."
- general_ban_override: "Åsidosätta "http_response_header_code" när "infraction_limit" överskrids? 200 = Åsidosätta inte [Standard]. Andra värden är desamma som tillgängliga värden för "http_response_header_code"."
  general_default_algo: "Definierar vilken algoritm som ska användas för alla framtida lösenord och sessioner."
  general_default_dns: "En lista över DNS-servrar som ska användas för värdnamnssökningar. VARNING: Ändra inte detta om du inte vet vad du gör!"
  general_default_timeout: "Standard timeout att använda för externa förfrågningar? Standard = 12 sekunder."
@@ -224,7 +223,7 @@ config:
  general_request_proxy: "Om du vill att utgående förfrågningar ska skickas via en proxy, ange den proxyn här. Om inte, lämna detta tomt."
  general_request_proxyauth: "Om utgående förfrågningar skickas via en proxy och om den proxyn kräver ett användarnamn och lösenord, ange användarnamn och lösenord här (t.ex., <code>user:pass</code>). Om inte, lämna detta tomt."
  general_sensitive: "En lista över vägar att betrakta som känsliga sidor. Varje väg som listas kommer att kontrolleras mot den rekonstruerade URI när det behövs. En väg som börjar med ett snedstreck kommer att behandlas som en bokstavlig och matchas från vägskomponenten i begäran och framåt. Annars kommer en väg som börjar med ett icke-alfanumeriskt tecken, och slutar med samma tecken (eller samma tecken plus en valfri "i"-flagga) att behandlas som ett reguljärt uttryck. Alla andra typer av väg kommer att behandlas som en bokstavlig och kan matcha från vilken del av URI som helst. Huruvida en väg betraktas som en känslig sida kan påverka hur vissa moduler beter sig, men har ingen effekt i övrigt."
- general_silent_mode: "Ska CIDRAM utföra tyst omdirigering av blockerade åtkomstförsök istället för att visa sidan "nekat tillgång"? Om ja, ange platsen för omdirigering av blockerade åtkomstförsök. Om nej, lämna denna variabel tom."
+ general_silent_mode: "Ska CIDRAM utföra tyst omdirigering av blockerade åtkomstförsök istället för att visa sidan "åtkomst nekad"? Om ja, ange platsen för omdirigering av blockerade åtkomstförsök. Om nej, lämna denna variabel tom."
  general_silent_mode_response_header_code: "Vilket HTTP-statusmeddelande ska CIDRAM skicka vid tyst omdirigering av försök med blockerad åtkomst?"
  general_stages: "Kontroller för stadierna i utförandekedjan (om aktiverat, om fel loggas, osv)."
  general_statistics: "Styr vilken statistisk information som ska spåras."
@@ -311,8 +310,8 @@ config:
  template_data_block_event_title: "Sidtiteln som ska visas för blockhändelser."
  template_data_captcha_title: "Sidtiteln som ska visas för CAPTCHA-förfrågningar."
  template_data_css_url: "CSS-filadress för anpassade teman."
- template_data_custom_footer: "Infogas som HTML i slutet av alla "nekat tillgång"-sidor. Detta kan vara användbart om du vill inkludera ett juridiskt meddelande, kontaktlänk, företagsinformation, eller liknande på alla sådana sidor."
- template_data_custom_header: "Infogas som HTML i början av alla "nekat tillgång"-sidor. Detta kan vara användbart om du vill inkludera en webbplatslogotyp, personlig rubrik, skript, eller liknande på alla sådana sidor."
+ template_data_custom_footer: "Infogas som HTML i slutet av alla "åtkomst nekad"-sidor. Detta kan vara användbart om du vill inkludera ett juridiskt meddelande, kontaktlänk, företagsinformation, eller liknande på alla sådana sidor."
+ template_data_custom_header: "Infogas som HTML i början av alla "åtkomst nekad"-sidor. Detta kan vara användbart om du vill inkludera en webbplatslogotyp, personlig rubrik, skript, eller liknande på alla sådana sidor."
  template_data_magnification: *MagnifDesc
  template_data_theme: "Temat som ska användas för blockhändelser och CAPTCHA-förfrågningar."
  template_data_theme_mode: "Läget för temat som ska användas för blockhändelser och CAPTCHA-förfrågningar."
@@ -333,7 +332,6 @@ field:
  Add to tracking: "Lägg till spårning"
  Add webhook: "Lägg till en webhook"
  After 24 hours, bundled together: "Efter 24 timmar, buntas ihop (eller när den utlöses manuellt, t.ex., via cron)."
- Banned: "Förbjudna"
  Blocked: "Blockerad"
  Clear all: "Rensa alla"
  Clear: "Rensa"
@@ -418,6 +416,13 @@ hints_duration:
  Vanlig engelska.: "Varaktighet kan beskrivas genom att skriva enheterna på vanlig engelska. T.ex., <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> för en vecka, två dagar, tre timmar, fyra minuter, fem sekunder."
  Begränsningar.: "Notation kan blandas, men enheter måste alltid beskrivas från största till minsta, och kan inte upprepas. T.ex., <strong>1 week 2 days 3′4″</strong> är <span class="txtGn">giltigt</span> och kommer att förstås korrekt, men <strong>3′4″ 1 week 2 days</strong> och <strong>3 hours 3h 3°</strong> är <span class="txtRd">ogiltiga</span>. CIDRAM bryr sig inte om du använder mellanrum eller inte. Siffror måste vara enkla och oformaterade. För praktiska skull är den största enheten som stöds en vecka. När konfigurationen uppdateras, normaliserar CIDRAM varaktigheterna till bågtid."
 hints_has_bypass: "* Detta alternativ har en motsvarande bypass under <code class="s">bypasses➡used</code>. Oavsett om kryssrutan för att försöka verifiera det här alternativet är markerad, rekommenderar vi att du ser till att kryssrutan för motsvarande förbikoppling är densamma."
+hints_http_response_header_code:
+ 1.: "När "tyst läge" är aktiverat kommer HTTP-statusmeddelandet som definieras av <code class="s">general➡silent_mode_response_header_code</code> att användas (detta har högsta prioritet)."
+ 2.: "När den begärande enheten har blivit förbjudna på grund av att den överskridit överträdelsegränsen, kommer HTTP-statusmeddelandet för "förbjudna" att användas."
+ 3.: "När den är blockerad på grund av hastighetsbegränsning används 429, eller när den är blockerad på grund av resurskonflikter används HTTP-statusmeddelandet som definieras av <code class="s">signatures➡conflict_response</code> (hastighetsbegränsning och resurskonflikter har lika stor prioritet i detta sammanhang)."
+ 4.: "När den blockeras på grund av en hjälpregel som anger en "HTTP-statuskod åsidosättning" kommer den HTTP-statuskod åsidosättningen att användas."
+ 5.: "När den blockeras av juridiska skäl (d.v.s., när den blockeras på grund av en anpassad signatur som använder förkortningsordet "juridiska") kommer HTTP-statusmeddelandet för "juridiska" att användas."
+ 6.: "För alla andra blockerade förfrågningar kommer HTTP-statusmeddelandet för "standard" att användas (detta har lägst prioritet)."
 hints_inspection: "* Avsedd endast för felsökning av hjälpregler. Visas inte för blockerade användare."
 hints_ipv6_on_32bit: "Obs: IPv6-sökningar kanske inte fungerar korrekt på vissa 32-bitarssystem."
 hints_logging_datetime: "Användbart tips: Du kan bifoga information om datum och tid till namnen på loggfiler genom att använda platshållare i tidsformat. Tillgängliga platshållare för tidsformat visas vid {{Links.ConfigRef.time_format}}."
@@ -430,7 +435,7 @@ hints_shorthand:
  2.: "Om du behöver användare för att kunna komma åt din webbplats via proxyservrar, inte blockera detta. Annars du kan blockera detta."
  3.: "Direkt användning i signaturer stöds inte, men det kan åberopas på annat sätt under särskilda omständigheter."
  4.: "Avser fall där förkortningsord inte används alls, eller inte känns igen av CIDRAM."
- En per signatur.: "En signatur kan anropa flera profiler, men kan bara använda ett förkortat ord. Det är möjligt att flera förkortningsord kan vara lämpliga, men eftersom endast ett kan användas, vi strävar efter att alltid använda endast de mest lämpliga."
+ En per signatur.: "En signatur kan anropa flera profiler, men kan bara använda ett förkortningsord. Det är möjligt att flera förkortningsord kan vara lämpliga, men eftersom endast ett kan användas, vi strävar efter att alltid använda endast de mest lämpliga."
  Prioritet.: "Ett valt alternativ har alltid prioritet framför ett alternativ som inte är valt. T.ex., om flera förkortningsord är i spel men bara ett av dem är satts att vara blockerat, begäran kommer fortfarande att blockeras."
  Mänskliga slutpunkter och molntjänster.: "Molntjänst kan hänvisa till webbhotellleverantörer, serverfarmar, datacenter, eller ett antal andra saker. Mänsklig slutpunkt hänvisar till hur en människa kommer åt internet, till exempel via en internetleverantör. Ett nätverk tillhandahåller vanligtvis bara det ena eller det andra, men kan ibland tillhandahålla båda. Vi strävar efter att aldrig identifiera potentiella mänskliga slutpunkter som molntjänster. Därför en molntjänst kan identifieras som något annat om dess räckvidd delas av kända mänskliga slutpunkter. Likaså, vi strävar efter att alltid identifiera molntjänster, vars räckvidd inte delas av några kända mänskliga slutpunkter, som molntjänster. Därför en begäran som uttryckligen identifieras som en molntjänst förmodligen inte delar sitt räckvidd med några kända mänskliga slutpunkter. Likaså, en begäran som identifieras explicit av attacker eller spam risk förmodligen delar dem. Internet är dock alltid i förändring, syftet med nätverk förändras över tiden, och räckvidd köps eller säljs alltid, så förbli medveten och vaksam när det gäller risken för falska positiva."
 hints_time_format: |
@@ -614,7 +619,6 @@ label:
  False positive risk: "Falsk positiv risk:"
  Fancy: "Fint"
  Focus: "Fokuset:"
-
  Greylist the request: "Grålista begäran.\nÅterställer antalet utlösta signaturer, men fortsätter att bearbeta begäran. Rekommenderas när du inte vill vitlista begäran, men behöver något mer omfattande än att utlösa en bypass."
  Harvester: "Skördare"
  Hide: "Dölja"
@@ -797,7 +801,7 @@ link:
 macro:
  Description:
   activate_modules: &MayImpactPerformance "Rekommenderas inte generellt, eftersom det sannolikt finns några som du inte behöver. Att installera och aktivera komponenter när de inte behövs kan påverka prestandan negativt."
-  install_l10n_core: &RecommendKeepingCore "När <code>lang_override</code>-konfigurationsdirektivet är aktiverat, om en användares webbläsare anger en viss språkpreferens, så länge L10N-data för det språket är installerad, kan CIDRAM visa sidan "nekat tillgång" på det angivna språket. Följaktligen rekommenderas att ha all core L10N-data kvar installerad."
+  install_l10n_core: &RecommendKeepingCore "När <code>lang_override</code>-konfigurationsdirektivet är aktiverat, om en användares webbläsare anger en viss språkpreferens, så länge L10N-data för det språket är installerad, kan CIDRAM visa sidan "åtkomst nekad" på det angivna språket. Följaktligen rekommenderas att ha all core L10N-data kvar installerad."
   install_l10n_fe: &RecommendFEOnlyNeeded "Ditt föredragna språk kan anges via <code>lang</code>-konfigurationsdirektivet. När detta väl har gjorts behöver du sannolikt ingen front-end L10N-data förutom det för ditt föredragna språk, och du kanske vill ta bort det för att marginellt frigöra lite tillgängligt diskutrymme. Men oavsett om du väljer att ta bort den eller behålla den, borde det inte göra någon skada."
   install_modules: *MayImpactPerformance
   uninstall_l10n_core: *RecommendKeepingCore
@@ -895,7 +899,7 @@ response:
  Invalid API key: "Ogiltig API-nyckel!"
  Invalid password: "Inloggningsfel! Felaktigt lösenord!"
  Invalid timestamp: "Ogiltig tidsstämpel!"
- Maximum number of login attempts exceeded: "Maximalt antal inloggningsförsök överskreds; Nekat tillgång."
+ Maximum number of login attempts exceeded: "Maximalt antal inloggningsförsök överskreds; Åtkomst nekad."
  New auxiliary rule, %s, created successfully: "Ny hjälpregel, "%s", skapades framgångsrikt."
  Not available at the upstream for legal reasons: "Inte tillgängligt uppströms av juridiska skäl."
  Not available at the upstream: "Inte tillgängligt uppströms."

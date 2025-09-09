@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2025.09.05).
+# This file: Portuguese language data for the front-end (last modified: 2025.09.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -136,7 +136,9 @@ checkbox:
   pt-PT: "Registar algum erro gerado durante esta etapa?"
  Omit this field when it_s empty: "Omitir este campo quando estiver vazio?"
  Profile it: "Perfilar-o."
- Should infractions generated during this stage count towards IP tracking: "Contar infrações geradas durante esta etapa para o monitoração de IP?"
+ Should infractions generated during this stage count towards IP tracking:
+  pt-BR: "Contar infrações geradas durante esta etapa para o monitoração IP?"
+  pt-PT: "Contar as infrações geradas durante esta etapa para a monitorização IP?"
  Should this field appear in log entries: "Este campo deve aparecer nas entradas de log?"
  Should this field appear on the access denied page: "Este campo deve aparecer na página "acesso negado"?"
  Suppress Cloudflare Turnstile: "Suprimir Cloudflare Turnstile"
@@ -202,7 +204,9 @@ config:
  captcha_lockto: "A que ligar CAPTCHAs."
  captcha_log: {"pt-BR": "Registrar todas as tentativas de CAPTCHA? Se sim, especificar o nome a ser usado para o arquivo de log. Se não, deixe esta variável em branco.", "pt-PT": "Registar todas as tentativas de CAPTCHA? Se sim, especificar o nome a utilizar para o arquivo de log. Se não, deixe esta variável em branco."}
  captcha_messages: "Mensagens a serem exibidas junto com CAPTCHAs."
- captcha_nonblocked_status_code: "Qual código de status deve ser usado ao exibir CAPTCHAs para solicitações não bloqueadas?"
+ captcha_nonblocked_status_code:
+  pt-BR: "Qual código de status deve ser usado ao exibir CAPTCHAs para solicitações não bloqueadas?"
+  pt-PT: "Qual código de estado deve ser utilizado ao exibir CAPTCHAs para solicitações não bloqueados?"
  captcha_signature_limit: "O número máximo de assinaturas permitidas antes que o CAPTCHA seja retirado. Padrão = 1."
  captcha_turnstile_secret: &TurnstileCred {"pt-BR": "Se quiser usar o Cloudflare Turnstile com o CIDRAM, você precisará inserir um valor aqui. Caso contrário, pode ignorá-lo.", "pt-PT": "Se quiser utilizar o Cloudflare Turnstile com o CIDRAM, terá de introduzir um valor aqui. Caso contrário, pode ignorá-lo."}
  captcha_turnstile_sitekey: *TurnstileCred
@@ -246,7 +250,6 @@ config:
   pt-PT: "O modo para o tema a utilizar no front-end."
  general: "Configuração geral (qualquer configuração principal que não pertença a outras categorias)."
  general_allow_gethostbyaddr_lookup: "Permitir pesquisas gethostbyaddr quando o UDP não está disponível? True = Sim [Padrão]; False = Não."
- general_ban_override: "Sobrepor "http_response_header_code" quando "infraction_limit" é excedido? 200 = Não sobrepor [Padrão]. Outros valores são os mesmos que os valores disponíveis para "http_response_header_code"."
  general_default_algo: "Define qual algoritmo usar para todas as futuras senhas e sessões."
  general_default_dns:
   pt-BR: "Uma lista de servidores DNS a serem usados para pesquisas de nomes de host. ATENÇÃO: Não mude isso a menos que você saiba o que está fazendo!"
@@ -268,7 +271,9 @@ config:
   pt-PT: "Como você prefere que o endereço de e-mail seja apresentado aos utilizadores?"
  general_fields: "Controles para os campos durante eventos de bloqueio (quando uma solicitação é bloqueada)."
  general_force_hostname_lookup: "Forçar pesquisas de nome de anfitrião? True = Sim; False = Não [Padrão]. As pesquisas de nome de anfitrião normalmente são realizadas com base na necessidade, mas pode ser forçado para todos os solicitações. Isso pode ser útil como forma de fornecer informações mais detalhadas nos arquivos de log, mas também pode ter um efeito ligeiramente negativo sobre o desempenho."
- general_http_response_header_code: "Qual mensagem de status HTTP deve enviar o CIDRAM ao bloquear solicitações?"
+ general_http_response_header_code:
+  pt-BR: "Qual mensagem de status HTTP deve enviar o CIDRAM ao bloquear solicitações?"
+  pt-PT: "Qual mensagem de estado HTTP deve enviar o CIDRAM ao bloquear solicitações?"
  general_ipaddr:
   pt-BR: "Onde encontrar o IP endereço das solicitações? (Útil por serviços como o Cloudflare). Padrão = REMOTE_ADDR. ATENÇÃO: Não mude isso a menos que você saiba o que está fazendo!"
   pt-PT: "Onde encontrar o IP endereço das solicitações? (Útil por serviços como o Cloudflare). Padrão = REMOTE_ADDR. ATENÇÃO: Não mude isso a menos que você saiba o que está a fazer!"
@@ -281,12 +286,18 @@ config:
   pt-PT: "Se estiver a enviar solicitações de saída por meio de um proxy e se esse proxy exigir um nome de utilizador e uma senha, especifique esse nome de utilizador e senha aqui (por exemplo, <code>user:pass</code>). Caso contrário, deixe em branco."
  general_sensitive: "Uma lista de caminhos a serem considerados como páginas confidenciais. Cada caminho listado será verificado em relação ao URI reconstruído quando necessário. Um caminho que começa com uma barra será tratado como um literal, e correspondido a partir do componente de caminho da solicitação em diante. Como alternativa, um caminho que começa com um caractere não alfanumérico, e termina com o mesmo caractere (ou o mesmo caractere mais um sinalizador "i" opcional) será tratado como uma expressão regular. Qualquer outro tipo de caminho será tratado como um literal, e pode corresponder a qualquer parte do URI. O fato de um caminho ser considerado uma página confidencial pode afetar o comportamento de alguns módulos, mas não tem nenhum efeito de outra forma."
  general_silent_mode: "Deve CIDRAM silenciosamente redirecionar as tentativas de acesso bloqueadas em vez de exibir o "acesso negado" página? Se sim, especificar o local para redirecionar as tentativas de acesso bloqueadas para. Se não, deixe esta variável em branco."
- general_silent_mode_response_header_code: "Qual mensagem de status HTTP deve enviar o CIDRAM ao redirecionar silenciosamente as tentativas de acesso bloqueados?"
+ general_silent_mode_response_header_code:
+  pt-BR: "Qual mensagem de status HTTP deve enviar o CIDRAM ao redirecionar silenciosamente as tentativas de acesso bloqueado?"
+  pt-PT: "Qual mensagem de estado HTTP deve enviar o CIDRAM ao redirecionar silenciosamente as tentativas de acesso bloqueado?"
  general_stages:
   pt-BR: "Controles para as etapas da cadeia de execução (se ativado, se os erros são registrados, etc)."
   pt-PT: "Controles para as etapas da cadeia de execução (se ativado, se os erros são registados, etc)."
- general_statistics: "Controla quais informações estatísticas rastrear."
- general_statistics_captchas: "Controla quais informações estatísticas rastrear para CAPTCHAs."
+ general_statistics:
+  pt-BR: "Controla quais informações estatísticas monitorar."
+  pt-PT: "Controla quais as informações estatísticas a monitorizar."
+ general_statistics_captchas:
+  pt-BR: "Controla quais informações estatísticas monitorar para CAPTCHAs."
+  pt-PT: "Controla quais as informações estatísticas a monitorizar para CAPTCHAs."
  general_time_format: "O formato de notação de data/tempo utilizado pelo CIDRAM. Opções adicionais podem ser adicionadas mediante solicitação."
  general_time_offset: "Deslocamento do fuso horário em minutos."
  general_timezone:
@@ -382,10 +393,16 @@ config:
  signatures_conflict_response:
   pt-BR: "Quando há muitas tentativas simultâneas de acessar os mesmos recursos (por exemplo, solicitações simultâneas para vários processos PHP na mesma máquina para os mesmos recursos), algumas dessas tentativas podem falhar. No caso raro e improvável de isso afetar arquivos de assinatura ou módulos, o CIDRAM pode ser impedido de tomar uma decisão efetiva sobre a solicitação. Se isso acontecer, a solicitação deve ser bloqueada, e qual mensagem de status HTTP o CIDRAM deve enviar?"
   pt-PT: "Quando existem muitas tentativas simultâneas de aceder aos mesmos recursos (por exemplo, solicitações simultâneos para vários processos PHP na mesma máquina para os mesmos recursos), algumas destas tentativas podem falhar. No caso raro e improvável de isto afetar arquivos de assinatura ou módulos, o CIDRAM pode ser impedido de tomar uma decisão eficaz sobre o solicitação. Se isto acontecer, a solicitação deve ser bloqueado, e qual a mensagem de estado HTTP que o CIDRAM deve enviar?"
- signatures_default_tracktime: "A duração pela qual os endereços IP devem ser rastreados. Padrão = 7d0°0′0″ (1 semana)."
- signatures_infraction_limit: "Número máximo de infrações que um IP pode incorrer antes de ser banido por monitoração IP. Padrão = 10."
+ signatures_default_tracktime:
+  pt-BR: "A duração pela qual os endereços IP devem ser monitorados. Padrão = 7d0°0′0″ (1 semana)."
+  pt-PT: "A duração pela qual os endereços IP devem ser monitorizados. Padrão = 7d0°0′0″ (1 semana)."
+ signatures_infraction_limit:
+  pt-BR: "Número máximo de infrações que um IP pode incorrer antes de ser banido por monitoração IP. Padrão = 10."
+  pt-PT: "Número máximo de infrações que um IP pode incorrer antes de ser banido por monitorização IP. Padrão = 10."
  signatures_shorthand: "Controla o que fazer com uma solicitação quando há uma correspondência positiva com uma assinatura que utiliza as palavras curtas fornecidas."
- signatures_tracking_override: "Permitir que os módulos substituem as opções de monitoração? True = Sim [Padrão]; False = Não."
+ signatures_tracking_override:
+  pt-BR: "Permitir que os módulos substituem as opções de monitoração? True = Sim [Padrão]; False = Não."
+  pt-PT: "Permitir que os módulos substituem as opções de monitorização? True = Sim [Padrão]; False = Não."
  supplementary_cache_options: "Opções de cache suplementares. Nota: Alterar estes valores podem potencialmente fazer você ser estar desconectado."
  supplementary_cache_options_enable_apcu: "Especifica se deve tentar usar o APCu para armazenamento em cache. Padrão = True."
  supplementary_cache_options_enable_memcached: "Especifica se deve tentar usar o Memcached para armazenamento em cache. Padrão = False."
@@ -439,7 +456,6 @@ field:
  Add to tracking: "Adicione ao monitoramento"
  Add webhook: "Adicione um webhook"
  After 24 hours, bundled together: "Após 24 horas, agrupados juntos (ou quando desencadeados manualmente, por exemplo, via cron)."
- Banned: "Banido"
  Blocked: "Bloqueado"
  Clear all: "Cancelar tudo"
  Clear: "Cancelar"
@@ -485,12 +501,12 @@ field:
  Requests to the CIDRAM front-end: "Solicitações ao front-end do CIDRAM"
  Reset: "Reiniciar"
  Set new password: "Definir nova senha"
- Status: "Estado"
+ Status: {"pt-BR": "Status", "pt-PT": "Estado"}
  Time of attack (if unknown, use current time): "A hora do ataque (se desconhecido, use a hora atual)"
  Timezone (defaults to your local time):
   pt-BR: "Fuso horário (o padrão é sua hora local)"
   pt-PT: "Fuso horário (o padrão é a sua hora local)"
- Tracking: "Monitoração"
+ Tracking: {"pt-BR": "Monitoração", "pt-PT": "Monitorização"}
  True (True): "True (Verdadeiro)"
  Uninstall: "Desinstalar"
  Update all: "Atualizar tudo"
@@ -514,7 +530,9 @@ field:
 hint:
  This value can be found in the dashboard for your CAPTCHA service: "Este valor pode ser encontrado no painel do seu serviço CAPTCHA."
 hints_asnlookup: "** Requer funcionalidade de pesquisa ASN (por exemplo, através do módulo IP-API ou BGPView)."
-hints_aux_stats: "Nota: O rastreamento de estatísticas para regras auxiliares pode ser controlado na página de regras auxiliares."
+hints_aux_stats:
+ pt-BR: "Nota: O monitoramento de estatísticas para regras auxiliares pode ser controlado na página de regras auxiliares."
+ pt-PT: "Nota: A monitorização de estatísticas para regras auxiliares pode ser controlado na página de regras auxiliares."
 hints_cause_fp: "*!! Alta probabilidade de causar falsos positivos devido a %s."
 hints_cclookup: "** Requer funcionalidade de pesquisa de código de país (por exemplo, através do módulo IP-API ou BGPView)."
 hints_client_hints:
@@ -529,6 +547,25 @@ hints_duration:
  Inglês simples.: "A duração pode ser descrita escrevendo as unidades em inglês simples. Por exemplo, <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> por uma semana, dois dias, três horas, quatro minutos, cinco segundos."
  Restrições.: "A notação pode ser mista, mas as unidades devem sempre ser descritas da maior para a menor, e não podem ser repetidas. Por exemplo, <strong>1 week 2 days 3′4″</strong> é <span class="txtGn">válido</span> e será entendido corretamente, mas <strong>3′4″ 1 week 2 days</strong> e <strong>3 hours 3h 3°</strong> são <span class="txtRd">inválidos</span>. O CIDRAM não se importa se você está usando espaçamento ou não. Os números devem ser simples e não formatados. Por praticidade, a maior unidade suportada é uma semana. Quando a configuração é atualizada, o CIDRAM normaliza as durações para o tempo de arco."
 hints_has_bypass: "* Esta opção tem um bypass correspondente em <code class="s">bypasses➡used</code>. É recomendável que a caixa de seleção para o bypass correspondente esteja marcado da mesma forma que a caixa de seleção para tentar verificar esta opção."
+hints_http_response_header_code:
+ 1.:
+  pt-BR: "Quando o "modo silencioso" estiver em vigor, a mensagem de status HTTP definida por <code class="s">general➡silent_mode_response_header_code</code> será usada (isso tem a maior precedência)."
+  pt-PT: "Quando o "modo silencioso" estiver em vigor, a mensagem de estado HTTP definida por <code class="s">general➡silent_mode_response_header_code</code> será utilizada (que tem a maior precedência)."
+ 2.:
+  pt-BR: "Quando a entidade solicitante for banida por exceder o limite de infrações, a mensagem de status HTTP para "banido" será usada."
+  pt-PT: "Quando a entidade requerente for banida por exceder o limite de infrações, a mensagem de estado HTTP para "banido" será utilizada."
+ 3.:
+  pt-BR: "Quando bloqueado devido à limitação de taxa, 429 será usado, ou quando bloqueado devido a conflitos de recursos, a mensagem de status HTTP definida por <code class="s">signatures➡conflict_response</code> será usada (a limitação de taxas e os conflitos de recursos têm igual precedência neste contexto)."
+  pt-PT: "Quando bloqueado devido à limitação de taxa, 429 será utilizado, ou quando bloqueado devido a conflitos de recursos, a mensagem de estado HTTP definida por <code class="s">signatures➡conflict_response</code> será utilizada (a limitação de taxas e os conflitos de recursos têm igual precedência neste contexto)."
+ 4.:
+  pt-BR: "Quando bloqueado devido a uma regra auxiliar que define uma "substituição do código de status HTTP", essa substituição do código de status HTTP será usada."
+  pt-PT: "Quando bloqueado devido a uma regra auxiliar que define uma "substituição do código de estado HTTP", esta substituição do código de estado HTTP será utilizada."
+ 5.:
+  pt-BR: "Quando bloqueado por motivos legais (por exemplo, quando bloqueado devido a uma assinatura personalizada que usa a palavra abreviada "legais"), a mensagem de status HTTP para "legais" será usada."
+  pt-PT: "Quando bloqueado por motivos legais (por exemplo, quando bloqueado devido a uma assinatura personalizada que utiliza a palavra abreviada "legais"), a mensagem de estado HTTP para "legais" será utilizada."
+ 6.:
+  pt-BR: "Para todas as outras solicitações bloqueadas, a mensagem de status HTTP para "padrão" será usada (isso tem a menor precedência)."
+  pt-PT: "Para todos os outros solicitações bloqueados, a mensagem de estado HTTP para "padrão" será utilizada (que tem a menor precedência)."
 hints_inspection:
  pt-BR: "* Destina-se apenas à depuração de regras auxiliares. Não exibido para usuários bloqueados."
  pt-PT: "* Destina-se apenas à depuração de regras auxiliares. Não exibido para utilizadores bloqueados."
@@ -691,7 +728,9 @@ label:
  308 Permanent Redirect: "308 Permanent Redirect (Redirecionamento Permanente)\nInstrui o cliente que o redirecionamento é PERMANENTE, e que o método de solicitação usado para o redirecionamento NÃO pode ser diferente do método de solicitação usado para a solicitação inicial."
  403 Forbidden: "403 Forbidden (Proibido)\nUm pouco mais robusto, mas um pouco menos amigável de usar. Recomendado para a maioria das circunstâncias gerais."
  409 Conflict: "409 Conflito\nRecomendado para conflitos de recursos (por exemplo, conflitos de mesclagem, conflitos de acesso a arquivos, etc). Não recomendado em outros contextos."
- 410 Gone: "410 Gone (Se foi)\nPode causar problemas ao resolver falsos positivos, pois alguns navegadores armazenam em cache essa mensagem de status e não enviam solicitações subsequentes, mesmo após terem sido desbloqueadas. Pode ser o mais preferível em alguns contextos, para certos tipos de tráfego."
+ 410 Gone:
+  pt-BR: "410 Gone (Se foi)\nPode causar problemas ao resolver falsos positivos, pois alguns navegadores armazenam em cache essa mensagem de status e não enviam solicitações subsequentes, mesmo após terem sido desbloqueadas. Pode ser o mais preferível em alguns contextos, para certos tipos de tráfego."
+  pt-PT: "410 Gone (Se foi)\nPode causar problemas ao resolver falsos positivos, pois alguns navegadores armazenam em cache esta mensagem de estado e não enviam solicitações subsequentes, mesmo após terem sido desbloqueadas. Pode ser o mais preferível em alguns contextos, para certos tipos de tráfego."
  418 I_m a teapot: "418 I'm a teapot (Eu sou um bule)\nReferências uma piada de primeiro de abril ({{Links.RFC2324}}). Muito improvável de ser entendido por qualquer cliente, bot, navegador, ou outro. Fornecido para diversão e conveniência, mas geralmente não recomendado."
  429 Too Many Requests: "429 Too Many Requests (Pedidos em excesso)\nRecomendado para limitação de taxa, ao lidar com ataques DDoS, e para prevenção de inundações. Não recomendado em outros contextos."
  451 Unavailable For Legal Reasons: "451 Unavailable For Legal Reasons (Indisponível por motivos legais)\nRecomendado ao bloquear principalmente por motivos legais. Não recomendado em outros contextos."
@@ -755,7 +794,6 @@ label:
  False positive risk: "Risco de falsos positivos:"
  Fancy: "Chique"
  Focus: "Foco:"
-
  Greylist the request: "Trate a solicitação como na lista cinza.\nRedefine o número de assinaturas desencadeadas, mas continua processando a solicitação. Recomendado quando você não deseja tratar a solicitação como na lista branca, mas precisa de algo mais substancial do que desencadear um bypass."
  Harvester: "Coletor"
  Hide: "Ocultar"
@@ -844,8 +882,8 @@ label:
  The cache is empty: "O cache está vazio."
  Total: "Total"
  Trigger a bypass: "Desencadear um bypass.\nSubtrai uma contagem do número de assinaturas desencadeadas, desde que pelo menos uma assinatura já tenha sido desencadeada. Recomendado para lidar com falsos positivos simples potencialmente causados pelos arquivos de assinatura padrão."
- Unignore this: "Não ignore isso"
- Values for IP tracking: "Valores para monitoração IP"
+ Unignore this: {"pt-BR": "Não ignore isso", "pt-PT": "Não ignore este"}
+ Values for IP tracking: {"pt-BR": "Valores para o monitoração IP", "pt-PT": "Valores para a monitorização IP"}
  Whitelist the request: "Trate a solicitação como na lista branca.\nRedefine o número de assinaturas desencadeadas, e aborta qualquer processamento adicional da solicitação."
  Your IP: {"pt-BR": "Seu IP:", "pt-PT": "O seu IP:"}
  Your UA: {"pt-BR": "Seu agente de usuário:", "pt-PT": "O seu agente de utilizador:"}
@@ -859,14 +897,16 @@ label:
   Drop the rule here to move it to this position, or onto another rule to swap positions: "Solte a regra aqui para movê-la para esta posição, ou para outra regra para trocar de posição."
   Email: "E-mail"
   Enable this rule: "Ative esta regra"
-  Enforce default IP tracking options: "Aplicar opções do monitoração de IP padrão"
-  Enforce extended IP tracking options: "Aplicar opções do monitoração de IP estendido"
+  Enforce default IP tracking options: {"pt-BR": "Aplicar opções do monitoração IP padrão", "pt-PT": "Aplicar opções da monitorização IP padrão"}
+  Enforce extended IP tracking options: {"pt-BR": "Aplicar opções do monitoração IP estendido", "pt-PT": "Aplicar opções da monitorização IP estendido"}
   Forcibly disable Cloudflare Turnstile: "Desative forçosamente o Cloudflare Turnstile"
   Forcibly disable Friendly Captcha: "Desative forçosamente o Friendly Captcha"
-  Forcibly disable IP tracking: "Desative forçosamente o monitoração de IP"
+  Forcibly disable IP tracking: {"pt-BR": "Desative forçosamente o monitoração IP", "pt-PT": "Desative forçosamente a monitorização IP"}
   Forcibly disable hCaptcha: "Desative forçosamente o hCaptcha"
-  Forcibly enable IP tracking: "Ative forçosamente o monitoração de IP"
-  HTTP status code override: "Substituição do código de status HTTP:"
+  Forcibly enable IP tracking: {"pt-BR": "Ative forçosamente o monitoração IP", "pt-PT": "Ative forçosamente a monitorização IP"}
+  HTTP status code override:
+   pt-BR: "Substituição do código de status HTTP:"
+   pt-PT: "Substituição do código de estado HTTP:"
   If the following conditions are met, %s: "Se as condições a seguir forem cumpridas, %s."
   Mark for use with Cloudflare Turnstile: "Marcar para uso com Cloudflare Turnstile"
   Mark for use with Friendly Captcha: "Marcar para uso com Friendly Captcha"
@@ -887,7 +927,7 @@ label:
   The reason given to the user when blocked:
    pt-BR: "O motivo dado ao usuário quando bloqueado:"
    pt-PT: "O motivo dado ao utilizador quando bloqueado:"
-  Track this rule: "Rastrear esta regra"
+  Track this rule: {"pt-BR": "Monitore esta regra", "pt-PT": "Monitorize esta regra"}
   Use Windows-style wildcards to test the conditions: "Use curingas no estilo do Windows para testar as condições."
   Use direct string comparison to test the conditions: "Use comparação direta de string para testar as condições."
   Use regular expressions to test the conditions: "Use expressões regulares para testar as condições."
@@ -926,7 +966,7 @@ link:
  Accounts: "Contas"
  Aggregator: "Agregador"
  Auxiliary Rules: "Regras auxiliares"
- Backup: {"pt-BR": "Backup", "pt-PT": "Cópia de segurança"}
+ Backup: "Backup"
  Cache Data: "Dados de cache"
  Calculator: "Calculadora"
  Configuration: "Configuração"
@@ -937,7 +977,7 @@ link:
  Get API key: "Se você ainda não tiver uma chave de API, clique aqui para obter uma."
  Home: "Página principal"
  IP Testing: "Teste IP"
- IP Tracking: "Monitoração IP"
+ IP Tracking: {"pt-BR": "Monitoração IP", "pt-PT": "Monitorização IP"}
  Intersector: "Intersetor"
  Log Out: "Sair"
  Logs: "Arquivos de log"
@@ -1017,7 +1057,7 @@ previewer:
 response:
  Account successfully created: "Conta criada com sucesso!"
  Account successfully deleted: "Conta deletada com sucesso!"
- Added %s to tracking: "Adicionado %s ao monitoração."
+ Added %s to tracking: {"pt-BR": "Adicionado %s ao monitoração.", "pt-PT": "Adicionado %s à monitorização."}
  Already up-to-date: "Já atualizado."
  An account with that username already exists: "Uma conta com esse nome já existe!"
  An error occurred while attempting to uninstall the component: "Ocorreu um erro ao tentar desinstalar o componente."
@@ -1049,7 +1089,7 @@ response:
  Failed to update auxiliary rules: "Falha ao atualizar regras auxiliares!"
  Failed to update configuration: "Falha ao atualizar a configuração!"
  Failed to update statistics: "Falha ao atualizar as estatísticas!"
- Failed to update tracking: "Falha ao atualizar o rastreamento!"
+ Failed to update tracking: {"pt-BR": "Falha ao atualizar o monitoramento!", "pt-PT": "Falha ao atualizar a monitorização!"}
  Failed to update: "Atualização falhada!"
  Failed to upload: "Falha ao carregar!"
  File contains unexpected content: "Arquivo contém conteúdo inesperado!"
@@ -1079,7 +1119,7 @@ response:
  Rate limited by the upstream: "Taxa limitada pelo upstream."
  Ready to install: "Pronto para instalar."
  Redirected: "Redirecionado"
- Removed %s from tracking: "Removido %s do monitoração."
+ Removed %s from tracking: {"pt-BR": "Removido %s do monitoração.", "pt-PT": "Removido %s da monitorização."}
  Repair process completed: "Processo de reparo concluído."
  Repair process failed: "Processo de reparo falhou."
  Served: "Servido"
@@ -1104,7 +1144,7 @@ response:
  There_s nothing to analyse, sorry: "Não há nada para analisar, desculpe."
  There_s nothing to print, sorry: "Não há nada para imprimir, desculpe."
  There_s nothing to write, sorry: "Não há nada para escrever, desculpe."
- Tracking cleared: "Monitoração cancelado."
+ Tracking cleared: {"pt-BR": "Monitoração cancelado.", "pt-PT": "Monitorização cancelado."}
  Unable to determine: "Não foi possível determinar."
  Unknown error: "Erro desconhecido!"
  Username doesn_t exist:
@@ -1124,7 +1164,7 @@ stages:
  Check whether banned: "Verifique se está banido"
  Deploy CAPTCHAs (blocked requests): "Implantar CAPTCHAs (solicitações bloqueadas)"
  Deploy CAPTCHAs (non-blocked requests): "Implantar CAPTCHAs (solicitações não bloqueadas)"
- Execute IP tracking: "Executar monitoração de IP"
+ Execute IP tracking: {"pt-BR": "Executar o monitoração IP", "pt-PT": "Executar a monitorização IP"}
  Execute auxiliary rules: "Executar regras auxiliares"
  Execute modules: "Executar módulos"
  Execute other verification: "Executar outra verificação"
@@ -1238,7 +1278,9 @@ tip:
  Home: "Esta é a página principal do CIDRAM front-end. Selecione um link no menu de navegação à esquerda para continuar."
  How many infractions to incur: "Quantas infrações incorrer."
  IP Testing: "A página para teste IP permite que você teste se os endereços IP são bloqueados pelas assinaturas atualmente instaladas."
- IP Tracking: "A página de monitoração IP permite verificar o status de monitoração de endereços IP, para verificar quais deles foram banidos, e para cancelar monitoração para eles se você quiser fazê-lo."
+ IP Tracking:
+  pt-BR: "A página de monitoração IP permite verificar o status de monitoração de endereços IP, para verificar quais deles foram banidos, e para cancelar monitoração para eles se você quiser fazê-lo."
+  pt-PT: "A página de monitorização IP permite verificar o estado de monitorização de endereços IP, para verificar quais deles foram banidos, e para cancelar a monitorização para os mesmos se quiser fazê-lo."
  Intersector:
   pt-BR: "O intersetor pode ser usado para determinar os fatores comuns de dois conjuntos de alcances."
   pt-PT: "O intersetor pode ser utilizado para determinar os fatores comuns de dois conjuntos de alcances."

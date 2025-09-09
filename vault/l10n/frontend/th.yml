@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2025.09.05).
+# This file: Thai language data for the front-end (last modified: 2025.09.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,7 +204,6 @@ config:
  frontend_theme_mode: "โหมดสำหรับธีมที่จะใช้สำหรับ front-end."
  general: "การกำหนดค่าทั่วไป (การกำหนดค่าใด ๆ ที่ไม่ได้อยู่ในหมวดหมู่อื่น)."
  general_allow_gethostbyaddr_lookup: "อนุญาตให้มีการค้นหา gethostbyaddr เมื่อ UDP ไม่พร้อมใช้งานหรือไม่? True = หยุดใช้ [ค่าเริ่มต้น]; False = ไม่หยุดใช้."
- general_ban_override: "แทนที่ "http_response_header_code" เมื่อ "infraction_limit" ได้รับการเกินหรือไม่? 200 = อย่าแทนที่ [ค่าเริ่มต้น]. ค่าอื่น ๆ จะเหมือนกับค่าที่ใช้ได้สำหรับ "http_response_header_code"."
  general_default_algo: "กำหนดว่าจะใช้อัลกอริทึมใดสำหรับรหัสผ่านและเซสชันในอนาคต."
  general_default_dns: "รายการของเซิร์ฟเวอร์ DNS ใช้สำหรับการค้นหาชื่อโฮสต์. คำเตือน: อย่าเปลี่ยนสิ่งนี้จนกว่าคุณจะรู้ว่าคุณกำลังทำอะไร!"
  general_default_timeout: "หมดเวลาเริ่มต้นที่จะใช้สำหรับคำขอภายนอก? ค่าเริ่มต้น = 12 วินาที."
@@ -333,7 +332,6 @@ field:
  Add to tracking: "เพิ่มในการติดตาม"
  Add webhook: "เพิ่ม webhook"
  After 24 hours, bundled together: "หลังจากผ่านไป 24 ชั่วโมง มัดรวมกัน (หรือเมื่อถูกทริกเกอร์ด้วยตนเอง เช่น ผ่าน cron)."
- Banned: "ถูกห้าม"
  Blocked: "ถูกบล็อก"
  Clear all: "ล้างทั้งหมด"
  Clear: "ล้าง"
@@ -597,7 +595,6 @@ label:
  False positive risk: "ความเสี่ยงสำหรับการบวกเท็จ:"
  Fancy: "แฟนซี"
  Focus: "โฟกัส:"
-
  Greylist the request: "รายการเทา.\nรีเซ็ตจำนวนลายเซ็น แต่ดำเนินการตามคำขอต่อไป. แนะนำเมื่อคุณไม่ต้องการรายการสีขาว แต่ต้องการมากกว่าบายพาส."
  Harvester: "เครื่องมือเก็บเกี่ยว"
  Hide: "ปิดบัง"

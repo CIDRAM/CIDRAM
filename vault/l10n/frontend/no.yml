@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2025.09.05).
+# This file: Norwegian language data for the front-end (last modified: 2025.09.08).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -204,7 +204,6 @@ config:
  frontend_theme_mode: "Modusen for temaet som skal brukes for frontenden."
  general: "Generell konfigurasjon (enhver kjernekonfigurasjon som ikke tilhører andre kategorier)."
  general_allow_gethostbyaddr_lookup: "Tillat gethostbyaddr oppslag når UDP er utilgjengelig? True = Ja [Standardverdi]; False = Nei."
- general_ban_override: "Overstyr «http_response_header_code» når «infraction_limit» overskrides? 200 = Ikke overstyre [Standardverdi]. Andre verdier er de samme som tilgjengelige verdier for «http_response_header_code»."
  general_default_algo: "Definerer hvilken algoritme som skal brukes for alle fremtidige passord og økter."
  general_default_dns: "En liste over DNS-servere som skal brukes til vertsnavn-oppslag. ADVARSEL: Ikke endre dette med mindre du vet hva du gjør!"
  general_default_timeout: "Standard tidsavbrudd for eksterne forespørsler? Standardverdi = 12 sekunder."
@@ -333,7 +332,6 @@ field:
  Add to tracking: "Legg til sporing"
  Add webhook: "Legg til nettkrok"
  After 24 hours, bundled together: "Etter 24 timer, buntet sammen (eller når den utløses manuelt, f.eks., via cron)."
- Banned: "Utestengt"
  Blocked: "Blokkert"
  Clear all: "Rydde alt"
  Clear: "Rydde"
@@ -418,6 +416,13 @@ hints_duration:
  Vanlig engelsk.: "Varighet kan beskrives ved å skrive enhetene på vanlig engelsk. F.eks., <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> for én uke, to dager, tre timer, fire minutter, fem sekunder."
  Begrensninger.: "Notasjon kan blandes, men enheter må alltid beskrives fra størst til minste, og kan ikke gjentas. F.eks., <strong>1 week 2 days 3′4″</strong> er <span class="txtGn">gyldig</span> og vil bli forstått riktig, men <strong>3′4″ 1 week 2 days</strong> og <strong>3 hours 3h 3°</strong> er <span class="txtRd">ugyldige</span>. CIDRAM bryr seg ikke om du bruker mellomrom eller ikke. Tall må være enkle og uformaterte. For praktiske formål er den største støttede enheten en uke. Når konfigurasjonen oppdateres, normaliserer CIDRAM varighetene til buetid."
 hints_has_bypass: "* Dette alternativet har en tilsvarende bypass under <code class="s">bypasses➡used</code>. Uansett om avmerkingsboksen for å forsøke å bekrefte dette alternativet er valgt, anbefales det å sørge for at avkrysningsboksen for den tilsvarende forbikjøringen er den samme."
+hints_http_response_header_code:
+ 1.: "Når «stille modus» er aktiv, vil HTTP-statusmeldingen definert av <code class="s">general➡silent_mode_response_header_code</code> bli brukt (dette har høyest prioritet)."
+ 2.: "Når den forespørrende enheten er utestengt på grunn av overskridelse av overtredelsesgrensen, vil HTTP-statusmeldingen for «utestengt» bli brukt."
+ 3.: "Når den er blokkert på grunn av hastighetsbegrensning, vil 429 bli brukt, eller når den er blokkert på grunn av ressurskonflikter, vil HTTP-statusmeldingen definert av <code class="s">signatures➡conflict_response</code> bli brukt (hastighetsbegrensning og ressurskonflikter har like stor prioritet i denne sammenhengen)."
+ 4.: "Når den er blokkert på grunn av en tilleggsregel som angir en «HTTP-statuskode overstyring», vil den HTTP-statuskode overstyringen bli brukt."
+ 5.: "Når den er blokkert av juridiske årsaker (dvs., når den er blokkert på grunn av en tilpasset signatur som bruker stenografiorden «juridiske»), vil HTTP-statusmeldingen for «juridiske» bli brukt."
+ 6.: "For alle andre blokkerte forespørsler vil HTTP-statusmeldingen for «standardverdi» bli brukt (dette har lavest prioritet)."
 hints_inspection: "* Kun ment for feilsøking av tilleggsregler. Ikke vist for blokkerte brukere."
 hints_ipv6_on_32bit: "Merk: IPv6-oppslag fungerer kanskje ikke riktig på enkelte 32-biters systemer."
 hints_logging_datetime: "Nyttig tips: Du kan legge ved dato-/klokkeslettinformasjon til navnene på loggfilene ved å bruke plassholdere for tidsformat. Tilgjengelige tidsformatplassholdere vises ved {{Links.ConfigRef.time_format}}."
@@ -612,7 +617,6 @@ label:
  False positive risk: "Falsk positiv risiko:"
  Fancy: "Fancy"
  Focus: "Fokuset:"
-
  Greylist the request: "Grålister forespørselen.\nTilbakestiller antallet signaturer som er utløst, men fortsetter å behandle forespørselen. Anbefales når du ikke vil hvitelister forespørselen, men trenger noe mer omfattende enn å utløse en bypass."
  Harvester: "Harvester"
  Hide: "Gjem"

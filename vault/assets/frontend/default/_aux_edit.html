@@ -3,18 +3,18 @@
 {nav}
   </nav>
   <main class="extend">
-    <div class="col">
-      <div class="s flexstretch" id="stateMsg">{state_msg}</div>
-      <div class="ng1 center">
-        <a href="?cidram-page=aux-view">{link.View mode}</a> – <a href="?cidram-page=aux-edit">{link.Edit mode}</a><br />
-        <small class="s">{tip.Auxiliary Rules Modes}</small><br /><br />
-        {EnableOrDisableRules}
-      </div>
-      <form id="auxForm" action="?cidram-page=aux-edit" method="POST">
+    <form id="auxForm" action="?cidram-page=aux-edit" method="POST">
+      <div class="col">
+        <div class="s flexstretch" id="stateMsg">{state_msg}</div>
+        <div class="ng1 center">
+          <a href="?cidram-page=aux-view">{link.View mode}</a> – <a href="?cidram-page=aux-edit">{link.Edit mode}</a><br />
+          <small class="s">{tip.Auxiliary Rules Modes}</small><br /><br />
+          {EnableOrDisableRules}
+        </div>
 {Data}
-      </form>
-      <form id="auxFormMinified" action="?cidram-page=aux-edit" method="POST" style="display:none"><input type="hidden" id="minifiedFormData" name="minifiedFormData" value="" /></form>
-    </div>
+      </div>
+    </form>
+    <form id="auxFormMinified" action="?cidram-page=aux-edit" method="POST" style="display:none"><input type="hidden" id="minifiedFormData" name="minifiedFormData" value="" /></form>
   </main>
 </div>
 <script type="text/javascript">minifyForm('#auxForm','auxFormMinified','minifiedFormData');

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The auxiliary rules view mode page (last modified: 2025.08.28).
+ * This file: The auxiliary rules view mode page (last modified: 2025.09.08).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -197,20 +197,6 @@ if (!$this->FE['ASYNC']) {
         $this->L10N->getString('label.aux.redirect the request (without blocking it)'),
         $this->L10N->getString('label.aux.run a file to handle the request'),
         $this->L10N->getString('label.aux.profile the request')
-    );
-
-    /** Priority information about status codes. */
-    $this->FE['Priority_Status_Codes'] = sprintf(
-        '%2$s%1$s%3$s%1$s%4$s%1$s%5$s%1$s%6$s%1$s%7$s%1$s%8$s%1$s%9$s',
-        $this->L10N->Directionality !== 'rtl' ? '➡' : '⬅',
-        '<code dir="ltr">silent_mode(30x)</code>',
-        '<code dir="ltr">ban_override(4xx🔄5xx)</code>',
-        '<code dir="ltr">rate_limiting(429)</code>',
-        $this->L10N->getString('link.Auxiliary Rules') . '<code dir="ltr">(4xx🔄5xx)</code>',
-        '<code dir="ltr">http_response_header_code(4xx🔄5xx)</code>',
-        $this->L10N->getString('link.Auxiliary Rules') . '<code dir="ltr">(30x)</code>',
-        '<code dir="ltr">nonblocked_status_code(4xx)</code>',
-        $this->L10N->getString('label.Other')
     );
 
     /** Display flags for creating a new rule (view mode). */

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2025.09.08).
+# This file: Korean language data for the front-end (last modified: 2025.09.10).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -416,6 +416,13 @@ hints_duration:
  평범한 영어.: "기간은 일반 영어로 단위를 작성하여 설명할 수 있습니다. 예를 들어, 1주, 2일, 3시간, 4분, 5초 하기 위해 <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong>를 사용합니다."
  제약.: "표기법은 혼합될 수, 있지만 단위는 항상 가장 큰 것에서 가장 작은 것으로 설명되어야, 하며 반복될 수 없습니다. 예를 들어, <strong>1 week 2 days 3′4″</strong>는 <span class="txtGn">유효하</span>고 올바르게 이해되지만, <strong>3′4″ 1 week 2 days</strong>와 <strong>3 hours 3h 3°</strong>는 <span class="txtRd">유효하지 않습니다</span>. CIDRAM은 공백을 사용하는지 여부를 신경 쓰지 않습니다. 숫자는 형식이 지정되지 않아야 합니다. 실용성을 위해, 지원되는 최대 단위는 일주일입니다. 구성이 업데이트되면, CIDRAM은 지속 시간을 아크타임으로 정규화합니다."
 hints_has_bypass: "* 이 옵션은 <code class="s">bypasses➡used</code> 아래에 해당 바이패스가 있습니다. 해당 바이패스의 확인란이 이 옵션의 확인을 위한 확인란과 동일한 방식으로 표시되어 있는지 확인하는 것이 좋습니다."
+hints_http_response_header_code:
+ 1.: ""무음 모드"가 적용되면, <code class="s">general➡silent_mode_response_header_code</code>에 의해 정의된 HTTP 상태 메시지가 사용됩니다 (이게 가장 높은 우선순위를 가집니다)."
+ 2.: "요청 엔터티가 위반 한도를 초과하여 차단된 경우, "금지 된"에 대한 HTTP 상태 메시지가 사용됩니다."
+ 3.: "속도 제한으로 인해 차단된 경우, 429가 사용되고, 리소스 충돌로 인해 차단된 경우, <code class="s">signatures➡conflict_response</code>로 정의된 HTTP 상태 메시지가 사용됩니다 (이 맥락에서 속도 제한과 리소스 충돌은 동등한 우선권을 갖습니다)."
+ 4.: ""HTTP 상태 코드 재정의"를 설정하는 보조 규칙으로 인해 차단된 경우, 해당 HTTP 상태 코드 재정의가 사용됩니다."
+ 5.: "법적 이유로 차단된 경우 (즉, "적법한"이라는 약어를 사용하는 사용자 정의 서명으로 인해 차단된 경우), "적법한"에 대한 HTTP 상태 메시지가 사용됩니다."
+ 6.: "다른 모든 차단된 요청의 경우 "기본값"에 대한 HTTP 상태 메시지가 사용됩니다 (이게 가장 낮은 우선순위를 갖습니다)."
 hints_inspection: "* 보조 규칙 디버깅 전용입니다. 차단된 사용자에게는 표시되지 않습니다."
 hints_ipv6_on_32bit: "참고\_: IPv6 조회는 일부 32비트 시스템에서 제대로 작동하지 않을 수 있습니다."
 hints_logging_datetime: "유용한 팁\_: 시간 형식 자리 표시자를 사용하여 로그 파일 이름에 날짜/시간 정보를 첨부할 수 있습니다. 사용 가능한 시간 형식 자리 표시자는 {{Links.ConfigRef.time_format}}에 표시됩니다."
@@ -701,7 +708,7 @@ label:
   Forcibly disable IP tracking: "IP 추적을 강제로 비활성화"
   Forcibly disable hCaptcha: "HCaptcha를 강제로 비활성화"
   Forcibly enable IP tracking: "IP 추적을 강제로 활성화"
-  HTTP status code override: "HTTP 상태 코드 바꿔 놓음\_:"
+  HTTP status code override: "HTTP 상태 코드 재정의\_:"
   If the following conditions are met, %s: "다음 조건이 충족되면 %s."
   Mark for use with Cloudflare Turnstile: "Cloudflare Turnstile와 함께 사용하기위한 마크"
   Mark for use with Friendly Captcha: "Friendly Captcha와 함께 사용하기위한 마크"
@@ -829,6 +836,15 @@ previewer:
  Seconds: "초"
  Weeks: "주"
  Years: "연령"
+purpose:
+ Audio file: "오디오 파일"
+ Compressed file or archive: "압축 파일 또는 아카이브"
+ Database file: "데이터베이스 파일"
+ Email file: "이메일 파일"
+ Formulas file: "수식 파일"
+ Graphics file: "그래픽 파일 (예\_: 이미지, 벡터, 비디오)"
+ Graphs or presentation file: "그래프 또는 프레젠테이션 파일"
+ Spreadsheet file or tabular data: "스프레드시트 파일 또는 표 형식 데이터"
 response:
  Account successfully created: "계정 만들기에 성공했습니다!"
  Account successfully deleted: "계정 삭제가 성공했습니다!"

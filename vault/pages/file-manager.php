@@ -196,18 +196,8 @@ if (!$this->FE['ASYNC']) {
             $ThisFile['DeleteConfirmText'] = sprintf($this->L10N->getString('confirm.Delete'), $ThisFile['Filename']);
         }
         $ThisFile['ThisOptions'] = implode(' – ', $ThisFile['ThisOptions']);
-        if ($ThisFile['Icon'] === 'icon=directory') {
-            $ThisFile['Icon'] = sprintf('<span class="fmicon auxbl folder" title="%s" id="Icon%s"></span>', $ThisFile['Component'], $ThisFile['FilenameID']);
-        } elseif ($ThisFile['Icon'] === 'icon=text') {
-            $ThisFile['Icon'] = sprintf('<span class="fmicon auxbl documentation" title="%s" id="Icon%s"></span>', $ThisFile['Component'], $ThisFile['FilenameID']);
-        } elseif ($ThisFile['Icon'] === 'icon=logs') {
-            $ThisFile['Icon'] = sprintf('<span class="fmicon auxbl logs" title="%s" id="Icon%s"></span>', $ThisFile['Component'], $ThisFile['FilenameID']);
-        } elseif ($ThisFile['Icon'] === 'icon=configuration') {
-            $ThisFile['Icon'] = sprintf('<span class="fmicon auxbl configuration" title="%s" id="Icon%s"></span>', $ThisFile['Component'], $ThisFile['FilenameID']);
-        } elseif ($ThisFile['Icon'] === 'icon=auxiliary') {
-            $ThisFile['Icon'] = sprintf('<span class="fmicon auxbl auxiliary" title="%s" id="Icon%s"></span>', $ThisFile['Component'], $ThisFile['FilenameID']);
-        } elseif ($ThisFile['Icon'] === 'icon=updates') {
-            $ThisFile['Icon'] = sprintf('<span class="fmicon auxbl updates" title="%s" id="Icon%s"></span>', $ThisFile['Component'], $ThisFile['FilenameID']);
+        if (substr($ThisFile['Icon'], 0, 5) === 'icon=') {
+            $ThisFile['Icon'] = sprintf('<span class="fmicon auxbl %s" id="Icon%s"></span>', substr($ThisFile['Icon'], 5), $ThisFile['FilenameID']);
         } else {
             $ThisFile['Icon'] = sprintf('<img src="?cidram-page=icon&%s&theme=%s" alt="Icon" class="ico" id="Icon%s" />', $ThisFile['Icon'], $this->FE['theme'], $ThisFile['FilenameID']);
         }

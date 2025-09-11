@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2025.09.09).
+ * This file: General methods used by the front-end (last modified: 2025.09.11).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -67,14 +67,14 @@ trait FrontEndMethods
                 $Arr[$Key]['Directory'] = true;
                 $Arr[$Key]['Filesize'] = '';
                 $Arr[$Key]['Component'] = $this->L10N->getString('field.Directory');
-                $Arr[$Key]['Icon'] = 'icon=directory';
+                $Arr[$Key]['Icon'] = 'icon=folder';
                 continue;
             }
             $Arr[$Key]['Directory'] = false;
             if (is_file($Item)) {
                 $Arr[$Key]['Filesize'] = filesize($Item);
                 $Component = '';
-                $Arr[$Key]['Icon'] = 'icon=text';
+                $Arr[$Key]['Icon'] = 'icon=documentation';
                 $NoEdit = false;
                 $Early = false;
                 if (isset($this->Components['Files'])) {
@@ -83,7 +83,7 @@ trait FrontEndMethods
                     } elseif (preg_match('~(?:[^|/]\.ht|\.safety$|^salt\.dat$)~i', $Arr[$Key]['Filename'])) {
                         $Component = $this->L10N->getString('label.Safety mechanisms');
                         $NoEdit = true;
-                    } elseif (preg_match('~config\.yml$~i', $Arr[$Key]['Filename'])) {
+                    } elseif (preg_match('~(?:^|\.)config\.yml$~i', $Arr[$Key]['Filename'])) {
                         $Component = $this->L10N->getString('link.Configuration');
                         $Arr[$Key]['Icon'] = 'icon=configuration';
                         $Early = true;
@@ -97,7 +97,11 @@ trait FrontEndMethods
                         $Early = true;
                     } elseif (preg_match('/(?:^ignore\.dat|_custom\.dat|\.sig|\.inc)$/i', $Arr[$Key]['Filename'])) {
                         $Component = $this->L10N->getString('label.Other rules, signature files, etc');
-                    } elseif (preg_match('~(?:\.tmp|\.rollback|^(?:cache|hashes|ipbypass|rl)\.dat)$~i', $Arr[$Key]['Filename'])) {
+                    } elseif ($Arr[$Key]['Filename'] === 'cache.dat') {
+                        $Component = $this->L10N->getString('label.Cache data and temporary files');
+                        $Arr[$Key]['Icon'] = 'icon=cache';
+                        $Early = true;
+                    } elseif (preg_match('~(?:\.tmp|\.rollback|^(?:hashes|ipbypass|rl)\.dat)$~i', $Arr[$Key]['Filename'])) {
                         $Component = $this->L10N->getString('label.Cache data and temporary files');
                     } elseif ($Arr[$Key]['Filename'] === 'installed.yml') {
                         $Component = $this->L10N->getString('label.Component updates metadata');
@@ -115,7 +119,7 @@ trait FrontEndMethods
                 if (($ExtDel = strrpos($Item, '.')) === false || ($Ext = strtoupper(substr($Item, $ExtDel + 1))) === '') {
                     continue;
                 }
-                if (!$NoEdit && preg_match('/^(?:[BD]AT|[CXY]A?ML|CFG|[SDPX]?HT[AM]L?|IN[CFI]|[JT]S|LOG|MD|NEON|I?NFO|PHP\d?|PY|S?CSS|SIG|SVG|TXT)$/', $Ext)) {
+                if (!$NoEdit && preg_match('/^(?:[BD]AT|[CSXY]A?ML|CFG|CSV|[SDPX]?HT[AM]L?|IN[CFI]|[JT]S|LOG|MD|NEON|I?NFO|PHP\d?|PY|S?CSS|SIG|SVG|TEX|TXT)$/', $Ext)) {
                     $Arr[$Key]['CanEdit'] = true;
                 }
                 if ($Early) {
@@ -123,24 +127,124 @@ trait FrontEndMethods
                 }
                 if ($Ext === 'ICO') {
                     $Arr[$Key]['Icon'] = 'file=' . urlencode($Arr[$Key]['Filename']);
+                    if ($Component === '') {
+                        $Arr[$Key]['Component'] = $this->L10N->getString('purpose.Graphics file');
+                    }
                     continue;
                 }
-                if (preg_match('/^(?:CSV|ODS|XLS[XT]?)$/', $Ext)) {
-                    $Arr[$Key]['Icon'] = 'icon=spreadsheet';
-                } elseif (preg_match('/^(?:ODP|PDF|PP[ST]X?|XDP)$/', $Ext)) {
-                    $Arr[$Key]['Icon'] = 'icon=presentation';
-                } elseif (preg_match('/^(?:[OM]?DB|SQL)$/', $Ext)) {
-                    $Arr[$Key]['Icon'] = 'icon=database';
-                } elseif (preg_match('/^(?:ODF|TEX)$/', $Ext)) {
+                if ($Ext === 'EML') {
+                    $Arr[$Key]['Icon'] = 'icon=email';
+                    if ($Component === '') {
+                        $Arr[$Key]['Component'] = $this->L10N->getString('purpose.Email file');
+                    }
+                } elseif (preg_match('/^(?:CML|DX|G3K|JDX|MML|MOL|ODF|SDF?|SMI|SXM|TEX)$/', $Ext)) {
                     $Arr[$Key]['Icon'] = 'icon=formulas';
-                } elseif (preg_match('/^ODG$/', $Ext)) {
-                    $Arr[$Key]['Icon'] = 'icon=graphs';
-                } elseif (preg_match('/^(?:BM[2P]|C(D5|GM)|D(IB|W[FG]|XF)|ECW|FITS|GIF|IMG|J(F?IF?|P[2S]|PE?G?2?|XR)|P(BM|CX|DD|GM|IC|N[GMS]|PM|S[DP])|S(ID|V[AG])|TGA|W(BMP?|EBP|MP)|X(CF|BMP))$/', $Ext)) {
-                    $Arr[$Key]['Icon'] = 'icon=image';
-                } elseif (preg_match('/^(?:H?264|3GP(P2)?|A(M[CV]|VI)|BIK|D(IVX|V5?)|F([4L][CV]|LASH|MV)|GIFV|HLV|M(4V|OV|P4|PE?G[4V]?|KV|VR)|OGM|SWF|V(IDEO|OB)|W(EBM|M[FV]3?)|X(WMV|VID))$/', $Ext)) {
-                    $Arr[$Key]['Icon'] = 'icon=video';
-                } elseif (preg_match('/^(?:3GA|A(AC|IFF?|SF|U)|CDA|FLAC?|M(P?4A|IDI|KA|P[A23])|OGG|PCM|R(AM?|M[AX])|SWA|W(AVE?|MA))$/', $Ext)) {
+                    if ($Component === '') {
+                        $Arr[$Key]['Component'] = $this->L10N->getString('purpose.Formulas file');
+                    }
+                } elseif (preg_match('/^(?:CA?RD|VC(?:ARD|F))$/', $Ext)) {
+                    $Arr[$Key]['Icon'] = 'icon=card';
+                } elseif (preg_match('/^(?:OD[GP]|PDF|PP[ST]X?|XDP)$/', $Ext)) {
+                    $Arr[$Key]['Icon'] = 'icon=presentation';
+                    if ($Component === '') {
+                        $Arr[$Key]['Component'] = $this->L10N->getString('purpose.Graphs or presentation file');
+                    }
+                } elseif (preg_match('/^(?:0XE|INFECTED|QFU|QUARANTINED|ZL9)$/', $Ext)) {
+                    $Arr[$Key]['Icon'] = 'icon=quarantine';
+                    if ($Component === '') {
+                        $Arr[$Key]['Component'] = $this->L10N->getString('purpose.Quarantined file');
+                    }
+                } elseif (preg_match('/^(?:.*DB|4(?:D[CDRZ]|DIND[XY])|A(?:CCDE|D[PT]|PR)|BOX|CHML|D(?:A[FT]|BF|TA)|E(?:AP|GT|SS)|F(?:P[357]?|RM)|GTABLE|KEXI[CS]?|L(?:DF|IRS)|M(?:D[AEF]|Y[DI])|N(?:[CDST]F|V2)|O(?:DBC|RA)|P(?:CONTACT|D[IX]|RC)|R(?:E[CL]|IN)|S(?:DF|IG|QL(?:ITE)?)|UDL|W(?:ADATA|AINDX|AJOURNAL|AMODEL))$/', $Ext)) {
+                    $Arr[$Key]['Icon'] = 'icon=database';
+                    if ($Component === '') {
+                        $Arr[$Key]['Component'] = $this->L10N->getString('purpose.Database file');
+                    }
+                } elseif (preg_match('/^(?:386|A(?:C[CT].*|PP|SH.*)|BAT|BIN|C(?:CC|MD|OM.*|PL|SH)|DLL|DRV|ELF|EX[E_]|GAD.*|HTA.*|HTP.*|I(?:N[SX]|PA|SU)|JOB|JSE|KSH|MS[CIPT].*|NET|O[CS]X|OUT|P(?:[AI]F|RG|S1)|R(?:EG|GS|UN)|S(?:CR.*|CT|H[BS]|YS)|U3P|VBE|WOR.*|WS[FH]?)$/', $Ext)) {
+                    $Arr[$Key]['Icon'] = 'icon=executable';
+                    if ($Component === '') {
+                        $Arr[$Key]['Component'] = $this->L10N->getString('purpose.Executable file');
+                    }
+                } elseif (preg_match(
+                    '/^(?:16SVX|3GA|8SVX|' .
+                    'A(?:A[CX]?|BC|C[3DT]|IF[CF]?|IMPPL|LA?C|L[PS]|MR|PE|S[FTX]|TMOS|UD?|UDIO|UP3?|WB?)|' .
+                    'B(?:AND|CWAV|RSTM|WF)|' .
+                    'C(?:AU|DD?A|EL|PR|UST|WAV|WP)|' .
+                    'D(?:ARMS|FF|MKIT|RM|S[FS]|TS(?:HD|MA)?|VF|W[DP])|' .
+                    'E(?:NS|TF)|F(?:4A|LAC?|L[MP])|G(?:P|RIR|[SY]M)|I(?:KLAX|VS)|JAM|KERN|L(?:[AY]|OGIC)|' .
+                    'M(?:3U|EI|ETADATA|IDI?|KA|M[FPR]|NG|OGG|OVPKG|P[123AC]|P?4[ABP]|SC[XZ]|SF|USX?|X6HS|XL)|' .
+                    'N(?:IFF|MF|PR)|O(?:F[FRS]|G[AG]|MFI?|PUS|TS)|P(?:AC|CM|LS|SF|T[BFSX]|VD)|Q(?:AU[0A]?|UEYEAUDIO)|' .
+                    'R(?:A[MW]?|EAPEAKS|F64|IN|KA|M[AJX]?|PP(?:-BAK)?)|' .
+                    'S(?:ES|F[234KL]|HN|I[BD]|LN|MDL|MP|N[DG]|P[CX]|TF|WA|YN)|' .
+                    'T(?:AK|HD|TA|XM)|USTX?|V(?:CLS|GM|O[BCX]|PR|QF|SQX?)|' .
+                    'W(?:AVE?|MA|V)|X(?:PL|SPF)|YM|ZPL)$/',
+                $Ext)) {
                     $Arr[$Key]['Icon'] = 'icon=audio';
+                    if ($Component === '') {
+                        $Arr[$Key]['Component'] = $this->L10N->getString('purpose.Audio file');
+                    }
+                } elseif (preg_match('/^(?:12[3M]|AST|AWS|C(?:ELL|HIP|SV|TS)|D(?:EX|FG|I[FS])|E(?:DXZ?|FU|SS)|F(?:CS|ODS|P)|GN(?:M|UMERIC)|GS(?:HEET)?|IMP|NCSS|NUMBERS|O[DT]S|OGWU?|P(?:MDX?|MVX?|RESTO)|QPW|RDF|S[DTX]C|TMVT?|UOS|W(?:K[IQSU]|LS|Q[12]|R1)|_?XL(?:R?|S[BMXT]?|T[BMXT]?))$/', $Ext)) {
+                    $Arr[$Key]['Icon'] = 'icon=spreadsheet';
+                    if ($Component === '') {
+                        $Arr[$Key]['Component'] = $this->L10N->getString('purpose.Spreadsheet file or tabular data');
+                    }
+                } elseif (preg_match(
+                    '/^(?:.._|.[QZ].|7Z|' .
+                    'A(?:AR|CE|FA|LZ|PK|PPX?|PPXBUNDLE|R[CJK]?)?|' .
+                    'B(?:16Z|[AHRZ]|IN|Z2)|' .
+                    'C(?:A[BR]|PT|DX|FS|PIO|PT|RX)|' .
+                    'D(?:AR|D|EB|GC|MG)|' .
+                    'E(?:AR|CAB|CC|CSBX|G[GT]|MSIX(?:BUNDLE)?|S[DS]|ZIP)|' .
+                    'F(?:LIPCHART)?|G(?:3FC|CA|ENOZIP|Z2?)|H(?:A|KI)|I(?:MA|SO)|JAR|KGB|' .
+                    'L(?:AWRENCE|BR|HA|PAQ|Z[4HOX]?|ZMA)|' .
+                    'M(?:AR|BW|CADDON|OU|PKG|SIX?|SIXBUNDLE)|OAR|' .
+                    'P(?:AC?K|AF|AQ.?|AR2?|ARTIMG|EA|HAR|I[MT]|KG?|KZIP|YK)|QDA|' .
+                    'R(?:A[RX]|EV|[KZ]|PM|UN)|' .
+                    'S(?:7Z|BX|DA|E[AN]|FARK|[FQ]X|HAR|HK|ITX?|WM|Z)|' .
+                    'T(?:AR|[BGLX]Z2?)|' .
+                    'U(?:C[02AN]?|[ER]2|HA)|' .
+                    'W(?:A[RX]|IM)|X(?:AR|[FZ]|P3)|YZ1|Z(?:IPX?|OO|PAQ|ST|Z)?)$/',
+                $Ext)) {
+                    $Arr[$Key]['Icon'] = 'icon=archive';
+                    if ($Component === '') {
+                        $Arr[$Key]['Component'] = $this->L10N->getString('purpose.Compressed file or archive');
+                    }
+                } elseif (preg_match(
+                    '/^(?:3(?:DMF?|DMLW|D[SV]|G2|GP(?:P2)?|MF)|' .
+                    'A(?:AF|BC|CT?|EP|I|M[CFV]|N8|NIM?|OI|RT|S[EFMS]|T3|VCHD|VIF?|WG)|' .
+                    'B(?:3D|DL4|FRES|IK|LEND\d*|LOCK|LP|M[2P]|MD3|PG|RAW|RRES|TI|W)|' .
+                    'C(?:4D?|AL3D|ALS|AM|CP4|D[5R]|FL|GM|IT|LIP|MX|OB|OLLAB|ORE3D|PT|R2|TM)|' .
+                    'D(?:AE|DS|EEP|FF|IB|IVX|JVU|NG?|PM?|RAWIO|R[CPW]|TS|V5?|VR(?:-MS)?|W[FG]|XF)|' .
+                    'E(?:2D|CW|G[GT]|MF|PS?|XIF)|' .
+                    'F(?:[4L][BCVP]|ACT|BX|CP|ITS|L[ARV]|LASH|LIF|MV|S)|' .
+                    'G(?:BR|IFV?|L[BM]|LTF|MV|PL|RF)|' .
+                    'H(?:DR|EI[CF]|LV)|' .
+                    'H?264|' .
+                    'H(?:EC|EI[CF])|' .
+                    'I(?:C[BCM]|CNS|CO|FF|MAGE|MG|LBM|MOVIE(?:MOBILE|PROJ)?|NT|OB?)|' .
+                    'J(?:AS|BIG?|F?IF?|MESH|NG|P[2GS]|PE?G?2?|X[LR])|' .
+                    'K(?:DENLIVE|RA)|' .
+                    'L(?:BM|DR|W[OS]|X[FO])|' .
+                    'M(?:2TS|[24KO]V|3D|4[PV]|AX?|B|D[235PX]|ESH|IFF|IMODEL|IOBJECT|IPARTICLE|KV|M3D|NG|OTN|OV(?:IE)?|P[24DEGOV]|PE?G[4V]?|RC|SP|SWMM|T[LS]|VR|XF)|' .
+                    'N(?:EF|IT?F|OA|RRD|SV|W[CDF])|' .
+                    'O(?:BJ|DG|FF|GEX|G[MV]|TB)|' .
+                    'P(?:AL|[AB]M|C[123FTX]|D[DNS]|G[FM]|I[C123X]|ICT|L[DY]|N[GJMS]|OV|P[JM]|R[CT]|ROCREATE|RPROJ|S[BDP]|X[MRZ]?)|' .
+                    'Q(?:FX|MG|OI|T)|' .
+                    'R(?:3D|APHS|AW|ENDERMAN|GB|LE|MV?B?|OQ|WX)|' .
+                    'S(?:[AG]I|CT|I[ABD]|KI?P|LDASM|LDPRT|M[DIK]|OL|RT|SA|T[LR]|UF|V[AGI]|WF|XD)|' .
+                    'T(?:ARGA|GAX?|HP|IFF?|RES)|' .
+                    'U(?:3D|SD[ACZ]?)|' .
+                    'V(?:2D|DA|DOC|EG(?:-BAK)?|IDEO|ICAR|I[MV]|ND|OB|PJ|PROJ|RML97|SDX?|ST|TF|UE|WX)|' .
+                    'W(?:3D|BMP?|EB[MP]|FP|INGS|LMP|M[FPV]3?|RAP|RL|TV|VE)|' .
+                    'X(?:3D|AR|BM|CF|BMP|PM|ISF|VID|WMV)?|' .
+                    'YUV|' .
+                    'Z(?:3D|BMX|IF))$/',
+                $Ext)) {
+                    $Arr[$Key]['Icon'] = 'icon=graphics';
+                    if ($Component === '') {
+                        $Arr[$Key]['Component'] = $this->L10N->getString('purpose.Graphics file');
+                    }
+                } elseif (!$Arr[$Key]['CanEdit']) {
+                    $Arr[$Key]['Icon'] = 'icon=othernoedit';
                 }
                 continue;
             }

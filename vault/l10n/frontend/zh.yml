@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese language data for the front-end (last modified: 2025.09.08).
+# This file: Chinese language data for the front-end (last modified: 2025.09.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -173,8 +173,8 @@ config:
  components: {"zh-Hans": "CIDRAM使用的组件的启用和停用的配置。​通常由更新页面填充，但也可以从此处进行管理，以实现更好的控制以及更新页面无法识别的自定义组件。", "zh-Hant": "CIDRAM使用的組件的啟用和停用的配置。​通常由更新頁面填充，但也可以從此處進行管理，以實現更好的控制以及更新頁面無法識別的自定義組件。"}
  components_events: {"zh-Hans": "事件处理程序。​通常用于修改CIDRAM在内部的行为方式或提供附加功能。", "zh-Hant": "事件處理程序。​通常用於修改CIDRAM在內部的行為方式或提供附加功能。"}
  components_imports: {"zh-Hans": "进口。​通常用于向CIDRAM提供组件的配置信息。", "zh-Hant": "進口。​通常用於向CIDRAM提供組件的配置信息。"}
- components_ipv4: {"zh-Hans": "IPv4签名文件。", "zh-Hant": "IPv4簽名文件。"}
- components_ipv6: {"zh-Hans": "IPv6签名文件。", "zh-Hant": "IPv6簽名文件。"}
+ components_ipv4: {"zh-Hans": "IPv4签名文件。", "zh-Hant": "IPv4簽名檔案。"}
+ components_ipv6: {"zh-Hans": "IPv6签名文件。", "zh-Hant": "IPv6簽名檔案。"}
  components_modules: {"zh-Hans": "模块。", "zh-Hant": "模組。"}
  experimental: {"zh-Hans": "不稳定/实验！", "zh-Hant": "不穩定/實驗！"}
  extras: {"zh-Hans": "可选的安全附加模块配置。", "zh-Hant": "可選的安全附加模組配置。"}
@@ -330,7 +330,7 @@ config:
  recaptcha_sitekey: *CaptchaDashboard
  recaptcha_usemode: *CaptchaUseMode
  sfs: {"zh-Hans": "Stop Forum Spam模块的配置。", "zh-Hant": "Stop Forum Spam模組的配置。"}
- signatures: {"zh-Hans": "签名，签名文件，模块，等的配置。", "zh-Hant": "簽名，簽名文件，模組，等的配置。"}
+ signatures: {"zh-Hans": "签名，签名文件，模块，等的配置。", "zh-Hant": "簽名，簽名檔案，模組，等的配置。"}
  signatures_conflict_response:
   zh-Hans: "当同时尝试访问相同资源的次数过多时（例如，同时向同一台机器上的多个PHP进程发出对相同资源的请求），其中一些尝试可能会失败。​万一发生这种情况，并且影响到签名文件或模块，CIDRAM可能无法对该请求做出有效的决定。​如果发生这种情况，应该阻止该请求吗？​并且，CIDRAM应该发送哪条HTTP状态消息？"
   zh-Hant: "當有太多同時嘗試存取相同資源時（例如，同時向同一台電腦上的多個PHP進程請求相同資源），其中一些嘗試可能會失敗。​萬一這會影響簽署檔案或模組，CIDRAM可能無法對請求做出有效的決定。​如果發生這種情況，應該阻止該請求嗎？​並且，CIDRAM應該發送哪種HTTP狀態訊息？"
@@ -389,12 +389,12 @@ field:
  Component: {"zh-Hans": "组件", "zh-Hant": "組件"}
  Confirm: {"zh-Hans": "确认", "zh-Hant": "確認"}
  Create new account: {"zh-Hans": "创建新帐户", "zh-Hant": "創建新帳戶"}
- Currently active signature files: {"zh-Hans": "当前活动的签名文件", "zh-Hant": "當前活動的簽名文件"}
+ Currently active signature files: {"zh-Hans": "当前活动的签名文件", "zh-Hant": "當前活動的簽名檔案"}
  Deactivate: "停用"
  Delete account: {"zh-Hans": "删除帐户", "zh-Hant": "刪除帳戶"}
  Delete: {"zh-Hans": "删除", "zh-Hant": "刪除"}
  Direct input: {"zh-Hans": "直接输入", "zh-Hant": "直接輸入"}
- Directory: {"zh-Hans": "文件夹", "zh-Hant": "文件夾"}
+ Directory: {"zh-Hans": "文件夹", "zh-Hant": "檔案夾"}
  Download: {"zh-Hans": "下载", "zh-Hant": "下載"}
  Edit: {"zh-Hans": "编辑", "zh-Hant": "編輯"}
  Execute: {"zh-Hans": "执行", "zh-Hant": "執行"}
@@ -432,7 +432,7 @@ field:
  True (True): "True（真）"
  Uninstall: {"zh-Hans": "卸载", "zh-Hant": "卸載"}
  Update all: "更新一切"
- Update signature files: {"zh-Hans": "更新签名文件", "zh-Hant": "更新簽名文件"}
+ Update signature files: {"zh-Hans": "更新签名文件", "zh-Hant": "更新簽名檔案"}
  Update: "更新"
  Upload new file: {"zh-Hans": "上传新文件", "zh-Hant": "上傳新文件"}
  Use system default timezone: {"zh-Hans": "使用系统默认时区。", "zh-Hant": "使用系統默認時區。"}
@@ -484,7 +484,7 @@ hints_pdo_dsn:
 hints_sensitive_pages: {"zh-Hans": "注意：“敏感页面”的构成由{{Links.ConfigRef.sensitive}}决定。", "zh-Hant": "注意：『敏感頁面』的構成由{{Links.ConfigRef.sensitive}}決定。"}
 hints_shorthand:
  0.: {"zh-Hans": "如果您的网站需要通过LAN或localhost访问，不要阻止它。​否则，您可以阻止它。", "zh-Hant": "如果您的網站需要通過LAN或localhost訪問，不要阻止它。​否則，您可以阻止它。"}
- 1.: {"zh-Hans": "标准签名文件不使用它，但它仍然受支持，因为它可能对某些用户有用。", "zh-Hant": "標準簽名文件不使用它，但它仍然受支持，因為它可能對某些用戶有用。"}
+ 1.: {"zh-Hans": "标准签名文件不使用它，但它仍然受支持，因为它可能对某些用户有用。", "zh-Hant": "標準簽名檔案不使用它，但它仍然受支持，因為它可能對某些用戶有用。"}
  2.: {"zh-Hans": "如果您需要用户能够通过代理访问您的网站，不要阻止它。​否则，您可以阻止它。", "zh-Hant": "如果您需要用戶能夠通過代理訪問您的網站，不要阻止它。​否則，您可以阻止它。"}
  3.: {"zh-Hans": "不支持直接在签名中使用，但在特定情况下可以通过其他方式调用。", "zh-Hant": "不支持直接在簽名中使用，但在特定情況下可以通過其他方式調用。"}
  4.: {"zh-Hans": "当速记词不使用或CIDRAM不识别时。", "zh-Hant": "當速記詞不使用或CIDRAM不識別時。"}
@@ -532,7 +532,7 @@ hints_time_format:
   <code class="s">{t:z}</code> – 時區（附冒號） – 例如，+08:00。
 hints_verification:
  zh-Hans: "<strong>什么是“阳性”和“阴性”？</strong> 在验证请求提供的身份时，成功的结果可以描述为“阳性”或“阴性”。​当所呈现的身份被确认为真实身份时，将被描述为“阳性”。​当所提供的身份被证实为伪造时，将被描述为“阴性”。​但是，不成功的结果（例如，验证失败，或无法确定所提供身份的真实性）不会被描述为“阳性”或“阴性”。​相反，不成功的结果将被简单地描述为未验证。​当没有尝试验证请求提供的身份时，该请求同样会被描述为未验证。​这些术语仅在请求提供的身份被识别的情况下才有意义，因此，在可以进行验证的情况下。​如果提供的身份与上面提供的选项不匹配，或者没有提供身份，则上面提供的选项变得无关。<br /><br /><strong>什么是“一击绕过”？</strong> 在某些情况下，由于签名文件、模块、或请求的其他条件，可能仍会阻止经过肯定验证的请求，为了避免假阳性，可能需要绕过。​在绕过旨在处理仅一项违规行为的情况下，这样的绕过可以被描述为“一击绕过”。"
- zh-Hant: "<strong>什麼是『陽性』和『陰性』？</strong> 在驗證請求提供的身份時，成功的結果可以描述為『陽性』或『陰性』。​當所呈現的身份被確認為真實身份時，將被描述為『陽性』。​當所提供的身份被證實為偽造時，將被描述為『陰性』。​但是，不成功的結果（例如，驗證失敗，或無法確定所提供身份的真實性）不會被描述為『陽性』或『陰性』。​相反，不成功的結果將被簡單地描述為未驗證。​當沒有嘗試驗證請求提供的身份時，該請求同樣會被描述為未驗證。​這些術語僅在請求提供的身份被識別的情況下才有意義，因此，在可以進行驗證的情況下。​如果提供的身份與上面提供的選項不匹配，或者沒有提供身份，則上面提供的選項變得無關。<br /><br /><strong>什麼是『一擊繞過』？</strong> 在某些情況下，由於簽名文件、模組、或請求的其他條件，可能仍會阻止經過肯定驗證的請求，為了避免假陽性，可能需要繞過。​在繞過旨在處理僅一項違規行為的情況下，這樣的繞過可以被描述為『一擊繞過』。"
+ zh-Hant: "<strong>什麼是『陽性』和『陰性』？</strong> 在驗證請求提供的身份時，成功的結果可以描述為『陽性』或『陰性』。​當所呈現的身份被確認為真實身份時，將被描述為『陽性』。​當所提供的身份被證實為偽造時，將被描述為『陰性』。​但是，不成功的結果（例如，驗證失敗，或無法確定所提供身份的真實性）不會被描述為『陽性』或『陰性』。​相反，不成功的結果將被簡單地描述為未驗證。​當沒有嘗試驗證請求提供的身份時，該請求同樣會被描述為未驗證。​這些術語僅在請求提供的身份被識別的情況下才有意義，因此，在可以進行驗證的情況下。​如果提供的身份與上面提供的選項不匹配，或者沒有提供身份，則上面提供的選項變得無關。<br /><br /><strong>什麼是『一擊繞過』？</strong> 在某些情況下，由於簽名檔案、模組、或請求的其他條件，可能仍會阻止經過肯定驗證的請求，為了避免假陽性，可能需要繞過。​在繞過旨在處理僅一項違規行為的情況下，這樣的繞過可以被描述為『一擊繞過』。"
 hints_want_to_block:
  zh-Hans: "!! 大多数用户可能希望将其阻止，无论它是真实的还是伪造的。​这可以通过不选择“尝试验证”并选择“阻止未验证的请求”来实现。​但是，由于某些用户可能希望能够验证此类请求（以便阻止阴性请求同时允许阳性请求），因此此处提供了处理此类请求的选项，而不是通过模块阻止此类请求。"
  zh-Hant: "!! 大多數用戶可能希望將其阻止，無論它是真實的還是偽造的。​這可以通過不選擇『嘗試驗證』並選擇『阻止未驗證的請求』來實現。​但是，由於某些用戶可能希望能夠驗證此類請求（以便阻止陰性請求同時允許陽性請求），因此此處提供了處理此類請求的選項，而不是通過模組阻止此類請求。"
@@ -547,9 +547,9 @@ info_cli_by_default_ips:
   --no-ov     防止其他验证。
   --no-aux    防止针对辅助规则进行测试。
  zh-Hant: |
-  IP位址針對所有簽名文件、所有模組、所有輔助規則、以及社交媒體和搜索引擎驗證進行
+  IP位址針對所有簽名檔案、所有模組、所有輔助規則、以及社交媒體和搜索引擎驗證進行
   測試。
-  --no-sig    防止針對簽名文件進行測試。
+  --no-sig    防止針對簽名檔案進行測試。
   --no-mod    防止針對模組進行測試。
   --no-sev    防止搜索引擎驗證。
   --no-smv    防止社交媒體驗證。
@@ -710,8 +710,8 @@ label:
   zh-Hans: "503 Service Unavailable （服务不可用）\n最健壮，但最不用户友好。​推荐用于受到攻击，或处理极其持久的有害流量时。"
   zh-Hant: "503 Service Unavailable （服務不可用）\n最健壯，但最不用戶友好。​推薦用於受到攻擊，或處理極其持久的有害流量時。"
  Action: {"zh-Hans": "行动", "zh-Hant": "行動"}
- Active IPv4 signature files: {"zh-Hans": "活动IPv4签名文件", "zh-Hant": "活動IPv4簽名文件"}
- Active IPv6 signature files: {"zh-Hans": "活动IPv6签名文件", "zh-Hant": "活動IPv6簽名文件"}
+ Active IPv4 signature files: {"zh-Hans": "活动IPv4签名文件", "zh-Hant": "活動IPv4簽名檔案"}
+ Active IPv6 signature files: {"zh-Hans": "活动IPv6签名文件", "zh-Hant": "活動IPv6簽名檔案"}
  Active configuration file: {"zh-Hans": "活动配置文件：", "zh-Hant": "活動配置文件："}
  Active events: {"zh-Hans": "活动事件", "zh-Hant": "活動事件"}
  Active imports: {"zh-Hans": "活动进口", "zh-Hant": "活動進口"}
@@ -807,7 +807,7 @@ label:
  Only when within the signature limit, and not banned (regardless of whether blocked): {"zh-Hans": "仅在签名限制之内，并且不被禁止（不管是否被阻止）。", "zh-Hant": "僅在簽名限制之內，並且不被禁止（不管是否被阻止）。"}
  Operating system used: {"zh-Hans": "目前使用操作系统：", "zh-Hant": "目前使用操作系統："}
  Operator: {"zh-Hans": "运算符", "zh-Hant": "運算符"}
- Other rules, signature files, etc: {"zh-Hans": "其他规则、签名文件、等等", "zh-Hant": "其他規則、簽名文件、等等"}
+ Other rules, signature files, etc: {"zh-Hans": "其他规则、签名文件、等等", "zh-Hant": "其他規則、簽名檔案、等等"}
  Other: "其他"
  PHP version used: "目前使用PHP版本："
  Page request completed in %s seconds: {"zh-Hans": "页面请求在%s秒内完成。", "zh-Hant": "頁面請求在%s秒內完成。"}
@@ -849,7 +849,7 @@ label:
  Total disk space: {"zh-Hans": "总磁盘空间：", "zh-Hant": "總磁盤空間："}
  Total disk usage: {"zh-Hans": "总共使用的磁盘空间：", "zh-Hant": "總共使用的磁盤空間："}
  Total: {"zh-Hans": "总", "zh-Hant": "總"}
- Trigger a bypass: {"zh-Hans": "触发旁路。\n只要至少已经触发了一个签名，就从触发的签名数中减去一个计数。推荐用于处理可能由默认签名文件引起的简单假阳性。", "zh-Hant": "觸發旁路。\n只要至少已經觸發了一個簽名，就從觸發的簽名數中減去一個計數。推薦用於處理可能由默認簽名文件引起的簡單假陽性。"}
+ Trigger a bypass: {"zh-Hans": "触发旁路。\n只要至少已经触发了一个签名，就从触发的签名数中减去一个计数。推荐用于处理可能由默认签名文件引起的简单假阳性。", "zh-Hant": "觸發旁路。\n只要至少已經觸發了一個簽名，就從觸發的簽名數中減去一個計數。推薦用於處理可能由默認簽名檔案引起的簡單假陽性。"}
  Unignore this: {"zh-Hans": "不要忽略这个", "zh-Hant": "不要忽略這個"}
  Values for IP tracking: "IP跟踪的值"
  Whitelist the request: {"zh-Hans": "将请求列入白名单。\n重置触发的签名数量，并中止对请求的任何进一步处理。​保证CIDRAM永远不会阻止请求。", "zh-Hant": "將請求列入白名單。\n重置觸發的簽名數量，併中止對請求的任何進一步處理。​保證CIDRAM永遠不會阻止請求。"}
@@ -946,7 +946,7 @@ link:
  Range Tables: {"zh-Hans": "范围表", "zh-Hant": "範圍表"}
  Rate Limiting: "速率限制"
  Sections List: {"zh-Hans": "章节列表", "zh-Hant": "章節列表"}
- Signature File Fixer: {"zh-Hans": "签名文件修复工具", "zh-Hant": "簽名文件修復工具"}
+ Signature File Fixer: {"zh-Hans": "签名文件修复工具", "zh-Hant": "簽名檔案修復工具"}
  Statistics: {"zh-Hans": "统计", "zh-Hant": "統計"}
  Subtractor: {"zh-Hans": "减法仪", "zh-Hant": "減法儀"}
  Updates: "更新"
@@ -961,18 +961,18 @@ macro:
   uninstall_l10n_fe: *RecommendFEOnlyNeeded
  Name:
   activate_modules: {"zh-Hans": "启用所有模块。", "zh-Hant": "啟用所有模組。"}
-  activate_signatures: {"zh-Hans": "启用所有签名文件。", "zh-Hant": "啟用所有簽名文件。"}
+  activate_signatures: {"zh-Hans": "启用所有签名文件。", "zh-Hant": "啟用所有簽名檔案。"}
   deactivate_modules: {"zh-Hans": "停用所有模块。", "zh-Hant": "停用所有模組。"}
-  deactivate_signatures: {"zh-Hans": "停用所有签名文件。", "zh-Hant": "停用所有簽名文件。"}
+  deactivate_signatures: {"zh-Hans": "停用所有签名文件。", "zh-Hant": "停用所有簽名檔案。"}
   install_l10n_core: {"zh-Hans": "安装所有可用的核心L10N。", "zh-Hant": "安裝所有可用的核心L10N。"}
   install_l10n_fe: {"zh-Hans": "安装所有可用的前端L10N。", "zh-Hant": "安裝所有可用的前端L10N。"}
   install_modules: {"zh-Hans": "安装所有可用的模块。", "zh-Hant": "安裝所有可用的模組。"}
-  install_signatures: {"zh-Hans": "安装所有可用的签名文件。", "zh-Hant": "安裝所有可用的簽名文件。"}
+  install_signatures: {"zh-Hans": "安装所有可用的签名文件。", "zh-Hant": "安裝所有可用的簽名檔案。"}
   uninstall_l10n_core: {"zh-Hans": "卸载所有非活动核心L10N。", "zh-Hant": "卸載所有非活動核心L10N。"}
   uninstall_l10n_fe: {"zh-Hans": "卸载所有非活动前端L10N。", "zh-Hant": "卸載所有非活動前端L10N。"}
   uninstall_modules: {"zh-Hans": "卸载所有非活动模块。", "zh-Hant": "卸載所有非活動模組。"}
   uninstall_no_longer_available: {"zh-Hans": "卸载不再可用的组件。", "zh-Hant": "卸載不再可用的組件。"}
-  uninstall_signatures: {"zh-Hans": "卸载所有非活动签名文件。", "zh-Hant": "卸載所有非活動簽名文件。"}
+  uninstall_signatures: {"zh-Hans": "卸载所有非活动签名文件。", "zh-Hant": "卸載所有非活動簽名檔案。"}
 msg_subject_2fa: {"zh-Hans": "2FA（双因素身份验证）", "zh-Hant": "2FA（雙因素身份驗證）"}
 msg_template_2fa:
  zh-Hans: |
@@ -1029,8 +1029,8 @@ response:
  Component successfully updated: {"zh-Hans": "组件成功更新。", "zh-Hant": "組件成功更新。"}
  Configuration successfully updated: "配置成功更新。"
  Copied: {"zh-Hans": "已复制", "zh-Hant": "已復制"}
- Directory successfully deleted: {"zh-Hans": "文件夹成功删除！", "zh-Hant": "文件夾成功刪除！"}
- Directory successfully renamed: {"zh-Hans": "文件夹成功改名！", "zh-Hant": "文件夾成功改名！"}
+ Directory successfully deleted: {"zh-Hans": "文件夹成功删除！", "zh-Hant": "檔案夾成功刪除！"}
+ Directory successfully renamed: {"zh-Hans": "文件夹成功改名！", "zh-Hant": "檔案夾成功改名！"}
  Don_t know what to do with the data after reading it: {"zh-Hans": "读取数据后不知道如何处理。\n考虑将其链接到另一个命令。谢谢。", "zh-Hant": "讀取數據後不知道如何處理。\n考慮將其鏈接到另一個命令。謝謝。"}
  Error at the upstream: {"zh-Hans": "上游错误！", "zh-Hant": "上游錯誤！"}
  Failed to access %s: {"zh-Hans": "无法访问“%s”！", "zh-Hant": "無法訪問『%s』！"}
@@ -1050,12 +1050,12 @@ response:
  Failed to update tracking: {"zh-Hans": "更新跟踪失败！", "zh-Hant": "更新跟踪失敗！"}
  Failed to update: {"zh-Hans": "无法更新！", "zh-Hant": "無法更新！"}
  Failed to upload: {"zh-Hans": "无法上传！", "zh-Hant": "無法上傳！"}
- File contains unexpected content: {"zh-Hans": "文件包含意外的内容！", "zh-Hant": "文件包含意外的內容！"}
- File rejected: {"zh-Hans": "文件拒绝", "zh-Hant": "文件拒絕"}
- File successfully deleted: {"zh-Hans": "文件成功删除！", "zh-Hant": "文件成功刪除！"}
+ File contains unexpected content: {"zh-Hans": "文件包含意外的内容！", "zh-Hant": "檔案包含意外的內容！"}
+ File rejected: {"zh-Hans": "文件拒绝", "zh-Hant": "檔案拒絕"}
+ File successfully deleted: {"zh-Hans": "文件成功删除！", "zh-Hant": "檔案成功刪除！"}
  File successfully modified: "文件成功改性！"
  File successfully renamed: "文件成功改名！"
- File successfully uploaded: {"zh-Hans": "文件成功上传！", "zh-Hant": "文件成功上傳！"}
+ File successfully uploaded: {"zh-Hans": "文件成功上传！", "zh-Hant": "檔案成功上傳！"}
  Finished reading from %s: {"zh-Hans": "从“%s”读完。", "zh-Hant": "從『%s』讀完。"}
  Finished writing to %s: {"zh-Hans": "完成对“%s”的写入。", "zh-Hant": "完成對『%s』的寫入。"}
  I can_t write to %s, sorry: {"zh-Hans": "我不能写信给“%s”，对不起。", "zh-Hant": "我不能寫信給『%s』，對不起。"}
@@ -1082,7 +1082,7 @@ response:
  Removed %s from tracking: {"zh-Hans": "从跟踪中删除了%s。", "zh-Hant": "從跟踪中刪除了%s。"}
  Repair process completed: {"zh-Hans": "修复过程完成。", "zh-Hant": "修復過程完成。"}
  Repair process failed: {"zh-Hans": "修复过程失败。", "zh-Hant": "修復過程失敗。"}
- Signature files have been updated (%s): {"zh-Hans": "签名文件已更新（%s）。", "zh-Hant": "簽名文件已更新（%s）。"}
+ Signature files have been updated (%s): {"zh-Hans": "签名文件已更新（%s）。", "zh-Hant": "簽名檔案已更新（%s）。"}
  Skipped: {"zh-Hans": "跳过了", "zh-Hant": "跳過了"}
  Source not specified: {"zh-Hans": "未指定来源！", "zh-Hant": "未註明來源！"}
  Statistics cleared: {"zh-Hans": "统计删除。", "zh-Hant": "統計刪除。"}
@@ -1125,7 +1125,7 @@ stages:
  Execute rate limiting: {"zh-Hans": "执行速率限制", "zh-Hant": "執行速率限制"}
  Execute reporting: {"zh-Hans": "执行报告", "zh-Hant": "執行報告"}
  Execute search engine verification: {"zh-Hans": "执行搜索引擎验证", "zh-Hant": "執行搜索引擎驗證"}
- Execute signature files tests: {"zh-Hans": "执行签名文件测试", "zh-Hant": "執行簽名文件測試"}
+ Execute signature files tests: {"zh-Hans": "执行签名文件测试", "zh-Hant": "執行簽名檔案測試"}
  Execute social media verification: {"zh-Hans": "执行社交媒体验证", "zh-Hant": "執行社交媒體驗證"}
  Execute webhooks: {"zh-Hans": "执行webhook", "zh-Hant": "執行webhook"}
  Generate output (blocked requests): {"zh-Hans": "生成输出（被阻止的请求）", "zh-Hant": "生成輸出（被阻止的請求）"}
@@ -1137,7 +1137,7 @@ stages:
 state_fixer: "%2$s%1$s。"
 state_fixer_changed: {"zh-Hans": "进行了%s次更改", "zh-Hant": "進行了%s次更改"}
 state_fixer_seconds: {"zh-Hans": "在%s秒内", "zh-Hant": "在%s秒內"}
-state_sl_totals: {"zh-Hans": "汇总（签名： %s – 签名章节： %s – 签名文件： %s – 独特的章节标签： %s）。", "zh-Hant": "匯總（簽名： %s – 簽名章節： %s – 簽名文件： %s – 獨特的章節標籤： %s）。"}
+state_sl_totals: {"zh-Hans": "汇总（签名： %s – 签名章节： %s – 签名文件： %s – 独特的章节标签： %s）。", "zh-Hant": "匯總（簽名： %s – 簽名章節： %s – 簽名檔案： %s – 獨特的章節標籤： %s）。"}
 state_tracking: {"zh-Hans": "目前正在跟踪%s个IP。", "zh-Hant": "目前正在跟踪%s個IP。"}
 switch-descending-order-set-false: "按升序排序"
 switch-descending-order-set-true: "按降序排序"
@@ -1149,8 +1149,8 @@ switch-sort-by-name-set-false: "按ID排序"
 switch-sort-by-name-set-true: {"zh-Hans": "按名称排序", "zh-Hant": "按名稱排序"}
 switch-tracking-aux-set-false: {"zh-Hans": "不要检查辅助规则", "zh-Hant": "不要檢查輔助規則"}
 switch-tracking-aux-set-true: {"zh-Hans": "检查辅助规则", "zh-Hant": "檢查輔助規則"}
-switch-tracking-blocked-already-set-false: {"zh-Hans": "不要检查签名文件", "zh-Hant": "不要檢查簽名文件"}
-switch-tracking-blocked-already-set-true: {"zh-Hans": "检查签名文件", "zh-Hant": "檢查簽名文件"}
+switch-tracking-blocked-already-set-false: {"zh-Hans": "不要检查签名文件", "zh-Hant": "不要檢查簽名檔案"}
+switch-tracking-blocked-already-set-true: {"zh-Hans": "检查签名文件", "zh-Hant": "檢查簽名檔案"}
 switch-tracking-hide-banned-blocked-set-false: {"zh-Hans": "不要隐藏被禁止/阻止的IP", "zh-Hant": "不要隱藏被禁止/阻止的IP"}
 switch-tracking-hide-banned-blocked-set-true: {"zh-Hans": "隐藏被禁止/阻止的IP", "zh-Hant": "隱藏被禁止/阻止的IP"}
 time_days_ago: "%s天前"
@@ -1190,7 +1190,7 @@ tip:
  Enter referrer here (optional): {"zh-Hans": "在这里时输入引荐（可选的）。", "zh-Hant": "在這裡時輸入引薦（可選的）。"}
  Enter user agent here (optional): {"zh-Hans": "在这里时输入用户代理（可选的）。", "zh-Hant": "在這裡時輸入用戶代理（可選的）。"}
  Enter user agents here (optional): {"zh-Hans": "在这里时输入用户代理（可选的）。", "zh-Hant": "在這裡時輸入用戶代理（可選的）。"}
- File Manager: {"zh-Hans": "文件管理器允许您删除，​编辑，​上传和下载文件。​小心使用（您可以用这个破坏您的安装）。", "zh-Hant": "文件管理器允許您刪除，​編輯，​上傳和下載文件。​小心使用（您可以用這個破壞您的安裝）。"}
+ File Manager: {"zh-Hans": "文件管理器允许您删除，​编辑，​上传和下载文件。​小心使用（您可以用这个破坏您的安装）。", "zh-Hant": "檔案管理器允許您刪除，​編輯，​上傳和下載文件。​小心使用（您可以用這個破壞您的安裝）。"}
  Greeting: "你好，%s。"
  Home: {"zh-Hans": "这是CIDRAM的前端主页。​从左侧的导航菜单中选择一个链接以继续。", "zh-Hant": "這是CIDRAM的前端主頁。​從左側的導航菜單中選擇一個鏈接以繼續。"}
  How many infractions to incur: {"zh-Hans": "有多少违规行为。", "zh-Hant": "有多少違規行為。"}
@@ -1202,16 +1202,16 @@ tip:
  Numeric comparison:
   zh-Hans: "要使用数值比较，请选择直接字符串比较或自动方法检测，确保条件的值是数字，并在其前面添加所需的运算符。<br />例如，对于“等于”条件，&gt;=2产生≥2，&lt;=2产生≤2，对于“不等于”条件，&gt;=2产生≱2，&lt;=2产生≰2，等等。"
   zh-Hant: "若要使用數值比較，請選擇直接字串比較或自動方法偵測，確保條件的值是數字，並在其前面新增所需的運算符。<br />例如，對於『等於』條件，&gt;=2產生≥2，&lt;=2產生≤2，對於『不等於』條件，&gt;=2產生≱2，&lt;=2產生≰2，等等。"
- Range Tables: {"zh-Hans": "本页面显示了有关当前活性签名文件覆盖的IP范围的一些基本统计信息。", "zh-Hant": "本頁面顯示了有關當前活性簽名文件覆蓋的IP範圍的一些基本統計信息。"}
+ Range Tables: {"zh-Hans": "本页面显示了有关当前活性签名文件覆盖的IP范围的一些基本统计信息。", "zh-Hant": "本頁面顯示了有關當前活性簽名檔案覆蓋的IP範圍的一些基本統計信息。"}
  Rate Limiting: {"zh-Hans": "此页面显示有关速率限制的当前配额使用情况和可用性。", "zh-Hant": "此頁面顯示有關速率限制的當前配額使用情況和可用性。"}
  Rate limiting is currently disabled: {"zh-Hans": "注意：速率限制目前已被禁用，但可以通过配置页面启用。", "zh-Hant": "注意：速率限制目前已被禁用，但可以通過配置頁面啟用。"}
  Report to AbuseIPDB: {"zh-Hans": "此页面可用于向AbuseIPDB报告IP地址，或者在IP地址报告错误时删除以前的报告。", "zh-Hant": "此頁面可用於向AbuseIPDB報告IP位址，或在IP位址報告錯誤時刪除先前的報告。"}
- Sections List: {"zh-Hans": "此页面列出当前活动签名文件中存在哪些章节。", "zh-Hant": "此頁面列出當前活動簽名文件中存在哪些章節。"}
+ Sections List: {"zh-Hans": "此页面列出当前活动签名文件中存在哪些章节。", "zh-Hant": "此頁面列出當前活動簽名檔案中存在哪些章節。"}
  See the documentation:
-  zh-Hans: "请参阅<a href="{{Links.CIDRAM.Docs Base Path}}readme.zh-Hans.md\#user-content-SECTION5" hreflang="zh-Hans" rel="noopener external">文档</a>以获取有关各种配置指令的信息和他们的目的。"
-  zh-Hant: "請參閱<a href="{{Links.CIDRAM.Docs Base Path}}readme.zh-Hant.md\#user-content-SECTION5" hreflang="zh-Hant" rel="noopener external">文檔</a>以獲取有關各種配置指令的信息和他們的目的。"
+  zh-Hans: "请参阅<a href="{{Links.CIDRAM.Docs Base Path}}readme.zh-Hans.md\#user-content-SECTION5" hreflang="zh-Hans" rel="noopener external"><span class="navicon documentation"></span>文档</a>以获取有关各种配置指令的信息和他们的目的。"
+  zh-Hant: "請參閱<a href="{{Links.CIDRAM.Docs Base Path}}readme.zh-Hant.md\#user-content-SECTION5" hreflang="zh-Hant" rel="noopener external"><span class="navicon documentation"></span>文檔</a>以獲取有關各種配置指令的信息和他們的目的。"
  Server log snippets, abuse details, etc: {"zh-Hans": "服务器日志片段、滥用详细信息、等等。", "zh-Hant": "伺服器日誌片段、濫用詳細資訊、等等。"}
- Signature File Fixer: {"zh-Hans": "签名文件修复工具提供了一种检测和修复签名文件中潜在问题的方法。", "zh-Hant": "簽名文件修復工具提供了一種檢測和修復簽名文件中潛在問題的方法。"}
+ Signature File Fixer: {"zh-Hans": "签名文件修复工具提供了一种检测和修复签名文件中潜在问题的方法。", "zh-Hant": "簽名檔案修復工具提供了一種檢測和修復簽名檔案中潛在問題的方法。"}
  Specify a value, or leave blank to disregard: {"zh-Hans": "指定一个值，或留空以忽略。", "zh-Hant": "指定一個值，或留空以忽略。"}
  Statistics tracking is currently disabled: {"zh-Hans": "注意：统计跟踪目前已被禁用，但可以通过配置页面启用。", "zh-Hant": "注意：統計跟踪目前已被禁用，但可以通過配置頁面啟用。"}
  Statistics: {"zh-Hans": "此页面显示了有关CIDRAM安装的一些基本使用统计信息。", "zh-Hant": "此頁面顯示了有關CIDRAM安裝的一些基本使用統計信息。"}
@@ -1223,12 +1223,12 @@ warning:
  Editing PHP files:
   zh-Hans: "警告：一些虚拟主机在检测到请求中的PHP标记时会自动禁止IP地址（例如，当试图通过浏览器修改PHP文件时）。 CIDRAM无法知道您的虚拟主机是否这样做。 为了避免出现问题，建议尽可能不要以这种方式编辑PHP文件。"
   zh-Hant: "警告：一些虛擬主機在檢測到請求中的PHP標記時會自動禁止IP位址（例如，當試圖通過瀏覽器修改PHP文件時）。 CIDRAM無法知道您的虛擬主機是否這樣做。 為了避免出現問題，建議盡可能不要以這種方式編輯PHP文件。"
- IP tests are disabled: {"zh-Hans": "警告：IP测试被禁用！在解决此问题之前，无法使用签名文件。", "zh-Hant": "警告：IP測試被禁用！在解決此問題之前，無法使用簽名文件。"}
+ IP tests are disabled: {"zh-Hans": "警告：IP测试被禁用！在解决此问题之前，无法使用签名文件。", "zh-Hant": "警告：IP測試被禁用！在解決此問題之前，無法使用簽名檔案。"}
  JavaScript required: {"zh-Hans": "警告：一些前端功能需要JavaScript。为确保整个前端按预期运行，建议启用JavaScript。", "zh-Hant": "警告：一些前端功能需要JavaScript。為確保整個前端按預期運行，建議啟用JavaScript。"}
  Likely to be overwritten: {"zh-Hans": "警告：您当前正在编辑的文件属于组件“%s”。对该文件所做的任何更改很可能会在下次更新该组件时被覆盖。", "zh-Hant": "警告：您當前正在編輯的文件屬於組件『%s』。對該文件所做的任何更改很可能會在下次更新該組件時被覆蓋。"}
  Modules are disabled: {"zh-Hans": "警告：模块被禁用！在解决此问题之前，无法使用模块。", "zh-Hant": "警告：模組被禁用！在解決此問題之前，無法使用模組。"}
  No modules are active: {"zh-Hans": "警告：没有模块处于活动状态！可以使用配置或更新页面启用模块。", "zh-Hant": "警告：沒有模組處於活動狀態！可以使用配置或更新頁面啟用模組。"}
- No signature files are active: {"zh-Hans": "警告：没有签名文件处于活动状态！可以使用配置或更新页面启用签名文件。", "zh-Hant": "警告：沒有簽名文件處於活動狀態！可以使用配置或更新頁面啟用簽名文件。"}
+ No signature files are active: {"zh-Hans": "警告：没有签名文件处于活动状态！可以使用配置或更新页面启用签名文件。", "zh-Hant": "警告：沒有簽名檔案處於活動狀態！可以使用配置或更新頁面啟用簽名檔案。"}
  Operating in dry run mode: {"zh-Hans": "警告：在空运行模式下运行！在空运行模式下，请求仍会像往常一样被检查并记录为阻止事件，但没有任何内容被阻塞。", "zh-Hant": "警告：在空運行模式下運行！在空運行模式下，請求仍會像往常一樣被檢查並記錄為阻止事件，但沒有任何內容被阻塞。"}
  Operating in maintenance mode: {"zh-Hans": "警告：在维护模式下运行！在维护模式下，不会检查、记录、或阻止任何内容。", "zh-Hant": "警告：在維護模式下運行！在維護模式下，不會檢查、記錄、或阻止任何內容。"}
  Page termination is disabled: {"zh-Hans": "警告：页面终止被禁用！在解决此问题之前，无法正确阻止请求。", "zh-Hant": "警告：頁面終止被禁用！在解決此問題之前，無法正確阻止請求。"}

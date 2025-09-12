@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2025.09.08).
+# This file: Portuguese language data for the front-end (last modified: 2025.09.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -82,7 +82,7 @@ Extended Description:
  Optional security extras module: "Fornece algumas proteções limitadas contra vários vectores de ataque comumente usado em solicitações."
  PHPMailer: "Necessário para usar qualquer funcionalidade que envolva o envio de e-mail.<br />{{Links.PHPMailer.PHPMailer}} está disponível através do licença {{Links.PHPMailer.License}}."
  Project Honeypot module: "Bloqueia solicitações de IPs listados no Project Honeypot."
- Protocol blocker module: "Fornece a capacidade de bloquear protocolos de solicitação específicos por meio da configuração (por exemplo, HTTP/0.9, HTTP/1.1, SPDY/3.0, etc). Observação: Não terá nenhum efeito para os sites que roteiam por meio de serviços que reescrevem solicitações para usar exatamente o mesmo protocolo, como Cloudflare."
+ Protocol blocker module: "Fornece a capacidade de bloquear protocolos de solicitação específicos por meio da configuração (por exemplo, HTTP/0.9, HTTP/1.1, SPDY/3.0, etc). Nota: Não terá nenhum efeito para os sites que roteiam por meio de serviços que reescrevem solicitações para usar exatamente o mesmo protocolo, como Cloudflare."
  Referrer spam module:
   pt-BR: "O bloqueio baseado em spam de referência geralmente não fornece nenhum benefício de segurança significativo, mas, em alguns casos, pode ser útil para alguns usuários, para coletar mais informações sobre solicitações e para relatá-las."
   pt-PT: "O bloqueio baseado em spam de referência geralmente não fornece nenhum benefício de segurança significativo, mas, em alguns casos, pode ser útil para alguns utilizadores, para coletar mais informações sobre solicitações e para relatá-las."
@@ -367,7 +367,7 @@ config:
  projecthoneypot_minimum_threat_score: "A pontuação mínima de ameaça necessária para que o CIDRAM bloqueie um endereço IP (deve ser um número entre 1 e 100). Padrão = 10."
  projecthoneypot_type_of_visitor: "Controles para bloqueio ou perfil com base no tipo de visitante, conforme determinado pelo Projeto Honeypot."
  protocol: "Configuração para o módulo bloqueador de protocolo."
- protocol_blocked: "Os protocolos selecionados serão bloqueados. Observação: Não terá nenhum efeito para os sites que roteiam por meio de serviços que reescrevem solicitações para usar exatamente o mesmo protocolo, como Cloudflare."
+ protocol_blocked: "Os protocolos selecionados serão bloqueados. Nota: Não terá nenhum efeito para os sites que roteiam por meio de serviços que reescrevem solicitações para usar exatamente o mesmo protocolo, como Cloudflare."
  protocol_reason_message: "A mensagem de motivo exibida quando tais solicitações são bloqueados."
  quic: "Configuração para o módulo de compatibilidade Quic cloud."
  quic_positive_action: "Qual ação o CIDRAM deve executar quando encontrar uma solicitação do Quic cloud? Ação padrão = Contornar."
@@ -425,7 +425,9 @@ config:
  supplementary_cache_options_prefix:
   pt-BR: "O valor especificado aqui será adicionado ao começo das chaves para todas as entradas de cache. Padrão = "CIDRAM_". Quando existem várias instalações no mesmo servidor, isso pode ser útil para manter seus caches separados uns dos outros."
   pt-PT: "O valor especificado aqui será adicionado ao começo das chaves para todas as entradas de cache. Padrão = "CIDRAM_". Quando existem várias instalações no mesmo servidor, isto pode ser útil para manter os seus caches separados uns dos outros."
- supplementary_cache_options_redis_database_number: "Número do banco de dados Redis. Padrão = 0. Observação: Não é possível usar valores diferentes de 0 com Redis Cluster."
+ supplementary_cache_options_redis_database_number:
+  pt-BR: "Número do banco de dados Redis. Padrão = 0. Nota: Não é possível usar valores diferentes de 0 com Redis Cluster."
+  pt-PT: "Número da base de dados Redis. Padrão = 0. Nota: Não é possível utilizar valores diferentes de 0 com o Redis Cluster."
  supplementary_cache_options_redis_host: "Valor da host do Redis. Padrão = localhost."
  supplementary_cache_options_redis_port: "Valor da porta do Redis. Padrão = "6379"."
  supplementary_cache_options_redis_timeout: "Valor de tempo limite do Redis. Padrão = "2.5"."
@@ -654,44 +656,83 @@ info_cli_you_can_also_w: "Você também pode gravar em arquivos:"
 info_cli_you_can_print_:
  pt-BR: "Você pode imprimir dados na tela (às vezes útil ao encadear comandos):"
  pt-PT: "Você pode imprimir dados na ecrã (às vezes útil ao encadear comandos):"
-Some useful links: |+
- Alguns links úteis:<br />
-     <ul class="pieul">
-       <li><span class="comCat">Ferramentas, recursos, etc para o CIDRAM.</span>
-         <ul class="comSub">
-           <li>{{Links.CIDRAM.Bitbucket}} – Local de backup do repositório.</li>
-           <li>{{Links.CIDRAM.Codeberg}} – Local de backup do repositório.</li>
-           <li>{{Links.CIDRAM.Extras}} – Vários extras.</li>
-           <li>{{Links.CIDRAM.Issues}} – Página de problemas para CIDRAM (apoio, assistência, etc).</li>
-           <li>{{Links.CIDRAM.WordPress}} – WordPress plugin para CIDRAM.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Grupos, fóruns, comunidades, etc.</span>
-         <ul class="comSub">
-           <li>{{Links.PHP.Earth.Facebook}} – PHP recursos de aprendizagem e discussão.</li>
-           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Fórum@Stop Forum Spam</a> – Fórum de discussão útil sobre como parar o spam do fórum.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Outras ferramentas, recursos, serviços, etc que são úteis.</span>
-         <ul class="comSub">
-           <li>{{Links.SFS}} – Mantém um banco de dados de spammers de fórum conhecidos. Útil para proteger sites e fóruns contra spammers.</li>
-           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Obter CIDRs de ASNs, Determinar relações de ASNs, descobrir ASNs com base em nomes de rede, etc.</li>
-           <li>{{Links.BGPView}} – Obter CIDRs de ASNs, Determinar relações de ASNs, descobrir ASNs com base em nomes de rede, etc.</li>
-           <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar por Qrator</a> – Ferramenta útil para verificar a conectividade de ASNs bem como para várias outras informações sobre ASNs.</li>
-           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">O Projeto Spamhaus</a> – Exibe relatórios sobre taxas de infecção por botnets para ASNs.</li>
-           <li>{{Links.AbuseIPDB}} – Mantém um banco de dados de IPs abusivos conhecidos; Fornece uma API para verificar e relatar IPs.</li>
-           <li>{{Links.IP-API}} – Obtenha informações sobre endereços IP ou nomes de host, como código do país, nome da região, longitude, latitude, nome da organização, etc.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Recursos informativos e de aprendizagem.</span>
-         <ul class="comSub">
-           <li>{{Links.PHP.Earth.Website}} – PHP recursos de aprendizagem e discussão.</li>
-           <li>{{Links.MDN.Homepage}} – Recursos para desenvolvedores, por desenvolvedores. Um recurso fantástico para aprender sobre HTML, CSS, JavaScript, acessibilidade, e muito mais.</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Mapas de Vulnerabilidade</a> – Lista as versões seguras/inseguras de vários pacotes (HHVM, PHP, phpMyAdmin, Python, etc).</li>
-           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Mapas de Compatibilidade</a> – Lista informações de compatibilidade para vários pacotes (CIDRAM, phpMussel, etc).</li>
-         </ul>
-       </li>
-     </ul>
+Some useful links:
+ pt-BR: |+
+  Alguns links úteis:<br />
+      <ul class="pieul">
+        <li><span class="comCat">Ferramentas, recursos, etc para o CIDRAM.</span>
+          <ul class="comSub">
+            <li>{{Links.CIDRAM.Bitbucket}} – Local de backup do repositório.</li>
+            <li>{{Links.CIDRAM.Codeberg}} – Local de backup do repositório.</li>
+            <li>{{Links.CIDRAM.Extras}} – Vários extras.</li>
+            <li>{{Links.CIDRAM.Issues}} – Página de problemas para CIDRAM (apoio, assistência, etc).</li>
+            <li>{{Links.CIDRAM.WordPress}} – WordPress plugin para CIDRAM.</li>
+          </ul>
+        </li>
+        <li><span class="comCat">Grupos, fóruns, comunidades, etc.</span>
+          <ul class="comSub">
+            <li>{{Links.PHP.Earth.Facebook}} – PHP recursos de aprendizagem e discussão.</li>
+            <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Fórum@Stop Forum Spam</a> – Fórum de discussão útil sobre como parar o spam do fórum.</li>
+          </ul>
+        </li>
+        <li><span class="comCat">Outras ferramentas, recursos, serviços, etc que são úteis.</span>
+          <ul class="comSub">
+            <li>{{Links.SFS}} – Mantém um banco de dados de spammers de fórum conhecidos. Útil para proteger sites e fóruns contra spammers.</li>
+            <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Obter CIDRs de ASNs, determinar relações de ASNs, descobrir ASNs com base em nomes de rede, etc.</li>
+            <li>{{Links.BGPView}} – Obter CIDRs de ASNs, determinar relações de ASNs, descobrir ASNs com base em nomes de rede, etc.</li>
+            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar por Qrator</a> – Ferramenta útil para verificar a conectividade de ASNs bem como para várias outras informações sobre ASNs.</li>
+            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">O Projeto Spamhaus</a> – Exibe relatórios sobre taxas de infecção por botnets para ASNs.</li>
+            <li>{{Links.AbuseIPDB}} – Mantém um banco de dados de IPs abusivos conhecidos; Fornece uma API para verificar e relatar IPs.</li>
+            <li>{{Links.IP-API}} – Obtenha informações sobre endereços IP ou nomes de host, como código do país, nome da região, longitude, latitude, nome da organização, etc.</li>
+          </ul>
+        </li>
+        <li><span class="comCat">Recursos informativos e de aprendizagem.</span>
+          <ul class="comSub">
+            <li>{{Links.PHP.Earth.Website}} – PHP recursos de aprendizagem e discussão.</li>
+            <li>{{Links.MDN.Homepage}} – Recursos para desenvolvedores, por desenvolvedores. Um recurso fantástico para aprender sobre HTML, CSS, JavaScript, acessibilidade, e muito mais.</li>
+            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Mapas de Vulnerabilidade</a> – Lista as versões seguras/inseguras de vários pacotes (HHVM, PHP, phpMyAdmin, Python, etc).</li>
+            <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Mapas de Compatibilidade</a> – Lista informações de compatibilidade para vários pacotes (CIDRAM, phpMussel, etc).</li>
+          </ul>
+        </li>
+      </ul>
+ pt-PT: |+
+  Alguns links úteis:<br />
+      <ul class="pieul">
+        <li><span class="comCat">Ferramentas, recursos, etc para o CIDRAM.</span>
+          <ul class="comSub">
+            <li>{{Links.CIDRAM.Bitbucket}} – Local de backup do repositório.</li>
+            <li>{{Links.CIDRAM.Codeberg}} – Local de backup do repositório.</li>
+            <li>{{Links.CIDRAM.Extras}} – Vários extras.</li>
+            <li>{{Links.CIDRAM.Issues}} – Página de problemas para CIDRAM (apoio, assistência, etc).</li>
+            <li>{{Links.CIDRAM.WordPress}} – WordPress plugin para CIDRAM.</li>
+          </ul>
+        </li>
+        <li><span class="comCat">Grupos, fóruns, comunidades, etc.</span>
+          <ul class="comSub">
+            <li>{{Links.PHP.Earth.Facebook}} – PHP recursos de aprendizagem e discussão.</li>
+            <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Fórum@Stop Forum Spam</a> – Fórum de discussão útil sobre como parar o spam do fórum.</li>
+          </ul>
+        </li>
+        <li><span class="comCat">Outras ferramentas, recursos, serviços, etc que são úteis.</span>
+          <ul class="comSub">
+            <li>{{Links.SFS}} – Mantém uma base de dados de spammers de fórum conhecidos. Útil para proteger sites e fóruns contra spammers.</li>
+            <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Obter CIDRs de ASNs, determinar relações de ASNs, descobrir ASNs com base em nomes de rede, etc.</li>
+            <li>{{Links.BGPView}} – Obter CIDRs de ASNs, determinar relações de ASNs, descobrir ASNs com base em nomes de rede, etc.</li>
+            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar por Qrator</a> – Ferramenta útil para verificar a conectividade de ASNs bem como para várias outras informações sobre ASNs.</li>
+            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">O Projeto Spamhaus</a> – Apresenta relatórios sobre as taxas de infeção por botnets para ASNs.</li>
+            <li>{{Links.AbuseIPDB}} – Mantém uma base de dados de IPs abusivos conhecidos; Fornece uma API para verificar e reportar IPs.</li>
+            <li>{{Links.IP-API}} – Obtenha informações sobre endereços IP ou nomes de host, como o código do país, o nome da região, a longitude, a latitude, o nome da organização, etc.</li>
+          </ul>
+        </li>
+        <li><span class="comCat">Recursos informativos e de aprendizagem.</span>
+          <ul class="comSub">
+            <li>{{Links.PHP.Earth.Website}} – PHP recursos de aprendizagem e discussão.</li>
+            <li>{{Links.MDN.Homepage}} – Recursos para desenvolvedores, por desenvolvedores. Um recurso fantástico para aprender sobre HTML, CSS, JavaScript, acessibilidade, e muito mais.</li>
+            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Mapas de Vulnerabilidade</a> – Lista as versões seguras/inseguras de vários pacotes (HHVM, PHP, phpMyAdmin, Python, etc).</li>
+            <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Mapas de Compatibilidade</a> – Lista informações de compatibilidade para vários pacotes (CIDRAM, phpMussel, etc).</li>
+          </ul>
+        </li>
+      </ul>
 label:
  %s across %s file:
   - "%s em %s arquivo"
@@ -1271,8 +1312,8 @@ tip:
   pt-BR: "Esta página lista quais seções existem nos arquivos de assinatura atualmente ativos."
   pt-PT: "Esta página lista quais secções existem nos arquivos de assinatura atualmente ativos."
  See the documentation:
-  pt-BR: "Consulte a <a href="{{Links.CIDRAM.Docs Base Path}}readme.pt.md\#user-content-SECTION5" hreflang="pt" rel="noopener external">documentação</a> para obter informações sobre as várias diretrizes de configuração e seus objetivos."
-  pt-PT: "Consulte a <a href="{{Links.CIDRAM.Docs Base Path}}readme.pt.md\#user-content-SECTION5" hreflang="pt" rel="noopener external">documentação</a> para obter informações sobre as várias diretrizes de configuração e os seus objetivos."
+  pt-BR: "Consulte a <a href="{{Links.CIDRAM.Docs Base Path}}readme.pt.md\#user-content-SECTION5" hreflang="pt" rel="noopener external"><span class="navicon documentation"></span>documentação</a> para obter informações sobre as várias diretrizes de configuração e seus objetivos."
+  pt-PT: "Consulte a <a href="{{Links.CIDRAM.Docs Base Path}}readme.pt.md\#user-content-SECTION5" hreflang="pt" rel="noopener external"><span class="navicon documentation"></span>documentação</a> para obter informações sobre as várias diretrizes de configuração e os seus objetivos."
  Server log snippets, abuse details, etc: "Trechos de log do servidor, detalhes de abuso, etc."
  Signature File Fixer: "O fixador para os arquivos de assinatura fornece uma maneira de detectar e corrigir possíveis problemas em arquivos de assinatura."
  Specify a value, or leave blank to disregard: "Especifique um valor, ou deixe em branco para desconsiderar."

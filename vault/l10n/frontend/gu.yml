@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Gujarati language data for the front-end (last modified: 2025.09.08).
+# This file: Gujarati language data for the front-end (last modified: 2025.09.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -222,7 +222,7 @@ config:
  hcaptcha_hcaptcha_log: &CaptchaLogFile "બધા કેપ્ચા પ્રયાસોને લૉગ કરીએ? જો હા, તો લોગ ફાઇલ માટે વાપરવા માટેનું નામ સ્પષ્ટ કરો. જો ના, તો આ ચલ ખાલી છોડી દો."
  hcaptcha_lockip: &CaptchaLockIP "કેપ્ચાને IP પર લૉક કરીએ?"
  hcaptcha_lockuser: &CaptchaLockUser "વપરાશકર્તાઓ માટે કૅપ્ચા લૉક કરીએ?"
- hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "બિન-અવરોધિત વિનંતીઓને કેપ્ચા પ્રદર્શિત કરતી વખતે કયા સ્ટેટસ કોડનો ઉપયોગ કરવો જોઈએ?"
+ hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "બિન-અવરોધિત વિનંતીઓને કેપ્ચા પ્રદર્શિત કરતી વખતે કયા સ્થિતિ કોડનો ઉપયોગ કરવો જોઈએ?"
  hcaptcha_secret: &CaptchaDashboard "આ મૂલ્ય તમારી કેપ્ચા સેવા માટેના ડેશબોર્ડમાં મળી શકે છે."
  hcaptcha_show_api_message: &ShowAPIMessage "API સંદેશ બતાવીએ? True/સાચું = હા [ડિફૉલ્ટ]; False/ખોટા = ના."
  hcaptcha_show_cookie_warning: &ShowCookieWarning "કૂકી ચેતવણી બતાવીએ? True/સાચું = હા [ડિફૉલ્ટ]; False/ખોટા = ના."
@@ -549,7 +549,7 @@ label:
  308 Permanent Redirect: "308 Permanent Redirect (કાયમી રીડાયરેક્ટ)\nક્લાયન્ટને સૂચના આપે છે કે રીડાયરેક્ટ કાયમી છે, અને રીડાયરેક્ટ માટે ઉપયોગમાં લેવાતી વિનંતી પદ્ધતિ પ્રારંભિક વિનંતી માટે ઉપયોગમાં લેવાતી વિનંતી પદ્ધતિ કરતાં અલગ ન હોઈ શકે."
  403 Forbidden: "403 Forbidden (પ્રતિબંધિત)\nવધુ મજબૂત, પરંતુ ઓછા વપરાશકર્તા મૈત્રીપૂર્ણ. મોટા ભાગના સામાન્ય સંજોગો માટે ભલામણ કરેલ."
  409 Conflict: "409 Conflict (સંઘર્ષ)\nસંસાધન સંઘર્ષો માટે ભલામણ કરેલ (દા.ત., મર્જ તકરાર, ફાઇલ ઍક્સેસ તકરાર, વગેરે). અન્ય સંદર્ભોમાં આગ્રહણીય નથી."
- 410 Gone: "410 Gone (ગયા)\nખોટા સકારાત્મક નિરાકરણ કરતી વખતે સમસ્યાઓનું કારણ બની શકે છે, કારણ કે કેટલાક બ્રાઉઝર આ સ્ટેટસ મેસેજને કેશ કરશે અને અનાવરોધિત કર્યા પછી પણ અનુગામી વિનંતીઓ મોકલશે નહીં. અમુક પ્રકારના ટ્રાફિક માટે અમુક સંદર્ભોમાં સૌથી વધુ પ્રાધાન્યક્ષમ હોઈ શકે છે."
+ 410 Gone: "410 Gone (ગયા)\nખોટા સકારાત્મક નિરાકરણ કરતી વખતે સમસ્યાઓનું કારણ બની શકે છે, કારણ કે કેટલાક બ્રાઉઝર આ સ્થિતિ મેસેજને કેશ કરશે અને અનાવરોધિત કર્યા પછી પણ અનુગામી વિનંતીઓ મોકલશે નહીં. અમુક પ્રકારના ટ્રાફિક માટે અમુક સંદર્ભોમાં સૌથી વધુ પ્રાધાન્યક્ષમ હોઈ શકે છે."
  418 I_m a teapot: "418 I'm a teapot (હું ચાની કીટલી છું)\nએપ્રિલ ફૂલની મજાકનો સંદર્ભ આપે છે ({{Links.RFC2324}}). કોઈપણ ક્લાયંટ, બોટ, બ્રાઉઝર, અથવા અન્યથા દ્વારા સમજવાની શક્યતા નથી. મનોરંજન અને સગવડ માટે પ્રદાન કરેલ છે, પરંતુ સામાન્ય રીતે ભલામણ કરવામાં આવતી નથી."
  429 Too Many Requests: "429 Too Many Requests (ઘણી બધી વિનંતીઓ)\nદર મર્યાદા, DDoS હુમલા, અને પૂર નિવારણ સાથે કામ કરતી વખતે ભલામણ કરવામાં આવે છે. અન્ય સંદર્ભોમાં આગ્રહણીય નથી."
  451 Unavailable For Legal Reasons: "451 Unavailable For Legal Reasons (કાનૂની કારણોસર અનુપલબ્ધ)\nકાનૂની કારણોસર મુખ્યત્વે અવરોધિત કરતી વખતે ભલામણ કરવામાં આવે છે. અન્ય સંદર્ભોમાં આગ્રહણીય નથી."
@@ -1036,7 +1036,7 @@ tip:
  Rate limiting is currently disabled: "નૉૅધ: દર મર્યાદા હાલમાં અક્ષમ છે, પરંતુ રૂપરેખાંકન પૃષ્ઠ દ્વારા સક્ષમ કરી શકાય છે."
  Report to AbuseIPDB: "આ પેજનો ઉપયોગ IP સરનામાંની AbuseIPDB ને જાણ કરવા માટે, અથવા IP સરનામાંની ભૂલથી જાણ કરવામાં આવી હોય તેવી ઘટનામાં, અગાઉના અહેવાલો કાઢી નાખવા માટે થઈ શકે છે."
  Sections List: "આ પાનું વર્તમાનમાં સક્રિય સિગ્નેચર ફાઇલોમાં કયા વિભાગો અસ્તિત્વમાં છે તેની યાદી આપે છે."
- See the documentation: "વિવિધ રૂપરેખાંકન નિર્દેશો અને તેમના હેતુઓ વિશેની માહિતી માટે <a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external">દસ્તાવેજીકરણ</a> જુઓ."
+ See the documentation: "વિવિધ રૂપરેખાંકન નિર્દેશો અને તેમના હેતુઓ વિશેની માહિતી માટે <a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external"><span class="navicon documentation"></span>દસ્તાવેજીકરણ</a> જુઓ."
  Server log snippets, abuse details, etc: "સર્વર લોગ સ્નિપેટ્સ, દુરુપયોગ વિગતો, વગેરે."
  Signature File Fixer: "સિગ્નેચર ફાઇલ ફિક્સર સિગ્નેચર ફાઇલોમાં સંભવિત સમસ્યાઓ શોધવા અને તેને ઠીક કરવાની રીત પ્રદાન કરે છે."
  Specify a value, or leave blank to disregard: "મૂલ્યનો ઉલ્લેખ કરો, અથવા અવગણવા માટે ખાલી છોડી દો."

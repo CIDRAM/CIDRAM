@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for CLI (last modified: 2024.08.14).
+# This file: Chinese (traditional) language data for CLI (last modified: 2025.09.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -35,10 +35,10 @@ CLI_H: |
  ---
  鍵：
  -h 顯示此幫助信息。
- -c 檢查如果一個IP位址被阻止由CIDRAM簽名文件。
+ -c 檢查如果一個IP位址被阻止由CIDRAM簽名檔案。
  -g 生成CIDR從一個IP位址。
- -v 驗證簽名文件。
- -f 修復簽名文件。
+ -v 驗證簽名檔案。
+ -f 修復簽名檔案。
  ---
  例子：
  php.exe /cidram/loader.php -c 192.168.0.0
@@ -48,9 +48,9 @@ CLI_H: |
  php.exe /cidram/loader.php -f signatures.dat
  php.exe /cidram/loader.php -v signatures.dat
  ---
-CLI_IP_Blocked: " 指定的IP位址，​『{IP}』，​是阻塞由一個或多簽名文件。"
-CLI_IP_Not_Blocked: " 指定的IP位址，​『{IP}』，​不是阻塞由任何簽名文件。"
-CLI_VF_Empty: "指定的簽名文件為空或不存在的。"
+CLI_IP_Blocked: " 指定的IP位址，​『{IP}』，​是阻塞由一個或多簽名檔案。"
+CLI_IP_Not_Blocked: " 指定的IP位址，​『{IP}』，​不是阻塞由任何簽名檔案。"
+CLI_VF_Empty: "指定的簽名檔案為空或不存在的。"
 CLI_VF_Level_0: "通知"
 CLI_VF_Level_1: "警告"
 CLI_VF_Level_2: "錯誤"
@@ -73,8 +73,8 @@ CLI_VL_Tags: "線%s：章節標籤大於20字節；章節標籤應該清晰和�
 CLI_VL_Unrecognised: "線%s：【Function】未知；簽名可能被打破。"
 CLI_VL_Whitespace: "線%s：多餘的尾隨空白在這個線是檢測。"
 CLI_VL_YAML: "線%s：YAML樣數據是檢測，​但無法處理它。"
-CLI_V_CRLF: "CR/CRLF檢測在簽名文件；這些都是允許的和不會產生問題，​但LF是最好。"
-CLI_V_Finished: "簽名驗證已完成（%s）。​如果沒有警告或錯誤已出現，​您的簽名文件是最有可能的好。"
+CLI_V_CRLF: "CR/CRLF檢測在簽名檔案；這些都是允許的和不會產生問題，​但LF是最好。"
+CLI_V_Finished: "簽名驗證已完成（%s）。​如果沒有警告或錯誤已出現，​您的簽名檔案是最有可能的好。"
 CLI_V_LineByLine: "線由行驗證已開始。"
 CLI_V_Started: "簽名驗證已開始（%s）。"
-CLI_V_Terminal_LF: "簽名文件應終止通過一個LF換行符。"
+CLI_V_Terminal_LF: "簽名檔案應終止通過一個LF換行符。"

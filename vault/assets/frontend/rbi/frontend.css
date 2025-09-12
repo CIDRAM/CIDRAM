@@ -26,10 +26,19 @@ select,option,input,textarea{filter:grayscale(.1) brightness(.94)}
 select:active,textarea:active:not([readonly]),input:active{filter:grayscale(0) brightness(1)}
 select:disabled,textarea:disabled,input:disabled{filter:grayscale(1) brightness(.5)}
 select:focus,textarea:focus,input:focus,select:hover,textarea:hover:not([readonly]),input:hover{filter:grayscale(0) brightness(1)}
-.mainbox{display:flex;flex-direction:row;gap:auto;flex-basis:100%;justify-content:center;align-items:stretch}
+.headbox,.footbox,.mainbox{display:flex;flex-direction:row;gap:auto;flex-basis:100%;justify-content:center;align-items:stretch;font-weight:700}
+.mainbox{gap:24px}
+.start{text-align:{FE_Align};justify-self:start;flex-shrink:1;flex-grow:2}
+.end{text-align:{FE_Align_Reverse};justify-self:end;flex-shrink:2;flex-grow:1}
+.headbox{height:64px}
+.headbox>.start{flex-basis:80%}
+.headbox>.end{flex-basis:20%;border:0;border-left:1px solid rgba(0,0,153,.2)}
+.footbox{letter-spacing:0;white-space:nowrap}
+.footbox>.start,.footbox>.end{flex-basis:50%}
 nav{display:flex;flex-direction:column;gap:2px;justify-content:start;align-items:start;font-size:calc((14px * {magnification}) + .03vw);flex-basis:20%;flex-shrink:2;flex-grow:1;letter-spacing:calc(1px + .03vw)}
 nav:lang(ja){letter-spacing:-1px}
 nav a:not(.idx a){display:block}
+nav>div:first-child{border-radius:{cnrRadius} 0 0}
 main{flex-basis:80%;flex-shrink:1;flex-grow:2}
 .subNav{display:block;text-align:center;font-size:calc((10px * {magnification}) + .03vw);color:rgba(51,51,0,.6);text-shadow:2px 2px 1px rgba(0,0,0,.2)}
 table{table-layout:fixed}
@@ -44,18 +53,15 @@ li>.iCntr>.iCntn>textarea{width:calc(100% - 92px)}
 a:link,a:visited{color:#832}
 a:hover{color:#f64}
 a:active,a:focus{color:red}
-.bNav,.gen,.spanner{text-align:{FE_Align_Reverse}}
-.bNav{height:64px}
-.cat,.exp,.bNav,.gen,nav,.s,.tip,.txtGn,.txtOe,.txtRd,.spanner,a,input,input[type=file]::file-selector-button,select,textarea{font-weight:700}
-.ci,.co,.gen,.center{margin:auto}
-.ci,.co,.ng1:not(.quad .ng1,.duo .ng1,.col .ng1),.ng2:not(.quad .ng2,.duo .ng2,.col .ng2){width:calc(100% - 32px)}
+.spanner{text-align:{FE_Align_Reverse}}
+.cat,.exp,nav,.s,.txtGn,.txtOe,.txtRd,.spanner,a,input,input[type=file]::file-selector-button,select,textarea{font-weight:700}
+.ci,.co,.center{margin:auto}
+.ci,.co,.ng1:not(.quad .ng1,.duo .ng1,.col .ng1,nav .ng1),.ng2:not(.quad .ng2,.duo .ng2,.col .ng2,nav .ng2){width:calc(100% - 32px)}
 .ci{background-color:#fff;border-style:solid;border-width:1px;border-color:#aaa;text-align:{FE_Align};border-top-{FE_Align_Reverse}-radius:24px;padding:12px}
 .co,body,.center{text-align:center}
 .co,body{padding:0}
-.dt,.s,.tip,.txtBl,.txtGn,.txtOe,.txtRd,.inline{display:inline}
-.dt,.tip{float:{FE_Align};text-align:{FE_Align};width:80%}
-.gen,input,select,textarea{font-family:'Verdana','Arial','Helvetica'}
-.gen{letter-spacing:0;white-space:nowrap}
+.s,.txtBl,.txtGn,.txtOe,.txtRd,.inline{display:inline}
+.footbox,input,select,textarea{font-family:'Verdana','Arial','Helvetica'}
 .h1,.h1f,.h2,.h2f,.h3,.h3f,.h4,.h4f,.ng1,.ng2,.r,.rf,.spanner{margin:0;padding:4px;border-style:{Half_Border};border-width:1px;border-color:#999}
 td.h1,td.h1f,td.h2,td.h2f,td.r,td.rf{width:25%}
 .h1,.h3,.spanner{background-color:#eee}
@@ -75,7 +81,6 @@ td.h3,td.h3f,td.h4,td.h4f{width:50%}
 @media only all and (max-width:230px) {
   .ufts{width:calc(100% - 10px)}
 }
-.vr{float:{FE_Align};width:1px;height:inherit;background-color:rgba(0,0,153,.2)}
 @keyframes idxAn{0%{background:#6af}100%{background:#ddd}}
 @keyframes xAux{0%{opacity:0}100%{opacity:1}}
 @keyframes rAux{0%{background:rgba(255,0,0,.7)}100%{background:rgba(255,0,0,0)}}
@@ -100,9 +105,12 @@ input#homebutton{border-top-{FE_Align_Reverse}-radius:0;border-bottom-{FE_Align_
 .iCntn{margin-{FE_Align}:42px}
 @media only all and (max-width:968px) {
   .extend{flex-basis:100%}
-  .big,.dt{display:none}
+  .headbox,.mainbox,.footbox{flex-direction:column;height:auto}
+  .footbox>.start{display:none}
+  .headbox>.start,.headbox>.end,.footbox>.end{text-align:center;justify-self:stretch;flex-basis:100%}
+  .headbox>.end{border:0;border-top:1px solid rgba(0,0,153,.2)}
+  .big{display:none}
   .mob{display:block}
-  .tip,.bNav,.gen{float:none;height:auto;text-align:center}
   td.h1,td.h1f,td.h2,td.h2f,td.r,td.rf{width:50%}
   .flong{width:calc(100% - 10px)}
   .iCntn{margin:0}
@@ -241,7 +249,6 @@ input[disabled],input[disabled]+label{cursor:not-allowed}
 .bckpicon.statistics{position:relative;top:-1px}
 .rulePseudoPos{display:block;height:0px;width:100%;transform:scaleY(0);transition:all .5s ease-in-out;font-size:calc((10px * {magnification}) + .03vw);font-weight:700}
 .rulePseudoPosActive{background-color:rgba(128,192,0,.2);height:16px;transform:scaleY(1)}
-.navSoftCnr{border-radius:{cnrRadius} 0 0}
 .clipMar{display:block;margin:16px}
 .inlineBlock{display:inline-block;position:relative;top:3px}
 .capitalize{text-transform:capitalize}
@@ -261,7 +268,7 @@ input[type=checkbox],input[type=radio]{accent-color:#009}
 .clockSeconds{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:clockseconds.svg}{/Base64Encode});position:relative;inset:0 -32px}
 .clockFace{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:clockface.svg}{/Base64Encode});position:relative;inset:0 -48px}
 .col{display:flex;flex-direction:column;gap:2px;justify-content:start;align-items:start;flex-basis:100%;width:100%}
-.col>.ng1,.col>.ng2,.flexstretch,.spanner{width:calc(100% - 10px)}
+.col>.ng1,.col>.ng2,nav>.ng1,nav>.ng2,.flexstretch,.spanner{width:calc(100% - 10px)}
 .configInitPos{transform:scaleY(0);transform-origin:top center;opacity:0;max-height:0;margin-top:-2px}
 .configOpenPos{transform:scaleY(1);transform-origin:top center;opacity:1;max-height:auto}
 .spanner+table{margin:-2px -2px 0 -2px}
@@ -278,4 +285,4 @@ textarea#logsTA{margin-top:0;margin-bottom:0;margin-{FE_Align}:0;margin-{FE_Alig
 }
 @keyframes fmDeleteAnim{0%{opacity:1}100%{filter:brightness(0);opacity:0;display:none}}
 .fmDelete{transform-origin:top;animation:fmDeleteAnim .5s cubic-bezier(0,0,.1,1);animation-iteration-count:1;animation-fill-mode:forwards}
-.end{text-align:{FE_Align_Reverse};justify-self:end}
+.reverse{text-align:{FE_Align_Reverse}}

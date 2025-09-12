@@ -11,12 +11,18 @@
 
 <body>{CustomHeader}{JS}
 <div class="co"><br /><div class="ci">
-<!-- Logged In Begin --><div class="bNav"><div class="tip">{Greeting}<br />{FE_Tip}</div><div class="vr big"></div><hr class="mob" />{bNav}</div><!-- Logged In End -->
+<!-- Logged In Begin --><div class="headbox">
+  <div class="start">{Greeting}<br />{FE_Tip}</div>
+  <div class="end">{bNav}</div>
+</div><!-- Logged In End -->
 <hr />{Warnings}
 
 {FE_Content}
 <hr />
-<div class="gen"><div class="dt">{DateTime}<!-- Logged In Begin --> – <span class="clockBlock"><span class="clockBlock clockHours auxbl" id="clockhours"></span><span class="clockBlock clockMinutes auxrd" id="clockminutes"></span><span class="clockBlock clockSeconds auxgn" id="clockseconds"></span><span class="clockBlock clockFace auxbl"></span></span> <span id="clockface"></span><script type="text/javascript">updateClock();setInterval(updateClock, 1000);</script><!-- Logged In End --></div><div class="txtBl">{GeneratedBy}</div></div>
+<div class="footbox">
+  <div class="start">{DateTime}<!-- Logged In Begin --> – <span class="clockBlock"><span class="clockBlock clockHours auxbl" id="clockhours"></span><span class="clockBlock clockMinutes auxrd" id="clockminutes"></span><span class="clockBlock clockSeconds auxgn" id="clockseconds"></span><span class="clockBlock clockFace auxbl"></span></span> <span id="clockface"></span><script type="text/javascript">updateClock();setInterval(updateClock, 1000);</script><!-- Logged In End --></div>
+  <div class="end txtBl">{GeneratedBy}</div>
+</div>
 </div><br /></div>
 {CustomFooter}</body>
 

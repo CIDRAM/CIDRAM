@@ -14,7 +14,7 @@ code{background-color:rgba(164,128,102,.3);vertical-align:0;display:inline-block
 img.ico{width:16px;height:16px;border:0}
 input[type=file]{margin:0;padding:0;border:none;background:none;width:auto}
 label{font-weight:600}
-.headbox,.footbox,.mainbox{display:flex;flex-direction:row;gap:auto;flex-basis:100%;justify-content:center;align-items:stretch;font-weight:700}
+.headbox,.footbox,.mainbox{display:flex;flex-direction:row;gap:auto;flex-basis:100%;justify-content:center;align-items:stretch}
 .mainbox{gap:24px}
 .start{text-align:{FE_Align};justify-self:start;flex-shrink:1;flex-grow:2}
 .end{text-align:{FE_Align_Reverse};justify-self:end;flex-shrink:2;flex-grow:1}
@@ -42,7 +42,7 @@ a:link,a:visited{color:#0366d6;text-decoration:none}
 a:hover{text-decoration:underline;color:#f64}
 a:active,a:focus{color:#cb2431}
 .spanner{text-align:{FE_Align_Reverse}}
-.cat,.exp,nav,.s,.txtGn,.txtOe,.txtRd,.spanner,a{font-weight:700}
+.headbox,.footbox.cat,.exp,nav,.s,.txtGn,.txtOe,.txtRd,.spanner,a{font-weight:700}
 .ci,.co,.center{margin:auto}
 .ci,.co,.ng1:not(.quad .ng1,.duo .ng1,.col .ng1,nav .ng1),.ng2:not(.quad .ng2,.duo .ng2,.col .ng2,nav .ng2){width:calc(100% - 32px)}
 .ci{padding:12px;text-align:{FE_Align}}
@@ -187,6 +187,7 @@ input[type=button].reset:hover,input[type=button].reset:active{color:#f88}
 .fmicon.audio{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:audio.svg}{/Base64Encode})}
 .fmicon.card{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:card.svg}{/Base64Encode})}
 .fmicon.database{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:database.svg}{/Base64Encode})}
+.fmicon.encrypted{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:encrypted.svg}{/Base64Encode})}
 .fmicon.executable{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:executable.svg}{/Base64Encode})}
 .fmicon.formulas{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:formulas.svg}{/Base64Encode})}
 .fmicon.graphics{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:graphics.svg}{/Base64Encode})}

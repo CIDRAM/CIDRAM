@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2025.09.11).
+# This file: Latvian language data for the front-end (last modified: 2025.09.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -419,9 +419,12 @@ hints_duration:
  Ierobežojumi.: "Apzīmējumus var jaukt, taču vienības vienmēr jāapraksta no lielākās līdz mazākajai, un tās nevar atkārtot. Piemēram, <strong>1 week 2 days 3′4″</strong> ir <span class="txtGn">derīgs</span> un tiks pareizi saprasts, bet <strong>3′4″ 1 week 2 days</strong> un <strong>3 hours 3h 3°</strong> ir <span class="txtRd">nav derīgi</span>. CIDRAM ir vienalga, vai izmantojat atstarpes. Cipariem jābūt vienkāršiem un neformatētiem. Praktiskuma labad lielākā atbalstītā vienība ir nedēļa. Kad konfigurācija tiek atjaunināta, CIDRAM normalizē ilgumus uz loka laiku."
 hints_has_bypass: "* Šai opcijai zem <code class="s">bypasses➡used</code> ir atbilstošs apvedceļš. Ieteicams nodrošināt, lai atbilstošā apiešanas izvēles rūtiņa būtu atzīmēta tāpat kā izvēles rūtiņa, lai mēģinātu pārbaudīt šo opciju."
 hints_http_response_header_code:
- 1.: "Kad ir ieslēgts "klusuma režīms", tiks izmantots HTTP statusa ziņojums, kas definēts ar <code class="s">general➡silent_mode_response_header_code</code> (tam ir visaugstākā prioritāte)."
+ 1.: "Kad ir ieslēgts "klusuma režīms", tiks izmantots HTTP statusa ziņojums, kas definēts ar <code class="s">general➡silent_mode_response_header_code</code> (šim ir visaugstākā prioritāte)."
  2.: "Ja pieprasītāja vienība ir aizliegta pārkāpuma ierobežojuma pārsniegšanas dēļ, tiks izmantots HTTP statusa ziņojums “aizliegts”."
  3.: "Ja bloķē ātruma ierobežojuma dēļ, tiks izmantots kods 429 vai, ja bloķē resursu konfliktu dēļ, tiks izmantots HTTP statusa ziņojums, kas definēts ar <code class="s">signatures➡conflict_response</code> (šajā kontekstā ātruma ierobežošanai un resursu konfliktiem ir vienlīdzīga prioritāte)."
+ 4.: "Ja bloķē palīgnoteikuma dēļ, kas iestata HTTP statusa koda aizstāšanu, tiks izmantota šī HTTP statusa koda aizstāšana."
+ 5.: "Ja bloķē juridisku iemeslu dēļ (t.i., ja bloķē pielāgotu parakstu dēļ, kurā tiek izmantots īsais vārds “juridisks”), tiks izmantots HTTP statusa ziņojums ar vērtību “juridisks”."
+ 6.: "Visiem pārējiem bloķētajiem pieprasījumiem tiks izmantots HTTP statusa ziņojums “noklusējuma” (šim ir viszemākā prioritāte)."
 hints_inspection: "* Paredzēts tikai palīgnoteikumu atkļūdošanai. Netiek rādīts bloķētajiem lietotājiem."
 hints_ipv6_on_32bit: "Piezīme: Dažās 32 bitu sistēmās IPv6 meklēšana var nedarboties pareizi."
 hints_logging_datetime: "Noderīgs padoms: Varat pievienot datuma/laika informāciju žurnālfailu nosaukumiem, izmantojot laika formāta vietturus. Pieejamie laika formāta vietturi tiek parādīti pie {{Links.ConfigRef.time_format}}."
@@ -849,6 +852,7 @@ purpose:
  Compressed file or archive: "Saspiests fails vai arhīvs"
  Database file: "Datu bāzes fails"
  Email file: "E-pasta fails"
+ Encrypted or sensitive file: "Šifrēts vai sensitīvs fails"
  Executable file: "Izpildāms fails"
  Formulas file: "Formulu fails"
  Graphics file: "Grafikas fails (piemēram, attēli, vektori, video)"
@@ -1073,7 +1077,7 @@ tip:
  Rate limiting is currently disabled: "Piezīme: Likmes ierobežošana pašlaik ir atspējota, taču to var iespējot konfigurācijas lapā."
  Report to AbuseIPDB: "Šo lapu var izmantot, lai ziņotu par IP adresēm AbuseIPDB vai dzēstu iepriekšējos ziņojumus, ja IP adrese ir ziņota kļūdas dēļ."
  Sections List: "Šajā lapā ir uzskaitītas sadaļas, kas atrodas pašlaik aktīvajos paraksta failos."
- See the documentation: "Skatiet <a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external">dokumentāciju</a>, lai iegūtu informāciju par dažādām konfigurācijas direktīvām un to mērķiem."
+ See the documentation: "Skatiet <a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external"><span class="navicon documentation"></span>dokumentāciju</a>, lai iegūtu informāciju par dažādām konfigurācijas direktīvām un to mērķiem."
  Server log snippets, abuse details, etc: "Servera žurnāla fragmenti, informācija par ļaunprātīgu izmantošanu, utt."
  Signature File Fixer: "Paraksta faila fiksētājs nodrošina veidu, kā atklāt un novērst parakstu failu iespējamās problēmas."
  Specify a value, or leave blank to disregard: "Norādiet vērtību vai atstājiet tukšu lai neievērotu."

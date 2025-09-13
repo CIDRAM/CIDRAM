@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese language data for the front-end (last modified: 2025.09.11).
+# This file: Chinese language data for the front-end (last modified: 2025.09.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -167,7 +167,7 @@ config:
  bobuam_safari: {"zh-Hans": "Safari的“Version”令牌的最低允许版本。 推荐的：“{{BOBUAM Token.Safari}}”。", "zh-Hant": "Safari的『Version』令牌的最低允許版本。 推薦的：『{{BOBUAM Token.Safari}}』。"}
  bobuam_sanity_check: {"zh-Hans": "阻止模糊的或格式畸形的用户代理字符串的浏览器？", "zh-Hant": "阻止模糊的或格式畸形的用戶代理字符串的瀏覽器？"}
  bunnycdn: {"zh-Hans": "BunnyCDN兼容性模块配置。", "zh-Hant": "BunnyCDN兼容性模組配置。"}
- bunnycdn_positive_action: {"zh-Hans": "CIDRAM遇到BunnyCDN的请求时应该执行什么动作？ 默认操作 = 绕行。", "zh-Hant": "CIDRAM遇到BunnyCDN的請求時應該執行什麼動作？ 默認操作 = 繞行。"}
+ bunnycdn_positive_action: {"zh-Hans": "CIDRAM遇到BunnyCDN的请求时应该执行什么动作？ 标准操作 = 绕行。", "zh-Hant": "CIDRAM遇到BunnyCDN的請求時應該執行什麼動作？ 標準操作 = 繞行。"}
  bypasses: {"zh-Hans": "默认签名绕过配置。", "zh-Hant": "默認簽名繞過配置。"}
  bypasses_used: {"zh-Hans": "应该使用哪些绕过？", "zh-Hant": "應該使用哪些繞過？"}
  captcha: {"zh-Hans": "验证码的配置（为人们提供了一种在受阻时重新获得访问权限的方法）。", "zh-Hant": "驗證碼的配置（為人們提供了一種在受阻時重新獲得訪問權限的方法）。"}
@@ -180,7 +180,7 @@ config:
  captcha_lockto: {"zh-Hans": "将验证码锁定到什么。", "zh-Hant": "將驗證碼鎖定在什麼。"}
  captcha_log: {"zh-Hans": "记录所有的验证码的尝试？​要做到这一点，​指定一个文件名到使用。​如果不，​离开这个变量为空白。", "zh-Hant": "記錄所有的驗證碼的嘗試？​要做到這一點，​指定一個檔案名稱到使用。​如果不，​離開這個變量為空白。"}
  captcha_messages: {"zh-Hans": "与验证码一起显示的消息。", "zh-Hant": "與驗證碼一起顯示的訊息。"}
- captcha_nonblocked_status_code: {"zh-Hans": "向未阻止的请求显示验证码时应使用哪个状态代码？", "zh-Hant": "向未阻止的請求顯示驗證碼時應使用哪個狀態代碼？"}
+ captcha_nonblocked_status_code: {"zh-Hans": "向未阻止的请求显示验证码时应使用哪个状态码？", "zh-Hant": "向未阻止的請求顯示驗證碼時應使用哪個狀態碼？"}
  captcha_signature_limit: {"zh-Hans": "撤销验证码之前允许的最大签名数。 标准 = 1。", "zh-Hant": "撤銷驗證碼之前允許的最大簽名數。 標準 = 1。"}
  captcha_turnstile_secret: &TurnstileCred {"zh-Hans": "如果您想将Cloudflare Turnstile与CIDRAM一起使用，则需要在此输入一个值。​如果不使用它，您可以忽略它。", "zh-Hant": "如果您想將Cloudflare Turnstile與CIDRAM一起使用，則需要在此輸入一個值。​如果不使用它，您可以忽略它。"}
  captcha_turnstile_sitekey: *TurnstileCred
@@ -308,7 +308,7 @@ config:
  protocol_blocked: {"zh-Hans": "选定的协议将被阻止。注意：不会影响通过强制请求使用相同协议的服务（例如，Cloudflare）路由的网站。", "zh-Hant": "選定的協定將被阻止。注意：不會影響通過強制請求使用相同協定的服務（例如，Cloudflare）路由的網站。"}
  protocol_reason_message: {"zh-Hans": "阻止此类请求时显示的原因消息。", "zh-Hant": "阻止此類請求時顯示的原因消息。"}
  quic: {"zh-Hans": "Quic cloud兼容性模块配置。", "zh-Hant": "Quic cloud兼容性模組配置。"}
- quic_positive_action: {"zh-Hans": "CIDRAM遇到Quic cloud的请求时应该执行什么动作？ 默认操作 = 绕行。", "zh-Hant": "CIDRAM遇到Quic cloud的請求時應該執行什麼動作？ 默認操作 = 繞行。"}
+ quic_positive_action: {"zh-Hans": "CIDRAM遇到Quic cloud的请求时应该执行什么动作？ 标准操作 = 绕行。", "zh-Hant": "CIDRAM遇到Quic cloud的請求時應該執行什麼動作？ 標準操作 = 繞行。"}
  rate_limiting: {"zh-Hans": "速率限制的配置（不建议一般使用）。", "zh-Hant": "速率限制的配置（不建議一般使用）。"}
  rate_limiting_allowance_period: {"zh-Hans": "监视使用情况的持续时间。​标准=0°0′0″。", "zh-Hant": "監視使用情況的持續時間。​標準=0°0′0″。"}
  rate_limiting_exceptions: {"zh-Hans": "例外（即，不应限制速率的请求）。​仅在启用速率限制时有效。", "zh-Hant": "例外（即，不應限制速率的請求）。​僅在啟用速率限制時有效。"}
@@ -330,22 +330,22 @@ config:
  signatures_shorthand: {"zh-Hans": "当与使用给定速记词的签名匹配时，控制如何处理请求。", "zh-Hant": "當與使用給定速記詞的簽名匹配時，控制如何處理請求。"}
  signatures_tracking_override: {"zh-Hans": "允许模块覆盖跟踪选项吗？​True（真）=允许【标准】；False（假）=不允许。", "zh-Hant": "允許模組覆蓋跟踪選項嗎？​True（真）=允許【標準】；False（假）=不允許。"}
  supplementary_cache_options: {"zh-Hans": "补充缓存选项。​注意：更改这些值可能会使您注销。", "zh-Hant": "補充緩存選項。​注意：更改這些值可能會使您註銷。"}
- supplementary_cache_options_enable_apcu: {"zh-Hans": "指定是否尝试使用APCu进行缓存。 标准 = True。", "zh-Hant": "指定是否嘗試使用APCu進行緩存。 默認 = True。"}
- supplementary_cache_options_enable_memcached: {"zh-Hans": "指定是否尝试使用Memcached进行缓存。 标准 = False。", "zh-Hant": "指定是否嘗試使用Memcached進行緩存。 默認 = False。"}
- supplementary_cache_options_enable_pdo: {"zh-Hans": "指定是否尝试使用PDO进行缓存。 标准 = False。", "zh-Hant": "指定是否嘗試使用PDO進行緩存。 默認 = False。"}
- supplementary_cache_options_enable_redis: {"zh-Hans": "指定是否尝试使用Redis进行缓存。 标准 = False。", "zh-Hant": "指定是否嘗試使用Redis進行緩存。 默認 = False。"}
- supplementary_cache_options_memcached_host: {"zh-Hans": "Memcached 主机值。 标准 = localhost。", "zh-Hant": "Memcached 主機值。 默認 = localhost。"}
- supplementary_cache_options_memcached_port: {"zh-Hans": "Memcached 端口值。 标准 = “11211”。", "zh-Hant": "Memcached 端口值。 默認 = 『11211』。"}
- supplementary_cache_options_pdo_dsn: {"zh-Hans": "PDO DSN值。 标准 = “mysql:dbname=cidram;host=localhost;port=3306”。", "zh-Hant": "PDO DSN值。 默認 = 『mysql:dbname=cidram;host=localhost;port=3306』。"}
+ supplementary_cache_options_enable_apcu: {"zh-Hans": "指定是否尝试使用APCu进行缓存。 标准 = True。", "zh-Hant": "指定是否嘗試使用APCu進行緩存。 標準 = True。"}
+ supplementary_cache_options_enable_memcached: {"zh-Hans": "指定是否尝试使用Memcached进行缓存。 标准 = False。", "zh-Hant": "指定是否嘗試使用Memcached進行緩存。 標準 = False。"}
+ supplementary_cache_options_enable_pdo: {"zh-Hans": "指定是否尝试使用PDO进行缓存。 标准 = False。", "zh-Hant": "指定是否嘗試使用PDO進行緩存。 標準 = False。"}
+ supplementary_cache_options_enable_redis: {"zh-Hans": "指定是否尝试使用Redis进行缓存。 标准 = False。", "zh-Hant": "指定是否嘗試使用Redis進行緩存。 標準 = False。"}
+ supplementary_cache_options_memcached_host: {"zh-Hans": "Memcached 主机值。 标准 = localhost。", "zh-Hant": "Memcached 主機值。 標準 = localhost。"}
+ supplementary_cache_options_memcached_port: {"zh-Hans": "Memcached 端口值。 标准 = “11211”。", "zh-Hant": "Memcached 端口值。 標準 = 『11211』。"}
+ supplementary_cache_options_pdo_dsn: {"zh-Hans": "PDO DSN值。 标准 = “mysql:dbname=cidram;host=localhost;port=3306”。", "zh-Hant": "PDO DSN值。 標準 = 『mysql:dbname=cidram;host=localhost;port=3306』。"}
  supplementary_cache_options_pdo_password: {"zh-Hans": "PDO 密码。", "zh-Hant": "PDO 密碼。"}
  supplementary_cache_options_pdo_username: {"zh-Hans": "PDO 用户名。", "zh-Hant": "PDO 使用者名稱。"}
  supplementary_cache_options_prefix:
   zh-Hans: "该值将附加到所有缓存条目的键的开头。 标准 = “CIDRAM_”。 当同一服务器上存在多个安装时，这对于将它们的缓存彼此分开非常有用。"
-  zh-Hant: "該值將附加到所有緩存條目的鍵的開頭。 默認 = 『CIDRAM_』。 當同一服務器上存在多個安裝時，這對於將它們的緩存彼此分開非常有用。"
- supplementary_cache_options_redis_database_number: {"zh-Hans": "Redis 数据库编号。 标准 = “0”。 注意：不能在 Redis Cluster 中使用 0 以外的值。", "zh-Hant": "Redis 資料庫編號。 默認 = 『0』。 注意：不能在 Redis Cluster 中使用 0 以外的值。"}
- supplementary_cache_options_redis_host: {"zh-Hans": "Redis 主机值。 标准 = localhost。", "zh-Hant": "Redis 主機值。 默認 = localhost。"}
- supplementary_cache_options_redis_port: {"zh-Hans": "Redis 端口值。 标准 = “6379”。", "zh-Hant": "Redis 端口值。 默認 = 『6379』。"}
- supplementary_cache_options_redis_timeout: {"zh-Hans": "Redis 超时值。 标准 = “2.5”。", "zh-Hant": "Redis 超時值。 默認 = 『2.5』。"}
+  zh-Hant: "該值將附加到所有緩存條目的鍵的開頭。 標準 = 『CIDRAM_』。 當同一服務器上存在多個安裝時，這對於將它們的緩存彼此分開非常有用。"
+ supplementary_cache_options_redis_database_number: {"zh-Hans": "Redis 数据库编号。 标准 = “0”。 注意：不能在 Redis Cluster 中使用 0 以外的值。", "zh-Hant": "Redis 資料庫編號。 標準 = 『0』。 注意：不能在 Redis Cluster 中使用 0 以外的值。"}
+ supplementary_cache_options_redis_host: {"zh-Hans": "Redis 主机值。 标准 = localhost。", "zh-Hant": "Redis 主機值。 標準 = localhost。"}
+ supplementary_cache_options_redis_port: {"zh-Hans": "Redis 端口值。 标准 = “6379”。", "zh-Hant": "Redis 端口值。 標準 = 『6379』。"}
+ supplementary_cache_options_redis_timeout: {"zh-Hans": "Redis 超时值。 标准 = “2.5”。", "zh-Hant": "Redis 超時值。 標準 = 『2.5』。"}
  template_data: {"zh-Hans": "模板和主题的配置。", "zh-Hant": "模板和主題的配置。"}
  template_data_block_event_title: {"zh-Hans": "为阻止事件显示的页面标题。", "zh-Hant": "為阻止事件顯示的頁面標題。"}
  template_data_captcha_title: {"zh-Hans": "为验证码请求显示的页面标题。", "zh-Hant": "為驗證碼請求顯示的頁面標題。"}
@@ -468,6 +468,25 @@ hints_duration:
 hints_has_bypass:
  zh-Hans: "* 这个选项在<code class="s">bypasses➡used</code>下有相应的绕过。​建议确保相应旁路的复选框标记方式与尝试验证此选项的复选框相同。"
  zh-Hant: "* 這個選項在<code class="s">bypasses➡used</code>下有相應的繞過。​建議確保相應旁路的複選框標記方式與嘗試驗證此選項的複選框相同。"
+hints_http_response_header_code:
+ 1.:
+  zh-Hans: "当“静默模式”生效时，将使用<code class="s">general➡silent_mode_response_header_code</code>定义的HTTP状态消息（这是最高优先级）。"
+  zh-Hant: "當「靜默模式」生效時，將使用<code class="s">general➡silent_mode_response_header_code</code>定義的HTTP狀態訊息（這是最高優先級）。"
+ 2.:
+  zh-Hans: "当请求实体因超出违规限制而被禁止时，将使用“禁止”的HTTP状态消息。"
+  zh-Hant: "當請求實體因超出違規限製而被禁止時，將使用「禁止」的HTTP狀態訊息。"
+ 3.:
+  zh-Hans: "当由于速率限制而阻止时，将使用429，或者当由于资源冲突而阻止时，将使用<code class="s">signatures➡conflict_response</code>定义的HTTP状态消息（在此上下文中，速率限制和资源冲突具有同等优先级）。"
+  zh-Hant: "當由於速率限制而阻止時，將使用429，或當由於資源衝突而阻止時，將使用<code class="s">signatures➡conflict_response</code>定義的HTTP狀態訊息（在此上下文中，速率限制和資源衝突具有同等優先權）。"
+ 4.:
+  zh-Hans: "当由于设置了“HTTP状态码覆盖”的辅助规则而被阻止时，将使用该HTTP状态码覆盖。"
+  zh-Hant: "當由於設定了「HTTP狀態碼覆蓋」的輔助規則而被阻止時，將使用該HTTP狀態碼覆蓋。"
+ 5.:
+  zh-Hans: "当由于法律原因而被阻止时（即由于使用“法律”速记词的自定义签名而被阻止时），将使用“法律”的HTTP状态消息。"
+  zh-Hant: "當由於法律原因而被阻止時（即由於使用「法律」速記詞的自訂簽名而被阻止時），將使用「法律」的HTTP狀態訊息。"
+ 6.:
+  zh-Hans: "对于所有其他被阻止的请求，将使用“标准”的HTTP状态消息（这是最低优先级）。"
+  zh-Hant: "對於所有其他被阻止的請求，將使用「標準」的HTTP狀態訊息（這是最低優先級）。"
 hints_inspection: {"zh-Hans": "* 仅用于调试辅助规则。​不向被阻止的用户显示。", "zh-Hant": "* 僅用於調試輔助規則。​不向被阻止的用戶顯示。"}
 hints_ipv6_on_32bit: {"zh-Hans": "注意：IPv6查找在某些32位系统上可能无法正常工作。", "zh-Hant": "注意：IPv6查找在某些32位系統上可能無法正常工作。"}
 hints_logging_datetime:
@@ -883,7 +902,7 @@ label:
   Forcibly disable IP tracking: {"zh-Hans": "强制禁用IP跟踪", "zh-Hant": "強制禁用IP跟踪"}
   Forcibly disable hCaptcha: {"zh-Hans": "强制禁用hCaptcha", "zh-Hant": "強制禁用hCaptcha"}
   Forcibly enable IP tracking: {"zh-Hans": "强制启用IP跟踪", "zh-Hant": "強制啟用IP跟踪"}
-  HTTP status code override: {"zh-Hans": "HTTP状态代码覆盖：", "zh-Hant": "HTTP狀態代碼覆蓋："}
+  HTTP status code override: {"zh-Hans": "HTTP状态码覆盖：", "zh-Hant": "HTTP狀態碼覆蓋："}
   If the following conditions are met, %s: {"zh-Hans": "如果满足以下条件，%s。", "zh-Hant": "如果滿足以下條件，%s。"}
   Mark for use with Cloudflare Turnstile: {"zh-Hans": "标记为与Cloudflare Turnstile一起使用", "zh-Hant": "標記為與Cloudflare Turnstile一起使用"}
   Mark for use with Friendly Captcha: {"zh-Hans": "标记为与Friendly Captcha一起使用", "zh-Hant": "標記為與Friendly Captcha一起使用"}
@@ -1024,6 +1043,7 @@ purpose:
  Compressed file or archive: {"zh-Hans": "压缩文件", "zh-Hant": "壓縮檔案"}
  Database file: {"zh-Hans": "数据库文件", "zh-Hant": "資料庫檔案"}
  Email file: {"zh-Hans": "电子邮件文件", "zh-Hant": "電子郵件檔案"}
+ Encrypted or sensitive file: {"zh-Hans": "加密或敏感文件", "zh-Hant": "加密或敏感檔案"}
  Executable file: {"zh-Hans": "可执行文件", "zh-Hant": "可執行檔案"}
  Formulas file: {"zh-Hans": "公式文件", "zh-Hant": "公式檔案"}
  Graphics file: {"zh-Hans": "图形文件（例如，图像、矢量图、视频）", "zh-Hant": "圖形檔案（例如，圖像、向量圖、影片）"}
@@ -1227,8 +1247,8 @@ tip:
  Report to AbuseIPDB: {"zh-Hans": "此页面可用于向AbuseIPDB报告IP地址，或者在IP地址报告错误时删除以前的报告。", "zh-Hant": "此頁面可用於向AbuseIPDB報告IP位址，或在IP位址報告錯誤時刪除先前的報告。"}
  Sections List: {"zh-Hans": "此页面列出当前活动签名文件中存在哪些章节。", "zh-Hant": "此頁面列出當前活動簽名檔案中存在哪些章節。"}
  See the documentation:
-  zh-Hans: "请参阅<a href="{{Links.CIDRAM.Docs Base Path}}readme.zh-Hans.md\#user-content-SECTION5" hreflang="zh-Hans" rel="noopener external">文档</a>以获取有关各种配置指令的信息和他们的目的。"
-  zh-Hant: "請參閱<a href="{{Links.CIDRAM.Docs Base Path}}readme.zh-Hant.md\#user-content-SECTION5" hreflang="zh-Hant" rel="noopener external">文檔</a>以獲取有關各種配置指令的信息和他們的目的。"
+  zh-Hans: "请参阅<a href="{{Links.CIDRAM.Docs Base Path}}readme.zh-Hans.md\#user-content-SECTION5" hreflang="zh-Hans" rel="noopener external"><span class="navicon documentation"></span>文档</a>以获取有关各种配置指令的信息和他们的目的。"
+  zh-Hant: "請參閱<a href="{{Links.CIDRAM.Docs Base Path}}readme.zh-Hant.md\#user-content-SECTION5" hreflang="zh-Hant" rel="noopener external"><span class="navicon documentation"></span>文檔</a>以獲取有關各種配置指令的信息和他們的目的。"
  Server log snippets, abuse details, etc: {"zh-Hans": "服务器日志片段、滥用详细信息、等等。", "zh-Hant": "伺服器日誌片段、濫用詳細資訊、等等。"}
  Signature File Fixer: {"zh-Hans": "签名文件修复工具提供了一种检测和修复签名文件中潜在问题的方法。", "zh-Hant": "簽名檔案修復工具提供了一種檢測和修復簽名檔案中潛在問題的方法。"}
  Specify a value, or leave blank to disregard: {"zh-Hans": "指定一个值，或留空以忽略。", "zh-Hant": "指定一個值，或留空以忽略。"}

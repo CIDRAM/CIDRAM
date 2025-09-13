@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2025.09.11).
+ * This file: General methods used by the front-end (last modified: 2025.09.13).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -144,7 +144,7 @@ trait FrontEndMethods
                     }
                 } elseif (preg_match('/^(?:CA?RD|VC(?:ARD|F))$/', $Ext)) {
                     $Arr[$Key]['Icon'] = 'icon=card';
-                } elseif (preg_match('/^(?:OD[GP]|PDF|PP[ST]X?|XDP)$/', $Ext)) {
+                } elseif (preg_match('/^(?:GSLIDES|KEYNOTE|NBP?|OD[GP]|OTP|P(?:DF|EZ|OT|P[ST]X?|RDX|RZ)|S(?:DD|H[FW]|HOW|LP|SPSS|[TX]I)|THMX|WATCH|XDP)$/', $Ext)) {
                     $Arr[$Key]['Icon'] = 'icon=presentation';
                     if ($Component === '') {
                         $Arr[$Key]['Component'] = $this->L10N->getString('purpose.Graphs or presentation file');
@@ -182,10 +182,22 @@ trait FrontEndMethods
                     if ($Component === '') {
                         $Arr[$Key]['Component'] = $this->L10N->getString('purpose.Audio file');
                     }
-                } elseif (preg_match('/^(?:12[3M]|AST|AWS|C(?:ELL|HIP|SV|TS)|D(?:EX|FG|I[FS])|E(?:DXZ?|FU|SS)|F(?:CS|ODS|P)|GN(?:M|UMERIC)|GS(?:HEET)?|IMP|NCSS|NUMBERS|O[DT]S|OGWU?|P(?:MDX?|MVX?|RESTO)|QPW|RDF|S[DTX]C|TMVT?|UOS|W(?:K[IQSU]|LS|Q[12]|R1)|_?XL(?:R?|S[BMXT]?|T[BMXT]?))$/', $Ext)) {
+                } elseif (preg_match(
+                    '/^(?:12[3M]|A(?:B[23]|ST|WS)|BCSV|C(?:ELL|HIP|LF|SV|TS)|' .
+                    'D(?:EX|FG|I[FS])|E(?:DXZ?|FU|SS)|F(?:CS|ODS|P)|' .
+                    'G(?:NM|NUMERIC|S(?:HEET)?)|IMP|LCW|N(?:CSS|UMBERS)|' .
+                    'O(?:[DT]S|GWU?)|P(?:MDX?|MVX?|RESTO)|QPW|RDF|' .
+                    'S(?:[DTX]C|LK)|T(?:AB|MVT?|SV)|UOS|VC|' .
+                    'W(?:K[1234IQSU]|LS|Q[12]|R1)|_?X(?:L(?:[KRST][BMXT]?|W)?))$/',
+                $Ext)) {
                     $Arr[$Key]['Icon'] = 'icon=spreadsheet';
                     if ($Component === '') {
                         $Arr[$Key]['Component'] = $this->L10N->getString('purpose.Spreadsheet file or tabular data');
+                    }
+                } elseif (preg_match('/^(?:AXX|BPW|C(?:ERT?|RT)|DER|EEA|GXK|K(?:DBX?|EY|ODE)|NSIGNE?|OMF|P(?:12|7[BC]|ASS(?:WORD)?|EM|FX|PK|UB|WD)|SSH|TC)$/', $Ext)) {
+                    $Arr[$Key]['Icon'] = 'icon=encrypted';
+                    if ($Component === '') {
+                        $Arr[$Key]['Component'] = $this->L10N->getString('purpose.Encrypted or sensitive file');
                     }
                 } elseif (preg_match(
                     '/^(?:.._|.[QZ].|7Z|' .

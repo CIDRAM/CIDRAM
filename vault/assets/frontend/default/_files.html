@@ -4,13 +4,23 @@
   <main class="extend">
     <div class="col">
       <div class="s flexstretch" id="stateMsg">{state_msg}</div>
-      <div class="spanner">
-        <form enctype="multipart/form-data" action="?cidram-page=file-manager" method="POST">
+    </div>
+    <div class="duo h1">
+      <div>
+        <form id="fmBasePath" action="?cidram-page=file-manager" method="GET">
+          <input name="cidram-page" type="hidden" value="file-manager" />
+          <datalist id="basepathList">{basepathList}
+          </datalist>
+          <span class="s flexrow"><input list="basepathList" name="basepath" type="text" value="{basepath}" class="flexin" placeholder="{tip.Specify a directory path, or leave blank to use the CIDRAM base path}" /><input type="submit" value="{field.OK}" class="auto" /></span>
+        </form>
+      </div>
+      <div class="reverse">
+        <form enctype="multipart/form-data" action="?cidram-page=file-manager{basepathActionAttach}" method="POST">
           <input name="do_action" type="hidden" value="upload-file" />
-          <input type="file" name="upload-file" />
+          <input name="upload-file" type="file" />
           <input type="submit" value="{field.Upload new file}" />
         </form>
-        <form id="fmControl" action="?cidram-page=file-manager" method="POST" style="display:none">
+        <form id="fmControl" action="?cidram-page=file-manager{basepathActionAttach}" method="POST" style="display:none">
           <input id="fmControlDoAction" name="do_action" type="hidden" value="" />
           <input id="fmControlFilename" name="filename" type="hidden" value="" />
         </form>
@@ -19,7 +29,7 @@
     <div class="quad">
       <div class="h2 s">{field.File}</div>
       <div class="h2 s big">{field.size.Size} – {field.Last modified}</div>
-      <div class="h2 s big">{field.Component}/{field.Purpose}</div>
+      <div class="h2 s big">{field.Component} – {field.Purpose}</div>
       <div class="h2f s">{field.Options}</div>
 {FilesData}
     </div>

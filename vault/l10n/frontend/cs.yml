@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Czech language data for the front-end (last modified: 2025.09.13).
+# This file: Czech language data for the front-end (last modified: 2025.09.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -421,6 +421,11 @@ hints_duration:
 hints_has_bypass: "* Tato možnost má odpovídající bypass pod <code class="s">bypasses➡used</code>. Doporučuji zajistit, aby zaškrtávací políčko pro odpovídající bypass bylo označeno stejně jako zaškrtávací políčko pro pokus o ověření této možnosti."
 hints_http_response_header_code:
  1.: "Pokud je aktivní „tichý režim“, použije se stavová zpráva HTTP definované direktivou <code class="s">general➡silent_mode_response_header_code</code> (tato zpráva má nejvyšší prioritu)."
+ 2.: "Pokud je žadatel zakázán z důvodu překročení limitu porušení, bude použita stavová zpráva HTTP „zakázáno“."
+ 3.: "Pokud je blokováno z důvodu omezení rychlosti bude použit kód 429, nebo pokud je blokováno z důvodu konfliktu zdrojů bude použita stavová zpráva HTTP definovaná <code class="s">signatures➡conflict_response</code> (omezení rychlosti a konflikty zdrojů mají v tomto kontextu stejnou prioritu)."
+ 4.: "Pokud je blokováno pomocným pravidlem, které nastavuje „přepsání stavového kódu HTTP“, bude použito toto přepsání stavového kódu HTTP."
+ 5.: "Pokud je blokováno z právních důvodů (tj., pokud je blokováno kvůli vlastnímu podpisu, který používá zkratku „právní“), použije se stavová zpráva HTTP pro „právní“."
+ 6.: "Pro všechny ostatní blokované požadavky bude použita stavová zpráva HTTP pro „standardní“ (tato zpráva má nejnižší prioritu)."
 hints_inspection: "* Určeno pouze pro ladění pomocných pravidel. Nezobrazuje se blokovaným uživatelům."
 hints_ipv6_on_32bit: "Poznámka: Vyhledávání IPv6 nemusí na některých 32-bitových systémech fungovat správně."
 hints_logging_datetime: "Užitečný tip: K názvům souborů protokolu můžete připojit informace o datu a čase pomocí zástupných symbolů formátu času. Dostupné zástupné symboly formátu času jsou zobrazeny v {{Links.ConfigRef.time_format}}."
@@ -849,14 +854,18 @@ previewer:
  Years: "Let"
 purpose:
  Audio file: "Zvukový soubor"
+ Card file: "Soubor karet"
  Compressed file or archive: "Komprimovaný soubor nebo archiv"
  Database file: "Soubor databáze"
+ Document: "Dokument"
  Email file: "Soubor e-mailu"
  Encrypted or sensitive file: "Šifrovaný nebo citlivý soubor"
  Executable file: "Spustitelný soubor"
+ Font file: "Soubor písma"
  Formulas file: "Soubor vzorců"
  Graphics file: "Grafický soubor (např., obrázky, vektory, videa)"
  Graphs or presentation file: "Grafy nebo prezentační soubor"
+ Plain-text file: "Soubor ve formátu prostého textu (např., značky, zdrojový kód, skripty)"
  Quarantined file: "Soubor v karanténě"
  Spreadsheet file or tabular data: "Soubor tabulky nebo tabulková data"
 response:
@@ -1095,6 +1104,7 @@ tip:
  See the documentation: "Informace o různých konfiguračních direktivách a jejich účelech najdete v <a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external"><span class="navicon documentation"></span>dokumentaci</a>."
  Server log snippets, abuse details, etc: "Úryvky protokolu serveru, podrobnosti o zneužití, atd."
  Signature File Fixer: "Opravovač podpisových souborů poskytuje způsob, jak zjistit a opravit potenciální problémy v souborech podpisů."
+ Specify a directory path, or leave blank to use the CIDRAM base path: "Zadejte cestu k adresáři, nebo ponechte pole prázdné, chcete-li použít základní cestu k CIDRAM."
  Specify a value, or leave blank to disregard: "Zadejte hodnotu nebo ponechte prázdné, aby se to ignorovalo."
  Statistics tracking is currently disabled: "Poznámka: Sledování statistik je aktuálně deaktivováno, ale lze jej aktivovat prostřednictvím konfigurační stránky."
  Statistics: "Tato stránka zobrazuje některé základní statistiky používání týkající se vaší instalace CIDRAM."

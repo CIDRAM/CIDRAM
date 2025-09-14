@@ -132,7 +132,7 @@ blockquote.comSub{margin:-2px 0 0 0;padding:0 0 0 0}
 @keyframes revRotate{0%{{caretTransformAfter} invert(17%) sepia(41%) saturate(1027%) hue-rotate(23deg) brightness(99%) contrast(101%)}100%{{caretTransformBefore} invert(17%) sepia(41%) saturate(1027%) hue-rotate(23deg) brightness(99%) contrast(101%)}}
 .navicon{display:inline-block;background-repeat:no-repeat;filter:invert(23%) sepia(36%) saturate(1876%) hue-rotate(-27deg) brightness(96%) contrast(94%);position:relative;top:1px;width:16px;height:16px}
 a:hover>.navicon,a:active>.navicon,a:focus>.navicon,.navicon[onclick]:hover,.navicon[onclick]:active,.navicon[onclick]:focus{filter:invert(43%) sepia(59%) saturate(1235%) hue-rotate(-30deg) brightness(115%) contrast(119%)}
-select+input[type=submit],select+input[type=button]{margin-{FE_Align}:-3px;border-bottom-{FE_Align}-radius:0;border-top-{FE_Align}-radius:0;padding-{FE_Align}:3px}
+select+input[type=submit],select+input[type=button],input+.attachedButton{margin-{FE_Align}:-3px;border-bottom-{FE_Align}-radius:0;border-top-{FE_Align}-radius:0;padding-{FE_Align}:3px}
 select,input[type=submit],input[type=reset],input[type=button],input[type=file]::file-selector-button,input[type=text],input[type=password],input[type=number],input[type=date],input[type=time],input[type=datetime-local],button{box-sizing:border-box;height:20px;padding-top:0;padding-bottom:0}
 select[class=auto]+select[class=auto]{margin-{FE_Align}:-3px;margin-{FE_Align_Reverse}:0}
 #pgrad{width:16px;height:16px;display:inline-block;border-radius:16px;filter:blur(2px)}
@@ -182,6 +182,7 @@ input[type=button].reset:hover,input[type=button].reset:active{color:#f88}
 .fmicon.database{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:database.svg}{/Base64Encode})}
 .fmicon.encrypted{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:encrypted.svg}{/Base64Encode})}
 .fmicon.executable{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:executable.svg}{/Base64Encode})}
+.fmicon.font{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:font.svg}{/Base64Encode})}
 .fmicon.formulas{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:formulas.svg}{/Base64Encode})}
 .fmicon.graphics{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:graphics.svg}{/Base64Encode})}
 .fmicon.othernoedit{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:othernoedit.svg}{/Base64Encode})}
@@ -194,7 +195,8 @@ input[type=button].reset:hover,input[type=button].reset:active{color:#f88}
 .navicon.backup{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:backup.svg}{/Base64Encode})}
 .navicon.cache,.fmicon.cache{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:cache.svg}{/Base64Encode})}
 .navicon.calculator{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:calculator.svg}{/Base64Encode})}
-.navicon.configuration,.bckpicon.configuration,.fmicon.configuration{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:configuration.svg}{/Base64Encode})}
+.navicon.configuration,.bckpicon.configuration{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:configuration.svg}{/Base64Encode})}
+.fmicon.configuration{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:configuration.svg}{/Base64Encode}),url(data:image/svg+xml;base64,{Base64Encode}{Asset:blankport.svg}{/Base64Encode})}
 .navicon.discussions{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:discussions.svg}{/Base64Encode})}
 .navicon.documentation,.fmicon.documentation{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:documentation.svg}{/Base64Encode})}
 .navicon.fixer{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:fixer.svg}{/Base64Encode})}
@@ -211,7 +213,8 @@ input[type=button].reset:hover,input[type=button].reset:active{color:#f88}
 .navicon.subtractor{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:subtractor.svg}{/Base64Encode})}
 .navicon.test{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:test.svg}{/Base64Encode})}
 .navicon.tracking,.bckpicon.tracking{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:tracking.svg}{/Base64Encode})}
-.navicon.updates,.bckpicon.updates,.fmicon.updates{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:updates.svg}{/Base64Encode})}
+.navicon.updates,.bckpicon.updates{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:updates.svg}{/Base64Encode})}
+.fmicon.updates{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:updates.svg}{/Base64Encode}),url(data:image/svg+xml;base64,{Base64Encode}{Asset:blankport.svg}{/Base64Encode})}
 .navicon.download{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:download.svg}{/Base64Encode})}
 ::selection{background-color:rgba(0,102,204,.6);color:#fff}
 .txtGn::selection,.txtGn>*:not(.txtOe,.txtRd)::selection{color:#dfc}

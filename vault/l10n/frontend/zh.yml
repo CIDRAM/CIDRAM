@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese language data for the front-end (last modified: 2025.09.13).
+# This file: Chinese language data for the front-end (last modified: 2025.09.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -208,7 +208,7 @@ config:
  frontend_custom_header: {"zh-Hans": "在所有前端页面的开头作为HTML插入。​如果您想在所有此类页面中包含网站徽标、个性化标题、脚本、或类似，这可能会很有用。", "zh-Hant": "在所有前端頁面的開頭作為HTML插入。​如果您想在所有此類頁面中包含網站徽標、個性化標題、腳本、或類似，這可能會很有用。"}
  frontend_enable_two_factor: {"zh-Hans": "该指令确定是否将2FA用于前端帐户。", "zh-Hant": "該指令確定是否將2FA用於前端帳戶。"}
  frontend_frontend_log: {"zh-Hans": "前端登录尝试的录音文件。​指定一个文件名，​或留空以禁用。", "zh-Hant": "前端登錄嘗試的錄音文件。​指定一個檔案名稱，​或留空以禁用。"}
- frontend_magnification: &MagnifDesc {"zh-Hans": "字体放大。 标准 = 1。", "zh-Hant": "字體放大。 標準 = 1。"}
+ frontend_magnification: &MagnifDesc {"zh-Hans": "字型放大。 标准 = 1。", "zh-Hant": "字型放大。 標準 = 1。"}
  frontend_max_login_attempts: {"zh-Hans": "最大前端登录尝试次数。 标准 = 5。", "zh-Hant": "最大前端登錄嘗試次數。 標準 = 5。"}
  frontend_remotes: {"zh-Hans": "更新系统用于获取组件元数据的地址列表。​这可能需要在升级到新的主要版本时进行调整，或者在获取新的更新源时进行调整，但在正常情况下应该不理会。", "zh-Hant": "更新系統用於獲取組件元數據的地址列表。​這可能需要在升級到新的主要版本時進行調整，或者在獲取新的更新源時進行調整，但在正常情況下應該不理會。"}
  frontend_signatures_update_event_log: {"zh-Hans": "通过前端更新签名时用于记录的文件。​指定一个文件名，​或留空以禁用。", "zh-Hant": "通過前端更新簽名時用於記錄的文件。​指定一個檔案名稱，​或留空以禁用。"}
@@ -1040,14 +1040,18 @@ previewer:
  Years: "年"
 purpose:
  Audio file: {"zh-Hans": "音频文件", "zh-Hant": "音訊檔案"}
+ Card file: {"zh-Hans": "卡片文件", "zh-Hant": "卡片檔案"}
  Compressed file or archive: {"zh-Hans": "压缩文件", "zh-Hant": "壓縮檔案"}
  Database file: {"zh-Hans": "数据库文件", "zh-Hant": "資料庫檔案"}
+ Document: {"zh-Hans": "文档", "zh-Hant": "文檔"}
  Email file: {"zh-Hans": "电子邮件文件", "zh-Hant": "電子郵件檔案"}
  Encrypted or sensitive file: {"zh-Hans": "加密或敏感文件", "zh-Hant": "加密或敏感檔案"}
  Executable file: {"zh-Hans": "可执行文件", "zh-Hant": "可執行檔案"}
+ Font file: {"zh-Hans": "字型文件", "zh-Hant": "字型檔案"}
  Formulas file: {"zh-Hans": "公式文件", "zh-Hant": "公式檔案"}
  Graphics file: {"zh-Hans": "图形文件（例如，图像、矢量图、视频）", "zh-Hant": "圖形檔案（例如，圖像、向量圖、影片）"}
  Graphs or presentation file: "图表或演示文稿文件", "zh-Hant": "圖表或簡報檔案"}
+ Plain-text file: {"zh-Hans": "纯文本文件（例如，标记、源代码、脚本）", "zh-Hant": "純文字檔案（例如，標記、原始碼、腳本）"}
  Quarantined file: {"zh-Hans": "隔离文件", "zh-Hant": "隔離檔案"}
  Spreadsheet file or tabular data: "电子表格文件或表格数据", "zh-Hant": "電子表格檔案或表格數據"}
 response:
@@ -1251,6 +1255,7 @@ tip:
   zh-Hant: "請參閱<a href="{{Links.CIDRAM.Docs Base Path}}readme.zh-Hant.md\#user-content-SECTION5" hreflang="zh-Hant" rel="noopener external"><span class="navicon documentation"></span>文檔</a>以獲取有關各種配置指令的信息和他們的目的。"
  Server log snippets, abuse details, etc: {"zh-Hans": "服务器日志片段、滥用详细信息、等等。", "zh-Hant": "伺服器日誌片段、濫用詳細資訊、等等。"}
  Signature File Fixer: {"zh-Hans": "签名文件修复工具提供了一种检测和修复签名文件中潜在问题的方法。", "zh-Hant": "簽名檔案修復工具提供了一種檢測和修復簽名檔案中潛在問題的方法。"}
+ Specify a directory path, or leave blank to use the CIDRAM base path: {"zh-Hans": "指定目录路径，或留空以使用CIDRAM基本路径。", "zh-Hant": "指定目錄路徑，或留空以使用CIDRAM基本路徑。"}
  Specify a value, or leave blank to disregard: {"zh-Hans": "指定一个值，或留空以忽略。", "zh-Hant": "指定一個值，或留空以忽略。"}
  Statistics tracking is currently disabled: {"zh-Hans": "注意：统计跟踪目前已被禁用，但可以通过配置页面启用。", "zh-Hant": "注意：統計跟踪目前已被禁用，但可以通過配置頁面啟用。"}
  Statistics: {"zh-Hans": "此页面显示了有关CIDRAM安装的一些基本使用统计信息。", "zh-Hant": "此頁面顯示了有關CIDRAM安裝的一些基本使用統計信息。"}

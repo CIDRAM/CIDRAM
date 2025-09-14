@@ -2,6 +2,7 @@ function renameFile(a, b, i) {
   window.filename = a, window.filename_new = b, $('POST', '', ['filename', 'filename_new'], null, function(a) {
     if (a === 'OK') {
       document.getElementById('File' + i).textContent = window.filename_new;
+      document.getElementById('DeleteConfirmContent' + i).textContent = window.filename_new;
     } else {
       document.getElementById('RenameInput' + i).value = window.filename;
       alert(a);

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The file manager page (last modified: 2025.09.09).
+ * This file: The file manager page (last modified: 2025.09.13).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -26,6 +26,17 @@ foreach (['do_action', 'filename', 'filename_new', 'content'] as $Key) {
     }
 }
 unset($Key);
+
+/** The base path to use. */
+if (isset($this->CIDRAM['QueryVars']['basepath']) && $this->CIDRAM['QueryVars']['basepath'] !== '') {
+    $this->FE['basepath'] = $this->canonical($this->CIDRAM['QueryVars']['basepath']);
+    if (substr($this->FE['basepath'], -1) !== '/') {
+        $this->FE['basepath'] .= '/';
+    }
+} else {
+    $this->FE['basepath'] = $this->Vault;
+}
+$this->FE['basepathActionAttach'] = $this->FE['basepath'] === $this->Vault ? '' : '&basepath=' . $this->FE['basepath'];
 
 /** Prepare data for display. */
 if (!$this->FE['ASYNC']) {
@@ -61,25 +72,25 @@ if (!$this->FE['ASYNC']) {
             isset($_FILES['upload-file']['tmp_name'], $_FILES['upload-file']['error']) &&
             $_FILES['upload-file']['error'] === UPLOAD_ERR_OK &&
             is_uploaded_file($_FILES['upload-file']['tmp_name']) &&
-            !is_link($this->Vault . $_FILES['upload-file']['name'])
+            !is_link($this->FE['basepath'] . $_FILES['upload-file']['name'])
         );
 
         /** If the filename already exists, delete the old file before moving the new file. */
-        if ($SafeToContinue && is_readable($this->Vault . $_FILES['upload-file']['name'])) {
-            if (is_dir($this->Vault . $_FILES['upload-file']['name'])) {
-                if ($this->isDirEmpty($this->Vault . $_FILES['upload-file']['name'])) {
-                    rmdir($this->Vault . $_FILES['upload-file']['name']);
+        if ($SafeToContinue && is_readable($this->FE['basepath'] . $_FILES['upload-file']['name'])) {
+            if (is_dir($this->FE['basepath'] . $_FILES['upload-file']['name'])) {
+                if ($this->isDirEmpty($this->FE['basepath'] . $_FILES['upload-file']['name'])) {
+                    rmdir($this->FE['basepath'] . $_FILES['upload-file']['name']);
                 } else {
                     $SafeToContinue = false;
                 }
             } else {
-                unlink($this->Vault . $_FILES['upload-file']['name']);
+                unlink($this->FE['basepath'] . $_FILES['upload-file']['name']);
             }
         }
 
         /** Move the newly uploaded file to the designated location. */
         if ($SafeToContinue) {
-            if (rename($_FILES['upload-file']['tmp_name'], $this->Vault . $_FILES['upload-file']['name'])) {
+            if (rename($_FILES['upload-file']['tmp_name'], $this->FE['basepath'] . $_FILES['upload-file']['name'])) {
                 $this->FE['state_msg'] = $this->L10N->getString('response.File successfully uploaded');
                 header('HTTP/1.0 201 Created');
                 header('HTTP/1.1 201 Created');
@@ -90,17 +101,17 @@ if (!$this->FE['ASYNC']) {
         } else {
             $this->FE['state_msg'] = $this->L10N->getString('response.Failed to upload');
         }
-    } elseif (isset($FMData['filename'], $FMData['do_action']) && is_readable($this->Vault . $FMData['filename']) && $this->pathSecurityCheck($FMData['filename'])) {
+    } elseif (isset($FMData['filename'], $FMData['do_action']) && is_readable($this->FE['basepath'] . $FMData['filename']) && $this->pathSecurityCheck($FMData['filename'])) {
         /** Edit a file. */
         if ($FMData['do_action'] === 'edit-file') {
             if (isset($FMData['content'])) {
                 $FMData['content'] = str_replace("\r", '', $FMData['content']);
-                $this->CIDRAM['OldData'] = $this->readFile($this->Vault . $FMData['filename']);
+                $this->CIDRAM['OldData'] = $this->readFile($this->FE['basepath'] . $FMData['filename']);
                 if (strpos($this->CIDRAM['OldData'], "\r\n") !== false && strpos($this->CIDRAM['OldData'], "\n\n") === false) {
                     $FMData['content'] = str_replace("\n", "\r\n", $FMData['content']);
                 }
 
-                $Handle = fopen($this->Vault . $FMData['filename'], 'wb');
+                $Handle = fopen($this->FE['basepath'] . $FMData['filename'], 'wb');
                 fwrite($Handle, $FMData['content']);
                 fclose($Handle);
 
@@ -108,7 +119,7 @@ if (!$this->FE['ASYNC']) {
             } else {
                 $this->FE['FE_Title'] .= ' – ' . $FMData['filename'];
                 $this->FE['filename'] = $FMData['filename'];
-                $this->FE['content'] = htmlentities($this->readFile($this->Vault . $FMData['filename']));
+                $this->FE['content'] = htmlentities($this->readFile($this->FE['basepath'] . $FMData['filename']));
 
                 /** Component update file overwrite warning. */
                 if (isset($this->Components['Files'][$FMData['filename']])) {
@@ -147,7 +158,7 @@ if (!$this->FE['ASYNC']) {
             header('Content-Type: application/octet-stream');
             header('Content-Transfer-Encoding: Binary');
             header('Content-disposition: attachment; filename="' . basename($FMData['filename']) . '"');
-            echo $this->readFile($this->Vault . $FMData['filename']);
+            echo $this->readFile($this->FE['basepath'] . $FMData['filename']);
             die;
         }
     }
@@ -155,34 +166,34 @@ if (!$this->FE['ASYNC']) {
     /** Template for file rows. */
     $this->FE['FilesRow'] = $this->readFile($this->getAssetPath('_files_row.html'));
 
+    /** Fetch files data. */
+    $Files = $this->fileManagerRecursiveList($this->FE['basepath']);
+
     /** Parse output. */
     $this->FE['FE_Content'] = $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_files.html')), true);
 
     /** Initialise files data variable. */
     $this->FE['FilesData'] = '';
 
-    /** Fetch files data. */
-    $Files = $this->fileManagerRecursiveList($this->Vault);
-
     /** Process files data. */
     array_walk($Files, function ($ThisFile): void {
         $ThisFile['ThisOptions'] = [];
         $ThisFile['FilenameID'] = preg_replace('~^0+~', '', bin2hex($ThisFile['Filename']));
-        if ($ThisFile['CanEdit']) {
+        if ($ThisFile['CanEdit'] && $ThisFile['Readable'] && $ThisFile['Writable']) {
             $ThisFile['ThisOptions'][] = sprintf(
                 '<code onclick="javascript:document.getElementById(\'fmControlDoAction\').value=\'edit-file\';document.getElementById(\'fmControlFilename\').value=document.getElementById(\'File%1$s\').textContent;document.getElementById(\'fmControl\').submit();"><span class="auxicon auxbl edit" title="%2$s"></span><span class="s fmicontxt">%2$s</span></code>',
                 $ThisFile['FilenameID'],
                 $this->L10N->getString('field.Edit')
             );
         }
-        if (!$ThisFile['Directory']) {
+        if (!$ThisFile['Directory'] && $ThisFile['Readable']) {
             $ThisFile['ThisOptions'][] = sprintf(
                 '<code onclick="javascript:document.getElementById(\'fmControlDoAction\').value=\'download-file\';document.getElementById(\'fmControlFilename\').value=document.getElementById(\'File%1$s\').textContent;document.getElementById(\'fmControl\').submit();"><span class="auxicon auxbl download" title="%2$s"></span><span class="s fmicontxt">%2$s</span></code>',
                 $ThisFile['FilenameID'],
                 $this->L10N->getString('field.Download')
             );
         }
-        if (!$ThisFile['Directory'] || $this->isDirEmpty($this->Vault . $ThisFile['Filename'])) {
+        if ((!$ThisFile['Directory'] || $this->isDirEmpty($this->FE['basepath'] . $ThisFile['Filename'])) && $ThisFile['Deletable']) {
             $ThisFile['ThisOptions'][] = sprintf(
                 '<code onclick="javascript:hideid(\'File%1$s\');hideid(\'Icon%1$s\');hideid(\'DeleteControls%1$s\');showid(\'RenameControls%1$s\');document.getElementById(\'RenameInput%1$s\').focus()"><span class="auxicon auxbl rename" title="%2$s"></span><span class="s fmicontxt">%2$s</span></code>',
                 $ThisFile['FilenameID'],
@@ -193,7 +204,7 @@ if (!$this->FE['ASYNC']) {
                 $ThisFile['FilenameID'],
                 $this->L10N->getString('field.Delete')
             );
-            $ThisFile['DeleteConfirmText'] = sprintf($this->L10N->getString('confirm.Delete'), $ThisFile['Filename']);
+            $ThisFile['DeleteConfirmText'] = sprintf($this->L10N->getString('confirm.Delete'), '<span id="DeleteConfirmContent' . $ThisFile['FilenameID'] . '">' . $ThisFile['Filename'] . '</span>');
         }
         $ThisFile['ThisOptions'] = implode(' – ', $ThisFile['ThisOptions']);
         if (substr($ThisFile['Icon'], 0, 5) === 'icon=') {
@@ -201,32 +212,39 @@ if (!$this->FE['ASYNC']) {
         } else {
             $ThisFile['Icon'] = sprintf('<img src="?cidram-page=icon&%s&theme=%s" alt="Icon" class="ico" id="Icon%s" />', $ThisFile['Icon'], $this->FE['theme'], $ThisFile['FilenameID']);
         }
+        if ($ThisFile['Directory'] && !$this->isDirEmpty($this->FE['basepath'] . $ThisFile['Filename'])) {
+            $ThisFile['DirLinkOpen'] = '<a href="?cidram-page=file-manager&basepath=' . $this->FE['basepath'] . $ThisFile['Filename'] . '/">';
+            $ThisFile['DirLinkClose'] = '</a>';
+        } else {
+            $ThisFile['DirLinkOpen'] = '';
+            $ThisFile['DirLinkClose'] = '';
+        }
         $this->FE['FilesData'] .= $this->parseVars($this->FE + $ThisFile, $this->FE['FilesRow'], true);
     });
 
     /** Send output. */
     echo $this->sendOutput();
-} elseif (isset($FMData['filename'], $FMData['filename_new']) && is_readable($this->Vault . $FMData['filename'])) {
+} elseif (isset($FMData['filename'], $FMData['filename_new']) && is_readable($this->FE['basepath'] . $FMData['filename'])) {
     /** Should fail if the old filename or the new filename aren't safe or if they're the same. */
     $SafeToContinue = ($this->pathSecurityCheck($FMData['filename']) && $this->pathSecurityCheck($FMData['filename_new']) && $FMData['filename'] !== $FMData['filename_new']);
 
     /** If the destination already exists, delete it before renaming the new file. */
-    if ($SafeToContinue && file_exists($this->Vault . $FMData['filename_new']) && is_readable($this->Vault . $FMData['filename_new'])) {
-        if (is_dir($this->Vault . $FMData['filename_new'])) {
-            if (!$this->isDirEmpty($this->Vault . $FMData['filename_new']) || !rmdir($this->Vault . $FMData['filename_new'])) {
+    if ($SafeToContinue && file_exists($this->FE['basepath'] . $FMData['filename_new']) && is_readable($this->FE['basepath'] . $FMData['filename_new'])) {
+        if (is_dir($this->FE['basepath'] . $FMData['filename_new'])) {
+            if (!$this->isDirEmpty($this->FE['basepath'] . $FMData['filename_new']) || !rmdir($this->FE['basepath'] . $FMData['filename_new'])) {
                 $SafeToContinue = false;
             }
-        } elseif (!unlink($this->Vault . $FMData['filename_new'])) {
+        } elseif (!unlink($this->FE['basepath'] . $FMData['filename_new'])) {
             $SafeToContinue = false;
         }
     }
 
     if ($SafeToContinue) {
         /** Add parent directories. */
-        $this->buildPath($this->Vault . $FMData['filename_new']);
+        $this->buildPath($this->FE['basepath'] . $FMData['filename_new']);
 
         /** Rename the file. */
-        if (rename($this->Vault . $FMData['filename'], $this->Vault . $FMData['filename_new'])) {
+        if (rename($this->FE['basepath'] . $FMData['filename'], $this->FE['basepath'] . $FMData['filename_new'])) {
             $this->deleteDirectory($FMData['filename']);
             $this->FE['state_msg'] = 'OK';
         } else {
@@ -239,13 +257,13 @@ if (!$this->FE['ASYNC']) {
     /** Return results to the async call for the rename operation. */
     echo $this->FE['state_msg'];
 } elseif (isset($FMData['filename'], $FMData['do_action']) && $FMData['do_action'] === 'delete-file') {
-    if (is_dir($this->Vault . $FMData['filename'])) {
-        if ($this->isDirEmpty($this->Vault . $FMData['filename']) && rmdir($this->Vault . $FMData['filename'])) {
+    if (is_dir($this->FE['basepath'] . $FMData['filename'])) {
+        if ($this->isDirEmpty($this->FE['basepath'] . $FMData['filename']) && rmdir($this->FE['basepath'] . $FMData['filename'])) {
             $this->FE['state_msg'] = 'OK';
         } else {
             $this->FE['state_msg'] = $this->L10N->getString('response.Failed to delete');
         }
-    } elseif (unlink($this->Vault . $FMData['filename'])) {
+    } elseif (unlink($this->FE['basepath'] . $FMData['filename'])) {
         $this->deleteDirectory($FMData['filename']);
         $this->FE['state_msg'] = 'OK';
     } else {

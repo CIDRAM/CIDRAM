@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2025.09.13).
+# This file: Vietnamese language data for the front-end (last modified: 2025.09.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -196,7 +196,7 @@ config:
  frontend_custom_header: "Được chèn dưới dạng HTML ở đầu tất cả các trang front-end. Điều này có thể hữu ích trong trường hợp bạn muốn bao gồm biểu trưng trang web, tiêu đề được cá nhân hóa, tập lệnh, hoặc tương tự ở tất cả các trang như vậy."
  frontend_enable_two_factor: "Chỉ thị này xác định có nên sử dụng 2FA cho tài khoản front-end hay không."
  frontend_frontend_log: "Tập tin cho ghi cố gắng đăng nhập front-end. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa."
- frontend_magnification: &MagnifDesc "Phóng to chữ. Mặc định = 1."
+ frontend_magnification: &MagnifDesc "Phóng to phông chữ. Mặc định = 1."
  frontend_max_login_attempts: "Số lượng tối đa cố gắng đăng nhập front-end. Mặc định = 5."
  frontend_remotes: "Danh sách các địa chỉ được trình cập nhật sử dụng để tìm nạp siêu dữ liệu thành phần. Điều này có thể cần được điều chỉnh khi nâng cấp lên phiên bản chính mới, hoặc khi tìm một nguồn mới để cập nhật, nhưng trong các trường hợp bình thường thì nên để nguyên."
  frontend_signatures_update_event_log: "Một tập tin để ghi nhật ký khi chữ ký được cập nhật qua front-end. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa."
@@ -842,14 +842,18 @@ previewer:
  Years: "Năm"
 purpose:
  Audio file: "Tập tin âm thanh"
+ Card file: "Tập tin thẻ"
  Compressed file or archive: "Tập tin nén hoặc lưu trữ"
  Database file: "Tập tin cơ sở dữ liệu"
+ Document: "Tài liệu"
  Email file: "Tập tin email"
  Encrypted or sensitive file: "Tập tin được mã hóa hoặc nhạy cảm"
  Executable file: "Tập tin thực thi"
+ Font file: "Tập tin phông chữ"
  Formulas file: "Tập tin công thức"
  Graphics file: "Tập tin đồ họa (ví dụ, hình ảnh, vectơ, video)"
  Graphs or presentation file: "Tập tin biểu đồ hoặc bản trình bày"
+ Plain-text file: "Tập tin văn bản thuần túy (ví dụ, đánh dấu, mã nguồn, tập lệnh)"
  Quarantined file: "Tập tin bị kiểm dịch"
  Spreadsheet file or tabular data: "Tập tin bảng tính hoặc dữ liệu dạng bảng"
 response:
@@ -1043,6 +1047,7 @@ tip:
  See the documentation: "Xem <a href="{{Links.CIDRAM.Docs Base Path}}readme.vi.md\#user-content-SECTION5" hreflang="vi-VN" rel="noopener external"><span class="navicon documentation"></span>tài liệu</a> để biết thông tin về các chỉ thị cấu hình khác nhau và mục đích của họ."
  Server log snippets, abuse details, etc: "Trích đoạn từ nhật ký máy chủ, chi tiết lạm dụng, vv."
  Signature File Fixer: "Sửa chữa tập tin chữ ký cung cấp một cách để phát hiện và khắc phục các sự cố tiềm ẩn trong các tập tin chữ ký."
+ Specify a directory path, or leave blank to use the CIDRAM base path: "Chỉ định đường dẫn thư mục, hoặc để trống để sử dụng đường dẫn cơ sở CIDRAM."
  Specify a value, or leave blank to disregard: "Chỉ định một giá trị, hoặc để trống để bỏ qua."
  Statistics tracking is currently disabled: "Lưu ý: Giám sát thống kê hiện bị vô hiệu hóa, nhưng có thể được kích hoạt thông qua trang cấu hình."
  Statistics: "Trang này cho thấy một số thống kê của sử dụng cơ bản liên quan đến cài đặt CIDRAM của bạn."

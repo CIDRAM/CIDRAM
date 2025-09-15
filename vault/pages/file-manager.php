@@ -213,7 +213,7 @@ if (!$this->FE['ASYNC']) {
             $ThisFile['Icon'] = sprintf('<img src="?cidram-page=icon&%s&theme=%s" alt="Icon" class="ico" id="Icon%s" />', $ThisFile['Icon'], $this->FE['theme'], $ThisFile['FilenameID']);
         }
         if ($ThisFile['Directory'] && !$this->isDirEmpty($this->FE['basepath'] . $ThisFile['Filename'])) {
-            $ThisFile['DirLinkOpen'] = '<a href="?cidram-page=file-manager&basepath=' . $this->FE['basepath'] . $ThisFile['Filename'] . '/">';
+            $ThisFile['DirLinkOpen'] = '<a href="?cidram-page=file-manager&basepath=' . $this->canonical($this->FE['basepath'] . $ThisFile['Filename'] . '/') . '">';
             $ThisFile['DirLinkClose'] = '</a>';
         } else {
             $ThisFile['DirLinkOpen'] = '';

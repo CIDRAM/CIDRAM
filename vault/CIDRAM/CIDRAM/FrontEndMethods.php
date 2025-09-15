@@ -163,7 +163,7 @@ trait FrontEndMethods
             if (($ExtDel = strrpos($Item, '.')) === false || ($Ext = strtoupper(substr($Item, $ExtDel + 1))) === '') {
                 continue;
             }
-            if (!$NoEdit && preg_match('/^(?:[BD]AT|HTACCESS|SVG|TEX)$/', $Ext)) {
+            if (!$NoEdit && preg_match('/^(?:[BD]AT|SVG|TEX)$/', $Ext)) {
                 $Arr[$Key]['CanEdit'] = true;
             }
             if ($Early) {
@@ -204,9 +204,8 @@ trait FrontEndMethods
                 $Arr[$Key]['Icon'] = 'icon=database';
                 $Arr[$Key]['Component'] = $Component . $this->L10N->getString('purpose.Database file');
             } elseif (preg_match(
-                '/^(?:386|A(?:C[CT].*|PP|SH.*)|' .
-                'B(?:AT|IN|PL|TM)|C(?:CC|MD|OM.*|PL|SH)|D(?:LL|RV)|' .
-                'E(?:LF|X[E_])|GAD.*|HTA.*|HTP.*|' .
+                '/^(?:[123]86|73K|89K|A(?:6P|C[CT].*|PP|SH.*)|' .
+                'B(?:AT|IN|PL|TM)|C(?:CC|MD|OM.*|PL|SH)|D(?:LL|RV)|E(?:LF|X[E_])|G(?:AD.*|EO)|' .
                 'I(?:N[SX]|PA|SU)|J(?:OB|SE)|K(?:O|SH)|LIB|' .
                 'MS[CIPT].*|N(?:ET|LM)|O(?:[CS]X|UT)|P(?:[AI]F|RG|S1)|' .
                 'R(?:EG|GS|LL|UN)|S(?:CR.*|CT|H[BS]|YS)|TLB|' .
@@ -243,7 +242,7 @@ trait FrontEndMethods
             )) {
                 $Arr[$Key]['Icon'] = 'icon=spreadsheet';
                 $Arr[$Key]['Component'] = $Component . $this->L10N->getString('purpose.Spreadsheet file or tabular data');
-            } elseif (preg_match('/^(?:AXX|BPW|C(?:ERT?|RT)|DER|EEA|G(?:PG|XK)|K(?:DBX?|EY|ODE)|NSIGNE?|OMF|P(?:12|7[BC]|ASS(?:WORD)?|EM|FX|GP|PK|UB|WD)|SSH|TC)$/', $Ext)) {
+            } elseif (preg_match('/^(?:AXX|BPW|C(?:ERT?|RT)|DER|EEA|G(?:PG|XK)|HTPASSWD|JKS|K(?:DBX?|EY|ODE)|NSIGNE?|OMF|P(?:12|7[BC]|ASS(?:WORD)?|EM|FX|GP|PK|UB|WD)|SSH|TC)$/', $Ext)) {
                 $Arr[$Key]['Icon'] = 'icon=encrypted';
                 $Arr[$Key]['Component'] = $Component . $this->L10N->getString('purpose.Encrypted or sensitive file');
             } elseif (preg_match(
@@ -314,9 +313,9 @@ trait FrontEndMethods
             } elseif (preg_match(
                 '/^(?:[SDMPX]?HT[AM]L?X?|A(?:D[ABS]|HK|PPLESCRIPT|SC?|SC(?:II(?:DOC)?)?|SM|TOM|U3|WK)?|' .
                 'B(?:AS|B|MX)?|C(?:A?ML|B[LP]|C|FG|SV|IA|JS|LASS|LJS?|LS|NF|OB|OFFEE|ONF(?:IG)?|PP|SS?|SPROJ|XX)?|' .
-                'D(?:ART|BA|BPRO123|IFF|ITA)?|E(?:BUILD|FS|L|RB)?|' .
+                'D(?:ART|BA|BPRO123|IFF|ITA)?|E(?:BUILD|FS|L|NV|RB)?|' .
                 'F(?:77|90|OR|REEBASIC|RX|T[HN])?|G(?:[DO]|ED|M[6DKL])?|' .
-                'H(?:ACK|[CHSX]|PP|XML|XX)?|I(?:BI|CI|JS|N[CFIO]|NFO|PYNB|TCL)?|' .
+                'H(?:ACK|[CHSX]|PP|TACCESS|XML|XX)?|I(?:BI|CI|JS|N[CFIO]|NFO|PYNB|TCL)?|' .
                 'J(?:AVA|SX?|SFL|SON(?:LD)?)?|K(?:PRX|T)|' .
                 'L(?:GT|ISP|OG|UA)?|M(?:[4DEL]|AP|ARKDOWN|ET(?:ALINK)?|OBI|JS|SQR)?|' .
                 'N(?:EIS|EON|FO|[QT]|QP|U[CDT])?|O|' .

@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv4_isps.dat
 
-# Version: 2025.251.0
-# Last modified: 2025.09.09
+# Version: 2025.259.0
+# Last modified: 2025.09.17
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -2406,7 +2406,7 @@ Tag: BSNL
 # probing, etc detected from here. Mozi botnets detected from here.
 # Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 2 (AS4816), 25,890 (AS4134).
-# Updated: 2025.06.20 / Modified: 2025.09.05
+# Updated: 2025.06.20 / Modified: 2025.09.11
 
 1.68.195.143/32 Deny Attacks
 1.69.16.59/32 Deny Attacks
@@ -2640,6 +2640,8 @@ Tag: BSNL
 106.122.222.82/32 Deny Attacks
 106.122.222.95/32 Deny Attacks
 106.122.222.122/32 Deny Attacks
+106.227.49.68/32 Deny Attacks
+106.227.49.113/32 Deny Attacks
 110.80.168.9/32 Deny Attacks
 110.80.168.210/32 Deny Attacks
 110.181.232.34/32 Deny Attacks
@@ -17073,7 +17075,7 @@ Tag: LG HelloVision Corp
 # Commercial multiplay network. Port scans, spam, brute-force, and webapp
 # attacks detected from here. Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 6,960 (AS3257).
-# Updated: 2025.05.03 / Modified: 2025.07.04
+# Updated: 2025.05.03 / Modified: 2025.09.11
 
 181.214.206.0/24 Deny Attacks
 191.101.209.0/24 Deny Attacks
@@ -17092,11 +17094,7 @@ Origin: GB
 94.131.50.0/24 Deny Attacks
 94.131.53.0/24 Deny Attacks
 94.131.56.11/32 Deny Attacks
-95.164.128.28/32 Deny Attacks
-95.164.128.70/32 Deny Attacks
-95.164.128.174/32 Deny Spam
-95.164.128.196/32 Deny Spam
-95.164.128.227/32 Deny Attacks
+95.164.128.0/24 Deny Attacks
 95.164.201.0/24 Deny Attacks
 95.164.203.0/24 Deny Attacks
 Origin: GI
@@ -17113,6 +17111,7 @@ Origin: RO
 195.160.192.0/24 Deny Attacks
 Origin: UA
 23.234.157.213/32 Deny Spam
+94.131.54.0/24 Deny Attacks
 104.153.208.0/22 Deny Attacks
 134.195.152.0/22 Deny Attacks
 162.244.78.27/32 Deny Attacks
@@ -17337,7 +17336,7 @@ Tag: Quadrant Televentures Limited
 # hacking, port scans, and spam detected from here.
 # Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 1,446 (AS9123), 339 (AS210976).
-# Updated: 2025.05.03 / Modified: 2025.08.04
+# Updated: 2025.05.03 / Modified: 2025.09.13
 
 45.82.82.126/32 Deny Attacks
 45.82.82.199/32 Deny Attacks
@@ -17398,6 +17397,12 @@ Origin: KZ
 45.10.43.4/32 Deny Attacks
 45.10.43.204/32 Deny Attacks
 45.82.15.54/32 Deny Attacks
+45.91.236.12/32 Deny Attacks
+45.91.236.15/32 Deny Attacks
+45.91.236.33/32 Deny Attacks
+45.91.236.51/32 Deny Attacks
+45.91.237.9/32 Deny Attacks
+45.91.237.194/32 Deny Attacks
 45.95.235.75/32 Deny Attacks
 46.19.68.45/32 Deny Attacks
 46.19.68.92/32 Deny Attacks
@@ -17493,6 +17498,9 @@ Origin: KZ
 109.71.246.33/32 Deny Attacks
 109.71.246.90/32 Deny Spam
 109.71.246.254/32 Deny Attacks
+141.98.235.91/32 Deny Attacks
+141.98.235.172/32 Deny Attacks
+141.98.235.217/32 Deny Attacks
 147.45.101.143/32 Deny Spam
 147.45.139.5/32 Deny Attacks
 147.45.139.42/32 Deny Attacks
@@ -17526,6 +17534,8 @@ Origin: KZ
 185.104.115.235/32 Deny Attacks
 185.104.115.236/32 Deny Attacks
 185.114.245.0/24 Deny Attacks
+185.142.99.175/32 Deny Attacks
+185.142.99.249/32 Deny Attacks
 185.166.196.8/32 Deny Attacks
 185.197.75.151/32 Deny Attacks
 185.200.240.39/32 Deny Attacks
@@ -17564,6 +17574,11 @@ Origin: KZ
 194.35.119.138/32 Deny Attacks
 194.35.119.205/32 Deny Attacks
 194.35.119.216/32 Deny Attacks
+194.58.57.74/32 Deny Attacks
+194.58.57.79/32 Deny Attacks
+194.87.243.51/32 Deny Attacks
+194.87.243.126/32 Deny Attacks
+194.87.243.174/32 Deny Attacks
 212.60.20.66/32 Deny Attacks
 212.60.20.121/32 Deny Attacks
 212.60.20.232/32 Deny Spam
@@ -24622,21 +24637,14 @@ Tag: JiangSu YangZhou
 # ASN 24444 ("Shandong Mobile Communication Company Limited").
 # Chinese mobile ISP. SQLi, webapp attacks, port scans, hacking, and spam
 # detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 161.
-# Updated: 2024.09.01
+# Stop Forum Spam (SFS) listings: 36.
+# Updated: 2025.09.17
 
-111.16.50.12/32 Deny Attacks
-111.16.50.171/32 Deny Attacks
-111.16.50.174/31 Deny Attacks
-111.35.78.2/31 Deny Attacks
-111.35.78.245/32 Deny Attacks
-112.36.21.203/32 Deny Spam
-117.91.186.5/32 Deny Attacks
-117.91.186.55/32 Deny Attacks
+111.16.50.0/24 Deny Attacks
+111.35.78.2/32 Deny Attacks
+117.91.186.54/31 Deny Attacks
 117.91.186.105/32 Deny Attacks
-120.225.155.208/32 Deny Spam
-223.98.104.123/32 Deny Spam
-223.99.193.245/32 Deny Spam
+117.91.186.212/32 Deny Attacks
 Origin: CN
 Profile: Mobile ISP
 Tag: Shandong Mobile
@@ -25345,12 +25353,44 @@ Tag: KomTehCentr
 # ASN 60098 ("Filippov Aleksei Vladilenovich").
 # Russian domestic ISP. Brute-force, SSH attacks, port scans, and hacking
 # detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2024.09.01
+# Stop Forum Spam (SFS) listings: 2.
+# Updated: 2025.09.17
 
-37.72.176.0/21 Deny Attacks
-46.235.248.0/21 Deny Attacks
-185.7.180.0/22 Deny Attacks
+37.72.176.75/32 Deny Attacks
+37.72.176.86/32 Deny Attacks
+37.72.176.105/32 Deny Attacks
+37.72.176.197/32 Deny Attacks
+37.72.176.252/32 Deny Attacks
+37.72.177.247/32 Deny Attacks
+37.72.178.11/32 Deny Attacks
+37.72.178.177/32 Deny Attacks
+37.72.178.194/32 Deny Attacks
+37.72.179.23/32 Deny Attacks
+37.72.179.124/32 Deny Attacks
+37.72.179.201/32 Deny Attacks
+37.72.179.226/31 Deny Attacks
+37.72.180.26/32 Deny Attacks
+37.72.180.56/32 Deny Attacks
+37.72.180.125/32 Deny Attacks
+37.72.180.158/32 Deny Attacks
+37.72.180.222/32 Deny Attacks
+37.72.181.166/32 Deny Attacks
+37.72.181.199/32 Deny Attacks
+37.72.182.63/32 Deny Attacks
+37.72.182.102/32 Deny Attacks
+37.72.182.113/32 Deny Attacks
+37.72.182.129/32 Deny Attacks
+37.72.183.113/32 Deny Attacks
+37.72.183.138/32 Deny Attacks
+46.235.248.93/32 Deny Attacks
+46.235.250.94/32 Deny Attacks
+46.235.250.96/32 Deny Attacks
+46.235.250.167/32 Deny Attacks
+46.235.251.9/32 Deny Attacks
+46.235.251.219/32 Deny Attacks
+46.235.253.174/32 Deny Attacks
+185.7.180.0/23 Deny Attacks
+185.7.183.0/24 Deny Attacks
 194.135.136.0/21 Deny Attacks
 194.135.144.0/21 Deny Attacks
 Origin: RU

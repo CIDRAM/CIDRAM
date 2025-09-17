@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used to simulate block events (last modified: 2025.08.23).
+ * This file: Methods used to simulate block events (last modified: 2025.09.08).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -301,6 +301,9 @@ trait SimulateBlockEvent
         /** Clear to prevent potential interference with later execution within the same request. */
         unset($this->CIDRAM['Trigger notifications']);
 
+        /** Fix for non-integer status codes. */
+        $this->CIDRAM['Aux Status Code'] = empty($this->CIDRAM['Aux Status Code']) ? 0 : (int)$this->CIDRAM['Aux Status Code'];
+
         /**
          * Determine HTTP status code. Priority (from highest to lowest):
          * - silent_mode(30x)
@@ -321,13 +324,13 @@ trait SimulateBlockEvent
                 ) ? $this->Configuration['general']['silent_mode_response_header_code'] : 301)) ||
                 (!empty($this->CIDRAM['Banned']) && $this->Configuration['general']['ban_override'] > 400 && ($Try = $this->Configuration['general']['ban_override'])) ||
                 (!empty($this->CIDRAM['Other Status']) && !empty($this->CIDRAM['Other Status Code']) && $this->BlockInfo['SignatureCount'] === 1 && ($Try = $this->CIDRAM['Other Status Code'])) ||
-                (!empty($this->CIDRAM['Aux Status Code']) && $this->CIDRAM['Aux Status Code'] > 400 && ($Try = $this->CIDRAM['Aux Status Code'])) ||
+                ($this->CIDRAM['Aux Status Code'] > 400 && ($Try = $this->CIDRAM['Aux Status Code'])) ||
                 ($this->Configuration['general']['http_response_header_code'] > 400 && ($Try = $this->Configuration['general']['http_response_header_code'])) ||
                 (!empty($this->CIDRAM['ThisStatusHTTP']) && $this->CIDRAM['ThisStatusHTTP'] !== 200 && ($Try = $this->CIDRAM['ThisStatusHTTP']))
             ) ? $Try : '200 OK';
         } else {
             $this->CIDRAM['ThisStatusHTTP'] = (
-                (!empty($this->CIDRAM['Aux Redirect']) && !empty($this->CIDRAM['Aux Status Code']) && $this->CIDRAM['Aux Status Code'] > 300 && $this->CIDRAM['Aux Status Code'] < 400 && ($Try = $this->CIDRAM['Aux Status Code'])) ||
+                (!empty($this->CIDRAM['Aux Redirect']) && $this->CIDRAM['Aux Status Code'] > 300 && $this->CIDRAM['Aux Status Code'] < 400 && ($Try = $this->CIDRAM['Aux Status Code'])) ||
                 (!empty($this->CIDRAM['ThisStatusHTTP']) && $this->CIDRAM['ThisStatusHTTP'] !== 200 && ($Try = $this->CIDRAM['ThisStatusHTTP']))
             ) ? $Try : '200 OK';
         }

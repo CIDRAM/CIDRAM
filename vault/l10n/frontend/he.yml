@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hebrew language data for the front-end (last modified: 2025.09.14).
+# This file: Hebrew language data for the front-end (last modified: 2025.09.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -418,12 +418,19 @@ hints_duration:
  אנגלית פשוטה.: "ניתן לתאר את משך הזמן על ידי כתיבת היחידות באנגלית פשוטה. למשל., <strong dir="ltr">1 week 2 days 3 hours 4 minutes 5 seconds</strong> למשך שבוע, יומיים, שלוש שעות, ארבע דקות, חמש שניות."
  אילוצים.: "ניתן לערבב סימון, אבל תמיד יש לתאר יחידות מהגדול לקטן ביותר, ולא ניתן לחזור עליהן. למשל., <strong dir="ltr">1 week 2 days 3′4″</strong> <span class="txtGn">תקף</span> ויובן כהלכה, אבל <strong dir="ltr">3′4″ 1 week 2 days</strong> ו-<strong dir="ltr">3 hours 3h 3°</strong> <span class="txtRd">לא חוקיים</span>. ל-CIDRAM לא אכפת אם אתה משתמש במרווחים או לא. מספרים חייבים להיות פשוטים וללא פורמט. היחידה הנתמכת הגדולה ביותר היא שבוע. כאשר התצורה מתעדכנת, CIDRAM מנרמל משכי זמן לזמן זוויתי."
 hints_has_bypass: "* לאפשרות זו יש מעקף מתאים מתחת ל-<code dir="ltr" class="s">used⬅bypasses</code>. מומלץ לוודא שתיבת הסימון של המעקף המתאים מסומנת באותו אופן כמו תיבת הסימון לניסיון לאמת אפשרות זו."
+hints_http_response_header_code:
+ 1.: "כאשר "מצב שקט" בתוקף, ייעשה שימוש בהודעת סטטוס HTTP המוגדרת על ידי <code dir="ltr" class="s">silent_mode_response_header_code⬅general</code> (לזה יש את העדיפות הגבוהה ביותר)."
+ 2.: "כאשר הישות המבקשת נחסם עקב חריגה ממגבלת ההפרה, ייעשה שימוש בהודעת סטטוס HTTP עבור "אסור"."
+ 3.: "כאשר חסום עקב הגבלת קצב, ייעשה שימוש ב-429, או כאשר חסום עקב התנגשויות משאבים, ייעשה שימוש בהודעת סטטוס HTTP המוגדרת על ידי <code dir="ltr" class="s">conflict_response⬅signatures</code> (להגבלת קצב ולקונפליקטים של משאבים יש עדיפות שווה בהקשר זה)."
+ 4.: "כאשר חסום עקב כלל עזר שמגדיר "עקיפה של קוד סטטוס HTTP", ייעשה שימוש בעקיפה של קוד סטטוס HTTP זה."
+ 5.: "כאשר חסום מסיבות משפטיות (כלומר, כאשר חסום עקב חתימה מותאמת אישית המשתמשת בקיצור "משפטי"), ייעשה שימוש בהודעת סטטוס HTTP עבור "משפטי"."
+ 6.: "עבור כל שאר הבקשות החסומות, ייעשה שימוש בהודעת סטטוס HTTP עבור "סטנדרטי" (לה זו יש את העדיפות הנמוכה ביותר)."
 hints_inspection: "* מיועד רק לאיתור באגים בכללי עזר. לא מוצג למשתמשים חסומים."
 hints_ipv6_on_32bit: "הערה: ייתכן שחיפושי IPv6 לא יפעלו כהלכה בחלק ממערכות 32 סיביות."
-hints_logging_datetime: "טיפ שימושי: ניתן לצרף מידע על תאריך/שעה לשמות של קובצי יומן על ידי שימוש במצייני מיקום של פורמט זמן. מצייני מיקום זמינים של פורמט זמן מוצגים ב-{{Links.ConfigRef.time_format}}."
+hints_logging_datetime: "טיפ שימושי: ניתן לצרף מידע על תאריך/שעה לשמות של קובצי יומן על ידי שימוש במצייני מיקום של פורמט זמן. מצייני מיקום זמינים של פורמט זמן מוצגים ב-{{Links.ConfigRef.time_format_rtl}}."
 hints_pdo_dsn:
  שאלות נפוצות.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">מהו "PDO DSN"? כיצד להשתמש ב-PDO עם CIDRAM?</a></em>"
-hints_sensitive_pages: "הערה: מהו "דף רגיש" נקבע על ידי {{Links.ConfigRef.sensitive}}."
+hints_sensitive_pages: "הערה: מהו "דף רגיש" נקבע על ידי {{Links.ConfigRef.sensitive_rtl}}."
 hints_shorthand:
  0.: "אם האתר שלך זקוק לגישה דרך LAN או localhost, אל תחסום זאת. במקרים אחרים, אתה יכול לחסום את זה."
  1.: "אף אחד מקובצי החתימה הסטנדרטיים לא משתמש בזה, אבל זה נתמך בכל זאת למקרה שזה עשוי להיות שימושי עבור משתמשים מסוימים."
@@ -985,10 +992,10 @@ state_tracking:
  - "כרגע עוקב אחר %s כתובות IP."
 switch-descending-order-set-false: "מיין בסדר עולה"
 switch-descending-order-set-true: "מיון בסדר יורד"
-switch-hide-non-outdated-set-false: "אל תסתיר לֹא מיושן"
-switch-hide-non-outdated-set-true: "הסתר לֹא מיושן"
-switch-hide-unused-set-false: "אל תסתיר לֹא מיושן"
-switch-hide-unused-set-true: "הסתר לֹא בשימוש"
+switch-hide-non-outdated-set-false: "אל תסתיר לא מיושן"
+switch-hide-non-outdated-set-true: "הסתר לא מיושן"
+switch-hide-unused-set-false: "אל תסתיר לא מיושן"
+switch-hide-unused-set-true: "הסתר לא בשימוש"
 switch-sort-by-name-set-false: "מיין לפי זהות"
 switch-sort-by-name-set-true: "מיין לפי שם"
 switch-tracking-aux-set-false: "אל תבדוק כללי עזר"

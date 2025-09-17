@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2025.09.08).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2025.09.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -99,13 +99,13 @@ config_general: "基本配置（任何不属于其他类别的核心配置）。
 config_general_FrontEndLog: "前端登录尝试的录音文件。​指定一个文件名，​或留空以禁用。"
 config_general_allow_gethostbyaddr_lookup: "当UDP不可用时允许gethostbyaddr查找？​True（真）=允许【标准】；False（假）=不允许。"
 config_general_ban_override: "覆盖“forbid_on_block”当“infraction_limit”已被超过？​当覆盖：已阻止的请求返回一个空白页（不使用模板文件）。​200 = 不要覆盖【标准】。​其他值与“forbid_on_block”的可用值相同。"
-config_general_config_imports: "要导入CIDRAM默认配置的以逗号分隔的文件列表。​通常在启用组件时由更新页面按需填充。​大多数情况下，可以忽略它。"
+config_general_config_imports: "要导入CIDRAM标准配置的以逗号分隔的文件列表。​通常在启用组件时由更新页面按需填充。​大多数情况下，可以忽略它。"
 config_general_default_algo: "定义要用于所有未来密码和会话的算法。​选项：​PASSWORD_DEFAULT（标准），​PASSWORD_BCRYPT，​PASSWORD_ARGON2I（需要PHP &gt;= 7.2.0），​PASSWORD_ARGON2ID（需要PHP &gt;= 7.3.0）。"
 config_general_default_dns: "以逗号分隔的DNS服务器列表，​用于主机名查找。 标准 = “8.8.8.8,8.8.4.4” (Google DNS)。​警告：不要修改此除非您知道什么您做着！"
 config_general_default_timeout: "用于外部请求的默认超时？ 标准 = 12秒。"
 config_general_disable_cli: "关闭CLI模式吗？​CLI模式是按说激活作为标准，​但可以有时干扰某些测试工具（例如PHPUnit，​为例子）和其他基于CLI应用。​如果您没有需要关闭CLI模式，​您应该忽略这个指令。​False（假）=激活CLI模式【标准】；True（真）=关闭CLI模式。"
 config_general_disable_frontend: "关闭前端访问吗？​前端访问可以使CIDRAM更易于管理，​但也可能是潜在的安全风险。​建议管理CIDRAM通过后端只要有可能，​但前端访问提供当不可能。​保持关闭除非您需要它。​False（假）=激活前端访问；True（真）=关闭前端访问【标准】。"
-config_general_disable_webfonts: "关闭网络字体吗？​True（真）=关闭【标准】；False（假）=不关闭。"
+config_general_disable_webfonts: "关闭网络字型吗？​True（真）=关闭【标准】；False（假）=不关闭。"
 config_general_disabled_channels: "这可用于防止CIDRAM在发送请求时使用特定通道（例如，在更新时、在获取组件元数据时、等等）。"
 config_general_emailaddr: "如果您希望，​您可以提供电子邮件地址这里要给予用户当他们被阻止，​他们使用作为接触点为支持和/或帮助在的情况下他们错误地阻止。​警告:您提供的任何电子邮件地址，​它肯定会被获得通过垃圾邮件机器人和铲运机，​所以，​它强烈推荐如果选择提供一个电子邮件地址这里，​您保证它是一次性的和/或不是很重要（换一种说法，​您可能不希望使用您的主电子邮件地址或您的企业电子邮件地址）。"
 config_general_emailaddr_display_style: "您希望如何将电子邮件地址呈现给用户？"
@@ -148,7 +148,7 @@ config_hcaptcha_expiry: &CaptchaExpiry "记得验证码多少小时？ 标准 = 
 config_hcaptcha_lockip: &CaptchaLockIP "应该验证码锁定到IP？"
 config_hcaptcha_lockuser: &CaptchaLockUser "应该验证码锁定到用户？"
 config_hcaptcha_logfile: &CaptchaLogfile "记录所有的验证码的尝试？​要做到这一点，​指定一个文件名到使用。​如果不，​离开这个变量为空白。"
-config_hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "向未阻止的请求显示验证码时应使用哪个状态代码？"
+config_hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "向未阻止的请求显示验证码时应使用哪个状态码？"
 config_hcaptcha_secret: &CaptchaDashboard "可以在您的验证码服务的仪表板中找到该值。"
 config_hcaptcha_show_api_message: &ShowAPIMessage "显示API讯息吗？​True（真）=显示【标准】；False（假）=不显示。"
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "显示cookie警告吗？​True（真）=显示【标准】；False（假）=不显示。"
@@ -187,7 +187,7 @@ config_signatures_block_attacks: "阻止攻击和其他异常流量相关的CIDR
 config_signatures_block_bogons: "阻止bogon(“ㄅㄡㄍㄛㄋ”)/martian（“火星”）CIDR吗？​如果您希望连接到您的网站从您的本地网络/本地主机/localhost/LAN/等等，​这应该被设置为“false”（假）。​如果不，​这应该被设置为“true”（真）。"
 config_signatures_block_cloud: "阻止CIDR认定为属于虚拟主机或云服务吗？​如果您操作一个API服务从您的网站或如果您预计其他网站连接到您的网站，​这应该被设置为“false”（假）。​如果不，​这应该被设置为“true”（真）。"
 config_signatures_block_generic: "阻止CIDR一般建议对于黑名单吗？​这包括签名不标记为的一章节任何其他更具体签名类别。"
-config_signatures_block_legal: "阻止CIDR因为法律义务吗？​这个指令通常不应该有任何作用，因为CIDRAM默认情况下不会将任何CIDR与“法律义务”相关联，​但它作为一个额外的控制措施存在，以利于任何可能因法律原因而存在的自定义签名文件或模块。"
+config_signatures_block_legal: "阻止CIDR因为法律义务吗？​这个指令通常不应该有任何作用，因为CIDRAM默认情况下不会将任何CIDR与“法律”相关联，​但它作为一个额外的控制措施存在，以利于任何可能因法律原因而存在的自定义签名文件或模块。"
 config_signatures_block_malware: "阻止与恶意软件相关的CIDR吗？​这包括C&C服务器、受感染的机器、涉及恶意软件分发的机器、等等。"
 config_signatures_block_proxies: "阻止CIDR认定为属于代理服务或VPN吗？​如果您需要该用户可以访问您的网站从代理服务和VPN，​这应该被设置为“false”（假）。​除此以外，​如果您不需要代理服务或VPN，​这应该被设置为“true”（真）作为一个方式以提高安全性。"
 config_signatures_block_spam: "阻止高风险垃圾邮件CIDR吗？​除非您遇到问题当这样做，​通常，​这应该被设置为“true”（真）。"
@@ -216,7 +216,7 @@ config_supplementary_cache_options_redis_host: "Redis 主机值。 标准 = loca
 config_supplementary_cache_options_redis_port: "Redis 端口值。 标准 = “6379”。"
 config_supplementary_cache_options_redis_timeout: "Redis 超时值。 标准 = “2.5”。"
 config_template_data: "模板和主题的配置。"
-config_template_data_Magnification: "字体放大。 标准 = 1。"
+config_template_data_Magnification: "字型放大。 标准 = 1。"
 config_template_data_block_event_title: "为阻止事件显示的页面标题。"
 config_template_data_captcha_title: "为验证码请求显示的页面标题。"
 config_template_data_css_url: "自定义主题的CSS文件URL。"
@@ -361,7 +361,7 @@ label_aux_actWhl: "白名单"
 label_aux_create_new_rule: "创建新规则"
 label_aux_expiry: "规则何时到期（可选）："
 label_aux_from: "规则何时开始（可选）："
-label_aux_http_status_code_override: "HTTP状态代码覆盖："
+label_aux_http_status_code_override: "HTTP状态码覆盖："
 label_aux_logic_all: "为了触发规则，必须满足所有条件。"
 label_aux_logic_any: "只要满足所有“不等于”（≠）条件，任何“等于”（=）条件都可以触发规则。"
 label_aux_menu_action: "如果满足以下条件，%s该请求。"

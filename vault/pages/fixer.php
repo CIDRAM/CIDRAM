@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The signature file fixer page (last modified: 2023.12.13).
+ * This file: The signature file fixer page (last modified: 2025.09.18).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -180,12 +180,12 @@ if ($this->FE['FixerOutput']) {
 
     /** Copy SVG. */
     $this->FE['FixerOutput'] .= '<span class="s">' . sprintf(
-        '<span id="fxOS" onclick="javascript:if(navigator.clipboard){navigator.cl' .
-        'ipboard.writeText(getElementById(\'fixerOutput\').value);getElementById(' .
-        '\'fxOS_copied\').className=\'sFade\'}else{getElementById(\'fxOS_failed\'' .
-        ').style.className=\'sFade\'}"><script type="text/javascript">copySvg();<' .
-        '/script></span><span id="fxOS_copied"%1$s">✔️ %2$s</span><span id="fxOS_' .
-        'failed"%1$s">❌ %3$s</span>',
+        '<span class="navicon clipboard" id="fxOS" onclick="javascript:if(navigat' .
+        'or.clipboard){navigator.clipboard.writeText(getElementById(\'fixerOutput' .
+        '\').value);getElementById(\'fxOS_copied\').className=\'sFade\'}else{getE' .
+        'lementById(\'fxOS_failed\').style.className=\'sFade\'}"></span><span id=' .
+        '"fxOS_copied"%1$s"><span class="txtGn">%2$s</span></span><span id="fxOS_' .
+        'failed"%1$s"><span class="txtRd">%3$s</span></span>',
         ' class="sHide" onanimationend="javascript:this.className=\'sHide\'',
         $this->L10N->getString('response.Copied'),
         $this->L10N->getString('response.Failed')

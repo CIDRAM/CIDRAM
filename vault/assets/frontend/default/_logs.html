@@ -7,7 +7,8 @@
   <td class="right{mod_class_right}">
   <div class="ng1 s flong mob">{LogFiles}  </div>
   {SVGsFormData}
-  <form class="s" method="GET" action=""><input type="hidden" name="cidram-page" value="logs" />
+  <form class="s" method="GET" action="" onsubmit="javascript:{let sf=document.getElementById('searchfor').value;''!==sf&&(document.getElementById('searchfield').value=ubtoa(sf))}">
+    <input type="hidden" name="cidram-page" value="logs" />
     <table>
       <tr>
         {TextModeSwitchLink}

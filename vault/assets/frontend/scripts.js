@@ -10,3 +10,4 @@ function toggleconfig(e,f){x=document.getElementById(e),y=document.getElementByI
 function toggleconfigNav(e,f){x=document.getElementById(e),y=document.getElementById(f),x.style.display='inline',y.classList.add('shownlink')}
 function getFormJSON(r){var e=new FormData(r);return Array.from(e.keys()).reduce(((r,t)=>(r[t]=e.get(t),r)),{})}
 function minifyForm(e,t,n){var i=document.querySelector(e);i.addEventListener('submit',(e=>{e.preventDefault(),i.reportValidity()&&(document.getElementById(n).value=JSON.stringify(getFormJSON(i)),document.getElementById(t).submit())}))}
+function ubtoa(n){return btoa(encodeURIComponent(n).replace(/%([0-9A-F]{2})/g,function(n,o){return String.fromCharCode('0x'+o)}))}

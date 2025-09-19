@@ -4,7 +4,8 @@
 <hr />
 <span class="s">
   {SVGsFormData}
-  <form method="GET" action=""><input type="hidden" name="cidram-page" value="logs" />
+  <form method="GET" action="" onsubmit="javascript:{let sf=document.getElementById('searchfor').value;''!==sf&&(document.getElementById('searchfield').value=ubtoa(sf))}">
+    <input type="hidden" name="cidram-page" value="logs" />
     <table>
       <tr>
         {TextModeSwitchLink}

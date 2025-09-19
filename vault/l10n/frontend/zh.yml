@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese language data for the front-end (last modified: 2025.09.14).
+# This file: Chinese language data for the front-end (last modified: 2025.09.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -368,7 +368,7 @@ config:
  verification: {"zh-Hans": "请求来源验证配置。", "zh-Hant": "請求來源驗證配置。"}
  verification_adjust: {"zh-Hans": "在验证上下文中调整其他功能的控件。", "zh-Hant": "在驗證上下文中調整其他功能的控件。"}
  verification_other: {"zh-Hans": "用于在可能的情况下，验证其他类型的请求的控件。", "zh-Hant": "用於在可能的情況下，驗證其他類型的請求的控件。"}
- verification_search_engines: {"zh-Hans": "用于验证来自搜索引擎的请求的控件。", "zh-Hant": "用於驗證來自搜索引擎的請求的控件。"}
+ verification_search_engines: {"zh-Hans": "用于验证来自搜索引擎的请求的控件。", "zh-Hant": "用於驗證來自搜尋引擎的請求的控件。"}
  verification_social_media: {"zh-Hans": "用于验证来自社交媒体平台的请求的控件。", "zh-Hant": "用於驗證來自社交媒體平台的請求的控件。"}
 confirm:
  Action: {"zh-Hans": "您确定要“%s”吗？", "zh-Hant": "您確定要『%s』嗎？"}
@@ -437,7 +437,7 @@ field:
  Upload new file: {"zh-Hans": "上传新文件", "zh-Hant": "上傳新文件"}
  Use system default timezone: {"zh-Hans": "使用系统默认时区。", "zh-Hant": "使用系統默認時區。"}
  Username: {"zh-Hans": "用户名", "zh-Hant": "使用者名稱"}
- Verified search engine and social media requests: {"zh-Hans": "经过验证的搜索引擎和社交媒体请求", "zh-Hant": "經過驗證的搜索引擎和社交媒體請求"}
+ Verified search engine and social media requests: {"zh-Hans": "经过验证的搜索引擎和社交媒体请求", "zh-Hant": "經過驗證的搜尋引擎和社交媒體請求"}
  Verify all: {"zh-Hans": "验证全部", "zh-Hant": "驗證全部"}
  Verify: {"zh-Hans": "验证", "zh-Hant": "驗證"}
  Whitelisted requests: {"zh-Hans": "在白名单中的请求", "zh-Hant": "在白名單中的請求"}
@@ -547,11 +547,11 @@ info_cli_by_default_ips:
   --no-ov     防止其他验证。
   --no-aux    防止针对辅助规则进行测试。
  zh-Hant: |
-  IP位址針對所有簽名檔案、所有模組、所有輔助規則、以及社交媒體和搜索引擎驗證進行
+  IP位址針對所有簽名檔案、所有模組、所有輔助規則、以及社交媒體和搜尋引擎驗證進行
   測試。
   --no-sig    防止針對簽名檔案進行測試。
   --no-mod    防止針對模組進行測試。
-  --no-sev    防止搜索引擎驗證。
+  --no-sev    防止搜尋引擎驗證。
   --no-smv    防止社交媒體驗證。
   --no-ov     防止其他驗證。
   --no-aux    防止針對輔助規則進行測試。
@@ -831,7 +831,8 @@ label:
  SAPI used: "目前使用SAPI："
  Safety mechanisms: {"zh-Hans": "安全机制", "zh-Hant": "安全機制"}
  Sanity check: {"zh-Hans": "安全检查：", "zh-Hant": "安全檢查："}
- Search Engine: "搜索引擎"
+ Search Engine: {"zh-Hans": "搜索引擎", "zh-Hant": "搜尋引擎"}
+ Search for: {"zh-Hans": "搜索：", "zh-Hant": "搜尋:"}
  See also: "也可以看看："
  Selected log file doesn_t exist: {"zh-Hans": "选择的日志不存在！", "zh-Hant": "選擇的日誌不存在！"}
  Show: {"zh-Hans": "显示", "zh-Hant": "顯示"}
@@ -1124,7 +1125,7 @@ stages:
  Execute other verification: {"zh-Hans": "执行其他验证", "zh-Hant": "執行其他驗證"}
  Execute rate limiting: {"zh-Hans": "执行速率限制", "zh-Hant": "執行速率限制"}
  Execute reporting: {"zh-Hans": "执行报告", "zh-Hant": "執行報告"}
- Execute search engine verification: {"zh-Hans": "执行搜索引擎验证", "zh-Hant": "執行搜索引擎驗證"}
+ Execute search engine verification: {"zh-Hans": "执行搜索引擎验证", "zh-Hant": "執行搜尋引擎驗證"}
  Execute signature files tests: {"zh-Hans": "执行签名文件测试", "zh-Hant": "執行簽名檔案測試"}
  Execute social media verification: {"zh-Hans": "执行社交媒体验证", "zh-Hant": "執行社交媒體驗證"}
  Execute webhooks: {"zh-Hans": "执行webhook", "zh-Hant": "執行webhook"}

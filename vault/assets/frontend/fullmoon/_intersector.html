@@ -28,9 +28,9 @@
     <tr>
       <td colspan="2" class="h4f">
         <div class="center">
-          <span class="s">{label.Intersect} (A∩B)<br /></span><textarea id="rangeOutput" readonly>{Intersector_AB}</textarea><br />
+          <span class="s">{label.Intersect} (A∩B)<br /></span><textarea id="rangeOutput" readonly>{Intersector_AB}</textarea>
         </div>
-        <div class="s clipMar"><span class="navicon clipboard" onclick="javascript:if(navigator.clipboard){navigator.clipboard.writeText(getElementById('rangeOutput').value);getElementById('rangeSvg_copied').className='sFade'}else{getElementById('rangeSvg_failed').style.className='sFade'}"></span><span id="rangeSvg_copied" class="sHide" onanimationend="javascript:this.className='sHide'"><span class="txtGn">{response.Copied}</span></span><span id="rangeSvg_failed" class="sHide" onanimationend="javascript:this.className='sHide'"><span class="txtRd">{response.Failed}</span></span></div>
+        <div class="clipMar"><span class="navicon clipboard" onclick="javascript:if(navigator.clipboard){navigator.clipboard.writeText(getElementById('rangeOutput').value);getElementById('rangeSvg_copied').className='sFade'}else{getElementById('rangeSvg_failed').style.className='sFade'}"></span><span id="rangeSvg_copied" class="sHide" onanimationend="javascript:this.className='sHide'"><span class="txtGn">{response.Copied}</span></span><span id="rangeSvg_failed" class="sHide" onanimationend="javascript:this.className='sHide'"><span class="txtRd">{response.Failed}</span></span></div>
       </td>
     </tr><!-- Output End -->
   </form>

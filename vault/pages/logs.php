@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The logs page (last modified: 2025.08.09).
+ * This file: The logs page (last modified: 2025.09.19).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -397,15 +397,15 @@ if (empty($this->FE['mod_class_nav'])) {
 /** Logs control form. */
 $this->FE['TextModeSwitchLink'] = sprintf(
     '<td class="h4"><span class="s"><label for="textMode">%1$s</label><br /><select name="textMode" id="textMode" class="auto" title="%1$s">' .
-    '<option value="simple"%2$s>%3$s</option>' .
-    '<option value="fancy"%4$s>%5$s</option>' .
-    '<option value="tally"%6$s>%7$s</option>' .
+    '<option value="simple"%2$s>%3$s</option><option value="fancy"%4$s>%5$s</option><option value="tally"%6$s>%7$s</option>' .
     '</select></span></td><td class="h4f"><span class="s">' .
     '<input type="radio" class="auto" name="sortOrder" value="ascending" id="sOa"%8$s /><label for="sOa">%9$s</label><br />' .
     '<input type="radio" class="auto" name="sortOrder" value="descending" id="sOd"%10$s /><label for="sOd">%11$s</label>' .
     '</span></td></tr><tr><td class="h4"><span class="s">' .
     '<input type="checkbox" name="paginate" class="auto" id="paginate"%16$s /><label for="paginate">%17$s</label><br />' .
     '<label for="perpage">%18$s</label><br /><input type="number" name="perpage" class="auto" id="perpage" value="%19$d" />' .
+    '</span></td><td class="h4f"></td></tr><tr><td class="h4"><span class="s">' .
+    '<label for="searchfor">%20$s</label><br /><span class="flexrow"><input type="text" class="auto flexin" id="searchfor" value="%21$s" placeholder="%22$s" /><input type="hidden" name="search" id="searchfield" value="" /></span>' .
     '</span></td><td class="h4f"><span class="s">' .
     '<input type="checkbox" name="remember" class="auto" id="remember"%12$s /><label for="remember">%13$s</label><br />' .
     '<input type="hidden" name="logfile" value="%14$s" /><input type="submit" value="%15$s" />' .
@@ -428,7 +428,10 @@ $this->FE['TextModeSwitchLink'] = sprintf(
     $this->FE['Paginate'] ? ' checked' : '',
     $this->L10N->getString('label.Paginate'),
     $this->L10N->getString('label.Entries per page'),
-    $this->FE['PerPage']
+    $this->FE['PerPage'],
+    $this->L10N->getString('label.Search for'),
+    $this->FE['SearchQuery'] === '' ? '' : str_replace(['<', '>', "\r", "\n"], ['&lt;', '&gt;', '', ''], $this->FE['SearchQuery']),
+    $this->L10N->getString('tip.Specify a value, or leave blank to disregard')
 );
 
 /** Prepare log data formatting. */

@@ -172,14 +172,14 @@ if ($this->FE['FixerOutput']) {
         $this->L10N->getPlural($Fixer['Time'], 'state_fixer_seconds'),
         '<span class="txtRd">' . $this->NumberFormatter->format($Fixer['Time'], 3) . '</span>'
     )) . '<br /><blockquote><code>' . $Fixer['Before'] . '</code><br />↪️<code>' . $Fixer['After'] . '</code></blockquote></div>';
-    $this->FE['FixerOutput'] = '<hr />' . $Fixer . '<br /><textarea name="FixerOutput" id="fixerOutput">' . str_replace(
+    $this->FE['FixerOutput'] = '</div><div class="ng1">' . $Fixer . '<br /><textarea name="FixerOutput" id="fixerOutput">' . str_replace(
         ['&', '<', '>'],
         ['&amp;', '&lt;', '&gt;'],
         $this->FE['FixerOutput']
-    ) . '</textarea><br /><br />';
+    ) . '</textarea>';
 
     /** Copy SVG. */
-    $this->FE['FixerOutput'] .= '<span class="s">' . sprintf(
+    $this->FE['FixerOutput'] .= '<div class="clipMar">' . sprintf(
         '<span class="navicon clipboard" id="fxOS" onclick="javascript:if(navigat' .
         'or.clipboard){navigator.clipboard.writeText(getElementById(\'fixerOutput' .
         '\').value);getElementById(\'fxOS_copied\').className=\'sFade\'}else{getE' .
@@ -189,7 +189,7 @@ if ($this->FE['FixerOutput']) {
         ' class="sHide" onanimationend="javascript:this.className=\'sHide\'',
         $this->L10N->getString('response.Copied'),
         $this->L10N->getString('response.Failed')
-    ) . '</span>';
+    ) . '</div>';
 
     /** Cleanup. */
     unset($Fixer);

@@ -10,7 +10,7 @@
       {SVGsFormData}
     </div>
     <div class="duo">
-      <form action="" method="GET">
+      <form action="" method="GET" onsubmit="javascript:{let sf=document.getElementById('searchfor').value;''!==sf&&(document.getElementById('searchfield').value=ubtoa(sf))}">
         <input type="hidden" name="cidram-page" value="logs" />
         {TextModeSwitchLink}
       </form>

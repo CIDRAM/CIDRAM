@@ -12,7 +12,7 @@ img.ico{width:16px;height:16px;border:0}
 input[type=file]{margin:0;padding:0;border:none;background:none;width:auto}
 input,input[type=file]::file-selector-button,select,option,textarea{background-color:#eff;border:1px solid rgba(0,0,153,.2);color:#330;margin:2px;padding:2px}
 input,select{width:150px;background-repeat:no-repeat;background-position:top {FE_Align_Reverse}}
-input[type=submit]:not(.auto),input[type=button]:not(.auto){width:auto;min-width:min(150px, 25%)}
+input[type=submit]:not(.auto),input[type=button]:not(.auto){width:auto;min-width:min(150px,25%)}
 input.auto,input[type=file]::file-selector-button,select.auto{width:auto;padding-left:10px;padding-right:10px}
 input[type=image]{width:inherit;border:inherit}
 input[type=password]{background-image:url(data:image/gif;base64,{Base64Encode}{Asset:pip_key_red.gif}{/Base64Encode})}
@@ -239,3 +239,6 @@ input[type=file]::file-selector-button{padding-{FE_Align}:20px;background-repeat
 .origin.in{background:linear-gradient(#f80 30%,#080 70%);color:#fff}
 .origin.pk{background:#060;color:#fff}
 input[type=checkbox],input[type=radio]{accent-color:#009}
+.va{align-content:center}
+.louter{width:min(150px,23vw)}
+input[type=submit].linner,input[type=number].linner,select.linner{width:100%}

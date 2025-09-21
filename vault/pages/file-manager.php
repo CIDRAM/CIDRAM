@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The file manager page (last modified: 2025.09.03).
+ * This file: The file manager page (last modified: 2025.09.21).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -213,15 +213,26 @@ if (isset($_POST['do'], $_FILES['upload-file']['name']) && $_POST['do'] === 'upl
         } else {
             $this->FE['FE_Title'] .= ' – ' . $FMData['filename'];
             $this->FE['filename'] = $FMData['filename'];
-            $this->FE['content'] = htmlentities($this->readFile($this->Vault . $FMData['filename']));
+            $this->FE['content'] = $this->readFile($this->FE['basepath'] . $FMData['filename']);
 
             /** Component update file overwrite warning. */
             if (isset($this->Components['Files'][$FMData['filename']])) {
-                $this->FE['state_msg'] = sprintf(
-                    $this->L10N->getString('warning.Likely to be overwritten'),
-                    $this->Components['Files'][$FMData['filename']]
-                );
+                if ($this->FE['state_msg'] !== '') {
+                    $this->FE['state_msg'] .= '<br />';
+                }
+                $this->FE['state_msg'] = sprintf( $this->L10N->getString('warning.Likely to be overwritten'), $this->Components['Files'][$FMData['filename']]);
             }
+
+            /** File corruption warning. */
+            if (!$this->Demojibakefier->checkConformity($this->FE['content'])) {
+                if ($this->FE['state_msg'] !== '') {
+                    $this->FE['state_msg'] .= '<br />';
+                }
+                $this->FE['state_msg'] = $this->L10N->getString('warning.Likely to become corrupted');
+            }
+
+            /** Ensure safe for textarea display. */
+            $this->FE['content'] = htmlentities($this->FE['content']);
 
             /** PHP file warning. */
             if (preg_match('~\.php$~i', $FMData['filename'])) {

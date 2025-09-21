@@ -481,4 +481,5 @@
 - [2025.09.03]: Slightly improved the code for traversal detection.
 - [2025.09.18]: Redesigned the "copy to clipboard" icon (didn't stylistically match the other icons before, but now does, so doesn't look as ugly as before).
 - [2025.09.19]: The search parameter at the front-end logs page can now be entered manually.
+- [2025.09.21]: Added a warning to the file manager's edit page for non-UTF8 bytes.
 - *Plus all the regular signature updates.*

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2025.09.19).
+# This file: German language data for the front-end (last modified: 2025.09.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -198,7 +198,7 @@ config:
  frontend_frontend_log: "Datei für die Protokollierung von Frontend Anmelde-Versuchen. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer."
  frontend_magnification: &MagnifDesc "Schriftvergrößerung. Standardeinstellung = 1."
  frontend_max_login_attempts: "Maximale Anzahl der Versucht zum Anmelden (Frontend). Standardeinstellung = 5."
- frontend_remotes: "Eine Liste der Adressen an denen der Updater Komponenten-Metadaten abruft. Dies muss möglicherweise beim Upgrade auf eine neue Hauptversion oder beim Erwerb einer neuen Quelle für Updates angepasst werden, aber sollte unter normalen Umständen in Ruhe gelassen werden."
+ frontend_remotes: "Eine Liste der Adressen an denen der Updater Komponenten-Metadaten abruft. Dies muss möglicherweise beim Upgrade auf eine neue Hauptversion oder beim Erwerb einer neuen Quelle für Aktualisierungen angepasst werden, aber sollte unter normalen Umständen in Ruhe gelassen werden."
  frontend_signatures_update_event_log: "Einer Datei zum Protokollieren wenn Signaturen über das Front-End aktualisiert werden. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer."
  frontend_theme: "Thema für das Front-End zu verwenden."
  frontend_theme_mode: "Der Modus für das Thema für das Front-End zu verwenden."
@@ -372,7 +372,7 @@ field:
  Purpose: "Zweck"
  Range (First Last): "Umfang (Erste – Letzte)"
  Rename: "Umbenennen"
- Repair all: "Reparieren alle"
+ Repair all: "Reparieren alles"
  Repair: "Reparieren"
  Requests to the CIDRAM front-end: "Anfragen an das CIDRAM-Front-End"
  Reset: "Zurücksetzen"
@@ -383,14 +383,14 @@ field:
  Tracking: "Tracking"
  True (True): "True (Wahr)"
  Uninstall: "Deinstallieren"
- Update all: "Alle aktualisieren"
+ Update all: "Aktualisieren alles"
  Update signature files: "Signaturdateien aktualisieren"
  Update: "Aktualisieren"
  Upload new file: "Neue Datei hochladen"
  Use system default timezone: "System Standard-Zeitzone verwenden."
  Username: "Benutzername"
  Verified search engine and social media requests: "Verifizierte Suchmaschinen und Social Media Anfragen"
- Verify all: "Verifizieren alle"
+ Verify all: "Verifizieren alles"
  Verify: "Verifizieren"
  Whitelisted requests: "Anfragen die als auf der Whitelist markiert sind"
  Your version: "Ihre Version"
@@ -866,6 +866,7 @@ purpose:
  Graphs or presentation file: "Diagramme oder Präsentationsdatei"
  Plain-text file: "Reine Textdatei (z.B., Markup, Quellcode, Skripte)"
  Quarantined file: "Datei in Quarantäne"
+ Shortcut file: "Verknüpfungsdatei"
  Spreadsheet file or tabular data: "Tabellenkalkulationsdatei oder tabellarische Daten"
  Torrent file: "Torrent-Datei"
 response:
@@ -1102,6 +1103,7 @@ warning:
  IP tests are disabled: "Warnung: IP-Tests sind deaktiviert! Signaturdateien können nicht verwendet werden, bis dies behoben ist."
  JavaScript required: "Warnung: Einige Front-End-Funktionalität erfordern JavaScript. Um sicherzustellen dass sich das gesamte Front-End wie erwartet verhält, wird die Aktivierung von JavaScript empfohlen."
  Likely to be overwritten: "Warnung: Die aktuell bearbeitete Datei gehört zur Komponente „%s“. Alle an dieser Datei vorgenommenen Änderungen werden sehr wahrscheinlich überschrieben, wenn diese Komponente nächste aktualisiert wird."
+ Likely to become corrupted: "Warnung: In der aktuell bearbeiteten Datei wurden Nicht-UTF8-Bytes erkannt. Wenn die Datei mit dieser speziellen Funktionalität bearbeitet wird kann es zu einer Beschädigung kommen."
  Modules are disabled: "Warnung: Module sind deaktiviert! Module können nicht verwendet werden, bis dies behoben ist."
  No modules are active: "Warnung: Es sind keine Module aktiv! Module können über die Konfigurationsseite oder die Aktualisierungsseite aktiviert werden."
  No signature files are active: "Warnung: Es sind keine Signaturdateien aktiv! Signaturdateien können über die Konfigurationsseite oder die Aktualisierungsseite aktiviert werden."

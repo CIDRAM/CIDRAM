@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2025.09.17).
+ * This file: General methods used by the front-end (last modified: 2025.09.21).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -164,7 +164,7 @@ trait FrontEndMethods
                 continue;
             }
             $Arr[$Key]['Component'] = $Component ?: $this->L10N->getString('field.Unknown');
-            if (!$NoEdit && preg_match('/^(?:[BD]AT|SVG|TEX)$/', $Ext)) {
+            if (!$NoEdit && preg_match('/^(?:[BD]AT|SVG|TEX|URL)$/', $Ext)) {
                 $Arr[$Key]['CanEdit'] = true;
             }
             if ($Base === $this->Vault && $Ext === 'ICO') {
@@ -369,6 +369,16 @@ trait FrontEndMethods
                     $Arr[$Key]['Icon'] = 'icon=documentation';
                 }
                 $Arr[$Key]['Component'] = $Component . $this->L10N->getString('purpose.Plain-text file');
+            } elseif (preg_match('/^(?:DESKTOP|DIRECTORY|LI?NK|PLIST|SHORTCUT|URL|WEBLOC)$/', $Ext)) {
+                if (!$LockIcon) {
+                    $Arr[$Key]['Icon'] = 'icon=link';
+                }
+                $Arr[$Key]['Component'] = $Component . $this->L10N->getString('purpose.Shortcut file');
+            } elseif (preg_match('/^(?:CACHE|FOO|OLD|TE?MP)(-\d+)?$/', $Ext) || substr($Arr[$Key]['Filename'], 0, 2) === '~$') {
+                if (!$LockIcon) {
+                    $Arr[$Key]['Icon'] = 'icon=cache';
+                }
+                $Arr[$Key]['Component'] = $Component . $this->L10N->getString('label.Cache data and temporary files');
             } else {
                 $Arr[$Key]['Component'] = $Component . $this->L10N->getString('field.Unknown');
             }

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2025.09.19).
+# This file: Portuguese language data for the front-end (last modified: 2025.09.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -37,7 +37,9 @@ Abuse category:
  DNS poisoning: "Envenenamento de DNS."
  Email sender spoofing: "Falsificação de remetente de e-mail."
  Email spam: "Spam de e-mail (conteúdo de e-mail de spam, anexos infectados, e-mails de phishing, etc)."
- Exploited host: "Host explorado (o host provavelmente está infectado com malware e sendo usado para outros ataques ou para hospedar conteúdo malicioso)."
+ Exploited host:
+  pt-BR: "Host explorado (o host provavelmente está infectado com malware e sendo usado para outros ataques ou para hospedar conteúdo malicioso)."
+  pt-PT: "Host explorado (o host está provavelmente infectado com malware e a ser utilizado para outros ataques ou para alojar conteúdo malicioso)."
  FTP brute-force attacks: "Ataques de força bruta FTP."
  Fraudulent VoIP: "VoIP fraudulento."
  Fraudulent orders: "Encomendas fraudulentas."
@@ -264,8 +266,8 @@ config:
  general_email_notification_name: "Se você optou por receber notificações do CIDRAM por e-mail, por exemplo, quando regras auxiliares específicas são desencadeadas, você pode especificar o nome do destinatário dessas notificações aqui."
  general_email_notification_when: "Quando enviar notificações após serem geradas."
  general_emailaddr:
-  pt-BR: "Se você desejar, você pode fornecer um endereço de e-mail aqui a ser dado para os usuários quando eles estão bloqueadas, para eles para usar como um ponto de contato para suporte e/ou assistência no caso de eles sendo bloqueado por engano ou em erro. AVISO: Qualquer endereço de e-mail que você fornecer aqui certamente vai ser adquirido por spambots e raspadores/scrapers durante o curso de seu ser usada aqui, e assim, é fortemente recomendado que, se você optar por fornecer um endereço de e-mail aqui, que você garantir que o endereço de e-mail você fornecer aqui é um endereço descartável e/ou um endereço que você não é importante (em outras palavras, você provavelmente não quer usar seu pessoal principal ou negócio principal endereço de e-mail)."
-  pt-PT: "Se você desejar, você pode fornecer um endereço de e-mail aqui a ser dado para os utilizadores quando eles estão bloqueadas, para eles para usar como um ponto de contacto para suporte e/ou assistência no caso de eles sendo bloqueado por engano ou em erro. AVISO: Qualquer endereço de e-mail que você fornecer aqui certamente vai ser adquirido por spambots e raspadores/scrapers durante o curso de seu ser usada aqui, e assim, é fortemente recomendado que, se você optar por fornecer um endereço de e-mail aqui, que você garantir que o endereço de e-mail você fornecer aqui é um endereço descartável e/ou um endereço que você não é importante (em outras palavras, você provavelmente não quer usar seu pessoal principal ou negócio principal endereço de e-mail)."
+  pt-BR: "Se você desejar, você pode fornecer um endereço de e-mail aqui a ser dado para os usuários quando eles estão bloqueadas, para eles para usar como um ponto de contato para suporte e/ou assistência no caso de eles serem bloqueados por engano ou em erro. AVISO: Qualquer endereço de e-mail que você fornecer aqui certamente vai ser adquirido por spambots e raspadores/scrapers durante o curso de seu ser usada aqui, e assim, é fortemente recomendado que, se você optar por fornecer um endereço de e-mail aqui, que você garantir que o endereço de e-mail você fornecer aqui é um endereço descartável e/ou um endereço que você não é importante (em outras palavras, você provavelmente não quer usar seu pessoal principal ou negócio principal endereço de e-mail)."
+  pt-PT: "Se você desejar, você pode fornecer um endereço de e-mail aqui a ser dado para os utilizadores quando eles estão bloqueadas, para eles para usar como um ponto de contacto para suporte e/ou assistência no caso de eles serem bloqueados por engano ou em erro. AVISO: Qualquer endereço de e-mail que você fornecer aqui certamente vai ser adquirido por spambots e raspadores/scrapers durante o curso de seu ser usada aqui, e assim, é fortemente recomendado que, se você optar por fornecer um endereço de e-mail aqui, que você garantir que o endereço de e-mail você fornecer aqui é um endereço descartável e/ou um endereço que você não é importante (em outras palavras, você provavelmente não quer usar seu pessoal principal ou negócio principal endereço de e-mail)."
  general_emailaddr_display_style:
   pt-BR: "Como você prefere que o endereço de e-mail seja apresentado aos usuários?"
   pt-PT: "Como você prefere que o endereço de e-mail seja apresentado aos utilizadores?"
@@ -592,7 +594,7 @@ hints_shorthand:
  Prioridade.: "Uma opção selecionada sempre tem prioridade sobre uma opção não selecionada. Por exemplo, se várias palavras curtas estiverem em jogo, mas apenas uma delas estiver definida como bloqueada, a solicitação ainda será bloqueada."
  Pontos finais humanos e serviços em nuvem.:
   pt-BR: "O serviço em nuvem pode se referir a provedores de hospedagem na web, farms de servidores, data centers, ou uma série de coisas diferentes. Ponto final humano refere-se ao meio pelo qual um humano acessa a internet, como por meio de um provedor de serviços de internet. Uma rede geralmente fornece apenas um ou outro, mas às vezes pode fornecer ambos. Visamos nunca identificar pontos finais humanos potenciais como serviços em nuvem. Portanto, um serviço de nuvem pode ser identificado como outra coisa se seu alcance for compartilhado por pontos finais humanos conhecidos. Vice versa, visamos sempre identificar serviços em nuvem, cujos alcances não são compartilhados por nenhum ponto final humano conhecido, como serviços em nuvem. Portanto, uma solicitação identificada explicitamente como um serviço de nuvem provavelmente não compartilha seu alcances com nenhum pontos finais humanos conhecidos. Da mesma forma, uma solicitação identificada explicitamente por ataques ou risco de spam provavelmente os compartilha. No entanto, a internet está sempre em fluxo, os propósitos das redes mudam ao longo do tempo, e os alcances estão sempre sendo comprados ou vendidos, portanto, permaneça ciente e vigilante em relação a falsos positivos."
-  pt-PT: "O serviço na nuvem pode referir-se a provedores de alojamento web, server farms, data centers, ou uma série de coisas diferentes. Ponto final humano refere-se ao meio pelo qual um humano acede à internet, como por meio de um provedor de serviços de internet. Uma rede geralmente fornece apenas um ou outro, mas às vezes pode fornecer ambos. Visamos nunca identificar pontos finais humanos potenciais como serviços em nuvem. Portanto, um serviço de nuvem pode ser identificado como outra coisa se o seu alcance for compartilhado por pontos finais humanos conhecidos. Vice versa, visamos sempre identificar serviços em nuvem, cujos alcances não são compartilhados por nenhum ponto final humano conhecido, como serviços em nuvem. Portanto, uma solicitação identificada explicitamente como um serviço de nuvem provavelmente não compartilha o seu alcances com nenhum pontos finais humanos conhecidos. Da mesma forma, uma solicitação identificada explicitamente por ataques ou risco de spam provavelmente os compartilha. No entanto, a internet está sempre em fluxo, os propósitos das redes mudam ao longo do tempo, e os alcances estão sempre sendo comprados ou vendidos, portanto, permaneça ciente e vigilante em relação a falsos positivos."
+  pt-PT: "O serviço na nuvem pode referir-se a provedores de alojamento web, server farms, data centers, ou uma série de coisas diferentes. Ponto final humano refere-se ao meio pelo qual um humano acede à internet, como por meio de um provedor de serviços de internet. Uma rede geralmente fornece apenas um ou outro, mas às vezes pode fornecer ambos. Visamos nunca identificar pontos finais humanos potenciais como serviços em nuvem. Portanto, um serviço de nuvem pode ser identificado como outra coisa se o seu alcance for compartilhado por pontos finais humanos conhecidos. Vice versa, visamos sempre identificar serviços em nuvem, cujos alcances não são compartilhados por nenhum ponto final humano conhecido, como serviços em nuvem. Portanto, uma solicitação identificada explicitamente como um serviço de nuvem provavelmente não compartilha o seu alcances com nenhum pontos finais humanos conhecidos. Da mesma forma, uma solicitação identificada explicitamente por ataques ou risco de spam provavelmente os compartilha. No entanto, a internet está sempre em fluxo, os propósitos das redes mudam ao longo do tempo, e os alcances estão sempre a ser comprados ou vendidos, portanto, permaneça ciente e vigilante em relação a falsos positivos."
 hints_time_format: |
  <strong><em>Espaço reservado – Explicação – Exemplo baseado em 2024-04-30T18:27:49+08:00.</em></strong><br />
  <code class="s">{yyyy}</code> – O ano – Por exemplo, 2024.<br />
@@ -1112,6 +1114,7 @@ purpose:
  Graphs or presentation file: "Gráficos ou arquivo de apresentação"
  Plain-text file: "Arquivo de texto simples (por exemplo, marcação, código-fonte, scripts)"
  Quarantined file: "Arquivo em quarentena"
+ Shortcut file: "Arquivo de atalho"
  Spreadsheet file or tabular data: {"pt-BR": "Arquivo de planilha ou dados tabulares", "pt-PT": "Arquivo de folha de cálculo ou dados tabulares"}
  Torrent file: "Arquivo torrent"
 response:
@@ -1386,6 +1389,9 @@ warning:
  Likely to be overwritten:
   pt-BR: "Atenção: O arquivo que você está editando no momento pertence ao componente "%s". Quaisquer alterações feitas neste arquivo provavelmente serão sobrescritas na próxima vez que o componente for atualizado."
   pt-PT: "Atenção: O arquivo que você está a editar no momento pertence ao componente "%s". Quaisquer alterações feitas neste arquivo provavelmente serão sobrescritas na próxima vez que o componente for atualizado."
+ Likely to become corrupted:
+  pt-BR: "Atenção: Bytes não UTF8 foram detectados no arquivo que está sendo editado. O arquivo será provavelmente corrompido se editado usando esta funcionalidade específica."
+  pt-PT: "Atenção: Bytes não UTF8 foram detectados no arquivo que está a ser editado. O arquivo será provavelmente corrompido se editado utilizando esta funcionalidade específica."
  Modules are disabled: "Atenção: Os módulos estão desabilitados! Os módulos não podem ser utilizados até que isso seja resolvido."
  No modules are active:
   pt-BR: "Atenção: Nenhum módulo está ativo! Os módulos podem ser ativados usando as páginas de configuração ou atualizações."

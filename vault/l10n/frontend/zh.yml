@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese language data for the front-end (last modified: 2025.09.19).
+# This file: Chinese language data for the front-end (last modified: 2025.09.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -440,7 +440,7 @@ field:
   Size: "大小"
   Total size: {"zh-Hans": "总大小：", "zh-Hant": "總大小："}
   bytes:
-   - {"zh-Hans": "字节", "zh-Hant": "字節"}
+   - {"zh-Hans": "字节", "zh-Hant": "位元組"}
 hint:
  This value can be found in the dashboard for your CAPTCHA service: {"zh-Hans": "可以在您的验证码服务的仪表板中找到该值。", "zh-Hant": "可以在您的驗證碼服務的儀表板中找到該值。"}
 hints_asnlookup: {"zh-Hans": "** 需要ASN查找功能（例如，通过IP-API或BGPView模块）。", "zh-Hant": "** 需要ASN查找功能（例如，通過IP-API或BGPView模組）。"}
@@ -1055,6 +1055,7 @@ purpose:
  Graphs or presentation file: {"zh-Hans": "图表或演示文稿文件", "zh-Hant": "圖表或簡報檔案"}
  Plain-text file: {"zh-Hans": "纯文本文件（例如，标记、源代码、脚本）", "zh-Hant": "純文字檔案（例如，標記、原始碼、腳本）"}
  Quarantined file: {"zh-Hans": "隔离文件", "zh-Hant": "隔離檔案"}
+ Shortcut file: {"zh-Hans": "快捷方式文件", "zh-Hant": "捷徑檔案"}
  Spreadsheet file or tabular data: {"zh-Hans": "电子表格文件或表格数据", "zh-Hant": "電子表格檔案或表格數據"}
  Torrent file: {"zh-Hans": "Torrent文件", "zh-Hant": "Torrent檔案"}
 response:
@@ -1265,21 +1266,54 @@ tip:
  Subtractor: {"zh-Hans": "减法仪可用于从另一个范围中减去IP/CIDR/网络掩码范围。", "zh-Hant": "減法儀可用於從另一個範圍中減去IP/CIDR/網絡掩碼範圍。"}
  Updates: {"zh-Hans": "更新页面允许您安装，卸载，和更新CIDRAM的各种组件（核心包、签名、L10N文件、等等）。", "zh-Hant": "更新頁面允許您安裝，卸載，和更新CIDRAM的各種組件（核心包、簽名、L10N文件、等等）。"}
 warning:
- API_Rate_Limited: {"zh-Hans": "警告：对%s API的访问目前似乎受到速率限制。", "zh-Hant": "警告：對%s API的訪問目前似乎受到速率限制。"}
- Cookies: {"zh-Hans": "注意：CIDRAM使用cookie来验证登录。​通过登录，您同意您的浏览器创建和存储cookie。", "zh-Hant": "注意：CIDRAM使用cookie來驗證登錄。​通過登錄，您同意您的瀏覽器創建和存儲cookie。"}
+ API_Rate_Limited:
+  zh-Hans: "警告：对%s API的访问目前似乎受到速率限制。"
+  zh-Hant: "警告：對%s API的訪問目前似乎受到速率限制。"
+ Cookies:
+  zh-Hans: "注意：CIDRAM使用cookie来验证登录。​通过登录，您同意您的浏览器创建和存储cookie。"
+  zh-Hant: "注意：CIDRAM使用cookie來驗證登錄。​通過登錄，您同意您的瀏覽器創建和存儲cookie。"
  Editing PHP files:
   zh-Hans: "警告：一些虚拟主机在检测到请求中的PHP标记时会自动禁止IP地址（例如，当试图通过浏览器修改PHP文件时）。 CIDRAM无法知道您的虚拟主机是否这样做。 为了避免出现问题，建议尽可能不要以这种方式编辑PHP文件。"
   zh-Hant: "警告：一些虛擬主機在檢測到請求中的PHP標記時會自動禁止IP位址（例如，當試圖通過瀏覽器修改PHP文件時）。 CIDRAM無法知道您的虛擬主機是否這樣做。 為了避免出現問題，建議盡可能不要以這種方式編輯PHP文件。"
- IP tests are disabled: {"zh-Hans": "警告：IP测试被禁用！在解决此问题之前，无法使用签名文件。", "zh-Hant": "警告：IP測試被禁用！在解決此問題之前，無法使用簽名檔案。"}
- JavaScript required: {"zh-Hans": "警告：一些前端功能需要JavaScript。为确保整个前端按预期运行，建议启用JavaScript。", "zh-Hant": "警告：一些前端功能需要JavaScript。為確保整個前端按預期運行，建議啟用JavaScript。"}
- Likely to be overwritten: {"zh-Hans": "警告：您当前正在编辑的文件属于组件“%s”。对该文件所做的任何更改很可能会在下次更新该组件时被覆盖。", "zh-Hant": "警告：您當前正在編輯的文件屬於組件『%s』。對該文件所做的任何更改很可能會在下次更新該組件時被覆蓋。"}
- Modules are disabled: {"zh-Hans": "警告：模块被禁用！在解决此问题之前，无法使用模块。", "zh-Hant": "警告：模組被禁用！在解決此問題之前，無法使用模組。"}
- No modules are active: {"zh-Hans": "警告：没有模块处于活动状态！可以使用配置或更新页面启用模块。", "zh-Hant": "警告：沒有模組處於活動狀態！可以使用配置或更新頁面啟用模組。"}
- No signature files are active: {"zh-Hans": "警告：没有签名文件处于活动状态！可以使用配置或更新页面启用签名文件。", "zh-Hant": "警告：沒有簽名檔案處於活動狀態！可以使用配置或更新頁面啟用簽名檔案。"}
- Operating in dry run mode: {"zh-Hans": "警告：在空运行模式下运行！在空运行模式下，请求仍会像往常一样被检查并记录为阻止事件，但没有任何内容被阻塞。", "zh-Hant": "警告：在空運行模式下運行！在空運行模式下，請求仍會像往常一樣被檢查並記錄為阻止事件，但沒有任何內容被阻塞。"}
- Operating in maintenance mode: {"zh-Hans": "警告：在维护模式下运行！在维护模式下，不会检查、记录、或阻止任何内容。", "zh-Hant": "警告：在維護模式下運行！在維護模式下，不會檢查、記錄、或阻止任何內容。"}
- Page termination is disabled: {"zh-Hans": "警告：页面终止被禁用！在解决此问题之前，无法正确阻止请求。", "zh-Hant": "警告：頁面終止被禁用！在解決此問題之前，無法正確阻止請求。"}
- Proceeding will log out all users: {"zh-Hans": "警告：如果继续，所有用户都将被登出。", "zh-Hant": "警告：如果繼續，所有用戶都將被登出。"}
- The auxiliary rules execution stage is currently disabled: {"zh-Hans": "警告：辅助规则执行阶段目前已被禁用。", "zh-Hant": "警告：輔助規則執行階段目前已被禁用。"}
- This account is not using a valid password: {"zh-Hans": "警告：此帐户不​使用有效的密码！", "zh-Hant": "警告：此帳戶不​使用有效的密碼！"}
- Using the default password: {"zh-Hans": "警告：它使用标准密码！", "zh-Hant": "警告：它使用標準密碼！"}
+ IP tests are disabled:
+  zh-Hans: "警告：IP测试被禁用！在解决此问题之前，无法使用签名文件。"
+  zh-Hant: "警告：IP測試被禁用！在解決此問題之前，無法使用簽名檔案。"
+ JavaScript required:
+  zh-Hans: "警告：一些前端功能需要JavaScript。 为确保整个前端按预期运行，建议启用JavaScript。"
+  zh-Hant: "警告：一些前端功能需要JavaScript。 為確保整個前端按預期運行，建議啟用JavaScript。"
+ Likely to be overwritten:
+  zh-Hans: "警告：您当前正在编辑的文件属于组件“%s”。 对该文件所做的任何更改很可能会在下次更新该组件时被覆盖。"
+  zh-Hant: "警告：您當前正在編輯的文件屬於組件『%s』。 對該文件所做的任何更改很可能會在下次更新該組件時被覆蓋。"
+ Likely to become corrupted:
+  zh-Hans: "警告：在当前正在编辑的文件中检测到非UTF8字节。 如果使用此特定工具进行编辑，文件可能会损坏。"
+  zh-Hans: "警告：在目前正在編輯的檔案中偵測到非UTF8位元組。 如果使用此特定工具進行編輯，檔案可能會損壞。"
+ Modules are disabled:
+  zh-Hans: "警告：模块被禁用！在解决此问题之前，无法使用模块。"
+  zh-Hant: "警告：模組被禁用！在解決此問題之前，無法使用模組。"
+ No modules are active:
+  zh-Hans: "警告：没有模块处于活动状态！可以使用配置或更新页面启用模块。"
+  zh-Hant: "警告：沒有模組處於活動狀態！可以使用配置或更新頁面啟用模組。"
+ No signature files are active:
+  zh-Hans: "警告：没有签名文件处于活动状态！可以使用配置或更新页面启用签名文件。"
+  zh-Hant: "警告：沒有簽名檔案處於活動狀態！可以使用配置或更新頁面啟用簽名檔案。"
+ Operating in dry run mode:
+  zh-Hans: "警告：在空运行模式下运行！在空运行模式下，请求仍会像往常一样被检查并记录为阻止事件，但没有任何内容被阻塞。"
+  zh-Hant: "警告：在空運行模式下運行！在空運行模式下，請求仍會像往常一樣被檢查並記錄為阻止事件，但沒有任何內容被阻塞。"
+ Operating in maintenance mode:
+  zh-Hans: "警告：在维护模式下运行！在维护模式下，不会检查、记录、或阻止任何内容。"
+  zh-Hant: "警告：在維護模式下運行！在維護模式下，不會檢查、記錄、或阻止任何內容。"
+ Page termination is disabled:
+  zh-Hans: "警告：页面终止被禁用！在解决此问题之前，无法正确阻止请求。"
+  zh-Hant: "警告：頁面終止被禁用！在解決此問題之前，無法正確阻止請求。"
+ Proceeding will log out all users:
+  zh-Hans: "警告：如果继续，所有用户都将被登出。"
+  zh-Hant: "警告：如果繼續，所有用戶都將被登出。"
+ The auxiliary rules execution stage is currently disabled:
+  zh-Hans: "警告：辅助规则执行阶段目前已被禁用。"
+  zh-Hant: "警告：輔助規則執行階段目前已被禁用。"
+ This account is not using a valid password:
+  zh-Hans: "警告：此帐户不​使用有效的密码！"
+  zh-Hant: "警告：此帳戶不​使用有效的密碼！"
+ Using the default password:
+  zh-Hans: "警告：它使用标准密码！"
+  zh-Hant: "警告：它使用標準密碼！"

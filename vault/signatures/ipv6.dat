@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6.dat
 
-# Version: 2025.259.0
-# Last modified: 2025.09.17
+# Version: 2025.264.0
+# Last modified: 2025.09.22
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -1682,8 +1682,8 @@ Tag: UOL DIVEO S.A
 
 # ASN 46562 ("Performive LLC").
 # Data center, server and cloud management platform, server farm.
-# Stop Forum Spam (SFS) listings: 20,168.
-# Updated: 2024.09.05
+# Stop Forum Spam (SFS) listings: 11,168.
+# Updated: 2024.09.05 / Checked: 2025.09.22
 
 2407:c40:1::/48 Deny Cloud
 2407:c40:2::/48 Deny Cloud
@@ -8057,11 +8057,11 @@ Tag: CDN77
 
 # ASNs 131386, 131423 ("Long Van System Solution JSC", "Branch of Long Van
 # System Solution JSC - Hanoi").
-# Brute-force attacks and spam detected from here.
-# Stop Forum Spam (SFS) listings: 295 (AS131386), 6 (AS131423).
-# Updated: 2025.08.04 / Checked: 2025.08.10
+# Brute-force, WordPress/XMLRPC attacks, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 292 (AS131386), 9 (AS131423).
+# Updated: 2025.09.20
 
-2403:bf40::/47 Deny Cloud
+2403:bf40::/48 Deny Cloud
 2403:bf40:2::/48 Deny Cloud
 Origin: VN
 Profile: Infrastructure/Transit
@@ -8071,8 +8071,8 @@ Tag: Long Van
 # ASN 12816 ("Leibniz-Rechenzentrum").
 # Brute-force, SSH, and CCTV attacks, port scans, hacking, probing for
 # vulnerabilities, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 4.
-# Updated: 2020.03.13 / Checked: 2024.08.28
+# Stop Forum Spam (SFS) listings: 5.
+# Updated: 2020.03.13 / Checked: 2025.09.20
 
 2001:4ca0::/29 Deny Cloud
 Origin: DE
@@ -9321,8 +9321,8 @@ Tag: Tele Asia Limited
 
 # ASN 42331 ("PE Freehost").
 # Webhosting provider caught hacking and performing webapp attacks.
-# Stop Forum Spam (SFS) listings: 31.
-# Updated: 2022.09.14 / Checked: 2024.08.31
+# Stop Forum Spam (SFS) listings: 30.
+# Updated: 2022.09.14 / Checked: 2025.09.22
 
 2a01:8140::/32 Deny Cloud
 2a07:8e00::/29 Deny Cloud
@@ -9343,18 +9343,6 @@ Tag: PE Freehost
 Origin: TR
 Profile: Frequent changes;Webhosting
 Tag: Taner Temel
-
-
-# ASN 263740 ("Corporacion Laceibanetsociety").
-# Fraudulent Honduran ISP operating as a webhoster.
-# Refer scamalytics.com/ip/isp/corporacion-laceibanetsociety
-# Stop Forum Spam (SFS) listings: 760.
-# Updated: 2022.09.21 / Checked: 2024.08.31
-
-2803:6c00::/32 Deny Cloud
-Origin: HN
-Profile: Dedicated;Webhosting
-Tag: Corporacion Laceibanetsociety
 
 
 # ASN 197922 ("Techcrea Solutions SAS").
@@ -9601,9 +9589,9 @@ Tag: Scalaxy/Bursabil
 
 
 # ASN 38955 ("World4You Internet Services").
-# Updated: 2021.11.21 / Checked: 2024.08.31
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2025.09.22
 
-2a00:1a68::/32 Deny Cloud
 2a0a:7c00::/29 Deny Cloud
 Origin: AT
 Profile: Dedicated;Webhosting
@@ -9651,10 +9639,11 @@ Tag: EstNOC OY
 # ASN 207992 ("FEELB SARL").
 # Mobile app, infrastructure, I.T. firm. Brute-force and SSH attacks detected
 # from here.
-# Stop Forum Spam (SFS) listings: 2.
-# Updated: 2021.03.31 / Checked: 2024.09.01
+# Stop Forum Spam (SFS) listings: 30.
+# Updated: 2025.09.20
 
 2a04:ecc0::/29 Deny Cloud
+2a07:7f00::/29 Deny Cloud
 Origin: FR
 Profile: Commercial;Infrastructure/Transit;Tor endpoints here
 Tag: FEELB SARL
@@ -12109,16 +12098,15 @@ Tag: Binary Racks Limited
 # ASN 142594 ("SpeedyPage Ltd").
 # Brute-force, DDoS, WordPress/XMLRPC, and webapp attacks, port scans, hacking,
 # and spam detected from here.
-# Stop Forum Spam (SFS) listings: 66.
-# Updated: 2024.09.05
+# Stop Forum Spam (SFS) listings: 228.
+# Updated: 2025.09.22
 
 2001:df7:1d80::/47 Deny Cloud
 2a04:ff00:800::/44 Deny Cloud
 2a04:ff00:820::/44 Deny Cloud
-2a04:ff00:840::/44 Deny Cloud
-2a04:ff00:860::/43 Deny Cloud
+2a04:ff00:840::/42 Deny Cloud
+2a04:ff00:880::/43 Deny Cloud
 Origin: GB
-2602:f919:101::/48 Deny Cloud
 2602:fd92:c90::/44 Deny Cloud
 2a06:a000:1d0::/44 Deny Cloud
 2a06:a005:108c::/48 Deny Cloud
@@ -15655,7 +15643,7 @@ Tag: Digital City FZE
 
 # ASN 42369 ("CORESYSTEM SASU").
 # Brute-force attacks and spam detected from here.
-# Updated: 2024.09.03
+# Updated: 2024.09.03 / Checked: 2025.09.20
 
 2a10:8b40::/32 Deny Cloud
 Origin: FR
@@ -17267,6 +17255,21 @@ Origin: RU
 Origin: US
 Profile: Webhosting
 Tag: Newserverlife LLC
+
+
+# ASN 401243 ("Komi LLC").
+# Caught hitting WordPress honeypots.
+# Stop Forum Spam (SFS) listings: 16.
+# Updated: 2025.09.22
+
+2602:2b5::/43 Deny Cloud
+2602:2b5:20::/44 Deny Cloud
+2602:2b5:30::/45 Deny Cloud
+2602:2b5:38::/47 Deny Cloud
+2602:2b5:3a::/48 Deny Cloud
+Origin: US
+Profile: Restricted/Unidentifiable
+Tag: Komi LLC
 
 
 # ---

@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6_isps.dat
 
-# Version: 2025.243.0
-# Last modified: 2025.09.01
+# Version: 2025.264.0
+# Last modified: 2025.09.22
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -398,15 +398,33 @@ Tag: TURKCELL ILETISIM HIZMETLERI
 # Indian domestic ISP. Brute-force, SSH, and webapp attacks, port scans,
 # hacking, and spam detected from here. Listing just the affected
 # ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 3,368.
-# Updated: 2024.09.21
+# Stop Forum Spam (SFS) listings: 2,572.
+# Updated: 2025.09.22
 
 2402:a00:152:95cb::/64 Deny Spam
+2402:a00:162:6c2a::/64 Deny Spam
 2402:a00:162:c41e::/64 Deny Spam
+2402:a00:163:a68::/64 Deny Spam
 2402:a00:172:c238::/64 Deny Spam
-2402:a00:1b1:899::/64 Deny Spam
 2402:a00:1b1:1655::/64 Deny Spam
-2402:a00:405:2058::/64 Deny Spam
+2402:a00:402:4985::/64 Deny Spam
+2402:a00:405:5d2b::/64 Deny Spam
+2402:a00:408:86a2::/64 Deny Spam
 Origin: IN
 Profile: Domestic ISP
 Tag: Gujarat Telelink
+
+
+# ASN 7018 ("AT&T Services, Inc").
+# Major US domestic ISP. DDoS, SQLi, brute-force and WordPress/XMLRPC attacks,
+# credential stuffing, port scans, and spam detected from here.
+# Listed just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 20,190.
+# Updated: 2025.09.18
+
+2600:1700:18f8:530::/64 Deny Attacks
+2600:1702:38c0:edd0::/64 Deny Spam
+2600:1702:5a40:48b0::/64 Deny Spam
+Origin: US
+Profile: Domestic ISP;Tor endpoints here
+Tag: AT&T Services, Inc

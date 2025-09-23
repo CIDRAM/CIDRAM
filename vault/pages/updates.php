@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The updates page (last modified: 2025.05.08).
+ * This file: The updates page (last modified: 2025.09.23).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -196,7 +196,7 @@ foreach ($this->Components['Meta'] as $Key => &$this->Components['ThisComponent'
             $this->Components['ThisComponent']['StatusOptions'] = $this->L10N->getString('response.Outdated');
             if (!empty($this->Components['ThisComponent']['Remote All Constraints Met'])) {
                 $this->Components['Outdated'][] = $Key;
-                if ($this->Components['ThisComponent']['Has Signatures'] === true) {
+                if (isset($this->Components['ThisComponent']['Has Signatures']) && $this->Components['ThisComponent']['Has Signatures'] === true) {
                     $this->Components['OutdatedSignatureFiles'][] = $Key;
                 }
                 $this->Components['ThisComponent']['Options'] .=

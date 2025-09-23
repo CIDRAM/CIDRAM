@@ -67,7 +67,7 @@ CIDRAM Core:
    Checksum: "f873cbf0655ccb42fe96172596b893c177ef0ce02660c291dbfd6a77a6d1a3cd:11947"
 CIDRAM Front-End:
  Name: "CIDRAM Front-End"
- Version: "4.0.0-DEV+252650"
+ Version: "4.0.0-DEV+252651"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "Latest"
@@ -76,7 +76,7 @@ CIDRAM Front-End:
   l10n/frontend/{lang}: ">=2025.264"
  Changelog: "https://github.com/CIDRAM/CIDRAM/blob/v4/Changelog.md"
  When Update Succeeds:
-  - "foreach {CIDRAM.Config Defaults.frontend.theme.choices.keys()} as Key => Value if {Components.Installed Versions.theme/{Value}}>0&&{Components.Available Versions.theme/{Value}}>0&&{Components.Installed Versions.theme/{Value}}<{Components.Available Versions.theme/{Value}}&&{Components.In Use.{Value}}!=0 then updatesHandlerUpdate theme/{Value}"
+  - "foreach {CIDRAM.Config Defaults.frontend.theme.choices.keys()} as Key => Value if {Components.Installed Versions.theme/{Value}}>0&&{Components.Available Versions.theme/{Value}}>0&&{Components.Installed Versions.theme/{Value}}<{Components.Available Versions.theme/{Value}}&&{Components.In Use.{Value}}!=0&&{CIDRAM.FEHasTriggeredThemeUpdate}!=1 then set CIDRAM.FEHasTriggeredThemeUpdate=1;updatesHandlerUpdate theme/{Value}"
  Uninstallable: false
  Files:
   assets/frontend/default/_2fa.html:
@@ -510,7 +510,7 @@ CIDRAM Front-End:
    Checksum: "e3f5fbe0c9e874b9fad08433c3b2d334ed345750c6522d7aec2e67e614f16a9b:19776"
   CIDRAM/CIDRAM/Updater.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/CIDRAM/CIDRAM/Updater.php"
-   Checksum: "d156c896bb31660c1fa4c1c15efcc67f8b9364926a943e7d8e68a957aec9860a:76287"
+   Checksum: "4931eaaaa4ba1a5ce0340d22986b42718e4c83a0b26ffe1efab5ad1775307bd7:76395"
   macros.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/macros.yml"
    Checksum: "787f905d83fdccd75b2d8085087344b228dac6cac4531bf40612454b7f39c150:3751"
@@ -573,10 +573,10 @@ CIDRAM Front-End:
    Checksum: "024ac5f140d7bda8b0eb8177e46eb3020030e095128337c30f527d0e26fd8e68:3303"
   pages/updates.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/pages/updates.php"
-   Checksum: "5d35838d70e05895dab8d836004ebb6092c26a412b181a082a66a2d4c3009039:32200"
+   Checksum: "64b2949f0e6cb8862cfc631a6372b8fac316b518ba1ed8335d6761573a1f0c03:32263"
 Common Classes Package:
  Name: "Common Classes Package"
- Version: "2.14.2-DEV+252440"
+ Version: "2.14.2-DEV+252650"
  Dependencies:
   PHP: "^7.2|^8"
  Release Notes For: ["2.14.1", "2.14.2"]
@@ -622,7 +622,7 @@ Common Classes Package:
    Checksum: "1105e9e94416ff6dab63e07967b7b5c25ad8f83a8d5e831d55b5deddb86f977a:18637"
   Maikuolan/Common/Request.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/Maikuolan/Common/Request.php"
-   Checksum: "dfeed39285d0aa6ef7b7e6381b46c1b5b550ace067d195960d1cb42b9d6a4ba3:9618"
+   Checksum: "15dcd4514eefbf49464bad716fe96bd2bf47d1aa1548a8a4b8c66a4c91c59aa8:9750"
   Maikuolan/Common/YAML.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/Maikuolan/Common/YAML.php"
    Checksum: "325ee95c0a9ce03eb440596dc9f8d0ac14aa477a5dc976a4e63c575d2fc273d8:56888"

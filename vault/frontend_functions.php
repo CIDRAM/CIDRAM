@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2025.08.25).
+ * This file: Front-end functions file (last modified: 2025.09.23).
  */
 
 /**
@@ -1610,13 +1610,14 @@ $CIDRAM['UpdatesHandler'] = function ($Action, $ID = '') use (&$CIDRAM) {
  * Updates handler: Update a component.
  *
  * @param string|array $ID The IDs of the components to update.
+ * @param mixed $NotUsed Detect whether invoked via the executor.
  * @return void
  */
-$CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
+$CIDRAM['UpdatesHandler-Update'] = function ($ID, $NotUsed = null) use (&$CIDRAM) {
     $CIDRAM['Arrayify']($ID);
 
     /** Fetch dependency installation triggers. */
-    if (!empty($_POST['InstallTogether']) && is_array($_POST['InstallTogether'])) {
+    if ($NotUsed === null && !empty($_POST['InstallTogether']) && is_array($_POST['InstallTogether'])) {
         $ID = array_merge($ID, $_POST['InstallTogether']);
     }
 

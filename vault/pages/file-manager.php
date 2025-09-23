@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The file manager page (last modified: 2025.09.21).
+ * This file: The file manager page (last modified: 2025.09.22).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -220,7 +220,7 @@ if (isset($_POST['do'], $_FILES['upload-file']['name']) && $_POST['do'] === 'upl
                 if ($this->FE['state_msg'] !== '') {
                     $this->FE['state_msg'] .= '<br />';
                 }
-                $this->FE['state_msg'] = sprintf( $this->L10N->getString('warning.Likely to be overwritten'), $this->Components['Files'][$FMData['filename']]);
+                $this->FE['state_msg'] = sprintf($this->L10N->getString('warning.Likely to be overwritten'), $this->Components['Files'][$FMData['filename']]);
             }
 
             /** File corruption warning. */

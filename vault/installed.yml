@@ -75,6 +75,8 @@ CIDRAM Front-End:
   l10n/core/{lang}: ">=2025.237"
   l10n/frontend/{lang}: ">=2025.264"
  Changelog: "https://github.com/CIDRAM/CIDRAM/blob/v4/Changelog.md"
+ When Update Succeeds:
+  - "foreach {CIDRAM.Config Defaults.frontend.theme.choices.keys()} as Key => Value if {Components.Installed Versions.theme/{Value}}>0&&{Components.Available Versions.theme/{Value}}>0&&{Components.Installed Versions.theme/{Value}}<{Components.Available Versions.theme/{Value}}&&{Components.In Use.{Value}}!=0 then updatesHandlerUpdate theme/{Value}"
  Uninstallable: false
  Files:
   assets/frontend/default/_2fa.html:

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese language data for the front-end (last modified: 2025.09.21).
+# This file: Chinese language data for the front-end (last modified: 2025.09.23).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -349,7 +349,7 @@ config:
  template_data: {"zh-Hans": "模板和主题的配置。", "zh-Hant": "模板和主題的配置。"}
  template_data_block_event_title: {"zh-Hans": "为阻止事件显示的页面标题。", "zh-Hant": "為阻止事件顯示的頁面標題。"}
  template_data_captcha_title: {"zh-Hans": "为验证码请求显示的页面标题。", "zh-Hant": "為驗證碼請求顯示的頁面標題。"}
- template_data_css_url: {"zh-Hans": "自定义主题的CSS文件URL。", "zh-Hant": "自定義主題的CSS文件URL。"}
+ template_data_css_url: {"zh-Hans": "自定义主题的CSS文件URL。", "zh-Hant": "自定義主題的CSS檔案URL。"}
  template_data_custom_footer: {"zh-Hans": "在所有“拒绝访问”页面的末尾作为HTML插入。​如果您想在所有此类页面中包含法律声明、联系链接、业务信息、或类似，这可能会很有用。", "zh-Hant": "在所有『拒絕訪問』頁面的末尾作為HTML插入。​如果您想在所有此類頁面中包含法律聲明、聯繫鏈接、業務信息、或類似，這可能會很有用。"}
  template_data_custom_header: {"zh-Hans": "在所有“拒绝访问”页面的开头作为HTML插入。​如果您想在所有此类页面中包含网站徽标、个性化标题、脚本、或类似，这可能会很有用。", "zh-Hant": "在所有『拒絕訪問』頁面的開頭作為HTML插入。​如果您想在所有此類頁面中包含網站徽標、個性化標題、腳本、或類似，這可能會很有用。"}
  template_data_magnification: *MagnifDesc
@@ -471,22 +471,22 @@ hints_has_bypass:
 hints_http_response_header_code:
  1.:
   zh-Hans: "当“静默模式”生效时，将使用<code class="s">general➡silent_mode_response_header_code</code>定义的HTTP状态消息（这是最高优先级）。"
-  zh-Hant: "當「靜默模式」生效時，將使用<code class="s">general➡silent_mode_response_header_code</code>定義的HTTP狀態訊息（這是最高優先級）。"
+  zh-Hant: "當『靜默模式』生效時，將使用<code class="s">general➡silent_mode_response_header_code</code>定義的HTTP狀態訊息（這是最高優先級）。"
  2.:
   zh-Hans: "当请求实体因超出违规限制而被禁止时，将使用“禁止”的HTTP状态消息。"
-  zh-Hant: "當請求實體因超出違規限製而被禁止時，將使用「禁止」的HTTP狀態訊息。"
+  zh-Hant: "當請求實體因超出違規限製而被禁止時，將使用『禁止』的HTTP狀態訊息。"
  3.:
   zh-Hans: "当由于速率限制而阻止时，将使用429，或者当由于资源冲突而阻止时，将使用<code class="s">signatures➡conflict_response</code>定义的HTTP状态消息（在此上下文中，速率限制和资源冲突具有同等优先级）。"
   zh-Hant: "當由於速率限制而阻止時，將使用429，或當由於資源衝突而阻止時，將使用<code class="s">signatures➡conflict_response</code>定義的HTTP狀態訊息（在此上下文中，速率限制和資源衝突具有同等優先權）。"
  4.:
   zh-Hans: "当由于设置了“HTTP状态码覆盖”的辅助规则而被阻止时，将使用该HTTP状态码覆盖。"
-  zh-Hant: "當由於設定了「HTTP狀態碼覆蓋」的輔助規則而被阻止時，將使用該HTTP狀態碼覆蓋。"
+  zh-Hant: "當由於設定了『HTTP狀態碼覆蓋』的輔助規則而被阻止時，將使用該HTTP狀態碼覆蓋。"
  5.:
   zh-Hans: "当由于法律原因而被阻止时（即由于使用“法律”速记词的自定义签名而被阻止时），将使用“法律”的HTTP状态消息。"
-  zh-Hant: "當由於法律原因而被阻止時（即由於使用「法律」速記詞的自訂簽名而被阻止時），將使用「法律」的HTTP狀態訊息。"
+  zh-Hant: "當由於法律原因而被阻止時（即由於使用『法律』速記詞的自訂簽名而被阻止時），將使用『法律』的HTTP狀態訊息。"
  6.:
   zh-Hans: "对于所有其他被阻止的请求，将使用“标准”的HTTP状态消息（这是最低优先级）。"
-  zh-Hant: "對於所有其他被阻止的請求，將使用「標準」的HTTP狀態訊息（這是最低優先級）。"
+  zh-Hant: "對於所有其他被阻止的請求，將使用『標準』的HTTP狀態訊息（這是最低優先級）。"
 hints_inspection: {"zh-Hans": "* 仅用于调试辅助规则。​不向被阻止的用户显示。", "zh-Hant": "* 僅用於調試輔助規則。​不向被阻止的用戶顯示。"}
 hints_ipv6_on_32bit: {"zh-Hans": "注意：IPv6查找在某些32位系统上可能无法正常工作。", "zh-Hant": "注意：IPv6查找在某些32位系統上可能無法正常工作。"}
 hints_logging_datetime:
@@ -778,7 +778,7 @@ label:
   zh-Hant: "所有請求。\n更嚴格和徹底，但也可能更快地達到配額，可能導致被鎖定在服務之外。​此外，儘管結果被緩存，但在某些情況下仍可能對網站性能產生負面影響。​在某些情況下可能是必要的，但通常不推薦。"
  Expected: {"zh-Hans": "预期", "zh-Hant": "預期"}
  Expires: {"zh-Hans": "过期：", "zh-Hant": "過期："}
- Export: {"zh-Hans": "导出", "zh-Hant": "導出"}
+ Export: {"zh-Hans": "导出", "zh-Hant": "匯出"}
  Extension: {"zh-Hans": "扩展", "zh-Hant": "擴展"}
  External: "外部"
  False positive risk: {"zh-Hans": "假阳性风险：", "zh-Hant": "假陽性風險："}
@@ -788,7 +788,7 @@ label:
  Harvester: {"zh-Hans": "收割机", "zh-Hant": "收割機"}
  Hide: {"zh-Hans": "隐藏", "zh-Hant": "隱藏"}
  Ignore this: {"zh-Hans": "忽略这个", "zh-Hant": "忽略這個"}
- Import: {"zh-Hans": "导入", "zh-Hant": "導入"}
+ Import: {"zh-Hans": "导入", "zh-Hant": "匯入"}
  Installed Available: {"zh-Hans": "已安装/可用", "zh-Hant": "已安裝/可用"}
  Integrity check: {"zh-Hans": "完整性检查：", "zh-Hant": "完整性檢查："}
  Intersect: "相交"
@@ -1069,7 +1069,7 @@ response:
  Auxiliary rules successfully updated: {"zh-Hans": "辅助规则已成功更新。", "zh-Hant": "輔助規則已成功更新。"}
  Can_t fetch metadata: {"zh-Hans": "无法获取元数据", "zh-Hant": "無法取得元數據"}
  Can_t fetch the file: {"zh-Hans": "无法获取文件", "zh-Hant": "無法取得文件"}
- Can_t import from v%s data: {"zh-Hans": "无法从v%s数据导入！", "zh-Hant": "無法從v%s數據導入！"}
+ Can_t import from v%s data: {"zh-Hans": "无法从v%s数据导入！", "zh-Hant": "無法從v%s數據匯入！"}
  Checksum error: {"zh-Hans": "校验和错误！", "zh-Hant": "校驗和錯誤！"}
  Component not installed: {"zh-Hans": "组件不安装！", "zh-Hant": "組件不安裝！"}
  Component successfully installed: {"zh-Hans": "组件成功安装。", "zh-Hant": "組件成功安裝。"}
@@ -1086,7 +1086,7 @@ response:
  Failed to delete any reports for %s: {"zh-Hans": "无法删除%s的任何报告！", "zh-Hant": "無法刪除%s的任何報告！"}
  Failed to delete: {"zh-Hans": "无法删除！", "zh-Hant": "無法刪除！"}
  Failed to execute: {"zh-Hans": "无法执行！", "zh-Hant": "無法執行！"}
- Failed to import: {"zh-Hans": "导入失败！", "zh-Hant": "導入失敗！"}
+ Failed to import: {"zh-Hans": "导入失败！", "zh-Hant": "匯入失敗！"}
  Failed to install: {"zh-Hans": "无法安装！", "zh-Hant": "無法安裝！"}
  Failed to rename: {"zh-Hans": "无法改名！", "zh-Hant": "無法改名！"}
  Failed to report the IP address, %s: {"zh-Hans": "无法报告IP地址，%s！", "zh-Hant": "無法報告IP位址，%s！"}
@@ -1224,7 +1224,7 @@ tip:
  Auxiliary Rules Priority: {"zh-Hans": "优先（最高➡(相同🔄当量)➡最低）：", "zh-Hant": "優先（最高➡(相同🔄當量)➡最低）："}
  Auxiliary Rules Webhooks: {"zh-Hans": "当触发规则时，CIDRAM将尝试该事件通知所有连接的webhooks。", "zh-Hant": "當觸發規則時，CIDRAM將嘗試該事件通知所有連接的webhooks。"}
  Auxiliary Rules: {"zh-Hans": "您可以使用此页面为CIDRAM创建，删除，和修改辅助规则。", "zh-Hant": "您可以使用此頁面為CIDRAM創建，刪除，和修改輔助規則。"}
- Backup: {"zh-Hans": "该页面可用于导入/导出您的配置、辅助规则、等等。​如果您需要跨不同安装或不同主要版本迁移数据，这会很有用。", "zh-Hant": "該頁面可用於導入/導出您的配置、輔助規則、等等。​如果您需要跨不同安裝或不同主要版本遷移數據，這會很有用。"}
+ Backup: {"zh-Hans": "该页面可用于导入/导出您的配置、辅助规则、等等。​如果您需要跨不同安装或不同主要版本迁移数据，这会很有用。", "zh-Hant": "該頁面可用於匯入/匯出您的配置、輔助規則、等等。​如果您需要跨不同安裝或不同主要版本遷移數據，這會很有用。"}
  Cache Data: {"zh-Hans": "在这里您可以查看缓存的内容。", "zh-Hant": "在這裡您可以查看緩存的內容。"}
  Calculator: {"zh-Hans": "计算器允许您计算IP地址的CIDR和网络掩码。", "zh-Hant": "計算器允許您計算IP位址的CIDR和網絡掩碼。"}
  Click the component name for more details: {"zh-Hans": "单击组件名称以获取更多详细信息。", "zh-Hant": "單擊組件名稱以獲取更多詳細信息。"}

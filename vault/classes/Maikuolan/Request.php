@@ -1,6 +1,6 @@
 <?php
 /**
- * Request handler (last modified: 2025.07.02).
+ * Request handler (last modified: 2025.09.23).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -235,7 +235,7 @@ class Request extends CommonAbstract
     }
 
     /**
-     * Checks for a value within CSV.
+     * Checks for a value within CSV, or within a normal list if not CSV.
      *
      * @param string $Value The value to look for.
      * @param string $CSV The CSV to look in.
@@ -243,10 +243,10 @@ class Request extends CommonAbstract
      */
     public function inCsv(string $Value, string $CSV): bool
     {
-        if (!$Value || !$CSV) {
+        if ($Value === '' || $CSV === '') {
             return false;
         }
-        $Arr = explode(',', $CSV);
+        $Arr = strpos($CSV, ',') === false && strpos($CSV, "\n") !== false ? explode("\n", $CSV) : explode(',', $CSV);
         if (strpos($CSV, '"') !== false) {
             foreach ($Arr as &$Item) {
                 if (substr($Item, 0, 1) === '"' && substr($Item, -1) === '"') {

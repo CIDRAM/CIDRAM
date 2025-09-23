@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods for updating CIDRAM components (last modified: 2025.08.21).
+ * This file: Methods for updating CIDRAM components (last modified: 2025.09.23).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -631,14 +631,15 @@ trait Updater
      * Updates handler: Update a component.
      *
      * @param string|array $ID The IDs of the components to update.
+     * @param mixed $NotUsed Detect whether invoked via the executor.
      * @return void
      */
-    private function updatesHandlerUpdate($ID): void
+    private function updatesHandlerUpdate($ID, $NotUsed = null): void
     {
         $this->arrayify($ID);
 
         /** Fetch dependency installation triggers. */
-        if (!empty($_POST['InstallTogether']) && is_array($_POST['InstallTogether'])) {
+        if ($NotUsed === null && !empty($_POST['InstallTogether']) && is_array($_POST['InstallTogether'])) {
             $ID = array_merge($ID, $_POST['InstallTogether']);
         }
 

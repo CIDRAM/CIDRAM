@@ -35,11 +35,11 @@ select:focus,textarea:focus,input:focus,select:hover,textarea:hover:not([readonl
 .headbox>.end{flex-basis:20%;border:0;border-{FE_Align}:1px solid rgba(0,0,153,.2)}
 .footbox{letter-spacing:0;white-space:nowrap}
 .footbox>.start,.footbox>.end{flex-basis:50%}
-nav{display:flex;flex-direction:column;gap:2px;justify-content:start;align-items:start;font-size:calc((14px * {magnification}) + .03vw);flex-basis:20%;flex-shrink:2;flex-grow:1;letter-spacing:calc(1px + .03vw)}
+nav{display:flex;flex-direction:column;gap:2px;justify-content:start;align-items:start;font-size:calc((14px * {magnification}) + .03vw);flex-basis:20%;flex-shrink:2;flex-grow:1;letter-spacing:calc(1px + .03vw);min-width:0}
 nav:lang(ja){letter-spacing:-1px}
 nav a:not(.idx a){display:block}
 nav>div:first-child{border-radius:{cnrRadius} 0 0}
-main{flex-basis:80%;flex-shrink:1;flex-grow:2}
+main{flex-basis:80%;flex-shrink:1;flex-grow:2;min-width:0}
 .subNav{display:block;text-align:center;font-size:calc((10px * {magnification}) + .03vw);color:rgba(51,51,0,.6);text-shadow:2px 2px 1px rgba(0,0,0,.2)}
 table{table-layout:fixed}
 table,.spanner,.flexstretch,.logVis{align-self:stretch}

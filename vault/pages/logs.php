@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The logs page (last modified: 2025.09.20).
+ * This file: The logs page (last modified: 2025.09.24).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -424,7 +424,7 @@ $this->FE['TextModeSwitchLink'] = sprintf(
     $this->L10N->getString('label.Entries per page'),
     $this->FE['PerPage'],
     $this->L10N->getString('label.Search for'),
-    $this->FE['SearchQuery'] === '' ? '' : str_replace(['<', '>', "\r", "\n"], ['&lt;', '&gt;', '', ''], $this->FE['SearchQuery']),
+    $this->FE['SearchQuery'] === '' ? '' : str_replace(['<', '>', '"', "\r", "\n"], ['&lt;', '&gt;', '&#34;', '', ''], $this->FE['SearchQuery']),
     $this->L10N->getString('tip.Specify a value, or leave blank to disregard')
 );
 

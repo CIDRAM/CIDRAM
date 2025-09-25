@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The configuration page (last modified: 2025.09.01).
+ * This file: The configuration page (last modified: 2025.09.25).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -65,10 +65,10 @@ foreach ($this->CIDRAM['Config Defaults'] as $CatKey => $CatValue) {
         }
         $ThisDir['DirLangKey'] = 'config_' . $CatKey . '_' . $DirKey;
         $ThisDir['DirLangKeyOther'] = $ThisDir['DirLangKey'] . '_other';
-        $ThisDir['DirName'] = '<span class="normalHeight">' . $this->ltrInRtf($CatKey . '➡' . $DirKey) . ':</span>';
+        $ThisDir['DirName'] = $this->ltrInRtf($CatKey . '➡' . $DirKey) . ':';
         $ThisDir['Friendly'] = $this->L10N->getString('config.' . $CatKey . '_' . $DirKey . '_label') ?: $DirKey;
         $CatData .= sprintf(
-            '<li><a onclick="javascript:toggleconfigNav(\'%1$sRow\',\'%1$sShowLink\')" href="#%2$s">%3$s</a></li>',
+            '<li onclick="javascript:toggleconfigNav(\'%1$sRow\',\'%1$sShowLink\');setTimeout(()=>{location.href=\'#%2$s\'},500)" class="pseudolink">%3$s</li>',
             $CatKey,
             $ThisDir['DirLangKey'],
             $ThisDir['Friendly']

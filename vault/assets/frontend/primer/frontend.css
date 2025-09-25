@@ -37,10 +37,9 @@ input.txtf{width:calc(100% - 4px)}
 textarea{width:calc(100% - 20px)}
 .iCntr>.iCntn>textarea{width:calc(100% - 62px)}
 li>.iCntr>.iCntn>textarea{width:calc(100% - 102px)}
-a:active,a:hover{outline-width:0}
-a:link,a:visited{color:#0366d6;text-decoration:none}
-a:hover{text-decoration:underline;color:#f64}
-a:active,a:focus{color:#cb2431}
+a:link,a:visited,.pseudolink{color:#0366d6;text-decoration:none}
+a:hover,.pseudolink:hover{text-decoration:underline;color:#f64}
+a:active,a:focus,.pseudolink:active,.pseudolink:focus{text-decoration:underline;color:#cb2431}
 .spanner{text-align:{FE_Align_Reverse}}
 .headbox,.footbox.cat,.exp,nav,.s,.txtGn,.txtOe,.txtRd,.spanner,a,.vrte,.vrto{font-weight:700}
 .ci,.co,.center{margin:auto}
@@ -118,7 +117,7 @@ input[type=button]:hover,input[type=submit]:hover,input[type=reset]:hover,button
 .fW{word-break:break-all}
 .exp{color:#ff0;background-color:#f00}
 .pieul{list-style-type:none;margin:0;padding:0}
-li>span.comCat:first-child,input[type=button],input[type=file]::file-selector-button,input[type=checkbox],input[type=checkbox]+label,input[type=radio],input[type=radio]+label,input[type=reset],input[type=submit],span>span[onclick],li>span[onclick],.navicon[onclick],.auxSuggestLink,.fmOptions>code,.gridboxitem>label,.gridboxitem input+strong{cursor:pointer}
+li>span.comCat:first-child,input[type=button],input[type=file]::file-selector-button,input[type=checkbox],input[type=checkbox]+label,input[type=radio],input[type=radio]+label,input[type=reset],input[type=submit],span>span[onclick],li>span[onclick],.navicon[onclick],.gridboxitem>label,.gridboxitem input+strong,.pseudolink,.auxSuggestLink,.fmOptions>code{cursor:pointer}
 .comCat::before,.showlink::before,.shownlink::before,.unshownlink::before{content:"";width:16px;height:16px;background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:caret.svg}{/Base64Encode});background-repeat:no-repeat;background-position:center;position:relative;top:2px;display:inline-block;margin-{FE_Align_Reverse}:6px;line-height:100%;cursor:pointer}
 .caret-down::before{animation:forRotate .3s ease-in 1;animation-fill-mode:both}
 .caret-up::before{animation:revRotate .5s linear 1;animation-fill-mode:both}

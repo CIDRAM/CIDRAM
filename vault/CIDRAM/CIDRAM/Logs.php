@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used by the logs page (last modified: 2025.05.20).
+ * This file: Methods used by the logs page (last modified: 2025.09.24).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -116,7 +116,7 @@ trait Logs
                     }
                     $Alternate = (
                         $TestString !== $ThisPartUnsafe && $this->Demojibakefier->Last
-                    ) ? '<code dir="ltr">🔁' . $this->Demojibakefier->Last . '➡️UTF-8' . $FieldSeparator . '</code>' . str_replace(['<', '>'], ['&lt;', '&gt;'], $TestString) . "<br />\n" : '';
+                    ) ? '<code dir="ltr">🔁' . $this->Demojibakefier->Last . '➡️UTF-8' . $FieldSeparator . '</code>' . str_replace(['<', '>', '"'], ['&lt;', '&gt;', '&#34;'], $TestString) . "<br />\n" : '';
                     if ($ThisPart === '' || $ThisPart === $Current) {
                         if ($ThisPart === '') {
                             $IPSVGs = '';
@@ -397,11 +397,9 @@ trait Logs
         }
 
         /** Step with search query. */
-        if (strlen($SearchQuery)) {
+        if ($SearchQuery !== '') {
             return (
-                ($Needle = $StrFunction($Data, (
-                    $this->CIDRAM['BlockSeparator'] === "\n\n" ? $this->FE['FieldSeparator'] . $SearchQuery . "\n" : $SearchQuery
-                ), $End)) !== false ||
+                ($Needle = $StrFunction($Data, ($this->CIDRAM['BlockSeparator'] === "\n\n" ? $this->FE['FieldSeparator'] . $SearchQuery . "\n" : $SearchQuery), $End)) !== false ||
                 ($Needle = $StrFunction($Data, '("' . $SearchQuery . '", L', $End)) !== false ||
                 (strlen($SearchQuery) === 2 && ($Needle = $StrFunction($Data, '[' . $SearchQuery . ']', $End)) !== false)
             );

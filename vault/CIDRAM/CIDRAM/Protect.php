@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2025.09.08).
+ * This file: Protect traits (last modified: 2025.09.24).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -672,11 +672,7 @@ trait Protect
 
                     foreach ($ParsedToEmail as $FieldName => &$FieldData) {
                         /** Prevent dangerous HTML in outbound email. */
-                        $FieldData = str_replace(
-                            ['<', '>', "\r", "\n"],
-                            ['&lt;', '&gt;', '&#13;', '&#10;'],
-                            $FieldData
-                        );
+                        $FieldData = str_replace(['<', '>', "\r", "\n"], ['&lt;', '&gt;', '&#13;', '&#10;'], $FieldData);
 
                         if ($FieldData === '') {
                             $FieldData = '-';

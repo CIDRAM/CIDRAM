@@ -496,4 +496,5 @@
 - Completely reworked the file manager.
 - Redesigned the "copy to clipboard" icon (didn't stylistically match the other icons before, but now does, so doesn't look as ugly as before).
 - The search parameter at the front-end logs page can now be entered manually.
+- Added support for wildcards to the logs page search parameter.
 - *Plus all the regular signature updates.*

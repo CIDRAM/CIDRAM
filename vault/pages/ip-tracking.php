@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The IP tracking page (last modified: 2025.09.09).
+ * This file: The IP tracking page (last modified: 2025.09.26).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -195,7 +195,7 @@ if (!$this->FE['ASYNC']) {
         $ThisTracking['IPAddrLink'] = (!empty($this->FE['CachedLogsLink']) && strpos($this->FE['CachedLogsLink'], 'logfile=') !== false) ? sprintf(
             '<a href="%s&search=%s">%s</a>',
             $this->FE['CachedLogsLink'],
-            str_replace('=', '_', base64_encode($ThisTracking['IPAddr'])),
+            $this->preparePartForSearchLink($ThisTracking['IPAddr']),
             $ThisTracking['IPAddr']
         ) : $ThisTracking['IPAddr'];
         if (

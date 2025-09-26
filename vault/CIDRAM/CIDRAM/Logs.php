@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used by the logs page (last modified: 2025.09.24).
+ * This file: Methods used by the logs page (last modified: 2025.09.26).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -103,7 +103,7 @@ trait Logs
             if (isset($Parts[2]) && is_array($Parts[2]) && count($Parts[2]) && $BlockSeparatorLen === 14) {
                 $Parts[2] = array_unique($Parts[2]);
                 foreach ($Parts[2] as $ThisPart) {
-                    $ThisPartUnsafe = str_replace(['&gt;', '&lt;'], ['>', '<'], $ThisPart);
+                    $ThisPartUnsafe = str_replace(['&lt;', '&gt;', '&#34;'], ['<', '>', '"'], $ThisPart);
                     $TestString = $this->Demojibakefier->guard($ThisPartUnsafe);
                     $IPSVGs = ' ';
                     if ($this->expandIpv4($ThisPart, true) || $this->expandIpv6($ThisPart, true)) {
@@ -128,7 +128,7 @@ trait Logs
                         );
                         continue;
                     }
-                    $Enc = str_replace('=', '_', base64_encode($ThisPart));
+                    $Enc = $this->preparePartForSearchLink($ThisPart);
                     $Section = str_replace(
                         $FieldSeparator . $ThisPart . "<br />\n",
                         $FieldSeparator . $ThisPart . $IPSVGs . '<a href="' . $this->paginationRemoveFrom($BlockLink) . '&search=' . $Enc . '">»</a>' . "<br />\n" . $Alternate,
@@ -153,7 +153,7 @@ trait Logs
                 foreach ($Parts[1] as $ThisPart) {
                     $Section = str_replace(
                         '("' . $ThisPart . '", L',
-                        '("<a href="' . $this->paginationRemoveFrom($BlockLink) . '&search=' . str_replace('=', '_', base64_encode($ThisPart)) . '">' . $ThisPart . '</a>", L',
+                        '("<a href="' . $this->paginationRemoveFrom($BlockLink) . '&search=' . $this->preparePartForSearchLink($ThisPart) . '">' . $ThisPart . '</a>", L',
                         $Section
                     );
                 }
@@ -175,7 +175,7 @@ trait Logs
                 foreach ($Parts[1] as $ThisPart) {
                     $Section = str_replace(
                         '[' . $ThisPart . ']',
-                        $OuterOpen . '<a href="' . $this->paginationRemoveFrom($BlockLink) . '&search=' . str_replace('=', '_', base64_encode($ThisPart)) . '" title="' . $ThisPart . '">' . $InnerOpen . $ThisPart . $InnerClose . '</a>' . $OuterClose,
+                        $OuterOpen . '<a href="' . $this->paginationRemoveFrom($BlockLink) . '&search=' . $this->preparePartForSearchLink($ThisPart) . '" title="' . $ThisPart . '">' . $InnerOpen . $ThisPart . $InnerClose . '</a>' . $OuterClose,
                         $Section
                     );
                 }
@@ -282,14 +282,14 @@ trait Logs
                             $IPSVGs = $this->parseVars([], $IPSVGs, true);
                         }
                     }
-                    $Entry .= ' ' . $IPSVGs . '<a href="' . $this->paginationRemoveFrom($BlockLink) . '&search=' . str_replace('=', '_', base64_encode($Entry)) . '">»</a>';
+                    $Entry .= ' ' . $IPSVGs . '<a href="' . $this->paginationRemoveFrom($BlockLink) . '&search=' . $this->preparePartForSearchLink($Entry) . '">»</a>';
                 }
                 preg_match_all('~\\("([^()"]+)", L~', $Entry, $Parts);
                 if (count($Parts[1])) {
                     foreach ($Parts[1] as $ThisPart) {
                         $Entry = str_replace(
                             '("' . $ThisPart . '", L',
-                            '("<a href="' . $this->paginationRemoveFrom($BlockLink) . '&search=' . str_replace('=', '_', base64_encode($ThisPart)) . '">' . $ThisPart . '</a>", L',
+                            '("<a href="' . $this->paginationRemoveFrom($BlockLink) . '&search=' . $this->preparePartForSearchLink($ThisPart) . '">' . $ThisPart . '</a>", L',
                             $Entry
                         );
                     }
@@ -298,9 +298,9 @@ trait Logs
                 if (count($Parts[1])) {
                     foreach ($Parts[1] as $ThisPart) {
                         $Entry = str_replace('[' . $ThisPart . ']', $this->FE['Flags'] ? (
-                            '<a href="' . $this->paginationRemoveFrom($BlockLink) . '&search=' . str_replace('=', '_', base64_encode($ThisPart)) . '"><span class="flag ' . $ThisPart . '"></span></a>'
+                            '<a href="' . $this->paginationRemoveFrom($BlockLink) . '&search=' . $this->preparePartForSearchLink($ThisPart) . '"><span class="flag ' . $ThisPart . '"></span></a>'
                         ) : (
-                            '[<a href="' . $this->paginationRemoveFrom($BlockLink) . '&search=' . str_replace('=', '_', base64_encode($ThisPart)) . '">' . $ThisPart . '</a>]'
+                            '[<a href="' . $this->paginationRemoveFrom($BlockLink) . '&search=' . $this->preparePartForSearchLink($ThisPart) . '">' . $ThisPart . '</a>]'
                         ), $Entry);
                     }
                 }
@@ -374,9 +374,11 @@ trait Logs
      * @param int|false $End The end position.
      * @param string $SearchQuery The search query (optional).
      * @param string $Direction Which direction to step through.
+     * @param bool $WildCardHead Wildcard at the head of the search query.
+     * @param bool $WildCardFoot Wildcard at the foot of the search query.
      * @return bool Whether successfully stepped or not.
      */
-    private function stepThroughBlocks(string $Data, &$Needle, $End, string $SearchQuery = '', string $Direction = '>'): bool
+    private function stepThroughBlocks(string $Data, &$Needle, $End, string $SearchQuery = '', string $Direction = '>', bool $WildCardHead = false, bool $WildCardFoot = false): bool
     {
         /** Guard. */
         if (!is_int($End) || $Data === '' || ($Direction !== '<' && $Direction !== '>')) {
@@ -402,6 +404,15 @@ trait Logs
 
         /** Step with search query. */
         if ($SearchQuery !== '') {
+            if ($WildCardHead) {
+                if ($WildCardFoot) {
+                    return ($Needle = $StrFunction($Data, $SearchQuery, $End)) !== false;
+                }
+                return ($Needle = $StrFunction($Data, ($this->CIDRAM['BlockSeparator'] === "\n\n" ? $SearchQuery . "\n" : $SearchQuery), $End)) !== false;
+            }
+            if ($WildCardFoot) {
+                return ($Needle = $StrFunction($Data, ($this->CIDRAM['BlockSeparator'] === "\n\n" ? $this->FE['FieldSeparator'] . $SearchQuery : $SearchQuery), $End)) !== false;
+            }
             return (
                 ($Needle = $StrFunction($Data, ($this->CIDRAM['BlockSeparator'] === "\n\n" ? $this->FE['FieldSeparator'] . $SearchQuery . "\n" : $SearchQuery), $End)) !== false ||
                 ($Needle = $StrFunction($Data, '("' . $SearchQuery . '", L', $End)) !== false ||
@@ -463,5 +474,38 @@ trait Logs
             }
         }
         return $Out;
+    }
+
+    /**
+     * Prepare part of an entry for the insertion of a search link.
+     *
+     * @param string $Part The part to prepare.
+     * @return string The prepared part.
+     */
+    private function preparePartForSearchLink(string $Part): string
+    {
+        return str_replace(['=', '*'], ['_', '\\*'], base64_encode($Part));
+    }
+
+    /**
+     * Get flags to be used by stepThroughBlocks from the search link prior to.
+     *
+     * @param string $SearchLink The search link.
+     * @return array The flags.
+     */
+    private function getFlagsFromSearchLink(string $SearchLink): array
+    {
+        $WildCardHead = false;
+        $WildCardFoot = false;
+        if (substr($SearchLink, 0, 1) === '*') {
+            $WildCardHead = true;
+            $SearchLink = substr($SearchLink, 1);
+        }
+        if (preg_match('~(?<!\\\\)(?:\\\\{2})*\\*$~', $SearchLink)) {
+            $WildCardFoot = true;
+            $SearchLink = substr($SearchLink, 0, -1);
+        }
+        $SearchLink = preg_replace('~(?<!\\\\)\\\\((?:\\\\{2})*)\\*~', '\1*', $SearchLink);
+        return [$WildCardHead, $WildCardFoot, $SearchLink];
     }
 }

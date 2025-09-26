@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2025.09.21).
+ * This file: General methods used by the front-end (last modified: 2025.09.26).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -60,7 +60,24 @@ trait FrontEndMethods
             $this->FE['state_msg'] .= sprintf($this->L10N->getString('response.Failed to access %s'), $Base);
             return [];
         }
-        $Arr = [['Filename' => '..', 'CanEdit' => false, 'Icon' => 'icon=folder', 'Readable' => false, 'Writable' => false, 'Deletable' => false, 'Directory' => true, 'Filesize' => '', 'Component' => $this->L10N->getString('field.Directory')]];
+        $Arr = [[
+            'Filename' => '..',
+            'CanEdit' => false,
+            'Icon' => 'icon=folder',
+            'Readable' => false,
+            'Writable' => false,
+            'Deletable' => false,
+            'Directory' => true,
+            'Filesize' => '',
+            'Component' => $this->L10N->getString('field.Directory'),
+            'Ord0' => 0,
+            'Ord1' => 1,
+            'Ord2' => 2,
+            'Ord3' => 3,
+            'FS' => -2,
+            'mtime' => -2
+        ]];
+        $Ord = 4;
         $Dirs = [];
         $Key = 0;
         $StartTime = time();
@@ -93,7 +110,21 @@ trait FrontEndMethods
             if (preg_match('~^(?:/\.\.|./\.|\.{3})$~', str_replace('\\', '/', substr($Item, -3)))) {
                 continue;
             }
-            $Arr[$Key] = ['Filename' => $this->canonical($ThisName), 'CanEdit' => false, 'Icon' => 'icon=othernoedit', 'Readable' => false, 'Writable' => false, 'Deletable' => false];
+            $Arr[$Key] = [
+                'Filename' => $this->canonical($ThisName),
+                'CanEdit' => false,
+                'Icon' => 'icon=othernoedit',
+                'Readable' => false,
+                'Writable' => false,
+                'Deletable' => false,
+                'Ord0' => $Ord,
+                'Ord1' => $Ord + 1,
+                'Ord2' => $Ord + 2,
+                'Ord3' => $Ord + 3,
+                'FS' => -1,
+                'mtime' => -2
+            ];
+            $Ord += 4;
             $Item = $this->canonical($Item);
             $ThisDir = dirname($Item);
             if (!isset($Dirs[$ThisDir])) {
@@ -117,7 +148,8 @@ trait FrontEndMethods
             }
             $Arr[$Key]['Readable'] = is_readable($Item);
             $Arr[$Key]['Writable'] = is_writable($Item);
-            $Arr[$Key]['Filesize'] = filesize($Item);
+            $Arr[$Key]['Filesize'] = $Arr[$Key]['FS'] = filesize($Item);
+            $Arr[$Key]['mtime'] = filemtime($Item);
             $Component = '';
             $NoEdit = false;
             $LockIcon = false;
@@ -158,7 +190,7 @@ trait FrontEndMethods
                 $Component .= ' – ';
             }
             $this->formatFileSize($Arr[$Key]['Filesize']);
-            $Arr[$Key]['Filesize'] = $Arr[$Key]['Filesize'] . ' – ' . $this->timeFormat(filemtime($Item), $this->Configuration['general']['time_format']);
+            $Arr[$Key]['Filesize'] = $Arr[$Key]['Filesize'] . ' – ' . $this->timeFormat($Arr[$Key]['mtime'], $this->Configuration['general']['time_format']);
             if (($ExtDel = strrpos($Item, '.')) === false || ($Ext = strtoupper(substr($Item, $ExtDel + 1))) === '') {
                 $Arr[$Key]['Component'] = $Component === '' ? $this->L10N->getString('field.Unknown') : $Component . $this->L10N->getString('field.Unknown');
                 continue;
@@ -382,6 +414,55 @@ trait FrontEndMethods
             } else {
                 $Arr[$Key]['Component'] = $Component . $this->L10N->getString('field.Unknown');
             }
+        }
+        foreach ($Arr as $Key => &$Value) {
+            $Ord -= 4;
+            $Value['OrdRev0'] = $Ord;
+            $Value['OrdRev1'] = $Ord + 1;
+            $Value['OrdRev2'] = $Ord + 2;
+            $Value['OrdRev3'] = $Ord + 3;
+        }
+        uasort($Arr, function($A, $B): int {
+            if ($A['FS'] === $B['FS']) {
+                return 0;
+            }
+            return $A['FS'] > $B['FS'] ? 1 : -1;
+        });
+        $Ord = 0;
+        foreach ($Arr as $Key => &$Value) {
+            $Value['OrdFS0'] = $Ord;
+            $Value['OrdFS1'] = $Ord + 1;
+            $Value['OrdFS2'] = $Ord + 2;
+            $Value['OrdFS3'] = $Ord + 3;
+            $Ord += 4;
+        }
+        foreach ($Arr as $Key => &$Value) {
+            $Ord -= 4;
+            $Value['OrdFSRev0'] = $Ord;
+            $Value['OrdFSRev1'] = $Ord + 1;
+            $Value['OrdFSRev2'] = $Ord + 2;
+            $Value['OrdFSRev3'] = $Ord + 3;
+        }
+        uasort($Arr, function($A, $B): int {
+            if ($A['mtime'] === $B['mtime']) {
+                return 0;
+            }
+            return $A['mtime'] > $B['mtime'] ? 1 : -1;
+        });
+        $Ord = 0;
+        foreach ($Arr as $Key => &$Value) {
+            $Value['OrdMT0'] = $Ord;
+            $Value['OrdMT1'] = $Ord + 1;
+            $Value['OrdMT2'] = $Ord + 2;
+            $Value['OrdMT3'] = $Ord + 3;
+            $Ord += 4;
+        }
+        foreach ($Arr as $Key => &$Value) {
+            $Ord -= 4;
+            $Value['OrdMTRev0'] = $Ord;
+            $Value['OrdMTRev1'] = $Ord + 1;
+            $Value['OrdMTRev2'] = $Ord + 2;
+            $Value['OrdMTRev3'] = $Ord + 3;
         }
         ksort($Arr);
         return $Arr;

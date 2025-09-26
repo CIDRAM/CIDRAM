@@ -156,6 +156,9 @@ if (empty($this->CIDRAM['QueryVars']['logfile'])) {
         $this->FE['EntryCountBefore'] = 0;
     }
 
+    /** Get flags to be used by stepThroughBlocks from the search link prior to. */
+    [$WildCardHead, $WildCardFoot, $SearchQueryDecoded] = $this->getFlagsFromSearchLink($this->FE['SearchQuery']);
+
     /** Handle pagination lower boundary. */
     if ($this->FE['Paginate']) {
         $this->FE['logfileData'] = $this->splitBeforeLine($this->FE['logfileData'], $this->FE['From']);
@@ -163,7 +166,6 @@ if (empty($this->CIDRAM['QueryVars']['logfile'])) {
         $this->FE['EstFore'] = substr_count($this->FE['logfileData'][1], $this->CIDRAM['BlockSeparator']);
         $Needle = strlen($this->FE['logfileData'][0]);
         $Iterations = 0;
-        [$WildCardHead, $WildCardFoot, $SearchQueryDecoded] = $this->getFlagsFromSearchLink($this->FE['SearchQuery']);
         while ($this->stepThroughBlocks($this->FE['logfileData'][0], $Needle, 0, $SearchQueryDecoded, '<', $WildCardHead, $WildCardFoot)) {
             if ($SearchQueryDecoded !== '') {
                 $this->stepThroughBlocks($this->FE['logfileData'][0], $Needle, 0, '', '<', $WildCardHead, $WildCardFoot);
@@ -193,12 +195,11 @@ if (empty($this->CIDRAM['QueryVars']['logfile'])) {
     $this->FE['Paginated'] = 1;
 
     /** Handle block filtering. */
-    if (!empty($this->FE['logfileData']) && !empty($this->CIDRAM['QueryVars']['search'])) {
+    if (!empty($this->FE['logfileData']) && $SearchQueryDecoded !== '') {
         $NewLogFileData = '';
         $Needle = 0;
         $BlockEnd = 0;
         $this->FE['EntryCountPaginated'] = 0;
-        [$WildCardHead, $WildCardFoot, $SearchQueryDecoded] = $this->getFlagsFromSearchLink($this->FE['SearchQuery']);
         while ($this->stepThroughBlocks($this->FE['logfileData'], $Needle, $BlockEnd, $SearchQueryDecoded, '>', $WildCardHead, $WildCardFoot)) {
             $this->FE['EntryCountBefore']++;
             $BlockStart = strrpos(substr($this->FE['logfileData'], 0, $Needle), $this->CIDRAM['BlockSeparator'], $BlockEnd);
@@ -221,7 +222,7 @@ if (empty($this->CIDRAM['QueryVars']['logfile'])) {
             }
         }
         $this->FE['logfileData'] = rtrim($NewLogFileData) . $this->CIDRAM['BlockSeparator'];
-        unset($Needle, $this->CIDRAM['BlockSeparator'], $BlockEnd, $SearchQueryDecoded, $WildCardFoot, $WildCardHead, $BlockStart, $NewLogFileData);
+        unset($Needle, $this->CIDRAM['BlockSeparator'], $BlockEnd, $BlockStart, $NewLogFileData);
         $this->FE['SearchInfoRender'] = (
             $this->FE['Flags'] && preg_match('~^[A-Z]{2}$~', $this->FE['SearchQuery'])
         ) ? '<span class="flag ' . $this->FE['SearchQuery'] . '"><span></span></span>' : '<code>' . $this->FE['SearchQuery'] . '</code>';
@@ -350,6 +351,9 @@ if (empty($this->CIDRAM['QueryVars']['logfile'])) {
             );
         }
     }
+
+    /** Cleanup. */
+    unset($SearchQueryDecoded, $WildCardFoot, $WildCardHead);
 
     $this->FE['logfileData'] = $this->FE['TextModeLinks'] === 'fancy' ? str_replace(
         ['<', '>', "\r", "\n"],

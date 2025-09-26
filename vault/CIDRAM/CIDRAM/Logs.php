@@ -480,7 +480,7 @@ trait Logs
      */
     private function preparePartForSearchLink(string $Part): string
     {
-        return str_replace(['=', '*'], ['_', '\\*'], base64_encode($Part));
+        return str_replace('=', '_', base64_encode(str_replace('*', '\\*', $Part)));
     }
 
     /**
@@ -491,6 +491,12 @@ trait Logs
      */
     private function getFlagsFromSearchLink(string $SearchLink): array
     {
+        if ($SearchLink === '') {
+            return [false, false, ''];
+        }
+        if ($SearchLink === '*') {
+            return [true, true, ''];
+        }
         $WildCardHead = false;
         $WildCardFoot = false;
         if (substr($SearchLink, 0, 1) === '*') {

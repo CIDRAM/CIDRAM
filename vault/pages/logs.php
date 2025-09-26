@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The logs page (last modified: 2025.09.24).
+ * This file: The logs page (last modified: 2025.09.26).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -148,7 +148,6 @@ if (empty($this->CIDRAM['QueryVars']['logfile'])) {
 
     /** Determine entries count before and search query. */
     if (empty($this->CIDRAM['QueryVars']['search'])) {
-        $this->FE['SearchQuery'] = '';
         $this->FE['EntryCountBefore'] = !str_replace("\n", '', $this->FE['logfileData']) ? 0 : (
             substr_count($this->FE['logfileData'], "\n\n") ?: substr_count($this->FE['logfileData'], "\n")
         );
@@ -164,32 +163,24 @@ if (empty($this->CIDRAM['QueryVars']['logfile'])) {
         $this->FE['EstFore'] = substr_count($this->FE['logfileData'][1], $this->CIDRAM['BlockSeparator']);
         $Needle = strlen($this->FE['logfileData'][0]);
         $Iterations = 0;
-        while ($this->stepThroughBlocks($this->FE['logfileData'][0], $Needle, 0, $this->FE['SearchQuery'], '<')) {
-            if ($this->FE['SearchQuery'] !== '') {
-                $this->stepThroughBlocks($this->FE['logfileData'][0], $Needle, 0, '', '<');
+        [$WildCardHead, $WildCardFoot, $SearchQueryDecoded] = $this->getFlagsFromSearchLink($this->FE['SearchQuery']);
+        while ($this->stepThroughBlocks($this->FE['logfileData'][0], $Needle, 0, $SearchQueryDecoded, '<', $WildCardHead, $WildCardFoot)) {
+            if ($SearchQueryDecoded !== '') {
+                $this->stepThroughBlocks($this->FE['logfileData'][0], $Needle, 0, '', '<', $WildCardHead, $WildCardFoot);
             }
             $Iterations++;
             if (!empty($this->CIDRAM['QueryVars']['search'])) {
                 $this->FE['EntryCountBefore']++;
             }
             if (($Iterations > $this->FE['PerPage']) && !$this->FE['Previous']) {
-                $this->FE['Previous'] = $this->isolateFirstFieldEntry(
-                    substr($this->FE['logfileData'][0], $Needle + $BlockSepLen),
-                    $this->FE['FieldSeparator']
-                );
+                $this->FE['Previous'] = $this->isolateFirstFieldEntry(substr($this->FE['logfileData'][0], $Needle + $BlockSepLen), $this->FE['FieldSeparator']);
             }
         }
         if (!$this->FE['Previous']) {
-            $this->FE['Previous'] = $this->isolateFirstFieldEntry(
-                $this->FE['logfileData'][0],
-                $this->FE['FieldSeparator']
-            );
+            $this->FE['Previous'] = $this->isolateFirstFieldEntry($this->FE['logfileData'][0], $this->FE['FieldSeparator']);
         }
         if ($this->FE['From'] === '') {
-            $this->FE['From'] = $this->isolateFirstFieldEntry(
-                $this->FE['logfileData'][1],
-                $this->FE['FieldSeparator']
-            );
+            $this->FE['From'] = $this->isolateFirstFieldEntry($this->FE['logfileData'][1], $this->FE['FieldSeparator']);
         }
         if ($this->FE['Previous'] === $this->FE['From']) {
             $this->FE['Previous'] = '';
@@ -207,24 +198,19 @@ if (empty($this->CIDRAM['QueryVars']['logfile'])) {
         $Needle = 0;
         $BlockEnd = 0;
         $this->FE['EntryCountPaginated'] = 0;
-        while ($this->stepThroughBlocks($this->FE['logfileData'], $Needle, $BlockEnd, $this->FE['SearchQuery'])) {
+        [$WildCardHead, $WildCardFoot, $SearchQueryDecoded] = $this->getFlagsFromSearchLink($this->FE['SearchQuery']);
+        while ($this->stepThroughBlocks($this->FE['logfileData'], $Needle, $BlockEnd, $SearchQueryDecoded, '>', $WildCardHead, $WildCardFoot)) {
             $this->FE['EntryCountBefore']++;
             $BlockStart = strrpos(substr($this->FE['logfileData'], 0, $Needle), $this->CIDRAM['BlockSeparator'], $BlockEnd);
             $BlockEnd = strpos($this->FE['logfileData'], $this->CIDRAM['BlockSeparator'], $Needle);
             if ($this->FE['Paginate']) {
                 if ($this->FE['From'] === '') {
-                    $this->FE['From'] = $this->isolateFirstFieldEntry(
-                        substr($this->FE['logfileData'], $BlockStart, $BlockEnd - $BlockStart),
-                        $this->FE['FieldSeparator']
-                    );
+                    $this->FE['From'] = $this->isolateFirstFieldEntry(substr($this->FE['logfileData'], $BlockStart, $BlockEnd - $BlockStart), $this->FE['FieldSeparator']);
                 }
                 $this->FE['Paginated']++;
                 if ($this->FE['Paginated'] > ($this->FE['PerPage'] + 1)) {
                     if (!$this->FE['Next']) {
-                        $this->FE['Next'] = $this->isolateFirstFieldEntry(
-                            substr($this->FE['logfileData'], $BlockStart, $BlockEnd - $BlockStart),
-                            $this->FE['FieldSeparator']
-                        );
+                        $this->FE['Next'] = $this->isolateFirstFieldEntry(substr($this->FE['logfileData'], $BlockStart, $BlockEnd - $BlockStart), $this->FE['FieldSeparator']);
                     }
                     continue;
                 }
@@ -235,7 +221,7 @@ if (empty($this->CIDRAM['QueryVars']['logfile'])) {
             }
         }
         $this->FE['logfileData'] = rtrim($NewLogFileData) . $this->CIDRAM['BlockSeparator'];
-        unset($Needle, $this->CIDRAM['BlockSeparator'], $BlockEnd, $BlockStart, $NewLogFileData);
+        unset($Needle, $this->CIDRAM['BlockSeparator'], $BlockEnd, $SearchQueryDecoded, $WildCardFoot, $WildCardHead, $BlockStart, $NewLogFileData);
         $this->FE['SearchInfoRender'] = (
             $this->FE['Flags'] && preg_match('~^[A-Z]{2}$~', $this->FE['SearchQuery'])
         ) ? '<span class="flag ' . $this->FE['SearchQuery'] . '"><span></span></span>' : '<code>' . $this->FE['SearchQuery'] . '</code>';
@@ -255,10 +241,7 @@ if (empty($this->CIDRAM['QueryVars']['logfile'])) {
                 $this->FE['SearchInfoRender']
             );
             if ($this->FE['From']) {
-                $this->FE['SearchInfo'] .= '<br />' . sprintf(
-                    $this->L10N->getString('label.Starting from %s'),
-                    '<span class="txtRd">' . $this->FE['From'] . '</span>'
-                );
+                $this->FE['SearchInfo'] .= '<br />' . sprintf($this->L10N->getString('label.Starting from %s'), '<span class="txtRd">' . $this->FE['From'] . '</span>');
                 if ($this->FE['Previous']) {
                     $this->paginationFromLink('label.Previous', $this->FE['Previous']);
                 }
@@ -295,10 +278,7 @@ if (empty($this->CIDRAM['QueryVars']['logfile'])) {
             $BlockStart = 0;
             $BlockEnd = 0;
             if ($this->FE['From'] === '') {
-                $this->FE['From'] = $this->isolateFirstFieldEntry(
-                    $this->FE['logfileData'],
-                    $this->FE['FieldSeparator']
-                );
+                $this->FE['From'] = $this->isolateFirstFieldEntry($this->FE['logfileData'], $this->FE['FieldSeparator']);
             }
             while (true) {
                 $BlockOffset = $BlockStart + $BlockSepLen;
@@ -313,10 +293,7 @@ if (empty($this->CIDRAM['QueryVars']['logfile'])) {
                 $this->FE['Paginated']++;
                 if ($this->FE['Paginated'] > $this->FE['PerPage']) {
                     if (!$this->FE['Next']) {
-                        $this->FE['Next'] = $this->isolateFirstFieldEntry(
-                            substr($this->FE['logfileData'], $BlockEnd + $BlockSepLen),
-                            $this->FE['FieldSeparator']
-                        );
+                        $this->FE['Next'] = $this->isolateFirstFieldEntry(substr($this->FE['logfileData'], $BlockEnd + $BlockSepLen), $this->FE['FieldSeparator']);
                     }
                     break;
                 }
@@ -343,10 +320,7 @@ if (empty($this->CIDRAM['QueryVars']['logfile'])) {
                 '<span class="txtRd">' . $this->NumberFormatter->format($this->FE['EntryCountBefore']) . '</span>'
             );
             if ($this->FE['From']) {
-                $this->FE['SearchInfo'] .= '<br />' . sprintf(
-                    $this->L10N->getString('label.Starting from %s'),
-                    '<span class="txtRd">' . $this->FE['From'] . '</span>'
-                );
+                $this->FE['SearchInfo'] .= '<br />' . sprintf($this->L10N->getString('label.Starting from %s'), '<span class="txtRd">' . $this->FE['From'] . '</span>');
                 if ($this->FE['Previous']) {
                     $this->paginationFromLink('label.Previous', $this->FE['Previous']);
                 }

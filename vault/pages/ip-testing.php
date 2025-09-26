@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The IP testing page (last modified: 2025.09.08).
+ * This file: The IP testing page (last modified: 2025.09.26).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -320,7 +320,7 @@ if (isset($_POST['ip-addr-focus'])) {
         $this->CIDRAM['ThisIP']['IPAddressLink'] = (!empty($this->FE['CachedLogsLink']) && strpos($this->FE['CachedLogsLink'], 'logfile=') !== false) ? sprintf(
             '<a href="%s&search=%s">%s</a>',
             $this->FE['CachedLogsLink'],
-            str_replace('=', '_', base64_encode($this->CIDRAM['ThisIP']['IPAddress'])),
+            $this->preparePartForSearchLink($this->CIDRAM['ThisIP']['IPAddress']),
             $this->CIDRAM['ThisIP']['IPAddress']
         ) : $this->CIDRAM['ThisIP']['IPAddress'];
         $this->CIDRAM['ThisIP']['IPAddressQuoted'] = str_replace('\'', '\\\'', $this->CIDRAM['ThisIP']['IPAddress']);

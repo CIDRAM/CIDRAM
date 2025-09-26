@@ -484,4 +484,5 @@
 - [2025.09.18]: Redesigned the "copy to clipboard" icon (didn't stylistically match the other icons before, but now does, so doesn't look as ugly as before).
 - [2025.09.19]: The search parameter at the front-end logs page can now be entered manually.
 - [2025.09.21]: Added a warning to the file manager's edit page for non-UTF8 bytes.
+- [2025.09.26]: Added support for wildcards to the logs page search parameter.
 - *Plus all the regular signature updates.*

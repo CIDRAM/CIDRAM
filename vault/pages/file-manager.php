@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The file manager page (last modified: 2025.09.22).
+ * This file: The file manager page (last modified: 2025.09.27).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -217,7 +217,7 @@ if (!$this->FE['ASYNC']) {
             );
             $ThisFile['DeleteConfirmText'] = sprintf($this->L10N->getString('confirm.Delete'), '<span id="DeleteConfirmContent' . $ThisFile['FilenameID'] . '">' . $ThisFile['Filename'] . '</span>');
         }
-        $ThisFile['ThisOptions'] = implode(' – ', $ThisFile['ThisOptions']);
+        $ThisFile['ThisOptions'] = implode('<span class="emsep"> – </span><br class="brsep" />', $ThisFile['ThisOptions']);
         if (substr($ThisFile['Icon'], 0, 5) === 'icon=') {
             $ThisFile['Icon'] = sprintf('<span class="fmicon auxbl %s" id="Icon%s"></span>', substr($ThisFile['Icon'], 5), $ThisFile['FilenameID']);
         } else {

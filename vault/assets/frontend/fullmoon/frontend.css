@@ -288,11 +288,20 @@ textarea#logsTA{margin-top:0;margin-bottom:0;margin-{FE_Align}:0;margin-{FE_Alig
 @keyframes fmDeleteAnim{0%{opacity:1}100%{filter:brightness(0);opacity:0;display:none}}
 .fmDelete{transform-origin:top;animation:fmDeleteAnim .5s cubic-bezier(0,0,.1,1);animation-iteration-count:1;animation-fill-mode:forwards}
 .reverse{text-align:{FE_Align_Reverse}}
+.stickybox .pieul li{list-style-type:none}
 .gridboxitem,.gridboxcheckcell,.gridboxstretch,.va{align-content:center}
 .louter{width:min(150px,23vw)}
 input[type=submit].linner,input[type=number].linner,select.linner{width:100%}
-.stickybox .pieul li{list-style-type:none}
 .navicon.pointer{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:pointerhead.svg}{/Base64Encode}),url(data:image/svg+xml;base64,{Base64Encode}{Asset:pointertail.svg}{/Base64Encode});transition:all .9s cubic-bezier(0,0,.1,1)}
-.navicon.pointer.up{background-position:0 3px,0 -3px}
-.navicon.pointer.down{background-position:0 -3px,0 3px}
+.navicon.pointer.up{background-position:0 -3px,0 3px}
+.navicon.pointer.down{background-position:0 3px,0 -3px}
 .navicon.pointer.neutral{background-position:0 0,0 0}
+.emsep{white-space:pre}
+.brsep{display:none}
+@media only all and (min-width:969px) and (max-width:1776px), all and (max-width:792px) {
+  .emsep{display:none}
+  .brsep{display:inline}
+}
+@media only all and (max-width:1776px) {
+  .duo.fmctrl{grid-template-columns:100%}
+}

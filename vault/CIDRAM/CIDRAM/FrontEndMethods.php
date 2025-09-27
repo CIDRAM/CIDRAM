@@ -422,7 +422,7 @@ trait FrontEndMethods
             $Value['OrdRev2'] = $Ord + 2;
             $Value['OrdRev3'] = $Ord + 3;
         }
-        uasort($Arr, function($A, $B): int {
+        uasort($Arr, function ($A, $B): int {
             if ($A['FS'] === $B['FS']) {
                 return 0;
             }
@@ -443,7 +443,7 @@ trait FrontEndMethods
             $Value['OrdFSRev2'] = $Ord + 2;
             $Value['OrdFSRev3'] = $Ord + 3;
         }
-        uasort($Arr, function($A, $B): int {
+        uasort($Arr, function ($A, $B): int {
             if ($A['mtime'] === $B['mtime']) {
                 return 0;
             }

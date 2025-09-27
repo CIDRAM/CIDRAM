@@ -1,7 +1,8 @@
 <div class="mainbox">
   <nav class="big">
 {nav}
-    <div class="ng1 idx">{Indexes}</div>
+    <div class="ng1 idx"><div class="subNav">{field.Components}</div><div class="col">{Indexes}
+    </div></div>
   </nav>
   <main class="extend">
     <div class="col">
@@ -13,10 +14,10 @@
       </div>
     </div>
     <div class="quad">
-      <div class="h2 s">{field.Component}</div>
-      <div class="h2 s big">{field.Your version}</div>
-      <div class="h2 s big">{field.Latest version}</div>
-      <div class="h2f s">{field.Status} | {field.Options}</div>
+      <div class="h2 s" style="order:-4">{field.Component} <span id="orderByID" class="navicon pointer down hoverglow" onclick="javascript:y=document.getElementById('orderByID'),y.classList.contains('down')?(y.classList.add('up'),y.classList.remove('down','neutral'),qOrd=document.querySelectorAll('[data-order-default-rev]'),qOrd.forEach((x)=>{x.style.order=x.dataset.orderDefaultRev})):(y.classList.add('down'),y.classList.remove('up','neutral'),qOrd=document.querySelectorAll('[data-order-default]'),qOrd.forEach((x)=>{x.style.order=x.dataset.orderDefault})),z=document.getElementById('orderByAZ'),z.classList.add('neutral'),z.classList.remove('up','down'),z=document.getElementById('orderByTime'),z.classList.add('neutral'),z.classList.remove('up','down')"></span> ({label.A-Z} <span id="orderByAZ" class="navicon pointer neutral hoverglow" onclick="javascript:y=document.getElementById('orderByAZ'),y.classList.contains('down')?(y.classList.add('up'),y.classList.remove('down','neutral'),qOrd=document.querySelectorAll('[data-order-az-rev]'),qOrd.forEach((x)=>{x.style.order=x.dataset.orderAzRev})):(y.classList.add('down'),y.classList.remove('up','neutral'),qOrd=document.querySelectorAll('[data-order-az]'),qOrd.forEach((x)=>{x.style.order=x.dataset.orderAz})),z=document.getElementById('orderByID'),z.classList.add('neutral'),z.classList.remove('up','down'),z=document.getElementById('orderByTime'),z.classList.add('neutral'),z.classList.remove('up','down')"></span>)</div>
+      <div class="h2 s big" style="order:-3">{field.Your version}</div>
+      <div class="h2 s big" style="order:-2">{field.Latest version}</div>
+      <div class="h2f s" style="order:-1">{field.Status} | {field.Options}</div>
 {Components}    </div>
     <div class="duo">
       <div class="h2 s">{field.Macro}</div>

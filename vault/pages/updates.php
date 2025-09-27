@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The updates page (last modified: 2025.09.23).
+ * This file: The updates page (last modified: 2025.09.27).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -26,7 +26,7 @@ $this->FE['UpdatesFormTarget'] = 'cidram-page=updates';
 $this->FE['UpdatesFormTargetControls'] = '';
 $StateModified = false;
 $this->filterSwitch(
-    ['hide-non-outdated', 'hide-unused', 'sort-by-name', 'descending-order'],
+    ['hide-non-outdated', 'hide-unused'],
     $_POST['FilterSelector'] ?? '',
     $StateModified,
     $this->FE['UpdatesFormTarget'],
@@ -185,12 +185,14 @@ foreach ($this->Components['Meta'] as $Key => &$this->Components['ThisComponent'
             $this->Components['RemoteMeta'][$Key]['Extended Description'];
         $this->prepareExtendedDescription($this->Components['ThisComponent'], $Key);
     }
+    $this->Components['ThisComponent']['IsOutdated'] = 'no';
     if ($this->Components['ThisComponent']['StatClass'] === '' && isset($this->Components['ThisComponent']['Version'])) {
         if (!empty($this->Components['ThisComponent']['Latest']) && $this->OperationHandler->singleCompare(
             $this->Components['ThisComponent']['Version'],
             '<' . $this->Components['ThisComponent']['Latest']
         )) {
             $this->Components['ThisComponent']['Outdated'] = true;
+            $this->Components['ThisComponent']['IsOutdated'] = 'yes';
             $this->Components['ThisComponent']['RowClass'] = 'r';
             $this->Components['ThisComponent']['StatClass'] = 'txtRd';
             $this->Components['ThisComponent']['StatusOptions'] = $this->L10N->getString('response.Outdated');
@@ -213,6 +215,7 @@ foreach ($this->Components['Meta'] as $Key => &$this->Components['ThisComponent'
             }
         }
     }
+    $this->Components['ThisComponent']['IsUsed'] = 'no';
     if (!empty($this->Components['ThisComponent']['Files'])) {
         $Activable = $this->isActivable($this->Components['ThisComponent']);
         $this->Components['In Use'][$Key] = $this->isInUse($this->Components['ThisComponent']);
@@ -221,6 +224,7 @@ foreach ($this->Components['Meta'] as $Key => &$this->Components['ThisComponent'
             preg_quote($this->Configuration['frontend']['theme']),
             preg_quote($this->Configuration['template_data']['theme'])
         ), $Key) || $this->Components['In Use'][$Key] !== 0) {
+            $this->Components['ThisComponent']['IsUsed'] = 'yes';
             if ($this->Components['In Use'][$Key] === -1) {
                 $this->appendToString(
                     $this->Components['ThisComponent']['StatusOptions'],
@@ -245,17 +249,16 @@ foreach ($this->Components['Meta'] as $Key => &$this->Components['ThisComponent'
             }
         } else {
             if ($Activable) {
-                $this->Components['ThisComponent']['Options'] .=
-                    '<option value="activate-component">' . $this->L10N->getString('field.Activate') . '</option>';
+                $this->Components['ThisComponent']['Options'] .= '<option value="activate-component">' . $this->L10N->getString('field.Activate') . '</option>';
             }
             if (!isset($this->Components['ThisComponent']['Uninstallable']) || $this->Components['ThisComponent']['Uninstallable'] !== false) {
-                $this->Components['ThisComponent']['Options'] .=
-                    '<option value="uninstall-component">' . $this->L10N->getString('field.Uninstall') . '</option>';
+                $this->Components['ThisComponent']['Options'] .= '<option value="uninstall-component">' . $this->L10N->getString('field.Uninstall') . '</option>';
             }
             if (
                 !empty($this->Components['ThisComponent']['Provisional']) ||
                 ($this->Configuration['general']['lang_override'] && preg_match('~^l10n/~', $this->Components['ThisComponent']['Name']))
             ) {
+                $this->Components['ThisComponent']['IsUsed'] = 'yes';
                 $this->appendToString(
                     $this->Components['ThisComponent']['StatusOptions'],
                     '<hr />',
@@ -271,8 +274,7 @@ foreach ($this->Components['Meta'] as $Key => &$this->Components['ThisComponent'
         }
     }
     $this->Components['ThisComponent']['VersionSize'] = 0;
-    $this->Components['ThisComponent']['Options'] .=
-        '<option value="verify-component" selected>' . $this->L10N->getString('field.Verify') . '</option>';
+    $this->Components['ThisComponent']['Options'] .= '<option value="verify-component" selected>' . $this->L10N->getString('field.Verify') . '</option>';
     $this->Components['Verify'][] = $Key;
     if (isset($this->Components['ThisComponent']['Files'])) {
         foreach ($this->Components['ThisComponent']['Files'] as $ThisFile) {
@@ -348,24 +350,14 @@ foreach ($this->Components['Meta'] as $Key => &$this->Components['ThisComponent'
         if (empty($this->Components['ThisComponent']['RowClass'])) {
             $this->Components['ThisComponent']['RowClass'] = 'h1';
         }
-        if (!empty($this->FE['sort-by-name']) && !empty($this->Components['ThisComponent']['Name'])) {
-            $this->Components['ThisComponent']['SortKey'] = $this->Components['ThisComponent']['Name'];
-        } else {
-            $this->Components['ThisComponent']['SortKey'] = $Key;
-        }
-        $this->FE['Indexes'][$this->Components['ThisComponent']['SortKey']] = '';
-        if (isset($PreviousIndex)) {
-            if (substr($PreviousIndex, 0, 6) !== substr($this->Components['ThisComponent']['ID'], 0, 6)) {
-                $this->FE['Indexes'][$this->Components['ThisComponent']['SortKey']] .= '<br />';
-            }
-        }
-        $PreviousIndex = $this->Components['ThisComponent']['ID'];
-        $this->FE['Indexes'][$this->Components['ThisComponent']['SortKey']] .= sprintf(
-            "<a href=\"#%s\">%s</a><br />\n      ",
+        $this->FE['Indexes'][$Key] = sprintf(
+            "\n      <a href=\"#%s\" style=\"order:{Ord0}\" data-order-default=\"{Ord0}\" data-order-default-rev=\"{OrdRev0}\" data-order-az=\"{OrdAZ0}\" data-order-az-rev=\"{OrdAZRev0}\" data-is-outdated=\"%s\" data-is-used=\"%s\">%s</a>",
             $this->Components['ThisComponent']['ID'],
+            $this->Components['ThisComponent']['IsOutdated'],
+            $this->Components['ThisComponent']['IsUsed'],
             $this->Components['ThisComponent']['Name']
         );
-        $this->Components['Out'][$this->Components['ThisComponent']['SortKey']] = $this->parseVars(
+        $this->Components['Out'][$Key] = $this->parseVars(
             $this->arrayFlatten($this->Components['ThisComponent']) + $this->arrayFlatten($this->FE),
             $this->FE['UpdatesRow']
         );
@@ -503,24 +495,12 @@ foreach ($this->Components['RemoteMeta'] as $Key => &$this->Components['ThisComp
 
     /** Finalise entry. */
     if (!$this->FE['hide-unused']) {
-        if (!empty($this->FE['sort-by-name']) && !empty($this->Components['ThisComponent']['Name'])) {
-            $this->Components['ThisComponent']['SortKey'] = $this->Components['ThisComponent']['Name'];
-        } else {
-            $this->Components['ThisComponent']['SortKey'] = $Key;
-        }
-        $this->FE['Indexes'][$this->Components['ThisComponent']['SortKey']] = '';
-        if (isset($PreviousIndex)) {
-            if (substr($PreviousIndex, 0, 6) !== substr($this->Components['ThisComponent']['ID'], 0, 6)) {
-                $this->FE['Indexes'][$this->Components['ThisComponent']['SortKey']] .= '<br />';
-            }
-        }
-        $PreviousIndex = $this->Components['ThisComponent']['ID'];
-        $this->FE['Indexes'][$this->Components['ThisComponent']['SortKey']] .= sprintf(
-            "<a href=\"#%s\">%s</a><br />\n      ",
+        $this->FE['Indexes'][$Key] = sprintf(
+            "\n      <a href=\"#%s\" style=\"order:{Ord0}\" data-order-default=\"{Ord0}\" data-order-default-rev=\"{OrdRev0}\" data-order-az=\"{OrdAZ0}\" data-order-az-rev=\"{OrdAZRev0}\" data-is-outdated=\"no\" data-is-used=\"no\">%s</a>",
             $this->Components['ThisComponent']['ID'],
             $this->Components['ThisComponent']['Name']
         );
-        $this->Components['Out'][$this->Components['ThisComponent']['SortKey']] = $this->parseVars(
+        $this->Components['Out'][$Key] = $this->parseVars(
             $this->arrayFlatten($this->Components['ThisComponent']) + $this->arrayFlatten($this->FE),
             $this->FE['UpdatesRow']
         );

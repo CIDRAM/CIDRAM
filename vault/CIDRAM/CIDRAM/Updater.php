@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods for updating CIDRAM components (last modified: 2025.09.23).
+ * This file: Methods for updating CIDRAM components (last modified: 2025.09.27).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -501,35 +501,63 @@ trait Updater
     }
 
     /**
-     * Custom sort an array by key and then implode the results.
+     * Organise ordering values for items and then implode them.
      *
-     * @param array $Arr The array to sort.
+     * @param array $Arr The array to sort and implode.
      * @return string The sorted, imploded array.
      */
     private function sortComponents(array $Arr): string
     {
-        $Type = $this->FE['sort-by-name'] ?? false;
-        $Order = $this->FE['descending-order'] ?? false;
-        uksort($Arr, function (string $A, string $B) use ($Type, $Order) {
-            if (!$Type) {
-                $Priority = '~^(?:CIDRAM|Common Classes Package|IPv[46]|l10n/)~i';
-                $CheckA = preg_match($Priority, $A);
-                $CheckB = preg_match($Priority, $B);
-                if ($CheckA && !$CheckB) {
-                    return $Order ? 1 : -1;
-                }
-                if ($CheckB && !$CheckA) {
-                    return $Order ? -1 : 1;
-                }
+        $IDOrd = $Ord = 0;
+        $IDOrdRev = $OrdRev = (count($Arr) * 4) - 1;
+        ksort($Arr);
+        foreach ($Arr as $Key => &$Value) {
+            $Vars = [
+                'OrdAZ0' => $Ord,
+                'OrdAZ1' => $Ord + 1,
+                'OrdAZ2' => $Ord + 2,
+                'OrdAZ3' => $Ord + 3,
+                'OrdAZRev0' => $OrdRev - 3,
+                'OrdAZRev1' => $OrdRev - 2,
+                'OrdAZRev2' => $OrdRev - 1,
+                'OrdAZRev3' => $OrdRev
+            ];
+            $Ord += 4;
+            $OrdRev -= 4;
+            $Value = $this->parseVars($Vars, $Value);
+        }
+        uksort($Arr, function (string $A, string $B) {
+            if ($A === $B) {
+                return 0;
             }
-            if ($A < $B) {
-                return $Order ? 1 : -1;
+            $Priority = '~^(?:CIDRAM|Common Classes Package|IPv[46]|l10n/)~i';
+            $CheckA = preg_match($Priority, $A);
+            $CheckB = preg_match($Priority, $B);
+            if ($CheckA && !$CheckB) {
+                return -1;
             }
-            if ($A > $B) {
-                return $Order ? -1 : 1;
+            if ($CheckB && !$CheckA) {
+                return 1;
             }
-            return 0;
+            return $A < $B ? -1 : 1;
         });
+        foreach ($Arr as $Key => &$Value) {
+            $Vars = [
+                'Ord0' => $IDOrd,
+                'Ord1' => $IDOrd + 1,
+                'Ord2' => $IDOrd + 2,
+                'Ord3' => $IDOrd + 3,
+                'OrdRev0' => $IDOrdRev - 3,
+                'OrdRev1' => $IDOrdRev - 2,
+                'OrdRev2' => $IDOrdRev - 1,
+                'OrdRev3' => $IDOrdRev,
+                'IsOutdated' => 'no',
+                'IsUsed' => 'no'
+            ];
+            $IDOrd += 4;
+            $IDOrdRev -= 4;
+            $Value = $this->parseVars($Vars, $Value);
+        }
         return implode('', $Arr);
     }
 
@@ -1591,7 +1619,6 @@ trait Updater
                 $Data['Remote Dependency Status'],
                 $Data['RemoteFilename'],
                 $Data['RowClass'],
-                $Data['SortKey'],
                 $Data['StatClass'],
                 $Data['StatusOptions'],
                 $Data['VersionSize']

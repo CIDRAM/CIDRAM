@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used by the logs page (last modified: 2025.09.26).
+ * This file: Methods used by the logs page (last modified: 2025.09.27).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -122,18 +122,25 @@ trait Logs
                             $IPSVGs = '';
                         }
                         $Section = str_replace(
-                            $FieldSeparator . $ThisPart . "<br />\n",
-                            $FieldSeparator . $ThisPart . $IPSVGs . "<br />\n" . $Alternate,
+                            '</span>' . $FieldSeparator . $ThisPart . "<br />\n",
+                            '</span>' . $FieldSeparator . $ThisPart . $IPSVGs . "<br />\n" . $Alternate,
                             $Section
                         );
                         continue;
                     }
-                    $Enc = $this->preparePartForSearchLink($ThisPart);
+                    $BlockLinkFromRemoved = $this->paginationRemoveFrom($BlockLink);
                     $Section = str_replace(
-                        $FieldSeparator . $ThisPart . "<br />\n",
-                        $FieldSeparator . $ThisPart . $IPSVGs . '<a href="' . $this->paginationRemoveFrom($BlockLink) . '&search=' . $Enc . '">»</a>' . "<br />\n" . $Alternate,
+                        '</span>' . $FieldSeparator . $ThisPart . "<br />\n",
+                        '</span>' . $FieldSeparator . $ThisPart . $IPSVGs . '<a href="' . $BlockLinkFromRemoved . '&search=' . $this->preparePartForSearchLink($ThisPart) . '">»</a>' . "<br />\n" . $Alternate,
                         $Section
                     );
+                    if (preg_match('~^(https?://)([^/\s]+)~i', $ThisPart, $Domain) && isset($Domain[1], $Domain[2])) {
+                        $Section = str_replace(
+                            '</span>' . $FieldSeparator . $Domain[1] . $Domain[2],
+                            '</span>' . $FieldSeparator . $Domain[1] . '<a href="' . $BlockLinkFromRemoved . '&search=' . $this->preparePartForSearchLink($Domain[2], '*', '*') . '">' . $Domain[2] . '</a>',
+                            $Section
+                        );
+                    }
                 }
             }
 
@@ -153,7 +160,7 @@ trait Logs
                 foreach ($Parts[1] as $ThisPart) {
                     $Section = str_replace(
                         '("' . $ThisPart . '", L',
-                        '("<a href="' . $this->paginationRemoveFrom($BlockLink) . '&search=' . $this->preparePartForSearchLink($ThisPart) . '">' . $ThisPart . '</a>", L',
+                        '("<a href="' . $this->paginationRemoveFrom($BlockLink) . '&search=' . $this->preparePartForSearchLink($ThisPart, '*', '*') . '">' . $ThisPart . '</a>", L',
                         $Section
                     );
                 }
@@ -415,7 +422,6 @@ trait Logs
             }
             return (
                 ($Needle = $StrFunction($Data, ($this->CIDRAM['BlockSeparator'] === "\n\n" ? $this->FE['FieldSeparator'] . $SearchQuery . "\n" : $SearchQuery), $End)) !== false ||
-                ($Needle = $StrFunction($Data, '("' . $SearchQuery . '", L', $End)) !== false ||
                 (strlen($SearchQuery) === 2 && ($Needle = $StrFunction($Data, '[' . $SearchQuery . ']', $End)) !== false)
             );
         }
@@ -480,11 +486,13 @@ trait Logs
      * Prepare part of an entry for the insertion of a search link.
      *
      * @param string $Part The part to prepare.
+     * @param string $Head Optional prepended head.
+     * @param string $Tail Optional appended tail.
      * @return string The prepared part.
      */
-    private function preparePartForSearchLink(string $Part): string
+    private function preparePartForSearchLink(string $Part, string $Head = '', string $Tail = ''): string
     {
-        return str_replace('=', '_', base64_encode(str_replace('*', '\\*', $Part)));
+        return str_replace('=', '_', base64_encode($Head . str_replace('*', '\\*', $Part) . $Tail));
     }
 
     /**

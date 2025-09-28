@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2025.09.23).
+ * This file: Front-end functions file (last modified: 2025.09.28).
  */
 
 /**
@@ -3692,7 +3692,7 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
         }
 
         /** Figure out which options are available for the rule (view mode). */
-        $Options = ['(<span style="cursor:pointer" onclick="javascript:%s(\'' . $CIDRAM['escapeJsInHTML']($Name) . '\',\'' . $RuleClass . '\')"><code class="s">%s</code></span>)'];
+        $Options = ['(<span style="cursor:pointer" onclick="javascript:%s(\'' . $CIDRAM['escapeJsInHTML']($Name) . '\',\'' . $RuleClass . '\')" tabindex="0" role="button"><code class="s">%s</code></span>)'];
         if (empty($Data['Disable this rule'])) {
             $Options['disableRule'] = sprintf($Options[0], 'disableRule', '<span style="position:relative;top:-2px" class="txtRd">⏸</span>' . $CIDRAM['L10N']->getString('label_aux_special_disable'));
         } else {
@@ -3714,19 +3714,19 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
         }
         unset($Options[0]);
         $Options['exportRule'] = sprintf(
-            '(<span style="cursor:pointer" onclick="javascript:{document.getElementById(\'xprtName\').value=\'%s\';document.getElementById(\'xprtForm\').submit()}"><code class="s">%s</code></span>)',
+            '(<span style="cursor:pointer" onclick="javascript:{document.getElementById(\'xprtName\').value=\'%s\';document.getElementById(\'xprtForm\').submit()}" tabindex="0" role="button"><code class="s">%s</code></span>)',
             $CIDRAM['escapeJsInHTML']($Name),
             $CIDRAM['L10N']->getString('label_export')
         );
         $Options['delRule'] = sprintf(
-            '(<span style="cursor:pointer" onclick="javascript:confirm(\'%s\')&&delRule(\'' . $CIDRAM['escapeJsInHTML']($Name) . '\',\'' . $RuleClass . '\')"><code class="s"><span class="txtRd">⌧</span>%s</code></span>)',
+            '(<span style="cursor:pointer" onclick="javascript:confirm(\'%s\')&&delRule(\'' . $CIDRAM['escapeJsInHTML']($Name) . '\',\'' . $RuleClass . '\')" tabindex="0" role="button"><code class="s"><span class="txtRd">⌧</span>%s</code></span>)',
             $CIDRAM['escapeJsInHTML'](sprintf($CIDRAM['L10N']->getString('confirm_delete'), $Name)),
             $CIDRAM['L10N']->getString('field_delete')
         );
         $Options = implode(' ', $Options);
         if (substr($Options, 0, 1) === '(' && substr($Options, -1) === ')') {
             $Options = sprintf(
-                '<span class="inlineBlock">(<span style="cursor:pointer" id="heaven%1$s" class="scaleXToOne" onclick="javascript:heavenToggle(\'%1$s\')"><code style="s">☰</code></span><span id="hidden%1$s" class="scaleXToZero">%2$s</span>)</span>',
+                '<span class="inlineBlock">(<span style="cursor:pointer" id="heaven%1$s" class="scaleXToOne" onclick="javascript:heavenToggle(\'%1$s\')" aria-haspopup="menu"><code style="s">☰</code></span><span id="hidden%1$s" class="scaleXToZero">%2$s</span>)</span>',
                 $RuleClass,
                 substr($Options, 1, -1)
             );
@@ -4040,7 +4040,7 @@ $CIDRAM['ArrayToClickableList'] = function (array $Arr = [], string $DeleteKey =
         if ((is_string($Value) && !$CIDRAM['Demojibakefier']->checkConformity($Value)) || is_null($Value)) {
             continue;
         }
-        $Delete = ($Depth === 0) ? ' – (<span style="cursor:pointer" onclick="javascript:' . $DeleteKey . '(\'' . $CIDRAM['escapeJsInHTML']($Key) . '\')"><code class="s"><span class="txtRd">⌧</span>' . $CIDRAM['L10N']->getString('field_delete') . '</code></span>)' : '';
+        $Delete = ($Depth === 0) ? ' – (<span style="cursor:pointer" onclick="javascript:' . $DeleteKey . '(\'' . $CIDRAM['escapeJsInHTML']($Key) . '\')" tabindex="0" role="button"><code class="s"><span class="txtRd">⌧</span>' . $CIDRAM['L10N']->getString('field_delete') . '</code></span>)' : '';
         $Output .= ($Depth === 0 ? '<span id="' . $Key . $Prefix . 'Container">' : '') . '<li>';
         if (is_string($Value)) {
             if (substr($Value, 0, 2) === '{"' && substr($Value, -2) === '"}') {

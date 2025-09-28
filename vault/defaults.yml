@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2025.09.16).
+# This file: Defaults file (last modified: 2025.09.28).
 ##/
 
 Config Defaults:
@@ -1388,6 +1388,6 @@ Links:
  SFS: "<a href="https://www.stopforumspam.com/" dir="ltr" rel="noopener noreferrer external">Stop Forum Spam</a>"
  Website: "<a href="https://cidram.github.io/" hreflang="en-US" rel="noopener external"><span class="navicon link"></span>cidram.github.io</a>"
 Extra SVG Icons:
- IP Testing: "<span onclick="javascript:{document.getElementById('ipTestFormInput').value='%s';document.getElementById('ipTestForm').submit()}" title="{link.IP Testing}" class="translateIcon navicon test"></span>"
+ IP Testing: "<span onclick="javascript:{document.getElementById('ipTestFormInput').value='%s';document.getElementById('ipTestForm').submit()}" title="{link.IP Testing}" class="translateIcon navicon test" tabindex="0" role="button"></span>"
 SVGs form data:
  IP Testing: "<form id="ipTestForm" action="?cidram-page=ip-testing" method="POST" style="display:none"><input type="hidden" name="ip-addr" id="ipTestFormInput" /><input type="hidden" name="TestsSwitch" value="on" /></form>"

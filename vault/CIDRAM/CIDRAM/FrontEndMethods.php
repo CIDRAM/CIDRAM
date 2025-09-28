@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2025.09.26).
+ * This file: General methods used by the front-end (last modified: 2025.09.27).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -667,7 +667,7 @@ trait FrontEndMethods
     }
 
     /**
-     * Switch control for front-end page filters.
+     * Switch control for front-end page filters (currently used only by the IP tracking page).
      *
      * @param array $Switches Names of available switches.
      * @param string $Selector Switch selector variable.

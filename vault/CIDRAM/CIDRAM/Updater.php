@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods for updating CIDRAM components (last modified: 2025.09.27).
+ * This file: Methods for updating CIDRAM components (last modified: 2025.09.28).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -551,8 +551,7 @@ trait Updater
                 'OrdRev1' => $IDOrdRev - 2,
                 'OrdRev2' => $IDOrdRev - 1,
                 'OrdRev3' => $IDOrdRev,
-                'IsOutdated' => 'no',
-                'IsUsed' => 'no'
+                'IsOutdated' => 'no'
             ];
             $IDOrd += 4;
             $IDOrdRev -= 4;

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The updates page (last modified: 2025.09.27).
+ * This file: The updates page (last modified: 2025.09.28).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -22,25 +22,9 @@ if ($this->CIDRAM['MajorVersionNotice']) {
     $this->FE['state_msg'] .= $this->CIDRAM['MajorVersionNotice'] . '<hr />';
 }
 
-$this->FE['UpdatesFormTarget'] = 'cidram-page=updates';
-$this->FE['UpdatesFormTargetControls'] = '';
-$StateModified = false;
-$this->filterSwitch(
-    ['hide-non-outdated', 'hide-unused'],
-    $_POST['FilterSelector'] ?? '',
-    $StateModified,
-    $this->FE['UpdatesFormTarget'],
-    $this->FE['UpdatesFormTargetControls']
-);
-if ($StateModified) {
-    header('Location: ?' . $this->FE['UpdatesFormTarget']);
-    die;
-}
-unset($StateModified);
-
 /** Updates page form boilerplate. */
 $this->FE['CFBoilerplate'] =
-    '<form action="?%s" method="POST" class="inline">' .
+    '<form action="?cidram-page=updates" method="POST" class="inline">' .
     '<input name="cidram-form-target" type="hidden" value="updates" />' .
     '<input name="do" type="hidden" value="%s" />';
 
@@ -117,7 +101,7 @@ if (empty($this->Alternate) && $this->FE['FormTarget'] === 'updates') {
 $this->initialPrepwork($this->L10N->getString('link.Updates'), $this->L10N->getString('tip.Updates'));
 
 $this->FE['UpdatesRow'] = $this->readFile($this->getAssetPath('_updates_row.html'));
-$this->FE['MacrosRow'] = $this->parseVars(['UpdatesFormTarget' => $this->FE['UpdatesFormTarget']], $this->readFile($this->getAssetPath('_updates_macro.html')));
+$this->FE['MacrosRow'] = $this->readFile($this->getAssetPath('_updates_macro.html'));
 
 /** Prepare installed component metadata and options for display. */
 foreach ($this->Components['Meta'] as $Key => &$this->Components['ThisComponent']) {
@@ -215,7 +199,6 @@ foreach ($this->Components['Meta'] as $Key => &$this->Components['ThisComponent'
             }
         }
     }
-    $this->Components['ThisComponent']['IsUsed'] = 'no';
     if (!empty($this->Components['ThisComponent']['Files'])) {
         $Activable = $this->isActivable($this->Components['ThisComponent']);
         $this->Components['In Use'][$Key] = $this->isInUse($this->Components['ThisComponent']);
@@ -224,7 +207,6 @@ foreach ($this->Components['Meta'] as $Key => &$this->Components['ThisComponent'
             preg_quote($this->Configuration['frontend']['theme']),
             preg_quote($this->Configuration['template_data']['theme'])
         ), $Key) || $this->Components['In Use'][$Key] !== 0) {
-            $this->Components['ThisComponent']['IsUsed'] = 'yes';
             if ($this->Components['In Use'][$Key] === -1) {
                 $this->appendToString(
                     $this->Components['ThisComponent']['StatusOptions'],
@@ -258,7 +240,6 @@ foreach ($this->Components['Meta'] as $Key => &$this->Components['ThisComponent'
                 !empty($this->Components['ThisComponent']['Provisional']) ||
                 ($this->Configuration['general']['lang_override'] && preg_match('~^l10n/~', $this->Components['ThisComponent']['Name']))
             ) {
-                $this->Components['ThisComponent']['IsUsed'] = 'yes';
                 $this->appendToString(
                     $this->Components['ThisComponent']['StatusOptions'],
                     '<hr />',
@@ -342,26 +323,26 @@ foreach ($this->Components['Meta'] as $Key => &$this->Components['ThisComponent'
         count($this->Components['RemoteMeta'][$Key]['Files']) !== 1
     ) ? '' : '<br />' . $this->L10N->getString('field.Filename') . ' ' . key($this->Components['RemoteMeta'][$Key]['Files']);
 
-    /** Finalise entry. */
-    if (
-        !($this->FE['hide-non-outdated'] && empty($this->Components['ThisComponent']['Outdated'])) &&
-        !($this->FE['hide-unused'] && empty($this->Components['ThisComponent']['Files']))
-    ) {
-        if (empty($this->Components['ThisComponent']['RowClass'])) {
-            $this->Components['ThisComponent']['RowClass'] = 'h1';
-        }
-        $this->FE['Indexes'][$Key] = sprintf(
-            "\n      <a href=\"#%s\" style=\"order:{Ord0}\" data-order-default=\"{Ord0}\" data-order-default-rev=\"{OrdRev0}\" data-order-az=\"{OrdAZ0}\" data-order-az-rev=\"{OrdAZRev0}\" data-is-outdated=\"%s\" data-is-used=\"%s\">%s</a>",
-            $this->Components['ThisComponent']['ID'],
-            $this->Components['ThisComponent']['IsOutdated'],
-            $this->Components['ThisComponent']['IsUsed'],
-            $this->Components['ThisComponent']['Name']
-        );
-        $this->Components['Out'][$Key] = $this->parseVars(
-            $this->arrayFlatten($this->Components['ThisComponent']) + $this->arrayFlatten($this->FE),
-            $this->FE['UpdatesRow']
-        );
+    if (empty($this->Components['ThisComponent']['RowClass'])) {
+        $this->Components['ThisComponent']['RowClass'] = 'h1';
     }
+
+    /** Build indexes. */
+    $this->FE['Indexes'][$Key] = sprintf(
+        "\n      <a href=\"#%s\" style=\"order:{Ord0}\" data-order-default=\"{Ord0}\" data-order-default-rev=\"{OrdRev0}\" data-order-az=\"{OrdAZ0}\" data-order-az-rev=\"{OrdAZRev0}\" data-is-outdated=\"%s\" data-is-installed=\"%s\">%s</a>",
+        $this->Components['ThisComponent']['ID'],
+        $this->Components['ThisComponent']['IsOutdated'],
+        isset($this->Components['Installed Versions'][$this->Components['ThisComponent']['ID']]) ? 'yes' : 'no',
+        $this->Components['ThisComponent']['Name']
+    );
+
+    $this->Components['ThisComponent']['IsInstalled'] = isset($this->Components['Installed Versions'][$Key]) ? 'yes' : 'no';
+
+    /** Parse entry. */
+    $this->Components['Out'][$Key] = $this->parseVars(
+        $this->arrayFlatten($this->Components['ThisComponent']) + $this->arrayFlatten($this->FE),
+        $this->FE['UpdatesRow']
+    );
 }
 
 /** Update request via Cronable. */
@@ -493,18 +474,20 @@ foreach ($this->Components['RemoteMeta'] as $Key => &$this->Components['ThisComp
         count($this->Components['ThisComponent']['Files']) !== 1
     ) ? '' : '<br />' . $this->L10N->getString('field.Filename') . ' ' . key($this->Components['ThisComponent']['Files']);
 
-    /** Finalise entry. */
-    if (!$this->FE['hide-unused']) {
-        $this->FE['Indexes'][$Key] = sprintf(
-            "\n      <a href=\"#%s\" style=\"order:{Ord0}\" data-order-default=\"{Ord0}\" data-order-default-rev=\"{OrdRev0}\" data-order-az=\"{OrdAZ0}\" data-order-az-rev=\"{OrdAZRev0}\" data-is-outdated=\"no\" data-is-used=\"no\">%s</a>",
-            $this->Components['ThisComponent']['ID'],
-            $this->Components['ThisComponent']['Name']
-        );
-        $this->Components['Out'][$Key] = $this->parseVars(
-            $this->arrayFlatten($this->Components['ThisComponent']) + $this->arrayFlatten($this->FE),
-            $this->FE['UpdatesRow']
-        );
-    }
+    /** Build indexes. */
+    $this->FE['Indexes'][$Key] = sprintf(
+        "\n      <a href=\"#%s\" style=\"order:{Ord0}\" data-order-default=\"{Ord0}\" data-order-default-rev=\"{OrdRev0}\" data-order-az=\"{OrdAZ0}\" data-order-az-rev=\"{OrdAZRev0}\" data-is-outdated=\"no\" data-is-installed=\"no\">%s</a>",
+        $this->Components['ThisComponent']['ID'],
+        $this->Components['ThisComponent']['Name']
+    );
+
+    $this->Components['ThisComponent']['IsInstalled'] = isset($this->Components['Installed Versions'][$Key]) ? 'yes' : 'no';
+
+    /** Parse entry. */
+    $this->Components['Out'][$Key] = $this->parseVars(
+        $this->arrayFlatten($this->Components['ThisComponent']) + $this->arrayFlatten($this->FE),
+        $this->FE['UpdatesRow']
+    );
 }
 
 /** Finalise output and unset working data. */
@@ -515,18 +498,11 @@ $this->Components['CountOutdated'] = count($this->Components['Outdated']);
 $this->Components['CountOutdatedSignatureFiles'] = count($this->Components['OutdatedSignatureFiles']);
 $this->Components['CountVerify'] = count($this->Components['Verify']);
 $this->Components['CountRepairable'] = count($this->Components['Repairable']);
-
-/** Preparing the update all, verify all, repair all buttons. */
-$this->FE['UpdateAll'] = (
-    $this->Components['CountOutdated'] ||
-    $this->Components['CountOutdatedSignatureFiles'] ||
-    $this->Components['CountVerify'] ||
-    $this->Components['CountRepairable']
-) ? '<hr />' : '';
+$this->FE['UpdateAll'] = '';
 
 /** Instructions to update all signature files (but not necessarily everything). */
 if ($this->Components['CountOutdatedSignatureFiles']) {
-    $this->FE['UpdateAll'] .= sprintf($this->FE['CFBoilerplate'], $this->FE['UpdatesFormTarget'], 'update-component');
+    $this->FE['UpdateAll'] .= sprintf($this->FE['CFBoilerplate'], 'update-component');
     foreach ($this->Components['OutdatedSignatureFiles'] as $this->Components['ThisOutdated']) {
         $this->FE['UpdateAll'] .= '<input name="ID[]" type="hidden" value="' . $this->Components['ThisOutdated'] . '" />';
     }
@@ -535,7 +511,7 @@ if ($this->Components['CountOutdatedSignatureFiles']) {
 
 /** Instructions to update everything at once. */
 if ($this->Components['CountOutdated'] && $this->Components['CountOutdated'] !== $this->Components['CountOutdatedSignatureFiles']) {
-    $this->FE['UpdateAll'] .= sprintf($this->FE['CFBoilerplate'], $this->FE['UpdatesFormTarget'], 'update-component');
+    $this->FE['UpdateAll'] .= sprintf($this->FE['CFBoilerplate'], 'update-component');
     foreach ($this->Components['Outdated'] as $this->Components['ThisOutdated']) {
         $this->FE['UpdateAll'] .= '<input name="ID[]" type="hidden" value="' . $this->Components['ThisOutdated'] . '" />';
     }
@@ -544,7 +520,7 @@ if ($this->Components['CountOutdated'] && $this->Components['CountOutdated'] !==
 
 /** Instructions to repair everything at once. */
 if ($this->Components['CountRepairable']) {
-    $this->FE['UpdateAll'] .= sprintf($this->FE['CFBoilerplate'], $this->FE['UpdatesFormTarget'], 'repair-component');
+    $this->FE['UpdateAll'] .= sprintf($this->FE['CFBoilerplate'], 'repair-component');
     foreach ($this->Components['Repairable'] as $this->Components['ThisRepairable']) {
         $this->FE['UpdateAll'] .= '<input name="ID[]" type="hidden" value="' . $this->Components['ThisRepairable'] . '" />';
     }
@@ -553,7 +529,7 @@ if ($this->Components['CountRepairable']) {
 
 /** Instructions to verify everything at once. */
 if ($this->Components['CountVerify']) {
-    $this->FE['UpdateAll'] .= sprintf($this->FE['CFBoilerplate'], $this->FE['UpdatesFormTarget'], 'verify-component');
+    $this->FE['UpdateAll'] .= sprintf($this->FE['CFBoilerplate'], 'verify-component');
     foreach ($this->Components['Verify'] as $this->Components['ThisVerify']) {
         $this->FE['UpdateAll'] .= '<input name="ID[]" type="hidden" value="' . $this->Components['ThisVerify'] . '" />';
     }

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The logs page (last modified: 2025.09.26).
+ * This file: The logs page (last modified: 2025.09.28).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -390,9 +390,9 @@ $this->FE['TextModeSwitchLink'] = sprintf(
     $this->FE['TextModeLinks'] === 'tally' ? ' selected' : '',
     $this->L10N->getString('label.Tally'),
     $this->FE['SortOrder'] === 'ascending' ? ' checked' : '',
-    $this->L10N->getString('switch-descending-order-set-false'),
+    $this->L10N->getString('label.Sort in ascending order'),
     $this->FE['SortOrder'] === 'descending' ? ' checked' : '',
-    $this->L10N->getString('switch-descending-order-set-true'),
+    $this->L10N->getString('label.Sort in descending order'),
     $this->FE['Remember'] ? ' checked' : '',
     $this->L10N->getString('label.Remember'),
     isset($this->CIDRAM['QueryVars']['logfile'], $this->FE['LogFiles']['Files'][$this->CIDRAM['QueryVars']['logfile']]) ? $this->CIDRAM['QueryVars']['logfile'] : '',

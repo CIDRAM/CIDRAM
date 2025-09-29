@@ -23,7 +23,7 @@
   <div class="start">{DateTime}<!-- Logged In Begin --> – <span class="clockBlock"><span class="clockBlock clockHours auxbl" id="clockhours"></span><span class="clockBlock clockMinutes auxrd" id="clockminutes"></span><span class="clockBlock clockSeconds auxgn" id="clockseconds"></span><span class="clockBlock clockFace auxbl"></span></span> <span id="clockface"></span><script type="text/javascript">updateClock();setInterval(updateClock, 1000);</script><!-- Logged In End --></div>
   <div class="end txtBl">{GeneratedBy}</div>
 </div>
-</div><br /></div><!-- Logged In Begin --><script type="text/javascript">document.querySelectorAll('div[role="button"][onclick]:not(div[onkeydown]),span[role="button"][onclick]:not(span[onkeydown])').forEach((x)=>{x.addEventListener('keydown',(e=>{event.preventDefault();if(e.keyCode===13||e.keyCode===32){x.onclick(e)}}))})</script><!-- Logged In End -->
+</div><br /></div><!-- Logged In Begin --><script type="text/javascript">document.querySelectorAll('div[role="button"][onclick]:not(div[onkeydown]),span[role="button"][onclick]:not(span[onkeydown])').forEach((x)=>{x.addEventListener('keydown',(e=>{if(e.keyCode===13||e.keyCode===32){event.preventDefault();x.onclick(e)}}))})</script><!-- Logged In End -->
 
 {CustomFooter}</body>
 

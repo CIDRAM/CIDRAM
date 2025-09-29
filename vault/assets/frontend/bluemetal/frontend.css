@@ -263,7 +263,7 @@ input[disabled],input[disabled]+label{cursor:not-allowed}
 .origin.in{background:linear-gradient(#f80 30%,#080 70%);color:#fff}
 .origin.pk{background:#060;color:#fff}
 input[type=checkbox],input[type=radio]{accent-color:#89b}
-.clockBlock{display:inline-block;width:16px;height:16px;transition:none}
+.clockBlock{user-select:none;display:inline-block;width:16px;height:16px;transition:none}
 .clockHours{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:clockhours.svg}{/Base64Encode});position:relative;inset:0 0}
 .clockMinutes{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:clockminutes.svg}{/Base64Encode});position:relative;inset:0 -16px}
 .clockSeconds{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:clockseconds.svg}{/Base64Encode});position:relative;inset:0 -32px}
@@ -291,7 +291,7 @@ textarea#logsTA{margin-top:0;margin-bottom:0;margin-{FE_Align}:0;margin-{FE_Alig
 .gridboxitem,.gridboxcheckcell,.gridboxstretch,.va{align-content:center}
 .louter{width:min(150px,23vw)}
 input[type=submit].linner,input[type=number].linner,select.linner{width:100%}
-.navicon.pointer{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:pointerhead.svg}{/Base64Encode}),url(data:image/svg+xml;base64,{Base64Encode}{Asset:pointertail.svg}{/Base64Encode});transition:all .9s cubic-bezier(0,0,.1,1)}
+.navicon.pointer{user-select:none;background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:pointerhead.svg}{/Base64Encode}),url(data:image/svg+xml;base64,{Base64Encode}{Asset:pointertail.svg}{/Base64Encode});transition:all .9s cubic-bezier(0,0,.1,1)}
 .navicon.pointer.up{background-position:0 -3px,0 3px}
 .navicon.pointer.down{background-position:0 3px,0 -3px}
 .navicon.pointer.neutral{background-position:0 0,0 0}
@@ -304,7 +304,7 @@ input[type=submit].linner,input[type=number].linner,select.linner{width:100%}
 @media only all and (max-width:1776px) {
   .duo.fmctrl{grid-template-columns:100%}
 }
-.navicon.dspCtrl{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:pointerhead.svg}{/Base64Encode}),url(data:image/svg+xml;base64,{Base64Encode}{Asset:pointerhead.svg}{/Base64Encode}),url(data:image/svg+xml;base64,{Base64Encode}{Asset:pointerhead.svg}{/Base64Encode});transition:all .9s cubic-bezier(0,0,.1,1)}
+.navicon.dspCtrl{user-select:none;background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:pointerhead.svg}{/Base64Encode}),url(data:image/svg+xml;base64,{Base64Encode}{Asset:pointerhead.svg}{/Base64Encode}),url(data:image/svg+xml;base64,{Base64Encode}{Asset:pointerhead.svg}{/Base64Encode});transition:all .9s cubic-bezier(0,0,.1,1)}
 .navicon.dspCtrl.stateA{background-position:-4.5px -5px,0 -5px,4.5px -5px;background-size:16px 24px,16px 24px,16px 24px}
 .navicon.dspCtrl.stateR{background-position:-4.5px 0,0 0,4.5px -5px;background-size:16px 14px,16px 14px,16px 24px}
 .navicon.dspCtrl.stateM{background-position:-4.5px 0,0 -5px,4.5px 0;background-size:16px 14px,16px 24px,16px 14px}

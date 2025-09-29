@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The logs page (last modified: 2025.09.28).
+ * This file: The logs page (last modified: 2025.09.29).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -376,8 +376,8 @@ $this->FE['TextModeSwitchLink'] = sprintf(
     '</div><div class="h2 s va"><div class="flexrow" style="gap:32px">' .
     '<div class="va louter"><label for="perpage">%18$s</label><br /><input type="number" name="perpage" id="perpage" value="%19$d" class="linner" /></div>' .
     '<div class="va"><input type="checkbox" name="paginate" class="auto" id="paginate"%16$s /><label for="paginate">%17$s</label></div>' .
-    '</div></div><div class="h2f s va">' .
-    '<label for="searchfor">%20$s</label><br /><span class="flexrow"><input type="text" class="auto flexin" id="searchfor" value="%21$s" placeholder="%22$s" /><input type="hidden" name="search" id="searchfield" value="" /></span>' .
+    '</div></div><div class="h2f s va" role="search">' .
+    '<label for="searchfor">%20$s</label><br /><span class="flexrow"><input type="text" class="auto flexin" id="searchfor" value="%21$s" placeholder="%22$s" role="searchbox" /><input type="hidden" name="search" id="searchfield" value="" /></span>' .
     '</div><div class="h2 s va"><div class="flexrow" style="gap:32px">' .
     '<div class="va louter"><input type="hidden" name="logfile" value="%14$s" /><input type="submit" value="%15$s" class="linner" /></div>' .
     '<div class="va"><input type="checkbox" name="remember" class="auto" id="remember"%12$s /><label for="remember">%13$s</label></div>' .

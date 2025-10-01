@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2025.09.27).
+ * This file: General methods used by the front-end (last modified: 2025.09.30).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -53,6 +53,7 @@ trait FrontEndMethods
      */
     private function fileManagerRecursiveList(string $Base, bool $Recursive = true): array
     {
+        $this->FE['CanShowRecursive'] = $Recursive ? -1 : 0;
         if (!file_exists($Base) || !is_dir($Base) || !is_readable($Base)) {
             if ($this->FE['state_msg'] !== '') {
                 $this->FE['state_msg'] .= '<br />';
@@ -75,7 +76,8 @@ trait FrontEndMethods
             'Ord2' => 2,
             'Ord3' => 3,
             'FS' => -2,
-            'mtime' => -2
+            'mtime' => -2,
+            'dynClass' => ''
         ]];
         $Ord = 4;
         $Dirs = [];
@@ -91,11 +93,13 @@ trait FrontEndMethods
         if (isset($this->FE) && !isset($this->FE['basepathList'])) {
             $this->FE['basepathList'] = '';
         }
+        $FailToNonRecursive = false;
         foreach ($List as $Item => $List) {
             /** Guard against timeouts due to huge directories. */
             if ((time() - $StartTime) > 2) {
                 if ($Recursive) {
-                    return $this->fileManagerRecursiveList($Base, false);
+                    $FailToNonRecursive = true;
+                    break;
                 }
                 return $Arr;
             }
@@ -124,6 +128,12 @@ trait FrontEndMethods
                 'FS' => -1,
                 'mtime' => -2
             ];
+            if (strpos($Arr[$Key]['Filename'], '/') === false) {
+                $Arr[$Key]['dynClass'] = '';
+            } else {
+                $this->FE['CanShowRecursive'] = 1;
+                $Arr[$Key]['dynClass'] = ' isSub';
+            }
             $Ord += 4;
             $Item = $this->canonical($Item);
             $ThisDir = dirname($Item);
@@ -414,6 +424,10 @@ trait FrontEndMethods
             } else {
                 $Arr[$Key]['Component'] = $Component . $this->L10N->getString('field.Unknown');
             }
+        }
+        if ($FailToNonRecursive) {
+            unset($Item, $List);
+            return $this->fileManagerRecursiveList($Base, false);
         }
         foreach ($Arr as $Key => &$Value) {
             $Ord -= 4;

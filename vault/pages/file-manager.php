@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The file manager page (last modified: 2025.09.27).
+ * This file: The file manager page (last modified: 2025.09.30).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -179,6 +179,28 @@ if (!$this->FE['ASYNC']) {
 
     /** Fetch files data. */
     $Files = $this->fileManagerRecursiveList($this->FE['basepath']);
+    
+    /** Whether to display recursive display controls. */
+    if ($this->FE['CanShowRecursive'] === 1) {
+        $this->FE['Recursive Display Controls'] = sprintf(
+            '<span id="subdirsCtrl" class="navicon switchCtrl swOp hoverglow" onclick="javascript:y=document.getElementById(\'subdirsCtrl\'),y.classList.contains(\'swOp\')?' .
+            '(y.classList.add(\'swCl\'),y.classList.remove(\'swOp\'),qOrd=document.querySelectorAll(\'div.isSub\'),qOrd.forEach((x)=>{x.classList.add(\'sHide\')}),document.getElementById(\'subdirsState\').textContent=\'%1$s\'):' .
+            '(y.classList.add(\'swOp\'),y.classList.remove(\'swCl\'),qOrd=document.querySelectorAll(\'div.isSub\'),qOrd.forEach((x)=>{x.classList.remove(\'sHide\')}),document.getElementById(\'subdirsState\').textContent=\'%2$s\')"' .
+            ' aria-labelledby="subdirsState" tabindex="0" role="button"></span> <span id="subdirsState">%2$s</span>',
+            $this->L10N->getString('label.Content of subdirectories is hidden'),
+            $this->L10N->getString('label.Content of subdirectories is shown')
+        );
+    } elseif ($this->FE['CanShowRecursive'] === -1) {
+        $this->FE['Recursive Display Controls'] = sprintf(
+            '<span class="bckpicon"><span id="subdirsCtrl" class="navicon switchCtrl swOp hoverglow" aria-labelledby="subdirsState" role="button"></span><span class="bckpicon auxrd disabledoverlay"></span></span> <span id="subdirsState">%s</span>',
+            $this->L10N->getString('label.Content of subdirectories is shown')
+        );
+    } else {
+        $this->FE['Recursive Display Controls'] = sprintf(
+            '<span class="bckpicon"><span id="subdirsCtrl" class="navicon switchCtrl swCl hoverglow" aria-labelledby="subdirsState" role="button"></span><span class="bckpicon auxrd disabledoverlay"></span></span> <span id="subdirsState">%s</span>',
+            $this->L10N->getString('label.Content of subdirectories is hidden')
+        );
+    }
 
     /** Parse output. */
     $this->FE['FE_Content'] = $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_files.html')), true);

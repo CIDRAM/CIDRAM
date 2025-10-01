@@ -312,8 +312,10 @@ input[type=submit].linner,input[type=number].linner,select.linner{width:100%}
 @media only all and (max-width:1776px) {
   .duo.fmctrl{grid-template-columns:100%}
 }
-.navicon.dspCtrl{user-select:none;background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:pointerhead.svg}{/Base64Encode}),url(data:image/svg+xml;base64,{Base64Encode}{Asset:pointerhead.svg}{/Base64Encode}),url(data:image/svg+xml;base64,{Base64Encode}{Asset:pointerhead.svg}{/Base64Encode});transition:all .9s cubic-bezier(0,0,.1,1)}
+.navicon.dspCtrl,.navicon.switchCtrl{user-select:none;background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:pointerhead.svg}{/Base64Encode}),url(data:image/svg+xml;base64,{Base64Encode}{Asset:pointerhead.svg}{/Base64Encode}),url(data:image/svg+xml;base64,{Base64Encode}{Asset:pointerhead.svg}{/Base64Encode});transition:all .9s cubic-bezier(0,0,.1,1)}
 .navicon.dspCtrl.stateA{background-position:-4.5px -5px,0 -5px,4.5px -5px;background-size:16px 24px,16px 24px,16px 24px}
 .navicon.dspCtrl.stateR{background-position:-4.5px 0,0 0,4.5px -5px;background-size:16px 14px,16px 14px,16px 24px}
 .navicon.dspCtrl.stateM{background-position:-4.5px 0,0 -5px,4.5px 0;background-size:16px 14px,16px 24px,16px 14px}
 .navicon.dspCtrl.stateL{background-position:-4.5px -5px,0 0,4.5px 0;background-size:16px 24px,16px 14px,16px 14px}
+.navicon.switchCtrl.swOp{background-position:-4.5px -5px,0 -1px,4.5px 3px;background-size:16px 24px,16px 16px,16px 8px}
+.navicon.switchCtrl.swCl{background-position:-4.5px -5px,-4.5px -1px,-4.5px 3px;background-size:16px 24px,16px 16px,16px 8px}

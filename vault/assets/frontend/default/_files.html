@@ -6,7 +6,7 @@
       <div class="s flexstretch" id="stateMsg">{state_msg}</div>
     </div>
     <div class="duo h1 fmctrl">
-      <div>
+      <div class="va">
         <form id="fmBasePath" action="?cidram-page=file-manager" method="GET">
           <input name="cidram-page" type="hidden" value="file-manager" />
           <datalist id="basepathList">{basepathList}
@@ -14,16 +14,21 @@
           <span class="s flexrow"><input list="basepathList" name="basepath" type="text" value="{basepath}" class="flexin" placeholder="{tip.Specify a directory path, or leave blank to use the CIDRAM base path}" /><input type="submit" value="{field.OK}" class="auto" /></span>
         </form>
       </div>
-      <div class="reverse">
-        <form enctype="multipart/form-data" action="?cidram-page=file-manager{basepathActionAttach}" method="POST">
-          <input name="do_action" type="hidden" value="upload-file" />
-          <input name="upload-file" type="file" />
-          <input type="submit" value="{field.Upload new file}" />
-        </form>
-        <form id="fmControl" action="?cidram-page=file-manager{basepathActionAttach}" method="POST" style="display:none">
-          <input id="fmControlDoAction" name="do_action" type="hidden" value="" />
-          <input id="fmControlFilename" name="filename" type="hidden" value="" />
-        </form>
+      <div class="duo">
+        <div class="s va">
+          {Recursive Display Controls}
+        </div>
+        <div class="va reverse">
+          <form enctype="multipart/form-data" action="?cidram-page=file-manager{basepathActionAttach}" method="POST">
+            <input name="do_action" type="hidden" value="upload-file" />
+            <input name="upload-file" type="file" />
+            <input type="submit" value="{field.Upload new file}" />
+          </form>
+          <form id="fmControl" action="?cidram-page=file-manager{basepathActionAttach}" method="POST" style="display:none">
+            <input id="fmControlDoAction" name="do_action" type="hidden" value="" />
+            <input id="fmControlFilename" name="filename" type="hidden" value="" />
+          </form>
+        </div>
       </div>
     </div>
     <div class="quad">

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2025.09.03).
+ * This file: General methods used by the front-end (last modified: 2025.10.03).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -55,13 +55,13 @@ trait FrontEndMethods
         $Arr = [];
         $Key = -1;
         $Offset = strlen($Base);
-        $List = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($Base, \RecursiveDirectoryIterator::FOLLOW_SYMLINKS), \RecursiveIteratorIterator::SELF_FIRST);
+        $List = new \LimitIterator(new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator(
+            $Base,
+            \RecursiveDirectoryIterator::FOLLOW_SYMLINKS | \RecursiveDirectoryIterator::SKIP_DOTS | \RecursiveDirectoryIterator::UNIX_PATHS
+        ), \RecursiveIteratorIterator::SELF_FIRST), 0, 1000);
         foreach ($List as $Item => $List) {
             $Key++;
             $ThisName = substr($Item, $Offset);
-            if (preg_match('~^(?:/\.\.|./\.|\.{3})$~', str_replace('\\', '/', substr($Item, -3)))) {
-                continue;
-            }
             $Arr[$Key] = ['Filename' => $this->canonical($ThisName), 'CanEdit' => false];
             if (is_dir($Item) && !is_file($Item)) {
                 $Arr[$Key]['Directory'] = true;
@@ -173,11 +173,11 @@ trait FrontEndMethods
         $Arr = [];
         $Offset = strlen($Base);
         if ($Rescursive) {
-            $List = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($Base, \RecursiveDirectoryIterator::FOLLOW_SYMLINKS), \RecursiveIteratorIterator::SELF_FIRST);
+            $List = new \LimitIterator(new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator(
+                $Base,
+                \RecursiveDirectoryIterator::FOLLOW_SYMLINKS | \RecursiveDirectoryIterator::SKIP_DOTS | \RecursiveDirectoryIterator::UNIX_PATHS
+            ), \RecursiveIteratorIterator::SELF_FIRST), 0, 1000);
             foreach ($List as $Item => $List) {
-                if (preg_match('~^(?:/\.\.|./\.|\.{3})$~', str_replace('\\', '/', substr($Item, -3)))) {
-                    continue;
-                }
                 $Arr[substr($Item, $Offset)] = true;
             }
         } else {

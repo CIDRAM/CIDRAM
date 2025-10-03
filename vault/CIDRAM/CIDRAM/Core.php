@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2025.09.06).
+ * This file: The CIDRAM core (last modified: 2025.10.03).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -2033,7 +2033,7 @@ class Core
         $Pattern = $this->buildLogPattern($Pattern);
         $Arr = [];
         $Offset = strlen($this->Vault);
-        $List = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($this->Vault), \RecursiveIteratorIterator::SELF_FIRST);
+        $List = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($this->Vault, \RecursiveDirectoryIterator::SKIP_DOTS), \RecursiveIteratorIterator::SELF_FIRST);
         foreach ($List as $Item => $List) {
             $ItemFixed = str_replace('\\', '/', substr($Item, $Offset));
             if ($ItemFixed && preg_match($Pattern, $ItemFixed) && is_readable($Item)) {

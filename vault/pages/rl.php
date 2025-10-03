@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The rate limiting page (last modified: 2025.09.09).
+ * This file: The rate limiting page (last modified: 2025.10.03).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -38,7 +38,10 @@ if (isset($this->Stages['RL:Enable']) && ($this->Configuration['rate_limiting'][
     } else {
         /** Get all entries for when using a flatfile cache strategy. */
         $Entries = [];
-        foreach (new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($this->Vault, \RecursiveDirectoryIterator::FOLLOW_SYMLINKS), \RecursiveIteratorIterator::SELF_FIRST) as $Item => $AllFiles) {
+        foreach (new \LimitIterator(new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator(
+            $this->Vault,
+            \RecursiveDirectoryIterator::FOLLOW_SYMLINKS | \RecursiveDirectoryIterator::SKIP_DOTS | \RecursiveDirectoryIterator::UNIX_PATHS
+        ), \RecursiveIteratorIterator::SELF_FIRST), 0, 1000) as $Item => $AllFiles) {
             if (preg_match('~rl\.dat$~i', $Item)) {
                 $Entries['rl'] = $this->readFile($Item);
             } elseif (preg_match('~rl(?:-(.+))?\.dat$~i', $Item, $Matched)) {

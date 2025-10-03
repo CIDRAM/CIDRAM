@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2025.09.30).
+ * This file: General methods used by the front-end (last modified: 2025.10.03).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -86,7 +86,14 @@ trait FrontEndMethods
         $Offset = strlen($Base);
         $VLen = strlen($this->Vault);
         if ($Recursive) {
-            $List = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($Base, \RecursiveDirectoryIterator::FOLLOW_SYMLINKS), \RecursiveIteratorIterator::SELF_FIRST);
+            $List = new \LimitIterator(new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator(
+                $Base,
+                \RecursiveDirectoryIterator::FOLLOW_SYMLINKS | \RecursiveDirectoryIterator::SKIP_DOTS | \RecursiveDirectoryIterator::UNIX_PATHS
+            ), \RecursiveIteratorIterator::SELF_FIRST), 0, 1000);
+            if (iterator_count($List) >= 1000) {
+                unset($List);
+                return $this->fileManagerRecursiveList($Base, false);
+            }
         } else {
             $List = new \DirectoryIterator($Base);
         }
@@ -96,7 +103,7 @@ trait FrontEndMethods
         $FailToNonRecursive = false;
         foreach ($List as $Item => $List) {
             /** Guard against timeouts due to huge directories. */
-            if ((time() - $StartTime) > 2) {
+            if ((time() - $StartTime) > 3) {
                 if ($Recursive) {
                     $FailToNonRecursive = true;
                     break;
@@ -494,11 +501,11 @@ trait FrontEndMethods
         $Arr = [];
         $Offset = strlen($Base);
         if ($Rescursive) {
-            $List = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($Base, \RecursiveDirectoryIterator::FOLLOW_SYMLINKS), \RecursiveIteratorIterator::SELF_FIRST);
+            $List = new \LimitIterator(new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator(
+                $Base,
+                \RecursiveDirectoryIterator::FOLLOW_SYMLINKS | \RecursiveDirectoryIterator::SKIP_DOTS | \RecursiveDirectoryIterator::UNIX_PATHS
+            ), \RecursiveIteratorIterator::SELF_FIRST), 0, 1000);
             foreach ($List as $Item => $List) {
-                if (preg_match('~^(?:/\.\.|./\.|\.{3})$~', str_replace('\\', '/', substr($Item, -3)))) {
-                    continue;
-                }
                 $Arr[substr($Item, $Offset)] = true;
             }
         } else {

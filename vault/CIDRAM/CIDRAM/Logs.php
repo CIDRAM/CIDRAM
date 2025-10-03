@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used by the logs page (last modified: 2025.09.27).
+ * This file: Methods used by the logs page (last modified: 2025.10.03).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -26,7 +26,10 @@ trait Logs
     private function logsRecursiveList(string $Base, string $Order = 'ascending'): array
     {
         $Arr = [];
-        $List = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($Base), \RecursiveIteratorIterator::SELF_FIRST);
+        $List = new \LimitIterator(new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator(
+            $Base,
+            \RecursiveDirectoryIterator::FOLLOW_SYMLINKS | \RecursiveDirectoryIterator::SKIP_DOTS | \RecursiveDirectoryIterator::UNIX_PATHS
+        ), \RecursiveIteratorIterator::SELF_FIRST), 0, 1000);
         foreach ($List as $Item => $List) {
             $ThisName = str_replace('\\', '/', substr($Item, strlen($Base)));
             $Normalised = $ThisName;

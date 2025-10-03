@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The file manager page (last modified: 2025.09.30).
+ * This file: The file manager page (last modified: 2025.10.01).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -179,7 +179,7 @@ if (!$this->FE['ASYNC']) {
 
     /** Fetch files data. */
     $Files = $this->fileManagerRecursiveList($this->FE['basepath']);
-    
+
     /** Whether to display recursive display controls. */
     if ($this->FE['CanShowRecursive'] === 1) {
         $this->FE['Recursive Display Controls'] = sprintf(

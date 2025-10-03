@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2025.09.08).
+ * This file: Front-end handler (last modified: 2025.10.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -3483,7 +3483,10 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'rl' && $CIDRAM['FE']['Permissio
         } else {
             /** Get all entries for when using a flatfile cache strategy. */
             $CIDRAM['Entries'] = [];
-            foreach (new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($CIDRAM['Vault'], \RecursiveDirectoryIterator::FOLLOW_SYMLINKS), \RecursiveIteratorIterator::SELF_FIRST) as $CIDRAM['Item'] => $CIDRAM['AllFiles']) {
+            foreach (new \LimitIterator(new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator(
+                $CIDRAM['Vault'],
+                \RecursiveDirectoryIterator::FOLLOW_SYMLINKS | \RecursiveDirectoryIterator::SKIP_DOTS | \RecursiveDirectoryIterator::UNIX_PATHS
+            ), \RecursiveIteratorIterator::SELF_FIRST), 0, 1000) as $CIDRAM['Item'] => $CIDRAM['AllFiles']) {
                 if (preg_match('~rl\.dat$~i', $CIDRAM['Item'])) {
                     $CIDRAM['Entries']['rl'] = $CIDRAM['ReadFile']($CIDRAM['Item']);
                 } elseif (preg_match('~rl(?:-(.+))?\.dat$~i', $CIDRAM['Item'], $CIDRAM['Matched'])) {

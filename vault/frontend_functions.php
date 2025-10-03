@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2025.09.28).
+ * This file: Front-end functions file (last modified: 2025.10.03).
  */
 
 /**
@@ -338,13 +338,13 @@ $CIDRAM['FileManager-RecursiveList'] = function ($Base) use (&$CIDRAM) {
     $Arr = [];
     $Key = -1;
     $Offset = strlen($Base);
-    $List = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($Base, \RecursiveDirectoryIterator::FOLLOW_SYMLINKS), \RecursiveIteratorIterator::SELF_FIRST);
+    $List = new \LimitIterator(new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator(
+        $Base,
+        \RecursiveDirectoryIterator::FOLLOW_SYMLINKS | \RecursiveDirectoryIterator::SKIP_DOTS | \RecursiveDirectoryIterator::UNIX_PATHS
+    ), \RecursiveIteratorIterator::SELF_FIRST), 0, 1000);
     foreach ($List as $Item => $List) {
         $Key++;
         $ThisName = substr($Item, $Offset);
-        if (preg_match('~^(?:/\.\.|./\.|\.{3})$~', str_replace('\\', '/', substr($Item, -3)))) {
-            continue;
-        }
         $Arr[$Key] = ['Filename' => $ThisName, 'CanEdit' => false];
         if (is_dir($Item) && !is_file($Item)) {
             $Arr[$Key]['Directory'] = true;
@@ -507,7 +507,10 @@ $CIDRAM['FileManager-PathSecurityCheck'] = function ($Path) {
  */
 $CIDRAM['Logs-RecursiveList'] = function ($Base, $Order = 'ascending') use (&$CIDRAM) {
     $Arr = [];
-    $List = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($Base, \RecursiveDirectoryIterator::FOLLOW_SYMLINKS), \RecursiveIteratorIterator::SELF_FIRST);
+    $List = new \LimitIterator(new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator(
+        $Base,
+        \RecursiveDirectoryIterator::FOLLOW_SYMLINKS | \RecursiveDirectoryIterator::SKIP_DOTS | \RecursiveDirectoryIterator::UNIX_PATHS
+    ), \RecursiveIteratorIterator::SELF_FIRST), 0, 1000);
     foreach ($List as $Item => $List) {
         $ThisName = str_replace('\\', '/', substr($Item, strlen($Base)));
         $Normalised = $ThisName;

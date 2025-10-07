@@ -498,4 +498,6 @@
 - The search parameter at the front-end logs page can now be entered manually.
 - Added support for wildcards to the logs page search parameter.
 - Server-side ordering mechanism at the updates page (sort by name, by ID, ascending, descending, etc) replaced by client-side mechanism (#624).
+- Optimised some iterators.
+- Added support for NO_COLOR.
 - *Plus all the regular signature updates.*

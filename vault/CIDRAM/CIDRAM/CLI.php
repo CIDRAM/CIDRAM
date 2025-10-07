@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CIDRAM CLI mode (last modified: 2025.08.22).
+ * This file: CIDRAM CLI mode (last modified: 2025.10.07).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -30,6 +30,7 @@ trait CLI
 
         $ML = false;
         $Chain = '';
+        $this->NoColor = !empty(getenv('NO_COLOR'));
 
         /** Load CIDRAM front-end L10N data. */
         $this->loadL10N($this->Vault . 'l10n' . DIRECTORY_SEPARATOR . 'frontend' . DIRECTORY_SEPARATOR);
@@ -44,21 +45,21 @@ trait CLI
 
         /** Show basic information. */
         echo sprintf(
-            "\r\033[0;41m%s\033[0m\n\n\033[0;33m%s\n\033[0;92m>>\033[0m test xxx.xxx.xxx.xxx\n\n" .
-            "\033[0;33m%s\n\033[0;92m>>\033[0m cidrs xxx.xxx.xxx.xxx\n\n" .
-            "\033[0;33m%s\n\033[0;92m>>\033[0m test \"xxx.xxx.xxx.xxx\n\033[0;92m>>\033[0m yyy.yyy.yyy.yyy\n" .
-            "\033[0;92m>>\033[0m 2002::1\n\033[0;92m>>\033[0m zzz.zzz.zzz.zzz\"\n\n" .
-            "\033[0;33m%s\n\033[0;92m>>\033[0m test xxx.xxx.xxx.xxx,yyy.yyy.yyy.yyy,2002::1,zzz.zzz.zzz.zzz\n\n" .
-            "\033[0;33m%s\n\033[0;92m>>\033[0m test \"aaa.aaa.aaa.aaa --no-mod\n\033[0;92m>>\033[0m bbb.bbb.bbb.bbb --no-aux\n\033[0;92m>>\033[0m ccc.ccc.ccc.ccc --no-sev --no-smv --no-ov\n" .
-            "\033[0;92m>>\033[0m ddd.ddd.ddd.ddd --no-mod --no-aux --no-sev --no-smv --no-ov\"\n\n" .
-            "\033[0;33m%s\n\033[0;92m>>\033[0m fread \"file1.dat\n\033[0;92m>>\033[0m file2.dat\n\033[0;92m>>\033[0m file3.dat\"\n\n" .
-            "\033[0;33m%s\n\033[0;92m>>\033[0m fwrite=file.dat\n\n" .
-            "\033[0;33m%s\n\033[0;92m>>\033[0m aggregate \"1.2.3.4/32\n\033[0;92m>>\033[0m 1.2.3.5/32\n\033[0;92m>>\033[0m 1.2.3.6/32\n\033[0;92m>>\033[0m 1.2.3.7/32\"\n\n" .
-            "\033[0;33m%s\n\033[0;92m>>\033[0m aggregate=netmasks \"1.2.3.4/32\n\033[0;92m>>\033[0m 1.2.3.5/32\"\n\n" .
-            "\033[0;33m%s\n\033[0;92m>>\033[0m fread>aggregate>fwrite=output.dat \"input1.dat\n\033[0;92m>>\033[0m input2.dat\n\033[0;92m>>\033[0m input3.dat\"\n\n" .
-            "\033[0;33m%s\n\033[0;92m>>\033[0m fwrite=output.dat<aggregate<fread \"input1.dat\n\033[0;92m>>\033[0m input2.dat\n\033[0;92m>>\033[0m input3.dat\"\n\n" .
-            "\033[0;33m%s\n\033[0;92m>>\033[0m fread>aggregate>fwrite=output.dat input1.dat,input2.dat,input3.dat\n\n" .
-            "\033[0;33m%s\n\033[0;92m>>\033[0m print Hello World\n\n\033[0;33m%s\n\033[0;92m>>\033[0m fread>fix>fwrite=fixed.dat broken.dat\n\n\033[0;33m%s\n\n",
+            "\r" . $this->cliColour("\033[0;41m") . '%s' . $this->cliColour("\033[0m") . "\n\n" . $this->cliColour("\033[0;33m") . "%s\n" . $this->cliColour("\033[0;92m") . '>>' . $this->cliColour("\033[0m") . " test xxx.xxx.xxx.xxx\n\n" .
+            $this->cliColour("\033[0;33m") . "%s\n" . $this->cliColour("\033[0;92m") . '>>' . $this->cliColour("\033[0m") . " cidrs xxx.xxx.xxx.xxx\n\n" .
+            $this->cliColour("\033[0;33m") . "%s\n" . $this->cliColour("\033[0;92m") . '>>' . $this->cliColour("\033[0m") . " test \"xxx.xxx.xxx.xxx\n" . $this->cliColour("\033[0;92m") . '>>' . $this->cliColour("\033[0m") . " yyy.yyy.yyy.yyy\n" .
+            $this->cliColour("\033[0;92m") . '>>' . $this->cliColour("\033[0m") . " 2002::1\n" . $this->cliColour("\033[0;92m") . '>>' . $this->cliColour("\033[0m") . " zzz.zzz.zzz.zzz\"\n\n" .
+            $this->cliColour("\033[0;33m") . "%s\n" . $this->cliColour("\033[0;92m") . '>>' . $this->cliColour("\033[0m") . " test xxx.xxx.xxx.xxx,yyy.yyy.yyy.yyy,2002::1,zzz.zzz.zzz.zzz\n\n" .
+            $this->cliColour("\033[0;33m") . "%s\n" . $this->cliColour("\033[0;92m") . '>>' . $this->cliColour("\033[0m") . " test \"aaa.aaa.aaa.aaa --no-mod\n" . $this->cliColour("\033[0;92m") . '>>' . $this->cliColour("\033[0m") . " bbb.bbb.bbb.bbb --no-aux\n" . $this->cliColour("\033[0;92m") . '>>' . $this->cliColour("\033[0m") . " ccc.ccc.ccc.ccc --no-sev --no-smv --no-ov\n" .
+            $this->cliColour("\033[0;92m") . '>>' . $this->cliColour("\033[0m") . " ddd.ddd.ddd.ddd --no-mod --no-aux --no-sev --no-smv --no-ov\"\n\n" .
+            $this->cliColour("\033[0;33m") . "%s\n" . $this->cliColour("\033[0;92m") . '>>' . $this->cliColour("\033[0m") . " fread \"file1.dat\n" . $this->cliColour("\033[0;92m") . '>>' . $this->cliColour("\033[0m") . " file2.dat\n" . $this->cliColour("\033[0;92m") . '>>' . $this->cliColour("\033[0m") . " file3.dat\"\n\n" .
+            $this->cliColour("\033[0;33m") . "%s\n" . $this->cliColour("\033[0;92m") . '>>' . $this->cliColour("\033[0m") . " fwrite=file.dat\n\n" .
+            $this->cliColour("\033[0;33m") . "%s\n" . $this->cliColour("\033[0;92m") . '>>' . $this->cliColour("\033[0m") . " aggregate \"1.2.3.4/32\n" . $this->cliColour("\033[0;92m") . '>>' . $this->cliColour("\033[0m") . " 1.2.3.5/32\n" . $this->cliColour("\033[0;92m") . '>>' . $this->cliColour("\033[0m") . " 1.2.3.6/32\n" . $this->cliColour("\033[0;92m") . '>>' . $this->cliColour("\033[0m") . " 1.2.3.7/32\"\n\n" .
+            $this->cliColour("\033[0;33m") . "%s\n" . $this->cliColour("\033[0;92m") . '>>' . $this->cliColour("\033[0m") . " aggregate=netmasks \"1.2.3.4/32\n" . $this->cliColour("\033[0;92m") . '>>' . $this->cliColour("\033[0m") . " 1.2.3.5/32\"\n\n" .
+            $this->cliColour("\033[0;33m") . "%s\n" . $this->cliColour("\033[0;92m") . '>>' . $this->cliColour("\033[0m") . " fread>aggregate>fwrite=output.dat \"input1.dat\n" . $this->cliColour("\033[0;92m") . '>>' . $this->cliColour("\033[0m") . " input2.dat\n" . $this->cliColour("\033[0;92m") . '>>' . $this->cliColour("\033[0m") . " input3.dat\"\n\n" .
+            $this->cliColour("\033[0;33m") . "%s\n" . $this->cliColour("\033[0;92m") . '>>' . $this->cliColour("\033[0m") . " fwrite=output.dat<aggregate<fread \"input1.dat\n" . $this->cliColour("\033[0;92m") . '>>' . $this->cliColour("\033[0m") . " input2.dat\n" . $this->cliColour("\033[0;92m") . '>>' . $this->cliColour("\033[0m") . " input3.dat\"\n\n" .
+            $this->cliColour("\033[0;33m") . "%s\n" . $this->cliColour("\033[0;92m") . '>>' . $this->cliColour("\033[0m") . " fread>aggregate>fwrite=output.dat input1.dat,input2.dat,input3.dat\n\n" .
+            $this->cliColour("\033[0;33m") . "%s\n" . $this->cliColour("\033[0;92m") . '>>' . $this->cliColour("\033[0m") . " print Hello World\n\n" . $this->cliColour("\033[0;33m") . "%s\n" . $this->cliColour("\033[0;92m") . '>>' . $this->cliColour("\033[0m") . " fread>fix>fwrite=fixed.dat broken.dat\n\n" . $this->cliColour("\033[0;33m") . "%s\n\n",
             $this->L10N->getString('info_cli_cidram_cli_mod'),
             $this->L10N->getString('info_cli_to_test_whethe'),
             $this->L10N->getString('info_cli_to_calculate_c'),
@@ -89,7 +90,7 @@ trait CLI
 
             /** Echo the CLI-mode prompt. */
             if (!$Chain) {
-                echo "\033[0;92m>> \033[0m";
+                echo $this->cliColour("\033[0;92m") . '>> ' . $this->cliColour("\033[0m");
             }
 
             /** Wait for user input or assume it from chaining. */
@@ -160,7 +161,7 @@ trait CLI
 
             /** Print data to the screen. */
             if ($Cmd === 'print') {
-                echo "\033[0;33m";
+                echo $this->cliColour("\033[0;33m");
                 if (!isset($Data[0]) || (count($Data) === 1 && $Data[0] === '')) {
                     echo $this->L10N->getString('response.There_s nothing to print, sorry') . "\n\n";
                     continue;
@@ -179,7 +180,7 @@ trait CLI
 
             /** Write data to a file. */
             if (substr($Cmd, 0, 7) === 'fwrite=') {
-                echo "\033[0;33m";
+                echo $this->cliColour("\033[0;33m");
                 if (!isset($Data[0]) || (count($Data) === 1 && $Data[0] === '')) {
                     echo $this->L10N->getString('response.There_s nothing to write, sorry') . "\n\n";
                     continue;
@@ -218,7 +219,7 @@ trait CLI
 
             /** Read data from files. */
             if ($Cmd === 'fread') {
-                echo "\033[0;33m";
+                echo $this->cliColour("\033[0;33m");
                 if ($Chain === '') {
                     echo $this->L10N->getString('response.Don_t know what to do with the data after reading it') . "\n\n";
                     continue;
@@ -257,7 +258,7 @@ trait CLI
 
             /** Perform IP test. */
             if ($Cmd === 'test') {
-                echo "\033[0;33m";
+                echo $this->cliColour("\033[0;33m");
                 if (!$Chain) {
                     echo $this->L10N->getString('field.IP address') . ' – ' . $this->L10N->getString('field.Blocked') . "\n===\n";
                 }
@@ -337,7 +338,7 @@ trait CLI
 
             /** Calculate CIDRs. */
             if ($Cmd === 'cidrs') {
-                echo "\033[0;33m";
+                echo $this->cliColour("\033[0;33m");
                 if (!$Chain) {
                     echo $this->L10N->getString('field.Range (First Last)') . "\n===\n";
                 }
@@ -377,7 +378,7 @@ trait CLI
 
             /** Aggregate IPs/CIDRs. */
             if ($Cmd === 'aggregate' || substr($Cmd, 0, 10) === 'aggregate=') {
-                echo "\033[0;33m" . $this->L10N->getString('link.Aggregator') . "\n===\n";
+                echo $this->cliColour("\033[0;33m") . $this->L10N->getString('link.Aggregator') . "\n===\n";
                 $this->CIDRAM['Aggregator'] = new Aggregator(substr($Cmd, 10) === 'netmasks' ? 1 : 0);
                 $this->CIDRAM['Aggregator']->Results = true;
                 $Data = implode("\n", $Data);
@@ -430,7 +431,7 @@ trait CLI
 
             /** Create analysis matrix. */
             if (class_exists('\Maikuolan\Common\Matrix') && function_exists('imagecreatetruecolor') && substr($Cmd, 0, 7) === 'matrix=') {
-                echo "\033[0;33m";
+                echo $this->cliColour("\033[0;33m");
                 if (!isset($Data[0]) || (count($Data) === 1 && $Data[0] === '')) {
                     echo $this->L10N->getString('response.There_s nothing to analyse, sorry') . "\n\n";
                     continue;
@@ -453,7 +454,7 @@ trait CLI
 
             /** Signature file fixer. */
             if ($Cmd === 'fix') {
-                echo "\033[0;33m" . $this->L10N->getString('link.Signature File Fixer') . "\n===\n";
+                echo $this->cliColour("\033[0;33m") . $this->L10N->getString('link.Signature File Fixer') . "\n===\n";
                 $Data = implode("\n", $Data);
                 $Fixer = [
                     'Aggregator' => new Aggregator(),
@@ -578,8 +579,19 @@ trait CLI
             $Chain = '';
 
             /** Let the user know that the current command isn't valid. */
-            echo "\033[0;33m" . $this->L10N->getString('response.I don_t understand that command, sorry') . "\n\n";
+            echo $this->cliColour("\033[0;33m") . $this->L10N->getString('response.I don_t understand that command, sorry') . "\n\n";
         }
         die;
+    }
+
+    /**
+     * Set CLI text colour if colours are enabled.
+     *
+     * @param string $In The colour to set.
+     * @return string The colour to set.
+     */
+    private function cliColour(string $Colour): string
+    {
+        return $this->NoColor ? '' : $Colour;
     }
 }

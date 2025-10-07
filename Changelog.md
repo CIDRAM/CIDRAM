@@ -485,4 +485,6 @@
 - [2025.09.19]: The search parameter at the front-end logs page can now be entered manually.
 - [2025.09.21]: Added a warning to the file manager's edit page for non-UTF8 bytes.
 - [2025.09.26]: Added support for wildcards to the logs page search parameter.
+- [2025.10.03]: Optimised some iterators.
+- [2025.10.07]: Added support for NO_COLOR.
 - *Plus all the regular signature updates.*

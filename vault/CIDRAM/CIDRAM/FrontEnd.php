@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2025.08.09).
+ * This file: The CIDRAM front-end (last modified: 2025.10.07).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -44,6 +44,12 @@ class FrontEnd extends Core
      * @var bool Whether we're calling CIDRAM through an alternative pathway.
      */
     private $Alternate = false;
+
+    /**
+     * @var bool Whether to use colours for CLI output.
+     * @link https://no-color.org/
+     */
+    private $NoColor = false;
 
     /**
      * @var int Lowest possible two-factor authentication code.

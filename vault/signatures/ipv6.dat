@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6.dat
 
-# Version: 2025.273.0
-# Last modified: 2025.10.01
+# Version: 2025.280.0
+# Last modified: 2025.10.08
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -1684,16 +1684,23 @@ Tag: Choopa, LLC
 # ASN 7162 ("UOL DIVEO S.A").
 # Repeated brute-force attempts and SSH hack attempts detected over the course
 # of numerous years.
-# Stop Forum Spam (SFS) listings: 11.
-# Updated: 2020.04.08 / Checked: 2024.09.10
+# Stop Forum Spam (SFS) listings: 3.
+# Updated: 2025.10.08
 
 2804:49c:13::/48 Deny Cloud
 2804:49c:31::/48 Deny Cloud
+2804:49c:3102::/48 Deny Cloud
+2804:49c:3104::/48 Deny Cloud
+2804:49c:310c::/48 Deny Cloud
+2804:49c:31ff::/48 Deny Cloud
 2804:49c:3403::/48 Deny Cloud
+2804:49c:3416::/48 Deny Cloud
 2804:49c:4203::/48 Deny Cloud
 2804:49c:4205::/48 Deny Cloud
 2804:49c:4208::/48 Deny Cloud
 2804:49c:4210::/48 Deny Cloud
+2804:49c:4215::/48 Deny Cloud
+2804:49c:4217::/48 Deny Cloud
 2804:49c:c0f1::/48 Deny Cloud
 Origin: BR
 Profile: Infrastructure/Transit;Tor endpoints here
@@ -5107,8 +5114,8 @@ Tag: Zappie Host LLC
 
 
 # ASN 197540 ("netcup GmbH").
-# Stop Forum Spam (SFS) listings: 2,962.
-# Updated: 2024.09.10
+# Stop Forum Spam (SFS) listings: 2,957.
+# Updated: 2025.10.08
 
 2a00:11c0:5f::/48 Deny Cloud
 2a00:11c0:60::/48 Deny Cloud
@@ -5119,6 +5126,8 @@ Origin: CH
 2a0a:4cc0::/43 Deny Cloud
 2a0a:4cc0:40::/43 Deny Cloud
 2a0a:4cc0:80::/43 Deny Cloud
+2a0a:4cc0:c0::/43 Deny Cloud
+2a0a:4cc0:fe::/47 Deny Cloud
 2a0a:4cc0:100::/48 Deny Cloud
 2a0f:5b00::/31 Deny Cloud
 Origin: DE
@@ -5165,14 +5174,14 @@ Tag: TierPoint, LLC
 
 # ASNs 15626, 21100, 50979, 59729, 204957 ("GREEN FLOID LLC").
 # Lighting and crane infrastructure company. A source of forum/blog spam.
-# Stop Forum Spam (SFS) listings: 226 (AS15626), 56 (AS21100), 15 (AS50979),
-# 717 (AS59729), 467 (AS204957).
-# Updated: 2024.09.06
+# Stop Forum Spam (SFS) listings: 3,896 (AS15626), 49 (AS21100), 12 (AS50979),
+# 710 (AS59729), 332 (AS204957).
+# Updated: 2025.10.05
 
 2001:67c:2f4c::/48 Deny Cloud
 2001:67c:2f5c::/48 Deny Cloud
 2001:67c:2f6c::/48 Deny Cloud
-2a06:fcc0:2::/48 Deny Cloud
+2a06:fcc0:2::/47 Deny Cloud
 2a0a:8c40::/29 Deny Cloud
 Origin: BG
 2a0d:5a80::/29 Deny Cloud
@@ -5182,13 +5191,10 @@ Origin: GB
 2a06:c6c0::/47 Deny Cloud
 2a0e:40c0:1::/48 Deny Cloud
 2a0e:40c0:2::/47 Deny Cloud
-2a0e:40c0:4::/48 Deny Cloud
-2a11:6800:1::/48 Deny Cloud
-2a13:f580:2::/47 Deny Cloud
+2a0e:40c0:4::/47 Deny Cloud
+2a13:f580:3::/48 Deny Cloud
 Origin: UA
-2a02:27a8::/30 Deny Cloud
-2a02:27ac::/31 Deny Cloud
-2a02:27ae::/32 Deny Cloud
+2a02:27a8::/29 Deny Cloud
 2a05:9400::/29 Deny Cloud
 2a12:6fc0::/31 Deny Cloud
 2a12:6fc2::/32 Deny Cloud
@@ -6071,8 +6077,8 @@ Tag: PCextreme B.V
 
 # ASN 42926 ("Radore Veri Merkezi Hizmetleri A.S").
 # Data center and related services.
-# Stop Forum Spam (SFS) listings: 21.
-# Updated: 2024.09.09
+# Stop Forum Spam (SFS) listings: 6.
+# Updated: 2024.09.09 / Checked: 2025.10.05
 
 2a01:790::/32 Deny Cloud
 2a0b:5ec0::/29 Deny Cloud
@@ -6939,47 +6945,56 @@ Tag: Greenhost BV
 # ASN 11172 ("Alestra, S. de R.L. de C.V").
 # Cloud provider and commercial services.
 # Brute-force, SSH attacks, port scans, and spam detected here.
-# Stop Forum Spam (SFS) listings: 15.
-# Updated: 2024.09.09
+# Stop Forum Spam (SFS) listings: 20.
+# Updated: 2025.10.05
 
 2001:1248:1::/48 Deny Cloud
 2001:1248:2::/47 Deny Cloud
 2001:1248:4::/48 Deny Cloud
 2001:1248:1000::/42 Deny Cloud
 2001:1248:2100::/40 Deny Cloud
-2001:1248:2200::/42 Deny Cloud
+2001:1248:2200::/39 Deny Cloud
+2001:1248:2400::/40 Deny Cloud
 2001:1248:3000::/40 Deny Cloud
 2001:1248:3100::/41 Deny Cloud
 2001:1248:3200::/39 Deny Cloud
 2001:1248:3600::/39 Deny Cloud
+2001:1248:3900::/40 Deny Cloud
+2001:1248:3a00::/40 Deny Cloud
 2001:1248:4000::/40 Deny Cloud
 2001:1248:4200::/42 Deny Cloud
 2001:1248:4300::/40 Deny Cloud
 2001:1248:4400::/40 Deny Cloud
 2001:1248:4500::/41 Deny Cloud
+2001:1248:4580::/42 Deny Cloud
 2001:1248:4600::/40 Deny Cloud
 2001:1248:470b::/48 Deny Cloud
+2001:1248:472b::/48 Deny Cloud
+2001:1248:472e::/48 Deny Cloud
 2001:1248:4745::/48 Deny Cloud
-2001:1248:4764::/48 Deny Cloud
+2001:1248:475d::/48 Deny Cloud
+2001:1248:4777::/48 Deny Cloud
 2001:1248:4778::/48 Deny Cloud
 2001:1248:4800::/42 Deny Cloud
 2001:1248:4900::/42 Deny Cloud
-2001:1248:4a00::/41 Deny Cloud
-2001:1248:4a80::/42 Deny Cloud
-2001:1248:4b00::/40 Deny Cloud
+2001:1248:4a00::/39 Deny Cloud
 2001:1248:4d00::/40 Deny Cloud
 2001:1248:4f00::/40 Deny Cloud
 2001:1248:5500::/40 Deny Cloud
 2001:1248:5600::/39 Deny Cloud
 2001:1248:5805::/48 Deny Cloud
+2001:1248:5808::/48 Deny Cloud
+2001:1248:5815::/48 Deny Cloud
+2001:1248:5817::/48 Deny Cloud
 2001:1248:5900::/40 Deny Cloud
 2001:1248:5a00::/39 Deny Cloud
 2001:1248:5c00::/39 Deny Cloud
 2001:1248:5f00::/40 Deny Cloud
-2001:1248:70f2::/48 Deny Cloud
 2001:1248:7230::/48 Deny Cloud
 2001:1248:739d::/48 Deny Cloud
 2001:1248:739e::/48 Deny Cloud
+2001:1248:73e7::/48 Deny Cloud
+2001:1248:762d::/48 Deny Cloud
 2001:1248:8000::/40 Deny Cloud
 2001:1248:8200::/39 Deny Cloud
 2001:1248:8400::/40 Deny Cloud
@@ -7005,70 +7020,53 @@ Tag: Greenhost BV
 2001:1248:97c0::/42 Deny Cloud
 2001:1248:9800::/47 Deny Cloud
 2001:1248:9803::/48 Deny Cloud
-2001:1248:9804::/48 Deny Cloud
 2001:1248:9806::/48 Deny Cloud
-2001:1248:9808::/46 Deny Cloud
+2001:1248:9808::/47 Deny Cloud
+2001:1248:980a::/48 Deny Cloud
 2001:1248:980d::/48 Deny Cloud
-2001:1248:980f::/48 Deny Cloud
-2001:1248:9811::/48 Deny Cloud
-2001:1248:9813::/48 Deny Cloud
 2001:1248:9814::/47 Deny Cloud
 2001:1248:9816::/48 Deny Cloud
 2001:1248:9819::/48 Deny Cloud
-2001:1248:981a::/47 Deny Cloud
+2001:1248:981b::/48 Deny Cloud
 2001:1248:981c::/46 Deny Cloud
-2001:1248:9820::/48 Deny Cloud
 2001:1248:9823::/48 Deny Cloud
 2001:1248:9824::/46 Deny Cloud
 2001:1248:9828::/48 Deny Cloud
-2001:1248:982a::/48 Deny Cloud
-2001:1248:982c::/46 Deny Cloud
-2001:1248:9831::/48 Deny Cloud
-2001:1248:9832::/47 Deny Cloud
+2001:1248:982c::/47 Deny Cloud
+2001:1248:982f::/48 Deny Cloud
 2001:1248:9835::/48 Deny Cloud
-2001:1248:9838::/47 Deny Cloud
-2001:1248:983a::/48 Deny Cloud
-2001:1248:983e::/48 Deny Cloud
+2001:1248:9838::/48 Deny Cloud
 2001:1248:9840::/42 Deny Cloud
 2001:1248:9881::/48 Deny Cloud
-2001:1248:9886::/47 Deny Cloud
+2001:1248:9887::/48 Deny Cloud
 2001:1248:9889::/48 Deny Cloud
-2001:1248:988c::/47 Deny Cloud
+2001:1248:988c::/48 Deny Cloud
 2001:1248:988f::/48 Deny Cloud
-2001:1248:9890::/48 Deny Cloud
 2001:1248:9892::/48 Deny Cloud
-2001:1248:9895::/48 Deny Cloud
-2001:1248:9896::/47 Deny Cloud
-2001:1248:989d::/48 Deny Cloud
+2001:1248:9897::/48 Deny Cloud
 2001:1248:98a1::/48 Deny Cloud
-2001:1248:98a2::/47 Deny Cloud
+2001:1248:98a3::/48 Deny Cloud
 2001:1248:98a5::/48 Deny Cloud
 2001:1248:98aa::/47 Deny Cloud
 2001:1248:98ad::/48 Deny Cloud
-2001:1248:98ae::/47 Deny Cloud
-2001:1248:98b9::/48 Deny Cloud
-2001:1248:98ba::/48 Deny Cloud
 2001:1248:98bc::/48 Deny Cloud
-2001:1248:98be::/48 Deny Cloud
 2001:1248:98c2::/47 Deny Cloud
-2001:1248:98c4::/48 Deny Cloud
 2001:1248:98c6::/48 Deny Cloud
-2001:1248:98c9::/48 Deny Cloud
+2001:1248:98c8::/48 Deny Cloud
 2001:1248:98cc::/47 Deny Cloud
-2001:1248:98d0::/45 Deny Cloud
+2001:1248:98d0::/46 Deny Cloud
+2001:1248:98d4::/47 Deny Cloud
+2001:1248:98d7::/48 Deny Cloud
 2001:1248:98dd::/48 Deny Cloud
 2001:1248:98de::/48 Deny Cloud
-2001:1248:98e3::/48 Deny Cloud
 2001:1248:98e5::/48 Deny Cloud
 2001:1248:98e6::/48 Deny Cloud
 2001:1248:98eb::/48 Deny Cloud
 2001:1248:98ec::/48 Deny Cloud
 2001:1248:98ee::/47 Deny Cloud
-2001:1248:98f0::/47 Deny Cloud
-2001:1248:98f2::/48 Deny Cloud
+2001:1248:98f1::/48 Deny Cloud
 2001:1248:98f4::/48 Deny Cloud
-2001:1248:98f6::/47 Deny Cloud
-2001:1248:98f8::/47 Deny Cloud
+2001:1248:98f9::/48 Deny Cloud
 2001:1248:98fb::/48 Deny Cloud
 2001:1248:98fc::/47 Deny Cloud
 2001:1248:9900::/40 Deny Cloud
@@ -7076,12 +7074,19 @@ Tag: Greenhost BV
 2001:1248:9b00::/41 Deny Cloud
 2001:1248:9c00::/40 Deny Cloud
 2001:1248:9d00::/41 Deny Cloud
-2001:1248:9e00::/45 Deny Cloud
+2001:1248:9d80::/42 Deny Cloud
+2001:1248:9e01::/48 Deny Cloud
+2001:1248:9e02::/48 Deny Cloud
+2001:1248:9e04::/47 Deny Cloud
+2001:1248:9e07::/48 Deny Cloud
 2001:1248:9e08::/48 Deny Cloud
 2001:1248:9e0a::/47 Deny Cloud
 2001:1248:9e0c::/48 Deny Cloud
-2001:1248:9e10::/45 Deny Cloud
-2001:1248:9e18::/46 Deny Cloud
+2001:1248:9e10::/47 Deny Cloud
+2001:1248:9e12::/48 Deny Cloud
+2001:1248:9e14::/48 Deny Cloud
+2001:1248:9e16::/47 Deny Cloud
+2001:1248:9e18::/47 Deny Cloud
 2001:1248:9e1c::/47 Deny Cloud
 2001:1248:9e1f::/48 Deny Cloud
 2001:1248:9e22::/47 Deny Cloud
@@ -7089,18 +7094,17 @@ Tag: Greenhost BV
 2001:1248:a002::/48 Deny Cloud
 2001:1248:a006::/47 Deny Cloud
 2001:1248:a008::/48 Deny Cloud
+2001:1248:a00a::/48 Deny Cloud
 2001:1248:a00c::/48 Deny Cloud
-2001:1248:a016::/48 Deny Cloud
-2001:1248:a01a::/47 Deny Cloud
+2001:1248:a01a::/48 Deny Cloud
 2001:1248:a01c::/47 Deny Cloud
 2001:1248:a01e::/48 Deny Cloud
-2001:1248:a020::/47 Deny Cloud
+2001:1248:a021::/48 Deny Cloud
 2001:1248:a022::/48 Deny Cloud
 2001:1248:a024::/48 Deny Cloud
 2001:1248:a026::/47 Deny Cloud
 2001:1248:a028::/47 Deny Cloud
 2001:1248:a02a::/48 Deny Cloud
-2001:1248:a02c::/48 Deny Cloud
 2001:1248:a02f::/48 Deny Cloud
 2001:1248:a030::/47 Deny Cloud
 2001:1248:a400::/41 Deny Cloud
@@ -7110,15 +7114,15 @@ Tag: Greenhost BV
 2001:1248:a600::/39 Deny Cloud
 2001:1248:a900::/40 Deny Cloud
 2001:1248:aa00::/39 Deny Cloud
-2001:1248:ac00::/40 Deny Cloud
-2001:1248:ad00::/41 Deny Cloud
-2001:1248:ad80::/42 Deny Cloud
-2001:1248:b01c::/48 Deny Cloud
-2001:1248:b041::/48 Deny Cloud
-2001:1248:b0a1::/48 Deny Cloud
-2001:1248:c2b9::/48 Deny Cloud
-2806:40b::/32 Deny Cloud
-2806:430::/32 Deny Cloud
+2001:1248:ac00::/39 Deny Cloud
+2001:1248:ae00::/40 Deny Cloud
+2001:1248:af00::/41 Deny Cloud
+2001:1248:af80::/42 Deny Cloud
+2001:1248:b000::/39 Deny Cloud
+2001:1248:b200::/41 Deny Cloud
+2001:1248:b280::/42 Deny Cloud
+2001:1248:c200::/40 Deny Cloud
+2001:1248:c300::/41 Deny Cloud
 Origin: MX
 2a10:6c01::/32 Deny Cloud
 Origin: NL
@@ -7406,8 +7410,8 @@ Tag: Krystal Hosting Ltd
 
 # ASN 136052 ("PT Cloud Hosting Indonesia").
 # Dedicated webhosting provider and a significant source of spam.
-# Stop Forum Spam (SFS) listings: 85.
-# Updated: 2022.10.25 / Checked: 2024.09.10
+# Stop Forum Spam (SFS) listings: 55.
+# Updated: 2022.10.25 / Checked: 2025.10.08
 
 2001:df7:7400::/48 Deny Cloud
 Origin: ID
@@ -8493,7 +8497,7 @@ Tag: EasyDataHost S.L
 
 # ASNs 39486, 44144, 46516, 133499, 134450, 203020, 204287, 207990 ("HostRoyale
 # Technologies Pvt Ltd"). Dedicated webhosting provider.
-# Updated: 2025.08.29
+# Updated: 2025.10.06
 
 2a01:4740:1::/48 Deny Cloud
 2a01:4740:2::/47 Deny Cloud
@@ -8535,7 +8539,12 @@ Origin: IN
 2a0f:c840::/29 Deny Cloud
 2a13:c44::/30 Deny Cloud
 Origin: LT
+2a09:a702:72::/47 Deny Cloud
+2a09:a702:76::/47 Deny Cloud
+2a09:a702:92::/47 Deny Cloud
+Origin: PA
 2402:bd80::/30 Deny Cloud
+Origin: SG
 2600:2900::/32 Deny Cloud
 2600:2902::/31 Deny Cloud
 Origin: US
@@ -9968,8 +9977,8 @@ Tag: AS51559
 # ASN 42675 ("Obehosting AB").
 # Webhosting provider. Spam and tor endpoints detected from here.
 # (Closely connected with AS197595 "Obenetwork AB").
-# Stop Forum Spam (SFS) listings: 31.
-# Updated: 2024.09.09
+# Stop Forum Spam (SFS) listings: 98.
+# Updated: 2025.10.05
 
 2a07:a880:3101::/48 Deny Cloud
 2a07:a880:4601::/48 Deny Cloud
@@ -9978,11 +9987,6 @@ Tag: AS51559
 2a07:a880:4701::/48 Deny Cloud
 2a0c:dd40::/29 Deny Cloud
 2a0e:1c80:1::/48 Deny Cloud
-2a0e:1c80:6::/48 Deny Cloud
-2a0e:1c80:8::/48 Deny Cloud
-2a0e:1c80:f::/48 Deny Cloud
-2a12:7800::/32 Deny Cloud
-2a13:7c80::/32 Deny Cloud
 Origin: SE
 Profile: Tor endpoints here;Webhosting
 Tag: Obehosting AB
@@ -10760,14 +10764,13 @@ Profile: Webhosting
 Tag: HOSTEUR SAS
 
 
-# ASNs 7354, 399045 ("DediOutlet, LLC").
+# ASN 399045 ("DediOutlet, LLC").
 # Brute-force attacs, port scans, hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 10 (AS399045), 6 (AS399045).
-# Updated: 2023.12.27 / Checked: 2024.09.11
+# Stop Forum Spam (SFS) listings: 26.
+# Updated: 2025.10.08
 
 2606:d640::/39 Deny Cloud
 2606:d640:200::/40 Deny Cloud
-2606:d640:1000::/40 Deny Cloud
 Origin: US
 Profile: Dedicated;Frequent changes;Webhosting
 Tag: DediOutlet, LLC
@@ -15675,16 +15678,20 @@ Tag: CORESYSTEM SASU
 
 # ASN 207252 ("Felix Gassan").
 # Brute-force, SSH attacks, port scans, and hacking detected from here.
-# Updated: 2024.09.11
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2025.10.08
 
 2a06:de00:400::/38 Deny Cloud
-2a0e:97c0:db0::/48 Deny Cloud
 2a0e:b107:1d06::/48 Deny Cloud
-2a0f:5707:ab90::/46 Deny Cloud
-2a10:cc40:270::/44 Deny Cloud
+Origin: CH
+2a06:8ac0::/44 Deny Cloud
+2a0f:5707:ab90::/44 Deny Cloud
+2a12:3e80:401::/48 Deny Cloud
 Origin: DE
 2a05:b0c6:3001::/48 Deny Cloud
 Origin: GB
+2a14:1ec1::/32 Deny Cloud
+Origin: NL
 2a06:1283:c010::/44 Deny Cloud
 2a06:1283:c040::/44 Deny Cloud
 2a06:a005:2b60::/44 Deny Cloud
@@ -17336,6 +17343,17 @@ Origin: SC
 Origin: TR
 Profile: Restricted/Unidentifiable
 Tag: 3xK Tech GmbH
+
+
+# ASN 25693 ("Virtual Machine Solutions LLC").
+# Phishing and brute-force attacks detected from here.
+# Stop Forum Spam (SFS) listings: 3.
+# Updated: 2025.10.06
+
+2602:f6b0::/40 Deny Cloud
+Origin: US
+Profile: Webhosting
+Tag: Virtual Machine Solutions LLC
 
 
 # ---

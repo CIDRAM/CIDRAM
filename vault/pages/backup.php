@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The backup page (last modified: 2025.09.08).
+ * This file: The backup page (last modified: 2025.10.09).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -390,11 +390,11 @@ if (isset($_POST['bckpAct'])) {
                     } elseif (isset($Import['IP Tracking']) && is_array($Import['IP Tracking'])) {
                         $Success = false;
                         $Response = $this->L10N->getString('response.Added %s to tracking');
-                        foreach ($Import['IP Tracking'] as $Key => $Values) {
-                            if (!isset($Values['Data'], $Values['Time']) || $Values['Time'] < $this->Now) {
+                        foreach ($Import['IP Tracking'] as $Key => $Value) {
+                            if (!isset($Value['Data'], $Value['Time']) || $Value['Time'] < $this->Now) {
                                 continue;
                             }
-                            if ($this->Cache->setEntry('Tracking-' . $Key, $Values['Data'], $Values['Time'] - $this->Now)) {
+                            if ($this->Cache->setEntry('Tracking-' . $Key, $Value['Data'], $Value['Time'] - $this->Now)) {
                                 $Success = true;
                                 if (substr($Key, -12) !== '-MinimumTime') {
                                     $this->FE['state_msg'] .= sprintf($Response, $Key) . '<br />';
@@ -417,6 +417,37 @@ if (isset($_POST['bckpAct'])) {
                             $Import['CIDRAM Version']
                         ) . ' ' . $this->L10N->getString('response.Failed to update statistics') . '<br />';
                     } elseif (isset($Import['Statistics']) && is_array($Import['Statistics'])) {
+                        if ($this->OperationHandler->singleCompare($Import['CIDRAM Version'], '<4')) {
+                            /** Renamed keys. */
+                            foreach ([
+                                ['Blocked-IPv4', 'Blocked:IPv4'],
+                                ['Blocked-IPv6', 'Blocked:IPv6'],
+                                ['Blocked-Other', 'Blocked:Other'],
+                                ['Banned-IPv4', 'Banned:IPv4'],
+                                ['Banned-IPv6', 'Banned:IPv6'],
+                                ['Passed-IPv4', 'Passed:IPv4'],
+                                ['Passed-IPv6', 'Passed:IPv6'],
+                                ['Passed-Other', 'Passed:Other'],
+                                ['Report-IPv4-OK', 'ReportOK:IPv4'],
+                                ['Report-IPv4-Failed', 'ReportFailed:IPv4'],
+                                ['Report-IPv6-OK', 'ReportOK:IPv6'],
+                                ['Report-IPv6-Failed', 'ReportFailed:IPv6']
+                            ] as $Stat) {
+                                if (isset($Import['Statistics'][$Stat[0]]) && !isset($Import['Statistics'][$Stat[1]])) {
+                                    $Import['Statistics'][$Stat[1]] = $Import['Statistics'][$Stat[0]];
+                                    unset($Import['Statistics'][$Stat[0]]);
+                                }
+                            }
+
+                            /** Deleted keys. */
+                            foreach (['CAPTCHAs-Failed', 'CAPTCHAs-Passed'] as $Stat) {
+                                if (isset($Import['Statistics'][$Stat])) {
+                                    unset($Import['Statistics'][$Stat]);
+                                }
+                            }
+
+                            unset($Stat);
+                        }
                         $Success = false;
                         foreach ($Import['Statistics'] as $Key => $Value) {
                             if (!$this->Cache->setEntry('Statistics-' . $Key, $Value, 0)) {
@@ -430,7 +461,7 @@ if (isset($_POST['bckpAct'])) {
                     }
                 }
             }
-            unset($Response, $Success, $Component, $Try, $Import);
+            unset($Response, $Success, $Component, $Try, $Value, $Key, $Import);
             $this->restoreErrorHandler();
         } else {
             $this->FE['state_msg'] .= $this->L10N->getString('response.Failed to upload') . '<br />';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The statistics page (last modified: 2025.08.31).
+ * This file: The statistics page (last modified: 2025.10.11).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -112,7 +112,7 @@ if (count($AuxRulesTracked) === 0) {
 } else {
     $AuxRulesTotal = 0;
     $this->FE['AuxStats'] = sprintf(
-        "\n      <tr><td class=\"center h4f\" colspan=\"2\"><div class=\"s\">%s</div></td></tr>",
+        "\n      <div class=\"center h2f s flexstretch\">%s</div>\n      <div class=\"duo flexstretch\">",
         $this->L10N->getString('label.aux.Auxiliary rules triggered')
     );
     $this->FE['AuxStatsForClipboard'] = $this->L10N->getString('label.aux.Auxiliary rules triggered') . '\n';
@@ -129,7 +129,7 @@ if (count($AuxRulesTracked) === 0) {
         }
         $Date = $MostRecent . $this->timeFormat($Date, $this->Configuration['general']['time_format']) . ' (' . $this->relativeTime($Date) . ')';
         $this->FE['AuxStats'] .= sprintf(
-            "\n      <tr>\n        <td class=\"h3\"><div class=\"s\">%s</div></td>\n        <td class=\"h3f\"><div class=\"s canBreak\">%s%s</div></td>\n      </tr>",
+            "\n        <div class=\"h1 s\">%s</div>\n        <div class=\"h1f s canBreak\">%s%s</div>",
             str_replace(['<', '>'], ['&lt;', '&gt;'], $AuxRuleName),
             $this->NumberFormatter->format($Try),
             $Try === 0 ? '' : '<br />' . $Date
@@ -142,7 +142,7 @@ if (count($AuxRulesTracked) === 0) {
     }
     $AuxRulesTotal = $this->NumberFormatter->format($AuxRulesTotal);
     $this->FE['AuxStats'] .= sprintf(
-        "\n      <tr>\n        <td class=\"h3\"><div class=\"s\">%s</div></td>\n        <td class=\"h3f\"><div class=\"s\">%s</div></td>\n      </tr>",
+        "\n        <div class=\"h1 s\">%s</div>\n        <div class=\"h1f s\">%s</div>\n      </div>",
         $this->L10N->getString('label.Total'),
         $AuxRulesTotal
     );

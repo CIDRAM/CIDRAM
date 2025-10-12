@@ -8,9 +8,7 @@ body,input,select,textarea,code{max-width:100%}
 body,input,select,textarea,code,.idx{font-size:calc((12px * {magnification}) + .03vw)}
 body,input,input[type=file]::file-selector-button,select{font-family:'BlinkMacSystemFont','Segoe UI','Noto Sans','Helvetica';letter-spacing:1px;text-decoration:none;border-style:none;margin:0;white-space:normal;background-color:#f6f8fa;color:#24292e}
 code{background-color:rgba(164,128,102,.3);vertical-align:0;display:inline-block;height:calc(1em + 2px)}
-.branchline,hr{box-sizing:content-box;height:0;overflow:visible;height:0;margin:15px 0;overflow:hidden;background:0 0;border:0;border-bottom:1px solid #dadde1}
-.branchline,hr::after{display:table;clear:both;content:""}
-.branchline,hr::before{display:table;content:""}
+.branchline,hr{margin:15px 0;border:0;border-bottom:1px solid #dadde1}
 img.ico{width:16px;height:16px;border:0}
 input[type=file]{margin:0;padding:0;border:none;background:none;width:auto}
 label{font-weight:600}
@@ -28,8 +26,7 @@ nav:lang(ja){letter-spacing:-1px}
 nav a:not(.idx a){display:block}
 main{flex-basis:80%;flex-shrink:1;flex-grow:2;min-width:0}
 .subNav{display:block;text-align:center;font-size:calc((10px * {magnification}) + .03vw);color:rgba(36,41,46,.6);text-shadow:2px 2px 1px rgba(0,0,0,.2)}
-table{table-layout:fixed}
-table,.spanner,.flexstretch,.logVis{align-self:stretch}
+.spanner,.flexstretch,.logVis{align-self:stretch}
 textarea{height:150px}
 textarea.half{height:75px}
 textarea#efta,textarea#logsTA{height:375px}
@@ -101,6 +98,7 @@ input[type=button]:hover,input[type=submit]:hover,input[type=reset]:hover,button
 .iCntr{margin:16px 0 16px 0}
 .iCntn{margin-{FE_Align}:42px}
 @media only all and (max-width:968px) {
+  nav{display:flex;flex-direction:column;gap:2px;justify-content:start;align-items:start;flex-basis:100%;width:1fr}
   .extend{flex-basis:100%}
   .headbox,.mainbox,.footbox{flex-direction:column;height:auto}
   .footbox>.start{display:none}
@@ -274,21 +272,21 @@ input[type=checkbox],input[type=radio]{accent-color:#1d1d1e}
 .clockMinutes{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:clockminutes.svg}{/Base64Encode});position:relative;inset:0 -16px}
 .clockSeconds{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:clockseconds.svg}{/Base64Encode});position:relative;inset:0 -32px}
 .clockFace{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:clockface.svg}{/Base64Encode});position:relative;inset:0 -48px}
-.col{display:flex;flex-direction:column;gap:2px;justify-content:start;align-items:start;flex-basis:100%;width:100%}
-.col>.ng1,.col>.ng2,nav>.ng1,nav>.ng2,.flexstretch,.spanner{width:calc(100% - 10px)}
+.col{display:flex;flex-direction:column;gap:2px;justify-content:start;align-items:start;flex-basis:100%;width:1fr}
+.col>.col{width:100%}
+.col>.ng1,.col>.ng2,nav>.ng1,nav>.ng2,.flexstretch:not(.col>.flexstretch),.spanner:not(.col>.spanner){width:calc(100% - 10px)}
 .configInitPos{transform:scaleY(0);transform-origin:top center;opacity:0;max-height:0;margin-top:-2px}
 .configOpenPos{transform:scaleY(1);transform-origin:top center;opacity:1;max-height:auto}
-.spanner+table{margin:-2px -2px 0 -2px}
-.spanner+table~table{margin:-4px -2px 0 -2px}
-.col>form,.quad>form,.duo>form{display:contents}
+.col>form,.quad>form,.duo>form,.spanner>form{display:contents}
 input[type=hidden],script{display:none}
-.logVis{overflow:visible auto;margin-{FE_Align_Reverse}:1px}
-textarea#logsTA{margin-top:0;margin-bottom:0;margin-{FE_Align}:0;margin-{FE_Align_Reverse}:1px;width:auto;align-self:stretch}
+.logVis{overflow:visible auto}
+textarea#logsTA{margin:0;width:auto;align-self:stretch}
 .quad{display:grid;gap:2px;grid-template-columns:repeat(4,1fr);justify-content:stretch;justify-items:stretch}
 .duo{display:grid;gap:2px;grid-template-columns:1fr 1fr;justify-content:stretch;justify-items:stretch}
-.col+.col,.col+.quad,.col+.duo,.quad+.col,.quad+.quad,.quad+.duo,.duo+.col,.duo+.quad,.duo+.duo{margin-top:2px;margin-{FE_Align_Reverse}:1px}
+.col+.col,.col+.quad,.col+.duo,.quad+.col,.quad+.quad,.quad+.duo,.duo+.col,.duo+.quad,.duo+.duo{margin-top:2px}
 @media only all and (max-width:968px) {
-  .quad{grid-template-columns:1fr 1fr}
+  .quad:not(.accquad){grid-template-columns:1fr 1fr}
+  .quad.accquad{grid-template-columns:1fr}
 }
 @keyframes fmDeleteAnim{0%{opacity:1}100%{filter:brightness(0);opacity:0;display:none}}
 .fmDelete{transform-origin:top;animation:fmDeleteAnim .5s cubic-bezier(0,0,.1,1);animation-iteration-count:1;animation-fill-mode:forwards}

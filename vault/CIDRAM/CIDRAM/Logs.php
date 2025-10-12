@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used by the logs page (last modified: 2025.10.03).
+ * This file: Methods used by the logs page (last modified: 2025.10.11).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -279,7 +279,7 @@ trait Logs
                 asort($Entries, SORT_NUMERIC);
             }
             if (count($Entries)) {
-                $Out .= '</div><div class="col"><div class="h2f s flexstretch">' . $Field . '</div></div><div class="duo">';
+                $Out .= '</div><div class="col h2f s">' . $Field . '</div><div class="duo">';
             }
             foreach ($Entries as $Entry => $Count) {
                 if (!(substr($Entry, 0, 1) === '[' && substr($Entry, 3, 1) === ']')) {

@@ -2,25 +2,17 @@
   <nav class="big">
 {nav}  </nav>
   <main class="extend">
-    <div class="col">
-      <table>
-        <tr>
-          <form action="?cidram-page=calculator" method="POST">
-            <td class="h3" colspan="2">
-              <div class="center">
-                <input type="text" name="address" value="{address}" placeholder="{tip.Enter IP here}" autocomplete="off" pattern="^([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])$|^((([\dA-Fa-f]{1,4}:){7}[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){6}:[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){5}:([\dA-Fa-f]{1,4}:)?[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){4}:([\dA-Fa-f]{1,4}:){0,2}[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){3}:([\dA-Fa-f]{1,4}:){0,3}[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){2}:([\dA-Fa-f]{1,4}:){0,4}[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){6}((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b).){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|(([\dA-Fa-f]{1,4}:){0,5}:((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b).){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|(::([\dA-Fa-f]{1,4}:){0,5}((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b).){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|([\dA-Fa-f]{1,4}::([\dA-Fa-f]{1,4}:){0,5}[\dA-Fa-f]{1,4})|(::([\dA-Fa-f]{1,4}:){0,6}[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){1,7}:))$" /><br />
-              </div>
-            </td>
-            <td class="h3f"><div class="center"><input type="submit" value="{field.OK} [0]" accesskey="0" /></div></td>
-          </form>
-        </tr>
-        <tr>
-          <td class="h2"><div class="s">CIDR</div></td>
-          <td class="h2"><div class="s">{label.Netmask}</div></td>
-          <td class="h4f"><div class="s">{field.Range (First Last)}</div></td>
-        </tr>
+    <div class="duo">
+      <form action="?cidram-page=calculator" method="POST">
+        <div class="h1 center"><input type="text" name="address" value="{address}" placeholder="{tip.Enter IP here}" autocomplete="off" pattern="^([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])$|^((([\dA-Fa-f]{1,4}:){7}[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){6}:[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){5}:([\dA-Fa-f]{1,4}:)?[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){4}:([\dA-Fa-f]{1,4}:){0,2}[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){3}:([\dA-Fa-f]{1,4}:){0,3}[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){2}:([\dA-Fa-f]{1,4}:){0,4}[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){6}((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b).){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|(([\dA-Fa-f]{1,4}:){0,5}:((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b).){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|(::([\dA-Fa-f]{1,4}:){0,5}((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b).){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|([\dA-Fa-f]{1,4}::([\dA-Fa-f]{1,4}:){0,5}[\dA-Fa-f]{1,4})|(::([\dA-Fa-f]{1,4}:){0,6}[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){1,7}:))$" /></div>
+        <div class="h1f center"><input type="submit" value="{field.OK} [0]" accesskey="0" /></div>
+        <div class="duo">
+          <div class="h2 s">CIDR</div>
+          <div class="h2 s">{label.Netmask}</div>
+        </div>
+        <div class="h2f s">{field.Range (First Last)}</div>
+      </form>
 {Ranges}
-      </table>
     </div>
   </main>
 </div>

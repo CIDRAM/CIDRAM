@@ -11,150 +11,92 @@
           <input type="button" value="{field.Clear all}" class="auto" onclick="{Confirm-ClearAll}" />
         </form>
       </div>
-      <table>
-        <tr><td class="center h4f" colspan="2"><div class="s">{label.Requests blocked}</div></td></tr>
-        <tr>
-          <td class="h3"><div class="s">IPv4</div></td>
-          <td class="h3f"><div class="s">{Blocked:IPv4}</div></td>
-        </tr>
-        <tr>
-          <td class="h3"><div class="s">IPv6</div></td>
-          <td class="h3f"><div class="s">{Blocked:IPv6}</div></td>
-        </tr>
-        <tr>
-          <td class="h3"><div class="s">{label.Other}</div></td>
-          <td class="h3f"><div class="s">{Blocked:Other}</div></td>
-        </tr>
-        <tr>
-          <td class="h3"><div class="s">{label.Total}</div></td>
-          <td class="h3f"><div class="s">{BlockedTotal}</div></td>
-        </tr>
-        <tr><td class="center h4f" colspan="2"><div class="s">{label.Requests banned}</div></td></tr>
-        <tr>
-          <td class="h3"><div class="s">IPv4</div></td>
-          <td class="h3f"><div class="s">{Banned:IPv4}</div></td>
-        </tr>
-        <tr>
-          <td class="h3"><div class="s">IPv6</div></td>
-          <td class="h3f"><div class="s">{Banned:IPv6}</div></td>
-        </tr>
-        <tr>
-          <td class="h3"><div class="s">{label.Total}</div></td>
-          <td class="h3f"><div class="s">{BannedTotal}</div></td>
-        </tr>
-        <tr><td class="center h4f" colspan="2"><div class="s">{label.Requests passed}</div></td></tr>
-        <tr>
-          <td class="h3"><div class="s">IPv4</div></td>
-          <td class="h3f"><div class="s">{Passed:IPv4}</div></td>
-        </tr>
-        <tr>
-          <td class="h3"><div class="s">IPv6</div></td>
-          <td class="h3f"><div class="s">{Passed:IPv6}</div></td>
-        </tr>
-        <tr>
-          <td class="h3"><div class="s">{label.Other}</div></td>
-          <td class="h3f"><div class="s">{Passed:Other}</div></td>
-        </tr>
-        <tr>
-          <td class="h3"><div class="s">{label.Total}</div></td>
-          <td class="h3f"><div class="s">{PassedTotal}</div></td>
-        </tr>
-        <tr><td class="center h4f" colspan="2"><div class="s">{label.CAPTCHA attempts}</div></td></tr>
-        <tr>
-          <td class="h3"><div class="s">{response.Failed} – hCaptcha</div></td>
-          <td class="h3f"><div class="s">{HCaptcha:Failed}</div></td>
-        </tr>
-        <tr>
-          <td class="h3"><div class="s">{response.Passed} – hCaptcha</div></td>
-          <td class="h3f"><div class="s">{HCaptcha:Passed}</div></td>
-        </tr>
-        <tr>
-          <td class="h3"><div class="s">{response.Served} – hCaptcha</div></td>
-          <td class="h3f"><div class="s">{HCaptcha:Served}</div></td>
-        </tr>
-        <tr>
-          <td class="h3"><div class="s">{response.Failed} – Friendly Captcha</div></td>
-          <td class="h3f"><div class="s">{FriendlyCaptcha:Failed}</div></td>
-        </tr>
-        <tr>
-          <td class="h3"><div class="s">{response.Passed} – Friendly Captcha</div></td>
-          <td class="h3f"><div class="s">{FriendlyCaptcha:Passed}</div></td>
-        </tr>
-        <tr>
-          <td class="h3"><div class="s">{response.Served} – Friendly Captcha</div></td>
-          <td class="h3f"><div class="s">{FriendlyCaptcha:Served}</div></td>
-        </tr>
-        <tr>
-          <td class="h3"><div class="s">{response.Failed} – Cloudflare Turnstile</div></td>
-          <td class="h3f"><div class="s">{CloudflareTurnstile:Failed}</div></td>
-        </tr>
-        <tr>
-          <td class="h3"><div class="s">{response.Passed} – Cloudflare Turnstile</div></td>
-          <td class="h3f"><div class="s">{CloudflareTurnstile:Passed}</div></td>
-        </tr>
-        <tr>
-          <td class="h3"><div class="s">{response.Served} – Cloudflare Turnstile</div></td>
-          <td class="h3f"><div class="s">{CloudflareTurnstile:Served}</div></td>
-        </tr>
-        <tr>
-          <td class="h3"><div class="s">{response.Failed} – {label.Total}</div></td>
-          <td class="h3f"><div class="s">{CAPTCHAs-TotalFailed}</div></td>
-        </tr>
-        <tr>
-          <td class="h3"><div class="s">{response.Passed} – {label.Total}</div></td>
-          <td class="h3f"><div class="s">{CAPTCHAs-TotalPassed}</div></td>
-        </tr>
-        <tr>
-          <td class="h3"><div class="s">{response.Served} – {label.Total}</div></td>
-          <td class="h3f"><div class="s">{CAPTCHAs-TotalServed}</div></td>
-        </tr>
-        <tr><td class="center h4f" colspan="2"><div class="s">{label.Requests reported to external APIs}</div></td></tr>
-        <tr>
-          <td class="h3"><div class="s">IPv4 – {field.OK}</div></td>
-          <td class="h3f"><div class="s">{ReportOK:IPv4}</div></td>
-        </tr>
-        <tr>
-          <td class="h3"><div class="s">IPv4 – {response.Failed}</div></td>
-          <td class="h3f"><div class="s">{ReportFailed:IPv4}</div></td>
-        </tr>
-        <tr>
-          <td class="h3"><div class="s">IPv6 – {field.OK}</div></td>
-          <td class="h3f"><div class="s">{ReportOK:IPv6}</div></td>
-        </tr>
-        <tr>
-          <td class="h3"><div class="s">IPv6 – {response.Failed}</div></td>
-          <td class="h3f"><div class="s">{ReportFailed:IPv6}</div></td>
-        </tr>
-        <tr>
-          <td class="h3"><div class="s">{label.Total}</div></td>
-          <td class="h3f"><div class="s">{ReportTotal}</div></td>
-        </tr>{AuxStats}
-        <tr><td class="center h4f" colspan="2"><div class="s">{label.Other}</div></td></tr>
-        <tr>
-          <td class="h3"><div class="s">{label.Start date}</div></td>
-          <td class="h3f"><div class="s canBreak">{Other-Since}</div></td>
-        </tr>
-        <tr>
-          <td class="h3"><div class="s">{label.Active IPv4 signature files}</div></td>
-          <td class="h3f"><div class="{ClassActiveIPv4}">{Other-ActiveIPv4}</div></td>
-        </tr>
-        <tr>
-          <td class="h3"><div class="s">{label.Active IPv6 signature files}</div></td>
-          <td class="h3f"><div class="{ClassActiveIPv6}">{Other-ActiveIPv6}</div></td>
-        </tr>
-        <tr>
-          <td class="h3"><div class="s">{label.Active modules}</div></td>
-          <td class="h3f"><div class="{ClassActiveModules}">{Other-ActiveModules}</div></td>
-        </tr>
-        <tr>
-          <td class="h3"><div class="s">{label.Active imports}</div></td>
-          <td class="h3f"><div class="{ClassActiveImports}">{Other-ActiveImports}</div></td>
-        </tr>
-        <tr>
-          <td class="h3"><div class="s">{label.Active events}</div></td>
-          <td class="h3f"><div class="{ClassActiveEvents}">{Other-ActiveEvents}</div></td>
-        </tr>
-      </table>
+      <div class="center h2f s flexstretch">{label.Requests blocked}</div>
+      <div class="duo flexstretch">
+        <div class="h1 s">IPv4</div>
+        <div class="h1f s">{Blocked:IPv4}</div>
+        <div class="h1 s">IPv6</div>
+        <div class="h1f s">{Blocked:IPv6}</div>
+        <div class="h1 s">{label.Other}</div>
+        <div class="h1f s">{Blocked:Other}</div>
+        <div class="h1 s">{label.Total}</div>
+        <div class="h1f s">{BlockedTotal}</div>
+      </div>
+      <div class="center h2f s flexstretch">{label.Requests banned}</div>
+      <div class="duo flexstretch">
+        <div class="h1 s">IPv4</div>
+        <div class="h1f s">{Banned:IPv4}</div>
+        <div class="h1 s">IPv6</div>
+        <div class="h1f s">{Banned:IPv6}</div>
+        <div class="h1 s">{label.Total}</div>
+        <div class="h1f s">{BannedTotal}</div>
+      </div>
+      <div class="center h2f s flexstretch">{label.Requests passed}</div>
+      <div class="duo flexstretch">
+        <div class="h1 s">IPv4</div>
+        <div class="h1f s">{Passed:IPv4}</div>
+        <div class="h1 s">IPv6</div>
+        <div class="h1f s">{Passed:IPv6}</div>
+        <div class="h1 s">{label.Other}</div>
+        <div class="h1f s">{Passed:Other}</div>
+        <div class="h1 s">{label.Total}</div>
+        <div class="h1f s">{PassedTotal}</div>
+      </div>
+      <div class="center h2f s flexstretch">{label.CAPTCHA attempts}</div>
+      <div class="duo flexstretch">
+        <div class="h1 s">{response.Failed} – hCaptcha</div>
+        <div class="h1f s">{HCaptcha:Failed}</div>
+        <div class="h1 s">{response.Passed} – hCaptcha</div>
+        <div class="h1f s">{HCaptcha:Passed}</div>
+        <div class="h1 s">{response.Served} – hCaptcha</div>
+        <div class="h1f s">{HCaptcha:Served}</div>
+        <div class="h1 s">{response.Failed} – Friendly Captcha</div>
+        <div class="h1f s">{FriendlyCaptcha:Failed}</div>
+        <div class="h1 s">{response.Passed} – Friendly Captcha</div>
+        <div class="h1f s">{FriendlyCaptcha:Passed}</div>
+        <div class="h1 s">{response.Served} – Friendly Captcha</div>
+        <div class="h1f s">{FriendlyCaptcha:Served}</div>
+        <div class="h1 s">{response.Failed} – Cloudflare Turnstile</div>
+        <div class="h1f s">{CloudflareTurnstile:Failed}</div>
+        <div class="h1 s">{response.Passed} – Cloudflare Turnstile</div>
+        <div class="h1f s">{CloudflareTurnstile:Passed}</div>
+        <div class="h1 s">{response.Served} – Cloudflare Turnstile</div>
+        <div class="h1f s">{CloudflareTurnstile:Served}</div>
+        <div class="h1 s">{response.Failed} – {label.Total}</div>
+        <div class="h1f s">{CAPTCHAs-TotalFailed}</div>
+        <div class="h1 s">{response.Passed} – {label.Total}</div>
+        <div class="h1f s">{CAPTCHAs-TotalPassed}</div>
+        <div class="h1 s">{response.Served} – {label.Total}</div>
+        <div class="h1f s">{CAPTCHAs-TotalServed}</div>
+      </div>
+      <div class="center h2f s flexstretch">{label.Requests reported to external APIs}</div>
+      <div class="duo flexstretch">
+        <div class="h1 s">IPv4 – {field.OK}</div>
+        <div class="h1f s">{ReportOK:IPv4}</div>
+        <div class="h1 s">IPv4 – {response.Failed}</div>
+        <div class="h1f s">{ReportFailed:IPv4}</div>
+        <div class="h1 s">IPv6 – {field.OK}</div>
+        <div class="h1f s">{ReportOK:IPv6}</div>
+        <div class="h1 s">IPv6 – {response.Failed}</div>
+        <div class="h1f s">{ReportFailed:IPv6}</div>
+        <div class="h1 s">{label.Total}</div>
+        <div class="h1f s">{ReportTotal}</div>
+      </div>{AuxStats}
+      <div class="center h2f s flexstretch">{label.Other}</div>
+      <div class="duo flexstretch">
+        <div class="h1 s">{label.Start date}</div>
+        <div class="h1f s canBreak">{Other-Since}</div>
+        <div class="h1 s">{label.Active IPv4 signature files}</div>
+        <div class="h1f {ClassActiveIPv4}">{Other-ActiveIPv4}</div>
+        <div class="h1 s">{label.Active IPv6 signature files}</div>
+        <div class="h1f {ClassActiveIPv6}">{Other-ActiveIPv6}</div>
+        <div class="h1 s">{label.Active modules}</div>
+        <div class="h1f {ClassActiveModules}">{Other-ActiveModules}</div>
+        <div class="h1 s">{label.Active imports}</div>
+        <div class="h1f {ClassActiveImports}">{Other-ActiveImports}</div>
+        <div class="h1 s">{label.Active events}</div>
+        <div class="h1f {ClassActiveEvents}">{Other-ActiveEvents}</div>
+      </div>
     </div>
   </main>
 </div>

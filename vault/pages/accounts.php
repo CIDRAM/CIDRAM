@@ -8,27 +8,13 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The accounts page (last modified: 2024.09.17).
+ * This file: The accounts page (last modified: 2025.10.11).
  */
 
 namespace CIDRAM\CIDRAM;
 
 if (!isset($this->FE['Permissions'], $this->CIDRAM['QueryVars']['cidram-page']) || $this->CIDRAM['QueryVars']['cidram-page'] !== 'accounts' || $this->FE['Permissions'] !== 1) {
     die;
-}
-
-/** $_POST overrides for mobile display. */
-if (!empty($_POST['username']) && !empty($_POST['do_mob']) && (!empty($_POST['password_mob']) || $_POST['do_mob'] === 'delete-account')) {
-    $_POST['do'] = $_POST['do_mob'];
-}
-if (empty($_POST['username']) && !empty($_POST['username_mob'])) {
-    $_POST['username'] = $_POST['username_mob'];
-}
-if (empty($_POST['permissions']) && !empty($_POST['permissions_mob'])) {
-    $_POST['permissions'] = $_POST['permissions_mob'];
-}
-if (empty($_POST['password']) && !empty($_POST['password_mob'])) {
-    $_POST['password'] = $_POST['password_mob'];
 }
 
 /** A form has been submitted. */
@@ -99,8 +85,11 @@ if (!$this->FE['ASYNC']) {
         '},a=function(){%4$s\'%1$s\')};window.username=%2$s(e).value,window.passw' .
         'ord=%2$s(d).value,window.do=%2$s(t).value,\'delete-account\'==window.do&' .
         '&$(\'POST\',\'\',[%3$s,\'username\',\'password\',\'do\'],a,function(e){%' .
-        '4$se),hideid(i)},o),\'update-password\'==window.do&&$(\'POST\',\'\',[%3$' .
-        's,\'username\',\'password\',\'do\'],a,o,o)}' . "\n",
+        '4$se),document.getElementById(\'q1\'+i).classList.add(\'fmDelete\'),docu' .
+        'ment.getElementById(\'q2\'+i).classList.add(\'fmDelete\'),document.getEl' .
+        'ementById(\'q3\'+i).classList.add(\'fmDelete\'),document.getElementById(' .
+        '\'q4\'+i).classList.add(\'fmDelete\')},o),\'update-password\'==window.do' .
+        '&&$(\'POST\',\'\',[%3$s,\'username\',\'password\',\'do\'],a,o,o)}' . "\n",
         $this->L10N->getString('label.Loading_'),
         'document.getElementById',
         "'cidram-form-target'",

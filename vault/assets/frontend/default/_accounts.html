@@ -4,31 +4,20 @@
   <main class="extend">
     <div class="col">
       <div class="s flexstretch" id="stateMsg">{state_msg}</div>
-      <table>
-        <tr>
-          <td class="h2 big"><div class="s">{field.Username}</div></td>
-          <td class="h2 big"><div class="s">{field.Permissions}</div></td>
-          <td class="h2 big"><div class="s">{field.Set new password}</div></td>
-          <td class="h2f extend"><div class="s"><span class="big">{field.Options}</span><span class="mob">{link.Accounts}</span></div></td>
-        </tr>
-        <tr>
-          <form action="?cidram-page=accounts" method="POST"><input name="cidram-form-target" type="hidden" value="accounts" /><input name="do" type="hidden" value="create-account" />
-            <td class="h1 big"><input name="username" type="text" placeholder="{field.Username}" autocomplete="username" /></td>
-            <td class="h1 big"><select name="permissions" title="{field.Permissions}"><option value="1">{label.Complete access}</option><option value="2">{label.Logs access only}</option><option value="3">Cronable</option></select></td>
-            <td class="h1 big"><input name="password" type="password" placeholder="{field.Password}" autocomplete="new-password" /></td>
-            <td class="h1f extend">
-              <div class="s big"><input type="submit" class="auto" value="{field.Create new account}" /></div>
-              <div class="s mob">
-                <input name="username_mob" type="text" placeholder="{field.Username}" autocomplete="username" /><br />
-                <select name="permissions_mob" title="{field.Permissions}"><option value="1">{label.Complete access}</option><option value="2">{label.Logs access only}</option><option value="3">Cronable</option></select><br />
-                <input name="password_mob" type="password" placeholder="{field.Password}" autocomplete="new-password" /><br />
-                <input type="submit" value="{field.Create new account}" />
-              </div>
-            </td>
-          </form>
-        </tr>
+    </div>
+    <div class="quad accquad">
+      <div class="h2f s mob">{link.Accounts}</div>
+      <div class="h2 s big">{field.Username}</div>
+      <div class="h2 s big">{field.Permissions}</div>
+      <div class="h2 s big">{field.Set new password}</div>
+      <div class="h2f s big">{field.Options}</div>
+      <form action="?cidram-page=accounts" method="POST"><input name="cidram-form-target" type="hidden" value="accounts" /><input name="do" type="hidden" value="create-account" />
+        <div class="h1"><input name="username" type="text" placeholder="{field.Username}" autocomplete="username" /></div>
+        <div class="h1"><select name="permissions" title="{field.Permissions}"><option value="1">{label.Complete access}</option><option value="2">{label.Logs access only}</option><option value="3">Cronable</option></select></div>
+        <div class="h1"><input name="password" type="password" placeholder="{field.Password}" autocomplete="new-password" /></div>
+        <div class="h1f"><input type="submit" class="auto" value="{field.Create new account}" /></div>
+      </form>
 {Accounts}
-      </table>
     </div>
   </main>
 </div>

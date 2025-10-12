@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used by the range tables page (last modified: 2025.08.10).
+ * This file: Methods used by the range tables page (last modified: 2025.10.11).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -374,7 +374,7 @@ trait RangeTables
         foreach ($SigTypes as $SigType) {
             $Class = 'sigtype_' . strtolower($SigType);
             $RangeCatOptions[] = '<option value="' . $Class . '"' . ($Styling[$SigType] ?? '') . '>' . $SigType . '</option>';
-            $this->FE['Labels'] .= '<span style="display:none" class="s ' . $Class . '">' . $this->L10N->getString('label.Signature type') . ' ' . $SigType . '</span>';
+            $this->FE['Labels'] .= '<span style="display:none" class="' . $Class . '">' . $this->L10N->getString('label.Signature type') . ' ' . $SigType . '</span>';
             if ($SigType === 'Run') {
                 $ZeroPlus = 'txtOe';
             } else {

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used for auxiliary rules (last modified: 2025.09.28).
+ * This file: Methods used for auxiliary rules (last modified: 2025.10.13).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -208,9 +208,10 @@ trait AuxiliaryRules
                     $JSAppend .= sprintf('onAuxActionChange(\'actWhl\',\'%s\',\'%s\');', $RuleClass, $Current);
                 }
                 $Output .= sprintf(
-                    '</select><input type="button" onclick="javascript:addCondition(\'%s\', this.parentElement.parentElement.nextSibling.nextSibling.firstChild.firstChild.value)" value="%s" class="auto" /></div>',
+                    '</select><input type="button" onclick="javascript:addCondition(\'%s\', this.parentElement.parentElement.nextSibling.nextSibling.firstChild.firstChild.value)" value="%s" class="auto" /><br /><span class="suggestsActive"><small>%s</small></span></div>',
                     $Current,
-                    $this->L10N->getString('field.Add more conditions')
+                    $this->L10N->getString('field.Add more conditions'),
+                    $this->L10N->getString('tip.Actions menu')
                 );
                 $Output .= sprintf('<div class="iCntn" id="%1$sconditions">', $Current);
 

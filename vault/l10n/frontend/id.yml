@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2025.09.30).
+# This file: Indonesian language data for the front-end (last modified: 2025.10.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -614,7 +614,7 @@ label:
  False positive risk: "Risiko positif palsu:"
  Fancy: "Terformat"
  Focus: "Fokus:"
- Greylist the request: "Mendaftar abu-abu permintaan.\nReset jumlah tanda tangan yang dipicu, tetapi terus memproses permintaan. Direkomendasikan saat Anda tidak ingin mendaftar permintaan putih, tetapi membutuhkan sesuatu yang lebih substansial daripada memicu bypass."
+ Greylist the request: "Mendaftar abu-abu permintaan.\nTetapkan jumlah tanda tangan yang dipicu ke 0, tetapi terus memproses permintaan. Direkomendasikan saat Anda tidak ingin mendaftar permintaan putih, tetapi membutuhkan sesuatu yang lebih substansial daripada memicu bypass."
  Harvester: "Pemanen"
  Hide: "Menyembunyikan"
  Ignore this: "Abaikan ini"
@@ -702,7 +702,7 @@ label:
  Trigger a bypass: "Memicu bypass.\nMengurangi satu hitungan dari jumlah tanda tangan yang dipicu, selama setidaknya satu tanda tangan telah dipicu. Direkomendasikan untuk menangani kesalahan positif sederhana yang berpotensi disebabkan oleh file tanda tangan default."
  Unignore this: "Jangan abaikan ini"
  Values for IP tracking: "Nilai untuk pelacakan IP"
- Whitelist the request: "Mendaftar putih permintaan.\nReset jumlah tanda tangan yang dipicu, dan membatalkan pemrosesan permintaan lebih lanjut. Menjamin bahwa CIDRAM tidak akan pernah memblokir permintaan."
+ Whitelist the request: "Mendaftar putih permintaan.\nTetapkan jumlah tanda tangan yang dipicu ke 0, dan membatalkan pemrosesan permintaan lebih lanjut. Menjamin bahwa CIDRAM tidak akan pernah memblokir permintaan."
  Your IP: "IP Anda:"
  Your UA: "UA Anda:"
  aux:
@@ -755,7 +755,7 @@ label:
   greylist the request: "mendaftar abu-abu permintaannya"
   logic_all: "Untuk memicu aturan, semua kondisi harus dipenuhi."
   logic_any: "Setiap kondisi "sama" (=) dapat memicu aturan, selama semua kondisi "tidak sama" (≠) juga dipenuhi."
-  profile the request: "mengklasifikasikan permintaan"
+  profile the request: "memprofilkan permintaan"
   redirect the request (without blocking it): "mengarahkan permintaan (tanpa memblokirnya)"
   run a file to handle the request: "mengeksekusi file untuk menangani permintaan"
   whitelist the request: "mendaftar putih permintaannya"
@@ -1016,6 +1016,7 @@ time_years_from_now: "%s tahun dari sekarang"
 tip:
  2FA Sent: "Email yang berisi kode otentikasi dua-faktor telah dikirim ke alamat email Anda. Silakan mengkonfirmasikan kode ini dibawah untuk mendapatkan akses ke bagian depan. Jika Anda tidak menerima email ini, coba keluar, tunggu 10 menit, dan masuk lagi untuk menerima email baru yang berisi kode baru."
  Accounts: "Halaman akun memungkinkan Anda untuk mengontrol siapa dapat mengakses bagian depan CIDRAM."
+ Actions menu: "Memblokir menambahkan 1 ke penghitungan tanda tangan. Melewati mengurangi 1 dari penghitungan tanda tangan. Mendaftar putih menetapkan penghitungan tanda tangan ke 0 dan menghentikan pemrosesan, sehingga melewatkan aturan selanjutnya sepenuhnya. Mendaftar abu-abu menetapkan penghitungan tanda tangan ke 0, tetapi tidak menghentikan pemrosesan. Memprofilkan tidak memengaruhi penghitungan tanda tangan, tetapi berguna ketika logika yang lebih kompleks mungkin dibutuhkan untuk menentukan apakah akan melakukan jenis tindakan lain, karena profil yang dihasilkan dapat digunakan dengan kondisi aturan berikutnya. Setelah diproses, jika penghitungan tanda tangan 1 atau lebih besar, permintaan akan diblokir."
  Aggregator: "Agregator memungkinkan Anda mengekspresikan IP, CIDR, dan topeng jaring dengan cara sekecil mungkin. Masukkan data yang akan diagregatkan dan tekan "OK"."
  Auxiliary Rules Modes: "Modus lihat menampilkan aturan tambahan sebagai daftar ringkas agar mudah dibaca. Aturan dalam daftar dapat diperluas dan rincian lebih lanjut ditampilkan dengan mengkliknya. Pilihan untuk mengekspor atau menghapus aturan akan ditampilkan saat mengklik trigram (☰). Aturan dapat disusun ulang dengan cara menyeret dan melepas, menyeret aturan dari posisi yang ada ke posisi yang diinginkan. Modus edit diperlukan untuk mengubah aturan tambahan, bidang yang dapat diedit, dan opsi untuk menambahkan kondisi baru, webhook, atau logika lain ke aturan sebagaimana diperlukan yang disediakan di halaman. Aturan tambahan baru dapat dibuat melalui modus manapun."
  Auxiliary Rules Priority: "Prioritas (maksimum➡(sama🔄setara)➡terendah):"

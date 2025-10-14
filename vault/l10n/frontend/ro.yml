@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Romanian language data for the front-end (last modified: 2025.09.21).
+# This file: Romanian language data for the front-end (last modified: 2025.10.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -86,7 +86,7 @@ Name:
  Bad hosts blocker module: "Modul de blocare a gazdelor proaste."
  Bot user agents module: "Modulul de agenți de utilizator bot."
  BunnyCDN compatibility module: "Modul de compatibilitate BunnyCDN."
- Bypasses: "Semnătura implicită bypass-uri."
+ Bypasses: "Semnătura implicită bypassuri."
  Cookie scanner module: "Modul opțional de scanare cookie."
  HTTP version checker module: "Modul de verificare a versiunii HTTP."
  IP-API module: "Modul IP-API."
@@ -109,7 +109,7 @@ Name:
  Tor blocker module: "Modul de blocare Tor."
 bobuam_hint_default_value: "Când este setat la 0, modulul va amâna la valoarea recomandată în prezent."
 checkbox:
- Allow single-hit bypasses: "Permiteți bypass-uri cu o singură lovitură?"
+ Allow single-hit bypasses: "Permiteți bypassuri cu o singură lovitură?"
  Attempt to verify: "Încercați să verificați?"
  Block it: "Blocați-o."
  Block negatives: "Blocați negativele?"
@@ -161,7 +161,7 @@ config:
  bunnycdn: "Configurarea modulului de compatibilitate BunnyCDN."
  bunnycdn_positive_action: "Ce acțiune ar trebui să efectueze CIDRAM atunci când întâlnește o solicitare de la BunnyCDN? Acțiune implicită = Bypass."
  bypasses: "Configurația pentru bypass semnăturii implicite."
- bypasses_used: "Ce bypass-uri ar trebui folosite?"
+ bypasses_used: "Ce bypassuri ar trebui folosite?"
  components: "Configurare pentru activarea si dezactivarea componentelor utilizate de CIDRAM. De obicei populat de pagina de actualizări, dar poate fi gestionat și de aici pentru un control mai fin și pentru componente personalizate nerecunoscute de pagina de actualizări."
  components_events: "Manageri de evenimente. Utilizat de obicei pentru a modifica modul în care CIDRAM se comportă intern sau pentru a oferi funcționalități suplimentare."
  components_imports: "Importurile. Utilizat de obicei pentru a furniza informații de configurare a unei componente către CIDRAM."
@@ -466,7 +466,7 @@ hints_time_format: |
  <code class="s">{t:z}</code> – Fusul orar (cu două puncte) – De exemplu, +08:00.
 hints_verification:
  "Ce sunt „pozitive” și „negative”?": "Atunci când se verifică identitatea prezentată de o solicităre, un rezultat de succes poate fi descris drept „pozitiv” sau „negativ”. În cazul în care identitatea prezentată este confirmată a fi adevărata identitate, aceasta ar fi descrisă ca fiind „pozitivă”. În cazul în care se confirmă că identitatea prezentată este falsificată, aceasta ar fi descrisă ca fiind „negativă”. Cu toate acestea, un rezultat nereușit (de exemplu, verificarea eșuează, sau veridicitatea identității prezentate nu poate fi determinată) nu ar fi descris drept „pozitiv” sau „negativ”. În schimb, un rezultat nereușit ar fi descris pur și simplu ca neverificat. Atunci când nu se face nicio încercare de verificare a identității prezentate de o solicitare, solicitărea va fi, de asemenea, descrisă ca neverificată. Termenii au sens numai în contextul în care identitatea prezentată printr-o solicităre este recunoscută și, prin urmare, în care verificarea este posibilă. În cazurile în care identitatea prezentată nu se potrivește cu opțiunile prevăzute mai sus sau în care nu este prezentată nicio identitate, opțiunile furnizate mai sus devin irelevante."
- "Ce sunt „bypass-uri cu o singură lovitură”?": "În unele cazuri, o solicitare verificată pozitiv poate fi blocată în continuare ca urmare a fișierelor de semnătură, modulelor, sau a altor condiții ale solicitării, iar bypass-uri pot fi necesare pentru a evita fals pozitive. În cazul în care o bypass este destinată să rezolve exact o infracțiune, nici mai mult, nici mai puțin, o astfel de bypass ar putea fi descrisă ca o „bypass cu o singură lovitură”."
+ "Ce sunt „bypassuri cu o singură lovitură”?": "În unele cazuri, o solicitare verificată pozitiv poate fi blocată în continuare ca urmare a fișierelor de semnătură, modulelor, sau a altor condiții ale solicitării, iar bypassuri pot fi necesare pentru a evita fals pozitive. În cazul în care o bypass este destinată să rezolve exact o infracțiune, nici mai mult, nici mai puțin, o astfel de bypass ar putea fi descrisă ca o „bypass cu o singură lovitură”."
 hints_want_to_block: "!! Majoritatea utilizatorilor vor dori probabil ca acest lucru să fie blocat, indiferent dacă este real sau falsificat. Acest lucru poate fi realizat selectând „încercare de verificare” și deselectând „blochează solicitările neverificate”. Cu toate acestea, deoarece unii utilizatori ar putea dori să poată verifica astfel de solicitări (pentru a bloca negative în timp ce le permit pozitive), în loc să blocheze astfel de solicitări prin module, aici sunt furnizate opțiuni pentru gestionarea unor astfel de solicitări."
 info_cli_by_default_ips: |
  În mod implicit, IP-urile sunt testate împotriva tuturor fișierelor de
@@ -756,7 +756,7 @@ label:
   When the rule should expire (optional): "Când regula ar trebui să expire (opțional):"
   Where to redirect the request: "Unde să redirecționați solicitarea:"
   block the request: "blocați solicitărea"
-  bypass the request: "bypass solicitărea"
+  bypass the request: "bypassați solicitărea"
   don_t log the request: "nu înregistrați solicitărea"
   greylist the request: "lista gri a solicitărea"
   logic_all: "Pentru a declanșa regula, trebuie îndeplinite toate condițiile."
@@ -1057,6 +1057,7 @@ time_years_from_now:
 tip:
  2FA Sent: "Un e-mail care conține un cod de autentificare cu doi factori a fost trimis la adresa dvs. de e-mail. Vă rugăm să confirmați acest cod mai jos pentru a obține acces la front-end. Dacă nu ați primit acest e-mail, încercați să vă deconectați, așteptați 10 minute, și să vă conectați din nou pentru a primi un nou e-mail care conține un nou cod."
  Accounts: "Pagina de conturi vă permite să controlați cine poate accesa front-end-ul CIDRAM."
+ Actions menu: "Blocați adaugă 1 la numărul de semnături. Bypassați scade 1 din numărul de semnături. Lista albă setează numărul de semnături la 0 și termină procesarea, omițând complet orice reguli ulterioare. Lista gri setează numărul de semnături la 0, dar nu termină procesarea. Profilați nu afectează numărul de semnături, dar este util atunci când poate fi necesară o logică mai complexă pentru a determina dacă se efectuează alte tipuri de acțiuni, deoarece profilurile generate ar putea fi folosit pentru condițiile regulilor ulterioare. După procesare, dacă numărul de semnături este 1 sau mai mare, solicitărea va fi blocată."
  Aggregator: "Agregatorul vă permite să exprimați IP-uri, CIDR-uri, și măști de rețea în cel mai mic mod posibil. Introduceți datele de agregat și apăsați „OK”."
  Auxiliary Rules Modes: "Modul vizualizare afișează regulile auxiliare sub forma unei liste compacte pentru o citire ușoară. Regulile din listă pot fi extinse și pot fi afișate detalii suplimentare făcând clic pe ele. Opțiunile pentru exportarea sau ștergerea unei reguli vor fi afișate când faceți clic pe trigrama (☰). Regulile pot fi reordonate prin trageți și plasați, trăgând o regulă din poziția sa existentă în poziția dorită. Modul de editare este necesar pentru a modifica regulile auxiliare, câmpurile editabile și opțiunile pentru a adăuga noi condiții, webhook-uri, sau alte elemente logice la reguli, după cum este necesar, furnizate pe pagină. Noi reguli auxiliare pot fi create prin oricare dintre moduri."
  Auxiliary Rules Priority: "Prioritate (cea mai mare➡(egal🔄echivalent)➡cea mai mică):"

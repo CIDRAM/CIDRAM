@@ -103,7 +103,8 @@
                   <option value="actRdr">{optActRdr}</option>
                   <option value="actRun">{optActRun}</option>
                   <option value="actPro">{optActPro}</option>
-                </select><input type="button" onclick="javascript:addCondition('', this.parentElement.parentElement.parentElement.nextSibling.nextSibling.nextSibling.nextSibling.firstChild.nextSibling.firstChild.nextSibling.firstChild.nextSibling.value)" value="{field.Add more conditions} [1]" class="auto" accesskey="1" />
+                </select><input type="button" onclick="javascript:addCondition('', this.parentElement.parentElement.parentElement.nextSibling.nextSibling.nextSibling.nextSibling.firstChild.nextSibling.firstChild.nextSibling.firstChild.nextSibling.value)" value="{field.Add more conditions} [1]" class="auto" accesskey="1" /><br />
+                <span class="suggestsActive"><small>{tip.Actions menu}</small></span>
               </div>
               <div class="iCntn" id="conditions">
                 <div class="flexrow"><select name="conSourceType[]" title="{label.Data source}" class="auto" onchange="javascript:getInputSuggestions(this)">{conSources}</select><select name="conIfOrNot[]" title="{label.Operator}" class="auto"><option value="If" class="ifOrNot">=</option><option value="Not" class="ifOrNot">≠</option></select><input type="text" name="conSourceValue[]" title="{label.Data value}" placeholder="{tip.Specify a value, or leave blank to disregard}" class="flexin" onfocus="javascript:getInputSuggestions(this.previousElementSibling.previousElementSibling)" /></div><div class="suggestsInactive"></div>

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2025.09.21).
+# This file: Latvian language data for the front-end (last modified: 2025.10.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -109,7 +109,7 @@ Name:
  Tor blocker module: "Tor bloķētāja modulis."
 bobuam_hint_default_value: "Ja iestatīts uz 0, modulis izmanto pašlaik ieteicamo vērtību."
 checkbox:
- Allow single-hit bypasses: "Vai atļaut viena trāpījuma apvedceļi?"
+ Allow single-hit bypasses: "Vai atļaut apiešanu ar vienu trāpījumu?"
  Attempt to verify: "Vai mēģināt pārbaudīt?"
  Block it: "Bloķējiet to."
  Block negatives: "Vai bloķēt negatīvus?"
@@ -160,8 +160,8 @@ config:
  bobuam_sanity_check: "Bloķēt pārlūkprogrammas, kurās tiek parādīts neskaidras vai nepārprotami nepareizi veidotas lietotāja aģentu virknes?"
  bunnycdn: "BunnyCDN saderības moduļa konfigurācija."
  bunnycdn_positive_action: "Kura darbība CIDRAM jāveic, kad tiek saņemts pieprasījums no BunnyCDN? Noklusējuma darbība = Apietu."
- bypasses: "Noklusējuma parakstu apvedceļu konfigurācija."
- bypasses_used: "Kuri apvedceļi jāizmanto?"
+ bypasses: "Noklusējuma parakstu apiešanas konfigurācija."
+ bypasses_used: "Kuri apiešanas jāizmanto?"
  components: "CIDRAM izmantoto konfigurācija komponentu aktivizēšanai un deaktivizēšanai. Parasti to aizpilda atjauninājumu lapa, taču to var arī pārvaldīt no šejienes, lai iegūtu precīzāku kontroli un pielāgotus komponentus, ko atjauninājumu lapa neatpazīst."
  components_events: "Pasākumu apdarinātāji. Parasti izmanto, lai mainītu veidu, kā CIDRAM darbojas iekšēji vai nodrošinātu papildu funkcionalitāti."
  components_imports: "Imports. Parasti izmanto, lai piegādātu CIDRAM komponenta konfigurācijas informāciju."
@@ -424,7 +424,7 @@ hints_duration:
  Loka laiks.: "Ilgumu var aprakstīt, izmantojot loka laika apzīmējumu. Piemēram, <strong>1d2°3′4″</strong> vienu dienu, divas stundas, trīs minūtes, četras sekundes, vai <strong>5″</strong> tikai piecas sekundes."
  Vienkārša angļu valoda.: "Ilgumu var aprakstīt, ierakstot vienības vienkāršā angļu valodā. Piemēram, <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> vienu nedēļu, divas dienas, trīs stundas, četras minūtes, piecas sekundes."
  Ierobežojumi.: "Apzīmējumus var jaukt, taču vienības vienmēr jāapraksta no lielākās līdz mazākajai, un tās nevar atkārtot. Piemēram, <strong>1 week 2 days 3′4″</strong> ir <span class="txtGn">derīgs</span> un tiks pareizi saprasts, bet <strong>3′4″ 1 week 2 days</strong> un <strong>3 hours 3h 3°</strong> ir <span class="txtRd">nav derīgi</span>. CIDRAM ir vienalga, vai izmantojat atstarpes. Cipariem jābūt vienkāršiem un neformatētiem. Praktiskuma labad lielākā atbalstītā vienība ir nedēļa. Kad konfigurācija tiek atjaunināta, CIDRAM normalizē ilgumus uz loka laiku."
-hints_has_bypass: "* Šai opcijai zem <code class="s">bypasses➡used</code> ir atbilstošs apvedceļš. Ieteicams nodrošināt, lai atbilstošā apiešanas izvēles rūtiņa būtu atzīmēta tāpat kā izvēles rūtiņa, lai mēģinātu pārbaudīt šo opciju."
+hints_has_bypass: "* Šai opcijai ir atbilstošs apiešanas zem <code class="s">bypasses➡used</code>. Ieteicams nodrošināt, lai atbilstošā apiešanas izvēles rūtiņa būtu atzīmēta tāpat kā izvēles rūtiņa, lai mēģinātu pārbaudīt šo opciju."
 hints_inspection: "* Paredzēts tikai palīgnoteikumu atkļūdošanai. Netiek rādīts bloķētajiem lietotājiem."
 hints_ipv6_on_32bit: "Piezīme: Dažās 32 bitu sistēmās IPv6 meklēšana var nedarboties pareizi."
 hints_logging_datetime: "Noderīgs padoms: Varat pievienot datuma/laika informāciju žurnālfailu nosaukumiem, izmantojot laika formāta vietturus. Pieejamie laika formāta vietturi tiek parādīti pie {{Links.ConfigRef.time_format}}."
@@ -460,7 +460,7 @@ hints_time_format: |
  <code class="s">{t:z}</code> – Laika josla (ar kolu) – Piem., +08:00.
 hints_verification:
  "Kas ir “pozitīvie” un “negatīvie”?": "Pārbaudot pieprasījuma sniegto identitāti, veiksmīgu rezultātu var raksturot kā “pozitīvu” vai “negatīvu”. Kad uzrādītā identitāte tiek apstiprināta kā patiesā identitāte, tā tiks raksturota kā “pozitīva”. Kad tiek apstiprināts, ka uzrādītā identitāte ir viltota, tā tiks raksturota kā “negatīva”. Tomēr, neveiksmīgs iznākums (piemēram, verifikācija neizdodas, vai uzrādītās identitātes patiesumu nevar noteikt) netiks raksturota kā “pozitīvu” vai “negatīvu”. Tā vietā neveiksmīgs rezultāts tiktu raksturots vienkārši kā nepārbaudīts. Ja netiek mēģināts pārbaudīt pieprasījumā norādīto identitāti, pieprasījums tāpat tiks raksturots kā nepārbaudīts. Terminiem ir jēga tikai kontekstā, kurā tiek atpazīta pieprasījumā norādītā identitāte un līdz ar to, ja ir iespējama pārbaude. Ja uzrādītā identitāte neatbilst iepriekš sniegtajām opcijām, vai ja identitāte nav uzrādīta, iepriekš sniegtās iespējas kļūst nepiemērojams."
- "Kas ir “viena trāpījuma apvedceļi”?": "Dažos gadījumos pozitīvi pārbaudīts pieprasījums joprojām var tikt bloķēts paraksta failu, moduļu, vai citu pieprasījuma nosacījumu dēļ, un var būt nepieciešami apvedceļi, lai izvairītos no viltus pozitīviem rezultātiem. Ja apvedceļš ir paredzēts, lai tiktu galā ar tieši vienu pārkāpumu, ne vairāk un ne mazāk, šādu apvedceļu varētu raksturot kā “viena trāpījuma apvedceļu”."
+ "Kas ir “apiešanu ar vienu trāpījumu”?": "Dažos gadījumos pozitīvi pārbaudīts pieprasījums joprojām var tikt bloķēts paraksta failu, moduļu, vai citu pieprasījuma nosacījumu dēļ, un var būt nepieciešami apiešanas, lai izvairītos no viltus pozitīviem rezultātiem. Gadījumā, ja apiešana ir paredzēta tieši viena pārkāpuma novēršanai, ne vairāk un ne mazāk, šādu apiešanu varētu raksturot kā “viena trāpījuma apiešanu”."
 hints_want_to_block: "!! Lielākā daļa lietotāju, visticamāk, vēlēsies lai tas tiktu bloķēts neatkarīgi no tā, vai tas ir īsts vai viltots. To var panākt, neatlasot “vai mēģināt pārbaudīt” un izvēloties “vai bloķēt nepārbaudītus pieprasījumus”. Tomēr, tā kā daži lietotāji var vēlēties pārbaudīt šādus pieprasījumus (lai bloķētu negatīvos, vienlaikus pieļaujot pozitīvus), nevis izmantot moduļus pieprasījumu bloķēšanai, šeit ir sniegtas šādu pieprasījumu apstrādes iespējas."
 info_cli_by_default_ips: |
  Pēc noklusējuma IP tiek pārbaudīti attiecībā pret visiem paraksta failiem,
@@ -617,7 +617,7 @@ label:
  Fancy: "Iedomātā"
  Focus: "Fokuss:"
  Free disk space: "Brīva vieta diskā:"
- Greylist the request: "Apstrādājiet pieprasījumu kā pelēka sarakstā.\nAtiestata parakstu skaitu, bet turpina pieprasījuma apstrādi. Ieteicams, ja nevēlaties apstrādājiet pieprasījumu kā baltajā sarakstā, bet nepieciešams kaut kas būtiskāks par apvedceļu."
+ Greylist the request: "Apstrādājiet pieprasījumu kā pelēka sarakstā.\nAtiestata parakstu skaitu, bet turpina pieprasījuma apstrādi. Ieteicams, ja nevēlaties apstrādājiet pieprasījumu kā baltajā sarakstā, bet ir nepieciešams kaut kas būtiskāks par apiešanas."
  Harvester: "Kombains"
  Hide: "Slēpt"
  Ignore this: "Ignorēt šo"
@@ -694,7 +694,7 @@ label:
  Total disk space: "Kopējā diska vieta:"
  Total disk usage: "Kopējais diska lietojums:"
  Total: "Kopā"
- Trigger a bypass: "Ieslēgt apvedceļu.\nJa vismaz viens paraksts jau ir saskaitīts, atņem vienu no saskaitīto parakstu skaita. Ieteicams, lai tiktu galā ar vienkāršiem viltus pozitīviem gadījumiem, ko var izraisīt noklusējuma paraksta faili."
+ Trigger a bypass: "Ieslēgt apiešanu.\nJa vismaz viens paraksts jau ir saskaitīts, atņem vienu no saskaitīto parakstu skaita. Ieteicams, lai tiktu galā ar vienkāršiem viltus pozitīviem gadījumiem, ko var izraisīt noklusējuma paraksta faili."
  Unignore this: "Atignorēt šo"
  Values for IP tracking: "IP izsekošanas vērtības"
  Whitelist the request: "Apstrādājiet pieprasījumu kā baltajā sarakstā.\nAtiestata parakstu skaitu, un pārtrauc jebkādu turpmāku pieprasījuma apstrādi. Garantē, ka CIDRAM nekad nebloķēs pieprasījumu."
@@ -1031,6 +1031,7 @@ time_years_from_now:
 tip:
  2FA Sent: "Uz jūsu e-pasta adresi ir nosūtīts e-pasts ar divu faktoru autentifikācijas kodu. Lūdzu, apstipriniet šo kodu zemāk, lai ielogotos. Ja nesaņēmāt šo e-pastu, mēģiniet izlogoties, nogaidiet 10 minūtes, un ielogoties vēlreiz, lai saņemtu jaunu e-pastu ar jaunu kodu."
  Accounts: "Kontu lapa ļauj jums kontrolēt, kurš var ielogoties CIDRAM."
+ Actions menu: "Bloķēšana parakstu skaitam pievieno 1. Apiešana no parakstu skaita atskaita 1. Baltais saraksts iestata parakstu skaitu uz 0 un pārtrauc apstrādi, tādējādi pilnībā izlaižot visus turpmākos palīgnoteikumus. Pelēkais saraksts iestata parakstu skaitu uz 0, bet nepārtrauc apstrādi. Profilēšana neietekmē parakstu skaitu, bet ir noderīga, ja var būt nepieciešama sarežģītāka loģika, lai noteiktu, vai veikt cita veida darbības, jo ģenerētos profilus varētu sasaistīt ar turpmāko palīgnoteikumu nosacījumiem. Pēc apstrādes, ja parakstu skaits ir 1 vai lielāks, pieprasījums tiks bloķēts."
  Aggregator: "Apkopotājs ļauj jums izteikt IP, CIDR, un tīkla maskas iespējami mazākā veidā. Ievadiet apkopojamos datus un nospiediet "Labi"."
  Auxiliary Rules Modes: "Skatīšanas režīmā palīgnoteikumi tiek parādīti kā kompakts saraksts ērtai lasīšanai. Sarakstā esošos noteikumus var izvērst un, noklikšķinot uz tiem, var parādīt sīkāku informāciju. Noklikšķinot uz trigrama (☰), tiks parādītas opcijas noteikuma eksportēšanai vai dzēšanai. Noteikumus var pārkārtots, izmantojot vilkšanas un nomešanas funkciju, velkot noteikumu no tā esošās pozīcijas uz vēlamo pozīciju. Rediģēšanas režīms ir nepieciešams, lai modificētu palīgnoteikumus, rediģējami lauki un opcijas, lai pievienotu jaunus nosacījumus, tīmekļa āķus, vai citu loģiku noteikumiem ja nepieciešams, kas sniegta lapā. Jaunus palīgnoteikumus var izveidot, izmantojot jebkuru no šiem režīmiem."
  Auxiliary Rules Priority: "Prioritāte (augstākais➡(vienāds🔄ekvivalents)➡zemākais):"

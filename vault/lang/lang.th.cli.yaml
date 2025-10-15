@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for CLI (last modified: 2022.07.28).
+# This file: Thai language data for CLI (last modified: 2025.10.15).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -35,7 +35,7 @@ CLI_H: |
  ---
  ธง:
  -h แสดงข้อมูลความช่วยเหลือนี้.
- -c ตรวจสอบว่าที่อยู่ IP ถูกบล็อกโดยไฟล์ลายเซ็นของ CIDRAM.
+ -c ตรวจสอบว่าที่อยู่ IP ถูกบล็อคโดยไฟล์ลายเซ็นของ CIDRAM.
  -g สร้าง CIDR จากที่อยู่ IP.
  -v ตรวจสอบไฟล์ลายเซ็น.
  -f แก้ไขไฟล์ลายเซ็น.
@@ -48,8 +48,8 @@ CLI_H: |
  php.exe /cidram/loader.php -f signatures.dat
  php.exe /cidram/loader.php -v signatures.dat
  ---
-CLI_IP_Blocked: " ที่อยู่ IP ที่ระบุ, "{IP}", ถูกบล็อกโดยหนึ่งหรือมากกว่าของไฟล์ลายเซ็นสำหรับ CIDRAM."
-CLI_IP_Not_Blocked: " ที่อยู่ IP ที่ระบุ, "{IP}", ไม่ถูกบล็อกโดยใดของไฟล์ลายเซ็นสำหรับ CIDRAM."
+CLI_IP_Blocked: " ที่อยู่ IP ที่ระบุ, "{IP}", ถูกบล็อคโดยหนึ่งหรือมากกว่าของไฟล์ลายเซ็นสำหรับ CIDRAM."
+CLI_IP_Not_Blocked: " ที่อยู่ IP ที่ระบุ, "{IP}", ไม่ถูกบล็อคโดยใดของไฟล์ลายเซ็นสำหรับ CIDRAM."
 CLI_VF_Empty: "ไฟล์ลายเซ็นที่ระบุว่างเปล่าหรือไม่มีอยู่."
 CLI_VF_Level_0: "ประกาศ"
 CLI_VF_Level_1: "คำเตือน"

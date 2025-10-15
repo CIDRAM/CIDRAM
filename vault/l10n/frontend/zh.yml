@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese language data for the front-end (last modified: 2025.09.30).
+# This file: Chinese language data for the front-end (last modified: 2025.10.15).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -167,7 +167,7 @@ config:
  bobuam_safari: {"zh-Hans": "Safari的“Version”令牌的最低允许版本。 推荐的：“{{BOBUAM Token.Safari}}”。", "zh-Hant": "Safari的『Version』令牌的最低允許版本。 推薦的：『{{BOBUAM Token.Safari}}』。"}
  bobuam_sanity_check: {"zh-Hans": "阻止模糊的或格式畸形的用户代理字符串的浏览器？", "zh-Hant": "阻止模糊的或格式畸形的用戶代理字符串的瀏覽器？"}
  bunnycdn: {"zh-Hans": "BunnyCDN兼容性模块配置。", "zh-Hant": "BunnyCDN兼容性模組配置。"}
- bunnycdn_positive_action: {"zh-Hans": "CIDRAM遇到BunnyCDN的请求时应该执行什么动作？ 标准操作 = 绕行。", "zh-Hant": "CIDRAM遇到BunnyCDN的請求時應該執行什麼動作？ 標準操作 = 繞行。"}
+ bunnycdn_positive_action: {"zh-Hans": "CIDRAM遇到BunnyCDN的请求时应该执行什么动作？ 标准操作 = 绕过。", "zh-Hant": "CIDRAM遇到BunnyCDN的請求時應該執行什麼動作？ 標準操作 = 繞過。"}
  bypasses: {"zh-Hans": "默认签名绕过配置。", "zh-Hant": "默認簽名繞過配置。"}
  bypasses_used: {"zh-Hans": "应该使用哪些绕过？", "zh-Hant": "應該使用哪些繞過？"}
  captcha: {"zh-Hans": "验证码的配置（为人们提供了一种在受阻时重新获得访问权限的方法）。", "zh-Hant": "驗證碼的配置（為人們提供了一種在受阻時重新獲得訪問權限的方法）。"}
@@ -308,7 +308,7 @@ config:
  protocol_blocked: {"zh-Hans": "选定的协议将被阻止。注意：不会影响通过强制请求使用相同协议的服务（例如，Cloudflare）路由的网站。", "zh-Hant": "選定的協定將被阻止。注意：不會影響通過強制請求使用相同協定的服務（例如，Cloudflare）路由的網站。"}
  protocol_reason_message: {"zh-Hans": "阻止此类请求时显示的原因消息。", "zh-Hant": "阻止此類請求時顯示的原因消息。"}
  quic: {"zh-Hans": "Quic cloud兼容性模块配置。", "zh-Hant": "Quic cloud兼容性模組配置。"}
- quic_positive_action: {"zh-Hans": "CIDRAM遇到Quic cloud的请求时应该执行什么动作？ 标准操作 = 绕行。", "zh-Hant": "CIDRAM遇到Quic cloud的請求時應該執行什麼動作？ 標準操作 = 繞行。"}
+ quic_positive_action: {"zh-Hans": "CIDRAM遇到Quic cloud的请求时应该执行什么动作？ 标准操作 = 绕过。", "zh-Hant": "CIDRAM遇到Quic cloud的請求時應該執行什麼動作？ 標準操作 = 繞過。"}
  rate_limiting: {"zh-Hans": "速率限制的配置（不建议一般使用）。", "zh-Hant": "速率限制的配置（不建議一般使用）。"}
  rate_limiting_allowance_period: {"zh-Hans": "监视使用情况的持续时间。​标准=0°0′0″。", "zh-Hant": "監視使用情況的持續時間。​標準=0°0′0″。"}
  rate_limiting_exceptions: {"zh-Hans": "例外（即，不应限制速率的请求）。​仅在启用速率限制时有效。", "zh-Hant": "例外（即，不應限制速率的請求）。​僅在啟用速率限制時有效。"}
@@ -943,7 +943,7 @@ label:
   When the rule should expire (optional): {"zh-Hans": "规则何时到期（可选）：", "zh-Hant": "規則何時到期（可選）："}
   Where to redirect the request: {"zh-Hans": "重定向请求的位置：", "zh-Hant": "重定向請求的位置："}
   block the request: {"zh-Hans": "阻止该请求", "zh-Hant": "阻止該請求"}
-  bypass the request: {"zh-Hans": "绕行该请求", "zh-Hant": "繞行該請求"}
+  bypass the request: {"zh-Hans": "绕过该请求", "zh-Hant": "繞過該請求"}
   greylist the request: {"zh-Hans": "灰名单该请求", "zh-Hant": "灰名單該請求"}
   logic_all: {"zh-Hans": "为了触发规则，必须满足所有条件。", "zh-Hant": "為了觸發規則，必須滿足所有條件。"}
   logic_any: {"zh-Hans": "只要满足所有“不等于”（≠）条件，任何“等于”（=）条件都可以触发规则。", "zh-Hant": "只要滿足所有『不等於』（≠）條件，任何『等於』（=）條件都可以觸發規則。"}
@@ -1220,6 +1220,9 @@ tip:
   zh-Hans: "包含2FA代码的电子邮件已发送到您的电子邮件地址。​请确认以下代码以获取对前端的访问权限。​如果您没有收到此电子邮件，尝试登出，等待10分钟，然后再次登录以接收包含新代码的新电子邮件。"
   zh-Hant: "包含2FA代碼的電子郵件已發送到您的電子郵件地址。​請確認以下代碼以獲取對前端的訪問權限。​如果您沒有收到此電子郵件，嘗試登出，等待10分鐘，然後再次登錄以接收包含新代碼的新電子郵件。"
  Accounts: {"zh-Hans": "帐户页面允许您控制谁可以访问CIDRAM前端。", "zh-Hant": "帳戶頁面允許您控制誰可以訪問CIDRAM前端。"}
+ Actions menu:
+  zh-Hans: "阻止会使签名计数加 1。 绕过将从签名计数中扣除 1。 白名单将签名计数设置为 0 并终止处理，从而完全跳过任何后续规则。 灰名单将签名数设置为 0，但不会终止处理。 分类不会影响签名计数，但当需要更复杂的逻辑来确定是否执行其他类型的操作时很有用，因为生成的分类可以链接到后续规则的条件。 处理后，如果签名数为 1 或更大，则请求将被阻止。"
+  zh-Hant: "阻止會使簽名計數加 1。 繞過將從簽名計數中扣除 1。 白名單將簽名計數設定為 0 並終止處理，從而完全跳過任何後續規則。 灰名單將簽名數設定為 0，但不會終止處理。 分類不會影響簽名計數，但當需要更複雜的邏輯來確定是否執行其他類型的操作時很有用，因為產生的分類可以連結到後續規則的條件。 處理後，如果簽名數為 1 或更大，則請求將被阻止。"
  Aggregator: {"zh-Hans": "聚合器允许您以最小的可能方式表达IP，CIDR，和网络掩码。​输入要聚合的数据，然后按“OK”。", "zh-Hant": "聚合器允許您以最小的可能方式表達IP，CIDR，和網絡掩碼。​輸入要聚合的數據，然後按『OK』。"}
  Auxiliary Rules Modes:
   zh-Hans: "查看模式将辅助规则显示为紧凑列表，以便于阅读。​单击列表中的规则即可展开并显示更多详细信息。​单击三元组（☰）时将显示导出或删除规则的选项。​可以通过拖放操作更改规则的顺序，将规则从现有位置拖动到所需位置。​需要编辑模式来修改辅助规则，页面上有可编辑字段和选项，用于添加新条件、webhook、或其他逻辑。​可以通过任一模式创建新的辅助规则。"

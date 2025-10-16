@@ -8,5 +8,5 @@
         <div class="{StatClass}">{Latest}</div>{LatestSize}<small>{RemoteFilename}</small>{ChangelogFormatted}{Remote Dependency Status}
       </div>
       <div class="{RowClass}f s" style="order:{Ord3}" data-order-default="{Ord3}" data-order-default-rev="{OrdRev3}" data-order-az="{OrdAZ3}" data-order-az-rev="{OrdAZRev3}" data-is-outdated="{IsOutdated}" data-is-installed="{IsInstalled}">
-        <form action="?cidram-page=updates" method="POST"><input name="cidram-form-target" type="hidden" value="updates" /><input name="ID[]" type="hidden" value="{ID}" />{StatusOptions}</form>
+        <form action="?cidram-page=updates" method="POST" onsubmit="event.preventDefault();let he=document.createElement('input');he.type='hidden';he.name='viewState';he.value=getViewState();this.appendChild(he);this.submit()"><input name="cidram-form-target" type="hidden" value="updates" /><input name="ID[]" type="hidden" value="{ID}" />{StatusOptions}</form>
       </div>

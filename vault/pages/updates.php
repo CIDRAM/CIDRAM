@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The updates page (last modified: 2025.09.28).
+ * This file: The updates page (last modified: 2025.10.16).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -23,10 +23,9 @@ if ($this->CIDRAM['MajorVersionNotice']) {
 }
 
 /** Updates page form boilerplate. */
-$this->FE['CFBoilerplate'] =
-    '<form action="?cidram-page=updates" method="POST" class="inline">' .
-    '<input name="cidram-form-target" type="hidden" value="updates" />' .
-    '<input name="do" type="hidden" value="%s" />';
+$Boilerplate =
+    '<form action="?cidram-page=updates" method="POST" class="inline" onsubmit="event.preventDefault();let he=document.createElement(\'input\');he.type=\'hidden\';he.name=\'viewState\';he.value=getViewState();this.appendChild(he);this.submit()">' .
+    '<input name="cidram-form-target" type="hidden" value="updates" /><input name="do" type="hidden" value="%s" />';
 
 /** Prepare components metadata working array. */
 $this->Components = [
@@ -153,20 +152,17 @@ foreach ($this->Components['Meta'] as $Key => &$this->Components['ThisComponent'
     }
 
     if (!empty($this->Components['RemoteMeta'][$Key]['Name'])) {
-        $this->Components['ThisComponent']['Name'] =
-            $this->Components['RemoteMeta'][$Key]['Name'];
+        $this->Components['ThisComponent']['Name'] = $this->Components['RemoteMeta'][$Key]['Name'];
         $this->prepareName($this->Components['ThisComponent'], $Key);
     }
     if (
         empty($this->Components['ThisComponent']['False Positive Risk']) &&
         !empty($this->Components['RemoteMeta'][$Key]['False Positive Risk'])
     ) {
-        $this->Components['ThisComponent']['False Positive Risk'] =
-            $this->Components['RemoteMeta'][$Key]['False Positive Risk'];
+        $this->Components['ThisComponent']['False Positive Risk'] = $this->Components['RemoteMeta'][$Key]['False Positive Risk'];
     }
     if (!empty($this->Components['RemoteMeta'][$Key]['Extended Description'])) {
-        $this->Components['ThisComponent']['Extended Description'] =
-            $this->Components['RemoteMeta'][$Key]['Extended Description'];
+        $this->Components['ThisComponent']['Extended Description'] = $this->Components['RemoteMeta'][$Key]['Extended Description'];
         $this->prepareExtendedDescription($this->Components['ThisComponent'], $Key);
     }
     $this->Components['ThisComponent']['IsOutdated'] = 'no';
@@ -185,8 +181,7 @@ foreach ($this->Components['Meta'] as $Key => &$this->Components['ThisComponent'
                 if (isset($this->Components['ThisComponent']['Has Signatures']) && $this->Components['ThisComponent']['Has Signatures'] === true) {
                     $this->Components['OutdatedSignatureFiles'][] = $Key;
                 }
-                $this->Components['ThisComponent']['Options'] .=
-                    '<option value="update-component">' . $this->L10N->getString('field.Update') . '</option>';
+                $this->Components['ThisComponent']['Options'] .= '<option value="update-component">' . $this->L10N->getString('field.Update') . '</option>';
             }
         } else {
             $this->Components['ThisComponent']['StatClass'] = 'txtGn';
@@ -502,7 +497,7 @@ $this->FE['UpdateAll'] = '';
 
 /** Instructions to update all signature files (but not necessarily everything). */
 if ($this->Components['CountOutdatedSignatureFiles']) {
-    $this->FE['UpdateAll'] .= sprintf($this->FE['CFBoilerplate'], 'update-component');
+    $this->FE['UpdateAll'] .= sprintf($Boilerplate, 'update-component');
     foreach ($this->Components['OutdatedSignatureFiles'] as $this->Components['ThisOutdated']) {
         $this->FE['UpdateAll'] .= '<input name="ID[]" type="hidden" value="' . $this->Components['ThisOutdated'] . '" />';
     }
@@ -511,7 +506,7 @@ if ($this->Components['CountOutdatedSignatureFiles']) {
 
 /** Instructions to update everything at once. */
 if ($this->Components['CountOutdated'] && $this->Components['CountOutdated'] !== $this->Components['CountOutdatedSignatureFiles']) {
-    $this->FE['UpdateAll'] .= sprintf($this->FE['CFBoilerplate'], 'update-component');
+    $this->FE['UpdateAll'] .= sprintf($Boilerplate, 'update-component');
     foreach ($this->Components['Outdated'] as $this->Components['ThisOutdated']) {
         $this->FE['UpdateAll'] .= '<input name="ID[]" type="hidden" value="' . $this->Components['ThisOutdated'] . '" />';
     }
@@ -520,7 +515,7 @@ if ($this->Components['CountOutdated'] && $this->Components['CountOutdated'] !==
 
 /** Instructions to repair everything at once. */
 if ($this->Components['CountRepairable']) {
-    $this->FE['UpdateAll'] .= sprintf($this->FE['CFBoilerplate'], 'repair-component');
+    $this->FE['UpdateAll'] .= sprintf($Boilerplate, 'repair-component');
     foreach ($this->Components['Repairable'] as $this->Components['ThisRepairable']) {
         $this->FE['UpdateAll'] .= '<input name="ID[]" type="hidden" value="' . $this->Components['ThisRepairable'] . '" />';
     }
@@ -529,7 +524,7 @@ if ($this->Components['CountRepairable']) {
 
 /** Instructions to verify everything at once. */
 if ($this->Components['CountVerify']) {
-    $this->FE['UpdateAll'] .= sprintf($this->FE['CFBoilerplate'], 'verify-component');
+    $this->FE['UpdateAll'] .= sprintf($Boilerplate, 'verify-component');
     foreach ($this->Components['Verify'] as $this->Components['ThisVerify']) {
         $this->FE['UpdateAll'] .= '<input name="ID[]" type="hidden" value="' . $this->Components['ThisVerify'] . '" />';
     }
@@ -568,6 +563,20 @@ foreach ($this->Components['Install Together'] as $Key => $this->Components['ID'
     );
 }
 
+/** Restore view state from the previous request. */
+$ViewState = isset($_POST['viewState']) ? explode(',', $_POST['viewState'], 2) : [];
+$this->FE['RestoreViewState'] = isset($ViewState[1]) ? str_repeat('document.getElementById(\'dspCtrl\').click();', (int)$ViewState[1]) : '';
+if (isset($ViewState[0])) {
+    if ($ViewState[0] === '1') {
+        $this->FE['RestoreViewState'] .= 'document.getElementById(\'orderByID\').click();';
+    } elseif ($ViewState[0] === '2') {
+        $this->FE['RestoreViewState'] .= 'document.getElementById(\'orderByAZ\').click();';
+    } elseif ($ViewState[0] === '3') {
+        $this->FE['RestoreViewState'] .= 'document.getElementById(\'orderByAZ\').click();document.getElementById(\'orderByAZ\').click();';
+    }
+}
+unset($ViewState);
+
 /** Send output. */
 if ($this->FE['CronMode'] === '') {
     /** Normal page output. */
@@ -603,4 +612,4 @@ if ($this->FE['CronMode'] === '') {
 }
 
 /** Cleanup. */
-unset($this->FE['CFBoilerplate']);
+unset($Boilerplate);

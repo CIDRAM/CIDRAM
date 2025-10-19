@@ -1,10 +1,10 @@
 ---
 CIDRAM Core:
  Name: "CIDRAM Core"
- Version: "2.17.1-DEV+252750"
+ Version: "2.17.1-DEV+252890"
  Dependencies:
   PHP: "^7.2|^8"
-  Common Classes Package: "^2.14"
+  Common Classes Package: "^2.14.2"
   CIDRAM Front-End: "Latest"
   l10n/{lang}: ">=2023.258"
  Changelog: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/Changelog.txt"
@@ -64,10 +64,10 @@ CIDRAM Core:
  Reannotate: "components.dat"
 CIDRAM Front-End:
  Name: "CIDRAM Front-End"
- Version: "2.17.1-DEV+252750"
+ Version: "2.17.1-DEV+252890"
  Dependencies:
   PHP: "^7.2|^8"
-  Common Classes Package: "^2.14"
+  Common Classes Package: "^2.14.2"
   CIDRAM Core: "Latest"
   l10n/{lang}: ">=2025.189"
  Changelog: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/Changelog.txt"
@@ -235,7 +235,7 @@ CIDRAM Front-End:
  Reannotate: "components.dat"
 Common Classes Package:
  Name: "Common Classes Package"
- Version: "2.14.2-DEV+252820"
+ Version: "2.14.2"
  Dependencies:
   PHP: "^7.2|^8"
  Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat"
@@ -279,7 +279,7 @@ Common Classes Package:
    - "b5288d97ac8bf7ac8081a87064ed8f493aaa5a36425a0301a175db046b6f0ea5:30476"
    - "4bf94fb1c03a573468f2ec05a02b0c721f143edfeee7b5b43688b6c14b2e51c2:3827"
    - "3b77647c94e3900dff27e1ca0be8952bba33a7f04950ae5320d0ebc706e3c76b:5932"
-   - "60ed512f00d27bc6531926fa6b2b324602ed6947a39dab345703c9d84aa67967:32439"
+   - "db38447eeb128e4b51eab713306437412b0694dfc6fb8ccca68d8ceb75b7e1a1:32606"
    - "4752dded15fd92e46c967d17716ba70bdee7f71ee6f3a6a89b889e02d50e2c40:9122"
    - "2864c7ba28272c8f2596a67860b4e6bbd9237ebfb2d4f02a55436b28daf31940:68238"
    - "1105e9e94416ff6dab63e07967b7b5c25ad8f83a8d5e831d55b5deddb86f977a:18637"
@@ -597,7 +597,7 @@ l10n/fr:
 l10n/hi:
  Name: "L10N: हिंदी"
  Extended Description: "हिंदी भाषा डाटा"
- Version: "2025.251.0"
+ Version: "2025.290.0"
  Dependencies:
   CIDRAM Core: "^2"
  Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat"
@@ -611,7 +611,7 @@ l10n/hi:
    - "lang/lang.hi.yaml"
   Checksum:
    - "dc05ca0609b84066b2d7550b9a6522fcffe42b547204f5e87c15f1ee04047ac6:118464"
-   - "d2ab13463b90213bc3959e58372266be7fb91fa8215b7ec1380e0967576c2292:10799"
+   - "dc4adc30fbc44899ec6b500fdc7493a5d534e15ea063454430b0b55ff50df277:10805"
  Reannotate: "components.dat"
 l10n/id:
  Name: "L10N: Bahasa Indonesia"

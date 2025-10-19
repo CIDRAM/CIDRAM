@@ -1,6 +1,6 @@
 <?php
 /**
- * L10N handler (last modified: 2025.02.12).
+ * L10N handler (last modified: 2025.10.17).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -1127,8 +1127,8 @@ class L10N extends CommonAbstract
 
         if (($Pos = strpos($Code, '-')) !== false) {
             /** @link https://en.wikipedia.org/wiki/ISO_15924 */
-            if (preg_match('~-([A-Z][a-z]{3}|\d{3})$~', $Code, $Script)) {
-                if (preg_match('~^(?:1\d\d|A(?:dlm|rab|rmi|vst)|C(?:hrs|prt)|Elym|Gara|H(?:atr|ebr|ung)|K(?:har|its)|Lydi|M(?:an[di]|end|er[co])|N(?:arb|bat|koo|shu)|Orkh|P(?:alm|hl[ip]|hnx|rti)|Rohg|S(?:amr|arb|idt|ogo|yrc)|T(?:haa|odr)|Yezi)$~', $Script[1])) {
+            if (preg_match('~-([A-Z][a-z]{3}|\d{3})$~', $Code, $Script) && !preg_match('~^(0[5679]0|095|1(?:[034]3|20|45)|2(?:[029]1|[18]8|84|92)|3(?:31|80)|4(?:1[0-3]|99)|5(?:0[0-4]|[259]0)|6[12]0|9[0-49]\d)$~', $Script[1])) {
+                if (preg_match('~^(?:1\d+|305|4(?:03|38)|A(?:dlm|rab|rmi|vst)|C(?:hrs|prt)|Elym|Gara|H(?:atr|ebr|ung)|K(?:har|its)|Lydi|M(?:an[di]|end|er[co])|N(?:arb|bat|koo|shu)|Orkh|P(?:alm|hl[ip]|hnx|rti)|Rohg|S(?:amr|arb|idt|ogo|yrc)|T(?:haa|odr)|Yezi)$~', $Script[1])) {
                     return 'rtl';
                 }
                 return 'ltr';

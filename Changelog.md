@@ -500,4 +500,5 @@
 - Server-side ordering mechanism at the updates page (sort by name, by ID, ascending, descending, etc) replaced by client-side mechanism (#624).
 - Optimised some iterators.
 - Added support for NO_COLOR.
+- CAPTCHA log entries now include the reconstructed URI/URL (#643).
 - *Plus all the regular signature updates.*

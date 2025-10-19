@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Default event handlers (last modified: 2025.08.20).
+ * This file: Default event handlers (last modified: 2025.10.19).
  */
 
 /**
@@ -330,14 +330,16 @@ $this->Events->addHandler('writeToCaptchaLog', function (): void {
     $Truncate = $this->readBytes($this->Configuration['logging']['truncate']);
     $WriteMode = (!file_exists($Filename) || $Truncate > 0 && filesize($Filename) >= $Truncate) ? 'wb' : 'ab';
     $Data = sprintf(
-        '%1$s%7$s%2$s - %3$s%7$s%4$s - %5$s%7$s%6$s',
+        '%1$s%7$s%2$s - %3$s%7$s%4$s - %8$s%7$s%9$s - %5$s%7$s%6$s',
         $this->L10N->getString('field.IP address'),
         $this->Configuration['legal']['pseudonymise_ip_addresses'] ? $this->pseudonymiseIp($this->ipAddr) : $this->ipAddr,
         $this->L10N->getString('field.DateTime'),
         $this->BlockInfo['DateTime'],
         $this->L10N->getString('field.CAPTCHA state'),
         $this->BlockInfo['CAPTCHA'],
-        $this->L10N->getString('pair_separator')
+        $this->L10N->getString('pair_separator'),
+        $this->L10N->getString('field.Reconstructed URI'),
+        $this->BlockInfo['rURI']
     ) . "\n";
 
     /** Adds a second new line in case of combined log files. */

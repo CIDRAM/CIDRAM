@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: HCaptcha class (last modified: 2025.08.10).
+ * This file: HCaptcha class (last modified: 2025.10.19).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -194,14 +194,16 @@ class HCaptcha extends Captcha
         $Truncate = $this->CIDRAM->readBytes($this->CIDRAM->Configuration['logging']['truncate']);
         $WriteMode = (!file_exists($Filename) || $Truncate > 0 && filesize($Filename) >= $Truncate) ? 'wb' : 'ab';
         $Data = sprintf(
-            '%1$s%7$s%2$s - %3$s%7$s%4$s - %5$s%7$s%6$s',
+            '%1$s%7$s%2$s - %3$s%7$s%4$s - %8$s%7$s%9$s - %5$s%7$s%6$s',
             $this->CIDRAM->L10N->getString('field.IP address'),
             $this->CIDRAM->Configuration['legal']['pseudonymise_ip_addresses'] ? $this->CIDRAM->pseudonymiseIp($this->CIDRAM->ipAddr) : $this->CIDRAM->ipAddr,
             $this->CIDRAM->L10N->getString('field.DateTime'),
             $this->CIDRAM->BlockInfo['DateTime'],
             $this->CIDRAM->L10N->getString('field.CAPTCHA state'),
             $this->CIDRAM->BlockInfo['CAPTCHA'],
-            $this->CIDRAM->L10N->getString('pair_separator')
+            $this->CIDRAM->L10N->getString('pair_separator'),
+            $this->CIDRAM->L10N->getString('field.Reconstructed URI'),
+            $this->CIDRAM->BlockInfo['rURI']
         ) . "\n";
 
         /** Adds a second new line in case of combined log files. */

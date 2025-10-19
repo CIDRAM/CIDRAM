@@ -487,4 +487,5 @@
 - [2025.09.26]: Added support for wildcards to the logs page search parameter.
 - [2025.10.03]: Optimised some iterators.
 - [2025.10.07]: Added support for NO_COLOR.
+- [2025.10.19]: CAPTCHA log entries now include the reconstructed URI/URL (#643).
 - *Plus all the regular signature updates.*

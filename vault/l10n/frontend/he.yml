@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hebrew language data for the front-end (last modified: 2025.09.30).
+# This file: Hebrew language data for the front-end (last modified: 2025.10.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -141,8 +141,8 @@ config:
  bgpview: "תצורה עבור מודול BGPView (מספק מתקן חיפוש ASN וקוד מדינה עבור CIDRAM)."
  bgpview_blocked_asns: &ConfigBlockedASNs "רשימה של ASN שיש לחסום כשהם תואמים על ידי מודול."
  bgpview_blocked_ccs: &ConfigBlockedCCs "רשימה של מדינות (מזוהה באמצעות קודי המדינה הדו-ספרתיים {{Links.ISO.3166}} שלהם) שיש לחסום כאשר מודול תואם."
- bgpview_whitelisted_asns: &ConfigWhitelistedASNs "רשימה של ASN לרשימה הלבנה כאשר מודול תואם אותם."
- bgpview_whitelisted_ccs: &ConfigWhitelistedCCs "רשימה של מדינות (מזוהה באמצעות קודי המדינה הדו-ספרתיים {{Links.ISO.3166}} שלהם) לרשימה הלבנה כאשר מודול תואם אותם."
+ bgpview_whitelisted_asns: &ConfigWhitelistedASNs "רשימה של ASN לwhitelist כאשר מודול תואם אותם."
+ bgpview_whitelisted_ccs: &ConfigWhitelistedCCs "רשימה של מדינות (מזוהה באמצעות קודי המדינה הדו-ספרתיים {{Links.ISO.3166}} שלהם) לwhitelist כאשר מודול תואם אותם."
  bobuam: "תצורה עבור "מודול סוכני משתמש של בוט או דפדפן" האופציונלי, שמזהה בוטים לא רצויים, דפדפנים ישנים, ומבצע כמה בדיקות שפיות."
  bobuam_block_bots: "לחסום בוטים שזוהו כזדוניים או לא רצויים?"
  bobuam_block_eol_browsers: "לחסום דפדפנים שהגיעו לסוף החיים? (הגדר גרסאות למטה)."
@@ -169,14 +169,14 @@ config:
  captcha_friendly_sitekey: *FriendlyCred
  captcha_hcaptcha_secret: &HCaptchaCred "אם ברצונך להשתמש ב-hCaptcha עם CIDRAM, תצטרך להזין כאן ערך. אם לא, תוכל להתעלם ממנו."
  captcha_hcaptcha_sitekey: *HCaptchaCred
- captcha_lockto: "לאן לנעול CAPTCHAs."
+ captcha_lockto: "לאן לנעול CAPTCHA."
  captcha_log: "לרשום את כל ניסיונות ה-CAPTCHA? אם כן, ציין את השם לשימוש עבור קובץ היומן. אם לא, השאר את המשתנה הזה ריק."
  captcha_messages: "הודעות שיוצגו לצד CAPTCHA."
  captcha_nonblocked_status_code: "באיזה קוד סטטוס יש להשתמש בעת הצגת CAPTCHA לבקשות לא חסומות?"
  captcha_signature_limit: "המספר המרבי של חתימות המותר לפני ביטול הצעת ה-CAPTCHA. סטנדרטי = 1."
  captcha_turnstile_secret: &TurnstileCred "אם ברצונך להשתמש ב-Cloudflare Turnstile עם CIDRAM, תצטרך להזין כאן ערך. אם לא, תוכל להתעלם ממנו."
  captcha_turnstile_sitekey: *TurnstileCred
- captcha_usemode: "מתי כדאי להציע CAPTCHA? כאן ניתן לציין את ההתנהגות המועדפת עבור כל ספק נתמך. הערה: בקשות ברשימה הלבנה או מאומתת ולא חסומה לעולם אינן צריכות להשלים CAPTCHA. שימו לב גם: CAPTCHA יכול לספק שכבה שימושית נוספת של הגנה מפני בוטים וסוגים שונים של בקשות אוטומטיות זדוניות, אך לא תספק כל הגנה מפני אדם זדוני."
+ captcha_usemode: "מתי כדאי להציע CAPTCHA? כאן ניתן לציין את ההתנהגות המועדפת עבור כל ספק נתמך. הערה: בקשות whitelist או מאומתת ולא חסומה לעולם אינן צריכות להשלים CAPTCHA. שימו לב גם: CAPTCHA יכול לספק שכבה שימושית נוספת של הגנה מפני בוטים וסוגים שונים של בקשות אוטומטיות זדוניות, אך לא תספק כל הגנה מפני אדם זדוני."
  components: "תצורה להפעלה ולביטול הרכיבים המשמשים את CIDRAM. מאוכלס בדרך כלל על ידי המעדכן, אך ניתן גם לנהל מכאן לשליטה עדינה יותר ולרכיבים מותאמים אישית שאינם מזוהים על ידי המעדכן."
  components_events: "מטפלי אירועים. משמש בדרך כלל כדי לשנות את האופן שבו CIDRAM מתנהג באופן פנימי או כדי לספק פונקציונליות נוספת."
  components_imports: "היבוא. משמש בדרך כלל לאספקת מידע תצורה של רכיב ל-CIDRAM."
@@ -393,7 +393,7 @@ field:
  Verified search engine and social media requests: "מאומת מנוע חיפוש ובקשות למדיה חברתית"
  Verify all: "לאמת הכל"
  Verify: "לאמת"
- Whitelisted requests: "בקשות לרשימת ההיתרים"
+ Whitelisted requests: "בקשות whitelist"
  Your version: "הגרסה שלך"
  log_rotation_archive: "תחילה ארכיון, ולאחר מכן מחק את קבצי היומן הישנים ביותר, עד שההגבלה לא תחרוג עוד."
  log_rotation_delete: "מחק את קובצי היומן הישנים ביותר, עד שההגבלה לא תחרוג עוד."
@@ -618,7 +618,7 @@ label:
  False positive risk: "סיכון חיובי כוזב:"
  Fancy: "מפואר"
  Focus: "הפוקוס:"
- Greylist the request: "גרייליסט את הבקשה.\nמאפס את מספר החתימות שהופעלו, אך ממשיך בעיבוד הבקשה. מומלץ כאשר אתה לא רוצה whitelist את הבקשה, אבל צריך משהו יותר מהותי מהפעלת מעקף."
+ Greylist the request: "Greylist הבקשה.\nמאפס את מספר החתימות שהופעלו, אך ממשיך בעיבוד הבקשה. מומלץ כאשר אתה לא רוצה whitelist את הבקשה, אבל צריך משהו יותר מהותי מהפעלת מעקף."
  Harvester: "קוצר"
  Hide: "להתחבא"
  Ignore this: "התעלם מזה"
@@ -706,7 +706,7 @@ label:
  Trigger a bypass: "הפעל עוקף.\nמוריד ספירה אחת ממספר החתימות שהופעלו, כל עוד לפחות חתימה אחת כבר הופעלה. מומלץ לטיפול בתוצאות שגויות פשוטות שעלולות להיגרם על ידי קובצי החתימה המוגדרים כברירת מחדל."
  Unignore this: "אל תתעלם מזה"
  Values for IP tracking: "ערכים למעקב IP"
- Whitelist the request: "Whitelist של הבקשה.\nמאפס את מספר החתימות שהופעלו ומבטל כל עיבוד נוסף של הבקשה. מבטיח ש-CIDRAM לעולם לא יחסום את הבקשה."
+ Whitelist the request: "Whitelist הבקשה.\nמאפס את מספר החתימות שהופעלו ומבטל כל עיבוד נוסף של הבקשה. מבטיח ש-CIDRAM לעולם לא יחסום את הבקשה."
  Your IP: "ה-IP שלך:"
  Your UA: "סוכן המשתמש שלך:"
  aux:
@@ -756,13 +756,13 @@ label:
   Where to redirect the request: "לאן להפנות את הבקשה:"
   block the request: "חסום את הבקשה"
   bypass the request: "עקוף את הבקשה"
-  greylist the request: "הבקשה תופיע ברשימה רשימה האפורה"
+  greylist the request: "greylist הבקשה"
   logic_all: "על מנת להפעיל את הכלל, יש לעמוד בכל התנאים."
   logic_any: "כל תנאי "שווה" (=) עשויים להפעיל את הכלל, כל עוד מתקיימים גם כל התנאים "לא שווים" (≠)."
   profile the request: "פרופיל את הבקשה"
   redirect the request (without blocking it): "הפנה מחדש את הבקשה (מבלי לחסום אותה)"
   run a file to handle the request: "להפעיל קובץ כדי לטפל הבקשה"
-  whitelist the request: "הבקשה תופיע ברשימה רשימה הלבן"
+  whitelist the request: "whitelist הבקשה"
  expire_bad: "מזמן יצירתו, משך הזמן שבו נתונים גרועים המאוחסנים במטמון על ידי מודול זה עשויים לחיות לפני שתוקפו יפוג."
  expire_good: "מזמן יצירתו, משך הזמן שבו נתונים טובים המאוחסנים במטמון על ידי מודול זה עשויים לחיות לפני שתוקפו יפוג."
  lookup_strategy: "עבור אילו בקשות יש לבצע חיפושים?"
@@ -1050,6 +1050,7 @@ time_years_from_now:
 tip:
  2FA Sent: "אימייל המכיל קוד אימות דו-גורמי נשלח לכתובת האימייל שלך. אנא אשר את הקוד הזה למטה כדי לקבל גישה להקצה הקדמי. אם לא קיבלת אימייל זה, נסה להתנתק, המתן 10 דקות, ולהיכנס שוב כדי לקבל אימייל חדש המכיל קוד חדש."
  Accounts: "דף החשבונות מאפשר לך לשלוט למי יכול לגשת להקצה הקדמי ה-CIDRAM."
+ Actions menu: "חסימה מוסיפה 1 לספירת החתימות. עקיפת הפעולה מפחיתה 1 מספירת החתימות. Whitelist מגדירה את ספירת החתימות ל-0 ומסיימת את העיבוד, ובכך מדלגת לחלוטין על כל כלל עוקב. Greylist מגדירה את ספירת החתימות ל-0, אך אינה מסיימת את העיבוד. לפרופיל אינה משפיעה על ספירת החתימות, אך היא שימושית כאשר ייתכן שיהיה צורך בלוגיקה מורכבת יותר כדי לקבוע אם לבצע פעולות מסוגים אחרים, מכיוון שפרופילים שנוצרו עשויים להיות מקושרים לתנאים של כללים עוקבים. לאחר העיבוד, אם מספר החתימות הוא 1 או יותר, הבקשה תיחסם."
  Aggregator: "האגרגטור מאפשר לך לבטא מסכות רשת, כתובות IP, ו-CIDR בצורה הקטנה ביותר. הזן את הנתונים לבטא ולחץ על "אישור"."
  Auxiliary Rules Modes: "מצב תצוגה מציג כללי עזר כרשימה קומפקטית לקריאה קלה. ניתן להרחיב את הכללים ברשימה ולהציג פרטים נוספים על ידי לחיצה עליהם. אפשרויות לייצוא או מחיקה של כלל יוצגו בעת לחיצה על הטריגרמה (☰). ניתן לסדר מחדש את הכללים באמצעות גרירה ושחרור, גרירת כלל ממיקומו הקיים למיקום הרצוי. נדרש מצב עריכה כדי לשנות כללי עזר, שדות ואפשרויות להוספת תנאים חדשים ולוגיקה אחרת לכללים המסופקים בדף. ניתן ליצור כללי עזר חדשים באמצעות כל אחד מהמצבים."
  Auxiliary Rules Priority: "עדיפות (הכי גבוה⬅(שווה🔄שווה ערך)⬅הנמוך ביותר):"

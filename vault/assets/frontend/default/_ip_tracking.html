@@ -18,12 +18,12 @@
       </div>
     </div>
     <div class="quad">
-      <div class="h2 s">{field.IP address}</div>
-      <div class="h2 s big">{field.Status} – {field.Infractions}</div>
-      <div class="h2 s big">{field.Expiry}</div>
-      <div class="h2f s">{field.Options}</div>
+      <div class="h2 s va">{field.IP address}<div class="mob">{field.Status} – {field.Infractions}</div></div>
+      <div class="h2 s big va">{field.Status} – {field.Infractions}</div>
+      <div class="h2 s big va">{field.Expiry}</div>
+      <div class="h2f s va"><div class="mob">{field.Expiry}</div>{field.Options}</div>
       <form id="addNewForm" action="?{TrackingFilter}" method="POST">
-        <div class="h1"><input type="text" class="txtf" name="addNewAddress" placeholder="{tip.Enter IP here} [1]" autocomplete="off" pattern="^([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])$|^((([\dA-Fa-f]{1,4}:){7}[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){6}:[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){5}:([\dA-Fa-f]{1,4}:)?[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){4}:([\dA-Fa-f]{1,4}:){0,2}[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){3}:([\dA-Fa-f]{1,4}:){0,3}[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){2}:([\dA-Fa-f]{1,4}:){0,4}[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){6}((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b).){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|(([\dA-Fa-f]{1,4}:){0,5}:((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b).){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|(::([\dA-Fa-f]{1,4}:){0,5}((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b).){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|([\dA-Fa-f]{1,4}::([\dA-Fa-f]{1,4}:){0,5}[\dA-Fa-f]{1,4})|(::([\dA-Fa-f]{1,4}:){0,6}[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){1,7}:))$" accesskey="1" required /></div>
+        <div class="h1 big"><input type="text" class="txtf" name="addNewAddress" placeholder="{tip.Enter IP here} [1]" autocomplete="off" pattern="^([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])$|^((([\dA-Fa-f]{1,4}:){7}[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){6}:[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){5}:([\dA-Fa-f]{1,4}:)?[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){4}:([\dA-Fa-f]{1,4}:){0,2}[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){3}:([\dA-Fa-f]{1,4}:){0,3}[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){2}:([\dA-Fa-f]{1,4}:){0,4}[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){6}((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b).){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|(([\dA-Fa-f]{1,4}:){0,5}:((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b).){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|(::([\dA-Fa-f]{1,4}:){0,5}((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b).){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|([\dA-Fa-f]{1,4}::([\dA-Fa-f]{1,4}:){0,5}[\dA-Fa-f]{1,4})|(::([\dA-Fa-f]{1,4}:){0,6}[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){1,7}:))$" accesskey="1" required /></div>
         <div class="h1 big"><input type="number" class="txtf" name="addNewInfractions" placeholder="{tip.How many infractions to incur} [2]" inputmode="numeric" step="1" accesskey="2" required /></div>
         <div class="h1 big">
           <select class="auto" name="addNewExpiryMenu" id="addNewExpiryMenu" onchange="javascript:addNewExpiryMenuFunction()" onkeyup="javascript:addNewExpiryMenuFunction()" title="{field.Expiry}">
@@ -41,7 +41,7 @@
           <input list="otherExpirySuggests" type="number" class="txtf" id="addNewExpiryOther" name="addNewExpiryOther" placeholder="{tip.Number of seconds until it expires}" inputmode="numeric" />
           <script type="text/javascript">function addNewExpiryMenuFunction(){var e=document.getElementById?document.getElementById('addNewExpiryMenu').value:document.all&&!document.getElementById?document.all.addNewExpiryMenu.value:'';e=='Other'?(showid('addNewExpiryOther'),hideid('addNewExpiryMenu')):(hideid('addNewExpiryOther'),showid('addNewExpiryMenu'))};hideid('addNewExpiryOther');</script>
         </div>
-        <div class="h1f"><input type="submit" value="{field.Add to tracking} [0]" class="auto" accesskey="0" /></div>
+        <div class="h1f big"><input type="submit" value="{field.Add to tracking} [0]" class="auto" accesskey="0" /></div>
       </form>
 {TrackingData}
     </div>

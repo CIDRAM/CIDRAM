@@ -293,9 +293,9 @@ textarea#logsTA{margin:0;width:auto;align-self:stretch}
 @keyframes fmDeleteAnim{0%{opacity:1}100%{filter:brightness(0);opacity:0;display:none}}
 .fmDelete{transform-origin:top;animation:fmDeleteAnim .5s cubic-bezier(0,0,.1,1);animation-iteration-count:1;animation-fill-mode:forwards}
 .reverse{text-align:{FE_Align_Reverse}}
-.stickybox{position:sticky;top:2px}
+.stickybox{position:sticky;top:2px;max-height:calc(100vh - 13px);overflow:visible auto}
 .gridboxitem,.gridboxcheckcell,.gridboxstretch,.va{align-content:center}
-.louter{width:min(150px,23vw)}
+.louter{width:min(150px,23dvw)}
 input[type=submit].linner,input[type=number].linner,select.linner{width:100%}
 .navicon.pointer{user-select:none;background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:pointerhead.svg}{/Base64Encode}),url(data:image/svg+xml;base64,{Base64Encode}{Asset:pointertail.svg}{/Base64Encode});transition:all .9s cubic-bezier(0,0,.1,1)}
 .navicon.pointer.up{background-position:0 -3px,0 3px}

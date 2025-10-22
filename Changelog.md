@@ -501,4 +501,5 @@
 - Optimised some iterators.
 - Added support for NO_COLOR.
 - CAPTCHA log entries now include the reconstructed URI/URL (#643).
+- Some sticky elements now have their own scroll context.
 - *Plus all the regular signature updates.*

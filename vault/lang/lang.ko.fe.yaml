@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2025.10.11).
+# This file: Korean language data for the front-end (last modified: 2025.10.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -140,9 +140,9 @@ config_general_silent_mode: ""액세스 거부" 페이지를 표시하는 대신
 config_general_silent_mode_response_header_code: "차단된 액세스 시도를 자동으로 리디렉션할 때 CIDRAM이 전송해야하는 HTTP 상태 메시지는 무엇입니까?"
 config_general_social_media_verification: "소셜 미디어 요청을 확인하려고합니까? 소셜 미디어 인증은 가짜 소셜 미디어 요청으로부터 보호합니다 (이러한 요청은 차단됩니다). True = 소셜 미디어 검증을 활성화한다 (Default / 기본 설정); False = 소셜 미디어 인증을 무효로한다."
 config_general_statistics: "CIDRAM 사용 통계를 추적합니까? True = 예; False = 아니오 (Default / 기본 설정)."
-config_general_time_format: "CIDRAM에서 사용되는 날짜 형식. 추가 옵션이 요청에 따라 추가 될 수 있습니다."
-config_general_time_offset: "시간대 오프셋 (분)."
-config_general_timezone: "사용할 시간대를 지정합니다 (예: Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, 등등). PHP가 자동으로 처리하도록하려면, "SYSTEM"을 지정하십시오."
+config_general_time_format: "CIDRAM이 사용하는 날짜/시간 표기 형식. 요청 시 옵션이 추가될 수 있습니다."
+config_general_time_offset: "분 단위 시간대 오프셋."
+config_general_timezone: "사용할 시간대를 지정하는 데 사용됩니다 (예: Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, 등등). PHP가 이를 자동으로 처리하도록 하려면 "SYSTEM"을 지정하세요."
 config_general_truncate: "로그 파일이 특정 크기에 도달하면 truncate할까요? 값은 로그 파일이 truncate되기 전에 커질 수 있는 B/KB/MB/GB/TB 단위의 최대 크기입니다. 기본값인 0KB는 truncation을 비활성화합니다 (로그 파일이 무한정 커질 수 있음). 참고: 개별 로그 파일에 적용됩니다! 로그 파일의 크기는 전체적으로 고려되지 않습니다."
 config_hcaptcha: "HCaptcha 설정 (차단될 때 사람이 다시 액세스할 수 있는 방법을 제공합니다)."
 config_hcaptcha_api: &CaptchaAPI "어떤 API를 사용할 수 있습니까?"
@@ -260,8 +260,8 @@ field_infractions: "위반"
 field_install: "설치"
 field_latest_version: "최신 버전"
 field_log_in: "로그인"
-field_log_rotation_archive: "제한이 더 이상 초과되지 않을 때까지, 가장 오래된 로그 파일을 보관 한 다음 삭제하십시오."
-field_log_rotation_delete: "제한이 더 이상 초과되지 않을 때까지, 가장 오래된 로그 파일을 삭제하십시오."
+field_log_rotation_archive: "제한이 더 이상 초과되지 않을 때까지 가장 오래된 로그 파일을 보관한 후 삭제."
+field_log_rotation_delete: "제한이 더 이상 초과되지 않을 때까지 가장 오래된 로그 파일 삭제."
 field_netmask: "넷 마스크 사용하여 출력 생성"
 field_new_name: "새 이름:"
 field_nonclickable_text: "클릭 할 수 없는 텍스트"
@@ -290,7 +290,7 @@ field_size_PB: "PB"
 field_size_TB: "TB"
 field_size_bytes: "바이트"
 field_status: "상태"
-field_system_timezone: "시스템 기본 시간대를 사용하십시오."
+field_system_timezone: "시스템 기본 시간대 사용."
 field_tracking: "추적"
 field_true: "True (참된)"
 field_ualc: "사용자 에이전트 (소문자)"

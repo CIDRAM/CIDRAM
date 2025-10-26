@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2025.10.13).
+# This file: Latvian language data for the front-end (last modified: 2025.10.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -1035,7 +1035,7 @@ tip:
  Aggregator: "Apkopotājs ļauj jums izteikt IP, CIDR, un tīkla maskas iespējami mazākā veidā. Ievadiet apkopojamos datus un nospiediet "Labi"."
  Auxiliary Rules Modes: "Skatīšanas režīmā palīgnoteikumi tiek parādīti kā kompakts saraksts ērtai lasīšanai. Sarakstā esošos noteikumus var izvērst un, noklikšķinot uz tiem, var parādīt sīkāku informāciju. Noklikšķinot uz trigrama (☰), tiks parādītas opcijas noteikuma eksportēšanai vai dzēšanai. Noteikumus var pārkārtots, izmantojot vilkšanas un nomešanas funkciju, velkot noteikumu no tā esošās pozīcijas uz vēlamo pozīciju. Rediģēšanas režīms ir nepieciešams, lai modificētu palīgnoteikumus, rediģējami lauki un opcijas, lai pievienotu jaunus nosacījumus, tīmekļa āķus, vai citu loģiku noteikumiem ja nepieciešams, kas sniegta lapā. Jaunus palīgnoteikumus var izveidot, izmantojot jebkuru no šiem režīmiem."
  Auxiliary Rules Priority: "Prioritāte (augstākais➡(vienāds🔄ekvivalents)➡zemākais):"
- Auxiliary Rules Webhooks: "Kad tiek iedarbināts palīgnoteikums, CIDRAM mēģinās paziņot visiem saistītajiem tīmekļa āķiem par notikumu."
+ Auxiliary Rules Webhooks: "Kad tiek iedarbināts palīgnoteikums, CIDRAM mēģinās paziņot visiem saistītajiem tīmekļa āķiem par notikumu. Webhook ir URL, kas spēj saņemt POST datus, un tas varētu būt noderīgs ja pilnīgi citā tīklā nekā CIDRAM tiek mitināts ārējs pakalpojums, lietotne, skripts utt, kuram vēlaties apstrādāt CIDRAM ģenerētos datus par pieprasījumu."
  Auxiliary Rules: "Varat izmantot šo lapu, lai izveidotu, izdzēstu, un mainītu CIDRAM palīgnoteikumus."
  Backup: "Tas lapu var izmantot, lai importētu/eksportētu jūsu konfigurāciju, palīgnoteikumus, utt. Tas var būt noderīgi, ja nepieciešams migrēt datus dažādās instalācijās vai dažādās galvenajās versijās."
  Cache Data: "Šeit jūs varat pārskatīt kešatmiņas saturu."
@@ -1068,7 +1068,8 @@ tip:
  See the documentation: "Skatiet <a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external"><span class="navicon documentation"></span>dokumentāciju</a>, lai iegūtu informāciju par dažādām konfigurācijas direktīvām un to mērķiem."
  Server log snippets, abuse details, etc: "Servera žurnāla fragmenti, informācija par ļaunprātīgu izmantošanu, utt."
  Signature File Fixer: "Paraksta faila fiksētājs nodrošina veidu, kā atklāt un novērst parakstu failu iespējamās problēmas."
- Specify a value, or leave blank to disregard: "Norādiet vērtību vai atstājiet tukšu lai neievērotu."
+ Specify a URL, or leave blank to disregard: "Norādiet URL vai atstājiet tukšu lai ignorētu."
+ Specify a value, or leave blank to disregard: "Norādiet vērtību vai atstājiet tukšu lai ignorētu."
  Statistics tracking is currently disabled: "Piezīme: Statistikas izsekošana pašlaik ir atspējota, taču to var iespējot konfigurācijas lapā."
  Statistics: "Šī lapa parāda dažus pamata statistikas datus par jūsu CIDRAM instalēšanu."
  Subtractor: "Atdalītāju var izmantot, lai atņemtu vienu IP/CIDR/tīkla maskas diapazonu no cita."

@@ -163,7 +163,7 @@ function addWebhook(p) {
   t.setAttribute('style', 'opacity:0;animation:xAux 2s ease 0s 1 normal'),
   document.getElementById(p+'webhooks').appendChild(t),
   (t = document.createElement('input')).setAttribute('name', 'webhooks'+namePart),
-  t.setAttribute('placeholder', '{tip.Specify a value, or leave blank to disregard}'),
+  t.setAttribute('placeholder', '{tip.Specify a URL, or leave blank to disregard}'),
   t.setAttribute('class', 'txtf'),
   t.setAttribute('type', 'text'),
   document.getElementById(whId).appendChild(t),

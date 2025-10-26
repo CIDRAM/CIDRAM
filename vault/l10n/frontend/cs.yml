@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Czech language data for the front-end (last modified: 2025.10.13).
+# This file: Czech language data for the front-end (last modified: 2025.10.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -1055,7 +1055,7 @@ tip:
  Aggregator: "Agregátor vám umožňuje vyjadřovat IP, CIDR, a síťové masky nejmenším možným způsobem. Zadejte data, která mají být agregována, a stiskněte „OK“."
  Auxiliary Rules Modes: "V režimu zobrazení se pomocná pravidla zobrazují jako kompaktní seznam pro snadné čtení. Pravidla v seznamu lze rozbalit a zobrazit další podrobnosti kliknutím na ně. Možnosti exportu nebo smazání pravidla se zobrazí po kliknutí na trigram (☰). Pořadí pravidel lze změnit funkcí drag-and-drop, t.j., přetažením pravidla z jeho stávající pozice na požadovanou pozici. Pro úpravu pomocných pravidel je vyžadován režim úprav, upravitelná pole a možnosti pro přidání nových podmínek, webhooků, nebo jiné logiky k pravidlům dle potřeby uvedené na stránce. Nová pomocná pravidla lze vytvořit v obou režimech."
  Auxiliary Rules Priority: "Prioritou (nejvyšší➡(stejné🔄ekvivalent)➡nejnižší):"
- Auxiliary Rules Webhooks: "Když je pravidlo spuštěno, CIDRAM se pokusí upozornit na událost všechny připojené webhooky."
+ Auxiliary Rules Webhooks: "Když je pravidlo spuštěno, CIDRAM se pokusí upozornit na událost všechny připojené webhooky. Webhook je URL adresa schopná přijímat POST data a může být užitečná, pokud je externí služba, aplikace, skript atd. hostována v úplně jiné síti než CIDRAM, a chcete aby zpracovávala data generovaná CIDRAM o požadavku."
  Auxiliary Rules: "Tuto stránku můžete použít k vytvoření, odstranění, a úpravě pomocných pravidel pro CIDRAM."
  Backup: "Tuto stránku lze použít k importu/exportu vaší konfigurace, pomocných pravidel, atd. To může být užitečné, pokud potřebujete migrovat data mezi různými instalacemi nebo různými hlavními verzemi."
  Cache Data: "Zde si můžete prohlédnout obsah mezipaměti."
@@ -1088,7 +1088,8 @@ tip:
  See the documentation: "Informace o různých konfiguračních direktivách a jejich účelech najdete v <a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external"><span class="navicon documentation"></span>dokumentaci</a>."
  Server log snippets, abuse details, etc: "Úryvky protokolu serveru, podrobnosti o zneužití, atd."
  Signature File Fixer: "Opravovač podpisových souborů poskytuje způsob, jak zjistit a opravit potenciální problémy v souborech podpisů."
- Specify a value, or leave blank to disregard: "Zadejte hodnotu nebo ponechte prázdné, aby se to ignorovalo."
+ Specify a URL, or leave blank to disregard: "Zadejte URL adresu, nebo ho nechte prázdné aby byl ignorován."
+ Specify a value, or leave blank to disregard: "Zadejte hodnotu, nebo ho nechte prázdné aby byl ignorován."
  Statistics tracking is currently disabled: "Poznámka: Sledování statistik je aktuálně deaktivováno, ale lze jej aktivovat prostřednictvím konfigurační stránky."
  Statistics: "Tato stránka zobrazuje některé základní statistiky používání týkající se vaší instalace CIDRAM."
  Subtractor: "Odečítač lze použít k odečtení jednoho rozsahu IP/CIDR/síťových masek od jiného."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Romanian language data for the front-end (last modified: 2025.10.13).
+# This file: Romanian language data for the front-end (last modified: 2025.10.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -1061,7 +1061,7 @@ tip:
  Aggregator: "Agregatorul vă permite să exprimați IP-uri, CIDR-uri, și măști de rețea în cel mai mic mod posibil. Introduceți datele de agregat și apăsați „OK”."
  Auxiliary Rules Modes: "Modul vizualizare afișează regulile auxiliare sub forma unei liste compacte pentru o citire ușoară. Regulile din listă pot fi extinse și pot fi afișate detalii suplimentare făcând clic pe ele. Opțiunile pentru exportarea sau ștergerea unei reguli vor fi afișate când faceți clic pe trigrama (☰). Regulile pot fi reordonate prin trageți și plasați, trăgând o regulă din poziția sa existentă în poziția dorită. Modul de editare este necesar pentru a modifica regulile auxiliare, câmpurile editabile și opțiunile pentru a adăuga noi condiții, webhook-uri, sau alte elemente logice la reguli, după cum este necesar, furnizate pe pagină. Noi reguli auxiliare pot fi create prin oricare dintre moduri."
  Auxiliary Rules Priority: "Prioritate (cea mai mare➡(egal🔄echivalent)➡cea mai mică):"
- Auxiliary Rules Webhooks: "Când se declanșează o regulă, CIDRAM va încerca să notifice orice webhook conectat despre eveniment."
+ Auxiliary Rules Webhooks: "Când se declanșează o regulă, CIDRAM va încerca să notifice orice webhook conectat despre eveniment. Un webhook este o adresă URL capabilă să primească date POST, și ar putea fi utilă dacă există un serviciu extern, o aplicație, un script etc. găzduit pe o rețea complet diferită de CIDRAM, pentru care doriți să gestionați datele generate de CIDRAM despre solicitare."
  Auxiliary Rules: "Puteți folosi această pagină pentru a crea, șterge, și modifica reguli auxiliare pentru CIDRAM."
  Backup: "Această pagină poate fi folosită pentru a importa/exporta configurația, regulile auxiliare, etc. Acest lucru poate fi util dacă trebuie să migrați datele în diferite instalări sau în diferite versiuni majore."
  Cache Data: "Aici puteți revizui conținutul cache-ului."
@@ -1094,6 +1094,7 @@ tip:
  See the documentation: "Consultați <a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external"><span class="navicon documentation"></span>documentația</a> pentru informații despre diferitele directive de configurare și scopurile acestora."
  Server log snippets, abuse details, etc: "Fragmente de jurnal de server, detalii despre abuz, etc."
  Signature File Fixer: "Fixatorul fișierelor de semnătură oferă o modalitate de a detecta și remedia potențialele probleme în fișierele de semnătură."
+ Specify a URL, or leave blank to disregard: "Specificați o adresă URL, sau lăsați necompletat pentru a o ignora."
  Specify a value, or leave blank to disregard: "Specificați o valoare, sau lăsați necompletat pentru a o ignora."
  Statistics tracking is currently disabled: "Notă: Urmărirea statisticilor este în prezent dezactivată, dar poate fi activată prin pagina de configurare."
  Statistics: "Această pagină prezintă câteva statistici de utilizare de bază referitoare la instalarea dvs. CIDRAM."

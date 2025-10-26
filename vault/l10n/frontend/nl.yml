@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2025.10.15).
+# This file: Dutch language data for the front-end (last modified: 2025.10.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -1025,7 +1025,7 @@ tip:
  Aggregator: "Met de aggregator kunt u IP's, CIDR's, un netmaskers zo de kleinste mogelijke weg uitdrukken. Voer de gegevens in die moeten worden geaggregeerd en druk op "OK"."
  Auxiliary Rules Modes: "In de weergavemodus worden aanvullende regels weergegeven in een compacte lijst, zodat u ze gemakkelijk kunt lezen. Door erop te klikken kunt u de regels in de lijst uitvouwen en krijgt u meer details te zien. Wanneer u op het trigram (☰) klikt, worden opties voor het exporteren of verwijderen van een regel weergegeven. U kunt de volgorde van regels wijzigen door ze te slepen en neer te zetten, een regel van de huidige positie naar de gewenste positie slepen. De bewerkingsmodus is vereist om aanvullende regels, bewerkbare velden en opties te wijzigen en nieuwe voorwaarden, webhooks, of andere logica aan de regels toe te voegen indien nodig die op de pagina worden weergegeven. Nieuwe aanvullende regels kunnen via beide modi worden gemaakt."
  Auxiliary Rules Priority: "Prioriteit (hoogste➡(gelijk🔄gelijkwaardig)➡laagste):"
- Auxiliary Rules Webhooks: "Wanneer een regel wordt geactiveerd, CIDRAM probeert alle aangesloten webhooks op de hoogte te stellen van het evenement."
+ Auxiliary Rules Webhooks: "Wanneer een regel wordt geactiveerd, CIDRAM probeert alle aangesloten webhooks op de hoogte te stellen van het evenement. Een webhook is een URL die POST-gegevens kan ontvangen, en kan nuttig zijn als er een externe service, app, script, enz  wordt gehost op een compleet ander netwerk dan CIDRAM en u wilt dat deze de door CIDRAM gegenereerde gegevens over de aanvraag verwerkt."
  Auxiliary Rules: "U kunt deze pagina gebruiken om aanvullende regels voor CIDRAM te maken, te verwijderen en aan te passen."
  Backup: "Deze pagina kan worden gebruikt om uw configuratie, aanvullende regels, enz. te importeren/exporteren. Dit kan handig zijn als u gegevens moet migreren tussen verschillende installaties of verschillende hoofdversies."
  Cache Data: "Hier kunt u de inhoud van de cache bekijken."
@@ -1058,6 +1058,7 @@ tip:
  See the documentation: "Zie de <a href="{{Links.CIDRAM.Docs Base Path}}readme.nl.md\#user-content-SECTION5" hreflang="nl-NL" rel="noopener external"><span class="navicon documentation"></span>documentatie</a> voor informatie over de verschillende configuratie richtlijnen en hun doeleinden."
  Server log snippets, abuse details, etc: "Serverlogfragmenten, misbruikdetails, enz."
  Signature File Fixer: "De signatuurbestanden-fixeer biedt een manier om potentiële problemen in signatuurbestanden te detecteren en op te lossen."
+ Specify a URL, or leave blank to disregard: "Geef een URL op of laat blanco om te negeren."
  Specify a value, or leave blank to disregard: "Geef een waarde op of laat blanco om te negeren."
  Statistics tracking is currently disabled: "Notitie: Statistische tracking is momenteel uitgeschakeld, maar kan via de configuratiepagina worden ingeschakeld."
  Statistics: "Deze pagina bevat een aantal basisgebruiksstatistieken voor uw CIDRAM-installatie."

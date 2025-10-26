@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2025.10.13).
+# This file: Polish language data for the front-end (last modified: 2025.10.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -1057,7 +1057,7 @@ tip:
  Aggregator: "Agregator pozwala wyrażać adresy IP, CIDRy, i maski sieci w możliwie najmniejszy sposób. Wprowadź dane, które mają zostać zagregowane, i naciśnij „OK”."
  Auxiliary Rules Modes: "Tryb wyświetlania wyświetla reguły pomocnicze w postaci kompaktowej listy, łatwej do odczytania. Klikając na zasady, możesz je rozwinąć i wyświetlić dalsze szczegóły. Opcje eksportu lub usunięcia reguły zostaną wyświetlone po kliknięciu trigramu (☰). Reguły można zmieniać kolejność, przeciągając regułę z jej bieżącej pozycji na żądaną pozycję. Do modyfikacji reguł pomocniczych wymagany jest tryb edycji, edytowalne pola i opcje umożliwiające dodawanie nowych warunków, webhooków, lub innej logiki do reguł, zależnie od potrzeb, dostępnych na stronie. Nowe reguły pomocnicze można tworzyć w obu trybach."
  Auxiliary Rules Priority: "Priorytet (najwyższy➡(równy🔄odpowiednik)➡najniższy):"
- Auxiliary Rules Webhooks: "Gdy reguła jest spełniona, CIDRAM podejmie próbę powiadomienia wszystkich podłączonych haczyków internetowych o zdarzeniu."
+ Auxiliary Rules Webhooks: "Gdy reguła jest spełniona, CIDRAM podejmie próbę powiadomienia wszystkich podłączonych haczyków internetowych o zdarzeniu. Webhook to adres URL zdolny do odbierania danych przesyłanych metodą POST i może być przydatny, jeśli istnieje zewnętrzna usługa, aplikacja, skrypt itp. hostowane w zupełnie innej sieci niż CIDRAM, które mają przetwarzać dane generowane przez CIDRAM dotyczące danego żądania."
  Auxiliary Rules: "Za pomocą tej strony można tworzyć, usuwać i modyfikować reguły pomocnicze dla CIDRAM."
  Backup: "Ta strona może służyć do importowania/eksportowania konfiguracji, reguł pomocniczych, itp. To może być przydatne, jeśli trzeba przeprowadzić migrację danych między różnymi instalacjami lub różnymi głównymi wersjami."
  Cache Data: "Tutaj możesz przejrzeć zawartość pamięci podręcznej."
@@ -1090,6 +1090,7 @@ tip:
  See the documentation: "Informacje na temat różnych dyrektyw konfiguracyjnych i ich celów można znaleźć w <a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external"><span class="navicon documentation"></span>dokumentacji</a>."
  Server log snippets, abuse details, etc: "Fragmenty dziennika serwera, szczegóły nadużyć, itp."
  Signature File Fixer: "Narzędzie do naprawy plików podpis umożliwia wykrywanie i naprawianie potencjalnych problemów w plikach podpis."
+ Specify a URL, or leave blank to disregard: "Podaj adres URL lub pozostaw puste aby zignorować."
  Specify a value, or leave blank to disregard: "Podaj wartość lub pozostaw puste aby zignorować."
  Statistics tracking is currently disabled: "Uwaga: Śledzenie statystyk jest obecnie wyłączone, ale można je włączyć na stronie konfiguracji."
  Statistics: "Ta strona pokazuje podstawowe statystyki użytkowania dotyczące instalacji CIDRAM."

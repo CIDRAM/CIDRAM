@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Croatian language data for the front-end (last modified: 2025.10.15).
+# This file: Croatian language data for the front-end (last modified: 2025.10.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -1053,7 +1053,7 @@ tip:
  Aggregator: "Agregator vam omogućuje izražavanje IP-ova, CIDR-ova, i mrežnih maski na najmanji mogući način. Unesite podatke koje želite agregirati i pritisnite "OK"."
  Auxiliary Rules Modes: "Način prikaza prikazuje pomoćna pravila kao sažeti popis radi lakšeg čitanja. Pravila na popisu mogu se proširiti i prikazati dodatni detalji klikom na njih. Opcije za izvoz ili brisanje pravila prikazat će se klikom na trigram (☰). Redoslijed pravila može se promijeniti metodom povlačenja i ispuštanja, povlačenjem pravila s postojećeg položaja na željeni položaj. Za izmjenu pomoćnih pravila potreban je način uređivanja, polja za uređivanje i opcije za dodavanje novih uvjeta, webhookova, ili druge logike pravilima prema potrebi na stranici. Nova pomoćna pravila mogu se kreirati putem bilo kojeg načina."
  Auxiliary Rules Priority: "Prioritet (najviši➡(jednak🔄ekvivalent)➡najniža):"
- Auxiliary Rules Webhooks: "Kada se pravilo pokrene, CIDRAM će pokušati obavijestiti sve povezane web-dojavnike o događaju."
+ Auxiliary Rules Webhooks: "Kada se pravilo pokrene, CIDRAM će pokušati obavijestiti sve povezane web-dojavnike o događaju. Webhook je URL koji može primati POST podatke, i mogao bi biti koristan ako postoji vanjska usluga, aplikacija, skripta itd hostirana na potpuno drugoj mreži od CIDRAM-a, a želite da obrađuje podatke koje generira CIDRAM o zahtjevu."
  Auxiliary Rules: "Ovu stranicu možete koristiti za stvaranje, brisanje, i izmjenu pomoćnih pravila za CIDRAM."
  Backup: "Ova se stranica može koristiti za uvoz/izvoz vaše konfiguracije, pomoćnih pravila, itd. Ovo može biti korisno ako trebate premjestiti podatke na različite instalacije ili različite glavne verzije."
  Cache Data: "Ovdje možete pregledati sadržaj predmemorije."
@@ -1086,7 +1086,8 @@ tip:
  See the documentation: "Pogledajte <a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external"><span class="navicon documentation"></span>dokumentaciju</a> za informacije o raznim konfiguracijskim direktivama i njihovim svrhama."
  Server log snippets, abuse details, etc: "Isječci dnevnika poslužitelja, pojedinosti o zlouporabi, itd."
  Signature File Fixer: "Popravljač datoteka potpisa omogućuje otkrivanje i popravljanje potencijalnih problema u datotekama potpisa."
- Specify a value, or leave blank to disregard: "Navedite vrijednost, ili ostavite prazno da biste je zanemarili."
+ Specify a URL, or leave blank to disregard: "Navedite URL, ili ostavite prazno da bi se to ignoriralo."
+ Specify a value, or leave blank to disregard: "Navedite vrijednost, ili ostavite prazno da bi se to ignoriralo."
  Statistics tracking is currently disabled: "Bilješka: Praćenje statistike trenutno je onemogućeno, ali se može omogućiti putem konfiguracijske stranice."
  Statistics: "Ova stranica prikazuje neke osnovne statistike korištenja u vezi s vašom CIDRAM instalacijom."
  Subtractor: "Oduzimač se može koristiti za oduzimanje jednog raspona IP-ova/CIDR-ova/mrežnih maski od drugog."

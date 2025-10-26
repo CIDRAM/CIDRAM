@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2025.10.18).
+# This file: Turkish language data for the front-end (last modified: 2025.10.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -1003,7 +1003,7 @@ tip:
  Aggregator: "Toplayıcı IP'leri, CIDR'leri, ve ağ maskeleri olabildiğince az şekilde ifade etmenizi sağlar. Birleştirilecek verileri girin ve "Tamam" düğmesine basın."
  Auxiliary Rules Modes: "Görünüm modu, yardımcı kuralları kolay okunabilecek şekilde kompakt bir liste halinde gösterir. Listedeki kuralların üzerine tıklanarak genişletilebilir ve daha fazla ayrıntı görüntülenebilir. Üçlüye (☰) tıklandığında bir kuralı dışa aktarma veya silme seçenekleri gösterilecektir. Kurallar sürükle bırak yöntemiyle yeniden sıralanabilir, kural mevcut konumundan istenilen konuma sürüklenebilir. Yardımcı kuralları değiştirmek için düzenleme modu gereklidir, sayfada kurallara yeni koşullar, webhook'lar, veya diğer mantıklar eklemek için düzenlenebilir alanlar ve seçenekler sağlanmıştır ihtiyaç duyulduğu takdirde. Her iki mod aracılığıyla da yeni yardımcı kurallar oluşturulabilir."
  Auxiliary Rules Priority: "Öncelik (maksimum➡(eşit🔄eşdeğer)➡minimum):"
- Auxiliary Rules Webhooks: "Bir kural tetiklendiğinde, CIDRAM, olayla ilgili bağlı webhookları bildirmeye çalışır."
+ Auxiliary Rules Webhooks: "Bir kural tetiklendiğinde, CIDRAM, olayla ilgili bağlı webhookları bildirmeye çalışır. Webhook, POST verilerini alabilen bir URL'dir, ve CIDRAM'ın isteğinizle ilgili ürettiği verileri işlemek istediğiniz harici bir servis, uygulama, betik vb. varsa ve bunlar CIDRAM'dan tamamen farklı bir ağda barındırılıyorsa, webhook'lar yararlı olabilir."
  Auxiliary Rules: "CIDRAM için yardımcı kurallar oluşturmak, silmek ve değiştirmek için bu sayfayı kullanabilirsiniz."
  Backup: "Bu sayfa yapılandırmanızı, yardımcı kurallarınızı, vb. içe/dışa aktarmak için kullanılabilir. Verileri farklı kurulumlar veya farklı ana sürümler arasında taşımanız gerektiğinde bu yararlı olabilir."
  Cache Data: "Burada önbellek içeriğini inceleyebilirsiniz."
@@ -1036,7 +1036,8 @@ tip:
  See the documentation: "Çeşitli yapılandırma yönergeleri ve amaçlarıyla ilgili bilgi için <a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external"><span class="navicon documentation"></span>belgelere</a> bakın."
  Server log snippets, abuse details, etc: "Sunucu günlüğü alıntıları, kötüye kullanım ayrıntıları, vb."
  Signature File Fixer: "İmza dosya tamircisi, imza dosyalarındaki olası sorunları tespit etmek ve çözmek için bir yol sağlar."
- Specify a value, or leave blank to disregard: "Bir değer belirtin veya göz ardı etmek için boş bırakın."
+ Specify a URL, or leave blank to disregard: "Bir URL belirtin veya dikkate almamak için boş bırakın."
+ Specify a value, or leave blank to disregard: "Bir değer belirtin veya dikkate almamak için boş bırakın."
  Statistics tracking is currently disabled: "Not: İstatistik izleme şu anda devre dışı, ancak yapılandırma sayfası aracılığıyla etkinleştirilebilir."
  Statistics: "Bu sayfada, CIDRAM kurulumunuzla ilgili bazı temel kullanım istatistikleri gösterilmektedir."
  Subtractor: "Çıkarıcı, bir IP/CIDR/ağ maskeleri aralığını bir diğerinden çıkarmak için kullanılabilir."

@@ -1,6 +1,6 @@
 CIDRAM Core:
  Name: "CIDRAM Core"
- Version: "4.0.0-DEV+252900"
+ Version: "4.0.0"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Front-End: "Latest"
@@ -9,7 +9,7 @@ CIDRAM Core:
  Changelog: "https://github.com/CIDRAM/CIDRAM/blob/v4/Changelog.md"
  Release Notes For: ["4.0.0"]
  When Update Succeeds:
-  - "wpVer 4.8 6.8.2 3.10.0 7.2"
+  - "wpVer 4.8 6.8.2 4.0.0 7.2"
   - "foreach {Components.RemoteMeta.CIDRAM Core.Release Notes For} as Key => Value if {Components.Meta.CIDRAM Core.Version}<{Value}&&{Components.RemoteMeta.CIDRAM Core.Version}>={Value} then queue message response.release_notes https://github.com/CIDRAM/CIDRAM/releases/tag/v{Value} CIDRAM v{Value}"
   - "if {Components.Meta.CIDRAM Core.Version}<4.0.0-DEV&&{Components.RemoteMeta.CIDRAM Core.Version}>=4.0.0-DEV then set Configuration.captcha={Configuration.hcaptcha};executeMacro uninstall_no_longer_available;set Configuration.captcha.hcaptcha_secret="{Configuration.captcha.secret}";set Configuration.captcha.hcaptcha_sitekey="{Configuration.captcha.sitekey}";set Configuration.captcha.usemode.hcaptcha={Configuration.captcha.usemode};set Configuration.captcha.nonblocked_status_code.hcaptcha={Configuration.captcha.nonblocked_status_code};set Configuration.captcha.api.hcaptcha="{Configuration.captcha.api}";set Configuration.recaptcha="";set Configuration.hcaptcha="";set Configuration.general.http_response_header_code.default={Configuration.general.http_response_header_code};set Configuration.general.statistics={CIDRAM.Config Defaults.general.statistics.default};updateConfiguration"
  Uninstallable: false
@@ -67,7 +67,7 @@ CIDRAM Core:
    Checksum: "f873cbf0655ccb42fe96172596b893c177ef0ce02660c291dbfd6a77a6d1a3cd:11947"
 CIDRAM Front-End:
  Name: "CIDRAM Front-End"
- Version: "4.0.0-DEV+252980"
+ Version: "4.0.0"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "Latest"
@@ -724,7 +724,7 @@ Bypasses:
  Version: "2025.225.0"
  Dependencies:
   PHP: "^7.2|^8"
-  CIDRAM Core: "^4-DEV"
+  CIDRAM Core: "^4"
  Files:
   bypasses.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/bypasses.php"
@@ -1314,7 +1314,7 @@ AbuseIPDB module:
  Version: "2025.251.0"
  Dependencies:
   PHP: "^7.2|^8"
-  CIDRAM Core: "^4-DEV"
+  CIDRAM Core: "^4"
  When Install Succeeds: ["queue message response.please_check_config"]
  Files:
   assets/frontend/default/_abuseipdb.html:
@@ -1340,7 +1340,7 @@ Bad hosts blocker module:
  Version: "2025.225.0"
  Dependencies:
   PHP: "^7.2|^8"
-  CIDRAM Core: "^4-DEV"
+  CIDRAM Core: "^4"
  Files:
   modules/badhosts.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/modules/badhosts.php"
@@ -1351,7 +1351,7 @@ Bad TLDs blocker module:
  Version: "2025.225.0"
  Dependencies:
   PHP: "^7.2|^8"
-  CIDRAM Core: "^4-DEV"
+  CIDRAM Core: "^4"
  Files:
   modules/badtlds.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/modules/badtlds.php"
@@ -1362,7 +1362,7 @@ BGPView module:
  Version: "2025.237.0"
  Dependencies:
   PHP: "^7.2|^8"
-  CIDRAM Core: "^4-DEV"
+  CIDRAM Core: "^4"
  When Install Succeeds: ["queue message response.please_check_config"]
  Files:
   imports/bgpview.yml:
@@ -1378,7 +1378,7 @@ Bot user agents module:
  Version: "2025.237.0"
  Dependencies:
   PHP: "^7.2|^8"
-  CIDRAM Core: "^4-DEV"
+  CIDRAM Core: "^4"
  Files:
   modules/botua.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/modules/botua.php"
@@ -1389,7 +1389,7 @@ BunnyCDN compatibility module:
  Version: "2025.225.0"
  Dependencies:
   PHP: "^7.2|^8"
-  CIDRAM Core: "^4-DEV"
+  CIDRAM Core: "^4"
  When Install Succeeds: ["queue message response.please_check_config"]
  Files:
   imports/bunnycdn.yml:
@@ -1405,7 +1405,7 @@ Cookie scanner module:
  Version: "2025.225.0"
  Dependencies:
   PHP: "^7.2|^8"
-  CIDRAM Core: "^4-DEV"
+  CIDRAM Core: "^4"
  Files:
   modules/cookies.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/modules/cookies.php"
@@ -1416,7 +1416,7 @@ IP-API module:
  Version: "2025.237.0"
  Dependencies:
   PHP: "^7.2|^8"
-  CIDRAM Core: "^4-DEV"
+  CIDRAM Core: "^4"
  When Install Succeeds: ["queue message response.please_check_config"]
  Files:
   imports/ipapi.yml:
@@ -1432,7 +1432,7 @@ Optional security extras module:
  Version: "2025.264.0"
  Dependencies:
   PHP: "^7.2|^8"
-  CIDRAM Core: "^4-DEV"
+  CIDRAM Core: "^4"
  When Install Succeeds: ["queue message response.please_check_config"]
  Files:
   imports/extras.yml:
@@ -1448,7 +1448,7 @@ Project Honeypot module:
  Version: "2025.237.0"
  Dependencies:
   PHP: "^7.2|^8"
-  CIDRAM Core: "^4-DEV"
+  CIDRAM Core: "^4"
  When Install Succeeds: ["queue message response.please_check_config"]
  Files:
   imports/projecthoneypot.yml:
@@ -1464,7 +1464,7 @@ Protocol blocker module:
  Version: "2025.237.0"
  Dependencies:
   PHP: "^7.2|^8"
-  CIDRAM Core: "^4-DEV"
+  CIDRAM Core: "^4"
  When Install Succeeds: ["queue message response.please_check_config"]
  Files:
   imports/protocol.yml:
@@ -1480,7 +1480,7 @@ Stop Forum Spam module:
  Version: "2025.237.0"
  Dependencies:
   PHP: "^7.2|^8"
-  CIDRAM Core: "^4-DEV"
+  CIDRAM Core: "^4"
  When Install Succeeds: ["queue message response.please_check_config"]
  Files:
   imports/sfs.yml:
@@ -1496,7 +1496,7 @@ Quic cloud compatibility module:
  Version: "2025.225.0"
  Dependencies:
   PHP: "^7.2|^8"
-  CIDRAM Core: "^4-DEV"
+  CIDRAM Core: "^4"
  When Install Succeeds: ["queue message response.please_check_config"]
  Files:
   imports/quic.yml:
@@ -1512,7 +1512,7 @@ Tor blocker module:
  Version: "2025.237.0"
  Dependencies:
   PHP: "^7.2|^8"
-  CIDRAM Core: "^4-DEV"
+  CIDRAM Core: "^4"
  When Install Succeeds: ["queue message response.please_check_config"]
  Files:
   imports/tor.yml:
@@ -1531,7 +1531,7 @@ BOBUAM:
  Version: "2025.250.0"
  Dependencies:
   PHP: "^7.2|^8"
-  CIDRAM Core: "^4-DEV"
+  CIDRAM Core: "^4"
  When Install Succeeds: ["queue message response.please_check_config"]
  Files:
   imports/bobuam.yml:
@@ -1547,8 +1547,8 @@ theme/bluemetal:
  Extended Description: "<img src="https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/themes/preview-bluemetal.png" alt="Preview" />"
  Version: "2025.294.0"
  Dependencies:
-  CIDRAM Core: "^4-DEV"
-  CIDRAM Front-End: "^4-DEV"
+  CIDRAM Core: "^4"
+  CIDRAM Front-End: "^4"
  Files:
   assets/core/captcha_bluemetal.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/assets/core/captcha_bluemetal.html"
@@ -1567,8 +1567,8 @@ theme/fullmoon:
  Extended Description: "<img src="https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/themes/preview-fullmoon.png" alt="Preview" />"
  Version: "2025.294.0"
  Dependencies:
-  CIDRAM Core: "^4-DEV"
-  CIDRAM Front-End: "^4-DEV"
+  CIDRAM Core: "^4"
+  CIDRAM Front-End: "^4"
  Files:
   assets/core/captcha_fullmoon.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/assets/core/captcha_fullmoon.html"
@@ -1587,8 +1587,8 @@ theme/moss:
  Extended Description: "<img src="https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/themes/preview-moss.png" alt="Preview" />"
  Version: "2025.294.0"
  Dependencies:
-  CIDRAM Core: "^4-DEV"
-  CIDRAM Front-End: "^4-DEV"
+  CIDRAM Core: "^4"
+  CIDRAM Front-End: "^4"
  Files:
   assets/core/captcha_moss.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/assets/core/captcha_moss.html"
@@ -1610,8 +1610,8 @@ theme/primer:
  Extended Description: "<img src="https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/themes/preview-primer.png" alt="Preview" />"
  Version: "2025.294.0"
  Dependencies:
-  CIDRAM Core: "^4-DEV"
-  CIDRAM Front-End: "^4-DEV"
+  CIDRAM Core: "^4"
+  CIDRAM Front-End: "^4"
  Files:
   assets/core/captcha_primer.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/assets/core/captcha_primer.html"
@@ -1627,8 +1627,8 @@ theme/primerdark:
  Extended Description: "<img src="https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/themes/preview-primerdark.png" alt="Preview" />"
  Version: "2025.294.0"
  Dependencies:
-  CIDRAM Core: "^4-DEV"
-  CIDRAM Front-End: "^4-DEV"
+  CIDRAM Core: "^4"
+  CIDRAM Front-End: "^4"
  Files:
   assets/core/captcha_primerdark.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/assets/core/captcha_primerdark.html"
@@ -1644,8 +1644,8 @@ theme/rbi:
  Extended Description: "<img src="https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/themes/preview-rbi.png" alt="Preview" />"
  Version: "2025.294.0"
  Dependencies:
-  CIDRAM Core: "^4-DEV"
-  CIDRAM Front-End: "^4-DEV"
+  CIDRAM Core: "^4"
+  CIDRAM Front-End: "^4"
  Files:
   assets/core/captcha_rbi.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/assets/core/captcha_rbi.html"
@@ -1661,8 +1661,8 @@ theme/slate:
  Extended Description: "<img src="https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/themes/preview-slate.png" alt="Preview" />"
  Version: "2025.294.0"
  Dependencies:
-  CIDRAM Core: "^4-DEV"
-  CIDRAM Front-End: "^4-DEV"
+  CIDRAM Core: "^4"
+  CIDRAM Front-End: "^4"
  Files:
   assets/core/captcha_slate.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/assets/core/captcha_slate.html"

@@ -466,6 +466,8 @@
 
 *CIDRAM v4 branches from v3 at v3.10.0 (2025.08.14).*
 
+*v4.0.0 major release tagged/released 2025.10.26.*
+
 #### Backwards-incompatible changes.
 - Removed support for reCAPTCHA entirely; Improved hCaptcha support; Added support for Friendly Captcha and Cloudflare Turnstile (#624).
 - All CAPTCHA configuration directives have been completely reworked along with the mechanisms behind them, with better labelling and clearer descriptions than before, and unified under a singular configuration category, "captcha" (#624).

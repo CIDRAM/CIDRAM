@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2025.10.13).
+# This file: Portuguese language data for the front-end (last modified: 2025.10.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -1317,7 +1317,9 @@ tip:
  Aggregator: "O agregador permite que você expresse IPs, CIDRs, e máscaras de rede da maneira mais pequena possível. Insira os dados a serem agregados e pressione "OK"."
  Auxiliary Rules Modes: "O modo de visualização exibe regras auxiliares como uma lista compacta para facilitar a leitura. As regras na lista podem ser expandidas e mais detalhes podem ser exibidos clicando nelas. Opções para exportar ou excluir uma regra serão mostradas ao clicar no trigrama (☰). As regras podem ser reordenadas por meio de arrastar e soltar, arrastando uma regra de sua posição existente para a posição desejada. O modo de edição é necessário para modificar regras auxiliares, campos editáveis ​​e opções para adicionar novas condições, webhooks, ou outra lógica às regras conforme necessário fornecidas na página. Novas regras auxiliares podem ser criadas por meio de qualquer modo."
  Auxiliary Rules Priority: "Prioridade (altíssima➡(igual🔄equivalente)➡baixíssima):"
- Auxiliary Rules Webhooks: "Quando uma regra é desencadeada, o CIDRAM tentará notificar quaisquer webhooks conectados sobre o evento."
+ Auxiliary Rules Webhooks:
+  pt-BR: "Quando uma regra é desencadeada, o CIDRAM tentará notificar quaisquer webhooks conectados sobre o evento. Um webhook é uma URL capaz de receber dados POST e pode ser útil se houver um serviço externo, aplicativo, script, etc hospedado em uma rede totalmente diferente da CIDRAM, na qual você deseja manipular os dados gerados pela CIDRAM sobre a solicitação."
+  pt-PT: "Quando uma regra é desencadeada, o CIDRAM tentará notificar quaisquer webhooks conectados sobre o evento. Um webhook é um URL capaz de receber dados POST e pode ser útil se existir um serviço externo, aplicativo, script, etc alojado numa rede totalmente diferente da CIDRAM, na qual pretende manipular os dados gerados pela CIDRAM sobre o solicitação."
  Auxiliary Rules: "Você pode usar esta página para criar, deletar e modificar regras auxiliares para o CIDRAM."
  Backup:
   pt-BR: "Esta página pode ser usada para importar/exportar sua configuração, regras auxiliares, etc. Isso pode ser útil se você precisar migrar dados entre diferentes instalações ou diferentes versões principais."
@@ -1370,6 +1372,9 @@ tip:
   pt-PT: "Consulte a <a href="{{Links.CIDRAM.Docs Base Path}}readme.pt.md\#user-content-SECTION5" hreflang="pt" rel="noopener external"><span class="navicon documentation"></span>documentação</a> para obter informações sobre as várias diretrizes de configuração e os seus objetivos."
  Server log snippets, abuse details, etc: "Trechos de log do servidor, detalhes de abuso, etc."
  Signature File Fixer: "O fixador para os arquivos de assinatura fornece uma maneira de detectar e corrigir possíveis problemas em arquivos de assinatura."
+ Specify a URL, or leave blank to disregard:
+  pt-BR: "Especifique uma URL, ou deixe em branco para desconsiderar."
+  pt-PT: "Especifique um URL, ou deixe-o em branco para desconsiderar."
  Specify a directory path, or leave blank to use the CIDRAM base path:
   pt-BR: "Especifique um caminho de diretório, ou deixe em branco para usar o caminho base do CIDRAM."
   pt-PT: "Especifique um caminho de diretório, ou deixe-o em branco para utilizar o caminho base do CIDRAM."

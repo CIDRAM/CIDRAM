@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data for the front-end (last modified: 2025.10.18).
+# This file: Hindi language data for the front-end (last modified: 2025.10.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -330,7 +330,7 @@ field:
  Activate: "सक्रिय करें"
  Add more conditions: "और शर्तें जोड़ें"
  Add to tracking: "ट्रैकिंग में जोड़ें"
- Add webhook: "Webhook जोड़ें"
+ Add webhook: "वेबहुक जोड़ें"
  After 24 hours, bundled together: "24 घंटे के बाद, एक साथ बंडल किया जाता है (या मैन्युअल रूप से ट्रिगर किया जाता है, उदाहरण के लिए, cron के माध्यम से)।"
  Blocked: "अवरुद्ध"
  Clear all: "सभी साफ करें"
@@ -754,7 +754,7 @@ label:
   Use Windows-style wildcards to test the conditions: "स्थितियां का परीक्षण करने के लिए विंडोज-शैली वाइल्डकार्ड का प्रयोग करें।"
   Use direct string comparison to test the conditions: "स्थितियां का परीक्षण करने के लिए प्रत्यक्ष स्ट्रिंग तुलना का प्रयोग करें।"
   Use regular expressions to test the conditions: "स्थितियां का परीक्षण करने के लिए नियमित अभिव्यक्ति का प्रयोग करें।"
-  Webhooks to apply when the rule requirements are met: "नियम की आवश्यकताएं पूरी होने पर आवेदन करने के लिए webhooks:"
+  Webhooks to apply when the rule requirements are met: "नियम की आवश्यकताएं पूरी होने पर आवेदन करने के लिए वेबहुक:"
   When forcibly disabled, marking for use won_t have any effect: "नोट: जब जबरन अक्षम कर दिया गया, उपयोग के लिए चिह्नित करने पर कोई प्रभाव नहीं पड़ेगा।"
   When the rule should begin (optional): "जब नियम शुरू होना चाहिए (वैकल्पिक):"
   When the rule should expire (optional): "जब नियम समाप्त हो जाना चाहिए (वैकल्पिक):"
@@ -993,7 +993,7 @@ stages:
  Execute search engine verification: "खोज इंजन सत्यापन निष्पादित करें"
  Execute signature files tests: "हस्ताक्षर फाइलें परीक्षण निष्पादित करें"
  Execute social media verification: "सोशल मीडिया सत्यापन निष्पादित करें"
- Execute webhooks: "Webhook निष्पादित करें"
+ Execute webhooks: "वेबहुक निष्पादित करें"
  Generate output (blocked requests): "आउटपुट उत्पन्न करें (अनुरोधों के लिए जो अवरुद्ध हैं)"
  Prepare fields for output and logs: "आउटपुट और लॉग के लिए फ़ील्ड तैयार करें"
  Process email trigger notification queue: "ईमेल ट्रिगर सूचना कतार को संसाधित करें"
@@ -1035,7 +1035,7 @@ tip:
  Aggregator: "एग्रीगेटर आपको कम से कम संभव तरीके से IP, CIDR, और नेटमास्क को व्यक्त करने की अनुमति देता है। इकट्ठा करने के लिए डेटा दर्ज करें और "ओके" दबाएं।"
  Auxiliary Rules Modes: "दृश्य मोड सहायक नियमों को आसानी से पढ़ने के लिए संक्षिप्त सूची के रूप में प्रदर्शित करता है। सूची में नियमों पर क्लिक करके उन्हें विस्तारित किया जा सकता है तथा आगे का विवरण दिखाया जा सकता है। ट्रिग्राम (☰) पर क्लिक करने पर नियम को निर्यात या हटाने के विकल्प दिखाए जाएंगे। नियमों का क्रम खींचें और छोड़ें के माध्यम से बदला जा सकता है, किसी नियम को उसकी मौजूदा स्थान से खींचकर इच्छित स्थान पर लाया जा सकता है। सहायक नियमों को संशोधित करने के लिए संपादन मोड आवश्यक है, पृष्ठ पर आवश्यकतानुसार नियमों में नई शर्तें, वेबहुक, या अन्य तर्क जोड़ने के लिए संपादन योग्य फ़ील्ड और विकल्प उपलब्ध कराए गए हैं। नये सहायक नियम किसी भी मोड के माध्यम से बनाये जा सकते हैं।"
  Auxiliary Rules Priority: "प्राथमिकता (उच्चतम➡(बराबर🔄बराबर)➡सबसे कम):"
- Auxiliary Rules Webhooks: "जब एक नियम को ट्रिगर किया जाता है, CIDRAM किसी भी जुड़े हुए webhooks को घटना के बारे में सूचित करने का प्रयास करेगा।"
+ Auxiliary Rules Webhooks: "जब एक नियम को ट्रिगर किया जाता है, CIDRAM किसी भी जुड़े हुए वेबहुक को घटना के बारे में सूचित करने का प्रयास करेगा। वेबहुक एक ऐसा URL है जो POST डेटा प्राप्त कर सकता है, और यह तब काम आ सकता है जब कोई एक्सटर्नल सर्विस, ऐप, स्क्रिप्ट, वगैरह CIDRAM से बिल्कुल अलग नेटवर्क पर होस्ट हो, और आप चाहते हैं कि वह CIDRAM द्वारा रिक्वेस्ट के बारे में जेनरेट किए गए डेटा को हैंडल करे।"
  Auxiliary Rules: "आप इस पृष्ठ का उपयोग CIDRAM के लिए सहायक नियम बनाने, हटाने और संशोधित करने के लिए कर सकते हैं।"
  Backup: "इस पृष्ठ का उपयोग आपके कॉन्फ़िगरेशन, सहायक नियमों, आदि को आयात और निर्यात करने के लिए किया जा सकता है। यह उपयोगी हो सकता है यदि आपको विभिन्न स्थापनाओं या विभिन्न प्रमुख संस्करणों में डेटा माइग्रेट करने की आवश्यकता हो।"
  Cache Data: "यहां आप कैश की सामग्रियों की समीक्षा कर सकते हैं।"
@@ -1068,8 +1068,9 @@ tip:
  See the documentation: "विभिन्न कॉन्फ़िगरेशन निर्देशों और उनके उद्देश्यों के बारे में जानकारी के लिए <a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external"><span class="navicon documentation"></span>डॉक्यूमेंटेशन</a> देखें।"
  Server log snippets, abuse details, etc: "सर्वर लॉग स्निपेट, दुरुपयोग विवरण, आदि।"
  Signature File Fixer: "यहां आप हस्ताक्षर फाइलों में संभावित समस्याओं का पता लगा सकते हैं और उन्हें ठीक कर सकते हैं।"
- Specify a directory path, or leave blank to use the CIDRAM base path: "निर्देशिका पथ निर्दिष्ट करें, या CIDRAM आधार पथ का उपयोग करने के लिए, रिक्त छोड़ दें।"
- Specify a value, or leave blank to disregard: "एक मान निर्दिष्ट करें, या उपेक्षा करने के लिए खाली छोड़ दें।"
+ Specify a URL, or leave blank to disregard: "एक URL निर्दिष्ट करें, या अनदेखा करने के लिए खाली छोड़ दें।"
+ Specify a directory path, or leave blank to use the CIDRAM base path: "निर्देशिका पथ निर्दिष्ट करें, या CIDRAM आधार पथ का उपयोग करने के लिए, खाली छोड़ दें।"
+ Specify a value, or leave blank to disregard: "एक मान निर्दिष्ट करें, या अनदेखा करने के लिए खाली छोड़ दें।"
  Statistics tracking is currently disabled: "नोट: सांख्यिकी ट्रैकिंग वर्तमान में अक्षम है, लेकिन कॉन्फ़िगरेशन पृष्ठ के माध्यम से सक्षम किया जा।"
  Statistics: "यह पृष्ठ आपके CIDRAM स्थापना के बारे में कुछ बुनियादी उपयोग सांख्यिकी दिखाता है।"
  Subtractor: "सबट्रैक्टर को एक से दूसरे IP/CIDR/नेटमास्क की एक रेंज को घटाने के लिए इस्तेमाल किया जा सकता है।"

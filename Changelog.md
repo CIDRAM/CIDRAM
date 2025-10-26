@@ -502,4 +502,5 @@
 - Added support for NO_COLOR.
 - CAPTCHA log entries now include the reconstructed URI/URL (#643).
 - Some sticky elements now have their own scroll context.
+- Clarified terminology at the auxiliary rules page for block, bypass, whitelist, greylist, profile, and webhooks (#624).
 - *Plus all the regular signature updates.*

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese language data for the front-end (last modified: 2025.10.15).
+# This file: Chinese language data for the front-end (last modified: 2025.10.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -937,7 +937,7 @@ label:
   Use Windows-style wildcards to test the conditions: {"zh-Hans": "使用Windows风格的通配符来测试条件。", "zh-Hant": "使用Windows風格的通配符來測試條件。"}
   Use direct string comparison to test the conditions: {"zh-Hans": "使用直接字符串比较来测试条件。", "zh-Hant": "使用直接字符串比較來測試條件。"}
   Use regular expressions to test the conditions: {"zh-Hans": "使用正则表达式来测试条件。", "zh-Hant": "使用正則表達式來測試條件。"}
-  Webhooks to apply when the rule requirements are met: {"zh-Hans": "满足规则要求时要应用的webhooks：", "zh-Hant": "滿足規則要求時要應用的webhooks："}
+  Webhooks to apply when the rule requirements are met: {"zh-Hans": "满足规则要求时要应用的webhook：", "zh-Hant": "滿足規則要求時要應用的webhook："}
   When forcibly disabled, marking for use won_t have any effect: {"zh-Hans": "注意：当强制禁用时，标记为使用不会产生任何效果。", "zh-Hant": "注意：當強制禁用時，標記為使用不會產生任何效果。"}
   When the rule should begin (optional): {"zh-Hans": "规则何时开始（可选）：", "zh-Hant": "規則何時開始（可選）："}
   When the rule should expire (optional): {"zh-Hans": "规则何时到期（可选）：", "zh-Hant": "規則何時到期（可選）："}
@@ -1228,7 +1228,9 @@ tip:
   zh-Hans: "查看模式将辅助规则显示为紧凑列表，以便于阅读。​单击列表中的规则即可展开并显示更多详细信息。​单击三元组（☰）时将显示导出或删除规则的选项。​可以通过拖放操作更改规则的顺序，将规则从现有位置拖动到所需位置。​需要编辑模式来修改辅助规则，页面上有可编辑字段和选项，用于添加新条件、webhook、或其他逻辑。​可以通过任一模式创建新的辅助规则。"
   zh-Hant: "查看模式將輔助規則顯示為緊湊列表，以便於閱讀。​點擊清單中的規則即可展開並顯示更多詳細資訊。​點選三元組（☰）時將顯示匯出或刪除規則的選項。​可以透過拖曳操作來變更規則的順序，將規則從現有位置拖曳到所需位置。​需要編輯模式來修改輔助規則，頁面上有可編輯欄位和選項，用於新增條件、webhook、或其他邏輯。​可以透過任一模式建立新的輔助規則。"
  Auxiliary Rules Priority: {"zh-Hans": "优先（最高➡(相同🔄当量)➡最低）：", "zh-Hant": "優先（最高➡(相同🔄當量)➡最低）："}
- Auxiliary Rules Webhooks: {"zh-Hans": "当触发规则时，CIDRAM将尝试该事件通知所有连接的webhooks。", "zh-Hant": "當觸發規則時，CIDRAM將嘗試該事件通知所有連接的webhooks。"}
+ Auxiliary Rules Webhooks:
+  zh-Hans: "当触发规则时，CIDRAM将尝试该事件通知所有连接的webhook。 Webhook是一个能够接收POST数据的URL，如果有一个外部服务、应用程序、脚本、等托管在与CIDRAM完全不同的网络上，并且您希望它处理CIDRAM生成的关于该请求的数据，那么webhook就会非常有用。"
+  zh-Hant: "當觸發規則時，CIDRAM將嘗試該事件通知所有連接的webhook。 Webhook是一個能夠接收POST資料的URL，如果在與CIDRAM完全不同的網路上託管外部服務、應用程式、腳本、等並且您希望處理CIDRAM產生的有關請求的數據，那麼webhook可能會很有用。"
  Auxiliary Rules: {"zh-Hans": "您可以使用此页面为CIDRAM创建，删除，和修改辅助规则。", "zh-Hant": "您可以使用此頁面為CIDRAM創建，刪除，和修改輔助規則。"}
  Backup: {"zh-Hans": "该页面可用于导入/导出您的配置、辅助规则、等等。​如果您需要跨不同安装或不同主要版本迁移数据，这会很有用。", "zh-Hant": "該頁面可用於匯入/匯出您的配置、輔助規則、等等。​如果您需要跨不同安裝或不同主要版本遷移數據，這會很有用。"}
  Cache Data: {"zh-Hans": "在这里您可以查看缓存的内容。", "zh-Hant": "在這裡您可以查看緩存的內容。"}
@@ -1265,6 +1267,7 @@ tip:
   zh-Hant: "請參閱<a href="{{Links.CIDRAM.Docs Base Path}}readme.zh-Hant.md\#user-content-SECTION5" hreflang="zh-Hant" rel="noopener external"><span class="navicon documentation"></span>文檔</a>以獲取有關各種配置指令的信息和他們的目的。"
  Server log snippets, abuse details, etc: {"zh-Hans": "服务器日志片段、滥用详细信息、等等。", "zh-Hant": "伺服器日誌片段、濫用詳細資訊、等等。"}
  Signature File Fixer: {"zh-Hans": "签名文件修复工具提供了一种检测和修复签名文件中潜在问题的方法。", "zh-Hant": "簽名檔案修復工具提供了一種檢測和修復簽名檔案中潛在問題的方法。"}
+ Specify a URL, or leave blank to disregard: "指定URL，或留空以忽略。"
  Specify a directory path, or leave blank to use the CIDRAM base path: {"zh-Hans": "指定目录路径，或留空以使用CIDRAM基本路径。", "zh-Hant": "指定目錄路徑，或留空以使用CIDRAM基本路徑。"}
  Specify a value, or leave blank to disregard: {"zh-Hans": "指定一个值，或留空以忽略。", "zh-Hant": "指定一個值，或留空以忽略。"}
  Statistics tracking is currently disabled: {"zh-Hans": "注意：统计跟踪目前已被禁用，但可以通过配置页面启用。", "zh-Hant": "注意：統計跟踪目前已被禁用，但可以通過配置頁面啟用。"}

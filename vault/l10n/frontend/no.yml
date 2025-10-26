@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2025.10.13).
+# This file: Norwegian language data for the front-end (last modified: 2025.10.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -1055,7 +1055,7 @@ tip:
  Aggregator: "Aggregatoren lar deg uttrykke IPer, CIDRer, og nettmasker på den minste mulige måten. Skriv inn dataene som skal aggregeres og trykk «OK»."
  Auxiliary Rules Modes: "Visningsmodus viser tilleggsregler som en kompakt liste for enkel lesning. Regler i listen kan utvides og ytterligere detaljer vises ved å klikke på dem. Alternativer for å eksportere eller slette en regel vises når du klikker på trigrammet (☰). Regler kan endre rekkefølgen ved å dra og slippe, ved å dra en regel fra den eksisterende posisjonen og til ønsket posisjon. Redigeringsmodus er nødvendig for å endre tilleggsregler, redigerbare felt og alternativer for å legge til nye betingelser, webhooks, eller annen logikk i reglene etter behov som er angitt på siden. New auxiliary rules can be created via either mode."
  Auxiliary Rules Priority: "Prioritet (høyeste➡(lik🔄tilsvarende)➡lavest):"
- Auxiliary Rules Webhooks: "Når en regel utløses, CIDRAM vil prøve å varsle eventuelle tilkoblede nettkroker om hendelsen."
+ Auxiliary Rules Webhooks: "Når en regel utløses, CIDRAM vil prøve å varsle eventuelle tilkoblede nettkroker om hendelsen. En webhook er en URL som kan motta POST-data, og kan være nyttig hvis det finnes en ekstern tjeneste, app, skript osv som ligger på et helt annet nettverk enn CIDRAM, og du vil at dataene som genereres av CIDRAM om forespørselen skal håndtere."
  Auxiliary Rules: "Du kan bruke denne siden til å opprette, slette og endre tilleggsregler for CIDRAM."
  Backup: "Denne siden kan brukes til å importere/eksportere konfigurasjonen din, tilleggsregler din, osv. Dette kan være nyttig hvis du trenger å migrere data på tvers av forskjellige installasjoner eller forskjellige hovedversjoner."
  Cache Data: "Her kan du se innholdet i cachen."
@@ -1088,8 +1088,9 @@ tip:
  See the documentation: "Se <a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external"><span class="navicon documentation"></span>dokumentasjonen</a> for informasjon om de ulike konfigurasjonsdirektiver og deres formål."
  Server log snippets, abuse details, etc: "Utdrag fra serverlogg, misbruksdetaljer, osv."
  Signature File Fixer: "Signaturfilfikseren gir en måte å oppdage og fikse potensielle problemer i signaturfiler."
+ Specify a URL, or leave blank to disregard: "Angi en URL, eller la feltet stå tomt for å ignorere."
  Specify a directory path, or leave blank to use the CIDRAM base path: "Angi en katalogsti, eller la feltet stå tomt for å bruke CIDRAM-basisstien."
- Specify a value, or leave blank to disregard: "Angi en verdi, eller legg blank for å se bort fra."
+ Specify a value, or leave blank to disregard: "Angi en verdi, eller la feltet stå tomt for å ignorere."
  Statistics tracking is currently disabled: "Merk: Statistikksporing er for øyeblikket deaktivert, men kan aktiveres via konfigurasjonssiden."
  Statistics: "Denne siden viser noen grunnleggende bruksstatistikk angående CIDRAM-installasjonen."
  Subtractor: "Subtraktoren kan brukes til å trekke fra et område med IPer/CIDRer/nettmasker fra et annet."

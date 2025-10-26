@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2025.10.15).
+# This file: Thai language data for the front-end (last modified: 2025.10.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -330,7 +330,7 @@ field:
  Activate: "เปิดใช้งาน"
  Add more conditions: "เพิ่มเงื่อนไขเพิ่มเติม"
  Add to tracking: "เพิ่มในการติดตาม"
- Add webhook: "เพิ่ม webhook"
+ Add webhook: "เพิ่มเว็บฮุก"
  After 24 hours, bundled together: "หลังจากผ่านไป 24 ชั่วโมง มัดรวมกัน (หรือเมื่อถูกทริกเกอร์ด้วยตนเอง เช่น ผ่าน cron)."
  Blocked: "ถูกบล็อค"
  Clear all: "ล้างทั้งหมด"
@@ -739,7 +739,7 @@ label:
   Use Windows-style wildcards to test the conditions: "ใช้อักขระตัวแทนในรูปแบบ Windows เพื่อทดสอบเงื่อนไข."
   Use direct string comparison to test the conditions: "ใช้การเปรียบเทียบสตริงโดยตรงเพื่อทดสอบเงื่อนไข."
   Use regular expressions to test the conditions: "ใช้นิพจน์ปกติเพื่อทดสอบเงื่อนไข."
-  Webhooks to apply when the rule requirements are met: "Webhooks ที่จะใช้เมื่อตรงตามข้อกำหนดของกฎ:"
+  Webhooks to apply when the rule requirements are met: "เว็บฮุกที่จะนำไปใช้เมื่อตรงตามข้อกำหนดของกฎ:"
   When forcibly disabled, marking for use won_t have any effect: "บันทึก: เมื่อถูกบังคับให้ปิดใช้งาน การทำเครื่องหมายเพื่อใช้งานจะไม่มีผลใดๆ."
   When the rule should begin (optional): "เมื่อกฎควรเริ่มต้น (ไม่จำเป็น):"
   When the rule should expire (optional): "เมื่อกฎควรหมดอายุ (ไม่จำเป็น):"
@@ -1014,7 +1014,7 @@ tip:
  Aggregator: "ตัวรวบรวมช่วยให้คุณสามารถแสดง IP, CIDR, และเน็ตมาสก์ในลักษณะที่เล็กที่สุดได้. ป้อนข้อมูลที่จะรวมและกด "ตกลง"."
  Auxiliary Rules Modes: "โหมดการแสดงผลจะแสดงกฎเสริมเป็นรายการแบบกระชับเพื่อให้อ่านง่าย. สามารถขยายกฎในรายการและแสดงรายละเอียดเพิ่มเติมได้โดยการคลิกที่กฎเหล่านั้น. ตัวเลือกในการส่งออกหรือลบกฎจะปรากฏเมื่อคลิกไตรแกรม (☰). ลำดับกฎสามารถเปลี่ยนแปลงได้โดยการลากกฎจากตำแหน่งที่มีอยู่ไปยังตำแหน่งที่ต้องการ. จำเป็นต้องมีโหมดแก้ไขเพื่อปรับเปลี่ยนกฎเสริม ฟิลด์ที่แก้ไขได้และตัวเลือกที่จะเพิ่มเงื่อนไขใหม่ เว็บฮุก หรือตรรกะอื่นให้กับกฎที่ให้ไว้ในหน้า. สามารถสร้างกฎเสริมใหม่ได้ผ่านโหมดใดก็ได้."
  Auxiliary Rules Priority: "ลำดับความสำคัญ (สูงสุด➡(เท่ากัน🔄เหมือน)➡ต่ำที่สุด):"
- Auxiliary Rules Webhooks: "เมื่อกฎถูกทริกเกอร์ CIDRAM จะพยายามแจ้ง webhooks ที่เชื่อมต่อใด ๆ เกี่ยวกับเหตุการณ์."
+ Auxiliary Rules Webhooks: "เมื่อมีการเรียกใช้กฎ CIDRAM จะพยายามแจ้งเตือนเว็บฮุกที่เชื่อมต่อเกี่ยวกับเหตุการณ์ดังกล่าว. เว็บฮุกคือ URL ที่สามารถรับข้อมูล POST ได้. หากมีบริการภายนอก แอป สคริปต์ ฯลฯ ที่คุณต้องการจัดการข้อมูลที่สร้างโดย CIDRAM เกี่ยวกับคำขอ และโฮสต์อยู่บนเครือข่ายที่แตกต่างอย่างสิ้นเชิงจาก CIDRAM เว็บฮุกอาจเป็นประโยชน์."
  Auxiliary Rules: "คุณสามารถใช้เพจนี้เพื่อสร้าง ลบ และแก้ไข กฎเสริมสำหรับ CIDRAM."
  Backup: "หน้านี้สามารถใช้เพื่อนำเข้า/ส่งออกการกำหนดค่าของคุณ กฎเสริม ฯลฯ. สิ่งนี้มีประโยชน์หากคุณต้องการย้ายข้อมูลระหว่างการติดตั้งที่แตกต่างกันหรือเวอร์ชันหลักที่แตกต่างกัน."
  Cache Data: "ที่นี่คุณสามารถตรวจสอบเนื้อหาของแคชได้."
@@ -1047,6 +1047,7 @@ tip:
  See the documentation: "ดูที่<a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#user-content-SECTION5" hreflang="en" rel="noopener external"><span class="navicon documentation"></span>เอกสาร</a>สำหรับข้อมูลเกี่ยวกับคำสั่งการกำหนดค่าต่างๆและวัตถุประสงค์ของพวกเขา."
  Server log snippets, abuse details, etc: "ข้อความที่ตัดตอนมาจากบันทึกเซิร์ฟเวอร์ รายละเอียดการละเมิด ฯลฯ."
  Signature File Fixer: "เครื่องมือซ่อมแซมไฟล์ลายเซ็นเป็นวิธีการตรวจจับและแก้ไขปัญหาที่อาจเกิดขึ้นในไฟล์ลายเซ็น."
+ Specify a URL, or leave blank to disregard: "ระบุ URL หรือเว้นว่างไว้เพื่อไม่สนใจ."
  Specify a directory path, or leave blank to use the CIDRAM base path: "ระบุเส้นทางไดเร็กทอรี หรือเว้นว่างไว้เพื่อใช้เส้นทางฐาน CIDRAM."
  Specify a value, or leave blank to disregard: "ระบุค่าหรือเว้นว่างไว้เพื่อไม่สนใจ."
  Statistics tracking is currently disabled: "บันทึก: ขณะนี้การติดตามผลสถิติถูกปิดใช้งาน แต่สามารถเปิดใช้งานได้ผ่านทางหน้าการกำหนดค่า."

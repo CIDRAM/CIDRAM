@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used for auxiliary rules (last modified: 2025.10.13).
+ * This file: Methods used for auxiliary rules (last modified: 2025.10.22).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -278,7 +278,7 @@ trait AuxiliaryRules
                             '<input type="text" name="webhooks[%1$s][%2$s]" placeholder="%3$s" class="txtf" value="%4$s" />',
                             $Current,
                             $Iteration,
-                            $this->L10N->getString('tip.Specify a value, or leave blank to disregard'),
+                            $this->L10N->getString('tip.Specify a URL, or leave blank to disregard'),
                             $Webhook
                         );
                         $Iteration++;
@@ -694,6 +694,7 @@ trait AuxiliaryRules
         /** Append JavaScript specific to the auxiliary rules page. */
         $this->FE['JS'] .= $this->parseVars([
             'tip.Specify a value, or leave blank to disregard' => str_replace('\'', '\\\'', $this->L10N->getString('tip.Specify a value, or leave blank to disregard')),
+            'tip.Specify a URL, or leave blank to disregard' => str_replace('\'', '\\\'', $this->L10N->getString('tip.Specify a URL, or leave blank to disregard')),
             'hints_asnlookup' => str_replace('\'', '\\\'', $this->L10N->getString('hints_asnlookup')),
             'hints_cclookup' => str_replace('\'', '\\\'', $this->L10N->getString('hints_cclookup')),
             'hints_client_hints' => str_replace('\'', '\\\'', $this->L10N->getString('hints_client_hints')),

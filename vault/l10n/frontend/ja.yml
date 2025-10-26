@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2025.10.15).
+# This file: Japanese language data for the front-end (last modified: 2025.10.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -746,7 +746,7 @@ label:
   Use Windows-style wildcards to test the conditions: "Windowsスタイルのワイルドカードを使用して条件をテストします。"
   Use direct string comparison to test the conditions: "文字列の直接比較を使用して条件をテストします。"
   Use regular expressions to test the conditions: "正規表現を使用して条件をテストします。"
-  Webhooks to apply when the rule requirements are met: "ルール要件が満たされたときに適用するwebhook："
+  Webhooks to apply when the rule requirements are met: "ルール要件が満たされたときに適用するWebhook："
   When forcibly disabled, marking for use won_t have any effect: "注意：強制的に無効化した場合、使用のマークは効果がありません。"
   When the rule should begin (optional): "ルールが開始するき時（オプション）："
   When the rule should expire (optional): "ルールが切れる時期（オプション）："
@@ -1021,7 +1021,7 @@ tip:
  Aggregator: "アグリゲータを使用すると、最小限の方法でＩＰとＣＩＤＲとネットマスクを表現できます。​集計するデータを入力し、「ＯＫ」を押します。"
  Auxiliary Rules Modes: "表示モードでは、補助ルールが読みやすいコンパクトなリストとして表示されます。​リスト内のルールはクリックすることで展開され、詳細が表示されます。​トライグラム（☰）をクリックすると、ルールをエクスポートまたは削除するオプションが表示されます。​ルールは、「ドラッグ・アンド・ドロップ」で並べ替えることができ、既存の位置から目的の位置にルールをドラッグします。​補助ルールを変更するには変更モードが必要です、必要に応じてルールに新しい条件、Webhook、またはその他のロジックを追加するための編集可能なフィールドとオプションがページに提供されます。​どちらのモードでも新しい補助ルールを作成できます。"
  Auxiliary Rules Priority: "優先（最高➡(等しい🔄同等)➡最低）："
- Auxiliary Rules Webhooks: "ルールがトリガーされると、CIDRAMは接続されているすべてのWebhookにイベントについて通知しようとします。"
+ Auxiliary Rules Webhooks: "ルールがトリガーされると、CIDRAMは接続されているすべてのWebhookにイベントについて通知しようとします。​Webhook（ウェブフック）は、POSTデータを受信できるURLです。​もし、CIDRAMが生成したリクエストに関するデータを処理したい外部サービス、アプリ、スクリプト、などがあり、それがCIDRAMとは全く異なるネットワーク上にホストされている場合、Webhookが役立つ可能性があります。"
  Auxiliary Rules: "このページを使用して、CIDRAMの補助ルールを作成、削除、および変更することができます。"
  Backup: "このページを利用して、コンフィギュレーション、補助ルール、などをインポートとエクスポートできます。​これは、異なるインストールまたは異なるメジャー・バージョン間でデータを移行する必要がある場合に役立ちます。"
  Cache Data: "ここでは、キャッシュの内容を確認できます。"
@@ -1054,6 +1054,7 @@ tip:
  See the documentation: "コンフィギュレーション・ディレクティブの詳細については、<a href="{{Links.CIDRAM.Docs Base Path}}readme.ja.md\#user-content-SECTION5" hreflang="ja-JP" rel="noopener external"><span class="navicon documentation"></span>ドキュメント</a>を参照してください。"
  Server log snippets, abuse details, etc: "サーバーログのスニペット、不正行為の詳細、など。"
  Signature File Fixer: "シグネチャ・ファイルのフィクサーは、シグネチャ・ファイルの潜在的な問題を検出して修正する方法を提供します。"
+ Specify a URL, or leave blank to disregard: "ＵＲＬを指定するか、無視する場合は空白のままにします。"
  Specify a directory path, or leave blank to use the CIDRAM base path: "ディレクトリ・パスを指定するか、CIDRAMベース・パスを使用する場合は空白のままにします。"
  Specify a value, or leave blank to disregard: "値を指定するか、無視する場合は空白のままにします。"
  Statistics tracking is currently disabled: "注意：統計トラッキングは現在オフラインですが、コンフィギュレーション・ページで有効にすることができます。"

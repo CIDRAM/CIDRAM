@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2025.10.13).
+# This file: Spanish language data for the front-end (last modified: 2025.10.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -1058,7 +1058,7 @@ tip:
  Aggregator: "El agregador permite expresar IPs, CIDRs, y máscaras de red en la forma más pequeña posible. Introduzca los datos que desea agregar y pulse "OK"."
  Auxiliary Rules Modes: "El modo de visualización muestra las reglas auxiliares como una lista compacta para facilitar la lectura. Las reglas de la lista se pueden ampliar y se pueden mostrar más detalles haciendo clic en ellas. Las opciones para exportar o eliminar una regla se mostrarán al hacer clic en el trigrama (☰). Las reglas se pueden reordenar mediante arrastrar y soltar, arrastrando una regla desde su posición existente a la posición deseada. Se requiere el modo de edición para modificar reglas auxiliares, campos editables y opciones para agregar nuevas condiciones, webhooks, u otra lógica a las reglas según sea necesario en la página. Se pueden crear nuevas reglas auxiliares mediante cualquiera de los modos."
  Auxiliary Rules Priority: "Prioridad (mas alta➡(igual🔄equivalente)➡mas baja):"
- Auxiliary Rules Webhooks: "Cuando se cumple una regla, CIDRAM intentará notificar a los webhooks conectados sobre el evento."
+ Auxiliary Rules Webhooks: "Cuando se cumple una regla, CIDRAM intentará notificar a los webhooks conectados sobre el evento. Un webhook es una URL capaz de recibir datos POST, y podría ser útil si hay un servicio externo, una aplicación, un script, etc alojado en una red completamente diferente a CIDRAM, y desea que maneje los datos generados por CIDRAM sobre la solicitud."
  Auxiliary Rules: "Puede usar esta página para crear, eliminar, y modificar reglas auxiliares para CIDRAM."
  Backup: "Esta página se puede utilizar para importar/exportar su configuración, reglas auxiliares, etc. Esto puede ser útil si necesita migrar datos entre diferentes instalaciones o diferentes versiones principales."
  Cache Data: "Aquí puede revisar el contenido de la caché."
@@ -1091,6 +1091,7 @@ tip:
  See the documentation: "Ver la <a href="{{Links.CIDRAM.Docs Base Path}}readme.es.md\#user-content-SECTION5" hreflang="es-ES" rel="noopener external"><span class="navicon documentation"></span>documentación</a> para obtener información sobre las distintas directivas de la configuración y sus propósitos."
  Server log snippets, abuse details, etc: "Fragmentos de registro del servidor, detalles de abuso, etc."
  Signature File Fixer: "El fijador de archivos de firmas proporciona una manera de detectar y solucionar problemas potenciales en los archivos de firmas."
+ Specify a URL, or leave blank to disregard: "Especifique una URL, o déjela en blanco para descartarla."
  Specify a directory path, or leave blank to use the CIDRAM base path: "Especifique una ruta de directorio, o déjelo en blanco para utilizar la ruta base CIDRAM."
  Specify a value, or leave blank to disregard: "Especifique un valor, o déjelo en blanco para descartarlo."
  Statistics tracking is currently disabled: "Nota: El seguimiento de estadísticas está actualmente deshabilitado, pero se puede habilitar a través de la página de configuración."

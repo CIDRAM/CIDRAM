@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bot user agents module (last modified: 2025.08.21).
+ * This file: Bot user agents module (last modified: 2025.10.31).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -235,9 +235,10 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         'ontheinternet|' .
         'p(?:4bot|4load|acrawler|ageglimpse|aloalto(?:company|network)|andalytics|arsijoo|egasusmonitoring|hantomjs|hpcrawl|ingdom|rlog)|' .
         'r(?:arelyused|obo(?:cop|spider)|yze)|' .
-        's(?:/got|can\.lol|caninfo|creener|eekport|itedomain|mut|nap(?:preview)?bot|oapclient|ocial(?:ayer|searcher)|oso|pyglass|quider|treetbot|ynapse)|' .
+        's(?:/got|can\.lol|can(?:ner|info)|creener|eekport|itedomain|mut|nap(?:preview)?bot|oapclient|ocial(?:ayer|searcher)|oso|pyglass|quider|treetbot|ynapse)|' .
         't(?:omba|weezler|ryghost)|' .
         'urlappendbot|urltest|' .
+        'vicibox|' .
         'w(?:asalive|atchmouse|eb(?:-monitoring|bot|masteraid|money|pros|site-info\.net|thumbnail)|hatweb|ikiapiary|ininet|maid\.com|pbot/1\.|sr-agent|wwtype)|' .
         'xenu|xovi|' .
         'zibber|zurichfinancialservices~',
@@ -245,7 +246,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     ) || preg_match(
         '~^Mozilla/5\.0( [A-Za-z]{2,5}/0\..)?$~',
         $this->BlockInfo['UA']
-    ), 'Unauthorised'); // 2023.09.15 mod 2025.08.21
+    ), 'Unauthorised'); // 2023.09.15 mod 2025.10.31
 
     if ($this->trigger(preg_match('~ivre-|masscan~', $UANoSpace), 'Port scanner and synflood tool detected')) {
         $this->Reporter->report([14, 15, 19], ['MASSCAN port scanner and synflood tool detected.'], $this->BlockInfo['IPAddr']);
@@ -316,7 +317,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         'c(?:asperbot|cbot|hinaclaw|lark-?crawler|ohere-)|' .
         'd(?:atenbank|eep-?research|iffbot)|' .
         'echobo[tx]|' .
-        'f(?:idget-?spinner-?bot|irecrawl|riendly-?(?:crawler|spider))|' .
+        'f(?:idget-?spinner-?bot|irecrawl|lyriver|riendly-?(?:crawler|spider))|' .
         'i(?:askspider|magesift|mg2dataset)|' .
         'jaddjabot|' .
         'k(?:angaroobot|eys-?so-?bot)|' .
@@ -335,7 +336,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         $UANoSpace
     ), 'Scraper UA')) {
         $this->CIDRAM['Tracking options override'] = 'extended';
-    } // 2023.11.17 mod 2025.07.26
+    } // 2023.11.17 mod 2025.10.31
 
     $this->trigger(preg_match('~ct‑git‑scanner/~i', $this->BlockInfo['UA']), 'Unauthorised Git scanner'); // 2025.07.05
 

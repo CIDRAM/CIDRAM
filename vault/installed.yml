@@ -9,7 +9,7 @@ CIDRAM Core:
  Changelog: "https://github.com/CIDRAM/CIDRAM/blob/v3/Changelog.md"
  Release Notes For: ["3.6.0", "3.7.0", "3.8.0", "3.8.1", "3.9.0", "3.9.1", "3.10.0", "3.10.1"]
  When Update Succeeds:
-  - "wpVer 4.8 6.8.2 3.10.1 7.2"
+  - "wpVer 4.8 6.8.3 3.10.1 7.2"
   - "foreach {Components.RemoteMeta.CIDRAM Core.Release Notes For} as Key => Value if {Components.Meta.CIDRAM Core.Version}<{Value}&&{Components.RemoteMeta.CIDRAM Core.Version}>={Value} then queue message response.release_notes https://github.com/CIDRAM/CIDRAM/releases/tag/v{Value} CIDRAM v{Value}"
  Uninstallable: false
  Files:
@@ -1395,7 +1395,7 @@ BGPView module:
    Used with: "modules"
 Bot user agents module:
  False Positive Risk: "Medium"
- Version: "2025.232.0"
+ Version: "2025.303.0"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "^3"
@@ -1403,7 +1403,7 @@ Bot user agents module:
  Files:
   modules/botua.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/botua.php"
-   Checksum: "67ea33cf9807c3d4a2ebba040c7bfe9b0e6c91380430d4616989c78ce18f592a:27437"
+   Checksum: "5fb6729f32c00b24078b602d947d5bc2fbfe3962bb9ccd6c3fb6a52f30375e38:27474"
    Used with: "modules"
 BunnyCDN compatibility module:
  False Positive Risk: "Low"

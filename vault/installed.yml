@@ -9,7 +9,7 @@ CIDRAM Core:
  Changelog: "https://github.com/CIDRAM/CIDRAM/blob/v4/Changelog.md"
  Release Notes For: ["4.0.0"]
  When Update Succeeds:
-  - "wpVer 4.8 6.8.2 4.0.0 7.2"
+  - "wpVer 4.8 6.8.3 4.0.0 7.2"
   - "foreach {Components.RemoteMeta.CIDRAM Core.Release Notes For} as Key => Value if {Components.Meta.CIDRAM Core.Version}<{Value}&&{Components.RemoteMeta.CIDRAM Core.Version}>={Value} then queue message response.release_notes https://github.com/CIDRAM/CIDRAM/releases/tag/v{Value} CIDRAM v{Value}"
   - "if {Components.Meta.CIDRAM Core.Version}<4.0.0-DEV&&{Components.RemoteMeta.CIDRAM Core.Version}>=4.0.0-DEV then set Configuration.captcha={Configuration.hcaptcha};executeMacro uninstall_no_longer_available;set Configuration.captcha.hcaptcha_secret="{Configuration.captcha.secret}";set Configuration.captcha.hcaptcha_sitekey="{Configuration.captcha.sitekey}";set Configuration.captcha.usemode.hcaptcha={Configuration.captcha.usemode};set Configuration.captcha.nonblocked_status_code.hcaptcha={Configuration.captcha.nonblocked_status_code};set Configuration.captcha.api.hcaptcha="{Configuration.captcha.api}";set Configuration.recaptcha="";set Configuration.hcaptcha="";set Configuration.general.http_response_header_code.default={Configuration.general.http_response_header_code};set Configuration.general.statistics={CIDRAM.Config Defaults.general.statistics.default};updateConfiguration"
  Uninstallable: false
@@ -1375,14 +1375,14 @@ BGPView module:
    Used with: "modules"
 Bot user agents module:
  False Positive Risk: "Medium"
- Version: "2025.237.0"
+ Version: "2025.303.0"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "^4"
  Files:
   modules/botua.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/modules/botua.php"
-   Checksum: "84ebab149826e229d43310760897406d995b1f47cad74513851eca3305a3505a:27283"
+   Checksum: "7de454a90801bda48cb77988b332aa6473dc4375e605045c08a3e6b46f0068f6:27320"
    Used with: "modules"
 BunnyCDN compatibility module:
  False Positive Risk: "Low"

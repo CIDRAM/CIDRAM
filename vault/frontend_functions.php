@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2025.10.03).
+ * This file: Front-end functions file (last modified: 2025.11.03).
  */
 
 /**
@@ -4628,7 +4628,9 @@ $CIDRAM['Matrix-Create'] = function (string &$Source, string $Destination = '', 
         ob_end_clean();
         return $Out;
     }
-    imagedestroy($CIDRAM['Matrix-Image']);
+    if (\PHP_VERSION_ID < 80000) {
+        imagedestroy($CIDRAM['Matrix-Image']);
+    }
     return '';
 };
 

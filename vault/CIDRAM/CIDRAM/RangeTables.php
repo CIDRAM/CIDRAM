@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used by the range tables page (last modified: 2025.08.10).
+ * This file: Methods used by the range tables page (last modified: 2025.11.03).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -755,7 +755,9 @@ trait RangeTables
             ob_end_clean();
             return $Out;
         }
-        imagedestroy($this->CIDRAM['Matrix-Image']);
+        if (\PHP_VERSION_ID < 80000) {
+            imagedestroy($this->CIDRAM['Matrix-Image']);
+        }
         return '';
     }
 }

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2025.10.07).
+ * This file: The CIDRAM front-end (last modified: 2025.11.02).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -686,7 +686,7 @@ class FrontEnd extends Core
                         $this->FE['MajorVersionCurrent'] < $this->FE['MajorVersionLatest'] &&
                         !empty($RemoteYAMLCIDRAMArray['Stable Minimum PHP Required']) &&
                         is_string($RemoteYAMLCIDRAMArray['Stable Minimum PHP Required']) &&
-                        version_compare(PHP_VERSION, $RemoteYAMLCIDRAMArray['Stable Minimum PHP Required'], '>=')
+                        version_compare(\PHP_VERSION, $RemoteYAMLCIDRAMArray['Stable Minimum PHP Required'], '>=')
                     ) {
                         $this->CIDRAM['MajorVersionNotice'] = sprintf(
                             $this->L10N->getString('notice_new_major_version'),
@@ -738,22 +738,14 @@ class FrontEnd extends Core
                 $this->YAML->process($RemoteYAMLPHP, $RemoteYAMLPHPArray);
 
                 /** PHP latest stable. */
-                $this->FE['info_php_stable'] = empty($RemoteYAMLPHPArray['Stable']) ?
-                    $this->L10N->getString('response.Error') : $RemoteYAMLPHPArray['Stable'];
+                $this->FE['info_php_stable'] = $RemoteYAMLPHPArray['Stable'] ?? $this->L10N->getString('response.Error');
 
                 /** PHP latest unstable. */
-                $this->FE['info_php_unstable'] = empty($RemoteYAMLPHPArray['Unstable']) ?
-                    $this->L10N->getString('response.Error') : $RemoteYAMLPHPArray['Unstable'];
+                $this->FE['info_php_unstable'] = $RemoteYAMLPHPArray['Unstable'] ?? $this->L10N->getString('response.Error');
 
                 /** PHP branch latest stable. */
-                if ($ThisBranch = substr(PHP_VERSION, 0, strpos(PHP_VERSION, '.') ?: 0)) {
-                    $ThisBranch .= substr(PHP_VERSION, strlen($ThisBranch) + 1, strpos(PHP_VERSION, '.', strlen($ThisBranch)) ?: 0);
-                    $ThisBranch = 'php' . $ThisBranch;
-                    $this->FE['info_php_branch'] = empty($RemoteYAMLPHPArray['Branch'][$ThisBranch]['Latest']) ?
-                        $this->L10N->getString('response.Error') : $RemoteYAMLPHPArray['Branch'][$ThisBranch]['Latest'];
-                } else {
-                    $this->FE['info_php_branch'] = $this->L10N->getString('response.Error');
-                }
+                $ThisBranch = 'php' . \PHP_MAJOR_VERSION . \PHP_MINOR_VERSION;
+                $this->FE['info_php_branch'] = $RemoteYAMLPHPArray['Branch'][$ThisBranch]['Latest'] ?? $this->L10N->getString('response.Error');
             }
 
             /** Get cached logs link. */
@@ -803,7 +795,7 @@ class FrontEnd extends Core
             $this->FE['ScriptVersion'] = $this->ScriptVersion;
 
             /** PHP version used. */
-            $this->FE['info_php'] = PHP_VERSION;
+            $this->FE['info_php'] = \PHP_VERSION;
 
             /** SAPI used. */
             $this->FE['info_sapi'] = php_sapi_name();

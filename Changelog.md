@@ -490,3 +490,8 @@
 - [2025.10.19]: CAPTCHA log entries now include the reconstructed URI/URL (#643).
 - [2025.10.14~24]: Clarified terminology at the auxiliary rules page for block, bypass, whitelist, greylist, profile, and webhooks (#624).
 - *Plus all the regular signature updates.*
+
+### v3.10.2
+
+- [2025.11.02]: Some minor refactoring.
+- *Plus all the regular signature updates.*

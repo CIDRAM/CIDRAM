@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2025.10.03).
+ * This file: Front-end handler (last modified: 2025.11.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -640,7 +640,7 @@ if ($CIDRAM['FE']['UserState'] === 1) {
                 $CIDRAM['FE']['MajorVersionCurrent'] < $CIDRAM['FE']['MajorVersionLatest'] &&
                 !empty($CIDRAM['Remote-YAML-CIDRAM-Array']['Stable Minimum PHP Required']) &&
                 is_string($CIDRAM['Remote-YAML-CIDRAM-Array']['Stable Minimum PHP Required']) &&
-                version_compare(PHP_VERSION, $CIDRAM['Remote-YAML-CIDRAM-Array']['Stable Minimum PHP Required'], '>=')
+                version_compare(\PHP_VERSION, $CIDRAM['Remote-YAML-CIDRAM-Array']['Stable Minimum PHP Required'], '>=')
             ) {
                 $CIDRAM['MajorVersionNotice'] = sprintf(
                     $CIDRAM['L10N']->getString('notice_new_major_version'),
@@ -700,14 +700,8 @@ if ($CIDRAM['FE']['UserState'] === 1) {
             $CIDRAM['L10N']->getString('response_error') : $CIDRAM['Remote-YAML-PHP-Array']['Unstable'];
 
         /** PHP branch latest stable. */
-        if ($CIDRAM['ThisBranch'] = substr(PHP_VERSION, 0, strpos(PHP_VERSION, '.') ?: 0)) {
-            $CIDRAM['ThisBranch'] .= substr(PHP_VERSION, strlen($CIDRAM['ThisBranch']) + 1, strpos(PHP_VERSION, '.', strlen($CIDRAM['ThisBranch'])) ?: 0);
-            $CIDRAM['ThisBranch'] = 'php' . $CIDRAM['ThisBranch'];
-            $CIDRAM['FE']['info_php_branch'] = empty($CIDRAM['Remote-YAML-PHP-Array']['Branch'][$CIDRAM['ThisBranch']]['Latest']) ?
-                $CIDRAM['L10N']->getString('response_error') : $CIDRAM['Remote-YAML-PHP-Array']['Branch'][$CIDRAM['ThisBranch']]['Latest'];
-        } else {
-            $CIDRAM['FE']['info_php_branch'] = $CIDRAM['L10N']->getString('response_error');
-        }
+        $CIDRAM['ThisBranch'] = 'php' . \PHP_MAJOR_VERSION . \PHP_MINOR_VERSION;
+        $CIDRAM['FE']['info_php_branch'] = empty($CIDRAM['Remote-YAML-PHP-Array']['Branch'][$CIDRAM['ThisBranch']]['Latest']) ? $CIDRAM['L10N']->getString('response_error') : $CIDRAM['Remote-YAML-PHP-Array']['Branch'][$CIDRAM['ThisBranch']]['Latest'];
     }
 
     /** Get cached logs link. */
@@ -763,7 +757,7 @@ if ($CIDRAM['FE']['UserState'] !== 1 && $CIDRAM['FE']['CronMode'] === '') {
     $CIDRAM['FE']['ScriptVersion'] = $CIDRAM['ScriptVersion'];
 
     /** PHP version used. */
-    $CIDRAM['FE']['info_php'] = PHP_VERSION;
+    $CIDRAM['FE']['info_php'] = \PHP_VERSION;
 
     /** SAPI used. */
     $CIDRAM['FE']['info_sapi'] = php_sapi_name();
@@ -1941,7 +1935,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
         'Meta' => [],
         'RemoteMeta' => [],
         'Remotes' => [],
-        'Installed Versions' => ['PHP' => PHP_VERSION],
+        'Installed Versions' => ['PHP' => \PHP_VERSION],
         'Available Versions' => [],
         'Install Together' => [],
         'Outdated' => [],

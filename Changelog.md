@@ -506,3 +506,8 @@
 - Some sticky elements now have their own scroll context.
 - Clarified terminology at the auxiliary rules page for block, bypass, whitelist, greylist, profile, and webhooks (#624).
 - *Plus all the regular signature updates.*
+
+### v4.0.1
+
+- [2025.11.02]: Some minor refactoring.
+- *Plus all the regular signature updates.*

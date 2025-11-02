@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2023.12.01).
+ * This file: The loader (last modified: 2025.11.02).
  */
 
 /** Blocks direct access (must be accessed through a hook instead). */
@@ -23,7 +23,7 @@ if (
 }
 
 /** Version check. */
-if (!version_compare(PHP_VERSION, '7.2.0', '>=')) {
+if (\PHP_VERSION_ID < 70200) {
     header('Content-Type: text/plain');
     die('[CIDRAM] Not compatible with PHP versions below 7.2.0; Please update PHP in order to use CIDRAM.');
 }

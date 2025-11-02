@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The updates page (last modified: 2025.10.16).
+ * This file: The updates page (last modified: 2025.11.02).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -31,7 +31,7 @@ $Boilerplate =
 $this->Components = [
     'Meta' => [],
     'Macros' => [],
-    'Installed Versions' => ['PHP' => PHP_VERSION],
+    'Installed Versions' => ['PHP' => \PHP_VERSION],
     'Available Versions' => [],
     'In Use' => [],
     'Install Together' => [],

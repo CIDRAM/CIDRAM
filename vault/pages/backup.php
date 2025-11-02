@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The backup page (last modified: 2025.10.09).
+ * This file: The backup page (last modified: 2025.11.02).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -338,7 +338,7 @@ if (isset($_POST['bckpAct'])) {
                             $Import['CIDRAM Version']
                         ) . ' ' . $this->L10N->getString('response.Failed to install') . '<br />';
                     } elseif (isset($Import['Components']) && is_array($Import['Components'])) {
-                        $this->Components = ['Meta' => [], 'Installed Versions' => ['PHP' => PHP_VERSION], 'Available Versions' => []];
+                        $this->Components = ['Meta' => [], 'Installed Versions' => ['PHP' => \PHP_VERSION], 'Available Versions' => []];
                         $this->fetchRemotesData();
                         $this->readInstalledMetadata($this->Components['Meta']);
                         $this->checkVersions($this->Components['Meta'], $this->Components['Installed Versions']);

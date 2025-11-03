@@ -1,6 +1,6 @@
 <?php
 /**
- * Request handler (last modified: 2024.08.02).
+ * Request handler (last modified: 2025.11.03).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -207,7 +207,9 @@ class Request
 
             /** Request failed. Try again using an alternative address. */
             if ($Info['http_code'] >= 400 && isset($AlternateURI) && $Depth < 3) {
-                curl_close($Request);
+                if (\PHP_VERSION_ID < 80000) {
+                    curl_close($Request);
+                }
                 return $this($AlternateURI, $Params, $Timeout, $Headers, $Depth + 1, $Method);
             }
         } else {
@@ -217,8 +219,10 @@ class Request
             $this->MostRecentStatusCode = 200;
         }
 
-        /** Close the cURL session. */
-        curl_close($Request);
+        /** Close the cURL session (PHP < 8). */
+        if (\PHP_VERSION_ID < 80000) {
+            curl_close($Request);
+        }
 
         /** Return the results of the request. */
         return $Response;

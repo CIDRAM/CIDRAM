@@ -8,14 +8,14 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2025.11.02).
+ * This file: Functions file (last modified: 2025.11.05).
  */
 
 /**
  * Extends compatibility with CIDRAM to PHP 5.4.x by introducing some simple
  * polyfills for functions introduced with newer versions of PHP.
  */
-if (\PHP_VERSION_ID < 50400) {
+if (\PHP_VERSION_ID < 50500) {
     require $CIDRAM['Vault'] . 'php5.4.x.php';
 }
 

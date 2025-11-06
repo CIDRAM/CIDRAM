@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bot user agents module (last modified: 2025.10.31).
+ * This file: Bot user agents module (last modified: 2025.11.06).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -106,7 +106,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         'in(?:cest|come|vestment)|' .
         'jailbreak|' .
         'kamagra|keylog|' .
-        'l(?:axative|esbian|evitra|exap|i(?:ker\.profile|nk(?:ba|che)ck|pitor)|olita|uxury|ycosa\.se)|' .
+        'l(?:axative|esbian|evitra|exap|i(?:ker\.profile|nkback|pitor)|olita|uxury|ycosa\.se)|' .
         'm(?:ail\.ru|e(?:laleuca|nthol)|ixrank|rie8pack)|' .
         'n(?:erdybot|etzcheckbot|eurontin|olvadex)|' .
         'orgasm|outlet|' .
@@ -120,7 +120,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         'xanax|' .
         'zdorov~',
         $UANoSpace
-    ) || preg_match('~^go +\d|movable type|msie ?(?:\d{3,}|[2-9]\d|[0-8]\.)| (audit|href|mra |quibids )|\\(build 5339\\)~i', $UA), 'Spam UA'); // 2022.07.09 mod 2024.08.27
+    ) || preg_match('~^go +\d|movable type|msie ?(?:\d{3,}|[2-9]\d|[0-8]\.)| (audit|href|mra |quibids )|\\(build 5339\\)~i', $UA), 'Spam UA'); // 2022.07.09 mod 2025.11.06
 
     $this->trigger(preg_match('/[\'"`]\+[\'"`]/', $UANoSpace), 'XSS attack'); // 2017.01.03
     $this->trigger(strpos($UANoSpace, '`') !== false, 'Execution attempt'); // 2017.01.13
@@ -144,7 +144,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         '~^(?:wp-iphone$|\'?test|-|default|foo)|_sitemapper|3mir|' .
         'a(?:boundex|dmantx|dnormcrawler|dvbot|lphaserver|thens|ttache)|' .
         'blekko|blogsnowbot|' .
-        'cmscrawler|co(?:ccoc|llect|modo-webinspector-crawler|mpspy)|crawler(?:4j|\.feedback)|' .
+        'cmscrawler|co(?:ccoc|llect|modo-webinspector-crawler|mpspy)|crawler\.feedback|' .
         'd(?:atacha|igout4uagent|ioscout|kimrepbot|sarobot)|' .
         'easou|exabot|' .
         'f(?:astenterprisecrawler|astlwspider|ind?bot|indlinks|loodgate|r[_-]?crawler)|' .
@@ -159,7 +159,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         'user-agent|visaduhoc|vonchimpenfurlr|webtarantula|wolf|' .
         'y(?:acy|isouspider|[ry]spider|unrang|unyun)|zoominfobot~',
         $UANoSpace
-    ) || strpos($UA, '   ') !== false, 'Banned UA'); // 2021.07.08 mod 2025.07.24
+    ) || strpos($UA, '   ') !== false, 'Banned UA'); // 2021.07.08 mod 2025.11.06
 
     if (!$this->trigger((
         preg_match('~^python-requests/2\.27~', $UANoSpace) &&
@@ -184,7 +184,6 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         'e(?:(?:na|uro|xperi)bot|nvolk|stimatewebstats|vaal|zoom)|' .
         'f(?:dm|etch(?:er.0|or)|ibgen)|' .
         'g(?:alaxydownloads|et(?:download\.ws|ty|url11)|slfbot|umgum|urujibot)|' .
-        'h(?:arvest|eritrix|olmes|ttp(?:fetcher|unit)|ttrack)|' .
         'i(?:mage(?:.fetcher|walker)|linkscrawler|nagist|ndocom|nfluencebot|track)|jakarta|jike|' .
         'k(?:eywenbot|eywordsearchtool|imengi|kman)|' .
         'l(?:abjs\.pro|arbin|ink(?:dex|walker)|iperhey|(?:t|ush)bot)|' .
@@ -200,7 +199,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         'w(?:arebay|auuu|bsearchbot|eb(?:alta|capture|download|mastercoffee|meup|ripper)|ikio|indows(?:3|seven)|ise-guys|khtmlto|orldbot|otbox)|' .
         'yoofind~',
         $UANoSpace
-    ), 'Backlink/SEO/Scraper UA'); // 2022.09.19 mod 2025.07.24
+    ), 'Backlink/SEO/Scraper UA'); // 2022.09.19 mod 2025.11.06
 
     $this->trigger(preg_match('~zombiebot~', $UANoSpace), 'Backlink/SEO'); // 2025.07.26
 
@@ -218,9 +217,9 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     ), 'Malware UA'); // 2017.04.23
 
     $this->trigger(preg_match(
-        '~\.buzz|(?<!amazona)dbot/|(?:\W|^)(?:cu|pe)rl(?:\W|$)|#boss#|' .
+        '~\.buzz|(?<!amazona)dbot/|(?:\W|^)(?:curl|libwww|perl)(?:\W|$)|#boss#|' .
         '^(?:[aim]$|(?!linkedinbot).*http-?(?:agent|client))|-xpanse|' .
-        'a(?:bonti|ccserver|cme.spider|dreview/\d|jbaxy|nthill$|nyevent-http|ppengine|xios)|' .
+        'a(?:bonti|ccserver|cme.spider|dreview/\d|jbaxy|nthill$|nyevent-http|ppengine)|' .
         'b(?:igbozz|itsight|lackbird|logsearch|logbot|salsa)|' .
         'c(?:astlebot|atexplorador|cleaner|k=\{\}|lickagy|liqzbot|ms-?checker|ontextad|orporama|ortex/\d|rowsnest|yberpatrol)|' .
         'd(?:eepfield|le_spider|nbcrawler|omainappender|ummyconnection|umprendertree)|' .
@@ -233,7 +232,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         'm(?:acinroyprivacyauditors|etaintelligence|ultipletimes)|' .
         'n(?:etcraft|ettrapport|icebot|mapscriptingengine|rsbot)|' .
         'ontheinternet|' .
-        'p(?:4bot|4load|acrawler|ageglimpse|aloalto(?:company|network)|andalytics|arsijoo|egasusmonitoring|hantomjs|hpcrawl|ingdom|rlog)|' .
+        'p(?:4bot|4load|acrawler|ageglimpse|aloalto(?:company|network)|andalytics|arsijoo|egasusmonitoring|hantomjs|hpcrawl|ingdom|rlog|ython-httpx)|' .
         'r(?:arelyused|obo(?:cop|spider)|yze)|' .
         's(?:/got|can\.lol|can(?:ner|info)|creener|eekport|itedomain|mut|nap(?:preview)?bot|oapclient|ocial(?:ayer|searcher)|oso|pyglass|quider|treetbot|ynapse)|' .
         't(?:omba|weezler|ryghost)|' .
@@ -246,7 +245,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     ) || preg_match(
         '~^Mozilla/5\.0( [A-Za-z]{2,5}/0\..)?$~',
         $this->BlockInfo['UA']
-    ), 'Unauthorised'); // 2023.09.15 mod 2025.10.31
+    ), 'Unauthorised'); // 2023.09.15 mod 2025.11.06
 
     if ($this->trigger(preg_match('~ivre-|masscan~', $UANoSpace), 'Port scanner and synflood tool detected')) {
         $this->Reporter->report([14, 15, 19], ['MASSCAN port scanner and synflood tool detected.'], $this->BlockInfo['IPAddr']);
@@ -311,32 +310,35 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     } // 2022.05.08
 
     if ($this->trigger(preg_match(
-        '~80legs|' .
-        'a(?:dbar|i2bot|ihitbot|i.?searchbot|liyun|ndibot|nonymous-?coward|wario)|' .
-        'b(?:anana-?bot|edrockbot|ot-?test|rands-?bot|rightbot|ytespider)|' .
-        'c(?:asperbot|cbot|hinaclaw|lark-?crawler|ohere-)|' .
+        '~^http_get|2bone|80legs|' .
+        'a(?:dbar|i2bot|ihitbot|i.?searchbot|liyun|ndibot|nonymous-?coward|wario|xios)|' .
+        'b(?:anana-?bot|edrockbot|ot-?test|rands-?bot|rightbot|rings_?you|ytespider)|' .
+        'c(?:asperbot|cbot|hinaclaw|lark-?crawler|ohere-|rawler4j)|' .
         'd(?:atenbank|eep-?research|iffbot)|' .
         'echobo[tx]|' .
         'f(?:idget-?spinner-?bot|irecrawl|lyriver|riendly-?(?:crawler|spider))|' .
-        'i(?:askspider|magesift|mg2dataset)|' .
+        'h(?:arvest|eritrix|tt(?:pfetcher|punit|rack))|' .
+        'i(?:askspider|magesift|mg2dataset|p_address)|' .
         'jaddjabot|' .
         'k(?:angaroobot|eys-?so-?bot)|' .
+        'l(?:9explore|ink(?:check|fluence))|' .
         'm(?:amac(?:asper|yber)|istral|ozilla/0|ycentralai)|' .
         'n(?:etestate|ovaact)|' .
         'o(?:mgili|rbbot)|' .
-        'p(?:angubot|anscient|erplexity|hindbot|hxbot|oseidon|ublicwebcrawler)|' .
+        'p(?:angubot|anscient|erplexity|hindbot|hxbot|lease_?block|oseidon|ublicwebcrawler)|' .
         'q(?:ualifiedbot|uillbot)|' .
         'research.?crawler|' .
         's(?:bintuition|crap[ey]|idetrade|p(?:hi|y)der|torm-?crawler|ummalybot)|' .
-        't(?:est-?bot|heknowledgeai|hesis-?research-?bot|hinkchaos|impi|iny-?(?:bot|test)|rafilatura)|' .
+        't(?:est[-_]?(?:bot|phase)|heknowledgeai|hesis-?research-?bot|hink(?:bot|chaos)|impi|iny-?(?:bot|test)|rafilatura)|' .
         'velenpublic|' .
-        'w(?:ardbot|ebzio|hatstuffwherebot|inhttp)|' .
+        'w(?:ardbot|ebsite[-_]?scraper|ebzio|hatstuffwherebot|inhttp)|' .
         'xtractorpro|' .
+        'yak/|' .
         'z(?:ephuli-?bot|grab)~',
         $UANoSpace
     ), 'Scraper UA')) {
         $this->CIDRAM['Tracking options override'] = 'extended';
-    } // 2023.11.17 mod 2025.10.31
+    } // 2023.11.17 mod 2025.11.06
 
     $this->trigger(preg_match('~ct‑git‑scanner/~i', $this->BlockInfo['UA']), 'Unauthorised Git scanner'); // 2025.07.05
 

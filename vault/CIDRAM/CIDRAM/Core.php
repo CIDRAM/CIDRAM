@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2025.11.03).
+ * This file: The CIDRAM core (last modified: 2025.11.07).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -2470,7 +2470,7 @@ class Core
                         }
                         $Property = &$this->$SourceArrKey;
                         if (is_array($SourceArr)) {
-                            if (!is_array($Property)) {
+                            if (!is_array($Property) && !(is_object($Property) && $Property instanceof \ArrayAccess)) {
                                 continue;
                             }
                             foreach ($SourceArr as $SourceKey => $Source) {
@@ -2515,7 +2515,7 @@ class Core
                         }
                         $Property = &$this->$SourceArrKey;
                         if (is_array($SourceArr)) {
-                            if (!is_array($Property)) {
+                            if (!is_array($Property) && !(is_object($Property) && $Property instanceof \ArrayAccess)) {
                                 continue;
                             }
                             foreach ($SourceArr as $SourceKey => $Source) {

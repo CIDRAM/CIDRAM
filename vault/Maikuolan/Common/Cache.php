@@ -1,6 +1,6 @@
 <?php
 /**
- * A simple, unified cache handler (last modified: 2025.07.02).
+ * A simple, unified cache handler (last modified: 2025.11.07).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -15,7 +15,7 @@
 
 namespace Maikuolan\Common;
 
-class Cache extends CommonAbstract
+class Cache extends CommonAbstract implements \ArrayAccess
 {
     /**
      * @var bool Whether to try using APCu.
@@ -1146,6 +1146,83 @@ class Cache extends CommonAbstract
             $this->Modified = true;
         }
         return $this->WorkingData;
+    }
+
+    /**
+     * Check whether an entry exists via array access.
+     *
+     * @param mixed $Offset The offset (i.e., entry key).
+     * @return bool Whether it exists.
+     */
+    public function offsetExists($Offset): bool
+    {
+        $Entry = $this->Prefix . $Offset;
+        $this->enforceKeyLimit($Entry);
+        if ($this->Using === 'APCu') {
+            return apcu_exists($Entry);
+        }
+        if ($this->Using === 'Memcached') {
+            $NotUsed = $this->WorkingData->get($Entry);
+            return $this->WorkingData->getResultCode() === Memcached::MEMCACHED_SUCCESS;
+        }
+        if ($this->Using === 'Redis') {
+            return $this->WorkingData->exists($Entry);
+        }
+        if ($this->Using === 'PDO') {
+            $PDO = $this->WorkingData->prepare(self::GET_QUERY);
+            if ($PDO !== false && $PDO->execute([':key' => $Entry])) {
+                $Data = $PDO->fetch(\PDO::FETCH_ASSOC);
+                return isset($Data['Data']);
+            }
+            return false;
+        }
+        if (is_array($this->WorkingData) && isset($this->WorkingData[$Entry])) {
+            if (isset($this->WorkingData[$Entry]['Data']) && !empty($this->WorkingData[$Entry]['Time'])) {
+                return ($this->WorkingData[$Entry]['Time'] <= 0 || $this->WorkingData[$Entry]['Time'] > time());
+            }
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Fetch an entry via array access.
+     *
+     * Note: "ReturnTypeWillChange" applied due to that "mixed" as a return type
+     * keyword was introduced only since PHP8, and Common Classes Package v2 is
+     * supposed to be compatible with PHP7.2 onward. We can refactor the attribute
+     * out and the return type keyword in for a future major version (e.g., CCPv3).
+     *
+     * @param mixed $Offset The offset (i.e., entry key).
+     * @return mixed The fetched entry.
+     */
+    #[\ReturnTypeWillChange]
+    public function offsetGet($Offset)
+    {
+        return $this->getEntry($Offset);
+    }
+
+    /**
+     * Set an entry via array access.
+     *
+     * @param mixed $Offset The offset (i.e., entry key).
+     * @param mixed $Value The entry value.
+     * @return void
+     */
+    public function offsetSet($Offset, $Value): void
+    {
+        $this->setEntry($Offset, $Value);
+    }
+
+    /**
+     * Destroy an entry via array access.
+     *
+     * @param mixed $Offset The offset (i.e., entry key).
+     * @return void
+     */
+    public function offsetUnset($Offset): void
+    {
+        $this->deleteEntry($Offset);
     }
 
     /**

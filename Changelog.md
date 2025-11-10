@@ -494,4 +494,5 @@
 ### v3.10.2
 
 - [2025.11.02]: Some minor refactoring.
+- [2025.11.09]: Verification updated.
 - *Plus all the regular signature updates.*

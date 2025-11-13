@@ -577,13 +577,13 @@ Common Classes Package:
    Checksum: "325ee95c0a9ce03eb440596dc9f8d0ac14aa477a5dc976a4e63c575d2fc273d8:56888"
 IPv4:
  False Positive Risk: "Medium"
- Version: "2025.313.0"
+ Version: "2025.316.0"
  Dependencies:
   Bypasses: ">=2023.95"
  Files:
   signatures/ipv4.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/signatures/ipv4.dat"
-   Checksum: "be755e21d74553c96270aea72dd9debe380be18c225d98ec508701fd72c82ff1:1795117"
+   Checksum: "8e46f8bba242689347b8494e8fcb828cfe3ffeb7b752f14f8b8dd94cf33d5eb8:1801068"
    Used with: "ipv4"
 IPv4-Bogons:
  False Positive Risk: "Low"
@@ -595,13 +595,13 @@ IPv4-Bogons:
    Used with: "ipv4"
 IPv4-ISPs:
  False Positive Risk: "Medium"
- Version: "2025.313.0"
+ Version: "2025.316.0"
  Dependencies:
   Bypasses: ">=2023.95"
  Files:
   signatures/ipv4_isps.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/signatures/ipv4_isps.dat"
-   Checksum: "c6e308a30188078aad71b42f0ef43848133c077e8842c1968e60d0545ffae245:784292"
+   Checksum: "f13fd0fe9900b2c6b4b6ec6f9413d1665e8edebbe78d42ebd41c54dce37d70e9:786833"
    Used with: "ipv4"
 IPv4-Nonblocking:
  False Positive Risk: "Low"
@@ -621,13 +621,13 @@ IPv4-Other:
    Used with: "ipv4"
 IPv6:
  False Positive Risk: "Low"
- Version: "2025.313.0"
+ Version: "2025.316.0"
  Dependencies:
   Bypasses: ">=2023.95"
  Files:
   signatures/ipv6.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/signatures/ipv6.dat"
-   Checksum: "98f2574af3115fb39b5a81b4311a8148c23968db09ffa00202a8b5c97315bbe2:529933"
+   Checksum: "b3e8fc8b9fd412696771f8c7a615e9377c9836fcb7b20676cc37df7fe50d7976:531237"
    Used with: "ipv6"
 IPv6-Bogons:
  False Positive Risk: "Low"
@@ -639,13 +639,13 @@ IPv6-Bogons:
    Used with: "ipv6"
 IPv6-ISPs:
  False Positive Risk: "Medium"
- Version: "2025.303.0"
+ Version: "2025.316.0"
  Dependencies:
   Bypasses: ">=2023.95"
  Files:
   signatures/ipv6_isps.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/signatures/ipv6_isps.dat"
-   Checksum: "7656d5697c1d3ae5467ac8d51e3a8af2fb410b066a4e6e0511441439eb3968b2:14686"
+   Checksum: "3d4ddd0aa862bac56fb0b910fd611fb11dc7dd6863b72d56e6b35eee760f2ea4:14709"
    Used with: "ipv6"
 IPv6-Nonblocking:
  False Positive Risk: "Low"
@@ -1395,7 +1395,7 @@ BGPView module:
    Used with: "modules"
 Bot user agents module:
  False Positive Risk: "Medium"
- Version: "2025.309.0"
+ Version: "2025.316.0"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "^3"
@@ -1403,7 +1403,7 @@ Bot user agents module:
  Files:
   modules/botua.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/botua.php"
-   Checksum: "387696a9205568ee557baec1a2512662091db6147e235303194811d0d24ae301:27638"
+   Checksum: "4b59be9a1be67ae1ac36ab32656f2f11edc79d9226a898a047c77daecec3f0f3:27753"
    Used with: "modules"
 BunnyCDN compatibility module:
  False Positive Risk: "Low"
@@ -1455,7 +1455,7 @@ IP-API module:
    Used with: "modules"
 Optional security extras module:
  False Positive Risk: "Medium"
- Version: "2025.309.0"
+ Version: "2025.316.0"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "^3.10.1-DEV+252480"
@@ -1471,7 +1471,7 @@ Optional security extras module:
    Used with: "imports"
   modules/extras.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/extras.php"
-   Checksum: "42879e16ec43dc38767c5747761b5c222ffeed9450b8357357725b04b7278701:56766"
+   Checksum: "1fc5689bd8705fcd50c4d1a8ad5c4befb6d92541976f22372f87f6ea8c57ca03:57233"
    Used with: "modules"
 Project Honeypot module:
  False Positive Risk: "Medium"

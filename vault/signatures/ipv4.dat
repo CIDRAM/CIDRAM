@@ -1,8 +1,8 @@
 # IPv4 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv4.dat
 
-# Version: 2025.316.0
-# Last modified: 2025.11.13
+# Version: 2025.318.0
+# Last modified: 2025.11.15
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -48410,8 +48410,11 @@ Tag: Cloud assets LLC
 
 # ASN 56655 ("Gigahost AS").
 # Dedicated server and colo provider. Spam detected here.
+# Subtract when updating (bogons and private-use ranges):
+# - 172.16.0.0/12
+# - 10.0.0.0/8
 # Stop Forum Spam (SFS) listings: 96.
-# Updated: 2025.11.13
+# Updated: 2025.11.15
 
 31.56.194.0/24 Deny Cloud
 31.56.217.0/24 Deny Cloud
@@ -48419,19 +48422,21 @@ Tag: Cloud assets LLC
 151.242.104.0/24 Deny Cloud
 151.242.168.0/23 Deny Cloud
 Origin: AE
+109.104.153.0/24 Deny Cloud
+109.104.154.0/24 Deny Cloud
+Origin: CA
 45.89.97.0/24 Deny Cloud
 Origin: CY
+45.150.66.0/24 Deny Cloud
 82.22.59.0/24 Deny Cloud
 Origin: GB
 185.90.61.0/24 Deny Cloud
 Origin: HR
 45.88.200.0/23 Deny Cloud
 45.88.202.0/24 Deny Cloud
-172.18.0.0/24 Deny Cloud
 185.14.97.0/24 Deny Cloud
 185.125.168.0/22 Deny Cloud
 185.181.60.0/22 Deny Cloud
-185.238.113.0/24 Deny Cloud
 185.243.216.0/23 Deny Cloud
 185.243.218.0/24 Deny Cloud
 193.200.229.0/24 Deny Cloud
@@ -48444,6 +48449,7 @@ Origin: HR
 198.140.141.0/24 Deny Cloud
 Origin: NO
 91.149.224.0/24 Deny Cloud
+91.149.252.0/24 Deny Cloud
 Origin: PL
 143.14.18.0/24 Deny Cloud
 143.14.40.0/22 Deny Cloud

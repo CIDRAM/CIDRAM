@@ -495,4 +495,5 @@
 
 - [2025.11.02]: Some minor refactoring.
 - [2025.11.09]: Verification updated.
+- [2025.11.21]: Added PHP 8.5 to workflows.
 - *Plus all the regular signature updates.*

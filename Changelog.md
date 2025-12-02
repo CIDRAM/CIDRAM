@@ -509,6 +509,10 @@
 
 ### v4.0.1
 
+#### Bugs fixed.
+- [2025.12.02]: Typo found at the IP testing page for a flag label; Fixed.
+
+#### Other changes.
 - [2025.11.02]: Some minor refactoring.
 - [2025.11.09]: Verification updated.
 - [2025.11.21]: Added PHP 8.5 to workflows.

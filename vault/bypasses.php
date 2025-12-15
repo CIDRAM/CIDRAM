@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Default signature bypasses (last modified: 2025.07.12).
+ * This file: Default signature bypasses (last modified: 2025.12.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -322,6 +322,16 @@ $CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [], $Fa
             $CIDRAM['Hostname'] = $CIDRAM['DNS-Reverse']($CIDRAM['BlockInfo']['IPAddr']);
         }
         if (preg_match('~(?:^|\.)sogou\.com$~i', $CIDRAM['Hostname']) && strpos($CIDRAM['BlockInfo']['UALC'], 'sogou') !== false) {
+            return;
+        }
+    }
+
+    /**
+     * Bypass for Safari on iPhone routing through iCloud.
+     * @link https://github.com/CIDRAM/CIDRAM/discussions/654
+     */
+    if ($Tag === 'Cloudflare, Inc') {
+        if (isset($CIDRAM['BlockInfo']['UA']) && $CIDRAM['Request']->inCsv('iCloud', $CIDRAM['Config']['bypasses']['used']) && preg_match('%^(?=.*iPhone[; ])(?=.*Safari\/).*$%', $CIDRAM['BlockInfo']['UA'])) {
             return;
         }
     }

@@ -7,14 +7,14 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Default signature bypasses configuration (last modified: 2025.07.12).
+# This file: Default signature bypasses configuration (last modified: 2025.12.15).
 ##/
 
 Config Defaults:
  bypasses:
   used:
    type: "checkbox"
-   default: "AbuseIPDB,Baidu,AmazonAdBot,Bingbot,DuckDuckBot,Embedly,Feedbot,Feedspot,GoogleFiber,Googlebot,Jetpack,PetalBot,Pinterest,Redditbot,Snapchat,Sogou,Yandex,WordPress REST API"
+   default: "AbuseIPDB,Baidu,AmazonAdBot,Bingbot,DuckDuckBot,Embedly,Feedbot,Feedspot,GoogleFiber,Googlebot,Jetpack,PetalBot,Pinterest,Redditbot,Snapchat,Sogou,Yandex,WordPress REST API,iCloud"
    choices:
     AbuseIPDB: "AbuseIPDB"
     AmazonAdBot: "AmazonAdBot"
@@ -34,6 +34,7 @@ Config Defaults:
     Sogou: "Sogou/搜狗"
     Yandex: "Yandex/Яндекс"
     WordPress REST API: "WordPress REST API"
+    iCloud: "iCloud (iPhone Safari Bypass)"
    value_preg_filter:
     "~^\s*|\s*$~": ""
     "~\s*,\s*~": ","

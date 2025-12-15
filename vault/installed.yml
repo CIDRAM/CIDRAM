@@ -636,7 +636,7 @@ IPv4:
  False Positive Risk: "Medium"
  Version: "2025.347.0"
  Dependencies:
-  Bypasses: ">=2025.225"
+  Bypasses: ">=2025.348"
  Files:
   signatures/ipv4.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/signatures/ipv4.dat"
@@ -680,7 +680,7 @@ IPv6:
  False Positive Risk: "Low"
  Version: "2025.347.0"
  Dependencies:
-  Bypasses: ">=2025.225"
+  Bypasses: ">=2025.348"
  Files:
   signatures/ipv6.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/signatures/ipv6.dat"
@@ -721,17 +721,19 @@ IPv6-Other:
    Checksum: "2315916615551ce784e8fa0092d8d8ca459a4e2f32c40137d59f4dd82bf95380:5754"
    Used with: "ipv6"
 Bypasses:
- Version: "2025.225.0"
+ Version: "2025.348.0"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "^4"
+ When Update Succeeds:
+  - "if {Components.Meta.Bypasses.Version}<2025.348&&{Components.RemoteMeta.Bypasses.Version}>=2025.348 then queue message <span dir="ltr" lang="en-AU">[Bypasses 2025.348.0] Added a new default signature bypass, "iCloud (iPhone Safari Bypass)" (configuration settings should be revised accordingly).</span>"
  Files:
   bypasses.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/bypasses.php"
-   Checksum: "0fee27376ce12d6f124adbde2ed4e64df7bf642e2b29ab0de91f4c22047827fb:10744"
+   Checksum: "05d97ab93a3219f2304bad4885d1f70e88caa4c0a76a219429f917f06fe5ec65:11100"
   imports/bypasses.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/imports/bypasses.yml"
-   Checksum: "52162985fb1f5d0c4c9dd8e340124fa005b421e6163f2333f8c7706a12925ef2:1055"
+   Checksum: "6169beee1cf46aea08dcab426c03e7c84a6c65549b74f8a6bf63fc917cb77026:1110"
    Used with: "imports"
 l10n/core/af:
  Extended Description: "Afrikaanse lokalisering"

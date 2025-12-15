@@ -496,4 +496,5 @@
 - [2025.11.02]: Some minor refactoring.
 - [2025.11.09]: Verification updated.
 - [2025.11.21]: Added PHP 8.5 to workflows.
+- [2025.12.15]: Added a default signature bypass for iCloud (used by the Safari browser when running on an iPhone).
 - *Plus all the regular signature updates.*

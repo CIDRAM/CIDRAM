@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv4_isps.dat
 
-# Version: 2025.347.0
-# Last modified: 2025.12.14
+# Version: 2025.349.0
+# Last modified: 2025.12.16
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -16844,7 +16844,7 @@ Tag: LG HelloVision Corp
 # Commercial multiplay network. Port scans, spam, brute-force, and webapp
 # attacks detected from here. Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 6,960 (AS3257).
-# Updated: 2025.05.03 / Modified: 2025.09.11
+# Updated: 2025.05.03 / Modified: 2025.12.16
 
 181.214.206.0/24 Deny Attacks
 191.101.209.0/24 Deny Attacks
@@ -16882,8 +16882,10 @@ Origin: UA
 23.234.157.213/32 Deny Spam
 94.131.54.0/24 Deny Attacks
 104.153.208.0/22 Deny Attacks
+104.192.220.31/32 Deny Attacks
 134.195.152.0/22 Deny Attacks
 162.244.78.27/32 Deny Attacks
+208.81.128.0/21 Deny Attacks
 216.73.172.197/32 Deny Spam
 Origin: US
 Profile: Commercial;Multiplay
@@ -26773,6 +26775,19 @@ Tag: InterMAX
 Origin: PK
 Profile: Domestic ISP
 Tag: Z COM NETWORKS
+
+
+# ASN 29226 ("JSC Mastertel").
+# Russian multiplay provider. SMB, honeypot attacks, port scans, hacking, and
+# spam detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 9.
+# Updated: 2025.12.16
+
+212.8.236.129/32 Deny Attacks
+Origin: RU
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay
+Tag: JSC Mastertel
 
 
 # ---

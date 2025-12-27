@@ -493,6 +493,10 @@
 
 ### v3.10.2
 
+#### Bugs fixed.
+- [2025.12.27]: 2FA status label typo fixed.
+
+#### Other changes.
 - [2025.11.02]: Some minor refactoring.
 - [2025.11.09]: Verification updated.
 - [2025.11.21]: Added PHP 8.5 to workflows.

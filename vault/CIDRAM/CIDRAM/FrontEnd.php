@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2025.11.02).
+ * This file: The CIDRAM front-end (last modified: 2025.12.27).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -533,7 +533,7 @@ class FrontEnd extends Core
                 $LoggerMessage = $this->L10N->getString((
                     $this->Configuration['frontend']['enable_two_factor'] &&
                     $this->FE['Permissions'] === 0
-                ) ? 'label.label.Logged in, 2FA pending' : 'label.Logged in');
+                ) ? 'label.Logged in, 2FA pending' : 'label.Logged in');
             }
 
             /** Safer for the front-end logger. */

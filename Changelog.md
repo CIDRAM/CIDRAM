@@ -511,6 +511,7 @@
 
 #### Bugs fixed.
 - [2025.12.02]: Typo found at the IP testing page for a flag label; Fixed.
+- [2025.12.27]: 2FA status label typo fixed.
 
 #### Other changes.
 - [2025.11.02]: Some minor refactoring.

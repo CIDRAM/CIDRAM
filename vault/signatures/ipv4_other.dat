@@ -1,8 +1,8 @@
 # IPv4 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
-# Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv4_other.dat
+# Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v4/vault/signatures/ipv4_other.dat
 
-# Version: 2025.356.0
-# Last modified: 2025.12.23
+# Version: 2025.361.0
+# Last modified: 2025.12.28
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -27,8 +27,8 @@ Tag: F3 Netze e.V
 # ASN 396507 ("Emerald Onion").
 # Tor provider. Significant source of spam.
 # Caught masquerading as Baidu while sniffing for vulnerabilities.
-# Stop Forum Spam (SFS) listings: 435.
-# Updated: 2022.02.26 / Checked: 2025.02.20
+# Stop Forum Spam (SFS) listings: 161.
+# Updated: 2022.02.26 / Checked: 2025.12.28
 
 23.129.64.0/24 Deny Proxy
 23.190.144.0/24 Deny Proxy
@@ -1454,15 +1454,15 @@ Tag: Spamhaus DROP/EDROP
 # Octopusnet VPN (mostly from AS44724, but we'll update via announces instead,
 # because we don't need to block the entire ASN, and there could be stray CIDRs
 # too). Proxy service with a history of spam events.
-# Updated: 2025.01.13
+# Updated: 2025.12.28
 
-46.46.0.0/20 Deny Proxy
-46.46.17.0/24 Deny Proxy
-46.46.24.0/21 Deny Proxy
-46.46.32.0/19 Deny Proxy
+46.46.0.0/18 Deny Proxy
+80.93.96.0/20 Deny Proxy
 83.217.28.0/22 Deny Proxy
+93.88.208.0/20 Deny Proxy
 95.154.64.0/18 Deny Proxy
 185.57.28.0/22 Deny Proxy
+185.179.4.0/22 Deny Proxy
 213.5.16.0/22 Deny Proxy
 Origin: RU
 Profile: VPNs here
@@ -1575,10 +1575,10 @@ Tag: Web2Objects LLC
 # ASN 16652 ("Riseup Networks").
 # Webmail and VPN provider. Port scans and other unusual traffic detected from
 # some specific addresses here. Listing just the affected addresses only.
-# Stop Forum Spam (SFS) listings: 3.
-# Updated: 2024.06.09 / Checked: 2025.06.14
+# Stop Forum Spam (SFS) listings: 2.
+# Updated: 2025.12.28
 
-198.252.153.28/32 Deny Attacks
+198.252.153.0/24 Deny Attacks
 Origin: US
 Profile: VPNs here
 Tag: Riseup Networks
@@ -1602,13 +1602,3 @@ Origin: CA
 Origin: US
 Profile: VPNs here
 Tag: Windscribe
-
-
-# ASN 208476 ("Danilenko, Artyom").
-# VPN and tor provider. Hacking and brute-force attacks detected from here.
-# Updated: 2025.01.13
-
-185.244.26.0/24 Deny Attacks
-Origin: NL
-Profile: Tor endpoints here;VPNs here
-Tag: privacyfirst.digital

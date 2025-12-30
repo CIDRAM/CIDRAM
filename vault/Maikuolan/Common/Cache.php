@@ -1,6 +1,6 @@
 <?php
 /**
- * A simple, unified cache handler (last modified: 2025.07.02).
+ * A simple, unified cache handler (last modified: 2025.12.30).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -15,7 +15,7 @@
 
 namespace Maikuolan\Common;
 
-class Cache extends CommonAbstract
+class Cache extends CommonAbstract implements \ArrayAccess, \Countable
 {
     /**
      * @var bool Whether to try using APCu.
@@ -165,6 +165,41 @@ class Cache extends CommonAbstract
      * @var string Prepared get all query for PDO.
      */
     public const GET_ALL_QUERY = 'SELECT * FROM `Cache` WHERE 1';
+
+    /**
+     * @var string Prepared get all query for SQLite with PDO using configured prefix.
+     */
+    public const GET_ALL_QUERY_WPREFIX_DPIPE = 'SELECT * FROM `Cache` WHERE `Key` LIKE :prefix || \'%\'';
+
+    /**
+     * @var string Prepared get all query for MySQL/MariaDB/PostgreSQL/SQLSrv with PDO using configured prefix.
+     */
+    public const GET_ALL_QUERY_WPREFIX_CONCAT = 'SELECT * FROM `Cache` WHERE `Key` LIKE CONCAT(:prefix, \'%\')';
+
+    /**
+     * @var string Prepared get all query for 4D with PDO using configured prefix.
+     */
+    public const GET_ALL_QUERY_WPREFIX_PLUS = 'SELECT * FROM `Cache` WHERE `Key` LIKE :prefix + \'%\'';
+
+    /**
+     * @var string Prepared count all query for PDO.
+     */
+    public const COUNT_ALL_QUERY = 'SELECT COUNT(*) FROM `Cache` WHERE 1';
+
+    /**
+     * @var string Prepared count all query for SQLite with PDO using configured prefix.
+     */
+    public const COUNT_ALL_QUERY_WPREFIX_DPIPE = 'SELECT COUNT(*) FROM `Cache` WHERE `Key` LIKE :prefix || \'%\'';
+
+    /**
+     * @var string Prepared count all query for MySQL/MariaDB/PostgreSQL/SQLSrv with PDO using configured prefix.
+     */
+    public const COUNT_ALL_QUERY_WPREFIX_CONCAT = 'SELECT COUNT(*) FROM `Cache` WHERE `Key` LIKE CONCAT(:prefix, \'%\')';
+
+    /**
+     * @var string Prepared count all query for 4D with PDO using configured prefix.
+     */
+    public const COUNT_ALL_QUERY_WPREFIX_PLUS = 'SELECT COUNT(*) FROM `Cache` WHERE `Key` LIKE :prefix + \'%\'';
 
     /**
      * @var int Number of seconds to try flocking a resource before giving up.
@@ -825,10 +860,7 @@ class Cache extends CommonAbstract
                 $Keys = $this->WorkingData->keys($this->Prefix . '*') ?: [];
             }
             foreach ($Keys as $Key) {
-                if (
-                    strlen($Key) > self::KEY_SIZE_LIMIT ||
-                    ($PrefixLen && substr($Key, 0, $PrefixLen) !== $this->Prefix)
-                ) {
+                if (strlen($Key) > self::KEY_SIZE_LIMIT || ($PrefixLen && substr($Key, 0, $PrefixLen) !== $this->Prefix)) {
                     continue;
                 }
                 $TTL = $this->WorkingData->ttl($Key);
@@ -839,20 +871,23 @@ class Cache extends CommonAbstract
         }
         if ($this->Using === 'PDO') {
             $this->clearExpiredPDO();
-            $PDO = $this->WorkingData->prepare(self::GET_ALL_QUERY);
-            if ($PDO !== false && $PDO->execute()) {
+            if ($this->Prefix === '') {
+                $PDO = $this->WorkingData->prepare(self::GET_ALL_QUERY);
+            } elseif (preg_match('~^(?:ibm|mysql|odbc|pgsql|sqlsrv):~i', $this->PDOdsn)) {
+                $PDO = $this->WorkingData->prepare(self::GET_ALL_QUERY_WPREFIX_CONCAT);
+            } elseif (preg_match('~^4d:~i', $this->PDOdsn)) {
+                $PDO = $this->WorkingData->prepare(self::GET_ALL_QUERY_WPREFIX_PLUS);
+            } else {
+                $PDO = $this->WorkingData->prepare(self::GET_ALL_QUERY_WPREFIX_DPIPE);
+            }
+            if ($PDO !== false && ($this->Prefix === '' ? $PDO->execute() : $PDO->execute([':prefix' => $this->Prefix]))) {
                 $Data = $PDO->fetchAll();
                 if (!is_array($Data)) {
                     return [];
                 }
                 $Output = [];
                 foreach ($Data as $Entry) {
-                    if (
-                        !is_array($Entry) ||
-                        !isset($Entry['Key'], $Entry['Data'], $Entry['Time']) ||
-                        strlen($Entry['Key']) > self::KEY_SIZE_LIMIT ||
-                        ($PrefixLen && substr($Entry['Key'], 0, $PrefixLen) !== $this->Prefix)
-                    ) {
+                    if (!is_array($Entry) || !isset($Entry['Key'], $Entry['Data'], $Entry['Time']) || strlen($Entry['Key']) > self::KEY_SIZE_LIMIT) {
                         continue;
                     }
                     $Key = substr($Entry['Key'], $PrefixLen);
@@ -944,10 +979,7 @@ class Cache extends CommonAbstract
                 $Keys = $this->WorkingData->keys($this->Prefix . '*') ?: [];
             }
             foreach ($Keys as $Key) {
-                if (
-                    strlen($Key) > self::KEY_SIZE_LIMIT ||
-                    ($PrefixLen && substr($Key, 0, $PrefixLen) !== $this->Prefix)
-                ) {
+                if (strlen($Key) > self::KEY_SIZE_LIMIT || ($PrefixLen && substr($Key, 0, $PrefixLen) !== $this->Prefix)) {
                     continue;
                 }
                 $Index = substr($Key, $PrefixLen);
@@ -961,19 +993,22 @@ class Cache extends CommonAbstract
             unset($Keys);
         } elseif ($this->Using === 'PDO') {
             $this->clearExpiredPDO();
-            $PDO = $this->WorkingData->prepare(self::GET_ALL_QUERY);
-            if ($PDO !== false && $PDO->execute()) {
+            if ($this->Prefix === '') {
+                $PDO = $this->WorkingData->prepare(self::GET_ALL_QUERY);
+            } elseif (preg_match('~^(?:ibm|mysql|odbc|pgsql|sqlsrv):~i', $this->PDOdsn)) {
+                $PDO = $this->WorkingData->prepare(self::GET_ALL_QUERY_WPREFIX_CONCAT);
+            } elseif (preg_match('~^4d:~i', $this->PDOdsn)) {
+                $PDO = $this->WorkingData->prepare(self::GET_ALL_QUERY_WPREFIX_PLUS);
+            } else {
+                $PDO = $this->WorkingData->prepare(self::GET_ALL_QUERY_WPREFIX_DPIPE);
+            }
+            if ($PDO !== false && ($this->Prefix === '' ? $PDO->execute() : $PDO->execute([':prefix' => $this->Prefix]))) {
                 $Data = $PDO->fetchAll();
                 if (!is_array($Data)) {
                     return [];
                 }
                 foreach ($Data as $Entry) {
-                    if (
-                        !is_array($Entry) ||
-                        !isset($Entry['Key'], $Entry['Data'], $Entry['Time']) ||
-                        strlen($Entry['Key']) > self::KEY_SIZE_LIMIT ||
-                        ($PrefixLen && substr($Entry['Key'], 0, $PrefixLen) !== $this->Prefix)
-                    ) {
+                    if (!is_array($Entry) || !isset($Entry['Key'], $Entry['Data'], $Entry['Time']) || strlen($Entry['Key']) > self::KEY_SIZE_LIMIT) {
                         continue;
                     }
                     $Key = substr($Entry['Key'], $PrefixLen);
@@ -1149,6 +1184,86 @@ class Cache extends CommonAbstract
     }
 
     /**
+     * Check whether an entry exists via array access.
+     *
+     * @param mixed $Offset The offset (i.e., entry key).
+     * @return bool Whether it exists.
+     */
+    public function offsetExists($Offset): bool
+    {
+        if (!is_scalar($Offset)) {
+            return false;
+        }
+        $Entry = $this->Prefix . $Offset;
+        $this->enforceKeyLimit($Entry);
+        if ($this->Using === 'APCu') {
+            return apcu_exists($Entry);
+        }
+        if ($this->Using === 'Memcached') {
+            $NotUsed = $this->WorkingData->get($Entry);
+            return $this->WorkingData->getResultCode() === Memcached::MEMCACHED_SUCCESS;
+        }
+        if ($this->Using === 'Redis') {
+            return $this->WorkingData->exists($Entry);
+        }
+        if ($this->Using === 'PDO') {
+            $PDO = $this->WorkingData->prepare(self::GET_QUERY);
+            if ($PDO !== false && $PDO->execute([':key' => $Entry])) {
+                $Data = $PDO->fetch(\PDO::FETCH_ASSOC);
+                return isset($Data['Data']);
+            }
+            return false;
+        }
+        if (is_array($this->WorkingData) && isset($this->WorkingData[$Entry])) {
+            if (isset($this->WorkingData[$Entry]['Data']) && !empty($this->WorkingData[$Entry]['Time'])) {
+                return ($this->WorkingData[$Entry]['Time'] <= 0 || $this->WorkingData[$Entry]['Time'] > time());
+            }
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Fetch an entry via array access.
+     *
+     * Note: "ReturnTypeWillChange" applied due to that "mixed" as a return type
+     * keyword was introduced only since PHP8, and Common Classes Package v2 is
+     * supposed to be compatible with PHP7.2 onward. We can refactor the attribute
+     * out and the return type keyword in for a future major version (e.g., CCPv3).
+     *
+     * @param mixed $Offset The offset (i.e., entry key).
+     * @return mixed The fetched entry.
+     */
+    #[\ReturnTypeWillChange]
+    public function offsetGet($Offset)
+    {
+        return $this->getEntry($Offset);
+    }
+
+    /**
+     * Set an entry via array access.
+     *
+     * @param mixed $Offset The offset (i.e., entry key).
+     * @param mixed $Value The entry value.
+     * @return void
+     */
+    public function offsetSet($Offset, $Value): void
+    {
+        $this->setEntry($Offset, $Value);
+    }
+
+    /**
+     * Destroy an entry via array access.
+     *
+     * @param mixed $Offset The offset (i.e., entry key).
+     * @return void
+     */
+    public function offsetUnset($Offset): void
+    {
+        $this->deleteEntry($Offset);
+    }
+
+    /**
      * Enforce key size limit.
      *
      * @param string $Key The key to check. Transforms the key if it doesn't
@@ -1193,5 +1308,72 @@ class Cache extends CommonAbstract
             return false;
         }
         return chmod($Directory, 0755);
+    }
+
+    /**
+     * Count cache entries.
+     *
+     * @return int The number of cache entries attached to the current instance.
+     */
+    public function count(): int
+    {
+        if ($this->Using === 'Memcached') {
+            return count($this->Indexes);
+        }
+        $Output = 0;
+        $PrefixLen = strlen($this->Prefix);
+        if ($this->Using === 'APCu') {
+            $Data = apcu_cache_info();
+            if (empty($Data['cache_list'])) {
+                return $Output;
+            }
+            foreach ($Data['cache_list'] as $Entry) {
+                if (!empty($Entry['info']) && is_string($Entry['info']) && $PrefixLen !== 0 && substr($Entry['info'], 0, $PrefixLen) === $this->Prefix) {
+                    $Output++;
+                }
+            }
+            return $Output;
+        }
+        if ($this->Using === 'Redis') {
+            if ($PrefixLen === 0 || preg_match('~[^\dA-Za-z_]~', $this->Prefix)) {
+                $Keys = $this->WorkingData->keys('*') ?: [];
+            } else {
+                $Keys = $this->WorkingData->keys($this->Prefix . '*') ?: [];
+            }
+            foreach ($Keys as $Key) {
+                if (strlen($Key) <= self::KEY_SIZE_LIMIT && $PrefixLen !== 0 && substr($Key, 0, $PrefixLen) === $this->Prefix) {
+                    $Output++;
+                }
+            }
+            return $Output;
+        }
+        if ($this->Using === 'PDO') {
+            $this->clearExpiredPDO();
+            if ($this->Prefix === '') {
+                $PDO = $this->WorkingData->prepare(self::COUNT_ALL_QUERY);
+            } elseif (preg_match('~^(?:ibm|mysql|odbc|pgsql|sqlsrv):~i', $this->PDOdsn)) {
+                $PDO = $this->WorkingData->prepare(self::COUNT_ALL_QUERY_WPREFIX_CONCAT);
+            } elseif (preg_match('~^4d:~i', $this->PDOdsn)) {
+                $PDO = $this->WorkingData->prepare(self::COUNT_ALL_QUERY_WPREFIX_PLUS);
+            } else {
+                $PDO = $this->WorkingData->prepare(self::COUNT_ALL_QUERY_WPREFIX_DPIPE);
+            }
+            if ($PDO !== false && ($this->Prefix === '' ? $PDO->execute() : $PDO->execute([':prefix' => $this->Prefix]))) {
+                $Data = $PDO->fetchAll();
+                return isset($Data[0][0]) && is_int($Data[0][0]) ? $Data[0][0] : 0;
+            }
+            return 0;
+        }
+        if ($Arr = $this->exposeWorkingDataArray()) {
+            foreach ($Arr as $Key => $Entry) {
+                if ($PrefixLen) {
+                    if (substr($Key, 0, $PrefixLen) !== $this->Prefix) {
+                        continue;
+                    }
+                }
+                $Output++;
+            }
+        }
+        return $Output;
     }
 }

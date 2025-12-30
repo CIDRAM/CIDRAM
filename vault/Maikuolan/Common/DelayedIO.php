@@ -1,6 +1,6 @@
 <?php
 /**
- * Delayed file IO class (last modified: 2023.09.14).
+ * Delayed file IO class (last modified: 2025.12.24).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -15,7 +15,7 @@
 
 namespace Maikuolan\Common;
 
-class DelayedIO extends CommonAbstract
+class DelayedIO extends CommonAbstract implements \Countable
 {
     /**
      * @var array Old data for the files being read/written.
@@ -159,5 +159,15 @@ class DelayedIO extends CommonAbstract
             $this->OldData[$File] = '';
         }
         return true;
+    }
+
+    /**
+     * Count how many files have been read already.
+     *
+     * @return int The number of files read already.
+     */
+    public function count(): int
+    {
+        return count($this->OldData);
     }
 }

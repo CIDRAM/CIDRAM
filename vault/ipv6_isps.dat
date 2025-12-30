@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
-# Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6_isps.dat
+# Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v4/vault/signatures/ipv6_isps.dat
 
-# Version: 2025.356.0
-# Last modified: 2025.12.23
+# Version: 2025.363.0
+# Last modified: 2025.12.30
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -235,17 +235,6 @@ Tag: OVH Systems
 Origin: IN
 Profile: Domestic ISP
 Tag: TATA SKY BROADBAND PRIVATE LIMITED
-
-
-# ASN 264932 ("STAYNET SERVICOS DE INTERNET LTDA - ME").
-# Brazilian domestic ISP. Port scans, hacking, and spam detected from here.
-# Manually checked all ranges; All ranges affected.
-# Updated: 2022.01.22 / Checked: 2025.01.14
-
-2804:3024::/32 Deny Attacks
-Origin: BR
-Profile: Domestic ISP
-Tag: STAYNET
 
 
 # ASN 197019 ("WEDOS Internet, a.s").

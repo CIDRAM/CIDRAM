@@ -1,6 +1,6 @@
 <?php
 /**
- * Complex string handler (last modified: 2023.09.14).
+ * Complex string handler (last modified: 2025.12.30).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -15,7 +15,7 @@
 
 namespace Maikuolan\Common;
 
-class ComplexStringHandler extends CommonAbstract
+class ComplexStringHandler extends CommonAbstract implements \ArrayAccess, \Countable, \IteratorAggregate
 {
     /**
      * @var string Supplied to the class at object instantiation or thereafter.
@@ -102,9 +102,9 @@ class ComplexStringHandler extends CommonAbstract
             }
             return;
         }
-        foreach ($this->Markers as &$Segment) {
-            if (isset($Segment[0][0]) && !is_array($Segment[0][0])) {
-                $Segment[0][0] = $Closure($Segment[0][0]);
+        foreach ($this->Markers as &$Marker) {
+            if (isset($Marker[0][0]) && !is_array($Marker[0][0])) {
+                $Marker[0][0] = $Closure($Marker[0][0]);
             }
         }
     }
@@ -119,12 +119,95 @@ class ComplexStringHandler extends CommonAbstract
         $Output = '';
         $Glue = 0;
         foreach ($this->Working as $Segment) {
+            if (!is_string($Segment)) {
+                $Segment = is_scalar($Segment) ? (string)$Segment : '';
+            }
             $Output .= $Segment;
             if (isset($this->Markers[$Glue][0][0]) && !is_array($this->Markers[$Glue][0][0])) {
+                if (!is_string($this->Markers[$Glue][0][0])) {
+                    $this->Markers[$Glue][0][0] = is_scalar($this->Markers[$Glue][0][0]) ? (string)$this->Markers[$Glue][0][0] : '';
+                }
                 $Output .= $this->Markers[$Glue][0][0];
                 $Glue++;
             }
         }
         return $Output;
+    }
+
+    /**
+     * Check whether a segment exists via array access.
+     *
+     * @param mixed $Segment The segment.
+     * @return bool Whether it exists.
+     */
+    public function offsetExists($Segment): bool
+    {
+        return is_scalar($Segment) && isset($this->Working[$Segment]);
+    }
+
+    /**
+     * Fetch a segment via array access.
+     *
+     * Note: "ReturnTypeWillChange" applied due to that "mixed" as a return type
+     * keyword was introduced only since PHP8, and Common Classes Package v2 is
+     * supposed to be compatible with PHP7.2 onward. We can refactor the attribute
+     * out and the return type keyword in for a future major version (e.g., CCPv3).
+     *
+     * @param mixed $Segment The segment.
+     * @return mixed The fetched segment.
+     */
+    #[\ReturnTypeWillChange]
+    public function offsetGet($Segment)
+    {
+        return $this->Working[$Segment];
+    }
+
+    /**
+     * Set a segment via array access.
+     *
+     * @param mixed $Segment The segment.
+     * @param mixed $Value The segment value.
+     * @return void
+     */
+    public function offsetSet($Segment, $Value): void
+    {
+        if (!is_scalar($Segment) || !is_scalar($Value)) {
+            return;
+        }
+        $this->Working[$Segment] = (string)$Value;
+    }
+
+    /**
+     * Destroy a segment via array access.
+     *
+     * @param mixed $Offset The segment.
+     * @return void
+     */
+    public function offsetUnset($Segment): void
+    {
+        if (!is_scalar($Segment)) {
+            return;
+        }
+        $this->Working[$Segment] = null;
+    }
+
+    /**
+     * Count the number of segments in the working data.
+     *
+     * @return int The number of segments in the working data.
+     */
+    public function count(): int
+    {
+        return count($this->Working);
+    }
+
+    /**
+     * Allows foreach to iterate over working data via \IteratorAggregate.
+     *
+     * @return \Traversable An instance of \ArrayIterator.
+     */
+    public function getIterator(): \Traversable
+    {
+        return new \ArrayIterator($this->Working);
     }
 }

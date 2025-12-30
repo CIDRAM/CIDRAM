@@ -1,6 +1,6 @@
 <?php
 /**
- * Events orchestrator (last modified: 2023.09.14).
+ * Events orchestrator (last modified: 2025.12.24).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -15,7 +15,7 @@
 
 namespace Maikuolan\Common;
 
-class Events extends CommonAbstract
+class Events extends CommonAbstract implements \Countable
 {
     /**
      * @var array Event handlers.
@@ -114,5 +114,15 @@ class Events extends CommonAbstract
     public function assigned(string $Event): bool
     {
         return isset($this->Handlers[$Event], $this->Status[$Event]);
+    }
+
+    /**
+     * Count the number of unique events registered.
+     *
+     * @return int The number of unique events registered.
+     */
+    public function count(): int
+    {
+        return count($this->Handlers);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * YAML handler (last modified: 2025.06.29).
+ * YAML handler (last modified: 2025.12.24).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -18,7 +18,7 @@
 
 namespace Maikuolan\Common;
 
-class YAML extends CommonAbstract
+class YAML extends CommonAbstract implements \Countable
 {
     /**
      * @var array An array to contain all the data processed by the handler.
@@ -1539,5 +1539,15 @@ class YAML extends CommonAbstract
             throw new \Error('Non-stringable object detected while attempting to reconstruct YAML data');
         }
         throw new \Error('Unsupported data type provided to scalarToString while attempting to reconstruct YAML data');
+    }
+
+    /**
+     * Count processed data.
+     *
+     * @return int The number of elements in the processed data array.
+     */
+    public function count(): int
+    {
+        return count($this->Data);
     }
 }

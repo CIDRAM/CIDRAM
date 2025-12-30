@@ -1,6 +1,6 @@
 <?php
 /**
- * L10N handler (last modified: 2025.10.17).
+ * L10N handler (last modified: 2025.12.24).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -15,7 +15,7 @@
 
 namespace Maikuolan\Common;
 
-class L10N extends CommonAbstract
+class L10N extends CommonAbstract implements \Countable
 {
     /**
      * @var array All relevant L10N data.
@@ -1165,5 +1165,15 @@ class L10N extends CommonAbstract
             $this->FallbackFractionRule = $this->getFractionRule($FallbackCode);
             $this->FallbackDirectionality = $this->getDirectionality($FallbackCode);
         }
+    }
+
+    /**
+     * Count L10N data.
+     *
+     * @return int The number of elements in the L10N data array.
+     */
+    public function count(): int
+    {
+        return count($this->Data);
     }
 }

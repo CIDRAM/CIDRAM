@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
-# Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv6.dat
+# Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v4/vault/signatures/ipv6.dat
 
-# Version: 2025.360.0
-# Last modified: 2025.12.27
+# Version: 2025.363.0
+# Last modified: 2025.12.30
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -3849,8 +3849,7 @@ Tag: IOFlood LLC
 
 # ASN 45638 ("SYNERGY WHOLESALE PTY LTD").
 # Cloud provider and server farm caught brute-forcing WordPress logins and SSH.
-# Stop Forum Spam (SFS) listings: 2.
-# Updated: 2023.12.24 / Checked: 2025.01.08
+# Updated: 2023.12.24 / Checked: 2025.12.29
 
 2400:8f80::/47 Deny Cloud
 2400:b800::/45 Deny Cloud
@@ -7406,7 +7405,7 @@ Tag: Meric Hosting
 # ASN 12488 ("Krystal Hosting Ltd").
 # Dedicated webhosting provider and an occasional source of spam.
 # Stop Forum Spam (SFS) listings: 6.
-# Updated: 2023.12.24 / Checked: 2025.01.08
+# Updated: 2023.12.24 / Checked: 2025.12.29
 
 2a03:2800::/32 Deny Cloud
 2a03:2802::/31 Deny Cloud
@@ -8978,8 +8977,8 @@ Tag: DXTL Tseung Kwan O Service
 
 # ASN 132372 ("GB Network Solutions Sdn. Bhd").
 # Webhosting provider and an occasional source of spam.
-# Stop Forum Spam (SFS) listings: 46.
-# Updated: 2023.12.24 / Checked: 2025.01.08
+# Stop Forum Spam (SFS) listings: 39.
+# Updated: 2023.12.24 / Checked: 2025.12.29
 
 2001:df0:a8c0::/48 Deny Cloud
 2001:df2:3bc0::/48 Deny Cloud
@@ -9170,8 +9169,8 @@ Tag: Meverywhere
 
 # ASN 213373 ("IP Connect Inc").
 # Email harvestors and brute-force attacks detected from here.
-# Stop Forum Spam (SFS) listings: 17.
-# Updated: 2025.01.08
+# Stop Forum Spam (SFS) listings: 72.
+# Updated: 2025.01.08 / Checked: 2025.12.29
 
 2a10:5fc0::/31 Deny Cloud
 Origin: SC
@@ -11955,42 +11954,70 @@ Tag: Sindad
 
 # ASN 14445 ("PeaceWeb").
 # WordPress/XMLRPC and webapp attacks, port scans, and spam detected from here.
-# Updated: 2025.01.12
+# Updated: 2025.12.30
 
-2001:3900::/29 Deny Cloud
-2a11:2800:239::/48 Deny Cloud
-2a11:2800:761::/48 Deny Cloud
-2a11:2800:10db::/48 Deny Cloud
-2a11:2800:131c::/48 Deny Cloud
-2a11:2800:1bce::/48 Deny Cloud
-2a11:2800:1f33::/48 Deny Cloud
-2a11:2800:2047::/48 Deny Cloud
-2a11:2800:215b::/48 Deny Cloud
-2a11:2800:285d::/48 Deny Cloud
-2a11:2800:3dc6::/48 Deny Cloud
-2a11:2800:661f::/48 Deny Cloud
-2a11:2800:792e::/48 Deny Cloud
-2a11:2800:9e16::/48 Deny Cloud
-2a11:2800:b41d::/48 Deny Cloud
-2a11:2803:e78b::/48 Deny Cloud
+2001:3900:7a3f::/48 Deny Cloud
+2a11:2800:1784::/48 Deny Cloud
+2a11:2800:1a59::/48 Deny Cloud
+2a11:2800:1c1a::/48 Deny Cloud
+2a11:2800:2fee::/48 Deny Cloud
+2a11:2800:4388::/48 Deny Cloud
+2a11:2800:4894::/48 Deny Cloud
+2a11:2800:82e9::/48 Deny Cloud
+2a11:2800:8a74::/48 Deny Cloud
+2a11:2800:97cb::/48 Deny Cloud
+2a11:2800:c81e::/48 Deny Cloud
+2a11:2800:d540::/48 Deny Cloud
+2a11:2800:f0fe::/48 Deny Cloud
+2a11:2800:f54b::/48 Deny Cloud
+2a11:2801:1ef::/48 Deny Cloud
+2a11:2801:e47::/48 Deny Cloud
+2a11:2801:1fee::/48 Deny Cloud
+2a11:2801:35d3::/48 Deny Cloud
+2a11:2801:3de4::/48 Deny Cloud
+2a11:2801:4183::/48 Deny Cloud
+2a11:2801:4ac9::/48 Deny Cloud
+2a11:2801:52e9::/48 Deny Cloud
+2a11:2801:5a27::/48 Deny Cloud
+2a11:2801:5a28::/48 Deny Cloud
+2a11:2801:7266::/48 Deny Cloud
+2a11:2801:99bf::/48 Deny Cloud
+2a11:2801:9d77::/48 Deny Cloud
+2a11:2801:bfd8::/48 Deny Cloud
+2a11:2801:c2c1::/48 Deny Cloud
+2a11:2801:cb2a::/48 Deny Cloud
+2a11:2801:d825::/48 Deny Cloud
+2a11:2801:db7f::/48 Deny Cloud
+2a11:2801:e793::/48 Deny Cloud
+2a11:2801:f3dc::/48 Deny Cloud
+2a11:2802:bc1::/48 Deny Cloud
+2a11:2802:15df::/48 Deny Cloud
+2a11:2802:1cf6::/48 Deny Cloud
+2a11:2802:4337::/48 Deny Cloud
+2a11:2802:4675::/48 Deny Cloud
+2a11:2802:7f5b::/48 Deny Cloud
+2a11:2802:9a2c::/48 Deny Cloud
+2a11:2802:a5c4::/48 Deny Cloud
+2a11:2802:a98b::/48 Deny Cloud
+2a11:2802:ac1e::/48 Deny Cloud
+2a11:2802:acaf::/48 Deny Cloud
+2a11:2802:bd54::/48 Deny Cloud
+2a11:2802:d606::/48 Deny Cloud
+2a11:2802:e1b5::/48 Deny Cloud
+2a11:2802:e8a2::/48 Deny Cloud
+2a11:2802:ee35::/48 Deny Cloud
+2a11:2802:fc09::/48 Deny Cloud
+2a11:2803:2e6b::/48 Deny Cloud
+2a11:2803:304c::/48 Deny Cloud
+2a11:2803:40e4::/48 Deny Cloud
+2a11:2803:5589::/48 Deny Cloud
+2a11:2803:6b41::/48 Deny Cloud
+2a11:2803:7070::/48 Deny Cloud
+2a11:2803:852c::/48 Deny Cloud
+2a11:2803:8884::/48 Deny Cloud
+2a11:2803:cec2::/48 Deny Cloud
+2a11:2803:f181::/48 Deny Cloud
 Origin: NL
-2606:18c0:a::/48 Deny Cloud
-2606:18c0:2b9::/48 Deny Cloud
-2606:18c0:18c3::/48 Deny Cloud
-2606:18c0:362f::/48 Deny Cloud
-2606:18c0:38bd::/48 Deny Cloud
-2606:18c0:3954::/48 Deny Cloud
-2606:18c0:4644::/48 Deny Cloud
-2606:18c0:48a4::/48 Deny Cloud
-2606:18c0:5b7c::/48 Deny Cloud
-2606:18c0:63c6::/48 Deny Cloud
-2606:18c0:6f89::/48 Deny Cloud
-2606:18c0:ced9::/48 Deny Cloud
-2606:18c0:dc2b::/48 Deny Cloud
-2606:18c0:dfa4::/48 Deny Cloud
-2606:18c0:e217::/48 Deny Cloud
-2606:2a40::/32 Deny Cloud
-Origin: US
 Profile: Frequent changes;Webhosting
 Tag: PeaceWeb
 
@@ -12298,11 +12325,10 @@ Tag: bytes.ua
 
 # ASN 211138 ("Private-Hosting di Cipriano oscar").
 # Brute-force, SSH attacks, port scans, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 29.
-# Updated: 2025.01.08
+# Stop Forum Spam (SFS) listings: 70.
+# Updated: 2025.12.29
 
 2a05:4140:500::/48 Deny Cloud
-2a11:e104:1::/48 Deny Cloud
 Origin: IT
 Profile: Webhosting
 Tag: Private-Hosting
@@ -12381,14 +12407,13 @@ Tag: Owl Limited
 
 # ASN 207713 ("GLOBAL INTERNET SOLUTIONS LLC").
 # Brute-force, webapp attacks, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 2,996.
-# Updated: 2025.01.12
+# Stop Forum Spam (SFS) listings: 59.
+# Updated: 2025.12.30
 
 2a00:b703:fff2::/48 Deny Cloud
 2a05:541:100::/48 Deny Cloud
 2a05:541:115::/48 Deny Cloud
 2a05:541:120::/48 Deny Cloud
-2a05:541:132::/48 Deny Cloud
 2a05:541:142::/48 Deny Cloud
 2a05:541:145::/48 Deny Cloud
 2a05:544::/32 Deny Cloud
@@ -16403,8 +16428,8 @@ Tag: AbkhazMedia
 
 # ASN 61414 ("EDGENAP LTD").
 # DDoS, webapp attacks, scraping, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 61.
-# Updated: 2025.01.12
+# Stop Forum Spam (SFS) listings: 4.
+# Updated: 2025.01.12 / Checked: 2025.12.30
 
 2a0d:280::/48 Deny Cloud
 Origin: GB

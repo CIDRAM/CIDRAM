@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
-# Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v3/vault/signatures/ipv4_isps.dat
+# Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v4/vault/signatures/ipv4_isps.dat
 
-# Version: 2025.360.0
-# Last modified: 2025.12.27
+# Version: 2025.363.0
+# Last modified: 2025.12.30
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -3153,8 +3153,11 @@ Tag: China Telecom
 # brute-force attacks, port scans, probing for vulnerabilities, hacking,
 # scraping, and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Updated: 2025.11.05
+# Updated: 2025.11.05 / Modified: 2025.12.30
 
+1.24.15.198/32 Deny Attacks
+1.24.15.210/32 Deny Attacks
+1.24.16.0/24 Deny Attacks
 1.29.73.28/32 Deny Attacks
 1.29.73.228/32 Deny Attacks
 1.190.170.10/32 Deny Attacks
@@ -3262,6 +3265,9 @@ Tag: China Telecom
 60.12.168.14/32 Deny Attacks
 60.12.168.114/32 Deny Attacks
 60.12.168.222/32 Deny Attacks
+60.13.2.0/24 Deny Attacks
+60.13.5.115/32 Deny Attacks
+60.13.6.0/23 Deny Attacks
 60.13.138.0/24 Deny Attacks
 60.14.240.0/24 Deny Attacks
 60.24.62.54/32 Deny Spam
@@ -3622,6 +3628,8 @@ Tag: China Telecom
 123.131.169.124/32 Deny Attacks
 123.131.169.131/32 Deny Attacks
 123.138.214.150/32 Deny Attacks
+123.145.0.0/19 Deny Attacks
+123.145.32.0/21 Deny Attacks
 123.147.244.0/24 Deny Attacks
 123.147.247.0/24 Deny Attacks
 123.147.249.0/24 Deny Attacks
@@ -3629,6 +3637,8 @@ Tag: China Telecom
 123.152.136.7/32 Deny Attacks
 123.152.136.136/32 Deny Attacks
 123.157.69.126/32 Deny Attacks
+123.158.60.0/23 Deny Attacks
+123.158.62.245/32 Deny Attacks
 123.189.114.0/24 Deny Attacks
 123.190.100.0/24 Deny Attacks
 124.65.38.42/32 Deny Spam
@@ -9430,8 +9440,7 @@ Tag: Skyband Corporation Ltd
 # Swedish multiplay network. Spam, port scans, brute-force and SSH attacks,
 # hacking, tor endpoints, etc detected at some specific ranges here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2022.01.16 / Checked: 2025.01.14
+# Updated: 2022.01.16 / Checked: 2025.12.30
 
 62.102.148.0/24 Deny Attacks
 Origin: SE
@@ -14941,22 +14950,13 @@ Tag: Sibirskie Seti Ltd
 # ASNs 3786, 7562 ("LG DACOM Corporation").
 # Korean corporate multiplay network. Brute-force and webapp attacks detected
 # from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 51 (AS3786), 13 (AS7562).
-# Updated: 2025.01.13
+# Stop Forum Spam (SFS) listings: 51 (AS3786), 1 (AS7562).
+# Updated: 2025.12.30
 
-59.187.201.0/24 Deny Attacks
-106.240.89.60/32 Deny Attacks
-114.108.177.3/32 Deny Attacks
-114.108.177.4/32 Deny Attacks
-114.108.177.7/32 Deny Attacks
-114.108.177.104/32 Deny Attacks
-114.108.177.186/32 Deny Attacks
-114.108.177.225/32 Deny Attacks
-123.142.3.142/32 Deny Attacks
-123.142.3.235/32 Deny Attacks
-124.194.74.203/32 Deny Attacks
+59.187.201.92/32 Deny Attacks
+59.187.201.190/32 Deny Attacks
+114.108.177.0/24 Deny Attacks
 210.182.73.0/24 Deny Attacks
-210.206.24.234/32 Deny Spam
 Origin: KR
 Profile: Commercial;Multiplay
 Tag: LG DACOM Corporation
@@ -16273,28 +16273,23 @@ Tag: LIMANET Ltd
 # Scandinavian multiplay network (domestic ISP, webhosting, cloud lease, etc).
 # Regular brute-force attacks and flooding/hammering encountered from this
 # network. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 84 (AS12552).
-# Updated: 2025.08.24
+# Stop Forum Spam (SFS) listings: 56 (AS12552).
+# Updated: 2025.12.30
 
 93.158.90.0/23 Deny Attacks
 93.158.92.11/32 Deny Attacks
 93.158.92.13/32 Deny Attacks
+93.158.95.213/32 Deny Attacks
 130.255.160.10/32 Deny Attacks
-130.255.160.60/32 Deny Attacks
+141.138.211.119/32 Deny Attacks
+141.138.211.251/32 Deny Attacks
+146.247.229.2/32 Deny Attacks
 185.6.10.201/32 Deny Attacks
 185.6.11.17/32 Deny Attacks
+185.6.11.94/32 Deny Attacks
 185.6.11.146/32 Deny Attacks
-185.183.146.4/32 Deny Attacks
-185.183.146.219/32 Deny Attacks
-185.183.146.228/32 Deny Attacks
-185.183.146.234/32 Deny Attacks
-185.183.146.255/32 Deny Attacks
-185.183.147.0/24 Deny Attacks
-185.205.225.33/32 Deny Attacks
-185.205.225.70/32 Deny Attacks
-185.205.225.94/32 Deny Attacks
-185.205.225.96/32 Deny Attacks
-185.205.225.107/32 Deny Attacks
+185.183.146.0/23 Deny Attacks
+185.205.225.0/24 Deny Attacks
 Origin: SE
 Profile: Domestic ISP;Multiplay;Webhosting
 Tag: Availo Networks AB
@@ -19839,7 +19834,7 @@ Tag: tci.ir
 # ASN 270704 ("MAIS NORTE TELECOM LTDA").
 # Brazilian multiplay and domestic ISP. Port scans, hacking, and spam detected
 # from here. Listing just the affected ranges/addresses only.
-# Updated: 2022.01.20 / Checked: 2025.01.14
+# Updated: 2022.01.20 / Checked: 2025.12.30
 
 189.127.145.0/24 Deny Attacks
 Origin: BR
@@ -20134,7 +20129,7 @@ Tag: Mir Mosharrof Hossain
 # ASN 141557 ("Odinet Infocom Private Limited").
 # Indian domestic ISP. Brute-force and SSH attacks, port scans, hacking, and
 # spam detected from here. Listing just the affected ranges/addresses only.
-# Updated: 2025.01.14
+# Updated: 2025.01.14 / Checked: 2025.12.30
 
 103.75.40.0/24 Deny Attacks
 103.75.43.0/24 Deny Attacks
@@ -20208,8 +20203,9 @@ Tag: MARLON LIMA GOMES
 
 # ASN 264932 ("STAYNET SERVICOS DE INTERNET LTDA - ME").
 # Brazilian domestic ISP. Port scans, hacking, and spam detected from here.
-# Manually checked all ranges; All ranges affected.
-# Updated: 2022.01.22 / Checked: 2025.01.14
+# Manually checked all ranges; All IPv4 ranges affected.
+# Stop Forum Spam (SFS) listings: 3.
+# Updated: 2022.01.22 / Checked: 2025.12.30
 
 168.232.12.0/22 Deny Attacks
 Origin: BR
@@ -20280,17 +20276,6 @@ Tag: VAINAVI INDUSTIES
 Origin: RU
 Profile: Domestic ISP
 Tag: IRONNET Ltd
-
-
-# ASN 51067 ("IT-Service Ltd").
-# Russian commercial network. Port scans and hacking detected from here.
-# Listing just the affected ranges/addresses only.
-# Updated: 2022.02.10 / Checked: 2025.01.14
-
-91.216.121.37/32 Deny Attacks
-Origin: RU
-Profile: Commercial
-Tag: kraz.ru
 
 
 # ASN 27951 ("Media Commerce Partners S.A").
@@ -20928,16 +20913,11 @@ Tag: Nas Internet Services
 # ASN 198401 ("Sebastian Souto (SSSERVICIOS)").
 # Argentine domestic ISP. Brute-force, FTP, SSH, and webapp attacks, hacking,
 # and spam detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 2.
-# Updated: 2025.01.16
+# Stop Forum Spam (SFS) listings: 16.
+# Updated: 2025.12.30
 
-170.233.31.75/32 Deny Attacks
-170.233.31.209/32 Deny Attacks
-170.233.31.250/32 Deny Attacks
-170.233.117.71/32 Deny Attacks
-170.233.117.101/32 Deny Attacks
-170.233.117.114/32 Deny Attacks
-170.233.117.215/32 Deny Attacks
+170.233.31.0/24 Deny Attacks
+170.233.117.0/24 Deny Attacks
 Origin: AR
 Profile: Domestic ISP
 Tag: SSSERVICIOS
@@ -20963,15 +20943,13 @@ Tag: Kitej-Telecom LLC
 # Colombian domestic ISP. Brute-force, SSH, and DDoS attacks, port scans,
 # hacking, and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 2.
-# Updated: 2025.01.16
+# Stop Forum Spam (SFS) listings: 18.
+# Updated: 2025.12.30
 
+200.29.109.82/32 Deny Attacks
 200.29.109.112/32 Deny Attacks
 200.29.109.141/32 Deny Attacks
-200.29.109.146/32 Deny Attacks
-200.29.109.174/32 Deny Attacks
-200.29.109.193/32 Deny Attacks
-200.29.109.221/32 Deny Attacks
+200.29.109.197/32 Deny Attacks
 Origin: CO
 Profile: Domestic ISP
 Tag: EMPRESAS MUNICIPALES
@@ -20980,18 +20958,10 @@ Tag: EMPRESAS MUNICIPALES
 # ASN 28668 ("Silva & Silveira Provedor de Internet Ltda").
 # Brazilian domestic ISP. Brute-force attacks, port scans, hacking, and spam
 # detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 4.
-# Updated: 2025.01.16
+# Stop Forum Spam (SFS) listings: 17.
+# Updated: 2025.12.30
 
-189.50.108.85/32 Deny Attacks
-189.50.108.118/32 Deny Attacks
-189.50.108.144/32 Deny Attacks
-189.50.108.203/32 Deny Attacks
-189.50.111.44/32 Deny Attacks
-189.50.111.86/32 Deny Attacks
-189.50.111.144/32 Deny Attacks
-189.50.111.190/32 Deny Attacks
-189.50.111.201/32 Deny Attacks
+189.50.111.0/24 Deny Attacks
 Origin: BR
 Profile: Domestic ISP
 Tag: Silva Silveira
@@ -21000,14 +20970,9 @@ Tag: Silva Silveira
 # ASN 60815 ("Data Net Company for Communications Limited").
 # Iraqi domestic ISP. Port scans, hacking, and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Updated: 2025.01.16
+# Updated: 2025.12.30
 
-185.20.25.75/32 Deny Attacks
-185.20.25.233/32 Deny Attacks
-185.89.88.114/32 Deny Attacks
-185.89.88.124/32 Deny Attacks
-185.89.89.98/32 Deny Attacks
-185.89.89.114/32 Deny Attacks
+185.20.25.253/32 Deny Attacks
 Origin: IQ
 Profile: Domestic ISP
 Tag: Data Net Company
@@ -22915,19 +22880,6 @@ Profile: Domestic ISP;Multiplay
 Tag: IT FRUIT
 
 
-# ASN 3303 ("Swisscom (Schweiz) AG").
-# Swiss mobile ISP. Brute-force, SSH attacks, port scans, hacking, and spam
-# detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 84.
-# Updated: 2025.01.16
-
-194.209.191.243/32 Deny Attacks
-213.3.12.45/32 Deny Attacks
-Origin: CH
-Profile: Mobile ISP;Multiplay
-Tag: Swisscom
-
-
 # ASN 13579 ("INFOTEC CENTRO DE INVESTIGACION E INNOVACION EN TECNOLOGIAS DE
 # LA INFORMACION Y COMUNICACION"). Brute-force and SSH attacks detected from
 # here. Listing just the affected ranges/addresses only.
@@ -23145,13 +23097,9 @@ Tag: ASN for TIANJIN
 # ASN 269619 ("NELSON NET").
 # Brazilian domestic ISP. Brute-force, SSH attacks, port scans, and hacking
 # detected from here. Listing just the affected ranges/addresses only.
-# Updated: 2025.01.16
+# Updated: 2025.12.30
 
-45.190.44.176/32 Deny Attacks
-45.190.44.180/32 Deny Attacks
-45.190.46.179/32 Deny Attacks
-45.190.46.185/32 Deny Attacks
-45.190.46.187/32 Deny Attacks
+45.190.44.0/24 Deny Attacks
 Origin: BR
 Profile: Domestic ISP
 Tag: NELSON NET
@@ -23200,12 +23148,15 @@ Tag: IAXN Telecom
 # ASN 58659 ("Quest Consultancy Pvt Ltd").
 # Indian domestic ISP. Brute-force, SSH attacks, port scans, hacking, and spam
 # detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 16.
-# Updated: 2025.01.13
+# Stop Forum Spam (SFS) listings: 7.
+# Updated: 2025.12.30
 
 103.201.144.0/24 Deny Attacks
+202.9.124.7/32 Deny Attacks
 202.9.124.32/32 Deny Attacks
 202.9.124.50/32 Deny Attacks
+202.9.124.64/32 Deny Attacks
+202.9.124.175/32 Deny Attacks
 Origin: IN
 Profile: Domestic ISP
 Tag: Quest Consultancy
@@ -25337,7 +25288,7 @@ Tag: Saero Network Service LTD
 # ASN 212109 ("Squirrel Internet Ltd").
 # UK domestic ISP. Brute-force, SSH, and webapp attacks, port scans, and
 # hacking detected from here. Listing just the affected ranges/addresses only.
-# Updated: 2025.01.13
+# Updated: 2025.01.13 / Checked: 2025.12.30
 
 45.9.20.0/24 Deny Attacks
 Origin: GB
@@ -25349,8 +25300,8 @@ Tag: Squirrel Internet Ltd
 # Macedonian domestic ISP. DDoS, brute-force (particularly of WordPress
 # logins), webapp, and RDP attacks, hacking, and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 32.
-# Updated: 2025.01.14
+# Stop Forum Spam (SFS) listings: 62.
+# Updated: 2025.01.14 / Checked: 2025.12.30
 
 92.53.12.0/24 Deny Attacks
 92.53.21.0/24 Deny Attacks
@@ -26369,7 +26320,7 @@ Tag: TOP BUSINESS INC
 # Chinese domestic ISP. SSH attacks, port scans, hacking, and spam detected
 # from here. Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 56.
-# Updated: 2025.11.05 / Modified: 2025.11.20
+# Updated: 2025.11.05 / Modified: 2025.12.30
 
 49.7.11.156/32 Deny Attacks
 49.7.227.30/32 Deny Attacks
@@ -26378,6 +26329,7 @@ Tag: TOP BUSINESS INC
 101.198.0.0/24 Deny Attacks
 106.38.207.62/32 Deny Attacks
 106.38.207.191/32 Deny Attacks
+106.75.47.0/24 Deny Attacks
 106.75.50.0/24 Deny Attacks
 106.75.63.0/24 Deny Attacks
 220.181.51.0/24 Deny Attacks
@@ -26721,6 +26673,40 @@ Tag: JSC Mastertel
 Origin: IR
 Profile: Dedicated;Domestic ISP;Multiplay;VPNs here;Webhosting
 Tag: Farahoosh Dena PLC
+
+
+# ASN 38482 ("Biznet ISP").
+# Indonesian domestic ISP. Brute-force, SSH, honeypot, WordPress/XMLRPC, and
+# webapp attacks, scraping, port scans, hacking, and spam detected from here.
+# Also caught probing for Git credentials.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 6.
+# Updated: 2025.12.27
+
+182.253.238.122/32 Deny Attacks
+182.253.238.190/32 Deny Attacks
+182.253.238.218/32 Deny Attacks
+182.253.238.235/32 Deny Attacks
+203.142.86.0/24 Deny Attacks
+Origin: ID
+Profile: Domestic ISP;Multiplay
+Tag: Biznet ISP
+
+
+# ASN 328856 ("VIJIJI CONNECT LIMITED").
+# Kenyan domestic ISP. DDoS, SQLi, brute-force, SSH, WordPress/XMLRPC, and
+# webapp attacks, port scans, Mirai botnet, hacking, and spam detected from
+# here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 22.
+# Updated: 2025.12.30
+
+102.209.56.0/23 Deny Attacks
+102.213.48.0/23 Deny Attacks
+102.219.208.0/23 Deny Attacks
+102.219.210.0/24 Deny Attacks
+Origin: KE
+Profile: Domestic ISP
+Tag: VIJIJI
 
 
 # ---

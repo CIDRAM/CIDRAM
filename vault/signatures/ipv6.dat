@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v4/vault/signatures/ipv6.dat
 
-# Version: 2026.6.0
-# Last modified: 2026.01.07
+# Version: 2026.11.0
+# Last modified: 2026.01.12
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -2864,8 +2864,8 @@ Tag: Zenlayer Inc
 # ASN 30475 ("Handy Networks, LLC").
 # Server farm and a source of spam and other unwanted activity.
 # Subtract 44.0.0.0/9, 44.128.0.0/10 (clean).
-# Stop Forum Spam (SFS) listings: 8.
-# Updated: 2021.06.21 / Checked: 2025.01.28
+# Stop Forum Spam (SFS) listings: 12.
+# Updated: 2021.06.21 / Checked: 2026.01.09
 
 2602:fff6:d::/48 Deny Cloud
 2606:6680:6::/48 Deny Cloud
@@ -4981,9 +4981,9 @@ Profile: Dedicated;Tor endpoints here;Webhosting
 Tag: B2 Net Solutions
 
 
-# ASNs 24669, 34202, 62240, 206986 ("Clouvider Limited").
-# Stop Forum Spam (SFS) listings: 30,598 (AS62240).
-# Updated: 2025.02.06
+# ASN 62240 ("Clouvider Limited").
+# Stop Forum Spam (SFS) listings: 28,426.
+# Updated: 2026.01.12
 
 2a0c:7b84::/32 Deny Cloud
 Origin: AE
@@ -4994,10 +4994,8 @@ Origin: DE
 Origin: EE
 2a04:92c0::/29 Deny Cloud
 2a06:bdc0::/29 Deny Cloud
-2a07:41c0::/32 Deny Cloud
 2a0a:39c0::/32 Deny Cloud
 2a0a:54c0::/29 Deny Cloud
-2a0a:7107:1af4::/48 Deny Cloud
 2a0a:8dc0::/33 Deny Cloud
 2a0a:8dc0:8000::/35 Deny Cloud
 2a0a:8dc0:a000::/36 Deny Cloud
@@ -5022,7 +5020,14 @@ Origin: LT
 2a11:68c3::/32 Deny Cloud
 2a11:b687::/32 Deny Cloud
 Origin: RU
+2604:ea80:1000::/40 Deny Cloud
+2604:ea80:1400::/40 Deny Cloud
 2604:ea80:1800::/40 Deny Cloud
+2604:fc80:3600::/40 Deny Cloud
+2604:fc80:4000::/40 Deny Cloud
+2a03:efc0:4900::/40 Deny Cloud
+2a05:e9c0:5600::/40 Deny Cloud
+2a05:e9c0:6200::/40 Deny Cloud
 Origin: US
 Profile: Dedicated;Frequent changes;Infrastructure/Transit;Webhosting
 Tag: CloudSRV Limited
@@ -16421,13 +16426,12 @@ Tag: Optibounce, LLC
 
 # ASN 328608 ("Africa on Cloud").
 # DDoS, webapp attacks, port scans, scraping, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 8.
-# Updated: 2025.01.16 / Checked: 2025.07.19
+# Updated: 2025.01.16 / Checked: 2026.01.09
 
 2c0f:ebd0::/32 Deny Cloud
 2c0f:f1b8::/32 Deny Cloud
 Origin: ZA
-Profile: Dedicated;Webhosting
+Profile: Dedicated;Frequent changes;Webhosting
 Tag: Africa on Cloud
 
 
@@ -16488,20 +16492,6 @@ Profile: Restricted/Unidentifiable
 Tag: HanMing HK Limited
 
 
-# ASN 60223 ("Netiface Limited").
-# Brute-force, SSH, SQLi, and webapp attacks, port scans, hacking, and spam
-# detected from here.
-# Stop Forum Spam (SFS) listings: 14.
-# Updated: 2025.02.06
-
-2a14:9e00:9000::/40 Deny Cloud
-Origin: GB
-2a14:7c0:3900::/40 Deny Cloud
-Origin: IL
-Profile: Dedicated;Webhosting
-Tag: Netiface Limited
-
-
 # ASN 401152 ("Ace Data Centers II, L.L.C").
 # Brute-force attacks and spam detected from here.
 # Stop Forum Spam (SFS) listings: 608.
@@ -16513,12 +16503,24 @@ Profile: Frequent changes;Webhosting
 Tag: Ace Data
 
 
+# ASN 54334 ("Swiftnode LLC").
+# WordPress/XMLRPC attacks detected from here.
+# Updated: 2026.01.12
+
+2602:fa02:1::/48 Deny Cloud
+2602:fa02:2::/47 Deny Cloud
+2602:fa02:5::/48 Deny Cloud
+2602:fa02:800::/40 Deny Cloud
+Origin: US
+Profile: Webhosting
+Tag: Swiftnode LLC
+
+
 # ASN 20853 ("eTOP sp. z o.o").
 # DDoS attacks and spam detected from here.
-# Stop Forum Spam (SFS) listings: 111.
-# Updated: 2025.02.06
+# Stop Forum Spam (SFS) listings: 453.
+# Updated: 2026.01.12
 
-2001:678:850::/48 Deny Cloud
 2a00:c90::/32 Deny Cloud
 2a05:4480::/29 Deny Cloud
 Origin: PL

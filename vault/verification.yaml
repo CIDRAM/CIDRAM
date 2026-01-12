@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Verification data (last modified: 2025.11.09).
+# This file: Verification data (last modified: 2026.01.12).
 ##/
 
 # Additional references: https://udger.com/resources/ua-list/crawlers
@@ -23,7 +23,7 @@ Search Engine Verification:
 
  # https://discussions.apple.com/thread/7090135
  # https://support.apple.com/en-gb/HT204683
- # Updated: 2020.02.07 / Checked: 2022.02.18
+ # Updated: 2020.02.07 / Checked: 2026.01.12
  Applebot:
   User Agent: "applebot"
   Closure: "DNS-Reverse-Forward"
@@ -32,7 +32,7 @@ Search Engine Verification:
 
  # https://help.baidu.com/question?prod_en=master&class=Baiduspider
  # https://help.baidu.com/question?prod_id=99&class=476&id=3001
- # Updated: 2020.02.07 / Checked: 2023.04.06
+ # Updated: 2020.02.07 / Checked: 2026.01.12
  Baiduspider/百度:
   Bypass flag: "Flag-Bypass-Baidu-Check"
   User Agent: "baiduspider"
@@ -41,9 +41,9 @@ Search Engine Verification:
    - ".baidu.com"
    - ".baidu.jp"
 
- # https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot
+ # https://blogs.bing.com/webmaster/August-2012/How-to-Verify-that-Bingbot-is-Bingbot/
  # https://github.com/CIDRAM/CIDRAM/issues/242
- # Updated: 2020.02.07 / Checked: 2022.02.18
+ # Updated: 2020.02.07 / Checked: 2026.01.12
  Bingbot:
   Bypass flag: "Flag-Bypass-Bingbot-Check"
   User Agent Pattern: "~(?:msn|bing)bot|bingpreview~"
@@ -53,18 +53,27 @@ Search Engine Verification:
   Single hit bypass: true
 
  # https://duckduckgo.com/duckduckbot
- # Updated: 2025.11.09
+ # Updated: 2026.01.12
  DuckDuckBot:
   User Agent Pattern: "~duckduck(?:go-favicons-)?bot~"
   Closure: "UA-IP-Match"
   Valid domains:
+   - "4.150.142.218"
    - "4.156.136.79"
+   - "4.156.154.107"
    - "4.182.131.108"
    - "4.195.133.120"
+   - "4.201.125.59"
+   - "4.201.141.71"
+   - "4.201.197.203"
+   - "4.201.206.133"
+   - "4.201.220.8"
    - "4.207.220.92"
    - "4.209.224.56"
    - "4.213.46.14"
    - "4.228.76.163"
+   - "4.249.216.104"
+   - "4.255.35.121"
    - "13.89.106.77"
    - "20.3.1.178"
    - "20.8.252.26"
@@ -118,6 +127,7 @@ Search Engine Verification:
    - "20.80.129.80"
    - "20.93.28.24"
    - "20.99.255.235"
+   - "20.112.58.44"
    - "20.113.3.121"
    - "20.113.14.159"
    - "20.166.171.150"
@@ -156,7 +166,9 @@ Search Engine Verification:
    - "20.219.45.67"
    - "20.219.45.190"
    - "20.226.133.105"
+   - "20.232.51.46"
    - "20.232.184.230"
+   - "20.253.59.76"
    - "40.64.105.247"
    - "40.64.106.11"
    - "40.76.162.191"
@@ -181,6 +193,9 @@ Search Engine Verification:
    - "40.119.232.218"
    - "40.119.232.251"
    - "40.127.154.196"
+   - "48.217.23.236"
+   - "48.217.129.210"
+   - "48.217.212.89"
    - "51.8.71.117"
    - "51.8.253.152"
    - "51.104.146.225"
@@ -265,6 +280,8 @@ Search Engine Verification:
    - "52.154.171.235"
    - "52.154.171.250"
    - "52.154.172.2"
+   - "52.186.37.211"
+   - "52.188.89.106"
    - "52.190.37.160"
    - "52.224.16.221"
    - "52.224.16.229"
@@ -290,17 +307,30 @@ Search Engine Verification:
    - "52.224.21.55"
    - "52.224.21.61"
    - "52.242.224.168"
+   - "52.250.46.221"
    - "57.152.72.128"
+   - "64.236.118.43"
    - "68.219.152.220"
+   - "74.179.232.116"
    - "104.43.54.127"
    - "104.43.55.116"
    - "104.43.55.117"
    - "104.43.55.166"
    - "104.43.55.167"
    - "108.141.83.74"
+   - "128.203.132.152"
    - "130.107.228.224"
    - "132.164.209.198"
+   - "135.234.221.112"
+   - "172.168.53.53"
+   - "172.168.115.250"
+   - "172.168.227.120"
+   - "172.168.254.119"
    - "172.169.17.165"
+   - "172.169.28.184"
+   - "172.169.60.134"
+   - "172.169.177.131"
+   - "172.193.245.229"
    - "172.199.55.212"
    - "191.233.3.197"
    - "191.233.3.202"
@@ -333,7 +363,7 @@ Search Engine Verification:
  # https://aspiegel.com/petalbot
  # https://github.com/CIDRAM/CIDRAM/issues/254
  # https://webmaster.petalsearch.com/site/petalbot
- # Updated: 2021.10.01 / Checked: 2022.02.18
+ # Updated: 2021.10.01 / Checked: 2026.01.12
  PetalBot:
   Bypass flag: "Flag-Bypass-PetalBot-Check"
   User Agent: "petalbot"
@@ -359,7 +389,7 @@ Search Engine Verification:
    - ".seznam.cz"
 
  # https://www.sogou.com/docs/help/webmasters.htm#07
- # Updated: 2018.07.16 / Checked: 2023.04.06
+ # Updated: 2018.07.16 / Checked: 2026.01.12
  Sogou/搜狗:
   Bypass flag: "Flag-Bypass-Sogou-Check"
   User Agent: "sogou"
@@ -388,7 +418,7 @@ Search Engine Verification:
    - ".yandex.ru"
 
  # https://udger.com/resources/ua-list/bot-detail?bot=YoudaoBot#id1507
- # Updated: 2020.02.07 / Checked: 2022.02.18
+ # Updated: 2020.02.07 / Checked: 2026.01.12
  YoudaoBot:
   User Agent: "youdaobot"
   Closure: "DNS-Reverse-Forward"
@@ -397,7 +427,7 @@ Search Engine Verification:
 
 Social Media Verification:
  # https://udger.com/resources/ua-list/bot-detail?bot=Embedly#id22674
- # Updated: 2018.07.14 / Checked: 2022.02.18
+ # Updated: 2018.07.14 / Checked: 2026.01.12
  Embedly:
   User Agent: "embedly"
   Closure: "DNS-Reverse-Forward"

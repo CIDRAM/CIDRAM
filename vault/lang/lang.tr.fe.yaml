@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2025.10.22).
+# This file: Turkish language data for the front-end (last modified: 2026.01.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -316,21 +316,21 @@ hints_pdo_dsn:
 info_some_useful_links: |+
  Bazı kullanışlı bağlantılar:<br />
      <ul class="pieul">
-       <li><span class="comCat">CIDRAM için araçlar, kaynaklar, vb.</span>
-         <ul class="comSub">
+       <li><span class="comCat" role="region" aria-controls="menuTRCIDRAM" aria-expanded="false">CIDRAM için araçlar, kaynaklar, vb.</span>
+         <ul class="comSub" id="menuTRCIDRAM">
            <li>{{Links.CIDRAM.Issues}} – CIDRAM için sorunlar sayfası (destek, yardım, vb).</li>
            <li>{{Links.CIDRAM.WordPress}} – CIDRAM için WordPress eklentisi.</li>
            <li>{{Links.CIDRAM.Extras}} – Çeşitli ekstralar.</li>
          </ul>
        </li>
-       <li><span class="comCat">Gruplar, forumlar, topluluklar, vb.</span>
-         <ul class="comSub">
+       <li><span class="comCat" role="region" aria-controls="menuGFC" aria-expanded="false">Gruplar, forumlar, topluluklar, vb.</span>
+         <ul class="comSub" id="menuGFC">
            <li>{{Links.PHP.Earth.Facebook}} – PHP öğrenme kaynakları ve tartışmalar.</li>
            <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Forum@Stop Forum Spam</a> – Forum spamını durdurmayla ilgili faydalı forum.</li>
          </ul>
        </li>
-       <li><span class="comCat">Diğer faydalı araçlar, kaynaklar, hizmetler, vb.</span>
-         <ul class="comSub">
+       <li><span class="comCat" role="region" aria-controls="menuOUTRS" aria-expanded="false">Diğer faydalı araçlar, kaynaklar, hizmetler, vb.</span>
+         <ul class="comSub" id="menuOUTRS">
            <li>{{Links.SFS}} – Bilinen forum spam göndericileri veritabanını yönetir. Web sitelerini ve forumları spam göndericilere karşı korumak için kullanışlıdır.</li>
            <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – ASN'lerden CIDR'ler alın, ASN ilişkilerini belirleyin, ağ adlarına dayalı ASN'leri keşfedin.</li>
            <li>{{Links.BGPView}} – ASN'lerden CIDR'ler alın, ASN ilişkilerini belirleyin, ağ adlarına dayalı ASN'leri keşfedin.</li>
@@ -341,7 +341,7 @@ info_some_useful_links: |+
          </ul>
        </li>
        <li><span class="comCat">Bilgi ve öğrenme kaynakları.</span>
-         <ul class="comSub">
+         <ul class="comSub" id="menuILR">
            <li>{{Links.PHP.Earth.Website}} – PHP öğrenme kaynakları ve tartışmalar.</li>
            <li>{{Links.MDN.Homepage}} – Geliştiriciler için, geliştiriciler tarafından sağlanan kaynaklar. HTML, CSS, JavaScript, erişilebilirlik, ve daha fazlasını öğrenmek için harika bir kaynak.</li>
            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Güvenlik Açığı Tabloları</a> – Çeşitli paketler (HHVM, PHP, phpMyAdmin, Python, vb) güvenli/güvensiz sürümlerini listeler.</li>

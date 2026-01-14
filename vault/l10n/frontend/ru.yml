@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2025.10.22).
+# This file: Russian language data for the front-end (last modified: 2026.01.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -511,8 +511,8 @@ info_cli_you_can_print_: |
 Some useful links: |+
  Некоторые полезные ссылки:<br />
      <ul class="pieul">
-       <li><span class="comCat">Инструменты, ресурсы и т.д. для CIDRAM.</span>
-         <ul class="comSub">
+       <li><span class="comCat" role="region" aria-controls="menuTRCIDRAM" aria-expanded="false">Инструменты, ресурсы и т.д. для CIDRAM.</span>
+         <ul class="comSub" id="menuTRCIDRAM">
            <li>{{Links.CIDRAM.Bitbucket}} – Расположение резервной копии репозитория.</li>
            <li>{{Links.CIDRAM.Codeberg}} – Расположение резервной копии репозитория.</li>
            <li>{{Links.CIDRAM.Extras}} – Различные дополнения.</li>
@@ -520,14 +520,14 @@ Some useful links: |+
            <li>{{Links.CIDRAM.WordPress}} – WordPress плагин для CIDRAM.</li>
          </ul>
        </li>
-       <li><span class="comCat">Группы, форумы, сообщества и т.д.</span>
-         <ul class="comSub">
+       <li><span class="comCat" role="region" aria-controls="menuGFC" aria-expanded="false">Группы, форумы, сообщества и т.д.</span>
+         <ul class="comSub" id="menuGFC">
            <li>{{Links.PHP.Earth.Facebook}} – PHP учебных ресурсов и обсуждение.</li>
            <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Форум@Stop Forum Spam</a> – Полезное Форум о останавливая форум спам.</li>
          </ul>
        </li>
-       <li><span class="comCat">Другие полезные инструменты, ресурсы, услуги и т.д.</span>
-         <ul class="comSub">
+       <li><span class="comCat" role="region" aria-controls="menuOUTRS" aria-expanded="false">Другие полезные инструменты, ресурсы, услуги и т.д.</span>
+         <ul class="comSub" id="menuOUTRS">
            <li>{{Links.SFS}} – Поддерживает базу данных известных спамеров форума. Полезно для защиты сайтов и форумов от спамеров.</li>
            <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Получить CIDRы от ASNs, определить ASN отношения, обнаружить ASNs основанный на сетевых имен, и т.д.</li>
            <li>{{Links.BGPView}} – Получить CIDRы от ASNs, определить ASN отношения, обнаружить ASNs основанный на сетевых имен, и т.д.</li>
@@ -538,7 +538,7 @@ Some useful links: |+
          </ul>
        </li>
        <li><span class="comCat">Информационные и учебные ресурсы.</span>
-         <ul class="comSub">
+         <ul class="comSub" id="menuILR">
            <li>{{Links.PHP.Earth.Website}} – PHP учебных ресурсов и обсуждение.</li>
            <li>{{Links.MDN.Homepage}} – Ресурсы для разработчиков, от разработчиков. Фантастический ресурс для изучения HTML, CSS, JavaScript, доступность, и многого другого.</li>
            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Таблицы Уязвимостей</a> – Список безопасных/небезопасных версий различных пакетов (HHVM, PHP, phpMyAdmin, Python, и т.д.).</li>

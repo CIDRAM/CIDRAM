@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Catalan language data for the front-end (last modified: 2025.10.22).
+# This file: Catalan language data for the front-end (last modified: 2026.01.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -497,8 +497,8 @@ info_cli_you_can_print_: "Podeu imprimir dades a la pantalla així (de vegades �
 Some useful links: |+
  Alguns enllaços útils:<br />
      <ul class="pieul">
-       <li><span class="comCat">Eines, recursos, etc per al CIDRAM.</span>
-         <ul class="comSub">
+       <li><span class="comCat" role="region" aria-controls="menuTRCIDRAM" aria-expanded="false">Eines, recursos, etc per al CIDRAM.</span>
+         <ul class="comSub" id="menuTRCIDRAM">
            <li>{{Links.CIDRAM.Bitbucket}} – Ubicació de còpia de seguretat del repositori.</li>
            <li>{{Links.CIDRAM.Codeberg}} – Ubicació de còpia de seguretat del repositori.</li>
            <li>{{Links.CIDRAM.Extras}} – Diversos extres.</li>
@@ -506,14 +506,14 @@ Some useful links: |+
            <li>{{Links.CIDRAM.WordPress}} – Extensió de WordPress per a CIDRAM.</li>
          </ul>
        </li>
-       <li><span class="comCat">Grups, fòrums, comunitats, etc.</span>
-         <ul class="comSub">
+       <li><span class="comCat" role="region" aria-controls="menuGFC" aria-expanded="false">Grups, fòrums, comunitats, etc.</span>
+         <ul class="comSub" id="menuGFC">
            <li>{{Links.PHP.Earth.Facebook}} – Recursos d'aprenentatge i discussió de PHP.</li>
            <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Fòrum@Stop Forum Spam</a> – Fòrum de discussió útil sobre aturar el correu brossa del fòrum.</li>
          </ul>
        </li>
-       <li><span class="comCat">Altres eines, recursos, serveis útils, etc.</span>
-         <ul class="comSub">
+       <li><span class="comCat" role="region" aria-controls="menuOUTRS" aria-expanded="false">Altres eines, recursos, serveis útils, etc.</span>
+         <ul class="comSub" id="menuOUTRS">
            <li>{{Links.SFS}} – Manté una base de dades de spammers de fòrums coneguts. Útil per protegir llocs web i fòrums contra els spammers.</li>
            <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Obteniu CIDR dels ASN, determineu les relacions d'ASN, descobriu ASN basats en noms de xarxa, etc.</li>
            <li>{{Links.BGPView}} – Obteniu CIDR dels ASN, determineu les relacions d'ASN, descobriu ASN basats en noms de xarxa, etc.</li>
@@ -524,7 +524,7 @@ Some useful links: |+
          </ul>
        </li>
        <li><span class="comCat">Recursos informatius i d'aprenentatge.</span>
-         <ul class="comSub">
+         <ul class="comSub" id="menuILR">
            <li>{{Links.PHP.Earth.Website}} – Recursos d'aprenentatge i discussió de PHP.</li>
            <li>{{Links.MDN.Homepage}} – Recursos per a desenvolupadors, per desenvolupadors. Un recurs fantàstic per aprendre sobre HTML, CSS, JavaScript, accessibilitat, i molt més.</li>
            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Quadres de vulnerabilitats</a> – Llista les versions segures/insegures de diversos paquets (HHVM, PHP, phpMyAdmin, Python, etc).</li>

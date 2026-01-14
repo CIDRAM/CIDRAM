@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2025.10.22).
+# This file: Latvian language data for the front-end (last modified: 2026.01.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -502,8 +502,8 @@ info_cli_you_can_print_: "Varat drukāt datus ekrānā šādi (dažreiz tas ir n
 Some useful links: |+
  Dažas noderīgas saites:<br />
      <ul class="pieul">
-       <li><span class="comCat">CIDRAM rīki, resursi, utt.</span>
-         <ul class="comSub">
+       <li><span class="comCat" role="region" aria-controls="menuTRCIDRAM" aria-expanded="false">CIDRAM rīki, resursi, utt.</span>
+         <ul class="comSub" id="menuTRCIDRAM">
            <li>{{Links.CIDRAM.Bitbucket}} – Repozitorija dublējuma atrašanās vieta.</li>
            <li>{{Links.CIDRAM.Codeberg}} – Repozitorija dublējuma atrašanās vieta.</li>
            <li>{{Links.CIDRAM.Extras}} – Dažādas ekstras.</li>
@@ -511,14 +511,14 @@ Some useful links: |+
            <li>{{Links.CIDRAM.WordPress}} – WordPress spraudnis CIDRAM.</li>
          </ul>
        </li>
-       <li><span class="comCat">Grupas, forumi, kopienas, utt.</span>
-         <ul class="comSub">
+       <li><span class="comCat" role="region" aria-controls="menuGFC" aria-expanded="false">Grupas, forumi, kopienas, utt.</span>
+         <ul class="comSub" id="menuGFC">
            <li>{{Links.PHP.Earth.Facebook}} – PHP mācību resursi un diskusija.</li>
            <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Forum@Stop Forum Spam</a> – Noderīgs diskusiju forums par foruma mēstuļu apturēšanu.</li>
          </ul>
        </li>
-       <li><span class="comCat">Citi noderīgi rīki, resursi, pakalpojumi, utt.</span>
-         <ul class="comSub">
+       <li><span class="comCat" role="region" aria-controls="menuOUTRS" aria-expanded="false">Citi noderīgi rīki, resursi, pakalpojumi, utt.</span>
+         <ul class="comSub" id="menuOUTRS">
            <li>{{Links.SFS}} – Uztur zināmu forumu surogātpasta izplatītāju datu bāzi. Noderīga vietņu un forumu aizsardzībai pret surogātpastu izplatītājiem.</li>
            <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Saņemiet CIDR no ASN, nosakiet ASN attiecības, atklājiet ASN pamatojoties uz tīkla nosaukumiem, utt.</li>
            <li>{{Links.BGPView}} – Saņemiet CIDR no ASN, nosakiet ASN attiecības, atklājiet ASN pamatojoties uz tīkla nosaukumiem, utt.</li>
@@ -529,7 +529,7 @@ Some useful links: |+
          </ul>
        </li>
        <li><span class="comCat">Informācijas un mācību resursi.</span>
-         <ul class="comSub">
+         <ul class="comSub" id="menuILR">
            <li>{{Links.PHP.Earth.Website}} – PHP mācību resursi un diskusija.</li>
            <li>{{Links.MDN.Homepage}} – Izstrādātāju resursi izstrādātājiem. Lielisks resurss, lai uzzinātu par HTML, CSS, JavaScript, pieejamību, un daudz ko citu.</li>
            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Ievainojamības Diagrammas</a> – Saraksta dažādu programmatūras pakotņu drošas/nedrošas versijas (HHVM, PHP, phpMyAdmin, Python, utt).</li>

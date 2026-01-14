@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Farsi language data for the front (last modified: 2025.10.22).
+# This file: Farsi language data for the front (last modified: 2026.01.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -505,8 +505,8 @@ info_cli_you_can_print_: |
 Some useful links: |+
  چند لینک مفید:<br />
      <ul class="pieul">
-       <li><span class="comCat">ابزارها، منابع، و غیره برای CIDRAM.</span>
-         <ul class="comSub">
+       <li><span class="comCat" role="region" aria-controls="menuTRCIDRAM" aria-expanded="false">ابزارها، منابع، و غیره برای CIDRAM.</span>
+         <ul class="comSub" id="menuTRCIDRAM">
            <li>{{Links.CIDRAM.Bitbucket}} – مکان پشتیبان گیری مخزن.</li>
            <li>{{Links.CIDRAM.Codeberg}} – مکان پشتیبان گیری مخزن.</li>
            <li>{{Links.CIDRAM.Extras}} – اضافات مختلف.</li>
@@ -514,14 +514,14 @@ Some useful links: |+
            <li>{{Links.CIDRAM.WordPress}} – افزونه وردپرس برای CIDRAM.</li>
          </ul>
        </li>
-       <li><span class="comCat">گروه ها، انجمن ها و غیره.</span>
-         <ul class="comSub">
+       <li><span class="comCat" role="region" aria-controls="menuGFC" aria-expanded="false">گروه ها، انجمن ها و غیره.</span>
+         <ul class="comSub" id="menuGFC">
            <li>{{Links.PHP.Earth.Facebook}} – منابع آموزشی و بحث برای PHP.</li>
            <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Forum@Stop Forum Spam</a> – انجمن گفتگوی مفید در مورد جلوگیری از هرزنامه انجمن.</li>
          </ul>
        </li>
-       <li><span class="comCat">سایر ابزارها، منابع، خدمات و غیره مفید.</span>
-         <ul class="comSub">
+       <li><span class="comCat" role="region" aria-controls="menuOUTRS" aria-expanded="false">سایر ابزارها، منابع، خدمات و غیره مفید.</span>
+         <ul class="comSub" id="menuOUTRS">
            <li>{{Links.SFS}} – پایگاه داده ای از هرزنامه های شناخته شده انجمن را حفظ می‌کند. برای محافظت از وب سایت ها و انجمن ها در برابر هرزنامه ها مفید است.</li>
            <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">جعبه ابزار Hurricane Electric BGP</a> – دریافت CIDR از ASN، تعیین روابط ASN، کشف ASN بر اساس نام شبکه و غیره.</li>
            <li>{{Links.BGPView}} – دریافت CIDR از ASN، تعیین روابط ASN، کشف ASN بر اساس نام شبکه و غیره.</li>
@@ -532,7 +532,7 @@ Some useful links: |+
          </ul>
        </li>
        <li><span class="comCat">منابع اطلاعاتی و یادگیری.</span>
-         <ul class="comSub">
+         <ul class="comSub" id="menuILR">
            <li>{{Links.PHP.Earth.Website}} – منابع آموزشی و بحث برای PHP.</li>
            <li>{{Links.MDN.Homepage}} – منابع برای توسعه دهندگان، توسط توسعه دهندگان. یک منبع فوق العاده برای یادگیری در مورد HTML، CSS، جاوا اسکریپت، دسترسی، و بیشتر.</li>
            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">نمودارهای آسیب پذیری</a> – نسخه های ایمن/ناایمن بسته های مختلف را فهرست می‌کند (HHVM ,PHP ,phpMyAdmin ,Python و غیره).</li>

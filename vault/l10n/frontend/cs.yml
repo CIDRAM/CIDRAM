@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Czech language data for the front-end (last modified: 2025.10.22).
+# This file: Czech language data for the front-end (last modified: 2026.01.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -503,8 +503,8 @@ info_cli_you_can_print_: "Data můžete vytisknout na obrazovku (někdy užiteč
 Some useful links: |+
  Některé užitečné odkazy:<br />
      <ul class="pieul">
-       <li><span class="comCat">Nástroje, zdroje, atd pro CIDRAM.</span>
-         <ul class="comSub">
+       <li><span class="comCat" role="region" aria-controls="menuTRCIDRAM" aria-expanded="false">Nástroje, zdroje, atd pro CIDRAM.</span>
+         <ul class="comSub" id="menuTRCIDRAM">
            <li>{{Links.CIDRAM.Bitbucket}} – Umístění zálohy úložiště.</li>
            <li>{{Links.CIDRAM.Codeberg}} – Umístění zálohy úložiště.</li>
            <li>{{Links.CIDRAM.Extras}} – Různé doplňky.</li>
@@ -512,14 +512,14 @@ Some useful links: |+
            <li>{{Links.CIDRAM.WordPress}} – WordPress plugin pro CIDRAM.</li>
          </ul>
        </li>
-       <li><span class="comCat">Skupiny, fóra, komunity, atd.</span>
-         <ul class="comSub">
+       <li><span class="comCat" role="region" aria-controls="menuGFC" aria-expanded="false">Skupiny, fóra, komunity, atd.</span>
+         <ul class="comSub" id="menuGFC">
            <li>{{Links.PHP.Earth.Facebook}} – PHP učební zdroje a diskuze.</li>
            <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Fórum@Stop Forum Spam</a> – Užitečné diskusní fórum o zastavení spamu na fóru.</li>
          </ul>
        </li>
-       <li><span class="comCat">Další užitečné nástroje, zdroje, služby, atd.</span>
-         <ul class="comSub">
+       <li><span class="comCat" role="region" aria-controls="menuOUTRS" aria-expanded="false">Další užitečné nástroje, zdroje, služby, atd.</span>
+         <ul class="comSub" id="menuOUTRS">
            <li>{{Links.SFS}} – Udržuje databázi známých spammerů fóra. Užitečné pro ochranu webových stránek a fór před spammery.</li>
            <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Získejte CIDR z ASN, určete vztahy ASN, zjistěte ASN na základě názvů sítí, atd.</li>
            <li>{{Links.BGPView}} – Získejte CIDR z ASN, určete vztahy ASN, zjistěte ASN na základě názvů sítí, atd.</li>
@@ -530,7 +530,7 @@ Some useful links: |+
          </ul>
        </li>
        <li><span class="comCat">Informační a výukové zdroje.</span>
-         <ul class="comSub">
+         <ul class="comSub" id="menuILR">
            <li>{{Links.PHP.Earth.Website}} – PHP učební zdroje a diskuze.</li>
            <li>{{Links.MDN.Homepage}} – Zdroje pro vývojáře, od vývojářů. Fantastický zdroj informací o HTML, CSS, JavaScriptu, přístupnosti, a dalších.</li>
            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Tabulky zranitelnosti</a> – Vypisuje bezpečné/nebezpečné verze různých balíčků (HHVM, PHP, phpMyAdmin, Python, atd).</li>

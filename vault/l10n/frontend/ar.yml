@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2025.10.22).
+# This file: Arabic language data for the front-end (last modified: 2026.01.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -499,8 +499,8 @@ info_cli_you_can_print_: "يمكنك طباعة البيانات على الشا
 Some useful links: |+
  بعض الروابط المفيدة:<br />
      <ul class="pieul">
-       <li><span class="comCat">الأدوات، الموارد، إلخ لـ CIDRAM.</span>
-         <ul class="comSub">
+       <li><span class="comCat" role="region" aria-controls="menuTRCIDRAM" aria-expanded="false">الأدوات، الموارد، إلخ لـ CIDRAM.</span>
+         <ul class="comSub" id="menuTRCIDRAM">
            <li>{{Links.CIDRAM.Bitbucket}} – موقع النسخ الاحتياطي للمستودع.</li>
            <li>{{Links.CIDRAM.Codeberg}} – موقع النسخ الاحتياطي للمستودع.</li>
            <li>{{Links.CIDRAM.Extras}} – إضافات مختلفة.</li>
@@ -508,14 +508,14 @@ Some useful links: |+
            <li>{{Links.CIDRAM.WordPress}} – ووردبريس اضافة ل CIDRAM.</li>
          </ul>
        </li>
-       <li><span class="comCat">مجموعات، المنتديات، مجتمعات، إلخ.</span>
-         <ul class="comSub">
+       <li><span class="comCat" role="region" aria-controls="menuGFC" aria-expanded="false">مجموعات، المنتديات، مجتمعات، إلخ.</span>
+         <ul class="comSub" id="menuGFC">
            <li>{{Links.PHP.Earth.Facebook}} – PHP مصادر التعلم والمناقشة.</li>
            <li><a dir="ltr" href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external"><span dir="rtl">المنتدى</span>@Stop Forum Spam</a> – منتدى للنقاش مفيد حول وقف منتدى المزعج.</li>
          </ul>
        </li>
-       <li><span class="comCat">الأدوات، الموارد، الخدمات، إلخ مفيدة أخرى.</span>
-         <ul class="comSub">
+       <li><span class="comCat" role="region" aria-controls="menuOUTRS" aria-expanded="false">الأدوات، الموارد، الخدمات، إلخ مفيدة أخرى.</span>
+         <ul class="comSub" id="menuOUTRS">
            <li>{{Links.SFS}} – يحافظ على قاعدة بيانات لمنتدى المزعج المنتدى المعروفين. مفيدة لحماية مواقع الويب والمنتديات من الرسائل غير المرغوب فيها.</li>
            <li><a dir="ltr" href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – الحصول على CIDRs من ل ASNs، تحديد العلاقات ASN، اكتشف ل ASNs استنادا إلى أسماء الشبكات، إلخ.</li>
            <li>{{Links.BGPView}} – الحصول على CIDRs من ل ASNs، تحديد العلاقات ASN، اكتشف ل ASNs استنادا إلى أسماء الشبكات، إلخ.</li>
@@ -526,7 +526,7 @@ Some useful links: |+
          </ul>
        </li>
        <li><span class="comCat">موارد المعلومات والتعلم.</span>
-         <ul class="comSub">
+         <ul class="comSub" id="menuILR">
            <li>{{Links.PHP.Earth.Website}} – PHP مصادر التعلم والمناقشة.</li>
            <li>{{Links.MDN.Homepage}} – موارد للمطورين، من قبل المطورين. مورد رائع للتعرف على HTML وCSS وJavaScript وإمكانية الوصول والمزيد.</li>
            <li><a dir="ltr" href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Vulnerability Charts</a> – يسرد نسخ آمنة وغير آمنة من مختلف الحزم (HHVM، PHP، phpMyAdmin، Python، إلخ).</li>

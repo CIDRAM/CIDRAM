@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bot user agents module (last modified: 2025.12.27).
+ * This file: Bot user agents module (last modified: 2026.01.14).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -241,9 +241,9 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         'zibber|zurichfinancialservices~',
         $UANoSpace
     ) || preg_match(
-        '~^Mozilla/5\.0( [A-Za-z]{2,5}/0\..)?$~',
+        '~^Mozilla/5\.0( [a-z]{2,5}/0\..| \(Macintosh; Intel Mac OS X \d+_\d+_\d+\) AppleWebKit/\d+\.\d+\.\d+ \(KHTML, like Gecko\))?$~i',
         $this->BlockInfo['UA']
-    ), 'Unauthorised'); // 2023.09.15 mod 2025.12.27
+    ), 'Unauthorised'); // 2023.09.15 mod 2026.01.14
 
     if ($this->trigger(preg_match('~ivre-|masscan~', $UANoSpace), 'Port scanner and synflood tool detected')) {
         $this->Reporter->report([14, 15, 19], ['MASSCAN port scanner and synflood tool detected.'], $this->BlockInfo['IPAddr']);

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2025.10.22).
+# This file: Thai language data for the front-end (last modified: 2026.01.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -314,21 +314,21 @@ hints_pdo_dsn:
 info_some_useful_links: |+
  ลิงก์ที่เป็นประโยชน์:<br />
      <ul class="pieul">
-       <li><span class="comCat">เครื่องมือ ทรัพยากร ฯลฯ สำหรับ CIDRAM.</span>
-         <ul class="comSub">
+       <li><span class="comCat" role="region" aria-controls="menuTRCIDRAM" aria-expanded="false">เครื่องมือ ทรัพยากร ฯลฯ สำหรับ CIDRAM.</span>
+         <ul class="comSub" id="menuTRCIDRAM">
            <li>{{Links.CIDRAM.Issues}} – หน้าปัญหาสำหรับ CIDRAM (สนับสนุน ความช่วยเหลือ ฯลฯ).</li>
            <li>{{Links.CIDRAM.WordPress}} – ปลั๊กอินเวิร์ดเพรสสำหรับ CIDRAM.</li>
            <li>{{Links.CIDRAM.Extras}} – ตัวเลือกเพิ่มเติมต่างๆ.</li>
          </ul>
        </li>
-       <li><span class="comCat">กลุ่ม ฟอรั่ม ชุมชน ฯลฯ.</span>
-         <ul class="comSub">
+       <li><span class="comCat" role="region" aria-controls="menuGFC" aria-expanded="false">กลุ่ม ฟอรั่ม ชุมชน ฯลฯ.</span>
+         <ul class="comSub" id="menuGFC">
            <li>{{Links.PHP.Earth.Facebook}} – แหล่งเรียนรู้ PHP และการสนทนา.</li>
            <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">ฟอรัม@Stop Forum Spam</a> – ฟอรั่มการอภิปรายมีประโยชน์เกี่ยวกับหยุดสแปมในฟอรัม.</li>
          </ul>
        </li>
-       <li><span class="comCat">เครื่องมือ ทรัพยากร บริการ ฯลฯ ที่มีประโยชน์อื่น ๆ.</span>
-         <ul class="comSub">
+       <li><span class="comCat" role="region" aria-controls="menuOUTRS" aria-expanded="false">เครื่องมือ ทรัพยากร บริการ ฯลฯ ที่มีประโยชน์อื่น ๆ.</span>
+         <ul class="comSub" id="menuOUTRS">
            <li>{{Links.SFS}} – รักษาฐานข้อมูลของผู้ส่งอีเมลขยะที่เป็นที่รู้จัก. มีประโยชน์สำหรับการปกป้องเว็บไซต์และฟอรัมจากสแปมเมอร์.</li>
            <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – รับ CIDR จาก ASN ยืนยันความสัมพันธ์ ASN ค้นพบ ASN ตามชื่อเครือข่าย ฯลฯ.</li>
            <li>{{Links.BGPView}} – รับ CIDR จาก ASN ยืนยันความสัมพันธ์ ASN ค้นพบ ASN ตามชื่อเครือข่าย ฯลฯ.</li>
@@ -339,7 +339,7 @@ info_some_useful_links: |+
          </ul>
        </li>
        <li><span class="comCat">แหล่งข้อมูลและการเรียนรู้.</span>
-         <ul class="comSub">
+         <ul class="comSub" id="menuILR">
            <li>{{Links.PHP.Earth.Website}} – แหล่งเรียนรู้ PHP และการสนทนา.</li>
            <li>{{Links.MDN.Homepage}} – แหล่งข้อมูลสำหรับนักพัฒนา โดยนักพัฒนา. แหล่งข้อมูลที่ยอดเยี่ยมสำหรับการเรียนรู้เกี่ยวกับ HTML, CSS, JavaScript, การเข้าถึง และอื่นๆ.</li>
            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Vulnerability Charts (ชาร์ตเสี่ยง)</a> – แสดงรายการเวอร์ชันต่างๆแพคเกจที่ปลอดภัย/ไม่ปลอดภัย (HHVM, PHP, phpMyAdmin, Python, ฯลฯ).</li>

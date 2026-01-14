@@ -322,5 +322,5 @@ input[type=submit].linner,input[type=number].linner,select.linner{width:100%}
 .navicon.switchCtrl.swOp{background-position:-4.5px -5px,0 -1px,4.5px 3px;background-size:16px 24px,16px 16px,16px 8px}
 .navicon.switchCtrl.swCl{background-position:-4.5px -5px,-4.5px -1px,-4.5px 3px;background-size:16px 24px,16px 16px,16px 8px}
 .i12in16{position:relative;inset:2px 0}
-.duo>.duo:hover>.h1,.duo>.duo:has(+.h1f:hover)>.h1{background-color:#36c}
-.duo>.duo:hover+.h1f,.duo>.h1f:hover{background:linear-gradient({90deg},#36c,#79e)}
+.duo>.duo:hover>.h1.canHighlight,.duo>.duo:has(+.h1f.canHighlight:hover)>.h1.canHighlight{background-color:#36c}
+.duo>.duo:hover+.h1f.canHighlight,.duo>.h1f.canHighlight:hover{background:linear-gradient({90deg},#36c,#79e)}

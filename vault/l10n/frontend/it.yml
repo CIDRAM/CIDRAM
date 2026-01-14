@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2025.10.22).
+# This file: Italian language data for the front-end (last modified: 2026.01.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -502,8 +502,8 @@ info_cli_you_can_print_: |
 Some useful links: |+
  Alcuni link utili:<br />
      <ul class="pieul">
-       <li><span class="comCat">Strumenti, risorse, ecc per CIDRAM.</span>
-         <ul class="comSub">
+       <li><span class="comCat" role="region" aria-controls="menuTRCIDRAM" aria-expanded="false">Strumenti, risorse, ecc per CIDRAM.</span>
+         <ul class="comSub" id="menuTRCIDRAM">
            <li>{{Links.CIDRAM.Bitbucket}} – Posizione di backup del repository.</li>
            <li>{{Links.CIDRAM.Codeberg}} – Posizione di backup del repository.</li>
            <li>{{Links.CIDRAM.Extras}} – Vari extra.</li>
@@ -511,14 +511,14 @@ Some useful links: |+
            <li>{{Links.CIDRAM.WordPress}} – Plugin per WordPress per CIDRAM.</li>
          </ul>
        </li>
-       <li><span class="comCat">Gruppi, forum, comunità, ecc.</span>
-         <ul class="comSub">
+       <li><span class="comCat" role="region" aria-controls="menuGFC" aria-expanded="false">Gruppi, forum, comunità, ecc.</span>
+         <ul class="comSub" id="menuGFC">
            <li>{{Links.PHP.Earth.Facebook}} – Risorse di apprendimento e discussione per PHP.</li>
            <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Forum@Stop Forum Spam</a> – Forum di discussione utile circa l'arresto di forum spam.</li>
          </ul>
        </li>
-       <li><span class="comCat">Altri strumenti, risorse, servizi, ecc che sono utili.</span>
-         <ul class="comSub">
+       <li><span class="comCat" role="region" aria-controls="menuOUTRS" aria-expanded="false">Altri strumenti, risorse, servizi, ecc che sono utili.</span>
+         <ul class="comSub" id="menuOUTRS">
            <li>{{Links.SFS}} – Mantiene un database di spammer di forum noti. Utile per proteggere siti Web e forum dagli spammer.</li>
            <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Ottenere CIDRs da ASNs, determinare le relazioni di ASNs, scopri ASNs basata su nomi di rete, ecc.</li>
            <li>{{Links.BGPView}} – Ottenere CIDRs da ASNs, determinare le relazioni di ASNs, scopri ASNs basata su nomi di rete, ecc.</li>
@@ -529,7 +529,7 @@ Some useful links: |+
          </ul>
        </li>
        <li><span class="comCat">Risorse informative e di apprendimento.</span>
-         <ul class="comSub">
+         <ul class="comSub" id="menuILR">
            <li>{{Links.PHP.Earth.Website}} – Risorse di apprendimento e discussione per PHP.</li>
            <li>{{Links.MDN.Homepage}} – Risorse per sviluppatori, da parte degli sviluppatori. Una risorsa fantastica per conoscere HTML, CSS, JavaScript, accessibilità, e altro ancora.</li>
            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Mappe di Vulnerabilità</a> – Elenca le versioni sicure e non sicure di varie pacchetti (HHVM, PHP, phpMyAdmin, Python, ecc).</li>

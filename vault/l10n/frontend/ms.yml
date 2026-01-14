@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malay language data for the front-end (last modified: 2025.10.22).
+# This file: Malay language data for the front-end (last modified: 2026.01.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -502,8 +502,8 @@ info_cli_you_can_print_: |
 Some useful links: |+
  Beberapa pautan yang berguna:<br />
      <ul class="pieul">
-       <li><span class="comCat">Alat, sumber, dll untuk CIDRAM.</span>
-         <ul class="comSub">
+       <li><span class="comCat" role="region" aria-controls="menuTRCIDRAM" aria-expanded="false">Alat, sumber, dll untuk CIDRAM.</span>
+         <ul class="comSub" id="menuTRCIDRAM">
            <li>{{Links.CIDRAM.Bitbucket}} – Lokasi sandaran repositori.</li>
            <li>{{Links.CIDRAM.Codeberg}} – Lokasi sandaran repositori.</li>
            <li>{{Links.CIDRAM.Extras}} – Pelbagai tambahan.</li>
@@ -511,14 +511,14 @@ Some useful links: |+
            <li>{{Links.CIDRAM.WordPress}} – Plugin WordPress untuk CIDRAM.</li>
          </ul>
        </li>
-       <li><span class="comCat">Kumpulan, forum, komuniti, dll.</span>
-         <ul class="comSub">
+       <li><span class="comCat" role="region" aria-controls="menuGFC" aria-expanded="false">Kumpulan, forum, komuniti, dll.</span>
+         <ul class="comSub" id="menuGFC">
            <li>{{Links.PHP.Earth.Facebook}} – Sumber pembelajaran dan perbincangan PHP.</li>
            <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Forum@Stop Forum Spam</a> – Forum perbincangan berguna tentang menghentikan spam forum.</li>
          </ul>
        </li>
-       <li><span class="comCat">Alat berguna, sumber, perkhidmatan, dll lain.</span>
-         <ul class="comSub">
+       <li><span class="comCat" role="region" aria-controls="menuOUTRS" aria-expanded="false">Alat berguna, sumber, perkhidmatan, dll lain.</span>
+         <ul class="comSub" id="menuOUTRS">
            <li>{{Links.SFS}} – Mengekalkan pangkalan data spammer forum yang diketahui. Berguna untuk melindungi tapak web dan forum terhadap spammer.</li>
            <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Dapatkan CIDR daripada ASN, tentukan perhubungan ASN, temui ASN berdasarkan nama rangkaian, dsb.</li>
            <li>{{Links.BGPView}} – Dapatkan CIDR daripada ASN, tentukan perhubungan ASN, temui ASN berdasarkan nama rangkaian, dsb.</li>
@@ -529,7 +529,7 @@ Some useful links: |+
          </ul>
        </li>
        <li><span class="comCat">Sumber bermaklumat dan pembelajaran.</span>
-         <ul class="comSub">
+         <ul class="comSub" id="menuILR">
            <li>{{Links.PHP.Earth.Website}} – Sumber pembelajaran dan perbincangan PHP.</li>
            <li>{{Links.MDN.Homepage}} – Sumber untuk pembangun, oleh pembangun. Sumber yang hebat untuk belajar tentang HTML, CSS, JavaScript, kebolehaksesan dan banyak lagi.</li>
            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Carta Kerentanan</a> – Menyenaraikan pelbagai versi daripada pakej yang selamat dan tidak selamat (HHVM, PHP, phpMyAdmin, Python, dll).</li>

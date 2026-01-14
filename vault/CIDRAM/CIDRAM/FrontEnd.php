@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2025.12.27).
+ * This file: The CIDRAM front-end (last modified: 2026.01.14).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -336,8 +336,9 @@ class FrontEnd extends Core
         $this->CIDRAM['MenuToggle'] =
             '<script type="text/javascript">var i,toggler=document.getElementsByClassName("comCat");' .
             'for(i=0;i<toggler.length;i++)toggler[i].addEventListener("click",function(){' .
-            'this.parentElement.querySelector(".comSub").classList.toggle("active"),!this.classList.toggle("caret-down")&&this.classList.toggle("caret-up")&&setTimeout(function(t){' .
-            't.classList.toggle("caret-up")},500,this)});</script>';
+            'this.parentElement.querySelector(".comSub").classList.toggle("active"),' .
+            'this.getAttribute("aria-expanded")!==null&&this.setAttribute("aria-expanded",this.getAttribute("aria-expanded")==="false"?"true":"false"),' .
+            '!this.classList.toggle("caret-down")&&this.classList.toggle("caret-up")&&setTimeout(function(t){t.classList.toggle("caret-up")},500,this)})</script>';
 
         /** A fix for correctly displaying LTR/RTL text. */
         if ($this->L10N->Directionality !== 'rtl') {

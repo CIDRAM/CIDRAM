@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2025.10.22).
+# This file: Vietnamese language data for the front-end (last modified: 2026.01.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -501,8 +501,8 @@ info_cli_you_can_print_: |
 Some useful links: |+
  Một số liên kết hữu ích:<br />
      <ul class="pieul">
-       <li><span class="comCat">Công cụ, tài nguyên, vv cho CIDRAM.</span>
-         <ul class="comSub">
+       <li><span class="comCat" role="region" aria-controls="menuTRCIDRAM" aria-expanded="false">Công cụ, tài nguyên, vv cho CIDRAM.</span>
+         <ul class="comSub" id="menuTRCIDRAM">
            <li>{{Links.CIDRAM.Bitbucket}} – Vị trí sao lưu kho lưu trữ.</li>
            <li>{{Links.CIDRAM.Codeberg}} – Vị trí sao lưu kho lưu trữ.</li>
            <li>{{Links.CIDRAM.Extras}} – Bổ sung khác nhau.</li>
@@ -510,14 +510,14 @@ Some useful links: |+
            <li>{{Links.CIDRAM.WordPress}} – Plugin WordPress cho CIDRAM.</li>
          </ul>
        </li>
-       <li><span class="comCat">Nhóm, diễn đàn, cộng đồng, vv.</span>
-         <ul class="comSub">
+       <li><span class="comCat" role="region" aria-controls="menuGFC" aria-expanded="false">Nhóm, diễn đàn, cộng đồng, vv.</span>
+         <ul class="comSub" id="menuGFC">
            <li>{{Links.PHP.Earth.Facebook}} – PHP tài nguyên học tập và thảo luận.</li>
            <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Diễn đàn@Stop Forum Spam</a> – Diễn đàn thảo luận hữu ích về việc ngưng diễn đàn thư rác.</li>
          </ul>
        </li>
-       <li><span class="comCat">Công cụ, tài nguyên, dịch vụ, vv hữu ích khác.</span>
-         <ul class="comSub">
+       <li><span class="comCat" role="region" aria-controls="menuOUTRS" aria-expanded="false">Công cụ, tài nguyên, dịch vụ, vv hữu ích khác.</span>
+         <ul class="comSub" id="menuOUTRS">
            <li>{{Links.SFS}} – Duy trì một cơ sở dữ liệu của những kẻ gửi thư rác được biết đến. Hữu ích để bảo vệ các trang web và diễn đàn chống lại kẻ gửi thư rác.</li>
            <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Nhận các CIDR từ các ASN, xác định các mối quan hệ các ASN, khám phá vùng các ASN dựa trên các tên mạng, vv.</li>
            <li>{{Links.BGPView}} – Nhận các CIDR từ các ASN, xác định các mối quan hệ các ASN, khám phá vùng các ASN dựa trên các tên mạng, vv.</li>
@@ -528,7 +528,7 @@ Some useful links: |+
          </ul>
        </li>
        <li><span class="comCat">Tài nguyên thông tin và học tập.</span>
-         <ul class="comSub">
+         <ul class="comSub" id="menuILR">
            <li>{{Links.PHP.Earth.Website}} – PHP tài nguyên học tập và thảo luận.</li>
            <li>{{Links.MDN.Homepage}} – Tài nguyên dành cho nhà phát triển, bởi nhà phát triển. Một tài nguyên tuyệt vời để tìm hiểu về HTML, CSS, JavaScript, khả năng truy cập, và hơn thế nữa.</li>
            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Danh sách dễ bị tổn thương</a> – Liệt kê các phiên bản an toàn và không an toàn của các gói khác nhau (HHVM, PHP, phpMyAdmin, Python, vv).</li>

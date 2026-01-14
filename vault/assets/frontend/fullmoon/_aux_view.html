@@ -14,8 +14,8 @@
 <form id="auxForm" action="?cidram-page=aux-view" method="POST">
 <hr />
 <ul class="pieul">
-  <li><span class="comCat s">{label.aux.Create new rule}</span>
-    <ul class="comSub">
+  <li><span class="comCat s" role="region" aria-controls="regionCNR" aria-expanded="false">{label.aux.Create new rule}</span>
+    <ul class="comSub" id="regionCNR">
       <li>
         <div class="iCntr">
           <div class="iLabl s"><label for="ruleName">{label.aux.A name for the new rule}</label></div>
@@ -91,7 +91,7 @@
       <li>
         <div class="iCntr">
           <div class="iLabl s">
-            <select id="act" name="act" title="{label.Action}" class="auto" onchange="javascript:onAuxActionChange(this.value,'','')">
+            <select id="act" name="act" title="{label.Action}" class="auto" onchange="javascript:onAuxActionChange(this.value,'','')" aria-describedby="tipAAC">
               <option value="actWhl">{optActWhl}</option>
               <option value="actGrl">{optActGrl}</option>
               <option value="actBlk" selected>{optActBlk}</option>
@@ -101,7 +101,7 @@
               <option value="actRun">{optActRun}</option>
               <option value="actPro">{optActPro}</option>
             </select><input type="button" onclick="javascript:addCondition('', this.parentElement.parentElement.parentElement.nextSibling.nextSibling.nextSibling.nextSibling.firstChild.nextSibling.firstChild.nextSibling.firstChild.nextSibling.value)" value="{field.Add more conditions} [1]" class="auto" accesskey="1" /><br />
-            <span class="suggestsActive"><small>{tip.Actions menu}</small></span>
+            <span class="suggestsActive"><small id="tipAAC">{tip.Actions menu}</small></span>
           </div>
           <div class="iCntn" id="conditions">
             <div class="flexrow"><select name="conSourceType[]" title="{label.Data source}" class="auto" onchange="javascript:getInputSuggestions(this)">{conSources}</select><select name="conIfOrNot[]" title="{label.Operator}" class="auto"><option value="If" class="ifOrNot">=</option><option value="Not" class="ifOrNot">≠</option></select><input type="text" name="conSourceValue[]" title="{label.Data value}" placeholder="{tip.Specify a value, or leave blank to disregard}" class="flexin" onfocus="javascript:getInputSuggestions(this.previousElementSibling.previousElementSibling)" /></div><div class="suggestsInactive"></div>
@@ -111,8 +111,8 @@
       <li>
         <div class="iCntr">
           <div class="iLabl s">
-            <input type="button" onclick="javascript:addWebhook('')" value="{field.Add webhook} [0]" class="auto" accesskey="0" /><br />
-            <span class="suggestsActive"><small>{tip.Auxiliary Rules Webhooks}</small></span>
+            <input type="button" onclick="javascript:addWebhook('')" value="{field.Add webhook} [0]" class="auto" accesskey="0" aria-describedby="tipARW" /><br />
+            <span class="suggestsActive"><small id="tipARW">{tip.Auxiliary Rules Webhooks}</small></span>
           </div>
           <div class="iCntn" id="webhooks"></div>
         </div>

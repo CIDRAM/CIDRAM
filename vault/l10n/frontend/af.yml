@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Afrikaans language data for the front-end (last modified: 2025.10.22).
+# This file: Afrikaans language data for the front-end (last modified: 2026.01.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -501,8 +501,8 @@ info_cli_you_can_print_: |
 Some useful links: |+
  Nuttige skakels:<br />
      <ul class="pieul">
-       <li><span class="comCat">Gereedskap, hulpbronne, ens vir CIDRAM.</span>
-         <ul class="comSub">
+       <li><span class="comCat" role="region" aria-controls="menuTRCIDRAM" aria-expanded="false">Gereedskap, hulpbronne, ens vir CIDRAM.</span>
+         <ul class="comSub" id="menuTRCIDRAM">
            <li>{{Links.CIDRAM.Bitbucket}} – Bewaarplek rugsteun ligging.</li>
            <li>{{Links.CIDRAM.Codeberg}} – Bewaarplek rugsteun ligging.</li>
            <li>{{Links.CIDRAM.Extras}} – Verskeie ekstras.</li>
@@ -510,14 +510,14 @@ Some useful links: |+
            <li>{{Links.CIDRAM.WordPress}} – WordPress-Plugin vir CIDRAM.</li>
          </ul>
        </li>
-       <li><span class="comCat">Groepe, forums, gemeenskappe, ens.</span>
-         <ul class="comSub">
+       <li><span class="comCat" role="region" aria-controls="menuGFC" aria-expanded="false">Groepe, forums, gemeenskappe, ens.</span>
+         <ul class="comSub" id="menuGFC">
            <li>{{Links.PHP.Earth.Facebook}} – PHP leerhulpbronne en bespreking.</li>
            <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Forum@Stop Forum Spam</a> – Nuttige besprekingsforum oor die stop van spam.</li>
          </ul>
        </li>
-       <li><span class="comCat">Ander nuttige gereedskap, hulpbronne, dienste, ens.</span>
-         <ul class="comSub">
+       <li><span class="comCat" role="region" aria-controls="menuOUTRS" aria-expanded="false">Ander nuttige gereedskap, hulpbronne, dienste, ens.</span>
+         <ul class="comSub" id="menuOUTRS">
            <li>{{Links.SFS}} – Onderhou 'n databasis van bekende forum spammers. Nuttig om webwerwe en forums teen spammers te beskerm.</li>
            <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Gereedskapstel</a> – Kry CIDR's van ASN'e, bepaal ASN-verwantskappe, ontdek ASN's gebaseer op netwerkname, ens.</li>
            <li>{{Links.BGPView}} – Kry CIDR's van ASN'e, bepaal ASN-verwantskappe, ontdek ASN's gebaseer op netwerkname, ens.</li>
@@ -528,7 +528,7 @@ Some useful links: |+
          </ul>
        </li>
        <li><span class="comCat">Inligtings en leerhulpbronne.</span>
-         <ul class="comSub">
+         <ul class="comSub" id="menuILR">
            <li>{{Links.PHP.Earth.Website}} – PHP leerhulpbronne en bespreking.</li>
            <li>{{Links.MDN.Homepage}} – Hulpbronne vir ontwikkelaars, deur ontwikkelaars. Fantastiese hulpbron om te leer oor HTML, CSS, JavaScript, toeganklikheid, en meer.</li>
            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Kwesbaarheidskaarte</a> – Lys veilige/onveilige weergawes van verskeie pakkette (HHVM, PHP, phpMyAdmin, Python, ens).</li>

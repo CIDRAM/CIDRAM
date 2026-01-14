@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Punjabi language data for the front-end (last modified: 2025.10.22).
+# This file: Punjabi language data for the front-end (last modified: 2026.01.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -501,8 +501,8 @@ info_cli_you_can_print_: |
 Some useful links: |+
  ਕੁਝ ਲਾਭਦਾਇਕ ਲਿੰਕ:<br />
      <ul class="pieul">
-       <li><span class="comCat">CIDRAM ਲਈ ਟੂਲ, ਸਰੋਤ, ਆਦਿ।</span>
-         <ul class="comSub">
+       <li><span class="comCat" role="region" aria-controls="menuTRCIDRAM" aria-expanded="false">CIDRAM ਲਈ ਟੂਲ, ਸਰੋਤ, ਆਦਿ।</span>
+         <ul class="comSub" id="menuTRCIDRAM">
            <li>{{Links.CIDRAM.Bitbucket}} – ਰਿਪੋਜ਼ਟਰੀ ਬੈਕਅੱਪ ਟਿਕਾਣਾ।</li>
            <li>{{Links.CIDRAM.Codeberg}} – ਰਿਪੋਜ਼ਟਰੀ ਬੈਕਅੱਪ ਟਿਕਾਣਾ।</li>
            <li>{{Links.CIDRAM.Extras}} – ਕੁਝ ਵਾਧੂ।</li>
@@ -510,14 +510,14 @@ Some useful links: |+
            <li>{{Links.CIDRAM.WordPress}} – CIDRAM ਲਈ ਵਰਡਪ੍ਰੈਸ ਪਲੱਗਇਨ।</li>
          </ul>
        </li>
-       <li><span class="comCat">ਸਮੂਹ, ਫੋਰਮ, ਭਾਈਚਾਰੇ, ਆਦਿ।</span>
-         <ul class="comSub">
+       <li><span class="comCat" role="region" aria-controls="menuGFC" aria-expanded="false">ਸਮੂਹ, ਫੋਰਮ, ਭਾਈਚਾਰੇ, ਆਦਿ।</span>
+         <ul class="comSub" id="menuGFC">
            <li>{{Links.PHP.Earth.Facebook}} – PHP ਸਿੱਖਣ ਦੇ ਸਰੋਤ ਅਤੇ ਚਰਚਾ।</li>
            <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">ਫੋਰਮ@Stop Forum Spam</a> – ਫੋਰਮ ਸਪੈਮ ਨੂੰ ਰੋਕਣ ਬਾਰੇ ਉਪਯੋਗੀ ਚਰਚਾ ਫੋਰਮ।</li>
          </ul>
        </li>
-       <li><span class="comCat">ਹੋਰ ਉਪਯੋਗੀ ਸਾਧਨ, ਸਰੋਤ, ਸੇਵਾਵਾਂ, ਆਦਿ।</span>
-         <ul class="comSub">
+       <li><span class="comCat" role="region" aria-controls="menuOUTRS" aria-expanded="false">ਹੋਰ ਉਪਯੋਗੀ ਸਾਧਨ, ਸਰੋਤ, ਸੇਵਾਵਾਂ, ਆਦਿ।</span>
+         <ul class="comSub" id="menuOUTRS">
            <li>{{Links.SFS}} – ਜਾਣੇ-ਪਛਾਣੇ ਫੋਰਮ ਸਪੈਮਰਾਂ ਦੇ ਡੇਟਾਬੇਸ ਨੂੰ ਕਾਇਮ ਰੱਖਦਾ ਹੈ। ਵੈੱਬਸਾਈਟਾਂ ਅਤੇ ਫੋਰਮਾਂ ਨੂੰ ਸਪੈਮਰਾਂ ਤੋਂ ਬਚਾਉਣ ਲਈ ਉਪਯੋਗੀ।</li>
            <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP ਟੂਲਕਿੱਟ</a> – ASN ਤੋਂ CIDR ਪ੍ਰਾਪਤ ਕਰੋ, ASN ਸਬੰਧਾਂ ਨੂੰ ਨਿਰਧਾਰਤ ਕਰੋ, ਨੈੱਟਵਰਕ ਨਾਮਾਂ ਦੇ ਅਧਾਰ ਤੇ ASN ਖੋਜੋ, ਆਦਿ।</li>
            <li>{{Links.BGPView}} – ASN ਤੋਂ CIDR ਪ੍ਰਾਪਤ ਕਰੋ, ASN ਸਬੰਧਾਂ ਨੂੰ ਨਿਰਧਾਰਤ ਕਰੋ, ਨੈੱਟਵਰਕ ਨਾਮਾਂ ਦੇ ਅਧਾਰ ਤੇ ASN ਖੋਜੋ, ਆਦਿ।</li>
@@ -528,7 +528,7 @@ Some useful links: |+
          </ul>
        </li>
        <li><span class="comCat">ਜਾਣਕਾਰੀ ਅਤੇ ਸਿੱਖਣ ਦੇ ਸਰੋਤ।</span>
-         <ul class="comSub">
+         <ul class="comSub" id="menuILR">
            <li>{{Links.PHP.Earth.Website}} – PHP ਸਿੱਖਣ ਦੇ ਸਰੋਤ ਅਤੇ ਚਰਚਾ।</li>
            <li>{{Links.MDN.Homepage}} – ਡਿਵੈਲਪਰਾਂ ਦੁਆਰਾ, ਡਿਵੈਲਪਰਾਂ ਲਈ ਸਰੋਤ। HTML, CSS, JavaScript, ਪਹੁੰਚਯੋਗਤਾ, ਅਤੇ ਹੋਰ ਬਹੁਤ ਕੁਝ ਬਾਰੇ ਸਿੱਖਣ ਲਈ ਇੱਕ ਸ਼ਾਨਦਾਰ ਸਰੋਤ।</li>
            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">ਕਮਜ਼ੋਰੀ ਚਾਰਟ</a> – ਵੱਖ-ਵੱਖ ਪੈਕੇਜਾਂ ਦੇ ਸੁਰੱਖਿਅਤ/ਅਸੁਰੱਖਿਅਤ ਸੰਸਕਰਣਾਂ ਨੂੰ ਸੂਚੀਬੱਧ ਕਰਦਾ ਹੈ (HHVM, PHP, phpMyAdmin, Python, ਆਦਿ)।</li>

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bosnian language data for the front-end (last modified: 2025.10.22).
+# This file: Bosnian language data for the front-end (last modified: 2026.01.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -506,8 +506,8 @@ info_cli_you_can_print_: |
 Some useful links: |+
  Neki korisni linkovi:<br />
      <ul class="pieul">
-       <li><span class="comCat">Alati, resursi, itd. za CIDRAM.</span>
-         <ul class="comSub">
+       <li><span class="comCat" role="region" aria-controls="menuTRCIDRAM" aria-expanded="false">Alati, resursi, itd. za CIDRAM.</span>
+         <ul class="comSub" id="menuTRCIDRAM">
            <li>{{Links.CIDRAM.Bitbucket}} – Lokacija sigurnosne kopije repozitorija.</li>
            <li>{{Links.CIDRAM.Codeberg}} – Lokacija sigurnosne kopije repozitorija.</li>
            <li>{{Links.CIDRAM.Extras}} – Razni dodaci.</li>
@@ -515,14 +515,14 @@ Some useful links: |+
            <li>{{Links.CIDRAM.WordPress}} – WordPress dodatak za CIDRAM.</li>
          </ul>
        </li>
-       <li><span class="comCat">Grupe, forumi, zajednice, itd.</span>
-         <ul class="comSub">
+       <li><span class="comCat" role="region" aria-controls="menuGFC" aria-expanded="false">Grupe, forumi, zajednice, itd.</span>
+         <ul class="comSub" id="menuGFC">
            <li>{{Links.PHP.Earth.Facebook}} – PHP resursi za učenje i diskusija.</li>
            <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Forum@Stop Forum Spam</a> – Koristan forum za diskusiju o zaustavljanju neželjene pošte na forumu.</li>
          </ul>
        </li>
-       <li><span class="comCat">Drugi korisni alati, resursi, usluge, itd.</span>
-         <ul class="comSub">
+       <li><span class="comCat" role="region" aria-controls="menuOUTRS" aria-expanded="false">Drugi korisni alati, resursi, usluge, itd.</span>
+         <ul class="comSub" id="menuOUTRS">
            <li>{{Links.SFS}} – Održava bazu podataka poznatih pošiljatelja neželjene pošte na forumima. Korisno za zaštitu web stranica i foruma od spamera.</li>
            <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Dobijte CIDR-ove od ASN-ova, odredite ASN odnose, otkrijte ASN-ove na osnovu naziva mreža, itd.</li>
            <li>{{Links.BGPView}} – Dobijte CIDR-ove od ASN-ova, odredite ASN odnose, otkrijte ASN-ove na osnovu naziva mreža, itd.</li>
@@ -533,7 +533,7 @@ Some useful links: |+
          </ul>
        </li>
        <li><span class="comCat">Informativni i obrazovni resursi.</span>
-         <ul class="comSub">
+         <ul class="comSub" id="menuILR">
            <li>{{Links.PHP.Earth.Website}} – PHP resursi za učenje i diskusija.</li>
            <li>{{Links.MDN.Homepage}} – Resursi za programere, od programera. Fantastičan resurs za učenje o HTML-u, CSS-u, JavaScriptu, pristupačnosti, i još mnogo čemu.</li>
            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Grafikoni ranjivosti</a> – Navodi sigurne/nesigurne verzije različitih paketa (HHVM, PHP, phpMyAdmin, Python, itd).</li>

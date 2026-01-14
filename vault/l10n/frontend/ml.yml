@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malayalam language data for the front-end (last modified: 2025.10.22).
+# This file: Malayalam language data for the front-end (last modified: 2026.01.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -505,8 +505,8 @@ info_cli_you_can_print_: |
 Some useful links: |+
  ചില ഉപയോഗപ്രദമായ ലിങ്കുകൾ:<br />
      <ul class="pieul">
-       <li><span class="comCat">CIDRAM-നുള്ള ഉപകരണങ്ങൾ, വിഭവങ്ങൾ, മുതലായവ.</span>
-         <ul class="comSub">
+       <li><span class="comCat" role="region" aria-controls="menuTRCIDRAM" aria-expanded="false">CIDRAM-നുള്ള ഉപകരണങ്ങൾ, വിഭവങ്ങൾ, മുതലായവ.</span>
+         <ul class="comSub" id="menuTRCIDRAM">
            <li>{{Links.CIDRAM.Bitbucket}} – റിപ്പോസിറ്ററി ബാക്കപ്പ് സ്ഥാനം.</li>
            <li>{{Links.CIDRAM.Codeberg}} – റിപ്പോസിറ്ററി ബാക്കപ്പ് സ്ഥാനം.</li>
            <li>{{Links.CIDRAM.Extras}} – വിവിധ അധികങ്ങൾ.</li>
@@ -514,14 +514,14 @@ Some useful links: |+
            <li>{{Links.CIDRAM.WordPress}} – CIDRAM-നുള്ള വേർഡ്പ്രസ്സ് പ്ലഗിൻ.</li>
          </ul>
        </li>
-       <li><span class="comCat">ഗ്രൂപ്പുകൾ, ഫോറങ്ങൾ, കമ്മ്യൂണിറ്റികൾ, മുതലായവ.</span>
-         <ul class="comSub">
+       <li><span class="comCat" role="region" aria-controls="menuGFC" aria-expanded="false">ഗ്രൂപ്പുകൾ, ഫോറങ്ങൾ, കമ്മ്യൂണിറ്റികൾ, മുതലായവ.</span>
+         <ul class="comSub" id="menuGFC">
            <li>{{Links.PHP.Earth.Facebook}} – PHP പഠന വിഭവങ്ങളും ചർച്ചയും.</li>
            <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">ഫോറം@Stop Forum Spam</a> – ഫോറം സ്പാം നിർത്തുന്നതിനെക്കുറിച്ചുള്ള ഉപയോഗപ്രദമായ ചർച്ച ഫോറം.</li>
          </ul>
        </li>
-       <li><span class="comCat">മറ്റ് ഉപയോഗപ്രദമായ ഉപകരണങ്ങൾ, വിഭവങ്ങൾ, സേവനങ്ങൾ, മുതലായവ.</span>
-         <ul class="comSub">
+       <li><span class="comCat" role="region" aria-controls="menuOUTRS" aria-expanded="false">മറ്റ് ഉപയോഗപ്രദമായ ഉപകരണങ്ങൾ, വിഭവങ്ങൾ, സേവനങ്ങൾ, മുതലായവ.</span>
+         <ul class="comSub" id="menuOUTRS">
            <li>{{Links.SFS}} – അറിയപ്പെടുന്ന ഫോറം സ്പാമർമാരുടെ ഒരു ഡാറ്റാബേസ് പരിപാലിക്കുന്നു. സ്പാമർമാരിൽ നിന്ന് വെബ്‌സൈറ്റുകളെയും ഫോറങ്ങളെയും സംരക്ഷിക്കുന്നതിന് ഉപയോഗപ്രദമാണ്.</li>
            <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP ടൂൾകിറ്റ്</a> – ASN-കളിൽ നിന്ന് CIDR-കൾ നേടുക, ASN ബന്ധങ്ങൾ നിർണ്ണയിക്കുക, നെറ്റ്‌വർക്ക് നാമങ്ങളെ അടിസ്ഥാനമാക്കി ASN-കൾ കണ്ടെത്തുക, തുടങ്ങിയവ.</li>
            <li>{{Links.BGPView}} – ASN-കളിൽ നിന്ന് CIDR-കൾ നേടുക, ASN ബന്ധങ്ങൾ നിർണ്ണയിക്കുക, നെറ്റ്‌വർക്ക് നാമങ്ങളെ അടിസ്ഥാനമാക്കി ASN-കൾ കണ്ടെത്തുക, തുടങ്ങിയവ.</li>
@@ -532,7 +532,7 @@ Some useful links: |+
          </ul>
        </li>
        <li><span class="comCat">വിവര, പഠന വിഭവങ്ങൾ.</span>
-         <ul class="comSub">
+         <ul class="comSub" id="menuILR">
            <li>{{Links.PHP.Earth.Website}} – PHP പഠന വിഭവങ്ങളും ചർച്ചയും.</li>
            <li>{{Links.MDN.Homepage}} – ഡെവലപ്പർമാർക്കുള്ള ഉറവിടങ്ങൾ, ഡെവലപ്പർമാർ മുഖേന. HTML, CSS, JavaScript, ആക്‌സസിബിലിറ്റി മറ്റും എന്നിവയെക്കുറിച്ചും പഠിക്കുന്നതിനുള്ള ഒരു മികച്ച ഉറവിടം.</li>
            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">ദുർബലതാ ചാർട്ടുകൾ</a> – വിവിധ പാക്കേജുകൾക്കായുള്ള (HHVM, PHP, phpMyAdmin, Python, മുതലായവ) സുരക്ഷിത/സുരക്ഷിതമല്ലാത്ത പതിപ്പുകൾ പട്ടികപ്പെടുത്തുന്നു.</li>

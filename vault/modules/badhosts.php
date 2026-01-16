@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bad hosts blocker module (last modified: 2025.08.11).
+ * This file: Bad hosts blocker module (last modified: 2026.01.16).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -65,19 +65,24 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     $this->trigger(preg_match(
         '~prking\.com\.au$|' .
         '(?:qvt|telsp)\.net\.br$|' .
-        '(?:\.(?:giga-dns|oodle|pointandchange|solidseo(?:dedicated|vps)?|to' .
-        'psy|vadino)|23gb|35up|accelovation|barefruit|bestprice|colo\.iinet|' .
-        'detangled|kimsufi|lightspeedsystems|lipperhey|mantraonline|netcombe' .
-        'r|myforexvps|page-store|setooz|stretchoid|technicolor)\.com$|' .
-        'poneytelecom\.eu$|(?:4u|netadvert|onlinehome-server)\.info$|(?:3fn|' .
-        'buyurl|dragonara|isnet|mfnx|onlinehome-server)\.net$|' .
+        '(?:' .
+            '\.(?:giga-dns|oodle|pointandchange|solidseo(?:dedicated|vps)?|topsy|vadino)|23gb|35up|' .
+            'accelovation|barefruit|bestprice|' .
+            'colo\.iinet|detangled|kimsufi|' .
+            'lightspeedsystems|lipperhey|mantraonline|myforexvps|netcomber|page-store|' .
+            'setooz|stretchoid|technicolor|watadcash'. 
+        ')\.com$|' .
+        'poneytelecom\.eu$|' .
+        '(?:4u|netadvert|onlinehome-server)\.info$|' .
+        '(?:3fn|buyurl|dragonara|isnet|mfnx|onlinehome-server)\.net$|' .
         'seomoz\.org$|' .
         '(?:dimargroup|itrack|mail|rulinki|vipmailoffer)\.ru$|' .
-        'b(?:oardreader|reakingtopics|uysellsales)|c(?:eptro|heapseovps|ybe' .
-        'r-uslugi)|drugstore|liwio\.|luxuryhandbag|s(?:emalt|mileweb\.com\.' .
-        'ua)|exabot~',
+        'b(?:oardreader|reakingtopics|uysellsales)|' .
+        'c(?:eptro|heapseovps|yber-uslugi)|' .
+        'drugstore|' .
+        'l(?:iwio\.|uxuryhandbag)~',
         $HN
-    ), 'SEO/Bothost/Scraper/Spamhost'); // 2024.08.21 mod 2024.09.12
+    ), 'SEO/Bothost/Scraper/Spamhost'); // 2024.08.21 mod 2026.01.16
 
     $this->trigger(preg_match('~cjh-law\.com$~', $HN), 'Phisher / Phishing Host'); // 2017.02.14
 
@@ -111,9 +116,9 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     $this->trigger(preg_match('~(?:iweb|privatedns)\.com$|iweb\.ca$|^(?:www\.)?iweb~', $HN), 'Domain Snipers'); // 2017.02.15 mod 2021.06.28
 
     $this->trigger(preg_match('~amazonaws\.com$~', $HN) && (
-        !preg_match('~alexa|postrank|twitt(?:urly|erfeed)|bitlybot|unwindfetchor|metauri|pinterest|slack|silk-accelerated=true$~', $UANoSpace) &&
+        !preg_match('~alexa|bitlybot|metauri|pinterest|postrank|silk-accelerated=true$|slack|twitt(?:urly|erfeed)|unwindfetchor|uptimerobot~', $UANoSpace) &&
         !preg_match('~(?:Feedspot http://www\.feedspot\.com|developers\.snap\.com/robots)$~', $this->BlockInfo['UA'])
-    ), 'Amazon Web Services'); // 2023.02.28
+    ), 'Amazon Web Services'); // 2023.02.28 mod 2026.01.16
 
     $this->trigger(preg_match('/\.local$/', $HN), 'Spoofed/Fake Hostname'); // 2017.02.06
 

@@ -664,20 +664,21 @@ IPv6-Other:
    Checksum: "0f5856974a85c2cb0445ce7cc1d486194a2296311b2290abc1b7a5a0fb0e7eaf:5888"
    Used with: "ipv6"
 Bypasses:
- Version: "2025.348.0"
+ Version: "2026.16.0"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "^3"
   l10n/core/{lang}: ">=2025.208"
  When Update Succeeds:
   - "if {Components.Meta.Bypasses.Version}<2025.348&&{Components.RemoteMeta.Bypasses.Version}>=2025.348 then queue message <span dir="ltr" lang="en-AU">[Bypasses 2025.348.0] Added a new default signature bypass, "iCloud (iPhone Safari Bypass)" (configuration settings should be revised accordingly).</span>"
+  - "if {Components.Meta.Bypasses.Version}<2026.16&&{Components.RemoteMeta.Bypasses.Version}>=2026.16 then queue message <span dir="ltr" lang="en-AU">[Bypasses 2026.16.0] Added a new default signature bypass, "UptimeRobot" (configuration settings should be revised accordingly).</span>"
  Files:
   bypasses.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/bypasses.php"
-   Checksum: "05d97ab93a3219f2304bad4885d1f70e88caa4c0a76a219429f917f06fe5ec65:11100"
+   Checksum: "47a66902c6dc59fc277b0eefa12ce19bcd68b72b150aeea1884f8be2935ed081:11391"
   imports/bypasses.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/imports/bypasses.yml"
-   Checksum: "6169beee1cf46aea08dcab426c03e7c84a6c65549b74f8a6bf63fc917cb77026:1110"
+   Checksum: "361ac7d453f8018993399c167ed2416803147d881bedf98bf4f77bc9d3c6156e:1157"
    Used with: "imports"
 l10n/core/af:
  Extended Description: "Afrikaanse lokalisering"
@@ -1354,14 +1355,14 @@ AbuseIPDB module:
    Checksum: "fe196091ff545d335c1b494fc5a3f628325e4750ccebb74e6401c54cc60a87e1:10807"
 Bad hosts blocker module:
  False Positive Risk: "Medium"
- Version: "2025.224.0"
+ Version: "2026.16.0"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "^3"
  Files:
   modules/badhosts.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/badhosts.php"
-   Checksum: "2b57a4ab268592074f0255910eb36ad1029ae3212130e62c424903fcab90ef60:8753"
+   Checksum: "98b39ac248f2d1d226d5f7be03fbf65745263feb143a90b372f56a5c78a294bf:8843"
    Used with: "modules"
 Bad TLDs blocker module:
  False Positive Risk: "Low"
@@ -1574,7 +1575,7 @@ BOBUAM:
   Optional module which detects unwanted bots, old browsers, and performs some sanity checks.<br />Contains some data from
   the Wordpress plugin "Stop Bad Bots" by William "Bill" Minozzi.<br />(A few webservices bots might need bypasses).
  False Positive Risk: "Medium"
- Version: "2025.364.0"
+ Version: "2026.16.0"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "^3.7"
@@ -1591,7 +1592,7 @@ BOBUAM:
    Used with: "imports"
   modules/bobuam.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/bobuam.php"
-   Checksum: "69f42a7ddf01990126175b12d900b28ba54383028c4293abb8bed6fd4a6eba5c:48795"
+   Checksum: "77d391eb9a5a321535b9c666dc535e3cf59efaeb68a48c9324038faa50eca198:48785"
    Used with: "modules"
 theme/bluemetal:
  Name: "Theme: Blue Metal"

@@ -503,4 +503,5 @@
 - [2025.12.15]: Added a default signature bypass for iCloud (used by the Safari browser when running on an iPhone; #654).
 - [2025.12.30]: Common classes package update.
 - [2026.01.14]: Added aria expanded and controls attributes to some of the clickable menus at the front-end.
+- [2026.01.16]: Added a default signature bypass for UptimeRobot (#656).
 - *Plus all the regular signature updates.*

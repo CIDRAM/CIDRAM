@@ -521,4 +521,5 @@
 - [2025.12.30]: Common classes package update.
 - [2026.01.14]: At the front-end calculator page, to improve the readability of related data when hovering over a row, it'll now be highlighted.
 - [2026.01.14]: Added aria expanded and controls attributes to some of the clickable menus at the front-end.
+- [2026.01.16]: Added a default signature bypass for UptimeRobot (#656).
 - *Plus all the regular signature updates.*

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2025.12.23).
+# This file: Defaults file (last modified: 2026.01.19).
 ##/
 
 Config Defaults:
@@ -1390,4 +1390,4 @@ Links:
 Extra SVG Icons:
  IP Testing: "<span onclick="javascript:{document.getElementById('ipTestFormInput').value='%s';document.getElementById('ipTestForm').submit()}" title="{link.IP Testing}" class="translateIcon navicon test" tabindex="0" role="button"></span>"
 SVGs form data:
- IP Testing: "<form id="ipTestForm" action="?cidram-page=ip-testing" method="POST" style="display:none"><input type="hidden" name="ip-addr" id="ipTestFormInput" /><input type="hidden" name="TestsSwitch" value="on" /></form>"
+ IP Testing: "<form id="ipTestForm" action="?cidram-page=ip-testing" method="POST" style="display:none"><input type="hidden" name="ip-addr-focus" id="ipTestFormInput" /><input type="hidden" name="TestsSwitch" value="on" /></form>"

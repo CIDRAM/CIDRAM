@@ -495,6 +495,7 @@
 
 #### Bugs fixed.
 - [2025.12.27]: 2FA status label typo fixed.
+- [2026.01.19]: Field populated by the IP testing SVG displayed next to IP addresses at the logs page when using fancy text formatting was incorrectly named; Fixed.
 
 #### Other changes.
 - [2025.11.02]: Some minor refactoring.

@@ -1,7 +1,7 @@
-      <div id="A{IPID}" class="h1 s">
+      <div id="A{IPID}" class="h1 s canHighlight">
         {IPAddrLink} {ExtraSvgIcons}<span class="navicon clipboard translateIcon" onclick="javascript:if(navigator.clipboard){navigator.clipboard.writeText('{IPAddr}');getElementById('{ID}_copied').className='sFade'}else{getElementById('{ID}_failed').style.className='sFade'}" tabindex="0" role="button"></span><span id="{ID}_copied" class="sHide" onanimationend="javascript:this.className='sHide'"><span class="txtGn">{response.Copied}</span></span><span id="{ID}_failed" class="sHide" onanimationend="javascript:this.className='sHide'"><span class="txtRd">{response.Failed}</span></span>
         <div class="mob {StatClass}">{Status}</div>
       </div>
-      <div id="B{IPID}" class="h1 {StatClass} big">{Status}</div>
-      <div id="C{IPID}" class="h1 s big">{Expiry}</div>
-      <div id="D{IPID}" class="h1f s"><div class="mob">{Expiry}</div>{Options}</div>
+      <div id="B{IPID}" class="h1 {StatClass} big canHighlight">{Status}</div>
+      <div id="C{IPID}" class="h1 s big canHighlight">{Expiry}</div>
+      <div id="D{IPID}" class="h1f s canHighlight"><div class="mob">{Expiry}</div>{Options}</div>

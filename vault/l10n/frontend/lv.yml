@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2026.01.14).
+# This file: Latvian language data for the front-end (last modified: 2026.01.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -1033,6 +1033,7 @@ tip:
  Accounts: "Kontu lapa ļauj jums kontrolēt, kurš var ielogoties CIDRAM."
  Actions menu: "Bloķēšana parakstu skaitam pievieno 1. Apiešana no parakstu skaita atskaita 1. Baltais saraksts iestata parakstu skaitu uz 0 un pārtrauc apstrādi, tādējādi pilnībā izlaižot visus turpmākos palīgnoteikumus. Pelēkais saraksts iestata parakstu skaitu uz 0, bet nepārtrauc apstrādi. Profilēšana neietekmē parakstu skaitu, bet ir noderīga, ja var būt nepieciešama sarežģītāka loģika, lai noteiktu, vai veikt cita veida darbības, jo ģenerētos profilus varētu sasaistīt ar turpmāko palīgnoteikumu nosacījumiem. Pēc apstrādes, ja parakstu skaits ir 1 vai lielāks, pieprasījums tiks bloķēts."
  Aggregator: "Apkopotājs ļauj jums izteikt IP, CIDR, un tīkla maskas iespējami mazākā veidā. Ievadiet apkopojamos datus un nospiediet "Labi"."
+ An accepted value is any CIDR with a range that covers the IP address of the request: "Pieņemta vērtība ir jebkura CIDR ar diapazonu, kas aptver pieprasījuma IP adresi. Piemēram, 1.2.3.4 gadījumā varētu izmantot 1.2.3.0/24, 1.2.0.0/16, 1.0.0.0/8, utt. Lai izvairītos no kļūdaini pozitīviem, šaurāki diapazoni (piemēram, 1.2.3.4/32) parasti ir vēlamāki par plašākiem diapazoniem (piemēram, 0.0.0.0/1). Kalkulatora lapu var izmantot lai atrastu, kuru CIDR diapazoni aptver noteiktu IP adresi."
  Auxiliary Rules Modes: "Skatīšanas režīmā palīgnoteikumi tiek parādīti kā kompakts saraksts ērtai lasīšanai. Sarakstā esošos noteikumus var izvērst un, noklikšķinot uz tiem, var parādīt sīkāku informāciju. Noklikšķinot uz trigrama (☰), tiks parādītas opcijas noteikuma eksportēšanai vai dzēšanai. Noteikumus var pārkārtots, izmantojot vilkšanas un nomešanas funkciju, velkot noteikumu no tā esošās pozīcijas uz vēlamo pozīciju. Rediģēšanas režīms ir nepieciešams, lai modificētu palīgnoteikumus, rediģējami lauki un opcijas, lai pievienotu jaunus nosacījumus, tīmekļa āķus, vai citu loģiku noteikumiem ja nepieciešams, kas sniegta lapā. Jaunus palīgnoteikumus var izveidot, izmantojot jebkuru no šiem režīmiem."
  Auxiliary Rules Priority: "Prioritāte (augstākais➡(vienāds🔄ekvivalents)➡zemākais):"
  Auxiliary Rules Webhooks: "Kad tiek iedarbināts palīgnoteikums, CIDRAM mēģinās paziņot visiem saistītajiem tīmekļa āķiem par notikumu. Webhook ir URL, kas spēj saņemt POST datus, un tas varētu būt noderīgs ja pilnīgi citā tīklā nekā CIDRAM tiek mitināts ārējs pakalpojums, lietotne, skripts utt, kuram vēlaties apstrādāt CIDRAM ģenerētos datus par pieprasījumu."

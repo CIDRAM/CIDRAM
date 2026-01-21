@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2026.01.14).
+# This file: Vietnamese language data for the front-end (last modified: 2026.01.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -996,6 +996,7 @@ tip:
  Accounts: "Trang tài khoản cho phép bạn kiểm soát những người có thể truy cập các front-end CIDRAM."
  Actions menu: "Chặn sẽ thêm 1 vào số lượng chữ ký. Đi qua sẽ trừ 1 vào số lượng chữ ký. Danh sách trắng đặt số lượng chữ ký thành 0 và chấm dứt quá trình xử lý, do đó bỏ qua hoàn toàn mọi quy tắc tiếp theo. Danh sách xám đặt số lượng chữ ký thành 0, nhưng không chấm dứt quá trình xử lý. Việc lập hồ sơ không ảnh hưởng đến số lượng chữ ký, nhưng hữu ích khi cần logic phức tạp hơn để xác định xem có nên thực hiện các loại hành động khác hay không, vì các hồ sơ được tạo có thể được liên kết với các điều kiện của các quy tắc tiếp theo. Sau khi xử lý, nếu số lượng chữ ký là 1 hoặc lớn hơn, yêu cầu sẽ bị chặn."
  Aggregator: "Tập hợp cho phép bạn thể hiện các IP, CIDR, và mặt nạ mạng theo cách nhỏ nhất có thể. Nhập dữ liệu được tập hợp và nhấn "OK"."
+ An accepted value is any CIDR with a range that covers the IP address of the request: "Giá trị được chấp nhận là bất kỳ CIDR nào có phạm vi bao phủ địa chỉ IP của yêu cầu. Ví dụ, 1.2.3.0/24, 1.2.0.0/16, 1.0.0.0/8, vv sẽ được chấp nhận cho 1.2.3.4. Để tránh kết quả sai tích cực, các phạm vi hẹp hơn (ví dụ, 1.2.3.4/32) thường được ưu tiên hơn các phạm vi rộng hơn (ví dụ, 0.0.0.0/1). Trang máy tính có thể được sử dụng để tìm ra các dải CIDR nào bao phủ một địa chỉ IP cụ thể."
  Auxiliary Rules Modes: "Chế độ xem hiển thị các quy tắc phụ trợ dưới dạng danh sách nhỏ gọn để dễ đọc. Bạn có thể mở rộng các quy tắc trong danh sách và hiển thị thêm thông tin chi tiết bằng cách nhấp vào chúng. Các tùy chọn để xuất hoặc xóa quy tắc sẽ được hiển thị khi nhấp vào biểu tượng tam giác (☰). Có thể thay đổi thứ tự các quy tắc bằng cách kéo và thả, kéo một quy tắc từ vị trí hiện tại đến vị trí mong muốn. Chế độ chỉnh sửa là cần thiết để sửa đổi các quy tắc phụ trợ, các trường có thể chỉnh sửa và tùy chọn để thêm điều kiện mới, webhook, hoặc logic khác vào các quy tắc khi cần thiết được cung cấp trên trang. Có thể tạo các quy tắc phụ trợ mới thông qua cả hai chế độ."
  Auxiliary Rules Priority: "Sự ưu tiên (cao nhất➡(công bằng🔄tương đương)➡thấp nhất):"
  Auxiliary Rules Webhooks: "Khi một quy tắc được đáp ứng, CIDRAM sẽ cố gắng thông báo cho bất kỳ webhooks nào được kết nối về sự kiện này. Webhook là một URL có khả năng nhận dữ liệu POST, và có thể hữu ích nếu có một dịch vụ, ứng dụng, tập lệnh, vv. bên ngoài được lưu trữ trên một mạng hoàn toàn khác với CIDRAM, mà bạn muốn xử lý dữ liệu do CIDRAM tạo ra về yêu cầu đó."

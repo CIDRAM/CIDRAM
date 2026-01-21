@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2026.01.14).
+# This file: Polish language data for the front-end (last modified: 2026.01.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -1055,6 +1055,7 @@ tip:
  Accounts: "Strona kont pozwala kontrolować, kto może uzyskać dostęp do interfejsu użytkownika CIDRAM."
  Actions menu: "Blokowanie dodaje 1 do liczby podpisów. Obejście powoduje odjęcie 1 od liczby podpisów. Biała lista ustawia liczbę podpisów na 0 i przerywa przetwarzanie, pomijając w ten sposób wszelkie kolejne reguły. Szara lista ustawia liczbę podpisów na 0, ale nie przerywa przetwarzania. Profilowanie nie ma wpływu na liczbę podpisów, ale jest przydatne gdy do ustalenia czy należy wykonać inne rodzaje działań może być potrzebna bardziej złożona logika, ponieważ wygenerowane profile mogą być powiązane z warunkami kolejnych reguł. Po przetworzeniu, jeżeli liczba podpisów wynosi 1 lub więcej, żądanie zostanie zablokowane."
  Aggregator: "Agregator pozwala wyrażać adresy IP, CIDRy, i maski sieci w możliwie najmniejszy sposób. Wprowadź dane, które mają zostać zagregowane, i naciśnij „OK”."
+ An accepted value is any CIDR with a range that covers the IP address of the request: "Akceptowaną wartością jest dowolny CIDR, którego zakres obejmuje adres IP żądania. Np., 1.2.3.0/24, 1.2.0.0/16, 1.0.0.0/8, itd będą akceptowane dla 1.2.3.4. Aby uniknąć wyników fałszywie dodatnich, zazwyczaj lepiej jest stosować węższe zakresy (np., 1.2.3.4/32) niż szersze (np., 0.0.0.0/1). Na stronie kalkulatora można sprawdzić, które CIDR-y obejmują zakresy obejmujące określony adres IP."
  Auxiliary Rules Modes: "Tryb wyświetlania wyświetla reguły pomocnicze w postaci kompaktowej listy, łatwej do odczytania. Klikając na zasady, możesz je rozwinąć i wyświetlić dalsze szczegóły. Opcje eksportu lub usunięcia reguły zostaną wyświetlone po kliknięciu trigramu (☰). Reguły można zmieniać kolejność, przeciągając regułę z jej bieżącej pozycji na żądaną pozycję. Do modyfikacji reguł pomocniczych wymagany jest tryb edycji, edytowalne pola i opcje umożliwiające dodawanie nowych warunków, webhooków, lub innej logiki do reguł, zależnie od potrzeb, dostępnych na stronie. Nowe reguły pomocnicze można tworzyć w obu trybach."
  Auxiliary Rules Priority: "Priorytet (najwyższy➡(równy🔄odpowiednik)➡najniższy):"
  Auxiliary Rules Webhooks: "Gdy reguła jest spełniona, CIDRAM podejmie próbę powiadomienia wszystkich podłączonych haczyków internetowych o zdarzeniu. Webhook to adres URL zdolny do odbierania danych przesyłanych metodą POST i może być przydatny, jeśli istnieje zewnętrzna usługa, aplikacja, skrypt itp. hostowane w zupełnie innej sieci niż CIDRAM, które mają przetwarzać dane generowane przez CIDRAM dotyczące danego żądania."

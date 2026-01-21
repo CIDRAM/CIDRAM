@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2026.01.14).
+# This file: Dutch language data for the front-end (last modified: 2026.01.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -1023,6 +1023,7 @@ tip:
  Accounts: "De accounts pagina stelt u in staat om te bepalen wie toegang heeft tot de CIDRAM frontend."
  Actions menu: "Bij blokkeren wordt er 1 aan het aantal signatures toegevoegd. Bij omzeilen wordt er 1 afgetrokken van het aantal signatures. Met de witte lijst wordt het aantal signatures op 0 gezet en wordt de verwerking beëindigd, en dus worden alle volgende regels volledig overgeslagen. Met de grijze lijst wordt het aantal signatures op 0 gezet, maar de verwerking is niet beëindigd. Profilering heeft geen invloed op het aantal signatures, maar is nuttig wanneer complexere logica nodig is om te bepalen of andere soorten acties moeten worden uitgevoerd, omdat gegenereerde profielen kunnen worden gekoppeld aan de voorwaarden van daaropvolgende regels. Als het aantal signatures na verwerking 1 of meer bedraagt, wordt het verzoek geblokkeerd."
  Aggregator: "Met de aggregator kunt u IP's, CIDR's, un netmaskers zo de kleinste mogelijke weg uitdrukken. Voer de gegevens in die moeten worden geaggregeerd en druk op "OK"."
+ An accepted value is any CIDR with a range that covers the IP address of the request: "Een acceptabele waarde is elke CIDR waarvan het bereik het IP-adres van het verzoek omvat. B.v., 1.2.3.0/24, 1.2.0.0/16, 1.0.0.0/8, enz zouden worden geaccepteerd voor 1.2.3.4. Om valse positieven te voorkomen, zijn smallere bereiken (b.v., 1.2.3.4/32) over het algemeen te verkiezen boven bredere bereiken (b.v., 0.0.0.0/1). Met de calculator kunt u achterhalen welke CIDR-bereiken een specifiek IP-adres omvatten."
  Auxiliary Rules Modes: "In de weergavemodus worden aanvullende regels weergegeven in een compacte lijst, zodat u ze gemakkelijk kunt lezen. Door erop te klikken kunt u de regels in de lijst uitvouwen en krijgt u meer details te zien. Wanneer u op het trigram (☰) klikt, worden opties voor het exporteren of verwijderen van een regel weergegeven. U kunt de volgorde van regels wijzigen door ze te slepen en neer te zetten, een regel van de huidige positie naar de gewenste positie slepen. De bewerkingsmodus is vereist om aanvullende regels, bewerkbare velden en opties te wijzigen en nieuwe voorwaarden, webhooks, of andere logica aan de regels toe te voegen indien nodig die op de pagina worden weergegeven. Nieuwe aanvullende regels kunnen via beide modi worden gemaakt."
  Auxiliary Rules Priority: "Prioriteit (hoogste➡(gelijk🔄gelijkwaardig)➡laagste):"
  Auxiliary Rules Webhooks: "Wanneer een regel wordt geactiveerd, CIDRAM probeert alle aangesloten webhooks op de hoogte te stellen van het evenement. Een webhook is een URL die POST-gegevens kan ontvangen, en kan nuttig zijn als er een externe service, app, script, enz  wordt gehost op een compleet ander netwerk dan CIDRAM en u wilt dat deze de door CIDRAM gegenereerde gegevens over de aanvraag verwerkt."

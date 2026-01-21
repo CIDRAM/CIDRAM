@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Galician language data for the front-end (last modified: 2026.01.14).
+# This file: Galician language data for the front-end (last modified: 2026.01.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -1029,6 +1029,7 @@ tip:
  Accounts: "A páxina de contas permítelle controlar quen pode acceder ao front-end de CIDRAM."
  Actions menu: "Bloquea engade 1 aos sinaturas contan. Bypass resta 1 dos sinaturas contan. Lista branca define os sinaturas contan en 0 e finaliza o procesamento, omitindo así por completo calquera regra posterior. Lista gris define os sinaturas contan en 0, pero non finaliza o procesamento. Perfila non afecta ás sinaturas contan, pero é útil cando se pode precisar unha lóxica máis complexa para determinar se se deben realizar outros tipos de accións, xa que os perfís xerados poderían estar encadeados ás condicións das regras posteriores. Despois do procesamento, se os sinaturas contan é 1 ou superior, a solicitude bloquearase."
  Aggregator: "O agregador permítelle expresar enderezos IP, CIDR, e máscaras de rede da forma máis pequena posible. Introduza os datos a agregar e prema "OK"."
+ An accepted value is any CIDR with a range that covers the IP address of the request: "Un valor aceptado é calquera CIDR cun rango que abrangue o enderezo IP da solicitude. Por exemplo, 1.2.3.0/24, 1.2.0.0/16, 1.0.0.0/8, etc serían aceptados para 1.2.3.4. Para evitar falsos positivos, os rangos máis estreitos (por exemplo, 1.2.3.4/32) son xeralmente preferibles aos rangos máis amplos (por exemplo, 0.0.0.0/1). A páxina da calculadora pódese usar para atopar que CIDR teñen rangos que abarcan un enderezo IP específico."
  Auxiliary Rules Modes: "O modo de visualización mostra as regras auxiliares como unha lista compacta para facilitar a lectura. As regras da lista pódense ampliar e mostrar máis detalles facendo clic nelas. Ao premer no trigrama (☰), mostrarase a opción de exportar ou eliminar unha regra. As regras pódense reordenar mediante a función de arrastrar e soltar, arrastrando unha regra desde a súa posición existente ata a posición desexada. O modo de edición é necesario para modificar regras auxiliares, campos editables e opcións para engadir novas condicións, webhooks, ou outra lóxica ás regras segundo sexa necesario proporcionado na páxina. Pódense crear novas regras auxiliares mediante calquera dos modos."
  Auxiliary Rules Priority: "Prioridade (máis alto➡(igual🔄equivalente)➡máis baixo):"
  Auxiliary Rules Webhooks: "Cando se desencadea unha regra, CIDRAM tentará notificar a calquera webhook conectado sobre o evento. Un webhook é un URL capaz de recibir datos POST, e podería ser útil se hai un servizo externo, aplicación, script, etc aloxado nunha rede completamente diferente á de CIDRAM, que queres que xestione os datos xerados por CIDRAM sobre a solicitude."

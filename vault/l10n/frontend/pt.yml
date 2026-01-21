@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2026.01.14).
+# This file: Portuguese language data for the front-end (last modified: 2026.01.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -1265,6 +1265,9 @@ tip:
   pt-PT: "A página de contas permite que você controle quem pode aceder ao CIDRAM front-end."
  Actions menu: "Bloquear adiciona 1 à contagem da assinaturas. Bypass/Contornar deduz 1 da contagem da assinaturas. Lista branca define a contagem da assinaturas como 0 e encerra o processamento, ignorando completamente quaisquer regras subsequentes. Lista cinza define a contagem da assinaturas como 0, mas não encerra o processamento. Perfil não afeta a contagem da assinaturas, mas é útil quando uma lógica mais complexa pode ser necessária para determinar se outros tipos de ações devem ser executados, pois os perfis gerados podem ser encadeados às condições de regras subsequentes. Após o processamento, se a contagem da assinaturas for 1 ou maior, a solicitação será bloqueada."
  Aggregator: "O agregador permite que você expresse IPs, CIDRs, e máscaras de rede da maneira mais pequena possível. Insira os dados a serem agregados e pressione "OK"."
+ An accepted value is any CIDR with a range that covers the IP address of the request:
+  pt-BR: "Um valor aceito é qualquer CIDR cujo intervalo abranja o endereço IP da solicitação. Por exemplo, 1.2.3.0/24, 1.2.0.0/16, 1.0.0.0/8, etc seriam aceitos para 1.2.3.4. Para evitar falsos positivos, intervalos mais estreitos (por exemplo, 1.2.3.4/32) são geralmente preferíveis a intervalos mais amplos (por exemplo, 0.0.0.0/1). A página da calculadora pode ser usada para encontrar quais CIDRs possuem intervalos que abrangem um endereço IP específico."
+  pt-PT: "Um valor aceite é qualquer CIDR cujo intervalo abranja o endereço IP da solicitação. Por exemplo, 1.2.3.0/24, 1.2.0.0/16, 1.0.0.0/8, etc seriam aceites para 1.2.3.4. Para evitar falsos positivos, intervalos mais estreitos (por exemplo, 1.2.3.4/32) são geralmente preferíveis a intervalos mais amplos (por exemplo, 0.0.0.0/1). A página da calculadora pode ser utilizada para encontrar quais os CIDR que possuem intervalos que abrangem um endereço IP específico."
  Auxiliary Rules Modes: "O modo de visualização exibe regras auxiliares como uma lista compacta para facilitar a leitura. As regras na lista podem ser expandidas e mais detalhes podem ser exibidos clicando nelas. Opções para exportar ou excluir uma regra serão mostradas ao clicar no trigrama (☰). As regras podem ser reordenadas por meio de arrastar e soltar, arrastando uma regra de sua posição existente para a posição desejada. O modo de edição é necessário para modificar regras auxiliares, campos editáveis ​​e opções para adicionar novas condições, webhooks, ou outra lógica às regras conforme necessário fornecidas na página. Novas regras auxiliares podem ser criadas por meio de qualquer modo."
  Auxiliary Rules Priority: "Prioridade (altíssima➡(igual🔄equivalente)➡baixíssima):"
  Auxiliary Rules Webhooks:

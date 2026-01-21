@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Afrikaans language data for the front-end (last modified: 2026.01.14).
+# This file: Afrikaans language data for the front-end (last modified: 2026.01.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -1034,6 +1034,7 @@ tip:
  Accounts: "Jy kan vanaf die rekeninge-bladsy beheer wie toegang tot die CIDRAM front-end het."
  Actions menu: "Blokkeer tel 1 by die handtekeninge tel. Omseil trek 1 af van die handtekeninge tel. Witlys stel die handtekeninge tel op 0 en beëindig die verwerking, en slaan dus enige daaropvolgende reëls heeltemal oor. Gryslys stel die handtekeninge tel op 0, maar beëindig nie die verwerking nie. Profileer beïnvloed nie die handtekeninge tel nie, maar is nuttig wanneer meer komplekse logika nodig mag wees om te bepaal of ander soorte aksies uitgevoer moet word, aangesien gegenereerde profiele aan die voorwaardes van daaropvolgende reëls gekoppel kan word. Na verwerking, indien die handtekeninge tel 1 of meer is, sal die versoek geblokkeer word."
  Aggregator: "Jy kan IP's, CIDR's, en netmaskers op die kleinste moontlike manier uitdruk deur die aggregator te gebruik. Voer die data in wat geaggregeerde moet word en druk "OK"."
+ An accepted value is any CIDR with a range that covers the IP address of the request: "Aanvaarde waarde is enige CIDR met 'n reeks wat die IP-adres van die versoek dek. Bv., 1.2.3.0/24, 1.2.0.0/16, 1.0.0.0/8, ens sal aanvaar word vir 1.2.3.4. Om vals positiewe te vermy, is nouer reekse (bv., 1.2.3.4/32) oor die algemeen verkieslik bo wyer reekse (bv., 0.0.0.0/1). Die sakrekenaarbladsy kan gebruik word om te vind watter CIDR'e reekse het wat 'n spesifieke IP-adres dek."
  Auxiliary Rules Modes: "Die kykmodus vertoon bykomende reëls as 'n kompakte lys vir maklike lees. Reëls in die lys kan uitgebrei word en verdere besonderhede kan vertoon word deur daarop te klik. Opsies om 'n reël uit te voer of te verwyder, sal gewys word wanneer op die trigram (☰) geklik word. Reëls kan herrangskik word deur te sleep-en-los, deur 'n reël van sy bestaande posisie na die verlangde posisie te sleep. Redigeermodus is nodig om bykomende reëls te wysig, wysigbare velde en opsies om nuwe voorwaardes, webhooks, of ander logika by die reëls te voeg soos nodig op die bladsy verskaf. Nuwe bykomende reëls kan via enige modus geskep word."
  Auxiliary Rules Priority: "Prioriteit (hoogste➡(gelyk🔄ekwivalent)➡laagste):"
  Auxiliary Rules Webhooks: "Wanneer aan die reël se voorwaardes nagekom word, CIDRAM sal probeer om enige gekoppelde webhooks oor die gebeurtenis in kennis te stel. Webhooks is URL'e wat POST-data kan ontvang, en kan nuttig wees as daar 'n eksterne diens, toepassing, skrip, ens op 'n heeltemal ander netwerk as CIDRAM aangebied word, waarvoor jy die data wat deur CIDRAM oor die versoek gegenereer word, wil laat hanteer."

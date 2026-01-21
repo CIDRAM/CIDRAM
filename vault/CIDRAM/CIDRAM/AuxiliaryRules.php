@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used for auxiliary rules (last modified: 2025.10.22).
+ * This file: Methods used for auxiliary rules (last modified: 2026.01.20).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -679,9 +679,9 @@ trait AuxiliaryRules
                 $Output .= $this->generateOptions($Label, $JS);
                 continue;
             }
-            $Label = $this->L10N->getString($Label) ?: $Label;
+            $Label = $this->parseVars([], $this->L10N->getString($Label) ?: $Label, true);
             if ($JS) {
-                $Output .= "\n  x = document.createElement('option'),\n  x.setAttribute('value', '" . $Value . "'),\n  x.textContent = '" . $Label . "',\n  t.appendChild(x),";
+                $Output .= "\n  x = document.createElement('option'),\n  x.setAttribute('value', '" . $Value . "'),\n  x.textContent = '" . $this->escapeJsInHTML($Label) . "',\n  t.appendChild(x),";
             } else {
                 $Output .= '<option value="' . $Value . '">' . $Label . '</option>';
             }
@@ -704,7 +704,7 @@ trait AuxiliaryRules
                 continue;
             }
             $Label = $this->L10N->getString($Label) ?: $Label;
-            $Output[$Value] = $Label;
+            $Output[$Value] = $this->parseVars([], $Label, true);
         }
         return $Output;
     }
@@ -721,6 +721,7 @@ trait AuxiliaryRules
         $this->FE['JS'] .= $this->parseVars([
             'tip.Specify a value, or leave blank to disregard' => str_replace('\'', '\\\'', $this->L10N->getString('tip.Specify a value, or leave blank to disregard')),
             'tip.Specify a URL, or leave blank to disregard' => str_replace('\'', '\\\'', $this->L10N->getString('tip.Specify a URL, or leave blank to disregard')),
+            'tip.An accepted value is any CIDR with a range that covers the IP address of the request' => str_replace('\'', '\\\'', $this->L10N->getString('tip.An accepted value is any CIDR with a range that covers the IP address of the request')),
             'hints_asnlookup' => str_replace('\'', '\\\'', $this->L10N->getString('hints_asnlookup')),
             'hints_cclookup' => str_replace('\'', '\\\'', $this->L10N->getString('hints_cclookup')),
             'hints_client_hints' => str_replace('\'', '\\\'', $this->L10N->getString('hints_client_hints')),

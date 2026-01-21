@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malay language data for the front-end (last modified: 2026.01.14).
+# This file: Malay language data for the front-end (last modified: 2026.01.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -25,8 +25,8 @@
 ##/
 
 Abuse category:
- Bad web bot: "Bot web buruk (mengikis alamat e-mel, kandungan, perangkak yang tidak menghormati robots.txt, permintaan yang berlebihan, penipuan ejen pengguna, dsb)."
- Brute-force attacks: "Serangan brute-force (serangan brute-force bukti kelayakan pada log masuk halaman web, SMTP, RDP, dsb)."
+ Bad web bot: "Bot web buruk (mengikis alamat e-mel, kandungan, perangkak yang tidak menghormati robots.txt, permintaan yang berlebihan, penipuan ejen pengguna, dll)."
+ Brute-force attacks: "Serangan brute-force (serangan brute-force bukti kelayakan pada log masuk halaman web, SMTP, RDP, dll)."
  Categories (at least one is required): "Kategori (sekurang-kurangnya satu diperlukan)"
  CMS blog comment spam: "Spam komen blog CMS."
  Conjunctive category: "Kategori konjungsi (gunakan dalam kombinasi dengan kategori lain yang lebih khusus)."
@@ -34,7 +34,7 @@ Abuse category:
  DNS compromise: "Kompromi DNS (mengubah rekod DNS yang mengakibatkan pengalihan yang tidak betul)."
  DNS poisoning: "Keracunan DNS."
  Email sender spoofing: "Penipuan penghantar e-mel."
- Email spam: "Spam e-mel (kandungan spam e-mel, lampiran yang dijangkiti, pancingan e-mel, dsb)."
+ Email spam: "Spam e-mel (kandungan spam e-mel, lampiran yang dijangkiti, pancingan e-mel, dll)."
  Exploited host: "Hos yang dieksploitasi (hos berkemungkinan dijangkiti perisian hasad dan digunakan untuk serangan lain atau untuk mengehoskan kandungan berniat jahat)."
  FTP brute-force attacks: "Serangan brute-force FTP."
  Fraudulent VoIP: "VoIP penipu."
@@ -177,8 +177,8 @@ config:
  extras_signatures_raw: "Tandatangan berdasarkan input permintaan mentah."
  extras_signatures_ruri: "Tandatangan berdasarkan URI yang dibina semula."
  frontend: "Konfigurasi untuk bahagian hadapan."
- frontend_custom_footer: "Disisipkan sebagai HTML pada penghujung semua halaman bahagian hadapan. Ini mungkin berguna sekiranya anda ingin menyertakan notis undang-undang, pautan hubungan, maklumat perniagaan, dsb pada semua halaman tersebut."
- frontend_custom_header: "Disisipkan sebagai HTML pada permulaan semua halaman bahagian hadapan. Ini mungkin berguna sekiranya anda ingin menyertakan logo tapak web, pengepala diperibadikan, skrip, dsb pada semua halaman tersebut."
+ frontend_custom_footer: "Disisipkan sebagai HTML pada penghujung semua halaman bahagian hadapan. Ini mungkin berguna sekiranya anda ingin menyertakan notis undang-undang, pautan hubungan, maklumat perniagaan, dll pada semua halaman tersebut."
+ frontend_custom_header: "Disisipkan sebagai HTML pada permulaan semua halaman bahagian hadapan. Ini mungkin berguna sekiranya anda ingin menyertakan logo tapak web, pengepala diperibadikan, skrip, dll pada semua halaman tersebut."
  frontend_enable_two_factor: "Arahan ini menentukan apakah untuk menggunakan 2FA untuk akaun bahagian hadapan."
  frontend_frontend_log: "Fail untuk mengelog percubaan log masuk bahagian hadapan. Tentukan nama fail, atau biarkan kosong untuk nyahaktifkan."
  frontend_magnification: &MagnifDesc "Pembesaran fon. Lalai = 1."
@@ -215,7 +215,7 @@ config:
  general_statistics: "Mengawal maklumat statistik yang hendak dijejaki."
  general_time_format: "Format notasi tarikh/masa yang digunakan oleh CIDRAM. Pilihan tambahan boleh ditambah atas permintaan."
  general_time_offset: "Zon waktu diimbangi dalam minit."
- general_timezone: "Ini digunakan untuk menentukan zon waktu yang akan digunakan (cth., Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, dll). Tentukan "SISTEM" untuk membenarkan PHP mengendalikan ini untuk anda secara automatik."
+ general_timezone: "Ini digunakan untuk menentukan zon waktu yang akan digunakan (cth., Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, dsb). Tentukan "SISTEM" untuk membenarkan PHP mengendalikan ini untuk anda secara automatik."
  hcaptcha: "Konfigurasi untuk hCaptcha (menyediakan cara untuk manusia mendapatkan semula akses apabila disekat)."
  hcaptcha_api: &CaptchaAPI "API mana yang hendak digunakan?"
  hcaptcha_expiry: &CaptchaExpiry "Jumlah jam untuk mengingati kejadian CAPTCHA. Lalai = 720 (1 bulan)."
@@ -296,7 +296,7 @@ config:
  recaptcha_sitekey: *CaptchaDashboard
  recaptcha_usemode: *CaptchaUseMode
  sfs: "Konfigurasi untuk modul Stop Forum Spam."
- signatures: "Konfigurasi untuk tandatangan, fail tandatangan, modul, dsb."
+ signatures: "Konfigurasi untuk tandatangan, fail tandatangan, modul, dll."
  signatures_conflict_response: "Apabila terdapat terlalu banyak percubaan serentak untuk mengakses sumber yang sama (cth., permintaan serentak kepada berbilang proses PHP pada mesin yang sama untuk sumber yang sama), beberapa percubaan tersebut mungkin gagal. Apabila ini menjejaskan fail tandatangan atau modul, CIDRAM mungkin dihalang daripada membuat penentuan yang berkesan tentang permintaan tersebut. Jika ini berlaku, adakah permintaan tersebut harus disekat, dan manakah mesej status HTTP harus dihantar oleh CIDRAM?"
  signatures_default_tracktime: "Tempoh yang alamat IP harus dijejaki. Lalai = 7d0°0′0″ (1 minggu)."
  signatures_infraction_limit: "Jumlah maksimum pelanggaran IP dibenarkan untuk ditanggung sebelum ia dilarang oleh penjejakan IP. Lalai = 10."
@@ -321,8 +321,8 @@ config:
  template_data_block_event_title: "Tajuk halaman yang akan dipaparkan untuk acara sekat."
  template_data_captcha_title: "Tajuk halaman yang akan dipaparkan untuk permintaan CAPTCHA."
  template_data_css_url: "URL fail CSS untuk tema tersuai."
- template_data_custom_footer: "Disisipkan sebagai HTML pada penghujung semua halaman "akses dinafikan". Ini mungkin berguna sekiranya anda ingin menyertakan notis undang-undang, pautan hubungan, maklumat perniagaan, dsb pada semua halaman tersebut."
- template_data_custom_header: "Disisipkan sebagai HTML pada permulaan semua halaman "akses dinafikan". Ini mungkin berguna sekiranya anda ingin menyertakan logo tapak web, pengepala diperibadikan, skrip, dsb pada semua halaman tersebut."
+ template_data_custom_footer: "Disisipkan sebagai HTML pada penghujung semua halaman "akses dinafikan". Ini mungkin berguna sekiranya anda ingin menyertakan notis undang-undang, pautan hubungan, maklumat perniagaan, dll pada semua halaman tersebut."
+ template_data_custom_header: "Disisipkan sebagai HTML pada permulaan semua halaman "akses dinafikan". Ini mungkin berguna sekiranya anda ingin menyertakan logo tapak web, pengepala diperibadikan, skrip, dll pada semua halaman tersebut."
  template_data_magnification: *MagnifDesc
  template_data_theme: "Tema yang akan digunakan untuk acara sekat dan permintaan CAPTCHA."
  template_data_theme_mode: "Mod untuk tema yang akan digunakan untuk acara sekat dan permintaan CAPTCHA."
@@ -520,20 +520,20 @@ Some useful links: |+
        <li><span class="comCat" role="region" aria-controls="menuOUTRS" aria-expanded="false">Alat berguna, sumber, perkhidmatan, dll lain.</span>
          <ul class="comSub" id="menuOUTRS">
            <li>{{Links.SFS}} – Mengekalkan pangkalan data spammer forum yang diketahui. Berguna untuk melindungi tapak web dan forum terhadap spammer.</li>
-           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Dapatkan CIDR daripada ASN, tentukan perhubungan ASN, temui ASN berdasarkan nama rangkaian, dsb.</li>
-           <li>{{Links.BGPView}} – Dapatkan CIDR daripada ASN, tentukan perhubungan ASN, temui ASN berdasarkan nama rangkaian, dsb.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Dapatkan CIDR daripada ASN, tentukan perhubungan ASN, temui ASN berdasarkan nama rangkaian, dll.</li>
+           <li>{{Links.BGPView}} – Dapatkan CIDR daripada ASN, tentukan perhubungan ASN, temui ASN berdasarkan nama rangkaian, dll.</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar oleh Qrator</a> – Alat berguna untuk menyemak ketersambungan ASN serta pelbagai maklumat lain tentang ASN.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Projek Spamhaus</a> – Memaparkan laporan mengenai kadar jangkitan botnet untuk ASN.</li>
            <li>{{Links.AbuseIPDB}} – Mengekalkan pangkalan data untuk IP kesat diketahui; Menyediakan API untuk menyemak dan melaporkan IP.</li>
-           <li>{{Links.IP-API}} – Dapatkan maklumat tentang alamat IP atau nama hos seperti kod negara, nama wilayah, longitud, latitud, nama organisasi, dsb.</li>
+           <li>{{Links.IP-API}} – Dapatkan maklumat tentang alamat IP atau nama hos seperti kod negara, nama wilayah, longitud, latitud, nama organisasi, dll.</li>
          </ul>
        </li>
        <li><span class="comCat">Sumber bermaklumat dan pembelajaran.</span>
          <ul class="comSub" id="menuILR">
            <li>{{Links.PHP.Earth.Website}} – Sumber pembelajaran dan perbincangan PHP.</li>
            <li>{{Links.MDN.Homepage}} – Sumber untuk pembangun, oleh pembangun. Sumber yang hebat untuk belajar tentang HTML, CSS, JavaScript, kebolehaksesan dan banyak lagi.</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Carta Kerentanan</a> – Menyenaraikan pelbagai versi daripada pakej yang selamat dan tidak selamat (HHVM, PHP, phpMyAdmin, Python, dll).</li>
-           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Carta Keserasian</a> – Menyenaraikan maklumat keserasian untuk pelbagai pakej (CIDRAM, phpMussel, dll).</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Carta Kerentanan</a> – Menyenaraikan pelbagai versi daripada pakej yang selamat dan tidak selamat (HHVM, PHP, phpMyAdmin, Python, dsb).</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Carta Keserasian</a> – Menyenaraikan maklumat keserasian untuk pelbagai pakej (CIDRAM, phpMussel, dsb).</li>
          </ul>
        </li>
      </ul>
@@ -549,7 +549,7 @@ label:
  307 Temporary Redirect: "307 Temporary Redirect (Ubah hala sementara)\nMengarahkan klien bahawa ubah hala adalah SEMENTARA, dan kaedah permintaan yang digunakan untuk ubah hala mungkin TIDAK berbeza daripada kaedah permintaan yang digunakan untuk permintaan awal."
  308 Permanent Redirect: "308 Permanent Redirect (Ubah hala kekal)\nMengarahkan klien bahawa ubah hala adalah KEKAL, dan kaedah permintaan yang digunakan untuk ubah hala mungkin TIDAK berbeza daripada kaedah permintaan yang digunakan untuk permintaan awal."
  403 Forbidden: "403 Forbidden (Dilarang)\nLebih mantap, tetapi kurang mesra-pengguna. Disyorkan untuk kebanyakan keadaan umum."
- 409 Conflict: "409 Konflik\nDisyorkan untuk konflik sumber (cth., konflik gabungan, konflik akses fail, dsb). Tidak disyorkan dalam konteks lain."
+ 409 Conflict: "409 Konflik\nDisyorkan untuk konflik sumber (cth., konflik gabungan, konflik akses fail, dll). Tidak disyorkan dalam konteks lain."
  410 Gone: "410 Gone (Dipergi)\nBoleh menyebabkan masalah apabila menyelesaikan positif palsu, kerana sesetengah penyemak imbas akan cache mesej status ini dan tidak menghantar permintaan seterusnya, walaupun selepas dinyahsekat. Mungkin yang paling disukai dalam sesetengah konteks, untuk jenis trafik tertentu."
  418 I_m a teapot: "418 I'm a teapot (Saya adalah teko)\nMerujuk daripada jenaka April Fools ({{Links.RFC2324}}). Sangat tidak kemungkinan difahami oleh mana-mana pelanggan, bot, penyemak imbas, atau sebaliknya. Disediakan untuk hiburan dan kemudahan, tetapi secara amnya tidak disyorkan."
  429 Too Many Requests: "429 Too Many Requests (Terlalu Banyak Permintaan)\nDisyorkan untuk mengehadkan kadar, apabila menangani serangan DDoS, dan untuk pencegahan banjir. Tidak disyorkan dalam konteks lain."
@@ -649,7 +649,7 @@ label:
  Only when within the signature limit, and not banned (regardless of whether blocked): "Hanya apabila dalam had tandatangan, dan tidak dilarang (tidak kira sama ada disekat)."
  Operating system used: "Sistem operasi digunakan:"
  Operator: "Operator"
- Other rules, signature files, etc: "Peraturan dan fail tandatangan lain, dsb"
+ Other rules, signature files, etc: "Peraturan dan fail tandatangan lain, dll"
  Other: "Lain"
  PHP version used: "Versi PHP digunakan:"
  Page request completed in %s seconds: "Permintaan halaman selesai dalam masa %s saat."
@@ -663,7 +663,7 @@ label:
  Report to AbuseIPDB: "Laporkan kepada AbuseIPDB"
  Requests banned: "Permintaan dilarang"
  Requests blocked: "Permintaan disekat"
- Requests for sensitive pages only: "Permintaan untuk halaman sensitif sahaja (cth., halaman login, borang pendaftaran, dsb).\nKurang ketat dan teliti, tetapi lebih konservatif dari segi kuota dan had, dan kurang berkemungkinan menjejaskan prestasi secara negatif. Strategi yang disyorkan dalam kebanyakan kes."
+ Requests for sensitive pages only: "Permintaan untuk halaman sensitif sahaja (cth., halaman login, borang pendaftaran, dll).\nKurang ketat dan teliti, tetapi lebih konservatif dari segi kuota dan had, dan kurang berkemungkinan menjejaskan prestasi secara negatif. Strategi yang disyorkan dalam kebanyakan kes."
  Requests passed: "Permintaan diluluskan"
  Requests reported to external APIs: "Permintaan dilaporkan kepada API luaran"
  SAPI used: "SAPI digunakan:"
@@ -997,11 +997,12 @@ tip:
  Accounts: "Halaman akaun membolehkan anda mengawal siapa yang boleh mengakses bahagian hadapan CIDRAM."
  Actions menu: "Menyekat menambah 1 pada pengiraan tandatangan. Memintas memotong 1 daripada pengiraan tandatangan. Senaraikan putih menetapkan pengiraan tandatangan pada 0 dan menamatkan pemprosesan, sekali gus melangkau mana-mana peraturan berikutnya sepenuhnya. Senaraikan kelabu menetapkan pengiraan tandatangan pada 0, tetapi tidak menamatkan pemprosesan. Profilkan tidak menjejaskan pengiraan tandatangan, tetapi berguna apabila logik yang lebih kompleks mungkin diperlukan untuk menentukan sama ada untuk melakukan jenis tindakan lain, kerana profil yang dijana boleh dirantai dengan syarat peraturan berikutnya. Selepas pemprosesan, jika pengiraan tandatangan adalah 1 atau lebih, permintaan akan disekat."
  Aggregator: "Agregator membolehkan anda ekspresikan IP, CIDR, dan topeng bersih dengan cara yang paling kecil. Masukkan data yang hendak diagregatkan dan tekan "OK"."
+ An accepted value is any CIDR with a range that covers the IP address of the request: "Nilai yang diterima ialah sebarang CIDR dengan julat yang merangkumi alamat IP permintaan. Cth., 1.2.3.0/24, 1.2.0.0/16, 1.0.0.0/8, dsb akan diterima untuk 1.2.3.4. Untuk mengelakkan positif palsu, julat yang lebih sempit (cth., 1.2.3.4/32) secara amnya lebih baik daripada julat yang lebih luas (cth., 0.0.0.0/1). Halaman kalkulator boleh digunakan untuk mencari CIDR yang mempunyai julat yang merangkumi alamat IP yang ditentukan."
  Auxiliary Rules Modes: "Mod pandangan memaparkan peraturan tambahan sebagai senarai padat untuk bacaan mudah. Peraturan dalam senarai boleh diperluaskan dan butiran lanjut ditunjukkan dengan mengklik padanya. Pilihan untuk mengeksport atau memadam peraturan akan ditunjukkan apabila mengklik trigram (☰). Peraturan boleh disusun semula melalui seret dan lepas, menyeret peraturan dari kedudukan sedia ada dan ke kedudukan yang diingini. Mod edit diperlukan untuk mengubah suai peraturan tambahan, medan boleh diedit dan pilihan untuk menambah syarat baharu, webhooks, atau logik lain pada peraturan mengikut keperluan disediakan pada halaman. Peraturan tambahan baharu boleh dibuat melalui mana-mana mod."
  Auxiliary Rules Priority: "Keutamaan (tertinggi➡(sama🔄bersamaan)➡terendah):"
  Auxiliary Rules Webhooks: "Apabila peraturan dicetuskan, CIDRAM akan cuba memberitahu mana-mana webhook yang disambungkan tentang acara tersebut. Webhook ialah URL yang mampu menerima data POST, dan boleh berguna jika terdapat perkhidmatan, aplikasi, skrip, dll luaran yang dihoskan pada rangkaian yang sama sekali berbeza daripada CIDRAM, yang anda mahu mengendalikan data yang dijana oleh CIDRAM tentang permintaan tersebut."
  Auxiliary Rules: "Anda boleh menggunakan halaman ini untuk membuat, memadam, dan mengubah suai peraturan tambahan untuk CIDRAM."
- Backup: "Halaman ini boleh digunakan untuk mengimport/mengeksport konfigurasi anda, peraturan tambahan anda, dsb. Ini boleh berguna jika anda perlu memindahkan data merentas pemasangan atau versi utama yang berbeza."
+ Backup: "Halaman ini boleh digunakan untuk mengimport/mengeksport konfigurasi anda, peraturan tambahan anda, dll. Ini boleh berguna jika anda perlu memindahkan data merentas pemasangan atau versi utama yang berbeza."
  Cache Data: "Disini anda boleh menyemak kandungan cache."
  Calculator: "Kalkulator membolehkan anda mengira CIDR dan netmask daripada alamat IP."
  Click the component name for more details: "Klik nama komponen untuk butiran lanjut."
@@ -1023,21 +1024,21 @@ tip:
  Intersector: "Intersektor boleh digunakan untuk menentukan faktor sepunya daripada dua set julat."
  Logs: "Pilih fail log daripada senarai di bawah untuk melihat kandungan fail log tersebut."
  Number of seconds until it expires: "Bilangan saat sehingga tamat tempoh."
- Numeric comparison: "Untuk menggunakan perbandingan angka, pilih perbandingan rentetan langsung atau pengesanan kaedah automatik, pastikan nilai syarat adalah angka, dan awalan dengan operator yang dikehendaki.<br />Cth., untuk syarat "sama", &gt;=2 menyediakan ≥2, &lt;=2 menyediakan ≤2, untuk syarat "tidak sama", &gt;=2 menyediakan ≱2, &lt;=2 menyediakan ≰2, dsb."
+ Numeric comparison: "Untuk menggunakan perbandingan angka, pilih perbandingan rentetan langsung atau pengesanan kaedah automatik, pastikan nilai syarat adalah angka, dan awalan dengan operator yang dikehendaki.<br />Cth., untuk syarat "sama", &gt;=2 menyediakan ≥2, &lt;=2 menyediakan ≤2, untuk syarat "tidak sama", &gt;=2 menyediakan ≱2, &lt;=2 menyediakan ≰2, dll."
  Range Tables: "Halaman ini menunjukkan beberapa maklumat statistik asas tentang julat IP yang diliputi oleh fail tandatangan yang sedang aktif."
  Rate Limiting: "Halaman ini menunjukkan penggunaan dan ketersediaan kuota semasa berkaitan dengan pengehadan kadar."
  Rate limiting is currently disabled: "Nota: Pengehadan kadar kini dinyahaktifkan, tetapi boleh diaktifkan melalui halaman konfigurasi."
  Report to AbuseIPDB: "Halaman ini boleh digunakan untuk melaporkan alamat IP kepada AbuseIPDB, atau untuk memadam laporan sebelumnya sekiranya alamat IP telah dilaporkan secara tersilap."
  Sections List: "Halaman ini menyenaraikan bahagian mana yang wujud dalam fail tandatangan yang sedang aktif."
  See the documentation: "Lihat <a href="{{Links.CIDRAM.Docs Base Path}}readme.id.md\#user-content-SECTION5" hreflang="id-ID" rel="noopener external"><span class="navicon documentation"></span>dokumentasi</a> untuk mendapatkan maklumat tentang pelbagai arahan konfigurasi dan tujuannya."
- Server log snippets, abuse details, etc: "Log pelayan, butiran penyalahgunaan, dsb."
+ Server log snippets, abuse details, etc: "Log pelayan, butiran penyalahgunaan, dll."
  Signature File Fixer: "Pembetul fail tandatangan menyediakan cara untuk mengesan dan menyelesaikan masalah yang berpotensi dalam fail tandatangan."
  Specify a URL, or leave blank to disregard: "Tentukan URL, atau biarkan kosong untuk mengabaikannya."
  Specify a value, or leave blank to disregard: "Tentukan nilai, atau biarkan kosong untuk mengabaikannya."
  Statistics tracking is currently disabled: "Nota: Penjejakan statistik kini dinyahaktifkan, tetapi boleh diaktifkan melalui halaman konfigurasi."
  Statistics: "Halaman ini menunjukkan beberapa statistik penggunaan asas mengenai pemasangan CIDRAM anda."
  Subtractor: "Penolakan boleh digunakan untuk menolak satu julat IP/CIDR/netmask daripada yang lain."
- Updates: "Halaman kemas kini membolehkan anda memasang, menyahpasang, dan mengemas kini pelbagai komponen CIDRAM (pakej teras, tandatangan, fail L10N, dsb)."
+ Updates: "Halaman kemas kini membolehkan anda memasang, menyahpasang, dan mengemas kini pelbagai komponen CIDRAM (pakej teras, tandatangan, fail L10N, dll)."
 warning:
  API_Rate_Limited: "Amaran: Akses kepada %s API nampaknya pada masa ini adalah kadar terhad."
  Cookies: "Nota: CIDRAM menggunakan kuki untuk mengesahkan log masuk. Apabila anda log masuk, anda memberikan persetujuan anda untuk kuki dibuat dan disimpan oleh penyemak imbas anda."

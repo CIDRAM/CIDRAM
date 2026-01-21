@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2026.01.14).
+# This file: Indonesian language data for the front-end (last modified: 2026.01.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -49,7 +49,7 @@ Abuse category:
  SSH abuse: "Penyalahgunaan SSH."
  VPN IP: "IP VPN."
  Web spam: "Spam web (spam komentar/forum, spam perujuk HTTP, atau spam CMS lainnya)."
- Webapp attacks: "Serangan aplikasi web (menyelidiki kerentanan atau eksploitasi, atau mencoba mengeksploitasi aplikasi web, CMS, atau solusi e-niaga yang diinstal, misalnya, WordPress, Drupal, phpMyAdmin, dll)."
+ Webapp attacks: "Serangan aplikasi web (menyelidiki kerentanan atau eksploitasi, atau mencoba mengeksploitasi aplikasi web, CMS, atau solusi e-niaga yang diinstal, misalnya, WordPress, Drupal, phpMyAdmin, dsb)."
 Extended Description:
  AbuseIPDB module: "Memblokir permintaan dari IP yang terdaftar oleh AbuseIPDB."
  BGPView module: "Memanfaatkan {{Links.BGPView}} API untuk menyediakan fasilitas pencarian untuk ASN dan kode negara untuk CIDRAM, memungkinkan ASN dan negara untuk diblokir atau masuk daftar putih melalui konfigurasi CIDRAM, dan menyediakan sarana untuk verifikasi media sosial untuk memverifikasi permintaan Facebook. (Jika Anda menggunakan modul ini, Anda tidak perlu menggunakan modul IP-API, karena mereka memiliki tujuan yang sama)."
@@ -73,7 +73,7 @@ Extended Description:
  Optional security extras module: "Menyediakan beberapa perlindungan terbatas terhadap berbagai vektor serangan umum digunakan dalam permintaan."
  PHPMailer: "Diperlukan untuk menggunakan fungsionalitas apapun yang melibatkan pengiriman email.<br />{{Links.PHPMailer.PHPMailer}} tersedia melalui lisensi {{Links.PHPMailer.License}}."
  Project Honeypot module: "Memblokir permintaan dari IP yang terdaftar oleh Project Honeypot."
- Protocol blocker module: "Menyediakan kemampuan untuk memblokir protokol permintaan spesifik melalui konfigurasi (misalnya, HTTP/0.9, HTTP/1.1, SPDY/3.0, dll). Catat: Tidak akan berpengaruh pada situs web yang merutekan melalui layanan yang menulis ulang permintaan untuk semua menggunakan protokol yang sama persis, seperti Cloudflare."
+ Protocol blocker module: "Menyediakan kemampuan untuk memblokir protokol permintaan spesifik melalui konfigurasi (misalnya, HTTP/0.9, HTTP/1.1, SPDY/3.0, dsb). Catat: Tidak akan berpengaruh pada situs web yang merutekan melalui layanan yang menulis ulang permintaan untuk semua menggunakan protokol yang sama persis, seperti Cloudflare."
  Referrer spam module: "Memblokir berdasarkan spam pengarah umumnya tidak akan memberikan manfaat keamanan yang berarti, tetapi dalam beberapa kasus, dapat bermanfaat bagi beberapa pengguna, untuk mengumpulkan lebih banyak informasi tentang permintaan, dan untuk dapat melaporkannya."
  Stop Forum Spam module: "Melindungi halaman pendaftaran dan login terhadap IP yang terdaftar oleh SFS."
  Tor blocker module: "Melarang akses dari simpul keluar Tor melalui pencarian DNSEL (mendukung keduanya IPv4 dan IPv6)."
@@ -230,7 +230,7 @@ config:
  general_statistics_captchas: "Mengontrol informasi statistik mana yang akan dilacak untuk CAPTCHA."
  general_time_format: "Format notasi tanggal/waktu yang digunakan oleh CIDRAM. Opsi tambahan dapat ditambahkan atas permintaan."
  general_time_offset: "Offset zona waktu dalam hitungan menit."
- general_timezone: "Ini digunakan untuk menentukan zona waktu yang akan digunakan (misalnya, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, dll). Menentukan "SYSTEM" untuk membiarkan PHP menangani ini untuk Anda secara otomatis."
+ general_timezone: "Ini digunakan untuk menentukan zona waktu yang akan digunakan (misalnya, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, dsb). Menentukan "SYSTEM" untuk membiarkan PHP menangani ini untuk Anda secara otomatis."
  ipapi: "Konfigurasi untuk modul IP-API (menyediakan fasilitas pencarian ASN dan kode negara untuk CIDRAM)."
  ipapi_blocked_asns: *ConfigBlockedASNs
  ipapi_blocked_ccs: *ConfigBlockedCCs
@@ -531,8 +531,8 @@ Some useful links: |+
          <ul class="comSub" id="menuILR">
            <li>{{Links.PHP.Earth.Website}} – Sumber belajar dan diskusi PHP.</li>
            <li>{{Links.MDN.Homepage}} – Sumber daya untuk pengembang, oleh pengembang. Sumber daya yang luar biasa untuk mempelajari tentang HTML, CSS, JavaScript, aksesibilitas, dan banyak lagi.</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Tabel Kerentanan</a> – Mencantumkan berbagai versi dari paket-paket yang aman dan tidak aman (HHVM, PHP, phpMyAdmin, Python, dll).</li>
-           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Tabel Kompatibilitas</a> – Mencantumkan informasi kompatibilitas untuk berbagai paket (CIDRAM, phpMussel, dll).</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Tabel Kerentanan</a> – Mencantumkan berbagai versi dari paket-paket yang aman dan tidak aman (HHVM, PHP, phpMyAdmin, Python, dsb).</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Tabel Kompatibilitas</a> – Mencantumkan informasi kompatibilitas untuk berbagai paket (CIDRAM, phpMussel, dsb).</li>
          </ul>
        </li>
      </ul>
@@ -1018,6 +1018,7 @@ tip:
  Accounts: "Halaman akun memungkinkan Anda untuk mengontrol siapa dapat mengakses bagian depan CIDRAM."
  Actions menu: "Memblokir menambahkan 1 ke penghitungan tanda tangan. Melewati mengurangi 1 dari penghitungan tanda tangan. Mendaftar putih menetapkan penghitungan tanda tangan ke 0 dan menghentikan pemrosesan, sehingga melewatkan aturan selanjutnya sepenuhnya. Mendaftar abu-abu menetapkan penghitungan tanda tangan ke 0, tetapi tidak menghentikan pemrosesan. Memprofilkan tidak memengaruhi penghitungan tanda tangan, tetapi berguna ketika logika yang lebih kompleks mungkin dibutuhkan untuk menentukan apakah akan melakukan jenis tindakan lain, karena profil yang dihasilkan dapat digunakan dengan kondisi aturan berikutnya. Setelah diproses, jika penghitungan tanda tangan 1 atau lebih besar, permintaan akan diblokir."
  Aggregator: "Agregator memungkinkan Anda mengekspresikan IP, CIDR, dan topeng jaring dengan cara sekecil mungkin. Masukkan data yang akan diagregatkan dan tekan "OK"."
+ An accepted value is any CIDR with a range that covers the IP address of the request: "Nilai yang diterima adalah CIDR apapun dengan rentang yang mencakup alamat IP dari permintaan. Misalnya, 1.2.3.0/24, 1.2.0.0/16, 1.0.0.0/8, dsb akan diterima untuk 1.2.3.4. Untuk menghindari positif palsu, rentang yang lebih sempit (misalnya, 1.2.3.4/32) umumnya lebih disukai daripada rentang yang lebih lebar (misalnya, 0.0.0.0/1). Halaman kalkulator dapat digunakan untuk menemukan CIDR mana yang memiliki rentang yang mencakup alamat IP yang ditentukan."
  Auxiliary Rules Modes: "Modus lihat menampilkan aturan tambahan sebagai daftar ringkas agar mudah dibaca. Aturan dalam daftar dapat diperluas dan rincian lebih lanjut ditampilkan dengan mengkliknya. Pilihan untuk mengekspor atau menghapus aturan akan ditampilkan saat mengklik trigram (☰). Aturan dapat disusun ulang dengan cara menyeret dan melepas, menyeret aturan dari posisi yang ada ke posisi yang diinginkan. Modus edit diperlukan untuk mengubah aturan tambahan, bidang yang dapat diedit, dan opsi untuk menambahkan kondisi baru, webhook, atau logika lain ke aturan sebagaimana diperlukan yang disediakan di halaman. Aturan tambahan baru dapat dibuat melalui modus manapun."
  Auxiliary Rules Priority: "Prioritas (maksimum➡(sama🔄setara)➡terendah):"
  Auxiliary Rules Webhooks: "Saat aturan dipicu, CIDRAM akan berusaha memberi tahu webhook yang terhubung tentang acara tersebut. Webhook adalah URL yang mampu menerima data POST, dan dapat berguna jika ada layanan, aplikasi, skrip, dll eksternal yang dihosting pada jaringan yang sepenuhnya berbeda dari CIDRAM, yang mana Anda ingin menangani data yang dihasilkan oleh CIDRAM tentang permintaan tersebut."
@@ -1043,6 +1044,7 @@ tip:
  IP Tracking: "Halaman pelacakan IP memungkinkan Anda untuk memeriksa status pelacakan alamat IP, untuk memeriksa yang mereka telah dilarang, dan mencabut pelacakan untuk mereka jika Anda ingin melakukan."
  Intersector: "Intersektor dapat digunakan untuk menentukan faktor persekutuan dari dua kumpulan rentang."
  Logs: "Pilih log dari daftar dibawah untuk melihat isi log."
+ Note that the exact value of this statistic will be the same as that shown at the statistics page at the time the rule is processed: "Perlu dicatat bahwa nilai pasti dari statistik ini akan sama dengan yang ditampilkan di halaman statistik pada saat aturan diproses."
  Number of seconds until it expires: "Jumlah detik hingga kedaluwarsa."
  Numeric comparison: "Untuk menggunakan perbandingan numerik, pilih perbandingan string langsung atau deteksi metode otomatis, pastikan nilai kondisi berupa numerik, dan awali dengan operator yang diinginkan.<br />Misalnya, untuk kondisi "sama", &gt;=2 menyediakan ≥2, &lt;=2 menyediakan ≤2, untuk kondisi "tidak sama", &gt;=2 menyediakan ≱2, &lt;=2 menyediakan ≰2, dll."
  Range Tables: "Halaman ini menunjukkan beberapa informasi statistik dasar tentang rentang IP yang dicakup oleh file tanda tangan yang saat ini aktif."

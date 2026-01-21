@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2026.01.14).
+# This file: French language data for the front-end (last modified: 2026.01.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -1123,6 +1123,7 @@ tip:
  Accounts: "La page des comptes vous permet de contrôler qui peut accéder l'accès frontal de CIDRAM."
  Actions menu: "Bloquer ajoute 1 au compte des signatures. Contourner déduit 1 du compte des signatures. Liste blanche définit le compte des signatures sur 0 et termine le traitement, ignorant ainsi entièrement toutes les règles ultérieures. Liste grise définit le compte des signatures sur 0, mais ne termine pas le traitement. Profiler n'affecte pas le compte des signatures, mais est utile lorsqu'une logique plus complexe peut être nécessaire pour déterminer s'il faut effectuer d'autres types d'actions, car les profils générés peuvent être enchaînés aux conditions des règles suivantes. Après le traitement, si le compte des signatures est égal ou supérieur à 1, la requête sera bloquée."
  Aggregator: "L'agrégateur vous permet d'exprimer les adresses IP, les CIDR, et les masques de réseau de la manière la plus petite possible. Entrez les données à agréger et appuyez sur «\_OK\_»."
+ An accepted value is any CIDR with a range that covers the IP address of the request: "Une valeur accepté est tout CIDR dont la plage couvre l'adresse IP de la requête. Par exemple, 1.2.3.0/24, 1.2.0.0/16, 1.0.0.0/8, etc seraient acceptés pour 1.2.3.4. Pour éviter les faux positifs, des plages plus étroites (par exemple, 1.2.3.4/32) sont généralement préférables à des plages plus larges (par exemple, 0.0.0.0/1). Le calculatrice peut être utilisée pour trouver quels CIDR ont des plages couvrant une adresse IP spécifiée."
  Auxiliary Rules Modes: "Le mode d'affichage affiche les règles auxiliaires sous forme de liste compacte pour une lecture facile. Les règles de la liste peuvent être étendues et des détails supplémentaires affichés en cliquant dessus. Les options permettant d'exporter ou de supprimer une règle s'afficheront en cliquant sur le trigramme (☰). Les règles peuvent être réorganisées par glisser-déposer, en faisant glisser une règle de sa position existante vers la position souhaitée. Le mode d'édition est requis pour modifier les règles auxiliaires, les champs modifiables et les options pour ajouter de nouvelles conditions, des webhooks, ou une autre logique aux règles selon les besoins fournis sur la page. De nouvelles règles auxiliaires peuvent être créées via l'un ou l'autre mode."
  Auxiliary Rules Priority: "Priorité (plus haut➡(égale🔄équivalent)➡plus bas)\_:"
  Auxiliary Rules Webhooks: "Lorsqu'une règle est déclenchée, CIDRAM tentera d'informer tous les webhooks connectés de l'événement. Un webhook est une URL capable de recevoir des données POST, et peut être utile s'il existe un service , une application, un script, etc. hébergé sur un réseau entièrement différent de CIDRAM, pour lequel vous souhaitez gérer les données générées par CIDRAM concernant la requête."
@@ -1148,6 +1149,7 @@ tip:
  IP Tracking: "La page de surveillance IP vous permet de vérifier l'état de surveillance des adresses IP, pour vérifier lesquels d'entre eux ont été interdits, et d'annuler la surveillance si vous voulez le faire."
  Intersector: "L'intersecteur peut être utilisé pour déterminer les facteurs communs à partir de deux ensembles de gammes."
  Logs: "Sélectionnez un fichier journal dans la liste ci-dessous pour afficher le contenu de ce fichier journal."
+ Note that the exact value of this statistic will be the same as that shown at the statistics page at the time the rule is processed: "Notez que la valeur exacte de cette statistique sera la même que celle affichée sur la page des statistiques au moment du traitement de la règle."
  Number of seconds until it expires: "Nombre de secondes jusqu'à son expiration."
  Numeric comparison: "Pour utiliser la comparaison numérique, sélectionnez la comparaison directe de chaînes ou la détection automatique de méthode, assurez-vous que la valeur de la condition est numérique, et préfixez-la avec l'opérateur souhaité.<br />Par exemple, pour les conditions «\_égales\_», &gt;=2 fournit ≥2, &lt;=2 fournit ≤2, pour les conditions «\_inégales\_», &gt;=2 fournit ≱2, &lt;=2 fournit ≰2, etc."
  Range Tables: "Cette page affiche des informations statistiques sur les plages IP couvertes par les fichiers de signatures actuellement actifs."

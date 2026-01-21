@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bosnian language data for the front-end (last modified: 2026.01.14).
+# This file: Bosnian language data for the front-end (last modified: 2026.01.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -1077,6 +1077,7 @@ tip:
  Accounts: "Stranica računa vam omogućava da kontrolišete ko može da pristupi CIDRAM front-endu."
  Actions menu: "Blokiranje dodaje 1 broju potpisa. Zaobilaženjem se od broja potpisa oduzima 1. Bijela lista postavlja broj potpisa na 0 i prekida obradu, čime se u potpunosti preskaču sva sljedeća pravila. Siva lista postavlja broj potpisa na 0, ali ne prekida obradu. Profiliranje ne utiče na broj potpisa, ali je korisno kada je potrebna složenija logika za određivanje da li treba izvršiti druge vrste radnji, jer se generisani profili mogu povezati sa uslovima narednih pravila. Nakon obrade, ako je broj potpisa 1 ili veći, zahtjev će biti blokiran."
  Aggregator: "Agregator vam omogućava da izrazite IP adrese, CIDR-ove, i mrežne maske na najmanji mogući način. Unesite podatke koji će biti agregirani i pritisnite "OK"."
+ An accepted value is any CIDR with a range that covers the IP address of the request: "Prihvaćena vrijednost je bilo koji CIDR s rasponom koji pokriva IP adresu zahtjeva. Npr., 1.2.3.0/24, 1.2.0.0/16, 1.0.0.0/8, itd bi bili prihvaćeni za 1.2.3.4. Da bi se izbjegli lažno pozitivni, uži rasponi (npr., 1.2.3.4/32) su generalno poželjniji od širih raspona (npr., 0.0.0.0/1). Stranica kalkulatora može se koristiti za pronalaženje CIDR-ova koji imaju raspone koji pokrivaju određenu IP adresu."
  Auxiliary Rules Modes: "Režim pregleda prikazuje pomoćna pravila kao sažetu listu radi lakšeg čitanja. Pravila na listi se mogu proširiti i prikazati dodatni detalji klikom na njih. Opcije za izvoz ili brisanje pravila će se prikazati kada kliknete na trigram (☰). Redoslijed pravila se može promijeniti metodom prevuci i ispusti, prevlačenjem pravila s postojeće pozicije na željenu poziciju. Za izmjenu pomoćnih pravila potreban je režim uređivanja, polja koja se mogu uređivati ​​i opcije za dodavanje novih uslova, webhookova, ili druge logike pravilima po potrebi na stranici. Nova pomoćna pravila mogu se kreirati putem bilo kojeg režima."
  Auxiliary Rules Priority: "Prioritet (najviši➡(jednaka🔄ekvivalentno)➡najniže):"
  Auxiliary Rules Webhooks: "Kada se pravilo pokrene, CIDRAM će pokušati obavijestiti sve povezane webhookove o događaju. Webhook je URL adresa koja može primati POST podatke, i može biti korisna ako postoji eksterna usluga, aplikacija, skripta itd hostovana na potpuno drugoj mreži od CIDRAM-a, a koju želite obraditi podacima koje generira CIDRAM o zahtjevu."
@@ -1102,6 +1103,7 @@ tip:
  IP Tracking: "Stranica za praćenje IP adresa vam omogućava da provjerite status praćenja IP adresa, da provjerite koje su od njih zabranjene, i ako je potrebno, da uklonite zabrane ili status praćenja."
  Intersector: "Intersektor se može koristiti za određivanje zajedničkih faktora iz dva skupa raspona."
  Logs: "Izaberite datoteku evidencije sa liste ispod da vidite sadržaj te datoteke evidencije."
+ Note that the exact value of this statistic will be the same as that shown at the statistics page at the time the rule is processed: "Imajte na umu da će tačna vrijednost ove statistike biti ista kao ona prikazana na stranici sa statistikama u trenutku obrade pravila."
  Number of seconds until it expires: "Broj sekundi do isteka."
  Numeric comparison: "Da biste koristili numeričko poređenje, odaberite direktno poređenje nizova ili automatsko otkrivanje metoda, osigurajte da je vrijednost uslova numerička, i stavite prefiks željenim operatorom.<br />Npr., za uslove "jednako", &gt;=2 daje ≥2, &lt;=2 daje ≤2, za uslove "nije jednako", &gt;=2 daje ≱2, &lt;=2 daje ≰2, itd."
  Range Tables: "Ova stranica prikazuje neke osnovne statističke informacije o IP rasponima pokrivenim trenutno aktivnim datotekama potpisa."

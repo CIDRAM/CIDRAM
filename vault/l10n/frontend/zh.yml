@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese language data for the front-end (last modified: 2026.01.14).
+# This file: Chinese language data for the front-end (last modified: 2026.01.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -1224,6 +1224,9 @@ tip:
   zh-Hans: "阻止会使签名计数加 1。 绕过将从签名计数中扣除 1。 白名单将签名计数设置为 0 并终止处理，从而完全跳过任何后续规则。 灰名单将签名数设置为 0，但不会终止处理。 分类不会影响签名计数，但当需要更复杂的逻辑来确定是否执行其他类型的操作时很有用，因为生成的分类可以链接到后续规则的条件。 处理后，如果签名数为 1 或更大，则请求将被阻止。"
   zh-Hant: "阻止會使簽名計數加 1。 繞過將從簽名計數中扣除 1。 白名單將簽名計數設定為 0 並終止處理，從而完全跳過任何後續規則。 灰名單將簽名數設定為 0，但不會終止處理。 分類不會影響簽名計數，但當需要更複雜的邏輯來確定是否執行其他類型的操作時很有用，因為產生的分類可以連結到後續規則的條件。 處理後，如果簽名數為 1 或更大，則請求將被阻止。"
  Aggregator: {"zh-Hans": "聚合器允许您以最小的可能方式表达IP，CIDR，和网络掩码。​输入要聚合的数据，然后按“OK”。", "zh-Hant": "聚合器允許您以最小的可能方式表達IP，CIDR，和網絡掩碼。​輸入要聚合的數據，然後按『OK』。"}
+ An accepted value is any CIDR with a range that covers the IP address of the request:
+  zh-Hans: "可接受的值是任何包含请求IP地址范围的CIDR。 例如，1.2.3.0/24、1.2.0.0/16、1.0.0.0/8、等等都可接受，适用于 1.2.3.4。 为避免误报，较窄的范围（例如，1.2.3.4/32）通常比较宽的范围（例如，0.0.0.0/1）更可取。 可以使用计算器页面查找哪些CIDR范围覆盖指定的IP地址。"
+  zh-Hant: "可接受的值是任何包含請求IP位址範圍的CIDR。 例如，1.2.3.0/24、1.2.0.0/16、1.0.0.0/8、等等都可接受，適用於 1.2.3.4。 為避免誤報，較窄的範圍（例如，1.2.3.4/32）通常比較寬的範圍（例如，0.0.0.0/1）更可取。 可以使用計算機頁面尋找哪些CIDR範圍來覆蓋指定的IP位址。"
  Auxiliary Rules Modes:
   zh-Hans: "查看模式将辅助规则显示为紧凑列表，以便于阅读。​单击列表中的规则即可展开并显示更多详细信息。​单击三元组（☰）时将显示导出或删除规则的选项。​可以通过拖放操作更改规则的顺序，将规则从现有位置拖动到所需位置。​需要编辑模式来修改辅助规则，页面上有可编辑字段和选项，用于添加新条件、webhook、或其他逻辑。​可以通过任一模式创建新的辅助规则。"
   zh-Hant: "查看模式將輔助規則顯示為緊湊列表，以便於閱讀。​點擊清單中的規則即可展開並顯示更多詳細資訊。​點選三元組（☰）時將顯示匯出或刪除規則的選項。​可以透過拖曳操作來變更規則的順序，將規則從現有位置拖曳到所需位置。​需要編輯模式來修改輔助規則，頁面上有可編輯欄位和選項，用於新增條件、webhook、或其他邏輯。​可以透過任一模式建立新的輔助規則。"
@@ -1253,6 +1256,9 @@ tip:
  IP Tracking: {"zh-Hans": "IP跟踪页面允许您检查IP地址跟踪状态，​检查哪些IP已被禁止，​而如果您想这样做，​对撤消他们的跟踪。", "zh-Hant": "IP跟踪頁面允許您檢查IP位址跟踪狀態，​檢查哪些IP已被禁止，​而如果您想這樣做，​對撤消他們的跟踪。"}
  Intersector: {"zh-Hans": "相交仪可用于从两组范围确定公共因子。", "zh-Hant": "相交儀可用於從兩組範圍確定公共因子。"}
  Logs: {"zh-Hans": "选择一个日志从下面的列表以查看那个日志的内容。", "zh-Hant": "選擇一個日誌從下面的列表以查看那個日誌的內容。"}
+ Note that the exact value of this statistic will be the same as that shown at the statistics page at the time the rule is processed:
+  zh-Hans: "请注意，此统计信息的确切值将与处理规则时统计信息页面上显示的值相同。"
+  zh-Hant: "請注意，此統計資料的確切值將與處理規則時統計資料頁面上顯示的值相同。"
  Number of seconds until it expires: {"zh-Hans": "直到它过期的秒数。", "zh-Hant": "直到它過期的秒數。"}
  Numeric comparison:
   zh-Hans: "要使用数值比较，请选择直接字符串比较或自动方法检测，确保条件的值是数字，并在其前面添加所需的运算符。<br />例如，对于“等于”条件，&gt;=2产生≥2，&lt;=2产生≤2，对于“不等于”条件，&gt;=2产生≱2，&lt;=2产生≰2，等等。"

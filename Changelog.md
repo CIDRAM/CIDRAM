@@ -524,3 +524,8 @@
 - [2026.01.14]: Added aria expanded and controls attributes to some of the clickable menus at the front-end.
 - [2026.01.16]: Added a default signature bypass for UptimeRobot (#656).
 - *Plus all the regular signature updates.*
+
+### v4.1.0
+
+- [2026.01.20]: Added a hint at the auxiliary rules page for how to use CIDR as a condition source.
+- [2026.01.20]: Most of the statistics provided by the front-end statistics page can now also be leveraged by auxiliary rules as a condition source.

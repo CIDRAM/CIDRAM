@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2026.01.14).
+# This file: Korean language data for the front-end (last modified: 2026.01.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -1016,6 +1016,7 @@ tip:
  Accounts: "계정 페이지는 CIDRAM 프론트 엔드에 액세스 할 수있는 사용자를 제어 할 수 있습니다."
  Actions menu: "차단하면 서명수에 1이 추가됩니다. 우회하면 서명수에서 1이 차감됩니다. 화이트리스트는 서명수를 0으로 설정하고, 처리를 종료하여 후속 규칙을 완전히 건너뜁니다. 그레이리스트는 서명수를 0으로 설정하지만, 처리를 종료하지는 않습니다. 프로필은 서명수에는 영향을 미치지 않지만, 생성된 프로파일을 후속 규칙의 조건에 연결할 수 있으므로 다른 종류의 작업을 수행할지 여부를 결정하는 데 더 복잡한 논리가 필요할 때 유용합니다. 처리 후 서명 수가 1 이상이면 요청이 차단됩니다."
  Aggregator: "애그리게이터 가능한 한 가장 작은 방법으로 IP와 CIDR와 넷마스크를 표현할 수 있게 합니다. 집계할 데이터를 입력하고 "확인"을 누릅니다."
+ An accepted value is any CIDR with a range that covers the IP address of the request: "허용되는 값은 요청의 IP 주소를 포함하는 범위의 모든 CIDR입니다. 예를 들어, 1.2.3.0/24, 1.2.0.0/16, 1.0.0.0/8, 등은 1.2.3.4에 대해 허용됩니다. 오탐을 방지하려면 일반적으로 더 넓은 범위(예: 0.0.0.0/1)보다 더 좁은 범위(예: 1.2.3.4/32)가 더 바람직합니다. 계산기 페이지를 사용하면 지정된 IP 주소를 포함하는 CIDR 범위를 찾을 수 있습니다."
  Auxiliary Rules Modes: "보기 모드에서는 보조 규칙이 간결한 목록으로 표시되어 읽기 쉽습니다. 목록에 있는 규칙을 클릭하면 확장할 수 있으며, 자세한 내용을 볼 수 있습니다. 삼괘(☰)를 클릭하면 규칙을 내보내거나 삭제하는 옵션이 표시됩니다. 규칙은 드래그 앤 드롭 방식으로 재정렬할 수 있으며, 기존 위치에서 규칙을 원하는 위치로 끌어다 놓으면 됩니다. 보조 규칙을 수정하려면 편집 모드가 필요합니다, 페이지에는 필요에 따라 규칙에 새로운 조건, 웹후크, 또는 기타 논리를 추가할 수 있는 편집 가능한 필드와 옵션이 제공됩니다. 두 모드 중 하나를 통해 새로운 보조 규칙을 만들 수 있습니다."
  Auxiliary Rules Priority: "우선 순위 (최고➡(같은🔄동등한)➡최저한의):"
  Auxiliary Rules Webhooks: "규칙이 트리거 되면, CIDRAM은 연결된 웹 훅에 이벤트에 대해 알리려고 시도합니다. 웹훅은 POST 데이터를 수신할 수 있는 URL입니다. CIDRAM이 요청에 대해 생성하는 데이터를 처리하려는 외부 서비스, 앱, 스크립트, 등이 있고, 해당 서비스가 CIDRAM과는 완전히 다른 네트워크에 호스팅되어 있는 경우, 웹훅이 유용할 수 있습니다."
@@ -1041,6 +1042,7 @@ tip:
  IP Tracking: "IP 추적 페이지에서 IP 주소 추적 상태를 확인할 수 있습니다. 당신이 금지되어있는 것을 확인 할 수 있으며, 원한다면 당신은 추적을 취소 할 수 있습니다."
  Intersector: "교차 섹터는 두 범위 세트에서 공통 인자를 결정하는 데 사용할 수 있습니다."
  Logs: "로그의 내용을 보려면 다음 목록에서 로그를 선택합니다."
+ Note that the exact value of this statistic will be the same as that shown at the statistics page at the time the rule is processed: "참고로, 이 통계의 정확한 값은 규칙이 처리될 당시 통계 페이지에 표시된 값과 동일합니다."
  Number of seconds until it expires: "만료까지 남은 시간(초)입니다."
  Numeric comparison: "숫자 비교를 사용하려면, 직접 문자열 비교 또는 자동 방법 감지를 선택하고, 조건 값이 숫자인지 확인하고, 원하는 연산자를 앞에 붙입니다.<br />예로서, "같음" 조건의 경우, &gt;=2는 ≥2를 주고, &lt;=2는 ≤2를 주고, "같지 않음" 조건의 경우, &gt;=2는 ≱2를 주고, &lt;=2는 ≰2를 줍니다 등."
  Range Tables: "이 페이지는 현재 활성화 된 서명 파일에서 다루는 IP 범위에 대한 몇 가지 기본 통계 정보를 보여줍니다."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2026.01.14).
+# This file: Spanish language data for the front-end (last modified: 2026.01.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -1056,6 +1056,7 @@ tip:
  Accounts: "La página de cuentas permite controlar controlar quién puede acceder al CIDRAM front-end."
  Actions menu: "Bloquear añade 1 al recuento de firmas. Bypassear resta 1 del recuento de firmas. Lista blanca establece el recuento de firmas en 0 y finaliza el procesamiento, omitiendo así por completo cualquier regla posterior. Lista gris establece el recuento de firmas en 0, pero no finaliza el procesamiento. Perfilar no afecta el recuento de firmas, pero es útil cuando se necesita una lógica más compleja para determinar si se deben realizar otros tipos de acciones, ya que los perfiles generados se pueden encadenar a las condiciones de reglas posteriores. Después del procesamiento, si el recuento de firmas es 1 o mayor, la solicitud se bloqueará."
  Aggregator: "El agregador permite expresar IPs, CIDRs, y máscaras de red en la forma más pequeña posible. Introduzca los datos que desea agregar y pulse "OK"."
+ An accepted value is any CIDR with a range that covers the IP address of the request: "Un valor aceptado es cualquier CIDR con un rango que cubra la dirección IP de la solicitud. Por ejemplo, 1.2.3.0/24, 1.2.0.0/16, 1.0.0.0/8, etc se aceptarían para 1.2.3.4. Para evitar falsos positivos, generalmente son preferibles los rangos más estrechos (por ejemplo, 1.2.3.4/32) a los rangos más amplios (por ejemplo, 0.0.0.0/1). La página de la calculadora se puede utilizar para encontrar qué CIDR tienen rangos que cubren una dirección IP específica."
  Auxiliary Rules Modes: "El modo de visualización muestra las reglas auxiliares como una lista compacta para facilitar la lectura. Las reglas de la lista se pueden ampliar y se pueden mostrar más detalles haciendo clic en ellas. Las opciones para exportar o eliminar una regla se mostrarán al hacer clic en el trigrama (☰). Las reglas se pueden reordenar mediante arrastrar y soltar, arrastrando una regla desde su posición existente a la posición deseada. Se requiere el modo de edición para modificar reglas auxiliares, campos editables y opciones para agregar nuevas condiciones, webhooks, u otra lógica a las reglas según sea necesario en la página. Se pueden crear nuevas reglas auxiliares mediante cualquiera de los modos."
  Auxiliary Rules Priority: "Prioridad (mas alta➡(igual🔄equivalente)➡mas baja):"
  Auxiliary Rules Webhooks: "Cuando se cumple una regla, CIDRAM intentará notificar a los webhooks conectados sobre el evento. Un webhook es una URL capaz de recibir datos POST, y podría ser útil si hay un servicio externo, una aplicación, un script, etc alojado en una red completamente diferente a CIDRAM, y desea que maneje los datos generados por CIDRAM sobre la solicitud."
@@ -1081,6 +1082,7 @@ tip:
  IP Tracking: "La página de rastreo IP le permite comprobar el estado de seguimiento de las direcciones IP, para comprobar cuál de ellos ha sido prohibido, y anular el seguimiento de ellos si desea hacerlo."
  Intersector: "El intersector se puede utilizar para determinar los factores comunes de dos conjuntos de rangos."
  Logs: "Seleccionar un archivo de registro de la lista siguiente para ver el contenido de ese archivo de registro."
+ Note that the exact value of this statistic will be the same as that shown at the statistics page at the time the rule is processed: "Tenga en cuenta que el valor exacto de esta estadística será el mismo que el que se muestra en la página de estadísticas en el momento en que se procesa la regla."
  Number of seconds until it expires: "Número de segundos hasta que expire."
  Numeric comparison: "Para utilizar la comparación numérica, seleccione la comparación directa de cadenas o la detección automática del método, asegúrese de que el valor de la condición sea numérico, y anteponga el operador deseado.<br />P.ej., para condiciones "iguales", &gt;=2 proporciona ≥2, &lt;=2 proporciona ≤2, para condiciones "no iguales", &gt;=2 proporciona ≱2, &lt;=2 proporciona ≰2, etc."
  Range Tables: "Esta página muestra información estadística básica sobre los rangos de IP cubiertos por los archivos de firma actualmente activos."

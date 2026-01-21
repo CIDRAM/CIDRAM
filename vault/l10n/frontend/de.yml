@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2026.01.14).
+# This file: German language data for the front-end (last modified: 2026.01.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -1059,6 +1059,7 @@ tip:
  Accounts: "Das Kontenseite macht es möglich zu kontrollieren, wer kann Zugriff auf der CIDRAM Frontend haben."
  Actions menu: "Blockierung addiert 1 zur Zählung den Signaturen. Bypassung zieht 1 von der Zählung den Signaturen ab. Weiße-Liste setzt die Zählung den Signaturen auf 0 und beendet die Verarbeitung, wodurch alle nachfolgenden Regeln vollständig übersprungen werden. Graue-Liste setzt die Zählung den Signaturen auf 0, aber beendet die Verarbeitung jedoch nicht. Profilerstellung hat keinen Einfluss auf die Zählung den Signaturen, aber ist jedoch nützlich wenn eine komplexere Logik erforderlich ist um zu bestimmen ob andere Arten von Aktionen ausgeführt werden sollen, da generierte Profile an die Bedingungen nachfolgender Regeln gekettet werden könnten. Wenn die Zählung den Signaturen nach der Verarbeitung 1 oder höher ist, die Anfrage wird blockiert."
  Aggregator: "Mit dem Aggregator können Sie IPs, CIDRs, und Netzmasken auf kleinstmögliche Weise ausdrücken. Geben Sie die zu aggregierenden Daten und drücken Sie „OK“."
+ An accepted value is any CIDR with a range that covers the IP address of the request: "Als zulässiger Wert gilt jede CIDR deren Bereich die IP-Adresse der Anfrage abdeckt. z.B., für 1.2.3.4 würden 1.2.3.0/24, 1.2.0.0/16, 1.0.0.0/8, u.s.w. akzeptiert werden. Um Falsch-Positive zu vermeiden, sind engere Bereiche (z.B., 1.2.3.4/32) im Allgemeinen größeren Bereichen (z.B., 0.0.0.0/1) vorzuziehen. Mithilfe der Rechnerseite kann ermittelt werden welche CIDRs Bereiche abdecken die eine bestimmte IP-Adresse umfassen."
  Auxiliary Rules Modes: "Im Ansichtsmodus werden Hilfsregeln als kompakte Liste angezeigt, damit sie leichter zu lesen sind. Durch Anklicken können Regeln in der Liste erweitert und weitere Details angezeigt werden. Optionen zum Exportieren oder Löschen einer Regel werden angezeigt wenn Sie auf das Trigramm (☰) klicken. Regeln können per Drag-and-Drop neu angeordnet werden, indem eine Regel von ihrer vorhandenen Position an die gewünschte Position gezogen wird. Hilfsregeln können im Bearbeitungsmodus geändert werden, auf der Seite werden bearbeitbare Felder und Optionen bereitgestellt um den Regeln nach Bedarf neue Bedingungen, Webhooks, oder andere Logik hinzuzufügen. Neue Hilfsregeln können über beide Modi erstellt werden."
  Auxiliary Rules Priority: "Priorität (höchste➡(gleich🔄äquivalent)➡niedrigste):"
  Auxiliary Rules Webhooks: "Wenn eine Regel ausgelöst wird, CIDRAM versucht, alle Webhooks verbundenen über das Ereignis zu informieren. Ein Webhook ist eine URL die POST-Daten empfangen kann, und nützlich sein kann wenn ein externer Dienst, App, Skript u.s.w. auf einem völlig anderen Netzwerk als CIDRAM gehostet wird und die von CIDRAM generierten Daten über die Anfrage verarbeiten soll."
@@ -1084,6 +1085,7 @@ tip:
  IP Tracking: "Auf der Seite IP-Tracking können Sie den Tracking-Status für IP-Adressen überprüfen, welche von ihnen verbannt wurden, und Sie können das Tracking für sie widerrufen, wenn Sie dies tun möchten."
  Intersector: "Das Intersektor kann verwendet werden, um die gemeinsamen Faktoren aus zwei Sätzen von Bereichen zu bestimmen."
  Logs: "Wählen Sie eine Protokolldatei aus der folgenden Liste um den Inhalt dieser Protokolldatei anzuzeigen."
+ Note that the exact value of this statistic will be the same as that shown at the statistics page at the time the rule is processed: "Beachten Sie dass der genaue Wert dieser Statistik entspricht der zum Zeitpunkt der Regelverarbeitung dem Wert auf der Statistikseite angezeigt wird."
  Number of seconds until it expires: "Anzahl der Sekunden bis zum Ablauf."
  Numeric comparison: "Um den numerischen Vergleich zu verwenden, wählen Sie den direkten String-Vergleich oder die automatische Methodenerkennung aus, stellen Sie sicher, dass der Wert der Bedingung numerisch ist, und stellen Sie ihm den gewünschten Operator voran.<br />z.B., für „gleich“ Bedingungen, &gt;=2 ergibt ≥2, &lt;=2 ergibt ≤2, für „nicht gleich“ Bedingungen, &gt;=2 ergibt ≱2, &lt;=2 ergibt ≰2, u.s.w."
  Range Tables: "Diese Seite enthält einige grundlegende statistische Informationen zu den IP-Bereichen, die von den derzeit aktiven Signaturdateien abgedeckt werden."

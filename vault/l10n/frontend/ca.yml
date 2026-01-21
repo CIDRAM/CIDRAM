@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Catalan language data for the front-end (last modified: 2026.01.14).
+# This file: Catalan language data for the front-end (last modified: 2026.01.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -1052,6 +1052,7 @@ tip:
  Accounts: "La pàgina de comptes us permet controlar qui pot accedir al front-end de CIDRAM."
  Actions menu: "Bloquegeu afegeix 1 al recompte de signatures. Bypasseu resta 1 del recompte de signatures. Llista blanca estableix el recompte de signatures a 0 i finalitza el processament, ometent així completament qualsevol regla posterior. Llista grisa estableix el recompte de signatures a 0, però no finalitza el processament. Perfileu no afecta el recompte de signatures, però és útil quan es necessita una lògica més complexa per determinar si cal realitzar altres tipus d'accions, ja que els perfils generats es podrien encadenar a les condicions de les regles posteriors. Després del processament, si el recompte de signatures és d'1 o superior, la sol·licitud es bloquejarà."
  Aggregator: "L'agregador us permet expressar adreces IP, CIDR, i màscares de xarxa de la manera més petita possible. Introduïu les dades que voleu agregar i premeu "D'acord"."
+ An accepted value is any CIDR with a range that covers the IP address of the request: "Un valor acceptat és qualsevol CIDR amb un rang que cobreixi l'adreça IP de la sol·licitud. Per exemple, s'acceptarien 1.2.3.0/24, 1.2.0.0/16, 1.0.0.0/8, etc per a 1.2.3.4. Per evitar falsos positius, generalment són preferibles els intervals més estrets (per exemple, 1.2.3.4/32) als intervals més amplis (per exemple, 0.0.0.0/1). La pàgina de la calculadora es pot utilitzar per trobar quins CIDR tenen rangs que cobreixen una adreça IP especificada."
  Auxiliary Rules Modes: "El mode de visualització mostra les regles auxiliars com una llista compacta per facilitar-ne la lectura. Les regles de la llista es poden ampliar i es poden mostrar més detalls fent-hi clic. Les opcions per exportar o suprimir una regla es mostraran en fer clic al trigrama (☰). Les regles es poden reordenar mitjançant la funció d'arrossegar i deixar anar, arrossegant una regla des de la seva posició existent fins a la posició desitjada. El mode d'edició és necessari per modificar regles auxiliars, camps editables i opcions per afegir noves condicions, webhooks, o altres lògiques a les regles segons calgui a la pàgina. Es poden crear noves regles auxiliars mitjançant qualsevol dels dos modes."
  Auxiliary Rules Priority: "Prioritat (més alt➡(igual🔄equivalent)➡més baix):"
  Auxiliary Rules Webhooks: "Quan es desencadenen una regla, CIDRAM intentarà notificar qualsevol webhook connectat sobre l'esdeveniment. Un webhook és una URL capaç de rebre dades POST, i podria ser útil si hi ha un servei extern, una aplicació, un script, etc allotjat en una xarxa completament diferent de CIDRAM, que voleu que gestioni les dades generades per CIDRAM sobre la sol·licitud."
@@ -1077,6 +1078,7 @@ tip:
  IP Tracking: "La pàgina de seguiment d'IP us permet comprovar l'estat de seguiment de les adreces IP, per comprovar quins d'ells s'han prohibit, i per desprohibir-los/des·seguir-los si ho voleu fer."
  Intersector: "La intersector es pot utilitzar per determinar els factors comuns de dos conjunts d'rangs."
  Logs: "Seleccioneu un fitxer de registre de la llista següent per veure el contingut d'aquest fitxer de registre."
+ Note that the exact value of this statistic will be the same as that shown at the statistics page at the time the rule is processed: "Tingueu en compte que el valor exacte d'aquesta estadística serà el mateix que es mostra a la pàgina d'estadístiques en el moment en què es processi la regla."
  Number of seconds until it expires: "Nombre de segons fins que caduqui."
  Numeric comparison: "Per utilitzar la comparació numèrica, seleccioneu la comparació directa de cadenes o la detecció automàtica de mètodes, assegureu-vos que el valor de la condició sigui numèric, i prefixeu-lo amb l'operador desitjat.<br />Per exemple, per a condicions "iguals", &gt;=2 proporciona ≥2, &lt;=2 proporciona ≤2, per a condicions "no iguals", &gt;=2 proporciona ≱2, &lt;=2 proporciona ≰2, etc."
  Range Tables: "Aquesta pàgina mostra informació estadística bàsica sobre els rangs d'IP coberts pels fitxers de signatura actius actualment."

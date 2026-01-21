@@ -224,6 +224,12 @@ function getInputSuggestions(e) {
   } else if (e.value=='ClientL10NAccepted') {
     e.parentElement.nextElementSibling.innerHTML='<small>{label.Suggestions}{pair_separator}'+langResSuggestions+'</small>';
     e.parentElement.nextElementSibling.className='suggestsActive';
+  } else if (e.value=='Factors') {
+    e.parentElement.nextElementSibling.innerHTML='<small>{tip.An accepted value is any CIDR with a range that covers the IP address of the request}</small>';
+    e.parentElement.nextElementSibling.className='suggestsActive';
+  } else if (e.value.substring(0,11)=='Statistics-') {
+    e.parentElement.nextElementSibling.innerHTML='<small>{tip.Note that the exact value of this statistic will be the same as that shown at the statistics page at the time the rule is processed}</small>';
+    e.parentElement.nextElementSibling.className='suggestsActive';
   } else {
     e.parentElement.nextElementSibling.innerHTML='';
     e.parentElement.nextElementSibling.className='suggestsInactive';

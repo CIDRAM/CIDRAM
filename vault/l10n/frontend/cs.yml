@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Czech language data for the front-end (last modified: 2026.01.14).
+# This file: Czech language data for the front-end (last modified: 2026.01.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -1077,6 +1077,7 @@ tip:
  Accounts: "Stránka účtů vám umožňuje ovládat, kdo má přístup k front-endu CIDRAM."
  Actions menu: "Zablokujte přidává 1 k počet podpisů. Bypassujte odečte 1 z počet podpisů. Whitelistujte nastaví počet podpisů na 0 a ukončí zpracování, čímž zcela přeskočí všechna následná pravidla. Greylistujte nastaví počet podpisů na 0, ale neukončí zpracování. Profilujte neovlivňuje počet podpisů, ale je užitečné když může být zapotřebí složitější logika k určení zda provést jiné druhy akcí, protože vygenerované profily by mohly být propojeny s podmínkami následných pravidel. Pokud je po zpracování počet podpisů 1 nebo větší, bude požadavek zablokován."
  Aggregator: "Agregátor vám umožňuje vyjadřovat IP, CIDR, a síťové masky nejmenším možným způsobem. Zadejte data, která mají být agregována, a stiskněte „OK“."
+ An accepted value is any CIDR with a range that covers the IP address of the request: "Akceptovanou hodnotou je libovolný CIDR s rozsahem, který pokrývá IP adresu požadavku. Např., 1.2.3.0/24, 1.2.0.0/16, 1.0.0.0/8 atd by byly akceptovány pro 1.2.3.4. Aby se předešlo falešně pozitivním, jsou obecně vhodnější užší rozsahy (např., 1.2.3.4/32) než širší rozsahy (např., 0.0.0.0/1). Stránku kalkulačky lze použít k nalezení CIDR s rozsahy pokrývajícími zadanou IP adresu."
  Auxiliary Rules Modes: "V režimu zobrazení se pomocná pravidla zobrazují jako kompaktní seznam pro snadné čtení. Pravidla v seznamu lze rozbalit a zobrazit další podrobnosti kliknutím na ně. Možnosti exportu nebo smazání pravidla se zobrazí po kliknutí na trigram (☰). Pořadí pravidel lze změnit funkcí drag-and-drop, t.j., přetažením pravidla z jeho stávající pozice na požadovanou pozici. Pro úpravu pomocných pravidel je vyžadován režim úprav, upravitelná pole a možnosti pro přidání nových podmínek, webhooků, nebo jiné logiky k pravidlům dle potřeby uvedené na stránce. Nová pomocná pravidla lze vytvořit v obou režimech."
  Auxiliary Rules Priority: "Prioritou (nejvyšší➡(stejné🔄ekvivalent)➡nejnižší):"
  Auxiliary Rules Webhooks: "Když je pravidlo spuštěno, CIDRAM se pokusí upozornit na událost všechny připojené webhooky. Webhook je URL adresa schopná přijímat POST data a může být užitečná, pokud je externí služba, aplikace, skript atd. hostována v úplně jiné síti než CIDRAM, a chcete aby zpracovávala data generovaná CIDRAM o požadavku."
@@ -1102,6 +1103,7 @@ tip:
  IP Tracking: "Stránka sledování IP vám umožňuje zkontrolovat stav sledování IP adres, zkontrolovat, které z nich byly zakázány, a jej zrušit zákaz nebo zrušit sledování, pokud tak chcete učinit."
  Intersector: "Mezisektor lze použít k určení společných faktorů ze dvou sad rozsahů."
  Logs: "Chcete-li zobrazit obsah tohoto souboru protokolu, vyberte soubor protokolu ze seznamu níže."
+ Note that the exact value of this statistic will be the same as that shown at the statistics page at the time the rule is processed: "Upozorňujeme, že přesná hodnota této statistiky bude stejná jako hodnota zobrazená na stránce statistik v době zpracování pravidla."
  Number of seconds until it expires: "Počet sekund do vypršení platnosti."
  Numeric comparison: "Chcete-li použít číselné porovnání, vyberte přímé porovnání řetězců nebo automatickou detekci metody, ujistěte se že hodnota podmínky je číselná, a před ní přidejte požadovaný operátor.<br />Např., pro „rovná se“ podmínky, &gt;=2 poskytuje ≥2, &lt;=2 poskytuje ≤2, pro „nerovná se“ podmínky, &gt;=2 poskytuje ≱2, &lt;=2 poskytuje ≰2, atd."
  Range Tables: "Tato stránka zobrazuje některé základní statistické informace o rozsazích IP pokrytých aktuálně aktivními soubory podpisů."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Romanian language data for the front-end (last modified: 2026.01.14).
+# This file: Romanian language data for the front-end (last modified: 2026.01.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -1083,6 +1083,7 @@ tip:
  Accounts: "Pagina de conturi vă permite să controlați cine poate accesa front-end-ul CIDRAM."
  Actions menu: "Blocați adaugă 1 la numărul de semnături. Bypassați scade 1 din numărul de semnături. Lista albă setează numărul de semnături la 0 și termină procesarea, omițând complet orice reguli ulterioare. Lista gri setează numărul de semnături la 0, dar nu termină procesarea. Profilați nu afectează numărul de semnături, dar este util atunci când poate fi necesară o logică mai complexă pentru a determina dacă se efectuează alte tipuri de acțiuni, deoarece profilurile generate ar putea fi folosit pentru condițiile regulilor ulterioare. După procesare, dacă numărul de semnături este 1 sau mai mare, solicitărea va fi blocată."
  Aggregator: "Agregatorul vă permite să exprimați IP-uri, CIDR-uri, și măști de rețea în cel mai mic mod posibil. Introduceți datele de agregat și apăsați „OK”."
+ An accepted value is any CIDR with a range that covers the IP address of the request: "O valoare acceptată este orice CIDR cu un interval care acoperă adresa IP a solicitării. De exemplu, 1.2.3.0/24, 1.2.0.0/16, 1.0.0.0/8 etc ar fi acceptate pentru 1.2.3.4. Pentru a evita rezultatele fals pozitive, intervalele mai înguste (de exemplu, 1.2.3.4/32) sunt în general preferabile intervalelor mai largi (de exemplu, 0.0.0.0/1). Pagina calculatorului poate fi utilizată pentru a găsi intervalele CIDR care acoperă o adresă IP specificată."
  Auxiliary Rules Modes: "Modul vizualizare afișează regulile auxiliare sub forma unei liste compacte pentru o citire ușoară. Regulile din listă pot fi extinse și pot fi afișate detalii suplimentare făcând clic pe ele. Opțiunile pentru exportarea sau ștergerea unei reguli vor fi afișate când faceți clic pe trigrama (☰). Regulile pot fi reordonate prin trageți și plasați, trăgând o regulă din poziția sa existentă în poziția dorită. Modul de editare este necesar pentru a modifica regulile auxiliare, câmpurile editabile și opțiunile pentru a adăuga noi condiții, webhook-uri, sau alte elemente logice la reguli, după cum este necesar, furnizate pe pagină. Noi reguli auxiliare pot fi create prin oricare dintre moduri."
  Auxiliary Rules Priority: "Prioritate (cea mai mare➡(egal🔄echivalent)➡cea mai mică):"
  Auxiliary Rules Webhooks: "Când se declanșează o regulă, CIDRAM va încerca să notifice orice webhook conectat despre eveniment. Un webhook este o adresă URL capabilă să primească date POST, și ar putea fi utilă dacă există un serviciu extern, o aplicație, un script etc. găzduit pe o rețea complet diferită de CIDRAM, pentru care doriți să gestionați datele generate de CIDRAM despre solicitare."
@@ -1108,6 +1109,7 @@ tip:
  IP Tracking: "Pagina de urmărire IP vă permite să verificați starea de urmărire a adreselor IP, să verificați care dintre ele au fost interzise, și să le dezinterzice/dezurmăriți dacă doriți să faceți acest lucru."
  Intersector: "Intersectorul poate fi utilizat pentru a determina factorii comuni din două seturi de intervale."
  Logs: "Selectați un fișier jurnal din lista de mai jos pentru a vedea conținutul acelui fișier jurnal."
+ Note that the exact value of this statistic will be the same as that shown at the statistics page at the time the rule is processed: "Rețineți că valoarea exactă a acestei statistici va fi aceeași cu cea afișată pe pagina de statistici în momentul procesării regulii."
  Number of seconds until it expires: "Numărul de secunde până când expiră."
  Numeric comparison: "Pentru a utiliza comparația numerică, selectați compararea directă a șirurilor sau detectarea automată a metodei, asigurați-vă că valoarea condiției este numerică, și prefixați-o cu operatorul dorit.<br />De exemplu, pentru condiții „egale”, &gt;=2 furnizează ≥2, &lt;=2 furnizează ≤2, pentru condiții „nu egale”, &gt;=2 furnizează ≱2, &lt;=2 furnizează ≰2, etc."
  Range Tables: "Această pagină prezintă câteva informații statistice de bază despre intervalele IP acoperite de fișierele de semnătură active în prezent."

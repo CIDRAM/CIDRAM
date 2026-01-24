@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: ReCaptcha class (last modified: 2025.10.19).
+ * This file: ReCaptcha class (last modified: 2026.01.25).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -240,8 +240,7 @@ class ReCaptcha extends Captcha
             "</div>\n" .
             '<form id="gF" method="POST" action="" class="gForm">' .
                 '<input id="rData" type="hidden" name="g-recaptcha-response" value="" />%s' .
-            "</form>\n" .
-            "<script type=\"text/javascript\">function onSubmitCallback(token){document.getElementById('rData').value=token;document.getElementById('gF').submit()}</script>\n",
+            "</form>\n<script type=\"text/javascript\">document.addEventListener('DOMContentLoaded',function(){document.getElementById('gF').action=window.location});function onSubmitCallback(token){document.getElementById('rData').value=token;document.getElementById('gF').submit()}</script>\n",
             $this->CIDRAM->CIDRAM['L10N-Lang-Attache'],
             $ApiMessage ? ($this->CIDRAM->ClientL10N->getString('captcha_message_invisible') ?: $this->CIDRAM->L10N->getString('captcha_message_invisible')) : '',
             $CookieWarn ? '<br />' . $MsgCookieWarning : '',
@@ -250,9 +249,9 @@ class ReCaptcha extends Captcha
             $this->TemplateInsert
         ) . $Script . "\n" : sprintf(
             "\n<hr />\n<p class=\"detected\"%s>%s%s<br /></p>\n" .
-            '<form method="POST" action="" class="gForm" onsubmit="javascript:grecaptcha.execute()">' .
+            '<form id="gF" method="POST" action="" class="gForm" onsubmit="javascript:grecaptcha.execute()">' .
                 '<div id="gForm" data-theme="%s"></div><div>%s<input type="submit" value="%s" /></div>' .
-            "</form>\n",
+            "</form>\n<script type=\"text/javascript\">document.addEventListener('DOMContentLoaded',function(){document.getElementById('gF').action=window.location})</script>\n",
             $this->CIDRAM->CIDRAM['L10N-Lang-Attache'],
             $ApiMessage ? ($this->CIDRAM->ClientL10N->getString('captcha_message') ?: $this->CIDRAM->L10N->getString('captcha_message')) : '',
             $CookieWarn ? '<br />' . $MsgCookieWarning : '',

@@ -509,4 +509,8 @@
 
 ### v3.10.3
 
+#### Bugs fixed.
+- [2026.01.25]: The page request's query parameters weren't being properly retained when submitting CAPTCHA forms; Fixed (#663).
+
+#### Other changes.
 - [2026.01.20]: Added a hint at the auxiliary rules page for how to use CIDR as a condition source.

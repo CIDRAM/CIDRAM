@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Cloudflare Turnstile class (last modified: 2025.08.27).
+ * This file: Cloudflare Turnstile class (last modified: 2026.01.25).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -195,7 +195,7 @@ class CloudflareTurnstile extends Captcha
 
         return sprintf(
             "\n<hr />\n<p class=\"detected\"%s>%s%s<br /></p>\n" .
-            '<form method="POST" action="" class="gForm">' .
+            '<form id="CTf" method="POST" action="" class="gForm">' .
                 '<div class="cf-turnstile" data-sitekey="%s" data-theme="%s" data-size="flexible" data-language="%s"></div>' .
                 '<div>%s<input type="hidden" name="cfidem" value="%s" /><input type="submit" value="%s" /></div>' .
             "</form>\n",
@@ -208,7 +208,7 @@ class CloudflareTurnstile extends Captcha
             $this->TemplateInsert,
             $this->CIDRAM->BlockInfo['ID'] ?? $this->CIDRAM->generateId(),
             $this->CIDRAM->ClientL10N->getString('label.Submit') ?: $this->CIDRAM->L10N->getString('label.Submit')
-        ) . '<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script><script type="text/javascript">document.getElementById(\'hostnameoverride\').value=window.location.hostname;</script>';
+        ) . '<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script><script type="text/javascript">document.addEventListener(\'DOMContentLoaded\',function(){document.getElementById(\'CTf\').action=window.location});document.getElementById(\'hostnameoverride\').value=window.location.hostname;</script>';
     }
 
     /**

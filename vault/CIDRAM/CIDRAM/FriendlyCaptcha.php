@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Friendly Captcha class (last modified: 2025.08.27).
+ * This file: Friendly Captcha class (last modified: 2026.01.25).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -204,10 +204,9 @@ class FriendlyCaptcha extends Captcha
         } else {
             $Script = '<script type="module" src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@0.1.31/site.min.js" async defer></script><script nomodule src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@0.1.31/site.compat.min.js" async defer></script>';
         }
-        $Script .= '<script type="text/javascript">document.getElementById(\'hostnameoverride\').value=window.location.hostname;</script>';
         return sprintf(
             "\n<hr />\n<p class=\"detected\"%s>%s%s<br /></p>\n" .
-            '<form method="POST" action="" class="gForm">' .
+            '<form id="FCf" method="POST" action="" class="gForm">' .
                 '<div class="frc-captcha" data-sitekey="%s" data-theme="%s" lang="%s"></div>' .
                 '<div>%s<input type="submit" value="%s" /></div>' .
             "</form>\n",
@@ -219,7 +218,7 @@ class FriendlyCaptcha extends Captcha
             $this->CIDRAM->ClientL10N->getString('hl.friendly') ?: $this->CIDRAM->L10N->getString('hl.friendly'),
             $this->TemplateInsert,
             $this->CIDRAM->ClientL10N->getString('label.Submit') ?: $this->CIDRAM->L10N->getString('label.Submit')
-        ) . $Script;
+        ) . $Script . '<script type="text/javascript">document.addEventListener(\'DOMContentLoaded\',function(){document.getElementById(\'FCf\').action=window.location});document.getElementById(\'hostnameoverride\').value=window.location.hostname;</script>';
     }
 
     /**

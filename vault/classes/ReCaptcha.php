@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: ReCaptcha class (last modified: 2025.08.07).
+ * This file: ReCaptcha class (last modified: 2026.01.25).
  */
 
 namespace CIDRAM\Core;
@@ -236,8 +236,7 @@ class ReCaptcha extends Captcha
             "</div>\n" .
             '<form id="gF" method="POST" action="" class="gForm">' .
                 '<input id="rData" type="hidden" name="g-recaptcha-response" value="" />%s' .
-            "</form>\n" .
-            "<script type=\"text/javascript\">function onSubmitCallback(token){document.getElementById('rData').value=token;document.getElementById('gF').submit()}</script>\n",
+            "</form>\n<script type=\"text/javascript\">document.addEventListener('DOMContentLoaded',function(){document.getElementById('gF').action=window.location});function onSubmitCallback(token){document.getElementById('rData').value=token;document.getElementById('gF').submit()}</script>\n",
             $ApiMessage ? '{captcha_message_invisible}' : '',
             $CookieWarn ? '<br />{captcha_cookie_warning}' : '',
             $SiteKey,
@@ -245,9 +244,9 @@ class ReCaptcha extends Captcha
             $this->TemplateInsert
         ) . $Script . "\n" : sprintf(
             "\n<hr />\n<p class=\"detected\">%s%s<br /></p>\n" .
-            '<form method="POST" action="" class="gForm" onsubmit="javascript:grecaptcha.execute()">' .
+            '<form id="gF" method="POST" action="" class="gForm" onsubmit="javascript:grecaptcha.execute()">' .
                 '<div id="gForm" data-theme="%s"></div><div>%s<input type="submit" value="{label_submit}" /></div>' .
-            "</form>\n",
+            "</form>\n<script type=\"text/javascript\">document.addEventListener('DOMContentLoaded',function(){document.getElementById('gF').action=window.location})</script>\n",
             $ApiMessage ? '{captcha_message}' : '',
             $CookieWarn ? '<br />{captcha_cookie_warning}' : '',
             $this->determineTheme(),

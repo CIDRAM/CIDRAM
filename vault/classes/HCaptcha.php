@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: HCaptcha class (last modified: 2025.08.07).
+ * This file: HCaptcha class (last modified: 2026.01.25).
  */
 
 namespace CIDRAM\Core;
@@ -240,8 +240,7 @@ class HCaptcha extends Captcha
             "</div>\n" .
             '<form id="gF" method="POST" action="" class="gForm" onsubmit="javascript:hcaptcha.execute()">' .
                 '<input id="rData" type="hidden" name="hc-response" value="" />%s' .
-            "</form>\n" .
-            "<script type=\"text/javascript\">function onSubmitCallback(token){document.getElementById('rData').value=hcaptcha.getResponse(window.document.hcwidget);document.getElementById('gF').submit()}</script>\n",
+            "</form>\n<script type=\"text/javascript\">document.addEventListener('DOMContentLoaded',function(){document.getElementById('gF').action=window.location});function onSubmitCallback(token){document.getElementById('rData').value=hcaptcha.getResponse(window.document.hcwidget);document.getElementById('gF').submit()}</script>\n",
             $ApiMessage ? '{captcha_message_invisible}' : '',
             $CookieWarn ? '<br />{captcha_cookie_warning}' : '',
             $SiteKey,
@@ -249,12 +248,11 @@ class HCaptcha extends Captcha
             $this->TemplateInsert
         ) . $Script . "\n" : sprintf(
             "\n<hr />\n<p class=\"detected\">%s%s<br /></p>\n" .
-            '<form method="POST" action="" class="gForm">' .
+            '<form id="gF" method="POST" action="" class="gForm">' .
                 '<input id="rData" type="hidden" name="hc-response" value="" />' .
                 '<div id="hcform" data-theme="%s" data-callback="onSubmitCallback"></div>' .
                 '<div>%s<input type="submit" value="{label_submit}" /></div>' .
-            "</form>\n" .
-            "<script type=\"text/javascript\">function onSubmitCallback(token){document.getElementById('rData').value=hcaptcha.getResponse(window.document.hcwidget)}</script>\n",
+            "</form>\n<script type=\"text/javascript\">document.addEventListener('DOMContentLoaded',function(){document.getElementById('gF').action=window.location});function onSubmitCallback(token){document.getElementById('rData').value=hcaptcha.getResponse(window.document.hcwidget)}</script>\n",
             $ApiMessage ? '{captcha_message}' : '',
             $CookieWarn ? '<br />{captcha_cookie_warning}' : '',
             $this->determineTheme(),

@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v4/vault/signatures/ipv6_isps.dat
 
-# Version: 2026.18.0
-# Last modified: 2026.01.19
+# Version: 2026.25.0
+# Last modified: 2026.01.26
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -108,19 +108,56 @@ Tag: PJSC Rostelecom
 # Indian domestic ISP. Brute-force, SSH, and webapp attacks, WordPress hack
 # attempts, port scans, and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 4 (AS18101), 36,445 (AS55836).
-# Updated: 2025.04.13
+# Stop Forum Spam (SFS) listings: 7 (AS18101), 32,067 (AS55836).
+# Updated: 2026.01.26
 
-2405:201:303a:6010::/64 Deny Spam
-2405:201:4015:713a::/64 Deny Spam
-2405:201:5800:a177::/64 Deny Spam
-2405:201:5807:38b8::/64 Deny Spam
-2405:201:6816:11d3::/64 Deny Spam
-2409:4081:ae0f:b2f6::/64 Deny Spam
-2409:4090:8084:e001::/64 Deny Spam
-2409:40d0:2017:6f99::/64 Deny Spam
-2409:40f4:12d:b19f::/64 Deny Spam
-2409:40f4:112b:fec::/64 Deny Spam
+2405:201:200c:9b61::/64 Deny Spam
+2405:201:200d:94b::/64 Deny Spam
+2405:201:201c:4884::/64 Deny Spam
+2405:201:300a:986b::/64 Deny Spam
+2405:201:303e:8008::/64 Deny Spam
+2405:201:304c:8ed::/64 Deny Spam
+2405:201:4044:65::/64 Deny Spam
+2405:201:580c:e194::/64 Deny Spam
+2405:201:5c01:6017::/64 Deny Spam
+2405:201:5c01:60f6::/64 Deny Spam
+2405:201:5c01:61f1::/64 Deny Spam
+2405:201:5c01:680d::/64 Deny Spam
+2405:201:5c0b:3080::/64 Deny Spam
+2405:201:6009:407d::/64 Deny Spam
+2405:201:680c:310c::/64 Deny Spam
+2405:201:6815:c00f::/64 Deny Spam
+2405:201:6825:5916::/64 Deny Spam
+2405:201:8006:2110::/64 Deny Attacks
+2409:4081:1d89:7ea6::/64 Deny Spam
+2409:4081:9e03:bdd2::/64 Deny Spam
+2409:4090:8055:3808::/64 Deny Spam
+2409:40c0:101c:d088::/64 Deny Spam
+2409:40c4:b:3cf9::/64 Deny Spam
+2409:40c4:2d:f0c0::/64 Deny Spam
+2409:40c4:33:ec59::/64 Deny Spam
+2409:40c4:ec:fe4f::/64 Deny Spam
+2409:40c4:101f:38ea::/64 Deny Spam
+2409:40c4:10fb:8d1a::/64 Deny Spam
+2409:40c4:116f:d2c5::/64 Deny Spam
+2409:40c4:200b:e8d::/64 Deny Spam
+2409:40c4:2112:dfa6::/64 Deny Spam
+2409:40c4:2151:4f35::/64 Deny Spam
+2409:40c4:21c9:601e::/64 Deny Spam
+2409:40c4:314a:b539::/64 Deny Spam
+2409:40d0:b0:c64f::/64 Deny Spam
+2409:40d0:100b:6e7b::/64 Deny Spam
+2409:40d0:1037:58ae::/64 Deny Spam
+2409:40d0:11f3:ea39::/64 Deny Spam
+2409:40d0:12e8:74aa::/64 Deny Spam
+2409:40d0:1397:98a8::/64 Deny Spam
+2409:40d0:2006:4917::/64 Deny Spam
+2409:40d0:2018:6ca8::/64 Deny Spam
+2409:40d0:2021:7b62::/64 Deny Spam
+2409:40d0:30be:f479::/64 Deny Spam
+2409:40d4:306c:84b6::/64 Deny Spam
+2409:40e2:11e9:8015::/64 Deny Spam
+2409:40e2:20a2:a9a8::/64 Deny Spam
 Origin: IN
 Profile: Domestic ISP;Infrastructure/Transit
 Tag: Reliance Communications
@@ -435,3 +472,28 @@ Tag: AT&T Services, Inc
 Origin: TR
 Profile: Domestic ISP
 Tag: TTNet A.S
+
+
+# ASN 9299 ("Philippine Long Distance Telephone Company").
+# Philippines domestic ISP. Brute-force and SSH attacks, XRumer, hacking, and
+# spam detected from here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 2,871.
+# Updated: 2025.10.05 / Modified: 2026.01.26
+
+2001:4452:383:2200::/64 Deny Attacks
+Origin: PH
+Profile: Domestic ISP;Mobile ISP;Multiplay
+Tag: Philippine Long Distance
+
+
+# ASN 216363 ("OOO Istra.net").
+# Russian domestic ISP. Brute-force, telnet, honeypot, and webapp attacks,
+# Aisuru botnet, ping of death, port scans, hacking, and spam detected from
+# here. Entire network affected.
+# Stop Forum Spam (SFS) listings: 21.
+# Updated: 2026.01.26
+
+a13:c9c0::/32 Deny Attacks
+Origin: RU
+Profile: Domestic ISP
+Tag: OOO Istra.net

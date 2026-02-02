@@ -255,7 +255,7 @@ CIDRAM:
 IPv4:
  Extended Description: "Default IPv4 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints."
  False Positive Risk: "Medium"
- Version: "2026.25.0"
+ Version: "2026.32.0"
  Dependencies:
   CIDRAM Core: ">=1"
   Bypasses: ">=2025.348"
@@ -267,7 +267,7 @@ IPv4:
   To:
    - "ipv4.dat"
   Checksum:
-   - "1574bbd4a638d235880bcfe1bd1305550e3f861917d80479396d3c24421a622c:1862960"
+   - "0761a86f2f9c3084d41a03e8228fc888515386aa0f59a39e061c614ea7b62c73:1876269"
  Used with: "ipv4"
  Reannotate: "components.dat"
 IPv4-Bogons:
@@ -290,7 +290,7 @@ IPv4-Bogons:
 IPv4-ISPs:
  Extended Description: "Default IPv4 signatures normally included with the main package. Blocks dangerous and spammy ISPs."
  False Positive Risk: "Medium"
- Version: "2026.25.0"
+ Version: "2026.32.0"
  Dependencies:
   CIDRAM Core: ">=1"
   Bypasses: ">=2023.95"
@@ -302,7 +302,7 @@ IPv4-ISPs:
   To:
    - "ipv4_isps.dat"
   Checksum:
-   - "94c195c672a6bde9cbe825aa1200effe1ba8b5f92cb96e6c9be8885715d1d426:784336"
+   - "5b166a32a29682156676fcf8ab5a3286353c97deacbaf602a6f78f0db77eb2eb:784487"
  Used with: "ipv4"
  Reannotate: "components.dat"
 IPv4-Nonblocking:
@@ -342,7 +342,7 @@ IPv4-Other:
 IPv6:
  Extended Description: "Default IPv6 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints."
  False Positive Risk: "Low"
- Version: "2026.25.0"
+ Version: "2026.32.0"
  Dependencies:
   CIDRAM Core: ">=1"
   Bypasses: ">=2025.348"
@@ -354,7 +354,7 @@ IPv6:
   To:
    - "ipv6.dat"
   Checksum:
-   - "4610aa4ffd890bd4032527c58e7399fbc7c539fdbf8a69ccb64b1ebebb166bc4:560067"
+   - "abb755f222dbf0bb4a559e7c5ff6499db1e2556eab1b0cac28e735c705ebd003:563531"
  Used with: "ipv6"
  Reannotate: "components.dat"
 IPv6-Bogons:

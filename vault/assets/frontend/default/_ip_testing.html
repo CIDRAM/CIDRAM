@@ -8,13 +8,13 @@
       </div>
       <div class="duo">
         <div class="h1 center">
-          <span id="IPAddrSwitch"><input type="text" name="ip-addr" id="IPAddrInput" placeholder="{tip.Enter IP here}" value="{ip-addr}" class="txtf" /><br /></span>
+          <span id="IPAddrSwitch"><input type="text" name="ip-addr" id="IPAddrInput" placeholder="{tip.Enter IP here}" autocomplete="off" pattern="^([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])$|^((([\dA-Fa-f]{1,4}:){7}[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){6}:[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){5}:([\dA-Fa-f]{1,4}:)?[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){4}:([\dA-Fa-f]{1,4}:){0,2}[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){3}:([\dA-Fa-f]{1,4}:){0,3}[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){2}:([\dA-Fa-f]{1,4}:){0,4}[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){6}((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b).){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|(([\dA-Fa-f]{1,4}:){0,5}:((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b).){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|(::([\dA-Fa-f]{1,4}:){0,5}((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b).){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|([\dA-Fa-f]{1,4}::([\dA-Fa-f]{1,4}:){0,5}[\dA-Fa-f]{1,4})|(::([\dA-Fa-f]{1,4}:){0,6}[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){1,7}:))$" value="{ip-addr}" class="txtf" /><br /></span>
           <span id="IPAddrFocusSwitch"><textarea name="ip-addr-focus" id="IPAddrTextArea" placeholder="{tip.Enter IPs here}">{ip-addr-focus}</textarea><br /></span>
-          <span id="UASwitch"><input type="text" name="custom-ua" id="UAInput" placeholder="{tip.Enter user agent here (optional)}" value="{custom-ua}" class="txtf" /><br /></span>
+          <span id="UASwitch"><input type="text" name="custom-ua" id="UAInput" placeholder="{tip.Enter user agent here (optional)}" autocomplete="off" value="{custom-ua}" class="txtf" /><br /></span>
           <span id="UAFocusSwitch"><textarea name="custom-ua-focus" id="UATextArea" placeholder="{tip.Enter user agents here (optional)}">{custom-ua-focus}</textarea><br /></span>
-          <span id="QuerySwitch"><input type="text" name="custom-query" id="QueryInput" placeholder="{tip.Enter query here (optional)}" value="{custom-query}" class="txtf" /><br /></span>
+          <span id="QuerySwitch"><input type="text" name="custom-query" id="QueryInput" placeholder="{tip.Enter query here (optional)}" autocomplete="off" value="{custom-query}" class="txtf" /><br /></span>
           <span id="QueryFocusSwitch"><textarea name="custom-query-focus" id="QueryTextArea" placeholder="{tip.Enter queries here (optional)}">{custom-query-focus}</textarea><br /></span>
-          <input type="text" name="custom-referrer" placeholder="{tip.Enter referrer here (optional)}" value="{custom-referrer}" class="txtf" />
+          <input type="text" name="custom-referrer" placeholder="{tip.Enter referrer here (optional)}" autocomplete="off" value="{custom-referrer}" class="txtf" />
         </div>
         <div class="h1f">
           <div style="display:grid;margin:auto min(38px, 1vw * 1.6);grid-template-columns:auto;contain:paint">

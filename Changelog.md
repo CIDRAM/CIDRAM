@@ -533,3 +533,5 @@
 #### Other changes.
 - [2026.01.20]: Added a hint at the auxiliary rules page for how to use CIDR as a condition source.
 - [2026.01.20]: Most of the statistics provided by the front-end statistics page can now also be leveraged by auxiliary rules as a condition source.
+- [2026.02.13]: Added a pattern check to the IP address input field at the IP testing page (#669).
+- *Plus all the regular signature updates.*

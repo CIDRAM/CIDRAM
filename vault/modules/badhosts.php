@@ -70,7 +70,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             'accelovation|barefruit|bestprice|' .
             'colo\.iinet|detangled|kimsufi|' .
             'lightspeedsystems|lipperhey|mantraonline|myforexvps|netcomber|page-store|' .
-            'setooz|stretchoid|technicolor|watadcash'. 
+            'setooz|stretchoid|technicolor|watadcash'.
         ')\.com$|' .
         'poneytelecom\.eu$|' .
         '(?:4u|netadvert|onlinehome-server)\.info$|' .

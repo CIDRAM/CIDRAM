@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2025.10.03).
+ * This file: Front-end functions file (last modified: 2026.01.20).
  */
 
 /**
@@ -3975,7 +3975,7 @@ $CIDRAM['GenerateOptions'] = function (array $Options, $Trim = '', $JS = false) 
             $Label = preg_replace($Trim, '', $Label);
         }
         if ($JS) {
-            $Output .= "\n  x = document.createElement('option'),\n  x.setAttribute('value', '" . $Value . "'),\n  x.textContent = '" . $Label . "',\n  t.appendChild(x),";
+            $Output .= "\n  x = document.createElement('option'),\n  x.setAttribute('value', '" . $Value . "'),\n  x.textContent = '" . $CIDRAM['escapeJsInHTML']($Label) . "',\n  t.appendChild(x),";
         } else {
             $Output .= '<option value="' . $Value . '">' . $Label . '</option>';
         }

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2026.02.13).
+ * This file: Front-end handler (last modified: 2026.02.14).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -4152,10 +4152,7 @@ if ($CIDRAM['FE']['UserState'] !== 1 && $CIDRAM['FE']['CronMode'] === '') {
                 $CIDRAM['ThisIP']['IPAddress']
             ) : $CIDRAM['ThisIP']['IPAddress'];
             $CIDRAM['ThisIP']['IPAddressQuoted'] = str_replace('\'', '\\\'', $CIDRAM['ThisIP']['IPAddress']);
-            $CIDRAM['FE']['IPTestResults'] .= $CIDRAM['ParseVars'](
-                $CIDRAM['L10N']->Data + $CIDRAM['ThisIP'],
-                $CIDRAM['FE']['IPTestRow']
-            );
+            $CIDRAM['FE']['IPTestResults'] .= $CIDRAM['ParseVars']($CIDRAM['L10N']->Data + $CIDRAM['ThisIP'], $CIDRAM['FE']['IPTestRow']);
         }
         unset($CIDRAM['ThisIP']);
     } else {

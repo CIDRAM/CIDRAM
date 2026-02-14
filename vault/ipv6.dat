@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v4/vault/signatures/ipv6.dat
 
-# Version: 2026.43.0
-# Last modified: 2026.02.13
+# Version: 2026.44.0
+# Last modified: 2026.02.14
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -10583,20 +10583,12 @@ Tag: Websupport s.r.o
 
 # ASNs 24940, 37153, 212317, 213230 ("Hetzner Online GmbH").
 # Ratenjay (RAT) detected here.
-# Stop Forum Spam (SFS) listings: 85,355 (AS24940), 124 (AS37153),
-# 532 (AS212317), 184 (AS213230).
-# Updated: 2025.10.31
+# Updated: 2026.02.14
 
 2a11:840:32::/48 Deny Cloud
 Origin: CA
 2a01:4f8::/31 Deny Cloud
 2a01:4ff::/39 Deny Cloud
-2a01:4ff:ff00::3:3/128 Deny Cloud
-2a01:4ff:ff00::71:5/128 Deny Cloud
-2a01:4ff:ff00::add:1/128 Deny Cloud
-2a01:4ff:ff00::add:2/128 Deny Cloud
-2a01:4ff:ff00::b007:1/128 Deny Cloud
-2a01:4ff:ff00::dc5:db:1b/128 Deny Cloud
 2a01:4ff:ff01::/48 Deny Cloud
 2a06:be80::/29 Deny Cloud
 2a11:e980::/29 Deny Cloud

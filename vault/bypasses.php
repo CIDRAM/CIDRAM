@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Default signature bypasses (last modified: 2026.01.16).
+ * This file: Default signature bypasses (last modified: 2026.02.14).
  */
 
 /** Prevents execution from outside of the checkFactors method. */
@@ -152,14 +152,6 @@ $this->CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [
          * @link https://github.com/CIDRAM/CIDRAM/issues/422
          */
         if (isset($Bypasses['Snapchat']) && preg_match('~developers\.snap\.com/robots$~', $this->BlockInfo['UALC'])) {
-            return;
-        }
-
-        /**
-         * UptimeRobot bypass.
-         * @link https://github.com/CIDRAM/CIDRAM/issues/656
-         */
-        if (isset($Bypasses['UptimeRobot']) && preg_match('~^mozilla/5\.0.*uptimerobot/.*www\.uptimerobot\.com/~', $this->BlockInfo['UALC'])) {
             return;
         }
     }

@@ -516,4 +516,5 @@
 - [2026.01.20]: Added a hint at the auxiliary rules page for how to use CIDR as a condition source.
 - [2026.02.13]: Added a pattern check to the IP address input field at the IP testing page (#669).
 - [2026.02.14]: Malformed input supplied to the IP addresses field at the IP testing page may sometimes now be automatically corrected in cases where the intended, correctly-formed input is particularly obvious (#669).
+- [2026.02.14]: Replaced UptimeRobot's default signature bypass with full verification support (#656).
 - *Plus all the regular signature updates.*

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Verification data (last modified: 2026.01.12).
+# This file: Verification data (last modified: 2026.02.14).
 ##/
 
 # Additional references: https://udger.com/resources/ua-list/crawlers
@@ -518,3 +518,13 @@ Other Verification:
    - "20.171.206.0/23"
    - "52.230.152.0/24"
    - "172.182.204.0/24"
+
+ # https://github.com/CIDRAM/CIDRAM/issues/656
+ # https://udger.com/resources/ua-list/bot-detail?bot=UptimeRobot
+ # Updated: 2026.02.14
+ UptimeRobot:
+  User Agent Pattern: "~^mozilla/5\.0.*uptimerobot/.*www\.uptimerobot\.com/~"
+  Method: "dnsReverseForward"
+  Valid domains:
+   - ".amazonaws.com"
+   - ".uptimerobot.com"

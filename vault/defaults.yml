@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2026.01.19).
+# This file: Defaults file (last modified: 2026.02.14).
 ##/
 
 Config Defaults:
@@ -897,6 +897,10 @@ Config Defaults:
     AmazonAdBot:UntrackPositives
     ChatGPT-User:BlockNonVerified
     GPTBot:BlockNonVerified
+    UptimeRobot:BlockNegatives
+    UptimeRobot:SingleHitBypass
+    UptimeRobot:UntrackPositives
+    UptimeRobot:Verify
    labels:
     Verify: "checkbox.Attempt to verify"
     BlockNegatives: "checkbox.Block negatives"
@@ -908,6 +912,7 @@ Config Defaults:
     AmazonAdBot: "* AmazonAdBot"
     ChatGPT-User: "!! ChatGPT-User"
     GPTBot: "!! GPTBot"
+    UptimeRobot: "UptimeRobot"
    hints:
     - "hints_verification"
     - "hints_has_bypass"

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bad hosts blocker module (last modified: 2026.01.16).
+ * This file: Bad hosts blocker module (last modified: 2026.02.13).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -70,7 +70,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             'accelovation|barefruit|bestprice|' .
             'colo\.iinet|detangled|kimsufi|' .
             'lightspeedsystems|lipperhey|mantraonline|myforexvps|netcomber|page-store|' .
-            'setooz|stretchoid|technicolor|watadcash'.
+            'setooz|stretchoid|technicolor|watadcash' .
         ')\.com$|' .
         'poneytelecom\.eu$|' .
         '(?:4u|netadvert|onlinehome-server)\.info$|' .

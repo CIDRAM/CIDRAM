@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2026.01.20).
+# This file: Thai language data for the front-end (last modified: 2026.02.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -591,6 +591,7 @@ label:
  Don_t block the request: "อย่าบล็อคคำขอ.\nหากคุณต้องการการบล็อคคำขอเฉพาะเมื่อแน่ใจว่าเป็นคำขอที่เป็นอันตราย หรือต้องความระมัดระวังเกี่ยวกับผลลัพธ์บวกปลอม (โดยเสี่ยงต่อการมีการรับส่งข้อมูลที่ไม่ต้องการเข้ามาเป็นครั้งคราว) ให้เลือกสิ่งนี้. หากคุณต้องการการบล็อคคำขอโดยไม่แน่ใจว่าเป็นคำขอที่ไม่เป็นอันตราย หรือต้องการระมัดระวัง (โดยมีความเสี่ยงที่จะเกิดผลลัพธ์บวกปลอมเป็นครั้งคราว) ให้เลือกตัวเลือกอื่นที่พร้อมใช้งาน."
  Empty, unfamiliar, and others: "ว่างเปล่า ไม่คุ้นเคย และอื่นๆ."
  Enable auxiliary rules: "เปิดใช้งานกฎเสริม"
+ Entered %s Assuming %s: "ค่าที่ป้อน: %s – ค่าที่คาดการณ์: %s"
  Entries per page: "จำนวนรายการต่อหน้า:"
  Every request: "คำขอทั้งหมด.\nเข้มงวดและทั่วถึงมากขึ้น แต่ยังมีแนวโน้มที่จะเข้าถึงโควต้าได้เร็วกว่า ซึ่งอาจส่งผลให้ถูกล็อกไม่ให้ใช้บริการ. นอกจากนี้ แม้ว่าผลลัพธ์จะถูกแคช แต่ก็ยังอาจส่งผลเสียต่อประสิทธิภาพของเว็บไซต์ในบางกรณี. อาจจำเป็นในบางกรณี แต่ไม่แนะนำโดยทั่วไป."
  Expected: "ที่คาดหวัง"
@@ -726,8 +727,8 @@ label:
   Use regular expressions to test the conditions: "ใช้นิพจน์ปกติเพื่อทดสอบเงื่อนไข."
   Webhooks to apply when the rule requirements are met: "เว็บฮุกที่จะนำไปใช้เมื่อตรงตามข้อกำหนดของกฎ:"
   When forcibly disabled, marking for use won_t have any effect: "บันทึก: เมื่อถูกบังคับให้ปิดใช้งาน การทำเครื่องหมายเพื่อใช้งานจะไม่มีผลใดๆ."
-  When the rule should begin (optional): "เมื่อกฎควรเริ่มต้น (ไม่จำเป็น):"
-  When the rule should expire (optional): "เมื่อกฎควรหมดอายุ (ไม่จำเป็น):"
+  When the rule should begin (optional): "เมื่อกฎควรเริ่มต้น (เป็นตัวเลือก):"
+  When the rule should expire (optional): "เมื่อกฎควรหมดอายุ (เป็นตัวเลือก):"
   Where to redirect the request: "จะขอเปลี่ยนเส้นทางที่ไหน:"
   block the request: "บล็อคคำขอ"
   bypass the request: "บายพาสคำขอ"
@@ -998,14 +999,15 @@ tip:
  Calculator: "เครื่องคิดเลขช่วยให้คุณคำนวณ CIDR และเน็ตมาสก์ของที่อยู่ IP."
  Click the component name for more details: "คลิกที่ชื่อองค์ประกอบเพื่อดูรายละเอียดเพิ่มเติม."
  Configuration: "หน้าการกำหนดค่าช่วยให้คุณสามารถแก้ไขการกำหนดค่าสำหรับ CIDRAM จาก front-end."
- Enter IP here: "ใส่ IP ที่นี่."
- Enter IPs here: "ใส่ IP ที่นี่."
+ Enter IP address here: "ป้อนที่อยู่ IP ที่นี่."
+ Enter IP address here (optional): "ป้อนที่อยู่ IP ที่นี่ (เป็นตัวเลือก)."
+ Enter IP addresses here: "ป้อนที่อยู่ IP ที่นี่."
  Enter input here: "ป้อนข้อมูลที่นี่."
- Enter queries here (optional): "ใส่ข้อความค้นหาที่นี่ (เป็นตัวเลือก)."
+ Enter queries here: "ใส่ข้อความค้นหาที่นี่."
  Enter query here (optional): "ใส่ข้อความค้นหาที่นี่ (เป็นตัวเลือก)."
  Enter referrer here (optional): "ใส่ผู้อ้างอิงที่นี่ (เป็นตัวเลือก)."
  Enter user agent here (optional): "ใส่ตัวแทนผู้ใช้ที่นี่ (เป็นตัวเลือก)."
- Enter user agents here (optional): "ใส่ตัวแทนผู้ใช้ที่นี่ (เป็นตัวเลือก)."
+ Enter user agents here: "ใส่ตัวแทนผู้ใช้ที่นี่."
  File Manager: "ตัวจัดการไฟล์ ช่วยให้คุณสามารถลบบัญชี แก้ไข อัปโหลด และดาวน์โหลดไฟล์. ใช้ด้วยความระมัดระวัง (คุณสามารถทำลายการติดตั้งของคุณด้วยนี้)."
  Greeting: "สวัสดี %s."
  Home: "นี่คือโฮมเพจสำหรับ front-end ของ CIDRAM. เลือกลิงค์จากเมนูนำทางด้านซ้ายเพื่อดำเนินการต่อ."

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The IP testing page (last modified: 2025.12.02).
+ * This file: The IP testing page (last modified: 2026.02.14).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -97,12 +97,16 @@ if ($Focus === 'UserAgent') {
 if ($Focus === 'Query' && $this->FE['custom-query-focus'] !== '') {
     $this->FE['TestItemLabel'] = $this->L10N->getString('field.Query');
     $this->CIDRAM['TestMode'] = 3;
+    $this->CIDRAM['Can state assumptions'] = false;
 } elseif ($Focus === 'UserAgent' && $this->FE['custom-ua-focus'] !== '') {
     $this->FE['TestItemLabel'] = $this->L10N->getString('field.User agent');
     $this->CIDRAM['TestMode'] = 2;
+    $this->CIDRAM['Can state assumptions'] = false;
 } else {
     $this->FE['TestItemLabel'] = $this->L10N->getString('field.IP address');
     $this->CIDRAM['TestMode'] = 1;
+    $this->CIDRAM['Can state assumptions'] = true;
+    $this->CIDRAM['Assumptions'] = [];
 }
 
 /** Data has been submitted for testing. */
@@ -113,7 +117,15 @@ if (isset($_POST['ip-addr-focus'])) {
         $Working = explode("\n", str_replace("\r", '', $this->FE['custom-ua-focus']));
     } else {
         $Working = array_unique(array_map(function ($IP) {
-            return preg_replace('~[^\da-f:./]~i', '', $IP);
+            $New = preg_replace(['~([.:])x(?:/.+)?$~i', '~[^\da-f:./]|/.+$~i'], ['{\1}0', ''], $IP);
+            if ($New !== '' && strlen($IP) < 128) {
+                if (isset($this->CIDRAM['Assumptions'][$New])) {
+                    $this->CIDRAM['Assumptions'][$New] .= ', ' . $IP;
+                } else {
+                    $this->CIDRAM['Assumptions'][$New] = $IP;
+                }
+            }
+            return $New;
         }, explode("\n", str_replace("\r", '', $this->FE['ip-addr-focus'] ?: $this->FE['ip-addr']))));
     }
     natsort($Working);
@@ -207,6 +219,7 @@ if (isset($_POST['ip-addr-focus'])) {
                 unset($this->CIDRAM['RunName'], $this->CIDRAM['RunError'], $this->CIDRAM['RunErrorCounts'], $this->CIDRAM['RunErrors']);
             }
             $HasError = true;
+            $this->CIDRAM['ThisIP']['Assumption'] = '';
         } elseif ($this->BlockInfo['SignatureCount']) {
             $this->BlockInfo['WhyReason'] = preg_replace('~(?<=</span>\\),|]\\),)( )(?=[\dA-Za-z])~', '<br />', $this->BlockInfo['WhyReason']);
             $this->CIDRAM['ThisIP']['YesNo'] = $this->L10N->getString('field.Blocked') . $this->L10N->getString('pair_separator') . $this->L10N->getString('response._Yes') . ' – ' . $this->BlockInfo['WhyReason'];

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used to simulate block events (last modified: 2025.09.08).
+ * This file: Methods used to simulate block events (last modified: 2026.02.14).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -93,13 +93,14 @@ trait SimulateBlockEvent
         $this->CIDRAM['Factors'] = [];
 
         $TestMode = $this->CIDRAM['TestMode'] ?? 1;
+        $this->CIDRAM['ThisIP']['Assumption'] = '';
         if ($TestMode === 3) {
             $Query = $Addr;
-            $Addr = isset($this->FE['ip-addr']) ? preg_replace('~[^\da-f:./]~i', '', $this->FE['ip-addr']) : '';
+            $Addr = isset($this->FE['ip-addr']) ? preg_replace(['~([.:])x(?:/.+)?$~i', '~[^\da-f:./]|/.+$~i'], ['{\1}0', ''], $this->FE['ip-addr']) : '';
             $UA = $this->FE['custom-ua'] ?? '';
         } elseif ($TestMode === 2) {
             $UA = $Addr;
-            $Addr = isset($this->FE['ip-addr']) ? preg_replace('~[^\da-f:./]~i', '', $this->FE['ip-addr']) : '';
+            $Addr = isset($this->FE['ip-addr']) ? preg_replace(['~([.:])x(?:/.+)?$~i', '~[^\da-f:./]|/.+$~i'], ['{\1}0', ''], $this->FE['ip-addr']) : '';
             $Query = $this->FE['custom-query'] ?? '';
         } else {
             $UA = $this->FE['custom-ua'] ?? '';
@@ -107,6 +108,9 @@ trait SimulateBlockEvent
         }
         $UA = str_replace(['&quot;', '&gt;', '&lt;', '&amp;'], ['"', '>', '<', '&'], $UA) ?: 'SimulateBlockEvent';
         $Query = str_replace(['&quot;', '&gt;', '&lt;', '&amp;'], ['"', '>', '<', '&'], $Query) ?: 'SimulateBlockEvent';
+        if ($this->CIDRAM['Can state assumptions'] && isset($this->CIDRAM['Assumptions'][$Addr]) && $this->CIDRAM['Assumptions'][$Addr] !== $Addr) {
+            $this->CIDRAM['ThisIP']['Assumption'] = '<br /><small>(' . sprintf($this->L10N->getString('label.Entered %s Assuming %s'), $this->CIDRAM['Assumptions'][$Addr], $Addr) . ')</small>';
+        }
 
         /** Populate BlockInfo. */
         $this->BlockInfo = [

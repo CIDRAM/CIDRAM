@@ -12,6 +12,7 @@ CIDRAM Core:
   - "wpVer 4.8 6.9 4.0.1 7.2"
   - "foreach {Components.RemoteMeta.CIDRAM Core.Release Notes For} as Key => Value if {Components.Meta.CIDRAM Core.Version}<{Value}&&{Components.RemoteMeta.CIDRAM Core.Version}>={Value} then queue message response.release_notes https://github.com/CIDRAM/CIDRAM/releases/tag/v{Value} CIDRAM v{Value}"
   - "if {Components.Meta.CIDRAM Core.Version}<4.0.0-DEV&&{Components.RemoteMeta.CIDRAM Core.Version}>=4.0.0-DEV then set Configuration.captcha={Configuration.hcaptcha};executeMacro uninstall_no_longer_available;set Configuration.captcha.hcaptcha_secret="{Configuration.captcha.secret}";set Configuration.captcha.hcaptcha_sitekey="{Configuration.captcha.sitekey}";set Configuration.captcha.usemode.hcaptcha={Configuration.captcha.usemode};set Configuration.captcha.nonblocked_status_code.hcaptcha={Configuration.captcha.nonblocked_status_code};set Configuration.captcha.api.hcaptcha="{Configuration.captcha.api}";set Configuration.recaptcha="";set Configuration.hcaptcha="";set Configuration.general.http_response_header_code.default={Configuration.general.http_response_header_code};set Configuration.general.statistics={CIDRAM.Config Defaults.general.statistics.default};updateConfiguration"
+  - "if {Components.Meta.CIDRAM Core.Version}<4.1.0-DEV+260440&&{Components.RemoteMeta.CIDRAM Core.Version}>=4.1.0-DEV+260440 then queue message <span dir="ltr" lang="en-AU">[CIDRAM Core 4.1.0-DEV+260440] UptimeRobot's default signature bypass has been replaced with full verification support. Pressing <span class="txtRd">↺ Reset</span> on <code class="s">verification➡other</code> at the configuration page and then update is recommended.</span>"
  Uninstallable: false
  Files:
   assets/core/captcha_default.html:
@@ -58,13 +59,13 @@ CIDRAM Core:
    Checksum: "7ed15a1df7f789514ba354edfa9275447eddd63b2f4ee6da51396bada2693a08:1384"
   defaults.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/defaults.yml"
-   Checksum: "697f58cba9347e046aaf5e81d7ed5dcb7938e1b2904e8c7217443715352879b4:47613"
+   Checksum: "bec299fae4cb6b1e3114050b81b914a93377a744ef64eb1a3a55a1fa26351d83:47763"
   loader.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/loader.php"
    Checksum: "559071010c09f82a9254c394172a9668e3dd1b5f59d512e3b4e8d694dc6a6530:1292"
   verification.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/verification.yml"
-   Checksum: "eb7f55c24854f9704e783f86cc9f5c282bb1e93e3bc3f414272f1f2f25e8d9e2:12822"
+   Checksum: "be796d3cb705baf485bac1f3fdfe873d091405df74f6611358941cacf801016e:13144"
 CIDRAM Front-End:
  Name: "CIDRAM Front-End"
  Version: "4.1.0-DEV+260440"
@@ -634,13 +635,13 @@ Common Classes Package:
    Checksum: "12fe04d64a8225329be9de04fd24be8217f32e7d2f372e853e2d54808978713e:57114"
 IPv4:
  False Positive Risk: "Medium"
- Version: "2026.43.0"
+ Version: "2026.44.0"
  Dependencies:
   Bypasses: ">=2025.348"
  Files:
   signatures/ipv4.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/signatures/ipv4.dat"
-   Checksum: "1236781b517bfb6e5008da153ebfee3900a43a7d9385c6dd8726da4bcf80d2fb:1877057"
+   Checksum: "ce12ccfc4dd4b0d1e8052b73561addc4877f5665607c0870df9a19936650daab:1876756"
    Used with: "ipv4"
 IPv4-Bogons:
  False Positive Risk: "Low"
@@ -678,13 +679,13 @@ IPv4-Other:
    Used with: "ipv4"
 IPv6:
  False Positive Risk: "Low"
- Version: "2026.43.0"
+ Version: "2026.44.0"
  Dependencies:
   Bypasses: ">=2025.348"
  Files:
   signatures/ipv6.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/signatures/ipv6.dat"
-   Checksum: "cd75f03b623180febc739c9d43da7906333667c8a6b62aa42714a0ed1025b827:563216"
+   Checksum: "5424e9da3606e861f5bb8a8ab3a09b26d8fa83c9925889fd19be2327eeb9f221:562897"
    Used with: "ipv6"
 IPv6-Bogons:
  False Positive Risk: "Low"
@@ -721,20 +722,19 @@ IPv6-Other:
    Checksum: "0f5856974a85c2cb0445ce7cc1d486194a2296311b2290abc1b7a5a0fb0e7eaf:5888"
    Used with: "ipv6"
 Bypasses:
- Version: "2026.16.0"
+ Version: "2026.44.0"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "^4"
  When Update Succeeds:
   - "if {Components.Meta.Bypasses.Version}<2025.348&&{Components.RemoteMeta.Bypasses.Version}>=2025.348 then queue message <span dir="ltr" lang="en-AU">[Bypasses 2025.348.0] Added a new default signature bypass, "iCloud (iPhone Safari Bypass)" (configuration settings should be revised accordingly).</span>"
-  - "if {Components.Meta.Bypasses.Version}<2026.16&&{Components.RemoteMeta.Bypasses.Version}>=2026.16 then queue message <span dir="ltr" lang="en-AU">[Bypasses 2026.16.0] Added a new default signature bypass, "UptimeRobot" (configuration settings should be revised accordingly).</span>"
  Files:
   bypasses.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/bypasses.php"
-   Checksum: "47a66902c6dc59fc277b0eefa12ce19bcd68b72b150aeea1884f8be2935ed081:11391"
+   Checksum: "d394276154b7ab56de43ceaee816bbbbca2fcd67aca0a5180f3d9dbbaab88b6d:11100"
   imports/bypasses.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/imports/bypasses.yml"
-   Checksum: "361ac7d453f8018993399c167ed2416803147d881bedf98bf4f77bc9d3c6156e:1157"
+   Checksum: "3cdda9b19236b7b10bbd76c6ea3a16e3ffc1a8d59b86b166738e28811839290c:1110"
    Used with: "imports"
 l10n/core/af:
  Extended Description: "Afrikaanse lokalisering"

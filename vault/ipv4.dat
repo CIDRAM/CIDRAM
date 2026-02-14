@@ -1,8 +1,8 @@
 # IPv4 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v4/vault/signatures/ipv4.dat
 
-# Version: 2026.43.0
-# Last modified: 2026.02.13
+# Version: 2026.44.0
+# Last modified: 2026.02.14
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -47835,9 +47835,7 @@ Tag: Websupport s.r.o
 
 # ASNs 24940, 37153, 212317, 213230 ("Hetzner Online GmbH").
 # Ratenjay (RAT) detected here.
-# Stop Forum Spam (SFS) listings: 85,355 (AS24940), 124 (AS37153),
-# 532 (AS212317), 184 (AS213230).
-# Updated: 2025.10.31
+# Updated: 2026.02.14
 
 216.55.108.0/22 Deny Cloud
 Origin: CA
@@ -47847,14 +47845,7 @@ Origin: CZ
 5.9.0.0/16 Deny Cloud
 5.75.128.0/17 Deny Cloud
 5.78.0.0/16 Deny Cloud
-5.161.8.0/21 Deny Cloud
-5.161.16.0/20 Deny Cloud
-5.161.32.0/19 Deny Cloud
-5.161.64.0/18 Deny Cloud
-5.161.128.0/19 Deny Cloud
-5.161.160.0/21 Deny Cloud
-5.161.176.0/20 Deny Cloud
-5.161.192.0/18 Deny Cloud
+5.161.0.0/16 Deny Cloud
 23.88.0.0/17 Deny Cloud
 37.27.0.0/16 Deny Cloud
 45.15.99.0/24 Deny Cloud
@@ -47865,10 +47856,12 @@ Origin: CZ
 49.12.0.0/15 Deny Cloud
 65.21.0.0/16 Deny Cloud
 65.108.0.0/15 Deny Cloud
+77.42.0.0/17 Deny Cloud
 78.46.0.0/15 Deny Cloud
 85.10.192.0/18 Deny Cloud
 88.99.0.0/16 Deny Cloud
 88.198.0.0/16 Deny Cloud
+89.167.0.0/17 Deny Cloud
 91.98.0.0/15 Deny Cloud
 91.107.128.0/17 Deny Cloud
 91.190.240.0/21 Deny Cloud
@@ -47919,8 +47912,6 @@ Origin: CZ
 213.133.96.0/19 Deny Cloud
 213.239.192.0/18 Deny Cloud
 Origin: DE
-77.42.0.0/17 Deny Cloud
-Origin: FI
 82.21.244.0/23 Deny Cloud
 82.22.245.0/24 Deny Cloud
 82.23.235.0/24 Deny Cloud
@@ -47941,8 +47932,6 @@ Origin: TR
 195.60.226.0/24 Deny Cloud
 195.248.224.0/24 Deny Cloud
 Origin: UA
-5.161.0.0/16 Deny Cloud
-Origin: US
 41.72.128.0/19 Deny Cloud
 41.203.0.0/19 Deny Cloud
 41.204.192.0/19 Deny Cloud

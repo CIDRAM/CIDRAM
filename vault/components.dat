@@ -1,7 +1,7 @@
 ---
 CIDRAM Core:
  Name: "CIDRAM Core"
- Version: "2.17.3-DEV+260240"
+ Version: "2.17.3-DEV+260440"
  Dependencies:
   PHP: "^7.2|^8"
   Common Classes Package: "^2.14.2"
@@ -52,7 +52,7 @@ CIDRAM Core:
    - "00881e01988ca53e00202ddbff5267035d02005a32b814d025614ba787921be3:14543"
    - "59fec42c9ac9c5a9d1287b0ce7186047366c5fb162cb3d40bc63114a83756302:14064"
    - "a0a0389c14928a11bb5a78323ae80dae35d759f6b483df329455706da1266d48:3038"
-   - "ac118dd71cc3ef2c7f9e4bb026fe40250c4469bd1d6283b5a7b94753d77e9483:8012"
+   - "33ef7f57eb68afcd601ec934a5fca79c68150852077e9af8b807452aed245c05:8012"
    - "e5dab2704bca44363d45afc29a3ad21a9a561b43d995c5212afde4e00eb1ce2b:26449"
    - "b1dc2bb73e579630013904ae4567d19acdf7b709ad38e92cb5ec850dca6e3c76:10063"
    - "ca9bf7c0a14517002bc5cbc0c75234f56bd89c0247d91d9ee37aa95d8fa09630:106267"
@@ -60,11 +60,11 @@ CIDRAM Core:
    - "d6915ab4cb00ad09b3117d4fdf0f5b07d1d61479fe4c549e0070c85ee1fdf046:46324"
    - "e48dc4d8b942bc26580caebdfc7ff79bfbb3807003c918c739c9e7dfdb61bf5e:1204"
    - "67dbe791d181719036b31e00056ac418e2a9633a5ab9d8b82a18369aabe1e6c6:2434"
-   - "40f243492e92fd9dff7a1f1bf6f77baa3237b539b92f78eae6ad38fc1cda2799:12420"
+   - "ba8b3f7dfadef7057cc1d99be8e28efdc599688869ca74b8c6edac6ade216de9:12771"
  Reannotate: "components.dat"
 CIDRAM Front-End:
  Name: "CIDRAM Front-End"
- Version: "2.17.3-DEV+260430"
+ Version: "2.17.3-DEV+260440"
  Dependencies:
   PHP: "^7.2|^8"
   Common Classes Package: "^2.14.2"
@@ -230,7 +230,7 @@ CIDRAM Front-End:
    - "94be5c5042512f18612a1a41a3166481c675f6bd5a122778517c168b366ab17c:4494"
    - "828d6cb0f53f3ff440d9901f295f8c6a0eefb295998445b81436158e94b40f2e:1391"
    - "3e662821b194ebbb3f26d500925cf716c69580cba196adafa20248cfbacb0f06:2405"
-   - "59c974df29bf8f52d3b06eef18249f703c8bc7c0af3d886133b9f41ade46d7a3:311552"
+   - "73fc8e7671ecaff78fc2713c5b736e99b21b02705ebe71b61d6e06b12efaeb36:311506"
    - "a3f5ec8fd1b44e6a167e97e0bed44262dc276d994a8e78117c49a4a28a1f71cb:235307"
  Reannotate: "components.dat"
 Common Classes Package:
@@ -289,7 +289,7 @@ Common Classes Package:
 IPv4:
  Extended Description: "Default IPv4 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints."
  False Positive Risk: "Medium"
- Version: "2026.43.0"
+ Version: "2026.44.0"
  Dependencies:
   CIDRAM Core: ">=1"
   Bypasses: ">=2025.348"
@@ -301,7 +301,7 @@ IPv4:
   To:
    - "ipv4.dat"
   Checksum:
-   - "1236781b517bfb6e5008da153ebfee3900a43a7d9385c6dd8726da4bcf80d2fb:1877057"
+   - "ce12ccfc4dd4b0d1e8052b73561addc4877f5665607c0870df9a19936650daab:1876756"
  Used with: "ipv4"
  Reannotate: "components.dat"
 IPv4-Bogons:
@@ -376,7 +376,7 @@ IPv4-Other:
 IPv6:
  Extended Description: "Default IPv6 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints."
  False Positive Risk: "Low"
- Version: "2026.43.0"
+ Version: "2026.44.0"
  Dependencies:
   CIDRAM Core: ">=1"
   Bypasses: ">=2025.348"
@@ -388,7 +388,7 @@ IPv6:
   To:
    - "ipv6.dat"
   Checksum:
-   - "cd75f03b623180febc739c9d43da7906333667c8a6b62aa42714a0ed1025b827:563216"
+   - "5424e9da3606e861f5bb8a8ab3a09b26d8fa83c9925889fd19be2327eeb9f221:562897"
  Used with: "ipv6"
  Reannotate: "components.dat"
 IPv6-Bogons:
@@ -461,7 +461,7 @@ IPv6-Other:
  Used with: "ipv6"
  Reannotate: "components.dat"
 Bypasses:
- Version: "2026.16.0"
+ Version: "2026.44.0"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "^2.6.1"
@@ -475,8 +475,8 @@ Bypasses:
    - "bypasses.php"
    - "bypasses.yml"
   Checksum:
-   - "6930ccbd5b19638261f77bc878f4c6411d07f68eaa71eeeb3005dc2cf23b54e4:13291"
-   - "25d20fbb6af1385aaa0020979d36767d13b3644b17cb331bd2277a62815740d0:1210"
+   - "1f441af4fe68ed3993364b8e4005dca624efbf29b7c302d4c3c6532d0e17d99a:12914"
+   - "f3c5d4f3b951a748373f875c2f879a6120c459b11103f75fb1da159ef9c81ca6:1167"
  Used with:
   - "n/a"
   - "imports"

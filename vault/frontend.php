@@ -3988,7 +3988,7 @@ if ($CIDRAM['FE']['UserState'] !== 1 && $CIDRAM['FE']['CronMode'] === '') {
                 }
             }
             return $New;
-        }, explode("\n", $_POST['ip-addr'])));
+        }, explode("\n", str_replace("\r", '', $_POST['ip-addr']))));
         natsort($_POST['ip-addr']);
         $CIDRAM['ThisIP'] = [];
         foreach ($_POST['ip-addr'] as $CIDRAM['ThisIP']['IPAddress']) {

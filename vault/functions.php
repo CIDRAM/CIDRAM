@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2025.09.06).
+ * This file: Functions file (last modified: 2026.02.15).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -911,11 +911,11 @@ $CIDRAM['DNS-Resolve'] = function (string $Host, int $Timeout = 5) use (&$CIDRAM
     $RecordParam = '';
     $PadBase = 204;
     $TTL = 21600;
-    if (isset($this->CIDRAM['LastTestIP'])) {
-        if ($this->CIDRAM['LastTestIP'] === 4) {
+    if (isset($CIDRAM['LastTestIP'])) {
+        if ($CIDRAM['LastTestIP'] === 4) {
             $RecordParam = '&type=A';
             $PadBase = 211;
-        } elseif ($this->CIDRAM['LastTestIP'] === 6) {
+        } elseif ($CIDRAM['LastTestIP'] === 6) {
             $RecordParam = '&type=AAAA';
             $PadBase = 214;
             $TTL = 129600;

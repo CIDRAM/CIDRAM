@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The IP testing page (last modified: 2026.02.14).
+ * This file: The IP testing page (last modified: 2026.02.15).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -117,7 +117,7 @@ if (isset($_POST['ip-addr-focus'])) {
         $Working = explode("\n", str_replace("\r", '', $this->FE['custom-ua-focus']));
     } else {
         $Working = array_unique(array_map(function ($IP) {
-            $New = preg_replace(['~([.:])x(?:/.+)?$~i', '~[^\da-f:./]|/.+$~i'], ['{\1}0', ''], $IP);
+            $New = $this->correctFieldInput($IP);
             if ($New !== '' && strlen($IP) < 128) {
                 if (isset($this->CIDRAM['Assumptions'][$New])) {
                     $this->CIDRAM['Assumptions'][$New] .= ', ' . $IP;
@@ -172,6 +172,7 @@ if (isset($_POST['ip-addr-focus'])) {
                     );
                 }
                 unset($this->CIDRAM['AuxName'], $this->CIDRAM['AuxError'], $this->CIDRAM['AuxErrorCounts'], $this->CIDRAM['AuxErrors']);
+                $this->CIDRAM['ThisIP']['Assumption'] = '';
             }
             if (!empty($this->CIDRAM['ModuleErrors'])) {
                 $this->CIDRAM['ModuleErrorCounts'] = [];
@@ -195,6 +196,7 @@ if (isset($_POST['ip-addr-focus'])) {
                     );
                 }
                 unset($this->CIDRAM['ModuleName'], $this->CIDRAM['ModuleError'], $this->CIDRAM['ModuleErrorCounts'], $this->CIDRAM['ModuleErrors']);
+                $this->CIDRAM['ThisIP']['Assumption'] = '';
             }
             if (!empty($this->CIDRAM['RunErrors'])) {
                 $this->CIDRAM['RunErrorCounts'] = [];

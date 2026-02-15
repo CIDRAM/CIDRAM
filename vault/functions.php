@@ -998,12 +998,12 @@ $CIDRAM['DNS-Reverse-Forward'] = function ($Domains, string $Friendly, array $Op
                 $CIDRAM['BlockInfo']['Verified'] = $Friendly;
             }
 
-            /** Single hit bypass. */
+            /** Single-hit bypass. */
             $CIDRAM['Bypass']((
                 !empty($Options['Single hit bypass']) &&
                 isset($CIDRAM['BlockInfo']['SignatureCount'], $CIDRAM['BlockInfo']['WhyReason']) &&
                 $CIDRAM['BlockInfo']['SignatureCount'] === 1 &&
-                strpos($CIDRAM['BlockInfo']['WhyReason'], '-IPv4') !== false
+                preg_match('~, L\d+:F\d+,| Lookup~', $CIDRAM['BlockInfo']['WhyReason'])
             ), $CIDRAM['L10N']->getString('why_single_hit_bypass'));
 
             /** Exit. */
@@ -1028,12 +1028,12 @@ $CIDRAM['DNS-Reverse-Forward'] = function ($Domains, string $Friendly, array $Op
                 $CIDRAM['BlockInfo']['Verified'] = $Friendly;
             }
 
-            /** Single hit bypass. */
+            /** Single-hit bypass. */
             $CIDRAM['Bypass']((
                 !empty($Options['Single hit bypass']) &&
                 isset($CIDRAM['BlockInfo']['SignatureCount'], $CIDRAM['BlockInfo']['WhyReason']) &&
                 $CIDRAM['BlockInfo']['SignatureCount'] === 1 &&
-                strpos($CIDRAM['BlockInfo']['WhyReason'], '-IPv4') !== false
+                preg_match('~, L\d+:F\d+,| Lookup~', $CIDRAM['BlockInfo']['WhyReason'])
             ), $CIDRAM['L10N']->getString('why_single_hit_bypass'));
 
             /** Exit. */
@@ -1135,12 +1135,12 @@ $CIDRAM['UA-X-Match'] = function ($Datapoints, $Expected, string $Friendly, arra
                 $CIDRAM['BlockInfo']['Verified'] = $Friendly;
             }
 
-            /** Single hit bypass. */
+            /** Single-hit bypass. */
             $CIDRAM['Bypass']((
                 !empty($Options['Single hit bypass']) &&
                 isset($CIDRAM['BlockInfo']['SignatureCount'], $CIDRAM['BlockInfo']['WhyReason']) &&
                 $CIDRAM['BlockInfo']['SignatureCount'] === 1 &&
-                strpos($CIDRAM['BlockInfo']['WhyReason'], '-IPv4') !== false
+                preg_match('~, L\d+:F\d+,| Lookup~', $CIDRAM['BlockInfo']['WhyReason'])
             ), $CIDRAM['L10N']->getString('why_single_hit_bypass'));
 
             /** Successfully matched; Exit. */

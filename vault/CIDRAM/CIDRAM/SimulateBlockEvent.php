@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used to simulate block events (last modified: 2026.02.14).
+ * This file: Methods used to simulate block events (last modified: 2026.02.15).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -90,11 +90,11 @@ trait SimulateBlockEvent
         $this->CIDRAM['ThisIP']['Assumption'] = '';
         if ($TestMode === 3) {
             $Query = $Addr;
-            $Addr = isset($this->FE['ip-addr']) ? preg_replace(['~([.:])x(?:/.+)?$~i', '~[^\da-f:./]|/.+$~i'], ['{\1}0', ''], $this->FE['ip-addr']) : '';
+            $Addr = isset($this->FE['ip-addr']) ? $this->correctFieldInput($this->FE['ip-addr']) : '';
             $UA = $this->FE['custom-ua'] ?? '';
         } elseif ($TestMode === 2) {
             $UA = $Addr;
-            $Addr = isset($this->FE['ip-addr']) ? preg_replace(['~([.:])x(?:/.+)?$~i', '~[^\da-f:./]|/.+$~i'], ['{\1}0', ''], $this->FE['ip-addr']) : '';
+            $Addr = isset($this->FE['ip-addr']) ? $this->correctFieldInput($this->FE['ip-addr']) : '';
             $Query = $this->FE['custom-query'] ?? '';
         } else {
             $UA = $this->FE['custom-ua'] ?? '';
@@ -383,5 +383,16 @@ trait SimulateBlockEvent
         }
         $this->simulateBlockEvent($Addr, true, $Modules, $Verification, $Verification, $Verification, $Aux);
         return $this->BlockInfo;
+    }
+
+    /**
+     * Perform corrections to IP address field input for IP testing.
+     *
+     * @param string $Input The input to correct.
+     * @return string The corrected input.
+     */
+    private function correctFieldInput(string $Input = ''): string
+    {
+        return preg_replace(['~([.:])x(?:/.+)?$~i', '~/.+$|(?!.*:)[^\d.]|(?!.*\.)[^\da-f:]~i', '~\.{2,}~'], ['{\1}0', '', '.'], $Input);
     }
 }

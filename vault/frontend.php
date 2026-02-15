@@ -2685,7 +2685,7 @@ if ($CIDRAM['FE']['UserState'] !== 1 && $CIDRAM['FE']['CronMode'] === '') {
                     /** Import configuration. */
                     if (isset($_POST['doConfig']) && $_POST['doConfig'] === 'on') {
                         if ($CIDRAM['Operation']->singleCompare($CIDRAM['Import']['CIDRAM Version'], '<1.23|>=2 <2.10|>=3')) {
-                            $this->FE['state_msg'] .= sprintf(
+                            $CIDRAM['FE']['state_msg'] .= sprintf(
                                 $CIDRAM['L10N']->getString('response_import_bad_version'),
                                 $CIDRAM['Import']['CIDRAM Version']
                             ) . ' ' . $CIDRAM['L10N']->getString('response_configuration_update_failed') . '<br />';
@@ -3982,7 +3982,7 @@ if ($CIDRAM['FE']['UserState'] !== 1 && $CIDRAM['FE']['CronMode'] === '') {
                 }
             }
             return $New;
-        }, explode("\n", $_POST['ip-addr'])));
+        }, explode("\n", str_replace("\r", '', $_POST['ip-addr']))));
         natsort($_POST['ip-addr']);
         $CIDRAM['ThisIP'] = [];
         foreach ($_POST['ip-addr'] as $CIDRAM['ThisIP']['IPAddress']) {

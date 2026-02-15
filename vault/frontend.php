@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2026.02.14).
+ * This file: Front-end handler (last modified: 2026.02.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -3966,17 +3966,28 @@ if ($CIDRAM['FE']['UserState'] !== 1 && $CIDRAM['FE']['CronMode'] === '') {
     if (!empty($_POST['ip-addr']) || empty($_POST['custom-ua'])) {
         $CIDRAM['FE']['TestItemLabel'] = $CIDRAM['L10N']->getString('field_ipaddr');
         $CIDRAM['FE']['TestMode'] = 1;
+        $CIDRAM['Can state assumptions'] = true;
+        $CIDRAM['Assumptions'] = [];
     } else {
         $CIDRAM['FE']['TestItemLabel'] = $CIDRAM['L10N']->getString('field_ua');
         $CIDRAM['FE']['TestMode'] = 2;
+        $CIDRAM['Can state assumptions'] = false;
     }
     $CIDRAM['FE']['TestItemLabel'] = preg_replace($CIDRAM['RegExLabels'], '', $CIDRAM['FE']['TestItemLabel']);
 
     /** IPs were submitted for testing. */
     if (isset($_POST['ip-addr'])) {
         $CIDRAM['FE']['ip-addr'] = $_POST['ip-addr'];
-        $_POST['ip-addr'] = array_unique(array_map(function ($IP) {
-            return preg_replace('~[^\da-f:./]~i', '', $IP);
+        $_POST['ip-addr'] = array_unique(array_map(function ($IP) use (&$CIDRAM) {
+            $New = preg_replace(['~([.:])x(?:/.+)?$~i', '~/.+$|(?!.*:)[^\d.]|(?!.*\.)[^\da-f:]~i', '~\.{2,}~'], ['{\1}0', '', '.'], $IP);
+            if ($New !== '' && strlen($IP) < 128) {
+                if (isset($CIDRAM['Assumptions'][$New])) {
+                    $CIDRAM['Assumptions'][$New] .= ', ' . $IP;
+                } else {
+                    $CIDRAM['Assumptions'][$New] = $IP;
+                }
+            }
+            return $New;
         }, explode("\n", $_POST['ip-addr'])));
         natsort($_POST['ip-addr']);
         $CIDRAM['ThisIP'] = [];
@@ -4063,6 +4074,7 @@ if ($CIDRAM['FE']['UserState'] !== 1 && $CIDRAM['FE']['CronMode'] === '') {
                     }
                     unset($CIDRAM['RunName'], $CIDRAM['RunError'], $CIDRAM['RunErrorCounts'], $CIDRAM['RunErrors']);
                 }
+                $CIDRAM['ThisIP']['Assumption'] = '';
             } elseif ($CIDRAM['BlockInfo']['SignatureCount']) {
                 $CIDRAM['BlockInfo']['WhyReason'] = preg_replace('~(?<=</span>\\),|]\\),)( )(?=[\dA-Za-z])~', '<br />', $CIDRAM['BlockInfo']['WhyReason']);
                 $CIDRAM['ThisIP']['YesNo'] = $CIDRAM['L10N']->getString('response_yes') . ' – ' . $CIDRAM['BlockInfo']['WhyReason'];

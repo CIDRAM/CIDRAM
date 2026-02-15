@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for CLI (last modified: 2025.09.17).
+# This file: Urdu language data for CLI (last modified: 2026.02.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,7 +24,7 @@
 # requests, ask. I can help.
 ##/
 
-CLI_Bad_IP: " اختصاصی IP ایڈریس، "{IP}" ایک درست IPv4 یا IPv6 IP پتہ نہیں ہے!"
+CLI_Bad_IP: " اختصاصی IP پتہ، "{IP}" ایک درست IPv4 یا IPv6 IP پتہ نہیں ہے!"
 CLI_F_Finished: "دستخط فکسر "%s" کی کارروائیوں کے دوران کی گئی "%s" کی تبدیلیوں کے ساتھ، ختم ہو گیا ہے (%s)."
 CLI_F_Started: "دستخط فکسر شروع کر دیا ہے (%s)."
 CLI_H: |
@@ -35,8 +35,8 @@ CLI_H: |
  ---
  پرچم:
  -h اس مدد کی معلومات دکھائیں.
- -c چیک کریں اگر ایک IP ایڈریس CIDRAM دستخط کی فائلوں کی طرف سے بلاک کیا جاتا ہے.
- -g ایک IP ایڈریس سے CIDR پیدا.
+ -c چیک کریں اگر ایک IP پتہ CIDRAM دستخط کی فائلوں کی طرف سے بلاک کیا جاتا ہے.
+ -g ایک IP پتہ سے CIDR پیدا.
  -v ایک دستخط فائل کو درست کریں.
  -f ایک دستخط فائل درست کریں.
  ---
@@ -48,8 +48,8 @@ CLI_H: |
  php.exe /cidram/loader.php -f signatures.dat
  php.exe /cidram/loader.php -v signatures.dat
  ---
-CLI_IP_Blocked: " اختصاصی IP ایڈریس، "{IP}"، ایک یا ایک سے CIDRAM دستخط کی فائلوں میں سے زیادہ کی طرف سے بلاک کیا جاتا ہے."
-CLI_IP_Not_Blocked: " اختصاصی IP ایڈریس، "{IP}"، CIDRAM دستخط کی فائلوں میں سے کسی کی طرف سے بلاک نہیں ہے."
+CLI_IP_Blocked: " اختصاصی IP پتہ، "{IP}"، ایک یا ایک سے CIDRAM دستخط کی فائلوں میں سے زیادہ کی طرف سے بلاک کیا جاتا ہے."
+CLI_IP_Not_Blocked: " اختصاصی IP پتہ، "{IP}"، CIDRAM دستخط کی فائلوں میں سے کسی کی طرف سے بلاک نہیں ہے."
 CLI_VF_Empty: "واضع دستخط کی فائل خالی ہے یا موجود نہیں ہے."
 CLI_VF_Level_0: "نوٹس"
 CLI_VF_Level_1: "انتباہ"
@@ -67,7 +67,7 @@ CLI_VL_Nontriggerable_Range: "L%s: "%s" غیر ٹرگر کے قابل "%s" کو 
 CLI_VL_Origin: "L%s: اصل ٹیگ میں ایک درست آیزو 3166-1 کوڈ نہیں ہے!"
 CLI_VL_Subordinate: "L%s: "%s" پہلے سے موجود "%s" کو دستخطی کے ماتحت ہے."
 CLI_VL_Superset: "L%s: "%s" یک سپر پہلے سے موجود "%s" کو دستخط کے لیے مقرر کیا جاتا ہے."
-CLI_VL_Syntax: "L%s: syntactically ہے عین مطابق نہیں."
+CLI_VL_Syntax: "L%s: نحوی طور پر ہے عین مطابق نہیں."
 CLI_VL_Tabs: "L%s: ٹیبز کے پتہ؛ خالی جگہوں کو زیادہ سے زیادہ پڑھنے کی اہلیت کے لیے ٹیبز سے زیادہ ترجیح دی جاتی ہے."
 CLI_VL_Tags: "L%s: دفعہ ٹیگ 20 بائٹس سے زیادہ ہے؛ دفعہ ٹیگز واضح اور جامع ہونا چاہیے."
 CLI_VL_Unrecognised: "L%s: غیر شناخت شدہ (فنکشن)؛ دستخط توڑا جا سکتا تھا."

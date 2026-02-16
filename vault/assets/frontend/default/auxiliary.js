@@ -198,6 +198,7 @@ var profileSuggestions = ['Advertiser','Bogon','Commercial','Content Delivery Ne
 var protocolSuggestions = ['HTTP/1.0','HTTP/1.1','HTTP/1.2','HTTP/1.3','HTTP/2.0'].map((e)=>'<span class="auxSuggestLink" onclick="javascript:this.parentElement.parentElement.previousElementSibling.lastChild.value=\''+e+'\'">'+e+'</span>').join(', ');
 var verifiedSuggestions = ['AdSense','AmazonAdBot','Amazonbot','Applebot','Baidu','Bingbot','ChatGPT-User','DuckDuckBot','Embedly','Facebook external hit','GPTBot','Googlebot','MojeekBot','PetalBot','Pinterest','Qwantify','SeznamBot','Snapchat','Sogou','Twitterbot','Yahoo','Yandex','YoudaoBot'].map((e)=>'<span class="auxSuggestLink" onclick="javascript:this.parentElement.parentElement.previousElementSibling.lastChild.value=\''+e+'\'">'+e+'</span>').join(', ');
 var langResSuggestions = ['af-ZA','ar','ar-SA','bg-BG','bn-BD','bs-BA','ca-ES','cs-CZ','de-CH','de-DE','en-AU','en-CA','en-GB','en-NZ','en-US','es-ES','es-MX','fa-IR','fr-CA','fr-FR','gl-ES','gu-IN','he-IL','hi-IN','hr-HR','id-ID','it-IT','ja-JP','ko-KR','lv-LV','ml-IN','mr-IN','ms-MY','nb-NO','nl-NL','pa-IN','pa-PK','pl-PL','pt-BR','pt-PT','ro-MO','ro-RO','ru-RU','sv-SE','sr-RS','ta-IN','th-TH','tr-TR','uk-UA','ur-PK','vi-VN','zh-CN','zh-Hans','zh-Hant','zh-HK','zh-TW'].map((e)=>'<span class="auxSuggestLink" onclick="javascript:this.parentElement.parentElement.previousElementSibling.lastChild.value=\''+e+'\'">'+e+'</span>').join(', ');
+var ignoreSuggestions = {ignoreSuggestions};
 
 function getInputSuggestions(e) {
   if (e.value=='ASNLookup') {
@@ -226,6 +227,9 @@ function getInputSuggestions(e) {
     e.parentElement.nextElementSibling.className='suggestsActive';
   } else if (e.value=='Factors') {
     e.parentElement.nextElementSibling.innerHTML='<small>{tip.An accepted value is any CIDR with a range that covers the IP address of the request}</small>';
+    e.parentElement.nextElementSibling.className='suggestsActive';
+  } else if (e.value=='Ignored'&&ignoreSuggestions!=='') {
+    e.parentElement.nextElementSibling.innerHTML='<small>{label.Suggestions}{pair_separator}'+ignoreSuggestions+'</small>';
     e.parentElement.nextElementSibling.className='suggestsActive';
   } else if (e.value.substring(0,11)=='Statistics-') {
     e.parentElement.nextElementSibling.innerHTML='<small>{tip.Note that the exact value of this statistic will be the same as that shown at the statistics page at the time the rule is processed}</small>';

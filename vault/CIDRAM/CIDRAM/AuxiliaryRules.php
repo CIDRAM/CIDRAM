@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used for auxiliary rules (last modified: 2026.01.20).
+ * This file: Methods used for auxiliary rules (last modified: 2026.02.16).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -717,6 +717,17 @@ trait AuxiliaryRules
      */
     private function populateMethodsActions(): void
     {
+        /** Fetch ignore.dat data. */
+        if (!isset($this->CIDRAM['Ignore'])) {
+            $this->CIDRAM['Ignore'] = $this->fetchIgnores();
+        }
+
+        /** Prepare ignore suggestions. */
+        $IgnoreSuggestions = (
+            is_array($this->CIDRAM['Ignore']) &&
+            count($this->CIDRAM['Ignore']) > 0
+        ) ? '[\'' . implode('\',\'', str_replace('\'', '\\\'', array_keys($this->CIDRAM['Ignore']))) . '\'].map((e)=>\'<span class="auxSuggestLink" onclick="javascript:this.parentElement.parentElement.previousElementSibling.lastChild.value=\\\'\'+e+\'\\\'">\'+e+\'</span>\').join(\', \')' : '\'\'';
+
         /** Append JavaScript specific to the auxiliary rules page. */
         $this->FE['JS'] .= $this->parseVars([
             'tip.Specify a value, or leave blank to disregard' => str_replace('\'', '\\\'', $this->L10N->getString('tip.Specify a value, or leave blank to disregard')),
@@ -727,6 +738,7 @@ trait AuxiliaryRules
             'hints_client_hints' => str_replace('\'', '\\\'', $this->L10N->getString('hints_client_hints')),
             'label.Suggestions' => str_replace('\'', '\\\'', $this->L10N->getString('label.Suggestions')),
             'pair_separator' => $this->L10N->getString('pair_separator'),
+            'ignoreSuggestions' => $IgnoreSuggestions
         ], $this->readFile($this->getAssetPath('auxiliary.js')));
 
         /** Populate methods. */

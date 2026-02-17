@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2026.02.15).
+ * This file: Front-end functions file (last modified: 2026.02.18).
  */
 
 /**
@@ -882,7 +882,7 @@ $CIDRAM['SimulateBlockEvent'] = function (string $Addr, bool $Modules = false, b
     $CIDRAM['Factors'] = [];
 
     $CIDRAM['ThisIP']['Assumption'] = '';
-    if ($CIDRAM['Can state assumptions'] && isset($CIDRAM['Assumptions'][$Addr]) && $CIDRAM['Assumptions'][$Addr] !== $Addr) {
+    if (!empty($CIDRAM['Can state assumptions']) && isset($CIDRAM['Assumptions'][$Addr]) && $CIDRAM['Assumptions'][$Addr] !== $Addr) {
         $CIDRAM['ThisIP']['Assumption'] = '<br /><small>(' . sprintf($CIDRAM['L10N']->getString('label_Entered %s Assuming %s'), $CIDRAM['Assumptions'][$Addr], $Addr) . ')</small>';
     }
 

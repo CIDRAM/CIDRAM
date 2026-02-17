@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used to simulate block events (last modified: 2026.02.15).
+ * This file: Methods used to simulate block events (last modified: 2026.02.18).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -108,7 +108,7 @@ trait SimulateBlockEvent
         }
         $UA = str_replace(['&quot;', '&gt;', '&lt;', '&amp;'], ['"', '>', '<', '&'], $UA) ?: 'SimulateBlockEvent';
         $Query = str_replace(['&quot;', '&gt;', '&lt;', '&amp;'], ['"', '>', '<', '&'], $Query) ?: 'SimulateBlockEvent';
-        if ($this->CIDRAM['Can state assumptions'] && isset($this->CIDRAM['Assumptions'][$Addr]) && $this->CIDRAM['Assumptions'][$Addr] !== $Addr) {
+        if (!empty($this->CIDRAM['Can state assumptions']) && isset($this->CIDRAM['Assumptions'][$Addr]) && $this->CIDRAM['Assumptions'][$Addr] !== $Addr) {
             $this->CIDRAM['ThisIP']['Assumption'] = '<br /><small>(' . sprintf($this->L10N->getString('label.Entered %s Assuming %s'), $this->CIDRAM['Assumptions'][$Addr], $Addr) . ')</small>';
         }
 

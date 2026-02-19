@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2026.02.14).
+# This file: Turkish language data for the front-end (last modified: 2026.02.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -176,7 +176,7 @@ config:
  captcha_signature_limit: "CAPTCHA teklifi geri çekilmeden önce izin verilen maksimum imza sayısı. Varsayılan = 1."
  captcha_turnstile_secret: &TurnstileCred "Cloudflare Turnstile'yı CIDRAM ile kullanmak istiyorsanız, buraya bir değer girmeniz gerekir. Aksi takdirde, bu değeri göz ardı edebilirsiniz."
  captcha_turnstile_sitekey: *TurnstileCred
- captcha_usemode: "CAPTCHA'lar ne zaman sunulmalıdır? Burada desteklenen her sağlayıcı için tercih edilen davranışı belirtebilirsiniz. Not: Beyaz listeye alınmış veya doğrulanmış ve engellenmemiş isteklerin hiçbir zaman bir CAPTCHA tamamlaması gerekmez. Ayrıca not edin: CAPTCHA'lar, botlara ve çeşitli kötü niyetli otomatik isteklere karşı yararlı ek bir koruma katmanı sağlayabilir, ancak kötü niyetli insanlar karşı herhangi bir koruma sağlamaz."
+ captcha_usemode: "CAPTCHA'lar ne zaman sunulmalıdır? Burada desteklenen her sağlayıcı için tercih edilen davranışı belirtebilirsiniz."
  components: "CIDRAM tarafından kullanılan bileşenlerin etkinleştirilmesi ve devre dışı bırakılması için yapılandırma. Genellikle güncelleme sayfası tarafından doldurulur, ancak daha hassas kontrol ve güncelleme sayfası tarafından tanınmayan özel bileşenler için buradan da yönetilebilir."
  components_events: "Etkinlik sahipleri. Normalde CIDRAM'ın dahili olarak çalışma şeklini değiştirmek veya ek işlevsellik sağlamak için kullanılır."
  components_imports: "İthalat. Normalde bir bileşenin yapılandırma bilgilerini CIDRAM'a sağlamak için kullanılır."
@@ -457,6 +457,12 @@ hints_time_format: |
  <code class="s">{s}</code> – Saniye – Örneğin, 49.<br />
  <code class="s">{tz}</code> – Saat dilimi (iki nokta üst üste olmadan) – Örneğin, +0800.<br />
  <code class="s">{t:z}</code> – Saat dilimi (iki nokta üst üste ile) – Örneğin, +08:00.
+hints_usemode:
+ 0: "Not: Beyaz listeye alınmış veya doğrulanmış ve engellenmemiş isteklerin hiçbir zaman bir CAPTCHA tamamlaması gerekmez."
+ 1: "Ayrıca not edin: CAPTCHA'lar, botlara ve çeşitli kötü niyetli otomatik isteklere karşı yararlı ek bir koruma katmanı sağlayabilir, ancak kötü niyetli insanlar karşı herhangi bir koruma sağlamaz."
+ 2: "İstekler, yardımcı kurallar aracılığıyla "kullanım için işaretlenebilir"."
+ 3: "Bir isteğin "hassas" olarak değerlendirilip değerlendirilmeyeceği {{Links.ConfigRef.sensitive}} ile belirlenir."
+ 4: ""İmza sınırı" {{Links.ConfigRef.signature_limit}} ile belirlenir."
 hints_verification:
  ""Pozitifleri" ve "negatifleri" nedir?": "Bir talep tarafından sunulan kimliği doğrularken, başarılı bir sonuç "pozitif" veya "negatif" olarak tanımlanabilir. Sunulan kimliğin gerçek kimlik olduğu teyit edildiğinde, "pozitif" olarak tanımlanacaktır. Sunulan kimliğin sahte olduğu onaylandığında, "negatif" olarak tanımlanacaktır. Ancak, başarısız bir sonuç (örneğin, doğrulama başarısız olur, veya sunulan kimliğin doğruluğu belirlenemez) "pozitif" veya "negatif" olarak tanımlanmaz. Bunun yerine, başarısız bir sonuç basitçe doğrulanmamış olarak tanımlanır. Bir talep tarafından sunulan kimliği doğrulamak için hiçbir girişimde bulunulmadığında, talep de aynı şekilde doğrulanmamış olarak tanımlanır. Terimler, yalnızca bir talep tarafından sunulan kimliğin tanındığı ve dolayısıyla doğrulamanın mümkün olduğu bağlamda anlamlıdır. Sunulan kimlik, yukarıda belirtilen seçeneklerle eşleşmiyorsa veya herhangi bir kimlik sunulmuyorsa, yukarıda verilen seçenekler alakasız hale gelir."
  ""Tek vuruşlu bypasslari" nedir?": "Bazı durumlarda, imza dosyaları, modüller, veya isteğin diğer koşulları nedeniyle olumlu doğrulanmış bir istek yine de engellenebilir, ve yanlış pozitifleri önlemek için bypasslar gerekli olabilir. Bir bypass, tam olarak bir ihlalle başa çıkmak için amaçlandığında, ne eksik ne fazla, böyle bir bypass "tek vuruşlu bypass" olarak tanımlanabilir."

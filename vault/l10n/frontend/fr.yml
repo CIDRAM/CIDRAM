@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2026.02.14).
+# This file: French language data for the front-end (last modified: 2026.02.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -186,7 +186,7 @@ config:
  captcha_signature_limit: "Nombre maximum de signatures autorisé avant le retrait de l'offre de CAPTCHA. Défaut = 1."
  captcha_turnstile_secret: &TurnstileCred "Si vous souhaitez utiliser Cloudflare Turnstile avec CIDRAM, vous devrez entrer une valeur ici. Sinon, vous pouvez l'ignorer."
  captcha_turnstile_sitekey: *TurnstileCred
- captcha_usemode: "Quand faut-il offrir des CAPTCHA\_? Vous pouvez spécifier ici le comportement préféré pour chaque fournisseur supporté. Remarque\_: Les requêtes sur liste blanche ou vérifiées et non bloquées n'ont jamais besoin de compléter un CAPTCHA. A noter également\_: Les CAPTCHAs peuvent fournir une couche de protection utile contre les bots et divers types de requêtes automatisées et malveillantes, mais ne fourniront pas aucune protection contre un humain malveillant."
+ captcha_usemode: "Quand faut-il offrir des CAPTCHA\_? Vous pouvez spécifier ici le comportement préféré pour chaque fournisseur supporté."
  components: "Configuration pour l'activation et la désactivation des composants utilisés par le CIDRAM. Généralement rempli par la page des mises à jour, mais peut également être géré à partir d'ici pour un contrôle plus précis et pour les composants personnalisés non reconnus par la page des mises à jour."
  components_events: "Gestionnaires d'événements. Généralement utilisé pour modifier la façon dont CIDRAM se comporte en interne ou pour fournir des fonctionnalités supplémentaires."
  components_imports: "Importations. Généralement utilisé pour fournir les informations de configuration d'un composant au CIDRAM."
@@ -504,6 +504,12 @@ hints_time_format: |
  <code class="s">{s}</code> – La seconde – Par exemple, 49.<br />
  <code class="s">{tz}</code> – Le fuseau horaire (sans deux points) – Par exemple, +0800.<br />
  <code class="s">{t:z}</code> – Le fuseau horaire (avec deux points) – Par exemple, +08:00.
+hints_usemode:
+ 0: "Remarque\_: Les requêtes sur liste blanche ou vérifiées et non bloquées n'ont jamais besoin de compléter un CAPTCHA."
+ 1: "A noter également\_: Les CAPTCHAs peuvent fournir une couche de protection utile contre les bots et divers types de requêtes automatisées et malveillantes, mais ne fourniront pas aucune protection contre un humain malveillant."
+ 2: "Les requêtes peuvent être «\_marqués pour l'utilisation\_» via des règles auxiliaires."
+ 3: "Le caractère «\_sensible\_» d'une requête est déterminé par {{Links.ConfigRef.sensitive}}."
+ 4: "La «\_limite de signature\_» est déterminée par {{Links.ConfigRef.signature_limit}}."
 hints_verification:
  "Que sont les «\_positifs\_» et les «\_négatifs\_»\_?": "Lors de la vérification de l'identité présenté par une requête, un résultat réussi peut être décrit comme «\_positif\_» ou «\_négatif\_». Dans le cas où l'identité présenté est confirmé comme étant la véritable identité, elle serait décrit comme «\_positif\_». Dans le cas où l'identité présenté s'avèrerait falsifié, elle serait décrit comme «\_négatif\_». Cependant, un résultat infructueux (par exemple, la vérification échoue, ou la véracité de l'identité présenté ne peut pas être déterminé) ne serait pas décrit comme «\_positif\_» ou «\_négatif\_». Au lieu, un résultat infructueux serait décrit simplement comme non vérifié. Lorsqu'aucune tentative de vérification de l'identité présenté par une requête n'est effectué, la requête serait également décrit comme non vérifié. Les termes n'ont de sens que dans le contexte où l'identité présenté par une requête est reconnue, et donc, où la vérification est possible. Dans les cas où l'identité présenté ne correspond pas aux options fournies ci-dessus, ou lorsqu'aucune identité n'est présenté, les options fournies ci-dessus deviennent sans objet."
  "Que sont les «\_contournements en un seul coup\_»\_?": "Dans certains cas, une requête vérifié positive peut toujours être bloquée en raison des fichiers de signature, des modules, ou d'autres conditions de la requête, et des contournements peuvent être nécessaires pour éviter les faux positifs. Dans le cas où un contournement est destiné à traiter exactement une infraction, ni plus ni moins, un tel contournement pourrait être décrit comme «\_contournements en un seul coup\_»."

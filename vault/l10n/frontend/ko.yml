@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2026.02.14).
+# This file: Korean language data for the front-end (last modified: 2026.02.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -176,7 +176,7 @@ config:
  captcha_signature_limit: "보안 문자 제안이 철회되기 전에 허용되는 최대 서명 수입니다. Default (기본 설정) = 1."
  captcha_turnstile_secret: &TurnstileCred "CIDRAM과 함께 Cloudflare Turnstile를 사용하려면 여기에 값을 입력해야 합니다. 그렇지 않다면 무시해도 됩니다."
  captcha_turnstile_sitekey: *TurnstileCred
- captcha_usemode: "CAPTCHA는 언제 제공해야 합니까? 여기에서 지원되는 각 공급자에 대한 기본 동작을 지정할 수 있습니다. 참고: 허용 목록에 있거나 확인되고 차단되지 않은 요청은 보안 문자를 작성할 필요가 없습니다. 또한 참고: CAPTCHA는 봇 및 다양한 종류의 악성 자동 요청에 대한 유용한 추가 보호 계층을 제공할 수 있지만 악의적인 사람에 대한 보호는 제공하지 않습니다."
+ captcha_usemode: "CAPTCHA는 언제 제공해야 합니까? 여기에서 지원되는 각 공급자에 대한 기본 동작을 지정할 수 있습니다."
  components: "CIDRAM에서 사용하는 구성 요소를 활성화 및 비활성화하기 위한 구성입니다. 일반적으로 업데이트 페이지에 의해 채워지지만, 세부 제어 및 업데이트 페이지에서 인식하지 못하는 사용자 지정 구성 요소를 위해 여기에서 관리할 수도 있습니다."
  components_events: "이벤트 핸들러. 일반적으로 CIDRAM이 내부적으로 작동하는 방식을 수정하거나 추가 기능을 제공하는 데 사용됩니다."
  components_imports: "수입품. 일반적으로 구성 요소의 구성 정보를 CIDRAM에 제공하는 데 사용됩니다."
@@ -457,6 +457,12 @@ hints_time_format: |
  <code class="s">{s}</code> – 초 – 예: 49.<br />
  <code class="s">{tz}</code> – 시간대 (콜론 없음) – 예: +0800.<br />
  <code class="s">{t:z}</code> – 시간대 (콜론 있음) – 예: +08:00.
+hints_usemode:
+ 0: "참고: 허용 목록에 있거나 확인되고 차단되지 않은 요청은 보안 문자를 작성할 필요가 없습니다."
+ 1: "또한 참고: CAPTCHA는 봇 및 다양한 종류의 악성 자동 요청에 대한 유용한 추가 보호 계층을 제공할 수 있지만 악의적인 사람에 대한 보호는 제공하지 않습니다."
+ 2: "요청은 보조 규칙을 통해 "사용 예정으로 표시"할 수 있습니다."
+ 3: "요청이 "민감한" 요청으로 간주되는지 여부는 {{Links.ConfigRef.sensitive}}에 의해 결정됩니다."
+ 4: ""서명 제한"은 {{Links.ConfigRef.signature_limit}}에 의해 결정됩니다."
 hints_verification:
  ""긍정적"과 "부정적"이란 무엇입니까?": "요청으로 제시된 신원을 확인할 때 성공적인 결과는 "긍정적" 또는 "부정적"으로 설명될 수 있습니다. 제시한 신분이 실제 신분으로 확인되면 "긍정적"으로 기재됩니다. 제시한 신원이 위조된 것으로 확인되는 경우 "부정적"으로 기재됩니다. 그러나, 실패한 결과는 (예: 확인에 실패하거나, 제시된 신원의 진실성을 확인할 수 없음) "긍정적" 또는 "부정적"으로 설명되지 않습니다. 대신, 실패한 결과는 단순히 검증되지 않은 것으로 설명됩니다. 요청으로 제시된 신원을 확인하려는 시도가 없을 때 요청은 마찬가지로 확인되지 않은 것으로 설명됩니다. 이 용어는 요청으로 제공된 신원이 인식되고 따라서 검증이 가능한 상황에서만 의미가 있습니다. 이 용어는 요청으로 제공된 신원이 인식되고 따라서 검증이 가능한 상황에서만 의미가 있습니다."
  ""단일 히트 바이 패스"란 무엇입니까?": "어떤 경우에는 서명 파일, 모듈, 또는 기타 요청 조건으로 인해 긍정적으로 확인된 요청이 여전히 차단될 수 있으며 소 탐을 피하고자 바이 패스가 필요할 수 있습니다. 바이패스가 정확히 하나의 위반을 처리하도록 의도된 경우 이러한 바이패스는 "단일 히트 바이 패스"로 설명될 수 있습니다."

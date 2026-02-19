@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2026.02.14).
+# This file: Portuguese language data for the front-end (last modified: 2026.02.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -212,7 +212,7 @@ config:
  captcha_signature_limit: "O número máximo de assinaturas permitidas antes que o CAPTCHA seja retirado. Padrão = 1."
  captcha_turnstile_secret: &TurnstileCred {"pt-BR": "Se quiser usar o Cloudflare Turnstile com o CIDRAM, você precisará inserir um valor aqui. Caso contrário, pode ignorá-lo.", "pt-PT": "Se quiser utilizar o Cloudflare Turnstile com o CIDRAM, terá de introduzir um valor aqui. Caso contrário, pode ignorá-lo."}
  captcha_turnstile_sitekey: *TurnstileCred
- captcha_usemode: "Quando devem ser oferecidos os CAPTCHAs? Você pode especificar o comportamento preferido para cada provedor suportado aqui. Nota: Solicitações na lista branca ou verificadas e não bloqueadas nunca precisam completar um CAPTCHA. Também: Os CAPTCHAs podem fornecer uma camada de proteção útil contra bots e vários tipos de solicitações automatizadas e maliciosas, mas não fornecerão nenhuma proteção contra humanos maliciosas."
+ captcha_usemode: "Quando devem ser oferecidos os CAPTCHAs? Você pode especificar o comportamento preferido para cada provedor suportado aqui."
  components: "Configuração para ativação e desativação dos componentes utilizados pelo CIDRAM. Normalmente preenchido pela página de atualizações, mas também pode ser gerenciado aqui para um controle mais preciso e para componentes personalizados não reconhecidos pela página de atualizações."
  components_events: "Manipuladores de eventos. Normalmente usado para modificar a maneira como o CIDRAM se comporta internamente ou para fornecer funcionalidade adicional."
  components_imports: "Importações. Normalmente usado para fornecer informações de configuração de um componente ao CIDRAM."
@@ -614,6 +614,12 @@ hints_time_format: |
  <code class="s">{s}</code> – O segundo – Por exemplo, 49.<br />
  <code class="s">{tz}</code> – O fuso horário (sem dois pontos) – Por exemplo, +0800.<br />
  <code class="s">{t:z}</code> – O fuso horário (com dois pontos) – Por exemplo, +08:00.
+hints_usemode:
+ 0: "Nota: Solicitações na lista branca ou verificadas e não bloqueadas nunca precisam completar um CAPTCHA."
+ 1: "Também: Os CAPTCHAs podem fornecer uma camada de proteção útil contra bots e vários tipos de solicitações automatizadas e maliciosas, mas não fornecerão nenhuma proteção contra humanos maliciosas."
+ 2: "As solicitações podem ser "marcadas para uso" por meio de regras auxiliares."
+ 3: "O fato de uma solicitação ser considerada "sensível" é determinado por {{Links.ConfigRef.sensitive}}."
+ 4: "O "limite de assinatura" é determinado por {{Links.ConfigRef.signature_limit}}."
 hints_verification:
  "O que são "positivos" e "negativos"?": "Quando verificando a identidade apresentada por uma solicitação, um resultado bem-sucedido pode ser descrito como "positivo" ou "negativo". Quando a identidade apresentada for confirmada como sendo a verdadeira identidade, ela será descrita como "positiva". Quando a identidade apresentada for confirmada como falsificada, ela será descrita como "negativa". No entanto, um resultado malsucedido (por exemplo, falha na verificação, ou a veracidade da identidade apresentada não pode ser determinada) não seria descrito como "positivo" ou "negativo". Em vez disso, um resultado malsucedido seria descrito simplesmente como não verificado. Quando não for feita nenhuma tentativa de verificar a identidade apresentada por uma solicitação, a solicitação também será descrita como não verificado. Os termos fazem sentido apenas no contexto em que a identidade apresentada por uma solicitação é reconhecida e, portanto, onde a verificação é possível. Nos casos em que a identidade apresentada não corresponde às opções fornecidas acima, ou onde nenhuma identidade é apresentada, as opções fornecidas acima tornam-se irrelevantes."
  "O que são "bypasses de acerto único"?": "Em alguns casos, uma solicitação com verificação positiva ainda pode ser bloqueada como resultado dos arquivos de assinatura, módulos, ou outras condições da solicitação, e bypasses podem ser necessários para evitar falsos positivos. No caso em que um bypass se destina a lidar com exatamente uma infração, nem mais nem menos, tal bypass pode ser descrito como um "bypass de acerto único"."

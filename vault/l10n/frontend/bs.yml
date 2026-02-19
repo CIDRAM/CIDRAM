@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bosnian language data for the front-end (last modified: 2026.02.14).
+# This file: Bosnian language data for the front-end (last modified: 2026.02.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -176,7 +176,7 @@ config:
  captcha_signature_limit: "Maksimalni dozvoljeni broj potpisa prije povlačenja CAPTCHA ponude. Zadano = 1."
  captcha_turnstile_secret: &TurnstileCred "Ako želite koristiti Cloudflare Turnstile sa CIDRAM-om, morat ćete ovdje unijeti vrijednost. Ako ne, možete je zanemariti."
  captcha_turnstile_sitekey: *TurnstileCred
- captcha_usemode: "Kada bi trebalo ponuditi CAPTCHA-e? Ovdje možete odrediti preferirano ponašanje za svakog podržanog pružatelja. Bilješka: Zahtjevi na bijeloj listi, ili provjereni i neblokirani zahtjevi, nikada ne moraju ispuniti CAPTCHA. Također imajte na umu: CAPTCHA mogu pružiti koristan, dodatni sloj zaštite od botova i raznih vrsta zlonamjernih automatiziranih zahtjeva, ali neće pružiti nikakvu zaštitu od zlonamjernog ljudi."
+ captcha_usemode: "Kada bi trebalo ponuditi CAPTCHA-e? Ovdje možete odrediti preferirano ponašanje za svakog podržanog pružatelja."
  components: "Konfiguracija za aktivaciju i deaktivaciju komponenti koje koristi CIDRAM. Obično ih popunjava stranica za ažuriranje, ali se njime može upravljati i odavde radi bolje kontrole i prilagođenih komponenti koje stranica za ažuriranja ne prepoznaje."
  components_events: "Obrađivači događaja. Obično se koristi za modificiranje načina na koji se CIDRAM ponaša interno ili za pružanje dodatne funkcionalnosti."
  components_imports: "Uvoz. Obično se koristi za dostavljanje informacija o konfiguraciji komponente u CIDRAM."
@@ -460,6 +460,12 @@ hints_time_format: |
  <code class="s">{s}</code> – Sekunde – Npr., 49.<br />
  <code class="s">{tz}</code> – Vremenska zona (bez dvotočke) – Npr., +0800.<br />
  <code class="s">{t:z}</code> – Vremenska zona (sa dvotočkom) – Npr., +08:00.
+hints_usemode:
+ 0: "Bilješka: Zahtjevi na bijeloj listi, ili provjereni i neblokirani zahtjevi, nikada ne moraju ispuniti CAPTCHA."
+ 1: "Također imajte na umu: CAPTCHA mogu pružiti koristan, dodatni sloj zaštite od botova i raznih vrsta zlonamjernih automatiziranih zahtjeva, ali neće pružiti nikakvu zaštitu od zlonamjernog ljudi."
+ 2: "Zahtjevi se mogu "označiti za upotrebu" putem pomoćnih pravila."
+ 3: "Da li se zahtjev smatra "osjetljivim" određuje se pomoću {{Links.ConfigRef.sensitive}}."
+ 4: ""Ograničenje potpisa" određuje se pomoću {{Links.ConfigRef.signature_limit}}."
 hints_verification:
  "Šta su "pozitivi" i "negativi"?": "Prilikom provjere identiteta predstavljenog zahtjevom, uspješan ishod bi se mogao opisati kao "pozitivan" ili "negativan". U slučaju da se potvrdi da je predstavljeni identitet pravi identitet, on bi bio opisan kao "pozitivan". U slučaju da se potvrdi da je predstavljeni identitet falsifikovan, on bi bio opisan kao "negativan". Međutim, neuspješan ishod (npr., provjera ne uspije, ili se ne može utvrditi istinitost predstavljenog identiteta) ne bi se opisali kao "pozitivan" ili "negativan". Umjesto toga, neuspješan ishod bi se jednostavno opisao kao neprovjeren. Kada se ne pokuša provjeriti identitet predstavljen u zahtjevu, zahtjev bi također bio opisan kao neprovjeren. Termini imaju smisla samo u kontekstu u kojem se prepoznaje identitet predstavljen u zahtjevu, a samim tim i gdje je verifikacija moguća. U slučajevima kada predstavljeni identitet ne odgovara gore navedenim opcijama, ili kada identitet nije predstavljen, gore navedene opcije postaju nevažne."
  "Šta su "zaobilaženje jednim pogotkom"?": "U nekim slučajevima, pozitivno verificiran zahtjev može i dalje biti blokiran zbog datoteka potpisa, modula, ili drugih uvjeta zahtjeva, a zaobilaženje može biti potrebno kako bi se izbjegli lažno pozitivni. U slučaju kada je zaobilaženje namijenjeno rješavanju tačno jednog prekršaja, ni više ni manje, takvo zaobilaženje bi se moglo opisati kao "zaobilaženje jednim pogotkom"."

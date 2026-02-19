@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2026.02.14).
+# This file: Vietnamese language data for the front-end (last modified: 2026.02.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -176,7 +176,7 @@ config:
  captcha_signature_limit: "Số lượng chữ ký tối đa được phép trước khi đề nghị CAPTCHA bị rút lại. Mặc định = 1."
  captcha_turnstile_secret: &TurnstileCred "Nếu bạn muốn sử dụng Cloudflare Turnstile với CIDRAM, bạn sẽ cần nhập giá trị vào đây. Nếu không, bạn có thể bỏ qua điều này."
  captcha_turnstile_sitekey: *TurnstileCred
- captcha_usemode: "Khi nào nên cung cấp CAPTCHA? Bạn có thể chỉ định hành vi ưu tiên cho từng nhà cung cấp được hỗ trợ tại đây. Lưu ý: Các yêu cầu trong danh sách trắng hay đã xác minh và không bị chặn không cần phải hoàn thành CAPTCHA. Cũng lưu ý: CAPTCHA có thể cung cấp một lớp bảo vệ bổ sung, hữu ích chống lại bot và các loại yêu cầu tự động độc hại khác nhau, nhưng sẽ không cung cấp bất kỳ biện pháp bảo vệ nào chống lại con người độc hại."
+ captcha_usemode: "Khi nào nên cung cấp CAPTCHA? Bạn có thể chỉ định hành vi ưu tiên cho từng nhà cung cấp được hỗ trợ tại đây."
  components: "Cấu hình để kích hoạt và vô hiệu hóa các thành phần được sử dụng bởi CIDRAM. Thường được điền bởi trang cập nhật, nhưng cũng có thể được quản lý từ đây để kiểm soát tốt hơn và cho các thành phần tùy chỉnh không được công nhận bởi trang cập nhật."
  components_events: "Trình xử lý sự kiện. Thường được sử dụng để sửa đổi cách CIDRAM hoạt động trong nội bộ hoặc để cung cấp chức năng bổ sung."
  components_imports: "Nhập khẩu. Thường được sử dụng để cung cấp thông tin cấu hình của một thành phần cho CIDRAM."
@@ -457,6 +457,12 @@ hints_time_format: |
  <code class="s">{s}</code> – Giây – Ví dụ, 49.<br />
  <code class="s">{tz}</code> – Múi giờ (không có dấu hai chấm) – Ví dụ, +0800.<br />
  <code class="s">{t:z}</code> – Múi giờ (có dấu hai chấm) – Ví dụ, +08:00.
+hints_usemode:
+ 0: "Lưu ý: Các yêu cầu trong danh sách trắng hay đã xác minh và không bị chặn không cần phải hoàn thành CAPTCHA."
+ 1: "Cũng lưu ý: CAPTCHA có thể cung cấp một lớp bảo vệ bổ sung, hữu ích chống lại bot và các loại yêu cầu tự động độc hại khác nhau, nhưng sẽ không cung cấp bất kỳ biện pháp bảo vệ nào chống lại con người độc hại."
+ 2: "Yêu cầu có thể được "đánh dấu để sử dụng" thông qua các quy tắc phụ trợ."
+ 3: "Việc một yêu cầu có được coi là "nhạy cảm" hay không được xác định bởi {{Links.ConfigRef.sensitive}}."
+ 4: ""Giới hạn chữ ký" được xác định bởi {{Links.ConfigRef.signature_limit}}."
 hints_verification:
  ""Tích cực" và "tiêu cực" là gì?": "Khi xác minh danh tính được trình bày bởi một yêu cầu, kết quả thành công có thể được mô tả là "tích cực" hoặc "tiêu cực". Trong trường hợp danh tính được trình bày được xác nhận là danh tính thực, danh tính đó sẽ được mô tả là "tích cực". Trong trường hợp danh tính được trình bày được xác nhận là giả mạo, danh tính đó sẽ được mô tả là "tiêu cực". Tuy nhiên, kết quả không thành công (v.d., xác minh không thành công, hoặc không thể xác định tính xác thực của danh tính được trình bày) sẽ không được mô tả là "tích cực" hoặc "tiêu cực". Thay vào đó, một kết quả không thành công sẽ được mô tả đơn giản là chưa được xác minh. Khi không có nỗ lực xác minh danh tính mà một yêu cầu đưa ra được thực hiện, thì yêu cầu đó cũng sẽ được mô tả là chưa được xác minh. Các điều khoản chỉ có ý nghĩa trong bối cảnh mà danh tính được trình bày bởi một yêu cầu được công nhận và do đó, khi có thể xác minh. Trong trường hợp danh tính được trình bày không khớp với các tùy chọn được cung cấp ở trên, hoặc khi không có danh tính nào được trình bày, các tùy chọn được cung cấp ở trên trở nên không liên quan."
  ""Đường tránh một cú đánh" là gì?": "Trong một số trường hợp, yêu cầu đã được xác minh tích cực vẫn có thể bị chặn do tập tin chữ ký, mô-đun, hoặc các điều kiện khác của yêu cầu, và đường tránh có thể cần thiết để tránh sai tích cực. Trong trường hợp sai tích cực gây ra chính xác một vi phạm, một đường tránh như vậy có thể được mô tả là "đường tránh một cú đánh"."

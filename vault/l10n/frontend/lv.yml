@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2026.02.14).
+# This file: Latvian language data for the front-end (last modified: 2026.02.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -176,7 +176,7 @@ config:
  captcha_signature_limit: "Maksimālais atļautais parakstu skaits pirms CAPTCHA piedāvājuma atsaukšanas. Noklusējuma = 1."
  captcha_turnstile_secret: &TurnstileCred "Ja vēlaties izmantot Cloudflare Turnstile ar CIDRAM, šeit jāievada vērtība. Ja nē, varat to ignorēt."
  captcha_turnstile_sitekey: *TurnstileCred
- captcha_usemode: "Kad jāpiedāvā CAPTCHA? Šeit varat norādīt vēlamo darbību katram atbalstītajam sniedzējam. Piezīme: Baltā sarakstā iekļautajiem vai pārbaudītajiem un nebloķētajiem pieprasījumiem nekad nav jāaizpilda CAPTCHA. Ņemiet vērā arī: CAPTCHA var nodrošināt noderīgu aizsardzību pret robotprogrammatūrām un dažāda veida ļaunprātīgiem un automatizētiem pieprasījumiem, taču tās nenodrošina nekādu aizsardzību pret ļaunprātīgu cilvēku."
+ captcha_usemode: "Kad jāpiedāvā CAPTCHA? Šeit varat norādīt vēlamo darbību katram atbalstītajam sniedzējam."
  components: "CIDRAM izmantoto konfigurācija komponentu aktivizēšanai un deaktivizēšanai. Parasti to aizpilda atjauninājumu lapa, taču to var arī pārvaldīt no šejienes, lai iegūtu precīzāku kontroli un pielāgotus komponentus, ko atjauninājumu lapa neatpazīst."
  components_events: "Pasākumu apdarinātāji. Parasti izmanto, lai mainītu veidu, kā CIDRAM darbojas iekšēji vai nodrošinātu papildu funkcionalitāti."
  components_imports: "Imports. Parasti izmanto, lai piegādātu CIDRAM komponenta konfigurācijas informāciju."
@@ -459,6 +459,12 @@ hints_time_format: |
  <code class="s">{s}</code> – Sekunde – Piem., 49.<br />
  <code class="s">{tz}</code> – Laika josla (bez kolas) – Piem., +0800.<br />
  <code class="s">{t:z}</code> – Laika josla (ar kolu) – Piem., +08:00.
+hints_usemode:
+ 0: "Piezīme: Baltā sarakstā iekļautajiem vai pārbaudītajiem un nebloķētajiem pieprasījumiem nekad nav jāaizpilda CAPTCHA."
+ 1: "Ņemiet vērā arī: CAPTCHA var nodrošināt noderīgu aizsardzību pret robotprogrammatūrām un dažāda veida ļaunprātīgiem un automatizētiem pieprasījumiem, taču tās nenodrošina nekādu aizsardzību pret ļaunprātīgu cilvēku."
+ 2: "Pieprasījumus var "atzīmēt lietošanai", izmantojot palīgnoteikumus."
+ 3: "Vai pieprasījums tiek uzskatīts par “sensitīvu”, nosaka, izmantojot {{Links.ConfigRef.sensitive}}."
+ 4: ""Paraksta limits" tiek nosaka, izmantojot {{Links.ConfigRef.signature_limit}}."
 hints_verification:
  "Kas ir “pozitīvie” un “negatīvie”?": "Pārbaudot pieprasījuma sniegto identitāti, veiksmīgu rezultātu var raksturot kā “pozitīvu” vai “negatīvu”. Kad uzrādītā identitāte tiek apstiprināta kā patiesā identitāte, tā tiks raksturota kā “pozitīva”. Kad tiek apstiprināts, ka uzrādītā identitāte ir viltota, tā tiks raksturota kā “negatīva”. Tomēr, neveiksmīgs iznākums (piemēram, verifikācija neizdodas, vai uzrādītās identitātes patiesumu nevar noteikt) netiks raksturota kā “pozitīvu” vai “negatīvu”. Tā vietā neveiksmīgs rezultāts tiktu raksturots vienkārši kā nepārbaudīts. Ja netiek mēģināts pārbaudīt pieprasījumā norādīto identitāti, pieprasījums tāpat tiks raksturots kā nepārbaudīts. Terminiem ir jēga tikai kontekstā, kurā tiek atpazīta pieprasījumā norādītā identitāte un līdz ar to, ja ir iespējama pārbaude. Ja uzrādītā identitāte neatbilst iepriekš sniegtajām opcijām, vai ja identitāte nav uzrādīta, iepriekš sniegtās iespējas kļūst nepiemērojams."
  "Kas ir “apiešanu ar vienu trāpījumu”?": "Dažos gadījumos pozitīvi pārbaudīts pieprasījums joprojām var tikt bloķēts paraksta failu, moduļu, vai citu pieprasījuma nosacījumu dēļ, un var būt nepieciešami apiešanas, lai izvairītos no viltus pozitīviem rezultātiem. Gadījumā, ja apiešana ir paredzēta tieši viena pārkāpuma novēršanai, ne vairāk un ne mazāk, šādu apiešanu varētu raksturot kā “viena trāpījuma apiešanu”."

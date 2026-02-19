@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Czech language data for the front-end (last modified: 2026.02.14).
+# This file: Czech language data for the front-end (last modified: 2026.02.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -176,7 +176,7 @@ config:
  captcha_signature_limit: "Maximální počet podpisů povolený před CAPTCHA již není nabízen. Standardní = 1."
  captcha_turnstile_secret: &TurnstileCred "Pokud chcete použít Cloudflare Turnstile s CIDRAM, budete muset zde zadat hodnotu. Pokud ne, můžete ji ignorovat."
  captcha_turnstile_sitekey: *TurnstileCred
- captcha_usemode: "Kdy by měly být CAPTCHA nabízeny? Zde můžete zadat preferované chování pro každého podporovaného poskytovatele. Poznámka: Požadavky, které byly whitelistování nebo ověřené a neblokované nikdy nemusí dokončit CAPTCHA. Taky: CAPTCHA mohou poskytnout užitečnou další vrstvu ochrany proti robotům a různým druhům škodlivých automatizovaných požadavků, ale neposkytnou žádnou ochranu proti škodlivému člověku."
+ captcha_usemode: "Kdy by měly být CAPTCHA nabízeny? Zde můžete zadat preferované chování pro každého podporovaného poskytovatele."
  components: "Konfigurace pro aktivaci a deaktivaci komponent používaných CIDRAM. Obvykle se vyplní na stránce aktualizací, ale lze je také spravovat odtud pro jemnější ovládání a pro vlastní komponenty, které stránka aktualizací nerozpozná."
  components_events: "Obsluha událostí. Obvykle se používá k úpravě způsobu, jakým se CIDRAM chová interně, nebo k poskytování dalších funkcí."
  components_imports: "Dovoz. Obvykle se používá k dodání informací o konfiguraci komponent do CIDRAM."
@@ -460,6 +460,12 @@ hints_time_format: |
  <code class="s">{s}</code> – Sekunda – Např., 49.<br />
  <code class="s">{tz}</code> – Časové pásmo (bez dvojtečky) – Např., +0800.<br />
  <code class="s">{t:z}</code> – Časové pásmo (s dvojtečkou) – Např., +08:00.
+hints_usemode:
+ 0: "Poznámka: Požadavky, které byly whitelistování nebo ověřené a neblokované nikdy nemusí dokončit CAPTCHA."
+ 1: "Taky: CAPTCHA mohou poskytnout užitečnou další vrstvu ochrany proti robotům a různým druhům škodlivých automatizovaných požadavků, ale neposkytnou žádnou ochranu proti škodlivému člověku."
+ 2: "Žádosti lze „označit k použití“ pomocí pomocných pravidel."
+ 3: "Zda je požadavek považován za „citlivý“, je určeno pomocí {{Links.ConfigRef.sensitive}}."
+ 4: "„Limit podpisu“ je určen pomocí {{Links.ConfigRef.signature_limit}}."
 hints_verification:
  "Co jsou „pozitiva“ a „negativa“?": "Při ověřování identity předložené žádostí lze úspěšný výsledek popsat jako „pozitivní“ nebo „negativní“. Když se potvrdí, že prezentovaná identita je pravou identitou, byla by popsána jako „pozitivní“. Když se potvrdí, že předložená identita je zfalšovaná, bude popsána jako „negativní“. Neúspěšný výsledek (např., selže ověření, nebo nelze určit pravdivost předložené identity) by však nebyl popsán jako „pozitivní“ nebo „negativní“. Místo toho by byl neúspěšný výsledek popsán jednoduše jako neověřený. Pokud nedojde k žádnému pokusu o ověření identity předložené požadavkem, bude požadavek rovněž popsána jako neověřený. Termíny mají smysl pouze v kontextu, kdy je rozpoznána identita předložená žádostí, a tedy tam, kde je možné ověření. Pokud prezentovaná identita neodpovídá výše uvedeným možnostem, nebo pokud není uvedena žádná identita, výše uvedené možnosti se stanou irelevantními."
  "Co jsou „bypassace s jedním zásahem“?": "V některých případech může být pozitivně ověřený požadavek stále blokován v důsledku podpisových souborů, modulů, nebo jiných podmínek požadavku a může být nutné bypassovat, aby se zabránilo falešným poplachům. V případě, kdy má bypassace řešit přesně jeden přestupek, nic více a nic méně, lze takový bypassace označit jako „bypassace s jedním zásahem“."

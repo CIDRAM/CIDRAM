@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Catalan language data for the front-end (last modified: 2026.02.14).
+# This file: Catalan language data for the front-end (last modified: 2026.02.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -176,7 +176,7 @@ config:
  captcha_signature_limit: "Nombre màxim de signatures permeses abans de la retirada de l'oferta CAPTCHA. Predeterminat = 1."
  captcha_turnstile_secret: &TurnstileCred "Si voleu utilitzar Cloudflare Turnstile amb CIDRAM, haureu d'introduir un valor aquí. Si no, el podeu ignorar."
  captcha_turnstile_sitekey: *TurnstileCred
- captcha_usemode: "Quan s'haurien d'oferir els CAPTCHA? Aquí podeu especificar el comportament preferit per a cada proveïdor compatible. Nota: Les sol·licituds a la llista blanca o verificades i no bloquejades no necessiten mai completar un CAPTCHA. També tingueu en compte: Els CAPTCHA poden proporcionar una capa addicional de protecció útil contra els robots i diversos tipus de sol·licituds automatitzades malicioses, però no proporcionaran cap protecció contra un humà maliciós."
+ captcha_usemode: "Quan s'haurien d'oferir els CAPTCHA? Aquí podeu especificar el comportament preferit per a cada proveïdor compatible."
  components: "Configuració per a l'activació i desactivació dels components utilitzats per CIDRAM. Normalment s'omple per la pàgina d'actualitzacions, però també es pot gestionar des d'aquí per a un control més fi i per a components personalitzats no reconeguts per la pàgina d'actualitzacions."
  components_events: "Gestors d'esdeveniments. Normalment s'utilitza per modificar la forma en què CIDRAM es comporta internament o per proporcionar funcionalitats addicionals."
  components_imports: "Importacions. Normalment s'utilitza per proporcionar informació de configuració d'un component a CIDRAM."
@@ -456,6 +456,12 @@ hints_time_format: |
  <code class="s">{s}</code> – El segon – Per exemple, 49.<br />
  <code class="s">{tz}</code> – La zona horària (sense dos punts) – Per exemple, +0800.<br />
  <code class="s">{t:z}</code> – La zona horària (amb dos punts) – Per exemple, +08:00.
+hints_usemode:
+ 0: "Nota: Les sol·licituds a la llista blanca o verificades i no bloquejades no necessiten mai completar un CAPTCHA."
+ 1: "També tingueu en compte: Els CAPTCHA poden proporcionar una capa addicional de protecció útil contra els robots i diversos tipus de sol·licituds automatitzades malicioses, però no proporcionaran cap protecció contra un humà maliciós."
+ 2: "Les sol·licituds es poden "marcar per al seu ús" mitjançant regles auxiliars."
+ 3: "Si una sol·licitud es considera "sensible" es determina mitjançant {{Links.ConfigRef.sensitive}}."
+ 4: "El "límit de signatura" es determina mitjançant {{Links.ConfigRef.signature_limit}}."
 hints_verification:
  "Què són els "positius" i els "negatius"?": "Quan es verifica la identitat presentada per una sol·licitud, un resultat exitós es podria descriure com a "positiu" o "negatiu". En el cas que es confirmi que la identitat presentada és la veritable identitat, es descriuria com a "positiu". En el cas que es confirmi que la identitat presentada està falsificada, es descriuria com a "negatiu". D'altra banda, un resultat sense èxit (per exemple, la verificació falla, o no es pot determinar la veracitat de la identitat presentada) no es descriuria com a "positiu" o "negatiu". En canvi, un resultat sense èxit es descriuria simplement com a no verificat. Quan no s'intenta verificar la identitat presentada per una sol·licitud, la sol·licitud també es descriuria como a no verificada. Els termes només tenen sentit en el context on es reconeix la identitat presentada per una sol·licitud i, per tant, on la verificació és possible. En els casos en què la identitat presentada no coincideix amb les opcions proporcionades anteriorment, o en què no es presenta cap identitat, les opcions proporcionades anteriorment seran irrellevants."
  "Què són els "bypasses d'un sol cop"?": "En alguns casos, una sol·licitud verificada positivament encara es pot bloquejar com a resultat dels fitxers de signatura, mòduls, o altres condicions de la sol·licitud, i pot ser que calgui els bypasses per evitar falsos positius. En el cas que un bypass tracti exactament d'una infracció, ni més ni menys, aquest bypass es podria descriure com un "bypass d'un sol cop"."

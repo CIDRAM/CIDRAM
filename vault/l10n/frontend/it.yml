@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2026.02.14).
+# This file: Italian language data for the front-end (last modified: 2026.02.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -176,7 +176,7 @@ config:
  captcha_signature_limit: "Il numero massimo di firme consentito prima che l'offerta di CAPTCHA venga ritirata. Predefinito = 1."
  captcha_turnstile_secret: &TurnstileCred "Se vuoi usare Cloudflare Turnstile con CIDRAM, dovrai inserire un valore qui. In caso contrario, puoi ignorarlo."
  captcha_turnstile_sitekey: *TurnstileCred
- captcha_usemode: "Quando dovrebbero essere offerti i CAPTCHA? Qui puoi specificare il comportamento preferito per ciascun provider supportato. Nota: Le richieste nella lista bianca o verificate e non bloccate non devono mai completare un CAPTCHA. Nota anche: I CAPTCHA possono fornire un utile livello aggiuntivo di protezione contro i bot e vari tipi di richieste automatizzate e dannose, ma non forniscono alcuna protezione contro umani dannosi."
+ captcha_usemode: "Quando dovrebbero essere offerti i CAPTCHA? Qui puoi specificare il comportamento preferito per ciascun provider supportato."
  components: "Configurazione per l'attivazione e la disattivazione dei componenti utilizzati da CIDRAM. Tipicamente popolato dalla pagina degli aggiornamenti, ma può anche essere gestito da qui per un controllo più accurato e per componenti personalizzati non riconosciuti dalla pagina degli aggiornamenti."
  components_events: "Gestori di eventi. Tipicamente utilizzato per modificare il modo in cui CIDRAM si comporta internamente o per fornire funzionalità aggiuntive."
  components_imports: "Importazioni. Tipicamente utilizzato per fornire le informazioni di configurazione di un componente alla CIDRAM."
@@ -457,6 +457,12 @@ hints_time_format: |
  <code class="s">{s}</code> – Il secondo – Per esempio, 49.<br />
  <code class="s">{tz}</code> – Il fuso orario (senza i due punti) – Per esempio, +0800.<br />
  <code class="s">{t:z}</code> – Il fuso orario (con i due punti) – Per esempio, +08:00.
+hints_usemode:
+ 0: "Nota: Le richieste nella lista bianca o verificate e non bloccate non devono mai completare un CAPTCHA."
+ 1: "Nota anche: I CAPTCHA possono fornire un utile livello aggiuntivo di protezione contro i bot e vari tipi di richieste automatizzate e dannose, ma non forniscono alcuna protezione contro umani dannosi."
+ 2: "Le richieste possono essere "contrassegnate per l'uso" tramite regole ausiliarie."
+ 3: "Se una richiesta è considerata "sensibile" è determinato da {{Links.ConfigRef.sensitive}}."
+ 4: "Il "limite di firme" è determinato da {{Links.ConfigRef.signature_limit}}."
 hints_verification:
  "Cosa sono "positivi" e "negativi"?": "Nel verificare l'identità presentata da una richiesta, un esito di successo potrebbe essere descritto come "positivo" o "negativo". Nel caso in cui l'identità presentata fosse confermata come la vera identità, sarebbe descritto come "positivo". Nel caso in cui l'identità presentata fosse confermata come falsificata, sarebbe descritto come "negativo". Tuttavia, un esito senza successo (ad esempio, la verifica è fallita, o non è possibile determinare la veridicità dell'identità presentata) non sarebbe descritto come "positivo" o "negativo". Invece, un esito senza successo verrebbe descritto semplicemente come non verificato. Quando non viene effettuato alcun tentativo di verificare l'identità presentata da una richiesta, la richiesta verrebbe ugualmente descritto come non verificato. I termini hanno senso solo nel contesto in cui viene riconosciuta l'identità presentata da una richiesta e, quindi, dove è possibile la verifica. Nei casi in cui l'identità presentata non corrisponda alle opzioni fornite sopra, o in cui non venga presentata alcuna identità, le opzioni sopra fornite diventano irrilevanti."
  "Cosa sono i "bypass a colpo singolo"?": "In alcuni casi, una richiesta verificata positivamente potrebbe comunque essere bloccata a causa dei file di firma, dei moduli, o di altre condizioni della richiesta, e potrebbero essere necessari bypass per evitare falsi positivi. Nel caso in cui un bypass sia destinato a trattare esattamente un'infrazione, né più né meno, tale bypass potrebbe essere descritto come un "bypass a colpo singolo"."

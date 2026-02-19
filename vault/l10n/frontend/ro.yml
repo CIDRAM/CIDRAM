@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Romanian language data for the front-end (last modified: 2026.02.14).
+# This file: Romanian language data for the front-end (last modified: 2026.02.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -176,7 +176,7 @@ config:
  captcha_signature_limit: "Numărul maxim de semnături permis înainte ca oferta CAPTCHA să fie retrasă. Implicit = 1."
  captcha_turnstile_secret: &TurnstileCred "Dacă vrei să folosești Cloudflare Turnstile cu CIDRAM, va trebui să introduci o valoare aici. Dacă nu, o poți ignora."
  captcha_turnstile_sitekey: *TurnstileCred
- captcha_usemode: "Când ar trebui oferite CAPTCHA-urile? Puteți specifica aici comportamentul preferat pentru fiecare furnizor acceptat. Notă: Solicitările incluse în lista albă sau verificate și neblocate nu trebuie să completeze niciodată un CAPTCHA. De asemenea, rețineți: CAPTCHA-urile pot oferi un strat suplimentar util de protecție împotriva roboților și a diferitelor tipuri de solicitări automate rău intenționate, dar nu vor oferi nicio protecție împotriva unui om rău intenționat."
+ captcha_usemode: "Când ar trebui oferite CAPTCHA-urile? Puteți specifica aici comportamentul preferat pentru fiecare furnizor acceptat."
  components: "Configurare pentru activarea si dezactivarea componentelor utilizate de CIDRAM. De obicei populat de pagina de actualizări, dar poate fi gestionat și de aici pentru un control mai fin și pentru componente personalizate nerecunoscute de pagina de actualizări."
  components_events: "Manageri de evenimente. Utilizat de obicei pentru a modifica modul în care CIDRAM se comportă intern sau pentru a oferi funcționalități suplimentare."
  components_imports: "Importurile. Utilizat de obicei pentru a furniza informații de configurare a unei componente către CIDRAM."
@@ -465,6 +465,12 @@ hints_time_format: |
  <code class="s">{s}</code> – Secundă – De exemplu, 49.<br />
  <code class="s">{tz}</code> – Fusul orar (fără două puncte) – De exemplu, +0800.<br />
  <code class="s">{t:z}</code> – Fusul orar (cu două puncte) – De exemplu, +08:00.
+hints_usemode:
+ 0: "Notă: Solicitările incluse în lista albă sau verificate și neblocate nu trebuie să completeze niciodată un CAPTCHA."
+ 1: "De asemenea, rețineți: CAPTCHA-urile pot oferi un strat suplimentar util de protecție împotriva roboților și a diferitelor tipuri de solicitări automate rău intenționate, dar nu vor oferi nicio protecție împotriva unui om rău intenționat."
+ 2: "Solicitările pot fi „marcate pentru utilizare” prin intermediul unor reguli auxiliare."
+ 3: "Dacă o solicităre este considerată „sensibilă” este determinată de {{Links.ConfigRef.sensitive}}."
+ 4: "„Limita semnăturii” este determinată de {{Links.ConfigRef.signature_limit}}."
 hints_verification:
  "Ce sunt „pozitive” și „negative”?": "Atunci când se verifică identitatea prezentată de o solicităre, un rezultat de succes poate fi descris drept „pozitiv” sau „negativ”. În cazul în care identitatea prezentată este confirmată a fi adevărata identitate, aceasta ar fi descrisă ca fiind „pozitivă”. În cazul în care se confirmă că identitatea prezentată este falsificată, aceasta ar fi descrisă ca fiind „negativă”. Cu toate acestea, un rezultat nereușit (de exemplu, verificarea eșuează, sau veridicitatea identității prezentate nu poate fi determinată) nu ar fi descris drept „pozitiv” sau „negativ”. În schimb, un rezultat nereușit ar fi descris pur și simplu ca neverificat. Atunci când nu se face nicio încercare de verificare a identității prezentate de o solicitare, solicitărea va fi, de asemenea, descrisă ca neverificată. Termenii au sens numai în contextul în care identitatea prezentată printr-o solicităre este recunoscută și, prin urmare, în care verificarea este posibilă. În cazurile în care identitatea prezentată nu se potrivește cu opțiunile prevăzute mai sus sau în care nu este prezentată nicio identitate, opțiunile furnizate mai sus devin irelevante."
  "Ce sunt „bypassuri cu o singură lovitură”?": "În unele cazuri, o solicitare verificată pozitiv poate fi blocată în continuare ca urmare a fișierelor de semnătură, modulelor, sau a altor condiții ale solicitării, iar bypassuri pot fi necesare pentru a evita fals pozitive. În cazul în care o bypass este destinată să rezolve exact o infracțiune, nici mai mult, nici mai puțin, o astfel de bypass ar putea fi descrisă ca o „bypass cu o singură lovitură”."

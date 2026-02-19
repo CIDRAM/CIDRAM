@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2026.02.14).
+# This file: Polish language data for the front-end (last modified: 2026.02.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -176,7 +176,7 @@ config:
  captcha_signature_limit: "Maksymalna liczba podpisów dozwolona przed wycofaniem oferty CAPTCHA. Domyślna = 1."
  captcha_turnstile_secret: &TurnstileCred "Jeśli chcesz używać Cloudflare Turnstile z CIDRAM, musisz wpisać tutaj wartość. Jeśli nie, możesz ją zignorować."
  captcha_turnstile_sitekey: *TurnstileCred
- captcha_usemode: "Kiedy należy oferować testy CAPTCHA? Tutaj możesz określić preferowane zachowanie dla każdego dostawcy. Uwaga: Umieszczone na białej liście lub zweryfikowane i niezablokowane żądania nigdy nie muszą kończyć CAPTCHA. Uwaga również: CAPTCHA mogą zapewnić użyteczną, dodatkową warstwę ochrony przed botami i różnymi rodzajami złośliwych automatycznych żądań, ale nie zapewnią żadnej ochrony przed złośliwym człowiekiem."
+ captcha_usemode: "Kiedy należy oferować testy CAPTCHA? Tutaj możesz określić preferowane zachowanie dla każdego dostawcy."
  components: "Konfiguracja do aktywacji i dezaktywacji komponentów używanych przez CIDRAM. Zwykle wypełniana przez stronę aktualizacji, ale można nią również zarządzać z tego miejsca, aby uzyskać lepszą kontrolę i niestandardowe komponenty, które nie są rozpoznawane przez stronę aktualizacji."
  components_events: "Obsługa zdarzeń. Zwykle używany do modyfikowania wewnętrznego zachowania pamięci CIDRAM lub w celu zapewnienia dodatkowej funkcjonalności."
  components_imports: "Import. Zwykle używany do dostarczania informacji o konfiguracji komponentu do pamięci CIDRAM."
@@ -460,6 +460,12 @@ hints_time_format: |
  <code class="s">{s}</code> – Sekunda – Np., 49.<br />
  <code class="s">{tz}</code> – Strefa czasowa (bez dwukropka) – Np., +0800.<br />
  <code class="s">{t:z}</code> – Strefa czasowa (z dwukropkiem) – Np., +08:00.
+hints_usemode:
+ 0: "Uwaga: Umieszczone na białej liście lub zweryfikowane i niezablokowane żądania nigdy nie muszą kończyć CAPTCHA."
+ 1: "Uwaga również: CAPTCHA mogą zapewnić użyteczną, dodatkową warstwę ochrony przed botami i różnymi rodzajami złośliwych automatycznych żądań, ale nie zapewnią żadnej ochrony przed złośliwym człowiekiem."
+ 2: "Żądania mogą zostać „oznaczone do użycia” za pomocą reguł pomocniczych."
+ 3: "Czy żądanie zostanie uznane za „wrażliwe”, zależy od {{Links.ConfigRef.sensitive}}."
+ 4: "„Limit podpisu” jest określona przez {{Links.ConfigRef.signature_limit}}."
 hints_verification:
  "Czym są „pozytywy” i „negatywy”?": "Podczas weryfikacji tożsamości przedstawionej przez żądanie, pomyślny wynik można określić jako „pozytywny” lub „negatywny”. W przypadku potwierdzenia, że prezentowana tożsamość jest prawdziwą tożsamością, zostanie ona określona jako „pozytywna”. W przypadku potwierdzenia, że przedstawiona tożsamość jest sfałszowana, zostanie ona określona jako „negatywna”. Jednak nieudany wynik (np., weryfikacja nie powiodła się, lub nie można ustalić prawdziwości przedstawionej tożsamości) nie zostanie opisany jako „pozytywny” lub „negatywny”. Zamiast tego nieudany wynik zostałby opisany po prostu jako niezweryfikowany. Gdy nie zostanie podjęta żadna próba weryfikacji tożsamości przedstawionej przez żądanie, żądanie zostanie również opisane jako niezweryfikowane. Terminy mają sens tylko w kontekście, w którym rozpoznawana jest tożsamość przedstawiona w żądaniu, a zatem tam, gdzie możliwa jest weryfikacja. W przypadku, gdy przedstawiona tożsamość nie pasuje do opcji przedstawionych powyżej, lub gdy tożsamość nie jest przedstawiona, opcje podane powyżej stają się nieistotne."
  "Czym są „obejście pojedynczych trafień”?": "W niektórych przypadkach pozytywnie zweryfikowane żądanie może nadal zostać zablokowane z powodu plików podpis, modułów, lub innych warunków żądania, i obejścia mogą być konieczne w celu uniknięcia fałszywych pozytywów. W przypadku, gdy obejście ma na celu zajęcie się dokładnie jednym wykroczeniem, ni mniej, ni więcej, takie obejście można opisać jako „obejście pojedynczego trafienia”."

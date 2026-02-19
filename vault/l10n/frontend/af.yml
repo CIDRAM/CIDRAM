@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Afrikaans language data for the front-end (last modified: 2026.02.14).
+# This file: Afrikaans language data for the front-end (last modified: 2026.02.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -176,7 +176,7 @@ config:
  captcha_signature_limit: "Maksimum aantal handtekeninge wat toegelaat word voordat die CAPTCHA-aanbod teruggetrek word. Verstek = 1."
  captcha_turnstile_secret: &TurnstileCred "As jy Cloudflare Turnstile met CIDRAM wil gebruik, moet jy hier 'n waarde invoer. Indien nie, kan jy dit ignoreer."
  captcha_turnstile_sitekey: *TurnstileCred
- captcha_usemode: "Wanneer moet CAPTCHA's aangebied word? Jy kan die voorkeurgedrag vir elke ondersteunde verskaffer hier spesifiseer. Kennis neem: Gewitlys of geverifieerde en nie-geblokkeerde versoeke hoef nooit 'n CAPTCHA te voltooi nie. Let ook op: CAPTCHA's kan 'n nuttige, bykomende laag beskerming teen bots en verskeie soorte kwaadwillige outomatiese versoeke bied, maar sal geen beskerming teen 'n kwaadwillige mens bied nie."
+ captcha_usemode: "Wanneer moet CAPTCHA's aangebied word? Jy kan die voorkeurgedrag vir elke ondersteunde verskaffer hier spesifiseer."
  components: "Konfigurasie vir die aktivering en deaktivering van die komponente wat deur CIDRAM gebruik word. Gewoonlik gevul deur die opdateringsbladsy, maar kan ook van hier af bestuur word vir fyner beheer en vir pasgemaakte komponente wat nie deur die opdateringsbladsy herken word nie."
  components_events: "Gebeurtenishanteerders. Gewoonlik gebruik om die manier waarop CIDRAM intern optree te verander of om bykomende funksionaliteit te verskaf."
  components_imports: "Invoere. Gewoonlik gebruik om 'n komponent se konfigurasie-inligting aan CIDRAM te verskaf."
@@ -459,6 +459,12 @@ hints_time_format: |
  <code class="s">{s}</code> – Die sekonde – Bv., 49.<br />
  <code class="s">{tz}</code> – Die tydsone (sonder dubbelpunt) – Bv., +0800.<br />
  <code class="s">{t:z}</code> – Die tydsone (met dubbelpunt) – Bv., +08:00.
+hints_usemode:
+ 0: "Kennis neem: Gewitlys of geverifieerde en nie-geblokkeerde versoeke hoef nooit 'n CAPTCHA te voltooi nie."
+ 1: "Let ook op: CAPTCHA's kan 'n nuttige, bykomende laag beskerming teen bots en verskeie soorte kwaadwillige outomatiese versoeke bied, maar sal geen beskerming teen 'n kwaadwillige mens bied nie."
+ 2: "Versoeke kan "gemerk word vir gebruik" via bykomende reëls."
+ 3: "Of 'n versoek as "sensitief" beskou word, word deur {{Links.ConfigRef.sensitive}} bepaal."
+ 4: "Die "handtekeninglimiet" word bepaal deur {{Links.ConfigRef.signature_limit}}."
 hints_verification:
  "Wat is "positiewe" en "negatiewe"?": "Wanneer die identiteit wat deur 'n versoek aangebied word geverifieer word, kan 'n suksesvolle uitkoms beskryf word as "positief" of "negatief". In die geval dat die identiteit wat aangebied word as die ware identiteit bevestig word, sal dit as "positief" beskryf word. In die geval dat bevestig word dat die identiteit wat aangebied is vervals is, sal dit as "negatief" beskryf word. Onsuksesvolle uitkomste (bv., verifikasie misluk, of die waarheid van die identiteit wat aangebied word kan nie bepaal word nie) sal egter nie as "positief" of "negatief" beskryf word nie. In plaas daarvan sal onsuksesvolle uitkomste bloot as nie-geverifieer beskryf word. Wanneer geen poging aangewend word om die identiteit wat deur 'n versoek aangebied word te verifieer nie, sal die versoek eweneens as nie-geverifieer beskryf word. Die terme maak slegs sin in die konteks waar die identiteit wat deur 'n versoek aangebied word erken word, en dus waar verifikasie moontlik is. In gevalle waar die identiteit wat aangebied word nie ooreenstem met die opsies hierbo verskaf nie, of waar geen identiteit aangebied word nie, word die opsies hierbo verskaf irrelevant."
  "Wat is "enkeltreffer-omleidings"?": "In sommige gevalle kan 'n positief-geverifieerde versoek steeds geblokkeer word as gevolg van die handtekeninglêers, modules, of ander voorwaardes van die versoek, en omleidings kan nodig wees om vals positiewe te vermy. In die geval waar 'n omleiding bedoel is om presies een oortreding te hanteer, nie meer of nie minder nie, kan so 'n omleiding beskryf word as 'n "enkeltreffer-omleiding"."

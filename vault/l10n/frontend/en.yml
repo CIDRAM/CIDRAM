@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2026.02.14).
+# This file: English language data for the front-end (last modified: 2026.02.18).
 ##/
 
 Abuse category:
@@ -171,8 +171,8 @@ config:
  captcha_turnstile_secret: &TurnstileCred "If you want to use Cloudflare Turnstile with CIDRAM, you'll need to enter a value here. If not, you can ignore it."
  captcha_turnstile_sitekey: *TurnstileCred
  captcha_usemode:
-  en-AU: "When should CAPTCHAs be offered? You can specify the preferred behaviour for each supported provider here. Note: Whitelisted or verified and non-blocked requests never need to complete a CAPTCHA. Also note: CAPTCHAs can provide a useful, additional layer of protection against bots and various kinds of malicious automated requests, but won't provide any protection against a malicious human."
-  en-US: "When should CAPTCHAs be offered? You can specify the preferred behavior for each supported provider here. Note: Whitelisted or verified and non-blocked requests never need to complete a CAPTCHA. Also note: CAPTCHAs can provide a useful, additional layer of protection against bots and various kinds of malicious automated requests, but won't provide any protection against a malicious human."
+  en-AU: "When should CAPTCHAs be offered? You can specify the preferred behaviour for each supported provider here."
+  en-US: "When should CAPTCHAs be offered? You can specify the preferred behavior for each supported provider here."
  components:
   en-AU: "Configuration for the activation and the deactivation of the components used by CIDRAM. Typically populated by the updates page, but can also be managed from here for finer control and for custom components not recognised by the updates page."
   [en-CA, en-US]: "Configuration for the activation and the deactivation of the components used by CIDRAM. Typically populated by the updates page, but can also be managed from here for finer control and for custom components not recognized by the updates page."
@@ -485,6 +485,12 @@ hints_time_format: |
  <code class="s">{s}</code> – The second – E.g., 49.<br />
  <code class="s">{tz}</code> – The timezone (without colon) – E.g., +0800.<br />
  <code class="s">{t:z}</code> – The timezone (with colon) – E.g., +08:00.
+hints_usemode:
+ 0: "Note: Whitelisted or verified and non-blocked requests never need to complete a CAPTCHA."
+ 1: "Also note: CAPTCHAs can provide a useful, additional layer of protection against bots and various kinds of malicious automated requests, but won't provide any protection against a malicious human."
+ 2: "Requests can be "marked for use" via auxiliary rules."
+ 3: "Whether a request is considered as "sensitive" is determined by {{Links.ConfigRef.sensitive}}."
+ 4: "The "signature limit" is determined by {{Links.ConfigRef.signature_limit}}."
 hints_verification:
  "What are "positives" and "negatives"?":
   en-AU: "When verifying the identity presented by a request, a successful outcome could be described as "positive" or "negative". In the case that the identity presented is confirmed to be the true identity, it would be described as "positive". In the case that the identity presented is confirmed to be falsified, it would be described as "negative". However, an unsuccessful outcome (e.g., verification fails, or the veracity of the identity presented isn't able to be determined) would not be described as "positive" or "negative". Instead, an unsuccessful outcome would be described simply as non-verified. When no attempt to verify the identity presented by a request is made, the request would likewise be described as non-verified. The terms make sense only in the context where the identity presented by a request is recognised, and therefore, where verification is possible. In cases where the identity presented doesn't match the options provided above, or where no identity is presented, the options provided above become irrelevant."

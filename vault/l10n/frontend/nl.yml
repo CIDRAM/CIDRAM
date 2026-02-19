@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2026.02.14).
+# This file: Dutch language data for the front-end (last modified: 2026.02.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -176,7 +176,7 @@ config:
  captcha_signature_limit: "Maximaal aantal toegestane signatures voordat een CAPTCHA-aanbieding wordt ingetrokken. Standaard = 1."
  captcha_turnstile_secret: &TurnstileCred "Als u Cloudflare Turnstile met CIDRAM wilt gebruiken, moet u hier een waarde invoeren. Zo niet, dan kunt u deze negeren."
  captcha_turnstile_sitekey: *TurnstileCred
- captcha_usemode: "Wanneer moeten CAPTCHA's worden aangeboden? Hier kunt u het gewenste gedrag voor elke ondersteunde provider opgeven. Opmerking: Op de witte lijst geplaatste of geverifieerde en niet-geblokkeerde verzoeken hoeven nooit een CAPTCHA in te vullen. Let ook op: CAPTCHA's kunnen een nuttige, extra beschermingslaag bieden tegen bots en verschillende soorten kwaadwillende geautomatiseerde verzoeken, maar bieden geen enkele bescherming tegen kwaadwillende mensen."
+ captcha_usemode: "Wanneer moeten CAPTCHA's worden aangeboden? Hier kunt u het gewenste gedrag voor elke ondersteunde provider opgeven."
  components: "Configuratie voor het activeren en het deactiveren van de door CIDRAM gebruikte componenten. Meestal gevuld door de updates-pagina, maar kan ook vanaf hier worden beheerd voor fijnere controle en voor aangepaste componenten die niet worden herkend door de updates-pagina."
  components_events: "Evenement-Behandelaars. Meestal gebruikt om de manier waarop CIDRAM zich intern gedraagt te wijzigen of om extra functionaliteit te bieden."
  components_imports: "Import. Meestal gebruikt om de configuratie-informatie van een component aan CIDRAM te leveren."
@@ -456,6 +456,12 @@ hints_time_format: |
  <code class="s">{s}</code> – De seconde – B.v., 49.<br />
  <code class="s">{tz}</code> – De tijdzone (zonder dubbele punt) – B.v., +0800.<br />
  <code class="s">{t:z}</code> – De tijdzone (met dubbele punt) – B.v., +08:00.
+hints_usemode:
+ 0: "Opmerking: Op de witte lijst geplaatste of geverifieerde en niet-geblokkeerde verzoeken hoeven nooit een CAPTCHA in te vullen."
+ 1: "Let ook op: CAPTCHA's kunnen een nuttige, extra beschermingslaag bieden tegen bots en verschillende soorten kwaadwillende geautomatiseerde verzoeken, maar bieden geen enkele bescherming tegen kwaadwillende mensen."
+ 2: "Verzoeken kunnen via aanvullende regels worden "gemarkeerd voor gebruik"."
+ 3: "Of een verzoek als "gevoelig" wordt beschouwd, wordt bepaald door {{Links.ConfigRef.sensitive}}."
+ 4: "De "signatures limiet" wordt bepaald door {{Links.ConfigRef.signature_limit}}."
 hints_verification:
  "Wat zijn "positieven" en "negatieven"?": "Bij het verifiëren van de identiteit die door een verzoek wordt gepresenteerd, een succesvol resultaat kan worden omschreven als "positief" of "negatief". In het geval dat wordt bevestigd dat de gepresenteerde identiteit de ware identiteit is, deze als "positief" beschreven wordt. In het geval dat wordt bevestigd dat de gepresenteerde identiteit vervalst is, deze als "negatief" beschreven wordt. Een onsuccesvolle uitkomst (b.v., verificatie mislukt, of de juistheid van de gepresenteerde identiteit kan niet worden vastgesteld) wordt echter niet als "positief" of "negatief" beschreven. In plaats daarvan zou een mislukte uitkomst eenvoudigweg als niet-geverifieerd worden beschreven. Als er geen poging wordt gedaan om de identiteit van het verzoek te verifiëren, het verzoek wordt eveneens als niet-geverifieerd beschreven. De termen hebben alleen zin in de context waarin de identiteit van het verzoek wordt herkend, en dus waar verificatie mogelijk is. In gevallen waarin de gepresenteerde identiteit niet overeenkomt met de bovenstaande opties, of waar geen identiteit wordt gepresenteerd, worden de bovenstaande opties irrelevant."
  "Wat zijn "enkele-treffer bypasses"?": "In sommige gevallen kan een positief-geverifieerd verzoek nog steeds worden geblokkeerd als gevolg van de signatuurbestanden, modules, of andere voorwaarden van het verzoek, en bypasses kunnen nodig zijn om valse positieven te voorkomen. In het geval dat een bypass bedoeld is om precies één overtreding af te handelen, niet meer en niet minder, dergelijke een bypass zou kunnen worden omschreven als een "enkele-treffer bypass"."

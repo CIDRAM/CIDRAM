@@ -518,4 +518,5 @@
 - [2026.02.14]: Malformed input supplied to the IP addresses field at the IP testing page may sometimes now be automatically corrected in cases where the intended, correctly-formed input is particularly obvious (#669).
 - [2026.02.14]: Replaced UptimeRobot's default signature bypass with full verification support (#656).
 - [2026.02.16]: Added support for suggestions for the ignore condition source at the auxiliary rules page.
+- [2026.02.18]: Improved the hinting for the usemode configuration directive (#657).
 - *Plus all the regular signature updates.*

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2026.02.14).
+# This file: German language data for the front-end (last modified: 2026.02.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -228,7 +228,7 @@ config:
  hcaptcha_show_cookie_warning: &ShowCookieWarning "Cookie-Warnung anzeigen? True = Ja [Standardeinstellung]; False = Nein."
  hcaptcha_signature_limit: &CaptchaSignatureLimit "Maximal zulässige Anzahl von Signaturen, bevor das CAPTCHA-Angebot zurückgezogen wird. Standardeinstellung = 1."
  hcaptcha_sitekey: *CaptchaDashboard
- hcaptcha_usemode: &CaptchaUseMode "Wann sollte das CAPTCHA angeboten werden? Hinweis: Whitelist markierte oder verifizierte und nicht blockierte Anfragen müssen niemals ein CAPTCHA abschließen. Auch: CAPTCHAs können eine nützliche zusätzliche Schutzebene gegen Bots und verschiedene Arten von böswilligen automatisierten Anfragen bieten, aber bieten keinen Schutz gegen böswilligen Menschen."
+ hcaptcha_usemode: &CaptchaUseMode "Wann sollte das CAPTCHA angeboten werden?"
  ipapi: "Konfiguration für das IP-API-Modul (bietet eine ASN und Ländercode Suchfunktion für CIDRAM)."
  ipapi_blocked_asns: *ConfigBlockedASNs
  ipapi_blocked_ccs: *ConfigBlockedCCs
@@ -454,6 +454,11 @@ hints_time_format: |
  <code class="s">{s}</code> – Die Sekunde – Z.B., 49.<br />
  <code class="s">{tz}</code> – Die Zeitzone (ohne Doppelpunkt) – Z.B., +0800.<br />
  <code class="s">{t:z}</code> – Die Zeitzone (mit Doppelpunkt) – Z.B., +08:00.
+hints_usemode:
+ 0: "Hinweis: Whitelist markierte oder verifizierte und nicht blockierte Anfragen müssen niemals ein CAPTCHA abschließen."
+ 1: "Auch: CAPTCHAs können eine nützliche zusätzliche Schutzebene gegen Bots und verschiedene Arten von böswilligen automatisierten Anfragen bieten, aber bieten keinen Schutz gegen böswilligen Menschen."
+ 2: "Anfragen können über Hilfsregeln „zur Verwendung markiert“ werden."
+ 3: "Ob eine Anfrage als „sensibel“ eingestuft wird, hängt von {{Links.ConfigRef.sensitive}} ab."
 hints_verification:
  "Was sind „Positive“ und „Negative“?": "Das erfolgreiche Ergebnis der Verifizierung der durch eine Anfrage präsentierten Identität könnte als „positiv“ oder „negativ“ beschrieben werden. In dem Fall dass die präsentierte Identität als die wahre Identität bestätigt wird, würde sie als „positiv“ bezeichnet werden. In dem Fall dass die präsentierten Identität als gefälscht bestätigt, würde sie als „negativ“ bezeichnet werden. Ein erfolgloses Ergebnis (z.B., die Verifizierung fehlschlägt, oder die Echtheit der präsentierten Identität kann nicht festgestellt werden) würde jedoch nicht als „positiv“ oder „negativ“ beschrieben. Stattdessen würde ein erfolgloses Ergebnis einfach als nicht verifiziert beschrieben. Wenn kein Versuch unternommen wird für die durch eine Anfrage präsentierte Identität zu verifizieren, würde die Anfrage ebenfalls als nicht verifiziert beschrieben. Die Begriffe sind nur in dem Kontext sinnvoll, in dem die durch eine Anfrage präsentierte Identität anerkannt wird und daher der Verifizierung möglich ist. In dem Fall in denen die präsentierte Identität nicht mit den oben bereitgestellten Optionen übereinstimmt, oder wenn keine Identität präsentiert wird, werden die oben bereitgestellten Optionen irrelevant."
  "Was sind „Single-Hit-Bypässe“?": "In einigen Fällen kann eine positiv verifizierte Anfrage aufgrund der Signaturdateien, Module, oder anderer Bedingungen der Anfrage immer noch blockiert werden, und Bypässe können erforderlich sein um Falsch-Positive zu vermeiden. In dem Fall in dem eine Bypass genau einen Verstoß behandeln beabsichtigt ist, nicht mehr und nicht weniger, könnte solche eine Bypass als „Single-Hit-Bypass“ beschrieben werden."

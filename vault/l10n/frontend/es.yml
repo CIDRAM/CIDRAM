@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2026.02.14).
+# This file: Spanish language data for the front-end (last modified: 2026.02.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -228,7 +228,7 @@ config:
  hcaptcha_show_cookie_warning: &ShowCookieWarning "¿Mostrar advertencia de cookie? True = Sí [Predefinido]; False = No."
  hcaptcha_signature_limit: &CaptchaSignatureLimit "Número máximo de firmas permitidas antes de que se retire la oferta de CAPTCHA. Predefinido = 1."
  hcaptcha_sitekey: *CaptchaDashboard
- hcaptcha_usemode: &CaptchaUseMode "¿Cuándo se debe ofrecer el CAPTCHA? Nota: Las solicitudes incluidas en la lista blanca o verificadas y no bloqueadas nunca necesitan completar un CAPTCHA. También tenga en cuenta: Los CAPTCHA pueden proporcionar una capa de protección útil contra bots y varios tipos de solicitudes automatizadas y maliciosas, pero no proporcionán ninguna protección contra humanos maliciosas."
+ hcaptcha_usemode: &CaptchaUseMode "¿Cuándo se debe ofrecer el CAPTCHA?"
  ipapi: "Configuración para el módulo IP-API (proporciona una funcionalidad de búsqueda de ASNs y códigos de país para CIDRAM)."
  ipapi_blocked_asns: *ConfigBlockedASNs
  ipapi_blocked_ccs: *ConfigBlockedCCs
@@ -454,6 +454,11 @@ hints_time_format: |
  <code class="s">{s}</code> – El segundo – P.ej. 49.<br />
  <code class="s">{tz}</code> – La zona horaria (sin dos puntos) – P.ej. +0800.<br />
  <code class="s">{t:z}</code> – La zona horaria (con dos puntos) – P.ej. +08:00.
+hints_usemode:
+ 0: "Nota: Las solicitudes incluidas en la lista blanca o verificadas y no bloqueadas nunca necesitan completar un CAPTCHA."
+ 1: "También tenga en cuenta: Los CAPTCHA pueden proporcionar una capa de protección útil contra bots y varios tipos de solicitudes automatizadas y maliciosas, pero no proporcionán ninguna protección contra humanos maliciosas."
+ 2: "Las solicitudes se pueden "marcar para su uso" a través de reglas auxiliares."
+ 3: "Si una solicitud se considera "sensible" está determinado por {{Links.ConfigRef.sensitive}}."
 hints_verification:
  "¿Qué son "positivos" y "negativos"?": "Cuando verificando la identidad presentada por una solicitud, un resultado exitoso podría describirse como "positivo" o "negativo". Cuando se confirma que la identidad presentada es la verdadera identidad, se describiría como "positiva". Cuando se confirma que la identidad presentada es falsa, se describirá como "negativa". Sin embargo, un resultado fallido (por ejemplo, la verificación falló, o no se puede determinar la veracidad de la identidad presentada) no se describiría como "positivo" o "negativo". En cambio, un resultado fallido se describiría simplemente como no verificado. Cuando no se intenta verificar la identidad presentada por una solicitud, la solicitud también se describiría como no verificado. Los términos tienen sentido solo en el contexto en el que se reconoce la identidad presentada por una solicitud y, por lo tanto, donde la verificación es posible. En los casos en que la identidad presentada no coincida con las opciones proporcionadas anteriormente, o cuando no se presente ninguna identidad, las opciones proporcionadas anteriormente se vuelven irrelevantes."
  "¿Qué son los "bypasses de un solo golpe"?": "En algunos casos, una solicitud con verificación positiva aún puede bloquearse como resultado de los archivos de firma, módulos, u otras condiciones de la solicitud, y las bypasses pueden ser necesarias para evitar falsos positivos. En el caso de que una bypass esté destinada a tratar exactamente una infracción, ni más ni menos, dicha bypass podría describirse como una "bypass de un solo golpe"."

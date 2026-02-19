@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2026.02.14).
+# This file: Japanese language data for the front-end (last modified: 2026.02.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -228,7 +228,7 @@ config:
  hcaptcha_show_cookie_warning: &ShowCookieWarning "クッキーの警告を表示しますか？ True = はい（Default/デフォルルト）。 False = いいえ。"
  hcaptcha_signature_limit: &CaptchaSignatureLimit "キャプチャが取り消される前に許可されるシグネチャの最大数。 Default/デフォルルト = １。"
  hcaptcha_sitekey: *CaptchaDashboard
- hcaptcha_usemode: &CaptchaUseMode "キャプチャはいつ提供する必要がありますか？​注：ホワイト・リストされまたは検証済みでブロックされていないリクエストは、キャプチャを完了する必要はありません。​また注意してください：​キャプチャは、ボットやさまざまな種類の悪意のある自動化されたリクエストに対する有用な追加の保護レイヤーを提供できますが、悪意のある人間に対する保護は提供しません。"
+ hcaptcha_usemode: &CaptchaUseMode "キャプチャはいつ提供する必要がありますか？"
  ipapi: "IP-APIモジュールの設定（CIDRAMにASNおよび国コード検索機能を提供します）。"
  ipapi_blocked_asns: *ConfigBlockedASNs
  ipapi_blocked_ccs: *ConfigBlockedCCs
@@ -456,6 +456,11 @@ hints_time_format: |
  <code class="s">{s}</code> – 秒 – 例えば、49。<br />
  <code class="s">{tz}</code> – タイムゾーン（コロンなし） – 例えば、+0800。<br />
  <code class="s">{t:z}</code> – タイムゾーン（コロン付き） – 例えば、+08:00。
+hints_usemode:
+ 0: "注： ホワイト・リストされまたは検証済みでブロックされていないリクエストは、キャプチャを完了する必要はありません。"
+ 1: "また注意してください： キャプチャは、ボットやさまざまな種類の悪意のある自動化されたリクエストに対する有用な追加の保護レイヤーを提供できますが、悪意のある人間に対する保護は提供しません。"
+ 2: "リクエストは、補助ルールによって「使用対象としてマーク」できます。"
+ 3: "リクエストが「機密」であるかどうかは、{{Links.ConfigRef.sensitive}}によって決まります。"
 hints_verification:
  "「陽性」と「陰性」とは何ですか？": "リクエストによって提示されたＩＤを検証する場合、成功した結果は「陽性」または「陰性」と記述できます。​提示されたＩＤが真のＩＤであることが確認された場合、「陽性」と記述されます。​提示されたＩＤが偽物であることが確認された場合、「陰性」と記述されます。​ただし、失敗した結果（たとえば、検証が失敗した、または提示されたＩＤの信憑性を判断できない）は、「陽性」または「陰性」とは記述れません。​代わりに、失敗した結果は単に未確認として記述されます。​リクエストによって提示されたＩＤを検証する試みが行われない場合、リクエストは同様に未検証として記述されます。​この用語は、リクエストによって提示されたＩＤが認識されるコンテキストでのみ意味があります（したがって、検証が可能な場合）。​提示されたＩＤが上記のオプションと一致しない場合、またはＩＤが提示されていない場合、上記のオプションは無関係になります。"
  "「シングル・ヒット・バイパス」とは何ですか？": "場合によっては、シグネチャ・ファイル、モジュール、またはリクエストの他の条件の結果として、肯定的に検証されたリクエストがブロックされることがあります、誤検知を回避するためにバイパスが必要になる場合があります。​バイパスが正確に一つの違反を処理することを目的としている場合、そのようなバイパスは「シングル・ヒット・バイパス」として記述できます。"

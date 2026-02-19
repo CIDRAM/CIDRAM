@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2026.02.14).
+# This file: Norwegian language data for the front-end (last modified: 2026.02.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -228,7 +228,7 @@ config:
  hcaptcha_show_cookie_warning: &ShowCookieWarning "Inkludere informasjonskapsel advarsel? True = Ja [Standardverdi]; False = Nei."
  hcaptcha_signature_limit: &CaptchaSignatureLimit "Maksimalt antall signaturer tillatt før du trekker tilbake et CAPTCHA-tilbud. Standardverdi = 1."
  hcaptcha_sitekey: *CaptchaDashboard
- hcaptcha_usemode: &CaptchaUseMode "Når skal CAPTCHA tilbys? Merk: Hvitlistet eller verifiserte og ikke-blokkerte forespørsler trenger aldri å fullføre en CAPTCHA. Merk også: CAPTCHA-er kan gi et nyttig, ekstra lag med beskyttelse mot roboter og ulike typer ondsinnede automatiske forespørsler, men vil ikke gi noen beskyttelse mot et ondsinnet menneske."
+ hcaptcha_usemode: &CaptchaUseMode "Når skal CAPTCHA tilbys?"
  ipapi: "Konfigurasjon for IP-API-modulen (tilbyr en ASN- og landskodeoppslagsfunksjon for CIDRAM)."
  ipapi_blocked_asns: *ConfigBlockedASNs
  ipapi_blocked_ccs: *ConfigBlockedCCs
@@ -456,6 +456,11 @@ hints_time_format: |
  <code class="s">{s}</code> – Sekundet – F.eks., 49.<br />
  <code class="s">{tz}</code> – Tidssonen (uten kolon) – F.eks., +0800.<br />
  <code class="s">{t:z}</code> – Tidssonen (med kolon) – F.eks., +08:00.
+hints_usemode:
+ 0: "Merk: Hvitlistet eller verifiserte og ikke-blokkerte forespørsler trenger aldri å fullføre en CAPTCHA."
+ 1: "Merk også: CAPTCHA-er kan gi et nyttig, ekstra lag med beskyttelse mot roboter og ulike typer ondsinnede automatiske forespørsler, men vil ikke gi noen beskyttelse mot et ondsinnet menneske."
+ 2: "Forespørsler kan «merkes for bruk» via tilleggsregler."
+ 3: "Om en forespørsel anses som «sensitiv» bestemmes av {{Links.ConfigRef.sensitive}}."
 hints_verification:
  "Hva er «positive» og «negative»?": "Når identiteten presentert av en forespørsel er verifisert, kan et vellykket resultat beskrives som «positiv» eller «negativ». I tilfelle at identiteten som presenteres bekreftes å være den sanne identiteten, den vil bli beskrevet som «positiv». I tilfelle det bekreftes at identiteten som presenteres er forfalsket, den vil bli beskrevet som «negativ». Imidlertid, et mislykket resultat (f.eks., verifisering mislykkes, eller sannheten til identiteten som presenteres ikke kan fastslås) vil ikke beskrives som «positiv» eller «negativ». I stedet, et mislykket resultat vil ganske enkelt beskrives som ikke-verifisert. Når det ikke gjøres noe forsøk på å bekrefte identiteten som presenteres av en forespørsel, forespørselen vil på samme måte bli beskrevet som ikke-verifisert. Begrepene gir mening bare i konteksten der identiteten som presenteres av en forespørsel gjenkjennes, og derfor der verifisering er mulig. I tilfeller der identiteten som presenteres ikke matchet av alternativene ovenfor, eller der ingen identitet er presentert, alternativene gitt ovenfor blir irrelevante."
  "Hva er «enkelt-hit bypasser»?": "I noen tilfeller kan en positiv bekreftet forespørsel fortsatt blokkeres som et resultat av signaturfilene, modulene, eller andre betingelser i forespørselen, og bypasser kan være nødvendig for å unngå falske positiver. I tilfellet der en bypass er ment å håndtere nøyaktig ett infraksjon, verken mer eller mindre, slik en bypass kan beskrives som en «enkelt-hit bypass»."

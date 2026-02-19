@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2026.02.14).
+# This file: Indonesian language data for the front-end (last modified: 2026.02.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -228,7 +228,7 @@ config:
  hcaptcha_show_cookie_warning: &ShowCookieWarning "Tampilkan peringatan cookie? True = Ya [Default]; False = Tidak."
  hcaptcha_signature_limit: &CaptchaSignatureLimit "Jumlah maksimum tanda tangan yang diperbolehkan sebelum penawaran CAPTCHA ditarik. Default = 1."
  hcaptcha_sitekey: *CaptchaDashboard
- hcaptcha_usemode: &CaptchaUseMode "Kapan CAPTCHA harus ditawarkan? Catat: Permintaan yang masuk daftar putih atau diverifikasi dan tidak diblokir tidak perlu menyelesaikan CAPTCHA. Juga mencatat: CAPTCHA dapat memberikan lapisan perlindungan tambahan yang berguna terhadap bot dan berbagai jenis permintaan yang otomatis dan berbahaya, tetapi tidak akan memberikan perlindungan apapun terhadap manusia yang berbahaya."
+ hcaptcha_usemode: &CaptchaUseMode "Kapan CAPTCHA harus ditawarkan?"
  ipapi: "Konfigurasi untuk modul IP-API (menyediakan fasilitas pencarian ASN dan kode negara untuk CIDRAM)."
  ipapi_blocked_asns: *ConfigBlockedASNs
  ipapi_blocked_ccs: *ConfigBlockedCCs
@@ -456,6 +456,11 @@ hints_time_format: |
  <code class="s">{s}</code> – Detik – Misalnya, 49.<br />
  <code class="s">{tz}</code> – Zona waktu (tanpa titik dua) – Misalnya, +0800.<br />
  <code class="s">{t:z}</code> – Zona waktu (dengan titik dua) – Misalnya, +08:00.
+hints_usemode:
+ 0: "Catat: Permintaan yang masuk daftar putih atau diverifikasi dan tidak diblokir tidak perlu menyelesaikan CAPTCHA."
+ 1: "Juga mencatat: CAPTCHA dapat memberikan lapisan perlindungan tambahan yang berguna terhadap bot dan berbagai jenis permintaan yang otomatis dan berbahaya, tetapi tidak akan memberikan perlindungan apapun terhadap manusia yang berbahaya."
+ 2: "Permintaan dapat "ditandai untuk digunakan" melalui aturan tambahan."
+ 3: "Apakah suatu permintaan dianggap "sensitif" ditentukan oleh {{Links.ConfigRef.sensitive}}."
 hints_verification:
  "Apa itu "positif" dan "negatif"?": "Saat memverifikasi identitas yang disajikan oleh permintaan, hasil yang berhasil dapat digambarkan sebagai "positif" atau "negatif". Ketika identitas yang disajikan dikonfirmasi sebagai identitas sebenarnya, itu akan digambarkan sebagai "positif". Ketika identitas yang disajikan dikonfirmasi sebagai dipalsukan, itu akan digambarkan sebagai "negatif". Namun, hasil yang tidak berhasil (misalnya, verifikasi gagal, atau kebenaran identitas yang disajikan tidak dapat ditentukan) tidak akan digambarkan sebagai "positif" atau "negatif". Sebaliknya, hasil yang tidak berhasil akan digambarkan sebagai tidak diverifikasi. Ketika tidak ada upaya untuk memverifikasi identitas yang disajikan oleh permintaan, permintaan tersebut juga akan digambarkan sebagai tidak diverifikasi. Istilah tersebut masuk akal hanya dalam konteks dimana identitas yang disajikan oleh permintaan dikenali, dan jadi, dimana verifikasi dimungkinkan. Jika identitas yang disajikan tidak sesuai dengan opsi yang diberikan di atas, atau jika tidak ada identitas yang disajikan, opsi yang diberikan di atas menjadi tidak relevan."
  "Apa itu "bypass satu pelanggaran"?": "Dalam beberapa kasus, permintaan diverifikasi secara positif mungkin masih diblokir sebagai akibat dari file tanda tangan, modul, atau kondisi permintaan lainnya, dan bypass mungkin diperlukan untuk menghindari positif palsu. Dalam kasus dimana bypass dimaksudkan untuk menangani tepat satu pelanggaran, tidak lebih dan tidak kurang, bypass seperti itu dapat digambarkan sebagai "bypass satu pelanggaran"."

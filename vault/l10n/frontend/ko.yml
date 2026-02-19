@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2026.02.14).
+# This file: Korean language data for the front-end (last modified: 2026.02.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -228,7 +228,7 @@ config:
  hcaptcha_show_cookie_warning: &ShowCookieWarning "쿠키 경고 표시 하시겠습니까? True = 예 (Default / 기본 설정); False = 아니오."
  hcaptcha_signature_limit: &CaptchaSignatureLimit "보안 문자 제안이 철회되기 전에 허용되는 최대 서명 수입니다. Default (기본 설정) = 1."
  hcaptcha_sitekey: *CaptchaDashboard
- hcaptcha_usemode: &CaptchaUseMode "보안 문자는 언제 제공해야 합니까? 참고: 허용 목록에 있거나 확인되고 차단되지 않은 요청은 보안 문자를 작성할 필요가 없습니다. 또한 참고: CAPTCHA는 봇 및 다양한 종류의 악성 자동 요청에 대한 유용한 추가 보호 계층을 제공할 수 있지만 악의적인 사람에 대한 보호는 제공하지 않습니다."
+ hcaptcha_usemode: &CaptchaUseMode "보안 문자는 언제 제공해야 합니까?"
  ipapi: "IP-API 모듈 구성 (CIDRAM에 대한 ASN 및 국가 코드 조회 기능을 제공합니다)."
  ipapi_blocked_asns: *ConfigBlockedASNs
  ipapi_blocked_ccs: *ConfigBlockedCCs
@@ -456,6 +456,11 @@ hints_time_format: |
  <code class="s">{s}</code> – 초 – 예: 49.<br />
  <code class="s">{tz}</code> – 시간대 (콜론 없음) – 예: +0800.<br />
  <code class="s">{t:z}</code> – 시간대 (콜론 있음) – 예: +08:00.
+hints_usemode:
+ 0: "참고: 허용 목록에 있거나 확인되고 차단되지 않은 요청은 보안 문자를 작성할 필요가 없습니다."
+ 1: "또한 참고: CAPTCHA는 봇 및 다양한 종류의 악성 자동 요청에 대한 유용한 추가 보호 계층을 제공할 수 있지만 악의적인 사람에 대한 보호는 제공하지 않습니다."
+ 2: "요청은 보조 규칙을 통해 "사용 예정으로 표시"할 수 있습니다."
+ 3: "요청이 "민감한" 요청으로 간주되는지 여부는 {{Links.ConfigRef.sensitive}}에 의해 결정됩니다."
 hints_verification:
  ""긍정적"과 "부정적"이란 무엇입니까?": "요청으로 제시된 신원을 확인할 때 성공적인 결과는 "긍정적" 또는 "부정적"으로 설명될 수 있습니다. 제시한 신분이 실제 신분으로 확인되면 "긍정적"으로 기재됩니다. 제시한 신원이 위조된 것으로 확인되는 경우 "부정적"으로 기재됩니다. 그러나, 실패한 결과는 (예: 확인에 실패하거나, 제시된 신원의 진실성을 확인할 수 없음) "긍정적" 또는 "부정적"으로 설명되지 않습니다. 대신, 실패한 결과는 단순히 검증되지 않은 것으로 설명됩니다. 요청으로 제시된 신원을 확인하려는 시도가 없을 때 요청은 마찬가지로 확인되지 않은 것으로 설명됩니다. 이 용어는 요청으로 제공된 신원이 인식되고 따라서 검증이 가능한 상황에서만 의미가 있습니다. 이 용어는 요청으로 제공된 신원이 인식되고 따라서 검증이 가능한 상황에서만 의미가 있습니다."
  ""단일 히트 바이 패스"란 무엇입니까?": "어떤 경우에는 서명 파일, 모듈, 또는 기타 요청 조건으로 인해 긍정적으로 확인된 요청이 여전히 차단될 수 있으며 소 탐을 피하고자 바이 패스가 필요할 수 있습니다. 바이패스가 정확히 하나의 위반을 처리하도록 의도된 경우 이러한 바이패스는 "단일 히트 바이 패스"로 설명될 수 있습니다."

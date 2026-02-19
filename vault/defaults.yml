@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2026.02.14).
+# This file: Defaults file (last modified: 2026.02.18).
 ##/
 
 Config Defaults:
@@ -934,6 +934,7 @@ Config Defaults:
   usemode:
    type: "int"
    default: 0
+   hints: "hints_usemode"
    choices:
     0: "label.Never"
     1: "label.Only when blocked, within the signature limit, and not banned"
@@ -999,6 +1000,7 @@ Config Defaults:
   usemode:
    type: "int"
    default: 0
+   hints: "hints_usemode"
    choices:
     0: "label.Never"
     1: "label.Only when blocked, within the signature limit, and not banned"
@@ -1370,9 +1372,9 @@ Links:
   WordPress: "<a href="https://wordpress.org/plugins/cidram/" dir="ltr" hreflang="en" rel="noopener noreferrer external">wordpress.org/plugins/cidram</a>"
  ConfigRef:
   sensitive: "<a onclick="javascript:toggleconfigNav('generalRow','generalShowLink')" href="\#config_general_sensitive"><code dir="ltr">general➡sensitive</code></a>"
-  sensitive_rtl: "<a onclick="javascript:toggleconfigNav('generalRow','generalShowLink')" href="\#config_general_sensitive"><code dir="ltr">sensitive⬅general</code></a>"
+  sensitive_rtl: "<a onclick="javascript:toggleconfigNav('generalRow','generalShowLink')" href="\#config_general_sensitive"><code dir="rtl">sensitive⬅general</code></a>"
   time_format: "<a onclick="javascript:toggleconfigNav('generalRow','generalShowLink')" href="\#config_general_time_format"><code dir="ltr">general➡time_format</code></a>"
-  time_format_rtl: "<a onclick="javascript:toggleconfigNav('generalRow','generalShowLink')" href="\#config_general_time_format"><code dir="ltr">time_format⬅general</code></a>"
+  time_format_rtl: "<a onclick="javascript:toggleconfigNav('generalRow','generalShowLink')" href="\#config_general_time_format"><code dir="rtl">time_format⬅general</code></a>"
  Discussions: "https://github.com/CIDRAM/CIDRAM/discussions"
  Documentation: "https://cidram.github.io/\#documentation"
  IP-API: "<a href="https://ip-api.com/" dir="ltr" hreflang="en-US" rel="noopener noreferrer external">IP-API</a>"

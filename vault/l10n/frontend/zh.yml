@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese language data for the front-end (last modified: 2026.02.14).
+# This file: Chinese language data for the front-end (last modified: 2026.02.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -250,7 +250,7 @@ config:
  hcaptcha_show_cookie_warning: &ShowCookieWarning {"zh-Hans": "显示cookie警告吗？​True（真）=显示【标准】；False（假）=不显示。", "zh-Hant": "顯示cookie警告嗎？​True（真）=顯示【標準】；False（假）=不顯示。"}
  hcaptcha_signature_limit: &CaptchaSignatureLimit {"zh-Hans": "撤销验证码之前允许的最大签名数。 标准 = 1。", "zh-Hant": "撤銷驗證碼之前允許的最大簽名數。 標準 = 1。"}
  hcaptcha_sitekey: *CaptchaDashboard
- hcaptcha_usemode: &CaptchaUseMode {"zh-Hans": "何时应提供验证码？​注意：列入白名单或已验证且未阻止的请求永远不需要完成验证码。​另请注意：验证码可以提供有用的保护层，防止机器人和各种恶意自动请求，但不会提供任何针对恶意人类的保护。", "zh-Hant": "何時應提供驗證碼？​注意：列入白名單或已驗證且未阻止的請求永遠不需要完成驗證碼。​另請注意：驗證碼可以提供有用的保護層，防止機器人和各種惡意自動請求，但不會提供任何針對惡意人類的保護。"}
+ hcaptcha_usemode: &CaptchaUseMode {"zh-Hans": "何时应提供验证码？", "zh-Hant": "何時應提供驗證碼？"}
  ipapi: {"zh-Hans": "IP-API模块的配置（为CIDRAM提供ASN和国家代码查找工具）。", "zh-Hant": "IP-API模組的配置（為CIDRAM提供ASN和國家代碼查找工具）。"}
  ipapi_blocked_asns: *ConfigBlockedASNs
  ipapi_blocked_ccs: *ConfigBlockedCCs
@@ -530,6 +530,11 @@ hints_time_format:
   <code class="s">{s}</code> – 秒 – 例如，49。<br />
   <code class="s">{tz}</code> – 時區（不含冒號） – 例如，+0800。<br />
   <code class="s">{t:z}</code> – 時區（附冒號） – 例如，+08:00。
+hints_usemode:
+ 0: {"zh-Hans": "注意：列入白名单或已验证且未阻止的请求永远不需要完成验证码。", "zh-Hant": "注意：列入白名單或已驗證且未阻止的請求永遠不需要完成驗證碼。"}
+ 1: {"zh-Hans": "另请注意：验证码可以提供有用的保护层，防止机器人和各种恶意自动请求，但不会提供任何针对恶意人类的保护。", "zh-Hant": "另請注意：驗證碼可以提供有用的保護層，防止機器人和各種惡意自動請求，但不會提供任何針對惡意人類的保護。"}
+ 2: {"zh-Hans": "可以通过辅助规则将请求“标记为使用”。", "zh-Hant": "可以透過輔助規則將請求「標記為使用」。"}
+ 3: {"zh-Hans": "请求是否被视为“敏感”取决于{{Links.ConfigRef.sensitive}}。", "zh-Hant": "請求是否被視為『敏感』取決於{{Links.ConfigRef.sensitive}}。"}
 hints_verification:
  zh-Hans: "<strong>什么是“阳性”和“阴性”？</strong> 在验证请求提供的身份时，成功的结果可以描述为“阳性”或“阴性”。​当所呈现的身份被确认为真实身份时，将被描述为“阳性”。​当所提供的身份被证实为伪造时，将被描述为“阴性”。​但是，不成功的结果（例如，验证失败，或无法确定所提供身份的真实性）不会被描述为“阳性”或“阴性”。​相反，不成功的结果将被简单地描述为未验证。​当没有尝试验证请求提供的身份时，该请求同样会被描述为未验证。​这些术语仅在请求提供的身份被识别的情况下才有意义，因此，在可以进行验证的情况下。​如果提供的身份与上面提供的选项不匹配，或者没有提供身份，则上面提供的选项变得无关。<br /><br /><strong>什么是“一击绕过”？</strong> 在某些情况下，由于签名文件、模块、或请求的其他条件，可能仍会阻止经过肯定验证的请求，为了避免假阳性，可能需要绕过。​在绕过旨在处理仅一项违规行为的情况下，这样的绕过可以被描述为“一击绕过”。"
  zh-Hant: "<strong>什麼是『陽性』和『陰性』？</strong> 在驗證請求提供的身份時，成功的結果可以描述為『陽性』或『陰性』。​當所呈現的身份被確認為真實身份時，將被描述為『陽性』。​當所提供的身份被證實為偽造時，將被描述為『陰性』。​但是，不成功的結果（例如，驗證失敗，或無法確定所提供身份的真實性）不會被描述為『陽性』或『陰性』。​相反，不成功的結果將被簡單地描述為未驗證。​當沒有嘗試驗證請求提供的身份時，該請求同樣會被描述為未驗證。​這些術語僅在請求提供的身份被識別的情況下才有意義，因此，在可以進行驗證的情況下。​如果提供的身份與上面提供的選項不匹配，或者沒有提供身份，則上面提供的選項變得無關。<br /><br /><strong>什麼是『一擊繞過』？</strong> 在某些情況下，由於簽名檔案、模組、或請求的其他條件，可能仍會阻止經過肯定驗證的請求，為了避免假陽性，可能需要繞過。​在繞過旨在處理僅一項違規行為的情況下，這樣的繞過可以被描述為『一擊繞過』。"

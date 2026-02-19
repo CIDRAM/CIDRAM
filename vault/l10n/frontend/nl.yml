@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2026.02.14).
+# This file: Dutch language data for the front-end (last modified: 2026.02.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -228,7 +228,7 @@ config:
  hcaptcha_show_cookie_warning: &ShowCookieWarning "Cookiewaarschuwing weergeven? True = Ja [Standaard]; False = Nee."
  hcaptcha_signature_limit: &CaptchaSignatureLimit "Maximaal aantal toegestane signatures voordat een CAPTCHA-aanbieding wordt ingetrokken. Standaard = 1."
  hcaptcha_sitekey: *CaptchaDashboard
- hcaptcha_usemode: &CaptchaUseMode "Wanneer moet de CAPTCHA worden aangeboden? Opmerking: Op de witte lijst geplaatste of geverifieerde en niet-geblokkeerde verzoeken hoeven nooit een CAPTCHA in te vullen. Let ook op: CAPTCHA's kunnen een nuttige, extra beschermingslaag bieden tegen bots en verschillende soorten kwaadwillende geautomatiseerde verzoeken, maar bieden geen enkele bescherming tegen kwaadwillende mensen."
+ hcaptcha_usemode: &CaptchaUseMode "Wanneer moet de CAPTCHA worden aangeboden?"
  ipapi: "Configuratie voor de IP-API-module (biedt een zoekfunctie voor ASN en landcodes voor CIDRAM)."
  ipapi_blocked_asns: *ConfigBlockedASNs
  ipapi_blocked_ccs: *ConfigBlockedCCs
@@ -454,6 +454,11 @@ hints_time_format: |
  <code class="s">{s}</code> – De seconde – B.v., 49.<br />
  <code class="s">{tz}</code> – De tijdzone (zonder dubbele punt) – B.v., +0800.<br />
  <code class="s">{t:z}</code> – De tijdzone (met dubbele punt) – B.v., +08:00.
+hints_usemode:
+ 0: "Opmerking: Op de witte lijst geplaatste of geverifieerde en niet-geblokkeerde verzoeken hoeven nooit een CAPTCHA in te vullen."
+ 1: "Let ook op: CAPTCHA's kunnen een nuttige, extra beschermingslaag bieden tegen bots en verschillende soorten kwaadwillende geautomatiseerde verzoeken, maar bieden geen enkele bescherming tegen kwaadwillende mensen."
+ 2: "Verzoeken kunnen via aanvullende regels worden "gemarkeerd voor gebruik"."
+ 3: "Of een verzoek als "gevoelig" wordt beschouwd, wordt bepaald door {{Links.ConfigRef.sensitive}}."
 hints_verification:
  "Wat zijn "positieven" en "negatieven"?": "Bij het verifiëren van de identiteit die door een verzoek wordt gepresenteerd, een succesvol resultaat kan worden omschreven als "positief" of "negatief". In het geval dat wordt bevestigd dat de gepresenteerde identiteit de ware identiteit is, deze als "positief" beschreven wordt. In het geval dat wordt bevestigd dat de gepresenteerde identiteit vervalst is, deze als "negatief" beschreven wordt. Een onsuccesvolle uitkomst (b.v., verificatie mislukt, of de juistheid van de gepresenteerde identiteit kan niet worden vastgesteld) wordt echter niet als "positief" of "negatief" beschreven. In plaats daarvan zou een mislukte uitkomst eenvoudigweg als niet-geverifieerd worden beschreven. Als er geen poging wordt gedaan om de identiteit van het verzoek te verifiëren, het verzoek wordt eveneens als niet-geverifieerd beschreven. De termen hebben alleen zin in de context waarin de identiteit van het verzoek wordt herkend, en dus waar verificatie mogelijk is. In gevallen waarin de gepresenteerde identiteit niet overeenkomt met de bovenstaande opties, of waar geen identiteit wordt gepresenteerd, worden de bovenstaande opties irrelevant."
  "Wat zijn "enkele-treffer bypasses"?": "In sommige gevallen kan een positief-geverifieerd verzoek nog steeds worden geblokkeerd als gevolg van de signatuurbestanden, modules, of andere voorwaarden van het verzoek, en bypasses kunnen nodig zijn om valse positieven te voorkomen. In het geval dat een bypass bedoeld is om precies één overtreding af te handelen, niet meer en niet minder, dergelijke een bypass zou kunnen worden omschreven als een "enkele-treffer bypass"."

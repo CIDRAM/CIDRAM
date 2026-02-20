@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v4/vault/signatures/ipv6_isps.dat
 
-# Version: 2026.25.0
-# Last modified: 2026.01.26
+# Version: 2026.50.0
+# Last modified: 2026.02.20
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -497,3 +497,15 @@ a13:c9c0::/32 Deny Attacks
 Origin: RU
 Profile: Domestic ISP
 Tag: OOO Istra.net
+
+
+# ASN 135268 ("As Broadband Pvt Ltd").
+# Indian broadband provider. Brute-force, SMB, SSH, DDoS, and webapp attacks,
+# port scans, hacking, and spam detected from here. Entire network affected.
+# Stop Forum Spam (SFS) listings: 6.
+# Updated: 2026.02.20
+
+2001:df2:5240::/48 Deny Attacks
+Origin: IN
+Profile: Domestic ISP
+Tag: As Broadband Pvt Ltd

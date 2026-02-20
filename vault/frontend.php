@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2026.02.15).
+ * This file: Front-end handler (last modified: 2026.02.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -3979,7 +3979,7 @@ if ($CIDRAM['FE']['UserState'] !== 1 && $CIDRAM['FE']['CronMode'] === '') {
     if (isset($_POST['ip-addr'])) {
         $CIDRAM['FE']['ip-addr'] = $_POST['ip-addr'];
         $_POST['ip-addr'] = array_unique(array_map(function ($IP) use (&$CIDRAM) {
-            $New = preg_replace(['~([.:])x(?:/.+)?$~i', '~/.+$|(?!.*:)[^\d.]|(?!.*\.)[^\da-f:]~i', '~\.{2,}~'], ['{\1}0', '', '.'], $IP);
+            $New = preg_replace(['~([.:])x(?:/.+)?$~i', '~[/, ].*$|&[a-z]+;|(?!.*:)(?<!:.{0,4})[^\d.](?!.*:)|(?!.*\.)(?<!\..{0,3})[^\da-f:](?!.*\.)~i', '~\.{2,}~', '~:{3,}~'], ['{\1}0', '', '.', '::'], $IP);
             if ($New !== '' && strlen($IP) < 128) {
                 if (isset($CIDRAM['Assumptions'][$New])) {
                     $CIDRAM['Assumptions'][$New] .= ', ' . $IP;

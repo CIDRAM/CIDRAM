@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2026.02.13).
+ * This file: The CIDRAM core (last modified: 2026.02.22).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -633,7 +633,7 @@ class Core
                 $LN = ' ("' . $DefTag . '", L0:F' . $FileIndex . ')';
                 for ($FactorIndex = 0; $FactorIndex < $Counts['Factors']; $FactorIndex++) {
                     if ($Occurs = substr_count($Files[$FileIndex], ',' . $Factors[$FactorIndex] . ',')) {
-                        $this->BlockInfo['ReasonMessage'] = $this->L10N->getString('ReasonMessage.Generic');
+                        $this->BlockInfo['ReasonMessage'] = $this->ClientL10N->getString('ReasonMessage.Generic') ?: $this->L10N->getString('ReasonMessage.Generic');
                         if (!empty($this->BlockInfo['WhyReason'])) {
                             $this->BlockInfo['WhyReason'] .= ', ';
                         }
@@ -766,7 +766,7 @@ class Core
                             if (!isset($this->Shorthand[$Signature . ':Block'])) {
                                 continue;
                             }
-                            $this->BlockInfo['ReasonMessage'] = $this->L10N->getString('ReasonMessage.' . $Signature) ?: $Signature;
+                            $this->BlockInfo['ReasonMessage'] = $this->ClientL10N->getString('ReasonMessage.' . $Signature) ?: $this->L10N->getString('ReasonMessage.' . $Signature) ?: $Signature;
                             if (!empty($this->BlockInfo['WhyReason'])) {
                                 $this->BlockInfo['WhyReason'] .= ', ';
                             }
@@ -1477,7 +1477,7 @@ class Core
             return false;
         }
         if ($ReasonLong === '') {
-            $ReasonLong = $this->L10N->getString('ReasonMessage.' . $ReasonShort) ?: $this->L10N->getString('denied');
+            $ReasonLong = $this->ClientL10N->getString('ReasonMessage.' . $ReasonShort) ?: $this->L10N->getString('ReasonMessage.' . $ReasonShort) ?: $this->ClientL10N->getString('denied') ?: $this->L10N->getString('denied');
         }
         if (count($DefineOptions) > 0) {
             foreach ($DefineOptions as $CatKey => $CatValue) {
@@ -3434,10 +3434,10 @@ class Core
     {
         if ($this->Configuration['signatures']['conflict_response'] === 429) {
             $Signature = 'RL';
-            $this->BlockInfo['ReasonMessage'] = sprintf($this->L10N->getString('ReasonMessage.RL'), sprintf($this->L10N->getPlural(3, '%s seconds'), $this->NumberFormatter->format(3)));
+            $this->BlockInfo['ReasonMessage'] = sprintf($this->ClientL10N->getString('ReasonMessage.RL') ?: $this->L10N->getString('ReasonMessage.RL'), sprintf($this->L10N->getPlural(3, '%s seconds'), $this->NumberFormatter->format(3)));
         } else {
             $Signature = 'Conflict';
-            $this->BlockInfo['ReasonMessage'] = $this->L10N->getString('ReasonMessage.Conflict');
+            $this->BlockInfo['ReasonMessage'] = $this->ClientL10N->getString('ReasonMessage.Conflict') ?: $this->L10N->getString('ReasonMessage.Conflict');
         }
         if (!empty($this->BlockInfo['WhyReason'])) {
             $this->BlockInfo['WhyReason'] .= ', ';

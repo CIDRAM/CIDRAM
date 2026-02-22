@@ -520,4 +520,5 @@
 - [2026.02.16]: Added support for suggestions for the ignore condition source at the auxiliary rules page.
 - [2026.02.18]: Improved the hinting for the usemode configuration directive (#657).
 - [2026.02.22]: CIDRAM can now account for X-Forwarded-Proto when handling the request's protocol (#673).
+- [2026.02.22]: Improve client-specified L10N support (#666).
 - *Plus all the regular signature updates.*

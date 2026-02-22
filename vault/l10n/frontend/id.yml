@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2026.02.18).
+# This file: Indonesian language data for the front-end (last modified: 2026.02.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -74,7 +74,7 @@ Extended Description:
  Optional security extras module: "Menyediakan beberapa perlindungan terbatas terhadap berbagai vektor serangan umum digunakan dalam permintaan."
  PHPMailer: "Diperlukan untuk menggunakan fungsionalitas apapun yang melibatkan pengiriman email.<br />{{Links.PHPMailer.PHPMailer}} tersedia melalui lisensi {{Links.PHPMailer.License}}."
  Project Honeypot module: "Memblokir permintaan dari IP yang terdaftar oleh Project Honeypot."
- Protocol blocker module: "Menyediakan kemampuan untuk memblokir protokol permintaan spesifik melalui konfigurasi (misalnya, HTTP/0.9, HTTP/1.1, SPDY/3.0, dsb). Catat: Tidak akan berpengaruh pada situs web yang merutekan melalui layanan yang menulis ulang permintaan untuk semua menggunakan protokol yang sama persis, seperti Cloudflare."
+ Protocol blocker module: "Menyediakan kemampuan untuk memblokir protokol permintaan spesifik melalui konfigurasi (misalnya, HTTP/0.9, HTTP/1.1, SPDY/3.0, dsb)."
  Referrer spam module: "Memblokir berdasarkan spam pengarah umumnya tidak akan memberikan manfaat keamanan yang berarti, tetapi dalam beberapa kasus, dapat bermanfaat bagi beberapa pengguna, untuk mengumpulkan lebih banyak informasi tentang permintaan, dan untuk dapat melaporkannya."
  Stop Forum Spam module: "Melindungi halaman pendaftaran dan login terhadap IP yang terdaftar oleh SFS."
  Tor blocker module: "Melarang akses dari simpul keluar Tor melalui pencarian DNSEL (mendukung keduanya IPv4 dan IPv6)."
@@ -269,7 +269,7 @@ config:
  projecthoneypot_minimum_threat_score: "Skor ancaman minimum yang diperlukan agar CIDRAM memblokir alamat IP (harus berupa angka diantara 1 dan 100). Default = 10."
  projecthoneypot_type_of_visitor: "Kontrol apakah akan memblokir atau memprofil berdasarkan jenis pengunjung sebagaimana ditentukan oleh Project Honeypot."
  protocol: "Konfigurasi untuk modul pemblokir protokol."
- protocol_blocked: "Protokol yang dipilih akan diblokir. Catat: Tidak akan berpengaruh pada situs web yang merutekan melalui layanan yang menulis ulang permintaan untuk semua menggunakan protokol yang sama persis, seperti Cloudflare."
+ protocol_blocked: "Protokol yang dipilih akan diblokir."
  protocol_reason_message: "Pesan alasan ditampilkan saat permintaan tersebut diblokir."
  quic: "Konfigurasi untuk modul kompatibilitas Quic cloud."
  quic_positive_action: "Tindakan mana yang harus dilakukan CIDRAM saat menangani permintaan dari Quic cloud? Tindakan default = Melewatinya."

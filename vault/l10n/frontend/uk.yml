@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Ukrainian language data for the front-end (last modified: 2026.02.18).
+# This file: Ukrainian language data for the front-end (last modified: 2026.02.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -74,7 +74,7 @@ Extended Description:
  Optional security extras module: "Забезпечує обмежений захист від різних векторів атак, які зазвичай використовуються в запитах."
  PHPMailer: "Необхідний для використання будь-якої функції, яка передбачає надсилання електронної пошти.<br />{{Links.PHPMailer.PHPMailer}} доступний за ліцензією {{Links.PHPMailer.License}}."
  Project Honeypot module: "Блокує запити від IP-адрес, указаних у Project Honeypot."
- Protocol blocker module: "Надає можливість блокувати певні протоколи запитів за допомогою конфігурації (наприклад, HTTP/0.9, HTTP/1.1, SPDY/3.0, тощо). Примітка: Це не матиме жодного ефекту для тих веб-сайтів, які маршрутизують через служби, які переписують запити, щоб усі використовували той самий протокол, наприклад Cloudflare."
+ Protocol blocker module: "Надає можливість блокувати певні протоколи запитів за допомогою конфігурації (наприклад, HTTP/0.9, HTTP/1.1, SPDY/3.0, тощо)."
  Referrer spam module: "Блокування на основі спаму-реферера, як правило, не забезпечить жодних суттєвих переваг безпеки, але в деяких випадках може бути корисним для деяких користувачів, для збору додаткової інформації про запити та для того, щоб мати можливість повідомити про це."
  Stop Forum Spam module: "Захищає сторінки реєстрації та входу від IP-адрес, указаних SFS."
  Tor blocker module: "Забороняє доступ із вузлів виходу Tor через пошук DNSEL (підтримує IPv4 і IPv6 оба)."
@@ -269,7 +269,7 @@ config:
  projecthoneypot_minimum_threat_score: "Мінімальний оцінка загрози, необхідний для блокування IP-адресою CIDRAM (має бути числом від 1 до 100). Стандарт = 10."
  projecthoneypot_type_of_visitor: "Блокувати чи профілювати залежно від типу відвідувача, як визначеного Project Honeypot."
  protocol: "Конфігурація для модуля блокування протоколів."
- protocol_blocked: "Вибрані протоколи будуть заблоковані. Примітка: Це не матиме жодного ефекту для тих веб-сайтів, які маршрутизують через служби, які переписують запити, щоб усі використовували той самий протокол, наприклад Cloudflare."
+ protocol_blocked: "Вибрані протоколи будуть заблоковані."
  protocol_reason_message: "Повідомлення про причину, яке відображається, коли такі запити заблоковано."
  quic: "Конфігурація модуля сумісності Quic cloud."
  quic_positive_action: "Яку дію має виконати CIDRAM, коли він зустрічає запит від Quic cloud? Стандартна дія = байпас."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2026.02.18).
+# This file: Thai language data for the front-end (last modified: 2026.02.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -74,7 +74,7 @@ Extended Description:
  Optional security extras module: "ให้การป้องกันที่ จำกัด กับเวกเตอร์การโจมตีต่างๆที่ใช้ทั่วไปในคำขอ."
  PHPMailer: "จำเป็นสำหรับการใช้ฟังก์ชันใด ๆ ที่เกี่ยวข้องกับการส่งอีเมล.<br />{{Links.PHPMailer.PHPMailer}} สามารถใช้ได้ผ่านทางใบอนุญาต {{Links.PHPMailer.License}}."
  Project Honeypot module: "บล็อคคำขอจาก IP ที่แสดงรายการไว้ที่ Project Honeypot."
- Protocol blocker module: "ให้ความสามารถในการบล็อคโปรโตคอลคำขอเฉพาะผ่านการกำหนดค่า (เช่น., HTTP/0.9, HTTP/1.1, SPDY/3.0, เป็นต้น). หมายเหตุ: จะไม่ส่งผลกระทบต่อเว็บไซต์ที่ส่งผ่านบริการที่เขียนคำขอใหม่ทั้งหมดโดยใช้โปรโตคอลเดียวกัน เช่น Cloudflare."
+ Protocol blocker module: "ให้ความสามารถในการบล็อคโปรโตคอลคำขอเฉพาะผ่านการกำหนดค่า (เช่น., HTTP/0.9, HTTP/1.1, SPDY/3.0, เป็นต้น)."
  Referrer spam module: "การปิดกั้นโดยอ้างอิงจากสแปมอ้างอิงจะไม่ให้ประโยชน์ด้านความปลอดภัยที่มีความหมาย แต่ในบางกรณีอาจมีประโยชน์สำหรับผู้ใช้บางคน เพื่อรวบรวมข้อมูลเพิ่มเติมเกี่ยวกับคำขอและเพื่อให้สามารถรายงานได้."
  Stop Forum Spam module: "ปกป้องหน้าการลงทะเบียนและเข้าสู่ระบบต่อต้าน IP ที่ระบุโดย SFS."
  Tor blocker module: "ห้ามการเข้าถึงจากโหนดทางออกของ Tor ผ่านการค้นหา DNSEL (รองรับทั้ง IPv4 และ IPv6)."
@@ -269,7 +269,7 @@ config:
  projecthoneypot_minimum_threat_score: "คะแนนภัยคุกคามขั้นต่ำที่จำเป็นสำหรับ CIDRAM เพื่อบล็อคที่อยู่ IP (ต้องเป็นตัวเลขระหว่าง 1 ถึง 100). ค่าเริ่มต้น = 10."
  projecthoneypot_type_of_visitor: "ควบคุมว่าจะบล็อคหรือโปรไฟล์ตามประเภทของผู้เข้าชมที่กำหนดโดย Project Honeypot."
  protocol: "การกำหนดค่าสำหรับโมดูลตัวบล็อคโปรโตคอล."
- protocol_blocked: "โปรโตคอลที่เลือกจะถูกบล็อค. หมายเหตุ: จะไม่ส่งผลกระทบต่อเว็บไซต์ที่ส่งผ่านบริการที่เขียนคำขอใหม่ทั้งหมดโดยใช้โปรโตคอลเดียวกัน เช่น Cloudflare."
+ protocol_blocked: "โปรโตคอลที่เลือกจะถูกบล็อค."
  protocol_reason_message: "ข้อความเหตุผลที่จะแสดงเมื่อคำขอดังกล่าวถูกบล็อค."
  quic: "การกำหนดค่าสำหรับโมดูลความเข้ากันได้ของ Quic cloud."
  quic_positive_action: "CIDRAM ควรดำเนินการใดเมื่อพบคำขอจาก Quic cloud? การกระทำเริ่มต้น = บายพาส."

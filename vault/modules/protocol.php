@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protocol blocker module (last modified: 2025.08.11).
+ * This file: Protocol blocker module (last modified: 2026.02.22).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -24,16 +24,16 @@ $this->CIDRAM['ProtocolBlocker'] = ['blocked' => array_flip(explode("\n", $this-
 /** Defining as closure for later recall (no params; no return value). */
 $this->CIDRAM['ModuleResCache'][$Module] = function () {
     /** Guard. */
-    if (!isset($_SERVER['SERVER_PROTOCOL'])) {
+    if (empty($this->BlockInfo['Protocol']) || $this->BlockInfo['Protocol'] === 'SimulateBlockEvent') {
         return;
     }
 
-    if (($Split = strpos($_SERVER['SERVER_PROTOCOL'], '/')) !== false) {
-        $Protocol = strtoupper(preg_replace('~[^A-Za-z]~', '', substr($_SERVER['SERVER_PROTOCOL'], 0, $Split)));
-        $Version = explode('.', preg_replace('~[^\d.]~', '', substr($_SERVER['SERVER_PROTOCOL'], $Split + 1)), 2);
+    if (($Split = strpos($this->BlockInfo['Protocol'], '/')) !== false) {
+        $Protocol = strtoupper(preg_replace('~[^A-Za-z]~', '', substr($this->BlockInfo['Protocol'], 0, $Split)));
+        $Version = explode('.', preg_replace('~[^\d.]~', '', substr($this->BlockInfo['Protocol'], $Split + 1)), 2);
     } else {
-        $Protocol = strtoupper(preg_replace('~[^A-Za-z]~', '', $_SERVER['SERVER_PROTOCOL']));
-        $Version = explode('.', preg_replace('~[^\d.]~', '', $_SERVER['SERVER_PROTOCOL']), 2);
+        $Protocol = strtoupper(preg_replace('~[^A-Za-z]~', '', $this->BlockInfo['Protocol']));
+        $Version = explode('.', preg_replace('~[^\d.]~', '', $this->BlockInfo['Protocol']), 2);
     }
     $Major = (int)$Version[0];
     $Minor = isset($Version[1]) ? (int)$Version[1] : 0;
@@ -97,7 +97,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         }
     } elseif ($Protocol === 'RTA') {
         if ($this->trigger((
-            isset($this->CIDRAM['ProtocolBlocker']['blocked']['RTA/x11']) && $_SERVER['SERVER_PROTOCOL'] === 'RTA/x11'
+            isset($this->CIDRAM['ProtocolBlocker']['blocked']['RTA/x11']) && $this->BlockInfo['Protocol'] === 'RTA/x11'
         ), $Short . ' (' . $Rebuilt . ')', $Long)) {
             $Hit = true;
         }

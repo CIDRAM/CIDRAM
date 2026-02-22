@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2026.02.18).
+# This file: Urdu language data for the front-end (last modified: 2026.02.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -74,7 +74,7 @@ Extended Description:
  Optional security extras module: "عام طور پر درخواستوں میں استعمال ہونے والی مختلف حمل ویکٹروں کے خلاف کچھ محدود تحفظ فراہم کرتا ہے."
  PHPMailer: "یہ کسی بھی فعالیت کا استعمال کرنے کے لیے ضروری ہے جس میں ای میل بھیجنا شامل ہے.<br />{{Links.PHPMailer.PHPMailer}} لائسنس {{Links.PHPMailer.License}} کے ذریعہ دستیاب ہے."
  Project Honeypot module: "Project Honeypot میں درج IP کے بلاکس کی درخواستیں."
- Protocol blocker module: "کنفیگریشن کے ذریعے مخصوص درخواست پروٹوکول کو بلاک کرنے کی صلاحیت فراہم کرتا ہے (مثال کے طور پر، HTTP/0.9، HTTP/1.1 ،SPDY/3.0، وغیرہ). نوٹ: کچھ خدمات (مثلاً، Cloudflare) نافذ کرتی ہیں کہ تمام درخواستیں ایک ہی پروٹوکول کا استعمال کرتی ہیں. ایسی خدمات استعمال کرنے والی ویب سائٹیں ماڈیول سے متاثر نہیں ہوں گی."
+ Protocol blocker module: "کنفیگریشن کے ذریعے مخصوص درخواست پروٹوکول کو بلاک کرنے کی صلاحیت فراہم کرتا ہے (مثال کے طور پر، HTTP/0.9، HTTP/1.1 ،SPDY/3.0، وغیرہ)."
  Referrer spam module: "ریفرر اسپام پر مبنی مسدودیت عام طور پر کوئی معنی خیز فائدہ نہیں فراہم کرے گی، لیکن کبھی کبھی درخواستوں کے بارے میں مزید معلومات اکٹھا کرنے اور اس کی اطلاع دینے کے قابل ہوسکتے ہیں."
  Stop Forum Spam module: "SFS کے ذریعہ درج کردہ IP پتوں کے خلاف رجسٹریشن اور لاگ ان صفحات کی حفاظت کرتا ہے."
  Tor blocker module: "DNSEL تلاش کے ذریعے ٹور ایگزٹ نوڈس تک رسائی کو روکتا ہے (IPv4 اور IPv6 دونوں کو سپورٹ کرتا ہے)."
@@ -269,7 +269,7 @@ config:
  projecthoneypot_minimum_threat_score: "IP پتہ کو بلاک کرنے کے لیے CIDRAM کے لیے درکار کم از کم خطرے کا سکور (1 اور 100 کے درمیان نمبر ہونا چاہیے). پہلے سے طے شدہ = 10."
  projecthoneypot_type_of_visitor: "Project Honeypot کے ذریعے طے شدہ وزیٹر کی قسم کی بنیاد پر بلاک کرنا یا پروفائل کرنے کے لیے کنٹرول."
  protocol: "پروٹوکول بلاکر ماڈیول کے لیے کنفیگریشن."
- protocol_blocked: "منتخب پروٹوکولز کو بلاک کر دیا جائے گا. نوٹ: کچھ خدمات (مثلاً، Cloudflare) نافذ کرتی ہیں کہ تمام درخواستیں ایک ہی پروٹوکول کا استعمال کرتی ہیں. ایسی خدمات استعمال کرنے والی ویب سائٹیں ماڈیول سے متاثر نہیں ہوں گی."
+ protocol_blocked: "منتخب پروٹوکولز کو بلاک کر دیا جائے گا."
  protocol_reason_message: "The reason message to display when such requests are blocked."
  quic: "Quic cloud مطابقت ماڈیول کنفیگریشن."
  quic_positive_action: "Quic cloud کی درخواست کا سامنا کرنا پڑتا ہے تو CIDRAM کو کون سا عمل کرنا چاہیے؟ پہلے سے طے شدہ کارروائی = بائی پاس."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data for the front-end (last modified: 2026.02.18).
+# This file: Bangla language data for the front-end (last modified: 2026.02.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -74,7 +74,7 @@ Extended Description:
  Optional security extras module: "অনুরোধগুলি সাধারণত ব্যবহৃত বিভিন্ন আক্রমণ ভেক্টরগুলির বিরুদ্ধে কিছু সীমিত সুরক্ষা প্রদান করে।"
  PHPMailer: "ইমেইল কার্যকারিতা পাঠানোর জন্য প্রয়োজনীয়।<br />{{Links.PHPMailer.PHPMailer}} {{Links.PHPMailer.License}} লাইসেন্সের মাধ্যমে উপলব্ধ।"
  Project Honeypot module: "Project Honeypot এ তালিকাভুক্ত আইপিগুলির থেকে ব্লক অনুরোধ।"
- Protocol blocker module: "কনফিগারেশনের মাধ্যমে নির্দিষ্ট অনুরোধ প্রোটোকল ব্লক করার ক্ষমতা প্রদান করে (যেমন, HTTP/0.9, HTTP/1.1, SPDY/3.0, ইত্যাদি). দ্রষ্টব্য: ওয়েবসাইটগুলিকে প্রভাবিত করবে না যা পরিষেবাগুলির মাধ্যমে রুট করে (যেমন, Cloudflare) যা একই প্রোটোকল ব্যবহার করে সকলের কাছে অনুরোধগুলি পুনর্লিখন করে৷।"
+ Protocol blocker module: "কনফিগারেশনের মাধ্যমে নির্দিষ্ট অনুরোধ প্রোটোকল ব্লক করার ক্ষমতা প্রদান করে (যেমন, HTTP/0.9, HTTP/1.1, SPDY/3.0, ইত্যাদি)।"
  Referrer spam module: "রেফারার স্প্যামের উপর ভিত্তি করে ব্লক করা সাধারণত কোনও অর্থবহ সুরক্ষা সুবিধা দেয় না, তবে কিছু ক্ষেত্রে এটি কিছু ব্যবহারকারীর পক্ষে কার্যকর হতে পারে, অনুরোধ সম্পর্কে আরও তথ্য সংগ্রহ করার জন্য, এবং এটি রিপোর্ট করতে সক্ষম হওয়ার জন্য।"
  Stop Forum Spam module: "SFS দ্বারা তালিকাভুক্ত আইপিগুলির বিরুদ্ধে রেজিস্ট্রেশন এবং লগইন পেজ রক্ষা করে।"
  Tor blocker module: "DNSEL লুকআপের মাধ্যমে টর এক্সিট নোড থেকে অ্যাক্সেস নিষিদ্ধ করে (IPv4 এবং IPv6 উভয় সমর্থন করে)।"
@@ -269,7 +269,7 @@ config:
  projecthoneypot_minimum_threat_score: "একটি আইপি ঠিকানা ব্লক করতে CIDRAM এর জন্য ন্যূনতম হুমকি স্কোর প্রয়োজন (1 এবং 100 এর মধ্যে একটি সংখ্যা হতে হবে). ডিফল্ট = "10"।"
  projecthoneypot_type_of_visitor: "Project Honeypot দ্বারা নির্ধারিত ভিজিটরের প্রকারের উপর ভিত্তি করে ব্লক বা প্রোফাইল করার জন্য নিয়ন্ত্রণ।"
  protocol: "প্রোটোকল ব্লকার মডিউলের জন্য কনফিগারেশন।"
- protocol_blocked: "নির্বাচিত প্রোটোকল ব্লক করা হবে। দ্রষ্টব্য: ওয়েবসাইটগুলিকে প্রভাবিত করবে না যা পরিষেবাগুলির মাধ্যমে রুট করে (যেমন, Cloudflare) যা একই প্রোটোকল ব্যবহার করে সকলের কাছে অনুরোধগুলি পুনর্লিখন করে৷।"
+ protocol_blocked: "নির্বাচিত প্রোটোকল ব্লক করা হবে।"
  protocol_reason_message: "এই ধরনের অনুরোধ ব্লক করা হয় যখন প্রদর্শিত কারণ বার্তা।"
  quic: "Quic cloud সামঞ্জস্য মডিউল কনফিগারেশন।"
  quic_positive_action: "Quic cloud থেকে অনুরোধের সম্মুখীন হলে CIDRAM কোন কাজটি সম্পাদন করা উচিত? ডিফল্ট অ্যাকশন = অনুরোধ বাইপাস।"

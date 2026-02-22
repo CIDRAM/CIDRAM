@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2026.02.18).
+# This file: Japanese language data for the front-end (last modified: 2026.02.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -74,7 +74,7 @@ Extended Description:
  Optional security extras module: "リクエストでよく使用される攻撃経路に対して、いくつかの制限された保護を提供します。"
  PHPMailer: "Ｅメールの送信を含む機能の使用に必要です。<br />「{{Links.PHPMailer.PHPMailer}}」は、「{{Links.PHPMailer.License}}」ライセンスを介して利用可能です。"
  Project Honeypot module: "Project HoneypotにリストされているＩＰからのリクエストをブロックします。"
- Protocol blocker module: "コンフィギュレーションを介して特定のリクエスト・プロトコルをブロックする機能を提供します（例：HTTP/0.9、HTTP/1.1、SPDY/3.0、など）。​注：すべてのリクエストをまったく同じプロトコルを使用するように書き換えるサービスを（例:Cloudflare）介してルーティングするウェブサイトには影響しません。"
+ Protocol blocker module: "コンフィギュレーションを介して特定のリクエスト・プロトコルをブロックする機能を提供します（例：HTTP/0.9、HTTP/1.1、SPDY/3.0、など）。"
  Referrer spam module: "リファラー・スパムに基づくブロックは、通常、有意義なセキュリティ上の利点を提供しません、ただし、場合によっては、リクエストに関する詳細情報の収集、およびレポートの作成に役立つ可能性があります。"
  Stop Forum Spam module: "ＳＦＳによってリストされたＩＰに対して登録ページとログインページを保護します。"
  Tor blocker module: "ＤＮＳＥＬルックアップによるＴｏｒ出口ノードからのアクセスを禁止します（ＩＰｖ４とＩＰｖ６の両方をサポートします）。"
@@ -269,7 +269,7 @@ config:
  projecthoneypot_minimum_threat_score: "CIDRAMがＩＰアドレスをブロックするために必要な最小脅威スコア（１から１００までの数値である必要があります）。 Default/デフォルルト = 10。"
  projecthoneypot_type_of_visitor: "Project Honeypotによって決定された訪問者のタイプに基づいて、ブロックまたはプロファイルするかどうかを制御します。"
  protocol: "プロトコル・ブロッカー・モジュールの設定。"
- protocol_blocked: "選択したプロトコルがブロックされます。​注：すべてのリクエストをまったく同じプロトコルを使用するように書き換えるサービスを（例:Cloudflare）介してルーティングするウェブサイトには影響しません。"
+ protocol_blocked: "選択したプロトコルがブロックされます。"
  protocol_reason_message: "そのようなリクエストがブロックされたときに表示される理由メッセージ。"
  quic: "Quic cloud互換性モジュールの設定。"
  quic_positive_action: "Quic cloudからのリクエストに遭遇した場合、CIDRAMはどのアクションを実行する必要がありますか？ デフォルト・アクション = バイパスする。"

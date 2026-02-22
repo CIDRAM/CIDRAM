@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2026.02.18).
+# This file: Norwegian language data for the front-end (last modified: 2026.02.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -74,7 +74,7 @@ Extended Description:
  Optional security extras module: "Gir noen begrensede beskyttelser mot ulike angrepsvektorer som ofte brukes i forespørsler."
  PHPMailer: "Kreves for bruk av funksjonalitet som innebærer sending av e-post.<br />{{Links.PHPMailer.PHPMailer}} er tilgjengelig via {{Links.PHPMailer.License}}-lisensen."
  Project Honeypot module: "Blokkerer forespørsler fra IPer oppført på Project Honeypot."
- Protocol blocker module: "Gir muligheten til å blokkere spesifikke forespørselsprotokoller via konfigurasjonen (f.eks., HTTP/0.9, HTTP/1.1, SPDY/3.0, osv). Merk: Vil ikke ha noen effekt for de nettstedene som ruter gjennom tjenester som omskriver forespørsler til alle bruker nøyaktig samme protokoll, for eksempel Cloudflare."
+ Protocol blocker module: "Gir muligheten til å blokkere spesifikke forespørselsprotokoller via konfigurasjonen (f.eks., HTTP/0.9, HTTP/1.1, SPDY/3.0, osv)."
  Referrer spam module: "Blokkering basert på referansesøppel vil vanligvis ikke gi noen meningsfull sikkerhetsgevinst, men i noen tilfeller kan det være nyttig for noen brukere, for å samle mer informasjon om forespørsler og for å kunne rapportere det."
  Stop Forum Spam module: "Beskytter registrerings og innloggingssider mot IP-adresser oppført av SFS."
  Tor blocker module: "Forbyr tilgang fra Tor-utgangsnoder gjennom DNSEL-oppslag (støtter både IPv4 og IPv6)."
@@ -269,7 +269,7 @@ config:
  projecthoneypot_minimum_threat_score: "Minimum trusselpoengsum som kreves for at CIDRAM skal blokkere en IP-adresse (må være et tall mellom 1 og 100). Standardverdi = 10."
  projecthoneypot_type_of_visitor: "Kontroller om du vil blokkere eller profilere basert på typen besøkende som bestemt av Project Honeypot."
  protocol: "Konfigurasjon for protokollblokkeringsmodulen."
- protocol_blocked: "Utvalgte protokoller vil bli blokkert. Merk: Vil ikke ha noen effekt for de nettstedene som ruter gjennom tjenester som omskriver forespørsler til alle bruker nøyaktig samme protokoll, for eksempel Cloudflare."
+ protocol_blocked: "Utvalgte protokoller vil bli blokkert."
  protocol_reason_message: "Årsaksmeldingen vises når slike forespørsler blokkeres."
  quic: "Konfigurasjon for Quic cloud-kompatibilitetsmodulen."
  quic_positive_action: "Hvilken handling skal CIDRAM utføre når den møter en forespørsel fra Quic cloud? Standard handling = Bypassere."

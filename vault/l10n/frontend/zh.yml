@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese language data for the front-end (last modified: 2026.02.18).
+# This file: Chinese language data for the front-end (last modified: 2026.02.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -80,8 +80,8 @@ Extended Description:
   zh-Hant: "使用涉及發送電子郵件的任何功能時需要。<br />{{Links.PHPMailer.PHPMailer}}可通過{{Links.PHPMailer.License}}許可證獲得。"
  Project Honeypot module: {"zh-Hans": "阻止来自Project Honeypot列出的IP的请求。", "zh-Hant": "阻止來自Project Honeypot列出的IP的請求。"}
  Protocol blocker module:
-  zh-Hans: "提供通过配置阻止特定请求协议的能力（例如，HTTP/0.9、HTTP/1.1、SPDY/3.0、等等）。注意：不会影响通过强制请求使用相同协议的服务（例如，Cloudflare）路由的网站。"
-  zh-Hant: "提供通過配置阻止特定請求協定的能力（例如，HTTP/0.9、HTTP/1.1、SPDY/3.0、等等）。注意：不會影響通過強制請求使用相同協定的服務（例如，Cloudflare）路由的網站。"
+  zh-Hans: "提供通过配置阻止特定请求协议的能力（例如，HTTP/0.9、HTTP/1.1、SPDY/3.0、等等）。"
+  zh-Hant: "提供通過配置阻止特定請求協定的能力（例如，HTTP/0.9、HTTP/1.1、SPDY/3.0、等等）。"
  Referrer spam module: {"zh-Hans": "基于引荐来源垃圾邮件阻止通常不会提供任何有意义的安全利益，但在某些情况下，对某些用户可能有用，用于收集有关请求的更多信息，以及能够报告它。", "zh-Hant": "基於引薦來源垃圾郵件阻止通常不會提供任何有意義的安全利益，但在某些情況下，對某些用戶可能有用，用於收集有關請求的更多信息，以及能夠報告它。"}
  Stop Forum Spam module: {"zh-Hans": "防止通过SFS列出的IP地址访问注册和登录页面。", "zh-Hant": "防止通過SFS列出的IP位址訪問註冊和登錄頁面。"}
  Tor blocker module: {"zh-Hans": "禁止通过DNSEL查找从Tor出口节点进行访问（支持IPv4和IPv6）。", "zh-Hant": "禁止通過DNSEL查找從Tor出口節點進行訪問（支持IPv4和IPv6）。"}
@@ -305,7 +305,7 @@ config:
  projecthoneypot_minimum_threat_score: {"zh-Hans": "为了让CIDRAM阻止IP地址所需的最低威胁分数（必须是1到100之间的数字）。标准=10。", "zh-Hant": "為了讓CIDRAM阻止IP位址所需的最低威脅分數（必須是1到100之間的數字）。標準=10。"}
  projecthoneypot_type_of_visitor: {"zh-Hans": "根据Project Honeypot确定的访问者类型进行阻止或分类。", "zh-Hant": "根據Project Honeypot確定的訪問者類型進行阻止或分類。"}
  protocol: {"zh-Hans": "协议阻塞模块的配置。", "zh-Hant": "協定阻塞模組的配置。"}
- protocol_blocked: {"zh-Hans": "选定的协议将被阻止。注意：不会影响通过强制请求使用相同协议的服务（例如，Cloudflare）路由的网站。", "zh-Hant": "選定的協定將被阻止。注意：不會影響通過強制請求使用相同協定的服務（例如，Cloudflare）路由的網站。"}
+ protocol_blocked: {"zh-Hans": "选定的协议将被阻止。", "zh-Hant": "選定的協定將被阻止。"}
  protocol_reason_message: {"zh-Hans": "阻止此类请求时显示的原因消息。", "zh-Hant": "阻止此類請求時顯示的原因消息。"}
  quic: {"zh-Hans": "Quic cloud兼容性模块配置。", "zh-Hant": "Quic cloud兼容性模組配置。"}
  quic_positive_action: {"zh-Hans": "CIDRAM遇到Quic cloud的请求时应该执行什么动作？ 标准操作 = 绕过。", "zh-Hant": "CIDRAM遇到Quic cloud的請求時應該執行什麼動作？ 標準操作 = 繞過。"}

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2026.02.18).
+# This file: French language data for the front-end (last modified: 2026.02.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -83,7 +83,7 @@ Extended Description:
   fr-FR: "Requis pour l'utilisation de toute fonctionnalité impliquant l'envoi d'e-mails.<br />{{Links.PHPMailer.PHPMailer}} est disponible via la licence {{Links.PHPMailer.License}}."
   fr-CA: "Requis pour l'utilisation de toute fonctionnalité impliquant l'envoi des courriels.<br />{{Links.PHPMailer.PHPMailer}} est disponible en vertu de la licence {{Links.PHPMailer.License}}."
  Project Honeypot module: "Bloque les requêtes des adresses IP répertoriées dans Project Honeypot."
- Protocol blocker module: "Fournit la possibilité de bloquer des protocoles de requête spécifiques via la configuration (par exemple, HTTP/0.9, HTTP/1.1, SPDY/3.0, etc). Remarque\_: N'aura aucun effet pour les sites Web qui acheminent via des services qui réécrivent les requêtes pour tous utiliser exactement le même protocole, tel que Cloudflare."
+ Protocol blocker module: "Fournit la possibilité de bloquer des protocoles de requête spécifiques via la configuration (par exemple, HTTP/0.9, HTTP/1.1, SPDY/3.0, etc)."
  Referrer spam module: "Le blocage basé sur le spam référent ne procure généralement aucun avantage de sécurité significatif, mais dans certains cas, cela pourrait être utile à certains utilisateurs pour rassembler plus d'informations sur les requêtes et pour pouvoir les rapporter."
  Stop Forum Spam module: "Protège l'enregistrement et les pages de connexion contre les adresses IP répertoriées par SFS."
  Tor blocker module: "Interdit l'accès à partir des nœuds de sortie Tor via les recherches DNSEL (le supporte IPv4 et IPv6)."
@@ -309,7 +309,7 @@ config:
  projecthoneypot_minimum_threat_score: "Le score de menace minimum requis pour que CIDRAM bloque une adresse IP (doit être un nombre compris entre 1 et 100). Défaut = 10."
  projecthoneypot_type_of_visitor: "Contrôle le blocage ou le profilage en fonction du type de visiteur tel que déterminé par Project Honeypot."
  protocol: "Configuration pour le module bloqueur de protocole."
- protocol_blocked: "Les protocoles sélectionnés seront bloqués. Remarque\_: N'aura aucun effet pour les sites Web qui acheminent via des services qui réécrivent les requêtes pour tous utiliser exactement le même protocole, tel que Cloudflare."
+ protocol_blocked: "Les protocoles sélectionnés seront bloqués."
  protocol_reason_message: "Le message de raison affiché lorsque de telles requêtes sont bloquées."
  quic: "Configuration pour le module de compatibilité Quic cloud."
  quic_positive_action: "Quelle action le CIDRAM doit-il effectuer lorsqu'il rencontre une requête de Quic cloud\_? Action par défaut = Contourner."

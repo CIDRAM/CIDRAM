@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data for the front-end (last modified: 2026.02.18).
+# This file: Hindi language data for the front-end (last modified: 2026.02.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -73,7 +73,7 @@ Extended Description:
  Optional security extras module: "आम तौर पर अनुरोधों में उपयोग किए गए विभिन्न हमले वाले वैक्टर के खिलाफ कुछ सीमित सुरक्षा प्रदान करता है।"
  PHPMailer: "ईमेल भेजने में शामिल किसी भी कार्यक्षमता का उपयोग करने के लिए आवश्यक है।<br />{{Links.PHPMailer.PHPMailer}} {{Links.PHPMailer.License}} लाइसेंस के माध्यम से उपलब्ध है।"
  Project Honeypot module: "Project Honeypot पर सूचीबद्ध IP से अनुरोध अवरुद्ध करता है।"
- Protocol blocker module: "कॉन्फ़िगरेशन के माध्यम से विशिष्ट अनुरोध प्रोटोकॉल को ब्लॉक करने की क्षमता प्रदान करता है (जैसे., HTTP/0.9, HTTP/1.1, SPDY/3.0, आदि)। नोट: कुछ सेवाएं (जैसे., Cloudflare) यह लागू करती हैं कि सभी अनुरोध एक ही प्रोटोकॉल का उपयोग करते हैं। ऐसी सेवाओं का उपयोग करने वाली वेबसाइटें मॉड्यूल से प्रभावित नहीं होंगी।"
+ Protocol blocker module: "कॉन्फ़िगरेशन के माध्यम से विशिष्ट अनुरोध प्रोटोकॉल को ब्लॉक करने की क्षमता प्रदान करता है (जैसे., HTTP/0.9, HTTP/1.1, SPDY/3.0, आदि)।"
  Referrer spam module: "रेफरल स्पैम पर आधारित ब्लॉकिंग आम तौर पर कोई सार्थक सुरक्षा लाभ प्रदान नहीं करेगा, लेकिन कुछ मामलों में, कुछ उपयोगकर्ताओं के लिए उपयोगी हो सकता है, अनुरोधों के बारे में अधिक जानकारी इकट्ठा करने के लिए, और इसे रिपोर्ट करने में सक्षम होने के लिए।"
  Stop Forum Spam module: "एसएफएस द्वारा सूचीबद्ध IP पते से पंजीकरण और लॉगिन पृष्ठ की सुरक्षा करता है।"
  Tor blocker module: "DNSEL लुकअप के जरिए टोर एग्जिट नोड्स से पहुंच को प्रतिबंधित करता है (IPv4 और IPv6 दोनों का समर्थन करता है)।"
@@ -271,7 +271,7 @@ config:
  projecthoneypot_minimum_threat_score: "CIDRAM के लिए IP पते को ब्लॉक करने के लिए आवश्यक न्यूनतम खतरा स्कोर (1 और 100 के बीच की कोई संख्या होनी चाहिए)। डिफ़ॉल्ट = "10"।"
  projecthoneypot_type_of_visitor: "Project Honeypot द्वारा निर्धारित विज़िटर के प्रकार के आधार पर ब्लॉक या प्रोफाइल करने के लिए नियंत्रण।"
  protocol: "प्रोटोकॉल ब्लॉकर मॉड्यूल के लिए कॉन्फ़िगरेशन।"
- protocol_blocked: "चयनित प्रोटोकॉल ब्लॉक कर दिए जाएंगे। नोट: कुछ सेवाएं (जैसे., Cloudflare) यह लागू करती हैं कि सभी अनुरोध एक ही प्रोटोकॉल का उपयोग करते हैं। ऐसी सेवाओं का उपयोग करने वाली वेबसाइटें मॉड्यूल से प्रभावित नहीं होंगी।"
+ protocol_blocked: "चयनित प्रोटोकॉल ब्लॉक कर दिए जाएंगे।"
  protocol_reason_message: "इस तरह के अनुरोधों को ब्लॉक किए जाने पर प्रदर्शित होने का कारण संदेश।"
  quic: "Quic cloud संगतता मॉड्यूल के लिए कॉन्फ़िगरेशन।"
  quic_positive_action: "Quic cloud से अनुरोध मिलने पर CIDRAM को कौन सी कार्रवाई करनी चाहिए? डिफ़ॉल्ट क्रिया = बाईपास करें।"

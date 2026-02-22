@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Farsi language data for the front (last modified: 2026.02.18).
+# This file: Farsi language data for the front (last modified: 2026.02.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -73,7 +73,7 @@ Extended Description:
  Optional security extras module: "برخی از محافظت های محدود در برابر بردارهای حمله مختلف که معمولاً در درخواست ها استفاده می شوند ارائه می دهد."
  PHPMailer: "برای استفاده از هر قابلیتی که شامل ارسال ایمیل باشد، لازم است.<br />{{Links.PHPMailer.PHPMailer}} از طریق مجوز {{Links.PHPMailer.License}} در دسترس است."
  Project Honeypot module: "درخواست‌های IP‌های فهرست‌شده در Project Honeypot را مسدود می‌کند."
- Protocol blocker module: "امکان مسدود کردن پروتکل های درخواستی خاص را از طریق پیکربندی فراهم می‌کند (به عنوان مثال، HTTP/0.9 ،HTTP/1.1 ،SPDY/3.0، غیره). توجه داشته باشید: بر روی وب سایت هایی که از طریق سرویس هایی که درخواست ها را بازنویسی می کنند مسیریابی می کنند تا همه از پروتکل یکسان استفاده کنند (به عنوان مثال، Cloudflare) تأثیری نخواهد گذاشت."
+ Protocol blocker module: "امکان مسدود کردن پروتکل های درخواستی خاص را از طریق پیکربندی فراهم می‌کند (به عنوان مثال، HTTP/0.9 ،HTTP/1.1 ،SPDY/3.0، غیره)."
  Referrer spam module: "مسدود کردن بر اساس اسپم های ارجاع دهنده معمولاً هیچ مزیت امنیتی معنی داری ارائه نمی دهد، اما در برخی موارد می تواند برای برخی از کاربران مفید باشد، برای جمع آوری اطلاعات بیشتر در مورد درخواست ها و امکان گزارش آن."
  Stop Forum Spam module: "از صفحات ثبت نام و ورود به سیستم در برابر IP های لیست شده توسط SFS محافظت می‌کند."
  Tor blocker module: "دسترسی از گره های خروج Tor را از طریق جستجوهای DNSEL ممنوع می‌کند (از هر دو IPv4 و IPv6 پشتیبانی می‌کند)."
@@ -271,7 +271,7 @@ config:
  projecthoneypot_minimum_threat_score: "حداقل امتیاز تهدید مورد نیاز برای مسدود کردن یک آدرس IP توسط CIDRAM (باید عددی بین 1 تا 100 باشد). پیش فرض = 10."
  projecthoneypot_type_of_visitor: "بر اساس نوع بازدیدکننده که توسط Project Honeypot تعیین می شود، مسدود کردن یا نمایه شدن را کنترل می‌کند."
  protocol: "پیکربندی برای ماژول مسدود کننده پروتکل."
- protocol_blocked: "پروتکل های انتخاب شده مسدود خواهند شد. توجه داشته باشید: بر روی وب سایت هایی که از طریق سرویس هایی که درخواست ها را بازنویسی می کنند مسیریابی می کنند تا همه از پروتکل یکسان استفاده کنند (به عنوان مثال، Cloudflare) تأثیری نخواهد گذاشت."
+ protocol_blocked: "پروتکل های انتخاب شده مسدود خواهند شد."
  protocol_reason_message: "پیام دلیل نمایش داده شده زمانی که چنین درخواست هایی مسدود می شوند."
  quic: "پیکربندی ماژول سازگاری Quic cloud."
  quic_positive_action: "وقتی CIDRAM با درخواست Quic cloud مواجه می شود، کدام عمل را باید انجام دهد؟ اقدام پیش فرض = میان بر."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bosnian language data for the front-end (last modified: 2026.02.18).
+# This file: Bosnian language data for the front-end (last modified: 2026.02.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -73,7 +73,7 @@ Extended Description:
  Optional security extras module: "Pruža ograničenu zaštitu od različitih vektora napada koji se obično koriste u zahtjevima."
  PHPMailer: "Potrebno za korištenje funkcionalnost koja šalje e-poštu.<br />{{Links.PHPMailer.PHPMailer}} je dostupan preko {{Links.PHPMailer.License}} licence."
  Project Honeypot module: "Blokira zahtjeve sa IP adresa navedenih na Project Honeypot."
- Protocol blocker module: "Pruža mogućnost blokiranja specifičnih protokola zahtjeva putem konfiguracije (npr., HTTP/0.9, HTTP/1.1, SPDY/3.0, itd). Bilješka: Neće imati nikakvog efekta na one web stranice koje usmjeravaju putem servisa koji prepisuju zahtjeve da svi koriste potpuno isti protokol, kao što je Cloudflare."
+ Protocol blocker module: "Pruža mogućnost blokiranja specifičnih protokola zahtjeva putem konfiguracije (npr., HTTP/0.9, HTTP/1.1, SPDY/3.0, itd)."
  Referrer spam module: "Blokiranje zasnovano na neželjenoj e-pošti preporuke generalno neće pružiti nikakvu značajnu sigurnosnu prednost, ali u nekim slučajevima može biti korisno za neke korisnike, za prikupljanje više informacija o zahtjevima i mogućnost prijaviti."
  Stop Forum Spam module: "IP adresama koje navodi SFS biće onemogućen pristup stranicama za prijavu i registraciju."
  Tor blocker module: "Zabranjuje pristup iz Tor izlaznih čvorova putem DNSEL pretraživanja (IPv4 i IPv6 oba podržana)."
@@ -271,7 +271,7 @@ config:
  projecthoneypot_minimum_threat_score: "Minimalni rezultat prijetnje potreban da bi CIDRAM blokirao IP adresu (mora biti broj između 1 i 100). Zadano = 10."
  projecthoneypot_type_of_visitor: "Kontrole da li blokirati ili profilisati na osnovu tipa posjetitelja kako je odredio Project Honeypot."
  protocol: "Konfiguracija za modul za blokiranje protokola."
- protocol_blocked: "Odabrani protokoli će biti blokirani. Bilješka: Neće imati nikakvog učinka za ona web stranicu koja usmjeravaju kroz usluge koje prepisuju zahtjeve tako da svi koriste potpuno isti protokol, kao što je Cloudflare."
+ protocol_blocked: "Odabrani protokoli će biti blokirani."
  protocol_reason_message: "Poruka razloga se prikazuje kada su takvi zahtjevi blokirani."
  quic: "Konfiguracija za Quic cloud kompatibilni modul."
  quic_positive_action: "Koju radnju CIDRAM treba izvršiti kada naiđe na zahtjev od Quic cloud-a? Zadana radnja = Zaobići."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2026.02.18).
+# This file: English language data for the front-end (last modified: 2026.02.22).
 ##/
 
 Abuse category:
@@ -63,7 +63,7 @@ Extended Description:
   en-AU: "Required for using any functionality that involves sending email.<br />{{Links.PHPMailer.PHPMailer}} is available via the {{Links.PHPMailer.License}} licence."
   en-US: "Required for using any functionality that involves sending email.<br />{{Links.PHPMailer.PHPMailer}} is available via the {{Links.PHPMailer.License}} license."
  Project Honeypot module: "Blocks requests from IPs listed at Project Honeypot."
- Protocol blocker module: "Provides the ability to block specific request protocols via the configuration (e.g., HTTP/0.9, HTTP/1.1, SPDY/3.0, etc). Note: Won't have any effect for those websites routing through services which rewrite requests to all use the exact same protocol, such as Cloudflare."
+ Protocol blocker module: "Provides the ability to block specific request protocols via the configuration (e.g., HTTP/0.9, HTTP/1.1, SPDY/3.0, etc)."
  Referrer spam module: "Blocking based on referrer spam won't generally provide any meaningful security benefit, but in some cases, could be useful for some users, for gathering more information about requests, and for being able to report it."
  Stop Forum Spam module: "Protects registration and login pages against IPs listed by SFS."
  Tor blocker module: "Prohibits access from Tor exit nodes through DNSEL lookups (supports both IPv4 and IPv6)."
@@ -282,7 +282,7 @@ config:
  projecthoneypot_minimum_threat_score: "The minimum threat score required in order for CIDRAM to block an IP address (must be a number between 1 and 100). Default = 10."
  projecthoneypot_type_of_visitor: "Controls for whether to block or profile based on type of visitor as determined by Project Honeypot."
  protocol: "Configuration for the protocol blocker module."
- protocol_blocked: "Selected protocols will be blocked. Note: Won't have any effect for those websites routing through services which rewrite requests to all use the exact same protocol, such as Cloudflare."
+ protocol_blocked: "Selected protocols will be blocked."
  protocol_reason_message: "The reason message displayed when such requests are blocked."
  quic: "Quic cloud compatibility module configuration."
  quic_positive_action: "Which action should CIDRAM perform when it encounters a request from Quic cloud? Default action = Bypass."

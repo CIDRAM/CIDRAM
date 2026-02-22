@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Gujarati language data for the front-end (last modified: 2026.02.18).
+# This file: Gujarati language data for the front-end (last modified: 2026.02.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -73,7 +73,7 @@ Extended Description:
  Optional security extras module: "સામાન્ય રીતે વિનંતીઓમાં ઉપયોગમાં લેવાતા વિવિધ હુમલા વેક્ટર સામે કેટલાક મર્યાદિત રક્ષણ પૂરું પાડે છે."
  PHPMailer: "કોઈપણ કાર્યક્ષમતાનો ઉપયોગ કરવા માટે જરૂરી છે જેમાં ઇમેઇલ મોકલવાનો સમાવેશ થાય છે.<br />{{Links.PHPMailer.PHPMailer}} {{Links.PHPMailer.License}} લાયસન્સ દ્વારા ઉપલબ્ધ છે."
  Project Honeypot module: "Project Honeypot પર સૂચિબદ્ધ IP ની વિનંતીઓને અવરોધિત કરે છે."
- Protocol blocker module: "રૂપરેખાંકન દ્વારા ચોક્કસ વિનંતી પ્રોટોકોલને અવરોધિત કરવાની ક્ષમતા પ્રદાન કરે છે (દા.ત., HTTP/0.9, HTTP/1.1, SPDY/3.0, વગેરે). નૉૅધ: કેટલીક સેવાઓ તમામ વિનંતીઓને સમાન પ્રોટોકોલનો ઉપયોગ કરવાની ફરજ પાડે છે. આવી સેવાઓનો ઉપયોગ કરતી વેબસાઇટ્સ માટે, તેની કોઈ અસર થશે નહીં."
+ Protocol blocker module: "રૂપરેખાંકન દ્વારા ચોક્કસ વિનંતી પ્રોટોકોલને અવરોધિત કરવાની ક્ષમતા પ્રદાન કરે છે (દા.ત., HTTP/0.9, HTTP/1.1, SPDY/3.0, વગેરે)."
  Referrer spam module: "રેફરર સ્પામના આધારે અવરોધિત કરવાથી સામાન્ય રીતે કોઈ અર્થપૂર્ણ સુરક્ષા લાભ મળશે નહીં, પરંતુ કેટલાક કિસ્સાઓમાં, કેટલાક વપરાશકર્તાઓ માટે, વિનંતીઓ વિશે વધુ માહિતી ભેગી કરવા અને તેની જાણ કરવામાં સક્ષમ થવા માટે ઉપયોગી થઈ શકે છે."
  Stop Forum Spam module: "SFS દ્વારા સૂચિબદ્ધ IP સરનામાઓ સામે નોંધણી અને લૉગિન પૃષ્ઠોનું રક્ષણ કરે છે."
  Tor blocker module: "DNSEL લુકઅપ્સ દ્વારા ટોર એક્ઝિટ નોડ્સની ઍક્સેસને પ્રતિબંધિત કરે છે (IPv4 અને IPv6 બંનેને સપોર્ટ કરે છે)."
@@ -271,7 +271,7 @@ config:
  projecthoneypot_minimum_threat_score: "CIDRAM ને IP સરનામાંને અવરોધિત કરવા માટે જરૂરી ન્યૂનતમ ધમકીનો સ્કોર (1 અને 100 ની વચ્ચેની સંખ્યા હોવી આવશ્યક છે). ડિફૉલ્ટ = 10."
  projecthoneypot_type_of_visitor: "Project Honeypot દ્વારા નિર્ધારિત મુલાકાતીઓના પ્રકારને આધારે અવરોધિત કરવું કે પ્રોફાઇલ કરવું તેના નિયંત્રણો."
  protocol: "પ્રોટોકોલ બ્લોકર મોડ્યુલ માટે રૂપરેખાંકન."
- protocol_blocked: "પસંદ કરેલ પ્રોટોકોલ અવરોધિત કરવામાં આવશે. નૉૅધ: કેટલીક સેવાઓ તમામ વિનંતીઓને સમાન પ્રોટોકોલનો ઉપયોગ કરવાની ફરજ પાડે છે. આવી સેવાઓનો ઉપયોગ કરતી વેબસાઇટ્સ માટે, તેની કોઈ અસર થશે નહીં."
+ protocol_blocked: "પસંદ કરેલ પ્રોટોકોલ અવરોધિત કરવામાં આવશે."
  protocol_reason_message: "જ્યારે આવી વિનંતીઓ અવરોધિત કરવામાં આવે ત્યારે પ્રદર્શિત કરવાનો કારણ સંદેશ."
  quic: "Quic cloud સુસંગતતા મોડ્યુલ રૂપરેખાંકન."
  quic_positive_action: "જ્યારે CIDRAM ને Quic cloud તરફથી વિનંતી મળે ત્યારે કઈ ક્રિયા કરવી જોઈએ? ડિફૉલ્ટ ક્રિયા = બાયપાસ."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2026.02.18).
+# This file: Portuguese language data for the front-end (last modified: 2026.02.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -83,7 +83,7 @@ Extended Description:
  Optional security extras module: "Fornece algumas proteções limitadas contra vários vectores de ataque comumente usado em solicitações."
  PHPMailer: "Necessário para usar qualquer funcionalidade que envolva o envio de e-mail.<br />{{Links.PHPMailer.PHPMailer}} está disponível através do licença {{Links.PHPMailer.License}}."
  Project Honeypot module: "Bloqueia solicitações de IPs listados no Project Honeypot."
- Protocol blocker module: "Fornece a capacidade de bloquear protocolos de solicitação específicos por meio da configuração (por exemplo, HTTP/0.9, HTTP/1.1, SPDY/3.0, etc). Nota: Não terá nenhum efeito para os sites que roteiam por meio de serviços que reescrevem solicitações para usar exatamente o mesmo protocolo, como Cloudflare."
+ Protocol blocker module: "Fornece a capacidade de bloquear protocolos de solicitação específicos por meio da configuração (por exemplo, HTTP/0.9, HTTP/1.1, SPDY/3.0, etc)."
  Referrer spam module:
   pt-BR: "O bloqueio baseado em spam de referência geralmente não fornece nenhum benefício de segurança significativo, mas, em alguns casos, pode ser útil para alguns usuários, para coletar mais informações sobre solicitações e para relatá-las."
   pt-PT: "O bloqueio baseado em spam de referência geralmente não fornece nenhum benefício de segurança significativo, mas, em alguns casos, pode ser útil para alguns utilizadores, para coletar mais informações sobre solicitações e para relatá-las."
@@ -375,7 +375,7 @@ config:
  projecthoneypot_minimum_threat_score: "A pontuação mínima de ameaça necessária para que o CIDRAM bloqueie um endereço IP (deve ser um número entre 1 e 100). Padrão = 10."
  projecthoneypot_type_of_visitor: "Controles para bloqueio ou perfil com base no tipo de visitante, conforme determinado pelo Projeto Honeypot."
  protocol: "Configuração para o módulo bloqueador de protocolo."
- protocol_blocked: "Os protocolos selecionados serão bloqueados. Nota: Não terá nenhum efeito para os sites que roteiam por meio de serviços que reescrevem solicitações para usar exatamente o mesmo protocolo, como Cloudflare."
+ protocol_blocked: "Os protocolos selecionados serão bloqueados."
  protocol_reason_message: "A mensagem de motivo exibida quando tais solicitações são bloqueados."
  quic: "Configuração para o módulo de compatibilidade Quic cloud."
  quic_positive_action: "Qual ação o CIDRAM deve executar quando encontrar uma solicitação do Quic cloud? Ação padrão = Contornar."

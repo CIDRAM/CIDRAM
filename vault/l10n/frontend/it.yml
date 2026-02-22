@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2026.02.18).
+# This file: Italian language data for the front-end (last modified: 2026.02.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -73,7 +73,7 @@ Extended Description:
  Optional security extras module: "Fornisce alcune protezioni limitate contro i vari vettori di attacco comunemente usata nelle richieste."
  PHPMailer: "Richiesto per l'utilizzo di qualsiasi funzionalità che implica l'invio di posta elettronica.<br />{{Links.PHPMailer.PHPMailer}} è disponibile tramite la licenza {{Links.PHPMailer.License}}."
  Project Honeypot module: "Blocca le richieste dagli IP elencati in Project Honeypot."
- Protocol blocker module: "Fornisce la possibilità di bloccare specifici protocolli di richiesta tramite la configurazione (per esempio, HTTP/0.9, HTTP/1.1, SPDY/3.0, ecc). Nota: Non avrà alcun effetto per quei siti Web che instradano attraverso servizi che riscrivono le richieste in modo che tutti utilizzino esattamente lo stesso protocollo, come Cloudflare."
+ Protocol blocker module: "Fornisce la possibilità di bloccare specifici protocolli di richiesta tramite la configurazione (per esempio, HTTP/0.9, HTTP/1.1, SPDY/3.0, ecc)."
  Referrer spam module: "Il blocco basato sullo spam dei referrer in genere non offre alcun vantaggio significativo in termini di sicurezza, ma in alcuni casi potrebbe essere utile per alcuni utenti, per raccogliere maggiori informazioni sulle richieste e per poterle rapporta."
  Stop Forum Spam module: "Protegge le pagine di registrazione e di accesso agli IP elencati da SFS."
  Tor blocker module: "Proibisce l'accesso dai nodi di uscita Tor tramite ricerche DNSEL (supporta sia IPv4 che IPv6)."
@@ -271,7 +271,7 @@ config:
  projecthoneypot_minimum_threat_score: "Il punteggio minimo di minaccia richiesto affinché CIDRAM blocca un indirizzo IP (deve essere un numero compreso tra 1 e 100). Predefinito = 10."
  projecthoneypot_type_of_visitor: "Controlla se bloccare o profilare in base al tipo di visitatore come determinato da Project Honeypot."
  protocol: "Configurazione per il modulo bloccante dei protocolli."
- protocol_blocked: "I protocolli selezionati verranno bloccati. Nota: Non avrà alcun effetto per quei siti Web che instradano attraverso servizi che riscrivono le richieste in modo che tutti utilizzino esattamente lo stesso protocollo, come Cloudflare."
+ protocol_blocked: "I protocolli selezionati verranno bloccati."
  protocol_reason_message: "Il messaggio di motivo visualizzato quando tali richieste vengono bloccate."
  quic: "Configurazione per il modulo di compatibilità Quic cloud."
  quic_positive_action: "Quale azione dovrebbe eseguire da CIDRAM quando incontra una richiesta da Quic cloud? Azione predefinita = Bypassarlo."

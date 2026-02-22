@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2025.09.24).
+ * This file: Protect traits (last modified: 2026.02.22).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -91,7 +91,7 @@ trait Protect
             'Expired' => '',
             'Ignored' => '',
             'Request_Method' => $_SERVER['REQUEST_METHOD'] ?? '',
-            'Protocol' => $_SERVER['SERVER_PROTOCOL'] ?? '',
+            'Protocol' => isset($_SERVER['SERVER_PROTOCOL'], $_SERVER['X-Forwarded-Proto']) && $_SERVER['SERVER_PROTOCOL'] === 'HTTP/1.1' ? $_SERVER['X-Forwarded-Proto'] : ($_SERVER['SERVER_PROTOCOL'] ?? ''),
             'SEC_CH_UA_PLATFORM' => $_SERVER['HTTP_SEC_CH_UA_PLATFORM'] ?? '',
             'SEC_CH_UA_MOBILE' => $_SERVER['HTTP_SEC_CH_UA_MOBILE'] ?? '',
             'SEC_CH_UA' => $_SERVER['HTTP_SEC_CH_UA'] ?? '',

@@ -1471,7 +1471,7 @@ Protocol blocker module:
   CIDRAM Core: "^4"
  When Install Succeeds: ["queue message response.please_check_config"]
  When Update Succeeds:
-  - "if {Components.Meta.Protocol blocker module.Version}<2026.52&&{Components.RemoteMeta.Protocol blocker module.Version}>=2026.52 then queue message <span dir="ltr" lang="en-AU">[Protocol blocker module 2026.52.0] Prior to this update, for websites running behind reverse-proxies, protocol would always be reported as HTTP/1/1; As on this update, the correct protocol should now be being reported (so, for those behind Cloudflare, you *may* want to revise your configuration for this module accordingly).</span>"
+  - "if {Components.Meta.Protocol blocker module.Version}<2026.52&&{Components.RemoteMeta.Protocol blocker module.Version}>=2026.52 then queue message <span dir="ltr" lang="en-AU">[Protocol blocker module 2026.52.0] Prior to this update, for websites running behind reverse-proxies, protocol would always be reported as HTTP/1.1. As of this update, the correct protocol should now be being reported (so, for those behind Cloudflare, you *may* want to revise your configuration for this module accordingly).</span>"
  Files:
   imports/protocol.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/imports/protocol.yml"

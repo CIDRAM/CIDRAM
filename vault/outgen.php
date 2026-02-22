@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2025.08.22).
+ * This file: Output generator (last modified: 2026.02.22).
  */
 
 /** Initialise cache. */
@@ -143,7 +143,7 @@ if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode']) {
 
     if (!$CIDRAM['TestResults']) {
         /** If all tests fail, report an invalid IP address and kill the request. */
-        $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['L10N']->getString('ReasonMessage_BadIP');
+        $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['Client-L10N']->getString('ReasonMessage_BadIP') ?: $CIDRAM['L10N']->getString('ReasonMessage_BadIP');
         $CIDRAM['BlockInfo']['WhyReason'] = $CIDRAM['L10N']->getString('Short_BadIP');
         $CIDRAM['BlockInfo']['SignatureCount']++;
     } else {
@@ -161,7 +161,7 @@ if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode']) {
             $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddrResolved']]['Count'] >= $CIDRAM['Config']['signatures']['infraction_limit']
         ))) {
             $CIDRAM['Banned'] = true;
-            $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['L10N']->getString('ReasonMessage_Banned');
+            $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['Client-L10N']->getString('ReasonMessage_Banned') ?: $CIDRAM['L10N']->getString('ReasonMessage_Banned');
             $CIDRAM['BlockInfo']['WhyReason'] = $CIDRAM['L10N']->getString('Short_Banned');
             $CIDRAM['BlockInfo']['SignatureCount']++;
         }
@@ -337,7 +337,7 @@ if ($CIDRAM['RL_Active'] && isset($CIDRAM['Factors']) && (!$CIDRAM['Config']['ra
             if ($CIDRAM['Trigger']((
                 ($CIDRAM['RL_MaxBandwidth'] > 0 && $CIDRAM['RL_Usage']['Bytes'] >= $CIDRAM['RL_MaxBandwidth']) ||
                 ($CIDRAM['Config']['rate_limiting']['max_requests'] > 0 && $CIDRAM['RL_Usage']['Requests'] >= $CIDRAM['Config']['rate_limiting']['max_requests'])
-            ), $CIDRAM['L10N']->getString('Short_RL'), sprintf($CIDRAM['L10N']->getString('ReasonMessage_RL'), $CIDRAM['RL_Formatted']))) {
+            ), $CIDRAM['L10N']->getString('Short_RL'), sprintf($CIDRAM['Client-L10N']->getString('ReasonMessage_RL') ?: $CIDRAM['L10N']->getString('ReasonMessage_RL'), $CIDRAM['RL_Formatted']))) {
                 $CIDRAM['Config']['recaptcha']['usemode'] = 0;
                 $CIDRAM['Config']['recaptcha']['enabled'] = false;
                 $CIDRAM['Config']['hcaptcha']['usemode'] = 0;
@@ -745,7 +745,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
         $CIDRAM['BlockInfo']['ReasonMessage'] .= sprintf(
             '<br /><br /><span%s>%s</span>',
             $CIDRAM['L10N-Lang-Attache'],
-            $CIDRAM['Client-L10N']->getString('MoreInfo')
+            $CIDRAM['Client-L10N']->getString('MoreInfo') ?: $CIDRAM['L10N']->getString('MoreInfo')
         );
         $CIDRAM['Arrayify']($CIDRAM['Config']['More Info']);
 
@@ -761,19 +761,14 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
     }
 
     /** Parsed to the template file. */
-    $CIDRAM['Parsables'] = array_merge(
-        $CIDRAM['FieldTemplates'],
-        $CIDRAM['FieldTemplates'],
-        $CIDRAM['BlockInfo'],
-        [
-            'L10N-Lang-Attache' => $CIDRAM['L10N-Lang-Attache'],
-            'GeneratedBy' => !$CIDRAM['Config']['general']['hide_version'] ? sprintf(
-                $CIDRAM['Client-L10N']->getString('generated_by'),
-                '<div id="ScriptIdent" dir="ltr">' . $CIDRAM['ScriptIdent'] . '</div>'
-            ) : '',
-            'Title' => $CIDRAM['Client-L10N']->getString($CIDRAM['Config']['template_data']['block_event_title']) ?: $CIDRAM['Config']['template_data']['block_event_title']
-        ]
-    );
+    $CIDRAM['Parsables'] = array_merge($CIDRAM['FieldTemplates'], $CIDRAM['BlockInfo'], [
+        'L10N-Lang-Attache' => $CIDRAM['L10N-Lang-Attache'],
+        'GeneratedBy' => !$CIDRAM['Config']['general']['hide_version'] ? sprintf(
+            $CIDRAM['Client-L10N']->getString('generated_by'),
+            '<div id="ScriptIdent" dir="ltr">' . $CIDRAM['ScriptIdent'] . '</div>'
+        ) : '',
+        'Title' => $CIDRAM['Client-L10N']->getString($CIDRAM['Config']['template_data']['block_event_title']) ?: $CIDRAM['Config']['template_data']['block_event_title']
+    ]);
 
     /** Pull relevant client-specified L10N data first. */
     if (!empty($CIDRAM['L10N-Lang-Attache'])) {

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2026.02.15).
+ * This file: Functions file (last modified: 2026.02.22).
  */
 
 /**
@@ -474,7 +474,7 @@ $CIDRAM['CheckFactors'] = function (array $Files, array $Factors) use (&$CIDRAM)
                                 if (empty($CIDRAM['Config']['signatures'][$Params['Config']])) {
                                     continue 2;
                                 }
-                                $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['L10N']->getString($Params['ReasonLong']);
+                                $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['Client-L10N']->getString($Params['ReasonLong']) ?: $CIDRAM['L10N']->getString($Params['ReasonLong']);
                                 if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
                                     $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
                                 }

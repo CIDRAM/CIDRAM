@@ -422,7 +422,7 @@ hints_http_response_header_code:
  2.: "Jika entitas yang meminta telah diblokir karena melampaui batas pelanggaran, pesan status HTTP untuk "dilarang" akan digunakan."
  3.: "Jika diblokir karena pembatasan laju, 429 akan digunakan, atau jika diblokir karena konflik sumber daya, pesan status HTTP yang ditentukan oleh <code class="s">signatures➡conflict_response</code> akan digunakan (pembatasan laju dan konflik sumber daya mempunyai prioritas yang sama dalam konteks ini)."
  4.: "Jika diblokir karena aturan tambahan yang menetapkan "penggantian kode status HTTP", penggantian kode status HTTP tersebut akan digunakan."
- 5.: "Jika diblokir karena alasan hukum (misalnya, jika diblokir karena tanda tangan khusus yang menggunakan kata singkatan "hukum"), pesan status HTTP untuk "hukum" akan digunakan."
+ 5.: "Jika diblokir karena alasan hukum (misalnya, jika diblokir karena tanda tangan kustom yang menggunakan kata singkatan "hukum"), pesan status HTTP untuk "hukum" akan digunakan."
  6.: "Untuk semua permintaan terblokir lainnya, pesan status HTTP untuk "default" akan digunakan (ini memiliki prioritas terendah)."
 hints_inspection: "* Dimaksudkan hanya untuk men-debug aturan tambahan. Tidak ditampilkan kepada pengguna yang diblokir."
 hints_ipv6_on_32bit: "Catat: Pencarian IPv6 mungkin tidak bekerja dengan benar pada beberapa sistem 32-bit."

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2026.02.22).
+ * This file: Output generator (last modified: 2026.02.23).
  */
 
 /** Initialise cache. */
@@ -172,7 +172,7 @@ if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode']) {
 $CIDRAM['Trackable'] = $CIDRAM['Config']['signatures']['track_mode'];
 
 /** Perform forced hostname lookup if this has been enabled. */
-if ($CIDRAM['Config']['general']['force_hostname_lookup']) {
+if ($CIDRAM['Config']['general']['force_hostname_lookup'] && !$CIDRAM['Config']['general']['maintenance_mode']) {
     $CIDRAM['Stage'] = '';
     $CIDRAM['Hostname'] = $CIDRAM['DNS-Reverse']($CIDRAM['BlockInfo']['IPAddrResolved'] ?: $CIDRAM['BlockInfo']['IPAddr']);
 }

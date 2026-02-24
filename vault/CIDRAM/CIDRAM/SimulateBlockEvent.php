@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used to simulate block events (last modified: 2026.02.22).
+ * This file: Methods used to simulate block events (last modified: 2026.02.24).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -425,6 +425,6 @@ trait SimulateBlockEvent
      */
     private function correctFieldInput(string $Input = ''): string
     {
-        return preg_replace(['~([.:])x(?:/.+)?$~i', '~[/, ].*$|&[a-z]+;|(?!.*:)(?<!:.{0,4})[^\d.](?!.*:)|(?!.*\.)(?<!\..{0,3})[^\da-f:](?!.*\.)~i', '~\.{2,}~', '~:{3,}~'], ['{\1}0', '', '.', '::'], $Input);
+        return preg_replace(['~([.:])x(?:/.+)?$~i', '~[/, ].*$|&[a-z]+;|(?!.*:)(?<!:)(?<!:.)(?<!:..)(?<!:...)(?<!:....)[^\d.](?!.*:)|(?!.*\.)(?<!\.)(?<!\..)(?<!\...)(?<!\....)[^\da-f:](?!.*\.)|[. ]+$~i', '~\.{2,}~', '~:{3,}~'], ['{\1}0', '', '.', '::'], $Input);
     }
 }

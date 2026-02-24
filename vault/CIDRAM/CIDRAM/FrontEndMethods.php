@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2025.10.03).
+ * This file: General methods used by the front-end (last modified: 2026.02.24).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1086,9 +1086,10 @@ trait FrontEndMethods
      * @param string $DeleteKey The key to use for async calls to delete a cache entry.
      * @param int $Depth Current cache entry list depth.
      * @param string $ParentKey An optional key of the parent data source.
+     * @param string $ListSection An optional HTML ID for the parent data source.
      * @return string The generated clickable list.
      */
-    private function arrayToClickableList(array $Arr = [], string $DeleteKey = '', int $Depth = 0, string $ParentKey = ''): string
+    private function arrayToClickableList(array $Arr = [], string $DeleteKey = '', int $Depth = 0, string $ParentKey = '', string $ListSection = ''): string
     {
         if ($Depth === 0) {
             $this->CIDRAM['ListGroups'] = [];
@@ -1116,20 +1117,22 @@ trait FrontEndMethods
             }
             if ($Depth === 1 && isset($this->CIDRAM['ListGroups'][$ParentKey])) {
                 $Delete = sprintf(
-                    ' – (<span onclick="javascript:%1$s(\'%2$s\')"><code><span class="auxicon auxrd delete" title="%3$s"></span><span class="s auxicontxt">%3$s</span></code></span>)',
+                    ' – (<span onclick="javascript:%1$s(\'%2$s\'%3$s)"><code><span class="auxicon auxrd delete" title="%4$s"></span><span class="s auxicontxt">%4$s</span></code></span>)',
                     $DeleteKey,
                     $this->escapeJsInHTML($ParentKey . '-' . $Key),
+                    $ListSection === '' ? '' : ',\'' . $ListSection . '\'',
                     $this->L10N->getString('field.Delete')
                 );
-                $Output .= '<span id="' . $this->escapeJsInHTML($ParentKey . '-' . $Key) . 'Container">';
+                $Output .= '<span id="' . $this->escapeJsInHTML($ParentKey . '-' . $Key) . 'Container' . $ListSection . '">';
             } elseif ($Depth === 0) {
                 $Delete = sprintf(
-                    ' – (<span onclick="javascript:%1$s(\'%2$s\')"><code><span class="auxicon auxrd delete" title="%3$s"></span><span class="s auxicontxt">%3$s</span></code></span>)',
+                    ' – (<span onclick="javascript:%1$s(\'%2$s\'%3$s)"><code><span class="auxicon auxrd delete" title="%4$s"></span><span class="s auxicontxt">%4$s</span></code></span>)',
                     $DeleteKey,
                     (isset($this->CIDRAM['ListGroups'][$Key]) ? '^' : '') . $this->escapeJsInHTML($Key),
+                    $ListSection === '' ? '' : ',\'' . $ListSection . '\'',
                     $this->L10N->getString('field.Delete')
                 );
-                $Output .= '<span id="' . $this->escapeJsInHTML($Key) . 'Container">';
+                $Output .= '<span id="' . $this->escapeJsInHTML($Key) . 'Container' . $ListSection . '">';
             } else {
                 $Delete = '';
             }
@@ -1164,7 +1167,7 @@ trait FrontEndMethods
                     }
                 }
                 $Output .= '<span class="comCat"><code class="s">' . str_replace(['<', '>'], ['&lt;', '&gt;'], $Key) . '</code></span>' . $Delete . '<ul class="comSub">';
-                $Output .= $this->arrayToClickableList($Value, $DeleteKey, $Depth + 1, $Key) . '</ul>';
+                $Output .= $this->arrayToClickableList($Value, $DeleteKey, $Depth + 1, $Key, $ListSection) . '</ul>';
             } elseif (is_scalar($Value)) {
                 if ($Key === 'Time' && preg_match('~^\d+$~', $Value)) {
                     $Key = $this->L10N->getString('label.Expires');

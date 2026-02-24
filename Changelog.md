@@ -511,6 +511,7 @@
 
 #### Bugs fixed.
 - [2026.01.25]: The page request's query parameters weren't being properly retained when submitting CAPTCHA forms; Fixed (#663).
+- [2026.02.22]: Some text on the access denied page wasn't showing in the correct language; Fixed (#666).
 
 #### Other changes.
 - [2026.01.20]: Added a hint at the auxiliary rules page for how to use CIDR as a condition source.
@@ -520,5 +521,5 @@
 - [2026.02.16]: Added support for suggestions for the ignore condition source at the auxiliary rules page.
 - [2026.02.18]: Improved the hinting for the usemode configuration directive (#657).
 - [2026.02.22]: CIDRAM can now account for X-Forwarded-Proto when handling the request's protocol (#673).
-- [2026.02.22]: Improve client-specified L10N support (#666).
+- [2026.02.24]: The cache data page can now manage flatfile caching and APCU caching alongside whatever else is enabled at the same time (sometimes useful for when switching between different caching mechanisms but needing to manage entries from both mechanisms or others at the same time).
 - *Plus all the regular signature updates.*

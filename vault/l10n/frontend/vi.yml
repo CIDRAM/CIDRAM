@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2026.02.24).
+# This file: Vietnamese language data for the front-end (last modified: 2026.02.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -144,8 +144,6 @@ config:
  bgpview_whitelisted_asns: &ConfigWhitelistedASNs "Danh sách các ASN sẽ được đưa vào danh sách trắng khi được đối sánh bởi mô-đun."
  bgpview_whitelisted_ccs: &ConfigWhitelistedCCs "Danh sách các quốc gia (được xác định bằng mã quốc gia 2 chữ số {{Links.ISO.3166}} của họ) sẽ được đưa vào danh sách trắng khi được đối sánh bởi mô-đun."
  bobuam: "Cấu hình cho "mô-đun cho các đại lý người dùng của bot hoặc trình duyệt" tùy chọn, giúp phát hiện các bot không mong muốn, trình duyệt cũ, và thực hiện một số kiểm tra an toàn."
- bobuam_block_bots: "Chặn các bot được nhận dạng là độc hại hoặc không mong muốn?"
- bobuam_block_eol_browsers: "Chặn các trình duyệt đã hết tuổi thọ? (Đặt các phiên bản bên dưới)."
  bobuam_chrome: "Phiên bản thấp nhất được phép của mã thông báo "Chrome/Chromium". Khuyến khích: {{BOBUAM Token.Chrome}}."
  bobuam_edge: "Phiên bản thấp nhất được phép của mã thông báo "Edg/Edge". Khuyến khích: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "Phiên bản thấp nhất được phép của mã thông báo "Firefox". Khuyến khích: {{BOBUAM Token.Firefox}}."
@@ -157,7 +155,7 @@ config:
  bobuam_reason_malformed: "Lý do chặn được hiển thị khi phát hiện chuỗi đại lý người dùng dị dạng."
  bobuam_reason_masquerade: "Lý do chặn được hiển thị khi một đại lý người dùng cố gắng giả mạo thành một thứ khác."
  bobuam_safari: "Phiên bản thấp nhất được phép của mã thông báo "Version" của Safari. Khuyến khích: {{BOBUAM Token.Safari}}."
- bobuam_sanity_check: "Chặn các trình duyệt hiển thị các chuỗi đại lý người dùng không rõ ràng hoặc dị dạng?"
+ bobuam_what_to_block: "Nên chặn những gì?"
  bunnycdn: "Cấu hình cho mô-đun tương thích BunnyCDN."
  bunnycdn_positive_action: "CIDRAM nên thực hiện hành động nào khi gặp yêu cầu từ BunnyCDN? Hành động mặc định = Đường tránh."
  bypasses: "Cấu hình cho các đường tránh chữ ký mặc định."
@@ -754,6 +752,12 @@ label:
   redirect the request (without blocking it): "chuyển hướng yêu cầu (mà không chặn nó)"
   run a file to handle the request: "chạy một tập tin để xử lý yêu cầu"
   whitelist the request: "danh sách trắng yêu cầu"
+ bobuam:
+  Ambiguous user agents: "Đại lý người dùng không rõ ràng"
+  Clearly malformed user agents: "Rõ ràng là đại lý người dùng bị dị dạng"
+  Masquerade attempts (e_g_, bots pretending to be browsers): "Nỗ lực giả trang (ví dụ, bot giả vờ là trình duyệt)"
+  Outdated or end of life browsers (you can set the versions below): "Trình duyệt lỗi thời hoặc đã hết hạn hỗ trợ (bạn có thể thiết lập phiên bản bên dưới)"
+  Suspected bots, scrapers, probes, etc: "Nghi ngờ là bot, phần mềm thu thập dữ liệu tự động, phần mềm dò tìm, vv"
  expire_bad: "Từ thời điểm tạo ra, lượng thời gian mà dữ liệu xấu mà đã được lưu trữ trong cache bởi mô-đun này có thể tồn tại trước khi hết hạn."
  expire_good: "Từ thời điểm tạo ra, lượng thời gian mà dữ liệu tốt mà đã được lưu trữ trong cache bởi mô-đun này có thể tồn tại trước khi hết hạn."
  lookup_strategy: "Những yêu cầu nào nên thực hiện tra cứu?"

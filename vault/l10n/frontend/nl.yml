@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2026.02.24).
+# This file: Dutch language data for the front-end (last modified: 2026.02.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -144,8 +144,6 @@ config:
  bgpview_whitelisted_asns: &ConfigWhitelistedASNs "Een lijst met ASN's die op de witte lijst moeten worden geplaatst wanneer ze worden gekoppeld mit de module."
  bgpview_whitelisted_ccs: &ConfigWhitelistedCCs "Een lijst met landen (geïdentificeerd door hun {{Links.ISO.3166}} 2-cijferige landcodes) die op de witte lijst moeten worden geplaatst wanneer ze worden gekoppeld mit de module."
  bobuam: "Configuratie voor de optionele "bot of browser gebruikersagents module", die ongewenste bots en oude browsers detecteert, en een aantal gezondheidscontroles uitvoert."
- bobuam_block_bots: "Bots blokkeren die worden herkend als kwaadaardig of ongewenst?"
- bobuam_block_eol_browsers: "De browsers blokkeren die het einde van hun levensduur hebben bereikt? (Stel hieronder versies in)."
  bobuam_chrome: "Laagst toegestane versie van het "Chrome/Chromium"-token. Aanbevolen: {{BOBUAM Token.Chrome}}."
  bobuam_edge: "Laagst toegestane versie van het "Edg/Edge"-token. Aanbevolen: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "Laagst toegestane versie van het "Firefox"-token. Aanbevolen: {{BOBUAM Token.Firefox}}."
@@ -157,7 +155,7 @@ config:
  bobuam_reason_malformed: "De blokkeringsreden die wordt weergegeven wanneer een misvormd tekenreeks van de gebruikersagent wordt gedetecteerd."
  bobuam_reason_masquerade: "De blokkeringsreden die wordt weergegeven wanneer een gebruikersagent zich probeert voor te maskerades als iets anders."
  bobuam_safari: "Laagst toegestane versie van Safari's "Version"-token. Aanbevolen: {{BOBUAM Token.Safari}}."
- bobuam_sanity_check: "De browsers blokkeren die dubbelzinnige of duidelijk misvormde gebruikersagents tonen?"
+ bobuam_what_to_block: "Wat moet er geblokkeerd worden?"
  bunnycdn: "Configuratie voor de BunnyCDN-compatibiliteitsmodule."
  bunnycdn_positive_action: "Welke actie moet CIDRAM uitvoeren wanneer het een verzoek van BunnyCDN tegenkomt? Standaard actie = Omzeil."
  bypasses: "Configuratie voor de standaard bypasses voor signatures."
@@ -759,6 +757,12 @@ label:
   redirect the request (without blocking it): "omleiden het verzoek (zonder het te blokkeren)"
   run a file to handle the request: "voer een bestand uit om het verzoek af te handelen"
   whitelist the request: "zet het verzoek op de witte lijst"
+ bobuam:
+  Ambiguous user agents: "Dubbelzinnige gebruikersagenten"
+  Clearly malformed user agents: "Duidelijk misvormde gebruikersagenten"
+  Masquerade attempts (e_g_, bots pretending to be browsers): "Maskerade pogingen (b.v., bots die zich voordoen als browsers)"
+  Outdated or end of life browsers (you can set the versions below): "Verouderde of niet meer ondersteunde browsers (u kunt de versies hieronder instellen)"
+  Suspected bots, scrapers, probes, etc: "Vermoedelijke bots, scrapers, probes, enz"
  expire_bad: "Vanaf het moment van zijn creatie, de hoeveelheid tijd dat slechte gegevens die door deze module in de cache zijn opgeslagen, kunnen leven voordat deze verlopen."
  expire_good: "Vanaf het moment van zijn creatie, de hoeveelheid tijd dat goede gegevens die door deze module in de cache zijn opgeslagen, kunnen leven voordat deze verlopen."
  lookup_strategy: "Voor welke verzoeken moeten zoekopdrachten worden uitgevoerd?"

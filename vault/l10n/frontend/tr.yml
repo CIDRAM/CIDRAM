@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2026.02.24).
+# This file: Turkish language data for the front-end (last modified: 2026.02.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -144,8 +144,6 @@ config:
  bgpview_whitelisted_asns: &ConfigWhitelistedASNs "Modülü tarafından eşleştirildiğinde beyaz listeye alınacak ASN'lerin listesi."
  bgpview_whitelisted_ccs: &ConfigWhitelistedCCs "Modülü tarafından eşleştirildiğinde beyaz listeye alınacak ülkelerin listesi ({{Links.ISO.3166}} 2-haneli ülke kodlarıyla tanımlanır)."
  bobuam: "İstenmeyen botları, eski tarayıcıları algılayan, ve bazı akıl sağlığı kontrolleri gerçekleştiren isteğe bağlı "bot veya tarayıcı kullanıcı aracıları modülü" için yapılandırma."
- bobuam_block_bots: "Kötü amaçlı veya istenmeyen olarak tanınan botlar engelleniyor mu?"
- bobuam_block_eol_browsers: "Kullanım ömrünün sonuna ulaşan tarayıcılar engellensin mi? (Aşağıda sürümleri ayarlayın)."
  bobuam_chrome: ""Chrome/Chromium" belirtecinin izin verilen en düşük sürümü. Önerilen: {{BOBUAM Token.Chrome}}."
  bobuam_edge: ""Edg/Edge" belirtecinin izin verilen en düşük sürümü. Önerilen: {{BOBUAM Token.Edge}}."
  bobuam_firefox: ""Firefox" belirtecinin izin verilen en düşük sürümü. Önerilen: {{BOBUAM Token.Firefox}}."
@@ -157,7 +155,7 @@ config:
  bobuam_reason_malformed: "Hatalı biçimlendirilmiş bir kullanıcı aracısı dizesi algılandığında gösterilen engelleme nedeni."
  bobuam_reason_masquerade: "Bir kullanıcı aracısı başka bir şey gibi görünmeye çalıştığında gösterilen engelleme nedeni."
  bobuam_safari: "Safari'nin "Version" belirtecinin izin verilen en düşük sürümü. Önerilen: {{BOBUAM Token.Safari}}."
- bobuam_sanity_check: "Belirsiz veya açıkça hatalı biçimlendirilmiş kullanıcı aracısı dizeleri gösteren tarayıcılar engellensin mi?"
+ bobuam_what_to_block: "Neler engellenmeli?"
  bunnycdn: "BunnyCDN uyumluluk modülü için yapılandırma."
  bunnycdn_positive_action: "CIDRAM, BunnyCDN'den bir istekle karşılaştığında hangi eylemi gerçekleştirmelidir? Varsayılan aksiyon = Atlayın."
  bypasses: "Varsayılan imza bypass için yapılandırma."
@@ -757,6 +755,12 @@ label:
   redirect the request (without blocking it): "isteği yönlendirin (engellemeden)"
   run a file to handle the request: "isteği işlemek için bir dosya çalıştırın"
   whitelist the request: "isteği beyaz listeye ekleyin"
+ bobuam:
+  Ambiguous user agents: "Belirsiz kullanıcı aracıları"
+  Clearly malformed user agents: "Açıkça hatalı biçimlendirilmiş kullanıcı aracıları"
+  Masquerade attempts (e_g_, bots pretending to be browsers): "Maskeleme girişimleri (örneğin, tarayıcıları taklit eden botlar)"
+  Outdated or end of life browsers (you can set the versions below): "Eski veya kullanım ömrü sona ermiş tarayıcılar (sürümleri aşağıdan ayarlayabilirsiniz)"
+  Suspected bots, scrapers, probes, etc: "Şüpheli botlar, veri kazıyıcılar, sondalar, vb"
  expire_bad: "Yaratılışından beri, bu modül tarafından önbelleğe alınan kötü verilerin sona ermeden önce yaşayabileceği zaman."
  expire_good: "Yaratılışından beri, bu modül tarafından önbelleğe alınan iyi verilerin sona ermeden önce yaşayabileceği zaman."
  lookup_strategy: "Hangi istekler için arama yapılmalıdır?"

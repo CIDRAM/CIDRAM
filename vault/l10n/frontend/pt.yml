@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2026.02.24).
+# This file: Portuguese language data for the front-end (last modified: 2026.02.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -62,8 +62,8 @@ Extended Description:
  Bad TLDs blocker module: "Bloqueia hosts pertencentes a ISPs freqüentemente usados por spammers, hackers e outras entidades nefastas."
  Bad hosts blocker module: "Bloqueia hosts frequentemente usados por spammers, hackers e outras entidades nefastas."
  Bot user agents module:
-  pt-BR: "Bloqueia os agentes do usuário associados a bots indesejados e atividades nefastas."
-  pt-PT: "Bloqueia os agentes do utilizador associados a bots indesejados e atividades nefastas."
+  pt-BR: "Bloqueia os agentes do usuário associados a robôs indesejados e atividades nefastas."
+  pt-PT: "Bloqueia os agentes do utilizador associados a robôs indesejados e atividades nefastas."
  Bypasses: "Os arquivos para bypass das assinaturas padrão normalmente incluído com o pacote principal."
  Chart.js: "Permite que o front-end gere gráficos de pizza.<br />{{Links.Chart.js}} está disponível através da licença {{Links.MIT}}."
  Cookie scanner module: "Fornece algumas proteções limitadas contra cookies perigosos."
@@ -94,13 +94,13 @@ Name:
  AbuseIPDB module: "Módulo AbuseIPDB."
  BGPView module: "Módulo BGPView."
  BOBUAM:
-  pt-BR: "Módulo para agentes do usuário de bot ou navegador (BOBUAM)."
-  pt-PT: "Módulo para agentes do utilizador de bot ou navegador (BOBUAM)."
+  pt-BR: "Módulo para agentes de usuário de robôs ou navegador (BOBUAM)."
+  pt-PT: "Módulo para agentes de utilizador de robôs ou navegador (BOBUAM)."
  Bad TLDs blocker module: "Módulo bloqueador de TLDs perigosos."
  Bad hosts blocker module: "Módulo bloqueador de hosts perigosos."
  Bot user agents module:
-  pt-BR: "Módulo de agentes do usuário de bot."
-  pt-PT: "Módulo de agentes do utilizador de bot."
+  pt-BR: "Módulo de agentes de usuário de robôs."
+  pt-PT: "Módulo de agentes de utilizador de robôs."
  BunnyCDN compatibility module: "BunnyCDN módulo de compatibilidade."
  Bypasses: "Bypasses das assinaturas padrão."
  Cookie scanner module: "Módulo opcional para análise de cookies."
@@ -168,10 +168,8 @@ config:
  bgpview_whitelisted_asns: &ConfigWhitelistedASNs "Uma lista de ASNs a serem incluídos na lista branca quando correspondidos pelo módulo."
  bgpview_whitelisted_ccs: &ConfigWhitelistedCCs "Uma lista de países (identificados por seus códigos de país de 2 dígitos {{Links.ISO.3166}}) a serem incluídos na lista branca quando correspondidos pelo módulo."
  bobuam:
-  pt-BR: "Configuração para o "módulo para agentes do usuário de bot ou navegador" opcional, que detecta bots indesejados, navegadores antigos, e executa algumas verificações de sanidade."
-  pt-PT: "Configuração para o "módulo para agentes do utilizador de bot ou navegador" opcional, que detecta bots indesejados, navegadores antigos, e executa algumas verificações de sanidade."
- bobuam_block_bots: "Bloquear bots reconhecidos como maliciosos ou indesejados?"
- bobuam_block_eol_browsers: "Bloquear navegadores que atingiram o fim da vida útil? (Defina as versões abaixo)."
+  pt-BR: "Configuração para o "módulo para agentes de usuário de robôs ou navegador" opcional, que detecta robôs indesejados, navegadores antigos, e executa algumas verificações de sanidade."
+  pt-PT: "Configuração para o "módulo para agentes de utilizador de robôs ou navegador" opcional, que detecta robôs indesejados, navegadores antigos, e executa algumas verificações de sanidade."
  bobuam_chrome: "Versão mais baixa permitida do token "Chrome/Chromium". Recomendado: {{BOBUAM Token.Chrome}}."
  bobuam_edge: "Versão mais baixa permitida do token "Edg/Edge". Recomendado: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "Versão mais baixa permitida do token "Firefox". Recomendado: {{BOBUAM Token.Firefox}}."
@@ -180,7 +178,7 @@ config:
  bobuam_reason_ambiguous:
   pt-BR: "O motivo do bloqueio mostrado quando um agente de usuário ambígua é detectado."
   pt-PT: "O motivo do bloqueio mostrado quando um agente de utilizador ambígua é detectado."
- bobuam_reason_bot: "O motivo do bloqueio mostrado quando os bots são bloqueados."
+ bobuam_reason_bot: "O motivo do bloqueio mostrado quando os robôs são bloqueados."
  bobuam_reason_browser: "O motivo do bloqueio mostrado quando um navegador muito antigo é bloqueado."
  bobuam_reason_malformed:
   pt-BR: "O motivo do bloqueio mostrado quando um agente de usuário malformado é detectado."
@@ -189,9 +187,7 @@ config:
   pt-BR: "O motivo do bloqueio mostrado quando um agente do usuário tenta se disfarçar de outra coisa."
   pt-PT: "O motivo do bloqueio mostrado quando um agente do utilizador tenta se disfarçar de outra coisa."
  bobuam_safari: "Versão mais baixa permitida do token "Version" do Safari. Recomendado: {{BOBUAM Token.Safari}}."
- bobuam_sanity_check:
-  pt-BR: "Bloquear navegadores que mostram agentes de usuário ambíguos ou claramente malformados?"
-  pt-PT: "Bloquear navegadores que mostram agentes de utilizador ambíguos ou claramente malformados?"
+ bobuam_what_to_block: "O que bloquear?"
  bunnycdn: "Configuração para o módulo de compatibilidade BunnyCDN."
  bunnycdn_positive_action: "Qual ação o CIDRAM deve executar quando encontrar uma solicitação do BunnyCDN? Ação padrão = Contornar."
  bypasses: "Configuração para o bypass das assinaturas padrão."
@@ -250,8 +246,8 @@ config:
  general_email_notification_name: "Se você optou por receber notificações do CIDRAM por e-mail, por exemplo, quando regras auxiliares específicas são desencadeadas, você pode especificar o nome do destinatário dessas notificações aqui."
  general_email_notification_when: "Quando enviar notificações após serem geradas."
  general_emailaddr:
-  pt-BR: "Se você desejar, você pode fornecer um endereço de e-mail aqui a ser dado para os usuários quando eles estão bloqueadas, para eles para usar como um ponto de contato para suporte e/ou assistência no caso de eles serem bloqueados por engano ou em erro. AVISO: Qualquer endereço de e-mail que você fornecer aqui certamente vai ser adquirido por spambots e raspadores/scrapers durante o curso de seu ser usada aqui, e assim, é fortemente recomendado que, se você optar por fornecer um endereço de e-mail aqui, que você garantir que o endereço de e-mail você fornecer aqui é um endereço descartável e/ou um endereço que você não é importante (em outras palavras, você provavelmente não quer usar seu pessoal principal ou negócio principal endereço de e-mail)."
-  pt-PT: "Se você desejar, você pode fornecer um endereço de e-mail aqui a ser dado para os utilizadores quando eles estão bloqueadas, para eles para usar como um ponto de contacto para suporte e/ou assistência no caso de eles serem bloqueados por engano ou em erro. AVISO: Qualquer endereço de e-mail que você fornecer aqui certamente vai ser adquirido por spambots e raspadores/scrapers durante o curso de seu ser usada aqui, e assim, é fortemente recomendado que, se você optar por fornecer um endereço de e-mail aqui, que você garantir que o endereço de e-mail você fornecer aqui é um endereço descartável e/ou um endereço que você não é importante (em outras palavras, você provavelmente não quer usar seu pessoal principal ou negócio principal endereço de e-mail)."
+  pt-BR: "Se você desejar, você pode fornecer um endereço de e-mail aqui a ser dado para os usuários quando eles estão bloqueadas, para eles para usar como um ponto de contato para suporte e/ou assistência no caso de eles serem bloqueados por engano ou em erro. AVISO: Qualquer endereço de e-mail que você fornecer aqui certamente vai ser adquirido por robôs de spam e raspadores/scrapers durante o curso de seu ser usada aqui, e assim, é fortemente recomendado que, se você optar por fornecer um endereço de e-mail aqui, que você garantir que o endereço de e-mail você fornecer aqui é um endereço descartável e/ou um endereço que você não é importante (em outras palavras, você provavelmente não quer usar seu pessoal principal ou negócio principal endereço de e-mail)."
+  pt-PT: "Se você desejar, você pode fornecer um endereço de e-mail aqui a ser dado para os utilizadores quando eles estão bloqueadas, para eles para usar como um ponto de contacto para suporte e/ou assistência no caso de eles serem bloqueados por engano ou em erro. AVISO: Qualquer endereço de e-mail que você fornecer aqui certamente vai ser adquirido por robôs de spam e raspadores/scrapers durante o curso de seu ser usada aqui, e assim, é fortemente recomendado que, se você optar por fornecer um endereço de e-mail aqui, que você garantir que o endereço de e-mail você fornecer aqui é um endereço descartável e/ou um endereço que você não é importante (em outras palavras, você provavelmente não quer usar seu pessoal principal ou negócio principal endereço de e-mail)."
  general_emailaddr_display_style:
   pt-BR: "Como você prefere que o endereço de e-mail seja apresentado aos usuários?"
   pt-PT: "Como você prefere que o endereço de e-mail seja apresentado aos utilizadores?"
@@ -598,7 +594,7 @@ hints_time_format: |
  <code class="s">{t:z}</code> – O fuso horário (com dois pontos) – Por exemplo, +08:00.
 hints_usemode:
  0: "Nota: Solicitações na lista branca ou verificadas e não bloqueadas nunca precisam completar um CAPTCHA."
- 1: "Também: Os CAPTCHAs podem fornecer uma camada de proteção útil contra bots e vários tipos de solicitações automatizadas e maliciosas, mas não fornecerão nenhuma proteção contra humanos maliciosas."
+ 1: "Também: Os CAPTCHAs podem fornecer uma camada de proteção útil contra robôs e vários tipos de solicitações automatizadas e maliciosas, mas não fornecerão nenhuma proteção contra humanos maliciosas."
  2: "As solicitações podem ser "marcadas para uso" por meio de regras auxiliares."
  3: "O fato de uma solicitação ser considerada "sensível" é determinado por {{Links.ConfigRef.sensitive}}."
 hints_verification:
@@ -967,6 +963,18 @@ label:
   redirect the request (without blocking it): "redirecionar a solicitação (sem bloqueá-la)"
   run a file to handle the request: "execute um arquivo para lidar com a solicitação"
   whitelist the request: "coloque a solicitação na lista branca"
+ bobuam:
+  Ambiguous user agents:
+   pt-BR: "Agentes de usuário ambíguos"
+   pt-PT: "Agentes de utilizador ambíguos"
+  Clearly malformed user agents:
+   pt-BR: "Agentes de usuário claramente malformados"
+   pt-PT: "Agentes de utilizador claramente malformados"
+  Masquerade attempts (e_g_, bots pretending to be browsers):
+   pt-BR: "Tentativas de mascaramento (por exemplo, robôs fingindo ser navegadores)"
+   pt-PT: "Tentativas de mascaramento (por exemplo, robôs que se fazem passar por navegadores)"
+  Outdated or end of life browsers (you can set the versions below): "Navegadores desatualizados ou em fim de vida (pode definir as versões abaixo)"
+  Suspected bots, scrapers, probes, etc: "Suspeita-se de robôs, raspadores, sondas, etc"
  expire_bad:
   pt-BR: "Desde o momento de sua criação, o período de tempo que os dados inválidos armazenados em cache por este módulo podem permanecer antes de expirarem."
   pt-PT: "Desde o momento da sua criação, o período de tempo que os dados inválidos armazenados em cache por este módulo podem permanecer antes de expirarem."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2026.02.24).
+# This file: Urdu language data for the front-end (last modified: 2026.02.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -144,8 +144,6 @@ config:
  bgpview_whitelisted_asns: &ConfigWhitelistedASNs "ماڈیول کے ذریعے وائٹ لسٹ کیے جانے والے ASNیں کی فہرست."
  bgpview_whitelisted_ccs: &ConfigWhitelistedCCs "ماڈیول کے ذریعے وائٹ لسٹ کیے جانے والے ممالک کی فہرست (ان کے {{Links.ISO.3166}} دو حرفی کنٹری کوڈز سے شناخت کی گئی ہے)."
  bobuam: ""بوٹ یا براؤزر صارف ایجنٹ ماڈیول" کے لیے کنفیگریشن. یہ ماڈیول ناپسندیدہ بوٹس، پرانے براؤزرز کا پتہ لگاتا ہے، اور کچھ سنٹی چیک کرتا ہے."
- bobuam_block_bots: "بدنیتی پر مبنی یا ناپسندیدہ کے طور پر پہچانے گئے بوٹس کو مسدود کریں؟"
- bobuam_block_eol_browsers: "ان براؤزرز کو مسدود کریں جو زندگی کے اختتام کو پہنچ چکے ہیں؟ (ذیل میں ورژن سیٹ کریں)."
  bobuam_chrome: ""Chrome/Chromium" ٹوکن کا سب سے کم اجازت شدہ ورژن. تجویز کردہ: {{BOBUAM Token.Chrome}}."
  bobuam_edge: ""Edg/Edge" ٹوکن کا سب سے کم اجازت شدہ ورژن. تجویز کردہ: {{BOBUAM Token.Edge}}."
  bobuam_firefox: ""Firefox" ٹوکن کا سب سے کم اجازت شدہ ورژن. تجویز کردہ: {{BOBUAM Token.Firefox}}."
@@ -157,7 +155,7 @@ config:
  bobuam_reason_malformed: "ایک خراب صارف ایجنٹ سٹرنگ کا پتہ چلنے پر بلاک کی وجہ دکھائی جاتی ہے."
  bobuam_reason_masquerade: "بلاک کی وجہ اس وقت دکھائی گئی جب صارف ایجنٹ کسی اور چیز کے طور پر بہانا کرنے کی کوشش کرتا ہے."
  bobuam_safari: "Safari کے "Version" ٹوکن کا سب سے کم اجازت شدہ ورژن. تجویز کردہ: {{BOBUAM Token.Safari}}."
- bobuam_sanity_check: "ان براؤزرز کو مسدود کریں جو مبہم یا واضح طور پر غلط صارف ایجنٹ کے تار دکھاتے ہیں؟"
+ bobuam_what_to_block: "کیا بلاک کرنا ہے؟"
  bunnycdn: "BunnyCDN مطابقت ماڈیول کنفیگریشن."
  bunnycdn_positive_action: "BunnyCDN کی درخواست کا سامنا کرنا پڑتا ہے تو CIDRAM کو کون سا عمل کرنا چاہیے؟ پہلے سے طے شدہ کارروائی = بائی پاس."
  bypasses: "پہلے سے طے شدہ دستخط کو نظرانداز کرنے کے لیے تشکیل."
@@ -756,6 +754,12 @@ label:
   redirect the request (without blocking it): "تو درخواست کو ری ڈائریکٹ کریں (اسے بلاک کیے بغیر)"
   run a file to handle the request: "درخواست کو سنبھالنے کے لیے فائل چلائیں"
   whitelist the request: "درخواست کو وائٹ لسٹ کریں"
+ bobuam:
+  Ambiguous user agents: "مبہم صارف ایجنٹس"
+  Clearly malformed user agents: "صارف کے ایجنٹ جو واضح طور پر بگڑے ہوئے ہیں"
+  Masquerade attempts (e_g_, bots pretending to be browsers): "بہانے کی کوششیں (مثال کے طور پر، بوٹس براؤزر ہونے کا بہانہ کرتے ہیں)"
+  Outdated or end of life browsers (you can set the versions below): "پرانے یا ختم ہو چکے براؤزرز (آپ نیچے ورژن ترتیب دے سکتے ہیں)"
+  Suspected bots, scrapers, probes, etc: "مشتبہ بوٹس، سکریپر، تحقیقات، وغیرہ"
  expire_bad: "اس کی تخلیق کے وقت سے، اس ماڈیول کے ذریعے کیش کردہ خراب ڈیٹا کی میعاد ختم ہونے سے پہلے زندہ رہ سکتا ہے."
  expire_good: "اس کی تخلیق کے وقت سے، اس ماڈیول کے ذریعے کیش کردہ اچھا ڈیٹا کی میعاد ختم ہونے سے پہلے زندہ رہ سکتا ہے."
  lookup_strategy: "کن درخواستوں کے لیے تلاش کی جانی چاہیے؟"

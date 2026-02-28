@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2026.02.24).
+# This file: Japanese language data for the front-end (last modified: 2026.02.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -144,8 +144,6 @@ config:
  bgpview_whitelisted_asns: &ConfigWhitelistedASNs "モジュールによってホワイトリストに登録されるＡＳＮのリスト。"
  bgpview_whitelisted_ccs: &ConfigWhitelistedCCs "モジュールによってホワイトリストに登録される国（{{Links.ISO.3166}}二桁の国コードで識別）のリスト。"
  bobuam: "「ボットまたはブラウザーのユーザー・エージェント・モジュール」のコンフィギュレーション。​このモジュールは、不要なボットや古いブラウザーを検出し、サニティ・チェックを実行します。"
- bobuam_block_bots: "悪意のあるまたは望ましくないと認識されたボットをブロックしますか？"
- bobuam_block_eol_browsers: "サポートが終了したブラウザーをブロックしますか？​（以下のバージョンを設定して）。"
  bobuam_chrome: "「Chrome/Chromium」トークンの許可されている最低バージョン。 おすすめされた： {{BOBUAM Token.Chrome}}。"
  bobuam_edge: "「Edg/Edge」トークンの許可されている最低バージョン。 おすすめされた： {{BOBUAM Token.Edge}}。"
  bobuam_firefox: "「Firefox」トークンの許可されている最低バージョン。 おすすめされた： {{BOBUAM Token.Firefox}}。"
@@ -157,7 +155,7 @@ config:
  bobuam_reason_malformed: "不正な形式のユーザー・エージェント文字列が検出されたときに表示されるブロックの理由。"
  bobuam_reason_masquerade: "ユーザー・エージェントが別のものになりすましたときに表示されるブロックの理由。"
  bobuam_safari: "許可されているSafariの「Version」トークンの最低バージョン。 おすすめされた： {{BOBUAM Token.Safari}}。"
- bobuam_sanity_check: "あいまいなまたは明らかに不正な形式のユーザー・エージェント文字列を表示するブラウザーをブロックしますか？"
+ bobuam_what_to_block: "何をブロックすべきでしょうか？"
  bunnycdn: "BunnyCDN互換性モジュールの設定。"
  bunnycdn_positive_action: "BunnyCDNからのリクエストに遭遇した場合、CIDRAMはどのアクションを実行する必要がありますか？ デフォルト・アクション = バイパスする。"
  bypasses: "デフォルト・シグネチャ・バイパスのコンフィギュレーション。"
@@ -753,6 +751,12 @@ label:
   redirect the request (without blocking it): "リクエストを（ブロックせずに）リダイレクトします"
   run a file to handle the request: "リクエストを処理するファイルを実行します"
   whitelist the request: "リクエストをホワイトリストに登録します"
+ bobuam:
+  Ambiguous user agents: "あいまいなユーザー・エージェント"
+  Clearly malformed user agents: "明らかに不正なユーザー・エージェント"
+  Masquerade attempts (e_g_, bots pretending to be browsers): "なりすましの試み（例：ブラウザを装ったボット）"
+  Outdated or end of life browsers (you can set the versions below): "古くなったブラウザまたはサポートが終了したブラウザ（以下のバージョンを設定できます）"
+  Suspected bots, scrapers, probes, etc: "ボット、スクレーパー、プローブ、などの疑い"
  expire_bad: "その創造時から、このモジュールによってキャッシュされた悪いデータの有効期限が切れる前に生きることができる時間。"
  expire_good: "その創造時から、このモジュールによってキャッシュされた良いデータの有効期限が切れる前に生きることができる時間。"
  lookup_strategy: "どのリクエストに対してルックアップを実行する必要がありますか？"

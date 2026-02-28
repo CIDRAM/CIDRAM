@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hebrew language data for the front-end (last modified: 2026.02.24).
+# This file: Hebrew language data for the front-end (last modified: 2026.02.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -144,8 +144,6 @@ config:
  bgpview_whitelisted_asns: &ConfigWhitelistedASNs "רשימה של ASN לwhitelist כאשר מודול תואם אותם."
  bgpview_whitelisted_ccs: &ConfigWhitelistedCCs "רשימה של מדינות (מזוהה באמצעות קודי המדינה הדו-ספרתיים {{Links.ISO.3166}} שלהם) לwhitelist כאשר מודול תואם אותם."
  bobuam: "תצורה עבור "מודול סוכני משתמש של בוט או דפדפן" האופציונלי, שמזהה בוטים לא רצויים, דפדפנים ישנים, ומבצע כמה בדיקות שפיות."
- bobuam_block_bots: "לחסום בוטים שזוהו כזדוניים או לא רצויים?"
- bobuam_block_eol_browsers: "לחסום דפדפנים שהגיעו לסוף החיים? (הגדר גרסאות למטה)."
  bobuam_chrome: "הגרסה הנמוכה ביותר המותרת של האסימון "Chrome/Chromium". מומלץ: {{BOBUAM Token.Chrome}}."
  bobuam_edge: "הגרסה הנמוכה ביותר המותרת של האסימון "Edg/Edge". מומלץ: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "הגרסה הנמוכה ביותר המותרת של האסימון "Firefox". מומלץ: {{BOBUAM Token.Firefox}}."
@@ -157,7 +155,7 @@ config:
  bobuam_reason_malformed: "סיבת החסימה המוצגת כאשר מזוהה מחרוזת סוכן משתמש מעוות."
  bobuam_reason_masquerade: "סיבת החסימה המוצגת כאשר סוכן משתמש מנסה להתחזות למשהו אחר."
  bobuam_safari: "הגרסה הנמוכה ביותר המותרת של אסימון "Version" של Safari. מומלץ: {{BOBUAM Token.Safari}}."
- bobuam_sanity_check: "לחסום דפדפנים שמציגים מחרוזות סוכן משתמש מעורפלות או מעוות בבירור?"
+ bobuam_what_to_block: "מה לחסום?"
  bunnycdn: "תצורת מודול תאימות של BunnyCDN."
  bunnycdn_positive_action: "איזו פעולה על CIDRAM לבצע כאשר הוא נתקל בבקשה מ- BunnyCDN? סטנדרטי = לעקוף את זה."
  bypasses: "החתימה הסטנדרטית עוקפת את התצורה."
@@ -756,6 +754,12 @@ label:
   redirect the request (without blocking it): "הפנה מחדש את הבקשה (מבלי לחסום אותה)"
   run a file to handle the request: "להפעיל קובץ כדי לטפל הבקשה"
   whitelist the request: "whitelist הבקשה"
+ bobuam:
+  Ambiguous user agents: "סוכני משתמש דו-משמעיים"
+  Clearly malformed user agents: "סוכני משתמש בעלי מבנה פגום בבירור"
+  Masquerade attempts (e_g_, bots pretending to be browsers): "ניסיונות התחזות (למשל, בוטים שמתחזים דפדפני)"
+  Outdated or end of life browsers (you can set the versions below): "דפדפנים מיושנים או בסוף חייהם (ניתן להגדיר את הגרסאות למטה)"
+  Suspected bots, scrapers, probes, etc: "בוטים חשודים, סקרייפרים, גששים, וכו'"
  expire_bad: "מזמן יצירתו, משך הזמן שבו נתונים גרועים המאוחסנים במטמון על ידי מודול זה עשויים לחיות לפני שתוקפו יפוג."
  expire_good: "מזמן יצירתו, משך הזמן שבו נתונים טובים המאוחסנים במטמון על ידי מודול זה עשויים לחיות לפני שתוקפו יפוג."
  lookup_strategy: "עבור אילו בקשות יש לבצע חיפושים?"

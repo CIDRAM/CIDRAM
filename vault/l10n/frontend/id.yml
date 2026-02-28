@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2026.02.24).
+# This file: Indonesian language data for the front-end (last modified: 2026.02.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -144,8 +144,6 @@ config:
  bgpview_whitelisted_asns: &ConfigWhitelistedASNs "Daftar ASN yang akan terdaftar putih saat dicocokkan oleh modul."
  bgpview_whitelisted_ccs: &ConfigWhitelistedCCs "Daftar negara (diidentifikasi oleh kode negara 2 digit {{Links.ISO.3166}} mereka) yang akan terdaftar putih saat dicocokkan oleh modul."
  bobuam: "Konfigurasi untuk "modul agen pengguna bot atau browser" opsional, yang mendeteksi bot yang tidak diinginkan, browser lama, dan melakukan beberapa pemeriksaan kewarasan."
- bobuam_block_bots: "Blokir bot yang dianggap berbahaya atau tidak diinginkan?"
- bobuam_block_eol_browsers: "Blokir browser yang telah mencapai akhir masa pakainya? (Tetapkan versi dibawah)."
  bobuam_chrome: "Versi token "Chrome/Chromium" terendah yang diizinkan. Direkomendasikan: {{BOBUAM Token.Chrome}}."
  bobuam_edge: "Versi token "Edg/Edge" terendah yang diizinkan. Direkomendasikan: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "Versi token "Firefox" terendah yang diizinkan. Direkomendasikan: {{BOBUAM Token.Firefox}}."
@@ -157,7 +155,7 @@ config:
  bobuam_reason_malformed: "Alasan pemblokiran ditampilkan saat string agen pengguna yang cacat terdeteksi."
  bobuam_reason_masquerade: "Alasan pemblokiran ditampilkan saat agen pengguna mencoba menyamar sebagai sesuatu yang lain."
  bobuam_safari: "Versi terendah dari token "Version" Safari yang diizinkan. Direkomendasikan: {{BOBUAM Token.Safari}}."
- bobuam_sanity_check: "Blokir browser yang menunjukkan string agen pengguna yang ambigu atau jelas cacat?"
+ bobuam_what_to_block: "Apa yang harus diblokir?"
  bunnycdn: "Konfigurasi untuk modul kompatibilitas BunnyCDN."
  bunnycdn_positive_action: "Tindakan mana yang harus dilakukan CIDRAM saat menangani permintaan dari BunnyCDN? Tindakan default = Melewatinya."
  bypasses: "Konfigurasi untuk bypass tanda tangan default."
@@ -752,6 +750,12 @@ label:
   redirect the request (without blocking it): "mengarahkan permintaan (tanpa memblokirnya)"
   run a file to handle the request: "mengeksekusi file untuk menangani permintaan"
   whitelist the request: "mendaftar putih permintaannya"
+ bobuam:
+  Ambiguous user agents: "Agen pengguna yang ambigu"
+  Clearly malformed user agents: "Agen pengguna yang jelas-jelas cacat"
+  Masquerade attempts (e_g_, bots pretending to be browsers): "Upaya penyamaran (misalnya, bot yang berpura-pura menjadi browser)"
+  Outdated or end of life browsers (you can set the versions below): "Browser usang atau yang sudah tidak lagi didukung (Anda dapat mengatur versinya dibawah ini)"
+  Suspected bots, scrapers, probes, etc: "Diduga sebagai bot, scraper, probe, dll"
  expire_bad: "Dari saat penciptaannya, jumlah waktu yang data yang buruk yang dimasukkan ke dalam cache oleh modul ini dapat hidup sebelum kedaluwarsa."
  expire_good: "Dari saat penciptaannya, jumlah waktu yang data yang baik yang dimasukkan ke dalam cache oleh modul ini dapat hidup sebelum kedaluwarsa."
  lookup_strategy: "Untuk permintaan mana pencarian harus dilakukan?"

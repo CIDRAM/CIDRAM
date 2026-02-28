@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bulgarian language data for the front-end (last modified: 2026.02.24).
+# This file: Bulgarian language data for the front-end (last modified: 2026.02.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -144,8 +144,6 @@ config:
  bgpview_whitelisted_asns: &ConfigWhitelistedASNs "Списък с ASN, които да бъдат включени в белия списък, когато съвпадат с модула."
  bgpview_whitelisted_ccs: &ConfigWhitelistedCCs "Списък с държави (идентифицирани с техните {{Links.ISO.3166}} двуцифрени кодове на държави), който да бъде включен в белия списък, когато съвпадат с модула."
  bobuam: "Конфигурация за незадължителния „модул за потребителски агенти на бот или браузър“, който открива нежелани ботове, стари браузъри, и извършва някои проверки за надеждност."
- bobuam_block_bots: "Блокиране на ботове, разпознати като злонамерени или нежелани?"
- bobuam_block_eol_browsers: "Блокиране на браузъри, които са достигнали края на живота си? (Задайте версии по-долу)."
  bobuam_chrome: "Най-ниската разрешена версия на токена „Chrome/Chromium“. Препоръка: {{BOBUAM Token.Chrome}}."
  bobuam_edge: "Най-ниската разрешена версия на токена „Edg/Edge“. Препоръка: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "Най-ниската разрешена версия на токена „Firefox“. Препоръка: {{BOBUAM Token.Firefox}}."
@@ -157,7 +155,7 @@ config:
  bobuam_reason_malformed: "Причината за блокиране се показва, когато бъде открит неправилен низ на потребителски агент."
  bobuam_reason_masquerade: "Причината за блокиране се показва, когато потребителски агент се опитва да се маскира като нещо друго."
  bobuam_safari: "Най-ниската разрешена версия на токена „Version“ на Safari. Препоръка: {{BOBUAM Token.Safari}}."
- bobuam_sanity_check: "Блокиране на браузъри, които показват двусмислени или явно неправилно формирани низове на потребителски агент?"
+ bobuam_what_to_block: "Какво да блокирам?"
  bunnycdn: "Конфигурация на модул за съвместимост на BunnyCDN."
  bunnycdn_positive_action: "Кое действие трябва да извърши CIDRAM, когато срещне заявка от BunnyCDN? Стандартно действие = Bypass."
  bypasses: "Конфигурация за стандартните байпаси на сигнатура."
@@ -769,6 +767,12 @@ label:
   redirect the request (without blocking it): "пренасочете заявката (без да я блокирате)"
   run a file to handle the request: "стартирайте файл, за да обработите заявката"
   whitelist the request: "поставете заявката в белия списък"
+ bobuam:
+  Ambiguous user agents: "Нееднозначни потребителски агенти"
+  Clearly malformed user agents: "Очевидно деформирани потребителски агенти"
+  Masquerade attempts (e_g_, bots pretending to be browsers): "Опити за маскиране (напр., ботове, представящи се за браузъри)"
+  Outdated or end of life browsers (you can set the versions below): "Остарели или с изтекъл срок на годност браузъри (можете да зададете версиите по-долу)"
+  Suspected bots, scrapers, probes, etc: "Подозирани ботове, скрепери, сонди, и др."
  expire_bad: "От момента на създаването му, времето, което лошите данни са кеширани от този модул, могат да живеят, преди да изтече."
  expire_good: "От момента на създаването му, времето, което добрите данни са кеширани от този модул, могат да живеят, преди да изтече."
  lookup_strategy: "За кои заявки трябва да се извършват търсения?"

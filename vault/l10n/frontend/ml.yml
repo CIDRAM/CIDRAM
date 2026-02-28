@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malayalam language data for the front-end (last modified: 2026.02.24).
+# This file: Malayalam language data for the front-end (last modified: 2026.02.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -144,8 +144,6 @@ config:
  bgpview_whitelisted_asns: &ConfigWhitelistedASNs "മൊഡ്യൂൾ വൈറ്റ്‌ലിസ്റ്റ് ചെയ്യേണ്ട ASN-കളുടെ ഒരു പട്ടിക."
  bgpview_whitelisted_ccs: &ConfigWhitelistedCCs "മൊഡ്യൂൾ വൈറ്റ്‌ലിസ്റ്റ് ചെയ്യേണ്ട രാജ്യങ്ങളുടെ (അവരുടെ {{Links.ISO.3166}} 2-അക്ക രാജ്യ കോഡുകൾ ഉപയോഗിച്ച് തിരിച്ചറിയാം) പട്ടിക."
  bobuam: "ഓപ്ഷണൽ "ബോട്ട് അല്ലെങ്കിൽ ബ്രൗസർ ഉപയോക്തൃ ഏജന്റുകൾ മൊഡ്യൂൾ" കോൺഫിഗറേഷൻ. ഈ മൊഡ്യൂൾ ആവശ്യമില്ലാത്ത ബോട്ടുകളും പഴയ ബ്രൗസറുകളും കണ്ടെത്തുകയും ചില സാനിറ്റി പരിശോധനകൾ നടത്തുകയും ചെയ്യുന്നു."
- bobuam_block_bots: "ദോഷകരമോ അനാവശ്യമോ ആണെന്ന് തിരിച്ചറിഞ്ഞ ബോട്ടുകളെ തടയണോ?"
- bobuam_block_eol_browsers: "ജീവിതാവസാനത്തിന്റെ ബ്രൗസറുകൾ തടയണോ? (താഴെ പതിപ്പുകൾ സജ്ജമാക്കുക)."
  bobuam_chrome: ""Chrome/Chromium" ടോക്കണിന്റെ ഏറ്റവും കുറഞ്ഞ അനുവദനീയമായ പതിപ്പ്. ശുപാർശ ചെയ്യുന്നത്: {{BOBUAM Token.Chrome}}."
  bobuam_edge: ""Edg/Edge" ടോക്കണിന്റെ ഏറ്റവും കുറഞ്ഞ അനുവദനീയമായ പതിപ്പ്. ശുപാർശ ചെയ്യുന്നത്: {{BOBUAM Token.Edge}}."
  bobuam_firefox: ""Firefox" ടോക്കണിന്റെ ഏറ്റവും കുറഞ്ഞ അനുവദനീയമായ പതിപ്പ്. ശുപാർശ ചെയ്യുന്നത്: {{BOBUAM Token.Firefox}}."
@@ -157,7 +155,7 @@ config:
  bobuam_reason_malformed: "ഒരു വികലമായ ഉപയോക്തൃ ഏജന്റിനെ കണ്ടെത്തി തടയുമ്പോൾ കാണിക്കുന്ന കാരണം."
  bobuam_reason_masquerade: "മറ്റെന്തെങ്കിലും ആയി നടിക്കുന്നതിന്റെ പേരിൽ ഒരു ഉപയോക്തൃ ഏജന്റിനെ തടയപ്പെടുമ്പോൾ കാണിക്കുന്ന കാരണം."
  bobuam_safari: "സഫാരിയുടെ "Version" ടോക്കണിന്റെ ഏറ്റവും കുറഞ്ഞ അനുവദനീയമായ പതിപ്പ്. ശുപാർശ ചെയ്യുന്നത്: {{BOBUAM Token.Safari}}."
- bobuam_sanity_check: "അവ്യക്തമായതോ വ്യക്തമായി തകരാറുള്ളതോ ആയ ഉപയോക്തൃ ഏജന്റുകളെ കാണിക്കുന്ന ബ്രൗസറുകൾ തടയണോ?"
+ bobuam_what_to_block: "എന്ത് ബ്ലോക്ക് ചെയ്യണം?"
  bunnycdn: "BunnyCDN കോംപാറ്റിബിലിറ്റി മൊഡ്യൂൾ കോൺഫിഗറേഷൻ."
  bunnycdn_positive_action: "BunnyCDN-ൽ നിന്നുള്ള ഒരു അഭ്യർത്ഥന നേരിടുമ്പോൾ CIDRAM എന്ത് പ്രവർത്തനം നടത്തണം? സ്ഥിരസ്ഥിതി പ്രവർത്തനം = ബൈപാസ്."
  bypasses: "സ്ഥിരസ്ഥിതി ഒപ്പ് ബൈപാസുകളുടെ കോൺഫിഗറേഷൻ."
@@ -766,6 +764,12 @@ label:
   redirect the request (without blocking it): "അഭ്യർത്ഥന റീഡയറക്ട് ചെയ്യുക (തടയാതെ)"
   run a file to handle the request: "അഭ്യർത്ഥന കൈകാര്യം ചെയ്യാൻ ഒരു ഫയൽ പ്രവർത്തിപ്പിക്കുക"
   whitelist the request: "അഭ്യർത്ഥന വൈറ്റ്‌ലിസ്റ്റ് ചെയ്യുക"
+ bobuam:
+  Ambiguous user agents: "അവ്യക്തമായ ഉപയോക്തൃ ഏജന്റുകൾ"
+  Clearly malformed user agents: "വ്യക്തമായും തെറ്റായ രൂപത്തിലുള്ള ഉപയോക്തൃ ഏജന്റുകൾ"
+  Masquerade attempts (e_g_, bots pretending to be browsers): "മാസ്‌കറേഡ് ശ്രമങ്ങൾ (ഉദാ., ബ്രൗസറുകളായി നടിക്കുന്ന ബോട്ടുകൾ)"
+  Outdated or end of life browsers (you can set the versions below): "കാലഹരണപ്പെട്ടതോ അവസാനിച്ചതോ ആയ ബ്രൗസറുകൾ (നിങ്ങൾക്ക് താഴെ പതിപ്പുകൾ സജ്ജമാക്കാൻ കഴിയും)"
+  Suspected bots, scrapers, probes, etc: "സംശയിക്കപ്പെടുന്ന ബോട്ടുകൾ, സ്ക്രാപ്പറുകൾ, പ്രോബുകൾ, മുതലായവ"
  expire_bad: "ഈ മൊഡ്യൂൾ സൃഷ്ടിച്ച സമയം മുതൽ, ഈ മൊഡ്യൂൾ കാഷെ ചെയ്ത മോശം ഡാറ്റ കാലഹരണപ്പെടുന്നതിന് മുമ്പ് എത്ര സമയം നിലനിൽക്കും."
  expire_good: "ഈ മൊഡ്യൂൾ സൃഷ്ടിച്ച സമയം മുതൽ, ഈ മൊഡ്യൂൾ കാഷെ ചെയ്ത നല്ല ഡാറ്റ കാലഹരണപ്പെടുന്നതിന് മുമ്പ് എത്ര സമയം നിലനിൽക്കും."
  lookup_strategy: "ഏതൊക്കെ അഭ്യർത്ഥനകൾക്കാണ് ലുക്കപ്പുകൾ നടത്തേണ്ടത്?"

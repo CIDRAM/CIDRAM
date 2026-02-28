@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2026.02.24).
+# This file: Italian language data for the front-end (last modified: 2026.02.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -144,8 +144,6 @@ config:
  bgpview_whitelisted_asns: &ConfigWhitelistedASNs "Un elenco di ASN da inserire nella lista bianca quando corrispondono dal modulo."
  bgpview_whitelisted_ccs: &ConfigWhitelistedCCs "Un elenco di paesi (identificati dai loro codici paese {{Links.ISO.3166}} a 2 cifre) da inserire nella lista bianca quando corrispondono dal modulo."
  bobuam: "Configurazione per il "modulo per agenti utente bot o browser" facoltativo, che rileva bot indesiderati, vecchi browser, ed esegue alcuni controlli di integrità."
- bobuam_block_bots: "Blocca i bot riconosciuti come dannosi o indesiderati?"
- bobuam_block_eol_browsers: "Blocca i browser che hanno raggiunto la fine del ciclo di vita? (Imposta le versioni di seguito)."
  bobuam_chrome: "Versione minima consentita del token "Chrome/Chromium". Consigliato: {{BOBUAM Token.Chrome}}."
  bobuam_edge: "Versione minima consentita del token "Edg/Edge". Consigliato: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "Versione minima consentita del token "Firefox". Consigliato: {{BOBUAM Token.Firefox}}."
@@ -157,7 +155,7 @@ config:
  bobuam_reason_malformed: "Il motivo del blocco mostrato quando viene rilevata una stringa agente utente malformata."
  bobuam_reason_masquerade: "Il motivo del blocco mostrato quando un agente utente tenta di mascherarsi da qualcos'altro."
  bobuam_safari: "Versione minima consentita del token "Version" di Safari. Consigliato: {{BOBUAM Token.Safari}}."
- bobuam_sanity_check: "Blocca i browser che mostrano stringhe dell'agente utente ambigue o chiaramente malformate?"
+ bobuam_what_to_block: "Cosa bloccare?"
  bunnycdn: "Configurazione per il modulo di compatibilità BunnyCDN."
  bunnycdn_positive_action: "Quale azione dovrebbe eseguire da CIDRAM quando incontra una richiesta da BunnyCDN? Azione predefinita = Bypassarlo."
  bypasses: "Configurazione per i bypass di firma predefiniti."
@@ -761,6 +759,12 @@ label:
   redirect the request (without blocking it): "reindirizzare la richiesta (senza bloccarla)"
   run a file to handle the request: "eseguire un file per gestire la richiesta"
   whitelist the request: "inserire nella lista bianca la richiesta"
+ bobuam:
+  Ambiguous user agents: "Agenti utente ambigui"
+  Clearly malformed user agents: "Agenti utente chiaramente malformati"
+  Masquerade attempts (e_g_, bots pretending to be browsers): "Tentativi di mascheramento (ad esempio, bot che fingono di essere browser)"
+  Outdated or end of life browsers (you can set the versions below): "Browser obsoleti o fuori produzione (puoi impostare le versioni qui sotto)"
+  Suspected bots, scrapers, probes, etc: "Sospetti bot, scraper, sonde, ecc"
  expire_bad: "Dal momento della sua creazione, il periodo di tempo in cui i dati errati memorizzati nella cache da questo modulo possono vivere prima della loro scadenza."
  expire_good: "Dal momento della sua creazione, il periodo di tempo in cui i dati validi memorizzati nella cache da questo modulo possono vivere prima della loro scadenza."
  lookup_strategy: "Per quali richieste devono essere eseguite le ricerche?"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Gujarati language data for the front-end (last modified: 2026.02.24).
+# This file: Gujarati language data for the front-end (last modified: 2026.02.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -144,8 +144,6 @@ config:
  bgpview_whitelisted_asns: &ConfigWhitelistedASNs "મોડ્યુલ દ્વારા મેળ ખાતી વખતે વ્હાઇટલિસ્ટ કરવા માટે ASN ની સૂચિ."
  bgpview_whitelisted_ccs: &ConfigWhitelistedCCs "મોડ્યુલ દ્વારા મેળ ખાતી વખતે વ્હાઇટલિસ્ટ થવાના દેશોની સૂચિ (તેમના {{Links.ISO.3166}} 2-અંકના દેશના કોડ દ્વારા ઓળખવામાં આવે છે)."
  bobuam: "વૈકલ્પિક "બોટ અથવા બ્રાઉઝર વપરાશકર્તા એજન્ટ મોડ્યુલ" માટેનું રૂપરેખાંકન, જે અનિચ્છનીય બોટ્સ, જૂના બ્રાઉઝર્સને શોધી કાઢે છે અને કેટલીક સેનિટી તપાસ કરે છે."
- bobuam_block_bots: "શું દૂષિત અથવા અનિચ્છનીય તરીકે ઓળખાતા બૉટોને અવરોધિત કરવા જોઈએ?"
- bobuam_block_eol_browsers: "જીવનના અંત સુધી પહોંચી ગયેલા બ્રાઉઝર્સને અવરોધિત કરવા જોઈએ? (નીચેની આવૃત્તિઓ સેટ કરો)."
  bobuam_chrome: ""Chrome/Chromium" ટોકનનું સૌથી ઓછું માન્ય સંસ્કરણ. ભલામણ કરેલ: {{BOBUAM Token.Chrome}}."
  bobuam_edge: ""Edg/Edge" ટોકનનું સૌથી ઓછું માન્ય સંસ્કરણ. ભલામણ કરેલ: {{BOBUAM Token.Edge}}."
  bobuam_firefox: ""Firefox" ટોકનનું સૌથી ઓછું માન્ય સંસ્કરણ. ભલામણ કરેલ: {{BOBUAM Token.Firefox}}."
@@ -157,7 +155,7 @@ config:
  bobuam_reason_malformed: "જ્યારે દૂષિત વપરાશકર્તા એજન્ટ સ્ટ્રિંગ મળી આવે ત્યારે બ્લોકનું કારણ બતાવવામાં આવે છે."
  bobuam_reason_masquerade: "જ્યારે વપરાશકર્તા એજન્ટ કંઈક બીજું માસ્કરેડ કરવાનો પ્રયાસ કરે છે ત્યારે બ્લોકનું કારણ બતાવવામાં આવે છે."
  bobuam_safari: "Safariના "Version" ટોકનનું સૌથી ઓછું માન્ય સંસ્કરણ. ભલામણ કરેલ: {{BOBUAM Token.Safari}}."
- bobuam_sanity_check: "શું બ્રાઉઝર્સ કે જે અસ્પષ્ટ અથવા સ્પષ્ટ રીતે દૂષિત વપરાશકર્તા એજન્ટ સ્ટ્રીંગ્સ દર્શાવે છે તેને અવરોધિત કરવા જોઈએ?"
+ bobuam_what_to_block: "શું અવરોધિત કરવું જોઈએ?"
  bunnycdn: "BunnyCDN સુસંગતતા મોડ્યુલ રૂપરેખાંકન."
  bunnycdn_positive_action: "જ્યારે CIDRAM ને BunnyCDN તરફથી વિનંતી મળે ત્યારે કઈ ક્રિયા કરવી જોઈએ? ડિફૉલ્ટ ક્રિયા = બાયપાસ."
  bypasses: "ડિફૉલ્ટ સિગ્નેચર બાયપાસ રૂપરેખાંકન."
@@ -758,6 +756,12 @@ label:
   redirect the request (without blocking it): "વિનંતીને રીડાયરેક્ટ કરો (તેને અવરોધિત કર્યા વિના)"
   run a file to handle the request: "વિનંતીને હેન્ડલ કરવા માટે ફાઇલ ચલાવો"
   whitelist the request: "વિનંતીને વ્હાઇટલિસ્ટ કરો"
+ bobuam:
+  Ambiguous user agents: "અસ્પષ્ટ વપરાશકર્તા એજન્ટો"
+  Clearly malformed user agents: "સ્પષ્ટ રીતે ખોટા આકારનું વપરાશકર્તા એજન્ટો"
+  Masquerade attempts (e_g_, bots pretending to be browsers): "માસ્કરેડ પ્રયાસો (દા.ત., બ્રાઉઝર હોવાનો ડોળ કરતા બોટ્સ)"
+  Outdated or end of life browsers (you can set the versions below): "જૂના અથવા સમાપ્ત થઈ ગયેલા બ્રાઉઝર્સ (તમે નીચે આપેલા સંસ્કરણો સેટ કરી શકો છો)"
+  Suspected bots, scrapers, probes, etc: "શંકાસ્પદ બોટ્સ, સ્ક્રેપર્સ, પ્રોબ્સ, વગેરે"
  expire_bad: "આ મોડ્યુલ દ્વારા કેશ કરવામાં આવેલ ખરાબ ડેટા, તેના બનાવટના સમયથી, તે સમાપ્ત થાય તે પહેલાં જીવી શકે છે."
  expire_good: "આ મોડ્યુલ દ્વારા કેશ કરેલ સારો ડેટા, તેના બનાવટના સમયથી, તે સમાપ્ત થાય તે પહેલાં જીવી શકે છે."
  lookup_strategy: "કઈ વિનંતીઓ માટે લુકઅપ્સ કરવા જોઈએ?"

@@ -22,7 +22,7 @@
  * William "Bill" Minozzi.
  * @link https://www.stopbadbots.com/
  *
- * This file: Bot Or Browser User Agent Module (last modified: 2026.01.16).
+ * This file: Bot Or Browser User Agent Module (last modified: 2026.02.26).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -44,26 +44,27 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         $this->CIDRAM['Hostname'] = $this->dnsReverse($this->BlockInfo['IPAddr']);
     }
 
+    /** What to block. */
+    $WhatToBlock = array_flip(explode("\n", $this->Configuration['bobuam']['what_to_block']));
+
     /** Fetch options. */
     $Options = array_flip(explode("\n", $this->Configuration['bobuam']['options']));
 
-    /** Sanity checks (checking for ambiguous and clearly malformed user agents). */
-    if ($this->Configuration['bobuam']['sanity_check'] === 'yes') {
+    if (isset($WhatToBlock['Masquerade'])) {
         $Masquerade = [
             $this->L10N->getString('bobuam_masquerade'),
             $this->L10N->getString($this->Configuration['bobuam']['reason_masquerade']) ?: $this->Configuration['bobuam']['reason_masquerade'] ?: $this->L10N->getString('denied')
         ];
+        if ($this->trigger(preg_match('%(?i)(?=.*nutch)(?:google|bing|opera)bot%', $this->BlockInfo['UA']), $Masquerade[0] . ' (NB)', $Masquerade[1])) {
+            $this->enactOptions('Masquerade:', $Options);
+        }
+    }
+
+    if (isset($WhatToBlock['Ambiguous'])) {
         $Ambiguous = [
             $this->L10N->getString('bobuam_ambiguous'),
             $this->L10N->getString($this->Configuration['bobuam']['reason_ambiguous']) ?: $this->Configuration['bobuam']['reason_ambiguous'] ?: $this->L10N->getString('denied')
         ];
-        $Malformed = [
-            $this->L10N->getString('bobuam_malformed'),
-            $this->L10N->getString($this->Configuration['bobuam']['reason_malformed']) ?: $this->Configuration['bobuam']['reason_malformed'] ?: $this->L10N->getString('denied')
-        ];
-        if ($this->trigger(preg_match('%(?i)(?=.*nutch)(?:google|bing|opera)bot%', $this->BlockInfo['UA']), $Masquerade[0] . ' (NB)', $Masquerade[1])) {
-            $this->enactOptions('Masquerade:', $Options);
-        }
         if (
             $this->trigger(preg_match('%(?i)(?=.*opera)(?=.*(?:firefox|msie)).*%', $this->BlockInfo['UA']), $Ambiguous[0] . ' (OFM)', $Ambiguous[1]) ||
             $this->trigger(preg_match('%(?i)(?=.*firefox)(?=.*(?:chrom(?:e|ium)|msie)).*%', $this->BlockInfo['UA']), $Ambiguous[0] . ' (FCM)', $Ambiguous[1]) ||
@@ -71,6 +72,13 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         ) {
             $this->enactOptions('Ambiguous:', $Options);
         }
+    }
+
+    if (isset($WhatToBlock['Malformed'])) {
+        $Malformed = [
+            $this->L10N->getString('bobuam_malformed'),
+            $this->L10N->getString($this->Configuration['bobuam']['reason_malformed']) ?: $this->Configuration['bobuam']['reason_malformed'] ?: $this->L10N->getString('denied')
+        ];
         if (
             $this->trigger(preg_match('%(?i)(?=.*gecko\/\d*)(?=.*rv:([\d\.]*)).*firefox\/(?!\1)%', $this->BlockInfo['UA'], $Ver) && $Ver[1] !== '109.0', $Malformed[0] . ' (FF)', $Malformed[1]) ||
             $this->trigger(preg_match('%(?i)(?!.*gecko\/20100101).*rv:([\d\.]*).*gecko\/(?!\1)%', $this->BlockInfo['UA'], $Ver) && $Ver[1] !== '109.0', $Malformed[0] . ' (MZ)', $Malformed[1]) ||
@@ -84,7 +92,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     }
 
     /** Signatures for recognised malicious and unwanted bots. */
-    if ($this->Configuration['bobuam']['block_bots'] === 'yes') {
+    if (isset($WhatToBlock['SuspectedBot'])) {
         $Bot = [
             $this->L10N->getString('bobuam_bot'),
             $this->L10N->getString($this->Configuration['bobuam']['reason_bot']) ?: $this->Configuration['bobuam']['reason_bot'] ?: $this->L10N->getString('denied')
@@ -138,7 +146,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $this->trigger(preg_match('%s(?:c(?:an(?:bot|ner)|hibstedsokbot|our|r(?:apy-redis|ipt injection|utiny))|e(?:arch(?:-photo\.info spider|\.KumKie\.com|\.ch|preview\/)|curity (?:analyser|scan)|e(?:gnifybot|k-crawler|s\.co|xie\.)|m(?:antic(?:-visions\.|bot|discovery|juice)|iocast\.)|nsis|o(?:-(?:audit-check-bot|nastroj)|chat\.)|plinkbot|r(?:pstatbot|vernfo\.)|tcronjob|xsearcher)|g-Orbiter|h(?:arpr\.|elob|opping\.com research|rinktheweb|ybunnie-engine)|i(?:deqik\.|msalabim|strix|te(?:check\.internetseer|lock\.com|quest|xy))|sky(?:grid|rock)\.|lider|mart\.apnoti\.|n(?:a(?:-|cktory)|iptracker|prtz)|o(?:cialbm_bot|fthub\.|gou |hu-search|lofield\.|otle\/)|p(?:_auditbot|a(?:mmer|nner\/|ziodati)|ecial_archiver|ider\.asp \/|o(?:ofedhost\.onlinescanner|rtspyder\.)|r(?:ay-can|oose)|y(?:der\d\.microsys\.|onweb))|ql injection|t(?:a(?:ff|rt(?:\.exe|mebot)|t(?:crawler|dom\.ru))|orebot\.|q_bot|r(?:ap wrench bot|esstest|uts-pwn)|udylib bot)|u(?:ch(?:en|knecht)|ggybot|kibot_heritrix\/|mmify|reseeker|zuran\/)|ygol)%', $this->BlockInfo['UA']), $Bot[0], $Bot[1]) ||
             $this->trigger(preg_match('%t(?:6labs|AkeOut\/|a(?:boola|gSeoBot|ptubot)|bot-nutch|e(?:lnet0|mnos\.|st)|h(?:e(?:internetrules|oldreader)|ie(?:f|ves)|umbshots)|i(?:gerbot|mboBot)|ldstat|o(?:Crawl(\/)?UrlDispatcher|p(?:bloglog\.|icblogs|ster)|quo\.es|uche)|r(?:endictionbot|ivial|o(?:ovziBot|v(?:ator\.|itBot))|uwoGPS)|uringos\/|we(?:etedtimes|nga))%', $this->BlockInfo['UA']), $Bot[0], $Bot[1]) ||
             $this->trigger(preg_match('%u(?:12Bot\/|MBot|bermetrics|classify\.|ipbot|nchaos_crawler|pdated|rl(?:ck\/\d|fan-bot|resolver)|securio\.)%', $this->BlockInfo['UA']), $Bot[0], $Bot[1]) ||
-            $this->trigger(preg_match('%v(?:BSEO(?:\/|_)|URL Online|e(?:bidoobot|rs(?:ellie\.|us crawler))|i(?:sionutils|talbox1@hotmail)|kShare|o(?:ltron|yager))%', $this->BlockInfo['UA']), $Bot[0], $Bot[1]) ||
+            $this->trigger(preg_match('%v(?:URL Online|e(?:bidoobot|rs(?:ellie\.|us crawler))|i(?:sionutils|talbox1@hotmail)|kShare|o(?:ltron|yager))%', $this->BlockInfo['UA']), $Bot[0], $Bot[1]) ||
             $this->trigger(preg_match('%w(?:3(?:af|dt\.net)|angling|eb(?:-capture|Mirror|Pluck|c(?:eo\.|ollage|rawl\.net)|eaver\.|i(?:natorbot|s )|kit2png|layers\/|mastercoffee|numbrFetcher|reaper|screenie|sitepulse|walk\/)|f(?:84|_crawler)|i(?:bbitz\.|kiwix-bot|red-digital-newsbot\/|se-guys|sponbot|thknown\.)|khtmlto|mtips\.|o(?:nderbot\/|obot|riobot)|pspydr\.|s(?:Analyzer\/|check)|wscheck.com|ww(?:\.(?:adressendeutschland|express-soft|freeloader|iir|osaicbt|otway|vinn\.com)\.|ster))%', $this->BlockInfo['UA']), $Bot[0], $Bot[1]) ||
             $this->trigger(preg_match('%x(?:100Bot\/|28-job-bot|USAx|ing\.|irq|pymep)%', $this->BlockInfo['UA']), $Bot[0], $Bot[1]) ||
             $this->trigger(preg_match('%y(?:acy|e(?:lpspider|s\/)|napse|o(?:o(?:gliFetchAgent|zBot)|ur(?:-search-bot|eputation\.|ls)))%', $this->BlockInfo['UA']), $Bot[0], $Bot[1]) ||
@@ -211,7 +219,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     }
 
     /** Signatures for end of life (EoL) browsers. */
-    if ($this->Configuration['bobuam']['block_eol_browsers'] === 'yes') {
+    if (isset($WhatToBlock['Outdated'])) {
         if ($this->Configuration['bobuam']['reason_browser'] === 'bobuam_outdated_long') {
             /** Temporary fix (2025.07.27). */
             $this->Configuration['bobuam']['reason_browser'] = 'ReasonMessage.Outdated browser';
@@ -269,11 +277,11 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     }
 
     /**
-     * Signatures for token mismatches (extends sanity checks).
+     * Signatures for token mismatches (indicating an attempt to masquerade).
      * For a list of which browsers do/don't support Sec-CH-UA, see:
      * @link https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Sec-CH-UA#browser_compatibility
      */
-    if ($this->Configuration['bobuam']['sanity_check'] === 'yes' && $this->BlockInfo['SEC_CH_UA'] !== '') {
+    if (isset($WhatToBlock['Masquerade']) && $this->BlockInfo['SEC_CH_UA'] !== '') {
         $Failed = false;
         if (isset($this->Tokens['Opera']) || isset($this->Tokens['OperaMobile'])) {
             if ($this->BlockInfo['SEC_CH_UA_MOBILE'] === '?1') {

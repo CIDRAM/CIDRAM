@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2026.02.24).
+# This file: English language data for the front-end (last modified: 2026.02.26).
 ##/
 
 Abuse category:
@@ -138,10 +138,6 @@ config:
  bgpview_whitelisted_asns: &ConfigWhitelistedASNs "A list of ASNs to be whitelisted when matched by the module."
  bgpview_whitelisted_ccs: &ConfigWhitelistedCCs "A list of countries (identified by their {{Links.ISO.3166}} 2-digit country codes) to be whitelisted when matched by the module."
  bobuam: "Configuration for the optional "bot or browser user agents module", which detects unwanted bots, old browsers, and performs some sanity checks."
- bobuam_block_bots:
-  en-AU: "Block bots recognised as malicious or unwanted?"
-  en-US: "Block bots recognized as malicious or unwanted?"
- bobuam_block_eol_browsers: "Block browsers that've reached end of life? (Set versions below)."
  bobuam_chrome: "Lowest allowed version of the "Chrome/Chromium" token. Recommended: {{BOBUAM Token.Chrome}}."
  bobuam_edge: "Lowest allowed version of the "Edg/Edge" token. Recommended: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "Lowest allowed version of the "Firefox" token. Recommended: {{BOBUAM Token.Firefox}}."
@@ -153,7 +149,7 @@ config:
  bobuam_reason_malformed: "The block reason shown when a malformed user agent string is detected."
  bobuam_reason_masquerade: "The block reason shown when an user agent tries to masquerade as something else."
  bobuam_safari: "Lowest allowed version of Safari's "Version" token. Recommended: {{BOBUAM Token.Safari}}."
- bobuam_sanity_check: "Block browsers that show ambiguous or clearly malformed user agent strings?"
+ bobuam_what_to_block: "What to block?"
  bunnycdn: "BunnyCDN compatibility module configuration."
  bunnycdn_positive_action: "Which action should CIDRAM perform when it encounters a request from BunnyCDN? Default action = Bypass."
  bypasses: "Default signature bypasses configuration."
@@ -787,6 +783,12 @@ label:
   redirect the request (without blocking it): "redirect the request (without blocking it)"
   run a file to handle the request: "run a file to handle the request"
   whitelist the request: "whitelist the request"
+ bobuam:
+  Ambiguous user agents: "Ambiguous user agents"
+  Clearly malformed user agents: "Clearly malformed user agents"
+  Masquerade attempts (e_g_, bots pretending to be browsers): "Masquerade attempts (e.g., bots pretending to be browsers)"
+  Outdated or end of life browsers (you can set the versions below): "Outdated or end of life browsers (you can set the versions below)"
+  Suspected bots, scrapers, probes, etc: "Suspected bots, scrapers, probes, etc"
  expire_bad: "From the time of its creation, the amount of time that bad data cached by this module may live before it expires."
  expire_good: "From the time of its creation, the amount of time that good data cached by this module may live before it expires."
  lookup_strategy: "Which requests should lookups be performed for?"

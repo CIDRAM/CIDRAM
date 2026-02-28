@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data for the front-end (last modified: 2026.02.24).
+# This file: Bangla language data for the front-end (last modified: 2026.02.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -144,8 +144,6 @@ config:
  bgpview_whitelisted_asns: &ConfigWhitelistedASNs "মডিউলের সাথে মিলে গেলে সাদা তালিকাভুক্ত করা ASN এর একটি তালিকা।"
  bgpview_whitelisted_ccs: &ConfigWhitelistedCCs "মডিউলের সাথে মিলে গেলে সাদা তালিকাভুক্ত দেশগুলির একটি তালিকা৷ (তাদের {{Links.ISO.3166}} 2-সংখ্যার দেশের কোড দ্বারা চিহ্নিত করা হয়)।"
  bobuam: ""বট বা ব্রাউজার ব্যবহারকারী এজেন্ট মডিউল" এর জন্য কনফিগারেশন। এই মডিউলটি অবাঞ্ছিত বট, পুরানো ব্রাউজার সনাক্ত করে, এবং কিছু স্যানিটি পরীক্ষা করে।"
- bobuam_block_bots: "ব্লক বট দূষিত বা অবাঞ্ছিত হিসাবে স্বীকৃত?"
- bobuam_block_eol_browsers: "জীবনের শেষ পর্যন্ত পৌঁছেছেন যে ব্রাউজার ব্লক? (নীচে সংস্করণ সেট করুন)।"
  bobuam_chrome: ""Chrome/Chromium" টোকেনের সর্বনিম্ন অনুমোদিত সংস্করণ। প্রস্তাবিত: "{{BOBUAM Token.Chrome}}"।"
  bobuam_edge: ""Edg/Edge" টোকেনের সর্বনিম্ন অনুমোদিত সংস্করণ। প্রস্তাবিত: "{{BOBUAM Token.Edge}}"।"
  bobuam_firefox: ""Firefox" টোকেনের সর্বনিম্ন অনুমোদিত সংস্করণ। প্রস্তাবিত: "{{BOBUAM Token.Firefox}}"।"
@@ -157,7 +155,7 @@ config:
  bobuam_reason_malformed: "একটি বিকৃত ব্যবহারকারী এজেন্ট স্ট্রিং সনাক্ত করা হলে ব্লকের কারণ দেখানো হয়।"
  bobuam_reason_masquerade: "একটি ব্যবহারকারী এজেন্ট যখন অন্য কিছু হিসাবে মাশকারেড করার চেষ্টা করে তখন ব্লকের কারণ দেখানো হয়।"
  bobuam_safari: "সাফারির "Version" টোকেনের সর্বনিম্ন অনুমোদিত সংস্করণ। প্রস্তাবিত: "{{BOBUAM Token.Safari}}"।"
- bobuam_sanity_check: "অস্পষ্ট বা স্পষ্টভাবে বিকৃত ব্যবহারকারী এজেন্ট স্ট্রিং দেখায় যে ব্রাউজারগুলিকে ব্লক করবেন?"
+ bobuam_what_to_block: "কি ব্লক করবেন?"
  bunnycdn: "BunnyCDN সামঞ্জস্য মডিউল কনফিগারেশন।"
  bunnycdn_positive_action: "BunnyCDN থেকে অনুরোধের সম্মুখীন হলে CIDRAM কোন কাজটি সম্পাদন করা উচিত? ডিফল্ট অ্যাকশন = অনুরোধ বাইপাস।"
  bypasses: "ডিফল্ট স্বাক্ষর বাইপাসগুলির জন্য কনফিগারেশন।"
@@ -751,6 +749,12 @@ label:
   redirect the request (without blocking it): "অনুরোধটি পুনর্নির্দেশ করুন (এটি ব্লক না করে)"
   run a file to handle the request: "অনুরোধটি পরিচালনা করার জন্য একটি ফাইল চালান"
   whitelist the request: "অনুরোধটি সাদা তালিকা করুন"
+ bobuam:
+  Ambiguous user agents: "অস্পষ্ট ব্যবহারকারী এজেন্ট"
+  Clearly malformed user agents: "স্পষ্টতই বিকৃত ব্যবহারকারী এজেন্ট"
+  Masquerade attempts (e_g_, bots pretending to be browsers): "মাস্করাডিং প্রয়াস (যেমন, ব্রাউজার হওয়ার ভান করে বট)"
+  Outdated or end of life browsers (you can set the versions below): "পুরনো বা শেষ মেয়াদের ব্রাউজার (আপনি নীচের সংস্করণগুলি সেট করতে পারেন)"
+  Suspected bots, scrapers, probes, etc: "সন্দেহভাজন বট, স্ক্র্যাপার, প্রোব, ইত্যাদি"
  expire_bad: "এর সৃষ্টির সময় থেকে, এই মডিউলটি দ্বারা ক্যাশে করা খারাপ ডেটা যে পরিমাণ সময় শেষ হওয়ার আগে বেঁচে থাকতে পারে।"
  expire_good: "এর সৃষ্টির সময় থেকে, এই মডিউলটি দ্বারা ক্যাশে করা ভাল ডেটা যে পরিমাণ সময় শেষ হওয়ার আগে বেঁচে থাকতে পারে।"
  lookup_strategy: "কোন অনুরোধের জন্য অনুসন্ধান করা উচিত?"

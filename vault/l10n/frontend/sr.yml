@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Serbian language data for the front-end (last modified: 2026.02.24).
+# This file: Serbian language data for the front-end (last modified: 2026.02.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -144,8 +144,6 @@ config:
  bgpview_whitelisted_asns: &ConfigWhitelistedASNs "Листа АСН-ова који се стављају на белу листу када их модул подудара."
  bgpview_whitelisted_ccs: &ConfigWhitelistedCCs "Листа земаља (идентификоване по њиховим {{Links.ISO.3166}} двоцифреним кодовима земаља) који се стављају на белу листу када их модул подудара."
  bobuam: "Конфигурација за опциони „модул за корисничке агенте ботова и претраживача“, који открива нежељене ботове, старе претраживаче, и врши неке провере исправности."
- bobuam_block_bots: "Блокирајте ботове препознате као злонамерне или нежељене?"
- bobuam_block_eol_browsers: "Блокирати прегледаче који су завршили свој животни век? (Подесите верзије испод)."
  bobuam_chrome: "Најнижа дозвољена верзија токена „Chrome/Chromium“. Препоручено: {{BOBUAM Token.Chrome}}."
  bobuam_edge: "Најнижа дозвољена верзија токена „Edg/Edge“. Препоручено: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "Најнижа дозвољена верзија токена „Firefox“. Препоручено: {{BOBUAM Token.Firefox}}."
@@ -157,7 +155,7 @@ config:
  bobuam_reason_malformed: "Разлог блокирања који се приказује када се открије неисправан низ корисничког агента."
  bobuam_reason_masquerade: "Разлог блокирања који се приказује када кориснички агент покуша да се маскира као нешто друго."
  bobuam_safari: "Најнижа дозвољена верзија Сафаријевог токена „Version“. Препоручено: {{BOBUAM Token.Safari}}."
- bobuam_sanity_check: "Блокирати претраживаче који приказују двосмислене или јасно деформисане стрингове корисничког агента?"
+ bobuam_what_to_block: "Шта блокирати?"
  bunnycdn: "Конфигурација за БунниЦДН компатибилни модул."
  bunnycdn_positive_action: "Коју радњу ЦИДРАМ треба да изврши када наиђе на захтев БунниЦДН-а? Подразумевана радња = Заобићи."
  bypasses: "Конфигурација за стандардне заобилажења потписа."
@@ -771,6 +769,12 @@ label:
   redirect the request (without blocking it): "преусмерите захтев (без блокирања)"
   run a file to handle the request: "покрените датотеку за обраду захтева"
   whitelist the request: "ставите захтев на белу листу"
+ bobuam:
+  Ambiguous user agents: "Двосмислени кориснички агенти"
+  Clearly malformed user agents: "Очигледно деформисани кориснички агенти"
+  Masquerade attempts (e_g_, bots pretending to be browsers): "Покушаји маскирања (нпр., ботови који се претварају да су прегледачи)"
+  Outdated or end of life browsers (you can set the versions below): "Застарели или укинути прегледачи (верзије можете подесити испод)"
+  Suspected bots, scrapers, probes, etc: "Сумњиви ботови, скрејпери, сонде, итд"
  expire_bad: "Од тренутка креирања, време које лоши подаци које је кеширао овај модул могу да живе пре него што истекну."
  expire_good: "Од тренутка креирања, време које добри подаци које је кеширао овај модул могу да живе пре него што истекну."
  lookup_strategy: "За које захтеве треба извршити претраге?"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2026.02.24).
+# This file: Latvian language data for the front-end (last modified: 2026.02.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -144,8 +144,6 @@ config:
  bgpview_whitelisted_asns: &ConfigWhitelistedASNs "To ASN saraksts, kas jāiekļauj baltajā sarakstā, ja tos saskaņo modulis."
  bgpview_whitelisted_ccs: &ConfigWhitelistedCCs "To valstu saraksts (identificē ar to {{Links.ISO.3166}} 2-ciparu valsts kodiem), kas jāiekļauj baltajā sarakstā, ja tos saskaņo modulis."
  bobuam: ""Modulis robotu vai pārlūkprogrammu lietotāju aģentiem" izvēles konfigurācija. Šis modulis atklāj nevēlamus robotus, vecas pārlūkprogrammas, un veic dažas saprāta pārbaudes."
- bobuam_block_bots: "Bloķēt robotprogrammatūras, kas atzītas par ļaunprātīgām vai nevēlamām?"
- bobuam_block_eol_browsers: "Bloķēt pārlūkprogrammas, kuru darbības laiks ir beidzies? (Iestatiet tālāk versijas)."
  bobuam_chrome: "Zemākā atļautā "Chrome/Chromium" marķiera versija. Ieteicams: {{BOBUAM Token.Chrome}}."
  bobuam_edge: "Zemākā atļautā "Edg/Edge" marķiera versija. Ieteicams: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "Zemākā atļautā "Firefox" marķiera versija. Ieteicams: {{BOBUAM Token.Firefox}}."
@@ -157,7 +155,7 @@ config:
  bobuam_reason_malformed: "Bloķēšanas iemesls, kas tiek parādīts, kad tiek konstatēta nepareizi veidota lietotāja aģenta virkne."
  bobuam_reason_masquerade: "Bloķēšanas iemesls, kas tiek parādīts, kad lietotāja aģents mēģina maskēties kā kaut kas cits."
  bobuam_safari: "Safari “Version” marķiera zemākā atļautā versija. Ieteicams: {{BOBUAM Token.Safari}}."
- bobuam_sanity_check: "Bloķēt pārlūkprogrammas, kurās tiek parādīts neskaidras vai nepārprotami nepareizi veidotas lietotāja aģentu virknes?"
+ bobuam_what_to_block: "Ko bloķēt?"
  bunnycdn: "BunnyCDN saderības moduļa konfigurācija."
  bunnycdn_positive_action: "Kura darbība CIDRAM jāveic, kad tiek saņemts pieprasījums no BunnyCDN? Noklusējuma darbība = Apietu."
  bypasses: "Noklusējuma parakstu apiešanas konfigurācija."
@@ -761,6 +759,12 @@ label:
   redirect the request (without blocking it): "pāradresējiet pieprasījumu (nebloķējot to)"
   run a file to handle the request: "palaidiet failu, lai apstrādātu pieprasījumu"
   whitelist the request: "iekļaujiet pieprasījumu baltajā sarakstā"
+ bobuam:
+  Ambiguous user agents: "Neskaidri lietotāju aģenti"
+  Clearly malformed user agents: "Acīmredzami nepareizi veidoti lietotāju aģenti"
+  Masquerade attempts (e_g_, bots pretending to be browsers): "Maskēšanās mēģinājumi (piemēram, roboti, kas izliekas par pārlūkprogrammām)"
+  Outdated or end of life browsers (you can set the versions below): "Novecojušas vai vairs nederīgas pārlūkprogrammas (versija varat iestatīt tālāk)"
+  Suspected bots, scrapers, probes, etc: "Aizdomīgi roboti, skrāpji, zondes, utt"
  expire_bad: "No tā radīšanas brīža, laika, kas slikti dati, kas ir kešatmiņā ar šo moduli, var dzīvot pirms tā termiņa beigām."
  expire_good: "No tā radīšanas brīža, laika, kas labi dati, kas ir kešatmiņā ar šo moduli, var dzīvot pirms tā termiņa beigām."
  lookup_strategy: "Kuriem pieprasījumiem ir jāveic meklēšana?"

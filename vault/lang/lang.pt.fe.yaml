@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2026.02.14).
+# This file: Portuguese language data for the front-end (last modified: 2026.02.28).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -44,7 +44,7 @@ Extended Description module_badhosts.php: "Bloqueia hosts frequentemente usados 
 Extended Description module_badhosts_isps.php: "Bloqueia hosts pertencentes a ISPs freqüentemente usados por spammers, hackers e outras entidades nefastas."
 Extended Description module_badtlds.php: "Bloqueia hosts pertencentes a ISPs freqüentemente usados por spammers, hackers e outras entidades nefastas."
 Extended Description module_bgpview.php: "Aproveita a API {{Links.BGPView}} para fornecer funcionalidade de pesquisa para ASNs e códigos de país para o CIDRAM, permitindo que ASNs e países sejam bloqueados ou incluídos na lista branca por meio da configuração da CIDRAM, e fornecer um meio de verificação de rede social para verificar solicitações do Facebook."
-Extended Description module_botua.php: "Bloqueia os agentes do usuário associados a bots indesejados e atividades nefastas."
+Extended Description module_botua.php: "Bloqueia os agentes do usuário associados a robôs indesejados e atividades nefastas."
 Extended Description module_cookies.php: "Fornece algumas proteções limitadas contra cookies perigosos."
 Extended Description module_extras.php: "Fornece algumas proteções limitadas contra vários vectores de ataque comumente usado em solicitações."
 Extended Description module_httpver.php: "Possibilita o bloqueio de protocolos específicos e versões HTTP por meio da configuração CIDRAM."
@@ -71,7 +71,7 @@ Name module_badhosts.php: "Módulo bloqueador de hosts perigosos."
 Name module_badhosts_isps.php: "Módulo bloqueador de hosts perigosos (ISPs)."
 Name module_badtlds.php: "Módulo bloqueador de TLDs perigosos."
 Name module_bgpview.php: "Módulo BGPView."
-Name module_botua.php: "Módulo de agentes do usuário de bot."
+Name module_botua.php: "Módulo de agentes de usuário de robôs."
 Name module_cookies.php: "Módulo opcional para análise de cookies."
 Name module_extras.php: "Módulo de extras de segurança opcional."
 Name module_httpver.php: "Módulo verificador de versão HTTP."
@@ -106,7 +106,7 @@ config_general_default_timeout: "Tempo limite padrão a ser usado para solicita�
 config_general_disable_frontend: "Desativar o acesso front-end? Acesso front-end pode fazer CIDRAM mais manejável, mas também pode ser um risco de segurança potencial, também. É recomendado para gerenciar CIDRAM através do back-end, sempre que possível, mas o acesso front-end é proporcionada para quando não é possível. Mantê-lo desativado, a menos que você precisar. False = Ativar o acesso front-end; True = Desativar o acesso front-end [Padrão]."
 config_general_disable_webfonts: "Desativar webfonts? True = Sim [Padrão]; False = Não."
 config_general_disabled_channels: "Isso pode ser usado para impedir que o CIDRAM use canais específicos ao enviar solicitações (por exemplo, ao atualizar, ao buscar metadados de componentes, etc)."
-config_general_emailaddr: "Se você desejar, você pode fornecer um endereço de e-mail aqui a ser dado para os usuários quando eles estão bloqueadas, para eles para usar como um ponto de contato para suporte e/ou assistência no caso de eles serem bloqueados por engano ou em erro. AVISO: Qualquer endereço de e-mail que você fornecer aqui certamente vai ser adquirido por spambots e raspadores/scrapers durante o curso de seu ser usada aqui, e assim, é fortemente recomendado que, se você optar por fornecer um endereço de e-mail aqui, que você garantir que o endereço de e-mail você fornecer aqui é um endereço descartável e/ou um endereço que você não é importante (em outras palavras, você provavelmente não quer usar seu pessoal principal ou negócio principal endereço de e-mail)."
+config_general_emailaddr: "Se você desejar, você pode fornecer um endereço de e-mail aqui a ser dado para os usuários quando eles estão bloqueadas, para eles para usar como um ponto de contato para suporte e/ou assistência no caso de eles serem bloqueados por engano ou em erro. AVISO: Qualquer endereço de e-mail que você fornecer aqui certamente vai ser adquirido por robôs de spam e raspadores/scrapers durante o curso de seu ser usada aqui, e assim, é fortemente recomendado que, se você optar por fornecer um endereço de e-mail aqui, que você garantir que o endereço de e-mail você fornecer aqui é um endereço descartável e/ou um endereço que você não é importante (em outras palavras, você provavelmente não quer usar seu pessoal principal ou negócio principal endereço de e-mail)."
 config_general_emailaddr_display_style: "Como você prefere que o endereço de e-mail seja apresentado aos usuários?"
 config_general_empty_fields: "Como o CIDRAM deve manipular campos vazios ao registrar e exibir informações de eventos de bloqueio? "include" = Incluir campos vazios. "omit" = Omitir campos vazios [padrão]."
 config_general_error_log: "Um arquivo para registrar erros detectados que não são fatais. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
@@ -156,7 +156,7 @@ config_hcaptcha_show_api_message: &ShowAPIMessage "Mostrar mensagem API? True = 
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Mostrar aviso de cookie? True = Sim [Padrão]; False = Não."
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "O número máximo de assinaturas permitidas antes que o CAPTCHA seja retirado. Padrão = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "Quando o CAPTCHA deve ser oferecido? Nota: Solicitações na lista branca ou verificadas e não bloqueadas nunca precisam completar um CAPTCHA. Também: Os CAPTCHAs podem fornecer uma camada de proteção útil contra bots e vários tipos de solicitações automatizadas e maliciosas, mas não fornecerão nenhuma proteção contra humanos maliciosas."
+config_hcaptcha_usemode: &CaptchaUseMode "Quando o CAPTCHA deve ser oferecido? Nota: Solicitações na lista branca ou verificadas e não bloqueadas nunca precisam completar um CAPTCHA. Também: Os CAPTCHAs podem fornecer uma camada de proteção útil contra robôs e vários tipos de solicitações automatizadas e maliciosas, mas não fornecerão nenhuma proteção contra humanos maliciosas."
 config_legal: "Configuração para requisitos legais."
 config_legal_omit_hostname: "Omitir nomes de host de logs? True = Sim; False = Não [Padrão]."
 config_legal_omit_ip: "Omitir endereços IP de logs? True = Sim; False = Não [Padrão]. Nota: "pseudonymise_ip_addresses" se torna redundante quando "omit_ip" é "true"."
@@ -512,8 +512,8 @@ label_usemode_blkd_mrkd: "Somente quando bloqueado, especialmente marcado para u
 label_usemode_not_blkd: "Somente quando não está bloqueado."
 label_usemode_not_blkd_mrkd: "Somente quando não está bloqueado, ou quando especialmente marcado para uso, dentro do limite de assinaturas, e não banido."
 label_values_for_ip_tracking: "Valores para monitoração IP"
-label_your_ip: "Seu IP:"
-label_your_ua: "Seu UA:"
+label_your_ip: "Seu endereço IP:"
+label_your_ua: "Seu agente de usuário:"
 link_accounts: "Contas"
 link_aux: "Regras auxiliares"
 link_backup: "Backup"

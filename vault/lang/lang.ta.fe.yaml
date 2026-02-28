@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Tamil language data for the front-end (last modified: 2026.02.14).
+# This file: Tamil language data for the front-end (last modified: 2026.02.28).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -44,7 +44,7 @@ Extended Description module_badhosts.php: "ஸ்பேமர்கள், ஹ�
 Extended Description module_badhosts_isps.php: "ஸ்பேமர்கள், ஹேக்கர்கள் மற்றும் பிற தீங்கு விளைவிக்கும் நிறுவனங்களால் அடிக்கடி பயன்படுத்தப்படும் ISPகளுக்கு சொந்தமான ஹோஸ்ட்களைத் தடுக்கிறது."
 Extended Description module_badtlds.php: "ஸ்பேமர்கள், ஹேக்கர்கள் மற்றும் பிற தீங்கு விளைவிக்கும் நிறுவனங்களால் அடிக்கடி பயன்படுத்தப்படும் TLDகளுக்கு சொந்தமான ஹோஸ்ட்களைத் தடுக்கிறது."
 Extended Description module_bgpview.php: "CIDRAMகான ASN மற்றும் நாட்டு குறியீடு தேடல் வசதியை வழங்க {{Links.BGPView}} APIக் கட்டுப்படுத்துகிறது. இது ASN மற்றும் நாடுகளை CIDRAM உள்ளமைவு வழியாக தடுக்க அல்லது அனுமதிப்பட்டியல் செய்ய உதவுகிறது, மேலும் Facebook கோரிக்கைகளை சரிபார்க்க ஒரு வழிமுறையை வழங்குகிறது."
-Extended Description module_botua.php: "தேவையற்ற போட்கள் மற்றும் தீங்கு விளைவிக்கும் செயல்பாட்டுடன் தொடர்புடைய பயனர் முகவர்களைத் தடுக்கிறது."
+Extended Description module_botua.php: "தேவையற்ற ரோபோக்கள் மற்றும் தீங்கு விளைவிக்கும் செயல்பாட்டுடன் தொடர்புடைய பயனர் முகவர்களைத் தடுக்கிறது."
 Extended Description module_cookies.php: "ஆபத்தான இணைய குக்கீகளுக்கு எதிராக சில வரையறுக்கப்பட்ட பாதுகாப்புகளை வழங்குகிறது."
 Extended Description module_extras.php: "கோரிக்கைகளில் பொதுவாகப் பயன்படுத்தப்படும் பல்வேறு தாக்குதல் திசையன்களுக்கு எதிராக சில வரையறுக்கப்பட்ட பாதுகாப்புகளை வழங்குகிறது."
 Extended Description module_httpver.php: "CIDRAM உள்ளமைவு மூலம் குறிப்பிட்ட நெறிமுறைகள் மற்றும் HTTP பதிப்புகளைத் தடுப்பதை சாத்தியமாக்குகிறது."
@@ -156,7 +156,7 @@ config_hcaptcha_show_api_message: &ShowAPIMessage "API செய்தியை�
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "குக்கீ எச்சரிக்கையைக் காட்டவா? True (உண்மை) = ஆம் [இயல்புநிலை]; False (தவறான) = இல்லை."
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "கேப்ட்சா சலுகை திரும்பப் பெறுவதற்கு முன்பு அனுமதிக்கப்பட்ட அதிகபட்ச கையொப்பங்கள். இயல்புநிலை = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "கேப்ட்சாவை எப்போது வழங்க வேண்டும்? குறிப்பு: வெள்ளை பட்டியலிடப்பட்ட அல்லது சரிபார்க்கப்பட்ட மற்றும் தடுக்கப்படாத கோரிக்கைகள் ஒருபோதும் கேப்ட்சாவை முடிக்க தேவையில்லை. மேலும் குறிப்பு: கேப்ட்சாக்கள், போட்கள் மற்றும் பல்வேறு வகையான தீங்கிழைக்கும் தானியங்கு கோரிக்கைகளுக்கு எதிராக பயனுள்ள பாதுகாப்பை வழங்க முடியும், ஆனால் தீங்கிழைக்கும் மனிதனுக்கு எதிராக எந்தப் பாதுகாப்பையும் வழங்காது."
+config_hcaptcha_usemode: &CaptchaUseMode "கேப்ட்சாவை எப்போது வழங்க வேண்டும்? குறிப்பு: வெள்ளை பட்டியலிடப்பட்ட அல்லது சரிபார்க்கப்பட்ட மற்றும் தடுக்கப்படாத கோரிக்கைகள் ஒருபோதும் கேப்ட்சாவை முடிக்க தேவையில்லை. மேலும் குறிப்பு: கேப்ட்சாக்கள், ரோபோக்கள் மற்றும் பல்வேறு வகையான தீங்கிழைக்கும் தானியங்கு கோரிக்கைகளுக்கு எதிராக பயனுள்ள பாதுகாப்பை வழங்க முடியும், ஆனால் தீங்கிழைக்கும் மனிதனுக்கு எதிராக எந்தப் பாதுகாப்பையும் வழங்காது."
 config_legal: "சட்ட தேவைகளுக்கான உள்ளமைவு."
 config_legal_omit_hostname: "பதிவுகளிலிருந்து ஹோஸ்ட்பெயர்களை அகற்றவா? True (உண்மை) = ஆம்; False (தவறான) = இல்லை [இயல்புநிலை]."
 config_legal_omit_ip: ""பதிவுகளிலிருந்து IP முகவரிகளை அகற்றவா? True (உண்மை) = ஆம்; False (தவறான) = இல்லை [இயல்புநிலை]. குறிப்பு: "omit_ip", "true" ஆக இருக்கும் போது "pseudonymise_ip_addresses" எதுவும் செய்யாது."
@@ -512,7 +512,7 @@ label_usemode_blkd_mrkd: "தடுக்கப்படும் போது, 
 label_usemode_not_blkd: "தடுக்கப்படாத போது."
 label_usemode_not_blkd_mrkd: "தடுக்கப்படாத போது, அல்லது பயன்பாட்டிற்கு குறிக்கப்பட்ட போது, கையொப்பங்கள் எல்லைக்குள் இருக்கும் போது, மற்றும் தடை செய்யப்படாதபோது."
 label_values_for_ip_tracking: "IP கண்காணிப்புக்கான மதிப்புகள்"
-label_your_ip: "உங்கள் IP:"
+label_your_ip: "உங்கள் IP முகவரி:"
 label_your_ua: "உங்கள் பயனர் முகவர்:"
 link_accounts: "கணக்குகள்"
 link_aux: "துணை விதிகள்"

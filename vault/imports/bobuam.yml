@@ -11,7 +11,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: BOBUAM defaults file (last modified: 2026.02.26).
+# This file: BOBUAM defaults file (last modified: 2026.02.28).
 ##/
 
 Config Defaults:
@@ -93,25 +93,23 @@ Config Defaults:
   options:
    type: "checkbox"
    default: |
+    Masquerade:ForciblyDisableReCAPTCHA
     Masquerade:ForciblyDisableHCaptcha
-    Masquerade:ForciblyDisableFriendlyCaptcha
-    Masquerade:ForciblyDisableCloudflareTurnstile
+    Opera:MarkForUseWithReCAPTCHA
     Opera:MarkForUseWithHCaptcha
-    Opera:MarkForUseWithFriendlyCaptcha
-    Opera:MarkForUseWithCloudflareTurnstile
+    Chrome:MarkForUseWithReCAPTCHA
     Chrome:MarkForUseWithHCaptcha
-    Chrome:MarkForUseWithFriendlyCaptcha
-    Chrome:MarkForUseWithCloudflareTurnstile
+    Edge:MarkForUseWithReCAPTCHA
     Edge:MarkForUseWithHCaptcha
-    Edge:MarkForUseWithFriendlyCaptcha
-    Edge:MarkForUseWithCloudflareTurnstile
+    Firefox:MarkForUseWithReCAPTCHA
     Firefox:MarkForUseWithHCaptcha
-    Firefox:MarkForUseWithFriendlyCaptcha
-    Firefox:MarkForUseWithCloudflareTurnstile
+    Safari:MarkForUseWithReCAPTCHA
     Safari:MarkForUseWithHCaptcha
-    Safari:MarkForUseWithFriendlyCaptcha
-    Safari:MarkForUseWithCloudflareTurnstile
-   labels: *CaptchaChoicesForModules
+   labels:
+    MarkForUseWithReCAPTCHA: "label.aux.Mark for use with reCAPTCHA"
+    ForciblyDisableReCAPTCHA: "label.aux.Forcibly disable reCAPTCHA"
+    MarkForUseWithHCaptcha: "label.aux.Mark for use with hCaptcha"
+    ForciblyDisableHCaptcha: "label.aux.Forcibly disable hCaptcha"
    choices:
     Ambiguous: "bobuam_ambiguous"
     Malformed: "bobuam_malformed"

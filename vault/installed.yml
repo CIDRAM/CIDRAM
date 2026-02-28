@@ -1576,7 +1576,7 @@ BOBUAM:
   Optional module which detects unwanted bots, old browsers, and performs some sanity checks.<br />Contains some data from
   the Wordpress plugin "Stop Bad Bots" by William "Bill" Minozzi.<br />(A few webservices bots might need bypasses).
  False Positive Risk: "Medium"
- Version: "2026.55.0"
+ Version: "2026.58.0"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "^3.7"
@@ -1585,11 +1585,11 @@ BOBUAM:
   l10n/frontend/{lang}: ">=2026.55"
  When Install Succeeds: ["queue message response.please_check_config"]
  When Update Succeeds:
-  - "if {Components.Meta.BOBUAM.Version}<2026.55&&{Components.RemoteMeta.BOBUAM.Version}>=2026.55 then queue message <span dir="ltr" lang="en-AU">[BOBUAM 2026.55.0] Removed three configuration directives: sanity_check, block_bots, and block_eol_browsers. Added a new configuration directive: what_to_block. All available block options enabled by default. You *may* want to revise your configuration accordingly.</span>"
+  - "if {Components.Meta.BOBUAM.Version}<2026.58&&{Components.RemoteMeta.BOBUAM.Version}>=2026.58 then queue message <span dir="ltr" lang="en-AU">[BOBUAM 2026.58.0] Removed three configuration directives (sanity_check, block_bots, and block_eol_browsers). Added a new configuration directive (what_to_block). All available block options enabled by default. You *may* want to revise your configuration accordingly.</span>"
  Files:
   imports/bobuam.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/imports/bobuam.yml"
-   Checksum: "b9b3215c416345779b8d01bd3741e4fffc16dcb5ef727946ddd71f02f3b1fc1a:4150"
+   Checksum: "a681faaf1356c571c241bdd19eb5f84f28d5732ad106e099a0c87baf3fd6c9c7:4087"
    Used with: "imports"
   modules/bobuam.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/bobuam.php"

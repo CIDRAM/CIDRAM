@@ -11,17 +11,25 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: BOBUAM defaults file (last modified: 2025.12.31).
+# This file: BOBUAM defaults file (last modified: 2026.02.26).
 ##/
 
 Config Defaults:
  bobuam:
-  sanity_check:
-   type: "string"
-   default: "yes"
+  what_to_block:
+   type: "checkbox"
+   default: |
+    Ambiguous
+    Malformed
+    Masquerade
+    SuspectedBot
+    Outdated
    choices:
-    yes: "response._Yes"
-    no: "response._No"
+    Ambiguous: "label.bobuam.Ambiguous user agents"
+    Malformed: "label.bobuam.Clearly malformed user agents"
+    Masquerade: "label.bobuam.Masquerade attempts (e_g_, bots pretending to be browsers)"
+    SuspectedBot: "label.bobuam.Suspected bots, scrapers, probes, etc"
+    Outdated: "label.bobuam.Outdated or end of life browsers (you can set the versions below)"
   reason_ambiguous:
    type: "string"
    default: "denied"
@@ -43,12 +51,6 @@ Config Defaults:
     denied: "denied"
    preview: "allow_other"
    allow_other: true
-  block_bots:
-   type: "string"
-   default: "yes"
-   choices:
-    yes: "response._Yes"
-    no: "response._No"
   reason_bot:
    type: "string"
    default: "denied"
@@ -56,12 +58,6 @@ Config Defaults:
     denied: "denied"
    preview: "allow_other"
    allow_other: true
-  block_eol_browsers:
-   type: "string"
-   default: "yes"
-   choices:
-    yes: "response._Yes"
-    no: "response._No"
   opera:
    type: "int"
    default: 0

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2026.02.24).
+# This file: Korean language data for the front-end (last modified: 2026.02.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -144,8 +144,6 @@ config:
  bgpview_whitelisted_asns: &ConfigWhitelistedASNs "모듈에서 화이트리스트에 추가할 ASN 목록입니다."
  bgpview_whitelisted_ccs: &ConfigWhitelistedCCs "모듈에서 허용 목록에 추가할 국가 ({{Links.ISO.3166}} 2자리 국가 코드로 식별) 목록입니다."
  bobuam: ""봇 또는 브라우저 사용자 에이전트 모듈"에 대한 구성. 이 모듈은 원치 않는 봇, 오래된 브라우저를 감지하고, 일부 온전성 검사를 수행합니다."
- bobuam_block_bots: "악성 또는 원치 않는 것으로 인식되는 봇을 차단하시겠습니까?"
- bobuam_block_eol_browsers: "수명이 다한 브라우저를 차단하시겠습니까? (아래 버전 설정)."
  bobuam_chrome: ""Chrome/Chromium" 토큰의 가장 낮은 허용 버전입니다. 추천: {{BOBUAM Token.Chrome}}."
  bobuam_edge: ""Edg/Edge" 토큰의 가장 낮은 허용 버전입니다. 추천: {{BOBUAM Token.Edge}}."
  bobuam_firefox: ""Firefox" 토큰의 가장 낮은 허용 버전입니다. 추천: {{BOBUAM Token.Firefox}}."
@@ -157,7 +155,7 @@ config:
  bobuam_reason_malformed: "잘못된 사용자 에이전트 문자열이 감지되었을 때 표시되는 차단 이유입니다."
  bobuam_reason_masquerade: "사용자 에이전트가 다른 것으로 가장하려고 할 때 표시되는 차단 이유입니다."
  bobuam_safari: "Safari의 "Version" 토큰 중 허용되는 가장 낮은 버전입니다. 추천: {{BOBUAM Token.Safari}}."
- bobuam_sanity_check: "모호하거나 명백히 잘못된 사용자 에이전트 문자열을 표시하는 브라우저를 차단하시겠습니까?"
+ bobuam_what_to_block: "무엇을 차단해야 할까요?"
  bunnycdn: "BunnyCDN 호환 모듈 구성."
  bunnycdn_positive_action: "CIDRAM은 BunnyCDN의 요청을 만났을 때 어떤 작업을 수행해야 합니까? 기본 동작 = 우회."
  bypasses: "기본 서명 바이 패스 구성."
@@ -765,6 +763,12 @@ label:
   redirect the request (without blocking it): "요청을 리디렉션하세요 (차단하지 않고)."
   run a file to handle the request: "요청을 처리하기 위해 파일을 실행"
   whitelist the request: "요청을 화이트리스트에 올리세요"
+ bobuam:
+  Ambiguous user agents: "모호한 사용자 에이전트"
+  Clearly malformed user agents: "명백히 잘못된 사용자 에이전트"
+  Masquerade attempts (e_g_, bots pretending to be browsers): "위장 시도 (예: 브라우저인 척하는 봇)"
+  Outdated or end of life browsers (you can set the versions below): "오래되었거나 지원이 종료된 브라우저 (아래에서 버전을 설정할 수 있습니다)"
+  Suspected bots, scrapers, probes, etc: "의심스러운 봇, 스크래퍼, 프로브, 등등"
  expire_bad: "창설 당시부터, 만료되기 전까지 이 모듈에 의해 캐시된 나쁜 데이터 지속될 수 있는 시간입니다."
  expire_good: "창설 당시부터, 만료되기 전까지 이 모듈에 의해 캐시된 좋은 데이터 지속될 수 있는 시간입니다."
  lookup_strategy: "어떤 요청에 대해 조회를 수행해야 합니까?"

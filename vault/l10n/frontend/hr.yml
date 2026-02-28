@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Croatian language data for the front-end (last modified: 2026.02.24).
+# This file: Croatian language data for the front-end (last modified: 2026.02.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -144,8 +144,6 @@ config:
  bgpview_whitelisted_asns: &ConfigWhitelistedASNs "Popis ASN-ova koji će biti stavljeni na bijelu listu kada se podudaraju s modulom."
  bgpview_whitelisted_ccs: &ConfigWhitelistedCCs "Popis zemalja (identificiraju svojim {{Links.ISO.3166}} dvoznamenkastim kodovima zemalja) koji će biti stavljeni na bijelu listu kada se podudaraju s modulom."
  bobuam: "Konfiguracija za dodatni "modul za korisničke agente botova i preglednika", koji otkriva neželjene botove, stare preglednike, i izvodi neke provjere ispravnosti."
- bobuam_block_bots: "Blokirati botove prepoznate kao zlonamjerne ili neželjene?"
- bobuam_block_eol_browsers: "Blokirati preglednike koji su došli do kraja životnog vijeka? (Postavite verzije u nastavku)."
  bobuam_chrome: "Najniža dopuštena verzija "Chrome/Chromium" tokena. Preporučeno: {{BOBUAM Token.Chrome}}."
  bobuam_edge: "Najniža dopuštena verzija "Edg/Edge" tokena. Preporučeno: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "Najniža dopuštena verzija "Firefox" tokena. Preporučeno: {{BOBUAM Token.Firefox}}."
@@ -157,7 +155,7 @@ config:
  bobuam_reason_malformed: "Razlog blokiranja koji se prikazuje kada se otkrije neispravan niz korisničkog agenta."
  bobuam_reason_masquerade: "Razlog blokiranja prikazan kada se korisnički agent pokuša maskirati u nešto drugo."
  bobuam_safari: "Najniža dopuštena verzija Safarijevog tokena "Version". Preporučeno: {{BOBUAM Token.Safari}}."
- bobuam_sanity_check: "Blokirati preglednike koji pokazuju dvosmislene ili jasno neispravne nizove korisničkog agenta?"
+ bobuam_what_to_block: "Što blokirati?"
  bunnycdn: "Konfiguracija za BunnyCDN modul kompatibilnosti."
  bunnycdn_positive_action: "Koju radnju CIDRAM treba izvršiti kada naiđe na zahtjev od BunnyCDN-a? Zadana radnja = Zaobići."
  bypasses: "Konfiguracija za standardna zaobilaženja potpisa."
@@ -782,6 +780,12 @@ label:
   redirect the request (without blocking it): "preusmjerite zahtjev (bez blokiranja)"
   run a file to handle the request: "pokrenite datoteku za obradu zahtjeva"
   whitelist the request: "stavite zahtjev na bijelu listu"
+ bobuam:
+  Ambiguous user agents: "Dvosmisleni korisnički agenti"
+  Clearly malformed user agents: "Očito deformirani korisnički agenti"
+  Masquerade attempts (e_g_, bots pretending to be browsers): "Pokušaji maskiranja (npr., botovi koji se pretvaraju da su preglednici)"
+  Outdated or end of life browsers (you can set the versions below): "Zastarjeli ili ukinuti preglednici (verzije možete postaviti u nastavku)"
+  Suspected bots, scrapers, probes, etc: "Sumnjivi botovi, scraperi, sonde, itd"
  expire_bad: "Od trenutka stvaranja, količina vremena koju loši podaci koje ovaj modul pohranjuje u predmemoriju mogu živjeti prije isteka roka trajanja."
  expire_good: "Od trenutka stvaranja, količina vremena koju dobri podaci koje ovaj modul pohranjuje u predmemoriju mogu živjeti prije isteka roka trajanja."
  lookup_strategy: "Za koje zahtjeve treba izvršiti pretrage?"

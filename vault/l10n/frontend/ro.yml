@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Romanian language data for the front-end (last modified: 2026.02.24).
+# This file: Romanian language data for the front-end (last modified: 2026.02.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -144,8 +144,6 @@ config:
  bgpview_whitelisted_asns: &ConfigWhitelistedASNs "O listă de ASN-uri care urmează să fie incluse în lista albă atunci când se potrivesc de către modul."
  bgpview_whitelisted_ccs: &ConfigWhitelistedCCs "O listă cu țările (identificate prin codurile lor de țară din 2 cifre {{Links.ISO.3166}}) care urmează să fie incluse în lista albă atunci când sunt potrivite de modul."
  bobuam: "Configurație pentru „modulul de agenți de utilizator pentru bot sau browser”, care detectează roboții nedoriți, browserele vechi, și efectuează unele verificări de sănătate."
- bobuam_block_bots: "Blocați roboții recunoscuți ca fiind rău intenționați sau nedoriți?"
- bobuam_block_eol_browsers: "Blocați browserele care au ajuns la sfârșitul vieții? (Setați versiunile mai jos)."
  bobuam_chrome: "Cea mai scăzută versiune permisă a simbolului „Chrome/Chromium”. Recomandat: {{BOBUAM Token.Chrome}}."
  bobuam_edge: "Cea mai scăzută versiune permisă a simbolului „Edg/Edge”. Recomandat: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "Cea mai scăzută versiune permisă a simbolului „Firefox”. Recomandat: {{BOBUAM Token.Firefox}}."
@@ -157,7 +155,7 @@ config:
  bobuam_reason_malformed: "Motivul blocării afișat atunci când este detectat un șir de agent utilizator malformat."
  bobuam_reason_masquerade: "Motivul blocării afișat atunci când un agent de utilizator încearcă să se mascheze ca altceva."
  bobuam_safari: "Cea mai scăzută versiune permisă a simbolului „Versiune” Safari. Recomandat: {{BOBUAM Token.Safari}}."
- bobuam_sanity_check: "Blocați browserele care afișează șiruri de agent de utilizator ambigue sau clar malformate?"
+ bobuam_what_to_block: "Ce să blochezi?"
  bunnycdn: "Configurarea modulului de compatibilitate BunnyCDN."
  bunnycdn_positive_action: "Ce acțiune ar trebui să efectueze CIDRAM atunci când întâlnește o solicitare de la BunnyCDN? Acțiune implicită = Bypass."
  bypasses: "Configurația pentru bypass semnăturii implicite."
@@ -787,6 +785,12 @@ label:
   redirect the request (without blocking it): "redirecționează solicitarea (fără a o bloca)"
   run a file to handle the request: "rulați un fișier pentru a gestiona solicitarea"
   whitelist the request: "lista albă a solicitărea"
+ bobuam:
+  Ambiguous user agents: "Agenți utilizator ambigui"
+  Clearly malformed user agents: "Agenți utilizator evident malformați"
+  Masquerade attempts (e_g_, bots pretending to be browsers): "Tentative de mascaradare (de exemplu, roboți care se prefac a fi browsere)"
+  Outdated or end of life browsers (you can set the versions below): "Browsere învechite sau care au ajuns la sfârșitul perioadei de utilizare (puteți seta versiunile mai jos)"
+  Suspected bots, scrapers, probes, etc: "Roboți, scrapere, sonde, etc suspectați"
  expire_bad: "Din momentul creării sale, perioada de timp pe care datele proaste în cache de acest modul pot trăi înainte de a expira."
  expire_good: "Din momentul creării sale, perioada de timp în care datele bune în cache de acest modul pot trăi înainte de a expira."
  lookup_strategy: "Pentru ce solicitări ar trebui efectuate căutări?"

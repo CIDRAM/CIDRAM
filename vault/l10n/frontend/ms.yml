@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malay language data for the front-end (last modified: 2026.02.24).
+# This file: Malay language data for the front-end (last modified: 2026.02.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -144,8 +144,6 @@ config:
  bgpview_whitelisted_asns: &ConfigWhitelistedASNs "Senarai ASN yang akan disenarai putih apabila dipadankan oleh modul."
  bgpview_whitelisted_ccs: &ConfigWhitelistedCCs "Senarai negara (dikenal oleh kod negara 2 digit {{Links.ISO.3166}} mereka) yang akan disenarai putih apabila dipadankan oleh modul."
  bobuam: "Konfigurasi untuk "modul ejen pengguna bot atau penyemak imbas" pilihan, yang mengesan bot yang tidak diingini, penyemak imbas lama, dan melakukan beberapa semakan kewarasan."
- bobuam_block_bots: "Sekat bot yang diiktiraf sebagai berniat jahat atau tidak diingini?"
- bobuam_block_eol_browsers: "Sekat penyemak imbas yang telah mencapai akhir hayat? (Tetapkan versi di bawah)."
  bobuam_chrome: "Versi token "Chrome/Chromium" paling rendah dibenarkan. Disyorkan: {{BOBUAM Token.Chrome}}."
  bobuam_edge: "Versi token "Edg/Edge" paling rendah dibenarkan. Disyorkan: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "Versi token "Firefox" paling rendah dibenarkan. Disyorkan: {{BOBUAM Token.Firefox}}."
@@ -157,7 +155,7 @@ config:
  bobuam_reason_malformed: "Sebab sekat ditunjukkan apabila rentetan ejen pengguna yang cacat dikesan."
  bobuam_reason_masquerade: "Sebab sekat ditunjukkan apabila ejen pengguna cuba menyamar sebagai sesuatu yang lain."
  bobuam_safari: "Versi token "Version" Safari paling rendah dibenarkan. Disyorkan: {{BOBUAM Token.Safari}}."
- bobuam_sanity_check: "Sekat penyemak imbas yang menunjukkan rentetan ejen pengguna yang tidak jelas atau jelas cacat?"
+ bobuam_what_to_block: "Apa yang perlu disekat?"
  bunnycdn: "Konfigurasi untuk modul keserasian BunnyCDN."
  bunnycdn_positive_action: "Tindakan manakah yang perlu CIDRAM lakukan apabila ia menghadapi permintaan daripada BunnyCDN? Tindakan lalai = Memintasnya."
  bypasses: "Konfigurasi untuk pintasan tandatangan lalai."
@@ -770,6 +768,12 @@ label:
   redirect the request (without blocking it): "mengubah hala permintaan (tanpa menyekatnya)"
   run a file to handle the request: "laksanakan fail untuk mengendalikan permintaan"
   whitelist the request: "senaraikan putih permintaan"
+ bobuam:
+  Ambiguous user agents: "Ejen pengguna yang samar-samar"
+  Clearly malformed user agents: "Ejen pengguna yang cacat"
+  Masquerade attempts (e_g_, bots pretending to be browsers): "Percubaan penyamaran (cth., bot yang menyamar sebagai penyemak imbas)"
+  Outdated or end of life browsers (you can set the versions below): "Penyemak imbas yang ketinggalan zaman atau sudah tamat hayat (anda boleh menetapkan versi di bawah)"
+  Suspected bots, scrapers, probes, etc: "Bot, pengikis, prob, dsb yang disyaki"
  expire_bad: "Dari masa penciptaannya, jumlah masa yang data yang buruk yang dimasukkan ke dalam cache oleh modul ini mungkin hidup sebelum ia tamat."
  expire_good: "Dari masa penciptaannya, jumlah masa yang data yang baik yang dimasukkan ke dalam cache oleh modul ini mungkin hidup sebelum ia tamat."
  lookup_strategy: "Untuk pertanyaan manakah carian harus dijalankan?"

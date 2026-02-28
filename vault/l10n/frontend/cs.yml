@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Czech language data for the front-end (last modified: 2026.02.24).
+# This file: Czech language data for the front-end (last modified: 2026.02.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -144,8 +144,6 @@ config:
  bgpview_whitelisted_asns: &ConfigWhitelistedASNs "Seznam ASN, která mají být whitelistovat když se shodují s modulem."
  bgpview_whitelisted_ccs: &ConfigWhitelistedCCs "Seznam zemí (identifikovány svými dvoumístnými kódy zemí {{Links.ISO.3166}}), která mají být whitelistovat když se shodují s modulem."
  bobuam: "Konfigurace pro volitelný „modul pro uživatelské agenty botů a prohlížečů“, který detekuje nežádoucí roboty, staré prohlížeče, a provádí některé kontroly zdravého rozumu."
- bobuam_block_bots: "Blokovat roboty rozpoznané jako škodlivé nebo nežádoucí?"
- bobuam_block_eol_browsers: "Blokovat prohlížeče, které dosáhly konce životnosti? (Níže nastavte verze)."
  bobuam_chrome: "Nejnižší povolená verze tokenu „Chrome/Chromium“. Doporučeno: {{BOBUAM Token.Chrome}}."
  bobuam_edge: "Nejnižší povolená verze tokenu „Edg/Edge“. Doporučeno: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "Nejnižší povolená verze tokenu „Firefox“. Doporučeno: {{BOBUAM Token.Firefox}}."
@@ -155,9 +153,9 @@ config:
  bobuam_reason_bot: "Důvod blokování, který se zobrazí u blokovaných robotů."
  bobuam_reason_browser: "Důvod blokování se zobrazí, když je zablokován příliš starý prohlížeč."
  bobuam_reason_malformed: "Důvod blokování se zobrazí, když je detekován chybný řetězec uživatelského agenta."
- bobuam_reason_masquerade: "Důvod blokování se zobrazí, když se uživatelský agent pokusí maskovat jako něco jiného."
+ bobuam_reason_masquerade: "Důvod blokování se zobrazí, když se user agent pokusí maskovat jako něco jiného."
  bobuam_safari: "Nejnižší povolená verze tokenu „Version“ Safari. Doporučeno: {{BOBUAM Token.Safari}}."
- bobuam_sanity_check: "Blokovat prohlížeče, které zobrazují nejednoznačné nebo jasně chybné řetězce uživatelského agenta?"
+ bobuam_what_to_block: "Co blokovat?"
  bunnycdn: "Konfigurace pro modul kompatibility BunnyCDN."
  bunnycdn_positive_action: "Jakou akci by měl CIDRAM provést, když narazí na požadavek od BunnyCDN? Standardní akce = Bypass."
  bypasses: "Konfigurace pro standardní bypassace podpisů."
@@ -726,7 +724,7 @@ label:
  Values for IP tracking: "Hodnoty pro sledování IP"
  Whitelist the request: "Whitelistujte požadavek.\nResetuje počet spuštěných podpisů, a přeruší jakékoli další zpracování požadavku. Zaručuje, že CIDRAM požadavek nikdy nezablokuje."
  Your IP: "Vaše IP:"
- Your UA: "Váš uživatelský agent:"
+ Your UA: "Váš user agent:"
  aux:
   A name for the new rule: "Název nového pravidla:"
   Additional instructions: "Další pokyny (být proveden pouze po provedení akce pravidla):"
@@ -781,6 +779,12 @@ label:
   redirect the request (without blocking it): "přesměrujte požadavek (bez blokování)"
   run a file to handle the request: "spustit soubor pro zpracování požadavku"
   whitelist the request: "whitelistujte požadavek"
+ bobuam:
+  Ambiguous user agents: "Nejednoznační user agenti"
+  Clearly malformed user agents: "Zjevně chybně formátovaní user agenti"
+  Masquerade attempts (e_g_, bots pretending to be browsers): "Pokusy o maskování (např., boti vydávající se za prohlížeče)"
+  Outdated or end of life browsers (you can set the versions below): "Zastaralé nebo ukončené prohlížeče (verze můžete nastavit níže)"
+  Suspected bots, scrapers, probes, etc: "Podezřelí boti, scraperové, sondy, atd"
  expire_bad: "Od doby vytvořen, dobu, po kterou mohou špatná data uložená v mezipaměti tohoto modulu žít, než vyprší."
  expire_good: "Od doby vytvořen, dobu, po kterou mohou dobrá data uložená v mezipaměti tohoto modulu žít, než vyprší."
  lookup_strategy: "Které požadavky by se měly provádět vyhledávání?"

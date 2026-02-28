@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2026.02.24).
+# This file: Arabic language data for the front-end (last modified: 2026.02.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -144,8 +144,6 @@ config:
  bgpview_whitelisted_asns: &ConfigWhitelistedASNs "قائمة ASNs التي سيتم وضعها في القائمة البيضاء عند مطابقتها مع وحدة."
  bgpview_whitelisted_ccs: &ConfigWhitelistedCCs "قائمة البلدان (التي تم تحديدها من خلال رموز البلدان المكونة من رقمين {{Links.ISO.3166}}) التي سيتم إدراجها في القائمة البيضاء عند مطابقتها مع وحدة."
  bobuam: "التكوين للوحدة الاختيارية "وحدة وكيل مستخدم الروبوت أو المتصفح"، والتي تكتشف برامج التتبع غير المرغوب فيها والمتصفحات القديمة، وتجري بعض عمليات التحقق من الصحة."
- bobuam_block_bots: "حظر الروبوتات المعترف بها على أنها ضارة أو غير مرغوب فيها؟"
- bobuam_block_eol_browsers: "حظر المتصفحات التي وصلت إلى نهاية العمر الافتراضي؟ (تعيين الإصدارات أدناه)."
  bobuam_chrome: "أقل إصدار مسموح به من الرمز المميز "Chrome/Chromium". مُستَحسَن: {{BOBUAM Token.Chrome}}."
  bobuam_edge: "أقل إصدار مسموح به من الرمز المميز "Edg/Edge". مُستَحسَن: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "أقل إصدار مسموح به من الرمز المميز "Firefox". مُستَحسَن: {{BOBUAM Token.Firefox}}."
@@ -157,7 +155,7 @@ config:
  bobuam_reason_malformed: "السبب المُقدَّم عند اكتشاف وكيل مستخدم تالف وحظره."
  bobuam_reason_masquerade: "السبب المُقدَّم عندما يحاول وكيل المستخدم التنكر في صورة شيء آخر."
  bobuam_safari: "أقل إصدار مسموح به من رمز "Version" في Safari. مُستَحسَن: {{BOBUAM Token.Safari}}."
- bobuam_sanity_check: "هل تريد حظر المتصفحات التي تعرض وكلاء مستخدم غامضين أو مشوهين بشكل واضح؟"
+ bobuam_what_to_block: "ما الذي يجب حظره؟"
  bunnycdn: "التكوين لوحدة التوافق BunnyCDN."
  bunnycdn_positive_action: "ما الإجراء الذي يجب أن يقوم به CIDRAM عندما يواجه طلبًا من BunnyCDN؟ الإجراء القياسي = تجاوز."
  bypasses: "التكوين لتجاوز التوقيع الافتراضي."
@@ -769,6 +767,12 @@ label:
   redirect the request (without blocking it): "إعادة توجيه الطلب (دون حظره)"
   run a file to handle the request: "تنفيذ ملف للتعامل مع الطلب"
   whitelist the request: "القائمة البيضاء الطلب"
+ bobuam:
+  Ambiguous user agents: "وكلاء المستخدم الغامضون"
+  Clearly malformed user agents: "وكلاء مستخدم مشوهون بشكل واضح"
+  Masquerade attempts (e_g_, bots pretending to be browsers): "محاولات التخفي (على سبيل المثال، برامج الروبوت التي تتظاهر بأنها متصفحات)"
+  Outdated or end of life browsers (you can set the versions below): "المتصفحات القديمة أو التي انتهى دعمها (يمكنك تحديد الإصدارات أدناه)"
+  Suspected bots, scrapers, probes, etc: "برامج الروبوت المشتبه بها، وبرامج استخراج البيانات، وبرامج التجسس، وما إلى ذلك"
  expire_bad: "من وقت إنشائها، مقدار الوقت الذي قد تبقى فيه البيانات السيئة المخزنة مؤقتًا بواسطة هذه الوحدة قبل انتهاء صلاحيتها."
  expire_good: "من وقت إنشائها، مقدار الوقت الذي قد تبقى فيه البيانات الجيدة المخزنة مؤقتًا بواسطة هذه الوحدة قبل انتهاء صلاحيتها."
  lookup_strategy: "ما الطلبات التي يجب إجراء عمليات البحث عنها؟"

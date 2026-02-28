@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese language data for the front-end (last modified: 2026.02.24).
+# This file: Chinese language data for the front-end (last modified: 2026.02.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -152,8 +152,6 @@ config:
  bgpview_whitelisted_asns: &ConfigWhitelistedASNs {"zh-Hans": "由模块匹配时要列入白名单的ASN列表。", "zh-Hant": "由模組匹配時要列入白名單的ASN列表。"}
  bgpview_whitelisted_ccs: &ConfigWhitelistedCCs {"zh-Hans": "由模块匹配时要列入白名单的国家列表（由其{{Links.ISO.3166}}两个字母的国家代码标识）。", "zh-Hant": "由模組匹配時要列入白名單的國家列表（由其{{Links.ISO.3166}}兩個字母的國家代碼標識）。"}
  bobuam: {"zh-Hans": "“机器人或浏览器用户代理模块”的配置。​该模块检测不需要的机器人、旧浏览器，并执行一些健全性检查。", "zh-Hant": "『機器人或瀏覽器用戶代理模組』的配置。​該模組檢測不需要的機器人、舊瀏覽器，並執行一些健全性檢查。"}
- bobuam_block_bots: {"zh-Hans": "阻止被认为是恶意或不需要的机器人？", "zh-Hant": "阻止被認為是惡意或不需要的機器人？"}
- bobuam_block_eol_browsers: {"zh-Hans": "阻止已经过时的浏览器？（下面设置版本）。", "zh-Hant": "阻止已經過時的瀏覽器？（下面設置版本）。"}
  bobuam_chrome: {"zh-Hans": "“Chrome/Chromium”令牌的最低允许版本。 推荐的：“{{BOBUAM Token.Chrome}}”。", "zh-Hant": "『Chrome/Chromium』令牌的最低允許版本。 推薦的：『{{BOBUAM Token.Chrome}}』。"}
  bobuam_edge: {"zh-Hans": "“Edg/Edge”令牌的最低允许版本。 推荐的：“{{BOBUAM Token.Edge}}”。", "zh-Hant": "『Edg/Edge』令牌的最低允許版本。 推薦的：『{{BOBUAM Token.Edge}}』。"}
  bobuam_firefox: {"zh-Hans": "“Firefox”令牌的最低允许版本。 推荐的：“{{BOBUAM Token.Firefox}}”。", "zh-Hant": "『Firefox』令牌的最低允許版本。 推薦的：『{{BOBUAM Token.Firefox}}』。"}
@@ -165,7 +163,7 @@ config:
  bobuam_reason_malformed: {"zh-Hans": "检测到畸形的用户代理字符串时显示的阻止原因。", "zh-Hant": "檢測到畸形的用戶代理字符串時顯示的阻止原因。"}
  bobuam_reason_masquerade: {"zh-Hans": "当用户代理试图伪装成其他东西时显示的阻止原因。", "zh-Hant": "當用戶代理試圖偽裝成其他東西時顯示的阻止原因。"}
  bobuam_safari: {"zh-Hans": "Safari的“Version”令牌的最低允许版本。 推荐的：“{{BOBUAM Token.Safari}}”。", "zh-Hant": "Safari的『Version』令牌的最低允許版本。 推薦的：『{{BOBUAM Token.Safari}}』。"}
- bobuam_sanity_check: {"zh-Hans": "阻止模糊的或格式畸形的用户代理字符串的浏览器？", "zh-Hant": "阻止模糊的或格式畸形的用戶代理字符串的瀏覽器？"}
+ bobuam_what_to_block: {"zh-Hans": "要阻止什么？", "zh-Hant": "要阻止什麼？"}
  bunnycdn: {"zh-Hans": "BunnyCDN兼容性模块配置。", "zh-Hant": "BunnyCDN兼容性模組配置。"}
  bunnycdn_positive_action: {"zh-Hans": "CIDRAM遇到BunnyCDN的请求时应该执行什么动作？ 标准操作 = 绕过。", "zh-Hant": "CIDRAM遇到BunnyCDN的請求時應該執行什麼動作？ 標準操作 = 繞過。"}
  bypasses: {"zh-Hans": "默认签名绕过配置。", "zh-Hant": "默認簽名繞過配置。"}
@@ -959,6 +957,12 @@ label:
   redirect the request (without blocking it): {"zh-Hans": "重定向该请求（不阻止它）", "zh-Hant": "重定向該請求（不阻止它）"}
   run a file to handle the request: {"zh-Hans": "运行一个文件来处理该请求", "zh-Hant": "運行一個文件來處理該請求"}
   whitelist the request: {"zh-Hans": "白名单该请求", "zh-Hant": "白名單該請求"}
+ bobuam:
+  Ambiguous user agents: {"zh-Hans": "模糊的用户代理", "zh-Hant": "模糊的用戶代理"}
+  Clearly malformed user agents: {"zh-Hans": "明显格式错误的用户代理", "zh-Hant": "明顯格式錯誤的用戶代理"}
+  Masquerade attempts (e_g_, bots pretending to be browsers): {"zh-Hans": "伪装尝试（例如，机器人假装成浏览器）", "zh-Hant": "偽裝嘗試（例如，機器人假裝成瀏覽器）"}
+  Outdated or end of life browsers (you can set the versions below): {"zh-Hans": "过时或已停止支持的浏览器（您可以在下方设置版本）", "zh-Hant": "過時或已停止支援的瀏覽器（您可以在下方設定版本）"}
+  Suspected bots, scrapers, probes, etc: {"zh-Hans": "疑似机器人、爬虫、探针、等等", "zh-Hant": "疑似機器人、爬蟲、探針、等等"}
  expire_bad: {"zh-Hans": "从创造的时候，该模块缓存的不良数据的可能会在它到期之前生存的时间量。", "zh-Hant": "從創造的時候，該模組緩存的不良數據的可能會在它到期之前生存的時間量。"}
  expire_good: {"zh-Hans": "从创造的时候，该模块缓存的好数据的可能会在它到期之前生存的时间量。", "zh-Hant": "從創造的時候，該模組緩存的好數據的可能會在它到期之前生存的時間量。"}
  lookup_strategy: {"zh-Hans": "应该为哪些请求执行查找？", "zh-Hant": "應該為哪些請求執行查找？"}

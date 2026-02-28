@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2026.02.24).
+# This file: Polish language data for the front-end (last modified: 2026.02.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -144,8 +144,6 @@ config:
  bgpview_whitelisted_asns: &ConfigWhitelistedASNs "Lista ASNów, które mają być umieszczone na białej liście po dopasowaniu przez moduł."
  bgpview_whitelisted_ccs: &ConfigWhitelistedCCs "Lista krajów (identyfikowane za pomocą 2-cyfrowych kodów krajów {{Links.ISO.3166}}), które mają być umieszczone na białej liście po dopasowaniu przez moduł."
  bobuam: "Konfiguracja dla opcjonalnego „moduł dla agentów użytkownika bota lub przeglądarki”, który wykrywa niechciane boty, stare przeglądarki, i przeprowadza pewne sprawdzanie poczytalności."
- bobuam_block_bots: "Zablokować boty rozpoznane jako złośliwe lub niechciane?"
- bobuam_block_eol_browsers: "Zablokować przeglądarki, których żywotność dobiegła końca? (Ustaw wersje poniżej)."
  bobuam_chrome: "Najniższa dozwolona wersja tokena „Chrome/Chromium”. Zalecana: {{BOBUAM Token.Chrome}}."
  bobuam_edge: "Najniższa dozwolona wersja tokena „Edg/Edge”. Zalecana: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "Najniższa dozwolona wersja tokena „Firefox”. Zalecana: {{BOBUAM Token.Firefox}}."
@@ -157,7 +155,7 @@ config:
  bobuam_reason_malformed: "Przyczyna blokady wyświetlana po wykryciu zniekształconego ciągu agenta użytkownika."
  bobuam_reason_masquerade: "Przyczyna blokady wyświetlana gdy agent użytkownika próbuje maskarady pod coś innego."
  bobuam_safari: "Najniższa dozwolona wersja tokena „Version” przeglądarki Safari. Zalecana: {{BOBUAM Token.Safari}}."
- bobuam_sanity_check: "Zablokować przeglądarki, które wyświetlają niejednoznaczne lub wyraźnie zniekształcone ciągi agenta użytkownika?"
+ bobuam_what_to_block: "Co zablokować?"
  bunnycdn: "Konfiguracja dla modułu kompatybilności z BunnyCDN."
  bunnycdn_positive_action: "Jakie działanie powinien wykonać CIDRAM, gdy napotka żądanie od BunnyCDN? Akcja domyślna = Obejść."
  bypasses: "Konfiguracja domyślnego obejścia podpisu."
@@ -783,6 +781,12 @@ label:
   redirect the request (without blocking it): "przekierować żądanie (bez blokowania)"
   run a file to handle the request: "uruchom plik do obsługi żądania"
   whitelist the request: "dodaj żądanie do białej listy"
+ bobuam:
+  Ambiguous user agents: "Niejednoznaczne agenty użytkownika"
+  Clearly malformed user agents: "Zdeformowane agenty użytkownika"
+  Masquerade attempts (e_g_, bots pretending to be browsers): "Próby maskarady (np., boty podszywające się pod przeglądarki)"
+  Outdated or end of life browsers (you can set the versions below): "Przestarzałe lub wycofane z eksploatacji przeglądarki (możesz ustawić wersje poniżej)"
+  Suspected bots, scrapers, probes, etc: "Podejrzewane boty, scrapery, sondy, itp"
  expire_bad: "Od chwili jego kreacja, ilość czasu, przez jaki złe dane przechowywane w pamięci podręcznej przez ten moduł mogą przetrwać, zanim wygasną."
  expire_good: "Od chwili jego kreacja, ilość czasu, przez jaki dobre dane przechowywane w pamięci podręcznej przez ten moduł mogą przetrwać, zanim wygasną."
  lookup_strategy: "Dla jakich żądań należy wykonać wyszukiwania?"

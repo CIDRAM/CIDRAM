@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Farsi language data for the front (last modified: 2026.02.24).
+# This file: Farsi language data for the front (last modified: 2026.02.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -144,8 +144,6 @@ config:
  bgpview_whitelisted_asns: &ConfigWhitelistedASNs "لیستی از ASN هایی که در صورت تطبیق با ماژول در لیست سفید قرار می گیرند."
  bgpview_whitelisted_ccs: &ConfigWhitelistedCCs "لیستی از کشورهایی (با کدهای دو رقمی {{Links.ISO.3166}} آنها شناسایی می شود) که در صورت تطبیق با ماژول در لیست سفید قرار می گیرند."
  bobuam: "پیکربندی برای «ربات یا ماژول عامل های کاربر مرورگر». این ماژول ربات های ناخواسته، مرورگرهای قدیمی را شناسایی می‌کند، و برخی از بررسی های سلامت عقل را انجام می دهد."
- bobuam_block_bots: "ربات های مخرب یا ناخواسته را مسدود کنید؟"
- bobuam_block_eol_browsers: "مرورگرهایی را که به پایان عمرشان رسیده‌اند مسدود کنید؟ (نسخه های را زیر تنظیم کنید)."
  bobuam_chrome: "پایین‌ترین نسخهی مجاز توکن «Chrome/Chromium». توصیه شده: {{BOBUAM Token.Chrome}}."
  bobuam_edge: "پایین‌ترین نسخهی مجاز توکن «Edg/Edge». توصیه شده: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "پایین‌ترین نسخهی مجاز توکن «Firefox». توصیه شده: {{BOBUAM Token.Firefox}}."
@@ -157,7 +155,7 @@ config:
  bobuam_reason_malformed: "دلیل مسدود کردن زمانی که یک رشته عامل کاربر نادرست شناسایی می‌شود نشان داده می‌ شود."
  bobuam_reason_masquerade: "دلیل مسدود کردن زمانی نشان داده می‌شود که یک عامل کاربر سعی می‌کند خود را به عنوان چیز دیگری بپوشاند."
  bobuam_safari: "پایین‌ترین نسخه مجاز توکن «Version» سافاری. توصیه شده: {{BOBUAM Token.Safari}}."
- bobuam_sanity_check: "مرورگرهایی که رشته های عامل کاربر مبهم یا بدشکل واضحی را نشان می دهند مسدود شود؟"
+ bobuam_what_to_block: "چی رو بلاک کنیم؟"
  bunnycdn: "پیکربندی ماژول سازگاری BunnyCDN."
  bunnycdn_positive_action: "وقتی CIDRAM با درخواست BunnyCDN مواجه می شود، کدام عمل را باید انجام دهد؟ اقدام پیش فرض = میان بر."
  bypasses: "پیکربندی برای امضای پیش‌فرض دور می‌زند."
@@ -771,6 +769,12 @@ label:
   redirect the request (without blocking it): "درخواست را تغییر مسیر کنید (بدون مسدود کردن)"
   run a file to handle the request: "یک فایل را برای رسیدگی به درخواست اجرا کنید"
   whitelist the request: "درخواست را به لیست سفید کنید"
+ bobuam:
+  Ambiguous user agents: "عامل‌های کاربری مبهم"
+  Clearly malformed user agents: "مرورگرهایی که به وضوح ناقص هستند"
+  Masquerade attempts (e_g_, bots pretending to be browsers): "تلاش‌های خودنما (مثلاً، ربات‌هایی که وانمود می‌کنند مرورگر هستند)"
+  Outdated or end of life browsers (you can set the versions below): "مرورگرهای قدیمی یا منسوخ شده (می‌توانید نسخه‌های زیر را تنظیم کنید)"
+  Suspected bots, scrapers, probes, etc: "ربات‌ها، اسکریپرها، پروب‌ها و غیره مشکوک"
  expire_bad: "از زمان ایجاد آن، داده های بد ذخیره شده توسط این ماژول مدت زمانی که ممکن است قبل از انقضا زنده بماند."
  expire_good: "از زمان ایجاد آن، داده های خوب ذخیره شده توسط این ماژول مدت زمانی که ممکن است قبل از انقضا زنده بماند."
  lookup_strategy: "جستجو برای کدام درخواست ها باید انجام شود؟"

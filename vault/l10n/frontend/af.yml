@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Afrikaans language data for the front-end (last modified: 2026.02.24).
+# This file: Afrikaans language data for the front-end (last modified: 2026.02.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -144,20 +144,18 @@ config:
  bgpview_whitelisted_asns: &ConfigWhitelistedASNs "Lys van ASN'e wat gewitlys moet word wanneer dit deur die module ooreenstem."
  bgpview_whitelisted_ccs: &ConfigWhitelistedCCs "Lys van lande (geïdentifiseer deur hul {{Links.ISO.3166}} 2-syfer landkodes) wat gewitlys moet word wanneer dit deur die module ooreenstem."
  bobuam: "Konfigurasie vir die opsionele "bot of blaaier gebruikersagente module", wat ongewenste bots en ou blaaiers opspoor, en 'n paar gesondeheidskontroles uitvoer."
- bobuam_block_bots: "Blokkeer bots wat as kwaadwillig of ongewens erken word?"
- bobuam_block_eol_browsers: "Blokkeer blaaiers wat die einde van die lewe bereik het? (Stel weergawes hieronder)."
  bobuam_chrome: "Laagste toegelate weergawe van die "Chrome/Chromium"-token. Aanbeveel: {{BOBUAM Token.Chrome}}."
  bobuam_edge: "Laagste toegelate weergawe van die "Edg/Edge"-token. Aanbeveel: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "Laagste toegelate weergawe van die "Firefox"-token. Aanbeveel: {{BOBUAM Token.Firefox}}."
  bobuam_firefox_esr: "Toegelate weergawe van die "Firefox"-token vir die ESR-weergawe. Aanbeveel: {{BOBUAM Token.Firefox ESR}}."
  bobuam_opera: "Laagste toegelate weergawe van die "OPR"-token. Aanbeveel: {{BOBUAM Token.Opera}}."
- bobuam_reason_ambiguous: "Blokrede wat gewys word wanneer 'n dubbelsinnige gebruikeragentstring bespeur word."
+ bobuam_reason_ambiguous: "Blokrede wat gewys word wanneer 'n dubbelsinnige gebruikersagentstring bespeur word."
  bobuam_reason_bot: "Blokrede wat vir geblokkeerde bots gewys word."
  bobuam_reason_browser: "Blokrede wat gewys word wanneer 'n blaaier wat te oud is geblokkeer word."
- bobuam_reason_malformed: "Blokrede wat gewys word wanneer 'n wanvormde gebruikeragentstring bespeur word."
- bobuam_reason_masquerade: "Blokrede wat gewys word wanneer 'n gebruikeragent probeer om hom as iets anders voor te doen."
+ bobuam_reason_malformed: "Blokrede wat gewys word wanneer 'n wanvormde gebruikersagentstring bespeur word."
+ bobuam_reason_masquerade: "Blokrede wat gewys word wanneer 'n gebruikersagent probeer om hom as iets anders voor te doen."
  bobuam_safari: "Laagste toegelate weergawe van Safari se "weergawe"-token. Aanbeveel: {{BOBUAM Token.Safari}}."
- bobuam_sanity_check: "Blokkeer blaaiers wat dubbelsinnige of duidelik wanvormde gebruikeragentstringe wys?"
+ bobuam_what_to_block: "Wat om te blokkeer?"
  bunnycdn: "Konfigurasie vir die BunnyCDN versoenbaarheidsmodule."
  bunnycdn_positive_action: "Watter aksie moet CIDRAM uitvoer wanneer dit 'n versoek van BunnyCDN teëkom? Verstekaksie = Omseil."
  bypasses: "Konfigurasie vir die verstek handtekening-omleidings."
@@ -777,6 +775,12 @@ label:
   redirect the request (without blocking it): "herlei die versoek (sonder om dit te blokkeer)"
   run a file to handle the request: "hardloop 'n lêer om die versoek te hanteer"
   whitelist the request: "witlys die versoek"
+ bobuam:
+  Ambiguous user agents: "Dubbelsinnige gebruikersagente"
+  Clearly malformed user agents: "Duidelik wanvormde gebruikersagente"
+  Masquerade attempts (e_g_, bots pretending to be browsers): "Maskerpoging (bv., robotte wat voorgee om webblaaiers te wees)"
+  Outdated or end of life browsers (you can set the versions below): "Verouderde of einde-van-lewensduur blaaiers (jy kan die weergawes hieronder stel)"
+  Suspected bots, scrapers, probes, etc: "Verdagte robotte, skrapers, sondes, ens"
  expire_bad: "Vanaf die tyd van die skepping daarvan, die hoeveelheid tyd wat slegte data wat deur hierdie module gekas is, kan leef voordat dit verval."
  expire_good: "Vanaf die tyd van die skepping daarvan, die hoeveelheid tyd wat goeie data wat deur hierdie module gekas is, kan leef voordat dit verval."
  lookup_strategy: "Vir watter versoeke moet opsoek gedoen word?"

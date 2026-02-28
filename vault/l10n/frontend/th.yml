@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2026.02.24).
+# This file: Thai language data for the front-end (last modified: 2026.02.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -144,8 +144,6 @@ config:
  bgpview_whitelisted_asns: &ConfigWhitelistedASNs "รายการ ASN ที่จะอนุญาตพิเศษโดยโมดูล."
  bgpview_whitelisted_ccs: &ConfigWhitelistedCCs "รายชื่อประเทศ (ระบุด้วยรหัสประเทศ {{Links.ISO.3166}} สองตัวอักษร) ที่จะอนุญาตพิเศษโดยโมดูล."
  bobuam: "การกำหนดค่าสำหรับ "โมดูลสำหรับตัวแทนผู้ใช้ของบอทหรือเบราว์เซอร์". โมดูลนี้จะตรวจหาบ็อตที่ไม่ต้องการ เบราว์เซอร์เก่า และทำการตรวจสุขภาพบางอย่าง."
- bobuam_block_bots: "บล็อคบอทที่รู้ว่าเป็นอันตรายหรือไม่พึงประสงค์?"
- bobuam_block_eol_browsers: "บล็อคเบราว์เซอร์ที่หมดอายุแล้วหรือไม่? (ตั้งค่าเวอร์ชันด้านล่าง)."
  bobuam_chrome: "โทเค็น "Chrome/Chromium" เวอร์ชันต่ำสุดที่อนุญาต. ที่แนะนำ: {{BOBUAM Token.Chrome}}."
  bobuam_edge: "โทเค็น "Edg/Edge" เวอร์ชันต่ำสุดที่อนุญาต. ที่แนะนำ: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "โทเค็น "Firefox" เวอร์ชันต่ำสุดที่อนุญาต. ที่แนะนำ: {{BOBUAM Token.Firefox}}."
@@ -157,7 +155,7 @@ config:
  bobuam_reason_malformed: "เหตุผลในการบล็อคที่แสดงเมื่อตรวจพบสตริงตัวแทนผู้ใช้ที่มีรูปแบบไม่ถูกต้อง."
  bobuam_reason_masquerade: "เหตุผลในการบล็อคที่แสดงขึ้นเมื่อตัวแทนผู้ใช้พยายามปลอมตัวเป็นอย่างอื่น."
  bobuam_safari: "โทเค็น "Version" ของ Safari เวอร์ชันต่ำสุดที่อนุญาต. ที่แนะนำ: {{BOBUAM Token.Safari}}."
- bobuam_sanity_check: "บล็อคเบราว์เซอร์ที่แสดงสตริงตัวแทนผู้ใช้ที่คลุมเครือหรือผิดรูปแบบอย่างชัดเจนหรือไม่?"
+ bobuam_what_to_block: "จะบล็อกอะไรบ้าง?"
  bunnycdn: "การกำหนดค่าสำหรับโมดูลความเข้ากันได้ของ BunnyCDN."
  bunnycdn_positive_action: "CIDRAM ควรดำเนินการใดเมื่อพบคำขอจาก BunnyCDN? การกระทำเริ่มต้น = บายพาส."
  bypasses: "การกำหนดค่าสำหรับบายพาสลายเซ็นเริ่มต้น."
@@ -761,6 +759,12 @@ label:
   redirect the request (without blocking it): "เปลี่ยนเส้นทางคำขอ (โดยไม่ปิดกั้น)"
   run a file to handle the request: "เรียกใช้ไฟล์เพื่อจัดการคำขอ"
   whitelist the request: "ไวท์ลิสต์คำขอ"
+ bobuam:
+  Ambiguous user agents: "ตัวแทนผู้ใช้ที่ไม่ชัดเจน"
+  Clearly malformed user agents: "ตัวแทนผู้ใช้ที่ผิดรูปแบบอย่างชัดเจน"
+  Masquerade attempts (e_g_, bots pretending to be browsers): "ความพยายามปลอมตัว (เช่น บอทที่แสร้งทำเป็นเบราว์เซอร์)"
+  Outdated or end of life browsers (you can set the versions below): "เบราว์เซอร์ที่ล้าสมัยหรือหมดอายุการใช้งาน (คุณสามารถตั้งค่าเวอร์ชันได้ด้านล่าง)"
+  Suspected bots, scrapers, probes, etc: "สงสัยว่าเป็นบอท สแครปเปอร์ โพรบ ฯลฯ"
  expire_bad: "นับตั้งแต่เวลาที่สร้างมันขึ้นมา ระยะเวลาที่ข้อมูลที่ไม่ดีที่แคชไว้โดยโมดูลนี้อาจคงอยู่ก่อนที่จะหมดอายุ."
  expire_good: "นับตั้งแต่เวลาที่สร้างมันขึ้นมา ระยะเวลาที่ข้อมูลที่ดีที่แคชไว้โดยโมดูลนี้อาจคงอยู่ก่อนที่จะหมดอายุ."
  lookup_strategy: "คำขอใดควรทำการค้นหา?"

@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v4/vault/signatures/ipv6.dat
 
-# Version: 2026.50.0
-# Last modified: 2026.02.20
+# Version: 2026.60.0
+# Last modified: 2026.03.02
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -1205,7 +1205,7 @@ Tag: Ready Server
 
 
 # ASN 42655 ("ON-LINE Ltd").
-# Updated: 2016.01.21 / Checked: 2025.02.01
+# Updated: 2016.01.21 / Checked: 2026.02.28
 
 2001:67c:2224::/48 Deny Cloud
 Origin: UA
@@ -5865,7 +5865,7 @@ Tag: Gigabit Hosting
 # Trademark protection organisation; Scans websites looking for potential
 # infringements in order to send legal notices on behalf of clients. Serves no
 # benefit to the websites being scanned.
-# Updated: 2018.02.25 / Checked: 2025.02.01
+# Updated: 2018.02.25 / Checked: 2026.02.28
 
 2a00:77e0::/32 Deny Cloud
 Origin: GB
@@ -10452,27 +10452,22 @@ Tag: Artnet Sp. z o.o
 
 # ASN 63023 ("GTHost").
 # Webhosting provider. Spam, port scans, and hack attempts detected from here.
-# Stop Forum Spam (SFS) listings: 2,649.
-# Updated: 2025.07.08
+# Stop Forum Spam (SFS) listings: 2,908.
+# Updated: 2026.02.22
 
-2a13:1480::/29 Deny Cloud
-2a13:18c2::/32 Deny Cloud
-Origin: SC
 2a0f:f400::/29 Deny Cloud
-2a11:1140::/29 Deny Cloud
+2a13:18c2::/32 Deny Cloud
 Origin: UA
+2604:7580:f2::/48 Deny Cloud
 2604:86c0::/33 Deny Cloud
 2604:86c0:8000::/34 Deny Cloud
 2604:86c0:f000::/38 Deny Cloud
 2604:86c0:f400::/39 Deny Cloud
+2604:86c0:f600::/40 Deny Cloud
 2605:e240:fe00::/48 Deny Cloud
-2607:a140::/38 Deny Cloud
+2605:e240:fe05::/48 Deny Cloud
 2607:a140:400::/39 Deny Cloud
-2607:a140:600::/40 Deny Cloud
-2607:a140:800::/40 Deny Cloud
 2607:a140:b00::/40 Deny Cloud
-2607:a140:c00::/38 Deny Cloud
-2607:a140:1000::/40 Deny Cloud
 Origin: US
 Profile: Webhosting
 Tag: GTHost
@@ -12907,8 +12902,8 @@ Tag: WAIcore Hosting LTD
 
 # ASN 42366 ("TerraTransit AG").
 # German server farm and transit provider. Webapp attacks and spam detected from here.
-# Stop Forum Spam (SFS) listings: 86.
-# Updated: 2023.07.24 / Checked: 2025.07.06
+# Stop Forum Spam (SFS) listings: 10.
+# Updated: 2023.07.24 / Checked: 2026.03.02
 
 2a01:6f0::/32 Deny Cloud
 Origin: DE
@@ -17124,36 +17119,45 @@ Tag: DirectNode
 
 # ASN 26042 ("FiberState, LLC").
 # Brute-force, SSH, RDP attacks, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 63.
-# Updated: 2025.03.20
+# Stop Forum Spam (SFS) listings: 158.
+# Updated: 2026.03.02
 
-2602:fed2:7114::/48 Deny Cloud
-2602:fed2:7128::/48 Deny Cloud
-2602:fed2:7185::/48 Deny Cloud
-2602:fed2:7e05::/48 Deny Cloud
-2602:fed2:7e06::/48 Deny Cloud
-Origin: CA
+2400:ac20:5051::/48 Deny Cloud
+Origin: BD
+2a0f:7803:f611::/48 Deny Cloud
 2a0f:9400:611f::/48 Deny Cloud
+2a0f:9400:6939::/48 Deny Cloud
+2a0f:9400:7385::/48 Deny Cloud
+2a12:bec4:1980::/44 Deny Cloud
+2a12:bec4:1ec0::/44 Deny Cloud
+2a12:bec4:1f20::/44 Deny Cloud
 Origin: GB
 2a0c:e641::/32 Deny Cloud
 Origin: NL
-2a09:da00::/32 Deny Cloud
-Origin: RU
-2a0f:1584:1::/48 Deny Cloud
-2a10:67c3::/32 Deny Cloud
-Origin: SC
-2602:294::/36 Deny Cloud
+2602:294::/47 Deny Cloud
+2602:294:2::/48 Deny Cloud
+2602:f65c:10::/46 Deny Cloud
+2602:f65c:14::/48 Deny Cloud
+2602:f66f:10::/48 Deny Cloud
 2602:f919:100::/48 Deny Cloud
 2602:f919:102::/48 Deny Cloud
+2602:f988:210::/47 Deny Cloud
+2602:f988:212::/48 Deny Cloud
+2602:f992:c0::/44 Deny Cloud
 2602:fa3d:a92::/48 Deny Cloud
+2602:fa42:300::/40 Deny Cloud
 2602:fd92:200::/40 Deny Cloud
 2602:fe13:2e0::/44 Deny Cloud
-2602:fe13:806::/48 Deny Cloud
 2606:c0:1::/48 Deny Cloud
 2606:fc40:4004::/48 Deny Cloud
 2606:fc40:4010::/44 Deny Cloud
-2a14:7582::/32 Deny Cloud
+2606:fc40:4020::/44 Deny Cloud
+2607:740:49::/48 Deny Cloud
+2a0f:1584:1::/48 Deny Cloud
+2a14:7580:fc00::/40 Deny Cloud
+2a14:7584:1000::/36 Deny Cloud
 2a14:7584:5000::/36 Deny Cloud
+2a14:7586:1000::/36 Deny Cloud
 Origin: US
 Profile: Dedicated;Infrastructure/Transit
 Tag: FiberState, LLC
@@ -17161,7 +17165,7 @@ Tag: FiberState, LLC
 
 # ASN 215362 ("Promo Plus SRL").
 # Port scans and hacking detected from here.
-# Updated: 2025.03.20
+# Updated: 2025.03.20 / Checked: 2026.03.02
 
 2a0c:9a40:8610::/44 Deny Cloud
 Origin: CH

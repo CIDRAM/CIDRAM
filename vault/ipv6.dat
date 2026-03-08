@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v4/vault/signatures/ipv6.dat
 
-# Version: 2026.60.0
-# Last modified: 2026.03.02
+# Version: 2026.66.0
+# Last modified: 2026.03.08
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -2945,13 +2945,11 @@ Tag: Nazwa.pl
 
 # ASN 18450 ("WebNX, Inc").
 # HUGE amounts of spam, port scans, hack attempts, and other unwanted traffic!
-# Stop Forum Spam (SFS) listings: 23.
-# Updated: 2025.03.20
+# Stop Forum Spam (SFS) listings: 13.
+# Updated: 2026.03.07
 
 2a0e:fd45:2c70::/48 Deny Cloud
 Origin: NL
-2602:f919:103::/48 Deny Cloud
-2602:f919:104::/48 Deny Cloud
 2607:f2d8::/32 Deny Cloud
 Origin: US
 Profile: Dedicated;Infrastructure/Transit;Webhosting
@@ -9224,8 +9222,8 @@ Tag: 1 Cloud Lab
 
 # ASNs 262287, 396356 ("Latitude.sh LTDA").
 # Dedicated data center caught spamming, port scanning, and scraping.
-# Stop Forum Spam (SFS) listings: 1,477 (AS262287), 5,742 (AS396356).
-# Updated: 2025.09.11
+# Stop Forum Spam (SFS) listings: 1,011 (AS262287), 4,026 (AS396356).
+# Updated: 2026.03.07
 
 2a0a:a700::/47 Deny Cloud
 2a0a:a700:1000::/47 Deny Cloud
@@ -9250,7 +9248,6 @@ Tag: 1 Cloud Lab
 2a0a:a701:8000::/47 Deny Cloud
 2a0a:a701:9000::/47 Deny Cloud
 2a0a:a701:a000::/47 Deny Cloud
-2a0a:a702::/32 Deny Cloud
 2a0a:a703::/47 Deny Cloud
 2a0a:a703:2::/48 Deny Cloud
 2a0a:a703:1000::/47 Deny Cloud
@@ -9288,6 +9285,7 @@ Origin: AE
 2a06:fcc0:4::/48 Deny Cloud
 Origin: BG
 2804:391c::/32 Deny Cloud
+2804:9590::/32 Deny Cloud
 Origin: BR
 2a13:9500:1c::/46 Deny Cloud
 2a13:9500:20::/46 Deny Cloud
@@ -9336,28 +9334,16 @@ Origin: NL
 2605:6440:c000::/34 Deny Cloud
 2605:6441::/34 Deny Cloud
 2605:6441:4000::/36 Deny Cloud
+2605:6441:9000::/36 Deny Cloud
 2606:f180:c::/48 Deny Cloud
-2606:f184::/32 Deny Cloud
 2606:f186::/32 Deny Cloud
 2607:740:36::/48 Deny Cloud
-2607:740:45::/48 Deny Cloud
 2607:740:63::/48 Deny Cloud
-2607:6b80:28::/45 Deny Cloud
-2607:6b80:30::/48 Deny Cloud
-2607:6b80:41::/48 Deny Cloud
-2607:6b80:42::/47 Deny Cloud
-2607:6b80:44::/46 Deny Cloud
-2607:6b80:48::/48 Deny Cloud
-2607:6b80:4a::/48 Deny Cloud
-2607:6b80:53::/48 Deny Cloud
 2607:6b80:6c::/48 Deny Cloud
-2607:6b80:6e::/48 Deny Cloud
-2a0a:8f40:4::/47 Deny Cloud
-2a0a:8f40:6::/48 Deny Cloud
-2a0a:8f40:31::/48 Deny Cloud
+2620:111:8004::/48 Deny Cloud
+2620:111:8006::/48 Deny Cloud
+2a0a:8f40:5::/48 Deny Cloud
 Origin: US
-2404:f980:8::/48 Deny Cloud
-Origin: XP
 2603:f100::/29 Deny Cloud
 2603:f200::/29 Deny Cloud
 2603:f248::/29 Deny Cloud
@@ -10681,30 +10667,31 @@ Tag: The Optimal Link Corporation
 # ASN 397423 ("Tier.Net Technologies LLC").
 # Dedicated VPS, colo provider, hosting reseller. Brute-force, hack, and webapp
 # attacks, spam, port scans, and home router hack attempts detected from here.
-# Stop Forum Spam (SFS) listings: 2,325.
-# Updated: 2025.04.30
+# Stop Forum Spam (SFS) listings: 1,029.
+# Updated: 2026.03.08
 
 2602:fed2:7116::/48 Deny Cloud
+2602:fed2:7127::/48 Deny Cloud
 Origin: CA
-2a0f:e840::/31 Deny Cloud
-Origin: SC
+2a14:1ec7:f700::/44 Deny Cloud
+Origin: NL
 2602:2c8::/48 Deny Cloud
-2602:f80f::/48 Deny Cloud
 2602:f94c::/40 Deny Cloud
-2602:fb80:2::/48 Deny Cloud
+2604:7580:9::/48 Deny Cloud
 2604:7580:f1::/48 Deny Cloud
-2604:f440::/46 Deny Cloud
+2604:f440:1::/48 Deny Cloud
+2604:f440:2::/47 Deny Cloud
 2604:f440:4::/47 Deny Cloud
 2604:f440:7::/48 Deny Cloud
 2604:f440:8::/47 Deny Cloud
 2604:f440:a::/48 Deny Cloud
 2604:f440:e::/47 Deny Cloud
 2604:f440:10::/48 Deny Cloud
-2604:f440:14::/46 Deny Cloud
 2604:f440:18::/45 Deny Cloud
-2604:f440:20::/45 Deny Cloud
+2604:f440:28::/46 Deny Cloud
+2604:f440:200::/39 Deny Cloud
 2605:6c80:6::/48 Deny Cloud
-2607:8cc0:2333::/48 Deny Cloud
+2620:db:a000::/48 Deny Cloud
 Origin: US
 Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: Tier.Net Technologies LLC
@@ -10713,8 +10700,8 @@ Tag: Tier.Net Technologies LLC
 # ASN 33083 ("AxcelX Technologies LLC").
 # Boston cloud provider / server farm. Brute-force, DDoS, and webapp attacks,
 # port scans, and spam detected from here (substract 44.0.0.0/8 when updating).
-# Stop Forum Spam (SFS) listings: 80.
-# Updated: 2021.07.19 / Checked: 2025.03.21
+# Stop Forum Spam (SFS) listings: 186.
+# Updated: 2021.07.19 / Checked: 2026.03.08
 
 2001:4830:c400::/40 Deny Cloud
 2602:ff65::/36 Deny Cloud
@@ -13528,24 +13515,6 @@ Tag: RetnNet
 Origin: FR
 Profile: Restricted/Unidentifiable
 Tag: REDHEBERG
-
-
-# ASN 198100 ("WAP.AC LTD").
-# Some kind of Chinese Netflix unblocking service. DNS poisoning, spoofing,
-# brute-force and SSH attacks, port scans, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 89.
-# Updated: 2024.03.04 / Checked: 2025.03.20
-
-2a0f:7803:ffb1::/48 Deny Cloud
-Origin: GB
-2602:814:f0ff::/48 Deny Cloud
-2602:814:ffe7::/48 Deny Cloud
-2602:814:ffe8::/45 Deny Cloud
-2602:814:fff7::/48 Deny Cloud
-2602:814:fff8::/45 Deny Cloud
-Origin: US
-Profile: Commercial
-Tag: WAP.AC LTD
 
 
 # ASN 149148 ("Phu Hai Computer Co., Ltd").
@@ -17107,16 +17076,6 @@ Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: xTom
 
 
-# ASN 216022 ("Valentino de Vries trading as DirectNode").
-# Brute-force and SSH attacks detected from here.
-# Updated: 2025.03.20
-
-2a10:7403::/32 Deny Cloud
-Origin: NL
-Profile: Dedicated;Webhosting
-Tag: DirectNode
-
-
 # ASN 26042 ("FiberState, LLC").
 # Brute-force, SSH, RDP attacks, and spam detected from here.
 # Stop Forum Spam (SFS) listings: 158.
@@ -18442,6 +18401,46 @@ Tag: Curt Creation
 Origin: IL
 Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: PipeHost
+
+
+# ASN 401443 ("WAP.AC LTD").
+# Some kind of Chinese Netflix unblocking service. Brute-force, SSH, and webapp
+# attacks, DNS poisoning, spoofing, port scans, and spam detected from here.
+# Updated: 2026.03.07
+
+2a0f:7803:ffb1::/48 Deny Cloud
+Origin: GB
+2602:814:f0ff::/48 Deny Cloud
+2602:814:fff7::/48 Deny Cloud
+2602:814:fff8::/45 Deny Cloud
+Origin: US
+Profile: Commercial
+Tag: WAP.AC LTD
+
+
+# ASN 213861 ("Vostrikov Rodion").
+# AbuseIPDB and others classify this as a cloud/hosting provider, though its
+# homepage appears to be dead and I can't 100% verify what it is.
+# Brute-force, SSH, WordPress/XMLRPC, and webapp attacks, sniffing for jQuery
+# exploits, port scans, and hacking detected here.
+# Updated: 2026.03.08
+
+2a09:a503::/32 Deny Cloud
+2a0d:fcc4::/32 Deny Cloud
+2a0f:c084::/32 Deny Cloud
+2a10:4101::/32 Deny Cloud
+2a11:2083::/32 Deny Cloud
+2a11:2c40::/29 Deny Cloud
+2a12:2cc6::/32 Deny Cloud
+2a12:3bc1::/32 Deny Cloud
+2a12:a340::/32 Deny Cloud
+2a14:a406::/32 Deny Cloud
+2a14:e601::/32 Deny Cloud
+Origin: RU
+2a14:7b83::/32 Deny Cloud
+Origin: SC
+Profile: Restricted/Unidentifiable;Webhosting
+Tag: Vostrikov Rodion
 
 
 # ---

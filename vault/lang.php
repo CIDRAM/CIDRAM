@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Language handler (last modified: 2022.02.13).
+ * This file: Language handler (last modified: 2026.03.11).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -40,9 +40,9 @@ if ($CIDRAM['Config']['general']['lang'] === 'en') {
     $CIDRAM['L10N']['Configured'][] = $CIDRAM['Vault'] . 'lang/lang.en.yaml';
     if (
         !$CIDRAM['Config']['general']['disable_frontend'] &&
+        ($CIDRAM['Direct'] || !empty($CIDRAM['Alternate'])) &&
         file_exists($CIDRAM['Vault'] . 'frontend.php') &&
-        file_exists($CIDRAM['Vault'] . 'fe_assets/frontend.html') &&
-        ($CIDRAM['Direct'] || !empty($CIDRAM['Alternate']))
+        file_exists($CIDRAM['Vault'] . 'fe_assets/frontend.html')
     ) {
         /** Front-end L10N data. */
         $CIDRAM['L10N']['Configured'][] = $CIDRAM['Vault'] . 'lang/lang.en.fe.yaml';
@@ -53,9 +53,9 @@ if ($CIDRAM['Config']['general']['lang'] === 'en') {
     $CIDRAM['L10N']['Fallbacks'][] = $CIDRAM['Vault'] . 'lang/lang.en.yaml';
     if (
         !$CIDRAM['Config']['general']['disable_frontend'] &&
+        ($CIDRAM['Direct'] || !empty($CIDRAM['Alternate'])) &&
         file_exists($CIDRAM['Vault'] . 'frontend.php') &&
-        file_exists($CIDRAM['Vault'] . 'fe_assets/frontend.html') &&
-        ($CIDRAM['Direct'] || !empty($CIDRAM['Alternate']))
+        file_exists($CIDRAM['Vault'] . 'fe_assets/frontend.html')
     ) {
         /** Front-end L10N data. */
         $CIDRAM['L10N']['Configured'][] = $CIDRAM['Vault'] . 'lang/lang.' . $CIDRAM['Config']['general']['lang'] . '.fe.yaml';
@@ -95,11 +95,7 @@ if (!$CIDRAM['Config']['general']['lang_override'] || empty($_SERVER['HTTP_ACCEP
     $CIDRAM['L10N-Lang-Attache'] = '';
 } else {
     $CIDRAM['Client-L10N'] = [];
-    $CIDRAM['Client-L10N-Accepted'] = preg_replace(
-        ['~^([^,]*).*$~', '~[^-a-z]~'],
-        ['\1', ''],
-        strtolower($_SERVER['HTTP_ACCEPT_LANGUAGE'])
-    );
+    $CIDRAM['Client-L10N-Accepted'] = preg_replace(['~^([^,]*).*$~', '~[^-a-z]~'], ['\1', ''], strtolower($_SERVER['HTTP_ACCEPT_LANGUAGE']));
     if (
         $CIDRAM['Config']['general']['lang'] !== $CIDRAM['Client-L10N-Accepted'] &&
         is_readable($CIDRAM['Vault'] . 'lang/lang.' . $CIDRAM['Client-L10N-Accepted'] . '.yaml')

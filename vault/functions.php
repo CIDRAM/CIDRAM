@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2026.02.22).
+ * This file: Functions file (last modified: 2026.03.11).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -720,10 +720,11 @@ $CIDRAM['Fallback'] = function (array $Fallbacks, array &$Config) use (&$CIDRAM)
 /**
  * Check for supplementary configuration.
  *
+ * @param string $Vault The path to the vault.
  * @param string $Source The directive or CSV that we're checking from.
  * @return array An array of valid supplementary configuration sources.
  */
-$CIDRAM['Supplementary'] = function (string $Source) use (&$CIDRAM): array {
+$CIDRAM['Supplementary'] = function (string $Vault, string $Source): array {
     $Out = [];
     $Source = explode(',', $Source);
     foreach ($Source as $File) {
@@ -732,7 +733,7 @@ $CIDRAM['Supplementary'] = function (string $Source) use (&$CIDRAM): array {
         }
         $File = substr($File, 0, $DecPos) . '.';
         foreach (['yaml', 'yml'] as $Type) {
-            if (file_exists($CIDRAM['Vault'] . $File . $Type)) {
+            if (file_exists($Vault . $File . $Type)) {
                 $Out[] = $File . $Type;
                 break;
             }

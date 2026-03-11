@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2026.02.13).
+ * This file: Configuration handler (last modified: 2026.03.11).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -97,6 +97,7 @@ if (empty($CIDRAM['Config']['Config Defaults'])) {
 
 /** Check for supplementary configuration. */
 foreach ($CIDRAM['Supplementary'](
+    $CIDRAM['Vault'],
     ($CIDRAM['Config']['general']['config_imports'] ?? '') . ',' .
     ($CIDRAM['Config']['signatures']['ipv4'] ?? '') . ',' .
     ($CIDRAM['Config']['signatures']['ipv6'] ?? '') . ',' .

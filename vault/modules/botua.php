@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bot user agents module (last modified: 2026.02.22).
+ * This file: Bot user agents module (last modified: 2026.03.11).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -146,18 +146,19 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         'd(?:atacha|igout4uagent|ioscout|kimrepbot|sarobot)|' .
         'easou|exabot|' .
         'f(?:astenterprisecrawler|astlwspider|ind?bot|indlinks|loodgate|r[_-]?crawler)|' .
+        'geedo|' .
         'hrcrawler|hubspot|' .
         'i(?:mrbot|ntegromedb|p-?web-?crawler|rcsearch|rgrabber)|' .
         'jadynavebot|komodiabot|linguee|linkpad|' .
         'm(?:ajestic12|agnet|auibot|eanpath|entormate|fibot|ignify|j12)|' .
         'nutch|omgilibot|' .
         'p(?:ackrat|cbrowser|lukkie|surf)|reaper|rsync|' .
-        's(?:aidwot|alad|cspider|ees\.co|hai|hellbot|[iy]phon|truct\.it|upport\.wordpress\.com|ystemscrawler)|' .
+        's(?:aidwot|alad|cspider|ees\.co|hai|hellbot|hopproductfinder|[iy]phon|truct\.it|upport\.wordpress\.com|ystemscrawler)|' .
         't(?:est\'?$|akeout|asapspider|weetmeme)|' .
         'user-agent|visaduhoc|vonchimpenfurlr|webtarantula|wolf|' .
         'y(?:acy|isouspider|[ry]spider|unrang|unyun)|zoominfobot~',
         $UANoSpace
-    ) || strpos($UA, '   ') !== false, 'Banned UA'); // 2021.07.08 mod 2025.11.06
+    ) || strpos($UA, '   ') !== false, 'Banned UA'); // 2021.07.08 mod 2026.03.11
 
     if (!$this->trigger((
         preg_match('~^python-requests/2\.27~', $UANoSpace) &&
@@ -308,7 +309,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     } // 2022.05.08
 
     if ($this->trigger(preg_match(
-        '~^http_get|2bone|80legs|' .
+        '~^(?:curlmozilla|http_get)|2bone|80legs|' .
         'a(?:dbar|i2bot|ihitbot|i.?searchbot|liyun|ndibot|nonymous-?coward|wario|xios)|' .
         'b(?:anana-?bot|edrockbot|ot-?test|rands-?bot|rightbot|rings_?you|ytespider)|' .
         'c(?:asperbot|cbot|hinaclaw|lark-?crawler|ohere-|rawler4j)|' .
@@ -336,7 +337,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         $UANoSpace
     ), 'Scraper UA')) {
         $this->CIDRAM['Tracking options override'] = 'extended';
-    } // 2023.11.17 mod 2025.11.06
+    } // 2023.11.17 mod 2026.03.11
 
     /**
      * @link https://github.com/CIDRAM/CIDRAM/issues/651

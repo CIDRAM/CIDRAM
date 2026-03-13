@@ -1,6 +1,6 @@
 <?php
 /**
- * Number formatter (last modified: 2025.07.13).
+ * Number formatter (last modified: 2026.03.10).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -1236,21 +1236,7 @@ class NumberFormatter extends CommonAbstract
     /**
      * @var array Lookup table for unformatting Roman numerals and similar systems.
      */
-    private $UnformatRoman = [
-        'm' => 1000000,
-        'd' => 500000,
-        'c' => 100000,
-        'l' => 50000,
-        'x' => 10000,
-        'v' => 5000,
-        'M' => 1000,
-        'D' => 500,
-        'C' => 100,
-        'L' => 50,
-        'X' => 10,
-        'V' => 5,
-        'I' => 1
-    ];
+    private $UnformatRoman = ['m' => 1000000, 'd' => 500000, 'c' => 100000, 'l' => 50000, 'x' => 10000, 'v' => 5000, 'M' => 1000, 'D' => 500, 'C' => 100, 'L' => 50, 'X' => 10, 'V' => 5, 'I' => 1];
 
     /**
      * @var array Lookup table for unformatting Chinese numerals and similar systems.

@@ -1,6 +1,6 @@
 <?php
 /**
- * A simple, unified cache handler (last modified: 2025.12.30).
+ * A simple, unified cache handler (last modified: 2026.03.12).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -407,7 +407,8 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
         /** Try to build the query. Fail if exceptions are generated. */
         try {
             $Exists = $this->WorkingData->query($Check);
-        } catch (\Exception $e) {
+        } catch (\PDOException $Exception) {
+            $this->Exceptions[] = $Exception->getMessage();
             return false;
         }
 
@@ -536,10 +537,10 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
             return false;
         }
         if ($this->Using === 'PDO') {
+            $PDO = $this->WorkingData->prepare(self::SET_QUERY);
             if ($TTL > 0) {
                 $TTL += time();
             }
-            $PDO = $this->WorkingData->prepare(self::SET_QUERY);
             if (strlen($Value) > 65536) {
                 $Value = 'gz:' . base64_encode(gzencode($Value, 9));
             }
@@ -558,6 +559,158 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
             return $this->Modified = true;
         }
         return false;
+    }
+
+    /**
+     * Set multiple cache entries.
+     *
+     * @param array $Entries The entries to set (array of [key => data, or key => ['data' => data, 'time' => ttl]]).
+     * @return bool True on success; False on failure.
+     */
+    public function setEntries(array $Entries): bool
+    {
+        $Success = false;
+        if ($this->Using === 'APCu') {
+            $Working = [];
+            foreach ($Entries as $Key => $Value) {
+                if (is_array($Value) && isset($Value['Time'], $Value['Data'])) {
+                    $TTL = $Value['Time'];
+                    $Value = $Value['Data'];
+                } else {
+                    $TTL = 0;
+                }
+                if (!isset($Working[$TTL])) {
+                    $Working[$TTL] = [];
+                }
+                $Key = $this->Prefix . $Key;
+                $this->enforceKeyLimit($Key);
+                $Value = $this->serializeEntry($Value);
+                $Working[$TTL][$Key] = $Value;
+            }
+            ksort($Working, SORT_NUMERIC);
+            foreach ($Working as $TTL => $Values) {
+                if (apcu_store($Values, null, $TTL)) {
+                    $Success = $this->Modified = true;
+                }
+            }
+            return $Success;
+        }
+        if ($this->Using === 'Memcached') {
+            $Working = [];
+            foreach ($Entries as $Key => $Value) {
+                if (is_array($Value) && isset($Value['Time'], $Value['Data'])) {
+                    $TTL = $Value['Time'];
+                    $Value = $Value['Data'];
+                } else {
+                    $TTL = 0;
+                }
+                if ($TTL >= 2592000) {
+                    $TTL += time();
+                }
+                if (!isset($Working[$TTL])) {
+                    $Working[$TTL] = [];
+                }
+                $Index = $Key;
+                $Key = $this->Prefix . $Key;
+                $this->enforceKeyLimit($Key);
+                $Value = $this->serializeEntry($Value);
+                $Working[$TTL][$Key] = $Value;
+            }
+            ksort($Working, SORT_NUMERIC);
+            foreach ($Working as $TTL => $Values) {
+                if ($this->WorkingData->setMulti($Values, $TTL)) {
+                    if (!isset($this->Indexes[$Index])) {
+                        $this->Indexes[$Index] = true;
+                        $this->ModifiedIndexes = true;
+                    }
+                    $Success = $this->Modified = true;
+                }
+            }
+            return $Success;
+        }
+        if ($this->Using === 'Redis') {
+            $Working = [];
+            foreach ($Entries as $Key => $Value) {
+                if (is_array($Value) && isset($Value['Time'], $Value['Data'])) {
+                    $TTL = $Value['Time'];
+                    $Value = $Value['Data'];
+                } else {
+                    $TTL = 0;
+                }
+                if (!isset($Working[$TTL])) {
+                    $Working[$TTL] = [];
+                }
+                $Key = $this->Prefix . $Key;
+                $this->enforceKeyLimit($Key);
+                $Value = $this->serializeEntry($Value);
+                $Working[$TTL][$Key] = $Value;
+            }
+            ksort($Working, SORT_NUMERIC);
+            foreach ($Working as $TTL => $Values) {
+                if ($TTL < 1) {
+                    if ($this->WorkingData->mset($Values)) {
+                        $Success = $this->Modified = true;
+                    }
+                    continue;
+                }
+                if ($this->WorkingData->msetex($Values, $TTL)) {
+                    $Success = $this->Modified = true;
+                }
+            }
+            return $Success;
+        }
+        if ($this->Using === 'PDO') {
+            $PDO = $this->WorkingData->prepare(self::SET_QUERY);
+            try {
+                $this->WorkingData->beginTransaction();
+                foreach ($Entries as $Key => $Value) {
+                    if (is_array($Value) && isset($Value['Time'], $Value['Data'])) {
+                        $TTL = $Value['Time'];
+                        $Value = $Value['Data'];
+                    } else {
+                        $TTL = 0;
+                    }
+                    $Key = $this->Prefix . $Key;
+                    $this->enforceKeyLimit($Key);
+                    $Value = $this->serializeEntry($Value);
+                    if ($TTL > 0) {
+                        $TTL += time();
+                    }
+                    if (strlen($Value) > 65536) {
+                        $Value = 'gz:' . base64_encode(gzencode($Value, 9));
+                    }
+                    if ($PDO !== false && $PDO->execute([':key' => $Key, ':data' => $Value, ':time' => $TTL]) && $PDO->rowCount() > 0) {
+                        $Success = $this->Modified = true;
+                    }
+                }
+                $this->WorkingData->commit();
+            } catch (\PDOException $Exception) {
+                $this->WorkingData->rollback();
+                $this->Exceptions[] = $Exception->getMessage();
+            }
+            return $Success;
+        }
+        if (is_array($this->WorkingData)) {
+            foreach ($Entries as $Key => $Value) {
+                if (is_array($Value) && isset($Value['Time'], $Value['Data'])) {
+                    $TTL = $Value['Time'];
+                    $Value = $Value['Data'];
+                } else {
+                    $TTL = 0;
+                }
+                $Key = $this->Prefix . $Key;
+                $this->enforceKeyLimit($Key);
+                $Value = $this->serializeEntry($Value);
+                if ($TTL > 0) {
+                    $TTL += time();
+                    $this->WorkingData[$Key] = ['Data' => $Value, 'Time' => $TTL];
+                } else {
+                    $this->WorkingData[$Key] = $Value;
+                }
+                $Success = $this->Modified = true;
+            }
+        }
+        return $Success;
     }
 
     /**
@@ -626,6 +779,43 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
                 return $this->Modified = true;
             }
             return false;
+        }
+        if ($this->Using === 'Memcached') {
+            $Indexes = $this->Indexes;
+            $Success = false;
+            foreach ($Indexes as $Index => $Unused) {
+                if (!preg_match($Pattern, $Index)) {
+                    continue;
+                }
+                if ($this->WorkingData->delete($Index) && isset($this->Indexes[$Index])) {
+                    unset($this->Indexes[$Index]);
+                    $Success = $this->ModifiedIndexes = true;
+                }
+            }
+            return $Success;
+        }
+        if ($this->Using === 'PDO') {
+            $Success = false;
+            $Entries = $this->getAllEntries();
+            $PDO = $this->WorkingData->prepare(self::DELETE_QUERY);
+            try {
+                $this->WorkingData->beginTransaction();
+                foreach ($Entries as $EntryName => $EntryData) {
+                    if (!preg_match($Pattern, $EntryName)) {
+                        continue;
+                    }
+                    $EntryName = $this->Prefix . $EntryName;
+                    $this->enforceKeyLimit($EntryName);
+                    if ($PDO !== false && $PDO->execute([':key' => $EntryName]) && $PDO->rowCount() > 0) {
+                        $Success = $this->Modified = true;
+                    }
+                }
+                $this->WorkingData->commit();
+            } catch (\PDOException $Exception) {
+                $this->WorkingData->rollback();
+                $this->Exceptions[] = $Exception->getMessage();
+            }
+            return $Success;
         }
         $Failure = false;
         $Hit = false;

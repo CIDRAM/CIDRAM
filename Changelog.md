@@ -543,4 +543,5 @@
 - [2026.02.24]: The cache data page can now manage flatfile caching and APCU caching alongside whatever else is enabled at the same time (sometimes useful for when switching between different caching mechanisms but needing to manage entries from both mechanisms or others at the same time).
 - [2026.02.26]: Refactored BOBUAM, removing three configuration directives (sanity_check, block_bots, and block_eol_browsers), and adding a new configuration directive (what_to_block) as a replacement (#675).
 - [2026.02.28]: Refactored some of the L10N data.
+- [2026.03.13]: Added the ability to duplicate cache data across different cache mechanisms at the front-end cache data page.
 - *Plus all the regular signature updates.*

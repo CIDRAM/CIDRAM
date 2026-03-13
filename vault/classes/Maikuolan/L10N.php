@@ -1,6 +1,6 @@
 <?php
 /**
- * L10N handler (last modified: 2025.12.24).
+ * L10N handler (last modified: 2026.03.10).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -770,18 +770,11 @@ class L10N extends CommonAbstract implements \Countable
             $Code = substr($Code, 0, $Pos);
         }
 
-        if (in_array($Code, [
-            'ceb',
-            'fil',
-            'tl'
-        ], true)) {
+        if (in_array($Code, ['ceb', 'fil', 'tl'], true)) {
             return 'int2Type1';
         }
 
-        if (in_array($Code, [
-            'is',
-            'mk'
-        ], true)) {
+        if (in_array($Code, ['is', 'mk'], true)) {
             return 'int2Type2';
         }
 
@@ -938,138 +931,79 @@ class L10N extends CommonAbstract implements \Countable
             return 'int2Type4';
         }
 
-        if (in_array($Code, [
-            'prg'
-        ], true)) {
+        if ($Code === 'prg') {
             return 'int3Type1';
         }
 
-        if (in_array($Code, [
-            'ksh',
-            'lag'
-        ], true)) {
+        if (in_array($Code, ['ksh', 'lag'], true)) {
             return 'int3Type2';
         }
 
-        if (in_array($Code, [
-            'fj',
-            'he',
-            'iu',
-            'naq',
-            'sat',
-            'se',
-            'sma',
-            'smj',
-            'smn',
-            'sms'
-        ], true)) {
+        if (in_array($Code, ['fj', 'he', 'iu', 'naq', 'sat', 'se', 'sma', 'smj', 'smn', 'sms'], true)) {
             return 'int3Type3';
         }
 
-        if (in_array($Code, [
-            'be',
-            'bs',
-            'hr',
-            'ru',
-            'sh',
-            'sr',
-            'uk'
-        ], true)) {
+        if (in_array($Code, ['be', 'bs', 'hr', 'ru', 'sh', 'sr', 'uk'], true)) {
             return 'int3Type4';
         }
 
-        if (in_array($Code, [
-            'pl'
-        ], true)) {
+        if ($Code === 'pl') {
             return 'int3Type5';
         }
 
-        if (in_array($Code, [
-            'lt'
-        ], true)) {
+        if ($Code === 'lt') {
             return 'int3Type6';
         }
 
-        if (in_array($Code, [
-            'shi'
-        ], true)) {
+        if ($Code === 'shi') {
             return 'int3Type7';
         }
 
-        if (in_array($Code, [
-            'ro',
-            'mo'
-        ], true)) {
+        if (in_array($Code, ['ro', 'mo'], true)) {
             return 'int3Type8';
         }
 
-        if (in_array($Code, [
-            'cs',
-            'sk'
-        ], true)) {
+        if (in_array($Code, ['cs', 'sk'], true)) {
             return 'int3Type9';
         }
 
-        if (in_array($Code, [
-            'qya',
-            'tkl'
-        ], true)) {
+        if (in_array($Code, ['qya', 'tkl'], true)) {
             return 'int3Type10';
         }
 
-        if (in_array($Code, [
-            'gv'
-        ], true)) {
+        if ($Code === 'gv') {
             return 'int4Type1';
         }
 
-        if (in_array($Code, [
-            'gd'
-        ], true)) {
+        if ($Code === 'gd') {
             return 'int4Type2';
         }
 
-        if (in_array($Code, [
-            'br'
-        ], true)) {
+        if ($Code === 'br') {
             return 'int4Type3';
         }
 
-        if (in_array($Code, [
-            'dsb',
-            'hsb',
-            'sl'
-        ], true)) {
+        if (in_array($Code, ['dsb', 'hsb', 'sl'], true)) {
             return 'int4Type4';
         }
 
-        if (in_array($Code, [
-            'ga'
-        ], true)) {
+        if ($Code === 'ga') {
             return 'int5Type1';
         }
 
-        if (in_array($Code, [
-            'mt'
-        ], true)) {
+        if ($Code === 'mt') {
             return 'int5Type2';
         }
 
-        if (in_array($Code, [
-            'ar'
-        ], true)) {
+        if ($Code === 'ar') {
             return 'int6Type1';
         }
 
-        if (in_array($Code, [
-            'cy'
-        ], true)) {
+        if ($Code === 'cy') {
             return 'int6Type2';
         }
 
-        if (in_array($Code, [
-            'kw'
-        ], true)) {
+        if ($Code === 'kw') {
             return 'int6Type3';
         }
 

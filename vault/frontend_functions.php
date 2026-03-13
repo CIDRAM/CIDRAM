@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2026.02.18).
+ * This file: Front-end functions file (last modified: 2026.03.13).
  */
 
 /**
@@ -4096,8 +4096,7 @@ $CIDRAM['ArrayToClickableList'] = function (array $Arr = [], $DeleteKey = '', $D
                 }
             }
             $Output .= '<span class="comCat"><code class="s">' . str_replace(['<', '>'], ['&lt;', '&gt;'], $Key) . '</code></span>' . $Delete . '<ul class="comSub">';
-            $Output .= $CIDRAM['ArrayToClickableList']($Value, $DeleteKey, $Depth + 1, $Key);
-            $Output .= '</ul>';
+            $Output .= $CIDRAM['ArrayToClickableList']($Value, $DeleteKey, $Depth + 1, $Key) . '</ul>';
         } elseif (is_scalar($Value)) {
             if ($Key === 'Time' && preg_match('~^\d+$~', $Value)) {
                 $Key = $CIDRAM['L10N']->getString('label_expires');

@@ -1,6 +1,6 @@
 <?php
 /**
- * YAML handler (last modified: 2025.12.24).
+ * YAML handler (last modified: 2026.03.10).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -88,6 +88,23 @@ class YAML extends CommonAbstract implements \Countable
     public $QuoteKeys = false;
 
     /**
+     * @var bool Whether to allow object unserialisation. True will allow the
+     *      instance to use PHP's unserialize() function to process data tagged
+     *      with !php/object. False will disallow it. For security reasons,
+     *      allowing it should be avoided except where absolutely necessary,
+     *      and where allowed, untrusted user input should never be processed.
+     */
+    public $AllowObjectUnserialize = false;
+
+    /**
+     * @var bool Whether to allow object serialisation. True will allow the
+     *      reconstruct method to use PHP's serialize() function to derive
+     *      strings from objects when reconstructing data, tagging them with
+     *      !php/object.
+     */
+    public $AllowObjectSerialize = false;
+
+    /**
      * @var bool Whether to render multi-line values.
      */
     private $MultiLine = false;
@@ -152,6 +169,9 @@ class YAML extends CommonAbstract implements \Countable
      */
     public function __construct(string $In = '')
     {
+        if (class_exists('\Maikuolan\Common\Demojibakefier')) {
+            $this->Demojibakefier = new \Maikuolan\Common\Demojibakefier();
+        }
         if ($In !== '') {
             $this->process($In, $this->Data, 0, true);
         }
@@ -192,9 +212,7 @@ class YAML extends CommonAbstract implements \Countable
             $Captured = [];
 
             /** Support various encodings. */
-            if (class_exists('\Maikuolan\Common\Demojibakefier')) {
-                $this->Demojibakefier = new \Maikuolan\Common\Demojibakefier();
-
+            if ($this->Demojibakefier !== null) {
                 /**
                  * Attempt to determine input encoding.
                  * @link https://yaml.org/spec/1.2.2/#52-character-encodings
@@ -522,7 +540,7 @@ class YAML extends CommonAbstract implements \Countable
         $Value = trim($Value);
 
         /** Resolve tags. */
-        if (preg_match('~^!([!\dA-Za-z_:,-]+)(?: (.*))?$~', $Value, $Resolved)) {
+        if (preg_match('~^!([!/\dA-Za-z_:,-]+)(?: (.+))?$~', $Value, $Resolved)) {
             $Tag = strtolower($Resolved[1]);
             if (!$EnforceScalar) {
                 $this->LastResolvedTag = $Tag;
@@ -674,7 +692,7 @@ class YAML extends CommonAbstract implements \Countable
             $Arr[$Key] = null;
         } elseif (substr($ThisLine, $ThisTab, 2) === '- ') {
             $Value = substr($ThisLine, $ThisTab + 2);
-            if (strpos($Value, ': ') !== false && substr($Value, 0, 1) !== '{' && substr($Value, -1) !== '}') {
+            if (strpos($Value, ': ') !== false && substr($Value, 0, 1) !== '{' && substr($Value, -1) !== '}' && !(substr($Value, 0, 1) === '"' && substr($Value, -1) === '"' && strpos($Value, '": "') === false)) {
                 $Value = '{' . $Value . '}';
             }
             $ValueLen = strlen($Value);
@@ -873,22 +891,26 @@ class YAML extends CommonAbstract implements \Countable
             }
             $Out .= ' ';
             if (is_string($Value)) {
-                $HasHash = strpos($Value, '#') !== false;
-                if (!$HasHash && strpos($Value, "\n") !== false) {
-                    if (preg_match('~\n{2,}$~m', $Value)) {
-                        $ToAdd = "|+\n" . $ThisDepth . $this->Indent;
-                    } else {
-                        $ToAdd = "|\n" . $ThisDepth . $this->Indent;
-                    }
-                    $ToAdd .= preg_replace('~\n(?=[^\n])~m', "\n" . $ThisDepth . $this->Indent, $Value);
-                } elseif (!$HasHash && $this->FoldedAt > 0 && strpos($Value, ' ') !== false && strlen($Value) >= $this->FoldedAt) {
-                    $ToAdd = ">\n" . $ThisDepth . $this->Indent . wordwrap(
-                        $Value,
-                        $this->FoldedAt,
-                        "\n" . $ThisDepth . $this->Indent
-                    );
+                if ($this->Demojibakefier !== null && !$this->Demojibakefier->checkConformity($Value, 'UTF-8')) {
+                    $ToAdd = '!!binary ' . $this->Quotes . base64_encode($Value) . $this->Quotes;
                 } else {
-                    $ToAdd = $this->Quotes . $this->escape($Value) . $this->Quotes;
+                    $HasHash = strpos($Value, '#') !== false;
+                    if (!$HasHash && strpos($Value, "\n") !== false) {
+                        if (preg_match('~\n{2,}$~m', $Value)) {
+                            $ToAdd = "|+\n" . $ThisDepth . $this->Indent;
+                        } else {
+                            $ToAdd = "|\n" . $ThisDepth . $this->Indent;
+                        }
+                        $ToAdd .= preg_replace('~\n(?=[^\n])~m', "\n" . $ThisDepth . $this->Indent, $Value);
+                    } elseif (!$HasHash && $this->FoldedAt > 0 && strpos($Value, ' ') !== false && strlen($Value) >= $this->FoldedAt) {
+                        $ToAdd = ">\n" . $ThisDepth . $this->Indent . wordwrap(
+                            $Value,
+                            $this->FoldedAt,
+                            "\n" . $ThisDepth . $this->Indent
+                        );
+                    } else {
+                        $ToAdd = $this->Quotes . $this->escape($Value) . $this->Quotes;
+                    }
                 }
             } else {
                 $ToAdd = $this->scalarToString($Value);
@@ -1050,6 +1072,7 @@ class YAML extends CommonAbstract implements \Countable
      * @param mixed $Value The value to be coerced.
      * @param bool $EnforceScalar Whether to enforce using scalar data.
      * @param string $Tag The resolved tag.
+     * @throws If unserialisation is allowed and malformed data is encountered.
      * @return mixed The coerced value.
      */
     private function coerce($Value, bool $EnforceScalar, string $Tag)
@@ -1128,6 +1151,11 @@ class YAML extends CommonAbstract implements \Countable
                     $Arr[$ThisValue] = null;
                 }
                 return $Arr;
+            }
+
+            /** Unserialising a PHP object. */
+            if ($Tag === 'php/object') {
+                return $this->AllowObjectUnserialize && is_string($Value) && $Value !== '' ? unserialize($Value) : $Value;
             }
 
             /** For extending with other non-scalar coercion. */
@@ -1219,10 +1247,12 @@ class YAML extends CommonAbstract implements \Countable
          * @link https://yaml.org/type/binary.html
          */
         if ($Tag === '!binary') {
-            if ($Value === '' || !is_string($Value)) {
-                return '';
-            }
-            return base64_decode(preg_replace('~\s~', '', $Value));
+            return is_string($Value) && $Value !== '' ? base64_decode(preg_replace('~\s~', '', $Value)) : '';
+        }
+
+        /** PHP constants. */
+        if ($Tag === 'php/const') {
+            return is_string($Value) && $Value !== '' && defined($Value) ? constant($Value) : $Value;
         }
 
         /** For extending with other scalar coercion. */
@@ -1500,7 +1530,8 @@ class YAML extends CommonAbstract implements \Countable
      * Convert various scalars to strings.
      *
      * @param mixed $In The scalar.
-     * @throws Error if provided a non-stringable object or an unsupported data type.
+     * @throws Error if provided an unsupported data type.
+     * @link https://github.com/Maikuolan/Common/blob/v2/_docs/YAML.md#supported-data-types
      * @return string The string.
      */
     private function scalarToString($In): string
@@ -1530,10 +1561,15 @@ class YAML extends CommonAbstract implements \Countable
             return $In;
         }
         if (is_string($In)) {
+            if ($this->Demojibakefier !== null && !$this->Demojibakefier->checkConformity($In, 'UTF-8')) {
+                return '!!binary ' . $this->Quotes . base64_encode($In) . $this->Quotes;
+            }
             return $this->Quotes . $this->escape($In) . $this->Quotes;
         }
         if (is_object($In)) {
-            if (method_exists($In, '__toString')) {
+            if ($this->AllowObjectSerialize) {
+                return '!php/object ' . $this->Quotes . $this->escape(serialize($In)) . $this->Quotes;
+            } elseif (method_exists($In, '__toString')) {
                 return $this->Quotes . $this->escape((string)$In) . $this->Quotes;
             }
             throw new \Error('Non-stringable object detected while attempting to reconstruct YAML data');

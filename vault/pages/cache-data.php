@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The cache data page (last modified: 2026.02.24).
+ * This file: The cache data page (last modified: 2026.03.13).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -29,7 +29,7 @@ if ($this->Cache->Using !== '') {
 }
 
 /** In case a flatfile cache exists but isn't the primary caching source. */
-if ($this->Cache->Using !== 'FF' && $this->CachePath !== '' && is_file($this->CachePath) && is_readable($this->CachePath)) {
+if ($this->Cache->Using !== 'FF' && $this->CachePath !== '' && is_writable(preg_replace('~/[^/]+$~', '', $this->CachePath))) {
     $Sources['FF'] = new \Maikuolan\Common\Cache();
     $Sources['FF']->Prefix = $this->Configuration['supplementary_cache_options']['prefix'];
     $Sources['FF']->FFDefault = $this->CachePath;
@@ -55,17 +55,24 @@ if ($this->Cache->Using !== 'APCu' && extension_loaded('apcu')) {
 }
 
 if ($this->FE['ASYNC']) {
-    /** Delete a cache entry. */
-    if (isset($_POST['do'], $_POST['cdi'], $_POST['csrc']) && $_POST['do'] === 'delete' && $_POST['cdi'] !== '' && $_POST['csrc'] !== '' && isset($Sources[$_POST['csrc']])) {
-        if ($_POST['cdi'] === '__') {
-            /** Delete all entries ("clear all"). */
-            $Sources[$_POST['csrc']]->clearCache();
-        } elseif (substr($_POST['cdi'], 0, 1) === '^') {
-            /** Delete all sub-entries under a specific parent entry. */
-            $Sources[$_POST['csrc']]->deleteAllEntriesWhere('~' . $_POST['cdi'] . '-~');
-        } else {
-            /** Delete just a specific entry (or sub-entry). */
-            $Sources[$_POST['csrc']]->deleteEntry($_POST['cdi']);
+    if (isset($_POST['do'])) {
+        /** Delete a cache entry. */
+        if ($_POST['do'] === 'delete' && isset($_POST['cdi'], $_POST['csrc']) && $_POST['cdi'] !== '' && $_POST['csrc'] !== '' && isset($Sources[$_POST['csrc']])) {
+            if ($_POST['cdi'] === '__') {
+                /** Delete all entries ("clear all"). */
+                $Sources[$_POST['csrc']]->clearCache();
+            } elseif (substr($_POST['cdi'], 0, 1) === '^') {
+                /** Delete all sub-entries under a specific parent entry. */
+                $Sources[$_POST['csrc']]->deleteAllEntriesWhere('~' . $_POST['cdi'] . '-~');
+            } else {
+                /** Delete just a specific entry (or sub-entry). */
+                $Sources[$_POST['csrc']]->deleteEntry($_POST['cdi']);
+            }
+        }
+
+        /** Duplicate cache entries. */
+        if ($_POST['do'] === 'duplicate' && isset($_POST['csrc'], $_POST['ctrg']) && $_POST['csrc'] !== '' && $_POST['ctrg'] !== '' && isset($Sources[$_POST['csrc']], $Sources[$_POST['ctrg']])) {
+            $Sources[$_POST['ctrg']]->setEntries($Sources[$_POST['csrc']]->getAllEntries());
         }
     }
 } else {
@@ -73,14 +80,19 @@ if ($this->FE['ASYNC']) {
     $this->FE['JS'] .=
         "function cdd(d,x){window.cdi=d,window.csrc=x,window.do='delete',$('POST" .
         "','',['cidram-form-target','cdi','csrc','do'],null,function(o){'__'===d" .
-        "?window.location=window.location.href.split('?')[0]:'^'===d.substring(0" .
-        ",1)&&(d=d.substr(1)),hideid(d+'Container'+x)})}window['cidram-form-targ" .
-        "et']='cache-data';";
+        "?window.location.reload():'^'===d.substring(0,1)&&(d=d.substr(1)),hidei" .
+        "d(d+'Container'+x)})};function cdp(d,x){window.csrc=d,window.ctrg=x,win" .
+        "dow.do='duplicate',$('POST','',['cidram-form-target','csrc','ctrg','do'" .
+        "],null,function(o){window.location.reload()})}window['cidram-form-targe" .
+        "t']='cache-data';";
 
     /** To be populated by the cache data. */
     $this->FE['CacheData'] = '';
 
     $IsFirst = true;
+    $ClearAll = $this->L10N->getString('field.Clear all');
+    $Action = $this->L10N->getString('confirm.Action');
+    $Duplicate = $this->L10N->getString('label.Duplicate to %s');
     foreach ($Sources as $SourceKey => &$Source) {
         $CacheArray = [];
         foreach ($Source->getAllEntries() as $ThisCacheName => $ThisCacheItem) {
@@ -95,27 +107,37 @@ if ($this->FE['ASYNC']) {
         }
 
         /** Source label. */
-        $SourceLabel = $SourceKey === 'FF' ? $Source->FFDefault : $SourceKey;
+        $SourceLabel = $SourceKey === 'FF' ? preg_replace('~^.*/([^/]+)$~', '\1', $Source->FFDefault) : $SourceKey;
 
         /** Whether inactive. */
-        $Status = $IsFirst ? '' : ' – ' . $this->L10N->getString('label.Inactive');
+        $Status = $IsFirst ? '' : ' (' . $this->L10N->getString('label.Inactive') . ')';
+
+        /** Duplicability. */
+        $Duplicability = '';
+        foreach (array_keys($Sources) as $Key) {
+            if ($Key === $SourceKey) {
+                continue;
+            }
+            $KeyLabel = $Key === 'FF' ? preg_replace('~^.*/([^/]+)$~', '\1', $this->CachePath) : $Key;
+            $DuplicateTo = sprintf($Duplicate, $KeyLabel);
+            $Duplicability .= ' – <span onclick="javascript:confirm(\'' . $this->escapeJsInHTML(
+                sprintf($Action, $DuplicateTo)
+            ) . '\')&&cdp(\'' . $SourceKey . '\',\'' . $Key . '\')"><code><span class="auxicon export" title="' . $DuplicateTo . '"></span><span class="s auxicontxt">' . $DuplicateTo . '</span></code></span>';
+        }
 
         /** Process all cache items. */
         $this->FE['CacheData'] .= sprintf(
-            '<div class="ng1" id="__Container%1$s"><span class="s">%2$s – (<span onclick="javascript:confirm(\'%3$s\')&&cdd(\'__\',\'%1$s\')"><code class="s">%4$s</code></span>)%5$s</span><br /><br /><ul class="pieul">%6$s</ul></div>',
+            '<div class="ng1" id="__Container%1$s"><span class="s">%2$s – (<span onclick="javascript:confirm(\'%3$s\')&&cdd(\'__\',\'%1$s\')"><code><span class="auxicon auxrd delete" title="%4$s"></span><span class="s auxicontxt">%4$s</span></code></span>%5$s)</span><br /><br /><ul class="pieul">%6$s</ul></div>',
             $SourceKey,
-            $SourceLabel,
-            $this->escapeJsInHTML(sprintf(
-                $this->L10N->getString('confirm.Action'),
-                $this->L10N->getString('field.Clear all')
-            ) . ($IsFirst ? '\n' . $this->L10N->getString('warning.Proceeding will log out all users') : '')),
-            $this->L10N->getString('field.Clear all'),
-            $Status,
+            $SourceLabel . $Status,
+            $this->escapeJsInHTML(sprintf($Action, $ClearAll) . ($IsFirst ? '\n' . $this->L10N->getString('warning.Proceeding will log out all users') : '')),
+            $ClearAll,
+            $Duplicability,
             $this->arrayToClickableList($CacheArray, 'cdd', 0, $SourceLabel, $SourceKey)
         );
         $IsFirst = false;
     }
-    unset($Status, $SourceLabel, $ThisCacheName, $ThisCacheItem, $CacheArray, $Source, $SourceKey, $IsFirst);
+    unset($DuplicateTo, $KeyLabel, $Key, $Duplicability, $Status, $SourceLabel, $ThisCacheName, $ThisCacheItem, $CacheArray, $Source, $SourceKey, $Duplicate, $Action, $ClearAll, $IsFirst);
 
     /** Cache is empty. */
     if (!$this->FE['CacheData']) {

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2026.02.22).
+ * This file: The CIDRAM core (last modified: 2026.03.13).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -130,7 +130,7 @@ class Core
     /**
      * @var string CIDRAM version number (SemVer).
      */
-    public $ScriptVersion = '3.10.3';
+    public $ScriptVersion = '3.11.0';
 
     /**
      * @var string CIDRAM version identifier (complete notation).
@@ -433,7 +433,7 @@ class Core
         $this->OperationHandler = new \Maikuolan\Common\Operation();
 
         /** Set optional custom path to the CIDRAM cache file. */
-        $this->CachePath = $CachePath === '' ? $this->Vault . 'cache.dat' : $CachePath;
+        $this->CachePath = $CachePath === '' ? $this->Vault . 'cache.dat' : $this->canonical($CachePath);
     }
 
     /**
@@ -3297,7 +3297,7 @@ class Core
     public function freeFromTraversal(string $Path): bool
     {
         return !preg_match(
-            '~(?:[^\da-z\p{L}\p{N}\p{M}\p{P}\p{S}\p{Z}.]|[\\/?&=]|^)\.\.+(?:[^\da-z\p{L}\p{N}\p{M}\p{P}\p{S}\p{Z}.]|[\\/?&=]|$)|/\.+(?:[^\da-z\p{L}\p{N}\p{M}\p{P}\p{S}\p{Z}.]|[\\/?&=]|$)|(?:[^\da-z\p{L}\p{N}\p{M}\p{P}\p{S}\p{Z}.]|[\\/])\.+/|[\x01-\x1F]~i',
+            '~(?:[^\da-z\p{L}\p{N}\p{M}\p{P}\p{S}\p{Z}.]|[\\\\/?&=]|^)\.\.+(?:[^\da-z\p{L}\p{N}\p{M}\p{P}\p{S}\p{Z}.]|[\\\\/?&=]|$)|/\.+(?:[^\da-z\p{L}\p{N}\p{M}\p{P}\p{S}\p{Z}.]|[\\\\/?&=]|$)|(?:[^\da-z\p{L}\p{N}\p{M}\p{P}\p{S}\p{Z}.]|[\\\\/])\.+/|[\x01-\x1F]~i',
             str_ireplace(
                 ['%25', '%20', '%21', '%22', '%23', '%24', '%26', '%27', '%28', '%29', '%2a', '%2b', '%2c', '%2d', '%2e', '%2f', '%3a', '%3b', '%3c', '%3d', '%3e', '%3f', '%5b', '%5c', '%5d', '%5e', '%5f', '%60', '\\'],
                 ['%', ' ', '!', '"', '#', '$', '&', '\'', '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '[', '/', ']', '^', '_', '`', '/'],

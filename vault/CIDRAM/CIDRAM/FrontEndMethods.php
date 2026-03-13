@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2026.02.24).
+ * This file: General methods used by the front-end (last modified: 2026.03.13).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -833,7 +833,7 @@ trait FrontEndMethods
                         $Value[$SizeField] = $Size;
                     }
                 }
-                $Output .= '<span class="comCat"><code class="s">' . str_replace(['<', '>'], ['&lt;', '&gt;'], $Key) . '</code></span>' . $Delete . '<ul class="comSub">';
+                $Output .= '<span class="comCat"><code class="s">' . str_replace(['<', '>'], ['&lt;', '&gt;'], $Key) . '</code></span><span class="fixComCatBtnVert">' . $Delete . '</span><ul class="comSub">';
                 $Output .= $this->arrayToClickableList($Value, $DeleteKey, $Depth + 1, $Key, $ListSection) . '</ul>';
             } elseif (is_scalar($Value)) {
                 if ($Key === 'Time' && preg_match('~^\d+$~', $Value)) {

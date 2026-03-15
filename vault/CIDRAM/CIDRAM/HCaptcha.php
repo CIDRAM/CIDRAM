@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: HCaptcha class (last modified: 2026.01.25).
+ * This file: HCaptcha class (last modified: 2026.03.15).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -74,7 +74,7 @@ class HCaptcha extends Captcha
                     $this->doResponse();
                     if ($this->Bypass) {
                         /** Generate client-side salt. */
-                        $UserSalt = $this->generateSalt();
+                        $UserSalt = $this->CIDRAM->generateSalt();
 
                         /** Generate authentication hash. */
                         if ($this->CIDRAM->Configuration['hcaptcha']['lockip']) {

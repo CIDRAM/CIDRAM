@@ -512,6 +512,7 @@
 #### Bugs fixed.
 - [2026.01.25]: The page request's query parameters weren't being properly retained when submitting CAPTCHA forms; Fixed (#663).
 - [2026.02.22]: Some text on the access denied page wasn't showing in the correct language; Fixed (#666).
+- [2026.03.15]: Wrong method used for generating the salts for some CAPTCHA checks; Fixed.
 
 #### Other changes.
 - [2026.01.20]: Added a hint at the auxiliary rules page for how to use CIDR as a condition source.

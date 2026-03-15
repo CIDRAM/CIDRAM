@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Cloudflare Turnstile class (last modified: 2026.01.25).
+ * This file: Cloudflare Turnstile class (last modified: 2026.03.15).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -128,7 +128,7 @@ class CloudflareTurnstile extends Captcha
                     $this->doResponse();
                     if ($this->Bypass) {
                         /** Generate client-side salt. */
-                        $UserSalt = $this->generateSalt();
+                        $UserSalt = $this->CIDRAM->generateSalt();
 
                         /** Generate authentication hash. */
                         $Cookie = $LockTo === 'both' ? $this->meld($Salt, $UserSalt, $this->CIDRAM->ipAddr) : $this->meld($Salt, $UserSalt);

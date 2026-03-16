@@ -8,12 +8,12 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Duration value type (last modified: 2023.10.21).
+ * This file: Duration value type (last modified: 2026.03.16).
  */
 
 namespace CIDRAM\CIDRAM;
 
-class Duration
+class Duration implements \Stringable
 {
     /**
      * @var int How many days.

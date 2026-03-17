@@ -1,6 +1,6 @@
 <?php
 /**
- * A simple, unified cache handler (last modified: 2026.03.12).
+ * A simple, unified cache handler (last modified: 2026.03.17).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -227,7 +227,7 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
      */
     public function __construct(?array $WorkingData = null)
     {
-        if (is_array($WorkingData)) {
+        if (\is_array($WorkingData)) {
             $this->WorkingData = $WorkingData;
         }
     }
@@ -241,7 +241,7 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
     {
         if ($this->Using === 'Memcached') {
             if ($this->ModifiedIndexes) {
-                $this->setEntry('__Indexes', implode("\n", array_keys($this->Indexes)), 0);
+                $this->setEntry('__Indexes', \implode("\n", \array_keys($this->Indexes)), 0);
             }
             $this->WorkingData->quit();
             return;
@@ -254,16 +254,16 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
             $this->clearExpiredPDO();
             return;
         }
-        if (is_array($this->WorkingData)) {
+        if (\is_array($this->WorkingData)) {
             if ($this->clearExpired($this->WorkingData)) {
                 $this->Modified = true;
             }
             if ($this->FFDefault && $this->Modified && $this->Using === 'FF') {
                 $Handle = false;
-                $Start = time();
+                $Start = \time();
                 while (true) {
-                    $Handle = fopen($this->FFDefault, 'wb');
-                    if ($Handle !== false || (time() - $Start) > self::FLOCK_TIMEOUT) {
+                    $Handle = \fopen($this->FFDefault, 'wb');
+                    if ($Handle !== false || (\time() - $Start) > self::FLOCK_TIMEOUT) {
                         break;
                     }
                 }
@@ -272,15 +272,15 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
                 }
                 $Locked = false;
                 while (true) {
-                    if ($Locked = flock($Handle, LOCK_EX | LOCK_NB) || (time() - $Start) > self::FLOCK_TIMEOUT) {
+                    if ($Locked = \flock($Handle, LOCK_EX | LOCK_NB) || (\time() - $Start) > self::FLOCK_TIMEOUT) {
                         break;
                     }
                 }
                 if ($Locked) {
-                    fwrite($Handle, serialize($this->WorkingData));
-                    flock($Handle, LOCK_UN);
+                    \fwrite($Handle, serialize($this->WorkingData));
+                    \flock($Handle, LOCK_UN);
                 }
-                fclose($Handle);
+                \fclose($Handle);
             }
         }
     }
@@ -303,8 +303,8 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
                 if ($this->WorkingData->addServer($this->MemcachedHost, $this->MemcachedPort)) {
                     $this->Using = 'Memcached';
                     $Indexes = $this->getEntry('__Indexes');
-                    if (is_string($Indexes)) {
-                        $this->Indexes = array_fill_keys(explode("\n", $Indexes), true);
+                    if (\is_string($Indexes)) {
+                        $this->Indexes = array_fill_keys(\explode("\n", $Indexes), true);
                     }
                     return true;
                 }
@@ -334,7 +334,7 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
         if ($this->EnablePDO && extension_loaded('pdo')) {
             try {
                 $PDO = new \PDO($this->PDOdsn, $this->PDOusername, $this->PDOpassword);
-                if (is_object($PDO)) {
+                if (\is_object($PDO)) {
                     $this->WorkingData = $PDO;
                     $this->Using = 'PDO';
                     return $this->checkTablesPDO();
@@ -345,29 +345,29 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
                 return false;
             }
         }
-        if (!is_string($this->FFDefault) || $this->FFDefault === '') {
-            return is_array($this->WorkingData);
+        if (!\is_string($this->FFDefault) || $this->FFDefault === '') {
+            return \is_array($this->WorkingData);
         }
-        $Parent = dirname($this->FFDefault);
+        $Parent = \dirname($this->FFDefault);
         if (!$this->tryEnforcePermissions($Parent)) {
             return false;
         }
-        if (is_file($this->FFDefault)) {
-            if (!is_readable($this->FFDefault) || !is_writable($this->FFDefault)) {
+        if (\is_file($this->FFDefault)) {
+            if (!\is_readable($this->FFDefault) || !\is_writable($this->FFDefault)) {
                 return false;
             }
             $this->Using = 'FF';
-            $Filesize = filesize($this->FFDefault);
+            $Filesize = \filesize($this->FFDefault);
             if ($Filesize < 1) {
                 $this->WorkingData = [];
                 return $this->Modified = true;
             }
-            $Data = file_get_contents($this->FFDefault);
-            $Data = (is_string($Data) && $Data !== '') ? unserialize($Data) : [];
-            $this->WorkingData = is_array($Data) ? $Data : [];
+            $Data = \file_get_contents($this->FFDefault);
+            $Data = (\is_string($Data) && $Data !== '') ? unserialize($Data) : [];
+            $this->WorkingData = \is_array($Data) ? $Data : [];
             return true;
         }
-        if (is_dir($Parent) && is_readable($Parent) && is_writable($Parent)) {
+        if (\is_dir($Parent) && \is_readable($Parent) && \is_writable($Parent)) {
             $this->WorkingData = [];
             $this->Using = 'FF';
             return $this->Modified = true;
@@ -390,13 +390,13 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
     public function checkTablesPDO(): bool
     {
         /** Try to determine which kind of query to build. */
-        if (preg_match('~^sqlite:[^:]~i', $this->PDOdsn)) {
+        if (\preg_match('~^sqlite:[^:]~i', $this->PDOdsn)) {
             /** SQLite (excluding usage for in-memory and temporary tables). */
             $Check = 'SELECT count(*) FROM `sqlite_master` WHERE `type` = \'table\' AND `name` = \'Cache\'';
-        } elseif (preg_match('~^informix:~i', $this->PDOdsn)) {
+        } elseif (\preg_match('~^informix:~i', $this->PDOdsn)) {
             /** Informix. */
             $Check = 'SELECT count(*) FROM `systables` WHERE `tabname` = \'Cache\'';
-        } elseif (preg_match('~^firebird:~i', $this->PDOdsn)) {
+        } elseif (\preg_match('~^firebird:~i', $this->PDOdsn)) {
             /** Firebird/Interbase. */
             $Check = 'SELECT 1 FROM RDB$RELATIONS WHERE RDB$RELATION_NAME = \'Cache\'';
         } else {
@@ -413,7 +413,7 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
         }
 
         /** In case of exceptions being silenced. */
-        if (!is_object($Exists) || !is_a($Exists, '\PDOStatement')) {
+        if (!\is_object($Exists) || !\is_a($Exists, '\PDOStatement')) {
             return false;
         }
 
@@ -422,7 +422,7 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
         if (empty($Exists[0])) {
             $this->WorkingData->exec('CREATE TABLE `Cache` (`Key` VARCHAR(128) PRIMARY KEY, `Data` TEXT, `Time` INT)');
             $Exists = $this->WorkingData->query($Check);
-            if (is_object($Exists) && is_a($Exists, '\PDOStatement')) {
+            if (\is_object($Exists) && \is_a($Exists, '\PDOStatement')) {
                 $Exists = $Exists->fetch(\PDO::FETCH_NUM);
                 if (empty($Exists[0])) {
                     return false;
@@ -470,16 +470,16 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
                 if (!isset($Data['Data'])) {
                     return false;
                 }
-                if (substr($Data['Data'], 0, 3) === 'gz:') {
-                    $Data['Data'] = gzdecode(base64_decode(substr($Data['Data'], 3)));
+                if (\substr($Data['Data'], 0, 3) === 'gz:') {
+                    $Data['Data'] = gzdecode(\base64_decode(\substr($Data['Data'], 3)));
                 }
                 return $this->unserializeEntry($Data['Data']);
             }
             return false;
         }
-        if (is_array($this->WorkingData) && isset($this->WorkingData[$Entry])) {
+        if (\is_array($this->WorkingData) && isset($this->WorkingData[$Entry])) {
             if (isset($this->WorkingData[$Entry]['Data']) && !empty($this->WorkingData[$Entry]['Time'])) {
-                if ($this->WorkingData[$Entry]['Time'] <= 0 || $this->WorkingData[$Entry]['Time'] > time()) {
+                if ($this->WorkingData[$Entry]['Time'] <= 0 || $this->WorkingData[$Entry]['Time'] > \time()) {
                     return $this->unserializeEntry($this->WorkingData[$Entry]['Data']);
                 }
                 unset($this->WorkingData[$Entry]);
@@ -513,7 +513,7 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
         }
         if ($this->Using === 'Memcached') {
             if ($TTL >= 2592000) {
-                $TTL += time();
+                $TTL += \time();
             }
             if ($this->WorkingData->set($Key, $Value, $TTL)) {
                 if (!isset($this->Indexes[$Index])) {
@@ -539,19 +539,19 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
         if ($this->Using === 'PDO') {
             $PDO = $this->WorkingData->prepare(self::SET_QUERY);
             if ($TTL > 0) {
-                $TTL += time();
+                $TTL += \time();
             }
-            if (strlen($Value) > 65536) {
-                $Value = 'gz:' . base64_encode(gzencode($Value, 9));
+            if (\strlen($Value) > 65536) {
+                $Value = 'gz:' . \base64_encode(gzencode($Value, 9));
             }
             if ($PDO !== false && $PDO->execute([':key' => $Key, ':data' => $Value, ':time' => $TTL])) {
                 return ($PDO->rowCount() > 0 && $this->Modified = true);
             }
             return false;
         }
-        if (is_array($this->WorkingData)) {
+        if (\is_array($this->WorkingData)) {
             if ($TTL > 0) {
-                $TTL += time();
+                $TTL += \time();
                 $this->WorkingData[$Key] = ['Data' => $Value, 'Time' => $TTL];
             } else {
                 $this->WorkingData[$Key] = $Value;
@@ -573,7 +573,7 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
         if ($this->Using === 'APCu') {
             $Working = [];
             foreach ($Entries as $Key => $Value) {
-                if (is_array($Value) && isset($Value['Time'], $Value['Data'])) {
+                if (\is_array($Value) && isset($Value['Time'], $Value['Data'])) {
                     $TTL = $Value['Time'];
                     $Value = $Value['Data'];
                 } else {
@@ -587,7 +587,7 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
                 $Value = $this->serializeEntry($Value);
                 $Working[$TTL][$Key] = $Value;
             }
-            ksort($Working, SORT_NUMERIC);
+            \ksort($Working, SORT_NUMERIC);
             foreach ($Working as $TTL => $Values) {
                 if (apcu_store($Values, null, $TTL)) {
                     $Success = $this->Modified = true;
@@ -598,14 +598,14 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
         if ($this->Using === 'Memcached') {
             $Working = [];
             foreach ($Entries as $Key => $Value) {
-                if (is_array($Value) && isset($Value['Time'], $Value['Data'])) {
+                if (\is_array($Value) && isset($Value['Time'], $Value['Data'])) {
                     $TTL = $Value['Time'];
                     $Value = $Value['Data'];
                 } else {
                     $TTL = 0;
                 }
                 if ($TTL >= 2592000) {
-                    $TTL += time();
+                    $TTL += \time();
                 }
                 if (!isset($Working[$TTL])) {
                     $Working[$TTL] = [];
@@ -616,7 +616,7 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
                 $Value = $this->serializeEntry($Value);
                 $Working[$TTL][$Key] = $Value;
             }
-            ksort($Working, SORT_NUMERIC);
+            \ksort($Working, SORT_NUMERIC);
             foreach ($Working as $TTL => $Values) {
                 if ($this->WorkingData->setMulti($Values, $TTL)) {
                     if (!isset($this->Indexes[$Index])) {
@@ -631,7 +631,7 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
         if ($this->Using === 'Redis') {
             $Working = [];
             foreach ($Entries as $Key => $Value) {
-                if (is_array($Value) && isset($Value['Time'], $Value['Data'])) {
+                if (\is_array($Value) && isset($Value['Time'], $Value['Data'])) {
                     $TTL = $Value['Time'];
                     $Value = $Value['Data'];
                 } else {
@@ -645,7 +645,7 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
                 $Value = $this->serializeEntry($Value);
                 $Working[$TTL][$Key] = $Value;
             }
-            ksort($Working, SORT_NUMERIC);
+            \ksort($Working, SORT_NUMERIC);
             foreach ($Working as $TTL => $Values) {
                 if ($TTL < 1) {
                     if ($this->WorkingData->mset($Values)) {
@@ -664,7 +664,7 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
             try {
                 $this->WorkingData->beginTransaction();
                 foreach ($Entries as $Key => $Value) {
-                    if (is_array($Value) && isset($Value['Time'], $Value['Data'])) {
+                    if (\is_array($Value) && isset($Value['Time'], $Value['Data'])) {
                         $TTL = $Value['Time'];
                         $Value = $Value['Data'];
                     } else {
@@ -674,10 +674,10 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
                     $this->enforceKeyLimit($Key);
                     $Value = $this->serializeEntry($Value);
                     if ($TTL > 0) {
-                        $TTL += time();
+                        $TTL += \time();
                     }
-                    if (strlen($Value) > 65536) {
-                        $Value = 'gz:' . base64_encode(gzencode($Value, 9));
+                    if (\strlen($Value) > 65536) {
+                        $Value = 'gz:' . \base64_encode(gzencode($Value, 9));
                     }
                     if ($PDO !== false && $PDO->execute([':key' => $Key, ':data' => $Value, ':time' => $TTL]) && $PDO->rowCount() > 0) {
                         $Success = $this->Modified = true;
@@ -690,9 +690,9 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
             }
             return $Success;
         }
-        if (is_array($this->WorkingData)) {
+        if (\is_array($this->WorkingData)) {
             foreach ($Entries as $Key => $Value) {
-                if (is_array($Value) && isset($Value['Time'], $Value['Data'])) {
+                if (\is_array($Value) && isset($Value['Time'], $Value['Data'])) {
                     $TTL = $Value['Time'];
                     $Value = $Value['Data'];
                 } else {
@@ -702,7 +702,7 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
                 $this->enforceKeyLimit($Key);
                 $Value = $this->serializeEntry($Value);
                 if ($TTL > 0) {
-                    $TTL += time();
+                    $TTL += \time();
                     $this->WorkingData[$Key] = ['Data' => $Value, 'Time' => $TTL];
                 } else {
                     $this->WorkingData[$Key] = $Value;
@@ -753,7 +753,7 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
             }
             return false;
         }
-        if (is_array($this->WorkingData)) {
+        if (\is_array($this->WorkingData)) {
             if (isset($this->WorkingData[$Entry])) {
                 unset($this->WorkingData[$Entry]);
                 return $this->Modified = true;
@@ -771,8 +771,8 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
     public function deleteAllEntriesWhere(string $Pattern): bool
     {
         if ($this->Using === 'APCu') {
-            if (strlen($this->Prefix)) {
-                $Pattern = preg_replace('~(?!\\\\)\^~', '^' . $this->Prefix, $Pattern);
+            if (\strlen($this->Prefix)) {
+                $Pattern = \preg_replace('~(?!\\\\)\^~', '^' . $this->Prefix, $Pattern);
             }
             $Try = new \APCUIterator($Pattern);
             if ($Try->getTotalCount() > 0 && apcu_delete($Try)) {
@@ -784,7 +784,7 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
             $Indexes = $this->Indexes;
             $Success = false;
             foreach ($Indexes as $Index => $Unused) {
-                if (!preg_match($Pattern, $Index)) {
+                if (!\preg_match($Pattern, $Index)) {
                     continue;
                 }
                 if ($this->WorkingData->delete($Index) && isset($this->Indexes[$Index])) {
@@ -801,7 +801,7 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
             try {
                 $this->WorkingData->beginTransaction();
                 foreach ($Entries as $EntryName => $EntryData) {
-                    if (!preg_match($Pattern, $EntryName)) {
+                    if (!\preg_match($Pattern, $EntryName)) {
                         continue;
                     }
                     $EntryName = $this->Prefix . $EntryName;
@@ -820,7 +820,7 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
         $Failure = false;
         $Hit = false;
         foreach ($this->getAllEntries() as $EntryName => $EntryData) {
-            if (preg_match($Pattern, $EntryName)) {
+            if (\preg_match($Pattern, $EntryName)) {
                 $Hit = true;
                 if (!$this->deleteEntry($EntryName)) {
                     $Failure = true;
@@ -850,17 +850,17 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
             $Success = $Try !== false;
         } elseif ($this->Using === 'Memcached') {
             if ($TTL >= 2592000) {
-                $TTL += time();
+                $TTL += \time();
             }
             $Success = $this->WorkingData->increment($Key, $Value, 1, $TTL);
         } elseif ($this->Using === 'Redis') {
             $Success = $this->WorkingData->incrBy($Key, $Value);
         } elseif ($this->Using === 'PDO') {
             if ($TTL > 0) {
-                $TTL += time();
+                $TTL += \time();
             }
             $Previous = $this->getEntry($Key);
-            if (is_numeric($Previous)) {
+            if (\is_numeric($Previous)) {
                 $Value += $Previous;
             }
             $Key = $this->Prefix . $Key;
@@ -869,20 +869,20 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
             if ($PDO !== false && $PDO->execute([':key' => $Key, ':data' => $Value, ':time' => $TTL])) {
                 $Success = ($PDO->rowCount() > 0);
             }
-        } elseif (is_array($this->WorkingData)) {
+        } elseif (\is_array($this->WorkingData)) {
             if (isset($this->WorkingData[$Key])) {
                 if (
-                    is_array($this->WorkingData[$Key]) &&
+                    \is_array($this->WorkingData[$Key]) &&
                     isset($this->WorkingData[$Key]['Data']) &&
-                    is_numeric($this->WorkingData[$Key]['Data'])
+                    \is_numeric($this->WorkingData[$Key]['Data'])
                 ) {
                     $Value += $this->WorkingData[$Key]['Data'];
-                } elseif (is_numeric($this->WorkingData[$Key])) {
+                } elseif (\is_numeric($this->WorkingData[$Key])) {
                     $Value += $this->WorkingData[$Key];
                 }
             }
             if ($TTL > 0) {
-                $TTL += time();
+                $TTL += \time();
                 $this->WorkingData[$Key] = ['Data' => $Value, 'Time' => $TTL];
             } else {
                 $this->WorkingData[$Key] = $Value;
@@ -915,17 +915,17 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
             $Success = $Try !== false;
         } elseif ($this->Using === 'Memcached') {
             if ($TTL >= 2592000) {
-                $TTL += time();
+                $TTL += \time();
             }
             $Success = $this->WorkingData->decrement($Key, $Value, 1, $TTL);
         } elseif ($this->Using === 'Redis') {
             $Success = $this->WorkingData->decrBy($Key, $Value);
         } elseif ($this->Using === 'PDO') {
             if ($TTL > 0) {
-                $TTL += time();
+                $TTL += \time();
             }
             $Previous = $this->getEntry($Key);
-            if (is_numeric($Previous)) {
+            if (\is_numeric($Previous)) {
                 $Value -= $Previous;
             }
             $Key = $this->Prefix . $Key;
@@ -934,20 +934,20 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
             if ($PDO !== false && $PDO->execute([':key' => $Key, ':data' => $Value, ':time' => $TTL])) {
                 $Success = ($PDO->rowCount() > 0);
             }
-        } elseif (is_array($this->WorkingData)) {
+        } elseif (\is_array($this->WorkingData)) {
             if (isset($this->WorkingData[$Key])) {
                 if (
-                    is_array($this->WorkingData[$Key]) &&
+                    \is_array($this->WorkingData[$Key]) &&
                     isset($this->WorkingData[$Key]['Data']) &&
-                    is_numeric($this->WorkingData[$Key]['Data'])
+                    \is_numeric($this->WorkingData[$Key]['Data'])
                 ) {
                     $Value -= $this->WorkingData[$Key]['Data'];
-                } elseif (is_numeric($this->WorkingData[$Key])) {
+                } elseif (\is_numeric($this->WorkingData[$Key])) {
                     $Value -= $this->WorkingData[$Key];
                 }
             }
             if ($TTL > 0) {
-                $TTL += time();
+                $TTL += \time();
                 $this->WorkingData[$Key] = ['Data' => $Value, 'Time' => $TTL];
             } else {
                 $this->WorkingData[$Key] = $Value;
@@ -988,7 +988,7 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
             }
             return false;
         }
-        if (is_array($this->WorkingData)) {
+        if (\is_array($this->WorkingData)) {
             $this->WorkingData = [];
             return $this->Modified = true;
         }
@@ -1016,7 +1016,7 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
             }
             return $Output;
         }
-        $PrefixLen = strlen($this->Prefix);
+        $PrefixLen = \strlen($this->Prefix);
         if ($this->Using === 'APCu') {
             $Data = apcu_cache_info();
             if (empty($Data['cache_list'])) {
@@ -1026,12 +1026,12 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
             foreach ($Data['cache_list'] as $Entry) {
                 if (
                     empty($Entry['info']) ||
-                    !is_string($Entry['info']) ||
-                    ($PrefixLen && substr($Entry['info'], 0, $PrefixLen) !== $this->Prefix)
+                    !\is_string($Entry['info']) ||
+                    ($PrefixLen && \substr($Entry['info'], 0, $PrefixLen) !== $this->Prefix)
                 ) {
                     continue;
                 }
-                $Key = substr($Entry['info'], $PrefixLen);
+                $Key = \substr($Entry['info'], $PrefixLen);
                 $Creation = $Entry['creation_time'] ?? 0;
                 $Entry['Data'] = $this->getEntry($Key);
                 $Output[$Key] = $Entry['ttl'] > 0 ? [
@@ -1041,21 +1041,21 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
             }
             return $Output;
         }
-        $Now = time();
+        $Now = \time();
         if ($this->Using === 'Redis') {
             $Output = [];
-            if ($PrefixLen === 0 || preg_match('~[^\dA-Za-z_]~', $this->Prefix)) {
+            if ($PrefixLen === 0 || \preg_match('~[^\dA-Za-z_]~', $this->Prefix)) {
                 $Keys = $this->WorkingData->keys('*') ?: [];
             } else {
                 $Keys = $this->WorkingData->keys($this->Prefix . '*') ?: [];
             }
             foreach ($Keys as $Key) {
-                if (strlen($Key) > self::KEY_SIZE_LIMIT || ($PrefixLen && substr($Key, 0, $PrefixLen) !== $this->Prefix)) {
+                if (\strlen($Key) > self::KEY_SIZE_LIMIT || ($PrefixLen && \substr($Key, 0, $PrefixLen) !== $this->Prefix)) {
                     continue;
                 }
                 $TTL = $this->WorkingData->ttl($Key);
                 $Data = $this->unserializeEntry($this->WorkingData->get($Key));
-                $Output[substr($Key, $PrefixLen)] = (is_int($TTL) && $TTL > 0) ? ['Data' => $Data, 'Time' => $TTL + $Now] : $Data;
+                $Output[\substr($Key, $PrefixLen)] = (\is_int($TTL) && $TTL > 0) ? ['Data' => $Data, 'Time' => $TTL + $Now] : $Data;
             }
             return $Output;
         }
@@ -1063,26 +1063,26 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
             $this->clearExpiredPDO();
             if ($this->Prefix === '') {
                 $PDO = $this->WorkingData->prepare(self::GET_ALL_QUERY);
-            } elseif (preg_match('~^(?:ibm|mysql|odbc|pgsql|sqlsrv):~i', $this->PDOdsn)) {
+            } elseif (\preg_match('~^(?:ibm|mysql|odbc|pgsql|sqlsrv):~i', $this->PDOdsn)) {
                 $PDO = $this->WorkingData->prepare(self::GET_ALL_QUERY_WPREFIX_CONCAT);
-            } elseif (preg_match('~^4d:~i', $this->PDOdsn)) {
+            } elseif (\preg_match('~^4d:~i', $this->PDOdsn)) {
                 $PDO = $this->WorkingData->prepare(self::GET_ALL_QUERY_WPREFIX_PLUS);
             } else {
                 $PDO = $this->WorkingData->prepare(self::GET_ALL_QUERY_WPREFIX_DPIPE);
             }
             if ($PDO !== false && ($this->Prefix === '' ? $PDO->execute() : $PDO->execute([':prefix' => $this->Prefix]))) {
                 $Data = $PDO->fetchAll();
-                if (!is_array($Data)) {
+                if (!\is_array($Data)) {
                     return [];
                 }
                 $Output = [];
                 foreach ($Data as $Entry) {
-                    if (!is_array($Entry) || !isset($Entry['Key'], $Entry['Data'], $Entry['Time']) || strlen($Entry['Key']) > self::KEY_SIZE_LIMIT) {
+                    if (!\is_array($Entry) || !isset($Entry['Key'], $Entry['Data'], $Entry['Time']) || \strlen($Entry['Key']) > self::KEY_SIZE_LIMIT) {
                         continue;
                     }
-                    $Key = substr($Entry['Key'], $PrefixLen);
-                    if (substr($Entry['Data'], 0, 3) === 'gz:') {
-                        $Entry['Data'] = gzdecode(base64_decode(substr($Entry['Data'], 3)));
+                    $Key = \substr($Entry['Key'], $PrefixLen);
+                    if (\substr($Entry['Data'], 0, 3) === 'gz:') {
+                        $Entry['Data'] = gzdecode(\base64_decode(\substr($Entry['Data'], 3)));
                     }
                     $Entry['Data'] = $this->unserializeEntry($Entry['Data']);
                     $Output[$Key] = $Entry['Time'] > 0 ? ['Data' => $Entry['Data'], 'Time' => $Entry['Time']] : $Entry['Data'];
@@ -1095,10 +1095,10 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
             $Out = [];
             foreach ($Arr as $Key => $Entry) {
                 if ($PrefixLen) {
-                    if (substr($Key, 0, $PrefixLen) !== $this->Prefix) {
+                    if (\substr($Key, 0, $PrefixLen) !== $this->Prefix) {
                         continue;
                     }
-                    $Key = substr($Key, $PrefixLen);
+                    $Key = \substr($Key, $PrefixLen);
                 }
                 $Out[$Key] = $this->unserializeEntry($Entry);
             }
@@ -1112,17 +1112,17 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
      *
      * @param string $Pattern The pattern for which entries to return.
      * @param string $Replacement An optional replacement for entry names.
-     * @param ?callable $Sort An optional callable to sort entries.
+     * @param callable|null $Sort An optional callable to sort entries.
      * @return array An array of matching entries.
      */
     public function getAllEntriesWhere(string $Pattern, string $Replacement = '', ?callable $Sort = null): array
     {
         $Set = [];
-        $Now = time();
+        $Now = \time();
         if ($this->Using === 'Memcached') {
             $Indexes = $this->Indexes;
             foreach ($Indexes as $Index => $Unused) {
-                if (!preg_match($Pattern, $Index)) {
+                if (!\preg_match($Pattern, $Index)) {
                     continue;
                 }
                 $Try = $this->getEntry($Index);
@@ -1135,7 +1135,7 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
             }
             unset($Try);
         } else {
-            $PrefixLen = strlen($this->Prefix);
+            $PrefixLen = \strlen($this->Prefix);
         }
         if ($this->Using === 'APCu') {
             $Data = apcu_cache_info();
@@ -1145,13 +1145,13 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
             foreach ($Data['cache_list'] as $Entry) {
                 if (
                     empty($Entry['info']) ||
-                    !is_string($Entry['info']) ||
-                    ($PrefixLen && substr($Entry['info'], 0, $PrefixLen) !== $this->Prefix)
+                    !\is_string($Entry['info']) ||
+                    ($PrefixLen && \substr($Entry['info'], 0, $PrefixLen) !== $this->Prefix)
                 ) {
                     continue;
                 }
-                $Key = substr($Entry['info'], $PrefixLen);
-                if (!preg_match($Pattern, $Key)) {
+                $Key = \substr($Entry['info'], $PrefixLen);
+                if (!\preg_match($Pattern, $Key)) {
                     continue;
                 }
                 $Creation = $Entry['creation_time'] ?? 0;
@@ -1163,50 +1163,50 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
             }
             unset($Data);
         } elseif ($this->Using === 'Redis') {
-            if ($PrefixLen === 0 || preg_match('~[^\dA-Za-z_]~', $this->Prefix)) {
+            if ($PrefixLen === 0 || \preg_match('~[^\dA-Za-z_]~', $this->Prefix)) {
                 $Keys = $this->WorkingData->keys('*') ?: [];
             } else {
                 $Keys = $this->WorkingData->keys($this->Prefix . '*') ?: [];
             }
             foreach ($Keys as $Key) {
-                if (strlen($Key) > self::KEY_SIZE_LIMIT || ($PrefixLen && substr($Key, 0, $PrefixLen) !== $this->Prefix)) {
+                if (\strlen($Key) > self::KEY_SIZE_LIMIT || ($PrefixLen && \substr($Key, 0, $PrefixLen) !== $this->Prefix)) {
                     continue;
                 }
-                $Index = substr($Key, $PrefixLen);
-                if (!preg_match($Pattern, $Index)) {
+                $Index = \substr($Key, $PrefixLen);
+                if (!\preg_match($Pattern, $Index)) {
                     continue;
                 }
                 $TTL = $this->WorkingData->ttl($Key);
                 $Data = $this->unserializeEntry($this->WorkingData->get($Key));
-                $Set[$Index] = (is_int($TTL) && $TTL > 0) ? ['Data' => $Data, 'Time' => $TTL + $Now] : $Data;
+                $Set[$Index] = (\is_int($TTL) && $TTL > 0) ? ['Data' => $Data, 'Time' => $TTL + $Now] : $Data;
             }
             unset($Keys);
         } elseif ($this->Using === 'PDO') {
             $this->clearExpiredPDO();
             if ($this->Prefix === '') {
                 $PDO = $this->WorkingData->prepare(self::GET_ALL_QUERY);
-            } elseif (preg_match('~^(?:ibm|mysql|odbc|pgsql|sqlsrv):~i', $this->PDOdsn)) {
+            } elseif (\preg_match('~^(?:ibm|mysql|odbc|pgsql|sqlsrv):~i', $this->PDOdsn)) {
                 $PDO = $this->WorkingData->prepare(self::GET_ALL_QUERY_WPREFIX_CONCAT);
-            } elseif (preg_match('~^4d:~i', $this->PDOdsn)) {
+            } elseif (\preg_match('~^4d:~i', $this->PDOdsn)) {
                 $PDO = $this->WorkingData->prepare(self::GET_ALL_QUERY_WPREFIX_PLUS);
             } else {
                 $PDO = $this->WorkingData->prepare(self::GET_ALL_QUERY_WPREFIX_DPIPE);
             }
             if ($PDO !== false && ($this->Prefix === '' ? $PDO->execute() : $PDO->execute([':prefix' => $this->Prefix]))) {
                 $Data = $PDO->fetchAll();
-                if (!is_array($Data)) {
+                if (!\is_array($Data)) {
                     return [];
                 }
                 foreach ($Data as $Entry) {
-                    if (!is_array($Entry) || !isset($Entry['Key'], $Entry['Data'], $Entry['Time']) || strlen($Entry['Key']) > self::KEY_SIZE_LIMIT) {
+                    if (!\is_array($Entry) || !isset($Entry['Key'], $Entry['Data'], $Entry['Time']) || \strlen($Entry['Key']) > self::KEY_SIZE_LIMIT) {
                         continue;
                     }
-                    $Key = substr($Entry['Key'], $PrefixLen);
-                    if (!preg_match($Pattern, $Key)) {
+                    $Key = \substr($Entry['Key'], $PrefixLen);
+                    if (!\preg_match($Pattern, $Key)) {
                         continue;
                     }
-                    if (substr($Entry['Data'], 0, 3) === 'gz:') {
-                        $Entry['Data'] = gzdecode(base64_decode(substr($Entry['Data'], 3)));
+                    if (\substr($Entry['Data'], 0, 3) === 'gz:') {
+                        $Entry['Data'] = gzdecode(\base64_decode(\substr($Entry['Data'], 3)));
                     }
                     $Entry['Data'] = $this->unserializeEntry($Entry['Data']);
                     $Set[$Key] = $Entry['Time'] > 0 ? ['Data' => $Entry['Data'], 'Time' => $Entry['Time']] : $Entry['Data'];
@@ -1217,12 +1217,12 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
         } elseif ($Arr = $this->exposeWorkingDataArray()) {
             foreach ($Arr as $Key => $Entry) {
                 if ($PrefixLen) {
-                    if (substr($Key, 0, $PrefixLen) !== $this->Prefix) {
+                    if (\substr($Key, 0, $PrefixLen) !== $this->Prefix) {
                         continue;
                     }
-                    $Key = substr($Key, $PrefixLen);
+                    $Key = \substr($Key, $PrefixLen);
                 }
-                if (!preg_match($Pattern, $Key)) {
+                if (!\preg_match($Pattern, $Key)) {
                     continue;
                 }
                 $Set[$Key] = $this->unserializeEntry($Entry);
@@ -1234,12 +1234,12 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
                 continue;
             }
             if ($Replacement !== '') {
-                $EntryName = preg_replace($Pattern, $Replacement, $EntryName);
+                $EntryName = \preg_replace($Pattern, $Replacement, $EntryName);
             }
             $Out[$EntryName] = $EntryData;
         }
-        if ($Sort !== null && is_callable($Sort)) {
-            uasort($Out, $Sort);
+        if ($Sort !== null && \is_callable($Sort)) {
+            \uasort($Out, $Sort);
         }
         return $Out;
     }
@@ -1255,18 +1255,18 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
     {
         $Cleared = false;
         $Updated = [];
-        $Now = time();
+        $Now = \time();
         foreach ($Data as $Key => $Value) {
-            if (is_array($Value)) {
+            if (\is_array($Value)) {
                 foreach ($Value as &$SubValue) {
-                    if (is_array($SubValue)) {
+                    if (\is_array($SubValue)) {
                         if ($this->clearExpired($SubValue)) {
                             $Cleared = true;
                         }
                     }
                 }
             }
-            if (!is_array($Value) || !isset($Value['Time']) || $Value['Time'] > $Now) {
+            if (!\is_array($Value) || !isset($Value['Time']) || $Value['Time'] > $Now) {
                 $Updated[$Key] = $Value;
             } else {
                 $Cleared = true;
@@ -1288,7 +1288,7 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
         }
         $this->PDOAlreadyCleared = true;
         $PDO = $this->WorkingData->prepare(self::CLEAR_EXPIRED_QUERY);
-        if ($PDO !== false && $PDO->execute([':time' => time()])) {
+        if ($PDO !== false && $PDO->execute([':time' => \time()])) {
             if ($PDO->rowCount() > 0) {
                 return $this->Modified = true;
             }
@@ -1305,11 +1305,11 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
      */
     public function unserializeEntry($Entry)
     {
-        if (!is_string($Entry) || !preg_match('~^a:\d+:\{.*\}$~s', $Entry)) {
+        if (!\is_string($Entry) || !\preg_match('~^a:\d+:\{.*\}$~s', $Entry)) {
             return $Entry;
         }
         $Arr = unserialize($Entry);
-        if (is_array($Arr)) {
+        if (\is_array($Arr)) {
             $this->clearExpired($Arr);
             return $Arr;
         }
@@ -1324,7 +1324,7 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
      */
     public function serializeEntry($Entry)
     {
-        return is_array($Entry) ? (serialize($Entry) ?: $Entry) : $Entry;
+        return \is_array($Entry) ? (serialize($Entry) ?: $Entry) : $Entry;
     }
 
     /**
@@ -1339,15 +1339,15 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
      */
     public function stripObjects($Data)
     {
-        if (is_object($Data)) {
+        if (\is_object($Data)) {
             return false;
         }
-        if (!is_array($Data)) {
+        if (!\is_array($Data)) {
             return $Data;
         }
         $Output = [];
         foreach ($Data as $Key => $Value) {
-            if (is_object($Element)) {
+            if (\is_object($Element)) {
                 continue;
             }
             $Output[$Key] = $this->stripObjects($Value);
@@ -1364,7 +1364,7 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
      */
     public function exposeWorkingDataArray()
     {
-        if (!is_array($this->WorkingData)) {
+        if (!\is_array($this->WorkingData)) {
             return false;
         }
         if ($this->clearExpired($this->WorkingData)) {
@@ -1381,7 +1381,7 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
      */
     public function offsetExists($Offset): bool
     {
-        if (!is_scalar($Offset)) {
+        if (!\is_scalar($Offset)) {
             return false;
         }
         $Entry = $this->Prefix . $Offset;
@@ -1404,9 +1404,9 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
             }
             return false;
         }
-        if (is_array($this->WorkingData) && isset($this->WorkingData[$Entry])) {
+        if (\is_array($this->WorkingData) && isset($this->WorkingData[$Entry])) {
             if (isset($this->WorkingData[$Entry]['Data']) && !empty($this->WorkingData[$Entry]['Time'])) {
-                return ($this->WorkingData[$Entry]['Time'] <= 0 || $this->WorkingData[$Entry]['Time'] > time());
+                return ($this->WorkingData[$Entry]['Time'] <= 0 || $this->WorkingData[$Entry]['Time'] > \time());
             }
             return true;
         }
@@ -1454,6 +1454,73 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
     }
 
     /**
+     * Count cache entries.
+     *
+     * @return int The number of cache entries attached to the current instance.
+     */
+    public function count(): int
+    {
+        if ($this->Using === 'Memcached') {
+            return \count($this->Indexes);
+        }
+        $Output = 0;
+        $PrefixLen = \strlen($this->Prefix);
+        if ($this->Using === 'APCu') {
+            $Data = apcu_cache_info();
+            if (empty($Data['cache_list'])) {
+                return $Output;
+            }
+            foreach ($Data['cache_list'] as $Entry) {
+                if (!empty($Entry['info']) && \is_string($Entry['info']) && $PrefixLen !== 0 && \substr($Entry['info'], 0, $PrefixLen) === $this->Prefix) {
+                    $Output++;
+                }
+            }
+            return $Output;
+        }
+        if ($this->Using === 'Redis') {
+            if ($PrefixLen === 0 || \preg_match('~[^\dA-Za-z_]~', $this->Prefix)) {
+                $Keys = $this->WorkingData->keys('*') ?: [];
+            } else {
+                $Keys = $this->WorkingData->keys($this->Prefix . '*') ?: [];
+            }
+            foreach ($Keys as $Key) {
+                if (\strlen($Key) <= self::KEY_SIZE_LIMIT && $PrefixLen !== 0 && \substr($Key, 0, $PrefixLen) === $this->Prefix) {
+                    $Output++;
+                }
+            }
+            return $Output;
+        }
+        if ($this->Using === 'PDO') {
+            $this->clearExpiredPDO();
+            if ($this->Prefix === '') {
+                $PDO = $this->WorkingData->prepare(self::COUNT_ALL_QUERY);
+            } elseif (\preg_match('~^(?:ibm|mysql|odbc|pgsql|sqlsrv):~i', $this->PDOdsn)) {
+                $PDO = $this->WorkingData->prepare(self::COUNT_ALL_QUERY_WPREFIX_CONCAT);
+            } elseif (\preg_match('~^4d:~i', $this->PDOdsn)) {
+                $PDO = $this->WorkingData->prepare(self::COUNT_ALL_QUERY_WPREFIX_PLUS);
+            } else {
+                $PDO = $this->WorkingData->prepare(self::COUNT_ALL_QUERY_WPREFIX_DPIPE);
+            }
+            if ($PDO !== false && ($this->Prefix === '' ? $PDO->execute() : $PDO->execute([':prefix' => $this->Prefix]))) {
+                $Data = $PDO->fetchAll();
+                return isset($Data[0][0]) && \is_int($Data[0][0]) ? $Data[0][0] : 0;
+            }
+            return 0;
+        }
+        if ($Arr = $this->exposeWorkingDataArray()) {
+            foreach ($Arr as $Key => $Entry) {
+                if ($PrefixLen) {
+                    if (\substr($Key, 0, $PrefixLen) !== $this->Prefix) {
+                        continue;
+                    }
+                }
+                $Output++;
+            }
+        }
+        return $Output;
+    }
+
+    /**
      * Enforce key size limit.
      *
      * @param string $Key The key to check. Transforms the key if it doesn't
@@ -1466,16 +1533,16 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
          * SHA512 produces a hash equal to the current key size limit, and
          * provides sufficient noise for our needs here, so we'll use that.
          */
-        if (strlen($Key) > self::KEY_SIZE_LIMIT) {
+        if (\strlen($Key) > self::KEY_SIZE_LIMIT) {
             if (
-                ($PrefixLen = strlen($this->Prefix)) &&
-                (substr($Key, 0, $PrefixLen) === $this->Prefix) &&
+                ($PrefixLen = \strlen($this->Prefix)) &&
+                (\substr($Key, 0, $PrefixLen) === $this->Prefix) &&
                 ($PrefixLen < self::KEY_SIZE_LIMIT)
             ) {
-                $Key = $this->Prefix . substr(hash('sha512', substr($Key, $PrefixLen)), 0, self::KEY_SIZE_LIMIT - $PrefixLen);
+                $Key = $this->Prefix . \substr(\hash('sha512', \substr($Key, $PrefixLen)), 0, self::KEY_SIZE_LIMIT - $PrefixLen);
                 return;
             }
-            $Key = hash('sha512', $Key);
+            $Key = \hash('sha512', $Key);
         }
     }
 
@@ -1488,82 +1555,15 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
      */
     private function tryEnforcePermissions(string $Directory): bool
     {
-        if ($Directory === '' || !is_dir($Directory)) {
+        if ($Directory === '' || !\is_dir($Directory)) {
             return false;
         }
-        if (is_readable($Directory) && is_writable($Directory)) {
+        if (\is_readable($Directory) && \is_writable($Directory)) {
             return true;
         }
         if (!$this->AllowEnforcingPermissions) {
             return false;
         }
-        return chmod($Directory, 0755);
-    }
-
-    /**
-     * Count cache entries.
-     *
-     * @return int The number of cache entries attached to the current instance.
-     */
-    public function count(): int
-    {
-        if ($this->Using === 'Memcached') {
-            return count($this->Indexes);
-        }
-        $Output = 0;
-        $PrefixLen = strlen($this->Prefix);
-        if ($this->Using === 'APCu') {
-            $Data = apcu_cache_info();
-            if (empty($Data['cache_list'])) {
-                return $Output;
-            }
-            foreach ($Data['cache_list'] as $Entry) {
-                if (!empty($Entry['info']) && is_string($Entry['info']) && $PrefixLen !== 0 && substr($Entry['info'], 0, $PrefixLen) === $this->Prefix) {
-                    $Output++;
-                }
-            }
-            return $Output;
-        }
-        if ($this->Using === 'Redis') {
-            if ($PrefixLen === 0 || preg_match('~[^\dA-Za-z_]~', $this->Prefix)) {
-                $Keys = $this->WorkingData->keys('*') ?: [];
-            } else {
-                $Keys = $this->WorkingData->keys($this->Prefix . '*') ?: [];
-            }
-            foreach ($Keys as $Key) {
-                if (strlen($Key) <= self::KEY_SIZE_LIMIT && $PrefixLen !== 0 && substr($Key, 0, $PrefixLen) === $this->Prefix) {
-                    $Output++;
-                }
-            }
-            return $Output;
-        }
-        if ($this->Using === 'PDO') {
-            $this->clearExpiredPDO();
-            if ($this->Prefix === '') {
-                $PDO = $this->WorkingData->prepare(self::COUNT_ALL_QUERY);
-            } elseif (preg_match('~^(?:ibm|mysql|odbc|pgsql|sqlsrv):~i', $this->PDOdsn)) {
-                $PDO = $this->WorkingData->prepare(self::COUNT_ALL_QUERY_WPREFIX_CONCAT);
-            } elseif (preg_match('~^4d:~i', $this->PDOdsn)) {
-                $PDO = $this->WorkingData->prepare(self::COUNT_ALL_QUERY_WPREFIX_PLUS);
-            } else {
-                $PDO = $this->WorkingData->prepare(self::COUNT_ALL_QUERY_WPREFIX_DPIPE);
-            }
-            if ($PDO !== false && ($this->Prefix === '' ? $PDO->execute() : $PDO->execute([':prefix' => $this->Prefix]))) {
-                $Data = $PDO->fetchAll();
-                return isset($Data[0][0]) && is_int($Data[0][0]) ? $Data[0][0] : 0;
-            }
-            return 0;
-        }
-        if ($Arr = $this->exposeWorkingDataArray()) {
-            foreach ($Arr as $Key => $Entry) {
-                if ($PrefixLen) {
-                    if (substr($Key, 0, $PrefixLen) !== $this->Prefix) {
-                        continue;
-                    }
-                }
-                $Output++;
-            }
-        }
-        return $Output;
+        return \chmod($Directory, 0755);
     }
 }

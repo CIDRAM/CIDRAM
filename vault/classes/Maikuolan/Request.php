@@ -1,6 +1,6 @@
 <?php
 /**
- * Request handler (last modified: 2025.11.03).
+ * Request handler (last modified: 2026.03.17).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -92,13 +92,13 @@ class Request extends CommonAbstract
             return;
         }
 
-        $WriteMode = file_exists($this->ObjLoggerFile) ? 'ab' : 'wb';
-        $Handle = fopen($this->ObjLoggerFile, $WriteMode);
-        if (!is_resource($Handle)) {
+        $WriteMode = \file_exists($this->ObjLoggerFile) ? 'ab' : 'wb';
+        $Handle = \fopen($this->ObjLoggerFile, $WriteMode);
+        if (!\is_resource($Handle)) {
             return;
         }
-        fwrite($Handle, $this->ObjLogger);
-        fclose($Handle);
+        \fwrite($Handle, $this->ObjLogger);
+        \fclose($Handle);
     }
 
     /**
@@ -118,7 +118,7 @@ class Request extends CommonAbstract
     public function request(string $URI, $Params = [], int $Timeout = -1, array $Headers = [], int $Depth = 0, string $Method = ''): string
     {
         /** Guard. */
-        if (!function_exists('curl_init')) {
+        if (!\function_exists('curl_init')) {
             return '';
         }
 
@@ -126,24 +126,24 @@ class Request extends CommonAbstract
         foreach ($this->Channels['Triggers'] as $TriggerName => $TriggerURI) {
             if (
                 !isset($this->Channels[$TriggerName]) ||
-                !is_array($this->Channels[$TriggerName]) ||
-                substr($URI, 0, strlen($TriggerURI)) !== $TriggerURI
+                !\is_array($this->Channels[$TriggerName]) ||
+                \substr($URI, 0, \strlen($TriggerURI)) !== $TriggerURI
             ) {
                 continue;
             }
             foreach ($this->Channels[$TriggerName] as $Channel => $Options) {
-                if (!is_array($Options) || !isset($Options[$TriggerName])) {
+                if (!\is_array($Options) || !isset($Options[$TriggerName])) {
                     continue;
                 }
-                $Len = strlen($Options[$TriggerName]);
-                if (substr($URI, 0, $Len) !== $Options[$TriggerName]) {
+                $Len = \strlen($Options[$TriggerName]);
+                if (\substr($URI, 0, $Len) !== $Options[$TriggerName]) {
                     continue;
                 }
                 unset($Options[$TriggerName]);
                 if (empty($Options) || $this->inCsv(key($Options), $this->Disabled)) {
                     continue;
                 }
-                $AlternateURI = current($Options) . substr($URI, $Len);
+                $AlternateURI = current($Options) . \substr($URI, $Len);
                 break;
             }
             if ($this->inCsv($TriggerName, $this->Disabled)) {
@@ -162,55 +162,55 @@ class Request extends CommonAbstract
         $Overrides = [];
 
         /** Initialise the cURL session. */
-        $Request = curl_init($URI);
+        $Request = \curl_init($URI);
 
-        $LCURI = strtolower($URI);
-        $SSL = (substr($LCURI, 0, 6) === 'https:');
+        $LCURI = \strtolower($URI);
+        $SSL = (\substr($LCURI, 0, 6) === 'https:');
 
-        curl_setopt($Request, CURLOPT_FRESH_CONNECT, true);
-        curl_setopt($Request, CURLOPT_HEADER, false);
+        \curl_setopt($Request, CURLOPT_FRESH_CONNECT, true);
+        \curl_setopt($Request, CURLOPT_HEADER, false);
         if (empty($Params)) {
-            curl_setopt($Request, CURLOPT_POST, false);
+            \curl_setopt($Request, CURLOPT_POST, false);
             $Post = false;
         } else {
-            curl_setopt($Request, CURLOPT_POST, true);
-            curl_setopt($Request, CURLOPT_POSTFIELDS, $Params);
+            \curl_setopt($Request, CURLOPT_POST, true);
+            \curl_setopt($Request, CURLOPT_POSTFIELDS, $Params);
             $Post = true;
         }
         if ($SSL) {
-            curl_setopt($Request, CURLOPT_PROTOCOLS, CURLPROTO_HTTPS);
-            curl_setopt($Request, CURLOPT_SSL_VERIFYPEER, (
+            \curl_setopt($Request, CURLOPT_PROTOCOLS, CURLPROTO_HTTPS);
+            \curl_setopt($Request, CURLOPT_SSL_VERIFYPEER, (
                 isset($Overrides['CURLOPT_SSL_VERIFYPEER']) ? !empty($Overrides['CURLOPT_SSL_VERIFYPEER']) : false
             ));
         }
         if ($Method !== '') {
-            curl_setopt($Request, CURLOPT_CUSTOMREQUEST, $Method);
+            \curl_setopt($Request, CURLOPT_CUSTOMREQUEST, $Method);
             $DebugMethod = $Method;
         } else {
             $DebugMethod = $Post ? 'POST' : 'GET';
         }
         if ($this->Proxy !== '') {
-            curl_setopt($Request, CURLOPT_PROXY, $this->Proxy);
+            \curl_setopt($Request, CURLOPT_PROXY, $this->Proxy);
             if ($this->ProxyAuth !== '') {
-                curl_setopt($Request, CURLOPT_PROXYUSERPWD, $this->ProxyAuth);
+                \curl_setopt($Request, CURLOPT_PROXYUSERPWD, $this->ProxyAuth);
             }
         }
-        curl_setopt($Request, CURLOPT_FOLLOWLOCATION, true);
-        curl_setopt($Request, CURLOPT_MAXREDIRS, 1);
-        curl_setopt($Request, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($Request, CURLOPT_TIMEOUT, ($Timeout > 0 ? $Timeout : $this->DefaultTimeout));
-        curl_setopt($Request, CURLOPT_USERAGENT, $this->UserAgent);
-        curl_setopt($Request, CURLOPT_HTTPHEADER, $Headers ?: []);
-        $Time = microtime(true);
+        \curl_setopt($Request, CURLOPT_FOLLOWLOCATION, true);
+        \curl_setopt($Request, CURLOPT_MAXREDIRS, 1);
+        \curl_setopt($Request, CURLOPT_RETURNTRANSFER, true);
+        \curl_setopt($Request, CURLOPT_TIMEOUT, ($Timeout > 0 ? $Timeout : $this->DefaultTimeout));
+        \curl_setopt($Request, CURLOPT_USERAGENT, $this->UserAgent);
+        \curl_setopt($Request, CURLOPT_HTTPHEADER, $Headers ?: []);
+        $Time = \microtime(true);
 
         /** Execute and get the response. */
-        $Response = curl_exec($Request);
+        $Response = \curl_exec($Request);
 
-        $Time = microtime(true) - $Time;
+        $Time = \microtime(true) - $Time;
 
         /** Check for problems (e.g., resource not found, server errors, etc). */
-        if (($Info = curl_getinfo($Request)) && is_array($Info) && isset($Info['http_code'])) {
-            $this->sendMessage(sprintf('%s - %s - %s - %s', $DebugMethod, $URI, $Info['http_code'], (floor($Time * 100) / 100) . 's'));
+        if (($Info = \curl_getinfo($Request)) && \is_array($Info) && isset($Info['http_code'])) {
+            $this->sendMessage(\sprintf('%s - %s - %s - %s', $DebugMethod, $URI, $Info['http_code'], (\floor($Time * 100) / 100) . 's'));
 
             /** Most recent HTTP status code. */
             $this->MostRecentStatusCode = $Info['http_code'];
@@ -218,12 +218,12 @@ class Request extends CommonAbstract
             /** Request failed. Try again using an alternative address. */
             if ($Info['http_code'] >= 400 && isset($AlternateURI) && $Depth < 3) {
                 if (\PHP_VERSION_ID < 80000) {
-                    curl_close($Request);
+                    \curl_close($Request);
                 }
                 return $this($AlternateURI, $Params, $Timeout, $Headers, $Depth + 1, $Method);
             }
         } else {
-            $this->sendMessage(sprintf('%s - %s - %s - %s', $DebugMethod, $URI, 200, (floor($Time * 100) / 100) . 's'));
+            $this->sendMessage(\sprintf('%s - %s - %s - %s', $DebugMethod, $URI, 200, (\floor($Time * 100) / 100) . 's'));
 
             /** Most recent HTTP status code. */
             $this->MostRecentStatusCode = 200;
@@ -231,7 +231,7 @@ class Request extends CommonAbstract
 
         /** Close the cURL session (PHP < 8). */
         if (\PHP_VERSION_ID < 80000) {
-            curl_close($Request);
+            \curl_close($Request);
         }
 
         /** Return the results of the request. */
@@ -250,15 +250,15 @@ class Request extends CommonAbstract
         if ($Value === '' || $CSV === '') {
             return false;
         }
-        $Arr = strpos($CSV, ',') === false && strpos($CSV, "\n") !== false ? explode("\n", $CSV) : explode(',', $CSV);
-        if (strpos($CSV, '"') !== false) {
+        $Arr = \strpos($CSV, ',') === false && \strpos($CSV, "\n") !== false ? \explode("\n", $CSV) : \explode(',', $CSV);
+        if (\strpos($CSV, '"') !== false) {
             foreach ($Arr as &$Item) {
-                if (substr($Item, 0, 1) === '"' && substr($Item, -1) === '"') {
-                    $Item = substr($Item, 1, -1);
+                if (\substr($Item, 0, 1) === '"' && \substr($Item, -1) === '"') {
+                    $Item = \substr($Item, 1, -1);
                 }
             }
         }
-        return in_array($Value, $Arr, true);
+        return \in_array($Value, $Arr, true);
     }
 
     /**
@@ -269,12 +269,12 @@ class Request extends CommonAbstract
      */
     public function sendMessage(string $Message): void
     {
-        $this->ObjLogger .= '[' . date('Y-m-d\Th:i:sO', time()) . '] ' . $Message . "\n";
+        $this->ObjLogger .= '[' . \date('Y-m-d\Th:i:sO', \time()) . '] ' . $Message . "\n";
         if ($this->SendToOut !== true) {
             return;
         }
-        $Handle = fopen('php://stdout', 'wb');
-        fwrite($Handle, "\r" . $Message . "\n");
-        fclose($Handle);
+        $Handle = \fopen('php://stdout', 'wb');
+        \fwrite($Handle, "\r" . $Message . "\n");
+        \fclose($Handle);
     }
 }

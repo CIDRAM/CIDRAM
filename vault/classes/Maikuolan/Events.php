@@ -123,6 +123,6 @@ class Events extends CommonAbstract implements \Countable
      */
     public function count(): int
     {
-        return count($this->Handlers);
+        return \count($this->Handlers);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Delayed file IO class (last modified: 2025.12.24).
+ * Delayed file IO class (last modified: 2026.03.17).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -53,26 +53,26 @@ class DelayedIO extends CommonAbstract implements \Countable
             if ($NewData === $this->OldData[$File]) {
                 continue;
             }
-            $Handle = fopen($File, 'wb');
-            if (!is_resource($Handle)) {
+            $Handle = \fopen($File, 'wb');
+            if (!\is_resource($Handle)) {
                 continue;
             }
             if ($this->Locked[$File]) {
                 $Locked = false;
-                $Time = time();
+                $Time = \time();
                 while (!$Locked) {
-                    $Locked = flock($Handle, $this->Locked[$File]);
-                    if (!$Locked && (time() - $Time) >= self::LOCK_TIMEOUT) {
+                    $Locked = \flock($Handle, $this->Locked[$File]);
+                    if (!$Locked && (\time() - $Time) >= self::LOCK_TIMEOUT) {
                         break;
                     }
                 }
                 if (!$Locked) {
-                    fclose($Handle);
+                    \fclose($Handle);
                     continue;
                 }
             }
-            fwrite($Handle, $NewData);
-            fclose($Handle);
+            \fwrite($Handle, $NewData);
+            \fclose($Handle);
         }
     }
 
@@ -91,51 +91,51 @@ class DelayedIO extends CommonAbstract implements \Countable
         if (isset($this->NewData[$File])) {
             return $this->NewData[$File];
         }
-        if (!is_file($File) || !is_readable($File)) {
+        if (!\is_file($File) || !\is_readable($File)) {
             return '';
         }
-        if (filesize($File) === 0) {
+        if (\filesize($File) === 0) {
             $this->Locked[$File] = 0;
             return $this->NewData[$File] = $this->OldData[$File] = '';
         }
         if ($Lock === 0) {
-            $Data = file_get_contents($File);
+            $Data = \file_get_contents($File);
             $this->Locked[$File] = 0;
-            return $this->NewData[$File] = $this->OldData[$File] = is_string($Data) ? $Data : '';
+            return $this->NewData[$File] = $this->OldData[$File] = \is_string($Data) ? $Data : '';
         }
-        $Handle = fopen($File, 'rb');
-        if (!is_resource($Handle)) {
+        $Handle = \fopen($File, 'rb');
+        if (!\is_resource($Handle)) {
             return '';
         }
         $Locked = false;
         if ($Lock !== 0) {
-            $Time = time();
+            $Time = \time();
             while (!$Locked) {
-                $Locked = flock($Handle, $Lock);
-                if (!$Locked && (time() - $Time) >= self::LOCK_TIMEOUT) {
+                $Locked = \flock($Handle, $Lock);
+                if (!$Locked && (\time() - $Time) >= self::LOCK_TIMEOUT) {
                     break;
                 }
             }
             if (!$Locked) {
-                fclose($Handle);
+                \fclose($Handle);
                 return '';
             }
         }
         $Data = '';
-        while (!feof($Handle)) {
-            $Data .= fread($Handle, self::BLOCKSIZE);
+        while (!\feof($Handle)) {
+            $Data .= \fread($Handle, self::BLOCKSIZE);
         }
         if ($Locked) {
-            $Time = time();
+            $Time = \time();
             $Unlocked = false;
             while (!$Unlocked) {
-                $Unlocked = flock($Handle, LOCK_UN);
-                if (!$Unlocked && (time() - $Time) >= self::LOCK_TIMEOUT) {
+                $Unlocked = \flock($Handle, LOCK_UN);
+                if (!$Unlocked && (\time() - $Time) >= self::LOCK_TIMEOUT) {
                     break;
                 }
             }
         }
-        fclose($Handle);
+        \fclose($Handle);
         $this->Locked[$File] = 0;
         return $this->NewData[$File] = $this->OldData[$File] = $Data;
     }
@@ -150,7 +150,7 @@ class DelayedIO extends CommonAbstract implements \Countable
      */
     public function writeFile(string $File = '', string $Data = '', int $Lock = 0): bool
     {
-        if (empty($File) || !is_writable($File)) {
+        if (empty($File) || !\is_writable($File)) {
             return false;
         }
         $this->NewData[$File] = $Data;
@@ -168,6 +168,6 @@ class DelayedIO extends CommonAbstract implements \Countable
      */
     public function count(): int
     {
-        return count($this->OldData);
+        return \count($this->OldData);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Complex string handler (last modified: 2025.12.30).
+ * Complex string handler (last modified: 2026.03.17).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -37,7 +37,7 @@ class ComplexStringHandler extends CommonAbstract implements \ArrayAccess, \Coun
      *
      * @param string $Data The data supplied to the class at object instantiation.
      * @param string $Pattern An optional pattern to immediately call $this->generateMarkers.
-     * @param callable $Closure An optional closure to immediately call $this->iterateClosure.
+     * @param callable|null $Closure An optional closure to immediately call $this->iterateClosure.
      * @return void
      */
     public function __construct(string $Data = '', string $Pattern = '', ?callable $Closure = null)
@@ -46,7 +46,7 @@ class ComplexStringHandler extends CommonAbstract implements \ArrayAccess, \Coun
             $this->Input = $Data;
             if ($Pattern !== '') {
                 $this->generateMarkers($Pattern);
-                if (is_callable($Closure)) {
+                if (\is_callable($Closure)) {
                     $this->iterateClosure($Closure);
                 }
             }
@@ -71,17 +71,17 @@ class ComplexStringHandler extends CommonAbstract implements \ArrayAccess, \Coun
      */
     public function generateMarkers(string $Pattern): void
     {
-        preg_match_all($Pattern, $this->Input, $this->Markers, PREG_OFFSET_CAPTURE | PREG_SET_ORDER);
+        \preg_match_all($Pattern, $this->Input, $this->Markers, PREG_OFFSET_CAPTURE | PREG_SET_ORDER);
         $Start = 0;
         $this->Working = [];
         foreach ($this->Markers as $Marker) {
-            if (!is_array($Marker[0]) || !isset($Marker[0][0]) || is_array($Marker[0][0]) || !isset($Marker[0][1])) {
+            if (!\is_array($Marker[0]) || !isset($Marker[0][0]) || \is_array($Marker[0][0]) || !isset($Marker[0][1])) {
                 break;
             }
-            $this->Working[] = substr($this->Input, $Start, $Marker[0][1] - $Start);
-            $Start = $Marker[0][1] + strlen($Marker[0][0]);
+            $this->Working[] = \substr($this->Input, $Start, $Marker[0][1] - $Start);
+            $Start = $Marker[0][1] + \strlen($Marker[0][0]);
         }
-        $this->Working[] = substr($this->Input, $Start);
+        $this->Working[] = \substr($this->Input, $Start);
     }
 
     /**
@@ -103,7 +103,7 @@ class ComplexStringHandler extends CommonAbstract implements \ArrayAccess, \Coun
             return;
         }
         foreach ($this->Markers as &$Marker) {
-            if (isset($Marker[0][0]) && !is_array($Marker[0][0])) {
+            if (isset($Marker[0][0]) && !\is_array($Marker[0][0])) {
                 $Marker[0][0] = $Closure($Marker[0][0]);
             }
         }
@@ -119,13 +119,13 @@ class ComplexStringHandler extends CommonAbstract implements \ArrayAccess, \Coun
         $Output = '';
         $Glue = 0;
         foreach ($this->Working as $Segment) {
-            if (!is_string($Segment)) {
-                $Segment = is_scalar($Segment) ? (string)$Segment : '';
+            if (!\is_string($Segment)) {
+                $Segment = \is_scalar($Segment) ? (string)$Segment : '';
             }
             $Output .= $Segment;
-            if (isset($this->Markers[$Glue][0][0]) && !is_array($this->Markers[$Glue][0][0])) {
-                if (!is_string($this->Markers[$Glue][0][0])) {
-                    $this->Markers[$Glue][0][0] = is_scalar($this->Markers[$Glue][0][0]) ? (string)$this->Markers[$Glue][0][0] : '';
+            if (isset($this->Markers[$Glue][0][0]) && !\is_array($this->Markers[$Glue][0][0])) {
+                if (!\is_string($this->Markers[$Glue][0][0])) {
+                    $this->Markers[$Glue][0][0] = \is_scalar($this->Markers[$Glue][0][0]) ? (string)$this->Markers[$Glue][0][0] : '';
                 }
                 $Output .= $this->Markers[$Glue][0][0];
                 $Glue++;
@@ -142,7 +142,7 @@ class ComplexStringHandler extends CommonAbstract implements \ArrayAccess, \Coun
      */
     public function offsetExists($Segment): bool
     {
-        return is_scalar($Segment) && isset($this->Working[$Segment]);
+        return \is_scalar($Segment) && isset($this->Working[$Segment]);
     }
 
     /**
@@ -157,7 +157,7 @@ class ComplexStringHandler extends CommonAbstract implements \ArrayAccess, \Coun
      * @return mixed The fetched segment.
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($Segment)
+    public function &offsetGet($Segment)
     {
         return $this->Working[$Segment];
     }
@@ -171,7 +171,7 @@ class ComplexStringHandler extends CommonAbstract implements \ArrayAccess, \Coun
      */
     public function offsetSet($Segment, $Value): void
     {
-        if (!is_scalar($Segment) || !is_scalar($Value)) {
+        if (!\is_scalar($Segment) || !\is_scalar($Value)) {
             return;
         }
         $this->Working[$Segment] = (string)$Value;
@@ -185,7 +185,7 @@ class ComplexStringHandler extends CommonAbstract implements \ArrayAccess, \Coun
      */
     public function offsetUnset($Segment): void
     {
-        if (!is_scalar($Segment)) {
+        if (!\is_scalar($Segment)) {
             return;
         }
         $this->Working[$Segment] = null;
@@ -198,7 +198,7 @@ class ComplexStringHandler extends CommonAbstract implements \ArrayAccess, \Coun
      */
     public function count(): int
     {
-        return count($this->Working);
+        return \count($this->Working);
     }
 
     /**

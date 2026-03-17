@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2026.03.13).
+ * This file: Front-end functions file (last modified: 2026.03.16).
  */
 
 /**
@@ -5207,7 +5207,7 @@ $CIDRAM['CallableRecursive'] = function (array &$Arr, callable $Perform, int $De
  * Fetch an etaggable asset as requested by the client.
  *
  * @param string $Asset The path to the asset.
- * @param ?callable $Callback An optional callback.
+ * @param callable|null $Callback An optional callback.
  * @return never
  */
 $CIDRAM['eTaggable'] = function (string $Asset, ?callable $Callback = null) use (&$CIDRAM): void {

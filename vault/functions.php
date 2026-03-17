@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2026.03.11).
+ * This file: Functions file (last modified: 2026.03.16).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -1121,6 +1121,10 @@ $CIDRAM['UA-ASN-Match'] = function ($Origins, string $Friendly, array $Options =
  */
 $CIDRAM['UA-X-Match'] = function ($Datapoints, $Expected, string $Friendly, array $Options = []) use (&$CIDRAM): void {
     $CIDRAM['Arrayify']($Datapoints);
+    if ($Expected instanceof \Maikuolan\Common\LazyArray) {
+        $Expected->trigger();
+        $Expected = $Expected->Data;
+    }
     $CIDRAM['Arrayify']($Expected);
 
     /** Compare the actual value from the request against the expected values. */
@@ -1327,11 +1331,12 @@ $CIDRAM['ClearExpired'] = function (string &$List, bool &$Check) use (&$CIDRAM):
 };
 
 /**
- * If input isn't an array, make it so. Remove empty elements.
+ * Ensure input is an array and remove empty elements.
  *
  * @param mixed $Input
+ * @return void
  */
-$CIDRAM['Arrayify'] = function (&$Input) {
+$CIDRAM['Arrayify'] = function (&$Input): void {
     if (!is_array($Input)) {
         $Input = [$Input];
     }

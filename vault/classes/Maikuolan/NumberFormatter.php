@@ -1,6 +1,6 @@
 <?php
 /**
- * Number formatter (last modified: 2026.03.10).
+ * Number formatter (last modified: 2026.03.17).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -1575,7 +1575,7 @@ class NumberFormatter extends CommonAbstract
             $this->GroupSeparator = ' ';
             return;
         }
-        $Format = explode('-', $Format);
+        $Format = \explode('-', $Format);
         if ($Format[0] === 'Arabic') {
             $this->ConversionSet = 'Eastern';
             $this->GroupSeparator = '';
@@ -1653,7 +1653,7 @@ class NumberFormatter extends CommonAbstract
             $this->DecimalSeparator = ',';
             return;
         }
-        if ($Format[0] === 'SDN' && isset($Format[1]) && property_exists($this, $Format[1])) {
+        if ($Format[0] === 'SDN' && isset($Format[1]) && \property_exists($this, $Format[1])) {
             $this->ConversionSet = $Format[1];
             $this->DecimalSeparator = ';';
             $this->Base = 12;
@@ -1676,21 +1676,21 @@ class NumberFormatter extends CommonAbstract
         }
 
         $CSet = $this->{$this->ConversionSet};
-        $DecPos = strpos($Number, '.');
+        $DecPos = \strpos($Number, '.');
         if ($DecPos !== false) {
             if ($Decimals > 0 && $this->DecimalSeparator && empty($CSet['.'])) {
-                $Fraction = substr($Number, $DecPos + 1) ?: '';
-                $Len = strlen($Fraction);
+                $Fraction = \substr($Number, $DecPos + 1) ?: '';
+                $Len = \strlen($Fraction);
                 if ($Len > 0) {
                     $Fraction = $this->convertFraction($Fraction, 10, $this->Base, $Decimals);
-                    $Fraction = substr($Fraction, 0, $Decimals);
-                    $Len = strlen($Fraction);
+                    $Fraction = \substr($Fraction, 0, $Decimals);
+                    $Len = \strlen($Fraction);
                 }
                 if ($Len < $Decimals) {
-                    $Fraction .= str_repeat('0', $Decimals - $Len);
+                    $Fraction .= \str_repeat('0', $Decimals - $Len);
                 }
             }
-            $Number = (string)(int)substr($Number, 0, $DecPos);
+            $Number = (string)(int)\substr($Number, 0, $DecPos);
         } else {
             $Number = (string)(int)$Number;
         }
@@ -1701,7 +1701,7 @@ class NumberFormatter extends CommonAbstract
             $Formatted = $CSet['=' . $Number];
             $WholeLen = -1;
         } else {
-            $WholeLen = strlen($Number);
+            $WholeLen = \strlen($Number);
         }
         for ($OddEven = 'o', $Unit = 0, $Formatted = '', $ThouPos = $this->GroupOffset, $Pos = $WholeLen - 1; $Pos > -1; $Pos--, $Unit++, $OddEven = $OddEven === 'o' ? 'e' : 'o') {
             if ($ThouPos >= $this->GroupSize) {
@@ -1717,8 +1717,8 @@ class NumberFormatter extends CommonAbstract
                 $Myriads = ($Unit % 4) === 0;
                 $Hundreds = $Myriads === false && ($Unit % 2) === 0;
             }
-            $Key = substr($Number, $Pos, 1);
-            $Double = $Pos > 0 ? substr($Number, $Pos - 1, 1) . $Key : '';
+            $Key = \substr($Number, $Pos, 1);
+            $Double = $Pos > 0 ? \substr($Number, $Pos - 1, 1) . $Key : '';
             $Power = '';
             $Digit = '';
             if (isset($CSet['^' . $Unit . '+' . $Double])) {
@@ -1747,8 +1747,8 @@ class NumberFormatter extends CommonAbstract
         }
         if (isset($Fraction) && $Decimals && $this->DecimalSeparator && empty($CSet['.'])) {
             $Formatted .= $this->DecimalSeparator;
-            for ($Len = strlen($Fraction), $Pos = 0; $Pos < $Len; $Pos++) {
-                $Key = substr($Fraction, $Pos, 1);
+            for ($Len = \strlen($Fraction), $Pos = 0; $Pos < $Len; $Pos++) {
+                $Key = \substr($Fraction, $Pos, 1);
                 $Power = '';
                 $Digit = '';
                 if (isset($CSet['^-' . $Pos . '+' . $Key])) {
@@ -1768,8 +1768,8 @@ class NumberFormatter extends CommonAbstract
                 $Formatted .= $Digit . $Power;
             }
         }
-        if (($DecLen = strlen($this->DecimalSeparator)) && substr($Formatted, 0, $DecLen) === $this->DecimalSeparator) {
-            $Formatted = substr($Formatted, $DecLen);
+        if (($DecLen = \strlen($this->DecimalSeparator)) && \substr($Formatted, 0, $DecLen) === $this->DecimalSeparator) {
+            $Formatted = \substr($Formatted, $DecLen);
         }
         return $Formatted;
     }
@@ -1782,7 +1782,7 @@ class NumberFormatter extends CommonAbstract
      */
     public function getSetJSON(string $Set = ''): string
     {
-        return isset($this->{$Set}) ? json_encode($this->{$Set}) : '[]';
+        return isset($this->{$Set}) ? \json_encode($this->{$Set}) : '[]';
     }
 
     /**
@@ -1811,31 +1811,31 @@ class NumberFormatter extends CommonAbstract
         }
 
         /** Auto-populate SDN separator when format matches. */
-        if ($MinBase <= 12 && preg_match('~^((?:[\dEX]|↊|↋)+,)+(?:[\dEX]|↊|↋)+(;(?:[\dEX]|↊|↋)+)+$~', $Number)) {
+        if ($MinBase <= 12 && \preg_match('~^((?:[\dEX]|↊|↋)+,)+(?:[\dEX]|↊|↋)+(;(?:[\dEX]|↊|↋)+)+$~', $Number)) {
             $MinBase = 12;
             $DecSep = ';';
         }
 
         /** Dwiggins check. */
         if ($MinBase === 12) {
-            $Number = str_replace(['X', 'E'], ['a', 'b'], $Number);
+            $Number = \str_replace(['X', 'E'], ['a', 'b'], $Number);
         }
 
         /** Other pre-checks. */
-        if (preg_match('~\D~', $Number)) {
+        if (\preg_match('~\D~', $Number)) {
             foreach ($this->UnformatTablePre as $Replacement => $Lookup) {
-                $Number = str_replace($Lookup, $Replacement, $Number);
+                $Number = \str_replace($Lookup, $Replacement, $Number);
             }
         }
 
         /** Roman check. */
-        if ($MinBase === 10 && preg_match('~[MDCLXVImdclxvi]|̅~', $Number) && !preg_match('~[^MDCLXVImdclxvi̅]|\xCC(?:[^\x85]|$)|(?:^|[^\xCC])\x85~', $Number)) {
-            $Number = str_replace(['M̅', 'D̅', 'C̅', 'L̅', 'X̅', 'V̅', 'I̅'], ['m', 'd', 'c', 'l', 'x', 'v', 'M'], $Number);
-            $Len = strlen($Number);
+        if ($MinBase === 10 && \preg_match('~[MDCLXVImdclxvi]|̅~', $Number) && !\preg_match('~[^MDCLXVImdclxvi̅]|\xCC(?:[^\x85]|$)|(?:^|[^\xCC])\x85~', $Number)) {
+            $Number = \str_replace(['M̅', 'D̅', 'C̅', 'L̅', 'X̅', 'V̅', 'I̅'], ['m', 'd', 'c', 'l', 'x', 'v', 'M'], $Number);
+            $Len = \strlen($Number);
             $Out = 0;
             for ($Iter = 0; $Iter < $Len; $Iter++) {
-                $Unit = $this->UnformatRoman[substr($Number, $Iter, 1)] ?? 0;
-                $Next = $this->UnformatRoman[substr($Number, $Iter + 1, 1)] ?? 0;
+                $Unit = $this->UnformatRoman[\substr($Number, $Iter, 1)] ?? 0;
+                $Next = $this->UnformatRoman[\substr($Number, $Iter + 1, 1)] ?? 0;
                 $Out = $Next !== 0 && $Unit < $Next ? $Out - $Unit : $Out + $Unit;
             }
             return (string)$Out;
@@ -1843,17 +1843,17 @@ class NumberFormatter extends CommonAbstract
 
         /** Chinese check. */
         if (
-            preg_match('~^(?:...)*(?:〡|一|壹|〢|二|兩|貳|贰|〣|三|叁|叄|〤|四|肆|〥|五|伍|〦|六|陆|陸|〧|七|柒|〨|八|捌|〩|九|玖|〸|十|拾|〹|〺|佰|百|仟|千|万|萬|亿|億|兆|京|垓|秭|穰|沟|涧|正|載)~', $Number) &&
-            !preg_match('~^(?:...)*(?:分|厘|毛|糸|忽|微|繊|沙|塵|埃)~', $Number)
+            \preg_match('~^(?:...)*(?:〡|一|壹|〢|二|兩|貳|贰|〣|三|叁|叄|〤|四|肆|〥|五|伍|〦|六|陆|陸|〧|七|柒|〨|八|捌|〩|九|玖|〸|十|拾|〹|〺|佰|百|仟|千|万|萬|亿|億|兆|京|垓|秭|穰|沟|涧|正|載)~', $Number) &&
+            !\preg_match('~^(?:...)*(?:分|厘|毛|糸|忽|微|繊|沙|塵|埃)~', $Number)
         ) {
-            $Len = strlen($Number);
+            $Len = \strlen($Number);
             if ($Len % 3 === 0) {
                 $Out = 0;
                 $Stack = 0;
                 $Queue = 1;
                 $DecPassed = false;
                 for ($Iter = 0; $Iter < $Len; $Iter += 3) {
-                    $Unit = substr($Number, $Iter, 3);
+                    $Unit = \substr($Number, $Iter, 3);
                     if ($Unit === '点' || $Unit === '點') {
                         $Out += $Stack;
                         if ($Out >= PHP_INT_MAX) {
@@ -1876,7 +1876,7 @@ class NumberFormatter extends CommonAbstract
                         $Stack = 0;
                         continue;
                     }
-                    $Next = $this->UnformatChinese[substr($Number, $Iter + 3, 3)] ?? 0;
+                    $Next = $this->UnformatChinese[\substr($Number, $Iter + 3, 3)] ?? 0;
                     if ($Next < 10) {
                         $Stack += $Queue;
                         $Queue = 1;
@@ -1885,27 +1885,27 @@ class NumberFormatter extends CommonAbstract
                 if (!$DecPassed) {
                     $Out += $Stack;
                 }
-                return $DecPassed ? preg_replace('~\.*0*$~', '', $Out) : (string)$Out;
+                return $DecPassed ? \preg_replace('~\.*0*$~', '', $Out) : (string)$Out;
             }
         }
 
         /** Japanese check. */
         if (
-            preg_match('~^(?:...)*(?:一|二|三|四|五|六|七|八|九|十|百|千|万|億|兆|京|垓|分|厘|毛|糸|忽|微|繊|沙|塵|埃)~', $Number) &&
-            !preg_match('~^(?:...)*(?:〡|壹|〢|兩|貳|贰|〣|叁|叄|〤|肆|〥|伍|〦|陆|陸|〧|柒|〨|捌|〩|玖|佰|〸|拾|〹|〺|仟|萬|亿|秭|穰|沟|涧|正|載)~', $Number)
+            \preg_match('~^(?:...)*(?:一|二|三|四|五|六|七|八|九|十|百|千|万|億|兆|京|垓|分|厘|毛|糸|忽|微|繊|沙|塵|埃)~', $Number) &&
+            !\preg_match('~^(?:...)*(?:〡|壹|〢|兩|貳|贰|〣|叁|叄|〤|肆|〥|伍|〦|陆|陸|〧|柒|〨|捌|〩|玖|佰|〸|拾|〹|〺|仟|萬|亿|秭|穰|沟|涧|正|載)~', $Number)
         ) {
-            $Len = strlen($Number);
+            $Len = \strlen($Number);
             if ($Len % 3 === 0) {
                 $Out = 0;
                 $Queue = 1;
                 $Prev = null;
                 for ($Iter = 0; $Iter < $Len; $Iter += 3) {
-                    $Unit = $this->UnformatJapanese[substr($Number, $Iter, 3)] ?? 0;
+                    $Unit = $this->UnformatJapanese[\substr($Number, $Iter, 3)] ?? 0;
                     $Queue *= $Unit;
                     if ($Prev === 0) {
                         $Queue *= 0.1;
                     }
-                    $Next = $this->UnformatJapanese[substr($Number, $Iter + 3, 3)] ?? 0;
+                    $Next = $this->UnformatJapanese[\substr($Number, $Iter + 3, 3)] ?? 0;
                     if (($Next >= 1 && $Next < 10) || $Next === 0 || $Queue < 1) {
                         $Out += $Queue;
                         $Queue = 1;
@@ -1917,15 +1917,15 @@ class NumberFormatter extends CommonAbstract
         }
 
         /** Tamil and Old Malayalam check. */
-        if (preg_match('~^(?:...)*(?:௧|௨|௩|௪|௫|௬|௭|௮|௯|௰|௱|௲|൰|൱|൲)~', $Number)) {
-            $Len = strlen($Number);
+        if (\preg_match('~^(?:...)*(?:௧|௨|௩|௪|௫|௬|௭|௮|௯|௰|௱|௲|൰|൱|൲)~', $Number)) {
+            $Len = \strlen($Number);
             if ($Len % 3 === 0) {
                 $Out = 0;
                 $Queue = 1;
                 for ($Iter = 0; $Iter < $Len; $Iter += 3) {
-                    $Unit = $this->UnformatTamil[substr($Number, $Iter, 3)] ?? 0;
+                    $Unit = $this->UnformatTamil[\substr($Number, $Iter, 3)] ?? 0;
                     $Queue *= $Unit;
-                    $Next = $this->UnformatTamil[substr($Number, $Iter + 3, 3)] ?? 0;
+                    $Next = $this->UnformatTamil[\substr($Number, $Iter + 3, 3)] ?? 0;
                     if ($Next < 10) {
                         $Out += $Queue;
                         $Queue = 1;
@@ -1939,16 +1939,16 @@ class NumberFormatter extends CommonAbstract
         }
 
         /** Armenian check. */
-        if (preg_match('~^(?:..)*(?:Ա|Բ|Գ|Դ|Ե|Զ|Է|Ը|Թ|Ժ|Ի|Լ|Խ|Ծ|Կ|Հ|Ձ|Ղ|Ճ|Մ|Յ|Ն|Շ|Ո|Չ|Պ|Ջ|Ռ|Ս|Վ|Տ|Ր|Ց|Ւ|Փ|Ք)~', $Number)) {
-            $Len = strlen($Number);
+        if (\preg_match('~^(?:..)*(?:Ա|Բ|Գ|Դ|Ե|Զ|Է|Ը|Թ|Ժ|Ի|Լ|Խ|Ծ|Կ|Հ|Ձ|Ղ|Ճ|Մ|Յ|Ն|Շ|Ո|Չ|Պ|Ջ|Ռ|Ս|Վ|Տ|Ր|Ց|Ւ|Փ|Ք)~', $Number)) {
+            $Len = \strlen($Number);
             if ($Len % 2 === 0) {
                 $Out = 0;
                 for ($Iter = 0; $Iter < $Len; $Iter += 2) {
-                    $Unit = $this->UnformatArmenian[substr($Number, $Iter, 2)] ?? 0;
+                    $Unit = $this->UnformatArmenian[\substr($Number, $Iter, 2)] ?? 0;
                     if ($Unit === 0) {
                         continue;
                     }
-                    $Next = substr($Number, $Iter + 2, 2);
+                    $Next = \substr($Number, $Iter + 2, 2);
                     if ($Next === '̅') {
                         $Unit *= 10000;
                     }
@@ -1959,12 +1959,12 @@ class NumberFormatter extends CommonAbstract
         }
 
         /** Aegean check. */
-        if (preg_match('~^(?:....)*\xF0\x90\x84[\x87-\xB3]~', $Number)) {
-            $Len = strlen($Number);
+        if (\preg_match('~^(?:....)*\xF0\x90\x84[\x87-\xB3]~', $Number)) {
+            $Len = \strlen($Number);
             if ($Len % 4 === 0) {
                 $Out = 0;
                 for ($Iter = 0; $Iter < $Len; $Iter += 4) {
-                    $Unit = $this->UnformatAegean[substr($Number, $Iter, 4)] ?? 0;
+                    $Unit = $this->UnformatAegean[\substr($Number, $Iter, 4)] ?? 0;
                     if ($Unit === 0) {
                         continue;
                     }
@@ -1976,19 +1976,19 @@ class NumberFormatter extends CommonAbstract
 
         /** Fractions. */
         if ($DecSep !== '') {
-            if (($DSPos = strrpos($Number, $DecSep)) !== false) {
-                $Fraction = substr($Number, $DSPos + strlen($DecSep));
-                $Number = substr($Number, 0, $DSPos);
+            if (($DSPos = \strrpos($Number, $DecSep)) !== false) {
+                $Fraction = \substr($Number, $DSPos + \strlen($DecSep));
+                $Number = \substr($Number, 0, $DSPos);
             } else {
                 $Fraction = '';
             }
-            if (preg_match('~\D~', $Fraction)) {
+            if (\preg_match('~\D~', $Fraction)) {
                 foreach ($this->UnformatTable as $Replacement => $Lookup) {
-                    $Fraction = str_replace($Lookup, $Replacement, $Fraction);
+                    $Fraction = \str_replace($Lookup, $Replacement, $Fraction);
                 }
                 $KakMay = $Fraction;
                 foreach ($this->UnformatTableKakMay as $Replacement => $Lookup) {
-                    $KakMay = str_replace($Lookup, $Replacement, $KakMay);
+                    $KakMay = \str_replace($Lookup, $Replacement, $KakMay);
                 }
                 if ($KakMay !== $Fraction) {
                     if ($MinBase < 20) {
@@ -1998,7 +1998,7 @@ class NumberFormatter extends CommonAbstract
                 }
                 $DuoDec = $Fraction;
                 foreach ($this->UnformatTableDuoDec as $Replacement => $Lookup) {
-                    $DuoDec = str_replace($Lookup, $Replacement, $DuoDec);
+                    $DuoDec = \str_replace($Lookup, $Replacement, $DuoDec);
                 }
                 if ($DuoDec !== $Fraction) {
                     if ($MinBase < 12) {
@@ -2007,27 +2007,27 @@ class NumberFormatter extends CommonAbstract
                     $Fraction = $DuoDec;
                 }
                 for ($Base = $MinBase; $Base < 36; $Base++) {
-                    if (strpos($Fraction, $this->Symbols[$Base]) !== false) {
+                    if (\strpos($Fraction, $this->Symbols[$Base]) !== false) {
                         $MinBase = $Base;
                     }
                 }
             }
-            $Fraction = preg_replace('~0+$~', '', $Fraction);
+            $Fraction = \preg_replace('~0+$~', '', $Fraction);
         } else {
             $Fraction = '';
         }
 
         /** Whole numbers. */
-        if (preg_match('~\D~', $Number)) {
+        if (\preg_match('~\D~', $Number)) {
             foreach ($this->UnformatPattern as $Pattern => $Replacement) {
-                $Number = preg_replace($Pattern, $Replacement, $Number);
+                $Number = \preg_replace($Pattern, $Replacement, $Number);
             }
             foreach ($this->UnformatTable as $Replacement => $Lookup) {
-                $Number = str_replace($Lookup, $Replacement, $Number);
+                $Number = \str_replace($Lookup, $Replacement, $Number);
             }
             $KakMay = $Number;
             foreach ($this->UnformatTableKakMay as $Replacement => $Lookup) {
-                $KakMay = str_replace($Lookup, $Replacement, $KakMay);
+                $KakMay = \str_replace($Lookup, $Replacement, $KakMay);
             }
             if ($KakMay !== $Number) {
                 if ($MinBase < 20) {
@@ -2037,7 +2037,7 @@ class NumberFormatter extends CommonAbstract
             }
             $DuoDec = $Number;
             foreach ($this->UnformatTableDuoDec as $Replacement => $Lookup) {
-                $DuoDec = str_replace($Lookup, $Replacement, $DuoDec);
+                $DuoDec = \str_replace($Lookup, $Replacement, $DuoDec);
             }
             if ($DuoDec !== $Number) {
                 if ($MinBase < 12) {
@@ -2046,28 +2046,28 @@ class NumberFormatter extends CommonAbstract
                 $Number = $DuoDec;
             }
             for ($Base = $MinBase; $Base < 36; $Base++) {
-                if (strpos($Number, $this->Symbols[$Base]) !== false) {
+                if (\strpos($Number, $this->Symbols[$Base]) !== false) {
                     $MinBase = $Base;
                 }
             }
-            $Number = preg_replace('~^0+~', '', $Number);
+            $Number = \preg_replace('~^0+~', '', $Number);
         }
 
         /** Strip unwanted bytes and convert base if necessary. */
         if ($MinBase === 10) {
             if ($Fraction !== '') {
-                $Fraction = preg_replace('~\D~', '', $Fraction);
+                $Fraction = \preg_replace('~\D~', '', $Fraction);
             }
             if ($Number !== '') {
-                $Number = preg_replace('~\D~', '', $Number);
+                $Number = \preg_replace('~\D~', '', $Number);
             }
         } elseif ($MinBase > 10) {
             $Range = $MinBase === 11 ? 'a' : 'a-' . $this->Symbols[$MinBase];
             if ($Fraction !== '') {
-                $Fraction = $this->convertFraction(preg_replace('~[^\d' . $Range . ']~', '', $Fraction), $MinBase, 10, 50);
+                $Fraction = $this->convertFraction(\preg_replace('~[^\d' . $Range . ']~', '', $Fraction), $MinBase, 10, 50);
             }
             if ($Number !== '') {
-                $Number = base_convert(preg_replace('~[^\d' . $Range . ']~', '', $Number), $MinBase, 10);
+                $Number = base_convert(\preg_replace('~[^\d' . $Range . ']~', '', $Number), $MinBase, 10);
             }
         } elseif ($MinBase < 10) {
             if ($Fraction !== '') {
@@ -2093,7 +2093,7 @@ class NumberFormatter extends CommonAbstract
     public function limits($Number): bool
     {
         /** Can't check non-numeric values; Assume as okay. */
-        if (!is_numeric($Number)) {
+        if (!\is_numeric($Number)) {
             return false;
         }
 
@@ -2101,7 +2101,7 @@ class NumberFormatter extends CommonAbstract
 
         /** Upper limit guard. */
         if (isset($CSet['UpperLimit'])) {
-            if (is_float($CSet['UpperLimit']) && PHP_INT_MAX > $CSet['UpperLimit']) {
+            if (\is_float($CSet['UpperLimit']) && PHP_INT_MAX > $CSet['UpperLimit']) {
                 $CSet['UpperLimit'] = (int)$CSet['UpperLimit'];
             }
             if ($Number > $CSet['UpperLimit']) {
@@ -2111,7 +2111,7 @@ class NumberFormatter extends CommonAbstract
 
         /** Lower limit guard. */
         if (isset($CSet['LowerLimit'])) {
-            if (is_float($CSet['LowerLimit']) && PHP_INT_MIN < $CSet['LowerLimit']) {
+            if (\is_float($CSet['LowerLimit']) && PHP_INT_MIN < $CSet['LowerLimit']) {
                 $CSet['LowerLimit'] = (int)$CSet['LowerLimit'];
             }
             if ($Number < $CSet['LowerLimit']) {
@@ -2136,15 +2136,15 @@ class NumberFormatter extends CommonAbstract
         if ($From < 2 || $To < 2 || $From > 36 || $To > 36 || $Limit < 1) {
             return '';
         }
-        $FracLen = strlen($Fraction);
+        $FracLen = \strlen($Fraction);
         if ($From === $To || $FracLen < 1) {
             return $Fraction;
         }
-        $Fraction = rtrim($Fraction, '0');
+        $Fraction = \rtrim($Fraction, '0');
         if ($From !== 10) {
             $PreFloat = [];
             for ($Index = 0; $Index < $FracLen; $Index++) {
-                $PreFloat[$Index] = substr($Fraction, $Index, 1);
+                $PreFloat[$Index] = \substr($Fraction, $Index, 1);
                 if (isset($this->Symbols[$PreFloat[$Index]])) {
                     $PreFloat[$Index] = $this->Symbols[$PreFloat[$Index]];
                 }
@@ -2160,7 +2160,7 @@ class NumberFormatter extends CommonAbstract
                     }
                 }
             }
-            $Float = implode('', $PreFloat);
+            $Float = \implode('', $PreFloat);
         }
         $Float = (float)('0.' . $Fraction);
         $Sum = 0;
@@ -2168,7 +2168,7 @@ class NumberFormatter extends CommonAbstract
         while ($Degree < $this->MaxDegrees) {
             $Sum += $Float;
             $Degree++;
-            if ($Sum > 0 && strpos($Sum, '.') === false) {
+            if ($Sum > 0 && \strpos($Sum, '.') === false) {
                 break;
             }
         }
@@ -2177,17 +2177,17 @@ class NumberFormatter extends CommonAbstract
         $Arr = [];
         $Index = 0;
         while ($Try > 0 && $Index < $Limit) {
-            $Digit = floor($Try);
+            $Digit = \floor($Try);
             $Try = ($Try - $Digit) * $To;
             $Arr[$Index] = $Digit;
             if (isset($this->Symbols[$Arr[$Index]])) {
                 $Arr[$Index] = $this->Symbols[$Arr[$Index]];
             }
-            if (strlen($Arr[$Index]) > 1) {
+            if (\strlen($Arr[$Index]) > 1) {
                 $Arr[$Index] = 0;
             }
             $Index++;
         }
-        return implode('', $Arr);
+        return \implode('', $Arr);
     }
 }
